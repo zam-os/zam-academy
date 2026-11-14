@@ -1,0 +1,657 @@
+[
+  {
+    "id": "bg5-erkenntnisweg",
+    "lb": 1,
+    "title": "Wie Biologen Fragen beantworten",
+    "period": "NT5 2.1 · Erkenntnisse gewinnen – kommunizieren – bewerten",
+    "intro": "Warum geht Hefeteig im Warmen schneller auf? Solche Alltagsbeobachtungen sind der Anfang jeder biologischen Untersuchung. Du lernst den Weg von der Frage bis zur Folgerung kennen.",
+    "review": "Wiederholung aus HSU 3/4: Vermutungen aufstellen und durch Versuche überprüfen",
+    "paragraphs": [
+      "Der naturwissenschaftliche Erkenntnisweg hat feste Phasen. Am Anfang steht eine Beobachtung, aus der eine Frage entsteht: Bildet Hefe bei Wärme mehr Gas? Dann stellst du eine Hypothese auf, also eine begründete Vermutung, die man überprüfen kann: „Bei 35 °C bildet Hefe mehr Gas als bei 20 °C, weil Wärme die Lebensvorgänge der Hefe beschleunigt.“ Danach planst du eine Untersuchung und führst sie durch. Zum Schluss wertest du die Daten aus, interpretierst sie und prüfst, ob die Hypothese bestätigt oder widerlegt ist.",
+      "Damit ein Experiment etwas beweist, muss es fair geplant sein. Du veränderst nur einen Faktor, hier die Temperatur, und hältst alles andere gleich: dieselbe Menge Hefe, Zucker und Wasser, dieselbe Zeit. Ein Kontrollansatz ohne Hefe zeigt, dass das Gas wirklich von der Hefe stammt. Und weil ein einzelner Durchgang durch Zufall oder einen Fehler falsch sein kann, wiederholst du jeden Ansatz mehrmals. Neben dem Experimentieren gehören auch Beobachten und Vergleichen zu den naturwissenschaftlichen Arbeitsweisen. Du wählst die Arbeitsweise, die zur Frage passt."
+    ],
+    "takeaway": "Erkenntnisweg: Frage → Hypothese → Untersuchung planen und durchführen → Daten auswerten und interpretieren → Folgerung. In einem fairen Experiment wird nur ein Faktor verändert, ein Kontrollansatz läuft mit, und jeder Ansatz wird wiederholt.",
+    "sourceIds": ["lehrplan", "kx-naturwissenschaft", "kx-experiment"],
+    "quiz": {
+      "question": "Du willst prüfen, ob Hefe bei Wärme mehr Gas bildet. Welcher Versuchsplan ist fair?",
+      "answer": "Ansatz A bei 20 °C und Ansatz B bei 35 °C, sonst alles gleich",
+      "wrong": [
+        "Ansatz A bei 20 °C mit wenig Zucker und Ansatz B bei 35 °C mit viel Zucker",
+        "Nur ein Ansatz bei 35 °C, ohne Vergleich"
+      ],
+      "explanation": "Nur wenn sich die Ansätze allein in der Temperatur unterscheiden, kannst du einen Unterschied beim Gas auf die Wärme zurückführen."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Den Erkenntnisweg ordnen",
+      "instruction": "Bringe die Schritte der Hefe-Untersuchung in die richtige Reihenfolge.",
+      "categories": [],
+      "entries": [
+        { "text": "Mia bemerkt: Hefeteig geht auf der Heizung schneller auf.", "target": 0, "feedback": "Eine Alltagsbeobachtung steht am Anfang." },
+        { "text": "Frage: Bildet Hefe bei Wärme mehr Gas?", "target": 1, "feedback": "Aus der Beobachtung wird eine überprüfbare Frage." },
+        { "text": "Hypothese: Bei 35 °C entsteht mehr Gas als bei 20 °C.", "target": 2, "feedback": "Die Hypothese ist eine begründete Vermutung." },
+        { "text": "Plan: zwei Ansätze, nur die Temperatur verschieden, dazu ein Kontrollansatz ohne Hefe.", "target": 3, "feedback": "Die Planung legt fest, was verändert und was gleich gehalten wird." },
+        { "text": "Durchführung: Ballons nach 30 Minuten vergleichen, dreimal wiederholen.", "target": 4, "feedback": "Die Durchführung folgt genau dem Plan." },
+        { "text": "Auswertung: Der Ballon bei 35 °C ist in allen Durchgängen größer.", "target": 5, "feedback": "Die Daten werden geordnet und gedeutet." },
+        { "text": "Folgerung: Die Hypothese ist bestätigt.", "target": 6, "feedback": "Die Folgerung beantwortet die Frage." }
+      ],
+      "conclusion": "So arbeiten Naturwissenschaftlerinnen und Naturwissenschaftler: Jede Folgerung lässt sich bis zu einer Frage und einem fairen Versuch zurückverfolgen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre an der Hefe-Untersuchung, warum man einen Kontrollansatz ohne Hefe braucht.",
+        "hints": [
+          "Was würde passieren, wenn sich der Ballon auch ohne Hefe aufbläst?",
+          "Welche andere Ursache für das Gas schließt der Kontrollansatz aus?"
+        ],
+        "model": "Der Kontrollansatz enthält alles außer der Hefe. Bleibt sein Ballon schlaff, weiß ich, dass das Gas in den anderen Ansätzen wirklich von der Hefe stammt und nicht etwa vom Zucker, vom warmen Wasser oder von Luft, die sich beim Erwärmen ausdehnt. Ohne Kontrollansatz könnte ich diese anderen Ursachen nicht ausschließen.",
+        "criteria": [
+          "Ich beschreibe, was im Kontrollansatz fehlt.",
+          "Ich nenne mindestens eine andere mögliche Ursache für das Gas.",
+          "Ich erkläre, dass der Kontrollansatz diese Ursache ausschließt."
+        ]
+      },
+      "2": {
+        "prompt": "Tim behauptet: „Kressesamen keimen im Dunkeln besser.“ Plane ein faires Experiment mit Hypothese, Ansätzen und Wiederholungen.",
+        "hints": [
+          "Welcher Faktor wird verändert, welche bleiben gleich?",
+          "Woran erkennst du am Ende, ob die Hypothese stimmt?"
+        ],
+        "model": "Hypothese: Im Dunkeln keimen mehr Kressesamen als im Hellen. Ich lege zwei Schalen mit gleich viel Watte, gleich viel Wasser und je 20 Samen an und stelle sie an einen gleich warmen Ort. Nur eine Schale decke ich lichtdicht ab. Jeden Ansatz baue ich dreimal auf. Nach drei Tagen zähle ich die gekeimten Samen und vergleiche. Sind es im Dunkeln deutlich mehr, ist die Hypothese bestätigt, sonst widerlegt.",
+        "criteria": [
+          "Ich formuliere eine überprüfbare Hypothese.",
+          "Ich verändere nur den Faktor Licht und halte die anderen gleich.",
+          "Ich plane Wiederholungen und sage, wie ich die Daten auswerte."
+        ]
+      }
+    },
+    "figures": ["erkenntnisweg"],
+    "lab": "fairTest"
+  },
+  {
+    "id": "bg5-arbeitstechniken",
+    "lb": 1,
+    "title": "Arbeitstechniken im Labor und im Freiland",
+    "period": "NT5 2.1 · Erkenntnisse gewinnen – kommunizieren – bewerten",
+    "intro": "Becherglas, Thermometer, Waage, Lupe: Wer sie richtig benutzt, bekommt verlässliche Ergebnisse und arbeitet sicher. Draußen gelten eigene Regeln.",
+    "paragraphs": [
+      "Im Biologieraum arbeitest du mit Glasgeräten. Im Becherglas mischst du Flüssigkeiten, im Reagenzglas untersuchst du kleine Proben, im Erlenmeyerkolben kann man Flüssigkeiten schwenken, ohne dass sie herausschwappen. Die Temperatur bestimmst du mit dem Thermometer: Es bleibt so lange in der Flüssigkeit, bis die Anzeige sich nicht mehr ändert, und du liest auf Augenhöhe ab. Für die Massenbestimmung stellst du die Waage zuerst auf null, gegebenenfalls mit dem leeren Gefäß darauf, und gibst den Wert mit Einheit an, etwa 12,5 g.",
+      "Sicheres Arbeiten heißt: erst die Anleitung lesen, dann beginnen, eine Schutzbrille tragen, wenn Flüssigkeiten erhitzt werden oder spritzen können, lange Haare zusammenbinden und im Fachraum nichts essen oder trinken. Im Freiland bleibst du auf den Wegen, pflückst nur wenige Exemplare häufiger Pflanzen und lässt geschützte Arten stehen. Tiere beobachtest du, ohne sie zu verletzen, und setzt sie dort zurück, wo du sie gefunden hast. Nach jeder Untersuchung räumst du auf und wäschst die Hände."
+    ],
+    "takeaway": "Messgeräte richtig benutzen: Thermometer auf Augenhöhe ablesen, Waage vorher auf null stellen, Werte immer mit Einheit notieren. Sicherheitsregeln im Fachraum und Verhaltensregeln im Freiland schützen dich, andere und die Natur.",
+    "sourceIds": ["lehrplan", "kx-thermometer", "kx-waage", "kx-lupe"],
+    "quiz": {
+      "question": "Was musst du tun, bevor du die Masse von Samen in einer Schale bestimmst?",
+      "answer": "Die leere Schale auf die Waage stellen und die Anzeige auf null setzen",
+      "wrong": [
+        "Die Samen in der Hand schätzen und den Wert aufschreiben",
+        "Die Samen samt Schale wiegen und nichts abziehen"
+      ],
+      "explanation": "Mit dem Nullstellen (Tarieren) zählt die Waage nur die Samen, nicht die Schale."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Gerät oder Regel?",
+      "instruction": "Ordne jede Situation dem passenden Bereich zu.",
+      "categories": ["Messen", "Sicherheit im Fachraum", "Verhalten im Freiland"],
+      "entries": [
+        { "text": "Thermometer warten lassen, bis die Anzeige stillsteht", "target": 0, "feedback": "Erst dann zeigt das Thermometer die Temperatur der Flüssigkeit." },
+        { "text": "Waage vor dem Wiegen auf null stellen", "target": 0, "feedback": "Sonst wird das Gefäß mitgewogen." },
+        { "text": "Schutzbrille aufsetzen, bevor Wasser erhitzt wird", "target": 1, "feedback": "Spritzer können die Augen verletzen." },
+        { "text": "Keine Probe in den Mund nehmen", "target": 1, "feedback": "Im Fachraum wird nichts gegessen oder probiert." },
+        { "text": "Nur wenige Blüten häufiger Pflanzen pflücken", "target": 2, "feedback": "So bleibt die Wiese erhalten." },
+        { "text": "Käfer nach dem Beobachten am Fundort freilassen", "target": 2, "feedback": "Tiere gehören in ihren Lebensraum zurück." }
+      ],
+      "conclusion": "Genaues Messen und sicheres Verhalten gehören zusammen: Nur so sind Ergebnisse verlässlich und niemand kommt zu Schaden."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Beschreibe in drei Schritten, wie du die Temperatur von Wasser in einem Becherglas richtig misst.",
+        "hints": [
+          "Wo muss die Spitze des Thermometers sein?",
+          "Wann und wie liest du ab?"
+        ],
+        "model": "Zuerst tauche ich das Thermometer so ins Wasser, dass die Spitze ganz eingetaucht ist, aber den Boden nicht berührt. Dann warte ich, bis sich die Anzeige nicht mehr verändert. Zum Schluss lese ich auf Augenhöhe ab und notiere den Wert mit Einheit, zum Beispiel 23 °C.",
+        "criteria": [
+          "Ich beschreibe das richtige Eintauchen.",
+          "Ich nenne das Warten, bis die Anzeige stillsteht.",
+          "Ich lese auf Augenhöhe ab und notiere mit Einheit."
+        ]
+      },
+      "2": {
+        "prompt": "Eure Klasse untersucht eine Wiese. Formuliere vier Regeln für die Exkursion und begründe jede kurz.",
+        "hints": [
+          "Denke an deine Sicherheit und an die Lebewesen.",
+          "Was passiert mit gesammelten Pflanzen und Tieren?"
+        ],
+        "model": "1. Wir bleiben in der Gruppe und auf den Wegen, damit niemand verloren geht und wenig zertreten wird. 2. Wir pflücken nur wenige Exemplare häufiger Pflanzen, damit die Wiese artenreich bleibt. 3. Tiere beobachten wir vorsichtig und lassen sie am Fundort frei, weil sie dort ihren Lebensraum haben. 4. Nach der Exkursion waschen wir die Hände, weil an Pflanzen und Erde Keime oder Giftstoffe sein können.",
+        "criteria": [
+          "Ich nenne vier verschiedene Regeln.",
+          "Jede Regel ist begründet.",
+          "Ich berücksichtige Sicherheit und Naturschutz."
+        ]
+      }
+    },
+    "figures": ["laborgeraete", "sicherheitsregeln"]
+  },
+  {
+    "id": "bg5-fehlerquellen",
+    "lb": 1,
+    "title": "Fehlerquellen finden und vermeiden",
+    "period": "NT5 2.1 · Erkenntnisse gewinnen – kommunizieren – bewerten",
+    "intro": "Zwei Gruppen machen denselben Versuch und kommen zu verschiedenen Ergebnissen. Woran kann das liegen?",
+    "paragraphs": [
+      "Jede Untersuchung kann Fehlerquellen haben. Manche entstehen beim Messen: Wer schräg auf ein Thermometer schaut, liest einen zu hohen oder zu niedrigen Wert ab; wer die Waage nicht auf null stellt, wiegt das Gefäß mit. Andere entstehen bei der Planung: Wenn zwei Ansätze nicht gleich behandelt werden, etwa einer in der Sonne steht und der andere im Schatten, weißt du nicht mehr, welcher Faktor das Ergebnis verursacht hat. Auch eine verunreinigte Probe oder eine Beobachtung, die erst Stunden später aufgeschrieben wird, kann das Ergebnis verfälschen.",
+      "Aus den Fehlerquellen folgt, wie man sie vermeidet: gewissenhaft planen, sorgfältig arbeiten und genau dokumentieren. Vor dem Versuch legst du fest, was gleich bleiben muss. Während des Versuchs notierst du Beobachtungen sofort. Und du wiederholst Messungen: Liegen drei Messwerte dicht beieinander, kannst du ihnen eher vertrauen als einem einzelnen Wert. Weicht ein Wert stark ab, suchst du nach dem Grund, statt ihn einfach wegzulassen."
+    ],
+    "takeaway": "Fehlerquellen entstehen beim Messen (schräg ablesen, Waage nicht genullt), bei der Planung (Ansätze ungleich behandelt) und beim Dokumentieren. Gewissenhafte Planung, sorgfältiges Arbeiten und Wiederholungen machen Ergebnisse verlässlich.",
+    "sourceIds": ["lehrplan", "kx-experiment", "kx-thermometer"],
+    "quiz": {
+      "question": "Gruppe A stellt ihre Kresseschale ans Fenster, Gruppe B ihre in den Schrank. Beide gießen unterschiedlich viel. Was ist das Problem?",
+      "answer": "Es unterscheiden sich mehrere Faktoren, deshalb ist unklar, was das Ergebnis verursacht",
+      "wrong": [
+        "Kresse braucht kein Wasser, deshalb ist das Gießen egal",
+        "Es gibt kein Problem, solange beide Gruppen genau messen"
+      ],
+      "explanation": "Licht und Wassermenge sind verschieden. Ein Unterschied im Wachstum lässt sich keinem der beiden Faktoren sicher zuordnen."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Wo steckt der Fehler?",
+      "instruction": "Ordne jede Situation der Art der Fehlerquelle zu.",
+      "categories": ["Messfehler", "Planungsfehler", "Fehler beim Dokumentieren"],
+      "entries": [
+        { "text": "Das Thermometer wird von oben schräg abgelesen.", "target": 0, "feedback": "Beim schrägen Blick verschiebt sich der abgelesene Wert." },
+        { "text": "Die Waage zeigt vor dem Wiegen schon 3 g an.", "target": 0, "feedback": "Alle Werte sind dann um 3 g zu hoch." },
+        { "text": "Ein Ansatz steht in der Sonne, der andere im Schatten.", "target": 1, "feedback": "Ein zweiter Faktor verändert das Ergebnis." },
+        { "text": "Der Versuch wird nur ein einziges Mal durchgeführt.", "target": 1, "feedback": "Ohne Wiederholung fällt ein zufälliger Fehler nicht auf." },
+        { "text": "Die Beobachtung wird erst am nächsten Tag aus dem Gedächtnis notiert.", "target": 2, "feedback": "Erinnerungen sind ungenau." },
+        { "text": "Im Protokoll fehlt, wie viel Wasser verwendet wurde.", "target": 2, "feedback": "Ohne diese Angabe kann niemand den Versuch wiederholen." }
+      ],
+      "conclusion": "Wer Fehlerquellen kennt, kann sie schon bei der Planung vermeiden."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Drei Messungen der Wassertemperatur ergeben 21 °C, 22 °C und 35 °C. Was schließt du daraus und was tust du?",
+        "hints": [
+          "Welcher Wert passt nicht zu den anderen?",
+          "Was könnte bei dieser Messung schiefgegangen sein?"
+        ],
+        "model": "Die Werte 21 °C und 22 °C liegen dicht beieinander, 35 °C weicht stark ab. Wahrscheinlich ist bei dieser Messung ein Fehler passiert, zum Beispiel hat das Thermometer vorher in warmem Wasser gesteckt oder wurde zu früh abgelesen. Ich suche nach dem Grund, notiere ihn und wiederhole die Messung, statt den Wert einfach wegzulassen.",
+        "criteria": [
+          "Ich erkenne den abweichenden Wert.",
+          "Ich nenne eine mögliche Fehlerquelle.",
+          "Ich schlage vor, die Messung zu wiederholen und den Grund zu notieren."
+        ]
+      },
+      "2": {
+        "prompt": "Lena misst, wie schnell Eiswürfel in Wasser und in Salzwasser schmelzen. Sie verwendet verschieden große Eiswürfel. Beurteile ihren Versuch und verbessere ihn.",
+        "hints": [
+          "Welche Faktoren müssen gleich sein?",
+          "Wie wird der Versuch verlässlicher?"
+        ],
+        "model": "Der Versuch ist nicht fair, weil die Eiswürfel verschieden groß sind. Ein großer Eiswürfel braucht länger, auch ohne Salz. Ich würde gleich große Eiswürfel aus derselben Form nehmen, gleich viel Wasser mit gleicher Temperatur verwenden und nur das Salz verändern. Jeden Ansatz würde ich dreimal durchführen und die Zeiten sofort notieren.",
+        "criteria": [
+          "Ich benenne die Fehlerquelle (unterschiedliche Größe).",
+          "Ich nenne Faktoren, die gleich bleiben müssen.",
+          "Ich schlage Wiederholungen und genaues Dokumentieren vor."
+        ]
+      }
+    },
+    "figures": ["ablesefehler"]
+  },
+  {
+    "id": "bg5-nachweise",
+    "lb": 1,
+    "title": "Stoffe nachweisen: Stärke, Fett und Kohlenstoffdioxid",
+    "period": "NT5 2.1 · Erkenntnisse gewinnen – kommunizieren – bewerten",
+    "intro": "Steckt Stärke in der Kartoffel? Fett in der Nuss? Kohlenstoffdioxid in deinem Atem? Mit einfachen Nachweisreaktionen kannst du es sichtbar machen.",
+    "paragraphs": [
+      "Mit dem Stärkenachweis prüfst du, ob eine Probe Stärke enthält. Du tropfst braune Iod-Kaliumiodid-Lösung darauf. Färbt sie sich blauschwarz, ist Stärke vorhanden, zum Beispiel in einer Kartoffelscheibe oder in Brot. Bleibt sie braun, ist keine oder kaum Stärke nachweisbar. Traubenzucker ist zwar auch ein Kohlenhydrat, aber keine Stärke: Er bleibt braun. Bei der Fettfleckprobe reibst du eine Probe auf Papier und lässt es trocknen. Ein Wasserfleck verschwindet; bleibt ein durchscheinender Fleck, der gegen das Licht hell schimmert, enthält die Probe Fett.",
+      "Kalkwasser weist Kohlenstoffdioxid nach. Bläst du mit einem Strohhalm Ausatemluft hindurch, wird das klare Kalkwasser schnell milchig trüb. Leitest du gleich lange Raumluft hindurch, bleibt es fast klar, denn Raumluft enthält nur sehr wenig Kohlenstoffdioxid. Jeder Nachweis zeigt nur den Stoff, für den er gedacht ist. Ein negatives Ergebnis ist auch ein Ergebnis. Iod-Kaliumiodid-Lösung und Kalkwasser verwendest du nur nach Anleitung und mit Schutzbrille."
+    ],
+    "takeaway": "Stärkenachweis: Iod-Kaliumiodid-Lösung wird blauschwarz. Fettfleckprobe: ein durchscheinender Fleck bleibt nach dem Trocknen. Kalkwasserprobe: Kalkwasser wird durch Kohlenstoffdioxid milchig trüb.",
+    "sourceIds": ["lehrplan", "wp-iodprobe", "wp-kalkwasser", "kx-fett"],
+    "quiz": {
+      "question": "Du tropfst Iod-Kaliumiodid-Lösung auf eine Kartoffelscheibe und sie färbt sich blauschwarz. Was hast du nachgewiesen?",
+      "answer": "Stärke",
+      "wrong": ["Fett", "Kohlenstoffdioxid"],
+      "explanation": "Die Blauschwarzfärbung mit Iod-Kaliumiodid-Lösung ist der Nachweis für Stärke."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Welcher Nachweis passt?",
+      "instruction": "Ordne jeder Frage den passenden Nachweis zu.",
+      "categories": ["Stärkenachweis", "Fettfleckprobe", "Kalkwasserprobe"],
+      "entries": [
+        { "text": "Enthält Brot Stärke?", "target": 0, "feedback": "Iod-Kaliumiodid-Lösung zeigt Stärke an." },
+        { "text": "Wird Reis beim Nachweis blauschwarz?", "target": 0, "feedback": "Reis enthält viel Stärke." },
+        { "text": "Enthalten Erdnüsse Fett?", "target": 1, "feedback": "Ein bleibender durchscheinender Fleck zeigt Fett." },
+        { "text": "Ist in Kartoffelchips Fett?", "target": 1, "feedback": "Chips hinterlassen einen Fettfleck." },
+        { "text": "Atmen wir Kohlenstoffdioxid aus?", "target": 2, "feedback": "Ausatemluft trübt Kalkwasser." },
+        { "text": "Bildet Hefe beim Gären Kohlenstoffdioxid?", "target": 2, "feedback": "Das Gas der Hefe trübt Kalkwasser." }
+      ],
+      "conclusion": "Für jede Frage gibt es den passenden Nachweis. Wer den falschen wählt, bekommt keine Antwort, auch wenn er genau arbeitet."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Beschreibe, wie du nachweist, dass deine Ausatemluft mehr Kohlenstoffdioxid enthält als Raumluft.",
+        "hints": [
+          "Welche Flüssigkeit brauchst du und was beobachtest du?",
+          "Warum brauchst du auch einen Versuch mit Raumluft?"
+        ],
+        "model": "Ich fülle zwei Gläser mit gleich viel klarem Kalkwasser. In das eine blase ich mit einem Strohhalm Ausatemluft, in das andere pumpe ich gleich lange Raumluft. Das Kalkwasser mit Ausatemluft wird schnell milchig trüb, das andere bleibt fast klar. Der Versuch mit Raumluft ist der Vergleich: Er zeigt, dass der Unterschied am Kohlenstoffdioxid aus meinem Atem liegt.",
+        "criteria": [
+          "Ich nenne Kalkwasser und die Trübung als Beobachtung.",
+          "Ich beschreibe den Vergleich mit Raumluft.",
+          "Ich erkläre, warum der Vergleich nötig ist."
+        ]
+      },
+      "2": {
+        "prompt": "Eine Packung Butterkekse soll „ohne Fett“ sein. Plane, wie du das prüfst, und sage, welches Ergebnis die Aussage widerlegen würde.",
+        "hints": [
+          "Welcher Nachweis zeigt Fett?",
+          "Womit vergleichst du, damit du das Ergebnis richtig deutest?"
+        ],
+        "model": "Ich zerdrücke einen Keks und reibe etwas davon auf ein Stück Papier. Daneben mache ich zum Vergleich einen Fleck mit Wasser und einen mit Speiseöl. Nach dem Trocknen halte ich das Papier gegen das Licht. Bleibt beim Keks wie beim Öl ein durchscheinender Fleck, enthält er Fett und die Aussage ist widerlegt. Verschwindet der Fleck wie beim Wasser, ist kein Fett nachweisbar.",
+        "criteria": [
+          "Ich wähle die Fettfleckprobe.",
+          "Ich plane Vergleichsflecken mit Wasser und Öl.",
+          "Ich sage, welches Ergebnis die Aussage widerlegt."
+        ]
+      }
+    },
+    "figures": ["nachweise-tafel"],
+    "lab": "nachweis"
+  },
+  {
+    "id": "bg5-mikroskop",
+    "lb": 1,
+    "title": "Mit dem Lichtmikroskop arbeiten",
+    "period": "NT5 2.1 · Erkenntnisse gewinnen – kommunizieren – bewerten",
+    "intro": "Mit bloßem Auge siehst du keine Zellen. Das Lichtmikroskop vergrößert so stark, dass die Bausteine der Lebewesen sichtbar werden.",
+    "paragraphs": [
+      "Beim Lichtmikroskop durchleuchtet eine Lampe von unten das dünne Präparat auf dem Objekttisch. Zwei Linsensysteme vergrößern nacheinander: zuerst das Objektiv dicht über dem Präparat, dann das Okular, in das du hineinschaust. Die Gesamtvergrößerung erhältst du, indem du beide Vergrößerungen malnimmst: Okular 10-fach · Objektiv 40-fach = 400-fach. Am Objektivrevolver wechselst du zwischen den Objektiven. Mit dem Grobtrieb und dem Feintrieb stellst du das Bild scharf, mit der Blende regelst du Helligkeit und Kontrast.",
+      "Du arbeitest immer in derselben Reihenfolge: Präparat auf den Objekttisch legen, kleinstes Objektiv einstellen, von der Seite schauend den Abstand verringern, dann durch das Okular blicken und mit dem Grobtrieb, zuletzt mit dem Feintrieb scharf stellen. Erst wenn das Bild scharf ist, schiebst du die interessante Stelle in die Mitte und wechselst zum stärkeren Objektiv. Dort stellst du nur noch mit dem Feintrieb nach und öffnest die Blende etwas, weil das Bild bei starker Vergrößerung dunkler wird. So verhinderst du, dass das Objektiv das Präparat berührt und beschädigt."
+    ],
+    "takeaway": "Gesamtvergrößerung = Vergrößerung des Okulars · Vergrößerung des Objektivs. Immer mit dem kleinsten Objektiv beginnen, scharf stellen, dann erst zur stärkeren Vergrößerung wechseln und mit dem Feintrieb nachstellen.",
+    "sourceIds": ["lehrplan", "kx-mikroskop", "wp-lichtmikroskop"],
+    "quiz": {
+      "question": "Das Okular vergrößert 10-fach, das Objektiv 40-fach. Wie stark ist die Gesamtvergrößerung?",
+      "answer": "400-fach",
+      "wrong": ["50-fach", "4-fach"],
+      "explanation": "Die Vergrößerungen werden multipliziert: 10 · 40 = 400."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Schritt für Schritt mikroskopieren",
+      "instruction": "Ordne die Arbeitsschritte in die richtige Reihenfolge.",
+      "categories": [],
+      "entries": [
+        { "text": "Präparat auf den Objekttisch legen und festklemmen", "target": 0, "feedback": "Das Präparat liegt über der Öffnung, durch die das Licht kommt." },
+        { "text": "Kleinstes Objektiv einstellen und Lampe einschalten", "target": 1, "feedback": "Mit kleiner Vergrößerung findest du das Objekt leichter." },
+        { "text": "Von der Seite schauend den Abstand zum Präparat verringern", "target": 2, "feedback": "So stößt das Objektiv nicht gegen das Deckglas." },
+        { "text": "Durch das Okular schauen und mit dem Grobtrieb scharf stellen", "target": 3, "feedback": "Jetzt wird der Abstand vergrößert, bis das Bild erscheint." },
+        { "text": "Interessante Stelle in die Bildmitte schieben", "target": 4, "feedback": "Bei stärkerer Vergrößerung siehst du nur noch einen kleinen Ausschnitt." },
+        { "text": "Stärkeres Objektiv einschwenken und mit dem Feintrieb nachstellen", "target": 5, "feedback": "Der Feintrieb verändert den Abstand nur ganz wenig." }
+      ],
+      "conclusion": "Wer diese Reihenfolge einhält, findet sein Objekt schnell und schont Präparat und Mikroskop."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre, warum du immer mit dem kleinsten Objektiv beginnst.",
+        "hints": [
+          "Wie groß ist der Ausschnitt, den du bei kleiner Vergrößerung siehst?",
+          "Wie groß ist der Abstand zwischen Objektiv und Präparat?"
+        ],
+        "model": "Mit dem kleinsten Objektiv sehe ich einen großen Ausschnitt des Präparats und finde die interessante Stelle schnell. Außerdem ist der Abstand zwischen Objektiv und Präparat groß, sodass ich beim Scharfstellen das Deckglas nicht so leicht berühre. Erst wenn das Bild scharf ist, wechsle ich zur stärkeren Vergrößerung.",
+        "criteria": [
+          "Ich nenne den größeren Bildausschnitt.",
+          "Ich nenne den größeren Abstand zum Präparat.",
+          "Ich beschreibe die richtige Reihenfolge."
+        ]
+      },
+      "2": {
+        "prompt": "Jonas sieht bei 400-facher Vergrößerung nur ein dunkles, verschwommenes Bild. Nenne zwei mögliche Ursachen und was er tun kann.",
+        "hints": [
+          "Was passiert mit der Helligkeit bei starker Vergrößerung?",
+          "Mit welchem Teil stellt man bei 400-fach scharf?"
+        ],
+        "model": "Bei starker Vergrößerung gelangt weniger Licht ins Auge. Jonas sollte die Blende öffnen oder die Lampe heller stellen. Das Bild ist verschwommen, weil der Abstand nicht stimmt. Er sollte vorsichtig mit dem Feintrieb nachstellen. Klappt es nicht, wechselt er zurück zum kleinen Objektiv, stellt dort scharf und schwenkt dann erneut auf das 40er-Objektiv.",
+        "criteria": [
+          "Ich nenne zu wenig Licht als Ursache und eine Abhilfe.",
+          "Ich nenne fehlende Schärfe und den Feintrieb.",
+          "Ich beschreibe einen sinnvollen Neustart mit kleiner Vergrößerung."
+        ]
+      }
+    },
+    "figures": ["mikroskop-bau"],
+    "lab": "microscope"
+  },
+  {
+    "id": "bg5-praeparat-zeichnen",
+    "lb": 1,
+    "title": "Präparate herstellen und biologisch zeichnen",
+    "period": "NT5 2.1 · Erkenntnisse gewinnen – kommunizieren – bewerten",
+    "intro": "Damit du Zellen im Mikroskop siehst, brauchst du ein dünnes Präparat. Was du siehst, hältst du in einer beschrifteten Zeichnung fest.",
+    "paragraphs": [
+      "Für ein Frischpräparat gibst du einen Tropfen Wasser auf einen sauberen Objektträger. Darauf legst du ein sehr dünnes Objekt, zum Beispiel ein Stück Zwiebelhaut, das du mit der Pinzette abziehst, ohne Schnitt. Dann setzt du ein Deckgläschen schräg an den Rand des Tropfens und senkst es langsam ab. So entweicht die Luft und es entstehen keine Luftblasen, die im Mikroskop wie dicke schwarze Ringe aussehen. Sind Zellbestandteile schlecht zu erkennen, färbst du an: Du gibst einen Tropfen Farbstofflösung an eine Seite des Deckgläschens und saugst ihn mit Filterpapier von der anderen Seite unter dem Glas durch. Viele Farbstoffe machen besonders den Zellkern deutlich sichtbar.",
+      "Eine biologische Zeichnung ist kein Kunstwerk, sondern eine genaue Dokumentation. Du zeichnest mit gespitztem Bleistift in klaren, durchgehenden Linien, ohne Schatten und Farbe. Du zeichnest nur, was du wirklich siehst, meist einen Ausschnitt mit wenigen Zellen, groß genug, dass Einzelheiten erkennbar sind. Die Beschriftungen schreibst du rechts daneben und verbindest sie mit geraden Linien, die sich nicht kreuzen. Überschrift, Name des Objekts und Vergrößerung gehören dazu."
+    ],
+    "takeaway": "Frischpräparat: Wassertropfen, dünnes Objekt, Deckgläschen schräg absenken, bei Bedarf anfärben. Biologische Zeichnung: Bleistift, klare Linien, nur Gesehenes, Beschriftung mit geraden Linien, Überschrift und Vergrößerung.",
+    "sourceIds": ["lehrplan", "kx-mikroskop", "wp-lichtmikroskop"],
+    "quiz": {
+      "question": "Warum setzt man das Deckgläschen schräg an und senkt es langsam ab?",
+      "answer": "Damit keine Luftblasen unter dem Deckgläschen eingeschlossen werden",
+      "wrong": [
+        "Damit sich das Präparat schneller anfärbt",
+        "Damit das Deckgläschen nicht am Objektiv kleben bleibt"
+      ],
+      "explanation": "Beim langsamen Absenken schiebt das Glas die Luft vor sich her nach außen. Luftblasen würden das Bild stören."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Gute oder schlechte Zeichnung?",
+      "instruction": "Entscheide, ob die Beschreibung zu einer guten biologischen Zeichnung passt.",
+      "categories": ["passt zur Regel", "verstößt gegen die Regel"],
+      "entries": [
+        { "text": "Die Zellwände sind mit Bleistift als klare Linien gezeichnet.", "target": 0, "feedback": "Klare Bleistiftlinien sind richtig." },
+        { "text": "Die Beschriftungen stehen rechts und sind mit dem Lineal verbunden.", "target": 0, "feedback": "So bleibt die Zeichnung übersichtlich." },
+        { "text": "Unter der Zeichnung steht: Zwiebelhaut, 100-fach.", "target": 0, "feedback": "Objekt und Vergrößerung gehören dazu." },
+        { "text": "Die Zellkerne sind mit Buntstift lila ausgemalt.", "target": 1, "feedback": "Farbe und Schatten lässt man weg." },
+        { "text": "Der Zellkern wurde dazugezeichnet, weil er im Buch zu sehen ist.", "target": 1, "feedback": "Gezeichnet wird nur, was man selbst sieht." },
+        { "text": "Die Zeichnung ist briefmarkengroß in der Ecke.", "target": 1, "feedback": "Zu klein: Einzelheiten sind nicht erkennbar." }
+      ],
+      "conclusion": "Eine gute biologische Zeichnung ist ehrlich, groß und übersichtlich beschriftet."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Beschreibe in vier Schritten, wie du ein Frischpräparat von Zwiebelhaut herstellst.",
+        "hints": [
+          "Womit beginnst du auf dem Objektträger?",
+          "Wie vermeidest du Luftblasen?"
+        ],
+        "model": "1. Ich gebe einen Tropfen Wasser auf einen sauberen Objektträger. 2. Mit der Pinzette ziehe ich ein dünnes Häutchen von der Innenseite einer Zwiebelschuppe ab und lege es flach in den Tropfen. 3. Ich setze das Deckgläschen schräg an und senke es langsam ab, damit keine Luftblasen entstehen. 4. Um die Zellkerne besser zu sehen, färbe ich mit einem Tropfen Farbstoff an und sauge ihn mit Filterpapier unter dem Deckgläschen durch.",
+        "criteria": [
+          "Die Schritte stehen in der richtigen Reihenfolge.",
+          "Ich nenne das schräge Absenken gegen Luftblasen.",
+          "Ich beschreibe das Anfärben mit Filterpapier."
+        ]
+      },
+      "2": {
+        "prompt": "Ein Mitschüler hat eine Zeichnung abgegeben: farbig, ohne Überschrift, mit vielen Zellen, die er „ungefähr“ abgezeichnet hat. Gib ihm eine Rückmeldung mit drei Verbesserungen.",
+        "hints": [
+          "Welche Regeln für biologische Zeichnungen kennst du?",
+          "Warum sind diese Regeln für die Naturwissenschaft wichtig?"
+        ],
+        "model": "Deine Zeichnung zeigt viel, aber sie ist keine biologische Zeichnung. Erstens: Zeichne mit Bleistift ohne Farbe, damit die Linien klar sind. Zweitens: Zeichne nur wenige Zellen, aber genau so, wie du sie siehst, nicht ungefähr. Drittens: Schreibe eine Überschrift mit dem Objekt und der Vergrößerung dazu und beschrifte die Teile rechts mit geraden Linien. So kann jeder nachvollziehen, was du beobachtet hast.",
+        "criteria": [
+          "Ich nenne drei verschiedene Verbesserungen.",
+          "Die Verbesserungen entsprechen den Zeichenregeln.",
+          "Ich begründe, warum genaue Zeichnungen wichtig sind."
+        ]
+      }
+    },
+    "figures": ["praeparat-schritte", "zeichenregeln"]
+  },
+  {
+    "id": "bg5-modelle",
+    "lb": 1,
+    "title": "Modelle in der Biologie",
+    "period": "NT5 2.1 · Erkenntnisse gewinnen – kommunizieren – bewerten",
+    "intro": "Den echten Brustkorb kann man nicht aufschrauben. Ein Modell aus Glasglocke und Luftballons zeigt trotzdem, wie das Einatmen funktioniert.",
+    "paragraphs": [
+      "Modelle sind vereinfachte Darstellungen der Wirklichkeit. Sie heben das Wesentliche hervor und lassen Nebensächliches weg, sind oft größer oder kleiner als das Original und aus anderem Material. Strukturmodelle zeigen den Bau, etwa ein Torso, in dem du die Lage der Organe ansehen kannst, oder ein Skelettmodell. Funktionsmodelle zeigen, wie etwas arbeitet. Beim Lungenmodell stehen zwei Luftballons für die Lungenflügel, die Glasglocke für den Brustkorb und eine Gummihaut am Boden für das Zwerchfell. Ziehst du die Gummihaut nach unten, füllen sich die Ballons mit Luft wie die Lunge beim Einatmen.",
+      "Biologen verwenden Modelle, weil man vieles nicht direkt beobachten kann: Es ist zu klein, liegt im Körper verborgen oder läuft zu schnell ab. Jedes Modell hat aber Grenzen. Im Lungenmodell gibt es keine Lungenbläschen und kein Blut, und die Glasglocke bewegt sich nicht wie die Rippen. Deshalb vergleichst du ein Modell immer mit dem Original: Was stimmt überein, was ist anders? Wenn du selbst ein Modell baust, etwa ein Armmodell aus Pappe und Gummibändern, prüfst du genau diese Fragen."
+    ],
+    "takeaway": "Modelle vereinfachen: Sie zeigen Wesentliches und lassen anderes weg. Strukturmodelle zeigen den Bau, Funktionsmodelle die Arbeitsweise. Ein Modell vergleicht man immer mit dem Original, um seine Grenzen zu erkennen.",
+    "sourceIds": ["lehrplan", "kx-modell", "kx-lunge"],
+    "quiz": {
+      "question": "Wofür steht beim Lungenmodell die Gummihaut am Boden der Glasglocke?",
+      "answer": "Für das Zwerchfell",
+      "wrong": ["Für die Lungenflügel", "Für die Luftröhre"],
+      "explanation": "Zieht man die Gummihaut nach unten, vergrößert sich der Raum wie beim Senken des Zwerchfells, und Luft strömt in die Ballons."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Modell und Original vergleichen",
+      "instruction": "Stimmt die Aussage über das Lungenmodell mit der echten Lunge überein?",
+      "categories": ["stimmt mit dem Original überein", "Grenze des Modells"],
+      "entries": [
+        { "text": "Wenn sich der Raum vergrößert, strömt Luft hinein.", "target": 0, "feedback": "Genau so funktioniert das Einatmen." },
+        { "text": "Es gibt zwei Lungenflügel, die über ein Rohr mit Luft versorgt werden.", "target": 0, "feedback": "Die Ballons hängen an einem Rohr wie die Lungenflügel an der Luftröhre." },
+        { "text": "Das Zwerchfell liegt unterhalb der Lunge.", "target": 0, "feedback": "Die Gummihaut liegt wie das Zwerchfell unten." },
+        { "text": "Die Ballons sind innen hohl und glatt.", "target": 1, "feedback": "Die echte Lunge besteht aus Millionen Lungenbläschen." },
+        { "text": "Im Modell fließt kein Blut.", "target": 1, "feedback": "Der Gasaustausch mit dem Blut fehlt im Modell." },
+        { "text": "Die Glasglocke ist starr.", "target": 1, "feedback": "Der echte Brustkorb hebt und senkt sich mit den Rippen." }
+      ],
+      "conclusion": "Ein Modell ist nützlich, wenn man weiß, was es zeigt und was nicht."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre den Unterschied zwischen einem Strukturmodell und einem Funktionsmodell an je einem Beispiel.",
+        "hints": [
+          "Was kann man an einem Torso ablesen?",
+          "Was kann man mit einem Lungenmodell vorführen?"
+        ],
+        "model": "Ein Strukturmodell zeigt den Bau, zum Beispiel ein Torso, an dem man sieht, wo Herz, Lunge und Magen liegen und wie groß sie ungefähr sind. Ein Funktionsmodell zeigt, wie etwas arbeitet, zum Beispiel das Lungenmodell: Zieht man an der Gummihaut, strömt Luft in die Ballons wie beim Einatmen.",
+        "criteria": [
+          "Ich erkläre das Strukturmodell richtig.",
+          "Ich erkläre das Funktionsmodell richtig.",
+          "Ich nenne zu jedem ein passendes Beispiel."
+        ]
+      },
+      "2": {
+        "prompt": "Du baust ein Modell des Darms aus einem Stück Gartenschlauch. Bewerte, was das Modell zeigt und wo seine Grenzen liegen.",
+        "hints": [
+          "Welche Eigenschaften des Darms stellt der Schlauch dar?",
+          "Was kann der Schlauch nicht zeigen?"
+        ],
+        "model": "Der Gartenschlauch zeigt, dass der Darm ein langer, innen hohler Schlauch ist, durch den der Nahrungsbrei wandert. Er zeigt aber nicht, dass die Darmwand durch Zotten gefaltet ist und eine riesige Oberfläche hat. Außerdem fehlen die Muskeln, die den Brei weiterschieben, und die Blutgefäße, in die die Nährstoffe übergehen. Das Modell eignet sich also für die Form, nicht für die Funktion.",
+        "criteria": [
+          "Ich nenne mindestens eine Gemeinsamkeit mit dem Original.",
+          "Ich nenne mindestens zwei Grenzen des Modells.",
+          "Ich ziehe ein begründetes Fazit."
+        ]
+      }
+    },
+    "figures": ["modell-original", "struktur-funktion"]
+  },
+  {
+    "id": "bg5-protokoll-diagramme",
+    "lb": 1,
+    "title": "Protokolle, Tabellen und Diagramme",
+    "period": "NT5 2.1 · Erkenntnisse gewinnen – kommunizieren – bewerten",
+    "intro": "Ein Versuch ist erst fertig, wenn andere ihn verstehen und wiederholen können. Dafür gibt es das Protokoll, Tabellen, Diagramme und schematische Zeichnungen.",
+    "paragraphs": [
+      "Ein naturwissenschaftliches Protokoll hat feste Bestandteile: den Titel mit Frage oder Thema, Aufbau und Durchführung mit Material, Skizze und Arbeitsschritten, die Beobachtung und schließlich die Auswertung und Interpretation. In die Beobachtung gehört nur, was man sieht, hört oder misst, etwa „Das Kalkwasser wird trüb“. Erst in der Auswertung deutest du: „Die Ausatemluft enthält Kohlenstoffdioxid.“ Diese Trennung ist wichtig, denn Beobachtungen bleiben gültig, auch wenn sich eine Deutung später als falsch herausstellt.",
+      "Messwerte trägst du in eine Tabelle mit Spaltenüberschriften und Einheiten ein. Aus der Tabelle kannst du ein Diagramm zeichnen. Ein Säulendiagramm vergleicht einzelne Werte, zum Beispiel den Puls in Ruhe, beim Gehen und beim Rennen. Ein Liniendiagramm zeigt, wie sich ein Wert mit der Zeit verändert, etwa die Temperatur auf einer Wiese im Lauf eines Tages. Für Bau und Funktion eignen sich schematische Übersichtszeichnungen: Sie vereinfachen stark, etwa den Blutkreislauf als Kreis mit Herz, und machen so die Funktion deutlich. Der Wechsel zwischen Text, Tabelle, Diagramm und Zeichnung hilft, Ergebnisse zu erklären."
+    ],
+    "takeaway": "Protokoll: Titel, Aufbau und Durchführung, Beobachtung, Auswertung und Interpretation; Beobachtung und Deutung bleiben getrennt. Tabellen ordnen Messwerte mit Einheiten, Säulendiagramme vergleichen, Liniendiagramme zeigen Veränderungen, schematische Zeichnungen verdeutlichen Bau und Funktion.",
+    "sourceIds": ["lehrplan", "kx-experiment", "kx-naturwissenschaft"],
+    "quiz": {
+      "question": "Welcher Satz gehört ins Protokoll unter „Beobachtung“?",
+      "answer": "Das Kalkwasser wird nach zehn Sekunden milchig trüb.",
+      "wrong": [
+        "Die Ausatemluft enthält also Kohlenstoffdioxid.",
+        "Wir vermuten, dass wir Kohlenstoffdioxid ausatmen."
+      ],
+      "explanation": "Die Beobachtung beschreibt nur, was man sieht. Die Deutung gehört in die Auswertung, die Vermutung in die Hypothese."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Wohin gehört der Satz?",
+      "instruction": "Ordne jeden Satz dem passenden Teil des Protokolls zu.",
+      "categories": ["Titel", "Aufbau und Durchführung", "Beobachtung", "Auswertung und Interpretation"],
+      "entries": [
+        { "text": "Enthält Ausatemluft Kohlenstoffdioxid?", "target": 0, "feedback": "Die Frage steht im Titel." },
+        { "text": "Wir blasen 20 Sekunden mit einem Strohhalm durch 50 mL Kalkwasser.", "target": 1, "feedback": "Das beschreibt die Durchführung." },
+        { "text": "Material: Becherglas, Strohhalm, Kalkwasser, Schutzbrille", "target": 1, "feedback": "Das Material gehört zum Aufbau." },
+        { "text": "Das Kalkwasser wird milchig trüb.", "target": 2, "feedback": "Eine reine Beobachtung." },
+        { "text": "Das Kalkwasser mit Raumluft bleibt fast klar.", "target": 2, "feedback": "Auch der Vergleich wird beobachtet." },
+        { "text": "Die Ausatemluft enthält mehr Kohlenstoffdioxid als Raumluft.", "target": 3, "feedback": "Das ist die Deutung der Beobachtung." }
+      ],
+      "conclusion": "Ein sauber gegliedertes Protokoll erlaubt es jedem, den Versuch zu wiederholen und die Folgerung zu prüfen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Mia misst ihren Puls: in Ruhe 80, nach dem Gehen 100, nach dem Rennen 165 Schläge pro Minute. Lege eine Tabelle an und sage, welches Diagramm passt.",
+        "hints": [
+          "Welche Spalten braucht die Tabelle, welche Einheit?",
+          "Werden einzelne Werte verglichen oder verändert sich etwas mit der Zeit?"
+        ],
+        "model": "Die Tabelle hat zwei Spalten: „Tätigkeit“ und „Puls in Schlägen pro Minute“. Darin stehen Ruhe 80, Gehen 100 und Rennen 165. Weil drei einzelne Werte verglichen werden, passt ein Säulendiagramm mit je einer Säule für Ruhe, Gehen und Rennen. Die Hochachse beschriftet Mia mit „Schläge pro Minute“.",
+        "criteria": [
+          "Meine Tabelle hat sinnvolle Spaltenüberschriften mit Einheit.",
+          "Ich wähle das Säulendiagramm.",
+          "Ich begründe die Wahl mit dem Vergleich einzelner Werte."
+        ]
+      },
+      "2": {
+        "prompt": "Auf einer Wiese wird von 8 bis 18 Uhr jede zweite Stunde die Temperatur gemessen. Welche Darstellungsform wählst du, und warum wäre ein Säulendiagramm hier weniger geeignet?",
+        "hints": [
+          "Was ändert sich hier und womit?",
+          "Was zeigt eine Linie, was Säulen nicht so gut zeigen?"
+        ],
+        "model": "Ich wähle ein Liniendiagramm, weil sich die Temperatur mit der Zeit verändert. Auf der Rechtsachse trage ich die Uhrzeit ein, auf der Hochachse die Temperatur in °C. Die Linie zeigt auf einen Blick, wann es am wärmsten ist und wie schnell es abkühlt. Ein Säulendiagramm würde die Werte nur nebeneinanderstellen; den Verlauf über den Tag sieht man darin schlechter.",
+        "criteria": [
+          "Ich wähle das Liniendiagramm.",
+          "Ich beschrifte die Achsen sinnvoll.",
+          "Ich begründe, warum der Verlauf in der Linie besser sichtbar ist."
+        ]
+      }
+    },
+    "figures": ["protokoll-aufbau", "tabelle-diagramm"]
+  },
+  {
+    "id": "bg5-quellen-fachsprache",
+    "lb": 1,
+    "title": "Quellen auswerten und Fachsprache nutzen",
+    "period": "NT5 2.1 · Erkenntnisse gewinnen – kommunizieren – bewerten",
+    "intro": "Nicht jede Frage lässt sich im Experiment beantworten. Oft hilft ein Text im Schulbuch oder in einem Kinderlexikon. Wichtig ist, genau zu lesen und die Antwort in Fachsprache zu formulieren.",
+    "paragraphs": [
+      "Willst du eine biologische Frage mit einer Quelle beantworten, liest du zuerst die Frage genau und suchst dann gezielt: Welche Stelle im Text, welche Tabelle oder welches Bild passt dazu? Prüfe auch die Quelle selbst. Ein Schulbuch ist für den Unterricht geprüft. Ein populärwissenschaftlicher Text, etwa aus einem Kinderlexikon oder einer Zeitschrift, erklärt Wissen verständlich, aber oft verkürzt. Frage dich: Wer hat das geschrieben, wann, für wen, und nennt der Text Belege? Werbung will verkaufen und ist keine verlässliche Quelle.",
+      "Deine Antwort schreibst du in eigenen Worten und mit Fachbegriffen. Fachsprache macht Aussagen eindeutig: Statt „Die Pflanze trinkt“ sagst du „Die Wurzel nimmt Wasser auf“, statt „Blütenstaub“ sagst du „Pollen“. Wenn du argumentierst, etwa ob man im Fachraum essen darf, verbindest du eine Behauptung mit einer Begründung: „Im Fachraum isst man nicht, weil Chemikalien an die Hände gelangen können.“ Nenne am Ende, woher deine Information stammt."
+    ],
+    "takeaway": "Quellen gezielt auswerten: Frage klären, passende Stelle suchen, Quelle prüfen (wer, wann, für wen, Belege). Antworten in eigenen Worten mit Fachbegriffen formulieren und die Quelle angeben.",
+    "sourceIds": ["lehrplan", "kx-biologie", "kx-naturwissenschaft"],
+    "quiz": {
+      "question": "Welche Formulierung verwendet Fachsprache?",
+      "answer": "Der Bizeps verkürzt sich und zieht den Unterarm nach oben.",
+      "wrong": [
+        "Der Muskel drückt den Arm hoch.",
+        "Im Arm macht irgendwas, dass er sich bewegt."
+      ],
+      "explanation": "Die Fachsprache nennt den Muskel genau und beschreibt richtig, dass Muskeln ziehen und nicht drücken."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Alltagssprache oder Fachsprache?",
+      "instruction": "Ordne jeden Satz zu.",
+      "categories": ["Alltagssprache", "Fachsprache"],
+      "entries": [
+        { "text": "Die Biene sammelt Blütenstaub.", "target": 0, "feedback": "Fachlich heißt es Pollen." },
+        { "text": "Das Herz pumpt die Luft durch den Körper.", "target": 0, "feedback": "Falsch und ungenau: Das Herz pumpt Blut." },
+        { "text": "Im Mikroskop ist alles viel größer.", "target": 0, "feedback": "Fachlich nennt man die Vergrößerung, etwa 100-fach." },
+        { "text": "Die Staubblätter bilden den Pollen.", "target": 1, "feedback": "Genaue Fachbegriffe." },
+        { "text": "Im Dünndarm gelangen Nährstoffe ins Blut.", "target": 1, "feedback": "Fachlich richtig formuliert." },
+        { "text": "Das Okular vergrößert 10-fach.", "target": 1, "feedback": "Eindeutige Angabe mit Fachbegriff." }
+      ],
+      "conclusion": "Fachsprache ist kein Selbstzweck: Sie verhindert Missverständnisse und macht Aussagen überprüfbar."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Formuliere den Satz „Wenn man rennt, schnauft man mehr, weil der Körper mehr Luft will“ in Fachsprache um.",
+        "hints": [
+          "Was genau braucht der Körper aus der Luft?",
+          "Wo im Körper wird es gebraucht?"
+        ],
+        "model": "Beim Rennen steigt die Atemfrequenz, weil die arbeitenden Muskelzellen mehr Sauerstoff für die Zellatmung benötigen. Gleichzeitig muss mehr Kohlenstoffdioxid ausgeatmet werden.",
+        "criteria": [
+          "Ich verwende den Begriff Atemfrequenz oder Atmung.",
+          "Ich nenne Sauerstoff statt „Luft“.",
+          "Ich nenne die Muskelzellen oder die Zellatmung als Grund."
+        ]
+      },
+      "2": {
+        "prompt": "In einer Werbung steht: „Unser Saft enthält 100 % Vitamine und macht dich doppelt so stark.“ Bewerte die Aussage als Quelle für eine Biologie-Hausaufgabe.",
+        "hints": [
+          "Wer ist der Absender und was will er?",
+          "Welche Angaben sind ungenau oder unbelegt?"
+        ],
+        "model": "Die Aussage stammt aus einer Werbung. Der Hersteller will den Saft verkaufen, deshalb ist die Quelle nicht neutral. „100 % Vitamine“ ist ungenau, denn kein Saft besteht nur aus Vitaminen, und „doppelt so stark“ wird nicht belegt. Für die Hausaufgabe nutze ich besser das Schulbuch oder ein Lexikon und gebe diese Quelle an.",
+        "criteria": [
+          "Ich erkenne die Werbeabsicht.",
+          "Ich benenne mindestens eine unbelegte oder ungenaue Angabe.",
+          "Ich schlage eine geeignetere Quelle vor."
+        ]
+      }
+    },
+    "figures": ["quellencheck", "fachsprache"]
+  },
+  {
+    "id": "bg5-wissen-wandelt-sich",
+    "lb": 1,
+    "title": "Wie sich Wissen verändert",
+    "period": "NT5 2.1 · Erkenntnisse gewinnen – kommunizieren – bewerten",
+    "intro": "Lange glaubten Menschen, Maden entstünden von selbst aus verdorbenem Fleisch. Ein einfacher Versuch zeigte, dass das falsch ist.",
+    "paragraphs": [
+      "Wissen in der Naturwissenschaft ist nicht für immer festgelegt. Neue Beobachtungen und Versuche können alte Vorstellungen widerlegen. Ein berühmtes Beispiel ist die Vorstellung der Urzeugung: Viele dachten, kleine Tiere wie Maden entstünden von selbst aus totem Material. Der italienische Arzt Francesco Redi prüfte das 1668 mit Gläsern voller Fleisch. Offene Gläser, in die Fliegen gelangten, enthielten bald Maden. Mit Gaze bedeckte Gläser enthielten keine Maden im Fleisch, obwohl Fliegen ihre Eier auf die Gaze legten. Damit war gezeigt: Maden schlüpfen aus Fliegeneiern.",
+      "Auch über den Blutkreislauf dachte man lange anders. Der Arzt Galen meinte im 2. Jahrhundert, Blut werde ständig neu in der Leber gebildet und im Körper verbraucht. William Harvey zeigte 1628, dass das Herz dasselbe Blut immer wieder im Kreis pumpt. Und erst mit dem Mikroskop sah Robert Hooke 1665 in Kork kleine Kammern, die er Zellen nannte. Wenn du historische und moderne Quellen vergleichst, erkennst du: Altes Wissen wird verworfen oder verändert, wenn neue Erkenntnisse es widerlegen. Das ist keine Schwäche, sondern die Stärke der Naturwissenschaft."
+    ],
+    "takeaway": "Naturwissenschaftliches Wissen verändert sich: Neue Beobachtungen, Versuche und Geräte können alte Vorstellungen widerlegen oder verbessern, wie bei Redis Madenversuch, Harveys Blutkreislauf oder Hookes Zellen.",
+    "sourceIds": ["lehrplan", "wp-redi", "wp-spontanzeugung", "wp-harvey", "wp-hooke"],
+    "quiz": {
+      "question": "Was zeigte Redis Versuch mit den abgedeckten Gläsern?",
+      "answer": "Maden entstehen aus Fliegeneiern, nicht von selbst aus Fleisch",
+      "wrong": [
+        "Maden entstehen von selbst aus Fleisch, wenn es warm ist",
+        "Fleisch verdirbt nur, wenn Luft daran kommt"
+      ],
+      "explanation": "Nur wo Fliegen ihre Eier ablegen konnten, entstanden Maden. Das widerlegte die Vorstellung der Urzeugung von Maden."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Wissen im Wandel",
+      "instruction": "Ordne die Stationen der Wissensgeschichte zeitlich.",
+      "categories": [],
+      "entries": [
+        { "text": "Galen: Blut entsteht ständig neu in der Leber.", "target": 0, "feedback": "Diese Vorstellung galt über tausend Jahre." },
+        { "text": "Harvey: Das Herz pumpt das Blut im Kreis.", "target": 1, "feedback": "1628 widerlegte Harvey Galens Vorstellung." },
+        { "text": "Hooke sieht im Mikroskop „Zellen“ im Kork.", "target": 2, "feedback": "1665: Ein neues Gerät ermöglicht neue Beobachtungen." },
+        { "text": "Redi zeigt: Maden schlüpfen aus Fliegeneiern.", "target": 3, "feedback": "1668: ein Versuch mit Kontrollansätzen." },
+        { "text": "Heute: Alle Lebewesen bestehen aus Zellen.", "target": 4, "feedback": "Aus Hookes Beobachtung wurde eine Grundlage der Biologie." }
+      ],
+      "conclusion": "Jede dieser Erkenntnisse beruhte auf Beobachtung und Versuch und ersetzte eine ältere Vorstellung."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre, welche Rolle die mit Gaze bedeckten Gläser in Redis Versuch spielten.",
+        "hints": [
+          "Was konnte in diese Gläser hinein, was nicht?",
+          "Welche andere Erklärung schließen sie aus?"
+        ],
+        "model": "Die mit Gaze bedeckten Gläser ließen Luft an das Fleisch, aber keine Fliegen. Im Fleisch entstanden keine Maden, nur auf der Gaze lagen Fliegeneier. Damit schloss Redi aus, dass fehlende Luft der Grund war. Es kam also darauf an, ob Fliegen ihre Eier auf das Fleisch legen konnten.",
+        "criteria": [
+          "Ich beschreibe, dass Luft, aber keine Fliegen hineinkonnten.",
+          "Ich nenne das Ergebnis (keine Maden im Fleisch).",
+          "Ich erkläre, welche andere Erklärung so ausgeschlossen wird."
+        ]
+      },
+      "2": {
+        "prompt": "Ein Schulbuch von 1950 und eines von heute erklären denselben Vorgang unterschiedlich. Was solltest du tun, und warum ist das typisch für die Naturwissenschaft?",
+        "hints": [
+          "Welche Quelle ist wahrscheinlich aktueller?",
+          "Warum ändern sich naturwissenschaftliche Erklärungen?"
+        ],
+        "model": "Ich vergleiche beide Erklärungen und prüfe, welche Belege sie nennen. Meist ist das neuere Buch auf dem aktuellen Wissensstand, weil seitdem neue Beobachtungen, Versuche und Geräte dazugekommen sind. Das ist typisch für die Naturwissenschaft: Erklärungen gelten so lange, bis neue Erkenntnisse sie widerlegen oder verbessern. Ich nutze deshalb die aktuelle Quelle und gebe an, woher meine Information stammt.",
+        "criteria": [
+          "Ich vergleiche die Erklärungen und ihre Belege.",
+          "Ich bevorzuge begründet die aktuellere Quelle.",
+          "Ich erkläre, warum sich Wissen verändert."
+        ]
+      }
+    },
+    "figures": ["redi-versuch", "wissen-zeitleiste"]
+  }
+]

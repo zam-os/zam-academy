@@ -1,0 +1,258 @@
+[
+  {
+    "id": "bg5-geschlechtsorgane",
+    "lb": 6,
+    "title": "Bau und Funktion der Geschlechtsorgane",
+    "period": "NT5 2.3 · Fortpflanzung, Wachstum und Individualentwicklung",
+    "intro": "Damit ein Kind entstehen kann, braucht es eine Eizelle und eine Spermienzelle. Die Geschlechtsorgane bilden diese Keimzellen und ermöglichen, dass sie sich treffen.",
+    "paragraphs": [
+      "Die weiblichen Geschlechtsorgane liegen geschützt im Becken. In den beiden Eierstöcken liegen von Geburt an viele unreife Eizellen; ab der Pubertät reift etwa einmal im Monat eine davon heran. Jeder Eierstock ist über einen Eileiter mit der Gebärmutter verbunden. Im Eileiter kann eine Eizelle befruchtet werden. Die Gebärmutter ist ein muskulöses Hohlorgan; in ihr wächst während einer Schwangerschaft ein Kind heran. Die Scheide verbindet die Gebärmutter mit der Außenwelt. Von außen sichtbar ist die Vulva mit den äußeren und inneren Vulvalippen.",
+      "Die männlichen Geschlechtsorgane liegen zum Teil außerhalb des Körpers. In den beiden Hoden im Hodensack entstehen ab der Pubertät ständig neue Spermienzellen; dort ist es etwas kühler als im Bauch, was die Bildung der Spermienzellen erleichtert. Im Nebenhoden reifen sie und werden gespeichert. Beim Samenerguss gelangen sie durch die Spermienleiter weiter; Drüsen wie die Vorsteherdrüse geben Flüssigkeit dazu, so entsteht das Sperma. Es wird durch die Harn-Spermien-Röhre im Penis nach außen abgegeben. Über diese Organe sprichst du mit den Fachbegriffen; sie sind weder peinlich noch Schimpfwörter."
+    ],
+    "takeaway": "Weiblich: Eierstöcke (Eizellen reifen), Eileiter (Ort der Befruchtung), Gebärmutter (hier wächst ein Kind heran), Scheide. Männlich: Hoden (Spermienzellen entstehen), Nebenhoden (Reifung, Speicher), Spermienleiter, Drüsen, Harn-Spermien-Röhre im Penis.",
+    "sourceIds": ["lehrplan", "kx-sexualitaet", "kx-schwangerschaft", "loveline"],
+    "quiz": {
+      "question": "Wo entstehen die Spermienzellen?",
+      "answer": "In den Hoden",
+      "wrong": ["In der Vorsteherdrüse", "Im Penis"],
+      "explanation": "Spermienzellen entstehen ab der Pubertät ständig neu in den Hoden und reifen im Nebenhoden."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Organ und Aufgabe",
+      "instruction": "Ordne jede Aufgabe dem passenden Organ zu.",
+      "categories": ["Eierstock", "Eileiter", "Gebärmutter", "Hoden"],
+      "entries": [
+        { "text": "Hier reift etwa einmal im Monat eine Eizelle heran.", "target": 0, "feedback": "Die Eizellen liegen im Eierstock." },
+        { "text": "Hier trifft eine Eizelle auf Spermienzellen und kann befruchtet werden.", "target": 1, "feedback": "Die Befruchtung findet im Eileiter statt." },
+        { "text": "Er leitet die Eizelle zur Gebärmutter.", "target": 1, "feedback": "Der Eileiter verbindet Eierstock und Gebärmutter." },
+        { "text": "Hier nistet sich eine befruchtete Eizelle ein und ein Kind wächst heran.", "target": 2, "feedback": "Die Gebärmutter ist ein muskulöses Hohlorgan." },
+        { "text": "Ihre Schleimhaut wird jeden Monat neu aufgebaut.", "target": 2, "feedback": "Die Gebärmutterschleimhaut wird für eine mögliche Einnistung vorbereitet." },
+        { "text": "Hier entstehen ab der Pubertät ständig neue Spermienzellen.", "target": 3, "feedback": "Die Hoden bilden die männlichen Keimzellen." }
+      ],
+      "conclusion": "Jedes Organ hat eine klare Aufgabe bei der Fortpflanzung. Mit den Fachbegriffen kannst du sachlich darüber sprechen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Beschreibe den Weg einer Eizelle vom Eierstock bis in die Gebärmutter und nenne die beteiligten Organe.",
+        "hints": [
+          "Wo reift die Eizelle?",
+          "Durch welches Organ wandert sie?"
+        ],
+        "model": "Die Eizelle reift in einem Eierstock heran. Beim Eisprung wird sie freigesetzt und vom trichterförmigen Ende des Eileiters aufgefangen. Durch den Eileiter wandert sie in einigen Tagen zur Gebärmutter. Wurde sie im Eileiter befruchtet, nistet sie sich in der Gebärmutterschleimhaut ein.",
+        "criteria": [
+          "Ich nenne Eierstock, Eileiter und Gebärmutter.",
+          "Die Reihenfolge ist richtig.",
+          "Ich nenne den Eileiter als Ort der Befruchtung."
+        ]
+      },
+      "2": {
+        "prompt": "Vergleiche weibliche und männliche Geschlechtsorgane: Welche Organe haben eine ähnliche Aufgabe?",
+        "hints": [
+          "Welche Organe bilden die Keimzellen?",
+          "Welche Organe leiten die Keimzellen weiter?"
+        ],
+        "model": "Eierstöcke und Hoden haben eine ähnliche Aufgabe: Sie bilden die Keimzellen, die Eierstöcke Eizellen, die Hoden Spermienzellen. Eileiter und Spermienleiter leiten die Keimzellen weiter. Ein Unterschied ist, dass in den Eierstöcken etwa einmal im Monat eine Eizelle reift, während in den Hoden ständig sehr viele Spermienzellen entstehen. Nur der weibliche Körper hat mit der Gebärmutter ein Organ, in dem ein Kind heranwächst.",
+        "criteria": [
+          "Ich vergleiche Eierstöcke und Hoden.",
+          "Ich vergleiche Eileiter und Spermienleiter.",
+          "Ich nenne mindestens einen Unterschied."
+        ]
+      }
+    },
+    "figures": ["weibliche-organe", "maennliche-organe"]
+  },
+  {
+    "id": "bg5-zyklus-befruchtung",
+    "lb": 6,
+    "title": "Zyklus, Befruchtung und Zeugung",
+    "period": "NT5 2.3 · Fortpflanzung, Wachstum und Individualentwicklung",
+    "intro": "Etwa einmal im Monat bereitet sich der weibliche Körper auf eine mögliche Schwangerschaft vor. Kommt keine Befruchtung zustande, beginnt der Zyklus von vorn.",
+    "paragraphs": [
+      "Ab der Pubertät durchläuft der weibliche Körper einen Zyklus, der vereinfacht etwa 28 Tage dauert; er kann aber kürzer oder länger sein, besonders in den ersten Jahren. Der erste Tag der Menstruation, der Regelblutung, ist der erste Zyklustag. Dabei löst sich die Gebärmutterschleimhaut und wird mit etwas Blut ausgeschieden. Danach wird die Schleimhaut neu aufgebaut, während in einem Eierstock eine Eizelle reift. Etwa in der Mitte des Zyklus kommt es zum Eisprung: Die reife Eizelle gelangt in den Eileiter. Wird sie nicht befruchtet, geht sie zugrunde, und mit der nächsten Menstruation beginnt ein neuer Zyklus.",
+      "Bei einer Zeugung gelangen beim Geschlechtsverkehr Spermienzellen in die Scheide. Sie schwimmen durch die Gebärmutter bis in die Eileiter. Trifft dort eine Spermienzelle auf eine Eizelle und dringt in sie ein, verschmelzen die Zellkerne: Die Eizelle ist befruchtet. Die befruchtete Eizelle teilt sich, wandert zur Gebärmutter und nistet sich nach einigen Tagen in der Schleimhaut ein. Eine Schwangerschaft beginnt, und die Menstruation bleibt aus. Die Eizelle ist mit etwa 0,1 mm gerade noch sichtbar und viel größer als die bewegliche Spermienzelle mit Kopf und Schwanz."
+    ],
+    "takeaway": "Vereinfachter Zyklus: Menstruation → Schleimhaut wird aufgebaut, Eizelle reift → Eisprung etwa in der Zyklusmitte → ohne Befruchtung erneute Menstruation. Bei der Befruchtung im Eileiter verschmelzen Eizelle und Spermienzelle; die befruchtete Eizelle nistet sich in der Gebärmutter ein.",
+    "sourceIds": ["lehrplan", "kx-menstruation", "kx-schwangerschaft", "loveline"],
+    "quiz": {
+      "question": "Wo findet die Befruchtung der Eizelle normalerweise statt?",
+      "answer": "Im Eileiter",
+      "wrong": ["In der Scheide", "Im Eierstock"],
+      "explanation": "Nach dem Eisprung gelangt die Eizelle in den Eileiter. Dort kann sie auf Spermienzellen treffen und befruchtet werden."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Ein Zyklus ohne Befruchtung",
+      "instruction": "Ordne die Vorgänge eines vereinfachten Zyklus.",
+      "categories": [],
+      "entries": [
+        { "text": "Menstruation: Die Schleimhaut löst sich und wird ausgeschieden.", "target": 0, "feedback": "Der erste Tag der Menstruation ist Zyklustag 1." },
+        { "text": "Die Schleimhaut wird neu aufgebaut, eine Eizelle reift im Eierstock.", "target": 1, "feedback": "Vorbereitung auf eine mögliche Schwangerschaft." },
+        { "text": "Eisprung: Die reife Eizelle gelangt in den Eileiter.", "target": 2, "feedback": "Etwa in der Mitte des Zyklus." },
+        { "text": "Die Eizelle wird nicht befruchtet und geht zugrunde.", "target": 3, "feedback": "Ohne Spermienzelle keine Befruchtung." },
+        { "text": "Mit der nächsten Menstruation beginnt ein neuer Zyklus.", "target": 4, "feedback": "Der Kreislauf startet von vorn." }
+      ],
+      "conclusion": "Der Zyklus wiederholt sich, solange keine Schwangerschaft eintritt. Unregelmäßige Zyklen sind gerade am Anfang normal."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre, warum die Gebärmutterschleimhaut jeden Monat aufgebaut und wieder abgestoßen wird.",
+        "hints": [
+          "Wofür braucht eine befruchtete Eizelle die Schleimhaut?",
+          "Was passiert, wenn keine Befruchtung stattfindet?"
+        ],
+        "model": "Die Schleimhaut wird aufgebaut, damit sich eine befruchtete Eizelle darin einnisten und ernährt werden kann. Wird die Eizelle nicht befruchtet, wird die vorbereitete Schleimhaut nicht gebraucht. Sie löst sich und wird bei der Menstruation mit etwas Blut ausgeschieden. Danach wird für den nächsten Zyklus eine neue Schleimhaut aufgebaut.",
+        "criteria": [
+          "Ich nenne die Einnistung als Zweck der Schleimhaut.",
+          "Ich erkläre das Abstoßen ohne Befruchtung.",
+          "Ich beschreibe den Neuaufbau im nächsten Zyklus."
+        ]
+      },
+      "2": {
+        "prompt": "Vergleiche Eizelle und Spermienzelle in Größe, Beweglichkeit und Anzahl und erkläre, warum diese Unterschiede sinnvoll sind.",
+        "hints": [
+          "Was muss die Eizelle für die ersten Teilungen mitbringen?",
+          "Welchen Weg muss eine Spermienzelle zurücklegen?"
+        ],
+        "model": "Die Eizelle ist groß, rund und unbeweglich; sie enthält Vorräte für die ersten Teilungen nach der Befruchtung. Etwa einmal im Monat reift nur eine. Spermienzellen sind viel kleiner, haben einen Schwanz und können schwimmen. Bei einem Samenerguss werden sehr viele freigesetzt, weil sie einen langen Weg bis in den Eileiter haben und die meisten unterwegs zugrunde gehen. Die Unterschiede passen also zu den Aufgaben.",
+        "criteria": [
+          "Ich vergleiche Größe und Beweglichkeit.",
+          "Ich vergleiche die Anzahl.",
+          "Ich erkläre den Sinn der Unterschiede."
+        ]
+      }
+    },
+    "figures": ["keimzellen"],
+    "lab": "cycle"
+  },
+  {
+    "id": "bg5-pubertaet",
+    "lb": 6,
+    "title": "Pubertät: Körper und Gefühle verändern sich",
+    "period": "NT5 2.3 · Fortpflanzung, Wachstum und Individualentwicklung",
+    "intro": "Meist zwischen etwa 9 und 14 Jahren beginnt die Pubertät, bei jedem zu einem anderen Zeitpunkt. Der Körper wird erwachsen, und auch Gefühle und Gedanken verändern sich.",
+    "paragraphs": [
+      "In der Pubertät wird der Körper geschlechtsreif. Bei Mädchen wachsen die Brüste, das Becken wird breiter, und irgendwann kommt die erste Menstruation. Bei Jungen werden Hoden und Penis größer, die Stimme wird tiefer (Stimmbruch), Bart und Körperhaare wachsen, und es kommt zum ersten Samenerguss, oft im Schlaf. Bei allen gibt es einen Wachstumsschub, Haare unter den Achseln und im Schambereich, die Haut wird fettiger, und man schwitzt mehr. Bei Mädchen beginnt die Pubertät meist etwas früher als bei Jungen. Wann sie beginnt und wie schnell sie verläuft, ist bei jedem anders, und das ist normal.",
+      "Auch das Innere verändert sich. Stimmungen wechseln schneller, manchmal fühlt man sich unsicher im eigenen Körper. Die eigene Meinung wird wichtiger, Freundschaften verändern sich, man verliebt sich vielleicht zum ersten Mal. Es hilft, mit Vertrauenspersonen darüber zu sprechen. Zur Gesundheitsvorsorge gehört jetzt mehr Körperhygiene: täglich waschen, frische Kleidung, Deo bei Bedarf, während der Menstruation Binden, Tampons oder Menstruationstassen regelmäßig wechseln. Händewaschen und Sauberkeit im Intimbereich schützen vor Infektionen."
+    ],
+    "takeaway": "In der Pubertät wird der Körper geschlechtsreif: bei Mädchen Brustwachstum und erste Menstruation, bei Jungen Stimmbruch, Bartwuchs und erster Samenerguss, bei allen Wachstumsschub, Körperbehaarung und mehr Schweiß. Gefühle verändern sich. Zeitpunkt und Tempo sind verschieden. Mehr Körperhygiene schützt vor Infektionen.",
+    "sourceIds": ["lehrplan", "kx-pubertaet", "kx-menstruation", "loveline"],
+    "quiz": {
+      "question": "Welche Veränderung gibt es in der Pubertät bei Mädchen und bei Jungen?",
+      "answer": "Einen Wachstumsschub und Haare unter den Achseln",
+      "wrong": ["Den Stimmbruch", "Die erste Menstruation"],
+      "explanation": "Stimmbruch ist vor allem bei Jungen ausgeprägt, die Menstruation gibt es bei Mädchen. Wachstumsschub und Körperbehaarung betreffen alle."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Bei wem verändert sich was?",
+      "instruction": "Ordne jede Veränderung zu.",
+      "categories": ["bei Mädchen", "bei Jungen", "bei allen"],
+      "entries": [
+        { "text": "Die Brüste wachsen.", "target": 0, "feedback": "Ein sekundäres Geschlechtsmerkmal bei Mädchen." },
+        { "text": "Die erste Menstruation", "target": 0, "feedback": "Ab jetzt kann eine Schwangerschaft eintreten." },
+        { "text": "Die Stimme wird deutlich tiefer.", "target": 1, "feedback": "Der Stimmbruch." },
+        { "text": "Der erste Samenerguss", "target": 1, "feedback": "Ab jetzt werden Spermienzellen gebildet." },
+        { "text": "Wachstumsschub", "target": 2, "feedback": "Alle werden in kurzer Zeit größer." },
+        { "text": "Mehr Schweiß und fettigere Haut", "target": 2, "feedback": "Deshalb wird Körperpflege wichtiger." },
+        { "text": "Stimmungen wechseln schneller.", "target": 2, "feedback": "Auch Gefühle verändern sich bei allen." }
+      ],
+      "conclusion": "Viele Veränderungen erleben alle, manche nur Mädchen oder nur Jungen. Zeitpunkt und Tempo sind bei jedem verschieden."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre, warum Körperhygiene in der Pubertät wichtiger wird, und nenne drei Maßnahmen.",
+        "hints": [
+          "Was verändert sich an Haut und Schweiß?",
+          "Wovor schützt Sauberkeit?"
+        ],
+        "model": "In der Pubertät bildet die Haut mehr Fett, und man schwitzt mehr, besonders unter den Achseln. Bakterien zersetzen den Schweiß, dadurch riecht er. Außerdem kann es leichter zu Pickeln und Infektionen kommen. Deshalb hilft es, sich täglich zu waschen, jeden Tag frische Unterwäsche und Socken anzuziehen und während der Menstruation Binden oder Tampons regelmäßig zu wechseln.",
+        "criteria": [
+          "Ich nenne körperliche Veränderungen als Grund.",
+          "Ich nenne drei passende Maßnahmen.",
+          "Ich erwähne den Schutz vor Infektionen oder Geruch."
+        ]
+      },
+      "2": {
+        "prompt": "Lea ist zwölf und hat ihre Menstruation noch nicht, ihre Freundin schon seit einem Jahr. Lea macht sich Sorgen. Was antwortest du ihr mit deinem Wissen?",
+        "hints": [
+          "Wann beginnt die Pubertät?",
+          "An wen kann sich Lea wenden, wenn sie unsicher ist?"
+        ],
+        "model": "Ich würde Lea beruhigen: Die Pubertät beginnt bei jedem zu einem anderen Zeitpunkt und verläuft unterschiedlich schnell. Bei manchen Mädchen kommt die erste Menstruation mit zehn, bei anderen erst mit fünfzehn Jahren, beides ist normal. Ein Vergleich mit der Freundin sagt nichts darüber, ob bei ihr etwas nicht stimmt. Wenn sie sich trotzdem Sorgen macht, kann sie mit ihren Eltern, einer Vertrauensperson oder einer Ärztin sprechen.",
+        "criteria": [
+          "Ich erkläre, dass der Zeitpunkt individuell ist.",
+          "Ich formuliere einfühlsam.",
+          "Ich nenne eine passende Ansprechperson."
+        ]
+      }
+    },
+    "figures": ["pubertaet"]
+  },
+  {
+    "id": "bg5-mein-koerper",
+    "lb": 6,
+    "title": "Mein Körper gehört mir: Nähe und Grenzen",
+    "period": "NT5 2.3 · Fortpflanzung, Wachstum und Individualentwicklung",
+    "intro": "Eine Umarmung von der besten Freundin fühlt sich gut an, die gleiche Umarmung von einem Fremden nicht. Du bestimmst, wer dir wie nahekommt.",
+    "paragraphs": [
+      "Jeder Mensch hat einen persönlichen Abstand, die Individualdistanz. In den inneren Bereich lässt man nur sehr vertraute Menschen, und auch sie nur, wenn man es möchte. Der Intimbereich, also die Geschlechtsorgane, der Po und bei Mädchen die Brust, gehört zur Intimsphäre: Niemand darf dich dort berühren, wenn du es nicht willst, und niemand darf dich zwingen, andere dort zu berühren oder Bilder davon zu zeigen oder anzusehen. Selbstbestimmte Sexualität heißt: Nähe und Berührungen geschehen nur, wenn alle Beteiligten einverstanden sind, und jeder darf jederzeit Nein sagen.",
+      "Sexueller Missbrauch und Übergriffe sind nie die Schuld des Kindes oder Jugendlichen. Täter sind oft Menschen, die man kennt, und sie verlangen häufig, dass etwas geheim bleibt. Ein gutes Geheimnis, etwa eine Überraschung, macht Freude; ein schlechtes Geheimnis macht Angst oder Bauchweh, und das darfst du immer weitererzählen. Fühlt sich eine Berührung oder Situation komisch an, nimm das Gefühl ernst: Sag laut Nein, geh weg und hol Hilfe bei einer Vertrauensperson. Die Nummer gegen Kummer erreichst du kostenlos und anonym unter 116 111. Hilfe holen ist kein Petzen."
+    ],
+    "takeaway": "Du bestimmst über deinen Körper: Berührungen im Intimbereich nur, wenn du es willst. Einverständliche Nähe beruht auf dem Ja aller Beteiligten. Bei Übergriffen: Gefühl ernst nehmen, Nein sagen, weggehen, Hilfe holen, zum Beispiel bei der Nummer gegen Kummer (116 111). Schuld hat nie das Kind.",
+    "sourceIds": ["lehrplan", "trau-dich", "nummer-gegen-kummer", "kx-sexualitaet"],
+    "quiz": {
+      "question": "Ein Erwachsener sagt nach einer Berührung, die sich für dich falsch anfühlt: „Das bleibt unser Geheimnis.“ Was ist richtig?",
+      "answer": "Das ist ein schlechtes Geheimnis, du darfst und sollst es einer Vertrauensperson erzählen",
+      "wrong": [
+        "Du musst das Geheimnis halten, weil Erwachsene bestimmen",
+        "Du solltest erst einmal abwarten, ob es wieder passiert"
+      ],
+      "explanation": "Geheimnisse, die Angst machen oder sich falsch anfühlen, darfst du immer weitererzählen. Hilfe holen ist kein Petzen."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Einverständliche Nähe oder Grenzverletzung?",
+      "instruction": "Ordne jede Situation zu.",
+      "categories": ["einverständliche Nähe", "Grenzverletzung: Nein sagen und Hilfe holen"],
+      "entries": [
+        { "text": "Zwei Freundinnen umarmen sich zur Begrüßung, beide wollen es.", "target": 0, "feedback": "Nähe, mit der beide einverstanden sind." },
+        { "text": "Dein Vater fragt, ob er dich zum Trösten in den Arm nehmen darf, und du sagst Ja.", "target": 0, "feedback": "Gefragt und einverstanden." },
+        { "text": "Beim Arzt untersucht die Ärztin deinen Bauch, deine Mutter ist dabei, alles wird erklärt.", "target": 0, "feedback": "Eine erklärte, notwendige Untersuchung mit Vertrauensperson." },
+        { "text": "Ein Mitschüler fasst dir gegen deinen Willen an den Po.", "target": 1, "feedback": "Eine Berührung im Intimbereich ohne Einverständnis." },
+        { "text": "Jemand im Chat bittet dich, Nacktfotos zu schicken.", "target": 1, "feedback": "Das ist ein Übergriff. Nicht antworten, Screenshot machen, Erwachsenen Bescheid sagen." },
+        { "text": "Ein Bekannter will, dass du ein Geheimnis hütest, das dir Angst macht.", "target": 1, "feedback": "Ein schlechtes Geheimnis darf man immer weitererzählen." }
+      ],
+      "conclusion": "Entscheidend ist das Einverständnis. Fühlt sich etwas falsch an, ist Nein sagen und Hilfe holen immer richtig."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre den Unterschied zwischen einem guten und einem schlechten Geheimnis an je einem Beispiel.",
+        "hints": [
+          "Wie fühlt sich ein gutes Geheimnis an?",
+          "Was darfst du mit einem schlechten Geheimnis tun?"
+        ],
+        "model": "Ein gutes Geheimnis macht Freude und wird irgendwann gelüftet, zum Beispiel ein Geburtstagsgeschenk für die Mutter. Ein schlechtes Geheimnis macht Angst, Bauchweh oder ein schlechtes Gewissen, zum Beispiel wenn jemand sagt, man dürfe niemandem von einer unangenehmen Berührung erzählen. Schlechte Geheimnisse darf und soll man einer Vertrauensperson erzählen.",
+        "criteria": [
+          "Ich beschreibe das gute Geheimnis mit Beispiel.",
+          "Ich beschreibe das schlechte Geheimnis mit Beispiel.",
+          "Ich sage, dass man schlechte Geheimnisse weitererzählen darf."
+        ]
+      },
+      "2": {
+        "prompt": "Eine Freundin erzählt dir, dass ein älterer Jugendlicher sie immer wieder gegen ihren Willen anfasst und sagt, sie sei selbst schuld. Was rätst du ihr, und was tust du selbst?",
+        "hints": [
+          "Wer ist schuld an einem Übergriff?",
+          "Wer kann helfen, und wie erreicht man Hilfe?"
+        ],
+        "model": "Ich sage ihr, dass sie keine Schuld hat; schuld ist immer der, der die Grenze verletzt. Ich nehme sie ernst und verspreche nicht, es geheim zu halten, sondern helfe ihr, sich an eine erwachsene Vertrauensperson zu wenden, zum Beispiel an ihre Eltern, eine Lehrkraft oder die Schulsozialarbeit. Sie kann auch kostenlos und anonym bei der Nummer gegen Kummer unter 116 111 anrufen. Wenn sie sich nicht traut, gehe ich mit ihr zusammen hin oder hole selbst Hilfe.",
+        "criteria": [
+          "Ich stelle klar, dass sie keine Schuld hat.",
+          "Ich nenne konkrete Hilfe (Vertrauensperson, Nummer gegen Kummer).",
+          "Ich beschreibe, was ich selbst tue, ohne es geheim zu halten."
+        ]
+      }
+    },
+    "figures": ["naehe-zonen", "hilfe-wege"]
+  }
+]
