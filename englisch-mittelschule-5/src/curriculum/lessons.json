@@ -1,0 +1,4148 @@
+[
+  {
+    "id": "e5m-british-isles",
+    "stage": "world",
+    "title": "Great Britain, the UK and Ireland",
+    "skill": "Großbritannien und Irland auf der Karte einordnen sowie Länder und Hauptstädte auf Englisch benennen.",
+    "bindings": [
+      "E5 2 Großbritannien und Tagesablauf",
+      "E5 5 Themengebiete: Großbritannien (Lage, Länder, Hauptstadt)"
+    ],
+    "paragraphs": [
+      "Nordwestlich von Deutschland liegen im Atlantik und in der Nordsee zwei große Inseln: Großbritannien und Irland. Auf der Karte unterscheidest du zwischen Great Britain (der Insel mit England, Scotland und Wales) und dem United Kingdom (UK), zu dem auch Northern Ireland im Nordosten der Nachbarinsel gehört.",
+      "Jeder Landesteil hat seine eigene Hauptstadt: London in England, Edinburgh in Scotland, Cardiff in Wales und Belfast in Northern Ireland. Der größere Teil der westlichen Insel ist ein eigener Staat, die Republic of Ireland mit der Hauptstadt Dublin."
+    ],
+    "takeaway": "Great Britain = England (London), Scotland (Edinburgh) und Wales (Cardiff). Mit Northern Ireland (Belfast) ergibt sich the United Kingdom (UK). Die Republic of Ireland (Dublin) ist ein eigener Staat.",
+    "material": "Fact file: The United Kingdom of Great Britain and Northern Ireland has four parts: England (capital London), Scotland (capital Edinburgh), Wales (capital Cardiff) and Northern Ireland (capital Belfast). The Republic of Ireland lies to the west; its capital city is Dublin.",
+    "materialLabel": "Ländersteckbrief auf Englisch",
+    "materialLanguage": "en",
+    "sourceIds": [
+      "lp-e5",
+      "ons-uk",
+      "wiki-uk",
+      "wiki-ireland"
+    ],
+    "quiz": {
+      "optionLanguage": "en",
+      "question": "Which four countries belong to the United Kingdom?",
+      "answer": "England, Scotland, Wales and Northern Ireland",
+      "wrong": [
+        "England, Scotland, Wales and the Republic of Ireland",
+        "England, London, Cardiff and Dublin"
+      ],
+      "explanation": "Das United Kingdom umfasst England, Scotland, Wales und Northern Ireland. Die Republic of Ireland ist ein unabhängiger Staat."
+    },
+    "practice": [
+      {
+        "prompt": "The capital of Scotland is ___.",
+        "answers": [
+          "Edinburgh"
+        ],
+        "feedback": "Edinburgh ist die Hauptstadt von Scotland."
+      },
+      {
+        "prompt": "Cardiff is the capital of ___.",
+        "answers": [
+          "Wales"
+        ],
+        "feedback": "Cardiff liegt im Süden von Wales und ist die Hauptstadt."
+      }
+    ],
+    "tasks": {
+      "1": {
+        "language": "en",
+        "prompt": "Schreibe drei einfache englische Sätze über Großbritannien und seine Hauptstädte. Nutze den Steckbrief und die Karte.",
+        "model": "Great Britain has three countries: England, Scotland and Wales. London is the capital of England. Edinburgh is the capital of Scotland.",
+        "criteria": [
+          "Du nennst mindestens zwei Länder von Großbritannien oder des UK.",
+          "Du ordnest mindestens zwei Hauptstädte richtig zu.",
+          "Du verwendest einfache vollständige Sätze mit is oder has."
+        ]
+      },
+      "2": {
+        "language": "en",
+        "prompt": "Ein britischer Gastschüler erklärt deiner Klasse die Karte. Schreibe fünf kurze Sätze über das UK, alle vier Hauptstädte und den Unterschied zur Republic of Ireland.",
+        "model": "The United Kingdom has four parts: England, Scotland, Wales and Northern Ireland. London is in England and Edinburgh is in Scotland. Cardiff is the capital of Wales and Belfast is in Northern Ireland. The Republic of Ireland is a different country. Its capital is Dublin.",
+        "criteria": [
+          "Du erklärst den Unterschied zwischen dem UK und der Republic of Ireland.",
+          "Alle vier UK-Länder und ihre Hauptstädte werden richtig genannt.",
+          "Du schreibst Länder- und Städtenamen im Englischen groß."
+        ]
+      }
+    },
+    "workshop": {
+      "kind": "map",
+      "goals": [
+        {
+          "label": "Wähle den vierten Landesteil des United Kingdom neben England, Scotland und Wales.",
+          "before": "United Kingdom: England, Scotland, Wales and",
+          "after": "",
+          "options": [
+            "Northern Ireland",
+            "Republic of Ireland",
+            "London"
+          ],
+          "answer": "Northern Ireland",
+          "explanation": "Northern Ireland gehört zusammen mit England, Scotland und Wales zum UK."
+        },
+        {
+          "label": "Ordne der Hauptstadt Edinburgh das richtige Land zu.",
+          "before": "Edinburgh is the capital of",
+          "after": ".",
+          "options": [
+            "Scotland",
+            "Wales",
+            "England"
+          ],
+          "answer": "Scotland",
+          "explanation": "Edinburgh liegt im Norden Großbritanniens in Scotland."
+        },
+        {
+          "label": "Setze die Hauptstadt von Wales ein.",
+          "before": "The capital of Wales is",
+          "after": ".",
+          "options": [
+            "Cardiff",
+            "Belfast",
+            "Dublin"
+          ],
+          "answer": "Cardiff",
+          "explanation": "Cardiff ist die Hauptstadt von Wales; Belfast gehört zu Northern Ireland und Dublin zur Republic of Ireland."
+        }
+      ],
+      "mode": "hotspot"
+    }
+  },
+  {
+    "id": "e5m-world-language",
+    "stage": "world",
+    "title": "English around the world",
+    "skill": "Erkennen, wo auf der Welt Englisch gesprochen wird und warum Englisch als Weltsprache wichtig ist.",
+    "bindings": [
+      "E5 2 Großbritannien und Tagesablauf",
+      "E5 5 Themengebiete: Verbreitung der Weltsprache Englisch"
+    ],
+    "paragraphs": [
+      "Englisch wird nicht nur in Großbritannien und Irland gesprochen. In Ländern wie Kanada, Australien, Neuseeland, Südafrika oder Indien ist Englisch Muttersprache oder wichtige Verkehrssprache. Viele Kinder lernen Englisch schon in der Grundschule als zweite Sprache.",
+      "Deshalb hilft dir Englisch auf Reisen, bei internationalen Sportereignissen, in Spielen und im Gespräch mit Gleichaltrigen aus anderen Ländern. Wenn sich zwei Jugendliche aus Bayern und Japan treffen, sprechen sie oft Englisch miteinander — man nennt das Weltsprache."
+    ],
+    "takeaway": "Englisch ist Muttersprache in Ländern wie dem UK, Irland, Kanada oder Australien und dient weltweit als gemeinsame Verständigungssprache.",
+    "material": "Mia from Munich meets Sam from Australia and Kenji from Japan at a football camp. Sam speaks English at home in Sydney. Kenji learns English at school in Tokyo. All three children play together and talk in English.",
+    "materialLabel": "Kurze Begegnungsgeschichte",
+    "materialLanguage": "en",
+    "sourceIds": [
+      "lp-e5",
+      "wiki-english"
+    ],
+    "quiz": {
+      "optionLanguage": "en",
+      "question": "Why can Mia, Sam and Kenji talk to each other at the football camp?",
+      "answer": "They all use English as a world language.",
+      "wrong": [
+        "They all come from Great Britain.",
+        "They all speak only Japanese at camp."
+      ],
+      "explanation": "Englisch verbindet Menschen aus unterschiedlichen Ländern, weil es weltweit gelernt und gesprochen wird."
+    },
+    "practice": [
+      {
+        "prompt": "Sam comes from ___ (Sydney).",
+        "answers": [
+          "Australia"
+        ],
+        "feedback": "Sydney liegt in Australien, wo Englisch gesprochen wird."
+      },
+      {
+        "prompt": "English helps people from different ___ talk together.",
+        "answers": [
+          "countries"
+        ],
+        "feedback": "Mit English verständigen sich Menschen aus verschiedenen Ländern (countries)."
+      }
+    ],
+    "tasks": {
+      "1": {
+        "language": "en",
+        "prompt": "Nenne drei englischsprachige Länder und schreibe einen Satz darüber, wofür du Englisch brauchst.",
+        "model": "People speak English in Great Britain, Ireland and Australia. I need English for holidays and games.",
+        "criteria": [
+          "Du nennst drei passende Länder korrekt auf Englisch.",
+          "Du gibst ein konkretes Beispiel aus deinem Alltag an.",
+          "Du achtest auf die Großschreibung von Ländernamen und I."
+        ]
+      },
+      "2": {
+        "language": "en",
+        "prompt": "Du begrüßt einen Gast aus Australien an deiner Schule. Stelle kurz deine Klasse vor und erkläre in drei bis vier Sätzen, wo ihr Englisch begegnet.",
+        "model": "Welcome to our school! We are Class 5A in Bavaria. We learn English three times a week. We hear English in songs, films and computer games.",
+        "criteria": [
+          "Du begrüßt den Gast freundlich.",
+          "Du nennst mehrere Alltagssituationen mit Englisch.",
+          "Deine Sätze sind kurz, klar und korrekt im simple present."
+        ]
+      }
+    },
+    "workshop": {
+      "kind": "dialogue",
+      "goals": [
+        {
+          "label": "Wähle ein weiteres Land außerhalb Europas, in dem Englisch Amtssprache ist.",
+          "before": "People speak English in the UK, Ireland and",
+          "after": ".",
+          "options": [
+            "Canada",
+            "Germany",
+            "Austria"
+          ],
+          "answer": "Canada",
+          "explanation": "In Kanada (neben Französisch) sowie in Australien und Neuseeland ist Englisch Hauptsprache."
+        },
+        {
+          "label": "Ergänze das passende Wort für internationale Begegnungen.",
+          "before": "English is a world",
+          "after": "for travel and sport.",
+          "options": [
+            "language",
+            "number",
+            "breakfast"
+          ],
+          "answer": "language",
+          "explanation": "English is a world language bedeutet: Englisch ist eine Weltsprache."
+        },
+        {
+          "label": "Wähle die richtige Antwort im Camp-Gespräch.",
+          "before": "Kenji likes meeting new friends from Wales, so he",
+          "after": "talk to Mia.",
+          "options": [
+            "wants to",
+            "doesn't",
+            "never"
+          ],
+          "answer": "wants to",
+          "explanation": "Mit wants to drückst du aus, dass jemand etwas möchte."
+        }
+      ]
+    }
+  },
+  {
+    "id": "e5m-classroom-phrases",
+    "stage": "world",
+    "title": "In the classroom",
+    "skill": "Unterrichtsanweisungen hören, verstehen und selbst auf Englisch um Hilfe oder Wiederholung bitten.",
+    "bindings": [
+      "E5 1.1 Hörverstehen: einfache Äußerungen",
+      "E5 1.1 Leseverstehen: Arbeitsanweisungen",
+      "E5 1.1 Sprechen: Nichtverstehen zeigen"
+    ],
+    "listening": true,
+    "speaking": true,
+    "paragraphs": [
+      "Im Englischunterricht hörst du jeden Tag wiederkehrende Anweisungen wie Open your books at page twelve, Listen carefully oder Work with a partner. Wenn du dir die Verben open, close, look, listen und write merkst, verstehst du Arbeitsaufträge sofort.",
+      "Genauso wichtig ist es nachzufragen, wenn du etwas nicht verstanden hast oder zu schnell gesprochen wurde. Mit freundlichen Wendungen wie Sorry, I don't understand, Can you repeat that, please? oder What does that mean? bleibst du aktiv im Gespräch."
+    ],
+    "takeaway": "Verstehe Klassensprache über das Verb (Open, Look, Listen) und frage höflich nach: Sorry, I don't understand. Please say that again.",
+    "material": "Good morning, class! Please sit down and open your English books at page ten. Look at picture one and listen to the text. Then write three words in your exercise book. Don't worry if a word is new. Raise your hand and ask: Excuse me, what does this word mean?",
+    "materialLabel": "Englische Unterrichtsansage zum Anhören",
+    "materialLanguage": "en",
+    "sourceIds": [
+      "lp-e5",
+      "lp-profil"
+    ],
+    "quiz": {
+      "optionLanguage": "en",
+      "question": "You did not hear the page number. What do you say politely?",
+      "answer": "Excuse me, please say the page number again.",
+      "wrong": [
+        "Open your book at page one hundred!",
+        "Look at the blackboard now!"
+      ],
+      "explanation": "Mit Excuse me und please bittest du höflich um Wiederholung."
+    },
+    "practice": [
+      {
+        "prompt": "According to the listening text, open your books at page ___ (word or number).",
+        "answers": [
+          "10",
+          "ten"
+        ],
+        "feedback": "Im Hörtext heißt es: open your English books at page ten."
+      },
+      {
+        "prompt": "Write ___ (word or number) words in your exercise book.",
+        "answers": [
+          "3",
+          "three"
+        ],
+        "feedback": "Die Lehrkraft bittet um drei Wörter: write three words."
+      }
+    ],
+    "tasks": {
+      "1": {
+        "language": "en",
+        "prompt": "Sprich drei Unterrichtsanweisungen laut und notiere sie zusammen mit einer höflichen Nachfrage für den Unterricht.",
+        "model": "Please open your book. Listen and look at page ten. Work with your partner. Excuse me, I don't understand. Please say it slowly.",
+        "criteria": [
+          "Du notierst mindestens zwei englische Arbeitsanweisungen.",
+          "Du formulierst mindestens eine höfliche Nachfrage.",
+          "Du benutzt please oder excuse me."
+        ]
+      },
+      "2": {
+        "language": "en",
+        "prompt": "Spiele mit einem Partner eine kurze Unterrichtsszene: Person A gibt drei Aufträge für eine Übung, Person B fragt einmal nach der Bedeutung eines Wortes und bedankt sich.",
+        "model": "A: Take your pencil and read the short text on page eight. Write the answer. B: Excuse me, what does 'answer' mean? A: It means 'Antwort'. B: Thank you very much!",
+        "criteria": [
+          "Der Dialog enthält Arbeitsanweisung, Rückfrage und Dank.",
+          "Du benutzt klare Befehlsformen ohne langes Drumherum.",
+          "Die Satzzeichen am Satzende stimmen."
+        ]
+      }
+    },
+    "workshop": {
+      "kind": "dialogue",
+      "goals": [
+        {
+          "label": "Wähle die passende Aufforderung, um das Buch aufzuschlagen.",
+          "before": "",
+          "after": "your English books at page ten, please.",
+          "options": [
+            "Open",
+            "Listen",
+            "Ask"
+          ],
+          "answer": "Open",
+          "explanation": "Open your book bedeutet: Schlage dein Buch auf."
+        },
+        {
+          "label": "Was sagst du, wenn dein Partner zu leise spricht?",
+          "before": "Sorry, please",
+          "after": "loudly.",
+          "options": [
+            "speak",
+            "write",
+            "look"
+          ],
+          "answer": "speak",
+          "explanation": "Speak loudly! bittet darum, lauter zu sprechen."
+        },
+        {
+          "label": "Wie fragst du nach einem unbekannten Wort?",
+          "before": "Excuse me, what does 'notebook'",
+          "after": "?",
+          "options": [
+            "mean",
+            "read",
+            "listen"
+          ],
+          "answer": "mean",
+          "explanation": "What does … mean? heißt: Was bedeutet …?"
+        }
+      ]
+    }
+  },
+  {
+    "id": "e5m-greetings-politeness",
+    "stage": "world",
+    "title": "Hello and nice to meet you",
+    "skill": "Sich und andere begrüßen, verabschieden, Herkunft angeben und Höflichkeitsformeln passend anwenden.",
+    "bindings": [
+      "E5 2 Sprach- und Verhaltensmuster in Begegnungssituationen",
+      "E5 1.2 Phrasal verbs (to come from)"
+    ],
+    "speaking": true,
+    "paragraphs": [
+      "Bei ersten Begegnungen auf Englisch kommt es auf freundliche und situationsgerechte Begrüßungen an. Am Vormittag sagst du Good morning, am Nachmittag Good afternoon und unter Gleichaltrigen meist einfach Hello oder Hi. Zur Verabschiedung passen Goodbye, Bye oder See you soon.",
+      "Beim Kennenlernen stellst du dich mit I'm … oder My name is … vor und fragst How are you? Die passende höfliche Antwort lautet I'm fine, thanks. And you? Auf Thank you antwortet man in Großbritannien gern You're welcome oder Not at all."
+    ],
+    "takeaway": "Begrüße je nach Tageszeit und Person (Good morning / Hello), stelle dich mit name und come from vor und antworte auf Thanks höflich mit You're welcome.",
+    "material": "Mrs Baker: Good morning! Welcome to London. What's your name? / Lukas: Good morning, Mrs Baker! I'm Lukas and I come from Munich. Nice to meet you! / Mrs Baker: Nice to meet you too, Lukas. Here is your map. / Lukas: Thank you very much! / Mrs Baker: You're welcome!",
+    "materialLabel": "Begegnungsdialog",
+    "materialLanguage": "en",
+    "sourceIds": [
+      "lp-e5",
+      "lp-profil"
+    ],
+    "quiz": {
+      "optionLanguage": "en",
+      "question": "How do you reply politely when someone says 'Thank you very much'?",
+      "answer": "You're welcome.",
+      "wrong": [
+        "Good afternoon.",
+        "How old are you?"
+      ],
+      "explanation": "You're welcome (gern geschehen) oder Not at all ist die höfliche Antwort auf einen Dank."
+    },
+    "practice": [
+      {
+        "prompt": "Lukas says: I ___ from Munich.",
+        "answers": [
+          "come",
+          "am"
+        ],
+        "feedback": "To come from + Ortsname gibt an, woher man kommt."
+      },
+      {
+        "prompt": "When you meet a teacher at 9 o'clock in the morning, you say: Good ___!",
+        "answers": [
+          "morning"
+        ],
+        "feedback": "Am Morgen begrüßt man mit Good morning!"
+      }
+    ],
+    "tasks": {
+      "1": {
+        "language": "en",
+        "prompt": "Führe laut einen kurzen Begrüßungsdialog mit einer Lehrerin oder einem Lehrer in England und schreibe ihn auf.",
+        "model": "Good afternoon, Mr Hall! My name is Emma and I come from Augsburg. Nice to meet you! Thank you for your help. Goodbye!",
+        "criteria": [
+          "Du verwendest eine passende Anrede (Mr oder Mrs).",
+          "Du nennst deinen Namen und deine Herkunft mit come from.",
+          "Du baust eine Höflichkeits- oder Abschiedsformel ein."
+        ]
+      },
+      "2": {
+        "language": "en",
+        "prompt": "Begrüße erst eine gleichaltrige Austauschpartnerin (informell) und danach ihre Eltern (höflich). Schreibe beide kurzen Dialoganfänge auf.",
+        "model": "With Chloe: Hi Chloe! I'm Ben from Bavaria. How are you? — With her parents: Good evening, Mr and Mrs Ward! Nice to meet you. Thank you for the room!",
+        "criteria": [
+          "Du unterscheidest zwischen lockerer Begrüßung (Hi/Hello) und förmlicher Begrüßung (Good morning/afternoon/evening).",
+          "Du stellst dich klar vor und stellst eine Gegenfrage oder bedankst dich.",
+          "Großschreibung bei Namen und I wird eingehalten."
+        ]
+      }
+    },
+    "workshop": {
+      "kind": "dialogue",
+      "goals": [
+        {
+          "label": "Wähle die passende Tageszeit-Begrüßung um 15 Uhr.",
+          "before": "It is three o'clock. You say: Good",
+          "after": ", Mrs Baker!",
+          "options": [
+            "afternoon",
+            "night",
+            "goodbye"
+          ],
+          "answer": "afternoon",
+          "explanation": "Am Nachmittag sagt man Good afternoon; Good night sagt man erst zum Schlafengehen."
+        },
+        {
+          "label": "Ergänze die Herkunftsangabe mit dem phrasal verb.",
+          "before": "My friends",
+          "after": "from Wales.",
+          "options": [
+            "come",
+            "meet",
+            "thank"
+          ],
+          "answer": "come",
+          "explanation": "My friends come from Wales (Plural ohne -s)."
+        },
+        {
+          "label": "Wähle eine höfliche Reaktion auf 'Nice to meet you!'.",
+          "before": "Nice to meet you",
+          "after": "!",
+          "options": [
+            "too",
+            "welcome",
+            "please"
+          ],
+          "answer": "too",
+          "explanation": "Nice to meet you too! heißt: Schön, dich auch kennenzulernen."
+        }
+      ],
+      "mode": "chips"
+    }
+  },
+  {
+    "id": "e5m-wordbook-grammar-terms",
+    "stage": "world",
+    "title": "Dictionary and grammar words",
+    "skill": "Zweisprachige Wörterlisten nutzen und die zehn grundlegenden englischen Grammatikbegriffe unterscheiden.",
+    "bindings": [
+      "E5 1.2 Grammatikalische Fachbegriffe",
+      "E5 4 Methodische Kompetenzen: zweisprachige Wörterlisten"
+    ],
+    "paragraphs": [
+      "In deinem Englischbuch findest du hinten ein Wörterverzeichnis (word list) und Erklärungen zur Grammatik. Dort stehen oft englische Fachbegriffe oder Abkürzungen wie n für noun (Nomen), v für verb (Verb) oder adj für adjective (Adjektiv). Sie zeigen dir, wie du ein Wort im Satz benutzen kannst.",
+      "Die zehn wichtigsten Fachbegriffe in Klasse 5 sind: noun (Nomen), verb (Verb), adjective (Adjektiv), pronoun (Pronomen), singular (Einzahl), plural (Mehrzahl), number (Zahl), preposition (Präposition), simple present (einfache Gegenwart) und simple past (einfache Vergangenheit)."
+    ],
+    "takeaway": "Lerne die zehn Fachbegriffe noun, verb, adjective, pronoun, singular, plural, number, preposition, simple present und simple past — so verstehst du jede Wörterliste.",
+    "material": "Dictionary entries: book [n] — Buch (plural: books); green [adj] — grün; listen [v] — zuhören (simple past: listened); we [pron] — wir; under [prep] — unter; twelve [number] — zwölf.",
+    "materialLabel": "Einträge aus einer Wörterliste",
+    "materialLanguage": "en",
+    "sourceIds": [
+      "lp-e5",
+      "cambridge-dict"
+    ],
+    "quiz": {
+      "optionLanguage": "en",
+      "question": "Which grammar word describes words like 'green', 'small' and 'happy'?",
+      "answer": "adjective",
+      "wrong": [
+        "preposition",
+        "plural"
+      ],
+      "explanation": "Eigenschaftswörter wie green, small oder happy heißen adjectives."
+    },
+    "practice": [
+      {
+        "prompt": "In the word list, 'listen' is marked [v]. What grammar word is [v]?",
+        "answers": [
+          "verb"
+        ],
+        "feedback": "listen ist eine Tätigkeit, also ein verb."
+      },
+      {
+        "prompt": "'Books' is the ___ form of 'book'.",
+        "answers": [
+          "plural"
+        ],
+        "feedback": "Mehr als ein Buch ist der plural."
+      }
+    ],
+    "tasks": {
+      "1": {
+        "language": "en",
+        "prompt": "Ordne die sechs Wörter school, read, big, they, behind, seven den passenden englischen Grammatikbegriffen zu.",
+        "model": "school = noun, read = verb, big = adjective, they = pronoun, behind = preposition, seven = number.",
+        "criteria": [
+          "Alle sechs Wörter sind richtig zugeordnet.",
+          "Du schreibst die englischen Fachbegriffe korrekt (noun, verb, adjective, pronoun, preposition, number).",
+          "Du nutzt eine übersichtliche Liste oder Gleichheitszeichen."
+        ]
+      },
+      "2": {
+        "language": "en",
+        "prompt": "Erkläre einem Mitschüler kurz auf Deutsch mit jeweils zwei englischen Beispielen, was 'singular vs. plural' und 'simple present vs. simple past' bedeuten.",
+        "model": "Singular ist die Einzahl (one cat, one child), plural ist die Mehrzahl (two cats, two children). Das simple present beschreibt Dinge von heute und immer (I play, she goes), das simple past beschreibt Vergangenes (I played yesterday, she went home).",
+        "criteria": [
+          "Du unterscheidest singular/plural korrekt (gern auch ein unregelmäßiges Beispiel).",
+          "Du unterscheidest Gegenwart (simple present) und Vergangenheit (simple past).",
+          "Zu jedem Begriff stehen passende englische Beispiele."
+        ]
+      }
+    },
+    "workshop": {
+      "kind": "text",
+      "goals": [
+        {
+          "label": "Bestimme den Fachbegriff für das Wort 'under'.",
+          "before": "The word 'under' is a",
+          "after": ".",
+          "options": [
+            "preposition",
+            "noun",
+            "verb"
+          ],
+          "answer": "preposition",
+          "explanation": "Ortswörter wie in, on, under sind prepositions (Präpositionen)."
+        },
+        {
+          "label": "Ordne das Wort 'children' der richtigen Zahlform zu.",
+          "before": "'Children' is a",
+          "after": "noun.",
+          "options": [
+            "plural",
+            "singular",
+            "number"
+          ],
+          "answer": "plural",
+          "explanation": "Children ist der unregelmäßige Plural von child."
+        },
+        {
+          "label": "Welche Zeitform steht in 'Yesterday I walked to school'?",
+          "before": "'Walked' is in the",
+          "after": ".",
+          "options": [
+            "simple past",
+            "simple present",
+            "adjective"
+          ],
+          "answer": "simple past",
+          "explanation": "Yesterday und die Endung -ed zeigen die Vergangenheit (simple past)."
+        }
+      ],
+      "mode": "chips"
+    }
+  },
+  {
+    "id": "e5m-sounds-ipa",
+    "stage": "world",
+    "title": "Sounds, rhythm and linking",
+    "skill": "Unterschiedliche englische Laute am Lautschriftzeichen erkennen und Wörter in kurzen Sätzen flüssig verbinden.",
+    "bindings": [
+      "E5 1.2 Aussprache und Intonation: verbundene Wörter",
+      "E5 1.2 Aussprache und Intonation: Symbole der Lautschrift"
+    ],
+    "listening": true,
+    "paragraphs": [
+      "Im Englischen schreibt man manche Wörter ähnlich, spricht sie aber ganz verschieden aus: Vergleiche field /iː/ (langes i) und friend /e/ (kurzes e). Bei sheep /iː/ und meal /iː/ siehst du umgekehrt, dass zwei verschiedene Schreibweisen (ee und ea) denselben langen Laut haben können.",
+      "Beim Sprechen klingen englische Sätze flüssig, wenn du benachbarte Wörter verbindest, etwa Not at all (Not_at_all). Achte in Fragesätzen und Aussagen auf die passende Satzmelodie: Entscheidungsfragen steigen am Ende oft leicht an, Aussagen fallen am Ende ruhig ab."
+    ],
+    "takeaway": "Verlasse dich nicht allein auf die Schreibung: Lautschriftzeichen wie /iː/ (field, sheep, meal) vs. /e/ (friend) und Verbindungen wie Not at all helfen beim flüssigen Sprechen.",
+    "material": "Listen to the sounds. My friend is on the green field. The sheep eats a warm meal. Is she here? Yes, she is! Thank you very much. Not at all!",
+    "materialLabel": "Hörtext zu Lauten und Satzmelodie",
+    "materialLanguage": "en",
+    "sourceIds": [
+      "lp-e5",
+      "cambridge-dict"
+    ],
+    "quiz": {
+      "optionLanguage": "en",
+      "question": "Which two words have the same long vowel sound /iː/?",
+      "answer": "sheep and meal",
+      "wrong": [
+        "field and friend",
+        "friend and meal"
+      ],
+      "explanation": "Sheep /ʃiːp/ und meal /miːl/ haben denselben langen /iː/-Laut; friend /frend/ hat kurzes /e/."
+    },
+    "practice": [
+      {
+        "prompt": "In the listening text, what animal eats a warm meal? The ___.",
+        "answers": [
+          "sheep"
+        ],
+        "feedback": "The sheep eats a warm meal (Schaf, hier in der Einzahl)."
+      },
+      {
+        "prompt": "What polite connected reply comes after 'Thank you very much'?",
+        "answers": [
+          "Not at all",
+          "Not at all!"
+        ],
+        "feedback": "Not at all verbindet die drei Wörter flüssig miteinander."
+      }
+    ],
+    "tasks": {
+      "1": {
+        "language": "en",
+        "prompt": "Sprich den Hörtext laut nach, achte auf das flüssige Not_at_all und notiere drei eigene Wortpaare aus Klasse 5 mit demselben /iː/- oder /e/-Laut.",
+        "model": "Long /iː/: field, sheep, meal, green, three. Short /e/: friend, pen, desk, ten.",
+        "criteria": [
+          "Du trennst Wörter mit langem /iː/ sauber von Wörtern mit kurzem /e/.",
+          "Du übst die verbundene Aussprache Not_at_all laut.",
+          "Alle notierten Wörter sind richtig geschrieben."
+        ]
+      },
+      "2": {
+        "language": "en",
+        "prompt": "Schreibe einen kurzen Dialog (4 Sätze), in dem mindestens zwei /iː/-Wörter, zwei /e/-Wörter und die Wendung 'Not at all' vorkommen, und übe ihn laut mit Betonung.",
+        "model": "A: Can you see my friend Ben on the green field? B: Yes, he is with ten white sheep! A: Thanks for your help. B: Not at all!",
+        "criteria": [
+          "Beide Laute (/iː/ und /e/) kommen deutlich in Wörtern vor.",
+          "Not at all wird als passende Reaktion auf Dank eingesetzt.",
+          "Du markierst dir beim Üben die Betonung und Verbindung."
+        ]
+      }
+    },
+    "workshop": {
+      "kind": "sound",
+      "goals": [
+        {
+          "label": "Welches Wort hat denselben Vokal wie 'field' (/iː/)?",
+          "before": "field /iː/ matches",
+          "after": "/iː/",
+          "options": [
+            "meal",
+            "friend",
+            "bed"
+          ],
+          "answer": "meal",
+          "explanation": "Field und meal teilen den langen /iː/-Laut."
+        },
+        {
+          "label": "Welches Wort hat dasselbe kurze /e/ wie 'friend'?",
+          "before": "friend /e/ matches",
+          "after": "/e/",
+          "options": [
+            "desk",
+            "sheep",
+            "green"
+          ],
+          "answer": "desk",
+          "explanation": "In friend und desk hörst du das kurze /e/."
+        },
+        {
+          "label": "Verbinde die höfliche Antwort richtig zu einer Einheit.",
+          "before": "Thank you! —",
+          "after": "at all!",
+          "options": [
+            "Not",
+            "No",
+            "Never"
+          ],
+          "answer": "Not",
+          "explanation": "Not at all ist eine feste verbundene Wendung (kein bisschen / gern geschehen)."
+        }
+      ],
+      "mode": "chips"
+    }
+  },
+  {
+    "id": "e5m-family-listening",
+    "stage": "everyday",
+    "title": "Family, friends and neighbours",
+    "skill": "Kurze persönliche Mitteilungen und Sprachnachrichten über Familie, Freunde und Nachbarn hörend verstehen.",
+    "bindings": [
+      "E5 1.1 Hörverstehen: kurze Mitteilungen auf dem Anrufbeantworter",
+      "E5 5 Themengebiete: Familie und Freunde, Nachbarn"
+    ],
+    "listening": true,
+    "paragraphs": [
+      "Auf einem Anrufbeantworter oder in einer kurzen Sprachnachricht sprechen Menschen oft direkt über ihren Alltag: Namen, Alter, Geschwister, beste Freunde oder nette Nachbarn. Wenn du zuerst auf bekannte Schlüsselwörter wie brother, sister, friend oder neighbour achtest, verstehst du den Kern beim ersten Hören.",
+      "Merke dir wichtige Familienwörter im Paar: parents (Eltern) umfasst mother/mum und father/dad; grandparents sind grandmother/gran und grandfather/grandad; aunt und uncle sind Tante und Onkel. Der Nachbar heißt neighbour (im britischen Englisch mit ou)."
+    ],
+    "takeaway": "Achte beim Hören von Nachrichten auf Schlüsselwörter (Namen, Verwandtschaft, Uhrzeit oder Zahl) und unterscheide family, best friend und neighbour.",
+    "material": "Hi Jonas, this is Hannah from Bristol! Welcome to our family next week. My parents are Sarah and Paul. I have got one little brother, Tim — he is eight — and a twin sister, Lucy. Our friendly neighbour Mr Green lives next door with his old dog. See you on Sunday!",
+    "materialLabel": "Persönliche Nachricht auf dem Anrufbeantworter",
+    "materialLanguage": "en",
+    "sourceIds": [
+      "lp-e5",
+      "lp-profil"
+    ],
+    "quiz": {
+      "optionLanguage": "en",
+      "question": "Who is eight years old in Hannah's voicemail message?",
+      "answer": "Her little brother Tim",
+      "wrong": [
+        "Her twin sister Lucy",
+        "Her neighbour Mr Green"
+      ],
+      "explanation": "Im Text sagt Hannah: My little brother Tim — he is eight."
+    },
+    "practice": [
+      {
+        "prompt": "Hannah's parents are Sarah and ___.",
+        "answers": [
+          "Paul"
+        ],
+        "feedback": "Im Hörtext nennt Hannah ihre Eltern: Sarah and Paul."
+      },
+      {
+        "prompt": "The friendly ___ Mr Green lives next door.",
+        "answers": [
+          "neighbour",
+          "neighbor"
+        ],
+        "feedback": "Mr Green ist der Nachbar (britisches Englisch: neighbour)."
+      }
+    ],
+    "tasks": {
+      "1": {
+        "language": "en",
+        "prompt": "Schreibe drei einfache Sätze über deine Familie, einen Freund oder einen Nachbarn.",
+        "model": "My mother is Anna and my father is Markus. I have got one sister. My best friend Leo lives next door.",
+        "criteria": [
+          "Du nennst mindestens zwei Familienmitglieder oder Freunde/Nachbarn.",
+          "Du verwendest is, have got oder lives richtig.",
+          "Jeder Satz beginnt groß und endet mit einem Punkt."
+        ]
+      },
+      "2": {
+        "language": "en",
+        "prompt": "Schreibe eine kurze Antwort-Sprachnachricht (4–5 Sätze) an Hannah in Bristol: Stelle dich und zwei Personen aus deiner Familie oder Nachbarschaft vor.",
+        "model": "Hi Hannah, this is Jonas from Bavaria! Thanks for your message. My parents are Karin and Stefan, and my grandfather lives near our house. My best friend Max plays football with me. See you on Sunday!",
+        "criteria": [
+          "Du gehst passend auf Hannahs Nachricht ein (Begrüßung, Dank, Verabschiedung).",
+          "Du nennst konkrete Namen oder Beziehungen (parents, friend, neighbour).",
+          "Die Verben stehen passend in der 1. oder 3. Person Singular."
+        ]
+      }
+    },
+    "workshop": {
+      "kind": "sentence",
+      "goals": [
+        {
+          "label": "Wie heißt das Wort für Mutter und Vater zusammen?",
+          "before": "My mother and father are my",
+          "after": ".",
+          "options": [
+            "parents",
+            "sisters",
+            "neighbours"
+          ],
+          "answer": "parents",
+          "explanation": "Parents bedeutet Eltern."
+        },
+        {
+          "label": "Welches Wort beschreibt die Person im Haus nebenan?",
+          "before": "Mr Green lives next door. He is our",
+          "after": ".",
+          "options": [
+            "neighbour",
+            "uncle",
+            "brother"
+          ],
+          "answer": "neighbour",
+          "explanation": "Neighbour heißt Nachbar/Nachbarin."
+        },
+        {
+          "label": "Ergänze das richtige Possessivwort für Hannah.",
+          "before": "Hannah talks about",
+          "after": "twin sister Lucy.",
+          "options": [
+            "her",
+            "his",
+            "our"
+          ],
+          "answer": "her",
+          "explanation": "Bei einer weiblichen Person steht her (ihre)."
+        }
+      ]
+    }
+  },
+  {
+    "id": "e5m-pets-home-scene",
+    "stage": "everyday",
+    "title": "At home and with pets",
+    "skill": "Wohnräume, Haustiere und genaue Positionen mit englischen Präpositionen beschreiben.",
+    "bindings": [
+      "E5 1.2 Präpositionen (in, on, under, at, into, over, with, to, in front of, next to, behind, for, between)",
+      "E5 3 Bildgestützte Texte erschließen",
+      "E5 5 Themengebiete: Wohnen, Haustiere"
+    ],
+    "paragraphs": [
+      "Wenn du dein Zimmer, dein Haus oder deine Haustiere beschreibst, brauchst du Ortspräpositionen: in (in), on (auf), under (unter), behind (hinter), in front of (vor), next to (neben) und between (zwischen). Mit over (über) und into (hinein) gibst du Bewegung oder Richtung an.",
+      "Schau dir zuerst die gezeichnete Szene von Toms Zuhause genau an: Wo liegt der Hund? Wo steht das Fahrrad? Präpositionen wie at, with, to und for helfen zusätzlich beim Erzählen: at home, play with the dog, walk to the garden, food for the cat."
+    ],
+    "takeaway": "Präpositionen geben genaue Orte und Richtungen an: on (auf), under (unter), next to (neben), in front of (vor), behind (hinter), between (zwischen), into (hinein).",
+    "material": "Look at Tom's home and garden: There is a small house behind the garden fence. A brown dog sits in front of the house. The bike stands next to the big tree, between the tree and the sofa on the terrace. The little cat jumps into a cardboard box.",
+    "materialLabel": "Szenenbeschreibung zum Übungsbild",
+    "materialLanguage": "en",
+    "scene": {
+      "title": "Tom's home and garden",
+      "items": [
+        {
+          "label": "house",
+          "shape": "block",
+          "x": 30,
+          "y": 46,
+          "w": 124,
+          "h": 112
+        },
+        {
+          "label": "fence",
+          "shape": "block",
+          "x": 28,
+          "y": 172,
+          "w": 128,
+          "h": 26
+        },
+        {
+          "label": "dog",
+          "shape": "round",
+          "x": 68,
+          "y": 226,
+          "w": 52,
+          "h": 42
+        },
+        {
+          "label": "terrace",
+          "shape": "block",
+          "x": 182,
+          "y": 216,
+          "w": 132,
+          "h": 84
+        },
+        {
+          "label": "sofa",
+          "shape": "block",
+          "x": 200,
+          "y": 196,
+          "w": 96,
+          "h": 48
+        },
+        {
+          "label": "bike",
+          "shape": "block",
+          "x": 334,
+          "y": 214,
+          "w": 74,
+          "h": 48
+        },
+        {
+          "label": "tree",
+          "shape": "round",
+          "x": 426,
+          "y": 54,
+          "w": 94,
+          "h": 182
+        },
+        {
+          "label": "cat",
+          "shape": "round",
+          "x": 532,
+          "y": 168,
+          "w": 38,
+          "h": 34
+        },
+        {
+          "label": "box",
+          "shape": "block",
+          "x": 542,
+          "y": 218,
+          "w": 60,
+          "h": 46
+        }
+      ]
+    },
+    "sourceIds": [
+      "lp-e5",
+      "lp-profil"
+    ],
+    "quiz": {
+      "optionLanguage": "en",
+      "question": "Where is the bike in Tom's garden scene?",
+      "answer": "Between the sofa and the tree",
+      "wrong": [
+        "Under the house",
+        "In front of the dog"
+      ],
+      "explanation": "Auf der Terrasse neben dem Baum steht das bike genau between the sofa and the tree."
+    },
+    "practice": [
+      {
+        "prompt": "The brown dog is in ___ of the house.",
+        "answers": [
+          "front"
+        ],
+        "feedback": "in front of bedeutet vor einem Gegenstand oder Gebäude."
+      },
+      {
+        "prompt": "The bike stands ___ to the big tree.",
+        "answers": [
+          "next"
+        ],
+        "feedback": "next to heißt direkt neben."
+      }
+    ],
+    "tasks": {
+      "1": {
+        "language": "en",
+        "prompt": "Beschreibe das Übungsbild oder dein eigenes Zimmer mit drei Sätzen. Nutze mindestens drei verschiedene Präpositionen (z. B. on, under, next to, in front of, behind, between).",
+        "model": "My desk is next to the window. My schoolbag is under the chair. A photo of my dog is on the wall.",
+        "criteria": [
+          "Du verwendest mindestens drei verschiedene Ortspräpositionen korrekt.",
+          "Die Sätze nennen konkrete Zimmermöbel oder Haustiere.",
+          "Subjekt und Verb (is/are) passen zusammen."
+        ]
+      },
+      "2": {
+        "language": "en",
+        "prompt": "Schreibe eine kurze Suche-Geschichte (4–5 Sätze) über ein Haustier im Haus: Wo schaut ihr zuerst (under, behind, in), wohin läuft es (into) und wo sitzt es am Ende?",
+        "model": "Where is our cat Luna? We look under the sofa and behind the door. Then Luna runs into the kitchen! There she is, between the table and the fridge, waiting for her food.",
+        "criteria": [
+          "Du nutzt Orts- und Richtungspräpositionen (inkl. into, between oder behind).",
+          "Man erkennt einen klaren kleinen Ablauf bis zum Versteck.",
+          "Du verwendest for, with oder at passend."
+        ]
+      }
+    },
+    "workshop": {
+      "kind": "scene",
+      "goals": [
+        {
+          "label": "Welche Präposition zeigt die Position genau zwischen zwei Dingen?",
+          "before": "The bike stands",
+          "after": "the sofa and the tree.",
+          "options": [
+            "between",
+            "under",
+            "into"
+          ],
+          "answer": "between",
+          "explanation": "Between steht bei genau zwei Bezugspunkten (A and B)."
+        },
+        {
+          "label": "Wähle die passende Präposition für 'vor dem Haus'.",
+          "before": "The brown dog sits",
+          "after": "the house.",
+          "options": [
+            "in front of",
+            "over",
+            "behind"
+          ],
+          "answer": "in front of",
+          "explanation": "In front of bedeutet räumlich vor etwas."
+        },
+        {
+          "label": "Welche Präposition drückt die Bewegung hinein in eine Kiste aus?",
+          "before": "The little cat jumps",
+          "after": "a box.",
+          "options": [
+            "into",
+            "under",
+            "for"
+          ],
+          "answer": "into",
+          "explanation": "Into beschreibt eine Bewegung von draußen nach drinnen."
+        }
+      ],
+      "mode": "hotspot"
+    }
+  },
+  {
+    "id": "e5m-meals-daily-routine",
+    "stage": "everyday",
+    "title": "Meals and daily routine",
+    "skill": "Über den Tagesablauf und Mahlzeiten sprechen sowie britische und deutsche Essgewohnheiten vergleichen.",
+    "bindings": [
+      "E5 1.2 Simple phrasal verbs (to get up) & Kollokationen (to do your homework, to have lunch)",
+      "E5 2 Alltagskultur vergleichen (Mahlzeiten)",
+      "E5 5 Themengebiete: Tagesablauf, Mahlzeiten, Essen und Trinken"
+    ],
+    "speaking": true,
+    "paragraphs": [
+      "Um deinen Tagesablauf zu erzählen, brauchst du feste Wortverbindungen: to get up (aufstehen), to have breakfast (frühstücken), to have lunch (zu Mittag essen), to do your homework (Hausaufgaben machen) und to go to bed. Solche Verb-Nomen-Paare nennt man Kollokationen — auf Englisch sagst du nicht 'make homework', sondern 'do your homework'.",
+      "In Großbritannien nehmen viele Schülerinnen und Schüler mittags ein packed lunch (Sandwich, Obst, Joghurt oder ein warmes Essen in der Schulkantine) mit und essen abends gegen 18 Uhr mit der Familie warm zu Abend (dinner oder manchmal auch tea). In Deutschland ist oft das Mittagessen die warme Hauptmahlzeit — beides ist ein normaler kultureller Unterschied."
+    ],
+    "takeaway": "Verwende feste Wendungen wie to get up, to have breakfast/lunch/dinner und to do your homework — und vergleiche Mahlzeiten sachlich zwischen dem UK und Deutschland.",
+    "material": "Sophie's weekday in York: I get up at seven o'clock and have toast with honey for breakfast. At twelve thirty I have lunch at school — today I have fruit, a cheese sandwich and water. In the afternoon I do my homework and walk our dog. At six we have dinner together.",
+    "materialLabel": "Tagesablauf und Mahlzeiten einer Schülerin in York",
+    "materialLanguage": "en",
+    "sourceIds": [
+      "lp-e5",
+      "nhs-eatwell"
+    ],
+    "quiz": {
+      "optionLanguage": "en",
+      "question": "Which English phrase is correct for 'Hausaufgaben machen'?",
+      "answer": "to do your homework",
+      "wrong": [
+        "to make your homework",
+        "to take your homework"
+      ],
+      "explanation": "Die englische Kollokation lautet immer to do (one's) homework."
+    },
+    "practice": [
+      {
+        "prompt": "In the morning I ___ up at seven o'clock.",
+        "answers": [
+          "get"
+        ],
+        "feedback": "to get up ist das einfache phrasal verb für aufstehen."
+      },
+      {
+        "prompt": "At school Sophie has a cheese sandwich and ___ for lunch.",
+        "answers": [
+          "fruit",
+          "water"
+        ],
+        "feedback": "Im Text steht: I have fruit, a cheese sandwich and water — also passen fruit oder water."
+      }
+    ],
+    "tasks": {
+      "1": {
+        "language": "en",
+        "prompt": "Berichte laut und stichpunktartig über deinen eigenen Tagesablauf mit drei Zeiten und deinen Mahlzeiten (Notizen aufschreiben).",
+        "model": "I get up at six thirty and have bread for breakfast. At one o'clock I have lunch at home. In the afternoon I do my homework. At seven I have dinner.",
+        "criteria": [
+          "Du verwendest get up, have breakfast/lunch/dinner und do my homework richtig.",
+          "Mindestens zwei konkrete Uhrzeiten oder Tageszeiten kommen vor.",
+          "Du prüfst nach dem Aufschreiben, ob Verben in der richtigen Form stehen."
+        ]
+      },
+      "2": {
+        "language": "en",
+        "prompt": "Vergleiche Sophies Schultags-Mahlzeiten in York mit deinen eigenen in vier englischen Sätzen (Ähnlichkeit und Unterschied).",
+        "model": "Sophie gets up at seven, and I get up at half past six. For lunch Sophie has a packed lunch at school, but I have a hot meal at home at one o'clock. Both of us like fruit and water. In the evening my family eats bread, and Sophie's family has hot dinner.",
+        "criteria": [
+          "Du benennst mindestens einen Unterschied und eine Gemeinsamkeit bei den Mahlzeiten.",
+          "Bei Sophie verwendest du die 3. Person Singular (gets, has, eats).",
+          "Du nutzt passende Bindewörter wie and oder but."
+        ]
+      }
+    },
+    "workshop": {
+      "kind": "dialogue",
+      "goals": [
+        {
+          "label": "Ergänze das richtige phrasal verb für den Morgen.",
+          "before": "Every Monday I",
+          "after": "at half past six.",
+          "options": [
+            "get up",
+            "go out",
+            "put on"
+          ],
+          "answer": "get up",
+          "explanation": "To get up heißt aufstehen."
+        },
+        {
+          "label": "Wähle das passende Verb für 'zu Mittag essen'.",
+          "before": "At twelve thirty we",
+          "after": "lunch in the canteen.",
+          "options": [
+            "have",
+            "do",
+            "make"
+          ],
+          "answer": "have",
+          "explanation": "Bei Mahlzeiten steht im Englischen to have breakfast / lunch / dinner."
+        },
+        {
+          "label": "Welche Kollokation gehört zu den Hausaufgaben?",
+          "before": "After school I always",
+          "after": "my homework.",
+          "options": [
+            "do",
+            "have",
+            "get"
+          ],
+          "answer": "do",
+          "explanation": "Man sagt immer to do your homework."
+        }
+      ]
+    }
+  },
+  {
+    "id": "e5m-numbers-prices",
+    "stage": "everyday",
+    "title": "Numbers up to 100 and prices",
+    "skill": "Grundzahlen bis 100 sicher bilden, schreiben und Preise in britischen Pfund und Pence verstehen.",
+    "bindings": [
+      "E5 1.2 Grundzahlen bis 100",
+      "E5 1.1 Sprachmittlung: Preisangaben"
+    ],
+    "paragraphs": [
+      "Die englischen Zahlen von 1 bis 20 solltest du sicher schreiben können — achte besonders auf thirteen, fourteen, fifteen und twenty. Ab 21 verbindest du Zehner und Einer immer mit einem Bindestrich: twenty-one, forty-two, ninety-nine. Die Zahl 100 heißt one hundred.",
+      "Beachte die genaue Schreibweise der Zehner: forty schreibt man ohne u (nicht fourty!), fifty mit f statt five, und eighty hat nur ein t. Bei Preisen in Großbritannien bezahlst du in pounds (£) und pence (p), zum Beispiel £4 und 75 p (four pounds seventy-five)."
+    ],
+    "takeaway": "Zahlen von 21 bis 99 bekommen einen Bindestrich (forty-two, ninety-six). Achte besonders auf fourteen vs. forty (ohne u) und auf one hundred.",
+    "material": "School shop price list: exercise book — 85 p; pencil case — £6; ruler — 90 p; coloured pencils — £4 and 50 p; school backpack — £28; dictionary — £12.",
+    "materialLabel": "Preisliste für Schulsachen im Vereinigten Königreich",
+    "materialLanguage": "en",
+    "sourceIds": [
+      "lp-e5"
+    ],
+    "quiz": {
+      "optionLanguage": "en",
+      "question": "How do you write the number 48 in English?",
+      "answer": "forty-eight",
+      "wrong": [
+        "fourty-eight",
+        "eighty-four"
+      ],
+      "explanation": "40 schreibt man forty (ohne u) und verbindet es mit Bindestrich mit dem Einer: forty-eight."
+    },
+    "practice": [
+      {
+        "prompt": "Write 65 in English words: ___.",
+        "answers": [
+          "sixty-five"
+        ],
+        "feedback": "65 heißt sixty-five (mit Bindestrich)."
+      },
+      {
+        "prompt": "How much are the backpack (£28) and the dictionary (£12) together? ___ pounds.",
+        "answers": [
+          "40",
+          "forty"
+        ],
+        "feedback": "28 + 12 = 40 — auf Englisch forty."
+      }
+    ],
+    "tasks": {
+      "1": {
+        "language": "en",
+        "prompt": "Schreibe die Zahlen 15, 42, 79, 86 und 100 als englische Wörter und nenne drei Dinge aus der Preisliste mit ihrem Preis.",
+        "model": "15 = fifteen, 42 = forty-two, 79 = seventy-nine, 86 = eighty-six, 100 = one hundred. A ruler is ninety pence. A pencil case is six pounds. A backpack is twenty-eight pounds.",
+        "criteria": [
+          "Alle fünf Zahlen sind buchstabengenau geschrieben (mit Bindestrich ab 21).",
+          "Forty steht ohne u.",
+          "Die drei Preisangaben passen zur Liste."
+        ]
+      },
+      "2": {
+        "language": "en",
+        "prompt": "Du kaufst im Londoner Schreibwarenladen drei Artikel aus der Liste und hast £35 dabei. Reicht dein Geld? Erkläre die Rechnung auf Englisch.",
+        "model": "I buy the backpack for twenty-eight pounds, the pencil case for six pounds and the ruler for ninety pence. Together that is thirty-four pounds ninety. Yes, my thirty-five pounds are enough, and I get ten pence back!",
+        "criteria": [
+          "Du wählst drei konkrete Artikel und addierst die Preise richtig.",
+          "Alle Zahlen stehen ausgeschrieben oder korrekt mit £/p.",
+          "Du gibst eine klare Antwort, ob £35 reichen."
+        ]
+      }
+    },
+    "workshop": {
+      "kind": "number",
+      "goals": [
+        {
+          "label": "Wähle die richtige Schreibweise für 42.",
+          "before": "42 in words is",
+          "after": ".",
+          "options": [
+            "forty-two",
+            "fourty-two",
+            "twenty-four"
+          ],
+          "answer": "forty-two",
+          "explanation": "42 schreibt man forty-two (ohne u, mit Bindestrich)."
+        },
+        {
+          "label": "Wähle die richtige Schreibweise für 99.",
+          "before": "99 in words is",
+          "after": ".",
+          "options": [
+            "ninety-nine",
+            "ninty-nine",
+            "nineteen-nine"
+          ],
+          "answer": "ninety-nine",
+          "explanation": "90 behält das e (ninety), 99 heißt ninety-nine."
+        },
+        {
+          "label": "Wie heißt die Zahl 100 auf Englisch?",
+          "before": "100 is",
+          "after": ".",
+          "options": [
+            "one hundred",
+            "ten hundred",
+            "hundredty"
+          ],
+          "answer": "one hundred",
+          "explanation": "100 heißt one hundred (oder a hundred)."
+        }
+      ]
+    }
+  },
+  {
+    "id": "e5m-shopping-quantities",
+    "stage": "everyday",
+    "title": "At the market: much, many and a lot of",
+    "skill": "Auf dem Markt oder im Laden einkaufen und Mengen mit much, many, a lot of und lots of richtig angeben.",
+    "bindings": [
+      "E5 1.1 Sprechen: Dienstleistungssituationen (z. B. Einkaufen)",
+      "E5 1.2 Mengenbezeichnungen (much, many, a lot of, lots of)",
+      "E5 5 Themengebiete: Dienstleistungen (Geschäft, Markt, Supermarkt, Flohmarkt, Imbissstand)"
+    ],
+    "speaking": true,
+    "paragraphs": [
+      "Ob auf dem Wochenmarkt (market), im Supermarkt, am Imbissstand (snack bar) oder auf dem Flohmarkt (flea market): Höfliche Einkaufsfragen beginnen meist mit Can I help you? und I'd like …, please. Am Schluss fragst du How much is it? oder How many apples would you like?",
+      "Für große Mengen merkst du dir eine klare Regel: many steht vor zählbaren Nomen im Plural (many apples, many books, How many?). much steht vor unzählbaren Nomen im Singular wie money, water, milk, food oder fruit (How much money? We haven't got much milk). In bejahten Sätzen benutzt du für beides am besten a lot of oder lots of (a lot of apples, lots of fruit)."
+    ],
+    "takeaway": "many + zählbarer Plural (many books); much + unzählbarer Singular (much water, How much?); a lot of / lots of passt bei beiden in Aussagen.",
+    "material": "Market stall dialogue — Seller: Hello! Can I help you? / Mia: Yes, I'd like six apples and a lot of bananas, please. Have you got fresh orange juice? / Seller: Sorry, we haven't got much orange juice today, only two small bottles. / Mia: Okay, two bottles, please. How much is that? / Seller: Five pounds, please. / Mia: Here you are. Thank you!",
+    "materialLabel": "Einkaufsgespräch am Marktstand",
+    "materialLanguage": "en",
+    "sourceIds": [
+      "lp-e5",
+      "nhs-eatwell"
+    ],
+    "quiz": {
+      "optionLanguage": "en",
+      "question": "Which sentence uses 'much' and 'many' correctly?",
+      "answer": "We haven't got much milk, but we have got many apples.",
+      "wrong": [
+        "We haven't got many milk, but we have got much apples.",
+        "How many money have you got today?"
+      ],
+      "explanation": "Milk ist nicht einzeln zählbar (much milk), apples sind im Plural zählbar (many apples)."
+    },
+    "practice": [
+      {
+        "prompt": "How ___ is that? — Five pounds, please.",
+        "answers": [
+          "much"
+        ],
+        "feedback": "Bei Geld/Preisen fragt man immer How much is that?"
+      },
+      {
+        "prompt": "How ___ bottles of orange juice has the seller got?",
+        "answers": [
+          "many"
+        ],
+        "feedback": "Bottles (Flaschen) sind zählbar im Plural, daher How many."
+      }
+    ],
+    "tasks": {
+      "1": {
+        "language": "en",
+        "prompt": "Sprich einen kleinen Einkauf am Imbissstand oder Flohmarkt laut und notiere deinen Dialog (Begrüßung, Wunsch mit I'd like, Preisfrage, Verabschiedung).",
+        "model": "Seller: Hi, can I help you? Customer: Yes, I'd like two cheese sandwiches and lots of fruit, please. How much is it? Seller: Four pounds, please. Customer: Here you are. Thanks, bye!",
+        "criteria": [
+          "Der Dialog enthält höfliches Bestellen mit I'd like … please.",
+          "Du fragst den Preis mit How much …? ab.",
+          "Mindestens eine Mengenbezeichnung (many, much, a lot of oder lots of) wird korrekt gebraucht."
+        ]
+      },
+      "2": {
+        "language": "en",
+        "prompt": "Schreibe eine Einkaufsszene auf dem Wochenmarkt oder im Supermarkt für eine Klassenparty (5–6 Sätze), in der many, much und a lot of / lots of richtig vorkommen.",
+        "model": "Let's buy food for our class party! We need a lot of apples and lots of bananas. How many bottles of water do we need? Twenty! Have we got much chocolate? No, we haven't got much money left, so let's buy two bars.",
+        "criteria": [
+          "much steht mit unzählbarem Nomen, many mit zählbarem Plural, a lot of / lots of in einer Aussage.",
+          "Das Thema Einkauf wird klar umgesetzt.",
+          "Rechtschreibung und Fragezeichen sind korrekt."
+        ]
+      }
+    },
+    "workshop": {
+      "kind": "dialogue",
+      "goals": [
+        {
+          "label": "Frage nach der Anzahl zählbarer Orangen.",
+          "before": "How",
+          "after": "oranges would you like?",
+          "options": [
+            "many",
+            "much",
+            "lot"
+          ],
+          "answer": "many",
+          "explanation": "Oranges stehen im zählbaren Plural -> How many."
+        },
+        {
+          "label": "Frage nach dem Preis oder einer unzählbaren Menge.",
+          "before": "How",
+          "after": "fruit juice do we need?",
+          "options": [
+            "much",
+            "many",
+            "lots"
+          ],
+          "answer": "much",
+          "explanation": "Fruit juice ist unzählbar -> How much."
+        },
+        {
+          "label": "Ergänze eine große Menge in einer bejahten Aussage.",
+          "before": "The market stall has got",
+          "after": "fresh vegetables.",
+          "options": [
+            "a lot of",
+            "much",
+            "many a"
+          ],
+          "answer": "a lot of",
+          "explanation": "In positiven Aussagen verwendet man am natürlichsten a lot of oder lots of."
+        }
+      ],
+      "mode": "chips"
+    }
+  },
+  {
+    "id": "e5m-some-any-no-this-that",
+    "stage": "everyday",
+    "title": "Some, any, no and this or that",
+    "skill": "Unbestimmte Mengen mit some, any, no ausdrücken und mit this und that auf Nahes oder Entferntes zeigen.",
+    "bindings": [
+      "E5 1.2 Indefinite Begleiter (some, any, no)",
+      "E5 1.2 Demonstrativpronomen (this, that)"
+    ],
+    "paragraphs": [
+      "Wenn du über eine ungenaue Menge sprichst (etwas / einige / keine), benutzt du some, any oder no: In bejahten Sätzen und höflichen Bitten steht some (We have got some apples. Would you like some tea?). In Fragen und verneinten Sätzen mit not steht any (Have you got any pens? There isn't any milk.). Mit no verneinst du direkt ohne not (There is no butter = There isn't any butter).",
+      "Wenn du auf ein einzelnes Ding oder eine einzelne Person zeigst, unterscheidest du nach der Entfernung: this benutzt du für etwas direkt bei dir (this book in my hand), that für etwas weiter weg (that bus over there). Beide Formen stehen mit der Einzahl."
+    ],
+    "takeaway": "some in bejahten Sätzen und höflichen Angeboten; any in Fragen und mit not; no ersetzt not … any. Zeigen in der Einzahl: this (hier nah) und that (dort drüben).",
+    "material": "In the fridge: There is some orange juice and there are some eggs. Is there any cheese? No, there isn't any cheese, and there is no chocolate! Look at this apple on my plate — it is red. That big melon over there on the table looks nice too.",
+    "materialLabel": "Blick in den Kühlschrank und auf den Tisch",
+    "materialLanguage": "en",
+    "sourceIds": [
+      "lp-e5"
+    ],
+    "quiz": {
+      "optionLanguage": "en",
+      "question": "Which neutral information question (unknown answer) uses 'some / any / no' correctly?",
+      "answer": "Are there any bananas in the bag?",
+      "wrong": [
+        "Is there any bananas in the bag?",
+        "There aren't no bananas in the bag."
+      ],
+      "explanation": "Für eine neutrale Informationsfrage (im Plural mit bananas) braucht man Are there any …?; das Singularverb Is sowie doppelte Verneinung (aren't + no) sind falsch."
+    },
+    "practice": [
+      {
+        "prompt": "There isn't ___ cheese in the fridge.",
+        "answers": [
+          "any"
+        ],
+        "feedback": "Nach verneintem isn't steht any."
+      },
+      {
+        "prompt": "Look at ___ apple here in my hand — it is green!",
+        "answers": [
+          "this"
+        ],
+        "feedback": "Für etwas Nahes (here in my hand) nutzt du this."
+      }
+    ],
+    "tasks": {
+      "1": {
+        "language": "en",
+        "prompt": "Schreibe drei Sätze über deinen Schulranzen oder Schreibtisch mit some, any (Verneinung oder Frage) und no.",
+        "model": "I have got some coloured pencils in my bag. Have you got any paper? There is no ruler on my desk.",
+        "criteria": [
+          "Du verwendest some, any und no jeweils grammatisch richtig.",
+          "Bei no steht keine zweite Verneinung im selben Satz.",
+          "Die Sätze passen zum Schreibtisch oder Schulranzen."
+        ]
+      },
+      "2": {
+        "language": "en",
+        "prompt": "Du kochst mit einem Freund und ihr prüft den Vorrat. Schreibe einen kurzen Dialog (4–5 Sätze), in dem some, any, no sowie this und that vorkommen.",
+        "model": "Have we got any eggs? Yes, there are some eggs in this box. Is there any milk? No, there is no milk! Look at that shop across the street — let's buy milk there.",
+        "criteria": [
+          "Mindestens je einmal some, any und no sind korrekt eingebaut.",
+          "this und that zeigen sinnvoll auf Nahes vs. Entferntes.",
+          "Satzbau und Zeichensetzung (Fragezeichen, Ausrufezeichen/Punkt) stimmen."
+        ]
+      }
+    },
+    "workshop": {
+      "kind": "sentence",
+      "goals": [
+        {
+          "label": "Ergänze das richtige Wort in einer normalen Frage.",
+          "before": "Have you got",
+          "after": "pencils in your bag?",
+          "options": [
+            "any",
+            "some",
+            "no"
+          ],
+          "answer": "any",
+          "explanation": "In offenen Informationsfragen steht any."
+        },
+        {
+          "label": "Verneine ohne 'not' direkt mit dem passenden Begleiter.",
+          "before": "Sorry, there is",
+          "after": "chocolate left.",
+          "options": [
+            "no",
+            "any",
+            "some"
+          ],
+          "answer": "no",
+          "explanation": "There is no chocolate bedeutet das Gleiche wie There isn't any chocolate."
+        },
+        {
+          "label": "Zeige auf ein Haus weit hinten auf der anderen Straßenseite.",
+          "before": "Look at",
+          "after": "house over there!",
+          "options": [
+            "that",
+            "this",
+            "some"
+          ],
+          "answer": "that",
+          "explanation": "Für weiter Entferntes (over there) im Singular nimmst du that."
+        }
+      ],
+      "mode": "order"
+    }
+  },
+  {
+    "id": "e5m-school-day-listening",
+    "stage": "school",
+    "title": "A British school day",
+    "skill": "Hörtexte über den Schulalltag in Großbritannien trotz kleiner Hintergrundgeräusche auf wesentliche Einzelheiten abhören.",
+    "bindings": [
+      "E5 1.1 Hörverstehen: wesentliche Einzelheiten trotz Nebengeräuschen",
+      "E5 2 Tagesablauf Gleichaltriger (Schultag)",
+      "E5 5 Themengebiete: Aspekte des Schullebens (Schule, Schulkantine, Lehrkräfte, Mitschüler)"
+    ],
+    "listening": true,
+    "paragraphs": [
+      "In vielen britischen Schulen beginnt der Schultag gegen 8 Uhr 45 oder 9 Uhr mit einer kurzen Klassenversammlung (registration oder assembly). Viele Kinder tragen eine Schuluniform, zum Beispiel einen Pullover mit Schulwappen, und verbringen auch den Nachmittag bis etwa 15 Uhr 15 an der Schule.",
+      "Beim Anhören eines Berichts über den Schultag tauchen manchmal Nebengeräusche wie eine Pausenklingel auf. Lass dich davon nicht verunsichern: Konzentriere dich gezielt auf Fakten wie Uhrzeiten, Personen (teachers, classmates) und Orte (classroom, school canteen)."
+    ],
+    "takeaway": "Konzentriere dich beim Hören auf Schlüsselwörter (Uhrzeit, Schulfächer, Orte wie school canteen) und notiere nur die gefragten Fakten.",
+    "material": "Ding-dong! That is the morning bell at Oakwood School in Leeds. Our school starts at nine o'clock. All pupils wear a blue jumper and black trousers. We have Maths and Art before the morning break. At twelve thirty my classmates and I eat hot pasta in the school canteen. Our form teacher Mrs Patel is very friendly.",
+    "materialLabel": "Bericht einer Schülerin aus Leeds zum Anhören",
+    "materialLanguage": "en",
+    "sourceIds": [
+      "lp-e5",
+      "gov-school"
+    ],
+    "quiz": {
+      "optionLanguage": "en",
+      "question": "Where do the pupils eat hot pasta at 12:30?",
+      "answer": "In the school canteen",
+      "wrong": [
+        "In the bus",
+        "At home in Germany"
+      ],
+      "explanation": "Im Hörtext heißt es: At twelve thirty my classmates and I eat hot pasta in the school canteen."
+    },
+    "practice": [
+      {
+        "prompt": "What time does Oakwood School start? At ___ o'clock.",
+        "answers": [
+          "9",
+          "nine"
+        ],
+        "feedback": "Der Unterricht beginnt um nine o'clock (9 Uhr)."
+      },
+      {
+        "prompt": "What is the name of the form teacher? Mrs ___.",
+        "answers": [
+          "Patel"
+        ],
+        "feedback": "Die Klassenlehrerin heißt Mrs Patel."
+      }
+    ],
+    "tasks": {
+      "1": {
+        "language": "en",
+        "prompt": "Vergleiche Oakwood School in drei einfachen Sätzen mit deiner Schule (Schulbeginn, Kleidung, Mittagessen).",
+        "model": "Oakwood School starts at nine o'clock, my school starts at eight. In Leeds pupils wear a school uniform, we wear normal clothes. They eat in the school canteen, and I eat at home.",
+        "criteria": [
+          "Du vergleichst mindestens zwei Aspekte (z. B. Uhrzeit, Uniform, Kantine).",
+          "Alle Fakten aus dem Hörtext stimmen.",
+          "Du nutzt vollständige englische Sätze."
+        ]
+      },
+      "2": {
+        "language": "en",
+        "prompt": "Schreibe eine kurze Vorstellung deiner Klasse und deiner Schule (4–5 Sätze) für Kinder in Leeds: Klassenlehrkraft, Mitschülerinnen/Mitschüler, Lieblingsort.",
+        "model": "Hello Oakwood School! We are Class 5A at our Mittelschule in Bavaria. Our form teacher is Mr Weber and we have twenty-two friendly classmates. Our lessons start at eight o'clock. My favourite place is the sports hall!",
+        "criteria": [
+          "Du nennst Klasse, Lehrkraft und Mitschüler (classmates).",
+          "Du beschreibst mindestens zwei Besonderheiten deines Schultags.",
+          "Grammatik und Rechtschreibung (z. B. starts in 3. Person, Großschreibung) stimmen."
+        ]
+      }
+    },
+    "workshop": {
+      "kind": "sentence",
+      "goals": [
+        {
+          "label": "Wie nennt man den Speiseraum einer Schule auf Englisch?",
+          "before": "Pupils have lunch in the school",
+          "after": ".",
+          "options": [
+            "canteen",
+            "bedroom",
+            "garden"
+          ],
+          "answer": "canteen",
+          "explanation": "School canteen ist die Schulkantine."
+        },
+        {
+          "label": "Welches Wort passt für 'Mitschülerinnen und Mitschüler'?",
+          "before": "My friendly",
+          "after": "sit next to me.",
+          "options": [
+            "classmates",
+            "teachers",
+            "neighbours"
+          ],
+          "answer": "classmates",
+          "explanation": "Classmates sind deine Klassenkameraden."
+        },
+        {
+          "label": "Welche Verbform gehört zu 'Our school'?",
+          "before": "Our school",
+          "after": "at nine o'clock.",
+          "options": [
+            "starts",
+            "start",
+            "starting"
+          ],
+          "answer": "starts",
+          "explanation": "Our school steht im Singular (it) -> starts im simple present."
+        }
+      ]
+    }
+  },
+  {
+    "id": "e5m-timetable-clock",
+    "stage": "school",
+    "title": "Timetable and telling the time",
+    "skill": "Unterrichtsfächer benennen, einen Stundenplan lesen und die englische Uhrzeit bis auf Viertelstunden sicher angeben.",
+    "bindings": [
+      "E5 5 Themengebiete: Stundenplan, Unterrichtsfächer, Unterricht",
+      "E5 1.1 Leseverstehen: konkrete Angaben entnehmen"
+    ],
+    "paragraphs": [
+      "Für die Uhrzeit auf Englisch liest du zuerst die Viertelstunden: Volle Stunde heißt o'clock (nine o'clock), Viertel nach heißt quarter past (quarter past nine), halb heißt half past (half past nine = 9 Uhr 30!) und Viertel vor heißt quarter to mit der NÄCHSTEN Stunde (quarter to ten = 9 Uhr 45). Probiere es direkt an der interaktiven Uhr unten aus!",
+      "Auf deinem Stundenplan (timetable) findest du verschiedene Schulfächer (school subjects): English, German, maths, science, geography, history, art, music, PE und IT. Achte auf die Großschreibung im Englischen: Wochentage (Monday, Tuesday, Wednesday, Thursday, Friday) und Sprachen wie English und German schreibt man immer groß. Allgemeine Schulfächer wie maths, history oder art stehen im laufenden Satz klein (als Tabellenüberschrift im Stundenplan stehen sie oft groß)."
+    ],
+    "takeaway": "half past + volle Stunde bedeutet halb nach (half past eight = 8 Uhr 30); quarter to zählt zur nächsten Stunde (quarter to nine = 8 Uhr 45). Wochentage und Sprachnamen (English, German) schreibt man immer groß, allgemeine Fächer im Fließtext klein.",
+    "material": "Monday timetable (5M): 8:00 German — 8:45 English — 9:30 Break — 10:00 Maths — 11:15 Music — 12:00 Art. On Tuesday we have PE at quarter past ten and Geography at half past eleven.",
+    "materialLabel": "Auszug aus dem Stundenplan der 5M",
+    "materialLanguage": "en",
+    "sourceIds": [
+      "lp-e5",
+      "gov-school"
+    ],
+    "quiz": {
+      "optionLanguage": "en",
+      "question": "How do you say 10:30 in English?",
+      "answer": "half past ten",
+      "wrong": [
+        "half to ten",
+        "quarter past ten"
+      ],
+      "explanation": "10:30 ist halb elf, also wörtlich halb nach zehn: half past ten."
+    },
+    "practice": [
+      {
+        "prompt": "Write 8:45 in English words: ___.",
+        "answers": [
+          "quarter to nine",
+          "a quarter to nine",
+          "eight forty-five"
+        ],
+        "feedback": "8:45 ist Viertel vor neun: quarter to nine (auch: a quarter to nine oder eight forty-five)."
+      },
+      {
+        "prompt": "On Monday, break starts at ___ (use words, e.g. half past ...).",
+        "answers": [
+          "half past nine",
+          "nine thirty"
+        ],
+        "feedback": "Laut Stundenplan ist die Pause um 9:30: half past nine."
+      }
+    ],
+    "tasks": {
+      "1": {
+        "language": "en",
+        "prompt": "Schreibe drei Sätze über deinen Montag nach dem Muster: Fach + Uhrzeit mit at.",
+        "model": "On Monday I have German at eight o'clock. I have English at quarter to nine. At ten o'clock we have maths.",
+        "criteria": [
+          "Du nennst drei Fächer und drei englische Uhrzeiten mit at.",
+          "Der Wochentag Monday sowie Sprachen (English, German) sind großgeschrieben; andere Fächer im Satz klein.",
+          "Die Satzreihenfolge ist klar."
+        ]
+      },
+      "2": {
+        "language": "en",
+        "prompt": "Beschreibe deinen Lieblingstag in der Schule (4–5 Sätze): Wann fängt der Tag an, welche zwei Lieblingsfächer hast du, wann ist Pause und wann ist Schulschluss?",
+        "model": "My favourite school day is Wednesday. Lessons start at eight o'clock. At quarter to nine we have English, and at half past eleven we have PE! Break is at half past nine. School finishes at quarter past one.",
+        "criteria": [
+          "Du nutzt o'clock, quarter past, half past und quarter to sinnvoll.",
+          "Du nennst konkrete Fächer und Pausen- oder Endzeiten.",
+          "Verben im simple present passen zum Subjekt (lessons start / school finishes)."
+        ]
+      }
+    },
+    "workshop": {
+      "kind": "clock",
+      "goals": [
+        {
+          "label": "Wie liest man 09:15 richtig auf Englisch?",
+          "before": "09:15 is",
+          "after": ".",
+          "options": [
+            "quarter past nine",
+            "quarter to nine",
+            "half past nine"
+          ],
+          "answer": "quarter past nine",
+          "explanation": "15 Minuten nach der vollen Stunde heißt quarter past."
+        },
+        {
+          "label": "Wie liest man 10:30 richtig auf Englisch?",
+          "before": "10:30 is",
+          "after": ".",
+          "options": [
+            "half past ten",
+            "half to eleven",
+            "quarter past ten"
+          ],
+          "answer": "half past ten",
+          "explanation": "Im Englischen zählt man bei halb immer 'nach der vergangenen Stunde': half past ten."
+        },
+        {
+          "label": "Wie liest man 11:45 richtig auf Englisch?",
+          "before": "11:45 is",
+          "after": ".",
+          "options": [
+            "quarter to twelve",
+            "quarter to eleven",
+            "quarter past eleven"
+          ],
+          "answer": "quarter to twelve",
+          "explanation": "11:45 liegt 15 Minuten vor 12:00 -> quarter to twelve."
+        }
+      ]
+    }
+  },
+  {
+    "id": "e5m-way-to-school",
+    "stage": "school",
+    "title": "My way to school",
+    "skill": "Den eigenen Schulweg beschreiben, Verkehrsschilder verstehen und einen kurzen Kurzvortrag anhand von Notizen halten.",
+    "bindings": [
+      "E5 1.1 Sprechen: erzählen (Schulweg) & kurze Präsentation mit Visualisierung",
+      "E5 1.1 Leseverstehen: Alltagstexte (Verkehrsschilder)",
+      "E5 5 Themengebiete: Schulweg"
+    ],
+    "speaking": true,
+    "paragraphs": [
+      "Beim Schulweg helfen einfache Verkehrsangaben und Präpositionen: I go to school on foot (zu Fuß gehen), I go by bus, by bike oder by car. Beachte: Bei allen Verkehrsmitteln steht by ohne Artikel (by bus, nicht by a bus!), bei zu Fuß dagegen on foot.",
+      "Die Klasse 5B hat gezählt, wie alle 28 Kinder zur Schule kommen — die erfundene Grafik unten zeigt die Zahlen für einen Kurzvortrag (short presentation). Bei einer kleinen Präsentation nutzt du stichwortartige Notizen (notes) und zeigst beim Sprechen auf deine Grafik oder ein Bild, damit dir alle leicht folgen können."
+    ],
+    "takeaway": "Bei Verkehrsmitteln steht by ohne Artikel (by bike, by bus), zu Fuß heißt on foot. Nutze Grafiken und Stichworte als Stütze für einen kurzen Vortrag.",
+    "material": "Way to school in Class 5B (28 pupils): Eleven pupils go on foot. Nine pupils go by bus. Five pupils come by bike and three children go by car. Road signs near school: SLOW — SCHOOL CROSSING — STOP — NO CYCLING ON PAVEMENT.",
+    "materialLabel": "Schulweg-Daten und Verkehrsschilder",
+    "materialLanguage": "en",
+    "graphic": {
+      "title": "Way to school in Class 5B",
+      "unit": "Pupils",
+      "values": [
+        {
+          "label": "On foot",
+          "value": 11
+        },
+        {
+          "label": "By bus",
+          "value": 9
+        },
+        {
+          "label": "By bike",
+          "value": 5
+        },
+        {
+          "label": "By car",
+          "value": 3
+        }
+      ]
+    },
+    "sourceIds": [
+      "lp-e5",
+      "lp-profil"
+    ],
+    "quiz": {
+      "optionLanguage": "en",
+      "question": "How do most pupils in Class 5B come to school?",
+      "answer": "On foot",
+      "wrong": [
+        "By car",
+        "By bike"
+      ],
+      "explanation": "Laut Grafik kommen 11 Schülerinnen und Schüler on foot (zu Fuß) — das ist der höchste Wert."
+    },
+    "practice": [
+      {
+        "prompt": "I go to school ___ bike. (one word)",
+        "answers": [
+          "by"
+        ],
+        "feedback": "Vor Fahrzeugen steht im Englischen by ohne Artikel: by bike."
+      },
+      {
+        "prompt": "How many pupils come by bus in Class 5B?",
+        "answers": [
+          "9",
+          "nine"
+        ],
+        "feedback": "Der Balken 'By bus' zeigt den Wert 9."
+      }
+    ],
+    "tasks": {
+      "1": {
+        "language": "en",
+        "prompt": "Übe laut einen kurzen 3-Satz-Vortrag über deinen eigenen Schulweg (wann gehst du los, wie kommst du hin, wie lange dauert es) und notiere deine Sätze.",
+        "model": "I leave home at half past seven. I go to school by bus with my friend Tom. My way to school takes fifteen minutes.",
+        "criteria": [
+          "Du nennst Abfahrtszeit oder Dauer des Schulwegs.",
+          "Du nutzt on foot oder by bus/bike/car korrekt.",
+          "Deine Notizen helfen dir beim freien Lautsprechen."
+        ]
+      },
+      "2": {
+        "language": "en",
+        "prompt": "Halte einen kurzen englischen Vortrag über die Grafik der Klasse 5B (4–5 Sätze: Thema nennen, größte/kleinste Gruppe, dein eigener Schulweg als Vergleich).",
+        "model": "Here is our chart about Class 5B's way to school. Eleven pupils go on foot, and nine go by bus. Only three pupils go by car. I come by bike, just like five pupils in Class 5B!",
+        "criteria": [
+          "Du nennst Zahlen und Gruppen aus der Grafik korrekt.",
+          "Du verwendest on foot und mindestens zwei by-Angaben.",
+          "Du ziehst einen Vergleich zu deinem eigenen Schulweg."
+        ]
+      }
+    },
+    "workshop": {
+      "kind": "graphic",
+      "goals": [
+        {
+          "label": "Wie sagt man richtig 'zu Fuß zur Schule gehen'?",
+          "before": "We go to school",
+          "after": ".",
+          "options": [
+            "on foot",
+            "by foot",
+            "in foot"
+          ],
+          "answer": "on foot",
+          "explanation": "Die feste Wendung heißt immer on foot."
+        },
+        {
+          "label": "Welche Präposition gehört vor 'bus', 'bike' und 'car'?",
+          "before": "Nine pupils travel",
+          "after": "bus.",
+          "options": [
+            "by",
+            "on",
+            "with"
+          ],
+          "answer": "by",
+          "explanation": "Vor Verkehrsmitteln ohne Artikel steht by."
+        },
+        {
+          "label": "Was bedeutet das Verkehrsschild 'NO CYCLING ON PAVEMENT'?",
+          "before": "On this path, bikes are",
+          "after": ".",
+          "options": [
+            "not allowed",
+            "very fast",
+            "for children"
+          ],
+          "answer": "not allowed",
+          "explanation": "No cycling bedeutet: Radfahren ist auf dem Gehweg verboten."
+        }
+      ]
+    }
+  },
+  {
+    "id": "e5m-personal-profile",
+    "stage": "school",
+    "title": "My personal profile",
+    "skill": "Einfache Steckbriefe mit Angaben zur Person ausfüllen und den eigenen Wortschatz rechtschriftlich sauber überprüfen.",
+    "bindings": [
+      "E5 1.1 Schreiben: einfache Steckbriefe ausfüllen",
+      "E5 1.1 Schreiben: Orthographie mit Vorlage und Wörterliste prüfen"
+    ],
+    "paragraphs": [
+      "Auf einem englischen Steckbrief (personal profile) trägst du kurze Informationen stichpunktartig ein: First name (Vorname), Surname / Last name (Nachname), Age (Alter), Address (Anschrift), Pets (Haustiere), Hobbies und Favourite school subjects. Meist genügen einzelne Wörter oder Zahlen statt ganzer Sätze.",
+      "Kontrolliere deine Schreibweise nach dem Ausfüllen genau mithilfe von Vorlagen oder der Wörterliste: Im Englischen schreibst du Namen, Städte, Wochentage (Monday), das Fach English und das Wort I groß. Bei Hobbys wie swimming oder football lohnt sich ein Blick auf doppelte Buchstaben."
+    ],
+    "takeaway": "Im Steckbrief reichen klare Stichpunkte; kontrolliere anschließend Großschreibung (Namen, English, Wochentage) und Rechtschreibung über deine Wortliste.",
+    "material": "Student Profile — First name: Lena | Surname: Hoffmann | Age: 11 | Town: Regensburg | Pets: one rabbit (Flocke) | Hobbies: swimming, drawing | Favourite subjects: English, Music.",
+    "materialLabel": "Ausgefüllter englischer Schüler-Steckbrief",
+    "materialLanguage": "en",
+    "sourceIds": [
+      "lp-e5",
+      "cambridge-dict"
+    ],
+    "quiz": {
+      "optionLanguage": "en",
+      "question": "Which words are ALWAYS written with a capital letter in English?",
+      "answer": "English, Monday and I",
+      "wrong": [
+        "Rabbit, Swimming and Book",
+        "Age, Address and Pets"
+      ],
+      "explanation": "Sprachen/Schulfächer aus Ländernamen (English), Wochentage (Monday) und I schreibt man immer groß — gewöhnliche Nomen klein."
+    },
+    "practice": [
+      {
+        "prompt": "What is Lena's surname in the profile?",
+        "answers": [
+          "Hoffmann"
+        ],
+        "feedback": "Surname bedeutet Nachname -> Hoffmann."
+      },
+      {
+        "prompt": "How old is Lena? She is ___.",
+        "answers": [
+          "11",
+          "eleven"
+        ],
+        "feedback": "Im Steckbrief steht Age: 11."
+      }
+    ],
+    "tasks": {
+      "1": {
+        "language": "en",
+        "prompt": "Fülle deinen eigenen englischen Steckbrief mit genau diesen Punkten aus: First name, Age, Town, Pets, Hobbies, Favourite subject.",
+        "model": "First name: Jonas | Age: 10 | Town: Passau | Pets: no pets | Hobbies: cycling, reading | Favourite subject: PE.",
+        "criteria": [
+          "Alle sechs Felder aus der Aufgabe sind ausgefüllt.",
+          "Du verwendest passende englische Wörter ohne Tippfehler.",
+          "Namen und Orte stehen großgeschrieben."
+        ]
+      },
+      "2": {
+        "language": "en",
+        "prompt": "Mache aus Lenas Steckbrief oben einen kleinen Vorstellungstext von vier zusammenhängenden Sätzen.",
+        "model": "Hello, this is Lena Hoffmann. She is eleven years old and lives in Regensburg. Lena has got one rabbit called Flocke. She likes swimming and drawing, and her favourite subjects are English and Music.",
+        "criteria": [
+          "Alle wichtigen Angaben aus Lenas Steckbrief werden in Sätzen verknüpft.",
+          "Die 3. Person Singular (is, lives, has got, likes) ist korrekt.",
+          "Sprache und Groß-/Kleinschreibung sind sauber geprüft."
+        ]
+      }
+    },
+    "workshop": {
+      "kind": "text",
+      "goals": [
+        {
+          "label": "Welches Feld im Steckbrief fragt nach dem Vornamen?",
+          "before": "For 'Lena', the profile label is",
+          "after": ".",
+          "options": [
+            "First name",
+            "Surname",
+            "Age"
+          ],
+          "answer": "First name",
+          "explanation": "First name = Vorname; surname = Nachname."
+        },
+        {
+          "label": "Welches Wort musst du in einem englischen Satz groß schreiben?",
+          "before": "Correct spelling: My favourite subject is",
+          "after": ".",
+          "options": [
+            "English",
+            "english",
+            "Subject"
+          ],
+          "answer": "English",
+          "explanation": "English schreibt man immer mit großem E."
+        },
+        {
+          "label": "Wähle den richtig geschriebenen Plural von hobby.",
+          "before": "Her",
+          "after": "are swimming and music.",
+          "options": [
+            "hobbies",
+            "hobbys",
+            "hobby"
+          ],
+          "answer": "hobbies",
+          "explanation": "Aus Konsonant + y wird im Plural -ies: hobbies."
+        }
+      ]
+    }
+  },
+  {
+    "id": "e5m-wordwebs-flashcards",
+    "stage": "school",
+    "title": "Wordwebs and learning strategies",
+    "skill": "Wortschatz in Themennetzen (wordwebs) ordnen, passende Lernkarten wählen und Sprachvergleiche als Lernhilfe nutzen.",
+    "bindings": [
+      "E5 4 Methodische Kompetenzen: wordweb nach Themenfeldern",
+      "E5 4 Methodische Kompetenzen: Lernmittel wählen und Strategien anwenden",
+      "E5 4 Methodische Kompetenzen: Gemeinsamkeiten und Unterschiede"
+    ],
+    "paragraphs": [
+      "Einzelne Wörter ohne Zusammenhang vergisst man schnell. Besser merkst du dir neuen Wortschatz mit einem wordweb (Wortigel) zu einem Thema wie School, Food oder Hobbies: In die Mitte kommt das Oberthema, an den Zweigen sammelst du passende Nomen, Verben und Adjektive — oft mit einem kleinen Bild oder Beispielsatz.",
+      "Auch Lernkarten (flashcards) mit Englisch vorn und Deutsch + Beispielsatz hinten helfen beim Wiederholen in kleinen Portionen. Dabei erkennst du clevere Brücken zwischen Deutsch und Englisch: Gemeinsamkeiten wie den `s-Genitiv (Anna's book / Annas Buch) und Unterschiede wie unregelmäßige Plurale (child — children) oder Groß- und Kleinschreibung."
+    ],
+    "takeaway": "Ordne Wörter thematisch im wordweb, wiederhole aktiv mit Bild- oder Karteikarten und merke dir gezielt Ähnlichkeiten und Unterschiede zwischen Deutsch und Englisch.",
+    "material": "Wordweb topic SCHOOL: Subjects (English, Maths, PE) — People (teacher, classmate, friend) — Things (desk, ruler, rubber, pen) — Verbs (read, write, listen, learn). Language tip: 'Peter's bag' works like 'Peters Tasche', whereas 'men' has no '-s' at the end.",
+    "materialLabel": "Beispiel für ein Wordweb und einen Sprachvergleich",
+    "materialLanguage": "en",
+    "sourceIds": [
+      "lp-e5",
+      "lp-profil"
+    ],
+    "quiz": {
+      "optionLanguage": "en",
+      "question": "Which group of words belongs to the branch 'Things' in a school wordweb?",
+      "answer": "desk, ruler, rubber",
+      "wrong": [
+        "Maths, PE, Music",
+        "teacher, classmate, friend"
+      ],
+      "explanation": "Desk, ruler und rubber sind Schulsachen (Things), nicht Fächer oder Personen."
+    },
+    "practice": [
+      {
+        "prompt": "In the school wordweb, 'listen' and 'read' belong to the branch ___.",
+        "answers": [
+          "Verbs",
+          "verbs"
+        ],
+        "feedback": "listen und read sind Tätigkeiten (Verbs)."
+      },
+      {
+        "prompt": "In English, 'Peter's bag' is an example of similarity with the German `s-___.",
+        "answers": [
+          "Genitiv",
+          "genitive"
+        ],
+        "feedback": "Der Besitz mit -s (Peter's bag) ähnelt dem deutschen Genitiv."
+      }
+    ],
+    "tasks": {
+      "1": {
+        "language": "de",
+        "prompt": "Entwirf auf Deutsch und Englisch ein kleines Wordweb zum Thema PETS oder FOOD mit drei Zweigen und jeweils drei passenden englischen Wörtern.",
+        "model": "Thema FOOD — Obst/Gemüse (fruit & vegetables): apple, banana, tomato; Getränke (drinks): water, milk, tea; Adjektive (adjectives): fresh, warm, sweet.",
+        "criteria": [
+          "Dein Wordweb hat ein klares Oberthema und drei verschiedene Zweige.",
+          "Unter jedem Zweig stehen drei passende englische Wörter.",
+          "Du prüfst die englische Rechtschreibung sorgfältig."
+        ]
+      },
+      "2": {
+        "language": "de",
+        "prompt": "Beschreibe deine zwei besten Lerntipps für einen Englisch-Test in Klasse 5: Wie arbeitest du mit Karteikarten oder einem Wordweb, und worauf achtest du beim Vergleich Englisch–Deutsch?",
+        "model": "Ich schreibe neue Wörter auf Karteikarten — vorn das englische Wort mit einem Beispielsatz, hinten die deutsche Bedeutung. Vor dem Test ordne ich schwierige Wörter in einem Wordweb nach Themen. Außerdem markiere ich mir Unterschiede zum Deutschen, wie die Kleinschreibung von Nomen oder unregelmäßige Plurale (children).",
+        "criteria": [
+          "Du nennst zwei konkrete Lernstrategien mit Begründung.",
+          "Du beschreibst mindestens eine Gemeinsamkeit oder einen Unterschied zwischen Englisch und Deutsch.",
+          "Deine Erklärung ist verständlich und praxisnah."
+        ]
+      }
+    },
+    "workshop": {
+      "kind": "text",
+      "goals": [
+        {
+          "label": "Welches Wort passt in einen Food-Zweig des Wordwebs?",
+          "before": "Branch 'Drinks': water, juice,",
+          "after": ".",
+          "options": [
+            "milk",
+            "pencil",
+            "cinema"
+          ],
+          "answer": "milk",
+          "explanation": "Milk gehört zu den Getränken."
+        },
+        {
+          "label": "Welche Strategie hilft beim Lernen gegen bloßes Anstarren der Liste?",
+          "before": "To remember words well, draw a",
+          "after": "or write flashcards.",
+          "options": [
+            "wordweb",
+            "timetable",
+            "football"
+          ],
+          "answer": "wordweb",
+          "explanation": "Ein wordweb verknüpft Wörter sinnvoll nach Themen."
+        },
+        {
+          "label": "Was stimmt beim Vergleich von Deutsch und Englisch?",
+          "before": "In English, ordinary nouns like 'book' start with a",
+          "after": "letter.",
+          "options": [
+            "small",
+            "capital",
+            "red"
+          ],
+          "answer": "small",
+          "explanation": "Im Gegensatz zum Deutschen schreibt man normale Nomen auf Englisch klein (a small letter)."
+        }
+      ],
+      "mode": "chips"
+    }
+  },
+  {
+    "id": "e5m-reading-listening-skills",
+    "stage": "school",
+    "title": "Finding key facts in posters and ads",
+    "skill": "Durch suchendes Lesen (scanning) und Bild-/Überschriftenhinweise wichtige Fakten aus Plakaten, Prospekten und Anzeigen filtern.",
+    "bindings": [
+      "E5 1.1 Leseverstehen: Verkaufsanzeigen, Prospekte, Plakate",
+      "E5 3 Sprachliche und bildliche Elemente (Überschriften, Teilüberschriften)",
+      "E5 4 Hör- und Lesetechniken: Schlüsselwörter herausfiltern"
+    ],
+    "paragraphs": [
+      "Du musst ein englisches Plakat, eine Broschüre oder eine Verkaufsanzeige nicht Wort für Wort übersetzen, um das Wichtigste zu verstehen. Schau zuerst auf Überschriften (headings), fett gedruckte Wörter, Zahlen, Daten und internationale Wörter (wie ticket, museum, café, mountain bike).",
+      "Diese Lesestrategie heißt suchendes Lesen: Du stellst dir vorher eine konkrete Frage (Wann? Wo? Wie teuer?) und lässt deinen Blick wie einen Scanner über die Zeilen wandern, bis du das passende Schlüsselwort findest."
+    ],
+    "takeaway": "Suche auf Plakaten und Anzeigen gezielt nach Überschriften, Zahlen, Wochentagen, Orten und bekannten Wörtern — statt an einem unbekannten Wort hängen zu bleiben.",
+    "material": "FOR SALE — KIDS' MOUNTAIN BIKE! Blue bike, 24 inch, good tyres. Great for your way to school! Price: £65 (or best offer). Phone Mr Evans: 01632 490812 (after 5 p.m.). Collect from High Street, Cardiff.",
+    "materialLabel": "Verkaufsanzeige in einem Schaufenster in Cardiff",
+    "materialLanguage": "en",
+    "sourceIds": [
+      "lp-e5",
+      "cadw-wales"
+    ],
+    "quiz": {
+      "optionLanguage": "en",
+      "question": "When can you phone Mr Evans about the mountain bike?",
+      "answer": "After 5 o'clock in the afternoon",
+      "wrong": [
+        "Early in the morning at 7 a.m.",
+        "Only on Saturday morning"
+      ],
+      "explanation": "In der Anzeige steht die Zeitangabe: (after 5 p.m.)."
+    },
+    "practice": [
+      {
+        "prompt": "How much does the blue mountain bike cost? ___ pounds.",
+        "answers": [
+          "65",
+          "sixty-five"
+        ],
+        "feedback": "Hinter dem Schlüsselwort Price steht £65."
+      },
+      {
+        "prompt": "In which city can you collect the bike?",
+        "answers": [
+          "Cardiff"
+        ],
+        "feedback": "Am Ende steht die Ortsangabe: Collect from High Street, Cardiff."
+      }
+    ],
+    "tasks": {
+      "1": {
+        "language": "en",
+        "prompt": "Lies die Verkaufsanzeige oben suchend und beantworte vier Fragen in Stichworten oder kurzen Sätzen: What? Colour? Price? Where?",
+        "model": "What: A kids' mountain bike. Colour: Blue. Price: £65. Where: High Street in Cardiff.",
+        "criteria": [
+          "Alle vier gesuchten Informationen aus der Anzeige stimmen genau.",
+          "Du bleibst knapp und klar bei den Kernfakten.",
+          "Englische Schreibweise ist korrekt."
+        ]
+      },
+      "2": {
+        "language": "en",
+        "prompt": "Schreibe eine eigene kurze englische Verkaufsanzeige (FOR SALE) für ein Spiel, ein Fahrrad oder einen Fußball mit Überschrift, drei Merkmalen, Preis in £ und Abholort.",
+        "model": "FOR SALE — FOOTBALL BOOTS! Black and white football boots, size 38, clean and very light. Great for school sport! Price: £18. Ask Leo in Class 5B at break time.",
+        "criteria": [
+          "Die Anzeige hat eine klare Überschrift (FOR SALE).",
+          "Preis in £, Zustand/Merkmal und Kontakt bzw. Ort fehlen nicht.",
+          "Der Text ist übersichtlich wie ein echter Aushang gestaltet."
+        ]
+      }
+    },
+    "workshop": {
+      "kind": "text",
+      "goals": [
+        {
+          "label": "Welche Überschrift passt zu einem Ausflugsziel in Wales (Cadw)?",
+          "before": "CASTLES IN WALES —",
+          "after": "Cardiff Castle this weekend!",
+          "options": [
+            "Visit",
+            "Sleep",
+            "Forget"
+          ],
+          "answer": "Visit",
+          "explanation": "Auf Prospekten und Schildern lädt 'Visit …!' zum Besuch ein."
+        },
+        {
+          "label": "Wonach suchst du zuerst, wenn du den Preis einer Anzeige wissen willst?",
+          "before": "For the price, scan the text for",
+          "after": ".",
+          "options": [
+            "numbers and £",
+            "verbs and names",
+            "full stops"
+          ],
+          "answer": "numbers and £",
+          "explanation": "Zahlen und das Pfundzeichen £ zeigen sofort den Preis."
+        },
+        {
+          "label": "Welches internationale Wort hilft auf jedem Schulplakat sofort?",
+          "before": "SCHOOL",
+          "after": "— Friday at 4 p.m.!",
+          "options": [
+            "CONCERT",
+            "HOMEWORK",
+            "WEATHER"
+          ],
+          "answer": "CONCERT",
+          "explanation": "Concert ähnelt dem deutschen Wort Konzert."
+        }
+      ]
+    }
+  },
+  {
+    "id": "e5m-hobbies-gerund",
+    "stage": "leisure",
+    "title": "Hobbies and I like reading",
+    "skill": "Über Hobbys, Sport und Spiele sprechen und nach like oder dislike die -ing-Form (Gerund) richtig verwenden.",
+    "bindings": [
+      "E5 1.2 Gerund: ing-Form nach bestimmten Ausdrücken (I like/dislike …)",
+      "E5 5 Themengebiete: Hobbys, Sport, Spiele"
+    ],
+    "paragraphs": [
+      "Wenn du auf Englisch sagen willst, welche Beschäftigung dir gefällt oder nicht gefällt, hängst du nach like, love oder dislike an das Tätigkeitswort einfach -ing an: I like reading. My brother dislikes cleaning his room. Diese Form heißt Gerund — sie macht aus einem Verb eine Tätigkeit wie 'das Lesen'.",
+      "Merke dir zwei kleine Schreibregeln beim Anhängen von -ing: Endet das Verb auf ein stummes -e, fällt dieses meist weg (write → writing, ride → riding). Nach einem kurzen betonten Vokal vor einem einzelnen Konsonanten verdoppelst du diesen (swim → swimming, run → running). Und Achtung: Nach like steht in Klasse 5 meist I like + verb-ing oder I like + Nomen (I like football)."
+    ],
+    "takeaway": "Nach I like / I dislike folgt bei einer Tätigkeit die -ing-Form (Gerund): I like playing football, she dislikes swimming. Stummes -e fällt weg (riding), kurzer Vokal verdoppelt (swimming).",
+    "material": "After school: Sam loves playing football in the park with his friends. His sister Mia likes riding her bike and drawing comics. Both of them dislike waiting for the rain to stop! On rainy days they love playing board games.",
+    "materialLabel": "Freizeitaktivitäten nach der Schule",
+    "materialLanguage": "en",
+    "sourceIds": [
+      "lp-e5",
+      "lp-profil"
+    ],
+    "quiz": {
+      "optionLanguage": "en",
+      "question": "Which sentence has the right spelling of the -ing form?",
+      "answer": "Lena likes swimming and riding her bike.",
+      "wrong": [
+        "Lena likes swiming and rideing her bike.",
+        "Lena like swimming and ride her bike."
+      ],
+      "explanation": "swim → swimming (Doppel-m) und ride → riding (stummes -e fällt weg)."
+    },
+    "practice": [
+      {
+        "prompt": "I like ___ (read) funny books.",
+        "answers": [
+          "reading"
+        ],
+        "feedback": "Nach like folgt die -ing-Form: reading."
+      },
+      {
+        "prompt": "Tom dislikes ___ (swim) in cold water.",
+        "answers": [
+          "swimming"
+        ],
+        "feedback": "Bei swim wird das m verdoppelt: swimming."
+      }
+    ],
+    "tasks": {
+      "1": {
+        "language": "en",
+        "prompt": "Schreibe drei Sätze über deine Hobbys und Abneigungen mit I like …, I love … und I dislike … + -ing-Form.",
+        "model": "I like playing table tennis with my friends. I love drawing animals. I dislike tidying my desk!",
+        "criteria": [
+          "Jeder der drei Sätze nutzt eine korrekte -ing-Form nach like/love/dislike.",
+          "Rechtschreibung der -ing-Form (wie -e-Wegfall oder Verdopplung) stimmt.",
+          "Die Hobbys passen zur 5. Klasse."
+        ]
+      },
+      "2": {
+        "language": "en",
+        "prompt": "Interviewe gedanklich einen Freund oder eine Freundin und schreibe einen kurzen Text (4–5 Sätze) darüber, was ihr beide mögt und was nicht.",
+        "model": "My friend Lukas likes playing chess and swimming at the weekend. I like riding my bike and listening to music. Both of us love playing football after school, but we dislike losing a match!",
+        "criteria": [
+          "Du verwendest sowohl 1. Person (I like/love) als auch 3. Person Singular (likes/loves/dislikes).",
+          "Mindestens vier verschiedene -ing-Tätigkeiten kommen vor.",
+          "Sinnvoller Freizeitkontext mit klaren Sätzen."
+        ]
+      }
+    },
+    "workshop": {
+      "kind": "sentence",
+      "goals": [
+        {
+          "label": "Bilde die richtige -ing-Form nach 'like' für 'Fahrrad fahren'.",
+          "before": "My cousin likes",
+          "after": "her green bike.",
+          "options": [
+            "riding",
+            "rideing",
+            "ride"
+          ],
+          "answer": "riding",
+          "explanation": "Bei ride fällt das stumme -e vor -ing weg: riding."
+        },
+        {
+          "label": "Ergänze das passende Tätigkeitswort nach 'dislikes'.",
+          "before": "Our dog dislikes",
+          "after": "alone at home.",
+          "options": [
+            "staying",
+            "stay",
+            "stays"
+          ],
+          "answer": "staying",
+          "explanation": "Nach dislike steht die -ing-Form (Gerund): staying."
+        },
+        {
+          "label": "Wie schreibt man 'schwimmen' als Gerund richtig?",
+          "before": "In summer we love",
+          "after": "in the lake.",
+          "options": [
+            "swimming",
+            "swiming",
+            "swimm"
+          ],
+          "answer": "swimming",
+          "explanation": "swim → swimming mit doppeltem m."
+        }
+      ],
+      "mode": "chips"
+    }
+  },
+  {
+    "id": "e5m-wishes-reasons",
+    "stage": "leisure",
+    "title": "Wishes and reasons: and, but, because",
+    "skill": "Wünsche mit I'd like (to) und want (to) ausdrücken und Aussagen mit and, but und because verknüpfen.",
+    "bindings": [
+      "E5 1.2 Infinitivkonstruktionen: I'd like (to) …, want (to) …",
+      "E5 1.2 Konjunktionen: and, but, because",
+      "E5 5 Themengebiete: aktuelle Themen und Interessensgebiete"
+    ],
+    "paragraphs": [
+      "Wünsche und Pläne formulierst du im Englischen mit I want to … (ich will …) oder noch höflicher mit I'd like to … (ich möchte gern …). Danach steht direkt die Grundform des Verbs (I'd like to visit Cardiff). Möchtest du einfach eine Sache bestellen, reicht I'd like + Nomen (I'd like a ticket, please).",
+      "Damit deine Sätze nicht wie eine lose Kette wirken, verbindest du sie mit den Konjunktionen and (und, für Ergänzungen), but (aber, für Gegensätze) und because (weil, für Begründungen). Wichtig: Im Englischen steht das Verb hinter because direkt hinter dem Subjekt — nicht am Satzende wie im Deutschen!"
+    ],
+    "takeaway": "Nach want to / I'd like to folgt die Grundform (I'd like to play). Verbinde Ideen mit and, but und because — nach because bleibt Subjekt + Verb direkt zusammen.",
+    "material": "Weekend plans: I'd like to go to the swimming pool on Saturday, because it is warm and sunny. My brother wants to watch a football match on TV, but I want to visit our grandparents. In the evening we'd like some pizza!",
+    "materialLabel": "Wochenendpläne und Begründungen",
+    "materialLanguage": "en",
+    "sourceIds": [
+      "lp-e5"
+    ],
+    "quiz": {
+      "optionLanguage": "en",
+      "question": "Which sentence has the right English word order with 'because'?",
+      "answer": "I want to stay at home because I am tired.",
+      "wrong": [
+        "I want to stay at home because I tired am.",
+        "I want stay at home because am I tired."
+      ],
+      "explanation": "Im Englischen folgt nach because einfach Subjekt + Verb (because I am tired), außerdem braucht want ein to (want to stay)."
+    },
+    "practice": [
+      {
+        "prompt": "I'd ___ to visit Scotland one day. (polite wish)",
+        "answers": [
+          "like"
+        ],
+        "feedback": "I'd like to + Verb drückt einen höflichen Wunsch aus."
+      },
+      {
+        "prompt": "I like music, ___ I haven't got a guitar. (contrast)",
+        "answers": [
+          "but"
+        ],
+        "feedback": "Bei einem Gegensatz zweier Ideen steht but (aber)."
+      }
+    ],
+    "tasks": {
+      "1": {
+        "language": "en",
+        "prompt": "Schreibe drei Sätze über deine Freizeitwünsche am Wochenende und begründe mindestens einen davon mit because (verwende want to und I'd like to).",
+        "model": "On Saturday I'd like to visit the cinema with my friends, because there is a new adventure film. On Sunday I want to play football, but I also want to read my book.",
+        "criteria": [
+          "Du nutzt sowohl I'd like to als auch want to korrekt mit Grundform.",
+          "Mindestens zwei der Konjunktionen (and, but, because) werden passend eingesetzt.",
+          "Die Wortstellung nach because ist richtig (Subjekt direkt vor dem Verb)."
+        ]
+      },
+      "2": {
+        "language": "en",
+        "prompt": "Du planst einen Klassenausflug oder Sporttag. Schreibe einen kurzen Vorschlag (4–5 Sätze), was ihr machen wollt, was zwei Alternativen sind (but) und warum dein Vorschlag toll ist (because).",
+        "model": "For our class trip I'd like to visit the zoo in Nuremberg. We want to take the train and see the lions and monkeys! Some classmates want to go to a museum, but the zoo is great because we like walking outside together. Afterwards I'd like to eat an ice cream.",
+        "criteria": [
+          "Klare Wünsche mit I'd like to und want to.",
+          "Alle drei Konjunktionen (and, but, because) kommen sinnvoll vor.",
+          "Das Thema Ausflüge/Interessen passt gut zum Niveau der 5. Klasse."
+        ]
+      }
+    },
+    "workshop": {
+      "kind": "sentence",
+      "goals": [
+        {
+          "label": "Setze den Infinitivmarker nach 'would like' ein.",
+          "before": "I'd like",
+          "after": "play table tennis after lunch.",
+          "options": [
+            "to",
+            "for",
+            "at"
+          ],
+          "answer": "to",
+          "explanation": "Vor einem Verb heißt es immer I'd like to + Grundform."
+        },
+        {
+          "label": "Welches Bindewort leitet einen Grund ein?",
+          "before": "Leo takes his umbrella",
+          "after": "the weather is wet.",
+          "options": [
+            "because",
+            "but",
+            "when"
+          ],
+          "answer": "because",
+          "explanation": "Because (weil) nennt die Begründung."
+        },
+        {
+          "label": "Verbinde zwei gegensätzliche Wünsche richtig.",
+          "before": "She wants to go outside,",
+          "after": "her homework isn't finished yet.",
+          "options": [
+            "but",
+            "because",
+            "and"
+          ],
+          "answer": "but",
+          "explanation": "Ein Gegensatz wird mit but (aber) verknüpft."
+        }
+      ]
+    }
+  },
+  {
+    "id": "e5m-festivals-traditions",
+    "stage": "leisure",
+    "title": "Holidays and British festivals",
+    "skill": "Feste, Feiertage und besondere Veranstaltungen in Großbritannien kennen und mit eigenen Traditionen vergleichen.",
+    "bindings": [
+      "E5 5 Themengebiete: Feiertage und Feste",
+      "E5 5 Themengebiete: kulturelle Veranstaltungen",
+      "E5 2 Alltagskultur vergleichen"
+    ],
+    "paragraphs": [
+      "Im britischen Kalender gibt es neben Christmas (25. Dezember) und Easter einige Feste, die du vielleicht noch nicht kennst: Am 5. November feiern viele Menschen Bonfire Night mit Lagerfeuern und Feuerwerk. Im Februar oder März gibt es den Pancake Day (Shrove Tuesday), an dem man Pfannkuchen mit Zitrone und Zucker backt und Pfannkuchen-Wettläufe veranstaltet.",
+      "Die gesetzlichen Feiertage heißen in Großbritannien bank holidays — viele fallen auf einen Montag (wie im Mai und im August), sodass Familien ein langes Wochenende für Ausflüge ans Meer oder in Parks haben."
+    ],
+    "takeaway": "Typische britische Feste sind Bonfire Night (5. November), Pancake Day (Pfannkuchenrennen) und Christmas Day (25. Dezember); gesetzliche Feiertage heißen bank holidays.",
+    "material": "Festival calendar: Early November — Bonfire Night (fireworks in the evening); February/March — Pancake Day (races with frying pans and pancakes); December — Christmas Day (presents in the morning, roast dinner in the afternoon); May and August — Bank holidays (three-day weekend).",
+    "materialLabel": "Kurzer Überblick über britische Feste",
+    "materialLanguage": "en",
+    "sourceIds": [
+      "lp-e5",
+      "gov-holidays"
+    ],
+    "quiz": {
+      "optionLanguage": "en",
+      "question": "What do British families often eat and use for races on Pancake Day?",
+      "answer": "Pancakes",
+      "wrong": [
+        "Christmas crackers",
+        "Hot pasta"
+      ],
+      "explanation": "Am Pancake Day backt man Pfannkuchen (pancakes) und läuft damit kleine Wettrennen."
+    },
+    "practice": [
+      {
+        "prompt": "Public holidays on Mondays in the UK are called ___ holidays.",
+        "answers": [
+          "bank"
+        ],
+        "feedback": "Gesetzliche Feiertage heißen in Großbritannien bank holidays."
+      },
+      {
+        "prompt": "In which month is Bonfire Night in Great Britain?",
+        "answers": [
+          "November"
+        ],
+        "feedback": "Bonfire Night findet jedes Jahr am 5. November statt."
+      }
+    ],
+    "tasks": {
+      "1": {
+        "language": "en",
+        "prompt": "Beschreibe in drei englischen Sätzen dein Lieblingsfest im Jahr (wann es ist, was ihr esst und was ihr macht).",
+        "model": "My favourite festival is Christmas in December. My family sits together and eats good food. We sing songs and open our presents on Christmas Eve.",
+        "criteria": [
+          "Du nennst Name und Monat/Jahreszeit des Festes.",
+          "Du beschreibst mindestens zwei konkrete Aktivitäten oder ein typisches Essen.",
+          "Monatsnamen (z. B. December) sind großgeschrieben."
+        ]
+      },
+      "2": {
+        "language": "en",
+        "prompt": "Vergleiche Weihnachten (oder ein anderes Fest) in Großbritannien und Deutschland in vier bis fünf Sätzen.",
+        "model": "In Germany, families often open Christmas presents on Christmas Eve. In Great Britain, children open their presents on Christmas morning! In both countries families eat special food and meet grandparents. I also like British Pancake Day because pancakes with lemon are delicious.",
+        "criteria": [
+          "Du zeigst einen klaren Unterschied und eine Gemeinsamkeit zwischen beiden Ländern.",
+          "Mindestens ein britisches Detail aus dem Text wird aufgegriffen.",
+          "Die Sätze sind sprachlich klar und höflich im Vergleich."
+        ]
+      }
+    },
+    "workshop": {
+      "kind": "text",
+      "goals": [
+        {
+          "label": "Wann gibt es in Großbritannien Feuerwerke am 5. November?",
+          "before": "Every year in November people celebrate",
+          "after": ".",
+          "options": [
+            "Bonfire Night",
+            "Easter Sunday",
+            "Bank Holiday"
+          ],
+          "answer": "Bonfire Night",
+          "explanation": "Am 5. November feiert man in Großbritannien Bonfire Night."
+        },
+        {
+          "label": "Wie heißen die gesetzlichen Montag-Feiertage im UK?",
+          "before": "Free Mondays for everyone in May and August are",
+          "after": ".",
+          "options": [
+            "bank holidays",
+            "pancake days",
+            "school days"
+          ],
+          "answer": "bank holidays",
+          "explanation": "Bank holidays sind die offiziellen Feiertage in Großbritannien."
+        },
+        {
+          "label": "Wann packen britische Kinder traditionell ihre Weihnachtsgeschenke aus?",
+          "before": "In Britain presents are opened on Christmas",
+          "after": ".",
+          "options": [
+            "morning",
+            "night before",
+            "Tuesday"
+          ],
+          "answer": "morning",
+          "explanation": "In Großbritannien gibt es die Geschenke traditionell am Morgen des 25. Dezembers."
+        }
+      ]
+    }
+  },
+  {
+    "id": "e5m-invitations-letters",
+    "stage": "leisure",
+    "title": "Invitations, postcards and shopping lists",
+    "skill": "Aufbau und typische Wendungen von Einladungen, Postkarten und Einkaufslisten erkennen und eigene kurze Schreiben verfassen.",
+    "bindings": [
+      "E5 1.1 Leseverstehen: persönliche Mitteilungen (z. B. Einladung)",
+      "E5 1.1 Schreiben: Einkaufsliste (note-making) & persönliche Schreiben mit Vorlage",
+      "E5 3 Textabsicht, Anrede- und Grußformel übernehmen"
+    ],
+    "paragraphs": [
+      "Jede Textsorte folgt einem praktischen Aufbau: Eine Einkaufsliste (shopping list) notiert Dinge knapp in Stichpunkten (note-making). Eine Einladung (invitation) oder Postkarte (postcard) beginnt dagegen mit einer Anrede (Dear Sam,), beantwortet klar die W-Fragen (Was? Wann? Wo?) und endet mit einer passenden Grußformel (Best wishes, / Love, / See you on Saturday!).",
+      "Schau dir beim Lesen einer Einladung auch die Absicht des Textes an: Wer lädt wen ein, was soll man mitbringen und bis wann soll man antworten? Übernimm diese Bausteine gezielt in deine eigenen Schreiben."
+    ],
+    "takeaway": "Einkaufslisten bestehen aus knappen Stichpunkten; Einladungen und Postkarten nutzen Anrede (Dear …,), Datum/Zeit/Ort und Grußformel (Best wishes, / See you soon!).",
+    "material": "INVITATION — Dear Ben, It's my eleventh birthday! Please come to my garden party on Saturday in June, at 3 p.m. at 18 Park Road. We want to play games and have cake. Please bring your football shoes. Write back by Thursday if you want to come! Best wishes, Oliver. | Party shopping list: 12 paper cups, 2 bottles of lemonade, apples, birthday candles.",
+    "materialLabel": "Geburtstagseinladung und knappe Einkaufsliste",
+    "materialLanguage": "en",
+    "sourceIds": [
+      "lp-e5",
+      "lp-profil"
+    ],
+    "quiz": {
+      "optionLanguage": "en",
+      "question": "What should Ben bring to Oliver's garden party?",
+      "answer": "His football shoes",
+      "wrong": [
+        "Twelve paper cups",
+        "A birthday cake"
+      ],
+      "explanation": "In der Einladung steht: Please bring your football shoes. Die Becher stehen auf Olivers Einkaufsliste."
+    },
+    "practice": [
+      {
+        "prompt": "What time does the garden party start? At ___ p.m.",
+        "answers": [
+          "3",
+          "three"
+        ],
+        "feedback": "Im Text steht at 3 p.m. (15 Uhr)."
+      },
+      {
+        "prompt": "Fill in the closing words at the end of Oliver's invitation: ___ wishes.",
+        "answers": [
+          "Best"
+        ],
+        "feedback": "Eine freundliche englische Grußformel lautet Best wishes."
+      }
+    ],
+    "tasks": {
+      "1": {
+        "language": "en",
+        "prompt": "Schreibe eine knappe Party-Einkaufsliste (5 englische Stichpunkte) und eine kurze Zusage auf Olivers Einladung (Anrede, Ja-Antwort, Dank, Gruß).",
+        "model": "Shopping list: crisps, fruit juice, strawberries, biscuits, balloons. — Dear Oliver, Thank you for your invitation! Yes, I'd like to come on Saturday at three. See you soon! Best wishes, Ben.",
+        "criteria": [
+          "Die Einkaufsliste besteht aus kurzen Stichpunkten ohne ganze Sätze.",
+          "Die Zusage enthält Anrede (Dear Oliver,), Antwort mit Uhrzeit/Tag und Grußformel.",
+          "Alles ist höflich und verständlich."
+        ]
+      },
+      "2": {
+        "language": "en",
+        "prompt": "Schreibe nach dem Muster oben eine eigene Einladung (oder Urlaubspostkarte) an einen Freund (mindestens 50 Wörter mit Anrede, Anlass, Tag/Uhrzeit, Ort, einem Mitbringsel und Grußformel).",
+        "model": "Dear Mia, It's my birthday next Friday! Please come to my film afternoon at four o'clock at my house in 12 Green Street. My mum always bakes fresh pizza and we have got lots of fruit, biscuits and lemonade for everyone. Afterwards we want to play board games together. Please bring your favourite game for the evening and write back by Wednesday! Love, Hannah.",
+        "criteria": [
+          "Anrede (Dear …,) und Grußformel (Best wishes / Love / See you) stehen am richtigen Platz.",
+          "Anlass, Tag, Uhrzeit und Ort sind klar angegeben.",
+          "Du übernimmst sinnvolle Bausteine aus der Vorlage ohne Kopierfehler."
+        ]
+      }
+    },
+    "workshop": {
+      "kind": "text",
+      "goals": [
+        {
+          "label": "Welche Anrede passt am Anfang einer Einladung oder Postkarte?",
+          "before": "",
+          "after": "Oliver, thanks for your letter!",
+          "options": [
+            "Dear",
+            "Best",
+            "From"
+          ],
+          "answer": "Dear",
+          "explanation": "Im Englischen beginnt man persönliche Briefe und Einladungen mit Dear + Name,."
+        },
+        {
+          "label": "Welche Form gehört in eine knappe Einkaufsliste (note-making)?",
+          "before": "Shopping list item:",
+          "after": "",
+          "options": [
+            "2 bottles of juice",
+            "I want to buy fresh juice.",
+            "Dear Juice,"
+          ],
+          "answer": "2 bottles of juice",
+          "explanation": "Auf eine Einkaufsliste schreibt man nur kurze Stichworte."
+        },
+        {
+          "label": "Wähle eine passende Schlussformel für eine Freundin.",
+          "before": "See you on Saturday!",
+          "after": ", Hannah",
+          "options": [
+            "Best wishes",
+            "Dear friend",
+            "Excuse me"
+          ],
+          "answer": "Best wishes",
+          "explanation": "Best wishes (oder Love) steht am Ende eines Briefes oder einer Einladung."
+        }
+      ]
+    }
+  },
+  {
+    "id": "e5m-mediation-messages",
+    "stage": "leisure",
+    "title": "Sprachmittlung: Helping in everyday life",
+    "skill": "Konkrete Informationen wie Preise oder Einladungsdetails sinnvoll und verständlich ins Deutsche übertragen.",
+    "bindings": [
+      "E5 1.1 Sprachmittlung: konkrete Informationen (Preisangaben) ins Deutsche übertragen",
+      "E5 1.1 Sprachmittlung: kurze Texte sinngemäß auf Deutsch zusammenfassen (z. B. Einladungsschreiben)"
+    ],
+    "paragraphs": [
+      "Bei der Sprachmittlung (mediation) hilfst du jemandem, der kein Englisch spricht — zum Beispiel deinen Eltern oder Großeltern im Urlaub oder beim Lesen einer englischen Nachricht. Du übersetzt dabei nicht jedes einzelne Wort wörtlich, sondern fasst genau die Informationen auf Deutsch zusammen, die für dein Gegenüber wichtig sind.",
+      "Prüfe immer zuerst: Wer fragt mich (Adressat)? Geht es um einen Preis am Imbissstand (z. B. Two pounds fifty), um Öffnungszeiten oder um eine Einladung mit Treffpunkt und Uhrzeit? Formuliere deine deutsche Antwort klar, höflich und vollständig."
+    ],
+    "takeaway": "Sprachmittlung heißt sinngemäß helfen, nicht Wort für Wort übersetzen: Gib Preise, Uhrzeiten, Orte und wichtige Bedingungen verständlich auf Deutsch weiter.",
+    "material": "Snack Bar Board & Note: FRESH FISH AND CHIPS — £6; APPLE PIE — £3; HOT TEA — £2. Family Meal Deal (2 × Fish and Chips + 2 × Tea): £14! Note from Aunt Kate: 'Hi! Please come for tea at 4 p.m. on Sunday. Bring warm jackets because we want to walk by the river.'",
+    "materialLabel": "Englische Preistafel und kurze Notiz von Aunt Kate",
+    "materialLanguage": "en",
+    "sourceIds": [
+      "lp-e5",
+      "cadw-wales"
+    ],
+    "quiz": {
+      "optionLanguage": "de",
+      "question": "What does Aunt Kate ask the family to bring on Sunday?",
+      "answer": "Warme Jacken für einen Spaziergang am Fluss",
+      "wrong": [
+        "Apfelkuchen für vier Personen",
+        "14 Pfund für den Imbiss"
+      ],
+      "explanation": "In der Notiz steht: Bring warm jackets because we want to walk by the river."
+    },
+    "practice": [
+      {
+        "prompt": "In German, write the price for one Hot Tea: ___ Pfund.",
+        "answers": [
+          "2",
+          "zwei"
+        ],
+        "feedback": "HOT TEA — £2 bedeutet 2 Pfund."
+      },
+      {
+        "prompt": "On which day does Aunt Kate invite the family? Write it in German: ___.",
+        "answers": [
+          "Sonntag",
+          "am Sonntag"
+        ],
+        "feedback": "On Sunday bedeutet am Sonntag."
+      }
+    ],
+    "tasks": {
+      "1": {
+        "language": "de",
+        "prompt": "Dein Opa fragt dich am englischen Imbissstand nach den Preisen für einmal Fish and Chips, einmal Apfelkuchen und nach dem Familienangebot. Gib ihm die Infos knapp auf Deutsch.",
+        "model": "Opa, einmal Fish and Chips kostet sechs Pfund und ein Apfelkuchen kostet drei Pfund. Es gibt aber auch ein Familienangebot: zweimal Fish and Chips mit zwei Tassen Tee kosten zusammen 14 Pfund.",
+        "criteria": [
+          "Du antwortest direkt und höflich auf Deutsch (passend für deinen Opa).",
+          "Alle drei genannten Preise stimmen genau (£6, £3, £14).",
+          "Du erklärst auch, was im Familienangebot enthalten ist."
+        ]
+      },
+      "2": {
+        "language": "de",
+        "prompt": "Deine Mutter versteht Aunt Kates Notiz nicht. Fasse ihr alle wichtigen Infos der Nachricht (Einladung, Tag, Uhrzeit, Plan und was ihr mitnehmen sollt) in drei bis vier guten deutschen Sätzen zusammen.",
+        "model": "Mama, Tante Kate lädt uns am Sonntag um 16 Uhr zum Tee ein. Danach möchte sie mit uns am Fluss spazieren gehen. Deshalb bittet sie uns, dass wir warme Jacken mitnehmen.",
+        "criteria": [
+          "Alle vier Hauptinfos (Sonntag, 16 Uhr / 4 p.m., Spaziergang am Fluss, warme Jacken) sind enthalten.",
+          "Kein englischer Satz wurde steif Wort für Wort übersetzt — es klingt nach natürlichem Deutsch.",
+          "Anrede an die Mutter ist adressatengerecht."
+        ]
+      }
+    },
+    "workshop": {
+      "kind": "dialogue",
+      "goals": [
+        {
+          "label": "Wie vermittelst du '4 p.m.' richtig für deutsche Zuhörer?",
+          "before": "4 p.m. means",
+          "after": "in German time.",
+          "options": [
+            "16 Uhr nachmittags",
+            "4 Uhr nachts",
+            "40 Minuten"
+          ],
+          "answer": "16 Uhr nachmittags",
+          "explanation": "p.m. steht für die Stunden nach 12 Uhr mittags."
+        },
+        {
+          "label": "Worauf achtest du bei der Sprachmittlung zuerst?",
+          "before": "In mediation, give the",
+          "after": "facts clearly in German.",
+          "options": [
+            "important",
+            "longest",
+            "hidden"
+          ],
+          "answer": "important",
+          "explanation": "Wichtig ist, die wesentlichen Fakten verständlich weiterzugeben."
+        },
+        {
+          "label": "Wie viel kostet 'Family Meal Deal' im Text?",
+          "before": "You tell Grandpa: Das Familienangebot kostet",
+          "after": ".",
+          "options": [
+            "14 Pfund",
+            "6 Pfund",
+            "20 Pfund"
+          ],
+          "answer": "14 Pfund",
+          "explanation": "Die Tafel nennt £14 für 2 × Fish and Chips + 2 × Tea."
+        }
+      ]
+    }
+  },
+  {
+    "id": "e5m-riddles-rhymes-stories",
+    "stage": "leisure",
+    "title": "Riddles, rhymes and short poems",
+    "skill": "Kleine englische Rätsel und Reime verstehen und durch Austausch einzelner Bausteine selbst kreativ verändern.",
+    "bindings": [
+      "E5 3 Texte (z. B. Rätsel, einfache Reime) mithilfe von Bausteinen verändern",
+      "E5 1.1 Leseverstehen: lineare Geschichten"
+    ],
+    "paragraphs": [
+      "Mit Englisch kannst du auch spielen: Kurze Reime (rhymes) und Rätsel (riddles) arbeiten oft mit wiederkehrenden Satzmustern, Tieren oder Reimwörtern am Zeilenende wie bread/head, bird/word oder tree/see.",
+      "Ein klassisches englisches Kindergedicht von Robert Louis Stevenson heißt 'Time to Rise' — darin weckt ein kleiner Vogel das Kind am Morgen. Wenn du einzelne Wörter wie bird, tree, yellow oder window gezielt aus einem Baukasten ersetzt, entsteht sofort dein eigenes neues englisches Gedicht."
+    ],
+    "takeaway": "Reime und Rätsel bestehen aus klaren Mustern. Tausche gezielt Nomen, Farben oder Verben gegen neue Bausteine aus — so bleibt der Rhythmus erhalten.",
+    "material": "Poem 'Time to Rise' (Robert Louis Stevenson): 'A birdie with a yellow bill / Hopped upon the window sill, / Cocked his shining eye and said: / \"Ain't you 'shamed, you sleepy-head!\"' — Riddle: I am grey, I have got big ears, I eat leaves and fruit, and I live in Africa or India. What am I?",
+    "materialLabel": "Gedicht von Robert Louis Stevenson und Tier-Rätsel",
+    "materialLanguage": "en",
+    "sourceIds": [
+      "lp-e5",
+      "gutenberg-rls"
+    ],
+    "quiz": {
+      "optionLanguage": "en",
+      "question": "What is the answer to the riddle in the material?",
+      "answer": "An elephant",
+      "wrong": [
+        "A small yellow bird",
+        "A little white mouse"
+      ],
+      "explanation": "Grau, große Ohren, frisst Blätter und Obst, lebt in Afrika/Indien -> an elephant."
+    },
+    "practice": [
+      {
+        "prompt": "In Stevenson's poem, which word rhymes with 'bill'? ___",
+        "answers": [
+          "sill"
+        ],
+        "feedback": "bill (Schnabel) reimt sich auf window sill (Fensterbrett)."
+      },
+      {
+        "prompt": "Write the word that rhymes with 'said' in the poem: sleepy-___.",
+        "answers": [
+          "head"
+        ],
+        "feedback": "said und head reimen sich im Englischen."
+      }
+    ],
+    "tasks": {
+      "1": {
+        "language": "en",
+        "prompt": "Schreibe ein eigenes kleines Tier-Rätsel nach dem Muster oben (3 Sätze mit colour/size, what it eats/has got und Abschlussfrage 'What am I?').",
+        "model": "I am black and white. I have got four legs and I say 'moo'. I give milk for your breakfast. What am I? (A cow!)",
+        "criteria": [
+          "Du gibst drei eindeutige Hinweise auf dein Tier.",
+          "Dein Rätsel endet mit der Frage 'What am I?'.",
+          "Verben im simple present passen zu 'I'."
+        ]
+      },
+      "2": {
+        "language": "en",
+        "prompt": "Verändere Stevensons Gedicht kreativ: Ersetze Tier, Farbe, Ort und Tageszeit aus einem eigenen Wortbaukasten, sodass ein neues vierzeiliges kleines Gedicht (oder Reimpaar) entsteht.",
+        "model": "A little cat with fur so fair / Sat upon the garden chair, / Looked at me with one green eye / And said: 'Come play under the sky!'",
+        "criteria": [
+          "Mindestens zwei Elemente (Tier, Farbe oder Ort) wurden bewusst ersetzt.",
+          "Es entsteht ein kleines zusammenhängendes Gedicht mit Reim am Zeilenende.",
+          "Satzbau und Rechtschreibung stimmen."
+        ]
+      }
+    },
+    "workshop": {
+      "kind": "text",
+      "goals": [
+        {
+          "label": "Welches englische Wort reimt sich auf 'cat'?",
+          "before": "The funny cat sat on a",
+          "after": ".",
+          "options": [
+            "hat",
+            "dog",
+            "tree"
+          ],
+          "answer": "hat",
+          "explanation": "cat, sat und hat teilen denselben kurzen Reimlaut."
+        },
+        {
+          "label": "Tausche den Ort im Reim sinnvoll aus.",
+          "before": "A green frog hopped onto the",
+          "after": ".",
+          "options": [
+            "chair",
+            "bread",
+            "sleep"
+          ],
+          "answer": "chair",
+          "explanation": "Onto the chair ergibt einen passenden konkreten Ort."
+        },
+        {
+          "label": "Ergänze den typischen Schlusssatz eines Rätsels.",
+          "before": "I have got long ears and I like carrots.",
+          "after": "?",
+          "options": [
+            "What am I",
+            "Where is it",
+            "Who are you"
+          ],
+          "answer": "What am I",
+          "explanation": "Ein englisches Ich-Rätsel schließt fast immer mit What am I?"
+        }
+      ]
+    }
+  },
+  {
+    "id": "e5m-articles-plurals",
+    "stage": "grammar1",
+    "title": "Articles and regular plurals",
+    "skill": "Bestimmten (the) und unbestimmten Artikel (a/an) sowie regelmäßige Pluralformen (-s, -es, -ies) korrekt bilden.",
+    "bindings": [
+      "E5 1.2 Bestimmter und unbestimmter Artikel",
+      "E5 1.2 Pluralbildung bei Nomen: regelmäßig"
+    ],
+    "paragraphs": [
+      "Der unbestimmte Artikel hat zwei Formen: Vor einem Konsonantenlaut steht a (a book, a dog, a uniform — weil 'uniform' mit /j/-Laut beginnt!), vor einem gesprochenen Vokallaut steht an (an apple, an orange, an hour — weil das h stumm ist!). Der bestimmte Artikel heißt immer the (Einzahl und Mehrzahl).",
+      "Den regelmäßigen Plural bildest du meistens mit -s (two books, three cats). Nach Zischlauten wie s, sh, ch, x oder z hängt man -es an (bus → buses, box → boxes, sandwich → sandwiches). Endet ein Wort auf Konsonant + y, wird aus y ein -ies (city → cities, story → stories); nach Vokal + y bleibt nur -s (boy → boys)."
+    ],
+    "takeaway": "Es zählt der erste Laut: a + Konsonantenlaut (a book, a uniform), an + Vokallaut (an apple, an hour). Regelmäßiger Plural: -s; nach Zischlaut -es; nach Konsonant + y wird es -ies.",
+    "material": "In my schoolbag: I have got a pencil, a rubber, an English book and an apple. Look at the pencils on the table! On the bus we eat two cheese sandwiches, and after school we visit two big cities in stories.",
+    "materialLabel": "Beispiele für Artikel und regelmäßigen Plural",
+    "materialLanguage": "en",
+    "sourceIds": [
+      "lp-e5"
+    ],
+    "quiz": {
+      "optionLanguage": "en",
+      "question": "Which article + noun pair is correct?",
+      "answer": "an umbrella and a university",
+      "wrong": [
+        "a umbrella and an university",
+        "an umbrella and an university"
+      ],
+      "explanation": "umbrella beginnt vokalisch (/ʌ/ -> an), university beginnt mit dem Konsonantenlaut /j/ (-> a)."
+    },
+    "practice": [
+      {
+        "prompt": "Write the plural of 'box': two ___.",
+        "answers": [
+          "boxes"
+        ],
+        "feedback": "Nach dem Zischlaut x folgt -es: boxes."
+      },
+      {
+        "prompt": "Write the plural of 'story': three ___.",
+        "answers": [
+          "stories"
+        ],
+        "feedback": "Konsonant r + y wird im Plural zu -ies: stories."
+      }
+    ],
+    "tasks": {
+      "1": {
+        "language": "en",
+        "prompt": "Schreibe drei Sätze über Dinge in deinem Schulranzen: nutze mindestens je einmal a, an, the und einen regelmäßigen Plural.",
+        "model": "I have got a blue pen and an apple in my schoolbag. The books are heavy. I also have two sandwiches for break!",
+        "criteria": [
+          "a steht vor einem Konsonantenlaut, an vor einem Vokallaut.",
+          "the und mindestens ein regelmäßiger Plural sind richtig gebildet.",
+          "Alle drei Sätze ergeben Sinn."
+        ]
+      },
+      "2": {
+        "language": "en",
+        "prompt": "Erkläre an vier konkreten Wortpaaren die Pluralregeln (-s, -es, Konsonant+y → -ies, Vokal+y → -ys) in kurzen Beispielsätzen.",
+        "model": "I see one dog and two dogs (regular -s). We need one box and three boxes (after x add -es). Mia knows one story, but Ben knows four stories (-ies after r+y). One boy plays with five boys (only -s after o+y).",
+        "criteria": [
+          "Alle vier Fälle (-s, -es, -ies, -ys) sind durch passende Beispiele abgedeckt.",
+          "Einzahl und Mehrzahl stehen korrekt im Satz.",
+          "Keine Verwechslung mit deutschen Großbuchstaben bei Nomen."
+        ]
+      }
+    },
+    "workshop": {
+      "kind": "sentence",
+      "goals": [
+        {
+          "label": "Wähle den passenden Artikel vor dem Wort 'hour' (h ist stumm!).",
+          "before": "We walk for",
+          "after": "hour in the park.",
+          "options": [
+            "an",
+            "a",
+            "the a"
+          ],
+          "answer": "an",
+          "explanation": "Weil das h in hour stumm ist (/aʊə/), beginnt das Wort mit einem Vokallaut -> an hour."
+        },
+        {
+          "label": "Bilde den Plural von 'sandwich'.",
+          "before": "Let's make four cheese",
+          "after": ".",
+          "options": [
+            "sandwiches",
+            "sandwichs",
+            "sandwichies"
+          ],
+          "answer": "sandwiches",
+          "explanation": "Nach -ch folgt im Plural -es: sandwiches."
+        },
+        {
+          "label": "Bilde den Plural von 'family' (Konsonant + y).",
+          "before": "Three friendly",
+          "after": "live in this house.",
+          "options": [
+            "families",
+            "familys",
+            "familes"
+          ],
+          "answer": "families",
+          "explanation": "Aus Konsonant l + y wird -ies: families."
+        }
+      ]
+    }
+  },
+  {
+    "id": "e5m-irregular-plurals",
+    "stage": "grammar1",
+    "title": "Irregular plurals: men, women, children, food, fruit",
+    "skill": "Unregelmäßige Pluralformen sowie unzählbare Sammelbegriffe wie food und fruit sicher anwenden.",
+    "bindings": [
+      "E5 1.2 Unregelmäßige Plurale: men, women, children + food, fruit",
+      "E5 1.2 Pluralbildung bei Nomen: unregelmäßig"
+    ],
+    "paragraphs": [
+      "Einige der häufigsten englischen Nomen hängen im Plural kein -s an, sondern verändern ihre Form: man → men (Männer), woman → women (Frauen, sprich /ˈwɪmɪn/!) und child → children (Kinder). Weitere bekannte Ausnahmen im Grundwortschatz sind mouse → mice (Mäuse) und das gleichbleibende sheep → sheep.",
+      "Eine zweite Besonderheit sind die Sammelwörter food (Essen/Lebensmittel) und fruit (Obst): Beide benutzt du im Alltag im Singular ohne -s und mit dem Singularverb is (Fruit is healthy. There is a lot of food on the table)."
+    ],
+    "takeaway": "man → men, woman → women, child → children (ohne -s!). food und fruit bleiben Sammelbegriffe im Singular mit is (The food is good. Fresh fruit is on the table.).",
+    "material": "At the park picnic: Two men and three women sit on a bench under a big tree. Five children play with a red ball on the grass. On the blanket there is a lot of food: bread, cheese and fresh fruit. Some white sheep walk in the field behind the fence.",
+    "materialLabel": "Picknick-Szene im Park",
+    "materialLanguage": "en",
+    "sourceIds": [
+      "lp-e5",
+      "nhs-eatwell"
+    ],
+    "quiz": {
+      "optionLanguage": "en",
+      "question": "Which sentence uses irregular plurals and 'fruit' correctly?",
+      "answer": "Three women and four children eat fresh fruit.",
+      "wrong": [
+        "Three womans and four childs eat fresh fruits.",
+        "Three women and four children eats fresh fruit."
+      ],
+      "explanation": "Der Plural heißt women und children; als Sammelwort bleibt fruit hier im Singular, und das Verb zum Plural-Subjekt lautet eat."
+    },
+    "practice": [
+      {
+        "prompt": "One child plays here. Now six ___ play here.",
+        "answers": [
+          "children"
+        ],
+        "feedback": "Der unregelmäßige Plural von child ist children."
+      },
+      {
+        "prompt": "There ___ (is / are) a lot of fresh fruit in the bowl.",
+        "answers": [
+          "is"
+        ],
+        "feedback": "Fruit steht als Sammelbegriff mit dem Verb im Singular: There is."
+      }
+    ],
+    "tasks": {
+      "1": {
+        "language": "en",
+        "prompt": "Schreibe drei Sätze über eine Szene im Zoo oder beim Schulfest mit men, women, children und food oder fruit.",
+        "model": "Ten men and ten women help at our school party. Many children play games outside. There is a lot of food and fresh fruit on the big table.",
+        "criteria": [
+          "Mindestens zwei unregelmäßige Plurale (men, women oder children) sind ohne -s geschrieben.",
+          "food oder fruit steht mit is (nicht are).",
+          "Subjekt und Verb stimmen im Singular und Plural."
+        ]
+      },
+      "2": {
+        "language": "en",
+        "prompt": "Schreibe fünf kleine Einzahl-Mehrzahl-Paare in eigenen Beispielsätzen (a man / two men, a woman / women, a child / children, a mouse / mice, plus einen Satz mit food/fruit).",
+        "model": "One man stands at the bus stop, and two men wait inside. One woman reads a book, and four women drink tea. A small child laughs, while five children run around. There is a mouse in the barn, or maybe two mice! Everyone likes the healthy fruit.",
+        "criteria": [
+          "Alle fünf Wörter kommen sowohl passend in der Einzahl als auch in der Mehrzahl vor (bzw. food/fruit im Singular).",
+          "Keine falschen s-Endungen wie childs oder womans.",
+          "Lebendige, fehlerfreie Sätze."
+        ]
+      }
+    },
+    "workshop": {
+      "kind": "sentence",
+      "goals": [
+        {
+          "label": "Bilde den richtigen Plural von 'woman'.",
+          "before": "Two",
+          "after": "talk in front of the school.",
+          "options": [
+            "women",
+            "womans",
+            "womens"
+          ],
+          "answer": "women",
+          "explanation": "woman → women (ohne s!)."
+        },
+        {
+          "label": "Ergänze das richtige Verb nach dem Sammelwort 'food'.",
+          "before": "The food in our canteen",
+          "after": "very tasty today.",
+          "options": [
+            "is",
+            "are",
+            "were not"
+          ],
+          "answer": "is",
+          "explanation": "Food ist unzählbar im Singular -> The food is …"
+        },
+        {
+          "label": "Wähle den Plural von 'man'.",
+          "before": "Four",
+          "after": "carry the heavy table.",
+          "options": [
+            "men",
+            "mans",
+            "mens"
+          ],
+          "answer": "men",
+          "explanation": "man → men."
+        }
+      ],
+      "mode": "chips"
+    }
+  },
+  {
+    "id": "e5m-subject-pronouns",
+    "stage": "grammar1",
+    "title": "Personal pronouns: I, you, he, she, it, we, they",
+    "skill": "Subjektpronomen verwenden, um unnötige Nomen-Wiederholungen zu vermeiden.",
+    "bindings": [
+      "E5 1.2 Personalpronomen als Subjekt",
+      "E5 1.2 Wiederholungen vermeiden (Pronomen verwenden)"
+    ],
+    "paragraphs": [
+      "Wenn du in jedem Satz denselben Namen wiederholst ('Tom goes to school. Tom opens Tom's book. Tom sees Tom's friends.'), klingt ein Text hölzern. Deshalb ersetzt du das Satzsubjekt ab dem zweiten Satz durch ein Personalpronomen: I (ich), you (du/ihr), he (er), she (sie – eine weibliche Person), it (es – Sache oder Tier), we (wir) und they (sie – Mehrzahl für Personen, Tiere und Dinge!).",
+      "Achte auf zwei Stolperfallen für deutsche Sprecher: Für ein einzelnes Ding (the table, the book) benutzt du im Englischen immer it, nicht he oder she! Und im Plural steht für alles — zwei Mädchen, zwei Bücher oder ein Hund und eine Katze — immer they."
+    ],
+    "takeaway": "Subjektpronomen ersetzen das Subjekt vor dem Verb: he (männlich), she (weiblich), it (Sache/Tier im Singular), we (… and I), they (jeder Plural). I schreibt man immer groß.",
+    "material": "Meet my friends: Emma is eleven years old. She lives in Bath. Ben has got a new bike. It is blue and fast. Emma and Ben are in Class 5A. They walk to school together. Ben and I play table tennis — we love sport!",
+    "materialLabel": "Kurzer Text mit klaren Pronomenbezügen",
+    "materialLanguage": "en",
+    "sourceIds": [
+      "lp-e5"
+    ],
+    "quiz": {
+      "optionLanguage": "en",
+      "question": "Which pronoun replaces 'the two red buses'?",
+      "answer": "they",
+      "wrong": [
+        "it",
+        "we"
+      ],
+      "explanation": "Für jeden Plural — auch Dinge wie zwei Busse — verwendet man they."
+    },
+    "practice": [
+      {
+        "prompt": "Ben has got a new bike. ___ is blue and fast.",
+        "answers": [
+          "It"
+        ],
+        "feedback": "Das Fahrrad (bike) ist eine Sache im Singular -> It."
+      },
+      {
+        "prompt": "My brother and I play football. ___ play in the park.",
+        "answers": [
+          "We"
+        ],
+        "feedback": "Jemand + I ergibt zusammen we (wir)."
+      }
+    ],
+    "tasks": {
+      "1": {
+        "language": "en",
+        "prompt": "Ersetze im folgenden Text die Wiederholungen sinnvoll durch he, she, it, we und they (schreibe 4 Sätze): 'Mia is ten. Mia has a dog. The dog is small. Mia and Lukas are friends. Lukas and I like Mia and the dog.' (Hinweis für den letzten Satz: Starte einfach mit 'Lukas and I are happy.')",
+        "model": "Mia is ten, and she has got a dog. It is small. Mia and Lukas are friends — they go to the same class. Lukas and I like sport, and we are happy.",
+        "criteria": [
+          "she steht für Mia, it für den Hund, they für Mia und Lukas, we für Lukas and I.",
+          "Die Verben passen zum jeweiligen Pronomen (is, has got, go, are).",
+          "Kein Objektpronomen nötig — alles steht klar am Satzanfang als Subjekt."
+        ]
+      },
+      "2": {
+        "language": "en",
+        "prompt": "Stelle zwei Freunde oder Familienmitglieder und ein Lieblingsobjekt (z. B. Fahrrad oder Buch) in fünf Sätzen vor und benutze dabei mindestens vier verschiedene Subjektpronomen (I, he/she, it, we, they).",
+        "model": "My friend Lea loves music. She plays the piano every day. Her piano is black and old, and it sounds great! Lea and her sister sing English songs — they know ten songs. Together, we sometimes make music on Friday.",
+        "criteria": [
+          "Mindestens vier verschiedene Subjektpronomen werden richtig bezogen.",
+          "Sachen im Singular stehen mit it, Mehrzahl mit they.",
+          "Die 3. Person Singular (he/she/it) hat das richtige Verb."
+        ]
+      }
+    },
+    "workshop": {
+      "kind": "sentence",
+      "goals": [
+        {
+          "label": "Ersetze 'my schoolbag' durch das passende Subjektpronomen.",
+          "before": "Where is my schoolbag? —",
+          "after": "is under the desk.",
+          "options": [
+            "It",
+            "She",
+            "He"
+          ],
+          "answer": "It",
+          "explanation": "Für Dinge im Singular (die Tasche / the schoolbag) steht im Englischen immer it."
+        },
+        {
+          "label": "Ersetze 'my parents' durch das passende Subjektpronomen.",
+          "before": "My parents work in Munich.",
+          "after": "travel by train.",
+          "options": [
+            "They",
+            "We",
+            "You"
+          ],
+          "answer": "They",
+          "explanation": "My parents (zwei Personen, ohne mich) werden durch they ersetzt."
+        },
+        {
+          "label": "Ersetze 'Paul and I' im zweiten Satz.",
+          "before": "Paul and I go to the sports club.",
+          "after": "play basketball.",
+          "options": [
+            "We",
+            "They",
+            "He"
+          ],
+          "answer": "We",
+          "explanation": "Sobald ich selbst dabei bin (… and I), steht we."
+        }
+      ],
+      "mode": "chips"
+    }
+  },
+  {
+    "id": "e5m-possessives-genitive",
+    "stage": "grammar1",
+    "title": "Possessive determiners and `s-genitive",
+    "skill": "Zugehörigkeit mit Possessivbegleitern (my, your, his, her, its, our, their) und dem `s-Genitiv richtig ausdrücken.",
+    "bindings": [
+      "E5 1.2 Possessivbegleiter: my, your, …",
+      "E5 1.2 `s-Genitiv"
+    ],
+    "paragraphs": [
+      "Wem etwas gehört, zeigst du vor einem Nomen mit Possessivbegleitern: my (mein), your (dein/euer), his (sein — bei he), her (ihr — bei she), its (sein/ihr — bei it ohne Apostroph!), our (unser) und their (ihr — bei mehreren Personen). Achte auf die Verwechslungsgefahr: his gilt für eine männliche Person (Tom → his bike), her für eine weibliche Person (Anna → her bike), its (ohne Apostroph!) für ein Tier oder Ding.",
+      "Nennst du den Namen des Besitzers direkt, benutzt du den `s-Genitiv: Tom's bike, my sister's pencil. Endet ein Pluralnomen bereits auf -s (my parents), hängst du nach dem s nur noch den Apostroph an: my parents' car. Bei unregelmäßigem Plural ohne -s kommt wie gewohnt 's dahinter: the children's books."
+    ],
+    "takeaway": "Possessivbegleiter: my, your, his (für he), her (für she), its (ohne Apostroph für it!), our, their. Besitzername + 's (Tom's dog), Plural auf -s + ' (my friends' bikes).",
+    "material": "Who owns what? Look at Emma's red jacket — her jacket is warm. Look at Tim's green cap — his cap is funny! Our dog sleeps in its basket. The children's bags lie near my parents' car.",
+    "materialLabel": "Besitzangaben rund um Familie und Gegenstände",
+    "materialLanguage": "en",
+    "sourceIds": [
+      "lp-e5"
+    ],
+    "quiz": {
+      "optionLanguage": "en",
+      "question": "Which sentence uses the possessive determiner and `s-genitive correctly?",
+      "answer": "That is Clara's schoolbag; her pencil case is inside it.",
+      "wrong": [
+        "That is Clara's schoolbag; his pencil case is inside it.",
+        "That is Claras schoolbag; it's pencil case is inside it."
+      ],
+      "explanation": "Clara ist weiblich -> her pencil case; außerdem braucht der Name einen Apostroph (Clara's)."
+    },
+    "practice": [
+      {
+        "prompt": "My brother Leo has a guitar. ___ (His / Her) guitar is brown.",
+        "answers": [
+          "His"
+        ],
+        "feedback": "Leo ist männlich, also his guitar."
+      },
+      {
+        "prompt": "Write 'the books of the children' using the `s-genitive: the ___ books.",
+        "answers": [
+          "children's"
+        ],
+        "feedback": "Weil children nicht auf -s endet, hängt man 's an: children's."
+      }
+    ],
+    "tasks": {
+      "1": {
+        "language": "en",
+        "prompt": "Schreibe drei Sätze darüber, was wem in deiner Familie oder Klasse gehört: benutze einmal 's, einmal our/their und einmal his oder her.",
+        "model": "This is my mother's bicycle. Her bike is blue. That is our classroom, and the teachers' desks are near the window.",
+        "criteria": [
+          "Apostroph steht korrekt beim `s-Genitiv.",
+          "his/her/its/our/their passen genau zum Besitzer.",
+          "Kein 'it's' anstelle von 'its'!"
+        ]
+      },
+      "2": {
+        "language": "en",
+        "prompt": "Auf dem Tisch liegen vier Schulsachen durcheinander (von Leon, Sarah, den Zwillingen und dir). Schreibe vier klare Zuordnungssätze mit `s-Genitiv und Possessivbegleitern.",
+        "model": "Here is Leon's ruler, and his red pen is next to it. Sarah's rubber is small, and her exercise book is green. The twins' balls are under the table — their sports bags are full! And my dictionary is on top.",
+        "criteria": [
+          "Mindestens zwei verschiedene `s-Genitive (inkl. Plural-Apostroph s' oder 's) sind richtig gesetzt.",
+          "His, her, their und my stehen richtig.",
+          "Die Sätze sind flüssig verbunden."
+        ]
+      }
+    },
+    "workshop": {
+      "kind": "sentence",
+      "goals": [
+        {
+          "label": "Wähle den richtigen Possessivbegleiter für ein einzelnes Haustier (it).",
+          "before": "Our cat likes",
+          "after": "warm basket.",
+          "options": [
+            "its",
+            "it's",
+            "his"
+          ],
+          "answer": "its",
+          "explanation": "Der Possessivbegleiter its hat NIE einen Apostroph (it's bedeutet 'it is')."
+        },
+        {
+          "label": "Setze den richtigen `s-Genitiv beim Plural 'friends'.",
+          "before": "We meet in my",
+          "after": "garden.",
+          "options": [
+            "friends'",
+            "friend's",
+            "friends's"
+          ],
+          "answer": "friends'",
+          "explanation": "Bei mehreren Freunden auf -s steht der Apostroph hinter dem s: friends'."
+        },
+        {
+          "label": "Ordne einer weiblichen Person das richtige Besitzwort zu.",
+          "before": "Maya shows me",
+          "after": "new skateboard.",
+          "options": [
+            "her",
+            "his",
+            "their"
+          ],
+          "answer": "her",
+          "explanation": "Maya → her (ihr Skateboard)."
+        }
+      ]
+    }
+  },
+  {
+    "id": "e5m-to-be",
+    "stage": "grammar1",
+    "title": "The verb 'to be': statements, questions and short answers",
+    "skill": "Formen von to be (am, is, are), Verneinung, Fragen und höfliche Kurzantworten richtig bilden.",
+    "bindings": [
+      "E5 1.2 Hilfsverben: be",
+      "E5 1.2 Verneinung und einfache Kurzantworten (Yes, … / No, …)"
+    ],
+    "paragraphs": [
+      "Das Verb to be (sein) passt seine Form an das Subjekt an: I am (I'm), you/we/they are (you're, we're, they're) und he/she/it is (he's, she's, it's). Zur Verneinung setzt du einfach not dahinter oder nutzt die Kurzform: I'm not, isn't, aren't.",
+      "Für eine Entscheidungsfrage drehst du Subjekt und Form von be um: Are you from Bavaria? — Is she ten years old? Bei der Antwort genügt nicht nur 'Yes.' oder 'No.' (das klingt oft unfreundlich kurz), sondern du hängst eine Kurzantwort an: Yes, I am. / No, I'm not. — Yes, she is. / No, she isn't. Wichtig: Bejahte Kurzantworten kürzt man NIE ab (nicht 'Yes, I'm'!)."
+    ],
+    "takeaway": "I am, he/she/it is, you/we/they are. Frage: Form von be nach vorn (Are you…?). Bejahte Kurzantwort immer voll (Yes, I am. / Yes, they are.), verneint gern kurz (No, I'm not. / No, she isn't.).",
+    "material": "Interview at school — Liam: Are you new in Class 5B? / Nora: Yes, I am! My name is Nora. / Liam: Are your brothers in Class 5 too? / Nora: No, they aren't. They are older. / Liam: Is your classroom on the first floor? / Nora: Yes, it is!",
+    "materialLabel": "Schulhof-Interview mit Kurzantworten",
+    "materialLanguage": "en",
+    "sourceIds": [
+      "lp-e5"
+    ],
+    "quiz": {
+      "optionLanguage": "en",
+      "question": "Which short answer to 'Are you tired?' is correct?",
+      "answer": "Yes, I am.",
+      "wrong": [
+        "Yes, I'm.",
+        "Yes, you are."
+      ],
+      "explanation": "Bejahte Kurzantworten stehen immer in der Langform (Yes, I am.), und eine Du-Frage beantwortest du mit I."
+    },
+    "practice": [
+      {
+        "prompt": "___ your sister at home today? (question)",
+        "answers": [
+          "Is"
+        ],
+        "feedback": "your sister entspricht she -> Frage beginnt mit Is."
+      },
+      {
+        "prompt": "Are Tim and Leo in the garden? — No, they ___.",
+        "answers": [
+          "aren't",
+          "are not"
+        ],
+        "feedback": "Bei they steht aren't oder are not."
+      }
+    ],
+    "tasks": {
+      "1": {
+        "language": "en",
+        "prompt": "Schreibe drei Fragen mit Am / Is / Are und jeweils eine passende englische Kurzantwort (einmal Yes, zweimal No).",
+        "model": "Are you eleven years old? — Yes, I am. Is your schoolbag heavy? — No, it isn't. Are your parents at work today? — No, they aren't.",
+        "criteria": [
+          "Die Frageformen beginnen mit der passenden Form von to be.",
+          "Die Kurzantworten passen im Pronomen genau zur Frage.",
+          "Die bejahte Kurzantwort ist nicht abgekürzt."
+        ]
+      },
+      "2": {
+        "language": "en",
+        "prompt": "Erfinde ein kleines Kennenlerngespräch zwischen zwei Kindern (5–6 Sätze) mit Aussagen, einer Verneinung und zwei Entscheidungsfragen + Kurzantworten mit to be.",
+        "model": "Hi! Are you from Leeds? — No, I'm not. I'm from York! — Oh, York is a nice city. Is your sister at this school too? — Yes, she is! We are both in the music club.",
+        "criteria": [
+          "am, is und are werden vielfältig und fehlerfrei eingesetzt.",
+          "Verneinung und Kurzantworten folgen genau den Regeln.",
+          "Natürlicher kleiner Dialog."
+        ]
+      }
+    },
+    "workshop": {
+      "kind": "sentence",
+      "goals": [
+        {
+          "label": "Wähle die richtige Form von to be für 'my two friends'.",
+          "before": "My two friends",
+          "after": "in the school canteen.",
+          "options": [
+            "are",
+            "is",
+            "am"
+          ],
+          "answer": "are",
+          "explanation": "Mehrere Freunde (they) stehen mit are."
+        },
+        {
+          "label": "Ergänze die höfliche bejahte Kurzantwort.",
+          "before": "Is London the capital of England? — Yes, it",
+          "after": ".",
+          "options": [
+            "is",
+            "'s",
+            "are"
+          ],
+          "answer": "is",
+          "explanation": "Bejahte Kurzantworten sind ungekürzt: Yes, it is."
+        },
+        {
+          "label": "Verneine im Singular korrekt.",
+          "before": "Tom isn't in his room; he",
+          "after": "here yet.",
+          "options": [
+            "isn't",
+            "aren't",
+            "don't"
+          ],
+          "answer": "isn't",
+          "explanation": "Zu he gehört isn't (is not)."
+        }
+      ],
+      "mode": "order"
+    }
+  },
+  {
+    "id": "e5m-have-got",
+    "stage": "grammar1",
+    "title": "Have got and has got",
+    "skill": "Besitz, Familie und Aussehen mit have got / has got beschreiben, verneinen und in Kurzantworten erfragen.",
+    "bindings": [
+      "E5 1.2 Hilfsverben: have (got)",
+      "E5 1.2 Verneinung und einfache Kurzantworten"
+    ],
+    "paragraphs": [
+      "Im britischen Englisch drückst du Besitz, Haustiere, Geschwister und Merkmale gern mit have got / has got aus: I / you / we / they have got ('ve got) und bei he / she / it has got ('s got). Bei Verneinungen setzt du not zwischen have/has und got: haven't got oder hasn't got.",
+      "Bei der Frage wandert nur have oder has vor das Subjekt, während got an seinem Platz bleibt: Have you got a pet? — Has your brother got a bike? Die Kurzantwort benutzt dann NUR have/haven't oder has/hasn't — ohne got: Yes, I have. / No, I haven't. — Yes, he has. / No, he hasn't."
+    ],
+    "takeaway": "he/she/it → has got / hasn't got; sonst → have got / haven't got. In Fragen steht have/has am Satzanfang; in Kurzantworten fällt got weg (Yes, I have. / No, she hasn't.).",
+    "material": "What have we got in our treehouse? Leo and I have got two old chairs, a torch and three comics. Leo's sister Hannah has got a red backpack, but she hasn't got a torch yet. Have you got a treehouse or a pet at home?",
+    "materialLabel": "Im Baumhaus: Besitz und Ausstattung",
+    "materialLanguage": "en",
+    "sourceIds": [
+      "lp-e5"
+    ],
+    "quiz": {
+      "optionLanguage": "en",
+      "question": "What is the right short answer to 'Has Ben got a sister?'",
+      "answer": "Yes, he has.",
+      "wrong": [
+        "Yes, he has got.",
+        "Yes, he does."
+      ],
+      "explanation": "In der Kurzantwort zu Have/Has … got …? lässt man got weg und antwortet Yes, he has. (oder No, he hasn't.)."
+    },
+    "practice": [
+      {
+        "prompt": "My friend Maya ___ got a small brown rabbit.",
+        "answers": [
+          "has"
+        ],
+        "feedback": "Bei Maya (she) steht has got."
+      },
+      {
+        "prompt": "Have they got a garden? — No, they ___.",
+        "answers": [
+          "haven't",
+          "have not"
+        ],
+        "feedback": "Kurzantwort auf Have they got…? im Verneinten: No, they haven't."
+      }
+    ],
+    "tasks": {
+      "1": {
+        "language": "en",
+        "prompt": "Schreibe drei Sätze darüber, was du selbst hast, was du nicht hast und was ein Freund oder Familienmitglied hat (nutze have got, haven't got, has got).",
+        "model": "I have got a blue bike and a big dictionary. I haven't got a skateboard. My sister has got two small guinea pigs.",
+        "criteria": [
+          "have got, haven't got und has got kommen korrekt vor.",
+          "Die 3. Person Singular benutzt has (got).",
+          "Wortschatz und Rechtschreibung stimmen."
+        ]
+      },
+      "2": {
+        "language": "en",
+        "prompt": "Schreibe ein kurzes Rätsel oder einen Steckbrief (4–5 Sätze) über ein Tier oder eine Figur mit 'It/She has got …', einer Verneinung ('hasn't got') und einer Frage samt Kurzantwort.",
+        "model": "This animal has got long grey ears and four legs. It hasn't got wings! Has it got a short tail? Yes, it has. Everyone likes its soft fur — it's a rabbit!",
+        "criteria": [
+          "has got und hasn't got sind im Singular richtig gebildet.",
+          "Die Frage stellt Has vor das Subjekt und die Kurzantwort lässt got weg.",
+          "Klare, treffende Beschreibung."
+        ]
+      }
+    },
+    "workshop": {
+      "kind": "sentence",
+      "goals": [
+        {
+          "label": "Wähle die richtige Form für 'our classroom'.",
+          "before": "Our classroom",
+          "after": "three big windows.",
+          "options": [
+            "has got",
+            "have got",
+            "is got"
+          ],
+          "answer": "has got",
+          "explanation": "Our classroom ist Einzahl (it) -> has got."
+        },
+        {
+          "label": "Starte die Frage nach dem Geschwisterkind.",
+          "before": "",
+          "after": "your cousin got a pet dog?",
+          "options": [
+            "Has",
+            "Have",
+            "Is"
+          ],
+          "answer": "Has",
+          "explanation": "Bei your cousin (he/she) beginnt die Frage mit Has."
+        },
+        {
+          "label": "Antworte höflich ohne 'got' am Ende.",
+          "before": "Have you got a rubber? — Yes, I",
+          "after": ".",
+          "options": [
+            "have",
+            "have got",
+            "am"
+          ],
+          "answer": "have",
+          "explanation": "Kurzantwort: Yes, I have. (ohne got!)."
+        }
+      ],
+      "mode": "chips"
+    }
+  },
+  {
+    "id": "e5m-simple-present-statements",
+    "stage": "grammar2",
+    "title": "Simple present: habits and the he/she/it -s",
+    "skill": "Regelmäßige Handlungen und Gewohnheiten im simple present beschreiben und das -s bei he, she, it zuverlässig setzen.",
+    "bindings": [
+      "E5 1.2 Simple present für routinemäßige Handlungen",
+      "E5 1.2 Adverbien der Häufigkeit (z. B. sometimes)"
+    ],
+    "paragraphs": [
+      "Für alles, was regelmäßig, oft oder immer passiert, verwendest du das simple present. Signalwörter sind Häufigkeitsadverbien wie always (immer), usually (meistens), often (oft), sometimes (manchmal) und never (nie) sowie every day / on Mondays. Häufigkeitsadverbien stehen fast immer VOR dem Vollverb (I sometimes walk to school), aber HINTER einer Form von to be (She is always friendly).",
+      "Die goldene Regel des simple present lautet: he, she, it — das -s muss mit! (Ben plays, Maya reads, the bus stops). Achte auf die kleinen Endungen: Nach Zischlauten und o hängt man -es an (watch → watches, go → goes, do → does); Konsonant + y wird zu -ies (try → tries), und aus have wird bei he/she/it immer has!"
+    ],
+    "takeaway": "Simple present drückt Gewohnheiten aus; Häufigkeitsadverbien (always, sometimes) stehen vor dem Vollverb. Bei he, she, it bekommt das Verb -s/-es/-ies (watches, goes, tries, has).",
+    "material": "Tim's week: On weekdays Tim gets up at seven and goes to school by bike. He sometimes plays football after lunch. In the evening he does his homework and watches TV with his parents. His dog always sleeps under the sofa.",
+    "materialLabel": "Gewohnheiten einer Woche im simple present",
+    "materialLanguage": "en",
+    "sourceIds": [
+      "lp-e5"
+    ],
+    "quiz": {
+      "optionLanguage": "en",
+      "question": "Which sentence in the simple present is completely correct?",
+      "answer": "Emily always watches cartoons after her homework.",
+      "wrong": [
+        "Emily watchs always cartoons after her homework.",
+        "Emily always watch cartoons after her homework."
+      ],
+      "explanation": "Always steht vor dem Verb; bei Emily (she) braucht watch die Endung -es: watches."
+    },
+    "practice": [
+      {
+        "prompt": "My brother ___ (go) to school by bus every morning.",
+        "answers": [
+          "goes"
+        ],
+        "feedback": "go + -es ergibt in der 3. Person Singular goes."
+      },
+      {
+        "prompt": "Lea ___ (have) lunch in the school canteen.",
+        "answers": [
+          "has"
+        ],
+        "feedback": "Bei he/she/it wird have im simple present zu has."
+      }
+    ],
+    "tasks": {
+      "1": {
+        "language": "en",
+        "prompt": "Schreibe drei Sätze über deinen eigenen Wochenalltag mit often, sometimes und always/never.",
+        "model": "I always pack my schoolbag in the morning. After school I often play with my friends. I sometimes read English comics in the evening.",
+        "criteria": [
+          "Drei verschiedene Häufigkeitsadverbien stehen am richtigen Platz.",
+          "Die Verben stehen im simple present.",
+          "Keine Verwechslung mit -ing-Endungen."
+        ]
+      },
+      "2": {
+        "language": "en",
+        "prompt": "Schreibe über den Alltag einer anderen Person (z. B. Mutter, Bruder oder Freundin) in vier bis fünf Sätzen und verwende mindestens vier verschiedene Verben in der 3. Person Singular (-s, -es, has).",
+        "model": "My sister Julia wakes up early at half past six. She has breakfast and goes to school by bus. In the afternoon she plays basketball and sometimes watches a nature film. Julia always does her homework before dinner!",
+        "criteria": [
+          "Jedes Verb bei he/she/it trägt das passende -s, -es oder has.",
+          "Mindestens ein Häufigkeitsadverb steht korrekt im Satz.",
+          "Stimmiger, alltäglicher Zusammenhang."
+        ]
+      }
+    },
+    "workshop": {
+      "kind": "sentence",
+      "goals": [
+        {
+          "label": "Bilde die 3. Person Singular von 'do'.",
+          "before": "Every afternoon, Hannah",
+          "after": "her homework.",
+          "options": [
+            "does",
+            "dos",
+            "do"
+          ],
+          "answer": "does",
+          "explanation": "Nach -o hängt man -es an: do → does."
+        },
+        {
+          "label": "Setze das Häufigkeitsadverb vor das Vollverb.",
+          "before": "My friends",
+          "after": "at the park on Fridays.",
+          "options": [
+            "sometimes meet",
+            "meet sometimes",
+            "sometimes meets"
+          ],
+          "answer": "sometimes meet",
+          "explanation": "Sometimes steht vor dem Vollverb meet (Plural ohne -s)."
+        },
+        {
+          "label": "Wähle die richtige Form von 'watch' für 'Grandad'.",
+          "before": "Grandad",
+          "after": "the news at eight o'clock.",
+          "options": [
+            "watches",
+            "watch",
+            "watchs"
+          ],
+          "answer": "watches",
+          "explanation": "Nach dem Zischlaut -ch wird im Singular -es angehängt."
+        }
+      ]
+    }
+  },
+  {
+    "id": "e5m-simple-present-do-does",
+    "stage": "grammar2",
+    "title": "Simple present: don't, doesn't and Do/Does…?",
+    "skill": "Aussagen im simple present mit don't/doesn't verneinen und Entscheidungsfragen mit Do/Does sowie Kurzantworten bilden.",
+    "bindings": [
+      "E5 1.2 Hilfsverben: do",
+      "E5 1.2 Entscheidungsfragen, Verneinung und Kurzantworten im simple present"
+    ],
+    "paragraphs": [
+      "Bei fast allen normalen Vollverben im simple present (außer to be und have got) brauchst du zum Verneinen und Fragen das Hilfsverb do. Für he, she und it übernimmt dieses Hilfsverb das -s: doesn't (does not) und Does …? — bei I, you, we, they stehen don't (do not) und Do …?",
+      "Wichtig ist die goldene Regel fürs Vollverb: Sobald doesn't oder Does das -s schon trägt, fällt das -s am Hauptverb weg! Es heißt also richtig: Does she play tennis? (NICHT: Does she plays?) und He doesn't like carrots. (NICHT: He doesn't likes). Die Kurzantwort übernimmt do/don't oder does/doesn't: Yes, she does. / No, she doesn't."
+    ],
+    "takeaway": "Verneinung & Frage im simple present brauchen do/does (don't / doesn't). Bei doesn't und Does…? trägt das Hilfsverb das -s — das Hauptverb bleibt in der Grundform!",
+    "material": "Survey in Class 5: Do you play a musical instrument, Ben? — Yes, I do! I play the drums, but I don't play the piano. Does your sister Anna like sport? — Yes, she does, she loves swimming. Does she like winter? — No, she doesn't, she hates cold water!",
+    "materialLabel": "Kleine Umfrage in Klasse 5",
+    "materialLanguage": "en",
+    "sourceIds": [
+      "lp-e5"
+    ],
+    "quiz": {
+      "optionLanguage": "en",
+      "question": "Which question and short answer are right?",
+      "answer": "Does Leo walk to school? — No, he doesn't.",
+      "wrong": [
+        "Does Leo walks to school? — No, he doesn't.",
+        "Do Leo walk to school? — No, he don't."
+      ],
+      "explanation": "Bei Leo (he) steht Does am Satzanfang; danach folgt die Grundform walk ohne -s, und die Kurzantwort endet auf he doesn't."
+    },
+    "practice": [
+      {
+        "prompt": "My cat ___ (don't / doesn't) like rain.",
+        "answers": [
+          "doesn't",
+          "does not"
+        ],
+        "feedback": "My cat (it) wird mit doesn't verneint."
+      },
+      {
+        "prompt": "___ (Do / Does) your friends live near the park?",
+        "answers": [
+          "Do"
+        ],
+        "feedback": "your friends (they) stehen im Plural -> Frage mit Do."
+      }
+    ],
+    "tasks": {
+      "1": {
+        "language": "en",
+        "prompt": "Verwandle diese drei Aussagen jeweils in eine Verneinung und eine Ja/Nein-Frage + Kurzantwort: 'Mia likes tea.' / 'You go by bus.' / 'Tom watches films.'",
+        "model": "Mia doesn't like tea. Does Mia like tea? — Yes, she does. | You don't go by bus. Do you go by bus? — No, I don't. | Tom doesn't watch films. Does Tom watch films? — Yes, he does.",
+        "criteria": [
+          "don't / doesn't und Do / Does sind richtig auf Person und Zahl verteilt.",
+          "Beim Hauptverb nach doesn't / Does fällt das -s zuverlässig weg.",
+          "Jede Frage hat eine passende Kurzantwort."
+        ]
+      },
+      "2": {
+        "language": "en",
+        "prompt": "Führe ein kleines Interview (3 Fragen und ausführliche Antworten) über Essen, Schule oder Hobbys mit Do/Does, Kurzantworten und Verneinungen.",
+        "model": "Do you eat breakfast at seven o'clock? — Yes, I do. I eat bread, but I don't drink coffee. Does your brother eat with you? — No, he doesn't! He gets up later because he walks to school.",
+        "criteria": [
+          "Mindestens eine Do-Frage und eine Does-Frage mit passender Kurzantwort.",
+          "Mindestens eine Verneinung mit don't oder doesn't.",
+          "Hauptverben nach do/does stehen sauber in der Grundform."
+        ]
+      }
+    },
+    "workshop": {
+      "kind": "sentence",
+      "goals": [
+        {
+          "label": "Wähle die richtige verneinte Form für 'Sam' (he).",
+          "before": "Sam",
+          "after": "eat meat; he likes vegetables.",
+          "options": [
+            "doesn't",
+            "don't",
+            "isn't"
+          ],
+          "answer": "doesn't",
+          "explanation": "Bei he/she/it verneinst du Vollverben mit doesn't."
+        },
+        {
+          "label": "Achte auf die Grundform nach 'Does'.",
+          "before": "Does your mother",
+          "after": "in an office?",
+          "options": [
+            "work",
+            "works",
+            "worked"
+          ],
+          "answer": "work",
+          "explanation": "Weil Does schon das -s hat, bleibt work in der Grundform."
+        },
+        {
+          "label": "Beantworte die 'Do you…?'-Frage höflich kurz.",
+          "before": "Do you and Leo play chess? — Yes, we",
+          "after": ".",
+          "options": [
+            "do",
+            "does",
+            "are"
+          ],
+          "answer": "do",
+          "explanation": "Kurzantwort auf Do you…? (Plural) -> Yes, we do."
+        }
+      ],
+      "mode": "order"
+    }
+  },
+  {
+    "id": "e5m-wh-questions",
+    "stage": "grammar2",
+    "title": "Wh-questions: who, what, where, when, how, why",
+    "skill": "Ergänzungsfragen mit who, what, where, when, how und why in richtiger Wortstellung bilden und beantworten.",
+    "bindings": [
+      "E5 1.2 Interrogativpronomen: who, what, where, when, how, why",
+      "E5 1.2 Ergänzungsfragen"
+    ],
+    "paragraphs": [
+      "Wenn eine Ja/Nein-Antwort nicht reicht, brauchst du ein Fragewort am Satzanfang: who (wer — Vorsicht: Verwechsle who nicht mit 'wo'!), what (was / welche), where (wo / wohin), when (wann), how (wie — auch how old, how many, how much) und why (warum, Antwort oft mit because).",
+      "Bei Ergänzungsfragen bleibt die Reihenfolge fest: Fragewort → Hilfsverb (do / does / am / is / are / have) → Subjekt → Hauptverb. Beispiel: Where does your uncle live? (Nicht: Where lives your uncle!). Nur wenn who direkt nach dem Subjekt fragt, steht das Verb direkt dahinter: Who lives in Cardiff?"
+    ],
+    "takeaway": "Who = wer, where = wo/wohin, what = was, when = wann, how = wie, why = warum. Wortstellung: Fragewort + do/does/be + Subjekt + Grundform (Where does Ben live?).",
+    "material": "Quiz questions: Who is your English teacher? — Mr Hall. Where does he come from? — He comes from Wales. What does he play? — He plays the guitar! When is his club? — On Wednesdays at 2 p.m. Why do pupils like the club? — Because everyone sings together!",
+    "materialLabel": "Frage-Antwort-Karten für die Klasse",
+    "materialLanguage": "en",
+    "sourceIds": [
+      "lp-e5"
+    ],
+    "quiz": {
+      "optionLanguage": "en",
+      "question": "Which question asks 'Wo wohnen deine Großeltern?'",
+      "answer": "Where do your grandparents live?",
+      "wrong": [
+        "Who do your grandparents live?",
+        "Where live your grandparents?"
+      ],
+      "explanation": "Where bedeutet wo (nicht who = wer!), und bei Vollverben braucht die Frage das Hilfsverb do vor dem Subjekt."
+    },
+    "practice": [
+      {
+        "prompt": "___ (Who / Where) is the girl in the blue jumper? — That's my sister Maya.",
+        "answers": [
+          "Who"
+        ],
+        "feedback": "Nach einer Person fragt man mit Who (wer)."
+      },
+      {
+        "prompt": "___ do you learn English? — Because it is a world language.",
+        "answers": [
+          "Why"
+        ],
+        "feedback": "Auf Why (warum) antwortet man meistens mit because."
+      }
+    ],
+    "tasks": {
+      "1": {
+        "language": "en",
+        "prompt": "Schreibe vier verschiedene Fragen an eine neue Austauschpartnerin oder einen Austauschpartner mit who, where, when und why.",
+        "model": "Where do you live in England? When do your lessons start? Who is your best friend at school? Why do you like football?",
+        "criteria": [
+          "Alle vier Fragewörter (who, where, when, why) sind richtig gewählt.",
+          "Die Wortstellung Fragewort + do/is + Subjekt + Verb stimmt.",
+          "Jede Frage endet mit einem Fragezeichen."
+        ]
+      },
+      "2": {
+        "language": "en",
+        "prompt": "Erstelle ein kleines Quiz (4 Fragen mit what, where, how, why + Antworten) über Großbritannien oder deinen Schulalltag.",
+        "model": "Where is Edinburgh? — It is in Scotland. What is the capital of Wales? — Cardiff. How many parts has the UK got? — It has got four parts. Why do pupils have lunch in the canteen? — Because lessons continue in the afternoon.",
+        "criteria": [
+          "Jede Frage nutzt ein anderes Fragewort.",
+          "Die Fragen und Antworten sind inhaltlich und grammatisch stimmig.",
+          "Das Quiz verwendet Grundwissen aus dieser Lernreihe."
+        ]
+      }
+    },
+    "workshop": {
+      "kind": "sentence",
+      "goals": [
+        {
+          "label": "Wähle das passende Fragewort für eine Ortsangabe.",
+          "before": "",
+          "after": "does Mia keep her guitar? — Under her bed.",
+          "options": [
+            "Where",
+            "Who",
+            "When"
+          ],
+          "answer": "Where",
+          "explanation": "Under her bed ist ein Ort -> Fragewort Where."
+        },
+        {
+          "label": "Ergänze das Hilfsverb bei 'When' und 'your train'.",
+          "before": "When",
+          "after": "the train leave?",
+          "options": [
+            "does",
+            "do",
+            "is"
+          ],
+          "answer": "does",
+          "explanation": "The train (it) + Vollverb leave braucht does."
+        },
+        {
+          "label": "Frage nach der Art und Weise ('Wie').",
+          "before": "",
+          "after": "do you go to school? — By bike!",
+          "options": [
+            "How",
+            "Why",
+            "What"
+          ],
+          "answer": "How",
+          "explanation": "Nach dem Verkehrsmittel oder der Art fragt man mit How."
+        }
+      ],
+      "mode": "order"
+    }
+  },
+  {
+    "id": "e5m-imperatives",
+    "stage": "grammar2",
+    "title": "Imperatives: polite requests and instructions",
+    "skill": "Aufforderungen, Spielregeln und Hinweise mit der Befehlsform (bejaht und verneint mit Don't) formulieren.",
+    "bindings": [
+      "E5 1.2 Befehlsform",
+      "E5 1.2 einfache Aufforderungen und Bitten in bejahter und verneinter Form"
+    ],
+    "paragraphs": [
+      "Die englische Befehlsform (imperative) ist sehr einfach: Du nimmst für eine oder mehrere Personen genau die Grundform des Verbs ohne Pronomen und ohne -s: Listen! Close the door! Wait here! Wenn es wie eine höfliche Bitte klingen soll, setzt du einfach please an den Anfang oder ans Ende (Please sit down. / Pass me the salt, please.).",
+      "Für ein Verbot oder eine Warnung stellst du schlicht Don't vor die Grundform: Don't run in the corridor! Don't forget your homework! Solche Anweisungen begegnen dir im Unterricht, in Spielen, bei kurzen Wegbeschreibungen (Turn left, go straight on) und auf Hinweisschildern."
+    ],
+    "takeaway": "Befehlsform bejaht = reine Grundform (Open the window, please.); verneint = Don't + Grundform (Don't talk now!). Für eine und mehrere Personen gleich.",
+    "material": "Park & Game rules: Walk on the path — don't step on the flowers! Keep your dog on a lead near the sheep. Throw the ball to your partner, then run to the red cone. Please pick up your litter before you go home!",
+    "materialLabel": "Regeln im Park und beim Schulspiel",
+    "materialLanguage": "en",
+    "sourceIds": [
+      "lp-e5"
+    ],
+    "quiz": {
+      "optionLanguage": "en",
+      "question": "How do you say 'Vergesst eure Bücher nicht!' politely to your class?",
+      "answer": "Please don't forget your books!",
+      "wrong": [
+        "Forget not your books, please!",
+        "You doesn't forget your books!"
+      ],
+      "explanation": "Die verneinte Befehlsform heißt im Englischen immer Don't + Grundform; please macht sie höflich."
+    },
+    "practice": [
+      {
+        "prompt": "___ (Turn / Turns) left at the traffic lights!",
+        "answers": [
+          "Turn"
+        ],
+        "feedback": "Der Imperativ nutzt immer die reine Grundform Turn."
+      },
+      {
+        "prompt": "___ walk on the wet grass! (negative command)",
+        "answers": [
+          "Don't",
+          "Do not"
+        ],
+        "feedback": "Verneinte Befehlsform: Don't + Grundform."
+      }
+    ],
+    "tasks": {
+      "1": {
+        "language": "en",
+        "prompt": "Schreibe drei Klassenregeln oder Weg-Anweisungen auf Englisch: mindestens zwei bejahte (mit please) und eine verneinte (mit Don't).",
+        "model": "Please listen to your classmates! Put your rubbish in the bin, please. Don't run on the stairs!",
+        "criteria": [
+          "Alle Verben stehen in der Grundform ohne vorgestelltes you.",
+          "Mindestens ein Verbot mit Don't ist enthalten.",
+          "Mindestens einmal steht please."
+        ]
+      },
+      "2": {
+        "language": "en",
+        "prompt": "Erkläre einem neuen Kind in vier bis fünf kurzen Imperativ-Sätzen den Weg vom Schultor bis zum Computerraum oder Sportplatz (inkl. einer höflichen Erinnerung mit Don't).",
+        "model": "Go through the big blue gate and walk straight ahead. Turn right at the library and go up the stairs. Open the second door on the left — that's our computer room! Please don't bring water bottles near the keyboards.",
+        "criteria": [
+          "Klare Schritt-für-Schritt-Anweisungen im Imperativ.",
+          "Mindestens eine Ortspräposition und eine Verneinung mit Don't.",
+          "Höflicher, gut verständlicher Ton."
+        ]
+      }
+    },
+    "workshop": {
+      "kind": "sentence",
+      "goals": [
+        {
+          "label": "Bilde eine höfliche Aufforderung mit Grundform + please.",
+          "before": "",
+          "after": "at the picture on page five, please.",
+          "options": [
+            "Look",
+            "Looks",
+            "Looking"
+          ],
+          "answer": "Look",
+          "explanation": "Im Imperativ steht die reine Grundform ohne Endung."
+        },
+        {
+          "label": "Schreibe ein klares Verbot für das Schwimmbad.",
+          "before": "",
+          "after": "jump into the shallow end!",
+          "options": [
+            "Don't",
+            "No",
+            "Doesn't"
+          ],
+          "answer": "Don't",
+          "explanation": "Vor einem Verb benutzt man für ein Verbot immer Don't."
+        },
+        {
+          "label": "Gib eine Richtungsanweisung beim Wegbeschreiben.",
+          "before": "Cross the street and",
+          "after": "left at the bakery.",
+          "options": [
+            "turn",
+            "turns",
+            "don't left"
+          ],
+          "answer": "turn",
+          "explanation": "Turn left bedeutet: Biege links ab."
+        }
+      ],
+      "mode": "order"
+    }
+  },
+  {
+    "id": "e5m-simple-past-was-were-ed",
+    "stage": "grammar2",
+    "title": "Simple past: was, were and regular -ed verbs",
+    "skill": "Mit was/were und regelmäßigen -ed-Verben über abgeschlossene Ereignisse der Vergangenheit berichten.",
+    "bindings": [
+      "E5 1.2 Simple past",
+      "E5 1.2 Adverbien der Zeit (z. B. yesterday)"
+    ],
+    "paragraphs": [
+      "Wenn eine Handlung gestern, letzte Woche oder letztes Jahr passiert und vorbei ist, benutzt du das simple past. Zeitausdrücke wie yesterday, last week oder on Sunday zeigen die Vergangenheit. Das Verb to be hat zwei Vergangenheitsformen: was (für I, he, she, it — verneint wasn't) und were (für you, we, they — verneint weren't).",
+      "Bei regelmäßigen Vollverben hängst du in allen Personen gleich -ed an (I walked, she played, they visited). Endet das Verb auf -e, kommt nur ein -d dazu (like → liked); bei Konsonant + y wird es zu -ied (tidy → tidied). Nach einem kurzen betonten Vokal verdoppelst du den Endkonsonanten (stop → stopped)."
+    ],
+    "takeaway": "Simple past von be: was / wasn't (I, he, she, it) und were / weren't (you, we, they). Regelmäßige Verben bekommen in allen Personen -ed (oder -d / -ied).",
+    "material": "Last weekend: Yesterday it was sunny! My brother and I were at a castle in Wales. We walked up the old tower and talked to a friendly guide. Our parents stayed in the café because they were tired. We liked the view very much — it wasn't cold at all.",
+    "materialLabel": "Rückblick auf einen Wochenendausflug",
+    "materialLanguage": "en",
+    "sourceIds": [
+      "lp-e5",
+      "cadw-wales"
+    ],
+    "quiz": {
+      "optionLanguage": "en",
+      "question": "Which sentence in the simple past is correct?",
+      "answer": "Yesterday we were late because the bus stopped twice.",
+      "wrong": [
+        "Yesterday we was late because the bus stoped twice.",
+        "Yesterday we were late because the bus stops twice."
+      ],
+      "explanation": "Bei we steht were; stop verdoppelt das p zu stopped."
+    },
+    "practice": [
+      {
+        "prompt": "My cousin ___ (be) in London last summer.",
+        "answers": [
+          "was"
+        ],
+        "feedback": "My cousin entspricht he oder she -> was."
+      },
+      {
+        "prompt": "Write the simple past of 'visit': We ___ our aunt yesterday.",
+        "answers": [
+          "visited"
+        ],
+        "feedback": "visit hängt regelmäßig -ed an: visited."
+      }
+    ],
+    "tasks": {
+      "1": {
+        "language": "en",
+        "prompt": "Schreibe drei Sätze über deinen gestrigen Nachmittag oder letztes Wochenende mit was/were und zwei regelmäßigen -ed-Verben.",
+        "model": "Yesterday afternoon I was at my friend's house. We played a board game and listened to music. Our parents were very happy because we tidied the room!",
+        "criteria": [
+          "Mindestens einmal was/were (oder wasn't/weren't) steht richtig.",
+          "Zwei regelmäßige -ed-Verben sind sauber geschrieben.",
+          "Eine Vergangenheitsangabe (yesterday / last weekend) ist dabei."
+        ]
+      },
+      "2": {
+        "language": "en",
+        "prompt": "Erzähle in einem kurzen Tagebucheintrag (4–5 Sätze) von einem Ausflug oder Schulfest letztes Jahr (was, were, wasn't/weren't und mindestens drei regelmäßige Verben auf -ed/-d/-ied).",
+        "model": "Last July our class visited a museum in Augsburg. The bus ride wasn't long, and we arrived at nine thirty. A guide talked about old clocks and answered all our questions! My classmates and I really liked the trip, and at home I studied my photos.",
+        "criteria": [
+          "Alle Vergangenheitsformen von be und den -ed-Verben sind korrekt.",
+          "Zeitausdruck am Anfang zeigt die Vergangenheit.",
+          "Sinnvolle kleine Erzählung mit roten Faden."
+        ]
+      }
+    },
+    "workshop": {
+      "kind": "sentence",
+      "goals": [
+        {
+          "label": "Wähle die passende Vergangenheitsform von to be für 'the two dogs'.",
+          "before": "Yesterday the two dogs",
+          "after": "in the garden all afternoon.",
+          "options": [
+            "were",
+            "was",
+            "are"
+          ],
+          "answer": "were",
+          "explanation": "Plural (they) im simple past heißt were."
+        },
+        {
+          "label": "Bilde die Vergangenheitsform von 'like'.",
+          "before": "All pupils",
+          "after": "the new English song.",
+          "options": [
+            "liked",
+            "likeed",
+            "likes"
+          ],
+          "answer": "liked",
+          "explanation": "Bei Verben auf -e hängt man im simple past nur -d an: liked."
+        },
+        {
+          "label": "Bilde die Vergangenheitsform von 'tidy' (Konsonant + y).",
+          "before": "On Saturday morning Mia",
+          "after": "her desk.",
+          "options": [
+            "tidied",
+            "tidyed",
+            "tidid"
+          ],
+          "answer": "tidied",
+          "explanation": "Konsonant d + y wird im simple past zu -ied: tidied."
+        }
+      ]
+    }
+  },
+  {
+    "id": "e5m-simple-past-did-svo",
+    "stage": "grammar2",
+    "title": "Simple past with did/didn't and SVO word order",
+    "skill": "Häufige unregelmäßige Verben im simple past nutzen, Fragen/Verneinung mit did bilden und die SVO-Wortstellung sicher einhalten.",
+    "bindings": [
+      "E5 1.2 Simple past (Verneinung, Fragen, häufige unregelmäßige Formen)",
+      "E5 1.2 Einfache Wortstellungsregel: SVO (Subject-Verb-Object)",
+      "E5 1.2 Adverbien der Zeit und des Ortes (today, yesterday, here, there)"
+    ],
+    "paragraphs": [
+      "Einige sehr häufige englische Verben bilden das simple past unregelmäßig: go → went, see → saw, have → had, come → came, make → made, take → took, eat → ate. Wenn du eine Aussage im simple past verneinst oder eine Frage stellst, nimmst du für alle Personen did / didn't — und danach steht wieder die reine Grundform (Did you go? — We didn't see him. NICHT: didn't saw!).",
+      "Achte in Aussagen stets auf die feste Grundwortstellung SVO: Subject – Verb – Object (Subjekt direkt vor Verb, direkt dahinter das Objekt: 'Lena bought a postcard yesterday.'). Wörter wie today, yesterday, here oder there stehen meist ganz am Ende oder ganz am Satzanfang — sie dürfen sich niemals zwischen Verb und Objekt schieben!"
+    ],
+    "takeaway": "Unregelmäßige Formen nur in bejahten Aussagen (went, saw, had, came, ate); nach did / didn't steht wieder die Grundform (Did you go? / didn't see). Im Aussagesatz bleibt SVO (Subject–Verb–Object) immer zusammen!",
+    "material": "Holiday postcard story: Yesterday we went to the sea and saw five boats. We ate sandwiches on the beach, and my dad took funny photos! It didn't rain yesterday — it was dry all day. Did you visit your grandparents last weekend? — Yes, I did!",
+    "materialLabel": "Urlaubsrückblick mit unregelmäßigen Verben und SVO",
+    "materialLanguage": "en",
+    "sourceIds": [
+      "lp-e5"
+    ],
+    "quiz": {
+      "optionLanguage": "en",
+      "question": "Which sentence has the right past form AND the right SVO word order?",
+      "answer": "Ben saw his best friend at the cinema yesterday.",
+      "wrong": [
+        "Ben saw yesterday at the cinema his best friend.",
+        "Ben didn't saw his best friend yesterday."
+      ],
+      "explanation": "Verb + Objekt (saw his best friend) bleiben nach SVO zusammen, yesterday steht am Satzende; nach didn't müsste außerdem die Grundform see stehen."
+    },
+    "practice": [
+      {
+        "prompt": "Write the simple past of 'go': Last Saturday we ___ to Munich.",
+        "answers": [
+          "went"
+        ],
+        "feedback": "go → went im bejahten simple past."
+      },
+      {
+        "prompt": "Did you see the film? — No, I ___ (short answer).",
+        "answers": [
+          "didn't",
+          "did not"
+        ],
+        "feedback": "Kurzantwort auf eine Did-Frage: No, I didn't."
+      }
+    ],
+    "tasks": {
+      "1": {
+        "language": "en",
+        "prompt": "Schreibe drei Sätze über gestern: einen bejahten Satz mit went/saw/had/ate (SVO einhalten!), eine Verneinung mit didn't und eine Frage mit Did + Kurzantwort.",
+        "model": "Yesterday I ate two apples after school. I didn't go to the swimming pool. Did you play football yesterday? — Yes, I did!",
+        "criteria": [
+          "In der Verneinung und Frage steht nach didn't / Did die Grundform.",
+          "Die Reihenfolge Subjekt – Verb – Objekt wird nicht unterbrochen.",
+          "Die Kurzantwort passt (Yes, I did. / No, I didn't.)."
+        ]
+      },
+      "2": {
+        "language": "en",
+        "prompt": "Berichte in einem kurzen Brief oder Tagebucheintrag (5–6 Sätze) von deinem letzten Sonntag: Was habt ihr gemacht (mindestens drei unregelmäßige Verben), was habt ihr nicht gemacht (didn't), und achte genau auf die SVO-Wortstellung.",
+        "model": "Last Sunday my family went to a lake near Regensburg. We had a nice picnic there and saw lots of ducks! My mum made a fruit salad and we ate it under a big tree. We didn't take the bus because my dad drove our car. Did we enjoy the day? Yes, we did!",
+        "criteria": [
+          "Mindestens drei unregelmäßige simple-past-Formen sind richtig eingesetzt.",
+          "Mindestens eine Verneinung mit didn't + Grundform kommt vor.",
+          "Überall steht das Objekt direkt nach dem Verb (SVO), Zeit/Ort am Rand."
+        ]
+      }
+    },
+    "workshop": {
+      "kind": "sentence",
+      "goals": [
+        {
+          "label": "Achte auf die Grundform nach 'didn't'.",
+          "before": "We",
+          "after": "the match on TV yesterday.",
+          "options": [
+            "didn't see",
+            "didn't saw",
+            "not saw"
+          ],
+          "answer": "didn't see",
+          "explanation": "Nach didn't folgt immer die Grundform (see, nicht saw!)."
+        },
+        {
+          "label": "Halte Subjekt – Verb – Objekt (SVO) sauber zusammen.",
+          "before": "Maya",
+          "after": "yesterday.",
+          "options": [
+            "read a great book",
+            "yesterday read a book",
+            "a great book read"
+          ],
+          "answer": "read a great book",
+          "explanation": "Erst Subjekt (Maya), direkt dahinter Verb + Objekt (read a great book), Zeit am Satzende."
+        },
+        {
+          "label": "Bilde die unregelmäßige Vergangenheitsform von 'have'.",
+          "before": "Last Friday our class",
+          "after": "a fun sports day.",
+          "options": [
+            "had",
+            "haved",
+            "has"
+          ],
+          "answer": "had",
+          "explanation": "have → had im simple past."
+        }
+      ],
+      "mode": "order"
+    }
+  }
+]
