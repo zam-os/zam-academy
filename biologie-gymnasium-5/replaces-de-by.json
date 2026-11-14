@@ -1,8 +1,9 @@
 {
   "schema": 1,
-  "status": "proposal-only",
-  "approved": null,
-  "note": "Proposal for the three Gymnasium Grade 5 cells in zam-os/zam that no package has claimed (biologie-realschule-5 and nt-mittelschule-5 left them at their school type). 4 A (replace after approval), 0 B, 20 C (19 keep active, 1 proposed retirement). cell.json declares no replaces and no retired_items until Thomas approves. Open question for Thomas: the NT cell also covers NT5 Lernbereich 1 (Naturwissenschaftliches Arbeiten) and old Informatik content; should a future NT5 Lernbereich 1 package share it?",
+  "status": "approved",
+  "approved": "2026-11-14",
+  "source": "Thomas am 2026-11-14 in der Claude-Code-Sitzung (Desktop), in der das Paket gebaut wurde, nach Eröffnung von zam-os/zam-academy#136: „Mapping freigegeben, 4 A und Ausmusterung J04 ok“. Die Freigabe umfasst die vier A-Übernahmen (mensch J01, pflanzen J03, pflanzen J05, natur-technik J03), die Stilllegung von pflanzen J04 (01K4YB5P000000000000000J04) mit erhaltener Historie und lässt die übrigen 19 C-Karten aktiv. Ab der ersten Veröffentlichung (Zellversion 2026.11.1) tragen die vier Nachfolger je ein replaces auf ihre alte Karte.",
+  "note": "Mapping for the three Gymnasium Grade 5 cells in zam-os/zam that no other package has claimed (biologie-realschule-5 and nt-mittelschule-5 left them at their school type). 4 A (replace), 0 B, 20 C (19 keep active, 1 retired). Open question for Thomas, outside this approval: the NT cell also covers NT5 Lernbereich 1 (Naturwissenschaftliches Arbeiten) and old Informatik content; should a future NT5 Lernbereich 1 package share it?",
   "source_repository": "zam-os/zam",
   "source_commit": "85d871e370414d42557b229cd3149e2e4ae142b3",
   "sources": [
@@ -32,7 +33,7 @@
       "de_by_question": "Welche biologische Funktion erfüllen die elastischen Knorpelscheiben (Bandscheiben) zwischen den knöchernen Wirbelkörpern der menschlichen Wirbelsäule?",
       "category": "A",
       "academy_slug": "bg5-skelett-check",
-      "action": "propose-replace-after-approval",
+      "action": "replace",
       "note": "Same atomic retrieval: function of the intervertebral discs (shock absorption and flexibility); the successor asks exactly this as its quick check."
     },
     {
@@ -122,7 +123,7 @@
       "de_by_question": "Welche Organe einer vollständigen Zwitterblüte bilden die männlichen Keimzellen (Pollenkörner / Blütenstaub)?",
       "category": "A",
       "academy_slug": "bg5-bluete-check",
-      "action": "propose-replace-after-approval",
+      "action": "replace",
       "note": "Same atomic retrieval: which flower part forms the pollen (the stamens with their anthers)."
     },
     {
@@ -131,7 +132,7 @@
       "de_by_question": "Beschreibe die 4 Blattkreise einer vollständigen Zwitterblüte von außen nach innen (1. Kelchblätter / Kelch als Knospenschutz, 2. Kronblätter / Krone als Schau- und Anlockapparat mit Nektarien, 3. Staubblätter mit Staubfaden und 4 Pollensäcken im Staubbeutel, 4. Stempel mit klebriger Narbe, Griffel und Fruchtknoten mit Samenanlagen) und erstelle ein schematisches Blütendiagramm für eine typische Kreuzblütler- oder Rosengewächs-Blüte.",
       "category": "C",
       "academy_slug": null,
-      "action": "propose-retire-after-approval",
+      "action": "retire",
       "note": "Composite prompt on the four flower whorls with extra detail (nectaries, four pollen sacs); covered by bg5-bluete in smaller cards, so the old composite could leave active reviews."
     },
     {
@@ -140,7 +141,7 @@
       "de_by_question": "Wie gelangt der männliche Zellkern des Pollenkorns nach der Bestäubung von der klebrigen Narbe zur Eizelle tief im Fruchtknoten?",
       "category": "A",
       "academy_slug": "bg5-bestaeubung-befruchtung-check",
-      "action": "propose-replace-after-approval",
+      "action": "replace",
       "note": "Same atomic retrieval: the pollen tube grows through the style and brings the male gamete to the egg cell."
     },
     {
@@ -194,7 +195,7 @@
       "de_by_question": "Welche 3 zellulären Strukturen findet man typischerweise in einer pflanzlichen Zelle (z. B. Wasserpest/Zwiebelhaut), aber NIEMALS in einer tierischen oder menschlichen Zelle?",
       "category": "A",
       "academy_slug": "bg5-zellen-check",
-      "action": "propose-replace-after-approval",
+      "action": "replace",
       "note": "Same atomic retrieval: the three structures only plant cells have (cell wall, chloroplasts, large vacuole)."
     },
     {

@@ -148,9 +148,9 @@ Every link a lesson shows was fetched on 2026-11-14 with `curl -sL -A "Mozilla/5
 | LfL Bayern · Kulturlandschaft & Biodiversität | https://www.lfl.bayern.de/iab/kulturlandschaft/ |
 | LfL Bayern · Grünland, Feldfutter, Grassamen | https://www.lfl.bayern.de/ipz/gruenland/ |
 
-## Card mapping (proposal, not approved)
+## Card mapping (approved 2026-11-14)
 
-`zam-os/zam` at commit `85d871e370414d42557b229cd3149e2e4ae142b3` holds three Gymnasium Grade 5 cells that no package has claimed: `biologie-realschule-5` excluded them as another school type (`docs/biologie-5-bestandsabgleich.md`), `nt-mittelschule-5` left them active. This package claims them and maps all 24 items in `replaces-de-by.json` (`status: "proposal-only"`, `approved: null`). Snapshots are byte-exact (LF) in `biologie-gymnasium-5/tests/fixtures/`:
+`zam-os/zam` at commit `85d871e370414d42557b229cd3149e2e4ae142b3` holds three Gymnasium Grade 5 cells that no package has claimed: `biologie-realschule-5` excluded them as another school type (`docs/biologie-5-bestandsabgleich.md`), `nt-mittelschule-5` left them active. This package claims them and maps all 24 items in `replaces-de-by.json` (`status: "approved"`, `approved: "2026-11-14"`). Thomas approved the mapping on 2026-11-14 in the Claude Code session that built the package, after zam-os/zam-academy#136 was opened: „Mapping freigegeben, 4 A und Ausmusterung J04 ok“. Snapshots are byte-exact (LF) in `biologie-gymnasium-5/tests/fixtures/`:
 
 | Cell | Version | SHA-256 |
 | --- | --- | --- |
@@ -158,22 +158,23 @@ Every link a lesson shows was fetched on 2026-11-14 with `curl -sL -A "Mozilla/5
 | `de-by:gymnasium-5-biologie-pflanzen-bluetenbau-samen` | 2026.08.1 | `d3f1a0ea4abbe60fa9b0978a0bc6f554d0e75b5e7068609ed4a2ddf5e46bb52d` |
 | `de-by:gymnasium-5-natur-technik-mikroskop-experiment-oop` | 2026.08.1 | `58bbf9d30d0283acc6c8a94604a25890ae7214e231871a0789550cc7bfdca02a` |
 
-Summary: **4 A, 0 B, 20 C** (19 keep active, 1 proposed retirement).
+Summary: **4 A, 0 B, 20 C** (19 keep active, 1 retired).
 
-| Old item | Old question (short) | Category | Proposed action |
+| Old item | Old question (short) | Category | Action |
 | --- | --- | --- | --- |
 | skelett J01 | function of the intervertebral discs | A | replace by `bg5-skelett-check` |
 | pflanzen J03 | which organs form the pollen | A | replace by `bg5-bluete-check` |
 | pflanzen J05 | how the male nucleus reaches the egg (pollen tube) | A | replace by `bg5-bestaeubung-befruchtung-check` |
 | nt J03 | three structures only plant cells have | A | replace by `bg5-zellen-check` |
-| pflanzen J04 | four flower whorls, composite | C | propose retirement (covered by smaller cards in `bg5-bluete`) |
+| pflanzen J04 | four flower whorls, composite | C | retired via `retired_items` (covered by smaller cards in `bg5-bluete` and `bg5-bluetendiagramm`; history kept) |
 | skelett J02, J04; nt J02, J04; pflanzen J06 | composite prompts | C | keep active (one history cannot be split) |
 | skelett J03, nt J01 | tendons; reproducibility and control | C | keep active (taught, but no card with the same retrieval) |
 | skelett J05–J08 | hormones, placenta, prenatal development | C | keep active (Biologie 8) |
 | pflanzen J01, J02, J07, J08 | xylem/phloem, plant organs, germination, seed | C | keep active (NT6) |
 | nt J05–J08 | object-oriented modelling, file systems | C | keep active (not NT5 Lernbereich 2) |
 
-`cell.json` ships without `replaces` and `retired_items`, so the catalog gate needs no approval for the first publication. Questions for Thomas:
+From its first publication (cell version `2026.11.1`) the four successors each declare `replaces` on their old item, and `cell.json` lists pflanzen J04 (`01K4YB5P000000000000000J04`) in `retired_items`. The other 19 C items stay active and untouched.
 
-1. Do you approve the 4 A transfers and the proposed retirement of pflanzen J04?
-2. Should these three Gymnasium 5 cells belong to this package at all, or should the NT cell (which also covers NT5 Lernbereich 1 and old Informatik content) wait for an NT5 Lernbereich 1 package?
+`ZAM_CORE=<published 0.54.0 file URL> node biologie-gymnasium-5/scripts/validate-migration.mjs` installs the three old cells into a disposable library, gives all 24 items two recall reviews each (48 events) and then installs this cell. It checks that the 4 A histories move unchanged onto their successors, that the retired composite keeps its history but never returns to the review queue, that the 19 keep-active cards stay queued and untouched, that repeated install and enrolment change nothing (84 fresh cards start unlearned, 4 reused), and that for each A row a learner holding cards on both the old and the new id makes the install refuse an automatic merge. No personal library is opened.
+
+Open question for Thomas, outside the approved mapping: the NT cell also covers NT5 Lernbereich 1 and old Informatik content. Only nt J03 moves to this package; nt J01, J02 and J04–J08 stay active, so a future NT5 Lernbereich 1 package could still claim them.

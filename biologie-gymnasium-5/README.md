@@ -37,13 +37,13 @@ npm test
 npm run build
 npm run package:zip
 node scripts/check-curriculum.mjs
-ZAM_CORE=file:///absolute/path/to/zam-core/dist/index.js node scripts/validate-cell.mjs
+ZAM_CORE=file:///absolute/path/to/zam-core/dist/index.js node scripts/validate-migration.mjs
 ```
 
-`npm run package:zip` creates `release/ZAM-Academy-Biologie-5-Gymnasium-offline.zip` with the self-contained HTML and starters for Windows, macOS and Linux. `validate-cell.mjs` installs the cell twice in a disposable library, enrols every card and checks idempotence and source links; it never touches a personal library.
+`npm run package:zip` creates `release/ZAM-Academy-Biologie-5-Gymnasium-offline.zip` with the self-contained HTML and starters for Windows, macOS and Linux. `validate-migration.mjs` installs the three old Gymnasium 5 cells with review histories in a disposable library, then this cell, and checks the approved migration, idempotent install and enrolment, source links and the refused merge on collisions; it never touches a personal library.
 
 ## Cell contract and publication
 
 `cell.json` is the only card list: 44 atoms, one per lesson, with two cards each (a binary `tier1_fast` check taken from the lesson's quick check and a concise `tier2_synthesis` recall), 88 cards and 50 soft prerequisite edges. Every card cites `https://academy.zam-os.org/biologie-gymnasium-5/#lesson=<id>`. Atom and item ULIDs and lesson anchors are pinned in `tests/fixtures/public-contract.json` and become a contract on first publication.
 
-`zam-os/zam` holds three unclaimed Gymnasium Grade 5 cells (`de-by:gymnasium-5-biologie-mensch-skelett-sexualbiologie`, `de-by:gymnasium-5-biologie-pflanzen-bluetenbau-samen`, `de-by:gymnasium-5-natur-technik-mikroskop-experiment-oop`, 24 items). [replaces-de-by.json](replaces-de-by.json) maps every item as an unapproved proposal (`status: "proposal-only"`, `approved: null`): 4 A, 0 B, 20 C (19 keep active, 1 proposed retirement). Byte-exact snapshots with SHA-256 are in `tests/fixtures/`. `cell.json` declares no `replaces` and no `retired_items` until Thomas approves the mapping; see [docs/biologie-gymnasium-5-coverage.md](../docs/biologie-gymnasium-5-coverage.md).
+`zam-os/zam` holds three Gymnasium Grade 5 cells that no other package had claimed (`de-by:gymnasium-5-biologie-mensch-skelett-sexualbiologie`, `de-by:gymnasium-5-biologie-pflanzen-bluetenbau-samen`, `de-by:gymnasium-5-natur-technik-mikroskop-experiment-oop`, 24 items). Thomas approved [replaces-de-by.json](replaces-de-by.json) on 2026-11-14 (`status: "approved"`, `approved: "2026-11-14"`): 4 A successors declare `replaces` (`bg5-skelett-check`, `bg5-bluete-check`, `bg5-bestaeubung-befruchtung-check`, `bg5-zellen-check`), 0 B, 20 C, of which 19 stay active and 1 (pflanzen J04, a composite on the four flower whorls) is listed in `retired_items` with its history kept. Byte-exact snapshots with SHA-256 are in `tests/fixtures/`; see [docs/biologie-gymnasium-5-coverage.md](../docs/biologie-gymnasium-5-coverage.md).

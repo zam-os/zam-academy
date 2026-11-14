@@ -212,5 +212,5 @@ jobs:
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node gpg-mittelschule-5/scripts/validate-cell.mjs
       - name: Install and enrol Natur und Technik 5 Mittelschule idempotently
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node nt-mittelschule-5/scripts/validate-cell.mjs
-      - name: Install and enrol Biologie 5 Gymnasium idempotently (mapping still a proposal)
-        run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node biologie-gymnasium-5/scripts/validate-cell.mjs
+      - name: Move the approved Biologie 5 Gymnasium histories, retire one composite, keep the other C cards active and refuse automatic merges
+        run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node biologie-gymnasium-5/scripts/validate-migration.mjs

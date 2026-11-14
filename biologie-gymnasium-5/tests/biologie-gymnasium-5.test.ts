@@ -65,6 +65,14 @@ function learnerText(l: (typeof LESSONS)[number]): string {
   ].join("\n");
 }
 
+/** The four A successors Thomas approved on 2026-11-14; no other card declares replaces. */
+const APPROVED_REPLACES: Record<string, string[]> = {
+  "bg5-skelett-check": ["01K4YB5M000000000000000J01"],
+  "bg5-bluete-check": ["01K4YB5P000000000000000J03"],
+  "bg5-bestaeubung-befruchtung-check": ["01K4YB5P000000000000000J05"],
+  "bg5-zellen-check": ["01K4YT5N000000000000000J03"],
+};
+
 describe("biologie-gymnasium-5 curriculum and content", () => {
   it("covers all 47 verbatim competences of NT5 Lernbereich 2 in 44 lessons and 8 stations", () => {
     expect(STAGES).toHaveLength(8);
@@ -212,7 +220,8 @@ describe("ZAM cell and public contract", () => {
         expect(item.id).toMatch(ULID_RE);
         expect(seen.has(item.id)).toBe(false);
         seen.add(item.id);
-        expect("replaces" in item).toBe(false);
+        if (APPROVED_REPLACES[item.slug]) expect(item).toHaveProperty("replaces", APPROVED_REPLACES[item.slug]);
+        else expect("replaces" in item).toBe(false);
         expect(item.source_link).toBe(atom.source_link);
       }
       expect(t1.slug).toBe(`${lesson.id}-check`);
@@ -241,10 +250,11 @@ describe("ZAM cell and public contract", () => {
     expect(cell.sources.map((s) => s.uri)).toEqual(SOURCES.map((s) => s.url));
   });
 
-  it("keeps replaces-de-by.json a proposal that maps every old item exactly once", async () => {
-    expect(mapping.status).toBe("proposal-only");
-    expect(mapping.approved).toBeNull();
-    expect("retired_items" in cell).toBe(false);
+  it("applies Thomas's approved mapping and maps every old item exactly once", async () => {
+    expect(mapping.status).toBe("approved");
+    expect(mapping.approved).toBe("2026-11-14");
+    expect(mapping.source).toContain("Mapping freigegeben, 4 A und Ausmusterung J04 ok");
+    expect(cell.retired_items).toEqual([expect.objectContaining({ id: "01K4YB5P000000000000000J04" })]);
     expect(mapping.sources).toHaveLength(3);
     const fixtures = import.meta.glob<{ default: { tile_id: string; atoms: Array<{ practice_items: Array<{ id: string }> }> } }>(
       "./fixtures/de-by-*.json",
@@ -259,15 +269,17 @@ describe("ZAM cell and public contract", () => {
       expect(row.note.length).toBeGreaterThan(30);
       if (row.category === "C") {
         expect(row.academy_slug).toBeNull();
-        expect(["keep-active", "propose-retire-after-approval"]).toContain(row.action);
+        expect(row.action).toBe(row.de_by_id === "01K4YB5P000000000000000J04" ? "retire" : "keep-active");
       } else {
-        expect(row.action).toBe("propose-replace-after-approval");
+        expect(row.action).toBe("replace");
         expect(slugs.filter((s) => s === row.academy_slug)).toHaveLength(1);
+        expect(APPROVED_REPLACES[row.academy_slug!]).toEqual([row.de_by_id]);
       }
     }
     const successors = mapping.rows.filter((r) => r.academy_slug).map((r) => r.academy_slug);
     expect(new Set(successors).size).toBe(successors.length);
     expect(mapping.rows.filter((r) => r.category === "A")).toHaveLength(4);
+    expect(Object.keys(APPROVED_REPLACES)).toHaveLength(4);
   });
 
   it("builds lesson deep links and tracks completion", () => {
