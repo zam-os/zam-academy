@@ -4,6 +4,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 
 | App | Folder | Live | ZAM cell |
 | --- | --- | --- | --- |
+| French 5 Gymnasium (Bavaria, first foreign language; local draft) | [`franzoesisch-gymnasium-5/`](franzoesisch-gymnasium-5/) | Local offline package | `zam-academy:franzoesisch-gymnasium-5` |
 | Mathematics 5 Mittelschule (Bavaria) | [`mathematik-mittelschule-5/`](mathematik-mittelschule-5/) | Built by Pages on merge | `zam-academy:mathematik-mittelschule-5` |
 | Mathematics 6 Mittelschule (Bavaria) | [`mathematik-mittelschule-6/`](mathematik-mittelschule-6/) | Built by Pages on merge | `zam-academy:mathematik-mittelschule-6` |
 | Mathematik 7 Mittelschule (LehrplanPLUS Bayern, Regelklasse und M-Zug) | [`mathematik-mittelschule-7/`](mathematik-mittelschule-7/) | https://academy.zam-os.org/mathematik-mittelschule-7/ | `zam-academy:mathematik-mittelschule-7` |
@@ -164,6 +165,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Natur und Technik 5 Mittelschule: cd nt-mittelschule-5 (dev server on :5243)
 # Mathematik 7 Gymnasium: cd mathematik-gymnasium-7 (dev server on :5242)
 # Geographie 5 Gymnasium: cd geographie-gymnasium-5 (dev server on :5244)
+# French 5 Gymnasium: cd franzoesisch-gymnasium-5 (dev server on :5245)
 # Grade 11 introductory biology preview: cd biologie-gymnasium-11 (dev server on :5227)
 npm ci
 npm run dev      # http://localhost:5180/uml/

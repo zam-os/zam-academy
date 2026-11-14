@@ -1,0 +1,24 @@
+{
+	"name": "zam-academy-franzoesisch-gymnasium-5",
+	"version": "0.1.0",
+	"private": true,
+	"description": "French as the first foreign language for Bavarian Gymnasium grade 5: visual workshops, everyday communication and linked ZAM cards.",
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "tsc --noEmit && vite build",
+		"preview": "vite preview",
+		"test": "node scripts/check-curriculum.mjs && vitest run",
+		"test:watch": "vitest",
+		"typecheck": "tsc --noEmit",
+		"package:zip": "npm run build && node scripts/build-release-zip.mjs && node scripts/verify-release.mjs",
+		"check:curriculum": "node scripts/check-curriculum.mjs"
+	},
+	"devDependencies": {
+		"typescript": "^6.0.3",
+		"vite": "^8.1.5",
+		"vite-plugin-singlefile": "^2.3.3",
+		"vitest": "^4.1.10"
+	},
+	"license": "Apache-2.0"
+}

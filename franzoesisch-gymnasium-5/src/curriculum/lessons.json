@@ -1,0 +1,3467 @@
+[
+	{
+		"id": "f5-bonjour",
+		"stage": "rencontres",
+		"title": "Bonjour !",
+		"skill": "Höflich begrüßen und sich verabschieden",
+		"bindings": ["1.1-sprechen", "1.2-wortschatz", "2", "5"],
+		"paragraphs": [
+			"Du begrüßt Erwachsene mit Bonjour, Madame oder Bonjour, Monsieur. Salut passt zu Freunden. Tu bedeutet du; vous verwendest du höflich für eine Person oder für mehrere Personen. Bitte und danke heißen s’il vous plaît und merci. Ein freundlicher Ton und die Anrede gehören dazu.",
+			"Beispiel im Laden: Bonjour, Madame. Une baguette, s’il vous plaît. Merci. Au revoir ! Unter Freunden: Salut, Zoé ! Ça va ? – Oui, merci. Spiele beide Begegnungen. Ein Begrüßungskuss ist keine Pflicht; respektiere die Grenzen anderer."
+		],
+		"material": "À la boulangerie : Bonjour, Madame ! Une baguette, s’il vous plaît. Merci, au revoir ! Dans la cour : Salut, Zoé ! Ça va ? – Oui, ça va. Et toi ?",
+		"materialLabel": "Eigenes französisches Übungsmaterial · erfundene Personen und Angaben",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Tu salues une adulte dans un magasin.",
+			"answer": "Bonjour, Madame.",
+			"wrong": ["Salut, mon copain !", "Au revoir, Zoé !"],
+			"explanation": "Bonjour mit Anrede passt zur höflichen Begrüßung.",
+			"optionLanguage": "fr"
+		},
+		"takeaway": "Bonjour mit Anrede passt zu Erwachsenen; Salut passt zu Freunden. Eine höfliche Bitte endet mit s’il vous plaît.",
+		"practice": [
+			{
+				"prompt": "Tu quittes le magasin : ___ !",
+				"answers": ["Au revoir"],
+				"feedback": "Au revoir ist die Verabschiedung."
+			},
+			{
+				"prompt": "Tu remercies : ___ !",
+				"answers": ["Merci"],
+				"feedback": "Mit merci bedankst du dich."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Spiele einen Einkauf: Begrüße eine Verkäuferin, bitte um ein Baguette und verabschiede dich. Notiere den Dialog.",
+				"model": "Bonjour, Madame. Une baguette, s’il vous plaît. Merci. Au revoir !",
+				"criteria": [
+					"Ich begrüße mit Anrede.",
+					"Ich bitte höflich.",
+					"Ich verabschiede mich."
+				]
+			},
+			"2": {
+				"prompt": "Du triffst eine Freundin und ihren Vater. Schreibe zwei Begrüßungen und begründe auf Deutsch deine Wahl.",
+				"model": "Salut, Zoé ! Bonjour, Monsieur ! Salut passt zur Freundin; beim Vater wähle ich die höfliche Anrede.",
+				"criteria": [
+					"Ich unterscheide die Personen.",
+					"Ich verwende passende Anreden.",
+					"Ich begründe die Wortwahl."
+				],
+				"language": "de"
+			}
+		},
+		"workshop": {
+			"kind": "dialogue",
+			"goals": [
+				{
+					"label": "Erwachsene",
+					"before": "🏪 →",
+					"after": "Madame !",
+					"options": ["Bonjour,", "Salut,", "Au revoir,"],
+					"answer": "Bonjour,",
+					"explanation": "Die Anrede passt zum förmlichen Kontakt."
+				},
+				{
+					"label": "Freundin",
+					"before": "🧒 →",
+					"after": "Zoé !",
+					"options": ["Salut,", "Pardon,", "Merci,"],
+					"answer": "Salut,",
+					"explanation": "Salut ist unter Freunden üblich."
+				},
+				{
+					"label": "Bitte",
+					"before": "🥖 →",
+					"after": "s’il vous plaît.",
+					"options": ["Une baguette,", "Au revoir,", "Merci,"],
+					"answer": "Une baguette,",
+					"explanation": "Eine Bestellung wird mit s’il vous plaît höflich formuliert."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": true
+	},
+	{
+		"id": "f5-moi",
+		"stage": "rencontres",
+		"title": "Je m’appelle…",
+		"skill": "Name, Alter und Wohnort nennen",
+		"bindings": ["1.1-sprechen", "1.1-schreiben", "1.2-wortschatz", "5"],
+		"paragraphs": [
+			"Für deinen Namen lernst du Je m’appelle… als ganze Wendung. J’ai dix ans heißt Ich bin zehn Jahre alt. Französisch verwendet für das Alter avoir: wörtlich ich habe zehn Jahre. Für den Wohnort sagst du J’habite à Lyon. Vor einem Vokal werden je und me verkürzt: j’habite, je m’appelle.",
+			"Beispiel: Je m’appelle Lina. J’ai dix ans. J’habite à Lyon. Frage mit Tu t’appelles comment ? und Tu as quel âge ? Nutze hier erfundene Angaben statt deiner echten Adresse. Sprich jeden Satz erst nach, dann ohne Vorlage."
+		],
+		"material": "Salut ! Je m’appelle Lina. J’ai dix ans. J’habite à Lyon. Et toi ? Tu t’appelles comment ? Tu as quel âge ? Tu habites où ? À bientôt !",
+		"materialLabel": "Eigenes französisches Übungsmaterial · erfundene Personen und Angaben",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Quel âge a Lina ?",
+			"answer": "Elle a dix ans.",
+			"wrong": ["Elle a deux ans.", "Elle habite à Paris."],
+			"explanation": "Im Text steht J’ai dix ans.",
+			"optionLanguage": "fr"
+		},
+		"takeaway": "Deinen Namen nennst du mit Je m’appelle; das Alter steht mit avoir, der Wohnort mit habiter à.",
+		"practice": [
+			{
+				"prompt": "J’___ dix ans.",
+				"answers": ["ai"],
+				"feedback": "Für das Alter steht avoir: j’ai."
+			},
+			{
+				"prompt": "J’habite ___ Lyon.",
+				"answers": ["à"],
+				"feedback": "Vor dem Städtenamen steht hier à."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Stelle eine erfundene Person vor: Mila, elf Jahre, Paris. Schreibe aus ihrer Sicht.",
+				"model": "Je m’appelle Mila. J’ai onze ans. J’habite à Paris.",
+				"criteria": [
+					"Ich nenne den Namen.",
+					"Ich verwende avoir für das Alter.",
+					"Ich nenne den Wohnort."
+				]
+			},
+			"2": {
+				"prompt": "Erfinde einen Dialog zwischen neuen Mitschülern. Frage nach Name und Alter und gib passende Antworten.",
+				"model": "Salut ! Tu t’appelles comment ? – Je m’appelle Noé. Et toi ? – Emma. Tu as quel âge ? – J’ai dix ans.",
+				"criteria": [
+					"Beide sprechen.",
+					"Ich stelle zwei Fragen.",
+					"Die Antworten passen."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "dialogue",
+			"goals": [
+				{
+					"label": "Name",
+					"before": "Je",
+					"after": "Lina.",
+					"options": ["m’appelle", "ai", "habite"],
+					"answer": "m’appelle",
+					"explanation": "Je m’appelle nennt den Namen."
+				},
+				{
+					"label": "Alter",
+					"before": "J’",
+					"after": "dix ans.",
+					"options": ["ai", "suis", "habite"],
+					"answer": "ai",
+					"explanation": "Alter steht mit avoir."
+				},
+				{
+					"label": "Wohnort",
+					"before": "J’habite",
+					"after": "Lyon.",
+					"options": ["à", "ans", "et"],
+					"answer": "à",
+					"explanation": "À verbindet habiter mit der Stadt."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": true
+	},
+	{
+		"id": "f5-sons",
+		"stage": "rencontres",
+		"title": "Écoute les sons",
+		"skill": "/y/, e-Laute und Nasale unterscheiden",
+		"bindings": ["1.2-aussprache", "1.1-hoeren", "1.1-schreiben"],
+		"paragraphs": [
+			"In tu hörst du /y/, ähnlich dem deutschen ü; in vous steht ou für /u/. É wie in été klingt /e/; è wie in père klingt /ɛ/. Ein Endkonsonant bleibt oft stumm: das s in vous hörst du allein nicht. Das ist keine Regel für jedes Wort; lerne Wörter immer mit einem Hörbeispiel.",
+			"Beispiel: tu /ty/ – vous /vu/; été /ete/ – père /pɛʁ/. Die Nasale /ɑ̃/ in sans, /ɔ̃/ in bon und /ɛ̃/ in pain haben kein angehängtes n. Lass dir die Wörter vormachen. Die Computerstimme hilft beim Hören; sie bewertet deine Aussprache nicht."
+		],
+		"material": "Tu, vous. Tu, vous. Été, père. Été, père. Sans, bon, pain. Sans, bon, pain. Bonjour ! Tu t’appelles comment ? Je m’appelle Lina. Au revoir !",
+		"materialLabel": "Eigenes französisches Übungsmaterial · erfundene Personen und Angaben",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Quel mot contient /y/ ?",
+			"answer": "tu",
+			"wrong": ["vous", "bon"],
+			"explanation": "Das u in tu steht für /y/.",
+			"optionLanguage": "fr"
+		},
+		"takeaway": "Tu enthält /y/, vous /u/. É und è unterscheiden /e/ und /ɛ/; Nasallaute haben kein angehängtes n.",
+		"practice": [
+			{
+				"prompt": "Le son /u/ : tu ou vous ?",
+				"answers": ["vous"],
+				"feedback": "Ou in vous klingt /u/."
+			},
+			{
+				"prompt": "Le son /ɔ̃/ : bon ou pain ?",
+				"answers": ["bon"],
+				"feedback": "On in bon steht für /ɔ̃/."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Höre zweimal ohne mitzulesen. Sprich tu/vous und été/père nach. Notiere auf Deutsch zwei Unterschiede.",
+				"model": "Tu hat /y/, vous hat /u/. Été hat /e/, père hat /ɛ/. Ich bitte um Rückmeldung.",
+				"criteria": [
+					"Ich höre zuerst ohne Text.",
+					"Ich unterscheide Lautpaare.",
+					"Ich übe laut."
+				],
+				"language": "de"
+			},
+			"2": {
+				"prompt": "Lass einen Partner tu, vous, bon und pain neu anordnen und vorlesen. Notiere die Wörter und erkläre den Nasallaut.",
+				"model": "Vous, pain, tu, bon. Bon und pain haben Nasallaute; ich hänge kein eigenes n an. Meine Reihenfolge hängt vom Vorlesen ab.",
+				"criteria": [
+					"Ich höre eine neue Reihenfolge.",
+					"Ich ordne Wörter und Laute zu.",
+					"Ich erkläre einen Nasallaut."
+				],
+				"language": "de"
+			}
+		},
+		"workshop": {
+			"kind": "sound",
+			"goals": [
+				{
+					"label": "Lippen runden",
+					"before": "tu →",
+					"after": "ähnlich ü",
+					"options": ["/y/", "/u/", "/ɑ̃/"],
+					"answer": "/y/",
+					"explanation": "/y/ ist der Laut in tu."
+				},
+				{
+					"label": "e-Laut",
+					"before": "été →",
+					"after": "",
+					"options": ["/e/", "/ɛ/", "/ɔ̃/"],
+					"answer": "/e/",
+					"explanation": "É steht hier für /e/."
+				},
+				{
+					"label": "Nasal",
+					"before": "bon →",
+					"after": "ohne End-n",
+					"options": ["/ɔ̃/", "/ɛ̃/", "/u/"],
+					"answer": "/ɔ̃/",
+					"explanation": "Bon enthält /ɔ̃/."
+				}
+			]
+		},
+		"listening": true,
+		"speaking": true
+	},
+	{
+		"id": "f5-classe",
+		"stage": "rencontres",
+		"title": "En classe",
+		"skill": "Anweisungen und regelmäßiger Imperativ",
+		"bindings": ["1.1-sprechen", "1.2-wortschatz", "1.2-grammatik", "5"],
+		"paragraphs": [
+			"Im Unterricht helfen feste Wendungen: Je ne comprends pas. Répétez, s’il vous plaît. Ein nom ist ein Nomen, ein verbe ein Verb, ein sujet das Subjekt. Cochez heißt kreuzt an, complétez heißt ergänzt. Le livre, le cahier und le stylo bezeichnen Buch, Heft und Stift.",
+			"Der regelmäßige Imperativ hat kein Subjektpronomen. Bei parler heißen die Formen parle, parlons, parlez. Die tu-Form eines regelmäßigen -er-Verbs verliert das s: Écoute ! Für mehrere oder höflich: Écoutez ! Beispiel: Regardez le tableau et complétez la phrase. Führe beide Schritte aus."
+		],
+		"material": "Bonjour ! Regardez le tableau. Écoutez la phrase. Complétez le mot. Cochez la bonne réponse. Parlez avec votre partenaire. Merci ! – Répétez, s’il vous plaît.",
+		"materialLabel": "Eigenes französisches Übungsmaterial · erfundene Personen und Angaben",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "« Cochez. » Que fais-tu ?",
+			"answer": "Je marque une réponse.",
+			"wrong": ["Je ferme le livre.", "Je quitte la salle."],
+			"explanation": "Cochez fordert zum Ankreuzen auf.",
+			"optionLanguage": "fr"
+		},
+		"takeaway": "Der Imperativ steht ohne Subjektpronomen: parle, parlons, parlez. Bei der tu-Form regelmäßiger -er-Verben entfällt s.",
+		"practice": [
+			{
+				"prompt": "Impératif de parler, pour tu : ___ !",
+				"answers": ["parle"],
+				"feedback": "Ohne Subjektpronomen und bei -er ohne s."
+			},
+			{
+				"prompt": "Impératif de parler, pour vous : ___ !",
+				"answers": ["parlez"],
+				"feedback": "Die Endung -ez bleibt."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Gib drei Anweisungen mit regarde, écoute, complète. Bitte danach höflich um Wiederholung.",
+				"model": "Regarde le tableau. Écoute la phrase. Complète le mot. Répétez, s’il vous plaît.",
+				"criteria": [
+					"Drei Anweisungen.",
+					"Keine Subjektpronomen.",
+					"Eine höfliche Bitte."
+				]
+			},
+			"2": {
+				"prompt": "Leite eine Gruppe an: Alle sollen zuhören, ein Wort ergänzen und eine Antwort ankreuzen.",
+				"model": "Écoutez. Complétez le mot. Cochez la bonne réponse. Merci !",
+				"criteria": [
+					"Mehrere werden angesprochen.",
+					"Drei konkrete Schritte.",
+					"Passende -ez-Formen."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "sequence",
+			"goals": [
+				{
+					"label": "Eine Person",
+					"before": "tu parles →",
+					"after": "!",
+					"options": ["Parle", "Parles", "Tu parles"],
+					"answer": "Parle",
+					"explanation": "Tu und das s entfallen."
+				},
+				{
+					"label": "Gemeinsam",
+					"before": "nous parlons →",
+					"after": "!",
+					"options": ["Parlons", "Parlez", "Parle"],
+					"answer": "Parlons",
+					"explanation": "Parlons fordert zum gemeinsamen Handeln auf."
+				},
+				{
+					"label": "Mehrere",
+					"before": "vous parlez →",
+					"after": "!",
+					"options": ["Parlez", "Parles", "Vous parlez"],
+					"answer": "Parlez",
+					"explanation": "Vous entfällt."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": true
+	},
+	{
+		"id": "f5-nombres",
+		"stage": "rencontres",
+		"title": "De zéro à cent",
+		"skill": "Zahlen bis 100 zerlegen",
+		"bindings": ["1.2-wortschatz", "5"],
+		"paragraphs": [
+			"Lerne zéro, un, deux, trois, quatre, cinq, six, sept, huit, neuf, dix und dann onze, douze, treize, quatorze, quinze, seize. Es folgen dix-sept, dix-huit, dix-neuf. Die Zehner heißen vingt, trente, quarante, cinquante, soixante. 21 ist vingt et un; 22 ist vingt-deux.",
+			"In Frankreich baust du 70 als 60 + 10: soixante-dix; 71 heißt soixante et onze. 80 ist quatre-vingts, aber 81 quatre-vingt-un ohne s und et. 90 heißt quatre-vingt-dix, 100 cent. Beispiel: 96 = 80 + 16 = quatre-vingt-seize. Hier verwenden wir die traditionelle Bindestrichsetzung."
+		],
+		"material": "Au jeu : douze, seize, vingt et un, trente-deux, quarante, cinquante, soixante. Puis : soixante-dix, soixante et onze, quatre-vingts, quatre-vingt-un, quatre-vingt-dix, cent !",
+		"materialLabel": "Eigenes französisches Übungsmaterial · erfundene Personen und Angaben",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Quatre-vingt-douze, c’est…",
+			"answer": "92",
+			"wrong": ["82", "72"],
+			"explanation": "92 besteht aus 80 und 12.",
+			"optionLanguage": "fr"
+		},
+		"takeaway": "In Frankreich: 70 = 60 + 10, 80 = 4 · 20 und 90 = 80 + 10. Genau 80 heißt quatre-vingts, 81 quatre-vingt-un.",
+		"practice": [
+			{
+				"prompt": "71 en lettres : ___",
+				"answers": ["soixante et onze", "soixante-et-onze"],
+				"feedback": "71 besteht aus 60 und 11."
+			},
+			{
+				"prompt": "80 en lettres : ___",
+				"answers": ["quatre-vingts"],
+				"feedback": "Genau 80 trägt hier das s."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe 12, 21 und 96 auf Französisch. Erkläre die Zerlegung von 96 auf Deutsch.",
+				"model": "Douze, vingt et un, quatre-vingt-seize. 96 besteht aus 80 und 16.",
+				"criteria": ["Drei Zahlen.", "21 mit et.", "Zerlegung erklärt."],
+				"language": "de"
+			},
+			"2": {
+				"prompt": "Erfinde drei Losnummern zwischen 70 und 100, darunter 81. Schreibe Ziffern und Wörter und lies sie vor.",
+				"model": "71 : soixante et onze. 81 : quatre-vingt-un. 99 : quatre-vingt-dix-neuf.",
+				"criteria": [
+					"Passender Zahlenbereich.",
+					"81 ohne et und s.",
+					"Ziffern und Wörter stimmen."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "number",
+			"goals": [
+				{
+					"label": "60 + 10",
+					"before": "70 →",
+					"after": "",
+					"options": ["soixante-dix", "soixante et un", "quatre-vingts"],
+					"answer": "soixante-dix",
+					"explanation": "70 ist 60 + 10."
+				},
+				{
+					"label": "4 · 20",
+					"before": "80 →",
+					"after": "",
+					"options": ["quatre-vingts", "quatre-vingt-un", "quarante"],
+					"answer": "quatre-vingts",
+					"explanation": "80 endet hier auf s."
+				},
+				{
+					"label": "80 + 1",
+					"before": "81 →",
+					"after": "",
+					"options": [
+						"quatre-vingt-un",
+						"quatre-vingts et un",
+						"quatre-vingts-un"
+					],
+					"answer": "quatre-vingt-un",
+					"explanation": "Bei 81 entfallen s und et."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "f5-articles",
+		"stage": "vie",
+		"title": "Un livre, des livres",
+		"skill": "Genus, Artikel und Mehrzahl zusammen lernen",
+		"bindings": ["1.2-grammatik", "1.2-wortschatz", "5"],
+		"paragraphs": [
+			"Lerne Nomen mit Artikel: un livre ist ein Buch, une table ein Tisch. Der bestimmte Artikel heißt le oder la; vor Vokal oder stummem h steht l’: l’école. Im Plural stehen les und des. Meist erhält das Nomen ein geschriebenes s, das du nicht hörst. Das Genus kann vom Deutschen abweichen.",
+			"Beispiel: un livre → des livres; la table → les tables; l’école → les écoles. Le und la benennen etwas Bestimmtes, un und une führen etwas ein. Die Form des ist hier der unbestimmte Pluralartikel. Verwechsle ihn später nicht mit de + les."
+		],
+		"material": "Dans la classe, il y a une table, un livre et un stylo. Sur la table, il y a des cahiers. Les cahiers sont pour la classe. L’école a une bibliothèque.",
+		"materialLabel": "Eigenes französisches Übungsmaterial · erfundene Personen und Angaben",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Quel est le pluriel de « un livre » ?",
+			"answer": "des livres",
+			"wrong": ["une livres", "le livre"],
+			"explanation": "Un wird zu des; livre erhält ein s.",
+			"optionLanguage": "fr"
+		},
+		"takeaway": "Lerne Nomen mit Artikel und Plural: un livre → des livres. Bestimmte Artikel: le, la, l’, les.",
+		"practice": [
+			{
+				"prompt": "___ école (article défini)",
+				"answers": ["l’", "l'"],
+				"feedback": "Vor dem Vokal wird la zu l’."
+			},
+			{
+				"prompt": "une table → des ___",
+				"answers": ["tables"],
+				"feedback": "Im Plural kommt hier ein s hinzu."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Beschreibe einen erfundenen Schultisch mit un, une und des. Nenne mindestens drei Gegenstände.",
+				"model": "Sur la table, il y a un livre, une trousse et des stylos.",
+				"criteria": ["Drei Gegenstände.", "Passende Artikel.", "Plural mit s."]
+			},
+			"2": {
+				"prompt": "Eine Klasse bekommt neues Material. Schreibe erst, was neu ist, dann sprich über dieselben Dinge mit bestimmten Artikeln.",
+				"model": "Il y a un livre et une trousse. Le livre est sur la table. La trousse est dans le sac.",
+				"criteria": [
+					"Ich führe Dinge ein.",
+					"Ich greife sie bestimmt auf.",
+					"Genus und Numerus passen."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "sentence",
+			"goals": [
+				{
+					"label": "Maskulin",
+					"before": "un livre →",
+					"after": "",
+					"options": ["le livre", "la livre", "les livre"],
+					"answer": "le livre",
+					"explanation": "Le ist hier der bestimmte Singularartikel."
+				},
+				{
+					"label": "Vokal",
+					"before": "la + école →",
+					"after": "",
+					"options": ["l’école", "la école", "le école"],
+					"answer": "l’école",
+					"explanation": "Der Artikel wird vor Vokal verkürzt."
+				},
+				{
+					"label": "Mehrzahl",
+					"before": "un stylo →",
+					"after": "",
+					"options": ["des stylos", "une stylos", "un stylos"],
+					"answer": "des stylos",
+					"explanation": "Pluralartikel des und Nomen mit s."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "f5-famille",
+		"stage": "vie",
+		"title": "Ma famille",
+		"skill": "Possessivbegleiter und Subjektpronomen",
+		"bindings": ["1.1-sprechen", "1.2-grammatik", "1.2-wortschatz", "5"],
+		"paragraphs": [
+			"Mon, ma, mes heißen mein, meine. Sie richten sich nach dem Besitzwort: mon père, ma mère, mes parents. Für du: ton, ta, tes; für er oder sie: son, sa, ses. Son père kann sein Vater oder ihr Vater heißen. Vor weiblichem Nomen mit Vokal steht mon: mon amie.",
+			"Für wir, ihr/Sie und sie heißen die Formen notre/nos, votre/vos, leur/leurs. Beispiel: notre frère, nos frères. Subjektpronomen ersetzen Namen: Lina → elle, Léo → il, Lina et Zoé → elles, eine gemischte Gruppe → ils. Je, tu, il/elle/on, nous, vous, ils/elles begleiten das Verb."
+		],
+		"material": "Voici ma famille. Mon père s’appelle Paul. Ma mère s’appelle Inès. Mes parents habitent à Lyon. Notre chat s’appelle Minou. Lina et Zoé sont mes amies. Elles aiment Minou.",
+		"materialLabel": "Eigenes französisches Übungsmaterial · erfundene Personen und Angaben",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Lina dit : « Voici… »",
+			"answer": "ma mère",
+			"wrong": ["mon mère", "mes mère"],
+			"explanation": "Lina spricht selbst: ma bedeutet hier meine. Mère ist weiblich und steht im Singular: « Voici ma mère. »",
+			"optionLanguage": "fr"
+		},
+		"takeaway": "Possessivbegleiter richten sich nach dem Besitzwort: mon père, ma mère, mes parents; vor Vokal mon amie.",
+		"practice": [
+			{
+				"prompt": "Lina et Zoé → ___",
+				"answers": ["elles"],
+				"feedback": "Eine weibliche Mehrzahl wird durch elles ersetzt."
+			},
+			{
+				"prompt": "mon ou ma : ___ amie",
+				"answers": ["mon"],
+				"feedback": "Vor amie steht trotz weiblichem Genus mon."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Stelle eine erfundene Familie mit mon, ma und mes vor. Ersetze zwei Namen danach durch ein Pronomen.",
+				"model": "Mon père s’appelle Luc. Ma mère s’appelle Sara. Mes parents habitent à Paris. Ils aiment le sport.",
+				"criteria": [
+					"Drei Possessivformen.",
+					"Erfundene Angaben.",
+					"Ein passendes Pronomen."
+				]
+			},
+			"2": {
+				"prompt": "Eine Freundin sagt: « Son père habite à Lyon. » Erkläre auf Deutsch die zwei möglichen Besitzer und bilde ein Beispiel mit notre/nos.",
+				"model": "Son père kann sein Vater oder ihr Vater heißen. Notre frère aime le foot. Nos parents aiment le tennis.",
+				"criteria": [
+					"Ich erkläre son.",
+					"Ich bilde Singular und Plural.",
+					"Der Begleiter passt zum Besitzwort."
+				],
+				"language": "de"
+			}
+		},
+		"workshop": {
+			"kind": "family",
+			"goals": [
+				{
+					"label": "Weiblich",
+					"before": "___ mère",
+					"after": "",
+					"options": ["ma", "mon", "mes"],
+					"answer": "ma",
+					"explanation": "Ma richtet sich nach mère."
+				},
+				{
+					"label": "Vokal",
+					"before": "___ amie",
+					"after": "",
+					"options": ["mon", "ma", "mes"],
+					"answer": "mon",
+					"explanation": "Vor weiblichem Vokalwort steht mon."
+				},
+				{
+					"label": "Wir, Mehrzahl",
+					"before": "___ parents",
+					"after": "",
+					"options": ["nos", "notre", "leur"],
+					"answer": "nos",
+					"explanation": "Nos ist die Mehrzahlform zu notre."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": true
+	},
+	{
+		"id": "f5-animaux",
+		"stage": "vie",
+		"title": "Des animaux et des jeux",
+		"skill": "Häufige unregelmäßige Pluralformen",
+		"bindings": ["1.2-wortschatz", "1.2-grammatik", "5"],
+		"paragraphs": [
+			"Nicht jedes Nomen bekommt nur ein s. Diese häufigen Formen lernst du als Paare: un animal → des animaux, un cadeau → des cadeaux, un jeu → des jeux. Ein geschriebenes x ist hier wie das Plural-s meist nicht hörbar. Der Artikel macht die Mehrzahl oft deutlicher.",
+			"Beispiel: J’ai un animal. Nous avons deux animaux. Für viele Nomen auf -al wird -al zu -aux; das gilt nicht für alle Wörter. Auch -eau erhält oft x: cadeau/cadeaux. Lerne die konkreten Wörter und schlage neue Formen nach. Chat/chats und chien/chiens bleiben regelmäßig."
+		],
+		"material": "Chez Lina, il y a un chat et deux chiens. Ce sont trois animaux. Pour son anniversaire, Lina a des cadeaux : un jeu, des livres et une balle. Elle aime les jeux.",
+		"materialLabel": "Eigenes französisches Übungsmaterial · erfundene Personen und Angaben",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Deux…",
+			"answer": "animaux",
+			"wrong": ["animals", "animal"],
+			"explanation": "Die Pluralform von animal ist animaux.",
+			"optionLanguage": "fr"
+		},
+		"takeaway": "Lerne unregelmäßige Pluralformen als Paare: animal/animaux, cadeau/cadeaux, jeu/jeux.",
+		"practice": [
+			{
+				"prompt": "un cadeau → des ___",
+				"answers": ["cadeaux"],
+				"feedback": "Cadeau erhält im Plural x."
+			},
+			{
+				"prompt": "un jeu → des ___",
+				"answers": ["jeux"],
+				"feedback": "Die Mehrzahl heißt jeux."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Erfinde einen Satz über zwei Tiere und zwei Geburtstagsgeschenke. Nutze animaux und cadeaux.",
+				"model": "J’ai deux animaux. Pour mon anniversaire, j’ai des cadeaux : un jeu et un livre.",
+				"criteria": [
+					"Ich nenne Tiere.",
+					"Ich nenne Geschenke.",
+					"Die Pluralformen stimmen."
+				]
+			},
+			"2": {
+				"prompt": "Berichtige einen Wortzettel: « des animals, des jeus, des chats ». Erkläre auf Deutsch, warum eine Form bereits richtig ist.",
+				"model": "Des animaux, des jeux, des chats. Chats ist regelmäßig und erhält ein s.",
+				"criteria": [
+					"Ich korrigiere zwei Formen.",
+					"Ich erhalte die richtige Form.",
+					"Ich erkläre den Unterschied."
+				],
+				"language": "de"
+			}
+		},
+		"workshop": {
+			"kind": "number",
+			"goals": [
+				{
+					"label": "Tiergruppe",
+					"before": "un animal → des",
+					"after": "",
+					"options": ["animaux", "animals", "animal"],
+					"answer": "animaux",
+					"explanation": "-al wird bei animal zu -aux."
+				},
+				{
+					"label": "Geschenke",
+					"before": "un cadeau → des",
+					"after": "",
+					"options": ["cadeaux", "cadeaus", "cadeau"],
+					"answer": "cadeaux",
+					"explanation": "Cadeau erhält x."
+				},
+				{
+					"label": "Spiele",
+					"before": "un jeu → des",
+					"after": "",
+					"options": ["jeux", "jeus", "jeu"],
+					"answer": "jeux",
+					"explanation": "Jeu erhält x."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "f5-maison",
+		"stage": "vie",
+		"title": "À gauche, à droite",
+		"skill": "Wohnen, Bildbeschreibung und zusammengezogene Artikel",
+		"bindings": ["1.2-wortschatz", "1.2-grammatik", "5"],
+		"paragraphs": [
+			"Mit à gauche und à droite beschreibst du links und rechts aus deiner Sicht auf das Bild. Devant heißt vor, derrière hinter, dans in und sur auf. Beispiel: À gauche, il y a une maison. Le chat est devant la maison. Für eine Bildbeschreibung bleibst du bei dem, was du tatsächlich siehst.",
+			"À und de verbinden sich mit bestimmten Artikeln: à + le = au, à + les = aux, de + le = du, de + les = des. La und l’ bleiben getrennt: à la maison, à l’école, de la maison. Beispiel: Je vais au parc. Voici la porte du jardin. Du ist hier de + le, keine Mengenangabe."
+		],
+		"material": "Voici notre quartier. À gauche, il y a une maison. À droite, il y a un parc. Le chat est devant la maison. Je vais au parc. La porte du jardin est derrière la maison.",
+		"materialLabel": "Eigenes französisches Übungsmaterial · erfundene Personen und Angaben",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "À + le parc devient…",
+			"answer": "au parc",
+			"wrong": ["à le parc", "aux parc"],
+			"explanation": "À + le wird zu au.",
+			"optionLanguage": "fr"
+		},
+		"takeaway": "À gauche heißt links, à droite rechts. À + le = au, à + les = aux, de + le = du, de + les = des.",
+		"practice": [
+			{
+				"prompt": "de + le jardin → ___ jardin",
+				"answers": ["du"],
+				"feedback": "De + le wird zu du."
+			},
+			{
+				"prompt": "à + les enfants → ___ enfants",
+				"answers": ["aux"],
+				"feedback": "À + les wird zu aux."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Zeichne ein Haus links und einen Park rechts. Schreibe drei Bildsätze, darunter einen mit au.",
+				"model": "À gauche, il y a une maison. À droite, il y a un parc. Je vais au parc.",
+				"criteria": [
+					"Meine Zeichnung passt.",
+					"Links und rechts stimmen.",
+					"Ich verwende au."
+				]
+			},
+			"2": {
+				"prompt": "Zeichne einen anderen Plan. Beschreibe drei Orte und erkläre auf Deutsch den Unterschied zwischen au parc und à la maison.",
+				"model": "Le parc est à gauche. La maison est à droite. Le chat est devant la maison. Au ist à + le; vor la bleibt à getrennt.",
+				"criteria": [
+					"Ein eigener Plan.",
+					"Drei passende Ortsangaben.",
+					"Die Artikelregel ist erklärt."
+				],
+				"language": "de"
+			}
+		},
+		"workshop": {
+			"kind": "map",
+			"goals": [
+				{
+					"label": "Links",
+					"before": "←",
+					"after": "la maison",
+					"options": ["À gauche,", "À droite,", "Derrière,"],
+					"answer": "À gauche,",
+					"explanation": "Links bezieht sich auf deine Sicht auf das Bild."
+				},
+				{
+					"label": "Maskulin",
+					"before": "à + le parc →",
+					"after": "",
+					"options": ["au parc", "à le parc", "du parc"],
+					"answer": "au parc",
+					"explanation": "À + le ergibt au."
+				},
+				{
+					"label": "Herkunft",
+					"before": "de + les enfants →",
+					"after": "",
+					"options": ["des enfants", "de les enfants", "aux enfants"],
+					"answer": "des enfants",
+					"explanation": "De + les ergibt des."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "f5-fiche",
+		"stage": "vie",
+		"title": "Ma fiche imaginaire",
+		"skill": "Datum, Monate und ein Formular",
+		"bindings": ["1.1-schreiben", "1.2-wortschatz", "5"],
+		"paragraphs": [
+			"Ein Formular fragt oft prénom (Vorname), nom (Nachname), date de naissance (Geburtsdatum) und adresse. Verwende hier ausgedachte Daten. Die Monate heißen janvier, février, mars, avril, mai, juin, juillet, août, septembre, octobre, novembre, décembre. Wochentage: lundi, mardi, mercredi, jeudi, vendredi, samedi, dimanche.",
+			"Beim Datum steht der Tag vor dem Monat: le 12 mai. Nur der erste Tag heißt le premier: le 1er juin. Beispiel eines erfundenen Eintrags: Prénom : Lina. Nom : Martin. Date de naissance : 12 mai 2016. Adresse : 8, rue des Lilas, Lyon. In öffentlichen Nachrichten lässt du persönliche Adressen weg."
+		],
+		"material": "Fiche imaginaire. Prénom : Lina. Nom : Martin. Date de naissance : le 12 mai. Adresse : 8, rue des Lilas, Lyon. Jour du club : mercredi. Anniversaire de Noé : le 1er juin.",
+		"materialLabel": "Eigenes französisches Übungsmaterial · erfundene Personen und Angaben",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Quel est le prénom ?",
+			"answer": "Lina",
+			"wrong": ["Martin", "Lyon"],
+			"explanation": "Prénom bezeichnet den Vornamen.",
+			"optionLanguage": "fr"
+		},
+		"takeaway": "Beim französischen Datum steht der Tag vor dem Monat; der erste Monatstag heißt le premier, geschrieben 1er.",
+		"practice": [
+			{
+				"prompt": "Le mois après mai : ___",
+				"answers": ["juin"],
+				"feedback": "Juin folgt auf mai."
+			},
+			{
+				"prompt": "Le premier juin : le ___ juin (forme écrite)",
+				"answers": ["1er"],
+				"feedback": "Der erste Monatstag wird mit 1er geschrieben."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Fülle ein erfundenes Formular mit Vorname, Nachname, Geburtstag und Adresse aus.",
+				"model": "Prénom : Mila. Nom : Robert. Date de naissance : le 3 avril. Adresse imaginaire : 5, rue du Parc, Lyon.",
+				"criteria": ["Vier Felder.", "Tag vor Monat.", "Erfundene Angaben."]
+			},
+			"2": {
+				"prompt": "Eine öffentliche Einladung soll nur Tag, Uhrzeit und Ort enthalten. Erkläre auf Deutsch, welche persönlichen Daten du weglässt, und notiere einen französischen Termin.",
+				"model": "Le samedi 6 juin, à quinze heures, au parc. Ich lasse echte Privatadresse und Geburtsdatum weg.",
+				"criteria": [
+					"Ein verständlicher Termin.",
+					"Tag und Monat passen.",
+					"Ich erkläre den Schutz persönlicher Daten."
+				],
+				"language": "de"
+			}
+		},
+		"workshop": {
+			"kind": "sequence",
+			"goals": [
+				{
+					"label": "Vorname",
+					"before": "prénom →",
+					"after": "",
+					"options": ["Lina", "Martin", "Lyon"],
+					"answer": "Lina",
+					"explanation": "Prénom ist der Vorname."
+				},
+				{
+					"label": "Datum",
+					"before": "1. Juni →",
+					"after": "",
+					"options": ["le 1er juin", "le 1 juinième", "le juin un"],
+					"answer": "le 1er juin",
+					"explanation": "Der erste Tag heißt premier."
+				},
+				{
+					"label": "Monat",
+					"before": "mai →",
+					"after": "juillet",
+					"options": ["juin", "mars", "août"],
+					"answer": "juin",
+					"explanation": "Juin steht zwischen mai und juillet."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "f5-etre-avoir",
+		"stage": "verbes",
+		"title": "Être et avoir",
+		"skill": "Zwei Grundverben und Subjektpronomen",
+		"bindings": ["1.2-grammatik", "1.1-schreiben"],
+		"paragraphs": [
+			"Être bedeutet sein: je suis, tu es, il/elle/on est, nous sommes, vous êtes, ils/elles sont. Avoir bedeutet haben: j’ai, tu as, il/elle/on a, nous avons, vous avez, ils/elles ont. Lerne die Formen mit dem Subjekt. On verwendet dieselbe Verbform wie il und elle; es kann wir oder man bedeuten.",
+			"Beispiel: Nous sommes à Lyon et nous avons un chat. Für Alter benutzt du avoir: Elle a onze ans. Für eine Eigenschaft oder einen Ort steht hier être: Elle est à Paris. Verwechsle ils sont (sie sind) nicht mit ils ont (sie haben). Sprich die Paare immer in einem Satz."
+		],
+		"material": "Je suis Lina et j’ai dix ans. Tu es Noé et tu as onze ans. Nous sommes amis. Nous avons un chat. Vous êtes à Lyon. Vous avez des livres. Ils sont ici. Ils ont un jeu.",
+		"materialLabel": "Eigenes französisches Übungsmaterial · erfundene Personen und Angaben",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Nous… un chat.",
+			"answer": "avons",
+			"wrong": ["sommes", "ont"],
+			"explanation": "Für Besitz steht avoir; zu nous gehört avons.",
+			"optionLanguage": "fr"
+		},
+		"takeaway": "Être: nous sommes, vous êtes, ils sont. Avoir: nous avons, vous avez, ils ont. Das Alter steht mit avoir.",
+		"practice": [
+			{
+				"prompt": "Vous ___ à Lyon. (être)",
+				"answers": ["êtes"],
+				"feedback": "Zu vous gehört êtes."
+			},
+			{
+				"prompt": "Ils ___ deux jeux. (avoir)",
+				"answers": ["ont"],
+				"feedback": "Zu ils gehört ont."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe vier Sätze über eine erfundene Gruppe. Verwende je, nous und ils mit être und avoir.",
+				"model": "Je suis Lina. J’ai dix ans. Nous sommes amis. Ils ont un chat.",
+				"criteria": [
+					"Beide Verben.",
+					"Drei verschiedene Subjekte.",
+					"Passende Formen."
+				]
+			},
+			"2": {
+				"prompt": "Korrigiere « Nous êtes amis. Ils sont dix ans. » und erkläre beide Änderungen auf Deutsch.",
+				"model": "Nous sommes amis. Ils ont dix ans. Zu nous gehört sommes; das Alter steht mit avoir.",
+				"criteria": [
+					"Beide Sätze korrigiert.",
+					"Die Subjektform erklärt.",
+					"Die Altersregel erklärt."
+				],
+				"language": "de"
+			}
+		},
+		"workshop": {
+			"kind": "sentence",
+			"goals": [
+				{
+					"label": "Sein",
+					"before": "nous",
+					"after": "amis.",
+					"options": ["sommes", "êtes", "avons"],
+					"answer": "sommes",
+					"explanation": "Nous sommes bedeutet wir sind."
+				},
+				{
+					"label": "Haben",
+					"before": "vous",
+					"after": "un chat.",
+					"options": ["avez", "êtes", "ont"],
+					"answer": "avez",
+					"explanation": "Vous avez bedeutet ihr habt/Sie haben."
+				},
+				{
+					"label": "Alter",
+					"before": "elle",
+					"after": "onze ans.",
+					"options": ["a", "est", "as"],
+					"answer": "a",
+					"explanation": "Das Alter steht mit avoir."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "f5-er",
+		"stage": "verbes",
+		"title": "Je parle français",
+		"skill": "Regelmäßige Verben auf -er",
+		"bindings": ["1.2-grammatik", "1.2-wortschatz"],
+		"paragraphs": [
+			"Für regelmäßige Verben auf -er entfernst du -er und setzt die Endung ein. Parler: je parle, tu parles, il/elle/on parle, nous parlons, vous parlez, ils/elles parlent. Die Endungen heißen -e, -es, -e, -ons, -ez, -ent. Vor Vokal wird je zu j’: j’aime.",
+			"Beispiel: Nous parlons français. Elles aiment le sport. Mehrere geschriebene Endungen klingen gleich: parle, parles und parlent. Deshalb brauchst du beim Schreiben das Subjekt. Aller endet zwar auf -er, ist aber unregelmäßig und gehört nicht zu diesem Muster."
+		],
+		"material": "Je parle français. Tu parles avec Lina. Elle parle avec Noé. Nous parlons en classe. Vous parlez ensemble. Ils parlent du sport. J’aime le français et nous aimons les jeux.",
+		"materialLabel": "Eigenes französisches Übungsmaterial · erfundene Personen und Angaben",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Vous… français.",
+			"answer": "parlez",
+			"wrong": ["parlons", "parlent"],
+			"explanation": "Zu vous gehört -ez.",
+			"optionLanguage": "fr"
+		},
+		"takeaway": "Regelmäßige -er-Verben: Stamm + -e, -es, -e, -ons, -ez, -ent. Das Subjekt entscheidet die Schreibweise.",
+		"practice": [
+			{
+				"prompt": "Nous ___ le français. (aimer)",
+				"answers": ["aimons"],
+				"feedback": "Stamm aim- und Endung -ons."
+			},
+			{
+				"prompt": "Elles ___ avec Lina. (parler)",
+				"answers": ["parlent"],
+				"feedback": "Zu elles gehört -ent."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Bilde je-, nous- und vous-Sätze mit parler und aimer.",
+				"model": "Je parle français. Nous aimons les jeux. Vous parlez en classe.",
+				"criteria": ["Drei Subjekte.", "Beide Verben.", "Die Endungen passen."]
+			},
+			"2": {
+				"prompt": "Schreibe einen kurzen Dialog über Sprachen und Hobbys. Nutze auch die ils-Form und erkläre auf Deutsch eine stumme Endung.",
+				"model": "Tu aimes le foot ? Oui, j’aime le foot. Ils aiment le tennis. Das -ent in aiment wird nicht als eigene Silbe gesprochen.",
+				"criteria": [
+					"Ein Dialog.",
+					"Mindestens drei Formen.",
+					"Eine Laut-Schrift-Beziehung."
+				],
+				"language": "de"
+			}
+		},
+		"workshop": {
+			"kind": "sentence",
+			"goals": [
+				{
+					"label": "Stamm + Endung",
+					"before": "nous parl",
+					"after": "français.",
+					"options": ["ons", "ez", "ent"],
+					"answer": "ons",
+					"explanation": "Nous verlangt -ons."
+				},
+				{
+					"label": "Stamm + Endung",
+					"before": "vous parl",
+					"after": "français.",
+					"options": ["ez", "ons", "es"],
+					"answer": "ez",
+					"explanation": "Vous verlangt -ez."
+				},
+				{
+					"label": "Stumme Endung",
+					"before": "elles parl",
+					"after": "français.",
+					"options": ["ent", "ons", "ez"],
+					"answer": "ent",
+					"explanation": "Die geschriebene Endung ist -ent."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "f5-er-ecriture",
+		"stage": "verbes",
+		"title": "Nous mangeons",
+		"skill": "Schreibbesonderheiten bei -er-Verben",
+		"bindings": ["1.2-grammatik", "1.1-schreiben"],
+		"paragraphs": [
+			"Einige -er-Verben behalten die Endungen, ändern aber die Schreibweise im Stamm. Manger: nous mangeons, damit g weich bleibt. Commencer: nous commençons, damit c wie /s/ klingt. Die übrigen Formen folgen hier dem Muster: je mange, vous mangez; je commence, vous commencez.",
+			"Bei acheter und préférer verändert sich der Akzent in je, tu, il/elle/on und ils/elles: j’achète, tu achètes, il achète, ils achètent; je préfère, tu préfères, elle préfère, elles préfèrent. Nous achetons, vous achetez, nous préférons, vous préférez behalten den Infinitivstamm. Beispiel: J’achète un livre; nous achetons deux livres."
+		],
+		"material": "Nous mangeons à la maison. Nous commençons à midi. J’achète une baguette, mais nous achetons deux baguettes pour la famille. Je préfère le pain. Vous préférez les fruits.",
+		"materialLabel": "Eigenes französisches Übungsmaterial · erfundene Personen und Angaben",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Nous… une pomme.",
+			"answer": "mangeons",
+			"wrong": ["mangons", "mangent"],
+			"explanation": "Das zusätzliche e erhält den weichen g-Laut.",
+			"optionLanguage": "fr"
+		},
+		"takeaway": "Schreibweise bewahrt den Laut: nous mangeons, nous commençons. Akzentwechsel: j’achète, je préfère, aber nous achetons, nous préférons.",
+		"practice": [
+			{
+				"prompt": "Nous ___ le jeu. (commencer)",
+				"answers": ["commençons"],
+				"feedback": "Ç erhält den /s/-Laut vor o."
+			},
+			{
+				"prompt": "J’___ un livre. (acheter)",
+				"answers": ["achète"],
+				"feedback": "Die je-Form erhält è."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Bilde je- und nous-Sätze mit acheter und manger. Markiere gedanklich die veränderten Stellen.",
+				"model": "J’achète un livre. Nous achetons des livres. Je mange une pomme. Nous mangeons des pommes.",
+				"criteria": ["Vier Formen.", "È bei j’achète.", "E bei mangeons."]
+			},
+			"2": {
+				"prompt": "Erkläre auf Deutsch, warum nous commençons und nous mangeons anders geschrieben werden. Gib danach je- und vous-Form von préférer an.",
+				"model": "Ç bewahrt /s/, e bewahrt den weichen g-Laut. Je préfère, vous préférez.",
+				"criteria": [
+					"Beide Laute erklärt.",
+					"Je préfère stimmt.",
+					"Vous préférez stimmt."
+				],
+				"language": "de"
+			}
+		},
+		"workshop": {
+			"kind": "sentence",
+			"goals": [
+				{
+					"label": "g weich halten",
+					"before": "nous",
+					"after": "une pomme.",
+					"options": ["mangeons", "mangons", "mangeont"],
+					"answer": "mangeons",
+					"explanation": "Das e erhält die Aussprache."
+				},
+				{
+					"label": "c als /s/",
+					"before": "nous",
+					"after": "le jeu.",
+					"options": ["commençons", "commencons", "commencez"],
+					"answer": "commençons",
+					"explanation": "Ç bewahrt den /s/-Laut."
+				},
+				{
+					"label": "Akzentwechsel",
+					"before": "je",
+					"after": "le tennis.",
+					"options": ["préfère", "préfére", "préférons"],
+					"answer": "préfère",
+					"explanation": "In der je-Form steht hier è."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "f5-re",
+		"stage": "verbes",
+		"title": "Nous attendons",
+		"skill": "Regelmäßige Verben auf -re",
+		"bindings": ["1.2-grammatik", "5"],
+		"paragraphs": [
+			"Bei regelmäßigen -re-Verben wie attendre und vendre entfernst du -re. Attendre: j’attends, tu attends, il/elle/on attend, nous attendons, vous attendez, ils/elles attendent. Die Endungen sind -s, -s, keine Endung, -ons, -ez, -ent. Das d gehört zum Stamm attend-.",
+			"Beispiel am Bahnhof: Nous attendons le train. Il attend aussi. Je vends un jeu; elle vend un livre. Die 3. Person Singular erhält kein zusätzliches t. Nicht jedes Verb auf -re ist regelmäßig: prendre hat ein eigenes Muster. Lerne deshalb Musterverben und Ausnahmen getrennt."
+		],
+		"material": "À la gare, j’attends le train. Tu attends avec moi. Lina attend aussi. Nous attendons devant le panneau. Vous attendez à droite. Ils attendent à gauche. Le train arrive.",
+		"materialLabel": "Eigenes französisches Übungsmaterial · erfundene Personen und Angaben",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Il… le train.",
+			"answer": "attend",
+			"wrong": ["attends", "attendons"],
+			"explanation": "Die 3. Person Singular hat hier keine zusätzliche Endung.",
+			"optionLanguage": "fr"
+		},
+		"takeaway": "Bei regelmäßigen -re-Verben wie attendre: -s, -s, keine Endung, -ons, -ez, -ent.",
+		"practice": [
+			{
+				"prompt": "Nous ___ le train. (attendre)",
+				"answers": ["attendons"],
+				"feedback": "Stamm attend- und -ons."
+			},
+			{
+				"prompt": "Elle ___ un jeu. (vendre)",
+				"answers": ["vend"],
+				"feedback": "In der 3. Person Singular keine zusätzliche Endung."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Bilde je-, il- und nous-Sätze mit attendre.",
+				"model": "J’attends le train. Il attend Lina. Nous attendons à la gare.",
+				"criteria": ["Drei Subjekte.", "Stamm attend-.", "Passende Endungen."]
+			},
+			"2": {
+				"prompt": "Beschreibe einen kleinen Bücherverkauf mit vendre. Nutze je, elle, nous und vous.",
+				"model": "Je vends un livre. Elle vend un jeu. Nous vendons des cahiers. Vous vendez des livres.",
+				"criteria": [
+					"Vier Formen.",
+					"Kein zusätzliches t bei elle.",
+					"Die Pluralformen stimmen."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "sentence",
+			"goals": [
+				{
+					"label": "Singular",
+					"before": "j’attend",
+					"after": "le train.",
+					"options": ["s", "ons", "ez"],
+					"answer": "s",
+					"explanation": "Bei je steht -s."
+				},
+				{
+					"label": "Singular",
+					"before": "elle attend",
+					"after": "le train.",
+					"options": ["∅", "s", "t"],
+					"answer": "∅",
+					"explanation": "∅ bedeutet keine zusätzliche Endung."
+				},
+				{
+					"label": "Plural",
+					"before": "nous attend",
+					"after": "le train.",
+					"options": ["ons", "ez", "ent"],
+					"answer": "ons",
+					"explanation": "Bei nous steht -ons."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "f5-aller-faire",
+		"stage": "verbes",
+		"title": "On va au parc",
+		"skill": "Aller und faire im Präsens",
+		"bindings": ["1.2-grammatik", "1.1-sprechen", "5"],
+		"paragraphs": [
+			"Aller heißt gehen oder fahren: je vais, tu vas, il/elle/on va, nous allons, vous allez, ils/elles vont. Faire heißt machen: je fais, tu fais, il/elle/on fait, nous faisons, vous faites, ils/elles font. Beide Verben sind unregelmäßig. Merke besonders vous faites und ils font.",
+			"Beispiel: Nous allons au parc. Nous faisons du sport. Tu vas à l’école et tu fais tes devoirs. Bei on kann eine Gruppe gemeint sein, doch das Verb bleibt Singular: On va au parc. Verb und Ziel bilden verschiedene Bausteine: aller ist die Handlung, au parc der Ort."
+		],
+		"material": "Je vais au parc. Tu vas avec moi ? Lina va à l’école. Nous allons à la maison. Vous allez au gymnase. Ils vont au stade. Nous faisons du sport. Vous faites du tennis.",
+		"materialLabel": "Eigenes französisches Übungsmaterial · erfundene Personen und Angaben",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Vous… du sport.",
+			"answer": "faites",
+			"wrong": ["faisez", "font"],
+			"explanation": "Die vous-Form von faire lautet faites.",
+			"optionLanguage": "fr"
+		},
+		"takeaway": "Aller: je vais, nous allons, ils vont. Faire: je fais, nous faisons, vous faites, ils font.",
+		"practice": [
+			{
+				"prompt": "Ils ___ au parc. (aller)",
+				"answers": ["vont"],
+				"feedback": "Ils vont ist eine unregelmäßige Form."
+			},
+			{
+				"prompt": "Nous ___ du sport. (faire)",
+				"answers": ["faisons"],
+				"feedback": "Die nous-Form lautet faisons."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe einen Plan im Präsens mit aller und faire für je, nous und vous.",
+				"model": "Je vais au parc. Nous faisons du sport. Vous allez à la maison.",
+				"criteria": ["Beide Verben.", "Drei Subjekte.", "Passende Orte."]
+			},
+			"2": {
+				"prompt": "Zwei Freunde und eine Gruppe haben andere Pläne. Schreibe vier Sätze mit tu, on, vous, ils.",
+				"model": "Tu vas au stade. On fait du sport. Vous faites du tennis. Ils vont au parc.",
+				"criteria": [
+					"Vier Subjekte.",
+					"On mit Singular.",
+					"Vous faites ist richtig."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "sentence",
+			"goals": [
+				{
+					"label": "Gehen/fahren",
+					"before": "ils",
+					"after": "au parc.",
+					"options": ["vont", "allent", "va"],
+					"answer": "vont",
+					"explanation": "Ils vont ist unregelmäßig."
+				},
+				{
+					"label": "Etwas machen",
+					"before": "vous",
+					"after": "du sport.",
+					"options": ["faites", "faisez", "font"],
+					"answer": "faites",
+					"explanation": "Vous faites wird als Ganzes gelernt."
+				},
+				{
+					"label": "Gruppe mit on",
+					"before": "on",
+					"after": "à l’école.",
+					"options": ["va", "allons", "vont"],
+					"answer": "va",
+					"explanation": "On hat die Singularform va."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "f5-questions",
+		"stage": "echanges",
+		"title": "Tu habites où ?",
+		"skill": "Intonationsfragen und est-ce que",
+		"bindings": ["1.1-sprechen", "1.2-grammatik"],
+		"paragraphs": [
+			"Eine Intonationsfrage lässt die Satzstellung stehen und hebt beim Sprechen die Stimme: Tu habites à Lyon ? Ein Fragewort kann am Ende stehen: Tu habites où ? Mit est-ce que kündigst du eine Frage an: Est-ce que tu habites à Lyon ? Das Subjekt bleibt vor dem Verb.",
+			"Für eine Ortsfrage kannst du où voranstellen: Où est-ce que tu habites ? Vor Vokal wird que zu qu’: Est-ce qu’il habite à Lyon ? Beispiel: Tu as un chat ? – Oui, j’ai un chat. Frage nur nach einer Information auf einmal, dann passt deine Antwort genau dazu."
+		],
+		"material": "Tu habites où ? – J’habite à Lyon. Est-ce que tu as un chat ? – Oui, j’ai un chat. Où est-ce que Lina habite ? – Elle habite à Paris. Est-ce qu’il aime le sport ? – Oui.",
+		"materialLabel": "Eigenes französisches Übungsmaterial · erfundene Personen und Angaben",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Tu demandes le lieu.",
+			"answer": "Où est-ce que tu habites ?",
+			"wrong": ["Est-ce que tu as un chat ?", "Tu as quel âge ?"],
+			"explanation": "Où fragt nach einem Ort.",
+			"optionLanguage": "fr"
+		},
+		"takeaway": "Eine Intonationsfrage behält die Satzstellung. Est-ce que steht vor Subjekt und Verb; où fragt nach dem Ort.",
+		"practice": [
+			{
+				"prompt": "___ est-ce que tu habites ? (lieu)",
+				"answers": ["Où"],
+				"feedback": "Où bedeutet wo."
+			},
+			{
+				"prompt": "Est-ce ___ il aime le tennis ?",
+				"answers": ["qu’", "qu'"],
+				"feedback": "Que wird vor il zu qu’."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Frage einen Partner nach Wohnort und Haustier. Nutze eine Intonationsfrage und est-ce que. Notiere Antworten.",
+				"model": "Tu habites où ? – À Lyon. Est-ce que tu as un chat ? – Oui, j’ai un chat.",
+				"criteria": [
+					"Zwei Frageformen.",
+					"Passende Antworten.",
+					"Fragewörter stimmen."
+				]
+			},
+			"2": {
+				"prompt": "Schreibe dieselbe Ortsfrage auf drei Arten: Fragewort am Ende, est-ce que und vorangestelltes où mit est-ce que.",
+				"model": "Tu habites où ? Est-ce que tu habites à Lyon ? Où est-ce que tu habites ? Die mittlere Frage prüft einen vorgeschlagenen Ort.",
+				"criteria": [
+					"Drei korrekte Formen.",
+					"Ich erkenne die Ja/Nein-Frage.",
+					"Subjekt vor Verb nach est-ce que."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "dialogue",
+			"goals": [
+				{
+					"label": "Ort erfragen",
+					"before": "tu habites",
+					"after": "?",
+					"options": ["où", "combien", "quel"],
+					"answer": "où",
+					"explanation": "Où fragt nach dem Wohnort."
+				},
+				{
+					"label": "Frage einleiten",
+					"before": "___ tu as un chat ?",
+					"after": "",
+					"options": ["Est-ce que", "Qu’est", "Quel"],
+					"answer": "Est-ce que",
+					"explanation": "Est-ce que steht vor Subjekt und Verb."
+				},
+				{
+					"label": "Vokal",
+					"before": "est-ce",
+					"after": "il habite ici ?",
+					"options": ["qu’", "que", "qui"],
+					"answer": "qu’",
+					"explanation": "Que wird vor il verkürzt."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": true
+	},
+	{
+		"id": "f5-quel",
+		"stage": "echanges",
+		"title": "Quel jour ?",
+		"skill": "Quel angleichen und Fragen mit nominalem Subjekt",
+		"bindings": ["1.2-grammatik", "1.1-sprechen"],
+		"paragraphs": [
+			"Quel steht vor einem Nomen und richtet sich nach dessen Genus und Zahl: quel jour, quelle heure, quels livres, quelles langues. Es kann mit être verbunden werden: Quel est ton prénom ? Quels sont tes jeux ? Du fragst damit nach einer Auswahl oder einer genaueren Angabe.",
+			"Bei einer Frage mit Fragewort und nominalem Subjekt kann das Verb vor dem Namen stehen: Que fait Nathalie ? Où habite Lina ? Beispiel: Nathalie fait ses devoirs. → Que fait Nathalie ? Das ist eine andere Bauform als est-ce que; füge die beiden Muster nicht durcheinander zusammen."
+		],
+		"material": "Quel est ton prénom ? – Lina. Quelle heure est-il ? – Il est dix heures. Quels sont tes jeux ? – Des jeux de cartes. Que fait Nathalie ? – Elle fait ses devoirs. Où habite Lina ? – À Lyon.",
+		"materialLabel": "Eigenes französisches Übungsmaterial · erfundene Personen und Angaben",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Tu demandes l’heure. Quelle forme convient ?",
+			"answer": "Quelle",
+			"wrong": ["Quel", "Quels"],
+			"explanation": "Heure ist weiblich und steht im Singular.",
+			"optionLanguage": "fr"
+		},
+		"takeaway": "Quel, quelle, quels, quelles passen zum Nomen. Mit nominalem Subjekt ist möglich: Que fait Nathalie ?",
+		"practice": [
+			{
+				"prompt": "___ livres ? (masculin pluriel)",
+				"answers": ["Quels"],
+				"feedback": "Für männlichen Plural steht quels."
+			},
+			{
+				"prompt": "Que ___ Nathalie ? (faire)",
+				"answers": ["fait"],
+				"feedback": "Verb vor dem nominalen Subjekt: Que fait Nathalie ?"
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe je eine Frage mit quel, quelle und quels.",
+				"model": "Quel est ton prénom ? Quelle heure est-il ? Quels sont tes jeux ?",
+				"criteria": [
+					"Drei Formen.",
+					"Nomen und Form passen.",
+					"Être ist passend konjugiert."
+				]
+			},
+			"2": {
+				"prompt": "Du suchst Lina und Nathalie auf einem Bild. Frage mit Où und Que nach Wohnort und Tätigkeit, ohne est-ce que. Antworte.",
+				"model": "Où habite Lina ? – À Lyon. Que fait Nathalie ? – Elle fait ses devoirs.",
+				"criteria": [
+					"Zwei Fragewörter.",
+					"Verb vor Name.",
+					"Passende Antworten."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "sentence",
+			"goals": [
+				{
+					"label": "Maskulin",
+					"before": "___ jour ?",
+					"after": "",
+					"options": ["Quel", "Quelle", "Quelles"],
+					"answer": "Quel",
+					"explanation": "Jour ist männlich Singular."
+				},
+				{
+					"label": "Feminin Plural",
+					"before": "___ langues ?",
+					"after": "",
+					"options": ["Quelles", "Quels", "Quelle"],
+					"answer": "Quelles",
+					"explanation": "Langues ist weiblich Plural."
+				},
+				{
+					"label": "Verb vor Name",
+					"before": "Que",
+					"after": "Nathalie ?",
+					"options": ["fait", "faire", "font"],
+					"answer": "fait",
+					"explanation": "Fait steht vor dem Namen."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": true
+	},
+	{
+		"id": "f5-negation",
+		"stage": "echanges",
+		"title": "Je ne parle pas",
+		"skill": "Verneinung mit ne… pas",
+		"bindings": ["1.2-grammatik", "1.1-schreiben"],
+		"paragraphs": [
+			"Für eine einfache Verneinung umklammerst du das konjugierte Verb mit ne und pas: Je parle → Je ne parle pas. Vor Vokal oder stummem h steht n’: Il n’aime pas le foot. Beim Schreiben bleibt ne erhalten, auch wenn du es in Gesprächen manchmal kaum hörst.",
+			"Beispiel: Nous ne sommes pas à Paris. Je n’ai pas de chat. Nach einer verneinten Besitzangabe mit un, une oder des steht meist de/d’: J’ai un chat → Je n’ai pas de chat. Der bestimmte Artikel bleibt bei Vorlieben: J’aime le tennis → Je n’aime pas le tennis."
+		],
+		"material": "Lina aime le tennis, mais elle n’aime pas le foot. Noé n’a pas de chat. Nous ne sommes pas à Paris. Nous habitons à Lyon. Tu ne parles pas ? – Si, je parle !",
+		"materialLabel": "Eigenes französisches Übungsmaterial · erfundene Personen und Angaben",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "La phrase négative correcte :",
+			"answer": "Je ne parle pas.",
+			"wrong": ["Je parle ne pas.", "Je ne pas parle."],
+			"explanation": "Ne und pas umklammern parle.",
+			"optionLanguage": "fr"
+		},
+		"takeaway": "Ne… pas umklammert das konjugierte Verb; vor Vokal n’. Verneinter Besitz: Je n’ai pas de chat.",
+		"practice": [
+			{
+				"prompt": "Il ___ aime pas le foot.",
+				"answers": ["n’", "n'"],
+				"feedback": "Vor aime steht n’."
+			},
+			{
+				"prompt": "Je n’ai pas ___ chat.",
+				"answers": ["de"],
+				"feedback": "Nach der verneinten Besitzangabe steht hier de."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe drei verneinte Sätze mit parler, aimer und avoir.",
+				"model": "Je ne parle pas. Je n’aime pas le foot. Je n’ai pas de chat.",
+				"criteria": [
+					"Ne oder n’ vor dem Verb.",
+					"Pas hinter dem Verb.",
+					"De nach verneintem Besitz."
+				]
+			},
+			"2": {
+				"prompt": "Vergleiche « Je n’ai pas de jeu » und « Je n’aime pas les jeux ». Erkläre auf Deutsch die Artikel und erfinde ein weiteres Paar.",
+				"model": "De steht nach der verneinten Besitzangabe; les bleibt bei einer allgemeinen Vorliebe. Je n’ai pas de chat. Je n’aime pas les chats.",
+				"criteria": [
+					"Artikel erklärt.",
+					"Eigenes Satzpaar.",
+					"Verneinung korrekt."
+				],
+				"language": "de"
+			}
+		},
+		"workshop": {
+			"kind": "sentence",
+			"goals": [
+				{
+					"label": "Klammer öffnen",
+					"before": "je",
+					"after": "parle pas.",
+					"options": ["ne", "pas", "de"],
+					"answer": "ne",
+					"explanation": "Ne steht vor dem konjugierten Verb."
+				},
+				{
+					"label": "Vokal",
+					"before": "il",
+					"after": "aime pas le foot.",
+					"options": ["n’", "ne", "pas"],
+					"answer": "n’",
+					"explanation": "Vor aime verkürzt du ne."
+				},
+				{
+					"label": "Kein Besitz",
+					"before": "je n’ai pas",
+					"after": "chat.",
+					"options": ["de", "un", "le"],
+					"answer": "de",
+					"explanation": "Un wird hier in der Verneinung zu de."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "f5-objets",
+		"stage": "echanges",
+		"title": "Je donne un livre à Lina",
+		"skill": "Direktes und indirektes Objekt unterscheiden",
+		"bindings": ["1.2-grammatik", "4"],
+		"paragraphs": [
+			"Das direkte Objekt (complément d’objet direct, COD) schließt ohne Präposition an das Verb an: Je lis un livre. Frage sinngemäß wen oder was? Das indirekte Objekt (complément d’objet indirect, COI) beginnt mit einer vom Verb geforderten Präposition, hier à: Je parle à Lina.",
+			"Beispiel: Je donne un livre à Lina. Un livre ist das direkt angeschlossene Objekt, à Lina nennt die Empfängerin mit à. Die französische Konstruktion lernst du mit dem Verb. Attendre quelqu’un hat im Französischen kein auf, anders als auf jemanden warten. Objektpronomen folgen erst im nächsten Schuljahr."
+		],
+		"material": "Je lis un livre. Je parle à Lina. Je donne le livre à Lina. Elle écrit une carte à Noé. Nous attendons Noé devant l’école. Noé aime les livres et les cartes.",
+		"materialLabel": "Eigenes französisches Übungsmaterial · erfundene Personen und Angaben",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Dans « Je parle à Lina », le groupe à Lina est…",
+			"answer": "un objet indirect",
+			"wrong": ["un sujet", "un objet direct"],
+			"explanation": "À verbindet das indirekte Objekt mit parle.",
+			"optionLanguage": "fr"
+		},
+		"takeaway": "Ein COD schließt ohne Präposition an, ein COI mit einer vom Verb geforderten Präposition: un livre / à Lina.",
+		"practice": [
+			{
+				"prompt": "Je lis un livre. COD : ___",
+				"answers": ["un livre"],
+				"feedback": "Un livre schließt direkt an lis an."
+			},
+			{
+				"prompt": "Je donne un livre à Lina. COI : ___",
+				"answers": ["à Lina"],
+				"feedback": "Die Empfängerin wird hier mit à angeschlossen."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe einen Satz mit donner und markiere auf Deutsch Subjekt, Verb, direktes und indirektes Objekt.",
+				"model": "Je donne un livre à Lina. Je: Subjekt; donne: Verb; un livre: COD; à Lina: COI.",
+				"criteria": ["Vier Bausteine.", "COD ohne Präposition.", "COI mit à."],
+				"language": "de"
+			},
+			"2": {
+				"prompt": "Übersetze „Wir warten auf Lina“ und „Wir sprechen mit Lina“ mit attendre und parler à. Erkläre die unterschiedliche Verbindung.",
+				"model": "Nous attendons Lina. Nous parlons à Lina. Attendre hat ein direktes Objekt, parler à ein indirektes mit à.",
+				"criteria": [
+					"Zwei passende Verben.",
+					"Kein auf bei attendre.",
+					"Objektarten erklärt."
+				],
+				"language": "de"
+			}
+		},
+		"workshop": {
+			"kind": "sentence",
+			"goals": [
+				{
+					"label": "Direkt",
+					"before": "je lis",
+					"after": "→ COD",
+					"options": ["un livre", "à un livre", "de livre"],
+					"answer": "un livre",
+					"explanation": "Lire verbindet sich hier direkt."
+				},
+				{
+					"label": "Indirekt",
+					"before": "je parle",
+					"after": "→ COI",
+					"options": ["à Lina", "Lina", "un Lina"],
+					"answer": "à Lina",
+					"explanation": "Parler à verlangt hier à."
+				},
+				{
+					"label": "Empfänger",
+					"before": "je donne un livre",
+					"after": "→ COI",
+					"options": ["à Noé", "Noé", "le Noé"],
+					"answer": "à Noé",
+					"explanation": "À zeigt den Empfänger."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "f5-vouloir-pouvoir",
+		"stage": "echanges",
+		"title": "Je voudrais…",
+		"skill": "Wünsche, Vorlieben, können und wollen",
+		"bindings": ["1.2-grammatik", "1.2-wortschatz", "1.1-sprechen", "5"],
+		"paragraphs": [
+			"Vouloir: je veux, tu veux, il/elle/on veut, nous voulons, vous voulez, ils/elles veulent. Pouvoir: je peux, tu peux, il/elle/on peut, nous pouvons, vous pouvez, ils/elles peuvent. Nach beiden Verben kann ein Infinitiv stehen: Je veux jouer. Nous pouvons parler.",
+			"Je voudrais… lernst du als höfliche Wendung für ich möchte. Du musst dafür noch kein neues Zeitformmuster lernen. Beispiel: Je voudrais un livre, s’il vous plaît. Für Vorlieben verwendest du j’aime oder je préfère; eine Begründung folgt mit parce que: J’aime le tennis parce que c’est amusant."
+		],
+		"material": "Je voudrais un livre, s’il vous plaît. Tu veux jouer ? Nous pouvons jouer au parc. Vous voulez venir ? Ils peuvent venir à quinze heures. Je préfère le tennis parce que j’aime le sport.",
+		"materialLabel": "Eigenes französisches Übungsmaterial · erfundene Personen und Angaben",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Une demande polie :",
+			"answer": "Je voudrais un livre, s’il vous plaît.",
+			"wrong": ["Je veux ! Donne !", "Je suis un livre."],
+			"explanation": "Je voudrais ist die gelernte höfliche Wunschformel.",
+			"optionLanguage": "fr"
+		},
+		"takeaway": "Nach vouloir und pouvoir steht ein Infinitiv. Je voudrais… ist eine höfliche Wunschformel.",
+		"practice": [
+			{
+				"prompt": "Nous ___ jouer. (pouvoir)",
+				"answers": ["pouvons"],
+				"feedback": "Die nous-Form lautet pouvons."
+			},
+			{
+				"prompt": "Ils ___ venir. (vouloir)",
+				"answers": ["veulent"],
+				"feedback": "Die ils-Form lautet veulent."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Bitte höflich um einen Stift und sage, was du spielen möchtest.",
+				"model": "Je voudrais un stylo, s’il vous plaît. Je veux jouer au tennis.",
+				"criteria": [
+					"Höfliche Wendung.",
+					"Ein Wunsch mit Infinitiv.",
+					"Passende Verbform."
+				]
+			},
+			"2": {
+				"prompt": "Plane ein Treffen mit einer Gruppe. Frage, was sie wollen und können; erkläre eine Vorliebe mit parce que.",
+				"model": "Vous voulez jouer ? Vous pouvez venir à quinze heures ? Je préfère le tennis parce que j’aime le sport.",
+				"criteria": [
+					"Wollen und können.",
+					"Infinitive nach Modalverb.",
+					"Eine Begründung."
+				],
+				"language": "de"
+			}
+		},
+		"workshop": {
+			"kind": "dialogue",
+			"goals": [
+				{
+					"label": "Höflicher Wunsch",
+					"before": "je",
+					"after": "un livre.",
+					"options": ["voudrais", "suis", "pouvons"],
+					"answer": "voudrais",
+					"explanation": "Je voudrais ist eine höfliche feste Wendung."
+				},
+				{
+					"label": "Können",
+					"before": "nous",
+					"after": "jouer.",
+					"options": ["pouvons", "peuvent", "pouvez"],
+					"answer": "pouvons",
+					"explanation": "Nous pouvons plus Infinitiv."
+				},
+				{
+					"label": "Wollen",
+					"before": "ils",
+					"after": "venir.",
+					"options": ["veulent", "voulons", "veut"],
+					"answer": "veulent",
+					"explanation": "Ils veulent plus Infinitiv."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": true
+	},
+	{
+		"id": "f5-ecole",
+		"stage": "journee",
+		"title": "Lire, dire, écrire",
+		"skill": "Schulalltag und drei unregelmäßige Verben",
+		"bindings": ["1.2-grammatik", "1.2-wortschatz", "5"],
+		"paragraphs": [
+			"In der Schule liest, sagst und schreibst du: lire → je lis, tu lis, il lit, nous lisons, vous lisez, ils lisent; dire → je dis, tu dis, il dit, nous disons, vous dites, ils disent. Die Formen gelten ebenso mit elle/on und elles. Achte besonders auf vous dites, nicht eine erfundene Form mit -sez.",
+			"Écrire: j’écris, tu écris, il/elle/on écrit, nous écrivons, vous écrivez, ils/elles écrivent. Beispiel: Dans la salle de classe, nous lisons un texte. Vous dites bonjour. J’écris dans mon cahier. La bibliothèque ist die Bücherei, la cantine die Mensa, la cour der Schulhof."
+		],
+		"material": "À l’école, nous lisons un texte dans la salle de classe. J’écris une phrase dans mon cahier. Vous dites bonjour au professeur. À midi, nous allons à la cantine. Puis, on joue dans la cour.",
+		"materialLabel": "Eigenes französisches Übungsmaterial · erfundene Personen und Angaben",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Vous… bonjour.",
+			"answer": "dites",
+			"wrong": ["disez", "disent"],
+			"explanation": "Die vous-Form von dire lautet dites.",
+			"optionLanguage": "fr"
+		},
+		"takeaway": "Lerne unregelmäßige Formen: vous dites, nous lisons, nous écrivons.",
+		"practice": [
+			{
+				"prompt": "Nous ___ une carte. (écrire)",
+				"answers": ["écrivons"],
+				"feedback": "Der Pluralstamm enthält v."
+			},
+			{
+				"prompt": "Il ___ un livre. (lire)",
+				"answers": ["lit"],
+				"feedback": "Die Singularform endet hier mit t."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Beschreibe drei Tätigkeiten in der Schule mit lire, dire und écrire.",
+				"model": "Nous lisons un texte. Vous dites bonjour. J’écris dans mon cahier.",
+				"criteria": [
+					"Alle drei Verben.",
+					"Passende Subjekte.",
+					"Schulwortschatz."
+				]
+			},
+			"2": {
+				"prompt": "Eine Lehrkraft beschreibt eine Gruppe und dich. Schreibe Sätze mit ils und tu für lire und écrire.",
+				"model": "Ils lisent un texte. Tu lis une carte. Ils écrivent une phrase. Tu écris ton nom.",
+				"criteria": [
+					"Vier Sätze.",
+					"Unterschiedliche Stämme.",
+					"Passende Endungen."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "sentence",
+			"goals": [
+				{
+					"label": "Lesen",
+					"before": "nous",
+					"after": "un texte.",
+					"options": ["lisons", "lisez", "lisent"],
+					"answer": "lisons",
+					"explanation": "Nous lisons hat den Stamm lis-."
+				},
+				{
+					"label": "Sagen",
+					"before": "vous",
+					"after": "bonjour.",
+					"options": ["dites", "disez", "disent"],
+					"answer": "dites",
+					"explanation": "Die Sonderform heißt dites."
+				},
+				{
+					"label": "Schreiben",
+					"before": "ils",
+					"after": "une carte.",
+					"options": ["écrivent", "écrit", "écrivez"],
+					"answer": "écrivent",
+					"explanation": "Der Plural hat den Stamm écriv-."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "f5-loisirs",
+		"stage": "journee",
+		"title": "Tu prends le ballon ?",
+		"skill": "Prendre, Hobbys und mobile Geräte",
+		"bindings": ["1.2-grammatik", "1.2-wortschatz", "5"],
+		"paragraphs": [
+			"Prendre bedeutet je nach Zusammenhang nehmen, ein Verkehrsmittel benutzen oder etwas essen/trinken. Die Formen: je prends, tu prends, il/elle/on prend, nous prenons, vous prenez, ils/elles prennent. Im Plural verändert sich der Stamm; ils prennent schreibt man mit zwei n.",
+			"Beispiel: Je prends le ballon. Nous prenons le bus. In der Freizeit sagst du je joue au foot oder je fais du vélo. Für digitale Hobbys: Je joue sur une tablette. Le téléphone portable ist das Handy, l’ordinateur der Computer. Plane auch Pausen und frage vor dem Fotografieren anderer Personen."
+		],
+		"material": "Après l’école, je prends le ballon. Tu prends ton vélo ? Nous prenons le bus pour aller au parc. Ils prennent une tablette pour un jeu. Ensuite, nous jouons au foot. Puis, on fait une pause.",
+		"materialLabel": "Eigenes französisches Übungsmaterial · erfundene Personen und Angaben",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Ils… le bus.",
+			"answer": "prennent",
+			"wrong": ["prenons", "prend"],
+			"explanation": "Die ils-Form lautet prennent.",
+			"optionLanguage": "fr"
+		},
+		"takeaway": "Prendre: je prends, il prend, nous prenons, vous prenez, ils prennent.",
+		"practice": [
+			{
+				"prompt": "Nous ___ le bus. (prendre)",
+				"answers": ["prenons"],
+				"feedback": "Die nous-Form hat nur ein n."
+			},
+			{
+				"prompt": "Tu ___ le ballon. (prendre)",
+				"answers": ["prends"],
+				"feedback": "Zu tu gehört prends."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Beschreibe zwei Hobbys und ein Verkehrsmittel. Verwende prendre und jouer.",
+				"model": "Je joue au foot. Je joue sur une tablette. Nous prenons le bus pour aller au parc.",
+				"criteria": [
+					"Zwei Hobbys.",
+					"Ein Verkehrsmittel.",
+					"Passende Verbformen."
+				]
+			},
+			"2": {
+				"prompt": "Plane einen Nachmittag für eine Gruppe mit Bildschirmzeit und einer Pause draußen. Schreibe vier kurze französische Sätze.",
+				"model": "Nous prenons une tablette. Nous jouons ensemble. Puis, nous faisons une pause. Nous allons au parc.",
+				"criteria": [
+					"Ein konkreter Plan.",
+					"Eine Pause.",
+					"Mehrere passende Verben."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "sentence",
+			"goals": [
+				{
+					"label": "Singular",
+					"before": "il",
+					"after": "le ballon.",
+					"options": ["prend", "prends", "prennent"],
+					"answer": "prend",
+					"explanation": "Il prend hat kein s."
+				},
+				{
+					"label": "Plural",
+					"before": "nous",
+					"after": "le bus.",
+					"options": ["prenons", "prennons", "prenez"],
+					"answer": "prenons",
+					"explanation": "Nous prenons hat nur ein n."
+				},
+				{
+					"label": "Plural",
+					"before": "elles",
+					"after": "une tablette.",
+					"options": ["prennent", "prenent", "prend"],
+					"answer": "prennent",
+					"explanation": "Elles prennent hat zwei n."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "f5-heures",
+		"stage": "journee",
+		"title": "Il est quelle heure ?",
+		"skill": "Uhrzeiten und Tagesablauf",
+		"bindings": ["1.2-wortschatz", "1.1-sprechen", "5"],
+		"paragraphs": [
+			"Für die Uhrzeit sagst du Il est… heure(s). Il est une heure, aber Il est deux heures. Halb heißt et demie: Il est trois heures et demie. Viertel nach heißt et quart, Viertel vor heißt moins le quart. Midi ist zwölf Uhr mittags, minuit Mitternacht.",
+			"Beispiel: Il est quatre heures moins le quart = 3:45 Uhr. Für einen Termin steht à: Le cours commence à huit heures. In Fahrplänen sind 24-Stunden-Angaben üblich: quinze heures trente = 15:30 Uhr. Hör erst die Stunde, dann die Minuten; verwechsle et und moins nicht."
+		],
+		"material": "Il est sept heures. Lina prend son sac. Le cours commence à huit heures. À midi, elle mange à la cantine. Le club commence à quinze heures trente. À seize heures, elle rentre à la maison.",
+		"materialLabel": "Eigenes französisches Übungsmaterial · erfundene Personen und Angaben",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Trois heures et demie, c’est…",
+			"answer": "3 h 30",
+			"wrong": ["3 h 15", "2 h 30"],
+			"explanation": "Et demie bedeutet eine halbe Stunde nach drei.",
+			"optionLanguage": "fr"
+		},
+		"takeaway": "Et quart heißt Viertel nach, et demie halb, moins le quart Viertel vor. Vor Terminzeiten steht à.",
+		"practice": [
+			{
+				"prompt": "15 h 30 : quinze heures ___",
+				"answers": ["trente"],
+				"feedback": "Eine Fahrplanzeit verwendet die Minuten als Zahl."
+			},
+			{
+				"prompt": "3 h 45 : quatre heures ___ le quart",
+				"answers": ["moins"],
+				"feedback": "Viertel vor vier ist 3:45 Uhr."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe drei Termine deines erfundenen Tages mit à, darunter einen um 15:30 Uhr.",
+				"model": "Le cours commence à huit heures. Je mange à midi. Le club commence à quinze heures trente.",
+				"criteria": ["Drei Termine.", "À vor den Zeiten.", "15:30 richtig."]
+			},
+			"2": {
+				"prompt": "Ein Club beginnt um 3:45 Uhr nachmittags. Gib die Zeit auf zwei Arten an und erkläre auf Deutsch den Bezug zur nächsten Stunde.",
+				"model": "Le club commence à quinze heures quarante-cinq, à quatre heures moins le quart de l’après-midi. Es fehlen fünfzehn Minuten bis vier.",
+				"criteria": [
+					"Zwei passende Angaben.",
+					"Nachmittag eindeutig.",
+					"Moins erklärt."
+				],
+				"language": "de"
+			}
+		},
+		"workshop": {
+			"kind": "clock",
+			"goals": [
+				{
+					"label": "Halbe Stunde",
+					"before": "03:30 →",
+					"after": "",
+					"options": [
+						"trois heures et demie",
+						"trois heures et quart",
+						"quatre heures et demie"
+					],
+					"answer": "trois heures et demie",
+					"explanation": "Der Minutenzeiger steht auf 30."
+				},
+				{
+					"label": "Viertel vor",
+					"before": "03:45 →",
+					"after": "",
+					"options": [
+						"quatre heures moins le quart",
+						"trois heures et quart",
+						"quatre heures et quart"
+					],
+					"answer": "quatre heures moins le quart",
+					"explanation": "Die nächste volle Stunde ist vier."
+				},
+				{
+					"label": "24-Stunden-Zeit",
+					"before": "15:30 →",
+					"after": "",
+					"options": [
+						"quinze heures trente",
+						"cinq heures trente",
+						"quinze heures trois"
+					],
+					"answer": "quinze heures trente",
+					"explanation": "15 ist die Stunde, 30 sind die Minuten."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": true
+	},
+	{
+		"id": "f5-futur",
+		"stage": "journee",
+		"title": "Demain, je vais jouer",
+		"skill": "Pläne mit dem futur proche",
+		"bindings": ["1.2-grammatik", "1.1-schreiben", "5"],
+		"paragraphs": [
+			"Ein Vorhaben drückst du mit einer Präsensform von aller und einem Infinitiv aus: je vais jouer, tu vas jouer, elle va jouer, nous allons jouer, vous allez jouer, ils vont jouer. Dieses Muster heißt futur proche. Die Person steckt in aller; das zweite Verb bleibt im Infinitiv.",
+			"Beispiel: Maintenant, je joue. Demain, je vais jouer. Je vais au parc nennt dagegen ein Ziel und enthält keinen zweiten Infinitiv. Für die Verneinung umklammerst du aller: Je ne vais pas jouer. Demain und ce week-end machen deinen Plan genauer."
+		],
+		"material": "Demain, je vais jouer au tennis. Lina va lire un livre. Nous allons prendre le bus. Vous allez faire du vélo ? Ils vont écrire une carte. Ce week-end, je ne vais pas travailler.",
+		"materialLabel": "Eigenes französisches Übungsmaterial · erfundene Personen und Angaben",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Demain, nous… au tennis.",
+			"answer": "allons jouer",
+			"wrong": ["allons jouons", "jouer allons"],
+			"explanation": "Allons ist konjugiert; jouer bleibt Infinitiv.",
+			"optionLanguage": "fr"
+		},
+		"takeaway": "Das futur proche besteht aus einer Präsensform von aller und einem Infinitiv: Nous allons jouer.",
+		"practice": [
+			{
+				"prompt": "Elle ___ lire. (aller)",
+				"answers": ["va"],
+				"feedback": "Zu elle gehört va."
+			},
+			{
+				"prompt": "Je vais ___ une carte. (écrire)",
+				"answers": ["écrire"],
+				"feedback": "Nach vais steht der Infinitiv."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe drei Wochenendpläne mit je, nous und ils im futur proche.",
+				"model": "Je vais lire. Nous allons jouer au tennis. Ils vont prendre le bus.",
+				"criteria": [
+					"Aller passend konjugiert.",
+					"Infinitive.",
+					"Drei Subjekte."
+				]
+			},
+			"2": {
+				"prompt": "Ein Plan ändert sich: Ihr spielt morgen nicht Fußball, sondern schreibt eine Karte und besucht den Park. Schreibe einen verneinten und zwei bejahte Pläne.",
+				"model": "Nous n’allons pas jouer au foot. Nous allons écrire une carte. Nous allons aller au parc.",
+				"criteria": [
+					"Eine Verneinung.",
+					"Zwei neue Pläne.",
+					"Aller + Infinitiv in jedem Satz."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "sequence",
+			"goals": [
+				{
+					"label": "Morgen",
+					"before": "je",
+					"after": "jouer.",
+					"options": ["vais", "joue", "aller"],
+					"answer": "vais",
+					"explanation": "Vais trägt die Person."
+				},
+				{
+					"label": "Infinitiv",
+					"before": "nous allons",
+					"after": "une carte.",
+					"options": ["écrire", "écrivons", "écrit"],
+					"answer": "écrire",
+					"explanation": "Das zweite Verb bleibt im Infinitiv."
+				},
+				{
+					"label": "Verneinung",
+					"before": "je ne vais",
+					"after": "jouer.",
+					"options": ["pas", "ne", "de"],
+					"answer": "pas",
+					"explanation": "Ne… pas umklammert vais."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "f5-invitation",
+		"stage": "journee",
+		"title": "Tu viens samedi ?",
+		"skill": "Einladen, begründen und mit quand verbinden",
+		"bindings": ["1.1-schreiben", "1.2-wortschatz", "3", "5"],
+		"paragraphs": [
+			"Eine kurze Einladung nennt wen, was, wann und wo. Beginne mit Salut… und ende etwa mit À bientôt ! Mit parce que gibst du einen Grund an. Quand bedeutet je nach Satz wann oder wenn/als: Quand est-ce que tu joues ? fragt nach der Zeit; Je joue quand j’ai le temps verbindet zwei Aussagen.",
+			"Beispiel: Salut, Lina ! Tu veux jouer au tennis samedi à quinze heures au parc ? J’aime le tennis parce que c’est amusant. À bientôt, Noé. Antworte mit Zusage oder höflicher Absage und nenne den Termin noch einmal. Eine richtige Antwort muss nicht Wort für Wort dem Muster entsprechen."
+		],
+		"material": "Salut, Lina ! Tu veux jouer au tennis samedi à quinze heures au parc ? J’aime le tennis parce que c’est amusant. Je joue quand j’ai le temps. À bientôt, Noé.",
+		"materialLabel": "Eigenes französisches Übungsmaterial · erfundene Personen und Angaben",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Noé aime le tennis. Pourquoi ?",
+			"answer": "Parce que c’est amusant.",
+			"wrong": ["Parce que c’est lundi.", "Parce qu’il habite à Paris."],
+			"explanation": "Im Material steht der Grund amusant.",
+			"optionLanguage": "fr"
+		},
+		"takeaway": "Eine Einladung nennt wen, was, wann und wo. Parce que begründet; quand verbindet eine Zeit mit einer Handlung.",
+		"practice": [
+			{
+				"prompt": "J’aime le tennis ___ c’est amusant.",
+				"answers": ["parce que"],
+				"feedback": "Parce que leitet die Begründung ein."
+			},
+			{
+				"prompt": "Je joue ___ j’ai le temps.",
+				"answers": ["quand"],
+				"feedback": "Quand verbindet den Zeitpunkt mit der Handlung."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Antworte Noé: Sage zu und bestätige Samstag, 15 Uhr und den Park.",
+				"model": "Salut, Noé ! Oui, je veux jouer samedi à quinze heures au parc. À bientôt, Lina.",
+				"criteria": ["Eine Zusage.", "Zeit und Ort.", "Anrede und Abschluss."]
+			},
+			"2": {
+				"prompt": "Lade eine andere Person zu einem neuen Hobby ein. Nenne Termin, Ort und Grund und formuliere einen Satz mit quand.",
+				"model": "Salut, Zoé ! Tu veux faire du vélo dimanche à dix heures au parc ? J’aime le vélo parce que c’est amusant. Je joue quand j’ai le temps. À bientôt !",
+				"criteria": [
+					"Ein neuer Termin.",
+					"Eine Begründung.",
+					"Ein sinnvoller quand-Satz."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "dialogue",
+			"goals": [
+				{
+					"label": "Grund",
+					"before": "j’aime le tennis",
+					"after": "c’est amusant.",
+					"options": ["parce que", "quand", "où"],
+					"answer": "parce que",
+					"explanation": "Parce que beantwortet warum."
+				},
+				{
+					"label": "Zeitbedingung",
+					"before": "je joue",
+					"after": "j’ai le temps.",
+					"options": ["quand", "parce que", "quel"],
+					"answer": "quand",
+					"explanation": "Quand verbindet hier Handlung und Zeitpunkt."
+				},
+				{
+					"label": "Termin",
+					"before": "samedi",
+					"after": "au parc",
+					"options": ["à quinze heures", "quinze ans", "quinze jeux"],
+					"answer": "à quinze heures",
+					"explanation": "À leitet die Uhrzeit ein."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "f5-france",
+		"stage": "france",
+		"title": "La France sur la carte",
+		"skill": "Meere, Gebirge, Flüsse und Städte zuordnen",
+		"bindings": ["2", "5"],
+		"paragraphs": [
+			"Das europäische Festland Frankreichs liegt westlich von Deutschland. Im Westen liegt der Atlantik, im Süden das Mittelmeer, im Norden der Ärmelkanal. Die Alpen liegen im Südosten, die Pyrenäen an der Grenze zu Spanien. Frankreich hat außerdem Gebiete außerhalb Europas; die Übersichtskarte zeigt nur das europäische Festland schematisch.",
+			"Paris liegt an der Seine, Lyon an der Rhône, Toulouse an der Garonne. Bordeaux liegt ebenfalls an der Garonne, Marseille am Mittelmeer. Die Loire fließt in den Atlantik. Beispiel: Paris est au nord de Lyon. Vergleiche Fläche und Einwohnerzahl mit Deutschland anhand der verlinkten EU-Länderprofile; notiere Bezugsjahr und Gebiet statt Zahlen aus dem Gedächtnis zu raten."
+		],
+		"material": "La France est en Europe. Paris est sur la Seine. Lyon est sur le Rhône. Toulouse et Bordeaux sont sur la Garonne. Marseille est au bord de la Méditerranée. La Loire va vers l’Atlantique.",
+		"materialLabel": "Eigenes französisches Übungsmaterial · erfundene Personen und Angaben",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp", "eu-fr", "eu-de"],
+		"quiz": {
+			"question": "Paris est sur…",
+			"answer": "la Seine",
+			"wrong": ["le Rhône", "la Garonne"],
+			"explanation": "Die Seine fließt durch Paris.",
+			"optionLanguage": "fr"
+		},
+		"takeaway": "Paris liegt an der Seine, Lyon an der Rhône, Toulouse und Bordeaux an der Garonne; Marseille liegt am Mittelmeer.",
+		"practice": [
+			{
+				"prompt": "Le fleuve de Lyon : le ___",
+				"answers": ["Rhône"],
+				"feedback": "Lyon liegt an der Rhône."
+			},
+			{
+				"prompt": "La mer au sud : la ___",
+				"answers": ["Méditerranée"],
+				"feedback": "Am Süden des europäischen Festlands liegt das Mittelmeer."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Suche Paris, Lyon und Marseille auf der Übersichtskarte. Schreibe drei kurze französische Ortssätze.",
+				"model": "Paris est sur la Seine. Lyon est sur le Rhône. Marseille est au bord de la Méditerranée.",
+				"criteria": ["Drei Städte.", "Passende Gewässer.", "Karte benutzt."],
+				"language": "de"
+			},
+			"2": {
+				"prompt": "Öffne mit einer erwachsenen Person die EU-Profile zu Frankreich und Deutschland. Vergleiche Fläche und Bevölkerung auf Deutsch und notiere jeweils Bezugsjahr und Gebietsdefinition.",
+				"model": "Ich notiere die Werte, Jahre und Gebiete aus beiden Profilen. Erst danach vergleiche ich. Dieses Muster enthält keine recherchierten Zahlen.",
+				"criteria": [
+					"Zwei Quellen geprüft.",
+					"Jahr und Gebiet festgehalten.",
+					"Ein nachvollziehbarer Vergleich."
+				],
+				"language": "de"
+			}
+		},
+		"workshop": {
+			"kind": "map",
+			"goals": [
+				{
+					"label": "Paris",
+					"before": "Paris →",
+					"after": "",
+					"options": ["la Seine", "le Rhône", "la Loire"],
+					"answer": "la Seine",
+					"explanation": "Die Seine fließt durch Paris."
+				},
+				{
+					"label": "Gebirge im Südosten",
+					"before": "sud-est →",
+					"after": "",
+					"options": ["les Alpes", "les Pyrénées", "la Manche"],
+					"answer": "les Alpes",
+					"explanation": "Die Alpen liegen im Südosten."
+				},
+				{
+					"label": "Westküste",
+					"before": "ouest →",
+					"after": "",
+					"options": ["l’Atlantique", "la Méditerranée", "le Rhône"],
+					"answer": "l’Atlantique",
+					"explanation": "Im Westen liegt der Atlantik."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "f5-paris",
+		"stage": "france",
+		"title": "Une journée à Paris",
+		"skill": "Sehenswürdigkeiten und Verkehrsmittel",
+		"bindings": ["2", "1.2-wortschatz", "5"],
+		"paragraphs": [
+			"Paris ist die Hauptstadt Frankreichs. La tour Eiffel, le musée du Louvre und la cathédrale Notre-Dame sind bekannte Orte. Die Seine durchquert die Stadt. Le métro ist die U-Bahn, le bus der Bus. Für einen Wegplan reichen Ort, Verkehrsmittel und Reihenfolge; aktuelle Fahrpläne schlägst du nach.",
+			"Beispiel: Nous prenons le métro. Nous allons au Louvre. Puis, nous allons à la tour Eiffel. Die Skizze ist ein Lernbild, kein maßstäblicher Verkehrsplan. Benutze sie nicht als echte Wegbeschreibung. Beschreibe eine Route als Vorhaben mit aller + Infinitiv und unterscheide sie von einer gesicherten Fahrplanauskunft."
+		],
+		"material": "Bonjour de Paris ! Nous allons prendre le métro pour aller au Louvre. Puis, nous allons voir la tour Eiffel. Nous regardons la Seine. Après, nous allons prendre le bus. À bientôt !",
+		"materialLabel": "Eigenes französisches Übungsmaterial · erfundene Personen und Angaben",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Quel moyen de transport est dans le texte ?",
+			"answer": "le métro",
+			"wrong": ["l’avion", "le bateau"],
+			"explanation": "Im Text steht prendre le métro.",
+			"optionLanguage": "fr"
+		},
+		"takeaway": "Paris ist Frankreichs Hauptstadt. Louvre und tour Eiffel sind Sehenswürdigkeiten; métro und bus sind Verkehrsmittel.",
+		"practice": [
+			{
+				"prompt": "La capitale de la France : ___",
+				"answers": ["Paris"],
+				"feedback": "Paris ist die Hauptstadt."
+			},
+			{
+				"prompt": "Le musée du texte : le ___",
+				"answers": ["Louvre"],
+				"feedback": "Das Material nennt den Louvre."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Plane zwei Stationen in Paris und nenne ein Verkehrsmittel.",
+				"model": "Nous allons prendre le métro. Nous allons au Louvre. Puis, nous allons voir la tour Eiffel.",
+				"criteria": [
+					"Zwei Stationen.",
+					"Ein Verkehrsmittel.",
+					"Eine klare Reihenfolge."
+				]
+			},
+			"2": {
+				"prompt": "Eine Freundin möchte einen echten Fahrplan aus deiner Skizze ablesen. Erkläre auf Deutsch die Grenze und schreibe einen französischen Tagesplan ohne erfundene Abfahrtszeit.",
+				"model": "Die Skizze ist nicht maßstäblich und enthält keinen Fahrplan. Nous allons prendre le métro. Nous allons voir la Seine et la tour Eiffel.",
+				"criteria": [
+					"Grenze erklärt.",
+					"Kein erfundener Fahrplan.",
+					"Ein verständlicher Plan."
+				],
+				"language": "de"
+			}
+		},
+		"workshop": {
+			"kind": "map",
+			"goals": [
+				{
+					"label": "Stadt",
+					"before": "capitale →",
+					"after": "",
+					"options": ["Paris", "Lyon", "Toulouse"],
+					"answer": "Paris",
+					"explanation": "Paris ist die Hauptstadt."
+				},
+				{
+					"label": "Kunstmuseum",
+					"before": "musée →",
+					"after": "",
+					"options": ["le Louvre", "la Seine", "le métro"],
+					"answer": "le Louvre",
+					"explanation": "Der Louvre ist ein Museum."
+				},
+				{
+					"label": "Verkehrsmittel",
+					"before": "sous la ville →",
+					"after": "",
+					"options": ["le métro", "la tour Eiffel", "le fleuve"],
+					"answer": "le métro",
+					"explanation": "Le métro bezeichnet die U-Bahn."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "f5-bretagne",
+		"stage": "france",
+		"title": "Bienvenue en Bretagne",
+		"skill": "Eine Region entdecken und Vorurteile vermeiden",
+		"bindings": ["2", "5"],
+		"paragraphs": [
+			"Die Bretagne liegt im Nordwesten Frankreichs am Atlantik und am Ärmelkanal. Rennes ist ihre regionale Hauptstadt. Zur Küste gehören felsige Abschnitte und Strände. Galettes und Crêpes sind bekannte Speisen der Region. Daraus folgt nicht, dass alle Familien gleich essen oder denselben Alltag haben.",
+			"Beispiel einer Beobachtung: Sur cette photo, il y a la mer et une crêpe. Eine Quelle zeigt immer einen Ausschnitt. Vergleiche zwei Bilder der Bretagne und beschreibe nur Sichtbares: À gauche, il y a… Frage nach persönlichen Erfahrungen statt aus einem Bild eine Regel über alle Menschen zu machen."
+		],
+		"material": "Bienvenue en Bretagne ! Rennes est en Bretagne, dans le nord-ouest de la France. Sur une photo, il y a la mer. Sur une autre photo, il y a une crêpe. Lina aime les crêpes, Noé préfère le pain.",
+		"materialLabel": "Eigenes französisches Übungsmaterial · erfundene Personen und Angaben",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp", "bretagne"],
+		"quiz": {
+			"question": "La Bretagne est…",
+			"answer": "dans le nord-ouest",
+			"wrong": ["dans le sud-est", "au centre de Paris"],
+			"explanation": "Die Bretagne liegt im Nordwesten.",
+			"optionLanguage": "fr"
+		},
+		"takeaway": "Die Bretagne liegt im Nordwesten Frankreichs; Rennes ist ihre regionale Hauptstadt. Ein Beispiel beschreibt nicht alle Menschen.",
+		"practice": [
+			{
+				"prompt": "La ville du texte : ___",
+				"answers": ["Rennes"],
+				"feedback": "Rennes ist die regionale Hauptstadt der Bretagne."
+			},
+			{
+				"prompt": "Le texte parle d’une ___ (plat, photo 2).",
+				"answers": ["crêpe"],
+				"feedback": "Auf dem zweiten beschriebenen Bild ist eine Crêpe."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Beschreibe zwei vorgestellte Bilder der Bretagne mit je einem französischen Satz. Nenne auch die Lage der Region.",
+				"model": "Sur la photo, il y a la mer. Sur l’autre photo, il y a une crêpe. La Bretagne est dans le nord-ouest.",
+				"criteria": [
+					"Zwei Bildsätze.",
+					"Passende Lage.",
+					"Keine Aussage über alle Familien."
+				]
+			},
+			"2": {
+				"prompt": "Prüfe die Aussage „In der Bretagne essen alle immer Crêpes“. Erkläre auf Deutsch das Problem und schreibe eine Frage nach einer persönlichen Vorliebe.",
+				"model": "Ein regionales Gericht bestimmt nicht den Alltag aller. Tu aimes les crêpes ? Tu préfères le pain ?",
+				"criteria": [
+					"Verallgemeinerung erkannt.",
+					"Eine individuelle Frage.",
+					"Respektvoll formuliert."
+				],
+				"language": "de"
+			}
+		},
+		"workshop": {
+			"kind": "map",
+			"goals": [
+				{
+					"label": "Region",
+					"before": "Bretagne →",
+					"after": "",
+					"options": ["nord-ouest", "sud-est", "centre"],
+					"answer": "nord-ouest",
+					"explanation": "Die Region liegt im Nordwesten."
+				},
+				{
+					"label": "Hauptstadt der Region",
+					"before": "Bretagne →",
+					"after": "",
+					"options": ["Rennes", "Marseille", "Lyon"],
+					"answer": "Rennes",
+					"explanation": "Rennes ist die regionale Hauptstadt."
+				},
+				{
+					"label": "Persönlich fragen",
+					"before": "tu",
+					"after": "les crêpes ?",
+					"options": ["aimes", "sommes", "avons"],
+					"answer": "aimes",
+					"explanation": "Eine Frage lässt individuelle Unterschiede zu."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "f5-voyage",
+		"stage": "france",
+		"title": "À la gare et à l’hôtel",
+		"skill": "Unterwegs höflich nachfragen",
+		"bindings": ["1.1-sprechen", "1.2-wortschatz", "5"],
+		"paragraphs": [
+			"Am Bahnhof fragst du Où est le train pour Lyon ? oder Quel quai ? Quai heißt Bahnsteig. Am Flughafen hilft Où est la sortie ? Im Hotel bittest du mit Je voudrais… und fragst Où est la chambre ? Verwende Bonjour und s’il vous plaît, auch wenn dir noch Wörter fehlen.",
+			"Beispiel: Bonjour, Monsieur. Le train pour Lyon, s’il vous plaît ? – Quai deux. – Merci ! Lies die Zielstadt und die Nummer getrennt. Ein Übungsdialog gibt keine echte Reiseauskunft; prüfe unterwegs Anzeigen mit einer erwachsenen Begleitung. La gare, l’aéroport und l’hôtel sind unterschiedliche Orte."
+		],
+		"material": "À la gare : Bonjour, Monsieur. Le train pour Lyon, s’il vous plaît ? – Quai deux, à quinze heures. À l’aéroport : Où est la sortie ? À l’hôtel : Bonjour, Madame. Où est la chambre dix ?",
+		"materialLabel": "Eigenes französisches Übungsmaterial · erfundene Personen und Angaben",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Où est le train pour Lyon dans le dialogue ?",
+			"answer": "Quai deux.",
+			"wrong": ["Chambre dix.", "À l’aéroport."],
+			"explanation": "Die Antwort am Bahnhof lautet quai deux.",
+			"optionLanguage": "fr"
+		},
+		"takeaway": "La gare ist der Bahnhof, le quai der Bahnsteig, l’aéroport der Flughafen und la chambre das Zimmer.",
+		"practice": [
+			{
+				"prompt": "Le lieu des trains : la ___",
+				"answers": ["gare"],
+				"feedback": "La gare ist der Bahnhof."
+			},
+			{
+				"prompt": "Le quai du dialogue (en lettres) : ___",
+				"answers": ["deux"],
+				"feedback": "Der Dialog nennt quai deux."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Spiele mit einem Partner den Bahnhofsdialog. Frage nach Zugziel und Bahnsteig und bedanke dich.",
+				"model": "Bonjour, Monsieur. Le train pour Lyon, s’il vous plaît ? Quel quai ? – Quai deux. – Merci !",
+				"criteria": ["Höfliche Begrüßung.", "Ziel und Bahnsteig.", "Ein Dank."]
+			},
+			"2": {
+				"prompt": "Erfinde zwei kurze Situationen, am Flughafen und im Hotel. Stelle jeweils eine konkrete Frage und notiere eine mögliche Antwort.",
+				"model": "À l’aéroport : Où est la sortie ? – À droite. À l’hôtel : Où est la chambre dix ? – À gauche. Merci !",
+				"criteria": [
+					"Zwei unterschiedliche Orte.",
+					"Passende Wörter.",
+					"Konkrete Antworten."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "dialogue",
+			"goals": [
+				{
+					"label": "Bahnhof",
+					"before": "train →",
+					"after": "",
+					"options": ["la gare", "l’hôtel", "l’école"],
+					"answer": "la gare",
+					"explanation": "Züge gehören hier zum Bahnhof."
+				},
+				{
+					"label": "Bahnsteig",
+					"before": "Le train ? →",
+					"after": "",
+					"options": ["quai deux", "chambre deux", "deux ans"],
+					"answer": "quai deux",
+					"explanation": "Quai ist der Bahnsteig."
+				},
+				{
+					"label": "Hotel",
+					"before": "Où est",
+					"after": "dix ?",
+					"options": ["la chambre", "le quai", "l’aéroport"],
+					"answer": "la chambre",
+					"explanation": "Chambre bezeichnet das Zimmer."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": true
+	},
+	{
+		"id": "f5-achats",
+		"stage": "france",
+		"title": "Un peu de pain",
+		"skill": "Einkauf, Preise und Mengen mit de",
+		"bindings": ["1.2-grammatik", "1.2-wortschatz", "1.1-sprechen", "5"],
+		"paragraphs": [
+			"Nach Mengenwörtern wie beaucoup, un peu und combien steht de: beaucoup de pommes, un peu de pain, combien de livres ? Vor Vokal wird de zu d’: beaucoup d’eau. Ein Zahlenwort steht direkt am Nomen: deux pommes. La baguette ist ein langes Brot, le bol eine Schale, etwa für ein Frühstücksgetränk.",
+			"Beispiel: Bonjour, Madame. Je voudrais deux pommes et un peu de pain, s’il vous plaît. – Trois euros. – Merci ! Ein Preis von 3,50 € heißt trois euros cinquante. Unsere Preisschilder sind erfunden. Vergleiche beim Lesen Menge und Preis und frage höflich, wenn eine Angabe fehlt."
+		],
+		"material": "Au marché, prix imaginaires : une pomme, un euro ; deux pommes, deux euros ; une baguette, un euro cinquante. Je voudrais deux pommes et un peu de pain. Il y a beaucoup d’eau dans le bol.",
+		"materialLabel": "Eigenes französisches Übungsmaterial · erfundene Personen und Angaben",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Quelle expression est correcte ?",
+			"answer": "beaucoup de pommes",
+			"wrong": ["beaucoup des pommes", "beaucoup pommes"],
+			"explanation": "Nach beaucoup steht hier de ohne Artikel.",
+			"optionLanguage": "fr"
+		},
+		"takeaway": "Nach beaucoup, un peu und combien steht de, vor Vokal d’. Ein Zahlenwort steht direkt vor dem Nomen.",
+		"practice": [
+			{
+				"prompt": "un peu ___ pain",
+				"answers": ["de"],
+				"feedback": "Un peu wird mit de angeschlossen."
+			},
+			{
+				"prompt": "beaucoup ___ eau",
+				"answers": ["d’", "d'"],
+				"feedback": "De wird vor eau zu d’."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Bestelle zwei Äpfel und etwas Brot. Frage nach dem Preis und bedanke dich.",
+				"model": "Bonjour, Madame. Je voudrais deux pommes et un peu de pain. C’est combien ? Merci !",
+				"criteria": [
+					"Eine höfliche Bestellung.",
+					"Zahl und Mengenwort.",
+					"Eine Preisfrage."
+				]
+			},
+			"2": {
+				"prompt": "Du hast im erfundenen Markt 4 €. Wähle zwei Äpfel und ein Baguette. Notiere die Bestellung und erkläre auf Deutsch, ob das Geld reicht.",
+				"model": "Je voudrais deux pommes et une baguette, s’il vous plaît. 2 € + 1,50 € = 3,50 €. Das Geld reicht; 0,50 € bleiben.",
+				"criteria": [
+					"Preise aus dem Material.",
+					"Rechnung stimmt.",
+					"Bestellung höflich."
+				],
+				"language": "de"
+			}
+		},
+		"workshop": {
+			"kind": "number",
+			"goals": [
+				{
+					"label": "Unbestimmte Menge",
+					"before": "un peu",
+					"after": "pain",
+					"options": ["de", "des", "du"],
+					"answer": "de",
+					"explanation": "Nach un peu steht de."
+				},
+				{
+					"label": "Vokal",
+					"before": "beaucoup",
+					"after": "eau",
+					"options": ["d’", "de", "des"],
+					"answer": "d’",
+					"explanation": "Vor eau wird de zu d’."
+				},
+				{
+					"label": "Zahl",
+					"before": "deux",
+					"after": "→ zwei Äpfel",
+					"options": ["pommes", "de pommes", "des pommes"],
+					"answer": "pommes",
+					"explanation": "Die Zahl steht direkt beim Nomen."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": true
+	},
+	{
+		"id": "f5-ecouter-moi",
+		"stage": "comprendre",
+		"title": "Qui parle ?",
+		"skill": "Erst global hören, dann Einzelheiten sichern",
+		"bindings": ["1.1-hoeren", "4"],
+		"paragraphs": [
+			"Vor dem Hören überlegst du, welche Informationen wichtig sind. Bei einer Vorstellung sind das Name, Alter und Wohnort. Höre zuerst nur: Wer spricht? Beim zweiten Hören suchst du die drei Einzelheiten. Halte das Transkript geschlossen. Ein Partner kann das kurze Skript langsam und deutlich vorlesen.",
+			"Beispiel für Notizen: Lina – dix ans – Lyon. Du musst nicht jedes Wort übersetzen. Prüfe beim erneuten Hören, ob Name und Zahl zusammenpassen. Die App speichert eine Zuhörübung erst nach vollständigem Vorlesen oder deiner Partnerbestätigung. Natürliche Aufnahmen und Hörsehtexte kommen im Unterricht hinzu."
+		],
+		"material": "Bonjour ! Je m’appelle Lina. J’ai dix ans. J’habite à Lyon. J’ai un chat. Il s’appelle Minou. J’aime le tennis. Mon ami Noé a onze ans. Il habite à Paris. Au revoir !",
+		"materialLabel": "Eigenes französisches Übungsmaterial · erfundene Personen und Angaben",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Où habite Lina ?",
+			"answer": "À Lyon.",
+			"wrong": ["À Paris.", "À Marseille."],
+			"explanation": "Lina nennt Lyon; Noé wohnt in Paris.",
+			"optionLanguage": "fr"
+		},
+		"takeaway": "Höre zuerst global nach Situation und Thema, dann gezielt nach Einzelheiten; prüfe deine Notizen beim Wiederholen.",
+		"practice": [
+			{
+				"prompt": "L’âge de Lina (en lettres) : ___",
+				"answers": ["dix ans", "dix"],
+				"feedback": "Lina sagt J’ai dix ans."
+			},
+			{
+				"prompt": "Le nom du chat : ___",
+				"answers": ["Minou"],
+				"feedback": "Das Haustier heißt Minou."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Höre zuerst ohne Transkript. Notiere drei Angaben zu Lina und sage sie anschließend laut.",
+				"model": "Lina a dix ans. Elle habite à Lyon. Elle a un chat. Il s’appelle Minou.",
+				"criteria": [
+					"Zuerst zugehört.",
+					"Drei richtige Informationen.",
+					"Informationen laut wiedergegeben."
+				],
+				"language": "de"
+			},
+			"2": {
+				"prompt": "Ein Partner stellt eine andere erfundene Person vor. Notiere drei Angaben und erkläre auf Deutsch deine Hörstrategie.",
+				"model": "Name – Alter – Wohnort. Ich höre zuerst das Thema, dann die einzelnen Angaben und prüfe beim zweiten Hören. Die Daten hängen vom Partnertext ab.",
+				"criteria": [
+					"Neuer Partnertext.",
+					"Gezielte Notizen.",
+					"Eine erklärte Strategie."
+				],
+				"language": "de"
+			}
+		},
+		"workshop": {
+			"kind": "sequence",
+			"goals": [
+				{
+					"label": "Global",
+					"before": "1. Hören →",
+					"after": "",
+					"options": [
+						"Wer spricht?",
+						"Jedes Wort übersetzen",
+						"Sofort das Transkript lesen"
+					],
+					"answer": "Wer spricht?",
+					"explanation": "Zuerst erkennst du die Situation."
+				},
+				{
+					"label": "Detail",
+					"before": "2. Hören →",
+					"after": "",
+					"options": [
+						"Name, Alter, Wohnort",
+						"Nur die Stimme bewerten",
+						"Alle Wörter abschreiben"
+					],
+					"answer": "Name, Alter, Wohnort",
+					"explanation": "Du suchst wenige Zielinformationen."
+				},
+				{
+					"label": "Prüfen",
+					"before": "3. Hören →",
+					"after": "",
+					"options": [
+						"Notizen vergleichen",
+						"Zahlen raten",
+						"Aufhören vor dem Ende"
+					],
+					"answer": "Notizen vergleichen",
+					"explanation": "Wiederholtes Hören klärt Unsicherheit."
+				}
+			]
+		},
+		"listening": true,
+		"speaking": true
+	},
+	{
+		"id": "f5-ecouter-courses",
+		"stage": "comprendre",
+		"title": "La liste de courses",
+		"skill": "Mengen und Reihenfolge in einem Hörtext",
+		"bindings": ["1.1-hoeren", "1.2-wortschatz", "4"],
+		"paragraphs": [
+			"Eine Einkaufsliste enthält Dinge und Mengen. Lege vor dem Hören zwei Spalten an: produit und quantité. Höre langsam und mehrfach, ohne gleichzeitig das Transkript zu lesen. Eine Zahl allein reicht nicht: deux pommes und trois livres dürfen nicht vertauscht werden.",
+			"Beispiel einer Notiz: pommes → deux. Beim zweiten Hören prüfst du die Zuordnung. Ein Nachtrag kann die Liste ändern: et une baguette fügt etwas hinzu. Die Computerstimme oder ein Partner liest hier nur ein Übungsskript. Für natürliche Geschwindigkeit und verschiedene Stimmen brauchst du zusätzliche Aufnahmen."
+		],
+		"material": "Bonjour, Noé. Pour les courses : deux pommes, trois bananes et une baguette. Je voudrais aussi un peu de pain pour Lina. Merci ! Je répète : deux pommes, trois bananes, une baguette.",
+		"materialLabel": "Eigenes französisches Übungsmaterial · erfundene Personen und Angaben",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Combien de bananes ?",
+			"answer": "Trois.",
+			"wrong": ["Deux.", "Une."],
+			"explanation": "Die Liste nennt trois bananes.",
+			"optionLanguage": "fr"
+		},
+		"takeaway": "Notiere beim Hören Produkt und Menge zusammen. Prüfe Zuordnung und Nachträge beim erneuten Hören.",
+		"practice": [
+			{
+				"prompt": "Les pommes (nombre en lettres) : ___",
+				"answers": ["deux"],
+				"feedback": "Die Zahl deux gehört zu pommes."
+			},
+			{
+				"prompt": "La baguette (nombre en lettres) : ___",
+				"answers": ["une"],
+				"feedback": "Die Liste nennt une baguette."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Höre ohne Transkript. Schreibe eine geordnete Einkaufsliste mit den drei gezählten Produkten.",
+				"model": "Deux pommes, trois bananes, une baguette.",
+				"criteria": [
+					"Zuerst zugehört.",
+					"Drei Produkte.",
+					"Mengen passend zugeordnet."
+				],
+				"language": "de"
+			},
+			"2": {
+				"prompt": "Lass einen Partner eine neue Liste mit drei Mengen und einem Nachtrag vorlesen. Notiere sie und erkläre auf Deutsch, wie du den Nachtrag sicherst.",
+				"model": "Ich ordne jeder Ware eine Menge zu und ergänze den Nachtrag in einer neuen Zeile. Meine französische Liste hängt vom Partnertext ab.",
+				"criteria": [
+					"Ein neuer Hörtext.",
+					"Mengen je Produkt.",
+					"Nachtrag geprüft."
+				],
+				"language": "de"
+			}
+		},
+		"workshop": {
+			"kind": "sequence",
+			"goals": [
+				{
+					"label": "Produkt zuordnen",
+					"before": "pommes →",
+					"after": "",
+					"options": ["deux", "trois", "une"],
+					"answer": "deux",
+					"explanation": "Deux gehört zu pommes."
+				},
+				{
+					"label": "Produkt zuordnen",
+					"before": "bananes →",
+					"after": "",
+					"options": ["trois", "deux", "une"],
+					"answer": "trois",
+					"explanation": "Trois gehört zu bananes."
+				},
+				{
+					"label": "Produkt zuordnen",
+					"before": "baguette →",
+					"after": "",
+					"options": ["une", "deux", "trois"],
+					"answer": "une",
+					"explanation": "Une ist die weibliche Form von eins."
+				}
+			]
+		},
+		"listening": true,
+		"speaking": false
+	},
+	{
+		"id": "f5-affiche",
+		"stage": "comprendre",
+		"title": "Une affiche pour le club",
+		"skill": "Ein bildgestütztes Plakat lesen",
+		"bindings": ["1.1-lesen", "3", "4"],
+		"paragraphs": [
+			"Bei einem Plakat helfen Überschrift, Bildzeichen und Zahlen. Suche zuerst das Thema, dann Datum, Uhrzeit, Ort und Preis. Leicht verständliche Wörter wie orange oder champignon kannst du aus ähnlichen Wörtern und dem Bild erschließen. Prüfe deine Vermutung am Zusammenhang.",
+			"Beispiel: Ein Tennisball neben CLUB DE TENNIS stützt das Thema Sport. Samedi, 15 h, parc, 2 € beantworten wann, wo und wie viel. Die Angaben sind ein erfundenes Übungsplakat, kein echter Veranstaltungshinweis. Beantworte nur das, was tatsächlich auf dem Plakat steht."
+		],
+		"material": "🎾 CLUB DE TENNIS 🎾\nSamedi 6 juin\nDe 15 h à 16 h\nAu parc\nPrix : 2 €\nPour les amis de la classe\nUne pause avec des pommes et des oranges. À bientôt !",
+		"materialLabel": "Eigenes französisches Übungsmaterial · erfundene Personen und Angaben",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Où est le club ?",
+			"answer": "Au parc.",
+			"wrong": ["À la gare.", "À l’hôtel."],
+			"explanation": "Auf dem Plakat steht Au parc.",
+			"optionLanguage": "fr"
+		},
+		"takeaway": "Bilder und Überschrift helfen beim Thema. Datum, Uhrzeit, Ort und Preis entnimmst du dem Text.",
+		"practice": [
+			{
+				"prompt": "Le prix (chiffre seulement) : ___",
+				"answers": ["2"],
+				"feedback": "Der Preis beträgt im Übungsplakat 2 €."
+			},
+			{
+				"prompt": "Le jour : ___",
+				"answers": ["samedi"],
+				"feedback": "Der Club findet laut Plakat am Samstag statt."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Notiere auf Französisch Thema, Tag, Uhrzeit und Ort des Plakats.",
+				"model": "Club de tennis. Samedi 6 juin, de quinze heures à seize heures, au parc.",
+				"criteria": ["Thema erkannt.", "Termin vollständig.", "Ort korrekt."]
+			},
+			"2": {
+				"prompt": "Gestalte auf Papier ein neues Plakat mit Bildzeichen, Termin, Ort und Preis. Schreibe den französischen Text hier und erkläre auf Deutsch, was das Bild zum Verständnis beiträgt.",
+				"model": "🎨 Club de dessin. Dimanche 7 juin, à dix heures, à l’école. Prix : 1 €. Das Bildzeichen unterstützt das Thema Zeichnen.",
+				"criteria": [
+					"Eigenes Plakat.",
+					"Vier wichtige Angaben.",
+					"Bildhilfe erklärt."
+				],
+				"language": "de"
+			}
+		},
+		"workshop": {
+			"kind": "poster",
+			"goals": [
+				{
+					"label": "Thema",
+					"before": "🎾 →",
+					"after": "",
+					"options": ["tennis", "gare", "hôtel"],
+					"answer": "tennis",
+					"explanation": "Das Bild stützt die Überschrift."
+				},
+				{
+					"label": "Zeit",
+					"before": "de 15 h",
+					"after": "16 h",
+					"options": ["à", "de", "ans"],
+					"answer": "à",
+					"explanation": "De… à… beschreibt die Zeitspanne."
+				},
+				{
+					"label": "Preis",
+					"before": "2 € →",
+					"after": "",
+					"options": ["deux euros", "deux ans", "deux heures"],
+					"answer": "deux euros",
+					"explanation": "Das Eurozeichen kennzeichnet den Preis."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "f5-mediation",
+		"stage": "comprendre",
+		"title": "Tu peux expliquer ?",
+		"skill": "Informationen für eine andere Person vermitteln",
+		"bindings": ["1.1-sprachmittlung", "3", "5"],
+		"paragraphs": [
+			"Bei Sprachmittlung gibst du nur die Informationen weiter, die die andere Person braucht. Du übersetzt nicht jedes Wort. Frage zuerst: Für wen? Wozu? Welche Sprache? Ein deutscher Freund braucht vielleicht Tag, Ort und Preis einer französischen Einladung, aber nicht jede Grußformel.",
+			"Beispiel: Fête samedi à quinze heures au parc. Entrée : deux euros. → Das Fest ist am Samstag um 15 Uhr im Park. Der Eintritt kostet zwei Euro. Im Gespräch: Die Verkäuferin sagt Trois euros; du sagst deinem Freund drei Euro. Erfinde keine Angaben und frage bei Unklarheiten nach."
+		],
+		"material": "Invitation : fête samedi à quinze heures au parc. Entrée : deux euros. À la boulangerie : une baguette, un euro cinquante. La sortie est à droite. Merci et à bientôt !",
+		"materialLabel": "Eigenes französisches Übungsmaterial · erfundene Personen und Angaben",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Ton ami demande le prix de la fête.",
+			"answer": "Deux euros.",
+			"wrong": ["Un euro cinquante.", "Quinze euros."],
+			"explanation": "Der Festpreis ist deux euros; 1,50 € gehört zum Baguette.",
+			"optionLanguage": "fr"
+		},
+		"takeaway": "Vermittle nur die benötigten Informationen sinngemäß und passend für die angesprochene Person; erfinde keine Angaben.",
+		"practice": [
+			{
+				"prompt": "Le prix de la baguette, en euros (chiffres) : ___",
+				"answers": ["1,50", "1.50", "1,5", "1.5"],
+				"feedback": "Das Baguette kostet im Material 1,50 €."
+			},
+			{
+				"prompt": "La sortie est à ___",
+				"answers": ["droite"],
+				"feedback": "Die Ausgangsrichtung ist rechts."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Dein deutscher Freund fragt nach Tag, Uhrzeit, Ort und Eintritt des Festes. Antworte auf Deutsch.",
+				"model": "Das Fest ist am Samstag um 15 Uhr im Park. Der Eintritt kostet zwei Euro.",
+				"criteria": [
+					"Alle vier Angaben.",
+					"Keine erfundenen Details.",
+					"Verständliches Deutsch."
+				],
+				"language": "de"
+			},
+			"2": {
+				"prompt": "Spielt zu dritt einen Kauf: Ein deutscher Freund möchte ein Baguette, die französische Verkäuferin nennt 1,50 €. Notiere deine Vermittlung in beide Richtungen.",
+				"model": "Je voudrais une baguette, s’il vous plaît. – Un euro cinquante. – Das Baguette kostet einen Euro fünfzig.",
+				"criteria": [
+					"Beide Sprachrichtungen.",
+					"Preis richtig.",
+					"Höfliche Bestellung."
+				],
+				"language": "de"
+			}
+		},
+		"workshop": {
+			"kind": "dialogue",
+			"goals": [
+				{
+					"label": "Adressat",
+					"before": "Freund fragt Preis →",
+					"after": "",
+					"options": ["zwei Euro", "kompletter Text", "beliebiger Preis"],
+					"answer": "zwei Euro",
+					"explanation": "Du beantwortest die konkrete Frage."
+				},
+				{
+					"label": "Zuordnung",
+					"before": "baguette →",
+					"after": "",
+					"options": ["1,50 €", "2 €", "15 €"],
+					"answer": "1,50 €",
+					"explanation": "Der Preis gehört zum Baguette."
+				},
+				{
+					"label": "Weg",
+					"before": "à droite →",
+					"after": "",
+					"options": ["rechts", "links", "geradeaus"],
+					"answer": "rechts",
+					"explanation": "Die Richtung wird sinngemäß vermittelt."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": true
+	},
+	{
+		"id": "f5-message",
+		"stage": "comprendre",
+		"title": "Un petit message",
+		"skill": "Adressatenbezogene Kurznachricht schreiben",
+		"bindings": ["1.1-schreiben", "3", "4"],
+		"paragraphs": [
+			"Eine Kurznachricht hat einen Anlass, eine angesprochene Person und eine klare Information. Beginne mit Salut, Lina ! oder höflich mit Bonjour, Madame. Nenne einen Termin vollständig. Beende die Nachricht passend, etwa mit À bientôt ! Prüfe vor dem Abschicken Namen, Uhrzeit und Akzente.",
+			"Beispiel: Salut, Lina ! Le club commence à quinze heures, au parc. Tu veux venir ? À bientôt, Noé. Eine Nachricht an eine Lehrkraft braucht eine höflichere Anrede als eine an Freunde. In der App bleibt dein Entwurf lokal; du versendest nichts. Gib keine echte Privatadresse ein."
+		],
+		"material": "Salut, Lina ! Le club commence samedi à quinze heures, au parc. Tu veux venir ? Nous allons jouer au tennis. Apporte ton jeu, s’il te plaît. À bientôt, Noé.",
+		"materialLabel": "Eigenes französisches Übungsmaterial · erfundene Personen und Angaben",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Qui reçoit le message ?",
+			"answer": "Lina",
+			"wrong": ["Noé", "Madame Martin"],
+			"explanation": "Die Anrede nennt Lina als Empfängerin.",
+			"optionLanguage": "fr"
+		},
+		"takeaway": "Eine Kurznachricht braucht passende Anrede, klare Information und passenden Abschluss. Prüfe den Termin.",
+		"practice": [
+			{
+				"prompt": "Le lieu : au ___",
+				"answers": ["parc"],
+				"feedback": "Der Termin ist im Park."
+			},
+			{
+				"prompt": "La personne qui écrit : ___",
+				"answers": ["Noé"],
+				"feedback": "Die Unterschrift nennt Noé."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Antworte auf Noés Nachricht. Sage zu und bestätige Tag, Uhrzeit und Ort.",
+				"model": "Salut, Noé ! Oui, je vais venir samedi à quinze heures au parc. À bientôt, Lina.",
+				"criteria": [
+					"Passende Anrede.",
+					"Vollständiger Termin.",
+					"Passender Schluss."
+				]
+			},
+			"2": {
+				"prompt": "Schreibe dieselbe Terminänderung einmal an eine Freundin und einmal höflich an eine Lehrerin. Erfinde keine echten Kontaktdaten.",
+				"model": "Salut, Zoé ! Le club commence à seize heures. À bientôt ! Bonjour, Madame. Le club commence à seize heures. Merci et au revoir.",
+				"criteria": [
+					"Zwei Adressaten.",
+					"Gleiche Information.",
+					"Unterschiedliche Anrede."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "sequence",
+			"goals": [
+				{
+					"label": "Anrede",
+					"before": "Freundin →",
+					"after": "",
+					"options": [
+						"Salut, Lina !",
+						"Salut, Madame le professeur !",
+						"Au revoir !"
+					],
+					"answer": "Salut, Lina !",
+					"explanation": "Die Anrede passt zum persönlichen Kontakt."
+				},
+				{
+					"label": "Kernaussage",
+					"before": "le club commence",
+					"after": "au parc.",
+					"options": ["à quinze heures", "quinze ans", "quinze jeux"],
+					"answer": "à quinze heures",
+					"explanation": "Die Uhrzeit macht den Termin klar."
+				},
+				{
+					"label": "Abschluss",
+					"before": "Freundschaftlich →",
+					"after": "",
+					"options": ["À bientôt !", "Quel âge ?", "Où ?"],
+					"answer": "À bientôt !",
+					"explanation": "Der Schluss rundet die Nachricht ab."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "f5-fetes",
+		"stage": "outils",
+		"title": "Joyeux anniversaire !",
+		"skill": "Geburtstag, Weihnachten und Esskultur vergleichen",
+		"bindings": ["2", "1.2-wortschatz", "5"],
+		"paragraphs": [
+			"Joyeux anniversaire ! wünschst du zum Geburtstag, Joyeux Noël ! zu Weihnachten. Ein Geburtstag kann mit un gâteau, des bougies und des cadeaux gefeiert werden. An Weihnachten haben Familien verschiedene Bräuche und manche feiern gar nicht. Vergleiche Beispiele statt feste Regeln über alle Menschen zu bilden.",
+			"Beispiel: Dans la famille de Lina, on mange ensemble à Noël. Dans ma famille, nous… Beim Essen sind Bonjour, merci und s’il vous plaît hilfreich. Une baguette und un bol sind Alltagsprodukte, keine Vorschrift für jedes Frühstück. Frage interessiert: Tu aimes les fêtes ? Vergleiche eine Gemeinsamkeit und einen Unterschied respektvoll."
+		],
+		"material": "Dans la famille de Lina, on mange ensemble à Noël. Pour son anniversaire, Lina a un gâteau et des cadeaux. Noé apporte un jeu. Joyeux anniversaire, Lina ! Chaque famille a ses habitudes.",
+		"materialLabel": "Eigenes französisches Übungsmaterial · erfundene Personen und Angaben",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Pour l’anniversaire, tu dis…",
+			"answer": "Joyeux anniversaire !",
+			"wrong": ["Joyeux Noël !", "Bonne nuit !"],
+			"explanation": "Joyeux anniversaire ist der Geburtstagswunsch.",
+			"optionLanguage": "fr"
+		},
+		"takeaway": "Joyeux anniversaire ! passt zum Geburtstag, Joyeux Noël ! zu Weihnachten. Familien feiern unterschiedlich.",
+		"practice": [
+			{
+				"prompt": "Pour Noël : Joyeux ___ !",
+				"answers": ["Noël"],
+				"feedback": "Der Weihnachtswunsch lautet Joyeux Noël."
+			},
+			{
+				"prompt": "Les présents : des ___",
+				"answers": ["cadeaux"],
+				"feedback": "Geschenke heißen cadeaux."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe zwei französische Festwünsche und vergleiche auf Deutsch einen Brauch deiner Wahl mit Linas Beispiel.",
+				"model": "Joyeux anniversaire ! Joyeux Noël ! In Linas Familie essen sie zusammen; in meinem erfundenen Beispiel gibt es auch ein gemeinsames Essen.",
+				"criteria": [
+					"Zwei passende Wünsche.",
+					"Bezug zum Material.",
+					"Keine Verallgemeinerung."
+				],
+				"language": "de"
+			},
+			"2": {
+				"prompt": "Ein Kind feiert kein Weihnachten. Erfinde ein respektvolles Gespräch über eine andere Feier und erkläre, warum du nicht von allen Familien sprichst.",
+				"model": "Tu aimes les anniversaires ? – Oui, j’aime les jeux avec mes amis. Familien feiern unterschiedlich; ich frage nach persönlichen Erfahrungen.",
+				"criteria": [
+					"Offene Frage.",
+					"Respektvolle Antwort.",
+					"Unterschiede anerkannt."
+				],
+				"language": "de"
+			}
+		},
+		"workshop": {
+			"kind": "dialogue",
+			"goals": [
+				{
+					"label": "Geburtstag",
+					"before": "🎂 →",
+					"after": "",
+					"options": ["Joyeux anniversaire !", "Joyeux Noël !", "Bonne nuit !"],
+					"answer": "Joyeux anniversaire !",
+					"explanation": "Der Wunsch passt zum Geburtstag."
+				},
+				{
+					"label": "Weihnachten",
+					"before": "🎄 →",
+					"after": "",
+					"options": ["Joyeux Noël !", "Joyeux anniversaire !", "Au revoir !"],
+					"answer": "Joyeux Noël !",
+					"explanation": "Noël heißt Weihnachten."
+				},
+				{
+					"label": "Beobachtung",
+					"before": "Familienvergleich →",
+					"after": "",
+					"options": [
+						"Dans cette famille…",
+						"Toutes les familles…",
+						"Toujours tout le monde…"
+					],
+					"answer": "Dans cette famille…",
+					"explanation": "Ein konkretes Beispiel ersetzt kein Urteil über alle."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": true
+	},
+	{
+		"id": "f5-comptine",
+		"stage": "outils",
+		"title": "Un petit poème",
+		"skill": "Ein kleines Gedicht mit Stimme und Bild gestalten",
+		"bindings": ["3", "1.2-aussprache", "5"],
+		"paragraphs": [
+			"Eine comptine ist ein kurzer rhythmischer Kinderreim. Unser eigener kleiner Reim benutzt bekannte Wörter und Wiederholungen. Lies zuerst auf Bedeutung: Wer ist wo? Sprich dann langsam und rhythmisch. Du darfst Gesten und eine Zeichnung ergänzen. Eine natürliche Aufnahme oder ein Lied im Unterricht erweitert diese Vorbereitung.",
+			"Beispiel: Bonjour, le chat. → Du zeichnest eine Katze und begrüßt sie mit einer Handbewegung. Le chat est là. → Du zeigst auf sie. Verändere danach ein bekanntes Wort: chien statt chat. Stimme und Bewegung helfen beim Erinnern; eine Rückmeldung zu Aussprache und Vortrag gibt ein Mensch."
+		],
+		"material": "Bonjour, le chat.\nLe chat est là.\nBonjour, les amis.\nOn joue ici.\nAu revoir, le chat.\nÀ bientôt, les amis.\nUn petit poème original pour lire, dessiner et jouer.",
+		"materialLabel": "Eigenes französisches Übungsmaterial · erfundene Personen und Angaben",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Qui est dans le poème ?",
+			"answer": "un chat et des amis",
+			"wrong": ["un train et un avion", "un professeur et un hôtel"],
+			"explanation": "Der Reim nennt chat und amis.",
+			"optionLanguage": "fr"
+		},
+		"takeaway": "Ein kurzer Reim verbindet Rhythmus und Bedeutung. Passende Bilder und Gesten unterstützen deinen Vortrag.",
+		"practice": [
+			{
+				"prompt": "Le chat est ___.",
+				"answers": ["là"],
+				"feedback": "Là bedeutet da/dort."
+			},
+			{
+				"prompt": "On joue ___.",
+				"answers": ["ici"],
+				"feedback": "Ici bedeutet hier."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Trage vier Zeilen vor. Zeichne Katze und Freunde auf Papier und notiere zwei passende Gesten auf Deutsch.",
+				"model": "Bonjour, le chat. Le chat est là. Bonjour, les amis. On joue ici. Ich winke und zeige auf die Zeichnung.",
+				"criteria": ["Vier Zeilen.", "Eine Zeichnung.", "Passende Gesten."],
+				"language": "de"
+			},
+			"2": {
+				"prompt": "Schreibe einen eigenen Vierzeiler mit chien, amis und ici. Trage ihn einem Partner vor und notiere eine Rückmeldung.",
+				"model": "Bonjour, le chien. Le chien est ici. Bonjour, les amis. On joue ici. Rückmeldung: Ich spreche langsam und deutlich.",
+				"criteria": [
+					"Eigener Text.",
+					"Bekannte Wörter richtig.",
+					"Menschliche Rückmeldung."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "poster",
+			"goals": [
+				{
+					"label": "Bild und Text",
+					"before": "🐈 →",
+					"after": "",
+					"options": ["le chat", "le chien", "le train"],
+					"answer": "le chat",
+					"explanation": "Das Bild steht für chat."
+				},
+				{
+					"label": "Ort zeigen",
+					"before": "→ hier",
+					"after": "on joue",
+					"options": ["ici", "hier", "demain"],
+					"answer": "ici",
+					"explanation": "Ici heißt hier."
+				},
+				{
+					"label": "Abschluss",
+					"before": "letzte Zeile →",
+					"after": "",
+					"options": [
+						"À bientôt, les amis.",
+						"Quel quai ?",
+						"Combien de livres ?"
+					],
+					"answer": "À bientôt, les amis.",
+					"explanation": "Ein Gruß kann den Reim abschließen."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": true
+	},
+	{
+		"id": "f5-lexique",
+		"stage": "outils",
+		"title": "Mon carnet de mots",
+		"skill": "Wortschatz aktiv erinnern und nachschlagen",
+		"bindings": ["4", "1.2-wortschatz"],
+		"paragraphs": [
+			"Ein Vokabelheft sammelt Nomen mit Artikel und Plural, Verben mit Musterform und Wendungen mit Beispiel. Statt nur livre schreibst du un livre – des livres – Je lis un livre. Ein kleines Bild oder eine Wortgruppe wie école, cahier, stylo verknüpft Bedeutungen. Wähle auch wenige Wörter zu deinen eigenen Interessen.",
+			"Beim Üben deckst du die französische Seite ab und rufst sie aus dem Gedächtnis ab. Prüfe danach und wiederhole später. Beispiel: Deutsch „wir schreiben“ → nous écrivons. Bei Unsicherheit schlägst du die Verbübersicht oder den Vokabelanhang im Lehrwerk nach. Die App zeigt nur einen ausgewählten Wortschatz, keinen vollständigen Jahreswortschatz."
+		],
+		"material": "Mon carnet : un livre, des livres, Je lis un livre. Une pomme, des pommes. Écrire : nous écrivons. Mes mots personnels : le tennis, le vélo. Je cache, je cherche, je vérifie.",
+		"materialLabel": "Eigenes französisches Übungsmaterial · erfundene Personen und Angaben",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Une bonne fiche pour un nom contient…",
+			"answer": "l’article et le pluriel",
+			"wrong": ["seulement la traduction allemande", "seulement une couleur"],
+			"explanation": "Artikel und Plural gehören zum französischen Nomen.",
+			"optionLanguage": "fr"
+		},
+		"takeaway": "Aktiv üben heißt: abdecken, erinnern, prüfen, später wiederholen. Nomen lernst du mit Artikel und Plural.",
+		"practice": [
+			{
+				"prompt": "un livre → des ___",
+				"answers": ["livres"],
+				"feedback": "Die Karte hält den Plural fest."
+			},
+			{
+				"prompt": "Écrire, nous : ___",
+				"answers": ["écrivons"],
+				"feedback": "Die Musterform zeigt den veränderten Stamm."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Erstelle drei Vokabeleinträge: ein Nomen mit Artikel und Plural, ein Verb mit nous-Form und eine Wendung.",
+				"model": "Un jeu – des jeux. Prendre – nous prenons. À bientôt ! – Bis bald!",
+				"criteria": [
+					"Ein vollständiges Nomen.",
+					"Eine Musterform.",
+					"Eine Wendung."
+				],
+				"language": "de"
+			},
+			"2": {
+				"prompt": "Plane fünf Minuten Abrufübung für drei eigene Wörter. Beschreibe auf Deutsch Abdecken, Erinnern, Prüfen und späteres Wiederholen. Notiere einen französischen Beispielsatz.",
+				"model": "Ich decke ab, erinnere mich, prüfe und wiederhole später. Fehler übe ich nochmals. Je joue au tennis.",
+				"criteria": [
+					"Aktiver Abruf.",
+					"Überprüfung.",
+					"Spätere Wiederholung und Beispiel."
+				],
+				"language": "de"
+			}
+		},
+		"workshop": {
+			"kind": "sequence",
+			"goals": [
+				{
+					"label": "Nomen lernen",
+					"before": "jeu →",
+					"after": "",
+					"options": ["un jeu – des jeux", "jeu allein", "nur „Spiel“"],
+					"answer": "un jeu – des jeux",
+					"explanation": "Artikel und Plural ergänzen das Wort."
+				},
+				{
+					"label": "Abruf",
+					"before": "1. →",
+					"after": "",
+					"options": ["abdecken", "abschreiben", "farbig ausmalen"],
+					"answer": "abdecken",
+					"explanation": "Abdecken ermöglicht Erinnern ohne Vorlage."
+				},
+				{
+					"label": "Kontrolle",
+					"before": "nach dem Erinnern →",
+					"after": "",
+					"options": ["prüfen", "raten", "vergessen"],
+					"answer": "prüfen",
+					"explanation": "Erst die Kontrolle zeigt, was stimmt."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "f5-accents",
+		"stage": "outils",
+		"title": "Écrire avec les accents",
+		"skill": "Akzente tippen und Satzstellung vergleichen",
+		"bindings": ["4", "1.1-schreiben", "1.2-grammatik"],
+		"paragraphs": [
+			"Akzente gehören zum Wort: école, père, fête, Noël; ç steht etwa in français. A und à haben verschiedene Aufgaben: il a = er hat; à Lyon = in Lyon. Ou heißt oder, où heißt wo. Viele Geräte bieten Zeichen durch langes Drücken; auf anderen nutzt du die Zeichenauswahl oder Tastaturhilfe. Prüfe dein Gerät.",
+			"Französische Aussagesätze stellen hier Subjekt und Verb vor das Objekt: Je lis un livre. Anders als im Deutschen bleibt nach demain das Subjekt vor dem Verb: Demain, je lis un livre. Beispiel: „Morgen lese ich“ wird nicht Demain lis je. Vergleiche bekannte Muster unter Anleitung statt deutsche Wortstellung zu übertragen."
+		],
+		"material": "Il a un livre. Il habite à Lyon. Tu veux du pain ou une pomme ? Tu habites où ? Demain, je lis un livre. École, père, fête, Noël, français : les signes font partie des mots.",
+		"materialLabel": "Eigenes französisches Übungsmaterial · erfundene Personen und Angaben",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "La phrase correcte est…",
+			"answer": "Demain, je lis un livre.",
+			"wrong": ["Demain lis je un livre.", "Demain un livre je."],
+			"explanation": "Nach demain bleiben Subjekt und Verb in dieser Reihenfolge.",
+			"optionLanguage": "fr"
+		},
+		"takeaway": "A ist eine Form von avoir; à ist eine Präposition. Nach demain bleibt das Subjekt vor dem Verb.",
+		"practice": [
+			{
+				"prompt": "Il ___ un livre.",
+				"answers": ["a"],
+				"feedback": "A ohne Akzent ist eine Verbform von avoir."
+			},
+			{
+				"prompt": "Il habite ___ Lyon.",
+				"answers": ["à"],
+				"feedback": "À mit Akzent ist hier eine Präposition."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Tippe école, père, Noël und français mit den richtigen Zeichen. Schreibe einen Satz mit a und einen mit à.",
+				"model": "École, père, Noël, français. Il a un livre. Il habite à Lyon.",
+				"criteria": ["Vier korrekte Wörter.", "A als Verb.", "À vor dem Ort."],
+				"language": "de"
+			},
+			"2": {
+				"prompt": "Vergleiche „Morgen lese ich ein Buch“ mit der französischen Form. Erkläre die Satzstellung auf Deutsch und schreibe einen neuen Satz mit demain.",
+				"model": "Demain, je lis un livre. Französisch behält je vor lis. Demain, nous allons au parc.",
+				"criteria": [
+					"Vergleich erklärt.",
+					"Korrekte französische Reihenfolge.",
+					"Ein eigener Satz."
+				],
+				"language": "de"
+			}
+		},
+		"workshop": {
+			"kind": "sentence",
+			"goals": [
+				{
+					"label": "Verb",
+					"before": "il",
+					"after": "un livre.",
+					"options": ["a", "à", "où"],
+					"answer": "a",
+					"explanation": "A ist die Verbform hat."
+				},
+				{
+					"label": "Ort",
+					"before": "il habite",
+					"after": "Lyon.",
+					"options": ["à", "a", "ou"],
+					"answer": "à",
+					"explanation": "À verbindet hier Ort und Verb."
+				},
+				{
+					"label": "Reihenfolge",
+					"before": "demain,",
+					"after": "un livre.",
+					"options": ["je lis", "lis je", "lire je"],
+					"answer": "je lis",
+					"explanation": "Subjekt vor Verb bleibt erhalten."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "f5-projet",
+		"stage": "outils",
+		"title": "Notre petite découverte",
+		"skill": "Ein kleines Kulturprojekt und Rückblick",
+		"bindings": ["3", "4", "5", "2"],
+		"paragraphs": [
+			"Für ein kleines Projekt wählst du ein altersgemäßes Thema: eine Stadt, ein Fest oder ein aktuelles Kultur- oder Sportereignis. Schaue mit einer erwachsenen Person in eine verlässliche Quelle, prüfe Datum und Titel und notiere wenige sichere Angaben. Ein Beispiel im Lehrtext ist kein Nachweis für ein aktuelles Ereignis.",
+			"Beispiel einer Struktur: titre – lieu – date – une information – source. Schreibe zuerst sehr kurze französische Sätze mit bekannten Wörtern und ergänze auf Papier ein Bild mit Beschriftung. Frage nach Rückmeldung. Notiere danach auf Deutsch einen gelungenen Schritt und einen nächsten Übungsschritt. Bilder fremder Personen veröffentlichst du nicht ungefragt."
+		],
+		"material": "Notre projet : une affiche sur Paris. Titre : Bonjour de Paris ! Paris est sur la Seine. Nous allons voir la tour Eiffel. Pour un événement actuel : vérifier le lieu, la date et la source avec un adulte.",
+		"materialLabel": "Eigenes französisches Übungsmaterial · erfundene Personen und Angaben",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Pour un événement actuel, tu vérifies…",
+			"answer": "la date et la source",
+			"wrong": ["seulement la couleur", "une date inventée"],
+			"explanation": "Ein aktueller Anlass braucht eine geprüfte Quelle und einen Termin.",
+			"optionLanguage": "fr"
+		},
+		"takeaway": "Ein Kulturprojekt verbindet geprüfte Informationen, kurze Sätze und passende Bilder. Reflektiere einen Erfolg und einen nächsten Schritt.",
+		"practice": [
+			{
+				"prompt": "La ville du projet : ___",
+				"answers": ["Paris"],
+				"feedback": "Das Beispielprojekt behandelt Paris."
+			},
+			{
+				"prompt": "Le fleuve : la ___",
+				"answers": ["Seine"],
+				"feedback": "Paris liegt an der Seine."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Gestalte ein kleines Paris-Plakat auf Papier. Schreibe drei französische Sätze und ergänze eine Bildbeschriftung.",
+				"model": "Paris est en France. Paris est sur la Seine. Nous allons voir la tour Eiffel. Bildbeschriftung: la tour Eiffel.",
+				"criteria": [
+					"Drei verständliche Sätze.",
+					"Ein passendes Bild.",
+					"Eine Beschriftung."
+				],
+				"language": "de"
+			},
+			"2": {
+				"prompt": "Wähle mit einer erwachsenen Person einen aktuellen Kultur- oder Sportanlass in Frankreich. Halte Quelle, Datum und Ort fest; schreibe zwei französische Sätze und reflektiere auf Deutsch.",
+				"model": "Meine Vorlage: titre, lieu, date, source. Zwei Sätze schreibe ich erst nach der Recherche. Dieses Muster nennt kein geprüftes aktuelles Ereignis.",
+				"criteria": [
+					"Eine echte Quelle geprüft.",
+					"Zwei passende Sätze.",
+					"Ein gelungener und ein nächster Schritt."
+				],
+				"language": "de"
+			}
+		},
+		"workshop": {
+			"kind": "poster",
+			"goals": [
+				{
+					"label": "Quelle prüfen",
+					"before": "aktueller Anlass →",
+					"after": "",
+					"options": [
+						"Datum und Herausgeber",
+						"nur die Schriftfarbe",
+						"ein geratener Termin"
+					],
+					"answer": "Datum und Herausgeber",
+					"explanation": "Aktualität braucht überprüfbare Angaben."
+				},
+				{
+					"label": "Bild und Text",
+					"before": "Paris →",
+					"after": "",
+					"options": ["la Seine", "le Rhône", "la Garonne"],
+					"answer": "la Seine",
+					"explanation": "Die Beschriftung muss zur Stadt passen."
+				},
+				{
+					"label": "Rückblick",
+					"before": "nach dem Projekt →",
+					"after": "",
+					"options": [
+						"Stärke und nächsten Schritt nennen",
+						"alles als perfekt abhaken",
+						"Rückmeldung ignorieren"
+					],
+					"answer": "Stärke und nächsten Schritt nennen",
+					"explanation": "Reflexion macht den nächsten Übungsschritt konkret."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": false
+	}
+]
