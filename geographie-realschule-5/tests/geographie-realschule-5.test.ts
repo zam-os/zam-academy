@@ -343,7 +343,7 @@ describe("local progress and deep links", () => {
 		).toEqual({ lessonId: "geo-atlas", level: 2 });
 	});
 });
-describe("cell contract and proposal-only history mapping", () => {
+describe("cell contract and approved history mapping", () => {
 	it("pins stable generated identifiers and all 62 lesson source anchors", () => {
 		expect(cell.tile_id).toBe(ZAM_CELL_ID);
 		expect(cell.atoms).toHaveLength(31);
@@ -384,25 +384,35 @@ describe("cell contract and proposal-only history mapping", () => {
 			expect(atom.practice_items[1].sample_solution).toBeTruthy();
 		}
 	});
-	it("classifies every old item once without enabling any transfer or retirement", () => {
-		expect(mapping.approved).toBeNull();
-		expect(mapping.status).toBe("proposal-only");
+	it("classifies every old item once and wires the six approved transfers", () => {
+		expect(mapping.approved).toBe("2026-11-14");
+		expect(mapping.status).toBe("approved");
 		expect(mapping.rows).toHaveLength(16);
 		expect(new Set(mapping.rows.map((r) => r.de_by_id))).toEqual(
 			new Set(oldItems.map((i) => i.id)),
 		);
-		expect(mapping.rows.filter((r) => r.category === "A")).toHaveLength(6);
-		expect(mapping.rows.filter((r) => r.category === "C")).toHaveLength(10);
+		const aRows = mapping.rows.filter((r) => r.category === "A");
+		const cRows = mapping.rows.filter((r) => r.category === "C");
+		expect(aRows).toHaveLength(6);
+		expect(cRows).toHaveLength(10);
 		expect("retired_items" in cell).toBe(false);
-		expect(items.every((i) => !("replaces" in i))).toBe(true);
+		expect(
+			items.filter(
+				(i) => "replaces" in i && Array.isArray(i.replaces) && i.replaces.length > 0,
+			),
+		).toHaveLength(6);
 		for (const row of mapping.rows) {
 			expect(row.reason.length).toBeGreaterThan(50);
-			if (row.academy_slug)
-				expect(items.filter((i) => i.slug === row.academy_slug)).toHaveLength(
-					1,
-				);
-			if (row.category === "A")
-				expect(row.action).toBe("propose-replace-after-approval");
+			if (row.academy_slug) {
+				const matches = items.filter((i) => i.slug === row.academy_slug);
+				expect(matches).toHaveLength(1);
+				expect(matches[0]).toHaveProperty("replaces", [row.de_by_id]);
+			}
+			if (row.category === "A") {
+				expect(row.action).toBe("replace");
+			} else {
+				expect(row.action).toBe("keep-active");
+			}
 		}
 	});
 });

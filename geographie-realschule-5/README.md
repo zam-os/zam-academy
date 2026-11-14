@@ -2,7 +2,7 @@
 
 An offline learning package for the shared Grade 5 LehrplanPLUS curriculum: 31 lessons in seven learning areas, 31 explanatory graphics, 31 classification workshops, writing tasks at two levels, six map/model families and 62 linked ZAM practice items.
 
-This is a **published preview** (`publication.json`: `preview`) at [ZAM Academy](https://academy.zam-os.org/geographie-realschule-5/), registered in the public catalog, atlas and Pages build. A visible notice explains that teacher review and videos remain open. Its cell contains no history replacements or retirements.
+This is a **published preview** (`publication.json`: `preview`) at [ZAM Academy](https://academy.zam-os.org/geographie-realschule-5/), registered in the public catalog, atlas and Pages build. A visible notice explains that teacher review and videos remain open. Its cell (`2026.11.2`) carries Thomas's six approved history transfers without any retirements.
 
 ## Run locally
 
@@ -60,7 +60,7 @@ Progress, drafts and the shared research worksheet remain in this browser's `loc
 
 Cards live only in [cell.json](cell.json). Every item links to a stable lesson fragment. Generated ULIDs, slugs and anchors are pinned in a contract fixture. Each atom binds its real Grade 5 learning area without a track restriction.
 
-[replaces-de-by.json](replaces-de-by.json) proposes 6 A matches and 10 C classifications across exact snapshots of the old Grade 5 and Grade 6 geography cells. Approval is `null`. Neither transfer nor retirement is enabled. The [curriculum and inventory report](../docs/geographie-5-coverage.md) explains neighbouring-grade scope and remaining decisions.
+[replaces-de-by.json](replaces-de-by.json) records Thomas's approved mapping (`approved: "2026-11-14"`): 6 A transfers via `replaces` (three from Grade 5, three from Grade 6 topics now taught in Grade 5) and 10 C cards kept active without retirement across exact snapshots of the old Grade 5 and Grade 6 geography cells. The [curriculum and inventory report](../docs/geographie-5-coverage.md) explains the scope.
 
 ## Verification
 

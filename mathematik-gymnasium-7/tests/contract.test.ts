@@ -270,7 +270,13 @@ describe("ZAM-Zelle und Vorschlags-Mapping M7", () => {
           concept?: string;
           concept_segments?: Array<{ type: string; text?: string; tex?: string }>;
         };
-        expect(item.replaces).toBeUndefined();
+        const expectedReplaces: Record<string, string[]> = {
+          "gl-2-aequivalenz-lineare-gleichung": ["01K4M7Z0000000000000000J03"],
+          "sy-3-abstand-mittelsenkrechte": ["01K4M7W0000000000000000J01"],
+          "wi-3-dreiecksumme-winkelsumme": ["01K4M7W0000000000000000J03"],
+          "ko-3-wsw-ssw-ssw-bedingung": ["01K4M7W0000000000000000J05"],
+        };
+        expect(item.replaces).toEqual(expectedReplaces[item.slug]);
         expect(item.id).toMatch(ULID_RE);
         expect(cardIds.has(item.id)).toBe(false);
         cardIds.add(item.id);
@@ -341,9 +347,9 @@ describe("ZAM-Zelle und Vorschlags-Mapping M7", () => {
     for (const id of atomIds) visit(id);
   });
 
-  it("keeps replaces-de-by.json as unapproved proposal covering all 12 legacy items", () => {
-    expect(replacesDeBy.approved).toBeNull();
-    expect(replacesDeBy.status).toBe("proposal-only");
+  it("records Thomas's approved mapping covering all 12 legacy items", () => {
+    expect(replacesDeBy.approved).toBe("2026-11-14");
+    expect(replacesDeBy.status).toBe("approved");
 
     const allLegacyIds = [
       ...legacyAlg.atoms.flatMap((a) => a.practice_items.map((p) => p.id)),
@@ -366,14 +372,14 @@ describe("ZAM-Zelle und Vorschlags-Mapping M7", () => {
       expect(row.reason.trim().length).toBeGreaterThan(10);
 
       if (row.category === "A" || row.category === "B") {
-        expect(row.action).toBe("propose-replace-after-approval");
+        expect(row.action).toBe("replace");
         expect(row.academy_slug).toBeTruthy();
         expect(cardSlugs.has(row.academy_slug!)).toBe(true);
         expect(proposedTargets.has(row.academy_slug!)).toBe(false);
         proposedTargets.add(row.academy_slug!);
       } else {
         expect(row.category).toBe("C");
-        expect(["keep-active", "propose-retire-after-approval"]).toContain(row.action);
+        expect(row.action).toBe("keep-active");
         expect(row.academy_slug).toBeNull();
       }
     }

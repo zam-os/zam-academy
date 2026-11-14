@@ -15,7 +15,7 @@ Each lesson contains an explanation, a worked comparison or example, a key rule,
 
 Four qualitative visual models let learners explore a flower, bean germination, temperature regulation and a food web. Their goals require changed settings and are not solved initially. Three ecosystem lessons share a cumulative field notebook. Real experiments, microscopy, identification of original specimens, presentations and classroom discussion remain practical activities outside the app. The app checks notebook completeness and dates, not the truth of observations or the quality of a presentation.
 
-The companion [cell.json](cell.json) contains 30 atoms and 60 cards with generated ULIDs, soft prerequisites and lesson anchors. All official bindings are Grade 6, common to the tracks, and `exam_relevant: false`. Cards live only in that file. The [mapping proposal](replaces-de-by.json) inventories 40 existing items: 3 A candidates, 0 B and 37 C keep-active rows. No history transfer or retirement is applied; Thomas's explicit approval would be needed for a future transfer.
+The companion [cell.json](cell.json) (`2026.11.2`) contains 30 atoms and 60 cards with generated ULIDs, soft prerequisites and lesson anchors. All official bindings are Grade 6, common to the tracks, and `exam_relevant: false`. Cards live only in that file. Thomas approved [replaces-de-by.json](replaces-de-by.json) on 2026-11-14 (`approved: "2026-11-14"`, `status: "approved"`): 3 category-A successors declare `replaces` (`b6-bestaeubung-check`, `b6-temperatur-check`, `b6-lebensraum-check`), 0 B and 37 C keep-active rows remain active with no `retired_items`.
 
 ## Run and package
 

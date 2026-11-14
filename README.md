@@ -4,7 +4,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 
 | App | Folder | Live | ZAM cell |
 | --- | --- | --- | --- |
-| French 5 Gymnasium (Bavaria, first foreign language; local draft) | [`franzoesisch-gymnasium-5/`](franzoesisch-gymnasium-5/) | Local offline package | `zam-academy:franzoesisch-gymnasium-5` |
+| French 5 Gymnasium (Bavaria, first foreign language) | [`franzoesisch-gymnasium-5/`](franzoesisch-gymnasium-5/) | https://academy.zam-os.org/franzoesisch-gymnasium-5/ | `zam-academy:franzoesisch-gymnasium-5` |
 | Mathematics 5 Mittelschule (Bavaria) | [`mathematik-mittelschule-5/`](mathematik-mittelschule-5/) | Built by Pages on merge | `zam-academy:mathematik-mittelschule-5` |
 | Mathematics 6 Mittelschule (Bavaria) | [`mathematik-mittelschule-6/`](mathematik-mittelschule-6/) | Built by Pages on merge | `zam-academy:mathematik-mittelschule-6` |
 | Mathematik 7 Mittelschule (LehrplanPLUS Bayern, Regelklasse und M-Zug) | [`mathematik-mittelschule-7/`](mathematik-mittelschule-7/) | https://academy.zam-os.org/mathematik-mittelschule-7/ | `zam-academy:mathematik-mittelschule-7` |

@@ -1,6 +1,6 @@
 # French 5 · Bavarian Gymnasium
 
-A local Academy package for French as the **first foreign language**, based on the [official LehrplanPLUS curriculum](https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/5/franzoesisch/1-fremdsprache), checked on 14 November 2026. Learner guidance is German; examples and practice materials are French.
+A published ZAM Academy learning package for French as the **first foreign language** at [https://academy.zam-os.org/franzoesisch-gymnasium-5/](https://academy.zam-os.org/franzoesisch-gymnasium-5/), based on the [official LehrplanPLUS curriculum](https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/5/franzoesisch/1-fremdsprache), checked on 14 November 2026. Learner guidance is German; examples and practice materials are French.
 
 The package has 40 lessons in eight stages, 120 visual construction goals, 80 constrained answers, 80 production tasks on two levels and 120 ZAM cards. The saved curriculum and `coverage.json` trace all 47 top-level expectations and topic blocks. Grammar sublists remain within their parent expectation. The official page gives no hours per learning area.
 
@@ -16,7 +16,7 @@ Progress and drafts use a package-specific `localStorage` key. A lesson counts a
 
 Only installed French speech voices are accepted. A partner can read every listening transcript if speech is unavailable. Natural listening and audiovisual material, spontaneous conversation, pronunciation feedback, actual drawing, current-event research and a sustained vocabulary programme remain additional work. The coverage matrix marks these expectations `supported` and names the limits. The package neither records nor sends learner speech.
 
-`publication.json` is `local-only`. The app and its cell stay out of the public catalog, atlas registry and Pages list. Teacher review, teacher videos and release authority remain open. No cards are installed in a personal library by using this app.
+Published regularly at [https://academy.zam-os.org/franzoesisch-gymnasium-5/](https://academy.zam-os.org/franzoesisch-gymnasium-5/) and listed in the public catalog, atlas and Pages build. Teacher review and teacher videos remain open. No cards are installed in a personal library simply by using this app in the browser.
 
 ## Develop and verify
 

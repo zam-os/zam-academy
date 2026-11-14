@@ -177,11 +177,20 @@ describe("cell and proposal identities", () => {
 			]);
 			for (const edge of atom.prerequisites)
 				expect(cell.atoms.some((a) => a.id === edge.atom_id)).toBe(true);
+			const expectedReplaces: Record<string, string[]> = {
+				"b6-bestaeubung-check": ["01K4B5P0000000000000000J05"],
+				"b6-temperatur-check": ["01K4B7W0000000000000000J01"],
+				"b6-lebensraum-check": ["01K4B7W0000000000000000J05"],
+			};
 			for (const item of atom.practice_items) {
 				expect(item.source_link).toBe(lessonLink(lesson.id));
 				expect(item.question.length).toBeGreaterThan(10);
 				expect(item.concept.trim()).not.toBe("");
-				expect(item).not.toHaveProperty("replaces");
+				if (expectedReplaces[item.slug]) {
+					expect(item).toHaveProperty("replaces", expectedReplaces[item.slug]);
+				} else {
+					expect(item).not.toHaveProperty("replaces");
+				}
 				if ("fast_check" in item && item.fast_check) {
 					expect(item.fast_check.options).toHaveLength(2);
 					expect(item.fast_check.options[0]).toBe(item.concept);
@@ -192,9 +201,9 @@ describe("cell and proposal identities", () => {
 		for (const source of SOURCES)
 			expect(cell.sources.some((s) => s.uri === source.url)).toBe(true);
 	});
-	it("maps every old snapshot once as an unapplied proposal", () => {
-		expect(mapping.status).toBe("proposal-only");
-		expect(mapping.approved).toBeNull();
+	it("maps every old snapshot once with Thomas's approved transfers", () => {
+		expect(mapping.status).toBe("approved");
+		expect(mapping.approved).toBe("2026-11-14");
 		expect(mapping.rows).toHaveLength(40);
 		expect(new Set(mapping.rows.map((r) => r.de_by_id))).toEqual(
 			new Set(legacy.map((i) => i.id)),
@@ -204,10 +213,10 @@ describe("cell and proposal identities", () => {
 		for (const row of mapping.rows) {
 			expect(row.note.length).toBeGreaterThan(25);
 			if (row.academy_slug) {
-				expect(items.filter((i) => i.slug === row.academy_slug)).toHaveLength(
-					1,
-				);
-				expect(row.action).toBe("propose-replace-after-approval");
+				const matches = items.filter((i) => i.slug === row.academy_slug);
+				expect(matches).toHaveLength(1);
+				expect(matches[0]).toHaveProperty("replaces", [row.de_by_id]);
+				expect(row.action).toBe("replace");
 			} else expect(row.action).toBe("keep-active");
 		}
 	});

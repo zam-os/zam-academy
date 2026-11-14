@@ -62,11 +62,24 @@ const mapping = json("replaces-de-by.json");
 for (const source of mapping.sources)
 	assert.equal(hash(read(source.file)), source.sha256, source.file);
 const cell = json("cell.json");
-assert.equal(mapping.approved, null);
-assert.equal(mapping.status, "proposal-only");
+assert.equal(mapping.approved, "2026-11-14");
+assert.equal(mapping.status, "approved");
 assert.ok(!("retired_items" in cell));
-assert.ok(
-	cell.atoms.every((a) => a.practice_items.every((i) => !("replaces" in i))),
+const items = cell.atoms.flatMap((a) => a.practice_items);
+const approvedRows = mapping.rows.filter((r) => r.category === "A");
+assert.equal(approvedRows.length, 6);
+for (const row of approvedRows) {
+	assert.equal(row.action, "replace", row.de_by_id);
+	const item = items.find((i) => i.slug === row.academy_slug);
+	assert.ok(item, `missing successor ${row.academy_slug}`);
+	assert.deepEqual(item.replaces, [row.de_by_id], row.academy_slug);
+}
+for (const row of mapping.rows.filter((r) => r.category === "C")) {
+	assert.equal(row.action, "keep-active", row.de_by_id);
+}
+assert.equal(
+	items.filter((i) => "replaces" in i).length,
+	approvedRows.length,
 );
 console.log(
 	`${rows} competence rows; 0 not found in fetched curriculum; official and legacy SHA-256 checks pass.`,
