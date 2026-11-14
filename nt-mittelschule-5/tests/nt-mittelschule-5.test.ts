@@ -261,6 +261,8 @@ describe("ZAM cell and public contract", () => {
       }
 
       const [t1, t2] = atom.practice_items;
+      expect("replaces" in t1).toBe(false);
+      expect("replaces" in t2).toBe(false);
       expect(t1.id).toMatch(ULID_RE);
       expect(t2.id).toMatch(ULID_RE);
       expect(allIds.has(t1.id)).toBe(false);

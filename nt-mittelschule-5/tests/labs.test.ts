@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+import { thermometerBau } from "../src/figures/scenes-lb2";
 import {
   fmtDe,
   freshLab,
@@ -145,5 +146,115 @@ describe("nt-mittelschule-5 interactive labs", () => {
         );
       }
     }
+  });
+
+  it("assigns meteorological seasons across all 12 months and tilts the North Pole toward the Sun in June", () => {
+    const northExpected: Record<number, string> = {
+      12: "Winter",
+      1: "Winter",
+      2: "Winter",
+      3: "Frühling",
+      4: "Frühling",
+      5: "Frühling",
+      6: "Sommer",
+      7: "Sommer",
+      8: "Sommer",
+      9: "Herbst",
+      10: "Herbst",
+      11: "Herbst",
+    };
+    const southExpected: Record<number, string> = {
+      12: "Sommer",
+      1: "Sommer",
+      2: "Sommer",
+      3: "Herbst",
+      4: "Herbst",
+      5: "Herbst",
+      6: "Winter",
+      7: "Winter",
+      8: "Winter",
+      9: "Frühling",
+      10: "Frühling",
+      11: "Frühling",
+    };
+    for (let month = 1; month <= 12; month++) {
+      expect(renderLab("seasons", withPatch({ month, hemisphere: "Nord" }))).toContain(
+        northExpected[month],
+      );
+      expect(renderLab("seasons", withPatch({ month, hemisphere: "Süd" }))).toContain(
+        southExpected[month],
+      );
+    }
+
+    const extractEarthTransform = (markup: string) => {
+      const sunM = markup.match(/<circle class="sun" cx="([0-9.]+)" cy="([0-9.]+)"/);
+      const gM = markup.match(/<g transform="translate\(([0-9.]+),([0-9.]+)\)">/);
+      expect(sunM).toBeTruthy();
+      expect(gM).toBeTruthy();
+      return { sunX: Number(sunM![1]), earthX: Number(gM![1]) };
+    };
+    const june = extractEarthTransform(renderLab("seasons", withPatch({ month: 6 })));
+    const dec = extractEarthTransform(renderLab("seasons", withPatch({ month: 12 })));
+    // North Pole leans toward +x (top-right): June earth sits left of Sun, Dec earth right of Sun
+    expect(june.earthX).toBeLessThan(june.sunX);
+    expect(dec.earthX).toBeGreaterThan(dec.sunX);
+  });
+
+  it("keeps arm lever bones on the flexor side with geometrically matching angle and muscle widths", () => {
+    const inspectArm = (armAngle: number) => {
+      const svgMarkup = renderLab("armLever", withPatch({ armAngle }));
+      const elbowLine = svgMarkup.match(
+        /<line x1="168" y1="122" x2="([0-9.]+)" y2="([0-9.]+)"/,
+      );
+      const bicep = svgMarkup.match(
+        /<ellipse cx="184" cy="74" rx="([0-9.]+)"/,
+      );
+      const tricep = svgMarkup.match(
+        /<ellipse cx="152" cy="74" rx="([0-9.]+)"/,
+      );
+      expect(elbowLine).toBeTruthy();
+      expect(bicep).toBeTruthy();
+      expect(tricep).toBeTruthy();
+      const handX = Number(elbowLine![1]);
+      const handY = Number(elbowLine![2]);
+      const vx = handX - 168;
+      const vy = handY - 122;
+      const deg = (Math.acos(-vy / Math.hypot(vx, vy)) * 180) / Math.PI;
+      return {
+        handX,
+        deg,
+        bicepRx: Number(bicep![1]),
+        tricepRx: Number(tricep![1]),
+      };
+    };
+
+    const flexed = inspectArm(45);
+    const rightAngle = inspectArm(90);
+    const extended = inspectArm(170);
+    expect(flexed.deg).toBeCloseTo(45, 0);
+    expect(rightAngle.deg).toBeCloseTo(90, 0);
+    expect(extended.deg).toBeCloseTo(170, 0);
+    expect(flexed.handX).toBeGreaterThan(168);
+    expect(rightAngle.handX).toBeGreaterThan(168);
+    expect(extended.handX).toBeGreaterThan(168);
+    expect(flexed.bicepRx).toBeGreaterThan(extended.bicepRx);
+    expect(extended.tricepRx).toBeGreaterThan(flexed.tricepRx);
+  });
+
+  it("draws the Celsius figure thermometer on a strictly linear 0–100 °C scale", () => {
+    const fig = thermometerBau();
+    const yOfLabel = (prefix: string) => {
+      const m = fig.match(
+        new RegExp(
+          `<line x1="76" y1="([0-9.]+)"[^>]*/>\\s*<text[^>]*>${prefix}`,
+        ),
+      );
+      expect(m).toBeTruthy();
+      return Number(m![1]);
+    };
+    const y100 = yOfLabel("100 °C");
+    const y20 = yOfLabel("20 °C");
+    const y0 = yOfLabel("0 °C");
+    expect((y0 - y20) / (y0 - y100)).toBeCloseTo(0.2, 2);
   });
 });

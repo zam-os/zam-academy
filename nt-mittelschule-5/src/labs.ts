@@ -79,15 +79,17 @@ function seasonMetrics(s: LabState) {
   const effDecl = hemiSign * decl;
   const sunAngle = 42 + effDecl;
   const daylightHours = 12 + (effDecl / 23.5) * 4;
-  let seasonLabel = "Frühling / Herbst (Übergang)";
-  if (sunAngle >= 58) seasonLabel = "Sommer";
-  else if (sunAngle <= 26) seasonLabel = "Winter";
-  else if (
-    (s.hemisphere === "Nord" && s.month >= 3 && s.month <= 5) ||
-    (s.hemisphere === "Süd" && s.month >= 9 && s.month <= 11)
-  )
-    seasonLabel = "Frühling";
-  else seasonLabel = "Herbst";
+  const northMonthIdx = s.month % 12; // 0 = Dez, 1 = Jan, ..., 11 = Nov
+  const effectiveIdx =
+    s.hemisphere === "Nord" ? northMonthIdx : (northMonthIdx + 6) % 12;
+  const seasonLabel =
+    effectiveIdx <= 2
+      ? "Winter"
+      : effectiveIdx <= 5
+        ? "Frühling"
+        : effectiveIdx <= 8
+          ? "Sommer"
+          : "Herbst";
   return { decl, sunAngle, daylightHours, seasonLabel };
 }
 
@@ -191,41 +193,59 @@ export function labGoals(kind: LabKind, s: LabState): LabGoal[] {
 
 function drawSeasons(s: LabState): string {
   const m = seasonMetrics(s);
-  const cx = 310;
+  const cx = 350;
   const cy = 105;
-  const orbitR = 72;
-  const theta = ((s.month - 3) / 12) * Math.PI * 2;
-  const ex = cx + orbitR * Math.cos(theta);
-  const ey = cy - 42 * Math.sin(theta);
+  const orbitR = 96;
+  const orbitRy = 38;
+  // Juni links (phi = PI) -> nach rechts oben geneigter Nordpol zeigt zur Sonne;
+  // Dezember rechts (phi = 0) -> derselbe Nordpol zeigt von der Sonne weg.
+  const phi = ((s.month - 12) / 12) * Math.PI * 2;
+  const ex = cx + orbitR * Math.cos(phi);
+  const ey = cy + orbitRy * Math.sin(phi);
+  const dx = ex - cx;
+  const dy = ey - cy;
+  const dist = Math.hypot(dx, dy) || 1;
+  const ux = dx / dist;
+  const uy = dy / dist;
+  const px = -uy;
+  const py = ux;
+  const rays = [-10, -3.5, 3.5, 10]
+    .map(
+      (k) =>
+        `<line x1="${f1(cx + ux * 26 + px * k)}" y1="${f1(cy + uy * 26 + py * k)}" x2="${f1(ex - ux * 18 + px * k * 0.7)}" y2="${f1(ey - uy * 18 + py * k * 0.7)}" stroke="var(--f-orange)" stroke-width="1.4" stroke-dasharray="3 3"/>`,
+    )
+    .join("");
+  const sunAngleToEarth = Math.atan2(-uy, -ux);
+  const dayR = 14;
+  const dsx = dayR * Math.cos(sunAngleToEarth - Math.PI / 2);
+  const dsy = dayR * Math.sin(sunAngleToEarth - Math.PI / 2);
+  const dex = dayR * Math.cos(sunAngleToEarth + Math.PI / 2);
+  const dey = dayR * Math.sin(sunAngleToEarth + Math.PI / 2);
   const tilt = 23.5;
   const axDx = 24 * Math.sin((tilt * Math.PI) / 180);
   const axDy = -24 * Math.cos((tilt * Math.PI) / 180);
-  const rays = [-18, -6, 6, 18]
-    .map(
-      (dy) =>
-        `<line x1="${f1(cx + 28)}" y1="${f1(cy + dy)}" x2="${f1(ex - 20)}" y2="${f1(ey + dy * 0.45)}" stroke="var(--f-orange)" stroke-width="1.4" stroke-dasharray="3 3"/>`,
-    )
-    .join("");
   return svg(
     520,
     210,
     `Erdumlauf und Erdachse im ${MONTHS[s.month - 1]}`,
     `<rect class="space" x="0" y="0" width="520" height="210" rx="12"/>
-     <ellipse cx="${cx}" cy="${cy}" rx="${orbitR}" ry="42" fill="none" stroke="#9ec3ea" stroke-width="1.5" stroke-dasharray="5 5"/>
+     <ellipse cx="${cx}" cy="${cy}" rx="${orbitR}" ry="${orbitRy}" fill="none" stroke="#9ec3ea" stroke-width="1.5" stroke-dasharray="5 5"/>
      <circle class="sun" cx="${cx}" cy="${cy}" r="22"/>
      ${label(cx, cy + 4, "Sonne", "lbl small", "middle")}
      ${rays}
      <g transform="translate(${f1(ex)},${f1(ey)})">
-       <circle cx="0" cy="0" r="14" fill="var(--f-river)" stroke="#fff" stroke-width="1.5"/>
+       <circle cx="0" cy="0" r="${dayR}" fill="#1b2d4f" stroke="#fff" stroke-width="1.5"/>
+       <path d="M ${f1(dsx)} ${f1(dsy)} A ${dayR} ${dayR} 0 0 1 ${f1(dex)} ${f1(dey)} Z" fill="#67b3f5"/>
+       <circle cx="0" cy="0" r="${dayR}" fill="none" stroke="#fff" stroke-width="1.5"/>
        <line x1="${f1(-axDx)}" y1="${f1(-axDy)}" x2="${f1(axDx)}" y2="${f1(axDy)}" stroke="#ffe27a" stroke-width="2.5"/>
        <circle cx="${f1(axDx * 0.45)}" cy="${f1(axDy * 0.45)}" r="3" fill="${s.hemisphere === "Nord" ? "#ff5b5b" : "#9be8b1"}"/>
        <circle cx="${f1(-axDx * 0.45)}" cy="${f1(-axDy * 0.45)}" r="3" fill="${s.hemisphere === "Süd" ? "#ff5b5b" : "#9be8b1"}"/>
-       ${label(axDx + 8, axDy - 2, "N", "lbl small on-dark", "start")}
+       ${label(axDx + 7, axDy - 1, "N", "lbl small on-dark", "start")}
      </g>
-     ${label(24, 30, `Monat: ${MONTHS[s.month - 1]} · ${s.hemisphere}halbkugel`, "lbl strong on-dark", "start")}
-     ${label(24, 52, `${m.seasonLabel}`, "lbl small on-dark", "start")}
-     ${label(24, 174, `Mittagssonne: ${fmtDe(m.sunAngle, 1)}°`, "lbl small on-dark", "start")}
-     ${label(24, 194, `Tageslicht: etwa ${fmtDe(m.daylightHours, 1)} h`, "lbl small on-dark", "start")}`,
+     ${label(22, 30, `Monat: ${MONTHS[s.month - 1]} · ${s.hemisphere}halbkugel`, "lbl strong on-dark", "start")}
+     ${label(22, 52, `${m.seasonLabel}`, "lbl small on-dark", "start")}
+     ${label(22, 174, `Mittagssonne: ${fmtDe(m.sunAngle, 1)}°`, "lbl small on-dark", "start")}
+     ${label(22, 194, `Tageslicht: etwa ${fmtDe(m.daylightHours, 1)} h`, "lbl small on-dark", "start")}`,
   );
 }
 
@@ -364,34 +384,71 @@ function drawTorso(s: LabState): string {
 }
 
 function drawArmLever(s: LabState): string {
-  const rad = ((180 - s.armAngle) * Math.PI) / 180;
-  const elbow = { x: 160, y: 152 };
-  const shoulder = { x: 160, y: 36 };
+  const elbow = { x: 168, y: 122 };
+  const shoulder = { x: 168, y: 28 };
+  const thetaRad = (s.armAngle * Math.PI) / 180;
+  // Vorderseite (Bizeps) rechts (+x), Rückseite (Trizeps) links (-x);
+  // Unterarm schwenkt ausschließlich über die Beugeseite zwischen 40° und 170°.
+  const vx = Math.sin(thetaRad);
+  const vy = -Math.cos(thetaRad);
   const hand = {
-    x: elbow.x + 126 * Math.cos(rad),
-    y: elbow.y - 126 * Math.sin(rad),
+    x: elbow.x + 96 * vx,
+    y: elbow.y + 96 * vy,
   };
+  const measuredDeg =
+    (Math.acos(Math.max(-1, Math.min(1, -vy))) * 180) / Math.PI;
   const flex = (170 - s.armAngle) / 130;
-  const bicepW = 10 + flex * 12;
-  const tricepW = 18 - flex * 9;
+  const bicepRx = 8 + flex * 7;
+  const bicepRy = 33 - flex * 8;
+  const tricepRx = 7.5 + (1 - flex) * 7.5;
+  const tricepRy = 25 + flex * 8;
+  const bicepAttach = { x: elbow.x + 28 * vx, y: elbow.y + 28 * vy };
+  const forearmMid = { x: elbow.x + 58 * vx, y: elbow.y + 58 * vy };
+  const arcR = 22;
+  const arcStart = { x: elbow.x, y: elbow.y - arcR };
+  const arcEnd = { x: elbow.x + arcR * vx, y: elbow.y + arcR * vy };
+  const roleNote =
+    flex > 0.55
+      ? "Bizeps spannt an (Arm beugen)\nTrizeps bleibt locker"
+      : flex < 0.25
+        ? "Trizeps zieht straff (Arm strecken)\nBizeps entspannt"
+        : "Bizeps vorn (Beuger)\nTrizeps hinten (Strecker)";
   const labelsSvg = s.showTendons
-    ? `${label(112, 92, "Bizeps (Beuger)", "lbl small", "end")}
-       ${label(210, 92, "Trizeps (Strecker)", "lbl small", "start")}
-       ${label(160, 178, "Scharniergelenk", "lbl small", "middle")}
-       ${label(hand.x + 10, hand.y + 4, "Unterarm (Elle/Speiche)", "lbl small", "start")}`
-    : label(370, 100, `Gelenkwinkel: ${fmtDe(s.armAngle)}°`, "lbl strong", "middle");
+    ? `<line x1="130" y1="44" x2="162" y2="44" stroke="var(--f-ink)" stroke-width="1" opacity="0.65"/>
+       ${label(126, 48, "Oberarmknochen", "lbl small", "end")}
+       <line x1="130" y1="78" x2="${f1(152 - tricepRx)}" y2="78" stroke="var(--f-ink)" stroke-width="1" opacity="0.65"/>
+       ${label(126, 82, "Trizeps (Strecker)", "lbl small", "end")}
+       <line x1="130" y1="138" x2="161" y2="124" stroke="var(--f-ink)" stroke-width="1" opacity="0.65"/>
+       ${label(126, 142, "Scharniergelenk", "lbl small", "end")}
+       <line x1="${f1(184 + bicepRx)}" y1="78" x2="302" y2="78" stroke="var(--f-ink)" stroke-width="1" opacity="0.65"/>
+       ${label(306, 82, "Bizeps (Beuger)", "lbl small", "start")}
+       <line x1="${f1(bicepAttach.x)}" y1="${f1(bicepAttach.y)}" x2="302" y2="122" stroke="var(--f-ink)" stroke-width="1" opacity="0.65"/>
+       ${label(306, 126, "Sehnen (Zugseile)", "lbl small", "start")}
+       <line x1="${f1(forearmMid.x)}" y1="${f1(forearmMid.y)}" x2="302" y2="166" stroke="var(--f-ink)" stroke-width="1" opacity="0.65"/>
+       ${label(306, 170, "Unterarm (Elle/Speiche)", "lbl small", "start")}
+       ${label(392, 42, `Gelenkwinkel: ${fmtDe(measuredDeg)}°`, "lbl strong", "middle")}`
+    : `${label(390, 88, `Gelenkwinkel: ${fmtDe(measuredDeg)}°`, "lbl strong", "middle")}
+       ${labels(390, 118, roleNote, "lbl small muted", "middle", 18)}`;
   return svg(
     500,
-    200,
-    `Armmodell im Winkel von ${fmtDe(s.armAngle)} Grad`,
-    `<rect class="panel-bg" x="8" y="8" width="484" height="184" rx="12"/>
+    236,
+    `Armmodell im Winkel von ${fmtDe(measuredDeg)} Grad`,
+    `<rect class="panel-bg" x="8" y="8" width="484" height="220" rx="12"/>
+     <path d="M ${f1(arcStart.x)} ${f1(arcStart.y)} A ${arcR} ${arcR} 0 0 1 ${f1(arcEnd.x)} ${f1(arcEnd.y)}" fill="none" stroke="var(--f-orange)" stroke-width="2" stroke-dasharray="3 2"/>
      <line x1="${shoulder.x}" y1="${shoulder.y}" x2="${elbow.x}" y2="${elbow.y}" stroke="#e7dfd0" stroke-width="14" stroke-linecap="round"/>
      <line x1="${shoulder.x}" y1="${shoulder.y}" x2="${elbow.x}" y2="${elbow.y}" stroke="var(--f-ink)" stroke-width="2"/>
      <line x1="${elbow.x}" y1="${elbow.y}" x2="${f1(hand.x)}" y2="${f1(hand.y)}" stroke="#e7dfd0" stroke-width="12" stroke-linecap="round"/>
      <line x1="${elbow.x}" y1="${elbow.y}" x2="${f1(hand.x)}" y2="${f1(hand.y)}" stroke="var(--f-ink)" stroke-width="2"/>
-     <ellipse cx="144" cy="96" rx="${f1(bicepW)}" ry="34" fill="var(--f-red)" opacity="${f1(0.55 + flex * 0.45)}"/>
-     <ellipse cx="176" cy="96" rx="${f1(tricepW)}" ry="34" fill="var(--f-blue)" opacity="${f1(0.95 - flex * 0.4)}"/>
-     ${s.showTendons ? `<line x1="144" y1="128" x2="${f1(elbow.x + 28 * Math.cos(rad))}" y2="${f1(elbow.y - 28 * Math.sin(rad))}" stroke="#fff" stroke-width="4"/><line x1="174" y1="128" x2="${elbow.x}" y2="${elbow.y + 8}" stroke="#fff" stroke-width="4"/>` : ""}
+     <line x1="${shoulder.x + 6}" y1="${shoulder.y + 8}" x2="184" y2="${f1(74 - bicepRy + 4)}" stroke="var(--f-ink)" stroke-width="5" stroke-linecap="round"/>
+     <line x1="${shoulder.x + 6}" y1="${shoulder.y + 8}" x2="184" y2="${f1(74 - bicepRy + 4)}" stroke="#fbf7ef" stroke-width="2.8" stroke-linecap="round"/>
+     <line x1="184" y1="${f1(74 + bicepRy - 4)}" x2="${f1(bicepAttach.x)}" y2="${f1(bicepAttach.y)}" stroke="var(--f-ink)" stroke-width="5" stroke-linecap="round"/>
+     <line x1="184" y1="${f1(74 + bicepRy - 4)}" x2="${f1(bicepAttach.x)}" y2="${f1(bicepAttach.y)}" stroke="#fbf7ef" stroke-width="2.8" stroke-linecap="round"/>
+     <ellipse cx="184" cy="74" rx="${f1(bicepRx)}" ry="${f1(bicepRy)}" fill="var(--f-red)" opacity="${f1(0.55 + flex * 0.45)}"/>
+     <line x1="${shoulder.x - 6}" y1="${shoulder.y + 8}" x2="152" y2="${f1(74 - tricepRy + 4)}" stroke="var(--f-ink)" stroke-width="5" stroke-linecap="round"/>
+     <line x1="${shoulder.x - 6}" y1="${shoulder.y + 8}" x2="152" y2="${f1(74 - tricepRy + 4)}" stroke="#fbf7ef" stroke-width="2.8" stroke-linecap="round"/>
+     <line x1="152" y1="${f1(74 + tricepRy - 4)}" x2="${elbow.x - 9}" y2="${elbow.y + 5}" stroke="var(--f-ink)" stroke-width="5" stroke-linecap="round"/>
+     <line x1="152" y1="${f1(74 + tricepRy - 4)}" x2="${elbow.x - 9}" y2="${elbow.y + 5}" stroke="#fbf7ef" stroke-width="2.8" stroke-linecap="round"/>
+     <ellipse cx="152" cy="74" rx="${f1(tricepRx)}" ry="${f1(tricepRy)}" fill="var(--f-blue)" opacity="${f1(0.95 - flex * 0.4)}"/>
      <circle cx="${elbow.x}" cy="${elbow.y}" r="9" fill="var(--f-orange)" stroke="var(--f-ink)" stroke-width="2"/>
      <circle cx="${f1(hand.x)}" cy="${f1(hand.y)}" r="8" fill="var(--f-skin)" stroke="var(--f-ink)"/>
      ${labelsSvg}`,

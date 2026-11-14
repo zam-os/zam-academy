@@ -46,23 +46,31 @@ export function sonneEnergie(): string {
 }
 
 export function thermometerBau(): string {
+  const yOf = (tempC: number) => 136 - tempC * 0.95;
+  const y0 = yOf(0);
+  const y20 = yOf(20);
+  const y100 = yOf(100);
+  const subTicks = [40, 60, 80]
+    .map((t) => `<line x1="76" y1="${yOf(t)}" x2="84" y2="${yOf(t)}" stroke="var(--f-ink)" stroke-width="1.2" opacity="0.6"/>`)
+    .join("");
   return svg(
     580,
-    185,
-    "Flüssigkeitsthermometer und einheitliche Celsiusskala",
-    `${panel(14, 14, 270, 158, "panel-bg")}
-     <rect x="52" y="26" width="20" height="114" rx="10" fill="var(--f-white)" stroke="var(--f-ink)" stroke-width="2"/>
-     <circle cx="62" cy="144" r="14" fill="var(--f-red)" stroke="var(--f-ink)" stroke-width="2"/>
-     <rect x="58" y="64" width="8" height="78" fill="var(--f-red)"/>
-     <line x1="76" y1="44" x2="90" y2="44" stroke="var(--f-ink)" stroke-width="2"/>
-     ${label(96, 48, "100 °C: Wasser siedet", "lbl small", "start")}
-     <line x1="76" y1="90" x2="90" y2="90" stroke="var(--f-ink)" stroke-width="2"/>
-     ${label(96, 94, "20 °C: Zimmertemperatur", "lbl small", "start")}
-     <line x1="76" y1="126" x2="90" y2="126" stroke="var(--f-ink)" stroke-width="2"/>
-     ${label(96, 130, "0 °C: Wasser gefriert", "lbl small", "start")}
-     ${panel(300, 14, 266, 158, "panel-bg")}
-     ${label(433, 40, "Unterschiedliche Messgeräte", "lbl strong", "middle")}
-     ${labels(433, 68, "Flüssigkeitsthermometer:\nZimmertemperatur & Wasser\nFieberthermometer:\nfeine Skala (35 °C bis 42 °C)\nBimetallthermometer:\nBackofen & Heizung", "lbl small", "middle", 18)}`,
+    194,
+    "Flüssigkeitsthermometer mit linearer Celsiusskala",
+    `${panel(14, 14, 270, 166, "panel-bg")}
+     <rect x="52" y="26" width="20" height="122" rx="10" fill="var(--f-white)" stroke="var(--f-ink)" stroke-width="2"/>
+     <circle cx="62" cy="154" r="14" fill="var(--f-red)" stroke="var(--f-ink)" stroke-width="2"/>
+     <rect x="58" y="${y20}" width="8" height="${154 - y20}" fill="var(--f-red)"/>
+     <line x1="76" y1="${y100}" x2="90" y2="${y100}" stroke="var(--f-ink)" stroke-width="2"/>
+     ${label(96, y100 + 4, "100 °C: Wasser siedet", "lbl small", "start")}
+     ${subTicks}
+     <line x1="76" y1="${y20}" x2="90" y2="${y20}" stroke="var(--f-ink)" stroke-width="2"/>
+     ${label(96, y20 + 4, "20 °C: Zimmertemperatur", "lbl small", "start")}
+     <line x1="76" y1="${y0}" x2="90" y2="${y0}" stroke="var(--f-ink)" stroke-width="2"/>
+     ${label(96, y0 + 4, "0 °C: Wasser gefriert", "lbl small", "start")}
+     ${panel(300, 14, 266, 166, "panel-bg")}
+     ${label(433, 42, "Unterschiedliche Messgeräte", "lbl strong", "middle")}
+     ${labels(433, 72, "Flüssigkeitsthermometer:\nZimmertemperatur & Wasser\nFieberthermometer:\nfeine Skala (35 °C bis 42 °C)\nBimetallthermometer:\nBackofen & Heizung", "lbl small", "middle", 18)}`,
   );
 }
 
@@ -129,26 +137,27 @@ export function hautAufbau(): string {
 
 export function hauttypenUv(): string {
   const types = [
-    ["Typ I–II", "Sehr helle Haut,\nhäufig Sonnenbrand", "#f8d8c0", "Schutz: ~10 min"],
-    ["Typ III", "Mittelhelle Haut,\nbräunt langsam", "#e5b58c", "Schutz: ~20 min"],
-    ["Typ IV", "Bräunliche Haut,\nbräunt gut", "#c48a5b", "Schutz: ~30 min"],
-    ["Typ V–VI", "Dunkle Haut, hoher\nEigenschutz", "#7c4b2d", "Auch Schutz nötig"],
+    ["Typ I", "Sehr hell,\nbräunt nie", "#f8d8c0", "Rötung*: ~5–10 min"],
+    ["Typ II", "Helle Haut,\nbräunt kaum", "#f0c5a0", "Rötung*: ~10–20 min"],
+    ["Typ III", "Mittelhell,\nbräunt langsam", "#dfaf84", "Rötung*: ~20–30 min"],
+    ["Typ IV", "Hellbraun–oliv,\nbräunt gut", "#c48a5b", "Rötung*: >30 min"],
+    ["Typ V–VI", "Dunkelbraun,\nsehr pigmentreich", "#7c4b2d", "Trotzdem UV-Schutz"],
   ];
   return svg(
-    600,
-    192,
+    640,
+    210,
     "Übersicht gängiger Hauttypen und wichtiger Regeln zum UV-Schutz",
     `${types
       .map(([title, desc, fill, time], i) => {
-        const x = 14 + i * 146;
-        return `${panel(x, 16, 134, 116, "panel-bg")}
-          <rect x="${x + 12}" y="26" width="110" height="24" rx="6" fill="${fill}" stroke="var(--f-ink)"/>
-          ${label(x + 67, 43, title, "lbl small strong", "middle")}
-          ${labels(x + 67, 72, desc, "lbl tiny", "middle", 15)}
-          ${label(x + 67, 118, time, "lbl tiny muted", "middle")}`;
+        const x = 12 + i * 124;
+        return `${panel(x, 16, 118, 120, "panel-bg")}
+          <rect x="${x + 10}" y="26" width="98" height="24" rx="6" fill="${fill}" stroke="var(--f-ink)"/>
+          ${label(x + 59, 43, title, `lbl small strong${i === 4 ? " on-dark" : ""}`, "middle")}
+          ${labels(x + 59, 72, desc, "lbl tiny", "middle", 15)}
+          ${label(x + 59, 120, time, "lbl tiny muted", "middle")}`;
       })
       .join("")}
-     ${labels(300, 156, "Regel: Mittagssonne meiden · Schatten suchen\nKleidung mit UPF 50+ und Sonnencreme (LSF) nutzen.", "lbl small strong", "middle", 16)}`,
+     ${labels(320, 158, "Eigenschutzzeit bis zur Rötung (*Richtwert bei starker Mittagssonne, je nach UV-Index).\nLSF verlängert nur rechnerisch – nie ausreizen! · 11–15 Uhr Schatten · Kleidung UPF 50+.", "lbl small strong", "middle", 17)}`,
   );
 }
 
