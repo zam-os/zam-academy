@@ -23,23 +23,23 @@ Grade 6 therefore introduces genes only as parts of hereditary material and avoi
 
 Biology 8 and Biology 10 Academy packages retain their published identities and content. The Grade 6 lessons neither revise those packages nor move their histories. The Biology 10 shell was copied and adapted with its explanatory comments, quiz/workshop handlers, self-assessment, local persistence, source view and offline build. Its older-grade models and optional content were replaced by Grade 6 content and four qualitative models.
 
-## Existing-card proposal
+## Approved history migration (`2026-11-14`)
 
-The byte-exact LF snapshots come from `zam-os/zam`; [replaces-de-by.json](../biologie-realschule-6/replaces-de-by.json) records the source commit and a SHA-256 for every file. Forty old items are inventoried once, including neighbouring-grade topics that now fall in Grade 6.
+The byte-exact LF snapshots come from `zam-os/zam`; [replaces-de-by.json](../biologie-realschule-6/replaces-de-by.json) records the source commit, a SHA-256 for every file, `status: "approved"`, and `approved: "2026-11-14"`. Forty old items are inventoried once, including neighbouring-grade topics that now fall in Grade 6.
 
-| Legacy cell | Items | Proposed handling |
+| Legacy cell | Items | Approved handling |
 | --- | --- | --- |
 | Grade 5 human anatomy and reproduction | 8 | C, keep active: anatomy is outside the retrieval scope; combined reproduction prompts are not retained whole |
-| Grade 5 flower structure and seeds | 8 | One A candidate: the pollination definition; seven C keep-active rows. The stempel history already belongs to the approved Grade 5 successor. |
+| Grade 5 flower structure and seeds | 8 | One A row (`replace` -> `b6-bestaeubung-check`): the pollination definition; seven C keep-active rows. The stempel history already belongs to the approved Grade 5 successor. |
 | Grade 6 mammals, dogs and cats | 8 | C, keep active: specialized/composite retrievals are not retained as exact successors |
 | Grade 6 birds, fish, amphibians and reptiles | 8 | C, keep active: detailed old retrievals differ from the new atomic questions |
-| Grade 7 vertebrates and ecology | 8 | Two A candidates: the two endothermic classes and the ecosystem components; six C keep-active rows |
+| Grade 7 vertebrates and ecology | 8 | Two A rows (`replace` -> `b6-temperatur-check`, `b6-lebensraum-check`): the two endothermic classes and the ecosystem components; six C keep-active rows |
 
 The previous stempel candidate (`01K4B5P0000000000000000J03`) is explicitly excluded from a Grade 6 transfer: the approved Grade 5 package already transfers it to `b5-bluete-vielfalt-check`.
 
-Total: **3 A candidates, 0 B, 37 C**. This is a proposal (`approved: null`). The cell contains no `replaces` or `retired_items`. Membership of the neighbouring-grade inventory in a future migration remains for Thomas to decide, alongside the three candidate matches; no package may claim an already transferred history twice.
+Total: **3 A transfers via `replaces`, 0 B, 37 C `keep-active`**, approved on `2026-11-14` (`2026.11.2`). The preview cell declares three explicit `replaces` mappings and no `retired_items`.
 
-`ZAM_CORE=<published 0.54.0 file URL> node biologie-realschule-6/scripts/validate-cell.mjs` installs all five old cells into a disposable library, creates 40 cards and 80 recall reviews, and compares every stored card field and review before and after repeated new-cell installation. The result was unchanged. Explicit enrolment creates 60 fresh cards with zero repetitions and stability; repeated install/enrolment is idempotent. No personal library is opened.
+`ZAM_CORE=<published 0.54.0 file URL> node biologie-realschule-6/scripts/validate-cell.mjs` installs all five old cells into a disposable library, creates 40 cards and 80 recall reviews, and verifies on repeated installation that the 3 A histories (6 reviews) transfer cleanly onto their `replaces` targets, the 37 C cards stay active untouched, the 57 new cards enrol fresh (97 total cards), and a collision where both old and new cards already have reviews is refused. No personal library is opened.
 
 ## Source links
 

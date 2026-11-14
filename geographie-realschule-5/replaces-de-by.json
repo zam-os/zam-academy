@@ -2,9 +2,9 @@
 	"schema": 1,
 	"source_repository": "zam-os/zam",
 	"source_commit": "e6a235f75fe87b9d57af38bd61011027b891492c",
-	"status": "proposal-only",
-	"approved": null,
-	"source": "Proposal authored on 2026-11-13. No history transfer or retirement is authorised by the build request. Grade 6 scope is explicitly pending Thomas’s decision.",
+	"status": "approved",
+	"approved": "2026-11-14",
+	"source": "Approved by Thomas on 2026-11-14: 6 A transfers via replaces (including 3 neighbouring Grade 6 items taught in current Grade 5), 0 B, all 10 C rows kept active without retirement.",
 	"sources": [
 		{
 			"file": "tests/fixtures/de-by-realschule-5-geographie-erde-gradnetz-orientierung-kvt.json",
@@ -25,7 +25,7 @@
 			"de_by_id": "01K4G5E0000000000000000J01",
 			"category": "A",
 			"academy_slug": "geo5-gradnetz-check",
-			"action": "propose-replace-after-approval",
+			"action": "replace",
 			"reason": "Same single retrieval: the equator is the 0-degree latitude circle separating the hemispheres. The old answer adds circumference, but the prompt does not ask for it."
 		},
 		{
@@ -41,7 +41,7 @@
 			"de_by_id": "01K4G5E0000000000000000J03",
 			"category": "A",
 			"academy_slug": "geo5-massstab-check",
-			"action": "propose-replace-after-approval",
+			"action": "replace",
 			"reason": "Same single retrieval: 1 cm at 1:50 000 corresponds to 500 m."
 		},
 		{
@@ -57,7 +57,7 @@
 			"de_by_id": "01K4G5E0000000000000000J05",
 			"category": "A",
 			"academy_slug": "geo5-erdbewegungen-check",
-			"action": "propose-replace-after-approval",
+			"action": "replace",
 			"reason": "Same single retrieval: approximately 23.5 degrees relative to the perpendicular to the orbital plane."
 		},
 		{
@@ -65,7 +65,7 @@
 			"de_by_id": "01K4G5E0000000000000000J06",
 			"category": "C",
 			"academy_slug": null,
-			"action": "propose-retire-after-approval",
+			"action": "keep-active",
 			"reason": "The compound answer joins rotation, orbit, seasons and fixed calendar dates. New lessons separate mechanisms and avoid treating solstice and equinox dates as invariant; no unchanged whole-answer successor."
 		},
 		{
@@ -89,7 +89,7 @@
 			"de_by_id": "01K4G6D0000000000000000J01",
 			"category": "A",
 			"academy_slug": "geo5-grosslandschaften-check",
-			"action": "propose-replace-after-approval",
+			"action": "replace",
 			"reason": "Same single retrieval: name of the northern German lowland. Current official curriculum assigns German physical structures to Grade 5; including this neighbouring-grade history is only a proposal."
 		},
 		{
@@ -97,7 +97,7 @@
 			"de_by_id": "01K4G6D0000000000000000J02",
 			"category": "C",
 			"academy_slug": null,
-			"action": "propose-retire-after-approval",
+			"action": "keep-active",
 			"reason": "The old multi-part answer includes detailed elevations and geomorphology, and conflates parts of the step-land with Alpine foreland. The new broad-landscape lesson corrects and narrows this scope."
 		},
 		{
@@ -105,7 +105,7 @@
 			"de_by_id": "01K4G6D0000000000000000J03",
 			"category": "A",
 			"academy_slug": "geo5-bayern-check",
-			"action": "propose-replace-after-approval",
+			"action": "replace",
 			"reason": "Same single retrieval: Bavaria has seven administrative districts. Grade 5 now teaches this administration; neighbouring-grade inclusion requires Thomas to approve the proposal."
 		},
 		{
@@ -137,7 +137,7 @@
 			"de_by_id": "01K4G6D0000000000000000J07",
 			"category": "A",
 			"academy_slug": "geo5-stadt-check",
-			"action": "propose-replace-after-approval",
+			"action": "replace",
 			"reason": "Same single retrieval: regular work travel without permanent relocation is commuting. Current Grade 5 explicitly includes city-hinterland relationships; scope remains a proposal."
 		},
 		{

@@ -32,7 +32,7 @@ Die Vertragstests prüfen die wortgleichen 32 Erwartungen gegen `coverage.json`,
 - `da-3-quartile`, `da-4-boxplot` (LB 4): berechnen und vergleichen Kennwerte/Boxplots interaktiv; Nutzung externer Datensoftware im Unterricht.
 - `ko-2-sss-sws`, `ko-3-wsw-ssw`, `ko-4-gleichschenklig`, `ko-6-umkreis-inkreis`, `ko-7-thales`, `ko-9-hoehen` (LB 5): führen Kongruenzbegriffe, Planfiguren, Beweisideen und Ortslinien interaktiv vor; Papierkonstruktionen, Präsentationen und eigenständige dynamische Geometriesoftware verbleiben im Unterricht.
 
-## Bestandsabgleich der alten Karten (`proposal-only`)
+## Bestandsabgleich der alten Karten (`approved` am 14.11.2026)
 
 In `zam-os/zam` (Commit `0dd65c8f58b7ece3edcf6aff1d5eced099b74e6c`, geprüft auch gegen alle benachbarten `de-by:gymnasium-*` Mathezellen) existieren für Jahrgangsstufe 7 genau zwei Alt-Zellen mit zusammen 12 Karten:
 
@@ -43,11 +43,11 @@ Nachbarjahrgänge: Grade 5 und Grade 6 sind bereits durch `mathematik-gymnasium-
 
 | Kategorie | Anzahl | Bedeutung |
 | --- | --- | --- |
-| A | 4 | Gleicher atomarer Einzelabruf, vorgeschlagener Nachfolger (`propose-replace-after-approval`): `gl-2-aequivalenz-lineare-gleichung` (`01K4M7Z0000000000000000J03`), `sy-3-abstand-mittelsenkrechte` (`01K4M7W0000000000000000J01`), `wi-3-dreiecksumme-winkelsumme` (`01K4M7W0000000000000000J03`), `ko-3-wsw-ssw-ssw-bedingung` (`01K4M7W0000000000000000J05`) |
+| A | 4 | Gleicher atomarer Einzelabruf, freigegebener Nachfolger (`replace`): `gl-2-aequivalenz-lineare-gleichung` (`01K4M7Z0000000000000000J03`), `sy-3-abstand-mittelsenkrechte` (`01K4M7W0000000000000000J01`), `wi-3-dreiecksumme-winkelsumme` (`01K4M7W0000000000000000J03`), `ko-3-wsw-ssw-ssw-bedingung` (`01K4M7W0000000000000000J05`) |
 | B | 0 | Keine mehrteilige Alt-Karte wird als Ganzes auf ein einzelnes Atom übernommen |
 | C | 8 | Mehrteilige Synthesekarten (`J02`, `J04`, `W02`, `W04`, `W06`), Jgst.-6-Stoff (`J01`: reine rationale Multiplikation) oder Inhalte außerhalb des LehrplanPLUS M7 (`W07` Schwerpunkt 2:1, `W08` Eulersche Gerade & Schwerpunkt) bleiben aktiv (`keep-active`) |
 
-In [replaces-de-by.json](../mathematik-gymnasium-7/replaces-de-by.json) steht `"status": "proposal-only"` und `"approved": null`. Bis zur ausdrücklichen Freigabe durch Thomas enthält [cell.json](../mathematik-gymnasium-7/cell.json) weder `replaces` noch `retired_items`. `mathematik-gymnasium-7/scripts/validate-cell.mjs` prüft die Konsistenz des Vorschlags sowie eine störungsfreie Installation der 44 Atome / 132 Karten neben den 12 unberührten Bestandskarten.
+In [replaces-de-by.json](../mathematik-gymnasium-7/replaces-de-by.json) steht `"status": "approved"` und `"approved": "2026-11-14"`. Ab `cell.json` `2026.11.2` tragen die vier A-Nachfolger ihr jeweiliges `replaces` ohne `retired_items`. `mathematik-gymnasium-7/scripts/validate-cell.mjs` prüft die Übertragung der vier Historien inklusive FSRS-Evidenz, den Verbleib aller 8 C-Karten sowie die Ablehnung bei Doppelbelegung.
 
 ## Lehrervideos
 

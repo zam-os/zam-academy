@@ -20,11 +20,11 @@ Der aktuelle offizielle [Fachlehrplan M7](https://www.lehrplanplus.bayern.de/fac
 
 Aus Mathematik 6 stammen die Rechenregeln für rationale Zahlen sowie einfache Potenzen mit ganzzahligen Exponenten als Wiederholung bei Termwerten (`tv-3-termwerte`). Die Potenzgesetze in `tu-1-potenzgesetze` bleiben gemäß Lehrplan bei natürlichen Exponenten. Inhalte aus Mathematik 8+ (lineare Funktionen, Gleichungssysteme, Strahlensätze, Bruchterme, Wahrscheinlichkeitsrechnung) werden nicht vorgezogen.
 
-## Karten und Bestandsabgleich (Vorschlag)
+## Karten und Bestandsabgleich (freigegeben)
 
 Eine Lektion hat ein Atom mit drei Karten in [cell.json](cell.json): zwei `tier1_fast`-Abrufe mit binärem `fast_check` und zwei kuratierten Distraktoren sowie eine `tier2_synthesis`-Karte mit `sample_solution` und kuratierten Distraktoren. Alle Kennungen sind einmal erzeugte ULIDs und in [public-contract.json](tests/fixtures/public-contract.json) festgehalten.
 
-Zwei alte `de-by`-Zellen enthalten zusammen 12 Karten. Bytegleiche Schnappschüsse, Herkunftscommit (`0dd65c8f58b7ece3edcf6aff1d5eced099b74e6c` in `zam-os/zam`) und SHA-256 stehen in [replaces-de-by.json](replaces-de-by.json). Die vorgeschlagene Zuordnung (`status: "proposal-only"`, `approved: null`) umfasst **4 A-Karten** (`propose-replace-after-approval`), **0 B-Karten** und **8 C-Karten** (`keep-active`). Solange Thomas nicht ausdrücklich freigibt, deklariert `cell.json` weder `replaces` noch `retired_items`.
+Zwei alte `de-by`-Zellen enthalten zusammen 12 Karten. Bytegleiche Schnappschüsse, Herkunftscommit (`0dd65c8f58b7ece3edcf6aff1d5eced099b74e6c` in `zam-os/zam`) und SHA-256 stehen in [replaces-de-by.json](replaces-de-by.json). Thomas hat die Zuordnung am 14.11.2026 freigegeben (`status: "approved"`, `approved: "2026-11-14"`): **4 A-Karten** (`replace`) übertragen ihren Lernverlauf ab `cell.json` `2026.11.2` per `replaces` auf ihren jeweiligen Nachfolger, **0 B-Karten**, und **8 C-Karten** (`keep-active`) bleiben ohne `retired_items` aktiv.
 
 ## Lokal starten und prüfen
 
@@ -37,4 +37,4 @@ npm run build      # eine Datei in dist/index.html
 npm run package:zip
 ```
 
-Vom Wurzelordner aus prüft `node mathematik-gymnasium-7/scripts/validate-cell.mjs` mit `ZAM_CORE` auf dem in CI festgelegten `zam-core`, dass die Zelle störungsfrei neben den 12 unveränderten Bestandskarten installiert wird und der Bestandsvorschlag konsistent bleibt.
+Vom Wurzelordner aus prüft `node mathematik-gymnasium-7/scripts/validate-cell.mjs` mit `ZAM_CORE` auf dem in CI festgelegten `zam-core`, dass alle vier freigegebenen Historien sauber übertragen werden, die 8 C-Karten aktiv bleiben, Doppelbelegungen abgelehnt werden und die 44 Atome / 132 Karten idempotent installiert werden.

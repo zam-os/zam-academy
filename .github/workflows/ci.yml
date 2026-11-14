@@ -129,7 +129,7 @@ jobs:
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node mathematik-gymnasium-13/scripts/validate-migration.mjs
       - name: Preserve Mathematik 6 Gymnasium histories while adding fresh cards
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node mathematik-gymnasium-6/scripts/validate-migration.mjs
-      - name: Preserve Mathematik 7 Gymnasium histories while keeping the mapping proposal-only
+      - name: Move the approved Mathematik 7 Gymnasium histories, keep the C cards active and refuse automatic merges
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node mathematik-gymnasium-7/scripts/validate-cell.mjs
       - name: Move the approved Mathematik 11 Gymnasium history, keep the C cards active and refuse automatic merges
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node mathematik-gymnasium-11/scripts/validate-migration.mjs
@@ -163,7 +163,7 @@ jobs:
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node bwr-realschule-10/scripts/validate-migration.mjs
       - name: Preserve existing histories when adding Politik und Gesellschaft 10
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node politik-realschule-10/scripts/validate-cell.mjs
-      - name: Preserve existing histories when adding Grade 6 Biology
+      - name: Move the approved Biologie 6 Realschule histories, keep the C cards active and refuse automatic merges
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node biologie-realschule-6/scripts/validate-cell.mjs
       - name: Preserve existing histories when adding Biologie 8
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node biologie-realschule-8/scripts/validate-cell.mjs

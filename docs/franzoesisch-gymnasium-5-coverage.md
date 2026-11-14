@@ -1,6 +1,6 @@
 # French 5 Gymnasium: curriculum and local package record
 
-Checked on 14 November 2026 against the live [LehrplanPLUS French 5, first foreign language](https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/5/franzoesisch/1-fremdsprache). The same Fachlehrplan applies across Gymnasium educational directions; no Realschule track is attached. This package is a local draft, not a published preview.
+Checked on 14 November 2026 against the live [LehrplanPLUS French 5, first foreign language](https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/5/franzoesisch/1-fremdsprache). The same Fachlehrplan applies across Gymnasium educational directions; no Realschule track is attached. Thomas approved publishing `franzoesisch-gymnasium-5` regularly in `academy.json`, the catalog, and Pages on 14 November 2026.
 
 ## Curriculum evidence
 

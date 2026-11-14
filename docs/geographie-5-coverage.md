@@ -22,7 +22,7 @@ The world map is equirectangular. The Germany map corrects longitude scale at it
 
 Every displayed source was fetched and its actual title read. The initial LfU page was only an HTML redirect, so the final geological overview is linked. Candidate government and Wadden Sea URLs that returned errors were omitted. Teacher videos are absent, following the separate-video-step convention.
 
-## Legacy snapshots and proposal
+## Legacy snapshots and approved mapping
 
 Source repository: `zam-os/zam`, commit `e6a235f75fe87b9d57af38bd61011027b891492c`. Both LF snapshots are retained byte-exactly under the package's `tests/fixtures/`. Their SHA-256 values are recorded in the mapping and checked by `verify:content`.
 
@@ -32,11 +32,7 @@ Source repository: `zam-os/zam`, commit `e6a235f75fe87b9d57af38bd61011027b891492
 | `de-by:realschule-6-geographie-deutschland-bayern-raum` | 8 | 3 | 0 | 5 |
 | Total | 16 | 6 | 0 | 10 |
 
-The proposed A matches retrieve the equator, the 500 m scale conversion, approximate axial tilt, the North German Plain, seven Bavarian districts and work commuting. Each points to exactly one successor slug. The last three come from the neighbouring-grade cell because the current official Grade 5 curriculum teaches German/Bavarian structures and city–hinterland relationships.
-
-The C rows keep mixed or broader retrievals separate. Two possible retirements are proposed: the compound Earth-movement answer with invariant calendar dates and the broad-landscape answer that conflates part of the step-land with the Alpine foreland. Eight other C items remain active, including detailed agriculture and coastal processes. No history is spread across multiple new cards.
-
-**Decision still required before any history-changing version:** should the neighbouring Grade 6 cell be included in this Grade 5 package's mapping, and are the six individual transfers and two proposed retirements approved? This report records a proposal only; a request to build the package grants none of those history changes. `approved` remains `null`, and the cell has neither `replaces` nor `retired_items`. No migration script is needed for this non-migrating preview.
+Thomas approved this mapping on 2026-11-14 (`status: "approved"`, `approved: "2026-11-14"`), and `cell.json` `2026.11.2` declares `replaces` for the six A matches: the equator, the 500 m scale conversion, approximate axial tilt, the North German Plain, seven Bavarian districts and work commuting. Each points to exactly one successor slug. The last three come from the neighbouring-grade cell because the current official Grade 5 curriculum teaches German/Bavarian structures and city–hinterland relationships; `de-by:realschule-6-geographie-deutschland-bayern-raum` remains active in `zam-os/zam` until a Grade 6 geography Academy package arrives. All ten C items remain `keep-active` with no `retired_items`.
 
 ## Verification evidence
 
