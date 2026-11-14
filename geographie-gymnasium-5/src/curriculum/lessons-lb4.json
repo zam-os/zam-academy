@@ -1,0 +1,605 @@
+[
+  {
+    "id": "geogym5-laendlicher-raum",
+    "lb": 4,
+    "title": "Ländliche Räume im Wandel",
+    "period": "LB 4 · Merkmale und Wandel des ländlichen Raums",
+    "intro": "Dörfer sehen heute anders aus als vor 60 Jahren. Was macht einen ländlichen Raum aus, und was hat sich verändert?",
+    "paragraphs": [
+      "Ländliche Räume haben weniger Einwohner je Quadratkilometer als Städte. Es gibt Dörfer und kleine Städte, dazwischen viel Fläche für Felder, Wiesen und Wald. Früher lebten und arbeiteten die meisten Menschen auf dem Land in der Landwirtschaft. Fast jede Familie hatte Tiere, die Arbeit wurde von Hand und mit Pferden gemacht, und im Dorf gab es Bäcker, Metzger, Schule und Wirtshaus.",
+      "Heute arbeiten nur noch wenige Menschen in der Landwirtschaft. Maschinen ersetzen viele Arbeitskräfte, und die verbliebenen Höfe sind größer und bewirtschaften mehr Fläche. Viele Bewohner pendeln zur Arbeit in die nächste Stadt. Alte Bauernhöfe werden zu Wohnungen umgebaut, Neubaugebiete entstehen. Neue Aufgaben kommen hinzu: Erholung und Tourismus, Strom aus Solar- und Windanlagen, Gewerbegebiete. Gleichzeitig schließen in manchen Dörfern Läden und Arztpraxen, und Busse fahren selten. Beispiel: In einem Dorf, das keinen Laden mehr hat, gründen die Bewohner gemeinsam einen Dorfladen."
+    ],
+    "takeaway": "Ländliche Räume sind dünner besiedelt und von Land- und Forstwirtschaft geprägt. Durch den Wandel gibt es weniger, aber größere Höfe; viele Bewohner pendeln, und neue Aufgaben wie Wohnen, Erholung und Energie kommen hinzu.",
+    "sourceIds": [
+      "lehrplan",
+      "kx-dorf",
+      "kx-bauernhof",
+      "kx-landwirtschaft"
+    ],
+    "quiz": {
+      "question": "Warum gibt es heute in vielen Dörfern weniger Bauernhöfe als vor 60 Jahren?",
+      "answer": "Maschinen ersetzen viele Arbeitskräfte, und größere Betriebe bewirtschaften mehr Fläche.",
+      "wrong": [
+        "Auf dem Land wird heute gar nichts mehr angebaut.",
+        "Die Landwirtschaft ist verboten worden."
+      ],
+      "explanation": "Mit Traktoren und Mähdreschern schafft ein Betrieb viel mehr Fläche. Viele kleine Höfe haben aufgegeben oder verpachten ihr Land an größere."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Früher oder heute?",
+      "instruction": "Ordne jede Aussage zu und prüfe dann deine Zuordnung. Begründe deine Wahl zuerst für dich.",
+      "categories": [
+        "früher",
+        "heute"
+      ],
+      "entries": [
+        {
+          "text": "Fast alle Familien im Dorf arbeiteten in der Landwirtschaft.",
+          "target": 0,
+          "feedback": "Früher war die Landwirtschaft der wichtigste Arbeitgeber."
+        },
+        {
+          "text": "Pferde zogen Pflug und Wagen.",
+          "target": 0,
+          "feedback": "Erst nach und nach kamen Traktoren."
+        },
+        {
+          "text": "Viele Bewohner pendeln jeden Tag zur Arbeit in die Stadt.",
+          "target": 1,
+          "feedback": "Das Dorf ist für viele vor allem Wohnort."
+        },
+        {
+          "text": "Ein Hof mit großen Maschinen bewirtschaftet die Felder mehrerer früherer Höfe.",
+          "target": 1,
+          "feedback": "Die Betriebe sind größer geworden."
+        },
+        {
+          "text": "Auf Scheunendächern erzeugen Solaranlagen Strom.",
+          "target": 1,
+          "feedback": "Energie ist eine neue Aufgabe des ländlichen Raums."
+        },
+        {
+          "text": "Im Dorf gab es Bäcker, Metzger und Schuster.",
+          "target": 0,
+          "feedback": "Heute fehlen solche Läden oft."
+        }
+      ],
+      "conclusion": "Der ländliche Raum ist nicht stehen geblieben. Er verändert seine Aufgaben, und die Menschen gestalten den Wandel mit."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Beschreibe am Beispiel eines Dorfes in deiner Umgebung Merkmale und Wandel des ländlichen Raums.",
+        "hints": [
+          "Wie sieht das Dorf heute aus, und wovon leben die Menschen?",
+          "Was hat sich im Vergleich zu früher verändert?"
+        ],
+        "model": "In Musterdorf leben etwa 800 Menschen. Um das Dorf liegen Felder, Wiesen und Wald. Früher gab es dort viele kleine Bauernhöfe, heute sind es nur noch drei große Betriebe mit modernen Maschinen. Die meisten Bewohner arbeiten in der Kreisstadt und fahren jeden Tag mit dem Auto oder dem Bus dorthin. Aus alten Ställen wurden Wohnungen, am Ortsrand entstand ein Neubaugebiet. Den Bäcker gibt es nicht mehr, aber die Bewohner haben einen Dorfladen gegründet.",
+        "criteria": [
+          "Ich beschreibe Merkmale wie Größe, Fläche und Arbeit.",
+          "Ich vergleiche früher und heute.",
+          "Ich nenne eine neue Aufgabe oder ein Problem und eine Lösung."
+        ]
+      },
+      "2": {
+        "prompt": "In einem Dorf hat der letzte Laden geschlossen, und der Bus fährt nur zweimal am Tag. Entwickle zwei Ideen, wie das Dorf für Jung und Alt attraktiv bleiben kann.",
+        "hints": [
+          "Wer ist besonders betroffen?",
+          "Welche Lösungen gibt es ohne große Kosten?"
+        ],
+        "model": "Betroffen sind vor allem ältere Menschen ohne Auto und Jugendliche. Erste Idee: Die Bewohner gründen gemeinsam einen Dorfladen, in dem Höfe aus der Umgebung Milch, Eier und Gemüse verkaufen; dort kann man sich auch treffen. Zweite Idee: Die Gemeinde richtet einen Rufbus ein, der auf Bestellung fährt, oder organisiert Mitfahrbänke. So bleiben Einkauf und Mobilität möglich, und das Dorf wird auch für junge Familien interessant.",
+        "criteria": [
+          "Ich benenne betroffene Gruppen.",
+          "Ich entwickle zwei umsetzbare Ideen.",
+          "Ich begründe, warum sie helfen."
+        ]
+      }
+    },
+    "figures": [
+      "dorf-wandel"
+    ]
+  },
+  {
+    "id": "geogym5-wetter-messen",
+    "lb": 4,
+    "title": "Wetter messen und darstellen",
+    "period": "LB 4 · Messungen zu Wetterelementen",
+    "intro": "Temperatur und Niederschlag entscheiden mit, was auf den Feldern wächst. Du kannst sie selbst messen.",
+    "paragraphs": [
+      "Das Wetter setzt sich aus Wetterelementen zusammen: Temperatur, Niederschlag, Wind, Bewölkung und Luftdruck. Die Temperatur misst du mit einem Thermometer in °C, und zwar im Schatten und etwa 2 m über dem Boden, weil die Sonne das Thermometer sonst selbst erwärmt. Den Niederschlag misst du mit einem Regenmesser in Millimetern: 1 mm Niederschlag bedeutet, dass auf einen Quadratmeter 1 Liter Wasser gefallen ist. Den Wind beobachtest du mit einer Windfahne für die Richtung und schätzt seine Stärke an Bäumen und Fahnen.",
+      "Damit Messungen vergleichbar sind, misst du jeden Tag zu denselben Zeiten, zum Beispiel um 7, 14 und 21 Uhr, und trägst die Werte in eine Tabelle ein. Aus den drei Temperaturwerten eines Tages berechnest du vereinfacht das Tagesmittel: Summe der Werte geteilt durch 3. Die Ergebnisse stellst du in Diagrammen dar, die Temperatur oft als Linie und den Niederschlag als Säulen. Beispiel: Um 7 Uhr misst du 4 °C, um 14 Uhr 11 °C und um 21 Uhr 6 °C. Das Tagesmittel ist (4 + 11 + 6) : 3 = 7 °C."
+    ],
+    "takeaway": "Temperatur misst man im Schatten in 2 m Höhe in °C, Niederschlag mit dem Regenmesser in mm (1 mm = 1 Liter pro Quadratmeter). Gemessen wird zu festen Zeiten; das Tagesmittel ist hier der Durchschnitt der Messwerte.",
+    "sourceIds": [
+      "lehrplan",
+      "kx-wetter",
+      "kx-thermometer",
+      "kx-niederschlag",
+      "dwd"
+    ],
+    "quiz": {
+      "question": "Ein Regenmesser zeigt nach einem Gewitter 5 mm. Wie viel Wasser fiel auf einen Quadratmeter?",
+      "answer": "5 Liter",
+      "wrong": [
+        "5 Milliliter",
+        "50 Liter"
+      ],
+      "explanation": "1 mm Niederschlag entspricht 1 Liter Wasser auf einem Quadratmeter. 5 mm sind also 5 Liter."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Zu welchem Wetterelement gehört das?",
+      "instruction": "Ordne jede Aussage zu und prüfe dann deine Zuordnung. Begründe deine Wahl zuerst für dich.",
+      "categories": [
+        "Temperatur",
+        "Niederschlag",
+        "Wind"
+      ],
+      "entries": [
+        {
+          "text": "Thermometer im Schatten in 2 m Höhe",
+          "target": 0,
+          "feedback": "Mit dem Thermometer misst du die Lufttemperatur."
+        },
+        {
+          "text": "Angabe in Grad Celsius (°C)",
+          "target": 0,
+          "feedback": "Die Temperatur gibst du in °C an."
+        },
+        {
+          "text": "Regenmesser im Schulgarten",
+          "target": 1,
+          "feedback": "Der Regenmesser fängt den Niederschlag auf."
+        },
+        {
+          "text": "Angabe in Millimetern, also Litern pro Quadratmeter",
+          "target": 1,
+          "feedback": "So wird Niederschlag angegeben."
+        },
+        {
+          "text": "Windfahne auf dem Dach",
+          "target": 2,
+          "feedback": "Die Windfahne zeigt die Windrichtung."
+        },
+        {
+          "text": "Äste bewegen sich, Fahnen flattern.",
+          "target": 2,
+          "feedback": "So schätzt du die Windstärke."
+        }
+      ],
+      "conclusion": "Jedes Wetterelement hat sein Messgerät und seine Einheit."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Beschreibe, wie du an deiner Schule eine Woche lang Temperatur und Niederschlag misst und die Werte darstellst.",
+        "hints": [
+          "Wo und wann misst du?",
+          "Wie hältst du die Werte fest und stellst sie dar?"
+        ],
+        "model": "Ich hänge das Thermometer an einen schattigen Platz etwa 2 m über dem Boden und stelle den Regenmesser frei auf, nicht unter einem Baum. Ich messe jeden Tag um 7, 14 und 21 Uhr die Temperatur und lese einmal am Tag den Regenmesser ab und leere ihn. Alle Werte trage ich in eine Tabelle mit Datum, Uhrzeit und Einheit ein. Aus den drei Temperaturen berechne ich das Tagesmittel. Zum Schluss zeichne ich die Tagesmittel als Linie und den Niederschlag als Säulen in ein Diagramm.",
+        "criteria": [
+          "Ich beschreibe richtige Messorte.",
+          "Ich nenne feste Messzeiten und eine Tabelle.",
+          "Ich beschreibe die Darstellung im Diagramm."
+        ]
+      },
+      "2": {
+        "prompt": "Zwei Schulen messen am selben Tag: Schule A hat ihr Thermometer an einer sonnigen Südwand, Schule B im Schatten eines Messhäuschens. Erkläre, welche Werte zuverlässiger sind, und beurteile, ob ein Vergleich sinnvoll ist.",
+        "hints": [
+          "Was passiert mit einem Thermometer in der Sonne?",
+          "Welche Regeln braucht ein fairer Vergleich?"
+        ],
+        "model": "Schule A misst zu hohe Werte, weil die Sonne das Thermometer und die Wand direkt erwärmt. Gemessen wird dann nicht die Lufttemperatur, sondern die Wärme der Wand. Schule B misst richtig im Schatten. Ihre Werte sind zuverlässiger. Ein Vergleich ist erst sinnvoll, wenn beide Schulen nach denselben Regeln messen: im Schatten, in etwa 2 m Höhe und zu denselben Uhrzeiten.",
+        "criteria": [
+          "Ich erkläre, warum die Sonne die Messung verfälscht.",
+          "Ich beurteile, welche Werte zuverlässiger sind.",
+          "Ich nenne Regeln für einen fairen Vergleich."
+        ]
+      }
+    },
+    "figures": [],
+    "lab": "wetterwoche"
+  },
+  {
+    "id": "geogym5-boden",
+    "lb": 4,
+    "title": "Böden untersuchen",
+    "period": "LB 4 · Bodeneigenschaften und Versuche",
+    "intro": "Boden ist mehr als Dreck. Ob Weizen oder nur Kiefern wachsen, hängt stark von ihm ab.",
+    "paragraphs": [
+      "Der Boden ist die oberste, belebte Schicht der Erdkruste. Er besteht aus zerkleinertem Gestein, also Mineralkörnern, aus Humus, also zersetzten Pflanzenresten, aus Wasser, Luft und unzähligen Lebewesen wie Regenwürmern. Nach der Größe der Körner unterscheidet man Bodenarten. Sand hat grobe Körner; er ist locker, Wasser versickert schnell, und er speichert wenig Nährstoffe. Ton hat winzige Teilchen; er ist dicht und klebrig, speichert viel Wasser und Nährstoffe, wird aber leicht nass und hart. Lehm ist eine Mischung aus Sand, Schluff und Ton.",
+      "Löss ist ein feiner, gelblicher Staub, den der Wind in der Eiszeit abgelagert hat. Aus ihm entstehen besonders fruchtbare Böden, etwa im Gäuboden in Niederbayern. Mit einfachen Versuchen untersuchst du Böden. Bei der Fingerprobe reibst du feuchte Erde zwischen den Fingern: Sand knirscht und rieselt, Ton lässt sich zu einer glänzenden Rolle formen. Bei der Schlämmprobe schüttelst du Erde mit Wasser in einem Glas und lässt sie stehen; die schweren Sandkörner setzen sich zuerst unten ab, darüber Schluff, ganz oben feiner Ton, und Humus schwimmt. Beispiel: Eine Probe, die knirscht und durch die Finger rieselt, ist ein Sandboden."
+    ],
+    "takeaway": "Boden besteht aus Mineralkörnern, Humus, Wasser, Luft und Lebewesen. Sand ist locker und nährstoffarm, Ton dicht und nährstoffreich, Löss besonders fruchtbar. Finger- und Schlämmprobe zeigen die Bodenart.",
+    "sourceIds": [
+      "lehrplan",
+      "kx-erdboden",
+      "lfl"
+    ],
+    "quiz": {
+      "question": "Bei der Schlämmprobe setzt sich eine Schicht zuerst ganz unten im Glas ab. Welche?",
+      "answer": "Sand",
+      "wrong": [
+        "Ton",
+        "Humus"
+      ],
+      "explanation": "Sandkörner sind am schwersten und sinken zuerst. Ton bleibt lange im Wasser schweben, Humus schwimmt oft oben."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Sand, Ton oder Löss?",
+      "instruction": "Ordne jede Aussage zu und prüfe dann deine Zuordnung. Begründe deine Wahl zuerst für dich.",
+      "categories": [
+        "Sand",
+        "Ton",
+        "Löss"
+      ],
+      "entries": [
+        {
+          "text": "Die Probe knirscht und rieselt durch die Finger.",
+          "target": 0,
+          "feedback": "Grobe Körner sind typisch für Sand."
+        },
+        {
+          "text": "Regenwasser versickert sehr schnell.",
+          "target": 0,
+          "feedback": "Zwischen den groben Körnern ist viel Platz."
+        },
+        {
+          "text": "Die Probe lässt sich zu einer glänzenden Rolle formen.",
+          "target": 1,
+          "feedback": "Ton ist bindig und formbar."
+        },
+        {
+          "text": "Nach starkem Regen bleibt das Wasser lange auf dem Feld stehen.",
+          "target": 1,
+          "feedback": "Ton ist dicht und lässt Wasser kaum durch."
+        },
+        {
+          "text": "feiner, gelblicher Staub, vom Wind in der Eiszeit abgelagert",
+          "target": 2,
+          "feedback": "So entstand der Löss."
+        },
+        {
+          "text": "sehr fruchtbar, gut für Weizen und Zuckerrüben",
+          "target": 2,
+          "feedback": "Lössböden gehören zu den besten Ackerböden."
+        }
+      ],
+      "conclusion": "Die Bodenart entscheidet mit, wie viel Wasser und Nährstoffe Pflanzen bekommen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Beschreibe die Schlämmprobe: Was brauchst du, wie gehst du vor, und was beobachtest du?",
+        "hints": [
+          "Welche Materialien brauchst du?",
+          "Was passiert im Glas, und warum?"
+        ],
+        "model": "Ich brauche ein Schraubglas, Wasser und eine Bodenprobe. Ich fülle das Glas zu einem Drittel mit Erde, gieße Wasser bis kurz unter den Rand, schraube es zu und schüttle es kräftig. Dann lasse ich es einen Tag stehen. Zuerst setzen sich unten die schweren Sandkörner ab, darüber Schluff und ganz oben der feine Ton; Pflanzenreste aus Humus schwimmen oben. An der Dicke der Schichten erkenne ich, woraus der Boden vor allem besteht.",
+        "criteria": [
+          "Ich nenne das Material.",
+          "Ich beschreibe die Durchführung.",
+          "Ich erkläre die Schichtung mit der Korngröße."
+        ]
+      },
+      "2": {
+        "prompt": "Ein Landwirt hat zwei Felder: eines mit Sandboden, eines mit Lössboden. Empfiehl, was er wo anbauen sollte, und begründe mit den Bodeneigenschaften.",
+        "hints": [
+          "Wie viel Wasser und Nährstoffe speichern die Böden?",
+          "Welche Pflanzen brauchen viel, welche wenig?"
+        ],
+        "model": "Auf dem Lössboden empfehle ich anspruchsvolle Feldfrüchte wie Weizen und Zuckerrüben. Löss ist fein, speichert viel Wasser und Nährstoffe, lässt sich gut bearbeiten und ist sehr fruchtbar. Auf dem Sandboden wachsen genügsamere Pflanzen besser, zum Beispiel Roggen, Kartoffeln oder Spargel, oder er wird als Wald genutzt. Sand speichert wenig Wasser und Nährstoffe, deshalb müsste der Landwirt für Weizen dort viel düngen und bewässern.",
+        "criteria": [
+          "Ich ordne den Böden passende Nutzungen zu.",
+          "Ich begründe mit Wasser- und Nährstoffspeicherung.",
+          "Ich nenne eine Folge einer unpassenden Nutzung."
+        ]
+      }
+    },
+    "figures": [
+      "boden"
+    ]
+  },
+  {
+    "id": "geogym5-einflussfaktoren",
+    "lb": 4,
+    "title": "Was die Landwirtschaft beeinflusst",
+    "period": "LB 4 · Natürliche Einflussfaktoren",
+    "intro": "Warum wachsen im Gäuboden Weizenfelder und im Allgäu grüne Wiesen? Natur und Mensch entscheiden gemeinsam.",
+    "paragraphs": [
+      "Die Landwirtschaft hängt von natürlichen Einflussfaktoren ab. Die Temperatur bestimmt, wie lange Pflanzen im Jahr wachsen können; diese Zeit heißt Vegetationszeit. Der Niederschlag liefert das nötige Wasser: Zu wenig lässt Pflanzen vertrocknen, zu viel macht die Felder nass und schwer zu befahren. Der Boden liefert Wasser und Nährstoffe, und das Relief entscheidet, ob Maschinen fahren können: Auf steilen Hängen ist Ackerbau schwierig.",
+      "Die Faktoren wirken zusammen. Im Gäuboden bei Straubing treffen fruchtbarer Lössboden, ebenes Gelände, mildes Klima und mäßige Niederschläge zusammen; dort wachsen Weizen und Zuckerrüben. Im Allgäu regnet es viel, weil feuchte Luft an den Alpen aufsteigt und abregnet; dazu ist es kühler und hügelig. Gras wächst dort gut, deshalb gibt es viel Grünland und Milchviehhaltung. Neben der Natur entscheiden auch Menschen: Preise, Maschinen und Ideen der Landwirtinnen und Landwirte. Beispiel: Wo Hänge zu steil für Maschinen sind, bleibt der Wald."
+    ],
+    "takeaway": "Temperatur, Niederschlag, Boden und Relief bestimmen zusammen, welche Landwirtschaft passt: im Gäuboden Ackerbau auf Löss, im regenreichen, hügeligen Allgäu Grünland mit Milchvieh.",
+    "sourceIds": [
+      "lehrplan",
+      "kx-landwirtschaft",
+      "lfl",
+      "kx-niederschlag"
+    ],
+    "quiz": {
+      "question": "Warum gibt es im Allgäu vor allem Wiesen und Weiden?",
+      "answer": "weil es dort viel regnet, eher kühl und hügelig ist",
+      "wrong": [
+        "weil die Böden dort aus Löss bestehen",
+        "weil es dort zu wenig regnet"
+      ],
+      "explanation": "Viel Regen, kühleres Klima und Hänge sind gut für Gras, aber schlecht für Getreide. Lössböden und Trockenheit passen nicht zum Allgäu."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Was begünstigt Ackerbau, was Grünland?",
+      "instruction": "Ordne jede Aussage zu und prüfe dann deine Zuordnung. Begründe deine Wahl zuerst für dich.",
+      "categories": [
+        "begünstigt Ackerbau",
+        "begünstigt Grünland"
+      ],
+      "entries": [
+        {
+          "text": "fruchtbarer Lössboden",
+          "target": 0,
+          "feedback": "Löss ist ideal für Weizen und Zuckerrüben."
+        },
+        {
+          "text": "ebene Flächen, auf denen große Maschinen fahren",
+          "target": 0,
+          "feedback": "Ackerbau braucht befahrbare Flächen."
+        },
+        {
+          "text": "mildes Klima mit langer Vegetationszeit",
+          "target": 0,
+          "feedback": "Getreide braucht eine lange Wachstumszeit."
+        },
+        {
+          "text": "sehr hohe Niederschläge",
+          "target": 1,
+          "feedback": "Gras wächst bei viel Regen gut, Felder werden zu nass."
+        },
+        {
+          "text": "hügeliges Gelände mit Hängen",
+          "target": 1,
+          "feedback": "Weiden kann man auch an Hängen nutzen."
+        },
+        {
+          "text": "kühles Klima mit kurzer Vegetationszeit",
+          "target": 1,
+          "feedback": "Gras kommt mit kürzeren Sommern zurecht."
+        }
+      ],
+      "conclusion": "Kein Faktor wirkt allein. Erst ihr Zusammenspiel erklärt, warum ein Raum so genutzt wird."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre, warum im Gäuboden vor allem Ackerbau betrieben wird.",
+        "hints": [
+          "Welche Bodenart gibt es dort?",
+          "Wie sind Klima und Relief?"
+        ],
+        "model": "Im Gäuboden bei Straubing gibt es Lössboden, einen der fruchtbarsten Böden Deutschlands. Er speichert viel Wasser und Nährstoffe. Das Gelände ist eben, sodass große Maschinen gut fahren können. Das Klima ist mild, und es regnet genug, aber nicht zu viel. Alle Faktoren zusammen sind ideal für anspruchsvolle Feldfrüchte wie Weizen und Zuckerrüben.",
+        "criteria": [
+          "Ich nenne den Lössboden.",
+          "Ich nenne Klima und Relief.",
+          "Ich zeige das Zusammenwirken der Faktoren."
+        ]
+      },
+      "2": {
+        "prompt": "Vergleiche die Landnutzung im Gäuboden und im Allgäu und erkläre die Unterschiede mit den natürlichen Einflussfaktoren.",
+        "hints": [
+          "Wie werden beide Räume genutzt?",
+          "Welche Faktoren unterscheiden sich?"
+        ],
+        "model": "Im Gäuboden überwiegt Ackerbau mit Weizen und Zuckerrüben, im Allgäu Grünland mit Milchviehhaltung. Der Gäuboden hat fruchtbaren Lössboden, ebenes Gelände, mildes Klima und mäßige Niederschläge. Im Allgäu regnet es viel mehr, weil feuchte Luft an den Alpen aufsteigt und abregnet; es ist kühler, und das Gelände ist hügelig. Dort wächst Gras besser als Getreide, und Weiden lassen sich auch an Hängen nutzen. Die unterschiedliche Nutzung folgt also aus Boden, Klima und Relief.",
+        "criteria": [
+          "Ich beschreibe die Nutzung beider Räume.",
+          "Ich vergleiche mindestens drei Faktoren.",
+          "Ich erkläre den Unterschied mit den Faktoren."
+        ]
+      }
+    },
+    "figures": [],
+    "lab": "landnutzung"
+  },
+  {
+    "id": "geogym5-agrarraeume",
+    "lb": 4,
+    "title": "Agrarräume in Bayern und Deutschland",
+    "period": "LB 4 · Räume unterschiedlicher landwirtschaftlicher Nutzung",
+    "intro": "Hopfen, Wein, Milch, Weizen und Gemüse: Jede bayerische Region hat ihren Schwerpunkt.",
+    "paragraphs": [
+      "Agrarräume sind Gebiete, in denen eine bestimmte landwirtschaftliche Nutzung vorherrscht. In Bayern ist der Gäuboden in Niederbayern ein Ackerbaugebiet mit Weizen und Zuckerrüben. Das Allgäu ist ein Grünlandgebiet mit Milchviehhaltung; aus der Milch werden Käse und Butter. Die Hallertau zwischen Ingolstadt und Landshut ist das größte zusammenhängende Hopfenanbaugebiet der Welt; Hopfen braucht man zum Bierbrauen. In Mainfranken um Würzburg wird an sonnigen Hängen Wein angebaut, und im Knoblauchsland bei Nürnberg wächst viel Gemüse.",
+      "Auch in Deutschland gibt es solche Räume, zum Beispiel die Magdeburger Börde mit Lössböden, eines der fruchtbarsten Ackerbaugebiete. Auf einer thematischen Karte zur Landwirtschaft erkennst du die Agrarräume an Farben und Zeichen. Lebensmittel legen oft weite Wege zurück, bevor sie bei uns ankommen. Milch aus dem Allgäu fährt zur Molkerei, dann zum Großhandel und in den Supermarkt. Bananen kommen dagegen mit dem Schiff aus Mittel- und Südamerika. Beispiel: Wer Allgäuer Bergkäse kauft, kann auf der Packung nachlesen, wo die Milch herkommt."
+    ],
+    "takeaway": "In Bayern prägen Ackerbau (Gäuboden), Grünland und Milch (Allgäu), Hopfen (Hallertau), Wein (Mainfranken) und Gemüse (Knoblauchsland) verschiedene Agrarräume. Lebensmittel legen vom Hof bis in den Laden unterschiedlich lange Wege zurück.",
+    "sourceIds": [
+      "lehrplan",
+      "kx-landwirtschaft",
+      "lfl",
+      "lfstat"
+    ],
+    "quiz": {
+      "question": "Wofür ist die Hallertau bekannt?",
+      "answer": "für Hopfen",
+      "wrong": [
+        "für Weinbau",
+        "für Reisanbau"
+      ],
+      "explanation": "Die Hallertau zwischen Ingolstadt und Landshut ist das größte zusammenhängende Hopfenanbaugebiet der Welt. Wein wächst in Mainfranken, Reis wird in Bayern nicht angebaut."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Welche Nutzung prägt den Agrarraum?",
+      "instruction": "Schau dir die Karte mit den Nummern an. Wähle zu jedem Raum die Nutzung, die ihn prägt.",
+      "categories": [
+        "Weizen und Zuckerrüben",
+        "Grünland und Milch",
+        "Hopfen",
+        "Wein",
+        "Gemüse"
+      ],
+      "entries": [
+        {
+          "text": "Nummer 1: Gäuboden in Niederbayern",
+          "target": 0,
+          "feedback": "Fruchtbarer Löss macht den Gäuboden zum Ackerbaugebiet."
+        },
+        {
+          "text": "Nummer 2: Allgäu",
+          "target": 1,
+          "feedback": "Viel Regen und Hügel: Grünland mit Milchvieh."
+        },
+        {
+          "text": "Nummer 3: Hallertau",
+          "target": 2,
+          "feedback": "Das größte zusammenhängende Hopfengebiet der Welt."
+        },
+        {
+          "text": "Nummer 4: Mainfranken um Würzburg",
+          "target": 3,
+          "feedback": "An sonnigen Hängen am Main wächst Wein."
+        },
+        {
+          "text": "Nummer 5: Knoblauchsland bei Nürnberg",
+          "target": 4,
+          "feedback": "Hier wird viel Gemüse angebaut."
+        },
+        {
+          "text": "Nummer 6: Magdeburger Börde",
+          "target": 0,
+          "feedback": "Lössböden machen die Börde zu einem Ackerbaugebiet."
+        }
+      ],
+      "conclusion": "Agrarräume entstehen dort, wo die natürlichen Bedingungen und die Erfahrung der Menschen zu einer Nutzung passen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Beschreibe drei Agrarräume in Bayern mit ihrer Lage und ihrer typischen Nutzung.",
+        "hints": [
+          "Wo liegen die Räume?",
+          "Was wird dort vor allem erzeugt?"
+        ],
+        "model": "Der Gäuboden liegt in Niederbayern an der Donau bei Straubing; auf seinen Lössböden wachsen Weizen und Zuckerrüben. Das Allgäu liegt im Südwesten Bayerns am Rand der Alpen; dort gibt es viel Grünland, und Milchkühe liefern Milch für Käse. Die Hallertau liegt zwischen Ingolstadt und Landshut; sie ist das größte zusammenhängende Hopfenanbaugebiet der Welt.",
+        "criteria": [
+          "Ich nenne drei Agrarräume.",
+          "Ich beschreibe ihre Lage.",
+          "Ich nenne die typische Nutzung."
+        ]
+      },
+      "2": {
+        "prompt": "Verfolge den Weg eines Joghurts aus Allgäuer Milch und den Weg einer Banane bis in deinen Supermarkt. Vergleiche die Wege.",
+        "hints": [
+          "Welche Stationen durchläuft die Milch?",
+          "Woher kommt die Banane, und wie wird sie transportiert?"
+        ],
+        "model": "Die Milch wird auf einem Hof im Allgäu gemolken und mit dem Tankwagen zur Molkerei gebracht. Dort wird sie zu Joghurt verarbeitet und abgefüllt. Ein Lastwagen bringt ihn zum Lager des Händlers und von dort in den Supermarkt; der Weg ist meist wenige Hundert Kilometer lang. Die Banane wächst in Mittel- oder Südamerika, wird grün geerntet, mit dem Kühlschiff über den Atlantik gebracht, in Reifereien gelagert und dann mit dem Lastwagen verteilt. Ihr Weg ist viel länger und braucht viel Energie für Transport und Kühlung.",
+        "criteria": [
+          "Ich beschreibe die Stationen der Milch.",
+          "Ich beschreibe die Stationen der Banane.",
+          "Ich vergleiche die Länge der Wege."
+        ]
+      }
+    },
+    "figures": [
+      "agrarraeume"
+    ]
+  },
+  {
+    "id": "geogym5-oeko-konventionell",
+    "lb": 4,
+    "title": "Konventionelle und ökologische Landwirtschaft",
+    "period": "LB 4 · Konventionelle und ökologische Landwirtschaft",
+    "intro": "Bio oder nicht Bio? Beide Arten der Landwirtschaft haben Vorteile und Nachteile.",
+    "paragraphs": [
+      "In der konventionellen Landwirtschaft dürfen Landwirtinnen und Landwirte Mineraldünger und chemisch-synthetische Pflanzenschutzmittel einsetzen. Viele Betriebe sind spezialisiert, etwa auf Schweine, Milch oder Getreide, und arbeiten mit großen Maschinen. So erzeugen sie viel auf wenig Fläche, und die Lebensmittel sind meist günstiger. Zu viel Dünger kann aber ins Grundwasser gelangen, Pflanzenschutzmittel können Insekten und Wildkräuter schädigen, und Tiere haben in manchen Ställen wenig Platz.",
+      "In der ökologischen Landwirtschaft, oft „Bio“ genannt, sind chemisch-synthetische Pflanzenschutzmittel und Mineraldünger aus Stickstoff verboten. Gedüngt wird mit Mist und Kompost, ein Wechsel der Feldfrüchte hält den Boden gesund, und Unkraut wird mechanisch entfernt. Tiere haben mehr Platz und Auslauf. Das schont Boden, Wasser und die Vielfalt der Arten. Allerdings sind die Erträge je Fläche meist niedriger, sodass für dieselbe Menge mehr Fläche nötig ist, und Bio-Lebensmittel kosten mehr. Bio-Lebensmittel erkennst du am EU-Bio-Siegel. Beispiel: Ein Bio-Hof hält Hühner mit Auslauf im Freien und düngt seine Felder mit ihrem Mist."
+    ],
+    "takeaway": "Konventionelle Landwirtschaft erzielt mit Mineraldünger und Pflanzenschutzmitteln hohe Erträge und günstige Preise, belastet aber oft Wasser, Böden und Artenvielfalt. Ökologische Landwirtschaft schont die Umwelt, braucht aber mehr Fläche und ist teurer.",
+    "sourceIds": [
+      "lehrplan",
+      "oekolandbau",
+      "bmleh-oeko",
+      "kx-landwirtschaft"
+    ],
+    "quiz": {
+      "question": "Was ist im ökologischen Landbau verboten?",
+      "answer": "chemisch-synthetische Pflanzenschutzmittel",
+      "wrong": [
+        "ein Wechsel der Feldfrüchte auf dem Acker",
+        "Mist als Dünger"
+      ],
+      "explanation": "Bio-Betriebe verzichten auf chemisch-synthetischen Pflanzenschutz und Mineralstickstoff. Fruchtwechsel und Mist gehören gerade zum ökologischen Landbau."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Eher konventionell oder eher ökologisch?",
+      "instruction": "Ordne jede Aussage zu und prüfe dann deine Zuordnung. Begründe deine Wahl zuerst für dich.",
+      "categories": [
+        "eher konventionell",
+        "eher ökologisch"
+      ],
+      "entries": [
+        {
+          "text": "Mineraldünger erhöht den Ertrag.",
+          "target": 0,
+          "feedback": "Mineralischer Stickstoffdünger ist im Bio-Landbau verboten."
+        },
+        {
+          "text": "Ein Spritzmittel hält Schädlinge vom Raps fern.",
+          "target": 0,
+          "feedback": "Chemisch-synthetischer Pflanzenschutz ist konventionell."
+        },
+        {
+          "text": "Die Lebensmittel sind meist günstiger.",
+          "target": 0,
+          "feedback": "Höhere Erträge senken die Kosten."
+        },
+        {
+          "text": "Die Felder werden mit Mist und Kompost gedüngt.",
+          "target": 1,
+          "feedback": "Das ist typisch für den Bio-Landbau."
+        },
+        {
+          "text": "Ein Striegel entfernt Unkraut mechanisch.",
+          "target": 1,
+          "feedback": "Ohne Spritzmittel wird Unkraut mit Maschinen entfernt."
+        },
+        {
+          "text": "Die Schweine haben Auslauf ins Freie.",
+          "target": 1,
+          "feedback": "Bio-Regeln verlangen mehr Platz und Auslauf."
+        }
+      ],
+      "conclusion": "Beide Arten der Landwirtschaft versorgen uns mit Lebensmitteln. Sie setzen unterschiedliche Schwerpunkte zwischen Ertrag und Umweltschutz."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Stelle Vorteile und Nachteile der konventionellen und der ökologischen Landwirtschaft in einer Tabelle gegenüber und beschreibe sie.",
+        "hints": [
+          "Was spricht für, was gegen die konventionelle Landwirtschaft?",
+          "Was spricht für, was gegen die ökologische?"
+        ],
+        "model": "Meine Tabelle hat vier Felder. Konventionell, Vorteile: hohe Erträge auf wenig Fläche, günstige Preise. Konventionell, Nachteile: Dünger kann ins Grundwasser gelangen, Pflanzenschutzmittel schaden Insekten, Tiere haben oft wenig Platz. Ökologisch, Vorteile: Boden, Wasser und Artenvielfalt werden geschont, Tiere haben mehr Platz. Ökologisch, Nachteile: niedrigere Erträge, mehr Fläche für dieselbe Menge, höhere Preise.",
+        "criteria": [
+          "Ich nenne für beide Formen Vorteile.",
+          "Ich nenne für beide Formen Nachteile.",
+          "Meine Gegenüberstellung ist übersichtlich."
+        ]
+      },
+      "2": {
+        "prompt": "Deine Schule überlegt, ob die Mensa nur noch Bio-Lebensmittel anbieten soll. Nimm begründet Stellung und berücksichtige auch Regionalität und Preis.",
+        "hints": [
+          "Was spricht für Bio, was dagegen?",
+          "Welche Rolle spielen regionale Lebensmittel?"
+        ],
+        "model": "Für Bio spricht, dass Boden, Wasser und Tiere geschont werden. Dagegen spricht, dass Bio-Lebensmittel teurer sind und das Essen dann mehr kosten könnte, was nicht alle Familien bezahlen können. Ein Kompromiss wäre, zuerst einige Lebensmittel auf Bio umzustellen, etwa Milchprodukte und Kartoffeln von Höfen aus der Region. Regionale Lebensmittel haben kurze Wege und unterstützen Höfe in der Nähe, auch wenn sie nicht alle Bio sind. Ich bin dafür, schrittweise mehr regionale und Bio-Lebensmittel anzubieten.",
+        "criteria": [
+          "Ich wäge Vorteile und Nachteile ab.",
+          "Ich beziehe Regionalität und Preis ein.",
+          "Ich komme zu einer begründeten Entscheidung."
+        ]
+      }
+    },
+    "figures": [
+      "oeko-konventionell"
+    ]
+  }
+]

@@ -1,0 +1,913 @@
+[
+  {
+    "id": "geogym5-verwaltung",
+    "lb": 5,
+    "title": "Deutschland und Bayern politisch gegliedert",
+    "period": "LB 5 · Administrative Gliederung",
+    "intro": "Bund, Land, Regierungsbezirk, Landkreis, Gemeinde: So ist geregelt, wer wofür zuständig ist.",
+    "paragraphs": [
+      "Deutschland ist ein Bundesstaat aus 16 Bundesländern. Hauptstadt ist Berlin. Drei Bundesländer sind Stadtstaaten: Berlin, Hamburg und Bremen (mit Bremerhaven). Bayern ist das flächengrößte Bundesland; seine Landeshauptstadt ist München. Jedes Bundesland hat ein eigenes Parlament und eine eigene Regierung und ist zum Beispiel für die Schulen zuständig. Auf politischen Karten sind die Grenzen der Länder eingezeichnet, die Länder sind oft unterschiedlich gefärbt.",
+      "Bayern ist in sieben Regierungsbezirke gegliedert: Oberbayern mit dem Regierungssitz München, Niederbayern mit Landshut, die Oberpfalz mit Regensburg, Oberfranken mit Bayreuth, Mittelfranken mit Ansbach, Unterfranken mit Würzburg und Schwaben mit Augsburg. Die Regierungsbezirke bestehen aus Landkreisen und kreisfreien Städten, in Bayern 71 Landkreise und 25 kreisfreie Städte. Die kleinste Einheit ist die Gemeinde, zum Beispiel ein Dorf oder eine Stadt mit Bürgermeisterin oder Bürgermeister. Beispiel: Rosenheim ist eine kreisfreie Stadt im Regierungsbezirk Oberbayern, in Bayern, in Deutschland."
+    ],
+    "takeaway": "Deutschland hat 16 Bundesländer mit der Hauptstadt Berlin. Bayern (Landeshauptstadt München) gliedert sich in sieben Regierungsbezirke, diese in Landkreise und kreisfreie Städte, diese in Gemeinden.",
+    "sourceIds": [
+      "lehrplan",
+      "kx-bundesland",
+      "kx-bayern",
+      "kx-landkreis",
+      "kx-gemeinde",
+      "hanisau-bundeslaender",
+      "stmi"
+    ],
+    "quiz": {
+      "question": "Wie viele Bundesländer hat Deutschland?",
+      "answer": "16",
+      "wrong": [
+        "7",
+        "13"
+      ],
+      "explanation": "Deutschland besteht aus 16 Bundesländern. Sieben ist die Zahl der Regierungsbezirke in Bayern."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Regierungssitze den Bezirken zuordnen",
+      "instruction": "Wähle zu jeder Stadt den Regierungsbezirk, dessen Regierungssitz sie ist. Die Bayernkarte in der Lektion hilft dir.",
+      "categories": [
+        "Oberbayern",
+        "Niederbayern",
+        "Oberpfalz",
+        "Oberfranken",
+        "Mittelfranken",
+        "Unterfranken",
+        "Schwaben"
+      ],
+      "entries": [
+        {
+          "text": "München",
+          "target": 0,
+          "feedback": "München ist Landeshauptstadt und Sitz der Regierung von Oberbayern."
+        },
+        {
+          "text": "Landshut",
+          "target": 1,
+          "feedback": "Landshut ist Sitz der Regierung von Niederbayern."
+        },
+        {
+          "text": "Regensburg",
+          "target": 2,
+          "feedback": "Regensburg ist Sitz der Regierung der Oberpfalz."
+        },
+        {
+          "text": "Bayreuth",
+          "target": 3,
+          "feedback": "Bayreuth ist Sitz der Regierung von Oberfranken."
+        },
+        {
+          "text": "Ansbach",
+          "target": 4,
+          "feedback": "Ansbach ist Sitz der Regierung von Mittelfranken, nicht Nürnberg."
+        },
+        {
+          "text": "Würzburg",
+          "target": 5,
+          "feedback": "Würzburg ist Sitz der Regierung von Unterfranken."
+        },
+        {
+          "text": "Augsburg",
+          "target": 6,
+          "feedback": "Augsburg ist Sitz der Regierung von Schwaben."
+        }
+      ],
+      "conclusion": "Die Karte zeigt die sieben Regierungssitze. Merke dir besonders Ansbach: Die größte Stadt Mittelfrankens, Nürnberg, ist nicht Regierungssitz."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Beschreibe die politische Gliederung von deiner Gemeinde bis zum Bund.",
+        "hints": [
+          "Welche Ebenen gibt es in Bayern?",
+          "Wie heißen sie bei deinem Wohnort?"
+        ],
+        "model": "Ich wohne in der Gemeinde Ottobrunn. Sie gehört zum Landkreis München. Der Landkreis liegt im Regierungsbezirk Oberbayern mit dem Regierungssitz München. Oberbayern ist einer von sieben Regierungsbezirken des Freistaats Bayern, dessen Landeshauptstadt ebenfalls München ist. Bayern ist eines von 16 Bundesländern der Bundesrepublik Deutschland mit der Hauptstadt Berlin.",
+        "criteria": [
+          "Ich nenne die Ebenen in der richtigen Reihenfolge.",
+          "Ich ordne meinen Wohnort richtig ein.",
+          "Ich nenne Hauptstädte oder Regierungssitze."
+        ]
+      },
+      "2": {
+        "prompt": "Eine Mitschülerin sagt: „Nürnberg ist die Hauptstadt von Mittelfranken, weil es die größte Stadt ist.“ Prüfe die Aussage und erkläre den Unterschied zwischen der größten Stadt und dem Regierungssitz.",
+        "hints": [
+          "Welche Stadt ist Regierungssitz von Mittelfranken?",
+          "Muss der Sitz die größte Stadt sein?"
+        ],
+        "model": "Die Aussage stimmt nicht. Regierungssitz von Mittelfranken ist Ansbach, obwohl Nürnberg viel größer ist. Der Regierungssitz ist der Ort, an dem die Behörde des Bezirks, die Regierung von Mittelfranken, arbeitet. Welche Stadt das ist, hat historische Gründe und hängt nicht nur von der Größe ab. Nürnberg ist trotzdem die wichtigste Stadt der Region, mit vielen Arbeitsplätzen, Geschäften und Einrichtungen.",
+        "criteria": [
+          "Ich nenne Ansbach als Regierungssitz.",
+          "Ich erkläre, was ein Regierungssitz ist.",
+          "Ich unterscheide Größe und Verwaltungsfunktion."
+        ]
+      }
+    },
+    "figures": [
+      "deutschland",
+      "bayern-bezirke"
+    ]
+  },
+  {
+    "id": "geogym5-verdichtungsraeume",
+    "lb": 5,
+    "title": "Verdichtungsräume verorten",
+    "period": "LB 5 · Verdichtungsräume in Bayern und Deutschland",
+    "intro": "In manchen Regionen wohnen und arbeiten sehr viele Menschen auf engem Raum: Das sind Verdichtungsräume.",
+    "paragraphs": [
+      "Ein Verdichtungsraum ist ein Gebiet, in dem sehr viele Menschen auf engem Raum wohnen und arbeiten. Er besteht meist aus einer oder mehreren großen Städten und ihrem dicht besiedelten Umland. Typisch sind viele Arbeitsplätze, dichte Bebauung und ein dichtes Netz aus Straßen, Bahnlinien und Flughäfen. Das Gegenstück sind ländliche Räume mit wenigen Einwohnern je Quadratkilometer.",
+      "Der größte Verdichtungsraum Deutschlands ist das Rhein-Ruhr-Gebiet mit Städten wie Köln, Düsseldorf, Essen und Dortmund. Weitere große Verdichtungsräume sind Berlin, Hamburg, Rhein-Main um Frankfurt, Stuttgart und München. In Bayern sind die größten Verdichtungsräume München und das Gebiet um Nürnberg, Fürth und Erlangen; dazu kommen kleinere um Augsburg, Regensburg und Ingolstadt. Auf einer thematischen Karte zur Bevölkerungsdichte erkennst du Verdichtungsräume an den dunkelsten Farben. Beispiel: Nürnberg, Fürth und Erlangen liegen so dicht beieinander, dass sie zusammen einen Verdichtungsraum bilden."
+    ],
+    "takeaway": "Verdichtungsräume sind Gebiete mit sehr vielen Menschen, Arbeitsplätzen und Verkehrswegen auf engem Raum. Der größte in Deutschland ist Rhein-Ruhr, die größten in Bayern sind München und Nürnberg-Fürth-Erlangen.",
+    "sourceIds": [
+      "lehrplan",
+      "kx-ruhrgebiet",
+      "kx-muenchen",
+      "kx-stadt",
+      "lfstat"
+    ],
+    "quiz": {
+      "question": "Welcher ist der größte Verdichtungsraum Deutschlands?",
+      "answer": "das Rhein-Ruhr-Gebiet",
+      "wrong": [
+        "der Raum München",
+        "der Raum Nürnberg-Fürth-Erlangen"
+      ],
+      "explanation": "Im Rhein-Ruhr-Gebiet liegen viele große Städte wie Köln, Düsseldorf, Essen und Dortmund dicht beieinander. In keinem anderen Verdichtungsraum Deutschlands leben so viele Menschen."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Verdichtungsräume auf der Karte",
+      "instruction": "Schau dir die Deutschlandkarte mit den Nummern an. Wähle zu jeder Nummer den Verdichtungsraum.",
+      "categories": [
+        "Rhein-Ruhr",
+        "Berlin",
+        "Hamburg",
+        "Rhein-Main",
+        "München",
+        "Nürnberg-Fürth-Erlangen"
+      ],
+      "entries": [
+        {
+          "text": "Nummer 1",
+          "target": 0,
+          "feedback": "Rhein-Ruhr liegt im Westen Deutschlands in Nordrhein-Westfalen."
+        },
+        {
+          "text": "Nummer 2",
+          "target": 1,
+          "feedback": "Berlin liegt im Osten Deutschlands."
+        },
+        {
+          "text": "Nummer 3",
+          "target": 2,
+          "feedback": "Hamburg liegt im Norden an der Elbe."
+        },
+        {
+          "text": "Nummer 4",
+          "target": 3,
+          "feedback": "Rhein-Main um Frankfurt liegt in Hessen."
+        },
+        {
+          "text": "Nummer 5",
+          "target": 4,
+          "feedback": "München liegt im Süden Bayerns."
+        },
+        {
+          "text": "Nummer 6",
+          "target": 5,
+          "feedback": "Nürnberg-Fürth-Erlangen liegt in Mittelfranken."
+        }
+      ],
+      "conclusion": "Die großen Verdichtungsräume liegen über ganz Deutschland verteilt, oft an großen Flüssen und Verkehrswegen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre, was ein Verdichtungsraum ist, und nenne je zwei Beispiele aus Deutschland und aus Bayern.",
+        "hints": [
+          "Woran erkennst du einen Verdichtungsraum?",
+          "Wo liegen große Verdichtungsräume?"
+        ],
+        "model": "Ein Verdichtungsraum ist ein Gebiet, in dem sehr viele Menschen auf engem Raum wohnen und arbeiten. Er besteht aus großen Städten und ihrem dicht bebauten Umland mit vielen Arbeitsplätzen und Verkehrswegen. Beispiele in Deutschland sind das Rhein-Ruhr-Gebiet, der größte Verdichtungsraum, und Berlin. In Bayern sind es München und das Gebiet um Nürnberg, Fürth und Erlangen.",
+        "criteria": [
+          "Ich erkläre den Begriff mit Merkmalen.",
+          "Ich nenne zwei Beispiele aus Deutschland.",
+          "Ich nenne zwei Beispiele aus Bayern."
+        ]
+      },
+      "2": {
+        "prompt": "Vergleiche das Leben in einem Verdichtungsraum mit dem Leben im ländlichen Raum. Nenne Vor- und Nachteile beider.",
+        "hints": [
+          "Was bietet der Verdichtungsraum, was fehlt?",
+          "Was bietet der ländliche Raum, was fehlt?"
+        ],
+        "model": "Im Verdichtungsraum gibt es viele Arbeitsplätze, Schulen, Kinos und Geschäfte in der Nähe, und Busse und Bahnen fahren häufig. Nachteile sind hohe Mieten, Lärm, Staus und wenig Grün. Im ländlichen Raum ist es ruhiger, die Natur ist nah, und Wohnraum ist meist günstiger. Dafür sind die Wege zur Arbeit, zum Arzt oder zum Einkaufen oft weit, und ohne Auto ist man wenig beweglich. Was besser ist, hängt davon ab, was einem wichtig ist.",
+        "criteria": [
+          "Ich nenne Vorteile beider Räume.",
+          "Ich nenne Nachteile beider Räume.",
+          "Ich komme zu einem abwägenden Fazit."
+        ]
+      }
+    },
+    "figures": [
+      "verdichtungsraeume"
+    ]
+  },
+  {
+    "id": "geogym5-stadtentwicklung",
+    "lb": 5,
+    "title": "Wie Städte entstanden und wuchsen",
+    "period": "LB 5 · Stadtentwicklung: historische Grundlagen",
+    "intro": "Fast jede Stadt hat einen Grund, warum sie genau dort liegt. Am Stadtplan kannst du ihre Geschichte ablesen.",
+    "paragraphs": [
+      "Viele Städte entstanden im Mittelalter an günstigen Stellen: an einer Furt oder Brücke über einen Fluss, an der Kreuzung von Handelswegen, bei einer Burg oder einem Kloster. München entstand, nachdem Herzog Heinrich der Löwe 1158 eine Brücke über die Isar bauen ließ, über die der Salzhandel lief. Eine mittelalterliche Altstadt erkennst du an der Stadtmauer oder ihrem früheren Verlauf, an engen, krummen Gassen und am Marktplatz in der Mitte mit Kirche und Rathaus.",
+      "Im 19. Jahrhundert wuchsen die Städte durch die Industrialisierung stark. Es entstanden Bahnhöfe und Fabriken, und viele Menschen zogen vom Land in die Stadt, um dort zu arbeiten. Die Stadtmauern wurden oft abgerissen, und um die Altstadt entstanden neue Viertel. Im 20. Jahrhundert kamen große Wohnsiedlungen am Stadtrand hinzu, und später zogen viele Menschen ins Umland. So wächst eine Stadt wie die Jahresringe eines Baumes. Beispiel: Wo heute in vielen Städten eine breite Ringstraße um die Altstadt führt, stand früher die Stadtmauer."
+    ],
+    "takeaway": "Städte entstanden oft an Flussübergängen, Handelswegen, Burgen oder Klöstern. Um die mittelalterliche Altstadt mit Markt, Kirche und Rathaus wuchsen mit der Industrialisierung und später neue Viertel bis ins Umland.",
+    "sourceIds": [
+      "lehrplan",
+      "kx-stadt",
+      "kx-muenchen"
+    ],
+    "quiz": {
+      "question": "Warum entstanden viele Städte an Flüssen?",
+      "answer": "Dort kreuzten sich Handelswege an Furten und Brücken.",
+      "wrong": [
+        "Weil Flüsse vor Regen schützen.",
+        "Weil es an Flüssen nie Hochwasser gab."
+      ],
+      "explanation": "An einer Furt oder Brücke mussten alle Händler den Fluss überqueren. Dort entstanden Märkte, Zölle und schließlich Städte."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Wie eine Stadt wächst",
+      "instruction": "Bringe die Schritte mit den Pfeilen in die richtige Reihenfolge: den ersten nach oben. Prüfe dann deine Reihenfolge.",
+      "categories": [],
+      "entries": [
+        {
+          "text": "Eine Siedlung entsteht an einer Brücke über den Fluss.",
+          "target": 0,
+          "feedback": "Der Flussübergang zieht Händler an."
+        },
+        {
+          "text": "Die Stadt erhält Marktrecht und baut eine Stadtmauer.",
+          "target": 1,
+          "feedback": "Im Mittelalter schützt die Mauer Markt und Bewohner."
+        },
+        {
+          "text": "Mit der Industrialisierung entstehen Bahnhof und Fabriken; die Mauer wird abgerissen.",
+          "target": 2,
+          "feedback": "Im 19. Jahrhundert wächst die Stadt schnell."
+        },
+        {
+          "text": "Große Wohnsiedlungen entstehen am Stadtrand.",
+          "target": 3,
+          "feedback": "Im 20. Jahrhundert wächst die Stadt nach außen."
+        },
+        {
+          "text": "Viele Familien und Betriebe ziehen ins Umland.",
+          "target": 4,
+          "feedback": "Die Stadt wächst über ihre Grenzen hinaus."
+        }
+      ],
+      "conclusion": "Am Stadtplan liest du die Wachstumsringe ab: innen die Altstadt, außen die jüngsten Viertel."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Beschreibe, woran du auf einem Stadtplan die mittelalterliche Altstadt erkennst.",
+        "hints": [
+          "Wie sehen Straßen und Plätze aus?",
+          "Welche Spuren der Stadtmauer gibt es?"
+        ],
+        "model": "Die Altstadt liegt meist in der Mitte der Stadt, oft an einem Fluss. Die Gassen sind eng und krumm, und in der Mitte liegt ein Marktplatz mit Kirche und Rathaus. Um die Altstadt führt oft eine Ringstraße oder ein Grüngürtel, wo früher die Stadtmauer stand. Manchmal sind noch Stadttore erhalten. Außerhalb davon sind die Straßen breiter und gerader.",
+        "criteria": [
+          "Ich nenne Lage und Straßennetz.",
+          "Ich nenne Markt, Kirche und Rathaus.",
+          "Ich erkläre die Spuren der Stadtmauer."
+        ]
+      },
+      "2": {
+        "prompt": "Erkläre am Beispiel München, wie Lage und Geschichte das Wachstum einer Stadt bestimmt haben.",
+        "hints": [
+          "Warum entstand München an der Isar?",
+          "Was ließ die Stadt später wachsen?"
+        ],
+        "model": "München entstand an einer Brücke über die Isar, die Heinrich der Löwe 1158 bauen ließ. Über sie lief der Salzhandel, deshalb entwickelten sich Markt und Stadt. Die mittelalterliche Altstadt mit dem Marienplatz war von einer Mauer umgeben, von der noch Tore wie das Isartor stehen. Später wurde München Residenzstadt der bayerischen Herrscher, und im 19. Jahrhundert wuchs es mit Eisenbahn und Industrie stark. Heute reicht der Verdichtungsraum weit ins Umland.",
+        "criteria": [
+          "Ich nenne den Flussübergang als Ursprung.",
+          "Ich beschreibe die Altstadt.",
+          "Ich nenne spätere Wachstumsphasen."
+        ]
+      }
+    },
+    "figures": [
+      "stadtwachstum"
+    ]
+  },
+  {
+    "id": "geogym5-stadtgliederung",
+    "lb": 5,
+    "title": "Die Stadt und ihre Viertel",
+    "period": "LB 5 · Merkmale und funktionale Gliederung",
+    "intro": "Eine Stadt ist kein Durcheinander: Jedes Viertel hat seine Aufgabe.",
+    "paragraphs": [
+      "Städte haben typische Merkmale: viele Einwohner auf engem Raum, dichte und hohe Bebauung, viele Arbeitsplätze, Geschäfte, Schulen, Krankenhäuser und Kultureinrichtungen sowie Busse und Bahnen. Innerhalb einer Stadt haben die Viertel unterschiedliche Funktionen. Man spricht von der funktionalen Gliederung. In der Innenstadt, der City, liegen Kaufhäuser, Fachgeschäfte, Banken, Behörden, Museen und Gaststätten. Dort ist tagsüber viel los, aber nur wenige Menschen wohnen dort, weil Läden und Büros die teuren Flächen nutzen.",
+      "Um die Innenstadt liegen Wohngebiete: dicht bebaute Viertel mit Mehrfamilienhäusern und weiter außen Siedlungen mit Einfamilienhäusern. Gewerbe- und Industriegebiete liegen meist am Stadtrand an Autobahnen, Bahnlinien oder Häfen, weil sie viel Platz und gute Verkehrsanbindung brauchen und Lärm machen. Parks, Sportplätze und Grünzüge dienen der Erholung. Beispiel: In der Münchner Innenstadt reihen sich in der Fußgängerzone Geschäfte aneinander, während in Gewerbegebieten am Stadtrand große Hallen von Speditionen stehen."
+    ],
+    "takeaway": "Städte gliedern sich nach Funktionen: Innenstadt (Einkaufen, Verwaltung, Kultur), Wohngebiete, Gewerbe- und Industriegebiete am Rand an Verkehrswegen und Erholungsflächen.",
+    "sourceIds": [
+      "lehrplan",
+      "kx-stadt",
+      "kx-verkehr"
+    ],
+    "quiz": {
+      "question": "Warum wohnen in der Innenstadt großer Städte vergleichsweise wenige Menschen?",
+      "answer": "weil Geschäfte, Büros und Banken die teuren Flächen nutzen",
+      "wrong": [
+        "weil dort keine Häuser stehen",
+        "weil dort keine Busse fahren"
+      ],
+      "explanation": "In der City sind Mieten und Bodenpreise am höchsten. Geschäfte und Büros können sie bezahlen, für Wohnungen wird der Platz knapp und teuer."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Welches Viertel ist gemeint?",
+      "instruction": "Ordne jede Aussage zu und prüfe dann deine Zuordnung. Begründe deine Wahl zuerst für dich.",
+      "categories": [
+        "Innenstadt",
+        "Wohngebiet",
+        "Gewerbe- und Industriegebiet",
+        "Erholungsfläche"
+      ],
+      "entries": [
+        {
+          "text": "Fußgängerzone mit Kaufhäusern und Fachgeschäften",
+          "target": 0,
+          "feedback": "Einkaufen ist eine Hauptfunktion der Innenstadt."
+        },
+        {
+          "text": "Rathaus, Banken und Museen",
+          "target": 0,
+          "feedback": "Verwaltung und Kultur liegen oft im Zentrum."
+        },
+        {
+          "text": "Mehrfamilienhäuser mit Spielplatz und Bäcker um die Ecke",
+          "target": 1,
+          "feedback": "Hier wohnen viele Menschen."
+        },
+        {
+          "text": "Reihenhaussiedlung am Stadtrand",
+          "target": 1,
+          "feedback": "Auch das ist ein Wohngebiet."
+        },
+        {
+          "text": "große Lagerhallen direkt an der Autobahnausfahrt",
+          "target": 2,
+          "feedback": "Gewerbe braucht Platz und gute Verkehrsanbindung."
+        },
+        {
+          "text": "Fabrik mit Gleisanschluss",
+          "target": 2,
+          "feedback": "Industrie liegt oft an Bahnlinien."
+        },
+        {
+          "text": "Stadtpark mit Liegewiese und Teich",
+          "target": 3,
+          "feedback": "Parks dienen der Erholung."
+        },
+        {
+          "text": "Sportplatz und Freibad",
+          "target": 3,
+          "feedback": "Auch Sportanlagen gehören zur Erholung."
+        }
+      ],
+      "conclusion": "Jedes Viertel erfüllt eine Aufgabe. Zusammen ergeben sie die Stadt."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Beschreibe die funktionale Gliederung einer Stadt von innen nach außen.",
+        "hints": [
+          "Was liegt in der Innenstadt?",
+          "Was folgt nach außen?"
+        ],
+        "model": "In der Mitte liegt die Innenstadt mit Geschäften, Banken, Behörden, Museen und Gaststätten; dort wohnen nur wenige Menschen. Um sie herum liegen dicht bebaute Wohngebiete mit Mehrfamilienhäusern. Weiter außen folgen Siedlungen mit Einfamilienhäusern. Am Stadtrand an Autobahnen und Bahnlinien liegen Gewerbe- und Industriegebiete. Dazwischen gibt es Parks und Sportanlagen zur Erholung.",
+        "criteria": [
+          "Ich beginne mit der Innenstadt und ihren Funktionen.",
+          "Ich nenne Wohn- und Gewerbegebiete mit ihrer Lage.",
+          "Ich erwähne Erholungsflächen."
+        ]
+      },
+      "2": {
+        "prompt": "Ein großes Möbelhaus will sich ansiedeln. Zur Wahl stehen ein Grundstück in der Fußgängerzone und eines im Gewerbegebiet an der Autobahn. Empfiehl einen Standort und begründe.",
+        "hints": [
+          "Wie viel Platz braucht ein Möbelhaus?",
+          "Wie kommen Kundinnen und Kunden mit großen Einkäufen hin?"
+        ],
+        "model": "Ich empfehle das Gewerbegebiet an der Autobahn. Ein Möbelhaus braucht viel Fläche für Ausstellung, Lager und Parkplätze, und Grundstücke in der Fußgängerzone sind dafür zu klein und zu teuer. Die meisten Kundinnen und Kunden transportieren Möbel mit dem Auto, deshalb ist die Autobahnanbindung wichtig. Ein Nachteil ist, dass man ohne Auto schlecht hinkommt; eine Buslinie zum Gewerbegebiet wäre deshalb sinnvoll.",
+        "criteria": [
+          "Ich empfehle einen Standort.",
+          "Ich begründe mit Platz, Preis und Verkehr.",
+          "Ich nenne einen Nachteil oder eine Ergänzung."
+        ]
+      }
+    },
+    "figures": [
+      "stadtmodell"
+    ]
+  },
+  {
+    "id": "geogym5-suburbanisierung",
+    "lb": 5,
+    "title": "Suburbanisierung: Die Stadt wächst ins Umland",
+    "period": "LB 5 · Suburbanisierung",
+    "intro": "Viele Familien ziehen aus der Stadt in die Gemeinden drumherum. Das verändert Stadt und Umland.",
+    "paragraphs": [
+      "Suburbanisierung bedeutet, dass Menschen und Betriebe aus der Kernstadt in ihr Umland ziehen. Viele Familien wünschen sich ein Haus mit Garten, mehr Platz und Ruhe. In der Stadt ist Bauland knapp und teuer, im Umland günstiger. Mit Auto, S-Bahn und Regionalbus erreichen sie trotzdem ihre Arbeitsplätze in der Stadt. Später folgen Supermärkte, Einkaufszentren und Gewerbebetriebe, die am Stadtrand und im Umland mehr Platz und gute Straßenanbindung finden.",
+      "Die Folgen sind deutlich. Die Gemeinden im Umland wachsen stark; sie brauchen neue Kindergärten, Schulen und Straßen. Felder und Wiesen werden bebaut, Böden werden versiegelt. Weil viele jeden Tag in die Stadt pendeln, nehmen Verkehr, Staus und Abgase zu. Die Innenstadt kann Kundschaft an Einkaufszentren auf der grünen Wiese verlieren. Beispiel: Rund um München sind aus kleinen Dörfern große Gemeinden mit Neubaugebieten und S-Bahn-Anschluss geworden."
+    ],
+    "takeaway": "Suburbanisierung: Menschen und Betriebe ziehen aus der Kernstadt ins Umland, weil dort Platz und Bauland günstiger sind. Folgen sind wachsende Umlandgemeinden, Flächenverbrauch und mehr Pendlerverkehr.",
+    "sourceIds": [
+      "lehrplan",
+      "kx-stadt",
+      "kx-verkehr",
+      "kx-nachhaltigkeit"
+    ],
+    "quiz": {
+      "question": "Was bedeutet Suburbanisierung?",
+      "answer": "Menschen und Betriebe ziehen aus der Kernstadt in das Umland.",
+      "wrong": [
+        "Menschen ziehen vom Dorf in die Innenstadt.",
+        "Eine Altstadt wird abgerissen und neu gebaut."
+      ],
+      "explanation": "„Suburbia“ ist das Umland einer Stadt. Bei der Suburbanisierung wächst dieses Umland, weil Menschen und Betriebe aus der Stadt dorthin ziehen."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Grund oder Folge der Suburbanisierung?",
+      "instruction": "Ordne jede Aussage zu und prüfe dann deine Zuordnung. Begründe deine Wahl zuerst für dich.",
+      "categories": [
+        "Grund für den Umzug",
+        "Folge"
+      ],
+      "entries": [
+        {
+          "text": "Im Umland ist Bauland günstiger als in der Stadt.",
+          "target": 0,
+          "feedback": "Günstiges Bauland lockt Familien."
+        },
+        {
+          "text": "Die Familie wünscht sich ein Haus mit Garten.",
+          "target": 0,
+          "feedback": "Platz und Grün sind häufige Gründe."
+        },
+        {
+          "text": "Mit der S-Bahn ist man schnell an der Arbeit in der Stadt.",
+          "target": 0,
+          "feedback": "Gute Verkehrsanbindung macht das Umland attraktiv."
+        },
+        {
+          "text": "Felder werden zu Neubaugebieten, Böden werden versiegelt.",
+          "target": 1,
+          "feedback": "Der Flächenverbrauch ist eine Folge."
+        },
+        {
+          "text": "Morgens stauen sich die Autos auf dem Weg in die Stadt.",
+          "target": 1,
+          "feedback": "Mehr Pendler bedeuten mehr Verkehr."
+        },
+        {
+          "text": "Die Umlandgemeinde muss einen neuen Kindergarten bauen.",
+          "target": 1,
+          "feedback": "Wachsende Gemeinden brauchen mehr Einrichtungen."
+        }
+      ],
+      "conclusion": "Was für eine Familie ein guter Grund ist, kann für die Region als Ganzes Probleme bringen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre die Suburbanisierung mit ihren Gründen und zwei Folgen.",
+        "hints": [
+          "Warum ziehen Menschen ins Umland?",
+          "Was verändert sich dadurch?"
+        ],
+        "model": "Bei der Suburbanisierung ziehen Menschen und Betriebe aus der Kernstadt ins Umland. Gründe sind günstigeres Bauland, der Wunsch nach einem Haus mit Garten und mehr Ruhe. Gute Straßen und S-Bahnen machen es möglich, trotzdem in der Stadt zu arbeiten. Folgen sind, dass Felder bebaut und Böden versiegelt werden und dass viel mehr Menschen pendeln, was zu Staus und Abgasen führt.",
+        "criteria": [
+          "Ich erkläre den Begriff.",
+          "Ich nenne mindestens zwei Gründe.",
+          "Ich nenne zwei Folgen."
+        ]
+      },
+      "2": {
+        "prompt": "Eine Umlandgemeinde bei Nürnberg will ein neues Baugebiet für 200 Einfamilienhäuser auf einem Acker ausweisen. Beurteile das Vorhaben aus Sicht der Gemeinde, eines Landwirts und des Umweltschutzes.",
+        "hints": [
+          "Was gewinnt die Gemeinde?",
+          "Was verlieren Landwirt und Natur?"
+        ],
+        "model": "Die Gemeinde gewinnt neue Einwohner, Steuern und vielleicht junge Familien für Kindergarten und Vereine. Sie muss aber Straßen, Kanäle und Kindergartenplätze bezahlen. Der Landwirt verliert fruchtbaren Acker, der nicht zurückkommt. Aus Sicht des Umweltschutzes werden Böden versiegelt, Regen kann nicht mehr versickern, und durch mehr Pendler steigt der Verkehr. Besser wäre ein kleineres Baugebiet mit Reihen- und Mehrfamilienhäusern in der Nähe des Bahnhofs, das weniger Fläche verbraucht.",
+        "criteria": [
+          "Ich stelle alle drei Sichtweisen dar.",
+          "Ich nenne Vorteile und Nachteile.",
+          "Ich komme zu einem begründeten Vorschlag."
+        ]
+      }
+    },
+    "figures": [
+      "suburbanisierung"
+    ]
+  },
+  {
+    "id": "geogym5-stadt-umland",
+    "lb": 5,
+    "title": "Stadt und Umland: Pendler und Bedeutungsüberschuss",
+    "period": "LB 5 · Stadt-Umland-Beziehungen",
+    "intro": "Jeden Morgen strömen Tausende in die Stadt, jeden Abend wieder hinaus. Stadt und Umland brauchen einander.",
+    "paragraphs": [
+      "Eine Stadt versorgt nicht nur ihre eigenen Einwohner. Sie bietet auch den Menschen im Umland Arbeitsplätze, weiterführende Schulen, Krankenhäuser, Fachärzte, Geschäfte, Theater und Behörden. Diesen Überschuss an Einrichtungen nennt man Bedeutungsüberschuss; Städte mit großem Bedeutungsüberschuss sind zentrale Orte. Deshalb fahren jeden Tag viele Menschen in die Stadt hinein, zur Arbeit, zur Schule oder zum Einkaufen. Wer regelmäßig zwischen Wohnort und Arbeits- oder Schulort hin- und herfährt, ist ein Pendler.",
+      "Das Umland bietet der Stadt ebenfalls viel: Wohnraum, Erholungsgebiete, Trinkwasser, Lebensmittel von den Höfen und Arbeitskräfte. Pendlerströme verlaufen nicht nur in eine Richtung: Manche Menschen wohnen in der Stadt und arbeiten in einem Betrieb im Umland. Morgens und am späten Nachmittag sind Straßen und Bahnen besonders voll, im Berufsverkehr. Beispiel: Viele Schülerinnen und Schüler aus Dörfern im Landkreis fahren jeden Morgen mit dem Bus in die Kreisstadt, weil dort das Gymnasium liegt."
+    ],
+    "takeaway": "Städte haben einen Bedeutungsüberschuss: Sie versorgen auch das Umland mit Arbeitsplätzen und Einrichtungen. Das Umland bietet Wohnraum, Erholung, Wasser und Lebensmittel. Pendlerströme verbinden beide.",
+    "sourceIds": [
+      "lehrplan",
+      "kx-stadt",
+      "kx-verkehr",
+      "lfstat"
+    ],
+    "quiz": {
+      "question": "Was meint man mit dem Bedeutungsüberschuss einer Stadt?",
+      "answer": "Sie bietet mehr Arbeitsplätze und Einrichtungen, als ihre eigenen Einwohner brauchen.",
+      "wrong": [
+        "Sie hat mehr Einwohner als jede andere Stadt.",
+        "Sie ist älter als die Dörfer im Umland."
+      ],
+      "explanation": "Der Überschuss versorgt das Umland mit: Krankenhaus, Gymnasium und Arbeitsplätze werden auch von Menschen aus den Dörfern genutzt."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Was bietet wer?",
+      "instruction": "Ordne jede Aussage zu und prüfe dann deine Zuordnung. Begründe deine Wahl zuerst für dich.",
+      "categories": [
+        "Die Stadt bietet dem Umland",
+        "Das Umland bietet der Stadt"
+      ],
+      "entries": [
+        {
+          "text": "Arbeitsplätze in Büros, Fabriken und Geschäften",
+          "target": 0,
+          "feedback": "Viele Pendler fahren dafür in die Stadt."
+        },
+        {
+          "text": "Krankenhaus mit Fachabteilungen",
+          "target": 0,
+          "feedback": "Spezialisierte Medizin gibt es meist nur in Städten."
+        },
+        {
+          "text": "Gymnasium und Berufsschule",
+          "target": 0,
+          "feedback": "Weiterführende Schulen liegen oft in der Stadt."
+        },
+        {
+          "text": "Wälder und Seen zur Erholung am Wochenende",
+          "target": 1,
+          "feedback": "Stadtbewohner erholen sich im Umland."
+        },
+        {
+          "text": "Trinkwasser aus Brunnen im Umland",
+          "target": 1,
+          "feedback": "Viele Städte beziehen ihr Wasser aus dem Umland."
+        },
+        {
+          "text": "Milch, Gemüse und Getreide von den Höfen",
+          "target": 1,
+          "feedback": "Landwirtschaft versorgt die Stadt."
+        }
+      ],
+      "conclusion": "Stadt und Umland sind aufeinander angewiesen. Pendler-, Versorgungs- und Freizeitströme verbinden sie."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre die Beziehungen zwischen einer Stadt und ihrem Umland mit dem Begriff Bedeutungsüberschuss.",
+        "hints": [
+          "Was bietet die Stadt dem Umland?",
+          "Was bietet das Umland der Stadt?"
+        ],
+        "model": "Eine Stadt hat einen Bedeutungsüberschuss: Sie bietet mehr Arbeitsplätze, Schulen, Krankenhäuser und Geschäfte, als ihre eigenen Einwohner brauchen. Deshalb kommen jeden Tag Pendler aus dem Umland zur Arbeit, zur Schule oder zum Einkaufen. Das Umland versorgt die Stadt dafür mit Wohnraum, Erholungsgebieten, Trinkwasser und Lebensmitteln. Beide sind also aufeinander angewiesen.",
+        "criteria": [
+          "Ich erkläre den Bedeutungsüberschuss.",
+          "Ich nenne Leistungen der Stadt für das Umland.",
+          "Ich nenne Leistungen des Umlands für die Stadt."
+        ]
+      },
+      "2": {
+        "prompt": "Der Berufsverkehr in eine Großstadt führt jeden Morgen zu langen Staus. Entwickle zwei Vorschläge, wie sich die Pendlerströme verbessern lassen, und bewerte sie.",
+        "hints": [
+          "Welche Verkehrsmittel könnten helfen?",
+          "Wie ließe sich der Verkehr zeitlich oder räumlich verteilen?"
+        ],
+        "model": "Erstens könnte die Stadt S-Bahnen und Busse aus dem Umland häufiger fahren lassen und an den Bahnhöfen Park-and-Ride-Plätze und sichere Radständer bauen. Dann steigen mehr Pendler um, und die Straßen werden leerer; das kostet aber viel Geld. Zweitens könnten Betriebe flexible Arbeitszeiten und Arbeit von zu Hause anbieten. So verteilt sich der Verkehr, allerdings geht das nicht in jedem Beruf. Am besten wirken beide Vorschläge zusammen.",
+        "criteria": [
+          "Ich entwickle zwei unterschiedliche Vorschläge.",
+          "Ich bewerte Vorteile und Grenzen.",
+          "Ich beziehe mich auf Pendlerströme."
+        ]
+      }
+    },
+    "figures": [],
+    "lab": "pendler"
+  },
+  {
+    "id": "geogym5-stadtplan",
+    "lb": 5,
+    "title": "Sich mit dem Stadtplan orientieren",
+    "period": "LB 5 · Orientierung in städtischen Räumen",
+    "intro": "Ob Museum, Bahnhof oder Treffpunkt: Mit Stadtplan und Netzplan findest du dich in jeder Stadt zurecht.",
+    "paragraphs": [
+      "Ein Stadtplan ist eine Karte in großem Maßstab, oft 1 : 10 000 bis 1 : 20 000. Er zeigt Straßen, Plätze, wichtige Gebäude, Parks und Haltestellen. Am Rand stehen Buchstaben und Zahlen, die das Gitter der Planquadrate bilden. Im Straßenverzeichnis steht hinter jedem Straßennamen das Planquadrat, zum Beispiel „Bahnhofstraße E4“. Die Legende erklärt die Zeichen, ein Nordpfeil zeigt die Richtung. Digitale Stadtpläne zeigen zusätzlich deinen Standort und berechnen Wege.",
+      "Für Bus und Bahn gibt es einen Netzplan. Er zeigt die Linien in verschiedenen Farben und die Haltestellen, an denen du umsteigen kannst. Ein Netzplan ist aber nicht maßstabsgetreu: Die Linien sind begradigt, und die Abstände zwischen den Haltestellen stimmen nicht mit der Wirklichkeit überein. Für Entfernungen nimmst du deshalb den Stadtplan. Einen Weg beschreibst du mit Straßennamen, Himmelsrichtungen und auffälligen Gebäuden. Beispiel: „Vom Bahnhof gehst du nach Westen die Bahnhofstraße entlang bis zum Rathaus.“"
+    ],
+    "takeaway": "Ein Stadtplan ist maßstabsgetreu, hat Planquadrate, ein Straßenverzeichnis und eine Legende. Ein Netzplan zeigt Linien und Umstiege, ist aber nicht maßstabsgetreu.",
+    "sourceIds": [
+      "lehrplan",
+      "kx-stadt",
+      "kx-landkarte",
+      "bayernatlas"
+    ],
+    "quiz": {
+      "question": "Ein Netzplan der U-Bahn ist nicht maßstabsgetreu. Was folgt daraus?",
+      "answer": "Man kann mit ihm keine Entfernungen abmessen.",
+      "wrong": [
+        "Man kann mit ihm keine Umstiege finden.",
+        "Er zeigt die Haltestellen in falscher Reihenfolge."
+      ],
+      "explanation": "Der Netzplan zeigt Reihenfolge und Umstiege richtig, aber die Abstände stimmen nicht. Für Entfernungen brauchst du den Stadtplan."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Stadtplan oder Netzplan von Bus und Bahn?",
+      "instruction": "Ordne jede Aussage zu und prüfe dann deine Zuordnung. Begründe deine Wahl zuerst für dich.",
+      "categories": [
+        "Stadtplan",
+        "Netzplan"
+      ],
+      "entries": [
+        {
+          "text": "maßstabsgetreu, mit Maßstabsleiste",
+          "target": 0,
+          "feedback": "Nur der Stadtplan ist maßstabsgetreu."
+        },
+        {
+          "text": "Straßenverzeichnis mit Planquadraten",
+          "target": 0,
+          "feedback": "Damit findest du jede Straße."
+        },
+        {
+          "text": "zeigt jedes Gebäude und jeden Park",
+          "target": 0,
+          "feedback": "Der Stadtplan zeigt viele Einzelheiten."
+        },
+        {
+          "text": "Linien sind begradigt, Abstände stimmen nicht",
+          "target": 1,
+          "feedback": "Der Netzplan vereinfacht stark."
+        },
+        {
+          "text": "Farben stehen für einzelne Linien",
+          "target": 1,
+          "feedback": "So erkennst du die Linien im Netzplan."
+        },
+        {
+          "text": "zeigt, wo du umsteigen kannst",
+          "target": 1,
+          "feedback": "Umsteigehaltestellen sind besonders markiert."
+        }
+      ],
+      "conclusion": "Für den Weg mit Bus und Bahn hilft der Netzplan, für Entfernungen und Fußwege der Stadtplan."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Beschreibe mit Hilfe eines Stadtplans den Weg vom Bahnhof zu einem Museum. Verwende Straßennamen, Himmelsrichtungen und Orientierungspunkte.",
+        "hints": [
+          "Wie findest du Bahnhof und Museum auf dem Plan?",
+          "Wie beschreibst du den Weg verständlich?"
+        ],
+        "model": "Ich suche im Verzeichnis den Bahnhof (E4) und das Museum (D2) und finde beide über die Planquadrate. Vom Bahnhof gehe ich nach Norden die Bahnhofstraße entlang bis zur Kreuzung mit der großen Hauptstraße. Dort biege ich nach Westen ab und gehe am Rathaus vorbei. Nach der Brücke über den Fluss liegt das Museum auf der rechten Seite, also nördlich der Straße. Mit der Maßstabsleiste schätze ich, dass der Weg etwa einen Kilometer lang ist.",
+        "criteria": [
+          "Ich nutze das Verzeichnis und die Planquadrate.",
+          "Ich verwende Himmelsrichtungen und Orientierungspunkte.",
+          "Ich schätze die Entfernung mit dem Maßstab."
+        ]
+      },
+      "2": {
+        "prompt": "Deine Klasse fährt nach München und will vom Hauptbahnhof zum Deutschen Museum. Erkläre, wie dir Netzplan und Stadtplan jeweils helfen und warum du beide brauchst.",
+        "hints": [
+          "Was zeigt dir der Netzplan?",
+          "Wofür brauchst du den Stadtplan?"
+        ],
+        "model": "Mit dem Netzplan finde ich heraus, welche Linie vom Hauptbahnhof in Richtung Isartor fährt und wo ich vielleicht umsteigen muss. Er zeigt die Haltestellen in der richtigen Reihenfolge, aber nicht die wirklichen Abstände. Mit dem Stadtplan finde ich den Fußweg von der Haltestelle zum Museum, das auf einer Insel in der Isar liegt, und kann die Entfernung mit dem Maßstab abschätzen. Erst beide zusammen ergeben den ganzen Weg.",
+        "criteria": [
+          "Ich erkläre den Nutzen des Netzplans.",
+          "Ich erkläre den Nutzen des Stadtplans.",
+          "Ich begründe, warum beide nötig sind."
+        ]
+      }
+    },
+    "figures": [],
+    "lab": "planquadrat"
+  },
+  {
+    "id": "geogym5-kartierung",
+    "lb": 5,
+    "title": "Eine Straße kartieren",
+    "period": "LB 5 · Einfache Kartierung",
+    "intro": "Was ist in deiner Hauptstraße eigentlich los? Eine Kartierung macht es sichtbar.",
+    "paragraphs": [
+      "Bei einer Nutzungskartierung hältst du auf einer Karte fest, wie Gebäude oder Flächen genutzt werden. Zuerst formulierst du eine Leitfrage, zum Beispiel: „Ist unsere Hauptstraße eine typische Einkaufsstraße?“ Du brauchst eine Grundkarte mit den Umrissen der Häuser und eine Legende mit Farben, etwa Gelb für Wohnen, Rot für Einzelhandel, Orange für Gastronomie, Blau für Dienstleistungen wie Ärzte und Banken und Grau für Leerstand.",
+      "Dann gehst du die Straße ab und trägst für jedes Haus die Nutzung ein. Erdgeschoss und Obergeschoss kartierst du getrennt, weil sie oft unterschiedlich genutzt werden: Unten liegt ein Laden, oben wird gewohnt. Zurück in der Schule zeichnest du die Karte sauber, zählst die Nutzungen aus und stellst sie in einem Säulendiagramm dar. Dann beantwortest du die Leitfrage. Beispiel: Wenn im Erdgeschoss vor allem Geschäfte und Gaststätten liegen und darüber gewohnt wird, ist die Straße eine typische Einkaufsstraße. Viele leere Läden können zeigen, dass sie an Bedeutung verliert."
+    ],
+    "takeaway": "Bei einer Nutzungskartierung trägst du mit einer Farblegende ein, wie jedes Geschoss genutzt wird. Erdgeschoss und Obergeschoss werden getrennt kartiert, danach wird ausgezählt und die Leitfrage beantwortet.",
+    "sourceIds": [
+      "lehrplan",
+      "kx-stadt",
+      "bayernatlas"
+    ],
+    "quiz": {
+      "question": "Warum kartiert man Erdgeschoss und Obergeschoss getrennt?",
+      "answer": "weil sie oft unterschiedlich genutzt werden",
+      "wrong": [
+        "weil das Obergeschoss immer leer steht",
+        "weil man das Erdgeschoss nicht sehen kann"
+      ],
+      "explanation": "Unten liegen oft Läden, Cafés oder Praxen, oben Wohnungen oder Büros. Wer nur eine Nutzung je Haus einträgt, verliert diese Information."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Eine Kartierung durchführen",
+      "instruction": "Bringe die Schritte mit den Pfeilen in die richtige Reihenfolge: den ersten nach oben. Prüfe dann deine Reihenfolge.",
+      "categories": [],
+      "entries": [
+        {
+          "text": "Eine Leitfrage formulieren",
+          "target": 0,
+          "feedback": "Sie legt fest, was kartiert wird."
+        },
+        {
+          "text": "Grundkarte und Farblegende vorbereiten",
+          "target": 1,
+          "feedback": "Ohne Legende sind die Farben nicht vergleichbar."
+        },
+        {
+          "text": "Die Straße abgehen und jedes Geschoss eintragen",
+          "target": 2,
+          "feedback": "Vor Ort wird beobachtet und notiert."
+        },
+        {
+          "text": "Die Karte sauber zeichnen und die Nutzungen auszählen",
+          "target": 3,
+          "feedback": "Aus der Skizze wird eine Karte mit Diagramm."
+        },
+        {
+          "text": "Die Leitfrage mit den Ergebnissen beantworten",
+          "target": 4,
+          "feedback": "Die Auswertung schließt die Kartierung ab."
+        }
+      ],
+      "conclusion": "Eine Kartierung ist eine Erkundung mit Karte: Leitfrage, Beobachtung, Auswertung."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Beschreibe, wie du eine Nutzungskartierung deiner Hauptstraße vorbereitest, durchführst und auswertest.",
+        "hints": [
+          "Was brauchst du vorher?",
+          "Was tust du vor Ort und danach?"
+        ],
+        "model": "Vorher formuliere ich die Leitfrage „Ist unsere Hauptstraße eine Einkaufsstraße?“ und bereite eine Grundkarte mit den Hausumrissen und eine Farblegende vor. Vor Ort gehe ich die Straße ab und trage für jedes Haus getrennt das Erdgeschoss und das Obergeschoss in der passenden Farbe ein. In der Schule zeichne ich die Karte sauber, zähle die Nutzungen aus und stelle sie in einem Säulendiagramm dar. Dann beantworte ich die Leitfrage.",
+        "criteria": [
+          "Ich nenne Leitfrage, Grundkarte und Legende.",
+          "Ich kartiere Erd- und Obergeschoss getrennt.",
+          "Ich beschreibe die Auswertung."
+        ]
+      },
+      "2": {
+        "prompt": "Eure Kartierung ergibt: Im Erdgeschoss von 20 Häusern sind 8 Geschäfte, 3 Gaststätten, 4 Praxen und Büros, 2 Wohnungen und 3 leere Läden. Werte das Ergebnis aus und beantworte die Leitfrage „Ist die Straße eine lebendige Einkaufsstraße?“.",
+        "hints": [
+          "Welche Nutzung überwiegt?",
+          "Was bedeuten die leeren Läden?"
+        ],
+        "model": "Im Erdgeschoss überwiegen Geschäfte mit 8 von 20 Häusern, dazu kommen 3 Gaststätten und 4 Praxen und Büros. Zusammen werden also 15 von 20 Erdgeschossen für Einkaufen, Essen oder Dienstleistungen genutzt. Die Straße ist damit eine Einkaufsstraße. Allerdings stehen 3 Läden leer, das ist fast jedes sechste Haus (15 Prozent). Das kann ein Hinweis sein, dass die Straße Kundschaft verliert, etwa an Einkaufszentren oder an den Onlinehandel. Ich würde sagen: eine Einkaufsstraße mit ersten Warnzeichen.",
+        "criteria": [
+          "Ich zähle die Nutzungen richtig zusammen.",
+          "Ich beantworte die Leitfrage.",
+          "Ich deute den Leerstand."
+        ]
+      }
+    },
+    "figures": [],
+    "lab": "kartierung"
+  },
+  {
+    "id": "geogym5-nachhaltige-stadt",
+    "lb": 5,
+    "title": "Die Stadt nachhaltig umbauen",
+    "period": "LB 5 · Umbau der Städte zur nachhaltigen Entwicklung",
+    "intro": "Wie soll deine Stadt in 20 Jahren aussehen? Viele Städte bauen sich gerade um, damit es sich dort gut leben lässt.",
+    "paragraphs": [
+      "Eine nachhaltige Stadt sichert die Lebensqualität heute, ohne die Zukunft zu belasten. Beim Verkehr bedeutet das: mehr Platz für Fuß- und Radwege, gute Busse und Bahnen, weniger Autos in der Innenstadt und Tempo 30 in Wohngebieten. Beim Klima helfen Bäume, Parks sowie begrünte Dächer und Fassaden. Pflanzen kühlen im Sommer, spenden Schatten und halten Regenwasser zurück, das sonst die Kanäle überlastet.",
+      "Statt neue Felder am Stadtrand zu bebauen, werden alte Bahnflächen, leere Fabrikgelände oder Parkplätze in Wohnviertel umgewandelt. Gute Viertel mischen Wohnen, Arbeiten, Einkaufen und Freizeit, sodass Wege kurz bleiben. Treffpunkte, Spielplätze und barrierefreie Wege machen die Stadt für alle lebenswert: für Kinder, ältere Menschen und Menschen mit Behinderung. Beispiel: Auf einem früheren Bahngelände in einer Großstadt entstehen Wohnungen, ein Park, eine Schule und Läden, und das Viertel ist mit Tram und Radwegen angebunden."
+    ],
+    "takeaway": "Eine nachhaltige Stadt setzt auf Fuß-, Rad- und öffentlichen Verkehr, auf Grün gegen Hitze, auf bebaute Brachflächen statt neuer Felder und auf gemischte Viertel mit kurzen Wegen und Treffpunkten für alle.",
+    "sourceIds": [
+      "lehrplan",
+      "kx-nachhaltigkeit",
+      "hanisau-nachhaltigkeit",
+      "kx-verkehr",
+      "uba-tipps"
+    ],
+    "quiz": {
+      "question": "Warum pflanzen viele Städte mehr Bäume und begrünen Dächer?",
+      "answer": "Pflanzen kühlen im Sommer und halten Regenwasser zurück.",
+      "wrong": [
+        "Bäume sorgen dafür, dass es mehr Parkplätze gibt.",
+        "Begrünte Dächer machen Häuser wärmer im Sommer."
+      ],
+      "explanation": "Pflanzen verdunsten Wasser und spenden Schatten, dadurch wird es kühler. Ihre Wurzeln und der Boden speichern Regen, sodass Kanäle bei Starkregen weniger überlaufen."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Woran setzt die Maßnahme an?",
+      "instruction": "Ordne jede Aussage zu und prüfe dann deine Zuordnung. Begründe deine Wahl zuerst für dich.",
+      "categories": [
+        "Verkehr",
+        "Grün und Klima",
+        "Wohnen und Zusammenleben"
+      ],
+      "entries": [
+        {
+          "text": "Ein geschützter Radweg ersetzt eine Autospur.",
+          "target": 0,
+          "feedback": "Mehr Platz fürs Rad macht den Verkehr umweltfreundlicher."
+        },
+        {
+          "text": "Busse fahren alle zehn Minuten in die Innenstadt.",
+          "target": 0,
+          "feedback": "Ein dichter Takt lockt Fahrgäste an."
+        },
+        {
+          "text": "Auf dem Parkhausdach wachsen Gräser und Kräuter.",
+          "target": 1,
+          "feedback": "Dachbegrünung kühlt und speichert Regen."
+        },
+        {
+          "text": "Eine Straße bekommt eine Reihe schattiger Bäume.",
+          "target": 1,
+          "feedback": "Bäume senken die Temperatur an heißen Tagen."
+        },
+        {
+          "text": "Auf einem alten Fabrikgelände entstehen Wohnungen und eine Schule.",
+          "target": 2,
+          "feedback": "Brachflächen zu nutzen spart Felder am Stadtrand."
+        },
+        {
+          "text": "Ein Platz mit Bänken und Spielgeräten wird zum Treffpunkt.",
+          "target": 2,
+          "feedback": "Treffpunkte stärken das Zusammenleben."
+        }
+      ],
+      "conclusion": "Nachhaltiger Stadtumbau verbindet Verkehr, Klima und Zusammenleben. Gute Ideen nützen oft allen drei."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Nenne drei Maßnahmen, die eine Stadt nachhaltiger machen, und erkläre bei jeder, wie sie die Lebensqualität verbessert.",
+        "hints": [
+          "Was kann man bei Verkehr, Grün und Wohnen tun?",
+          "Wem nützt die Maßnahme, und wie?"
+        ],
+        "model": "Erstens: sichere Radwege und häufig fahrende Busse. Dann fahren weniger Menschen Auto, und es gibt weniger Lärm, Abgase und Staus. Zweitens: mehr Bäume und begrünte Dächer. Sie kühlen die Stadt im Sommer, spenden Schatten und speichern Regenwasser. Drittens: Wohnungen auf alten Fabrik- oder Bahnflächen statt auf Feldern am Stadtrand. So bleiben Felder erhalten, und die Wege zu Arbeit und Schule sind kurz.",
+        "criteria": [
+          "Ich nenne drei Maßnahmen aus verschiedenen Bereichen.",
+          "Ich erkläre die Wirkung jeder Maßnahme.",
+          "Ich beziehe sie auf die Lebensqualität."
+        ]
+      },
+      "2": {
+        "prompt": "Entwirf für eine Straße in deiner Nähe einen Umbauplan „Unsere Straße 2040“ und bereite drei Sätze für eine Präsentation vor. Bedenke auch, wer gegen den Plan sein könnte.",
+        "hints": [
+          "Wie sieht die Straße heute aus, was soll sich ändern?",
+          "Wer gewinnt, wer verliert, und wie überzeugst du?"
+        ],
+        "model": "Heute ist die Schulstraße eine Durchgangsstraße mit parkenden Autos auf beiden Seiten. Mein Plan: Eine Parkspur wird zu einem geschützten Radweg, die andere bekommt Bäume, Bänke und Fahrradständer, und vor der Schule gilt Tempo 20. Für die Präsentation: „Die Schulstraße wird sicherer für Kinder.“ „Bäume machen sie im Sommer kühler.“ „Wer mit dem Auto kommt, findet Plätze im nahen Parkhaus.“ Gegen den Plan könnten Anwohner sein, die ihren Parkplatz verlieren; deshalb schlage ich Anwohnerplätze im Parkhaus vor.",
+        "criteria": [
+          "Mein Plan ist konkret und umsetzbar.",
+          "Ich formuliere drei überzeugende Sätze.",
+          "Ich berücksichtige Gegenstimmen."
+        ]
+      }
+    },
+    "figures": [
+      "strasse-umbau"
+    ]
+  }
+]
