@@ -2,7 +2,7 @@
 
 A German-language learning package based on the common Grade 6 [LehrplanPLUS Fachlehrplan](https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/6/biologie). It uses the Biology 10 JSON lesson shell with its workshop, two-level writing, explicit self-assessment, reference view and local progress model.
 
-This is a **local draft** (`publication.json`: `local-only`). It is excluded from the public catalog, atlas registry and Pages build. Teacher review and teacher videos remain open. Publication is a separate decision.
+This is a **published preview** (`publication.json`: `preview`) at [ZAM Academy](https://academy.zam-os.org/biologie-realschule-6/), registered in the public catalog, atlas and Pages build. A visible notice explains that teacher review and teacher videos remain open.
 
 | Area | Official hours | Lessons |
 | --- | --- | --- |

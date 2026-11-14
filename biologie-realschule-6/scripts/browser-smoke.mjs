@@ -325,10 +325,20 @@ try {
 		await evaluate('localStorage.getItem("biologie_rs6_academy_progress_v1")'),
 		/Öffentliche Hecke/,
 	);
+	assert.ok(
+		await evaluate(
+			`document.querySelector('.zam-preview-notice')?.getBoundingClientRect().height > 0`,
+		),
+		"preview status is visible",
+	);
 	await click("#zam");
 	assert.match(
 		await evaluate('document.querySelector("dialog").innerText'),
-		/lokaler Entwurf/,
+		/Vorschau im Academy-Katalog/,
+	);
+	assert.doesNotMatch(
+		await evaluate('document.querySelector("dialog").innerText'),
+		/lokaler Entwurf|erst nach einer gesonderten Veröffentlichung/,
 	);
 	await click("dialog [data-close]");
 	// Every lesson and reference at a narrow phone width, both themes.
@@ -386,7 +396,7 @@ try {
 			"reload persistence",
 			"all model goals",
 			"field notebook",
-			"ZAM draft notice",
+			"ZAM preview notice",
 		],
 	};
 	writeFileSync(
