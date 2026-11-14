@@ -1,0 +1,1508 @@
+{
+	"$schema": "https://zam.app/schemas/v1/kvt-tile.json",
+	"tile_id": "zam-academy:chemie-mittelschule-6",
+	"version": "2026.11.1",
+	"title": "Chemie 6 Mittelschule (ZAM Academy)",
+	"description": "Chemische Perspektive in Natur und Technik 6, LehrplanPLUS Bayern: Forschen, Wasser, Moleküle, Wasserzerlegung und Gasnachweise, Stoffkreislauf und Boden; Wasserkraft als fachübergreifender Kontext.",
+	"publisher": "ZAM Academy",
+	"sources": [
+		{
+			"uri": "https://www.lehrplanplus.bayern.de/fachlehrplan/mittelschule/6/nt",
+			"label": "LehrplanPLUS Bayern · Natur und Technik 6 Mittelschule",
+			"checked": "2026-11-14"
+		}
+	],
+	"atoms": [
+		{
+			"id": "01M7D7XM5PZ2T5G0EN15M5TT0C",
+			"atom_uri": "urn:zam:atom:01M7D7XM5PZ2T5G0EN15M5TT0C",
+			"namespace": "zam-academy-chemie-mittelschule-6",
+			"slug": "c6-forschen",
+			"title": "Beobachten, messen und begründet folgern",
+			"domain": "chemie/nt6/methods",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/chemie-mittelschule-6/#lesson=c6-forschen",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "chemie-mittelschule-6",
+					"topic_code": "stage1",
+					"topic_title": "Forschen und Sicherheit"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 6,
+					"subject": "nt",
+					"topic_code": "lb1",
+					"topic_title": "NT6 LB 1 · Naturwissenschaftliches Arbeiten",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M7D7XM5QSFHK0S10B56MCPHM",
+					"slug": "c6-forschen-basis",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Was bleibt bei einem fairen Vergleich zum Temperatureinfluss auf die Lösezeit gleich?",
+					"concept": "Wasser- und Stoffmenge, Korngröße und Rühren; nur die Temperatur wird verändert.",
+					"source_link": "https://academy.zam-os.org/chemie-mittelschule-6/#lesson=c6-forschen",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Wasser- und Stoffmenge, Korngröße und Rühren; nur die Temperatur wird verändert.",
+							"Temperatur und Rühren werden gleichzeitig verändert, damit der Unterschied deutlicher wird."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M7D7XM5Q5A8E516H497T2X6N",
+					"slug": "c6-forschen-unterscheiden",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Was unterscheidet Beobachtung und Schlussfolgerung?",
+					"concept": "Eine Beobachtung beschreibt einen Befund; eine Schlussfolgerung deutet ihn begründet.",
+					"source_link": "https://academy.zam-os.org/chemie-mittelschule-6/#lesson=c6-forschen",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Eine Beobachtung beschreibt einen Befund; eine Schlussfolgerung deutet ihn begründet.",
+							"Eine Beobachtung nennt immer schon die Ursache, eine Schlussfolgerung nur einen Messwert."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M7D7XM5QQFFEK4CZJV82RTZY",
+					"slug": "c6-forschen-begrunden",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Warum beweist schnelleres Lösen in einem warmen, stark gerührten Glas allein keinen Temperatureinfluss?",
+					"concept": "Temperatur und Rühren wurden zugleich verändert; ihre Einflüsse sind nicht getrennt.",
+					"source_link": "https://academy.zam-os.org/chemie-mittelschule-6/#lesson=c6-forschen",
+					"sample_solution": "Für einen fairen Vergleich bleiben Rühren, Stoffmenge, Korngröße und Wassermenge gleich; nur die Temperatur variiert. Messungen werden wiederholt und protokolliert."
+				}
+			]
+		},
+		{
+			"id": "01M7D7XM5QW09W4XBWRGTHY29K",
+			"atom_uri": "urn:zam:atom:01M7D7XM5QW09W4XBWRGTHY29K",
+			"namespace": "zam-academy-chemie-mittelschule-6",
+			"slug": "c6-sicherheit",
+			"title": "Sicher arbeiten und Modelle kritisch lesen",
+			"domain": "chemie/nt6/methods",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/chemie-mittelschule-6/#lesson=c6-sicherheit",
+			"prerequisites": [
+				{
+					"atom_id": "01M7D7XM5PZ2T5G0EN15M5TT0C",
+					"type": "soft",
+					"rationale": "Builds on the earlier lesson “Beobachten, messen und begründet folgern”."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "chemie-mittelschule-6",
+					"topic_code": "stage1",
+					"topic_title": "Forschen und Sicherheit"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 6,
+					"subject": "nt",
+					"topic_code": "lb1",
+					"topic_title": "NT6 LB 1 · Naturwissenschaftliches Arbeiten",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M7D7XM5QKA8ESDRTY52CCDEK",
+					"slug": "c6-sicherheit-basis",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Worauf weist die Flamme in einer roten Gefahrstoffraute hin?",
+					"concept": "Auf entzündbare Stoffe; die genauen Hinweise stehen zusätzlich auf dem Etikett.",
+					"source_link": "https://academy.zam-os.org/chemie-mittelschule-6/#lesson=c6-sicherheit",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Auf entzündbare Stoffe; die genauen Hinweise stehen zusätzlich auf dem Etikett.",
+							"Auf einen Stoff, der grundsätzlich mit bloßen Händen untersucht werden darf."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M7D7XM5QYM779MGGNCHZ3JMY",
+					"slug": "c6-sicherheit-unterscheiden",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Sind die Farben eines Kugelmodells echte Atomfarben?",
+					"concept": "Nein. Es sind vereinbarte Kennzeichnungen für Atomsorten.",
+					"source_link": "https://academy.zam-os.org/chemie-mittelschule-6/#lesson=c6-sicherheit",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Nein. Es sind vereinbarte Kennzeichnungen für Atomsorten.",
+							"Ja. Atome sind genau die farbigen Kugeln, die die Zeichnung zeigt."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M7D7XM5QK76BBVWYC79PSM3Q",
+					"slug": "c6-sicherheit-begrunden",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Was tust du bei Glasbruch oder einer unerwarteten Reaktion im Fachraum?",
+					"concept": "Arbeit unterbrechen und sofort die Lehrkraft informieren.",
+					"source_link": "https://academy.zam-os.org/chemie-mittelschule-6/#lesson=c6-sicherheit",
+					"sample_solution": "Ich stoppe und informiere die Lehrkraft. Ich starte keinen eigenen Rettungsversuch. Gasnachweise finden nur nach Sicherheitsunterweisung unter fachkundiger Aufsicht statt."
+				}
+			]
+		},
+		{
+			"id": "01M7D7XM5QYZJWENGR54JF737J",
+			"atom_uri": "urn:zam:atom:01M7D7XM5QYZJWENGR54JF737J",
+			"namespace": "zam-academy-chemie-mittelschule-6",
+			"slug": "c6-wasser-bedeutung",
+			"title": "Wasser als Lebensraum, Lebensmittel und Transportmittel",
+			"domain": "chemie/nt6/water",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/chemie-mittelschule-6/#lesson=c6-wasser-bedeutung",
+			"prerequisites": [
+				{
+					"atom_id": "01M7D7XM5PZ2T5G0EN15M5TT0C",
+					"type": "soft",
+					"rationale": "Builds on the earlier lesson “Beobachten, messen und begründet folgern”."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "chemie-mittelschule-6",
+					"topic_code": "stage2",
+					"topic_title": "Wasser und Moleküle"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 6,
+					"subject": "nt",
+					"topic_code": "lb2",
+					"topic_title": "NT6 LB 2.1 · Eigenschaften und Bedeutung von Wasser",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M7D7XM5Q051FMMXECWNDGNJM",
+					"slug": "c6-wasser-bedeutung-basis",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Welche drei grundlegenden Aufgaben von Wasser nennt der Unterricht?",
+					"concept": "Lebensraum, Lebensmittel und Transportmittel.",
+					"source_link": "https://academy.zam-os.org/chemie-mittelschule-6/#lesson=c6-wasser-bedeutung",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Lebensraum, Lebensmittel und Transportmittel.",
+							"Nur Getränk, Kühlmittel und Verpackungsmaterial."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M7D7XM5QP3XWMB4BN7ZCDH7W",
+					"slug": "c6-wasser-bedeutung-unterscheiden",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Beweist klares Aussehen, dass Bachwasser trinkbar ist?",
+					"concept": "Nein. Unsichtbare Verunreinigungen können enthalten sein.",
+					"source_link": "https://academy.zam-os.org/chemie-mittelschule-6/#lesson=c6-wasser-bedeutung",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Nein. Unsichtbare Verunreinigungen können enthalten sein.",
+							"Ja. Durchsichtigkeit beweist eine abgeschlossene Trinkwasserprüfung."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M7D7XM5Q4M4MFFHAMMCD96XJ",
+					"slug": "c6-wasser-bedeutung-begrunden",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Warum schützt das Vermeiden von Schadstoffeinträgen mehr als nur das Aussehen eines Gewässers?",
+					"concept": "Es schützt Lebewesen, Wasserqualität und die Nutzung als Lebensgrundlage.",
+					"source_link": "https://academy.zam-os.org/chemie-mittelschule-6/#lesson=c6-wasser-bedeutung",
+					"sample_solution": "Wasser ist Lebensraum und transportiert gelöste Stoffe. Schadstoffe können unsichtbar bleiben und trotzdem Lebewesen und Wasserressourcen belasten."
+				}
+			]
+		},
+		{
+			"id": "01M7D7XM5QPV7XV8ZVSGGGQPSV",
+			"atom_uri": "urn:zam:atom:01M7D7XM5QPV7XV8ZVSGGGQPSV",
+			"namespace": "zam-academy-chemie-mittelschule-6",
+			"slug": "c6-wasser-eigenschaften",
+			"title": "Einen Stoffsteckbrief für Wasser lesen",
+			"domain": "chemie/nt6/water",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/chemie-mittelschule-6/#lesson=c6-wasser-eigenschaften",
+			"prerequisites": [
+				{
+					"atom_id": "01M7D7XM5PZ2T5G0EN15M5TT0C",
+					"type": "soft",
+					"rationale": "Builds on the earlier lesson “Beobachten, messen und begründet folgern”."
+				},
+				{
+					"atom_id": "01M7D7XM5QW09W4XBWRGTHY29K",
+					"type": "soft",
+					"rationale": "Builds on the earlier lesson “Sicher arbeiten und Modelle kritisch lesen”."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "chemie-mittelschule-6",
+					"topic_code": "stage2",
+					"topic_title": "Wasser und Moleküle"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 6,
+					"subject": "nt",
+					"topic_code": "lb2",
+					"topic_title": "NT6 LB 2.1 · Eigenschaften und Bedeutung von Wasser",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M7D7XM5QA98FKPA2E31G0DEJ",
+					"slug": "c6-wasser-eigenschaften-basis",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Wo liegen Schmelz- und Siedepunkt von reinem Wasser bei normalem Luftdruck?",
+					"concept": "Bei ungefähr 0 °C und 100 °C.",
+					"source_link": "https://academy.zam-os.org/chemie-mittelschule-6/#lesson=c6-wasser-eigenschaften",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Bei ungefähr 0 °C und 100 °C.",
+							"Der Schmelzpunkt hängt nur von der Gefäßform ab; einen Siedepunkt gibt es nicht."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M7D7XM5QQJQN51WE5YB76K4S",
+					"slug": "c6-wasser-eigenschaften-unterscheiden",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Ist die Form des Becherglases eine Stoffeigenschaft von Wasser?",
+					"concept": "Nein. Sie beschreibt das Gefäß, nicht den Stoff.",
+					"source_link": "https://academy.zam-os.org/chemie-mittelschule-6/#lesson=c6-wasser-eigenschaften",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Nein. Sie beschreibt das Gefäß, nicht den Stoff.",
+							"Ja. Die Gefäßform identifiziert die Wasserprobe eindeutig."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M7D7XM5QGK5YJPDPCZAZW7T3",
+					"slug": "c6-wasser-eigenschaften-begrunden",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Warum muss ein Wassersteckbrief Messbedingungen und mehrere Eigenschaften nennen?",
+					"concept": "Einzelne Merkmale sind nicht eindeutig, und Messwerte können von den Bedingungen abhängen.",
+					"source_link": "https://academy.zam-os.org/chemie-mittelschule-6/#lesson=c6-wasser-eigenschaften",
+					"sample_solution": "Klarheit allein identifiziert Wasser nicht. Der Siedepunkt hängt unter anderem vom Luftdruck ab; deshalb nennt ein Steckbrief Bedingungen und mehrere passende Befunde."
+				}
+			]
+		},
+		{
+			"id": "01M7D7XM5QFANB9357G4VYCBWX",
+			"atom_uri": "urn:zam:atom:01M7D7XM5QFANB9357G4VYCBWX",
+			"namespace": "zam-academy-chemie-mittelschule-6",
+			"slug": "c6-loesen-leiten",
+			"title": "Löslichkeit und Leitfähigkeit unterscheiden",
+			"domain": "chemie/nt6/water",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/chemie-mittelschule-6/#lesson=c6-loesen-leiten",
+			"prerequisites": [
+				{
+					"atom_id": "01M7D7XM5QPV7XV8ZVSGGGQPSV",
+					"type": "soft",
+					"rationale": "Builds on the earlier lesson “Einen Stoffsteckbrief für Wasser lesen”."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "chemie-mittelschule-6",
+					"topic_code": "stage2",
+					"topic_title": "Wasser und Moleküle"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 6,
+					"subject": "nt",
+					"topic_code": "lb2",
+					"topic_title": "NT6 LB 2.1 · Eigenschaften und Bedeutung von Wasser",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M7D7XM5QRMGBCTYNTWEJ8TN2",
+					"slug": "c6-loesen-leiten-basis",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Ist gelöstes Salz aus dem Wasser verschwunden?",
+					"concept": "Nein. Es ist weiterhin gleichmäßig in der Lösung enthalten.",
+					"source_link": "https://academy.zam-os.org/chemie-mittelschule-6/#lesson=c6-loesen-leiten",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Nein. Es ist weiterhin gleichmäßig in der Lösung enthalten.",
+							"Ja. Gelöstes Salz hat aufgehört als Stoff zu existieren."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M7D7XM5QQ5ZGE70FDEPBFKGY",
+					"slug": "c6-loesen-leiten-unterscheiden",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Leiten reine Zucker- und Kochsalzlösung gleich gut, weil beide klar sind?",
+					"concept": "Nein. Kochsalzlösung leitet deutlich besser als reine Zuckerlösung.",
+					"source_link": "https://academy.zam-os.org/chemie-mittelschule-6/#lesson=c6-loesen-leiten",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Nein. Kochsalzlösung leitet deutlich besser als reine Zuckerlösung.",
+							"Ja. Gleiche Klarheit bedeutet immer gleiche elektrische Leitfähigkeit."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M7D7XM5Q2RB5WRXHXK93TEFD",
+					"slug": "c6-loesen-leiten-begrunden",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Warum entfernt ein gewöhnlicher Kaffeefilter gelöstes Salz nicht aus Wasser?",
+					"concept": "Er hält grobe feste Teilchen zurück, aber nicht das gelöste Salz.",
+					"source_link": "https://academy.zam-os.org/chemie-mittelschule-6/#lesson=c6-loesen-leiten",
+					"sample_solution": "Ein Papierfilter kann Sandkörner abtrennen. Gelöstes Salz bleibt im klaren Filtrat. Zum Rückgewinnen des Salzes kann Wasser unter Anleitung verdampft werden."
+				}
+			]
+		},
+		{
+			"id": "01M7D7XM5QYV6W6J39X9MJH098",
+			"atom_uri": "urn:zam:atom:01M7D7XM5QYV6W6J39X9MJH098",
+			"namespace": "zam-academy-chemie-mittelschule-6",
+			"slug": "c6-oberflaeche",
+			"title": "Oberflächenspannung: Tropfen und Wasserläufer",
+			"domain": "chemie/nt6/water",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/chemie-mittelschule-6/#lesson=c6-oberflaeche",
+			"prerequisites": [
+				{
+					"atom_id": "01M7D7XM5QPV7XV8ZVSGGGQPSV",
+					"type": "soft",
+					"rationale": "Builds on the earlier lesson “Einen Stoffsteckbrief für Wasser lesen”."
+				},
+				{
+					"atom_id": "01M7D7XM5QFANB9357G4VYCBWX",
+					"type": "soft",
+					"rationale": "Builds on the earlier lesson “Löslichkeit und Leitfähigkeit unterscheiden”."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "chemie-mittelschule-6",
+					"topic_code": "stage2",
+					"topic_title": "Wasser und Moleküle"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 6,
+					"subject": "nt",
+					"topic_code": "lb2",
+					"topic_title": "NT6 LB 2.1 · Eigenschaften und Bedeutung von Wasser",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M7D7XM5QXDDEQFRV4DNFXTYE",
+					"slug": "c6-oberflaeche-basis",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Was ist die Ursache der Oberflächenspannung von Wasser im einfachen Teilchenmodell?",
+					"concept": "Die Anziehung der Wasserteilchen untereinander.",
+					"source_link": "https://academy.zam-os.org/chemie-mittelschule-6/#lesson=c6-oberflaeche",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Die Anziehung der Wasserteilchen untereinander.",
+							"Eine feste Kunststoffhaut, die auf jedem Wasser liegt."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M7D7XM5QP0EAEJ1MPR6FV64F",
+					"slug": "c6-oberflaeche-unterscheiden",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Wie wirkt Spülmittel auf die Oberflächenspannung von Wasser?",
+					"concept": "Es verringert sie.",
+					"source_link": "https://academy.zam-os.org/chemie-mittelschule-6/#lesson=c6-oberflaeche",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Es verringert sie.",
+							"Es verwandelt die Oberfläche in eine feste Membran."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M7D7XM5QBHW5YC62W7YQ7HSK",
+					"slug": "c6-oberflaeche-begrunden",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Warum ist die Erklärung „Der Wasserläufer steht auf einer festen Wasserhaut“ ungenau?",
+					"concept": "Die Oberfläche ist keine feste Haut; Oberflächenspannung und wasserabweisende Beine tragen bei.",
+					"source_link": "https://academy.zam-os.org/chemie-mittelschule-6/#lesson=c6-oberflaeche",
+					"sample_solution": "Die Teilchen ziehen einander an. Die Grenzfläche kann ein leichtes Tier zusammen mit seinen wasserabweisenden Beinen tragen. Gewicht, Form und Benetzung begrenzen diese Wirkung."
+				}
+			]
+		},
+		{
+			"id": "01M7D7XM5Q3H3F3GJX7HKVVT6F",
+			"atom_uri": "urn:zam:atom:01M7D7XM5Q3H3F3GJX7HKVVT6F",
+			"namespace": "zam-academy-chemie-mittelschule-6",
+			"slug": "c6-teilchen-zustaende",
+			"title": "Eis, Wasser und Wasserdampf im Teilchenmodell",
+			"domain": "chemie/nt6/water",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/chemie-mittelschule-6/#lesson=c6-teilchen-zustaende",
+			"prerequisites": [
+				{
+					"atom_id": "01M7D7XM5QW09W4XBWRGTHY29K",
+					"type": "soft",
+					"rationale": "Builds on the earlier lesson “Sicher arbeiten und Modelle kritisch lesen”."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "chemie-mittelschule-6",
+					"topic_code": "stage2",
+					"topic_title": "Wasser und Moleküle"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 6,
+					"subject": "nt",
+					"topic_code": "lb2",
+					"topic_title": "NT6 LB 2.1 · Eigenschaften und Bedeutung von Wasser",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M7D7XM5Q21QVBYHP9HQYFTDQ",
+					"slug": "c6-teilchen-zustaende-basis",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Wie unterscheiden sich Teilchen in festem und flüssigem Wasser?",
+					"concept": "Im Eis schwingen sie um feste Plätze; im flüssigen Wasser wechseln sie die Plätze.",
+					"source_link": "https://academy.zam-os.org/chemie-mittelschule-6/#lesson=c6-teilchen-zustaende",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Im Eis schwingen sie um feste Plätze; im flüssigen Wasser wechseln sie die Plätze.",
+							"Im Eis gibt es keine Teilchen, und flüssiges Wasser besteht nur aus Luft."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M7D7XM5Q68BVZ50ABBDXW5YA",
+					"slug": "c6-teilchen-zustaende-unterscheiden",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Werden Wasserteilchen beim Erwärmen einfach größer?",
+					"concept": "Nein. Ihre Bewegung nimmt im Mittel zu; Anordnung und Abstände können sich ändern.",
+					"source_link": "https://academy.zam-os.org/chemie-mittelschule-6/#lesson=c6-teilchen-zustaende",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Nein. Ihre Bewegung nimmt im Mittel zu; Anordnung und Abstände können sich ändern.",
+							"Ja. Jedes Wassermolekül bläht sich wie ein Ballon auf."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M7D7XM5QK8CBYD24YBX2V8Z7",
+					"slug": "c6-teilchen-zustaende-begrunden",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Erkläre mit dem Teilchenmodell, warum Wasserdampf einen verfügbaren Raum ausfüllt.",
+					"concept": "Die Wasserteilchen liegen weit auseinander und bewegen sich frei.",
+					"source_link": "https://academy.zam-os.org/chemie-mittelschule-6/#lesson=c6-teilchen-zustaende",
+					"sample_solution": "Im Gas bewegen sich Wasserteilchen frei mit großen Abständen. Sie bleiben Wassermoleküle; ihre Größe oder Atomsorte ändert sich durch den Zustandswechsel nicht."
+				}
+			]
+		},
+		{
+			"id": "01M7D7XM5QBVHX3FWAZEXS407F",
+			"atom_uri": "urn:zam:atom:01M7D7XM5QBVHX3FWAZEXS407F",
+			"namespace": "zam-academy-chemie-mittelschule-6",
+			"slug": "c6-zustandswechsel",
+			"title": "Schmelzen, Erstarren, Verdampfen und Kondensieren",
+			"domain": "chemie/nt6/water",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/chemie-mittelschule-6/#lesson=c6-zustandswechsel",
+			"prerequisites": [
+				{
+					"atom_id": "01M7D7XM5Q3H3F3GJX7HKVVT6F",
+					"type": "soft",
+					"rationale": "Builds on the earlier lesson “Eis, Wasser und Wasserdampf im Teilchenmodell”."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "chemie-mittelschule-6",
+					"topic_code": "stage2",
+					"topic_title": "Wasser und Moleküle"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 6,
+					"subject": "nt",
+					"topic_code": "lb2",
+					"topic_title": "NT6 LB 2.1 · Eigenschaften und Bedeutung von Wasser",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M7D7XM5RA8C1CGMT5JXTDDJ5",
+					"slug": "c6-zustandswechsel-basis",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Was geschieht beim Kondensieren von Wasser?",
+					"concept": "Gasförmiges Wasser wird flüssig.",
+					"source_link": "https://academy.zam-os.org/chemie-mittelschule-6/#lesson=c6-zustandswechsel",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Gasförmiges Wasser wird flüssig.",
+							"Wasserstoff und Sauerstoff werden aus Wasser freigesetzt."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M7D7XM5RTV2N1BNNAF189E1Q",
+					"slug": "c6-zustandswechsel-unterscheiden",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Ist die sichtbare weiße Wolke über heißem Wasser gasförmiger Wasserdampf?",
+					"concept": "Nein. Sie besteht aus kleinen flüssigen Wassertröpfchen; Wasserdampf ist unsichtbar.",
+					"source_link": "https://academy.zam-os.org/chemie-mittelschule-6/#lesson=c6-zustandswechsel",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Nein. Sie besteht aus kleinen flüssigen Wassertröpfchen; Wasserdampf ist unsichtbar.",
+							"Ja. Jeder sichtbare weiße Nebel ist reines gasförmiges Wasser."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M7D7XM5R0DYND3APWTCPX8K3",
+					"slug": "c6-zustandswechsel-begrunden",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Warum kann Wäsche auch unterhalb von 100 °C trocknen?",
+					"concept": "Wasser verdunstet an der Oberfläche auch unterhalb des Siedepunkts.",
+					"source_link": "https://academy.zam-os.org/chemie-mittelschule-6/#lesson=c6-zustandswechsel",
+					"sample_solution": "Verdunsten führt von flüssig zu gasförmig und findet an der Oberfläche auch ohne Sieden statt. Wasser bleibt derselbe Stoff; seine Moleküle werden nicht zerlegt."
+				}
+			]
+		},
+		{
+			"id": "01M7D7XM5QKK70RSGS9VENS6F6",
+			"atom_uri": "urn:zam:atom:01M7D7XM5QKK70RSGS9VENS6F6",
+			"namespace": "zam-academy-chemie-mittelschule-6",
+			"slug": "c6-wasseranomalie",
+			"title": "Die Anomalie des Wassers verstehen",
+			"domain": "chemie/nt6/water",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/chemie-mittelschule-6/#lesson=c6-wasseranomalie",
+			"prerequisites": [
+				{
+					"atom_id": "01M7D7XM5Q3H3F3GJX7HKVVT6F",
+					"type": "soft",
+					"rationale": "Builds on the earlier lesson “Eis, Wasser und Wasserdampf im Teilchenmodell”."
+				},
+				{
+					"atom_id": "01M7D7XM5QBVHX3FWAZEXS407F",
+					"type": "soft",
+					"rationale": "Builds on the earlier lesson “Schmelzen, Erstarren, Verdampfen und Kondensieren”."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "chemie-mittelschule-6",
+					"topic_code": "stage2",
+					"topic_title": "Wasser und Moleküle"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 6,
+					"subject": "nt",
+					"topic_code": "lb2",
+					"topic_title": "NT6 LB 2.1 · Eigenschaften und Bedeutung von Wasser",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M7D7XM5R9DDETARNPR42J2TX",
+					"slug": "c6-wasseranomalie-basis",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Bei welcher Temperatur hat flüssiges Wasser ungefähr seine größte Dichte?",
+					"concept": "Bei 4 °C.",
+					"source_link": "https://academy.zam-os.org/chemie-mittelschule-6/#lesson=c6-wasseranomalie",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Bei 4 °C.",
+							"Seine größte Dichte hat es grundsätzlich erst als Eis."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M7D7XM5RT82J9E5ABGD4NA5N",
+					"slug": "c6-wasseranomalie-unterscheiden",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Warum schwimmt Eis auf flüssigem Wasser?",
+					"concept": "Sein offenes Gitter braucht bei gleicher Masse mehr Volumen; Eis ist weniger dicht.",
+					"source_link": "https://academy.zam-os.org/chemie-mittelschule-6/#lesson=c6-wasseranomalie",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Sein offenes Gitter braucht bei gleicher Masse mehr Volumen; Eis ist weniger dicht.",
+							"Weil Eis keine Wasserteilchen mehr enthält."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M7D7XM5RHXDVW9KFKTX59T8K",
+					"slug": "c6-wasseranomalie-begrunden",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Wie kann gefrierendes Wasser zur Frostsprengung beitragen?",
+					"concept": "Es nimmt mehr Volumen ein und kann Felsspalten erweitern.",
+					"source_link": "https://academy.zam-os.org/chemie-mittelschule-6/#lesson=c6-wasseranomalie",
+					"sample_solution": "Wasser in einer Felsspalte dehnt sich beim Gefrieren aus. Die Volumenzunahme kann Druck auf den Fels ausüben; wiederholtes Gefrieren kann die Spalte erweitern."
+				}
+			]
+		},
+		{
+			"id": "01M7D7XM5QS3NKGCD3015ABSFB",
+			"atom_uri": "urn:zam:atom:01M7D7XM5QS3NKGCD3015ABSFB",
+			"namespace": "zam-academy-chemie-mittelschule-6",
+			"slug": "c6-molekuele",
+			"title": "Atome, Elemente, Verbindungen und Moleküle",
+			"domain": "chemie/nt6/water",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/chemie-mittelschule-6/#lesson=c6-molekuele",
+			"prerequisites": [
+				{
+					"atom_id": "01M7D7XM5QW09W4XBWRGTHY29K",
+					"type": "soft",
+					"rationale": "Builds on the earlier lesson “Sicher arbeiten und Modelle kritisch lesen”."
+				},
+				{
+					"atom_id": "01M7D7XM5Q3H3F3GJX7HKVVT6F",
+					"type": "soft",
+					"rationale": "Builds on the earlier lesson “Eis, Wasser und Wasserdampf im Teilchenmodell”."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "chemie-mittelschule-6",
+					"topic_code": "stage2",
+					"topic_title": "Wasser und Moleküle"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 6,
+					"subject": "nt",
+					"topic_code": "lb2",
+					"topic_title": "NT6 LB 2.1 · Eigenschaften und Bedeutung von Wasser",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M7D7XM5RCCFT06YDPZCXEVBK",
+					"slug": "c6-molekuele-basis",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question_segments": [
+						{
+							"type": "text",
+							"text": "Welche Atome enthält ein Molekül mit der Formel "
+						},
+						{
+							"type": "math",
+							"tex": "\\mathrm{H}_{2}\\mathrm{O}",
+							"speech": "H zwei O"
+						},
+						{
+							"type": "text",
+							"text": "?"
+						}
+					],
+					"concept": "Zwei Wasserstoffatome und ein Sauerstoffatom.",
+					"source_link": "https://academy.zam-os.org/chemie-mittelschule-6/#lesson=c6-molekuele",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Zwei Wasserstoffatome und ein Sauerstoffatom.",
+							"Ein Wasserstoffatom und zwei Sauerstoffatome."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M7D7XM5RP3QXMQBQTCVTHPD5",
+					"slug": "c6-molekuele-unterscheiden",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Woran unterscheidest du ein Element von einer Verbindung?",
+					"concept": "Ein Element enthält eine Atomsorte, eine Verbindung mehrere verschiedene Atomsorten.",
+					"source_link": "https://academy.zam-os.org/chemie-mittelschule-6/#lesson=c6-molekuele",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Ein Element enthält eine Atomsorte, eine Verbindung mehrere verschiedene Atomsorten.",
+							"Jeder Stoff mit mehr als einem Atom im Molekül ist automatisch eine Verbindung."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M7D7XM5RX602DSH3SBMW78F9",
+					"slug": "c6-molekuele-begrunden",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Wie viele Wasserstoff- und Sauerstoffatome enthalten zwei Wassermoleküle insgesamt?",
+					"concept": "Vier Wasserstoffatome und zwei Sauerstoffatome.",
+					"source_link": "https://academy.zam-os.org/chemie-mittelschule-6/#lesson=c6-molekuele",
+					"sample_solution": "Jedes Wassermolekül enthält zwei H-Atome und ein O-Atom. Bei zwei Molekülen werden beide Anzahlen verdoppelt: vier H-Atome und zwei O-Atome."
+				}
+			]
+		},
+		{
+			"id": "01M7D7XM5Q5EWKWZM0RAPS7GYQ",
+			"atom_uri": "urn:zam:atom:01M7D7XM5Q5EWKWZM0RAPS7GYQ",
+			"namespace": "zam-academy-chemie-mittelschule-6",
+			"slug": "c6-wasserzerlegung",
+			"title": "Wasserzerlegung: Stoffumwandlung statt Verdampfen",
+			"domain": "chemie/nt6/water",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/chemie-mittelschule-6/#lesson=c6-wasserzerlegung",
+			"prerequisites": [
+				{
+					"atom_id": "01M7D7XM5QBVHX3FWAZEXS407F",
+					"type": "soft",
+					"rationale": "Builds on the earlier lesson “Schmelzen, Erstarren, Verdampfen und Kondensieren”."
+				},
+				{
+					"atom_id": "01M7D7XM5QS3NKGCD3015ABSFB",
+					"type": "soft",
+					"rationale": "Builds on the earlier lesson “Atome, Elemente, Verbindungen und Moleküle”."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "chemie-mittelschule-6",
+					"topic_code": "stage2",
+					"topic_title": "Wasser und Moleküle"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 6,
+					"subject": "nt",
+					"topic_code": "lb2",
+					"topic_title": "NT6 LB 2.1 · Eigenschaften und Bedeutung von Wasser",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M7D7XM5R1Y9M1E4RNZHH8ZK8",
+					"slug": "c6-wasserzerlegung-basis",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Welche Energiezufuhr benötigt die elektrolytische Wasserzerlegung?",
+					"concept": "Elektrische Energie.",
+					"source_link": "https://academy.zam-os.org/chemie-mittelschule-6/#lesson=c6-wasserzerlegung",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Elektrische Energie.",
+							"Nur ein neuer Aggregatzustand ohne jede Energiezufuhr."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M7D7XM5RQH55GVX4VBC0MA1P",
+					"slug": "c6-wasserzerlegung-unterscheiden",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Welches Gasvolumenverhältnis entsteht bei der Wasserzerlegung unter gleichen Messbedingungen?",
+					"concept": "Wasserstoff : Sauerstoff = 2 : 1.",
+					"source_link": "https://academy.zam-os.org/chemie-mittelschule-6/#lesson=c6-wasserzerlegung",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Wasserstoff : Sauerstoff = 2 : 1.",
+							"Gleiche Volumen aller Gase sind bei jeder Wasserzerlegung zwingend."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M7D7XM5RS32GVN1XYGJ3FFQZ",
+					"slug": "c6-wasserzerlegung-begrunden",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Was unterscheidet das Verdampfen von Wasser von seiner Elektrolyse?",
+					"concept": "Beim Verdampfen bleibt Wasser; die Elektrolyse bildet Wasserstoff und Sauerstoff.",
+					"source_link": "https://academy.zam-os.org/chemie-mittelschule-6/#lesson=c6-wasserzerlegung",
+					"sample_solution": "Verdampfen ist ein Zustandswechsel. Bei der Elektrolyse werden vorhandene Atome mit elektrischer Energie neu verbunden; neue Stoffe entstehen, aber keine neuen Atome."
+				}
+			]
+		},
+		{
+			"id": "01M7D7XM5Q2NZ47N7CQKVFPS43",
+			"atom_uri": "urn:zam:atom:01M7D7XM5Q2NZ47N7CQKVFPS43",
+			"namespace": "zam-academy-chemie-mittelschule-6",
+			"slug": "c6-gasnachweise",
+			"title": "Wasserstoff und Sauerstoff nachweisen",
+			"domain": "chemie/nt6/water",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/chemie-mittelschule-6/#lesson=c6-gasnachweise",
+			"prerequisites": [
+				{
+					"atom_id": "01M7D7XM5QW09W4XBWRGTHY29K",
+					"type": "soft",
+					"rationale": "Builds on the earlier lesson “Sicher arbeiten und Modelle kritisch lesen”."
+				},
+				{
+					"atom_id": "01M7D7XM5Q5EWKWZM0RAPS7GYQ",
+					"type": "soft",
+					"rationale": "Builds on the earlier lesson “Wasserzerlegung: Stoffumwandlung statt Verdampfen”."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "chemie-mittelschule-6",
+					"topic_code": "stage2",
+					"topic_title": "Wasser und Moleküle"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 6,
+					"subject": "nt",
+					"topic_code": "lb2",
+					"topic_title": "NT6 LB 2.1 · Eigenschaften und Bedeutung von Wasser",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M7D7XM5RPEXN64EBA6YR4MRD",
+					"slug": "c6-gasnachweise-basis",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Welcher positive Gasnachweis passt zu Wasserstoff?",
+					"concept": "Eine fachgerecht durchgeführte positive Knallgasprobe.",
+					"source_link": "https://academy.zam-os.org/chemie-mittelschule-6/#lesson=c6-gasnachweise",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Eine fachgerecht durchgeführte positive Knallgasprobe.",
+							"Ein glimmender Holzspan flammt wieder auf."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M7D7XM5RNEXRBYGYGBMZHSMQ",
+					"slug": "c6-gasnachweise-unterscheiden",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Was beobachtest du bei der positiven Glimmspanprobe für Sauerstoff?",
+					"concept": "Ein glimmender Holzspan flammt wieder auf.",
+					"source_link": "https://academy.zam-os.org/chemie-mittelschule-6/#lesson=c6-gasnachweise",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Ein glimmender Holzspan flammt wieder auf.",
+							"Das Gas wird allein durch seine Farblosigkeit sicher erkannt."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M7D7XM5RZT1JJ3C08EM15VTS",
+					"slug": "c6-gasnachweise-begrunden",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Wie unterscheiden sich Wasserstoff und Sauerstoff in Bezug auf Verbrennung?",
+					"concept": "Wasserstoff ist brennbar; Sauerstoff unterstützt Verbrennung und brennt nicht selbst.",
+					"source_link": "https://academy.zam-os.org/chemie-mittelschule-6/#lesson=c6-gasnachweise",
+					"sample_solution": "Beide Gase sind farb- und geruchlos. Wasserstoff ist brennbar, Sauerstoff brandfördernd. Geeignete Nachweise finden ausschließlich unter fachkundiger Aufsicht im Unterricht statt."
+				}
+			]
+		},
+		{
+			"id": "01M7D7XM5Q1XJKAQNETQMH7XNT",
+			"atom_uri": "urn:zam:atom:01M7D7XM5Q1XJKAQNETQMH7XNT",
+			"namespace": "zam-academy-chemie-mittelschule-6",
+			"slug": "c6-wasserkraft",
+			"title": "Wasser als erneuerbare Energiequelle",
+			"domain": "chemie/nt6/water",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/chemie-mittelschule-6/#lesson=c6-wasserkraft",
+			"prerequisites": [
+				{
+					"atom_id": "01M7D7XM5QYZJWENGR54JF737J",
+					"type": "soft",
+					"rationale": "Builds on the earlier lesson “Wasser als Lebensraum, Lebensmittel und Transportmittel”."
+				},
+				{
+					"atom_id": "01M7D7XM5Q5EWKWZM0RAPS7GYQ",
+					"type": "soft",
+					"rationale": "Builds on the earlier lesson “Wasserzerlegung: Stoffumwandlung statt Verdampfen”."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "chemie-mittelschule-6",
+					"topic_code": "stage2",
+					"topic_title": "Wasser und Moleküle"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 6,
+					"subject": "nt",
+					"topic_code": "lb2",
+					"topic_title": "NT6 LB 2.1 · Eigenschaften und Bedeutung von Wasser",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M7D7XM5R56EWP3TRZ80BE888",
+					"slug": "c6-wasserkraft-basis",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Welche Aufgabe hat die Turbine eines Wasserkraftwerks?",
+					"concept": "Fließendes Wasser treibt sie an; sie überträgt mechanische Energie auf den Generator.",
+					"source_link": "https://academy.zam-os.org/chemie-mittelschule-6/#lesson=c6-wasserkraft",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Fließendes Wasser treibt sie an; sie überträgt mechanische Energie auf den Generator.",
+							"Sie zerlegt Wasser chemisch in Wasserstoff und Sauerstoff."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M7D7XM5RM0497V2HDP4PMNWK",
+					"slug": "c6-wasserkraft-unterscheiden",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Welche Energieumwandlung geschieht im Generator?",
+					"concept": "Mechanische Energie wird in elektrische Energie umgewandelt.",
+					"source_link": "https://academy.zam-os.org/chemie-mittelschule-6/#lesson=c6-wasserkraft",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Mechanische Energie wird in elektrische Energie umgewandelt.",
+							"Elektrische Energie entsteht ohne vorherige Energiezufuhr."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M7D7XM5R9FRSBHM5KRTJ3CP7",
+					"slug": "c6-wasserkraft-begrunden",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Warum ist erneuerbare Wasserkraft nicht automatisch ohne Umwelteingriff?",
+					"concept": "Wehre und veränderte Abflüsse können Lebensräume und Fischwanderungen beeinträchtigen.",
+					"source_link": "https://academy.zam-os.org/chemie-mittelschule-6/#lesson=c6-wasserkraft",
+					"sample_solution": "Der Wasserkreislauf stellt Wasserfluss erneut bereit. Ein Wehr verändert trotzdem das Gewässer. Fischwanderung, Restwasser und der Nutzen der Stromgewinnung müssen abgewogen werden."
+				}
+			]
+		},
+		{
+			"id": "01M7D7XM5Q8E1PS3ZW9R0EX1N4",
+			"atom_uri": "urn:zam:atom:01M7D7XM5Q8E1PS3ZW9R0EX1N4",
+			"namespace": "zam-academy-chemie-mittelschule-6",
+			"slug": "c6-waldnetz",
+			"title": "Nahrungsnetz und Stoffkreislauf im Wald",
+			"domain": "chemie/nt6/soil",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/chemie-mittelschule-6/#lesson=c6-waldnetz",
+			"prerequisites": [
+				{
+					"atom_id": "01M7D7XM5QYZJWENGR54JF737J",
+					"type": "soft",
+					"rationale": "Builds on the earlier lesson “Wasser als Lebensraum, Lebensmittel und Transportmittel”."
+				},
+				{
+					"atom_id": "01M7D7XM5QS3NKGCD3015ABSFB",
+					"type": "soft",
+					"rationale": "Builds on the earlier lesson “Atome, Elemente, Verbindungen und Moleküle”."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "chemie-mittelschule-6",
+					"topic_code": "stage3",
+					"topic_title": "Stoffkreislauf und Boden"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 6,
+					"subject": "nt",
+					"topic_code": "lb2",
+					"topic_title": "NT6 LB 2.3 · Stoffkreislauf, Boden",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M7D7XM5RF5CDMNZJSAM6Y1WQ",
+					"slug": "c6-waldnetz-basis",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "In welche Richtung zeigt ein Nahrungspfeil in unserem Nahrungsnetz?",
+					"concept": "Vom Futter zum Fresser; er bedeutet „wird gefressen von“.",
+					"source_link": "https://academy.zam-os.org/chemie-mittelschule-6/#lesson=c6-waldnetz",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Vom Futter zum Fresser; er bedeutet „wird gefressen von“.",
+							"Vom Fresser zu seinem Futter; er zeigt grundsätzlich die Jagdrichtung."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M7D7XM5RXGWDTFPJSSGVVTPZ",
+					"slug": "c6-waldnetz-unterscheiden",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Welche drei Rollen gehören zum Stoffkreislauf im Wald?",
+					"concept": "Erzeuger, Verbraucher und Zersetzer.",
+					"source_link": "https://academy.zam-os.org/chemie-mittelschule-6/#lesson=c6-waldnetz",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Erzeuger, Verbraucher und Zersetzer.",
+							"Nur große Pflanzen, nur große Tiere und unbelebte Steine."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M7D7XM5RG0CQWEV2HHVD544D",
+					"slug": "c6-waldnetz-begrunden",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Wie gelangen Stoffe aus abgestorbenen Blättern wieder zu Pflanzen?",
+					"concept": "Zersetzer bauen Reste ab; Mineralstoffe gelangen in den Boden und werden aufgenommen.",
+					"source_link": "https://academy.zam-os.org/chemie-mittelschule-6/#lesson=c6-waldnetz",
+					"sample_solution": "Bodentiere, Pilze und Bakterien wirken am Abbau mit. Mineralstoffe können mit Wasser über die Wurzeln aufgenommen werden. Stoffe kreisen; Energie wird zugeführt und als Wärme abgegeben."
+				}
+			]
+		},
+		{
+			"id": "01M7D7XM5Q97ED38Y244AFN616",
+			"atom_uri": "urn:zam:atom:01M7D7XM5Q97ED38Y244AFN616",
+			"namespace": "zam-academy-chemie-mittelschule-6",
+			"slug": "c6-fotosynthese",
+			"title": "Fotosynthese als vereinfachte Wortgleichung",
+			"domain": "chemie/nt6/soil",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/chemie-mittelschule-6/#lesson=c6-fotosynthese",
+			"prerequisites": [
+				{
+					"atom_id": "01M7D7XM5QS3NKGCD3015ABSFB",
+					"type": "soft",
+					"rationale": "Builds on the earlier lesson “Atome, Elemente, Verbindungen und Moleküle”."
+				},
+				{
+					"atom_id": "01M7D7XM5Q8E1PS3ZW9R0EX1N4",
+					"type": "soft",
+					"rationale": "Builds on the earlier lesson “Nahrungsnetz und Stoffkreislauf im Wald”."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "chemie-mittelschule-6",
+					"topic_code": "stage3",
+					"topic_title": "Stoffkreislauf und Boden"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 6,
+					"subject": "nt",
+					"topic_code": "lb2",
+					"topic_title": "NT6 LB 2.3 · Stoffkreislauf, Boden",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M7D7XM5RBADN79JK7F0AT1QQ",
+					"slug": "c6-fotosynthese-basis",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Welche Ausgangsstoffe nennt die vereinfachte Fotosynthese-Wortgleichung?",
+					"concept": "Wasser und Kohlenstoffdioxid.",
+					"source_link": "https://academy.zam-os.org/chemie-mittelschule-6/#lesson=c6-fotosynthese",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Wasser und Kohlenstoffdioxid.",
+							"Traubenzucker und Sauerstoff."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M7D7XM5R41S49Z8RAVMHTZ6T",
+					"slug": "c6-fotosynthese-unterscheiden",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Ist Licht bei der Fotosynthese ein Ausgangsstoff?",
+					"concept": "Nein. Licht liefert Energie für die Stoffbildung.",
+					"source_link": "https://academy.zam-os.org/chemie-mittelschule-6/#lesson=c6-fotosynthese",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Nein. Licht liefert Energie für die Stoffbildung.",
+							"Ja. Licht ist eine Stoffportion, die wie Wasser aufgenommen wird."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M7D7XM5RZ5NWNKJF8391E4MR",
+					"slug": "c6-fotosynthese-begrunden",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Warum heißen grüne Pflanzen Produzenten?",
+					"concept": "Sie bauen mit Lichtenergie aus Wasser und Kohlenstoffdioxid energiereiche Stoffe auf.",
+					"source_link": "https://academy.zam-os.org/chemie-mittelschule-6/#lesson=c6-fotosynthese",
+					"sample_solution": "Bei der Fotosynthese entstehen Traubenzucker und Sauerstoff. Licht liefert Energie, Blattgrün ermöglicht ihre Nutzung. Pflanzen benötigen zusätzlich Mineralstoffe aus dem Boden."
+				}
+			]
+		},
+		{
+			"id": "01M7D7XM5QVKK0KH7KK3E9E71E",
+			"atom_uri": "urn:zam:atom:01M7D7XM5QVKK0KH7KK3E9E71E",
+			"namespace": "zam-academy-chemie-mittelschule-6",
+			"slug": "c6-bodenleben",
+			"title": "Zersetzung und Bodenlebewesen erkennen",
+			"domain": "chemie/nt6/soil",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/chemie-mittelschule-6/#lesson=c6-bodenleben",
+			"prerequisites": [
+				{
+					"atom_id": "01M7D7XM5Q8E1PS3ZW9R0EX1N4",
+					"type": "soft",
+					"rationale": "Builds on the earlier lesson “Nahrungsnetz und Stoffkreislauf im Wald”."
+				},
+				{
+					"atom_id": "01M7D7XM5Q97ED38Y244AFN616",
+					"type": "soft",
+					"rationale": "Builds on the earlier lesson “Fotosynthese als vereinfachte Wortgleichung”."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "chemie-mittelschule-6",
+					"topic_code": "stage3",
+					"topic_title": "Stoffkreislauf und Boden"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 6,
+					"subject": "nt",
+					"topic_code": "lb2",
+					"topic_title": "NT6 LB 2.3 · Stoffkreislauf, Boden",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M7D7XM5R2PS4FGDT8F0G94RW",
+					"slug": "c6-bodenleben-basis",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Welche Körpermerkmale passen zu einem Regenwurm?",
+					"concept": "Ein geringelter Körper ohne Beine; er gehört zu den Ringelwürmern.",
+					"source_link": "https://academy.zam-os.org/chemie-mittelschule-6/#lesson=c6-bodenleben",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Ein geringelter Körper ohne Beine; er gehört zu den Ringelwürmern.",
+							"Ein Körper mit sieben Beinpaaren; er gehört zu den Krebstieren."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M7D7XM5RXVVWPGY3P397CR31",
+					"slug": "c6-bodenleben-unterscheiden",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Wie viele Beine hat eine erwachsene Milbe und zu welcher Gruppe gehört sie?",
+					"concept": "Acht Beine; sie gehört zu den Spinnentieren.",
+					"source_link": "https://academy.zam-os.org/chemie-mittelschule-6/#lesson=c6-bodenleben",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Acht Beine; sie gehört zu den Spinnentieren.",
+							"Vierzehn Beine; sie gehört zu den Krebstieren."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M7D7XM5RKTFH9KVFJBHF716J",
+					"slug": "c6-bodenleben-begrunden",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Warum wirken mehrere Gruppen von Bodenlebewesen an der Zersetzung mit?",
+					"concept": "Bodentiere zerkleinern und mischen Reste; Pilze und Bakterien bauen weiter ab.",
+					"source_link": "https://academy.zam-os.org/chemie-mittelschule-6/#lesson=c6-bodenleben",
+					"sample_solution": "Die gemeinsame Arbeit wandelt organische Reste um und macht Mineralstoffe verfügbar. Eine Zeichnung ersetzt nicht das behutsame Beobachten und Bestimmen echter Bodenlebewesen."
+				}
+			]
+		},
+		{
+			"id": "01M7D7XM5QC3BX3YH3PKVNX1P2",
+			"atom_uri": "urn:zam:atom:01M7D7XM5QC3BX3YH3PKVNX1P2",
+			"namespace": "zam-academy-chemie-mittelschule-6",
+			"slug": "c6-bodenschutz",
+			"title": "Boden als Wasserspeicher und Filter schützen",
+			"domain": "chemie/nt6/soil",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/chemie-mittelschule-6/#lesson=c6-bodenschutz",
+			"prerequisites": [
+				{
+					"atom_id": "01M7D7XM5QYZJWENGR54JF737J",
+					"type": "soft",
+					"rationale": "Builds on the earlier lesson “Wasser als Lebensraum, Lebensmittel und Transportmittel”."
+				},
+				{
+					"atom_id": "01M7D7XM5QVKK0KH7KK3E9E71E",
+					"type": "soft",
+					"rationale": "Builds on the earlier lesson “Zersetzung und Bodenlebewesen erkennen”."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "chemie-mittelschule-6",
+					"topic_code": "stage3",
+					"topic_title": "Stoffkreislauf und Boden"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 6,
+					"subject": "nt",
+					"topic_code": "lb2",
+					"topic_title": "NT6 LB 2.3 · Stoffkreislauf, Boden",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M7D7XM5RCPTDPC43XF9DSP83",
+					"slug": "c6-bodenschutz-basis",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Wie lautet die Reihenfolge des vereinfachten Bodenprofils von oben nach unten?",
+					"concept": "Streu, belebter Oberboden, verwitterter Unterboden, Gestein.",
+					"source_link": "https://academy.zam-os.org/chemie-mittelschule-6/#lesson=c6-bodenschutz",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Streu, belebter Oberboden, verwitterter Unterboden, Gestein.",
+							"Gestein, Streu, belebter Oberboden, verwitterter Unterboden."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M7D7XM5RFP8VWZ2KAWHDMJXN",
+					"slug": "c6-bodenschutz-unterscheiden",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Warum ist gefiltertes Bodenwasser nicht automatisch Trinkwasser?",
+					"concept": "Die Filterwirkung ist begrenzt und entfernt nicht alle unerwünschten Stoffe sicher.",
+					"source_link": "https://academy.zam-os.org/chemie-mittelschule-6/#lesson=c6-bodenschutz",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Die Filterwirkung ist begrenzt und entfernt nicht alle unerwünschten Stoffe sicher.",
+							"Boden entfernt ausnahmslos alle gelösten Stoffe und Krankheitserreger."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M7D7XM5R4SETJQ7Y921WGKQ7",
+					"slug": "c6-bodenschutz-begrunden",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Wie schützt eine unversiegelte bepflanzte Fläche Boden und Wasserhaushalt?",
+					"concept": "Sie erhält Lebensraum und ermöglicht die Aufnahme und Speicherung von Wasser.",
+					"source_link": "https://academy.zam-os.org/chemie-mittelschule-6/#lesson=c6-bodenschutz",
+					"sample_solution": "Poren nehmen Wasser auf und Pflanzenbedeckung schützt den Boden. Versiegelung erschwert die Aufnahme; Schadstoffeinträge müssen vermieden werden, weil die Filterwirkung begrenzt ist."
+				}
+			]
+		}
+	]
+}

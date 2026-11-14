@@ -1,0 +1,167 @@
+[
+	{
+		"id": "c6-forschen",
+		"lb": 1,
+		"title": "Beobachten, messen und begründet folgern",
+		"period": "NT6 LB 1 · Naturwissenschaftliches Arbeiten",
+		"intro": "Wie wird aus „Das geht schneller“ eine überprüfbare Aussage?",
+		"paragraphs": [
+			"Du beginnst mit einer Frage, zum Beispiel: Löst sich dieselbe Salzmenge in wärmerem Wasser schneller? Formuliere eine Vermutung und plane einen fairen Vergleich. Verändere nur die untersuchte Bedingung. Wassermenge, Salzmenge, Korngröße und Rühren müssen gleich bleiben. Ein Becherglas enthält die Probe, ein Thermometer misst die Temperatur und eine Stoppuhr die Zeit. Geräte benutzt du nach Einweisung, nie als Spielzeug.",
+			"Beobachtung und Schlussfolgerung sind verschieden. „Das Salz ist nach 40 s nicht mehr sichtbar“ ist eine Beobachtung. „Unter diesen Bedingungen geht das Lösen bei höherer Temperatur schneller“ ist eine Schlussfolgerung. Ein Protokoll enthält Frage, Vermutung, Material, Ablauf, Beobachtungen und Auswertung. Eine Tabelle und ein beschriftetes Diagramm machen Messwerte vergleichbar. Prüfe bei vorgegebenen Quellen, ob sie zur Frage passen, einen Urheber nennen und die Aussage belegen.",
+			"Beispiel: Unsere erfundene Messreihe ergibt bei 20 °C eine Lösezeit von 120 s, bei 40 °C von 75 s und bei 60 °C von 40 s. Trage Temperatur und Zeit mit Einheiten an den Achsen ein. Die Zeit sinkt in dieser Messreihe bei steigender Temperatur. Ein einziger Durchgang beweist noch keine allgemeine Regel; Wiederholungen helfen, Zufälle zu erkennen. Im Unterricht führt ihr den freigegebenen Vergleich arbeitsteilig durch und schreibt ein eigenes Protokoll."
+		],
+		"takeaway": "Ein fairer Vergleich verändert eine Bedingung; Beobachtungen werden notiert und erst danach begründet ausgewertet.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Zwei Gläser sollen nur den Einfluss der Temperatur zeigen. Was muss gleich bleiben?",
+			"answer": "Wasser- und Salzmenge sowie das Rühren.",
+			"wrong": [
+				"Nur die Farbe der beiden Gläser.",
+				"Die Lösezeit muss vorher gleich eingestellt werden."
+			],
+			"explanation": "Gleiche weitere Bedingungen machen den Temperatureinfluss vergleichbar; die Lösezeit ist das Messergebnis."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Zusammenhänge zuordnen",
+			"instruction": "Ordne jeden Fall zu. Prüfe danach deine Entscheidungen.",
+			"categories": ["Beobachtung", "Schlussfolgerung"],
+			"entries": [
+				{
+					"text": "Bei 40 °C war das Salz nach 75 s nicht mehr sichtbar.",
+					"target": 0,
+					"feedback": "Die Aussage nennt einen beobachteten Messwert."
+				},
+				{
+					"text": "Unter den geprüften Bedingungen löst sich Salz in wärmerem Wasser schneller.",
+					"target": 1,
+					"feedback": "Der Zusammenhang wird aus mehreren Beobachtungen abgeleitet."
+				},
+				{
+					"text": "Am Boden liegen noch sichtbare Salzkörner.",
+					"target": 0,
+					"feedback": "Du beschreibst, was du siehst, ohne Ursache zu behaupten."
+				},
+				{
+					"text": "Die Temperatur könnte die Lösegeschwindigkeit beeinflussen.",
+					"target": 1,
+					"feedback": "Das ist eine mögliche Deutung; sie muss durch einen fairen Vergleich geprüft werden."
+				}
+			],
+			"conclusion": "Messwerte und Deutungen gehören in getrennte Teile deines Protokolls."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Werte die Messreihe 20 °C → 120 s, 40 °C → 75 s, 60 °C → 40 s aus. Nenne eine Beobachtung, eine Schlussfolgerung und zwei Bedingungen für einen fairen Vergleich.",
+				"hints": [
+					"Welche Messgröße steht auf welcher Achse?",
+					"Was darf außer der Temperatur nicht verändert werden?"
+				],
+				"model": "Bei 60 °C ist das Salz nach 40 s nicht mehr sichtbar, bei 20 °C nach 120 s. In dieser Messreihe löst es sich bei höherer Temperatur schneller. Wasser- und Salzmenge sowie das Rühren müssen gleich bleiben. Temperatur steht auf der waagerechten, Lösezeit auf der senkrechten Achse.",
+				"criteria": [
+					"Ich nenne einen Messwert mit Einheit.",
+					"Ich unterscheide Beobachtung und Schlussfolgerung.",
+					"Ich nenne mindestens zwei gleichbleibende Bedingungen."
+				]
+			},
+			"2": {
+				"prompt": "Eine Gruppe rührt das warme Glas stark und das kalte gar nicht. Sie behauptet: „Allein die Wärme hat den Unterschied verursacht.“ Beurteile den Schluss und plane einen besseren Vergleich.",
+				"hints": [
+					"Wie viele Bedingungen wurden verändert?",
+					"Welche Wiederholung macht die Aussage belastbarer?"
+				],
+				"model": "Die Gruppe hat Temperatur und Rühren gleichzeitig verändert. Deshalb lässt sich der Unterschied nicht allein der Temperatur zuordnen. Für einen fairen Vergleich bleiben Rühren, Salzmenge, Korngröße und Wassermenge gleich. Die Gruppe wiederholt beide Messungen und protokolliert die Ergebnisse.",
+				"criteria": [
+					"Ich benenne beide veränderten Bedingungen.",
+					"Ich erkläre die Grenze der Schlussfolgerung.",
+					"Ich schlage einen fairen Vergleich mit Wiederholung vor."
+				]
+			}
+		},
+		"figures": [],
+		"lab": "inquiry",
+		"review": "Wiederholung aus NT5: Stoffeigenschaften und Trennverfahren; jetzt mit eigener Auswertung und Diagramm."
+	},
+	{
+		"id": "c6-sicherheit",
+		"lb": 1,
+		"title": "Sicher arbeiten und Modelle kritisch lesen",
+		"period": "NT6 LB 1 · Naturwissenschaftliches Arbeiten",
+		"intro": "Wie helfen dir Kennzeichnungen, Regeln und Modellgrenzen?",
+		"paragraphs": [
+			"Im Fachraum arbeitest du nur nach Unterweisung und Freigabe. Schutzbrille, zusammengebundene lange Haare und standsichere Gefäße schützen vor vermeidbaren Risiken. Du probierst keine Stoffe, riechst nicht direkt an unbekannten Proben und verwendest keine Haushaltsgeräte als Laborersatz. Ein beschädigtes Glasgerät legst du nicht weiter zum Experiment bereit.",
+			"Gefahrstoffpiktogramme sind rote Rauten mit schwarzen Zeichen auf weißem Grund. Eine Flamme warnt vor entzündbaren Stoffen. Das Ausrufezeichen kann zum Beispiel auf reizende Stoffe hinweisen; die genaue Gefahr steht zusätzlich auf dem Etikett. Bei Spritzern, Glasbruch oder unerwarteten Reaktionen stoppst du die Arbeit und informierst die Lehrkraft. Besonders die Wasserzerlegung und Gasnachweise gehören ausschließlich in beaufsichtigten Unterricht.",
+			"Beispiel: Ein Kugelmodell zeigt ein Wassermolekül mit zwei hellen H-Kugeln und einer roten O-Kugel. Die Buchstaben und die Anzahl helfen beim Verstehen. Echte Atome sind aber keine farbigen Bauklötze; Abstände und Größen sind vereinfacht. Die App kann den Modellvergleich erklären, aber weder deine Schutzbrille prüfen noch einen echten Versuch beaufsichtigen."
+		],
+		"takeaway": "Kennzeichnung lesen, Regeln einhalten und bei Störungen stoppen. Ein Modell zeigt ausgewählte Zusammenhänge und hat Grenzen.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Eine rote Kugel steht im Wassermodell für Sauerstoff. Was folgt daraus?",
+			"answer": "Die Farbe ist eine vereinbarte Modellkennzeichnung.",
+			"wrong": [
+				"Sauerstoffatome sind in Wirklichkeit rote Kugeln.",
+				"Jeder rote Gegenstand besteht aus Sauerstoff."
+			],
+			"explanation": "Modellfarben unterscheiden Atomsorten, bilden aber keine sichtbaren Farben echter Atome ab."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Zusammenhänge zuordnen",
+			"instruction": "Ordne jeden Fall zu. Prüfe danach deine Entscheidungen.",
+			"categories": ["Sicheres Handeln", "Modellgrenze"],
+			"entries": [
+				{
+					"text": "Bei Glasbruch sofort die Arbeit stoppen und die Lehrkraft informieren.",
+					"target": 0,
+					"feedback": "Die Lehrkraft entscheidet über das sichere weitere Vorgehen."
+				},
+				{
+					"text": "Rote und helle Kugeln sind vereinbarte Farben für verschiedene Atomsorten.",
+					"target": 1,
+					"feedback": "Die Farben sind Eigenschaften der Zeichnung, nicht der echten Atome."
+				},
+				{
+					"text": "Das Gefahrstoffetikett vor der freigegebenen Arbeit lesen.",
+					"target": 0,
+					"feedback": "Piktogramm und Text zusammen geben Hinweise auf Risiken."
+				},
+				{
+					"text": "Eine Molekülzeichnung zeigt keine echten Größenverhältnisse.",
+					"target": 1,
+					"feedback": "Die Zeichnung vergrößert und vereinfacht den Aufbau."
+				}
+			],
+			"conclusion": "Sicherheitsregeln gelten für echte Handlungen. Modellgrenzen helfen dir, Bilder richtig zu deuten."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Erkläre, was eine rote Raute mit Flamme bedeutet und wie du bei Glasbruch reagierst. Nenne außerdem eine Grenze eines Kugelmodells.",
+				"hints": [
+					"Welche Gefahr kann das Zeichen anzeigen?",
+					"Was zeigt die Farbe einer Modellkugel nicht?"
+				],
+				"model": "Die Flamme warnt vor entzündbaren Stoffen. Ich lese zusätzlich das Etikett und befolge die Unterweisung. Bei Glasbruch stoppe ich und informiere sofort die Lehrkraft. Die Farben eines Kugelmodells helfen beim Unterscheiden von Atomsorten, sind aber keine echten Atomfarben.",
+				"criteria": [
+					"Ich deute die Flamme sachlich.",
+					"Ich nenne Unterbrechen und Informieren.",
+					"Ich erkläre eine konkrete Modellgrenze."
+				]
+			},
+			"2": {
+				"prompt": "Ein Kind will eine Gasprobe aus dem Internet zu Hause nachmachen, weil die Zeichnung harmlos aussieht. Begründe deine Entscheidung und unterscheide Wissen aus der App von sicherem Experimentieren.",
+				"hints": [
+					"Kann ein Modell das tatsächliche Risiko zeigen?",
+					"Welche Verantwortung hat die fachkundige Aufsicht?"
+				],
+				"model": "Eine einfache Zeichnung macht einen Versuch nicht ungefährlich. Wasserstoff kann sich entzünden; Gasnachweise gehören in den Unterricht unter fachkundiger Aufsicht. Die App erklärt Eigenschaften und Beobachtungen. Sie ersetzt weder die Sicherheitsunterweisung noch geeignete Geräte und die Aufsicht.",
+				"criteria": [
+					"Ich begründe die Ablehnung des Heimversuchs.",
+					"Ich benenne ein tatsächliches Risiko.",
+					"Ich trenne Modellwissen und beaufsichtigtes Handeln."
+				]
+			}
+		},
+		"figures": [],
+		"lab": "safety"
+	}
+]
