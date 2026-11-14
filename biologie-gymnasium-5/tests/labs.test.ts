@@ -13,8 +13,11 @@ import {
   cyclePhase,
   energy,
   reactionTime,
+  cubePieces,
   reactionWay,
 } from "../src/labs/mensch";
+import { ernaehrungspyramide } from "../src/figures/scenes-mensch";
+import { pollenschlauch, vergleichMenschPflanze } from "../src/figures/scenes-pflanzen";
 import { FLOWERS, KEY, PLANTS, keyPosition, meadowModel } from "../src/labs/pflanzen";
 import { LESSONS } from "../src/curriculum";
 import type { LabKind } from "../src/model/types";
@@ -186,6 +189,33 @@ describe("lab models are correct", () => {
 
   it("keeps the clay cube volume and multiplies the surface", () => {
     expect([1, 2, 3, 4].map(cubeSurface)).toEqual([96, 192, 288, 384]);
+  });
+
+  it("draws all n³ pieces of the cut cube, as the label says", () => {
+    for (const n of [1, 2, 3, 4]) {
+      expect(cubePieces(n)).toHaveLength(n ** 3);
+      const html = LABS.surface.draw({ ...freshLab("surface"), n: String(n) });
+      expect(html.match(/data-piece/g)).toHaveLength(n ** 3);
+      expect(html).toContain(`${n ** 3} Würfel`);
+    }
+  });
+
+  it("draws the nutrition pyramid with the drinks base widest and the sweets tip narrowest", () => {
+    const tiers = [...ernaehrungspyramide().matchAll(/<path d="M([\d.]+) [\d.]+ L([\d.]+) [\d.]+ L([\d.]+) [\d.]+ L([\d.]+) [\d.]+ Z"/g)].map(
+      ([, bl, br, tr, tl]) => ({ bottom: Number(br) - Number(bl), top: Number(tr) - Number(tl) }),
+    );
+    expect(tiers).toHaveLength(6);
+    for (const [i, tier] of tiers.entries()) {
+      expect(tier.top).toBeGreaterThan(0);
+      expect(tier.bottom).toBeGreaterThan(tier.top);
+      if (i > 0) expect(tier.top).toBe(tiers[i - 1].bottom);
+    }
+  });
+
+  it("keeps pollen grains and male germ cells apart", () => {
+    expect(vergleichMenschPflanze()).not.toMatch(/Keimzellen: Pollen /);
+    expect(vergleichMenschPflanze()).toContain("Keimzellen: männliche Keimzelle und Eizelle");
+    expect(pollenschlauch()).toContain("männliche Keimzelle");
   });
 
   it("uses 17 and 37 kJ per gram", () => {

@@ -328,6 +328,30 @@ export const foodEnergy: LabDef = {
 /** A cube of 4 cm cut into n pieces per edge: surface 6 · (4/n)² · n³ = 96 · n cm². */
 export const cubeSurface = (n: number): number => 6 * (4 / n) ** 2 * n ** 3;
 
+/**
+ * All n³ pieces of the cut clay cube in oblique projection (depth drawn at
+ * half length up and to the right). The whole stack keeps the 120 px edge of
+ * the uncut cube; gaps show the cuts. Drawn back to front, bottom to top and
+ * left to right, so nearer pieces cover farther ones.
+ */
+export function cubePieces(n: number): string[] {
+  const gap = n === 1 ? 0 : 6;
+  const size = (120 - gap * (n - 1)) / n;
+  const pitch = size + gap;
+  const e = size / 2;
+  const pieces: string[] = [];
+  for (let layer = n - 1; layer >= 0; layer--)
+    for (let row = n - 1; row >= 0; row--)
+      for (let col = 0; col < n; col++) {
+        const x = 40 + col * pitch + (layer * pitch) / 2;
+        const y = 80 + row * pitch - (layer * pitch) / 2;
+        pieces.push(
+          `<g data-piece><path d="M${f1(x)} ${f1(y)} l${f1(e)} ${f1(-e)} h${f1(size)} l${f1(-e)} ${f1(e)} Z" fill="#f7b267" stroke="var(--f-ink)" stroke-width="0.6"/><path d="M${f1(x + size)} ${f1(y)} l${f1(e)} ${f1(-e)} v${f1(size)} l${f1(-e)} ${f1(e)} Z" fill="#d9822b" stroke="var(--f-ink)" stroke-width="0.6"/><rect x="${f1(x)}" y="${f1(y)}" width="${f1(size)}" height="${f1(size)}" fill="#f4a259" stroke="var(--f-ink)" stroke-width="1"/></g>`,
+        );
+      }
+  return pieces;
+}
+
 export const surface: LabDef = {
   title: "Oberflächenvergrößerung",
   prompt:
@@ -372,18 +396,7 @@ export const surface: LabDef = {
   ],
   draw: (s) => {
     const n = Number(str(s, "n"));
-    const size = 120 / n;
-    const gap = n === 1 ? 0 : 6;
-    const cubes: string[] = [];
-    for (let row = 0; row < n; row++)
-      for (let col = 0; col < n; col++) {
-        const x = 40 + col * (size + gap);
-        const y = 50 + row * (size + gap);
-        const d = size * 0.35;
-        cubes.push(
-          `<path d="M${f1(x)} ${f1(y)} l${f1(d)} ${f1(-d)} h${f1(size)} l${f1(-d)} ${f1(d)} Z" fill="#f7b267"/><path d="M${f1(x + size)} ${f1(y)} l${f1(d)} ${f1(-d)} v${f1(size)} l${f1(-d)} ${f1(d)} Z" fill="#d9822b"/><rect x="${f1(x)}" y="${f1(y)}" width="${f1(size)}" height="${f1(size)}" fill="#f4a259" stroke="var(--f-ink)" stroke-width="1"/>`,
-        );
-      }
+    const cubes = cubePieces(n);
     const example = str(s, "example");
     const right =
       example === "zotten"

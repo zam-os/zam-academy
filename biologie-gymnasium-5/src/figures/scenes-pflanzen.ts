@@ -70,15 +70,19 @@ export const pollenschlauch = (): string =>
      <rect x="143" y="70" width="14" height="122" fill="#9ccc65"/>
      <ellipse cx="150" cy="64" rx="26" ry="10" fill="#7cb342" stroke="var(--f-ink)"/>
      <circle cx="150" cy="50" r="9" fill="var(--f-yellow)" stroke="var(--f-ink)"/>
+     <circle cx="150" cy="50" r="3" fill="var(--f-blue)"/>
      <path d="M150 58 Q154 120 146 170 Q144 210 150 226" fill="none" stroke="var(--f-orange)" stroke-width="3"/>
+     <circle cx="147" cy="198" r="3.5" fill="var(--f-blue)" stroke="var(--f-ink)"/>
+     <path d="M144 198 L64 186" stroke="var(--f-ink)" stroke-width="1"/>
      ${label(172, 50, "Pollenkorn", "lbl tiny", "start")}
      ${label(184, 70, "Narbe", "lbl tiny", "start")}
      ${label(164, 130, "Pollenschlauch im Griffel", "lbl tiny", "start")}
-     ${label(170, 236, "Eizelle in der Samenanlage", "lbl tiny", "start")}
+     ${labels(18, 166, "männliche Keimzelle\naus dem Pollenkorn", "lbl tiny", "start", 13)}
+     ${labels(196, 232, "Eizelle in der\nSamenanlage", "lbl tiny", "start", 13)}
      ${panel(316, 8, 276, 284, "panel-bg")}
      ${label(454, 32, "Zwei Schritte", "lbl small strong", "middle")}
      ${labels(330, 62, "1 Bestäubung:\nPollen gelangt durch Wind\noder Tiere auf die Narbe\neiner Blüte derselben Art.", "lbl tiny", "start", 15)}
-     ${labels(330, 150, "2 Befruchtung:\nDer Pollenschlauch wächst\nzur Samenanlage. Die männ-\nliche Keimzelle verschmilzt\nmit der Eizelle.", "lbl tiny", "start", 15)}
+     ${labels(330, 150, "2 Befruchtung:\nDer Pollenschlauch wächst\nzur Samenanlage. Die männ-\nliche Keimzelle aus dem Pollen-\nkorn verschmilzt mit der Eizelle.", "lbl tiny", "start", 15)}
      ${labels(330, 248, "Danach: Samenanlage → Samen,\nFruchtknoten → Frucht", "lbl tiny strong", "start", 15)}`,
   );
 
@@ -89,8 +93,8 @@ export const vergleichMenschPflanze = (): string =>
       head: "Samenpflanze",
       colour: C.green,
       points: [
-        "Keimzellen: Pollen und Eizelle",
-        "Pollen wird übertragen (Wind, Tiere)",
+        "Keimzellen: männliche Keimzelle und Eizelle",
+        "Pollenkorn bringt sie zur Narbe (Wind, Tiere)",
         "Befruchtung in der Samenanlage",
         "aus der befruchteten Eizelle: Keimling im Samen",
         "Samen keimt außerhalb der Mutterpflanze",

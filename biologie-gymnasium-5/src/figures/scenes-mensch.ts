@@ -272,6 +272,10 @@ export const naehrstoffeTafel = (): string =>
     3,
   );
 
+/** Half widths of the pyramid: tip and growth per tier (six tiers, 38 px apart). */
+export const PYRAMID_TOP = 60;
+export const PYRAMID_STEP = 28;
+
 export const ernaehrungspyramide = (): string => {
   const levels: Array<[string, string]> = [
     ["Süßes, Knabbereien", "#e53935"],
@@ -287,13 +291,15 @@ export const ernaehrungspyramide = (): string => {
     "Vereinfachte Ernährungspyramide: unten reichlich Getränke, Gemüse, Obst und Getreide, oben sparsam Fette und Süßes",
     `${levels
       .map(([t, colour], i) => {
-        const row = levels.length - 1 - i;
+        // Each tier's top edge is the bottom edge of the tier above, so the
+        // widths grow from the sweets tip down to the drinks base.
         const y = 20 + i * 38;
-        const half = 30 + row * 40;
-        return `<path d="M${300 - half} ${y + 36} L${300 + half} ${y + 36} L${300 + half - 36} ${y} L${300 - half + 36} ${y} Z" fill="${colour}" opacity="0.85"/>${label(300, y + 23, t, "lbl small strong", "middle")}`;
+        const top = PYRAMID_TOP + i * PYRAMID_STEP;
+        const bottom = top + PYRAMID_STEP;
+        return `<path d="M${300 - bottom} ${y + 36} L${300 + bottom} ${y + 36} L${300 + top} ${y} L${300 - top} ${y} Z" fill="${colour}" opacity="0.85"/>${label(300, y + 23, t, "lbl small strong", "middle")}`;
       })
       .join("")}
-     ${label(560, 40, "sparsam", "lbl small strong", "end")}${label(560, 140, "mäßig", "lbl small strong", "end")}${label(560, 240, "reichlich", "lbl small strong", "end")}`,
+     ${label(592, 40, "sparsam", "lbl small strong", "end")}${label(592, 140, "mäßig", "lbl small strong", "end")}${label(592, 240, "reichlich", "lbl small strong", "end")}`,
   );
 };
 
