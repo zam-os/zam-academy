@@ -1,9 +1,18 @@
 import type { LabKind } from "./model/types";
+import { goalKey, INVESTIGATIONS, rememberGoals } from "./investigations";
 
 export interface LabState {
 	mode: string;
 	temperature: number;
 	seen: string[];
+	answers: Record<string, number>;
+	goals: string[];
+	hydrogenCount: number;
+	oxygenCount: number;
+	hydrogenVolume: number;
+	customProducts: boolean;
+	densityTemperature: number;
+	energyOrder: number[];
 }
 export interface LabChoice {
 	id: string;
@@ -422,6 +431,14 @@ export const freshLab = (): LabState => ({
 	mode: "",
 	temperature: 20,
 	seen: [],
+	answers: {},
+	goals: [],
+	hydrogenCount: 0,
+	oxygenCount: 0,
+	hydrogenVolume: 0,
+	customProducts: false,
+	densityTemperature: 12,
+	energyOrder: [3, 1, 0, 2],
 });
 export const fmtDe = (value: number, digits = 0): string =>
 	new Intl.NumberFormat("de-DE", {
@@ -454,9 +471,10 @@ export function setTemperature(state: LabState, value: number): void {
 					: "transition";
 	if (state.mode !== "transition" && !state.seen.includes(state.mode))
 		state.seen.push(state.mode);
+	rememberGoals("particles", state);
 }
 export const labGoals = (kind: LabKind, state: LabState) =>
-	LABS[kind].choices.map((choice) => ({
-		text: `${choice.label} untersuchen und die Erklärung vergleichen`,
-		met: state.seen.includes(choice.id),
+	INVESTIGATIONS[kind].map((question, index) => ({
+		text: question.goal,
+		met: state.goals.includes(goalKey(kind, index)),
 	}));

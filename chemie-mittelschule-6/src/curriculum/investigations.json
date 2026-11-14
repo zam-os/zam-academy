@@ -1,0 +1,566 @@
+{
+	"inquiry": [
+		{
+			"goal": "Einen fairen Temperaturvergleich planen",
+			"prompt": "Du vergleichst zwei Löseversuche. Was darfst du gezielt verändern?",
+			"options": [
+				"Temperatur und Salzmenge zugleich",
+				"Nur die Wassertemperatur",
+				"Rühren und Glasfüllung zugleich"
+			],
+			"correct": 1,
+			"hint": "Trenne die untersuchte Bedingung von allen weiteren Einflüssen.",
+			"explanation": "Nur die Temperatur variiert; Wassermenge, Salzmenge, Korngröße und Rühren bleiben gleich."
+		},
+		{
+			"goal": "Einen Messpunkt mit Einheit aus dem Diagramm lesen",
+			"prompt": "Welche Lösezeit gehört in der Beispielmessreihe zu 40 °C?",
+			"options": ["120 s", "40 s", "75 s"],
+			"correct": 2,
+			"hint": "Lies beim mittleren Temperaturwert den zugehörigen Punkt ab.",
+			"explanation": "Der mittlere Punkt gehört zu 40 °C und 75 s. Die Werte sind eine erfundene Messreihe."
+		},
+		{
+			"goal": "Eine Schlussfolgerung auf die geprüften Bedingungen begrenzen",
+			"prompt": "Welche Auswertung ist durch die Beispielwerte gedeckt?",
+			"options": [
+				"Unter diesen Bedingungen sinkt die Lösezeit mit steigender Temperatur.",
+				"Jeder Stoff löst sich immer sofort in heißem Wasser.",
+				"Ein Durchgang schließt Messfehler vollständig aus."
+			],
+			"correct": 0,
+			"hint": "Übertrage eine kleine Messreihe nicht ungeprüft auf alle Stoffe.",
+			"explanation": "Die Aussage beschreibt den geprüften Zusammenhang. Wiederholungen und andere Stoffe benötigen eigene Untersuchungen."
+		}
+	],
+	"safety": [
+		{
+			"goal": "Ein Etikett vor einer Handlung auswerten",
+			"prompt": "Du siehst die rote Raute mit Flamme. Was folgt daraus?",
+			"options": [
+				"Der Stoff darf ohne Unterweisung erhitzt werden.",
+				"Das Zeichen ersetzt alle Angaben auf dem Etikett.",
+				"Entzündbarkeit beachten und die zusätzlichen Hinweise lesen."
+			],
+			"correct": 2,
+			"hint": "Ein Piktogramm nennt ein Risiko, aber nicht den gesamten sicheren Ablauf.",
+			"explanation": "Das Symbol warnt vor entzündbaren Stoffen; weitere Etiketthinweise und die Unterweisung gelten ebenfalls."
+		},
+		{
+			"goal": "Die Aussagekraft eines Modellbilds begrenzen",
+			"prompt": "Beweist ein sauberes Kugelmodell, dass die echte Probe keine Schadstoffe enthält?",
+			"options": [
+				"Nein, die vereinfachte Zeichnung erfasst solche Verunreinigungen nicht.",
+				"Ja, rote und helle Kugeln sind ein Prüfsiegel.",
+				"Ja, wenn das Modell groß genug gezeichnet ist."
+			],
+			"correct": 0,
+			"hint": "Unterscheide ausgewählte Modellmerkmale von Eigenschaften der echten Probe.",
+			"explanation": "Ein Molekülmodell zeigt ausgewählte Bausteine, aber keine vollständige Untersuchung einer echten Probe."
+		},
+		{
+			"goal": "Bei einer Störung eine sichere Entscheidung treffen",
+			"prompt": "Ein Glasgerät zerbricht unerwartet. Was ist dein nächster Schritt?",
+			"options": [
+				"Mit den Händen die Splitter rasch entfernen.",
+				"Arbeit stoppen und sofort die Lehrkraft informieren.",
+				"Mit einem beschädigten Ersatzglas fortfahren."
+			],
+			"correct": 1,
+			"hint": "Vermeide eine weitere Gefährdung, statt eigenständig zu improvisieren.",
+			"explanation": "Du unterbrichst und informierst. Die Lehrkraft entscheidet über das sichere weitere Vorgehen."
+		}
+	],
+	"waterUse": [
+		{
+			"goal": "Die Funktion im konkreten Lebensraum erkennen",
+			"prompt": "Ein Fisch nutzt gelösten Sauerstoff in einem See. Welche Wasserfunktion steht im Vordergrund?",
+			"options": ["Lebensmittel für den Menschen", "Verkehrsweg", "Lebensraum"],
+			"correct": 2,
+			"hint": "Frage, wo das Tier lebt und seine Lebensvorgänge ausführt.",
+			"explanation": "Das Gewässer ist hier Lebensraum; gelöster Sauerstoff ermöglicht vielen Wassertieren die Atmung."
+		},
+		{
+			"goal": "Eine Sichtprüfung kritisch beurteilen",
+			"prompt": "Ein Bach ist klar. Welche Entscheidung ist begründet?",
+			"options": [
+				"Nicht allein wegen der Klarheit daraus trinken.",
+				"Klarheit als vollständige Qualitätsprüfung behandeln.",
+				"Aus Klarheit auf völlige Stoffreinheit schließen."
+			],
+			"correct": 0,
+			"hint": "Auch unsichtbare Bestandteile können wichtig sein.",
+			"explanation": "Aussehen allein beweist weder Reinheit noch Trinkwasserqualität."
+		},
+		{
+			"goal": "Stofftransport von anderen Wasserfunktionen unterscheiden",
+			"prompt": "Wasser trägt gelöste Mineralstoffe von Wurzeln zu Blättern. Welche Funktion zeigt das?",
+			"options": ["Nur Kühlung", "Transportmittel", "Nur Lebensraum"],
+			"correct": 1,
+			"hint": "Verfolge, was zusammen mit dem Wasser seinen Ort ändert.",
+			"explanation": "Das Wasser transportiert gelöste Stoffe in der Pflanze."
+		}
+	],
+	"properties": [
+		{
+			"goal": "Eine Messung mit passenden Bedingungen deuten",
+			"prompt": "Bei normalem Luftdruck werden in einer reinen Eis-Wasser-Mischung ungefähr 0 °C gemessen. Welche Folgerung passt?",
+			"options": [
+				"Alles muss gasförmig sein.",
+				"Eis und flüssiges Wasser können gleichzeitig vorliegen.",
+				"Der Eisanteil lässt sich allein aus der Temperatur berechnen."
+			],
+			"correct": 1,
+			"hint": "Eine Übergangstemperatur ist noch keine Mengenmessung.",
+			"explanation": "Am Schmelzpunkt können beide Zustände zusammen vorkommen; ihre Anteile sind damit noch nicht bestimmt."
+		},
+		{
+			"goal": "Eine veränderte Messbedingung berücksichtigen",
+			"prompt": "Wasser siedet im Gebirge unter 100 °C. Was solltest du zuerst berücksichtigen?",
+			"options": [
+				"Die Farbe des Topfes als einzige Erklärung",
+				"Dass Wasser im Gebirge ein anderes Element ist",
+				"Den geringeren Luftdruck"
+			],
+			"correct": 2,
+			"hint": "Der Steckbrief nennt ausdrücklich eine Druckbedingung.",
+			"explanation": "Der Siedepunkt hängt vom Luftdruck ab. Ein niedrigerer Wert muss deshalb kein Messfehler sein."
+		},
+		{
+			"goal": "Mehrere Befunde für einen Steckbrief verlangen",
+			"prompt": "Welche Untersuchung ist als Stoffbestimmung ausreichend begründet?",
+			"options": [
+				"Mehrere passende Eigenschaften mit ihren Messbedingungen vergleichen.",
+				"Nur die Gefäßform ansehen.",
+				"Nur prüfen, ob die Probe durchsichtig ist."
+			],
+			"correct": 0,
+			"hint": "Ein einzelnes allgemeines Merkmal ist oft nicht eindeutig.",
+			"explanation": "Ein Steckbrief kombiniert Eigenschaften und Bedingungen. Auch dies ersetzt keine Trinkwasserprüfung."
+		}
+	],
+	"solutions": [
+		{
+			"goal": "Eine gelöste Probe im Teilchenmodell erkennen",
+			"prompt": "Im Salzbild sind kleine Bestandteile im ganzen Wasser verteilt. Welche Deutung passt?",
+			"options": [
+				"Das Salz ist aus der Welt verschwunden.",
+				"Das Salz ist weiterhin in der klaren Lösung enthalten.",
+				"Das Glas enthält deshalb nur noch ein Element."
+			],
+			"correct": 1,
+			"hint": "Unsichtbare Körner bedeuten nicht, dass der Stoff nicht mehr vorhanden ist.",
+			"explanation": "Gelöstes Salz bleibt enthalten und ist gleichmäßig verteilt."
+		},
+		{
+			"goal": "Löslichkeit und Leitfähigkeit getrennt vergleichen",
+			"prompt": "Salz und Zucker lösen sich in sehr reinem Wasser. Welche Vorhersage passt?",
+			"options": [
+				"Beide Lösungen müssen gleich gut leiten.",
+				"Nur sichtbare Körner können Stromleitung beeinflussen.",
+				"Salzlösung leitet deutlich besser als reine Zuckerlösung."
+			],
+			"correct": 2,
+			"hint": "Klarheit und Löslichkeit sind keine gemeinsame Skala für Leitfähigkeit.",
+			"explanation": "Die Lösungen können gleich klar aussehen und trotzdem unterschiedlich gut leiten."
+		},
+		{
+			"goal": "Aus einem Filtrierbefund nur das Belegte folgern",
+			"prompt": "Sand wurde abfiltriert und die Probe ist klar. Was bleibt ungeklärt?",
+			"options": [
+				"Ob noch gelöste Stoffe wie Salz enthalten sind.",
+				"Ob die Sandkörner größer als die Filterporen waren.",
+				"Ob der Filter ein Gefäß ist."
+			],
+			"correct": 0,
+			"hint": "Ein gewöhnlicher Filter hält nicht jede Art von Bestandteil zurück.",
+			"explanation": "Das Filtrat kann gelöste Stoffe enthalten; Klarheit beweist keine Reinheit."
+		}
+	],
+	"tension": [
+		{
+			"goal": "Die Tropfenform mit Teilchenanziehung erklären",
+			"prompt": "Warum wird ein kleiner Wassertropfen rundlich?",
+			"options": [
+				"Er besitzt eine feste Plastikhülle.",
+				"Die Teilchen werden beim Fallen immer größer.",
+				"Teilchenanziehung begünstigt eine möglichst kleine Oberfläche."
+			],
+			"correct": 2,
+			"hint": "Unterscheide eine Grenzfläche von einer festen Folie.",
+			"explanation": "Die Oberflächenspannung erklärt die rundliche Tropfenform; eine feste Haut gibt es nicht."
+		},
+		{
+			"goal": "Die Tragwirkung am Wasserläufer erklären",
+			"prompt": "Welche Kombination hilft dem leichten Wasserläufer oben zu bleiben?",
+			"options": [
+				"Oberflächenspannung und wasserabweisende Beine",
+				"Eine echte Eisschicht bei jedem Wetter",
+				"Die Umwandlung seiner Beine in Sauerstoff"
+			],
+			"correct": 0,
+			"hint": "Die Lage der Beine an der eingedellten Grenzfläche ist entscheidend.",
+			"explanation": "Das Tier nutzt die Oberflächenspannung zusammen mit der Form und Benetzung seiner Beine."
+		},
+		{
+			"goal": "Eine Verunreinigung vorhersagen und begründet vermeiden",
+			"prompt": "Was erwartest du nach Spülmittelzugabe im Modell?",
+			"options": [
+				"Eine feste Folie trägt nun jedes Gewicht.",
+				"Die Oberflächenspannung und ihre Tragwirkung nehmen ab.",
+				"Wasser wird automatisch zu reinem Trinkwasser."
+			],
+			"correct": 1,
+			"hint": "Beachte, dass Spülmittel die besondere Wirkung der Grenzfläche schwächt.",
+			"explanation": "Die Tragwirkung kann abnehmen. Deshalb wird der Vergleich nicht an einem echten Teich mit Tieren durchgeführt."
+		}
+	],
+	"particles": [
+		{
+			"goal": "Mit dem Regler den Schmelzübergang bei normalem Luftdruck einstellen",
+			"prompt": "Stelle die Temperatur für eine mögliche Eis-Wasser-Mischung ein.",
+			"options": ["", "", ""],
+			"correct": 0,
+			"hint": "Nutze den Temperaturregler, nicht nur einen Zustandsknopf.",
+			"explanation": "Am Schmelzpunkt von ungefähr 0 °C können Eis und Wasser gemeinsam vorliegen."
+		},
+		{
+			"goal": "Mit dem Regler den Siedeübergang bei normalem Luftdruck einstellen",
+			"prompt": "Stelle die Temperatur für siedendes reines Wasser bei normalem Luftdruck ein.",
+			"options": ["", "", ""],
+			"correct": 0,
+			"hint": "Nutze den Temperaturregler und beachte die Druckbedingung.",
+			"explanation": "Bei ungefähr 100 °C können flüssiges Wasser und Wasserdampf gemeinsam vorliegen."
+		},
+		{
+			"goal": "Die Teilchenidentität beim Zustandswechsel begründen",
+			"prompt": "Welche Aussage gilt für die Wasserteilchen beim Verdampfen?",
+			"options": [
+				"Sie werden in Wasserstoff und Sauerstoff zerlegt.",
+				"Sie bleiben Wassermoleküle; Anordnung und Bewegung ändern sich.",
+				"Jedes Teilchen wird so groß wie eine sichtbare Dampfblase."
+			],
+			"correct": 1,
+			"hint": "Zustand und Stoffart sind verschiedene Fragen.",
+			"explanation": "Beim Zustandswechsel bleiben die Wassermoleküle erhalten. Eine chemische Zerlegung ist ein anderer Vorgang."
+		}
+	],
+	"anomaly": [
+		{
+			"goal": "Das Dichtemaximum auf einer qualitativen Kurve finden",
+			"prompt": "Verschiebe die Temperatur zum höchsten Punkt der Dichtekurve.",
+			"options": ["", "", ""],
+			"correct": 0,
+			"hint": "Vergleiche die Kurve links und rechts vom Maximum.",
+			"explanation": "Flüssiges Wasser hat bei ungefähr 4 °C seine größte Dichte."
+		},
+		{
+			"goal": "Gleiche Masse, Volumen und Eisdichte verknüpfen",
+			"prompt": "Beim Gefrieren benötigt dieselbe Wassermasse mehr Raum. Wie verändert sich die Dichte?",
+			"options": [
+				"Sie nimmt ab.",
+				"Sie bleibt zwingend gleich.",
+				"Sie nimmt zu, weil die Atome wachsen."
+			],
+			"correct": 0,
+			"hint": "Dichte vergleicht Masse mit dem benötigten Volumen.",
+			"explanation": "Mehr Volumen bei gleicher Masse bedeutet geringere Dichte. Deshalb kann Eis auf Wasser schwimmen."
+		},
+		{
+			"goal": "Die Dichteanomalie auf einen tiefen Wintersee übertragen",
+			"prompt": "Welche Anordnung kann im tiefen See im Winter auftreten?",
+			"options": [
+				"Eis unten, überall darüber 20 °C.",
+				"Jeder See ist unabhängig von seiner Tiefe komplett gefroren.",
+				"Eis oben und darunter in der Tiefe Wasser um 4 °C."
+			],
+			"correct": 2,
+			"hint": "Unterscheide das weniger dichte Eis vom dichteren flüssigen Wasser.",
+			"explanation": "Die Anordnung ist möglich, aber flache Teiche können durchfrieren. Das Modell sagt nichts über sichere Tragfähigkeit des Eises."
+		}
+	],
+	"molecules": [
+		{
+			"goal": "Die Atome eines Wassermoleküls aus der Zeichnung zählen",
+			"prompt": "Welche Atome zeigt ein Wassermolekül?",
+			"options": [
+				"Ein H-Atom und zwei O-Atome",
+				"Zwei H-Atome und ein O-Atom",
+				"Drei identische Atome"
+			],
+			"correct": 1,
+			"hint": "Lies die Buchstaben, statt nur die Kugelfarben zu zählen.",
+			"explanation": "Das Wassermolekül enthält zwei Wasserstoffatome und ein Sauerstoffatom."
+		},
+		{
+			"goal": "Ein zweiatomiges Molekül einem Element zuordnen",
+			"prompt": "Das Sauerstoffbild zeigt zwei O-Atome. Ist es deshalb eine Verbindung?",
+			"options": [
+				"Ja, zwei Atome sind immer zwei verschiedene Elemente.",
+				"Ja, jedes Molekül ist Wasser.",
+				"Nein, es enthält nur eine Atomsorte."
+			],
+			"correct": 2,
+			"hint": "Zähle verschiedene Atomsorten, nicht nur die Gesamtzahl der Kugeln.",
+			"explanation": "Ein Molekül kann zu einem Element gehören. Eine Verbindung enthält verschiedene Atomsorten."
+		},
+		{
+			"goal": "Von einem auf zwei Wassermoleküle übertragen",
+			"prompt": "Welche Gesamtzahl gehört zu zwei Wassermolekülen?",
+			"options": [
+				"Vier H-Atome und zwei O-Atome",
+				"Zwei H-Atome und vier O-Atome",
+				"Zwei H-Atome und ein O-Atom"
+			],
+			"correct": 0,
+			"hint": "Verdopple die Anzahlen beider Atomsorten.",
+			"explanation": "Zwei Moleküle enthalten zusammen vier H-Atome und zwei O-Atome."
+		}
+	],
+	"electrolysis": [
+		{
+			"goal": "Die Produktmoleküle unter Erhaltung aller Atome einstellen",
+			"prompt": "Stelle die Produktmoleküle passend zu zwei Wassermolekülen ein.",
+			"options": ["", "", ""],
+			"correct": 0,
+			"hint": "Zähle H- und O-Atome auf beiden Seiten getrennt.",
+			"explanation": "Zwei Wasserstoffmoleküle und ein Sauerstoffmolekül erhalten vier H- und zwei O-Atome."
+		},
+		{
+			"goal": "Das Wasserstoffvolumen zu 10 ml Sauerstoff einstellen",
+			"prompt": "Stelle das passende Wasserstoffvolumen ein. Die Messbedingungen sind gleich.",
+			"options": ["", "", ""],
+			"correct": 0,
+			"hint": "Vergleiche das Volumenverhältnis mit der Anzahl der Gasmoleküle.",
+			"explanation": "Zu 10 ml Sauerstoff passen 20 ml Wasserstoff. Das ist ein Volumenverhältnis, kein Massenverhältnis."
+		},
+		{
+			"goal": "Stoffumwandlung und Teilchenerhaltung unterscheiden",
+			"prompt": "Was bleibt bei der Wasserzerlegung im Modell erhalten?",
+			"options": [
+				"Jedes Wassermolekül bleibt unverändert.",
+				"Die H- und O-Atome, die neu miteinander verbunden werden.",
+				"Nur die Zahl der roten Bildpunkte, keine echten Bausteine."
+			],
+			"correct": 1,
+			"hint": "Vergleiche die Atomsorten auf beiden Seiten, nicht die Molekülarten.",
+			"explanation": "Neue Stoffe entstehen durch neue Verbindungen vorhandener Atome. Es werden keine neuen Atome erzeugt."
+		}
+	],
+	"gases": [
+		{
+			"goal": "Einen positiven Glimmspanbefund deuten",
+			"prompt": "Ein glimmender Holzspan flammt im beaufsichtigten Versuch wieder auf. Welches Gas passt?",
+			"options": ["Wasserstoff", "Wasserdampf", "Sauerstoff"],
+			"correct": 2,
+			"hint": "Ordne eine konkrete positive Beobachtung dem passenden Nachweis zu.",
+			"explanation": "Das Wiederaufflammen ist der positive Befund der Glimmspanprobe für Sauerstoff."
+		},
+		{
+			"goal": "Brennbarkeit von Brandförderung unterscheiden",
+			"prompt": "Welche Eigenschaft beschreibt Sauerstoff?",
+			"options": [
+				"Selbst nicht brennbar, aber verbrennungsfördernd",
+				"Immer selbst brennbar wie Wasserstoff",
+				"Durch Farblosigkeit eindeutig erkennbar"
+			],
+			"correct": 0,
+			"hint": "Unterscheide den brennenden Stoff von einem Stoff, der Verbrennung unterstützt.",
+			"explanation": "Sauerstoff fördert Verbrennungen; Wasserstoff ist dagegen brennbar."
+		},
+		{
+			"goal": "Die Grenze eines negativen Nachweises erkennen",
+			"prompt": "Ein Nachweis bleibt aus. Welche Folgerung ist sicher?",
+			"options": [
+				"Das Gas muss automatisch Wasserstoff sein.",
+				"Der negative Befund identifiziert kein bestimmtes anderes Gas.",
+				"Man sollte das unbekannte Gas selbst einatmen."
+			],
+			"correct": 1,
+			"hint": "Auch die Eignung der Probe oder Durchführung kann den Befund beeinflussen.",
+			"explanation": "Ein ausbleibender Nachweis ist keine eindeutige Identifikation. Unbekannte Gase werden nicht selbst getestet oder eingeatmet."
+		}
+	],
+	"hydro": [
+		{
+			"goal": "Die Energiekette in die richtige Reihenfolge bringen",
+			"prompt": "Ordne Lageenergie, Bewegung des Wassers, Turbine und elektrische Energie.",
+			"options": ["", "", ""],
+			"correct": 0,
+			"hint": "Beginne mit dem höher gelegenen Wasser und ende beim Generatorstrom.",
+			"explanation": "Die Kette lautet: Lageenergie, Bewegung des Wassers, mechanische Energie der Turbine, elektrische Energie."
+		},
+		{
+			"goal": "Den Generator innerhalb der Energiekette richtig deuten",
+			"prompt": "Wo wird mechanische in elektrische Energie umgewandelt?",
+			"options": [
+				"Im Wasserstoffmolekül",
+				"Im Generator",
+				"Nur im höher gelegenen Speicher"
+			],
+			"correct": 1,
+			"hint": "Unterscheide den Antrieb durch die Turbine vom elektrischen Ausgang.",
+			"explanation": "Die Turbine treibt den Generator an; dieser wandelt mechanische in elektrische Energie um."
+		},
+		{
+			"goal": "Erneuerbarkeit gegen eine Umweltfolge abwägen",
+			"prompt": "Welche Aussage berücksichtigt Nutzen und Folgen?",
+			"options": [
+				"Erneuerbare Kraftwerke verändern nie einen Lebensraum.",
+				"Ein Wehr lässt alle Fische immer ungehindert passieren.",
+				"Stromnutzen, Fischwanderung und Restwasser müssen gemeinsam betrachtet werden."
+			],
+			"correct": 2,
+			"hint": "Erneuerbar beschreibt die Energiequelle, nicht die Folgenlosigkeit eines Bauwerks.",
+			"explanation": "Eine sachliche Abwägung bezieht Stromgewinnung und konkrete Folgen für den Fluss ein."
+		}
+	],
+	"foodweb": [
+		{
+			"goal": "Die Pfeilrichtung im Nahrungsnetz lesen",
+			"prompt": "Wofür steht Blatt → Raupe in diesem Netz?",
+			"options": [
+				"Das Blatt wird von der Raupe gefressen.",
+				"Das Blatt frisst die Raupe.",
+				"Die Raupe ist eine Energiequelle ohne Nahrung."
+			],
+			"correct": 0,
+			"hint": "Lies den Pfeil als „wird gefressen von“.",
+			"explanation": "Der Nahrungspfeil zeigt vom Futter zum Fresser."
+		},
+		{
+			"goal": "Den Stoffrückweg über Zersetzer ergänzen",
+			"prompt": "Was verbindet abgestorbene Reste wieder mit Pflanzen?",
+			"options": [
+				"Ein direkter Rückpfeil aller Energie in das Blatt",
+				"Zersetzer, verfügbare Mineralstoffe und Aufnahme über die Wurzeln",
+				"Nur der Sperber am Ende einer Kette"
+			],
+			"correct": 1,
+			"hint": "Unterscheide Stoffrückführung und Energiefluss.",
+			"explanation": "Zersetzung macht Mineralstoffe verfügbar, die Pflanzen mit Wasser aufnehmen können."
+		},
+		{
+			"goal": "Stoffkreislauf und Energiefluss auseinanderhalten",
+			"prompt": "Welche Aussage passt zum gesamten Modell?",
+			"options": [
+				"Stoffe und Energie kreisen immer vollständig gleich.",
+				"Jede Meise frisst genau eine einzige Art.",
+				"Stoffe können kreisen; Licht führt Energie zu und Wärme wird abgegeben."
+			],
+			"correct": 2,
+			"hint": "Ein Nahrungsnetz ist eine vereinfachte Darstellung vieler Beziehungen.",
+			"explanation": "Stoffkreislauf bedeutet keine vollständig geschlossene Energierückführung."
+		}
+	],
+	"photosynthesis": [
+		{
+			"goal": "Die Stoffeingänge von den Produkten unterscheiden",
+			"prompt": "Welche Stoffe gehören links in die vereinfachte Wortgleichung?",
+			"options": [
+				"Wasser und Kohlenstoffdioxid",
+				"Traubenzucker und Sauerstoff",
+				"Sonnenlicht und fertige Nahrung"
+			],
+			"correct": 0,
+			"hint": "Verfolge die beiden Stoffpfeile zur Pflanze.",
+			"explanation": "Wasser und Kohlenstoffdioxid sind die Ausgangsstoffe der vereinfachten Fotosynthese."
+		},
+		{
+			"goal": "Die Lichtzufuhr als Energie kennzeichnen",
+			"prompt": "Welche Rolle hat Licht im Modell?",
+			"options": [
+				"Ein zusätzlicher Ausgangsstoff",
+				"Energiezufuhr für die Stoffbildung",
+				"Ein Produkt, das die Wurzel abgibt"
+			],
+			"correct": 1,
+			"hint": "Der Sonnenpfeil beschreibt eine andere Größe als die Wasserzufuhr.",
+			"explanation": "Licht liefert Energie und ist kein Stoff in der Wortgleichung."
+		},
+		{
+			"goal": "Die Rolle der Pflanze im Nahrungsnetz begründen",
+			"prompt": "Warum ist die grüne Pflanze ein Produzent?",
+			"options": [
+				"Weil sie alle Nahrung fertig aus dem Boden holt.",
+				"Weil sie weder Wasser noch Luft benötigt.",
+				"Weil sie energiereiche Stoffe aus einfachen Ausgangsstoffen aufbaut."
+			],
+			"correct": 2,
+			"hint": "Nutze die Produkte der Wortgleichung für deine Begründung.",
+			"explanation": "Die Pflanze baut mit Lichtenergie unter anderem Traubenzucker auf; zusätzlich benötigt sie Mineralstoffe."
+		}
+	],
+	"soilLife": [
+		{
+			"goal": "Den Ringelwurm an sichtbaren Segmenten erkennen",
+			"prompt": "Welche Kombination passt zum gezeichneten Regenwurm?",
+			"options": [
+				"Acht Beine, Spinnentier",
+				"Geringelter Körper ohne Beine, Ringelwurm",
+				"Vierzehn Beine, Krebstier"
+			],
+			"correct": 1,
+			"hint": "Achte auf die Quergrenzen der Körpersegmente und auf fehlende Beine.",
+			"explanation": "Die Segmentringe und der beinlose langgestreckte Körper passen zu einem Regenwurm."
+		},
+		{
+			"goal": "Die erwachsene Milbe über ihre Beine einordnen",
+			"prompt": "Du zählst acht Beine an der erwachsenen Milbe. Welche Gruppe passt?",
+			"options": ["Krebstiere", "Ringelwürmer", "Spinnentiere"],
+			"correct": 2,
+			"hint": "Vergleiche die Beinzahl mit den anderen beiden erwachsenen Modellorganismen.",
+			"explanation": "Erwachsene Milben gehören zu den Spinnentieren und haben acht Beine."
+		},
+		{
+			"goal": "Die Landassel von den anderen Gruppen unterscheiden",
+			"prompt": "Was unterscheidet die erwachsene Landassel hier?",
+			"options": [
+				"Sieben Beinpaare und Zuordnung zu den Krebstieren",
+				"Ein glatter beinloser Körper ohne Segmente",
+				"Vier Beinpaare und Zuordnung zu den Spinnentieren"
+			],
+			"correct": 0,
+			"hint": "Zähle Beinpaare und Beine nicht als dieselbe Anzahl.",
+			"explanation": "Sieben Beinpaare sind vierzehn Beine. Die erwachsene Landassel ist ein Krebstier."
+		}
+	],
+	"soil": [
+		{
+			"goal": "Die Lage der Bodenschichten richtig lesen",
+			"prompt": "Was liegt im vereinfachten Profil direkt unter der Streu?",
+			"options": [
+				"Gestein",
+				"Der verwitterte Unterboden",
+				"Der belebte Oberboden"
+			],
+			"correct": 2,
+			"hint": "Lies das Profil von oben nach unten.",
+			"explanation": "Unter der Streu liegt der belebte Oberboden, dann folgen Unterboden und Gestein."
+		},
+		{
+			"goal": "Eine Schutzmaßnahme mit Wasseraufnahme verbinden",
+			"prompt": "Welche Gestaltung erhält eher die Wasseraufnahme des Bodens?",
+			"options": [
+				"Unversiegelte bepflanzte Teilflächen",
+				"Vollständige Versiegelung mit Asphalt",
+				"Starke Verdichtung aller Poren"
+			],
+			"correct": 0,
+			"hint": "Überlege, wo Wasser in Poren gelangen kann.",
+			"explanation": "Offene bepflanzte Flächen können Wasser aufnehmen und Lebensraum erhalten; der Standort und die Regenstärke beeinflussen die Wirkung."
+		},
+		{
+			"goal": "Die Filterleistung des Bodens begrenzen",
+			"prompt": "Gefiltertes Bodenwasser ist klar. Was darfst du daraus schließen?",
+			"options": [
+				"Es ist zwingend geprüftes Trinkwasser.",
+				"Klarheit allein beweist keine vollständige Entfernung unerwünschter Stoffe.",
+				"Jeder gelöste Stoff wurde sicher entfernt."
+			],
+			"correct": 1,
+			"hint": "Die Filterfunktion hat Grenzen.",
+			"explanation": "Boden kann manche Stoffe zurückhalten, aber nicht jeden Schadstoff oder Krankheitserreger sicher entfernen."
+		}
+	]
+}

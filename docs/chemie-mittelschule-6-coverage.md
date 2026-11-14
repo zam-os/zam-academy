@@ -2,8 +2,11 @@
 
 ## Scope and curriculum decision
 
-The requested Chemistry package follows the chemical perspective of Bavarian
-Natur und Technik 6. The live official Fachlehrplan was downloaded on
+The draft built for the Chemistry request covers selected water and soil
+sections of Bavarian Natur und Technik 6. Those sections span biology,
+chemistry and physics. The working title and future scope remain open;
+the current 17 lessons do not form a chemistry-only course. The live
+official Fachlehrplan was downloaded on
 2026-11-14 using `curl -fLsS --compressed -A 'Mozilla/5.0'`. Its actual page
 title was read; HTTP success alone was not treated as evidence. The source is
 [the official NT6 curriculum](https://www.lehrplanplus.bayern.de/fachlehrplan/mittelschule/6/nt).
@@ -21,13 +24,17 @@ This does not claim completion of those practical expectations.
 | NT6 2.1 | 11 | All seven expectations, including hydropower as the required cross-disciplinary context; actual water measurements, electrolysis and gas tests remain supervised classroom work |
 | NT6 2.3 | 4 | Forest network and substance cycle, simplified photosynthesis word equation, decomposition, soil functions/protection; real organism collection and identification remain in class |
 
-The scope is visible in the app and `coverage.json`. NT6 2.2 aquatic biology,
-LB 3 puberty/development and LB 4 mechanics are outside this Chemistry
-package. The package is neither a complete NT6 course nor a complete LB 2
-biology offer. For future ZAM integration, the available official provider
-binding is the parent `lb2`; its `topic_title` preserves 2.1 or 2.3. Curators
-must retain this partial-scope distinction rather than infer full LB 2
-coverage from a binding.
+The selected sections are visible in the app and `coverage.json`. NT6 2.2
+aquatic biology, LB 3 puberty/development and LB 4 mechanics are outside this
+draft. Their exclusion defines the current selection rather than a boundary
+between scientific disciplines. The package is neither a complete NT6 course
+nor a complete LB 2 offer. The Academy registry expects the combined subject
+`fach: "nt"` at this grade; publishing it under `fach: "chemie"` is not
+supported. For future ZAM integration, the available official provider
+binding is the parent `lb2`, with the single official title
+“Lebensgrundlagen Wasser und Boden”. The Academy stage binding and lesson
+labels preserve the finer 2.1/2.3 distinction. Curators must retain this
+partial-scope distinction rather than infer full LB 2 coverage from a binding.
 
 The official page does not state hours for the selected sections; no hour
 allocation was invented. NT6 has one shared subject page. Both Grade 7 tracks
@@ -51,10 +58,13 @@ reaction.
 Every lesson includes three explanation paragraphs, an explicit worked
 example, a key rule, a three-option quick check, four classification cases,
 and two different written tasks with two hints and three criteria each.
-There are 16 interactive model types used across the 17 lessons, with three
-comparison choices per lesson and an additional temperature slider for the
-two particle lessons. All exploration goals start unselected and can be
-reached. They last for the session and are not retained as mastery evidence.
+There are 16 interactive model types across the 17 lessons. Their three
+comparison choices open explanations; they no longer award goal completion.
+Each lesson has three substantive model goals: reasoned predictions, atom
+conservation and gas-volume proposals, finding the maximum on a qualitative
+density curve, ordering an energy chain, or setting phase-transition
+temperatures. All goals start unsolved and have tested witnesses. They last
+for the session and are not retained as mastery evidence.
 
 Scientific distinctions checked in content and models include:
 
@@ -80,17 +90,18 @@ Scientific distinctions checked in content and models include:
 Teal, blue and green station accents work in light, explicit dark and system
 dark themes. Diagrams use labels in addition to colour, adjacent explanatory
 text and explicit model limits. On narrow screens they scroll within a
-keyboard-focusable region to keep labels readable. Local storage keys are
+keyboard-focusable region to keep labels readable; centred molecule drawings start in view. Local storage keys are
 unique, both writing levels count separately, and edited drafts invalidate
-only their own confirmation. No automatic grading or FSRS rating occurs.
+only their own confirmation. Written drafts are not automatically graded and no FSRS rating occurs.
+Model tasks check the learner’s explicit choices and numerical proposals.
 
 ## Existing-card decision
 
 `replaces-de-by.json` records the inspected `zam-os/zam` commit
 `2057e1c35a5e768eb0c59cb74c3700c0101f67a2`. Its `bundled-cells.ts` and
-curriculum fixtures contain no `de-by` Mittelschule cell. Related chemistry
-and biology cells at other school types remain with their existing packages;
-this package claims no history. The mapping is empty and proposal-only,
+curriculum fixtures contain no `de-by` Mittelschule cell. Related Realschule and Gymnasium cells remain active at their own school
+types; this does not assert that Academy successor packages exist for them.
+This package claims no history. The mapping is empty and proposal-only,
 `approved` is null, and the cell has neither `replaces` nor `retired_items`.
 The cell's 17 atoms and 51 items use real generated ULIDs pinned in the
 contract fixture. Cards cite the corresponding lesson anchors. Card text
@@ -103,10 +114,10 @@ Run from `chemie-mittelschule-6/` unless noted:
 | Check | Command | Evidence |
 | --- | --- | --- |
 | Type checking | `npm run typecheck` | Source and tests pass TypeScript |
-| Package suite | `npm test` | Content/identity checks, model actions and conservation, feedback, independent levels and cross-tab storage |
+| Package suite | `npm test` | 109 tests pass: content/identity checks, model actions and conservation, feedback, independent levels and cross-tab storage |
 | Verbatim expectations and source integrity | `npm run check:curriculum` | 20 rows, zero missing after whitespace normalization; all four page titles and source SHA-256 values match |
 | Single-file build | `npm run build` | Self-contained `dist/index.html` |
-| Browser | `npm run check:browser` | 68 lesson/level/theme views, 51 model actions, 17 solved workshops; 320/390/720/1280 layouts, both levels, reload, draft invalidation, ZAM draft dialog and reset; no runtime errors or external requests |
+| Browser | `npm run check:browser` | 68 lesson/level/theme views, 153 model-view interactions, 51 solved model goals, 196 contrast checks in three theme modes and 17 solved workshops; strict 320/390/720/1280 layout checks with negative controls, both levels, reload, draft invalidation, ZAM draft dialog and reset; no runtime errors or external requests |
 | Offline ZIP | `npm run package:zip` | Archived HTML matches the build byte for byte; Windows/macOS/Linux launchers and instructions exist; shell syntax passes |
 | Catalog and registry (repo root) | `node --test scripts/build-catalog.test.mjs scripts/academy-registry.test.mjs` | Local drafts remain outside publication; public registry remains consistent |
 | Published kernel (repo root) | `ZAM_CORE=<scratch zam-core@0.54.0 dist URL> node scripts/validate-cells.mjs` | All cells, including the local draft, are installed in temporary databases; text/distractor validation runs |
@@ -126,3 +137,34 @@ public atlas, catalog and Pages list, and no ZAM fixture is hand-edited.
 Teacher review and the separate reviewed video step remain open. Public
 release and any later history transfer require their normal explicit
 instructions; this local build does not assume either.
+
+## Review follow-up
+
+The review follow-up fixes dark-mode selected-chip contrast, long heading
+wrapping, the three-station strip, the water-strider contact geometry,
+visible earthworm segment rings, the first electrolysis state and consistent
+level-bearing lesson URLs. Browser assertions compare against the requested
+device width rather than an expanded mobile `innerWidth`, inspect each
+heading, and reject deliberately reintroduced overflow and low contrast.
+The development port is 5249, after checking the active sibling PRs (5246,
+5247 and 5248 were already used).
+
+Four recall prompts were rewritten around NT6-specific interpretation:
+measurement-diagram axes, limits of a water-molecule model as a quality test,
+phase coexistence at the melting point, and the limits of low conductivity
+as evidence of purity. Their item ids remain unchanged; this local-only
+cell has not published a history-transfer contract. Generic lesson-order
+prerequisites were replaced by content-specific rationales and unsupported
+edges were removed. Grade 6 bindings set `exam_relevant: false`.
+
+NT5 remains prior knowledge rather than a declared cross-cell prerequisite:
+`zam-core@0.54.0` rejects any prerequisite whose atom is outside the current
+tile, including a soft edge to an already installed NT5 atom. This was
+confirmed in a disposable library. Adding those edges would make the cell
+uninstallable; the existing kernel contract is unchanged. The external
+NT5 prerequisite suggestion therefore needs a future format/API extension,
+not an invalid edge in this package.
+
+The package-scope decision raised in the reviews remains with Thomas. UI,
+content and metadata corrections do not by themselves authorize renaming,
+expanding the course or publishing it.

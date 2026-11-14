@@ -23,6 +23,48 @@ function molecule(x: number, y: number, formula = "water", scale = 1): string {
 const tree = (x: number, y: number) =>
 	`<path d="M${x},${y}v62" class="tree-trunk"/><circle cx="${x}" cy="${y - 9}" r="35" class="leaf"/><circle cx="${x - 28}" cy="${y + 9}" r="24" class="leaf"/><circle cx="${x + 28}" cy="${y + 9}" r="24" class="leaf"/>`;
 
+function wormRings(): string {
+	const curves = [
+		[
+			[110, 150],
+			[180, 50],
+			[260, 230],
+			[350, 130],
+		],
+		[
+			[350, 130],
+			[440, 30],
+			[460, 80],
+			[495, 140],
+		],
+	];
+	return curves
+		.flatMap(([p0, p1, p2, p3]) =>
+			Array.from({ length: 11 }, (_, i) => {
+				const t = (i + 1) / 12,
+					u = 1 - t;
+				const point = [0, 1].map(
+					(j) =>
+						u ** 3 * p0[j] +
+						3 * u ** 2 * t * p1[j] +
+						3 * u * t ** 2 * p2[j] +
+						t ** 3 * p3[j],
+				);
+				const tangent = [0, 1].map(
+					(j) =>
+						3 * u ** 2 * (p1[j] - p0[j]) +
+						6 * u * t * (p2[j] - p1[j]) +
+						3 * t ** 2 * (p3[j] - p2[j]),
+				);
+				const length = Math.hypot(...tangent),
+					nx = (-tangent[1] / length) * 11,
+					ny = (tangent[0] / length) * 11;
+				return `<path class="worm-ring" d="M${point[0] - nx},${point[1] - ny}L${point[0] + nx},${point[1] + ny}"/>`;
+			}),
+		)
+		.join("");
+}
+
 /** Drawings are schematics, with model limits and an equivalent prose explanation. */
 export function drawScene(kind: LabKind, s: LabState): string {
 	const m = s.mode;
@@ -92,11 +134,16 @@ export function drawScene(kind: LabKind, s: LabState): string {
 				"diagram-small",
 			);
 	} else if (kind === "tension") {
-		b = `<path d="M25,160H575V240H25Z" class="water-fill"/><path d="M25,160H210Q250,${m === "soap" ? 195 : 172} 290,160H575" class="surface-line ${m === "soap" ? "weak" : ""}"/>`;
+		const feet = [220, 235, 250, 350, 365, 380];
+		const surface =
+			m === "strider"
+				? `M25,160${feet.map((x) => `H${x - 6}Q${x},172 ${x + 6},160`).join("")}H575`
+				: "M25,160H575";
+		b = `<path d="${surface}V240H25Z" class="water-fill"/><path d="${surface}" class="surface-line ${m === "soap" ? "weak" : ""}"/>`;
 		b +=
 			m === "drop" || !m
 				? `<path d="M300,30C290,60 245,80 245,115a55,55 0 0 0 110,0C355,80 310,60 300,30Z" class="drop"/>`
-				: `<ellipse cx="300" cy="${m === "soap" ? 195 : 110}" rx="35" ry="10" class="insect"/>${[0, 1, 2].map((i) => `<path d="M${285 + i * 15},${m === "soap" ? 195 : 110}l-65,${m === "soap" ? 10 : 50} M${285 + i * 15},${m === "soap" ? 195 : 110}l65,${m === "soap" ? 10 : 50}" class="insect-leg"/>`).join("")}`;
+				: `<ellipse cx="300" cy="${m === "soap" ? 195 : 110}" rx="35" ry="10" class="insect"/>${[0, 1, 2].map((i) => `<path d="M${285 + i * 15},${m === "soap" ? 195 : 110}L${220 + i * 15},${m === "soap" ? 205 : 166} M${285 + i * 15},${m === "soap" ? 195 : 110}L${350 + i * 15},${m === "soap" ? 205 : 166}" class="insect-leg"/>`).join("")}`;
 		b += text(
 			300,
 			280,
@@ -108,25 +155,54 @@ export function drawScene(kind: LabKind, s: LabState): string {
 	} else if (kind === "particles") {
 		const gas = m === "gas",
 			solid = m === "solid";
+		const coexist = m === "transition";
 		b =
 			box(22, 20, 556, 190) +
+			(coexist
+				? text(
+						150,
+						42,
+						s.temperature === 0 ? "Eis" : "Wasser",
+						"diagram-small",
+					) +
+					text(
+						450,
+						42,
+						s.temperature === 0 ? "Wasser" : "Wasserdampf",
+						"diagram-small",
+					)
+				: "") +
 			Array.from({ length: 12 }, (_, i) => {
-				const x = gas
-						? 55 + ((i * 97) % 480)
-						: 174 + (i % 4) * (solid ? 61 : 51) + (solid ? 0 : (i % 3) * 5),
-					y = gas
-						? 48 + ((i * 71) % 140)
-						: 70 + Math.floor(i / 4) * (solid ? 52 : 45);
+				const right = i >= 6,
+					local = i % 6;
+				const particleSolid =
+					solid || (coexist && s.temperature === 0 && !right);
+				const particleGas = gas || (coexist && s.temperature === 100 && right);
+				const x = coexist
+						? (right ? 350 : 70) +
+							(local % 3) * (particleGas ? 90 : particleSolid ? 70 : 50)
+						: gas
+							? 55 + ((i * 97) % 480)
+							: 174 + (i % 4) * (solid ? 61 : 51) + (solid ? 0 : (i % 3) * 5),
+					y = coexist
+						? 85 +
+							Math.floor(local / 3) *
+								(particleGas ? 85 : particleSolid ? 65 : 45)
+						: gas
+							? 48 + ((i * 71) % 140)
+							: 70 + Math.floor(i / 4) * (solid ? 52 : 45);
 				return (
 					molecule(x, y, "water", 0.45) +
-					(solid ? "" : arrow(x + 20, y - 15, x + 34, y - (gas ? 32 : 20)))
+					(particleSolid
+						? ""
+						: arrow(x + 20, y - 15, x + 34, y - (particleGas ? 32 : 20)))
 				);
 			}).join("") +
 			text(
 				300,
 				250,
 				m === "transition"
-					? `${fmtDe(s.temperature)} °C: zwei Zustände können gleichzeitig vorliegen`
+					? `${fmtDe(s.temperature)} °C: zwei Zustände · Mengenanteile nicht festgelegt`
 					: `${solid ? "Eis: feste Plätze" : gas ? "Dampf: große Abstände" : "Wasser: Plätze wechseln"} · ${fmtDe(s.temperature)} °C`,
 				"diagram-small",
 			);
@@ -160,6 +236,8 @@ export function drawScene(kind: LabKind, s: LabState): string {
 			) +
 			text(300, 275, "H: Wasserstoffatom · O: Sauerstoffatom", "diagram-small");
 	} else if (kind === "electrolysis") {
+		const h = s.customProducts ? s.hydrogenCount : 2;
+		const o = s.customProducts ? s.oxygenCount : 1;
 		b =
 			text(145, 35, "Vorher: 2 Wassermoleküle") +
 			molecule(90, 100, "water", 0.8) +
@@ -168,20 +246,39 @@ export function drawScene(kind: LabKind, s: LabState): string {
 			text(300, 205, "elektrische Energie", "diagram-small");
 		b +=
 			m === "after"
-				? molecule(400, 85, "hydrogen", 0.7) +
-					molecule(500, 85, "hydrogen", 0.7) +
-					molecule(450, 150, "oxygen", 0.7) +
-					text(450, 35, "2 H₂ und 1 O₂", "diagram-small")
+				? Array.from({ length: h }, (_, i) =>
+						molecule(
+							390 + (i % 2) * 100,
+							70 + Math.floor(i / 2) * 50,
+							"hydrogen",
+							0.6,
+						),
+					).join("") +
+					Array.from({ length: o }, (_, i) =>
+						molecule(380 + i * 65, 170, "oxygen", 0.6),
+					).join("") +
+					text(
+						450,
+						35,
+						`${s.customProducts ? "Dein Vorschlag: " : ""}${h} H₂ und ${o} O₂`,
+						"diagram-small",
+					)
 				: m === "rearrange"
 					? [370, 420, 470, 520].map((x) => atom(x, 80, "H", 15)).join("") +
 						atom(420, 150, "O") +
 						atom(480, 150, "O")
-					: box(360, 50, 200, 145) + text(460, 120, "Schritt wählen");
+					: box(360, 50, 200, 145) +
+						(m === "before"
+							? text(460, 105, "Noch Wasser") +
+								text(460, 135, "keine Produktgase", "diagram-small")
+							: text(460, 120, "Schritt wählen"));
 		b +=
 			text(
 				300,
 				245,
-				"Auf beiden Seiten: 4 H-Atome und 2 O-Atome",
+				m === "after"
+					? `Links: 4 H und 2 O · rechts: ${h * 2} H und ${o * 2} O`
+					: "Ausgangsmenge: 4 H-Atome und 2 O-Atome",
 				"diagram-small",
 			) +
 			text(
@@ -277,7 +374,7 @@ export function drawScene(kind: LabKind, s: LabState): string {
 			);
 	} else if (kind === "soilLife") {
 		if (m === "worm" || !m)
-			b = `<path d="M110,150C180,50 260,230 350,130S460,80 495,140" class="worm"/>${text(300, 265, "Regenwurm · Ringelwurm · keine Beine")}`;
+			b = `<path d="M110,150C180,50 260,230 350,130S460,80 495,140" class="worm"/>${wormRings()}${text(300, 265, "Regenwurm · Ringelwurm · keine Beine")}`;
 		else {
 			const n = m === "mite" ? 4 : 7;
 			b =
@@ -318,4 +415,48 @@ export function drawScene(kind: LabKind, s: LabState): string {
 		);
 	}
 	return `<svg class="chem-diagram" viewBox="0 0 600 300" role="img" aria-label="${esc(`${LABS[kind].title}: ${LABS[kind].choices.find((c) => c.id === m)?.label || "Übersicht"}. Die Erklärung unter dem Bild beschreibt das Modell.`)}" xmlns="http://www.w3.org/2000/svg">${b}</svg>`;
+}
+
+/** These charts respond to the learner's numerical proposal, without claiming measured data. */
+export function drawInvestigation(kind: LabKind, s: LabState): string {
+	let body = "";
+	if (kind === "electrolysis") {
+		body =
+			text(
+				210,
+				25,
+				"Dein Volumenvorschlag · gleiche Messbedingungen",
+				"diagram-small",
+			) +
+			`<rect x="90" y="${155 - s.hydrogenVolume * 2.5}" width="70" height="${s.hydrogenVolume * 2.5}" class="volume-h"/><rect x="260" y="130" width="70" height="25" class="volume-o"/>` +
+			text(
+				125,
+				178,
+				`Wasserstoff: ${fmtDe(s.hydrogenVolume)} ml`,
+				"diagram-small",
+			) +
+			text(295, 178, "Sauerstoff: 10 ml", "diagram-small");
+	} else if (kind === "anomaly") {
+		const point = (t: number) => [45 + t * 17, 40 + ((t - 4) ** 2 / 256) * 135];
+		const path = Array.from(
+			{ length: 21 },
+			(_, i) => `${i ? "L" : "M"}${point(i).join(",")}`,
+		).join("");
+		const [x, y] = point(s.densityTemperature);
+		body =
+			`<path d="M40,25V190H395" class="chart-axis"/><path d="${path}" class="density-curve"/><circle cx="${x}" cy="${y}" r="7" class="chart-dot"/>` +
+			[0, 4, 10, 20]
+				.map((t) => text(point(t)[0], 213, `${t} °C`, "diagram-small"))
+				.join("") +
+			text(
+				210,
+				245,
+				"Dichte qualitativ · Kurve nicht maßstabsgetreu",
+				"diagram-small",
+			) +
+			text(115, 20, "größere Dichte ↑", "diagram-small");
+	}
+	return body
+		? `<svg class="investigation-diagram" viewBox="0 0 420 260" role="img" aria-label="${kind === "anomaly" ? `Qualitative Dichtekurve, ausgewählt: ${fmtDe(s.densityTemperature)} Grad Celsius` : `Gasvolumen: ${fmtDe(s.hydrogenVolume)} Milliliter Wasserstoff und 10 Milliliter Sauerstoff`}" xmlns="http://www.w3.org/2000/svg">${body}</svg>`
+		: "";
 }

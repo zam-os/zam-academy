@@ -183,6 +183,41 @@ describe("Cell and identifier contract", () => {
 	});
 });
 
+describe("Curriculum and prerequisite metadata", () => {
+	it("uses one official title per code without marking Grade 6 as an exam year", () => {
+		const titles = new Map<string, Set<string>>();
+		for (const atom of cell.atoms)
+			for (const binding of atom.curricula) {
+				if (binding.provider !== "lehrplanplus-bayern") continue;
+				expect(binding.exam_relevant).toBe(false);
+				const seen = titles.get(binding.topic_code) ?? new Set();
+				seen.add(binding.topic_title);
+				titles.set(binding.topic_code, seen);
+			}
+		expect([...titles.get("lb1")!]).toEqual([
+			"Naturwissenschaftliches Arbeiten",
+		]);
+		expect([...titles.get("lb2")!]).toEqual([
+			"Lebensgrundlagen Wasser und Boden",
+		]);
+	});
+	it("keeps substantive prerequisites and excludes unrelated lesson-order edges", () => {
+		const atoms = new Map(cell.atoms.map((atom) => [atom.slug, atom]));
+		const depends = (from: string, to: string) =>
+			atoms
+				.get(from)!
+				.prerequisites.some((edge) => edge.atom_id === atoms.get(to)!.id);
+		expect(depends("c6-wasserzerlegung", "c6-molekuele")).toBe(true);
+		expect(depends("c6-wasseranomalie", "c6-teilchen-zustaende")).toBe(true);
+		expect(depends("c6-wasserkraft", "c6-wasserzerlegung")).toBe(false);
+		expect(depends("c6-waldnetz", "c6-molekuele")).toBe(false);
+		expect(depends("c6-bodenleben", "c6-fotosynthese")).toBe(false);
+		for (const atom of cell.atoms)
+			for (const edge of atom.prerequisites)
+				expect(edge.rationale).not.toContain("Builds on the earlier lesson");
+	});
+});
+
 describe("Learning progress and deep links", () => {
 	it("requires both independent self-assessments and invalidates only an edited level", () => {
 		const p = freshProgress(),

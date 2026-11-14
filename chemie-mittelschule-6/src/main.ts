@@ -128,7 +128,11 @@ function openLesson(id: string): void {
 	if (!lesson) return;
 	progress.activeLessonId = id;
 	view = "lesson";
-	history.pushState(null, "", `#lesson=${encodeURIComponent(id)}`);
+	history.pushState(
+		null,
+		"",
+		pageUrl(`#lesson=${encodeURIComponent(id)}&level=${progress.level}`),
+	);
 	void persist();
 	render();
 	window.scrollTo({ top: 0, behavior: "instant" });

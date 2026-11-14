@@ -1,8 +1,9 @@
 # Chemistry 6 Mittelschule
 
-A local offline learning package for the chemical perspective of Bavarian
-**Natur und Technik 6**. The learner interface is German. This is a Chemistry
-package within the integrated subject, not a complete NT6 year course.
+A local offline draft covering selected water and soil sections of Bavarian
+**Natur und Technik 6**. The learner interface is German. Its 17 lessons span
+biology, chemistry and physics; the working title and future package scope
+await Thomas's decision. This is not a complete NT6 year course.
 
 | Official section | Lessons | Content |
 | --- | ---: | --- |
@@ -19,8 +20,12 @@ math segments with German speech.
 Every lesson has three explanation paragraphs, a worked example, a key rule,
 a three-option quick check, a four-case classification workshop and two
 distinct written tasks with hints, model answers and three criteria. The
-16 subject-specific models provide three selectable comparisons each; the
-particle model also has a temperature slider. Labels, prose explanations,
+16 subject-specific models combine selectable comparisons with three substantive
+model goals per lesson. Research tasks use reasoned predictions; electrolysis
+adds molecule and gas-volume controls, the water anomaly a qualitative density
+curve, hydropower a reorderable energy chain, and the particle model a
+temperature slider with phase-coexistence views. Merely opening each comparison
+does not solve a model goal. Labels, prose explanations,
 model limits, keyboard controls and horizontal scrolling on narrow screens
 keep the diagrams accessible. Stages use teal, blue and green accents in both
 themes.
@@ -54,6 +59,10 @@ mechanics. Hydropower is included because it is an explicit expectation of
 NT6 2.1; photosynthesis stays a simplified word equation. See
 [the scope and evidence](../docs/chemie-mittelschule-6-coverage.md).
 
+The Academy registry expects the combined subject `fach: "nt"` for this
+grade. Publishing this draft under `fach: "chemie"` is not supported. Its
+future identity and any expansion must be settled before publication.
+
 `publication.json` is `local-only`: no public catalog, atlas or Pages entry.
 The app displays this status and explains in its ZAM dialog that the prepared
 cell is not yet available through the public catalog. Teacher review and
@@ -61,8 +70,9 @@ teacher videos remain open. Videos are intentionally left to the separate
 reviewed video step required by the package standard.
 
 `replaces-de-by.json` is an empty, unapproved proposal. No old item is replaced
-or retired. Related packages of other school types and NT5 keep their own
-cards and review histories. There is no requested history-transfer decision.
+or retired. Related Realschule and Gymnasium cells remain active in their own school
+types; no Academy successor is asserted for them. NT5 Academy cards stay in
+their separate package. There is no requested history-transfer decision.
 
 ## Develop and verify
 
@@ -77,7 +87,7 @@ npm run package:zip
 npm run dev -- --host 127.0.0.1
 ```
 
-The dev port is 5247. The build is a single offline `dist/index.html`.
+The dev port is 5249. The build is a single offline `dist/index.html`.
 The ZIP is `release/ZAM-Academy-Chemie-6-Mittelschule-offline.zip` and contains
 the same HTML plus Windows, macOS and Linux launchers and starter instructions.
 `verify-release.mjs` compares the archived bytes and checks launcher syntax.
@@ -86,7 +96,10 @@ the same HTML plus Windows, macOS and Linux launchers and starter instructions.
 a disposable profile and the built HTML. It checks each lesson at both levels
 and in both themes, all model controls, all workshops, phase boundaries,
 both-level completion, reload persistence, draft invalidation, reset, the ZAM
-draft dialog and layouts at 320, 390, 720 and 1280 pixels. Screenshots and a
+draft dialog and layouts at 320, 390, 720 and 1280 pixels. It compares layout
+with the requested device width and checks headings individually. Negative
+controls reproduce and reject the original overflow and contrast defects.
+Selected model chips are checked in light, explicit dark and system dark modes. Screenshots and a
 JSON report go to `/private/tmp/zam-chemie6-browser` by default (override
 `BROWSER_QA_DIR`). No browser or test dependency is added.
 
