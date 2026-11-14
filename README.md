@@ -64,6 +64,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | Deutsch 7 Mittelschule (LehrplanPLUS Bayern, Regelklasse und M-Zug) | [`deutsch-mittelschule-7/`](deutsch-mittelschule-7/) | https://academy.zam-os.org/deutsch-mittelschule-7/ | `zam-academy:deutsch-mittelschule-7` |
 | Deutsch 8 Mittelschule (LehrplanPLUS Bayern, Regelklasse und M-Zug) | [`deutsch-mittelschule-8/`](deutsch-mittelschule-8/) | https://academy.zam-os.org/deutsch-mittelschule-8/ | `zam-academy:deutsch-mittelschule-8` |
 | Geschichte/Politik/Geographie 5 Mittelschule (LehrplanPLUS Bayern) | [`gpg-mittelschule-5/`](gpg-mittelschule-5/) | Built by Pages on merge | `zam-academy:gpg-mittelschule-5` |
+| Natur und Technik 5 Mittelschule (LehrplanPLUS Bayern) | [`nt-mittelschule-5/`](nt-mittelschule-5/) | Built by Pages on merge | `zam-academy:nt-mittelschule-5` |
 
 ## How an app and its ZAM cell fit together
 
@@ -158,6 +159,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Mathematics 10 Mittelschule: cd mathematik-mittelschule-10 (dev server on :5237)
 # Biologie 5 Realschule: cd biologie-realschule-5 (dev server on :5238)
 # Geschichte/Politik/Geographie 5 Mittelschule: cd gpg-mittelschule-5 (dev server on :5241)
+# Natur und Technik 5 Mittelschule: cd nt-mittelschule-5 (dev server on :5243)
 # Mathematik 7 Gymnasium: cd mathematik-gymnasium-7 (dev server on :5242)
 # Grade 11 introductory biology preview: cd biologie-gymnasium-11 (dev server on :5227)
 npm ci
@@ -181,7 +183,7 @@ Selecting a live package shows its details and an opening link directly below th
 
 `index.html` renders a zoomable knowledge atlas (Schulsicht and Weltwissen) from `academy.json`. Fields without a package are shown grey but can still be entered, so a Fach shows which Schularten teach it in that grade. Where a Schulart has no such Fach in a grade (for example Biologie 9 or Geographie 10 at the Realschule), `kein_unterricht` records it with a note and an official source. Such offers are omitted from the map and list even when planned packages are shown. The coverage matrix marks them as "kein Fach" with a dashed outline, an explanatory tooltip and a link to the official source; grades before a subject starts stay "nicht vorgesehen" without that outline. Neither counts as missing. Search and coverage navigation also expand and focus the destination in the list view. App links return to `https://academy.zam-os.org/`, including when an app is opened from an offline zip.
 
-`fachverbunde` defines combined subjects with one canonical id, school, grades and access `paths`. Mittelschule GPG (`gpg`, grades 5–10) is reachable through Geschichte, Politik und Gesellschaft and Geographie in both lenses, the list and the coverage matrix. Each entry is explicitly named Geschichte/Politik/Geographie. The three routes point to one offer: common ancestors and matrix totals count it once, and search returns one package result. Until a package exists, the shared offer remains planned. A future GPG package is registered once with `fach: "gpg"`, its grade and `school: "mittelschule"`; all routes then open the same app and do not create copies of cards or progress.
+`fachverbunde` defines combined subjects with one canonical id, school, grades and access `paths`. Mittelschule GPG (`gpg`, grades 5–10) is reachable through Geschichte, Politik und Gesellschaft and Geographie, and Mittelschule NT (`nt`, grades 5–10) through Biologie, Chemie and Physik in both lenses, the list and the coverage matrix. Each entry is explicitly named after its combined subject. The three routes point to one offer: common ancestors and matrix totals count it once, and search returns one package result. Until a package exists, the shared offer remains planned. A combined package is registered once with `fach: "gpg"` or `"nt"`, its grade and `school: "mittelschule"`; all routes then open the same app and do not create copies of cards or progress.
 
 To register a new package, add an entry to `pakete` in `academy.json` (app folder, Fach, grade, school, lesson and card counts); `node --test scripts/academy-registry.test.mjs` keeps it in sync with the app cells. UML groups several lessons per atom, so its curriculum test checks the registry's lesson count against the app's actual lessons. School types and subject start grades in the registry are a planning scaffold and can be edited freely.
 

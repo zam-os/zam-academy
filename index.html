@@ -1384,7 +1384,7 @@
         g.append(shape);
         const fs = R * (n.combination ? 0.16 : 0.19);
         if (n.kind === "pkg") {
-          const lines = n.combination ? n.combination.name.split("/") : wrap(n.label, Math.max(9, Math.round(R / 5.4)));
+          const lines = n.combination && n.combination.name.includes("/") ? n.combination.name.split("/") : wrap(n.label, Math.max(9, Math.round(R / 5.4)));
           const gl = n.glyph.length > 6 ? 0.2 : 0.3;
           /* a live package names its Schulart on top, so it reads like the grey Schulart fields beside it */
           const kicker = n.school && (!n.planned || n.combination || n.world) ? n.school.name : "";
