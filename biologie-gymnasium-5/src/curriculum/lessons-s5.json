@@ -1,0 +1,712 @@
+[
+  {
+    "id": "bg5-energiebedarf",
+    "lb": 5,
+    "title": "Wofür der Körper Energie braucht",
+    "period": "NT5 2.3 · Stoffwechsel: Stoff- und Energieumwandlung",
+    "intro": "Auch wenn du schläfst, schlägt dein Herz und deine Körpertemperatur bleibt bei etwa 37 °C. Dafür braucht dein Körper ständig Energie.",
+    "paragraphs": [
+      "Der Körper braucht Energie für viele Vorgänge. Für Bewegung: Jeder Schritt, jeder Atemzug und jeder Herzschlag ist Muskelarbeit. Für Wachstum: In deinem Alter baut der Körper ständig neue Zellen für Knochen, Muskeln und Organe. Für Regeneration: Wunden heilen, abgenutzte Zellen werden ersetzt. Und für die Temperaturregulation: Der Körper hält seine Temperatur bei etwa 37 °C, auch wenn es draußen kalt ist. Deshalb braucht er sogar im Schlaf Energie.",
+      "Diese Energie nimmt der Körper mit der Nahrung auf. Energie misst man in Kilojoule (kJ); auf Lebensmittelverpackungen steht daneben oft noch die ältere Einheit Kilokalorien (kcal). Wie viel Energie ein Mensch braucht, hängt davon ab, wie alt, wie groß und wie aktiv er ist: Wer viel Sport treibt oder gerade stark wächst, braucht mehr. Nimmt jemand dauerhaft mehr Energie auf, als er braucht, speichert der Körper den Rest als Fett. Nimmt er zu wenig auf, fehlt Energie für Wachstum und Leistung."
+    ],
+    "takeaway": "Der Körper braucht Energie für Bewegung, Wachstum, Regeneration und das Halten der Körpertemperatur. Er nimmt sie mit der Nahrung auf. Energie wird in Kilojoule (kJ) angegeben; der Bedarf hängt von Alter, Größe und Aktivität ab.",
+    "sourceIds": ["lehrplan", "kx-energie", "kx-ernaehrung"],
+    "quiz": {
+      "question": "Warum braucht der Körper auch im Schlaf Energie?",
+      "answer": "Herz und Atemmuskeln arbeiten weiter, und die Körpertemperatur muss gehalten werden",
+      "wrong": [
+        "Er braucht im Schlaf keine Energie, nur tagsüber",
+        "Nur das Gehirn träumt, alle anderen Organe ruhen vollständig"
+      ],
+      "explanation": "Lebenswichtige Vorgänge wie Herzschlag, Atmung, Wärmeerzeugung und Regeneration laufen auch im Schlaf weiter."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Wofür wird die Energie gebraucht?",
+      "instruction": "Ordne jede Situation dem passenden Energiebedarf zu.",
+      "categories": ["Bewegung", "Wachstum", "Regeneration", "Temperaturregulation"],
+      "entries": [
+        { "text": "Fußballtraining am Nachmittag", "target": 0, "feedback": "Muskelarbeit braucht viel Energie." },
+        { "text": "Das Herz schlägt ununterbrochen.", "target": 0, "feedback": "Auch der Herzmuskel bewegt sich." },
+        { "text": "Du wirst in einem Jahr fünf Zentimeter größer.", "target": 1, "feedback": "Neue Zellen werden gebildet." },
+        { "text": "Eine Schürfwunde am Knie heilt.", "target": 2, "feedback": "Neue Haut wird gebildet." },
+        { "text": "Im Winter bleibt dein Körper innen warm.", "target": 3, "feedback": "Der Körper erzeugt Wärme." },
+        { "text": "Beim Frieren zittern die Muskeln.", "target": 3, "feedback": "Zittern erzeugt Wärme." }
+      ],
+      "conclusion": "Energie wird ständig gebraucht, deshalb muss sie regelmäßig mit der Nahrung zugeführt werden."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre, warum Jugendliche im Wachstum oft großen Hunger haben.",
+        "hints": [
+          "Was baut der Körper beim Wachsen auf?",
+          "Woher kommen Energie und Baustoffe dafür?"
+        ],
+        "model": "Beim Wachsen bildet der Körper viele neue Zellen für Knochen, Muskeln und Organe. Dafür braucht er Energie und Baustoffe wie Eiweiß. Beides nimmt er mit der Nahrung auf. Deshalb ist der Bedarf in Wachstumsphasen höher, und der Körper meldet das mit Hunger.",
+        "criteria": [
+          "Ich nenne das Bilden neuer Zellen.",
+          "Ich nenne Energie und Baustoffe.",
+          "Ich verbinde den höheren Bedarf mit dem Hunger."
+        ]
+      },
+      "2": {
+        "prompt": "Zwei Zwillinge essen gleich viel. Einer spielt jeden Tag Fußball, der andere sitzt viel. Wie wirkt sich das auf ihre Energiebilanz aus?",
+        "hints": [
+          "Wer braucht mehr Energie und warum?",
+          "Was macht der Körper mit überschüssiger Energie?"
+        ],
+        "model": "Der Fußballspieler braucht für die Bewegung deutlich mehr Energie. Bei gleicher Nahrung verbraucht er ungefähr so viel, wie er aufnimmt. Der Zwilling, der viel sitzt, braucht weniger, nimmt aber gleich viel auf. Die überschüssige Energie speichert sein Körper als Fett, er kann auf Dauer zunehmen. Besser wäre für ihn mehr Bewegung, statt einfach zu hungern.",
+        "criteria": [
+          "Ich vergleiche den Energiebedarf beider.",
+          "Ich erkläre die Speicherung überschüssiger Energie als Fett.",
+          "Ich ziehe eine sinnvolle Folgerung."
+        ]
+      }
+    },
+    "figures": ["energie-bedarf"]
+  },
+  {
+    "id": "bg5-zellatmung",
+    "lb": 5,
+    "title": "Die Zellatmung",
+    "period": "NT5 2.3 · Stoffwechsel: Stoff- und Energieumwandlung",
+    "intro": "Du atmest, weil deine Zellen Sauerstoff brauchen. In jeder Zelle wird damit die Energie der Nahrung nutzbar gemacht.",
+    "paragraphs": [
+      "In der Nahrung steckt Energie, aber die Zellen können sie nicht direkt verwenden. Sie müssen sie erst umwandeln. Das geschieht bei der Zellatmung: In den Zellen reagiert Traubenzucker, der aus der Nahrung stammt, mit Sauerstoff, der aus der Atemluft stammt. Dabei entstehen Kohlenstoffdioxid und Wasser, und die im Traubenzucker gespeicherte Energie wird umgewandelt. Die Zelle nutzt sie für Bewegung, Wachstum und andere Lebensvorgänge; ein Teil wird als Wärme frei, die den Körper warm hält.",
+      "Die Stoffänderung stellt man in einem Reaktionsschema dar: Links stehen die Ausgangsstoffe, rechts die Endstoffe, dazwischen ein Pfeil. Traubenzucker + Sauerstoff → Kohlenstoffdioxid + Wasser. Die Energie schreibt man nicht als Stoff dazu, sondern vermerkt, dass sie umgewandelt wird. Das Kohlenstoffdioxid gelangt mit dem Blut zur Lunge und wird ausgeatmet; du kannst es mit Kalkwasser nachweisen. Die Zellatmung findet in allen Lebewesen statt, auch Hefe und Pflanzen atmen auf diese Weise."
+    ],
+    "takeaway": "Zellatmung: Traubenzucker + Sauerstoff → Kohlenstoffdioxid + Wasser. Dabei wird die Energie aus dem Traubenzucker in eine für die Zelle nutzbare Form und in Wärme umgewandelt. Sie ist der wichtigste Vorgang der Energieumwandlung in den Zellen.",
+    "sourceIds": ["lehrplan", "wp-zellatmung", "kx-sauerstoff", "kx-zucker"],
+    "quiz": {
+      "question": "Welche Stoffe entstehen bei der Zellatmung?",
+      "answer": "Kohlenstoffdioxid und Wasser",
+      "wrong": ["Traubenzucker und Sauerstoff", "Stärke und Fett"],
+      "explanation": "Traubenzucker und Sauerstoff sind die Ausgangsstoffe; als Endstoffe entstehen Kohlenstoffdioxid und Wasser."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Ausgangsstoff, Endstoff oder Energie?",
+      "instruction": "Ordne jeden Begriff im Reaktionsschema der Zellatmung zu.",
+      "categories": ["Ausgangsstoff", "Endstoff", "Energieumwandlung"],
+      "entries": [
+        { "text": "Traubenzucker aus der Nahrung", "target": 0, "feedback": "Er liefert die Energie." },
+        { "text": "Sauerstoff aus der Atemluft", "target": 0, "feedback": "Er reagiert mit dem Traubenzucker." },
+        { "text": "Kohlenstoffdioxid, das ausgeatmet wird", "target": 1, "feedback": "Ein Endstoff." },
+        { "text": "Wasser", "target": 1, "feedback": "Auch Wasser ist ein Endstoff." },
+        { "text": "Wärme, die den Körper warm hält", "target": 2, "feedback": "Ein Teil der Energie wird als Wärme frei." },
+        { "text": "Energie, mit der sich ein Muskel verkürzt", "target": 2, "feedback": "Die umgewandelte Energie wird genutzt." }
+      ],
+      "conclusion": "Stoffe werden verändert, Energie wird umgewandelt: Das sind die zwei Seiten der Zellatmung."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Schreibe das Reaktionsschema der Zellatmung und erkläre, woher die Ausgangsstoffe kommen und wohin die Endstoffe gehen.",
+        "hints": [
+          "Woher bekommt die Zelle Traubenzucker und Sauerstoff?",
+          "Was passiert mit dem Kohlenstoffdioxid?"
+        ],
+        "model": "Traubenzucker + Sauerstoff → Kohlenstoffdioxid + Wasser. Der Traubenzucker stammt aus der Nahrung: Er wird im Dünndarm ins Blut aufgenommen und zur Zelle transportiert. Der Sauerstoff gelangt über die Lunge ins Blut und von dort in die Zelle. Das Kohlenstoffdioxid wird mit dem Blut zur Lunge gebracht und ausgeatmet, das Wasser bleibt im Körper oder wird ausgeschieden.",
+        "criteria": [
+          "Mein Reaktionsschema ist richtig.",
+          "Ich erkläre die Herkunft beider Ausgangsstoffe.",
+          "Ich erkläre den Weg des Kohlenstoffdioxids."
+        ]
+      },
+      "2": {
+        "prompt": "Nach einem Sprint atmest du schneller und dir wird warm. Erkläre beides mit der Zellatmung.",
+        "hints": [
+          "Was brauchen die Muskelzellen beim Sprint mehr?",
+          "Was entsteht bei der Energieumwandlung neben nutzbarer Energie?"
+        ],
+        "model": "Beim Sprint brauchen die Muskelzellen viel Energie. Deshalb läuft in ihnen mehr Zellatmung ab, und sie brauchen mehr Sauerstoff und geben mehr Kohlenstoffdioxid ab. Die Atmung wird schneller, um Sauerstoff nachzuliefern und Kohlenstoffdioxid auszuatmen. Bei der Energieumwandlung wird außerdem ein Teil der Energie als Wärme frei. Mehr Zellatmung bedeutet also auch mehr Wärme, deshalb wird dir warm.",
+        "criteria": [
+          "Ich erkläre den höheren Sauerstoffbedarf.",
+          "Ich erkläre die schnellere Atmung.",
+          "Ich erkläre die Wärme mit der Energieumwandlung."
+        ]
+      }
+    },
+    "figures": ["zellatmung-schema"]
+  },
+  {
+    "id": "bg5-naehrstoffe",
+    "lb": 5,
+    "title": "Nährstoffe und ihr Energieinhalt",
+    "period": "NT5 2.3 · Stoffwechsel: Stoff- und Energieumwandlung",
+    "intro": "Ein Apfel, ein Stück Käse, eine Handvoll Nüsse: Jedes Lebensmittel liefert unterschiedlich viel Energie und unterschiedliche Bausteine.",
+    "paragraphs": [
+      "Die Nahrung enthält drei Nährstoffe, die Energie liefern. Kohlenhydrate wie Stärke und Zucker, etwa aus Brot, Nudeln, Kartoffeln und Obst, sind die wichtigste Energiequelle. Fette aus Öl, Butter, Nüssen und Käse enthalten besonders viel Energie und dienen dem Körper als Speicher. Eiweiße aus Milch, Fisch, Fleisch, Eiern und Hülsenfrüchten sind vor allem Baustoffe für Muskeln, Haut und Haare. Pro Gramm liefern Kohlenhydrate und Eiweiße jeweils etwa 17 kJ, Fett etwa 37 kJ, also mehr als doppelt so viel.",
+      "Daneben braucht der Körper Vitamine und Mineralstoffe, zum Beispiel Calcium für die Knochen und Eisen für das Blut. Sie liefern kaum Energie, sind aber für viele Vorgänge unverzichtbar. Ballaststoffe aus Vollkorn, Gemüse und Obst kann der Körper nicht verdauen, sie halten aber die Verdauung in Gang. Wasser liefert keine Energie, ist aber Lösungs- und Transportmittel. Den Energieinhalt eines Lebensmittels findest du auf der Verpackung in der Nährwerttabelle, meist für 100 g. Recherchiere selbst: Vergleiche zum Beispiel Apfel, Vollkornbrot und Nüsse."
+    ],
+    "takeaway": "Kohlenhydrate (etwa 17 kJ pro Gramm) sind die wichtigste Energiequelle, Fette (etwa 37 kJ pro Gramm) liefern am meisten Energie, Eiweiße (etwa 17 kJ pro Gramm) sind vor allem Baustoffe. Vitamine, Mineralstoffe, Ballaststoffe und Wasser liefern kaum oder keine Energie, sind aber unverzichtbar.",
+    "sourceIds": ["lehrplan", "kx-kohlenhydrate", "kx-fett", "kx-eiweiss", "kx-vitamin"],
+    "quiz": {
+      "question": "Welcher Nährstoff liefert pro Gramm die meiste Energie?",
+      "answer": "Fett",
+      "wrong": ["Eiweiß", "Kohlenhydrate"],
+      "explanation": "Ein Gramm Fett liefert etwa 37 kJ, ein Gramm Kohlenhydrate oder Eiweiß nur etwa 17 kJ."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Wofür nutzt der Körper den Bestandteil vor allem?",
+      "instruction": "Ordne jeden Nahrungsbestandteil seiner Hauptaufgabe zu.",
+      "categories": ["Energiequelle", "Baustoff", "Schutz und Regelung", "Verdauung und Transport"],
+      "entries": [
+        { "text": "Stärke aus Kartoffeln", "target": 0, "feedback": "Kohlenhydrate liefern vor allem Energie." },
+        { "text": "Fett aus Nüssen", "target": 0, "feedback": "Fett ist ein sehr energiereicher Nährstoff." },
+        { "text": "Eiweiß aus Linsen", "target": 1, "feedback": "Eiweiß baut Muskeln und andere Gewebe auf." },
+        { "text": "Calcium aus Joghurt", "target": 1, "feedback": "Calcium wird in die Knochen eingebaut." },
+        { "text": "Vitamin C aus Paprika", "target": 2, "feedback": "Vitamine regeln viele Vorgänge, zum Beispiel die Abwehr." },
+        { "text": "Ballaststoffe aus Vollkornbrot", "target": 3, "feedback": "Sie halten die Verdauung in Gang." },
+        { "text": "Wasser", "target": 3, "feedback": "Lösungs- und Transportmittel." }
+      ],
+      "conclusion": "Energie, Baustoffe und Schutzstoffe: Eine gute Ernährung liefert alles davon."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Ein Müsliriegel enthält 20 g Kohlenhydrate, 5 g Fett und 3 g Eiweiß. Berechne seinen Energieinhalt.",
+        "hints": [
+          "Kohlenhydrate und Eiweiß: etwa 17 kJ pro Gramm, Fett: etwa 37 kJ pro Gramm.",
+          "Rechne jeden Nährstoff einzeln und addiere."
+        ],
+        "model": "Kohlenhydrate: 20 · 17 kJ = 340 kJ. Fett: 5 · 37 kJ = 185 kJ. Eiweiß: 3 · 17 kJ = 51 kJ. Zusammen: 340 kJ + 185 kJ + 51 kJ = 576 kJ. Der Riegel liefert also etwa 576 kJ.",
+        "criteria": [
+          "Ich verwende die richtigen Werte pro Gramm.",
+          "Ich rechne jeden Nährstoff einzeln.",
+          "Ich addiere richtig und gebe die Einheit kJ an."
+        ]
+      },
+      "2": {
+        "prompt": "Vergleiche 20 g Butter (etwa 17 g Fett) mit 100 g Apfel (etwa 12 g Kohlenhydrate). Welches Lebensmittel liefert mehr Energie, und was bedeutet das für die Ernährung?",
+        "hints": [
+          "Berechne beide Energieinhalte.",
+          "Was liefert der Apfel zusätzlich, was die Butter kaum liefert?"
+        ],
+        "model": "Butter: 17 · 37 kJ = 629 kJ. Apfel: 12 · 17 kJ = 204 kJ. Die kleine Menge Butter liefert also etwa dreimal so viel Energie wie der viel größere Apfel. Der Apfel enthält dafür Vitamine, Ballaststoffe und Wasser und macht satt. Fettreiche Lebensmittel sollte man deshalb sparsam essen, Obst und Gemüse reichlich.",
+        "criteria": [
+          "Ich berechne beide Energieinhalte richtig.",
+          "Ich vergleiche die Ergebnisse.",
+          "Ich ziehe eine begründete Folgerung für die Ernährung."
+        ]
+      }
+    },
+    "figures": ["naehrstoffe-tafel"],
+    "lab": "foodEnergy"
+  },
+  {
+    "id": "bg5-ausgewogen-essen",
+    "lb": 5,
+    "title": "Ausgewogen essen",
+    "period": "NT5 2.3 · Stoffwechsel: Stoff- und Energieumwandlung",
+    "intro": "Pommes, Cola und Schokolade liefern viel Energie. Trotzdem fehlt dem Körper damit vieles. Was gehört zu einer ausgewogenen Ernährung?",
+    "paragraphs": [
+      "Eine ausgewogene Ernährung liefert so viel Energie, wie der Körper braucht, und alle Nährstoffe, Vitamine, Mineralstoffe und Ballaststoffe in der richtigen Zusammensetzung. Die Ernährungspyramide zeigt das als Bild: Unten stehen Getränke wie Wasser und ungesüßter Tee, davon darfst du reichlich trinken. Darüber folgen Gemüse und Obst, dann Brot, Getreide, Nudeln und Kartoffeln, möglichst als Vollkorn. Milchprodukte, Fisch, Fleisch und Eier stehen weiter oben: Sie liefern wichtiges Eiweiß, aber du brauchst davon weniger. Ganz oben stehen Fette, Öle, Süßes und Knabbereien, die man sparsam isst.",
+      "Fachgesellschaften wie die Deutsche Gesellschaft für Ernährung geben Empfehlungen, die du selbst nachlesen kannst. Grob gilt: Mehr als die Hälfte der Energie sollte aus Kohlenhydraten kommen, vor allem aus Vollkorn, Kartoffeln, Obst und Gemüse; Fett höchstens etwa ein Drittel. Aus konkreten Werten kannst du ableiten, ob eine Mahlzeit passt: Liefert ein Mittagessen fast nur Fett und Zucker, fehlen Ballaststoffe und Vitamine. Wichtig ist nicht eine einzelne Mahlzeit, sondern was du über den ganzen Tag und die ganze Woche isst."
+    ],
+    "takeaway": "Ausgewogen essen heißt: reichlich Getränke, Gemüse, Obst und Vollkornprodukte, mäßig Milchprodukte, Fisch, Fleisch und Eier, sparsam Fette und Süßes. Mehr als die Hälfte der Energie sollte aus Kohlenhydraten stammen, Fett höchstens etwa ein Drittel.",
+    "sourceIds": ["lehrplan", "bzfe-pyramide", "dge-empfehlungen", "dge-ernaehrungskreis"],
+    "quiz": {
+      "question": "Welche Lebensmittelgruppe steht in der Ernährungspyramide ganz unten, weil man davon am meisten zu sich nehmen soll?",
+      "answer": "Getränke wie Wasser und ungesüßter Tee",
+      "wrong": ["Süßigkeiten und Knabbereien", "Fleisch und Wurst"],
+      "explanation": "Die breite Basis der Pyramide sind Getränke, darüber Gemüse, Obst und Getreideprodukte. Süßes steht oben in der kleinen Spitze."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Reichlich, mäßig oder sparsam?",
+      "instruction": "Wie oft sollte das Lebensmittel nach der Ernährungspyramide auf dem Speiseplan stehen?",
+      "categories": ["reichlich", "mäßig", "sparsam"],
+      "entries": [
+        { "text": "Mineralwasser", "target": 0, "feedback": "Getränke bilden die Basis." },
+        { "text": "Paprika und Gurke", "target": 0, "feedback": "Gemüse reichlich, am besten bunt." },
+        { "text": "Vollkornbrot", "target": 0, "feedback": "Getreideprodukte liefern Energie und Ballaststoffe." },
+        { "text": "Joghurt", "target": 1, "feedback": "Milchprodukte liefern Eiweiß und Calcium." },
+        { "text": "Fisch", "target": 1, "feedback": "Wertvolles Eiweiß, aber in Maßen." },
+        { "text": "Gummibärchen", "target": 2, "feedback": "Viel Zucker, kaum andere Nährstoffe." },
+        { "text": "Kartoffelchips", "target": 2, "feedback": "Viel Fett und Salz." }
+      ],
+      "conclusion": "Es gibt keine verbotenen Lebensmittel. Entscheidend ist, wie oft und wie viel du davon isst."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Bewerte dieses Frühstück: ein Glas Cola und ein Schokocroissant. Schlage eine ausgewogenere Variante vor.",
+        "hints": [
+          "Welche Nährstoffe überwiegen, welche fehlen?",
+          "Welche Gruppen aus dem unteren Teil der Pyramide fehlen?"
+        ],
+        "model": "Cola und Schokocroissant liefern vor allem Zucker und Fett, also viel Energie, aber kaum Vitamine, Ballaststoffe oder Eiweiß. Gemüse, Obst, Vollkorn und Milchprodukte fehlen ganz. Besser wäre ein Vollkornbrot mit Frischkäse, dazu Apfelschnitze oder Gurke und ein Glas Wasser oder Milch. Das liefert Energie, Eiweiß, Vitamine und Ballaststoffe.",
+        "criteria": [
+          "Ich benenne, was überwiegt und was fehlt.",
+          "Ich beziehe mich auf die Ernährungspyramide.",
+          "Ich schlage eine sinnvolle Alternative vor."
+        ]
+      },
+      "2": {
+        "prompt": "Ein Mittagessen liefert 3 000 kJ, davon 1 500 kJ aus Fett, 1 200 kJ aus Kohlenhydraten und 300 kJ aus Eiweiß. Prüfe es an der Empfehlung und schlage eine Änderung vor.",
+        "hints": [
+          "Welcher Anteil ist ein Drittel, welcher die Hälfte von 3 000 kJ?",
+          "Mit welchen Lebensmitteln ersetzt man Fett durch Kohlenhydrate?"
+        ],
+        "model": "Ein Drittel von 3 000 kJ sind 1 000 kJ, die Hälfte sind 1 500 kJ. Das Fett liefert 1 500 kJ, also die Hälfte, und damit deutlich mehr als ein Drittel. Die Kohlenhydrate liefern mit 1 200 kJ weniger als die Hälfte. Das Essen ist zu fettreich. Ich würde zum Beispiel einen Teil der Pommes durch Kartoffeln und Gemüse ersetzen und die Soße fettärmer machen.",
+        "criteria": [
+          "Ich berechne Drittel und Hälfte richtig.",
+          "Ich vergleiche Fett- und Kohlenhydratanteil mit der Empfehlung.",
+          "Ich schlage eine passende Änderung vor."
+        ]
+      }
+    },
+    "figures": ["ernaehrungspyramide"]
+  },
+  {
+    "id": "bg5-verdauung",
+    "lb": 5,
+    "title": "Der Weg der Nahrung: Verdauung",
+    "period": "NT5 2.3 · Stoffwechsel: Stoff- und Energieumwandlung",
+    "intro": "Ein Bissen Brot ist viel zu groß, um durch die Darmwand ins Blut zu gelangen. Auf dem Weg durch den Körper wird er in winzige Bausteine zerlegt.",
+    "paragraphs": [
+      "Die Verdauung beginnt im Mund. Die Zähne zerkleinern die Nahrung, der Speichel macht sie gleitfähig und beginnt schon, Stärke zu zerlegen. Durch die Speiseröhre schieben Muskelwellen den Bissen in den Magen. Dort wird er mit Magensaft vermischt und durch die Magenmuskeln geknetet; die Magensäure tötet außerdem viele Krankheitserreger. Portionsweise gelangt der Speisebrei in den Dünndarm. Hier geben die Bauchspeicheldrüse und die Leber, deren Gallensaft bei der Fettverdauung hilft, ihre Verdauungssäfte dazu.",
+      "Das Grundprinzip der Verdauung ist das Zerlegen: Große Nährstoffteilchen wie Stärke, Eiweiße und Fette werden in kleine Bausteine zerlegt, Stärke zum Beispiel in Traubenzucker. Nur diese kleinen Bausteine können im Dünndarm durch die Darmwand ins Blut aufgenommen werden; das nennt man Resorption. Das Blut verteilt sie im ganzen Körper. Im Dickdarm wird dem unverdaulichen Rest, vor allem den Ballaststoffen, Wasser entzogen, bevor er als Kot durch den After ausgeschieden wird. Alle Verdauungsorgane zusammen bilden das Verdauungssystem."
+    ],
+    "takeaway": "Verdauungssystem: Mund → Speiseröhre → Magen → Dünndarm → Dickdarm → After, dazu Leber und Bauchspeicheldrüse. Verdauungssäfte zerlegen große Nährstoffteilchen in kleine Bausteine, die im Dünndarm ins Blut aufgenommen werden.",
+    "sourceIds": ["lehrplan", "kx-verdauung", "gi-darm", "gi-magen"],
+    "quiz": {
+      "question": "In welchem Organ werden die meisten Nährstoffbausteine ins Blut aufgenommen?",
+      "answer": "Im Dünndarm",
+      "wrong": ["Im Magen", "In der Speiseröhre"],
+      "explanation": "Im Dünndarm werden die Nährstoffe fertig zerlegt und die kleinen Bausteine durch die Darmwand ins Blut aufgenommen."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Der Weg eines Bissens",
+      "instruction": "Ordne die Stationen des Verdauungswegs.",
+      "categories": [],
+      "entries": [
+        { "text": "Mund: Zähne zerkleinern, Speichel beginnt Stärke zu zerlegen.", "target": 0, "feedback": "Die Verdauung beginnt im Mund." },
+        { "text": "Speiseröhre: Muskelwellen schieben den Bissen weiter.", "target": 1, "feedback": "Der Transport läuft auch im Liegen." },
+        { "text": "Magen: Magensaft und Kneten, Krankheitserreger werden abgetötet.", "target": 2, "feedback": "Der Magen sammelt und durchmischt." },
+        { "text": "Dünndarm: Verdauungssäfte zerlegen fertig, Bausteine gehen ins Blut.", "target": 3, "feedback": "Hier findet die Resorption statt." },
+        { "text": "Dickdarm: Dem Rest wird Wasser entzogen.", "target": 4, "feedback": "Der Speisebrei wird eingedickt." },
+        { "text": "After: Unverdauliche Reste werden ausgeschieden.", "target": 5, "feedback": "Das Ende des Verdauungswegs." }
+      ],
+      "conclusion": "Jedes Verdauungsorgan hat seine Aufgabe; erst zusammen zerlegen sie die Nahrung vollständig."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre, warum Nährstoffe zerlegt werden müssen, bevor der Körper sie nutzen kann.",
+        "hints": [
+          "Wie groß sind die Nährstoffteilchen in der Nahrung?",
+          "Was muss durch die Darmwand gelangen?"
+        ],
+        "model": "In der Nahrung liegen die Nährstoffe als große Teilchen vor, zum Beispiel Stärke. Diese sind zu groß, um durch die Darmwand ins Blut zu gelangen. Verdauungssäfte zerlegen sie deshalb in kleine Bausteine, Stärke etwa in Traubenzucker. Nur diese Bausteine werden im Dünndarm ins Blut aufgenommen und zu den Zellen transportiert.",
+        "criteria": [
+          "Ich nenne die Größe der Nährstoffteilchen als Problem.",
+          "Ich beschreibe das Zerlegen durch Verdauungssäfte.",
+          "Ich nenne die Aufnahme ins Blut im Dünndarm."
+        ]
+      },
+      "2": {
+        "prompt": "Kaue ein Stück Brot sehr lange: Es schmeckt allmählich süß. Erkläre die Beobachtung und plane einen Nachweis dazu.",
+        "hints": [
+          "Woraus besteht Brot hauptsächlich, was macht der Speichel damit?",
+          "Mit welchem Nachweis zeigst du, dass Stärke verschwindet?"
+        ],
+        "model": "Brot enthält vor allem Stärke, die nicht süß schmeckt. Der Speichel zerlegt die Stärke beim langen Kauen in kleinere Zuckerbausteine, die süß schmecken. Als Nachweis vermische ich Stärkelösung mit etwas Speichel und lasse eine zweite Probe ohne Speichel als Kontrolle stehen. Nach einiger Zeit tropfe ich Iod-Kaliumiodid-Lösung in beide. Die Kontrolle wird blauschwarz, die Probe mit Speichel kaum noch: Die Stärke wurde zerlegt.",
+        "criteria": [
+          "Ich erkläre den süßen Geschmack mit der Zerlegung der Stärke.",
+          "Ich plane den Stärkenachweis mit Kontrollansatz.",
+          "Ich sage, welches Ergebnis meine Erklärung stützt."
+        ]
+      }
+    },
+    "figures": ["verdauungssystem", "verdauung-prinzip"]
+  },
+  {
+    "id": "bg5-oberflaeche",
+    "lb": 5,
+    "title": "Oberflächenvergrößerung: viel Fläche auf kleinem Raum",
+    "period": "NT5 2.3 · Stoffwechsel: Stoff- und Energieumwandlung",
+    "intro": "Warum ist die Innenwand des Dünndarms gefaltet und die Lunge kein einfacher Sack? Ein Würfel aus Knete verrät es.",
+    "paragraphs": [
+      "Stoffe gelangen durch Flächen von einem Ort zum anderen: Nährstoffbausteine durch die Darmwand ins Blut, Sauerstoff durch die Wand der Lungenbläschen ins Blut. Je größer die Fläche, desto mehr Stoff kann gleichzeitig ausgetauscht werden. Das kannst du mit einem einfachen Modell prüfen. Ein Würfel aus Knete mit 4 cm Kantenlänge hat eine Oberfläche von 96 cm². Zerteilst du ihn in 8 Würfel mit 2 cm Kantenlänge, bleibt die Knetmenge gleich, aber die Oberfläche verdoppelt sich auf 192 cm². Bei 64 Würfeln mit 1 cm Kantenlänge sind es schon 384 cm².",
+      "Dieses Prinzip der Oberflächenvergrößerung findest du im Körper. Die Innenwand des Dünndarms ist in Falten gelegt, die mit Millionen fingerförmiger Darmzotten besetzt sind. So entsteht auf engem Raum eine riesige Fläche, durch die Nährstoffbausteine ins Blut gelangen. Die Lunge besteht aus Millionen winziger Lungenbläschen statt aus einem großen Sack; ihre gesamte Oberfläche ist viel größer als die eines einzelnen Ballons gleicher Größe. Ein Modell zeigt das Prinzip, aber nicht, wie dünn die Wände sind und dass sie von feinen Blutgefäßen umsponnen werden."
+    ],
+    "takeaway": "Zerteilen, Falten und Ausstülpen vergrößern die Oberfläche, ohne den Raum zu vergrößern. Darmzotten im Dünndarm und Lungenbläschen in der Lunge schaffen so eine große Fläche für den Stoffaustausch.",
+    "sourceIds": ["lehrplan", "wp-oberflaeche", "wp-darmzotte", "wp-lungenblaeschen"],
+    "quiz": {
+      "question": "Ein Würfel mit 4 cm Kante wird in 8 gleiche Würfel zerteilt. Was passiert mit der Oberfläche?",
+      "answer": "Sie verdoppelt sich, die Menge bleibt gleich",
+      "wrong": [
+        "Sie bleibt gleich, weil die Menge gleich bleibt",
+        "Sie halbiert sich, weil die Würfel kleiner sind"
+      ],
+      "explanation": "Beim Zerteilen entstehen neue Schnittflächen: Aus 96 cm² werden 192 cm², obwohl die Knetmenge gleich bleibt."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Oberflächenvergrößerung erkennen",
+      "instruction": "Nutzt das Beispiel eine große Oberfläche für den Stoffaustausch?",
+      "categories": ["ja, große Oberfläche", "nein, kein Beispiel dafür"],
+      "entries": [
+        { "text": "Darmzotten im Dünndarm", "target": 0, "feedback": "Sie vergrößern die Fläche für die Aufnahme der Nährstoffe." },
+        { "text": "Millionen Lungenbläschen", "target": 0, "feedback": "Viel Fläche für den Gasaustausch." },
+        { "text": "Feine Wurzelhaare einer Pflanze", "target": 0, "feedback": "Sie vergrößern die Fläche für die Wasseraufnahme." },
+        { "text": "Ein Würfelzucker löst sich langsamer als Streuzucker.", "target": 0, "feedback": "Streuzucker hat mehr Oberfläche und löst sich schneller." },
+        { "text": "Der Schädel schützt das Gehirn.", "target": 1, "feedback": "Hier geht es um Schutz, nicht um Austausch." },
+        { "text": "Die Wirbelsäule ist doppelt S-förmig.", "target": 1, "feedback": "Die Form dient dem Abfedern." }
+      ],
+      "conclusion": "Überall, wo viel Stoff schnell ausgetauscht werden muss, findest du große Oberflächen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre mit dem Knetwürfel-Modell, warum die Darmzotten für die Verdauung wichtig sind.",
+        "hints": [
+          "Was passiert mit der Oberfläche beim Zerteilen?",
+          "Was muss durch die Darmwand?"
+        ],
+        "model": "Beim Zerteilen des Knetwürfels bleibt die Menge gleich, aber die Oberfläche wächst. Genauso schaffen die Darmzotten im gleichen Raum viel mehr Fläche als eine glatte Wand. Durch diese große Fläche können viele Nährstoffbausteine gleichzeitig ins Blut gelangen. Ohne Zotten würde die Aufnahme viel langsamer gehen.",
+        "criteria": [
+          "Ich beschreibe das Ergebnis des Modells.",
+          "Ich übertrage es auf die Darmzotten.",
+          "Ich erkläre den Nutzen für die Nährstoffaufnahme."
+        ]
+      },
+      "2": {
+        "prompt": "Berechne die Oberfläche, wenn der Knetwürfel (4 cm Kante) in 27 gleiche Würfel zerteilt wird, und vergleiche mit dem ganzen Würfel.",
+        "hints": [
+          "Wie lang ist die Kante eines kleinen Würfels, wenn jede Kante in drei Teile geteilt wird?",
+          "Oberfläche eines Würfels: 6 · Kante · Kante"
+        ],
+        "model": "Jede Kante wird in drei Teile geteilt, ein kleiner Würfel hat also eine Kantenlänge von 4 cm : 3 ≈ 1,33 cm. Seine Oberfläche ist 6 · (4/3 cm)² = 6 · 16/9 cm² ≈ 10,7 cm². Für 27 Würfel: 27 · 6 · 16/9 cm² = 288 cm². Der ganze Würfel hat 96 cm². Die Oberfläche ist also dreimal so groß, obwohl die Menge gleich bleibt.",
+        "criteria": [
+          "Ich bestimme die neue Kantenlänge.",
+          "Ich berechne die Gesamtoberfläche (288 cm²).",
+          "Ich vergleiche mit 96 cm²."
+        ]
+      }
+    },
+    "figures": ["zotten-lungenblaeschen"],
+    "lab": "surface"
+  },
+  {
+    "id": "bg5-atmung",
+    "lb": 5,
+    "title": "Atmung und Gasaustausch",
+    "period": "NT5 2.3 · Stoffwechsel: Stoff- und Energieumwandlung",
+    "intro": "Etwa alle vier Sekunden atmest du ein und aus. Doch der Sauerstoff wird nicht in der Lunge gebraucht, sondern in jeder einzelnen Zelle.",
+    "paragraphs": [
+      "Beim Einatmen gelangt Luft durch Nase oder Mund, Rachen und Luftröhre in die Bronchien. Diese verzweigen sich immer feiner und enden in Millionen winziger Lungenbläschen. Die Wand eines Lungenbläschens ist hauchdünn und von einem Netz feinster Blutgefäße, den Kapillaren, umsponnen. Hier findet der Gasaustausch statt: Sauerstoff wandert aus der Luft im Lungenbläschen ins Blut, Kohlenstoffdioxid aus dem Blut in die Luft, die wir ausatmen. Deshalb enthält ausgeatmete Luft weniger Sauerstoff, etwa 16 % statt 21 %, und mehr Kohlenstoffdioxid, etwa 4 % statt 0,04 %.",
+      "Das Blut bringt den Sauerstoff zu allen Körperzellen. Dort läuft der Gasaustausch umgekehrt: Sauerstoff wandert aus dem Blut in die Zellen, Kohlenstoffdioxid aus den Zellen ins Blut. Zusammen mit dem Traubenzucker, den das Blut aus dem Dünndarm mitbringt, ist der Sauerstoff die Voraussetzung für die Zellatmung. Hier siehst du das Zusammenspiel der Organisationsebenen: Die Organsysteme Atmung, Verdauung und Blutkreislauf arbeiten zusammen, damit in jeder einzelnen Zelle Energie umgewandelt werden kann."
+    ],
+    "takeaway": "In den Lungenbläschen wandert Sauerstoff ins Blut und Kohlenstoffdioxid aus dem Blut in die Atemluft. In den Körperzellen läuft der Austausch umgekehrt. Sauerstoff aus der Lunge und Nährstoffe aus dem Dünndarm sind die Voraussetzung für die Zellatmung.",
+    "sourceIds": ["lehrplan", "kx-atmung", "kx-lunge", "gi-lunge", "wp-lungenblaeschen"],
+    "quiz": {
+      "question": "Was geschieht beim Gasaustausch in den Lungenbläschen?",
+      "answer": "Sauerstoff gelangt ins Blut, Kohlenstoffdioxid gelangt aus dem Blut in die Atemluft",
+      "wrong": [
+        "Kohlenstoffdioxid gelangt ins Blut, Sauerstoff wird ausgeatmet",
+        "Nährstoffe gelangen aus der Luft ins Blut"
+      ],
+      "explanation": "Das Blut nimmt in der Lunge Sauerstoff auf und gibt das Kohlenstoffdioxid aus der Zellatmung ab."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Der Weg des Sauerstoffs",
+      "instruction": "Verfolge ein Sauerstoffteilchen von der Nase bis in eine Muskelzelle.",
+      "categories": [],
+      "entries": [
+        { "text": "Die Luft wird durch die Nase eingeatmet.", "target": 0, "feedback": "Die Nase wärmt, befeuchtet und reinigt die Luft." },
+        { "text": "Sie strömt durch die Luftröhre und die Bronchien.", "target": 1, "feedback": "Die Atemwege verzweigen sich immer feiner." },
+        { "text": "Sie erreicht ein Lungenbläschen.", "target": 2, "feedback": "Hier endet der Luftweg." },
+        { "text": "Der Sauerstoff wandert durch die dünne Wand ins Blut.", "target": 3, "feedback": "Gasaustausch in der Lunge." },
+        { "text": "Das Herz pumpt das Blut zu den Muskeln.", "target": 4, "feedback": "Der Blutkreislauf transportiert." },
+        { "text": "Der Sauerstoff gelangt in eine Muskelzelle und dient der Zellatmung.", "target": 5, "feedback": "Ziel erreicht." }
+      ],
+      "conclusion": "Atmung, Blutkreislauf und Zellatmung bilden eine Kette: Fehlt ein Glied, fehlt den Zellen Energie."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre, warum ausgeatmete Luft weniger Sauerstoff und mehr Kohlenstoffdioxid enthält als eingeatmete Luft.",
+        "hints": [
+          "Was geschieht in den Lungenbläschen?",
+          "Woher stammt das Kohlenstoffdioxid?"
+        ],
+        "model": "In den Lungenbläschen gibt die Luft einen Teil ihres Sauerstoffs an das Blut ab, deshalb enthält die ausgeatmete Luft weniger Sauerstoff. Gleichzeitig gibt das Blut Kohlenstoffdioxid an die Luft ab. Dieses Kohlenstoffdioxid ist bei der Zellatmung in den Körperzellen entstanden und wurde mit dem Blut zur Lunge transportiert.",
+        "criteria": [
+          "Ich erkläre die Abgabe von Sauerstoff ans Blut.",
+          "Ich erkläre die Aufnahme von Kohlenstoffdioxid aus dem Blut.",
+          "Ich nenne die Zellatmung als Herkunft des Kohlenstoffdioxids."
+        ]
+      },
+      "2": {
+        "prompt": "Erkläre am Beispiel einer Beinmuskelzelle, wie die Organsysteme Atmung, Verdauung und Blutkreislauf zusammenarbeiten.",
+        "hints": [
+          "Was braucht die Muskelzelle für die Zellatmung?",
+          "Welches System liefert was, welches transportiert?"
+        ],
+        "model": "Die Beinmuskelzelle braucht für die Zellatmung Traubenzucker und Sauerstoff. Den Traubenzucker liefert das Verdauungssystem: Im Dünndarm wird er aus der Nahrung ins Blut aufgenommen. Den Sauerstoff liefert das Atmungssystem: In den Lungenbläschen gelangt er ins Blut. Der Blutkreislauf transportiert beides zur Muskelzelle und das entstandene Kohlenstoffdioxid zurück zur Lunge. So arbeiten Organsysteme zusammen, damit eine einzelne Zelle Energie bekommt.",
+        "criteria": [
+          "Ich nenne die Aufgabe des Verdauungssystems.",
+          "Ich nenne die Aufgabe des Atmungssystems.",
+          "Ich nenne den Blutkreislauf als Transportsystem."
+        ]
+      }
+    },
+    "figures": ["atmungsorgane", "gasaustausch"]
+  },
+  {
+    "id": "bg5-blutkreislauf",
+    "lb": 5,
+    "title": "Der Blutkreislauf als Transportsystem",
+    "period": "NT5 2.3 · Stoffwechsel: Stoff- und Energieumwandlung",
+    "intro": "Dein Herz pumpt dasselbe Blut immer wieder durch den Körper. In Ruhe dauert eine Runde durch den Körper etwa eine Minute.",
+    "paragraphs": [
+      "Das Herz ist ein kräftiger Hohlmuskel, der durch eine Scheidewand in eine rechte und eine linke Hälfte geteilt ist. Es pumpt das Blut durch zwei Kreisläufe. Im Lungenkreislauf fließt sauerstoffarmes Blut von der rechten Herzhälfte zur Lunge, nimmt dort Sauerstoff auf, gibt Kohlenstoffdioxid ab und kehrt sauerstoffreich zur linken Herzhälfte zurück. Im Körperkreislauf pumpt die linke Herzhälfte das sauerstoffreiche Blut in den ganzen Körper. Dort gibt es Sauerstoff und Nährstoffe an die Zellen ab, nimmt Kohlenstoffdioxid auf und fließt sauerstoffarm zur rechten Herzhälfte zurück.",
+      "Drei Arten von Blutgefäßen gehören dazu. Arterien führen das Blut vom Herzen weg; sie haben eine dicke, elastische Wand, weil das Blut mit hohem Druck hineingepumpt wird. Venen führen das Blut zum Herzen hin. Dazwischen liegen die Kapillaren, die feinsten Blutgefäße mit einer hauchdünnen Wand. Nur durch sie hindurch werden Stoffe zwischen Blut und Zellen ausgetauscht. In einer schematischen Skizze zeichnet man das Herz in die Mitte, oben die Lunge, unten den Körper und verbindet sie mit roten und blauen Pfeilen."
+    ],
+    "takeaway": "Das Herz pumpt das Blut durch Lungenkreislauf und Körperkreislauf. Arterien führen vom Herzen weg, Venen zum Herzen hin, in den Kapillaren werden Stoffe zwischen Blut und Zellen ausgetauscht. Der Blutkreislauf ist das Transportsystem des Körpers.",
+    "sourceIds": ["lehrplan", "kx-blutkreislauf", "kx-herz", "kx-blut", "gi-herz"],
+    "quiz": {
+      "question": "Welche Blutgefäße führen das Blut vom Herzen weg?",
+      "answer": "Arterien",
+      "wrong": ["Venen", "Lungenbläschen"],
+      "explanation": "Arterien führen vom Herzen weg, Venen zum Herzen hin. Das gilt unabhängig davon, ob das Blut sauerstoffreich oder sauerstoffarm ist."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Arterie, Vene oder Kapillare?",
+      "instruction": "Ordne jede Beschreibung dem passenden Blutgefäß zu.",
+      "categories": ["Arterie", "Vene", "Kapillare"],
+      "entries": [
+        { "text": "führt Blut vom Herzen weg", "target": 0, "feedback": "Das ist die Definition einer Arterie." },
+        { "text": "hat eine dicke, elastische Wand für hohen Druck", "target": 0, "feedback": "Arterien müssen dem Pumpdruck standhalten." },
+        { "text": "führt Blut zum Herzen zurück", "target": 1, "feedback": "Das ist die Definition einer Vene." },
+        { "text": "bringt sauerstoffarmes Blut aus dem Bein zum Herzen", "target": 1, "feedback": "Rückweg zum Herzen: eine Vene." },
+        { "text": "hauchdünne Wand, durch die Sauerstoff in die Zellen gelangt", "target": 2, "feedback": "Nur in Kapillaren findet der Austausch statt." },
+        { "text": "umspinnt die Lungenbläschen", "target": 2, "feedback": "Hier nimmt das Blut Sauerstoff auf." }
+      ],
+      "conclusion": "Arterien verteilen, Kapillaren tauschen aus, Venen sammeln: So versorgt der Kreislauf jede Zelle."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Skizziere den Blutkreislauf schematisch und beschrifte Herz, Lunge, Körper, Arterien und Venen. Beschreibe die Skizze in Worten.",
+        "hints": [
+          "Wo zeichnest du das Herz, wo Lunge und Körper hin?",
+          "Welche Farbe nimmst du für sauerstoffreiches, welche für sauerstoffarmes Blut?"
+        ],
+        "model": "Ich zeichne das Herz in die Mitte, die Lunge darüber und den Körper darunter. Vom Herzen führt eine Arterie zur Lunge, von der Lunge eine Vene zurück: der Lungenkreislauf. Vom Herzen führt eine Arterie in den Körper, von dort eine Vene zurück: der Körperkreislauf. Sauerstoffreiches Blut färbe ich rot, sauerstoffarmes blau. In Lunge und Körper zeichne ich feine Kapillaren, in denen der Austausch stattfindet.",
+        "criteria": [
+          "Herz, Lunge und Körper sind richtig angeordnet.",
+          "Lungen- und Körperkreislauf sind unterschieden.",
+          "Arterien, Venen und Farben sind richtig zugeordnet."
+        ]
+      },
+      "2": {
+        "prompt": "Galen dachte, das Blut werde ständig neu gebildet und im Körper verbraucht. Erkläre mit dem heutigen Wissen, warum das nicht stimmen kann.",
+        "hints": [
+          "Was zeigte William Harvey?",
+          "Wie viel Blut müsste sonst ständig neu entstehen?"
+        ],
+        "model": "Heute wissen wir, dass das Herz dasselbe Blut immer wieder im Kreis pumpt. Bei jedem Herzschlag wird Blut ausgeworfen; würde es im Körper verbraucht, müsste der Körper an einem Tag ein Vielfaches seines eigenen Gewichts an Blut neu bilden. William Harvey zeigte 1628, dass das Blut über die Venen zum Herzen zurückkehrt. Galens Vorstellung wurde durch Beobachtung und Überlegung widerlegt.",
+        "criteria": [
+          "Ich beschreibe den Kreislauf des Blutes.",
+          "Ich gebe ein Argument gegen ständige Neubildung.",
+          "Ich nenne Harvey oder die Rückkehr über die Venen."
+        ]
+      }
+    },
+    "figures": ["kreislauf-schema"],
+    "review": "Rückbezug auf Lektion „Wie sich Wissen verändert“: Galen und Harvey"
+  },
+  {
+    "id": "bg5-puls-atmung",
+    "lb": 5,
+    "title": "Puls und Atmung bei Bewegung",
+    "period": "NT5 2.3 · Stoffwechsel: Stoff- und Energieumwandlung",
+    "intro": "Nach dem Treppensteigen klopft das Herz und du atmest schneller. Mit Messwerten am eigenen Körper kannst du erklären, warum.",
+    "paragraphs": [
+      "Die Herzschlagfrequenz misst du als Puls: Lege zwei Finger an die Innenseite des Handgelenks oder seitlich an den Hals und zähle die Schläge 15 Sekunden lang, dann nimmst du die Zahl mal vier. So erhältst du die Schläge pro Minute. Die Atemfrequenz zählst du als Atemzüge pro Minute. In Ruhe liegt der Puls bei Kindern deines Alters etwa zwischen 70 und 100 Schlägen pro Minute. Beim Gehen steigt er, beim Rennen deutlich, und auch die Atmung wird schneller und tiefer.",
+      "Die Erklärung liegt in den Zellen. Arbeitende Muskeln brauchen viel Energie. Dafür muss in den Muskelzellen mehr Zellatmung ablaufen, und dafür brauchen sie mehr Sauerstoff und mehr Traubenzucker. Die Atmung wird schneller, damit mehr Sauerstoff ins Blut gelangt und mehr Kohlenstoffdioxid ausgeatmet wird. Das Herz schlägt schneller, damit das Blut beides rascher zu den Muskeln transportiert. Nach der Belastung sinken Puls und Atemfrequenz langsam wieder; bei Trainierten geht das schneller."
+    ],
+    "takeaway": "Bei körperlicher Aktivität steigen Puls und Atemfrequenz, weil die Muskelzellen für die Zellatmung mehr Sauerstoff und Traubenzucker brauchen. Atmung und Herz liefern ihn schneller nach und transportieren mehr Kohlenstoffdioxid ab.",
+    "sourceIds": ["lehrplan", "kx-herz", "kx-atmung", "gi-herz"],
+    "quiz": {
+      "question": "Warum schlägt das Herz beim Rennen schneller?",
+      "answer": "Damit das Blut mehr Sauerstoff und Nährstoffe zu den arbeitenden Muskeln bringt",
+      "wrong": [
+        "Weil das Herz beim Rennen durchgeschüttelt wird",
+        "Weil die Lunge beim Rennen weniger Luft braucht"
+      ],
+      "explanation": "Die Muskelzellen brauchen für die Zellatmung mehr Sauerstoff und Traubenzucker. Das schneller schlagende Herz transportiert beides rascher."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Vom Sprint zum schnellen Puls",
+      "instruction": "Ordne die Ursachenkette.",
+      "categories": [],
+      "entries": [
+        { "text": "Du sprintest zum Bus.", "target": 0, "feedback": "Die Beinmuskeln arbeiten stark." },
+        { "text": "Die Muskelzellen brauchen viel mehr Energie.", "target": 1, "feedback": "Bewegung kostet Energie." },
+        { "text": "In ihnen läuft mehr Zellatmung ab.", "target": 2, "feedback": "Die Energie stammt aus der Zellatmung." },
+        { "text": "Sie brauchen mehr Sauerstoff und Traubenzucker.", "target": 3, "feedback": "Die Ausgangsstoffe der Zellatmung." },
+        { "text": "Atmung und Herzschlag werden schneller.", "target": 4, "feedback": "Der Nachschub wird beschleunigt." }
+      ],
+      "conclusion": "Messwerte am Körper lassen sich bis zur Zellatmung in den Muskelzellen zurückverfolgen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Ben zählt seinen Puls 15 Sekunden lang: in Ruhe 20 Schläge, nach zwei Minuten Hampelmann 35 Schläge. Berechne die Werte pro Minute und erkläre den Unterschied.",
+        "hints": [
+          "Mit welcher Zahl rechnest du 15 Sekunden auf eine Minute hoch?",
+          "Was brauchen die Muskelzellen beim Hampelmann?"
+        ],
+        "model": "In Ruhe: 20 · 4 = 80 Schläge pro Minute. Nach dem Hampelmann: 35 · 4 = 140 Schläge pro Minute. Beim Hampelmann arbeiten viele Muskeln. Ihre Zellen brauchen mehr Energie, also mehr Zellatmung und dafür mehr Sauerstoff und Traubenzucker. Das Herz schlägt schneller, damit das Blut beides schneller zu den Muskeln bringt.",
+        "criteria": [
+          "Ich rechne beide Werte richtig hoch.",
+          "Ich nenne den höheren Bedarf der Muskelzellen.",
+          "Ich erkläre die Aufgabe des schnelleren Herzschlags."
+        ]
+      },
+      "2": {
+        "prompt": "Nach demselben Lauf ist Emmas Puls nach zwei Minuten wieder bei 90, Pauls noch bei 130 Schlägen pro Minute. Deute die Messwerte vorsichtig.",
+        "hints": [
+          "Was sagt die Erholungszeit über das Herz-Kreislauf-System?",
+          "Welche anderen Gründe könnte es geben?"
+        ],
+        "model": "Emmas Puls sinkt schneller wieder ab. Das kann bedeuten, dass ihr Herz-Kreislauf-System besser trainiert ist: Ihr Herz kann mit jedem Schlag mehr Blut pumpen und muss sich weniger anstrengen. Die Deutung ist aber unsicher. Vielleicht ist Paul schneller gelaufen, hat schlecht geschlafen oder hat zu früh gemessen. Für eine sichere Aussage müssten beide unter gleichen Bedingungen mehrmals messen.",
+        "criteria": [
+          "Ich deute die schnellere Erholung als Hinweis auf Training.",
+          "Ich nenne andere mögliche Ursachen.",
+          "Ich fordere gleiche Bedingungen und Wiederholungen."
+        ]
+      }
+    },
+    "figures": [],
+    "lab": "activity"
+  },
+  {
+    "id": "bg5-herz-gesund",
+    "lb": 5,
+    "title": "Gesund für Herz und Kreislauf",
+    "period": "NT5 2.3 · Stoffwechsel: Stoff- und Energieumwandlung",
+    "intro": "Das Herz arbeitet dein ganzes Leben ohne Pause. Mit deinen täglichen Gewohnheiten kannst du es stark halten.",
+    "paragraphs": [
+      "Das Herz ist ein Muskel, und wie jeder Muskel wird es durch Training kräftiger. Regelmäßige Bewegung, bei der du ins Schwitzen und etwas außer Atem kommst, stärkt Herz und Kreislauf: Ein trainiertes Herz pumpt mit jedem Schlag mehr Blut und muss in Ruhe seltener schlagen. Die Weltgesundheitsorganisation empfiehlt Kindern und Jugendlichen, sich im Durchschnitt mindestens 60 Minuten am Tag mäßig bis anstrengend zu bewegen. Radfahren zur Schule, Spielen im Freien und Sport im Verein zählen alle dazu.",
+      "Auch die Ernährung beeinflusst Herz und Gefäße. Eine ausgewogene Ernährung mit viel Gemüse, Obst und Vollkorn und wenig fettreichen, süßen und salzigen Snacks schützt auf Dauer die Blutgefäße. Rauchen schädigt sie, ausreichend Schlaf und Pausen vom Bildschirm helfen dem ganzen Körper. Prüfe deine eigenen Gewohnheiten, zum Beispiel mit einem Bewegungsprotokoll über eine Woche: Wie viele Minuten bewegst du dich wirklich? Wo kannst du im Alltag mehr Bewegung einbauen?"
+    ],
+    "takeaway": "Regelmäßige Bewegung (Empfehlung der WHO für Kinder und Jugendliche: im Durchschnitt mindestens 60 Minuten am Tag), ausgewogene Ernährung, Nichtrauchen und genug Schlaf sind aktive Gesundheitsvorsorge für Herz und Kreislauf.",
+    "sourceIds": ["lehrplan", "who-bewegung", "dge-empfehlungen", "gi-herz"],
+    "quiz": {
+      "question": "Wie viel Bewegung empfiehlt die Weltgesundheitsorganisation Kindern und Jugendlichen?",
+      "answer": "Im Durchschnitt mindestens 60 Minuten am Tag",
+      "wrong": ["Mindestens 60 Minuten in der Woche", "Etwa 10 Minuten am Tag reichen"],
+      "explanation": "Die WHO empfiehlt für 5- bis 17-Jährige im Durchschnitt mindestens 60 Minuten mäßige bis anstrengende Bewegung täglich."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Gut oder schlecht für Herz und Kreislauf?",
+      "instruction": "Ordne jede Gewohnheit zu.",
+      "categories": ["stärkt Herz und Kreislauf", "belastet Herz und Kreislauf"],
+      "entries": [
+        { "text": "Mit dem Fahrrad zur Schule fahren", "target": 0, "feedback": "Bewegung im Alltag zählt." },
+        { "text": "Zweimal pro Woche Schwimmtraining", "target": 0, "feedback": "Ausdauersport trainiert das Herz." },
+        { "text": "Viel Gemüse und Vollkorn essen", "target": 0, "feedback": "Schützt auf Dauer die Gefäße." },
+        { "text": "Jeden Tag mehrere Stunden am Bildschirm sitzen", "target": 1, "feedback": "Bewegungsmangel schwächt Herz und Kreislauf." },
+        { "text": "Regelmäßig Chips und Limonade als Zwischenmahlzeit", "target": 1, "feedback": "Viel Fett, Zucker und Salz belasten den Körper." },
+        { "text": "Rauchen", "target": 1, "feedback": "Rauchen schädigt die Blutgefäße." }
+      ],
+      "conclusion": "Herzgesundheit entsteht aus vielen kleinen Alltagsentscheidungen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre, warum ein trainiertes Herz in Ruhe langsamer schlägt.",
+        "hints": [
+          "Was passiert mit einem Muskel durch Training?",
+          "Wie viel Blut pumpt ein kräftiges Herz pro Schlag?"
+        ],
+        "model": "Das Herz ist ein Muskel und wird durch Training kräftiger. Ein kräftiges Herz pumpt mit jedem Schlag mehr Blut in den Körper. Um in Ruhe dieselbe Menge Blut und Sauerstoff zu den Zellen zu bringen, braucht es deshalb weniger Schläge. Es arbeitet sparsamer.",
+        "criteria": [
+          "Ich nenne das Herz als trainierbaren Muskel.",
+          "Ich erkläre die größere Pumpmenge pro Schlag.",
+          "Ich folgere den langsameren Ruhepuls."
+        ]
+      },
+      "2": {
+        "prompt": "Führe gedanklich ein Bewegungsprotokoll: Eine Schülerin bewegt sich Mo 30, Di 20, Mi 90, Do 15, Fr 30, Sa 120, So 40 Minuten. Prüfe an der Empfehlung der WHO und schlage zwei Änderungen vor.",
+        "hints": [
+          "Wie viele Minuten sind es in der Woche, wie viele im Durchschnitt pro Tag?",
+          "Wie viele Minuten wären es bei 60 Minuten täglich?"
+        ],
+        "model": "Zusammen sind es 30 + 20 + 90 + 15 + 30 + 120 + 40 = 345 Minuten. Bei 60 Minuten täglich wären es 420 Minuten. Im Durchschnitt bewegt sie sich etwa 49 Minuten am Tag, also zu wenig. Vor allem an Dienstag und Donnerstag fehlt Bewegung. Sie könnte an diesen Tagen mit dem Rad zur Schule fahren und nachmittags eine halbe Stunde draußen spielen oder Sport treiben.",
+        "criteria": [
+          "Ich berechne die Wochensumme und vergleiche mit 420 Minuten.",
+          "Ich beurteile das Ergebnis an der Empfehlung.",
+          "Ich schlage zwei konkrete, passende Änderungen vor."
+        ]
+      }
+    },
+    "figures": ["wochen-bewegung"]
+  },
+  {
+    "id": "bg5-rauchen",
+    "lb": 5,
+    "title": "Rauchen schadet: Lunge und Abhängigkeit",
+    "period": "NT5 2.3 · Stoffwechsel: Stoff- und Energieumwandlung",
+    "intro": "Fast alle Erwachsenen, die rauchen, haben als Jugendliche damit angefangen. Was macht Tabakrauch mit dem Körper, und warum ist das Aufhören so schwer?",
+    "paragraphs": [
+      "Tabakrauch enthält viele schädliche Stoffe. Teer lagert sich in den Atemwegen und in der Lunge ab. Die Atemwege sind innen mit Flimmerhärchen ausgekleidet, die Staub und Schleim nach oben befördern. Rauch lähmt und zerstört sie; Schmutz und Schleim bleiben in der Lunge, es kommt zum typischen Raucherhusten und häufiger zu Entzündungen. Kohlenmonoxid aus dem Rauch verdrängt im Blut den Sauerstoff, sodass Raucher schneller außer Atem kommen. Auf Dauer steigt das Risiko für Lungenkrebs, Herzinfarkt und andere schwere Krankheiten. Auch das Einatmen fremden Rauchs schadet.",
+      "Rauchen macht abhängig. Das Nikotin im Tabak gelangt nach einem Zug schnell ins Gehirn und erzeugt dort ein angenehmes Gefühl. Der Körper gewöhnt sich daran und verlangt immer wieder danach; ohne Zigarette werden Raucher unruhig und gereizt. Zur körperlichen Abhängigkeit kommt die Gewohnheit, etwa die Zigarette in der Pause oder mit Freunden. Weil Abhängigkeit schon nach wenigen Zigaretten beginnen kann, ist der beste Schutz, gar nicht erst anzufangen. Nein zu sagen, wenn andere eine Zigarette oder E-Zigarette anbieten, ist eine bewusste Entscheidung für die eigene Gesundheit."
+    ],
+    "takeaway": "Rauchen lagert Teer in der Lunge ab, zerstört die Flimmerhärchen, verdrängt durch Kohlenmonoxid Sauerstoff im Blut und erhöht das Risiko schwerer Krankheiten. Nikotin macht körperlich abhängig, dazu kommt die Gewohnheit. Am besten fängt man gar nicht erst an.",
+    "sourceIds": ["lehrplan", "kx-zigarette", "kx-sucht", "rauchfrei"],
+    "quiz": {
+      "question": "Welcher Stoff im Tabakrauch macht abhängig?",
+      "answer": "Nikotin",
+      "wrong": ["Teer", "Sauerstoff"],
+      "explanation": "Nikotin wirkt schnell im Gehirn und führt zur Abhängigkeit. Teer schädigt die Lunge, macht aber nicht abhängig."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Schädigung oder Abhängigkeit?",
+      "instruction": "Ordne jede Aussage zu.",
+      "categories": ["Schädigung des Körpers", "Ursache oder Folge der Abhängigkeit"],
+      "entries": [
+        { "text": "Teer lagert sich in der Lunge ab.", "target": 0, "feedback": "Teer verklebt die Atemwege." },
+        { "text": "Die Flimmerhärchen werden gelähmt.", "target": 0, "feedback": "Schmutz bleibt in der Lunge: Raucherhusten." },
+        { "text": "Kohlenmonoxid verdrängt Sauerstoff im Blut.", "target": 0, "feedback": "Man kommt schneller außer Atem." },
+        { "text": "Nikotin wirkt nach Sekunden im Gehirn.", "target": 1, "feedback": "Das schnelle angenehme Gefühl macht abhängig." },
+        { "text": "Ohne Zigarette wird ein Raucher unruhig.", "target": 1, "feedback": "Ein Zeichen körperlicher Abhängigkeit." },
+        { "text": "Die Zigarette gehört für viele zur Pause dazu.", "target": 1, "feedback": "Gewohnheiten halten die Sucht aufrecht." }
+      ],
+      "conclusion": "Rauchen schadet dem Körper und hält sich durch Abhängigkeit selbst am Leben."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre, warum Raucher oft husten und beim Sport schneller außer Atem sind.",
+        "hints": [
+          "Was passiert mit den Flimmerhärchen?",
+          "Welcher Stoff im Rauch stört den Sauerstofftransport?"
+        ],
+        "model": "Der Rauch lähmt und zerstört die Flimmerhärchen in den Atemwegen. Sie können Schleim und Schmutz nicht mehr nach oben befördern, deshalb muss der Raucher ihn abhusten. Außerdem enthält der Rauch Kohlenmonoxid, das im Blut Sauerstoff verdrängt. Die Muskeln bekommen weniger Sauerstoff, deshalb ist der Raucher beim Sport schneller außer Atem.",
+        "criteria": [
+          "Ich erkläre den Husten mit den Flimmerhärchen.",
+          "Ich nenne das Kohlenmonoxid.",
+          "Ich verbinde weniger Sauerstoff mit schnellerer Erschöpfung."
+        ]
+      },
+      "2": {
+        "prompt": "Auf einer Party bietet dir jemand eine Zigarette an: „Eine einzige schadet doch nicht.“ Wäge die Folgen ab und formuliere eine Antwort.",
+        "hints": [
+          "Wie schnell kann Abhängigkeit beginnen?",
+          "Wie kannst du freundlich, aber klar ablehnen?"
+        ],
+        "model": "Eine einzige Zigarette schädigt die Lunge zwar nicht dauerhaft, aber Nikotin wirkt sofort im Gehirn, und Abhängigkeit kann schon nach wenigen Zigaretten beginnen. Viele Raucher haben genau so angefangen und schaffen es später kaum aufzuhören. Die Folgen für Lunge, Herz und Kondition kommen dann über die Jahre. Meine Antwort: „Nein danke, ich will gar nicht erst anfangen.“ Ich muss mich dafür nicht rechtfertigen.",
+        "criteria": [
+          "Ich nenne die Gefahr der schnellen Abhängigkeit.",
+          "Ich nenne langfristige Folgen.",
+          "Ich formuliere eine klare Ablehnung."
+        ]
+      }
+    },
+    "figures": ["rauchen-lunge"]
+  }
+]
