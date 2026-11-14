@@ -114,6 +114,12 @@ try {
 		await new Promise((r) => setTimeout(r, 25));
 	}
 	await evaluate("localStorage.clear()");
+	assert.ok(
+		await evaluate(
+			`document.querySelector('.zam-preview-notice')?.getBoundingClientRect().height > 0`,
+		),
+		"preview status is visible",
+	);
 	assert.equal(
 		await evaluate('document.querySelectorAll(".lesson-link").length'),
 		31,
@@ -429,6 +435,16 @@ try {
 		).includes("Mittelfranken"),
 	);
 	// Narrow screens: path, all models and the full research form retain their controls.
+	await evaluate(`document.querySelector('#zam').click()`);
+	assert.match(
+		await evaluate(`document.querySelector('dialog').innerText`),
+		/Vorschau im Academy-Katalog/,
+	);
+	assert.doesNotMatch(
+		await evaluate(`document.querySelector('dialog').innerText`),
+		/noch nicht im Academy-Katalog|erst nach einer Veröffentlichung/,
+	);
+	await evaluate(`document.querySelector('dialog [data-close]').click()`);
 	await page("Emulation.setDeviceMetricsOverride", {
 		width: 390,
 		height: 844,

@@ -55,7 +55,7 @@ const oldItems = [...legacy5.atoms, ...legacy6.atoms].flatMap(
 );
 describe("official curriculum and authored content", () => {
 	it("binds all 30 verbatim competences to the shared Grade 5 curriculum", () => {
-		expect(publication.status).toBe("local-only");
+		expect(publication.status).toBe("preview");
 		expect(LESSONS).toHaveLength(31);
 		expect(STAGES.map((s) => s.hours)).toEqual([8, 8, 10, 10, 8, 8, 4]);
 		expect(
