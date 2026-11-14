@@ -1,0 +1,406 @@
+[
+  {
+    "id": "bg5-sinnesorgane",
+    "lb": 3,
+    "title": "Unsere Sinnesorgane",
+    "period": "NT5 2.3 · Informationsaufnahme, Informationsverarbeitung und Reaktion",
+    "intro": "Du siehst, hörst, riechst, schmeckst und fühlst. Für jeden dieser Sinne hat dein Körper ein Sinnesorgan mit spezialisierten Sinneszellen.",
+    "paragraphs": [
+      "Sinnesorgane nehmen Reize aus der Umwelt auf. Ein Reiz ist eine Einwirkung, auf die Sinneszellen ansprechen. Jedes Sinnesorgan enthält Sinneszellen, die auf eine bestimmte Reizart spezialisiert sind. Die Lichtsinneszellen in der Netzhaut des Auges reagieren auf Licht. Die Hörsinneszellen im Innenohr reagieren auf Schall; im Innenohr sitzen außerdem Sinneszellen für Lage und Drehbewegung. Riechsinneszellen in der Nase reagieren auf Duftstoffe, Geschmackssinneszellen auf der Zunge auf gelöste Geschmacksstoffe. Die Haut enthält verschiedene Sinneszellen für Druck, Berührung, Wärme, Kälte und Schmerz.",
+      "Die Sinneszellen wandeln den Reiz in Signale um, die über Nerven zum Gehirn gelangen. Erst dort entsteht ein Eindruck, etwa „heiß“ oder „süß“. Mit einfachen Untersuchungen kannst du die Reizaufnahme prüfen. Berührt man die Haut mit zwei Zirkelspitzen, spürt man sie an den Fingerspitzen schon bei geringem Abstand als zwei Punkte, am Rücken erst bei viel größerem Abstand. Daraus kann man schließen, dass in den Fingerspitzen viel mehr Tastsinneszellen dicht nebeneinander liegen."
+    ],
+    "takeaway": "Sinnesorgane sind Organe mit spezialisierten Sinneszellen: Auge (Licht), Ohr (Schall, Lage), Nase (Duftstoffe), Zunge (Geschmacksstoffe), Haut (Druck, Temperatur, Schmerz). Sinneszellen wandeln Reize in Signale um, die über Nerven zum Gehirn gelangen.",
+    "sourceIds": [
+      "lehrplan",
+      "wp-sinnesorgan",
+      "kx-auge",
+      "kx-ohr",
+      "kx-haut"
+    ],
+    "quiz": {
+      "question": "Auf welchen Reiz sind die Sinneszellen in der Netzhaut des Auges spezialisiert?",
+      "answer": "Auf Licht",
+      "wrong": [
+        "Auf Schall",
+        "Auf Duftstoffe"
+      ],
+      "explanation": "Die Lichtsinneszellen der Netzhaut sprechen auf Licht an und wandeln es in Signale für das Gehirn um."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Welches Sinnesorgan nimmt den Reiz auf?",
+      "instruction": "Ordne jede Situation dem Sinnesorgan zu, das den Reiz aufnimmt.",
+      "categories": [
+        "Auge",
+        "Ohr",
+        "Nase und Zunge",
+        "Haut"
+      ],
+      "entries": [
+        {
+          "text": "Die Ampel springt auf Grün.",
+          "target": 0,
+          "feedback": "Licht wird im Auge aufgenommen."
+        },
+        {
+          "text": "Du liest eine Nachricht auf dem Handy.",
+          "target": 0,
+          "feedback": "Buchstaben sieht man mit dem Auge."
+        },
+        {
+          "text": "Eine Fahrradklingel ertönt hinter dir.",
+          "target": 1,
+          "feedback": "Schall nimmt das Ohr auf."
+        },
+        {
+          "text": "Du merkst im Karussell, dass du dich drehst.",
+          "target": 1,
+          "feedback": "Im Innenohr liegt der Drehsinn."
+        },
+        {
+          "text": "Du riechst frisches Brot.",
+          "target": 2,
+          "feedback": "Duftstoffe erreichen die Riechsinneszellen."
+        },
+        {
+          "text": "Die Herdplatte fühlt sich heiß an.",
+          "target": 3,
+          "feedback": "Wärme- und Schmerzsinneszellen sitzen in der Haut."
+        }
+      ],
+      "conclusion": "Jedes Sinnesorgan ist auf bestimmte Reize spezialisiert. Zusammen geben sie dem Gehirn ein Bild der Umwelt."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre den Satz: „Die Haut ist ein Sinnesorgan mit vielen verschiedenen Sinneszellen.“",
+        "hints": [
+          "Welche Reize kann die Haut wahrnehmen?",
+          "Warum braucht sie dafür verschiedene Sinneszellen?"
+        ],
+        "model": "Die Haut nimmt mehrere Arten von Reizen auf: Druck und Berührung, Wärme und Kälte sowie Schmerz. Jede Sinneszelle ist auf eine bestimmte Reizart spezialisiert, deshalb enthält die Haut verschiedene Sinneszellen. So kann man zum Beispiel unterscheiden, ob etwas nur drückt oder ob es heiß ist.",
+        "criteria": [
+          "Ich nenne mindestens drei Reize der Haut.",
+          "Ich erkläre die Spezialisierung der Sinneszellen.",
+          "Ich gebe ein Beispiel."
+        ]
+      },
+      "2": {
+        "prompt": "Bei der Zirkelprobe werden zwei Spitzen an der Fingerkuppe ab 3 mm Abstand als zwei Punkte gespürt, am Unterarm erst ab etwa 40 mm. Werte das Ergebnis aus.",
+        "hints": [
+          "Was bedeutet ein kleiner Abstand für die Sinneszellen?",
+          "Wozu ist das an den Fingern nützlich?"
+        ],
+        "model": "An der Fingerkuppe reicht ein kleiner Abstand, um zwei Punkte zu unterscheiden. Daraus schließe ich, dass dort die Tastsinneszellen sehr dicht liegen. Am Unterarm liegen sie weiter auseinander, deshalb verschwimmen zwei nahe Spitzen zu einem Punkt. Für die Finger ist das sinnvoll, weil wir mit ihnen tasten, greifen und feine Unterschiede fühlen müssen. Die Werte sind Beispielwerte, eigene Messungen können abweichen.",
+        "criteria": [
+          "Ich vergleiche die beiden Werte richtig.",
+          "Ich schließe auf die Dichte der Sinneszellen.",
+          "Ich erkläre den Nutzen für die Finger."
+        ]
+      }
+    },
+    "figures": [
+      "sinnesorgane"
+    ]
+  },
+  {
+    "id": "bg5-reiz-reaktion",
+    "lb": 3,
+    "title": "Die Reiz-Reaktions-Kette",
+    "period": "NT5 2.3 · Informationsaufnahme, Informationsverarbeitung und Reaktion",
+    "intro": "Die Ampel springt auf Rot und du bleibst stehen. Zwischen dem roten Licht und deinem Stopp läuft in deinem Körper immer dieselbe Kette ab.",
+    "paragraphs": [
+      "Jede Reaktion auf einen Reiz folgt demselben Schema. Ein Reiz, hier das rote Licht, trifft auf ein Sinnesorgan, das Auge. Dort nehmen Sinneszellen den Reiz auf und wandeln ihn in Signale um. Nerven leiten diese Information weiter zum Gehirn. Das Gehirn verarbeitet sie, vergleicht sie mit Erfahrungen („Rot heißt stehen bleiben“) und entscheidet. Dann leiten Nerven einen Befehl zu den Muskeln, und die Muskeln führen die Reaktion aus: Die Beine bremsen.",
+      "Dieses Modell heißt Reiz-Reaktions-Kette. Du kannst es für viele Alltagsbeispiele als Pfeildiagramm zeichnen: Reiz → Sinnesorgan → Nerv → Gehirn → Nerv → Muskel → Reaktion. Ob du einen Ball fängst, auf deinen Namen reagierst oder vom Duft des Essens in die Küche gelockt wirst: Die Stationen sind immer dieselben, nur Sinnesorgan und Muskeln wechseln. Weil jede Station Zeit braucht, vergeht zwischen Reiz und Reaktion immer eine kurze Reaktionszeit."
+    ],
+    "takeaway": "Reiz-Reaktions-Kette: Reiz → Sinnesorgan (Reizaufnahme, Umwandlung) → Nerv (Weiterleitung) → Gehirn (Verarbeitung) → Nerv (Weiterleitung) → Muskel (Reaktion). Sie folgt immer demselben Schema.",
+    "sourceIds": [
+      "lehrplan",
+      "wp-reiz-reaktion",
+      "kx-nerv",
+      "kx-gehirn"
+    ],
+    "quiz": {
+      "question": "Welche Station folgt in der Reiz-Reaktions-Kette direkt auf das Sinnesorgan?",
+      "answer": "Ein Nerv leitet die Information zum Gehirn",
+      "wrong": [
+        "Der Muskel führt sofort die Reaktion aus",
+        "Das Gehirn nimmt den Reiz direkt auf"
+      ],
+      "explanation": "Das Sinnesorgan wandelt den Reiz in Signale um, ein Nerv leitet sie weiter. Erst danach verarbeitet das Gehirn die Information."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Ball fangen: die Kette ordnen",
+      "instruction": "Ein Ball fliegt auf dich zu und du fängst ihn. Ordne die Stationen.",
+      "categories": [],
+      "entries": [
+        {
+          "text": "Licht vom fliegenden Ball trifft das Auge (Reiz).",
+          "target": 0,
+          "feedback": "Der Reiz steht am Anfang."
+        },
+        {
+          "text": "Sinneszellen der Netzhaut wandeln den Reiz in Signale um.",
+          "target": 1,
+          "feedback": "Reizaufnahme und Umwandlung im Sinnesorgan."
+        },
+        {
+          "text": "Der Sehnerv leitet die Signale zum Gehirn.",
+          "target": 2,
+          "feedback": "Weiterleitung über Nerven."
+        },
+        {
+          "text": "Das Gehirn berechnet, wohin der Ball fliegt, und entscheidet.",
+          "target": 3,
+          "feedback": "Verarbeitung im Gehirn."
+        },
+        {
+          "text": "Nerven leiten den Befehl zu den Arm- und Handmuskeln.",
+          "target": 4,
+          "feedback": "Weiterleitung zu den Muskeln."
+        },
+        {
+          "text": "Die Muskeln bewegen die Hände, du fängst den Ball.",
+          "target": 5,
+          "feedback": "Die Reaktion."
+        }
+      ],
+      "conclusion": "Ob Ball, Ampel oder Klingel: Die Kette hat immer dieselben Stationen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Zeichne als Pfeildiagramm die Reiz-Reaktions-Kette für: „Deine Freundin ruft deinen Namen, du drehst dich um.“",
+        "hints": [
+          "Welcher Reiz, welches Sinnesorgan?",
+          "Welche Muskeln führen die Reaktion aus?"
+        ],
+        "model": "Reiz: Schall (der Ruf) → Sinnesorgan: Ohr, Hörsinneszellen wandeln den Schall in Signale um → Hörnerv leitet weiter → Gehirn erkennt den eigenen Namen und entscheidet, sich umzudrehen → Nerven leiten den Befehl weiter → Hals- und Rumpfmuskeln drehen den Körper: Reaktion.",
+        "criteria": [
+          "Ich nenne Reiz und Sinnesorgan richtig.",
+          "Alle Stationen stehen in der richtigen Reihenfolge.",
+          "Ich nenne die ausführenden Muskeln."
+        ]
+      },
+      "2": {
+        "prompt": "Vergleiche die Ketten „Ampel springt auf Rot“ und „Essen duftet aus der Küche“. Was ist gleich, was ist verschieden?",
+        "hints": [
+          "Welche Stationen kommen in beiden vor?",
+          "Welche Stationen tauschen sich aus?"
+        ],
+        "model": "In beiden Fällen läuft dieselbe Abfolge ab: Reiz, Sinnesorgan, Nerv, Gehirn, Nerv, Muskel, Reaktion. Verschieden sind der Reiz (Licht oder Duftstoffe), das Sinnesorgan (Auge oder Nase) und die Reaktion (Stehenbleiben oder in die Küche gehen). Das zeigt, dass die Reiz-Reaktions-Kette ein allgemeines Schema ist.",
+        "criteria": [
+          "Ich nenne die gleichen Stationen.",
+          "Ich nenne die Unterschiede bei Reiz, Sinnesorgan und Reaktion.",
+          "Ich ziehe eine allgemeine Folgerung."
+        ]
+      }
+    },
+    "figures": [
+      "reizkette"
+    ]
+  },
+  {
+    "id": "bg5-reaktionszeit",
+    "lb": 3,
+    "title": "Reaktionszeit, Alkohol und Straßenverkehr",
+    "period": "NT5 2.3 · Informationsaufnahme, Informationsverarbeitung und Reaktion",
+    "intro": "Ein Kind läuft auf die Straße. Bis du bremst, vergeht Zeit, in der dein Fahrrad weiterrollt. Wie lang diese Zeit ist, hängt auch von dir ab.",
+    "paragraphs": [
+      "Die Reaktionszeit ist die Zeit zwischen Reiz und Reaktion. Du kannst sie mit dem Linealtest messen: Ein Partner hält ein Lineal senkrecht und lässt es ohne Ankündigung los, du fängst es so schnell wie möglich. Je weiter das Lineal gefallen ist, desto länger war deine Reaktionszeit. Fällt es 20 cm, warst du etwa 0,2 s langsam. Das klingt wenig, doch im Verkehr zählt es: Mit dem Fahrrad bei 15 km/h legst du in 0,2 s fast einen Meter zurück, bevor du überhaupt zu bremsen beginnst. Diesen Weg nennt man Reaktionsweg.",
+      "Alkohol und andere Suchtmittel verschlechtern die Reaktionsfähigkeit. Alkohol verlangsamt die Verarbeitung im Gehirn, das Sehen wird unscharf, das Gleichgewicht unsicher, und man schätzt Gefahren falsch ein. Auch Müdigkeit und Ablenkung, etwa durch das Handy oder Kopfhörer, verlängern die Reaktionszeit, weil Reize spät oder gar nicht bemerkt werden. Wer im Straßenverkehr unterwegs ist, ob zu Fuß, auf dem Fahrrad oder später im Auto, braucht deshalb einen klaren Kopf und volle Aufmerksamkeit."
+    ],
+    "takeaway": "Die Reaktionszeit ist die Zeit zwischen Reiz und Reaktion; während dieser Zeit legt man den Reaktionsweg zurück. Alkohol und andere Suchtmittel, Müdigkeit und Ablenkung verlängern die Reaktionszeit und gefährden dich im Straßenverkehr.",
+    "sourceIds": [
+      "lehrplan",
+      "wp-reaktionszeit",
+      "kx-alkohol"
+    ],
+    "quiz": {
+      "question": "Warum ist Alkohol im Straßenverkehr so gefährlich?",
+      "answer": "Er verlangsamt die Verarbeitung im Gehirn und verlängert so die Reaktionszeit",
+      "wrong": [
+        "Er macht die Muskeln stärker, sodass man zu fest bremst",
+        "Er wirkt nur auf den Magen und nicht auf das Gehirn"
+      ],
+      "explanation": "Alkohol stört die Verarbeitung der Reize im Gehirn. Man bemerkt Gefahren später, reagiert langsamer und schätzt Situationen falsch ein."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Länger oder kürzer?",
+      "instruction": "Wie wirkt sich die Situation auf die Reaktionszeit aus?",
+      "categories": [
+        "verlängert die Reaktionszeit",
+        "hilft, schnell zu reagieren"
+      ],
+      "entries": [
+        {
+          "text": "Beim Radfahren eine Nachricht lesen",
+          "target": 0,
+          "feedback": "Ablenkung: Der Blick ist nicht auf der Straße."
+        },
+        {
+          "text": "Nach einer zu kurzen Nacht zur Schule fahren",
+          "target": 0,
+          "feedback": "Müdigkeit verlangsamt das Gehirn."
+        },
+        {
+          "text": "Mit lauter Musik im Kopfhörer Fahrrad fahren",
+          "target": 0,
+          "feedback": "Wichtige Geräusche werden überhört."
+        },
+        {
+          "text": "Alkohol getrunken haben",
+          "target": 0,
+          "feedback": "Alkohol stört die Verarbeitung im Gehirn."
+        },
+        {
+          "text": "Aufmerksam auf den Verkehr achten, beide Hände am Lenker",
+          "target": 1,
+          "feedback": "Volle Aufmerksamkeit verkürzt die Zeit bis zur Reaktion."
+        },
+        {
+          "text": "An einer unübersichtlichen Stelle langsamer fahren",
+          "target": 1,
+          "feedback": "Bei geringerem Tempo ist der Reaktionsweg kürzer."
+        }
+      ],
+      "conclusion": "Die Reaktionszeit lässt sich nicht beliebig verkürzen, aber man kann vermeiden, sie unnötig zu verlängern."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Beim Linealtest fällt das Lineal bei Paul 15 cm, bei Lea 30 cm. Wer hat schneller reagiert? Begründe.",
+        "hints": [
+          "Was bedeutet eine längere Fallstrecke?",
+          "Wie hängen Fallstrecke und Zeit zusammen?"
+        ],
+        "model": "Paul hat schneller reagiert. Das Lineal fällt umso weiter, je länger es fällt, bis man zugreift. Bei Paul ist es nur 15 cm gefallen, also war seine Reaktionszeit kürzer als bei Lea, deren Lineal 30 cm fiel. Für ein sicheres Ergebnis sollten beide den Test mehrmals wiederholen.",
+        "criteria": [
+          "Ich nenne Paul als schnelleren.",
+          "Ich erkläre den Zusammenhang zwischen Fallstrecke und Reaktionszeit.",
+          "Ich schlage Wiederholungen vor."
+        ]
+      },
+      "2": {
+        "prompt": "Ein Jugendlicher sagt: „Ein Bier, und ich fahre trotzdem sicher Fahrrad.“ Nimm mit biologischen Argumenten Stellung.",
+        "hints": [
+          "Was macht Alkohol mit der Reaktions-Kette?",
+          "Was bedeutet eine längere Reaktionszeit für den Reaktionsweg?"
+        ],
+        "model": "Die Aussage stimmt nicht. Alkohol wirkt im Gehirn: Er verlangsamt die Verarbeitung von Reizen, verschlechtert Sehen und Gleichgewicht und lässt Gefahren harmloser erscheinen. Die Reaktionszeit wird länger, und in dieser Zeit rollt das Fahrrad weiter, der Reaktionsweg wächst. Außerdem wirkt Alkohol auf Jugendliche besonders stark. Wer sicher fahren will, trinkt keinen Alkohol.",
+        "criteria": [
+          "Ich erkläre die Wirkung von Alkohol auf das Gehirn.",
+          "Ich verbinde längere Reaktionszeit mit längerem Reaktionsweg.",
+          "Ich komme zu einem klaren, begründeten Urteil."
+        ]
+      }
+    },
+    "figures": [
+      "reaktion-einfluesse"
+    ],
+    "lab": "reaction"
+  },
+  {
+    "id": "bg5-sinne-schuetzen",
+    "lb": 3,
+    "title": "Ohren und Augen schützen",
+    "period": "NT5 2.3 · Informationsaufnahme, Informationsverarbeitung und Reaktion",
+    "intro": "Nach einem lauten Konzert piept es im Ohr, nach einem Tag im Schnee brennen die Augen. Deine Sinnesorgane brauchen Schutz.",
+    "paragraphs": [
+      "Lärm kann die Hörsinneszellen im Innenohr schädigen. Die Lautstärke misst man in Dezibel (dB). In einem ruhigen Zimmer sind es etwa 20 bis 30 dB, ein Fernseher erreicht etwa 60 dB, in einer Diskothek sind es etwa 100 dB. Ab etwa 85 dB kann das Gehör Schaden nehmen, umso eher, je länger der Lärm andauert. Zerstörte Hörsinneszellen wachsen nicht nach. Du schützt dein Gehör, indem du Kopfhörer leiser stellst, Abstand zu Lautsprechern hältst, bei Konzerten Gehörschutz trägst und deinen Ohren nach Lärm Ruhepausen gönnst.",
+      "Ultraviolette Strahlung, kurz UV-Strahlung, ist ein unsichtbarer Teil des Sonnenlichts. Sie kann die Haut verbrennen und die Augen schädigen, besonders im Gebirge, im Schnee und am Wasser, wo viel Licht zurückgeworfen wird. Schütze die Augen mit einer Sonnenbrille, die einen ausgewiesenen UV-Schutz hat; dunkle Gläser ohne UV-Schutz sind sogar schädlich, weil sich die Pupille weitet. Schau nie direkt in die Sonne. Für die Haut helfen Schatten, Kleidung, eine Kopfbedeckung und Sonnencreme, besonders um die Mittagszeit."
+    ],
+    "takeaway": "Ab etwa 85 dB kann Lärm das Gehör dauerhaft schädigen: Lautstärke senken, Abstand halten, Gehörschutz tragen, Ruhepausen einlegen. Vor UV-Strahlung schützen Sonnenbrille mit UV-Schutz, Schatten, Kleidung, Kopfbedeckung und Sonnencreme.",
+    "sourceIds": [
+      "lehrplan",
+      "kx-laerm",
+      "gi-ohr",
+      "bfs-uv-schutz",
+      "kx-sonnenbrand",
+      "gi-auge"
+    ],
+    "quiz": {
+      "question": "Ab welcher Lautstärke kann das Gehör geschädigt werden?",
+      "answer": "Ab etwa 85 Dezibel",
+      "wrong": [
+        "Ab etwa 30 Dezibel",
+        "Erst ab etwa 300 Dezibel"
+      ],
+      "explanation": "30 dB entsprechen einem ruhigen Zimmer. Ab etwa 85 dB, vor allem bei längerer Dauer, können Hörsinneszellen zerstört werden."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Wovor schützt die Maßnahme?",
+      "instruction": "Ordne jede Maßnahme zu.",
+      "categories": [
+        "schützt das Gehör",
+        "schützt die Augen",
+        "schützt die Haut"
+      ],
+      "entries": [
+        {
+          "text": "Ohrstöpsel beim Konzert",
+          "target": 0,
+          "feedback": "Ohrstöpsel dämpfen den Schall."
+        },
+        {
+          "text": "Kopfhörer auf halbe Lautstärke stellen",
+          "target": 0,
+          "feedback": "Weniger Dezibel direkt am Ohr."
+        },
+        {
+          "text": "Sonnenbrille mit UV-Schutz beim Skifahren",
+          "target": 1,
+          "feedback": "Schnee wirft viel UV-Strahlung zurück."
+        },
+        {
+          "text": "Nie direkt in die Sonne schauen",
+          "target": 1,
+          "feedback": "Das Sonnenlicht kann die Netzhaut schädigen."
+        },
+        {
+          "text": "Mittags im Schatten bleiben",
+          "target": 2,
+          "feedback": "Mittags ist die UV-Strahlung am stärksten."
+        },
+        {
+          "text": "Sonnencreme und T-Shirt im Freibad",
+          "target": 2,
+          "feedback": "Schützt vor Sonnenbrand."
+        }
+      ],
+      "conclusion": "Schäden an Gehör und Augen heilen oft nicht. Vorbeugen ist der beste Schutz."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre, warum lange laute Musik über Kopfhörer dem Gehör schaden kann, und nenne zwei Schutzmaßnahmen.",
+        "hints": [
+          "Was passiert mit den Hörsinneszellen?",
+          "Welche Rolle spielen Lautstärke und Dauer?"
+        ],
+        "model": "Sehr laute Musik, ab etwa 85 dB, kann die Hörsinneszellen im Innenohr schädigen. Je länger man die Musik hört, desto größer ist die Gefahr. Zerstörte Hörsinneszellen wachsen nicht nach, die Schwerhörigkeit bleibt. Ich schütze mich, indem ich die Lautstärke herunterregle und nach einer Stunde eine Pause ohne Kopfhörer mache.",
+        "criteria": [
+          "Ich nenne die Schädigung der Hörsinneszellen.",
+          "Ich nenne Lautstärke und Dauer als Faktoren.",
+          "Ich nenne zwei passende Schutzmaßnahmen."
+        ]
+      },
+      "2": {
+        "prompt": "Eine Familie kauft für den Skiurlaub billige, sehr dunkle Sonnenbrillen ohne Angabe zum UV-Schutz. Bewerte die Entscheidung.",
+        "hints": [
+          "Was macht die Pupille hinter dunklen Gläsern?",
+          "Warum ist UV-Strahlung im Schnee besonders stark?"
+        ],
+        "model": "Die Entscheidung ist schlecht. Hinter dunklen Gläsern weitet sich die Pupille, weil weniger sichtbares Licht ankommt. Fehlt der UV-Schutz, gelangt dadurch sogar mehr UV-Strahlung ins Auge. Im Schnee ist die Belastung besonders hoch, weil der Schnee viel Strahlung zurückwirft. Die Familie sollte Brillen mit ausgewiesenem UV-Schutz kaufen.",
+        "criteria": [
+          "Ich erkläre die Wirkung dunkler Gläser auf die Pupille.",
+          "Ich nenne die besondere Belastung im Schnee.",
+          "Ich gebe eine begründete Empfehlung."
+        ]
+      }
+    },
+    "figures": [
+      "lautstaerke-skala",
+      "sinnesschutz"
+    ]
+  }
+]
