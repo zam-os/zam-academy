@@ -26,7 +26,7 @@ Progress, lab goals, theme and drafts stay in this browser under `geo_gym5_acade
 
 ```sh
 npm ci
-npm run dev           # http://localhost:5243/geographie-gymnasium-5/
+npm run dev           # http://localhost:5244/geographie-gymnasium-5/
 npm test
 npm run typecheck
 npm run build

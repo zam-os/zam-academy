@@ -30,7 +30,9 @@ import {
   shellAt,
 } from "../src/labs/erde";
 import {
+  allgaeu,
   bestUse,
+  gaeuboden,
   IN_CITY,
   STREET,
   waterLevel,
@@ -388,6 +390,16 @@ describe("interactive labs", () => {
     expect(bestUse(6, 800, "sand")).toBe("Wald");
     expect(IN_CITY).toHaveLength(24);
     expect(STREET).toHaveLength(8);
+  });
+
+  it("states the land-use goals so the model agrees on every matching setting", () => {
+    for (let temp = 5; temp <= 10; temp += 0.5)
+      for (let rain = 500; rain <= 2000; rain += 50)
+        for (const soil of ["sand", "lehm", "loess"] as const) {
+          const s = { temp, rain, soil };
+          if (gaeuboden(s)) expect(bestUse(temp, rain, soil)).toBe("Ackerbau");
+          if (allgaeu(s)) expect(bestUse(temp, rain, soil)).toBe("Grünland");
+        }
   });
 
   it("remembers found grid squares and rejects unknown painting", () => {

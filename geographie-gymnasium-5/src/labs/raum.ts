@@ -151,6 +151,11 @@ export function bestUse(temp: number, rain: number, soil: Soil): (typeof USES)[n
   return USES[scores.indexOf(Math.max(...scores))];
 }
 const use = (s: LabState) => bestUse(num(s, "temp"), num(s, "rain"), str(s, "soil") as Soil);
+/** The goal conditions; a test checks that the model agrees on every such state. */
+export const gaeuboden = (s: LabState) =>
+  str(s, "soil") === "loess" && num(s, "temp") >= 8 && num(s, "rain") >= 550 && num(s, "rain") <= 900;
+export const allgaeu = (s: LabState) =>
+  str(s, "soil") === "lehm" && num(s, "temp") < 8 && num(s, "rain") >= 1200;
 
 export const landnutzung: LabDef = {
   id: "landnutzung",
@@ -159,8 +164,8 @@ export const landnutzung: LabDef = {
     "Stelle die Jahresmitteltemperatur, den Jahresniederschlag und den Boden ein. Das Modell zeigt, welche Nutzung unter diesen Bedingungen am besten passt.",
   initial: () => ({ temp: 7.5, rain: 800, soil: "lehm" }),
   goals: [
-    { text: "Bedingungen wie im Gäuboden: Auf Lössboden ist Ackerbau am besten.", reached: (s) => use(s) === "Ackerbau" && str(s, "soil") === "loess" },
-    { text: "Bedingungen wie im Allgäu: Bei mindestens 1200 mm Niederschlag ist Grünland am besten.", reached: (s) => use(s) === "Grünland" && num(s, "rain") >= 1200 },
+    { text: "Bedingungen wie im Gäuboden: Lössboden, mindestens 8 °C und 550 bis 900 mm Niederschlag. Dann ist Ackerbau am besten.", reached: (s) => gaeuboden(s) && use(s) === "Ackerbau" },
+    { text: "Bedingungen wie im Allgäu: Lehmboden, kühler als 8 °C und mindestens 1200 mm Niederschlag. Dann ist Grünland am besten.", reached: (s) => allgaeu(s) && use(s) === "Grünland" },
     { text: "Finde Bedingungen, unter denen auf Sandboden Wald am besten ist.", reached: (s) => use(s) === "Wald" && str(s, "soil") === "sand" },
   ],
   witnesses: [
