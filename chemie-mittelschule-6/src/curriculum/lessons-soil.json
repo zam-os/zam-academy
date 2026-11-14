@@ -1,0 +1,335 @@
+[
+	{
+		"id": "c6-waldnetz",
+		"lb": 3,
+		"title": "Nahrungsnetz und Stoffkreislauf im Wald",
+		"period": "NT6 LB 2.3 · Stoffkreislauf, Boden",
+		"intro": "Was kommt nach dem letzten Nahrungspfeil?",
+		"paragraphs": [
+			"Grüne Pflanzen sind Erzeuger oder Produzenten. Tiere sind Verbraucher oder Konsumenten. Eine Nahrungskette zeigt eine Abfolge: Blatt → Raupe → Meise → Sperber. Der Pfeil bedeutet in dieser Darstellung „wird gefressen von“ und zeigt vom Futter zum Fresser. In einem Nahrungsnetz werden mehrere Ketten verbunden; eine Meise kann zum Beispiel Raupen und Blattläuse fressen.",
+			"Alle Gruppen geben Reste ab oder sterben. Pilze, Bakterien und Bodentiere wirken am Abbau dieser Stoffe mit. Zersetzer oder Destruenten machen dabei Mineralstoffe wieder für Pflanzen verfügbar. Wasser und Mineralstoffe gelangen über die Wurzeln in die Pflanzen. So können Stoffe einen Kreislauf durchlaufen. Die Energie wird dagegen nicht vollständig im Kreis zurückgeführt; sie wird laufend als Licht zugeführt und als Wärme abgegeben.",
+			"Beispiel: Ein Blatt wird gefressen oder fällt als Streu auf den Boden. Bodentiere zerkleinern Reste; Pilze und Bakterien bauen weiter ab. Mineralstoffe können wieder von Pflanzen aufgenommen werden. Das Modell zeigt nur ausgewählte Beziehungen. Es sagt nicht, dass jede Meise nur eine Nahrung hat oder jeder Stoff sofort am selben Ort zurückkehrt."
+		],
+		"takeaway": "Erzeuger, Verbraucher und Zersetzer sind durch Stoffflüsse verbunden. Nahrungspfeile zeigen vom Futter zum Fresser; Energie kreist nicht wie Stoffe.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Welche Rolle haben Zersetzer im Stoffkreislauf?",
+			"answer": "Sie bauen Reste ab und machen Mineralstoffe wieder verfügbar.",
+			"wrong": [
+				"Sie erzeugen alle benötigte Energie aus dem Nichts.",
+				"Sie verhindern grundsätzlich jede Rückkehr von Stoffen in den Boden."
+			],
+			"explanation": "Beim Abbau können Mineralstoffe zurück in Boden und Pflanzen gelangen; Stoffe verschwinden dabei nicht einfach."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Zusammenhänge zuordnen",
+			"instruction": "Ordne jeden Fall zu. Prüfe danach deine Entscheidungen.",
+			"categories": ["Erzeuger", "Verbraucher", "Zersetzer"],
+			"entries": [
+				{
+					"text": "Eine grüne Eiche bildet mit Licht energiereiche Stoffe.",
+					"target": 0,
+					"feedback": "Die Eiche ist ein Produzent."
+				},
+				{
+					"text": "Eine Raupe frisst ein Blatt.",
+					"target": 1,
+					"feedback": "Sie nimmt Nahrung von einem anderen Lebewesen auf."
+				},
+				{
+					"text": "Bakterien bauen abgestorbene Reste ab.",
+					"target": 2,
+					"feedback": "Sie wirken als Destruenten am Stoffkreislauf mit."
+				},
+				{
+					"text": "Eine Meise frisst eine Raupe.",
+					"target": 1,
+					"feedback": "Auch ein Tier, das Tiere frisst, ist Verbraucher."
+				}
+			],
+			"conclusion": "Die Rolle hängt von der Stoffversorgung ab, nicht davon, ob ein Tier groß oder klein ist."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Beschreibe die Nahrungskette Blatt → Raupe → Meise und ergänze den Rückweg der Stoffe über Zersetzer.",
+				"hints": [
+					"Was bedeuten die Pfeile?",
+					"Wie gelangen Mineralstoffe wieder in die Pflanze?"
+				],
+				"model": "Die Raupe frisst das Blatt, die Meise frisst die Raupe. Die Pfeile zeigen vom Futter zum Fresser. Reste und tote Lebewesen werden von Zersetzern abgebaut. Mineralstoffe gelangen in den Boden und können mit Wasser wieder von Pflanzen aufgenommen werden. So entsteht ein Stoffkreislauf.",
+				"criteria": [
+					"Ich deute die Nahrungspfeile richtig.",
+					"Ich beziehe alle drei Rollen ein.",
+					"Ich beschreibe den Rückweg über Boden und Wurzeln."
+				]
+			},
+			"2": {
+				"prompt": "Ein Plakat zeigt: „Blatt → Raupe → Meise → Energie zurück ins Blatt“. Verbessere die Darstellung und erkläre, warum ein Netz besser als nur eine Kette sein kann.",
+				"hints": [
+					"Kehren Stoffe und Energie auf dieselbe Weise zurück?",
+					"Kann eine Meise mehr als eine Nahrung nutzen?"
+				],
+				"model": "Der Rückweg muss Reste, Zersetzer, Mineralstoffe und Pflanzenaufnahme zeigen. Die Energie wird nicht einfach an das Blatt zurückgegeben; Licht liefert neue Energie und Wärme wird abgegeben. Ein Netz zeigt mehrere Futterbeziehungen, etwa Raupen und Blattläuse als Nahrung der Meise.",
+				"criteria": [
+					"Ich korrigiere den Stoffrückweg.",
+					"Ich unterscheide Stoffkreislauf und Energiefluss.",
+					"Ich erkläre den Mehrwert eines Nahrungsnetzes."
+				]
+			}
+		},
+		"figures": [],
+		"lab": "foodweb"
+	},
+	{
+		"id": "c6-fotosynthese",
+		"lb": 3,
+		"title": "Fotosynthese als vereinfachte Wortgleichung",
+		"period": "NT6 LB 2.3 · Stoffkreislauf, Boden",
+		"intro": "Wovon lebt eine grüne Pflanze, wenn sie nicht frisst?",
+		"paragraphs": [
+			"Grüne Pflanzen bilden mit Lichtenergie und mithilfe des Blattgrüns energiereiche Stoffe. Die vereinfachte Wortgleichung lautet: Wasser + Kohlenstoffdioxid → Traubenzucker + Sauerstoff. Wasser wird überwiegend über die Wurzeln aufgenommen, Kohlenstoffdioxid aus der Luft. Licht steht als Energiezufuhr über dem Reaktionspfeil und ist kein Ausgangsstoff.",
+			"Traubenzucker liefert der Pflanze unter anderem eine Grundlage für Baustoffe und dient als Energieträger. Sauerstoff wird an die Umgebung abgegeben. Pflanzen sind damit Produzenten und stehen am Anfang vieler Nahrungsbeziehungen. Sie brauchen zusätzlich Mineralstoffe aus dem Boden. Die Aussage „Pflanzen ernähren sich nur vom Boden“ erklärt ihre Stoffbildung daher nicht. Pflanzen betreiben außerdem Zellatmung; Fotosynthese ist nicht ihr einziger Vorgang.",
+			"Beispiel: Im Modell siehst du zwei Stoffpfeile zur Pflanze, einen Energiepfeil von der Sonne und zwei Stoffpfeile weg von der Pflanze. Ordne Wasser und Kohlenstoffdioxid links, Traubenzucker und Sauerstoff rechts ein. Die Wortgleichung fasst viele Einzelschritte zusammen; diese chemischen Reaktionswege musst du hier noch nicht darstellen."
+		],
+		"takeaway": "Wasser + Kohlenstoffdioxid → Traubenzucker + Sauerstoff, mit Licht und Blattgrün. Licht ist Energiezufuhr, kein Stoff.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Welches Paar nennt die Ausgangsstoffe der vereinfachten Fotosynthese?",
+			"answer": "Wasser und Kohlenstoffdioxid.",
+			"wrong": [
+				"Traubenzucker und Sauerstoff.",
+				"Licht und grüner Farbstoff als verbrauchte Stoffe."
+			],
+			"explanation": "Wasser und Kohlenstoffdioxid werden zu Traubenzucker und Sauerstoff umgewandelt; Licht liefert die Energie."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Zusammenhänge zuordnen",
+			"instruction": "Ordne jeden Fall zu. Prüfe danach deine Entscheidungen.",
+			"categories": ["Ausgangsstoff", "Produkt", "Energiezufuhr"],
+			"entries": [
+				{
+					"text": "Wasser gelangt zur grünen Pflanze.",
+					"target": 0,
+					"feedback": "Wasser steht links in der vereinfachten Wortgleichung."
+				},
+				{
+					"text": "Kohlenstoffdioxid wird aus der Luft aufgenommen.",
+					"target": 0,
+					"feedback": "Auch Kohlenstoffdioxid ist ein Ausgangsstoff."
+				},
+				{
+					"text": "Traubenzucker und Sauerstoff entstehen.",
+					"target": 1,
+					"feedback": "Diese Stoffe stehen rechts in der Wortgleichung."
+				},
+				{
+					"text": "Sonnenlicht ermöglicht die Stoffbildung.",
+					"target": 2,
+					"feedback": "Licht liefert Energie und ist kein Stoff."
+				}
+			],
+			"conclusion": "Stoffe und Energie haben im Modell verschiedene Pfeile. Das schützt vor einer häufigen Verwechslung."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe die vereinfachte Wortgleichung der Fotosynthese und erkläre, woher die Ausgangsstoffe kommen und welche Rolle Licht spielt.",
+				"hints": [
+					"Welche zwei Stoffe stehen links?",
+					"Ist Licht ein Stoff oder eine Energiezufuhr?"
+				],
+				"model": "Wasser + Kohlenstoffdioxid → Traubenzucker + Sauerstoff. Wasser nimmt die Pflanze über die Wurzeln auf, Kohlenstoffdioxid aus der Luft. Licht liefert Energie; Blattgrün ermöglicht die Nutzung. Licht ist kein Stoff auf der linken Seite. Die Gleichung ist eine vereinfachte Zusammenfassung.",
+				"criteria": [
+					"Ich nenne beide Ausgangsstoffe und beide Produkte.",
+					"Ich erkläre die Herkunft der Ausgangsstoffe.",
+					"Ich unterscheide Lichtenergie und Stoffe."
+				]
+			},
+			"2": {
+				"prompt": "Jemand sagt: „Ein Baum bekommt alle Stoffe für sein Wachstum fertig aus dem Boden; Licht ist seine Nahrung.“ Erkläre genauer, wie die grüne Pflanze Stoffe bildet und warum sie Produzent heißt.",
+				"hints": [
+					"Welche Rolle hat Kohlenstoffdioxid aus der Luft?",
+					"Was liefert der Boden zusätzlich zum Wasser?"
+				],
+				"model": "Die Pflanze bildet mit Lichtenergie aus Wasser und Kohlenstoffdioxid Traubenzucker. Kohlenstoffdioxid stammt aus der Luft, Wasser und Mineralstoffe kommen über die Wurzeln. Licht ist Energiezufuhr, keine fertige Nahrung. Die Pflanze heißt Produzent, weil sie energiereiche Stoffe selbst aufbaut.",
+				"criteria": [
+					"Ich korrigiere die Herkunft der Stoffe.",
+					"Ich erkläre Licht als Energiezufuhr.",
+					"Ich begründe den Begriff Produzent."
+				]
+			}
+		},
+		"figures": [],
+		"lab": "photosynthesis"
+	},
+	{
+		"id": "c6-bodenleben",
+		"lb": 3,
+		"title": "Zersetzung und Bodenlebewesen erkennen",
+		"period": "NT6 LB 2.3 · Stoffkreislauf, Boden",
+		"intro": "Wer arbeitet in Streu und Oberboden?",
+		"paragraphs": [
+			"Abgestorbene Blätter, Zweige und andere organische Reste bilden die Streu. Bodentiere zerkleinern und mischen dieses Material. Pilze und Bakterien bauen weiter ab; dabei werden Stoffe im Boden umgewandelt und Mineralstoffe verfügbar. Boden ist deshalb kein lebloser Behälter, sondern Ort natürlicher Zersetzung und vielfältiger Lebensräume.",
+			"Für eine einfache Bestimmung nutzt du sichtbare Merkmale und eine geeignete Bestimmungshilfe. Ein Regenwurm hat einen geringelten Körper und keine Beine; er gehört zu den Ringelwürmern. Eine erwachsene Milbe besitzt acht Beine und gehört zu den Spinnentieren. Eine erwachsene Landassel hat sieben Beinpaare und gehört zu den Krebstieren. Ein einzelnes Merkmal liefert nicht immer schon eine genaue Artbestimmung.",
+			"Beispiel: In einer Zeichnung erkennst du ein Tier mit gegliedertem Körper und vierzehn Beinen. Das passt zur erwachsenen Landassel und nicht zum Regenwurm. Die Modellbilder vergrößern stark und lassen Details weg. Im Unterricht sucht ihr echte Lebewesen behutsam in Streu und Oberboden, nutzt Bestimmungshilfen und setzt die Tiere am Fundort zurück; diese praktische Kompetenz kann die App nur vorbereiten."
+		],
+		"takeaway": "Bodentiere, Pilze und Bakterien wirken an der Zersetzung mit. Körperbau und Beinzahl helfen beim Bestimmen, ersetzen aber keine vollständige Bestimmungshilfe.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Ein erwachsenes kleines Bodentier hat acht Beine. Welche hier gezeigte Gruppe passt?",
+			"answer": "Spinnentiere, zum Beispiel Milben.",
+			"wrong": [
+				"Ringelwürmer, weil sie acht Beine besitzen.",
+				"Erwachsene Landasseln, die immer acht Beine haben."
+			],
+			"explanation": "Erwachsene Milben sind Spinnentiere mit acht Beinen; Landasseln haben sieben Beinpaare, Regenwürmer keine Beine."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Zusammenhänge zuordnen",
+			"instruction": "Ordne jeden Fall zu. Prüfe danach deine Entscheidungen.",
+			"categories": [
+				"Ringelwurm",
+				"Spinnentier",
+				"Krebstier",
+				"Weiterer Zersetzer"
+			],
+			"entries": [
+				{
+					"text": "Regenwurm mit geringeltem Körper und ohne Beine.",
+					"target": 0,
+					"feedback": "Der Körperbau passt zu einem Ringelwurm."
+				},
+				{
+					"text": "Erwachsene Milbe mit acht Beinen.",
+					"target": 1,
+					"feedback": "Milben gehören zu den Spinnentieren."
+				},
+				{
+					"text": "Erwachsene Landassel mit sieben Beinpaaren.",
+					"target": 2,
+					"feedback": "Asseln sind Krebstiere."
+				},
+				{
+					"text": "Pilze und Bakterien bauen Reste weiter ab.",
+					"target": 3,
+					"feedback": "Sie sind keine der drei gezeigten Tiergruppen, wirken aber an der Zersetzung mit."
+				}
+			],
+			"conclusion": "Die Zersetzung ist gemeinsame Arbeit vieler Organismen, nicht nur eines auffälligen Bodentiers."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Vergleiche Regenwurm, erwachsene Milbe und erwachsene Landassel anhand von Körperbau und Beinzahl. Erkläre eine Aufgabe der Bodenlebewesen.",
+				"hints": [
+					"Welche Gruppe besitzt keine Beine?",
+					"Wer zerkleinert Reste und wer baut sie weiter ab?"
+				],
+				"model": "Der Regenwurm ist ein geringelter Ringelwurm ohne Beine. Die erwachsene Milbe ist ein Spinnentier mit acht Beinen; die erwachsene Landassel ist ein Krebstier mit vierzehn Beinen. Bodentiere zerkleinern und mischen Reste. Pilze und Bakterien bauen weiter ab und machen Mineralstoffe verfügbar.",
+				"criteria": [
+					"Ich ordne die drei Tiere richtig zu.",
+					"Ich nenne die passenden Beinmerkmale.",
+					"Ich erkläre die gemeinsame Zersetzungsarbeit."
+				]
+			},
+			"2": {
+				"prompt": "Eine Gruppe findet in echter Streu ein beschädigtes Tier, bei dem nur sechs Beine sichtbar sind. Sie ordnet es allein deshalb sicher den Insekten zu. Beurteile die Sicherheit und plane die weitere Bestimmung.",
+				"hints": [
+					"Sind alle Beine sichtbar und vollständig?",
+					"Welche weiteren Merkmale und Hilfen brauchst du?"
+				],
+				"model": "Die Zuordnung ist noch unsicher, weil Beine fehlen oder verdeckt sein können. Die Gruppe sollte weitere Körpermerkmale beobachten und eine Bestimmungshilfe verwenden. Ein Foto oder die Lehrkraft kann helfen. Das Tier wird behutsam behandelt und zurückgesetzt; die Appzeichnung allein ist keine sichere Artbestimmung.",
+				"criteria": [
+					"Ich erkläre die Unsicherheit des einzelnen Merkmals.",
+					"Ich nenne weitere Beobachtung und Bestimmungshilfe.",
+					"Ich berücksichtige den schonenden Umgang."
+				]
+			}
+		},
+		"figures": [],
+		"lab": "soilLife"
+	},
+	{
+		"id": "c6-bodenschutz",
+		"lb": 3,
+		"title": "Boden als Wasserspeicher und Filter schützen",
+		"period": "NT6 LB 2.3 · Stoffkreislauf, Boden",
+		"intro": "Warum hilft Bodenschutz auch dem Wasser?",
+		"paragraphs": [
+			"Ein vereinfachtes Bodenprofil zeigt von oben nach unten Streu, belebten Oberboden, verwitterten Unterboden und Gestein. Im Oberboden leben viele Organismen; Wurzeln und Poren verbinden Boden und Wasserhaushalt. Die Schichten können je nach Standort unterschiedlich dick sein oder anders aussehen. Das Profil ist ein Modell und kein Foto jedes Bodens.",
+			"Boden ist Lebensgrundlage, Lebensraum, Wasserspeicher und begrenzter Filter. Wasser dringt in Poren ein; manche Stoffe werden zurückgehalten. Diese Wirkung hat Grenzen: Nicht jeder Schadstoff wird entfernt, und gefiltertes Wasser ist nicht automatisch Trinkwasser. Starke Verdichtung vermindert Porenräume. Versiegelung, zum Beispiel durch eine Asphaltfläche, erschwert die Aufnahme von Wasser.",
+			"Beispiel: Zwei gleich große Flächen erhalten dieselbe Regenmenge. Eine bepflanzte unversiegelte Fläche kann Wasser aufnehmen und speichern; von einer Asphaltfläche fließt mehr Wasser oberflächlich ab. Die tatsächliche Menge hängt auch von Bodenart, Vorfeuchte und Regenstärke ab. Pflanzenbedeckung erhalten, Schadstoffeinträge vermeiden und unnötige Versiegelung verringern sind begründete Schutzmaßnahmen. Eigene Bodenproben und Versickerungsversuche gehören in den Unterricht."
+		],
+		"takeaway": "Boden speichert und filtert Wasser nur begrenzt. Pflanzenbedeckung, offene Poren und weniger Schadstoffeinträge schützen Boden und Gewässer.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Warum ist selbst gefiltertes Bodenwasser nicht automatisch Trinkwasser?",
+			"answer": "Der Boden hält nicht alle gelösten Schadstoffe und Krankheitserreger sicher zurück.",
+			"wrong": [
+				"Jeder Boden entfernt ausnahmslos alle fremden Stoffe.",
+				"Klares Wasser enthält grundsätzlich keine gelösten Stoffe."
+			],
+			"explanation": "Die Filterwirkung ist begrenzt; bloße Klarheit ersetzt keine Prüfung der Wasserqualität."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Zusammenhänge zuordnen",
+			"instruction": "Ordne jeden Fall zu. Prüfe danach deine Entscheidungen.",
+			"categories": ["Bodenfunktion", "Schutzmaßnahme", "Belastung"],
+			"entries": [
+				{
+					"text": "Poren nehmen Wasser auf und speichern es.",
+					"target": 0,
+					"feedback": "Wasserspeicherung ist eine Bodenfunktion."
+				},
+				{
+					"text": "Eine bisher offene Fläche wird vollständig asphaltiert.",
+					"target": 2,
+					"feedback": "Versiegelung erschwert das Versickern."
+				},
+				{
+					"text": "Eine Pflanzenbedeckung wird erhalten.",
+					"target": 1,
+					"feedback": "Sie schützt den Boden unter anderem vor Abtrag."
+				},
+				{
+					"text": "Schadstoffe werden von Boden und Gewässern ferngehalten.",
+					"target": 1,
+					"feedback": "Einträge zu vermeiden schützt die begrenzte Filterfunktion."
+				}
+			],
+			"conclusion": "Eine Schutzmaßnahme wird stärker, wenn du sie mit der betroffenen Bodenfunktion begründest."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Nenne die vier Schichten des vereinfachten Bodenprofils. Erkläre zwei Bodenfunktionen und eine dazu passende Schutzmaßnahme.",
+				"hints": [
+					"Was liegt unter der Streu?",
+					"Wie helfen Poren und Pflanzenbedeckung beim Wasserhaushalt?"
+				],
+				"model": "Das Profil zeigt Streu, belebten Oberboden, verwitterten Unterboden und Gestein. Boden speichert Wasser in Poren und hält manche Stoffe zurück. Seine Filterwirkung ist begrenzt. Weniger Versiegelung erhält die Wasseraufnahme; Pflanzenbedeckung schützt den Boden und bietet Lebensraum.",
+				"criteria": [
+					"Ich nenne die vier Schichten in Reihenfolge.",
+					"Ich erkläre zwei Funktionen mit begrenzter Filterwirkung.",
+					"Ich begründe eine passende Schutzmaßnahme."
+				]
+			},
+			"2": {
+				"prompt": "Ein Schulhof soll vollständig asphaltiert werden, damit er nach Regen schnell sauber aussieht. Vergleiche dies mit einem Schulhof mit bepflanzten offenen Teilflächen und begründe einen Vorschlag.",
+				"hints": [
+					"Wo kann Wasser in den Boden gelangen?",
+					"Welche Folgen haben Versiegelung und fehlender Lebensraum?"
+				],
+				"model": "Eine vollständig asphaltierte Fläche lässt wenig Wasser direkt versickern und bietet kaum Bodenlebensraum. Offene bepflanzte Teilflächen können Wasser aufnehmen und Lebensräume erhalten; ihre Wirkung hängt vom Boden und Regen ab. Ich schlage nur notwendige befestigte Wege und erhaltene offene Flächen vor und begründe das mit Wasserhaushalt und Bodenschutz.",
+				"criteria": [
+					"Ich vergleiche die Wasseraufnahme.",
+					"Ich berücksichtige Lebensraum und Modellgrenzen.",
+					"Ich formuliere einen begründeten Gestaltungsvorschlag."
+				]
+			}
+		},
+		"figures": [],
+		"lab": "soil"
+	}
+]

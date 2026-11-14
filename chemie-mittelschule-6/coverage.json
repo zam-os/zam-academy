@@ -1,0 +1,260 @@
+{
+	"curriculum": "https://www.lehrplanplus.bayern.de/fachlehrplan/mittelschule/6/nt",
+	"checked": "2026-11-14",
+	"curriculum_sha256": "7bfbb7e6fc21682399dae288690922f2192a9c8962b4a44fe7b5c615e0e98f9a",
+	"scope": "Chemistry within NT6: LB 1, 2.1 and 2.3; hydropower is included as the required context of 2.1. This is not a complete NT6 course.",
+	"tracks": "The official NT6 page is shared; separate R/M NT tracks start in Grade 7.",
+	"hours": null,
+	"hours_note": "The fetched official sections state no hour allocations.",
+	"neighbours": [
+		{
+			"url": "https://www.lehrplanplus.bayern.de/fachlehrplan/mittelschule/5/nt",
+			"file": "tests/fixtures/lehrplanplus-nt5.html",
+			"sha256": "456b05f9d83b5b7b79e6723ebe892bb63f65890bd807947bd29f52a0a213d9b0",
+			"boundary": "Revisits states, mixtures and separation from NT5 4.1/4.2; builds on nt-mittelschule-5 without transferring its cards."
+		},
+		{
+			"url": "https://www.lehrplanplus.bayern.de/fachlehrplan/mittelschule/7/nt/regelklasse",
+			"file": "tests/fixtures/lehrplanplus-nt7-regelklasse.html",
+			"sha256": "436a7deae94f0cbb6bd357f900533c440bcbf4475b9179a09965d63ddc6446f8",
+			"boundary": "Air composition and extended atom models belong to NT7 2.1/2.2 and are not taught as NT6 content."
+		},
+		{
+			"url": "https://www.lehrplanplus.bayern.de/fachlehrplan/mittelschule/7/nt/mittlere-reife-klasse",
+			"file": "tests/fixtures/lehrplanplus-nt7-mittlere-reife-klasse.html",
+			"sha256": "2eeee7889a84c2c72313117f7a180046cf1fa5b5445bcb792e18701fdda90bc5",
+			"boundary": "Air composition and extended atom models belong to NT7 2.1/2.2 and are not taught as NT6 content."
+		}
+	],
+	"rows": [
+		{
+			"id": "nt6-1-1",
+			"lb": 1,
+			"section": "1",
+			"position": 1,
+			"competence": "führen angeleitet Untersuchungen zu naturwissenschaftlichen Fragestellungen durch, notieren ihre Beobachtungen und ziehen einfache Schlussfolgerungen.",
+			"lessons": ["c6-forschen"],
+			"status": "supported",
+			"evidence": "The app trains a fair comparison, reading an authored measurement series and separating observation from inference. Actual investigations and an original protocol must be completed in class."
+		},
+		{
+			"id": "nt6-1-2",
+			"lb": 1,
+			"section": "1",
+			"position": 2,
+			"competence": "verwenden einfache Geräte und Materialien sachgerecht.",
+			"lessons": ["c6-forschen", "c6-sicherheit"],
+			"status": "supported",
+			"evidence": "The lesson explains thermometer, stopwatch and beaker roles, safe handling and damaged equipment. Learners must demonstrate actual equipment handling under classroom supervision."
+		},
+		{
+			"id": "nt6-1-3",
+			"lb": 1,
+			"section": "1",
+			"position": 3,
+			"competence": "erläutern fragengeleitet durch den Vergleich eines einfachen Modells mit der Realität Möglichkeiten und Grenzen eines Modells.",
+			"lessons": ["c6-sicherheit", "c6-teilchen-zustaende", "c6-molekuele"],
+			"status": "implemented",
+			"evidence": "Learners compare labelled particle and molecule schematics with reality and explain the limits of model colour, size, spacing and selected relationships in written transfer tasks."
+		},
+		{
+			"id": "nt6-1-4",
+			"lb": 1,
+			"section": "1",
+			"position": 4,
+			"competence": "planen angeleitet Untersuchungen in verschiedenen Sozialformen und protokollieren einfache Arbeitsabläufe und Ergebnisse.",
+			"lessons": ["c6-forschen"],
+			"status": "supported",
+			"evidence": "The package provides a research question, controlled-variable comparison, measurement table and protocol structure. Group planning, real execution and an original investigation record remain classroom work."
+		},
+		{
+			"id": "nt6-1-5",
+			"lb": 1,
+			"section": "1",
+			"position": 5,
+			"competence": "veranschaulichen weitgehend angeleitet einfache naturwissenschaftliche Sachverhalte.",
+			"lessons": ["c6-forschen", "c6-molekuele", "c6-waldnetz"],
+			"status": "implemented",
+			"evidence": "A labelled measurement diagram, molecule-counting model and food-web/substance-cycle model support changing between descriptions, pictures and diagrams in the two authored task levels."
+		},
+		{
+			"id": "nt6-1-6",
+			"lb": 1,
+			"section": "1",
+			"position": 6,
+			"competence": "wählen themenbezogene und aussagekräftige Informationen aus vorgegebenen Quellen aus.",
+			"lessons": ["c6-forschen", "c6-wasser-bedeutung"],
+			"status": "supported",
+			"evidence": "Learners are guided to select relevant, attributable evidence from provided sources; the app offers a verified official curriculum link. A comparative multi-source research exercise remains in class."
+		},
+		{
+			"id": "nt6-1-7",
+			"lb": 1,
+			"section": "1",
+			"position": 7,
+			"competence": "verwenden bewusst naturwissenschaftliche Fachbegriffe, um einfache Sachverhalte angemessen zu beschreiben.",
+			"lessons": [
+				"c6-teilchen-zustaende",
+				"c6-zustandswechsel",
+				"c6-molekuele",
+				"c6-wasserzerlegung"
+			],
+			"status": "implemented",
+			"evidence": "Quick checks, classification and two written tasks per lesson require terms including observation, inference, phase transition, molecule, element and compound in distinct contexts."
+		},
+		{
+			"id": "nt6-1-8",
+			"lb": 1,
+			"section": "1",
+			"position": 8,
+			"competence": "wägen Folgen des persönlichen Handelns für sich und die Umwelt ab.",
+			"lessons": [
+				"c6-wasser-bedeutung",
+				"c6-oberflaeche",
+				"c6-wasserkraft",
+				"c6-bodenschutz"
+			],
+			"status": "implemented",
+			"evidence": "Transfer tasks weigh consequences of cleaning products in ponds, changes to waterways and schoolyard sealing, with concrete benefits, effects and reasoned alternatives."
+		},
+		{
+			"id": "nt6-1-9",
+			"lb": 1,
+			"section": "1",
+			"position": 9,
+			"competence": "nutzen Fachwissen, um Risiken bei einfachen Experimenten und in Alltagssituationen einzuschätzen und grundlegende Sicherheitsmaßnahmen zu ergreifen.",
+			"lessons": ["c6-sicherheit", "c6-gasnachweise"],
+			"status": "supported",
+			"evidence": "Label reading, risk judgement and stopping/reporting an incident are taught explicitly. Real conduct and the required experiment-specific safety briefing must be checked by the supervising teacher."
+		},
+		{
+			"id": "nt6-2.1-1",
+			"lb": 2,
+			"section": "2.1",
+			"position": 1,
+			"competence": "zeigen an Beispielen die Bedeutung von Wasser für das Leben auf der Erde auf.",
+			"lessons": ["c6-wasser-bedeutung"],
+			"status": "implemented",
+			"evidence": "The labelled life/food/transport model and tasks distinguish water as habitat, food and transport medium and challenge the claim that clear water is safe drinking water."
+		},
+		{
+			"id": "nt6-2.1-2",
+			"lb": 2,
+			"section": "2.1",
+			"position": 2,
+			"competence": "charakterisieren Wasser anhand experimentell ermittelter Stoffeigenschaften.",
+			"lessons": [
+				"c6-wasser-eigenschaften",
+				"c6-loesen-leiten",
+				"c6-oberflaeche"
+			],
+			"status": "supported",
+			"evidence": "Worked findings cover state, melting and boiling points with pressure conditions, solubility, qualitative conductivity and surface tension. Experimental measurement of actual samples remains supervised classroom work."
+		},
+		{
+			"id": "nt6-2.1-3",
+			"lb": 2,
+			"section": "2.1",
+			"position": 3,
+			"competence": "verwenden das Kugelteilchenmodell zur Erklärung der Aggregatzustände des Wassers und deren Übergänge.",
+			"lessons": ["c6-teilchen-zustaende", "c6-zustandswechsel"],
+			"status": "implemented",
+			"evidence": "The temperature-controlled particle model distinguishes solid, liquid and gas, treats phase-boundary coexistence, and supports the four changes, evaporation below boiling and invisible vapour versus visible droplets."
+		},
+		{
+			"id": "nt6-2.1-4",
+			"lb": 2,
+			"section": "2.1",
+			"position": 4,
+			"competence": "beschreiben die Anomalie des Wassers und erklären deren Bedeutung an ausgewählten Beispielen.",
+			"lessons": ["c6-wasseranomalie"],
+			"status": "implemented",
+			"evidence": "Equal-mass volume comparison, the density maximum near 4 °C, floating ice, a deep winter lake and frost splitting are explained, with explicit limits for shallow ponds and unsafe ice conclusions."
+		},
+		{
+			"id": "nt6-2.1-5",
+			"lb": 2,
+			"section": "2.1",
+			"position": 5,
+			"competence": "nutzen Modelle zur Darstellung des Baus von Molekülen und bezeichnen diese mit der chemischen Formelsprache.",
+			"lessons": ["c6-molekuele"],
+			"status": "implemented",
+			"evidence": "Labelled H/O models let learners count the atoms of water, hydrogen and oxygen molecules and distinguish an element, compound and molecule. Tasks read H₂O, H₂ and O₂ and critique model colours."
+		},
+		{
+			"id": "nt6-2.1-6",
+			"lb": 2,
+			"section": "2.1",
+			"position": 6,
+			"competence": "weisen die bei der elektrolytischen Zersetzung von Wasser entstehenden Gase experimentell nach und charakterisieren die Elemente Wasserstoff und Sauerstoff.",
+			"lessons": ["c6-wasserzerlegung", "c6-gasnachweise"],
+			"status": "supported",
+			"evidence": "The model conserves four H and two O atoms and illustrates the 2 : 1 equal-condition gas-volume ratio. Given observations of the two gas tests are interpreted; actual electrolysis and gas detection remain supervised classroom experiments."
+		},
+		{
+			"id": "nt6-2.1-7",
+			"lb": 2,
+			"section": "2.1",
+			"position": 7,
+			"competence": "beschreiben die Bedeutung und Nutzung von Wasser als erneuerbare Energiequelle, indem sie die Energieumwandlung im Wasserkraftwerk erklären.",
+			"lessons": ["c6-wasserkraft"],
+			"status": "implemented",
+			"evidence": "The labelled hydropower model follows potential, motion, turbine and generator energy and evaluates renewability against fish migration and residual flow. This is the explicit cross-disciplinary context within NT6 2.1."
+		},
+		{
+			"id": "nt6-2.3-1",
+			"lb": 2,
+			"section": "2.3",
+			"position": 1,
+			"competence": "erläutern ein Nahrungsnetz im Ökosystem Wald und stellen einen Stoffkreislauf dar, um die Wechselwirkungen zwischen Erzeugern, Verbrauchern und Zersetzern zu veranschaulichen.",
+			"lessons": ["c6-waldnetz"],
+			"status": "implemented",
+			"evidence": "The forest model connects leaves, caterpillars, aphids, tits and sparrowhawk into a network, defines the direction of food arrows and returns matter through decomposers and mineral uptake while distinguishing energy flow."
+		},
+		{
+			"id": "nt6-2.3-2",
+			"lb": 2,
+			"section": "2.3",
+			"position": 2,
+			"competence": "erläutern die Bedeutung der grünen Pflanzen als Produzenten anhand der vereinfachten Fotosynthesegleichung.",
+			"lessons": ["c6-fotosynthese"],
+			"status": "implemented",
+			"evidence": "The lesson teaches only the simplified word equation, separates input substances from light energy and products, and uses plant/soil misconceptions in the transfer task; no advanced molecular reaction balancing is required."
+		},
+		{
+			"id": "nt6-2.3-3",
+			"lb": 2,
+			"section": "2.3",
+			"position": 3,
+			"competence": "beschreiben Boden als Ort natürlicher Zersetzung und bestimmen einige Lebewesen in Streu und Oberboden.",
+			"lessons": ["c6-bodenleben"],
+			"status": "supported",
+			"evidence": "The package explains breakdown and mineral availability and practises distinguishing an earthworm, adult mite and adult woodlouse from labelled body/leg features. Finding and identifying real organisms in litter and topsoil remains classroom work."
+		},
+		{
+			"id": "nt6-2.3-4",
+			"lb": 2,
+			"section": "2.3",
+			"position": 4,
+			"competence": "erläutern Bodenfunktionen und begründen daraus Maßnahmen zum Bodenschutz.",
+			"lessons": ["c6-bodenschutz"],
+			"status": "implemented",
+			"evidence": "A four-layer schematic explains habitat, water storage and limited filtration. Learners assess sealing, compaction, plant cover and pollutant avoidance through worked examples and schoolyard design tasks."
+		}
+	],
+	"optional_lessons": [],
+	"excluded": [
+		{
+			"section": "2.2",
+			"reason": "Aquatic organism identification, microscopy, fish adaptation and the aquatic food web are the biological perspective and outside this Chemistry package."
+		},
+		{
+			"section": "3",
+			"reason": "Puberty and prenatal development belong to the biological/health perspective."
+		},
+		{
+			"section": "4",
+			"reason": "Forces, mechanical work and motion belong to the physics perspective."
+		}
+	]
+}
