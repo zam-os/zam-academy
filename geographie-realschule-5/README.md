@@ -2,7 +2,7 @@
 
 An offline learning package for the shared Grade 5 LehrplanPLUS curriculum: 31 lessons in seven learning areas, 31 explanatory graphics, 31 classification workshops, writing tasks at two levels, six map/model families and 62 linked ZAM practice items.
 
-This is a **local draft** (`publication.json`: `local-only`). It is excluded from the public catalog, atlas registry and Pages. Its cell contains no history replacements or retirements. Teacher review and a separate video step remain open; no teacher videos are included.
+This is a **published preview** (`publication.json`: `preview`) at [ZAM Academy](https://academy.zam-os.org/geographie-realschule-5/), registered in the public catalog, atlas and Pages build. A visible notice explains that teacher review and videos remain open. Its cell contains no history replacements or retirements.
 
 ## Run locally
 

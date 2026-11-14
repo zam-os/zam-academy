@@ -66,8 +66,10 @@ axis marked N/S. Selected-note labels retain their bold emphasis after interacti
 the scale figure and model both use spaced notation such as `1 : 50 000`.
 
 The cell, curriculum bindings, identifiers, progress keys and mapping proposal are
-unchanged. The package remains `local-only`; real excursions, current-event
-research, conservation action and presentations retain their classroom role.
+unchanged. Following Thomas’s publication instruction on 2026-11-14, the package
+is a published preview; real excursions, current-event research, conservation
+action and presentations retain their classroom role. Teacher review and videos
+remain visibly marked as open.
 
 ## Verification
 

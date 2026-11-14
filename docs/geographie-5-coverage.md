@@ -1,6 +1,6 @@
 # Grade 5 Realschule geography: curriculum and legacy inventory
 
-The package is a local draft in `geographie-realschule-5/`. It has 31 lessons and 62 cards and is not registered for public publication. The shell derives from Geography 9; the lessons, maps/models, progress keys, identifiers, source inventory and curriculum bindings are specific to Grade 5.
+The package is a published preview in `geographie-realschule-5/`, with 31 lessons and 62 cards. Thomas authorized publication of the remaining local-only packages on 2026-11-14. Its publication marker, Academy listing, catalog entry, Pages build and visible preview notice agree; teacher review and videos remain open. The shell derives from Geography 9; the lessons, maps/models, progress keys, identifiers, source inventory and curriculum bindings are specific to Grade 5.
 
 ## Official curriculum check
 
@@ -36,7 +36,7 @@ The proposed A matches retrieve the equator, the 500 m scale conversion, approxi
 
 The C rows keep mixed or broader retrievals separate. Two possible retirements are proposed: the compound Earth-movement answer with invariant calendar dates and the broad-landscape answer that conflates part of the step-land with the Alpine foreland. Eight other C items remain active, including detailed agriculture and coastal processes. No history is spread across multiple new cards.
 
-**Decision still required before any history-changing version:** should the neighbouring Grade 6 cell be included in this Grade 5 package's mapping, and are the six individual transfers and two proposed retirements approved? This report records a proposal only; a request to build the package grants none of those history changes. `approved` remains `null`, and the cell has neither `replaces` nor `retired_items`. No migration script is needed for this non-migrating draft.
+**Decision still required before any history-changing version:** should the neighbouring Grade 6 cell be included in this Grade 5 package's mapping, and are the six individual transfers and two proposed retirements approved? This report records a proposal only; a request to build the package grants none of those history changes. `approved` remains `null`, and the cell has neither `replaces` nor `retired_items`. No migration script is needed for this non-migrating preview.
 
 ## Verification evidence
 
@@ -44,7 +44,7 @@ The C rows keep mixed or broader retrievals separate. Two possible retirements a
 - `npx tsc --noEmit` and `npm test`: 127 tests passed; compile and verify lesson metadata, explanatory graphics, workshops, arithmetic, map projection, persisted state, research form, anchors and mapping proposal. The research tests retain the reference shell's local-date boundary, malformed date, unsafe URL and draft limits checks.
 - `npm run verify:content`: all 30 statements found in the fetched official page; official and both legacy SHA-256 checks pass.
 - `npm run package:zip` and `npm run verify:release`: produce and verify a self-contained HTML/ZIP and exact starter bytes.
-- `node --test scripts/build-catalog.test.mjs scripts/academy-registry.test.mjs`: 51 tests passed, including exclusion of local-only packages.
+- `node --test scripts/build-catalog.test.mjs scripts/academy-registry.test.mjs`: 51 tests passed, including preview notices, registry/catalog consistency and exclusion of local-only packages.
 - `ZAM_CORE=file:///private/tmp/zam-core-check54/node_modules/zam-core/dist/index.js node scripts/validate-cells.mjs`: all cells, including this 62-item cell, installed with CI's pinned `zam-core` 0.54.0; card-text and curated-choice checks passed.
 
 `npm run verify:browser` uses installed Chrome (or `CHROME_BIN`) through the browser’s debugging pipe and writes captures plus a JSON report to a fresh temporary folder. It uses built `dist/index.html`, never only Vite source. The recorded browser matrix covers 31 lessons × two levels × light/dark themes, plus learning path, reference view, 64 narrow-screen views, 248 desktop figure-control interactions and existing control events. The visual pass also checks accessible descriptions, label bounds, keyboard activation, selected-detail panning and preservation of drafts, storage and page scroll. Browser captures and the compact result are temporary QA artifacts in the output directory printed by that command; they are not curriculum sources or committed card text.
