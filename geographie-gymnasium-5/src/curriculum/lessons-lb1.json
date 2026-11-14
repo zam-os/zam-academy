@@ -1,0 +1,485 @@
+[
+  {
+    "id": "geogym5-kartenarten",
+    "lb": 1,
+    "title": "Topografische, physische und thematische Karten",
+    "period": "LB 1 · Kartenarten unterscheiden",
+    "intro": "Jede Karte beantwortet eine bestimmte Frage. Welche das ist, verraten dir Titel und Legende.",
+    "paragraphs": [
+      "Eine topografische Karte zeigt die Erdoberfläche mit vielen Einzelheiten: Siedlungen, Straßen, Wege, Flüsse, Wald und Höhenlinien. Wanderkarten und die amtlichen Karten im BayernAtlas sind topografische Karten. Eine physische Karte zeigt vor allem das Relief, also wo das Land tief und wo es hoch liegt. Tiefland ist grün gefärbt, höhere Gebiete gelb, braun und die höchsten Gebirge weiß. Dazu kommen Gewässer, Gebirgsnamen und große Städte. Im Atlas sind die Übersichtskarten von Bayern, Deutschland und den Erdteilen meist physische Karten.",
+      "Eine thematische Karte stellt ein bestimmtes Thema dar, zum Beispiel Bevölkerungsdichte, Landwirtschaft, Klima oder Tourismus. Auf ihr bedeuten Farben und Zeichen etwas anderes als auf der physischen Karte. Deshalb liest du immer zuerst Titel und Legende. Beispiel: Auf der physischen Deutschlandkarte ist Brandenburg grün, weil das Land dort tief liegt. Auf einer thematischen Karte zur Landwirtschaft kann dasselbe Grün für Wiesen und Weiden stehen. Erst die Legende sagt dir, was gemeint ist."
+    ],
+    "takeaway": "Topografische Karten zeigen viele Einzelheiten, physische Karten das Relief und thematische Karten ein bestimmtes Thema. Die Legende ist der Schlüssel zu jeder Karte.",
+    "sourceIds": [
+      "lehrplan",
+      "kx-landkarte",
+      "kx-atlas",
+      "bayernatlas"
+    ],
+    "quiz": {
+      "question": "Auf welcher Kartenart erkennst du am schnellsten, wo in Deutschland hohe Gebirge liegen?",
+      "answer": "auf einer physischen Karte",
+      "wrong": [
+        "auf einer thematischen Karte zur Bevölkerungsdichte",
+        "auf einem Stadtplan"
+      ],
+      "explanation": "Physische Karten zeigen mit Höhenschichtenfarben, wo das Land tief oder hoch liegt. Eine Karte der Bevölkerungsdichte zeigt, wo viele Menschen wohnen, nicht wie hoch das Gelände ist."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Welche Kartenart ist das?",
+      "instruction": "Ordne jede Aussage zu und prüfe dann deine Zuordnung. Begründe deine Wahl zuerst für dich.",
+      "categories": [
+        "topografische Karte",
+        "physische Karte",
+        "thematische Karte"
+      ],
+      "entries": [
+        {
+          "text": "Wanderkarte 1 : 25 000 mit Wegen, Wald, einzelnen Höfen und Höhenlinien",
+          "target": 0,
+          "feedback": "Viele Einzelheiten der Erdoberfläche in großem Maßstab: eine topografische Karte."
+        },
+        {
+          "text": "Atlaskarte „Deutschland“ mit grünem Tiefland und braunen Gebirgen",
+          "target": 1,
+          "feedback": "Die Farben zeigen die Höhenstufen des Reliefs: eine physische Karte."
+        },
+        {
+          "text": "Karte „Deutschland – Bevölkerungsdichte“ mit Farbstufen",
+          "target": 2,
+          "feedback": "Sie stellt ein Thema dar, die Zahl der Menschen je Quadratkilometer."
+        },
+        {
+          "text": "Karte „Bayern – Landwirtschaft“ mit Zeichen für Hopfen, Wein und Milchvieh",
+          "target": 2,
+          "feedback": "Die Zeichen gehören zum Thema Landwirtschaft: eine thematische Karte."
+        },
+        {
+          "text": "Amtliche Karte im BayernAtlas, auf der jedes Gebäude und jeder Feldweg eingezeichnet ist",
+          "target": 0,
+          "feedback": "Gebäude und Feldwege sind typische Einzelheiten einer topografischen Karte."
+        },
+        {
+          "text": "Atlaskarte „Alpen“ mit Gipfelhöhen, Gletschern und Höhenschichten",
+          "target": 1,
+          "feedback": "Höhenschichten und Gipfelhöhen beschreiben das Relief: eine physische Karte."
+        }
+      ],
+      "conclusion": "Frage bei jeder Karte: Welches Thema hat sie, und wie genau ist sie? Titel, Legende und Maßstab verraten es dir."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre an je einem Beispiel, woran du eine topografische, eine physische und eine thematische Karte erkennst.",
+        "hints": [
+          "Was zeigt jede Kartenart vor allem?",
+          "Welches Beispiel aus Atlas oder Alltag passt zu jeder Kartenart?"
+        ],
+        "model": "Eine topografische Karte zeigt viele Einzelheiten der Erdoberfläche wie Wege, Gebäude, Wald und Höhenlinien; ein Beispiel ist eine Wanderkarte. Eine physische Karte zeigt mit Höhenschichtenfarben das Relief, also wo Tiefland und Gebirge liegen, zum Beispiel die Deutschlandkarte im Atlas. Eine thematische Karte stellt ein Thema dar, etwa die Bevölkerungsdichte oder die Landwirtschaft. Bei allen drei Kartenarten erklärt die Legende die Farben und Zeichen.",
+        "criteria": [
+          "Ich nenne für jede Kartenart, was sie vor allem zeigt.",
+          "Ich gebe zu jeder Kartenart ein passendes Beispiel.",
+          "Ich erwähne die Legende als Schlüssel zur Karte."
+        ]
+      },
+      "2": {
+        "prompt": "Deine Familie plant eine Radtour durch das Altmühltal mit einem Besuch in einem Museum. Welche Kartenarten helfen bei welcher Frage? Begründe.",
+        "hints": [
+          "Welche Fragen stellen sich vor und während der Tour?",
+          "Welche Kartenart beantwortet welche Frage?"
+        ],
+        "model": "Für die Strecke selbst brauchen wir eine topografische Karte, zum Beispiel eine Radkarte: Sie zeigt Wege, Orte und durch Höhenlinien auch Steigungen. Um zu sehen, wo das Altmühltal in Bayern liegt und welche Landschaft uns erwartet, hilft die physische Bayernkarte im Atlas. Eine thematische Karte zum Tourismus zeigt, wo es Museen, Campingplätze oder Radwege gibt. Jede Karte beantwortet also eine andere Frage, und zusammen planen wir die Tour.",
+        "criteria": [
+          "Ich ordne jeder Frage eine passende Kartenart zu.",
+          "Ich begründe mit dem, was die Kartenart zeigt.",
+          "Ich nutze mindestens zwei verschiedene Kartenarten."
+        ]
+      }
+    },
+    "figures": [
+      "kartenarten"
+    ],
+    "review": "Wiederholung aus HSU 3/4: Karten mit Legende lesen"
+  },
+  {
+    "id": "geogym5-atlas",
+    "lb": 1,
+    "title": "Mit dem Atlas arbeiten",
+    "period": "LB 1 · Informationen aus dem Atlas",
+    "intro": "Im Atlas findest du fast jeden Ort der Welt, wenn du Register, Seite und Planquadrat nutzt.",
+    "paragraphs": [
+      "Ein Atlas ist eine Sammlung von Karten, als Buch oder digital. Vorne steht das Inhaltsverzeichnis. Es ordnet die Karten nach Räumen, zum Beispiel Bayern, Deutschland, Europa und die Welt, und nach Themen. Hinten steht das Register, ein alphabetisches Verzeichnis aller Namen auf den Karten. Hinter jedem Namen stehen die Seitenzahl und das Planquadrat, zum Beispiel „Passau 23 F5“. Das Planquadrat ist das Feld, in dem sich eine Spalte (Buchstabe am Kartenrand) und eine Zeile (Zahl am Kartenrand) kreuzen.",
+      "So gehst du vor: Schlage den Namen im Register nach, öffne die Seite und suche das Planquadrat. Dort findest du den Ort und liest mit der Legende ab, was die Karte über ihn sagt. Einzelzeichen haben feste Bedeutungen: Ein Dreieck mit Zahl steht für einen Berg und seine Höhe in Metern, unterschiedlich große Kreise oder Quadrate stehen für Städte mit unterschiedlich vielen Einwohnern, ein Flugzeug für einen Flughafen. Beispiel: Neben dem Großen Arber im Bayerischen Wald steht ein Dreieck mit der Zahl 1456. Der Berg ist also 1456 m hoch."
+    ],
+    "takeaway": "Register → Seite → Planquadrat → Legende: So findest du im Atlas einen Ort und liest ab, was die Karte über ihn sagt.",
+    "sourceIds": [
+      "lehrplan",
+      "kx-atlas",
+      "kx-landkarte"
+    ],
+    "quiz": {
+      "question": "Im Register steht „Passau 23 F5“. Was bedeutet „F5“?",
+      "answer": "das Planquadrat auf der Karte",
+      "wrong": [
+        "die fünfte Auflage des Atlas",
+        "die Einwohnerzahl in Tausend"
+      ],
+      "explanation": "Buchstabe und Zahl bezeichnen das Feld, in dem sich Spalte F und Zeile 5 kreuzen. Dort liegt Passau auf der Karte von Seite 23."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Einen Ort im Atlas finden",
+      "instruction": "Bringe die Schritte mit den Pfeilen in die richtige Reihenfolge: den ersten nach oben. Prüfe dann deine Reihenfolge.",
+      "categories": [],
+      "entries": [
+        {
+          "text": "Den Namen im Register am Ende des Atlas nachschlagen",
+          "target": 0,
+          "feedback": "Das Register ist alphabetisch geordnet."
+        },
+        {
+          "text": "Die angegebene Seite aufschlagen",
+          "target": 1,
+          "feedback": "Die Zahl hinter dem Namen ist die Seite."
+        },
+        {
+          "text": "Am Kartenrand die Spalte (Buchstabe) und die Zeile (Zahl) suchen",
+          "target": 2,
+          "feedback": "Buchstabe und Zahl stehen am Rand jeder Atlaskarte."
+        },
+        {
+          "text": "Im Planquadrat den Ort finden",
+          "target": 3,
+          "feedback": "Im Feld, wo sich Spalte und Zeile kreuzen, liegt der Ort."
+        },
+        {
+          "text": "Mit der Legende ablesen, was die Zeichen am Ort bedeuten",
+          "target": 4,
+          "feedback": "Erst die Legende erklärt die Zeichen."
+        }
+      ],
+      "conclusion": "Wer diese Reihenfolge kennt, findet jeden Ort im Atlas in weniger als einer Minute."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Beschreibe Schritt für Schritt, wie du die Zugspitze im Atlas findest und ihre Höhe abliest.",
+        "hints": [
+          "Womit beginnst du die Suche?",
+          "Wie liest du die Höhe ab?"
+        ],
+        "model": "Ich schlage im Register am Ende des Atlas unter Z nach und finde „Zugspitze“ mit Seitenzahl und Planquadrat. Ich öffne die Seite und suche am Kartenrand den Buchstaben der Spalte und die Zahl der Zeile. Wo sich beide kreuzen, liegt das Planquadrat. Dort finde ich das Dreieck für den Gipfel und daneben die Zahl 2962. Die Legende sagt mir, dass das Dreieck einen Berg zeigt und die Zahl seine Höhe in Metern.",
+        "criteria": [
+          "Ich beginne mit dem Register.",
+          "Ich erkläre, wie ich das Planquadrat finde.",
+          "Ich nutze die Legende, um die Höhe abzulesen."
+        ]
+      },
+      "2": {
+        "prompt": "Ein Mitschüler sucht „Neustadt“ im Register und findet viele Einträge. Erkläre, wie er den richtigen Ort findet und warum das Register so viele Angaben hat.",
+        "hints": [
+          "Warum gibt es mehrere Einträge?",
+          "Welche Angaben helfen bei der Entscheidung?"
+        ],
+        "model": "In Deutschland gibt es viele Orte mit dem Namen Neustadt. Im Register steht deshalb oft ein Zusatz, zum Beispiel ein Fluss wie bei „Neustadt a. d. Donau“. Wenn er weiß, in welcher Gegend der gesuchte Ort liegt, wählt er den Eintrag, dessen Seite eine Karte dieser Gegend zeigt. Seite und Planquadrat machen jeden Eintrag eindeutig, auch wenn die Namen gleich sind. Zur Kontrolle prüft er auf der Karte, ob der Ort an der erwarteten Stelle liegt, etwa an der Donau.",
+        "criteria": [
+          "Ich erkläre, warum ein Name mehrfach vorkommt.",
+          "Ich nenne Zusatz, Seite und Planquadrat als Hilfen.",
+          "Ich beschreibe eine Kontrolle auf der Karte."
+        ]
+      }
+    },
+    "figures": [
+      "karte-lesen"
+    ]
+  },
+  {
+    "id": "geogym5-materialien",
+    "lb": 1,
+    "title": "Texte, Bilder, Tabellen und Diagramme auswerten",
+    "period": "LB 1 · Materialien auswerten",
+    "intro": "Geographinnen und Geographen arbeiten mit vielen Materialien. Für jedes gibt es einen Weg, Schritt für Schritt vorzugehen.",
+    "paragraphs": [
+      "Ein Sachtext liefert Informationen in Sätzen. Lies ihn zweimal: zuerst im Ganzen, dann mit dem Stift. Markiere Schlüsselwörter und schreibe zu jedem Absatz eine kurze Überschrift. Ein Bild, etwa ein Foto oder ein Luftbild, beschreibst du vom Vordergrund zum Hintergrund: Was ist zu sehen? Wo könnte das sein? Was fällt auf? Eine Tabelle ordnet Zahlen in Zeilen und Spalten. Lies zuerst den Titel, die Einheiten und die Quelle, dann suche den größten und den kleinsten Wert.",
+      "Ein Diagramm macht Zahlen sichtbar. Beim Säulendiagramm stehen die Werte als senkrechte Säulen nebeneinander, beim Balkendiagramm als waagrechte Balken, beim Liniendiagramm als verbundene Punkte. Werte jedes Diagramm in drei Schritten aus. Beschreiben: Worum geht es (Titel, Ort, Zeitraum, Einheiten)? Auswerten: Was fällt auf (höchster und niedrigster Wert, Unterschiede)? Erklären: Wie lässt sich das begründen? Beispiel: Ein Säulendiagramm zeigt den Niederschlag einer Schulwoche. Die Säule für Mittwoch ist mit 11 mm die höchste; vermutlich zog an diesem Tag ein Regengebiet durch."
+    ],
+    "takeaway": "Erst beschreiben, dann auswerten, dann erklären: Bei Texten, Bildern, Tabellen und Diagrammen liest du zuerst Titel, Einheiten und Quelle.",
+    "sourceIds": [
+      "lehrplan",
+      "kx-niederschlag",
+      "dwd"
+    ],
+    "quiz": {
+      "question": "Was liest du bei einem Diagramm als Erstes?",
+      "answer": "Titel, Einheiten und Zeitraum",
+      "wrong": [
+        "den höchsten Wert",
+        "die Farbe der Säulen"
+      ],
+      "explanation": "Ohne Titel und Einheiten weißt du nicht, was die Säulen bedeuten. Erst danach vergleichst du die Werte."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Beschreiben, auswerten oder erklären?",
+      "instruction": "Ordne jede Aussage zu und prüfe dann deine Zuordnung. Begründe deine Wahl zuerst für dich.",
+      "categories": [
+        "beschreiben",
+        "auswerten",
+        "erklären"
+      ],
+      "entries": [
+        {
+          "text": "Das Diagramm zeigt den Niederschlag an einer Schule von Montag bis Freitag in mm.",
+          "target": 0,
+          "feedback": "Thema, Ort, Zeitraum und Einheit: Das ist die Beschreibung."
+        },
+        {
+          "text": "Am Mittwoch fiel mit 11 mm der meiste Niederschlag.",
+          "target": 1,
+          "feedback": "Du liest einen höchsten Wert ab: Das ist Auswertung."
+        },
+        {
+          "text": "Am Dienstag fiel kein Niederschlag.",
+          "target": 1,
+          "feedback": "Auch der niedrigste Wert gehört zur Auswertung."
+        },
+        {
+          "text": "Am Mittwoch zog vermutlich ein Regengebiet über den Schulort.",
+          "target": 2,
+          "feedback": "Eine Begründung für die Werte ist eine Erklärung."
+        },
+        {
+          "text": "Die Werte stammen von der Wetterstation auf dem Schuldach.",
+          "target": 0,
+          "feedback": "Die Quelle nennst du beim Beschreiben."
+        },
+        {
+          "text": "Weil es am Mittwoch viel regnete, war der Sportplatz am Donnerstag noch nass.",
+          "target": 2,
+          "feedback": "Du verknüpfst die Werte mit einer Folge: Das ist eine Erklärung."
+        }
+      ],
+      "conclusion": "Wer zuerst beschreibt, dann auswertet und erst danach erklärt, vermischt Beobachtung und Vermutung nicht."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Werte das Säulendiagramm aus der Abbildung (Niederschlag einer Schulwoche) in drei Schritten aus.",
+        "hints": [
+          "Was zeigt das Diagramm, und was fällt auf?",
+          "Welche Erklärung passt zu den Werten?"
+        ],
+        "model": "Beschreiben: Das Säulendiagramm zeigt den Niederschlag in Millimetern, gemessen an der Wetterstation einer Schule von Montag bis Freitag. Auswerten: Am meisten Niederschlag fiel am Mittwoch mit 11 mm, am Dienstag fiel keiner. Zusammen waren es 22 mm. Erklären: Vermutlich zog am Mittwoch ein Regengebiet durch, an den anderen Tagen war es meist trocken oder es regnete nur wenig.",
+        "criteria": [
+          "Ich beschreibe Thema, Zeitraum und Einheit.",
+          "Ich nenne den höchsten und den niedrigsten Wert.",
+          "Ich gebe eine mögliche Erklärung und kennzeichne sie als Vermutung."
+        ]
+      },
+      "2": {
+        "prompt": "Ein Zeitungsartikel behauptet: „Diese Woche hat es jeden Tag geregnet.“ Prüfe die Aussage mit den Werten der Schulwetterstation (Mo 3 mm, Di 0 mm, Mi 11 mm, Do 6 mm, Fr 2 mm) und beurteile sie.",
+        "hints": [
+          "Was sagen die Werte über jeden Tag?",
+          "Für welchen Ort gelten die Messungen?"
+        ],
+        "model": "Laut Messung fiel am Dienstag kein Niederschlag. An den anderen vier Tagen wurde Niederschlag gemessen, am meisten am Mittwoch mit 11 mm. Die Aussage stimmt also für unseren Schulort nicht ganz: Es regnete an vier von fünf Tagen. Allerdings gelten unsere Werte nur für einen Ort; an anderen Orten kann es auch am Dienstag geregnet haben. Ich würde schreiben: „An vier von fünf Tagen hat es bei uns geregnet.“",
+        "criteria": [
+          "Ich prüfe die Aussage Tag für Tag mit den Werten.",
+          "Ich beachte, dass eine Messung nur für einen Ort gilt.",
+          "Ich formuliere ein begründetes Urteil."
+        ]
+      }
+    },
+    "figures": [
+      "diagramm-arten"
+    ]
+  },
+  {
+    "id": "geogym5-diagramm",
+    "lb": 1,
+    "title": "Tabellen anlegen und Diagramme zeichnen",
+    "period": "LB 1 · Säulen- und Balkendiagramme",
+    "intro": "Aus deinen eigenen Messwerten wird mit Lineal und Bleistift ein übersichtliches Diagramm.",
+    "paragraphs": [
+      "Bevor du ein Diagramm zeichnest, legst du eine übersichtliche Tabelle an. Sie hat eine Überschrift, beschriftete Spalten, die Einheit (zum Beispiel mm oder °C) und das Datum der Messung. Für das Diagramm brauchst du zwei Achsen. Beim Säulendiagramm stehen auf der waagrechten Achse die Tage oder Orte, auf der senkrechten Achse die Werte. Wähle die Einteilung der Achse so, dass auch der größte Wert gut auf das Blatt passt, zum Beispiel 1 cm für 2 mm Niederschlag.",
+      "Dann zeichnest du für jeden Wert eine gleich breite Säule bis zur richtigen Höhe und lässt zwischen den Säulen kleine Lücken. Beim Balkendiagramm liegen die Balken waagrecht. Das ist praktisch, wenn die Beschriftungen lang sind, etwa bei Städte- oder Bergnamen. Zum Schluss ergänzt du die Überschrift, die Beschriftung der Achsen mit Einheit und die Quelle. Beispiel: Bei der Einteilung 1 cm für 2 mm wird die Säule für 11 mm Niederschlag 5,5 cm hoch, denn 11 : 2 = 5,5."
+    ],
+    "takeaway": "Tabelle mit Überschrift und Einheit, zwei beschriftete Achsen, eine passende Einteilung und gleich breite Säulen: So wird ein Diagramm übersichtlich.",
+    "sourceIds": [
+      "lehrplan",
+      "kx-niederschlag",
+      "dwd"
+    ],
+    "quiz": {
+      "question": "Die Achse eines Säulendiagramms ist so eingeteilt: 1 cm entspricht 2 mm Niederschlag. Wie hoch zeichnest du die Säule für 6 mm?",
+      "answer": "3 cm",
+      "wrong": [
+        "6 cm",
+        "12 cm"
+      ],
+      "explanation": "6 mm : 2 mm je Zentimeter = 3 cm. Wer 12 cm zeichnet, hat mit 2 malgenommen statt geteilt."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Ein Säulendiagramm zeichnen",
+      "instruction": "Bringe die Schritte mit den Pfeilen in die richtige Reihenfolge: den ersten nach oben. Prüfe dann deine Reihenfolge.",
+      "categories": [],
+      "entries": [
+        {
+          "text": "Die Messwerte in eine Tabelle mit Überschrift und Einheit eintragen",
+          "target": 0,
+          "feedback": "Die Tabelle ist die Grundlage."
+        },
+        {
+          "text": "Den größten Wert suchen und eine passende Einteilung der Achse wählen",
+          "target": 1,
+          "feedback": "Die Einteilung kommt vor dem Zeichnen."
+        },
+        {
+          "text": "Die beiden Achsen zeichnen und beschriften",
+          "target": 2,
+          "feedback": "Achsen mit Einheit und Einteilung."
+        },
+        {
+          "text": "Für jeden Wert eine gleich breite Säule zeichnen",
+          "target": 3,
+          "feedback": "Jetzt erst entstehen die Säulen."
+        },
+        {
+          "text": "Überschrift und Quelle ergänzen und das Diagramm prüfen",
+          "target": 4,
+          "feedback": "Zum Schluss wird das Diagramm vollständig."
+        }
+      ],
+      "conclusion": "Die Einteilung der Achse kommt vor den Säulen. Sonst passt der größte Wert nicht mehr aufs Blatt."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Lege für die Tagesmitteltemperaturen 8 °C, 10 °C, 7 °C, 5 °C und 9 °C (Montag bis Freitag) eine Tabelle an und beschreibe, wie du daraus ein Säulendiagramm zeichnest.",
+        "hints": [
+          "Welche Teile gehören in die Tabelle?",
+          "Welche Einteilung wählst du, und wie hoch werden die Säulen?"
+        ],
+        "model": "Meine Tabelle hat die Überschrift „Tagesmitteltemperatur an unserer Schule“, eine Zeile mit den Tagen Montag bis Freitag und eine Zeile mit den Werten in °C. Der größte Wert ist 10 °C, deshalb wähle ich 1 cm für 2 °C; die senkrechte Achse ist dann 5 cm hoch. Auf der waagrechten Achse trage ich die fünf Tage ein. Die Säulen werden 4 cm, 5 cm, 3,5 cm, 2,5 cm und 4,5 cm hoch. Zum Schluss beschrifte ich die Achsen mit der Einheit und schreibe die Überschrift dazu.",
+        "criteria": [
+          "Meine Tabelle hat Überschrift, Tage und Einheit.",
+          "Ich wähle eine Einteilung passend zum größten Wert.",
+          "Ich berechne die Säulenhöhen richtig."
+        ]
+      },
+      "2": {
+        "prompt": "Du willst die Höhen von fünf Bergen vergleichen: Zugspitze 2962 m, Watzmann 2713 m, Feldberg 1493 m, Großer Arber 1456 m und Brocken 1141 m. Begründe, ob ein Säulen- oder ein Balkendiagramm besser passt, und wähle eine sinnvolle Einteilung.",
+        "hints": [
+          "Welche Beschriftungen sind lang?",
+          "Wie lang wird der längste Balken bei deiner Einteilung?"
+        ],
+        "model": "Beides ist möglich. Ein Balkendiagramm ist hier praktischer, weil Namen wie „Großer Arber“ lang sind und waagrecht gut neben die Balken passen. Der größte Wert ist 2962 m. Bei 1 cm für 500 m wird der Balken der Zugspitze knapp 6 cm lang, denn 2962 : 500 ist etwa 5,9. Der Balken des Brockens wird etwa 2,3 cm lang. Ich sortiere die Berge nach der Höhe, damit man sie gut vergleichen kann, und gebe die Quelle an.",
+        "criteria": [
+          "Ich begründe die Wahl der Diagrammart.",
+          "Ich wähle eine Einteilung, mit der der größte Wert aufs Blatt passt.",
+          "Ich berechne mindestens eine Balkenlänge richtig."
+        ]
+      }
+    },
+    "figures": [],
+    "lab": "saeulen"
+  },
+  {
+    "id": "geogym5-exkursion",
+    "lb": 1,
+    "title": "Eine Erkundung vorbereiten und durchführen",
+    "period": "LB 1 · Exkursion und Unterrichtsgang",
+    "intro": "Draußen wird Geographie lebendig. Eine gute Erkundung beginnt mit einer klaren Leitfrage.",
+    "paragraphs": [
+      "Bei einer Exkursion oder einem Unterrichtsgang erkundet ihr einen Raum vor Ort, zum Beispiel einen Bach, ein Dorf oder die Fußgängerzone. Zur Vorbereitung gehört eine Leitfrage, etwa: „Wie wird unsere Hauptstraße genutzt?“ Danach verteilt ihr die Aufgaben: Wer zählt, wer misst, wer fotografiert, wer kartiert? Ihr packt Karte, Klemmbrett, Stift, Messgeräte und wettergerechte Kleidung ein und vereinbart Treffpunkt und Regeln: zusammenbleiben, auf den Verkehr achten, Privatgrund und Natur respektieren.",
+      "Vor Ort beobachtet, messt, zählt und notiert ihr. Jede Beobachtung bekommt Ort und Uhrzeit. Zurück in der Schule wertet ihr die Ergebnisse aus: Es entstehen Tabellen, Diagramme und Kartenskizzen, und ihr beantwortet die Leitfrage. Zum Schluss präsentiert ihr die Ergebnisse und überlegt, was beim nächsten Mal besser laufen kann. Beispiel: Bei einem Unterrichtsgang zum Bach misst eine Gruppe die Wassertemperatur, eine zweite zeichnet eine Skizze des Ufers und eine dritte fotografiert Spuren von Hochwasser."
+    ],
+    "takeaway": "Vorbereiten (Leitfrage, Aufgaben, Material, Regeln), durchführen (beobachten, messen, notieren), auswerten und präsentieren.",
+    "sourceIds": [
+      "lehrplan",
+      "bayernatlas",
+      "kx-wetter"
+    ],
+    "quiz": {
+      "question": "Womit beginnt die Vorbereitung einer Erkundung?",
+      "answer": "mit einer Leitfrage",
+      "wrong": [
+        "mit dem Fotografieren vor Ort",
+        "mit der Präsentation der Ergebnisse"
+      ],
+      "explanation": "Die Leitfrage legt fest, was ihr beobachtet und messt. Ohne sie sammelt ihr viele Daten, die nichts beantworten."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Vorbereiten, durchführen oder auswerten?",
+      "instruction": "Ordne jede Aussage zu und prüfe dann deine Zuordnung. Begründe deine Wahl zuerst für dich.",
+      "categories": [
+        "vorbereiten",
+        "durchführen",
+        "auswerten"
+      ],
+      "entries": [
+        {
+          "text": "Eine Leitfrage formulieren",
+          "target": 0,
+          "feedback": "Die Leitfrage steht am Anfang."
+        },
+        {
+          "text": "Material packen und Aufgaben verteilen",
+          "target": 0,
+          "feedback": "Das geschieht vor dem Aufbruch."
+        },
+        {
+          "text": "Die Wassertemperatur am Bach messen und notieren",
+          "target": 1,
+          "feedback": "Messen geschieht vor Ort."
+        },
+        {
+          "text": "Jede Beobachtung mit Ort und Uhrzeit festhalten",
+          "target": 1,
+          "feedback": "So bleiben Beobachtungen nachprüfbar."
+        },
+        {
+          "text": "Aus den Zähllisten ein Säulendiagramm zeichnen",
+          "target": 2,
+          "feedback": "Das Diagramm entsteht nach der Erkundung."
+        },
+        {
+          "text": "Die Leitfrage mit den Ergebnissen beantworten",
+          "target": 2,
+          "feedback": "Die Antwort schließt die Auswertung ab."
+        }
+      ],
+      "conclusion": "Eine Erkundung hat drei Phasen. Die Leitfrage verbindet sie."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Plane einen Unterrichtsgang zu einem Bach in der Nähe deiner Schule. Formuliere eine Leitfrage und nenne drei Aufgaben für Gruppen.",
+        "hints": [
+          "Was willst du am Bach herausfinden?",
+          "Welche Aufgaben passen zu deiner Leitfrage?"
+        ],
+        "model": "Unsere Leitfrage lautet: „Wie verändert sich der Bach zwischen der Brücke und dem Waldrand?“ Gruppe 1 misst an drei Stellen die Breite und die Wassertemperatur und notiert die Uhrzeit. Gruppe 2 zeichnet eine Kartenskizze des Bachlaufs mit Ufer, Brücke und Pflanzen. Gruppe 3 fotografiert Spuren von Hochwasser und Müll und markiert die Fundorte auf der Karte. Wir nehmen Klemmbretter, ein Thermometer, ein Maßband und Gummistiefel mit und bleiben in Sichtweite.",
+        "criteria": [
+          "Meine Leitfrage lässt sich vor Ort beantworten.",
+          "Die drei Aufgaben passen zur Leitfrage.",
+          "Ich nenne Material oder eine Regel."
+        ]
+      },
+      "2": {
+        "prompt": "Nach der Erkundung stellt eure Gruppe fest, dass zwei Thermometer an derselben Stelle um 3 °C voneinander abweichen. Erkläre mögliche Gründe und wie ihr damit umgeht.",
+        "hints": [
+          "Was kann bei einer Messung schiefgehen?",
+          "Wie geht man ehrlich mit abweichenden Werten um?"
+        ],
+        "model": "Vielleicht lag ein Thermometer in der Sonne und das andere im Schatten, oder eines ist ungenau. Möglich ist auch, dass jemand zu früh abgelesen hat, bevor sich die Anzeige eingestellt hatte. Wir notieren beide Werte, vergleichen die Geräte in der Schule nebeneinander und messen beim nächsten Mal mehrmals an derselben Stelle. In der Präsentation sagen wir offen, dass die Werte abweichen und warum.",
+        "criteria": [
+          "Ich nenne mindestens zwei mögliche Ursachen.",
+          "Ich schlage vor, wie man die Messung prüft oder verbessert.",
+          "Ich gehe ehrlich mit der Abweichung um."
+        ]
+      }
+    },
+    "figures": [
+      "exkursion"
+    ]
+  }
+]
