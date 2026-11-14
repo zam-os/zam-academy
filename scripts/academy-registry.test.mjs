@@ -647,3 +647,40 @@ test("package details place the opening link after the title and reset a previou
     assert.deepEqual(link.children, ["Paket öffnen →"]);
   }
 });
+
+test("NT is reachable through all three science paths in both lenses and counts nt-mittelschule-5 once", () => {
+  const trees = atlasTrees();
+  for (const grade of [5, 6, 7, 8, 9, 10]) {
+    const offers = [];
+    for (const path of ["biologie", "chemie", "physik"]) {
+      const node = schoolSubject(trees, grade, path).children.find(
+        (n) => n.school?.id === "mittelschule",
+      );
+      const pkg = pakete.find(
+        (p) => p.fach === "nt" && p.school === "mittelschule" && p.grade === grade,
+      );
+      if (pkg) {
+        assert.equal(node.pkg, pkg);
+        assert.equal(node.planned, false);
+        assert.equal(node.offerKey, `package:${pkg.id}`);
+      } else {
+        assert.equal(node.combination.id, "nt");
+        assert.equal(node.label, "Natur und Technik");
+        assert.equal(node.planned, true);
+      }
+      offers.push(node.offerKey);
+      const worldSubject = trees.welt.children
+        .flatMap((n) => n.children)
+        .find((n) => n.id === path);
+      assert.ok(
+        worldSubject.children.some(
+          (n) =>
+            n.grade === grade &&
+            n.school?.id === "mittelschule" &&
+            n.offerKey === node.offerKey,
+        ),
+      );
+    }
+    assert.equal(new Set(offers).size, 1);
+  }
+});

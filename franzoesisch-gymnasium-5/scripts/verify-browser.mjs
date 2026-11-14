@@ -1,10 +1,21 @@
 import { spawn } from "node:child_process";
-import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import {
+	mkdirSync,
+	mkdtempSync,
+	readFileSync,
+	rmSync,
+	writeFileSync,
+} from "node:fs";
 import assert from "node:assert/strict";
-const root = new URL("../", import.meta.url).pathname.replace(/\/$/, "");
+import { tmpdir } from "node:os";
+import { join } from "node:path";
+import { fileURLToPath, pathToFileURL } from "node:url";
+const root = fileURLToPath(new URL("../", import.meta.url));
 const output = process.env.BROWSER_QA_DIR ?? "/private/tmp/zam-f5-browser";
 mkdirSync(output, { recursive: true });
 const lessons = JSON.parse(readFileSync(`${root}/src/curriculum/lessons.json`));
+// Each run needs fresh evidence: a saved partner checkbox must not flip to false.
+const profile = mkdtempSync(join(tmpdir(), "zam-french5-browser-"));
 const chrome = spawn(
 	process.env.CHROME_BIN ??
 		"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
@@ -17,7 +28,7 @@ const chrome = spawn(
 		"--disable-sync",
 		"--disable-default-apps",
 		"--no-default-browser-check",
-		"--user-data-dir=/private/tmp/zam-f5-chrome-profile",
+		`--user-data-dir=${profile}`,
 		"about:blank",
 	],
 	{ stdio: ["ignore", "ignore", "pipe", "pipe", "pipe"] },
@@ -25,6 +36,10 @@ const chrome = spawn(
 let seq = 0,
 	buffer = "";
 const pending = new Map();
+const closed = new Promise((resolve) => chrome.once("close", resolve));
+chrome.on("error", (error) => {
+	for (const job of pending.values()) job.reject(error);
+});
 let errors = [];
 let requests = [];
 chrome.stdio[4].on("data", (chunk) => {
@@ -38,6 +53,7 @@ chrome.stdio[4].on("data", (chunk) => {
 		if (msg.id) {
 			const job = pending.get(msg.id);
 			pending.delete(msg.id);
+			if (!job) continue;
 			if (msg.error) job.reject(Error(JSON.stringify(msg.error)));
 			else job.resolve(msg.result);
 		} else {
@@ -51,7 +67,20 @@ chrome.stdio[4].on("data", (chunk) => {
 function send(method, params = {}, sessionId) {
 	return new Promise((resolve, reject) => {
 		const id = ++seq;
-		pending.set(id, { resolve, reject });
+		const timer = setTimeout(() => {
+			pending.delete(id);
+			reject(Error(`Chrome timed out: ${method}`));
+		}, 15000);
+		pending.set(id, {
+			resolve: (value) => {
+				clearTimeout(timer);
+				resolve(value);
+			},
+			reject: (error) => {
+				clearTimeout(timer);
+				reject(error);
+			},
+		});
 		chrome.stdio[3].write(
 			JSON.stringify({
 				id,
@@ -104,7 +133,9 @@ try {
 		deviceScaleFactor: 1,
 		mobile: false,
 	});
-	await page("Page.navigate", { url: `file://${root}/dist/index.html` });
+	await page("Page.navigate", {
+		url: pathToFileURL(join(root, "dist/index.html")).href,
+	});
 	for (let i = 0; i < 100; i++) {
 		if (await evaluate('!!document.querySelector(".hero")')) break;
 		await new Promise((r) => setTimeout(r, 25));
@@ -212,6 +243,26 @@ try {
 		).includes("0 von 40"),
 	);
 	await route("#lesson=f5-heures&level=2");
+	for (const [hour, name] of [
+		[0, "minuit"],
+		[12, "midi"],
+	]) {
+		for (const [minute, suffix] of [
+			[0, ""],
+			[15, " quinze"],
+			[30, " trente"],
+			[45, " quarante-cinq"],
+		]) {
+			await evaluate(
+				`var h=document.querySelector('#clock-hour');h.value=${JSON.stringify(String(hour))};h.dispatchEvent(new Event('input'));var m=document.querySelector('#clock-minute');m.value=${JSON.stringify(String(minute))};m.dispatchEvent(new Event('change'));`,
+			);
+			assert.equal(
+				await evaluate('document.querySelector("#clock-readout").textContent'),
+				`${String(hour).padStart(2, "0")}:${String(minute).padStart(2, "0")} · ${name}${suffix}`,
+			);
+		}
+		await screenshot(`clock-${name}`);
+	}
 	await evaluate(
 		`var hour=document.querySelector('#clock-hour');hour.value='21';hour.dispatchEvent(new Event('input'));var minute=document.querySelector('#clock-minute');minute.value='45';minute.dispatchEvent(new Event('change'));`,
 	);
@@ -229,6 +280,14 @@ try {
 		"11",
 	);
 	await route("#lesson=f5-france&level=1");
+	assert.equal(
+		await evaluate('document.querySelectorAll("[data-city]").length'),
+		6,
+	);
+	assert.equal(
+		await evaluate('document.querySelectorAll("[data-river]").length'),
+		4,
+	);
 	await evaluate('document.querySelector("[data-map-focus=rivers]").click()');
 	assert.equal(
 		await evaluate(
@@ -237,6 +296,15 @@ try {
 		"0.18",
 	);
 	await screenshot("map-interaction");
+	await route("#lesson=f5-famille&level=1");
+	await evaluate(
+		'Array.from(document.querySelectorAll(".quiz-choice")).find(el=>el.textContent==="ma mère").click()',
+	);
+	assert.ok(
+		(
+			await evaluate('document.querySelector("#quiz-feedback").innerText')
+		).includes("Lina spricht selbst"),
+	);
 	await route("#lesson=f5-sons&level=1");
 	// No installed voice is required: partner evidence is a complete accessible fallback.
 	await evaluate('document.querySelector("#partner-listened").click()');
@@ -311,6 +379,8 @@ try {
 					"clock",
 					"number slider",
 					"map layers",
+					"midnight/noon clock labels",
+					"first-person possessive quiz",
 					"partner listening",
 				],
 			},
@@ -323,4 +393,11 @@ try {
 	);
 } finally {
 	chrome.kill();
+	await closed;
+	rmSync(profile, {
+		recursive: true,
+		force: true,
+		maxRetries: 5,
+		retryDelay: 100,
+	});
 }

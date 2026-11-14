@@ -1,0 +1,420 @@
+[
+  {
+    "id": "nt5-forscherweg",
+    "lb": 1,
+    "title": "Wie Naturwissenschaftler forschen",
+    "period": "NT5 LB 1 · Erkenntnisweg",
+    "intro": "Warum beschlagen kalte Brillen im warmen Zimmer oder löst sich Zucker im heißen Tee schneller? Jede Entdeckung beginnt mit genauem Hinsehen und einer klaren Frage.",
+    "paragraphs": [
+      "Am Anfang steht ein Alltagsphänomen, also etwas, das du selbst beobachten kannst. Daraus formulierst du eine genaue Fragestellung, zum Beispiel: „Löst sich ein Stück Würfelzucker in warmem Wasser schneller als in kaltem Wasser?“ Bevor du loslegst, überlegst du dir eine begründete Vermutung.",
+      "Danach planst du einen einfachen Versuch nach Anleitung und achtest auf die Sicherheitsregeln. Beim Experimentieren untersuchst und vergleichst du genau. Wichtig ist, immer nur eine Bedingung auf einmal zu verändern: Wenn du die Wassertemperatur testest, nimmst du in beiden Gläsern gleich viel Wasser und gleich große Zuckerstücke. Am Schluss wertest du deine Beobachtung aus und prüfst, ob deine Vermutung stimmt."
+    ],
+    "takeaway": "Der naturwissenschaftliche Erkenntnisweg verläuft in klaren Schritten: Alltagsphänomen beobachten → Frage stellen → Vermutung aufstellen → Versuch mit nur einer veränderten Bedingung durchführen → beobachten und auswerten.",
+    "sourceIds": ["lehrplan", "kx-naturwissenschaft", "kx-experiment"],
+    "quiz": {
+      "question": "Du willst testen, ob sich Salz in warmem Wasser schneller löst als in kaltem. Was muss in beiden Gläsern gleich bleiben?",
+      "answer": "Die Wassermenge und die Salzmenge müssen in beiden Gläsern genau gleich groß sein.",
+      "wrong": [
+        "Im warmen Glas muss man zusätzlich kräftig umrühren und im kalten nicht.",
+        "Man nimmt zuerst eine große Portion Grobsalz und im zweiten Glas feines Speisesalz."
+      ],
+      "explanation": "Nur wenn alle übrigen Bedingungen gleich bleiben (gleiche Wasser- und Salzmenge, gleiches Rühren), erkennst du eindeutig die Wirkung der Temperatur."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Schritte einer Untersuchung ordnen",
+      "instruction": "Bringe die fünf Arbeitsschritte beim naturwissenschaftlichen Forschen in die richtige Reihenfolge von oben nach unten.",
+      "categories": [],
+      "entries": [
+        {
+          "text": "Beobachten und eine genaue Fragestellung formulieren",
+          "target": 0,
+          "feedback": "Zuerst beobachtest du genau und stellst eine klare Frage."
+        },
+        {
+          "text": "Eine begründete Vermutung aufstellen",
+          "target": 1,
+          "feedback": "Vor dem Versuch überlegst du, welches Ergebnis du erwartest."
+        },
+        {
+          "text": "Sicherheitsregeln klären und den Versuch nach Anleitung aufbauen",
+          "target": 2,
+          "feedback": "Erst nach dem Sicherheitscheck baust du die Geräte nach Anleitung auf."
+        },
+        {
+          "text": "Versuch durchführen und die Vorgänge genau beobachten",
+          "target": 3,
+          "feedback": "Beim Versuch beobachtest du ohne vorschnell zu raten."
+        },
+        {
+          "text": "Ergebnis auswerten und mit der Vermutung vergleichen",
+          "target": 4,
+          "feedback": "Zum Schluss beantwortest du die Ausgangsfrage und prüfst deine Vermutung."
+        }
+      ],
+      "conclusion": "Mit dieser festen Schrittfolge lassen sich Versuche nachvollziehbar überprüfen und miteinander vergleichen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Beschreibe Schritt für Schritt, wie du untersuchst, ob ein nasses Papiertaschentuch in der Sonne schneller trocknet als im Schatten.",
+        "hints": [
+          "Nenne zuerst deine Vermutung und welche eine Bedingung sich zwischen den beiden Tüchern unterscheidet.",
+          "Überlege, welche zwei Dinge bei beiden Tüchern unbedingt gleich bleiben müssen."
+        ],
+        "model": "Ich stelle zuerst die Frage, ob Wärme und Sonnenlicht das Trocknen beschleunigen, und vermute, dass das Tuch in der Sonne schneller trocknet. Dafür lege ich zwei gleich große und gleich stark angefeuchtete Papiertücher aus: eines an einen sonnigen Platz, das andere gleichzeitig an einen schattigen Platz ohne Windzug. Alle fünf Minuten prüfe ich beide Tücher durch vorsichtiges Befühlen und vergleiche, welches zuerst trocken ist.",
+        "criteria": [
+          "Eine klare Frage und eine Vermutung stehen am Anfang.",
+          "Nur der Standort (Sonne gegen Schatten) ändert sich; Größe, Feuchtigkeit und Zeit sind gleich.",
+          "Du beschreibst, wie das Ergebnis geprüft wird."
+        ]
+      },
+      "2": {
+        "prompt": "Lena testet, welche Papierhandtuchmarke mehr Wasser aufsaugt. Sie taucht ein kleines Stück von Marke A fünf Sekunden in kaltes Wasser und ein großes Stück von Marke B zwanzig Sekunden in warmes Wasser. Erkläre, warum ihr Ergebnis nicht aussagekräftig ist, und schlage eine faire Untersuchung vor.",
+        "hints": [
+          "Prüfe, wie viele Bedingungen Lena gleichzeitig geändert hat.",
+          "Achte auf Stückgröße, Wassertemperatur und Eintauchzeit."
+        ],
+        "model": "Lenas Vergleich ist nicht fair, weil sie drei Bedingungen gleichzeitig verändert hat: die Größe des Tuchs, die Eintauchdauer und die Wassertemperatur. Man weiß deshalb nicht, ob ein Unterschied wirklich an der Papiermarke liegt. Für einen fairen Versuch schneidet sie von beiden Marken genau gleich große Streifen zu, taucht beide gleichzeitig zehn Sekunden lang bei gleicher Wassertemperatur ein und misst danach, wie viel Milliliter Wasser im Messbecher fehlen.",
+        "criteria": [
+          "Du benennst mehrere unnötig veränderte Bedingungen.",
+          "Du erklärst, warum man so keinen sicheren Schluss auf die Marke ziehen kann.",
+          "Dein neuer Plan verändert nur die Papiermarke und hält alle anderen Größen gleich."
+        ]
+      }
+    },
+    "figures": ["forscherweg"]
+  },
+  {
+    "id": "nt5-geraete-und-protokoll",
+    "lb": 1,
+    "title": "Laborgeräte nutzen und Versuche protokollieren",
+    "period": "NT5 LB 1 · Geräte & Protokoll",
+    "intro": "Im Fachraum stehen besondere Gläser, Waagen und Werkzeuge bereit. Damit ein Versuch gelingt und jeder ihn wiederholen kann, hältst du Ablauf und Ergebnis genau fest.",
+    "paragraphs": [
+      "Jedes einfache Laborgerät hat seine eigene Aufgabe: Im Becherglas mischst du Stoffe oder schätzt Flüssigkeitsmengen ab. Das schmale Reagenzglas fasst kleine Stoffproben und steht sicher im Reagenzglasständer. Mit dem Trichter füllst du Flüssigkeiten kleckerfrei um oder hältst ein Filterpapier. Die Lupe vergrößert feine Körner oder Oberflächen, die Waage bestimmt die Masse in Gramm und das Thermometer misst die Temperatur in Grad Celsius.",
+      "Ein Versuchsprotokoll ordnet deine Arbeit übersichtlich nach festen Punkten: Frage, Vermutung, Geräte und Materialien, Aufbau und Durchführung, Beobachtung sowie Auswertung. Achte besonders auf den Unterschied zwischen Beobachtung und Auswertung: Unter Beobachtung notierst du nur das, was deine Sinne oder Messgeräte zeigen (zum Beispiel „Die Flüssigkeit trübt sich weiß“). Erst in der Auswertung erklärst du, was das bedeutet."
+    ],
+    "takeaway": "Nutze jedes Laborgerät sachgerecht nach Anleitung und trenne im Versuchsprotokoll streng zwischen reiner Beobachtung und erklärender Auswertung.",
+    "sourceIds": ["lehrplan", "kx-experiment"],
+    "quiz": {
+      "question": "Welcher Satz gehört im Versuchsprotokoll eindeutig in den Abschnitt „Beobachtung“ und noch nicht in die „Auswertung“?",
+      "answer": "Nach zehn Sekunden steigen kleine Bläschen auf und das Wasser erwärmt sich auf 38 °C.",
+      "wrong": [
+        "Das Salz löst sich, weil sich Wasserteilchen zwischen die Salzteilchen schieben.",
+        "Der Stoff ist ein Wärmeleiter, da Metall die Energie gut weitergibt."
+      ],
+      "explanation": "Bläschensehen und eine Temperatur von 38 °C ablesen sind reine Wahrnehmungen und Messwerte. Erklärungen mit Teilchen oder Eigenschaften gehören in die Auswertung."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Passendes Gerät zur Aufgabe wählen",
+      "instruction": "Ordne jede Aufgabe im Fachraum dem passenden Gerät zu.",
+      "categories": [
+        "Becherglas oder Reagenzglas",
+        "Trichter",
+        "Lupe",
+        "Waage oder Thermometer"
+      ],
+      "entries": [
+        {
+          "text": "Kleine Salzprobe mit drei Tropfen Wasser schütteln und prüfen",
+          "target": 0,
+          "feedback": "Richtig: Kleine Proben kommen ins Reagenzglas im Ständer."
+        },
+        {
+          "text": "Zuckerkristalle oder die Körnung von Sand genau betrachten",
+          "target": 2,
+          "feedback": "Stimmt: Die Lupe vergrößert kleine Strukturen deutlich."
+        },
+        {
+          "text": "Wasser sicher durch ein Filterpapier in ein enges Gefäß gießen",
+          "target": 1,
+          "feedback": "Richtig: Der Trichter hält den Filter und verhindert Verschütten."
+        },
+        {
+          "text": "Genau 15 g Kochsalz abwiegen oder 40 °C Wassertemperatur prüfen",
+          "target": 3,
+          "feedback": "Richtig: Masse misst die Waage in Gramm, Temperatur das Thermometer in °C."
+        }
+      ],
+      "conclusion": "Wer für jede Messung und Arbeit das richtige Werkzeug wählt, arbeitet sicher, sauber und genau."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Du rührst einen Teelöffel Sand in ein Becherglas mit kaltem Wasser und lässt es drei Minuten stehen. Formuliere dazu je zwei Sätze für den Abschnitt „Beobachtung“ und den Abschnitt „Auswertung“.",
+        "hints": [
+          "Bei der Beobachtung darf noch keine Erklärung stehen – schreibe nur, was du im Glas siehst.",
+          "In der Auswertung erklärst du mit Fachbegriffen, ob sich Sand gelöst hat."
+        ],
+        "model": "Beobachtung: Beim Umrühren wird das Wasser trüb und Sandkörner wirbeln durch das ganze Glas. Nach drei Minuten Stehen setzt sich der Sand vollständig am Boden ab und das Wasser darüber wird wieder klar. Auswertung: Sand löst sich in kaltem Wasser nicht auf. Deshalb sinken die schweren Sandkörner wieder nach unten.",
+        "criteria": [
+          "Beobachtung beschreibt nur sichtbare Vorgänge ohne „weil“.",
+          "Auswertung erklärt eindeutig die fehlende Wasserlöslichkeit von Sand.",
+          "Beide Abschnitte sind klar getrennt."
+        ]
+      },
+      "2": {
+        "prompt": "Im Schülertisch liegt ein Protokollzettel ohne Überschriften: (A) „Schutzbrille auf, 100 ml Wasser ins Becherglas geben.“ (B) „Bei 22 °C bleibt die Kerze fest, bei 60 °C schmilzt das Wachs.“ (C) „Wachs wird durch Erwärmen flüssig.“ Ordne die Sätze den Protokollpunkten zu und nenne ein fehlendes Pflichtfeld.",
+        "hints": [
+          "Denke an die fünf Grundbausteine eines Protokolls.",
+          "Welcher Punkt legt vorher fest, was man herausfinden möchte?"
+        ],
+        "model": "Satz A gehört zur Durchführung (Arbeitsschritt), Satz B zur Beobachtung (gemessener und sichtbarer Befund) und Satz C zur Auswertung (Schlussfolgerung). Es fehlen die Fragestellung und die Vermutung am Anfang sowie eine eigene Liste der verwendeten Geräte und Materialien (z. B. Becherglas, Thermometer, Wachs).",
+        "criteria": [
+          "Alle drei Sätze sind dem richtigen Protokollabschnitt zugeordnet.",
+          "Mindestens zwei fehlende Abschnitte (z. B. Fragestellung, Vermutung oder Geräteliste) sind benannt.",
+          "Die Begründung erklärt den Unterschied zwischen Durchführung und Beobachtung."
+        ]
+      }
+    },
+    "figures": ["laborgeraete", "versuchsprotokoll"]
+  },
+  {
+    "id": "nt5-gefahrstoffe-und-sicherheit",
+    "lb": 1,
+    "title": "Gefahrstoffe erkennen und sicher experimentieren",
+    "period": "NT5 LB 1 · Sicherheit & Gesundheit",
+    "intro": "Ob Rohrreiniger im Haushalt oder Spiritus im Fachraum: Manche Stoffe können brennen, die Haut verätzen oder den Augen schaden. Sicherheitsregeln haben immer einen guten Grund.",
+    "paragraphs": [
+      "Auf vielen Flaschen in Schule und Haushalt kleben rot umrandete Rauten mit schwarzen Zeichen, sogenannte Gefahrstoffpiktogramme. Eine Flamme warnt vor leicht entzündbaren Stoffen, die nicht in die Nähe von Kerzen oder Funken dürfen. Ein Ausrufezeichen weist auf reizende oder gesundheitsschädliche Mittel hin. Tropfen auf Hand und Metall bedeuten Ätzwirkung: Solche Stoffe greifen Haut, Augen und Werkstoffe direkt an.",
+      "Jede Sicherheitsregel beim Experimentieren schützt deine Gesundheit gezielt: Eine Schutzbrille hält Spritzer von den empfindlichen Augen fern. Lange Haare werden zusammengebunden, damit sie beim Bücken über das Arbeitsfeld nicht an Flammen geraten oder in Flüssigkeiten tauchen. Im Fachraum isst, trinkst und kostest du niemals unbekannte Stoffe, weil schon kleinste Reste giftig oder reizend sein können."
+    ],
+    "takeaway": "Gefahrstoffpiktogramme warnen auf einen Blick vor Brand-, Reiz- oder Ätzgefahren; feste Laborregeln wie Schutzbrille und Kostverbot schützen Körper und Gesundheit vorbeugend.",
+    "sourceIds": ["lehrplan", "wp-ghs", "kx-gesundheit"],
+    "quiz": {
+      "question": "Warum darfst du im Natur-und-Technik-Raum niemals eine klare Flüssigkeit durch Probieren untersuchen, auch wenn sie aussieht wie Wasser?",
+      "answer": "Viele gefährliche Flüssigkeiten wie Säure oder Alkohol sind ebenfalls farblos und können Schleimhäute verätzen oder vergiften.",
+      "wrong": [
+        "Weil man im Stehen beim Experimentieren keinen Geschmack spürt.",
+        "Weil Flüssigkeiten im Becherglas sofort verdampfen, sobald sie die Zunge berühren."
+      ],
+      "explanation": "Aussehen und Klarheit verraten keine Gefährlichkeit. Viele Lösungen sind glasklar und dennoch stark ätzend oder gesundheitsschädlich."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Gefahr und passende Schutzmaßnahme verknüpfen",
+      "instruction": "Ordne jede Gefahrensituation der wichtigsten Schutzregel zu.",
+      "categories": [
+        "Schutzbrille tragen",
+        "Von Zündquellen fernhalten",
+        "Schutzhandschuhe / Vorsicht vor Hautkontakt",
+        "Haare zusammenbinden & Arbeitsplatz frei halten"
+      ],
+      "entries": [
+        {
+          "text": "Reiniger trägt das Ätz-Piktogramm (Tropfen auf Hand und Fläche)",
+          "target": 2,
+          "feedback": "Stimmt: Ätzende Flüssigkeiten schädigen Haut und Gewebe sofort."
+        },
+        {
+          "text": "Auf einer Flasche mit Brennspiritus ist das Flammen-Symbol abgebildet",
+          "target": 1,
+          "feedback": "Richtig: Entzündbare Stoffe und Dämpfe brauchen Abstand zu Feuer und Funken."
+        },
+        {
+          "text": "Beim Umfüllen von Flüssigkeiten könnten Tropfen hochspritzen",
+          "target": 0,
+          "feedback": "Genau: Die Schutzbrille schützt die besonders empfindlichen Augen."
+        },
+        {
+          "text": "Über dem Experimentiertisch steht ein Schrank oder eine Wärmequelle",
+          "target": 3,
+          "feedback": "Richtig: Zusammengebundene Haare und ein freier Tisch verhindern Hängenbleiben und Verschütten."
+        }
+      ],
+      "conclusion": "Jede einzelne Sicherheitsmaßnahme verhindert genau eine bestimmte Verletzung an Augen, Haut oder Atemwegen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre mithilfe von Fachwissen drei wichtige Sicherheitsregeln im Fachraum, bevor ihr ein Experiment mit einer unbekannten Flüssigkeit startet.",
+        "hints": [
+          "Begründe jede Regel damit, welches Körperteil oder welcher Stoff vor welcher Gefahr geschützt wird.",
+          "Denke an Schutzbrille, Trinkverbot und Arbeitsplatzordnung."
+        ],
+        "model": "Erstens tragen alle eine Schutzbrille, weil Spritzer schon in kleinster Menge die Hornhaut der Augen reizen oder verätzen können. Zweitens wird im Fachraum nicht gegessen, getrunken oder gekostet, weil farblose Flüssigkeiten giftige oder ätzende Stoffe enthalten können, die man nicht sieht. Drittens räumen wir Taschen aus den Gängen und binden lange Haare zusammen, damit niemand stolpert und Gläser umstößt.",
+        "criteria": [
+          "Drei klare Sicherheitsregeln sind genannt.",
+          "Zu jeder Regel ist begründet, welche Gefahr verhindert wird.",
+          "Du bleibst beim Schutz deiner eigenen Gesundheit sachlich und eindeutig."
+        ]
+      },
+      "2": {
+        "prompt": "Zu Hause findet Jonas unter der Spüle einen Kalkreiniger ohne Verschlusskappe, auf dem ein Ausrufezeichen in einer roten Raute klebt. Wie beurteilst du diese Situation und wie sollte er handeln?",
+        "hints": [
+          "Erkläre zuerst, was das Piktogramm bedeutet.",
+          "Entscheide über sichere Aufbewahrung und schützenden Umgang."
+        ],
+        "model": "Das Ausrufezeichen warnt davor, dass der Reiniger Haut, Augen oder Atemwege reizen kann. Ohne Kappe könnte Flüssigkeit auslaufen oder ein kleines Kind daran kommen. Jonas sollte die Flasche nicht mit bloßen Händen anfassen, keinesfalls daran riechen oder sie umfüllen, sondern sofort eine erwachsene Person informieren, damit die Flasche sicher verschlossen und außerhalb der Reichweite von Kindern aufbewahrt wird.",
+        "criteria": [
+          "Die Bedeutung des Ausrufezeichen-Piktogramms wird richtig benannt.",
+          "Das Risiko der fehlenden Kappe wird für die Gesundheit bewertet.",
+          "Eine sichere Handlungsweise ohne unüberlegtes Anfassen wird empfohlen."
+        ]
+      }
+    },
+    "figures": ["gefahrstoff-piktogramme"]
+  },
+  {
+    "id": "nt5-modelle-verstehen",
+    "lb": 1,
+    "title": "Modelle verwenden und mit der Realität vergleichen",
+    "period": "NT5 LB 1 · Modelle",
+    "intro": "Die ganze Erde passt in keinen Rucksack, und winzige Wasserteilchen sieht man mit bloßem Auge nicht. Darum nutzen Naturwissenschaftler Modelle als anschauliche Denkhilfe.",
+    "paragraphs": [
+      "Ein Modell ist immer eine vereinfachte Nachbildung eines echten Gegenstands oder Vorgangs. Ein Erdglobus zeigt zum Beispiel die Kugelform und die schräge Erdachse sehr deutlich, sodass wir Tag und Nacht erklären können. Genauso hilft ein Hautmodell aus bunten Schaumstoffschichten, den Aufbau unserer dünnen Haut zu begreifen.",
+      "Weil ein Modell vieles vereinfacht, darf man es nie mit der Realität verwechseln: Auf dem Globus ist kein echtes Wasser und keine echte Lufthülle, und im Teilchenmodell sind echte Wasserteilchen weder hart noch blau angemalt. Bei jedem Modell lohnt sich deshalb die doppelte Frage: Was zeigt das Modell sehr gut – und wo weicht es von der Wirklichkeit ab?"
+    ],
+    "takeaway": "Modelle veranschaulichen zu große, zu kleine oder verborgene Dinge der Natur, sind aber immer vereinfacht und zeigen nie alle Eigenschaften der Realität.",
+    "sourceIds": ["lehrplan", "kx-modell", "kx-naturwissenschaft"],
+    "quiz": {
+      "question": "Worin unterscheiden sich das gezeichnete Teilchenmodell von Wasser und echtes Wasser aus der Leitung?",
+      "answer": "Das Modell zeigt kugelförmige Punkte vergrößert und farbig, um Abstände zu erklären; echte Wasserteilchen sind unvorstellbar klein und nicht bunt.",
+      "wrong": [
+        "Echtes Wasser besteht aus gar keinen Teilchen, sondern nur im Modell.",
+        "Ein Modell muss immer genau genauso groß sein wie das Original."
+      ],
+      "explanation": "Modelle stellen unsichtbare Dinge stark vergrößert und farblich hervorgehoben dar, damit man Abstände und Bewegung besser versteht."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Was passt zum Modell, was zur Wirklichkeit?",
+      "instruction": "Entscheide bei jeder Aussage zum Erdglobus, ob sie den Vorteil des Modells oder einen Unterschied zur echten Erde beschreibt.",
+      "categories": [
+        "Zeigt das Modell gut (Vorteil)",
+        "Weicht von der Wirklichkeit ab (Grenze)"
+      ],
+      "entries": [
+        {
+          "text": "Man kann die schräge Erdachse leicht drehen und beleuchten",
+          "target": 0,
+          "feedback": "Richtig: Tag, Nacht und Jahreszeiten lassen sich so anschaulich zeigen."
+        },
+        {
+          "text": "Gebirge sind fast glatt aufgemalt statt viele Kilometer hoch",
+          "target": 1,
+          "feedback": "Stimmt: Die Höhenunterschiede sind stark vereinfacht dargestellt."
+        },
+        {
+          "text": "Die Ländergrenzen sind als bunte Linien aufgedruckt",
+          "target": 1,
+          "feedback": "Richtig: Auf der echten Erde gibt es keine aufgemalten Staatsgrenzen."
+        },
+        {
+          "text": "Kontinente und Weltmeere lassen sich auf einen Blick vergleichen",
+          "target": 0,
+          "feedback": "Genau: Größenverhältnisse auf der Kugel sind sofort erkennbar."
+        }
+      ],
+      "conclusion": "Gute Naturwissenschaftler wissen immer genau, was ihr Modell erklärt und was nur eine Vereinfachung ist."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Vergleiche ein Modell der Wirbelsäule aus Holzspulen und Schaumstoffscheiben mit der echten Wirbelsäule. Nenne zwei Gemeinsamkeiten und zwei Unterschiede.",
+        "hints": [
+          "Was entspricht beim Modell den Wirbeln und was den Bandscheiben?",
+          "Welche Teile des echten Körpers fehlen beim Holz-Schaumstoff-Modell?"
+        ],
+        "model": "Gemeinsamkeiten: Die festen Holzspulen stehen für die knöchernen Wirbel, und der weiche Schaumstoff dazwischen zeigt genau wie die Bandscheiben, wie Stöße abgefedert werden und Biegungen möglich sind. Unterschiede: Im Modell fehlen lebende Muskeln, Sehnen, Blutgefäße und das empfindliche Rückenmark im Inneren; außerdem besteht die echte Wirbelsäule aus Knochen und Knorpel, nicht aus Holz.",
+        "criteria": [
+          "Zwei treffende Entsprechungen (Wirbel, Bandscheiben, Abfederung) werden genannt.",
+          "Zwei Grenzen oder fehlende Teile des Originals werden benannt.",
+          "Beide Seiten sind sachlich miteinander verglichen."
+        ]
+      },
+      "2": {
+        "prompt": "In manchen Büchern wird die menschliche Haut mit einer warmen Winterjacke verglichen, die innen gepolstert und außen winddicht ist. Erkläre, wo dieser Vergleich hilft und wo er versagt.",
+        "hints": [
+          "Denke an Schutz vor Auskühlung und äußeren Einflüssen.",
+          "Welche Fähigkeiten hat lebendige Haut, die eine Jacke nicht besitzt (z. B. Tasten, Schwitzen, Nachwachsen)?"
+        ],
+        "model": "Der Vergleich hilft beim Verständnis des Schutzes: Die Oberhaut schirmt ähnlich wie ein dichter Außenstoff vor Nässe und Reibung ab, während die Fettschicht der Unterhaut wie eine Polsterung vor Kälte schützt. Der Vergleich versagt bei den lebendigen Aufgaben: Eine Jacke spürt weder Druck noch Hitze über Sinneszellen, kühlt uns nicht durch Schwitzen und heilt keine Kratzer von selbst.",
+        "criteria": [
+          "Eine sinnvolle Stärke des Vergleichs wird erklärt.",
+          "Mindestens zwei fehlende lebendige Hautfunktionen (z. B. Sinneszellen, Schwitzen, Heilung) werden genannt.",
+          "Der Unterschied zwischen Modellbild und lebendigem Organ wird deutlich."
+        ]
+      }
+    },
+    "figures": ["modell-vergleich"]
+  },
+  {
+    "id": "nt5-fachsprache-und-diagramme",
+    "lb": 1,
+    "title": "Fachsprache, Diagramme und Quellen nutzen",
+    "period": "NT5 LB 1 · Darstellung & Quellen",
+    "intro": "„Das Thermometer ging hoch“ klingt im Alltag vertraut, ist im Protokoll aber zu ungenau. Tabellen, Diagramme und die passende Fachsprache machen Ergebnisse eindeutig.",
+    "paragraphs": [
+      "Messwerte werden zuerst in einer Tabelle gesammelt. Dabei steht im Tabellenkopf sowohl die Messgröße als auch ihre Einheit, also zum Beispiel „Zeit in min“ und „Temperatur in °C“. Möchte man schnell erkennen, wie sich ein Wert verändert hat, überträgt man die Tabelle in ein Liniendiagramm oder zeichnet eine saubere Übersichtsskizze mit klaren Beschriftungsstrichen.",
+      "Auch die Wortwahl zählt: Alltagssprache wie „Zucker ist verschwunden“ ersetzt die Fachsprache durch „Zucker hat sich in Wasser gelöst“. Wenn du dich mithilfe verlässlicher Quellen zu einer Frage informierst – etwa in einem Kinderlexikon oder auf Behördenseiten zum UV-Schutz –, suchst du gezielt nach Stichwörtern, liest Überschriften und notierst die wichtigsten Fachbegriffe knapp in eigenen Worten."
+    ],
+    "takeaway": "Tabellen mit Größe und Einheit sowie Diagramme machen Messungen auf einen Blick sichtbar; Fachsprache beschreibt Phänomene genauer als die Alltagssprache.",
+    "sourceIds": ["lehrplan", "kx-naturwissenschaft", "kx-temperatur"],
+    "quiz": {
+      "question": "Welche Beschreibung formuliert das Auflösen von Kochsalz in Wasser in genauer Fachsprache?",
+      "answer": "Das Kochsalz löst sich vollständig im Wasser und bildet eine klare Salzlösung.",
+      "wrong": [
+        "Das Salz ist im Glas irgendwie weggezaubert.",
+        "Das Salz hat sich im Wasser in Luft verwandelt."
+      ],
+      "explanation": "„Löst sich auf“ und „Lösung“ benennen den Vorgang exakt. Salz verschwindet nicht und wird auch kein Gas, sondern verteilt sich fein im Wasser."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Alltagssprache oder Fachsprache?",
+      "instruction": "Ordne jede Formulierung danach, ob sie Alltagssprache oder genaue naturwissenschaftliche Fachsprache ist.",
+      "categories": ["Alltagssprache", "Fachsprache"],
+      "entries": [
+        {
+          "text": "„Der Topfgriff leitet die Hitze fast gar nicht“ → „Der Kunststoffgriff wirkt als Isolator.“",
+          "target": 1,
+          "feedback": "Richtig: Der Fachbegriff „Isolator“ beschreibt schlechte Wärmeleitung genau."
+        },
+        {
+          "text": "„Das Wasser kocht sprudelnd und wird dabei weniger, weil es wegfliegt.“",
+          "target": 0,
+          "feedback": "Stimmt: „fliegt weg“ ist Alltagssprache; fachsprachlich verdampft das Wasser."
+        },
+        {
+          "text": "„Bei 25 °C liegt die Temperatur höher als beim Gefrierpunkt von Wasser.“",
+          "target": 1,
+          "feedback": "Richtig: Messgröße, genauer Zahlenwert und Einheit °C werden sauber verwendet."
+        },
+        {
+          "text": "„Der Knochen macht im Arm so ein Klapp-Ding.“",
+          "target": 0,
+          "feedback": "Genau: Fachsprachlich heißt diese bewegliche Verbindung „Scharniergelenk“."
+        }
+      ],
+      "conclusion": "Wer Fachbegriffe mit Alltagswissen verknüpft, kann naturwissenschaftliche Vorgänge präzise erklären."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Übertrage diesen knappen Informationstext aus einer Quelle in eine Übersicht mit drei Stichpunkten: „Wasser gefriert bei 0 °C zu festem Eis. Bei Zimmertemperatur um 20 °C ist es flüssig. Wird es auf 100 °C erhitzt, siedet es und geht in gasförmigen Wasserdampf über.“ Übersetze außerdem den Satz „Mein Fahrradlicht knallt gegen die weiße Wand und strahlt zurück“ in Fachsprache.",
+        "hints": [
+          "Ordne die drei Zustände von Wasser jeweils mit Temperaturangabe.",
+          "Nutze im zweiten Teil das Wort „Reflexion“ oder „wird reflektiert“."
+        ],
+        "model": "Drei Zustände von Wasser: fest als Eis bei 0 °C, flüssig bei etwa 20 °C (Zimmertemperatur) und Sieden bei 100 °C mit Übergang zu gasförmigem Wasserdampf (durch Verdunsten entsteht Wasserdampf teils schon bei niedrigeren Temperaturen). Übersetzung in Fachsprache: Das Licht des Fahrradscheinwerfers breitet sich geradlinig bis zur weißen Wand aus und wird dort größtenteils reflektiert.",
+        "criteria": [
+          "Alle drei Temperaturen und Aggregatzustände aus der Quelle sind genau übernommen.",
+          "Der Alltagssatz wird durch genaue Fachbegriffe (geradlinige Ausbreitung, Reflexion) ersetzt.",
+          "Einheiten sind korrekt mit Abstand vor °C notiert."
+        ]
+      },
+      "2": {
+        "prompt": "In einer Messtabelle stehen links die Zeiten 0 min, 2 min, 4 min und rechts die Temperaturen 18 °C, 26 °C, 34 °C, aber beide Spaltenüberschriften fehlen. Warum ist die Tabelle so unvollständig, und was lässt sich trotzdem aus einem fertigen Diagramm dieser Werte schließen?",
+        "hints": [
+          "Was erfährt ein Leser nicht, wenn in der Kopfzeile weder Größe noch Einheit stehen?",
+          "Schau dir an, wie stark die Temperatur jeweils pro 2 min steigt."
+        ],
+        "model": "Ohne Spaltenüberschriften mit Messgröße und Einheit weiß niemand, was genau gemessen wurde und ob die Zahlen Sekunden oder Minuten bzw. Grad Celsius darstellen. Mit passenden Überschriften zeigt das Diagramm eine gerade ansteigende Linie: Alle 2 min steigt die Temperatur gleichmäßig um jeweils 8 °C.",
+        "criteria": [
+          "Das Fehlen von Messgröße und Einheit wird als Hauptmangel benannt.",
+          "Der gleichmäßige Anstieg (je 8 °C in 2 min) wird korrekt abgelesen.",
+          "Die Formulierung nutzt klare Fachsprache."
+        ]
+      }
+    },
+    "figures": ["darstellungsformen"]
+  }
+]

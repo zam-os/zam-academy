@@ -33,10 +33,10 @@ node scripts/verify-browser.mjs
 
 `verify-browser.mjs` launches installed headless Chrome through its debugging pipe. Its default executable is the macOS Chrome path; set `CHROME_BIN` elsewhere. Screenshots and a JSON report go to `/private/tmp/zam-f5-browser` by default, configurable with `BROWSER_QA_DIR`. It checks every lesson on both levels in both themes, all workshop handlers, 390/720 px layouts, feedback, the rubric gate, reload persistence, draft invalidation, clock, number slider, map layers and partner-listening fallback. The real OS launchers and actual installed speech playback still require manual checks.
 
-For a local server: `npm run dev` uses port 5243. If occupied, choose a free port with `--port`.
+For a local server: `npm run dev` uses port 5245. If occupied, choose a free port with `--port`.
 
 ## Cell and curriculum boundaries
 
 Cards live only in `cell.json`. The 160 atom/item ULIDs, lesson anchors and slugs are pinned in `tests/fixtures/public-contract.json`. Keep them stable and edit the cell directly. Soft prerequisite edges support remediation without locking access. The cell binds Gymnasium grade 5 without a Realschule track.
 
-The checked grade 6 curriculum introduces object pronouns, adjective agreement/position and passé composé; these are not grade 5 teaching targets here. The local legacy inventory has no Gymnasium French grade 5 or 6 cell. Existing grade 7 and later cells stay outside this package; `replaces-de-by.json` proposes no replacements or retirements. See [the curriculum and inventory record](../docs/franzoesisch-gymnasium-5-coverage.md).
+The checked grade 6 curriculum introduces object pronouns, adjective agreement/position and passé composé; these are not grade 5 teaching targets here. The local legacy inventory has no Gymnasium French grade 5 or 6 cell. The composite grade-7 card includes a quantity-rule facet, but also several later grammar targets; Thomas explicitly left it with grade 7. `replaces-de-by.json` records that decision and proposes no replacements or retirements. See [the curriculum and inventory record](../docs/franzoesisch-gymnasium-5-coverage.md).

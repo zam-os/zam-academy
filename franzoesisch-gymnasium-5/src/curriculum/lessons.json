@@ -35,7 +35,7 @@
 		],
 		"tasks": {
 			"1": {
-				"prompt": "Spiele einen Einkauf: Begrüße eine Verkäuferin, bitte um eine Baguette und verabschiede dich. Notiere den Dialog.",
+				"prompt": "Spiele einen Einkauf: Begrüße eine Verkäuferin, bitte um ein Baguette und verabschiede dich. Notiere den Dialog.",
 				"model": "Bonjour, Madame. Une baguette, s’il vous plaît. Merci. Au revoir !",
 				"criteria": [
 					"Ich begrüße mit Anrede.",
@@ -79,7 +79,7 @@
 					"after": "s’il vous plaît.",
 					"options": ["Une baguette,", "Au revoir,", "Merci,"],
 					"answer": "Une baguette,",
-					"explanation": "Eine Bestellung wird mit s’il vous plaît höflich."
+					"explanation": "Eine Bestellung wird mit s’il vous plaît höflich formuliert."
 				}
 			]
 		},
@@ -530,10 +530,10 @@
 		"materialLanguage": "fr",
 		"sourceIds": ["lp"],
 		"quiz": {
-			"question": "Lina parle de sa mère.",
+			"question": "Lina dit : « Voici… »",
 			"answer": "ma mère",
 			"wrong": ["mon mère", "mes mère"],
-			"explanation": "Mère ist weiblich und steht im Singular.",
+			"explanation": "Lina spricht selbst: ma bedeutet hier meine. Mère ist weiblich und steht im Singular: « Voici ma mère. »",
 			"optionLanguage": "fr"
 		},
 		"takeaway": "Possessivbegleiter richten sich nach dem Besitzwort: mon père, ma mère, mes parents; vor Vokal mon amie.",
@@ -1627,7 +1627,7 @@
 		"bindings": ["1.2-grammatik", "1.2-wortschatz", "1.1-sprechen", "5"],
 		"paragraphs": [
 			"Vouloir: je veux, tu veux, il/elle/on veut, nous voulons, vous voulez, ils/elles veulent. Pouvoir: je peux, tu peux, il/elle/on peut, nous pouvons, vous pouvez, ils/elles peuvent. Nach beiden Verben kann ein Infinitiv stehen: Je veux jouer. Nous pouvons parler.",
-			"Je voudrais… lernst du als höfliche Wendung für ich möchte. Du musst dafür noch kein neues Zeitformmuster lernen. Beispiel: Je voudrais un livre, s’il vous plaît. Für Vorlieben verwendest du j’aime oder je préfère; eine Begründung folgt mit parce que: J’aime le tennis parce que c’est un jeu."
+			"Je voudrais… lernst du als höfliche Wendung für ich möchte. Du musst dafür noch kein neues Zeitformmuster lernen. Beispiel: Je voudrais un livre, s’il vous plaît. Für Vorlieben verwendest du j’aime oder je préfère; eine Begründung folgt mit parce que: J’aime le tennis parce que c’est amusant."
 		],
 		"material": "Je voudrais un livre, s’il vous plaît. Tu veux jouer ? Nous pouvons jouer au parc. Vous voulez venir ? Ils peuvent venir à quinze heures. Je préfère le tennis parce que j’aime le sport.",
 		"materialLabel": "Eigenes französisches Übungsmaterial · erfundene Personen und Angaben",
@@ -2526,7 +2526,7 @@
 				]
 			},
 			"2": {
-				"prompt": "Du hast im erfundenen Markt 4 €. Wähle zwei Äpfel und eine Baguette. Notiere die Bestellung und erkläre auf Deutsch, ob das Geld reicht.",
+				"prompt": "Du hast im erfundenen Markt 4 €. Wähle zwei Äpfel und ein Baguette. Notiere die Bestellung und erkläre auf Deutsch, ob das Geld reicht.",
 				"model": "Je voudrais deux pommes et une baguette, s’il vous plaît. 2 € + 1,50 € = 3,50 €. Das Geld reicht; 0,50 € bleiben.",
 				"criteria": [
 					"Preise aus dem Material.",
@@ -2857,7 +2857,7 @@
 			"question": "Ton ami demande le prix de la fête.",
 			"answer": "Deux euros.",
 			"wrong": ["Un euro cinquante.", "Quinze euros."],
-			"explanation": "Der Festpreis ist deux euros; 1,50 € gehört zur Baguette.",
+			"explanation": "Der Festpreis ist deux euros; 1,50 € gehört zum Baguette.",
 			"optionLanguage": "fr"
 		},
 		"takeaway": "Vermittle nur die benötigten Informationen sinngemäß und passend für die angesprochene Person; erfinde keine Angaben.",
@@ -2865,7 +2865,7 @@
 			{
 				"prompt": "Le prix de la baguette, en euros (chiffres) : ___",
 				"answers": ["1,50", "1.50", "1,5", "1.5"],
-				"feedback": "Die Baguette kostet im Material 1,50 €."
+				"feedback": "Das Baguette kostet im Material 1,50 €."
 			},
 			{
 				"prompt": "La sortie est à ___",
@@ -2885,8 +2885,8 @@
 				"language": "de"
 			},
 			"2": {
-				"prompt": "Spielt zu dritt einen Kauf: Ein deutscher Freund möchte eine Baguette, die französische Verkäuferin nennt 1,50 €. Notiere deine Vermittlung in beide Richtungen.",
-				"model": "Je voudrais une baguette, s’il vous plaît. – Un euro cinquante. – Die Baguette kostet einen Euro fünfzig.",
+				"prompt": "Spielt zu dritt einen Kauf: Ein deutscher Freund möchte ein Baguette, die französische Verkäuferin nennt 1,50 €. Notiere deine Vermittlung in beide Richtungen.",
+				"model": "Je voudrais une baguette, s’il vous plaît. – Un euro cinquante. – Das Baguette kostet einen Euro fünfzig.",
 				"criteria": [
 					"Beide Sprachrichtungen.",
 					"Preis richtig.",
@@ -2912,7 +2912,7 @@
 					"after": "",
 					"options": ["1,50 €", "2 €", "15 €"],
 					"answer": "1,50 €",
-					"explanation": "Der Preis gehört zur Baguette."
+					"explanation": "Der Preis gehört zum Baguette."
 				},
 				{
 					"label": "Weg",

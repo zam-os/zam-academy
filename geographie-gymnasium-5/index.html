@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <script>
+      try {
+        const theme = localStorage.getItem("geo_gym5_theme");
+        if (theme === "light" || theme === "dark") document.documentElement.dataset.theme = theme;
+      } catch {}
+    </script>
+    <title>Geographie 5 Gymnasium · ZAM Academy</title>
+    <meta name="description" content="Geographie 5 Gymnasium Bayern: Karten, Gradnetz und Maßstab, Planet Erde, Alpen, Mittelgebirge und Küste, ländliche und städtische Räume. Mit Laboren, Karten und Aufgaben auf zwei Stufen." />
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="header">
+        <a href="#" id="home" class="brand"><span class="brand-mark" aria-hidden="true">N↑</span><span>Geographie 5 <small>ZAM Academy · Gymnasium Bayern</small></span></a>
+        <nav aria-label="Hauptnavigation"><button type="button" data-view="path">Lernpfad</button><button type="button" data-view="lesson">Lektion</button><button type="button" data-view="reference">Nachschlagen</button></nav>
+        <div class="header-actions"><button type="button" id="zam" class="button accent">In ZAM festigen</button><button type="button" id="theme" class="icon-button" aria-label="Farbschema umschalten">◐</button></div>
+      </header>
+      <div class="progress-strip"><span id="progress-label"></span><progress id="progress" max="100" value="0" aria-label="Fortschritt der Kernlektionen"></progress></div>
+      <main id="main" tabindex="-1"></main>
+      <footer><span>Nach <a href="https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/5/geographie" target="_blank" rel="noopener">LehrplanPLUS Bayern</a> · Jahrgangsstufe 5</span><span>Keine Konten und kein Tracking. Fortschritt und eigene Texte bleiben in diesem Browser. <a href="https://github.com/zam-os/zam-academy" target="_blank" rel="noopener">Quelltext</a></span><span id="storage-note" role="status"></span></footer>
+    </div>
+    <div id="toast-stack" aria-live="polite"></div>
+    <script type="module" src="/src/main.ts"></script>
+    <a href="https://academy.zam-os.org/" class="zam-home-link">← ZAM Academy</a>
+  </body>
+</html>

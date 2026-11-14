@@ -138,6 +138,7 @@ describe("Grade 5 first-language French teaching contract", () => {
 			"F5-01",
 			"F5-24",
 			"F5-25",
+			"F5-22",
 			"F5-32",
 			"F5-33",
 			"F5-43",
