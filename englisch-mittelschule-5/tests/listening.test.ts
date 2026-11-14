@@ -1,4 +1,5 @@
-import { describe, expect, it, vi } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
+import { LESSONS } from "../src/curriculum";
 import {
 	localEnglishVoices,
 	readLocalScript,
@@ -6,79 +7,262 @@ import {
 	waitForLocalEnglishVoice,
 } from "../src/listening";
 
-function voice(lang: string, localService: boolean): SpeechSynthesisVoice {
+const localGb = { lang: "en-GB", localService: true } as SpeechSynthesisVoice;
+const localUs = { lang: "en-US", localService: true } as SpeechSynthesisVoice;
+const remoteGb = { lang: "en-GB", localService: false } as SpeechSynthesisVoice;
+const localDe = { lang: "de-DE", localService: true } as SpeechSynthesisVoice;
+
+function engine(initial: SpeechSynthesisVoice[] = []) {
+	const target = new EventTarget();
+	const getVoices = vi.fn(() => initial);
 	return {
-		default: false,
-		lang,
-		localService,
-		name: `${lang}-${localService ? "local" : "remote"}`,
-		voiceURI: lang,
+		getVoices,
+		addEventListener: vi.fn(target.addEventListener.bind(target)),
+		removeEventListener: vi.fn(target.removeEventListener.bind(target)),
+		dispatch: () => target.dispatchEvent(new Event("voiceschanged")),
 	};
 }
+afterEach(() => vi.useRealTimers());
 
-describe("local listening engine", () => {
-	it("filters only locally installed English voices", () => {
-		const voices = [
-			voice("de-DE", true),
-			voice("en-GB", false),
-			voice("en-GB", true),
-			voice("en-US", true),
-		];
-		expect(localEnglishVoices(voices).map((v) => v.lang)).toEqual([
-			"en-GB",
-			"en-US",
+describe("local voice selection and error handling", () => {
+	it("prefers locally installed en-GB voices over other English locales and excludes remote/non-English", () => {
+		expect(localEnglishVoices([localDe, remoteGb, localUs, localGb])).toEqual([
+			localGb,
+			localUs,
 		]);
 	});
 
-	it("splits long listening scripts cleanly into short chunks", () => {
-		const longText =
-			"Good morning, class! Please open your books at page ten. Look at the first picture and listen carefully to every sentence. Then write three simple English words into your exercise book and compare with your partner.";
-		const chunks = speechChunks(longText);
-		expect(chunks.length).toBeGreaterThan(1);
-		for (const chunk of chunks) {
-			expect(chunk.length).toBeLessThanOrEqual(180);
-		}
-		expect(chunks.join(" ")).toBe(longText);
-	});
-
-	it("speaks chunks sequentially and calls complete on final onend", () => {
-		const spoken: string[] = [];
-		const complete = vi.fn();
-		const failed = vi.fn();
-		const controller = new AbortController();
-
-		const synthesis = {
-			cancel: vi.fn(),
-			speak(utterance: SpeechSynthesisUtterance) {
-				spoken.push(utterance.text);
-				utterance.onend?.(new Event("end") as SpeechSynthesisEvent);
-			},
-		};
-		const createUtterance = (text: string) =>
-			({ text, lang: "", rate: 1, onend: null, onerror: null }) as unknown as SpeechSynthesisUtterance;
-
-		readLocalScript(
-			synthesis,
-			createUtterance,
-			"Hello class. Please open your books now.",
-			voice("en-GB", true),
-			controller.signal,
-			{ complete, failed },
+	it("uses an already available local voice immediately and cleans up listener", async () => {
+		const synthesis = engine([remoteGb, localGb]);
+		expect(
+			await waitForLocalEnglishVoice(synthesis, new AbortController().signal),
+		).toBe(localGb);
+		expect(synthesis.removeEventListener).toHaveBeenCalledWith(
+			"voiceschanged",
+			expect.any(Function),
 		);
-
-		expect(spoken).toEqual(["Hello class. Please open your books now."]);
-		expect(complete).toHaveBeenCalledTimes(1);
-		expect(failed).not.toHaveBeenCalled();
 	});
 
-	it("resolves installed voices immediately when available", async () => {
-		const controller = new AbortController();
-		const synth = {
-			getVoices: () => [voice("en-GB", true)],
-			addEventListener: vi.fn(),
-			removeEventListener: vi.fn(),
+	it("resolves undefined gracefully instead of rejecting if getVoices throws", async () => {
+		const target = new EventTarget();
+		const synthesis = {
+			getVoices: vi.fn(() => {
+				throw new Error("Blocked speech engine");
+			}),
+			addEventListener: vi.fn(target.addEventListener.bind(target)),
+			removeEventListener: vi.fn(target.removeEventListener.bind(target)),
 		};
-		const found = await waitForLocalEnglishVoice(synth, controller.signal);
-		expect(found?.lang).toBe("en-GB");
+		expect(
+			await waitForLocalEnglishVoice(synthesis, new AbortController().signal),
+		).toBeUndefined();
+		expect(synthesis.removeEventListener).toHaveBeenCalledWith(
+			"voiceschanged",
+			expect.any(Function),
+		);
+	});
+
+	it("waits for voiceschanged on the first click and still excludes remote voices", async () => {
+		vi.useFakeTimers();
+		const synthesis = engine();
+		const result = waitForLocalEnglishVoice(
+			synthesis,
+			new AbortController().signal,
+		);
+		synthesis.getVoices.mockReturnValue([remoteGb]);
+		synthesis.dispatch();
+		let settled = false;
+		void result.then(() => {
+			settled = true;
+		});
+		await Promise.resolve();
+		expect(settled).toBe(false);
+		synthesis.getVoices.mockReturnValue([remoteGb, localUs]);
+		synthesis.dispatch();
+		expect(await result).toBe(localUs);
+		expect(vi.getTimerCount()).toBe(0);
+	});
+
+	it("offers the partner/transcript fallback after a bounded wait", async () => {
+		vi.useFakeTimers();
+		const synthesis = engine([remoteGb]);
+		const result = waitForLocalEnglishVoice(
+			synthesis,
+			new AbortController().signal,
+			500,
+		);
+		await vi.advanceTimersByTimeAsync(500);
+		expect(await result).toBeUndefined();
+		expect(synthesis.removeEventListener).toHaveBeenCalledWith(
+			"voiceschanged",
+			expect.any(Function),
+		);
+	});
+
+	it("cancels a pending request so navigation cannot start delayed speech", async () => {
+		vi.useFakeTimers();
+		const synthesis = engine(),
+			request = new AbortController();
+		const result = waitForLocalEnglishVoice(synthesis, request.signal);
+		request.abort();
+		synthesis.getVoices.mockReturnValue([localGb]);
+		synthesis.dispatch();
+		expect(await result).toBeUndefined();
+		expect(vi.getTimerCount()).toBe(0);
+	});
+
+	it("does not read voices after a request was already cancelled", async () => {
+		const synthesis = engine([localGb]),
+			request = new AbortController();
+		request.abort();
+		expect(
+			await waitForLocalEnglishVoice(synthesis, request.signal),
+		).toBeUndefined();
+		expect(synthesis.getVoices).not.toHaveBeenCalled();
+	});
+});
+
+function playback() {
+	const spoken: SpeechSynthesisUtterance[] = [];
+	const synthesis = {
+		speak: vi.fn((utterance: SpeechSynthesisUtterance) =>
+			spoken.push(utterance),
+		),
+		cancel: vi.fn(),
+	};
+	const create = (text: string) =>
+		({ text, onend: null, onerror: null }) as unknown as SpeechSynthesisUtterance;
+	const complete = vi.fn();
+	const failed = vi.fn();
+	const request = new AbortController();
+	return { synthesis, create, spoken, complete, failed, request };
+}
+const longScript = "A short sentence introduces one useful detail. ".repeat(12);
+
+describe("bounded local playback", () => {
+	it("preserves every word of all listening scripts in short utterances", () => {
+		const listeningLessons = LESSONS.filter((entry) => entry.listening);
+		expect(listeningLessons.length).toBeGreaterThanOrEqual(3);
+		for (const lesson of listeningLessons) {
+			const chunks = speechChunks(lesson.material);
+			expect(chunks.length).toBeGreaterThan(0);
+			expect(chunks.every((chunk) => chunk.length <= 180)).toBe(true);
+			expect(chunks.join(" ")).toBe(
+				lesson.material.trim().replace(/\s+/g, " "),
+			);
+		}
+	});
+
+	it("counts completion only after the final chunk ends and ignores old events", () => {
+		vi.useFakeTimers();
+		const p = playback();
+		readLocalScript(
+			p.synthesis,
+			p.create,
+			longScript,
+			localGb,
+			p.request.signal,
+			p,
+		);
+		const count = speechChunks(longScript).length;
+		for (let index = 0; index < count; index++) {
+			expect(p.complete).not.toHaveBeenCalled();
+			const utterance = p.spoken[index];
+			expect(utterance.voice).toBe(localGb);
+			const ended = utterance.onend;
+			ended?.call(utterance, {} as SpeechSynthesisEvent);
+			ended?.call(utterance, {} as SpeechSynthesisEvent);
+		}
+		expect(p.spoken).toHaveLength(count);
+		expect(p.complete).toHaveBeenCalledTimes(1);
+		expect(p.failed).not.toHaveBeenCalled();
+		expect(vi.getTimerCount()).toBe(0);
+	});
+
+	it("aborts without starting another chunk or counting completion", () => {
+		vi.useFakeTimers();
+		const p = playback();
+		readLocalScript(
+			p.synthesis,
+			p.create,
+			longScript,
+			localGb,
+			p.request.signal,
+			p,
+		);
+		const lateEnd = p.spoken[0].onend;
+		p.request.abort();
+		lateEnd?.call(p.spoken[0], {} as SpeechSynthesisEvent);
+		expect(p.spoken).toHaveLength(1);
+		expect(p.synthesis.cancel).toHaveBeenCalledTimes(1);
+		expect(p.complete).not.toHaveBeenCalled();
+		expect(p.failed).not.toHaveBeenCalled();
+		expect(vi.getTimerCount()).toBe(0);
+	});
+
+	it("releases a stalled engine with a fallback instead of false progress", async () => {
+		vi.useFakeTimers();
+		const p = playback();
+		readLocalScript(
+			p.synthesis,
+			p.create,
+			longScript,
+			localGb,
+			p.request.signal,
+			p,
+		);
+		await vi.advanceTimersByTimeAsync(30_000);
+		expect(p.failed).toHaveBeenCalledExactlyOnceWith("timeout");
+		expect(p.complete).not.toHaveBeenCalled();
+		expect(p.synthesis.cancel).toHaveBeenCalledTimes(1);
+		p.spoken[0].onend?.({} as SpeechSynthesisEvent);
+		expect(p.complete).not.toHaveBeenCalled();
+	});
+
+	it("keeps earlier successful chunks from hiding a later playback error", () => {
+		vi.useFakeTimers();
+		const p = playback();
+		readLocalScript(
+			p.synthesis,
+			p.create,
+			longScript,
+			localGb,
+			p.request.signal,
+			p,
+		);
+		p.spoken[0].onend?.({} as SpeechSynthesisEvent);
+		p.spoken[1].onerror?.({} as SpeechSynthesisErrorEvent);
+		expect(p.failed).toHaveBeenCalledExactlyOnceWith("error");
+		expect(p.complete).not.toHaveBeenCalled();
+		expect(vi.getTimerCount()).toBe(0);
+	});
+
+	it("handles an exception from the browser and an already aborted request", () => {
+		vi.useFakeTimers();
+		const p = playback();
+		p.synthesis.speak.mockImplementation(() => {
+			throw new Error("Unavailable");
+		});
+		readLocalScript(
+			p.synthesis,
+			p.create,
+			longScript,
+			localGb,
+			p.request.signal,
+			p,
+		);
+		expect(p.failed).toHaveBeenCalledExactlyOnceWith("error");
+		expect(p.complete).not.toHaveBeenCalled();
+		expect(vi.getTimerCount()).toBe(0);
+		const cancelled = playback();
+		cancelled.request.abort();
+		readLocalScript(
+			cancelled.synthesis,
+			cancelled.create,
+			longScript,
+			localGb,
+			cancelled.request.signal,
+			cancelled,
+		);
+		expect(cancelled.synthesis.speak).not.toHaveBeenCalled();
 	});
 });

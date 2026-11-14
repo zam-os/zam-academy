@@ -2,12 +2,15 @@
 export type MapPoint = readonly [number, number];
 
 export const SCOTLAND_LAND = [
-	[240, 44],
-	[348, 44],
-	[366, 108],
+	[244, 20],
+	[342, 24],
+	[356, 66],
+	[338, 86],
+	[366, 114],
 	[354, 158],
 	[276, 166],
-	[232, 118],
+	[226, 128],
+	[222, 68],
 ] as const satisfies readonly MapPoint[];
 
 export const ENGLAND_LAND = [
@@ -61,8 +64,8 @@ export const UK_CITIES = {
 	edinburgh: {
 		name: "Edinburgh",
 		country: "Scotland",
-		pin: [344, 128],
-		labelAt: [256, 132],
+		pin: [342, 134],
+		labelAt: [254, 138],
 	},
 	cardiff: {
 		name: "Cardiff",
@@ -109,7 +112,7 @@ export function renderUkMap(): string {
 		<text x="520" y="40">N ↑</text>
 	</g>
 	<g data-map-layer="countries" class="map-cities">
-		<text class="country-label" x="274" y="90">Scotland</text>
+		<text class="country-label" x="266" y="76">Scotland</text>
 		<text class="country-label" x="332" y="256">England</text>
 		<text class="country-label" x="234" y="264">Wales</text>
 		<text class="country-label" x="140" y="148">N. Ireland</text>

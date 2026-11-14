@@ -42,6 +42,7 @@ export interface Workshop {
 		| "scene"
 		| "graphic"
 		| "text";
+	mode?: "select" | "chips" | "order" | "hotspot";
 	goals: [WorkshopGoal, WorkshopGoal, WorkshopGoal];
 }
 /** One labelled shape of a drawn scene, in a 620 × 340 picture. */

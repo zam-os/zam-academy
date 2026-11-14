@@ -10,12 +10,12 @@
 
 ## 1. Abdeckung der Kompetenzerwartungen
 
-Die Matrix [`englisch-mittelschule-5/coverage.json`](../englisch-mittelschule-5/coverage.json) prüft **67 wörtliche Zeilen** aus dem Fachlehrplan Englisch 5 Mittelschule (`E5 1.1` Hör-/Hörsehverstehen, Leseverstehen, Sprechen, Schreiben, Sprachmittlung; `E5 1.2` Wortschatzumfang ~550 Wörter, alle 14 aufgezählten Wortschatz-/Struktureinzelpunkte, 10 grammatikalische Fachbegriffe, Grammatik, Aussprache und Intonation mit IPA; `E5 2` Interkulturelle Kompetenzen; `E5 3` Text- und Medienkompetenzen; `E5 4` Methodische Kompetenzen; `E5 5` Themengebiete).
+Die Matrix [`englisch-mittelschule-5/coverage.json`](../englisch-mittelschule-5/coverage.json) prüft **69 wörtliche Zeilen** aus dem Fachlehrplan Englisch 5 Mittelschule (`E5 1.1` Hör-/Hörsehverstehen, Leseverstehen, Sprechen, Schreiben, Sprachmittlung; `E5 1.2` Wortschatzumfang ~550 Wörter, alle 14 aufgezählten Wortschatz-/Struktureinzelpunkte, 10 grammatikalische Fachbegriffe, Grammatik, Aussprache und Intonation mit IPA; `E5 2` Interkulturelle Kompetenzen; `E5 3` Text- und Medienkompetenzen; `E5 4` Methodische Kompetenzen; `E5 5` Themengebiete inkl. beider übergreifender Kompetenzerwartungen).
 
-`node englisch-mittelschule-5/scripts/check-curriculum.mjs` bestätigt: **67 Zeilen geprüft, 0 nicht gefunden; alle 36 Lektionen abgedeckt**.
+`node englisch-mittelschule-5/scripts/check-curriculum.mjs` bestätigt: **69 Zeilen geprüft, 0 nicht gefunden; alle 36 Lektionen abgedeckt**.
 
 - **Als `"implemented"` markiert (58 Zeilen):** Alle Grammatik-, Wortschatz-, Schreib-, Lese-, Sprachmittlungs-, Textbaustein-, Methoden- und Sachthemen-Zeilen, die direkt in der Web-App geübt und überprüft werden können (inkl. interaktiver UK/Irland-Karte, Zahlenschieber 0–100, Viertelstunden-Uhr, Garten-/Haustierszene, Schulweg-Grafik und `SVO`/`simple present`/`simple past`).
-- **Als `"supported"` markiert (9 Zeilen):** Hörsehverstehen mit echter Mimik/Gestik und Umgebungsgeräuschen, spontane Gesprächsführung mit Partnern, Vortrag vor der Klasse, tatsächliche Aussprachekorrektur, gelebte Begegnungssituationen, Jahreswortschatz-Aufbau sowie tagesaktuelle Themen. Die App liefert hierfür Vorlese-Skripte (lokale Browser-Sprachausgabe/Partner-Kontrollkästchen), Sprechanlässe und Muster; die echte mündliche Praxis bleibt im Unterricht.
+- **Als `"supported"` markiert (11 Zeilen):** Hörsehverstehen mit echter Mimik/Gestik und Umgebungsgeräuschen, spontane Gesprächsführung mit Partnern, reale Situationsbewältigung über den Unterricht hinaus, Vortrag vor der Klasse, tatsächliche Aussprachekorrektur, gelebte Begegnungssituationen, Jahreswortschatz-Aufbau sowie tagesaktuelle Themen. Die App liefert hierfür Vorlese-Skripte (lokale Browser-Sprachausgabe/Partner-Kontrollkästchen), Sprechanlässe und Muster; die echte mündliche Praxis bleibt im Unterricht.
 
 ## 2. Fachliche Abgrenzung zu Englisch 6 Mittelschule
 

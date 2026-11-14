@@ -185,19 +185,85 @@ function renderGraphic(lesson: Lesson): string {
 	const chart = lesson.graphic;
 	if (!chart) return "";
 	const maximum = Math.max(1, ...chart.values.map((entry) => entry.value));
-	const height = chart.values.length * 60 + 40;
+	const total = chart.values.reduce((sum, entry) => sum + entry.value, 0);
+	const height = chart.values.length * 56 + 64;
+	const gridTicks = [0, 3, 6, 9, 12];
 	const description = `${chart.title}: ${chart.values.map((entry) => `${entry.label} ${entry.value} ${chart.unit}`).join(", ")}. Invented classroom data.`;
-	return `<figure class="data-figure"><svg role="img" aria-label="${esc(description)}" viewBox="0 0 620 ${height}"><text x="180" y="22">${esc(chart.title)} · ${esc(chart.unit)}</text>${chart.values.map((entry, index) => `<text x="5" y="${61 + index * 60}">${esc(entry.label)}</text><rect x="180" y="${40 + index * 60}" width="${(350 * entry.value) / maximum}" height="30" rx="3"/><text x="${190 + (350 * entry.value) / maximum}" y="${61 + index * 60}">${entry.value}</text>`).join("")}</svg><figcaption class="small">Erfundene Übungsdaten · keine Messwerte oder repräsentative Studie. Die Werte stehen auch im Text.</figcaption></figure>`;
+	return `<figure class="data-figure"><svg role="img" aria-label="${esc(description)}" viewBox="0 0 620 ${height}"><text x="170" y="24" font-weight="700">${esc(chart.title)} · total ${total} ${esc(chart.unit.toLowerCase())}</text>${gridTicks
+		.filter((tick) => tick <= Math.max(maximum, 12))
+		.map((tick) => {
+			const gx = 170 + (340 * tick) / maximum;
+			return `<line x1="${gx}" y1="36" x2="${gx}" y2="${height - 26}" stroke="currentColor" stroke-opacity="0.14" stroke-dasharray="3 3"/><text x="${gx}" y="${height - 8}" text-anchor="middle" font-size="12" opacity="0.72">${tick}</text>`;
+		})
+		.join("")}${chart.values
+		.map((entry, index) => {
+			const y = 44 + index * 56;
+			const barWidth = (340 * entry.value) / maximum;
+			const pct = total > 0 ? Math.round((entry.value / total) * 100) : 0;
+			return `<text x="6" y="${y + 21}" font-weight="600">${esc(entry.label)}</text><rect x="170" y="${y}" width="${barWidth}" height="32" rx="6" fill="var(--stage-color)" opacity="0.88"/><text x="${180 + barWidth}" y="${y + 21}" font-weight="700">${entry.value} (${pct} %)</text>`;
+		})
+		.join("")}</svg><figcaption class="small">Erfundene Übungsdaten · keine Messwerte oder repräsentative Studie. Die Werte stehen auch im Text.</figcaption></figure>`;
+}
+function renderSceneItemShape(
+	item: NonNullable<Lesson["scene"]>["items"][number],
+): string {
+	const { x, y, w, h } = item;
+	const key = item.label.toLowerCase();
+	if (key === "house") {
+		const roofBottom = y + h * 0.38;
+		return `<polygon points="${x - 6},${roofBottom} ${x + w / 2},${y} ${x + w + 6},${roofBottom}" fill="hsl(14 55% 48%)" stroke="var(--surface)" stroke-width="2"/><rect x="${x}" y="${roofBottom}" width="${w}" height="${h * 0.62}" rx="3" fill="hsl(40 35% 90%)" stroke="var(--surface)" stroke-width="2"/><rect x="${x + w * 0.42}" y="${y + h * 0.62}" width="${w * 0.18}" height="${h * 0.38}" rx="2" fill="hsl(24 40% 36%)"/><rect x="${x + w * 0.14}" y="${roofBottom + 10}" width="${w * 0.18}" height="${w * 0.18}" rx="2" fill="hsl(200 65% 75%)" stroke="hsl(220 20% 45%)" stroke-width="1.5"/><rect x="${x + w * 0.68}" y="${roofBottom + 10}" width="${w * 0.18}" height="${w * 0.18}" rx="2" fill="hsl(200 65% 75%)" stroke="hsl(220 20% 45%)" stroke-width="1.5"/>`;
+	}
+	if (key === "fence") {
+		const pickets = 6;
+		const step = w / pickets;
+		return `<rect x="${x}" y="${y + h * 0.35}" width="${w}" height="4" fill="hsl(32 32% 52%)"/><rect x="${x}" y="${y + h * 0.72}" width="${w}" height="4" fill="hsl(32 32% 52%)"/>${Array.from({ length: pickets }, (_, idx) => `<rect x="${x + idx * step + 3}" y="${y}" width="${Math.max(8, step - 7)}" height="${h}" rx="2" fill="hsl(36 42% 84%)" stroke="hsl(30 25% 45%)" stroke-width="1.2"/>`).join("")}`;
+	}
+	if (key === "terrace") {
+		return `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="6" fill="hsl(32 22% 70%)" stroke="hsl(30 18% 48%)" stroke-width="1.8"/><line x1="${x + w / 2}" y1="${y}" x2="${x + w / 2}" y2="${y + h}" stroke="hsl(30 18% 55%)" stroke-width="1" stroke-dasharray="4 3"/><line x1="${x}" y1="${y + h / 2}" x2="${x + w}" y2="${y + h / 2}" stroke="hsl(30 18% 55%)" stroke-width="1" stroke-dasharray="4 3"/>`;
+	}
+	if (key === "tree") {
+		const cx = x + w / 2;
+		const trunkW = Math.max(16, w * 0.22);
+		return `<rect x="${cx - trunkW / 2}" y="${y + h * 0.55}" width="${trunkW}" height="${h * 0.45}" rx="3" fill="hsl(28 38% 36%)" stroke="none"/><circle cx="${cx}" cy="${y + h * 0.36}" r="${w * 0.44}" fill="hsl(136 44% 40%)"/><circle cx="${cx - w * 0.22}" cy="${y + h * 0.44}" r="${w * 0.3}" fill="hsl(136 44% 44%)" stroke="none"/><circle cx="${cx + w * 0.22}" cy="${y + h * 0.44}" r="${w * 0.3}" fill="hsl(136 44% 42%)" stroke="none"/>`;
+	}
+	if (key === "dog") {
+		return `<ellipse cx="${x + w * 0.48}" cy="${y + h * 0.62}" rx="${w * 0.34}" ry="${h * 0.24}" fill="hsl(28 45% 42%)" stroke="var(--surface)" stroke-width="1.5"/><circle cx="${x + w * 0.78}" cy="${y + h * 0.36}" r="${h * 0.24}" fill="hsl(28 45% 42%)" stroke="var(--surface)" stroke-width="1.5"/><ellipse cx="${x + w * 0.68}" cy="${y + h * 0.36}" rx="4" ry="8" fill="hsl(24 45% 28%)"/><line x1="${x + w * 0.26}" y1="${y + h * 0.78}" x2="${x + w * 0.24}" y2="${y + h}" stroke="hsl(28 45% 32%)" stroke-width="4" stroke-linecap="round"/><line x1="${x + w * 0.64}" y1="${y + h * 0.78}" x2="${x + w * 0.66}" y2="${y + h}" stroke="hsl(28 45% 32%)" stroke-width="4" stroke-linecap="round"/><path d="M ${x + w * 0.16} ${y + h * 0.56} Q ${x} ${y + h * 0.35} ${x + w * 0.1} ${y + h * 0.28}" fill="none" stroke="hsl(28 45% 36%)" stroke-width="3" stroke-linecap="round"/>`;
+	}
+	if (key === "sofa") {
+		return `<rect x="${x + 6}" y="${y}" width="${w - 12}" height="${h * 0.52}" rx="6" fill="hsl(212 48% 46%)"/><rect x="${x}" y="${y + h * 0.38}" width="${w}" height="${h * 0.52}" rx="6" fill="hsl(212 52% 52%)"/><rect x="${x}" y="${y + h * 0.26}" width="12" height="${h * 0.64}" rx="4" fill="hsl(212 45% 38%)"/><rect x="${x + w - 12}" y="${y + h * 0.26}" width="12" height="${h * 0.64}" rx="4" fill="hsl(212 45% 38%)"/>`;
+	}
+	if (key === "bike") {
+		const wy = y + h * 0.68;
+		const r = h * 0.3;
+		const lx = x + w * 0.22;
+		const rx = x + w * 0.78;
+		return `<circle cx="${lx}" cy="${wy}" r="${r}" fill="none" stroke="hsl(210 20% 28%)" stroke-width="3.5"/><circle cx="${rx}" cy="${wy}" r="${r}" fill="none" stroke="hsl(210 20% 28%)" stroke-width="3.5"/><path d="M ${lx} ${wy} L ${x + w * 0.48} ${wy - r * 0.9} L ${rx} ${wy} M ${x + w * 0.48} ${wy - r * 0.9} L ${x + w * 0.42} ${y + 6} M ${rx} ${wy} L ${rx - 6} ${y + 8} L ${rx + 5} ${y + 8}" fill="none" stroke="hsl(350 65% 48%)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>`;
+	}
+	if (key === "box") {
+		return `<polygon points="${x},${y + 10} ${x + 12},${y} ${x + w - 12},${y} ${x + w},${y + 10}" fill="hsl(34 45% 58%)" stroke="hsl(30 35% 36%)" stroke-width="1.5"/><rect x="${x}" y="${y + 10}" width="${w}" height="${h - 10}" rx="3" fill="hsl(34 48% 68%)" stroke="hsl(30 35% 36%)" stroke-width="1.8"/><path d="M ${x} ${y + 10} L ${x - 8} ${y + 2} M ${x + w} ${y + 10} L ${x + w + 8} ${y + 2}" stroke="hsl(30 35% 36%)" stroke-width="2" stroke-linecap="round"/>`;
+	}
+	if (key === "cat") {
+		const cx = x + w * 0.52;
+		const cy = y + h * 0.46;
+		return `<path d="M ${x + w * 0.1} ${y + h * 0.75} Q ${cx} ${y + h * 0.2} ${x + w * 0.85} ${y + h * 0.82}" fill="none" stroke="hsl(28 70% 52%)" stroke-width="1.6" stroke-dasharray="3 2"/><ellipse cx="${cx}" cy="${y + h * 0.62}" rx="${w * 0.3}" ry="${h * 0.22}" fill="hsl(28 70% 56%)" stroke="var(--surface)" stroke-width="1.4"/><circle cx="${cx + w * 0.2}" cy="${cy - 2}" r="${h * 0.22}" fill="hsl(28 70% 56%)" stroke="var(--surface)" stroke-width="1.4"/><polygon points="${cx + 2},${cy - 8} ${cx + 6},${cy - 18} ${cx + 10},${cy - 9}" fill="hsl(28 70% 56%)"/><polygon points="${cx + 10},${cy - 8} ${cx + 15},${cy - 18} ${cx + 17},${cy - 8}" fill="hsl(28 70% 56%)"/><path d="M ${x + 4} ${y + h * 0.56} Q ${x - 2} ${y + h * 0.25} ${x + 10} ${y + h * 0.24}" fill="none" stroke="hsl(28 70% 50%)" stroke-width="2.8" stroke-linecap="round"/>`;
+	}
+	return item.shape === "person"
+		? `<circle cx="${x + w / 2}" cy="${y + w / 2}" r="${w / 2}"/><rect x="${x}" y="${y + w}" width="${w}" height="${h - w}" rx="${w / 3}"/>`
+		: `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${item.shape === "round" ? Math.min(w, h) / 2 : 4}"/>`;
 }
 function renderScene(lesson: Lesson): string {
 	const scene = lesson.scene;
 	if (!scene) return "";
-	const shape = (item: NonNullable<Lesson["scene"]>["items"][number]) =>
-		item.shape === "person"
-			? `<circle cx="${item.x + item.w / 2}" cy="${item.y + item.w / 2}" r="${item.w / 2}"/><rect x="${item.x}" y="${item.y + item.w}" width="${item.w}" height="${item.h - item.w}" rx="${item.w / 3}"/>`
-			: `<rect x="${item.x}" y="${item.y}" width="${item.w}" height="${item.h}" rx="${item.shape === "round" ? Math.min(item.w, item.h) / 2 : 4}"/>`;
 	const description = `${scene.title}: ${scene.items.map((item) => item.label).join(", ")}. Self-drawn practice picture.`;
-	return `<figure class="scene-figure"><svg role="img" aria-label="${esc(description)}" viewBox="0 0 620 340"><rect class="scene-sky" x="0" y="0" width="620" height="200"/><rect class="scene-ground" x="0" y="200" width="620" height="140"/>${scene.items.map((item) => `<g class="scene-item scene-${item.shape}">${shape(item)}<text x="${item.x + item.w / 2}" y="${Math.min(item.y + item.h + 16, 334)}" text-anchor="middle">${esc(item.label)}</text></g>`).join("")}</svg><figcaption class="small">Selbst gezeichnetes Übungsbild · kein Foto. Die Beschriftungen stehen auch im Text.</figcaption></figure>`;
+	return `<figure class="scene-figure"><svg role="img" aria-label="${esc(description)}" viewBox="0 0 620 340"><rect class="scene-sky" x="0" y="0" width="620" height="200"/><rect class="scene-ground" x="0" y="200" width="620" height="140"/>${scene.items
+		.map((item) => {
+			const labelY =
+				item.label === "cat" || item.label === "house"
+					? Math.max(item.y - 6, 18)
+					: Math.min(item.y + item.h + 16, 334);
+			return `<g class="scene-item scene-${item.shape}" data-scene-item="${esc(item.label)}">${renderSceneItemShape(item)}<text x="${item.x + item.w / 2}" y="${labelY}" text-anchor="middle">${esc(item.label)}</text></g>`;
+		})
+		.join("")}</svg><figcaption class="small">Selbst gezeichnetes Übungsbild · kein Foto. Die Beschriftungen stehen auch im Text.</figcaption></figure>`;
 }
 function renderLesson(lesson: Lesson): void {
 	const task = lesson.tasks[progress.level];

@@ -1365,3 +1365,59 @@ dialog::backdrop {
 		stroke: #000000aa;
 	}
 }
+.word-slot {
+	display: inline-block;
+	min-width: 5.5rem;
+	padding: 0.35rem 0.65rem;
+	border: 2px dashed var(--stage-color);
+	border-radius: 8px;
+	font-weight: 700;
+	text-align: center;
+	background: var(--bg);
+}
+.word-slot[data-filled="true"] {
+	border-style: solid;
+	background: var(--accent-soft);
+}
+.chip-group {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	margin-top: 0.65rem;
+}
+.chip-option {
+	appearance: none;
+	font: inherit;
+	font-weight: 600;
+	padding: 0.45rem 0.85rem;
+	border-radius: 999px;
+	border: 1.5px solid var(--line);
+	background: var(--surface);
+	color: var(--ink);
+	cursor: pointer;
+	transition:
+		border-color 0.15s,
+		background-color 0.15s;
+}
+.chip-option:hover {
+	border-color: var(--stage-color);
+}
+.chip-option[aria-pressed="true"] {
+	background: var(--accent);
+	border-color: var(--accent);
+	color: var(--bg);
+}
+.data-figure {
+	margin: 1.2rem 0;
+}
+.data-figure svg {
+	width: 100%;
+	height: auto;
+	border-radius: 0.6rem;
+	background: var(--bg);
+	padding: 0.5rem;
+	font:
+		14px system-ui,
+		sans-serif;
+	fill: var(--ink);
+}

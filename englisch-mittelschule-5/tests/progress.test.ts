@@ -1,96 +1,253 @@
-import { beforeEach, describe, expect, it } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import {
 	completion,
+	freshProgress,
 	isComplete,
 	loadProgress,
 	markSyntheticListening,
 	mergeProgress,
+	parseProgress,
 	resetProgress,
-	STORAGE_KEY,
 	saveProgress,
 	setPartnerListening,
+	STORAGE_KEY,
 	updateDraft,
 	writingKey,
 } from "../src/storage/progress";
 
-function memoryStorage() {
-	const store = new Map<string, string>();
+beforeEach(() => {
+	const values = new Map<string, string>();
+	vi.stubGlobal("localStorage", {
+		getItem: (key: string) => values.get(key) ?? null,
+		setItem: (key: string, value: string) => {
+			values.set(key, value);
+		},
+		removeItem: (key: string) => {
+			values.delete(key);
+		},
+	});
+});
+afterEach(() => vi.unstubAllGlobals());
+
+function openTab() {
+	const progress = loadProgress();
+	let baseline = structuredClone(progress);
 	return {
-		getItem: (key: string) => store.get(key) ?? null,
-		setItem: (key: string, value: string) => void store.set(key, value),
-		removeItem: (key: string) => void store.delete(key),
+		progress,
+		save() {
+			expect(saveProgress(progress, baseline)).toBe(true);
+			baseline = structuredClone(progress);
+		},
 	};
 }
 
-describe("localStorage progress model", () => {
-	beforeEach(() => {
-		const storage = memoryStorage();
-		Object.defineProperty(globalThis, "localStorage", {
-			value: storage,
-			configurable: true,
-		});
-	});
+const id = "e5m-school-day-listening",
+	otherListenId = "e5m-family-listening",
+	otherLessonId = "e5m-classroom-phrases",
+	key = writingKey(id, 1);
+const firstText = "I start at eight o'clock and have English first.";
+const changedText = "I have revised my timetable notes for Tuesday.";
 
+describe("localStorage progress model", () => {
 	it("uses the package-unique STORAGE_KEY", () => {
 		expect(STORAGE_KEY).toBe("englisch_ms5_academy_progress_v1");
 	});
 
 	it("marks a lesson complete only after workshop, quiz, practice and L1 writing", () => {
 		const progress = loadProgress();
-		const id = "e5m-british-isles";
-		expect(isComplete(progress, id)).toBe(false);
+		const target = "e5m-british-isles";
+		expect(isComplete(progress, target)).toBe(false);
 
-		progress.workshopDone.push(id);
-		progress.quizDone.push(id);
-		progress.practiceDone.push(id);
-		updateDraft(progress, id, 1, "England, Scotland and Wales are in Great Britain.");
-		progress.writingDone.push(writingKey(id, 1));
-		expect(isComplete(progress, id)).toBe(true);
+		progress.workshopDone.push(target);
+		progress.quizDone.push(target);
+		progress.practiceDone.push(target);
+		updateDraft(progress, target, 1, "England, Scotland and Wales are in Great Britain.");
+		progress.writingDone.push(writingKey(target, 1));
+		expect(isComplete(progress, target)).toBe(true);
 		expect(completion(progress).completed).toBe(1);
 		expect(completion(progress).total).toBe(36);
+	});
+});
 
-		const listenId = "e5m-family-listening";
-		progress.workshopDone.push(listenId);
-		progress.quizDone.push(listenId);
-		progress.practiceDone.push(listenId);
-		updateDraft(progress, listenId, 1, "My parents and sister live in Bavaria.");
-		progress.writingDone.push(writingKey(listenId, 1));
-		expect(isComplete(progress, listenId)).toBe(false);
-		setPartnerListening(progress, listenId, true);
-		expect(isComplete(progress, listenId)).toBe(true);
+describe("independent listening evidence", () => {
+	it("does not count an empty evidence object as a completed listening activity", () => {
+		const p = freshProgress();
+		p.quizDone.push(id);
+		p.practiceDone.push(id);
+		p.workshopDone.push(id);
+		updateDraft(p, id, 1, firstText);
+		p.writingDone.push(key);
+		p.listening[id] = { synthetic: false, partner: false };
+		expect(isComplete(p, id)).toBe(false);
+		markSyntheticListening(p, id);
+		expect(isComplete(p, id)).toBe(true);
 	});
 
-	it("saves, merges concurrent writes and resets cleanly", () => {
-		const empty = loadProgress();
-		const a = loadProgress();
-		const b = loadProgress();
-
-		a.quizDone.push("e5m-british-isles");
-		expect(saveProgress(a, empty)).toBe(true);
-
-		b.workshopDone.push("e5m-world-language");
-		expect(saveProgress(b, empty)).toBe(true);
-
-		const reloaded = loadProgress();
-		expect(reloaded.quizDone).toContain("e5m-british-isles");
-		expect(reloaded.workshopDone).toContain("e5m-world-language");
-
-		updateDraft(reloaded, "e5m-british-isles", 1, "My test draft over 20 characters");
-		reloaded.writingDone.push(writingKey("e5m-british-isles", 1));
-		updateDraft(reloaded, "e5m-british-isles", 1, "Updated draft text over 20 chars");
-		expect(reloaded.writingDone).not.toContain(writingKey("e5m-british-isles", 1));
-
-		setPartnerListening(reloaded, "e5m-family-listening", true);
-		markSyntheticListening(reloaded, "e5m-family-listening");
-		expect(reloaded.listening["e5m-family-listening"]).toEqual({
-			partner: true,
+	it("keeps completed speech when partner confirmation is checked, unchecked and reloaded", () => {
+		const tab = openTab();
+		markSyntheticListening(tab.progress, id);
+		tab.save();
+		setPartnerListening(tab.progress, id, true);
+		tab.save();
+		setPartnerListening(tab.progress, id, false);
+		tab.save();
+		expect(loadProgress().listening[id]).toEqual({
 			synthetic: true,
+			partner: false,
 		});
+	});
 
-		const merged = mergeProgress(reloaded, b, empty);
-		expect(merged.listening["e5m-family-listening"]?.partner).toBe(true);
+	it("can withdraw partner confirmation when there was no completed speech", () => {
+		const tab = openTab();
+		setPartnerListening(tab.progress, id, true);
+		tab.save();
+		setPartnerListening(tab.progress, id, false);
+		tab.save();
+		expect(loadProgress().listening[id]).toBeUndefined();
+	});
 
-		const cleared = resetProgress(reloaded);
-		expect(cleared.quizDone).toEqual([]);
+	it("reads both original single-mode saves and rejects invalid new evidence", () => {
+		const parsed = parseProgress(
+			JSON.stringify({
+				listening: {
+					[id]: "synthetic",
+					[otherListenId]: "partner",
+					unknown: { synthetic: true },
+				},
+			}),
+		);
+		expect(parsed.listening).toEqual({
+			[id]: { synthetic: true, partner: false },
+			[otherListenId]: { synthetic: false, partner: true },
+		});
+		expect(
+			parseProgress(
+				JSON.stringify({
+					listening: { [id]: { synthetic: "true", partner: 1 } },
+				}),
+			).listening,
+		).toEqual({});
+	});
+});
+
+describe("two open tabs", () => {
+	it("preserves another tab's draft, assessment, completed checks and listening on navigation", () => {
+		const first = openTab(),
+			stale = openTab();
+		updateDraft(first.progress, id, 1, firstText);
+		first.progress.writingDone.push(key);
+		first.progress.quizDone.push(id);
+		first.progress.practiceDone.push(id);
+		first.progress.workshopDone.push(id);
+		markSyntheticListening(first.progress, id);
+		first.save();
+		stale.progress.activeLessonId = otherLessonId;
+		stale.progress.level = 2;
+		stale.save();
+		expect(loadProgress().drafts[key]).toBe(firstText);
+		expect(isComplete(loadProgress(), id)).toBe(true);
+		expect(stale.progress.activeLessonId).toBe(otherLessonId);
+		expect(stale.progress.level).toBe(2);
+	});
+
+	it("joins work on different drafts without treating stale drafts as edits", () => {
+		const first = openTab(),
+			second = openTab();
+		updateDraft(first.progress, id, 1, firstText);
+		first.save();
+		updateDraft(second.progress, otherLessonId, 2, changedText);
+		second.save();
+		first.progress.quizDone.push(id);
+		first.save();
+		expect(loadProgress().drafts).toEqual({
+			[key]: firstText,
+			[`${otherLessonId}:2`]: changedText,
+		});
+	});
+
+	it("does not restore an assessment belonging to the old text", () => {
+		const seed = openTab();
+		updateDraft(seed.progress, id, 1, firstText);
+		seed.progress.writingDone.push(key);
+		seed.save();
+		const editor = openTab(),
+			stale = openTab();
+		updateDraft(editor.progress, id, 1, changedText);
+		editor.save();
+		stale.progress.quizDone.push(otherLessonId);
+		stale.save();
+		expect(loadProgress().drafts[key]).toBe(changedText);
+		expect(loadProgress().writingDone).not.toContain(key);
+	});
+
+	it("saves an actual new edit, including clearing a draft, while keeping unrelated work", () => {
+		const first = openTab(),
+			second = openTab();
+		updateDraft(first.progress, id, 1, firstText);
+		first.progress.quizDone.push(otherLessonId);
+		first.save();
+		updateDraft(second.progress, id, 1, changedText);
+		second.save();
+		updateDraft(first.progress, id, 1, "");
+		first.save();
+		expect(loadProgress().drafts[key]).toBe("");
+		expect(loadProgress().quizDone).toContain(otherLessonId);
+	});
+
+	it("joins completed speech and partner confirmation and does not revive a withdrawn check", () => {
+		const speech = openTab(),
+			partner = openTab();
+		markSyntheticListening(speech.progress, id);
+		speech.save();
+		setPartnerListening(partner.progress, id, true);
+		partner.save();
+		const stale = openTab();
+		setPartnerListening(partner.progress, id, false);
+		partner.save();
+		stale.save();
+		expect(loadProgress().listening[id]).toEqual({
+			synthetic: true,
+			partner: false,
+		});
+	});
+
+	it("adopts a storage event without changing this tab's lesson or level", () => {
+		const baseline = freshProgress(),
+			own = structuredClone(baseline),
+			stored = freshProgress();
+		own.activeLessonId = otherLessonId;
+		own.level = 2;
+		updateDraft(stored, id, 1, firstText);
+		stored.writingDone.push(key);
+		const merged = mergeProgress(stored, own, baseline);
+		expect(merged.drafts[key]).toBe(firstText);
+		expect(merged.writingDone).toContain(key);
+		expect(merged.activeLessonId).toBe(otherLessonId);
+		expect(merged.level).toBe(2);
+	});
+
+	it("keeps an unsaved local edit while receiving unrelated storage changes", () => {
+		const baseline = freshProgress(),
+			own = structuredClone(baseline),
+			stored = freshProgress();
+		updateDraft(own, id, 1, firstText);
+		stored.quizDone.push(otherLessonId);
+		const merged = mergeProgress(stored, own, baseline);
+		expect(merged.drafts[key]).toBe(firstText);
+		expect(merged.quizDone).toContain(otherLessonId);
+	});
+
+	it("propagates a confirmed reset and prevents a stale tab from resurrecting progress", () => {
+		const first = openTab();
+		updateDraft(first.progress, id, 1, firstText);
+		first.progress.quizDone.push(id);
+		first.save();
+		const stale = openTab();
+		Object.assign(first.progress, resetProgress(first.progress));
+		first.save();
+		stale.save();
+		expect(loadProgress().drafts).toEqual({});
+		expect(loadProgress().quizDone).toEqual([]);
+		expect(loadProgress().resetAt).toBeGreaterThan(0);
 	});
 });

@@ -45,6 +45,7 @@ function htmlToNormalizedText(html) {
   const stripped = html
     .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, " ")
     .replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, " ")
+    .replace(/<\/?(?:em|strong|span|b|i|u|sup|sub|small|a)\b[^>]*>/gi, "")
     .replace(/<[^>]+>/g, " ");
   return decodeEntities(stripped).replace(/\s+/g, " ").trim();
 }

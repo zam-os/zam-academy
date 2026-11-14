@@ -1,10 +1,14 @@
-/** Only an already installed English voice is used. Remote browser voices are excluded. */
+/** Only an already installed English voice is used (preferring en-GB). Remote browser voices are excluded. */
 export function localEnglishVoices(
 	voices: SpeechSynthesisVoice[],
 ): SpeechSynthesisVoice[] {
-	return voices.filter(
-		(voice) => voice.localService && /^en(?:-|$)/i.test(voice.lang),
-	);
+	return voices
+		.filter((voice) => voice.localService && /^en(?:-|$)/i.test(voice.lang))
+		.sort(
+			(left, right) =>
+				Number(right.lang.toLowerCase() === "en-gb") -
+				Number(left.lang.toLowerCase() === "en-gb"),
+		);
 }
 
 /** Keep each utterance short: some browsers stall on long single utterances. */
@@ -119,20 +123,20 @@ export function waitForLocalEnglishVoice(
 		};
 		const aborted = () => finish();
 		const changed = () => {
-			const voice = localEnglishVoices(synthesis.getVoices())[0];
-			if (voice) finish(voice);
+			try {
+				const voice = localEnglishVoices(synthesis.getVoices())[0];
+				if (voice) finish(voice);
+			} catch {
+				finish();
+			}
 		};
 		if (signal.aborted) {
 			resolve(undefined);
 			return;
 		}
-		const immediate = localEnglishVoices(synthesis.getVoices())[0];
-		if (immediate) {
-			resolve(immediate);
-			return;
-		}
-		signal.addEventListener("abort", aborted, { once: true });
 		synthesis.addEventListener("voiceschanged", changed);
+		signal.addEventListener("abort", aborted, { once: true });
 		timer = setTimeout(() => finish(), timeoutMs);
+		changed();
 	});
 }

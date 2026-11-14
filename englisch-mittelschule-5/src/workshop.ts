@@ -97,7 +97,31 @@ function illustration(lesson: Lesson): string {
 }
 
 export function renderWorkshop(lesson: Lesson): string {
-	return `<section class="panel workshop" aria-labelledby="workshop-title"><h2 id="workshop-title">Deine Entdeckerwerkstatt</h2><p>Wähle passende Bausteine aus, prüfe das Ergebnis und erreiche alle drei Ziele. Du kannst jede Auswahl ändern.</p>${illustration(lesson)}<div class="construction">${lesson.workshop.goals.map((goal, i) => `<div class="construction-row" data-goal="${i}"><span class="goal-number" aria-hidden="true">${i + 1}</span><div><label for="workshop-${i}">${esc(goal.label)}</label><div class="word-chain"><span class="word-piece" lang="en">${esc(goal.before)}</span><span aria-hidden="true">→</span><select id="workshop-${i}" data-workshop="${i}"><option value="">Baustein wählen…</option>${[...goal.options.slice(i + 1), ...goal.options.slice(0, i + 1)].map((option) => `<option lang="en" value="${esc(option)}">${esc(option)}</option>`).join("")}</select>${goal.after ? `<span class="word-piece" lang="en">${esc(goal.after)}</span>` : ""}</div><p class="goal-feedback small" role="status">Ziel noch offen.</p></div></div>`).join("")}</div><p id="workshop-status" role="status">0 von 3 Zielen erreicht.</p></section>`;
+	const mode = lesson.workshop.mode ?? "select";
+	const useChips = mode === "chips" || mode === "order" || mode === "hotspot";
+	const hint =
+		mode === "order"
+			? "Klicke die passende Wortfolge an und baue den Satz Schritt für Schritt zusammen."
+			: mode === "chips"
+				? "Wähle die passende Zuordnungskarte per Klick aus."
+				: mode === "hotspot"
+					? "Erkunde das Bild bzw. die Karte und klicke den passenden Baustein an."
+					: "Wähle passende Bausteine aus, prüfe das Ergebnis und erreiche alle drei Ziele. Du kannst jede Auswahl ändern.";
+	return `<section class="panel workshop" aria-labelledby="workshop-title"><h2 id="workshop-title">Deine Entdeckerwerkstatt</h2><p>${hint}</p>${illustration(lesson)}<div class="construction">${lesson.workshop.goals
+		.map((goal, i) => {
+			const rotated = [
+				...goal.options.slice(i + 1),
+				...goal.options.slice(0, i + 1),
+			];
+			const control = useChips
+				? `<input type="hidden" id="workshop-${i}" data-workshop="${i}" value=""><span class="word-slot" data-slot="${i}" lang="en" aria-live="polite">___</span>`
+				: `<select id="workshop-${i}" data-workshop="${i}"><option value="">Baustein wählen…</option>${rotated.map((option) => `<option lang="en" value="${esc(option)}">${esc(option)}</option>`).join("")}</select>`;
+			const chipsHtml = useChips
+				? `<div class="chip-group" role="group" aria-label="${esc(goal.label)}">${rotated.map((option) => `<button type="button" class="chip-option" data-goal-chip="${i}" data-value="${esc(option)}" aria-pressed="false" lang="en">${esc(option)}</button>`).join("")}</div>`
+				: "";
+			return `<div class="construction-row" data-goal="${i}"><span class="goal-number" aria-hidden="true">${i + 1}</span><div><label for="workshop-${i}">${esc(goal.label)}</label><div class="word-chain">${goal.before ? `<span class="word-piece" lang="en">${esc(goal.before)}</span><span aria-hidden="true">→</span>` : ""}${control}${goal.after ? `<span class="word-piece" lang="en">${esc(goal.after)}</span>` : ""}</div>${chipsHtml}<p class="goal-feedback small" role="status">Ziel noch offen.</p></div></div>`;
+		})
+		.join("")}</div><p id="workshop-status" role="status">0 von 3 Zielen erreicht.</p></section>`;
 }
 
 export function bindWorkshop(
@@ -106,29 +130,55 @@ export function bindWorkshop(
 	complete: () => void,
 ): void {
 	const inputs = [
-		...container.querySelectorAll<HTMLSelectElement>("[data-workshop]"),
+		...container.querySelectorAll<HTMLSelectElement | HTMLInputElement>(
+			"[data-workshop]",
+		),
 	];
-	for (const input of inputs)
-		input.addEventListener("change", () => {
-			const reached = workshopGoals(
-				lesson.workshop,
-				inputs.map((entry) => entry.value),
+	const evaluate = () => {
+		const reached = workshopGoals(
+			lesson.workshop,
+			inputs.map((entry) => entry.value),
+		);
+		container
+			.querySelectorAll<HTMLElement>("[data-goal]")
+			.forEach((row, i) => {
+				row.dataset.reached = String(reached[i]);
+				row.querySelector(".goal-feedback")!.textContent = reached[i]
+					? `✓ ${lesson.workshop.goals[i].explanation}`
+					: inputs[i].value
+						? "Noch offen. Vergleiche den Baustein mit der Erklärung und dem Material."
+						: "Ziel noch offen.";
+			});
+		const count = reached.filter(Boolean).length;
+		container.querySelector("#workshop-status")!.textContent =
+			`${count} von 3 Zielen erreicht.${count === 3 ? " Werkstatt gespeichert." : ""}`;
+		if (count === 3) complete();
+	};
+	for (const input of inputs) input.addEventListener("change", evaluate);
+	for (const chip of container.querySelectorAll<HTMLButtonElement>(
+		"[data-goal-chip]",
+	)) {
+		chip.addEventListener("click", () => {
+			const goalIndex = Number(chip.dataset.goalChip);
+			const value = chip.dataset.value ?? "";
+			const target = inputs[goalIndex];
+			if (!target) return;
+			target.value = value;
+			for (const sibling of container.querySelectorAll<HTMLButtonElement>(
+				`[data-goal-chip="${goalIndex}"]`,
+			)) {
+				sibling.setAttribute("aria-pressed", String(sibling === chip));
+			}
+			const slot = container.querySelector<HTMLElement>(
+				`[data-slot="${goalIndex}"]`,
 			);
-			container
-				.querySelectorAll<HTMLElement>("[data-goal]")
-				.forEach((row, i) => {
-					row.dataset.reached = String(reached[i]);
-					row.querySelector(".goal-feedback")!.textContent = reached[i]
-						? `✓ ${lesson.workshop.goals[i].explanation}`
-						: inputs[i].value
-							? "Noch offen. Vergleiche den Baustein mit der Erklärung und dem Material."
-							: "Ziel noch offen.";
-				});
-			const count = reached.filter(Boolean).length;
-			container.querySelector("#workshop-status")!.textContent =
-				`${count} von 3 Zielen erreicht.${count === 3 ? " Werkstatt gespeichert." : ""}`;
-			if (count === 3) complete();
+			if (slot) {
+				slot.textContent = value;
+				slot.dataset.filled = "true";
+			}
+			evaluate();
 		});
+	}
 	for (const button of container.querySelectorAll<HTMLButtonElement>(
 		"[data-map-focus]",
 	))
