@@ -1,0 +1,466 @@
+{
+	"curriculum": "https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/5/englisch",
+	"checked": "2026-11-14",
+	"curriculum_sha256": "84765a9f386addc392d6910d9426d58e50fed80f7e0b7248b70c3a0e9f9ba6e6",
+	"neighbour": {
+		"grade": 6,
+		"url": "https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/6/englisch/1-fremdsprache",
+		"sha256": "35684fbe52bba27222d0f8de828afa6ec3078356d6284e0b8914c6bcd985e0ca",
+		"boundary": "Grade 6 first foreign language introduces present perfect simple, past tense progressive, going-to-future, will-future, question tags, adjective comparison, defining relative clauses and the modals could, may, might and should. Those targets are outside this package."
+	},
+	"primary": {
+		"url": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/3/englisch/zweistuendig",
+		"sha256": "ebc4ab35274ac3306497f4624cc4e5505179de07718ad3000529d2cda9e71bdf",
+		"note": "Current Grundschule English 3/4, zweistündig, checked 2026-11-14. It names elementary vocabulary and structures, not the grade 5 tense list. The grade 5 page still links to grundschule/3/englisch/gueltig_bis_2324, which redirected to the LehrplanPLUS homepage on the same day."
+	},
+	"scope": "Bavaria, Gymnasium, English; one common Fachlehrplan for Jahrgangsstufe 5, no separate Ausbildungsrichtung.",
+	"indexing": "E5-01…E5-38 are package-local row identifiers. Grammar sublists remain inside their parent expectation. Topic blocks are included.",
+	"hours": null,
+	"hours_note": "The official page specifies no hours per learning area.",
+	"optional_lessons": [],
+	"rows": [
+		{
+			"id": "E5-01",
+			"lb": "1.1",
+			"competence": "verstehen kurze, einfache und weitgehend langsam und deutlich in britischer bzw. amerikanischer Standardsprache vorgetragene, ggf. visuell, mimisch und gestisch unterstützte Sprachäußerungen und Gespräche sowie medial dargebotene Hör- und Hörseh­texte (z. B. einfache Unterhaltung zum Tagesablauf, kurze Erzählungen über das Familienleben), die sich mit vertrauten Themen aus ihrer Erfahrungswelt beschäftigen und bereits vertrautes Sprachmaterial beinhalten.",
+			"lessons": [
+				"e5-listening"
+			],
+			"status": "supported",
+			"evidence": "The lessons prepare the competence. Partner work, natural recordings, human feedback or a source the learner opens remain necessary. The listening lesson uses an original script, not a natural recording."
+		},
+		{
+			"id": "E5-02",
+			"lb": "1.1",
+			"competence": "entnehmen Texten globale Informationen und leicht verständliche Detailinformationen, ggf. auch unter Zuhilfenahme visueller Elemente, und erkennen Gefühlslagen der Sprecherinnen und Sprecher, wenn sie deutlich hervortreten.",
+			"lessons": [
+				"e5-listening"
+			],
+			"status": "supported",
+			"evidence": "The lessons prepare the competence. Partner work, natural recordings, human feedback or a source the learner opens remain necessary. Learners pick one clear feeling and one detail from the same script."
+		},
+		{
+			"id": "E5-03",
+			"lb": "1.1",
+			"competence": "verstehen kürzere, einfache Texte (z. B. Postkarten aus den Ferien, Tier- und Zoogeschichten) zu Themen aus vertrauten Lebensbereichen und mit weitestgehend bekanntem bzw. leicht erschließbarem Sprachmaterial in ihren wesentlichen Aussagen und entnehmen ihnen gezielt Informationen.",
+			"lessons": [
+				"e5-reading",
+				"e5-school",
+				"e5-london"
+			],
+			"status": "implemented",
+			"evidence": "Worked explanations, a three-goal visual workshop, a quick check, constrained practice and distinct guided and transfer tasks. Postcard, zoo story and timetable are read for gist and detail."
+		},
+		{
+			"id": "E5-04",
+			"lb": "1.1",
+			"competence": "lesen einfache bekannte Texte in angemessenem Tempo auch laut, um korrekte Aussprache und Intonation sowie sinndarstellendes Lesen zu üben.",
+			"lessons": [
+				"e5-reading",
+				"e5-rhyme"
+			],
+			"status": "supported",
+			"evidence": "The lessons prepare the competence. Partner work, natural recordings, human feedback or a source the learner opens remain necessary. Reading aloud needs a partner's ear."
+		},
+		{
+			"id": "E5-05",
+			"lb": "1.1",
+			"competence": "äußern sich in einfachen Wendungen und mithilfe bekannter Strukturen zu klar umrissenen Sachverhalten, die sich auf ihre Person, ihr unmittelbares Lebensumfeld (v. a. Familie, Wohnen, Haustiere, Freunde, Schule, Freizeit) sowie erste Aspekte der Zielkulturen (z. B. einfache Angaben zu geographischen Grundlagen, landestypischen Besonderheiten und Sehenswürdigkeiten) beziehen.",
+			"lessons": [
+				"e5-hello",
+				"e5-family",
+				"e5-home",
+				"e5-routine"
+			],
+			"status": "supported",
+			"evidence": "The lessons prepare the competence. Partner work, natural recordings, human feedback or a source the learner opens remain necessary. Spoken turns are prepared and noted, not assessed as conversation."
+		},
+		{
+			"id": "E5-06",
+			"lb": "1.1",
+			"competence": "treten in sehr einfachen Alltagssituationen mit Gesprächspartnern in Kontakt und führen kurze Gespräche zu vertrauten Themen, z. B. Vorstellung, erste Einkaufs- und Tischgespräche, classroom talk.",
+			"lessons": [
+				"e5-hello",
+				"e5-classroom",
+				"e5-food"
+			],
+			"status": "supported",
+			"evidence": "The lessons prepare the competence. Partner work, natural recordings, human feedback or a source the learner opens remain necessary. Shop and classroom dialogues are rehearsed in writing and aloud."
+		},
+		{
+			"id": "E5-07",
+			"lb": "1.1",
+			"competence": "erzählen von und berichten über bekannte Sachverhalte (z. B. Tagesablauf, einfache Alltagserlebnisse, Feste), indem sie mehrere einfache, miteinander verbundene Sätze formulieren, ggf. auch auf der Basis von Bildmaterial, und dabei auf vertrautes Sprachmaterial zurückgreifen.",
+			"lessons": [
+				"e5-routine",
+				"e5-past",
+				"e5-festivals"
+			],
+			"status": "supported",
+			"evidence": "The lessons prepare the competence. Partner work, natural recordings, human feedback or a source the learner opens remain necessary. Connected sentences are written. Live telling stays with a partner."
+		},
+		{
+			"id": "E5-08",
+			"lb": "1.1",
+			"competence": "verfassen kurze, einfache Texte zu vertrauten Themen, ggf. auf der Basis von Bildvorlagen (z. B. Dialog in einer Schulstunde, persönliche E‑Mail, Postkarte aus dem Urlaub), indem sie die gelernten sprachlichen Mittel teilweise auch ohne explizite sprachliche Vorlagen in korrekter und angemessener Form in neuen Kontexten und Situationen anwenden.",
+			"lessons": [
+				"e5-writing",
+				"e5-reading"
+			],
+			"status": "implemented",
+			"evidence": "Worked explanations, a three-goal visual workshop, a quick check, constrained practice and distinct guided and transfer tasks."
+		},
+		{
+			"id": "E5-09",
+			"lb": "1.1",
+			"competence": "schreiben Wörter und Texte orthographisch korrekt (auch Abschreiben) in Anknüpfung an die aus der Grundschule vertrauten Arbeitsweisen.",
+			"lessons": [
+				"e5-learning",
+				"e5-sounds"
+			],
+			"status": "supported",
+			"evidence": "The lessons prepare the competence. Partner work, natural recordings, human feedback or a source the learner opens remain necessary. Spelling is practised on a selected set and still needs correction over time."
+		},
+		{
+			"id": "E5-10",
+			"lb": "1.1",
+			"competence": "übertragen mündlich in sehr einfachen, alltäglichen und vertrauten Kommunikationssituationen Informationen zu Themen aus ihrer unmittelbaren Erfahrungswelt (z. B. alltägliche Einkäufe, Sprachnachrichten) überwiegend spontan in die jeweils andere Sprache.",
+			"lessons": [
+				"e5-mediation"
+			],
+			"status": "supported",
+			"evidence": "The lessons prepare the competence. Partner work, natural recordings, human feedback or a source the learner opens remain necessary. Spontaneous oral mediation needs another person."
+		},
+		{
+			"id": "E5-11",
+			"lb": "1.1",
+			"competence": "übertragen in schriftlicher und mündlicher Form adressaten- und situationsbezogen konkrete, einfache Informationen (z. B. Öffnungszeiten, Angebote) aus kurzen, situativ eingebetteten Texten zu vertrauten Themen (z. B. Internetseite einer Freizeiteinrichtung, Geburtstagseinladung, Informationen zu einer Sehenswürdigkeit, Zoo-Flyer) sinngemäß in die jeweils andere Sprache.",
+			"lessons": [
+				"e5-mediation"
+			],
+			"status": "implemented",
+			"evidence": "Worked explanations, a three-goal visual workshop, a quick check, constrained practice and distinct guided and transfer tasks. Prices, times and requests are transferred in both directions."
+		},
+		{
+			"id": "E5-12",
+			"lb": "1.2",
+			"competence": "beherrschen aufbauend auf den Vorkenntnissen aus der Grundschule im Rahmen der unter 5.5 aufgeführten Themen einen sehr begrenzten Wortschatz (u. a. cardinal/ordinal numbers, Uhrzeit, Orts-, Zeit- und Häufigkeitsangaben, Monatsnamen, Wochentage, Verwandtschaftsbezeichnungen, Mahlzeiten, Lebensmittel, Wohnräume, Möbelstücke, Kleidung, Schulfächer, Freizeitaktivitäten, Haustiere, Ländernamen, Namen von Sehenswürdigkeiten, einfache geographische Begriffe; erste idioms, collocations, phrasal verbs und unregelmäßige Verben) und wenden ihn zur Bewältigung einfacher Alltagssituationen an (u. a. auch fehlerträchtige, kommunikativ wichtige Ausdrücke und Konstruktionen: I want / I’d like (you) to; I like doing; me, too; not…either; erste false friends: to become, to mean; gängige uncountables: information und homework).",
+			"lessons": [
+				"e5-numbers",
+				"e5-time",
+				"e5-family",
+				"e5-home",
+				"e5-pets",
+				"e5-food",
+				"e5-clothes",
+				"e5-school",
+				"e5-routine",
+				"e5-like"
+			],
+			"status": "implemented",
+			"evidence": "Worked explanations, a three-goal visual workshop, a quick check, constrained practice and distinct guided and transfer tasks. The package does not claim the whole yearly vocabulary."
+		},
+		{
+			"id": "E5-13",
+			"lb": "1.2",
+			"competence": "verwenden in sehr geringem Umfang einen individuellen Wortschatz, um sich zu Themen aus ihrem eigenen Interessensgebiet zu äußern.",
+			"lessons": [
+				"e5-learning"
+			],
+			"status": "supported",
+			"evidence": "The lessons prepare the competence. Partner work, natural recordings, human feedback or a source the learner opens remain necessary. Learners keep five personal words themselves."
+		},
+		{
+			"id": "E5-14",
+			"lb": "1.2",
+			"competence": "beherrschen einfache classroom phrases, grundlegende grammatikalische Fachbegriffe und ersten Funktionswortschatz zur Bildbeschreibung (u. a. in the picture).",
+			"lessons": [
+				"e5-classroom",
+				"e5-writing"
+			],
+			"status": "implemented",
+			"evidence": "Worked explanations, a three-goal visual workshop, a quick check, constrained practice and distinct guided and transfer tasks. Classroom phrases and in the picture are practised."
+		},
+		{
+			"id": "E5-15",
+			"lb": "1.2",
+			"competence": "benennen Personen, Gegenstände, Orte und vertraute Sachverhalte, beschreiben sie mit einfachen Mitteln und setzen sie zueinander in Beziehung: Nomen: Singular, (regelmäßiger/unregelmäßiger) Plural; bestimmter/unbestimmter Artikel Nomen: ’s/of-genitive Personalpronomen Mengenbezeichnungen: much, many, a lot of, lots of Demonstrativpronomen Demonstrativbegleiter Possessivbegleiter wichtige indefinite Pronomen und Begleiter: some, any; somebody, anybody, nobody; someone, anyone, no one; something, anything, nothing einfache Wortstellungsregeln: place – time, S-V-O im Aussagesatz einfache Nebensätze (v. a. temporal, kausal), Objektsätze mit that Verneinung",
+			"lessons": [
+				"e5-articles",
+				"e5-pronouns",
+				"e5-genitive",
+				"e5-demonstratives",
+				"e5-some-any",
+				"e5-quantifiers",
+				"e5-word-order",
+				"e5-clauses"
+			],
+			"status": "implemented",
+			"evidence": "Worked explanations, a three-goal visual workshop, a quick check, constrained practice and distinct guided and transfer tasks. The grammar sublist stays inside this expectation."
+		},
+		{
+			"id": "E5-16",
+			"lb": "1.2",
+			"competence": "treten in Beziehung mit anderen Menschen, stellen und beantworten einfache Fragen, äußern Bitten und Aufforderungen und reagieren auf diese: Imperative Interrogativpronomen Fragen: Fragen mit Fragewort, auch mit who/what (Subjekt/Objekt), whose; Entscheidungsfragen einfache Kurzantworten",
+			"lessons": [
+				"e5-questions",
+				"e5-classroom",
+				"e5-modals"
+			],
+			"status": "implemented",
+			"evidence": "Worked explanations, a three-goal visual workshop, a quick check, constrained practice and distinct guided and transfer tasks."
+		},
+		{
+			"id": "E5-17",
+			"lb": "1.2",
+			"competence": "beschreiben Handlungen, Abläufe und Gewohnheiten in der Gegenwart und sprechen über Vergangenes: Hilfs- und Modalverben: be, have (got), do; can, must, needn’t, mustn’t present tense simple / present tense progressive simple past",
+			"lessons": [
+				"e5-to-be",
+				"e5-have-got",
+				"e5-simple-present",
+				"e5-progressive",
+				"e5-modals",
+				"e5-past"
+			],
+			"status": "implemented",
+			"evidence": "Worked explanations, a three-goal visual workshop, a quick check, constrained practice and distinct guided and transfer tasks."
+		},
+		{
+			"id": "E5-18",
+			"lb": "1.2",
+			"competence": "sprechen auch längere Sätze mit bekanntem Sprachmaterial, aufbauend auf den in der Grundschule erworbenen phonetischen Grundlagen, mit verständlicher und korrekter Aussprache und in typischen Intonationsmustern aus (BE oder AE) und wenden dabei erste gewonnene Erkenntnisse der Zusammenhänge von Lautung und Schreibung im Englischen an.",
+			"lessons": [
+				"e5-sounds"
+			],
+			"status": "supported",
+			"evidence": "The lessons prepare the competence. Partner work, natural recordings, human feedback or a source the learner opens remain necessary. The app does not judge the learner's voice."
+		},
+		{
+			"id": "E5-19",
+			"lb": "1.2",
+			"competence": "ordnen wichtige Symbole der internationalen Lautschrift den entsprechenden Lauten zu und nutzen die Lautschrift sowie Hörbeispiele, um ihre Aussprache (z. B. minimal pairs) zu schulen.",
+			"lessons": [
+				"e5-sounds"
+			],
+			"status": "supported",
+			"evidence": "The lessons prepare the competence. Partner work, natural recordings, human feedback or a source the learner opens remain necessary. A small set of symbols and minimal pairs is practised."
+		},
+		{
+			"id": "E5-20",
+			"lb": "2",
+			"competence": "verfügen über elementares Orientierungswissen zu einigen wichtigen geographischen Gegebenheiten und Sehenswürdigkeiten des UK und der USA sowie zur Alltagskultur besonders des UK; sie erkennen die Bedeutung des Englischen als Weltsprache.",
+			"lessons": [
+				"e5-uk",
+				"e5-london",
+				"e5-america",
+				"e5-world"
+			],
+			"status": "implemented",
+			"evidence": "Worked explanations, a three-goal visual workshop, a quick check, constrained practice and distinct guided and transfer tasks. No population figures are stated."
+		},
+		{
+			"id": "E5-21",
+			"lb": "2",
+			"competence": "begegnen den Kulturen der englischsprachigen Welt mit Interesse, erkennen durch die vergleichende Beschäftigung mit dem Alltagsleben von Gleichaltrigen und ihren Familien in diesen Ländern (v. a. UK) erste grundlegende kulturelle Gemeinsamkeiten und Unterschiede und entwickeln so die in der Grundschule angebahnte Aufgeschlossenheit gegenüber fremden Kulturen weiter.",
+			"lessons": [
+				"e5-festivals",
+				"e5-food",
+				"e5-world"
+			],
+			"status": "supported",
+			"evidence": "The lessons prepare the competence. Partner work, natural recordings, human feedback or a source the learner opens remain necessary. Comparisons stay cautious and do not claim that everybody celebrates the same way."
+		},
+		{
+			"id": "E5-22",
+			"lb": "2",
+			"competence": "verhalten sich in sehr einfachen interkulturellen Alltagssituationen sozial angemessen (z. B. Gruß- und Anredeformeln; yes, please und no, thank you).",
+			"lessons": [
+				"e5-hello"
+			],
+			"status": "implemented",
+			"evidence": "Worked explanations, a three-goal visual workshop, a quick check, constrained practice and distinct guided and transfer tasks."
+		},
+		{
+			"id": "E5-23",
+			"lb": "3",
+			"competence": "erfassen im Rahmen des Hör‑/Hörsehverstehens und des Leseverstehens den Inhalt von Sachtexten sowie dialogischen, erzählenden bzw. berichtenden Texten (auch mit einfachen beschreibenden Passagen), z. B. Fahrpläne, Durchsagen, Karten, Plakate, persönliche Briefe, Foto-Stories, Videoclips, Dialogszenen, Erzählungen, didaktisch aufbereitete Lektüren und Internetseiten.",
+			"lessons": [
+				"e5-reading",
+				"e5-school",
+				"e5-listening",
+				"e5-uk"
+			],
+			"status": "supported",
+			"evidence": "The lessons prepare the competence. Partner work, natural recordings, human feedback or a source the learner opens remain necessary. Video clips and websites beyond the linked sources stay in class."
+		},
+		{
+			"id": "E5-24",
+			"lb": "3",
+			"competence": "entnehmen Texten gezielt Informationen (auch mithilfe von Überschriften und bildlichen bzw. grafischen Elementen), beantworten einfache Fragen zu Texten, fassen Inhalte zusammen, erzählen einfache Handlungsabläufe nach.",
+			"lessons": [
+				"e5-reading",
+				"e5-listening"
+			],
+			"status": "implemented",
+			"evidence": "Worked explanations, a three-goal visual workshop, a quick check, constrained practice and distinct guided and transfer tasks."
+		},
+		{
+			"id": "E5-25",
+			"lb": "3",
+			"competence": "verfassen Texte zu Bildvorlagen, Dialoge, persönliche Mitteilungen wie Sprachnachrichten, E‑Mails oder Postkarten, wobei sie auf erste, der jeweiligen Textart und dem Kommunikationsmedium angemessene, grundlegende Gestaltungskriterien achten.",
+			"lessons": [
+				"e5-writing",
+				"e5-mediation"
+			],
+			"status": "implemented",
+			"evidence": "Worked explanations, a three-goal visual workshop, a quick check, constrained practice and distinct guided and transfer tasks."
+		},
+		{
+			"id": "E5-26",
+			"lb": "3",
+			"competence": "beschäftigen sich (ggf. kreativ) mit verschiedenartigen, altersgemäßen Texten (auch Auszüge aus englischsprachiger Kinderliteratur und inhaltlich und sprachlich sehr einfache poetische Kurzformen: bekannte nursery rhymes, Lieder, nonsense verses etc.) und entwickeln dabei Aufgeschlossenheit und Freude im Umgang mit fremdsprachlichen Texten, z. B. auch durch gestaltendes Vortragen, szenisches Spiel.",
+			"lessons": [
+				"e5-rhyme"
+			],
+			"status": "supported",
+			"evidence": "The lessons prepare the competence. Partner work, natural recordings, human feedback or a source the learner opens remain necessary. A public-domain rhyme is spoken and copied. Scenic performance stays with other people."
+		},
+		{
+			"id": "E5-27",
+			"lb": "3",
+			"competence": "entnehmen einfachen, ggf. didaktisierten Filmsequenzen leicht erschließbare Informationen, v. a. zu Handlungsablauf und Figuren, ggf. unter Nutzung von Untertiteln.",
+			"lessons": [
+				"e5-reading"
+			],
+			"status": "supported",
+			"evidence": "Film sequences are not played in the app. The reading lesson names what stays in class."
+		},
+		{
+			"id": "E5-28",
+			"lb": "4",
+			"competence": "gestalten ihren Lernprozess mit, indem sie einfache Strategien zum Erwerb, zur Wiederholung, Vertiefung und Strukturierung von Sprachmaterial (z. B. Wortfelder, Wortfamilien, Lernen in chunks), ggf. unter Anleitung, anwenden; sie erkennen erste individuelle Stärken und Schwächen und lernen, für sie typische Fehler zu vermeiden.",
+			"lessons": [
+				"e5-learning"
+			],
+			"status": "supported",
+			"evidence": "The lessons prepare the competence. Partner work, natural recordings, human feedback or a source the learner opens remain necessary."
+		},
+		{
+			"id": "E5-29",
+			"lb": "4",
+			"competence": "wenden in sehr begrenztem Umfang und mit Hilfestellung grundlegende Strategien des Lese- und Hör‑/Hörsehverstehens sowie der mündlichen und schriftlichen Sprachproduktion an; sie erschließen dabei, ggf. unter Anleitung, die Bedeutung unbekannter Wörter und Strukturen aufgrund sprachlicher Vorkenntnisse (Internationalismen, Nähe zum Deutschen und ggf. zu weiteren Erstsprachen) oder aus einfachen situativen Kontexten.",
+			"lessons": [
+				"e5-listening",
+				"e5-reading",
+				"e5-learning"
+			],
+			"status": "supported",
+			"evidence": "The lessons prepare the competence. Partner work, natural recordings, human feedback or a source the learner opens remain necessary."
+		},
+		{
+			"id": "E5-30",
+			"lb": "4",
+			"competence": "nutzen verschiedene Teile des Lehrwerks (z. B. Vokabelanhänge, grammatikalische Übersichten) zur gezielten Informationsentnahme (einzelne unbekannte Wörter; auch Aussprache anhand von Hörbeispielen bzw. internationaler Lautschrift) und zum Lernen (z. B. E‑Learning‑Angebote des Lehrwerks, Lernplattformen) sowie zur Erstellung und Überarbeitung von Texten, ggf. mit Hilfestellung; sie nutzen moderne Kommunikationstechnologien in grundlegender Form, z. B. für das Verfassen von englischen Texten mit gängigen Textverarbeitungsprogrammen oder bei Aufgaben zum Hör‑/Hörsehverstehen.",
+			"lessons": [
+				"e5-learning"
+			],
+			"status": "supported",
+			"evidence": "The reference view collects language from the lessons. The school book and its audio stay outside the app."
+		},
+		{
+			"id": "E5-31",
+			"lb": "5",
+			"competence": "bewältigen Kommunikationssituationen innerhalb der angegebenen Themengebiete mithilfe der in den Lernbereichen 1 – 4 ausgewiesenen Kompetenzen.",
+			"lessons": [
+				"e5-hello",
+				"e5-family",
+				"e5-school",
+				"e5-food",
+				"e5-uk"
+			],
+			"status": "implemented",
+			"evidence": "Worked explanations, a three-goal visual workshop, a quick check, constrained practice and distinct guided and transfer tasks."
+		},
+		{
+			"id": "E5-32",
+			"lb": "5",
+			"competence": "setzen sich auf der Grundlage ihrer Kenntnisse bewusst mit der englischen Sprache und den mit ihr verbundenen Kulturräumen auseinander.",
+			"lessons": [
+				"e5-awareness",
+				"e5-world"
+			],
+			"status": "implemented",
+			"evidence": "Worked explanations, a three-goal visual workshop, a quick check, constrained practice and distinct guided and transfer tasks."
+		},
+		{
+			"id": "E5-33",
+			"lb": "5",
+			"competence": "Leben im sozialen Umfeld (Schwerpunkt UK): Familie, Freunde, Freizeit, Schulalltag, Wohnen, Essgewohnheiten, Tages- und Jahresablauf, Feste und Bräuche, Einkaufen",
+			"lessons": [
+				"e5-family",
+				"e5-home",
+				"e5-school",
+				"e5-food",
+				"e5-clothes",
+				"e5-routine",
+				"e5-festivals"
+			],
+			"status": "implemented",
+			"evidence": "Worked explanations, a three-goal visual workshop, a quick check, constrained practice and distinct guided and transfer tasks."
+		},
+		{
+			"id": "E5-34",
+			"lb": "5",
+			"competence": "erste Einblicke in die geographische und politische Gliederung der Britischen Inseln (United Kingdom, Great Britain, Irland) und Nordamerikas (USA: Lower 48, Hawaii und Alaska; Kanada)",
+			"lessons": [
+				"e5-uk",
+				"e5-america"
+			],
+			"status": "implemented",
+			"evidence": "Worked explanations, a three-goal visual workshop, a quick check, constrained practice and distinct guided and transfer tasks."
+		},
+		{
+			"id": "E5-35",
+			"lb": "5",
+			"competence": "London, Washington D.C., New York: bedeutende Sehenswürdigkeiten",
+			"lessons": [
+				"e5-london",
+				"e5-america"
+			],
+			"status": "implemented",
+			"evidence": "Worked explanations, a three-goal visual workshop, a quick check, constrained practice and distinct guided and transfer tasks."
+		},
+		{
+			"id": "E5-36",
+			"lb": "5",
+			"competence": "altersgemäßes Aufgreifen von aktuellen Anlässen (z. B. Sportereignisse, kulturelle Veranstaltungen, Wahlen)",
+			"lessons": [
+				"e5-world"
+			],
+			"status": "supported",
+			"evidence": "Learners research one current occasion and copy only a fact they can see. The app stores no live statistics."
+		},
+		{
+			"id": "E5-37",
+			"lb": "5",
+			"competence": "erste Einblicke in Englisch als Weltsprache",
+			"lessons": [
+				"e5-world"
+			],
+			"status": "implemented",
+			"evidence": "Worked explanations, a three-goal visual workshop, a quick check, constrained practice and distinct guided and transfer tasks. No speaker totals are given."
+		},
+		{
+			"id": "E5-38",
+			"lb": "5",
+			"competence": "Sprachreflexion: Problematik von Wortgleichungen (z. B. happy – lucky, drive – go – ride) und Wort-für-Wort-Übersetzungen; einige grundlegende Aussprache- und Intonationsunterschiede zwischen dem Deutschen und dem Englischen sowie erste Unterschiede zwischen gesprochener und geschriebener Sprache (v. a. short forms); erste Einblicke in aspect",
+			"lessons": [
+				"e5-awareness",
+				"e5-progressive",
+				"e5-sounds"
+			],
+			"status": "implemented",
+			"evidence": "Worked explanations, a three-goal visual workshop, a quick check, constrained practice and distinct guided and transfer tasks. Aspect is limited to habit versus action in progress."
+		}
+	]
+}
