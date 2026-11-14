@@ -179,6 +179,31 @@ try {
 					[],
 					`${lesson.id}: labels stay within the figure`,
 				);
+				if (lesson.id === "geo-erdgeschichte") {
+					const structure = await evaluate(`(() => {
+                    const section=document.querySelector('.earth-layers');
+                    return {layers:Array.from(section.querySelectorAll('circle'),e=>e.dataset.earthLayer),colours:Array.from(section.querySelectorAll('circle'),e=>getComputedStyle(e).fill),labels:document.querySelector('.earth-layer-labels').textContent};
+                  })()`);
+					assert.deepEqual(structure.layers, ["crust", "mantle", "core"]);
+					assert.equal(
+						new Set(structure.colours).size,
+						3,
+						"Earth layers have distinct rendered colours",
+					);
+					for (const label of ["Kruste", "Mantel", "Kern"])
+						assert.ok(structure.labels.includes(label));
+				}
+				if (lesson.id === "geo-erdbewegungen") {
+					const rotation = await evaluate(`(() => {
+                    const path=document.querySelector('[data-rotation="front"]');
+                    const bounds=path.getBBox();
+                    return {height:bounds.height,width:bounds.width,arrow:!!path.parentElement.querySelector('.arrow-head')};
+                  })()`);
+					assert.ok(
+						rotation.height > 20 && rotation.width > 100 && rotation.arrow,
+						"rotation arrow wraps around the Earth",
+					);
+				}
 				if (level === 1) {
 					await evaluate(
 						`window.figureDraft=document.querySelector('#draft');window.figureStorage=JSON.stringify({...localStorage});window.figureScroll=scrollY;`,
@@ -188,11 +213,15 @@ try {
 							`document.querySelector('[data-figure-focus="${part}"]').click()`,
 						);
 						const state = await evaluate(
-							`({focus:document.querySelector('.concept-figure').dataset.focus,selected:document.querySelectorAll('.concept-figure [aria-pressed="true"]').length,note:document.querySelector('.figure-note').textContent,stable:window.figureDraft===document.querySelector('#draft'),storage:window.figureStorage===JSON.stringify({...localStorage}),scroll:window.figureScroll===scrollY})`,
+							`({focus:document.querySelector('.concept-figure').dataset.focus,selected:document.querySelectorAll('.concept-figure [aria-pressed="true"]').length,note:document.querySelector('.figure-note').textContent,heading:document.querySelector('.figure-note strong')?.textContent,stable:window.figureDraft===document.querySelector('#draft'),storage:window.figureStorage===JSON.stringify({...localStorage}),scroll:window.figureScroll===scrollY})`,
 						);
 						assert.equal(state.focus, String(part));
 						assert.equal(state.selected, 1);
 						assert.ok(state.note.length > 60);
+						assert.ok(
+							state.heading?.endsWith(":"),
+							"selected figure label stays emphasized",
+						);
 						assert.equal(
 							state.stable,
 							true,
@@ -339,7 +368,18 @@ try {
 			await evaluate('document.querySelector(".model-readout").innerText')
 		).includes("2.000 m"),
 	);
+	assert.ok(
+		(
+			await evaluate('document.querySelector(".model-readout").innerText')
+		).includes("1 : 25 000"),
+	);
 	await evaluate('document.querySelector("[data-scenario=overview]").click()');
+	assert.ok(
+		(
+			await evaluate('document.querySelector(".model-readout").innerText')
+		).includes("1 : 50 000"),
+	);
+
 	assert.ok(
 		(
 			await evaluate('document.querySelector(".model-readout").innerText')
@@ -465,6 +505,10 @@ try {
 				interactionChecks: [
 					"31 accessible explanatory figures",
 					"figure label bounds",
+					"three distinct labelled Earth layers",
+					"curved rotation arrow around the polar axis",
+					"selected figure label emphasis",
+					"consistent scale notation",
 					"figure focus and keyboard reset",
 					"figure exploration preserves drafts, storage and scroll",
 					"mobile diagram panning, selected detail visibility and label size",

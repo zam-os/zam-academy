@@ -321,9 +321,19 @@ function bindFigure(lesson: Lesson): void {
 							focus !== 0 && Number(entry.dataset.part) !== focus,
 						),
 					);
-				figure.querySelector(".figure-note")!.textContent = focus
-					? `${definition.parts[focus - 1].label}: ${definition.parts[focus - 1].note}`
-					: "Wähle einen Bildteil und entdecke den Zusammenhang. Mit „Alles ansehen“ hebst du alle Bildteile wieder hervor.";
+				const note = figure.querySelector(".figure-note")!;
+				if (focus) {
+					const selected = definition.parts[focus - 1];
+					const heading = document.createElement("strong");
+					heading.textContent = `${selected.label}:`;
+					note.replaceChildren(
+						heading,
+						document.createTextNode(` ${selected.note}`),
+					);
+				} else {
+					note.textContent =
+						"Wähle einen Bildteil und entdecke den Zusammenhang. Mit „Alles ansehen“ hebst du alle Bildteile wieder hervor.";
+				}
 			});
 		});
 }

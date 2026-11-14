@@ -41,7 +41,7 @@ The C rows keep mixed or broader retrievals separate. Two possible retirements a
 ## Verification evidence
 
 - `npm ci --offline --no-audit --no-fund`: installed the existing locked development tools without new dependencies.
-- `npx tsc --noEmit` and `npm test`: 125 tests passed; compile and verify lesson metadata, explanatory graphics, workshops, arithmetic, map projection, persisted state, research form, anchors and mapping proposal. The research tests retain the reference shell's local-date boundary, malformed date, unsafe URL and draft limits checks.
+- `npx tsc --noEmit` and `npm test`: 127 tests passed; compile and verify lesson metadata, explanatory graphics, workshops, arithmetic, map projection, persisted state, research form, anchors and mapping proposal. The research tests retain the reference shell's local-date boundary, malformed date, unsafe URL and draft limits checks.
 - `npm run verify:content`: all 30 statements found in the fetched official page; official and both legacy SHA-256 checks pass.
 - `npm run package:zip` and `npm run verify:release`: produce and verify a self-contained HTML/ZIP and exact starter bytes.
 - `node --test scripts/build-catalog.test.mjs scripts/academy-registry.test.mjs`: 51 tests passed, including exclusion of local-only packages.

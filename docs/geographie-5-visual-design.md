@@ -59,6 +59,12 @@ is not an actual aerial photograph. The Earth-age comparison gives each of 46
 points 100 million years and explains that human history occupies only a tiny
 fraction of the last point.
 
+The Earth cross-section uses exactly three distinctly coloured, directly labelled
+zones matching the lesson: a thin crust, mantle and core. It groups the core as one
+zone at this level. The rotation drawing uses a curved equatorial arrow around an
+axis marked N/S. Selected-note labels retain their bold emphasis after interaction;
+the scale figure and model both use spaced notation such as `1 : 50 000`.
+
 The cell, curriculum bindings, identifiers, progress keys and mapping proposal are
 unchanged. The package remains `local-only`; real excursions, current-event
 research, conservation action and presentations retain their classroom role.
@@ -68,7 +74,7 @@ research, conservation action and presentations retain their classroom role.
 From `geographie-realschule-5/`:
 
 - `npm ci --offline --no-audit --no-fund`: existing locked development tools only.
-- `npx tsc --noEmit` and `npm test`: 125 tests pass, including one figure contract
+- `npx tsc --noEmit` and `npm test`: 127 tests pass, including one figure contract
   per lesson, complete figure coverage, valid selectable parts, accessible markup
   and reasoning-relevant schematic limits.
 - `npm run verify:content`: 30 curriculum statements found; official and legacy
@@ -79,7 +85,9 @@ From `geographie-realschule-5/`:
   figure interactions, 64 mobile views at 390 px, plus path and reference views.
   Checks include label bounds, accessible descriptions, real keyboard activation,
   draft/storage/scroll preservation, mobile panning, selected-detail visibility,
-  readable main labels and the existing model/project/workshop controls. It
+  readable main labels, three distinct rendered Earth-layer colours, a curved rotation
+  arrow, persistent note-label emphasis, consistent scale notation and the existing
+  model/project/workshop controls. It
   reports zero runtime exceptions and zero external requests.
 
 At repository root:

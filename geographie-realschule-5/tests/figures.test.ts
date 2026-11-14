@@ -76,6 +76,50 @@ describe("explanatory graphics", () => {
 			"Bruchteil des letzten Punktes",
 		);
 	});
+	it("shows the lesson's three concentric Earth layers with a thin, distinct crust", () => {
+		const drawing = FIGURES["geo-erdgeschichte"].draw();
+		const section = drawing.match(
+			/<g class="earth-layers">([\s\S]*?)<\/g>/,
+		)![1];
+		const circles = [...section.matchAll(/<circle\b[^>]*>/g)].map(
+			([circle]) => {
+				const attribute = (name: string) =>
+					circle.match(new RegExp(`\\s${name}="([^"]+)"`))![1];
+				return {
+					layer: attribute("data-earth-layer"),
+					colour: attribute("class"),
+					center: `${attribute("cx")},${attribute("cy")}`,
+					radius: Number(attribute("r")),
+				};
+			},
+		);
+		expect(circles.map((c) => c.layer)).toEqual(["crust", "mantle", "core"]);
+		expect(new Set(circles.map((c) => c.colour)).size).toBe(3);
+		expect(new Set(circles.map((c) => c.center)).size).toBe(1);
+		expect(circles[0].radius).toBeGreaterThan(circles[1].radius);
+		expect(circles[1].radius).toBeGreaterThan(circles[2].radius);
+		expect(circles[0].radius - circles[1].radius).toBeLessThan(
+			circles[0].radius / 10,
+		);
+		const labels = drawing.match(
+			/<g class="earth-layer-labels">([\s\S]*?)<\/g>/,
+		)![1];
+		for (const label of ["Kruste", "Mantel", "Kern"])
+			expect(labels).toContain(`>${label}</text>`);
+		expect(drawing).not.toContain("v-leaf-line");
+	});
+	it("depicts rotation with a curved arrow around a marked polar axis", () => {
+		const drawing = FIGURES["geo-erdbewegungen"].draw();
+		const rotation = drawing.match(
+			/<g class="v-arrow rotation-arrow"[^>]*>([\s\S]*?)<\/g>/,
+		)![1];
+		const curve = rotation.match(/data-rotation="front" d="([^"]+)"/)![1];
+		expect(curve).toMatch(/[Aa]/);
+		expect(rotation).toContain('class="arrow-head"');
+		expect(drawing).toContain(">N</text>");
+		expect(drawing).toContain(">S</text>");
+		expect(FIGURES["geo-erdbewegungen"].alt).toContain("gekrümmter Pfeil");
+	});
 	it("keeps decorative path illustrations out of the accessibility tree", () => {
 		expect(renderHeroArt()).toContain('aria-hidden="true"');
 		for (let lb = 1; lb <= 7; lb++)

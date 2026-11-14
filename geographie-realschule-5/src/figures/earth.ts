@@ -26,7 +26,7 @@ export const solarSystem = (): string => {
 export const movements = (): string =>
 	group(
 		1,
-		`${panel(10, 10, 275, 250)}<circle class="v-sun" cx="48" cy="110" r="25"/>${arrow(84, 110, 123, 110)}${globe(195, 110, 53)}<path class="v-night" d="M195 57A53 53 0 0 1 195 163Z"/><path class="v-coral-line" d="M180 45L210 175"/>${arrow(155, 181, 232, 181)}${label(150, 235, "Rotation · Tag und Nacht")}`,
+		`${panel(10, 10, 275, 250)}<circle class="v-sun" cx="48" cy="110" r="25"/>${arrow(84, 110, 123, 110)}<g transform="translate(195 110) rotate(-13)"><path class="v-orbit" d="M-66 0A66 24 0 0 1 66 0"/>${globe(0, 0, 53)}</g><path class="v-night" d="M195 57A53 53 0 0 1 195 163Z"/><path class="v-coral-line" d="M180 45L210 175"/><g class="v-arrow rotation-arrow" transform="translate(195 110) rotate(-13)"><path data-rotation="front" d="M-66 0A66 24 0 0 0 62 8"/><path class="arrow-head" d="M62 8L50 11 61 21Z"/></g>${label(177, 34, "N", "small")}${label(214, 199, "S", "small")}${label(150, 235, "Rotation · Tag und Nacht")}`,
 	) +
 	group(
 		2,
@@ -70,7 +70,7 @@ export const satellites = (): string =>
 export const earthHistory = (): string =>
 	group(
 		1,
-		`<circle class="v-coral" cx="125" cy="132" r="91"/><circle class="v-orange" cx="125" cy="132" r="80"/><circle class="v-sun" cx="125" cy="132" r="42"/><circle class="v-coral" cx="125" cy="132" r="22"/><path class="v-leaf-line" d="M38 108A91 91 0 0 1 212 108"/>${label(125, 259, "Kruste · Mantel · Kern")}`,
+		`<g class="earth-layers"><circle data-earth-layer="crust" class="v-purple" cx="125" cy="132" r="88"/><circle data-earth-layer="mantle" class="v-orange" cx="125" cy="132" r="84"/><circle data-earth-layer="core" class="v-sun" cx="125" cy="132" r="40"/></g><g class="earth-layer-labels"><path class="v-outline" d="M80 35V46L87 54M85 218L96 184M168 219L145 145"/>${label(26, 30, "Kruste", "small", "start")}${label(42, 245, "Mantel", "small", "start")}${label(163, 245, "Kern", "small", "start")}</g>`,
 	) +
 	group(
 		2,

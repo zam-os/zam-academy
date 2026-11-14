@@ -132,10 +132,10 @@ export const FIGURES: Record<string, ConceptFigure> = {
 	"geo-erdbewegungen": {
 		title: "Zwei Bewegungen, zwei Erklärungen",
 		draw: earth.movements,
-		alt: "Links wird eine Hälfte der rotierenden Erde beleuchtet. Rechts umläuft die Erde die Sonne mit an beiden Positionen gleich gerichteter geneigter Achse.",
+		alt: "Links zeigt ein gekrümmter Pfeil die Drehung um die mit N und S markierte Erdachse; eine Hälfte der Erde ist beleuchtet. Rechts umläuft die Erde die Sonne mit an beiden Positionen gleich gerichteter geneigter Achse.",
 		question: "Welche Bewegung erklärt Tag und Nacht, welche die Jahreszeiten?",
 		caption:
-			"Schematisch und nicht maßstäblich. Die Erdachse behält beim Umlauf annähernd ihre Richtung im Raum.",
+			"Schematisch und nicht maßstäblich. N und S markieren die Pole; der gekrümmte Pfeil zeigt die Drehung um die Achse. Beim Umlauf behält die Erdachse annähernd ihre Richtung im Raum.",
 		parts: [
 			part(
 				"Drehung",
@@ -194,14 +194,14 @@ export const FIGURES: Record<string, ConceptFigure> = {
 	"geo-erdgeschichte": {
 		title: "Eine alte Erde mit innerem Aufbau",
 		draw: earth.earthHistory,
-		alt: "Ein vereinfachter Schnitt zeigt Kruste, Mantel und Kern. Daneben stehen 46 Punkte für je 100 Millionen Jahre; der letzte Punkt ist hervorgehoben.",
+		alt: "Ein vereinfachter Schnitt zeigt genau drei beschriftete Zonen: außen die dünne violette Kruste, darunter den orangefarbenen Mantel und innen den gelben Kern. Daneben stehen 46 Punkte für je 100 Millionen Jahre; der letzte Punkt ist hervorgehoben.",
 		question: "Wie klein ist die Menschheitsgeschichte gegenüber dem Erdalter?",
 		caption:
 			"46 · 100 Millionen = 4,6 Milliarden Jahre. Schichtdicken sind nicht maßstäblich; der letzte Punkt umfasst viel mehr Zeit als die Menschheitsgeschichte.",
 		parts: [
 			part(
 				"Schalenbau",
-				"Die dünne Kruste liegt über dem Mantel und dem Kern. Ein räumlicher Schnitt erklärt den Aufbau, keine zeitliche Reihenfolge.",
+				"Die dünne Kruste liegt über dem Mantel und dem Kern. Große Teile des Mantels sind fest und verformen sich über lange Zeiträume langsam. Der Schnitt erklärt den Aufbau, keine zeitliche Reihenfolge.",
 			),
 			part(
 				"Erdalter",
