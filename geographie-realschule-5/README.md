@@ -1,8 +1,8 @@
 # Grade 5 geography · Bavarian Realschule
 
-An offline learning package for the shared Grade 5 LehrplanPLUS curriculum: 31 lessons in seven learning areas, 31 classification workshops, writing tasks at two levels, six map/model families and 62 linked ZAM practice items.
+An offline learning package for the shared Grade 5 LehrplanPLUS curriculum: 31 lessons in seven learning areas, 31 explanatory graphics, 31 classification workshops, writing tasks at two levels, six map/model families and 62 linked ZAM practice items.
 
-This is a **local draft** (`publication.json`: `local-only`). It is excluded from the public catalog, atlas registry and Pages. Its cell contains no history replacements or retirements. Teacher review and a separate video step remain open; no teacher videos are included.
+This is a **published preview** (`publication.json`: `preview`) at [ZAM Academy](https://academy.zam-os.org/geographie-realschule-5/), registered in the public catalog, atlas and Pages build. A visible notice explains that teacher review and videos remain open. Its cell contains no history replacements or retirements.
 
 ## Run locally
 
@@ -28,6 +28,21 @@ Open `http://localhost:5240/geographie-realschule-5/`. For an install-free build
 Each lesson has an explanation and worked example, a takeaway, a three-option check, a classification workshop and distinct guided/transfer writing tasks. Learners compare their own response with a model answer and three criteria; the app does not grade prose. Core completion requires the check, workshop and guided self-assessment, plus opening the required model comparisons and formally completing the relevant research worksheet fields. Level 2 is additional transfer practice.
 
 Real atlas lookup, sketches, local observations, an accompanied excursion, conservation action, research and presentations remain learner/classroom activities. The [coverage matrix](coverage.json) marks these expectations `supported` and explains the remaining work. A completed field or opened model is never presented as evidence of understanding or a completed presentation.
+
+## Visual explanations
+
+Every reading panel includes a locally drawn, labelled SVG between the explanation
+and worked example. A question guides observation; selectable parts reveal short
+notes and highlight the relevant relationship. The learning path has seven
+illustrated area cards and an expedition scene. Water, vegetation and processes
+use consistent semantic colours in light and dark themes.
+
+The figures have descriptive accessible text, keyboard-operable buttons and
+captions explaining invented or schematic details. On narrow screens, the canvas
+can be panned horizontally to keep labels readable; selecting a part brings it
+into view. Exploring figures changes no completion state and preserves drafts.
+The [visual design comparison](../docs/geographie-5-visual-design.md) records the
+comparison with GPG 5 and the teaching purpose of the new graphics.
 
 ## Models and data
 
@@ -58,4 +73,4 @@ npm run verify:release
 npm run verify:browser # installed Chrome; optionally set CHROME_BIN
 ```
 
-`verify:content` checks all 30 verbatim competence rows against the fetched official HTML and verifies official/legacy snapshot hashes. Unit tests cover content, workshops, model arithmetic, storage, research validation, deep links and cell/mapping contracts. `verify:release` checks exact ZIP HTML and launcher bytes, shell syntax and the absence of external runtime assets. CI also installs the cell with its pinned published ZAM kernel.
+`verify:content` checks all 30 verbatim competence rows against the fetched official HTML and verifies official/legacy snapshot hashes. The 127 unit tests cover content, graphic coverage and accessibility contracts, workshops, model arithmetic, storage, research validation, deep links and cell/mapping contracts. Browser checks cover 124 lesson/level/theme combinations, 248 desktop figure interactions and 64 mobile views, including label bounds, keyboard activation and selected-detail panning. `verify:release` checks exact ZIP HTML and launcher bytes, shell syntax and the absence of external runtime assets. CI also installs the cell with its pinned published ZAM kernel.
