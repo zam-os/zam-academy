@@ -31,6 +31,13 @@ for (const file of [
 	assert.ok(entries.includes(`${name}/${file}`));
 for (const starter of ["Start-Mac.command", "start-linux.sh"])
 	execFileSync("sh", ["-n", join(root, "release", name, starter)]);
+const instructions = execFileSync(
+	"unzip",
+	["-p", zip, `${name}/README-START.txt`],
+	{ encoding: "utf8" },
+);
+assert.match(instructions, /^ZAM ACADEMY · DEUTSCH 5 GYMNASIUM\n/);
+assert.doesNotMatch(instructions, /REALSCHULE/i);
 console.log(
 	"ok: ZIP contains the exact self-contained HTML, all three starters and instructions; shell syntax passes.",
 );

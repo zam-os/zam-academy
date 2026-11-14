@@ -980,6 +980,226 @@ summary {
 	height: auto;
 	max-height: 17rem;
 }
+.diagram-caption {
+	display: grid;
+	place-items: center;
+	text-align: center;
+	height: 100%;
+	padding: 0.5rem;
+	color: var(--ink);
+	font:
+		16px / 1.35 ui-sans-serif,
+		system-ui,
+		sans-serif;
+	overflow-wrap: anywhere;
+}
+.language-model {
+	display: flex;
+	align-items: stretch;
+	justify-content: center;
+	gap: 0.6rem;
+	flex-wrap: wrap;
+	padding: 1.4rem 0.4rem;
+	min-height: 10rem;
+}
+.model-block {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	min-width: 4rem;
+	max-width: 100%;
+	text-align: center;
+	padding: 0.8rem 1rem;
+	border: 2px solid var(--model-tone, var(--line));
+	border-top-width: 5px;
+	border-radius: 0.65rem;
+	background: var(--surface);
+	box-shadow: 0 3px 0 var(--line);
+}
+.model-block strong {
+	font-size: 1.25rem;
+	overflow-wrap: anywhere;
+}
+.model-label {
+	display: block;
+	color: var(--muted);
+	font-size: 0.7rem;
+	margin-bottom: 0.5rem;
+}
+.tone-predicate,
+.tone-marker,
+.tone-report {
+	--model-tone: #b96b38;
+}
+.tone-subject,
+.tone-noun,
+.tone-entry,
+.tone-stem {
+	--model-tone: #5779ad;
+}
+.tone-object,
+.tone-case,
+.tone-pronoun,
+.tone-ending {
+	--model-tone: #a16caa;
+}
+.tone-time,
+.tone-place,
+.tone-reason,
+.tone-manner,
+.tone-prefix {
+	--model-tone: #3b8772;
+}
+.tone-adjective,
+.tone-subordinate,
+.tone-speech,
+.tone-image,
+.tone-comparison {
+	--model-tone: #b45c76;
+}
+.tone-vowel {
+	--model-tone: #c48b28;
+}
+.tone-neutral {
+	background: var(--bg);
+	border-style: dashed;
+}
+.model-sentence .tone-predicate,
+.model-bracket .tone-predicate {
+	border-radius: 0.3rem;
+	border-bottom-width: 6px;
+}
+.model-wordparts,
+.model-vowel,
+.model-capital,
+.model-extension {
+	gap: 0.25rem;
+}
+.model-wordparts .model-block {
+	border-radius: 1rem 0.2rem 1rem 0.2rem;
+}
+.model-register .model-block {
+	border-radius: 1rem 1rem 1rem 0.1rem;
+}
+.model-speech .tone-speech {
+	border-radius: 1rem 1rem 1rem 0.1rem;
+}
+.model-meaning .model-block + .model-block::before {
+	content: "↔";
+	color: var(--stage-accent);
+	font-size: 1.5rem;
+}
+.meaning-pictures svg {
+	max-height: 6rem;
+}
+.model-timeline {
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	gap: 0.4rem;
+	list-style: none;
+	padding: 0;
+	margin: 0.6rem 0;
+	font-size: 0.75rem;
+}
+.model-time-point {
+	border-bottom: 3px solid var(--line);
+	padding: 0.4rem;
+	text-align: center;
+	overflow-wrap: anywhere;
+}
+.model-timeline .time-active {
+	border-color: var(--accent);
+	background: var(--surface);
+	font-weight: 700;
+}
+.vowel-comparison {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 1rem;
+	padding: 0.7rem;
+	font-size: 0.85rem;
+}
+.vowel-duration {
+	display: block;
+	height: 0.7rem;
+	border-radius: 1rem;
+	background: var(--accent);
+}
+.vowel-duration.short {
+	width: 3rem;
+}
+.vowel-duration.long {
+	width: 10rem;
+	max-width: 100%;
+}
+.model-alphabet {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.15rem;
+	padding: 0.6rem;
+	justify-content: center;
+	font-size: 0.75rem;
+}
+.model-alphabet span {
+	padding: 0.15rem 0.35rem;
+	border-radius: 0.2rem;
+}
+.model-alphabet .letter-active {
+	color: var(--bg);
+	background: var(--accent);
+	font-weight: 800;
+}
+.model-syllables {
+	align-items: center;
+	gap: 0.3rem;
+}
+.model-syllables .model-block {
+	position: relative;
+	padding-bottom: 1.4rem;
+}
+.syllable-divider {
+	font-size: 1.4rem;
+	font-weight: 800;
+}
+.diagram .syllable-bow {
+	height: 1.5rem;
+	margin-top: 0.4rem;
+}
+.syllable-bow path {
+	stroke: var(--accent);
+	stroke-width: 3;
+	fill: none;
+}
+.model-goals {
+	padding-top: 0.5rem;
+	border-top: 1px solid var(--line);
+}
+.model-goals ul {
+	list-style: none;
+	padding: 0;
+	font-size: 0.8rem;
+}
+.model-goal {
+	padding: 0.25rem 0;
+}
+.model-goals [data-model-reached="true"] {
+	color: var(--accent);
+	font-weight: 650;
+}
+@media (max-width: 560px) {
+	.model-block {
+		padding: 0.65rem;
+	}
+	.model-block strong {
+		font-size: 1.1rem;
+	}
+	.model-timeline {
+		font-size: 0.68rem;
+		gap: 0.1rem;
+	}
+}
 .diagram text {
 	fill: var(--ink);
 	font:

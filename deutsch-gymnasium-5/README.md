@@ -7,6 +7,12 @@ explorable labelled diagram, a quick check, two case decisions and distinct
 guided and transfer writing tasks. Learners compare drafts with a model and
 use a three-point rubric. The app does not automatically grade free writing.
 
+The 19 language and spelling lessons have working visual models. Buttons move
+whole sentence parts, change case endings, rearrange verb and reporting-clause
+positions, highlight word classes, compare vowel length and show syllable
+division. Three exploration goals start unchecked; they record changes tried,
+not mastery. All controls work with a keyboard.
+
 The package is a local draft (`publication.json`: `local-only`). Teacher review
 and teacher videos remain open. It is excluded from Pages, the public catalog
 and the Academy atlas until publication is explicitly authorised.
@@ -20,7 +26,7 @@ Sources open only on a click.
 
 ```sh
 npm ci
-npm run dev                 # port 5246
+npm run dev                 # port 5249
 npm run typecheck
 npm test
 node scripts/check-curriculum.mjs
@@ -50,6 +56,9 @@ Their source links use the eventual published lesson anchors. No item declares
 inventories all sixteen old items: one possible A mapping awaits Thomas's
 explicit approval; fifteen C items remain active. Even approving publication
 does not approve a review-history transfer.
+The C rows use `related_slug` for related practice; only the proposed A
+successor uses `academy_slug`. Before activating that proposal, add the
+migration conflict check for learners who already hold both cards.
 
 Validate installation and enrolment using the published zam-core version
 pinned in the repository CI:

@@ -16,6 +16,7 @@ export const LESSONS: Lesson[] = lessons.map(({ check, ...lesson }) => {
 		throw new Error(`Missing valid quick check for ${lesson.id}`);
 	return {
 		...lesson,
+		visual: lesson.visual as Lesson["visual"],
 		tasks: lesson.tasks as Lesson["tasks"],
 		quiz: {
 			question: item.question,

@@ -13,7 +13,7 @@
 		"material": "Am Mittwoch bleibt die Bücherei in der großen Pause geschlossen. Du kannst Bücher am Donnerstag in Raum 12 zurückgeben. Wenn du ein Buch verlängern willst, melde dich bei Frau Aydin.",
 		"sourceIds": ["lehrplan"],
 		"check": {
-			"wrong": "Warum ist das Treffen abgesagt?",
+			"wrong": "An welchem Tag findet das Treffen statt?",
 			"explanation": "Die Frage nach der Uhrzeit klärt genau die Angabe, die du verpasst hast."
 		},
 		"takeaway": "Halte die Hauptaussage fest. Frag genau nach, wenn dir eine Angabe fehlt.",
@@ -22,11 +22,11 @@
 			{
 				"prompt": "Welche Notiz sichert die Änderung?",
 				"options": [
-					"Mittwoch zu, Rückgabe Donnerstag in Raum 12.",
-					"Bücherei immer geschlossen."
+					"Mittwoch in der großen Pause geschlossen; Rückgabe Donnerstag in Raum 12.",
+					"Mittwoch den ganzen Tag geschlossen; Rückgabe Donnerstag in Raum 12."
 				],
-				"answer": "Mittwoch zu, Rückgabe Donnerstag in Raum 12.",
-				"feedback": "Die Notiz hält den Schließtag und die neue Rückgabemöglichkeit fest."
+				"answer": "Mittwoch in der großen Pause geschlossen; Rückgabe Donnerstag in Raum 12.",
+				"feedback": "Die Einschränkung „in der großen Pause“ gehört zur Nachricht. Die Durchsage sagt nicht, dass die Bücherei den ganzen Mittwoch geschlossen ist."
 			},
 			{
 				"prompt": "Du hörst den Namen zu leise. Was sagst du?",
@@ -50,7 +50,7 @@
 			},
 			"2": {
 				"prompt": "Dein Partner glaubt, die Bücherei sei am Donnerstag zu. Reagiere und frage ihn nach dem Verlängern.",
-				"model": "Du hast Donnerstag als Schließtag verstanden. Am Mittwoch ist sie zu. Hast du gehört, bei wem wir verlängern können?",
+				"model": "Du hast Donnerstag als Schließtag verstanden. Am Mittwoch ist die Bücherei nur in der großen Pause geschlossen. Hast du gehört, bei wem wir verlängern können?",
 				"criteria": [
 					"Ich greife seine Aussage auf.",
 					"Ich berichtige sie sachlich.",
@@ -70,8 +70,8 @@
 				},
 				{
 					"label": "Notieren",
-					"text": "Mittwoch geschlossen",
-					"detail": "Zweiter Durchgang: Halte Schließtag, Rückgabe und Kontakt fest."
+					"text": "Mittwoch: große Pause zu",
+					"detail": "Zweiter Durchgang: Halte die Einschränkung „in der großen Pause“, die Rückgabe und den Kontakt fest."
 				},
 				{
 					"label": "Nachfragen",
@@ -95,8 +95,8 @@
 		"material": "Die Maus und das Blatt\nEine Maus suchte Schutz vor dem Regen. Ein Käfer bot ihr Platz unter einem Blatt an. „Du bist viel zu klein, um mir zu helfen“, sagte die Maus. Als der Regen stärker wurde, kroch sie doch zu ihm. Das Blatt hielt beide trocken. Die Maus bedankte sich und rückte zur Seite, damit auch der Käfer Platz hatte.",
 		"sourceIds": ["lehrplan"],
 		"check": {
-			"wrong": "Sie fliegt mit dem Käfer über die Wolken.",
-			"explanation": "Das Blatt hält beide trocken. Die Maus bedankt sich und rückt zur Seite: Sie nimmt die Hilfe an."
+			"wrong": "Nur deine persönliche Bewertung der Figuren.",
+			"explanation": "Eine Zusammenfassung sichert den wesentlichen Ablauf in eigenen Worten. In der Hörfabel sind das die Maus, die Hilfe des Käfers und der Meinungswechsel der Maus."
 		},
 		"takeaway": "Höre zuerst auf den Ablauf. Begründe dein Urteil mit einer Handlung aus dem Hörtext.",
 		"lehrplan": "D5 · 1.1, 2.2, 2.4",
@@ -173,7 +173,7 @@
 		"material": "Start: Aula\nEin Stockwerk hoch\nOben links\nTür 12 neben dem Fenster",
 		"sourceIds": ["lehrplan"],
 		"check": {
-			"wrong": "Eine Folie mit dem gesamten Vortrag in kleiner Schrift.",
+			"wrong": "Eine Liste aller Räume ohne eingezeichneten Weg.",
 			"explanation": "Pfeile zeigen die Richtung. Du kannst jeden Schritt beim Sprechen auf dem Plan zeigen."
 		},
 		"takeaway": "Stichwörter geben dir die Reihenfolge. Dein Bild verdeutlicht eine schwierige Stelle.",
@@ -255,7 +255,7 @@
 		"material": "Mira holte ihr Rad aus dem Schuppen. Beim Aufschließen raschelte es. Sie wartete. Dann klopfte es. Dreimal. Unter dem Korb saß ein Spatz.",
 		"sourceIds": ["lehrplan"],
 		"check": {
-			"wrong": "Nach jedem zweiten Wort.",
+			"wrong": "Nach „Unter dem“, bevor „Korb“ folgt.",
 			"explanation": "Die Pause am Satzende lässt den Moment wirken und erhält den Sinn."
 		},
 		"takeaway": "Pausen gliedern den Text. Betonung und Tempo machen eine wichtige Stelle hörbar.",
@@ -419,8 +419,8 @@
 		"material": "Die Klasse kann eine ruhige Leseecke oder einen zusätzlichen Spieltisch einrichten. Ari möchte ungestört lesen. Jo möchte mit anderen spielen. Der Raum bietet nur Platz für einen Bereich.",
 		"sourceIds": ["lehrplan"],
 		"check": {
-			"wrong": "Alle müssen meine Meinung übernehmen.",
-			"explanation": "Der Grund erklärt, wozu die Leseecke dient. Er greift keine Person an."
+			"wrong": "Wir sollten dort spielen, weil das allen gefällt.",
+			"explanation": "Ruhe erklärt einen konkreten Nutzen der Leseecke. Eine bloße Wiederholung des Wunsches nennt keinen Grund; ein Grund für einen Spielbereich stützt einen anderen Vorschlag."
 		},
 		"takeaway": "Nenne deinen Standpunkt und einen Grund, der genau dazu passt. Greife andere Beiträge sachlich auf.",
 		"lehrplan": "D5 · 1.3, 3.2, 1.2",
@@ -501,7 +501,7 @@
 		"material": "Nuri hat einen Riss ins gemeinsame Plakat gemacht. Als Sam fragt, warum Nuri das Papier umdreht, sagt Nuri: „Es ist nichts.“",
 		"sourceIds": ["lehrplan"],
 		"check": {
-			"wrong": "Nuri sollte immer lauter sein.",
+			"wrong": "Du hast leise gesprochen; beschreibe beim nächsten Mal auch, wie das gewirkt hat.",
 			"explanation": "Die konkrete Textstelle und Lautstärke machen die Wirkung nachvollziehbar."
 		},
 		"takeaway": "Spiele aus Sicht der Figur. Verbinde bei der Rückmeldung eine Beobachtung mit ihrer Wirkung.",
@@ -739,15 +739,15 @@
 		"skill": "Belege typische Merkmale an einer erfundenen Geschichte.",
 		"bindings": ["2.2", "3.2"],
 		"paragraphs": [
-			"Märchen erzählen von erfundenen Welten, in denen Wunder selbstverständlich sein können. Häufig begegnen dir unbestimmte Zeit und Orte, wiederkehrende Aufgaben, Gegensätze und formelhafte Anfänge. Nicht jedes Märchen besitzt jedes Merkmal. Häufige besondere Zahlen sind drei, sieben und zwölf oder dreizehn, etwa drei Wünsche oder die Feen in Dornröschen.",
+			"Märchen erzählen von erfundenen Welten, in denen Wunder selbstverständlich sein können. Häufig begegnen dir unbestimmte Zeit und Orte, wiederkehrende Aufgaben, Gegensätze und formelhafte Anfänge. Nicht jedes Märchen besitzt jedes Merkmal. Häufige besondere Zahlen sind drei, sieben und zwölf oder dreizehn, etwa drei Wünsche oder die dreizehn weisen Frauen in Grimms „Dornröschen“.",
 			"Beispiel: „Es war einmal ein Kind, das drei verschlossene Tore öffnen sollte. Ein sprechender Schlüssel half ihm.“ Der Anfang legt keine genaue Zeit fest; der Schlüssel ist ein wunderbarer Helfer. Drei Aufgaben können eine Wiederholung bilden. Prüfe die Merkmale an Textstellen statt nur eine Liste aufzusagen."
 		],
 		"materialLabel": "Eigens verfasstes Übungsmaterial",
 		"material": "Es war einmal ein armes Kind, das hinter sieben Bergen eine verlorene Glocke suchte. Ein Schlüssel sprach: „Hilf drei Fremden, dann öffne ich das Tor.“ Das Kind teilte Brot, trug Wasser und zeigte einer Reisenden den Weg. Das Tor sprang auf. Mit der Glocke kehrte das Kind heim.",
-		"sourceIds": ["lehrplan"],
+		"sourceIds": ["lehrplan", "grimm"],
 		"check": {
-			"wrong": "Jedes Märchen enthält genau hundert Aufgaben.",
-			"explanation": "Beispiele sind drei Wünsche, sieben Zwerge oder zwölf Feen und eine weitere. Nicht jedes Märchen enthält solche Zahlen."
+			"wrong": "Drei und sieben, aber zwölf oder dreizehn kommen in Volksmärchen nie vor.",
+			"explanation": "Beispiele sind drei Wünsche, sieben Zwerge und die dreizehn weisen Frauen in Grimms „Dornröschen“. Nicht jedes Märchen enthält solche Zahlen."
 		},
 		"takeaway": "Märchenmerkmale sind typische Spuren. Belege sie am Text, statt sie für jedes Märchen vorzuschreiben.",
 		"lehrplan": "D5 · 2.2, 3.2",
@@ -824,7 +824,7 @@
 		"material": "Eine Krähe hält Käse im Schnabel. Ein Fuchs lobt ihre Federn und bittet um ein Lied. Die Krähe singt. Der Käse fällt, und der Fuchs nimmt ihn mit.",
 		"sourceIds": ["lehrplan"],
 		"check": {
-			"wrong": "Angst vor dem Baum.",
+			"wrong": "Ehrliche Bewunderung ohne Absicht, den Käse zu bekommen.",
 			"explanation": "Das Lob ist ein Mittel, um den Käse zu bekommen."
 		},
 		"takeaway": "Eine Fabellehre muss zum Konflikt und zum Ausgang passen. Begründe Eigenschaften mit Handlungen.",
@@ -1147,7 +1147,7 @@
 		"material": "Plakat: BRING EIN BUCH MIT! So finden Bücher neue Leserinnen und Leser.\n\nSchülerzeitung: Bei der Tauschbörse wollte ich ein dünnes Buch. Jetzt habe ich eins mit 400 Seiten. Wenigstens spare ich mir damit die Hanteln.",
 		"sourceIds": ["lehrplan"],
 		"check": {
-			"wrong": "Eine erfundene Geschichte erzählen.",
+			"wrong": "Die Vorteile des Büchertauschs gegeneinander abwägen.",
 			"explanation": "Der Imperativ „Bring“ und die große Schrift heben die Aufforderung hervor."
 		},
 		"takeaway": "Lies bei Tabellen die passende Zeile und Spalte. Frage bei jedem Text, was er beim Publikum erreichen will.",
@@ -1548,7 +1548,7 @@
 		"material": "Mitte: Büchertausch\nÄste: Dienstag Abgabe, Donnerstag Auswahl, Aula, Bücherei, Farbe des Lieblingsbuchs, Einladung für Klasse 5",
 		"sourceIds": ["lehrplan"],
 		"check": {
-			"wrong": "Das war die beste Aktion aller Zeiten.",
+			"wrong": "Der Büchertausch hat am Donnerstag besonders Spaß gemacht.",
 			"explanation": "Tag und Ort geben der Leserin eine nutzbare Information."
 		},
 		"takeaway": "Wähle erst die Absicht, dann die wichtigen Ideen und die passende Reihenfolge.",
@@ -1630,7 +1630,7 @@
 		"material": "Erzählsituation: Sami, nach dem Unterricht, Aula, Jacke holen.\nEreignis: Ein Schlüssel klirrt hinter der Bühne. Der Vorhang bewegt sich.\nAusgang: Die Hausmeisterin sucht ihren Schlüsselbund. Sami hilft ihr.",
 		"sourceIds": ["lehrplan"],
 		"check": {
-			"wrong": "Welche Wörter reimen sich? Wie viele Verse gibt es?",
+			"wrong": "Welche Lehre soll am Schluss ausdrücklich stehen?",
 			"explanation": "Die vier Fragen führen in Personen, Zeit, Ort und Ausgangslage ein."
 		},
 		"takeaway": "Führe knapp ein, gestalte den entscheidenden Moment und löse die Situation im Ausgang auf.",
@@ -1792,7 +1792,7 @@
 		"material": "Material: Papierstreifen, Buntstifte, Locher, Band.\nDen Streifen verzieren.\nOben ein Loch stanzen.\nEin Band durch das Loch ziehen und verknoten.",
 		"sourceIds": ["lehrplan"],
 		"check": {
-			"wrong": "Das Band ist das schönste der Welt.",
+			"wrong": "Lochstanzen und Einfädeln sind in beliebiger Reihenfolge möglich.",
 			"explanation": "Erst muss ein Loch vorhanden sein, dann lässt sich das Band hindurchziehen."
 		},
 		"takeaway": "Nenne Ziel und Material. Beschreibe jeden nötigen Schritt in ausführbarer Reihenfolge.",
@@ -1831,7 +1831,7 @@
 				]
 			}
 		},
-		"extension": "Beobachte ein eigenes Tierbild und lass jemanden das Tier anhand deiner Beschreibung aus mehreren Bildern auswählen.",
+		"extension": "Lass eine andere Person dein Lesezeichen nur nach deiner Anleitung herstellen. Beobachte, an welchem Schritt eine Nachfrage entsteht, und überarbeite genau diese Stelle.",
 		"visual": {
 			"kind": "flow",
 			"title": "Ein Lesezeichen entsteht",
@@ -1868,8 +1868,8 @@
 		"material": "Notizen: Donnerstag, zweite Pause, Aula; Klasse 5a organisiert Büchertausch; erst Abgabe, dann Sortieren, danach Auswahl; 30 Bücher wechseln die Besitzer; Rest geht in die Schulbücherei.",
 		"sourceIds": ["lehrplan"],
 		"check": {
-			"wrong": "Ein spannender Gedanke, den niemand ausgesprochen hat.",
-			"explanation": "Information braucht überprüfbare Angaben, keine erfundenen Gedanken."
+			"wrong": "Der Veranstalter muss dabei sehr aufgeregt gewesen sein.",
+			"explanation": "Die Zahl beschreibt ein überprüfbares Ereignis. Die anderen Aussagen vermuten Gefühle; für solche Behauptungen fehlen Belege."
 		},
 		"takeaway": "Informiere mit gesicherten W-Angaben, nachvollziehbarem Ablauf und Ergebnis.",
 		"lehrplan": "D5 · 3.2, 3.1",
@@ -2028,7 +2028,7 @@
 		"material": "Büchertausch morgen. wir geben die bücher ab dann sucht wir eins.\nRückmeldung: Wo und wann ist die Abgabe? Ich verstehe den zweiten Satz erst beim zweiten Lesen.",
 		"sourceIds": ["lehrplan"],
 		"check": {
-			"wrong": "Ob alle Wörter gleich lang sind.",
+			"wrong": "Ob Schriftart und Überschrift schon zum fertigen Layout passen.",
 			"explanation": "Fehlende Informationen und ein unklarer Ablauf betreffen Inhalt und Aufbau."
 		},
 		"takeaway": "Überarbeite in Runden. Prüfe zuletzt besonders deine häufigsten Fehler.",
@@ -2188,7 +2188,7 @@
 		"material": "Im Gespräch: „Ähm, fürs Check-in, geht’s da lang.“\nAuf dem Schild: „Anmeldung am Eingang zur Aula.“\nErzählung: „Die Seiten flatterten wie kleine Segel.“",
 		"sourceIds": ["lehrplan"],
 		"check": {
-			"wrong": "Schilder dürfen keine Fremdwörter enthalten.",
+			"wrong": "Eine deutsche Bezeichnung ist automatisch genauer als jedes englische Wort.",
 			"explanation": "Das deutsche Wort ist hier für mehr Personen verständlich. Der Kontext entscheidet."
 		},
 		"takeaway": "Wähle verständliche Wörter für dein Publikum. Nutze Vergleiche, wenn sie eine Vorstellung genauer machen.",
@@ -2234,23 +2234,73 @@
 			}
 		},
 		"visual": {
-			"kind": "compare",
-			"title": "Sprache an Situation und Zweck anpassen",
+			"kind": "register",
+			"title": "Für wen schreibst oder sprichst du?",
+			"initial": {
+				"blocks": [
+					{
+						"text": "Kommst du mit?",
+						"label": "Gespräch mit einer Freundin",
+						"tone": "speech"
+					}
+				]
+			},
 			"steps": [
 				{
-					"label": "Gespräch",
-					"text": "Ähm, da drüben …",
-					"detail": "Im gemeinsamen Raum helfen Zeigen und direkte Rückfragen."
+					"label": "Höflich bitten",
+					"text": "An eine Lehrkraft",
+					"detail": "Die höfliche Anrede und die genaue Bitte passen zur Lehrkraft.",
+					"blocks": [
+						{
+							"text": "Entschuldigen Sie,",
+							"label": "Anrede",
+							"tone": "speech"
+						},
+						{
+							"text": "können Sie uns den Weg zeigen?",
+							"label": "Bitte",
+							"tone": "main"
+						}
+					]
 				},
 				{
-					"label": "Schrift",
-					"text": "Anmeldung am Eingang",
-					"detail": "Ohne gemeinsame Situation müssen die Wörter genauer orientieren."
+					"label": "Auf ein Schild schreiben",
+					"text": "Ohne Zeigegeste verständlich",
+					"detail": "Ein Schild muss den Ort mit Wörtern erklären, weil niemand direkt auf Rückfragen antwortet.",
+					"blocks": [
+						{
+							"text": "Anmeldung",
+							"label": "Handlung",
+							"tone": "noun"
+						},
+						{
+							"text": "am Eingang zur Aula",
+							"label": "genauer Ort",
+							"tone": "place"
+						}
+					]
 				},
 				{
-					"label": "Bild",
-					"text": "Seiten wie kleine Segel",
-					"detail": "Ein Vergleich schafft eine anschauliche Vorstellung."
+					"label": "Anschaulich erzählen",
+					"text": "Ein sprachliches Bild",
+					"detail": "Der Vergleich mit Segeln veranschaulicht die Bewegung der Blätter.",
+					"blocks": [
+						{
+							"text": "Die Blätter",
+							"label": "Gegenstand",
+							"tone": "noun"
+						},
+						{
+							"text": "flatterten",
+							"label": "Bewegung",
+							"tone": "predicate"
+						},
+						{
+							"text": "wie kleine Segel.",
+							"label": "Vergleich",
+							"tone": "image"
+						}
+					]
 				}
 			]
 		}
@@ -2271,7 +2321,7 @@
 		"material": "Die zwei kleinen Hunde laufen heute draußen. Sie warten am ersten Tor. Der braune Hund setzt sich.",
 		"sourceIds": ["lehrplan"],
 		"check": {
-			"wrong": "Verb.",
+			"wrong": "Artikel.",
 			"explanation": "„Zwei“ nennt die Anzahl der Hunde. Anders als „kleinen“ beschreibt es keine Eigenschaft."
 		},
 		"takeaway": "Schau auf Form und Aufgabe im Satz. Artikel, Nomen und Adjektiv passen sich in der Wortgruppe aneinander an.",
@@ -2314,23 +2364,153 @@
 			}
 		},
 		"visual": {
-			"kind": "sentence",
-			"title": "Ein Satz, verschiedene Wortaufgaben",
+			"kind": "wordclasses",
+			"title": "Gleicher Satz, verschiedene Wortaufgaben",
+			"initial": {
+				"blocks": [
+					{
+						"text": "Die",
+						"label": "Artikel",
+						"tone": "neutral"
+					},
+					{
+						"text": "zwei",
+						"label": "Numerale",
+						"tone": "neutral"
+					},
+					{
+						"text": "kleinen",
+						"label": "Adjektiv",
+						"tone": "neutral"
+					},
+					{
+						"text": "Hunde",
+						"label": "Nomen",
+						"tone": "neutral"
+					},
+					{
+						"text": "laufen",
+						"label": "Verb",
+						"tone": "neutral"
+					},
+					{
+						"text": "heute",
+						"label": "Adverb",
+						"tone": "neutral"
+					}
+				]
+			},
 			"steps": [
 				{
-					"label": "Die zwei kleinen Hunde",
-					"text": "Artikel · Numerale · Adjektiv · Nomen",
-					"detail": "Die Wörter benennen und beschreiben eine Gruppe."
+					"label": "Nomen hervorheben",
+					"text": "Wer oder was wird benannt?",
+					"detail": "„Hunde“ benennt die Tiere. Die Wortart bleibt gleich, auch wenn du eine andere Gruppe hervorhebst.",
+					"blocks": [
+						{
+							"text": "Die",
+							"label": "Artikel",
+							"tone": "neutral"
+						},
+						{
+							"text": "zwei",
+							"label": "Numerale",
+							"tone": "neutral"
+						},
+						{
+							"text": "kleinen",
+							"label": "Adjektiv",
+							"tone": "neutral"
+						},
+						{
+							"text": "Hunde",
+							"label": "Nomen",
+							"tone": "noun"
+						},
+						{
+							"text": "laufen",
+							"label": "Verb",
+							"tone": "neutral"
+						},
+						{
+							"text": "heute",
+							"label": "Adverb",
+							"tone": "neutral"
+						}
+					]
 				},
 				{
-					"label": "laufen heute",
-					"text": "Verb · Adverb",
-					"detail": "Das Verb nennt die Handlung, das Adverb eine Zeit."
+					"label": "Adjektiv hervorheben",
+					"text": "Welche Eigenschaft wird genannt?",
+					"detail": "„Kleinen“ beschreibt eine Eigenschaft der Hunde und ist an die Nomengruppe angepasst.",
+					"blocks": [
+						{
+							"text": "Die",
+							"label": "Artikel",
+							"tone": "neutral"
+						},
+						{
+							"text": "zwei",
+							"label": "Numerale",
+							"tone": "neutral"
+						},
+						{
+							"text": "kleinen",
+							"label": "Adjektiv",
+							"tone": "adjective"
+						},
+						{
+							"text": "Hunde",
+							"label": "Nomen",
+							"tone": "neutral"
+						},
+						{
+							"text": "laufen",
+							"label": "Verb",
+							"tone": "neutral"
+						},
+						{
+							"text": "heute",
+							"label": "Adverb",
+							"tone": "neutral"
+						}
+					]
 				},
 				{
-					"label": "mit dem Kind",
-					"text": "Präposition und Wortgruppe",
-					"detail": "Mit verlangt hier einen Dativ: dem Kind."
+					"label": "Verb hervorheben",
+					"text": "Welche Handlung wird genannt?",
+					"detail": "„Laufen“ ist die finite Verbform; sie passt zum Subjekt im Plural.",
+					"blocks": [
+						{
+							"text": "Die",
+							"label": "Artikel",
+							"tone": "neutral"
+						},
+						{
+							"text": "zwei",
+							"label": "Numerale",
+							"tone": "neutral"
+						},
+						{
+							"text": "kleinen",
+							"label": "Adjektiv",
+							"tone": "neutral"
+						},
+						{
+							"text": "Hunde",
+							"label": "Nomen",
+							"tone": "neutral"
+						},
+						{
+							"text": "laufen",
+							"label": "Verb",
+							"tone": "predicate"
+						},
+						{
+							"text": "heute",
+							"label": "Adverb",
+							"tone": "neutral"
+						}
+					]
 				}
 			]
 		}
@@ -2389,23 +2569,93 @@
 			}
 		},
 		"visual": {
-			"kind": "sentence",
-			"title": "Der Fall zeigt Beziehungen",
+			"kind": "case",
+			"title": "Der Fall verändert die Wortgruppe",
+			"initial": {
+				"blocks": [
+					{
+						"text": "der",
+						"label": "Artikel",
+						"tone": "word"
+					},
+					{
+						"text": "flinke",
+						"label": "Adjektiv",
+						"tone": "word"
+					},
+					{
+						"text": "Hund",
+						"label": "Nomen",
+						"tone": "word"
+					}
+				]
+			},
 			"steps": [
 				{
-					"label": "Wer?",
-					"text": "Die Trainerin",
-					"detail": "Die handelnde Person steht hier im Nominativ."
+					"label": "Genitiv bilden",
+					"text": "Wessen?",
+					"detail": "„Das Halsband des flinken Hundes“: Artikel, Adjektiv und Nomen zeigen gemeinsam den Genitiv.",
+					"blocks": [
+						{
+							"text": "des",
+							"label": "Artikel",
+							"tone": "case"
+						},
+						{
+							"text": "flinken",
+							"label": "Adjektiv",
+							"tone": "case"
+						},
+						{
+							"text": "Hundes",
+							"label": "Nomen",
+							"tone": "case"
+						}
+					]
 				},
 				{
-					"label": "Wem?",
-					"text": "dem Kind",
-					"detail": "Die empfangende Person steht hier im Dativ."
+					"label": "Dativ bilden",
+					"text": "Wem?",
+					"detail": "„Mira hilft dem flinken Hund“: Die Wortgruppe steht im Dativ.",
+					"blocks": [
+						{
+							"text": "dem",
+							"label": "Artikel",
+							"tone": "case"
+						},
+						{
+							"text": "flinken",
+							"label": "Adjektiv",
+							"tone": "case"
+						},
+						{
+							"text": "Hund",
+							"label": "Nomen",
+							"tone": "case"
+						}
+					]
 				},
 				{
-					"label": "Wen oder was?",
-					"text": "den Napf",
-					"detail": "Der gezeigte Gegenstand steht hier im Akkusativ."
+					"label": "Akkusativ bilden",
+					"text": "Wen oder was?",
+					"detail": "„Mira sieht den flinken Hund“: Der Artikel den macht den Akkusativ sichtbar.",
+					"blocks": [
+						{
+							"text": "den",
+							"label": "Artikel",
+							"tone": "case"
+						},
+						{
+							"text": "flinken",
+							"label": "Adjektiv",
+							"tone": "case"
+						},
+						{
+							"text": "Hund",
+							"label": "Nomen",
+							"tone": "case"
+						}
+					]
 				}
 			]
 		}
@@ -2424,7 +2674,7 @@
 		"material": "Mira sucht ihr Heft. Sie zeigt auf zwei Hefte. „Dieses gehört mir!“ Lina gibt es ihr zurück.",
 		"sourceIds": ["lehrplan"],
 		"check": {
-			"wrong": "Adverb.",
+			"wrong": "Personalpronomen.",
 			"explanation": "„Mein“ zeigt zum Beispiel, wem ein Heft gehört oder zugeordnet ist."
 		},
 		"takeaway": "Verwende Pronomen, wenn Lesende erkennen können, auf wen oder was sie sich beziehen.",
@@ -2434,7 +2684,7 @@
 				"prompt": "Was vertritt „Sie“ im zweiten Satz des Materials?",
 				"options": ["Mira.", "Das Heft."],
 				"answer": "Mira.",
-				"feedback": "Die erste Person im Zusammenhang ist Mira und „sie“ ersetzt hier ihren Namen."
+				"feedback": "Im ersten Satz wird Mira genannt; „sie“ ersetzt hier ihren Namen und steht in der dritten Person Singular."
 			},
 			{
 				"prompt": "Welche Fassung sagt eindeutig, wer gefunden hat?",
@@ -2467,23 +2717,73 @@
 			}
 		},
 		"visual": {
-			"kind": "compare",
-			"title": "Drei Aufgaben von Fürwörtern",
+			"kind": "reference",
+			"title": "Ein Bezug bleibt, die Form verändert sich",
+			"initial": {
+				"blocks": [
+					{
+						"text": "Mira",
+						"label": "Name",
+						"tone": "noun"
+					},
+					{
+						"text": "winkt.",
+						"label": "Handlung",
+						"tone": "predicate"
+					}
+				]
+			},
 			"steps": [
 				{
-					"label": "Vertreten",
+					"label": "Den Namen ersetzen",
 					"text": "Mira → sie",
-					"detail": "Ein Personalpronomen kann einen Namen vertreten."
+					"detail": "„Sie“ ersetzt hier Mira und steht in der dritten Person Singular.",
+					"blocks": [
+						{
+							"text": "Sie",
+							"label": "Personalpronomen",
+							"tone": "pronoun"
+						},
+						{
+							"text": "winkt.",
+							"label": "Handlung",
+							"tone": "predicate"
+						}
+					]
 				},
 				{
-					"label": "Zugehörigkeit",
-					"text": "ihr Heft",
-					"detail": "Ein Possessivpronomen zeigt eine Zuordnung."
+					"label": "Zugehörigkeit zeigen",
+					"text": "Miras Heft → ihr Heft",
+					"detail": "„Ihr“ zeigt hier die Zugehörigkeit zu Mira; es begleitet das Nomen Heft.",
+					"blocks": [
+						{
+							"text": "ihr",
+							"label": "Possessivpronomen",
+							"tone": "pronoun"
+						},
+						{
+							"text": "Heft",
+							"label": "Nomen",
+							"tone": "noun"
+						}
+					]
 				},
 				{
-					"label": "Hinweisen",
+					"label": "Auf ein Heft hinweisen",
 					"text": "Dieses hier!",
-					"detail": "Ein Demonstrativpronomen weist gezielt auf etwas hin."
+					"detail": "„Dieses“ weist gezielt auf ein bestimmtes Heft. Es ist ein Demonstrativpronomen.",
+					"blocks": [
+						{
+							"text": "Dieses",
+							"label": "Demonstrativpronomen",
+							"tone": "pronoun"
+						},
+						{
+							"text": "hier gehört Mira.",
+							"label": "eindeutiger Bezug",
+							"tone": "main"
+						}
+					]
 				}
 			]
 		}
@@ -2542,23 +2842,88 @@
 			}
 		},
 		"visual": {
-			"kind": "compare",
-			"title": "Eigenschaften vergleichen",
+			"kind": "comparison",
+			"title": "Der Vergleich bestimmt die Form",
+			"initial": {
+				"blocks": [
+					{
+						"text": "Milo: 38 cm",
+						"label": "Höhe",
+						"tone": "noun"
+					},
+					{
+						"text": "Luna: 45 cm",
+						"label": "Höhe",
+						"tone": "noun"
+					},
+					{
+						"text": "Keks: 31 cm",
+						"label": "Höhe",
+						"tone": "noun"
+					}
+				]
+			},
 			"steps": [
 				{
-					"label": "Positiv",
-					"text": "schnell",
-					"detail": "Die Grundstufe nennt die Eigenschaft."
+					"label": "Einen Unterschied ausdrücken",
+					"text": "größer als",
+					"detail": "Luna misst 45 cm, Milo 38 cm: Der Komparativ mit als drückt den Unterschied aus.",
+					"blocks": [
+						{
+							"text": "Luna ist",
+							"label": "Subjekt",
+							"tone": "subject"
+						},
+						{
+							"text": "größer",
+							"label": "Komparativ",
+							"tone": "adjective"
+						},
+						{
+							"text": "als Milo.",
+							"label": "Unterschied",
+							"tone": "comparison"
+						}
+					]
 				},
 				{
-					"label": "Komparativ",
-					"text": "schneller als",
-					"detail": "Die Höherstufe vergleicht einen Unterschied."
+					"label": "Gleichheit ausdrücken",
+					"text": "so alt wie",
+					"detail": "Milo und Luna sind beide fünf Jahre alt. Für die Gleichheit steht so alt wie.",
+					"blocks": [
+						{
+							"text": "Milo ist",
+							"label": "Subjekt",
+							"tone": "subject"
+						},
+						{
+							"text": "so alt",
+							"label": "Positiv",
+							"tone": "adjective"
+						},
+						{
+							"text": "wie Luna.",
+							"label": "Gleichheit",
+							"tone": "comparison"
+						}
+					]
 				},
 				{
-					"label": "Superlativ",
-					"text": "am schnellsten",
-					"detail": "Die Höchststufe hebt den höchsten Grad hervor."
+					"label": "Den höchsten Grad ausdrücken",
+					"text": "am größten",
+					"detail": "Unter den drei genannten Hunden ist Luna am größten. Der Superlativ nennt den höchsten Grad.",
+					"blocks": [
+						{
+							"text": "Luna ist",
+							"label": "Subjekt",
+							"tone": "subject"
+						},
+						{
+							"text": "am größten.",
+							"label": "Superlativ",
+							"tone": "adjective"
+						}
+					]
 				}
 			]
 		}
@@ -2624,23 +2989,103 @@
 			}
 		},
 		"visual": {
-			"kind": "timeline",
-			"title": "Ereignisse auf einer Zeitlinie",
+			"kind": "tense",
+			"title": "Die Verbteile auf einer Zeitlinie",
+			"initial": {
+				"blocks": [
+					{
+						"text": "Ich",
+						"label": "Subjekt",
+						"tone": "subject"
+					},
+					{
+						"text": "finde",
+						"label": "finit · Präsens",
+						"tone": "predicate"
+					},
+					{
+						"text": "das Heft.",
+						"label": "Gegenstand",
+						"tone": "object"
+					}
+				]
+			},
 			"steps": [
 				{
-					"label": "Vorher",
+					"label": "Im Präteritum erzählen",
+					"text": "Ich fand das Heft.",
+					"detail": "„Fand“ ist die finite Form im Präteritum und bezeichnet hier den erzählten Fund.",
+					"blocks": [
+						{
+							"text": "Ich",
+							"label": "Subjekt",
+							"tone": "subject"
+						},
+						{
+							"text": "fand",
+							"label": "finit · Präteritum",
+							"tone": "predicate"
+						},
+						{
+							"text": "das Heft.",
+							"label": "Gegenstand",
+							"tone": "object"
+						}
+					]
+				},
+				{
+					"label": "Auf ein früheres Ereignis blicken",
 					"text": "Ich hatte es verlegt.",
-					"detail": "Plusquamperfekt: Der Verlust liegt vor dem erzählten Fund."
+					"detail": "„Hatte verlegt“ ist Plusquamperfekt. Das Verlegen liegt vor dem erzählten Fund; hatte ist finit.",
+					"blocks": [
+						{
+							"text": "Ich",
+							"label": "Subjekt",
+							"tone": "subject"
+						},
+						{
+							"text": "hatte",
+							"label": "finit · vorher",
+							"tone": "predicate"
+						},
+						{
+							"text": "es",
+							"label": "Gegenstand",
+							"tone": "object"
+						},
+						{
+							"text": "verlegt.",
+							"label": "Partizip",
+							"tone": "predicate"
+						}
+					]
 				},
 				{
-					"label": "Erzähltes Ereignis",
-					"text": "Ich fand es.",
-					"detail": "Präteritum: Der Fund bildet hier den Bezugspunkt der Erzählung."
-				},
-				{
-					"label": "Zukünftig abgeschlossen",
+					"label": "Zukünftigen Abschluss zeigen",
 					"text": "Ich werde es beschriftet haben.",
-					"detail": "Futur II: Bis zu einem zukünftigen Zeitpunkt wird etwas fertig sein."
+					"detail": "„Werde beschriftet haben“ ist Futur II: Bis morgen wird die Beschriftung fertig sein. Werde ist der finite Teil.",
+					"blocks": [
+						{
+							"text": "Ich",
+							"label": "Subjekt",
+							"tone": "subject"
+						},
+						{
+							"text": "werde",
+							"label": "finit · Ausblick",
+							"tone": "predicate"
+						},
+						{
+							"text": "es",
+							"label": "Gegenstand",
+							"tone": "object"
+						},
+						{
+							"text": "beschriftet haben.",
+							"label": "Partizip + Infinitiv",
+							"tone": "predicate"
+						}
+					]
 				}
 			]
 		}
@@ -2652,7 +3097,7 @@
 		"skill": "Erkenne Stamm, Wortbausteine und Wortfelder.",
 		"bindings": ["4.2", "4.3", "3.1"],
 		"paragraphs": [
-			"Bei einer Ableitung kommt ein Präfix vor oder ein Suffix nach den Stamm: „vor-les-en“, „les-bar“. „Lesen“, „Leser“ und „lesbar“ gehören zur Wortfamilie. Die Stammformen von „lesen“ sind der Infinitiv „lesen“, die Präteritumsform „las“ und das Partizip Perfekt „gelesen“. Der Stammvokal wechselt von e zu a und zurück zu e. Ein Wortfeld sammelt bedeutungsähnliche Wörter wie „sagen, flüstern, rufen“.",
+			"Bei einer Ableitung tritt ein Präfix vor den Stamm oder ein Suffix hinter den Stamm: „vor-les-en“, „les-bar“. „Lesen“, „Leser“ und „lesbar“ gehören zur Wortfamilie. Die Stammformen von „lesen“ sind der Infinitiv „lesen“, die Präteritumsform „las“ und das Partizip Perfekt „gelesen“. Der Stammvokal wechselt von e zu a und zurück zu e. Ein Wortfeld sammelt bedeutungsähnliche Wörter wie „sagen, flüstern, rufen“.",
 			"Bei einem zusammengesetzten Nomen steht das Grundwort hinten. Es bestimmt oft Bedeutungskern und Artikel: „die Schultür“ ist eine Tür, „das Türschild“ ist ein Schild. Das Bestimmungswort grenzt ein. Ein bekanntes Präfix wie „vor-“ hilft beim Schreiben von „vorlesen“, während „Forscher“ nicht aus diesem Präfix besteht. In „verkaufen“ steht ver-, weil es ein Präfix vor „kaufen“ ist. In „freundlich“ schreibt man die Nachsilbe -lich. Das klappt auch mit einem Adjektiv als Grundwort: „Eis“ und „kalt“ ergeben „eiskalt“. Das zusammengesetzte Adjektiv wird im Satz kleingeschrieben.",
 			"Laute hörst du, Buchstaben siehst du. In „Schule“ schreiben die drei Buchstaben s, c und h zusammen den Laut sch. Sprechsilben gliedern den Klang: „Schu-le“. Wortbausteine gliedern dagegen die Bedeutung: „les-bar“. Eine Silbengrenze ist daher nicht immer eine Grenze zwischen Wortbausteinen."
 		],
@@ -2706,23 +3151,78 @@
 			}
 		},
 		"visual": {
-			"kind": "word",
-			"title": "Wörter haben Bausteine",
+			"kind": "wordparts",
+			"title": "Wortbausteine verändern Bedeutung und Wortart",
+			"initial": {
+				"blocks": [
+					{
+						"text": "les",
+						"label": "Wortstamm",
+						"tone": "stem"
+					},
+					{
+						"text": "-en",
+						"label": "Infinitivendung",
+						"tone": "ending"
+					}
+				]
+			},
 			"steps": [
 				{
-					"label": "Präfix",
-					"text": "vor-",
-					"detail": "Das Präfix steht vor dem Stamm: vorlesen."
+					"label": "Ein Präfix anfügen",
+					"text": "vorlesen",
+					"detail": "Vor- steht vor dem Stamm les-. Die Endung -en bleibt die Infinitivendung.",
+					"blocks": [
+						{
+							"text": "vor-",
+							"label": "Präfix",
+							"tone": "prefix"
+						},
+						{
+							"text": "les",
+							"label": "Stamm",
+							"tone": "stem"
+						},
+						{
+							"text": "-en",
+							"label": "Endung",
+							"tone": "ending"
+						}
+					]
 				},
 				{
-					"label": "Stamm",
-					"text": "les-",
-					"detail": "Lesen, Leser und lesbar gehören zu einer Wortfamilie."
+					"label": "Ein Suffix anfügen",
+					"text": "lesbar",
+					"detail": "Das Suffix -bar macht hier aus dem Verbstamm ein Adjektiv: Das Buch lässt sich lesen.",
+					"blocks": [
+						{
+							"text": "les",
+							"label": "Stamm",
+							"tone": "stem"
+						},
+						{
+							"text": "-bar",
+							"label": "Suffix",
+							"tone": "ending"
+						}
+					]
 				},
 				{
-					"label": "Suffix",
-					"text": "-bar",
-					"detail": "Das Suffix steht hinter dem Stamm: lesbar."
+					"label": "Zwei Wörter zusammensetzen",
+					"text": "Schultür",
+					"detail": "Das Grundwort Tür steht hinten und bestimmt den Artikel: die Schultür.",
+					"blocks": [
+						{
+							"text": "Schul",
+							"label": "Bestimmungswort",
+							"tone": "prefix"
+						},
+						{
+							"text": "tür",
+							"label": "Grundwort · die Tür",
+							"tone": "stem"
+						}
+					]
 				}
 			]
 		}
@@ -2741,7 +3241,7 @@
 		"material": "Lea sitzt auf der Bank.\nLea bringt Geld zur Bank.\nDie Probe beginnt. Die Probe fängt an.\nDas Zimmer ist hell, der Keller dunkel.",
 		"sourceIds": ["lehrplan"],
 		"check": {
-			"wrong": "Wortstämme.",
+			"wrong": "Homonyme.",
 			"explanation": "Antonyme benennen Gegensätze; Synonyme haben ähnliche Bedeutungen."
 		},
 		"takeaway": "Wähle Wörter nach ihrer Bedeutung im Satz. Ähnlicher Klang beweist keine ähnliche Bedeutung.",
@@ -2787,23 +3287,73 @@
 			}
 		},
 		"visual": {
-			"kind": "compare",
-			"title": "Wörter auf drei Arten vergleichen",
+			"kind": "meaning",
+			"title": "Ähnlich, gegensätzlich oder mehrdeutig?",
+			"initial": {
+				"blocks": [
+					{
+						"text": "Bank",
+						"label": "Welche Bedeutung?",
+						"tone": "word"
+					}
+				]
+			},
 			"steps": [
 				{
-					"label": "Synonym",
+					"label": "Ähnliche Bedeutungen verbinden",
 					"text": "beginnen ↔ anfangen",
-					"detail": "Die Bedeutungen sind ähnlich; prüfe trotzdem den Satz."
+					"detail": "Die Wörter sind hier Synonyme. Im Satz „Die Probe beginnt“ passt auch „fängt an“.",
+					"blocks": [
+						{
+							"text": "beginnen",
+							"label": "Wort",
+							"tone": "word"
+						},
+						{
+							"text": "anfangen",
+							"label": "ähnliche Bedeutung",
+							"tone": "word"
+						}
+					]
 				},
 				{
-					"label": "Antonym",
+					"label": "Gegensätze verbinden",
 					"text": "hell ↔ dunkel",
-					"detail": "Die Bedeutungen stehen im Gegensatz."
+					"detail": "Hell und dunkel bezeichnen Gegensätze und sind Antonyme.",
+					"blocks": [
+						{
+							"text": "hell",
+							"label": "Eigenschaft",
+							"tone": "image"
+						},
+						{
+							"text": "dunkel",
+							"label": "Gegenteil",
+							"tone": "comparison"
+						}
+					]
 				},
 				{
-					"label": "Homonym",
-					"text": "Bank ↔ Bank",
-					"detail": "Gleiche Wortform, verschiedene Bedeutungen: Möbel oder Geldinstitut."
+					"label": "Eine Wortform verzweigen",
+					"text": "Bank: Sitzmöbel oder Geldinstitut",
+					"detail": "Der Satzzusammenhang entscheidet: Auf der Bank sitzen oder Geld zur Bank bringen.",
+					"blocks": [
+						{
+							"text": "Bank",
+							"label": "gleiche Wortform",
+							"tone": "stem"
+						},
+						{
+							"text": "Sitzmöbel",
+							"label": "Bedeutung 1",
+							"tone": "noun"
+						},
+						{
+							"text": "Geldinstitut",
+							"label": "Bedeutung 2",
+							"tone": "noun"
+						}
+					]
 				}
 			]
 		}
@@ -2863,22 +3413,132 @@
 		},
 		"visual": {
 			"kind": "sentence",
-			"title": "Satzglieder als Einheiten bewegen",
+			"title": "Verschiebe eine ganze Wortgruppe ins Vorfeld",
+			"initial": {
+				"blocks": [
+					{
+						"text": "Am Morgen",
+						"label": "Zeit",
+						"tone": "time"
+					},
+					{
+						"text": "gibt",
+						"label": "Prädikat",
+						"tone": "predicate"
+					},
+					{
+						"text": "Nele",
+						"label": "Subjekt",
+						"tone": "subject"
+					},
+					{
+						"text": "dem Hund",
+						"label": "Dativobjekt",
+						"tone": "object"
+					},
+					{
+						"text": "einen Napf.",
+						"label": "Akkusativobjekt",
+						"tone": "object"
+					}
+				]
+			},
 			"steps": [
 				{
-					"label": "Zeit",
-					"text": "Am Morgen",
-					"detail": "Diese Wortgruppe lässt sich als Ganzes nach hinten verschieben."
+					"label": "Mit dem Subjekt beginnen",
+					"text": "Nele an den Anfang",
+					"detail": "Die ganze Wortgruppe Nele steht vorn; das finite Verb gibt folgt weiterhin an zweiter Satzgliedposition.",
+					"blocks": [
+						{
+							"text": "Nele",
+							"label": "Subjekt",
+							"tone": "subject"
+						},
+						{
+							"text": "gibt",
+							"label": "Prädikat",
+							"tone": "predicate"
+						},
+						{
+							"text": "am Morgen",
+							"label": "Zeit",
+							"tone": "time"
+						},
+						{
+							"text": "dem Hund",
+							"label": "Dativobjekt",
+							"tone": "object"
+						},
+						{
+							"text": "einen Napf.",
+							"label": "Akkusativobjekt",
+							"tone": "object"
+						}
+					]
 				},
 				{
-					"label": "Prädikat",
-					"text": "gibt",
-					"detail": "Der finite Verbteil bleibt im Aussagesatz an zweiter Satzgliedposition."
+					"label": "Mit dem Dativobjekt beginnen",
+					"text": "Dem Hund an den Anfang",
+					"detail": "Die zwei Wörter Dem Hund bleiben als Satzglied zusammen. Das finite Verb folgt direkt danach.",
+					"blocks": [
+						{
+							"text": "Dem Hund",
+							"label": "Dativobjekt",
+							"tone": "object"
+						},
+						{
+							"text": "gibt",
+							"label": "Prädikat",
+							"tone": "predicate"
+						},
+						{
+							"text": "Nele",
+							"label": "Subjekt",
+							"tone": "subject"
+						},
+						{
+							"text": "am Morgen",
+							"label": "Zeit",
+							"tone": "time"
+						},
+						{
+							"text": "einen Napf.",
+							"label": "Akkusativobjekt",
+							"tone": "object"
+						}
+					]
 				},
 				{
-					"label": "Ergänzungen",
-					"text": "Nele · dem Hund · einen Napf",
-					"detail": "Wer gibt? Wem? Wen oder was? Die Fragen unterscheiden die Gruppen."
+					"label": "Mit dem Akkusativobjekt beginnen",
+					"text": "Einen Napf an den Anfang",
+					"detail": "Auch diese Wortgruppe lässt sich geschlossen voranstellen. Der Satz behält seine Aussage.",
+					"blocks": [
+						{
+							"text": "Einen Napf",
+							"label": "Akkusativobjekt",
+							"tone": "object"
+						},
+						{
+							"text": "gibt",
+							"label": "Prädikat",
+							"tone": "predicate"
+						},
+						{
+							"text": "Nele",
+							"label": "Subjekt",
+							"tone": "subject"
+						},
+						{
+							"text": "am Morgen",
+							"label": "Zeit",
+							"tone": "time"
+						},
+						{
+							"text": "dem Hund.",
+							"label": "Dativobjekt",
+							"tone": "object"
+						}
+					]
 				}
 			]
 		}
@@ -2938,22 +3598,152 @@
 		},
 		"visual": {
 			"kind": "sentence",
-			"title": "Umstände machen einen Satz genauer",
+			"title": "Verschiedene Umstände an den Satzanfang stellen",
+			"initial": {
+				"blocks": [
+					{
+						"text": "Heute",
+						"label": "Zeit",
+						"tone": "time"
+					},
+					{
+						"text": "liest",
+						"label": "Prädikat",
+						"tone": "predicate"
+					},
+					{
+						"text": "Nuri",
+						"label": "Subjekt",
+						"tone": "subject"
+					},
+					{
+						"text": "im Garten",
+						"label": "Ort",
+						"tone": "place"
+					},
+					{
+						"text": "leise",
+						"label": "Art und Weise",
+						"tone": "manner"
+					},
+					{
+						"text": "aus Rücksicht.",
+						"label": "Grund",
+						"tone": "reason"
+					}
+				]
+			},
 			"steps": [
 				{
-					"label": "Zeit und Ort",
-					"text": "heute · im Garten",
-					"detail": "Wann? und Wo? fragen nach verschiedenen Umständen."
+					"label": "Den Ort voranstellen",
+					"text": "Wo? Im Garten",
+					"detail": "Im Garten antwortet auf Wo?. Die Wortgruppe bleibt auch am Satzanfang ein Lokaladverbiale.",
+					"blocks": [
+						{
+							"text": "Im Garten",
+							"label": "Ort",
+							"tone": "place"
+						},
+						{
+							"text": "liest",
+							"label": "Prädikat",
+							"tone": "predicate"
+						},
+						{
+							"text": "Nuri",
+							"label": "Subjekt",
+							"tone": "subject"
+						},
+						{
+							"text": "heute",
+							"label": "Zeit",
+							"tone": "time"
+						},
+						{
+							"text": "leise",
+							"label": "Art und Weise",
+							"tone": "manner"
+						},
+						{
+							"text": "aus Rücksicht.",
+							"label": "Grund",
+							"tone": "reason"
+						}
+					]
 				},
 				{
-					"label": "Art und Weise",
-					"text": "leise",
-					"detail": "Wie liest Nuri? Ein Modaladverbiale."
+					"label": "Die Art voranstellen",
+					"text": "Wie? Leise",
+					"detail": "Leise nennt die Art und Weise des Lesens, nicht seinen Grund.",
+					"blocks": [
+						{
+							"text": "Leise",
+							"label": "Art und Weise",
+							"tone": "manner"
+						},
+						{
+							"text": "liest",
+							"label": "Prädikat",
+							"tone": "predicate"
+						},
+						{
+							"text": "Nuri",
+							"label": "Subjekt",
+							"tone": "subject"
+						},
+						{
+							"text": "heute",
+							"label": "Zeit",
+							"tone": "time"
+						},
+						{
+							"text": "im Garten",
+							"label": "Ort",
+							"tone": "place"
+						},
+						{
+							"text": "aus Rücksicht.",
+							"label": "Grund",
+							"tone": "reason"
+						}
+					]
 				},
 				{
-					"label": "Grund",
-					"text": "aus Rücksicht",
-					"detail": "Warum liest Nuri so? Ein Kausaladverbiale."
+					"label": "Den Grund voranstellen",
+					"text": "Warum? Aus Rücksicht",
+					"detail": "Aus Rücksicht beantwortet Warum?. Nach dem ganzen Kausaladverbiale folgt das finite Verb.",
+					"blocks": [
+						{
+							"text": "Aus Rücksicht",
+							"label": "Grund",
+							"tone": "reason"
+						},
+						{
+							"text": "liest",
+							"label": "Prädikat",
+							"tone": "predicate"
+						},
+						{
+							"text": "Nuri",
+							"label": "Subjekt",
+							"tone": "subject"
+						},
+						{
+							"text": "heute",
+							"label": "Zeit",
+							"tone": "time"
+						},
+						{
+							"text": "im Garten",
+							"label": "Ort",
+							"tone": "place"
+						},
+						{
+							"text": "leise.",
+							"label": "Art und Weise",
+							"tone": "manner"
+						}
+					]
 				}
 			]
 		}
@@ -2966,28 +3756,28 @@
 		"bindings": ["4.2", "4.3"],
 		"paragraphs": [
 			"In einem Aussagesatz steht die finite Verbform meist an zweiter Stelle, in einer Ja-Nein-Frage an erster: „Lina bleibt hier.“ „Bleibt Lina hier?“ Aufforderungen wie „Bleib hier!“ und Ausrufe wie „Wie laut das knallt!“ haben andere Aufgaben.",
-			"Eine Satzreihe verbindet Hauptsätze: „Lina bleibt hier, denn es regnet.“ Ein Satzgefüge enthält einen Nebensatz, meist mit dem finiten Verb am Ende: „Lina bleibt hier, weil es regnet.“ Der Nebensatz kann davor stehen: „Weil es regnet, bleibt Lina hier.“ Das Komma grenzt ihn ab. Nach dem vorangestellten Nebensatz folgt direkt das finite Verb des Hauptsatzes."
+			"Ein Hauptsatz kann allein stehen: „Lina bleibt hier.“ Ein mit „weil“ eingeleiteter Nebensatz erklärt einen Grund und braucht einen übergeordneten Satz: „Lina bleibt hier, weil es regnet.“ Im Weil-Satz steht die finite Verbform am Ende. Der Nebensatz kann auch vorne stehen: „Weil es regnet, bleibt Lina hier.“ Das Komma grenzt ihn ab; danach folgt direkt die finite Verbform des Hauptsatzes."
 		],
 		"materialLabel": "Drei Fassungen",
-		"material": "Lina nimmt den Schirm mit, weil es regnet.\nWeil es regnet, nimmt Lina den Schirm mit.\nLina bleibt hier, denn es regnet.",
+		"material": "Lina nimmt den Schirm mit, weil es regnet.\nWeil es regnet, nimmt Lina den Schirm mit.\nNimmt Lina den Schirm mit?",
 		"sourceIds": ["lehrplan"],
 		"check": {
-			"wrong": "An der ersten Stelle des Hauptsatzes.",
+			"wrong": "Nach dem ersten Satzglied, wie im Aussagesatz.",
 			"explanation": "„Weil“ leitet den Nebensatz ein. „Regnet“ steht am Ende des Nebensatzes."
 		},
-		"takeaway": "Bestimme die finite Verbform. Wähle eine Konjunktion, die die Beziehung deutlich macht.",
+		"takeaway": "Prüfe, welcher Teil allein stehen kann. Im Weil-Satz steht die finite Verbform am Ende; ein Komma grenzt ihn ab.",
 		"lehrplan": "D5 · 4.2, 4.3",
 		"cases": [
 			{
 				"prompt": "Welcher Satz ist eine Aufforderung?",
 				"options": ["Nimmst du den Schirm mit?", "Nimm den Schirm mit!"],
 				"answer": "Nimm den Schirm mit!",
-				"feedback": "„Nimm“ ist hier eine Aufforderungsform. Der zweite Satz fragt nach einer Entscheidung."
+				"feedback": "„Nimm“ ist hier eine Aufforderungsform. Die Frage „Nimmst du den Schirm mit?“ fragt dagegen nach einer Entscheidung."
 			},
 			{
 				"prompt": "Welche Fassung beginnt mit einem Nebensatz?",
 				"options": [
-					"Lina bleibt hier, denn es regnet.",
+					"Lina nimmt den Schirm mit, weil es regnet.",
 					"Weil es regnet, nimmt Lina den Schirm mit."
 				],
 				"answer": "Weil es regnet, nimmt Lina den Schirm mit.",
@@ -3005,33 +3795,108 @@
 				]
 			},
 			"2": {
-				"prompt": "Formuliere zum ausgefallenen Ausflug eine Satzreihe mit „denn“ und ein Satzgefüge mit „weil“. Stelle den Weil-Satz anschließend nach vorne.",
-				"model": "Wir bleiben in der Schule, denn der Bus kommt nicht. Wir bleiben in der Schule, weil der Bus nicht kommt. Weil der Bus nicht kommt, bleiben wir in der Schule.",
+				"prompt": "Verbinde „Wir bleiben in der Schule“ und „Der Bus kommt nicht“ mit „weil“. Stelle den Nebensatz danach nach vorne und erkläre die Position beider finiten Verben.",
+				"model": "Wir bleiben in der Schule, weil der Bus nicht kommt. Weil der Bus nicht kommt, bleiben wir in der Schule. „Kommt“ steht am Ende des Nebensatzes. Nach dem vorangestellten Nebensatz folgt im Hauptsatz direkt „bleiben“.",
 				"criteria": [
-					"Meine Satzreihe enthält zwei Hauptsätze.",
-					"Im Weil-Satz steht das finite Verb am Ende.",
-					"Nach dem vorangestellten Nebensatz folgt „bleiben“."
+					"Ich verbinde beide Aussagen mit „weil“.",
+					"Ich grenze den Nebensatz mit einem Komma ab.",
+					"Ich erkläre beide Verbpositionen."
 				]
 			}
 		},
 		"visual": {
-			"kind": "compare",
-			"title": "Die Verbposition verrät den Bau",
+			"kind": "bracket",
+			"title": "Satzart und Verbposition verändern",
+			"initial": {
+				"blocks": [
+					{
+						"text": "Lina",
+						"label": "Subjekt",
+						"tone": "subject"
+					},
+					{
+						"text": "bleibt",
+						"label": "finit · zweite Position",
+						"tone": "predicate"
+					},
+					{
+						"text": "hier.",
+						"label": "Ort",
+						"tone": "place"
+					}
+				]
+			},
 			"steps": [
 				{
-					"label": "Hauptsatz",
-					"text": "Lina bleibt hier.",
-					"detail": "Die finite Verbform bleibt steht im Aussagesatz an zweiter Satzgliedposition."
+					"label": "Eine Frage bilden",
+					"text": "Bleibt Lina hier?",
+					"detail": "In dieser Ja-Nein-Frage steht die finite Verbform Bleibt vorne.",
+					"blocks": [
+						{
+							"text": "Bleibt",
+							"label": "finit · erste Position",
+							"tone": "predicate"
+						},
+						{
+							"text": "Lina",
+							"label": "Subjekt",
+							"tone": "subject"
+						},
+						{
+							"text": "hier?",
+							"label": "Ort",
+							"tone": "place"
+						}
+					]
 				},
 				{
-					"label": "Nebensatz",
+					"label": "Einen Weil-Nebensatz bilden",
 					"text": "weil es regnet",
-					"detail": "Im eingeleiteten Nebensatz steht regnet am Ende."
+					"detail": "Weil leitet den Nebensatz ein; regnet steht als finite Verbform am Ende.",
+					"blocks": [
+						{
+							"text": "weil",
+							"label": "Einleitung",
+							"tone": "subordinate"
+						},
+						{
+							"text": "es",
+							"label": "Subjekt",
+							"tone": "subject"
+						},
+						{
+							"text": "regnet",
+							"label": "finit · Ende",
+							"tone": "predicate"
+						}
+					]
 				},
 				{
-					"label": "Vorangestellt",
+					"label": "Den Nebensatz voranstellen",
 					"text": "Weil es regnet, bleibt Lina hier.",
-					"detail": "Der ganze Nebensatz besetzt das Vorfeld; danach folgt bleibt."
+					"detail": "Der ganze Nebensatz steht vor dem Hauptsatz. Nach dem Komma folgt direkt bleibt.",
+					"blocks": [
+						{
+							"text": "Weil es regnet,",
+							"label": "Nebensatz",
+							"tone": "subordinate"
+						},
+						{
+							"text": "bleibt",
+							"label": "finit · Hauptsatz",
+							"tone": "predicate"
+						},
+						{
+							"text": "Lina",
+							"label": "Subjekt",
+							"tone": "subject"
+						},
+						{
+							"text": "hier.",
+							"label": "Ort",
+							"tone": "place"
+						}
+					]
 				}
 			]
 		}
@@ -3050,7 +3915,7 @@
 		"material": "Tal – Saal – Wahl\nBrief – Tiger\nTon – Sohn\nBoot – Brot",
 		"sourceIds": ["lehrplan"],
 		"check": {
-			"wrong": "a, e, i und o",
+			"wrong": "l, m, n und t",
 			"explanation": "In „Wahl“, „nehmen“, „Zahn“ und „Ohr“ steht nach dem h einer dieser Buchstaben. Nicht jedes passende Wort braucht h."
 		},
 		"takeaway": "Hör die Vokallänge. Merke oder prüfe die Schreibung, wenn derselbe lange Laut unterschiedlich geschrieben werden kann.",
@@ -3090,23 +3955,82 @@
 			}
 		},
 		"visual": {
-			"kind": "compare",
-			"title": "Langer Klang, verschiedene Schreibweisen",
+			"kind": "vowel",
+			"title": "Ein langer Vokal, verschiedene Schreibungen",
+			"initial": {
+				"blocks": [
+					{
+						"text": "Tal",
+						"label": "langes a ohne Zusatz",
+						"tone": "vowel"
+					}
+				],
+				"length": "long"
+			},
 			"steps": [
 				{
-					"label": "Einfach",
-					"text": "Tal · Ton",
-					"detail": "Ein langer Vokal braucht nicht immer ein zusätzliches Zeichen."
+					"label": "Dehnungs-h untersuchen",
+					"text": "Wahl",
+					"detail": "In Wahl steht nach dem langen a ein Dehnungs-h. Der lange Klang allein sagt das h nicht voraus.",
+					"blocks": [
+						{
+							"text": "Wa",
+							"label": "langer Vokal",
+							"tone": "vowel"
+						},
+						{
+							"text": "h",
+							"label": "Dehnungszeichen",
+							"tone": "marker"
+						},
+						{
+							"text": "l",
+							"label": "Konsonant",
+							"tone": "stem"
+						}
+					],
+					"length": "long"
 				},
 				{
-					"label": "Mit Zeichen",
-					"text": "Wahl · Brief",
-					"detail": "Dehnungs-h und ie sind mögliche Schreibweisen."
+					"label": "Langes i untersuchen",
+					"text": "Brief",
+					"detail": "In Brief wird der lange i-Laut als ie geschrieben. Tiger zeigt, dass es auch andere Schreibweisen gibt.",
+					"blocks": [
+						{
+							"text": "Br",
+							"label": "Anfang",
+							"tone": "stem"
+						},
+						{
+							"text": "ie",
+							"label": "langer i-Laut",
+							"tone": "vowel"
+						},
+						{
+							"text": "f",
+							"label": "Ende",
+							"tone": "stem"
+						}
+					],
+					"length": "long"
 				},
 				{
-					"label": "Doppelt",
-					"text": "Saal · See · Boot",
-					"detail": "Die Doppelvokale aa, ee und oo musst du dir bei diesen Wörtern merken."
+					"label": "Doppelvokal untersuchen",
+					"text": "See",
+					"detail": "See schreibt den langen e-Laut mit ee. Die konkrete Wortschreibung musst du kennen oder nachschlagen.",
+					"blocks": [
+						{
+							"text": "S",
+							"label": "Anfang",
+							"tone": "stem"
+						},
+						{
+							"text": "ee",
+							"label": "langer e-Laut",
+							"tone": "vowel"
+						}
+					],
+					"length": "long"
 				}
 			]
 		}
@@ -3165,23 +4089,112 @@
 			}
 		},
 		"visual": {
-			"kind": "compare",
-			"title": "Auf den betonten Vokal hören",
+			"kind": "vowel",
+			"title": "Vokallänge und folgende Buchstaben vergleichen",
+			"initial": {
+				"blocks": [
+					{
+						"text": "R",
+						"label": "Anfang",
+						"tone": "stem"
+					},
+					{
+						"text": "a",
+						"label": "lang",
+						"tone": "vowel"
+					},
+					{
+						"text": "te",
+						"label": "Ende",
+						"tone": "stem"
+					}
+				],
+				"length": "long"
+			},
 			"steps": [
 				{
-					"label": "Lang",
-					"text": "kam",
-					"detail": "Das lange a steht hier vor einem einfachen m."
+					"label": "Rate mit Ratte vergleichen",
+					"text": "Ratte: kurzes a, tt",
+					"detail": "Ratte bezeichnet das Tier. Der kurze betonte Vokal steht hier vor dem verdoppelten t.",
+					"blocks": [
+						{
+							"text": "R",
+							"label": "Anfang",
+							"tone": "stem"
+						},
+						{
+							"text": "a",
+							"label": "kurz",
+							"tone": "vowel"
+						},
+						{
+							"text": "tt",
+							"label": "Doppelkonsonant",
+							"tone": "marker"
+						},
+						{
+							"text": "e",
+							"label": "Endung",
+							"tone": "ending"
+						}
+					],
+					"length": "short"
 				},
 				{
-					"label": "Kurz",
-					"text": "Kamm",
-					"detail": "Das kurze a wird hier durch mm in der Schrift angezeigt."
+					"label": "Den k-Laut untersuchen",
+					"text": "backen: kurzes a, ck",
+					"detail": "Beim üblichen Schärfungsmuster steht für den k-Laut ck statt kk.",
+					"blocks": [
+						{
+							"text": "b",
+							"label": "Anfang",
+							"tone": "stem"
+						},
+						{
+							"text": "a",
+							"label": "kurz",
+							"tone": "vowel"
+						},
+						{
+							"text": "ck",
+							"label": "k-Laut",
+							"tone": "marker"
+						},
+						{
+							"text": "en",
+							"label": "Endung",
+							"tone": "ending"
+						}
+					],
+					"length": "short"
 				},
 				{
-					"label": "Sondergruppen",
-					"text": "backen · Katze",
-					"detail": "Bei diesen Wörtern stehen ck und tz statt kk und zz."
+					"label": "Den z-Laut untersuchen",
+					"text": "Katze: kurzes a, tz",
+					"detail": "Nach dem kurzen betonten a steht hier tz statt zz.",
+					"blocks": [
+						{
+							"text": "K",
+							"label": "Anfang",
+							"tone": "stem"
+						},
+						{
+							"text": "a",
+							"label": "kurz",
+							"tone": "vowel"
+						},
+						{
+							"text": "tz",
+							"label": "z-Laut",
+							"tone": "marker"
+						},
+						{
+							"text": "e",
+							"label": "Endung",
+							"tone": "ending"
+						}
+					],
+					"length": "short"
 				}
 			]
 		}
@@ -3243,23 +4256,83 @@
 			}
 		},
 		"visual": {
-			"kind": "word",
-			"title": "Eine Prüfform macht Laute hörbar",
+			"kind": "extension",
+			"title": "Eine Endung macht den Stamm hörbar",
+			"initial": {
+				"blocks": [
+					{
+						"text": "Hun?",
+						"label": "Endlaut unsicher",
+						"tone": "stem"
+					}
+				]
+			},
 			"steps": [
 				{
-					"label": "Unsicher",
-					"text": "Hun?",
-					"detail": "Der Endlaut klingt hart; nur Hören genügt nicht."
+					"label": "Das Nomen verlängern",
+					"text": "Hund → Hunde",
+					"detail": "Vor dem e in Hunde hörst du d. Die Prüfform sichert die Schreibung Hund.",
+					"blocks": [
+						{
+							"text": "Hun",
+							"label": "Stamm",
+							"tone": "stem"
+						},
+						{
+							"text": "d",
+							"label": "geprüfter Buchstabe",
+							"tone": "marker"
+						},
+						{
+							"text": "e",
+							"label": "Endung",
+							"tone": "ending"
+						}
+					]
 				},
 				{
-					"label": "Verlängern",
-					"text": "Hunde",
-					"detail": "Vor einem Vokal wird d deutlich."
+					"label": "Ein weiteres Nomen prüfen",
+					"text": "Korb → Körbe",
+					"detail": "Körbe macht den Buchstaben b vor einem Vokal hörbar. Das o wird in der Pluralform zum Umlaut ö.",
+					"blocks": [
+						{
+							"text": "Kör",
+							"label": "Stamm mit Umlaut",
+							"tone": "stem"
+						},
+						{
+							"text": "b",
+							"label": "geprüfter Buchstabe",
+							"tone": "marker"
+						},
+						{
+							"text": "e",
+							"label": "Endung",
+							"tone": "ending"
+						}
+					]
 				},
 				{
-					"label": "Schreiben",
-					"text": "Hund",
-					"detail": "Übernimm die geprüfte Schreibung des Stamms."
+					"label": "Ein Adjektiv verlängern",
+					"text": "gelb → gelbes Blatt",
+					"detail": "In gelbes folgt auf b ein Vokal. So prüfst du das Adjektiv ohne nach einem bloß ähnlichen Wort zu suchen.",
+					"blocks": [
+						{
+							"text": "gel",
+							"label": "Stamm",
+							"tone": "stem"
+						},
+						{
+							"text": "b",
+							"label": "geprüfter Buchstabe",
+							"tone": "marker"
+						},
+						{
+							"text": "es Blatt",
+							"label": "Endung und Nomen",
+							"tone": "ending"
+						}
+					]
 				}
 			]
 		}
@@ -3278,7 +4351,7 @@
 		"material": "Können sie uns helfen, Frau Kaya?\nDas team wartet vor dem Hau? und mu? gleich los.\nBeim lesen vergeht die Zeit wie im Flug.\nEin langer Fu? passt nicht in den Schuh.",
 		"sourceIds": ["lehrplan"],
 		"check": {
-			"wrong": "Weil jedes lange Wort ein ß braucht.",
+			"wrong": "Das ß steht nur am Wortende, ss nur in der Wortmitte.",
 			"explanation": "Nach dem kurzen betonten u steht in „muss“ ss. In „Fuß“ steht nach dem langen u ein ß."
 		},
 		"takeaway": "Prüfe zuerst die Wortart oder den Bezug. Nutze danach Vokallänge, Artikelprobe oder Wörterbuch.",
@@ -3324,23 +4397,80 @@
 			}
 		},
 		"visual": {
-			"kind": "compare",
-			"title": "Nicht nur nach dem Klang entscheiden",
+			"kind": "capital",
+			"title": "Kontext und Vokallänge verändern die Schreibung",
+			"initial": {
+				"blocks": [
+					{
+						"text": "lesen",
+						"label": "Verb · klein",
+						"tone": "predicate"
+					}
+				]
+			},
 			"steps": [
 				{
-					"label": "Nomenprobe",
+					"label": "Einen Artikel ergänzen",
 					"text": "beim Lesen",
-					"detail": "Beim bedeutet bei dem: Lesen ist hier nominal gebraucht."
+					"detail": "Beim bedeutet bei dem. Lesen wird hier wie ein Nomen gebraucht und beginnt groß.",
+					"blocks": [
+						{
+							"text": "beim",
+							"label": "bei dem",
+							"tone": "article"
+						},
+						{
+							"text": "Lesen",
+							"label": "nominalisiert · groß",
+							"tone": "noun"
+						}
+					]
 				},
 				{
-					"label": "Kurzer Vokal",
+					"label": "Nach kurzem u schreiben",
 					"text": "muss",
-					"detail": "Hier steht nach kurzem betontem u ein ss."
+					"detail": "In muss steht nach dem kurzen betonten u ein ss.",
+					"blocks": [
+						{
+							"text": "m",
+							"label": "Anfang",
+							"tone": "stem"
+						},
+						{
+							"text": "u",
+							"label": "kurz",
+							"tone": "vowel"
+						},
+						{
+							"text": "ss",
+							"label": "s-Schreibung",
+							"tone": "marker"
+						}
+					],
+					"length": "short"
 				},
 				{
-					"label": "Langer Vokal",
+					"label": "Nach langem u schreiben",
 					"text": "Fuß",
-					"detail": "Hier steht nach langem u ein ß; Haus prüfst du dagegen mit Häuser."
+					"detail": "In Fuß steht nach dem langen u ein ß. Das ist kein allgemeines Zeichen für jedes Wortende.",
+					"blocks": [
+						{
+							"text": "F",
+							"label": "Anfang",
+							"tone": "stem"
+						},
+						{
+							"text": "u",
+							"label": "lang",
+							"tone": "vowel"
+						},
+						{
+							"text": "ß",
+							"label": "s-Schreibung",
+							"tone": "marker"
+						}
+					],
+					"length": "long"
 				}
 			]
 		}
@@ -3405,23 +4535,83 @@
 			}
 		},
 		"visual": {
-			"kind": "compare",
-			"title": "Der Begleitsatz bestimmt die Zeichen",
+			"kind": "speech",
+			"title": "Den Begleitsatz verschieben, die Zeichen anpassen",
+			"initial": {
+				"blocks": [
+					{
+						"text": "Ich komme morgen.",
+						"label": "gesprochene Äußerung",
+						"tone": "speech"
+					}
+				]
+			},
 			"steps": [
 				{
-					"label": "Vorne",
-					"text": "Mia sagt: „Ich komme.“",
-					"detail": "Nach dem vorangestellten Begleitsatz steht ein Doppelpunkt."
+					"label": "Begleitsatz nach vorne",
+					"text": "Mia sagt: „Ich komme morgen.“",
+					"detail": "Nach dem vorangestellten Begleitsatz steht der Doppelpunkt; der Punkt gehört in die Rede.",
+					"blocks": [
+						{
+							"text": "Mia sagt",
+							"label": "Begleitsatz",
+							"tone": "report"
+						},
+						{
+							"text": ":",
+							"label": "Doppelpunkt",
+							"tone": "marker"
+						},
+						{
+							"text": "„Ich komme morgen.“",
+							"label": "Rede",
+							"tone": "speech"
+						}
+					]
 				},
 				{
-					"label": "Hinten",
-					"text": "„Ich komme“, sagt Mia.",
-					"detail": "Der Punkt der Aussage entfällt; das Komma steht außerhalb der Rede."
+					"label": "Begleitsatz nach hinten",
+					"text": "„Ich komme morgen“, sagt Mia.",
+					"detail": "Der Punkt der Aussage entfällt vor der schließenden Rede. Das Komma steht außerhalb.",
+					"blocks": [
+						{
+							"text": "„Ich komme morgen“",
+							"label": "Rede ohne Punkt",
+							"tone": "speech"
+						},
+						{
+							"text": ",",
+							"label": "Komma außen",
+							"tone": "marker"
+						},
+						{
+							"text": "sagt Mia.",
+							"label": "Begleitsatz",
+							"tone": "report"
+						}
+					]
 				},
 				{
-					"label": "Eingeschoben",
-					"text": "„Morgen“, sagt Mia, „komme ich.“",
-					"detail": "Die beiden Kommas stehen außerhalb der Anführungszeichen."
+					"label": "Begleitsatz einschieben",
+					"text": "„Ich“, sagt Mia, „komme morgen.“",
+					"detail": "Die beiden Kommas stehen außerhalb der Anführungszeichen; komme setzt denselben Satz klein fort.",
+					"blocks": [
+						{
+							"text": "„Ich“",
+							"label": "erster Teil",
+							"tone": "speech"
+						},
+						{
+							"text": ", sagt Mia,",
+							"label": "Begleitsatz mit Kommas",
+							"tone": "report"
+						},
+						{
+							"text": "„komme morgen.“",
+							"label": "Fortsetzung",
+							"tone": "speech"
+						}
+					]
 				}
 			]
 		}
@@ -3434,10 +4624,10 @@
 		"bindings": ["4.3", "4.2"],
 		"paragraphs": [
 			"In einer Aufzählung trennst du gleichrangige Teile mit Kommas: „Wir brauchen Papier, Stifte und Kleber.“ Vor „und“ oder „oder“ steht in einer einfachen Aufzählung kein Komma. Eine Anrede trennst du ab: „Mira, gib mir bitte das Papier.“",
-			"Nebensätze grenzt du mit Kommas ab: „Mira bleibt, weil sie hilft.“ Zwischen Hauptsätzen ohne verbindendes „und“ oder „oder“ steht bei einer Satzreihe ein Komma: „Mira holt Papier, Sami schneidet es.“ Vor „aber“ steht ein Komma. Bei zwei selbstständigen Hauptsätzen mit „und“ oder „oder“ kann ein Komma die Gliederung verdeutlichen."
+			"Nebensätze grenzt du mit Kommas ab: „Mira bleibt, weil sie hilft.“ Steht der Nebensatz vorne, folgt das Komma danach: „Weil sie hilft, bleibt Mira.“ Suche zuerst die finiten Verben und die Grenze zwischen Haupt- und Nebensatz. Setze kein Komma zwischen ein Verb und seine Ergänzung: „Mira holt das Papier.“"
 		],
 		"materialLabel": "Zeilen ohne Kommas",
-		"material": "Mira hol bitte Papier Stifte und Kleber.\nSami schneidet das Papier weil er ein Schild bastelt.\nMia trägt die Kiste Sami öffnet die Tür.",
+		"material": "Mira hol bitte Papier Stifte und Kleber.\nSami schneidet das Papier weil er ein Schild bastelt.\nWeil Mia die Kiste trägt öffnet Sami die Tür.",
 		"sourceIds": ["lehrplan"],
 		"check": {
 			"wrong": "Vor „Tür“.",
@@ -3453,13 +4643,13 @@
 				"feedback": "Das Komma trennt Papier und Stifte. Vor dem einfachen „und“ steht hier keines."
 			},
 			{
-				"prompt": "Welche Satzreihe ist richtig gesetzt?",
+				"prompt": "Welche Fassung grenzt den Nebensatz richtig ab?",
 				"options": [
-					"Mia trägt die Kiste, Sami öffnet die Tür.",
-					"Mia trägt, die Kiste Sami öffnet die Tür."
+					"Weil Mia die Kiste trägt, öffnet Sami die Tür.",
+					"Weil Mia die Kiste, trägt öffnet Sami die Tür."
 				],
-				"answer": "Mia trägt die Kiste, Sami öffnet die Tür.",
-				"feedback": "Das Komma steht zwischen zwei vollständigen Hauptsätzen, nicht zwischen Verb und Objekt."
+				"answer": "Weil Mia die Kiste trägt, öffnet Sami die Tür.",
+				"feedback": "Der Nebensatz endet nach „trägt“. Das Komma steht an dieser Grenze, nicht zwischen Subjekt und Verb."
 			}
 		],
 		"tasks": {
@@ -3473,7 +4663,7 @@
 				]
 			},
 			"2": {
-				"prompt": "Schreibe eine Anrede mit einer Aufzählung und danach ein Satzgefüge mit vorangestelltem Nebensatz.",
+				"prompt": "Schreibe eine Anrede mit einer Aufzählung und danach einen Hauptsatz mit vorangestelltem Weil-Nebensatz.",
 				"model": "Nuri, bring bitte Schere, Papier und Stifte.\nWeil wir ein Plakat basteln, brauchen wir alle drei Sachen.",
 				"criteria": [
 					"Die Anrede steht vor einem Komma.",
@@ -3483,23 +4673,88 @@
 			}
 		},
 		"visual": {
-			"kind": "sentence",
-			"title": "Grenzen im Satz sichtbar machen",
+			"kind": "commas",
+			"title": "Kommas an sichtbaren Grenzen setzen",
+			"initial": {
+				"blocks": [
+					{
+						"text": "Mira bleibt.",
+						"label": "Hauptsatz",
+						"tone": "main"
+					}
+				]
+			},
 			"steps": [
 				{
-					"label": "Aufzählung",
+					"label": "Einen Nebensatz anhängen",
+					"text": "Mira bleibt, weil sie hilft.",
+					"detail": "Das Komma trennt den Hauptsatz vom vollständigen Weil-Nebensatz.",
+					"blocks": [
+						{
+							"text": "Mira bleibt",
+							"label": "Hauptsatz",
+							"tone": "main"
+						},
+						{
+							"text": ",",
+							"label": "Grenze",
+							"tone": "marker"
+						},
+						{
+							"text": "weil sie hilft.",
+							"label": "Nebensatz",
+							"tone": "subordinate"
+						}
+					]
+				},
+				{
+					"label": "Den Nebensatz voranstellen",
+					"text": "Weil sie hilft, bleibt Mira.",
+					"detail": "Das Komma wandert mit der Satzgrenze hinter den vorangestellten Nebensatz.",
+					"blocks": [
+						{
+							"text": "Weil sie hilft",
+							"label": "Nebensatz",
+							"tone": "subordinate"
+						},
+						{
+							"text": ",",
+							"label": "Grenze",
+							"tone": "marker"
+						},
+						{
+							"text": "bleibt Mira.",
+							"label": "Hauptsatz",
+							"tone": "main"
+						}
+					]
+				},
+				{
+					"label": "Eine Aufzählung bilden",
 					"text": "Papier, Stifte und Kleber",
-					"detail": "Das Komma trennt Gleichrangiges; vor einfachem und steht hier keines."
-				},
-				{
-					"label": "Anrede",
-					"text": "Nuri, komm bitte.",
-					"detail": "Die angesprochene Person wird abgetrennt."
-				},
-				{
-					"label": "Nebensatz",
-					"text": "Wir bleiben, weil es regnet.",
-					"detail": "Das Komma grenzt den Nebensatz vom Hauptsatz ab."
+					"detail": "Das Komma trennt Papier und Stifte. Vor dem einfachen und steht hier keines.",
+					"blocks": [
+						{
+							"text": "Papier",
+							"label": "Teil 1",
+							"tone": "noun"
+						},
+						{
+							"text": ",",
+							"label": "Trennung",
+							"tone": "marker"
+						},
+						{
+							"text": "Stifte",
+							"label": "Teil 2",
+							"tone": "noun"
+						},
+						{
+							"text": "und Kleber",
+							"label": "Verbindung + Teil 3",
+							"tone": "noun"
+						}
+					]
 				}
 			]
 		}
@@ -3518,7 +4773,7 @@
 		"material": "Blume → Blu-me\nKatze → Kat-ze\nwaschen → wa-schen\nbacken → ba-cken\nAbend → bleibt hier ungetrennt",
 		"sourceIds": ["lehrplan"],
 		"check": {
-			"wrong": "back-en als einzige Silbentrennung",
+			"wrong": "bac-ken",
 			"explanation": "Die Buchstabengruppe ck bleibt bei der Trennung zusammen."
 		},
 		"takeaway": "Trenne an erlaubten Grenzen. Lass sch, ch und ck zusammen und keinen einzelnen Vokalbuchstaben allein stehen.",
@@ -3558,23 +4813,68 @@
 			}
 		},
 		"visual": {
-			"kind": "word",
-			"title": "Zusammengehörige Buchstaben bleiben zusammen",
+			"kind": "syllables",
+			"title": "Silbenbögen und erlaubte Trennstellen",
+			"initial": {
+				"blocks": [
+					{
+						"text": "backen",
+						"label": "noch ungetrennt",
+						"tone": "stem"
+					}
+				]
+			},
 			"steps": [
 				{
-					"label": "Sprechsilben",
-					"text": "Blu-me",
-					"detail": "Sprich deutlich und finde die Silben."
+					"label": "backen trennen",
+					"text": "ba-cken",
+					"detail": "Die beiden Silbenabschnitte sind ba und cken. Die Gruppe ck bleibt zusammen.",
+					"blocks": [
+						{
+							"text": "ba",
+							"label": "Abschnitt 1",
+							"tone": "syllable"
+						},
+						{
+							"text": "cken",
+							"label": "Abschnitt 2 · ck zusammen",
+							"tone": "syllable"
+						}
+					]
 				},
 				{
-					"label": "Buchstabengruppe",
-					"text": "ba-cken · wa-schen",
-					"detail": "Ck und sch werden bei diesen Trennungen nicht zerrissen."
+					"label": "waschen trennen",
+					"text": "wa-schen",
+					"detail": "Sch gehört zusammen und steht hier vollständig im zweiten Abschnitt.",
+					"blocks": [
+						{
+							"text": "wa",
+							"label": "Abschnitt 1",
+							"tone": "syllable"
+						},
+						{
+							"text": "schen",
+							"label": "Abschnitt 2 · sch zusammen",
+							"tone": "syllable"
+						}
+					]
 				},
 				{
-					"label": "Grenze",
-					"text": "Abend",
-					"detail": "Ein einzelner Vokalbuchstabe darf nicht allein abgetrennt stehen."
+					"label": "Katze trennen",
+					"text": "Kat-ze",
+					"detail": "Zwischen den Vokalbuchstaben stehen t und z. Der letzte Konsonantenbuchstabe geht in die nächste Zeile.",
+					"blocks": [
+						{
+							"text": "Kat",
+							"label": "Abschnitt 1",
+							"tone": "syllable"
+						},
+						{
+							"text": "ze",
+							"label": "Abschnitt 2",
+							"tone": "syllable"
+						}
+					]
 				}
 			]
 		}
@@ -3634,23 +4934,83 @@
 		},
 		"extension": "Schlage zwei Wörter aus einem eigenen Entwurf nach. Halte Stichwort, benötigte Angabe und korrigierte Form fest.",
 		"visual": {
-			"kind": "flow",
-			"title": "Von der Form zum Wörterbuch",
+			"kind": "dictionary",
+			"title": "Von einer Wortform zum geordneten Eintrag",
+			"initial": {
+				"blocks": [
+					{
+						"text": "gefunden",
+						"label": "gesuchte Wortform",
+						"tone": "word"
+					}
+				]
+			},
 			"steps": [
 				{
-					"label": "Grundform",
+					"label": "Ein Verb nachschlagen",
 					"text": "gefunden → finden",
-					"detail": "Suche das Verb beim Infinitiv."
+					"detail": "Suche unter f nach dem Infinitiv finden. Im Eintrag steht gefunden als Partizip.",
+					"blocks": [
+						{
+							"text": "gefunden",
+							"label": "Suchform",
+							"tone": "word"
+						},
+						{
+							"text": "finden",
+							"label": "Stichwort",
+							"tone": "entry"
+						},
+						{
+							"text": "Part. II: gefunden",
+							"label": "Formangabe",
+							"tone": "ending"
+						}
+					]
 				},
 				{
-					"label": "Eintrag",
-					"text": "Prät. und Part. II",
-					"detail": "Lies die abgekürzten Angaben und die Formen."
+					"label": "Ein Nomen nachschlagen",
+					"text": "Bücher → Buch",
+					"detail": "Der Plural Bücher führt zum Stichwort Buch unter b. Der Eintrag nennt den Plural.",
+					"blocks": [
+						{
+							"text": "Bücher",
+							"label": "Suchform",
+							"tone": "word"
+						},
+						{
+							"text": "Buch",
+							"label": "Stichwort",
+							"tone": "entry"
+						},
+						{
+							"text": "das · Pl.: Bücher",
+							"label": "Artikel und Plural",
+							"tone": "ending"
+						}
+					]
 				},
 				{
-					"label": "Anwenden",
-					"text": "Wir haben gefunden.",
-					"detail": "Prüfe die gewählte Form anschließend im ganzen Satz."
+					"label": "Eine Schreibung prüfen",
+					"text": "Interwiev → Interview",
+					"detail": "Prüfe die Schreibung unter i. Das Stichwort lautet Interview; die Pluralform heißt Interviews.",
+					"blocks": [
+						{
+							"text": "Interwiev",
+							"label": "zu prüfende Form",
+							"tone": "word"
+						},
+						{
+							"text": "Interview",
+							"label": "Stichwort",
+							"tone": "entry"
+						},
+						{
+							"text": "das · Pl.: Interviews",
+							"label": "Artikel und Plural",
+							"tone": "ending"
+						}
+					]
 				}
 			]
 		}

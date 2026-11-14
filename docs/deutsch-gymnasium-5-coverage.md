@@ -106,3 +106,42 @@ views, local audio and the offline ZIP. Repository registry/catalog tests and
 library, records a review, repeats installation and preserves all sixteen
 legacy cards and their review evidence. These checks do not substitute for
 teacher evaluation or the independent review required before merging.
+
+## Review follow-up
+
+The two independent reviews on PR #137 identified learner-visible text errors
+and improvements to curriculum boundaries, reusable recall and the visuals.
+The follow-up retains all 46 lesson anchors and 138 atom/item identifiers.
+
+- The offline startup guide names Gymnasium, and the release verifier reads the
+  guide from the actual ZIP and rejects the old school label. Hearing-source
+  copy now refers to both recordings.
+- Word-formation grammar, option-order-dependent feedback, pronoun terminology
+  and the exact closure during the large school break are corrected.
+  Procedure practice replaces the copied animal-description extension.
+- Clause-series punctuation and relative-clause recall are removed from the
+  Grade 5 lessons and cards. Main/Weil-clause transformations remain, matching
+  the Grade 5 expectation.
+- The listening and factual-writing checks ask reusable knowledge without an
+  absent original passage. Recall samples are actual model answers. More
+  plausible wrong options represent mistakes in selecting relevant information,
+  explaining reasons and applying spelling patterns.
+- The fairy-tale example names the thirteen wise women in Grimm's *Dornröschen*,
+  checked against the [1857 primary text](https://de.wikisource.org/wiki/Dornr%C3%B6schen_(1857)).
+- All 19 language/spelling lessons now transform visible words and structures:
+  sentence-part order, verb brackets, case forms, pronoun reference, word
+  classes, adjective comparison, word parts, meaning relations, vowel length,
+  extension probes, capitals, direct speech, commas, syllable division and
+  dictionary entry navigation. Three exploration goals start unachieved; the
+  browser check exercises every transformation. They are not a mastery grade.
+  Other diagrams now show their content within the figure, and the fable has
+  a recognisable leafy tree, crow and fox.
+- Related C-row practice uses `related_slug`, reserving `academy_slug` for the
+  one A proposal. Approval remains null; future activation must add a migration
+  conflict check for existing old and new cards.
+- Development uses strict port 5249 after checking the other open package PRs
+  (#138: 5247, #139: 5248, #140: 5247). The next merge must still refresh main.
+
+The explicitly labelled draft README row follows the repository's existing
+local-draft convention. Publication, teacher review, videos and any history
+transfer remain separate from these review corrections.

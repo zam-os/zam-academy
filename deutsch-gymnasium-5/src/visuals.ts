@@ -1,4 +1,5 @@
 import { esc } from "./practice";
+import { renderLanguageModel, renderModelGoals } from "./language-model";
 import type { Lesson } from "./types";
 
 // Diagrams explain relationships. Text and controls stay outside the SVG so
@@ -20,7 +21,7 @@ function diagram(lesson: Lesson): string {
 			'<path d="M40 125h515l-12-10m12 10-12 10" class="diagram-line"/><text x="300" y="195" text-anchor="middle">vorher → Bezugspunkt → später</text>';
 	else if (kind === "scene" && lesson.id === "d5-fabel")
 		background =
-			'<path d="M450 170V50m-35 55h80" class="tree"/><path d="M0 188h600" class="ground"/><path d="M470 72q20-34 34 0l-12 17z" class="bird"/><path d="M493 73l17 5-17 5" class="beak"/><path d="M335 168l15-36 17 18 15-18 10 38 27 11-28 11h-44l-38-20z" class="fox"/><path d="M475 110l12 20-22 2z" class="cheese"/>';
+			'<path d="M440 185V70l18-15 8 15-12 25v90z" fill="#88634b"/><path d="M382 69q-15-38 25-46 14-25 43-13 37-14 55 16 38 4 32 36 14 30-17 46-30 20-61-1-40 12-66-10-17-9-11-28" fill="#729665"/><path d="M451 108h45" class="tree"/><path d="M0 188h600" class="ground"/><ellipse cx="485" cy="98" rx="15" ry="13" class="bird"/><circle cx="497" cy="87" r="9" class="bird"/><circle cx="500" cy="85" r="2" fill="white"/><path d="M503 90l15 5-16 4" class="beak"/><path d="M321 180q-46-4-44-31 35 2 47 19" fill="#be6a42"/><path d="M284 154l16 5-11 10" fill="#faf1dc"/><ellipse cx="342" cy="171" rx="29" ry="13" class="fox"/><path d="M356 169l6-36 11 18 12-17 5 30 20 8-28 12z" class="fox"/><path d="M373 169l28 4-18 8z" fill="#faf1dc"/><circle cx="382" cy="161" r="2"/><path d="M329 179v12m24-12v12" class="diagram-line"/><path d="M496 117l12 20-22 2z" class="cheese"/>';
 	else if (kind === "scene" && lesson.id === "d5-fabelhoeren")
 		background =
 			'<path d="M175 100q85-100 230-30-25 75-165 60z" fill="#719a6a"/><path d="M380 77l-18 92" class="diagram-line"/><ellipse cx="240" cy="169" rx="42" ry="21" fill="#a38a81"/><circle cx="214" cy="142" r="13" fill="#bd9e96"/><circle cx="209" cy="161" r="3"/><path d="M280 170q32 0 30 21" class="diagram-line"/><ellipse cx="341" cy="179" rx="13" ry="10" fill="#73535b"/><path d="M329 169l-8-7m20 5 7-9" class="diagram-line"/>';
@@ -38,14 +39,24 @@ function diagram(lesson: Lesson): string {
 	else
 		background =
 			'<path d="M100 120h400l-14-12m14 12-14 12" class="diagram-line"/>';
-	return `<svg viewBox="0 0 600 230" role="img" aria-label="${esc(lesson.visual.title)}. Die beschrifteten Schritte und ihre Erklärungen stehen direkt unter dem Bild.">${background}${[0, 1, 2].map((i) => `<g data-visual-mark="${i}"><circle cx="${120 + i * 180}" cy="${kind === "story" ? [160, 44, 160][i] : kind === "scene" || kind === "poem" ? 211 : 115}" r="19" class="diagram-marker"/><text x="${120 + i * 180}" y="${kind === "story" ? [166, 50, 166][i] : kind === "scene" || kind === "poem" ? 217 : 121}" text-anchor="middle" class="marker-number">${i + 1}</text></g>`).join("")}</svg>`;
+	const labels = ["flow", "word", "sentence", "compare"].includes(kind)
+		? lesson.visual.steps
+				.map(
+					(step, i) =>
+						`<foreignObject x="${45 + i * 180}" y="${kind === "flow" ? 145 : 60}" width="150" height="100"><div xmlns="http://www.w3.org/1999/xhtml" class="diagram-caption">${esc(step.text)}</div></foreignObject>`,
+				)
+				.join("")
+		: "";
+	return `<svg viewBox="0 0 600 250" role="img" aria-label="${esc(lesson.visual.title)}. Die beschrifteten Schritte und ihre Erklärungen stehen direkt unter dem Bild.">${background}${[0, 1, 2].map((i) => `<g data-visual-mark="${i}"><circle cx="${120 + i * 180}" cy="${kind === "story" ? [160, 44, 160][i] : kind === "scene" || kind === "poem" ? 211 : ["compare", "word", "sentence"].includes(kind) ? 30 : 115}" r="19" class="diagram-marker"/><text x="${120 + i * 180}" y="${kind === "story" ? [166, 50, 166][i] : kind === "scene" || kind === "poem" ? 217 : ["compare", "word", "sentence"].includes(kind) ? 36 : 121}" text-anchor="middle" class="marker-number">${i + 1}</text></g>`).join("")}${labels}</svg>`;
 }
 
 export function renderVisual(lesson: Lesson): string {
-	return `<section class="panel visual-workshop" aria-labelledby="visual-title"><div class="eyebrow">Entdeckerbild · selbst erkunden</div><h2 id="visual-title">${esc(lesson.visual.title)}</h2><p class="small">Wähle einen Teil des Bildes und verfolge, wie er mit den anderen zusammenhängt.</p><div class="diagram">${diagram(lesson)}</div><div class="visual-steps">${lesson.visual.steps.map((step, i) => `<button type="button" class="visual-step" data-visual-step="${i}" aria-pressed="false" aria-controls="visual-detail"><span class="step-label">${i + 1} · ${esc(step.label)}</span><strong>${esc(step.text)}</strong></button>`).join("")}</div><p id="visual-detail" role="status">Wähle oben einen Teil, um ihn genauer zu untersuchen.</p></section>`;
+	const model = !!lesson.visual.initial;
+	return `<section class="panel visual-workshop" aria-labelledby="visual-title"><div class="eyebrow">Entdeckerbild · selbst erkunden</div><h2 id="visual-title">${esc(lesson.visual.title)}</h2><p class="small">${model ? "Verändere das Modell mit den drei Tasten. Beobachte, wie Wortformen, Satzteile oder Zeichen sich verändern." : "Wähle einen Teil des Bildes und verfolge, wie er mit den anderen zusammenhängt."}</p><div class="diagram" data-model-container>${model ? renderLanguageModel(lesson) : diagram(lesson)}</div><div class="visual-steps">${lesson.visual.steps.map((step, i) => `<button type="button" class="visual-step" data-visual-step="${i}" aria-pressed="false" aria-controls="visual-detail"><span class="step-label">${i + 1} · ${esc(step.label)}</span><strong>${esc(step.text)}</strong></button>`).join("")}</div><p id="visual-detail" role="status">Wähle oben einen Teil, um ihn genauer zu untersuchen.</p>${model ? renderModelGoals(lesson) : ""}</section>`;
 }
 
 export function bindVisual(root: HTMLElement, lesson: Lesson): void {
+	const explored = new Set<number>();
 	root
 		.querySelectorAll<HTMLButtonElement>("[data-visual-step]")
 		.forEach((button) => {
@@ -53,6 +64,16 @@ export function bindVisual(root: HTMLElement, lesson: Lesson): void {
 				const index = Number(button.dataset.visualStep);
 				const step = lesson.visual.steps[index];
 				if (!step) return;
+				if (lesson.visual.initial) {
+					explored.add(index);
+					const container = root.querySelector<HTMLElement>(
+						"[data-model-container]",
+					);
+					if (container)
+						container.innerHTML = renderLanguageModel(lesson, index);
+					const goals = root.querySelector<HTMLElement>("[data-model-goals]");
+					if (goals) goals.outerHTML = renderModelGoals(lesson, explored);
+				}
 				root
 					.querySelectorAll<HTMLButtonElement>("[data-visual-step]")
 					.forEach(

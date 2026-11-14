@@ -10,6 +10,11 @@
 			"uri": "https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/5/deutsch",
 			"label": "LehrplanPLUS Bayern · Deutsch 5 Gymnasium",
 			"checked": "2026-11-14"
+		},
+		{
+			"uri": "https://de.wikisource.org/wiki/Dornr%C3%B6schen_(1857)",
+			"label": "Brüder Grimm · Dornröschen (1857, KHM 50) · Wikisource",
+			"checked": "2026-11-14"
 		}
 	],
 	"atoms": [
@@ -64,7 +69,7 @@
 					"bloom_level": 2,
 					"question": "Woran merkst du, dass du eine Durchsage verstanden hast?",
 					"concept": "Du kannst ihre Hauptaussage in eigenen Worten wiedergeben und Fragen dazu beantworten.",
-					"sample_solution": "Erkläre einer Person, was sich geändert hat und was sie jetzt tun kann.",
+					"sample_solution": "Die Bücherei ist am Mittwoch in der großen Pause geschlossen. Bücher kann ich am Donnerstag in Raum 12 zurückgeben; zum Verlängern wende ich mich an Frau Aydin.",
 					"id": "01M7D0P811AWTH16KS8SPJ135Q",
 					"slug": "d5-zuhoeren-recall",
 					"language": "de",
@@ -111,13 +116,13 @@
 				{
 					"tier": "tier1_fast",
 					"bloom_level": 2,
-					"question": "Woran erkennst du im Hörtext „Die Maus und das Blatt“, dass die Maus ihre Meinung ändert?",
-					"concept": "Sie bedankt sich und macht dem Käfer Platz.",
+					"question": "Was gehört in eine knappe Zusammenfassung eines gehörten Erzähltexts?",
+					"concept": "Figuren, zentrales Ereignis und Ausgang.",
 					"fast_check": {
 						"type": "binary_choice",
 						"options": [
-							"Sie bedankt sich und macht dem Käfer Platz.",
-							"Sie lehnt die Hilfe bis zum Ende ab."
+							"Figuren, zentrales Ereignis und Ausgang.",
+							"Möglichst jede Formulierung im genauen Wortlaut."
 						],
 						"correct_index": 0
 					},
@@ -237,11 +242,14 @@
 				{
 					"tier": "tier1_fast",
 					"bloom_level": 2,
-					"question": "Lies: „Dann klopfte es. Dreimal. Unter dem Korb saß ein Spatz.“ Wo kann eine kurze Pause das Klopfen spannend wirken lassen?",
+					"question": "Lies: „Dann klopfte es. Dreimal. Unter dem Korb saß ein Spatz.“ Welche Pause folgt direkt auf einen Satzschluss und hebt das Klopfen hervor?",
 					"concept": "Nach „Dann klopfte es.“",
 					"fast_check": {
 						"type": "binary_choice",
-						"options": ["Nach „Dann klopfte es.“", "Mitten im Wort „klopfte“."],
+						"options": [
+							"Nach „Dann klopfte es.“",
+							"Zwischen „Unter dem Korb“ und „saß ein Spatz“."
+						],
 						"correct_index": 0
 					},
 					"id": "01M7D0P8120068P4TCR3XJYVG7",
@@ -374,7 +382,7 @@
 						"type": "binary_choice",
 						"options": [
 							"Dort können wir ungestört lesen.",
-							"Meine Idee muss immer gewinnen."
+							"Ich wünsche mir eine Leseecke, weil ich eine Leseecke möchte."
 						],
 						"correct_index": 0
 					},
@@ -441,7 +449,7 @@
 						"type": "binary_choice",
 						"options": [
 							"Du hast bei „Es ist nichts“ leise gesprochen. Das wirkte unsicher.",
-							"Du spielst schlecht."
+							"Du hast leise gesprochen; das war leise."
 						],
 						"correct_index": 0
 					},
@@ -939,7 +947,7 @@
 					"bloom_level": 2,
 					"question": "Wie stellst du ein Lieblingsbuch vor, ohne das Ende zu verraten?",
 					"concept": "Nenne Titel und Autor, beschreibe die Ausgangslage und begründe deine Empfehlung an einer frühen Stelle.",
-					"sample_solution": "Stelle die Hauptfigur mit ihrem Anfangsproblem vor und lies auf Wunsch einen kurzen passenden Ausschnitt.",
+					"sample_solution": "Beispiel mit frei erfundenem Buch: „Amiras Fund“ von Lea Winter erzählt von einem Kind, das einen fremden Hund entdeckt. Ich empfehle das Buch, weil Amira in Kapitel 2 erst die Lage prüft, bevor sie hilft. Wie die Suche nach dem Besitzer endet, verrate ich nicht.",
 					"id": "01M7D0P8125MDYX4CG0ZER27TT",
 					"slug": "d5-lesetagebuch-recall",
 					"language": "de",
@@ -1564,13 +1572,13 @@
 				{
 					"tier": "tier1_fast",
 					"bloom_level": 2,
-					"question": "Welche Angabe gehört in einen sachlichen Ereignistext?",
-					"concept": "Eine gesicherte Zahl aus den Notizen.",
+					"question": "Welche Aussage ist als sachliche Information formuliert?",
+					"concept": "Bei der Tauschbörse wechselten 30 Bücher die Besitzer.",
 					"fast_check": {
 						"type": "binary_choice",
 						"options": [
-							"Eine gesicherte Zahl aus den Notizen.",
-							"Eine erfundene Reaktion aller Beteiligten."
+							"Bei der Tauschbörse wechselten 30 Bücher die Besitzer.",
+							"Bestimmt fanden alle Kinder die Tauschbörse großartig."
 						],
 						"correct_index": 0
 					},
@@ -2485,9 +2493,9 @@
 				{
 					"tier": "tier2_synthesis",
 					"bloom_level": 2,
-					"question": "Worin unterscheiden sich Satzreihe und Satzgefüge?",
-					"concept": "Eine Satzreihe verbindet Hauptsätze. Ein Satzgefüge enthält einen Hauptsatz und mindestens einen Nebensatz.",
-					"sample_solution": "„Es regnet, aber Lina geht los“ ist eine Reihe. „Lina geht los, obwohl es regnet“ ist ein Gefüge.",
+					"question": "Was verändert sich, wenn du einen Weil-Nebensatz vor den Hauptsatz stellst?",
+					"concept": "Nach dem vorangestellten Nebensatz und dem Komma folgt direkt die finite Verbform des Hauptsatzes.",
+					"sample_solution": "„Lina bleibt hier, weil es regnet“ wird zu „Weil es regnet, bleibt Lina hier“. „Regnet“ bleibt am Ende des Nebensatzes; danach folgt „bleibt“.",
 					"id": "01M7D0P8131YVRWNAXBWHD4E3D",
 					"slug": "d5-satzbau-recall",
 					"language": "de",
@@ -2853,9 +2861,9 @@
 				{
 					"tier": "tier2_synthesis",
 					"bloom_level": 2,
-					"question": "Wann setzt du in einem Satzgefüge ein Komma?",
-					"concept": "Du grenzt einen Nebensatz vom Hauptsatz ab, auch wenn der Nebensatz vorne oder in der Mitte steht.",
-					"sample_solution": "„Weil es regnet, bleiben wir hier.“ In „Das Kind, das hilft, bleibt hier“ stehen am Einschub zwei Kommas.",
+					"question": "Wo setzt du das Komma zwischen einem Hauptsatz und einem Weil-Nebensatz?",
+					"concept": "Das Komma steht an der Grenze zwischen Haupt- und Nebensatz, auch wenn der Nebensatz vorne steht.",
+					"sample_solution": "„Mira bleibt, weil sie hilft.“ Umgestellt: „Weil sie hilft, bleibt Mira.“ Das Komma grenzt jeweils den vollständigen Weil-Satz ab.",
 					"id": "01M7D0P813S01JWB6946WP0ND6",
 					"slug": "d5-kommas-recall",
 					"language": "de",

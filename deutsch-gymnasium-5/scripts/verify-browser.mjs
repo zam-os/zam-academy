@@ -172,6 +172,13 @@ try {
 				assert.equal(result.cases, 2);
 				assert.equal(result.visual, 3);
 				assert.equal(result.selected, 0);
+				if (lesson.visual.initial)
+					assert.equal(
+						await evaluate(
+							'document.querySelectorAll("[data-model-reached=true]").length',
+						),
+						0,
+					);
 				assert.equal(result.over, false, lesson.id);
 				assert.ok(!/NaN|undefined/.test(result.body));
 				// Open each actual model view; screen-reader labels and rubric controls
@@ -222,7 +229,21 @@ try {
 				),
 				1,
 			);
+			if (lesson.visual.initial) {
+				const text = await evaluate(
+					'document.querySelector("[data-language-model]").innerText',
+				);
+				for (const block of lesson.visual.steps[i].blocks)
+					assert.ok(text.includes(block.text), `${lesson.id}: ${block.text}`);
+				assert.equal(
+					await evaluate(
+						'document.querySelectorAll("[data-model-reached=true]").length',
+					),
+					i + 1,
+				);
+			}
 		}
+		if (lesson.visual.initial) await screenshot(`model-${lesson.id}-changed`);
 		await evaluate(
 			`var answers=${JSON.stringify(lesson.cases.map((c) => c.answer))};document.querySelectorAll('[data-case]').forEach((group,i)=>{Array.from(group.querySelectorAll('input')).find(el=>el.value===answers[i]).checked=true});document.querySelector('#cases-form').requestSubmit()`,
 		);

@@ -284,7 +284,7 @@ function renderReference(): void {
 					)
 					.join("")}</ul></details>`,
 		).join("")}</section>
-		<section class="panel"><h2>Quellen</h2><p class="small">Die Übungstexte sind eigens geschrieben. Die Durchsage wurde mit einer Computerstimme eingesprochen. Lehrplanabgleich am 14. November 2026. Die Quellen öffnen erst auf deinen Klick.</p><ul class="source-list">${SOURCES.map((source) => `<li><a href="${esc(source.url)}" target="_blank" rel="noopener noreferrer">${esc(source.label)}</a></li>`).join("")}</ul></section>
+		<section class="panel"><h2>Quellen</h2><p class="small">Die Übungstexte sind eigens geschrieben. Die Hörtexte wurden mit einer Computerstimme eingesprochen. Lehrplanabgleich am 14. November 2026. Die Quellen öffnen erst auf deinen Klick.</p><ul class="source-list">${SOURCES.map((source) => `<li><a href="${esc(source.url)}" target="_blank" rel="noopener noreferrer">${esc(source.label)}</a></li>`).join("")}</ul></section>
 	</div>`;
 }
 function showDialog(title: string, html: string): void {

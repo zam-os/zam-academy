@@ -21,6 +21,11 @@ export interface Task {
 	model: string;
 	criteria: [string, string, string];
 }
+export interface ModelBlock {
+	text: string;
+	label: string;
+	tone: string;
+}
 export interface Lesson {
 	id: string;
 	stage: string;
@@ -44,7 +49,14 @@ export interface Lesson {
 	visual: {
 		kind: string;
 		title: string;
-		steps: { label: string; text: string; detail: string }[];
+		steps: {
+			label: string;
+			text: string;
+			detail: string;
+			blocks?: ModelBlock[];
+			length?: "short" | "long";
+		}[];
+		initial?: { blocks: ModelBlock[]; length?: "short" | "long" };
 	};
 	extension?: string;
 }
