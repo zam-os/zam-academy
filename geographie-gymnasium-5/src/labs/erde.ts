@@ -55,7 +55,7 @@ export const kompass: LabDef = {
   goals: [
     { text: "Setze den Punkt nordöstlich (NO) der Schule, zur Kirche.", reached: kompassGoal("NO") },
     { text: "Setze den Punkt südwestlich (SW) der Schule, zum Sportplatz.", reached: kompassGoal("SW") },
-    { text: "Setze den Punkt genau westlich (W) der Schule, zum Bahnhof.", reached: kompassGoal("W") },
+    { text: "Setze den Punkt westlich (W) der Schule, zum Bahnhof.", reached: kompassGoal("W") },
   ],
   handles: {
     p: {
@@ -195,12 +195,12 @@ export const massstab: LabDef = {
   goals: [
     { text: "Bei 1 : 25 000: Welche Kartenstrecke entspricht 1 km in der Wirklichkeit?", reached: (s) => scaleIs(s, 25000, 4) },
     { text: "Bei 1 : 100 000: Stelle eine Strecke von 3,5 km in der Wirklichkeit ein.", reached: (s) => scaleIs(s, 100000, 3.5) },
-    { text: "Bei 1 : 1 000 000: Stelle 75 km Luftlinie ein, etwa von München nach Ingolstadt.", reached: (s) => scaleIs(s, 1000000, 7.5) },
+    { text: "Bei 1 : 1 000 000: Stelle 70 km Luftlinie ein, etwa von München nach Ingolstadt.", reached: (s) => scaleIs(s, 1000000, 7) },
   ],
   witnesses: [
     { cm: 4, scale: 25000 },
     { cm: 3.5, scale: 100000 },
-    { cm: 7.5, scale: 1000000 },
+    { cm: 7, scale: 1000000 },
   ],
   note: "Die Zentimeter auf dem Bildschirm sind keine echten Zentimeter. Miss auf einer Papierkarte mit dem Lineal.",
   render(s) {

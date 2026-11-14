@@ -364,7 +364,7 @@ describe("interactive labs", () => {
   it("computes the lab models correctly", () => {
     expect(realMetres(4, 25000)).toBe(1000);
     expect(realMetres(6.4, 50000)).toBe(3200);
-    expect(distanceText(realMetres(7.5, 1000000))).toBe("75 km");
+    expect(distanceText(realMetres(7, 1000000))).toBe("70 km");
     expect(distanceText(500)).toBe("500 m");
     expect(fmt(-3.5)).toBe("−3,5");
     expect(fmt(25000, 0)).toBe("25 000");

@@ -23,7 +23,7 @@ Seven rows are `supported`, not `implemented`, because they need real activity: 
 - **Below:** HSU 3/4 (home region, maps with legends, sun, earth and moon). Three lessons mark repetition from HSU (`review`).
 - **Gymnasium 6:** no Geographie (the LehrplanPLUS URL redirects to the start page).
 - **Gymnasium 7** (fetched on the same day): Europe, with climate (Gulf Stream, Föhn), vegetation zones, volcanism and earthquakes in depth, European rural and urban areas, seas and coasts. This package therefore keeps endogenous processes at the basic level the Grade 5 plan asks for and leaves climate zones, seasons and illumination zones out.
-- **Other packages:** `geographie-realschule-5` (local draft) and `gpg-mittelschule-5` cover overlapping topics for other school types; nothing was copied from their lessons. The GPG 5 shell, its Natural Earth map data (trimmed to world, Germany and Bavaria) and eight of its drawings were reused.
+- **Other packages:** `geographie-realschule-5` (published as a preview) and `gpg-mittelschule-5` cover overlapping topics for other school types; nothing was copied from their lessons. The GPG 5 shell, its Natural Earth map data (trimmed to world, Germany and Bavaria) and eight of its drawings were reused.
 
 ## Sources shown to learners
 
