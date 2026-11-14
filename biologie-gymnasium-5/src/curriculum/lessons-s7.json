@@ -1,0 +1,328 @@
+[
+  {
+    "id": "bg5-bluete",
+    "lb": 7,
+    "title": "Die Blüte als Fortpflanzungseinheit",
+    "period": "NT5 2.4 · Samenpflanzen als Lebewesen",
+    "intro": "Eine Kirschblüte ist nicht nur schön. Jeder ihrer Teile hat eine Aufgabe bei der Fortpflanzung. Mit Pinzette und Lupe nimmst du sie auseinander.",
+    "review": "Wiederholung aus HSU 3/4: Teile einer Blütenpflanze benennen",
+    "paragraphs": [
+      "Samenpflanzen pflanzen sich geschlechtlich fort, und die Blüte ist ihre Fortpflanzungseinheit. Eine Kirschblüte ist in Kreisen aufgebaut. Außen liegen fünf grüne Kelchblätter; sie haben die Knospe geschützt. Darauf folgen fünf weiße Kronblätter, die mit Farbe und Duft Insekten anlocken. Innen stehen viele Staubblätter. Jedes besteht aus einem dünnen Staubfaden und einem Staubbeutel, in dem der Pollen entsteht; die Pollenkörner enthalten die männlichen Keimzellen der Pflanze. In der Mitte steht ein Fruchtblatt, der weibliche Teil.",
+      "Das Fruchtblatt der Kirsche gliedert sich in drei Teile: Oben die klebrige Narbe, auf der Pollen hängen bleibt; darunter der Griffel; ganz unten der verdickte Fruchtknoten. In ihm liegt die Samenanlage mit der Eizelle. Nach der Befruchtung entwickelt sich die Samenanlage zum Samen und der Fruchtknoten zur Frucht; bei der Kirsche wird er zum Fruchtfleisch mit dem harten Kern, der den Samen enthält. Die Kirschblüte ist eine Zwitterblüte, weil sie männliche und weibliche Teile hat. Untersuchen kannst du Blüten mit einfachen Hilfsmitteln wie Pinzette, Lupe oder Binokular."
+    ],
+    "takeaway": "Blütenbau von außen nach innen: Kelchblätter (Schutz der Knospe), Kronblätter (Anlockung), Staubblätter mit Staubbeuteln (bilden den Pollen), Fruchtblatt mit Narbe, Griffel und Fruchtknoten (enthält die Samenanlage mit der Eizelle).",
+    "sourceIds": ["lehrplan", "kx-bluete", "kx-kirsche", "kx-lupe"],
+    "quiz": {
+      "question": "Welcher Teil der Blüte bildet den Pollen?",
+      "answer": "Die Staubblätter, genauer ihre Staubbeutel",
+      "wrong": ["Die Kronblätter", "Der Fruchtknoten"],
+      "explanation": "Im Staubbeutel jedes Staubblatts entsteht der Pollen. Das Fruchtblatt mit dem Fruchtknoten ist der weibliche Teil."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Blütenteil und Aufgabe",
+      "instruction": "Ordne jede Aufgabe dem passenden Blütenteil zu.",
+      "categories": ["Kelchblatt", "Kronblatt", "Staubblatt", "Fruchtblatt"],
+      "entries": [
+        { "text": "schützt die geschlossene Knospe", "target": 0, "feedback": "Die grünen Kelchblätter umhüllen die Knospe." },
+        { "text": "lockt mit Farbe und Duft Insekten an", "target": 1, "feedback": "Die Kronblätter sind das Aushängeschild der Blüte." },
+        { "text": "bildet im Staubbeutel den Pollen", "target": 2, "feedback": "Männlicher Teil der Blüte." },
+        { "text": "besteht aus Staubfaden und Staubbeutel", "target": 2, "feedback": "So ist jedes Staubblatt gebaut." },
+        { "text": "fängt mit der klebrigen Narbe Pollen auf", "target": 3, "feedback": "Die Narbe ist die Spitze des Fruchtblatts." },
+        { "text": "enthält im Fruchtknoten die Samenanlage", "target": 3, "feedback": "Hier liegt die Eizelle." }
+      ],
+      "conclusion": "Jeder Blütenkreis hat eine eigene Aufgabe; zusammen dienen sie der Fortpflanzung."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Beschreibe, wie du eine Kirschblüte präparierst und die Teile geordnet auf ein Blatt klebst.",
+        "hints": [
+          "In welcher Reihenfolge entfernst du die Blütenteile?",
+          "Wie ordnest du sie an, damit man den Bau erkennt?"
+        ],
+        "model": "Ich halte die Blüte am Stiel und zupfe mit der Pinzette die Blütenteile von außen nach innen ab: zuerst die fünf Kelchblätter, dann die fünf Kronblätter, dann die Staubblätter, bis nur noch das Fruchtblatt übrig bleibt. Auf dem Blatt lege ich jede Sorte in eine eigene Reihe oder in Kreisen von außen nach innen und klebe sie mit Klebeband fest. Daneben schreibe ich die Namen und die Anzahl. Mit der Lupe kann ich den Fruchtknoten aufschneiden und die Samenanlage suchen.",
+        "criteria": [
+          "Ich präpariere von außen nach innen.",
+          "Ich nenne alle vier Blütenteile.",
+          "Ich beschreibe eine geordnete, beschriftete Anordnung."
+        ]
+      },
+      "2": {
+        "prompt": "Eine Gärtnerin entfernt bei manchen Blüten die Staubblätter, bevor sie aufgehen. Kann aus diesen Blüten trotzdem eine Kirsche entstehen? Begründe.",
+        "hints": [
+          "Welcher Teil wird zur Frucht?",
+          "Woher kann sonst Pollen kommen?"
+        ],
+        "model": "Ja, das ist möglich. Die Frucht entsteht aus dem Fruchtknoten, und der ist noch vorhanden. Für die Befruchtung braucht die Eizelle zwar Pollen, aber der muss nicht aus derselben Blüte stammen: Insekten können Pollen aus anderen Kirschblüten auf die Narbe bringen. Ohne Staubblätter kann die Blüte nur selbst keinen Pollen abgeben. So können Gärtner gezielt bestimmen, welcher Pollen auf die Narbe kommt.",
+        "criteria": [
+          "Ich nenne den Fruchtknoten als Ursprung der Frucht.",
+          "Ich erkläre, dass Pollen aus anderen Blüten kommen kann.",
+          "Ich komme zu einem begründeten Urteil."
+        ]
+      }
+    },
+    "figures": ["bluete-schnitt"],
+    "lab": "flower"
+  },
+  {
+    "id": "bg5-bluetendiagramm",
+    "lb": 7,
+    "title": "Blütendiagramme: ein Modell der Blüte",
+    "period": "NT5 2.4 · Samenpflanzen als Lebewesen",
+    "intro": "Wie zeichnet man eine Blüte so, dass man Blüten verschiedener Pflanzen schnell vergleichen kann? Mit einem Blütendiagramm.",
+    "paragraphs": [
+      "Ein Blütendiagramm ist ein Grundriss der Blüte von oben. Jeder Blütenkreis wird als Ring dargestellt, mit festen Zeichen: grüne Bögen für die Kelchblätter, farbige Bögen für die Kronblätter, kleine Doppelovale für die Staubbeutel im Querschnitt und in der Mitte ein Kreis für den Fruchtknoten, durch Linien in so viele Kammern geteilt, wie Fruchtblätter verwachsen sind. Die Zeichen stehen genau so, wie die Teile in der Blüte angeordnet sind. Um ein Diagramm zu erstellen, präparierst du die Blüte und zählst die Teile jedes Kreises.",
+      "Die Kirschblüte hat 5 Kelchblätter, 5 Kronblätter, viele Staubblätter und 1 Fruchtblatt. Die Rapsblüte hat 4 Kelch- und 4 Kronblätter, die über Kreuz stehen, 6 Staubblätter und einen Fruchtknoten aus 2 Fruchtblättern. Das Blütendiagramm ist ein abstrahiertes Modell: Es zeigt Anzahl und Anordnung genau, aber nicht Größe, Farbe, Duft oder die dreidimensionale Form. Vergleichst du es mit der echten Blüte, erkennst du, was das Modell hervorhebt und was es weglässt."
+    ],
+    "takeaway": "Ein Blütendiagramm zeigt die Blüte als Grundriss von oben: Kelch, Krone, Staubblätter und Fruchtknoten als Ringe mit festen Zeichen. Es zeigt Anzahl und Anordnung, aber nicht Größe, Farbe oder Duft. Kirsche: 5, 5, viele, 1; Raps: 4, 4, 6, 2.",
+    "sourceIds": ["lehrplan", "wp-bluetendiagramm", "kx-bluete", "kx-kohl"],
+    "quiz": {
+      "question": "Was zeigt ein Blütendiagramm nicht?",
+      "answer": "Die Farbe und den Duft der Blüte",
+      "wrong": ["Die Anzahl der Kronblätter", "Die Anordnung der Blütenteile"],
+      "explanation": "Das Blütendiagramm ist ein abstrahiertes Modell: Anzahl und Anordnung sind genau dargestellt, Farbe, Duft und Größe nicht."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Kirsche oder Raps?",
+      "instruction": "Zu welcher Blüte passt die Beschreibung?",
+      "categories": ["Kirschblüte", "Rapsblüte"],
+      "entries": [
+        { "text": "5 Kronblätter", "target": 0, "feedback": "Die Kirsche hat fünfzählige Blüten." },
+        { "text": "viele Staubblätter", "target": 0, "feedback": "Typisch für die Kirsche." },
+        { "text": "1 Fruchtblatt", "target": 0, "feedback": "Daraus wird die Kirsche mit einem Kern." },
+        { "text": "4 Kronblätter über Kreuz", "target": 1, "feedback": "Typisch für Kreuzblütler wie den Raps." },
+        { "text": "6 Staubblätter, 4 lange und 2 kurze", "target": 1, "feedback": "Ein Kennzeichen der Kreuzblütler." },
+        { "text": "Fruchtknoten aus 2 verwachsenen Fruchtblättern", "target": 1, "feedback": "Daraus wird eine Schote." }
+      ],
+      "conclusion": "Mit dem Blütendiagramm erkennst du Unterschiede auf einen Blick, auch wenn die Blüten in Wirklichkeit ganz unterschiedlich aussehen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Beschreibe, wie du von einer echten Blüte zu ihrem Blütendiagramm kommst.",
+        "hints": [
+          "Was musst du zuerst mit der Blüte tun?",
+          "In welcher Reihenfolge zeichnest du die Ringe?"
+        ],
+        "model": "Zuerst präpariere ich die Blüte von außen nach innen und zähle die Kelchblätter, Kronblätter, Staubblätter und Fruchtblätter. Dann zeichne ich von außen nach innen Ringe: außen die Kelchblätter als grüne Bögen, dann die Kronblätter als farbige Bögen, dann die Staubbeutel als Doppelovale und in die Mitte den Fruchtknoten mit so vielen Kammern, wie Fruchtblätter verwachsen sind. Dabei achte ich auf die Anordnung, also wo die Teile zueinander stehen.",
+        "criteria": [
+          "Ich nenne das Präparieren und Zählen.",
+          "Ich beschreibe die Reihenfolge der Ringe.",
+          "Ich verwende die richtigen Zeichen."
+        ]
+      },
+      "2": {
+        "prompt": "Der Wiesen-Salbei hat 5 verwachsene Kelchblätter, 5 zu einer Ober- und Unterlippe verwachsene Kronblätter, nur 2 Staubblätter und 2 verwachsene Fruchtblätter. Vergleiche sein Diagramm mit der echten Blüte: Was gibt das Modell gut wieder, was nicht?",
+        "hints": [
+          "Was sieht man im Diagramm genau?",
+          "Woran erkennt man den Salbei in der Natur sofort?"
+        ],
+        "model": "Das Diagramm zeigt genau, dass Kelch und Krone fünfteilig sind, dass es nur 2 Staubblätter gibt und dass der Fruchtknoten aus 2 Fruchtblättern besteht. Damit lässt sich der Salbei gut mit anderen Blüten vergleichen. Nicht sichtbar sind die blauviolette Farbe, die Form mit Ober- und Unterlippe, die Größe und der Hebelmechanismus der Staubblätter, mit dem Pollen auf Hummeln gelangt. Gerade daran erkennt man den Salbei in der Natur. Das Diagramm ist also ein Modell, das bestimmte Merkmale hervorhebt.",
+        "criteria": [
+          "Ich nenne, was das Diagramm genau zeigt.",
+          "Ich nenne mindestens zwei Merkmale, die fehlen.",
+          "Ich ordne das Diagramm als abstrahiertes Modell ein."
+        ]
+      }
+    },
+    "figures": ["diagramm-symbole"],
+    "lab": "flowerDiagram"
+  },
+  {
+    "id": "bg5-bestaeubung-befruchtung",
+    "lb": 7,
+    "title": "Bestäubung und Befruchtung",
+    "period": "NT5 2.4 · Samenpflanzen als Lebewesen",
+    "intro": "Eine Biene besucht eine Kirschblüte nach der anderen. Ohne es zu wissen, sorgt sie dafür, dass Kirschen wachsen.",
+    "paragraphs": [
+      "Bei der Bestäubung gelangt Pollen auf die Narbe einer Blüte derselben Art. Oft bringen Insekten ihn dorthin: Beim Nektarsammeln bleibt Pollen an ihrem Körper haften und wird an der nächsten Blüte auf der klebrigen Narbe abgestreift. Bestäubung allein reicht aber noch nicht. Auf der Narbe keimt das Pollenkorn aus und bildet einen Pollenschlauch, der durch den Griffel bis zur Samenanlage im Fruchtknoten wächst. Durch ihn gelangt eine männliche Keimzelle zur Eizelle. Wenn ihre Zellkerne verschmelzen, ist die Eizelle befruchtet. Aus der Samenanlage entsteht dann der Samen mit dem Keimling, aus dem Fruchtknoten die Frucht.",
+      "Vergleichst du das mit der Fortpflanzung des Menschen, findest du Gemeinsamkeiten: In beiden Fällen gibt es männliche und weibliche Keimzellen, und bei der Befruchtung verschmelzen eine männliche Keimzelle und eine Eizelle. Aus der befruchteten Eizelle entwickelt sich ein neues Lebewesen. Es gibt aber auch Unterschiede: Pflanzen können sich nicht bewegen und brauchen Wind oder Tiere, um den Pollen zu übertragen. Der Keimling der Pflanze ruht im Samen und wächst außerhalb der Mutterpflanze heran, das Kind des Menschen wächst in der Gebärmutter."
+    ],
+    "takeaway": "Bestäubung: Pollen gelangt auf die Narbe. Befruchtung: Ein Pollenschlauch wächst durch den Griffel zur Samenanlage, eine männliche Keimzelle verschmilzt mit der Eizelle. Danach wird die Samenanlage zum Samen und der Fruchtknoten zur Frucht.",
+    "sourceIds": ["lehrplan", "wp-bestaeubung", "kx-bienen", "kx-bluete"],
+    "quiz": {
+      "question": "Wie gelangt die männliche Keimzelle nach der Bestäubung zur Eizelle?",
+      "answer": "Durch einen Pollenschlauch, der durch den Griffel zur Samenanlage wächst",
+      "wrong": [
+        "Der Wind weht sie direkt in den Fruchtknoten",
+        "Die Biene legt sie mit ihrem Rüssel in die Samenanlage"
+      ],
+      "explanation": "Das Pollenkorn keimt auf der Narbe aus. Sein Pollenschlauch wächst durch den Griffel bis zur Samenanlage und bringt die männliche Keimzelle zur Eizelle."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Von der Blüte zur Kirsche",
+      "instruction": "Ordne die Vorgänge in die richtige Reihenfolge.",
+      "categories": [],
+      "entries": [
+        { "text": "Eine Biene sammelt Nektar, Pollen bleibt an ihr haften.", "target": 0, "feedback": "Die Biene wird zur Pollenträgerin." },
+        { "text": "An der nächsten Kirschblüte streift sie Pollen auf der Narbe ab.", "target": 1, "feedback": "Das ist die Bestäubung." },
+        { "text": "Das Pollenkorn keimt und bildet einen Pollenschlauch.", "target": 2, "feedback": "Der Schlauch wächst durch den Griffel." },
+        { "text": "Eine männliche Keimzelle verschmilzt mit der Eizelle.", "target": 3, "feedback": "Das ist die Befruchtung." },
+        { "text": "Die Samenanlage wird zum Samen, der Fruchtknoten zur Kirsche.", "target": 4, "feedback": "Aus der Blüte entsteht die Frucht." }
+      ],
+      "conclusion": "Bestäubung und Befruchtung sind zwei verschiedene Schritte: Erst kommt der Pollen auf die Narbe, dann vereinigen sich die Keimzellen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre den Unterschied zwischen Bestäubung und Befruchtung.",
+        "hints": [
+          "Was passiert jeweils, und wo?",
+          "Welcher Schritt kommt zuerst?"
+        ],
+        "model": "Bei der Bestäubung gelangt Pollen auf die Narbe einer Blüte derselben Art, zum Beispiel durch eine Biene oder den Wind. Bei der Befruchtung verschmilzt danach eine männliche Keimzelle aus dem Pollen mit der Eizelle in der Samenanlage. Dazwischen wächst der Pollenschlauch durch den Griffel. Die Bestäubung kommt also zuerst, die Befruchtung ist die eigentliche Vereinigung der Keimzellen.",
+        "criteria": [
+          "Ich erkläre die Bestäubung richtig.",
+          "Ich erkläre die Befruchtung richtig.",
+          "Ich nenne die Reihenfolge und den Pollenschlauch."
+        ]
+      },
+      "2": {
+        "prompt": "Vergleiche die geschlechtliche Fortpflanzung der Kirsche mit der des Menschen. Nenne zwei Gemeinsamkeiten und zwei Unterschiede.",
+        "hints": [
+          "Welche Keimzellen gibt es, was passiert bei der Befruchtung?",
+          "Wie kommen die Keimzellen zusammen, wo entwickelt sich der Nachwuchs?"
+        ],
+        "model": "Gemeinsamkeiten: Bei beiden gibt es männliche und weibliche Keimzellen, und bei der Befruchtung verschmilzt eine männliche Keimzelle mit einer Eizelle. Aus der befruchteten Eizelle entsteht ein neues Lebewesen. Unterschiede: Bei der Kirsche wird der Pollen von Insekten übertragen, beim Menschen gelangen die Spermienzellen beim Geschlechtsverkehr zur Eizelle. Der Keimling der Kirsche ruht im Samen und keimt außerhalb der Mutterpflanze, das menschliche Kind wächst in der Gebärmutter heran.",
+        "criteria": [
+          "Ich nenne zwei Gemeinsamkeiten.",
+          "Ich nenne zwei Unterschiede.",
+          "Ich verwende die Fachbegriffe richtig."
+        ]
+      }
+    },
+    "figures": ["pollenschlauch", "vergleich-mensch-pflanze"]
+  },
+  {
+    "id": "bg5-wind-tier",
+    "lb": 7,
+    "title": "Wind- und Tierbestäubung: Kosten und Nutzen",
+    "period": "NT5 2.4 · Samenpflanzen als Lebewesen",
+    "intro": "Haselsträucher blühen schon im Februar ohne bunte Blüten, Kirschbäume im April mit Tausenden weißen. Beide Wege der Bestäubung haben ihren Preis.",
+    "paragraphs": [
+      "Bei der Windbestäubung trägt der Wind den Pollen zu anderen Blüten. Windblütige Pflanzen wie Hasel, Birke und die Gräser haben unscheinbare Blüten ohne bunte Kronblätter, ohne Duft und ohne Nektar. Sie sparen sich also diese Kosten. Dafür müssen sie riesige Mengen leichten, trockenen Pollen bilden, denn der Wind verteilt ihn zufällig, und das meiste landet nicht auf einer passenden Narbe. Oft hängen die männlichen Blüten als Kätzchen frei im Wind, und die Narben sind groß oder federig. Viele Windblütler blühen, bevor die Blätter austreiben, sodass der Pollen ungehindert fliegt.",
+      "Bei der Tierbestäubung übertragen vor allem Insekten wie Bienen und Hummeln den Pollen. Tierblütige Pflanzen wie Kirsche, Raps und Wiesen-Salbei investieren in auffällige Kronblätter, Duft und Nektar als Belohnung. Das kostet Stoffe und Energie. Der Nutzen: Ein Insekt fliegt gezielt zu Blüten derselben Art, deshalb genügt viel weniger Pollen, der oft klebrig ist und am Insekt haftet. Ein Nachteil ist die Abhängigkeit von den Bestäubern: Fehlen Insekten, bleibt die Bestäubung aus. Eine Kosten-Nutzen-Analyse vergleicht genau diese Vor- und Nachteile."
+    ],
+    "takeaway": "Windbestäubung: keine Kosten für Farbe, Duft und Nektar, aber riesige Mengen Pollen nötig, weil der Wind ihn zufällig verteilt. Tierbestäubung: Kosten für Kronblätter, Duft und Nektar, dafür gezielte Übertragung mit wenig Pollen, aber Abhängigkeit von Bestäubern.",
+    "sourceIds": ["lehrplan", "wp-windbestaeubung", "wp-bestaeubung", "kx-haselnuss", "kx-gras"],
+    "quiz": {
+      "question": "Warum bilden windblütige Pflanzen wie die Hasel so große Mengen Pollen?",
+      "answer": "Weil der Wind den Pollen zufällig verteilt und das meiste keine passende Narbe erreicht",
+      "wrong": [
+        "Weil Insekten besonders viel Pollen fressen",
+        "Weil ihr Pollen schwer ist und deshalb weit fliegt"
+      ],
+      "explanation": "Ohne gezielte Übertragung ist die Chance gering, dass ein Pollenkorn eine Narbe derselben Art trifft. Viel Pollen erhöht die Chance."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Windblüte oder Tierblüte?",
+      "instruction": "Ordne jedes Merkmal zu.",
+      "categories": ["typisch für Windbestäubung", "typisch für Tierbestäubung"],
+      "entries": [
+        { "text": "unscheinbare Blüten ohne Kronblätter", "target": 0, "feedback": "Farbe würde dem Wind nichts nützen." },
+        { "text": "riesige Mengen leichter, trockener Pollen", "target": 0, "feedback": "Der Wind verteilt zufällig." },
+        { "text": "hängende Kätzchen, Blüte vor dem Laubaustrieb", "target": 0, "feedback": "So fliegt der Pollen ungehindert." },
+        { "text": "leuchtende Farben und Duft", "target": 1, "feedback": "Locken Bestäuber an." },
+        { "text": "Nektar als Belohnung", "target": 1, "feedback": "Bezahlung für den Bestäuber." },
+        { "text": "klebriger Pollen, der am Insekt haftet", "target": 1, "feedback": "Wird gezielt mitgenommen." }
+      ],
+      "conclusion": "Beide Wege sind erfolgreich. Sie verteilen die Kosten nur unterschiedlich."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erstelle eine Kosten-Nutzen-Tabelle für die Windbestäubung der Hasel.",
+        "hints": [
+          "Was muss die Hasel nicht herstellen?",
+          "Was muss sie dafür in großen Mengen herstellen?"
+        ],
+        "model": "Nutzen: Die Hasel braucht keine Kronblätter, keinen Duft und keinen Nektar. Sie ist nicht von Insekten abhängig und kann schon im Februar blühen, wenn noch kaum Insekten fliegen. Kosten: Sie muss riesige Mengen Pollen bilden, weil der Wind ihn zufällig verteilt und das meiste verloren geht. Außerdem klappt die Bestäubung nur, wenn andere Haselsträucher in der Nähe sind und der Wind passt.",
+        "criteria": [
+          "Ich nenne mindestens zwei Nutzen.",
+          "Ich nenne mindestens zwei Kosten.",
+          "Die Aussagen sind richtig der Windbestäubung zugeordnet."
+        ]
+      },
+      "2": {
+        "prompt": "In einer Region gibt es immer weniger Insekten. Welche Pflanzen sind stärker betroffen, und was bedeutet das für Obstbäuerinnen und Obstbauern?",
+        "hints": [
+          "Welche Pflanzen sind auf Insekten angewiesen?",
+          "Was passiert ohne Bestäubung mit der Fruchtbildung?"
+        ],
+        "model": "Stärker betroffen sind tierblütige Pflanzen wie Kirsche, Apfel und Raps, weil sie für die Bestäubung auf Insekten angewiesen sind. Windblütige Pflanzen wie Gräser und Hasel trifft es kaum. Ohne Bestäubung findet keine Befruchtung statt, und es bilden sich weniger Früchte. Obstbäuerinnen und Obstbauern ernten dann weniger. Sie könnten Blühstreifen anlegen oder Bienenvölker aufstellen, um Bestäuber zu fördern.",
+        "criteria": [
+          "Ich nenne die tierblütigen Pflanzen als stärker betroffen.",
+          "Ich erkläre die Folge für die Fruchtbildung.",
+          "Ich nenne eine Folge oder Maßnahme für den Obstbau."
+        ]
+      }
+    },
+    "figures": ["wind-tier"]
+  },
+  {
+    "id": "bg5-pflanzenfamilien",
+    "lb": 7,
+    "title": "Vielfalt ordnen: Pflanzenfamilien",
+    "period": "NT5 2.4 · Samenpflanzen als Lebewesen",
+    "intro": "Raps, Radieschen und Senf sehen verschieden aus und haben doch denselben Blütenbau. Gemeinsame Merkmale verraten, welche Pflanzen eine Familie bilden.",
+    "paragraphs": [
+      "Alle Samenpflanzen haben denselben Grundbauplan: Wurzel, Sprossachse, Laubblätter und Blüten. Unterschiede gibt es in Form, Zahl und Anordnung der Teile, zum Beispiel im Blütenbau, in der Blattstellung oder im Blütenstand. Vergleichst du diese morphologischen Merkmale, kannst du die Vielfalt ordnen: Pflanzen mit vielen gemeinsamen Merkmalen fasst man zu einer Familie zusammen. Besonders zuverlässig ist der Blütenbau, denn er verändert sich viel weniger als zum Beispiel die Größe einer Pflanze.",
+      "Die Kreuzblütler, zu denen Raps, Senf, Radieschen und Wiesen-Schaumkraut gehören, haben 4 Kelch- und 4 Kronblätter, die über Kreuz stehen, 6 Staubblätter, davon 4 lange und 2 kurze, und einen Fruchtknoten aus 2 Fruchtblättern, aus dem eine Schote wird. Die Lippenblütler, etwa Wiesen-Salbei, Taubnessel und Pfefferminze, haben eine Krone mit Ober- und Unterlippe, einen vierkantigen Stängel und gegenständige Blätter; viele duften stark. Wer diese Kennzeichen kennt, kann viele Pflanzen schon einer Familie zuordnen, bevor er die Art bestimmt."
+    ],
+    "takeaway": "Samenpflanzen haben einen gemeinsamen Grundbauplan (Wurzel, Sprossachse, Blatt, Blüte). Gemeinsame Merkmale ordnen sie in Familien. Kreuzblütler: 4 Kelch- und 4 Kronblätter über Kreuz, 6 Staubblätter, Schote. Lippenblütler: Ober- und Unterlippe, vierkantiger Stängel, gegenständige Blätter.",
+    "sourceIds": ["lehrplan", "wp-kreuzbluetler", "wp-lippenbluetler", "kx-salbei", "kx-kohl"],
+    "quiz": {
+      "question": "Woran erkennst du einen Lippenblütler?",
+      "answer": "An der Krone mit Ober- und Unterlippe und dem vierkantigen Stängel",
+      "wrong": [
+        "An 4 Kronblättern, die über Kreuz stehen",
+        "An einer Blüte ohne Kronblätter mit hängenden Kätzchen"
+      ],
+      "explanation": "Vier Kronblätter über Kreuz kennzeichnen Kreuzblütler, Kätzchen windblütige Pflanzen wie die Hasel."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Kreuzblütler oder Lippenblütler?",
+      "instruction": "Ordne jedes Merkmal der passenden Familie zu.",
+      "categories": ["Kreuzblütler", "Lippenblütler"],
+      "entries": [
+        { "text": "4 Kronblätter stehen über Kreuz", "target": 0, "feedback": "Daher kommt der Name Kreuzblütler." },
+        { "text": "6 Staubblätter: 4 lange, 2 kurze", "target": 0, "feedback": "Ein typisches Familienmerkmal." },
+        { "text": "Frucht ist eine Schote", "target": 0, "feedback": "Wie beim Raps." },
+        { "text": "Krone mit Ober- und Unterlippe", "target": 1, "feedback": "Daher der Name Lippenblütler." },
+        { "text": "vierkantiger Stängel", "target": 1, "feedback": "Fühl einmal an einer Taubnessel." },
+        { "text": "Blätter stehen sich paarweise gegenüber", "target": 1, "feedback": "Gegenständige Blattstellung." }
+      ],
+      "conclusion": "Familienmerkmale helfen, die Vielfalt der Samenpflanzen zu ordnen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Nenne die Grundorgane einer Samenpflanze und zwei Merkmale, an denen sich Pflanzen verschiedener Familien unterscheiden.",
+        "hints": [
+          "Welche Teile hat jede Samenpflanze?",
+          "Woran unterscheiden sich Raps und Salbei?"
+        ],
+        "model": "Jede Samenpflanze hat Wurzel, Sprossachse, Laubblätter und Blüten. Unterschiede zwischen Familien gibt es zum Beispiel im Blütenbau: Der Raps hat 4 Kronblätter über Kreuz, der Salbei eine Krone mit Ober- und Unterlippe. Ein weiteres Merkmal ist die Form des Stängels und die Blattstellung: Der Salbei hat einen vierkantigen Stängel mit gegenständigen Blättern.",
+        "criteria": [
+          "Ich nenne alle vier Grundorgane.",
+          "Ich nenne zwei unterscheidende Merkmale.",
+          "Ich gebe passende Beispiele."
+        ]
+      },
+      "2": {
+        "prompt": "Du findest eine unbekannte Pflanze mit gelben Blüten aus 4 Kronblättern über Kreuz, 6 Staubblättern und schmalen Schoten. Ordne sie einer Familie zu und begründe, warum der Blütenbau dafür besser geeignet ist als die Größe der Pflanze.",
+        "hints": [
+          "Welche Familie hat genau diese Merkmale?",
+          "Was beeinflusst die Größe einer Pflanze?"
+        ],
+        "model": "Die Pflanze gehört zu den Kreuzblütlern, denn sie hat 4 Kronblätter über Kreuz, 6 Staubblätter und Schoten als Früchte. Der Blütenbau eignet sich besser zum Ordnen als die Größe, weil die Größe stark davon abhängt, wie viel Licht, Wasser und Nährstoffe eine Pflanze bekommt. Der Blütenbau dagegen ist bei allen Pflanzen einer Familie gleich, egal wo sie wachsen.",
+        "criteria": [
+          "Ich ordne die Pflanze den Kreuzblütlern zu.",
+          "Ich begründe mit den drei Merkmalen.",
+          "Ich erkläre, warum die Größe weniger zuverlässig ist."
+        ]
+      }
+    },
+    "figures": ["bauplan-samenpflanze", "kreuz-lippen"]
+  }
+]

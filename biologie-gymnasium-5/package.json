@@ -1,0 +1,23 @@
+{
+  "name": "zam-academy-biologie-gymnasium-5",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Biologie for Bavarian Gymnasium Grade 5 (Natur und Technik, Schwerpunkt Biologie): scientific inquiry, microscope and cells, senses, movement, metabolism, puberty, seed plants, grassland, and linked recall cards.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "package:zip": "npm run build && node scripts/build-release-zip.mjs && node scripts/verify-release.mjs"
+  },
+  "devDependencies": {
+    "typescript": "^6.0.3",
+    "vite": "^8.1.5",
+    "vite-plugin-singlefile": "^2.3.3",
+    "vitest": "^4.1.10"
+  },
+  "license": "Apache-2.0"
+}

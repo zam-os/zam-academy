@@ -1,0 +1,302 @@
+[
+  {
+    "id": "bg5-kennzeichen-lebewesen",
+    "lb": 2,
+    "title": "Was Lebewesen ausmacht",
+    "period": "NT5 2.2 · Biologie - die Wissenschaft von den Lebewesen",
+    "intro": "Eine Kerzenflamme bewegt sich, ein Saugroboter reagiert auf Hindernisse. Trotzdem sind beide nicht lebendig. Woran erkennt man ein Lebewesen?",
+    "paragraphs": [
+      "Die Biologie ist die Naturwissenschaft von den Lebewesen. Alle Lebewesen, vom Gänseblümchen bis zum Menschen, bewältigen dieselben grundlegenden Anforderungen. Sie nehmen Informationen aus der Umwelt auf, verarbeiten sie und reagieren darauf. Sie bewegen sich aktiv, auch Pflanzen, deren Blüten sich öffnen und schließen. Sie betreiben Stoffwechsel: Sie nehmen Stoffe auf, wandeln sie um und geben andere ab. Sie pflanzen sich fort, wachsen und entwickeln sich im Lauf ihres Lebens. Und sie bestehen aus Zellen.",
+      "Vergleichst du Lebewesen mit unbelebten Objekten, findest du bei diesen manchmal einzelne Kennzeichen. Eine Kerzenflamme verbraucht Wachs und Sauerstoff und flackert. Ein Saugroboter hat Sensoren und Motoren. Ein Kristall kann wachsen. Doch keines dieser Objekte zeigt alle Kennzeichen zugleich: Die Flamme besteht nicht aus Zellen und bringt keine Nachkommen hervor, der Roboter wächst nicht und betreibt keinen Stoffwechsel. Erst alle Kennzeichen zusammen machen ein Lebewesen aus. Ein trockener Samen zeigt kaum Lebenszeichen, ist aber lebendig: Mit Wasser und Wärme keimt er."
+    ],
+    "takeaway": "Kennzeichen der Lebewesen: Informationsaufnahme, Informationsverarbeitung und Reaktion, aktive Bewegung, Stoffwechsel, Fortpflanzung, Wachstum und Entwicklung, Aufbau aus Zellen. Nur Lebewesen zeigen alle Kennzeichen zugleich.",
+    "sourceIds": [
+      "lehrplan",
+      "kx-biologie",
+      "kx-leben"
+    ],
+    "quiz": {
+      "question": "Eine Kerzenflamme verbraucht Stoffe und bewegt sich. Warum ist sie trotzdem kein Lebewesen?",
+      "answer": "Sie zeigt nicht alle Kennzeichen, zum Beispiel besteht sie nicht aus Zellen und pflanzt sich nicht fort",
+      "wrong": [
+        "Weil sie heiß ist und Lebewesen immer kalt sind",
+        "Weil sie sich bewegt, was Lebewesen nie tun"
+      ],
+      "explanation": "Einzelne Kennzeichen kommen auch bei unbelebten Dingen vor. Ein Lebewesen zeigt alle Kennzeichen zusammen."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Welches Kennzeichen des Lebens?",
+      "instruction": "Ordne jede Beobachtung dem passenden Kennzeichen zu.",
+      "categories": [
+        "Reaktion auf Reize",
+        "Stoffwechsel",
+        "Fortpflanzung",
+        "Wachstum und Entwicklung"
+      ],
+      "entries": [
+        {
+          "text": "Eine Katze dreht die Ohren zu einem Geräusch.",
+          "target": 0,
+          "feedback": "Ein Reiz wird aufgenommen und beantwortet."
+        },
+        {
+          "text": "Die Blüten des Löwenzahns schließen sich abends.",
+          "target": 0,
+          "feedback": "Die Pflanze reagiert auf das Licht."
+        },
+        {
+          "text": "Ein Kaninchen frisst Gras und scheidet Kot aus.",
+          "target": 1,
+          "feedback": "Stoffe werden aufgenommen, umgewandelt und abgegeben."
+        },
+        {
+          "text": "Du atmest Sauerstoff ein und Kohlenstoffdioxid aus.",
+          "target": 1,
+          "feedback": "Auch die Atmung gehört zum Stoffwechsel."
+        },
+        {
+          "text": "Eine Kirsche bildet Samen.",
+          "target": 2,
+          "feedback": "Aus Samen entstehen Nachkommen."
+        },
+        {
+          "text": "Aus einer Kaulquappe wird ein Frosch.",
+          "target": 3,
+          "feedback": "Das Tier verändert sich im Lauf seines Lebens."
+        },
+        {
+          "text": "Ein Baby wird in einem Jahr deutlich größer.",
+          "target": 3,
+          "feedback": "Wachstum."
+        }
+      ],
+      "conclusion": "Jedes Lebewesen zeigt alle diese Kennzeichen, auch wenn man manche nicht sofort sieht."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Prüfe mit den Kennzeichen des Lebens, ob ein Saugroboter ein Lebewesen ist.",
+        "hints": [
+          "Welche Kennzeichen scheint der Roboter zu erfüllen?",
+          "Welche Kennzeichen fehlen ihm sicher?"
+        ],
+        "model": "Der Saugroboter reagiert mit Sensoren auf Hindernisse und bewegt sich mit einem Motor. Das ähnelt zwei Kennzeichen. Er betreibt aber keinen Stoffwechsel, sondern braucht Strom, er wächst nicht, entwickelt sich nicht, pflanzt sich nicht fort und besteht nicht aus Zellen. Weil ihm mehrere Kennzeichen fehlen, ist er kein Lebewesen.",
+        "criteria": [
+          "Ich nenne Kennzeichen, die der Roboter scheinbar erfüllt.",
+          "Ich nenne mindestens drei Kennzeichen, die fehlen.",
+          "Ich komme zu einem begründeten Urteil."
+        ]
+      },
+      "2": {
+        "prompt": "Ein trockener Bohnensamen liegt seit Monaten in einer Dose und zeigt kein Lebenszeichen. Ist er lebendig? Begründe und schlage einen Versuch vor.",
+        "hints": [
+          "Was passiert mit einem Samen, wenn er Wasser bekommt?",
+          "Welches Kennzeichen würdest du dann beobachten?"
+        ],
+        "model": "Der Samen ist lebendig, er ruht nur. In seinem Inneren liegt ein Keimling aus Zellen, der fast keinen Stoffwechsel betreibt, solange es trocken ist. Lege ich ihn auf feuchte Watte an einen warmen Ort, quillt er auf und keimt nach einigen Tagen. Dann kann ich Wachstum und Entwicklung beobachten. Damit zeigt er Kennzeichen des Lebens, die vorher nicht sichtbar waren.",
+        "criteria": [
+          "Ich urteile, dass der Samen lebt.",
+          "Ich beschreibe einen passenden Keimversuch.",
+          "Ich nenne die Kennzeichen, die dann sichtbar werden."
+        ]
+      }
+    },
+    "figures": [
+      "kennzeichen-leben",
+      "lebewesen-vergleich"
+    ]
+  },
+  {
+    "id": "bg5-zellen",
+    "lb": 2,
+    "title": "Tierzelle und Pflanzenzelle",
+    "period": "NT5 2.2 · Biologie - die Wissenschaft von den Lebewesen",
+    "intro": "Alle Lebewesen bestehen aus Zellen. Im Mikroskop erkennst du, ob eine Zelle von einem Tier oder von einer Pflanze stammt.",
+    "paragraphs": [
+      "Jede Zelle wird von einer dünnen Zellmembran umgeben. Sie grenzt die Zelle ab und regelt, welche Stoffe hinein- und hinausgelangen. Innen ist die Zelle mit Zellplasma gefüllt, in dem viele Stoffwechselvorgänge ablaufen. Der Zellkern ist die Steuerzentrale und enthält die Erbinformation. Diese drei Bestandteile haben Tierzellen und Pflanzenzellen gemeinsam. Eine Zelle der Mundschleimhaut zeigt im Mikroskop nur sie: Sie ist flach, unregelmäßig geformt und hat einen gut sichtbaren Zellkern, wenn man sie anfärbt.",
+      "Pflanzenzellen haben zusätzlich drei Bestandteile. Außen um die Zellmembran liegt eine feste Zellwand, die der Zelle Form und Halt gibt; deshalb wirken Pflanzenzellen im Mikroskop eckig und liegen dicht an dicht wie Bausteine. In den Zellen grüner Pflanzenteile liegen Chloroplasten, kleine grüne Körnchen, in denen die Pflanze mithilfe von Licht Nährstoffe herstellt. Und eine große Vakuole, ein mit Zellsaft gefüllter Raum, nimmt oft den größten Teil der Zelle ein. An diesen Merkmalen erkennst du eine Pflanzenzelle im mikroskopischen Bild und in Zeichnungen."
+    ],
+    "takeaway": "Tier- und Pflanzenzellen haben Zellmembran, Zellplasma und Zellkern. Nur Pflanzenzellen haben zusätzlich Zellwand, Chloroplasten und eine große Vakuole.",
+    "sourceIds": [
+      "lehrplan",
+      "kx-zelle",
+      "wp-zelle"
+    ],
+    "quiz": {
+      "question": "Welche drei Bestandteile haben Pflanzenzellen, Tierzellen aber nicht?",
+      "answer": "Zellwand, Chloroplasten und eine große Vakuole",
+      "wrong": [
+        "Zellmembran, Zellplasma und Zellkern",
+        "Zellkern, Zellwand und Zellmembran"
+      ],
+      "explanation": "Zellmembran, Zellplasma und Zellkern haben beide Zelltypen. Zellwand, Chloroplasten und große Vakuole kennzeichnen die Pflanzenzelle."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Wo kommt der Bestandteil vor?",
+      "instruction": "Ordne jeden Zellbestandteil zu.",
+      "categories": [
+        "in Tier- und Pflanzenzellen",
+        "nur in Pflanzenzellen"
+      ],
+      "entries": [
+        {
+          "text": "Zellmembran",
+          "target": 0,
+          "feedback": "Jede Zelle ist von einer Membran umgeben."
+        },
+        {
+          "text": "Zellkern",
+          "target": 0,
+          "feedback": "Steuerzentrale mit der Erbinformation."
+        },
+        {
+          "text": "Zellplasma",
+          "target": 0,
+          "feedback": "Füllt jede Zelle aus."
+        },
+        {
+          "text": "Zellwand",
+          "target": 1,
+          "feedback": "Gibt der Pflanzenzelle Form und Halt."
+        },
+        {
+          "text": "Chloroplasten",
+          "target": 1,
+          "feedback": "Grüne Bestandteile, in denen Nährstoffe hergestellt werden."
+        },
+        {
+          "text": "große Vakuole",
+          "target": 1,
+          "feedback": "Zellsaftraum der Pflanzenzelle."
+        }
+      ],
+      "conclusion": "Drei gemeinsame und drei zusätzliche Bestandteile: Damit unterscheidest du die beiden Zelltypen sicher."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Im Mikroskop siehst du eckige Zellen, die dicht aneinanderliegen und grüne Körnchen enthalten. Bestimme den Zelltyp und begründe.",
+        "hints": [
+          "Was verursacht die eckige Form?",
+          "Was sind die grünen Körnchen?"
+        ],
+        "model": "Es sind Pflanzenzellen. Die eckige Form und die dichte Lage kommen von der festen Zellwand, die nur Pflanzenzellen haben. Die grünen Körnchen sind Chloroplasten, die es ebenfalls nur in Pflanzenzellen gibt. Vermutlich stammen die Zellen aus einem Blatt, zum Beispiel der Wasserpest.",
+        "criteria": [
+          "Ich bestimme den Zelltyp richtig.",
+          "Ich nenne die Zellwand als Begründung.",
+          "Ich nenne die Chloroplasten als Begründung."
+        ]
+      },
+      "2": {
+        "prompt": "Zwiebelhautzellen sind Pflanzenzellen, haben aber keine Chloroplasten. Erkläre, warum das kein Widerspruch ist und woran du sie trotzdem als Pflanzenzellen erkennst.",
+        "hints": [
+          "Wo wächst die Zwiebel, bekommt sie dort Licht?",
+          "Welche anderen Merkmale hat die Pflanzenzelle?"
+        ],
+        "model": "Chloroplasten gibt es nur in Pflanzenteilen, die Licht bekommen, vor allem in Blättern. Die Zwiebelschuppen liegen im Dunkeln und dienen als Speicher, deshalb fehlen dort Chloroplasten. Trotzdem erkennt man die Pflanzenzelle an der Zellwand, die die Zellen eckig macht, und an der großen Vakuole. Nicht jede Pflanzenzelle hat also alle drei typischen Merkmale.",
+        "criteria": [
+          "Ich erkläre, warum Chloroplasten fehlen.",
+          "Ich nenne Zellwand und Vakuole als Erkennungsmerkmale.",
+          "Ich formuliere eine allgemeine Folgerung."
+        ]
+      }
+    },
+    "figures": [
+      "zellen-vergleich"
+    ],
+    "lab": "cell"
+  },
+  {
+    "id": "bg5-gewebe-organe",
+    "lb": 2,
+    "title": "Von der Zelle zum Organismus",
+    "period": "NT5 2.2 · Biologie - die Wissenschaft von den Lebewesen",
+    "intro": "Unter dem Mikroskop siehst du nie eine einzelne Zelle allein: Zellen liegen in Verbänden, den Geweben. Aus Geweben bauen sich Organe auf.",
+    "paragraphs": [
+      "Viele gleichartige Zellen mit gleicher Aufgabe bilden ein Gewebe. Mikroskopierst du die Haut einer Zwiebelschuppe, siehst du ein pflanzliches Abschlussgewebe: eckige Zellen, lückenlos aneinandergereiht. Ein Abstrich der Mundschleimhaut zeigt ein tierisches Gewebe aus flachen, unregelmäßigen Zellen, die sich leicht ablösen. Ein Blatt der Wasserpest zeigt Zellen voller Chloroplasten. Im Menschen gibt es zum Beispiel Muskelgewebe, Nervengewebe und Knochengewebe.",
+      "Mehrere Gewebe, die zusammenarbeiten, bilden ein Organ. Das Herz besteht aus Muskelgewebe, Bindegewebe und Nervengewebe. Organe mit einer gemeinsamen Aufgabe bilden ein Organsystem, etwa das Herz mit den Blutgefäßen das Kreislaufsystem. Alle Organsysteme zusammen bilden den Organismus, das ganze Lebewesen. Diese Organisationsebenen helfen dir, den Körper zu ordnen: Wenn du später Atmung oder Verdauung untersuchst, kannst du immer fragen, was auf der Ebene der Zelle, des Organs und des ganzen Körpers passiert."
+    ],
+    "takeaway": "Organisationsebenen: Zelle → Gewebe (gleichartige Zellen) → Organ (verschiedene Gewebe) → Organsystem (Organe mit gemeinsamer Aufgabe) → Organismus.",
+    "sourceIds": [
+      "lehrplan",
+      "wp-gewebe",
+      "kx-zelle",
+      "kx-organ"
+    ],
+    "quiz": {
+      "question": "Was ist ein Gewebe?",
+      "answer": "Ein Verband aus vielen gleichartigen Zellen mit gleicher Aufgabe",
+      "wrong": [
+        "Ein einzelnes Organ wie das Herz",
+        "Alle Organe eines Lebewesens zusammen"
+      ],
+      "explanation": "Gleichartige Zellen bilden ein Gewebe; erst mehrere Gewebe zusammen bilden ein Organ."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Organisationsebenen ordnen",
+      "instruction": "Ordne vom Kleinsten zum Größten.",
+      "categories": [],
+      "entries": [
+        {
+          "text": "Muskelzelle",
+          "target": 0,
+          "feedback": "Die Zelle ist der kleinste Baustein."
+        },
+        {
+          "text": "Herzmuskelgewebe",
+          "target": 1,
+          "feedback": "Viele gleichartige Muskelzellen."
+        },
+        {
+          "text": "Herz",
+          "target": 2,
+          "feedback": "Ein Organ aus mehreren Geweben."
+        },
+        {
+          "text": "Blutkreislauf mit Herz und Gefäßen",
+          "target": 3,
+          "feedback": "Ein Organsystem."
+        },
+        {
+          "text": "Mensch",
+          "target": 4,
+          "feedback": "Der ganze Organismus."
+        }
+      ],
+      "conclusion": "Jede Ebene baut auf der vorherigen auf und hat Eigenschaften, die die Teile allein nicht haben."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Beschreibe die Unterschiede zwischen Zwiebelhaut und Mundschleimhaut im Mikroskop.",
+        "hints": [
+          "Wie sehen die Zellen aus, wie liegen sie zueinander?",
+          "Welcher Zellbestandteil erklärt den Unterschied?"
+        ],
+        "model": "Die Zellen der Zwiebelhaut sind eckig, länglich und liegen lückenlos nebeneinander wie Ziegelsteine. Die Zellen der Mundschleimhaut sind flach, unregelmäßig geformt und liegen locker, manche einzeln. Der Unterschied kommt von der Zellwand: Die Pflanzenzellen der Zwiebel haben eine feste Zellwand, die Zellen der Mundschleimhaut nur eine Zellmembran.",
+        "criteria": [
+          "Ich beschreibe die Form beider Zellarten.",
+          "Ich beschreibe, wie sie zueinander liegen.",
+          "Ich erkläre den Unterschied mit der Zellwand."
+        ]
+      },
+      "2": {
+        "prompt": "Ordne den Magen in die Organisationsebenen ein und erkläre, warum er ein Organ und kein Gewebe ist.",
+        "hints": [
+          "Aus welchen Geweben besteht die Magenwand?",
+          "Zu welchem Organsystem gehört der Magen?"
+        ],
+        "model": "Der Magen ist ein Organ, weil er aus mehreren verschiedenen Geweben besteht, die zusammenarbeiten: Muskelgewebe knetet den Speisebrei, Drüsengewebe bildet Magensaft, Nervengewebe steuert die Bewegungen. Ein Gewebe bestünde nur aus gleichartigen Zellen. Der Magen gehört mit Mund, Speiseröhre und Darm zum Verdauungssystem, einem Organsystem des Organismus Mensch.",
+        "criteria": [
+          "Ich nenne mehrere Gewebe des Magens.",
+          "Ich grenze Organ und Gewebe richtig ab.",
+          "Ich ordne den Magen dem Verdauungssystem zu."
+        ]
+      }
+    },
+    "figures": [
+      "gewebe-mikroskop",
+      "organisationsebenen"
+    ]
+  }
+]

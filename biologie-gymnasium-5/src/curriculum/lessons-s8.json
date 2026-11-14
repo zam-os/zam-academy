@@ -1,0 +1,203 @@
+[
+  {
+    "id": "bg5-bestimmen",
+    "lb": 8,
+    "title": "Pflanzen bestimmen mit dem Schlüssel",
+    "period": "NT5 2.5 · Ökosystem Grünland · NT5 2.1",
+    "intro": "Auf einer Wiese wachsen Dutzende Pflanzenarten. Mit einem Bestimmungsschlüssel findest du heraus, wie sie heißen, Schritt für Schritt.",
+    "paragraphs": [
+      "Ein Bestimmungsschlüssel stellt Fragen zu Merkmalen, die man sehen oder fühlen kann, und bietet jeweils zwei Antworten an. Jede Antwort führt zur nächsten Frage, bis am Ende ein Artname steht. Deshalb nennt man solche Schlüssel dichotom, also zweigeteilt. Einfache Bestimmungsbücher arbeiten oft zusätzlich mit Bildern und ordnen nach der Blütenfarbe. Damit die Bestimmung gelingt, beobachtest du genau: Wie viele Kronblätter hat die Blüte, sitzen viele Blüten in einem Körbchen zusammen, ist der Stängel rund oder vierkantig, wie sind die Blätter geformt und angeordnet?",
+      "Auf bayerischen Wiesen findest du zum Beispiel den Löwenzahn mit gelbem Körbchen und weißem Milchsaft im hohlen Stängel, die Wiesen-Margerite mit weißen Zungenblüten um eine gelbe Mitte, den Scharfen Hahnenfuß mit fünf glänzend gelben Kronblättern, den Rot-Klee mit rosaroten Köpfchen und dreizähligen Blättern, den Wiesen-Salbei mit blauvioletten Lippenblüten und den Spitzwegerich mit unscheinbaren Blütenähren. Sammle nur wenige Exemplare häufiger Arten, lass geschützte Pflanzen stehen und lerne die Namen: Wer Arten kennt, bemerkt auch, wenn sie verschwinden."
+    ],
+    "takeaway": "Ein dichotomer Bestimmungsschlüssel führt über Fragen mit je zwei Antworten zum Artnamen. Genaues Beobachten von Blüte, Stängel und Blättern ist die Voraussetzung. Artenkenntnis ist die Grundlage dafür, Lebewesen zu schützen.",
+    "sourceIds": ["lehrplan", "wp-bestimmungsschluessel", "kx-loewenzahn", "wp-wiesensalbei", "wp-wiesenklee", "wp-hahnenfuss", "wp-spitzwegerich", "wp-margerite"],
+    "quiz": {
+      "question": "Wie ist ein dichotomer Bestimmungsschlüssel aufgebaut?",
+      "answer": "Jede Frage hat zwei Antworten, die zur nächsten Frage oder zum Artnamen führen",
+      "wrong": [
+        "Man blättert so lange, bis ein Bild ungefähr passt",
+        "Jede Frage hat so viele Antworten, wie es Arten gibt"
+      ],
+      "explanation": "Dichotom heißt zweigeteilt: Man entscheidet sich bei jedem Schritt zwischen zwei Möglichkeiten."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Welches Merkmal passt zu welcher Art?",
+      "instruction": "Ordne das Merkmal der Wiesenpflanze zu.",
+      "categories": ["Löwenzahn", "Wiesen-Salbei", "Rot-Klee", "Spitzwegerich"],
+      "entries": [
+        { "text": "weißer Milchsaft im hohlen Stängel", "target": 0, "feedback": "Typisch für den Löwenzahn." },
+        { "text": "gelbes Körbchen aus vielen Zungenblüten", "target": 0, "feedback": "Was wie eine Blüte aussieht, sind viele kleine Blüten." },
+        { "text": "vierkantiger Stängel und blauviolette Lippenblüten", "target": 1, "feedback": "Ein Lippenblütler." },
+        { "text": "dreizählige Blätter, oft mit hellem Fleck", "target": 2, "feedback": "Das Kleeblatt." },
+        { "text": "rosarote, kugelige Blütenköpfchen", "target": 2, "feedback": "Typisch für den Rot-Klee." },
+        { "text": "unscheinbare Blütenähren, schmale Blätter mit Längsnerven", "target": 3, "feedback": "Der Spitzwegerich wird vom Wind bestäubt." }
+      ],
+      "conclusion": "Wenige gut gewählte Merkmale reichen, um häufige Wiesenpflanzen sicher zu erkennen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Bestimme mit dem Schlüssel aus der Lektion eine Pflanze mit gelber Blüte aus fünf glänzenden Kronblättern und rundem Stängel. Schreibe jeden Schritt auf.",
+        "hints": [
+          "Beginne mit der ersten Frage: Sind die Blüten bunt und auffällig?",
+          "Ist die Blüte ein Körbchen aus vielen kleinen Blüten?"
+        ],
+        "model": "Frage 1: Sind die Blüten bunt und auffällig? Ja. Frage 2: Sieht der Blütenstand aus wie ein Körbchen aus vielen schmalen Blättchen? Nein, die Blüte hat fünf einzelne Kronblätter. Frage 3: Ist der Stängel vierkantig mit Lippenblüte? Nein, er ist rund. Frage 4: Sind die Blätter dreizählig mit rosaroten Köpfchen? Nein. Ergebnis: Scharfer Hahnenfuß.",
+        "criteria": [
+          "Ich gehe die Fragen in der richtigen Reihenfolge durch.",
+          "Jede Antwort passt zu den Merkmalen.",
+          "Ich komme zum Scharfen Hahnenfuß."
+        ]
+      },
+      "2": {
+        "prompt": "Ein Mitschüler bestimmt einen Löwenzahn als Wiesen-Margerite. An welcher Stelle des Schlüssels ist der Fehler passiert, und wie hätte er ihn vermeiden können?",
+        "hints": [
+          "Bei welcher Frage trennen sich Löwenzahn und Margerite?",
+          "Welches Merkmal hätte er prüfen müssen?"
+        ],
+        "model": "Löwenzahn und Margerite haben beide ein Körbchen. Sie trennen sich erst bei der Frage, ob das Körbchen ganz gelb ist und der Stängel weißen Milchsaft enthält. Hier hat er wohl Nein gewählt. Er hätte genau hinschauen müssen: Der Löwenzahn ist ganz gelb, die Margerite hat weiße Zungenblüten. Er hätte auch den Stängel abbrechen und auf Milchsaft prüfen können. Genaues Beobachten statt Raten verhindert solche Fehler.",
+        "criteria": [
+          "Ich finde die Frage, an der sich die Arten trennen.",
+          "Ich nenne das entscheidende Merkmal.",
+          "Ich schlage vor, wie man den Fehler vermeidet."
+        ]
+      }
+    },
+    "figures": ["schluessel-baum"],
+    "lab": "key"
+  },
+  {
+    "id": "bg5-lebensraum-wiese",
+    "lb": 8,
+    "title": "Lebensraum Wiese erkunden",
+    "period": "NT5 2.5 · Ökosystem Grünland",
+    "intro": "Eine Wiese ist mehr als Gras. Pflanzen, Insekten, Regenwürmer und Mäuse bilden eine Lebensgemeinschaft, die von Licht, Wasser, Boden und Temperatur abhängt.",
+    "paragraphs": [
+      "Grünland ist Land, auf dem dauerhaft Gräser und Kräuter wachsen, also Wiesen und Weiden. Den Ort mit seinen unbelebten Bedingungen nennt man Lebensraum. Zu ihm gehören Umweltfaktoren wie Licht, Temperatur, Niederschlag, Wind und die Eigenschaften des Bodens. Alle Lebewesen, die dort zusammenleben, bilden die Lebensgemeinschaft: Gräser und krautige Pflanzen wie Löwenzahn und Klee, Insekten wie Bienen, Schmetterlinge und Heuschrecken, Bodenlebewesen wie Regenwürmer und Wirbeltiere wie die Feldmaus. Lebensraum und Lebensgemeinschaft zusammen bilden ein Ökosystem.",
+      "Bei einer Erkundung im Freiland untersuchst du die Umweltfaktoren: Du misst die Temperatur am Boden und in einem Meter Höhe, stellst einen Regenmesser auf, prüfst mit einer Spatenprobe, ob der Boden feucht oder trocken ist und welche Tiere darin leben, und schätzt, wie viel Licht die Pflanzen bekommen. Alle Werte trägst du mit Ort, Datum, Uhrzeit und Wetter in ein einfaches Protokoll ein. Vergleichst du zwei Stellen, etwa die offene Wiese und den Waldrand, erkennst du, wie Umweltfaktoren bestimmen, welche Pflanzen und Tiere wo leben. Die direkte Begegnung mit der Natur zeigt dir, wie schützenswert sie ist."
+    ],
+    "takeaway": "Ökosystem = Lebensraum (unbelebte Umweltfaktoren wie Licht, Temperatur, Niederschlag, Boden) + Lebensgemeinschaft (alle Lebewesen). Umweltfaktoren im Freiland messen und mit Ort, Datum und Uhrzeit in einem Protokoll festhalten.",
+    "sourceIds": ["lehrplan", "kx-wiese", "kx-oekosystem", "wp-gruenland"],
+    "quiz": {
+      "question": "Was gehört zur Lebensgemeinschaft einer Wiese?",
+      "answer": "Alle Lebewesen der Wiese, zum Beispiel Klee, Bienen und Regenwürmer",
+      "wrong": [
+        "Nur die unbelebten Faktoren wie Boden und Regen",
+        "Nur die Gräser, weil sie am häufigsten sind"
+      ],
+      "explanation": "Die Lebensgemeinschaft umfasst alle Lebewesen. Boden, Licht und Regen gehören zum Lebensraum."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Lebensraum oder Lebensgemeinschaft?",
+      "instruction": "Ordne jeden Bestandteil des Ökosystems Wiese zu.",
+      "categories": ["Lebensraum (unbelebt)", "Lebensgemeinschaft (belebt)"],
+      "entries": [
+        { "text": "Temperatur am Boden", "target": 0, "feedback": "Ein unbelebter Umweltfaktor." },
+        { "text": "Niederschlag", "target": 0, "feedback": "Regen gehört zu den unbelebten Faktoren." },
+        { "text": "feuchter, krümeliger Boden", "target": 0, "feedback": "Die Bodeneigenschaften gehören zum Lebensraum." },
+        { "text": "Wiesen-Salbei", "target": 1, "feedback": "Eine krautige Pflanze der Wiese." },
+        { "text": "Hummel", "target": 1, "feedback": "Ein Bestäuber der Wiesenblumen." },
+        { "text": "Regenwurm", "target": 1, "feedback": "Ein Bodenlebewesen." }
+      ],
+      "conclusion": "Erst Lebensraum und Lebensgemeinschaft zusammen ergeben das Ökosystem Wiese."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Lege ein einfaches Protokoll für eine Wiesenerkundung an: Welche Angaben und welche Messwerte gehören hinein?",
+        "hints": [
+          "Was muss jemand wissen, um deine Messung später zu vergleichen?",
+          "Welche Umweltfaktoren kannst du mit einfachen Mitteln messen?"
+        ],
+        "model": "Titel: Umweltfaktoren auf der Schulwiese. Angaben: Ort, Datum, Uhrzeit, Wetter, Namen. Messwerte in einer Tabelle: Temperatur am Boden und in einem Meter Höhe in °C, Niederschlag aus dem Regenmesser in mm, Bodenfeuchte nach der Spatenprobe (trocken, feucht, nass), Licht (Sonne, Halbschatten, Schatten). Dazu eine Liste der gefundenen Pflanzen und Tiere und eine kurze Auswertung.",
+        "criteria": [
+          "Ich nenne Ort, Datum, Uhrzeit und Wetter.",
+          "Ich nenne mindestens drei messbare Umweltfaktoren mit Einheit oder Stufe.",
+          "Ich ordne die Werte in einer Tabelle."
+        ]
+      },
+      "2": {
+        "prompt": "Eine Klasse misst um 11 Uhr auf der offenen Wiese 24 °C am Boden, am schattigen Waldrand 17 °C. Auf der Wiese blühen viele Blumen, am Waldrand wachsen Farne und Moose. Werte die Beobachtung aus und nenne eine Fehlerquelle.",
+        "hints": [
+          "Welcher Umweltfaktor unterscheidet sich, und welcher hängt damit zusammen?",
+          "Was müsste man tun, um sicherer zu sein?"
+        ],
+        "model": "Die offene Wiese ist wärmer und heller als der schattige Waldrand. Wiesenblumen brauchen viel Licht und Wärme, Farne und Moose kommen mit Schatten und Kühle aus und brauchen oft mehr Feuchtigkeit. Die Umweltfaktoren bestimmen also mit, welche Pflanzen wo wachsen. Eine Fehlerquelle: Es wurde nur einmal gemessen. Man sollte zu mehreren Uhrzeiten und an mehreren Tagen messen und auch die Bodenfeuchte vergleichen.",
+        "criteria": [
+          "Ich vergleiche die Messwerte richtig.",
+          "Ich verbinde Umweltfaktoren mit den gefundenen Pflanzen.",
+          "Ich nenne eine Fehlerquelle und eine Verbesserung."
+        ]
+      }
+    },
+    "figures": ["wiese-lebensgemeinschaft", "umweltfaktoren-messen"]
+  },
+  {
+    "id": "bg5-bewirtschaftung",
+    "lb": 8,
+    "title": "Grünland bewirtschaften: Futter und Artenvielfalt",
+    "period": "NT5 2.5 · Ökosystem Grünland",
+    "intro": "Ein Landwirt braucht viel Futter für seine Kühe, Wildbienen brauchen blühende Wiesen. Lässt sich beides verbinden?",
+    "review": "Rückbezug auf Geographie 5: Ländliche Räume in Bayern und Deutschland",
+    "paragraphs": [
+      "Die meisten Wiesen in Bayern entstehen und bleiben nur, weil Menschen sie mähen oder beweiden; sonst würden dort nach und nach Sträucher und Bäume wachsen. Intensiv bewirtschaftetes Grünland wird häufig gemäht, oft vier- bis fünfmal im Jahr, und stark gedüngt. Es liefert viel und eiweißreiches Futter, ökonomisch also einen hohen Ertrag. Weil früh und oft gemäht wird, kommen viele Wiesenblumen aber nicht dazu, Samen zu bilden, und schnell wachsende Gräser verdrängen andere Arten. Solche Wiesen sind grün, aber artenarm.",
+      "Extensiv bewirtschaftetes Grünland wird nur ein- bis zweimal im Jahr gemäht und wenig oder gar nicht gedüngt. Es liefert weniger Futter pro Fläche, dafür blühen dort viele verschiedene Pflanzen, die Insekten wie Wildbienen und Schmetterlingen Nahrung bieten, und davon leben wiederum Vögel. Solche Wiesen sind wichtig für die Biodiversität, die Vielfalt der Arten. Nachhaltige Entwicklung bedeutet, beide Seiten abzuwägen: Landwirte brauchen ein Einkommen, und gleichzeitig soll die Artenvielfalt für künftige Generationen erhalten bleiben. Förderprogramme bezahlen deshalb zum Beispiel einen späteren ersten Schnitt oder blühende Randstreifen."
+    ],
+    "takeaway": "Intensive Grünlandbewirtschaftung (häufig mähen, stark düngen) bringt viel Futter, aber wenige Arten. Extensive Bewirtschaftung (selten mähen, wenig düngen) bringt weniger Futter, aber hohe Artenvielfalt. Nachhaltige Bewirtschaftung wägt ökonomische und ökologische Ziele ab.",
+    "sourceIds": ["lehrplan", "wp-gruenland", "kx-artenvielfalt", "kx-landwirtschaft", "lfl-biodiversitaet", "lfl-gruenland"],
+    "quiz": {
+      "question": "Warum ist eine Wiese, die vier- bis fünfmal im Jahr gemäht wird, meist artenarm?",
+      "answer": "Viele Wiesenblumen werden gemäht, bevor sie Samen bilden können",
+      "wrong": [
+        "Häufiges Mähen bringt besonders viele Blumenarten zum Blühen",
+        "Gemähte Wiesen bekommen kein Sonnenlicht mehr"
+      ],
+      "explanation": "Wer vor der Samenreife mäht, verhindert, dass sich Wiesenblumen vermehren. Schnell wachsende Gräser setzen sich durch."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Ökonomisch oder ökologisch?",
+      "instruction": "Ist das Argument eher ökonomisch (Ertrag, Einkommen) oder ökologisch (Natur, Artenvielfalt)?",
+      "categories": ["ökonomisches Argument", "ökologisches Argument"],
+      "entries": [
+        { "text": "Häufiges Mähen liefert mehr Futter für die Kühe.", "target": 0, "feedback": "Mehr Ertrag pro Fläche." },
+        { "text": "Mit eigenem Futter muss der Hof weniger Futter kaufen.", "target": 0, "feedback": "Es geht ums Geld." },
+        { "text": "Förderprogramme zahlen für einen späten ersten Schnitt.", "target": 0, "feedback": "Ein Ausgleich für den geringeren Ertrag." },
+        { "text": "Wildbienen finden auf Blumenwiesen Nahrung.", "target": 1, "feedback": "Ein Beitrag zur Artenvielfalt." },
+        { "text": "Wiesenbrütende Vögel brauchen ungemähte Flächen im Frühjahr.", "target": 1, "feedback": "Schutz von Tieren." },
+        { "text": "Weniger Dünger schont Boden und Gewässer.", "target": 1, "feedback": "Ein Umweltargument." }
+      ],
+      "conclusion": "Nachhaltige Lösungen berücksichtigen beide Seiten."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Vergleiche intensiv und extensiv bewirtschaftetes Grünland in einer Tabelle mit je drei Merkmalen.",
+        "hints": [
+          "Wie oft wird gemäht, wie stark gedüngt?",
+          "Was bedeutet das für Futter und Artenvielfalt?"
+        ],
+        "model": "Intensiv: oft vier- bis fünfmal im Jahr gemäht, stark gedüngt, viel Futter, aber wenige, vor allem schnell wachsende Grasarten. Extensiv: nur ein- bis zweimal gemäht, wenig oder gar nicht gedüngt, weniger Futter, aber viele blühende Pflanzen und damit viele Insekten und Vögel. Intensives Grünland bringt mehr Ertrag, extensives mehr Artenvielfalt.",
+        "criteria": [
+          "Ich vergleiche Mähhäufigkeit und Düngung.",
+          "Ich vergleiche Futtermenge und Artenvielfalt.",
+          "Meine Tabelle ist richtig zugeordnet."
+        ]
+      },
+      "2": {
+        "prompt": "Ein Landwirt will alle Wiesen intensiv nutzen, ein Naturschutzverband fordert, alle extensiv zu nutzen. Entwickle einen Kompromiss und begründe ihn ökonomisch und ökologisch.",
+        "hints": [
+          "Muss jede Fläche gleich behandelt werden?",
+          "Wie kann der Landwirt für weniger Ertrag entschädigt werden?"
+        ],
+        "model": "Ein Kompromiss: Die ertragreichen, hofnahen Wiesen werden weiter intensiv genutzt, damit der Hof genug Futter hat. Einige Flächen, zum Beispiel Hänge, feuchte Wiesen oder Randstreifen, werden extensiv bewirtschaftet und erst spät gemäht. Für den geringeren Ertrag erhält der Landwirt Geld aus einem Förderprogramm. So bleibt der Hof wirtschaftlich, und Wildbienen, Schmetterlinge und Vögel finden blühende Flächen. Beide Ziele werden teilweise erreicht.",
+        "criteria": [
+          "Ich entwickle einen nachvollziehbaren Kompromiss.",
+          "Ich begründe ökonomisch.",
+          "Ich begründe ökologisch."
+        ]
+      }
+    },
+    "figures": ["intensiv-extensiv"],
+    "lab": "meadow"
+  }
+]
