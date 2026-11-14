@@ -1251,7 +1251,10 @@ dialog::backdrop {
 	--accent: #c3c5ff;
 	--accent-soft: #30334e;
 }
-.draft-notice {
+.zam-preview-notice {
+	background: var(--gold-soft);
+	border-left: 3px solid var(--gold);
+	color: var(--ink);
 	margin: 1rem auto;
 	max-width: 1240px;
 	padding: 0.6rem 1.2rem;

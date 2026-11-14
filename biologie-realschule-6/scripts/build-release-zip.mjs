@@ -61,7 +61,7 @@ chmodSync(linuxShPath, 0o755);
 
 const readmeTxt = `ZAM ACADEMY · GRADE 6 BIOLOGY · BAVARIAN REALSCHULE
 
-Local draft: teacher review and teacher videos are still open.
+Published preview: teacher review and teacher videos are still open.
 
 Unzip this archive. Open ${appFile} in a modern browser, or use the launcher:
 Windows: Start-Windows.bat
@@ -77,8 +77,9 @@ Practical investigations, presentations and classroom discussion take place
 outside the app. Written answers are self-assessed against explicit criteria.
 
 The companion ZAM cell contains 60 cards. It is stored separately as cell.json
-in the source package. This local draft is excluded from the public catalog.
-Publication and any transfer of existing learning histories are separate steps.
+in the source package and is available from the public Academy catalog at
+https://academy.zam-os.org/biologie-realschule-6/ .
+This preview does not transfer or retire existing learning histories.
 `;
 writeFileSync(join(bundleDir, "README-START.txt"), readmeTxt, "utf8");
 

@@ -37,8 +37,9 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | History 8 Realschule (Bavaria, all tracks) | [`geschichte-realschule-8/`](geschichte-realschule-8/) | https://academy.zam-os.org/geschichte-realschule-8/ | `zam-academy:geschichte-realschule-8` |
 | Geschichte 9 Realschule (LehrplanPLUS Bayern, gemeinsamer Lernpfad) | [`geschichte-realschule-9/`](geschichte-realschule-9/) | https://academy.zam-os.org/geschichte-realschule-9/ | `zam-academy:geschichte-realschule-9` |
 | Geschichte 10 Realschule (LehrplanPLUS Bayern, gemeinsamer Lernpfad) | [`geschichte-realschule-10/`](geschichte-realschule-10/) | https://academy.zam-os.org/geschichte-realschule-10/ | `zam-academy:geschichte-realschule-10` |
+| Geography 5 Realschule (preview; Bavaria, all tracks) | [`geographie-realschule-5/`](geographie-realschule-5/) | https://academy.zam-os.org/geographie-realschule-5/ | `zam-academy:geographie-realschule-5` |
 | Geographie 9 Realschule (LehrplanPLUS Bayern, gemeinsamer Lernpfad) | [`geographie-realschule-9/`](geographie-realschule-9/) | https://academy.zam-os.org/geographie-realschule-9/ | `zam-academy:geographie-realschule-9` |
-| Biology 6 Realschule (Bavaria; local draft) | [`biologie-realschule-6/`](biologie-realschule-6/) | Local offline package | `zam-academy:biologie-realschule-6` |
+| Biology 6 Realschule (preview; Bavaria, all tracks) | [`biologie-realschule-6/`](biologie-realschule-6/) | https://academy.zam-os.org/biologie-realschule-6/ | `zam-academy:biologie-realschule-6` |
 | Biologie 10 Realschule (LehrplanPLUS Bayern, gemeinsamer Lernpfad) | [`biologie-realschule-10/`](biologie-realschule-10/) | https://academy.zam-os.org/biologie-realschule-10/ | `zam-academy:biologie-realschule-10` |
 | Biology 11 Gymnasium (preview; Bavarian Einführungsklasse) | [`biologie-gymnasium-11/`](biologie-gymnasium-11/) | https://academy.zam-os.org/biologie-gymnasium-11/ | `zam-academy:biologie-gymnasium-11` |
 | Physik 10 Realschule (LehrplanPLUS Bayern, Zweig I und II/III) | [`physik-realschule-10/`](physik-realschule-10/) | https://academy.zam-os.org/physik-realschule-10/ | `zam-academy:physik-realschule-10` |
@@ -228,11 +229,11 @@ records the verified official sources and the additional classroom practice.
 
 The [Deutsch 7 Mittelschule](deutsch-mittelschule-7/) and [Deutsch 8 Mittelschule](deutsch-mittelschule-8/) packages each add 37 lessons (36 per track: Regelklasse and M-Zug) and 74 linked ZAM cards across all four LehrplanPLUS Bayern areas (*Sprechen und Zuhören*, *Lesen, Literatur und Medien*, *Schreiben*, *Sprachgebrauch und Sprache*). Their [coverage and legacy inventory](docs/deutsch-mittelschule-7-8-coverage.md) checks all 142 Grade 7 and 144 Grade 8 verbatim expectations and confirms that no Mittelschule German `de-by` legacy cards exist.
 
-[Grade 5 geography for Bavarian Realschule](geographie-realschule-5/) is a local
-draft with 31 lessons, seven learning areas and 62 linked ZAM cards. Run
-`npm ci && npm run dev` in its folder (port 5240), or create the offline ZIP
-with `npm run package:zip`. The [curriculum and legacy inventory](docs/geographie-5-coverage.md)
-records all 30 verbatim expectations and a proposal-only card mapping. The draft
-is excluded from the public catalog, atlas registry and Pages.
+[Grade 5 geography for Bavarian Realschule](geographie-realschule-5/) is available
+as a preview with 31 illustrated lessons, seven learning areas and 62 linked ZAM
+cards. Teacher review and videos remain open and are visibly marked. The
+[curriculum and legacy inventory](docs/geographie-5-coverage.md) records all 30
+verbatim expectations and a proposal-only history mapping. Run locally on port
+5240 or create the offline ZIP with `npm run package:zip`.
 
 The [Biologie 5 Realschule package](biologie-realschule-5/) adds 25 lessons, four interactive models (microscope, cell comparison, human torso, and arm lever), 50 case decisions, 50 two-level writing tasks, and 50 linked ZAM cards across all four LehrplanPLUS Bayern areas (`biologie-realschule-5/coverage.json`, all 40 verbatim expectations verified). The [legacy review](docs/biologie-5-bestandsabgleich.md) proposes 5 category-A replacements and retains 19 cards active across the three Grade 5 `de-by` cells (`proposal-only`, `approved: null`; `cell.json` ships without `replaces` or `retired_items` until approved).

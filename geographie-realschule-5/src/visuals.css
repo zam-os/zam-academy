@@ -1,0 +1,529 @@
+/* Consistent subject colours: water stays blue, vegetation green, processes coral. */
+:root {
+	--v-sky: #e4f3fa;
+	--v-water: #9bd6ef;
+	--v-water-line: #226f9c;
+	--v-blue: #3e83ca;
+	--v-meadow: #dcf0bf;
+	--v-leaf: #47885a;
+	--v-leaf-light: #8bbe74;
+	--v-sand: #efcf86;
+	--v-orange: #dc9855;
+	--v-coral: #d7644b;
+	--v-purple: #a58bcf;
+	--v-stone: #a5b4b4;
+	--v-paper: #fffdf5;
+	--v-line: #415b61;
+	--v-wood: #a56e45;
+	--v-ice: #c7e9eb;
+}
+@media (prefers-color-scheme: dark) {
+	:root:not([data-theme="light"]) {
+		--v-sky: #233c50;
+		--v-water: #315f7c;
+		--v-water-line: #82caed;
+		--v-blue: #7daee6;
+		--v-meadow: #314b35;
+		--v-leaf: #82bd83;
+		--v-leaf-light: #5a935b;
+		--v-sand: #78643e;
+		--v-orange: #dfa365;
+		--v-coral: #f18a70;
+		--v-purple: #b7a0e2;
+		--v-stone: #526d73;
+		--v-paper: #273b3b;
+		--v-line: #c0d8d6;
+		--v-wood: #bc9164;
+		--v-ice: #426876;
+	}
+}
+:root[data-theme="dark"] {
+	--v-sky: #233c50;
+	--v-water: #315f7c;
+	--v-water-line: #82caed;
+	--v-blue: #7daee6;
+	--v-meadow: #314b35;
+	--v-leaf: #82bd83;
+	--v-leaf-light: #5a935b;
+	--v-sand: #78643e;
+	--v-orange: #dfa365;
+	--v-coral: #f18a70;
+	--v-purple: #b7a0e2;
+	--v-stone: #526d73;
+	--v-paper: #273b3b;
+	--v-line: #c0d8d6;
+	--v-wood: #bc9164;
+	--v-ice: #426876;
+}
+.concept-figure {
+	margin: 1.6rem 0;
+	border: 1px solid var(--line);
+	border-radius: 1rem;
+	overflow: hidden;
+	background: var(--surface);
+}
+.concept-figure figcaption {
+	padding: 1.1rem 1.2rem 0.5rem;
+}
+.concept-figure h2 {
+	margin: 0.35rem 0 0.5rem;
+	font-size: 1.15rem;
+}
+.figure-question {
+	margin: 0;
+	font-weight: 600;
+}
+.figure-scroll {
+	overflow-x: auto;
+	overscroll-behavior-inline: contain;
+	scrollbar-color: var(--accent) var(--soft);
+}
+.concept-svg {
+	display: block;
+	width: 100%;
+	min-width: 520px;
+	height: auto;
+	background: var(--surface);
+}
+.visual-label {
+	fill: var(--ink);
+	font:
+		600 20px system-ui,
+		sans-serif;
+}
+.visual-label.small {
+	fill: var(--ink);
+	font-size: 18px;
+}
+.visual-label.micro {
+	font-size: 16px;
+}
+.visual-label.on-space {
+	fill: #fff8e9;
+}
+.visual-part {
+	transition:
+		opacity 160ms,
+		filter 160ms;
+}
+.visual-part.is-muted {
+	opacity: 0.48;
+	filter: grayscale(0.9);
+}
+.visual-number circle {
+	fill: var(--v-paper);
+	stroke: var(--v-line);
+	stroke-width: 2;
+}
+.visual-number text {
+	fill: var(--ink);
+	font-size: 18px;
+}
+.v-panel {
+	fill: var(--soft);
+}
+.v-paper {
+	fill: var(--v-paper);
+	stroke: var(--v-line);
+	stroke-width: 1.5;
+}
+.v-sky {
+	fill: var(--v-sky);
+}
+.v-water {
+	fill: var(--v-water);
+}
+.v-blue,
+.v-window {
+	fill: var(--v-blue);
+}
+.v-meadow,
+.v-grass {
+	fill: var(--v-meadow);
+}
+.v-leaf,
+.v-continent {
+	fill: var(--v-leaf);
+}
+.v-leaf-light {
+	fill: var(--v-leaf-light);
+}
+.v-sand,
+.v-house,
+.v-field {
+	fill: var(--v-sand);
+}
+.v-orange {
+	fill: var(--v-orange);
+}
+.v-coral,
+.v-lava,
+.v-roof {
+	fill: var(--v-coral);
+}
+.v-purple {
+	fill: var(--v-purple);
+}
+.v-stone,
+.v-plate {
+	fill: var(--v-stone);
+}
+.v-sun {
+	fill: #ffc64b;
+}
+.v-space {
+	fill: #182743;
+}
+.v-night {
+	fill: #1c304e;
+	opacity: 0.9;
+}
+.v-ice {
+	fill: var(--v-ice);
+}
+.v-snow {
+	fill: #f8ffff;
+	stroke: #738e9c;
+	stroke-width: 1;
+}
+.v-mountain {
+	fill: var(--v-stone);
+	stroke: var(--v-line);
+	stroke-width: 1.5;
+}
+.v-wood,
+.v-trunk,
+.v-door {
+	fill: var(--v-wood);
+}
+.v-skin {
+	fill: #d59c76;
+}
+.v-dune {
+	fill: var(--v-orange);
+	opacity: 0.5;
+}
+.v-smoke {
+	fill: var(--v-stone);
+}
+.v-shade {
+	fill: var(--v-line);
+	opacity: 0.25;
+}
+.v-glass {
+	fill: var(--v-water);
+	fill-opacity: 0.6;
+	stroke: var(--v-line);
+	stroke-width: 5;
+}
+.v-outline,
+.v-grid,
+.v-orbit,
+.v-ring,
+.v-selection,
+.v-air-ring,
+.v-coral-line,
+.v-purple-line,
+.v-leaf-line,
+.v-snow-line,
+.v-blue-line,
+.v-water-line,
+.v-sun-ray,
+.v-field-line,
+.v-limb,
+.v-binding {
+	fill: none;
+	stroke: var(--v-line);
+	stroke-width: 2;
+}
+.v-grid {
+	opacity: 0.6;
+}
+.v-orbit {
+	stroke-dasharray: 7 6;
+}
+.v-ring {
+	stroke: #efcf86;
+	stroke-width: 4;
+}
+.v-selection {
+	stroke: var(--v-coral);
+	stroke-width: 3;
+	stroke-dasharray: 4 3;
+}
+.v-air-ring {
+	stroke: var(--v-blue);
+	stroke-width: 8;
+	opacity: 0.6;
+}
+.v-coral-line {
+	stroke: var(--v-coral);
+	stroke-width: 4;
+}
+.v-purple-line {
+	stroke: var(--v-purple);
+	stroke-width: 5;
+}
+.v-leaf-line {
+	stroke: var(--v-leaf);
+	stroke-width: 6;
+}
+.v-blue-line,
+.v-water-line {
+	stroke: var(--v-water-line);
+	stroke-width: 4;
+}
+.v-snow-line {
+	stroke: var(--v-paper);
+	stroke-width: 4;
+}
+.v-sun-ray {
+	stroke: #e6a82e;
+	stroke-width: 5;
+}
+.v-field-line {
+	stroke: var(--v-wood);
+	stroke-width: 3;
+}
+.v-limb,
+.v-binding,
+.v-outline.thick {
+	stroke-width: 4;
+}
+.v-river {
+	fill: none;
+	stroke: var(--v-water-line);
+	stroke-width: 9;
+	stroke-linecap: round;
+}
+.v-road {
+	fill: none;
+	stroke: var(--v-stone);
+	stroke-width: 16;
+}
+.v-route {
+	fill: none;
+	stroke: var(--v-coral);
+	stroke-width: 5;
+	stroke-dasharray: 9 6;
+}
+.v-arrow,
+.v-water-arrow {
+	fill: none;
+	stroke: var(--v-line);
+	stroke-width: 3;
+}
+.v-water-arrow {
+	stroke: var(--v-water-line);
+}
+.v-arrow .arrow-head {
+	fill: var(--v-line);
+}
+.v-water-arrow .arrow-head {
+	fill: var(--v-water-line);
+}
+.rotation-arrow {
+	stroke: var(--v-coral);
+}
+.rotation-arrow .arrow-head {
+	fill: var(--v-coral);
+}
+.v-focus {
+	fill: var(--v-sand);
+	stroke: var(--v-coral);
+	stroke-width: 3;
+}
+.figure-controls {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	padding: 1rem 1.2rem 0;
+}
+.figure-controls button {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4rem;
+	min-height: 44px;
+	border: 1px solid var(--line);
+	border-radius: 2rem;
+	padding: 0.45rem 0.75rem;
+	background: var(--surface);
+	font-size: 0.85rem;
+	line-height: 1.4;
+	text-align: left;
+}
+.figure-controls button span {
+	display: grid;
+	place-items: center;
+	width: 1.35rem;
+	height: 1.35rem;
+	border-radius: 50%;
+	background: var(--soft);
+	font-weight: 700;
+	flex-shrink: 0;
+}
+.figure-controls button[aria-pressed="true"] {
+	border-color: var(--accent);
+	background: var(--accent-soft);
+	color: var(--accent);
+	box-shadow: inset 0 0 0 1px var(--accent);
+	font-weight: 700;
+}
+.figure-note {
+	min-height: 6rem;
+	margin: 0.85rem 1.2rem 1rem;
+	padding: 0.8rem 1rem;
+	background: var(--accent-soft);
+	border-radius: 0.6rem;
+	font-size: 0.9rem;
+}
+.figure-caption {
+	padding: 0.8rem 1.2rem;
+	margin: 0;
+	border-top: 1px solid var(--line);
+	color: var(--muted);
+	font-size: 0.8rem;
+}
+.figure-pan-hint {
+	display: none;
+	margin: 0.4rem 1.2rem 0;
+}
+.hero {
+	gap: 2rem;
+}
+.hero-note {
+	padding: 0 1.4rem 1.2rem;
+	overflow: hidden;
+	transform: none;
+	background: var(--surface);
+	box-shadow: 0 8px 24px #183b3420;
+}
+.hero-art {
+	display: block;
+	width: calc(100% + 2.8rem);
+	margin: 0 -1.4rem 1rem;
+}
+.hero-note > .eyebrow {
+	font-size: 0.65rem;
+}
+.hero-note strong {
+	font-size: 1.2rem;
+}
+.hero-note .small {
+	font-size: 0.8rem;
+}
+.visual-pill {
+	display: inline-flex;
+	gap: 0.4rem;
+	align-items: center;
+	background: var(--accent-soft);
+	border-radius: 2rem;
+	padding: 0.4rem 0.8rem;
+	font-size: 0.8rem;
+	color: var(--accent);
+	margin-bottom: 1rem;
+}
+.stage-art {
+	padding: 0.6rem 0.8rem 0;
+	background: var(--accent-soft);
+}
+.stage-art svg {
+	overflow: hidden;
+	display: block;
+	width: 100%;
+	max-height: 150px;
+	border-radius: 0.7rem;
+}
+.stage-art .visual-number {
+	display: none;
+}
+.stage-header {
+	background: var(--accent-soft);
+	padding-top: 0.75rem;
+}
+.stage-icon {
+	background: var(--surface);
+	border: 1px solid var(--line);
+	border-radius: 0.75rem;
+	padding: 0.4rem;
+}
+.stage {
+	border-top: 5px solid var(--accent);
+}
+.lesson-heading {
+	padding: 1.6rem;
+	border-radius: 0 1rem 1rem 0;
+	background: linear-gradient(110deg, var(--accent-soft), transparent);
+}
+.lesson-heading > .eyebrow {
+	display: inline-block;
+	padding: 0.3rem 0.7rem;
+	border: 1px solid var(--accent);
+	border-radius: 2rem;
+}
+.reading {
+	min-width: 0;
+}
+.geo-map .map-water {
+	fill: var(--v-water);
+}
+.geo-map .map-country {
+	fill: var(--v-meadow);
+}
+.regional-map .map-context {
+	fill: color-mix(in srgb, var(--v-meadow) 35%, var(--soft));
+}
+.geo-map .earth {
+	fill: var(--v-blue);
+}
+.geo-map .equator {
+	stroke: var(--v-coral);
+}
+.geo-map .route-line,
+.geo-map .contour-line {
+	stroke: var(--v-wood);
+}
+@media (max-width: 620px) {
+	.figure-pan-hint {
+		display: block;
+	}
+	.concept-figure figcaption,
+	.figure-controls {
+		padding-left: 0.85rem;
+		padding-right: 0.85rem;
+	}
+	.figure-note {
+		margin-left: 0.85rem;
+		margin-right: 0.85rem;
+	}
+	.figure-caption {
+		padding: 0.8rem 0.85rem;
+	}
+	.lesson-heading {
+		padding: 1rem;
+	}
+	.stage-art svg {
+		max-height: 135px;
+	}
+}
+@media (prefers-reduced-motion: reduce) {
+	.visual-part {
+		transition: none;
+	}
+}
+@media print {
+	.figure-scroll {
+		overflow: visible;
+	}
+	.concept-svg {
+		min-width: 0;
+	}
+	.visual-part.is-muted {
+		opacity: 1;
+		filter: none;
+	}
+	.figure-controls,
+	.figure-pan-hint {
+		display: none;
+	}
+}

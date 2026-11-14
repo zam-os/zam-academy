@@ -1,6 +1,6 @@
 # Grade 6 Realschule Biology: curriculum and inventory
 
-Checked on 13 November 2026 against the live [LehrplanPLUS Biology 6 Fachlehrplan](https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/6/biologie), titled “LehrplanPLUS - Realschule - 6 - Biologie - Fachlehrpläne”. This is one common curriculum, without separate Wahlpflichtfächergruppen. The new package is `biologie-realschule-6` and stays local under its `local-only` publication marker.
+Checked on 13 November 2026 against the live [LehrplanPLUS Biology 6 Fachlehrplan](https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/6/biologie), titled “LehrplanPLUS - Realschule - 6 - Biologie - Fachlehrpläne”. This is one common curriculum, without separate Wahlpflichtfächergruppen. The new package is `biologie-realschule-6` and is published under its `preview` publication marker. Thomas authorized publication of the remaining local-only packages on 2026-11-14. Academy registration, catalog flag, Pages build and the visible teacher-review/video notice are aligned.
 
 The fetched HTML has SHA-256 `18e3f425233be9e45765845e2b4c0aa4f44c4684909412efa6bdb2613a9930ab`. `node biologie-realschule-6/scripts/check-curriculum.mjs <saved-page>` checked all 46 competence rows: 0 not found after whitespace normalization, with the source hash matching. The matrix preserves their official German wording. Source excerpts are checked against the fetched page rather than reconstructed from memory.
 
@@ -55,8 +55,8 @@ The following live pages were fetched and their actual HTML titles read. Links a
 
 - `npm ci --ignore-scripts --no-audit --no-fund`, `npm run typecheck`, `npm test`: 48 tests passed.
 - `npm run package:zip` and `node scripts/verify-release.mjs`: self-contained HTML, exact ZIP bytes, all three launchers and shell syntax passed.
-- `node --test scripts/build-catalog.test.mjs scripts/academy-registry.test.mjs`: 51 tests passed; the draft stays excluded from publication.
-- `ZAM_CORE=<published 0.54.0 file URL> node scripts/validate-cells.mjs`: every cell, including this draft, installed and passed the card-text/choice checks.
+- `node --test scripts/build-catalog.test.mjs scripts/academy-registry.test.mjs`: 51 tests passed; preview flags, visible notice, catalog and Pages registration agree.
+- `ZAM_CORE=<published 0.54.0 file URL> node scripts/validate-cells.mjs`: every cell, including this preview, installed and passed the card-text/choice checks.
 - Package history-preservation validation: 30 atoms, 60 fresh cards; 40 old cards and 80 reviews preserved.
 
-`node biologie-realschule-6/scripts/browser-smoke.mjs /private/tmp/zam-bio6-browser` passed 120 desktop lesson/level/theme combinations and 64 phone-width views, including the path and reference views. Its actual-handler checks covered wrong/right quiz answers, timeline moves, classification, rubric gating, draft invalidation, reload persistence, all model goals, field notes and the ZAM draft notice. The report recorded 0 runtime errors and 0 external requests. Screenshots were captured for visual inspection; the Academy home link was moved below the content after inspection showed it covering text on phones. Teacher review and the separate video step remain open before publication.
+`node biologie-realschule-6/scripts/browser-smoke.mjs /private/tmp/zam-bio6-browser` passed 120 desktop lesson/level/theme combinations and 64 phone-width views, including the path and reference views. Its actual-handler checks covered wrong/right quiz answers, timeline moves, classification, rubric gating, draft invalidation, reload persistence, all model goals, field notes and the ZAM preview notice. The report recorded 0 runtime errors and 0 external requests. Screenshots were captured for visual inspection; the Academy home link was moved below the content after inspection showed it covering text on phones. Teacher review and the separate video step remain visibly marked as open in the published preview.
