@@ -1,0 +1,260 @@
+[
+  {
+    "id": "bg5-skelett",
+    "lb": 4,
+    "title": "Das Skelett: Stütze, Schutz und Bewegung",
+    "period": "NT5 2.3 · Aktive Bewegung",
+    "intro": "Ohne Skelett wärst du ein weicher Haufen. Knochen tragen dich, schützen deine Organe und machen Bewegung erst möglich.",
+    "paragraphs": [
+      "Das Skelett eines Erwachsenen besteht aus etwas über 200 Knochen. Es hat drei Aufgaben. Es stützt den Körper: Die Wirbelsäule trägt Kopf und Rumpf, die Beinknochen tragen das ganze Körpergewicht. Es schützt empfindliche Organe: Der Schädel umschließt das Gehirn, der Brustkorb aus Rippen, Brustbein und Brustwirbeln schützt Herz und Lunge, das Becken trägt und schützt die Eingeweide. Und es ermöglicht Bewegung: Die langen Knochen der Arme und Beine, die Extremitäten, wirken als Hebel, an denen Muskeln ansetzen.",
+      "Bau und Funktion passen zusammen. Die Wirbelsäule ist von der Seite gesehen doppelt S-förmig gebogen. Diese Form federt beim Gehen, Laufen und Springen Stöße ab, sodass sie nicht ungedämpft bis zum Kopf gelangen. Zwischen den knöchernen Wirbelkörpern liegen Bandscheiben, elastische Polster, die ebenfalls Stöße abfedern und die Wirbelsäule beweglich machen. Die Röhrenknochen der Beine sind innen hohl und dadurch leicht, aber trotzdem sehr stabil. So erfüllt jeder Teil des Skeletts seine Aufgabe besonders gut."
+    ],
+    "takeaway": "Das Skelett stützt, schützt und ermöglicht Bewegung. Die doppelt S-förmige Wirbelsäule und die Bandscheiben zwischen den Wirbelkörpern federn Stöße ab und machen die Wirbelsäule beweglich.",
+    "sourceIds": ["lehrplan", "kx-skelett", "kx-knochen", "kx-wirbelsaeule"],
+    "quiz": {
+      "question": "Welche Aufgabe haben die Bandscheiben zwischen den Wirbelkörpern?",
+      "answer": "Sie federn Stöße ab und machen die Wirbelsäule beweglich",
+      "wrong": [
+        "Sie bilden das Blut und verteilen es im Rücken",
+        "Sie verbinden die Muskeln fest mit den Wirbeln"
+      ],
+      "explanation": "Die Bandscheiben sind elastische Polster zwischen den Wirbelkörpern. Sie dämpfen Stöße und erlauben, dass sich die Wirbelsäule biegt und dreht."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Stütze, Schutz oder Bewegung?",
+      "instruction": "Ordne jedem Teil des Skeletts seine wichtigste Aufgabe zu.",
+      "categories": ["Stütze", "Schutz", "Bewegung"],
+      "entries": [
+        { "text": "Wirbelsäule beim aufrechten Stehen", "target": 0, "feedback": "Sie trägt Kopf und Rumpf." },
+        { "text": "Oberschenkelknochen beim Stehen", "target": 0, "feedback": "Er trägt das Körpergewicht." },
+        { "text": "Schädel", "target": 1, "feedback": "Er umschließt das Gehirn." },
+        { "text": "Brustkorb aus Rippen und Brustbein", "target": 1, "feedback": "Er schützt Herz und Lunge." },
+        { "text": "Elle und Speiche beim Werfen", "target": 2, "feedback": "Die Unterarmknochen sind Hebel für die Muskeln." },
+        { "text": "Fingerknochen beim Schreiben", "target": 2, "feedback": "Viele kleine Knochen ermöglichen feine Bewegungen." }
+      ],
+      "conclusion": "Viele Knochen haben mehrere Aufgaben. Die Wirbelsäule zum Beispiel stützt, schützt das Rückenmark und ist beweglich."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre am Beispiel des Brustkorbs den Zusammenhang zwischen Bau und Funktion.",
+        "hints": [
+          "Woraus besteht der Brustkorb und wie ist er geformt?",
+          "Was liegt darin und warum muss er beweglich sein?"
+        ],
+        "model": "Der Brustkorb besteht aus Rippen, dem Brustbein und den Brustwirbeln. Er bildet einen Korb um Herz und Lunge und schützt sie vor Stößen. Weil die Rippen beweglich mit Wirbelsäule und Brustbein verbunden sind, kann sich der Brustkorb beim Atmen heben und senken. Sein Bau passt also zu beiden Aufgaben: schützen und atmen.",
+        "criteria": [
+          "Ich beschreibe den Bau des Brustkorbs.",
+          "Ich nenne die geschützten Organe.",
+          "Ich verbinde den Bau mit der Funktion."
+        ]
+      },
+      "2": {
+        "prompt": "Vergleiche eine gerade Stange mit der doppelt S-förmigen Wirbelsäule. Was würde passieren, wenn unsere Wirbelsäule gerade wäre?",
+        "hints": [
+          "Was passiert mit einem Stoß, der von unten auf eine gerade Stange trifft?",
+          "Wie wirkt eine Feder?"
+        ],
+        "model": "Eine gerade Stange leitet einen Stoß von unten fast ungedämpft nach oben weiter. Die doppelt S-förmige Wirbelsäule wirkt dagegen wie eine Feder: Sie gibt bei einem Stoß etwas nach und federt ihn ab. Zusätzlich dämpfen die Bandscheiben. Wäre unsere Wirbelsäule gerade, kämen beim Springen und Laufen starke Stöße bis zum Kopf und Gehirn, und die Wirbel würden stärker belastet.",
+        "criteria": [
+          "Ich beschreibe die Stoßweiterleitung bei der geraden Stange.",
+          "Ich erkläre die Federwirkung der S-Form.",
+          "Ich nenne die Folgen für Kopf und Wirbel."
+        ]
+      }
+    },
+    "figures": ["skelett", "wirbelsaeule"]
+  },
+  {
+    "id": "bg5-gelenke",
+    "lb": 4,
+    "title": "Gelenke und ihre Bewegungen",
+    "period": "NT5 2.3 · Aktive Bewegung",
+    "intro": "Strecke den Arm, kreise mit der Schulter, drehe den Kopf. Jede dieser Bewegungen ermöglicht ein anderer Gelenktyp.",
+    "paragraphs": [
+      "Ein Gelenk verbindet zwei Knochen beweglich. Der eine Knochen endet in einem Gelenkkopf, der in die Gelenkpfanne des anderen Knochens passt. Beide sind mit glattem Gelenkknorpel überzogen, der Stöße dämpft. Dazwischen liegt der Gelenkspalt mit Gelenkschmiere, die wie Öl dafür sorgt, dass die Knochen fast reibungslos aufeinander gleiten. Eine Gelenkkapsel umschließt das Gelenk, und feste Bänder halten die Knochen zusammen.",
+      "Am eigenen Körper kannst du vier Gelenktypen zeigen. Das Kugelgelenk in Schulter und Hüfte erlaubt Bewegungen in alle Richtungen, du kannst den Arm kreisen lassen. Das Scharniergelenk im Ellbogen und in den Fingern erlaubt wie eine Türangel nur Beugen und Strecken. Das Sattelgelenk an der Daumenwurzel bewegt den Daumen in zwei Richtungen, so kannst du ihn den anderen Fingern gegenüberstellen und greifen. Das Drehgelenk zwischen erstem und zweitem Halswirbel lässt dich den Kopf nach links und rechts drehen. Die Form der Gelenkflächen bestimmt also, welche Bewegungen möglich sind."
+    ],
+    "takeaway": "Ein Gelenk besteht aus Gelenkkopf und Gelenkpfanne mit Knorpel, Gelenkspalt mit Gelenkschmiere, Gelenkkapsel und Bändern. Kugelgelenk (Schulter): alle Richtungen; Scharniergelenk (Ellbogen): beugen und strecken; Sattelgelenk (Daumen): zwei Richtungen; Drehgelenk (Halswirbel): drehen.",
+    "sourceIds": ["lehrplan", "kx-gelenk", "wp-gelenk"],
+    "quiz": {
+      "question": "Welcher Gelenktyp ermöglicht es, den Arm im Schultergelenk zu kreisen?",
+      "answer": "Ein Kugelgelenk",
+      "wrong": ["Ein Scharniergelenk", "Ein Drehgelenk"],
+      "explanation": "Im Kugelgelenk sitzt ein kugeliger Gelenkkopf in einer Pfanne und kann sich in alle Richtungen bewegen."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Welches Gelenk ist es?",
+      "instruction": "Ordne jede Bewegung dem Gelenktyp zu, der sie ermöglicht.",
+      "categories": ["Kugelgelenk", "Scharniergelenk", "Sattelgelenk", "Drehgelenk"],
+      "entries": [
+        { "text": "Beim Brustschwimmen das Bein im Hüftgelenk kreisen", "target": 0, "feedback": "Die Hüfte ist ein Kugelgelenk." },
+        { "text": "Den Arm in der Schulter nach vorn, hinten und zur Seite heben", "target": 0, "feedback": "Bewegung in alle Richtungen." },
+        { "text": "Den Arm im Ellbogen beugen", "target": 1, "feedback": "Nur beugen und strecken." },
+        { "text": "Einen Finger krümmen", "target": 1, "feedback": "Die Fingergelenke sind Scharniergelenke." },
+        { "text": "Mit dem Daumen die kleine Fingerkuppe berühren", "target": 2, "feedback": "Das Sattelgelenk an der Daumenwurzel macht es möglich." },
+        { "text": "Beim Überqueren der Straße nach links und rechts schauen", "target": 3, "feedback": "Das Drehgelenk zwischen erstem und zweitem Halswirbel." }
+      ],
+      "conclusion": "Jeder Gelenktyp passt zu den Bewegungen, die an dieser Stelle gebraucht werden."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre, wozu Gelenkknorpel und Gelenkschmiere dienen.",
+        "hints": [
+          "Was würde passieren, wenn Knochen direkt aufeinanderreiben?",
+          "Womit kann man Gelenkschmiere im Alltag vergleichen?"
+        ],
+        "model": "Der Gelenkknorpel überzieht die Enden der Knochen mit einer glatten, elastischen Schicht. Er dämpft Stöße und verhindert, dass Knochen auf Knochen reibt. Die Gelenkschmiere im Gelenkspalt wirkt wie Öl in einem Scharnier: Sie lässt die Knorpelflächen fast reibungslos gleiten. Ohne beide würden die Knochen abgenutzt und jede Bewegung würde schmerzen.",
+        "criteria": [
+          "Ich erkläre die Aufgabe des Knorpels.",
+          "Ich erkläre die Aufgabe der Gelenkschmiere.",
+          "Ich nenne die Folgen, wenn beides fehlt."
+        ]
+      },
+      "2": {
+        "prompt": "Teste am eigenen Körper: Warum kannst du den Unterarm im Ellbogen nicht zur Seite klappen, den Arm in der Schulter aber in jede Richtung bewegen? Erkläre mit dem Bau der Gelenke.",
+        "hints": [
+          "Wie sehen die Gelenkflächen eines Scharniergelenks aus?",
+          "Wie sitzt der Gelenkkopf im Kugelgelenk?"
+        ],
+        "model": "Der Ellbogen ist ein Scharniergelenk. Seine Gelenkflächen sind wie eine Walze in einer passenden Rinne geformt, deshalb ist nur eine Bewegung um eine Achse möglich: beugen und strecken. Die Schulter ist ein Kugelgelenk. Ein kugeliger Gelenkkopf sitzt in einer Pfanne und kann sich in alle Richtungen drehen. Die Form der Gelenkflächen bestimmt also die Beweglichkeit.",
+        "criteria": [
+          "Ich ordne beiden Gelenken den richtigen Typ zu.",
+          "Ich beschreibe die Form der Gelenkflächen.",
+          "Ich verbinde die Form mit der möglichen Bewegung."
+        ]
+      }
+    },
+    "figures": ["gelenk-bau", "gelenktypen"]
+  },
+  {
+    "id": "bg5-gegenspieler",
+    "lb": 4,
+    "title": "Muskeln arbeiten als Gegenspieler",
+    "period": "NT5 2.3 · Aktive Bewegung",
+    "intro": "Ein Muskel kann nur ziehen, nie schieben. Wie kommt der Arm dann wieder nach unten? Ein Modell hilft dir, das herauszufinden.",
+    "paragraphs": [
+      "Skelettmuskeln sind über Sehnen mit den Knochen verbunden. Wenn ein Muskel arbeitet, verkürzt er sich, wird dicker und zieht über die Sehne am Knochen. Er kann sich aber nicht aktiv verlängern und den Knochen nicht zurückschieben. Beim Beugen des Arms verkürzt sich der Bizeps an der Vorderseite des Oberarms und zieht den Unterarm nach oben. Um den Arm wieder zu strecken, verkürzt sich der Trizeps an der Rückseite und zieht den Unterarm nach unten. Dabei wird der Bizeps gedehnt.",
+      "Weil jeder Muskel nur in eine Richtung ziehen kann, braucht jede Bewegung einen Gegenspieler für die Rückbewegung. Dieses Gegenspielerprinzip kannst du mit einem Modell ableiten: zwei Pappstreifen als Ober- und Unterarm, verbunden mit einer Musterklammer als Gelenk, und zwei Gummibänder als Muskeln. Ziehst du am vorderen Band, beugt sich der Arm; nur das hintere Band bringt ihn zurück. Das Modell zeigt das Prinzip, aber nicht, wie sich ein echter Muskel durch viele Muskelfasern verkürzt."
+    ],
+    "takeaway": "Muskeln können sich nur verkürzen und ziehen, nicht schieben. Deshalb arbeiten Skelettmuskeln paarweise als Gegenspieler: Der Bizeps beugt den Arm (Beuger), der Trizeps streckt ihn (Strecker). Sehnen verbinden die Muskeln mit den Knochen.",
+    "sourceIds": ["lehrplan", "kx-muskel", "kx-gelenk", "kx-modell"],
+    "quiz": {
+      "question": "Warum braucht der Bizeps einen Gegenspieler?",
+      "answer": "Weil er nur ziehen kann und den Unterarm nicht zurückschieben kann",
+      "wrong": [
+        "Weil er allein zu schwach ist, um den Arm zu beugen",
+        "Weil er sich nur verlängern, aber nicht verkürzen kann"
+      ],
+      "explanation": "Ein Muskel verkürzt sich und zieht. Die Rückbewegung muss ein anderer Muskel übernehmen, beim Arm der Trizeps."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Wer zieht, wer wird gedehnt?",
+      "instruction": "Welcher Muskel verkürzt sich bei der Bewegung?",
+      "categories": ["Bizeps verkürzt sich", "Trizeps verkürzt sich"],
+      "entries": [
+        { "text": "Einen Apfel zum Mund führen", "target": 0, "feedback": "Der Arm wird gebeugt." },
+        { "text": "Eine Hantel anheben (Arm beugen)", "target": 0, "feedback": "Der Beuger arbeitet." },
+        { "text": "Sich am Klettergerüst hochziehen", "target": 0, "feedback": "Die Arme werden gebeugt." },
+        { "text": "Einen Liegestütz nach oben drücken", "target": 1, "feedback": "Die Arme werden gestreckt." },
+        { "text": "Einen Ball nach vorn werfen (Arm strecken)", "target": 1, "feedback": "Der Strecker arbeitet." },
+        { "text": "Sich aus dem Schwimmbecken stemmen", "target": 1, "feedback": "Die Arme strecken sich." }
+      ],
+      "conclusion": "Bei jeder Armbewegung verkürzt sich einer der beiden Muskeln, der andere wird gedehnt."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Beschreibe, was Bizeps und Trizeps tun, wenn du einen Becher zum Mund führst und wieder abstellst.",
+        "hints": [
+          "Welcher Muskel verkürzt sich beim Anheben?",
+          "Was geschieht beim Abstellen?"
+        ],
+        "model": "Beim Anheben verkürzt sich der Bizeps an der Vorderseite des Oberarms und zieht über seine Sehne den Unterarm nach oben. Der Trizeps wird dabei gedehnt. Beim Abstellen verkürzt sich der Trizeps an der Rückseite und zieht den Unterarm nach unten, jetzt wird der Bizeps gedehnt. Die beiden Muskeln sind Gegenspieler.",
+        "criteria": [
+          "Ich beschreibe das Anheben richtig.",
+          "Ich beschreibe das Abstellen richtig.",
+          "Ich verwende den Begriff Gegenspieler."
+        ]
+      },
+      "2": {
+        "prompt": "Bewerte das Armmodell aus Pappe und Gummibändern: Was zeigt es richtig, was zeigt es nicht?",
+        "hints": [
+          "Wofür stehen Pappstreifen, Klammer und Gummibänder?",
+          "Wie arbeitet ein echter Muskel im Unterschied zum Gummiband?"
+        ],
+        "model": "Das Modell zeigt richtig, dass zwei Muskeln an gegenüberliegenden Seiten des Gelenks ansetzen und nur durch Ziehen arbeiten. Die Pappstreifen stehen für die Knochen, die Klammer für das Scharniergelenk. Es zeigt aber nicht, dass ein echter Muskel sich selbst aktiv verkürzt, denn das Gummiband muss man von außen ziehen. Sehnen, Muskelfasern und Nerven, die den Befehl geben, fehlen ebenfalls.",
+        "criteria": [
+          "Ich ordne die Modellteile dem Original zu.",
+          "Ich nenne, was das Modell richtig zeigt.",
+          "Ich nenne mindestens zwei Grenzen."
+        ]
+      }
+    },
+    "figures": ["muskel-modell"],
+    "lab": "armLever"
+  },
+  {
+    "id": "bg5-bewegungsapparat-gesund",
+    "lb": 4,
+    "title": "Zusammenspiel und Gesundheit des Bewegungsapparats",
+    "period": "NT5 2.3 · Aktive Bewegung",
+    "intro": "Knochen, Gelenke und Muskeln arbeiten bei jeder Bewegung zusammen. Wie hältst du dieses System gesund?",
+    "paragraphs": [
+      "Eine aktive Bewegung entsteht durch das Zusammenspiel von Skelett, Gelenken und Muskeln. Das Gehirn schickt über Nerven einen Befehl an einen Muskel. Der Muskel verkürzt sich und zieht über seine Sehne an einem Knochen. Der Knochen wirkt als Hebel und bewegt sich im Gelenk, dessen Bauform die Richtung vorgibt. Der Gegenspieler sorgt für die Rückbewegung. Fällt ein Teil aus, etwa weil ein Band gerissen oder ein Knochen gebrochen ist, ist die Bewegung gestört.",
+      "Verletzungen kannst du oft vermeiden: Wärme dich vor dem Sport auf, damit Muskeln und Gelenke vorbereitet sind. Trage beim Radfahren und Skaten Helm und Schoner. Hebe schwere Dinge aus den Knien mit geradem Rücken und trage den Schulranzen mit beiden Gurten nah am Rücken. Auch Ernährung und Bewegung halten den Bewegungsapparat gesund. Knochen brauchen Calcium, etwa aus Milchprodukten und grünem Gemüse, und Vitamin D, das der Körper mit Sonnenlicht bildet. Muskeln brauchen Eiweiß. Regelmäßige Bewegung macht Knochen fester und Muskeln kräftiger, langes Sitzen schwächt sie."
+    ],
+    "takeaway": "Bewegung entsteht, wenn das Gehirn über Nerven Muskeln aktiviert, die über Sehnen an Knochen ziehen, die sich in Gelenken bewegen. Aufwärmen, Schutzausrüstung, richtiges Heben, Calcium, Vitamin D, Eiweiß und regelmäßige Bewegung halten den Bewegungsapparat gesund.",
+    "sourceIds": ["lehrplan", "kx-muskel", "kx-knochen", "kx-ernaehrung"],
+    "quiz": {
+      "question": "Welcher Nährstoff ist besonders wichtig für feste Knochen?",
+      "answer": "Calcium, zum Beispiel aus Milchprodukten",
+      "wrong": ["Zucker, zum Beispiel aus Limonade", "Fett, zum Beispiel aus Pommes"],
+      "explanation": "Calcium ist ein Mineralstoff, der in die Knochen eingebaut wird und sie fest macht."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Vom Gedanken zur Bewegung",
+      "instruction": "Du willst einen Ball werfen. Ordne die Schritte.",
+      "categories": [],
+      "entries": [
+        { "text": "Das Gehirn plant die Bewegung.", "target": 0, "feedback": "Jede aktive Bewegung beginnt im Gehirn." },
+        { "text": "Nerven leiten den Befehl zu den Armmuskeln.", "target": 1, "feedback": "Weiterleitung über Nerven." },
+        { "text": "Der Trizeps verkürzt sich.", "target": 2, "feedback": "Der Muskel arbeitet." },
+        { "text": "Die Sehne zieht am Unterarmknochen.", "target": 3, "feedback": "Die Kraft wird auf den Knochen übertragen." },
+        { "text": "Der Unterarm bewegt sich im Ellbogengelenk nach vorn.", "target": 4, "feedback": "Das Gelenk gibt die Richtung vor." }
+      ],
+      "conclusion": "Nerven, Muskeln, Sehnen, Knochen und Gelenke wirken bei jeder Bewegung zusammen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Nenne drei Maßnahmen, mit denen du beim Sport Verletzungen des Bewegungsapparats vermeidest, und begründe jede.",
+        "hints": [
+          "Was passiert mit kalten Muskeln?",
+          "Welche Ausrüstung schützt Knochen und Gelenke?"
+        ],
+        "model": "Erstens wärme ich mich auf, weil warme Muskeln dehnbarer sind und seltener reißen. Zweitens trage ich beim Skaten Helm, Knie- und Handgelenkschoner, weil sie bei einem Sturz Knochen und Gelenke schützen. Drittens steigere ich die Belastung langsam und mache Pausen, damit Muskeln und Sehnen nicht überlastet werden.",
+        "criteria": [
+          "Ich nenne drei verschiedene Maßnahmen.",
+          "Jede Maßnahme ist begründet.",
+          "Die Begründungen beziehen sich auf Muskeln, Knochen oder Gelenke."
+        ]
+      },
+      "2": {
+        "prompt": "Lukas sitzt täglich viele Stunden am Bildschirm und isst kaum Milchprodukte oder Gemüse. Beurteile, wie sich das auf seinen Bewegungsapparat auswirken kann, und gib ihm zwei Tipps.",
+        "hints": [
+          "Was brauchen Knochen und Muskeln, um kräftig zu werden?",
+          "Was bewirkt regelmäßige Bewegung?"
+        ],
+        "model": "Bei wenig Bewegung werden Muskeln schwächer und die Knochen werden nicht ausreichend belastet, sie bleiben weniger fest. Langes Sitzen in schlechter Haltung belastet zusätzlich den Rücken. Fehlen Milchprodukte und Gemüse, bekommt er wenig Calcium für die Knochen. Mein Tipp: täglich mindestens eine Stunde aktiv sein, zum Beispiel mit dem Rad zur Schule, und mehr Milchprodukte oder grünes Gemüse essen.",
+        "criteria": [
+          "Ich beschreibe Folgen von Bewegungsmangel.",
+          "Ich beschreibe Folgen der einseitigen Ernährung.",
+          "Ich gebe zwei passende, begründete Tipps."
+        ]
+      }
+    },
+    "figures": ["bewegung-gesund"]
+  }
+]
