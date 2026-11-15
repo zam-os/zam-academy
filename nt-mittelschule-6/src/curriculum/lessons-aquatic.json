@@ -1,0 +1,406 @@
+[
+	{
+		"id": "nt6-gewaesser-bestimmen",
+		"lb": 4,
+		"title": "Lebewesen bestimmen und Gewässergüte einschätzen",
+		"period": "NT6 LB 2.2 · Lebensraum Gewässer",
+		"intro": "Was verraten Körpermerkmale und mehrere Fundorte über einen Bach?",
+		"paragraphs": [
+			"An einem einheimischen Gewässer leben Pflanzen und Tiere in unterschiedlichen Teilräumen. Wasserpest wächst unter Wasser, Schilf am Ufer; viele Kleintiere sitzen unter Steinen oder zwischen Pflanzen. Eine Bestimmungshilfe führt über sichtbare Merkmale zu einer Gruppe. Du betrachtest beispielsweise Beine, Körpergliederung und Anhänge, statt nur nach Farbe oder Größe zu raten. Bilder sind vereinfachte Vergleichshilfen, keine vollständigen Artbestimmungen.",
+			"Manche Zeigertierchen kommen bevorzugt bei bestimmten Sauerstoff- und Belastungsverhältnissen vor. Viele Steinfliegenlarven passen zu sauerstoffreichen Fließgewässern; Schlammröhrenwürmer können auch starke organische Belastung ertragen. Ein einzelner Fund beweist jedoch keine Gewässergüte. Strömung, Temperatur, Untergrund und mehrere typische Funde müssen gemeinsam betrachtet werden. Auch ein ökologisch guter Bach ist kein geprüftes Trinkwasser.",
+			"Beispiel: Eine Larve besitzt sechs Beine und zwei Schwanzfäden. In unserer vereinfachten Hilfe passt sie zur Steinfliegenlarve. Eine zweite Probe enthält überwiegend Schlammröhrenwürmer. Daraus entsteht eine begründete Vermutung über unterschiedliche Bedingungen, noch kein endgültiges Güteurteil. Eine echte Kennübung wird mit der Lehrkraft vorbereitet: vom sicheren Ufer aus beobachten, Tiere schonend behandeln und Lebensräume nicht beschädigen."
+		],
+		"takeaway": "Bestimme mit mehreren Merkmalen. Mehrere Zeigerorganismen und Standortbedingungen helfen bei einer Güteabschätzung; ein Fund allein ist kein Beweis.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Warum reicht ein einziges Zeigertierchen nicht für ein sicheres Güteurteil?",
+			"answer": "Auch Standort, weitere Funde und andere Einflüsse sind wichtig.",
+			"wrong": [
+				"Jedes Tier lebt ausschließlich in völlig reinem Wasser.",
+				"Nur die Farbe des Tieres entscheidet."
+			],
+			"explanation": "Einzelne Funde können zufällig sein; erst mehrere Befunde und passende Standortinformationen stützen die Einschätzung."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Zusammenhänge prüfen",
+			"instruction": "Ordne die vier Fälle zu und begründe die Unterschiede.",
+			"categories": ["Merkmal", "Vorsicht beim Schluss"],
+			"entries": [
+				{
+					"text": "Sechs Beine und zwei Schwanzfäden werden gezählt.",
+					"target": 0,
+					"feedback": "Zählbare Körpermerkmale helfen bei der Bestimmung."
+				},
+				{
+					"text": "Ein einzelner Fund wird als endgültiger Gütebeweis bezeichnet.",
+					"target": 1,
+					"feedback": "Ein Fund reicht für diese Sicherheit nicht aus."
+				},
+				{
+					"text": "Schilf besitzt lange Halme und wächst am Ufer.",
+					"target": 0,
+					"feedback": "Wuchsform und Standort unterstützen die Pflanzenbestimmung."
+				},
+				{
+					"text": "Klares Bachwasser wird ohne Prüfung für trinkbar gehalten.",
+					"target": 1,
+					"feedback": "Klarheit beweist keine Trinkwasserqualität."
+				}
+			],
+			"conclusion": "Bestimme mit mehreren Merkmalen. Mehrere Zeigerorganismen und Standortbedingungen helfen bei einer Güteabschätzung; ein Fund allein ist kein Beweis."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Beschreibe, wie du die gezeichnete Larve bestimmst und was du aus ihrem Fund vorsichtig folgern kannst.",
+				"hints": [
+					"Welche Merkmale siehst du?",
+					"Welche weiteren Informationen fehlen?"
+				],
+				"model": "Ich zähle sechs Beine und zwei Schwanzfäden und vergleiche sie mit der vereinfachten Bestimmungshilfe. Das passt zur Steinfliegenlarve. Ihr Fund kann auf sauerstoffreiche Bedingungen hindeuten. Für eine Güteabschätzung brauche ich weitere Funde und Informationen über den Standort.",
+				"criteria": [
+					"Ich nutze zwei Merkmale.",
+					"Ich nenne eine vorsichtige Deutung.",
+					"Ich benenne eine Grenze."
+				]
+			},
+			"2": {
+				"prompt": "Zwei Bachstellen haben verschiedene Kleintiere, aber beide sind klar. Plane einen begründeten Vergleich ohne eine Trinkwasserfreigabe auszusprechen.",
+				"hints": [
+					"Wie vergleichst du fair?",
+					"Was darfst du aus Klarheit schließen?"
+				],
+				"model": "Ich untersuche mit der Lehrkraft vergleichbare Teilräume und dokumentiere mehrere typische Funde sowie Strömung und Untergrund. Die Zeigergruppen helfen bei einer ökologischen Einschätzung. Klares Aussehen oder ein einzelnes Tier beweisen weder geringe Belastung noch Trinkwasserqualität.",
+				"criteria": [
+					"Ich plane mehrere Befunde.",
+					"Ich beziehe Standortbedingungen ein.",
+					"Ich begrenze das Urteil."
+				]
+			}
+		},
+		"figures": [],
+		"lab": "aquaticKey"
+	},
+	{
+		"id": "nt6-mikroskop-zelle",
+		"lb": 4,
+		"title": "Mikroskopieren: Zellen als Grundbaueinheiten",
+		"period": "NT6 LB 2.2 · Lebensraum Gewässer",
+		"intro": "Wie wird aus einem winzigen Ausschnitt ein verständliches Zellbild?",
+		"paragraphs": [
+			"Mit dem Lichtmikroskop erkennst du Strukturen, die das bloße Auge nicht auflöst. Ein vorbereitetes dünnes Präparat liegt auf dem Objekttisch. Du beginnst unter Anleitung mit kleiner Vergrößerung, stellst Beleuchtung und Schärfe ein und suchst erst dann einen geeigneten Ausschnitt. Objektiv und Präparat dürfen nicht zusammenstoßen. Gesamtvergrößerung bedeutet: Vergrößerung des Okulars mal Vergrößerung des Objektivs.",
+			"Einzeller bestehen aus einer Zelle, mehrzellige Lebewesen aus vielen Zellen. Zellmembran, Zellplasma und Zellkern gehören zum hier betrachteten Grundbauplan. Die Membran grenzt die Zelle ab; im Plasma laufen Lebensvorgänge ab; der Kern enthält Erbinformation und steuert viele Vorgänge. Bei Pflanzen kommen beispielsweise Zellwand und Chloroplasten hinzu. In echten Präparaten sind nicht alle Bestandteile ohne Färbung gleich gut sichtbar.",
+			"Beispiel: Ein Okular vergrößert zehnfach und ein Objektiv vierfach; zusammen ergibt das eine vierzigfache Vergrößerung. Bei Wasserpest siehst du viele benachbarte Zellen, bei einem Pantoffeltierchen ein einzelliges Lebewesen. Eine Zeichnung hält nur den untersuchten Ausschnitt und erkennbare Merkmale fest. Unser Modell ordnet die Bauteile und simuliert Schärfe; es ersetzt weder das reale Mikroskop noch eine eigene Präparatzeichnung."
+		],
+		"takeaway": "Zellen sind Grundbaueinheiten von Lebewesen. Beginne beim Mikroskop klein; ein Modell zeigt mehr ausgewählte Details, als ein echtes Präparat immer erkennen lässt.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Ein Okular vergrößert zehnfach, das Objektiv vierfach. Wie groß ist die Gesamtvergrößerung?",
+			"answer": "Vierzigfach",
+			"wrong": ["Vierzehnfach", "Vierfach"],
+			"explanation": "Die beiden Vergrößerungen werden multipliziert: zehnmal vier ergibt vierzig; man addiert sie nicht."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Zusammenhänge prüfen",
+			"instruction": "Ordne die vier Fälle zu und begründe die Unterschiede.",
+			"categories": ["Zellmembran", "Zellplasma", "Zellkern"],
+			"entries": [
+				{
+					"text": "Grenzt die betrachtete Zelle nach außen ab.",
+					"target": 0,
+					"feedback": "Die Membran bildet die innere lebende Abgrenzung."
+				},
+				{
+					"text": "Enthält die Erbinformation.",
+					"target": 2,
+					"feedback": "Diese Funktion ordnen wir dem Zellkern zu."
+				},
+				{
+					"text": "Hier finden viele Lebensvorgänge statt.",
+					"target": 1,
+					"feedback": "Das Zellplasma ist der Zellinhalt außerhalb des Kerns."
+				},
+				{
+					"text": "Steuert viele Vorgänge in der Zelle.",
+					"target": 2,
+					"feedback": "Der Kern wirkt über die Erbinformation an der Steuerung mit."
+				}
+			],
+			"conclusion": "Zellen sind Grundbaueinheiten von Lebewesen. Beginne beim Mikroskop klein; ein Modell zeigt mehr ausgewählte Details, als ein echtes Präparat immer erkennen lässt."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Vergleiche Pantoffeltierchen und Wasserpest. Nenne die drei Bauteile des betrachteten Zellgrundbauplans.",
+				"hints": [
+					"Aus wie vielen Zellen besteht das jeweilige Lebewesen?",
+					"Welche Aufgaben haben Membran und Kern?"
+				],
+				"model": "Ein Pantoffeltierchen ist ein Einzeller; Wasserpest ist eine mehrzellige Pflanze. Bei beiden betrachten wir Zellen mit Zellmembran, Zellplasma und Zellkern. Die Membran grenzt ab, im Plasma laufen Lebensvorgänge ab, und der Kern enthält die Erbinformation.",
+				"criteria": [
+					"Ich unterscheide ein- und mehrzellig.",
+					"Ich nenne drei Bauteile.",
+					"Ich ordne Funktionen zu."
+				]
+			},
+			"2": {
+				"prompt": "Eine Schülerin zeichnet jeden Zellkern kräftig ein, obwohl sie ihn im ungefärbten Präparat nicht erkennen konnte. Beurteile die Zeichnung und erkläre ein besseres Vorgehen.",
+				"hints": [
+					"Was war sichtbar, was stammt aus einem Modell?",
+					"Wie beschriftest du die Grenze?"
+				],
+				"model": "Die Zeichnung sollte Beobachtung und Modellwissen unterscheiden. Nicht erkennbare Zellkerne dürfen nicht als sichere Beobachtung erscheinen. Ich zeichne erkennbare Strukturen, notiere Präparat und Vergrößerung und ergänze den Grundbauplan getrennt als beschriftetes Modell.",
+				"criteria": [
+					"Ich trenne Beobachtung und Wissen.",
+					"Ich begrenze die Sichtbarkeit.",
+					"Ich verbessere die Dokumentation."
+				]
+			}
+		},
+		"figures": [],
+		"lab": "microscope"
+	},
+	{
+		"id": "nt6-fische",
+		"lb": 4,
+		"title": "Fische: Körperbau, Bewegung und Kiemenatmung",
+		"period": "NT6 LB 2.2 · Lebensraum Gewässer",
+		"intro": "Warum braucht ein Fisch mehr als nur einen stromlinienförmigen Körper?",
+		"paragraphs": [
+			"Am Beispiel eines heimischen Knochenfisches erkennst du Zusammenhänge zwischen Bau und Funktion. Ein stromlinienförmiger Körper verringert den Widerstand beim Schwimmen. Schleim auf der Haut schützt und vermindert Reibung. Die Schwanzflosse liefert bei vielen Fischen den wesentlichen Antrieb; weitere Flossen helfen beim Steuern und Stabilisieren. Nicht jede Fischart besitzt dieselbe Körperform oder lebt im selben Gewässerbereich.",
+			"Kiemen nehmen im Wasser gelösten Sauerstoff auf und geben Kohlenstoffdioxid ab. Wasser gelangt durch das Maul zu den Kiemen und strömt unter dem Kiemendeckel wieder hinaus. Viele dünne Kiemenblättchen bieten eine große Austauschfläche. Der Fisch zerlegt dabei keine Wassermoleküle. Bei vielen Knochenfischen hilft eine gasgefüllte Schwimmblase, die Lage im Wasser ohne ständiges Schwimmen zu halten; sie ist kein Atmungsorgan.",
+			"Beispiel: Eine Forelle hält sich gegen die Strömung. Schwanzbewegungen liefern Antrieb, Flossen stabilisieren die Lage, und Wasser strömt über die Kiemen. Wird das Wasser stark erwärmt und belastet, können sich die Sauerstoffbedingungen verschlechtern. Ein Modell ordnet Funktionen zu, aber es beschreibt weder jede Fischart noch alle Einflüsse eines echten Gewässers. Tiere werden für diese Erklärung nicht aus dem Wasser genommen."
+		],
+		"takeaway": "Körperform, Flossen und Kiemen erfüllen verschiedene Aufgaben. Kiemen nutzen gelösten Sauerstoff; sie zerlegen Wasser nicht in seine Elemente.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Woher stammt der Sauerstoff für die Kiemenatmung?",
+			"answer": "Aus dem im Wasser gelösten Sauerstoff.",
+			"wrong": [
+				"Aus einer Zerlegung jedes Wassermoleküls in den Kiemen.",
+				"Aus den Knochen der Schwanzflosse."
+			],
+			"explanation": "Kiemen ermöglichen den Gasaustausch mit dem Wasser. Sie sind kein Gerät zur chemischen Wasserzerlegung."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Zusammenhänge prüfen",
+			"instruction": "Ordne die vier Fälle zu und begründe die Unterschiede.",
+			"categories": ["Fortbewegung", "Gasaustausch", "Lage im Wasser"],
+			"entries": [
+				{
+					"text": "Die Schwanzflosse erzeugt Antrieb.",
+					"target": 0,
+					"feedback": "Sie überträgt Kräfte auf das Wasser."
+				},
+				{
+					"text": "Kiemenblättchen bieten Austauschfläche.",
+					"target": 1,
+					"feedback": "Dort wird gelöster Sauerstoff aufgenommen."
+				},
+				{
+					"text": "Die Schwimmblase unterstützt das Schweben.",
+					"target": 2,
+					"feedback": "Sie ist bei vielen Knochenfischen an der Auftriebsregelung beteiligt."
+				},
+				{
+					"text": "Brustflossen helfen beim Steuern.",
+					"target": 0,
+					"feedback": "Flossen unterstützen Bewegung und Stabilität."
+				}
+			],
+			"conclusion": "Körperform, Flossen und Kiemen erfüllen verschiedene Aufgaben. Kiemen nutzen gelösten Sauerstoff; sie zerlegen Wasser nicht in seine Elemente."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Erkläre an drei Bauteilen, wie ein Knochenfisch im Wasser leben kann.",
+				"hints": [
+					"Was unterstützt Bewegung?",
+					"Wie gelangt Sauerstoff in den Fisch?"
+				],
+				"model": "Die Körperform vermindert den Wasserwiderstand und die Schwanzflosse liefert Antrieb. Andere Flossen helfen beim Steuern. An den Kiemen nimmt der Fisch gelösten Sauerstoff auf. Die Schwimmblase vieler Knochenfische unterstützt die Lage im Wasser, ist aber kein Atmungsorgan.",
+				"criteria": [
+					"Ich verbinde Bau und Funktion.",
+					"Ich beschreibe Kiemenatmung.",
+					"Ich unterscheide die Schwimmblase."
+				]
+			},
+			"2": {
+				"prompt": "Ein Plakat behauptet: „Kiemen machen aus Wasser Sauerstoff, deshalb überlebt jeder Fisch in jedem Wasser.“ Korrigiere beide Teile.",
+				"hints": [
+					"Ist Atmung eine Wasserzerlegung?",
+					"Welche Umweltbedingung ist wichtig?"
+				],
+				"model": "Kiemen nehmen vorhandenen gelösten Sauerstoff auf; sie zerlegen keine Wassermoleküle. Sauerstoffgehalt, Temperatur und weitere Bedingungen müssen zum Fisch passen. Verschiedene Arten sind unterschiedlich angepasst. Das Vorhandensein von Wasser allein garantiert deshalb keinen geeigneten Lebensraum.",
+				"criteria": [
+					"Ich korrigiere die Wasserzerlegung.",
+					"Ich nenne eine relevante Bedingung.",
+					"Ich begrenze die Verallgemeinerung."
+				]
+			}
+		},
+		"figures": [],
+		"lab": "fish"
+	},
+	{
+		"id": "nt6-gewaesser-nahrungsnetz",
+		"lb": 4,
+		"title": "Nahrungsketten und Nahrungsnetz im Gewässer",
+		"period": "NT6 LB 2.2 · Lebensraum Gewässer",
+		"intro": "Wie hängen Algen, Kleinkrebse und Fische miteinander zusammen?",
+		"paragraphs": [
+			"Grüne Algen und Wasserpflanzen bilden mithilfe von Licht energiereiche Stoffe. Sie sind Produzenten einer Lebensgemeinschaft im Gewässer. Wasserflöhe können kleine Algen aufnehmen, Jungfische fressen Kleinkrebse, und Raubfische fressen kleinere Fische. Eine Nahrungskette zeigt eine ausgewählte Abfolge. Der Pfeil bedeutet hier „wird gefressen von“ und zeigt vom Futter zum Fresser. Er sagt nichts darüber, wer größer gezeichnet wurde.",
+			"In der Natur nutzen viele Tiere mehrere Nahrungsquellen. Mehrere verbundene Nahrungsketten ergeben ein Nahrungsnetz. Auch abgestorbene Reste werden von Zersetzern abgebaut; Stoffe werden wieder verfügbar, während Energie als Wärme abgegeben wird. In einem vereinfachten Bild fehlen Jahreszeiten, wechselnde Lebensstadien und viele Arten. Ein Pfeil zeigt eine mögliche Beziehung, aber nicht die genaue Futtermenge oder eine unveränderliche Reihenfolge.",
+			"Beispiel: Alge → Wasserfloh → Jungfisch → Hecht ist eine mögliche Modellkette. Ein kleiner Fisch kann daneben Insektenlarven fressen. Fällt eine Nahrungsquelle aus, kann eine andere teilweise helfen; das ist jedoch keine sichere vollständige Entlastung. Du zeichnest deshalb zwei verbundene Wege und beschriftest die Pfeilbedeutung. Das Modell hilft beim Erklären, ersetzt aber keine Beobachtung, welche Tiere am untersuchten Gewässer tatsächlich vorkommen."
+		],
+		"takeaway": "Nahrungspfeile zeigen vom Futter zum Fresser. Ein Netz verbindet mehrere Ketten; es zeigt ausgewählte Beziehungen und keine vollständige Wirklichkeit.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Was bedeutet im Modell der Pfeil Alge → Wasserfloh?",
+			"answer": "Die Alge wird vom Wasserfloh gefressen.",
+			"wrong": [
+				"Die Alge frisst den Wasserfloh.",
+				"Der Wasserfloh produziert Licht für die Alge."
+			],
+			"explanation": "Die vereinbarte Pfeilrichtung beschreibt den Weg der Nahrung vom gefressenen Lebewesen zum Verbraucher."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Zusammenhänge prüfen",
+			"instruction": "Ordne die vier Fälle zu und begründe die Unterschiede.",
+			"categories": ["Produzent", "Verbraucher", "Modellgrenze"],
+			"entries": [
+				{
+					"text": "Eine grüne Alge baut mit Licht Stoffe auf.",
+					"target": 0,
+					"feedback": "Sie bildet energiereiche Stoffe."
+				},
+				{
+					"text": "Ein Jungfisch frisst Kleinkrebse.",
+					"target": 1,
+					"feedback": "Er nimmt Nahrung anderer Lebewesen auf."
+				},
+				{
+					"text": "Im Bild fehlen viele Arten und Jahreszeiten.",
+					"target": 2,
+					"feedback": "Die Zeichnung wählt nur einige Beziehungen aus."
+				},
+				{
+					"text": "Ein Hecht frisst kleinere Fische.",
+					"target": 1,
+					"feedback": "Auch ein Raubfisch ist Verbraucher."
+				}
+			],
+			"conclusion": "Nahrungspfeile zeigen vom Futter zum Fresser. Ein Netz verbindet mehrere Ketten; es zeigt ausgewählte Beziehungen und keine vollständige Wirklichkeit."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Zeichne gedanklich die Kette Alge, Wasserfloh, Jungfisch und Hecht und beschreibe die Pfeilrichtung.",
+				"hints": ["Wer wird von wem gefressen?", "Welche Rolle hat die Alge?"],
+				"model": "Die Kette lautet Alge → Wasserfloh → Jungfisch → Hecht. Jeder Pfeil bedeutet „wird gefressen von“. Die Alge ist Produzent, die Tiere sind Verbraucher. Es handelt sich um einen ausgewählten Weg in einem größeren Netz und nicht um die einzige Nahrung jedes Tieres.",
+				"criteria": [
+					"Ich ordne die vier Glieder.",
+					"Ich erkläre die Pfeile.",
+					"Ich nenne eine Modellgrenze."
+				]
+			},
+			"2": {
+				"prompt": "Ein Jungfisch frisst Wasserflöhe und Insektenlarven. Erkläre, warum ein Netz aussagekräftiger als eine einzige Kette ist und trotzdem Grenzen hat.",
+				"hints": [
+					"Welche zweite Beziehung fehlt in der Kette?",
+					"Was sagt ein Pfeil nicht?"
+				],
+				"model": "Ich ergänze einen zweiten Nahrungspfeil von der Insektenlarve zum Jungfisch. Das Netz zeigt mehrere mögliche Nahrungsbeziehungen. Es verrät aber keine genauen Futteranteile und lässt andere Arten oder Jahreszeiten aus. Eine alternative Nahrung kann helfen, garantiert jedoch keinen vollständigen Ausgleich.",
+				"criteria": [
+					"Ich ergänze eine Beziehung.",
+					"Ich begründe das Netz.",
+					"Ich begrenze seine Aussage."
+				]
+			}
+		},
+		"figures": [],
+		"lab": "aquaticWeb"
+	},
+	{
+		"id": "nt6-gewaesserschutz",
+		"lb": 4,
+		"title": "Gewässer schützen: Eingriffe und Folgen abwägen",
+		"period": "NT6 LB 2.2 · Lebensraum Gewässer",
+		"intro": "Welche Folgen hat ein begradigter Bach für seine Lebewesen?",
+		"paragraphs": [
+			"Menschen nutzen Gewässer für Wassergewinnung, Landwirtschaft, Freizeit und Energie. Ein Eingriff kann zugleich Nutzen und ökologische Folgen haben. Wird ein Bach begradigt und sein Ufer befestigt, fehlen oft flache Randbereiche, Verstecke und unterschiedliche Strömungszonen. Viele Arten benötigen gerade diese Vielfalt. Ein Wehr kann Wanderwege unterbrechen. Der Schutz einzelner Arten braucht deshalb häufig den Schutz ihres gesamten Lebensraums.",
+			"Renaturierung kann einem Gewässer wieder mehr Raum, strukturreiche Ufer und unterschiedliche Teilräume geben. Uferpflanzen bieten Schutz und Schatten. Weniger Einträge von Dünger, Abwasser und Müll können Belastungen mindern. Keine einzelne Maßnahme beseitigt jede Ursache. Bei einem Vorschlag fragst du daher: Welches Problem liegt vor, wem nützt die Maßnahme, und welche Wirkung sowie Grenze lassen sich begründen?",
+			"Beispiel: An einem befestigten Schulbach fehlen flache Buchten. Eine Klasse schlägt strukturreiche Uferabschnitte vor, die nur Fachleute nach Planung verändern. Dadurch können zusätzliche Lebensräume entstehen; eine Abwassereinleitung oberhalb wird damit noch nicht beseitigt. Die Klasse beobachtet vom sicheren Ufer und entsorgt ihren Müll richtig. Eigenmächtiges Aussetzen von Tieren oder Umbauen des Bachbetts ist keine geeignete Schutzmaßnahme."
+		],
+		"takeaway": "Beurteile Eingriffe über Nutzen, konkrete Folgen und Grenzen. Arten- und Biotopschutz gehören zusammen; Veränderungen am Gewässer brauchen fachkundige Planung.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Welche Maßnahme passt zum Problem fehlender Verstecke an einem befestigten Bach?",
+			"answer": "Fachkundig geplante strukturreiche Uferbereiche schaffen.",
+			"wrong": [
+				"Noch mehr Ufer lückenlos betonieren.",
+				"Beliebige fremde Tiere aussetzen."
+			],
+			"explanation": "Strukturreiche Teilräume können Lebensraum bieten. Sie ersetzen aber weder die Prüfung anderer Belastungen noch die fachkundige Planung."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Zusammenhänge prüfen",
+			"instruction": "Ordne die vier Fälle zu und begründe die Unterschiede.",
+			"categories": ["Belastung", "Schutzbeitrag", "Grenze"],
+			"entries": [
+				{
+					"text": "Müll wird im Bach entsorgt.",
+					"target": 0,
+					"feedback": "Abfälle belasten den Lebensraum."
+				},
+				{
+					"text": "Uferpflanzen und flache Buchten werden erhalten.",
+					"target": 1,
+					"feedback": "Strukturen bieten unterschiedliche Lebensräume."
+				},
+				{
+					"text": "Eine Uferverbesserung entfernt nicht jede Schadstoffquelle.",
+					"target": 2,
+					"feedback": "Verschiedene Probleme brauchen passende Maßnahmen."
+				},
+				{
+					"text": "Ein Wehr unterbricht Wanderwege.",
+					"target": 0,
+					"feedback": "Die Barriere kann Lebensräume voneinander trennen."
+				}
+			],
+			"conclusion": "Beurteile Eingriffe über Nutzen, konkrete Folgen und Grenzen. Arten- und Biotopschutz gehören zusammen; Veränderungen am Gewässer brauchen fachkundige Planung."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Erkläre zwei Folgen einer Bachbegradigung und eine passende Schutzmaßnahme.",
+				"hints": [
+					"Welche Teilräume können fehlen?",
+					"Wie schafft die Maßnahme Lebensraum?"
+				],
+				"model": "Durch die Begradigung können Verstecke und unterschiedliche Strömungszonen fehlen. Manche Tiere finden dann weniger geeignete Aufenthaltsorte. Fachkundig geplante strukturreiche Ufer und flache Randbereiche können Vielfalt fördern. Weitere Belastungen müssen trotzdem gesondert geprüft werden.",
+				"criteria": [
+					"Ich nenne zwei Folgen.",
+					"Ich begründe eine Maßnahme.",
+					"Ich nenne eine Grenze."
+				]
+			},
+			"2": {
+				"prompt": "Eine Gemeinde will Wasserkraft nutzen und zugleich Fische schützen. Begründe, warum „erneuerbar“ allein keine vollständige Bewertung ist.",
+				"hints": [
+					"Was ist der Nutzen?",
+					"Welche Lebensraumfolgen müssen geprüft werden?"
+				],
+				"model": "Wasserkraft liefert erneuerbare elektrische Energie. Ein Wehr kann jedoch Wanderwege und Strömungsverhältnisse verändern. Die Planung muss deshalb Energiegewinn, Durchgängigkeit und ausreichendes Restwasser gemeinsam berücksichtigen. Die erneuerbare Quelle garantiert keine Folgenlosigkeit für Arten und Biotope.",
+				"criteria": [
+					"Ich nenne den Energienutzen.",
+					"Ich beziehe Lebensraumfolgen ein.",
+					"Ich begründe die Abwägung."
+				]
+			}
+		},
+		"figures": [],
+		"lab": "habitat"
+	}
+]
