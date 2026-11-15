@@ -1,0 +1,515 @@
+{
+	"aquaticKey": {
+		"title": "Merkmale führen zur Bestimmung",
+		"limit": "Vereinfachte Gruppenbilder, keine vollständige Artbestimmung und keine sichere Gewässergüte aus einem einzelnen Fund.",
+		"choices": [
+			{
+				"id": "larva",
+				"label": "Larve vergleichen",
+				"detail": "Sechs Beine und zwei Schwanzfäden passen in unserer vereinfachten Hilfe zur Steinfliegenlarve. Weitere Merkmale und echte Bestimmungshilfen sind nötig."
+			},
+			{
+				"id": "worm",
+				"label": "Zweiten Fund prüfen",
+				"detail": "Ein Schlammröhrenwurm hat keine gegliederten Beine. Solche Würmer können auch organisch belastete Bedingungen tolerieren; ein Fund ist noch kein Gütebeweis."
+			},
+			{
+				"id": "plants",
+				"label": "Pflanzen einbeziehen",
+				"detail": "Schilf am Ufer und untergetauchte Wasserpest nutzen verschiedene Teilräume. Eine Untersuchung dokumentiert Pflanzen, Tiere und Standortbedingungen."
+			}
+		]
+	},
+	"microscope": {
+		"title": "Vom Präparat zum Zellmodell",
+		"limit": "Virtueller Fokus und vereinfachter Zellgrundbauplan. Nicht jeder Zellkern ist im echten ungefärbten Präparat erkennbar.",
+		"choices": [
+			{
+				"id": "plant",
+				"label": "Mehrzeller",
+				"detail": "Die Wasserpest wird als Verband benachbarter Pflanzenzellen dargestellt. Kern, Plasma und Membran sind im Modell hervorgehoben, nicht als garantierte Beobachtung."
+			},
+			{
+				"id": "single",
+				"label": "Einzeller",
+				"detail": "Das Pantoffeltierchen ist ein einzelnes Lebewesen aus einer Zelle. Ein großer gezeichneter Körper ist daher kein Beweis für Mehrzelligkeit."
+			},
+			{
+				"id": "parts",
+				"label": "Bauteile",
+				"detail": "Membran grenzt die Zelle ab, im Plasma laufen viele Vorgänge ab, der Kern enthält Erbinformation. Das Modell färbt und vergrößert ausgewählte Strukturen."
+			}
+		],
+		"control": {
+			"label": "Modellfokus",
+			"min": 0,
+			"max": 10,
+			"step": 1,
+			"initial": 0,
+			"target": 5,
+			"unit": ""
+		}
+	},
+	"fish": {
+		"title": "Bau und Funktion beim Knochenfisch",
+		"limit": "Typischer vereinfachter Knochenfisch. Formen und Schwimmblasen unterscheiden sich zwischen Fischarten.",
+		"choices": [
+			{
+				"id": "body",
+				"label": "Körper & Flossen",
+				"detail": "Die Körperform vermindert Widerstand; die Schwanzflosse liefert bei vielen Fischen Antrieb. Andere Flossen steuern und stabilisieren die Lage."
+			},
+			{
+				"id": "gills",
+				"label": "Kiemen",
+				"detail": "Wasser strömt vom Maul über die Kiemen nach außen. Die dünnen Blättchen bieten Austauschfläche für gelösten Sauerstoff und Kohlenstoffdioxid."
+			},
+			{
+				"id": "bladder",
+				"label": "Schwimmblase",
+				"detail": "Die gasgefüllte Schwimmblase unterstützt bei vielen Knochenfischen die Auftriebsregelung. Sie ist kein Ersatz für Kiemen und nicht bei jedem Fisch gleich vorhanden."
+			}
+		]
+	},
+	"aquaticWeb": {
+		"title": "Mehrere Wege der Nahrung",
+		"limit": "Ausgewählte Beziehungen eines Gewässers. Arten, Jahreszeiten und Futteranteile bleiben vereinfacht.",
+		"choices": [
+			{
+				"id": "chain",
+				"label": "Eine Kette",
+				"detail": "Alge → Wasserfloh → Jungfisch → Hecht ist eine mögliche Kette. Die Pfeile zeigen vom Futter zum Fresser und nicht die räumliche Schwimmrichtung."
+			},
+			{
+				"id": "web",
+				"label": "Ein Netz",
+				"detail": "Ein Jungfisch kann neben Kleinkrebsen auch Insektenlarven fressen. Das Netz verbindet mehrere mögliche Wege, garantiert aber keinen vollständigen Nahrungsausgleich."
+			},
+			{
+				"id": "recycle",
+				"label": "Reste & Zersetzer",
+				"detail": "Reste aller Gruppen können abgebaut werden. Stoffe werden wieder verfügbar; Energie wird nicht vollständig im Kreis zurückgeführt, sondern auch als Wärme abgegeben."
+			}
+		]
+	},
+	"habitat": {
+		"title": "Eingriff und Lebensraum vergleichen",
+		"limit": "Ein Modell ausgewählter Folgen. Eine reale Renaturierung braucht Standortprüfung und fachkundige Planung.",
+		"choices": [
+			{
+				"id": "straight",
+				"label": "Befestigter Bach",
+				"detail": "Ein begradigter, befestigter Abschnitt bietet im Modell weniger flache Randbereiche und Verstecke. Auswirkungen hängen vom Standort und den dortigen Arten ab."
+			},
+			{
+				"id": "diverse",
+				"label": "Strukturreiche Ufer",
+				"detail": "Flache Buchten, Pflanzen und verschiedene Strömungsbereiche können mehr Teilräume schaffen. Das beseitigt nicht automatisch eine Belastungsquelle oberhalb."
+			},
+			{
+				"id": "weir",
+				"label": "Wehr & Wege",
+				"detail": "Ein Wehr kann Nutzungen wie Energiegewinn erlauben, aber auch Wanderwege unterbrechen. Durchgängigkeit, Restwasser und Nutzen müssen gemeinsam beurteilt werden."
+			}
+		]
+	},
+	"puberty": {
+		"title": "Entwicklung ist kein Wettlauf",
+		"limit": "Allgemeine Beispiele statt persönlicher Körperdaten. Zeitpunkt, Verlauf und Erleben sind individuell.",
+		"choices": [
+			{
+				"id": "body",
+				"label": "Körper",
+				"detail": "Wachstum, Haut, Behaarung und Geschlechtsreife verändern sich. Die Beispiele sind keine feste Reihenfolge oder Rangliste für einzelne Menschen."
+			},
+			{
+				"id": "feelings",
+				"label": "Gefühle",
+				"detail": "Mehr Selbstständigkeit, wechselnde Stimmung oder Unsicherheit können vorkommen. Unterschiedliche Erfahrungen und persönliche Grenzen werden respektiert."
+			},
+			{
+				"id": "care",
+				"label": "Pflege",
+				"detail": "Stärkere Schweißbildung begründet angemessene Reinigung und saubere Kleidung. Duftspray überdeckt Geruch, ersetzt aber das Waschen nicht."
+			}
+		]
+	},
+	"organs": {
+		"title": "Organe und ihre Aufgaben",
+		"limit": "Neutrale schematische Grundbaupläne. Lage, Größen und Körpervarianten sind vereinfacht; die Wege werden funktional gelesen.",
+		"choices": [
+			{
+				"id": "female",
+				"label": "Weiblicher Grundbauplan",
+				"detail": "Eierstöcke, Eileiter, Gebärmutter und Vagina erfüllen unterschiedliche Aufgaben. Die äußeren Organe heißen Vulva; die Harnröhrenöffnung ist von der Vagina getrennt."
+			},
+			{
+				"id": "male",
+				"label": "Männlicher Grundbauplan",
+				"detail": "Hoden bilden Samenzellen, Nebenhoden unterstützen ihre Reifung. Samenleiter und Harnröhre dienen dem Transport; Drüsen geben Flüssigkeit hinzu."
+			},
+			{
+				"id": "functions",
+				"label": "Zelle und Organ",
+				"detail": "Eine Eizelle oder Samenzelle ist eine Zelle. Eierstock und Hoden sind Organe; die Gebärmutter ist ein möglicher Entwicklungsort nach der Einnistung."
+			}
+		]
+	},
+	"fertilisation": {
+		"title": "Befruchtung, Teilung, Einnistung",
+		"limit": "Vereinfachte Reihenfolge, kein Kalender für eine einzelne Person und keine Vorhersage einer Schwangerschaft.",
+		"choices": [
+			{
+				"id": "fertilise",
+				"label": "Befruchtung",
+				"detail": "Ei- und Samenzelle können im Eileiter zusammentreffen. Bei der Befruchtung vereinigt sich ihre Erbinformation; nicht jeder Geschlechtsverkehr führt dazu."
+			},
+			{
+				"id": "divide",
+				"label": "Zellteilungen",
+				"detail": "Die neue Zelle teilt sich auf dem Weg zur Gebärmutter wiederholt. Aus der ersten Zelle entsteht ein früher Zellverband, nicht sofort ein fertiges Kind."
+			},
+			{
+				"id": "implant",
+				"label": "Einnistung",
+				"detail": "Der frühe Zellverband kann sich in die Gebärmutterschleimhaut einnisten. Dieser Schritt folgt nach der Befruchtung und findet üblicherweise an einem anderen Ort statt."
+			}
+		]
+	},
+	"pregnancy": {
+		"title": "Entwicklung und Versorgung vor der Geburt",
+		"limit": "Grundzüge ohne genaue Kalender-, Größen- oder Gesundheitsprognose. Die Blutkreisläufe sind normalerweise getrennt.",
+		"choices": [
+			{
+				"id": "grow",
+				"label": "Entwicklung",
+				"detail": "Aus frühen Zellverbänden werden Organe und Körperformen. Das ungeborene Kind wächst und reift; Entwicklung bedeutet mehr als Vergrößerung."
+			},
+			{
+				"id": "supply",
+				"label": "Versorgung",
+				"detail": "Plazenta und Nabelschnur ermöglichen Versorgung und Abtransport. Die Plazenta vermittelt Austausch, ist aber keine vollständige Barriere für schädigende Stoffe."
+			},
+			{
+				"id": "birth",
+				"label": "Geburt",
+				"detail": "Bei der Geburt verlässt das Kind den mütterlichen Körper; auch ein Kaiserschnitt ist möglich. Danach übernimmt die eigene Atmung die Sauerstoffversorgung."
+			}
+		]
+	},
+	"contraception": {
+		"title": "Wirkung und Schutzgrenzen vergleichen",
+		"limit": "Allgemeine schulische Erklärung ohne individuelle Anwendungs-, Einnahme- oder Behandlungsempfehlung.",
+		"choices": [
+			{
+				"id": "barrier",
+				"label": "Kondom",
+				"detail": "Das Kondom bildet eine Barriere für Samenzellen. Bei richtiger Anwendung senkt es außerdem das Risiko vieler sexuell übertragbarer Infektionen, ohne absolute Garantie."
+			},
+			{
+				"id": "hormones",
+				"label": "Pille",
+				"detail": "Die Pille wirkt hormonell, je nach Präparat unter anderem auf den Eisprung und den Schleim am Gebärmutterhals. Sie schützt nicht vor sexuell übertragbaren Infektionen."
+			},
+			{
+				"id": "limits",
+				"label": "Grenzen",
+				"detail": "Richtige Anwendung und verlässliche Beratung sind wichtig. Wissen verpflichtet zu keiner Handlung; Einverständnis und Respekt gelten unabhängig von einer Methode."
+			}
+		]
+	},
+	"forces": {
+		"title": "Kraftwirkungen vergleichen",
+		"limit": "Ausgewählte Wirkungen statt vollständiger Kräftebilanz. Pfeillängen sind schematisch und Körper keine realen Versuchsanweisungen.",
+		"choices": [
+			{
+				"id": "deform",
+				"label": "Verformen",
+				"detail": "Eine Kraft drückt den Körper zusammen oder dehnt eine Feder. Die Formänderung ist eine andere Beobachtung als eine Änderung der Geschwindigkeit."
+			},
+			{
+				"id": "accelerate",
+				"label": "Schneller / langsamer",
+				"detail": "Eine unausgeglichene Kraft kann den Betrag der Geschwindigkeit ändern. Gleichförmige Bewegung allein beweist dagegen keine unausgeglichene Kraft."
+			},
+			{
+				"id": "turn",
+				"label": "Richtung ändern",
+				"detail": "Auch eine Richtungsänderung ist eine Änderung der Bewegung. Im Modell steht der Kraftpfeil seitlich zur vorherigen Bewegungsrichtung."
+			}
+		]
+	},
+	"forceMeter": {
+		"title": "Kraft und Federdehnung messen",
+		"limit": "Ideale Modellfeder: 2 cm je Newton. Reale Federn benötigen ihre eigene Skala und dürfen nicht überlastet werden.",
+		"choices": [
+			{
+				"id": "measure",
+				"label": "Modell messen",
+				"detail": "Die Kraft wird in Newton eingestellt; die Modellfeder dehnt sich pro Newton um zwei Zentimeter. Der Messbereich reicht hier von null bis sechs Newton."
+			},
+			{
+				"id": "table",
+				"label": "Wertetabelle",
+				"detail": "Die Tabelle vergleicht Kräfte und Dehnungen derselben Modellfeder. Bei doppelter Kraft ist die zusätzliche Dehnung im gezeigten Bereich doppelt so groß."
+			},
+			{
+				"id": "limits",
+				"label": "Messbedingungen",
+				"detail": "Nullpunkt, Messbereich und ruhiges Ablesen sind nötig. Die Skala darf weder auf jede beliebige Feder übertragen noch oberhalb des Messbereichs verwendet werden."
+			}
+		],
+		"control": {
+			"label": "Kraft",
+			"min": 0,
+			"max": 6,
+			"step": 1,
+			"initial": 1,
+			"target": 3,
+			"unit": "N"
+		}
+	},
+	"work": {
+		"title": "Arbeit aus Kraft und Weg bestimmen",
+		"limit": "Konstante Kraft von 20 N entlang des Weges, ohne Reibung. Der gesamte Energiebedarf eines Menschen wird nicht berechnet.",
+		"choices": [
+			{
+				"id": "lift",
+				"label": "Heben",
+				"detail": "Bei konstanter Kraft entlang des Hubwegs ist Arbeit Kraft mal Weg. Die Kraft bleibt im Modell bei zwanzig Newton, während du den Weg ändern kannst."
+			},
+			{
+				"id": "hold",
+				"label": "Ruhig halten",
+				"detail": "Beim unbewegten Gegenstand ist der Weg null und damit auch seine Hubarbeit. Die Person benötigt trotzdem Muskelenergie; das Modell betrachtet nur den Gegenstand."
+			},
+			{
+				"id": "accelerate",
+				"label": "Beschleunigen",
+				"detail": "Beim Schnellerwerden wird Beschleunigungsarbeit übertragen. Arbeit kann Energie übertragen; sie ist nicht auf Heben und nicht auf das Alltagswort Anstrengung beschränkt."
+			}
+		],
+		"control": {
+			"label": "Hubweg",
+			"min": 0,
+			"max": 5,
+			"step": 1,
+			"initial": 1,
+			"target": 3,
+			"unit": "m"
+		}
+	},
+	"lever": {
+		"title": "Hebelarme und Gleichgewicht vergleichen",
+		"limit": "Senkrechte Kräfte; 6 N Last an 20 cm Lastarm. Eigengewicht und Reibung des Hebels werden vernachlässigt.",
+		"choices": [
+			{
+				"id": "two",
+				"label": "Zweiseitiger Hebel",
+				"detail": "Kraft und Last liegen auf verschiedenen Seiten des Drehpunkts. Im Modell bleibt der Lastarm bei zwanzig Zentimetern, während du den Kraftarm verändern kannst."
+			},
+			{
+				"id": "one",
+				"label": "Einseitiger Hebel",
+				"detail": "Kraft und Last greifen auf derselben Seite an, wie beim Grundprinzip einer Schubkarre. Auch hier zählt die unterschiedliche Entfernung vom Drehpunkt."
+			},
+			{
+				"id": "table",
+				"label": "Je-desto-Vergleich",
+				"detail": "Bei festem Lastarm benötigt der längere Kraftarm weniger Kraft. Zwanzig, vierzig und sechzig Zentimeter Kraftarm ergeben hier sechs, drei und zwei Newton."
+			}
+		],
+		"control": {
+			"label": "Kraftarm",
+			"min": 20,
+			"max": 80,
+			"step": 10,
+			"initial": 40,
+			"target": 60,
+			"unit": "cm"
+		}
+	},
+	"machines": {
+		"title": "Rampe und Rollen als Kraftwandler",
+		"limit": "Ideale Fälle ohne Reibung. Rampe: 60 N Last, 1 m Höhe; reale Tragfähigkeit oder sichere Hebevorgänge werden nicht geplant.",
+		"choices": [
+			{
+				"id": "ramp",
+				"label": "Rampe",
+				"detail": "Die Höhe bleibt ein Meter. Eine längere Rampe verringert ideal die Kraft entlang der Rampe; das Produkt aus Kraft und Weg bleibt bei sechzig Joule."
+			},
+			{
+				"id": "fixed",
+				"label": "Feste Rolle",
+				"detail": "Die feste Rolle ändert die Zugrichtung. Im idealen Fall wird für dieselbe Last dieselbe Kraft benötigt, nicht automatisch die halbe Kraft."
+			},
+			{
+				"id": "moving",
+				"label": "Lose Rolle",
+				"detail": "Bei zwei tragenden Seilabschnitten genügt ideal die halbe Kraft. Dafür muss doppelt so viel Seil wie der Hubweg gezogen werden; reale Verluste sind zusätzlich möglich."
+			}
+		],
+		"control": {
+			"label": "Rampenlänge",
+			"min": 2,
+			"max": 5,
+			"step": 1,
+			"initial": 2,
+			"target": 3,
+			"unit": "m"
+		}
+	},
+	"ergonomics": {
+		"title": "Werkzeugwahl begründen",
+		"limit": "Ausgewählte Entscheidungssituationen, keine Anleitung für gefährliche Werkzeuge oder schwere Lasten.",
+		"choices": [
+			{
+				"id": "fit",
+				"label": "Passung",
+				"detail": "Werkzeug und Aufgabe müssen zusammenpassen. Eine günstige Hebelwirkung allein garantiert weder sichere Kontrolle noch eine zulässige Belastung."
+			},
+			{
+				"id": "transport",
+				"label": "Transporthilfe",
+				"detail": "Eine geeignete Hilfe kann den Kraftaufwand und die Belastung des Körpers verringern. Auswahl und Handhabung benötigen Einweisung und passende Bedingungen."
+			},
+			{
+				"id": "condition",
+				"label": "Zustand",
+				"detail": "Beschädigte Werkzeuge oder Schmerzen sind ein Anlass zum Unterbrechen und Klären. Mehr Kraft oder eine beliebige Verlängerung beseitigen das Problem nicht."
+			}
+		]
+	},
+	"speed": {
+		"title": "Weg und Zeit einer gleichförmigen Fahrt",
+		"limit": "60 m Modellweg ohne Pause. Die Werte sind Rechenbeispiele und keine Fahranweisung oder sichere Geschwindigkeit.",
+		"choices": [
+			{
+				"id": "uniform",
+				"label": "Gleichförmig",
+				"detail": "Gleiche Wegstücke gehören zu gleichen Zeitabschnitten. Für die Modellstrecke von sechzig Metern bestimmst du durch die Fahrzeit die konstante Geschwindigkeit."
+			},
+			{
+				"id": "units",
+				"label": "Einheiten",
+				"detail": "Meter pro Sekunde werden für Kilometer pro Stunde mit 3,6 multipliziert. Unterschiedliche Einheiten dürfen nicht anhand ihrer Zahlenwerte allein verglichen werden."
+			},
+			{
+				"id": "average",
+				"label": "Mit Pause",
+				"detail": "Eine Pause führt dazu, dass die Bewegung nicht durchgehend gleichförmig ist. Gesamtweg durch Gesamtzeit beschreibt dann den Durchschnitt, nicht jeden Augenblick."
+			}
+		],
+		"control": {
+			"label": "Fahrzeit für 60 m",
+			"min": 5,
+			"max": 30,
+			"step": 1,
+			"initial": 6,
+			"target": 12,
+			"unit": "s"
+		}
+	},
+	"motionGraph": {
+		"title": "Messgrößen statt Straßenbild",
+		"limit": "Ideale Weg-Zeit-Kurven mit ausgewählten Werten. Sie beschreiben weder Geländeform noch jede räumliche Fahrtrichtung.",
+		"choices": [
+			{
+				"id": "constant",
+				"label": "Gleichförmig",
+				"detail": "Die Gerade zeigt gleiche Wegzuwächse in gleichen Zeiten. Der Geschwindigkeitsregler verändert die Steilheit, während die Achsen ihre Bedeutung behalten."
+			},
+			{
+				"id": "rest",
+				"label": "Pause",
+				"detail": "Der zurückgelegte Weg bleibt im waagerechten Abschnitt gleich, obwohl Zeit vergeht. Eine waagerechte Linie ist kein Nachweis für eine ebene Straße."
+			},
+			{
+				"id": "change",
+				"label": "Schneller werden",
+				"detail": "Eine zunehmend steile Kurve zeigt wachsende Geschwindigkeit. Kräfte können solche Bewegungsänderungen bewirken; die Kurve ist keine Straßenzeichnung."
+			}
+		],
+		"control": {
+			"label": "Gleichförmige Geschwindigkeit",
+			"min": 0,
+			"max": 6,
+			"step": 1,
+			"initial": 1,
+			"target": 3,
+			"unit": "m/s"
+		}
+	},
+	"stopping": {
+		"title": "Reaktions- und Bremsweg getrennt sehen",
+		"limit": "Fahrschul-Faustformeln als überschlägiges Modell normaler Bremsung; keine Garantie oder sichere Abstandsvorgabe.",
+		"choices": [
+			{
+				"id": "sum",
+				"label": "Anhalteweg",
+				"detail": "Die Summe aus Reaktions- und Bremsweg beschreibt den gesamten Anhalteweg. Das Modell verwendet einfache Faustformeln mit der Geschwindigkeit in Kilometern pro Stunde."
+			},
+			{
+				"id": "reaction",
+				"label": "Reaktionsweg",
+				"detail": "Vor dem Bremsbeginn wird weiter Weg zurückgelegt. Die Faustformel lautet Geschwindigkeit durch zehn mal drei; Ablenkung kann reale Reaktionszeiten verlängern."
+			},
+			{
+				"id": "braking",
+				"label": "Bremsweg",
+				"detail": "Die Bremsweg-Faustformel quadriert Geschwindigkeit durch zehn. Doppeltes Tempo vervierfacht diesen Modellanteil; reale Fahrbahn und Bremsung können abweichen."
+			}
+		],
+		"control": {
+			"label": "Geschwindigkeit",
+			"min": 10,
+			"max": 90,
+			"step": 10,
+			"initial": 30,
+			"target": 50,
+			"unit": "km/h"
+		}
+	},
+	"inertia": {
+		"title": "Wagenstopp und Gepäck vergleichen",
+		"limit": "Vereinfachtes Bewegungsbild ohne Kraft- oder Verletzungsprognose. Echte Versuche nur mit kleinen ungefährlichen Körpern unter Anleitung.",
+		"choices": [
+			{
+				"id": "loose",
+				"label": "Loser Klotz",
+				"detail": "Beim Wagenstopp bewegt sich der lose Klotz zunächst weiter. Der Wagen wird gebremst, das unbefestigte Gepäck nicht automatisch im selben Augenblick."
+			},
+			{
+				"id": "secured",
+				"label": "Gesicherter Klotz",
+				"detail": "Eine geeignete Befestigung übt eine Kraft auf den Klotz aus und ändert seine Bewegung mit dem Wagen. Das veranschaulicht Gurte und Gepäcksicherung."
+			},
+			{
+				"id": "mass",
+				"label": "Masse vergleichen",
+				"detail": "Ein Körper mit größerer Masse besitzt größere Trägheit. Unter vergleichbaren Bedingungen lässt sich sein Bewegungszustand schwerer ändern."
+			}
+		]
+	},
+	"traffic": {
+		"title": "Verdeckte Gefahren mitdenken",
+		"limit": "Ausgewählte Situationen statt vollständiger Verkehrsregeln oder garantierter sicherer Meter-/Sekundenwerte.",
+		"choices": [
+			{
+				"id": "hidden",
+				"label": "Verdeckter Bereich",
+				"detail": "Ein parkendes Fahrzeug kann Menschen gegenseitig verdecken. Nicht sichtbar bedeutet nicht sicher abwesend; Beobachtung und angepasstes Verhalten bleiben nötig."
+			},
+			{
+				"id": "wet",
+				"label": "Nasse Fahrbahn",
+				"detail": "Nässe kann Sicht und Bremsbedingungen verschlechtern. Ein trockener Modellwert darf nicht ungeprüft auf jede reale Straße übertragen werden."
+			},
+			{
+				"id": "attention",
+				"label": "Aufmerksamkeit",
+				"detail": "Ablenkung kann das Erkennen von Gefahren verzögern. Vorausschauendes Verhalten berücksichtigt mögliche Fehler anderer statt allein auf die eigene Erwartung zu vertrauen."
+			}
+		]
+	}
+}

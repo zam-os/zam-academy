@@ -1,0 +1,910 @@
+[
+	{
+		"id": "c6-wasser-bedeutung",
+		"lb": 2,
+		"title": "Wasser als Lebensraum, Lebensmittel und Transportmittel",
+		"period": "NT6 LB 2.1 · Eigenschaften und Bedeutung von Wasser",
+		"intro": "Warum reicht es nicht, Wasser nur als Getränk zu betrachten?",
+		"paragraphs": [
+			"Wasser ist Lebensgrundlage für Menschen, Tiere und Pflanzen. Ein Gewässer bietet Lebensraum, Pflanzen nehmen Wasser über die Wurzeln auf und in unserem Körper werden Stoffe in wässrigen Flüssigkeiten transportiert. Viele Wassertiere nutzen gelösten Sauerstoff zum Atmen. Das ist Sauerstoff im Wasser und nicht derselbe Sachverhalt wie Sauerstoffatome im Wassermolekül.",
+			"Trinkwasser muss bestimmte Qualitätsanforderungen erfüllen. Klarheit und Geruch allein reichen nicht als Prüfung. Flüsse und Kanäle dienen auch als Verkehrswege; in Pflanzen und Körpern ermöglicht Wasser den Transport gelöster Stoffe. Diese verschiedenen Aufgaben können in Konflikt geraten, wenn ein Gewässer verschmutzt oder stark verbaut wird.",
+			"Beispiel: Ein klarer Bach kann Lebensraum für Fische und zugleich Transportweg gelöster Stoffe sein. Daraus folgt nicht, dass sein Wasser getrunken werden darf. Wenn du Reinigungsmittel und andere Schadstoffe vom Gewässer fernhältst, schützt du zugleich Lebewesen und die Wasserressourcen."
+		],
+		"takeaway": "Wasser ermöglicht Leben und Stofftransport. Klares Aussehen beweist keine Trinkwasserqualität.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Ein Bach sieht klar aus. Welche Aussage ist begründet?",
+			"answer": "Aus dem Aussehen allein lässt sich seine Trinkbarkeit nicht ableiten.",
+			"wrong": [
+				"Klares Wasser enthält grundsätzlich keine gelösten Stoffe.",
+				"Jedes klare Bachwasser ist geprüftes Trinkwasser."
+			],
+			"explanation": "Unsichtbare gelöste Stoffe und Krankheitserreger sind durch bloßes Hinsehen nicht ausgeschlossen."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Zusammenhänge zuordnen",
+			"instruction": "Ordne jeden Fall zu. Prüfe danach deine Entscheidungen.",
+			"categories": ["Lebensraum", "Lebensmittel", "Transportmittel"],
+			"entries": [
+				{
+					"text": "Ein Fisch lebt und atmet in einem See.",
+					"target": 0,
+					"feedback": "Das Gewässer ist der Lebensraum des Fisches."
+				},
+				{
+					"text": "Geprüftes Trinkwasser wird zum Trinken genutzt.",
+					"target": 1,
+					"feedback": "Hier geht es um Wasser als Lebensmittel."
+				},
+				{
+					"text": "Ein Schiff transportiert Güter auf einem Kanal.",
+					"target": 2,
+					"feedback": "Das Wasser ermöglicht einen Verkehrsweg."
+				},
+				{
+					"text": "Gelöste Mineralstoffe gelangen mit Wasser durch eine Pflanze.",
+					"target": 2,
+					"feedback": "Wasser transportiert hier gelöste Stoffe."
+				}
+			],
+			"conclusion": "Ein und derselbe Stoff erfüllt mehrere Aufgaben. Beurteile immer auch die Nutzung und die Qualität."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Nenne drei Aufgaben von Wasser und gib für jede ein eigenes Beispiel. Erkläre zusätzlich, warum du klares Bachwasser nicht einfach trinkst.",
+				"hints": [
+					"Wo leben Tiere im Wasser?",
+					"Was kann Wasser unsichtbar mit sich führen?"
+				],
+				"model": "Wasser ist Lebensraum, zum Beispiel für Fische im See. Geprüftes Trinkwasser dient als Lebensmittel. In einer Pflanze transportiert Wasser gelöste Mineralstoffe. Ein klarer Bach kann trotzdem unsichtbare Verunreinigungen enthalten; das Aussehen beweist keine Trinkbarkeit.",
+				"criteria": [
+					"Ich nenne drei verschiedene Aufgaben.",
+					"Ich verbinde jede Aufgabe mit einem Beispiel.",
+					"Ich erkläre die Grenze der Sichtprüfung."
+				]
+			},
+			"2": {
+				"prompt": "An einem Bach soll ein neuer Anlegeplatz entstehen. Nenne einen Nutzen, einen möglichen Konflikt und eine Frage, die vor der Entscheidung geklärt werden muss.",
+				"hints": [
+					"Welche Nutzung gewinnt?",
+					"Was kann sich für die Lebewesen verändern?"
+				],
+				"model": "Ein Anlegeplatz erleichtert den Transport oder die Freizeitnutzung. Der Bau kann Ufer und Lebensräume verändern. Vor einer Entscheidung muss untersucht werden, welche Arten dort leben und wie Bau und Nutzung das Gewässer belasten. Der Nutzen allein reicht als Begründung nicht aus.",
+				"criteria": [
+					"Ich benenne einen plausiblen Nutzen.",
+					"Ich erkläre einen konkreten Konflikt.",
+					"Ich formuliere eine prüfbare Frage."
+				]
+			}
+		},
+		"figures": [],
+		"lab": "waterUse"
+	},
+	{
+		"id": "c6-wasser-eigenschaften",
+		"lb": 2,
+		"title": "Einen Stoffsteckbrief für Wasser lesen",
+		"period": "NT6 LB 2.1 · Eigenschaften und Bedeutung von Wasser",
+		"intro": "Welche Angaben beschreiben Wasser eindeutig genug?",
+		"paragraphs": [
+			"Ein Stoffsteckbrief sammelt untersuchte Eigenschaften und nennt die Bedingungen. Reines Wasser ist bei 20 °C und normalem Luftdruck flüssig, farblos und geruchlos. Die Form des Gefäßes ist keine Stoffeigenschaft. Du beschreibst Eigenschaften fachsprachlich, statt nur „sieht normal aus“ zu notieren.",
+			"Bei normalem Luftdruck schmilzt reines Eis bei ungefähr 0 °C und Wasser siedet bei ungefähr 100 °C. Der Luftdruck ist wichtig: Im Gebirge kann der Siedepunkt niedriger sein. Weitere Eigenschaften sind Lösefähigkeit, elektrische Leitfähigkeit und Oberflächenspannung. Das sind verschiedene Prüfungen; eine einzige Beobachtung ersetzt keinen vollständigen Steckbrief.",
+			"Beispiel: „Probe A ist durchsichtig und bei 20 °C flüssig“ passt zu Wasser, aber auch zu anderen Flüssigkeiten. Erst mehrere passende Untersuchungen begründen die Zuordnung. In der App liest du Beispielbefunde. Reale Proben, Thermometer und das sichere Erwärmen werden im Unterricht unter Anleitung untersucht; du probierst eine unbekannte Probe nie."
+		],
+		"takeaway": "Ein Stoffsteckbrief nennt mehrere Eigenschaften und die Messbedingungen. Für Wasser gelten ungefähr 0 °C und 100 °C bei normalem Luftdruck.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Welche Angabe gehört mit ihren Bedingungen in den Wassersteckbrief?",
+			"answer": "Reines Wasser siedet bei normalem Luftdruck bei ungefähr 100 °C.",
+			"wrong": [
+				"Wasser siedet überall unabhängig vom Luftdruck gleich.",
+				"Wasser ist der Stoff, der immer in einem runden Glas steht."
+			],
+			"explanation": "Siedetemperatur ist eine Stoffeigenschaft unter festgelegten Bedingungen; die Gefäßform ist es nicht."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Zusammenhänge zuordnen",
+			"instruction": "Ordne jeden Fall zu. Prüfe danach deine Entscheidungen.",
+			"categories": [
+				"Stoffeigenschaft mit Bedingung",
+				"Keine ausreichende Stoffbestimmung"
+			],
+			"entries": [
+				{
+					"text": "Reines Wasser ist bei 20 °C und normalem Luftdruck flüssig.",
+					"target": 0,
+					"feedback": "Der Zustand wird mit Temperatur und Luftdruck angegeben."
+				},
+				{
+					"text": "Die Probe steht in einem hohen Glas.",
+					"target": 1,
+					"feedback": "Die Gefäßform beschreibt nicht den Stoff."
+				},
+				{
+					"text": "Reines Wasser schmilzt bei normalem Luftdruck bei ungefähr 0 °C.",
+					"target": 0,
+					"feedback": "Der Messwert nennt die nötige Bedingung."
+				},
+				{
+					"text": "Die Probe ist klar und muss deshalb Trinkwasser sein.",
+					"target": 1,
+					"feedback": "Aussehen allein reicht weder zur Stoffbestimmung noch zur Trinkwasserprüfung."
+				}
+			],
+			"conclusion": "Messwerte brauchen Bedingungen; ein Steckbrief braucht mehr als ein einzelnes Merkmal."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Ergänze einen Wassersteckbrief mit Zustand bei 20 °C, Schmelzpunkt und Siedepunkt. Nenne die gemeinsame Druckbedingung und eine Grenze der Bestimmung.",
+				"hints": [
+					"Welche Temperaturen gelten bei normalem Luftdruck?",
+					"Kannst du eine klare unbekannte Flüssigkeit allein durch Hinsehen bestimmen?"
+				],
+				"model": "Bei normalem Luftdruck ist reines Wasser bei 20 °C flüssig. Sein Schmelzpunkt liegt ungefähr bei 0 °C, sein Siedepunkt ungefähr bei 100 °C. Klarheit allein identifiziert eine unbekannte Flüssigkeit nicht und beweist auch keine Trinkwasserqualität.",
+				"criteria": [
+					"Ich nenne Zustand und beide Temperaturen richtig.",
+					"Ich nenne reines Wasser und normalen Luftdruck.",
+					"Ich erkläre die Grenze eines einzelnen Merkmals."
+				]
+			},
+			"2": {
+				"prompt": "Ein Protokoll vom Berg nennt für siedendes Wasser weniger als 100 °C. Eine Mitschülerin nennt die Messung deshalb falsch. Beurteile die Aussage und schlage eine Kontrolle vor.",
+				"hints": [
+					"Welche Bedingung verändert sich im Gebirge?",
+					"Was sollte das Protokoll zur Messung nennen?"
+				],
+				"model": "Die Messung muss nicht falsch sein. Im Gebirge kann der Luftdruck geringer und der Siedepunkt deshalb niedriger sein. Das Protokoll sollte Ort oder Luftdruck, Probe und Messgerät nennen. Eine Wiederholung mit einem geeigneten Thermometer hilft, einen Gerätefehler zu prüfen.",
+				"criteria": [
+					"Ich vermeide eine vorschnelle Fehlerbehauptung.",
+					"Ich erkläre den Einfluss des Luftdrucks qualitativ.",
+					"Ich schlage eine sinnvolle Kontrolle vor."
+				]
+			}
+		},
+		"figures": [],
+		"lab": "properties"
+	},
+	{
+		"id": "c6-loesen-leiten",
+		"lb": 2,
+		"title": "Löslichkeit und Leitfähigkeit unterscheiden",
+		"period": "NT6 LB 2.1 · Eigenschaften und Bedeutung von Wasser",
+		"intro": "Warum können zwei klare Lösungen elektrisch verschieden sein?",
+		"paragraphs": [
+			"Wasser löst manche Stoffe, andere kaum. Kleine Mengen Kochsalz und Zucker können sich vollständig verteilen; Sand bleibt als Körner sichtbar. Beim Lösen verschwindet der Stoff nicht. Eine Salzlösung ist ein Stoffgemisch, auch wenn du nur eine klare Flüssigkeit siehst. Ein einfacher Filter trennt Sandkörner, aber kein gelöstes Salz vom Wasser.",
+			"Sehr reines Wasser leitet elektrischen Strom nur sehr schlecht. Leitungswasser enthält bereits gelöste Stoffe und leitet besser. Kochsalzlösung leitet deutlich besser als sehr reines Wasser; eine aus reinem Wasser hergestellte Zuckerlösung leitet dagegen kaum. Du musst also Löslichkeit und Leitfähigkeit getrennt untersuchen. Elektrische Versuche werden nur mit freigegebenem Schulmaterial nach Unterweisung durchgeführt.",
+			"Beispiel: In zwei Gläsern sind gleich kleine Mengen Salz beziehungsweise Zucker gelöst. Beide Lösungen sind klar. Ein freigegebener Leitfähigkeitstest unterscheidet sie trotzdem: Salzlösung leitet deutlich besser. Die App veranschaulicht den Vergleich; die tatsächlichen Proben untersucht ihr im Unterricht. An einem Glas Wasser benutzt du niemals Geräte aus dem Stromnetz."
+		],
+		"takeaway": "Gelöst bedeutet nicht verschwunden. Löslichkeit und elektrische Leitfähigkeit sind unterschiedliche Stoffeigenschaften.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Salz und Zucker haben sich jeweils in reinem Wasser gelöst. Was folgt daraus?",
+			"answer": "Beide Lösungen können klar sein und trotzdem unterschiedlich gut leiten.",
+			"wrong": [
+				"Jeder gelöste Stoff macht Wasser gleich gut leitfähig.",
+				"Ein Papierfilter entfernt beide gelösten Stoffe vollständig."
+			],
+			"explanation": "Kochsalzlösung leitet gut, reine Zuckerlösung kaum; ein gewöhnlicher Filter hält die gelösten Stoffe nicht zurück."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Zusammenhänge zuordnen",
+			"instruction": "Ordne jeden Fall zu. Prüfe danach deine Entscheidungen.",
+			"categories": [
+				"Gelöst und klar",
+				"Nicht gelöst",
+				"Leitfähigkeit beurteilen"
+			],
+			"entries": [
+				{
+					"text": "Eine kleine Menge Kochsalz ist gleichmäßig im Wasser verteilt.",
+					"target": 0,
+					"feedback": "Der gelöste Stoff bleibt enthalten, auch wenn du keine Körner siehst."
+				},
+				{
+					"text": "Sandkörner setzen sich am Glasboden ab.",
+					"target": 1,
+					"feedback": "Die Sandkörner sind nicht gelöst."
+				},
+				{
+					"text": "Kleine Zuckermengen verteilen sich ohne sichtbare Körner im Wasser.",
+					"target": 0,
+					"feedback": "Eine Zuckerlösung kann klar aussehen."
+				},
+				{
+					"text": "Zwei klare Lösungen werden mit freigegebenem Schulmaterial elektrisch verglichen.",
+					"target": 2,
+					"feedback": "Die Leitfähigkeit wird gesondert untersucht."
+				}
+			],
+			"conclusion": "Du kannst das Aussehen, das Lösungsverhalten und die Leitfähigkeit nicht einfach gleichsetzen."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Vergleiche Salz, Zucker und Sand in Wasser. Erkläre für Salz und Zucker außerdem, was die Klarheit über die Leitfähigkeit aussagt.",
+				"hints": [
+					"Welche Probe bleibt als Körner sichtbar?",
+					"Welche beiden Lösungen sehen ähnlich aus, leiten aber verschieden?"
+				],
+				"model": "Kleine Mengen Salz und Zucker lösen sich, Sand bleibt als Körner sichtbar und kann sich absetzen. Salz- und Zuckerlösung können beide klar aussehen. Daraus folgt keine gleiche Leitfähigkeit: Kochsalzlösung leitet deutlich besser, reine Zuckerlösung kaum.",
+				"criteria": [
+					"Ich unterscheide gelöst und nicht gelöst.",
+					"Ich sage, dass gelöste Stoffe enthalten bleiben.",
+					"Ich trenne Klarheit und Leitfähigkeit."
+				]
+			},
+			"2": {
+				"prompt": "Eine Gruppe möchte Salz aus Salzwasser mit einem Kaffeefilter zurückgewinnen. Die klare Flüssigkeit nach dem Filtern nennt sie „salzfrei“. Prüfe die Begründung und erkläre ein geeignetes Trennprinzip.",
+				"hints": [
+					"Welche Teilchen hält ein Papierfilter zurück?",
+					"Was bleibt zurück, wenn das Wasser unter Anleitung verdampft?"
+				],
+				"model": "Der Kaffeefilter hält grobe feste Teilchen zurück, aber kein gelöstes Salz. Das klare Filtrat kann deshalb weiterhin Salz enthalten. Unter Anleitung kann Wasser verdampft werden; das Salz bleibt zurück. Das knüpft an die Trennverfahren aus NT5 an und ist kein Nachweis für Trinkwasser.",
+				"criteria": [
+					"Ich erkläre die Grenze der Filtration.",
+					"Ich nenne Verdampfen als geeignetes Prinzip.",
+					"Ich trenne Klarheit, Salzgehalt und Trinkwasserqualität."
+				]
+			}
+		},
+		"figures": [],
+		"lab": "solutions",
+		"review": "Wiederholung aus NT5: Reinstoff, Stoffgemisch, Filtrieren und Verdampfen."
+	},
+	{
+		"id": "c6-oberflaeche",
+		"lb": 2,
+		"title": "Oberflächenspannung: Tropfen und Wasserläufer",
+		"period": "NT6 LB 2.1 · Eigenschaften und Bedeutung von Wasser",
+		"intro": "Wie kann ein leichtes Tier auf Wasser stehen?",
+		"paragraphs": [
+			"Wasserteilchen ziehen einander an. An der Grenze zur Luft wirkt sich das als Oberflächenspannung aus: Die Wasseroberfläche versucht, möglichst klein zu werden. Deshalb sind kleine frei fallende Tropfen annähernd rund. Die oft benutzte Formulierung „Wasserhaut“ ist nur ein Bild; die Oberfläche ist keine feste Haut oder Folie.",
+			"Ein Wasserläufer nutzt Oberflächenspannung zusammen mit seinen wasserabweisenden Beinen. Die Oberfläche wird leicht eingedellt und kann das leichte Tier tragen. Spülmittel verringert die Oberflächenspannung. Form, Gewicht und Benetzung eines Gegenstands beeinflussen ebenfalls, ob er oben bleiben kann; nicht jeder leichte Gegenstand schwimmt deshalb auf dieselbe Weise.",
+			"Beispiel: Die Modellzeichnung zeigt einmal einen Wasserläufer auf Wasser und einmal die geschwächte Tragwirkung nach einer Verunreinigung durch Spülmittel. Daraus leitest du eine Alltagsentscheidung ab: Reinigungsmittel gehören nicht in einen Teich. Eine reale Beobachtung an sauberem Wasser plant ihr unter Anleitung im Unterricht, ohne Tiere mit Spülmittel zu gefährden."
+		],
+		"takeaway": "Oberflächenspannung entsteht durch die Anziehung der Wasserteilchen. Spülmittel verringert sie; die Oberfläche ist keine feste Haut.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Was verändert Spülmittel an der Wasseroberfläche?",
+			"answer": "Es verringert die Oberflächenspannung.",
+			"wrong": [
+				"Es verwandelt die Oberfläche in eine feste Folie.",
+				"Es macht Wasserteilchen dauerhaft größer."
+			],
+			"explanation": "Spülmittel verändert die Oberflächenspannung, nicht die Größe der Wasserteilchen."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Zusammenhänge zuordnen",
+			"instruction": "Ordne jeden Fall zu. Prüfe danach deine Entscheidungen.",
+			"categories": ["Passende Erklärung", "Unpassende Erklärung"],
+			"entries": [
+				{
+					"text": "Kleine Tropfen werden durch Oberflächenspannung rundlich.",
+					"target": 0,
+					"feedback": "Eine kleinere Oberfläche ist begünstigt."
+				},
+				{
+					"text": "Die Wasseroberfläche besteht aus einer festen Plastikhaut.",
+					"target": 1,
+					"feedback": "Die Oberfläche ist eine Grenzfläche und keine Folie."
+				},
+				{
+					"text": "Spülmittel kann die Tragwirkung der Oberfläche verringern.",
+					"target": 0,
+					"feedback": "Es senkt die Oberflächenspannung."
+				},
+				{
+					"text": "Jeder schwere Gegenstand wird von der Oberflächenspannung getragen.",
+					"target": 1,
+					"feedback": "Die Tragwirkung ist begrenzt und hängt auch von der Benetzung ab."
+				}
+			],
+			"conclusion": "Eine anschauliche Formulierung hilft nur, wenn du ihre Grenze kennst."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Erkläre mit dem Teilchenmodell einen rundlichen Tropfen und den Stand eines Wasserläufers. Beschreibe, was Spülmittel verändert.",
+				"hints": [
+					"Was tun Wasserteilchen miteinander?",
+					"Warum ist „Wasserhaut“ nur ein Vergleich?"
+				],
+				"model": "Wasserteilchen ziehen einander an. Dadurch entsteht Oberflächenspannung und kleine Tropfen werden rundlich. Ein leichter Wasserläufer nutzt diese Wirkung und seine wasserabweisenden Beine. Spülmittel verringert die Oberflächenspannung; die Oberfläche ist keine feste Haut.",
+				"criteria": [
+					"Ich nutze die Anziehung der Teilchen.",
+					"Ich erkläre Tropfen und Wasserläufer.",
+					"Ich nenne Wirkung und Modellgrenze richtig."
+				]
+			},
+			"2": {
+				"prompt": "Jemand schlägt vor, in einem Teich Spülmittel zu verteilen, um die Modellzeichnung zu testen. Beurteile den Vorschlag und formuliere eine bessere Untersuchungsidee.",
+				"hints": [
+					"Welche Lebewesen wären betroffen?",
+					"Kann ein kleiner beaufsichtigter Vergleich ohne Tiere dieselbe Frage klären?"
+				],
+				"model": "Der Vorschlag gefährdet das Gewässer und seine Lebewesen. Ein Teich ist kein Versuchsgefäß. Stattdessen kann die Lehrkraft einen kleinen Vergleich zur Oberflächenspannung mit freigegebenem Material ohne Tiere planen. Die Beobachtungen werden verglichen und die Flüssigkeiten sachgerecht entsorgt.",
+				"criteria": [
+					"Ich begründe den Gewässerschutz.",
+					"Ich formuliere eine beaufsichtigte Alternative ohne Tiere.",
+					"Ich beziehe die Alternative auf die Oberflächenspannung."
+				]
+			}
+		},
+		"figures": [],
+		"lab": "tension"
+	},
+	{
+		"id": "c6-teilchen-zustaende",
+		"lb": 2,
+		"title": "Eis, Wasser und Wasserdampf im Teilchenmodell",
+		"period": "NT6 LB 2.1 · Eigenschaften und Bedeutung von Wasser",
+		"intro": "Was verändert sich, wenn Wasser seinen Zustand ändert?",
+		"paragraphs": [
+			"Wasser kann fest, flüssig oder gasförmig sein. Im Eis schwingen die Teilchen um feste Plätze. In flüssigem Wasser bleiben sie nahe beieinander, können aber ihre Plätze wechseln. Im Wasserdampf bewegen sie sich frei mit großen Abständen. Die Teilchen selbst werden beim Erwärmen nicht größer; ihre Bewegung und Anordnung ändern sich.",
+			"Bei höherer Temperatur bewegen sich die Teilchen im Mittel stärker. Das Kugelteilchenmodell macht das anschaulich, zeigt aber weder echte Farben noch die tatsächlichen Größenverhältnisse. Bei Wasser ist das feste Gitter besonders offen. Flüssiges Wasser kann deshalb dichter sein als Eis; die allgemeine Regel „fest immer am dichtesten“ wäre hier falsch.",
+			"Beispiel: Ein Eiswürfel behält zunächst seine Form. Geschmolzenes Wasser passt sich einem Glas an, hat aber ungefähr ein festes Volumen. Wasserdampf kann einen verfügbaren Raum ausfüllen. Alle drei Zustände bestehen weiterhin aus Wasserteilchen. Im Temperaturmodell gelten normaler Luftdruck und vereinfachte Zustände; an den Übergangstemperaturen können zwei Zustände zusammen auftreten."
+		],
+		"takeaway": "Zustandswechsel verändern Bewegung, Abstand und Anordnung der Teilchen; die Wasserteilchen bleiben dieselben.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Was geschieht beim Erwärmen mit den Wasserteilchen?",
+			"answer": "Ihre Bewegung nimmt im Mittel zu; sie werden nicht einfach größer.",
+			"wrong": [
+				"Jedes Wasserteilchen wächst wie ein Luftballon.",
+				"Die Teilchen verwandeln sich beim Schmelzen in Sauerstoff."
+			],
+			"explanation": "Die Temperatur hängt mit der Teilchenbewegung zusammen; Schmelzen zerlegt die Wassermoleküle nicht."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Zusammenhänge zuordnen",
+			"instruction": "Ordne jeden Fall zu. Prüfe danach deine Entscheidungen.",
+			"categories": ["Fest", "Flüssig", "Gasförmig"],
+			"entries": [
+				{
+					"text": "Teilchen schwingen um feste Plätze im Eis.",
+					"target": 0,
+					"feedback": "Im festen Zustand gibt es eine geordnete Anordnung."
+				},
+				{
+					"text": "Teilchen wechseln ihre Plätze und bleiben nahe beieinander.",
+					"target": 1,
+					"feedback": "Das erklärt die Beweglichkeit einer Flüssigkeit."
+				},
+				{
+					"text": "Teilchen bewegen sich weit voneinander entfernt frei im Raum.",
+					"target": 2,
+					"feedback": "Das ist die vereinfachte Darstellung eines Gases."
+				},
+				{
+					"text": "Wasser passt sich der Form eines Becherglases an.",
+					"target": 1,
+					"feedback": "Eine Flüssigkeit besitzt keine eigene feste Form."
+				}
+			],
+			"conclusion": "Du erklärst sichtbare Eigenschaften durch eine unsichtbare Modellvorstellung und nennst deren Grenze."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Vergleiche die Teilchenanordnung von Eis, flüssigem Wasser und Wasserdampf. Erkläre die Form eines Eiswürfels und die Form von Wasser im Glas.",
+				"hints": [
+					"Wo bleiben die Teilchen an festen Plätzen?",
+					"In welchem Zustand wechseln sie die Plätze?"
+				],
+				"model": "Im Eis schwingen Teilchen um feste Plätze; der Eiswürfel behält seine Form. In flüssigem Wasser liegen die Teilchen nahe beieinander und wechseln die Plätze; es passt sich dem Glas an. Im Wasserdampf liegen sie weit auseinander und bewegen sich frei. Die Teilchen selbst werden nicht größer.",
+				"criteria": [
+					"Ich beschreibe alle drei Zustände.",
+					"Ich verbinde Anordnung und sichtbare Eigenschaft.",
+					"Ich vermeide die Vorstellung wachsender Teilchen."
+				]
+			},
+			"2": {
+				"prompt": "Eine Zeichnung zeigt in heißem Wasser doppelt so große Kugeln wie in kaltem Wasser. Die Bildunterschrift lautet: „Wärme vergrößert die Moleküle.“ Verbessere Zeichnung und Erklärung.",
+				"hints": [
+					"Was kann sich statt der Kugelgröße ändern?",
+					"Wie zeigst du Bewegung ohne zusätzliche Atome zu erfinden?"
+				],
+				"model": "Die Kugeln sollten dieselbe Größe behalten. Bewegungspfeile können stärkere Bewegung bei höherer Temperatur zeigen. Je nach Zustand verändern sich auch Anordnung und Abstände. Die Bildunterschrift sollte sagen, dass Teilchen sich im Mittel stärker bewegen, nicht dass die Moleküle selbst wachsen.",
+				"criteria": [
+					"Ich korrigiere die Kugelgröße.",
+					"Ich schlage eine passende Darstellung der Bewegung vor.",
+					"Ich benenne eine Grenze der Modellzeichnung."
+				]
+			}
+		},
+		"figures": [],
+		"lab": "particles",
+		"review": "Wiederholung aus NT5: Aggregatzustände; jetzt gezielt am Wasser und mit Modellkritik."
+	},
+	{
+		"id": "c6-zustandswechsel",
+		"lb": 2,
+		"title": "Schmelzen, Erstarren, Verdampfen und Kondensieren",
+		"period": "NT6 LB 2.1 · Eigenschaften und Bedeutung von Wasser",
+		"intro": "Warum wird eine kalte Flasche außen nass?",
+		"paragraphs": [
+			"Schmelzen bedeutet fest zu flüssig; Erstarren bedeutet flüssig zu fest. Verdampfen führt von flüssig zu gasförmig, Kondensieren von gasförmig zu flüssig. Verdunsten ist Verdampfen an der Oberfläche und geschieht auch unterhalb des Siedepunkts. Beim Sieden entstehen Dampfblasen in der ganzen Flüssigkeit. Ein Zustandswechsel bildet keine neue Stoffart.",
+			"Wasserdampf ist unsichtbares gasförmiges Wasser. Die weiße Wolke über heißem Wasser besteht schon aus kleinen flüssigen Tröpfchen, die durch Kondensation entstehen. Auch Nebel besteht aus Tröpfchen. Beim Abkühlen bewegen sich Wasserteilchen im Mittel weniger stark; beim Kondensieren kommen sie enger zusammen. Die Wassermoleküle werden dabei nicht in Wasserstoff und Sauerstoff zerlegt.",
+			"Beispiel: Eine kalte, geschlossene Flasche wird außen nass. Wasserdampf aus der umgebenden Luft kondensiert an der kalten Oberfläche zu Tröpfchen. Das Wasser muss nicht durch die Flaschenwand gekommen sein. Beim Schmelzen von reinem Eis kann die Temperatur bei normalem Luftdruck ungefähr 0 °C bleiben, solange Eis und Wasser gemeinsam vorliegen."
+		],
+		"takeaway": "Beim Zustandswechsel bleibt Wasser Wasser. Wasserdampf ist unsichtbar; sichtbarer Nebel besteht aus kleinen flüssigen Tröpfchen.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Eine geschlossene kalte Flasche wird außen nass. Welche Erklärung passt?",
+			"answer": "Wasserdampf aus der Luft kondensiert an der kalten Oberfläche.",
+			"wrong": [
+				"Wassermoleküle zerfallen außen zu Wasserstoff und Sauerstoff.",
+				"Jede Flasche lässt flüssiges Wasser durch ihre Wand fließen."
+			],
+			"explanation": "Gasförmiges Wasser aus der Luft wird an der kalten Oberfläche flüssig; dafür muss die Flasche nicht undicht sein."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Zusammenhänge zuordnen",
+			"instruction": "Ordne jeden Fall zu. Prüfe danach deine Entscheidungen.",
+			"categories": ["Schmelzen", "Erstarren", "Verdampfen", "Kondensieren"],
+			"entries": [
+				{
+					"text": "Ein Eiswürfel wird zu flüssigem Wasser.",
+					"target": 0,
+					"feedback": "Fest wird flüssig: Schmelzen."
+				},
+				{
+					"text": "Wasser bildet im Gefrierfach Eis.",
+					"target": 1,
+					"feedback": "Flüssig wird fest: Erstarren."
+				},
+				{
+					"text": "Eine Pfütze wird ohne Kochen allmählich kleiner.",
+					"target": 2,
+					"feedback": "Wasser verdunstet an der Oberfläche und wird gasförmig."
+				},
+				{
+					"text": "An einem kalten Spiegel bilden sich Wassertröpfchen.",
+					"target": 3,
+					"feedback": "Wasserdampf wird flüssig: Kondensieren."
+				}
+			],
+			"conclusion": "Benenne Ausgangs- und Endzustand. So kannst du die vier Übergänge sicher unterscheiden."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Beschreibe die vier Zustandswechsel mit Ausgangs- und Endzustand. Erkläre dann die Tröpfchen an einer kalten Flasche.",
+				"hints": [
+					"Welche Richtung hat jeder Übergang?",
+					"Woher stammt das Wasser außen an einer geschlossenen Flasche?"
+				],
+				"model": "Schmelzen führt von fest zu flüssig, Erstarren umgekehrt. Verdampfen führt von flüssig zu gasförmig, Kondensieren umgekehrt. Außen an der kalten Flasche kondensiert Wasserdampf aus der Luft. Dabei entsteht flüssiges Wasser, aber kein neuer Stoff.",
+				"criteria": [
+					"Ich nenne alle vier Richtungen richtig.",
+					"Ich erkläre die Herkunft der Flaschentröpfchen.",
+					"Ich unterscheide Zustandswechsel und Stoffumwandlung."
+				]
+			},
+			"2": {
+				"prompt": "Ein Kind sagt: „Über dem Topf sehe ich Wasserdampf, und Wäsche trocknet nur bei 100 °C.“ Korrigiere beide Aussagen mit dem Teilchenmodell.",
+				"hints": [
+					"Woraus besteht die sichtbare weiße Wolke?",
+					"Kann Verdunsten unterhalb des Siedepunkts stattfinden?"
+				],
+				"model": "Unsichtbarer Wasserdampf kann zu kleinen flüssigen Tröpfchen kondensieren; diese bilden die sichtbare weiße Wolke. Wäsche trocknet durch Verdunsten an der Oberfläche auch unterhalb von 100 °C. Wasserteilchen verlassen dabei die Flüssigkeit, ohne in andere Stoffe zerlegt zu werden.",
+				"criteria": [
+					"Ich unterscheide unsichtbaren Dampf und sichtbare Tröpfchen.",
+					"Ich erkläre Verdunsten unterhalb des Siedepunkts.",
+					"Ich behalte die Wasserteilchen als dieselbe Stoffart bei."
+				]
+			}
+		},
+		"figures": [],
+		"lab": "particles"
+	},
+	{
+		"id": "c6-wasseranomalie",
+		"lb": 2,
+		"title": "Die Anomalie des Wassers verstehen",
+		"period": "NT6 LB 2.1 · Eigenschaften und Bedeutung von Wasser",
+		"intro": "Warum liegt Eis auf dem See statt am Grund?",
+		"paragraphs": [
+			"Dichte beschreibt, wie viel Masse in einem bestimmten Volumen steckt. Bei gleicher Masse bedeutet ein größeres Volumen eine kleinere Dichte. Flüssiges Wasser hat bei ungefähr 4 °C seine größte Dichte. Wenn es von 4 °C weiter bis zum Gefrierpunkt abkühlt, dehnt es sich wieder aus. Dieses besondere Verhalten heißt Anomalie des Wassers.",
+			"Beim Gefrieren bildet sich ein offenes Teilchengitter. Eis hat deshalb eine geringere Dichte als flüssiges Wasser und schwimmt darauf. In einem ausreichend tiefen See kann im Winter unten Wasser um 4 °C liegen, während sich oben eine Eisdecke bildet. Die Eisdecke verringert den weiteren Wärmeverlust. Ein flacher Teich kann trotzdem durchfrieren; aus dem Modell folgt nie, dass Eis sicher begehbar wäre.",
+			"Beispiel: Wasser gelangt in eine kleine Felsspalte. Gefriert es, nimmt es mehr Raum ein und kann die Spalte erweitern. Wiederholtes Gefrieren trägt zur Frostsprengung bei. Auch eine volle geschlossene Wasserflasche kann beim Gefrieren beschädigt werden. In der Zeichnung sind die Volumenunterschiede absichtlich übertrieben, damit du das Prinzip erkennst."
+		],
+		"takeaway": "Wasser hat bei ungefähr 4 °C seine größte Dichte. Eis benötigt bei gleicher Masse mehr Platz und schwimmt auf flüssigem Wasser.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Warum schwimmt Eis auf flüssigem Wasser?",
+			"answer": "Eis hat eine geringere Dichte als flüssiges Wasser.",
+			"wrong": [
+				"Eis ist immer wärmer als das Wasser darunter.",
+				"Eis enthält keine Wasserteilchen mehr."
+			],
+			"explanation": "Das offene Gitter nimmt bei gleicher Masse mehr Volumen ein und macht die Dichte des Eises geringer."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Zusammenhänge zuordnen",
+			"instruction": "Ordne jeden Fall zu. Prüfe danach deine Entscheidungen.",
+			"categories": ["Passende Folgerung", "Unpassende Folgerung"],
+			"entries": [
+				{
+					"text": "Wasser hat bei ungefähr 4 °C seine größte Dichte.",
+					"target": 0,
+					"feedback": "Diese Dichtebesonderheit gehört zur Anomalie."
+				},
+				{
+					"text": "Ein tiefer See muss von unten nach oben vollständig zufrieren.",
+					"target": 1,
+					"feedback": "Weniger dichtes Eis bildet sich typischerweise oben."
+				},
+				{
+					"text": "Gefrierendes Wasser kann eine Felsspalte erweitern.",
+					"target": 0,
+					"feedback": "Die Volumenzunahme kann Frostsprengung auslösen."
+				},
+				{
+					"text": "Jede Eisdecke trägt einen Menschen sicher.",
+					"target": 1,
+					"feedback": "Die Anomalie sagt nichts über sichere Tragfähigkeit einer Eisdecke."
+				}
+			],
+			"conclusion": "Dichte ist eine Stoffeigenschaft unter Bedingungen. Das See-Modell ist keine Sicherheitsprüfung einer Eisdecke."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Erkläre, warum Eis schwimmt, und beschreibe die mögliche Temperaturschichtung eines tiefen Sees im Winter.",
+				"hints": [
+					"Welche Temperatur hat flüssiges Wasser mit größter Dichte?",
+					"Wo liegt das weniger dichte Eis?"
+				],
+				"model": "Flüssiges Wasser hat bei ungefähr 4 °C die größte Dichte. Beim Gefrieren entsteht ein offenes Gitter; Eis braucht bei gleicher Masse mehr Platz und ist weniger dicht. Es schwimmt oben. In einem tiefen See kann darunter Wasser um 4 °C bleiben; flache Gewässer können trotzdem durchfrieren.",
+				"criteria": [
+					"Ich nenne das Dichtemaximum bei ungefähr 4 °C.",
+					"Ich verbinde Gitter, Volumen und Dichte.",
+					"Ich beschreibe den See mit einer passenden Einschränkung."
+				]
+			},
+			"2": {
+				"prompt": "Eine vollständig gefüllte geschlossene Wasserflasche wird eingefroren und verformt sich. Erkläre den Zusammenhang und nenne eine Grenze des Vergleichs mit einem See.",
+				"hints": [
+					"Was verändert sich beim Gefrieren bei gleicher Wassermasse?",
+					"Warum ist ein See kein geschlossenes Flaschengefäß?"
+				],
+				"model": "Beim Gefrieren nimmt Wasser mehr Volumen ein. In einer vollen geschlossenen Flasche kann dadurch Druck auf das Gefäß entstehen und es verformen oder beschädigen. Ein See ist kein geschlossenes starres Gefäß; das Eis kann oben liegen. Der Vergleich erklärt die Volumenzunahme, aber nicht alle Vorgänge im See.",
+				"criteria": [
+					"Ich erkläre die Volumenzunahme.",
+					"Ich beziehe sie auf das geschlossene Gefäß.",
+					"Ich benenne eine konkrete Vergleichsgrenze."
+				]
+			}
+		},
+		"figures": [],
+		"lab": "anomaly"
+	},
+	{
+		"id": "c6-molekuele",
+		"lb": 2,
+		"title": "Atome, Elemente, Verbindungen und Moleküle",
+		"period": "NT6 LB 2.1 · Eigenschaften und Bedeutung von Wasser",
+		"intro": "Was verrät dir die kleine Zahl in H₂O?",
+		"paragraphs": [
+			"Atome sind Bausteine der Stoffe. Ein Element enthält nur eine Atomsorte. Ein Molekül besteht aus miteinander verbundenen Atomen. Ein Molekül kann zu einem Element gehören: Wasserstoffmoleküle bestehen aus jeweils zwei Wasserstoffatomen, Sauerstoffmoleküle aus jeweils zwei Sauerstoffatomen. „Molekül“ und „Verbindung“ bedeuten also nicht dasselbe.",
+			"Eine Verbindung enthält verschiedene Atomsorten in einer festen Zusammensetzung. Ein Wassermolekül enthält zwei Wasserstoffatome und ein Sauerstoffatom. Die Formel H₂O zeigt diese Zusammensetzung: H steht für Wasserstoff, O für Sauerstoff und die tiefgestellte 2 gehört nur zum H. Ohne Zahl ist ein Atom der betreffenden Sorte gemeint. H₂ und O₂ bezeichnen die zweiatomigen Moleküle der Elemente.",
+			"Beispiel: Zwei Wassermoleküle enthalten insgesamt vier Wasserstoffatome und zwei Sauerstoffatome. Eine große Anzahl vor einer Formel zählt ganze Moleküle; eine tiefgestellte Zahl zählt Atome im einzelnen Molekül. Rote und helle Kugeln sind nur Modellfarben. Wasser ist als Verbindung ein Reinstoff und kein bloßes Gemisch aus Wasserstoff- und Sauerstoffgas."
+		],
+		"takeaway": "H₂O steht für ein Molekül aus zwei H-Atomen und einem O-Atom. Ein Element enthält eine Atomsorte, eine Verbindung mehrere.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Ein Molekül besteht aus zwei Sauerstoffatomen. Wie ordnest du es ein?",
+			"answer": "Es gehört zum Element Sauerstoff, weil nur eine Atomsorte vorkommt.",
+			"wrong": [
+				"Es ist automatisch eine Verbindung, weil es zwei Atome enthält.",
+				"Es ist ein Wassermolekül, weil jedes Molekül Wasser ist."
+			],
+			"explanation": "Mehrere Atome machen noch keine Verbindung; entscheidend sind verschiedene Atomsorten."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Zusammenhänge zuordnen",
+			"instruction": "Ordne jeden Fall zu. Prüfe danach deine Entscheidungen.",
+			"categories": ["Element", "Verbindung", "Modellkennzeichnung"],
+			"entries": [
+				{
+					"text": "Ein Wasserstoffmolekül enthält zwei H-Atome.",
+					"target": 0,
+					"feedback": "Es enthält nur eine Atomsorte und gehört zum Element Wasserstoff."
+				},
+				{
+					"text": "Ein Wassermolekül enthält zwei H-Atome und ein O-Atom.",
+					"target": 1,
+					"feedback": "Verschiedene Atomsorten sind in fester Zusammensetzung verbunden."
+				},
+				{
+					"text": "Die rote Kugelfarbe steht in dieser Zeichnung für O.",
+					"target": 2,
+					"feedback": "Die Farbe ist eine Konvention des Modells."
+				},
+				{
+					"text": "Ein Sauerstoffmolekül enthält zwei O-Atome.",
+					"target": 0,
+					"feedback": "Auch dieses Molekül enthält nur eine Atomsorte."
+				}
+			],
+			"conclusion": "Zähle erst die Atomsorten und dann die Atome. Die Zahl der Atome allein entscheidet nicht über Element oder Verbindung."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Lies die Formeln H₂O, H₂ und O₂. Nenne jeweils die Atome pro Molekül und ordne Element oder Verbindung zu.",
+				"hints": [
+					"Zu welchem Buchstaben gehört die tiefgestellte Zahl?",
+					"Wie viele verschiedene Atomsorten sind enthalten?"
+				],
+				"model": "H₂O enthält zwei Wasserstoffatome und ein Sauerstoffatom und ist eine Verbindung. H₂ enthält zwei Wasserstoffatome, O₂ zwei Sauerstoffatome; beide gehören zu Elementen. Die kleine Zahl gehört nur zum davorstehenden Elementsymbol, und ein fehlender Index bedeutet ein Atom.",
+				"criteria": [
+					"Ich zähle die Atome aller drei Moleküle richtig.",
+					"Ich unterscheide Element und Verbindung.",
+					"Ich erkläre die Bedeutung des Index."
+				]
+			},
+			"2": {
+				"prompt": "Jemand sagt: „Wasser ist ein Gemisch aus Wasserstoff- und Sauerstoffgas. Beim Erwärmen trennen sich diese Gase einfach.“ Prüfe beide Teile der Behauptung.",
+				"hints": [
+					"Sind im Wassermolekül verschiedene Gase nebeneinander vorhanden?",
+					"Was bleibt bei einem bloßen Zustandswechsel erhalten?"
+				],
+				"model": "Wasser ist eine Verbindung mit fest miteinander verbundenen H- und O-Atomen, kein Gemisch der beiden Gase. Beim bloßen Erwärmen und Verdampfen bleiben Wassermoleküle erhalten. Für die Zerlegung in Wasserstoff und Sauerstoff ist eine chemische Reaktion wie die Elektrolyse mit Energiezufuhr nötig.",
+				"criteria": [
+					"Ich ordne Wasser als Verbindung ein.",
+					"Ich trenne Zustandswechsel und chemische Zerlegung.",
+					"Ich nenne Energiezufuhr und Reaktion als Unterschied."
+				]
+			}
+		},
+		"figures": [],
+		"lab": "molecules"
+	},
+	{
+		"id": "c6-wasserzerlegung",
+		"lb": 2,
+		"title": "Wasserzerlegung: Stoffumwandlung statt Verdampfen",
+		"period": "NT6 LB 2.1 · Eigenschaften und Bedeutung von Wasser",
+		"intro": "Warum entstehen bei der Elektrolyse zwei verschiedene Gase?",
+		"paragraphs": [
+			"Bei der elektrolytischen Wasserzerlegung wird elektrische Energie zugeführt. Wasser wird chemisch in Wasserstoff und Sauerstoff umgewandelt. Diese Produkte besitzen andere Eigenschaften als Wasser. Beim Verdampfen entsteht dagegen weiterhin Wasser im gasförmigen Zustand. Die Wasserzerlegung ist deshalb eine Stoffumwandlung und kein einfacher Zustandswechsel.",
+			"Im Teilchenmodell werden Atome neu verbunden und nicht erschaffen oder vernichtet. Aus zwei Wassermolekülen können zwei Wasserstoffmoleküle und ein Sauerstoffmolekül entstehen. Vorher und nachher sind vier H-Atome und zwei O-Atome vorhanden. Bei gleichen Messbedingungen ist das gebildete Gasvolumen von Wasserstoff doppelt so groß wie das von Sauerstoff. Das ist ein Volumenverhältnis, keine Aussage, dass Wasserstoff doppelt so viel Masse hätte.",
+			"Beispiel: Werden bei gleichen Bedingungen 20 ml Wasserstoff beobachtet, passen dazu 10 ml Sauerstoff. Das Verhältnis lautet 2 : 1. Die App zeigt nur die Auswertung des Modells. Den tatsächlichen Versuchsaufbau und die Nachweise führt ihr ausschließlich unter fachkundiger Aufsicht im Unterricht durch; das Modell ist keine Bauanleitung."
+		],
+		"takeaway": "Elektrolyse bildet aus Wasser neue Stoffe mit Energiezufuhr. Atome bleiben erhalten; die Gasvolumen stehen bei gleichen Bedingungen im Verhältnis 2 : 1.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Bei der Wasserzerlegung entstehen unter gleichen Bedingungen 20 ml Wasserstoff. Welches Sauerstoffvolumen passt?",
+			"answer": "10 ml Sauerstoff.",
+			"wrong": ["20 ml Sauerstoff.", "40 ml Sauerstoff."],
+			"explanation": "Das Gasvolumen von Wasserstoff ist doppelt so groß: 20 ml : 10 ml = 2 : 1."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Zusammenhänge zuordnen",
+			"instruction": "Ordne jeden Fall zu. Prüfe danach deine Entscheidungen.",
+			"categories": ["Zustandswechsel", "Chemische Stoffumwandlung"],
+			"entries": [
+				{
+					"text": "Eis schmilzt zu flüssigem Wasser.",
+					"target": 0,
+					"feedback": "Der Stoff bleibt Wasser."
+				},
+				{
+					"text": "Wasser wird durch Elektrolyse zu Wasserstoff und Sauerstoff.",
+					"target": 1,
+					"feedback": "Es entstehen zwei neue Stoffe."
+				},
+				{
+					"text": "Unsichtbarer Wasserdampf kondensiert zu Tröpfchen.",
+					"target": 0,
+					"feedback": "Es ändert sich der Zustand, nicht die Stoffart."
+				},
+				{
+					"text": "Wasserstoff reagiert mit Sauerstoff zu Wasser.",
+					"target": 1,
+					"feedback": "Die Atome werden zu Wassermolekülen neu verbunden."
+				}
+			],
+			"conclusion": "Der entscheidende Unterschied ist die Stoffart: gleich beim Zustandswechsel, neu bei der chemischen Reaktion."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Erkläre die Wasserzerlegung mit zwei Wassermolekülen. Zähle die Atome vorher und nachher und deute das Gasvolumenverhältnis.",
+				"hints": [
+					"Wie viele H- und O-Atome stecken in zwei Wassermolekülen?",
+					"Welches Gas besitzt bei gleichen Bedingungen das größere Volumen?"
+				],
+				"model": "Zwei Wassermoleküle enthalten vier H-Atome und zwei O-Atome. Daraus entstehen zwei Wasserstoffmoleküle und ein Sauerstoffmolekül. Die Atome bleiben erhalten und werden neu verbunden. Bei gleichen Bedingungen entsteht doppelt so viel Gasvolumen Wasserstoff wie Sauerstoff; elektrische Energie wird zugeführt.",
+				"criteria": [
+					"Ich zähle die Atome auf beiden Seiten richtig.",
+					"Ich nenne die neuen Stoffe und die Energiezufuhr.",
+					"Ich deute 2 : 1 als Gasvolumenverhältnis."
+				]
+			},
+			"2": {
+				"prompt": "Ein Versuch zeigt unter gleichen Bedingungen 30 ml eines Gases und 15 ml des anderen. Eine Schülerin erklärt: „Das größere Volumen allein beweist Wasserstoff, und dabei wurden neue Atome erzeugt.“ Beurteile beide Aussagen.",
+				"hints": [
+					"Wozu dienen die Gasnachweise zusätzlich zum Mengenvergleich?",
+					"Wie erklärt das Teilchenmodell die Erhaltung der Atome?"
+				],
+				"model": "Das Verhältnis 30 ml : 15 ml passt zu Wasserstoff und Sauerstoff im Verhältnis 2 : 1. Die Stoffe werden zusätzlich durch geeignete Gasnachweise identifiziert; das Volumen allein ist kein sicherer Stoffnachweis. Es entstehen keine neuen Atome, sondern neue Verbindungen der vorhandenen Atome.",
+				"criteria": [
+					"Ich rechne das Verhältnis richtig.",
+					"Ich unterscheide Mengenverhältnis und Stoffnachweis.",
+					"Ich erkläre die Erhaltung der Atome."
+				]
+			}
+		},
+		"figures": [],
+		"lab": "electrolysis"
+	},
+	{
+		"id": "c6-gasnachweise",
+		"lb": 2,
+		"title": "Wasserstoff und Sauerstoff nachweisen",
+		"period": "NT6 LB 2.1 · Eigenschaften und Bedeutung von Wasser",
+		"intro": "Was unterscheidet zwei farblose Gase?",
+		"paragraphs": [
+			"Wasserstoff und Sauerstoff sind farb- und geruchlos. Du kannst sie deshalb nicht allein mit den Augen unterscheiden. Wasserstoff ist brennbar. Sauerstoff ist selbst nicht brennbar, unterstützt aber Verbrennungen. Die Begriffe brennbar und brandfördernd beschreiben unterschiedliche Eigenschaften.",
+			"Bei der fachgerecht durchgeführten Knallgasprobe kann ein charakteristisches Geräusch auf Wasserstoff hinweisen. Bei der Glimmspanprobe flammt ein glimmender Holzspan in Sauerstoff wieder auf. Du lernst hier, eine gegebene Beobachtung auszuwerten. Gasnachweise und Wasserzerlegung sind keine Heimversuche; sie gehören ausschließlich in den Unterricht unter fachkundiger Aufsicht.",
+			"Beispiel: Nach einer beaufsichtigten Wasserzerlegung wird beim einen Gas eine positive Knallgasprobe beobachtet, beim anderen ein wieder aufflammender Glimmspan. Die erste Beobachtung passt zu Wasserstoff, die zweite zu Sauerstoff. Ein fehlgeschlagener Nachweis nennt nicht automatisch ein anderes Gas; auch der Versuch oder die Probe kann ungeeignet gewesen sein."
+		],
+		"takeaway": "Knallgasprobe: Wasserstoff. Glimmspanprobe: Sauerstoff. Wasserstoff brennt; Sauerstoff unterstützt Verbrennung und brennt nicht selbst.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Ein glimmender Holzspan flammt bei einem fachgerecht durchgeführten Nachweis wieder auf. Welches Gas passt?",
+			"answer": "Sauerstoff.",
+			"wrong": [
+				"Wasserstoff, weil jedes Gas selbst brennt.",
+				"Wasserdampf, weil jeder farblose Stoff gleich reagiert."
+			],
+			"explanation": "Das Wiederaufflammen ist der positive Befund der Glimmspanprobe für Sauerstoff."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Zusammenhänge zuordnen",
+			"instruction": "Ordne jeden Fall zu. Prüfe danach deine Entscheidungen.",
+			"categories": ["Wasserstoff", "Sauerstoff", "Kein eindeutiger Nachweis"],
+			"entries": [
+				{
+					"text": "Eine fachgerecht positive Knallgasprobe wird beobachtet.",
+					"target": 0,
+					"feedback": "Die Beobachtung passt zum Nachweis von Wasserstoff."
+				},
+				{
+					"text": "Ein glimmender Holzspan flammt wieder auf.",
+					"target": 1,
+					"feedback": "Das ist der positive Befund der Glimmspanprobe."
+				},
+				{
+					"text": "Das Gas sieht farblos aus.",
+					"target": 2,
+					"feedback": "Beide Gase sind farblos; das unterscheidet sie nicht."
+				},
+				{
+					"text": "Das Gas unterstützt Verbrennungen und ist selbst nicht brennbar.",
+					"target": 1,
+					"feedback": "Das beschreibt die brandfördernde Wirkung von Sauerstoff."
+				}
+			],
+			"conclusion": "Verknüpfe eine passende Probe mit ihrer Beobachtung. Die Farbe allein reicht nicht."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Ordne Wasserstoff und Sauerstoff jeweils einen Nachweis und eine Verbrennungseigenschaft zu. Nenne die Bedingung, unter der diese Proben stattfinden.",
+				"hints": [
+					"Welcher Span flammt wieder auf?",
+					"Welches Gas ist brennbar, welches unterstützt Verbrennung?"
+				],
+				"model": "Wasserstoff wird mit der fachgerecht durchgeführten Knallgasprobe nachgewiesen und ist brennbar. Sauerstoff lässt einen glimmenden Holzspan wieder aufflammen. Er ist selbst nicht brennbar, unterstützt aber Verbrennungen. Beide Proben finden nur im Unterricht unter fachkundiger Aufsicht statt.",
+				"criteria": [
+					"Ich ordne beide Nachweise richtig zu.",
+					"Ich unterscheide brennbar und brandfördernd.",
+					"Ich nenne die fachkundige Aufsicht."
+				]
+			},
+			"2": {
+				"prompt": "In einem Protokoll steht nur: „Das Gas war farblos; ein Holzspan ging aus; also war es Wasserstoff.“ Beurteile den Schluss und sage, welche Art von Beleg fehlt.",
+				"hints": [
+					"Ist Farblosigkeit für Wasserstoff eindeutig?",
+					"Ist ein ausgegangener Span eine positive Knallgasprobe?"
+				],
+				"model": "Der Schluss ist nicht belegt. Wasserstoff und Sauerstoff sind beide farblos, und ein ausgegangener Span ist keine positive Knallgasprobe. Es fehlt ein geeigneter, unter fachkundiger Aufsicht erhobener positiver Nachweis. Ein negativer Befund identifiziert das unbekannte Gas nicht automatisch.",
+				"criteria": [
+					"Ich benenne die fehlende Eindeutigkeit der Farbe.",
+					"Ich erkläre die Grenze des negativen Befunds.",
+					"Ich fordere einen passenden beaufsichtigten Nachweis."
+				]
+			}
+		},
+		"figures": [],
+		"lab": "gases"
+	},
+	{
+		"id": "c6-wasserkraft",
+		"lb": 2,
+		"title": "Wasser als erneuerbare Energiequelle",
+		"period": "NT6 LB 2.1 · Eigenschaften und Bedeutung von Wasser",
+		"intro": "Wie wird aus fließendem Wasser elektrische Energie?",
+		"paragraphs": [
+			"Höher gelegenes Wasser besitzt Lageenergie. Beim Abwärtsfließen wird daraus Bewegungsenergie. Das Wasser setzt eine Turbine in Drehung; die Turbine treibt einen Generator an. Dieser wandelt mechanische in elektrische Energie um. Ein Teil der Energie wird als Wärme an die Umgebung abgegeben. Energie entsteht nicht aus dem Nichts.",
+			"Wasserkraft gilt als erneuerbar, weil der natürliche Wasserkreislauf den Wasserfluss immer wieder bereitstellt. Dieser Kreislauf wird überwiegend von der Sonne angetrieben. Das Wasser wird im Kraftwerk nicht als Brennstoff verbraucht und nicht in Wasserstoff zerlegt. Die mechanische Nutzung der Strömung ist ein anderer Vorgang als Elektrolyse.",
+			"Beispiel: Wasser fließt aus einem höher gelegenen Speicher durch eine Turbine und weiter in den Fluss. Der Generator liefert Strom. Ein Wehr kann aber Wanderwege von Fischen unterbrechen und Lebensräume verändern. Fischaufstiegshilfen und genügend Restwasser können Folgen mindern; erneuerbar bedeutet nicht ohne Umwelteingriff. Diese Lektion ergänzt die chemische Perspektive um den im selben Lehrplanabschnitt geforderten Energieweg."
+		],
+		"takeaway": "Lageenergie → Bewegungsenergie → mechanische Energie der Turbine → elektrische Energie. Erneuerbar bedeutet nicht folgenlos für Gewässer.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Welche Aufgabe hat der Generator im Wasserkraftwerk?",
+			"answer": "Er wandelt mechanische in elektrische Energie um.",
+			"wrong": [
+				"Er zerlegt Wasser in Wasserstoff und Sauerstoff.",
+				"Er erzeugt Energie ohne Energiezufuhr."
+			],
+			"explanation": "Die Turbine treibt den Generator an; dieser wandelt Energie um, statt sie aus dem Nichts zu erzeugen."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Zusammenhänge zuordnen",
+			"instruction": "Ordne jeden Fall zu. Prüfe danach deine Entscheidungen.",
+			"categories": ["Energieumwandlung", "Umweltfolge"],
+			"entries": [
+				{
+					"text": "Fließendes Wasser setzt eine Turbine in Drehung.",
+					"target": 0,
+					"feedback": "Die Bewegung des Wassers treibt mechanisch die Turbine an."
+				},
+				{
+					"text": "Ein Wehr erschwert die Wanderung von Fischen.",
+					"target": 1,
+					"feedback": "Das betrifft Lebensräume und Wege im Gewässer."
+				},
+				{
+					"text": "Der Generator liefert elektrische Energie.",
+					"target": 0,
+					"feedback": "Mechanische Energie wird in elektrische umgewandelt."
+				},
+				{
+					"text": "Eine Fischaufstiegshilfe soll Wanderwege verbinden.",
+					"target": 1,
+					"feedback": "Die Maßnahme soll eine Umweltfolge des Bauwerks mindern."
+				}
+			],
+			"conclusion": "Beschreibe Nutzen und Folgen getrennt und beziehe beide in deine Beurteilung ein."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Beschreibe den Energieweg im Wasserkraftwerk in vier Schritten und nenne einen möglichen Eingriff in den Lebensraum.",
+				"hints": [
+					"Was besitzt das höher gelegene Wasser?",
+					"Was unterscheidet Turbine und Generator?"
+				],
+				"model": "Höher gelegenes Wasser besitzt Lageenergie. Beim Fließen entsteht Bewegungsenergie, die eine Turbine mechanisch antreibt. Der Generator wandelt diese mechanische in elektrische Energie um. Ein Wehr kann die Wanderung von Fischen behindern; der Energieweg allein beschreibt diese Folge noch nicht.",
+				"criteria": [
+					"Ich nenne die vier Energieformen in richtiger Reihenfolge.",
+					"Ich unterscheide Turbine und Generator.",
+					"Ich benenne eine konkrete Umweltfolge."
+				]
+			},
+			"2": {
+				"prompt": "Jemand sagt: „Ein Wasserkraftwerk ist erneuerbar, also braucht man seine Folgen für den Fluss nicht zu untersuchen.“ Beurteile die Aussage und nenne zwei Punkte für eine sachliche Entscheidung.",
+				"hints": [
+					"Was bedeutet erneuerbar hier tatsächlich?",
+					"Welche Lebewesen und Wasserwege können betroffen sein?"
+				],
+				"model": "Erneuerbar beschreibt die erneute Bereitstellung des Wasserflusses durch den Wasserkreislauf, nicht die Folgenlosigkeit eines Kraftwerks. Vor einer Entscheidung müssen zum Beispiel Fischwanderung und Restwassermenge untersucht werden. Auch der Nutzen der Stromgewinnung gehört zur Abwägung.",
+				"criteria": [
+					"Ich erkläre erneuerbar zutreffend.",
+					"Ich nenne zwei konkrete Untersuchungsfragen.",
+					"Ich wäge Stromnutzen und Gewässerschutz ab."
+				]
+			}
+		},
+		"figures": [],
+		"lab": "hydro"
+	}
+]

@@ -1,0 +1,397 @@
+[
+	{
+		"id": "nt6-geschwindigkeit",
+		"lb": 8,
+		"title": "Gleichförmige Bewegung: Weg, Zeit und Geschwindigkeit",
+		"period": "NT6 LB 4.3 · Bewegung",
+		"intro": "Wie vergleichst du Bewegungen, die verschieden lange dauern?",
+		"paragraphs": [
+			"Bei einer gleichförmigen Bewegung werden in gleichen Zeiten gleich lange Wege zurückgelegt. Die Geschwindigkeit beschreibt den Weg pro Zeit. Du berechnest sie mit v = s : t. Dabei ist s der Weg und t die Zeit. Meter und Sekunden ergeben Meter pro Sekunde, kurz m/s. Kilometer und Stunden ergeben Kilometer pro Stunde, kurz km/h. Erst passend gewählte Einheiten machen Ergebnisse vergleichbar; eine größere Zahl allein beweist noch keine schnellere Bewegung.",
+			"Aus dem Zusammenhang kannst du auch Weg und Zeit berechnen: Weg ist Geschwindigkeit mal Zeit, Zeit ist Weg geteilt durch Geschwindigkeit. Zur Umrechnung von m/s in km/h multiplizierst du mit 3,6; in die andere Richtung teilst du durch 3,6. Denn eine Stunde hat 3600 Sekunden und ein Kilometer 1000 Meter. Für wechselnde Geschwindigkeiten liefert Gesamtweg geteilt durch Gesamtzeit eine Durchschnittsgeschwindigkeit, nicht jede einzelne Momentangeschwindigkeit.",
+			"Beispiel: Ein Rad fährt im Modell gleichförmig 60 m in 12 s. Die Geschwindigkeit beträgt 5 m/s, also 18 km/h. In 20 s legt es bei dieser Geschwindigkeit 100 m zurück. Für 150 m braucht es 30 s. Ein echter Schulweg mit Ampeln und Pausen ist nicht durchgehend gleichförmig. Die Modellwerte dienen dem Rechnen und Vergleichen, nicht als Aufforderung, auf einem Weg eine bestimmte Geschwindigkeit auszuprobieren."
+		],
+		"takeaway": "Bei gleichförmiger Bewegung gilt v = s : t. Einheiten müssen zusammenpassen; von m/s zu km/h rechnest du mal 3,6.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Wie schnell ist eine gleichförmige Bewegung über 60 m in 12 s?",
+			"answer": "5 m/s",
+			"wrong": ["720 m/s", "5 km/h"],
+			"explanation": "Der Weg wird durch die Zeit geteilt: sechzig Meter durch zwölf Sekunden ergibt fünf Meter pro Sekunde."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Zusammenhänge prüfen",
+			"instruction": "Ordne die vier Fälle zu und begründe die Unterschiede.",
+			"categories": ["Geschwindigkeit", "Weg", "Zeit"],
+			"entries": [
+				{
+					"text": "60 m werden durch 12 s geteilt.",
+					"target": 0,
+					"feedback": "Weg pro Zeit ist Geschwindigkeit."
+				},
+				{
+					"text": "5 m/s werden mit 20 s multipliziert.",
+					"target": 1,
+					"feedback": "Das ergibt 100 m Weg."
+				},
+				{
+					"text": "150 m werden durch 5 m/s geteilt.",
+					"target": 2,
+					"feedback": "Das ergibt 30 s Zeit."
+				},
+				{
+					"text": "18 km/h werden durch 3,6 geteilt.",
+					"target": 0,
+					"feedback": "Die Geschwindigkeit wird in 5 m/s umgerechnet."
+				}
+			],
+			"conclusion": "Bei gleichförmiger Bewegung gilt v = s : t. Einheiten müssen zusammenpassen; von m/s zu km/h rechnest du mal 3,6."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Berechne bei 60 m in 12 s die Geschwindigkeit in m/s und km/h sowie den Weg in 20 s.",
+				"hints": ["Welche Größe wird geteilt?", "Wie rechnest du in km/h um?"],
+				"model": "60 m geteilt durch 12 s ergibt 5 m/s. Mit dem Faktor 3,6 werden daraus 18 km/h. Bei gleichförmiger Bewegung legt das Rad in 20 s daher 5 m/s mal 20 s, also 100 m zurück. Alle drei Ergebnisse gelten für die konstante Modellgeschwindigkeit.",
+				"criteria": [
+					"Ich berechne die Geschwindigkeit.",
+					"Ich rechne die Einheit um.",
+					"Ich berechne den Weg mit Bedingung."
+				]
+			},
+			"2": {
+				"prompt": "Zwei Angaben lauten 6 m/s und 18 km/h. Vergleiche sie und erkläre, warum eine Ampelpause nicht zur Annahme durchgehend gleichförmiger Bewegung passt.",
+				"hints": [
+					"Welche gemeinsame Einheit nutzt du?",
+					"Was ändert sich beim Anhalten?"
+				],
+				"model": "6 m/s entsprechen 21,6 km/h und sind damit schneller als 18 km/h. Bei einer Ampelpause ist die Geschwindigkeit zeitweise null und beim Bremsen oder Anfahren verändert sie sich. Gesamtweg durch Gesamtzeit beschreibt dann einen Durchschnitt; die Bewegung ist nicht durchgehend gleichförmig.",
+				"criteria": [
+					"Ich vergleiche in gleicher Einheit.",
+					"Ich erkläre die Pause.",
+					"Ich unterscheide Durchschnitt und Gleichförmigkeit."
+				]
+			}
+		},
+		"figures": [],
+		"lab": "speed"
+	},
+	{
+		"id": "nt6-weg-zeit",
+		"lb": 8,
+		"title": "Weg-Zeit-Diagramme lesen und Kräfte erkennen",
+		"period": "NT6 LB 4.3 · Bewegung",
+		"intro": "Was verraten gerade, flache oder gekrümmte Linien über eine Bewegung?",
+		"paragraphs": [
+			"Ein Weg-Zeit-Diagramm ordnet jeder Zeit einen zurückgelegten Weg zu. Zeit mit Einheit steht auf der waagerechten Achse, Weg mit Einheit auf der senkrechten. Bei gleichförmiger Bewegung entsteht eine gerade ansteigende Linie. In gleichen Zeitabschnitten wächst der Weg gleich stark. Eine steilere Linie bedeutet in dieser Darstellung eine größere Geschwindigkeit. Eine waagerechte Strecke zeigt, dass der zurückgelegte Weg vorübergehend nicht zunimmt.",
+			"Wird die Linie zunehmend steiler, wird der Körper schneller. Wird sie flacher, nimmt die Geschwindigkeit ab. Solche Änderungen können durch Kräfte entstehen, etwa beim Antreiben oder Bremsen. Das Diagramm ist kein Bild der Straße: Eine aufwärts laufende Linie bedeutet nicht automatisch Bergauffahren. Auch die räumliche Richtung einer Kurve lässt sich aus dem bloßen zurückgelegten Weg nicht eindeutig ablesen; dafür sind weitere Informationen nötig.",
+			"Beispiel: Ein Wagen legt in jeder Sekunde 3 m zurück. Nach 2 s sind es 6 m, nach 4 s 12 m und nach 8 s 24 m. Die Punkte liegen auf einer Geraden. Bleibt der Weg zwei Sekunden gleich, steht der Wagen in dieser Zeit. Wird danach die Linie steiler, fährt er schneller als zuvor. Das Modell verwendet ausgewählte, fehlerfreie Werte; echte Messpunkte können abweichen und brauchen passende Achsen und Bedingungen."
+		],
+		"takeaway": "Die Steilheit eines Weg-Zeit-Diagramms beschreibt die Geschwindigkeit. Gerade heißt gleichförmig, waagerecht heißt Pause; das Diagramm ist kein Straßenbild.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Was bedeutet eine waagerechte Strecke im Weg-Zeit-Diagramm?",
+			"answer": "Der zurückgelegte Weg nimmt dort nicht zu.",
+			"wrong": [
+				"Die Straße ist dort eben.",
+				"Der Körper fährt dort zwingend am schnellsten."
+			],
+			"explanation": "Die Zeit läuft weiter, aber der Weg bleibt gleich. Die Linie beschreibt Messgrößen und keine Geländeform."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Zusammenhänge prüfen",
+			"instruction": "Ordne die vier Fälle zu und begründe die Unterschiede.",
+			"categories": ["Gleichförmig", "Pause", "Geschwindigkeit ändert sich"],
+			"entries": [
+				{
+					"text": "Eine Gerade steigt gleichmäßig an.",
+					"target": 0,
+					"feedback": "Gleiche Zeiten liefern gleiche Wegzuwächse."
+				},
+				{
+					"text": "Die Linie wird zunehmend steiler.",
+					"target": 2,
+					"feedback": "Der Wegzuwachs pro Zeit wird größer."
+				},
+				{
+					"text": "Die Linie verläuft waagerecht.",
+					"target": 1,
+					"feedback": "Der Körper legt in dieser Zeit keinen weiteren Weg zurück."
+				},
+				{
+					"text": "Die Linie wird beim Bremsen flacher.",
+					"target": 2,
+					"feedback": "Die Geschwindigkeit nimmt ab."
+				}
+			],
+			"conclusion": "Die Steilheit eines Weg-Zeit-Diagramms beschreibt die Geschwindigkeit. Gerade heißt gleichförmig, waagerecht heißt Pause; das Diagramm ist kein Straßenbild."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Lies das Modell mit 3 m/s: Welche Wege gehören zu 2 s, 4 s und 8 s und welche Linienform entsteht?",
+				"hints": [
+					"Wie groß ist der Wegzuwachs je Sekunde?",
+					"Wie verbindest du die Messpunkte?"
+				],
+				"model": "Nach 2 s sind 6 m, nach 4 s 12 m und nach 8 s 24 m zurückgelegt. Die Punkte liegen auf einer geraden ansteigenden Linie. In gleichen Zeiten kommen gleiche Wege hinzu. Die Linie steht für gleichförmige Bewegung und nicht für eine ansteigende Straße.",
+				"criteria": [
+					"Ich ordne die Werte zu.",
+					"Ich begründe die Linienform.",
+					"Ich trenne Diagramm und Straßenbild."
+				]
+			},
+			"2": {
+				"prompt": "Eine Linie wird zunächst steiler und anschließend waagerecht. Erkläre die Bewegung und was du über die Form der Straße nicht behaupten darfst.",
+				"hints": [
+					"Wie ändert sich der Weg pro Zeit?",
+					"Was bewirken Antreiben und Bremsen?"
+				],
+				"model": "Zunächst nimmt die Geschwindigkeit zu, der Körper wird beschleunigt. Im waagerechten Abschnitt bleibt der Weg gleich, also steht er. Der Übergang zum Stillstand erfordert eine Geschwindigkeitsänderung. Aus dem Diagramm kann ich nicht auf eine bergige oder ebene Straße schließen; es zeigt Weg und Zeit.",
+				"criteria": [
+					"Ich deute die steilere Linie.",
+					"Ich erkenne den Stillstand.",
+					"Ich begrenze den räumlichen Schluss."
+				]
+			}
+		},
+		"figures": [],
+		"lab": "motionGraph"
+	},
+	{
+		"id": "nt6-anhalteweg",
+		"lb": 8,
+		"title": "Anhalteweg: Reagieren und Bremsen brauchen Weg",
+		"period": "NT6 LB 4.3 · Bewegung",
+		"intro": "Warum ist ein Fahrzeug nach dem Erkennen einer Gefahr noch nicht sofort angehalten?",
+		"paragraphs": [
+			"Der Anhalteweg besteht aus Reaktionsweg und Bremsweg. Während der Reaktionszeit bewegt sich das Fahrzeug weiter, bevor gebremst wird. Danach benötigt auch das Abbremsen Weg. Geschwindigkeit, Aufmerksamkeit, Fahrbahn, Reifen und weitere Bedingungen beeinflussen die tatsächliche Strecke. Eine Ablenkung verlängert möglicherweise die Reaktionszeit. Nasse oder glatte Fahrbahnen können das Bremsen erschweren. Kein Rechenwert ersetzt ausreichenden Abstand und vorausschauendes Verhalten.",
+			"Für überschlägige Schulrechnungen verwenden wir Fahrschul-Faustformeln mit der Geschwindigkeit in km/h: Reaktionsweg ungefähr Zahl durch zehn mal drei in Metern; Bremsweg bei normaler Bremsung ungefähr Zahl durch zehn mal sich selbst in Metern. Die Summe ergibt den überschlägigen Anhalteweg. Es sind keine Naturgesetze und keine Garantie. Sie beschreiben einen vereinfachten Vergleich, nicht einen sicheren Mindestabstand für jede Straße.",
+			"Beispiel: Bei 50 km/h ergibt die Faustformel 15 m Reaktionsweg und 25 m Bremsweg, zusammen 40 m. Bei 30 km/h sind es 9 m und 9 m, zusammen 18 m. Verdoppelt sich die Geschwindigkeit, verdoppelt sich im Modell der Reaktionsweg, aber der Bremsweg vervierfacht sich. Bei schlechten Bedingungen kann der wirkliche Weg länger sein. Solche Rechnungen werden am Modell untersucht, niemals als Bremsprobe im Straßenverkehr."
+		],
+		"takeaway": "Anhalteweg = Reaktionsweg + Bremsweg. Die Faustformeln liefern nur einen überschlägigen Vergleich; höhere Geschwindigkeit und schlechte Bedingungen erhöhen Risiken.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Wie groß ist der überschlägige Anhalteweg bei 50 km/h nach den hier verwendeten Faustformeln?",
+			"answer": "40 m",
+			"wrong": ["25 m", "15 m"],
+			"explanation": "Zum Bremsweg von fünfundzwanzig Metern kommt der Reaktionsweg von fünfzehn Metern hinzu. Die Summe ist ein Modellwert."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Zusammenhänge prüfen",
+			"instruction": "Ordne die vier Fälle zu und begründe die Unterschiede.",
+			"categories": ["Reaktionsweg", "Bremsweg", "Grenze"],
+			"entries": [
+				{
+					"text": "Das Auto rollt nach dem Erkennen der Gefahr vor dem Bremsen weiter.",
+					"target": 0,
+					"feedback": "Auch Reagieren braucht Zeit und Weg."
+				},
+				{
+					"text": "Die Strecke vom Bremsbeginn bis zum Stillstand.",
+					"target": 1,
+					"feedback": "Dieser Teil heißt Bremsweg."
+				},
+				{
+					"text": "Eis auf der Straße kann den Modellwert deutlich verändern.",
+					"target": 2,
+					"feedback": "Die Faustformel garantiert keine reale Strecke."
+				},
+				{
+					"text": "Ablenkung verzögert den Bremsbeginn.",
+					"target": 0,
+					"feedback": "Dadurch kann der Reaktionsweg wachsen."
+				}
+			],
+			"conclusion": "Anhalteweg = Reaktionsweg + Bremsweg. Die Faustformeln liefern nur einen überschlägigen Vergleich; höhere Geschwindigkeit und schlechte Bedingungen erhöhen Risiken."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Berechne bei 50 km/h Reaktionsweg, Bremsweg und Anhalteweg nach den Modell-Faustformeln. Nenne eine Grenze.",
+				"hints": ["Was ergibt fünf mal drei?", "Was ergibt fünf mal fünf?"],
+				"model": "Der Reaktionsweg beträgt ungefähr 5 mal 3, also 15 m. Der Bremsweg beträgt ungefähr 5 mal 5, also 25 m. Zusammen sind das 40 m Anhalteweg. Diese Schätzung gilt nicht für jede reale Situation; Nässe, Glätte oder Ablenkung können den tatsächlichen Weg vergrößern.",
+				"criteria": [
+					"Ich berechne beide Teile.",
+					"Ich bilde die Summe.",
+					"Ich begrenze die Schätzung."
+				]
+			},
+			"2": {
+				"prompt": "Vergleiche im Modell 30 und 60 km/h und erkläre, warum doppeltes Tempo nicht nur doppelten Anhalteweg bedeutet.",
+				"hints": [
+					"Wie verändern sich die beiden Teile?",
+					"Welche Zahlen ergeben die Faustformeln?"
+				],
+				"model": "Bei 30 km/h sind Reaktions- und Bremsweg je 9 m, zusammen 18 m. Bei 60 km/h ergeben sich 18 m und 36 m, zusammen 54 m. Der Reaktionsweg verdoppelt sich, der Bremsweg vervierfacht sich. Der gesamte Anhalteweg ist hier dreimal so groß; reale Bedingungen können ihn weiter verändern.",
+				"criteria": [
+					"Ich rechne beide Fälle.",
+					"Ich vergleiche die Anteile.",
+					"Ich begrenze den Modellwert."
+				]
+			}
+		},
+		"figures": [],
+		"lab": "stopping"
+	},
+	{
+		"id": "nt6-traegheit",
+		"lb": 8,
+		"title": "Trägheit: Warum Körper ihre Bewegung beibehalten",
+		"period": "NT6 LB 4.3 · Bewegung",
+		"intro": "Was passiert mit Fahrgästen und Gepäck, wenn ein Fahrzeug bremst?",
+		"paragraphs": [
+			"Trägheit beschreibt die Eigenschaft eines Körpers, seinen Bewegungszustand beizubehalten. Ohne eine unausgeglichene äußere Kraft bleibt er in Ruhe oder bewegt sich gleichförmig gerade weiter. Beim Bremsen eines Fahrzeugs bewegen sich Fahrgäste und lose Gegenstände deshalb zunächst weiter. Eine Richtungsänderung braucht ebenfalls eine Kraft. Im Alltag wirken häufig Reibung und weitere Kräfte, sodass das ideale Weiterbewegen nicht beliebig lange sichtbar ist.",
+			"Die Masse ist ein Maß für die Trägheit: Ein Körper mit größerer Masse lässt sich bei vergleichbaren Bedingungen schwerer in seiner Bewegung ändern. Sicherheitsgurte üben beim Bremsen Kräfte aus und halten Menschen zurück. Unbefestigtes Gepäck kann sich weiterbewegen und andere gefährden. Crashtest-Bilder helfen, diese Wirkungen zu untersuchen; ein Schulmodell zeigt nur ausgewählte Aspekte und keine verlässlichen Verletzungs- oder Kraftwerte.",
+			"Beispiel: Ein Spielzeugwagen fährt langsam mit einem locker aufgelegten Klotz. Wird der Wagen im beaufsichtigten Versuch gebremst, bewegt sich der Klotz zunächst weiter. Mit geeigneter Befestigung wird seine Bewegung zusammen mit dem Wagen geändert. Der Vergleich erklärt den Nutzen von Gurten und gesichertem Gepäck. Versuche werden nur mit kleinen, ungefährlichen Gegenständen unter Anleitung durchgeführt, niemals mit Personen als Testkörper."
+		],
+		"takeaway": "Trägheit bedeutet Beibehalten des Bewegungszustands. Größere Masse bedeutet größere Trägheit; Gurte und gesichertes Gepäck helfen, Bewegungen kontrolliert zu ändern.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Warum bewegt sich ein loses Gepäckstück beim Bremsen zunächst weiter?",
+			"answer": "Wegen seiner Trägheit behält es zunächst den Bewegungszustand bei.",
+			"wrong": [
+				"Weil beim Bremsen seine Masse verschwindet.",
+				"Weil nur Menschen von Kräften beeinflusst werden."
+			],
+			"explanation": "Das Fahrzeug wird gebremst; das unbefestigte Gepäck wird nicht automatisch im selben Augenblick auf dieselbe Weise abgebremst."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Zusammenhänge prüfen",
+			"instruction": "Ordne die vier Fälle zu und begründe die Unterschiede.",
+			"categories": ["Trägheit", "Sichernde Kraft", "Masse"],
+			"entries": [
+				{
+					"text": "Ein loser Klotz bewegt sich beim Wagenstopp weiter.",
+					"target": 0,
+					"feedback": "Er behält zunächst seine Bewegung bei."
+				},
+				{
+					"text": "Ein Gurt bremst die Bewegung der angeschnallten Person.",
+					"target": 1,
+					"feedback": "Der Gurt übt eine Kraft aus."
+				},
+				{
+					"text": "Ein schwererer Körper ist unter gleichen Bedingungen schwerer in seiner Bewegung zu ändern.",
+					"target": 2,
+					"feedback": "Größere Masse bedeutet größere Trägheit."
+				},
+				{
+					"text": "Ohne resultierende Kraft bleibt ein Körper in Ruhe oder gleichförmig geradlinig.",
+					"target": 0,
+					"feedback": "Beide Zustände gehören zum Trägheitsprinzip."
+				}
+			],
+			"conclusion": "Trägheit bedeutet Beibehalten des Bewegungszustands. Größere Masse bedeutet größere Trägheit; Gurte und gesichertes Gepäck helfen, Bewegungen kontrolliert zu ändern."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Erkläre am Wagen mit losem Klotz die Beobachtung beim Bremsen und eine passende Sicherung.",
+				"hints": [
+					"Was wird zuerst gebremst?",
+					"Welche Kraft braucht der Klotz?"
+				],
+				"model": "Zuerst wird der Wagen gebremst. Der lose Klotz behält wegen seiner Trägheit zunächst die Bewegung bei. Eine geeignete Befestigung übt eine Kraft auf ihn aus und ändert seine Bewegung zusammen mit dem Wagen. Das Modell veranschaulicht, warum Gepäck gesichert werden muss.",
+				"criteria": [
+					"Ich beschreibe die Beobachtung.",
+					"Ich erkläre die Trägheit.",
+					"Ich verbinde Sicherung und Kraft."
+				]
+			},
+			"2": {
+				"prompt": "Vergleiche einen leichten und einen schweren gleich schnellen Klotz unter vergleichbaren Bedingungen. Begründe, warum ein Crashtestmodell keine genaue Verletzungsprognose liefert.",
+				"hints": [
+					"Wie hängt Trägheit von Masse ab?",
+					"Welche Eigenschaften fehlen im Modell?"
+				],
+				"model": "Der schwerere Klotz besitzt größere Trägheit; seine Bewegung lässt sich unter vergleichbaren Bedingungen schwerer ändern. Das einfache Modell enthält aber keine realistischen Körper, Gurte, Verformungen oder individuellen Bedingungen. Es erklärt den Zusammenhang, liefert jedoch keine genauen Verletzungswerte für Menschen.",
+				"criteria": [
+					"Ich vergleiche die Masse.",
+					"Ich erkläre die Bewegungsänderung.",
+					"Ich begrenze das Modell."
+				]
+			}
+		},
+		"figures": [],
+		"lab": "inertia"
+	},
+	{
+		"id": "nt6-verkehr",
+		"lb": 8,
+		"title": "Gefahren im Verkehr vorausschauend einschätzen",
+		"period": "NT6 LB 4.3 · Bewegung",
+		"intro": "Wie helfen Wissen über Kräfte, Reaktion und Sicht bei sicheren Entscheidungen?",
+		"paragraphs": [
+			"Verkehrssituationen ändern sich schnell. Schlechte Sicht, nasse Fahrbahnen, verdeckte Einmündungen und unaufmerksame Menschen können Gefahren erhöhen. Fahrzeuge brauchen Zeit und Weg zum Anhalten, auch wenn ihre Fahrerinnen und Fahrer aufmerksam sind. Vorausschauendes Verhalten bedeutet, mögliche Fehler und verdeckte Gefahren mitzudenken, statt allein auf eine Vorfahrt oder die eigene Sichtbarkeit zu vertrauen. Örtliche Regeln und Anweisungen müssen beachtet werden.",
+			"Beim Gehen oder Radfahren helfen Aufmerksamkeit, ausreichende Sichtbeziehungen und ein der Situation angepasstes Verhalten. Ein parkender Lieferwagen kann Menschen und Fahrzeuge gegenseitig verdecken. Ablenkung durch ein Handy kann das Erkennen von Gefahren verzögern. Nässe oder Glätte können das Bremsen und die Kontrolle erschweren. Eine grüne Ampel oder eine rechnerische Strecke rechtfertigt nicht, ohne Blick auf die konkrete Lage weiterzufahren.",
+			"Beispiel: Ein Ball rollt zwischen geparkten Autos auf die Fahrbahn. Es ist möglich, dass ein Kind folgt, obwohl es noch nicht sichtbar ist. Ein vorausschauender Mensch verlangsamt beziehungsweise wartet und hält Abstand, statt die Lücke für garantiert frei zu erklären. Die Modellbilder zeigen Entscheidungspunkte und keine universell sichere Sekunden- oder Meterzahl. Praktisches Verhalten wird im geschützten Rahmen angeleitet geübt, nicht durch riskante Tests im Verkehr."
+		],
+		"takeaway": "Passe Verhalten an Sicht, Fahrbahn und mögliche Fehler anderer an. Reaktions- und Bremswege sowie verdeckte Bereiche verlangen Aufmerksamkeit und Vorsicht.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Ein Ball rollt zwischen parkenden Autos auf die Straße. Welche Deutung ist vorausschauend?",
+			"answer": "Ein noch verdecktes Kind könnte folgen; Tempo und Verhalten müssen angepasst werden.",
+			"wrong": [
+				"Die Straße ist sicher frei, solange kein Mensch sichtbar ist.",
+				"Der berechnete Bremsweg macht jede weitere Beobachtung unnötig."
+			],
+			"explanation": "Das sichtbare Ereignis kann auf eine verdeckte Gefahr hinweisen. Vorausschauendes Verhalten bezieht diese Möglichkeit ein."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Zusammenhänge prüfen",
+			"instruction": "Ordne die vier Fälle zu und begründe die Unterschiede.",
+			"categories": ["Gefahr berücksichtigen", "Unbegründete Sicherheit"],
+			"entries": [
+				{
+					"text": "Hinter dem Lieferwagen könnte jemand verdeckt sein.",
+					"target": 0,
+					"feedback": "Fehlende Sicht ist kein Nachweis einer freien Strecke."
+				},
+				{
+					"text": "Bei Regen wird derselbe Anhalteweg garantiert.",
+					"target": 1,
+					"feedback": "Fahrbahn und Sicht können sich ändern."
+				},
+				{
+					"text": "Ablenkung kann eine Reaktion verzögern.",
+					"target": 0,
+					"feedback": "Späteres Erkennen vergrößert möglicherweise den Reaktionsweg."
+				},
+				{
+					"text": "Eine grüne Ampel ersetzt jeden Blick auf die Lage.",
+					"target": 1,
+					"feedback": "Auch bei geregeltem Verkehr bleibt Aufmerksamkeit nötig."
+				}
+			],
+			"conclusion": "Passe Verhalten an Sicht, Fahrbahn und mögliche Fehler anderer an. Reaktions- und Bremswege sowie verdeckte Bereiche verlangen Aufmerksamkeit und Vorsicht."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Beschreibe zwei Risiken an einer unübersichtlichen, nassen Einmündung und begründe eine vorausschauende Entscheidung.",
+				"hints": ["Was ist verdeckt?", "Was beeinflusst den Anhalteweg?"],
+				"model": "Ein Hindernis kann Menschen oder Fahrzeuge verdecken. Nässe kann das Bremsen erschweren und die Sicht verschlechtern. Deshalb passe ich mein Verhalten an, beobachte aufmerksam und warte gegebenenfalls, statt eine freie Strecke anzunehmen. Ein Modellwert für den Anhalteweg garantiert keine Sicherheit.",
+				"criteria": [
+					"Ich nenne zwei Risiken.",
+					"Ich begründe angepasstes Verhalten.",
+					"Ich vermeide eine Garantie."
+				]
+			},
+			"2": {
+				"prompt": "Ein Plakat verspricht: „Wer den Anhalteweg ausgerechnet hat, braucht im Verkehr nicht mehr vorauszudenken.“ Widerlege das mit zwei veränderlichen Bedingungen.",
+				"hints": [
+					"Kann eine Rechnung die Sicht ersetzen?",
+					"Sind Reaktions- und Bremsbedingungen immer gleich?"
+				],
+				"model": "Eine Rechnung kann weder verdeckte Menschen sichtbar machen noch Ablenkung verhindern. Reaktionszeit, Fahrbahn und Sicht können von den Modellbedingungen abweichen. Daher bleiben aufmerksames Beobachten, Abstand und an die konkrete Lage angepasstes Verhalten nötig, auch wenn ein überschlägiger Anhalteweg bekannt ist.",
+				"criteria": [
+					"Ich nenne veränderliche Bedingungen.",
+					"Ich begrenze die Rechnung.",
+					"Ich begründe vorausschauendes Handeln."
+				]
+			}
+		},
+		"figures": [],
+		"lab": "traffic"
+	}
+]
