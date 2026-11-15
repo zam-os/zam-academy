@@ -1,0 +1,13 @@
+import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
+import { createHash } from "node:crypto";
+const coverage = JSON.parse(readFileSync(new URL("../coverage.json", import.meta.url), "utf8"));
+if (!process.argv[2]) throw new Error("Usage: node scripts/check-curriculum.mjs <downloaded-curriculum.html>");
+const bytes = readFileSync(process.argv[2]);
+assert.equal(createHash("sha256").update(bytes).digest("hex"), coverage.curriculum_sha256, "Use the frozen curriculum download recorded in coverage.json, or explicitly re-check and update its hash.");
+const decode = (s) => s.replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(Number(n))).replace(/&#x([0-9a-f]+);/gi, (_, n) => String.fromCodePoint(parseInt(n, 16))).replaceAll("&nbsp;", " ").replaceAll("&amp;", "&").replaceAll("&quot;", '"').replaceAll("&ndash;", "–").replaceAll("&shy;", "");
+const normal = (s) => decode(s).replace(/\s+/g, " ").trim();
+const text = normal(bytes.toString("utf8").replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, "").replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, "").replace(/<[^>]*>/g, ""));
+const missing = coverage.rows.filter((row) => !text.includes(normal(row.competence)));
+assert.deepEqual(missing, [], "Every competence must occur verbatim in the downloaded page.");
+console.log(`${coverage.rows.length} competence rows, ${missing.length} not found; SHA-256 verified.`);

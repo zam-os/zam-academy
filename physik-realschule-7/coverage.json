@@ -1,0 +1,206 @@
+{
+  "schema": 1,
+  "checked": "2026-11-15",
+  "curriculum": "https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/7/physik/wpfg1",
+  "curriculum_sha256": "ac60fdc294c9eac5b1936a11bf528e291abd5ab27c3f45ea97afd25c6274bc41",
+  "school_type": "realschule",
+  "grade": 7,
+  "subject": "physik",
+  "tracks": {
+    "I": "Mathematical and scientific Group I only; Groups II/III begin physics in Grade 8."
+  },
+  "core_lessons": 24,
+  "optional_lessons": [],
+  "hours": {
+    "lb1": 26,
+    "lb2": 18,
+    "lb3": 12
+  },
+  "experiments": {
+    "minimum_total": 5,
+    "minimum_per_area": 1,
+    "status": "supported",
+    "evidence": "Five editable local notebook slots cover all three areas. The app checks filled fields and the learner's own performed flag, not performance or scientific quality. Real experiments remain supervised classroom work."
+  },
+  "scope_note": "Live LehrplanPLUS page, checked directly on 2026-11-15. Competence quotations below are verbatim with whitespace normalised. Mathematisation is limited to the Grade 7 scope. The models do not certify classroom experiments, sketches, research or presentations. Teacher videos are a separate follow-up.",
+  "rows": [
+    {
+      "lb": 1,
+      "track": "I",
+      "competence": "verwenden geeignete Messgeräte zur Messung der Grundgrößen Länge und Zeit. Dabei reflektieren sie die Angabe ihrer Messergebnisse hinsichtlich physikalischer Sinnhaftigkeit.",
+      "lessons": [
+        "me-messen"
+      ],
+      "status": "supported",
+      "evidence": "Length/time measurement, zero offset, resolution, repeated measurements and both task levels; learners carry out real measurements in class."
+    },
+    {
+      "lb": 1,
+      "track": "I",
+      "competence": "formulieren Vermutungen zum Zusammenhang von zurückgelegtem Weg in Abhängigkeit von der benötigten Zeit bei (geradlinig) gleichförmigen Bewegungen, führen angeleitet und begleitet Experimente durch und werten diese aus. Sie modellieren den physikalischen Zusammenhang als direkte Proportionalität und präsentieren ihr Ergebnis.",
+      "lessons": [
+        "me-bewegung"
+      ],
+      "status": "supported",
+      "evidence": "Fixed-scale time-distance model, proportionality, generated speed/route/time tasks, hypothesis and measurement-series tasks. The real guided experiment and presentation remain in class."
+    },
+    {
+      "lb": 1,
+      "track": "I",
+      "competence": "führen Änderungen des Bewegungszustands oder Verformungen von Körpern auf das Wirken von Kräften zurück und unterscheiden das physikalische Verständnis von Kräften und deren Bestimmungsstücken von der umgangssprachlichen Verwendung des Kraftbegriffs.",
+      "lessons": [
+        "me-kraft"
+      ],
+      "status": "implemented",
+      "evidence": "Force effects, magnitude/direction/application point, graphically labelled arrows, classification and explanation tasks."
+    },
+    {
+      "lb": 1,
+      "track": "I",
+      "competence": "führen in alltagsrelevanten Kontexten auftretende Kräfte gemäß dem Wechselwirkungsprinzip auf Wechselwirkungskräfte zurück und grenzen diese von Kräften im Gleichgewicht ab.",
+      "lessons": [
+        "me-wechselwirkung"
+      ],
+      "status": "implemented",
+      "evidence": "Book/table comparison separates a contact pair on two bodies from balance on one body; transfer to a pulled sledge."
+    },
+    {
+      "lb": 1,
+      "track": "I",
+      "competence": "stellen den Zusammenhang zwischen der Dehnungslänge und der wirkenden Kraft bei einer Spiralfeder grafisch dar, erkennen den Gültigkeitsbereich des Gesetzes von Hooke und grenzen den elastischen vom plastischen Verformungszustand ab.",
+      "lessons": [
+        "me-feder"
+      ],
+      "status": "implemented",
+      "evidence": "Deformation relative to unloaded length, labelled force-extension graph, stiffness and elastic/plastic distinction. The model refuses extrapolation beyond its characterised range."
+    },
+    {
+      "lb": 1,
+      "track": "I",
+      "competence": "verwenden die Masse als gemeinsames Maß für Schwere und Trägheit, grenzen Masse und Gewichtskraft voneinander ab und nutzen den Zusammenhang zwischen Masse und Gewichtskraft (Ortsfaktor) in einfachen Berechnungen unter Beachtung der Einheiten und zur Kalibrierung von Kraftmessern.",
+      "lessons": [
+        "me-masse-gewicht"
+      ],
+      "status": "supported",
+      "evidence": "Mass/inertia, local factor, Earth/Moon comparison, calculations and a calibration sequence. Actual force-meter calibration requires suitable supervised equipment."
+    },
+    {
+      "lb": 1,
+      "track": "I",
+      "competence": "verbalisieren in angemessener Fachsprache die grundlegenden Eigenschaften von Materie bei den verschiedenen Aggregatzuständen, erklären diese mithilfe des Teilchenmodells und veranschaulichen sie anhand selbst angefertigter Skizzen.",
+      "lessons": [
+        "me-teilchen"
+      ],
+      "status": "supported",
+      "evidence": "Labelled particle-state model and explanation tasks. Learners make their own sketches on paper and discuss their correctness in class."
+    },
+    {
+      "lb": 1,
+      "track": "I",
+      "competence": "nutzen ihre Kenntnisse über Reibung, um deren Bedeutung für Alltag und Technik in angemessener Fachsprache zu begründen und insbesondere im Straßenverkehr verantwortungsbewusst zu handeln. Mithilfe der Modellvorstellung für die Reibung veranschaulichen sie die verschiedenen Arten der Reibung und vergleichen ihre Größen qualitativ.",
+      "lessons": [
+        "me-reibung"
+      ],
+      "status": "implemented",
+      "evidence": "Qualitative static/sliding/rolling comparisons, contact model, surface conditions and reasoned cycling decisions; no friction coefficient or braking formula."
+    },
+    {
+      "lb": 1,
+      "track": "I",
+      "competence": "verwenden den Zusammenhang zwischen Masse und Volumen verschiedener homogener Körper, um damit Materialien zu bestimmen. Bei vorgegebener Dichte berechnen sie Massen oder Volumina und gehen dabei mit den auftretenden Einheiten sicher um.",
+      "lessons": [
+        "me-volumen",
+        "me-dichte"
+      ],
+      "status": "supported",
+      "evidence": "Volume methods, density/material comparison, mass and volume calculations with units, hollow-body limitation. Real measurements and a verified material-table comparison remain part of class work."
+    },
+    {
+      "lb": 2,
+      "track": "I",
+      "competence": "nutzen ihre Kenntnisse über das Modell der Lichtausbreitung und das Sender-Empfänger-Modell als zentrale Elemente der Optik, um z. B. den Sehprozess zu beschreiben und Schatten und Finsternisse zu modellieren. Dabei reflektieren sie ihre bisherigen Vorstellungen kritisch und verbessern sie gegebenenfalls.",
+      "lessons": [
+        "op-sehen",
+        "op-schatten"
+      ],
+      "status": "implemented",
+      "evidence": "Sender-receiver light path, scattering, ray model, core/partial shadow and both eclipse arrangements; tilted orbit planes and non-scale geometry stated."
+    },
+    {
+      "lb": 2,
+      "track": "I",
+      "competence": "skizzieren und begründen optische Phänomene zur Reflexion unter Zuhilfenahme des Lichtstrahlmodells und unter Verwendung von altersgemäßer Fachsprache. Dabei erkennen sie die Bedeutung der Reflexion im Alltag bei nicht selbstleuchtenden Körpern, z. B. bei Spiegeln, Straßenschildern, Reflektoren.",
+      "lessons": [
+        "op-reflexion",
+        "op-spiegelbild"
+      ],
+      "status": "implemented",
+      "evidence": "Normal-referenced reflection, diffuse versus directed reflection, mirror-image construction, everyday applications and two task levels."
+    },
+    {
+      "lb": 2,
+      "track": "I",
+      "competence": "führen die Brechung des Lichts an Grenzflächen optisch verschieden dichter Medien auf die unterschiedliche Lichtgeschwindigkeit in diesen zurück und beschreiben damit auch unter Verwendung von Zeichnungen Alltagsphänomene, z. B. optische Hebung, Totalreflexion und Dispersion.",
+      "lessons": [
+        "op-brechung",
+        "op-totalreflexion",
+        "op-dispersion"
+      ],
+      "status": "implemented",
+      "evidence": "Light-speed explanation, refraction direction, apparent depth, total-reflection conditions, dispersion and continuous spectrum; model geometry remains qualitative for learners."
+    },
+    {
+      "lb": 2,
+      "track": "I",
+      "competence": "verwenden das Lichtstrahlmodell zur Konstruktion von Strahlengängen bei der Abbildung durch Sammellinsen und nutzen ihre Kenntnisse für die Begründung der Entstehung und der Eigenschaften reeller und virtueller Bilder. Sie erschließen sich Anwendungen im Alltag und beschreiben mithilfe von Strahlengängen Bau und Funktionsweise eines optischen Geräts.",
+      "lessons": [
+        "op-linsen",
+        "op-geraete"
+      ],
+      "status": "implemented",
+      "evidence": "Parallel and central ray construction, real/virtual/focal cases, converging versus diverging lenses, eye corrections and camera operation."
+    },
+    {
+      "lb": 2,
+      "track": "I",
+      "competence": "recherchieren problembezogen in unterschiedlichen Quellen über optische Geräte, deren geschichtliche Einordnung und aktuelle Bedeutung für den Alltag und geben diese unter Verwendung fachsprachlich korrekter Formulierungen wieder.",
+      "lessons": [
+        "op-geraete"
+      ],
+      "status": "supported",
+      "evidence": "An explicit research/report plan asks for historical and current device use and two checked sources. Independent research, report and presentation must be carried out by the learner."
+    },
+    {
+      "lb": 3,
+      "track": "I",
+      "competence": "visualisieren und erklären Alltagsphänomene zum Magnetismus unter Verwendung einer altersgemäßen Fachsprache mithilfe geeigneter Modellvorstellungen. Dabei reflektieren sie ihre bisherigen Vorstellungen und übertragen ihr Wissen auf das Magnetfeld der Erde.",
+      "lessons": [
+        "el-magnete",
+        "el-magnetfeld"
+      ],
+      "status": "implemented",
+      "evidence": "Pole interactions, ferromagnetic materials, element-magnet model, influence, temporary/permanent magnetism, bar/horseshoe fields and the compass/Earth distinction."
+    },
+    {
+      "lb": 3,
+      "track": "I",
+      "competence": "entwickeln zu einfachen technischen Problemstellungen geeignete elektrische Schaltungen und bauen diese nach einem selbständig erstellten Schaltbild unter Anleitung funktionsfähig auf.",
+      "lessons": [
+        "el-stromkreis",
+        "el-schaltungen"
+      ],
+      "status": "supported",
+      "evidence": "Circuit symbols, topology, independently switched branches, AND requirement and all switch combinations. Learners build their own circuit under guidance in class."
+    },
+    {
+      "lb": 3,
+      "track": "I",
+      "competence": "nutzen ihre Kenntnisse über die Leitfähigkeit verschiedener Materialien sowie über die Wirkungen des elektrischen Stroms, um Grundregeln für den Umgang mit diesem abzuleiten und sich vor Gefahrensituationen im Alltag zu schützen.",
+      "lessons": [
+        "el-leiter-schutz"
+      ],
+      "status": "implemented",
+      "evidence": "Conductors/insulators with conditions, heating/light/magnetic/chemical effects, human-body effects, short circuits and protection rules derived in both task levels."
+    }
+  ]
+}
