@@ -1,4 +1,6 @@
 import { describe, expect, it } from "vitest";
+import { constructWitness } from "./model-action-witnesses";
+import { actionFor, applyModelAction } from "../src/model-actions";
 import {
 	chooseLab,
 	fmtDe,
@@ -83,6 +85,10 @@ describe("Natur und Technik model behaviour", () => {
 		"requires correct model work or a reasoned answer for all three goals: %s",
 		(kind) => {
 			const state = freshLab();
+			if (actionFor(kind)) {
+				constructWitness(kind, state);
+				applyModelAction(kind, state, { type: "check" });
+			}
 			const witness: Record<string, number> = {
 				microscope: 5,
 				forceMeter: 3,

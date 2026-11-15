@@ -23,8 +23,11 @@ tool handling remain in supervised class. This package does not replace them.
 Each lesson has a worked example, a key rule, a three-option quick check,
 a four-case classification workshop and separate guided/transfer writing
 tasks with hints, model answers and criteria. Three substantive model goals
-require reasoned answers or a numerical proposal; opening comparison views
-alone does not solve them. Numerical controls include atom conservation,
+include at least one direct model action in every model type. Learners place
+labels, draw food arrows, order stages, build a molecule, test predictions,
+change habitats or move a force/visibility marker; numerical proposals cover
+the remaining types. Constructed models require an explicit check. Opening
+comparison views alone does not solve goals. Numerical controls include atom conservation,
 gas volumes, density, temperature, microscope focus, spring force, work,
 lever arms, ramps, speed, graphs and approximate stopping distance. Models
 use labelled diagrams, adjacent explanations and explicit limits.
@@ -62,9 +65,12 @@ current cell format rejects cross-tile prerequisite edges.
 
 ## Publication and verification
 
-`publication.json` remains `local-only`, with a visible notice and matching
-ZAM dialog. The package has no public catalog, atlas or Pages entry. Teacher
-review and the separate reviewed-video step remain open. No videos, external
+`publication.json` declares `preview`, following Thomas's publication
+instruction in the Codex chat on 2026-11-15. The package is registered in the
+public catalog, atlas and Pages build; deployment follows the PR merge. The
+visible preview notice and ZAM dialog state that teacher review and the
+separate reviewed-video step remain open. Cell version `2026.11.2` preserves
+all lesson ids, atom ids, item ids and slugs. No videos, external
 fonts, remote images, accounts or background requests are added.
 
 ```sh
@@ -86,7 +92,8 @@ The browser verifier uses native headless Chrome and a disposable profile.
 It checks every lesson at both levels and in light/dark themes, every model
 view, all model goals, selected-chip contrast in explicit/system themes,
 requested mobile widths, heading and diagram-label bounds, negative controls,
-workshops, persistence, draft invalidation, reset and the local ZAM dialog.
+workshops, persistence, draft invalidation, reset and the published-preview
+ZAM dialog. Native pointer and keyboard events verify that marker dragging survives redraws and retains focus.
 Screenshots and its report are written to `/private/tmp/zam-nt6-browser`
 (override `BROWSER_QA_DIR`). No test dependency is added.
 

@@ -26,6 +26,13 @@ import {
 	setParameter,
 } from "./extended-models";
 import { esc } from "./workshop";
+import {
+	actionFor,
+	actionState,
+	applyModelAction,
+	type ModelCommand,
+} from "./model-actions";
+import { renderModelAction } from "./model-action-ui";
 export {
 	chooseLab,
 	freshLab,
@@ -54,6 +61,7 @@ const goalsHtml = (kind: LabKind, state: LabState) =>
 const energyOrderHtml = (state: LabState) =>
 	`<ol class="energy-order">${state.energyOrder.map((step, index) => `<li><span>${esc(ENERGY_STEPS[step])}</span><div><button type="button" class="icon-button" data-energy-move="${index}" data-delta="-1" aria-label="${esc(ENERGY_STEPS[step])} nach oben" ${index === 0 ? "disabled" : ""}>↑</button><button type="button" class="icon-button" data-energy-move="${index}" data-delta="1" aria-label="${esc(ENERGY_STEPS[step])} nach unten" ${index === 3 ? "disabled" : ""}>↓</button></div></li>`).join("")}</ol>`;
 function modelControl(kind: LabKind, state: LabState, index: number): string {
+	if (actionFor(kind)) return renderModelAction(kind, state);
 	const parameter = parameterFor(kind);
 	if (parameter)
 		return `<label>${esc(parameter.label)}: <output data-extended-output>${fmtDe(getParameter(kind, state))} ${esc(parameter.unit)}</output><input type="range" min="${parameter.min}" max="${parameter.max}" step="${parameter.step}" value="${getParameter(kind, state)}" data-model-parameter></label><p class="model-readout" data-model-readout aria-live="polite">${esc(modelReadout(kind, state))}</p>`;
@@ -75,6 +83,7 @@ function feedback(kind: LabKind, state: LabState, index: number): string {
 	)
 		return `✓ ${question.explanation}`;
 	const attempted =
+		(index === 0 && actionFor(kind) && actionState(kind, state).submitted) ||
 		state.parameters[kind] !== undefined ||
 		state.answers[goalKey(kind, index)] !== undefined ||
 		(kind === "electrolysis" && index === 0 && state.customProducts);
@@ -93,6 +102,9 @@ export function mountLab(
 	state: LabState,
 ): void {
 	const refresh = () => {
+		const activeKey = host.contains(document.activeElement)
+			? (document.activeElement as HTMLElement)?.dataset.actionKey
+			: undefined;
 		host.querySelector("[data-lab-stage]")!.innerHTML = drawScene(kind, state);
 		host.querySelector("[data-lab-detail]")!.textContent = detail(kind, state);
 		host.querySelector("[data-lab-goals]")!.innerHTML = goalsHtml(kind, state);
@@ -163,9 +175,55 @@ export function mountLab(
 		if (chart) chart.innerHTML = drawInvestigation(kind, state);
 		const order = host.querySelector("[data-energy-order]");
 		if (order) order.innerHTML = energyOrderHtml(state);
+		const action = host.querySelector("[data-model-action]");
+		if (action) action.outerHTML = renderModelAction(kind, state);
+		if (activeKey)
+			host
+				.querySelector<HTMLElement>(
+					`[data-action-key="${CSS.escape(activeKey)}"]`,
+				)
+				?.focus({ preventScroll: true });
+	};
+	const submitAction = (command: ModelCommand) => {
+		if (applyModelAction(kind, state, command)) refresh();
 	};
 	host.addEventListener("click", (event) => {
 		if (!(event.target instanceof Element)) return;
+		if (event.target.closest("[data-model-action]")) {
+			const target = event.target.closest<HTMLButtonElement>("button");
+			if (!target) return;
+			const d = target.dataset,
+				definition = actionFor(kind)!;
+			if (d.actionMove !== undefined) {
+				const index = Number(d.actionMove),
+					delta = Number(d.delta);
+				submitAction({ type: "move", index, delta });
+				host
+					.querySelector<HTMLElement>(
+						`[data-action-key="move-${index + delta}-${-delta}"]`,
+					)
+					?.focus({ preventScroll: true });
+			} else if (d.actionLabel !== undefined && definition.type === "labels") {
+				const label = definition.labels[Number(d.actionLabel)];
+				if (label) submitAction({ type: "select-label", label });
+			} else if (d.actionTarget !== undefined)
+				submitAction({ type: "place", target: d.actionTarget });
+			else if (d.actionNode !== undefined)
+				submitAction({ type: "node", id: d.actionNode });
+			else if (d.actionAtom === "H" || d.actionAtom === "O")
+				submitAction({
+					type: "atom",
+					element: d.actionAtom,
+					delta: Number(d.delta),
+				});
+			else if (d.actionRun !== undefined)
+				submitAction({ type: "run", trial: d.actionRun });
+			else if (target.hasAttribute("data-action-check"))
+				submitAction({ type: "check" });
+			else if (target.hasAttribute("data-action-clear"))
+				submitAction({ type: "clear" });
+			return;
+		}
 		const choice = event.target.closest<HTMLButtonElement>("[data-lab-choice]");
 		const answer = event.target.closest<HTMLButtonElement>(
 			"[data-investigation-answer]",
@@ -193,6 +251,85 @@ export function mountLab(
 					`[data-energy-move="${Number(move.dataset.energyMove) + Number(move.dataset.delta)}"][data-delta="${-Number(move.dataset.delta)}"]`,
 				)
 				?.focus({ preventScroll: true });
+	});
+	host.addEventListener("change", (event) => {
+		const target = event.target;
+		if (
+			target instanceof HTMLInputElement &&
+			target.dataset.actionFeature !== undefined
+		)
+			submitAction({
+				type: "feature",
+				id: target.dataset.actionFeature,
+				checked: target.checked,
+			});
+		if (
+			target instanceof HTMLSelectElement &&
+			target.dataset.actionPredict !== undefined
+		) {
+			const definition = actionFor(kind);
+			if (definition?.type !== "experiment") return;
+			const outcome =
+				target.value === "" ? "" : definition.outcomes[Number(target.value)];
+			if (outcome !== undefined)
+				submitAction({
+					type: "predict",
+					trial: target.dataset.actionPredict,
+					outcome,
+				});
+		}
+	});
+	let drag: { pointer: number; rect: DOMRect } | undefined;
+	const pointAt = (event: PointerEvent, rect: DOMRect) =>
+		submitAction({
+			type: "point",
+			x: ((event.clientX - rect.left) / rect.width) * 600,
+			y: ((event.clientY - rect.top) / rect.height) * 360,
+		});
+	host.addEventListener("pointerdown", (event) => {
+		if (event.button !== 0 || !(event.target instanceof Element)) return;
+		const canvas = event.target.closest<HTMLElement>("[data-action-canvas]");
+		if (!canvas) return;
+		event.preventDefault();
+		drag = { pointer: event.pointerId, rect: canvas.getBoundingClientRect() };
+		host.setPointerCapture(event.pointerId);
+		pointAt(event, drag.rect);
+	});
+	host.addEventListener("pointermove", (event) => {
+		if (drag?.pointer === event.pointerId) pointAt(event, drag.rect);
+	});
+	const endDrag = (event: PointerEvent) => {
+		if (drag?.pointer !== event.pointerId) return;
+		if (host.hasPointerCapture(event.pointerId))
+			host.releasePointerCapture(event.pointerId);
+		drag = undefined;
+		host
+			.querySelector<HTMLElement>("[data-action-point]")
+			?.focus({ preventScroll: true });
+	};
+	host.addEventListener("pointerup", endDrag);
+	host.addEventListener("pointercancel", endDrag);
+	host.addEventListener("keydown", (event) => {
+		if (
+			!(event.target instanceof HTMLElement) ||
+			!event.target.hasAttribute("data-action-point")
+		)
+			return;
+		const movement: Record<string, [number, number]> = {
+			ArrowLeft: [-20, 0],
+			ArrowRight: [20, 0],
+			ArrowUp: [0, -20],
+			ArrowDown: [0, 20],
+		};
+		const delta = movement[event.key];
+		if (!delta) return;
+		event.preventDefault();
+		const point = actionState(kind, state).point;
+		submitAction({
+			type: "point",
+			x: point.x + delta[0],
+			y: point.y + delta[1],
+		});
 	});
 	host.addEventListener("input", (event) => {
 		if (!(event.target instanceof HTMLInputElement)) return;
