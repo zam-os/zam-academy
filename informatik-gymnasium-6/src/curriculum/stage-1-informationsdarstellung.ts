@@ -859,10 +859,11 @@ const multimediaLab: LabDefinition = {
     {
       id: "klick",
       label: "Mausklick im Vorführmodus",
-      apply: (v) => ({
-        ...v,
-        schritt: v.modus === 1 ? Math.min(3, v.schritt + 1) : v.schritt,
-      }),
+      apply: (v) => {
+        if (v.modus !== 1) return v;
+        const maxSchritt = v.audioAktiv === 1 ? 3 : 2;
+        return { ...v, schritt: Math.min(maxSchritt, v.schritt + 1) };
+      },
     },
   ],
   witnesses: {
@@ -874,7 +875,11 @@ const multimediaLab: LabDefinition = {
     {
       key: "ansicht",
       label: "Aktiver Modus",
-      compute: (v) => (v.modus === 0 ? "Bearbeitungsmodus (Werkzeugleisten sichtbar)" : `Vorführmodus (Animationsschritt ${v.schritt} von 3)`),
+      compute: (v) => {
+        if (v.modus === 0) return "Bearbeitungsmodus (Werkzeugleisten sichtbar)";
+        const maxSchritt = v.audioAktiv === 1 ? 3 : 2;
+        return `Vorführmodus (Animationsschritt ${Math.min(v.schritt, maxSchritt)} von ${maxSchritt})`;
+      },
     },
     {
       key: "methode",
@@ -889,7 +894,9 @@ const multimediaLab: LabDefinition = {
               ? "stichpunkt1.einblenden()"
               : v.schritt === 2
                 ? "vogelFoto.einblenden()"
-                : "vogelRuf.abspielen()",
+                : v.audioAktiv === 1
+                  ? "vogelRuf.abspielen()"
+                  : "Kein AUDIO-Objekt auf FOLIE 1",
     },
   ],
   goals: [

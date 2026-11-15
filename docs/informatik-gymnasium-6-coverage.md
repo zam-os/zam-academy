@@ -15,9 +15,9 @@ Alle 14 Kompetenzerwartungen und 18 Inhaltsspiegelstriche aus `NT6 2.1`, `NT6 2.
 
 | Teilbereich | Std. (ca.) | Kompetenzen | Inhalte | Lektionen | Status in der App |
 | --- | ---: | ---: | ---: | ---: | --- |
-| `NT6 2.1` Informationsdarstellung mit Grafik-, Text- und Multimediadokumenten | 18 | 6 | 9 | 7 | 5 `implemented`, 1 `supported` (`2.1.6`) |
-| `NT6 2.2` Projekt: Multimediapräsentation | 5 | 4 | 5 | 2 | 3 `implemented`, 1 `supported` (`2.2.1`) |
-| `NT6 2.3` Hierarchische Informationsstrukturen – Dateisystem | 5 | 4 | 4 | 3 | 3 `implemented`, 1 `supported` (`2.3.4`) |
+| `NT6 2.1` Informationsdarstellung mit Grafik-, Text- und Multimediadokumenten | 18 | 7 | 13 | 7 | 6 `implemented`, 1 `supported` (`2.1.6`) |
+| `NT6 2.2` Projekt: Multimediapräsentation | 5 | 2 | 2 | 2 | 1 `implemented`, 1 `supported` (`2.2.1`) |
+| `NT6 2.3` Hierarchische Informationsstrukturen – Dateisystem | 5 | 5 | 3 | 3 | 4 `implemented`, 1 `supported` (`2.3.4`) |
 
 ### Was im Präsenzunterricht bleibt (`status: "supported"`)
 

@@ -60,9 +60,11 @@ const praesentationLab: LabDefinition = {
       key: "textmenge",
       label: "Textanteil",
       compute: (v) =>
-        v.words <= 36
+        v.words <= 30
           ? `Kompakt (${v.words} Wörter · gute Stichpunkte)`
-          : `Überladen (${v.words} Wörter · zu viel Fließtext)`,
+          : v.words <= 42
+            ? `Noch zu viel Text (${v.words} Wörter > 30)`
+            : `Überladen (${v.words} Wörter · zu viel Fließtext)`,
     },
     {
       key: "lesbarkeit",
@@ -70,6 +72,7 @@ const praesentationLab: LabDefinition = {
       compute: (v) => {
         if (v.fontSize < 20) return `Zu klein (${v.fontSize} pt < 20 pt)`;
         if (v.contrast !== 2) return "Schlechter Farbkontrast";
+        if (v.fontSize < 24) return `Lesbar (${v.fontSize} pt · Ziel ≥ 24 pt)`;
         return `Sehr gut (${v.fontSize} pt, klarer Kontrast)`;
       },
     },
@@ -78,7 +81,7 @@ const praesentationLab: LabDefinition = {
       label: "Gesamturteil",
       emphasis: true,
       compute: (v) =>
-        v.words <= 36 && v.fontSize >= 22 && v.contrast === 2 && v.animMode === 1
+        v.words <= 30 && v.fontSize >= 24 && v.contrast === 2 && v.animMode === 1
           ? "Überzeugende Präsentationsfolie"
           : "Noch nachbessern",
     },
@@ -86,8 +89,8 @@ const praesentationLab: LabDefinition = {
   goals: [
     {
       id: "g1",
-      text: "Begrenze den Text auf höchstens 36 Wörter und stelle mindestens 22 pt Schriftgröße ein.",
-      check: (v) => v.words <= 36 && v.fontSize >= 22,
+      text: "Begrenze den Text auf höchstens 30 Wörter und stelle mindestens 24 pt Schriftgröße ein.",
+      check: (v) => v.words <= 30 && v.fontSize >= 24,
     },
     {
       id: "g2",
@@ -145,7 +148,7 @@ const praesentationLab: LabDefinition = {
         const lineY = 148 + idx * (samplePx + 5);
         if (lineY > 258) return "";
         const txt =
-          words <= 36
+          words <= 30
             ? `• Stichpunkt ${idx + 1}: Kernbegriff (${wordsPerBullet} W.)`
             : `• Langer Absatzeintrag ${idx + 1} mit zu viel Fließtext ...`;
         return `<text x="58" y="${lineY}" font-size="${samplePx}" fill="${textColor}" font-weight="500">${esc(txt.slice(0, 44))}</text>`;
@@ -158,11 +161,11 @@ const praesentationLab: LabDefinition = {
         open("Folien-Prüfer im Klassenzimmer"),
         rect(20, 14, W - 40, 22, "lab-panel", `rx="6"`),
         line(40, 25, 480, 25, "lab-thin"),
-        rect(40, 21, ((36 - 12) / 84) * 440, 8, "lab-fill-ok", `rx="4"`),
+        rect(40, 21, ((30 - 12) / 84) * 440, 8, "lab-fill-ok", `rx="4"`),
         `<g class="lab-handle lab-handle-a" data-handle="wordsHandle" role="slider" aria-label="Wörter je Folie" aria-valuemin="12" aria-valuemax="96" aria-valuenow="${words}">`,
         circle(handleWordX, 25, 16, "lab-handle-hit"),
         circle(handleWordX, 25, 7, "lab-handle-dot"),
-        text(handleWordX, 49, `${words} Wörter`, words <= 36 ? "lab-text-ok" : "lab-text-bad", "middle"),
+        text(handleWordX, 49, `${words} Wörter`, words <= 30 ? "lab-text-ok" : "lab-text-bad", "middle"),
         "</g>",
         `<rect x="36" y="72" width="424" height="202" rx="10" fill="${bgFill}" stroke="currentColor" stroke-opacity="0.25" stroke-width="1.5" />`,
         `<text x="58" y="108" font-size="${Math.min(24, samplePx + 5)}" fill="${titleColor}" font-weight="700">Aufbau einer Pflanzenzelle</text>`,
@@ -174,7 +177,7 @@ const praesentationLab: LabDefinition = {
         `<g class="lab-handle lab-handle-b" data-handle="sizeHandle" role="slider" aria-label="Schriftgröße in Punkt" aria-valuemin="12" aria-valuemax="32" aria-valuenow="${fontSize}">`,
         circle(482, handleSizeY, 16, "lab-handle-hit"),
         circle(482, handleSizeY, 7, "lab-handle-dot"),
-        text(482, handleSizeY - 12, `${fontSize} pt`, fontSize >= 22 ? "lab-text-ok" : "lab-text-bad", "middle"),
+        text(482, handleSizeY - 12, `${fontSize} pt`, fontSize >= 24 ? "lab-text-ok" : "lab-text-bad", "middle"),
         "</g>",
         text(260, H - 6, "Ziehe oben (Wörter), rechts (pt) oder nutze die Regler.", "lab-text-muted", "middle"),
         "</svg>",
@@ -264,7 +267,7 @@ export const STAGE_PRAESENTATION_PROJEKT: Stage = {
   icon: "🎬",
   accent: "#0b7265",
   badgeTitle: "Souveräner Medienprofi",
-  lehrplanLabel: "NT6 2.2 · ca. 4 Std.",
+  lehrplanLabel: "NT6 2.2 · ca. 5 Std.",
   module: "2.2",
   lessons: [
     lesson(STAGE_ID, "2.2", 1, {

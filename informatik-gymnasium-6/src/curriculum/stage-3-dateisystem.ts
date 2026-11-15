@@ -368,32 +368,52 @@ const dateisystemOopLab: LabDefinition = {
           return [
             open("Objektdiagramm der unsortierten Ablage"),
             rect(16, 14, W - 32, H - 34, "lab-panel", `rx="10"`),
-            umlCard({ x: 168, y: 30, w: 184, title: "Schule : ORDNER", attributes: ["Name = ‚Schule‘"], isObject: true }),
-            containmentArrow(205, 86, 120, 178, "enthält"),
-            containmentArrow(315, 86, 390, 178, "enthält"),
-            umlCard({ x: 34, y: 180, w: 190, title: "Plakat : DATEI", attributes: ["Dateityp = ‚svg‘", "Größe = ‚42 KB‘"], isObject: true }),
-            umlCard({ x: 296, y: 180, w: 190, title: "Referat : DATEI", attributes: ["Dateityp = ‚odt‘", "Größe = ‚98 KB‘"], isObject: true }),
+            umlCard({ x: 175, y: 28, w: 170, title: "Schule : ORDNER", attributes: ["Name = ‚Schule‘"], isObject: true }),
+            containmentArrow(205, 82, 100, 184, "enthält"),
+            containmentArrow(260, 82, 260, 184, "enthält"),
+            containmentArrow(315, 82, 420, 184, "enthält"),
+            umlCard({ x: 26, y: 186, w: 148, title: "Plakat : DATEI", attributes: ["Dateityp = ‚svg‘", "Größe = ‚42 KB‘"], isObject: true }),
+            umlCard({ x: 186, y: 186, w: 148, title: "Referat : DATEI", attributes: ["Dateityp = ‚odt‘", "Größe = ‚98 KB‘"], isObject: true }),
+            umlCard({ x: 346, y: 186, w: 148, title: "Zelle : DATEI", attributes: ["Dateityp = ‚png‘", "Größe = ‚64 KB‘"], isObject: true }),
             text(260, H - 10, "Jede konkrete Datei und jeder Ordner bekommt eine Objektkarte.", "lab-text-muted", "middle"),
+            "</svg>",
+          ].join("");
+        }
+        if (org === 1) {
+          return [
+            open("Objektdiagramm nach Fächern"),
+            rect(16, 14, W - 32, H - 34, "lab-panel", `rx="10"`),
+            umlCard({ x: 175, y: 24, w: 170, title: "Schule : ORDNER", attributes: ["Name = ‚Schule‘"], isObject: true }),
+            containmentArrow(220, 78, 180, 126, "enthält", hi ? "lab-ok-stroke" : "lab-side-a", true),
+            containmentArrow(300, 78, 416, 126, "enthält", hi ? "lab-ok-stroke" : "lab-side-a", true),
+            umlCard({ x: 92, y: 128, w: 176, title: "Informatik : ORDNER", attributes: ["Name = ‚Informatik‘"], isObject: true }),
+            umlCard({ x: 336, y: 128, w: 160, title: "Biologie : ORDNER", attributes: ["Name = ‚Biologie‘"], isObject: true }),
+            containmentArrow(140, 182, 100, 234, "enthält"),
+            containmentArrow(220, 182, 260, 234, "enthält"),
+            containmentArrow(416, 182, 420, 234, "enthält"),
+            umlCard({ x: 26, y: 236, w: 148, title: "Plakat : DATEI", attributes: ["Dateityp = ‚svg‘"], isObject: true }),
+            umlCard({ x: 186, y: 236, w: 148, title: "Referat : DATEI", attributes: ["Dateityp = ‚odt‘"], isObject: true }),
+            umlCard({ x: 346, y: 236, w: 148, title: "Zelle : DATEI", attributes: ["Dateityp = ‚png‘"], isObject: true }),
+            text(260, H - 10, "Ordner-Objekte enthalten sowohl Ordner-Objekte als auch Datei-Objekte.", "lab-text-muted", "middle"),
             "</svg>",
           ].join("");
         }
         return [
           open("Objektdiagramm mit Unterordnern"),
           rect(16, 14, W - 32, H - 34, "lab-panel", `rx="10"`),
-          umlCard({ x: 175, y: 24, w: 170, title: "Schule : ORDNER", attributes: ["Name = ‚Schule‘"], isObject: true }),
-          containmentArrow(220, 78, 126, 130, "enthält", hi ? "lab-ok-stroke" : "lab-side-a", true),
-          containmentArrow(300, 78, 392, 130, "enthält", hi ? "lab-ok-stroke" : "lab-side-a", true),
-          umlCard({ x: 36, y: 132, w: 180, title: "Informatik : ORDNER", attributes: ["Name = ‚Informatik‘"], isObject: true }),
-          umlCard({ x: 302, y: 132, w: 180, title: "Biologie : ORDNER", attributes: ["Name = ‚Biologie‘"], isObject: true }),
-          org === 2
-            ? containmentArrow(126, 186, 126, 232, "enthält", hi ? "lab-ok-stroke" : "lab-side-a", true) +
-              umlCard({ x: 36, y: 234, w: 180, title: "Grafiken : ORDNER", attributes: ["Name = ‚Grafiken‘"], isObject: true }) +
-              containmentArrow(216, 260, 302, 260, "enthält") +
-              umlCard({ x: 304, y: 226, w: 180, title: "Plakat : DATEI", attributes: ["Dateityp = ‚svg‘"], isObject: true })
-            : containmentArrow(126, 186, 126, 232, "enthält") +
-              umlCard({ x: 36, y: 234, w: 180, title: "Referat : DATEI", attributes: ["Dateityp = ‚odt‘"], isObject: true }) +
-              containmentArrow(392, 186, 392, 232, "enthält") +
-              umlCard({ x: 302, y: 234, w: 180, title: "Zelle : DATEI", attributes: ["Dateityp = ‚png‘"], isObject: true }),
+          umlCard({ x: 178, y: 18, w: 164, title: "Schule : ORDNER", attributes: ["Name = ‚Schule‘"], isObject: true }),
+          containmentArrow(205, 72, 152, 102, "enthält", hi ? "lab-ok-stroke" : "lab-side-a", true),
+          containmentArrow(315, 72, 417, 102, "enthält", hi ? "lab-ok-stroke" : "lab-side-a", true),
+          umlCard({ x: 64, y: 104, w: 176, title: "Informatik : ORDNER", attributes: ["Name = ‚Informatik‘"], isObject: true }),
+          umlCard({ x: 338, y: 104, w: 158, title: "Biologie : ORDNER", attributes: ["Name = ‚Biologie‘"], isObject: true }),
+          containmentArrow(118, 158, 96, 188, "enthält", hi ? "lab-ok-stroke" : "lab-side-a", true),
+          containmentArrow(200, 158, 266, 188, "enthält"),
+          containmentArrow(417, 158, 422, 188, "enthält"),
+          umlCard({ x: 24, y: 190, w: 160, title: "Grafiken : ORDNER", attributes: ["Name = ‚Grafiken‘"], isObject: true }),
+          umlCard({ x: 194, y: 190, w: 144, title: "Referat : DATEI", attributes: ["Dateityp = ‚odt‘"], isObject: true }),
+          umlCard({ x: 348, y: 190, w: 148, title: "Zelle : DATEI", attributes: ["Dateityp = ‚png‘"], isObject: true }),
+          containmentArrow(104, 244, 194, 289, "enthält"),
+          umlCard({ x: 194, y: 262, w: 156, title: "Plakat : DATEI", attributes: ["Dateityp = ‚svg‘"], isObject: true }),
           text(260, H - 10, "Ordner-Objekte enthalten sowohl Ordner-Objekte als auch Datei-Objekte.", "lab-text-muted", "middle"),
           "</svg>",
         ].join("");
@@ -626,7 +646,7 @@ export const STAGE_DATEISYSTEM: Stage = {
   icon: "🗂️",
   accent: "#6d28d9",
   badgeTitle: "Architektin der Dateibäume",
-  lehrplanLabel: "NT6 2.3 · ca. 6 Std.",
+  lehrplanLabel: "NT6 2.3 · ca. 5 Std.",
   module: "2.3",
   lessons: [
     lesson(STAGE_ID, "2.3", 1, {
@@ -773,7 +793,7 @@ export const STAGE_DATEISYSTEM: Stage = {
               "Ein Stammbaum zeigt die Großeltern ganz oben, darunter ihre Kinder und darunter ihre Enkel. Wie nennt man die Kinder-Knoten mit eigenen Nachkommen?",
               "Innere Knoten",
               ["Blätter", "Isolierte Kanten"],
-              "Knoten, die selbst mindestens einen Nachfolger haben (und unterhalb der Wurzel liegen), heißen innere Knoten.",
+              "Jeder Knoten, der selbst mindestens einen Nachfolger hat (einschließlich der Wurzel bei Verzweigungen), heißt innerer Knoten.",
               "Enden diese Knoten ohne Kinder oder verzweigen sie weiter?",
             ),
             cc(

@@ -207,6 +207,36 @@ describe("Subject details checked in review", () => {
     expect(svg).toContain("ORDNER");
     expect(svg).toContain("DATEI");
     expect(svg).toContain("enthält (rekursiv)");
+    for (const struktur of [0, 1, 2]) {
+      const objSvg = ds.lab.view.render({ ...defaultLabValues(ds.lab), darstellung: 1, struktur }, {});
+      expect(objSvg, `struktur ${struktur}`).toContain("Plakat : DATEI");
+      expect(objSvg, `struktur ${struktur}`).toContain("Referat : DATEI");
+      expect(objSvg, `struktur ${struktur}`).toContain("Zelle : DATEI");
+    }
+  });
+
+  it("aligns stage hours, slide lab thresholds, and multimedia audio clicks", () => {
+    expect(STAGES[0].lehrplanLabel).toBe("NT6 2.1 · ca. 18 Std.");
+    expect(STAGES[1].lehrplanLabel).toBe("NT6 2.2 · ca. 5 Std.");
+    expect(STAGES[2].lehrplanLabel).toBe("NT6 2.3 · ca. 5 Std.");
+
+    const folie = must(findLessonById("inf6-praesentation-qualitaet")).lesson;
+    expect(computeReadouts(folie.lab, { words: 36, fontSize: 22, contrast: 2, animMode: 1 }).bewertung).toBe(
+      "Noch nachbessern",
+    );
+    expect(computeReadouts(folie.lab, { words: 30, fontSize: 24, contrast: 2, animMode: 1 }).bewertung).toBe(
+      "Überzeugende Präsentationsfolie",
+    );
+
+    const media = must(findLessonById("inf6-multimediadokumente")).lesson;
+    let withoutAudio: LabValues = { ...defaultLabValues(media.lab), modus: 1, audioAktiv: 0 };
+    for (let i = 0; i < 4; i++) {
+      withoutAudio = applyAction(media.lab, withoutAudio, "klick");
+      expect(computeReadouts(media.lab, withoutAudio).methode).not.toContain("vogelRuf.abspielen()");
+    }
+    let withAudio: LabValues = { ...defaultLabValues(media.lab), modus: 1, audioAktiv: 1 };
+    for (let i = 0; i < 3; i++) withAudio = applyAction(media.lab, withAudio, "klick");
+    expect(computeReadouts(media.lab, withAudio).methode).toBe("vogelRuf.abspielen()");
   });
 
   it("accepts both backslash and forward-slash forms for generated file paths", () => {

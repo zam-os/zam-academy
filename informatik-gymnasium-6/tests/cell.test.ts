@@ -65,6 +65,11 @@ describe("ZAM cell zam-academy:informatik-gymnasium-6", () => {
       expect(atom.curricula).toContainEqual(
         expect.objectContaining({ provider: "zam-academy", subject: "informatik-gymnasium-6", topic_code: stage.id }),
       );
+      const topicTitles: Record<string, string> = {
+        "2.1": "Informationsdarstellung mit Grafik-, Text- und Multimediadokumenten",
+        "2.2": "Projekt: Erstellen einer Multimediapräsentation",
+        "2.3": "Hierarchische Informationsstrukturen – Dateisystem",
+      };
       const official = atom.curricula.filter((entry) => entry.provider === "lehrplanplus-bayern");
       expect(official).toEqual([
         {
@@ -72,8 +77,8 @@ describe("ZAM cell zam-academy:informatik-gymnasium-6", () => {
           school_type: "gymnasium",
           grade: 6,
           subject: "nt_gym",
-          topic_code: "lb2",
-          topic_title: "NT6 2 Schwerpunkt Informatik",
+          topic_code: `lb${lesson.module}`,
+          topic_title: topicTitles[lesson.module],
           exam_relevant: true,
         },
       ]);
