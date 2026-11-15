@@ -68,6 +68,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | Deutsch 8 Mittelschule (LehrplanPLUS Bayern, Regelklasse und M-Zug) | [`deutsch-mittelschule-8/`](deutsch-mittelschule-8/) | https://academy.zam-os.org/deutsch-mittelschule-8/ | `zam-academy:deutsch-mittelschule-8` |
 | Geschichte/Politik/Geographie 5 Mittelschule (LehrplanPLUS Bayern) | [`gpg-mittelschule-5/`](gpg-mittelschule-5/) | Built by Pages on merge | `zam-academy:gpg-mittelschule-5` |
 | Natur und Technik 5 Mittelschule (LehrplanPLUS Bayern) | [`nt-mittelschule-5/`](nt-mittelschule-5/) | Built by Pages on merge | `zam-academy:nt-mittelschule-5` |
+| Informatik 6 Gymnasium (LehrplanPLUS Bayern, Natur und Technik 6 Schwerpunkt Informatik) | [`informatik-gymnasium-6/`](informatik-gymnasium-6/) | Built by Pages on merge | `zam-academy:informatik-gymnasium-6` |
 
 ## How an app and its ZAM cell fit together
 
@@ -166,6 +167,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Mathematik 7 Gymnasium: cd mathematik-gymnasium-7 (dev server on :5242)
 # Geographie 5 Gymnasium: cd geographie-gymnasium-5 (dev server on :5244)
 # French 5 Gymnasium: cd franzoesisch-gymnasium-5 (dev server on :5245)
+# Informatik 6 Gymnasium: cd informatik-gymnasium-6 (dev server on :5246)
 # Grade 11 introductory biology preview: cd biologie-gymnasium-11 (dev server on :5227)
 npm ci
 npm run dev      # http://localhost:5180/uml/
@@ -241,3 +243,5 @@ verbatim expectations and a proposal-only history mapping. Run locally on port
 5240 or create the offline ZIP with `npm run package:zip`.
 
 The [Biologie 5 Realschule package](biologie-realschule-5/) adds 25 lessons, four interactive models (microscope, cell comparison, human torso, and arm lever), 50 case decisions, 50 two-level writing tasks, and 50 linked ZAM cards across all four LehrplanPLUS Bayern areas (`biologie-realschule-5/coverage.json`, all 40 verbatim expectations verified). The [legacy review](docs/biologie-5-bestandsabgleich.md) proposes 5 category-A replacements and retains 19 cards active across the three Grade 5 `de-by` cells (`proposal-only`, `approved: null`; `cell.json` ships without `replaces` or `retired_items` until approved).
+
+The [Informatik 6 Gymnasium package](informatik-gymnasium-6/) covers Natur und Technik – Schwerpunkt Informatik 6 (`NT6 2.1–2.3`) with 12 lessons, interactive workshops and SVG labs across all three learning areas, two-level exercises, and 36 linked ZAM cards. Its [coverage matrix](informatik-gymnasium-6/coverage.json) maps all 14 Kompetenzerwartungen and 18 content bullets verbatim against LehrplanPLUS Bayern. The [curriculum and legacy review](docs/informatik-gymnasium-6-coverage.md) documents a proposal (`proposal-only`, `approved: null`) for the eight cards of `de-by:gymnasium-6-natur-technik-informatik-vektorgrafik-texte` (2 A, 6 C) and flags the unmapped Grade 5 cell `de-by:gymnasium-5-natur-technik-mikroskop-experiment-oop` (`J05–J08`) for decision; until approved, `cell.json` ships without `replaces` or `retired_items`.
