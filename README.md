@@ -4,6 +4,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 
 | App | Folder | Live | ZAM cell |
 | --- | --- | --- | --- |
+| English 5 Gymnasium (Bavaria) | [`englisch-gymnasium-5/`](englisch-gymnasium-5/) | https://academy.zam-os.org/englisch-gymnasium-5/ | `zam-academy:englisch-gymnasium-5` |
 | German 5 Gymnasium (Bavaria; local draft) | [`deutsch-gymnasium-5/`](deutsch-gymnasium-5/) | Local offline package | `zam-academy:deutsch-gymnasium-5` |
 | French 5 Gymnasium (Bavaria, first foreign language) | [`franzoesisch-gymnasium-5/`](franzoesisch-gymnasium-5/) | https://academy.zam-os.org/franzoesisch-gymnasium-5/ | `zam-academy:franzoesisch-gymnasium-5` |
 | Englisch 5 Mittelschule (LehrplanPLUS Bayern) | [`englisch-mittelschule-5/`](englisch-mittelschule-5/) | https://academy.zam-os.org/englisch-mittelschule-5/ | `zam-academy:englisch-mittelschule-5` |
@@ -170,6 +171,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Natur und Technik 6 Mittelschule preview: cd nt-mittelschule-6 (dev server on :5250)
 # Mathematik 7 Gymnasium: cd mathematik-gymnasium-7 (dev server on :5242)
 # Geographie 5 Gymnasium: cd geographie-gymnasium-5 (dev server on :5244)
+# English 5 Gymnasium: cd englisch-gymnasium-5 (dev server on :5247)
 # German 5 Gymnasium: cd deutsch-gymnasium-5 (dev server on :5249)
 # Biologie 5 Gymnasium: cd biologie-gymnasium-5 (dev server on :5246)
 # French 5 Gymnasium: cd franzoesisch-gymnasium-5 (dev server on :5245)
