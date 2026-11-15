@@ -175,7 +175,7 @@ test("a preview is published and marked in the registry, its app and the catalog
   }
   // Every place in the atlas that names a package says it is a preview.
   for (const shown of [
-    "k.preview ? h(",
+    "k.preview ? [h(",
     "c.pkg?.preview",
     "k.pkg?.preview",
     "n.pkg?.preview",
@@ -255,6 +255,25 @@ test("the atlas omits untaught subjects instead of promising future packages", (
       `${gap.fach} ${gap.grade} ${gap.school}`,
     );
   }
+});
+
+test("Realschule physics starts with Group I in grade 7, not a promised grade-6 package", () => {
+  const trees = atlasTrees();
+  assert.ok(!schoolSubject(trees, 6, "physik")?.children.some((n) => n.school?.id === "realschule"));
+  assert.deepEqual(schoolSubject(trees, 6, "physik").children.map((n) => n.school.id), ["mittelschule"]);
+  const grade7 = schoolSubject(trees, 7, "physik").children.find((n) => n.school?.id === "realschule");
+  assert.equal(grade7.pkg.app, "physik-realschule-7");
+  assert.equal(grade7.pkg.zweige, "I");
+  const world = trees.welt.children.flatMap((n) => n.children).find((n) => n.id === "physik");
+  assert.ok(!world.children.some((n) => n.offerKey === "slot:realschule:6:physik" || n.offerGroup?.includes("slot:realschule:6:physik")));
+  assert.ok(!world.children.some((n) => n.offerKey === "slot:gymnasium:6:physik" || n.offerGroup?.includes("slot:gymnasium:6:physik")));
+  assert.ok(world.children.some((n) => n.pkg?.app === "physik-realschule-7"));
+  const rows = matrix(registry, "realschule").nodes.matrix.children.find((n) => n.tag === "tbody").children;
+  const row = rows[registry.faecher.findIndex((f) => f.id === "physik")];
+  const grade6 = row.children[3].children[0];
+  assert.equal(grade6.attrs.class, "na none");
+  assert.equal(grade6.attrs.href, "https://www.isb.bayern.de/schularten/realschule/faecher/physik/");
+  assert.ok(grade6.attrs["aria-label"].includes("kein Fach"));
 });
 
 test("GPG is reachable through all three paths in both lenses, including grades before the standalone subject starts", () => {
@@ -632,6 +651,11 @@ test("package details place the opening link after the title and reset a previou
   );
   for (const node of nodes) {
     const panel = element("aside");
+    const append = panel.append.bind(panel);
+    panel.append = (...children) => {
+      assert.ok(children.every((child) => child !== null && child !== undefined), "native append would display a literal null or undefined");
+      append(...children);
+    };
     panel.scrollTop = 200;
     new Function("state", "$", "h", "schulName", `${render}; renderPanel();`)(
       { sel: node },

@@ -77,6 +77,20 @@
   ],
   "kein_unterricht": [
     {
+      "fach": "physik",
+      "grade": 6,
+      "school": "realschule",
+      "note": "An der bayerischen Realschule beginnt Physik in Wahlpflichtfächergruppe I erst in Klasse 7, in II/III erst in Klasse 8. In Klasse 6 gibt es keinen Physikunterricht.",
+      "source": "https://www.isb.bayern.de/schularten/realschule/faecher/physik/"
+    },
+    {
+      "fach": "physik",
+      "grade": 6,
+      "school": "gymnasium",
+      "note": "Natur und Technik umfasst am Gymnasium in Klasse 6 die Schwerpunkte Biologie und Informatik. Der Schwerpunkt Physik beginnt erst in Klasse 7.",
+      "source": "https://www.lehrplanplus.bayern.de/fachprofil/gymnasium/nt_gym"
+    },
+    {
       "fach": "geographie",
       "grade": 10,
       "school": "realschule",
@@ -162,6 +176,20 @@
     }
   ],
   "pakete": [
+    {
+      "id": "physik-realschule-7",
+      "app": "physik-realschule-7",
+      "title": "Physik 7 · Zweig I",
+      "fach": "physik",
+      "grade": 7,
+      "school": "realschule",
+      "zweige": "I",
+      "lessons": 24,
+      "cards": 73,
+      "lang": ["de"],
+      "gebiete": ["Messen und Bewegung", "Kräfte und Stoffe", "Lichtwege und Bilder", "Magnetismus", "Einfache Stromkreise"],
+      "desc": "24 Lektionen mit beschrifteten Diagrammen, 14 veränderbaren Modellen, Werkstätten und zwei Aufgabenlevels. LehrplanPLUS für Wahlpflichtfächergruppe I; in II/III beginnt Physik erst in Klasse 8."
+    },
     {
       "id": "deutsch-mittelschule-5",
       "app": "deutsch-mittelschule-5",

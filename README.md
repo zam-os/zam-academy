@@ -4,6 +4,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 
 | App | Folder | Live | ZAM cell |
 | --- | --- | --- | --- |
+| Physics 7 Realschule (Bavaria, Group I) | [`physik-realschule-7/`](physik-realschule-7/) | Built by Pages on merge | `zam-academy:physik-realschule-7` |
 | English 5 Gymnasium (Bavaria) | [`englisch-gymnasium-5/`](englisch-gymnasium-5/) | https://academy.zam-os.org/englisch-gymnasium-5/ | `zam-academy:englisch-gymnasium-5` |
 | German 5 Gymnasium (Bavaria; local draft) | [`deutsch-gymnasium-5/`](deutsch-gymnasium-5/) | Local offline package | `zam-academy:deutsch-gymnasium-5` |
 | French 5 Gymnasium (Bavaria, first foreign language) | [`franzoesisch-gymnasium-5/`](franzoesisch-gymnasium-5/) | https://academy.zam-os.org/franzoesisch-gymnasium-5/ | `zam-academy:franzoesisch-gymnasium-5` |
@@ -108,6 +109,8 @@ Published, but not yet reviewed by a primary-school teacher and without teacher 
 New and changed packages follow the package standard in [AGENTS.md](AGENTS.md): curriculum check, lesson and card quality, verified videos, mapping approval and the definition of done.
 
 Each app is its own Vite package:
+
+Physics 7 Realschule: `cd physik-realschule-7`, development server on port 5251.
 
 ```bash
 cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sql (:5182), cd mathematik-realschule-9 (:5183)
