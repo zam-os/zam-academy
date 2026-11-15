@@ -1,0 +1,650 @@
+{
+	"inquiry": {
+		"type": "order",
+		"goal": "Einen fairen Untersuchungsablauf als Modell aufbauen",
+		"prompt": "Ordne den Untersuchungsweg zum Einfluss der Temperatur auf die Lösezeit.",
+		"items": [
+			"Fragestellung und konstante Bedingungen festlegen",
+			"Nur die Temperatur verändern, Lösezeiten messen und notieren",
+			"Messwerte vergleichen und eine begrenzte Schlussfolgerung formulieren"
+		],
+		"hint": "Planung kommt vor der Messung; ein Schluss braucht dokumentierte Beobachtungen.",
+		"explanation": "Die geordnete Darstellung bildet den beschriebenen Ablauf ab. Begründe, warum die Schritte in dieser Reihenfolge zusammengehören."
+	},
+	"safety": {
+		"type": "order",
+		"goal": "Bei einem Glasbruch den sicheren Handlungsweg ordnen",
+		"prompt": "Ein Glasgerät zerbricht: Baue den sicheren Ablauf aus den drei Schritten.",
+		"items": [
+			"Arbeit stoppen und Abstand zu den Splittern halten",
+			"Lehrkraft informieren",
+			"Weitere Schritte nur nach der Anweisung der Lehrkraft ausführen"
+		],
+		"hint": "Eigenständiges Aufräumen oder Weiterarbeiten kommt nicht vor der Unterweisung.",
+		"explanation": "Die geordnete Darstellung bildet den beschriebenen Ablauf ab. Begründe, warum die Schritte in dieser Reihenfolge zusammengehören."
+	},
+	"waterUse": {
+		"type": "labels",
+		"goal": "Drei Wasserfunktionen den Modellbildern zuordnen",
+		"prompt": "Wähle eine Beschriftung und dann die passende Bildmarkierung.",
+		"labels": ["Lebensraum", "Lebensmittel", "Transportmittel"],
+		"targets": [
+			{
+				"id": "0",
+				"x": 100,
+				"y": 280,
+				"label": "Lebensraum",
+				"description": "Fisch im Gewässer"
+			},
+			{
+				"id": "1",
+				"x": 300,
+				"y": 280,
+				"label": "Lebensmittel",
+				"description": "Wasser zum Trinken"
+			},
+			{
+				"id": "2",
+				"x": 500,
+				"y": 280,
+				"label": "Transportmittel",
+				"description": "Schifffahrt"
+			}
+		],
+		"hint": "Vergleiche Leben im Wasser, Trinkwassernutzung und Stofftransport.",
+		"explanation": "Die Beschriftungen passen zu den sichtbaren Merkmalen und Funktionen. Erkläre eine deiner Zuordnungen.",
+		"panels": ["life", "drink", "carry"]
+	},
+	"properties": {
+		"type": "labels",
+		"goal": "Phasenübergänge im Wassersteckbrief selbst beschriften",
+		"prompt": "Beschrifte die Modellansichten für reines Wasser bei normalem Luftdruck.",
+		"labels": ["0 °C", "4 °C", "20 °C", "100 °C"],
+		"targets": [
+			{
+				"id": "0",
+				"x": 150,
+				"y": 280,
+				"label": "0 °C",
+				"description": "Schmelzen"
+			},
+			{
+				"id": "1",
+				"x": 450,
+				"y": 280,
+				"label": "100 °C",
+				"description": "Sieden"
+			}
+		],
+		"hint": "Unterscheide Schmelzpunkt, Dichtemaximum und Siedepunkt bei normalem Luftdruck.",
+		"explanation": "Die Beschriftungen passen zu den sichtbaren Merkmalen und Funktionen. Erkläre eine deiner Zuordnungen.",
+		"panels": ["melt", "boil"],
+		"hideLabels": ["0 °C", "100 °C", "20 °C"]
+	},
+	"solutions": {
+		"type": "experiment",
+		"goal": "Leitfähigkeit zweier klarer Lösungen vorhersagen und prüfen",
+		"prompt": "Sage den Befund für beide Modellproben voraus. Spiele jeden Modellversuch ab und vergleiche. Es sind keine Anleitungen für elektrische Heimversuche.",
+		"outcomes": [
+			"klar und deutlich leitend",
+			"klar und kaum leitend",
+			"trüb, ungelöste Körner"
+		],
+		"trials": [
+			{
+				"id": "salt",
+				"label": "Kochsalz in sehr reinem Wasser",
+				"scene": "salt",
+				"outcome": "klar und deutlich leitend"
+			},
+			{
+				"id": "sugar",
+				"label": "Zucker in sehr reinem Wasser",
+				"scene": "sugar",
+				"outcome": "klar und kaum leitend"
+			}
+		],
+		"hint": "Gleiches Aussehen und Löslichkeit garantieren nicht dieselbe Leitfähigkeit.",
+		"explanation": "Beide Lösungen können klar sein; die Kochsalzlösung leitet deutlich besser als reine Zuckerlösung."
+	},
+	"tension": {
+		"type": "experiment",
+		"goal": "Die Tragwirkung mit und ohne Spülmittel vergleichen",
+		"prompt": "Triff für beide Bedingungen eine Vorhersage und prüfe sie im Modell. Echte Tiere werden dafür nicht mit Spülmittel in Kontakt gebracht.",
+		"outcomes": [
+			"Grenzfläche kann das leichte Modellobjekt tragen",
+			"Tragwirkung der Grenzfläche nimmt ab"
+		],
+		"trials": [
+			{
+				"id": "clean",
+				"label": "Sauberes Wasser",
+				"scene": "strider",
+				"outcome": "Grenzfläche kann das leichte Modellobjekt tragen"
+			},
+			{
+				"id": "soap",
+				"label": "Mit Spülmittel",
+				"scene": "soap",
+				"outcome": "Tragwirkung der Grenzfläche nimmt ab"
+			}
+		],
+		"hint": "Spülmittel schwächt die Oberflächenspannung; Form und Benetzung wirken ebenfalls mit.",
+		"explanation": "Die Modellbeobachtung zeigt die schwächere Tragwirkung. Spülmittel gehört nicht in den Lebensraum der Tiere."
+	},
+	"molecules": {
+		"type": "molecule",
+		"goal": "Ein Wassermolekül aus den passenden Atomen aufbauen",
+		"prompt": "Füge H- und O-Atome hinzu, bis dein Modell genau ein Wassermolekül darstellt.",
+		"hint": "Die Formel H₂O beschreibt die Anzahl beider Atomsorten.",
+		"explanation": "Zwei H-Atome und ein O-Atom bilden das dargestellte Wassermolekül. Größe und Farben sind Modellkonventionen."
+	},
+	"gases": {
+		"type": "labels",
+		"goal": "Beobachteten Gasnachweisen die Produkte zuordnen",
+		"prompt": "Beschrifte die positiven Befunde der beaufsichtigten Gasnachweise.",
+		"labels": ["Wasserstoff", "Sauerstoff", "Wasserdampf"],
+		"targets": [
+			{
+				"id": "0",
+				"x": 160,
+				"y": 280,
+				"label": "Wasserstoff",
+				"description": "Geräusch bei der Knallgasprobe"
+			},
+			{
+				"id": "1",
+				"x": 440,
+				"y": 280,
+				"label": "Sauerstoff",
+				"description": "Wiederaufflammen bei der Glimmspanprobe"
+			}
+		],
+		"hint": "Unterscheide Geräusch und Wiederaufflammen eines glimmenden Spans.",
+		"explanation": "Die Beschriftungen passen zu den sichtbaren Merkmalen und Funktionen. Erkläre eine deiner Zuordnungen.",
+		"panels": ["hydrogen", "oxygen"],
+		"hideLabels": ["Wasserstoff", "Sauerstoff"]
+	},
+	"foodweb": {
+		"type": "network",
+		"goal": "Nahrungspfeile im verbundenen Netz selbst einzeichnen",
+		"prompt": "Klicke zuerst auf das Futter, danach auf den Fresser. Dieselbe Verbindung lässt sich erneut anklicken und entfernen. Raupe und Blattlaus fressen Blätter. Die Meise frisst beide Tiere.",
+		"nodes": [
+			{
+				"id": "leaf",
+				"label": "Blatt",
+				"x": 70,
+				"y": 95
+			},
+			{
+				"id": "caterpillar",
+				"label": "Raupe",
+				"x": 235,
+				"y": 80
+			},
+			{
+				"id": "aphid",
+				"label": "Blattlaus",
+				"x": 235,
+				"y": 245
+			},
+			{
+				"id": "bird",
+				"label": "Meise",
+				"x": 465,
+				"y": 160
+			}
+		],
+		"edges": [
+			["leaf", "caterpillar"],
+			["leaf", "aphid"],
+			["caterpillar", "bird"],
+			["aphid", "bird"]
+		],
+		"hint": "Der Pfeil bedeutet „wird gefressen von“. Ein Netz kann mehrere Wege zum gleichen Verbraucher enthalten.",
+		"explanation": "Die Pfeile verbinden Futter und Fresser in der vereinbarten Richtung. Sie zeigen mögliche Beziehungen, keine genauen Futteranteile."
+	},
+	"aquaticWeb": {
+		"type": "network",
+		"goal": "Nahrungspfeile im verbundenen Netz selbst einzeichnen",
+		"prompt": "Klicke zuerst auf das Futter, danach auf den Fresser. Dieselbe Verbindung lässt sich erneut anklicken und entfernen. Der Wasserfloh frisst Algen. Der Jungfisch frisst Wasserflöhe und Insektenlarven.",
+		"nodes": [
+			{
+				"id": "algae",
+				"label": "Alge",
+				"x": 70,
+				"y": 95
+			},
+			{
+				"id": "flea",
+				"label": "Wasserfloh",
+				"x": 235,
+				"y": 80
+			},
+			{
+				"id": "larva",
+				"label": "Insektenlarve",
+				"x": 235,
+				"y": 245
+			},
+			{
+				"id": "fish",
+				"label": "Jungfisch",
+				"x": 465,
+				"y": 160
+			}
+		],
+		"edges": [["algae", "flea"], ["flea", "fish"], ["larva", "fish"]],
+		"hint": "Der Pfeil bedeutet „wird gefressen von“. Ein Netz kann mehrere Wege zum gleichen Verbraucher enthalten.",
+		"explanation": "Die Pfeile verbinden Futter und Fresser in der vereinbarten Richtung. Sie zeigen mögliche Beziehungen, keine genauen Futteranteile."
+	},
+	"photosynthesis": {
+		"type": "labels",
+		"goal": "Stoff- und Energiezufuhr im Pflanzenmodell beschriften",
+		"prompt": "Setze die Begriffe zu den beschrifteten Funktionen des vereinfachten Modells.",
+		"labels": [
+			"Wasser",
+			"Kohlenstoffdioxid",
+			"Licht",
+			"Traubenzucker",
+			"Sauerstoff"
+		],
+		"targets": [
+			{
+				"id": "0",
+				"x": 90,
+				"y": 255,
+				"label": "Wasser",
+				"description": "Aufnahme über die Wurzel"
+			},
+			{
+				"id": "1",
+				"x": 90,
+				"y": 105,
+				"label": "Kohlenstoffdioxid",
+				"description": "Gasaufnahme am Blatt"
+			},
+			{
+				"id": "2",
+				"x": 300,
+				"y": 55,
+				"label": "Licht",
+				"description": "Energiezufuhr"
+			},
+			{
+				"id": "3",
+				"x": 500,
+				"y": 105,
+				"label": "Traubenzucker",
+				"description": "Energiereicher Stoff"
+			},
+			{
+				"id": "4",
+				"x": 500,
+				"y": 255,
+				"label": "Sauerstoff",
+				"description": "Gasabgabe"
+			}
+		],
+		"hint": "Trenne Stoffeingänge, Energiezufuhr und Produkte. Licht ist kein Stoff.",
+		"explanation": "Die Beschriftungen passen zu den sichtbaren Merkmalen und Funktionen. Erkläre eine deiner Zuordnungen.",
+		"template": "photosynthesis"
+	},
+	"soilLife": {
+		"type": "labels",
+		"goal": "Bodentiere anhand sichtbarer Merkmale einordnen",
+		"prompt": "Ordne den drei Modellbildern ihre Tiergruppen zu.",
+		"labels": ["Ringelwürmer", "Spinnentiere", "Krebstiere"],
+		"targets": [
+			{
+				"id": "0",
+				"x": 100,
+				"y": 280,
+				"label": "Ringelwürmer",
+				"description": "Geringelter Körper ohne Beine"
+			},
+			{
+				"id": "1",
+				"x": 300,
+				"y": 280,
+				"label": "Spinnentiere",
+				"description": "Acht Beine am erwachsenen Tier"
+			},
+			{
+				"id": "2",
+				"x": 500,
+				"y": 280,
+				"label": "Krebstiere",
+				"description": "Sieben Beinpaare am erwachsenen Tier"
+			}
+		],
+		"hint": "Zähle beim erwachsenen Tier Beine oder Beinpaare und beachte die Ringelung.",
+		"explanation": "Die Beschriftungen passen zu den sichtbaren Merkmalen und Funktionen. Erkläre eine deiner Zuordnungen.",
+		"panels": ["worm", "mite", "woodlouse"]
+	},
+	"soil": {
+		"type": "order",
+		"goal": "Die Bodenschichten als Profil selbst aufbauen",
+		"prompt": "Baue das vereinfachte Bodenprofil von oben nach unten auf.",
+		"items": [
+			"Streu",
+			"Belebter Oberboden",
+			"Verwitterter Unterboden",
+			"Gestein"
+		],
+		"hint": "Die Streu liegt oben. Darunter folgen belebter Boden, verwittertes Material und Ausgangsgestein.",
+		"explanation": "Die geordnete Darstellung bildet den beschriebenen Ablauf ab. Begründe, warum die Schritte in dieser Reihenfolge zusammengehören.",
+		"scene": "soil"
+	},
+	"aquaticKey": {
+		"type": "labels",
+		"goal": "Bein- und Schwanzmerkmale an der Larve markieren",
+		"prompt": "Ordne die gezählten Merkmale den zwei Markierungen zu.",
+		"labels": [
+			"Sechs Beine",
+			"Acht Beine",
+			"Zwei Schwanzfäden",
+			"Drei Schwanzfäden"
+		],
+		"targets": [
+			{
+				"id": "0",
+				"x": 130,
+				"y": 150,
+				"label": "Sechs Beine",
+				"description": "Beine an der Körperseite"
+			},
+			{
+				"id": "1",
+				"x": 440,
+				"y": 280,
+				"label": "Zwei Schwanzfäden",
+				"description": "Lange Anhänge am Hinterende"
+			}
+		],
+		"hint": "Zähle Beine und Schwanzfäden getrennt; das Bild ist keine vollständige Artbestimmung.",
+		"explanation": "Die Beschriftungen passen zu den sichtbaren Merkmalen und Funktionen. Erkläre eine deiner Zuordnungen.",
+		"scene": "larva",
+		"hideLabels": [
+			"6 Beine",
+			"2 Schwanzfäden",
+			"Vereinfachte Steinfliegenlarve"
+		]
+	},
+	"fish": {
+		"type": "labels",
+		"goal": "Flossen, Kiemen und Schwimmblase im Fischmodell finden",
+		"prompt": "Beschrifte die markierten Strukturen nach ihren Aufgaben.",
+		"labels": ["Kiemen", "Schwanzflosse", "Schwimmblase", "Magen"],
+		"targets": [
+			{
+				"id": "0",
+				"x": 110,
+				"y": 170,
+				"label": "Kiemen",
+				"description": "Gasaustausch"
+			},
+			{
+				"id": "1",
+				"x": 495,
+				"y": 280,
+				"label": "Schwanzflosse",
+				"description": "Antrieb"
+			},
+			{
+				"id": "2",
+				"x": 320,
+				"y": 300,
+				"label": "Schwimmblase",
+				"description": "Auftriebsregelung"
+			}
+		],
+		"hint": "Atmung, Antrieb und Auftriebsregelung sind verschiedene Aufgaben.",
+		"explanation": "Die Beschriftungen passen zu den sichtbaren Merkmalen und Funktionen. Erkläre eine deiner Zuordnungen.",
+		"scene": "bladder",
+		"hideLabels": ["Schwimmblase · Auftrieb", "Knochenfisch · schematisch"]
+	},
+	"habitat": {
+		"type": "scenario",
+		"goal": "Einen durchgängigen strukturreichen Modellbach gestalten",
+		"prompt": "Verändere drei Eingriffe so, dass verschiedene Teilräume entstehen, Müll vermieden wird und der Wanderweg offen bleibt.",
+		"features": [
+			{
+				"id": "plants",
+				"label": "Strukturreiche Ufer und Pflanzen",
+				"initial": false,
+				"desired": true
+			},
+			{
+				"id": "trash",
+				"label": "Müll im Gewässer",
+				"initial": true,
+				"desired": false
+			},
+			{
+				"id": "weir",
+				"label": "Wehr ohne Durchgang",
+				"initial": true,
+				"desired": false
+			}
+		],
+		"hint": "Eine Maßnahme allein beseitigt nicht alle verschiedenen Belastungen.",
+		"explanation": "Strukturen, vermiedener Müll und ein offener Wanderweg erfüllen hier verschiedene Schutzziele. Reale Planung braucht Fachleute."
+	},
+	"puberty": {
+		"type": "labels",
+		"goal": "Entwicklung und Pflege in einem Übersichtsmodell zuordnen",
+		"prompt": "Ordne die allgemeinen Beispiele ein. Es werden keine persönlichen Erfahrungen abgefragt.",
+		"labels": [
+			"Körperliche Veränderung",
+			"Seelische Veränderung",
+			"Hygienemaßnahme"
+		],
+		"targets": [
+			{
+				"id": "0",
+				"x": 100,
+				"y": 280,
+				"label": "Körperliche Veränderung",
+				"description": "Die Stimme verändert sich"
+			},
+			{
+				"id": "1",
+				"x": 300,
+				"y": 280,
+				"label": "Seelische Veränderung",
+				"description": "Wunsch nach mehr Selbstständigkeit"
+			},
+			{
+				"id": "2",
+				"x": 500,
+				"y": 280,
+				"label": "Hygienemaßnahme",
+				"description": "Verschwitzte Kleidung wechseln"
+			}
+		],
+		"hint": "Unterscheide veränderte Körpermerkmale, Gefühle und begründete Pflege.",
+		"explanation": "Die Beschriftungen passen zu den sichtbaren Merkmalen und Funktionen. Erkläre eine deiner Zuordnungen.",
+		"template": "puberty"
+	},
+	"organs": {
+		"type": "labels",
+		"goal": "Den weiblichen Grundbauplan am Modell beschriften",
+		"prompt": "Setze die vier Organbegriffe auf ihre Markierungen.",
+		"labels": ["Eierstock", "Eileiter", "Gebärmutter", "Vagina", "Harnblase"],
+		"targets": [
+			{
+				"id": "0",
+				"x": 100,
+				"y": 90,
+				"label": "Eierstock",
+				"description": "Kleines Organ seitlich neben dem Eileiter"
+			},
+			{
+				"id": "1",
+				"x": 450,
+				"y": 70,
+				"label": "Eileiter",
+				"description": "Verbindung zum oberen Gebärmutterbereich"
+			},
+			{
+				"id": "2",
+				"x": 400,
+				"y": 230,
+				"label": "Gebärmutter",
+				"description": "Zentrales inneres Organ"
+			},
+			{
+				"id": "3",
+				"x": 300,
+				"y": 355,
+				"label": "Vagina",
+				"description": "Verbindung vom Gebärmutterhals nach außen"
+			}
+		],
+		"hint": "Trenne Keimzellreifung, Transport und möglichen Entwicklungsort.",
+		"explanation": "Die Beschriftungen passen zu den sichtbaren Merkmalen und Funktionen. Erkläre eine deiner Zuordnungen.",
+		"scene": "female",
+		"hideLabels": [
+			"Eierstock",
+			"Eileiter",
+			"Gebärmutter",
+			"Vagina",
+			"Vulva: äußere Organe · Harnröhre getrennt"
+		]
+	},
+	"fertilisation": {
+		"type": "order",
+		"goal": "Die frühen Entwicklungsschritte räumlich und zeitlich ordnen",
+		"prompt": "Ordne die drei Schritte und ihre Orte als Prozessmodell.",
+		"items": [
+			"Befruchtung meist im Eileiter",
+			"Zellteilungen auf dem Weg zur Gebärmutter",
+			"Einnistung in die Gebärmutterschleimhaut"
+		],
+		"hint": "Befruchtung und Einnistung sind verschiedene Schritte an verschiedenen Orten.",
+		"explanation": "Die geordnete Darstellung bildet den beschriebenen Ablauf ab. Begründe, warum die Schritte in dieser Reihenfolge zusammengehören."
+	},
+	"pregnancy": {
+		"type": "order",
+		"goal": "Die vorgeburtliche Entwicklung als Abfolge darstellen",
+		"prompt": "Ordne das vereinfachte Entwicklungsmodell bis zur Geburt.",
+		"items": [
+			"Befruchtung",
+			"Zellteilungen und Einnistung",
+			"Organanlage sowie Wachstum und Reifung",
+			"Geburt"
+		],
+		"hint": "Entwicklung ist mehr als bloße Vergrößerung; eine genaue individuelle Zeitleiste wird nicht behauptet.",
+		"explanation": "Die geordnete Darstellung bildet den beschriebenen Ablauf ab. Begründe, warum die Schritte in dieser Reihenfolge zusammengehören."
+	},
+	"contraception": {
+		"type": "labels",
+		"goal": "Wirkungsweisen im Vergleichsmodell richtig verbinden",
+		"prompt": "Ordne den Wirkungsmerkmalen Kondom oder Pille zu. Ein Begriff darf mehrfach verwendet werden.",
+		"labels": ["Kondom", "Pille"],
+		"targets": [
+			{
+				"id": "0",
+				"x": 100,
+				"y": 280,
+				"label": "Kondom",
+				"description": "Mechanische Barriere"
+			},
+			{
+				"id": "1",
+				"x": 300,
+				"y": 280,
+				"label": "Pille",
+				"description": "Hormonelle Wirkung"
+			},
+			{
+				"id": "2",
+				"x": 500,
+				"y": 280,
+				"label": "Kondom",
+				"description": "Senkung vieler STI-Risiken bei richtiger Anwendung"
+			}
+		],
+		"hint": "Unterscheide Barriere, hormonelle Wirkung und die Senkung von Infektionsrisiken.",
+		"explanation": "Die Beschriftungen passen zu den sichtbaren Merkmalen und Funktionen. Erkläre eine deiner Zuordnungen.",
+		"template": "contraception"
+	},
+	"forces": {
+		"type": "point",
+		"template": "force",
+		"goal": "Die Richtung einer Kraft am bewegten Körper einstellen",
+		"prompt": "Der Ball bewegt sich nach rechts. Richte den Kraftpfeil senkrecht nach oben, um eine seitliche Bewegungsänderung darzustellen. Ziehe die Pfeilspitze oder nutze ihre Pfeiltasten.",
+		"initial": {
+			"x": 440,
+			"y": 200
+		},
+		"region": {
+			"left": 275,
+			"right": 325,
+			"top": 50,
+			"bottom": 150
+		},
+		"hint": "Die Kraft soll nach oben wirken; sie zeigt nicht einfach die bisherige Bewegungsrichtung.",
+		"explanation": "Eine nach oben gerichtete Kraft kann die Bewegungsrichtung ändern. Das qualitative Bild berechnet keine genaue Flugbahn."
+	},
+	"ergonomics": {
+		"type": "order",
+		"goal": "Eine begründete Werkzeugwahl als Handlungsweg planen",
+		"prompt": "Ordne die Schritte für eine unhandliche Last und eine geeignete Transporthilfe.",
+		"items": [
+			"Aufgabe, Last und Werkzeugzustand prüfen",
+			"Geeignete Hilfe und sichere Arbeitsbedingungen auswählen",
+			"Handhabung nach Einweisung sachgerecht ausführen"
+		],
+		"hint": "Prüfung und Auswahl gehen der praktischen Ausführung voraus.",
+		"explanation": "Die geordnete Darstellung bildet den beschriebenen Ablauf ab. Begründe, warum die Schritte in dieser Reihenfolge zusammengehören."
+	},
+	"inertia": {
+		"type": "experiment",
+		"goal": "Loses und gesichertes Gepäck im Wagenmodell vergleichen",
+		"prompt": "Sage für beide Modellzustände voraus, was beim Wagenstopp geschieht, und spiele den Vergleich ab.",
+		"outcomes": [
+			"Klotz bewegt sich relativ zum Wagen weiter",
+			"Befestigung ändert die Klotzbewegung mit dem Wagen"
+		],
+		"trials": [
+			{
+				"id": "loose",
+				"label": "Klotz ohne Befestigung",
+				"scene": "loose",
+				"outcome": "Klotz bewegt sich relativ zum Wagen weiter"
+			},
+			{
+				"id": "secured",
+				"label": "Klotz mit geeigneter Befestigung",
+				"scene": "secured",
+				"outcome": "Befestigung ändert die Klotzbewegung mit dem Wagen"
+			}
+		],
+		"hint": "Eine Sicherung beseitigt die Masse nicht, sondern übt eine Kraft aus.",
+		"explanation": "Der lose Körper behält zunächst seinen Bewegungszustand bei. Die Befestigung wirkt mit einer Kraft auf ihn ein."
+	},
+	"traffic": {
+		"type": "point",
+		"template": "traffic",
+		"goal": "Einen durch das Fahrzeug verdeckten Bereich markieren",
+		"prompt": "Draufsicht: Du blickst vom Punkt links nach rechts. Markiere einen Bereich hinter dem Fahrzeug, in dem eine Person verdeckt sein könnte. Ziehe die Markierung oder nutze Pfeiltasten.",
+		"initial": {
+			"x": 100,
+			"y": 70
+		},
+		"hint": "Denke dir Sichtlinien vom Blickpunkt. Der Fahrzeugkörper kann sie unterbrechen.",
+		"explanation": "Die Markierung liegt hinter dem Fahrzeug im möglichen Sichtschatten. Nicht sichtbar bedeutet nicht sicher abwesend.",
+		"observer": {
+			"x": 60,
+			"y": 180
+		},
+		"barrier": {
+			"left": 220,
+			"right": 350,
+			"top": 120,
+			"bottom": 240
+		}
+	}
+}

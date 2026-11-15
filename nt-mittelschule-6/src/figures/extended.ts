@@ -3,6 +3,7 @@ import { fmtDe, type LabState } from "../lab-model";
 import type { ExtendedKind, LabKind } from "../model/types";
 import { esc } from "../workshop";
 import { arrow, box, text } from "./svg-helpers";
+import { maleAnatomy } from "./anatomy";
 
 const n = (v: number) => fmtDe(v, Number.isInteger(v) ? 0 : 2);
 const line = (x: number, y: number, x2: number, y2: number, cls = "bio-line") =>
@@ -54,12 +55,15 @@ export function drawExtendedScene(
 		}
 		case "fish":
 			b = `<ellipse cx="300" cy="170" rx="150" ry="68" class="fish"/><path d="M430,170l95,-65v130Z M280,110l50,-45 25,55 M280,220l50,50 20,-42" class="fish"/><circle cx="190" cy="150" r="6" class="eye"/>${text(300, 45, "Knochenfisch · schematisch")}`;
+			b += `<path d="M235,175l45,45 -55,-20 M340,218l25,35 -40,-20" class="fish"/>`;
+			if (m !== "gills")
+				b += `<path d="M225,125q-22,45 0,90" class="bio-line"/>`;
 			if (m === "gills")
 				b += `${[0, 1, 2, 3, 4].map((i) => `<path d="M${215 + i * 6},135q-12,35 0,70" class="gill-line"/>`).join("")}${arrow(90, 175, 205)}${arrow(240, 210, 280, 260)}${text(100, 135, "Wasser hinein", "diagram-small")}${text(300, 305, "Kiemen: gelöster Sauerstoff hinein", "diagram-small")}${text(300, 338, "Kohlenstoffdioxid hinaus", "diagram-small")}`;
 			else if (m === "bladder")
 				b += `<ellipse cx="320" cy="160" rx="58" ry="23" class="gas-bubble"/>${line(320, 185, 320, 280)}${text(320, 315, "Schwimmblase · Auftrieb")}`;
 			else
-				b += `${arrow(470, 275, 390)}${text(465, 320, "Schwanz: Antrieb", "diagram-small")}${line(310, 95, 160, 70)}${text(110, 65, "Stabilität", "diagram-small")}${text(245, 340, "Stromlinienform: weniger Widerstand", "diagram-small")}`;
+				b += `${line(465, 295, 500, 200)}${text(465, 320, "Schwanz: Antrieb", "diagram-small")}${line(310, 95, 160, 70)}${text(110, 65, "Stabilität", "diagram-small")}${text(245, 340, "Stromlinienform: weniger Widerstand", "diagram-small")}`;
 			break;
 		case "aquaticWeb":
 			b =
@@ -126,8 +130,7 @@ export function drawExtendedScene(
 			);
 			break;
 		case "organs":
-			if (m === "male")
-				b = `<ellipse cx="300" cy="95" rx="50" ry="35" class="diagram-box"/><circle cx="300" cy="170" r="20" class="bio-organ"/><ellipse cx="350" cy="140" rx="14" ry="22" class="bio-organ"/><path d="M300,130v68l140,35" class="bio-duct"/><path d="M278,200l180,22v26l-180,-23Z" class="bio-outline"/><ellipse cx="200" cy="270" rx="36" ry="45" class="bio-outline"/><ellipse cx="200" cy="270" rx="20" ry="28" class="bio-organ"/><path d="M214,245q22,20 0,45 M220,250V95Q220,30 330,70V150L300,174" class="bio-duct"/>${text(300, 38, "Harnblase", "diagram-small")}${text(95, 87, "Samenleiter", "diagram-small")}${line(160, 92, 220, 110)}${text(95, 245, "Nebenhoden", "diagram-small")}${line(150, 250, 220, 250)}${text(200, 345, "Hoden", "diagram-small")}${text(440, 292, "Penis mit Harnröhre", "diagram-small")}${text(440, 160, "Drüsen", "diagram-small")}${line(405, 160, 325, 160)}${text(300, 377, "Schematische Lage und Transportwege", "diagram-small")}`;
+			if (m === "male") b = maleAnatomy();
 			else if (m === "functions")
 				b =
 					node(130, 90, "Eierstock") +
@@ -297,8 +300,10 @@ export function drawExtendedScene(
 			b = `<path d="M70,45V300H550" class="chart-axis"/><polyline points="${points.join(" ")}" class="density-curve"/>${[0, 2, 4, 6, 8].map((t) => text(70 + t * 58, 330, String(t), "diagram-small")).join("")}${[0, 12, 24, 36, 48].map((v) => text(35, 307 - v * 5, String(v), "diagram-small")).join("")}${text(125, 30, "Weg in m", "diagram-small")}${text(485, 370, "Zeit in s →", "diagram-small")}`;
 			break;
 		}
-		case "stopping":
-			b = `<rect x="55" y="115" width="${r.reaction * 4}" height="45" class="reaction-bar"/><rect x="${55 + r.reaction * 4}" y="115" width="${r.braking * 4}" height="45" class="braking-bar"/>${text(300, 65, `${n(p)} km/h · überschlägiges Modell`)}${text(165, 210, `${n(r.reaction)} m Reaktion`, "diagram-small")}${text(435, 210, `${n(r.braking)} m Bremsen`, "diagram-small")}${text(300, 285, `Zusammen: ${n(r.total)} m`)}${text(300, 345, "Faustformeln · keine garantierte reale Strecke", "diagram-small")}`;
+		case "stopping": {
+			const reactionMid = 55 + r.reaction * 2,
+				brakingMid = 55 + r.reaction * 4 + r.braking * 2;
+			b = `<rect x="55" y="115" width="${r.reaction * 4}" height="45" class="reaction-bar"/><rect x="${55 + r.reaction * 4}" y="115" width="${r.braking * 4}" height="45" class="braking-bar"/>${text(300, 65, `${n(p)} km/h · überschlägiges Modell`)}${line(reactionMid, 115, Math.max(100, reactionMid), 102)}${text(Math.max(100, reactionMid), 95, `${n(r.reaction)} m Reaktion`, "diagram-small")}${line(brakingMid, 160, Math.max(100, brakingMid), 195)}${text(Math.max(100, brakingMid), 220, `${n(r.braking)} m Bremsen`, "diagram-small")}${text(300, 285, `Zusammen: ${n(r.total)} m`)}${text(300, 345, "Faustformeln · keine garantierte reale Strecke", "diagram-small")}`;
 			if (m !== "sum")
 				b += text(
 					300,
@@ -309,6 +314,7 @@ export function drawExtendedScene(
 					"diagram-small",
 				);
 			break;
+		}
 		case "inertia":
 			b = `<path d="M90,230H400" class="bio-line"/><circle cx="135" cy="255" r="20" class="turbine"/><circle cx="355" cy="255" r="20" class="turbine"/>${box(m === "loose" ? 375 : 220, 145, m === "mass" ? 110 : 60, 70)}${arrow(95, 100, 250)}${text(400, 100, "Wagen bremst", "diagram-small")}${text(300, 340, m === "loose" ? "Loser Körper bewegt sich zunächst weiter" : m === "mass" ? "Mehr Masse: größere Trägheit" : "Befestigung ändert die Bewegung mit", "diagram-small")}`;
 			if (m === "secured")

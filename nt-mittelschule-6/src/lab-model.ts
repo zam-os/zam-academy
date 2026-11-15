@@ -1,6 +1,7 @@
-import type { LabKind } from "./model/types";
+import type { ExtendedKind, LabKind } from "./model/types";
 import { goalKey, INVESTIGATIONS, rememberGoals } from "./investigations";
-import { EXTENDED_LABS } from "./extended-models";
+import extendedData from "./curriculum/extended-models.json";
+import type { ModelActionState } from "./model-actions";
 
 export interface LabState {
 	mode: string;
@@ -15,6 +16,7 @@ export interface LabState {
 	densityTemperature: number;
 	energyOrder: number[];
 	parameters: Record<string, number>;
+	modelActions: Record<string, ModelActionState>;
 }
 export interface LabChoice {
 	id: string;
@@ -27,7 +29,9 @@ export interface LabDefinition {
 	limit: string;
 }
 export const LABS: Record<LabKind, LabDefinition> = {
-	...EXTENDED_LABS,
+	// Read definitions directly: calculation modules call back into goal evaluation.
+	// The registry must not depend on the order in which those modules load.
+	...(extendedData as unknown as Record<ExtendedKind, LabDefinition>),
 	inquiry: {
 		title: "Von der Messung zur begründeten Aussage",
 		choices: [
@@ -443,6 +447,7 @@ export const freshLab = (): LabState => ({
 	densityTemperature: 12,
 	energyOrder: [3, 1, 0, 2],
 	parameters: {},
+	modelActions: {},
 });
 export const fmtDe = (value: number, digits = 0): string =>
 	new Intl.NumberFormat("de-DE", {

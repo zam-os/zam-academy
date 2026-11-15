@@ -2,6 +2,7 @@ import data from "./curriculum/investigations.json";
 import type { LabState } from "./lab-model";
 import type { LabKind } from "./model/types";
 import { getParameter, parameterFor } from "./extended-models";
+import { actionFor, actionMatches } from "./model-actions";
 
 export interface Investigation {
 	goal: string;
@@ -19,6 +20,7 @@ export const goalKey = (kind: LabKind, index: number): string =>
 	`${kind}:${index}`;
 export function usesModelControl(kind: LabKind, index: number): boolean {
 	return (
+		(index === 0 && !!actionFor(kind)) ||
 		(index === 0 && !!parameterFor(kind)) ||
 		((kind === "electrolysis" || kind === "particles") && index < 2) ||
 		((kind === "anomaly" || kind === "hydro") && index === 0)
@@ -33,6 +35,7 @@ export function investigationMatches(
 ): boolean {
 	const question = INVESTIGATIONS[kind][index];
 	if (!question) return false;
+	if (index === 0 && actionFor(kind)) return actionMatches(kind, state);
 	const parameter = parameterFor(kind);
 	if (parameter && index === 0)
 		return getParameter(kind, state) === parameter.target;
