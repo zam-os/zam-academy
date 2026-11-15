@@ -1148,9 +1148,13 @@ dialog::backdrop {
 	stroke: var(--ink);
 	stroke-width: 1.6;
 }
-.region-name {
+.places-map text.region-name,
+.places-map .water-labels text {
 	font-size: 11px;
 	fill: var(--muted);
+}
+.places-map .map-cities text {
+	font-size: 13px;
 }
 .family-tree svg,
 .distance-scene svg {

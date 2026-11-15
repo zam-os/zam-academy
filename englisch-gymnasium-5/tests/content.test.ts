@@ -47,9 +47,10 @@ import {
 	ALASKA,
 	HAWAII,
 	PLACES,
+	renderBritishIsles,
 	type MapPoint,
 } from "../src/places-map";
-import { clockLabel, ordinal, workshopGoals } from "../src/workshop";
+import { clockLabel, ordinal, renderWorkshop, workshopGoals } from "../src/workshop";
 
 const items = cell.atoms.flatMap((atom) => atom.practice_items);
 const legacyItems = legacy.atoms.flatMap((atom) => atom.practice_items);
@@ -116,8 +117,20 @@ describe("Grade 5 Gymnasium English teaching contract", () => {
 		}
 		for (const id of lesson.sourceIds) expect(SOURCES.some((source) => source.id === id)).toBe(true);
 		expect(JSON.stringify(lesson)).not.toMatch(/<script|<p>|<div>|\\\\\(|teacherVideo/);
+		const visible = JSON.stringify({
+			paragraphs: lesson.paragraphs,
+			material: lesson.material,
+			quiz: lesson.quiz,
+			tasks: lesson.tasks,
+			practice: lesson.practice,
+		});
+		const withoutBritishTime =
+			lesson.id === "e5-time" ? visible.replace(/\b7\.30\b/g, "") : visible;
+		expect(withoutBritishTime).not.toMatch(/\d\.\d/);
 		for (const entry of lesson.practice)
 			expect(entry.prompt, lesson.id).toMatch(/\([^)]+\)/);
+		for (const goal of lesson.workshop.goals)
+			expect(goal.before).not.toContain("→");
 	});
 	it.each(LESSONS)("proves every visual goal reachable and none true initially: $id", (lesson) => {
 		expect(lesson.workshop.goals).toHaveLength(3);
@@ -163,6 +176,7 @@ describe("Grade 5 Gymnasium English teaching contract", () => {
 		expect(text("e5-have-got")).toContain("lässt got weg");
 		expect(text("e5-past")).toContain("didn't");
 		expect(text("e5-time")).toContain("7.30");
+		expect(text("e5-time")).toContain("seven thirty");
 		expect(text("e5-time")).not.toContain("keine englische Uhrzeit");
 		expect(findLesson("e5-sounds")!.quiz.question).toContain("/iː/");
 		expect(text("e5-awareness")).toContain("werden");
@@ -231,8 +245,47 @@ describe("clock, ordinals and the schematic maps", () => {
 		expect(inside([360, 235], HAWAII)).toBe(true);
 		expect(inside([360, 235], LOWER_48)).toBe(false);
 		expect(PLACES.newYork.pin[0]).toBeGreaterThan(PLACES.washington.pin[0]);
+		expect(polygonArea(IRELAND_ISLAND)).toBeGreaterThan(polygonArea(WALES) * 2);
+		const landOf = {
+			england: ENGLAND,
+			scotland: SCOTLAND,
+			wales: WALES,
+			republic: REPUBLIC_OF_IRELAND,
+			"northern-ireland": NORTHERN_IRELAND,
+			canada: CANADA,
+			lower48: LOWER_48,
+		} as const;
+		for (const place of Object.values(PLACES)) {
+			expect(Math.hypot(place.pin[0] - place.labelAt[0], place.pin[1] - place.labelAt[1])).toBeLessThanOrEqual(15);
+			expect(inside(place.pin, landOf[place.land])).toBe(true);
+			expect(inside(place.labelAt, landOf[place.land])).toBe(true);
+		}
+		const britain = renderBritishIsles();
+		expect(britain).toContain("Northern Ireland");
+		expect(britain).toContain("Republic of");
+		expect(britain).toContain(">Irish<");
+		expect(britain).toContain(">Sea<");
+		const family = renderWorkshop(findLesson("e5-family")!);
+		expect(family).toContain("my aunt");
+		expect(family).toContain("my parents");
+		expect(family).toContain("her rabbit");
+		expect(family).not.toContain("our parents");
+		const distance = renderWorkshop(findLesson("e5-demonstratives")!);
+		expect(distance).toContain("this book");
+		expect(distance).toContain("that pen");
+		expect(distance).toContain("those bags");
 	});
 });
+
+function polygonArea(polygon: readonly MapPoint[]): number {
+	let sum = 0;
+	for (let index = 0; index < polygon.length; index++) {
+		const current = polygon[index];
+		const next = polygon[(index + 1) % polygon.length];
+		sum += current[0] * next[1] - next[0] * current[1];
+	}
+	return Math.abs(sum) / 2;
+}
 
 describe("answer handling, progress and routes", () => {
 	it("treats apostrophes as equal and keeps its distinct from it's", () => {

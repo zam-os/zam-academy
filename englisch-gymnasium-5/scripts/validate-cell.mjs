@@ -7,7 +7,7 @@ const zam = await import(process.env.ZAM_CORE ?? "zam-core");
 const tile = JSON.parse(
 	readFileSync(new URL("../cell.json", import.meta.url), "utf8"),
 );
-const dir = mkdtempSync(join(tmpdir(), "zam-french5-"));
+const dir = mkdtempSync(join(tmpdir(), "zam-english5-"));
 let db;
 try {
 	db = await zam.openDatabase({
