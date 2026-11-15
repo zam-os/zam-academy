@@ -29,7 +29,7 @@ Alle 14 Kompetenzerwartungen und 18 Inhaltsspiegelstriche aus `NT6 2.1`, `NT6 2.
 
 In `zam-os/zam` (Stand `source_commit`: `60cd6c90e820f014a4feb17c6c1ba6734895ae2f`) gehört die bestehende Zelle **`de-by:gymnasium-6-natur-technik-informatik-vektorgrafik-texte`** (8 Karten: `01K4YT6J000000000000000J01` bis `J08`) unmittelbar zu Informatik 6 Gymnasium. Eine bytegenaue Kopie liegt unter [`informatik-gymnasium-6/tests/fixtures/de-by-gymnasium-6-natur-technik-informatik-vektorgrafik-texte.json`](../informatik-gymnasium-6/tests/fixtures/de-by-gymnasium-6-natur-technik-informatik-vektorgrafik-texte.json) (SHA-256 `fde44ed318c3b620c824db95510d4709fc2c83feee3b2e1e47a87d58fbffdb23`).
 
-[`informatik-gymnasium-6/replaces-de-by.json`](../informatik-gymnasium-6/replaces-de-by.json) ist gemäß Entscheidungsregel als **unfreigegebener Entwurf** (`"status": "proposal-only"`, `"approved": null`) angelegt; [`informatik-gymnasium-6/cell.json`](../informatik-gymnasium-6/cell.json) enthält deshalb noch **keine** `replaces`- und **keine** `retired_items`-Einträge.
+[`informatik-gymnasium-6/replaces-de-by.json`](../informatik-gymnasium-6/replaces-de-by.json) hat Thomas am 2026-11-15 freigegeben (`"status": "approved"`). Ab Zellversion 2026.11.2 tragen die beiden A-Nachfolger in [`informatik-gymnasium-6/cell.json`](../informatik-gymnasium-6/cell.json) je ein `replaces`; die sechs C-Karten bleiben aktiv, `retired_items` gibt es nicht.
 
 ### Vorgeschlagene Zuordnung zu `de-by:gymnasium-6-natur-technik-informatik-vektorgrafik-texte` (2 A · 0 B · 6 C)
 
