@@ -6,8 +6,10 @@ Thomas selected “Expand the package to cover all of Natur und Technik 6” in
 the Codex chat on 2026-11-14 after the reviews of PR #140. The previously
 local-only Chemistry draft is therefore renamed `nt-mittelschule-6` and
 expanded to all learning areas. Its canonical subject is `nt`, matching the
-Academy combined-subject model. This decision does not publish the package
-or approve any review-history transfer.
+Academy combined-subject model. The later instruction “Und das Paket soll veröffentlich werden - nicht
+local-only.” in the Codex chat on 2026-11-15 authorizes publication. The
+package therefore ships as a public preview with teacher review and videos
+still open. Neither instruction approves review-history transfer.
 
 The current [official NT6 Fachlehrplan](https://www.lehrplanplus.bayern.de/fachlehrplan/mittelschule/6/nt)
 was read in full, including its content lists. The saved full HTML was
@@ -73,6 +75,35 @@ and [early prenatal development](https://www.familienplanung.de/schwangerschaft/
 These are authoring references; the learner UI's source link remains the
 verified official curriculum. Teacher review remains open.
 
+## Follow-up review corrections
+
+The follow-up addresses the remaining model-task, distractor and anatomy
+findings from [PR #140](https://github.com/zam-os/zam-academy/pull/140#issuecomment-6885399377).
+All 37 model types now include a direct model task. Twenty-five formerly
+choice-only types add label placement, food-arrow construction, stage/soil
+ordering, prediction-before-observation comparisons, habitat editing, molecule
+assembly and pointer/keyboard marker positioning. Empty or wrong
+constructions fail; checking, clearing, correcting and changing a prediction
+are covered by independent subject witnesses and browser interaction checks.
+The remaining interpretation questions keep plausible alternative explanations.
+
+Thirty-six fast-check alternatives and 24 lesson quick checks now target
+subject misconceptions rather than unrelated words or impossible organs.
+The habitat transfer card asks about renaturalising a straightened stream;
+the hydropower card retains the distinct energy/intervention tradeoff. The
+forest web has a soft prerequisite on the earlier aquatic web. The lever
+lesson defines each arm from the pivot to the point of force application
+under the stated perpendicular-force assumption.
+
+The original male diagram is replaced by an original, labelled front-view
+schematic. The scrotum contains two testes below the penis root; bladder,
+prostate, ducts and urethra have separate labels and leaders. Position and
+sizes are explicitly simplified. The authoring reference is
+[BIÖG: Male reproductive organs](https://www.familienplanung.de/kinderwunsch/fruchtbarkeit-geschlechtsorgane/maennliche-geschlechtsorgane/).
+The fish now includes paired fins and a gill cover, with its tail label
+pointing to the fin. Stopping-distance labels follow the actual centres of
+the reaction and braking bars.
+
 ## Identity and existing histories
 
 The cell is now `zam-academy:nt-mittelschule-6`, its namespace
@@ -111,17 +142,18 @@ Commands run inside `nt-mittelschule-6/`, except those marked root:
 | Check | Command and evidence |
 | --- | --- |
 | TypeScript including tests | `npm run typecheck` |
-| Content, identity, independent model calculations, local-draft copying and cross-tab state | `npm test`: 232 tests in five files |
+| Content, identity, independent model calculations, local-draft copying and cross-tab state | `npm test`: 266 tests in six files |
 | All 40 verbatim rows, four official titles and snapshot hashes | `npm run check:curriculum`: zero missing rows |
 | Self-contained HTML, identical ZIP bytes and three platform launchers | `npm run package:zip` |
-| Views, model goals, contrast and layout | `npm run check:browser`: 152 lesson/level/theme states, 342 model views, 114 solved goals, 440 contrast checks and 38 solved workshops; no runtime errors or external requests |
-| Root catalog, registry and package selection | `node --test scripts/build-catalog.test.mjs scripts/academy-registry.test.mjs scripts/changed-apps.test.mjs` |
-| All cells with pinned published kernel (root) | `ZAM_CORE=<scratch zam-core@0.54.0 dist URL> node scripts/validate-cells.mjs` |
+| Views, model goals, contrast and layout | `npm run check:browser`: 152 lesson/level/theme states, 342 model views, 114 solved goals (41 direct model goals, including 25 new constructions), 465 contrast checks and 38 solved workshops; no runtime errors or external requests |
+| Root catalog, registry and package selection | `node --test scripts/build-catalog.test.mjs scripts/academy-registry.test.mjs scripts/changed-apps.test.mjs`: 57 passed |
+| All cells with pinned published kernel (root) | `ZAM_CORE=<scratch zam-core@0.54.0 dist URL> node scripts/validate-cells.mjs`: 72 cells and distractor checks passed |
 | Exact lesson links and idempotent reinstall | `ZAM_CORE=<same URL> node scripts/validate-cell.mjs`: 38 atoms and 114 cards |
 
 The browser check opens the actual built HTML in native Chrome using a
-disposable profile. Its report and screenshots are saved under
-`/private/tmp/zam-nt6-browser`. It checks light, explicit dark and system dark
+disposable profile. The follow-up run sets
+`BROWSER_QA_DIR=/private/tmp/zam-nt6-followup-browser` for its report and
+screenshots (the script defaults to `/private/tmp/zam-nt6-browser`). It checks light, explicit dark and system dark
 model controls, and mobile widths of 320, 390 and 720 pixels against the
 requested width, alongside desktop rendering. Every new model view checks
 diagram-label bounds. Deliberately reintroduced overflow and low contrast
@@ -129,15 +161,19 @@ must be rejected.
 
 ## Publication and review
 
-`publication.json` remains `local-only`; catalog, atlas and Pages exclude
-the package. CI still checks its curriculum, ZIP and cell. No new dependency,
-video, remote image, account or automatic network request is introduced.
+`publication.json` is `preview`; `academy.json`, the catalog and the Pages
+build register the package for public release. A visible preview notice and
+the ZAM dialog name the pending teacher review and videos. Version
+`2026.11.2` keeps every published identifier. CI checks its curriculum, ZIP
+and cell. No new dependency, video, remote image, account or automatic
+network request is introduced.
 The source label, theme key, package metadata, ZIP names, documentation and
-CI selector all use the new identity. Port 5250 follows the merged German package on port 5249; the
-previously checked sibling ports are also avoided.
+CI selector all use the new identity. Port 5250 follows the merged German
+package on port 5249; the previously checked sibling ports are also avoided.
 
 The initial reviews' UI, geometry, duplicate-card and metadata fixes remain.
 The expansion resolves their package-scope objection according to Thomas's
 decision. The expanded material needs review on its own merits; teacher
-review and the separate verified-video step remain open. Neither the scope
-decision nor this implementation is publication or merge authority.
+review and the separate verified-video step remain open. Thomas's explicit
+publication instruction is recorded above. The separate review-history
+mapping remains unapproved.

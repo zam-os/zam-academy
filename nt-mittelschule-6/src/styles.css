@@ -1214,7 +1214,7 @@ article[data-lb] .panel {
 	--chem-green: #26734d;
 	--chem-earth: #80614d;
 }
-.local-draft {
+.zam-preview-notice {
 	padding: 0.65rem 1.5rem;
 	background: var(--gold-soft);
 	color: var(--ink);
@@ -1731,6 +1731,152 @@ article[data-lb] .panel {
 	border-left: 4px solid var(--accent);
 	background: var(--accent-soft);
 }
+.model-action-viewport {
+	max-width: 100%;
+	overflow-x: auto;
+	margin: 1rem 0;
+}
+.model-action-canvas {
+	position: relative;
+	width: 100%;
+	min-width: 560px;
+}
+.action-diagram {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.action-marker,
+.action-node {
+	position: absolute;
+	transform: translate(-50%, -50%);
+	border: 2px solid var(--accent);
+	background: var(--surface);
+	color: var(--ink);
+	cursor: pointer;
+}
+.action-marker {
+	width: 2.35rem;
+	height: 2.35rem;
+	padding: 0;
+	border-radius: 50%;
+	font-weight: 700;
+}
+.action-marker.filled,
+.action-node[aria-pressed="true"] {
+	background: var(--accent);
+	color: var(--bg);
+}
+.action-node {
+	width: 21.6667%;
+	height: 12.2222%;
+	min-height: 0;
+	padding: 0.3rem;
+	border-radius: 0.65rem;
+	font-size: 0.9rem;
+}
+.action-marker:focus-visible,
+.action-node:focus-visible,
+.action-button:focus-visible {
+	outline: 3px solid var(--accent);
+	outline-offset: 3px;
+}
+[data-action-canvas],
+[data-action-point] {
+	touch-action: none;
+}
+[data-action-point] {
+	background: transparent;
+	cursor: grab;
+}
+.action-controls {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	margin: 0.8rem 0;
+}
+.action-button {
+	border: 1px solid var(--accent);
+	color: var(--ink);
+	background: var(--surface);
+	border-radius: 0.4rem;
+	padding: 0.45rem 0.65rem;
+	min-height: 2.5rem;
+}
+.action-order {
+	padding-left: 1.5rem;
+	display: grid;
+	gap: 0.8rem;
+}
+.action-order li {
+	padding: 0.7rem;
+	background: var(--accent-soft);
+	border: 1px solid var(--line);
+	border-radius: 0.5rem;
+}
+.action-order li > div {
+	display: flex;
+	justify-content: flex-end;
+	gap: 0.4rem;
+	margin-top: 0.5rem;
+}
+.action-order li:not(:last-child)::after {
+	content: "↓";
+	display: block;
+	text-align: center;
+}
+.soil-profile li {
+	margin: 0;
+	border-radius: 0;
+}
+.soil-profile [data-layer="0"] {
+	background: #5b4934;
+	color: #fff;
+}
+.soil-profile [data-layer="1"] {
+	background: #765a34;
+	color: #fff;
+}
+.soil-profile [data-layer="2"] {
+	background: #ba9c6c;
+	color: #192b25;
+}
+.soil-profile [data-layer="3"] {
+	background: #a9b0b0;
+	color: #192b25;
+}
+.soil-profile .action-button {
+	color: inherit;
+	background: transparent;
+	border-color: currentColor;
+}
+.action-feature-list,
+.action-trial {
+	display: grid;
+	gap: 0.65rem;
+	margin: 0.8rem 0;
+}
+.action-trial label {
+	display: grid;
+	gap: 0.4rem;
+}
+.action-trial select {
+	width: 100%;
+	min-width: 0;
+	max-width: 100%;
+}
+.action-label-list {
+	padding-left: 1.6rem;
+}
+.action-label-list li,
+.action-edge-list li {
+	margin: 0.4rem 0;
+}
+.action-before-trial {
+	border-left: 4px solid var(--accent);
+	padding: 0.7rem;
+	background: var(--accent-soft);
+}
 @media (max-width: 900px) {
 	.hero-strip {
 		grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1740,4 +1886,10 @@ article[data-lb] .panel {
 	.hero-strip {
 		grid-template-columns: 1fr;
 	}
+}
+
+.gas-bubble {
+	fill: var(--surface);
+	stroke: var(--ink);
+	stroke-width: 2;
 }

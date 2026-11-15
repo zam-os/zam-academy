@@ -31,6 +31,9 @@ const extendedModels = JSON.parse(
 const investigations = JSON.parse(
 	readFileSync(`${root}/src/curriculum/investigations.json`),
 );
+const modelActions = JSON.parse(
+	readFileSync(`${root}/src/curriculum/model-actions.json`),
+);
 // A fresh browser profile keeps the verification independent of previous runs.
 const profile = mkdtempSync(join(tmpdir(), "zam-nt6-browser-"));
 const chrome = spawn(
@@ -177,7 +180,7 @@ const assertLayout = async (width, context) => {
 };
 const assertDiagramLabels = async (context) => {
 	const clipped = await evaluate(
-		`(()=>{const svg=document.querySelector('[data-lab-stage] svg.extended-diagram');if(!svg)return [];const v=svg.viewBox.baseVal;return Array.from(svg.querySelectorAll('text')).flatMap(t=>{const b=t.getBBox();return b.x < v.x-1 || b.y < v.y-1 || b.x+b.width > v.x+v.width+1 || b.y+b.height > v.y+v.height+1 ? [t.textContent] : [];});})()`,
+		`(()=>{return Array.from(document.querySelectorAll('[data-lab-stage] svg.extended-diagram,[data-model-action] svg.action-diagram')).flatMap(svg=>{const v=svg.viewBox.baseVal;return Array.from(svg.querySelectorAll('text')).filter(t=>t.closest('svg')===svg).flatMap(t=>{const b=t.getBBox();return b.x < v.x-1 || b.y < v.y-1 || b.x+b.width > v.x+v.width+1 || b.y+b.height > v.y+v.height+1 ? [t.textContent] : [];});});})()`,
 	);
 	assert.deepEqual(clipped, [], `clipped model labels: ${context}`);
 };
@@ -198,7 +201,7 @@ const contrast = (a, b) => {
 };
 const assertSelectedContrast = async () => {
 	const colours = await evaluate(
-		`Array.from(document.querySelectorAll('.lab-controls .chip[aria-pressed=true],.lab-investigation .chip[aria-pressed=true]')).map(el=>{const css=getComputedStyle(el);return {text:el.textContent,foreground:css.color,background:css.backgroundColor};})`,
+		`Array.from(document.querySelectorAll('.lab-controls .chip[aria-pressed=true],.lab-investigation .chip[aria-pressed=true],.action-marker.filled,.action-node[aria-pressed=true]')).map(el=>{const css=getComputedStyle(el);return {text:el.textContent,foreground:css.color,background:css.backgroundColor};})`,
 	);
 	assert.ok(colours.length > 0);
 	for (const c of colours)
@@ -207,6 +210,207 @@ const assertSelectedContrast = async () => {
 			`selected chip contrast ${c.text}: ${contrast(c.foreground, c.background)}`,
 		);
 };
+const nativeClick = async (selector) => {
+	const position = await evaluate(
+		`(()=>{const e=document.querySelector(${JSON.stringify(selector)});if(!e||e.disabled)throw Error('Unavailable control: '+${JSON.stringify(selector)});e.scrollIntoView({block:'center',inline:'center'});const r=e.getBoundingClientRect();return {x:r.x+r.width/2,y:r.y+r.height/2};})()`,
+	);
+	await page("Input.dispatchMouseEvent", {
+		type: "mousePressed",
+		button: "left",
+		clickCount: 1,
+		...position,
+	});
+	await page("Input.dispatchMouseEvent", {
+		type: "mouseReleased",
+		button: "left",
+		clickCount: 1,
+		...position,
+	});
+};
+const nativeKey = async (key) => {
+	await page("Input.dispatchKeyEvent", { type: "keyDown", key, code: key });
+	await page("Input.dispatchKeyEvent", { type: "keyUp", key, code: key });
+};
+const firstGoalMet = () =>
+	evaluate(
+		`document.querySelector('[data-lab-goals] li').classList.contains('met')`,
+	);
+const solveAction = async (kind) => {
+	const def = modelActions[kind];
+	await nativeClick("[data-action-check]");
+	assert.equal(
+		await firstGoalMet(),
+		false,
+		`${kind}: empty construction must fail`,
+	);
+	if (def.type === "order") {
+		for (let target = 0; target < def.items.length; target++) {
+			let index = (
+				await evaluate(
+					`Array.from(document.querySelectorAll('.action-order li>span')).map(e=>e.textContent)`,
+				)
+			).indexOf(def.items[target]);
+			while (index > target) {
+				await nativeClick(`[data-action-move="${index}"][data-delta="-1"]`);
+				index--;
+			}
+		}
+	} else if (def.type === "labels") {
+		// A full set of labels can still be wrong; submission must check the mapping.
+		const first = def.targets[0],
+			wrong = def.labels.find((label) => label !== first.label);
+		await nativeClick(`[data-action-label="${def.labels.indexOf(wrong)}"]`);
+		await nativeClick(`[data-action-target="${first.id}"]`);
+		await nativeClick("[data-action-check]");
+		assert.equal(await firstGoalMet(), false);
+		for (const target of def.targets) {
+			await nativeClick(
+				`[data-action-label="${def.labels.indexOf(target.label)}"]`,
+			);
+			await nativeClick(`[data-action-target="${target.id}"]`);
+		}
+		const labels = await evaluate(
+			`Array.from(document.querySelectorAll('.action-label-list strong')).map(e=>e.textContent)`,
+		);
+		assert.deepEqual(
+			labels,
+			def.targets.map((t) => t.label),
+		);
+	} else if (def.type === "network") {
+		const [from, to] = def.edges[0];
+		await nativeClick(`[data-action-node="${to}"]`);
+		await nativeClick(`[data-action-node="${from}"]`);
+		await nativeClick("[data-action-check]");
+		assert.equal(await firstGoalMet(), false);
+		await nativeClick(`[data-action-node="${to}"]`);
+		await nativeClick(`[data-action-node="${from}"]`);
+		assert.equal(
+			await evaluate(
+				`document.querySelectorAll('.action-edge-list li').length`,
+			),
+			0,
+		);
+		for (const [a, b] of def.edges) {
+			await nativeClick(`[data-action-node="${a}"]`);
+			await nativeClick(`[data-action-node="${b}"]`);
+		}
+		assert.equal(
+			await evaluate(
+				`document.querySelectorAll('.action-edge-list li').length`,
+			),
+			def.edges.length,
+		);
+	} else if (def.type === "molecule") {
+		for (const element of ["H", "H", "O"])
+			await nativeClick(`[data-action-atom="${element}"][data-delta="1"]`);
+		assert.deepEqual(
+			await evaluate(
+				`['H','O'].map(e=>document.querySelectorAll('[data-model-action] .atom-'+e).length)`,
+			),
+			[2, 1],
+		);
+	} else if (def.type === "scenario") {
+		const before = await evaluate(
+			`document.querySelector('.action-diagram').innerHTML`,
+		);
+		for (const f of def.features)
+			if (f.initial !== f.desired)
+				await nativeClick(`[data-action-feature="${f.id}"]`);
+		assert.notEqual(
+			await evaluate(`document.querySelector('.action-diagram').innerHTML`),
+			before,
+		);
+	} else if (def.type === "experiment") {
+		for (const t of def.trials)
+			assert.equal(
+				await evaluate(
+					`document.querySelector('[data-action-run="${t.id}"]').disabled`,
+				),
+				true,
+			);
+		for (const t of def.trials) {
+			const index = def.outcomes.indexOf(t.outcome);
+			await evaluate(
+				`(()=>{const e=document.querySelector('[data-action-predict="${t.id}"]');e.value='${index}';e.dispatchEvent(new Event('change',{bubbles:true}));})()`,
+			);
+			await nativeClick(`[data-action-run="${t.id}"]`);
+			assert.ok(
+				(
+					await evaluate(
+						`document.querySelector('[data-action-run="${t.id}"]').parentElement.innerText`,
+					)
+				).includes(`Modellbeobachtung: ${t.outcome}`),
+			);
+		}
+	} else if (def.type === "point") {
+		// Native pointer capture must survive the child diagram being redrawn during a drag.
+		const geometry = await evaluate(
+			`(()=>{const c=document.querySelector('[data-action-canvas]');c.scrollIntoView({block:'center',inline:'center'});const r=c.getBoundingClientRect(),h=document.querySelector('[data-action-point]').getBoundingClientRect();return {left:r.x,top:r.y,width:r.width,height:r.height,startX:h.x+h.width/2,startY:h.y+h.height/2};})()`,
+		);
+		const target = kind === "forces" ? { x: 300, y: 100 } : { x: 400, y: 80 };
+		await page("Input.dispatchMouseEvent", {
+			type: "mousePressed",
+			button: "left",
+			buttons: 1,
+			clickCount: 1,
+			x: geometry.startX,
+			y: geometry.startY,
+		});
+		for (const point of [{ x: 100, y: 250 }, target])
+			await page("Input.dispatchMouseEvent", {
+				type: "mouseMoved",
+				button: "left",
+				buttons: 1,
+				x: geometry.left + (point.x / 600) * geometry.width,
+				y: geometry.top + (point.y / 360) * geometry.height,
+			});
+		await page("Input.dispatchMouseEvent", {
+			type: "mouseReleased",
+			button: "left",
+			buttons: 0,
+			clickCount: 1,
+			x: geometry.left + (target.x / 600) * geometry.width,
+			y: geometry.top + (target.y / 360) * geometry.height,
+		});
+		const x = await evaluate(
+			`parseFloat(document.querySelector('[data-action-point]').style.left)*6`,
+		);
+		assert.ok(
+			Math.abs(x - target.x) < 1,
+			`${kind}: native drag follows the pointer`,
+		);
+		assert.equal(
+			await evaluate(
+				`document.activeElement.hasAttribute('data-action-point')`,
+			),
+			true,
+		);
+		await nativeKey("ArrowLeft");
+		assert.ok(
+			Math.abs(
+				(await evaluate(
+					`parseFloat(document.querySelector('[data-action-point]').style.left)*6`,
+				)) -
+					(target.x - 20),
+			) < 1,
+			`${kind}: native keyboard moves the handle`,
+		);
+		assert.equal(
+			await evaluate(
+				`document.activeElement.hasAttribute('data-action-point')`,
+			),
+			true,
+		);
+	}
+	assert.equal(
+		await firstGoalMet(),
+		false,
+		`${kind}: construction must be checked`,
+	);
+	await nativeClick("[data-action-check]");
+	assert.equal(await firstGoalMet(), true, `${kind}: correct construction`);
+};
+
 const setQuantity = (key, value) =>
 	evaluate(
 		`var el=document.querySelector('[data-quantity="${key}"]');el.value=${value};el.dispatchEvent(new Event('input',{bubbles:true}))`,
@@ -240,13 +444,15 @@ try {
 	);
 	assert.ok(
 		(
-			await evaluate('document.querySelector(".local-draft").innerText')
-		).includes("Lokaler Entwurf"),
+			await evaluate('document.querySelector(".zam-preview-notice").innerText')
+		).includes("Vorschau"),
 	);
 	let states = 0,
 		controls = 0,
 		goalChecks = 0,
-		contrastChecks = 0;
+		contrastChecks = 0,
+		constructionChecks = 0,
+		directGoalChecks = 0;
 	for (const theme of ["light", "dark"]) {
 		await evaluate(
 			`document.documentElement.dataset.theme=${JSON.stringify(theme)}`,
@@ -355,6 +561,11 @@ try {
 	for (const l of lessons) {
 		await route(`#lesson=${l.id}&level=1`);
 		await evaluate(`document.querySelector('.lab-investigation').open=true`);
+		if (modelActions[l.lab]) {
+			await solveAction(l.lab);
+			constructionChecks++;
+			await assertDiagramLabels(`${l.id}/constructed`);
+		}
 		if (extendedModels[l.lab]?.control) {
 			const control = extendedModels[l.lab].control;
 			await evaluate(
@@ -437,9 +648,11 @@ try {
 				);
 		for (const [index, q] of investigations[l.lab].entries()) {
 			const custom =
-				(index === 0 && !!extendedModels[l.lab]?.control) ||
+				(index === 0 &&
+					(!!extendedModels[l.lab]?.control || !!modelActions[l.lab])) ||
 				((l.lab === "particles" || l.lab === "electrolysis") && index < 2) ||
 				((l.lab === "anomaly" || l.lab === "hydro") && index === 0);
+			if (custom) directGoalChecks++;
 			if (!custom) {
 				await evaluate(
 					`document.querySelector('[data-investigation-answer="${index}"][data-answer="${(q.correct + 1) % 3}"]').click()`,
@@ -469,6 +682,27 @@ try {
 				await evaluate('document.querySelector("[data-lab-count]").textContent')
 			).includes("3 / 3"),
 		);
+
+		if (modelActions[l.lab])
+			for (const theme of ["light", "dark"]) {
+				await evaluate(
+					`document.documentElement.dataset.theme=${JSON.stringify(theme)}`,
+				);
+				await assertSelectedContrast();
+				contrastChecks++;
+				await screenshotElement(
+					`${l.id}-construction-${theme}`,
+					"[data-model-action]",
+				);
+			}
+		if (l.lab === "organs")
+			for (const theme of ["light", "dark"]) {
+				await evaluate(
+					`document.documentElement.dataset.theme=${JSON.stringify(theme)};document.querySelector('[data-lab-choice="male"]').click()`,
+				);
+				await assertDiagramLabels(`male anatomy/${theme}`);
+				await screenshotElement(`male-anatomy-${theme}`, "[data-lab-stage]");
+			}
 		await screenshot(`${l.id}-investigated`);
 		await screenshotElement(`${l.id}-model-detail`, ".lab");
 		for (const [index, e] of l.workshop.entries.entries())
@@ -555,7 +789,7 @@ try {
 	);
 	assert.ok(
 		(await evaluate('document.querySelector("dialog").innerText')).includes(
-			"lokaler Entwurf",
+			"als Vorschau veröffentlicht",
 		),
 	);
 	await evaluate(`document.querySelector('dialog [data-close]').click()`);
@@ -662,6 +896,8 @@ try {
 				states,
 				controls,
 				goalChecks,
+				constructionChecks,
+				directGoalChecks,
 				contrastChecks,
 				workshops: lessons.length,
 				themes: ["light", "dark"],
@@ -669,14 +905,14 @@ try {
 				widths: [320, 390, 720, 1280],
 				checks: [
 					"two independent writing levels",
-					"model investigations and numerical proposals",
+					"model construction, native pointer/keyboard actions and numerical proposals",
 					"selected-chip contrast in explicit and system themes",
 					"target-width and heading overflow with negative controls",
 					"centred mobile molecule and task-level deep links",
 					"temperature boundaries",
 					"reload persistence",
 					"draft invalidation",
-					"local draft ZAM dialog",
+					"published preview ZAM dialog",
 					"progress reset",
 				],
 				runtimeErrors: 0,
@@ -687,7 +923,7 @@ try {
 		) + "\n",
 	);
 	console.log(
-		`ok: ${states} lesson/level/theme states, ${controls} model views, ${goalChecks} solved model goals, ${contrastChecks} contrast checks and ${lessons.length} solved workshops; persistence, both writing levels, mobile layouts and reset pass; no runtime errors or external requests.`,
+		`ok: ${states} lesson/level/theme states, ${controls} model views, ${goalChecks} solved model goals (${constructionChecks} constructed models), ${contrastChecks} contrast checks and ${lessons.length} solved workshops; persistence, both writing levels, mobile layouts and reset pass; no runtime errors or external requests.`,
 	);
 } finally {
 	chrome.kill();
