@@ -2,14 +2,42 @@ import type { CalculationKind, ExerciseTask, Level } from "../model/types";
 import type { Rng } from "./rng";
 import { fmt } from "./format";
 
+/** Choose once from the valid parameter values. */
+function draw(
+	rng: Rng,
+	min: number,
+	max: number,
+	exclude: number[] = [],
+): number {
+	const choices = Array.from(
+		{ length: max - min + 1 },
+		(_, i) => min + i,
+	).filter((value) => !exclude.includes(value));
+	return choices[rng.int(0, choices.length - 1)];
+}
+
 export function makeExercise(
 	kind: CalculationKind,
 	rng: Rng,
 	level: Level,
 ): ExerciseTask {
-	const a = rng.int(2, 12),
-		b = rng.int(2, 8),
-		c = rng.int(1, 5);
+	// Keep the answer distinct from givens and common missed calculation steps.
+	const a = draw(rng, 2, 12, kind === "weight" && level === 1 ? [10] : []);
+	const c = draw(
+		rng,
+		kind === "spring" ? 2 : 1,
+		5,
+		kind === "spring" && level === 2 ? [a] : [],
+	);
+	let excludedB: number[] = [];
+	if (kind === "spring") {
+		excludedB = level === 2 ? [a, a + c, c] : c === 2 ? [2] : [];
+	} else if (kind === "speed" && level === 1) {
+		excludedB = [a];
+	} else if (kind === "density" && level === 2) {
+		excludedB = c % 2 ? [2] : [a];
+	}
+	const b = draw(rng, 2, 8, excludedB);
 	const task = (
 		prompt: string,
 		answer: number,
@@ -93,11 +121,11 @@ export function makeExercise(
 		case "volume":
 			return level === 1
 				? task(
-						`Ein vollständig untergetauchter wasserfester Körper lässt die Anzeige von ${a * 10} ml auf ${a * 10 + b * c} ml steigen. Wie groß ist sein Volumen?`,
+						`Ein vollständig untergetauchter wasserfester Körper lässt die Anzeige von ${a * 25} ml auf ${a * 25 + b * c} ml steigen. Wie groß ist sein Volumen?`,
 						b * c,
 						"cm³",
 						"Volumen = Endanzeige − Anfangsanzeige; 1 ml = 1 cm³.",
-						`V = (${a * 10 + b * c} − ${a * 10}) ml = ${b * c} ml = ${b * c} cm³.`,
+						`V = (${a * 25 + b * c} − ${a * 25}) ml = ${b * c} ml = ${b * c} cm³.`,
 					)
 				: task(
 						`Ein quaderförmiger Körper ist ${a} cm lang, ${b} cm breit und ${c} cm hoch. Wie groß ist sein Volumen in Litern?`,
@@ -109,11 +137,11 @@ export function makeExercise(
 		case "density":
 			return level === 1
 				? task(
-						`Ein homogener Körper hat ${a * b * c} g Masse und ${b * c} cm³ Volumen. Wie groß ist seine Dichte?`,
+						`Ein homogener Körper hat ${a * (b * c + 12)} g Masse und ${b * c + 12} cm³ Volumen. Wie groß ist seine Dichte?`,
 						a,
 						"g/cm³",
 						"ρ = m / V",
-						`ρ = ${a * b * c} g / ${b * c} cm³ = ${a} g/cm³.`,
+						`ρ = ${a * (b * c + 12)} g / ${b * c + 12} cm³ = ${a} g/cm³.`,
 					)
 				: c % 2
 					? task(

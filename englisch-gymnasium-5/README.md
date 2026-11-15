@@ -21,6 +21,7 @@ npm ci
 npm test
 npm run package:zip
 ZAM_CORE=file:///path/to/zam-core/dist/index.js node scripts/validate-cell.mjs
+ZAM_CORE=file:///path/to/zam-core/dist/index.js node scripts/validate-migration.mjs
 node scripts/verify-browser.mjs
 ```
 
@@ -30,4 +31,4 @@ node scripts/verify-browser.mjs
 
 Grade 6 as the first foreign language introduces present perfect simple, past tense progressive, futures, question tags, adjective comparison, defining relative clauses and the modals could, may, might and should. Those targets are not taught here. The current Grundschule English page for the two-lesson track was checked on the same day. The expired Grundschule link on the grade 5 page redirected to the LehrplanPLUS homepage.
 
-`replaces-de-by.json` is a proposal for `de-by:gymnasium-5-englisch-starter-grammar-tenses`: 4 rows A and 4 rows C, `approved` is null, and `cell.json` declares no `replaces` and no `retired_items`. The neighbouring grade 6 legacy cell still holds simple past and much/many together with later grammar. Whether that cell belongs in this mapping is a question for Thomas. See [the curriculum and inventory record](../docs/englisch-gymnasium-5-coverage.md).
+`replaces-de-by.json` maps `de-by:gymnasium-5-englisch-starter-grammar-tenses`: 4 rows A and 4 rows C, approved by Thomas on 2026-11-15. From cell version 2026.11.2 each A successor declares `replaces`; the C cards stay active and there are no `retired_items`. The neighbouring grade 6 legacy cell still holds simple past and much/many together with later grammar. Whether that cell belongs in this mapping is a question for Thomas. See [the curriculum and inventory record](../docs/englisch-gymnasium-5-coverage.md).

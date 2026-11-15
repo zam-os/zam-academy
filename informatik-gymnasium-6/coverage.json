@@ -1,0 +1,278 @@
+{
+  "curriculum": "https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/6/nt_gym",
+  "checked": "2026-11-15",
+  "curriculum_sha256": "90af78646f82002c9adadeaff133b45196de5e279a79ee06c168b2b70aeccea4",
+  "school_type": "gymnasium",
+  "grade": 6,
+  "subject": "nt_gym",
+  "focus": "NT6 2 Schwerpunkt Informatik",
+  "track": "Gemeinsamer Fachlehrplan für alle Ausbildungsrichtungen; in der Jahrgangsstufe 6 gibt es keinen Profilbereich.",
+  "hours": "NT6 2 Schwerpunkt Informatik: ca. 28 Std. (2.1 ca. 18 Std., 2.2 ca. 5 Std., 2.3 ca. 5 Std.).",
+  "note": "Natur und Technik 6 am Gymnasium bündelt Schwerpunkt Biologie (NT6 1, ca. 56 Std.) und Schwerpunkt Informatik (NT6 2, ca. 28 Std.). Dieses Paket deckt ausschließlich Schwerpunkt 2 Informatik (NT6 2.1–2.3) vollständig in zwölf Lektionen auf drei Etappen ab.",
+  "optional_lessons": [],
+  "rows": [
+    {
+      "lb": "2.1",
+      "position": 1,
+      "competence": "interpretieren, vergleichen und bewerten verschiedene Darstellungen von Informationen.",
+      "lessons": [
+        "inf6-darstellungsformen"
+      ],
+      "status": "implemented",
+      "evidence": "Lektion inf6-darstellungsformen zeigt Text, Bild, Diagramm, Ton, Pantomime, Zeichnung und Skizze im Vergleich; eine interaktive Darstellungsform-Werkstatt mit drei Zielen prüft die Passung zur Situation, dazu Schnellcheck und zwei Aufgabenniveaus.",
+      "additional": "Eigene Skizzen oder kurze Pantomimen im Unterricht ausprobieren und gegenseitig deuten."
+    },
+    {
+      "lb": "2.1",
+      "position": 2,
+      "competence": "analysieren Grafik-, Text- und Multimediadokumente aus objektorientierter Sicht. Damit entwickelt sich das Verständnis, dass die Dokumente Informationseinheiten (z. B. Absätze bei Textdokumenten, Folien bei Multimediadokumenten) enthalten, die durch spezifische Eigenschaften charakterisiert sind und die miteinander in Beziehung stehen. So erhalten die Schülerinnen und Schüler einerseits Einblick in ein für die Informatik zentrales Modellierungskonzept; andererseits wird ihr Verständnis vertieft, dass diese Dokumentarten jeweils eine typische Grundstruktur haben, was die Nutzung entsprechender Software unabhängig von einem speziellen Produkt erleichtert.",
+      "lessons": [
+        "inf6-objekte-attribute-punktnotation",
+        "inf6-klassen-diagramme",
+        "inf6-vektorgrafik-ebenen",
+        "inf6-textdokumente",
+        "inf6-multimediadokumente"
+      ],
+      "status": "implemented",
+      "evidence": "Fünf aufeinander aufbauende Lektionen zerlegen Grafik-, Text- und Multimediadokumente in Informationseinheiten (Objekte), ihre Eigenschaften (Attribute) und Enthält-Beziehungen unabhängig von einem bestimmten Softwareprodukt.",
+      "additional": "Die identische Grundstruktur in zwei verschiedenen Programmen (z. B. LibreOffice Writer/Draw/Impress und einem schulischen Alternativprogramm) wiederfinden."
+    },
+    {
+      "lb": "2.1",
+      "position": 3,
+      "competence": "beschreiben Objekte (Informationseinheiten) durch ihre Eigenschaften sowie Modifikationen an diesen Objekten (insbesondere Attributwertänderungen mithilfe von Methoden). Hierbei verwenden sie eine einfache, einheitliche und intuitiv verständliche Beschreibungssprache in Form der Punktnotation (einer typischen Notationsform in der Informatik).",
+      "lessons": [
+        "inf6-objekte-attribute-punktnotation",
+        "inf6-textdokumente",
+        "inf6-multimediadokumente"
+      ],
+      "status": "implemented",
+      "evidence": "inf6-objekte-attribute-punktnotation führt Objekt, Attribut, Attributwert, Methode und Punktnotation ein und bietet eine interaktive Objekt- und Punktnotationswerkstatt sowie Schreibaufgaben für Attributzuweisungen und Methodenaufrufe; inf6-textdokumente und inf6-multimediadokumente vertiefen die Punktnotation an konkreten Dokumentobjekten.",
+      "additional": "Eigene Objektzustände eines selbst erstellten Dokuments im Heft in Punktnotation notieren."
+    },
+    {
+      "lb": "2.1",
+      "position": 4,
+      "competence": "abstrahieren Informationseinheiten gleicher Art zu Klassen, interpretieren diese als Bauplan für Objekte und erweitern damit ihre Fertigkeiten im objektorientierten Modellieren.",
+      "lessons": [
+        "inf6-klassen-diagramme",
+        "inf6-vektorgrafik-ebenen",
+        "inf6-textdokumente",
+        "inf6-multimediadokumente"
+      ],
+      "status": "implemented",
+      "evidence": "inf6-klassen-diagramme erklärt die Abstraktion gleichartiger Objekte zur Klasse als Bauplan (Großbuchstaben, Klassenkarte ohne konkrete Werte) und grenzt Klassenkarte gegen Objektkarte ab; die drei Folgelektionen wenden das Klassenkonzept auf Grafik-, Text- und Multimediadokumente an.",
+      "additional": "Weitere gleichartige Alltags- oder Dokumentobjekte im Unterricht einer gemeinsamen Klasse zuordnen."
+    },
+    {
+      "lb": "2.1",
+      "position": 5,
+      "competence": "stellen Struktur und Beziehungen der Informationseinheiten durch Objekt- und Klassendiagramme sachgerecht dar. Damit steht ihnen eine übersichtliche grafische Darstellungsmöglichkeit zur Verfügung, die auch in vielen anderen Bereichen der Informatik verwendet wird.",
+      "lessons": [
+        "inf6-klassen-diagramme",
+        "inf6-vektorgrafik-ebenen",
+        "inf6-textdokumente",
+        "inf6-multimediadokumente"
+      ],
+      "status": "implemented",
+      "evidence": "SVG-Objekt- und Klassendiagramme zeigen die Enthält-Beziehung zwischen Dokumentklassen und konkreten Dokumentobjekten; in der Diagramm-Werkstatt werden Objektdiagramm und Klassendiagramm direkt umgeschaltet und geprüft.",
+      "additional": "Eigene Objekt- und Klassendiagramme zu einer Schulaufgabe oder einem Plakat auf Papier zeichnen."
+    },
+    {
+      "lb": "2.1",
+      "position": 6,
+      "competence": "nutzen situationsgerecht Grafik-, Text- und Präsentationsprogramme zur Gestaltung einfacher Dokumente, um Informationen aussagekräftig darzustellen.",
+      "lessons": [
+        "inf6-objekte-attribute-punktnotation",
+        "inf6-vektorgrafik-ebenen",
+        "inf6-textdokumente",
+        "inf6-multimediadokumente"
+      ],
+      "status": "supported",
+      "evidence": "Die Lektionen behandeln Grundfunktionen von Standardsoftware (Speichern, Öffnen, Schließen, Kopieren, Einfügen) sowie Gruppieren und Ebenenreihenfolge bei Vektorgrafiken, Absatz-/Zeichenformatierung mit Bild und Tabelle in Textdokumenten und Bearbeitungs-/Vorführmodus mit Animationen in Präsentationen an interaktiven Werkstätten. Das praktische Erstellen echter Dateien am Rechner findet im Unterricht mit den Schulprogrammen statt.",
+      "additional": "Ein Plakat, ein kurzes Informationsblatt mit Tabelle und eine erste Folie in der eingesetzten Schulsoftware gestalten."
+    },
+    {
+      "lb": "2.1",
+      "position": 7,
+      "competence": "beurteilen anhand von Praxisbeispielen (z. B. Foto, Grundrissplan), ob sich für die Darstellung einer Information abhängig vom Einsatzzweck eine Vektor- oder Pixelgrafik besser eignet.",
+      "lessons": [
+        "inf6-vektor-pixelgrafik"
+      ],
+      "status": "implemented",
+      "evidence": "inf6-vektor-pixelgrafik stellt Pixelmatrix und geometrische Vektorobjekte gegenüber, veranschaulicht Vergrößerung im interaktiven Zoom-Vergleich bis 12× und trainiert die begründete Auswahl anhand von Praxisbeispielen wie Foto, Grundrissplan, Vereinslogo und Landkarte.",
+      "additional": "Eigene Logos im Vektorgrafikprogramm stark vergrößern und mit einer Rastergrafik vergleichen."
+    },
+    {
+      "lb": "2.2",
+      "position": 1,
+      "competence": "erstellen innerhalb eines vorgegebenen Zeitrahmens eine ansprechende Multimediapräsentation zu einem vorgegebenen Thema und berücksichtigen dabei sinnvolle Kriterien für die Qualität einer Präsentationsgestaltung.",
+      "lessons": [
+        "inf6-praesentation-qualitaet"
+      ],
+      "status": "supported",
+      "evidence": "Aufbauend auf der in inf6-multimediadokumente (2.1) eingeführten Folien- und Präsentationsstruktur vermittelt inf6-praesentation-qualitaet die Qualitätskriterien Textanteil je Folie, Schriftgröße, Farbwahl/Kontrast, zielgerichtete Auswahl von Animationen und Zeitplanung mit interaktivem Folien-Prüfer sowie Aufgaben auf zwei Niveaus. Das zeitlich begrenzte Erstellen und Halten einer eigenen Präsentation erfolgt im Unterrichtsprojekt.",
+      "additional": "Im Unterricht innerhalb der vorgegebenen Zeit eine eigene Präsentation zu einem NT-Thema erstellen und vorstellen."
+    },
+    {
+      "lb": "2.2",
+      "position": 2,
+      "competence": "beachten bei der Zusammenstellung der Inhalte für die Multimediapräsentation grundlegende Vorgaben des Urheberrechts.",
+      "lessons": [
+        "inf6-urheberrecht-quellen"
+      ],
+      "status": "implemented",
+      "evidence": "inf6-urheberrecht-quellen erklärt Urheberrecht bei Texten, Bildern und Musik, den Unterschied zwischen schulischer Nutzung und öffentlicher Weitergabe, freie Lizenzen sowie den Aufbau einer vollständigen Quellenangabe mit interaktiver Fall-Werkstatt und Übungsaufgaben.",
+      "additional": "Für jedes verwendete Medium in der eigenen Präsentation die vollständige Quellenangabe prüfen und auf der Schlussfolie dokumentieren."
+    },
+    {
+      "lb": "2.3",
+      "position": 1,
+      "competence": "ordnen Informationen aus geeigneten einfachen Beispielen ihrer Erfahrungswelt hierarchisch (z. B. Stammbaum).",
+      "lessons": [
+        "inf6-baumstrukturen"
+      ],
+      "status": "implemented",
+      "evidence": "inf6-baumstrukturen führt hierarchische Über- und Unterordnungen anhand von Stammbaum, Turnierplan und Buchgliederung ein und lässt Über- und Unterordnungen in Werkstatt und Aufgaben bestimmen.",
+      "additional": "Einen eigenen kleinen Stammbaum oder die Gliederung eines Schulhefts hierarchisch notieren."
+    },
+    {
+      "lb": "2.3",
+      "position": 2,
+      "competence": "stellen baumartige Informationsstrukturen mithilfe entsprechender Baumdiagramme dar.",
+      "lessons": [
+        "inf6-baumstrukturen",
+        "inf6-dateisystem-oop"
+      ],
+      "status": "implemented",
+      "evidence": "Interaktive SVG-Baumdiagramme markieren Wurzel, innere Knoten, Kanten, Blätter und eindeutige Pfade; Aufgaben prüfen Knoten-, Kanten- und Blattanzahlen sowie die Zuordnung von Baumelementen.",
+      "additional": "Ein Baumdiagramm zu einem einfachen Alltagsbeispiel selbst auf Papier zeichnen."
+    },
+    {
+      "lb": "2.3",
+      "position": 3,
+      "competence": "analysieren die in einem Dateisystem abgelegte Anordnung von Dateien und Ordnern, erkennen die zugrunde liegende hierarchische Struktur und stellen diese in Objektdiagrammen und abstrahiert als Klassendiagramm dar.",
+      "lessons": [
+        "inf6-dateisystem-oop"
+      ],
+      "status": "implemented",
+      "evidence": "inf6-dateisystem-oop stellt die gegebene Verzeichnisstruktur nebeneinander als Baum, als konkretes Objektdiagramm und als abstraktes Klassendiagramm mit den Klassen ORDNER und DATEI sowie der rekursiven Enthält-Beziehung der Klasse ORDNER dar.",
+      "additional": "Einen Ausschnitt des eigenen Schulordners als Objektdiagramm zeichnen."
+    },
+    {
+      "lb": "2.3",
+      "position": 4,
+      "competence": "nutzen einen Dateimanager, um Dateien und Ordner in einer hierarchischen Struktur geeignet zu organisieren. Damit können sie Dateien sicher abspeichern und wiederfinden.",
+      "lessons": [
+        "inf6-dateisystem-oop",
+        "inf6-pfade-dateizugriff"
+      ],
+      "status": "supported",
+      "evidence": "Die Lektionen vermitteln klare Ordnerstrukturen, sprechende Dateinamen und Dateiaktionen (Anlegen, Umbenennen, Verschieben, Kopieren) in einer interaktiven Dateibaum-Werkstatt. Die Bedienung des realen Dateimanagers auf dem Schulrechner bleibt Teil des Unterrichts.",
+      "additional": "Im schulischen Home-Laufwerk eine saubere Fach- und Halbjahresstruktur im Dateimanager anlegen."
+    },
+    {
+      "lb": "2.3",
+      "position": 5,
+      "competence": "geben die Lage von Dateien, die auf einem Rechner gespeichert sind, durch Pfade an. Damit beherrschen sie eine grundlegende Technik für den Zugriff auf Dateien, wie sie beispielsweise in Netzwerken eingesetzt wird.",
+      "lessons": [
+        "inf6-pfade-dateizugriff"
+      ],
+      "status": "implemented",
+      "evidence": "inf6-pfade-dateizugriff lehrt das Ablesen, Konstruieren und Verfolgen von Dateipfaden im Dateibaum (inklusive Ausblick auf Netzwerklaufwerke) über einen interaktiven Pfad-Navigator sowie Level-1- und Level-2-Pfadaufgaben.",
+      "additional": "Den vollständigen Pfad einer eigenen Datei im Dateimanager des Schulnetzes ablesen."
+    }
+  ],
+  "contents": [
+    {
+      "lb": "2.1",
+      "content": "Darstellungsformen von Information, z. B. Text, Bild, Diagramm, Ton, Pantomime, Zeichnung, Skizze",
+      "lessons": ["inf6-darstellungsformen"]
+    },
+    {
+      "lb": "2.1",
+      "content": "allgemeine Aspekte der Analyse bzw. Modellierung: Objekt, Attribut, Methode, Beziehung, Klasse",
+      "lessons": ["inf6-objekte-attribute-punktnotation", "inf6-klassen-diagramme"]
+    },
+    {
+      "lb": "2.1",
+      "content": "Analyse bzw. Modellierung von Vektorgrafikdokumenten, u. a. mithilfe der Klassen GRAFIKDOKUMENT, TEXTFELD, RECHTECK oder QUADRAT, ELLIPSE oder KREIS, LINIE und der Enthält-Beziehung",
+      "lessons": ["inf6-vektorgrafik-ebenen", "inf6-klassen-diagramme"]
+    },
+    {
+      "lb": "2.1",
+      "content": "Analyse bzw. Modellierung von Textdokumenten, u. a. mithilfe der Klassen TEXTDOKUMENT, ABSATZ und ZEICHEN und der Enthält-Beziehung",
+      "lessons": ["inf6-textdokumente"]
+    },
+    {
+      "lb": "2.1",
+      "content": "Analyse bzw. Modellierung von Multimediadokumenten, u. a. mithilfe der Klassen MULTIMEDIADOKUMENT, FOLIE und z. B. BILD oder AUDIO und der Enthält-Beziehung; ggf. Animieren von Objekten mithilfe entsprechender Methoden",
+      "lessons": ["inf6-multimediadokumente"]
+    },
+    {
+      "lb": "2.1",
+      "content": "Objekt- und Klassenkarte, Objekt- und Klassendiagramm, Punktnotation",
+      "lessons": ["inf6-objekte-attribute-punktnotation", "inf6-klassen-diagramme"]
+    },
+    {
+      "lb": "2.1",
+      "content": "Vektor- und Pixelgrafik als unterschiedliche Grafikarten",
+      "lessons": ["inf6-vektor-pixelgrafik"]
+    },
+    {
+      "lb": "2.1",
+      "content": "grundlegende Funktionen von Standardsoftware (z. B. Speichern, Öffnen, Schließen, Kopieren, Einfügen)",
+      "lessons": ["inf6-objekte-attribute-punktnotation", "inf6-textdokumente"]
+    },
+    {
+      "lb": "2.1",
+      "content": "Verbesserung der Informationsdarstellung durch geeignetes Ändern von Attributwerten (z. B. Textformatierung)",
+      "lessons": ["inf6-objekte-attribute-punktnotation", "inf6-textdokumente"]
+    },
+    {
+      "lb": "2.1",
+      "content": "spezielle Aspekte der Softwarebeherrschung bei Vektorgrafiksoftware (z. B. Gruppieren, Anordnung der Ebenen)",
+      "lessons": ["inf6-vektorgrafik-ebenen"]
+    },
+    {
+      "lb": "2.1",
+      "content": "spezielle Aspekte der Softwarebeherrschung bei Textverarbeitungssoftware (z. B. Einfügen von Bildern, Erstellen von Tabellen)",
+      "lessons": ["inf6-textdokumente"]
+    },
+    {
+      "lb": "2.1",
+      "content": "spezielle Aspekte der Softwarebeherrschung bei Präsentationsprogrammen: Bearbeitungs- und Vorführmodus, ggf. Animation",
+      "lessons": ["inf6-multimediadokumente"]
+    },
+    {
+      "lb": "2.1",
+      "content": "Fachbegriffe: Attribut, Methode, Klasse, Beziehung, Punktnotation, Objektdiagramm, Klassendiagramm",
+      "lessons": ["inf6-objekte-attribute-punktnotation", "inf6-klassen-diagramme"]
+    },
+    {
+      "lb": "2.2",
+      "content": "Kriterien für die Qualität einer Multimediapräsentation, z. B. Textanteil je Folie, Schriftgröße, Farbwahl, zielgerichtete Auswahl von Animationen",
+      "lessons": ["inf6-praesentation-qualitaet"]
+    },
+    {
+      "lb": "2.2",
+      "content": "Urheberrecht im Kontext der Erstellung von schulischen Arbeiten, Quellenangabe",
+      "lessons": ["inf6-urheberrecht-quellen"]
+    },
+    {
+      "lb": "2.3",
+      "content": "Modellierung der hierarchischen Struktur im Dateisystem, u. a. mit den Klassen DATEI und ORDNER und der rekursiven Enthält-Beziehung der Klasse ORDNER",
+      "lessons": ["inf6-dateisystem-oop"]
+    },
+    {
+      "lb": "2.3",
+      "content": "Baum als Möglichkeit der Darstellung bestimmter hierarchischer Strukturen: Wurzel, Knoten, Kante, Blatt, Pfad",
+      "lessons": ["inf6-baumstrukturen", "inf6-pfade-dateizugriff"]
+    },
+    {
+      "lb": "2.3",
+      "content": "Fachbegriffe: Ordner, Datei, Pfad, Baum, Wurzel, Knoten, Kante, Blatt",
+      "lessons": ["inf6-baumstrukturen", "inf6-dateisystem-oop", "inf6-pfade-dateizugriff"]
+    }
+  ]
+}

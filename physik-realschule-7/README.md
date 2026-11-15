@@ -16,7 +16,7 @@ Progress, texts and notes stay in this browser's `localStorage`. When storage is
 
 ```bash
 npm ci
-npm run dev          # http://localhost:5251/physik-realschule-7/
+npm run dev          # http://localhost:5252/physik-realschule-7/
 npm run typecheck
 npm test
 npm run build

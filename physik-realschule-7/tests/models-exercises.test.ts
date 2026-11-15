@@ -103,19 +103,62 @@ describe("physical relationships and model boundaries", () => {
 	});
 });
 const reference: Record<CalculationKind, [number, number]> = {
-	length: [4.3, 32],
-	speed: [4, 30],
-	spring: [6, 3],
-	weight: [4, 4],
-	volume: [6, 0.024],
-	density: [4, 4],
+	length: [2.2, 21],
+	speed: [2, 20],
+	spring: [6, 4],
+	weight: [2, 2],
+	volume: [2, 0.004],
+	density: [2, 30],
 };
 describe("independently calculated exercise references and German input", () => {
+	it("rejects copied givens and common missed steps across 2,000 seeds per family and level", () => {
+		for (const kind of Object.keys(reference) as CalculationKind[])
+			for (const level of [1, 2] as const)
+				for (let seed = 0; seed < 2000; seed++) {
+					const t = makeExercise(kind, createRng(seed), level);
+					const givens = [...t.prompt.matchAll(/\d+(?:,\d+)?/g)].map(
+						([value]) => Number(value.replace(",", ".")),
+					);
+					const [x, y, z] = givens;
+					let missedSteps: number[];
+					switch (kind) {
+						case "length":
+							missedSteps = level === 1 ? [x * 10] : [y - x, y * 10];
+							break;
+						case "speed":
+							missedSteps = level === 1 ? [x * y, y / x] : [y / x];
+							break;
+						case "spring":
+							missedSteps =
+								level === 1
+									? [x + y, x / y]
+									: [z - x, y / x, y / z, y * (z - x)];
+							break;
+						case "weight":
+							missedSteps =
+								level === 1 ? [x * y, x / y, x / 1000] : [x * y, x / y];
+							break;
+						case "volume":
+							missedSteps = level === 1 ? [x + y, x - y] : [x * y * z];
+							break;
+						case "density":
+							missedSteps =
+								level === 1 || t.unit === "cm³"
+									? [y / x, x * y]
+									: [y / x, x + y];
+							break;
+					}
+					for (const wrong of [...givens, ...missedSteps])
+						expect(
+							checkAnswer(t, wrong.toFixed(6)).status,
+							`${kind} L${level}, seed ${seed}, copied value or missed step ${wrong}: ${t.prompt}`,
+						).toBe("wrong");
+				}
+	});
 	for (const [kind, answers] of Object.entries(reference))
 		for (const level of [1, 2] as const)
 			it(`${kind}, level ${level}`, () => {
-				const values = [4, 3, 2],
-					rng: Rng = { int: () => values.shift()! };
+				const rng: Rng = { int: (min) => min };
 				expect(
 					makeExercise(kind as CalculationKind, rng, level).answer,
 				).toBeCloseTo(answers[level - 1], 10);

@@ -66,7 +66,7 @@ Zelle `de-by:gymnasium-5-englisch-starter-grammar-tenses`, acht Karten.
 | B | 0 | — |
 | C | 4 | `keep-active` |
 
-Die vier A-Karten sind die binären Abrufe zu `Yes, I have.`, `Does`, `be + -ing` und `S-V-O`. Die vier C-Karten sind mehrteilige Sammelabrufe. `approved` ist `null`. `cell.json` erklärt weder `replaces` noch `retired_items`.
+Die vier A-Karten sind die binären Abrufe zu `Yes, I have.`, `Does`, `be + -ing` und `S-V-O`. Die vier C-Karten sind mehrteilige Sammelabrufe. Thomas hat die Zuordnung am 2026-11-15 freigegeben (`"status": "approved"`). Ab Zellversion `2026.11.2` trägt jeder der vier A-Nachfolger ein `replaces` auf seine alte Karte; die vier C-Karten bleiben aktiv, `retired_items` gibt es nicht. Die erste Fassung `2026.11.1` erschien ohne `replaces`.
 
 Die Nachbarzelle `de-by:gymnasium-6-englisch-past-tenses-present-perfect-adjectives` enthält simple past und much/many zusammen mit present perfect, past progressive und der Adjektivsteigerung. Der aktuelle Lehrplan führt simple past und much/many schon in Jahrgang 5 ein. Ob diese Zelle in die Zuordnung von Englisch 5 gehört, entscheidet Thomas. Bis dahin hat sie hier keine Zeile und bleibt bei Jahrgang 6.
 

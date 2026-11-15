@@ -22,6 +22,8 @@ The same generic assumption also offered Grade 6 physics at Gymnasium. The [offi
 
 Package details also no longer render a literal `null` when there is no preview notice. Native `Element.append` stringifies null; the existing test helper had hidden that difference. The details test now rejects null or undefined arguments before they reach the simulated native append operation.
 
+The package's overview topics use the official area names: “Mechanik”, “Optik” and “Magnetismus und Elektrizitätslehre”.
+
 ## Legacy-card proposal
 
 The source is `zam-os/zam` at commit `2057e1c35a5e768eb0c59cb74c3700c0101f67a2`. Both Grade 7 physics fixtures are frozen byte-for-byte under the package's `tests/fixtures/`; their SHA-256 values are recorded in `replaces-de-by.json`.
@@ -36,17 +38,23 @@ The result is **2 A, 0 B, 14 C keep-active**, with `approved: null`, `status: pr
 
 ## Verification on 15 November 2026
 
+Review follow-up constrains the calculation parameters so that copying a given number or making a tested common calculation error cannot earn credit. Spring extensions start at 2 cm; Level 2 also distinguishes extension from unloaded length. The regression test checks all six calculation families at both levels over 2,000 seeds each (24,000 tasks). Its assertions use the numbers printed in each question and the actual answer checker. It reproduced the original speed-task defect before the generator fix.
+
+The contact-force diagram now places the book directly on the table. Both interaction vectors start at their shared contact surface; the equilibrium view starts the weight vector at the book's centre of mass. The opposing vectors are collinear, have equal lengths and use arrowheads at their ends. Both modes were checked at 1 N and 5 N in light and dark themes.
+
 | Check | Command or method | Result |
 | --- | --- | --- |
 | Clean dependency installation | `npm ci --offline --cache /tmp/zam-academy-npm-cache` in the package | Passed; dependency declarations match the physics reference package |
 | Types | `npm run typecheck` | Passed |
-| Package tests | `npm test` | 54 Vitest tests and 2 Node contract tests passed |
+| Package tests | `npm test` | 55 Vitest tests and 2 Node contract tests passed, including the 24,000-task regression sweep |
 | Offline release | `npm run package:zip` | Typecheck, single-file build and ZIP creation passed; archived HTML compared byte-for-byte with `dist/index.html` |
 | Curriculum quotations | `node scripts/check-curriculum.mjs /tmp/zam-physik7-curriculum.html` in the package | 17 rows, 0 not found; frozen-page SHA-256 verified |
-| Registry and catalog | `node --test scripts/build-catalog.test.mjs scripts/academy-registry.test.mjs` at the repository root | 53 tests passed, including both map lenses and the timetable matrix |
-| Cell installation | `ZAM_CORE=file:///tmp/zam-core-0.54.0/node_modules/zam-core/dist/index.js node scripts/validate-cells.mjs` | All 74 cells installed; card text and curated-distractor checks passed |
+| Registry and catalog | `node --test scripts/build-catalog.test.mjs scripts/academy-registry.test.mjs scripts/changed-apps.test.mjs` at the repository root | 58 tests passed, including both map lenses, the timetable matrix and CI package discovery |
+| Cell installation | `ZAM_CORE=file:///tmp/zam-core-0.54.0/node_modules/zam-core/dist/index.js node scripts/validate-cells.mjs` | All 75 cells installed after integrating current `main`; card text and curated-distractor checks passed |
 | Browser | Isolated headless Chrome, CDP evaluation of rendered `main` and screenshots | 24 lessons × 2 levels × 2 themes = 96 desktop states; 48 phone-width lesson states; path, reference and notebook views; no script exceptions or external app requests |
 
 Browser interaction checks completed a lesson through the quiz, workshop, model comparisons, self-assessment and three independent calculations on each level, then reloaded it. Storage-blocked loading remained usable with its visible notice. Additional checks exercised independently switched lamps, total reflection, and real, focal-plane and virtual lens cases. Screenshot sheets were inspected across every lesson; the final visual pass also checked the revised volume, weight and shadow illustrations. The overview was served with the real registry, and its Grade 7 package link opened the built app.
+
+After the generator changes, `node /tmp/zam-physik7-review-browser.mjs` repeated the 96 desktop and 48 phone-width states and the interaction checks, with no script exceptions or external requests. After the final force-arrow adjustment, `node /tmp/zam-physik7-force-review.mjs` checked the eight diagram variants described above, including contact geometry and collinearity; screenshots in both themes were inspected. These browser harnesses and outputs remain outside the repository.
 
 This records local implementation and verification. PR publication and deployment are separate actions; neither mapping approval nor teacher review is claimed.

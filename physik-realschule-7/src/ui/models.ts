@@ -98,10 +98,27 @@ export function renderFigure(
 			);
 		case "forces": {
 			const len = 14 * v.force;
+			const contactY = 160;
+			const forceArrow = (
+				from: number,
+				to: number,
+				color = "var(--accent)",
+			) => {
+				const head = to - Math.sign(to - from) * 9;
+				return (
+					line(330, from, 330, to, color) +
+					`<path d="M324 ${head}L330 ${to}L336 ${head}Z" fill="${color}"/>`
+				);
+			};
+			const bodies = `<rect class="object-fill" x="260" y="90" width="140" height="70" rx="5"/><rect class="muted-fill" x="220" y="${contactY}" width="220" height="30"/>${label(380, 118, "Buch")}${label(250, 215, "Tisch")}`;
 			return svg(
-				v.pair
-					? `<rect class="object-fill" x="270" y="95" width="100" height="40" rx="5"/><rect class="muted-fill" x="240" y="195" width="160" height="30"/>${ray(320, 95, 320, 95 - len)}${ray(320, 225, 320, 225 + Math.min(len, 55), "var(--compare)")}${label(470, 72, `Tisch → Buch: ${fmt(v.force)} N`)}${label(475, 260, `Buch → Tisch: ${fmt(v.force)} N`)}${label(130, 125, "Buch")}${label(130, 218, "Tisch")}${label(330, 25, "Verschiedene Körper · Kontaktpaar")}`
-					: `<rect class="object-fill" x="260" y="125" width="140" height="55" rx="5"/>${ray(290, 125, 290, 125 - len)}${ray(370, 180, 370, 180 + len, "var(--compare)")}${label(160, 70, `Tisch → Buch: ${fmt(v.force)} N`)}${label(485, 247, `Erde → Buch: ${fmt(v.force)} N`)}${label(330, 155, "Buch")}${label(330, 25, "Derselbe Körper · Kräftegleichgewicht")}`,
+				bodies +
+					forceArrow(contactY, contactY - len) +
+					(v.pair
+						? `${forceArrow(contactY, contactY + len, "var(--compare)")}${label(420, 245, `Buch → Tisch: ${fmt(v.force)} N`, "start")}${label(330, 25, "Verschiedene Körper · Kontaktpaar")}${label(330, 285, "Beide Pfeile beginnen an der Kontaktfläche")}`
+						: `${forceArrow(125, 125 + len, "var(--compare)")}${circle(330, 125, 3, "var(--compare)")}${label(420, 245, `Erde → Buch: ${fmt(v.force)} N`, "start")}${label(330, 25, "Derselbe Körper · Kräftegleichgewicht")}${label(330, 285, "Stützkraft am Kontakt · Gewichtskraft am Schwerpunkt")}`) +
+					circle(330, contactY, 3, "var(--accent)") +
+					label(235, 85, `Tisch → Buch: ${fmt(v.force)} N`, "end"),
 				v.pair
 					? "Kontaktkräfte an Buch und Tisch wirken auf verschiedene Körper in entgegengesetzte Richtungen"
 					: "Stützkraft und Gewichtskraft wirken beide am Buch und gleichen sich aus",
