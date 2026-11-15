@@ -36,7 +36,7 @@ Die App trainiert die zugehörigen Fachbegriffe, Werkzeugeinstellungen, Gestaltu
 
 ## Bestehende ZAM-Karten (`replaces-de-by.json`)
 
-[`replaces-de-by.json`](replaces-de-by.json) enthält den unverbindlichen Zuordnungsentwurf (`"status": "proposal-only"`, `"approved": null`) zu den 8 Karten von `de-by:gymnasium-6-natur-technik-informatik-vektorgrafik-texte` (2 Kategorie-A-Vorschläge, 6 Kategorie-C-Beibehaltungen). Solange Thomas diese Zuordnung nicht freigibt, enthält [`cell.json`](cell.json) keine `replaces`- oder `retired_items`-Felder. Weitere Details und die Rückfrage zum unbelegten Alt-Paket `de-by:gymnasium-5-natur-technik-mikroskop-experiment-oop` stehen in [`docs/informatik-gymnasium-6-coverage.md`](../docs/informatik-gymnasium-6-coverage.md).
+[`replaces-de-by.json`](replaces-de-by.json) enthält die von Thomas am 2026-11-15 freigegebene Zuordnung (`"status": "approved"`) zu den 8 Karten von `de-by:gymnasium-6-natur-technik-informatik-vektorgrafik-texte`: 2 Kategorie-A-Übernahmen und 6 aktiv bleibende Kategorie-C-Karten. Ab Zellversion 2026.11.2 tragen die beiden Nachfolger in [`cell.json`](cell.json) je ein `replaces`; `retired_items` gibt es nicht. Weitere Details und die Rückfrage zum unbelegten Alt-Paket `de-by:gymnasium-5-natur-technik-mikroskop-experiment-oop` stehen in [`docs/informatik-gymnasium-6-coverage.md`](../docs/informatik-gymnasium-6-coverage.md).
 
 ## Entwicklung und Prüfung
 
@@ -49,5 +49,5 @@ npm run build
 npm run package:zip
 node scripts/verify-release.mjs
 node scripts/check-curriculum.mjs
-ZAM_CORE=file:///<pfad-zu-zam-core>/dist/index.js node scripts/validate-cell.mjs
+ZAM_CORE=file:///<pfad-zu-zam-core>/dist/index.js node scripts/validate-migration.mjs
 ```

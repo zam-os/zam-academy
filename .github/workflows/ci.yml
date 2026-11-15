@@ -190,6 +190,8 @@ jobs:
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node franzoesisch-gymnasium-5/scripts/validate-cell.mjs
       - name: Verify Grade 5 Gymnasium English enrolment and recall
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node englisch-gymnasium-5/scripts/validate-cell.mjs
+      - name: Check the approved Englisch 5 Gymnasium history migration
+        run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node englisch-gymnasium-5/scripts/validate-migration.mjs
       - name: Verify Grade 5 Gymnasium German enrolment and preserve legacy evidence
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node deutsch-gymnasium-5/scripts/validate-cell.mjs
       - name: Verify Grade 5 Mittelschule English enrolment and recall
@@ -228,5 +230,5 @@ jobs:
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node biologie-gymnasium-5/scripts/validate-migration.mjs
       - name: Install and enrol the local Natur und Technik 6 Mittelschule draft idempotently
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node nt-mittelschule-6/scripts/validate-cell.mjs
-      - name: Install and enrol Informatik 6 Gymnasium idempotently
-        run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node informatik-gymnasium-6/scripts/validate-cell.mjs
+      - name: Check the approved Informatik 6 Gymnasium history migration
+        run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node informatik-gymnasium-6/scripts/validate-migration.mjs

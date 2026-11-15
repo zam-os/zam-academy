@@ -329,12 +329,12 @@ describe("answer handling, progress and routes", () => {
 	});
 });
 
-describe("ZAM content and the proposal-only history", () => {
-	it("pins identifiers and ships no history transfer", () => {
+describe("ZAM content and the approved history", () => {
+	it("pins identifiers and moves only the approved A histories", () => {
 		expect(cell.tile_id).toBe(ZAM_CELL_ID);
-		expect(mapping.approved).toBeNull();
-		expect(mapping.status).toBe("proposal-only");
-		expect(JSON.stringify(cell)).not.toMatch(/"replaces"|"retired_items"/);
+		expect(mapping.approved).toBe("2026-11-15");
+		expect(mapping.status).toBe("approved");
+		expect(JSON.stringify(cell)).not.toMatch(/"retired_items"/);
 		expect(cell.atoms.map((atom) => ({
 			id: atom.id,
 			slug: atom.slug,
@@ -348,9 +348,11 @@ describe("ZAM content and the proposal-only history", () => {
 		expect(new Set(mapping.rows.map((row) => row.de_by_id)).size).toBe(legacyItems.length);
 		for (const row of mapping.rows) {
 			expect(legacyItems.some((item) => item.id === row.de_by_id)).toBe(true);
-			if (row.action === "propose-replace-after-approval") {
+			if (row.action === "replace") {
 				expect(row.category).toBe("A");
-				expect(items.filter((item) => item.slug === row.academy_slug)).toHaveLength(1);
+				const successors = items.filter((item) => item.slug === row.academy_slug);
+				expect(successors).toHaveLength(1);
+				expect((successors[0] as { replaces?: string[] }).replaces).toEqual([row.de_by_id]);
 			} else {
 				expect(row.action).toBe("keep-active");
 				expect(row.academy_slug).toBeNull();
