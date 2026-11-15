@@ -1,0 +1,1216 @@
+{
+	"inquiry": [
+		{
+			"goal": "Einen fairen Untersuchungsablauf als Modell aufbauen",
+			"prompt": "Ordne den Untersuchungsweg zum Einfluss der Temperatur auf die Lösezeit.",
+			"options": ["", "", ""],
+			"correct": 0,
+			"hint": "Planung kommt vor der Messung; ein Schluss braucht dokumentierte Beobachtungen.",
+			"explanation": "Die geordnete Darstellung bildet den beschriebenen Ablauf ab. Begründe, warum die Schritte in dieser Reihenfolge zusammengehören."
+		},
+		{
+			"goal": "Einen Messpunkt mit Einheit aus dem Diagramm lesen",
+			"prompt": "Welche Lösezeit gehört in der Beispielmessreihe zu 40 °C?",
+			"options": ["120 s", "40 s", "75 s"],
+			"correct": 2,
+			"hint": "Lies beim mittleren Temperaturwert den zugehörigen Punkt ab.",
+			"explanation": "Der mittlere Punkt gehört zu 40 °C und 75 s. Die Werte sind eine erfundene Messreihe."
+		},
+		{
+			"goal": "Eine Schlussfolgerung auf die geprüften Bedingungen begrenzen",
+			"prompt": "Welche Auswertung ist durch die Beispielwerte gedeckt?",
+			"options": [
+				"Unter diesen Bedingungen sinkt die Lösezeit mit steigender Temperatur.",
+				"Die Lösezeit sinkt bei jedem Stoff im gleichen Verhältnis.",
+				"Die Messreihe beweist zugleich, dass Korngröße und Rühren keinen Einfluss haben."
+			],
+			"correct": 0,
+			"hint": "Übertrage eine kleine Messreihe nicht ungeprüft auf alle Stoffe.",
+			"explanation": "Die Aussage beschreibt den geprüften Zusammenhang. Wiederholungen und andere Stoffe benötigen eigene Untersuchungen."
+		}
+	],
+	"safety": [
+		{
+			"goal": "Bei einem Glasbruch den sicheren Handlungsweg ordnen",
+			"prompt": "Ein Glasgerät zerbricht: Baue den sicheren Ablauf aus den drei Schritten.",
+			"options": ["", "", ""],
+			"correct": 0,
+			"hint": "Eigenständiges Aufräumen oder Weiterarbeiten kommt nicht vor der Unterweisung.",
+			"explanation": "Die geordnete Darstellung bildet den beschriebenen Ablauf ab. Begründe, warum die Schritte in dieser Reihenfolge zusammengehören."
+		},
+		{
+			"goal": "Die Aussagekraft eines Modellbilds begrenzen",
+			"prompt": "Beweist ein sauberes Kugelmodell, dass die echte Probe keine Schadstoffe enthält?",
+			"options": [
+				"Nein, die vereinfachte Zeichnung erfasst solche Verunreinigungen nicht.",
+				"Ja, denn ein vollständiges Molekülbild müsste alle Verunreinigungen der Probe zeigen.",
+				"Ja, die Formel H₂O bestätigt die Qualität jeder Wasserprobe."
+			],
+			"correct": 0,
+			"hint": "Unterscheide ausgewählte Modellmerkmale von Eigenschaften der echten Probe.",
+			"explanation": "Ein Molekülmodell zeigt ausgewählte Bausteine, aber keine vollständige Untersuchung einer echten Probe."
+		},
+		{
+			"goal": "Bei einer Störung eine sichere Entscheidung treffen",
+			"prompt": "Ein Glasgerät zerbricht unerwartet. Was ist dein nächster Schritt?",
+			"options": [
+				"Zuerst selbst aufräumen und die Lehrkraft erst nach der Stunde informieren.",
+				"Arbeit stoppen und sofort die Lehrkraft informieren.",
+				"Die Aufgabe fortsetzen, während Mitschüler die Splitter entfernen."
+			],
+			"correct": 1,
+			"hint": "Vermeide eine weitere Gefährdung, statt eigenständig zu improvisieren.",
+			"explanation": "Du unterbrichst und informierst. Die Lehrkraft entscheidet über das sichere weitere Vorgehen."
+		}
+	],
+	"waterUse": [
+		{
+			"goal": "Drei Wasserfunktionen den Modellbildern zuordnen",
+			"prompt": "Wähle eine Beschriftung und dann die passende Bildmarkierung.",
+			"options": ["", "", ""],
+			"correct": 0,
+			"hint": "Vergleiche Leben im Wasser, Trinkwassernutzung und Stofftransport.",
+			"explanation": "Die Beschriftungen passen zu den sichtbaren Merkmalen und Funktionen. Erkläre eine deiner Zuordnungen."
+		},
+		{
+			"goal": "Eine Sichtprüfung kritisch beurteilen",
+			"prompt": "Ein Bach ist klar. Welche Entscheidung ist begründet?",
+			"options": [
+				"Nicht allein wegen der Klarheit daraus trinken.",
+				"Aus der Klarheit auf das Fehlen von Krankheitserregern schließen.",
+				"Gewöhnliches Filtrieren schon als vollständige Trinkwasserprüfung behandeln."
+			],
+			"correct": 0,
+			"hint": "Auch unsichtbare Bestandteile können wichtig sein.",
+			"explanation": "Aussehen allein beweist weder Reinheit noch Trinkwasserqualität."
+		},
+		{
+			"goal": "Stofftransport von anderen Wasserfunktionen unterscheiden",
+			"prompt": "Wasser trägt gelöste Mineralstoffe von Wurzeln zu Blättern. Welche Funktion zeigt das?",
+			"options": [
+				"Lebensmittel, weil jede Wassernutzung der Pflanze dieselbe Funktion hat.",
+				"Transportmittel",
+				"Lebensraum, weil die transportierten Stoffe im Wasser enthalten sind."
+			],
+			"correct": 1,
+			"hint": "Verfolge, was zusammen mit dem Wasser seinen Ort ändert.",
+			"explanation": "Das Wasser transportiert gelöste Stoffe in der Pflanze."
+		}
+	],
+	"properties": [
+		{
+			"goal": "Temperaturen im Wassersteckbrief selbst eintragen",
+			"prompt": "Beschrifte die Modellansichten für reines Wasser bei normalem Luftdruck.",
+			"options": ["", "", ""],
+			"correct": 0,
+			"hint": "Unterscheide Schmelzpunkt, Siedepunkt und flüssiges Wasser im Steckbrief.",
+			"explanation": "Die Beschriftungen passen zu den sichtbaren Merkmalen und Funktionen. Erkläre eine deiner Zuordnungen."
+		},
+		{
+			"goal": "Eine veränderte Messbedingung berücksichtigen",
+			"prompt": "Wasser siedet im Gebirge unter 100 °C. Was solltest du zuerst berücksichtigen?",
+			"options": [
+				"Einen Defekt des Thermometers annehmen, weil Wasser überall bei exakt 100 °C sieden müsse.",
+				"Den Siedepunkt als unabhängig von Messbedingungen behandeln.",
+				"Den geringeren Luftdruck"
+			],
+			"correct": 2,
+			"hint": "Der Steckbrief nennt ausdrücklich eine Druckbedingung.",
+			"explanation": "Der Siedepunkt hängt vom Luftdruck ab. Ein niedrigerer Wert muss deshalb kein Messfehler sein."
+		},
+		{
+			"goal": "Mehrere Befunde für einen Steckbrief verlangen",
+			"prompt": "Welche Untersuchung ist als Stoffbestimmung ausreichend begründet?",
+			"options": [
+				"Mehrere passende Eigenschaften mit ihren Messbedingungen vergleichen.",
+				"Nur die Klarheit der Probe für eine eindeutige Stoffbestimmung nutzen.",
+				"Eine einzelne allgemeine Eigenschaft ohne Messbedingungen für eindeutig halten."
+			],
+			"correct": 0,
+			"hint": "Ein einzelnes allgemeines Merkmal ist oft nicht eindeutig.",
+			"explanation": "Ein Steckbrief kombiniert Eigenschaften und Bedingungen. Auch dies ersetzt keine Trinkwasserprüfung."
+		}
+	],
+	"solutions": [
+		{
+			"goal": "Leitfähigkeit zweier klarer Lösungen vorhersagen und prüfen",
+			"prompt": "Sage den Befund für beide Modellproben voraus. Spiele jeden Modellversuch ab und vergleiche. Es sind keine Anleitungen für elektrische Heimversuche.",
+			"options": ["", "", ""],
+			"correct": 0,
+			"hint": "Gleiches Aussehen und Löslichkeit garantieren nicht dieselbe Leitfähigkeit.",
+			"explanation": "Beide Lösungen können klar sein; die Kochsalzlösung leitet deutlich besser als reine Zuckerlösung."
+		},
+		{
+			"goal": "Löslichkeit und Leitfähigkeit getrennt vergleichen",
+			"prompt": "Salz und Zucker lösen sich in sehr reinem Wasser. Welche Vorhersage passt?",
+			"options": [
+				"Beide Lösungen müssen wegen ihrer gleichen Klarheit gleich gut leiten.",
+				"Je mehr sich ein Stoff löst, desto größer muss unabhängig von der Stoffart die Leitfähigkeit sein.",
+				"Salzlösung leitet deutlich besser als reine Zuckerlösung."
+			],
+			"correct": 2,
+			"hint": "Klarheit und Löslichkeit sind keine gemeinsame Skala für Leitfähigkeit.",
+			"explanation": "Die Lösungen können gleich klar aussehen und trotzdem unterschiedlich gut leiten."
+		},
+		{
+			"goal": "Aus einem Filtrierbefund nur das Belegte folgern",
+			"prompt": "Welche Aussage über das klare Filtrat nach dem Abtrennen von Sand ist begründet?",
+			"options": [
+				"Gelöste Stoffe wie Salz können weiterhin enthalten sein.",
+				"Der Filter hat auch gelöstes Salz sicher vollständig zurückgehalten.",
+				"Das Filtrat besteht wegen seiner Klarheit ausschließlich aus reinem Wasser."
+			],
+			"correct": 0,
+			"hint": "Ein gewöhnlicher Filter hält nicht jede Art von Bestandteil zurück.",
+			"explanation": "Das Filtrat kann gelöste Stoffe enthalten; Klarheit beweist keine Reinheit."
+		}
+	],
+	"tension": [
+		{
+			"goal": "Die Tragwirkung mit und ohne Spülmittel vergleichen",
+			"prompt": "Triff für beide Bedingungen eine Vorhersage und prüfe sie im Modell. Echte Tiere werden dafür nicht mit Spülmittel in Kontakt gebracht.",
+			"options": ["", "", ""],
+			"correct": 0,
+			"hint": "Spülmittel schwächt die Oberflächenspannung; Form und Benetzung wirken ebenfalls mit.",
+			"explanation": "Die Modellbeobachtung zeigt die schwächere Tragwirkung. Spülmittel gehört nicht in den Lebensraum der Tiere."
+		},
+		{
+			"goal": "Die Tragwirkung am Wasserläufer erklären",
+			"prompt": "Welche Kombination hilft dem leichten Wasserläufer oben zu bleiben?",
+			"options": [
+				"Oberflächenspannung und wasserabweisende Beine",
+				"Eine feste Haut aus Wasser trägt das Tier unabhängig von Form und Benetzung.",
+				"Nur der Auftrieb tief im Wasserkörper wirkt; die Oberfläche spielt keine Rolle."
+			],
+			"correct": 0,
+			"hint": "Die Lage der Beine an der eingedellten Grenzfläche ist entscheidend.",
+			"explanation": "Das Tier nutzt die Oberflächenspannung zusammen mit der Form und Benetzung seiner Beine."
+		},
+		{
+			"goal": "Eine Verunreinigung vorhersagen und begründet vermeiden",
+			"prompt": "Was erwartest du nach Spülmittelzugabe im Modell?",
+			"options": [
+				"Die Tragwirkung bleibt gleich, solange Wasser weiterhin Wasser ist.",
+				"Die Oberflächenspannung und ihre Tragwirkung nehmen ab.",
+				"Die Tragwirkung steigt, weil Spülmittel die Oberfläche stärker zusammenhält."
+			],
+			"correct": 1,
+			"hint": "Beachte, dass Spülmittel die besondere Wirkung der Grenzfläche schwächt.",
+			"explanation": "Die Tragwirkung kann abnehmen. Deshalb wird der Vergleich nicht an einem echten Teich mit Tieren durchgeführt."
+		}
+	],
+	"particles": [
+		{
+			"goal": "Mit dem Regler den Schmelzübergang bei normalem Luftdruck einstellen",
+			"prompt": "Stelle die Temperatur für eine mögliche Eis-Wasser-Mischung ein.",
+			"options": ["", "", ""],
+			"correct": 0,
+			"hint": "Nutze den Temperaturregler, nicht nur einen Zustandsknopf.",
+			"explanation": "Am Schmelzpunkt von ungefähr 0 °C können Eis und Wasser gemeinsam vorliegen."
+		},
+		{
+			"goal": "Mit dem Regler den Siedeübergang bei normalem Luftdruck einstellen",
+			"prompt": "Stelle die Temperatur für siedendes reines Wasser bei normalem Luftdruck ein.",
+			"options": ["", "", ""],
+			"correct": 0,
+			"hint": "Nutze den Temperaturregler und beachte die Druckbedingung.",
+			"explanation": "Bei ungefähr 100 °C können flüssiges Wasser und Wasserdampf gemeinsam vorliegen."
+		},
+		{
+			"goal": "Die Teilchenidentität beim Zustandswechsel begründen",
+			"prompt": "Welche Aussage gilt für die Wasserteilchen beim Verdampfen?",
+			"options": [
+				"Sie werden in Wasserstoff und Sauerstoff zerlegt.",
+				"Sie bleiben Wassermoleküle; Anordnung und Bewegung ändern sich.",
+				"Jedes Teilchen wird so groß wie eine sichtbare Dampfblase."
+			],
+			"correct": 1,
+			"hint": "Zustand und Stoffart sind verschiedene Fragen.",
+			"explanation": "Beim Zustandswechsel bleiben die Wassermoleküle erhalten. Eine chemische Zerlegung ist ein anderer Vorgang."
+		}
+	],
+	"anomaly": [
+		{
+			"goal": "Das Dichtemaximum auf einer qualitativen Kurve finden",
+			"prompt": "Verschiebe die Temperatur zum höchsten Punkt der Dichtekurve.",
+			"options": ["", "", ""],
+			"correct": 0,
+			"hint": "Vergleiche die Kurve links und rechts vom Maximum.",
+			"explanation": "Flüssiges Wasser hat bei ungefähr 4 °C seine größte Dichte."
+		},
+		{
+			"goal": "Gleiche Masse, Volumen und Eisdichte verknüpfen",
+			"prompt": "Beim Gefrieren benötigt dieselbe Wassermasse mehr Raum. Wie verändert sich die Dichte?",
+			"options": [
+				"Sie nimmt ab.",
+				"Sie bleibt zwingend gleich.",
+				"Sie nimmt zu, weil die Atome wachsen."
+			],
+			"correct": 0,
+			"hint": "Dichte vergleicht Masse mit dem benötigten Volumen.",
+			"explanation": "Mehr Volumen bei gleicher Masse bedeutet geringere Dichte. Deshalb kann Eis auf Wasser schwimmen."
+		},
+		{
+			"goal": "Die Dichteanomalie auf einen tiefen Wintersee übertragen",
+			"prompt": "Welche Anordnung kann im tiefen See im Winter auftreten?",
+			"options": [
+				"Eis unten und darüber Wasser um 4 °C.",
+				"Im gesamten tiefen See muss genau 0 °C herrschen; wärmeres Wasser darunter ist ausgeschlossen.",
+				"Eis oben und darunter in der Tiefe Wasser um 4 °C."
+			],
+			"correct": 2,
+			"hint": "Unterscheide das weniger dichte Eis vom dichteren flüssigen Wasser.",
+			"explanation": "Die Anordnung ist möglich, aber flache Teiche können durchfrieren. Das Modell sagt nichts über sichere Tragfähigkeit des Eises."
+		}
+	],
+	"molecules": [
+		{
+			"goal": "Ein Wassermolekül aus den passenden Atomen aufbauen",
+			"prompt": "Füge H- und O-Atome hinzu, bis dein Modell genau ein Wassermolekül darstellt.",
+			"options": ["", "", ""],
+			"correct": 0,
+			"hint": "Die Formel H₂O beschreibt die Anzahl beider Atomsorten.",
+			"explanation": "Zwei H-Atome und ein O-Atom bilden das dargestellte Wassermolekül. Größe und Farben sind Modellkonventionen."
+		},
+		{
+			"goal": "Ein zweiatomiges Molekül einem Element zuordnen",
+			"prompt": "Das Sauerstoffbild zeigt zwei O-Atome. Ist es deshalb eine Verbindung?",
+			"options": [
+				"Ja, jede Bindung zwischen zwei Atomen macht den Stoff zu einer Verbindung.",
+				"Ja, weil auch Wasser Sauerstoff enthält und deshalb jeder Sauerstoffstoff eine Verbindung sein muss.",
+				"Nein, es enthält nur eine Atomsorte."
+			],
+			"correct": 2,
+			"hint": "Zähle verschiedene Atomsorten, nicht nur die Gesamtzahl der Kugeln.",
+			"explanation": "Ein Molekül kann zu einem Element gehören. Eine Verbindung enthält verschiedene Atomsorten."
+		},
+		{
+			"goal": "Von einem auf zwei Wassermoleküle übertragen",
+			"prompt": "Welche Gesamtzahl gehört zu zwei Wassermolekülen?",
+			"options": [
+				"Vier H-Atome und zwei O-Atome",
+				"Zwei H-Atome und vier O-Atome",
+				"Zwei H-Atome und ein O-Atom"
+			],
+			"correct": 0,
+			"hint": "Verdopple die Anzahlen beider Atomsorten.",
+			"explanation": "Zwei Moleküle enthalten zusammen vier H-Atome und zwei O-Atome."
+		}
+	],
+	"electrolysis": [
+		{
+			"goal": "Die Produktmoleküle unter Erhaltung aller Atome einstellen",
+			"prompt": "Stelle die Produktmoleküle passend zu zwei Wassermolekülen ein.",
+			"options": ["", "", ""],
+			"correct": 0,
+			"hint": "Zähle H- und O-Atome auf beiden Seiten getrennt.",
+			"explanation": "Zwei Wasserstoffmoleküle und ein Sauerstoffmolekül erhalten vier H- und zwei O-Atome."
+		},
+		{
+			"goal": "Das Wasserstoffvolumen zu 10 ml Sauerstoff einstellen",
+			"prompt": "Stelle das passende Wasserstoffvolumen ein. Die Messbedingungen sind gleich.",
+			"options": ["", "", ""],
+			"correct": 0,
+			"hint": "Vergleiche das Volumenverhältnis mit der Anzahl der Gasmoleküle.",
+			"explanation": "Zu 10 ml Sauerstoff passen 20 ml Wasserstoff. Das ist ein Volumenverhältnis, kein Massenverhältnis."
+		},
+		{
+			"goal": "Stoffumwandlung und Teilchenerhaltung unterscheiden",
+			"prompt": "Was bleibt bei der Wasserzerlegung im Modell erhalten?",
+			"options": [
+				"Die einzelnen Wassermoleküle bleiben unverändert wie beim Verdampfen.",
+				"Die H- und O-Atome, die neu miteinander verbunden werden.",
+				"Nur die Molekülzahl bleibt erhalten, während sich die Atomsorten umwandeln."
+			],
+			"correct": 1,
+			"hint": "Vergleiche die Atomsorten auf beiden Seiten, nicht die Molekülarten.",
+			"explanation": "Neue Stoffe entstehen durch neue Verbindungen vorhandener Atome. Es werden keine neuen Atome erzeugt."
+		}
+	],
+	"gases": [
+		{
+			"goal": "Beobachteten Gasnachweisen die Produkte zuordnen",
+			"prompt": "Beschrifte die positiven Befunde der beaufsichtigten Gasnachweise.",
+			"options": ["", "", ""],
+			"correct": 0,
+			"hint": "Unterscheide Geräusch und Wiederaufflammen eines glimmenden Spans.",
+			"explanation": "Die Beschriftungen passen zu den sichtbaren Merkmalen und Funktionen. Erkläre eine deiner Zuordnungen."
+		},
+		{
+			"goal": "Brennbarkeit von Brandförderung unterscheiden",
+			"prompt": "Welche Eigenschaft beschreibt Sauerstoff?",
+			"options": [
+				"Selbst nicht brennbar, aber verbrennungsfördernd",
+				"Immer selbst brennbar wie Wasserstoff",
+				"Durch Farblosigkeit eindeutig erkennbar"
+			],
+			"correct": 0,
+			"hint": "Unterscheide den brennenden Stoff von einem Stoff, der Verbrennung unterstützt.",
+			"explanation": "Sauerstoff fördert Verbrennungen; Wasserstoff ist dagegen brennbar."
+		},
+		{
+			"goal": "Die Grenze eines negativen Nachweises erkennen",
+			"prompt": "Ein Nachweis bleibt aus. Welche Folgerung ist sicher?",
+			"options": [
+				"Das Gas muss automatisch Wasserstoff sein.",
+				"Der negative Befund identifiziert kein bestimmtes anderes Gas.",
+				"Ein negativer Befund beweist ohne weitere Prüfung, dass nur Wasserdampf vorliegt."
+			],
+			"correct": 1,
+			"hint": "Auch die Eignung der Probe oder Durchführung kann den Befund beeinflussen.",
+			"explanation": "Ein ausbleibender Nachweis ist keine eindeutige Identifikation. Unbekannte Gase werden nicht selbst getestet oder eingeatmet."
+		}
+	],
+	"hydro": [
+		{
+			"goal": "Die Energiekette in die richtige Reihenfolge bringen",
+			"prompt": "Ordne Lageenergie, Bewegung des Wassers, Turbine und elektrische Energie.",
+			"options": ["", "", ""],
+			"correct": 0,
+			"hint": "Beginne mit dem höher gelegenen Wasser und ende beim Generatorstrom.",
+			"explanation": "Die Kette lautet: Lageenergie, Bewegung des Wassers, mechanische Energie der Turbine, elektrische Energie."
+		},
+		{
+			"goal": "Den Generator innerhalb der Energiekette richtig deuten",
+			"prompt": "Wo wird mechanische in elektrische Energie umgewandelt?",
+			"options": [
+				"Schon direkt in der Turbine ohne einen Generator",
+				"Im Generator",
+				"Im Speicher allein durch die größere Wassermenge"
+			],
+			"correct": 1,
+			"hint": "Unterscheide den Antrieb durch die Turbine vom elektrischen Ausgang.",
+			"explanation": "Die Turbine treibt den Generator an; dieser wandelt mechanische in elektrische Energie um."
+		},
+		{
+			"goal": "Erneuerbarkeit gegen eine Umweltfolge abwägen",
+			"prompt": "Welche Aussage berücksichtigt Nutzen und Folgen?",
+			"options": [
+				"Eine erneuerbare Quelle macht die Prüfung von Lebensraumfolgen überflüssig.",
+				"Eine Fischtreppe macht die Restwassermenge für den Lebensraum bedeutungslos.",
+				"Stromnutzen, Fischwanderung und Restwasser müssen gemeinsam betrachtet werden."
+			],
+			"correct": 2,
+			"hint": "Erneuerbar beschreibt die Energiequelle, nicht die Folgenlosigkeit eines Bauwerks.",
+			"explanation": "Eine sachliche Abwägung bezieht Stromgewinnung und konkrete Folgen für den Fluss ein."
+		}
+	],
+	"foodweb": [
+		{
+			"goal": "Nahrungspfeile im verbundenen Netz selbst einzeichnen",
+			"prompt": "Klicke zuerst auf das Futter, danach auf den Fresser. Dieselbe Verbindung lässt sich erneut anklicken und entfernen. Raupe und Blattlaus fressen Blätter. Die Meise frisst beide Tiere.",
+			"options": ["", "", ""],
+			"correct": 0,
+			"hint": "Der Pfeil bedeutet „wird gefressen von“. Ein Netz kann mehrere Wege zum gleichen Verbraucher enthalten.",
+			"explanation": "Die Pfeile verbinden Futter und Fresser in der vereinbarten Richtung. Sie zeigen mögliche Beziehungen, keine genauen Futteranteile."
+		},
+		{
+			"goal": "Den Stoffrückweg über Zersetzer ergänzen",
+			"prompt": "Was verbindet abgestorbene Reste wieder mit Pflanzen?",
+			"options": [
+				"Pflanzen nehmen abgestorbene Reste unmittelbar als fertige Nahrung auf.",
+				"Zersetzer, verfügbare Mineralstoffe und Aufnahme über die Wurzeln",
+				"Die Stoffe gelangen ohne Zersetzung direkt aus den Tieren in die Wurzeln."
+			],
+			"correct": 1,
+			"hint": "Unterscheide Stoffrückführung und Energiefluss.",
+			"explanation": "Zersetzung macht Mineralstoffe verfügbar, die Pflanzen mit Wasser aufnehmen können."
+		},
+		{
+			"goal": "Stoffkreislauf und Energiefluss auseinanderhalten",
+			"prompt": "Welche Aussage passt zum gesamten Modell?",
+			"options": [
+				"Stoffe und Energie kreisen immer vollständig gleich.",
+				"Jede Meise frisst genau eine einzige Art.",
+				"Stoffe können kreisen; Licht führt Energie zu und Wärme wird abgegeben."
+			],
+			"correct": 2,
+			"hint": "Ein Nahrungsnetz ist eine vereinfachte Darstellung vieler Beziehungen.",
+			"explanation": "Stoffkreislauf bedeutet keine vollständig geschlossene Energierückführung."
+		}
+	],
+	"photosynthesis": [
+		{
+			"goal": "Stoff- und Energiezufuhr im Pflanzenmodell beschriften",
+			"prompt": "Setze die Begriffe zu den beschrifteten Funktionen des vereinfachten Modells.",
+			"options": ["", "", ""],
+			"correct": 0,
+			"hint": "Trenne Stoffeingänge, Energiezufuhr und Produkte. Licht ist kein Stoff.",
+			"explanation": "Die Beschriftungen passen zu den sichtbaren Merkmalen und Funktionen. Erkläre eine deiner Zuordnungen."
+		},
+		{
+			"goal": "Die Lichtzufuhr als Energie kennzeichnen",
+			"prompt": "Welche Rolle hat Licht im Modell?",
+			"options": [
+				"Ein zusätzlicher Ausgangsstoff",
+				"Energiezufuhr für die Stoffbildung",
+				"Ein Produkt, das die Wurzel abgibt"
+			],
+			"correct": 1,
+			"hint": "Der Sonnenpfeil beschreibt eine andere Größe als die Wasserzufuhr.",
+			"explanation": "Licht liefert Energie und ist kein Stoff in der Wortgleichung."
+		},
+		{
+			"goal": "Die Rolle der Pflanze im Nahrungsnetz begründen",
+			"prompt": "Warum ist die grüne Pflanze ein Produzent?",
+			"options": [
+				"Weil sie ihre Nahrung vollständig fertig aus dem Boden aufnimmt.",
+				"Weil sie aus Licht allein ohne Wasser und Kohlenstoffdioxid alle Baustoffe herstellt.",
+				"Weil sie energiereiche Stoffe aus einfachen Ausgangsstoffen aufbaut."
+			],
+			"correct": 2,
+			"hint": "Nutze die Produkte der Wortgleichung für deine Begründung.",
+			"explanation": "Die Pflanze baut mit Lichtenergie unter anderem Traubenzucker auf; zusätzlich benötigt sie Mineralstoffe."
+		}
+	],
+	"soilLife": [
+		{
+			"goal": "Bodentiere anhand sichtbarer Merkmale einordnen",
+			"prompt": "Ordne den drei Modellbildern ihre Tiergruppen zu.",
+			"options": ["", "", ""],
+			"correct": 0,
+			"hint": "Zähle beim erwachsenen Tier Beine oder Beinpaare und beachte die Ringelung.",
+			"explanation": "Die Beschriftungen passen zu den sichtbaren Merkmalen und Funktionen. Erkläre eine deiner Zuordnungen."
+		},
+		{
+			"goal": "Die erwachsene Milbe über ihre Beine einordnen",
+			"prompt": "Du zählst acht Beine an der erwachsenen Milbe. Welche Gruppe passt?",
+			"options": ["Krebstiere", "Ringelwürmer", "Spinnentiere"],
+			"correct": 2,
+			"hint": "Vergleiche die Beinzahl mit den anderen beiden erwachsenen Modellorganismen.",
+			"explanation": "Erwachsene Milben gehören zu den Spinnentieren und haben acht Beine."
+		},
+		{
+			"goal": "Die Landassel von den anderen Gruppen unterscheiden",
+			"prompt": "Was unterscheidet die erwachsene Landassel hier?",
+			"options": [
+				"Sieben Beinpaare und Zuordnung zu den Krebstieren",
+				"Ein glatter beinloser Körper ohne Segmente",
+				"Vier Beinpaare und Zuordnung zu den Spinnentieren"
+			],
+			"correct": 0,
+			"hint": "Zähle Beinpaare und Beine nicht als dieselbe Anzahl.",
+			"explanation": "Sieben Beinpaare sind vierzehn Beine. Die erwachsene Landassel ist ein Krebstier."
+		}
+	],
+	"soil": [
+		{
+			"goal": "Die Bodenschichten als Profil selbst aufbauen",
+			"prompt": "Baue das vereinfachte Bodenprofil von oben nach unten auf.",
+			"options": ["", "", ""],
+			"correct": 0,
+			"hint": "Die Streu liegt oben. Darunter folgen belebter Boden, verwittertes Material und Ausgangsgestein.",
+			"explanation": "Die geordnete Darstellung bildet den beschriebenen Ablauf ab. Begründe, warum die Schritte in dieser Reihenfolge zusammengehören."
+		},
+		{
+			"goal": "Eine Schutzmaßnahme mit Wasseraufnahme verbinden",
+			"prompt": "Welche Gestaltung erhält eher die Wasseraufnahme des Bodens?",
+			"options": [
+				"Unversiegelte bepflanzte Teilflächen",
+				"Eine geschlossene Pflasterdecke, damit kein Wasser verdunstet",
+				"Einen stark verdichteten Boden, damit der Regen gleichmäßig auf ihm stehen bleibt"
+			],
+			"correct": 0,
+			"hint": "Überlege, wo Wasser in Poren gelangen kann.",
+			"explanation": "Offene bepflanzte Flächen können Wasser aufnehmen und Lebensraum erhalten; der Standort und die Regenstärke beeinflussen die Wirkung."
+		},
+		{
+			"goal": "Die Filterleistung des Bodens begrenzen",
+			"prompt": "Gefiltertes Bodenwasser ist klar. Was darfst du daraus schließen?",
+			"options": [
+				"Es ist zwingend geprüftes Trinkwasser.",
+				"Klarheit allein beweist keine vollständige Entfernung unerwünschter Stoffe.",
+				"Jeder gelöste Stoff wurde sicher entfernt."
+			],
+			"correct": 1,
+			"hint": "Die Filterfunktion hat Grenzen.",
+			"explanation": "Boden kann manche Stoffe zurückhalten, aber nicht jeden Schadstoff oder Krankheitserreger sicher entfernen."
+		}
+	],
+	"aquaticKey": [
+		{
+			"goal": "Bein- und Schwanzmerkmale an der Larve markieren",
+			"prompt": "Ordne die gezählten Merkmale den zwei Markierungen zu.",
+			"options": ["", "", ""],
+			"correct": 0,
+			"hint": "Zähle Beine und Schwanzfäden getrennt; das Bild ist keine vollständige Artbestimmung.",
+			"explanation": "Die Beschriftungen passen zu den sichtbaren Merkmalen und Funktionen. Erkläre eine deiner Zuordnungen."
+		},
+		{
+			"goal": "Eine Gütevermutung angemessen begrenzen",
+			"prompt": "Was ist nach einem einzelnen Zeigertierfund gerechtfertigt?",
+			"options": [
+				"Ein abschließendes Güteurteil für den ganzen Bach aus diesem einen Fund",
+				"Eine vorsichtige Vermutung mit weiteren Untersuchungen",
+				"Einen Gütevergleich ohne Berücksichtigung von Strömung und Untergrund"
+			],
+			"correct": 1,
+			"hint": "Eine kleine Stichprobe deckt nicht alle Bedingungen ab.",
+			"explanation": "Mehrere Funde und Standortbedingungen stützen erst gemeinsam eine ökologische Einschätzung."
+		},
+		{
+			"goal": "Den Pflanzenfund mit seinem Teilraum verknüpfen",
+			"prompt": "Welche Zuordnung passt zum Modell?",
+			"options": [
+				"Beide Pflanzen ohne Unterschied des Standorts ausschließlich an der freien Oberfläche",
+				"Schilf vollständig unter Wasser, Wasserpest ausschließlich am trockenen Ufer",
+				"Schilf am Ufer, Wasserpest unter Wasser"
+			],
+			"correct": 2,
+			"hint": "Vergleiche Ufer und Wasserkörper.",
+			"explanation": "Die Pflanzen nutzen unterschiedliche Teilräume; ein Gewässer umfasst mehr als seine freie Wasserfläche."
+		}
+	],
+	"microscope": [
+		{
+			"goal": "Die virtuelle Zellansicht scharf einstellen",
+			"prompt": "Stelle den Modellfokus so ein, dass die Zellgrenzen scharf werden.",
+			"options": ["", "", ""],
+			"correct": 0,
+			"hint": "Vergleiche die Schärfe links und rechts deiner Einstellung.",
+			"explanation": "Der Modellfokus ist scharf. Echte Beleuchtung, Präparat und Vergrößerung müssen am Mikroskop eingestellt werden."
+		},
+		{
+			"goal": "Gesamtvergrößerung richtig berechnen",
+			"prompt": "Ein Okular vergrößert zehnfach, ein anderes Objektiv zehnfach. Welche Gesamtvergrößerung ergibt das?",
+			"options": ["Zwanzigfach", "Hundertfach", "Zehnfach"],
+			"correct": 1,
+			"hint": "Multipliziere beide Vergrößerungen; addiere sie nicht.",
+			"explanation": "Zehn mal zehn ergibt hundert. Das ist ein anderer Objektivfall als im Schnellcheck der Lektion."
+		},
+		{
+			"goal": "Beobachtung und Modellwissen auseinanderhalten",
+			"prompt": "Ein Kern ist im Präparat nicht erkennbar. Was ist eine gute Dokumentation?",
+			"options": [
+				"Den Zellkern aus dem Lehrbuch ungekennzeichnet als eigene Beobachtung übernehmen.",
+				"Seine Sichtbarkeit allein aus der hohen Vergrößerung folgern und ihn deshalb als gesehen eintragen.",
+				"Sichtbares zeichnen und ergänztes Modellwissen kennzeichnen"
+			],
+			"correct": 2,
+			"hint": "Die Zeichnung darf nicht mehr als Beobachtung ausgeben, als tatsächlich sichtbar war.",
+			"explanation": "Modellwissen kann helfen, muss aber von eigenen Beobachtungen unterscheidbar bleiben."
+		}
+	],
+	"fish": [
+		{
+			"goal": "Flossen, Kiemen und Schwimmblase im Fischmodell finden",
+			"prompt": "Beschrifte die markierten Strukturen nach ihren Aufgaben.",
+			"options": ["", "", ""],
+			"correct": 0,
+			"hint": "Atmung, Antrieb und Auftriebsregelung sind verschiedene Aufgaben.",
+			"explanation": "Die Beschriftungen passen zu den sichtbaren Merkmalen und Funktionen. Erkläre eine deiner Zuordnungen."
+		},
+		{
+			"goal": "Die Herkunft des Atemsauerstoffs bestimmen",
+			"prompt": "Was nehmen die Kiemen auf?",
+			"options": [
+				"Durch die Kiemen aus Wassermolekülen neu gebildeten Sauerstoff",
+				"Luft aus der Schwimmblase, die als eigentliches Atmungsorgan die Kiemen versorgt",
+				"Im Wasser gelösten Sauerstoff"
+			],
+			"correct": 2,
+			"hint": "Wasserzerlegung und Gasaustausch sind verschiedene Vorgänge.",
+			"explanation": "Kiemen nehmen vorhandenen gelösten Sauerstoff auf und geben Kohlenstoffdioxid ab."
+		},
+		{
+			"goal": "Die Schwimmblase vom Atmungsorgan abgrenzen",
+			"prompt": "Welche Aufgabe passt zur Schwimmblase vieler Knochenfische?",
+			"options": [
+				"Auftrieb und Lage unterstützen",
+				"Den Gasaustausch anstelle der Kiemen übernehmen",
+				"Durch ständiges Zusammenziehen den hauptsächlichen Schwimmantrieb erzeugen"
+			],
+			"correct": 0,
+			"hint": "Vergleiche die Lage im Wasser mit der Kiemenfunktion.",
+			"explanation": "Die Schwimmblase unterstützt die Auftriebsregelung; für die betrachtete Atmung sind die Kiemen zuständig."
+		}
+	],
+	"aquaticWeb": [
+		{
+			"goal": "Nahrungspfeile im verbundenen Netz selbst einzeichnen",
+			"prompt": "Klicke zuerst auf das Futter, danach auf den Fresser. Dieselbe Verbindung lässt sich erneut anklicken und entfernen. Der Wasserfloh frisst Algen. Der Jungfisch frisst Wasserflöhe und Insektenlarven.",
+			"options": ["", "", ""],
+			"correct": 0,
+			"hint": "Der Pfeil bedeutet „wird gefressen von“. Ein Netz kann mehrere Wege zum gleichen Verbraucher enthalten.",
+			"explanation": "Die Pfeile verbinden Futter und Fresser in der vereinbarten Richtung. Sie zeigen mögliche Beziehungen, keine genauen Futteranteile."
+		},
+		{
+			"goal": "Eine weitere Nahrungsbeziehung ergänzen",
+			"prompt": "Welche Ergänzung macht aus der Kette ein Netz?",
+			"options": [
+				"Dieselbe einzelne Kette ohne neue Beziehungen ein zweites Mal zeichnen",
+				"Alle Pfeile der einzigen Kette umdrehen, ohne weitere Nahrung einzutragen",
+				"Insektenlarve → Jungfisch zusätzlich"
+			],
+			"correct": 2,
+			"hint": "Ein Netz verbindet mehrere Nahrungswege.",
+			"explanation": "Die zusätzliche Nahrung des Jungfischs schafft einen zweiten verbundenen Weg."
+		},
+		{
+			"goal": "Stoffrückführung von Energierückführung trennen",
+			"prompt": "Welche Aussage passt zu den Zersetzern?",
+			"options": [
+				"Sie machen Stoffe verfügbar; Energie kehrt nicht vollständig zurück.",
+				"Sie führen sämtliche abgegebene Energie vollständig zu den Algen zurück.",
+				"Sie benötigen keine abgestorbenen Reste und sind deshalb vom übrigen Netz unabhängig."
+			],
+			"correct": 0,
+			"hint": "Stoffe und Energie werden im Modell verschieden beschrieben.",
+			"explanation": "Zersetzung unterstützt Stoffkreisläufe, während weiterhin Energie zugeführt und als Wärme abgegeben wird."
+		}
+	],
+	"habitat": [
+		{
+			"goal": "Einen durchgängigen strukturreichen Modellbach gestalten",
+			"prompt": "Verändere drei Eingriffe so, dass verschiedene Teilräume entstehen, Müll vermieden wird und der Wanderweg offen bleibt.",
+			"options": ["", "", ""],
+			"correct": 0,
+			"hint": "Eine Maßnahme allein beseitigt nicht alle verschiedenen Belastungen.",
+			"explanation": "Strukturen, vermiedener Müll und ein offener Wanderweg erfüllen hier verschiedene Schutzziele. Reale Planung braucht Fachleute."
+		},
+		{
+			"goal": "Eine Schutzmaßnahme mit ihrem Ziel verbinden",
+			"prompt": "Welche Maßnahme passt zu fehlenden Uferverstecken?",
+			"options": [
+				"Fachkundig geplante strukturreiche Randbereiche",
+				"Das ganze Ufer lückenlos befestigen, damit überall nur eine Strömungszone bleibt",
+				"Alle Uferpflanzen entfernen, um überall freie Schwimmfläche zu schaffen"
+			],
+			"correct": 0,
+			"hint": "Die Maßnahme soll den Lebensraum verbessern.",
+			"explanation": "Strukturen können Lebensräume schaffen; Umgestaltung braucht passende Planung und Erlaubnis."
+		},
+		{
+			"goal": "Eine Grenze der Schutzmaßnahme benennen",
+			"prompt": "Was bleibt nach einer Uferverbesserung möglicherweise nötig?",
+			"options": [
+				"Die Uferverbesserung schon als Beseitigung jeder Abwasserbelastung behandeln",
+				"Eine oberhalb liegende Schadstoffquelle gesondert verringern",
+				"Das gesamte Güteurteil allein aus dem neuen Uferbild ableiten"
+			],
+			"correct": 1,
+			"hint": "Nicht jede Belastung entsteht durch die Uferform.",
+			"explanation": "Unterschiedliche Ursachen brauchen unterschiedliche Maßnahmen; eine Maßnahme ist keine vollständige Problemlösung."
+		}
+	],
+	"puberty": [
+		{
+			"goal": "Entwicklung und Pflege in einem Übersichtsmodell zuordnen",
+			"prompt": "Ordne die allgemeinen Beispiele ein. Es werden keine persönlichen Erfahrungen abgefragt.",
+			"options": ["", "", ""],
+			"correct": 0,
+			"hint": "Unterscheide veränderte Körpermerkmale, Gefühle und begründete Pflege.",
+			"explanation": "Die Beschriftungen passen zu den sichtbaren Merkmalen und Funktionen. Erkläre eine deiner Zuordnungen."
+		},
+		{
+			"goal": "Eine passende Pflegeentscheidung begründen",
+			"prompt": "Was hilft nach schweißtreibendem Sport?",
+			"options": [
+				"Nur Duftspray auf die verschwitzte Kleidung geben",
+				"Angemessene Reinigung und frische Kleidung",
+				"Verschwitzte Kleidung trocknen lassen und das immer als Ersatz für Reinigung ansehen"
+			],
+			"correct": 1,
+			"hint": "Pflege soll Schweiß entfernen und Wohlbefinden unterstützen.",
+			"explanation": "Reinigung und Wäschewechsel helfen; Beschämen ist keine Hygienemaßnahme."
+		},
+		{
+			"goal": "Individuelle Entwicklung respektvoll einordnen",
+			"prompt": "Zwei Gleichaltrige entwickeln sich unterschiedlich schnell. Was folgt daraus?",
+			"options": [
+				"Der Entwicklungsstand lässt sich allein aus dem Alter sicher ableiten.",
+				"Unterschiedliches Entwicklungstempo beweist eine falsche Körperpflege.",
+				"Das Tempo darf nicht als Rangliste behandelt werden"
+			],
+			"correct": 2,
+			"hint": "Zeitpunkt und Reihenfolge unterscheiden sich.",
+			"explanation": "Unterschiedliche Entwicklung ist kein Anlass für Abwertung oder unfreiwillige persönliche Auskünfte."
+		}
+	],
+	"organs": [
+		{
+			"goal": "Den weiblichen Grundbauplan am Modell beschriften",
+			"prompt": "Setze die vier Organbegriffe auf ihre Markierungen.",
+			"options": ["", "", ""],
+			"correct": 0,
+			"hint": "Trenne Keimzellreifung, Transport und möglichen Entwicklungsort.",
+			"explanation": "Die Beschriftungen passen zu den sichtbaren Merkmalen und Funktionen. Erkläre eine deiner Zuordnungen."
+		},
+		{
+			"goal": "Die Samenzellbildung dem Organ zuordnen",
+			"prompt": "Wo entstehen Samenzellen ab der Pubertät?",
+			"options": ["Im Nebenhoden", "In der Prostata", "Hoden"],
+			"correct": 2,
+			"hint": "Trenne Bildung von Transport.",
+			"explanation": "Die Hoden bilden Samenzellen; der Samenleiter transportiert sie."
+		},
+		{
+			"goal": "Den Entwicklungsort nach Einnistung bestimmen",
+			"prompt": "Wo entwickelt sich der Embryo im gewöhnlichen Verlauf nach der Einnistung?",
+			"options": ["Gebärmutter", "Im Eierstock", "Im Eileiter"],
+			"correct": 0,
+			"hint": "Eierstock und Gebärmutter sind verschiedene Organe.",
+			"explanation": "Der Entwicklungsort ist die Gebärmutter; nicht jeder eingezeichnete Weg erfüllt dieselbe Aufgabe."
+		}
+	],
+	"fertilisation": [
+		{
+			"goal": "Die frühen Entwicklungsschritte räumlich und zeitlich ordnen",
+			"prompt": "Ordne die drei Schritte und ihre Orte als Prozessmodell.",
+			"options": ["", "", ""],
+			"correct": 0,
+			"hint": "Befruchtung und Einnistung sind verschiedene Schritte an verschiedenen Orten.",
+			"explanation": "Die geordnete Darstellung bildet den beschriebenen Ablauf ab. Begründe, warum die Schritte in dieser Reihenfolge zusammengehören."
+		},
+		{
+			"goal": "Zellteilungen in die Abfolge einordnen",
+			"prompt": "Was folgt im Modell zwischen Befruchtung und Einnistung?",
+			"options": [
+				"Die erste Zelle wächst ohne weitere Teilung bis zur Einnistung nur in ihrer Größe.",
+				"Wiederholte Zellteilungen auf dem Weg",
+				"Ein Zellverband entsteht erst nach der Einnistung durch die erste Zellteilung."
+			],
+			"correct": 1,
+			"hint": "Ein früher Zellverband entsteht aus der ersten Zelle.",
+			"explanation": "Die Zellzahl nimmt durch Teilungen zu, während der frühe Entwicklungsstand zur Gebärmutter gelangt."
+		},
+		{
+			"goal": "Den Ort der Einnistung von Befruchtung trennen",
+			"prompt": "Welche Zuordnung passt?",
+			"options": [
+				"Befruchtung in der Gebärmutter, Einnistung im Eileiter",
+				"Beide Schritte finden im Eierstock statt",
+				"Befruchtung meist im Eileiter, Einnistung in der Gebärmutter"
+			],
+			"correct": 2,
+			"hint": "Die zwei Schritte sind räumlich und zeitlich verschieden.",
+			"explanation": "Einnistung erfolgt in der Gebärmutterschleimhaut und ist nicht gleichbedeutend mit Befruchtung."
+		}
+	],
+	"pregnancy": [
+		{
+			"goal": "Die vorgeburtliche Entwicklung als Abfolge darstellen",
+			"prompt": "Ordne das vereinfachte Entwicklungsmodell bis zur Geburt.",
+			"options": ["", "", ""],
+			"correct": 0,
+			"hint": "Entwicklung ist mehr als bloße Vergrößerung; eine genaue individuelle Zeitleiste wird nicht behauptet.",
+			"explanation": "Die geordnete Darstellung bildet den beschriebenen Ablauf ab. Begründe, warum die Schritte in dieser Reihenfolge zusammengehören."
+		},
+		{
+			"goal": "Die vorgeburtliche Sauerstoffversorgung erklären",
+			"prompt": "Woher erhält das ungeborene Kind Sauerstoff?",
+			"options": [
+				"Über die eigene Lunge aus Luft in der Fruchtblase",
+				"Durch vollständiges direktes Vermischen des mütterlichen und kindlichen Blutkreislaufs",
+				"Über Plazenta und Nabelschnur"
+			],
+			"correct": 2,
+			"hint": "Vergleiche Versorgung vor und Atmung nach der Geburt.",
+			"explanation": "Sauerstoff wird über die Austauschstelle und die Nabelschnur transportiert, nicht durch Einatmen von Luft im Mutterleib."
+		},
+		{
+			"goal": "Die Schutzwirkung der Plazenta angemessen begrenzen",
+			"prompt": "Welche Aussage ist richtig?",
+			"options": [
+				"Manche schädigenden Stoffe können zum Kind gelangen",
+				"Die Plazenta hält jede Substanz sicher zurück",
+				"Die Blutkreisläufe müssen vollständig vermischt werden"
+			],
+			"correct": 0,
+			"hint": "Austauschstelle ist keine lückenlose Schutzwand.",
+			"explanation": "Die Blutkreisläufe sind normalerweise getrennt; das bedeutet dennoch keinen vollständigen Schutz vor schädigenden Einflüssen."
+		}
+	],
+	"contraception": [
+		{
+			"goal": "Wirkungsweisen im Vergleichsmodell richtig verbinden",
+			"prompt": "Ordne den Wirkungsmerkmalen Kondom oder Pille zu. Ein Begriff darf mehrfach verwendet werden.",
+			"options": ["", "", ""],
+			"correct": 0,
+			"hint": "Unterscheide Barriere, hormonelle Wirkung und die Senkung von Infektionsrisiken.",
+			"explanation": "Die Beschriftungen passen zu den sichtbaren Merkmalen und Funktionen. Erkläre eine deiner Zuordnungen."
+		},
+		{
+			"goal": "Empfängnisverhütung vom Infektionsschutz trennen",
+			"prompt": "Welche Aussage zur Pille stimmt?",
+			"options": [
+				"Kein Schutz vor sexuell übertragbaren Infektionen",
+				"Die hormonelle Wirkung hält zugleich alle Infektionserreger ab.",
+				"Die Pille bildet eine mechanische Hülle um die Samenzellen."
+			],
+			"correct": 0,
+			"hint": "Schwangerschafts- und Infektionsschutz sind verschiedene Fragen.",
+			"explanation": "Die hormonelle Empfängnisverhütung der Pille verhindert keine Übertragung sexuell übertragbarer Infektionen."
+		},
+		{
+			"goal": "Ein absolutes Schutzversprechen sachlich prüfen",
+			"prompt": "Welche Ergänzung gehört zur Übersicht?",
+			"options": [
+				"Der Schutz ist nach der Methodenwahl unabhängig von Anwendungsfehlern garantiert.",
+				"Anwendung und Schutzgrenzen müssen berücksichtigt werden",
+				"Bei einem ärztlich verschriebenen Präparat können keine Anwendungsfehler vorkommen."
+			],
+			"correct": 1,
+			"hint": "Verlässliche Information und Freiwilligkeit gehören zusammen.",
+			"explanation": "Keine Methode ist unabhängig von Bedingungen absolut sicher; Wissen ist keine Verpflichtung zu sexuellen Handlungen."
+		}
+	],
+	"forces": [
+		{
+			"goal": "Die Richtung einer Kraft am bewegten Körper einstellen",
+			"prompt": "Der Ball bewegt sich nach rechts. Richte den Kraftpfeil senkrecht nach oben, um eine seitliche Bewegungsänderung darzustellen. Ziehe die Pfeilspitze oder nutze ihre Pfeiltasten.",
+			"options": ["", "", ""],
+			"correct": 0,
+			"hint": "Die Kraft soll nach oben wirken; sie zeigt nicht einfach die bisherige Bewegungsrichtung.",
+			"explanation": "Eine nach oben gerichtete Kraft kann die Bewegungsrichtung ändern. Das qualitative Bild berechnet keine genaue Flugbahn."
+		},
+		{
+			"goal": "Eine Richtungsänderung physikalisch einordnen",
+			"prompt": "Warum gilt seitliches Abbiegen bei gleichbleibendem Tempo ebenfalls als Kraftwirkung?",
+			"options": [
+				"Nur ein geänderter Geschwindigkeitsbetrag zählt; Abbiegen benötigt deshalb keine Kraft.",
+				"Trägheit allein richtet einen Körper ohne Kraft auf jede Kurve aus.",
+				"Auch die Änderung der Bewegungsrichtung benötigt eine Kraft."
+			],
+			"correct": 2,
+			"hint": "Nicht nur schneller oder langsamer ist eine Bewegungsänderung.",
+			"explanation": "Auch eine Richtungsänderung braucht eine resultierende Kraft."
+		},
+		{
+			"goal": "Gleichförmigkeit von unausgeglichener Kraft unterscheiden",
+			"prompt": "Welche Aussage ist richtig?",
+			"options": [
+				"Bei gleichförmiger gerader Bewegung können Kräfte ausgeglichen sein",
+				"Jede Bewegung benötigt immer eine unausgeglichene Kraft",
+				"Newton ist eine Masseneinheit"
+			],
+			"correct": 0,
+			"hint": "Bewegung und Änderung der Bewegung sind verschiedene Dinge.",
+			"explanation": "Aus einer gleichförmigen Bewegung allein darf keine unausgeglichene Kraft gefolgert werden."
+		}
+	],
+	"forceMeter": [
+		{
+			"goal": "Eine vorgegebene Federdehnung richtig einstellen",
+			"prompt": "Stelle die Kraft so ein, dass die Modellfeder um 6 cm gedehnt ist.",
+			"options": ["", "", ""],
+			"correct": 0,
+			"hint": "Die Modellskala zeigt zwei Zentimeter pro Newton.",
+			"explanation": "Bei 3 N beträgt die Dehnung 6 cm; Kraft und Dehnung brauchen verschiedene Einheiten."
+		},
+		{
+			"goal": "Die Kraftskala von einer Masseneinheit unterscheiden",
+			"prompt": "Welche Einheit gehört zum Kraftmesswert?",
+			"options": ["Kilogramm", "Newton", "Sekunde"],
+			"correct": 1,
+			"hint": "Lies die Beschriftung der Kraftskala.",
+			"explanation": "Kräfte werden in Newton angegeben; Kilogramm beschreibt Masse."
+		},
+		{
+			"goal": "Eine Überschreitung des Messbereichs beurteilen",
+			"prompt": "Was ist bei einer zu großen Last begründet?",
+			"options": [
+				"Einfach extrapolieren und sicher nennen",
+				"Den Nullpunkt absichtlich verschieben",
+				"Nicht überlasten; ein geeignetes Gerät wählen"
+			],
+			"correct": 2,
+			"hint": "Die Modellproportionalität ist nur im Messbereich verlässlich.",
+			"explanation": "Überlastung kann die Feder verändern; ein gültiger Messwert braucht ein geeignetes Gerät."
+		}
+	],
+	"work": [
+		{
+			"goal": "Den Hubweg für eine bestimmte Arbeit einstellen",
+			"prompt": "Stelle den Weg so ein, dass bei 20 N eine Hubarbeit von 60 J entsteht.",
+			"options": ["", "", ""],
+			"correct": 0,
+			"hint": "Multipliziere Kraft und Weg; variiere den Weg.",
+			"explanation": "20 N über 3 m ergeben 60 J. Der Zusammenhang gilt hier bei konstanter Kraft entlang des Weges."
+		},
+		{
+			"goal": "Die Arbeit beim ruhigen Halten sachlich einordnen",
+			"prompt": "Welche Aussage passt zur unbewegten Tasche?",
+			"options": [
+				"An der Tasche wird Hubarbeit verrichtet, weil die Person eine Kraft auf sie ausübt.",
+				"Keine Hubarbeit an ihr, obwohl die Person Energie benötigt",
+				"Bei ruhender Tasche benötigt auch die Person überhaupt keine Energie."
+			],
+			"correct": 1,
+			"hint": "Unterscheide Tasche und Person.",
+			"explanation": "Der Weg der Tasche ist null. Daraus folgt keine Aussage, dass Muskelarbeit oder Energiebedarf verschwinden."
+		},
+		{
+			"goal": "Die Einheit der mechanischen Arbeit richtig wählen",
+			"prompt": "Welche Einheit passt zum Produkt aus Kraft und Weg?",
+			"options": [
+				"Kilogramm",
+				"Newton allein",
+				"Joule beziehungsweise Newtonmeter"
+			],
+			"correct": 2,
+			"hint": "Kraft und Weg tragen beide zum Produkt bei.",
+			"explanation": "Ein Newtonmeter entspricht einem Joule mechanischer Arbeit."
+		}
+	],
+	"lever": [
+		{
+			"goal": "Den Kraftarm für eine kleinere Gleichgewichtskraft finden",
+			"prompt": "Stelle den Kraftarm so ein, dass für die Modelllast ideal 2 N genügen.",
+			"options": ["", "", ""],
+			"correct": 0,
+			"hint": "Vergleiche 6 N Last bei 20 cm mit einem längeren Kraftarm.",
+			"explanation": "Bei 60 cm ist der Kraftarm dreimal so lang wie der Lastarm; deshalb genügt ein Drittel der Kraft."
+		},
+		{
+			"goal": "Die Hebelarten an der Lage zum Drehpunkt unterscheiden",
+			"prompt": "Was kennzeichnet einen einseitigen Hebel?",
+			"options": [
+				"Einseitig bedeutet, dass nur eine einzige Kraft auf den Hebel wirkt.",
+				"Kraft und Last liegen auf derselben Seite des Drehpunkts",
+				"Kraft und Last liegen auf verschiedenen Seiten des Drehpunkts."
+			],
+			"correct": 1,
+			"hint": "Betrachte die Seiten des Drehpunkts.",
+			"explanation": "Die Einteilung bezieht sich auf die Angriffslagen von Kraft und Last, nicht auf die Anzahl aller Bauteile."
+		},
+		{
+			"goal": "Die Kraftersparnis mit dem Kraftweg verknüpfen",
+			"prompt": "Was folgt beim idealen längeren Kraftarm?",
+			"options": [
+				"Mit der kleineren Kraft verkürzt sich auch der Kraftweg im gleichen Verhältnis.",
+				"Kraft- und Lastweg bleiben auch bei verschieden langen Hebelarmen immer gleich lang.",
+				"Die kleinere Kraft wirkt über einen längeren Weg"
+			],
+			"correct": 2,
+			"hint": "Die Griffstelle bewegt sich bei derselben Drehung weiter.",
+			"explanation": "Die Wegverlängerung gleicht die Kraftersparnis aus; der Hebel erzeugt keine Energie."
+		}
+	],
+	"machines": [
+		{
+			"goal": "Die Rampenlänge für eine gewünschte Kraft bestimmen",
+			"prompt": "Stelle eine Rampe für ideal 20 N bei 60 N Last und 1 m Höhe ein.",
+			"options": ["", "", ""],
+			"correct": 0,
+			"hint": "Die ideale Arbeit bleibt sechzig Joule.",
+			"explanation": "Bei 3 m Rampenweg genügen ideal 20 N. Die verringerte Kraft wird durch den längeren Weg ausgeglichen."
+		},
+		{
+			"goal": "Die Wirkung der festen Rolle richtig begrenzen",
+			"prompt": "Was ändert eine ideale feste Rolle hauptsächlich?",
+			"options": [
+				"Sie halbiert die Gewichtskraft der Last.",
+				"Die Zugrichtung",
+				"Sie halbiert bei gleichem Hubweg die übertragene Arbeit."
+			],
+			"correct": 1,
+			"hint": "Eine Umlenkung ist keine automatische Kraftverkleinerung.",
+			"explanation": "Die Kraft bleibt ideal gleich; die Richtung kann günstiger werden."
+		},
+		{
+			"goal": "Die Goldene Regel auf die lose Rolle übertragen",
+			"prompt": "Bei halber idealer Zugkraft mit zwei tragenden Seilabschnitten gilt:",
+			"options": [
+				"Der Zugweg wird ebenfalls halbiert.",
+				"Der Zugweg bleibt genauso lang wie der Hubweg.",
+				"Der Zugweg ist doppelt so lang wie der Hubweg"
+			],
+			"correct": 2,
+			"hint": "Die ideale Arbeit bleibt gleich.",
+			"explanation": "Die Wegverlängerung ist der Gegenpart zur Kraftersparnis."
+		}
+	],
+	"ergonomics": [
+		{
+			"goal": "Eine begründete Werkzeugwahl als Handlungsweg planen",
+			"prompt": "Ordne die Schritte für eine unhandliche Last und eine geeignete Transporthilfe.",
+			"options": ["", "", ""],
+			"correct": 0,
+			"hint": "Prüfung und Auswahl gehen der praktischen Ausführung voraus.",
+			"explanation": "Die geordnete Darstellung bildet den beschriebenen Ablauf ab. Begründe, warum die Schritte in dieser Reihenfolge zusammengehören."
+		},
+		{
+			"goal": "Den längeren Griff auf reale Grenzen prüfen",
+			"prompt": "Warum ist ein beliebig verlängerter Griff nicht automatisch sicher?",
+			"options": [
+				"Beim Hebelgriff gilt der Zusammenhang zwischen Kraft und Weg nicht.",
+				"Er kann Belastungsgrenzen und Kontrolle verändern",
+				"Ein längerer Griff macht die Belastungsgrenze des Werkzeugs unwichtig."
+			],
+			"correct": 1,
+			"hint": "Der ideale Hebel ist nicht das vollständige reale Werkzeug.",
+			"explanation": "Werkzeuggrenzen, Bewegungsraum und Kontrolle müssen zum konkreten Einsatz passen."
+		},
+		{
+			"goal": "Bei einem beschädigten Werkzeug angemessen entscheiden",
+			"prompt": "Was ist begründet?",
+			"options": [
+				"Mit weniger Kraft weiterbenutzen, ohne den Schaden zu klären",
+				"Den beschädigten Griff eigenständig verlängern, um den Schaden zu umgehen",
+				"Unterbrechen und ein geeignetes intaktes Werkzeug klären"
+			],
+			"correct": 2,
+			"hint": "Sicherer Zustand ist eine Voraussetzung.",
+			"explanation": "Eine Beschädigung wird nicht durch größere Kraft beseitigt; sichere Auswahl und Einweisung bleiben nötig."
+		}
+	],
+	"speed": [
+		{
+			"goal": "Die Zeit für eine vorgegebene Geschwindigkeit einstellen",
+			"prompt": "Stelle die Fahrzeit für 60 m so ein, dass die Geschwindigkeit 5 m/s beträgt.",
+			"options": ["", "", ""],
+			"correct": 0,
+			"hint": "Teile den Weg durch die Zeit und vergleiche.",
+			"explanation": "60 m in 12 s ergeben 5 m/s beziehungsweise 18 km/h."
+		},
+		{
+			"goal": "Geschwindigkeiten in passenden Einheiten vergleichen",
+			"prompt": "Welcher Wert entspricht 5 m/s?",
+			"options": ["1,39 km/h", "18 km/h", "5 km/h"],
+			"correct": 1,
+			"hint": "Multipliziere mit 3,6.",
+			"explanation": "Die Umrechnung berücksichtigt Meter/Kilometer und Sekunden/Stunden gemeinsam."
+		},
+		{
+			"goal": "Die benötigte Fahrzeit aus Weg und Geschwindigkeit bestimmen",
+			"prompt": "Wie lange dauern 150 m bei konstant 5 m/s?",
+			"options": ["750 s", "145 s", "30 s"],
+			"correct": 2,
+			"hint": "Teile den Weg durch die Geschwindigkeit.",
+			"explanation": "150 m geteilt durch 5 m/s ergibt 30 s bei unveränderter Geschwindigkeit."
+		}
+	],
+	"motionGraph": [
+		{
+			"goal": "Eine bestimmte Wegzunahme im Diagramm einstellen",
+			"prompt": "Stelle die gleichförmige Geschwindigkeit so ein, dass nach 8 s insgesamt 24 m erreicht sind.",
+			"options": ["", "", ""],
+			"correct": 0,
+			"hint": "Vergleiche den Endpunkt der Geraden mit der Wegachse.",
+			"explanation": "Bei 3 m/s werden in 8 s 24 m zurückgelegt; gleiche Zeitabschnitte liefern gleiche Wegzuwächse."
+		},
+		{
+			"goal": "Einen waagerechten Diagrammabschnitt deuten",
+			"prompt": "Zwischen 2 s und 4 s steigt der Weg von 6 m auf 12 m. Welche Geschwindigkeit gehört zu diesem Abschnitt?",
+			"options": ["6 m/s", "3 m/s", "0,33 m/s"],
+			"correct": 1,
+			"hint": "Teile die Wegzunahme durch die Zeitdauer des Abschnitts.",
+			"explanation": "6 m zusätzlicher Weg in 2 s ergeben 3 m/s. Das Diagramm zeigt Messgrößen und nicht die Form einer Straße."
+		},
+		{
+			"goal": "Eine zunehmend steile Kurve mit Bewegung verbinden",
+			"prompt": "Was beschreibt die zunehmend steile Kurve?",
+			"options": [
+				"Einen automatisch steileren Berg",
+				"Einen zeitlich unveränderten Weg",
+				"Eine zunehmende Geschwindigkeit"
+			],
+			"correct": 2,
+			"hint": "Lies den Wegzuwachs in gleich langen Zeitabschnitten.",
+			"explanation": "Größerer Wegzuwachs pro Zeit bedeutet größere Geschwindigkeit."
+		}
+	],
+	"stopping": [
+		{
+			"goal": "Die Geschwindigkeit zu einem überschlägigen Anhalteweg finden",
+			"prompt": "Stelle das Modell auf insgesamt 40 m Anhalteweg ein.",
+			"options": ["", "", ""],
+			"correct": 0,
+			"hint": "Addiere beide Balken, statt nur den Bremsweg abzulesen.",
+			"explanation": "Bei 50 km/h ergeben sich 15 m Reaktionsweg plus 25 m Bremsweg, zusammen 40 m."
+		},
+		{
+			"goal": "Doppeltes Tempo auf den Modellbremsweg übertragen",
+			"prompt": "Wie ändert doppeltes Tempo den Bremsweg nach der Faustformel?",
+			"options": [
+				"Er verdoppelt sich.",
+				"Er vervierfacht sich",
+				"Er bleibt bei gleicher Fahrbahn gleich."
+			],
+			"correct": 1,
+			"hint": "Die Bremswegformel enthält das Quadrat.",
+			"explanation": "Der Bremsweg wächst im Modell quadratisch mit der Geschwindigkeit."
+		},
+		{
+			"goal": "Eine reale Grenze der Schätzung benennen",
+			"prompt": "Welche Schlussfolgerung ist gerechtfertigt?",
+			"options": [
+				"Der trockene Modellwert gilt auch bei jeder Glätte exakt.",
+				"Zum Anhalteweg gehört nur der Bremsweg; die Reaktion spielt dabei keine Rolle.",
+				"Fahrbahn und Reaktion können vom Modell abweichen"
+			],
+			"correct": 2,
+			"hint": "Ein überschlägiger Vergleich ist kein garantiertes Sicherheitsmaß.",
+			"explanation": "Nässe, Glätte, Ablenkung und andere Bedingungen verändern reale Anhaltewege."
+		}
+	],
+	"inertia": [
+		{
+			"goal": "Loses und gesichertes Gepäck im Wagenmodell vergleichen",
+			"prompt": "Sage für beide Modellzustände voraus, was beim Wagenstopp geschieht, und spiele den Vergleich ab.",
+			"options": ["", "", ""],
+			"correct": 0,
+			"hint": "Eine Sicherung beseitigt die Masse nicht, sondern übt eine Kraft aus.",
+			"explanation": "Der lose Körper behält zunächst seinen Bewegungszustand bei. Die Befestigung wirkt mit einer Kraft auf ihn ein."
+		},
+		{
+			"goal": "Masse und Trägheit richtig verknüpfen",
+			"prompt": "Welcher Körper hat unter vergleichbaren Bedingungen größere Trägheit?",
+			"options": [
+				"Der Körper mit kleinerer Masse",
+				"Der mit größerer Masse",
+				"Beide haben bei gleicher Geschwindigkeit unabhängig von ihrer Masse dieselbe Trägheit"
+			],
+			"correct": 1,
+			"hint": "Trägheit hängt von Masse ab.",
+			"explanation": "Mehr Masse bedeutet größere Trägheit, nicht automatisch eine bestimmte Verletzungsfolge."
+		},
+		{
+			"goal": "Die Funktion einer geeigneten Sicherung beschreiben",
+			"prompt": "Was bewirkt eine Befestigung beim Bremsen?",
+			"options": [
+				"Sie beseitigt die Trägheit, sodass keine Bremskraft auf den Klotz nötig ist.",
+				"Sie hält nur den Wagen an, ohne auf die Bewegung des Klotzes einzuwirken.",
+				"Sie übt eine Kraft aus, die die Bewegung mitändert"
+			],
+			"correct": 2,
+			"hint": "Eine Bewegungsänderung braucht eine Kraftwirkung.",
+			"explanation": "Sicherung hält nicht durch Verschwinden der Trägheit zurück, sondern durch Kräfte auf den Körper."
+		}
+	],
+	"traffic": [
+		{
+			"goal": "Einen durch das Fahrzeug verdeckten Bereich markieren",
+			"prompt": "Draufsicht: Du blickst vom Punkt links nach rechts. Markiere einen Bereich hinter dem Fahrzeug, in dem eine Person verdeckt sein könnte. Ziehe die Markierung oder nutze Pfeiltasten.",
+			"options": ["", "", ""],
+			"correct": 0,
+			"hint": "Denke dir Sichtlinien vom Blickpunkt. Der Fahrzeugkörper kann sie unterbrechen.",
+			"explanation": "Die Markierung liegt hinter dem Fahrzeug im möglichen Sichtschatten. Nicht sichtbar bedeutet nicht sicher abwesend."
+		},
+		{
+			"goal": "Nässe auf einen trockenen Modellwert beziehen",
+			"prompt": "Welche Aussage passt?",
+			"options": [
+				"Der bei Trockenheit berechnete Bremsweg kann ohne Prüfung auf Nässe übertragen werden.",
+				"Der Bremsweg hängt ausschließlich von der Reaktionszeit ab.",
+				"Bremsbedingungen und Sicht können schlechter sein"
+			],
+			"correct": 2,
+			"hint": "Die Rechnung enthält nicht jede reale Bedingung.",
+			"explanation": "Nässe ist ein Anlass, die Lage neu einzuschätzen, kein Beweis für einen sicheren Modellabstand."
+		},
+		{
+			"goal": "Ablenkung mit dem Reaktionsweg verknüpfen",
+			"prompt": "Welche Folge kann Ablenkung haben?",
+			"options": [
+				"Späteres Reagieren und längerer Reaktionsweg",
+				"Ablenkung betrifft nur den Bremsweg und nie den Reaktionsweg.",
+				"Bei gleichbleibender Fahrbahn ist auch die Reaktionszeit unveränderlich."
+			],
+			"correct": 0,
+			"hint": "Vor dem Bremsbeginn bewegt sich das Fahrzeug weiter.",
+			"explanation": "Ein verzögertes Erkennen kann den Weg bis zur Reaktion vergrößern."
+		}
+	]
+}

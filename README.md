@@ -4,7 +4,10 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 
 | App | Folder | Live | ZAM cell |
 | --- | --- | --- | --- |
+| English 5 Gymnasium (Bavaria) | [`englisch-gymnasium-5/`](englisch-gymnasium-5/) | https://academy.zam-os.org/englisch-gymnasium-5/ | `zam-academy:englisch-gymnasium-5` |
+| German 5 Gymnasium (Bavaria; local draft) | [`deutsch-gymnasium-5/`](deutsch-gymnasium-5/) | Local offline package | `zam-academy:deutsch-gymnasium-5` |
 | French 5 Gymnasium (Bavaria, first foreign language) | [`franzoesisch-gymnasium-5/`](franzoesisch-gymnasium-5/) | https://academy.zam-os.org/franzoesisch-gymnasium-5/ | `zam-academy:franzoesisch-gymnasium-5` |
+| Englisch 5 Mittelschule (LehrplanPLUS Bayern) | [`englisch-mittelschule-5/`](englisch-mittelschule-5/) | https://academy.zam-os.org/englisch-mittelschule-5/ | `zam-academy:englisch-mittelschule-5` |
 | Mathematics 5 Mittelschule (Bavaria) | [`mathematik-mittelschule-5/`](mathematik-mittelschule-5/) | Built by Pages on merge | `zam-academy:mathematik-mittelschule-5` |
 | Mathematics 6 Mittelschule (Bavaria) | [`mathematik-mittelschule-6/`](mathematik-mittelschule-6/) | Built by Pages on merge | `zam-academy:mathematik-mittelschule-6` |
 | Mathematik 7 Mittelschule (LehrplanPLUS Bayern, Regelklasse und M-Zug) | [`mathematik-mittelschule-7/`](mathematik-mittelschule-7/) | https://academy.zam-os.org/mathematik-mittelschule-7/ | `zam-academy:mathematik-mittelschule-7` |
@@ -27,6 +30,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | Mathematik 6 Gymnasium (LehrplanPLUS Bayern) | [`mathematik-gymnasium-6/`](mathematik-gymnasium-6/) | https://academy.zam-os.org/mathematik-gymnasium-6/ | `zam-academy:mathematik-gymnasium-6` |
 | Mathematik 7 Gymnasium (LehrplanPLUS Bayern) | [`mathematik-gymnasium-7/`](mathematik-gymnasium-7/) | https://academy.zam-os.org/mathematik-gymnasium-7/ | `zam-academy:mathematik-gymnasium-7` |
 | Geographie 5 Gymnasium (LehrplanPLUS Bayern) | [`geographie-gymnasium-5/`](geographie-gymnasium-5/) | Built by Pages on merge | `zam-academy:geographie-gymnasium-5` |
+| Biologie 5 Gymnasium: Natur und Technik 5, Schwerpunkt Biologie (LehrplanPLUS Bayern) | [`biologie-gymnasium-5/`](biologie-gymnasium-5/) | Built by Pages on merge | `zam-academy:biologie-gymnasium-5` |
 | Mathematik 11 Gymnasium (LehrplanPLUS Bayern) | [`mathematik-gymnasium-11/`](mathematik-gymnasium-11/) | https://academy.zam-os.org/mathematik-gymnasium-11/ | `zam-academy:mathematik-gymnasium-11` |
 | Mathematik 12 Gymnasium (LehrplanPLUS Bayern) | [`mathematik-gymnasium-12/`](mathematik-gymnasium-12/) | https://academy.zam-os.org/mathematik-gymnasium-12/ | `zam-academy:mathematik-gymnasium-12` |
 | Mathematik 6 Realschule (LehrplanPLUS Bayern, alle Wahlpflichtfächergruppen) | [`mathematik-realschule-6/`](mathematik-realschule-6/) | https://academy.zam-os.org/mathematik-realschule-6/ | `zam-academy:mathematik-realschule-6` |
@@ -68,6 +72,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | Deutsch 8 Mittelschule (LehrplanPLUS Bayern, Regelklasse und M-Zug) | [`deutsch-mittelschule-8/`](deutsch-mittelschule-8/) | https://academy.zam-os.org/deutsch-mittelschule-8/ | `zam-academy:deutsch-mittelschule-8` |
 | Geschichte/Politik/Geographie 5 Mittelschule (LehrplanPLUS Bayern) | [`gpg-mittelschule-5/`](gpg-mittelschule-5/) | Built by Pages on merge | `zam-academy:gpg-mittelschule-5` |
 | Natur und Technik 5 Mittelschule (LehrplanPLUS Bayern) | [`nt-mittelschule-5/`](nt-mittelschule-5/) | Built by Pages on merge | `zam-academy:nt-mittelschule-5` |
+| Natur und Technik 6 Mittelschule (preview; LehrplanPLUS Bayern) | [`nt-mittelschule-6/`](nt-mittelschule-6/) | https://academy.zam-os.org/nt-mittelschule-6/ | `zam-academy:nt-mittelschule-6` |
 | Informatik 6 Gymnasium (LehrplanPLUS Bayern, Natur und Technik 6 Schwerpunkt Informatik) | [`informatik-gymnasium-6/`](informatik-gymnasium-6/) | Built by Pages on merge | `zam-academy:informatik-gymnasium-6` |
 
 ## How an app and its ZAM cell fit together
@@ -164,10 +169,15 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Biologie 5 Realschule: cd biologie-realschule-5 (dev server on :5238)
 # Geschichte/Politik/Geographie 5 Mittelschule: cd gpg-mittelschule-5 (dev server on :5241)
 # Natur und Technik 5 Mittelschule: cd nt-mittelschule-5 (dev server on :5243)
+# Natur und Technik 6 Mittelschule preview: cd nt-mittelschule-6 (dev server on :5250)
 # Mathematik 7 Gymnasium: cd mathematik-gymnasium-7 (dev server on :5242)
 # Geographie 5 Gymnasium: cd geographie-gymnasium-5 (dev server on :5244)
+# English 5 Gymnasium: cd englisch-gymnasium-5 (dev server on :5247)
+# German 5 Gymnasium: cd deutsch-gymnasium-5 (dev server on :5249)
+# Biologie 5 Gymnasium: cd biologie-gymnasium-5 (dev server on :5246)
 # French 5 Gymnasium: cd franzoesisch-gymnasium-5 (dev server on :5245)
-# Informatik 6 Gymnasium: cd informatik-gymnasium-6 (dev server on :5246)
+# Englisch 5 Mittelschule: cd englisch-mittelschule-5 (dev server on :5248)
+# Informatik 6 Gymnasium: cd informatik-gymnasium-6 (dev server on :5251)
 # Grade 11 introductory biology preview: cd biologie-gymnasium-11 (dev server on :5227)
 npm ci
 npm run dev      # http://localhost:5180/uml/

@@ -1,0 +1,322 @@
+[
+	{
+		"id": "nt6-arbeit-energie",
+		"lb": 7,
+		"title": "Mechanische Arbeit: Kraft und Weg gemeinsam betrachten",
+		"period": "NT6 LB 4.2 · Werkzeuge als Kraftwandler; Arbeit, Energie",
+		"intro": "Warum bedeutet „anstrengend“ im Alltag nicht immer mechanische Arbeit am Gegenstand?",
+		"paragraphs": [
+			"Im Alltag heißt vieles Arbeit: Nachdenken, ein Buch halten oder eine Kiste heben. Mechanische Arbeit im hier betrachteten einfachen Fall liegt vor, wenn eine Kraft einen Körper entlang ihres Wirkungswegs bewegt. Beim Heben wird Hubarbeit verrichtet, beim Schnellerwerden Beschleunigungsarbeit. Hältst du eine Tasche nur ruhig, bewegt sich die Tasche nicht; an ihr wird in diesem Modell keine Hubarbeit verrichtet, obwohl deine Muskeln Energie benötigen.",
+			"Wir betrachten eine konstante Kraft entlang des Weges. Dann berechnest du die mechanische Arbeit durch Kraft mal Weg. Newton mal Meter ergibt Newtonmeter, auch Joule genannt. Eine doppelt so große Kraft auf demselben Weg oder dieselbe Kraft auf dem doppelten Weg ergibt die doppelte Arbeit. Das einfache Modell betrachtet keine wechselnden Kräfte und sagt nichts über den gesamten Energiebedarf des menschlichen Körpers aus.",
+			"Beispiel: Eine Last wird mit einer konstanten Kraft von 20 N um 3 m angehoben. Die Hubarbeit beträgt 20 N mal 3 m, also 60 J. Bei nur 1 m Weg wären es 20 J. Eine Maschine kann den Kraftaufwand durch einen längeren Weg verringern, aber im idealen Vergleich dieselbe Arbeit benötigen. In echten Geräten kommt Energie für Reibung und andere Verluste hinzu; Arbeit ist eine Form der Energieübertragung."
+		],
+		"takeaway": "Bei konstanter Kraft entlang des Weges gilt: mechanische Arbeit = Kraft mal Weg. Die Einheit ist Joule. Anstrengung allein bestimmt die Arbeit am Gegenstand nicht.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Wie groß ist die Hubarbeit bei 20 N entlang eines Weges von 3 m?",
+			"answer": "60 J",
+			"wrong": ["23 J", "60 N"],
+			"explanation": "Kraft und Weg werden multipliziert. Das Ergebnis trägt die Arbeitseinheit Joule und nicht allein die Krafteinheit Newton."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Zusammenhänge prüfen",
+			"instruction": "Ordne die vier Fälle zu und begründe die Unterschiede.",
+			"categories": [
+				"Hubarbeit",
+				"Beschleunigungsarbeit",
+				"Keine Hubarbeit am Gegenstand"
+			],
+			"entries": [
+				{
+					"text": "Eine Last wird nach oben bewegt.",
+					"target": 0,
+					"feedback": "Die Kraft hebt die Last entlang eines Weges."
+				},
+				{
+					"text": "Ein Wagen wird schneller gezogen.",
+					"target": 1,
+					"feedback": "Seine Bewegungsenergie nimmt zu."
+				},
+				{
+					"text": "Eine Tasche wird unbewegt gehalten.",
+					"target": 2,
+					"feedback": "Der Weg der Tasche ist null, auch wenn Muskeln arbeiten."
+				},
+				{
+					"text": "Ein Buch wird auf ein höheres Regal gehoben.",
+					"target": 0,
+					"feedback": "Beim Heben wird Hubarbeit übertragen."
+				}
+			],
+			"conclusion": "Bei konstanter Kraft entlang des Weges gilt: mechanische Arbeit = Kraft mal Weg. Die Einheit ist Joule. Anstrengung allein bestimmt die Arbeit am Gegenstand nicht."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Berechne die Arbeit beim Heben mit 20 N um 3 m und erkläre, was beim ruhigen Halten anders ist.",
+				"hints": [
+					"Welche Größen werden multipliziert?",
+					"Welcher Weg gehört zum Halten?"
+				],
+				"model": "Beim Heben rechne ich 20 N mal 3 m und erhalte 60 J. Beim ruhigen Halten ist der Weg der Tasche null; im Modell wird an ihr keine Hubarbeit verrichtet. Die Person braucht trotzdem Muskelenergie. Alltagssprache und mechanische Arbeit sind deshalb zu unterscheiden.",
+				"criteria": [
+					"Ich rechne Kraft mal Weg.",
+					"Ich verwende Joule.",
+					"Ich trenne Halten und Heben."
+				]
+			},
+			"2": {
+				"prompt": "Zwei ideale Wege heben dieselbe Last: 30 N über 2 m oder 15 N über 4 m. Vergleiche Arbeit und benötigte Kraft.",
+				"hints": [
+					"Welche Produkte ergeben sich?",
+					"Was ändert sich statt der Arbeit?"
+				],
+				"model": "Beide Wege übertragen 60 J: 30 N mal 2 m und 15 N mal 4 m. Beim zweiten Weg wird nur die halbe Kraft benötigt, dafür ist der Weg doppelt so lang. Die ideale Arbeit wird dadurch nicht halbiert. Reibung würde den tatsächlichen Energiebedarf zusätzlich beeinflussen.",
+				"criteria": [
+					"Ich berechne beide Arbeiten.",
+					"Ich vergleiche Kraft und Weg.",
+					"Ich benenne den idealen Fall."
+				]
+			}
+		},
+		"figures": [],
+		"lab": "work"
+	},
+	{
+		"id": "nt6-hebel",
+		"lb": 7,
+		"title": "Hebel untersuchen: längerer Arm, kleinere Kraft",
+		"period": "NT6 LB 4.2 · Werkzeuge als Kraftwandler; Arbeit, Energie",
+		"intro": "Wie kann ein längerer Griff beim Heben helfen?",
+		"paragraphs": [
+			"Ein Hebel dreht sich um einen Drehpunkt. Der Kraftarm ist der Abstand vom Drehpunkt bis zur Angriffsstelle der Kraft, der Lastarm der Abstand vom Drehpunkt bis zur Angriffsstelle der Last. Beim zweiseitigen Hebel liegen Kraft und Last auf verschiedenen Seiten des Drehpunkts, etwa bei einer Wippe. Beim einseitigen Hebel liegen sie auf derselben Seite, etwa bei einer Schubkarre. Wir betrachten senkrecht zum Hebel wirkende Kräfte und vernachlässigen zunächst das Eigengewicht des Hebels sowie Reibung.",
+			"Messreihen lassen sich in einer Wertetabelle vergleichen. Ist der Lastarm fest, genügt am längeren Kraftarm eine kleinere Kraft. Im Gleichgewicht gleichen sich die Wirkungen beider Seiten aus. Verdoppelst du den Kraftarm, reicht im idealen Modell die halbe Kraft. Diese Je-desto-Aussage ist der Kern des Hebelgesetzes. Ein langer Hebel erzeugt dabei keine Energie: Die Stelle, an der du die Kraft ausübst, legt bei derselben Drehung einen längeren Weg zurück.",
+			"Beispiel: Eine Last von 6 N wirkt am 20 cm langen Lastarm. Am ebenfalls 20 cm langen Kraftarm sind 6 N nötig; bei 40 cm genügen 3 N und bei 60 cm genügen 2 N. Die Tabelle zeigt den Zusammenhang, aber keine Empfehlung, beliebig lange oder beschädigte Werkzeuge zu benutzen. Bei echten Hebeln müssen Stand, Material, Eigengewicht und sichere Handhabung beachtet werden; die Messreihe wird unter Anleitung geprüft."
+		],
+		"takeaway": "Bei festem Lastarm gilt ideal: Je länger der Kraftarm, desto kleiner die nötige Kraft. Die Kraftersparnis wird durch einen längeren Kraftweg ausgeglichen.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Welche Kraft genügt ideal am 60 cm langen Kraftarm für 6 N Last am 20 cm langen Lastarm?",
+			"answer": "2 N",
+			"wrong": ["18 N", "6 N unabhängig von der Armlänge"],
+			"explanation": "Der Kraftarm ist dreimal so lang wie der Lastarm. Deshalb genügt im idealen Gleichgewicht ein Drittel der Lastkraft."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Zusammenhänge prüfen",
+			"instruction": "Ordne die vier Fälle zu und begründe die Unterschiede.",
+			"categories": ["Einseitiger Hebel", "Zweiseitiger Hebel", "Zusammenhang"],
+			"entries": [
+				{
+					"text": "Kraft und Last liegen wie bei der Wippe auf verschiedenen Seiten.",
+					"target": 1,
+					"feedback": "Der Drehpunkt liegt dazwischen."
+				},
+				{
+					"text": "Kraft und Last liegen bei der Schubkarre auf derselben Seite des Rades.",
+					"target": 0,
+					"feedback": "Das Rad wirkt als Drehpunkt."
+				},
+				{
+					"text": "Bei festem Lastarm spart ein längerer Kraftarm Kraft.",
+					"target": 2,
+					"feedback": "Der Kraftweg wird dafür länger."
+				},
+				{
+					"text": "Bei gleichem Kraft- und Lastarm sind ideal gleiche Kräfte nötig.",
+					"target": 2,
+					"feedback": "Beide Seiten wirken gleich stark um den Drehpunkt."
+				}
+			],
+			"conclusion": "Bei festem Lastarm gilt ideal: Je länger der Kraftarm, desto kleiner die nötige Kraft. Die Kraftersparnis wird durch einen längeren Kraftweg ausgeglichen."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Ergänze die ideale Hebeltabelle für 6 N Last am 20 cm langen Lastarm: Kraftarme 20 cm, 40 cm und 60 cm. Beschreibe den Zusammenhang.",
+				"hints": [
+					"Was geschieht bei doppeltem Arm?",
+					"Wie lautet der Je-desto-Satz?"
+				],
+				"model": "Zu 20 cm gehören 6 N, zu 40 cm gehören 3 N und zu 60 cm gehören 2 N. Je länger der Kraftarm bei festem Lastarm ist, desto kleiner ist die nötige Kraft. Der dreifache Arm braucht ein Drittel der Kraft; ein längerer Kraftweg gleicht die Ersparnis aus.",
+				"criteria": [
+					"Ich ordne alle Werte zu.",
+					"Ich formuliere den Zusammenhang.",
+					"Ich beziehe den Weg ein."
+				]
+			},
+			"2": {
+				"prompt": "Jemand erklärt, ein Hebel mit längerem Griff spare Kraft und gleichzeitig beliebig viel Arbeit. Beurteile das für den idealen Fall und nenne eine Grenze realer Werkzeuge.",
+				"hints": [
+					"Wie weit bewegt sich der Griff?",
+					"Welche realen Einflüsse fehlen?"
+				],
+				"model": "Ein längerer Griff kann die benötigte Kraft verkleinern. Bei derselben Lastbewegung legt der Griff jedoch einen längeren Weg zurück, sodass keine beliebige Arbeitsersparnis entsteht. Reale Werkzeuge haben Reibung, Eigengewicht und Belastungsgrenzen; ein längerer Griff ist deshalb nicht automatisch sicher.",
+				"criteria": [
+					"Ich erkläre die Kraftersparnis.",
+					"Ich korrigiere die Arbeitsbehauptung.",
+					"Ich nenne eine reale Grenze."
+				]
+			}
+		},
+		"figures": [],
+		"lab": "lever"
+	},
+	{
+		"id": "nt6-kraftwandler",
+		"lb": 7,
+		"title": "Goldene Regel: Kraft sparen, Weg verlängern",
+		"period": "NT6 LB 4.2 · Werkzeuge als Kraftwandler; Arbeit, Energie",
+		"intro": "Was haben Rampe, Hebel und Rollen gemeinsam?",
+		"paragraphs": [
+			"Kraftwandler ändern den benötigten Kraftaufwand oder die Richtung einer Kraft. Eine schiefe Ebene erlaubt, eine Last über einen längeren Weg auf dieselbe Höhe zu bringen. Eine feste Rolle kann die Zugrichtung ändern, halbiert aber ideal nicht automatisch die Kraft. Bei einer losen Rolle tragen zwei Seilabschnitte die Last; ideal reicht die halbe Kraft, während doppelt so viel Seil gezogen wird. Entscheidend ist der konkrete Aufbau.",
+			"Die Goldene Regel der Mechanik lautet für den idealen Vergleich: Was du an Kraft sparst, musst du an Weg zusetzen. Reibung und das Eigengewicht der Vorrichtung bleiben dabei zunächst unberücksichtigt. Eine Rampe mit dreifachem Weg zur gleichen Höhe kann ideal mit einem Drittel der Hubkraft auskommen. Die Produkte aus Kraft und Weg bleiben gleich. In echten Geräten wird zusätzlich Energie übertragen, zum Beispiel als Wärme durch Reibung.",
+			"Beispiel: Eine Last mit 60 N Gewichtskraft wird 1 m hochgehoben. Direkt sind ideal 60 J nötig. Über eine 3 m lange Rampe genügen ideal 20 N entlang der Rampe; 20 N mal 3 m ergibt wieder 60 J. Eine längere Rampe braucht Platz und muss sicher sein. Das Modell rechnet nur den idealen Fall und erlaubt keine Planung gefährlicher Hebevorgänge oder Belastung realer Seile ohne fachkundige Anleitung."
+		],
+		"takeaway": "Kraftwandler schaffen keine Energie. Im idealen Fall wird kleinere Kraft durch längeren Weg ausgeglichen; reale Reibung erhöht den nötigen Aufwand.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Welche ideale Kraft genügt entlang einer 3 m langen Rampe für 60 N Gewichtskraft bei 1 m Höhe?",
+			"answer": "20 N",
+			"wrong": ["180 N", "60 N"],
+			"explanation": "Der Weg ist dreimal so lang wie der direkte Hubweg. Ein Drittel der Kraft liefert entlang dieses Weges dieselbe ideale Arbeit."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Zusammenhänge prüfen",
+			"instruction": "Ordne die vier Fälle zu und begründe die Unterschiede.",
+			"categories": ["Richtung ändern", "Kraft sparen", "Grenze"],
+			"entries": [
+				{
+					"text": "Eine feste Rolle lenkt die Zugrichtung um.",
+					"target": 0,
+					"feedback": "Die ideale Kraft bleibt dabei gleich."
+				},
+				{
+					"text": "Eine lose Rolle verteilt die Last auf zwei tragende Seilabschnitte.",
+					"target": 1,
+					"feedback": "Ideal genügt die halbe Kraft bei doppeltem Zugweg."
+				},
+				{
+					"text": "Reibung benötigt zusätzliche Energie.",
+					"target": 2,
+					"feedback": "Echte Geräte sind nicht verlustfrei."
+				},
+				{
+					"text": "Eine lange Rampe verringert ideal die Zugkraft.",
+					"target": 1,
+					"feedback": "Der Weg wird dafür länger."
+				}
+			],
+			"conclusion": "Kraftwandler schaffen keine Energie. Im idealen Fall wird kleinere Kraft durch längeren Weg ausgeglichen; reale Reibung erhöht den nötigen Aufwand."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Vergleiche direktes Heben mit der 3 m langen Modellrampe bei 1 m Höhe und 60 N Last.",
+				"hints": ["Wie groß sind Kraft und Weg?", "Was ergibt Kraft mal Weg?"],
+				"model": "Beim direkten Heben sind 60 N über 1 m nötig, also 60 J. Auf der idealen Rampe reichen 20 N über 3 m, ebenfalls 60 J. Die Rampe spart Kraft, verlängert aber den Weg. Reibung wird in dieser Rechnung nicht berücksichtigt und kann den tatsächlichen Aufwand erhöhen.",
+				"criteria": [
+					"Ich berechne beide Wege.",
+					"Ich formuliere die Goldene Regel.",
+					"Ich nenne die Idealannahme."
+				]
+			},
+			"2": {
+				"prompt": "Ein Werbeplakat verspricht, eine feste Rolle halbiere jede Kraft und spare gleichzeitig den halben Seilweg. Prüfe die Aussage.",
+				"hints": [
+					"Was ändert die feste Rolle?",
+					"Was gilt bei der losen Rolle?"
+				],
+				"model": "Eine ideale feste Rolle ändert vor allem die Zugrichtung; sie halbiert die Kraft nicht. Eine ideale lose Rolle mit zwei tragenden Seilabschnitten kann die Kraft halbieren, verlangt aber den doppelten Zugweg. Das Versprechen widerspricht der Goldenen Regel und ignoriert außerdem reale Verluste.",
+				"criteria": [
+					"Ich unterscheide die Rollen.",
+					"Ich vergleiche Kraft und Weg.",
+					"Ich begrenze das Versprechen."
+				]
+			}
+		},
+		"figures": [],
+		"lab": "machines"
+	},
+	{
+		"id": "nt6-werkzeuge-koerper",
+		"lb": 7,
+		"title": "Werkzeuge auswählen und den Körper schonen",
+		"period": "NT6 LB 4.2 · Werkzeuge als Kraftwandler; Arbeit, Energie",
+		"intro": "Wie hängen Hebelwirkung, passende Werkzeuge und Gesundheit zusammen?",
+		"paragraphs": [
+			"Werkzeuge sollen zu Aufgabe, Material und Körper passen. Eine geeignete Zange, ein Wagen oder ein Hebel kann den Kraftaufwand verringern. Ein unpassendes oder beschädigtes Werkzeug erhöht dagegen Risiken. Körper schonen bedeutet auch, einen sicheren Stand, passende Griffhöhen und ausreichend Platz zu beachten. Bei schweren oder unhandlichen Lasten helfen geeignete Hilfsmittel, eine zweite Person oder das Aufteilen der Last, soweit die Aufgabe das erlaubt.",
+			"Ein langer Griff kann beim Hebel Kraft sparen, aber er vergrößert den Bewegungsraum und kann das Werkzeug überlasten. Die physikalische Kraftersparnis allein entscheidet daher nicht über eine gute Werkzeugwahl. Sachgerechter Gebrauch richtet sich nach Einweisung und Herstellerangaben. Niemand muss eine Aufgabe unter Schmerzen oder trotz unsicherer Bedingungen fortsetzen. Tätigkeiten mit unbekannten Lasten oder gefährlichen Geräten gehören nicht in einen selbst geplanten Heimversuch.",
+			"Beispiel: Eine Klasse transportiert Kisten. Statt eine schwere Kiste weit vom Körper zu halten, werden Gewicht und Weg geprüft, geeignete Transporthilfen ausgewählt und die Handhabung unter Anleitung geübt. Beim Öffnen mit einem Hebel wird kein beliebiges Verlängerungsrohr angebaut. Die App hilft, Entscheidungen zu begründen; reale Werkzeugauswahl, Bewegung und sichere Ausführung müssen im Unterricht praktisch gezeigt werden."
+		],
+		"takeaway": "Ein geeignetes Werkzeug spart nicht nur Kraft: Es muss sicher, unbeschädigt und passend zur Aufgabe sein. Körper schonen und sachgerecht handeln gehören zusammen.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Welche Entscheidung berücksichtigt Kraftaufwand und Gesundheit?",
+			"answer": "Eine passende, unbeschädigte Transporthilfe nach Einweisung verwenden.",
+			"wrong": [
+				"Für jede Aufgabe grundsätzlich das Werkzeug mit dem längsten Griff wählen.",
+				"Die Last möglichst weit vom Körper weg halten, damit der längere Lastarm Kraft spart."
+			],
+			"explanation": "Eine passende Hilfe kann Kraftaufwand und Belastung verringern. Sichere Einweisung und geeignete Bedingungen bleiben nötig."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Zusammenhänge prüfen",
+			"instruction": "Ordne die vier Fälle zu und begründe die Unterschiede.",
+			"categories": ["Geeignete Entscheidung", "Unsichere Entscheidung"],
+			"entries": [
+				{
+					"text": "Vor Gebrauch Werkzeug und Aufgabe vergleichen.",
+					"target": 0,
+					"feedback": "Die Auswahl braucht mehr als einen Blick auf die Griffgröße."
+				},
+				{
+					"text": "Einen beschädigten Griff weiterbenutzen.",
+					"target": 1,
+					"feedback": "Beschädigungen können zu Kontrollverlust führen."
+				},
+				{
+					"text": "Bei einer unhandlichen Last Hilfe organisieren.",
+					"target": 0,
+					"feedback": "Passende Unterstützung kann die Belastung senken."
+				},
+				{
+					"text": "Schmerzen ignorieren und hektisch weiterarbeiten.",
+					"target": 1,
+					"feedback": "Die Tätigkeit sollte unterbrochen und Unterstützung geholt werden."
+				}
+			],
+			"conclusion": "Ein geeignetes Werkzeug spart nicht nur Kraft: Es muss sicher, unbeschädigt und passend zur Aufgabe sein. Körper schonen und sachgerecht handeln gehören zusammen."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Begründe zwei Kriterien für ein körperschonendes Werkzeug und eine passende Handlung bei einer unhandlichen Last.",
+				"hints": [
+					"Ist jede Verlängerung sicher?",
+					"Welche Hilfe passt zum Transport?"
+				],
+				"model": "Das Werkzeug muss zur Aufgabe passen und unbeschädigt sein. Eine günstige Hebelwirkung kann Kraft sparen, darf aber keine Überlastung verursachen. Für eine unhandliche Last wähle ich nach Einweisung eine geeignete Transporthilfe oder organisiere Hilfe. Sichere Ausführung muss praktisch geübt werden.",
+				"criteria": [
+					"Ich nenne passende Kriterien.",
+					"Ich verbinde Wirkung und Sicherheit.",
+					"Ich wähle eine begründete Hilfe."
+				]
+			},
+			"2": {
+				"prompt": "Eine Person will jeden Griff verlängern, weil das immer gesünder sei. Beurteile die Aussage mit dem Hebelwissen.",
+				"hints": [
+					"Was passiert mit Kraft und Bewegungsraum?",
+					"Welche Grenze hat ein reales Werkzeug?"
+				],
+				"model": "Ein längerer Kraftarm kann die nötige Kraft verringern. Daraus folgt aber nicht, dass jede Verlängerung sicher oder gesund ist: Bewegungsraum, Kontrolle und Belastungsgrenzen ändern sich. Ich verwende nur passende, freigegebene Werkzeuge nach Einweisung und beurteile die konkrete Aufgabe.",
+				"criteria": [
+					"Ich nutze das Hebelwissen.",
+					"Ich nenne eine reale Grenze.",
+					"Ich begründe die Werkzeugwahl."
+				]
+			}
+		},
+		"figures": [],
+		"lab": "ergonomics"
+	}
+]

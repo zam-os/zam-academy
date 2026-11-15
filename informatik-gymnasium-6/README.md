@@ -42,7 +42,7 @@ Die App trainiert die zugehörigen Fachbegriffe, Werkzeugeinstellungen, Gestaltu
 
 ```bash
 npm ci
-npm run dev                  # Entwicklungsserver auf http://localhost:5246/informatik-gymnasium-6/
+npm run dev                  # Entwicklungsserver auf http://localhost:5251/informatik-gymnasium-6/
 npx tsc --noEmit
 npm test
 npm run build

@@ -7,7 +7,7 @@ export default defineConfig({
   base: "/informatik-gymnasium-6/",
   plugins: [viteSingleFile()],
   server: {
-    port: 5246,
+    port: 5251,
     open: false,
   },
   build: {

@@ -1,0 +1,163 @@
+[
+	{
+		"id": "nt6-kraefte-wirkungen",
+		"lb": 6,
+		"title": "Kräfte erkennen: Bewegung und Verformung",
+		"period": "NT6 LB 4.1 · Kräfte",
+		"intro": "Nicht jede Anstrengung heißt in der Physik dasselbe. Woran erkennst du eine Kraftwirkung?",
+		"paragraphs": [
+			"Eine Kraft kann die Bewegung eines Körpers ändern oder ihn verformen. Ein Ball kann schneller, langsamer oder in eine andere Richtung bewegt werden. Eine Feder kann gedehnt, ein weicher Ball eingedrückt werden. Kräfte erkennst du an ihren Wirkungen; das Wort „stark“ allein beschreibt noch keine physikalische Größe. Eine Kraft besitzt Betrag und Richtung. Im Modell zeigt die Pfeilrichtung die Wirkung und die Pfeillänge schematisch den Betrag.",
+			"Die Einheit der Kraft heißt Newton, abgekürzt N, nach dem Naturforscher Isaac Newton. Die Gewichtskraft wirkt durch die Anziehung der Erde auf Körper, die Reibungskraft wirkt einer relativen Bewegung an Kontaktflächen entgegen. Masse und Gewichtskraft sind verschiedene Größen: Kilogramm ist eine Masseeinheit, Newton eine Krafteinheit. Mehrere Kräfte können sich auch ausgleichen. Dann kann ein Körper ruhen oder sich gleichförmig weiterbewegen.",
+			"Beispiel: Ein Fahrrad rollt geradeaus. Beim Bremsen wirkt eine Kraft, durch die es langsamer wird; beim Lenken ändert eine Kraft seine Bewegungsrichtung. Eine zusammengedrückte Feder zeigt Verformung. Das Modell zeigt jeweils eine ausgewählte Wirkung, keine vollständige Kräftebilanz eines echten Fahrrads. Die Beispiele werden beobachtet oder im Fachraum sicher untersucht, nicht als Bremsversuch im Straßenverkehr nachgespielt."
+		],
+		"takeaway": "Kräfte können Bewegungen ändern oder Körper verformen. Newton ist die Krafteinheit; eine Bewegung allein beweist keine unausgeglichene Kraft.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Welche Beobachtung zeigt eine mögliche Kraftwirkung?",
+			"answer": "Ein rollender Ball ändert seine Richtung.",
+			"wrong": [
+				"Ein Ball rollt ohne Reibung geradlinig mit unverändertem Tempo.",
+				"Ein Newtonwert bezeichnet die Masse eines ruhenden Balls in Kilogramm."
+			],
+			"explanation": "Eine Richtungsänderung ist eine Änderung der Bewegung. Die physikalische Kraft wird in Newton beschrieben, nicht in Kilogramm."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Zusammenhänge prüfen",
+			"instruction": "Ordne die vier Fälle zu und begründe die Unterschiede.",
+			"categories": ["Bewegung ändern", "Verformen", "Begriff oder Einheit"],
+			"entries": [
+				{
+					"text": "Ein Ball wird schneller.",
+					"target": 0,
+					"feedback": "Beschleunigen ist eine Bewegungsänderung."
+				},
+				{
+					"text": "Eine Feder wird gedehnt.",
+					"target": 1,
+					"feedback": "Ihre Form verändert sich."
+				},
+				{
+					"text": "Eine Kraft wird mit 3 N angegeben.",
+					"target": 2,
+					"feedback": "Newton ist die Krafteinheit."
+				},
+				{
+					"text": "Ein rollender Ball biegt seitlich ab.",
+					"target": 0,
+					"feedback": "Auch eine Richtungsänderung braucht eine Kraftwirkung."
+				}
+			],
+			"conclusion": "Kräfte können Bewegungen ändern oder Körper verformen. Newton ist die Krafteinheit; eine Bewegung allein beweist keine unausgeglichene Kraft."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Erkläre drei Kraftwirkungen an einem Ball oder einer Feder. Nenne die Einheit.",
+				"hints": [
+					"Was kann sich an der Bewegung ändern?",
+					"Welche Formänderung ist sichtbar?"
+				],
+				"model": "Eine Kraft kann einen Ball schneller machen, abbremsen oder seine Richtung ändern. Eine Feder kann sie verformen, etwa dehnen. Betrag und Richtung gehören zur Kraftbeschreibung. Die Einheit heißt Newton mit dem Zeichen N; Kilogramm bezeichnet dagegen eine Masse.",
+				"criteria": [
+					"Ich nenne Bewegungsänderungen.",
+					"Ich erläutere Verformung.",
+					"Ich verwende Newton richtig."
+				]
+			},
+			"2": {
+				"prompt": "Ein Schüler sagt: „Ein Körper bewegt sich, also muss eine unausgeglichene Kraft wirken.“ Beurteile die Aussage.",
+				"hints": [
+					"Was geschieht bei gleichförmiger gerader Bewegung?",
+					"Was wäre ein deutlicher Hinweis auf eine resultierende Kraft?"
+				],
+				"model": "Die Aussage ist zu allgemein. Bei gleichförmiger gerader Bewegung können die wirkenden Kräfte ausgeglichen sein. Eine Änderung der Geschwindigkeit oder Richtung weist auf eine unausgeglichene Kraftwirkung hin. Reale Situationen können mehrere Kräfte enthalten, die gemeinsam betrachtet werden müssen.",
+				"criteria": [
+					"Ich unterscheide Bewegung und Änderung.",
+					"Ich berücksichtige ausgeglichene Kräfte.",
+					"Ich nenne einen passenden Hinweis."
+				]
+			}
+		},
+		"figures": [],
+		"lab": "forces"
+	},
+	{
+		"id": "nt6-kraftmesser",
+		"lb": 6,
+		"title": "Mit der Feder Kräfte messen",
+		"period": "NT6 LB 4.1 · Kräfte",
+		"intro": "Wie wird aus einer Dehnung ein Kraftmesswert?",
+		"paragraphs": [
+			"Ein Federkraftmesser nutzt die Dehnung einer Feder. Bei einem geeigneten Messgerät wächst die Dehnung in seinem Messbereich mit der wirkenden Kraft. Vor dem Messen prüfst du Nullpunkt, Einheit und Messbereich. Der Körper hängt ruhig am Haken; du liest die Skala auf Augenhöhe ab. Ein überlastetes oder beschädigtes Gerät liefert keine verlässlichen Werte. Echte Messungen erfolgen nach Unterweisung und dürfen den Messbereich nicht überschreiten.",
+			"Bei unserem idealisierten Gerät entsprechen zwei Zentimeter Dehnung einem Newton. Eine doppelte Kraft bewirkt im dargestellten Bereich eine doppelte zusätzliche Dehnung. Das ist eine Eigenschaft dieser Modellfeder, keine universelle Skala jeder Feder. Hängt ein Körper ruhig am Kraftmesser, kann seine Gewichtskraft gemessen werden. Die Masse in Kilogramm wird dadurch nicht zu einer Kraft; auf der Kraftskala steht die Einheit Newton.",
+			"Beispiel: Bei 1 N dehnt sich die Modellfeder um 2 cm, bei 3 N um 6 cm. Ein Messprotokoll nennt beide Größen mit Einheiten und hält den Nullpunkt fest. Der Zusammenhang lässt sich als Wertetabelle und Diagramm darstellen. Wenn eine echte Feder nach Entfernen der Last nicht zurückkehrt, ist der Messbereich möglicherweise überschritten; diese Messreihe darf nicht einfach wie die ideale Modellreihe behandelt werden."
+		],
+		"takeaway": "Eine geeignete Feder erlaubt im Messbereich den Vergleich von Kraft und Dehnung. Nullpunkt, Messbereich und die Einheit Newton gehören zu jeder Messung.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Wie groß ist die Dehnung unserer Modellfeder bei 3 N, wenn 1 N zu 2 cm führt?",
+			"answer": "6 cm",
+			"wrong": ["3 cm", "1,5 cm"],
+			"explanation": "Die Modellskala liefert zwei Zentimeter pro Newton. Die dreifache Kraft ergibt in diesem Messbereich sechs Zentimeter."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Zusammenhänge prüfen",
+			"instruction": "Ordne die vier Fälle zu und begründe die Unterschiede.",
+			"categories": ["Vorbereitung", "Messung", "Nicht zulässig"],
+			"entries": [
+				{
+					"text": "Nullpunkt und Messbereich prüfen.",
+					"target": 0,
+					"feedback": "Beides gehört vor die Belastung."
+				},
+				{
+					"text": "Eine ruhende Last auf Augenhöhe ablesen.",
+					"target": 1,
+					"feedback": "So vermeidest du zusätzliche Ablesefehler."
+				},
+				{
+					"text": "Eine Last oberhalb des Messbereichs anhängen.",
+					"target": 2,
+					"feedback": "Überlastung kann die Feder verändern oder beschädigen."
+				},
+				{
+					"text": "Messwerte mit Newton und Zentimeter notieren.",
+					"target": 1,
+					"feedback": "Beide Größen benötigen ihre Einheiten."
+				}
+			],
+			"conclusion": "Eine geeignete Feder erlaubt im Messbereich den Vergleich von Kraft und Dehnung. Nullpunkt, Messbereich und die Einheit Newton gehören zu jeder Messung."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Erkläre an der Modellskala die Messwerte für 1 N und 3 N und nenne zwei Voraussetzungen einer echten Messung.",
+				"hints": [
+					"Wie ändert sich die Dehnung?",
+					"Was prüfst du vor dem Ablesen?"
+				],
+				"model": "Bei 1 N beträgt die Dehnung 2 cm, bei 3 N beträgt sie 6 cm. Die dreifache Kraft dehnt die Modellfeder dreifach. Vor einer echten Messung prüfe ich Nullpunkt und Messbereich; die Last hängt ruhig. Die Kraft wird in Newton notiert, nicht in Kilogramm.",
+				"criteria": [
+					"Ich nutze den Zusammenhang richtig.",
+					"Ich nenne Messbedingungen.",
+					"Ich unterscheide die Einheiten."
+				]
+			},
+			"2": {
+				"prompt": "Zwei verschiedene Kraftmesser zeigen bei derselben Kraft verschieden große Federdehnungen. Ist einer deshalb sicher kaputt? Begründe.",
+				"hints": [
+					"Müssen alle Federn dieselbe Skala haben?",
+					"Was ist für den Kraftwert entscheidend?"
+				],
+				"model": "Nein, verschiedene Federn können sich bei derselben Kraft unterschiedlich stark dehnen. Entscheidend ist die zugehörige passende Kraftskala. Beide Geräte müssen Nullpunkt und Messbereich einhalten und korrekt abgelesen werden. Die zwei Zentimeter pro Newton unseres Modells gelten nicht automatisch für jedes Gerät.",
+				"criteria": [
+					"Ich begrenze die Modellskala.",
+					"Ich beziehe die Kalibrierung ein.",
+					"Ich nenne Messbedingungen."
+				]
+			}
+		},
+		"figures": [],
+		"lab": "forceMeter"
+	}
+]

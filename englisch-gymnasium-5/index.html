@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Englisch 5 Gymnasium Bayern. Mit Satzbausteinen, Uhr, Karten und Dialogen Englisch anwenden. ZAM Academy." />
+    <title>Englisch 5 Gymnasium · ZAM Academy</title>
+    <script>try { const theme = localStorage.getItem('englisch_gym5_theme'); if (theme === 'light' || theme === 'dark') document.documentElement.dataset.theme = theme; } catch {}</script>
+  </head>
+  <body>
+    <a href="https://academy.zam-os.org/" class="zam-home-link">← ZAM Academy</a>
+    <a class="skip-link" href="#main">Zum Inhalt</a>
+    <header class="header">
+      <a class="brand" href="#" id="home"><span class="brand-mark" aria-hidden="true">En</span><span>Englisch 5<small>Gymnasium Bayern · ZAM Academy</small></span></a>
+      <nav aria-label="Hauptnavigation"><button type="button" data-view="path">Lernpfad</button><button type="button" data-view="reference">Nachschlagen</button></nav>
+      <div class="header-actions"><button type="button" class="button secondary" id="zam">ZAM-Karten</button><button type="button" class="icon-button" id="theme" aria-label="Farbschema wechseln">◐</button></div>
+    </header>
+    <div class="progress-strip" id="progress-strip"></div>
+    <main id="main" tabindex="-1"></main>
+    <footer><span>Lehrplanabgleich: 14. November 2026 · ohne Konto</span><span>Deine Texte und dein Fortschritt bleiben in diesem Browser. Sprechen und Hören zusätzlich mit Partnern und echten Aufnahmen üben.</span><a href="https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/5/englisch" target="_blank" rel="noopener noreferrer">LehrplanPLUS Bayern · Englisch 5 Gymnasium</a><button type="button" class="text-button" id="reset">Lokalen Fortschritt zurücksetzen</button></footer>
+    <dialog id="dialog" aria-labelledby="dialog-title"></dialog>
+    <div class="toast" id="storage-warning" role="status" hidden>Speichern ist in diesem Browser gerade nicht möglich. Du kannst weiterüben; Änderungen gehen beim Schließen verloren.</div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
