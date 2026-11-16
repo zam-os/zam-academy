@@ -151,7 +151,7 @@ export const gebisse = (): string => {
     600,
     270,
     "Oberkiefer eines Hundes mit Fangzähnen und Reißzähnen im Vergleich mit dem Oberkiefer eines Rindes mit Hornplatte, Lücke und breiten Mahlzähnen",
-    `${jaw(8, "Hund: Fleischfresser", dog, "• Fangzähne halten Beute\n• Reißzähne schneiden wie eine Schere\n• Kiefer klappt nur auf und zu\n• kurzer Darm: Fleisch ist leicht verdaulich")}${jaw(304, "Rind: Pflanzenfresser", cow, "• Gras wird mit Zunge und unteren\n  Schneidezähnen gegen die Hornplatte\n  abgerupft und zermahlen\n• Wiederkäuen, mehrere Mägen, langer Darm")}`,
+    `${jaw(8, "Hund: Fleischfresser", dog, "• Fangzähne halten Beute\n• Reißzähne schneiden wie eine Schere\n• Kiefer klappt nur auf und zu\n• kurzer Darm: Fleisch ist leicht verdaulich")}${jaw(304, "Rind: Pflanzenfresser", cow, "• Gras wird mit Zunge und unteren\n  Schneidezähnen gegen die Hornplatte\n  abgerupft, Mahlzähne zermahlen es\n• Wiederkäuen, Vormägen und\n  Labmagen, langer Darm")}`,
   );
 };
 
