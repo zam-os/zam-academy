@@ -151,7 +151,7 @@ try {
 	}
 	assert.equal(
 		await evaluate('document.querySelectorAll(".lesson-link").length'),
-		46,
+		lessons.length,
 	);
 	let states = 0;
 	for (const theme of ["light", "dark"]) {
@@ -279,7 +279,7 @@ try {
 		assert.ok(
 			(
 				await evaluate('document.querySelector("#progress-strip").innerText')
-			).includes("1 von 46"),
+			).includes(`1 von ${lessons.length}`),
 		);
 	}
 	await page("Page.reload");
@@ -294,7 +294,7 @@ try {
 	assert.ok(
 		(
 			await evaluate('document.querySelector("#progress-strip").innerText')
-		).includes("1 von 46"),
+		).includes(`1 von ${lessons.length}`),
 	);
 	await evaluate(
 		`var d=document.querySelector('#draft');d.value='Ein geänderter Entwurf mit neuen Angaben.';d.dispatchEvent(new Event('input',{bubbles:true}));`,
@@ -303,7 +303,7 @@ try {
 	assert.ok(
 		(
 			await evaluate('document.querySelector("#progress-strip").innerText')
-		).includes("0 von 46"),
+		).includes(`0 von ${lessons.length}`),
 	);
 	for (const id of ["d5-zuhoeren", "d5-fabelhoeren"]) {
 		await route(`#lesson=${id}`);
@@ -371,9 +371,9 @@ try {
 		JSON.stringify(
 			{
 				states,
-				lessons: 46,
-				visualControls: 138,
-				caseGoals: 92,
+				lessons: lessons.length,
+				visualControls: lessons.length * 3,
+				caseGoals: lessons.length * 2,
 				checks: [
 					"model and rubric on every level",
 					"completion on both levels",
@@ -392,7 +392,7 @@ try {
 		),
 	);
 	console.log(
-		`ok: ${states} lesson/level/theme views; 138 visual controls; 92 case goals; audio, completion, reload and mobile layout pass; no runtime errors or external requests.`,
+		`ok: ${states} lesson/level/theme views; ${lessons.length * 3} visual controls; ${lessons.length * 2} case goals; audio, completion, reload and mobile layout pass; no runtime errors or external requests.`,
 	);
 } finally {
 	chrome.kill();

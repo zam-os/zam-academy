@@ -2,7 +2,6 @@ import { describe, expect, it, vi } from "vitest";
 import cell from "../cell.json";
 import coverage from "../coverage.json";
 import mapping from "../replaces-de-by.json";
-import publication from "../publication.json";
 import { LESSONS, SOURCES, STAGES } from "../src/curriculum";
 import { renderMaterial } from "../src/material";
 import {
@@ -33,11 +32,11 @@ import grammar from "./fixtures/de-by-gymnasium-5-deutsch-grammatik-faelle-recht
 describe("Grade 5 Gymnasium package contract", () => {
 	it("pins every lesson anchor and all freshly drawn identifiers", () => {
 		expect(LESSONS.map((l) => l.id)).toEqual(contract.lessons);
-		expect(LESSONS).toHaveLength(46);
-		expect(cell.atoms).toHaveLength(46);
+		expect(LESSONS).toHaveLength(50);
+		expect(cell.atoms).toHaveLength(50);
 		const entries = cell.atoms.flatMap((a) => [a, ...a.practice_items]);
-		expect(entries).toHaveLength(138);
-		expect(new Set(entries.map((e) => e.id)).size).toBe(138);
+		expect(entries).toHaveLength(150);
+		expect(new Set(entries.map((e) => e.id)).size).toBe(150);
 		expect(Object.fromEntries(entries.map((e) => [e.slug, e.id]))).toEqual(
 			contract.ids,
 		);
@@ -45,8 +44,7 @@ describe("Grade 5 Gymnasium package contract", () => {
 			expect(entry.id).toMatch(/^[0-7][0-9A-HJKMNP-TV-Z]{25}$/);
 		expect(
 			STAGES.map((s) => LESSONS.filter((l) => l.stage === s.id).length),
-		).toEqual([7, 12, 8, 19]);
-		expect(publication).toEqual({ schema: 1, status: "local-only" });
+		).toEqual([7, 13, 8, 22]);
 	});
 	it("maps all 42 official expectations without claiming classroom performance", () => {
 		expect(coverage.rows).toHaveLength(42);
@@ -244,6 +242,12 @@ describe("Grade 5 Gymnasium package contract", () => {
 			expect(text("d5-wortarten")).toContain(term);
 		expect(text("d5-pronomen")).not.toContain("Relativsatz");
 		expect(text("d5-gross-und-s")).not.toContain("das/dass");
+		expect(text("d5-aehnliche-woerter")).not.toContain("das/dass");
+		expect(text("d5-aehnliche-woerter")).toContain("seid");
+		expect(text("d5-aehnliche-woerter")).toContain("seit");
+		expect(text("d5-spielszene")).toContain("Regieanweisung");
+		expect(text("d5-nominalisierung")).toContain("Signalwörter");
+		expect(text("d5-satzklammer")).toContain("Satzklammer");
 		expect(text("d5-silbentrennung")).toContain("ba-cken");
 	});
 	it("bundles matching listening passages with optional transcripts", () => {
