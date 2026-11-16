@@ -130,4 +130,18 @@ describe("Working language models", () => {
 		expect(words("nominalisierung", 0).join(" ")).toBe("beim Lesen");
 		expect(words("aehnliche-woerter", 0).join(" ")).toBe("Ihr seid bereit.");
 	});
+	it("addresses PR 147 grammar and factual review corrections", () => {
+		const nom = lesson("nominalisierung");
+		expect(nom.paragraphs[1]).toContain("viel gutes Essen");
+		expect(nom.quiz.explanation).toContain("viel gutes Essen");
+		expect(nom.visual.steps[2].detail).toContain("viel gutes Essen");
+		const sk = lesson("satzklammer");
+		expect(sk.tasks[2].model).toContain("geräumt");
+		expect(sk.tasks[2].model).toContain("räumen");
+		expect(sk.tasks[2].model).not.toMatch(/aufgeräumt|aufräumen/);
+		const hom = lesson("aehnliche-woerter");
+		expect(hom.material).toContain("zweiten [Saite/Seite] einer Geige");
+		expect(hom.tasks[1].model).toContain("zweiten Saite einer Geige");
+		expect(JSON.stringify(hom)).not.toContain("zehnten");
+	});
 });

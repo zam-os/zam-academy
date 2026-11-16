@@ -3676,7 +3676,7 @@
 			},
 			"2": {
 				"prompt": "Forme ‚Leila räumt das Regal‘ zuerst ins Perfekt und dann in einen Satz mit ‚muss‘ um. Stelle einmal ‚Nach der Pause‘ ins Vorfeld und markiere beide Prädikatsteile.",
-				"model": "Nach der Pause hat (linke Klammer) Leila das Regal aufgeräumt (rechte Klammer). Am Nachmittag muss (linke Klammer) Leila das Regal aufräumen (rechte Klammer). In beiden Sätzen rahmen die Verbteile Subjekt und Objekt ein.",
+				"model": "Nach der Pause hat (linke Klammer) Leila das Regal geräumt (rechte Klammer). Am Nachmittag muss (linke Klammer) Leila das Regal räumen (rechte Klammer). In beiden Sätzen rahmen die Verbteile Subjekt und Objekt ein.",
 				"criteria": [
 					"Beide Umformungen (Perfekt und Modalverb) sind grammatisch richtig.",
 					"Ein Zeitadverbiale steht sicher im Vorfeld vor dem finiten Verb.",
@@ -4596,7 +4596,7 @@
 			"Genauso trennst du ‚viel‘ und ‚fiel‘: ‚fiel‘ ist das Präteritum des Verbs ‚fallen‘ (fallen – fiel – gefallen); ‚viel‘ beschreibt eine große Menge als Gegenteil von ‚wenig‘. ‚wieder‘ mit ie bedeutet ‚noch einmal‘ oder ‚zurück‘ (‚wieder lesen‘), ‚wider‘ mit bloßem i heißt ‚gegen‘ (‚wider Willen‘, ‚widersprechen‘). Bei ‚Seite‘ und ‚Saite‘ oder ‚Waise‘ und ‚Weise‘ klärt die Wortfamilie den Zusammenhang."
 		],
 		"materialLabel": "Vier Sätze zum Prüfen der Wortart",
-		"material": "Satz eins: Ihr [seid/seit] [seid/seit] gestern eine aufmerksame Gruppe.\nSatz zwei: Nach dem Regen [viel/fiel] mir [viel/fiel] Neues auf.\nSatz drei: Er kommt [wider/wieder] und hilft nicht [wider/wieder] Willen.\nSatz vier: Auf dieser [Saite/Seite] des Hefts steht eine Frage zur zehnten [Saite/Seite] einer Geige.",
+		"material": "Satz eins: Ihr [seid/seit] [seid/seit] gestern eine aufmerksame Gruppe.\nSatz zwei: Nach dem Regen [viel/fiel] mir [viel/fiel] Neues auf.\nSatz drei: Er kommt [wider/wieder] und hilft nicht [wider/wieder] Willen.\nSatz vier: Auf dieser [Saite/Seite] des Hefts steht eine Frage zur zweiten [Saite/Seite] einer Geige.",
 		"sourceIds": ["lehrplan"],
 		"check": {
 			"wrong": "Es leitet dort einen Vergleich mit der Menge ‚wenig‘ ein.",
@@ -4627,7 +4627,7 @@
 		"tasks": {
 			"1": {
 				"prompt": "Schreibe die vier Sätze aus dem Material in der richtigen Schreibung auf und erkläre an ‚seit/seid‘ und ‚wieder/wider‘ deine Kontrollprobe.",
-				"model": "Ihr seid seit gestern eine aufmerksame Gruppe. Nach dem Regen fiel mir viel Neues auf. Er kommt wieder und hilft nicht wider Willen. Auf dieser Seite des Hefts steht eine Frage zur zehnten Saite einer Geige. ‚seid‘ gehört zum Verb ‚sein‘ bei ‚ihr‘, ‚seit‘ zur Zeit; ‚wieder‘ heißt noch einmal und ‚wider‘ bedeutet gegen.",
+				"model": "Ihr seid seit gestern eine aufmerksame Gruppe. Nach dem Regen fiel mir viel Neues auf. Er kommt wieder und hilft nicht wider Willen. Auf dieser Seite des Hefts steht eine Frage zur zweiten Saite einer Geige. ‚seid‘ gehört zum Verb ‚sein‘ bei ‚ihr‘, ‚seit‘ zur Zeit; ‚wieder‘ heißt noch einmal und ‚wider‘ bedeutet gegen.",
 				"criteria": [
 					"Alle acht Wörter sind richtig eingesetzt.",
 					"Ich erkläre ‚seid/seit‘ über Verbform und Zeitangabe.",
@@ -4887,16 +4887,16 @@
 		"bindings": ["4.3", "4.2"],
 		"paragraphs": [
 			"Verben und Adjektive werden im Satz normalerweise kleingeschrieben. Werden sie aber wie ein Nomen gebraucht (Nominalisierung), schreibst du sie groß. Neben einem offenen Artikel (‚das Lachen‘, ‚ein lautes Rufen‘) weist auch ein versteckter Artikel in einer Präposition darauf hin: ‚beim‘ (= bei dem) Lesen, ‚zum‘ (= zu dem) Üben, ‚am‘ (= an dem) Schreiben, ‚im‘ (= in dem) Gehen.",
-			"Weitere wichtige Signalwörter sind Mengenangaben und unbestimmte Pronomen wie ‚etwas‘, ‚nichts‘, ‚viel‘, ‚wenig‘ oder ‚alles‘ vor einem gebeugten Adjektiv: ‚etwas Neues‘, ‚nichts Gutes‘, ‚viel Spannendes‘. Steht zwischen Artikel und nominalisiertem Wort noch ein Begleitadjektiv, bleibt das Adjektiv klein und der Kern wird groß: ‚das laute Lesen‘."
+			"Weitere wichtige Signalwörter sind Mengenangaben und unbestimmte Pronomen wie ‚etwas‘, ‚nichts‘, ‚viel‘, ‚wenig‘ oder ‚alles‘, wenn das Adjektiv dahinter selbst als Nomen gebraucht wird und kein eigenes Bezugsnomen folgt: ‚etwas Neues‘, ‚nichts Gutes‘, ‚viel Gutes‘. Folgt dagegen noch ein eigenes Nomen, beschreibt das Adjektiv dieses Nomen wie gewohnt und bleibt klein: ‚viel gutes Essen‘. Ebenso bleibt zwischen Artikel und nominalisiertem Wort ein Begleitadjektiv klein: ‚das laute Lesen‘."
 		],
 		"materialLabel": "Drei Sätze mit Nominalisierungen",
 		"material": "Satz eins: Beim Schreiben einer Spielszene hilft gemeinsames Überarbeiten und das laute Vorlesen.\nSatz zwei: Sie hoffte auf etwas Besonderes und verlor beim Lachen die Anspannung.\nSatz drei: Zum Ausruhen blieb nach dem Spiel wenig Zeit, doch nichts Schlimmes geschah.",
 		"sourceIds": ["lehrplan"],
 		"check": {
 			"wrong": "Weil das Wort dort als Verb im Präteritum steht.",
-			"explanation": "Nach Signalwörtern wie ‚etwas‘, ‚nichts‘, ‚viel‘ oder ‚alles‘ steht das folgende Adjektiv als Nominalisierung mit großem Anfangsbuchstaben."
+			"explanation": "Auf ‚etwas‘ folgt hier kein eigenes Nomen, sondern ‚Spannendes‘ übernimmt selbst die Rolle eines Nomens (‚viel Gutes‘ im Unterschied zu ‚viel gutes Essen‘) und wird darum großgeschrieben."
 		},
-		"takeaway": "Prüfe vor einem Verb oder Adjektiv, ob ein Artikel, ein versteckter Artikel (beim/zum/am) oder ein Signalwort (etwas/nichts/viel) davorsteht.",
+		"takeaway": "Prüfe vor einem Verb oder Adjektiv, ob ein Artikel, ein versteckter Artikel (beim/zum/am) oder ein Signalwort (etwas/nichts/viel) das Wort selbst zum Nomen macht; vor einem Bezugsnomen (‚viel gutes Essen‘) bleibt das Adjektiv klein.",
 		"lehrplan": "D5 · 4.3 · 4.2",
 		"cases": [
 			{
@@ -4915,7 +4915,7 @@
 					"Zum Probieren bringt niemand etwas Gutes mit."
 				],
 				"answer": "Zum Probieren bringt niemand etwas Gutes mit.",
-				"feedback": "In ‚zum‘ steckt ‚zu dem‘ (‚das Probieren‘); auf ‚etwas‘ folgt das nominalisierte Adjektiv ‚Gutes‘."
+				"feedback": "In ‚zum‘ steckt ‚zu dem‘ (‚das Probieren‘); auf ‚etwas‘ folgt hier kein eigenes Nomen, sondern das nominalisierte Adjektiv ‚Gutes‘."
 			}
 		],
 		"tasks": {
@@ -5003,7 +5003,7 @@
 				{
 					"label": "Mengenangabe nutzen",
 					"text": "etwas Spannendes",
-					"detail": "Nach ‚etwas‘, ‚nichts‘, ‚viel‘, ‚wenig‘ oder ‚alles‘ wird das gebeugte Adjektiv großgeschrieben.",
+					"detail": "Steht nach ‚etwas‘, ‚nichts‘, ‚viel‘, ‚wenig‘ oder ‚alles‘ ein allein gebrauchtes Adjektiv ohne eigenes Bezugsnomen dahinter, wird es als Nomen großgeschrieben (‚viel Gutes‘, aber ‚viel gutes Essen‘).",
 					"blocks": [
 						{
 							"text": "etwas",
