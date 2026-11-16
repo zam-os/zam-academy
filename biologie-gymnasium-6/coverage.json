@@ -1,0 +1,572 @@
+{
+  "curriculum": "https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/6/nt_gym",
+  "checked": "2026-11-16",
+  "curriculum_sha256": "90af78646f82002c9adadeaff133b45196de5e279a79ee06c168b2b70aeccea4",
+  "school_type": "gymnasium",
+  "grade": 6,
+  "subject": "nt_gym",
+  "scope": "Natur und Technik 6, Lernbereich 1 Schwerpunkt Biologie (Teilbereiche 1.1 bis 1.5, ca. 56 Std.). Lernbereich 2 Schwerpunkt Informatik (ca. 28 Std.) is covered by the package informatik-gymnasium-6.",
+  "track": "Grade 6 has one Fachlehrplan for all Ausbildungsrichtungen; no lesson carries a track.",
+  "note": "The official page prints the editing marker [/decision] twice inside the competence on Stoff- und Energiemanagement, with an unopened bracket; it is copied verbatim.",
+  "optional_lessons": [],
+  "rows": [
+    {
+      "lb": "1.1",
+      "section": "NT6 1.1 Erkenntnisse gewinnen – kommunizieren – bewerten",
+      "position": 1,
+      "competence": "unterscheiden die Phasen des naturwissenschaftlichen Erkenntnisweges und planen ihn anhand vorgegebener Kriterien, um Fragestellungen systematisch zu bearbeiten.",
+      "lessons": [
+        "bg6-erkenntnisweg",
+        "bg6-keimung"
+      ],
+      "status": "implemented",
+      "evidence": "The Erkenntnisweg lesson names the phases and plans a cress investigation against six planning criteria (question, hypothesis, variable, constants, control, measurement); the germination lesson applies the plan to four factors."
+    },
+    {
+      "lb": "1.1",
+      "section": "NT6 1.1 Erkenntnisse gewinnen – kommunizieren – bewerten",
+      "position": 2,
+      "competence": "führen vorstrukturierte einfache naturwissenschaftliche Untersuchungen zu vorgegebenen und eigenen Themen und Fragestellungen durch und verwenden dabei ggf. einfache Geräte und Hilfsmittel.",
+      "lessons": [
+        "bg6-erkenntnisweg",
+        "bg6-variablen-kontrolle",
+        "bg6-keimung",
+        "bg6-gewaesser-untersuchen"
+      ],
+      "status": "supported",
+      "evidence": "The lessons pre-structure investigations step by step (cress germination, yeast and warmth, pond measurements) and the fairTest and germination labs let learners run them as models.",
+      "in_class": "Carrying out real, pre-structured investigations with seeds, yeast, thermometers and Secchi discs happens in the Fachraum and outdoors."
+    },
+    {
+      "lb": "1.1",
+      "section": "NT6 1.1 Erkenntnisse gewinnen – kommunizieren – bewerten",
+      "position": 3,
+      "competence": "unterscheiden bei der Durchführung von Experimenten Variablen und Konstanten und begründen die Notwendigkeit eines Kontrollversuchs.",
+      "lessons": [
+        "bg6-variablen-kontrolle",
+        "bg6-keimung"
+      ],
+      "status": "implemented",
+      "evidence": "The variable lesson defines Variable, Konstante and Kontrollversuch with a classify workshop; the fairTest lab and the germination lab only count a comparison as fair when exactly one variable differs from the control dish."
+    },
+    {
+      "lb": "1.1",
+      "section": "NT6 1.1 Erkenntnisse gewinnen – kommunizieren – bewerten",
+      "position": 4,
+      "competence": "beobachten Lebewesen und ihre Lebenserscheinungen auch in der natürlichen Umgebung anhand von wenigen vorgegebenen Kriterien und dokumentieren strukturiert ihre Beobachtung.",
+      "lessons": [
+        "bg6-beobachten-protokoll",
+        "bg6-gewaesser-lebewesen"
+      ],
+      "status": "supported",
+      "evidence": "The observation lesson sets criteria before observing, separates observation from interpretation and builds a structured observation sheet for birds at a feeder; the pond lesson describes careful catching and returning of small animals.",
+      "in_class": "Observing living animals and plants on the school grounds or at the pond with a prepared sheet stays in class."
+    },
+    {
+      "lb": "1.1",
+      "section": "NT6 1.1 Erkenntnisse gewinnen – kommunizieren – bewerten",
+      "position": 5,
+      "competence": "verwenden ein Lichtmikroskop oder Binokular nach Anleitung, um tierische und pflanzliche Präparate zu betrachten, und erstellen nach Vorgaben beschriftete Zeichnungen der betrachteten biologischen Strukturen.",
+      "lessons": [
+        "bg6-mikroskop-binokular"
+      ],
+      "status": "supported",
+      "evidence": "The lesson compares magnifier, binocular and light microscope, rehearses focusing with the microscope lab (40-, 100- and 400-fold) and teaches the rules of a labelled biological drawing.",
+      "in_class": "Using a real light microscope or binocular and drawing the specimen by hand happens in the Fachraum."
+    },
+    {
+      "lb": "1.1",
+      "section": "NT6 1.1 Erkenntnisse gewinnen – kommunizieren – bewerten",
+      "position": 6,
+      "competence": "stellen einfache Präparate ggf. mit geeigneten Schnitttechniken selbst her und färben diese ggf. an.",
+      "lessons": [
+        "bg6-praeparieren"
+      ],
+      "status": "supported",
+      "evidence": "The lesson walks through wet mounts, cutting thin cross-sections of a stem and staining with filter paper, with a timeline workshop and two troubleshooting tasks.",
+      "in_class": "Cutting sections with a razor blade and staining real slides is done under supervision in class."
+    },
+    {
+      "lb": "1.1",
+      "section": "NT6 1.1 Erkenntnisse gewinnen – kommunizieren – bewerten",
+      "position": 7,
+      "competence": "bestimmen ausgewählte Lebewesen mithilfe von in einfacher Fachsprache beschriebenen Abbildungen oder mithilfe eines einfachen dichotomen Schlüssels (ggf. digitale Nachschlagewerke), um ihre Artenkenntnis zu erweitern.",
+      "lessons": [
+        "bg6-wirbeltierklassen",
+        "bg6-gewaesser-lebewesen"
+      ],
+      "status": "implemented",
+      "evidence": "The vertebrateKey lab is a dichotomous key that classifies unknown vertebrates (Blindschleiche, Feuersalamander, Seepferdchen, Pinguin, Delfin, Fledermaus) by described features; the pond lesson explains dichotomous keys and checking app results."
+    },
+    {
+      "lb": "1.1",
+      "section": "NT6 1.1 Erkenntnisse gewinnen – kommunizieren – bewerten",
+      "position": 8,
+      "competence": "analysieren einfache naturwissenschaftliche Untersuchungen und leiten mögliche Fehlerquellen und Möglichkeiten der Fehlervermeidung für Erkenntniswege ab.",
+      "lessons": [
+        "bg6-fehlerquellen",
+        "bg6-variablen-kontrolle"
+      ],
+      "status": "implemented",
+      "evidence": "The error lesson analyses investigations phase by phase, sorts error sources into planning, execution and evaluation and derives a way to avoid each one; tasks diagnose two flawed germination experiments."
+    },
+    {
+      "lb": "1.1",
+      "section": "NT6 1.1 Erkenntnisse gewinnen – kommunizieren – bewerten",
+      "position": 9,
+      "competence": "vergleichen Modelle mit der Realität, erkennen Modelle als solche und beschreiben Abweichungen zur Realität.",
+      "lessons": [
+        "bg6-modelle",
+        "bg6-photosynthese"
+      ],
+      "status": "implemented",
+      "evidence": "The model lesson compares a paper model of the maple fruit with the original and names deviations; the photosynthesis lesson marks its particle model as strongly simplified."
+    },
+    {
+      "lb": "1.1",
+      "section": "NT6 1.1 Erkenntnisse gewinnen – kommunizieren – bewerten",
+      "position": 10,
+      "competence": "übertragen einfache Sachverhalte auf ein bestehendes Modell bzw. setzen ein bestehendes Modell zu einem einfachen Sachverhalt in Bezug.",
+      "lessons": [
+        "bg6-modelle",
+        "bg6-photosynthese",
+        "bg6-evolution"
+      ],
+      "status": "implemented",
+      "evidence": "Learners transfer a heavier clip to the paper model and check the prediction against the original, model photosynthesis in the particle model and apply the simplified evolution model to snow hares and giraffes."
+    },
+    {
+      "lb": "1.1",
+      "section": "NT6 1.1 Erkenntnisse gewinnen – kommunizieren – bewerten",
+      "position": 11,
+      "competence": "protokollieren auch mithilfe von Zeichnungen einfache Arbeitsabläufe und Ergebnisse weitgehend selbständig.",
+      "lessons": [
+        "bg6-beobachten-protokoll",
+        "bg6-mikroskop-binokular"
+      ],
+      "status": "supported",
+      "evidence": "The lesson teaches the parts of a protocol with a classify workshop and a rewriting task; the microscope lesson covers labelled drawings with title, instrument and magnification.",
+      "in_class": "Writing complete protocols with hand-drawn sketches of a real experiment stays in class."
+    },
+    {
+      "lb": "1.1",
+      "section": "NT6 1.1 Erkenntnisse gewinnen – kommunizieren – bewerten",
+      "position": 12,
+      "competence": "überführen Sachverhalte in eine sachgerechte Darstellungsform (z. B. Text, Schemazeichnung, Diagramm, Tabelle) und wandeln Darstellungsformen ineinander um.",
+      "lessons": [
+        "bg6-darstellungsformen",
+        "bg6-gewaesser-untersuchen"
+      ],
+      "status": "implemented",
+      "evidence": "The lesson contrasts table, bar chart and line chart with model data from the germination and waterweed labs; a workshop picks the right chart for six data sets, and tasks turn a table into a chart."
+    },
+    {
+      "lb": "1.1",
+      "section": "NT6 1.1 Erkenntnisse gewinnen – kommunizieren – bewerten",
+      "position": 13,
+      "competence": "beschreiben in Fachsprache Beziehungen zwischen mehreren Fakten in richtigem Kausalzusammenhang (z. B. Je-desto-Beziehungen).",
+      "lessons": [
+        "bg6-darstellungsformen",
+        "bg6-atmungsorgane",
+        "bg6-elternaufwand"
+      ],
+      "status": "implemented",
+      "evidence": "Je-desto sentences are taught with the waterweed data, including cause and effect; breathing organs and parental investment end in je-desto rules learners formulate themselves."
+    },
+    {
+      "lb": "1.1",
+      "section": "NT6 1.1 Erkenntnisse gewinnen – kommunizieren – bewerten",
+      "position": 14,
+      "competence": "schätzen Quellen zu einfachen biologischen Themen nach vorgegebenen Kriterien ein und wählen aus vorgegebenen Quellen geeignete aus.",
+      "lessons": [
+        "bg6-quellen-aussagen"
+      ],
+      "status": "implemented",
+      "evidence": "Learners judge sources by qualification and intention of the author, target group and simplification, currency and evidence, and choose a suitable source from three given ones."
+    },
+    {
+      "lb": "1.1",
+      "section": "NT6 1.1 Erkenntnisse gewinnen – kommunizieren – bewerten",
+      "position": 15,
+      "competence": "unterscheiden zwischen beschreibenden und bewertenden Aussagen, um Fakten von Bewertungen und Meinungen abzugrenzen.",
+      "lessons": [
+        "bg6-quellen-aussagen"
+      ],
+      "status": "implemented",
+      "evidence": "A workshop sorts statements about animals into descriptive, evaluative and anthropomorphic; a task rewrites a humanising text about blackbirds into a factual description."
+    },
+    {
+      "lb": "1.1",
+      "section": "NT6 1.1 Erkenntnisse gewinnen – kommunizieren – bewerten",
+      "position": 16,
+      "competence": "wägen Folgen von Handlungen des Menschen für sich und seine Umwelt ab, die die Lebenswelt der Schülerinnen und Schüler betreffen, um bewusste Entscheidungen treffen zu können.",
+      "lessons": [
+        "bg6-heim-nutztiere",
+        "bg6-gewaesser-schutz",
+        "bg6-bedeutung-photosynthese"
+      ],
+      "status": "implemented",
+      "evidence": "Learners weigh animal welfare against price when buying eggs (egg code 0 to 3), plan the purchase of guinea pigs, write a sign against feeding ducks and compare burning wood and coal."
+    },
+    {
+      "lb": "1.2",
+      "section": "NT6 1.2 Samenpflanzen als Lebewesen",
+      "subsection": "Fortpflanzung, Wachstum und Individualentwicklung",
+      "position": 1,
+      "competence": "stellen den Zusammenhang zwischen der Struktur von Früchten und Samen und deren Funktion für die Fortpflanzung und Ausbreitung von Pflanzen dar und wägen Kosten und Nutzen verschiedener Ausbreitungsstrategien ab.",
+      "lessons": [
+        "bg6-samen-frucht",
+        "bg6-ausbreitung"
+      ],
+      "status": "implemented",
+      "evidence": "The seed lesson covers fruit as dispersal unit and seed coat, embryo and nutritive tissue; the dispersal lab and lesson weigh costs and benefits of wind, hook and lure fruits."
+    },
+    {
+      "lb": "1.2",
+      "section": "NT6 1.2 Samenpflanzen als Lebewesen",
+      "subsection": "Fortpflanzung, Wachstum und Individualentwicklung",
+      "position": 2,
+      "competence": "vergleichen Strukturen von Samenpflanzen mit technischen Anwendungen, um zu erkennen, dass die Natur Ideengeberin für Ingenieure sein kann.",
+      "lessons": [
+        "bg6-bionik-pflanzen"
+      ],
+      "status": "implemented",
+      "evidence": "The lesson compares maple fruit and rotor, burdock and Velcro, lotus leaf and self-cleaning paint, and asks learners to separate the transferred principle from copied looks."
+    },
+    {
+      "lb": "1.2",
+      "section": "NT6 1.2 Samenpflanzen als Lebewesen",
+      "subsection": "Fortpflanzung, Wachstum und Individualentwicklung",
+      "position": 3,
+      "competence": "vergleichen Kosten und Nutzen der geschlechtlichen und der ungeschlechtlichen Fortpflanzung bei Samenpflanzen.",
+      "lessons": [
+        "bg6-ungeschlechtlich"
+      ],
+      "status": "implemented",
+      "evidence": "Strawberry runners, potato tubers and cuttings are compared with seeds; a workshop and a task on a single-variety potato field weigh speed and uniformity against variety."
+    },
+    {
+      "lb": "1.2",
+      "section": "NT6 1.2 Samenpflanzen als Lebewesen",
+      "subsection": "Fortpflanzung, Wachstum und Individualentwicklung",
+      "position": 4,
+      "competence": "schließen aus selbst durchgeführten Experimenten hypothesengeleitet auf den Einfluss verschiedener Außenfaktoren auf Keimung und Wachstum.",
+      "lessons": [
+        "bg6-keimung"
+      ],
+      "status": "supported",
+      "evidence": "The germination lab tests water, oxygen, light and temperature against a control dish, only accepting a one-variable change; tasks plan a temperature experiment and explain failed sowing.",
+      "in_class": "Running the germination experiments with real cress or beans over several days is done in class or at home."
+    },
+    {
+      "lb": "1.2",
+      "section": "NT6 1.2 Samenpflanzen als Lebewesen",
+      "subsection": "Stoffwechsel: Stoff- und Energieumwandlung",
+      "position": 5,
+      "competence": "beschreiben die Aufgaben und das Zusammenspiel der verschiedenen Teile einer Samenpflanze.",
+      "lessons": [
+        "bg6-pflanzenteile"
+      ],
+      "status": "implemented",
+      "evidence": "The lesson describes root, shoot axis and leaf with their tasks and the transport of water and sugar, and a task explains wilting after transplanting through the interplay of the organs."
+    },
+    {
+      "lb": "1.2",
+      "section": "NT6 1.2 Samenpflanzen als Lebewesen",
+      "subsection": "Stoffwechsel: Stoff- und Energieumwandlung",
+      "position": 6,
+      "competence": "modellieren stark vereinfacht die Stoffänderung bei Zellatmung und Photosynthese auf Teilchenebene und stellen einen Zusammenhang in stofflicher und energetischer Sicht zwischen Photosynthese und Zellatmung her.",
+      "lessons": [
+        "bg6-photosynthese",
+        "bg6-zellatmung-photosynthese"
+      ],
+      "status": "implemented",
+      "evidence": "The particle figure rebuilds 6 carbon dioxide and 6 water particles into one glucose and 6 oxygen particles with all building blocks counted; the second lesson relates photosynthesis and respiration materially and energetically."
+    },
+    {
+      "lb": "1.2",
+      "section": "NT6 1.2 Samenpflanzen als Lebewesen",
+      "subsection": "Stoffwechsel: Stoff- und Energieumwandlung",
+      "position": 7,
+      "competence": "erklären die grundlegende Bedeutung der Photosynthese für das Leben auf der Erde und die Energieversorgung der Menschheit.",
+      "lessons": [
+        "bg6-bedeutung-photosynthese"
+      ],
+      "status": "implemented",
+      "evidence": "The lesson covers food, oxygen, renewable raw materials and fossil fuels as stored solar energy, with a workshop and a task tracing the energy in an egg back to the sun."
+    },
+    {
+      "lb": "1.2",
+      "section": "NT6 1.2 Samenpflanzen als Lebewesen",
+      "subsection": "Informationsaufnahme, Informationsverarbeitung und Reaktion, aktive Bewegung",
+      "position": 8,
+      "competence": "beschreiben verschiedene durch Umweltreize ausgelöste Reaktionen bei Pflanzen und erklären ihre Bedeutungen für das Überleben der Pflanzen.",
+      "lessons": [
+        "bg6-pflanzen-reagieren"
+      ],
+      "status": "implemented",
+      "evidence": "Reactions to light, gravity and touch are linked to nutrition, reproduction and protection (shoot to the light, dandelion flowers opening, mimosa folding)."
+    },
+    {
+      "lb": "1.2",
+      "section": "NT6 1.2 Samenpflanzen als Lebewesen",
+      "subsection": "Informationsaufnahme, Informationsverarbeitung und Reaktion, aktive Bewegung",
+      "position": 9,
+      "competence": "erklären Vorgänge, die zu Pflanzenbewegungen führen, um das Reaktionsvermögen bei Pflanzen und Tieren zu vergleichen.",
+      "lessons": [
+        "bg6-phototropismus"
+      ],
+      "status": "implemented",
+      "evidence": "The phototropism lab bends an oat seedling to side light, shows no bending with a covered tip and etiolation in darkness; the lesson explains the simplified mechanism and compares it with a human stimulus-response chain."
+    },
+    {
+      "lb": "1.3",
+      "section": "NT6 1.3 Biodiversität bei Wirbeltieren – Variabilität und Angepasstheit",
+      "subsection": "Aktive Bewegung",
+      "position": 1,
+      "competence": "vergleichen Vertreter aus unterschiedlichen Wirbeltierklassen hinsichtlich ihrer speziellen Angepasstheit in Bezug auf die aktive Bewegung. Dabei identifizieren sie arttypische Merkmale und unterscheiden sie von allgemeinen Merkmalen übergeordneter systematischer Gruppen.",
+      "lessons": [
+        "bg6-schwimmen",
+        "bg6-fliegen",
+        "bg6-laufen-graben-klettern"
+      ],
+      "status": "implemented",
+      "evidence": "Trout, pigeon, horse, cat and mole are compared in their locomotion; workshops separate class features (feathers, beak) from species-specific adaptations (soaring wings, flippers)."
+    },
+    {
+      "lb": "1.3",
+      "section": "NT6 1.3 Biodiversität bei Wirbeltieren – Variabilität und Angepasstheit",
+      "subsection": "Aktive Bewegung",
+      "position": 2,
+      "competence": "vergleichen die Angepasstheit der aktiven Fortbewegung an verschiedene Lebensräume.",
+      "lessons": [
+        "bg6-laufen-graben-klettern",
+        "bg6-schwimmen"
+      ],
+      "status": "implemented",
+      "evidence": "Locomotion is linked to water, air, soil and trees (spindle shape, wings, digging hands, climbing claws); the streamline lab compares body shapes in water."
+    },
+    {
+      "lb": "1.3",
+      "section": "NT6 1.3 Biodiversität bei Wirbeltieren – Variabilität und Angepasstheit",
+      "subsection": "Aktive Bewegung",
+      "position": 3,
+      "competence": "leiten aus den Erkenntnissen über den Bau von Fortbewegungsstrukturen bei Wirbeltieren Konstruktionsmöglichkeiten zur technischen Unterstützung menschlicher Mobilität ab.",
+      "lessons": [
+        "bg6-bionik-tiere"
+      ],
+      "status": "implemented",
+      "evidence": "Learners derive ships, wing tips, riblet foils and running prostheses from penguin, bird wing, shark skin and fast runners, and name the limits of each transfer."
+    },
+    {
+      "lb": "1.3",
+      "section": "NT6 1.3 Biodiversität bei Wirbeltieren – Variabilität und Angepasstheit",
+      "subsection": "Stoffwechsel: Stoff- und Energieumwandlung",
+      "position": 4,
+      "competence": "vergleichen Vertreter aus unterschiedlichen Wirbeltierklassen hinsichtlich ihrer speziellen Angepasstheiten im Bereich Stoffaufnahme und Energiehaushalt. Dabei identifizieren sie arttypische Merkmale und unterscheiden sie von allgemeinen Merkmalen übergeordneter systematischer Gruppen.",
+      "lessons": [
+        "bg6-gebisse",
+        "bg6-schnaebel",
+        "bg6-koerpertemperatur"
+      ],
+      "status": "implemented",
+      "evidence": "Teeth of dog and cow, beaks of six birds and the thermo lab with lizard and mouse compare food uptake and energy budget across classes."
+    },
+    {
+      "lb": "1.3",
+      "section": "NT6 1.3 Biodiversität bei Wirbeltieren – Variabilität und Angepasstheit",
+      "subsection": "Stoffwechsel: Stoff- und Energieumwandlung",
+      "position": 5,
+      "competence": "vergleichen Vertreter einer Wirbeltierklasse hinsichtlich ihrer unterschiedlichen Strategien zum Nahrungserwerb und zur Nahrungsverwertung.",
+      "lessons": [
+        "bg6-gebisse",
+        "bg6-schnaebel"
+      ],
+      "status": "implemented",
+      "evidence": "Within the mammals, predator and grazer strategies (wolf, cow) are compared; within the birds, six beak types show different ways of gaining and using food."
+    },
+    {
+      "lb": "1.3",
+      "section": "NT6 1.3 Biodiversität bei Wirbeltieren – Variabilität und Angepasstheit",
+      "subsection": "Stoffwechsel: Stoff- und Energieumwandlung",
+      "position": 6,
+      "competence": "erklären das Stoff- und Energiemanagement [/decision]z. B. bei Energiemangel)[/decision] einzelner Vertreter aus ihrer Fähigkeit zur Regulation der Körpertemperatur.",
+      "lessons": [
+        "bg6-koerpertemperatur",
+        "bg6-ueberwintern"
+      ],
+      "status": "implemented",
+      "evidence": "The thermo lab shows a lizard falling into torpor and a mouse needing more food in the cold; the winter lesson explains torpor, hibernation, winter rest, migration and food stores as energy management."
+    },
+    {
+      "lb": "1.3",
+      "section": "NT6 1.3 Biodiversität bei Wirbeltieren – Variabilität und Angepasstheit",
+      "subsection": "Stoffwechsel: Stoff- und Energieumwandlung",
+      "position": 7,
+      "competence": "stellen einen Zusammenhang zwischen Sauerstoffbedarf, Lebensweise und Bau der Atmungsorgane her.",
+      "lessons": [
+        "bg6-atmungsorgane"
+      ],
+      "status": "implemented",
+      "evidence": "Gills, amphibian lungs and skin, reptile, bird and mammal lungs are linked to oxygen demand and way of life, ending in a je-desto rule."
+    },
+    {
+      "lb": "1.3",
+      "section": "NT6 1.3 Biodiversität bei Wirbeltieren – Variabilität und Angepasstheit",
+      "subsection": "Fortpflanzung, Wachstum und Individualentwicklung",
+      "position": 8,
+      "competence": "vergleichen Vertreter aus unterschiedlichen Wirbeltierklassen hinsichtlich ihrer verschiedenen Strategien zu Fortpflanzung und Individualentwicklung. Dabei identifizieren sie arttypische Merkmale und unterscheiden sie von allgemeinen Merkmalen übergeordneter systematischer Gruppen.",
+      "lessons": [
+        "bg6-fortpflanzung-wasser-land",
+        "bg6-metamorphose",
+        "bg6-nesthocker-nestfluechter"
+      ],
+      "status": "implemented",
+      "evidence": "External and internal fertilisation, eggs with and without shell, metamorphosis of the common frog (lab) and altricial versus precocial young are compared across the classes."
+    },
+    {
+      "lb": "1.3",
+      "section": "NT6 1.3 Biodiversität bei Wirbeltieren – Variabilität und Angepasstheit",
+      "subsection": "Fortpflanzung, Wachstum und Individualentwicklung",
+      "position": 9,
+      "competence": "beschreiben Möglichkeiten der innerartlichen Kommunikation und stellen ihre Bedeutung für die Fortpflanzung dar.",
+      "lessons": [
+        "bg6-kommunikation"
+      ],
+      "status": "implemented",
+      "evidence": "Song of the blackbird, frog calls, nuptial colouring and zigzag dance of the stickleback and roaring of red deer are described with their meaning for reproduction."
+    },
+    {
+      "lb": "1.3",
+      "section": "NT6 1.3 Biodiversität bei Wirbeltieren – Variabilität und Angepasstheit",
+      "subsection": "Fortpflanzung, Wachstum und Individualentwicklung",
+      "position": 10,
+      "competence": "vergleichen die Angepasstheit der Fortpflanzung an verschiedene Lebensräume.",
+      "lessons": [
+        "bg6-fortpflanzung-wasser-land",
+        "bg6-metamorphose"
+      ],
+      "status": "implemented",
+      "evidence": "The lessons explain the growing independence from water from spawn to shelled eggs and the womb, and why the frog stays bound to water."
+    },
+    {
+      "lb": "1.3",
+      "section": "NT6 1.3 Biodiversität bei Wirbeltieren – Variabilität und Angepasstheit",
+      "subsection": "Fortpflanzung, Wachstum und Individualentwicklung",
+      "position": 11,
+      "competence": "erklären verschiedene Phänomene bei Fortpflanzung und Individualentwicklung unter dem Gesichtspunkt des Elternaufwands.",
+      "lessons": [
+        "bg6-elternaufwand",
+        "bg6-nesthocker-nestfluechter"
+      ],
+      "status": "implemented",
+      "evidence": "Cod, common frog, stickleback, blackbird and humans show the trade-off between number of offspring and care; altricial and precocial young are explained by habitat."
+    },
+    {
+      "lb": "1.3",
+      "section": "NT6 1.3 Biodiversität bei Wirbeltieren – Variabilität und Angepasstheit",
+      "subsection": "Informationsaufnahme, Informationsverarbeitung und Reaktion",
+      "position": 12,
+      "competence": "vergleichen exemplarisch Vertreter aus unterschiedlichen Wirbeltierklassen hinsichtlich ihrer speziellen Angepasstheiten im Bereich der Informationsaufnahme. Dabei identifizieren sie arttypische Merkmale und unterscheiden sie von allgemeinen Merkmalen übergeordneter systematischer Gruppen.",
+      "lessons": [
+        "bg6-sinnesleistungen",
+        "bg6-sinne-lebensraum"
+      ],
+      "status": "implemented",
+      "evidence": "Echolocation (lab with echo times), lateral line and pit organ, and the senses of owl, buzzard, hare, mole and dog are compared across classes."
+    },
+    {
+      "lb": "1.3",
+      "section": "NT6 1.3 Biodiversität bei Wirbeltieren – Variabilität und Angepasstheit",
+      "subsection": "Informationsaufnahme, Informationsverarbeitung und Reaktion",
+      "position": 13,
+      "competence": "vergleichen die Angepasstheit der Sinnesorgane an verschiedene Lebensräume und Lebensweisen.",
+      "lessons": [
+        "bg6-sinne-lebensraum",
+        "bg6-sinnesleistungen"
+      ],
+      "status": "implemented",
+      "evidence": "Night and day hunters, prey with lateral eyes, life under ground and in turbid water show how the sensitivity of sense organs matches habitat and way of life."
+    },
+    {
+      "lb": "1.4",
+      "section": "NT6 1.4 Verwandtschaft der Wirbeltiere und Evolution",
+      "position": 1,
+      "competence": "vergleichen kriteriengeleitet die Wirbeltierklassen und ordnen unbekannte Wirbeltiere anhand ihrer charakteristischen Merkmale einer Klasse zu.",
+      "lessons": [
+        "bg6-wirbeltierklassen"
+      ],
+      "status": "implemented",
+      "evidence": "A five-class table by body cover, temperature, breathing and reproduction, a classify workshop and the vertebrateKey lab assign unknown vertebrates by their characteristic features."
+    },
+    {
+      "lb": "1.4",
+      "section": "NT6 1.4 Verwandtschaft der Wirbeltiere und Evolution",
+      "position": 2,
+      "competence": "vergleichen Züchtungsvorgänge durch den Menschen mit natürlichen Evolutionsprozessen und bewerten Vor- und Nachteile von Züchtung.",
+      "lessons": [
+        "bg6-evolution",
+        "bg6-zuechtung"
+      ],
+      "status": "implemented",
+      "evidence": "A simplified model of variation, inheritance and selection (mice on dark ground) is compared with breeding (wolf to dog breeds); learners judge the benefits and harms of breeding including Qualzucht."
+    },
+    {
+      "lb": "1.4",
+      "section": "NT6 1.4 Verwandtschaft der Wirbeltiere und Evolution",
+      "position": 3,
+      "competence": "bewerten die Haltung von Wirbeltieren als Heim- und Nutztiere und leiten daraus Konsequenzen für ihren Alltag ab, z. B. beim Konsumverhalten.",
+      "lessons": [
+        "bg6-heim-nutztiere"
+      ],
+      "status": "implemented",
+      "evidence": "Needs of pets and farm animals, the duty in § 2 TierSchG and the egg code lead to consequences for keeping animals and for buying animal products."
+    },
+    {
+      "lb": "1.5",
+      "section": "NT6 1.5 Ökosystem Gewässer",
+      "position": 1,
+      "competence": "führen im Freiland Untersuchungen zu verschiedenen Umweltfaktoren im aquatischen Ökosystem durch, protokollieren ihre Ergebnisse ggf. auch mithilfe digitaler Medien und erkunden so den Lebensraum.",
+      "lessons": [
+        "bg6-gewaesser-untersuchen"
+      ],
+      "status": "supported",
+      "evidence": "The lesson explains thermometer, Secchi disc and float measurement with a worked flow-speed calculation, repeated measurements and digital or paper protocols.",
+      "in_class": "Measuring water temperature, Secchi depth and flow speed at a real pond or stream happens outdoors with adults."
+    },
+    {
+      "lb": "1.5",
+      "section": "NT6 1.5 Ökosystem Gewässer",
+      "position": 2,
+      "competence": "bestimmen Lebewesen aquatischer Ökosysteme und erkunden so deren biologische Vielfalt.",
+      "lessons": [
+        "bg6-gewaesser-lebewesen"
+      ],
+      "status": "supported",
+      "evidence": "The lesson describes pond zones and typical plants and vertebrates, explains dichotomous keys and checking app results, and the vertebrateKey lab rehearses keying.",
+      "in_class": "Catching and identifying real pond organisms with net, tray and key happens at the pond."
+    },
+    {
+      "lb": "1.5",
+      "section": "NT6 1.5 Ökosystem Gewässer",
+      "position": 3,
+      "competence": "beschreiben ökologische Zusammenhänge innerhalb der Lebensgemeinschaft und zwischen Organismen und abiotischen Umweltfaktoren im Ökosystem.",
+      "lessons": [
+        "bg6-nahrungsnetz"
+      ],
+      "status": "implemented",
+      "evidence": "The foodWeb lab removes species from a pond food web and shows who loses food or an enemy; the lesson covers producers, consumers, decomposers and the ecosystem as living and non-living parts."
+    },
+    {
+      "lb": "1.5",
+      "section": "NT6 1.5 Ökosystem Gewässer",
+      "position": 4,
+      "competence": "erkennen Gefahren für ein Ökosystem und leiten daraus Möglichkeiten des Schutzes der biologischen Vielfalt ab.",
+      "lessons": [
+        "bg6-gewaesser-schutz"
+      ],
+      "status": "implemented",
+      "evidence": "Fertiliser, warming, straightening, weirs and waste are linked to their effects, and learners derive protection such as buffer strips, sewage plants and fish passes."
+    }
+  ]
+}

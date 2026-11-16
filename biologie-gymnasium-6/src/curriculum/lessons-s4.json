@@ -1,0 +1,414 @@
+[
+  {
+    "id": "bg6-schwimmen",
+    "lb": 4,
+    "title": "Schwimmen: Fische im Wasser",
+    "period": "NT6 1.3 · Aktive Bewegung",
+    "intro": "Eine Forelle steht scheinbar mühelos in der Strömung eines Bachs. Ihr ganzer Körper ist auf das Leben im Wasser abgestimmt.",
+    "paragraphs": [
+      "Wasser ist viel dichter als Luft und bremst jede Bewegung stark. Fische wie die Forelle haben deshalb eine Spindelform: vorne zugespitzt, in der Mitte am dicksten, nach hinten schmaler. Diese Stromlinienform setzt dem Wasser wenig Widerstand entgegen. Schuppen, die wie Dachziegel übereinanderliegen, und eine Schleimschicht machen die Oberfläche glatt. Den Antrieb liefert vor allem die Schwanzflosse, die mit kräftigen Muskeln hin- und hergeschlagen wird. Rücken- und Afterflosse verhindern, dass der Fisch kippt; die paarigen Brust- und Bauchflossen dienen zum Steuern und Bremsen. In der Schwimmblase, einem gasgefüllten Organ, regelt der Fisch, wie viel Gas sie enthält. So kann er ohne Anstrengung in einer bestimmten Tiefe schweben.",
+      "Interessant ist ein Vergleich über die Klassen hinweg. Auch der Pinguin, ein Vogel, und der Delfin, ein Säugetier, haben eine Spindelform und Flossen oder flossenartige Gliedmaßen. Diese Ähnlichkeit ist eine Angepasstheit an denselben Lebensraum, nicht ein Zeichen enger Verwandtschaft. Arttypische Merkmale wie die Spindelform des Delfins musst du deshalb von den allgemeinen Merkmalen seiner Klasse unterscheiden: Der Delfin atmet mit Lungen, ist gleichwarm und säugt seine Jungen; er ist ein Säugetier, kein Fisch. Der Pinguin hat Federn und legt Eier mit Kalkschale; er ist ein Vogel, der seine Flügel als Flossen benutzt."
+    ],
+    "takeaway": "Angepasstheit ans Schwimmen: Spindelform und glatte, schleimige Haut senken den Widerstand; Schwanzflosse treibt an, Rücken- und Afterflosse stabilisieren, Brust- und Bauchflossen steuern; die Schwimmblase ermöglicht Schweben. Ähnliche Körperform bei Pinguin und Delfin ist Angepasstheit, kein Klassenmerkmal.",
+    "sourceIds": [
+      "lehrplan",
+      "kx-fische",
+      "wp-schwimmblase",
+      "wp-stromlinienform",
+      "kx-forelle"
+    ],
+    "quiz": {
+      "question": "Welche Aufgabe hat die Schwimmblase eines Knochenfisches?",
+      "answer": "Sie ermöglicht es dem Fisch, ohne Anstrengung in einer bestimmten Tiefe zu schweben.",
+      "wrong": [
+        "Sie nimmt Sauerstoff aus dem Wasser auf.",
+        "Sie treibt den Fisch nach vorne an."
+      ],
+      "explanation": "Die Schwimmblase ist ein gasgefülltes Organ. Über die Gasmenge regelt der Fisch, dass er weder sinkt noch steigt. Sauerstoff nehmen die Kiemen auf, den Antrieb liefert die Schwanzflosse."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Körperteil und Aufgabe",
+      "instruction": "Ordne jede Aufgabe dem passenden Körperteil des Fisches zu.",
+      "categories": [
+        "Schwanzflosse",
+        "Rücken- und Afterflosse",
+        "Brust- und Bauchflossen",
+        "Schwimmblase"
+      ],
+      "entries": [
+        {
+          "text": "treibt den Fisch nach vorne",
+          "target": 0,
+          "feedback": "Der Hauptantrieb."
+        },
+        {
+          "text": "wird von kräftigen Muskeln hin und her bewegt",
+          "target": 0,
+          "feedback": "Die Schwanzflosse schlägt seitlich."
+        },
+        {
+          "text": "verhindert das Umkippen",
+          "target": 1,
+          "feedback": "Sie stabilisieren wie ein Kiel."
+        },
+        {
+          "text": "dienen zum Steuern und Bremsen",
+          "target": 2,
+          "feedback": "Die paarigen Flossen lenken."
+        },
+        {
+          "text": "ist mit Gas gefüllt",
+          "target": 3,
+          "feedback": "Ein Schwebeorgan."
+        },
+        {
+          "text": "lässt den Fisch in einer Tiefe schweben",
+          "target": 3,
+          "feedback": "Ohne Muskelarbeit."
+        }
+      ],
+      "conclusion": "Jedes Körperteil löst eine Aufgabe der Fortbewegung im Wasser."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Beschreibe drei Angepasstheiten der Forelle an das schnelle Schwimmen und erkläre jeweils ihren Nutzen.",
+        "hints": [
+          "Denke an Körperform, Haut und Flossen.",
+          "Wie hängt jede Angepasstheit mit dem Wasserwiderstand oder dem Antrieb zusammen?"
+        ],
+        "model": "Erstens hat die Forelle eine Spindelform: vorne spitz und hinten schmal. Dadurch bremst sie das Wasser wenig, und sie kommt mit wenig Kraft schnell voran. Zweitens ist ihre Haut mit dachziegelartigen Schuppen und Schleim bedeckt; die glatte Oberfläche verringert die Reibung. Drittens erzeugt sie mit der kräftigen Schwanzflosse den Antrieb, während Rücken- und Afterflosse sie stabil halten und die Brustflossen zum Steuern dienen.",
+        "criteria": [
+          "Ich nenne drei verschiedene Angepasstheiten.",
+          "Ich erkläre zu jeder den Nutzen.",
+          "Ich verwende Fachbegriffe wie Spindelform und Schwanzflosse."
+        ]
+      },
+      "2": {
+        "prompt": "In einem Quiz steht: „Der Delfin ist ein Fisch, weil er Flossen und eine Spindelform hat.“ Widerlege die Aussage.",
+        "hints": [
+          "Sind Spindelform und Flossen Klassenmerkmale?",
+          "Welche Merkmale haben Säugetiere?"
+        ],
+        "model": "Spindelform und Flossen sind Angepasstheiten an das schnelle Schwimmen im Wasser. Sie kommen bei Tieren verschiedener Klassen vor, zum Beispiel auch beim Pinguin, einem Vogel. Sie sagen also nichts über die Klasse aus. Entscheidend sind die allgemeinen Klassenmerkmale: Der Delfin atmet mit Lungen und muss zum Luftholen auftauchen, er ist gleichwarm, bringt lebende Junge zur Welt und säugt sie mit Milch. Das sind Merkmale der Säugetiere. Der Delfin ist daher ein Säugetier.",
+        "criteria": [
+          "Ich erkläre Spindelform und Flossen als Angepasstheit.",
+          "Ich nenne mindestens zwei Säugetiermerkmale des Delfins.",
+          "Ich ziehe die richtige Schlussfolgerung."
+        ]
+      }
+    },
+    "figures": [
+      "fisch-bau"
+    ],
+    "lab": "streamline"
+  },
+  {
+    "id": "bg6-fliegen",
+    "lb": 4,
+    "title": "Fliegen: Vögel in der Luft",
+    "period": "NT6 1.3 · Aktive Bewegung",
+    "intro": "Für einen Vogel, der fliegen muss, zählt jedes Gramm. Trotzdem braucht er kräftige Muskeln und stabile Knochen. Wie passt das zusammen?",
+    "paragraphs": [
+      "Vögel sind auf vielfältige Weise an das Fliegen angepasst. Ihr Körper ist leicht und trotzdem stabil gebaut. Viele Knochen sind hohle, luftgefüllte Röhrenknochen, die innen durch feine Verstrebungen gestützt werden. Statt eines schweren Kiefers mit Zähnen haben Vögel einen leichten Hornschnabel. Am Brustbein sitzt ein großer Kamm, an dem die kräftigen Flugmuskeln ansetzen; sie machen bei guten Fliegern einen großen Teil des Körpergewichts aus. Die Flügel tragen große Schwungfedern. Eine Feder hat einen Schaft und eine Fahne aus vielen Ästen, die mit winzigen Häkchen ineinandergreifen wie ein Reißverschluss. So entsteht eine geschlossene, leichte Fläche, die Luft wegdrücken kann. Darunter wärmen weiche Daunen.",
+      "Vögel nutzen verschiedene Flugarten. Beim Ruderflug schlagen sie aktiv mit den Flügeln; das kostet viel Energie. Beim Gleitflug breiten sie die Flügel aus und sinken langsam. Beim Segelflug nutzen Mäusebussard oder Weißstorch aufsteigende warme Luft und gewinnen ohne Flügelschlag an Höhe. Der Turmfalke steht im Rüttelflug mit schnellen Flügelschlägen auf der Stelle und sucht den Boden nach Mäusen ab. Arttypische Merkmale wie die langen, breiten Flügel des Bussards zum Segeln musst du von den allgemeinen Merkmalen der Vögel unterscheiden: Federn, Schnabel und Eier mit Kalkschale haben alle Vögel, auch Pinguin und Strauß, die nicht fliegen können."
+    ],
+    "takeaway": "Fluganpassungen: Leichtbau (hohle Röhrenknochen mit Verstrebungen, Hornschnabel ohne Zähne), großer Brustbeinkamm für die Flugmuskeln, Federn mit verhakten Ästen als geschlossene Fläche. Flugarten: Ruderflug, Gleitflug, Segelflug, Rüttelflug.",
+    "sourceIds": [
+      "lehrplan",
+      "kx-voegel",
+      "kx-feder",
+      "wp-vogelflug"
+    ],
+    "quiz": {
+      "question": "Welche Flugart nutzen Mäusebussard und Weißstorch, um ohne Flügelschlag in aufsteigender warmer Luft an Höhe zu gewinnen?",
+      "answer": "Den Segelflug",
+      "wrong": [
+        "Den Rüttelflug",
+        "Den Ruderflug"
+      ],
+      "explanation": "Beim Segelflug trägt aufsteigende warme Luft den Vogel nach oben, ohne dass er mit den Flügeln schlägt. Beim Ruderflug schlägt er aktiv, beim Rüttelflug steht er mit schnellen Schlägen auf der Stelle."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fluganpassung oder Klassenmerkmal?",
+      "instruction": "Ordne jedes Merkmal zu: Haben es alle Vögel, oder ist es eine besondere Angepasstheit einzelner Arten?",
+      "categories": [
+        "allgemeines Merkmal aller Vögel",
+        "arttypische Angepasstheit"
+      ],
+      "entries": [
+        {
+          "text": "Körper mit Federn bedeckt",
+          "target": 0,
+          "feedback": "Auch Pinguin und Strauß haben Federn."
+        },
+        {
+          "text": "Schnabel aus Horn",
+          "target": 0,
+          "feedback": "Alle Vögel haben einen Hornschnabel."
+        },
+        {
+          "text": "Eier mit Kalkschale",
+          "target": 0,
+          "feedback": "Ein Merkmal der ganzen Klasse."
+        },
+        {
+          "text": "lange, breite Flügel für den Segelflug beim Mäusebussard",
+          "target": 1,
+          "feedback": "Typisch für Segler."
+        },
+        {
+          "text": "Rüttelflug des Turmfalken",
+          "target": 1,
+          "feedback": "Eine besondere Jagdtechnik."
+        },
+        {
+          "text": "Flügel als Flossen beim Pinguin",
+          "target": 1,
+          "feedback": "Angepasstheit an das Tauchen."
+        }
+      ],
+      "conclusion": "Klassenmerkmale zeigen Verwandtschaft, arttypische Merkmale zeigen Angepasstheit."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre drei Merkmale im Körperbau einer Taube, die ihr das Fliegen ermöglichen.",
+        "hints": [
+          "Denke an Knochen, Muskeln und Federn.",
+          "Was ist leicht, was ist kräftig?"
+        ],
+        "model": "Erstens hat die Taube hohle, luftgefüllte Röhrenknochen mit inneren Verstrebungen. Sie sparen Gewicht und bleiben trotzdem stabil. Zweitens hat sie am Brustbein einen großen Kamm, an dem die kräftigen Flugmuskeln ansetzen, die die Flügel nach unten schlagen. Drittens tragen die Flügel große Schwungfedern, deren Äste mit Häkchen ineinandergreifen. So entsteht eine geschlossene Fläche, mit der die Taube Luft nach unten und hinten drücken kann.",
+        "criteria": [
+          "Ich nenne den Leichtbau der Knochen.",
+          "Ich erkläre den Brustbeinkamm mit den Flugmuskeln.",
+          "Ich beschreibe den Bau der Feder als geschlossene Fläche."
+        ]
+      },
+      "2": {
+        "prompt": "Weißstörche fliegen im Herbst nach Afrika und ziehen dabei bevorzugt über Land statt über das offene Meer. Erkläre das mit ihrer Flugart.",
+        "hints": [
+          "Welche Flugart nutzt der Storch vor allem?",
+          "Wo entsteht aufsteigende warme Luft?"
+        ],
+        "model": "Weißstörche nutzen auf ihrem langen Zug vor allem den Segelflug. Dabei lassen sie sich in aufsteigender warmer Luft nach oben tragen und gleiten dann ohne Flügelschlag zur nächsten Aufwindstelle. So sparen sie viel Energie. Aufsteigende warme Luft entsteht vor allem über Land, das sich in der Sonne stärker erwärmt. Über dem offenen Meer gibt es kaum solche Aufwinde; dort müssten die Störche im Ruderflug fliegen, was sehr viel Energie kostet. Deshalb wählen sie Wege mit möglichst kurzen Meeresstrecken.",
+        "criteria": [
+          "Ich nenne den Segelflug.",
+          "Ich erkläre, wo Aufwinde entstehen.",
+          "Ich verbinde Flugart und Energieverbrauch mit der Zugroute."
+        ]
+      }
+    },
+    "figures": [
+      "vogel-leichtbau",
+      "flugarten"
+    ]
+  },
+  {
+    "id": "bg6-laufen-graben-klettern",
+    "lb": 4,
+    "title": "Laufen, Graben, Klettern: Bewegung an Land",
+    "period": "NT6 1.3 · Aktive Bewegung",
+    "intro": "Ein Pferd galoppiert über die Weide, ein Maulwurf gräbt sich durch die Erde, ein Eichhörnchen springt von Ast zu Ast. Alle drei sind Säugetiere, und doch sind ihre Körper sehr verschieden.",
+    "paragraphs": [
+      "An Land tragen die Gliedmaßen das Gewicht des Körpers. Säugetiere setzen ihre Füße unterschiedlich auf. Sohlengänger wie Bär, Igel und Mensch setzen die ganze Fußsohle auf; sie stehen sicher, sind aber eher langsam. Zehengänger wie Hund und Katze laufen nur auf den Zehen; ihr Bein wird dadurch länger, sie sind schnell und leise. Zehenspitzengänger wie Pferd und Reh berühren den Boden nur mit den Zehenspitzen, die von Hufen umhüllt sind. Ihre langen Beine machen sie zu ausdauernden Läufern, mit denen sie in offener Landschaft vor Feinden fliehen können. Pferde haben nur noch eine einzige Zehe pro Bein.",
+      "Die Fortbewegung passt auch zum Lebensraum. Der Maulwurf lebt unter der Erde; seine Vorderbeine sind kurze, breite Schaufelhände mit starken Krallen, sein walzenförmiger Körper schiebt sich durch die Gänge, und sein kurzes Fell lässt sich in jede Richtung streichen, sodass er auch rückwärts laufen kann. Das Eichhörnchen klettert mit spitzen Krallen an der Rinde und balanciert mit seinem buschigen Schwanz. Der Grasfrosch springt mit langen Hinterbeinen und schwimmt mit Schwimmhäuten. Die Fledermaus fliegt mit einer Flughaut zwischen den verlängerten Fingern. Fortbewegung bringt Vorteile: Nahrung suchen, Feinden entkommen, Partner finden und neue Lebensräume erreichen."
+    ],
+    "takeaway": "Sohlengänger (ganze Sohle: standfest), Zehengänger (Zehen: schnell, leise), Zehenspitzengänger (Huf: ausdauernd). Angepasstheiten an Lebensräume: Schaufelhände (Graben), Krallen und Balancierschwanz (Klettern), Sprungbeine (Springen), Flughaut (Fliegen).",
+    "sourceIds": [
+      "lehrplan",
+      "wp-sohlengaenger",
+      "wp-zehengaenger",
+      "wp-spitzengaenger",
+      "kx-maulwurf",
+      "kx-eichhoernchen"
+    ],
+    "quiz": {
+      "question": "Welches Tier ist ein Zehenspitzengänger?",
+      "answer": "Das Pferd",
+      "wrong": [
+        "Der Hund",
+        "Der Braunbär"
+      ],
+      "explanation": "Das Pferd berührt den Boden nur mit der von einem Huf umhüllten Zehenspitze. Der Hund ist ein Zehengänger, der Bär ein Sohlengänger."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Wie setzt das Tier den Fuß auf?",
+      "instruction": "Ordne jedes Tier seiner Fußhaltung zu.",
+      "categories": [
+        "Sohlengänger",
+        "Zehengänger",
+        "Zehenspitzengänger"
+      ],
+      "entries": [
+        {
+          "text": "Braunbär",
+          "target": 0,
+          "feedback": "Er setzt die ganze Sohle auf."
+        },
+        {
+          "text": "Igel",
+          "target": 0,
+          "feedback": "Auch der Igel ist ein Sohlengänger."
+        },
+        {
+          "text": "Hauskatze",
+          "target": 1,
+          "feedback": "Sie läuft leise auf den Zehen."
+        },
+        {
+          "text": "Wolf",
+          "target": 1,
+          "feedback": "Ein ausdauernder Zehengänger."
+        },
+        {
+          "text": "Reh",
+          "target": 2,
+          "feedback": "Es läuft auf den Zehenspitzen mit Hufen."
+        },
+        {
+          "text": "Pferd",
+          "target": 2,
+          "feedback": "Eine Zehe mit Huf pro Bein."
+        }
+      ],
+      "conclusion": "Je weniger Fußfläche den Boden berührt, desto länger wirkt das Bein und desto schneller kann das Tier laufen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Beschreibe die Angepasstheiten des Maulwurfs an das Leben unter der Erde.",
+        "hints": [
+          "Wie sind seine Vorderbeine gebaut?",
+          "Was ist an Körperform und Fell besonders?"
+        ],
+        "model": "Der Maulwurf hat kurze, breite Vorderbeine mit starken Krallen, die wie Schaufeln wirken. Mit ihnen schiebt er die Erde zur Seite und nach oben. Sein Körper ist walzenförmig und hat keinen abstehenden Hals, sodass er gut durch enge Gänge passt. Sein kurzes, samtiges Fell hat keinen Strich und lässt sich in jede Richtung legen, deshalb kann er im Gang auch rückwärts laufen. Seine Augen sind winzig, weil er im Dunkeln kaum sehen muss.",
+        "criteria": [
+          "Ich beschreibe die Schaufelhände.",
+          "Ich nenne Körperform und Fell.",
+          "Ich verbinde jede Angepasstheit mit dem Leben unter der Erde."
+        ]
+      },
+      "2": {
+        "prompt": "Vergleiche Katze und Pferd: Erkläre, warum ihre unterschiedliche Fußhaltung zu ihrer Lebensweise passt.",
+        "hints": [
+          "Wie jagt eine Katze?",
+          "Wie entkommt ein Pferd seinen Feinden?"
+        ],
+        "model": "Die Katze ist ein Zehengänger. Sie läuft auf weichen Zehenballen und kann ihre Krallen einziehen. So schleicht sie sich leise an ihre Beute an und springt im richtigen Moment schnell los. Das Pferd ist ein Zehenspitzengänger. Es steht auf einer einzigen Zehe mit hartem Huf, seine Beine sind lang und leicht. So kann es in offener Landschaft lange und schnell laufen und vor Feinden fliehen. Die Fußhaltung passt also zum Lauern und Anschleichen bei der Katze und zum ausdauernden Fluchtlauf beim Pferd.",
+        "criteria": [
+          "Ich ordne beiden Tieren die richtige Fußhaltung zu.",
+          "Ich beschreibe die Lebensweise beider Tiere.",
+          "Ich verbinde Bau und Lebensweise begründet."
+        ]
+      }
+    },
+    "figures": [
+      "fusshaltung",
+      "fortbewegung-lebensraum"
+    ]
+  },
+  {
+    "id": "bg6-bionik-tiere",
+    "lb": 4,
+    "title": "Bionik: Von Tieren lernen",
+    "period": "NT6 1.3 · Aktive Bewegung",
+    "intro": "Sportlerinnen und Sportler mit Beinprothesen laufen auf gebogenen Federn aus Kohlefaser. Das Vorbild dafür stammt aus der Tierwelt.",
+    "paragraphs": [
+      "Was Wirbeltiere über Millionen Jahre an Fortbewegung entwickelt haben, nutzen Ingenieurinnen und Ingenieure als Ideenquelle. Pinguine und Delfine gleiten mit sehr wenig Widerstand durchs Wasser. Ihre Spindelform dient als Vorbild für Rümpfe von Schiffen und Unterwasserfahrzeugen. Die Haut mancher Haie hat winzige Rillen in Strömungsrichtung; Folien mit ähnlichen Rillen verringern an Flugzeugen und Schiffen die Reibung. Vogelflügel sind gewölbt und erzeugen beim Vorwärtsflug Auftrieb; auch Tragflächen von Flugzeugen sind gewölbt. Große Segelvögel spreizen an den Flügelspitzen einzelne Federn auf. Nach diesem Vorbild haben viele Flugzeuge hochgebogene Flügelenden, die Treibstoff sparen.",
+      "Bionik kann auch die Beweglichkeit von Menschen verbessern. Beim Gepard und anderen schnellen Läufern speichern Sehnen und Gelenke im Bein Energie wie eine Feder und geben sie beim Abstoßen wieder ab. Sportprothesen aus Kohlefaser sind wie ein gebogener Hinterlauf geformt und federn ebenso. Robotische Stützen nach dem Vorbild des Skeletts, sogenannte Exoskelette, helfen Menschen nach einer Verletzung beim Gehen. Zum bionischen Arbeiten gehören immer zwei Schritte: Zuerst untersucht man genau, wie die Struktur beim Tier funktioniert. Dann überträgt man das Prinzip und passt es an Material, Größe und Zweck der Technik an. Eine Prothese sieht deshalb nicht aus wie ein Gepardenbein, sie funktioniert nur nach demselben Prinzip."
+    ],
+    "takeaway": "Bionik überträgt Fortbewegungsprinzipien von Tieren auf Technik: Spindelform (Pinguin, Delfin) → Schiffsrumpf, Haihaut → Rillenfolie, gewölbter Vogelflügel und gespreizte Flügelspitzen → Tragfläche, federnder Hinterlauf → Sportprothese. Erst Prinzip verstehen, dann an die Technik anpassen.",
+    "sourceIds": [
+      "lehrplan",
+      "kx-pinguine",
+      "kx-gepard",
+      "kx-flugzeug",
+      "kx-schiff"
+    ],
+    "quiz": {
+      "question": "Welches Prinzip übernimmt eine Sportprothese aus Kohlefaser vom Hinterlauf schneller Läufer?",
+      "answer": "Sie speichert beim Auftreten Energie wie eine Feder und gibt sie beim Abstoßen ab.",
+      "wrong": [
+        "Sie ist mit Fell bedeckt und hält dadurch warm.",
+        "Sie ist hohl und mit Luft gefüllt wie ein Vogelknochen."
+      ],
+      "explanation": "Sehnen im Bein schneller Läufer wirken wie Federn. Die gebogene Prothese federt nach demselben Prinzip; Fell oder Luftfüllung haben damit nichts zu tun."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Vorbild finden",
+      "instruction": "Ordne jedes technische Produkt seinem tierischen Vorbild zu.",
+      "categories": [
+        "Pinguin und Delfin",
+        "Haihaut",
+        "Vogelflügel",
+        "Hinterlauf schneller Läufer"
+      ],
+      "entries": [
+        {
+          "text": "strömungsgünstiger Rumpf eines Forschungs-U-Boots",
+          "target": 0,
+          "feedback": "Spindelform senkt den Widerstand."
+        },
+        {
+          "text": "Folie mit feinen Rillen auf einem Flugzeugrumpf",
+          "target": 1,
+          "feedback": "Rillen wie auf der Haihaut."
+        },
+        {
+          "text": "Badeanzug mit gerillter Oberfläche für Wettkämpfe",
+          "target": 1,
+          "feedback": "Ebenfalls nach der Haihaut."
+        },
+        {
+          "text": "gewölbte Tragfläche eines Segelflugzeugs",
+          "target": 2,
+          "feedback": "Die Wölbung erzeugt Auftrieb."
+        },
+        {
+          "text": "hochgebogene Flügelenden eines Verkehrsflugzeugs",
+          "target": 2,
+          "feedback": "Vorbild sind die Flügelspitzen großer Segelvögel."
+        },
+        {
+          "text": "federnde Laufprothese aus Kohlefaser",
+          "target": 3,
+          "feedback": "Sie speichert Energie wie eine Sehne."
+        }
+      ],
+      "conclusion": "Bionik fragt: Welche Aufgabe löst das Tier, und wie lässt sich das Prinzip technisch nutzen?"
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Beschreibe am Beispiel Pinguin und Schiff, wie Bionik vorgeht.",
+        "hints": [
+          "Was untersucht man zuerst am Tier?",
+          "Was wird auf das Schiff übertragen, was nicht?"
+        ],
+        "model": "Zuerst untersucht man, wie sich der Pinguin im Wasser bewegt. Man stellt fest, dass seine Spindelform dem Wasser sehr wenig Widerstand entgegensetzt, sodass er mit wenig Kraft schnell schwimmt. Dann überträgt man dieses Prinzip auf die Technik: Ein Schiffsrumpf oder ein Unterwasserfahrzeug wird vorne abgerundet, in der Mitte am dicksten und hinten schmal gebaut. Nicht übertragen werden Federn, Flügel oder Größe. Der Rumpf besteht aus Metall oder Kunststoff und ist an den Zweck angepasst, etwa an Ladung oder Passagiere.",
+        "criteria": [
+          "Ich beschreibe die Untersuchung des Vorbilds.",
+          "Ich nenne das übertragene Prinzip.",
+          "Ich nenne, was angepasst und nicht kopiert wird."
+        ]
+      },
+      "2": {
+        "prompt": "Leite aus dem Bau eines Vogelflügels eine Idee ab, die Menschen mit eingeschränkter Beweglichkeit helfen oder ein Verkehrsmittel verbessern könnte, und nenne ihre Grenzen.",
+        "hints": [
+          "Welche Eigenschaften hat ein Vogelflügel?",
+          "Was lässt sich davon technisch umsetzen, was nicht?"
+        ],
+        "model": "Ein Vogelflügel ist leicht, gewölbt und an den Spitzen mit einzelnen gespreizten Federn versehen. Daraus kann man ableiten, Flügel von Flugzeugen gewölbt zu bauen und die Flügelenden hochzubiegen, um Treibstoff zu sparen. Aus dem Leichtbau der hohlen, verstrebten Knochen lässt sich eine leichte, stabile Gehhilfe aus Röhren mit inneren Stützstreben ableiten, die Menschen leichter tragen können. Grenzen: Ein Flugzeug kann seine Flügel nicht so flexibel bewegen wie ein Vogel, und eine Gehhilfe muss viel größere Lasten tragen als ein Vogelknochen. Das Prinzip muss also an die technischen Anforderungen angepasst werden.",
+        "criteria": [
+          "Ich nenne Bauprinzipien des Vogelflügels.",
+          "Ich leite eine technische Idee begründet ab.",
+          "Ich nenne Grenzen der Übertragung."
+        ]
+      }
+    },
+    "figures": [
+      "bionik-tiere"
+    ]
+  }
+]

@@ -1,0 +1,835 @@
+{
+  "checked": "2026-11-16",
+  "stages": [
+    {
+      "lb": 1,
+      "code": "1.1",
+      "title": "Erkenntnisse gewinnen – kommunizieren – bewerten",
+      "shortTitle": "Forschen wie in der Biologie",
+      "icon": "🔬"
+    },
+    {
+      "lb": 2,
+      "code": "1.2",
+      "title": "Samenpflanzen als Lebewesen · Fortpflanzung, Wachstum und Individualentwicklung",
+      "shortTitle": "Samen, Früchte & Keimung",
+      "icon": "🌰"
+    },
+    {
+      "lb": 3,
+      "code": "1.2",
+      "title": "Samenpflanzen als Lebewesen · Stoffwechsel und Reaktion",
+      "shortTitle": "Photosynthese & Pflanzenbewegung",
+      "icon": "🌿"
+    },
+    {
+      "lb": 4,
+      "code": "1.3",
+      "title": "Biodiversität bei Wirbeltieren – Variabilität und Angepasstheit · Aktive Bewegung",
+      "shortTitle": "Schwimmen, Fliegen, Laufen",
+      "icon": "🐟"
+    },
+    {
+      "lb": 5,
+      "code": "1.3",
+      "title": "Biodiversität bei Wirbeltieren – Variabilität und Angepasstheit · Stoffwechsel: Stoff- und Energieumwandlung",
+      "shortTitle": "Nahrung, Wärme & Atmung",
+      "icon": "🦊"
+    },
+    {
+      "lb": 6,
+      "code": "1.3",
+      "title": "Biodiversität bei Wirbeltieren – Variabilität und Angepasstheit · Fortpflanzung, Wachstum und Individualentwicklung",
+      "shortTitle": "Fortpflanzung & Entwicklung",
+      "icon": "🥚"
+    },
+    {
+      "lb": 7,
+      "code": "1.3",
+      "title": "Biodiversität bei Wirbeltieren – Variabilität und Angepasstheit · Informationsaufnahme, Informationsverarbeitung und Reaktion",
+      "shortTitle": "Sinne der Wirbeltiere",
+      "icon": "🦇"
+    },
+    {
+      "lb": 8,
+      "code": "1.4",
+      "title": "Verwandtschaft der Wirbeltiere und Evolution",
+      "shortTitle": "Verwandtschaft & Evolution",
+      "icon": "🧬"
+    },
+    {
+      "lb": 9,
+      "code": "1.5",
+      "title": "Ökosystem Gewässer",
+      "shortTitle": "Ökosystem Gewässer",
+      "icon": "💧"
+    }
+  ],
+  "sources": [
+    {
+      "id": "lehrplan",
+      "label": "LehrplanPLUS Bayern · Natur und Technik 6 Gymnasium",
+      "url": "https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/6/nt_gym"
+    },
+    {
+      "id": "kx-experiment",
+      "label": "Klexikon · Experiment",
+      "url": "https://klexikon.zum.de/wiki/Experiment"
+    },
+    {
+      "id": "wp-hypothese",
+      "label": "Wikipedia · Hypothese",
+      "url": "https://de.wikipedia.org/wiki/Hypothese"
+    },
+    {
+      "id": "wp-variable",
+      "label": "Wikipedia · Abhängige und unabhängige Variable",
+      "url": "https://de.wikipedia.org/wiki/Abh%C3%A4ngige_und_unabh%C3%A4ngige_Variable"
+    },
+    {
+      "id": "wp-versuchskontrolle",
+      "label": "Wikipedia · Versuchskontrolle",
+      "url": "https://de.wikipedia.org/wiki/Kontrollexperiment"
+    },
+    {
+      "id": "wp-fehler",
+      "label": "Wikipedia · Fehler",
+      "url": "https://de.wikipedia.org/wiki/Messfehler"
+    },
+    {
+      "id": "kx-wissenschaft",
+      "label": "Klexikon · Wissenschaft",
+      "url": "https://klexikon.zum.de/wiki/Wissenschaft"
+    },
+    {
+      "id": "kx-voegel",
+      "label": "Klexikon · Vögel",
+      "url": "https://klexikon.zum.de/wiki/V%C3%B6gel"
+    },
+    {
+      "id": "kx-mikroskop",
+      "label": "Klexikon · Mikroskop",
+      "url": "https://klexikon.zum.de/wiki/Mikroskop"
+    },
+    {
+      "id": "wp-stereomikroskop",
+      "label": "Wikipedia · Stereomikroskop",
+      "url": "https://de.wikipedia.org/wiki/Stereomikroskop"
+    },
+    {
+      "id": "kx-lupe",
+      "label": "Klexikon · Lupe",
+      "url": "https://klexikon.zum.de/wiki/Lupe"
+    },
+    {
+      "id": "wp-wasserpest",
+      "label": "Wikipedia · Wasserpest",
+      "url": "https://de.wikipedia.org/wiki/Wasserpest"
+    },
+    {
+      "id": "kx-modell",
+      "label": "Klexikon · Modell",
+      "url": "https://klexikon.zum.de/wiki/Modell"
+    },
+    {
+      "id": "wp-modell",
+      "label": "Wikipedia · Modell",
+      "url": "https://de.wikipedia.org/wiki/Modell"
+    },
+    {
+      "id": "kx-ahorn",
+      "label": "Klexikon · Ahorne",
+      "url": "https://klexikon.zum.de/wiki/Ahorn"
+    },
+    {
+      "id": "wp-saeulendiagramm",
+      "label": "Wikipedia · Säulendiagramm",
+      "url": "https://de.wikipedia.org/wiki/S%C3%A4ulendiagramm"
+    },
+    {
+      "id": "wp-liniendiagramm",
+      "label": "Wikipedia · Liniendiagramm",
+      "url": "https://de.wikipedia.org/wiki/Liniendiagramm"
+    },
+    {
+      "id": "kx-quelle",
+      "label": "Klexikon · Quelle",
+      "url": "https://klexikon.zum.de/wiki/Quelle"
+    },
+    {
+      "id": "wp-anthropomorphismus",
+      "label": "Wikipedia · Anthropomorphismus",
+      "url": "https://de.wikipedia.org/wiki/Anthropomorphismus"
+    },
+    {
+      "id": "kx-wolf",
+      "label": "Klexikon · Wolf",
+      "url": "https://klexikon.zum.de/wiki/Wolf"
+    },
+    {
+      "id": "kx-samen",
+      "label": "Klexikon · Samen",
+      "url": "https://klexikon.zum.de/wiki/Samen"
+    },
+    {
+      "id": "kx-frucht",
+      "label": "Klexikon · Frucht",
+      "url": "https://klexikon.zum.de/wiki/Frucht"
+    },
+    {
+      "id": "wp-gartenbohne",
+      "label": "Wikipedia · Gartenbohne",
+      "url": "https://de.wikipedia.org/wiki/Gartenbohne"
+    },
+    {
+      "id": "wp-diaspore",
+      "label": "Wikipedia · Diaspore",
+      "url": "https://de.wikipedia.org/wiki/Diaspore"
+    },
+    {
+      "id": "kx-loewenzahn",
+      "label": "Klexikon · Löwenzahn",
+      "url": "https://klexikon.zum.de/wiki/L%C3%B6wenzahn"
+    },
+    {
+      "id": "wp-grosse-klette",
+      "label": "Wikipedia · Große Klette",
+      "url": "https://de.wikipedia.org/wiki/Gro%C3%9Fe_Klette"
+    },
+    {
+      "id": "wp-bionik",
+      "label": "Wikipedia · Bionik",
+      "url": "https://de.wikipedia.org/wiki/Bionik"
+    },
+    {
+      "id": "wp-klettverschluss",
+      "label": "Wikipedia · Klettverschluss",
+      "url": "https://de.wikipedia.org/wiki/Klettverschluss"
+    },
+    {
+      "id": "wp-lotoseffekt",
+      "label": "Wikipedia · Lotoseffekt",
+      "url": "https://de.wikipedia.org/wiki/Lotoseffekt"
+    },
+    {
+      "id": "wp-auslaeufer",
+      "label": "Wikipedia · Ausläufer",
+      "url": "https://de.wikipedia.org/wiki/Ausl%C3%A4ufer"
+    },
+    {
+      "id": "kx-erdbeere",
+      "label": "Klexikon · Erdbeeren",
+      "url": "https://klexikon.zum.de/wiki/Erdbeere"
+    },
+    {
+      "id": "wp-gartenerdbeere",
+      "label": "Wikipedia · Gartenerdbeere",
+      "url": "https://de.wikipedia.org/wiki/Gartenerdbeere"
+    },
+    {
+      "id": "kx-kartoffel",
+      "label": "Klexikon · Kartoffel",
+      "url": "https://klexikon.zum.de/wiki/Kartoffel"
+    },
+    {
+      "id": "wp-keimung",
+      "label": "Wikipedia · Keimung",
+      "url": "https://de.wikipedia.org/wiki/Keimung"
+    },
+    {
+      "id": "kx-bohne",
+      "label": "Klexikon · Bohne",
+      "url": "https://klexikon.zum.de/wiki/Bohne"
+    },
+    {
+      "id": "kx-wurzel",
+      "label": "Klexikon · Wurzel",
+      "url": "https://klexikon.zum.de/wiki/Wurzel"
+    },
+    {
+      "id": "kx-blatt",
+      "label": "Klexikon · Blatt",
+      "url": "https://klexikon.zum.de/wiki/Blatt"
+    },
+    {
+      "id": "wp-sonnenblume",
+      "label": "Wikipedia · Sonnenblume",
+      "url": "https://de.wikipedia.org/wiki/Sonnenblume"
+    },
+    {
+      "id": "kx-pflanze",
+      "label": "Klexikon · Pflanzen",
+      "url": "https://klexikon.zum.de/wiki/Pflanze"
+    },
+    {
+      "id": "kx-photosynthese",
+      "label": "Klexikon · Photosynthese",
+      "url": "https://klexikon.zum.de/wiki/Photosynthese"
+    },
+    {
+      "id": "wp-photosynthese",
+      "label": "Wikipedia · Photosynthese",
+      "url": "https://de.wikipedia.org/wiki/Photosynthese"
+    },
+    {
+      "id": "kx-zucker",
+      "label": "Klexikon · Zucker",
+      "url": "https://klexikon.zum.de/wiki/Zucker"
+    },
+    {
+      "id": "wp-zellatmung",
+      "label": "Wikipedia · Zellatmung",
+      "url": "https://de.wikipedia.org/wiki/Zellatmung"
+    },
+    {
+      "id": "kx-sauerstoff",
+      "label": "Klexikon · Sauerstoff",
+      "url": "https://klexikon.zum.de/wiki/Sauerstoff"
+    },
+    {
+      "id": "kx-energie",
+      "label": "Klexikon · Energie",
+      "url": "https://klexikon.zum.de/wiki/Energie"
+    },
+    {
+      "id": "wp-nachwachsend",
+      "label": "Wikipedia · Nachwachsender Rohstoff",
+      "url": "https://de.wikipedia.org/wiki/Nachwachsender_Rohstoff"
+    },
+    {
+      "id": "wp-fossile-energie",
+      "label": "Wikipedia · Fossile Energie",
+      "url": "https://de.wikipedia.org/wiki/Fossile_Energie"
+    },
+    {
+      "id": "kx-kohle",
+      "label": "Klexikon · Kohle",
+      "url": "https://klexikon.zum.de/wiki/Kohle"
+    },
+    {
+      "id": "kx-erdoel",
+      "label": "Klexikon · Erdöl",
+      "url": "https://klexikon.zum.de/wiki/Erd%C3%B6l"
+    },
+    {
+      "id": "wp-biomasse",
+      "label": "Wikipedia · Biomasse",
+      "url": "https://de.wikipedia.org/wiki/Biomasse"
+    },
+    {
+      "id": "wp-pflanzenbewegung",
+      "label": "Wikipedia · Pflanzenbewegung",
+      "url": "https://de.wikipedia.org/wiki/Phototropismus"
+    },
+    {
+      "id": "wp-mimose",
+      "label": "Wikipedia · Mimose",
+      "url": "https://de.wikipedia.org/wiki/Mimosa_pudica"
+    },
+    {
+      "id": "wp-gewoehnlicher-loewenzahn",
+      "label": "Wikipedia · Gewöhnlicher Löwenzahn",
+      "url": "https://de.wikipedia.org/wiki/Gew%C3%B6hnlicher_L%C3%B6wenzahn"
+    },
+    {
+      "id": "kx-fische",
+      "label": "Klexikon · Fische",
+      "url": "https://klexikon.zum.de/wiki/Fische"
+    },
+    {
+      "id": "wp-schwimmblase",
+      "label": "Wikipedia · Schwimmblase",
+      "url": "https://de.wikipedia.org/wiki/Schwimmblase"
+    },
+    {
+      "id": "wp-stromlinienform",
+      "label": "Wikipedia · Stromlinienform",
+      "url": "https://de.wikipedia.org/wiki/Stromlinienform"
+    },
+    {
+      "id": "kx-forelle",
+      "label": "Klexikon · Forelle",
+      "url": "https://klexikon.zum.de/wiki/Forelle"
+    },
+    {
+      "id": "kx-feder",
+      "label": "Klexikon · Feder",
+      "url": "https://klexikon.zum.de/wiki/Feder"
+    },
+    {
+      "id": "wp-vogelflug",
+      "label": "Wikipedia · Vogelflug",
+      "url": "https://de.wikipedia.org/wiki/Vogelflug"
+    },
+    {
+      "id": "wp-sohlengaenger",
+      "label": "Wikipedia · Sohlengänger",
+      "url": "https://de.wikipedia.org/wiki/Sohleng%C3%A4nger"
+    },
+    {
+      "id": "wp-zehengaenger",
+      "label": "Wikipedia · Zehengänger",
+      "url": "https://de.wikipedia.org/wiki/Zeheng%C3%A4nger"
+    },
+    {
+      "id": "wp-spitzengaenger",
+      "label": "Wikipedia · Spitzengänger",
+      "url": "https://de.wikipedia.org/wiki/Zehenspitzeng%C3%A4nger"
+    },
+    {
+      "id": "kx-maulwurf",
+      "label": "Klexikon · Maulwürfe",
+      "url": "https://klexikon.zum.de/wiki/Maulwurf"
+    },
+    {
+      "id": "kx-eichhoernchen",
+      "label": "Klexikon · Eichhörnchen",
+      "url": "https://klexikon.zum.de/wiki/Eichh%C3%B6rnchen"
+    },
+    {
+      "id": "kx-pinguine",
+      "label": "Klexikon · Pinguine",
+      "url": "https://klexikon.zum.de/wiki/Pinguine"
+    },
+    {
+      "id": "kx-gepard",
+      "label": "Klexikon · Gepard",
+      "url": "https://klexikon.zum.de/wiki/Gepard"
+    },
+    {
+      "id": "kx-flugzeug",
+      "label": "Klexikon · Flugzeug",
+      "url": "https://klexikon.zum.de/wiki/Flugzeug"
+    },
+    {
+      "id": "kx-schiff",
+      "label": "Klexikon · Schiff",
+      "url": "https://klexikon.zum.de/wiki/Schiff"
+    },
+    {
+      "id": "wp-gebiss",
+      "label": "Wikipedia · Gebiss",
+      "url": "https://de.wikipedia.org/wiki/Gebiss"
+    },
+    {
+      "id": "kx-hund",
+      "label": "Klexikon · Hunde",
+      "url": "https://klexikon.zum.de/wiki/Hund"
+    },
+    {
+      "id": "kx-rind",
+      "label": "Klexikon · Rinder",
+      "url": "https://klexikon.zum.de/wiki/Rind"
+    },
+    {
+      "id": "wp-wiederkaeuer",
+      "label": "Wikipedia · Wiederkäuer",
+      "url": "https://de.wikipedia.org/wiki/Wiederk%C3%A4uer"
+    },
+    {
+      "id": "wp-stockente",
+      "label": "Wikipedia · Stockente",
+      "url": "https://de.wikipedia.org/wiki/Stockente"
+    },
+    {
+      "id": "wp-graureiher",
+      "label": "Wikipedia · Graureiher",
+      "url": "https://de.wikipedia.org/wiki/Graureiher"
+    },
+    {
+      "id": "wp-wechselwarm",
+      "label": "Wikipedia · Wechselwarmes Tier",
+      "url": "https://de.wikipedia.org/wiki/Poikilothermie"
+    },
+    {
+      "id": "wp-gleichwarm",
+      "label": "Wikipedia · Gleichwarmes Tier",
+      "url": "https://de.wikipedia.org/wiki/Homoiothermie"
+    },
+    {
+      "id": "kx-eidechsen",
+      "label": "Klexikon · Eidechsen",
+      "url": "https://klexikon.zum.de/wiki/Eidechsen"
+    },
+    {
+      "id": "wp-zauneidechse",
+      "label": "Wikipedia · Zauneidechse",
+      "url": "https://de.wikipedia.org/wiki/Zauneidechse"
+    },
+    {
+      "id": "kx-winterschlaf",
+      "label": "Klexikon · Winterschlaf",
+      "url": "https://klexikon.zum.de/wiki/Winterschlaf"
+    },
+    {
+      "id": "wp-winterruhe",
+      "label": "Wikipedia · Winterruhe",
+      "url": "https://de.wikipedia.org/wiki/Winterruhe"
+    },
+    {
+      "id": "wp-kaeltestarre",
+      "label": "Wikipedia · Kältestarre",
+      "url": "https://de.wikipedia.org/wiki/K%C3%A4ltestarre"
+    },
+    {
+      "id": "kx-igel",
+      "label": "Klexikon · Igel",
+      "url": "https://klexikon.zum.de/wiki/Igel"
+    },
+    {
+      "id": "wp-vogelzug",
+      "label": "Wikipedia · Vogelzug",
+      "url": "https://de.wikipedia.org/wiki/Vogelzug"
+    },
+    {
+      "id": "wp-kieme",
+      "label": "Wikipedia · Kieme",
+      "url": "https://de.wikipedia.org/wiki/Kieme"
+    },
+    {
+      "id": "wp-hautatmung",
+      "label": "Wikipedia · Hautatmung",
+      "url": "https://de.wikipedia.org/wiki/Hautatmung"
+    },
+    {
+      "id": "wp-lunge",
+      "label": "Wikipedia · Lunge",
+      "url": "https://de.wikipedia.org/wiki/Lunge"
+    },
+    {
+      "id": "kx-amphibien",
+      "label": "Klexikon · Amphibien",
+      "url": "https://klexikon.zum.de/wiki/Amphibien"
+    },
+    {
+      "id": "kx-wirbeltiere",
+      "label": "Klexikon · Wirbeltiere",
+      "url": "https://klexikon.zum.de/wiki/Wirbeltiere"
+    },
+    {
+      "id": "wp-amnion",
+      "label": "Wikipedia · Amnion",
+      "url": "https://de.wikipedia.org/wiki/Amnion"
+    },
+    {
+      "id": "kx-reptilien",
+      "label": "Klexikon · Reptilien",
+      "url": "https://klexikon.zum.de/wiki/Reptilien"
+    },
+    {
+      "id": "kx-ei",
+      "label": "Klexikon · Ei",
+      "url": "https://klexikon.zum.de/wiki/Ei"
+    },
+    {
+      "id": "wp-metamorphose",
+      "label": "Wikipedia · Metamorphose (Zoologie)",
+      "url": "https://de.wikipedia.org/wiki/Metamorphose_(Zoologie)"
+    },
+    {
+      "id": "wp-grasfrosch",
+      "label": "Wikipedia · Grasfrosch",
+      "url": "https://de.wikipedia.org/wiki/Grasfrosch"
+    },
+    {
+      "id": "kx-frosch",
+      "label": "Klexikon · Frösche",
+      "url": "https://klexikon.zum.de/wiki/Frosch"
+    },
+    {
+      "id": "wp-nesthocker",
+      "label": "Wikipedia · Nesthocker",
+      "url": "https://de.wikipedia.org/wiki/Nesthocker"
+    },
+    {
+      "id": "wp-nestfluechter",
+      "label": "Wikipedia · Nestflüchter",
+      "url": "https://de.wikipedia.org/wiki/Nestfl%C3%BCchter"
+    },
+    {
+      "id": "kx-huhn",
+      "label": "Klexikon · Hühner",
+      "url": "https://klexikon.zum.de/wiki/Huhn"
+    },
+    {
+      "id": "wp-elternaufwand",
+      "label": "Wikipedia · Elternaufwand",
+      "url": "https://de.wikipedia.org/wiki/Elternaufwand"
+    },
+    {
+      "id": "wp-brutpflege",
+      "label": "Wikipedia · Brutpflege",
+      "url": "https://de.wikipedia.org/wiki/Brutpflege"
+    },
+    {
+      "id": "wp-kabeljau",
+      "label": "Wikipedia · Atlantischer Kabeljau",
+      "url": "https://de.wikipedia.org/wiki/Kabeljau"
+    },
+    {
+      "id": "wp-stichling",
+      "label": "Wikipedia · Dreistachliger Stichling",
+      "url": "https://de.wikipedia.org/wiki/Dreistachliger_Stichling"
+    },
+    {
+      "id": "wp-balz",
+      "label": "Wikipedia · Balz",
+      "url": "https://de.wikipedia.org/wiki/Balz"
+    },
+    {
+      "id": "wp-echoortung",
+      "label": "Wikipedia · Echoortung (Tiere)",
+      "url": "https://de.wikipedia.org/wiki/Echoortung_(Tiere)"
+    },
+    {
+      "id": "kx-fledermaeuse",
+      "label": "Klexikon · Fledermäuse",
+      "url": "https://klexikon.zum.de/wiki/Flederm%C3%A4use"
+    },
+    {
+      "id": "wp-seitenlinienorgan",
+      "label": "Wikipedia · Seitenlinienorgan",
+      "url": "https://de.wikipedia.org/wiki/Seitenlinienorgan"
+    },
+    {
+      "id": "wp-grubenorgan",
+      "label": "Wikipedia · Grubenorgan und Labialgruben",
+      "url": "https://de.wikipedia.org/wiki/Grubenorgan"
+    },
+    {
+      "id": "kx-schlangen",
+      "label": "Klexikon · Schlangen",
+      "url": "https://klexikon.zum.de/wiki/Schlangen"
+    },
+    {
+      "id": "kx-eulen",
+      "label": "Klexikon · Eulen",
+      "url": "https://klexikon.zum.de/wiki/Eulen"
+    },
+    {
+      "id": "wp-wirbeltiere",
+      "label": "Wikipedia · Wirbeltiere",
+      "url": "https://de.wikipedia.org/wiki/Wirbeltiere"
+    },
+    {
+      "id": "wp-bestimmungsschluessel",
+      "label": "Wikipedia · Bestimmungsschlüssel",
+      "url": "https://de.wikipedia.org/wiki/Bestimmungsschl%C3%BCssel"
+    },
+    {
+      "id": "wp-blindschleiche",
+      "label": "Wikipedia · Blindschleiche",
+      "url": "https://de.wikipedia.org/wiki/Blindschleiche"
+    },
+    {
+      "id": "kx-wale",
+      "label": "Klexikon · Wale",
+      "url": "https://klexikon.zum.de/wiki/Wale"
+    },
+    {
+      "id": "kx-evolution",
+      "label": "Klexikon · Evolution",
+      "url": "https://klexikon.zum.de/wiki/Evolution"
+    },
+    {
+      "id": "wp-selektion",
+      "label": "Wikipedia · Selektion (Evolution)",
+      "url": "https://de.wikipedia.org/wiki/Selektion_(Evolution)"
+    },
+    {
+      "id": "kx-darwin",
+      "label": "Klexikon · Charles Darwin",
+      "url": "https://klexikon.zum.de/wiki/Charles_Darwin"
+    },
+    {
+      "id": "kx-zucht",
+      "label": "Klexikon · Zucht",
+      "url": "https://klexikon.zum.de/wiki/Z%C3%BCchtung"
+    },
+    {
+      "id": "wp-zucht",
+      "label": "Wikipedia · Zucht",
+      "url": "https://de.wikipedia.org/wiki/Zuchtwahl"
+    },
+    {
+      "id": "wp-qualzucht",
+      "label": "Wikipedia · Qualzucht",
+      "url": "https://de.wikipedia.org/wiki/Qualzucht"
+    },
+    {
+      "id": "wp-haushund",
+      "label": "Wikipedia · Haushund",
+      "url": "https://de.wikipedia.org/wiki/Haushund"
+    },
+    {
+      "id": "wp-hausrind",
+      "label": "Wikipedia · Hausrind",
+      "url": "https://de.wikipedia.org/wiki/Hausrind"
+    },
+    {
+      "id": "tierschg-2",
+      "label": "Gesetze im Internet · § 2 TierSchG",
+      "url": "https://www.gesetze-im-internet.de/tierschg/__2.html"
+    },
+    {
+      "id": "kx-haustier",
+      "label": "Klexikon · Haustiere",
+      "url": "https://klexikon.zum.de/wiki/Haustier"
+    },
+    {
+      "id": "wp-nutztier",
+      "label": "Wikipedia · Nutztier",
+      "url": "https://de.wikipedia.org/wiki/Nutztier"
+    },
+    {
+      "id": "kx-kaninchen",
+      "label": "Klexikon · Kaninchen",
+      "url": "https://klexikon.zum.de/wiki/Kaninchen"
+    },
+    {
+      "id": "kx-meerschweinchen",
+      "label": "Klexikon · Meerschweinchen",
+      "url": "https://klexikon.zum.de/wiki/Meerschweinchen"
+    },
+    {
+      "id": "kx-wellensittich",
+      "label": "Klexikon · Wellensittich",
+      "url": "https://klexikon.zum.de/wiki/Wellensittich"
+    },
+    {
+      "id": "wp-eierkennzeichnung",
+      "label": "Wikipedia · Eierkennzeichnung",
+      "url": "https://de.wikipedia.org/wiki/Eierkennzeichnung"
+    },
+    {
+      "id": "wp-sichttiefe",
+      "label": "Wikipedia · Sichttiefe",
+      "url": "https://de.wikipedia.org/wiki/Sichttiefe"
+    },
+    {
+      "id": "wp-secchi",
+      "label": "Wikipedia · Secchi-Scheibe",
+      "url": "https://de.wikipedia.org/wiki/Secchi-Scheibe"
+    },
+    {
+      "id": "wp-stroemungsgeschwindigkeit",
+      "label": "Wikipedia · Strömungsgeschwindigkeit",
+      "url": "https://de.wikipedia.org/wiki/Flie%C3%9Fgeschwindigkeit"
+    },
+    {
+      "id": "wp-abiotisch",
+      "label": "Wikipedia · Abiotische Umweltfaktoren",
+      "url": "https://de.wikipedia.org/wiki/Abiotischer_Faktor"
+    },
+    {
+      "id": "kx-bach",
+      "label": "Klexikon · Bach",
+      "url": "https://klexikon.zum.de/wiki/Bach"
+    },
+    {
+      "id": "kx-teich",
+      "label": "Klexikon · Teich",
+      "url": "https://klexikon.zum.de/wiki/Teich"
+    },
+    {
+      "id": "kx-plankton",
+      "label": "Klexikon · Plankton",
+      "url": "https://klexikon.zum.de/wiki/Plankton"
+    },
+    {
+      "id": "kx-hecht",
+      "label": "Klexikon · Hecht",
+      "url": "https://klexikon.zum.de/wiki/Hecht"
+    },
+    {
+      "id": "kx-libellen",
+      "label": "Klexikon · Libellen",
+      "url": "https://klexikon.zum.de/wiki/Libellen"
+    },
+    {
+      "id": "wp-rotauge",
+      "label": "Wikipedia · Rotauge",
+      "url": "https://de.wikipedia.org/wiki/Rotauge"
+    },
+    {
+      "id": "wp-teichmuschel",
+      "label": "Wikipedia · Große Teichmuschel",
+      "url": "https://de.wikipedia.org/wiki/Teichmuschel"
+    },
+    {
+      "id": "wp-eisvogel",
+      "label": "Wikipedia · Eisvogel",
+      "url": "https://de.wikipedia.org/wiki/Eisvogel"
+    },
+    {
+      "id": "kx-oekosystem",
+      "label": "Klexikon · Ökosystem",
+      "url": "https://klexikon.zum.de/wiki/%C3%96kosystem"
+    },
+    {
+      "id": "kx-nahrungskette",
+      "label": "Klexikon · Nahrungskette",
+      "url": "https://klexikon.zum.de/wiki/Nahrungskette"
+    },
+    {
+      "id": "wp-nahrungskette",
+      "label": "Wikipedia · Nahrungskette",
+      "url": "https://de.wikipedia.org/wiki/Nahrungsnetz"
+    },
+    {
+      "id": "wp-produzent",
+      "label": "Wikipedia · Produzent (Ökologie)",
+      "url": "https://de.wikipedia.org/wiki/Produzent_(%C3%96kologie)"
+    },
+    {
+      "id": "wp-konsument",
+      "label": "Wikipedia · Konsument (Ökologie)",
+      "url": "https://de.wikipedia.org/wiki/Konsument_(%C3%96kologie)"
+    },
+    {
+      "id": "wp-destruent",
+      "label": "Wikipedia · Destruent",
+      "url": "https://de.wikipedia.org/wiki/Destruent"
+    },
+    {
+      "id": "wp-wasserflohe",
+      "label": "Wikipedia · Wasserflöhe",
+      "url": "https://de.wikipedia.org/wiki/Wasserfl%C3%B6he"
+    },
+    {
+      "id": "wp-eutrophierung",
+      "label": "Wikipedia · Eutrophierung",
+      "url": "https://de.wikipedia.org/wiki/Eutrophierung"
+    },
+    {
+      "id": "kx-duenger",
+      "label": "Klexikon · Dünger",
+      "url": "https://klexikon.zum.de/wiki/D%C3%BCnger"
+    },
+    {
+      "id": "kx-klaeranlage",
+      "label": "Klexikon · Kläranlage",
+      "url": "https://klexikon.zum.de/wiki/Kl%C3%A4ranlage"
+    },
+    {
+      "id": "wp-fischtreppe",
+      "label": "Wikipedia · Fischtreppe",
+      "url": "https://de.wikipedia.org/wiki/Fischtreppe"
+    },
+    {
+      "id": "kx-artenvielfalt",
+      "label": "Klexikon · Artenvielfalt",
+      "url": "https://klexikon.zum.de/wiki/Artenvielfalt"
+    },
+    {
+      "id": "lfu-wasser",
+      "label": "LfU Bayern · Wasser",
+      "url": "https://www.lfu.bayern.de/wasser/index.htm"
+    },
+    {
+      "id": "uba-fluesse",
+      "label": "Umweltbundesamt · Flüsse",
+      "url": "https://www.umweltbundesamt.de/themen/wasser/fluesse"
+    }
+  ]
+}

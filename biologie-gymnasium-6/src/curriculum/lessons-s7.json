@@ -1,0 +1,209 @@
+[
+  {
+    "id": "bg6-sinnesleistungen",
+    "lb": 7,
+    "title": "Besondere Sinne: Echo, Strömung, Wärme",
+    "period": "NT6 1.3 · Informationsaufnahme, Informationsverarbeitung und Reaktion",
+    "intro": "Eine Fledermaus fängt in stockdunkler Nacht eine Mücke im Flug. Sie sieht die Mücke nicht, sie hört sie mit ihrem eigenen Echo.",
+    "review": "Wiederholung aus NT5: Sinnesorgane und Reiz-Reaktions-Kette beim Menschen",
+    "paragraphs": [
+      "Wirbeltiere nehmen Reize mit Sinnesorganen auf. Augen, Ohren, Nase, Zunge und Haut haben viele Wirbeltiere gemeinsam; das sind allgemeine Merkmale. Manche Arten haben aber besondere Sinnesleistungen. Fledermäuse jagen nachts mit Ultraschallortung. Sie stoßen sehr hohe Rufe aus, die Menschen nicht hören können. Trifft der Schall auf ein Insekt oder ein Hindernis, wird er als Echo zurückgeworfen. Aus der Zeit bis zum Echo erkennt die Fledermaus, wie weit das Ziel entfernt ist: Schall legt in der Luft etwa 340 Meter pro Sekunde zurück, und je weiter das Insekt entfernt ist, desto später kommt das Echo. So fliegt sie auch in völliger Dunkelheit sicher.",
+      "Fische haben an beiden Körperseiten ein Seitenlinienorgan. In einem Kanal unter der Haut liegen Sinneszellen, die feinste Wasserbewegungen und Druckwellen wahrnehmen. Damit spürt ein Fisch eine heranschwimmende Beute, einen Feind oder ein Hindernis, auch in trübem Wasser oder in der Nacht, und Fische im Schwarm halten so Abstand zueinander. Grubenottern wie die Klapperschlange haben zwischen Auge und Nasenloch ein Grubenorgan. Es nimmt die Wärmestrahlung warmer Körper wahr. Eine Schlange kann so eine Maus im Dunkeln orten, weil die Maus wärmer ist als ihre Umgebung. Diese Sinne sind arttypische Angepasstheiten: Sie erschließen Reize, die andere Tiere und auch wir nicht wahrnehmen."
+    ],
+    "takeaway": "Ultraschallortung (Fledermaus): Rufe und Echo; je weiter das Ziel, desto später das Echo. Seitenlinienorgan (Fische): spürt Wasserbewegungen und Druckwellen. Grubenorgan (Grubenottern): nimmt Wärmestrahlung warmer Beute wahr. Besondere Sinnesleistungen sind arttypische Angepasstheiten.",
+    "sourceIds": [
+      "lehrplan",
+      "wp-echoortung",
+      "kx-fledermaeuse",
+      "wp-seitenlinienorgan",
+      "wp-grubenorgan",
+      "kx-schlangen"
+    ],
+    "quiz": {
+      "question": "Womit spürt ein Hecht in trübem Wasser eine Beute, die er nicht sieht?",
+      "answer": "Mit dem Seitenlinienorgan, das Wasserbewegungen wahrnimmt",
+      "wrong": [
+        "Mit dem Grubenorgan, das Wärme wahrnimmt",
+        "Mit Ultraschallrufen wie eine Fledermaus"
+      ],
+      "explanation": "Das Seitenlinienorgan der Fische nimmt Strömungen und Druckwellen wahr. Grubenorgane haben Grubenottern, Ultraschallortung nutzen Fledermäuse."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Welcher Sinn hilft hier?",
+      "instruction": "Ordne jede Situation der besonderen Sinnesleistung zu.",
+      "categories": [
+        "Ultraschallortung",
+        "Seitenlinienorgan",
+        "Grubenorgan"
+      ],
+      "entries": [
+        {
+          "text": "Eine Fledermaus fängt nachts eine Motte.",
+          "target": 0,
+          "feedback": "Sie ortet die Motte am Echo."
+        },
+        {
+          "text": "Eine Fledermaus fliegt im dunklen Dachboden um einen Balken.",
+          "target": 0,
+          "feedback": "Auch Hindernisse werfen ein Echo zurück."
+        },
+        {
+          "text": "Ein Fischschwarm wendet gleichzeitig, ohne zusammenzustoßen.",
+          "target": 1,
+          "feedback": "Jeder Fisch spürt die Bewegungen seiner Nachbarn."
+        },
+        {
+          "text": "Ein Hecht bemerkt im trüben Wasser ein Rotauge.",
+          "target": 1,
+          "feedback": "Er spürt die Druckwellen der Beute."
+        },
+        {
+          "text": "Eine Klapperschlange ortet nachts eine Maus.",
+          "target": 2,
+          "feedback": "Die Maus ist wärmer als ihre Umgebung."
+        },
+        {
+          "text": "Eine Grubenotter unterscheidet eine warme Ratte von einem kalten Stein.",
+          "target": 2,
+          "feedback": "Das Grubenorgan nimmt Wärmestrahlung wahr."
+        }
+      ],
+      "conclusion": "Besondere Sinne erschließen Reize, die wir Menschen nicht wahrnehmen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre, wie eine Fledermaus mithilfe der Ultraschallortung eine Mücke im Dunkeln findet.",
+        "hints": [
+          "Was sendet die Fledermaus aus?",
+          "Was verrät ihr das Echo?"
+        ],
+        "model": "Die Fledermaus stößt im Flug sehr hohe Rufe aus, Ultraschall, den Menschen nicht hören. Trifft der Schall auf die Mücke, wird ein Teil als Echo zurückgeworfen. Die Fledermaus hört das Echo mit ihren großen Ohren. Aus der Zeit zwischen Ruf und Echo erkennt sie die Entfernung: Je weiter die Mücke weg ist, desto später kommt das Echo. Aus der Richtung, aus der es kommt, erkennt sie, wo die Mücke fliegt. So kann sie die Mücke in völliger Dunkelheit fangen.",
+        "criteria": [
+          "Ich beschreibe Ultraschallruf und Echo.",
+          "Ich erkläre den Zusammenhang zwischen Echozeit und Entfernung.",
+          "Ich nenne, dass Licht dafür nicht nötig ist."
+        ]
+      },
+      "2": {
+        "prompt": "Ein Insekt ist 1 m von einer Fledermaus entfernt, ein zweites 5 m. Schall legt in der Luft etwa 340 m pro Sekunde zurück. Berechne, nach wie vielen Millisekunden die Echos ankommen, und erkläre, warum die Fledermaus damit Entfernungen schätzen kann.",
+        "hints": [
+          "Der Schall muss hin und zurück.",
+          "1 Sekunde hat 1000 Millisekunden."
+        ],
+        "model": "Beim ersten Insekt läuft der Schall 1 m hin und 1 m zurück, also 2 m. Bei 340 m pro Sekunde dauert das 2 : 340 Sekunden, das sind etwa 0,0059 Sekunden oder rund 5,9 Millisekunden. Beim zweiten Insekt sind es 10 m Weg, also 10 : 340 Sekunden, rund 29,4 Millisekunden. Das Echo des weiter entfernten Insekts kommt etwa fünfmal so spät. Je weiter das Ziel, desto später das Echo; aus dieser Zeit kann die Fledermaus die Entfernung erschließen.",
+        "criteria": [
+          "Ich berücksichtige Hin- und Rückweg.",
+          "Ich rechne beide Zeiten richtig mit Einheit.",
+          "Ich formuliere den Je-desto-Zusammenhang."
+        ]
+      }
+    },
+    "figures": [
+      "besondere-sinne"
+    ],
+    "lab": "echolocation"
+  },
+  {
+    "id": "bg6-sinne-lebensraum",
+    "lb": 7,
+    "title": "Sinne passend zu Lebensraum und Lebensweise",
+    "period": "NT6 1.3 · Informationsaufnahme, Informationsverarbeitung und Reaktion",
+    "intro": "Eine Eule hört nachts eine Maus unter dem Laub rascheln, ein Mäusebussard entdeckt sie am Tag aus großer Höhe. Zwei Jäger, zwei verschiedene Lieblingssinne.",
+    "paragraphs": [
+      "Sinnesorgane sind unterschiedlich empfindlich, je nachdem, welche Reize für eine Tierart wichtig sind. Eulen jagen nachts. Ihre großen, nach vorn gerichteten Augen nutzen auch wenig Licht, und ihr Gehör ist sehr fein. Der Gesichtsschleier aus Federn lenkt Geräusche zu den Ohren, sodass eine Eule eine Maus auch in der Dunkelheit orten kann. Der Mäusebussard jagt am Tag. Er sieht sehr scharf und entdeckt eine Maus aus großer Höhe. Bei beiden Greifvögeln sind die Augen nach vorn gerichtet; so sehen sie räumlich und können Entfernungen gut schätzen.",
+      "Beutetiere wie der Feldhase haben die Augen seitlich am Kopf. Sie sehen nicht so räumlich, überblicken aber fast die ganze Umgebung und bemerken einen Feind früh. Der Maulwurf lebt im Dunkeln unter der Erde; seine Augen sind winzig, dafür findet er Regenwürmer mit Tasthaaren und Geruchssinn. Hunde haben eine viel empfindlichere Nase als Menschen und folgen der Fährte eines Tieres am Boden. Fische in trübem Wasser verlassen sich auf ihr Seitenlinienorgan und den Geruch. So kannst du arttypische Merkmale, etwa die besonders großen Augen der Eule, von allgemeinen Merkmalen unterscheiden, etwa dass alle Vögel zwei Augen und Ohren haben. Die Sinne einer Art sind dort am leistungsfähigsten, wo sie für Nahrungssuche und Schutz gebraucht werden."
+    ],
+    "takeaway": "Die Empfindlichkeit der Sinnesorgane passt zur Lebensweise: Eule (nachts, großes Auge, feines Gehör), Mäusebussard (tags, scharfes Auge), Feldhase (Augen seitlich, Rundumsicht), Maulwurf (Tasthaare, Geruch), Hund (feine Nase). Räuber: Augen vorn, räumliches Sehen; Beute: Augen seitlich.",
+    "sourceIds": [
+      "lehrplan",
+      "kx-eulen",
+      "kx-maulwurf",
+      "kx-hund",
+      "kx-fische"
+    ],
+    "quiz": {
+      "question": "Warum hat ein Feldhase seine Augen seitlich am Kopf?",
+      "answer": "So überblickt er fast die ganze Umgebung und bemerkt Feinde früh.",
+      "wrong": [
+        "So kann er Entfernungen zur Beute genau schätzen.",
+        "So sieht er nachts besser als Eulen."
+      ],
+      "explanation": "Seitliche Augen geben eine fast vollständige Rundumsicht, wichtig für Beutetiere. Räuber haben die Augen vorn, um Entfernungen räumlich zu schätzen."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Welcher Sinn ist am wichtigsten?",
+      "instruction": "Ordne jedem Tier den Sinn zu, auf den es sich bei der Nahrungssuche oder zum Schutz vor allem verlässt.",
+      "categories": [
+        "Sehen",
+        "Hören",
+        "Riechen und Tasten"
+      ],
+      "entries": [
+        {
+          "text": "Mäusebussard kreist über einer Wiese",
+          "target": 0,
+          "feedback": "Er sieht sehr scharf."
+        },
+        {
+          "text": "Feldhase auf offenem Feld",
+          "target": 0,
+          "feedback": "Seitliche Augen für die Rundumsicht."
+        },
+        {
+          "text": "Schleiereule in der Nacht",
+          "target": 1,
+          "feedback": "Der Gesichtsschleier lenkt Geräusche zu den Ohren."
+        },
+        {
+          "text": "Fledermaus auf Insektenjagd",
+          "target": 1,
+          "feedback": "Sie hört das Echo ihrer Rufe."
+        },
+        {
+          "text": "Maulwurf in seinem Gang",
+          "target": 2,
+          "feedback": "Tasthaare und Geruch ersetzen die Augen."
+        },
+        {
+          "text": "Spürhund auf einer Fährte",
+          "target": 2,
+          "feedback": "Seine Nase ist viel empfindlicher als unsere."
+        }
+      ],
+      "conclusion": "Jedes Tier ist mit den Sinnen am besten ausgestattet, die es in seinem Lebensraum braucht."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Vergleiche die Sinnesleistungen von Schleiereule und Mäusebussard und erkläre sie mit ihrer Lebensweise.",
+        "hints": [
+          "Wann jagen beide?",
+          "Welche Sinne helfen ihnen jeweils besonders?"
+        ],
+        "model": "Die Schleiereule jagt nachts, wenn es kaum Licht gibt. Sie hat große Augen, die wenig Licht nutzen, und vor allem ein sehr feines Gehör. Ihr Gesichtsschleier aus Federn lenkt Geräusche zu den Ohren, sodass sie eine raschelnde Maus genau orten kann. Der Mäusebussard jagt am Tag. Er verlässt sich vor allem auf seine sehr scharfen Augen und entdeckt Mäuse aus großer Höhe. Beide haben die Augen nach vorn gerichtet und sehen räumlich, was Greifvögeln beim Zupacken hilft.",
+        "criteria": [
+          "Ich nenne die Jagdzeit beider Vögel.",
+          "Ich nenne den jeweils wichtigsten Sinn.",
+          "Ich verbinde Sinnesleistung und Lebensweise."
+        ]
+      },
+      "2": {
+        "prompt": "Ein Tier hat sehr kleine Augen, aber einen feinen Tast- und Geruchssinn. Stelle eine begründete Vermutung über seinen Lebensraum auf und nenne ein Beispiel.",
+        "hints": [
+          "Wo nützen Augen wenig?",
+          "Welche Reize sind dort trotzdem wichtig?"
+        ],
+        "model": "Das Tier lebt vermutlich an einem Ort, an dem es dunkel ist und Augen wenig nützen, zum Beispiel unter der Erde. Dort findet es Nahrung und Weg vor allem durch Tasten und Riechen. Kleine Augen sind in engen Gängen außerdem weniger verletzlich. Ein Beispiel ist der Maulwurf: Er hat winzige Augen, findet Regenwürmer aber mit seinen Tasthaaren und seiner Nase. Die Vermutung müsste man durch Beobachtung des Tieres prüfen.",
+        "criteria": [
+          "Ich stelle eine begründete Vermutung zum Lebensraum auf.",
+          "Ich verbinde die Sinne mit diesem Lebensraum.",
+          "Ich nenne ein passendes Beispiel."
+        ]
+      }
+    },
+    "figures": [
+      "sinne-lebensraum"
+    ]
+  }
+]
