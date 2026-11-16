@@ -105,9 +105,9 @@
 			"section": "1.4",
 			"position": 1,
 			"competence": "setzen eigene gestalterische Möglichkeiten (z. B. Sprechtempo, Lautstärke, Mimik, Gestik) beim szenischen Spiel ein. Sie erfahren das szenische Darstellen als eine Möglichkeit, sich selbst auszudrücken, Rollen zu übernehmen oder Sachverhalte zu erfassen, z. B. beim Umgang mit literarischen Texten. Sie setzen dabei ggf. Medien ein.",
-			"lessons": ["d5-rolle"],
+			"lessons": ["d5-rolle", "d5-spielszene"],
 			"status": "supported",
-			"evidence": "The scene workshop contrasts motive, voice and gesture; performing a scene and receiving audience feedback require others."
+			"evidence": "The scene and dramatic-script workshops contrast motive, stage directions, voice and gesture; performing a scene and receiving audience feedback require others."
 		},
 		{
 			"id": "2.1.1",
@@ -150,11 +150,12 @@
 				"d5-fabel",
 				"d5-figuren",
 				"d5-klang",
+				"d5-spielszene",
 				"d5-rolle",
 				"d5-lesetagebuch"
 			],
 			"status": "supported",
-			"evidence": "Original fairy tale, fable, scene and poem passages support fictional worlds, motives and personal response; modern whole-book reading remains additional."
+			"evidence": "Original fairy tale, fable, dramatic-script, scene and poem passages support fictional worlds, motives and personal response; modern whole-book reading remains additional."
 		},
 		{
 			"id": "2.2.2",
@@ -162,7 +163,13 @@
 			"section": "2.2",
 			"position": 2,
 			"competence": "leiten ihre Erwartungen an einen Text auch aus ihrer Kenntnis von literarischen Grundformen ab.",
-			"lessons": ["d5-textsorten", "d5-maerchen", "d5-fabel", "d5-klang"],
+			"lessons": [
+				"d5-textsorten",
+				"d5-maerchen",
+				"d5-fabel",
+				"d5-klang",
+				"d5-spielszene"
+			],
 			"status": "implemented",
 			"evidence": "Genre contrasts and text evidence connect prior expectations to typical but non-universal features."
 		},
@@ -172,9 +179,15 @@
 			"section": "2.2",
 			"position": 3,
 			"competence": "erschließen literarische Texte mithilfe vorgegebener Aspekte (v. a. Form- und Gattungselemente, Thematik, Aufbau, Figuren).",
-			"lessons": ["d5-maerchen", "d5-fabel", "d5-figuren", "d5-klang"],
+			"lessons": [
+				"d5-maerchen",
+				"d5-fabel",
+				"d5-figuren",
+				"d5-klang",
+				"d5-spielszene"
+			],
 			"status": "implemented",
-			"evidence": "Guided tasks cover genre, theme, structure and figures and require concrete textual evidence."
+			"evidence": "Guided tasks cover genre, theme, structure, stage directions and figures and require concrete textual evidence."
 		},
 		{
 			"id": "2.2.4",
@@ -379,6 +392,7 @@
 				"d5-faelle",
 				"d5-zeitformen",
 				"d5-satzglieder",
+				"d5-satzklammer",
 				"d5-adverbiale"
 			],
 			"status": "implemented",
@@ -406,10 +420,12 @@
 				"d5-pronomen",
 				"d5-adjektive",
 				"d5-zeitformen",
-				"d5-satzbau"
+				"d5-satzbau",
+				"d5-aehnliche-woerter",
+				"d5-nominalisierung"
 			],
 			"status": "implemented",
-			"evidence": "Worked examples and tasks cover all named word classes, deklination, komparation and konjugation, with prepositions and subordinators used in sentences."
+			"evidence": "Worked examples and tasks cover all named word classes, deklination, komparation and konjugation, with prepositions, subordinators and word-class spelling checks used in sentences."
 		},
 		{
 			"id": "4.2.4",
@@ -427,9 +443,9 @@
 			"section": "4.2",
 			"position": 5,
 			"competence": "unterscheiden das Prädikat und weitere Satzglieder (Subjekt, Dativ- und Akkusativobjekt, Lokal-, Temporal-, Modal- und Kausaladverbiale) und verwenden sie grammatikalisch richtig.",
-			"lessons": ["d5-satzglieder", "d5-adverbiale", "d5-faelle"],
+			"lessons": ["d5-satzglieder", "d5-satzklammer", "d5-adverbiale", "d5-faelle"],
 			"status": "implemented",
-			"evidence": "Block movement, case questions and four adverbial types distinguish predicate, subject, dative and accusative objects, place, time, manner and reason."
+			"evidence": "Block movement, predicate-bracket models, case questions and four adverbial types distinguish predicate, subject, dative and accusative objects, place, time, manner and reason."
 		},
 		{
 			"id": "4.2.6",
@@ -460,14 +476,16 @@
 			"lessons": [
 				"d5-dehnung",
 				"d5-schaerfung",
-				"d5-gross-und-s",
 				"d5-verlaengern",
+				"d5-aehnliche-woerter",
+				"d5-gross-und-s",
+				"d5-nominalisierung",
 				"d5-silbentrennung",
 				"d5-woertliche-rede",
 				"d5-kommas"
 			],
 			"status": "implemented",
-			"evidence": "Separate worked examples and tasks cover vowel length, consonant doubling, s sounds, capitals, similar sounds, line-end division, final punctuation, speech and clause/list commas."
+			"evidence": "Separate worked examples and tasks cover vowel length, consonant doubling, s sounds, capitals and nominalisation signals, homophone pairs, line-end division, final punctuation, speech and clause/list commas."
 		},
 		{
 			"id": "4.3.2",
@@ -477,13 +495,15 @@
 			"competence": "wenden die aus der Grundschule bekannten phonologischen, silbischen, morphologischen und grammatikalischen Prinzipien zur Rechtschreibung für die korrekte Gestaltung von Texten an und setzen aus der Grundschule bekannte Rechtschreibstrategien und Methoden der Fehleranalyse ein (z. B. Ableitungsverfahren, Verlängern, Artikelprobe).",
 			"lessons": [
 				"d5-verlaengern",
+				"d5-aehnliche-woerter",
 				"d5-wortbildung",
 				"d5-gross-und-s",
+				"d5-nominalisierung",
 				"d5-woerterbuch",
 				"d5-ueberarbeiten"
 			],
 			"status": "implemented",
-			"evidence": "Sound, syllable, stem and grammar-based probes are applied to concrete corrections, with extension, derivation, article checks and dictionary verification."
+			"evidence": "Sound, syllable, stem and grammar-based probes are applied to concrete corrections, with extension, derivation, homophone, nominalisation, article checks and dictionary verification."
 		}
 	]
 }

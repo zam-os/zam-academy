@@ -1,21 +1,21 @@
 # German 5 Gymnasium, Bavaria
 
-46 lessons follow the shared Bavarian LehrplanPLUS Grade 5 German curriculum:
-7 on speaking and listening, 12 on reading and media, 8 on writing and 19 on
+50 lessons follow the shared Bavarian LehrplanPLUS Grade 5 German curriculum:
+7 on speaking and listening, 13 on reading and media, 8 on writing and 22 on
 language and spelling. Every lesson has a worked example, a key rule, an
 explorable labelled diagram, a quick check, two case decisions and distinct
 guided and transfer writing tasks. Learners compare drafts with a model and
 use a three-point rubric. The app does not automatically grade free writing.
 
-The 19 language and spelling lessons have working visual models. Buttons move
-whole sentence parts, change case endings, rearrange verb and reporting-clause
-positions, highlight word classes, compare vowel length and show syllable
-division. Three exploration goals start unchecked; they record changes tried,
+The 22 language and spelling lessons have working visual models. Buttons move
+whole sentence parts, form predicate brackets (*Satzklammer*), change case endings,
+rearrange verb and reporting-clause positions, distinguish homophones and
+nominalisation signals, highlight word classes, compare vowel length and show
+syllable division. Three exploration goals start unchecked; they record changes tried,
 not mastery. All controls work with a keyboard.
 
-The package is a local draft (`publication.json`: `local-only`). Teacher review
-and teacher videos remain open. It is excluded from Pages, the public catalog
-and the Academy atlas until publication is explicitly authorised.
+The package is published in ZAM Academy (`https://academy.zam-os.org/deutsch-gymnasium-5/`).
+Teacher review and teacher videos remain open.
 
 Build and open `dist/index.html` directly, or extract
 `release/ZAM-Academy-Deutsch-Gymnasium-5-offline.zip` and open
@@ -50,7 +50,7 @@ and self-assessment record practice, not demonstrated mastery. See the
 [curriculum and legacy inventory](../docs/deutsch-gymnasium-5-coverage.md) for
 the neighbouring-grade check and publication limits.
 
-92 ZAM practice items live only in [cell.json](cell.json), two per lesson.
+50 lessons and 100 ZAM practice items live only in [cell.json](cell.json), two per lesson.
 Their source links use the eventual published lesson anchors. No item declares
 `replaces`, and no old item is retired. The [legacy proposal](replaces-de-by.json)
 inventories all sixteen old items: one possible A mapping awaits Thomas's
@@ -67,7 +67,7 @@ pinned in the repository CI:
 ZAM_CORE=file:///path/to/zam-core/dist/index.js node scripts/validate-cell.mjs
 ```
 
-This uses disposable libraries, tests 92 fresh cards and repeated installation,
+This uses disposable libraries, tests 100 fresh cards and repeated installation,
 and verifies that all sixteen legacy cards and their review evidence remain
 unchanged. It never opens a configured learner library.
 

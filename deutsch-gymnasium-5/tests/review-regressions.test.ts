@@ -76,8 +76,8 @@ describe("Review corrections", () => {
 
 describe("Working language models", () => {
 	const models = LESSONS.filter((l) => l.visual.initial);
-	it("provides visible content and three reachable exploration goals for all 19 language lessons", () => {
-		expect(models).toHaveLength(19);
+	it("provides visible content and three reachable exploration goals for all 22 language lessons", () => {
+		expect(models).toHaveLength(22);
 		expect(models.map((l) => l.id)).toEqual(
 			LESSONS.filter((l) => l.stage === "sprache").map((l) => l.id),
 		);
@@ -124,5 +124,10 @@ describe("Working language models", () => {
 		expect(words("woertliche-rede", 1).join(" ")).toBe(
 			"„Ich komme morgen“ , sagt Mia.",
 		);
+		expect(words("satzklammer", 1).join(" ")).toBe(
+			"Das Mädchen hat das Heft aufgeschlagen.",
+		);
+		expect(words("nominalisierung", 0).join(" ")).toBe("beim Lesen");
+		expect(words("aehnliche-woerter", 0).join(" ")).toBe("Ihr seid bereit.");
 	});
 });

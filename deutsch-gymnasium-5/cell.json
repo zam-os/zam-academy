@@ -3,7 +3,7 @@
 	"tile_id": "zam-academy:deutsch-gymnasium-5",
 	"version": "2026.11.1",
 	"title": "Deutsch 5 Gymnasium (ZAM Academy)",
-	"description": "46 Lektionen und 92 Wiederholungsfragen zu Sprechen, Lesen, Schreiben und Sprache für Deutsch 5 Gymnasium Bayern.",
+	"description": "50 Lektionen und 100 Wiederholungsfragen zu Sprechen, Lesen, Schreiben und Sprache für Deutsch 5 Gymnasium Bayern.",
 	"publisher": "ZAM Academy",
 	"sources": [
 		{
@@ -885,6 +885,84 @@
 					"slug": "d5-klang-recall",
 					"language": "de",
 					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-5/#lesson=d5-klang"
+				}
+			]
+		},
+		{
+			"id": "01M7HEV5R0C8QBRE7CY16K3SY0",
+			"atom_uri": "urn:zam:atom:01M7HEV5R0C8QBRE7CY16K3SY0",
+			"namespace": "zam-academy-deutsch-gymnasium-5",
+			"slug": "d5-spielszene",
+			"title": "Spielszenen lesen und verstehen",
+			"domain": "deutsch/lesen",
+			"reduction": "formal",
+			"typical_age_min": 10,
+			"source_link": "https://academy.zam-os.org/deutsch-gymnasium-5/#lesson=d5-spielszene",
+			"prerequisites": [
+				{
+					"atom_id": "01M7D0P81183V17AJ6SS8EZJYJ",
+					"type": "soft",
+					"rationale": "This lesson uses the prerequisite skill in a new context."
+				},
+				{
+					"atom_id": "01M7D0P811VJ75YSZ4P8KB6YNF",
+					"type": "soft",
+					"rationale": "This lesson uses the prerequisite skill in a new context."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "deutsch-gymnasium-5",
+					"topic_code": "lesen",
+					"topic_title": "Lesen und Medien"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "deutsch",
+					"topic_code": "lb1",
+					"topic_title": "Sprechen und Zuhören"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "deutsch",
+					"topic_code": "lb2",
+					"topic_title": "Lesen – mit Texten und weiteren Medien umgehen"
+				}
+			],
+			"practice_items": [
+				{
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Welche Aufgabe hat eine eingeklammerte Regieanweisung in einer Spielszene, etwa ‚TOM (flüsternd): Wer ist da?‘?",
+					"concept": "Sie beschreibt Mimik, Stimme oder Handlung und wird gespielt statt vorgelesen.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Sie beschreibt Mimik, Stimme oder Handlung und wird gespielt statt vorgelesen.",
+							"Sie gibt den Titel des gesamten Theaterstücks an."
+						],
+						"correct_index": 0
+					},
+					"id": "01M7HEV5R09VH44MCWWST9FXMX",
+					"slug": "d5-spielszene-check",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-5/#lesson=d5-spielszene"
+				},
+				{
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Woran unterscheidest du beim Lesen einer Spielszene Figurenrede und Regieanweisung?",
+					"concept": "Die Figurenrede folgt dem Rollennamen zum Sprechen; die Regieanweisung gibt Hinweise zum Spielen.",
+					"sample_solution": "Bei ‚MIA (tritt näher): Schau einmal!‘ ist ‚(tritt näher)‘ eine Regieanweisung für die Bewegung und ‚Schau einmal!‘ die gesprochene Figurenrede.",
+					"id": "01M7HEV5R0ACKQ1FZH0MEJY8FZ",
+					"slug": "d5-spielszene-recall",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-5/#lesson=d5-spielszene"
 				}
 			]
 		},
@@ -2380,6 +2458,71 @@
 			]
 		},
 		{
+			"id": "01M7HEV5R0Z2F5VPA1MCYH37TS",
+			"atom_uri": "urn:zam:atom:01M7HEV5R0Z2F5VPA1MCYH37TS",
+			"namespace": "zam-academy-deutsch-gymnasium-5",
+			"slug": "d5-satzklammer",
+			"title": "Mehrteilige Prädikate und Satzklammer",
+			"domain": "deutsch/sprache",
+			"reduction": "formal",
+			"typical_age_min": 10,
+			"source_link": "https://academy.zam-os.org/deutsch-gymnasium-5/#lesson=d5-satzklammer",
+			"prerequisites": [
+				{
+					"atom_id": "01M7D0P811WWRHWC1RHE9KGA4B",
+					"type": "soft",
+					"rationale": "This lesson uses the prerequisite skill in a new context."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "deutsch-gymnasium-5",
+					"topic_code": "sprache",
+					"topic_title": "Sprache und Rechtschreibung"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "deutsch",
+					"topic_code": "lb4",
+					"topic_title": "Sprachgebrauch und Sprache untersuchen und reflektieren"
+				}
+			],
+			"practice_items": [
+				{
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Welche Wörter bilden im Satz ‚Morgen will Mia das Gedicht laut vortragen‘ gemeinsam das Prädikat?",
+					"concept": "„will“ und „vortragen“",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"„will“ und „vortragen“",
+							"nur „will“ an der zweiten Stelle"
+						],
+						"correct_index": 0
+					},
+					"id": "01M7HEV5R041ZD08QRXWRN44HS",
+					"slug": "d5-satzklammer-check",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-5/#lesson=d5-satzklammer"
+				},
+				{
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Was versteht man bei mehrteiligen Prädikaten im Aussagesatz unter der Satzklammer?",
+					"concept": "Die finite Verbform steht an zweiter Stelle und der übrige Verbteil am Satzende um die Satzglieder dazwischen.",
+					"sample_solution": "In ‚Gestern hat Jonas ein neues Heft aufgeschlagen‘ bilden ‚hat‘ links und ‚aufgeschlagen‘ rechts eine Klammer um Subjekt und Objekt.",
+					"id": "01M7HEV5R06Y92PWW1MKAJYJYD",
+					"slug": "d5-satzklammer-recall",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-5/#lesson=d5-satzklammer"
+				}
+			]
+		},
+		{
 			"id": "01M7D0P811ZKHC7MJFWQ4WD7JA",
 			"atom_uri": "urn:zam:atom:01M7D0P811ZKHC7MJFWQ4WD7JA",
 			"namespace": "zam-academy-deutsch-gymnasium-5",
@@ -2681,6 +2824,71 @@
 			]
 		},
 		{
+			"id": "01M7HEV5R06GJSX5VVKACDDBWM",
+			"atom_uri": "urn:zam:atom:01M7HEV5R06GJSX5VVKACDDBWM",
+			"namespace": "zam-academy-deutsch-gymnasium-5",
+			"slug": "d5-aehnliche-woerter",
+			"title": "Gleich und ähnlich klingende Wörter unterscheiden",
+			"domain": "deutsch/sprache",
+			"reduction": "formal",
+			"typical_age_min": 10,
+			"source_link": "https://academy.zam-os.org/deutsch-gymnasium-5/#lesson=d5-aehnliche-woerter",
+			"prerequisites": [
+				{
+					"atom_id": "01M7D0P811C3N5PDQ89R7KGBWR",
+					"type": "soft",
+					"rationale": "This lesson uses the prerequisite skill in a new context."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "deutsch-gymnasium-5",
+					"topic_code": "sprache",
+					"topic_title": "Sprache und Rechtschreibung"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "deutsch",
+					"topic_code": "lb4",
+					"topic_title": "Sprachgebrauch und Sprache untersuchen und reflektieren"
+				}
+			],
+			"practice_items": [
+				{
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Warum schreibt man im Satz ‚Ihr seid pünktlich gekommen‘ das Wort ‚seid‘ mit d am Ende?",
+					"concept": "Es ist die gebeugte Verbform von ‚sein‘ zur Person ‚ihr‘.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Es ist die gebeugte Verbform von ‚sein‘ zur Person ‚ihr‘.",
+							"Es bezeichnet eine Zeitdauer von der Vergangenheit bis heute."
+						],
+						"correct_index": 0
+					},
+					"id": "01M7HEV5R0F9E53DA1230FY61N",
+					"slug": "d5-aehnliche-woerter-check",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-5/#lesson=d5-aehnliche-woerter"
+				},
+				{
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie unterscheidest du ‚viel‘ und ‚fiel‘ sowie ‚wieder‘ und ‚wider‘ sicher beim Schreiben?",
+					"concept": "‚fiel‘ gehört als Verbform zu ‚fallen‘, ‚viel‘ nennt eine Menge; ‚wieder‘ heißt erneut, ‚wider‘ bedeutet gegen.",
+					"sample_solution": "In ‚Der Stift fiel hin‘ prüfe ich die Grundform ‚fallen‘; ‚viel Zeit‘ zeigt die Menge. ‚wieder lesen‘ heißt noch einmal, ‚widersprechen‘ heißt dagegen sprechen.",
+					"id": "01M7HEV5R07RQ01SW50RGZXTJR",
+					"slug": "d5-aehnliche-woerter-recall",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-5/#lesson=d5-aehnliche-woerter"
+				}
+			]
+		},
+		{
 			"id": "01M7D0P811PK5T3P87SDDT9QW0",
 			"atom_uri": "urn:zam:atom:01M7D0P811PK5T3P87SDDT9QW0",
 			"namespace": "zam-academy-deutsch-gymnasium-5",
@@ -2736,6 +2944,71 @@
 					"slug": "d5-gross-und-s-recall",
 					"language": "de",
 					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-5/#lesson=d5-gross-und-s"
+				}
+			]
+		},
+		{
+			"id": "01M7HEV5R0P261C41E83BHS264",
+			"atom_uri": "urn:zam:atom:01M7HEV5R0P261C41E83BHS264",
+			"namespace": "zam-academy-deutsch-gymnasium-5",
+			"slug": "d5-nominalisierung",
+			"title": "Nominalisierungen nach Signalwörtern prüfen",
+			"domain": "deutsch/sprache",
+			"reduction": "formal",
+			"typical_age_min": 10,
+			"source_link": "https://academy.zam-os.org/deutsch-gymnasium-5/#lesson=d5-nominalisierung",
+			"prerequisites": [
+				{
+					"atom_id": "01M7D0P811PK5T3P87SDDT9QW0",
+					"type": "soft",
+					"rationale": "This lesson uses the prerequisite skill in a new context."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "deutsch-gymnasium-5",
+					"topic_code": "sprache",
+					"topic_title": "Sprache und Rechtschreibung"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "deutsch",
+					"topic_code": "lb4",
+					"topic_title": "Sprachgebrauch und Sprache untersuchen und reflektieren"
+				}
+			],
+			"practice_items": [
+				{
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Warum schreibst du ‚Spannendes‘ in der Wortgruppe ‚etwas Spannendes erleben‘ mit großem Anfangsbuchstaben?",
+					"concept": "Nach der Mengenangabe ‚etwas‘ ist das Adjektiv nominalisiert und wird großgeschrieben.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Nach der Mengenangabe ‚etwas‘ ist das Adjektiv nominalisiert und wird großgeschrieben.",
+							"Weil jedes gebeugte Adjektiv am Ende -es immer großgeschrieben wird."
+						],
+						"correct_index": 0
+					},
+					"id": "01M7HEV5R0GKC93X5TXYBBNNM1",
+					"slug": "d5-nominalisierung-check",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-5/#lesson=d5-nominalisierung"
+				},
+				{
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Nenne zwei verschiedene Signale für Nominalisierungen und bilde zu jedem ein kurzes Beispiel.",
+					"concept": "Versteckte Artikel in Präpositionen (‚beim Lesen‘) und Mengenangaben (‚etwas Neues‘) zeigen eine Großschreibung an.",
+					"sample_solution": "Ein versteckter Artikel steht in ‚beim Lesen‘ (= bei dem Lesen) oder ‚zum Üben‘ (= zu dem Üben); eine Mengenangabe steht in ‚nichts Gutes‘ oder ‚viel Spannendes‘.",
+					"id": "01M7HEV5R0WHE4XNR7P28C1WFS",
+					"slug": "d5-nominalisierung-recall",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-5/#lesson=d5-nominalisierung"
 				}
 			]
 		},

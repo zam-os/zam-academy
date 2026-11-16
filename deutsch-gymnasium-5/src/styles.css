@@ -55,14 +55,6 @@ body {
 	background: var(--bg);
 	color: var(--ink);
 }
-.zam-draft-notice {
-	margin: 0;
-	padding: 0.75rem 2rem;
-	border-bottom: 1px solid var(--line);
-	background: var(--gold-soft);
-	color: var(--ink);
-	font-size: 0.9rem;
-}
 button,
 input,
 textarea,
@@ -951,9 +943,19 @@ summary {
 }
 .material-table th,
 .material-table td {
-	padding: 0.35rem;
+	padding: 0.35rem 0.5rem 0.35rem 0.35rem;
 	border-bottom: 1px solid var(--line);
-	overflow-wrap: anywhere;
+	vertical-align: top;
+	overflow-wrap: break-word;
+}
+.material-table tbody th {
+	padding-right: 0.9rem;
+	white-space: nowrap;
+}
+@media (max-width: 520px) {
+	.material-table tbody th {
+		white-space: normal;
+	}
 }
 
 /* The picture, labels and explanation remain readable in both colour schemes. */

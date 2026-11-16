@@ -32,7 +32,7 @@ try {
 			item.source_link,
 		);
 	}
-	assert.equal(items.length, 92);
+	assert.equal(items.length, 100);
 	const first = await zam.ensureCard(db, items[0].id, user);
 	await zam.evaluateRating(db, {
 		cardId: first.id,
@@ -47,7 +47,7 @@ try {
 		reviews: await db.prepare("SELECT * FROM review_logs ORDER BY id").all(),
 	});
 	const before = await snapshot();
-	assert.equal(before.cards.length, 92);
+	assert.equal(before.cards.length, 100);
 	assert.equal(before.reviews.length, 1);
 	for (let repeat = 0; repeat < 2; repeat++) {
 		await zam.installKvtTile(db, tile);
@@ -82,13 +82,13 @@ try {
 		now: new Date("2026-11-14T12:00:00Z"),
 	});
 	const mixed = await snapshot();
-	assert.equal(mixed.cards.length, 108);
+	assert.equal(mixed.cards.length, 116);
 	assert.equal(mixed.reviews.length, 2);
 	await zam.installKvtTile(db, tile);
 	for (const item of items) await zam.ensureCard(db, item.id, user);
 	assert.deepEqual(await snapshot(), mixed);
 	console.log(
-		"ok: install creates no cards; 92 fresh cards enrol; repeated install/enrol preserves recall; all 16 legacy cards and their review evidence stay unchanged.",
+		"ok: install creates no cards; 100 fresh cards enrol; repeated install/enrol preserves recall; all 16 legacy cards and their review evidence stay unchanged.",
 	);
 } finally {
 	if (db) await db.close();
