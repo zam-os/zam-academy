@@ -1,4 +1,5 @@
 import { spawn } from "node:child_process";
+import { createHash } from "node:crypto";
 import {
 	mkdirSync,
 	mkdtempSync,
@@ -104,18 +105,23 @@ const evaluate = async (expression) => {
 		throw Error(JSON.stringify(value.exceptionDetails));
 	return value.result.value;
 };
-const screenshot = async (name) => {
+const screenshot = async (name, selector) => {
 	const layout = await page("Page.getLayoutMetrics");
+	const clip = selector
+		? await evaluate(
+				`(()=>{const box=document.querySelector(${JSON.stringify(selector)}).getBoundingClientRect();return {x:box.x+scrollX,y:box.y+scrollY,width:box.width,height:box.height,scale:1}})()`,
+			)
+		: {
+				x: 0,
+				y: 0,
+				width: layout.cssContentSize.width,
+				height: layout.cssContentSize.height,
+				scale: 1,
+			};
 	const result = await page("Page.captureScreenshot", {
 		format: "png",
 		captureBeyondViewport: true,
-		clip: {
-			x: 0,
-			y: 0,
-			width: layout.cssContentSize.width,
-			height: layout.cssContentSize.height,
-			scale: 1,
-		},
+		clip,
 	});
 	writeFileSync(`${output}/${name}.png`, Buffer.from(result.data, "base64"));
 };
@@ -154,6 +160,8 @@ try {
 		50,
 	);
 	let states = 0;
+	let explorationStates = 0;
+	let modelStates = 0;
 	for (const theme of ["light", "dark"]) {
 		await evaluate(
 			`document.documentElement.dataset.theme=${JSON.stringify(theme)}`,
@@ -212,70 +220,84 @@ try {
 	const tile = JSON.parse(readFileSync(`${root}/cell.json`));
 	// Prove every exploration control and every case goal is reachable from
 	// its unselected state through the same events a learner uses.
-	for (const lesson of lessons) {
-		await route(`#lesson=${lesson.id}&level=1`);
-		for (let i = 0; i < 3; i++) {
-			if (i === 2) {
-				await evaluate(
-					`document.querySelector('[data-visual-step="${i}"]').focus()`,
+	for (const theme of ["light", "dark"]) {
+		await evaluate(
+			`document.documentElement.dataset.theme=${JSON.stringify(theme)}`,
+		);
+		for (const lesson of lessons) {
+			await route(`#lesson=${lesson.id}&level=1`);
+			for (let i = 0; i < 3; i++) {
+				if (i === 2) {
+					await evaluate(
+						`document.querySelector('[data-visual-step="${i}"]').focus()`,
+					);
+					await page("Input.dispatchKeyEvent", {
+						type: "keyDown",
+						key: "Enter",
+						code: "Enter",
+						windowsVirtualKeyCode: 13,
+						text: "\r",
+					});
+					await page("Input.dispatchKeyEvent", {
+						type: "keyUp",
+						key: "Enter",
+						code: "Enter",
+						windowsVirtualKeyCode: 13,
+					});
+				} else {
+					await evaluate(
+						`document.querySelector('[data-visual-step="${i}"]').click()`,
+					);
+				}
+				assert.equal(
+					await evaluate(
+						'document.querySelector("#visual-detail").textContent',
+					),
+					`${lesson.visual.steps[i].label}: ${lesson.visual.steps[i].detail}`,
 				);
-				await page("Input.dispatchKeyEvent", {
-					type: "keyDown",
-					key: "Enter",
-					code: "Enter",
-					windowsVirtualKeyCode: 13,
-					text: "\r",
-				});
-				await page("Input.dispatchKeyEvent", {
-					type: "keyUp",
-					key: "Enter",
-					code: "Enter",
-					windowsVirtualKeyCode: 13,
-				});
-			} else {
-				await evaluate(
-					`document.querySelector('[data-visual-step="${i}"]').click()`,
+				assert.equal(
+					await evaluate(
+						'document.querySelectorAll("[data-visual-step][aria-pressed=true]").length',
+					),
+					1,
 				);
-			}
-			assert.equal(
-				await evaluate('document.querySelector("#visual-detail").textContent'),
-				`${lesson.visual.steps[i].label}: ${lesson.visual.steps[i].detail}`,
-			);
-			assert.equal(
-				await evaluate(
-					'document.querySelectorAll("[data-visual-step][aria-pressed=true]").length',
-				),
-				1,
-			);
-			assert.equal(
-				await evaluate(
-					'document.querySelectorAll("[data-model-reached=true]").length',
-				),
-				i + 1,
-			);
-			if (lesson.visual.initial) {
-				const text = await evaluate(
-					'document.querySelector("[data-language-model]").innerText',
-				);
-				for (const block of lesson.visual.steps[i].blocks)
-					assert.ok(text.includes(block.text), `${lesson.id}: ${block.text}`);
 				assert.equal(
 					await evaluate(
 						'document.querySelectorAll("[data-model-reached=true]").length',
 					),
 					i + 1,
 				);
+				if (lesson.visual.initial) {
+					const text = await evaluate(
+						'document.querySelector("[data-language-model]").innerText',
+					);
+					for (const block of lesson.visual.steps[i].blocks)
+						assert.ok(text.includes(block.text), `${lesson.id}: ${block.text}`);
+					assert.equal(
+						await evaluate(
+							'document.querySelectorAll("[data-model-reached=true]").length',
+						),
+						i + 1,
+					);
+					modelStates++;
+				}
+				explorationStates++;
+				if (lesson.visual.initial || lesson.visual.kind === "map")
+					await screenshot(
+						`model-${lesson.id}-step${i + 1}-${theme}`,
+						".visual-workshop",
+					);
 			}
+
+			await evaluate(
+				`var answers=${JSON.stringify(lesson.cases.map((c) => c.answer))};document.querySelectorAll('[data-case]').forEach((group,i)=>{Array.from(group.querySelectorAll('input')).find(el=>el.value===answers[i]).checked=true});document.querySelector('#cases-form').requestSubmit()`,
+			);
+			assert.ok(
+				(
+					await evaluate('document.querySelector("#case-feedback").innerText')
+				).includes("2 von 2 richtig"),
+			);
 		}
-		if (lesson.visual.initial) await screenshot(`model-${lesson.id}-changed`);
-		await evaluate(
-			`var answers=${JSON.stringify(lesson.cases.map((c) => c.answer))};document.querySelectorAll('[data-case]').forEach((group,i)=>{Array.from(group.querySelectorAll('input')).find(el=>el.value===answers[i]).checked=true});document.querySelector('#cases-form').requestSubmit()`,
-		);
-		assert.ok(
-			(
-				await evaluate('document.querySelector("#case-feedback").innerText')
-			).includes("2 von 2 richtig"),
-		);
 	}
 	const first = lessons[0];
 	for (const level of [1, 2]) {
@@ -407,6 +429,11 @@ try {
 				states,
 				lessons: lessons.length,
 				visualControls: lessons.length * 3,
+				explorationStates,
+				modelStates,
+				buildSha256: createHash("sha256")
+					.update(readFileSync(join(root, "dist/index.html")))
+					.digest("hex"),
 				caseGoals: lessons.length * 2,
 				checks: [
 					"model and rubric on every level",
@@ -416,6 +443,7 @@ try {
 					"audio decoding",
 					"bar chart interaction",
 					"keyboard activation on every third visual control",
+					"all selected language-model examples in both themes",
 				],
 				themes: ["light", "dark"],
 				responsiveWidths: [320, 390, 720, 1280],
@@ -427,7 +455,7 @@ try {
 		),
 	);
 	console.log(
-		`ok: ${states} lesson/level/theme views; 150 visual controls; 100 case goals; audio, completion, reload and mobile layout pass; no runtime errors or external requests.`,
+		`ok: ${states} lesson/level/theme views; ${explorationStates} exploration states including ${modelStates} selected language-model views; 150 visual controls; 100 case goals; audio, completion, reload and mobile layout pass; no runtime errors or external requests.`,
 	);
 } finally {
 	chrome.kill();

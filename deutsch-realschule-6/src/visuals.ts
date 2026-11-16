@@ -13,10 +13,23 @@ function diagram(lesson: Lesson): string {
 		${["Abenteuer", "Tiere", "Fantasie", "Sachbuch"].map((name, i) => `<g data-chart-bar="${i}"><text x="125" y="${48 + i * 42}" text-anchor="end">${name}</text><rect x="145" y="${27 + i * 42}" width="${(8 - i * 2) * 45}" height="29" rx="5" class="bar bar-${i}"/><text x="${156 + (8 - i * 2) * 45}" y="${48 + i * 42}">${8 - i * 2}</text></g>`).join("")}</svg>`;
 	}
 	if (kind === "map")
-		return `<svg viewBox="0 0 600 265" role="img" aria-label="Wegskizze: Vom Schultor nach oben zum Brunnen, links an der Bücherei vorbei, direkt dahinter rechts zum Jugendzentrum. Oben entspricht Norden."><path d="M475 205V110H120V45" class="diagram-line"/><path d="M475 160l-8 14m8-14 8 14M360 110l14-8m-14 8 14 8M120 65l-8 14m8-14 8 14" class="diagram-line"/><rect x="440" y="198" width="70" height="30" rx="5" class="paper"/><text x="475" y="250" text-anchor="middle">Schultor</text><circle cx="475" cy="110" r="18" class="bar bar-0"/><text x="475" y="80" text-anchor="middle">Brunnen</text><rect x="225" y="135" width="85" height="45" rx="5" class="book"/><text x="267" y="205" text-anchor="middle">Bücherei</text><rect x="83" y="12" width="75" height="36" rx="5" class="castle"/><text x="120" y="225" text-anchor="middle">Jugendzentrum</text><path d="M120 211V50" class="chart-grid"/><text x="35" y="38">N ↑</text>${[
-			[475, 205],
-			[475, 110],
-			[120, 45],
+		return `<svg viewBox="0 0 600 300" role="img" aria-label="Wegskizze, Norden ist oben: Vom Schultor nach Norden zum Brunnen, links nach Westen an der Bücherei vorbei, direkt dahinter rechts nach Norden zum Eingang des Jugendzentrums.">
+		<path d="M490 240V180H225V105" class="diagram-line" data-map-route/>
+		<path d="M490 210l-8 14m8-14 8 14M405 180l14-8m-14 8 14 8M225 138l-8 14m8-14 8 14" class="diagram-line"/>
+		<rect x="455" y="240" width="70" height="30" rx="5" class="paper"/>
+		<text x="490" y="292" text-anchor="middle">Schultor</text>
+		<circle cx="490" cy="180" r="18" class="bar bar-0"/>
+		<text x="490" y="151" text-anchor="middle">Brunnen</text>
+		<rect x="285" y="95" width="100" height="55" rx="5" class="book"/>
+		<text x="335" y="80" text-anchor="middle">Bücherei</text>
+		<rect x="185" y="55" width="80" height="50" rx="5" class="castle"/>
+		<rect x="218" y="85" width="14" height="20" class="paper"/>
+		<text x="225" y="35" text-anchor="middle">Jugendzentrum</text>
+		<text x="45" y="38">N ↑</text>
+		${[
+			[490, 240],
+			[490, 180],
+			[225, 105],
 		]
 			.map(
 				([x, y], i) =>

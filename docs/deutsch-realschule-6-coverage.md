@@ -125,10 +125,14 @@ npm run test:browser
 
 The browser script opens `dist/index.html` as a local file and verifies every
 lesson and task level in both themes, every visual control and case goal,
-keyboard activation, rubric and model rendering, progress/reload/edit behaviour,
-audio decoding and responsive layouts. It writes screenshots and a JSON report.
+all selected language-model states in both themes, keyboard activation,
+rubric and model rendering, progress/reload/edit behaviour, audio decoding
+and responsive layouts. It writes screenshots and a JSON report.
 The release checker compares the ZIP's embedded HTML byte-for-byte with the
-build and checks all three starter scripts.
+build and checks all three starter scripts. The browser report pins the built
+HTML hash. `npm test -- tests/visual-models.test.ts` checks the grammatical
+meaning of the selected examples, clause punctuation and the route geometry,
+including the turn behind the library and the destination label.
 
 From the repository root, run the existing catalog and registry tests and the
 cell checks with `ZAM_CORE` pointing to the version pinned in CI:

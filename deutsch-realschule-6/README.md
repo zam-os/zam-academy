@@ -12,6 +12,8 @@ stems, six tenses, active/passive focus, cases, objects, adverbials, relative
 clauses, clause combinations, nominalisation and punctuation. All 50 visuals
 have three exploration goals that start unchecked. These goals record what
 was explored, not mastery. The controls are native keyboard-accessible buttons.
+Regression checks tie the controls to their intended grammatical examples and
+check the listening route against the described directions and destination.
 
 The package is a local draft (`publication.json`: `local-only`). Teacher review
 and teacher videos remain open. It stays outside Pages, the public catalog and
@@ -26,7 +28,7 @@ key. Sources open only on a click.
 
 ```sh
 npm ci
-npm run dev                 # port 5253
+npm run dev                 # port 5254
 npm run typecheck
 npm test
 npm run check:curriculum
@@ -39,10 +41,11 @@ Set `CHROME_BIN` if Chrome is installed outside the default macOS path; CI uses
 `/usr/bin/google-chrome`. `BROWSER_QA_DIR` overrides the report and screenshot
 folder (default: `zam-deutsch-rs6-browser` under the operating system's temporary
 folder). It checks every lesson and both task levels in light and dark themes,
-every exploration control and case goal, keyboard activation, model answers,
-rubrics, completion on both levels, reload persistence, edit invalidation,
-audio decoding and layouts at 320, 390, 720 and 1280 pixels. Runtime exceptions
-and external HTTP requests fail the check.
+every exploration control and case goal, all selected language-model examples
+in both themes, keyboard activation, model answers, rubrics, completion on both
+levels, reload persistence, edit invalidation, audio decoding and layouts at
+320, 390, 720 and 1280 pixels. Runtime exceptions and external HTTP requests
+fail the check.
 
 The [coverage matrix](coverage.json) contains all 61 official expectations. The
 curriculum checker verifies each quotation against the captured live page and

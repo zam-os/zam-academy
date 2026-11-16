@@ -2374,31 +2374,31 @@
 					"detail": "Die heutige Verwendung muss zur Aussage passen und verständlich sein.",
 					"blocks": [
 						{
-							"text": "Audio",
-							"label": "lat. audio",
-							"tone": "stem"
+							"text": "Mikrofon",
+							"label": "Gerät",
+							"tone": "noun"
 						},
 						{
-							"text": "ich höre",
-							"label": "Herkunftsbezug",
-							"tone": "neutral"
+							"text": "nimmt Schall auf",
+							"label": "heutige Bedeutung",
+							"tone": "predicate"
 						}
 					]
 				},
 				{
 					"label": "Herkunft",
 					"text": "video: ich sehe; audio: ich höre",
-					"detail": "Herkunftsbausteine eröffnen einen Zugang, sind aber keine vollständige Sachdefinition.",
+					"detail": "Lateinisch „audio“ bedeutet „ich höre“, „video“ bedeutet „ich sehe“. Die Herkunft hilft beim Verstehen, ersetzt aber keine heutige Sachdefinition.",
 					"blocks": [
 						{
-							"text": "Video",
-							"label": "lat. video",
+							"text": "audio → ich höre",
+							"label": "lateinischer Herkunftsbezug",
 							"tone": "stem"
 						},
 						{
-							"text": "ich sehe",
-							"label": "Herkunftsbezug",
-							"tone": "neutral"
+							"text": "video → ich sehe",
+							"label": "lateinischer Herkunftsbezug",
+							"tone": "stem"
 						}
 					]
 				},
@@ -2521,30 +2521,40 @@
 				},
 				{
 					"label": "Übertragen",
-					"text": "einen Versuch aufgeben",
-					"detail": "Im Modellbau wird das Sportbild auf ein anderes Tätigkeitsfeld übertragen.",
+					"text": "das Handtuch werfen → aufgeben",
+					"detail": "Die Redensart überträgt das Aufgabesignal aus dem Boxsport auf andere Aufgaben. Hier wird kein echtes Handtuch geworfen.",
 					"blocks": [
 						{
+							"text": "das Handtuch werfen",
+							"label": "Redensart",
+							"tone": "speech"
+						},
+						{
 							"text": "einen Versuch aufgeben",
-							"label": "übertragen",
-							"tone": "meaning"
+							"label": "übertragene Bedeutung",
+							"tone": "neutral"
+						},
+						{
+							"text": "Boxsport",
+							"label": "Herkunftsbereich dieser Redensart",
+							"tone": "stem"
 						}
 					]
 				},
 				{
 					"label": "Einordnen",
-					"text": "Sprichwort: viele Köche",
-					"detail": "Der vollständige Satz verallgemeinert eine Erfahrung; du prüfst seine Anwendbarkeit.",
+					"text": "Viele Köche verderben den Brei.",
+					"detail": "Dieses Sprichwort verallgemeinert eine Erfahrung mit ungeordneter Einmischung. Gute Absprache kann Zusammenarbeit ermöglichen; der Satz gilt nicht ausnahmslos.",
 					"blocks": [
 						{
-							"text": "Boxsport",
-							"label": "Herkunftsbereich",
-							"tone": "stem"
+							"text": "Viele Köche verderben den Brei.",
+							"label": "Sprichwort",
+							"tone": "speech"
 						},
 						{
-							"text": "Aufgabe des Kampfes",
-							"label": "Signal",
-							"tone": "marker"
+							"text": "keine ausnahmslose Regel",
+							"label": "Geltung prüfen",
+							"tone": "comparison"
 						}
 					]
 				}
@@ -2738,6 +2748,11 @@
 					"detail": "Artikel, Adjektiv und Nomen passen ihre Formen an Numerus und Kasus an.",
 					"blocks": [
 						{
+							"text": "das spannende Buch",
+							"label": "Singular: Deklination",
+							"tone": "noun"
+						},
+						{
 							"text": "die spannenden Bücher",
 							"label": "Plural: Deklination",
 							"tone": "case"
@@ -2758,12 +2773,17 @@
 				},
 				{
 					"label": "Unterscheiden",
-					"text": "schnell bleibt ein Adjektiv",
-					"detail": "Auch der adverbiale Gebrauch verändert nicht automatisch die Wortart.",
+					"text": "das schnelle Kind ↔ das Kind läuft schnell",
+					"detail": "„schnelle“ beschreibt als Attribut das Kind. „schnell“ beschreibt beim Laufen die Art und Weise. In beiden Fällen ist die Wortart Adjektiv.",
 					"blocks": [
 						{
-							"text": "schnell → schneller → am schnellsten",
-							"label": "Komparation",
+							"text": "das schnelle Kind",
+							"label": "Adjektiv als gebeugtes Attribut",
+							"tone": "adjective"
+						},
+						{
+							"text": "das Kind läuft schnell",
+							"label": "Adjektiv adverbial, ungebeugt",
 							"tone": "adjective"
 						}
 					]
@@ -2843,6 +2863,11 @@
 					"detail": "Das regelmäßige Muster verwendet -te im Präteritum und -t im Partizip.",
 					"blocks": [
 						{
+							"text": "machen",
+							"label": "Infinitiv",
+							"tone": "predicate"
+						},
+						{
 							"text": "machte",
 							"label": "Präteritum",
 							"tone": "predicate"
@@ -2860,6 +2885,11 @@
 					"detail": "Die Stammformen zeigen den Vokalwechsel und das Partizip auf -en.",
 					"blocks": [
 						{
+							"text": "schreiben",
+							"label": "Infinitiv",
+							"tone": "predicate"
+						},
+						{
 							"text": "schrieb",
 							"label": "Präteritum",
 							"tone": "predicate"
@@ -2876,6 +2906,11 @@
 					"text": "denken → dachte → gedacht",
 					"detail": "Der Vokalwechsel verbindet sich mit -te und -t; ein reines Zweierschema reicht nicht immer.",
 					"blocks": [
+						{
+							"text": "denken",
+							"label": "Infinitiv",
+							"tone": "predicate"
+						},
 						{
 							"text": "dachte",
 							"label": "Präteritum",
@@ -3086,14 +3121,19 @@
 					"detail": "Das Subjekt nennt die handelnde Gruppe; die Bücher sind Akkusativobjekt.",
 					"blocks": [
 						{
-							"text": "Die Bücher",
-							"label": "Subjekt",
+							"text": "Die Klasse",
+							"label": "Subjekt: Handelnde",
 							"tone": "subject"
 						},
 						{
-							"text": "werden sortiert.",
-							"label": "Vorgangspassiv",
+							"text": "sortiert",
+							"label": "Prädikat im Aktiv",
 							"tone": "predicate"
+						},
+						{
+							"text": "die Bücher.",
+							"label": "Akkusativobjekt",
+							"tone": "object"
 						}
 					]
 				},
@@ -3108,16 +3148,16 @@
 							"tone": "subject"
 						},
 						{
-							"text": "werden von der Klasse sortiert.",
-							"label": "Handelnde ergänzt",
+							"text": "werden sortiert.",
+							"label": "Vorgangspassiv im Präsens",
 							"tone": "predicate"
 						}
 					]
 				},
 				{
-					"label": "Zeitvergleich",
-					"text": "Die Bücher wurden sortiert.",
-					"detail": "„Wurden“ verändert die Zeitform, nicht den passivischen Blick auf den Vorgang.",
+					"label": "Handelnde ergänzen",
+					"text": "Die Bücher werden von der Klasse sortiert.",
+					"detail": "Im Passiv bleibt der Vorgang im Mittelpunkt. Die Gruppe, die handelt, wird mit „von der Klasse“ ausdrücklich ergänzt.",
 					"blocks": [
 						{
 							"text": "Die Bücher",
@@ -3125,8 +3165,18 @@
 							"tone": "subject"
 						},
 						{
-							"text": "wurden sortiert.",
-							"label": "Präteritum Passiv",
+							"text": "werden",
+							"label": "finites Verb",
+							"tone": "predicate"
+						},
+						{
+							"text": "von der Klasse",
+							"label": "Handelnde ergänzt",
+							"tone": "object"
+						},
+						{
+							"text": "sortiert.",
+							"label": "Partizip II",
 							"tone": "predicate"
 						}
 					]
@@ -3135,19 +3185,14 @@
 			"initial": {
 				"blocks": [
 					{
-						"text": "Die Klasse",
-						"label": "Subjekt",
-						"tone": "subject"
-					},
-					{
-						"text": "sortiert",
-						"label": "Prädikat",
+						"text": "sortieren",
+						"label": "Handlung",
 						"tone": "predicate"
 					},
 					{
-						"text": "die Bücher.",
-						"label": "Akkusativobjekt",
-						"tone": "object"
+						"text": "Klasse; Bücher",
+						"label": "Beteiligte",
+						"tone": "neutral"
 					}
 				]
 			}
@@ -3449,24 +3494,24 @@
 			"title": "Vom Verb zum vollständigen Satz · im Modell",
 			"steps": [
 				{
-					"label": "Verb",
+					"label": "Grundstrukturen",
 					"text": "schlafen; schenken; legen",
-					"detail": "Die Verben eröffnen unterschiedliche Grundstrukturen und Ergänzungsmöglichkeiten.",
+					"detail": "„Schlafen“ braucht kein Objekt. „Schenken“ verbindet hier die schenkende Person, den Empfänger und das Geschenk. „Legen“ verlangt hier Gegenstand und Ziel.",
 					"blocks": [
 						{
-							"text": "Jo",
-							"label": "Subjekt",
+							"text": "Das Kind schläft.",
+							"label": "schlafen: ohne Objekt",
 							"tone": "subject"
 						},
 						{
-							"text": "legt",
-							"label": "Prädikat",
-							"tone": "predicate"
+							"text": "Mina schenkt ihrem Bruder ein Buch.",
+							"label": "schenken: Dativ- und Akkusativobjekt",
+							"tone": "object"
 						},
 						{
-							"text": "das Heft auf den Tisch.",
-							"label": "Gegenstand und Ziel",
-							"tone": "object"
+							"text": "Jo legt das Heft auf den Tisch.",
+							"label": "legen: Gegenstand und Ziel",
+							"tone": "place"
 						}
 					]
 				},
@@ -3476,18 +3521,23 @@
 					"detail": "Die Fragen zeigen die Rollen, die im Satz sinnvoll besetzt werden können.",
 					"blocks": [
 						{
-							"text": "Die Kinder",
-							"label": "Plural",
+							"text": "Mina",
+							"label": "Subjekt: wer?",
 							"tone": "subject"
 						},
 						{
-							"text": "legen",
-							"label": "passende Verbform",
+							"text": "schenkt",
+							"label": "Prädikat",
 							"tone": "predicate"
 						},
 						{
-							"text": "das Heft auf den Tisch.",
-							"label": "Ergänzungen",
+							"text": "ihrem Bruder",
+							"label": "Dativobjekt: wem?",
+							"tone": "object"
+						},
+						{
+							"text": "ein Buch.",
+							"label": "Akkusativobjekt: wen oder was?",
 							"tone": "object"
 						}
 					]
@@ -3495,16 +3545,16 @@
 				{
 					"label": "Formen",
 					"text": "das Kind liest; die Kinder lesen",
-					"detail": "Subjekt und finite Verbform stimmen in Person und Numerus überein.",
+					"detail": "Die Verbform verändert sich mit dem Numerus des Subjekts: „Das Kind liest“, aber „die Kinder lesen“.",
 					"blocks": [
 						{
-							"text": "Das Kind",
-							"label": "Singular",
+							"text": "Das Kind liest.",
+							"label": "Singular: Subjekt und Verb passen",
 							"tone": "subject"
 						},
 						{
-							"text": "schläft.",
-							"label": "andere Grundstruktur",
+							"text": "Die Kinder lesen.",
+							"label": "Plural: Subjekt und Verb passen",
 							"tone": "predicate"
 						}
 					]
@@ -3753,7 +3803,7 @@
 					"detail": "Die warum-Frage erklärt, weshalb Mina vorsichtig trägt.",
 					"blocks": [
 						{
-							"text": "wegen des Inhalts",
+							"text": "wegen des zerbrechlichen Inhalts",
 							"label": "Kausal: warum?",
 							"tone": "reason"
 						}
@@ -3983,13 +4033,13 @@
 					"detail": "Die beiden Hauptsätze bleiben gleichrangig; „aber“ markiert einen Gegensatz.",
 					"blocks": [
 						{
-							"text": "Wir bleiben drinnen,",
+							"text": "Es regnet,",
 							"label": "Hauptsatz",
 							"tone": "subject"
 						},
 						{
-							"text": "denn es regnet.",
-							"label": "gleichrangiger Hauptsatz",
+							"text": "aber wir gehen hinaus.",
+							"label": "gleichrangiger Hauptsatz: Gegensatz",
 							"tone": "report"
 						}
 					]
@@ -4283,13 +4333,18 @@
 					"detail": "Die unterordnende Konjunktion lässt die Ersatzprobe nicht zu.",
 					"blocks": [
 						{
-							"text": "dass du liest",
-							"label": "Konjunktion",
+							"text": "Ich hoffe,",
+							"label": "Hauptsatz",
+							"tone": "subject"
+						},
+						{
+							"text": "dass du kommst.",
+							"label": "Konjunktion und Nebensatz",
 							"tone": "subordinate"
 						},
 						{
 							"text": "kein passendes Ersatzwort",
-							"label": "Probe scheitert",
+							"label": "dieses/jenes/welches passen nicht",
 							"tone": "marker"
 						}
 					]
@@ -4492,23 +4547,38 @@
 				{
 					"label": "Verb",
 					"text": "Wir lesen leise.",
-					"detail": "„Lesen“ ist hier die finite Verbform und wird kleingeschrieben.",
+					"detail": "„lesen“ ist hier die finite Verbform und wird kleingeschrieben. „Wir“ steht nur wegen des Satzanfangs groß.",
 					"blocks": [
 						{
-							"text": "das Lesen",
-							"label": "nominalisierter Infinitiv",
-							"tone": "noun"
+							"text": "Wir",
+							"label": "Subjekt",
+							"tone": "subject"
+						},
+						{
+							"text": "lesen",
+							"label": "finite Verbform: klein",
+							"tone": "predicate"
+						},
+						{
+							"text": "leise.",
+							"label": "Art und Weise",
+							"tone": "manner"
 						}
 					]
 				},
 				{
 					"label": "Nominalisiert",
-					"text": "Das Lesen macht Freude.",
-					"detail": "Der Infinitiv übernimmt eine Nomenfunktion und wird großgeschrieben.",
+					"text": "das Lesen; beim Lesen",
+					"detail": "Der Infinitiv übernimmt eine Nomenfunktion und wird großgeschrieben. „Beim“ bedeutet „bei dem“ und ist hier ebenfalls ein Nomensignal.",
 					"blocks": [
 						{
-							"text": "beim Schreiben",
-							"label": "bei dem + Infinitiv",
+							"text": "Das Lesen macht Freude.",
+							"label": "nominalisierter Infinitiv nach Artikel",
+							"tone": "noun"
+						},
+						{
+							"text": "Beim Lesen mache ich Notizen.",
+							"label": "bei dem + nominalisierter Infinitiv",
 							"tone": "noun"
 						}
 					]
@@ -4733,35 +4803,45 @@
 			"steps": [
 				{
 					"label": "Nebensatz",
-					"text": "drinnen, weil es regnet",
+					"text": "Wir bleiben drinnen, weil es regnet.",
 					"detail": "Das Komma trennt die Satzteile, das finite Verb steht im Nebensatz am Ende.",
 					"blocks": [
 						{
-							"text": "Jo sagt:",
-							"label": "vorangestellt",
-							"tone": "report"
+							"text": "Wir bleiben drinnen,",
+							"label": "Hauptsatz mit Grenzkomma",
+							"tone": "subject"
 						},
 						{
-							"text": "„Ich komme.“",
-							"label": "Rede",
-							"tone": "speech"
+							"text": "weil es",
+							"label": "Beginn des Nebensatzes",
+							"tone": "subordinate"
+						},
+						{
+							"text": "regnet.",
+							"label": "finites Verb am Nebensatzende",
+							"tone": "predicate"
 						}
 					]
 				},
 				{
 					"label": "Einschub",
-					"text": "Buch, das ich lese, ist",
+					"text": "Das Buch, das ich lese, ist spannend.",
 					"detail": "Die zwei Kommas bilden einen Rahmen für den eingeschobenen Nebensatz.",
 					"blocks": [
 						{
-							"text": "„Ich komme“,",
-							"label": "Rede",
-							"tone": "speech"
+							"text": "Das Buch,",
+							"label": "Hauptsatzbeginn und öffnendes Komma",
+							"tone": "subject"
 						},
 						{
-							"text": "sagt Jo.",
-							"label": "nachgestellt",
-							"tone": "report"
+							"text": "das ich lese,",
+							"label": "Relativsatz und schließendes Komma",
+							"tone": "subordinate"
+						},
+						{
+							"text": "ist spannend.",
+							"label": "Fortsetzung des Hauptsatzes",
+							"tone": "predicate"
 						}
 					]
 				},
@@ -4772,12 +4852,12 @@
 					"blocks": [
 						{
 							"text": "„Kommst du?“,",
-							"label": "Frage bleibt erhalten",
+							"label": "Frage mit anschließendem Komma",
 							"tone": "speech"
 						},
 						{
-							"text": "fragt Jo.",
-							"label": "Begleitsatz",
+							"text": "fragt Mina.",
+							"label": "nachgestellter Begleitsatz",
 							"tone": "report"
 						}
 					]
@@ -4786,14 +4866,9 @@
 			"initial": {
 				"blocks": [
 					{
-						"text": "Jo sagt",
-						"label": "Begleitsatz",
-						"tone": "report"
-					},
-					{
-						"text": "Ich komme",
-						"label": "Rede ohne Zeichen",
-						"tone": "speech"
+						"text": "Wir bleiben drinnen weil es regnet",
+						"label": "Satzgrenze noch prüfen",
+						"tone": "neutral"
 					}
 				]
 			}
