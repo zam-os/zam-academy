@@ -7,6 +7,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | Physics 7 Realschule (Bavaria, Group I) | [`physik-realschule-7/`](physik-realschule-7/) | Built by Pages on merge | `zam-academy:physik-realschule-7` |
 | English 5 Gymnasium (Bavaria) | [`englisch-gymnasium-5/`](englisch-gymnasium-5/) | https://academy.zam-os.org/englisch-gymnasium-5/ | `zam-academy:englisch-gymnasium-5` |
 | German 5 Gymnasium (Bavaria; local draft) | [`deutsch-gymnasium-5/`](deutsch-gymnasium-5/) | Local offline package | `zam-academy:deutsch-gymnasium-5` |
+| German 6 Realschule (Bavaria; local draft) | [`deutsch-realschule-6/`](deutsch-realschule-6/) | Local offline package | `zam-academy:deutsch-realschule-6` |
 | French 5 Gymnasium (Bavaria, first foreign language) | [`franzoesisch-gymnasium-5/`](franzoesisch-gymnasium-5/) | https://academy.zam-os.org/franzoesisch-gymnasium-5/ | `zam-academy:franzoesisch-gymnasium-5` |
 | Englisch 5 Mittelschule (LehrplanPLUS Bayern) | [`englisch-mittelschule-5/`](englisch-mittelschule-5/) | https://academy.zam-os.org/englisch-mittelschule-5/ | `zam-academy:englisch-mittelschule-5` |
 | Mathematics 5 Mittelschule (Bavaria) | [`mathematik-mittelschule-5/`](mathematik-mittelschule-5/) | Built by Pages on merge | `zam-academy:mathematik-mittelschule-5` |
@@ -177,6 +178,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Geographie 5 Gymnasium: cd geographie-gymnasium-5 (dev server on :5244)
 # English 5 Gymnasium: cd englisch-gymnasium-5 (dev server on :5247)
 # German 5 Gymnasium: cd deutsch-gymnasium-5 (dev server on :5249)
+# German 6 Realschule local draft: cd deutsch-realschule-6 (dev server on :5253)
 # Biologie 5 Gymnasium: cd biologie-gymnasium-5 (dev server on :5246)
 # French 5 Gymnasium: cd franzoesisch-gymnasium-5 (dev server on :5245)
 # Englisch 5 Mittelschule: cd englisch-mittelschule-5 (dev server on :5248)
