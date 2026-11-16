@@ -1,0 +1,907 @@
+[
+  {
+    "id": "bg6-erkenntnisweg",
+    "lb": 1,
+    "title": "Den Erkenntnisweg planen",
+    "period": "NT6 1.1 · Erkenntnisse gewinnen – kommunizieren – bewerten",
+    "intro": "Warum keimen die Kressesamen auf der Fensterbank schneller als die im Keller? Mit dem naturwissenschaftlichen Erkenntnisweg gehst du solchen Fragen geordnet nach.",
+    "review": "Wiederholung aus NT5: die Phasen des Erkenntnisweges",
+    "paragraphs": [
+      "Der naturwissenschaftliche Erkenntnisweg hat feste Phasen. Am Anfang steht eine Beobachtung, aus der eine Frage entsteht: Keimt Kresse im Keller langsamer, weil es dort kühler ist? Dann stellst du eine Hypothese auf. Sie ist eine begründete Vermutung, die man prüfen kann, zum Beispiel: Wenn es kühler ist, dann keimen die Samen langsamer, weil Kälte alle Lebensvorgänge bremst. Eine Hypothese kann sich als falsch herausstellen; auch das ist ein Ergebnis. Danach planst du eine Untersuchung, führst sie durch, wertest die Daten aus und deutest sie. Am Ende steht eine Folgerung: Die Hypothese wird bestätigt oder widerlegt, und oft ergibt sich eine neue Frage.",
+      "Eine gute Planung folgt Kriterien. Die Frage muss sich mit einer Untersuchung beantworten lassen. Du legst fest, welcher Faktor verändert wird, welche Faktoren gleich bleiben und welcher Ansatz zum Vergleich dient. Du bestimmst, was du misst, womit und wie oft, und wie du die Ergebnisse festhältst. Erst dann beginnst du. Wer ohne Plan anfängt, merkt oft zu spät, dass das Ergebnis nichts beweist. Im Beispiel stellst du zwei gleiche Schalen mit gleich vielen Kressesamen auf, eine bei 20 °C und eine bei 10 °C, und zählst drei Tage lang jeden Morgen die gekeimten Samen."
+    ],
+    "takeaway": "Erkenntnisweg: Frage → Hypothese → Untersuchung planen → durchführen → Daten auswerten und deuten → Folgerung. Die Planung legt vorher fest, was verändert, was gleich gehalten, was verglichen und was gemessen wird.",
+    "sourceIds": [
+      "lehrplan",
+      "kx-experiment",
+      "wp-hypothese"
+    ],
+    "quiz": {
+      "question": "Welche Aussage ist eine prüfbare Hypothese?",
+      "answer": "Wenn Kresse mehr Licht bekommt, dann wird sie in fünf Tagen größer als im Schatten.",
+      "wrong": [
+        "Kresse ist eine schöne Pflanze für die Fensterbank.",
+        "Wächst Kresse im Licht besser als im Schatten?"
+      ],
+      "explanation": "Eine Hypothese ist eine Vermutung, die eine Untersuchung bestätigen oder widerlegen kann. Eine Frage ist noch keine Hypothese, und ein Geschmacksurteil lässt sich nicht prüfen."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Der Weg einer Untersuchung",
+      "instruction": "Bringe die Schritte der Kresse-Untersuchung in die Reihenfolge des Erkenntnisweges.",
+      "categories": [],
+      "entries": [
+        {
+          "text": "Im Keller keimt die Kresse langsamer als auf der Fensterbank.",
+          "target": 0,
+          "feedback": "Am Anfang steht eine Beobachtung."
+        },
+        {
+          "text": "Keimt Kresse bei Kälte langsamer?",
+          "target": 1,
+          "feedback": "Aus der Beobachtung wird eine Frage."
+        },
+        {
+          "text": "Wenn es kühler ist, dann keimen die Samen langsamer.",
+          "target": 2,
+          "feedback": "Die Hypothese ist eine prüfbare Vermutung."
+        },
+        {
+          "text": "Zwei gleiche Schalen mit je 20 Samen bei 20 °C und bei 10 °C ansetzen.",
+          "target": 3,
+          "feedback": "Planung: nur die Temperatur unterscheidet die Ansätze."
+        },
+        {
+          "text": "Drei Tage lang jeden Morgen die gekeimten Samen zählen und notieren.",
+          "target": 4,
+          "feedback": "Durchführung und Datenerfassung."
+        },
+        {
+          "text": "Die Zahlen in einer Tabelle und einem Diagramm vergleichen.",
+          "target": 5,
+          "feedback": "Auswertung der Daten."
+        },
+        {
+          "text": "Die Hypothese ist bestätigt; neue Frage: Gibt es eine Temperatur, bei der gar nichts keimt?",
+          "target": 6,
+          "feedback": "Folgerung und neue Frage."
+        }
+      ],
+      "conclusion": "Der Erkenntnisweg ist ein Kreislauf: Jede Folgerung kann zu einer neuen Frage führen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Lena beobachtet, dass Bohnen in der Erde schneller keimen als auf trockener Watte. Plane mit dem Erkenntnisweg eine Untersuchung zu ihrer Beobachtung.",
+        "hints": [
+          "Welche Frage und welche Hypothese passen zur Beobachtung?",
+          "Was veränderst du, was hältst du gleich, was misst du?"
+        ],
+        "model": "Frage: Brauchen Bohnen Wasser zum Keimen? Hypothese: Wenn die Bohnen kein Wasser bekommen, dann keimen sie nicht, weil der Samen erst Wasser aufnehmen muss. Planung: Ich lege je zehn gleich große Bohnen auf feuchte und auf trockene Watte, beide Schalen stehen am selben Ort bei Zimmertemperatur. Jeden Tag zähle ich die gekeimten Bohnen und notiere sie in einer Tabelle. Nach einer Woche vergleiche ich und prüfe, ob die Hypothese stimmt.",
+        "criteria": [
+          "Ich formuliere eine Frage und eine prüfbare Hypothese.",
+          "Ich verändere nur das Wasser und halte alles andere gleich.",
+          "Ich sage, was ich wie lange messe und wie ich auswerte."
+        ]
+      },
+      "2": {
+        "prompt": "Ein Mitschüler behauptet: „Meine Hypothese war falsch, also war mein Versuch umsonst.“ Nimm Stellung.",
+        "hints": [
+          "Was ist der Zweck einer Hypothese?",
+          "Was lernt man aus einer widerlegten Hypothese?"
+        ],
+        "model": "Der Versuch war nicht umsonst. Eine Hypothese ist eine Vermutung, die geprüft wird; sie darf sich als falsch herausstellen. Wenn der Versuch sauber geplant war, ist auch eine Widerlegung ein Ergebnis: Man weiß dann, dass die Vermutung nicht stimmt, und kann eine neue, bessere Hypothese aufstellen. Umsonst wäre der Versuch nur, wenn er schlecht geplant war, zum Beispiel ohne Vergleichsansatz, denn dann beweist das Ergebnis gar nichts.",
+        "criteria": [
+          "Ich erkläre, dass Hypothesen widerlegt werden dürfen.",
+          "Ich nenne den Erkenntnisgewinn einer Widerlegung.",
+          "Ich unterscheide zwischen falscher Hypothese und schlecht geplantem Versuch."
+        ]
+      }
+    },
+    "figures": [
+      "erkenntnisweg",
+      "planungskriterien"
+    ]
+  },
+  {
+    "id": "bg6-variablen-kontrolle",
+    "lb": 1,
+    "title": "Variable, Konstante und Kontrollversuch",
+    "period": "NT6 1.1 · Erkenntnisse gewinnen – kommunizieren – bewerten",
+    "intro": "Zwei Schalen Kresse, zwei verschiedene Ergebnisse. Aber woran liegt es? Das kannst du nur sagen, wenn sich die Schalen in genau einem Punkt unterscheiden.",
+    "paragraphs": [
+      "Bei einem Experiment veränderst du gezielt einen Faktor und beobachtest, was passiert. Dieser veränderte Faktor heißt Variable. Willst du wissen, ob Kresse Licht zum Keimen braucht, ist das Licht die Variable: Eine Schale steht hell, eine dunkel. Alle anderen Faktoren müssen in allen Ansätzen gleich bleiben. Sie heißen Konstanten: gleiche Samensorte, gleich viele Samen, gleich viel Wasser, gleiche Temperatur, gleiche Schale und gleiche Versuchsdauer. Veränderst du zwei Faktoren gleichzeitig, etwa Licht und Temperatur, weißt du am Ende nicht, welcher von beiden den Unterschied verursacht hat.",
+      "Ein Kontrollversuch ist der Vergleichsansatz, in dem die Variable nicht verändert wird. Er zeigt, wie das Ergebnis unter normalen Bedingungen aussieht. Ohne ihn fehlt der Maßstab: Wenn in der dunklen Schale 18 von 20 Samen keimen, weißt du erst durch die helle Kontrollschale, ob das viel oder wenig ist. Der Kontrollversuch hilft auch, Störungen zu entdecken: Keimt in beiden Schalen kaum etwas, waren vielleicht die Samen zu alt. Damit ein Zufall das Ergebnis nicht verfälscht, setzt du jeden Ansatz mit vielen Samen und am besten mehrmals an."
+    ],
+    "takeaway": "Variable: der eine Faktor, den du gezielt veränderst. Konstanten: alle Faktoren, die in allen Ansätzen gleich bleiben. Kontrollversuch: der Vergleichsansatz ohne Veränderung; er macht das Ergebnis erst deutbar.",
+    "sourceIds": [
+      "lehrplan",
+      "wp-variable",
+      "wp-versuchskontrolle",
+      "kx-experiment"
+    ],
+    "quiz": {
+      "question": "Du prüfst, ob Hefe bei Wärme mehr Gas bildet. Was ist in diesem Versuch die Variable?",
+      "answer": "Die Temperatur des Wasserbads",
+      "wrong": [
+        "Die Zuckermenge in beiden Kolben",
+        "Die Größe der Luftballons am Ende"
+      ],
+      "explanation": "Die Variable ist der Faktor, den du gezielt veränderst: hier die Temperatur. Die Zuckermenge ist eine Konstante, die Ballongröße ist das Ergebnis, das du misst."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Variable oder Konstante?",
+      "instruction": "Versuch: Brauchen Kressesamen Licht zum Keimen? Ordne jeden Faktor zu.",
+      "categories": [
+        "Variable",
+        "Konstante",
+        "Messgröße"
+      ],
+      "entries": [
+        {
+          "text": "Eine Schale steht hell, eine unter einem Karton",
+          "target": 0,
+          "feedback": "Nur das Licht wird verändert."
+        },
+        {
+          "text": "In jeder Schale liegen 20 Samen derselben Sorte",
+          "target": 1,
+          "feedback": "Samenzahl und Sorte bleiben gleich."
+        },
+        {
+          "text": "Beide Schalen stehen bei 20 °C",
+          "target": 1,
+          "feedback": "Die Temperatur ist konstant."
+        },
+        {
+          "text": "Beide Wattebäusche sind gleich feucht",
+          "target": 1,
+          "feedback": "Auch das Wasser ist eine Konstante."
+        },
+        {
+          "text": "Anzahl der gekeimten Samen nach drei Tagen",
+          "target": 2,
+          "feedback": "Das ist das Ergebnis, das du zählst."
+        },
+        {
+          "text": "Länge der Keimlinge in Millimetern",
+          "target": 2,
+          "feedback": "Auch diese Größe misst du."
+        }
+      ],
+      "conclusion": "Nur wenn genau eine Variable verändert wird, lässt sich ein Unterschied im Ergebnis auf sie zurückführen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Tom will prüfen, ob Kresse Wärme zum Keimen braucht. Er stellt eine Schale mit feuchter Watte auf die Heizung und eine Schale mit trockener Watte in den Kühlschrank. Beurteile seinen Versuch und verbessere ihn.",
+        "hints": [
+          "Wie viele Faktoren unterscheiden sich?",
+          "Wie sieht ein fairer Vergleich aus?"
+        ],
+        "model": "Toms Versuch ist nicht aussagekräftig, denn er verändert zwei Faktoren: Temperatur und Wasser. Keimt im Kühlschrank nichts, weiß er nicht, ob es an der Kälte oder am fehlenden Wasser liegt. Besser: Beide Schalen bekommen gleich feuchte Watte und gleich viele Samen derselben Sorte. Nur die Temperatur ist die Variable, etwa 20 °C im Zimmer und 4 °C im Kühlschrank. Da es im Kühlschrank dunkel ist, stellt er auch die Zimmerschale ins Dunkle, damit das Licht konstant bleibt.",
+        "criteria": [
+          "Ich erkenne, dass zwei Variablen verändert wurden.",
+          "Ich halte im verbesserten Versuch alle anderen Faktoren konstant.",
+          "Ich achte auch auf versteckte Unterschiede wie das Licht."
+        ]
+      },
+      "2": {
+        "prompt": "Ein Gärtner gießt seine Tomaten mit einem neuen Dünger und erntet mehr als im Vorjahr. Er schließt, dass der Dünger wirkt. Erkläre, warum ein Kontrollversuch fehlt, und schlage einen vor.",
+        "hints": [
+          "Was war im Vorjahr außerdem anders?",
+          "Wie kann er im selben Jahr vergleichen?"
+        ],
+        "model": "Der Vergleich mit dem Vorjahr ist kein Kontrollversuch, denn im Vorjahr waren viele Faktoren anders: Wetter, Sonnenstunden, Sorte oder Schädlinge. Die größere Ernte kann daran liegen. Besser pflanzt er im selben Jahr am selben Ort zwei gleiche Beete mit derselben Sorte und gleich vielen Pflanzen. Ein Beet bekommt den Dünger, das andere als Kontrolle nicht; alles andere bleibt gleich. Nur wenn das gedüngte Beet deutlich mehr trägt, spricht das für den Dünger.",
+        "criteria": [
+          "Ich nenne Faktoren, die sich zwischen den Jahren unterscheiden.",
+          "Ich beschreibe einen Kontrollansatz zur gleichen Zeit.",
+          "Ich halte im Vorschlag alle anderen Bedingungen gleich."
+        ]
+      }
+    },
+    "figures": [
+      "variablen-schema"
+    ],
+    "lab": "fairTest"
+  },
+  {
+    "id": "bg6-fehlerquellen",
+    "lb": 1,
+    "title": "Fehlerquellen finden und vermeiden",
+    "period": "NT6 1.1 · Erkenntnisse gewinnen – kommunizieren – bewerten",
+    "intro": "Zwei Gruppen machen denselben Versuch und bekommen verschiedene Ergebnisse. Bevor man sagt, wer recht hat, sucht man nach Fehlerquellen.",
+    "paragraphs": [
+      "Jede Untersuchung kann Fehler enthalten. Manche entstehen schon bei der Planung: Wenn zwei Faktoren gleichzeitig verändert werden, ist das Ergebnis nicht eindeutig. Fehlt der Kontrollversuch, gibt es keinen Vergleich. Werden nur drei Samen verwendet, kann ein einziger kaputter Samen das Ergebnis stark verfälschen; mit 20 oder mehr Samen und mehreren Ansätzen wird der Zufall kleiner. Andere Fehler entstehen bei der Durchführung: Ein Thermometer wird schräg abgelesen, die Waage nicht auf null gestellt, eine Schale steht näher am Fenster als die andere, oder ein Wert wird erst am Abend aus dem Gedächtnis aufgeschrieben.",
+      "Um eine Untersuchung zu analysieren, gehst du sie Phase für Phase durch und fragst: War die Frage klar? Wurde nur eine Variable verändert? Gab es einen Kontrollversuch? Wurde genau gemessen und sofort notiert? Waren es genug Proben und Wiederholungen? Zu jeder gefundenen Fehlerquelle leitest du eine Möglichkeit zur Fehlervermeidung ab, zum Beispiel: beide Schalen auf dieselbe Fensterbank stellen, auf Augenhöhe ablesen, Messwerte sofort in eine vorbereitete Tabelle eintragen. Auch die eigene Erwartung ist eine Fehlerquelle: Wer ein bestimmtes Ergebnis erwartet, sieht es leichter, als es wirklich ist."
+    ],
+    "takeaway": "Fehlerquellen liegen in der Planung (zwei Variablen, kein Kontrollversuch, zu wenige Proben) und in der Durchführung (ungenau messen, Bedingungen ungleich, spät notieren). Zu jeder Fehlerquelle gehört eine Maßnahme, die sie vermeidet.",
+    "sourceIds": [
+      "lehrplan",
+      "wp-fehler",
+      "kx-experiment"
+    ],
+    "quiz": {
+      "question": "Eine Gruppe testet die Keimung mit nur drei Samen pro Schale. Warum ist das eine Fehlerquelle?",
+      "answer": "Ein einzelner schlechter Samen verändert das Ergebnis stark; der Zufall wirkt zu sehr.",
+      "wrong": [
+        "Drei Samen keimen grundsätzlich langsamer als viele.",
+        "Mit drei Samen kann man keine Konstanten festlegen."
+      ],
+      "explanation": "Bei wenigen Proben kann ein Zufall, etwa ein beschädigter Samen, das Ergebnis verfälschen. Viele Samen und Wiederholungen machen das Ergebnis verlässlicher."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fehler und Abhilfe",
+      "instruction": "Ordne jede Fehlerquelle dem Bereich zu, in dem sie entsteht.",
+      "categories": [
+        "Planung",
+        "Durchführung",
+        "Auswertung"
+      ],
+      "entries": [
+        {
+          "text": "Licht und Wasser werden gleichzeitig verändert",
+          "target": 0,
+          "feedback": "Schon der Plan enthält zwei Variablen."
+        },
+        {
+          "text": "Es gibt keinen Kontrollversuch",
+          "target": 0,
+          "feedback": "Der Vergleichsansatz fehlt im Plan."
+        },
+        {
+          "text": "Das Thermometer wird von oben schräg abgelesen",
+          "target": 1,
+          "feedback": "Ein Ablesefehler bei der Messung."
+        },
+        {
+          "text": "Eine Schale steht in der Sonne, die andere im Schatten",
+          "target": 1,
+          "feedback": "Die Bedingungen werden beim Aufstellen ungleich."
+        },
+        {
+          "text": "Aus einem einzigen Durchgang wird ein allgemeines Gesetz abgeleitet",
+          "target": 2,
+          "feedback": "Die Deutung geht weiter als die Daten."
+        },
+        {
+          "text": "Ein auffälliger Messwert wird einfach weggelassen",
+          "target": 2,
+          "feedback": "Auffällige Werte prüft man, statt sie zu streichen."
+        }
+      ],
+      "conclusion": "Wer Fehlerquellen kennt, kann sie schon bei der Planung ausschließen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Gruppe A findet, dass Kresse im Dunkeln nicht keimt. Ihre Dunkelschale stand im kalten Kellerraum, die helle Schale im Klassenzimmer. Finde die Fehlerquelle und schlage eine Verbesserung vor.",
+        "hints": [
+          "Welche Bedingung war außer dem Licht noch anders?",
+          "Wie kann man nur das Licht verändern?"
+        ],
+        "model": "Die Fehlerquelle ist die Temperatur: Die dunkle Schale stand im kalten Keller, die helle im warmen Klassenzimmer. Damit wurden zwei Variablen verändert, und das schlechte Keimen kann an der Kälte liegen. Zur Fehlervermeidung stellt die Gruppe beide Schalen im Klassenzimmer nebeneinander und stülpt über eine einen lichtdichten Karton. Dann ist nur das Licht verschieden. Außerdem sollte sie jeden Ansatz mit vielen Samen und mehrmals durchführen.",
+        "criteria": [
+          "Ich nenne die Temperatur als zweite Variable.",
+          "Ich beschreibe, wie nur das Licht verändert wird.",
+          "Ich ergänze eine weitere Maßnahme gegen Zufallsfehler."
+        ]
+      },
+      "2": {
+        "prompt": "In einer Klasse keimen in der Kontrollschale nur 5 von 20 Samen, in den anderen Schulklassen fast alle. Welche Fehlerquellen kommen infrage, und wie prüft man sie?",
+        "hints": [
+          "Was könnte mit den Samen oder der Watte sein?",
+          "Wozu dient hier der Kontrollversuch?"
+        ],
+        "model": "Der Kontrollversuch zeigt, dass schon unter normalen Bedingungen etwas nicht stimmt. Mögliche Fehlerquellen sind alte oder falsch gelagerte Samen, zu nasse Watte, in der die Samen keinen Sauerstoff bekommen, oder ein zu kalter Standort. Man prüft das, indem man einen neuen Ansatz mit frischen Samen aus einer anderen Packung, gleich feuchter Watte und gemessener Temperatur macht. Keimen dann fast alle, lag es an den Samen. Die Ergebnisse der übrigen Schalen dieser Klasse sind bis dahin nicht verlässlich.",
+        "criteria": [
+          "Ich erkenne, dass der Kontrollversuch auf einen Fehler hinweist.",
+          "Ich nenne mindestens zwei mögliche Fehlerquellen.",
+          "Ich beschreibe, wie man eine Fehlerquelle gezielt überprüft."
+        ]
+      }
+    },
+    "figures": [
+      "ablesefehler",
+      "fehler-vermeiden"
+    ]
+  },
+  {
+    "id": "bg6-beobachten-protokoll",
+    "lb": 1,
+    "title": "Beobachten und protokollieren",
+    "period": "NT6 1.1 · Erkenntnisse gewinnen – kommunizieren – bewerten",
+    "intro": "Am Futterhaus vor dem Klassenzimmer ist viel los. Wer genau sagen will, wer dort wie frisst, braucht Kriterien und ein Protokoll.",
+    "paragraphs": [
+      "Beobachten ist mehr als Hinschauen. Bevor du beginnst, legst du wenige Kriterien fest: Welche Tiere zählst du, wie lange, zu welcher Uhrzeit und worauf achtest du, etwa auf die Anzahl, das Verhalten oder die Art, wie ein Tier frisst? Lebewesen beobachtest du auch in ihrer natürlichen Umgebung: Vögel am Futterhaus, Kaulquappen im Schulteich, Pflanzen auf dem Schulgelände. Dabei störst du die Tiere möglichst wenig. Einen Beobachtungsbogen mit Tabelle bereitest du vorher vor, damit du nur noch Striche und Stichworte eintragen musst. Wichtig ist, Beobachtung und Deutung zu trennen: „Die Amsel pickt am Boden“ ist eine Beobachtung, „Die Amsel hat Hunger“ ist schon eine Deutung.",
+      "Bei einer Untersuchung schreibst du ein Protokoll, damit andere den Versuch wiederholen können. Es enthält Überschrift mit Frage, Datum und Namen, Material und Aufbau, oft als beschriftete Skizze, die Durchführung in Schritten, die Beobachtungen mit Messwerten und zuletzt die Auswertung mit der Antwort auf die Frage. Zeichnungen helfen, Abläufe und Ergebnisse festzuhalten: eine Skizze des Versuchsaufbaus mit Lineal und Bleistift oder eine beschriftete Zeichnung eines Keimlings an jedem Tag. Ein gutes Protokoll schreibst du weitgehend selbständig und während der Arbeit, nicht erst Tage später."
+    ],
+    "takeaway": "Beobachten: Kriterien vorher festlegen, strukturiert notieren, Beobachtung und Deutung trennen. Protokoll: Frage, Material und Aufbau (Skizze), Durchführung, Beobachtung mit Messwerten, Auswertung.",
+    "sourceIds": [
+      "lehrplan",
+      "kx-wissenschaft",
+      "kx-voegel",
+      "kx-experiment"
+    ],
+    "quiz": {
+      "question": "Welcher Satz ist eine reine Beobachtung?",
+      "answer": "Die Kohlmeise hängt kopfüber am Meisenknödel.",
+      "wrong": [
+        "Die Kohlmeise frisst, weil sie friert.",
+        "Die Kohlmeise mag Meisenknödel lieber als Körner."
+      ],
+      "explanation": "Eine Beobachtung beschreibt nur, was man sieht. Gründe wie Frieren oder Vorlieben sind Deutungen, die man erst prüfen müsste."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Wohin im Protokoll?",
+      "instruction": "Ordne jeden Satz aus einem Keimungsprotokoll dem passenden Teil zu.",
+      "categories": [
+        "Material und Aufbau",
+        "Durchführung",
+        "Beobachtung",
+        "Auswertung"
+      ],
+      "entries": [
+        {
+          "text": "Zwei Petrischalen, Watte, 40 Kressesamen, Karton",
+          "target": 0,
+          "feedback": "Liste des Materials."
+        },
+        {
+          "text": "Skizze: Schale A offen, Schale B unter dem Karton",
+          "target": 0,
+          "feedback": "Der Aufbau als Skizze."
+        },
+        {
+          "text": "Jeden Morgen um 8 Uhr die gekeimten Samen zählen",
+          "target": 1,
+          "feedback": "Ein Arbeitsschritt."
+        },
+        {
+          "text": "Tag 3: A 18 gekeimt, B 18 gekeimt, Keimlinge in B gelblich",
+          "target": 2,
+          "feedback": "Messwerte und Gesehenes."
+        },
+        {
+          "text": "Kresse braucht zum Keimen kein Licht, aber zum Ergrünen.",
+          "target": 3,
+          "feedback": "Die Antwort auf die Frage."
+        }
+      ],
+      "conclusion": "Jeder Teil hat seine Aufgabe; Beobachtung und Deutung stehen getrennt."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Entwirf einen Beobachtungsbogen, mit dem du 15 Minuten lang Vögel am Futterhaus beobachtest.",
+        "hints": [
+          "Welche Kriterien legst du vorher fest?",
+          "Wie sieht die Tabelle aus?"
+        ],
+        "model": "Oben auf dem Bogen stehen Datum, Uhrzeit von bis, Ort und Wetter. Darunter eine Tabelle mit vier Spalten: Vogelart, Anzahl als Strichliste, Verhalten (zum Beispiel frisst am Boden, hängt am Knödel, vertreibt andere) und Futter. Die häufigen Arten wie Kohlmeise, Amsel und Buchfink trage ich vorher ein, eine leere Zeile bleibt für unbekannte Vögel. Ich notiere nur, was ich sehe, und schreibe Deutungen erst danach unter die Tabelle.",
+        "criteria": [
+          "Ich lege Zeit, Ort und Kriterien vorher fest.",
+          "Ich plane eine übersichtliche Tabelle mit Strichliste.",
+          "Ich trenne Beobachtung und Deutung."
+        ]
+      },
+      "2": {
+        "prompt": "Ein Protokoll endet so: „Die Kresse im Dunkeln war gelb, weil sie traurig war, und hat deshalb schlecht gekeimt.“ Überarbeite den Text.",
+        "hints": [
+          "Welche Teile sind Beobachtung, welche Deutung?",
+          "Was stimmt nicht mit der Deutung?"
+        ],
+        "model": "Beobachtung: Nach drei Tagen waren in der dunklen Schale 18 von 20 Samen gekeimt, genauso viele wie in der hellen. Die Keimlinge im Dunkeln waren gelblich, länger und dünner. Auswertung: Kresse braucht zum Keimen kein Licht. Ohne Licht werden die Keimlinge aber nicht grün. Die Aussage „traurig“ vermenschlicht die Pflanze und ist keine naturwissenschaftliche Erklärung. Auch „schlecht gekeimt“ stimmt nicht, wenn man die Zahlen vergleicht.",
+        "criteria": [
+          "Ich trenne Beobachtung mit Zahlen von der Auswertung.",
+          "Ich ersetze die vermenschlichende Erklärung.",
+          "Ich ziehe eine Folgerung, die zu den Daten passt."
+        ]
+      }
+    },
+    "figures": [
+      "beobachtungsbogen",
+      "protokoll-aufbau"
+    ]
+  },
+  {
+    "id": "bg6-mikroskop-binokular",
+    "lb": 1,
+    "title": "Mikroskop und Binokular",
+    "period": "NT6 1.1 · Erkenntnisse gewinnen – kommunizieren – bewerten",
+    "intro": "Den Querschnitt eines Stängels siehst du im Mikroskop, den Bau eines Samens besser mit dem Binokular. Welches Gerät passt zu welchem Objekt?",
+    "review": "Wiederholung aus NT5: Bedienung des Lichtmikroskops",
+    "paragraphs": [
+      "Das Lichtmikroskop vergrößert etwa 40- bis 400-fach. Licht von unten durchstrahlt ein sehr dünnes Präparat; Objektiv und Okular vergrößern nacheinander. Die Gesamtvergrößerung ist das Produkt: Okular 10-fach mal Objektiv 40-fach ergibt 400-fach. Du beginnst immer mit dem kleinsten Objektiv, stellst mit dem Grobtrieb scharf, schiebst das Objekt in die Mitte und wechselst erst dann zum nächstgrößeren Objektiv, wo du nur noch mit dem Feintrieb nachstellst. Das Binokular, auch Stereolupe genannt, vergrößert weniger, etwa 10- bis 40-fach, zeigt aber ein räumliches Bild, weil du mit beiden Augen durch zwei getrennte Strahlengänge schaust. Licht kommt meist von oben. So betrachtest du ganze, undurchsichtige Objekte wie Samen, Blüten, Federn oder Insekten.",
+      "Was du siehst, hältst du in einer biologischen Zeichnung fest. Sie zeigt das Gesehene, nicht das, was du aus dem Buch erwartest. Du zeichnest mit spitzem Bleistift klare, durchgehende Linien, nur einen typischen Ausschnitt und groß genug. Beschriftungslinien ziehst du mit dem Lineal waagerecht nach rechts, ohne dass sie sich kreuzen. Über die Zeichnung schreibst du, was gezeigt wird, welches Gerät verwendet wurde und wie stark vergrößert war, etwa: Querschnitt durch einen Stängel der Taubnessel, Lichtmikroskop, 100-fach."
+    ],
+    "takeaway": "Lichtmikroskop: 40- bis 400-fach, Licht von unten, nur dünne Präparate; Gesamtvergrößerung = Okular · Objektiv. Binokular: 10- bis 40-fach, räumliches Bild, ganze Objekte. Zeichnung: Bleistift, nur Gesehenes, Beschriftung rechts, Titel mit Gerät und Vergrößerung.",
+    "sourceIds": [
+      "lehrplan",
+      "kx-mikroskop",
+      "wp-stereomikroskop",
+      "kx-lupe"
+    ],
+    "quiz": {
+      "question": "Womit untersuchst du am besten den ganzen Kopf einer Fliege mit räumlichem Eindruck?",
+      "answer": "Mit dem Binokular",
+      "wrong": [
+        "Mit dem Lichtmikroskop bei 400-facher Vergrößerung",
+        "Mit bloßem Auge und einem Lineal"
+      ],
+      "explanation": "Das Binokular zeigt ganze, undurchsichtige Objekte räumlich bei etwa 10- bis 40-facher Vergrößerung. Das Lichtmikroskop braucht dünne, durchscheinende Präparate."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Welches Gerät?",
+      "instruction": "Ordne jedes Objekt dem passenden Gerät zu.",
+      "categories": [
+        "Lupe",
+        "Binokular",
+        "Lichtmikroskop"
+      ],
+      "entries": [
+        {
+          "text": "Blüte einer Wiesenpflanze im Freiland",
+          "target": 0,
+          "feedback": "Die Lupe passt in die Tasche."
+        },
+        {
+          "text": "Aufgeweichter, halbierter Bohnensamen mit Keimling",
+          "target": 1,
+          "feedback": "Ein ganzes Objekt, räumlich betrachtet."
+        },
+        {
+          "text": "Fuß eines Wasserkäfers",
+          "target": 1,
+          "feedback": "Undurchsichtig und klein: Binokular."
+        },
+        {
+          "text": "Dünner Querschnitt durch einen Stängel",
+          "target": 2,
+          "feedback": "Licht muss durchscheinen: Mikroskop."
+        },
+        {
+          "text": "Zellen eines Wasserpestblatts",
+          "target": 2,
+          "feedback": "Einzelne Zellen brauchen 100- bis 400-fach."
+        }
+      ],
+      "conclusion": "Das Gerät richtet sich nach der Größe des Objekts und danach, ob Licht hindurchscheinen kann."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Beschreibe Schritt für Schritt, wie du ein Wasserpestblatt mit dem Mikroskop bei 400-facher Vergrößerung scharf siehst.",
+        "hints": [
+          "Mit welchem Objektiv beginnst du?",
+          "Wann benutzt du Grob- und wann Feintrieb?"
+        ],
+        "model": "Ich lege das Präparat auf den Objekttisch und schalte die Lampe ein. Zuerst drehe ich das kleinste Objektiv, 4-fach, ein und stelle mit dem Grobtrieb scharf; das sind 40-fach insgesamt. Ich schiebe das Blatt so, dass die Stelle mit den Zellen in der Mitte liegt. Dann drehe ich das 10-fach-Objektiv ein und stelle mit dem Feintrieb nach. Erst danach wechsle ich zum 40-fach-Objektiv, stelle nur noch mit dem Feintrieb scharf und öffne die Blende etwas, weil mehr Licht nötig ist. Okular 10 mal Objektiv 40 ergibt 400-fach.",
+        "criteria": [
+          "Ich beginne mit dem kleinsten Objektiv.",
+          "Ich stelle bei starker Vergrößerung nur mit dem Feintrieb scharf.",
+          "Ich berechne die Gesamtvergrößerung richtig."
+        ]
+      },
+      "2": {
+        "prompt": "Ein Schüler zeichnet im Mikroskop zwei Zellen und ergänzt einen Zellkern, den er gar nicht sieht, „weil Zellen immer einen Kern haben“. Bewerte das Vorgehen.",
+        "hints": [
+          "Was soll eine biologische Zeichnung zeigen?",
+          "Wie kann er den Kern doch sichtbar machen?"
+        ],
+        "model": "Das Vorgehen ist falsch. Eine biologische Zeichnung zeigt nur, was man wirklich sieht. Wenn er Teile aus dem Gedächtnis ergänzt, kann niemand mehr unterscheiden, was beobachtet und was erwartet war. Ein Zellkern ist im ungefärbten Präparat oft kaum zu erkennen. Der Schüler sollte das Präparat anfärben, etwa mit einem Farbstoff, der Zellkerne dunkler macht, und dann neu zeichnen. Sieht er den Kern dann, darf er ihn einzeichnen und beschriften.",
+        "criteria": [
+          "Ich nenne die Regel, nur Gesehenes zu zeichnen.",
+          "Ich begründe, warum Ergänzen aus dem Gedächtnis problematisch ist.",
+          "Ich schlage Anfärben als Lösung vor."
+        ]
+      }
+    },
+    "figures": [
+      "vergroesserung",
+      "mikroskop-bau",
+      "zeichenregeln"
+    ],
+    "lab": "microscope"
+  },
+  {
+    "id": "bg6-praeparieren",
+    "lb": 1,
+    "title": "Präparate selbst herstellen",
+    "period": "NT6 1.1 · Erkenntnisse gewinnen – kommunizieren – bewerten",
+    "intro": "Ein Stängel ist zu dick für das Mikroskop. Erst ein hauchdünner Schnitt lässt Licht hindurch und zeigt dir, wie er innen gebaut ist.",
+    "paragraphs": [
+      "Ein Frischpräparat stellst du in wenigen Schritten her. Auf einen sauberen Objektträger gibst du einen Tropfen Wasser. Mit der Pinzette legst du das Objekt hinein, etwa ein Blättchen der Wasserpest oder ein Stück Zwiebelhaut. Das Deckgläschen setzt du mit einer Kante auf und senkst es schräg ab, damit keine Luftblasen eingeschlossen werden. Viele Teile von Pflanzen sind aber zu dick und lassen kein Licht durch. Dann brauchst du eine Schnitttechnik: Du hältst ein Stängelstück fest, bei weichen Stängeln eingeklemmt zwischen zwei Stücke Holundermark oder Styropor, und schneidest mit einer Rasierklinge ziehend möglichst dünne Scheiben ab. Von mehreren Schnitten nimmst du den dünnsten, der fast durchsichtig ist.",
+      "Viele Bestandteile sind farblos und im Mikroskop kaum zu erkennen. Mit einem Farbstoff kannst du ein Präparat anfärben. Du gibst einen Tropfen Farbstoff an eine Seite des Deckgläschens und hältst an die gegenüberliegende Seite ein Stück Filterpapier. Es saugt Flüssigkeit an und zieht den Farbstoff unter dem Glas hindurch. Je nach Farbstoff werden bestimmte Teile deutlich, etwa Zellkerne oder die Wände der Zellen. Beim Schneiden gilt besondere Vorsicht: Du arbeitest nur nach Anleitung, schneidest immer vom Körper weg und legst Klingen sofort in die vorgesehene Schale zurück."
+    ],
+    "takeaway": "Frischpräparat: Wassertropfen, Objekt, Deckgläschen schräg absenken. Dicke Objekte werden mit der Rasierklinge in dünne Querschnitte geschnitten. Anfärben: Farbstoff an einer Seite zugeben, mit Filterpapier von der anderen Seite durchziehen.",
+    "sourceIds": [
+      "lehrplan",
+      "kx-mikroskop",
+      "wp-wasserpest"
+    ],
+    "quiz": {
+      "question": "Warum senkst du das Deckgläschen schräg auf den Wassertropfen?",
+      "answer": "Damit keine Luftblasen unter dem Glas eingeschlossen werden",
+      "wrong": [
+        "Damit sich das Präparat von selbst anfärbt",
+        "Damit das Licht schräg durch das Objekt fällt"
+      ],
+      "explanation": "Beim schrägen Absenken drückt das Glas die Luft zur Seite hinaus. Luftblasen sehen im Mikroskop wie dunkle Ringe aus und stören das Bild."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Querschnitt anfärben",
+      "instruction": "Bringe die Arbeitsschritte für einen gefärbten Stängelquerschnitt in die richtige Reihenfolge.",
+      "categories": [],
+      "entries": [
+        {
+          "text": "Stängelstück zwischen zwei Holundermarkstücke klemmen",
+          "target": 0,
+          "feedback": "So lässt sich der weiche Stängel festhalten."
+        },
+        {
+          "text": "Mit der Rasierklinge ziehend mehrere dünne Scheiben schneiden",
+          "target": 1,
+          "feedback": "Ziehend schneiden, vom Körper weg."
+        },
+        {
+          "text": "Den dünnsten Schnitt in einen Wassertropfen auf den Objektträger legen",
+          "target": 2,
+          "feedback": "Nur dünne Schnitte lassen Licht durch."
+        },
+        {
+          "text": "Deckgläschen schräg absenken",
+          "target": 3,
+          "feedback": "So bleiben keine Luftblasen."
+        },
+        {
+          "text": "Farbstoff an eine Seite geben und mit Filterpapier durchziehen",
+          "target": 4,
+          "feedback": "Das Filterpapier saugt den Farbstoff unter das Glas."
+        },
+        {
+          "text": "Mit dem kleinsten Objektiv mikroskopieren und zeichnen",
+          "target": 5,
+          "feedback": "Erst die Übersicht, dann Einzelheiten."
+        }
+      ],
+      "conclusion": "Gute Präparate brauchen Geduld: Oft gelingt erst der dritte oder vierte Schnitt."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Dein Stängelquerschnitt erscheint im Mikroskop nur dunkel. Nenne zwei mögliche Ursachen und was du dagegen tust.",
+        "hints": [
+          "Wie dick ist dein Schnitt?",
+          "Wie ist die Beleuchtung eingestellt?"
+        ],
+        "model": "Erste mögliche Ursache: Der Schnitt ist zu dick, sodass kein Licht hindurchkommt. Dann schneide ich neu, ziehe die Klinge langsam und wähle den dünnsten, fast durchsichtigen Schnitt aus. Zweite mögliche Ursache: Die Lampe ist zu schwach oder die Blende zu weit geschlossen. Dann drehe ich die Helligkeit hoch und öffne die Blende. Auch eine Luftblase über der Stelle kann das Bild verdunkeln; dann setze ich das Deckgläschen neu und senke es schräg ab.",
+        "criteria": [
+          "Ich nenne die Schnittdicke als Ursache.",
+          "Ich nenne eine Ursache bei der Beleuchtung.",
+          "Ich gebe zu jeder Ursache eine passende Maßnahme an."
+        ]
+      },
+      "2": {
+        "prompt": "Erkläre, warum man beim Anfärben den Farbstoff nicht einfach von oben auf das Deckgläschen tropft.",
+        "hints": [
+          "Wo befindet sich das Objekt?",
+          "Was macht das Filterpapier?"
+        ],
+        "model": "Das Objekt liegt unter dem Deckgläschen im Wassertropfen. Ein Tropfen Farbstoff oben auf dem Glas bleibt einfach darauf liegen und erreicht das Objekt nicht; außerdem verschmutzt er das Objektiv. Deshalb gibt man den Farbstoff an den Rand des Deckgläschens. Das Filterpapier auf der anderen Seite saugt Wasser ab, und dadurch wird der Farbstoff unter dem Glas hindurchgezogen. So erreicht er das Objekt gleichmäßig, ohne dass man das Deckgläschen abnehmen muss.",
+        "criteria": [
+          "Ich erkläre, wo das Objekt liegt.",
+          "Ich beschreibe die Saugwirkung des Filterpapiers.",
+          "Ich nenne einen Nachteil des Tropfens von oben."
+        ]
+      }
+    },
+    "figures": [
+      "praeparat-schritte",
+      "schnitt-technik"
+    ]
+  },
+  {
+    "id": "bg6-modelle",
+    "lb": 1,
+    "title": "Modelle und Wirklichkeit",
+    "period": "NT6 1.1 · Erkenntnisse gewinnen – kommunizieren – bewerten",
+    "intro": "Ein Papierstreifen mit Büroklammer dreht sich im Fallen wie eine Ahornfrucht. Ist das schon eine Ahornfrucht? Nein, ein Modell.",
+    "paragraphs": [
+      "Ein Modell ist eine vereinfachte Darstellung eines Originals. Es hebt bestimmte Eigenschaften hervor und lässt andere weg. Materielle Modelle kann man anfassen: ein Skelett aus Kunststoff, ein Blütenmodell oder ein Papiermodell einer Ahornfrucht. Ideelle Modelle bestehen aus Gedanken, Zeichnungen oder Symbolen, etwa ein Schema des Erkenntnisweges, ein Nahrungsnetz aus Pfeilen oder das Teilchenmodell. Strukturmodelle zeigen den Bau, Funktionsmodelle zeigen, wie etwas arbeitet. In der Biologie nutzt man Modelle zur Erkenntnisgewinnung: Mit einem Flügelmodell aus Papier kann man prüfen, wie die Form das Fallen bremst, ohne jedes Mal eine echte Frucht zu suchen.",
+      "Damit ein Modell nicht in die Irre führt, vergleichst du es mit der Wirklichkeit. Du fragst: Was zeigt das Modell richtig? Wo weicht es ab? Das Papiermodell dreht sich wie die Ahornfrucht und sinkt langsam, weil das Gewicht unten sitzt. Es besteht aber aus Papier statt aus lebendem Gewebe, enthält keinen Samen und hat eine andere Größe. Umgekehrt kannst du einen neuen Sachverhalt auf ein bestehendes Modell übertragen: Wenn du die Büroklammer schwerer machst, fällt das Modell schneller; daraus kannst du vermuten, dass auch schwerere Früchte schneller fallen. Ob das stimmt, prüfst du dann wieder am Original."
+    ],
+    "takeaway": "Modelle vereinfachen ein Original: Sie zeigen wichtige Eigenschaften und lassen andere weg. Materiell (anfassbar) oder ideell (Schema, Zeichnung); Struktur- oder Funktionsmodell. Jedes Modell vergleichst du mit dem Original und benennst die Abweichungen.",
+    "sourceIds": [
+      "lehrplan",
+      "kx-modell",
+      "wp-modell",
+      "kx-ahorn"
+    ],
+    "quiz": {
+      "question": "Welche Aussage über ein Modell ist richtig?",
+      "answer": "Ein Modell zeigt nur einen Ausschnitt der Wirklichkeit und weicht in anderen Punkten ab.",
+      "wrong": [
+        "Ein gutes Modell stimmt in allen Punkten mit dem Original überein.",
+        "Modelle sind nur Spielzeug und eignen sich nicht zur Erkenntnisgewinnung."
+      ],
+      "explanation": "Ein Modell vereinfacht absichtlich. Genau deshalb muss man seine Abweichungen kennen; trotzdem hilft es, Vorgänge zu verstehen und Vermutungen zu prüfen."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Modell und Original",
+      "instruction": "Ein Papiermodell soll die Ahornfrucht darstellen. Was stimmt überein, was weicht ab?",
+      "categories": [
+        "stimmt mit dem Original überein",
+        "weicht vom Original ab"
+      ],
+      "entries": [
+        {
+          "text": "Der Flügel dreht sich beim Fallen",
+          "target": 0,
+          "feedback": "Die Drehbewegung ist der Kern des Modells."
+        },
+        {
+          "text": "Das Gewicht sitzt an einem Ende",
+          "target": 0,
+          "feedback": "Wie der Samen an der Frucht."
+        },
+        {
+          "text": "Es fällt langsamer als ein zusammengeknülltes Papier",
+          "target": 0,
+          "feedback": "Der Flügel bremst bei beiden."
+        },
+        {
+          "text": "Es besteht aus Papier",
+          "target": 1,
+          "feedback": "Das Original ist pflanzliches Gewebe."
+        },
+        {
+          "text": "Statt eines Samens hängt eine Büroklammer daran",
+          "target": 1,
+          "feedback": "Aus dem Modell wächst kein Baum."
+        },
+        {
+          "text": "Es ist viel größer als die Frucht",
+          "target": 1,
+          "feedback": "Modelle sind oft vergrößert."
+        }
+      ],
+      "conclusion": "Ein Modell ist dann nützlich, wenn man weiß, wofür es steht und wofür nicht."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Ein Blütenmodell im Biologieraum ist zehnmal größer als eine echte Kirschblüte. Nenne zwei Vorteile und zwei Grenzen dieses Modells.",
+        "hints": [
+          "Was erkennt man am Modell besser?",
+          "Was kann das Modell nicht?"
+        ],
+        "model": "Vorteile: Am großen Modell erkennt man alle Blütenteile deutlich und kann sie sogar herausnehmen; man kann es jedes Jahr wieder benutzen, auch im Winter, wenn keine Kirsche blüht. Grenzen: Das Modell ist aus Kunststoff, duftet nicht und bildet keinen Pollen, also kann man daran keine Bestäubung beobachten. Außerdem stimmen Größe und manchmal auch Farben nicht mit dem Original überein. Darum vergleicht man das Modell immer mit einer echten Blüte.",
+        "criteria": [
+          "Ich nenne zwei Vorteile des Modells.",
+          "Ich nenne zwei Abweichungen vom Original.",
+          "Ich begründe, warum man trotzdem am Original vergleicht."
+        ]
+      },
+      "2": {
+        "prompt": "Mit dem Papiermodell findest du heraus: Je länger der Flügel, desto langsamer fällt es. Darf man daraus schließen, dass Ahornarten mit langen Flügeln ihre Samen weiter verbreiten? Begründe.",
+        "hints": [
+          "Was ist im Modell anders als beim Original?",
+          "Wie könnte man die Vermutung am Original prüfen?"
+        ],
+        "model": "Das Modell liefert eine begründete Vermutung, aber noch keinen Beweis. Ein langsameres Fallen lässt den Wind die Frucht länger forttragen, also könnten lange Flügel tatsächlich zu weiterer Ausbreitung führen. Das Original unterscheidet sich aber: Echte Früchte haben andere Gewichte, Formen und Oberflächen, und bei langen Flügeln ist oft auch der Samen schwerer. Man müsste die Vermutung am Original prüfen, etwa echte Früchte verschiedener Ahornarten aus gleicher Höhe fallen lassen und Fallzeiten vergleichen.",
+        "criteria": [
+          "Ich unterscheide zwischen Vermutung aus dem Modell und Beweis.",
+          "Ich nenne Unterschiede zwischen Modell und Original.",
+          "Ich schlage eine Prüfung am Original vor."
+        ]
+      }
+    },
+    "figures": [
+      "modell-ahornfrucht",
+      "struktur-funktion"
+    ]
+  },
+  {
+    "id": "bg6-darstellungsformen",
+    "lb": 1,
+    "title": "Tabelle, Diagramm und Je-desto-Sätze",
+    "period": "NT6 1.1 · Erkenntnisse gewinnen – kommunizieren – bewerten",
+    "intro": "18, 0, 18, 0: Diese Zahlen sagen wenig. In einem Diagramm siehst du sofort, was sie bedeuten.",
+    "paragraphs": [
+      "Ergebnisse kannst du in verschiedenen Darstellungsformen zeigen: als Text, als Tabelle, als Schemazeichnung oder als Diagramm. Die Tabelle ist genau und dient zum Sammeln der Werte. Ein Diagramm zeigt Unterschiede und Verläufe auf einen Blick. Ein Säulendiagramm passt, wenn du getrennte Ansätze vergleichst, zum Beispiel die Zahl der gekeimten Samen in vier Schalen mit verschiedenen Bedingungen. Ein Liniendiagramm passt, wenn sich eine Größe über die Zeit oder mit einer anderen Größe verändert, etwa die Länge eines Keimlings an fünf Tagen. Jedes Diagramm braucht eine Überschrift, beschriftete Achsen mit Größe und Einheit und eine gleichmäßige Einteilung. Du kannst Darstellungsformen auch ineinander umwandeln: aus einer Tabelle ein Diagramm zeichnen oder aus einem Diagramm die Werte für eine Tabelle ablesen.",
+      "Wenn du Ergebnisse beschreibst, verbindest du Fakten in Fachsprache und im richtigen Zusammenhang. Ein Je-desto-Satz beschreibt, wie zwei Größen zusammenhängen: Je näher die Lampe an der Wasserpest steht, desto mehr Sauerstoffbläschen steigen auf. Dabei nennst du zuerst die Größe, die du veränderst, und dann die, die sich dadurch ändert. Achte darauf, Ursache und Wirkung nicht zu vertauschen: Die Lampe bewirkt die Bläschen, nicht umgekehrt. Ein Je-desto-Satz gilt nur in dem Bereich, den du gemessen hast; ob die Wirkung bei noch mehr Licht weiter steigt, musst du erst prüfen."
+    ],
+    "takeaway": "Säulendiagramm: getrennte Ansätze vergleichen. Liniendiagramm: Verlauf über die Zeit oder mit einer anderen Größe. Achsen mit Größe und Einheit beschriften. Je-desto-Satz: Je mehr (Ursache), desto mehr oder weniger (Wirkung).",
+    "sourceIds": [
+      "lehrplan",
+      "wp-saeulendiagramm",
+      "wp-liniendiagramm",
+      "wp-wasserpest"
+    ],
+    "quiz": {
+      "question": "Du misst eine Woche lang jeden Tag die Höhe einer Bohnenpflanze. Welche Darstellung passt am besten?",
+      "answer": "Ein Liniendiagramm mit den Tagen auf der waagerechten Achse",
+      "wrong": [
+        "Ein Säulendiagramm mit einer Säule für die ganze Woche",
+        "Ein Text ohne Zahlen"
+      ],
+      "explanation": "Ein Verlauf über die Zeit wird mit einem Liniendiagramm dargestellt. Die Zeit steht auf der waagerechten Achse, die gemessene Höhe auf der senkrechten."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Säule oder Linie?",
+      "instruction": "Ordne jedem Datensatz die passende Diagrammform zu.",
+      "categories": [
+        "Säulendiagramm",
+        "Liniendiagramm"
+      ],
+      "entries": [
+        {
+          "text": "Gekeimte Samen in den Schalen hell, dunkel, kalt und trocken",
+          "target": 0,
+          "feedback": "Getrennte Ansätze werden verglichen."
+        },
+        {
+          "text": "Anzahl verschiedener Vogelarten an drei Futterhäusern",
+          "target": 0,
+          "feedback": "Drei getrennte Orte."
+        },
+        {
+          "text": "Länge eines Keimlings an fünf Tagen",
+          "target": 1,
+          "feedback": "Ein Verlauf über die Zeit."
+        },
+        {
+          "text": "Wassertemperatur im Teich jede Stunde von 8 bis 16 Uhr",
+          "target": 1,
+          "feedback": "Messwerte in zeitlicher Folge."
+        },
+        {
+          "text": "Bläschenzahl der Wasserpest bei 10, 20, 30, 40 und 50 cm Lampenabstand",
+          "target": 1,
+          "feedback": "Eine Größe ändert sich mit einer anderen."
+        },
+        {
+          "text": "Körpergewicht von Igel, Eichhörnchen und Feldmaus",
+          "target": 0,
+          "feedback": "Drei verschiedene Tiere werden verglichen."
+        }
+      ],
+      "conclusion": "Getrennte Gruppen: Säulen. Zusammenhängende Messreihe: Linie."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Eine Tabelle zeigt die Länge eines Kressekeimlings: Tag 1: 2 mm, Tag 2: 8 mm, Tag 3: 15 mm, Tag 4: 24 mm. Beschreibe, wie du daraus ein Diagramm zeichnest, und formuliere einen Je-desto-Satz.",
+        "hints": [
+          "Welche Diagrammform und welche Achsen?",
+          "Welche Größe ist die Ursache?"
+        ],
+        "model": "Ich zeichne ein Liniendiagramm, weil sich die Länge über die Zeit verändert. Auf die waagerechte Achse kommen die Tage 1 bis 4, auf die senkrechte die Länge in Millimetern von 0 bis 25 mit gleichmäßigen Abständen. Ich trage die vier Punkte ein, verbinde sie mit einer Linie und schreibe eine Überschrift darüber, etwa „Wachstum eines Kressekeimlings“. Je-desto-Satz: Je mehr Tage seit der Aussaat vergangen sind, desto länger ist der Keimling.",
+        "criteria": [
+          "Ich wähle das Liniendiagramm und begründe es.",
+          "Ich beschrifte beide Achsen mit Größe und Einheit.",
+          "Ich formuliere einen korrekten Je-desto-Satz."
+        ]
+      },
+      "2": {
+        "prompt": "Ein Schüler schreibt: „Je mehr Sauerstoffbläschen aufsteigen, desto näher steht die Lampe.“ Beurteile den Satz und verbessere ihn.",
+        "hints": [
+          "Was wurde im Versuch verändert, was hat sich dadurch verändert?",
+          "Ist der Satz falsch oder nur ungünstig?"
+        ],
+        "model": "Der Satz verwechselt Ursache und Wirkung. Im Versuch hat man den Abstand der Lampe verändert, und dadurch hat sich die Zahl der Bläschen geändert. Die Bläschen bewegen die Lampe nicht. Ein richtiger Je-desto-Satz nennt zuerst die Ursache: Je näher die Lampe an der Wasserpest steht, desto mehr Sauerstoffbläschen steigen pro Minute auf. Ergänzen sollte man, dass das nur für den gemessenen Bereich gilt.",
+        "criteria": [
+          "Ich erkenne die vertauschte Reihenfolge von Ursache und Wirkung.",
+          "Ich formuliere den Satz richtig.",
+          "Ich nenne die Grenze des Messbereichs."
+        ]
+      }
+    },
+    "figures": [
+      "saeule-linie",
+      "je-desto"
+    ]
+  },
+  {
+    "id": "bg6-quellen-aussagen",
+    "lb": 1,
+    "title": "Quellen prüfen, Fakten von Meinungen trennen",
+    "period": "NT6 1.1 · Erkenntnisse gewinnen – kommunizieren – bewerten",
+    "intro": "„Der schlaue Fuchs überlistet die Gans“ steht in einem Kinderbuch, „Der Rotfuchs frisst vor allem Mäuse“ in einem Lexikon. Beides klingt nach Wissen, ist aber sehr verschieden.",
+    "paragraphs": [
+      "Informationen über Tiere und Pflanzen findest du im Schulbuch, in Lexika, auf Internetseiten, in Zeitschriften und in der Werbung. Nicht jede Quelle ist gleich verlässlich. Du schätzt sie nach Kriterien ein: Welche Qualifikation hat der Autor, ist es zum Beispiel eine Fachperson, eine Behörde oder eine Redaktion eines Lexikons? Welche Absicht hat er: informieren, unterhalten oder etwas verkaufen? Für welche Zielgruppe ist der Text geschrieben? Eine Seite für Kinder vereinfacht, darf dabei aber nichts Falsches sagen. Außerdem fragst du, wie aktuell die Quelle ist, ob sie Belege nennt und ob andere gute Quellen dasselbe sagen. Aus mehreren vorgegebenen Quellen wählst du so die geeigneten aus.",
+      "In Texten stehen beschreibende und bewertende Aussagen oft nebeneinander. Eine beschreibende Aussage nennt eine Tatsache, die man beobachten oder messen kann: Der Hecht frisst andere Fische. Eine bewertende Aussage drückt ein Urteil oder Gefühl aus: Der Hecht ist ein gemeiner Räuber. Besonders häufig sind anthropomorphe, also vermenschlichende Darstellungen: Die Amsel singt aus Freude, der Fuchs ist hinterlistig. Solche Aussagen übertragen menschliche Gefühle und Absichten auf Tiere. In der Biologie trennst du Fakten von Bewertungen und Meinungen, damit du dir ein eigenes, begründetes Urteil bilden kannst."
+    ],
+    "takeaway": "Quellen einschätzen: Qualifikation und Absicht des Autors, Zielgruppe und Vereinfachung, Aktualität, Belege, Vergleich mit anderen Quellen. Beschreibende Aussagen nennen prüfbare Tatsachen, bewertende Aussagen Urteile; vermenschlichende Aussagen sind Bewertungen.",
+    "sourceIds": [
+      "lehrplan",
+      "kx-quelle",
+      "wp-anthropomorphismus",
+      "kx-wolf"
+    ],
+    "quiz": {
+      "question": "Welche Aussage ist beschreibend?",
+      "answer": "Wölfe jagen oft gemeinsam im Rudel.",
+      "wrong": [
+        "Wölfe sind grausame Jäger.",
+        "Der Wolf freut sich auf seine Beute."
+      ],
+      "explanation": "Dass Wölfe im Rudel jagen, lässt sich beobachten. „Grausam“ ist ein Urteil, und „freut sich“ überträgt menschliche Gefühle auf das Tier."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fakt oder Bewertung?",
+      "instruction": "Ordne jede Aussage zu.",
+      "categories": [
+        "beschreibend",
+        "bewertend",
+        "vermenschlichend"
+      ],
+      "entries": [
+        {
+          "text": "Der Igel frisst Käfer, Würmer und Schnecken.",
+          "target": 0,
+          "feedback": "Lässt sich beobachten."
+        },
+        {
+          "text": "Eichhörnchen verstecken im Herbst Nüsse.",
+          "target": 0,
+          "feedback": "Eine Tatsache."
+        },
+        {
+          "text": "Tauben sind lästige Vögel.",
+          "target": 1,
+          "feedback": "Ein Urteil, keine Tatsache."
+        },
+        {
+          "text": "Kröten sind hässlich.",
+          "target": 1,
+          "feedback": "Ein Geschmacksurteil."
+        },
+        {
+          "text": "Die Ente ist stolz auf ihre Küken.",
+          "target": 2,
+          "feedback": "Stolz ist ein menschliches Gefühl."
+        },
+        {
+          "text": "Der Kuckuck ist ein frecher Betrüger.",
+          "target": 2,
+          "feedback": "Menschliche Absichten werden unterstellt."
+        }
+      ],
+      "conclusion": "Biologische Aussagen beschreiben, was Lebewesen tun; Urteile darüber kommen von Menschen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Du sollst herausfinden, was Igel fressen. Zur Auswahl stehen: ein Kinderlexikon, die Seite eines Tierfutterherstellers und ein Beitrag in einem Forum ohne Namen. Wähle aus und begründe.",
+        "hints": [
+          "Welche Absicht hat der Futterhersteller?",
+          "Was weißt du über den Autor im Forum?"
+        ],
+        "model": "Ich wähle das Kinderlexikon. Es wird von einer Redaktion geschrieben, die Informationen für Kinder vereinfacht, aber sachlich richtig darstellt, und es hat keine Verkaufsabsicht. Die Seite des Futterherstellers kann einseitig sein, weil sie ihr Igelfutter verkaufen will. Beim Forumsbeitrag weiß ich nicht, wer ihn geschrieben hat und ob er sich auskennt. Zur Sicherheit vergleiche ich die Angaben des Lexikons noch mit dem Schulbuch.",
+        "criteria": [
+          "Ich wähle eine geeignete Quelle aus.",
+          "Ich nenne Kriterien wie Autor, Absicht und Zielgruppe.",
+          "Ich begründe, warum die anderen weniger geeignet sind."
+        ]
+      },
+      "2": {
+        "prompt": "Schreibe den Satz „Die fleißige Amselmutter füttert liebevoll ihre hungrigen Kinder, während der faule Vater nur singt“ in eine sachliche Beschreibung um und erkläre, was du verändert hast.",
+        "hints": [
+          "Welche Wörter sind Bewertungen?",
+          "Was tut das Amselmännchen beim Singen tatsächlich?"
+        ],
+        "model": "Sachlich: Das Amselweibchen brütet die Eier aus; nach dem Schlüpfen füttern beide Eltern die Jungvögel mit Würmern und Insekten. Das Männchen singt außerdem, um sein Revier anzuzeigen. Ich habe die Bewertungen „fleißig“, „liebevoll“ und „faul“ gestrichen, weil sie menschliche Eigenschaften unterstellen. „Mutter“, „Kinder“ und „Vater“ habe ich durch Fachbegriffe ersetzt. Außerdem stimmt der Satz sachlich nicht, denn auch das Männchen füttert.",
+        "criteria": [
+          "Ich ersetze vermenschlichende und bewertende Wörter.",
+          "Ich verwende Fachbegriffe.",
+          "Ich korrigiere die sachlich falsche Aussage über das Männchen."
+        ]
+      }
+    },
+    "figures": [
+      "quellen-kriterien",
+      "aussagen"
+    ]
+  }
+]

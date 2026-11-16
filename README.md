@@ -7,6 +7,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | Physics 7 Realschule (Bavaria, Group I) | [`physik-realschule-7/`](physik-realschule-7/) | Built by Pages on merge | `zam-academy:physik-realschule-7` |
 | English 5 Gymnasium (Bavaria) | [`englisch-gymnasium-5/`](englisch-gymnasium-5/) | https://academy.zam-os.org/englisch-gymnasium-5/ | `zam-academy:englisch-gymnasium-5` |
 | Deutsch 5 Gymnasium (LehrplanPLUS Bayern) | [`deutsch-gymnasium-5/`](deutsch-gymnasium-5/) | https://academy.zam-os.org/deutsch-gymnasium-5/ | `zam-academy:deutsch-gymnasium-5` |
+| German 6 Realschule (Bavaria; local draft) | [`deutsch-realschule-6/`](deutsch-realschule-6/) | Local offline package | `zam-academy:deutsch-realschule-6` |
 | French 5 Gymnasium (Bavaria, first foreign language) | [`franzoesisch-gymnasium-5/`](franzoesisch-gymnasium-5/) | https://academy.zam-os.org/franzoesisch-gymnasium-5/ | `zam-academy:franzoesisch-gymnasium-5` |
 | Englisch 5 Mittelschule (LehrplanPLUS Bayern) | [`englisch-mittelschule-5/`](englisch-mittelschule-5/) | https://academy.zam-os.org/englisch-mittelschule-5/ | `zam-academy:englisch-mittelschule-5` |
 | Mathematics 5 Mittelschule (Bavaria) | [`mathematik-mittelschule-5/`](mathematik-mittelschule-5/) | Built by Pages on merge | `zam-academy:mathematik-mittelschule-5` |
@@ -32,6 +33,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | Mathematik 7 Gymnasium (LehrplanPLUS Bayern) | [`mathematik-gymnasium-7/`](mathematik-gymnasium-7/) | https://academy.zam-os.org/mathematik-gymnasium-7/ | `zam-academy:mathematik-gymnasium-7` |
 | Geographie 5 Gymnasium (LehrplanPLUS Bayern) | [`geographie-gymnasium-5/`](geographie-gymnasium-5/) | Built by Pages on merge | `zam-academy:geographie-gymnasium-5` |
 | Biologie 5 Gymnasium: Natur und Technik 5, Schwerpunkt Biologie (LehrplanPLUS Bayern) | [`biologie-gymnasium-5/`](biologie-gymnasium-5/) | Built by Pages on merge | `zam-academy:biologie-gymnasium-5` |
+| Biologie 6 Gymnasium: Natur und Technik 6, Schwerpunkt Biologie (LehrplanPLUS Bayern) | [`biologie-gymnasium-6/`](biologie-gymnasium-6/) | Built by Pages on merge | `zam-academy:biologie-gymnasium-6` |
 | Mathematik 11 Gymnasium (LehrplanPLUS Bayern) | [`mathematik-gymnasium-11/`](mathematik-gymnasium-11/) | https://academy.zam-os.org/mathematik-gymnasium-11/ | `zam-academy:mathematik-gymnasium-11` |
 | Mathematik 12 Gymnasium (LehrplanPLUS Bayern) | [`mathematik-gymnasium-12/`](mathematik-gymnasium-12/) | https://academy.zam-os.org/mathematik-gymnasium-12/ | `zam-academy:mathematik-gymnasium-12` |
 | Mathematik 6 Realschule (LehrplanPLUS Bayern, alle Wahlpflichtfächergruppen) | [`mathematik-realschule-6/`](mathematik-realschule-6/) | https://academy.zam-os.org/mathematik-realschule-6/ | `zam-academy:mathematik-realschule-6` |
@@ -177,10 +179,12 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Geographie 5 Gymnasium: cd geographie-gymnasium-5 (dev server on :5244)
 # English 5 Gymnasium: cd englisch-gymnasium-5 (dev server on :5247)
 # German 5 Gymnasium: cd deutsch-gymnasium-5 (dev server on :5249)
+# German 6 Realschule local draft: cd deutsch-realschule-6 (dev server on :5254)
 # Biologie 5 Gymnasium: cd biologie-gymnasium-5 (dev server on :5246)
 # French 5 Gymnasium: cd franzoesisch-gymnasium-5 (dev server on :5245)
 # Englisch 5 Mittelschule: cd englisch-mittelschule-5 (dev server on :5248)
 # Informatik 6 Gymnasium: cd informatik-gymnasium-6 (dev server on :5251)
+# Biologie 6 Gymnasium: cd biologie-gymnasium-6 (dev server on :5253)
 # Grade 11 introductory biology preview: cd biologie-gymnasium-11 (dev server on :5227)
 npm ci
 npm run dev      # http://localhost:5180/uml/
@@ -258,5 +262,7 @@ verbatim expectations and a proposal-only history mapping. Run locally on port
 The [Biologie 5 Realschule package](biologie-realschule-5/) adds 25 lessons, four interactive models (microscope, cell comparison, human torso, and arm lever), 50 case decisions, 50 two-level writing tasks, and 50 linked ZAM cards across all four LehrplanPLUS Bayern areas (`biologie-realschule-5/coverage.json`, all 40 verbatim expectations verified). The [legacy review](docs/biologie-5-bestandsabgleich.md) proposes 5 category-A replacements and retains 19 cards active across the three Grade 5 `de-by` cells (`proposal-only`, `approved: null`; `cell.json` ships without `replaces` or `retired_items` until approved).
 
 The [Informatik 6 Gymnasium package](informatik-gymnasium-6/) covers Natur und Technik – Schwerpunkt Informatik 6 (`NT6 2.1–2.3`) with 12 lessons, interactive workshops and SVG labs across all three learning areas, two-level exercises, and 36 linked ZAM cards. Its [coverage matrix](informatik-gymnasium-6/coverage.json) maps all 14 Kompetenzerwartungen and 18 content bullets verbatim against LehrplanPLUS Bayern. The [curriculum and legacy review](docs/informatik-gymnasium-6-coverage.md) documents the mapping Thomas approved on 2026-11-15 for the eight cards of `de-by:gymnasium-6-natur-technik-informatik-vektorgrafik-texte` (2 A, 6 C keep-active); from cell version 2026.11.2 the two A successors declare `replaces`. It also flags the Grade 5 cell `de-by:gymnasium-5-natur-technik-mikroskop-experiment-oop` (`J05–J08`), which `biologie-gymnasium-5` maps.
+
+The [Biologie 6 Gymnasium package](biologie-gymnasium-6/) covers Natur und Technik 6, Schwerpunkt Biologie (`NT6 1.1–1.5`) with 44 lessons in nine stations, 12 interactive models (fair test, microscope, seed dispersal, germination, waterweed, phototropism, body shape, body temperature, frog metamorphosis, echolocation, vertebrate key, pond food web), 59 drawings, two-level writing tasks and 88 linked ZAM cards. Its [coverage matrix](biologie-gymnasium-6/coverage.json) maps all 45 Kompetenzerwartungen of Lernbereich 1 verbatim. The [curriculum and legacy review](docs/biologie-gymnasium-6-coverage.md) proposes a mapping for the 16 cards of the two `de-by:gymnasium-6-biologie-*` cells (4 A, 0 B, 12 C keep-active); the cell declares no `replaces` until Thomas approves.
 
 The [Deutsch 5 Gymnasium package](deutsch-gymnasium-5/) adds 50 lessons across all four LehrplanPLUS Bayern areas (*Sprechen und Zuhören*, *Lesen und Medien*, *Schreiben*, *Sprache und Rechtschreibung*), including local audio passages, dramatic scenes (*Spielszenen*), 22 interactive language and spelling models, two-level writing tasks with self-assessment and 100 ZAM cards (`proposal-only` legacy inventory of all 16 old cards in [deutsch-gymnasium-5/replaces-de-by.json](deutsch-gymnasium-5/replaces-de-by.json)). See [Curriculum coverage and legacy inventory](docs/deutsch-gymnasium-5-coverage.md).

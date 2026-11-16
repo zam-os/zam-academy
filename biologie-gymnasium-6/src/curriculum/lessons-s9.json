@@ -1,0 +1,437 @@
+[
+  {
+    "id": "bg6-gewaesser-untersuchen",
+    "lb": 9,
+    "title": "Ein Gewässer untersuchen",
+    "period": "NT6 1.5 · Ökosystem Gewässer",
+    "intro": "Wie warm ist der Bach, wie klar ist der Weiher, wie schnell fließt das Wasser? Mit einfachen Geräten erkundest du einen Lebensraum am Wasser.",
+    "paragraphs": [
+      "In einem Gewässer wirken unbelebte Umweltfaktoren auf alle Lebewesen. Man nennt sie abiotische Faktoren. Dazu gehören die Wassertemperatur, die Sichttiefe und bei Bächen und Flüssen die Fließgeschwindigkeit, außerdem Licht und der Gehalt an gelöstem Sauerstoff. Die Wassertemperatur misst du mit einem Thermometer immer in derselben Tiefe und ohne direkte Sonne auf dem Thermometer. Sie ist wichtig, weil kaltes Wasser mehr Sauerstoff lösen kann als warmes. Die Sichttiefe misst du mit einer weißen Scheibe an einer Leine, der Secchi-Scheibe. Du lässt sie langsam ins Wasser hinab und liest an der Leine ab, in welcher Tiefe sie gerade verschwindet. Je trüber das Wasser, etwa durch viele Algen, desto geringer die Sichttiefe, und desto weniger Licht erreicht die Wasserpflanzen am Grund.",
+      "Die Fließgeschwindigkeit misst du mit einem schwimmenden Gegenstand, zum Beispiel einem Korken oder einer Orange. Du steckst am Ufer eine Strecke von 10 m ab und misst, wie viele Sekunden der Schwimmkörper braucht. Braucht er 20 Sekunden, beträgt die Fließgeschwindigkeit 10 m : 20 s = 0,5 m pro Sekunde. Du wiederholst die Messung mehrmals und bildest den Mittelwert. Deine Ergebnisse protokollierst du in einer Tabelle, auf Papier oder digital, mit Ort, Datum, Uhrzeit und Wetter. Vergleichst du zwei Messstellen, etwa einen schattigen Bachabschnitt und einen sonnigen Teich, verstehst du, warum dort verschiedene Lebewesen vorkommen. Untersuchungen am Wasser finden nur mit Erwachsenen und an sicheren Uferstellen statt."
+    ],
+    "takeaway": "Abiotische Faktoren im Gewässer: Wassertemperatur (Thermometer, kaltes Wasser enthält mehr Sauerstoff), Sichttiefe (Secchi-Scheibe, Trübung durch Algen), Fließgeschwindigkeit (Strecke : Zeit mit Schwimmkörper). Mehrmals messen, protokollieren, Messstellen vergleichen.",
+    "sourceIds": [
+      "lehrplan",
+      "wp-sichttiefe",
+      "wp-secchi",
+      "wp-stroemungsgeschwindigkeit",
+      "wp-abiotisch",
+      "kx-bach"
+    ],
+    "quiz": {
+      "question": "Ein Korken treibt in 25 Sekunden eine 10 m lange Strecke den Bach hinab. Wie groß ist die Fließgeschwindigkeit?",
+      "answer": "0,4 m pro Sekunde",
+      "wrong": [
+        "2,5 m pro Sekunde",
+        "250 m pro Sekunde"
+      ],
+      "explanation": "Fließgeschwindigkeit = Strecke : Zeit = 10 m : 25 s = 0,4 m pro Sekunde. Wer Zeit durch Strecke teilt, erhält 2,5; wer multipliziert, 250."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Faktor und Messgerät",
+      "instruction": "Ordne jede Tätigkeit dem abiotischen Faktor zu, den sie misst.",
+      "categories": [
+        "Wassertemperatur",
+        "Sichttiefe",
+        "Fließgeschwindigkeit"
+      ],
+      "dataTable": {
+        "title": "Messprotokoll zweier Stellen (Beispielwerte)",
+        "unit": "Messwert",
+        "rows": [
+          {
+            "label": "Bach im Wald: Temperatur in °C",
+            "value": 11
+          },
+          {
+            "label": "Teich in der Sonne: Temperatur in °C",
+            "value": 21
+          },
+          {
+            "label": "Teich: Sichttiefe in cm",
+            "value": 60
+          },
+          {
+            "label": "Bach: Zeit für 10 m in s",
+            "value": 20
+          }
+        ],
+        "note": "Erfundene Beispielwerte zum Üben."
+      },
+      "entries": [
+        {
+          "text": "Thermometer im Schatten 10 cm tief eintauchen",
+          "target": 0,
+          "feedback": "So misst du die Wassertemperatur."
+        },
+        {
+          "text": "Werte von Bach und Teich vergleichen: 11 °C und 21 °C",
+          "target": 0,
+          "feedback": "Der schattige Bach ist kühler."
+        },
+        {
+          "text": "Weiße Scheibe an der Leine absenken, bis sie verschwindet",
+          "target": 1,
+          "feedback": "Die Secchi-Scheibe."
+        },
+        {
+          "text": "Feststellen, dass viele Algen das Wasser trüben",
+          "target": 1,
+          "feedback": "Trübung verringert die Sichttiefe."
+        },
+        {
+          "text": "Zeit messen, die ein Korken für 10 m braucht",
+          "target": 2,
+          "feedback": "Strecke durch Zeit."
+        },
+        {
+          "text": "10 m : 20 s = 0,5 m pro Sekunde ausrechnen",
+          "target": 2,
+          "feedback": "Die Fließgeschwindigkeit des Bachs."
+        }
+      ],
+      "conclusion": "Erst der Vergleich zweier Messstellen zeigt, wie verschieden Lebensräume am Wasser sind."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Plane die Untersuchung eines Schulteichs: Welche abiotischen Faktoren misst du, womit und wie protokollierst du?",
+        "hints": [
+          "Welche drei Faktoren nennt der Lehrplan als Beispiel?",
+          "Wie machst du die Messung verlässlich?"
+        ],
+        "model": "Ich messe die Wassertemperatur mit einem Thermometer immer in etwa 10 cm Tiefe und im Schatten, an zwei Stellen des Teichs. Die Sichttiefe bestimme ich mit einer Secchi-Scheibe an einer markierten Leine: Ich senke sie langsam ab und notiere die Tiefe, in der sie verschwindet. Da ein Teich kaum fließt, schätze ich die Fließgeschwindigkeit nur am Zulauf mit einem Korken über eine abgemessene Strecke. Jede Messung wiederhole ich dreimal und trage alle Werte mit Ort, Datum, Uhrzeit und Wetter in eine vorbereitete Tabelle ein, zum Beispiel auf einem Tablet.",
+        "criteria": [
+          "Ich nenne mindestens zwei Faktoren mit passendem Messgerät.",
+          "Ich beschreibe das Vorgehen genau.",
+          "Ich plane Wiederholungen und ein Protokoll."
+        ]
+      },
+      "2": {
+        "prompt": "Im Sommer misst eine Klasse im Teich eine Sichttiefe von nur 30 cm und eine Wassertemperatur von 24 °C, im Frühjahr waren es 120 cm und 12 °C. Deute die Veränderungen und ihre Folgen für Fische.",
+        "hints": [
+          "Was trübt das Wasser im Sommer?",
+          "Wie hängen Temperatur und Sauerstoff zusammen?"
+        ],
+        "model": "Im Sommer ist das Wasser deutlich wärmer und trüber. Die geringe Sichttiefe weist auf sehr viele Algen hin, die sich bei Wärme und Licht stark vermehren. Durch die Trübung erreicht weniger Licht den Grund, und Wasserpflanzen dort wachsen schlechter. Außerdem kann warmes Wasser weniger Sauerstoff lösen als kaltes. Für Fische wird der Sauerstoff knapp, besonders nachts, wenn auch die Algen nur Sauerstoff verbrauchen. Sterben viele Algen ab, verbrauchen Zersetzer zusätzlich Sauerstoff. Fische können dann in Not geraten.",
+        "criteria": [
+          "Ich deute die geringe Sichttiefe mit Algen.",
+          "Ich verbinde Temperatur und Sauerstoffgehalt.",
+          "Ich leite Folgen für Fische ab."
+        ]
+      }
+    },
+    "figures": [
+      "gewaesser-messen"
+    ]
+  },
+  {
+    "id": "bg6-gewaesser-lebewesen",
+    "lb": 9,
+    "title": "Lebewesen im Teich bestimmen",
+    "period": "NT6 1.5 · Ökosystem Gewässer",
+    "intro": "Am Ufer wiegt sich das Schilf, auf dem Wasser schwimmen Seerosenblätter, darunter jagt ein Hecht. Jede Zone eines Teichs hat ihre eigenen Bewohner.",
+    "paragraphs": [
+      "Ein Teich lässt sich vom Ufer zur Mitte in Zonen gliedern. Am Rand steht das Röhricht mit Schilf und Rohrkolben, die mit ihren Wurzeln im flachen Wasser stehen. Weiter draußen folgt die Schwimmblattzone mit der Seerose, deren Blätter auf dem Wasser liegen. Noch tiefer wachsen untergetauchte Pflanzen wie die Wasserpest in der Tauchblattzone. Im offenen Wasser schweben winzige Algen und Kleintiere wie der Wasserfloh; man nennt sie Plankton. Am Grund liegt Schlamm, in dem Muscheln, Würmer und Insektenlarven leben. Typische Wirbeltiere sind Fische wie Rotauge und Hecht, Amphibien wie der Grasfrosch, Vögel wie Stockente, Graureiher und Eisvogel. Libellenlarven jagen am Gewässergrund, bevor sie als fertige Libellen schlüpfen.",
+      "Um die biologische Vielfalt eines Gewässers zu erkunden, bestimmst du die Lebewesen. Dazu nutzt du Abbildungen mit kurzen Beschreibungen in Fachsprache oder einen einfachen dichotomen Bestimmungsschlüssel. Er stellt bei jedem Schritt zwei Möglichkeiten zur Wahl, zum Beispiel: Hat das Tier sechs Beine? Ja oder nein. Schritt für Schritt kommst du so zum Namen. Auch digitale Nachschlagewerke und Bestimmungs-Apps können helfen; ihr Ergebnis prüfst du aber an den Merkmalen. Kleintiere fängst du vorsichtig mit einem Kescher, setzt sie in eine weiße Schale mit Teichwasser und betrachtest sie mit der Lupe. Danach setzt du alle Tiere an derselben Stelle wieder ins Wasser zurück. Je mehr verschiedene Arten du findest, desto größer ist die Vielfalt dieses Lebensraums."
+    ],
+    "takeaway": "Zonen eines Teichs: Röhricht (Schilf), Schwimmblattzone (Seerose), Tauchblattzone (Wasserpest), Freiwasser mit Plankton (Algen, Wasserfloh), Bodenzone. Typische Wirbeltiere: Rotauge, Hecht, Grasfrosch, Stockente, Graureiher. Bestimmen mit Abbildungen oder dichotomem Schlüssel.",
+    "sourceIds": [
+      "lehrplan",
+      "kx-teich",
+      "kx-plankton",
+      "kx-hecht",
+      "kx-libellen",
+      "wp-rotauge",
+      "wp-teichmuschel",
+      "wp-eisvogel"
+    ],
+    "quiz": {
+      "question": "Wie geht man beim Bestimmen mit einem dichotomen Schlüssel vor?",
+      "answer": "Man entscheidet bei jedem Schritt zwischen zwei Merkmalsbeschreibungen, bis der Name erreicht ist.",
+      "wrong": [
+        "Man vergleicht das Tier mit allen Bildern des Buches gleichzeitig.",
+        "Man rät den Namen und prüft ihn danach im Internet."
+      ],
+      "explanation": "Dichotom heißt zweigeteilt: Bei jedem Schritt gibt es genau zwei Möglichkeiten. So engt man die Auswahl Schritt für Schritt ein."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Wer lebt wo im Teich?",
+      "instruction": "Ordne jedes Lebewesen der Zone zu, in der es typischerweise vorkommt.",
+      "categories": [
+        "Röhricht",
+        "Schwimmblattzone",
+        "Tauchblattzone und Freiwasser",
+        "Bodenzone"
+      ],
+      "entries": [
+        {
+          "text": "Schilf",
+          "target": 0,
+          "feedback": "Es steht im flachen Wasser am Ufer."
+        },
+        {
+          "text": "Seerose",
+          "target": 1,
+          "feedback": "Ihre Blätter schwimmen auf dem Wasser."
+        },
+        {
+          "text": "Wasserpest",
+          "target": 2,
+          "feedback": "Sie wächst untergetaucht."
+        },
+        {
+          "text": "Wasserfloh",
+          "target": 2,
+          "feedback": "Er schwebt im Freiwasser."
+        },
+        {
+          "text": "Teichmuschel",
+          "target": 3,
+          "feedback": "Sie lebt im Schlamm am Grund."
+        },
+        {
+          "text": "Libellenlarve",
+          "target": 3,
+          "feedback": "Sie lauert am Grund auf Beute."
+        }
+      ],
+      "conclusion": "Jede Zone bietet andere Bedingungen und damit Lebensraum für andere Arten."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Beschreibe die Zonen eines Teichs vom Ufer bis zur Mitte und nenne zu jeder ein typisches Lebewesen.",
+        "hints": [
+          "Wie tief ist das Wasser in jeder Zone?",
+          "Wo liegen die Blätter der Pflanzen?"
+        ],
+        "model": "Am Ufer liegt das Röhricht. Dort stehen Schilf und Rohrkolben im flachen Wasser, und Vögel wie Teichrohrsänger brüten darin. Dann folgt die Schwimmblattzone mit der Seerose, deren Blätter auf der Wasseroberfläche schwimmen. In etwas tieferem Wasser wachsen in der Tauchblattzone untergetauchte Pflanzen wie die Wasserpest. Im offenen Freiwasser schweben Algen und Wasserflöhe, und Fische wie das Rotauge schwimmen. Am Grund liegt die Bodenzone mit Schlamm, in dem Teichmuscheln und Insektenlarven leben.",
+        "criteria": [
+          "Ich nenne die Zonen in der richtigen Reihenfolge.",
+          "Ich ordne jeder Zone ein passendes Lebewesen zu.",
+          "Ich beschreibe ein Merkmal jeder Zone."
+        ]
+      },
+      "2": {
+        "prompt": "Eine Bestimmungs-App meldet für ein Tier aus dem Teich „Wasserskorpion“. Erkläre, wie du das Ergebnis überprüfst, und warum das nötig ist.",
+        "hints": [
+          "Welche Merkmale hat das Tier vor dir?",
+          "Kann eine App sich irren?"
+        ],
+        "model": "Eine App vergleicht Fotos mit gespeicherten Bildern und kann sich irren, zum Beispiel bei schlechtem Licht oder ähnlich aussehenden Arten. Deshalb prüfe ich das Ergebnis an den Merkmalen. Ich betrachte das Tier in einer weißen Schale mit der Lupe und vergleiche es mit der Beschreibung im Bestimmungsbuch: Hat es sechs Beine, lange Fangbeine vorne wie eine Gottesanbeterin und ein Atemrohr am Hinterende? Nur wenn die Merkmale passen, übernehme ich den Namen. Passen sie nicht, bestimme ich das Tier mit dem dichotomen Schlüssel neu.",
+        "criteria": [
+          "Ich nenne mögliche Fehler einer App.",
+          "Ich beschreibe die Prüfung an Merkmalen.",
+          "Ich nenne ein Vorgehen, wenn die Merkmale nicht passen."
+        ]
+      }
+    },
+    "figures": [
+      "teich-zonen"
+    ]
+  },
+  {
+    "id": "bg6-nahrungsnetz",
+    "lb": 9,
+    "title": "Nahrungsnetz und Ökosystem Teich",
+    "period": "NT6 1.5 · Ökosystem Gewässer",
+    "intro": "Algen, Wasserflöhe, Rotaugen, Hechte und ein Graureiher: Wer frisst hier wen? Und was passiert, wenn eine Art verschwindet?",
+    "paragraphs": [
+      "Ein Ökosystem ist die Gesamtheit aus Lebewesen und unbelebter Natur an einem Ort. Zum Ökosystem Teich gehören Wasser, Licht, Temperatur, Sauerstoff und der Boden ebenso wie alle Pflanzen, Tiere, Pilze und Bakterien. Die Lebewesen sind durch Nahrungsbeziehungen verbunden. Grüne Pflanzen und Algen sind Produzenten: Sie bauen durch Photosynthese aus Licht, Wasser und Kohlenstoffdioxid Biomasse auf. Wasserflöhe fressen Algen, Libellenlarven fressen Wasserflöhe, Rotaugen fressen Pflanzen, Algen, Wasserflöhe und Insektenlarven, Hechte fressen Rotaugen, und der Graureiher fängt Fische. Diese Tiere sind Konsumenten. Eine Reihe wie Algen, Wasserfloh, Rotauge, Hecht heißt Nahrungskette; die Pfeile zeigen vom Gefressenen zum Fresser.",
+      "Weil die meisten Tiere mehrere Nahrungsquellen haben und von mehreren Feinden gefressen werden, verzweigen sich die Ketten zu einem Nahrungsnetz. Zersetzer wie Bakterien, Pilze und Würmer im Schlamm bauen tote Lebewesen und Reste ab; dabei werden Mineralstoffe frei, die die Pflanzen wieder aufnehmen. Auch die unbelebte Natur wirkt auf die Lebewesen: Wassertemperatur, Licht und Sauerstoff bestimmen, welche Arten leben können. Verschwindet eine Art, hat das Folgen für viele andere. Fehlen die Wasserflöhe, verlieren Libellenlarven und Rotaugen eine Nahrungsquelle, und die Algen werden weniger gefressen. Weil alle Tiere direkt oder indirekt von den Produzenten leben, kann ohne Pflanzen und Algen kein Tier im Teich überleben."
+    ],
+    "takeaway": "Ökosystem = Lebewesen + unbelebte Natur. Produzenten (Algen, Pflanzen) bauen Biomasse auf, Konsumenten fressen andere Lebewesen, Zersetzer bauen Reste zu Mineralstoffen ab. Nahrungsketten verzweigen sich zum Nahrungsnetz; Pfeil vom Gefressenen zum Fresser. Verschwindet eine Art, sind viele andere betroffen.",
+    "sourceIds": [
+      "lehrplan",
+      "kx-oekosystem",
+      "kx-nahrungskette",
+      "wp-nahrungskette",
+      "wp-produzent",
+      "wp-konsument",
+      "wp-destruent",
+      "wp-wasserflohe"
+    ],
+    "quiz": {
+      "question": "In welche Richtung zeigen die Pfeile in einem Nahrungsnetz?",
+      "answer": "Vom Gefressenen zum Fresser",
+      "wrong": [
+        "Vom Fresser zum Gefressenen",
+        "Vom größten zum kleinsten Tier"
+      ],
+      "explanation": "Der Pfeil zeigt, wohin die Nahrung und damit Stoffe und Energie gelangen: von der Alge zum Wasserfloh, vom Wasserfloh zum Rotauge."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Rollen im Ökosystem",
+      "instruction": "Ordne jeden Bestandteil des Ökosystems Teich zu.",
+      "categories": [
+        "unbelebte Natur",
+        "Produzent",
+        "Konsument",
+        "Zersetzer"
+      ],
+      "entries": [
+        {
+          "text": "Wassertemperatur",
+          "target": 0,
+          "feedback": "Ein abiotischer Faktor."
+        },
+        {
+          "text": "gelöster Sauerstoff im Wasser",
+          "target": 0,
+          "feedback": "Auch er gehört zur unbelebten Natur."
+        },
+        {
+          "text": "Algen",
+          "target": 1,
+          "feedback": "Sie betreiben Photosynthese."
+        },
+        {
+          "text": "Wasserpest",
+          "target": 1,
+          "feedback": "Eine untergetauchte Wasserpflanze."
+        },
+        {
+          "text": "Hecht",
+          "target": 2,
+          "feedback": "Er frisst andere Fische."
+        },
+        {
+          "text": "Bakterien im Schlamm",
+          "target": 3,
+          "feedback": "Sie bauen tote Reste ab."
+        }
+      ],
+      "conclusion": "Erst alle Teile zusammen bilden das Ökosystem."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Stelle aus den Lebewesen Algen, Wasserfloh, Rotauge und Hecht eine Nahrungskette auf und erkläre die Rolle jedes Glieds.",
+        "hints": [
+          "Wer betreibt Photosynthese?",
+          "In welche Richtung zeigen die Pfeile?"
+        ],
+        "model": "Die Nahrungskette lautet: Algen → Wasserfloh → Rotauge → Hecht. Die Algen sind Produzenten. Sie bauen durch Photosynthese aus Licht, Wasser und Kohlenstoffdioxid Biomasse auf. Der Wasserfloh ist ein Konsument, der die Algen frisst. Das Rotauge frisst unter anderem Wasserflöhe und ist ebenfalls Konsument. Der Hecht frisst Rotaugen und steht am Ende dieser Kette. Die Pfeile zeigen jeweils vom Gefressenen zum Fresser, also in die Richtung, in die die Nahrung weitergegeben wird.",
+        "criteria": [
+          "Ich ordne die Kette richtig mit Pfeilen.",
+          "Ich nenne Produzent und Konsumenten.",
+          "Ich erkläre die Pfeilrichtung."
+        ]
+      },
+      "2": {
+        "prompt": "In einem Teich werden alle Hechte herausgefangen. Beschreibe mögliche Folgen für das Nahrungsnetz.",
+        "hints": [
+          "Wen haben die Hechte gefressen?",
+          "Was passiert dann mit deren Nahrung?"
+        ],
+        "model": "Ohne Hechte haben die Rotaugen einen Fressfeind weniger. Sie können sich zunächst stark vermehren. Viele Rotaugen fressen dann mehr Wasserflöhe, Insektenlarven und Wasserpflanzen. Werden die Wasserflöhe weniger, fressen sie weniger Algen, und die Algen können sich stärker vermehren; das Wasser wird trüber. Gleichzeitig hat der Graureiher mehr Rotaugen als Beute, aber keine Hechte mehr. Langfristig finden zu viele Rotaugen nicht genug Nahrung. Das Beispiel zeigt, dass ein Eingriff an einer Stelle das ganze Netz verändert.",
+        "criteria": [
+          "Ich nenne die Folge für die Rotaugen.",
+          "Ich verfolge die Wirkung über mindestens zwei weitere Glieder.",
+          "Ich ziehe eine Folgerung über das Netz."
+        ]
+      }
+    },
+    "figures": [
+      "oekosystem-teich"
+    ],
+    "lab": "foodWeb"
+  },
+  {
+    "id": "bg6-gewaesser-schutz",
+    "lb": 9,
+    "title": "Gewässer nutzen und schützen",
+    "period": "NT6 1.5 · Ökosystem Gewässer",
+    "intro": "Nach einem heißen Sommer treiben in einem Weiher tote Fische. Die Ursache liegt oft nicht im Wasser, sondern auf den Feldern ringsum.",
+    "paragraphs": [
+      "Menschen nutzen Gewässer vielfältig: als Trinkwasserquelle, zur Bewässerung, zum Fischen, für Schiffe, zur Energiegewinnung mit Wasserkraft und zur Erholung beim Baden. Dabei beeinflussen sie das Ökosystem. Ein Beispiel ist die Veränderung eines abiotischen Faktors durch Dünger. Regen spült Dünger von Feldern in Bäche und Teiche. Die zusätzlichen Mineralstoffe lassen die Algen stark wachsen, das Wasser wird grün und trüb. Sterben die vielen Algen ab, sinken sie zu Boden und werden von Zersetzern abgebaut, die dabei viel Sauerstoff verbrauchen. Es entsteht Sauerstoffmangel, und Fische und andere Tiere können sterben. Auch das Füttern von Enten mit Brot bringt zusätzliche Nährstoffe ins Wasser.",
+      "Weitere Gefahren sind die Erwärmung des Wassers, etwa durch Kühlwasser oder heiße Sommer, denn warmes Wasser enthält weniger Sauerstoff. Begradigte Bäche mit befestigten Ufern bieten weniger Verstecke, und Wehre versperren Fischen den Weg zu ihren Laichplätzen. Müll und Abwasser verschmutzen das Wasser. Daraus lassen sich Schutzmaßnahmen ableiten: Uferstreifen ohne Dünger fangen Nährstoffe ab, Kläranlagen reinigen Abwasser, Fischtreppen helfen Fischen über Wehre, begradigte Bäche werden wieder naturnah gestaltet, und Enten füttert man nicht. Auch du kannst etwas tun: Müll mitnehmen, Ufer und Röhricht nicht betreten, keine Tiere aus Aquarien aussetzen. So schützt du die biologische Vielfalt am Wasser."
+    ],
+    "takeaway": "Nutzung von Gewässern: Trinkwasser, Fischerei, Schifffahrt, Energie, Erholung. Gefahren: Dünger führt zu Algenwachstum und Sauerstoffmangel, Erwärmung senkt den Sauerstoffgehalt, Begradigung und Wehre, Müll und Abwasser. Schutz: Uferstreifen, Kläranlagen, Fischtreppen, naturnahe Ufer, Enten nicht füttern.",
+    "sourceIds": [
+      "lehrplan",
+      "wp-eutrophierung",
+      "kx-duenger",
+      "kx-klaeranlage",
+      "wp-fischtreppe",
+      "kx-artenvielfalt",
+      "lfu-wasser",
+      "uba-fluesse"
+    ],
+    "quiz": {
+      "question": "Warum kann zu viel Dünger in einem Teich zu Fischsterben führen?",
+      "answer": "Algen wachsen stark, sterben ab, und Zersetzer verbrauchen beim Abbau viel Sauerstoff.",
+      "wrong": [
+        "Dünger ist für Fische direkt giftig wie ein Pflanzenschutzmittel.",
+        "Dünger erwärmt das Wasser so stark, dass Fische überhitzen."
+      ],
+      "explanation": "Die Kette lautet: mehr Nährstoffe, mehr Algen, mehr abgestorbene Algen, mehr Zersetzung, weniger Sauerstoff. Der Sauerstoffmangel ist die eigentliche Ursache."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Vom Feld zum Fischsterben",
+      "instruction": "Bringe die Folgen zu viel Düngers in die richtige Reihenfolge.",
+      "categories": [],
+      "entries": [
+        {
+          "text": "Regen spült Dünger vom Feld in den Teich.",
+          "target": 0,
+          "feedback": "Zusätzliche Mineralstoffe gelangen ins Wasser."
+        },
+        {
+          "text": "Algen vermehren sich stark, das Wasser wird grün und trüb.",
+          "target": 1,
+          "feedback": "Mehr Nährstoffe, mehr Algen."
+        },
+        {
+          "text": "Viele Algen sterben ab und sinken zu Boden.",
+          "target": 2,
+          "feedback": "Tote Biomasse sammelt sich am Grund."
+        },
+        {
+          "text": "Zersetzer bauen die Algen ab und verbrauchen dabei viel Sauerstoff.",
+          "target": 3,
+          "feedback": "Der Sauerstoffgehalt sinkt."
+        },
+        {
+          "text": "Fische und andere Tiere leiden unter Sauerstoffmangel.",
+          "target": 4,
+          "feedback": "Im schlimmsten Fall sterben sie."
+        }
+      ],
+      "conclusion": "Ein Uferstreifen ohne Dünger unterbricht diese Kette schon am Anfang."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Nenne zwei Gefahren für einen Bach und leite zu jeder eine Schutzmaßnahme ab.",
+        "hints": [
+          "Was gelangt von außen ins Wasser?",
+          "Was verändert der Mensch am Bach selbst?"
+        ],
+        "model": "Erste Gefahr: Dünger von angrenzenden Feldern gelangt mit dem Regen ins Wasser, Algen wachsen stark, und später entsteht Sauerstoffmangel. Schutzmaßnahme: Entlang des Bachs wird ein Uferstreifen angelegt, auf dem nicht gedüngt wird und der Nährstoffe abfängt. Zweite Gefahr: Ein Wehr versperrt den Fischen den Weg zu ihren Laichplätzen bachaufwärts. Schutzmaßnahme: Neben dem Wehr wird eine Fischtreppe gebaut, über die die Fische die Stufe überwinden können.",
+        "criteria": [
+          "Ich nenne zwei verschiedene Gefahren.",
+          "Ich erkläre jeweils die Folge für das Ökosystem.",
+          "Ich leite zu jeder Gefahr eine passende Maßnahme ab."
+        ]
+      },
+      "2": {
+        "prompt": "Am Stadtweiher füttern viele Menschen die Enten mit Brot. Erkläre, warum das dem Weiher schadet, und entwirf einen kurzen, sachlichen Hinweis für ein Schild.",
+        "hints": [
+          "Was passiert mit Brotresten im Wasser?",
+          "Wie formulierst du sachlich statt bewertend?"
+        ],
+        "model": "Brot, das die Enten nicht fressen, sinkt auf den Grund und wird von Zersetzern abgebaut; dabei wird Sauerstoff verbraucht, und es werden Nährstoffe frei. Auch der Kot vieler gefütterter Enten bringt Nährstoffe ins Wasser. Algen wachsen dadurch stärker, später kann Sauerstoffmangel entstehen, und Fische leiden. Außerdem ist Brot für Enten kein geeignetes Futter. Hinweis für das Schild: „Bitte keine Enten füttern. Futterreste und Entenkot düngen das Wasser, Algen wachsen, und den Fischen fehlt später Sauerstoff. Die Enten finden im Weiher genug natürliche Nahrung.“",
+        "criteria": [
+          "Ich erkläre den Weg von den Brotresten zum Sauerstoffmangel.",
+          "Ich formuliere den Hinweis sachlich und begründet.",
+          "Ich verwende Fachbegriffe richtig."
+        ]
+      }
+    },
+    "figures": [
+      "gewaesser-gefahren"
+    ]
+  }
+]

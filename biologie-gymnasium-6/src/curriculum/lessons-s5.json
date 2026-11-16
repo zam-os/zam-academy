@@ -1,0 +1,515 @@
+[
+  {
+    "id": "bg6-gebisse",
+    "lb": 5,
+    "title": "Räuber und Weidegänger: Gebisse der Säugetiere",
+    "period": "NT6 1.3 · Stoffwechsel: Stoff- und Energieumwandlung",
+    "intro": "Ein Hund schlingt sein Futter in wenigen Minuten hinunter, eine Kuh kaut stundenlang. Ein Blick ins Maul verrät, warum.",
+    "paragraphs": [
+      "Säugetiere haben ein Gebiss mit verschiedenen Zahnformen: Schneidezähne, Eckzähne und Backenzähne. Wie diese Zähne aussehen, hängt von der Nahrung ab. Der Hund stammt vom Wolf ab, einem Fleischfresser und Räuber. Wölfe jagen oft im Rudel und hetzen ihre Beute. Mit den langen, spitzen Eckzähnen, den Fangzähnen, packen und halten sie die Beute. Einige große Backenzähne mit scharfen Kanten, die Reißzähne, gleiten aneinander vorbei wie die Klingen einer Schere und zerschneiden Fleisch. Der Unterkiefer klappt nur auf und zu. Kauen ist kaum nötig, denn Fleisch ist gut verdaulich; der Darm von Fleischfressern ist verhältnismäßig kurz.",
+      "Das Rind ist ein Pflanzenfresser und Weidegänger. Gras ist zäh und schwer verdaulich. Im Oberkiefer hat das Rind keine Schneidezähne, sondern eine harte Hornplatte. Mit der Zunge umfasst es Grasbüschel und rupft sie mit den unteren Schneidezähnen gegen die Hornplatte ab. Zwischen Schneide- und Backenzähnen liegt eine Lücke, in der die Zunge das Futter bewegt. Die breiten Backenzähne haben Schmelzfalten und zermahlen das Gras mit seitlichen Kaubewegungen. Das Rind ist ein Wiederkäuer: Es schluckt das Gras zunächst nur grob gekaut in den Pansen, einen großen Vormagen, in dem winzige Lebewesen es zersetzen, würgt es später wieder hoch und kaut es gründlich. Der Magen des Rinds hat vier Abteilungen: drei Vormägen, darunter der Pansen, und den Labmagen. Zusammen mit einem sehr langen Darm verwerten sie die Pflanzennahrung. Zwei Vertreter derselben Klasse haben also ganz verschiedene Strategien zum Nahrungserwerb und zur Nahrungsverwertung."
+    ],
+    "takeaway": "Fleischfresser wie Hund und Wolf: Fangzähne halten, Reißzähne schneiden wie eine Schere, kurzer Darm. Pflanzenfresser wie das Rind: Hornplatte statt oberer Schneidezähne, breite Mahlzähne mit Schmelzfalten, Wiederkäuen, Magen mit vier Abteilungen (Vormägen und Labmagen) und langer Darm.",
+    "sourceIds": [
+      "lehrplan",
+      "wp-gebiss",
+      "kx-hund",
+      "kx-rind",
+      "wp-wiederkaeuer"
+    ],
+    "quiz": {
+      "question": "Wozu dienen die Reißzähne eines Hundes?",
+      "answer": "Sie zerschneiden Fleisch wie die Klingen einer Schere.",
+      "wrong": [
+        "Sie zermahlen Gras mit seitlichen Kaubewegungen.",
+        "Sie rupfen Grasbüschel gegen eine Hornplatte ab."
+      ],
+      "explanation": "Reißzähne sind große Backenzähne mit scharfen Kanten, die aneinander vorbeigleiten. Mahlen und Rupfen gegen eine Hornplatte gehören zum Gebiss des Rindes."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Hund oder Rind?",
+      "instruction": "Ordne jedes Merkmal dem Fleischfresser oder dem Pflanzenfresser zu.",
+      "categories": [
+        "Hund: Fleischfresser",
+        "Rind: Pflanzenfresser"
+      ],
+      "entries": [
+        {
+          "text": "lange, spitze Fangzähne",
+          "target": 0,
+          "feedback": "Zum Packen der Beute."
+        },
+        {
+          "text": "Reißzähne mit scharfen Kanten",
+          "target": 0,
+          "feedback": "Sie schneiden Fleisch."
+        },
+        {
+          "text": "kurzer Darm",
+          "target": 0,
+          "feedback": "Fleisch ist leicht verdaulich."
+        },
+        {
+          "text": "Hornplatte im Oberkiefer",
+          "target": 1,
+          "feedback": "Statt oberer Schneidezähne."
+        },
+        {
+          "text": "breite Backenzähne mit Schmelzfalten",
+          "target": 1,
+          "feedback": "Sie zermahlen Gras."
+        },
+        {
+          "text": "Wiederkäuen und ein Magen mit Vormägen und Labmagen",
+          "target": 1,
+          "feedback": "Gras wird gründlich verwertet."
+        }
+      ],
+      "conclusion": "Am Gebiss eines Säugetiers erkennt man, wovon es lebt."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Ein Schädel aus der Biologiesammlung hat lange Eckzähne und scharfkantige Backenzähne. Bestimme, ob das Tier ein Fleisch- oder Pflanzenfresser war, und begründe.",
+        "hints": [
+          "Wozu dienen lange Eckzähne?",
+          "Wie sehen die Backenzähne von Pflanzenfressern aus?"
+        ],
+        "model": "Das Tier war ein Fleischfresser. Die langen Eckzähne sind Fangzähne, mit denen ein Räuber seine Beute packt und festhält. Die scharfkantigen Backenzähne sind Reißzähne, die Fleisch wie eine Schere zerschneiden. Ein Pflanzenfresser hätte dagegen breite, flache Backenzähne mit Schmelzfalten zum Mahlen, und beim Rind fehlten die oberen Schneidezähne. Der Schädel könnte zum Beispiel von einem Fuchs oder Wolf stammen.",
+        "criteria": [
+          "Ich ordne das Tier richtig als Fleischfresser ein.",
+          "Ich begründe mit Fang- und Reißzähnen.",
+          "Ich vergleiche mit dem Gebiss eines Pflanzenfressers."
+        ]
+      },
+      "2": {
+        "prompt": "Erkläre, warum ein Rind viel länger fressen und kauen muss als ein Wolf, obwohl beide Säugetiere sind.",
+        "hints": [
+          "Wie gut verdaulich ist Gras im Vergleich zu Fleisch?",
+          "Welche Angepasstheiten hat das Rind für seine Nahrung?"
+        ],
+        "model": "Gras enthält viele zähe, schwer verdauliche Bestandteile und vergleichsweise wenig Energie pro Bissen. Das Rind muss deshalb große Mengen fressen und das Gras gründlich zerkleinern. Es zermahlt es mit breiten Backenzähnen, kaut es nach dem Hochwürgen ein zweites Mal und verwertet es mithilfe winziger Lebewesen in den Vormägen, im Labmagen und in einem langen Darm. Fleisch ist dagegen energiereich und leicht verdaulich. Der Wolf schneidet es mit den Reißzähnen in Stücke, schluckt sie fast ungekaut, und sein kurzer Darm reicht aus.",
+        "criteria": [
+          "Ich vergleiche die Verdaulichkeit von Gras und Fleisch.",
+          "Ich nenne Angepasstheiten des Rindes.",
+          "Ich erkläre den Unterschied als unterschiedliche Strategie."
+        ]
+      }
+    },
+    "figures": [
+      "gebisse"
+    ]
+  },
+  {
+    "id": "bg6-schnaebel",
+    "lb": 5,
+    "title": "Schnabelformen der Vögel",
+    "period": "NT6 1.3 · Stoffwechsel: Stoff- und Energieumwandlung",
+    "intro": "Am Futterhaus pickt der Buchfink Körner, der Specht hämmert am Baumstamm, die Ente schnattert im Teich. Alle sind Vögel, doch jeder hat das passende Werkzeug am Kopf.",
+    "paragraphs": [
+      "Alle Vögel haben einen zahnlosen Schnabel aus Horn; das ist ein allgemeines Merkmal ihrer Klasse. Die Form des Schnabels ist aber arttypisch und verrät, wie ein Vogel seine Nahrung erwirbt. Greifvögel wie der Mäusebussard packen Beute mit den Krallen und zerreißen sie mit einem kräftigen, gebogenen Hakenschnabel. Der Buntspecht hackt mit seinem geraden, harten Meißelschnabel Löcher in Holz und holt mit seiner langen Zunge Insektenlarven heraus. Körnerfresser wie der Buchfink haben einen kurzen, kegelförmigen Körnerschnabel, mit dem sie Samen knacken und schälen.",
+      "Die Stockente hat einen breiten Seihschnabel mit feinen Hornleisten am Rand. Sie nimmt Wasser und Schlamm auf und drückt das Wasser mit der Zunge wieder hinaus; kleine Tiere und Pflanzenteile bleiben wie in einem Sieb hängen. Der Graureiher steht still im flachen Wasser und stößt mit seinem langen, spitzen Speerschnabel blitzschnell nach Fischen und Fröschen. Die Amsel hat einen mittellangen Allzweckschnabel, mit dem sie Regenwürmer aus dem Boden zieht, Insekten pickt und im Herbst Beeren frisst. Vögel derselben Klasse nutzen so ganz verschiedene Nahrungsquellen. Das hat einen Vorteil: Weil sie Verschiedenes fressen, machen sie sich gegenseitig weniger Konkurrenz."
+    ],
+    "takeaway": "Der Hornschnabel ist ein Merkmal aller Vögel, seine Form ist arttypisch: Hakenschnabel (Mäusebussard, reißt Fleisch), Meißelschnabel (Specht, hackt Holz), Körnerschnabel (Buchfink, knackt Samen), Seihschnabel (Ente, filtert), Speerschnabel (Reiher, fängt Fische), Allzweckschnabel (Amsel).",
+    "sourceIds": [
+      "lehrplan",
+      "kx-voegel",
+      "wp-stockente",
+      "wp-graureiher"
+    ],
+    "quiz": {
+      "question": "Wie gewinnt die Stockente mit ihrem Schnabel Nahrung?",
+      "answer": "Sie seiht kleine Tiere und Pflanzenteile mit Hornleisten aus dem Wasser.",
+      "wrong": [
+        "Sie hackt Insektenlarven aus der Baumrinde.",
+        "Sie zerreißt größere Beute mit einem Haken."
+      ],
+      "explanation": "Der breite Seihschnabel wirkt wie ein Sieb. Hacken ist die Technik des Spechts, ein Hakenschnabel gehört zu Greifvögeln."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Schnabel und Nahrung",
+      "instruction": "Ordne jeden Vogel seiner Schnabelform zu.",
+      "categories": [
+        "Hakenschnabel",
+        "Meißelschnabel",
+        "Körnerschnabel",
+        "Seihschnabel",
+        "Speerschnabel"
+      ],
+      "entries": [
+        {
+          "text": "Mäusebussard frisst Mäuse",
+          "target": 0,
+          "feedback": "Ein Greifvogel mit Hakenschnabel."
+        },
+        {
+          "text": "Turmfalke frisst Mäuse und große Insekten",
+          "target": 0,
+          "feedback": "Auch er reißt Beute mit dem Haken."
+        },
+        {
+          "text": "Buntspecht sucht Larven im Holz",
+          "target": 1,
+          "feedback": "Er hackt mit dem Meißelschnabel."
+        },
+        {
+          "text": "Buchfink frisst Samen",
+          "target": 2,
+          "feedback": "Ein kurzer, kräftiger Körnerschnabel."
+        },
+        {
+          "text": "Stockente gründelt im Schlamm",
+          "target": 3,
+          "feedback": "Sie filtert Nahrung aus dem Wasser."
+        },
+        {
+          "text": "Graureiher fängt Fische",
+          "target": 4,
+          "feedback": "Ein langer, spitzer Speerschnabel."
+        }
+      ],
+      "conclusion": "Gleiche Klasse, verschiedene Werkzeuge: So teilen sich Vögel die Nahrungsquellen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Vergleiche den Schnabel von Buchfink und Graureiher und erkläre, wie jeder zur Ernährung passt.",
+        "hints": [
+          "Wie sehen die beiden Schnäbel aus?",
+          "Was fressen die Vögel, und wie kommen sie daran?"
+        ],
+        "model": "Der Buchfink hat einen kurzen, kegelförmigen und kräftigen Körnerschnabel. Mit ihm kann er harte Samen festhalten, die Schale knacken und das Innere herausschälen. Der Graureiher hat einen langen, spitzen Speerschnabel. Er steht still im flachen Wasser und stößt blitzschnell nach Fischen oder Fröschen, die er mit dem Schnabel packt. Beide Schnäbel bestehen aus Horn und haben keine Zähne, ihre Form ist aber an ganz verschiedene Nahrung angepasst.",
+        "criteria": [
+          "Ich beschreibe beide Schnabelformen.",
+          "Ich verbinde die Form mit der Nahrung und der Art des Fressens.",
+          "Ich nenne das gemeinsame Klassenmerkmal."
+        ]
+      },
+      "2": {
+        "prompt": "Im Winter fressen am Futterhaus Meisen, Finken und Amseln. Erkläre, warum es sinnvoll ist, verschiedenes Futter anzubieten, und was das mit den Schnabelformen zu tun hat.",
+        "hints": [
+          "Welche Nahrung passt zu welchem Schnabel?",
+          "Was passiert, wenn alle dasselbe Futter wollen?"
+        ],
+        "model": "Finken haben kräftige Körnerschnäbel und fressen am liebsten Sonnenblumenkerne und andere Samen. Amseln haben einen Allzweckschnabel, können harte Körner schlecht knacken und fressen lieber Haferflocken, Rosinen oder Äpfel am Boden. Meisen fressen Körner und fetthaltiges Futter. Bietet man verschiedenes Futter an verschiedenen Stellen an, findet jede Art Nahrung, die zu ihrem Schnabel passt. So gibt es weniger Streit und Konkurrenz, und auch Weichfresser wie die Amsel werden satt.",
+        "criteria": [
+          "Ich ordne den Vögeln passendes Futter zu.",
+          "Ich verbinde Futter und Schnabelform.",
+          "Ich erkläre den Vorteil weniger Konkurrenz."
+        ]
+      }
+    },
+    "figures": [
+      "schnaebel"
+    ]
+  },
+  {
+    "id": "bg6-koerpertemperatur",
+    "lb": 5,
+    "title": "Wechselwarm und gleichwarm",
+    "period": "NT6 1.3 · Stoffwechsel: Stoff- und Energieumwandlung",
+    "intro": "An einem kühlen Morgen sitzt eine Zauneidechse fast reglos auf einem Stein. Eine Maus huscht dagegen schon flink durchs Gras. Warum?",
+    "paragraphs": [
+      "Fische, Amphibien und Reptilien sind wechselwarm. Ihre Körpertemperatur folgt der Temperatur der Umgebung; man nennt sie auch thermokonform. Ist es kalt, laufen alle Lebensvorgänge langsam ab, und das Tier ist träge. Erst wenn es sich in der Sonne aufgewärmt hat, wird eine Eidechse flink. Sinkt die Temperatur stark, fallen wechselwarme Tiere in eine Kältestarre und bewegen sich gar nicht mehr. Ein Vorteil: Wechselwarme Tiere brauchen wenig Nahrung, weil sie keine Energie für Körperwärme aufwenden. Eine Eidechse kann lange ohne Futter auskommen.",
+      "Vögel und Säugetiere sind gleichwarm. Sie halten ihre Körpertemperatur fast konstant, bei vielen Säugetieren um 37 °C, und heißen deshalb Thermoregulatoren. Die Wärme entsteht bei der Zellatmung. Gleichwarme Tiere sind auch bei Kälte aktiv und können kalte Lebensräume besiedeln. Das hat einen Preis: Je kälter es ist, desto mehr Energie geben sie als Wärme ab, und desto mehr Nahrung brauchen sie. Damit sie wenig Wärme verlieren, sind sie isoliert. Fell und Federn halten Luft fest, die schlecht Wärme leitet; im Winter wächst bei vielen Säugetieren ein dichteres Winterfell, und Vögel plustern sich auf. Wale und Robben haben eine dicke Speckschicht unter der Haut. Wird es zu warm, kühlen sich viele Säugetiere durch Schwitzen oder Hecheln."
+    ],
+    "takeaway": "Wechselwarm (thermokonform): Fische, Amphibien, Reptilien; Körpertemperatur folgt der Umgebung, Aktivität hängt von der Außentemperatur ab, wenig Nahrungsbedarf. Gleichwarm (Thermoregulatoren): Vögel, Säugetiere; konstante Körpertemperatur, immer aktiv, hoher Nahrungsbedarf; Isolation durch Fell, Federn, Fett.",
+    "sourceIds": [
+      "lehrplan",
+      "wp-wechselwarm",
+      "wp-gleichwarm",
+      "kx-eidechsen",
+      "wp-zauneidechse"
+    ],
+    "quiz": {
+      "question": "Warum braucht eine Maus im Winter mehr Nahrung als im Sommer?",
+      "answer": "Sie hält ihre Körpertemperatur konstant und verliert bei Kälte mehr Wärme, die sie durch Zellatmung ersetzen muss.",
+      "wrong": [
+        "Weil ihre Körpertemperatur im Winter sinkt und sie langsamer wird.",
+        "Weil sie im Winter größer wächst."
+      ],
+      "explanation": "Die Maus ist gleichwarm. Je größer der Unterschied zur Außentemperatur, desto mehr Wärme gibt sie ab, und desto mehr Nahrung braucht sie zum Heizen."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Wechselwarm oder gleichwarm?",
+      "instruction": "Ordne jede Aussage der passenden Gruppe zu.",
+      "categories": [
+        "wechselwarm",
+        "gleichwarm"
+      ],
+      "entries": [
+        {
+          "text": "Die Körpertemperatur folgt der Umgebung.",
+          "target": 0,
+          "feedback": "Thermokonform."
+        },
+        {
+          "text": "Bei Kälte fallen die Tiere in Kältestarre.",
+          "target": 0,
+          "feedback": "Typisch für Eidechse und Frosch."
+        },
+        {
+          "text": "Die Tiere kommen lange ohne Nahrung aus.",
+          "target": 0,
+          "feedback": "Sie heizen nicht und sparen Energie."
+        },
+        {
+          "text": "Die Körpertemperatur bleibt etwa konstant.",
+          "target": 1,
+          "feedback": "Thermoregulatoren."
+        },
+        {
+          "text": "Fell oder Federn isolieren den Körper.",
+          "target": 1,
+          "feedback": "Weniger Wärmeverlust."
+        },
+        {
+          "text": "Je kälter es ist, desto mehr Nahrung brauchen sie.",
+          "target": 1,
+          "feedback": "Wärme entsteht durch Zellatmung."
+        }
+      ],
+      "conclusion": "Beide Strategien haben Vorteile: Unabhängigkeit von der Kälte oder sparsamer Energieverbrauch."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Beschreibe, wie sich eine Zauneidechse und eine Hausmaus verhalten, wenn die Außentemperatur von 25 °C auf 5 °C sinkt.",
+        "hints": [
+          "Was passiert mit der Körpertemperatur?",
+          "Wie ändern sich Aktivität und Nahrungsbedarf?"
+        ],
+        "model": "Die Zauneidechse ist wechselwarm. Ihre Körpertemperatur sinkt mit der Umgebung auf etwa 5 °C. Alle Lebensvorgänge verlangsamen sich, sie wird erst träge und fällt schließlich in eine Kältestarre, in der sie sich nicht mehr bewegt. Dabei verbraucht sie kaum Energie. Die Hausmaus ist gleichwarm und hält ihre Körpertemperatur bei etwa 37 °C. Sie bleibt aktiv, verliert aber bei 5 °C viel mehr Wärme als bei 25 °C. Deshalb muss sie mehr fressen, um durch Zellatmung genug Wärme zu erzeugen.",
+        "criteria": [
+          "Ich beschreibe die Eidechse als wechselwarm mit Kältestarre.",
+          "Ich beschreibe die Maus als gleichwarm mit konstanter Temperatur.",
+          "Ich vergleiche den Nahrungsbedarf."
+        ]
+      },
+      "2": {
+        "prompt": "In der Arktis leben viele Säugetiere und Vögel, aber kaum Reptilien. Erkläre das.",
+        "hints": [
+          "Was passiert mit wechselwarmen Tieren bei Dauerkälte?",
+          "Was brauchen gleichwarme Tiere dort?"
+        ],
+        "model": "Reptilien sind wechselwarm. In der Arktis ist es fast das ganze Jahr kalt, und ihr Körper würde so kalt wie die Umgebung. Sie wären die meiste Zeit in Kältestarre und könnten weder Nahrung suchen noch sich fortpflanzen. Säugetiere und Vögel sind gleichwarm und halten ihre Körpertemperatur auch in der Kälte konstant. Mit dichtem Fell, Daunen und Speckschichten verlieren sie wenig Wärme. Sie brauchen zwar viel Nahrung, können aber aktiv bleiben. Deshalb können sie kalte Lebensräume besiedeln.",
+        "criteria": [
+          "Ich erkläre das Problem der Wechselwarmen in Dauerkälte.",
+          "Ich erkläre den Vorteil der Gleichwarmen.",
+          "Ich nenne Isolationsmerkmale und den Preis hohen Nahrungsbedarfs."
+        ]
+      }
+    },
+    "figures": [
+      "isolation"
+    ],
+    "lab": "thermo"
+  },
+  {
+    "id": "bg6-ueberwintern",
+    "lb": 5,
+    "title": "Durch den Winter: Strategien bei Energiemangel",
+    "period": "NT6 1.3 · Stoffwechsel: Stoff- und Energieumwandlung",
+    "intro": "Im Winter gibt es kaum Insekten, Würmer und frische Pflanzen. Igel, Eichhörnchen, Frosch und Storch lösen dieses Problem auf vier ganz verschiedene Arten.",
+    "paragraphs": [
+      "Der Winter bedeutet für viele Tiere Energiemangel: Es ist kalt, und Nahrung ist knapp. Wechselwarme Tiere wie Grasfrosch oder Zauneidechse suchen sich ein frostfreies Versteck, im Schlamm am Gewässergrund, unter Laub oder in Erdlöchern. Dort fallen sie in Kältestarre; ihr Körper ist so kalt wie die Umgebung, und sie verbrauchen kaum Energie. Gleichwarme Tiere haben verschiedene Strategien. Winterschläfer wie Igel, Murmeltier und Fledermäuse fressen sich im Herbst eine Fettschicht an. Im Winterschlaf senken sie ihre Körpertemperatur stark, beim Murmeltier von etwa 39 °C auf bis zu 7 °C. Atmung und Herzschlag werden sehr langsam, und sie leben von ihren Fettreserven. Sie wachen nur selten kurz auf.",
+      "Bei der Winterruhe sinkt die Körpertemperatur nur wenig. Eichhörnchen, Dachs und Braunbär schlafen viel, wachen aber oft auf. Das Eichhörnchen frisst dann von den Nüssen und Samen, die es im Herbst als Vorrat versteckt hat. Viele Vögel, die sich von Insekten ernähren, wie Weißstorch, Rauchschwalbe und Mauersegler, ziehen im Herbst in wärmere Gebiete nach Süden, wo sie genug Nahrung finden. Andere Tiere bleiben aktiv: Reh, Fuchs und Meise bekommen ein dichteres Winterfell oder Wintergefieder, bewegen sich sparsam und suchen gezielt Nahrung. Alle diese Strategien sind Angepasstheiten an den Wechsel der Jahreszeiten; sie helfen, Energie zu sparen oder an Nahrung zu kommen, wenn sie knapp ist."
+    ],
+    "takeaway": "Kältestarre: wechselwarme Tiere (Frosch, Eidechse). Winterschlaf: Körpertemperatur stark gesenkt, Fettreserven (Igel, Murmeltier, Fledermaus). Winterruhe: Temperatur kaum gesenkt, häufiges Aufwachen, Vorräte (Eichhörnchen, Dachs). Vogelzug: Insektenfresser ziehen nach Süden. Andere bleiben aktiv mit Winterfell.",
+    "sourceIds": [
+      "lehrplan",
+      "kx-winterschlaf",
+      "wp-winterruhe",
+      "wp-kaeltestarre",
+      "kx-igel",
+      "wp-vogelzug"
+    ],
+    "quiz": {
+      "question": "Worin unterscheidet sich die Winterruhe des Eichhörnchens vom Winterschlaf des Igels?",
+      "answer": "Beim Eichhörnchen sinkt die Körpertemperatur nur wenig, und es wacht oft auf, um von Vorräten zu fressen.",
+      "wrong": [
+        "Das Eichhörnchen ist wechselwarm und fällt in Kältestarre.",
+        "Das Eichhörnchen fliegt im Winter nach Süden."
+      ],
+      "explanation": "Bei der Winterruhe bleibt die Körpertemperatur fast normal, das Tier wacht häufig auf und frisst. Im Winterschlaf sinkt sie stark, und das Tier lebt von seinem Fett."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Wer überwintert wie?",
+      "instruction": "Ordne jedes Tier seiner Überwinterungsstrategie zu.",
+      "categories": [
+        "Kältestarre",
+        "Winterschlaf",
+        "Winterruhe",
+        "Vogelzug"
+      ],
+      "entries": [
+        {
+          "text": "Grasfrosch im Schlamm am Teichgrund",
+          "target": 0,
+          "feedback": "Wechselwarm: Kältestarre."
+        },
+        {
+          "text": "Zauneidechse in einem Erdloch",
+          "target": 0,
+          "feedback": "Auch sie fällt in Kältestarre."
+        },
+        {
+          "text": "Igel in einem Laubhaufen",
+          "target": 1,
+          "feedback": "Ein typischer Winterschläfer."
+        },
+        {
+          "text": "Murmeltier in seinem Bau",
+          "target": 1,
+          "feedback": "Körpertemperatur bis etwa 7 °C gesenkt."
+        },
+        {
+          "text": "Eichhörnchen im Kobel",
+          "target": 2,
+          "feedback": "Es wacht auf und frisst von Vorräten."
+        },
+        {
+          "text": "Weißstorch",
+          "target": 3,
+          "feedback": "Er zieht nach Afrika."
+        }
+      ],
+      "conclusion": "Jede Strategie spart Energie oder sucht sie dort, wo es sie gibt."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre, warum ein Igel im Herbst viel frisst und warum man ihn im Winterschlaf nicht wecken sollte.",
+        "hints": [
+          "Wovon lebt der Igel im Winter?",
+          "Was kostet ihn jedes Aufwachen?"
+        ],
+        "model": "Der Igel frisst sich im Herbst eine dicke Fettschicht an, weil er im Winter keine Insekten und Würmer findet. Im Winterschlaf senkt er seine Körpertemperatur stark ab, Atmung und Herzschlag werden sehr langsam, und er verbraucht nur wenig Energie aus seinen Fettreserven. Wird er geweckt, muss er seinen Körper wieder auf die normale Temperatur aufheizen. Das kostet sehr viel Energie. Wird er oft gestört, reichen die Fettreserven nicht bis zum Frühjahr, und er kann verhungern.",
+        "criteria": [
+          "Ich nenne die Fettreserve als Energiequelle.",
+          "Ich beschreibe die gesenkte Körpertemperatur.",
+          "Ich erkläre, warum Aufwachen Energie kostet."
+        ]
+      },
+      "2": {
+        "prompt": "Die Rauchschwalbe zieht im Herbst nach Afrika, die Kohlmeise bleibt in Deutschland. Erkläre den Unterschied mit ihrer Ernährung.",
+        "hints": [
+          "Was fressen Schwalben, und wo fangen sie es?",
+          "Was können Meisen im Winter fressen?"
+        ],
+        "model": "Die Rauchschwalbe ernährt sich fast nur von fliegenden Insekten, die sie in der Luft fängt. Im Winter gibt es bei uns keine fliegenden Insekten; die Schwalbe fände nichts zu fressen. Deshalb zieht sie in wärmere Gebiete nach Afrika, wo es auch im europäischen Winter genug Insekten gibt. Die Kohlmeise frisst im Sommer Insekten, kann aber im Winter auf Samen, Nüsse und Insekteneier in der Rinde umsteigen und kommt an Futterhäuser. Sie findet also auch im Winter Nahrung und kann bleiben.",
+        "criteria": [
+          "Ich nenne die Nahrung der Schwalbe.",
+          "Ich erkläre den Nahrungsmangel im Winter.",
+          "Ich erkläre, warum die Meise bleiben kann."
+        ]
+      }
+    },
+    "figures": [
+      "ueberwinterung"
+    ]
+  },
+  {
+    "id": "bg6-atmungsorgane",
+    "lb": 5,
+    "title": "Atmen im Wasser und an Land",
+    "period": "NT6 1.3 · Stoffwechsel: Stoff- und Energieumwandlung",
+    "intro": "Ein Fisch an Land erstickt, obwohl die Luft viel Sauerstoff enthält. Ein Mensch erstickt unter Wasser. Jedes Atmungsorgan passt zu seinem Medium.",
+    "paragraphs": [
+      "Alle Wirbeltiere brauchen Sauerstoff für die Zellatmung und geben Kohlenstoffdioxid ab. Sie nehmen den Sauerstoff aus dem Wasser oder aus der Luft auf. Wasser enthält viel weniger gelösten Sauerstoff als Luft, und kaltes Wasser mehr als warmes. Fische atmen mit Kiemen. Die Kiemen bestehen aus sehr vielen dünnen, gut durchbluteten Kiemenblättchen mit einer großen Oberfläche. Der Fisch nimmt Wasser durch das Maul auf und drückt es an den Kiemen vorbei unter den Kiemendeckeln hinaus; dabei geht Sauerstoff ins Blut über. An Land fallen die zarten Kiemenblättchen zusammen und verkleben, die Oberfläche wird klein, und der Fisch erstickt.",
+      "Amphibien atmen als Larven mit Kiemen. Erwachsene Frösche haben einfache, sackförmige Lungen und nehmen zusätzlich über ihre dünne, feuchte Haut Sauerstoff auf; deshalb müssen sie in feuchter Umgebung leben. Reptilien haben eine trockene, schuppige Haut und atmen nur mit der Lunge; sie ist innen durch Kammern und Falten vergrößert. Säugetiere haben Lungen mit sehr vielen winzigen Lungenbläschen, die zusammen eine riesige Oberfläche bilden. Vögel haben zusätzlich Luftsäcke, die die Luft so durch die Lunge leiten, dass auch beim Ausatmen frische Luft hindurchströmt. Es gilt: Je höher der Sauerstoffbedarf, desto größer die innere Oberfläche der Atmungsorgane. Gleichwarme, sehr aktive Tiere wie fliegende Vögel brauchen am meisten Sauerstoff."
+    ],
+    "takeaway": "Fische: Kiemen mit großer Oberfläche nehmen Sauerstoff aus dem Wasser auf. Amphibien: Larven Kiemen, Erwachsene einfache Lunge und feuchte Haut. Reptilien: gekammerte Lunge. Säugetiere: Lunge mit vielen Lungenbläschen. Vögel: Lunge mit Luftsäcken. Je höher der Sauerstoffbedarf, desto größer die Oberfläche.",
+    "sourceIds": [
+      "lehrplan",
+      "wp-kieme",
+      "wp-hautatmung",
+      "wp-lunge",
+      "kx-amphibien"
+    ],
+    "quiz": {
+      "question": "Warum erstickt ein Fisch an Land, obwohl Luft mehr Sauerstoff enthält als Wasser?",
+      "answer": "Seine Kiemenblättchen fallen zusammen und verkleben, sodass die Oberfläche für den Gasaustausch zu klein wird.",
+      "wrong": [
+        "Weil Fische keinen Sauerstoff brauchen, sondern nur Wasser.",
+        "Weil der Fisch an Land seine Schwimmblase nicht füllen kann."
+      ],
+      "explanation": "Kiemen funktionieren nur, wenn Wasser die feinen Blättchen auseinanderhält. An der Luft kleben sie zusammen, die große Oberfläche geht verloren."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Wer atmet womit?",
+      "instruction": "Ordne jedes Tier seinem Atmungsorgan als erwachsenes Tier zu.",
+      "categories": [
+        "Kiemen",
+        "Lunge und Haut",
+        "Lunge mit Luftsäcken",
+        "Lunge mit Lungenbläschen"
+      ],
+      "entries": [
+        {
+          "text": "Forelle",
+          "target": 0,
+          "feedback": "Fische atmen mit Kiemen."
+        },
+        {
+          "text": "Hecht",
+          "target": 0,
+          "feedback": "Auch er hat Kiemen."
+        },
+        {
+          "text": "Grasfrosch",
+          "target": 1,
+          "feedback": "Einfache Lunge und feuchte Haut."
+        },
+        {
+          "text": "Mäusebussard",
+          "target": 2,
+          "feedback": "Vögel haben Luftsäcke."
+        },
+        {
+          "text": "Delfin",
+          "target": 3,
+          "feedback": "Ein Säugetier mit Lungen, er taucht zum Atmen auf."
+        },
+        {
+          "text": "Hausmaus",
+          "target": 3,
+          "feedback": "Säugetierlunge mit vielen Bläschen."
+        }
+      ],
+      "conclusion": "Das Atmungsorgan passt zum Medium und zum Sauerstoffbedarf."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre, warum ein Grasfrosch nur in feuchter Umgebung leben kann.",
+        "hints": [
+          "Womit atmet der Frosch außer mit der Lunge?",
+          "Was passiert, wenn die Haut austrocknet?"
+        ],
+        "model": "Der erwachsene Grasfrosch hat nur einfache, sackförmige Lungen, die allein nicht genug Sauerstoff aufnehmen. Er atmet deshalb zusätzlich über seine dünne, gut durchblutete Haut. Sauerstoff kann aber nur durch eine feuchte Haut ins Blut gelangen. In trockener Umgebung würde die Haut austrocknen, der Frosch bekäme zu wenig Sauerstoff und würde außerdem viel Wasser verlieren. Deshalb lebt er in feuchten Wiesen, an Gewässern und versteckt sich bei Trockenheit.",
+        "criteria": [
+          "Ich nenne Lunge und Hautatmung.",
+          "Ich erkläre, warum die Haut feucht sein muss.",
+          "Ich verbinde das mit dem Lebensraum."
+        ]
+      },
+      "2": {
+        "prompt": "Stelle einen Zusammenhang zwischen Sauerstoffbedarf, Lebensweise und Bau der Atmungsorgane her. Vergleiche dazu eine Eidechse und eine Schwalbe.",
+        "hints": [
+          "Wer ist wechselwarm, wer gleichwarm?",
+          "Wie unterscheiden sich die Atmungsorgane?"
+        ],
+        "model": "Die Eidechse ist wechselwarm und verbraucht keine Energie für Körperwärme; außerdem ist sie oft lange unbewegt. Ihr Sauerstoffbedarf ist gering, und eine Lunge mit Kammern und Falten reicht aus. Die Schwalbe ist gleichwarm und jagt stundenlang im Ruderflug nach Insekten. Sie braucht sehr viel Energie und daher sehr viel Sauerstoff. Ihre Lunge wird durch Luftsäcke ständig mit frischer Luft durchströmt, auch beim Ausatmen. Je höher der Sauerstoffbedarf, desto leistungsfähiger und größer ist die innere Oberfläche der Atmungsorgane.",
+        "criteria": [
+          "Ich vergleiche die Lebensweise beider Tiere.",
+          "Ich beschreibe die unterschiedlichen Atmungsorgane.",
+          "Ich formuliere den Je-desto-Zusammenhang."
+        ]
+      }
+    },
+    "figures": [
+      "atmungsorgane"
+    ]
+  }
+]

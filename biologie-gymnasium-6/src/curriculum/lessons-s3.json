@@ -1,0 +1,608 @@
+[
+  {
+    "id": "bg6-pflanzenteile",
+    "lb": 3,
+    "title": "Wurzel, Sprossachse und Blatt arbeiten zusammen",
+    "period": "NT6 1.2 · Stoffwechsel: Stoff- und Energieumwandlung",
+    "intro": "Eine Sonnenblume wird in einem Sommer über zwei Meter hoch. Dafür müssen Wurzel, Stängel und Blätter wie ein Team zusammenarbeiten.",
+    "review": "Wiederholung aus NT5: Grundbauplan der Samenpflanze",
+    "paragraphs": [
+      "Eine Samenpflanze besteht aus Wurzel, Sprossachse und Blättern; die Blüten sitzen an der Sprossachse. Die Wurzel verankert die Pflanze im Boden. Mit feinen Wurzelhaaren, die die Oberfläche stark vergrößern, nimmt sie Wasser und darin gelöste Mineralstoffe auf. Manche Wurzeln speichern Nährstoffe, etwa die Möhre. Die Sprossachse, bei Kräutern Stängel und bei Bäumen Stamm genannt, trägt die Blätter und Blüten und hebt sie zum Licht. In ihr verlaufen Leitungsbahnen: In den einen steigt Wasser mit Mineralstoffen von der Wurzel nach oben, in den anderen wird Zucker aus den Blättern in alle Teile der Pflanze transportiert. Auch die Sprossachse kann speichern; die Kartoffelknolle ist ein verdickter unterirdischer Sprossteil.",
+      "Das Laubblatt ist der Ort der Photosynthese. Es ist flach und breit und fängt so viel Licht ein. Über winzige Spaltöffnungen, meist auf der Blattunterseite, nimmt es Kohlenstoffdioxid aus der Luft auf und gibt Sauerstoff und Wasserdampf ab. Die Verdunstung von Wasser aus den Blättern zieht ständig Wasser aus den Leitungsbahnen nach, bis hinunter zur Wurzel. Keiner der Teile könnte allein überleben: Die Blätter brauchen das Wasser der Wurzel, die Wurzel braucht den Zucker der Blätter, und die Sprossachse verbindet beide. Stellst du einen weißen Blumenstängel in gefärbtes Wasser, färben sich nach einiger Zeit die Blätter, und du siehst den Wasserweg."
+    ],
+    "takeaway": "Wurzel: Verankerung, Aufnahme von Wasser und Mineralstoffen, Speicherung. Sprossachse: trägt Blätter zum Licht, leitet Wasser nach oben und Zucker in alle Teile, Speicherung. Blatt: Photosynthese, Gasaustausch über Spaltöffnungen, Verdunstung zieht Wasser nach.",
+    "sourceIds": [
+      "lehrplan",
+      "kx-wurzel",
+      "kx-blatt",
+      "wp-sonnenblume",
+      "kx-pflanze"
+    ],
+    "quiz": {
+      "question": "Welche Aufgabe haben die Wurzelhaare?",
+      "answer": "Sie vergrößern die Oberfläche der Wurzel und nehmen Wasser und Mineralstoffe auf.",
+      "wrong": [
+        "Sie bilden mithilfe von Licht Zucker.",
+        "Sie leiten Zucker aus den Blättern in den Boden."
+      ],
+      "explanation": "Wurzelhaare sind feine Ausstülpungen der Wurzel. Ihre große Oberfläche nimmt Wasser und Mineralstoffe auf. Zucker bilden die grünen Blätter."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Wer macht was?",
+      "instruction": "Ordne jede Aufgabe dem Pflanzenteil zu, der sie vor allem erfüllt.",
+      "categories": [
+        "Wurzel",
+        "Sprossachse",
+        "Blatt"
+      ],
+      "entries": [
+        {
+          "text": "verankert die Pflanze im Boden",
+          "target": 0,
+          "feedback": "Die Wurzel hält die Pflanze fest."
+        },
+        {
+          "text": "nimmt mit Wurzelhaaren Wasser auf",
+          "target": 0,
+          "feedback": "Große Oberfläche für die Aufnahme."
+        },
+        {
+          "text": "hebt Blätter und Blüten zum Licht",
+          "target": 1,
+          "feedback": "Stängel und Stamm tragen."
+        },
+        {
+          "text": "leitet Wasser nach oben und Zucker in alle Teile",
+          "target": 1,
+          "feedback": "Hier verlaufen die Leitungsbahnen."
+        },
+        {
+          "text": "nimmt Kohlenstoffdioxid durch Spaltöffnungen auf",
+          "target": 2,
+          "feedback": "Der Gasaustausch geschieht am Blatt."
+        },
+        {
+          "text": "bildet mithilfe von Licht Zucker",
+          "target": 2,
+          "feedback": "Das Blatt ist der Ort der Photosynthese."
+        }
+      ],
+      "conclusion": "Die Pflanzenteile ergänzen sich: Wasser fließt nach oben, Zucker in alle Teile."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Beschreibe den Weg eines Wasserteilchens vom Boden bis in die Luft und nenne die beteiligten Pflanzenteile.",
+        "hints": [
+          "Wo wird das Wasser aufgenommen?",
+          "Wo verlässt es die Pflanze wieder?"
+        ],
+        "model": "Das Wasser wird im Boden von den Wurzelhaaren der Wurzel aufgenommen, zusammen mit gelösten Mineralstoffen. Über die Leitungsbahnen der Wurzel gelangt es in die Sprossachse und steigt darin nach oben bis in die Blätter. Ein Teil wird dort für die Photosynthese verwendet. Der größte Teil verdunstet und verlässt das Blatt als Wasserdampf durch die Spaltöffnungen. Diese Verdunstung zieht ständig neues Wasser von unten nach.",
+        "criteria": [
+          "Ich nenne die Aufnahme durch die Wurzelhaare.",
+          "Ich beschreibe den Transport in der Sprossachse.",
+          "Ich erkläre die Verdunstung über die Spaltöffnungen."
+        ]
+      },
+      "2": {
+        "prompt": "Beim Umpflanzen einer jungen Tomate reißen viele feine Wurzeln ab. Am nächsten Tag lässt sie die Blätter hängen. Erkläre das Zusammenspiel der Pflanzenteile, das hier gestört ist.",
+        "hints": [
+          "Was haben die feinen Wurzeln aufgenommen?",
+          "Was geben die Blätter ständig ab?"
+        ],
+        "model": "Mit den feinen Wurzeln sind auch viele Wurzelhaare verloren gegangen. Die Wurzel nimmt deshalb viel weniger Wasser auf. Die Blätter verdunsten aber weiter Wasser über ihre Spaltöffnungen. Es kommt also weniger Wasser über die Sprossachse nach, als oben verloren geht. Die Zellen der Blätter verlieren Wasser und werden schlaff, die Blätter hängen. Gärtner gießen deshalb nach dem Umpflanzen kräftig und stellen die Pflanze in den Schatten, bis neue Wurzeln gewachsen sind.",
+        "criteria": [
+          "Ich nenne den Verlust der Wurzelhaare.",
+          "Ich erkläre das Ungleichgewicht zwischen Aufnahme und Verdunstung.",
+          "Ich verbinde Wurzel, Sprossachse und Blatt."
+        ]
+      }
+    },
+    "figures": [
+      "pflanze-aufgaben"
+    ]
+  },
+  {
+    "id": "bg6-photosynthese",
+    "lb": 3,
+    "title": "Photosynthese: Zucker aus Licht",
+    "period": "NT6 1.2 · Stoffwechsel: Stoff- und Energieumwandlung",
+    "intro": "Aus einem kleinen Samen wird ein großer Baum. Woher kommt all der Stoff? Nicht aus dem Boden, sondern zum größten Teil aus der Luft.",
+    "paragraphs": [
+      "Grüne Pflanzen bauen ihre Nährstoffe selbst auf. In den Zellen der Blätter liegen grüne Chloroplasten mit dem Farbstoff Chlorophyll. Dort läuft die Photosynthese ab: Aus Kohlenstoffdioxid aus der Luft und Wasser aus dem Boden entstehen mithilfe von Lichtenergie Traubenzucker und Sauerstoff. Als Wortgleichung: Kohlenstoffdioxid und Wasser reagieren mit Lichtenergie zu Traubenzucker und Sauerstoff. Den Traubenzucker nutzt die Pflanze als Energiequelle und als Baustoff: Sie wandelt ihn in Stärke um, die sie speichert, oder in Zellwandstoffe, aus denen sie wächst. So baut sie Biomasse auf. Der Sauerstoff wird über die Spaltöffnungen abgegeben. Bei der Wasserpest siehst du ihn als Bläschen aufsteigen.",
+      "Im Teilchenmodell kannst du die Stoffänderung stark vereinfacht darstellen. Jeder Stoff besteht aus Teilchen, und diese bestehen aus noch kleineren Bausteinen. Ein Kohlenstoffdioxid-Teilchen hat einen Kohlenstoff-Baustein und zwei Sauerstoff-Bausteine, ein Wasser-Teilchen einen Sauerstoff-Baustein und zwei Wasserstoff-Bausteine. Bei der Photosynthese werden sechs Kohlenstoffdioxid-Teilchen und sechs Wasser-Teilchen umgebaut zu einem Traubenzucker-Teilchen und sechs Sauerstoff-Teilchen. Kein Baustein geht verloren, keiner kommt hinzu; sie werden nur neu zusammengesetzt. Neu ist dagegen die Energie: Die Lichtenergie steckt danach als chemische Energie im Traubenzucker. Je mehr Licht die Pflanze bekommt, desto mehr Zucker und Sauerstoff entstehen, solange genug Kohlenstoffdioxid und Wasser vorhanden sind."
+    ],
+    "takeaway": "Photosynthese in den Chloroplasten: Kohlenstoffdioxid + Wasser → (Lichtenergie) → Traubenzucker + Sauerstoff. Die Bausteine werden nur neu zusammengesetzt; die Lichtenergie wird in chemische Energie im Zucker umgewandelt. Aus dem Zucker baut die Pflanze Stärke und Biomasse auf.",
+    "sourceIds": [
+      "lehrplan",
+      "kx-photosynthese",
+      "wp-photosynthese",
+      "wp-wasserpest",
+      "kx-zucker"
+    ],
+    "quiz": {
+      "question": "Welche Stoffe sind die Ausgangsstoffe der Photosynthese?",
+      "answer": "Kohlenstoffdioxid und Wasser",
+      "wrong": [
+        "Traubenzucker und Sauerstoff",
+        "Sauerstoff und Mineralstoffe"
+      ],
+      "explanation": "Die Pflanze nimmt Kohlenstoffdioxid aus der Luft und Wasser aus dem Boden auf. Traubenzucker und Sauerstoff sind die Produkte."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Was geht hinein, was kommt heraus?",
+      "instruction": "Ordne jedes Element der Photosynthese zu.",
+      "categories": [
+        "Ausgangsstoff",
+        "Produkt",
+        "Energie und Ort"
+      ],
+      "entries": [
+        {
+          "text": "Kohlenstoffdioxid aus der Luft",
+          "target": 0,
+          "feedback": "Es gelangt durch die Spaltöffnungen ins Blatt."
+        },
+        {
+          "text": "Wasser aus dem Boden",
+          "target": 0,
+          "feedback": "Es kommt über Wurzel und Sprossachse."
+        },
+        {
+          "text": "Traubenzucker",
+          "target": 1,
+          "feedback": "Baustoff und Energiespeicher der Pflanze."
+        },
+        {
+          "text": "Sauerstoff",
+          "target": 1,
+          "feedback": "Er wird an die Umgebung abgegeben."
+        },
+        {
+          "text": "Lichtenergie",
+          "target": 2,
+          "feedback": "Sie wird im Zucker gespeichert."
+        },
+        {
+          "text": "Chloroplasten mit Chlorophyll",
+          "target": 2,
+          "feedback": "Hier läuft die Photosynthese ab."
+        }
+      ],
+      "conclusion": "Stoffe werden umgebaut, Lichtenergie wird zu chemischer Energie."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre mit dem Teilchenmodell, warum bei der Photosynthese kein Baustein verloren geht, und nenne, was trotzdem neu ist.",
+        "hints": [
+          "Zähle die Bausteine vorher und nachher.",
+          "Was ist nach der Photosynthese im Zucker gespeichert?"
+        ],
+        "model": "Vorher gibt es sechs Kohlenstoffdioxid-Teilchen und sechs Wasser-Teilchen. Zusammen enthalten sie 6 Kohlenstoff-, 12 Wasserstoff- und 18 Sauerstoff-Bausteine. Nachher gibt es ein Traubenzucker-Teilchen mit 6 Kohlenstoff-, 12 Wasserstoff- und 6 Sauerstoff-Bausteinen und sechs Sauerstoff-Teilchen mit zusammen 12 Sauerstoff-Bausteinen. Die Zahlen sind gleich: Die Bausteine werden nur neu zusammengesetzt. Neu sind die Stoffe mit anderen Eigenschaften, und die Lichtenergie steckt jetzt als chemische Energie im Traubenzucker.",
+        "criteria": [
+          "Ich zähle die Bausteine vorher und nachher.",
+          "Ich erkläre das Umbauen statt Verschwinden.",
+          "Ich nenne die gespeicherte Energie."
+        ]
+      },
+      "2": {
+        "prompt": "Ein Forscher pflanzte vor langer Zeit einen kleinen Weidenzweig in einen Topf mit abgewogener Erde und goss nur mit Wasser. Nach fünf Jahren war der Baum viel schwerer, die Erde aber kaum leichter. Erkläre das Ergebnis mit der Photosynthese.",
+        "hints": [
+          "Woher stammt der Kohlenstoff in der Biomasse?",
+          "Welche Rolle spielt das Wasser?"
+        ],
+        "model": "Die Weide hat ihre Biomasse nicht aus der Erde aufgebaut. Durch Photosynthese hat sie Kohlenstoffdioxid aus der Luft und Wasser aus dem Gießwasser mithilfe von Licht zu Traubenzucker umgebaut. Aus dem Zucker hat sie Holz, Blätter und Wurzeln aufgebaut. Der größte Teil des Gewichts stammt also aus Luft und Wasser. Aus der Erde nimmt die Pflanze nur kleine Mengen Mineralstoffe auf; deshalb wurde die Erde kaum leichter.",
+        "criteria": [
+          "Ich nenne Kohlenstoffdioxid aus der Luft als Quelle.",
+          "Ich erkläre den Aufbau von Biomasse aus Zucker.",
+          "Ich erkläre, warum die Erde kaum leichter wird."
+        ]
+      }
+    },
+    "figures": [
+      "photosynthese-teilchen"
+    ],
+    "lab": "waterweed"
+  },
+  {
+    "id": "bg6-zellatmung-photosynthese",
+    "lb": 3,
+    "title": "Photosynthese und Zellatmung",
+    "period": "NT6 1.2 · Stoffwechsel: Stoff- und Energieumwandlung",
+    "intro": "Pflanzen geben am Tag Sauerstoff ab. Brauchen sie selbst gar keinen? Doch, rund um die Uhr, genau wie du.",
+    "review": "Wiederholung aus NT5: Zellatmung beim Menschen",
+    "paragraphs": [
+      "Alle Lebewesen brauchen Energie für Wachstum, Bewegung und andere Lebensvorgänge. Sie gewinnen sie durch Zellatmung: In den Zellen reagiert Traubenzucker mit Sauerstoff zu Kohlenstoffdioxid und Wasser, und dabei wird die im Zucker gespeicherte chemische Energie freigesetzt. Das kennst du vom Menschen. Auch Pflanzen atmen, und zwar in allen ihren Zellen, Tag und Nacht. Im Dunkeln betreiben sie nur Zellatmung: Sie nehmen Sauerstoff auf und geben Kohlenstoffdioxid ab. Im Licht überwiegt bei grünen Pflanzen die Photosynthese; sie bilden dann mehr Sauerstoff, als sie selbst verbrauchen, und geben den Rest ab.",
+      "Photosynthese und Zellatmung hängen zusammen. Stofflich gesehen sind sie Gegenspieler: Die Produkte der Photosynthese, Traubenzucker und Sauerstoff, sind die Ausgangsstoffe der Zellatmung. Die Produkte der Zellatmung, Kohlenstoffdioxid und Wasser, sind die Ausgangsstoffe der Photosynthese. Die Stoffe bewegen sich also in einem Kreislauf zwischen Pflanzen, Tieren und Menschen. Energetisch gesehen fließt die Energie dagegen nur in eine Richtung: Lichtenergie wird bei der Photosynthese in chemische Energie umgewandelt. Die Zellatmung setzt sie wieder frei, und die Lebewesen nutzen sie für ihre Lebensvorgänge; ein Teil geht dabei als Wärme an die Umgebung. Neue Lichtenergie muss ständig von der Sonne nachkommen."
+    ],
+    "takeaway": "Zellatmung in allen Zellen, Tag und Nacht: Traubenzucker + Sauerstoff → Kohlenstoffdioxid + Wasser + Energie. Stoffe kreisen zwischen Photosynthese und Zellatmung; Energie fließt in eine Richtung: Licht → chemische Energie → Energie für Lebensvorgänge und Wärme.",
+    "sourceIds": [
+      "lehrplan",
+      "wp-zellatmung",
+      "kx-sauerstoff",
+      "kx-energie"
+    ],
+    "quiz": {
+      "question": "Was gibt eine grüne Pflanze nachts in völliger Dunkelheit ab?",
+      "answer": "Kohlenstoffdioxid aus der Zellatmung",
+      "wrong": [
+        "Sauerstoff aus der Photosynthese",
+        "Gar keine Gase, weil sie nachts ruht"
+      ],
+      "explanation": "Ohne Licht findet keine Photosynthese statt. Die Zellatmung läuft aber weiter: Die Pflanze nimmt Sauerstoff auf und gibt Kohlenstoffdioxid ab."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Photosynthese oder Zellatmung?",
+      "instruction": "Ordne jede Aussage zu.",
+      "categories": [
+        "Photosynthese",
+        "Zellatmung",
+        "beide"
+      ],
+      "entries": [
+        {
+          "text": "läuft nur bei Licht ab",
+          "target": 0,
+          "feedback": "Ohne Licht keine Photosynthese."
+        },
+        {
+          "text": "baut Traubenzucker auf",
+          "target": 0,
+          "feedback": "Aufbau mit Lichtenergie."
+        },
+        {
+          "text": "findet auch in den Zellen der Wurzel statt",
+          "target": 1,
+          "feedback": "Die Wurzel hat keine Chloroplasten, atmet aber."
+        },
+        {
+          "text": "setzt Energie für Lebensvorgänge frei",
+          "target": 1,
+          "feedback": "Abbau des Zuckers."
+        },
+        {
+          "text": "findet in Blattzellen grüner Pflanzen statt",
+          "target": 2,
+          "feedback": "Blattzellen machen beides."
+        },
+        {
+          "text": "verändert die Stoffe, ohne dass Bausteine verloren gehen",
+          "target": 2,
+          "feedback": "Bei beiden werden Bausteine neu zusammengesetzt."
+        }
+      ],
+      "conclusion": "Was die Photosynthese aufbaut, baut die Zellatmung ab."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Stelle Photosynthese und Zellatmung als Wortgleichungen nebeneinander und erkläre, warum man von einem Stoffkreislauf spricht.",
+        "hints": [
+          "Vergleiche die Ausgangsstoffe und Produkte.",
+          "Wer nutzt die Produkte des jeweils anderen Vorgangs?"
+        ],
+        "model": "Photosynthese: Kohlenstoffdioxid und Wasser werden mit Lichtenergie zu Traubenzucker und Sauerstoff. Zellatmung: Traubenzucker und Sauerstoff werden zu Kohlenstoffdioxid und Wasser, dabei wird Energie frei. Die Produkte der Photosynthese sind die Ausgangsstoffe der Zellatmung und umgekehrt. Pflanzen bauen also Zucker und Sauerstoff auf, Tiere, Menschen und auch die Pflanzen selbst bauen sie wieder ab, und die Abbauprodukte stehen der Photosynthese wieder zur Verfügung. Die Stoffe kreisen.",
+        "criteria": [
+          "Ich schreibe beide Wortgleichungen richtig.",
+          "Ich zeige, dass die Produkte des einen die Ausgangsstoffe des anderen sind.",
+          "Ich erkläre den Begriff Kreislauf."
+        ]
+      },
+      "2": {
+        "prompt": "Jemand sagt: „Die Energie kreist genauso wie die Stoffe.“ Nimm Stellung.",
+        "hints": [
+          "Woher kommt die Energie?",
+          "Was geschieht mit ihr bei der Zellatmung?"
+        ],
+        "model": "Die Aussage stimmt nicht. Die Stoffe kreisen: Kohlenstoffdioxid und Wasser werden zu Zucker und Sauerstoff aufgebaut und wieder abgebaut. Die Energie dagegen fließt nur in eine Richtung. Sie kommt als Lichtenergie von der Sonne, wird bei der Photosynthese in chemische Energie im Zucker umgewandelt und bei der Zellatmung für Lebensvorgänge freigesetzt. Ein Teil davon wird als Wärme an die Umgebung abgegeben und kann von Pflanzen nicht wieder für die Photosynthese genutzt werden. Deshalb muss ständig neue Lichtenergie nachkommen.",
+        "criteria": [
+          "Ich widerspreche der Aussage begründet.",
+          "Ich beschreibe den Weg der Energie von der Sonne bis zur Wärme.",
+          "Ich unterscheide Stoffkreislauf und Energiefluss."
+        ]
+      }
+    },
+    "figures": [
+      "stoffkreislauf"
+    ]
+  },
+  {
+    "id": "bg6-bedeutung-photosynthese",
+    "lb": 3,
+    "title": "Ohne Photosynthese kein Leben",
+    "period": "NT6 1.2 · Stoffwechsel: Stoff- und Energieumwandlung",
+    "intro": "Dein Frühstücksbrot, der Sauerstoff in deinem Atem und das Benzin im Auto haben etwas gemeinsam: Sie stammen aus der Photosynthese.",
+    "paragraphs": [
+      "Die Photosynthese ist die Grundlage für fast alles Leben auf der Erde. Sie ist der einzige große Weg, auf dem Lichtenergie in chemische Energie umgewandelt und Biomasse aus Kohlenstoffdioxid aufgebaut wird. Alle Nahrungsketten beginnen bei Pflanzen oder Algen: Das Brot stammt aus Getreide, Milch und Fleisch von Tieren, die Pflanzen gefressen haben. Außerdem setzt die Photosynthese den Sauerstoff frei, den Menschen und Tiere für ihre Zellatmung brauchen. Zugleich nimmt sie Kohlenstoffdioxid aus der Luft auf. Die ökologische Bedeutung der Photosynthese ist also riesig: Ohne sie gäbe es weder Nahrung noch Sauerstoff in der Luft.",
+      "Auch wirtschaftlich nutzen Menschen die Photosynthese. Nachwachsende Rohstoffe sind Pflanzen, die wieder nachgepflanzt werden können: Holz für Häuser, Möbel und Papier, Baumwolle für Kleidung, Rapsöl für Lebensmittel und Treibstoffe, Mais für Biogasanlagen. Fossile Brennstoffe wie Kohle, Erdöl und Erdgas stammen ebenfalls aus der Photosynthese, allerdings aus der Vorzeit: Sie sind vor Millionen Jahren aus abgestorbenen Pflanzen und anderen Lebewesen entstanden, die unter Luftabschluss und Druck umgewandelt wurden. Beim Verbrennen wird die damals gespeicherte Sonnenenergie frei, und das Kohlenstoffdioxid gelangt wieder in die Luft. Fossile Brennstoffe wachsen in menschlichen Zeiträumen nicht nach."
+    ],
+    "takeaway": "Photosynthese liefert Nahrung (Beginn aller Nahrungsketten), Sauerstoff zum Atmen und Biomasse. Nachwachsende Rohstoffe (Holz, Baumwolle, Rapsöl) wachsen jedes Jahr nach. Fossile Brennstoffe (Kohle, Erdöl, Erdgas) sind gespeicherte Photosynthese-Energie aus der Vorzeit und wachsen nicht nach.",
+    "sourceIds": [
+      "lehrplan",
+      "wp-nachwachsend",
+      "wp-fossile-energie",
+      "kx-kohle",
+      "kx-erdoel",
+      "wp-biomasse"
+    ],
+    "quiz": {
+      "question": "Warum zählt Erdöl zu den fossilen Brennstoffen und nicht zu den nachwachsenden Rohstoffen?",
+      "answer": "Es entstand vor Millionen Jahren aus Lebewesen und bildet sich in menschlichen Zeiträumen nicht neu.",
+      "wrong": [
+        "Weil es nichts mit der Photosynthese zu tun hat.",
+        "Weil es jedes Jahr auf Feldern angebaut wird."
+      ],
+      "explanation": "Auch Erdöl speichert Energie aus der Photosynthese, aber aus der Vorzeit. Es wächst nicht nach; nachwachsende Rohstoffe werden jedes Jahr neu angebaut."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Wofür die Photosynthese sorgt",
+      "instruction": "Ordne jedes Beispiel zu.",
+      "categories": [
+        "Nahrung",
+        "Sauerstoff",
+        "nachwachsender Rohstoff",
+        "fossiler Brennstoff"
+      ],
+      "entries": [
+        {
+          "text": "Weizenbrot zum Frühstück",
+          "target": 0,
+          "feedback": "Getreide ist Nahrung aus Photosynthese."
+        },
+        {
+          "text": "Gras, das eine Kuh frisst",
+          "target": 0,
+          "feedback": "Auch Futter für Tiere ist Nahrung."
+        },
+        {
+          "text": "Luft, die du einatmest",
+          "target": 1,
+          "feedback": "Ihr Sauerstoff stammt aus der Photosynthese."
+        },
+        {
+          "text": "Holzbalken für einen Dachstuhl",
+          "target": 2,
+          "feedback": "Bäume wachsen nach."
+        },
+        {
+          "text": "Rapsöl als Treibstoff",
+          "target": 2,
+          "feedback": "Raps wird jedes Jahr angebaut."
+        },
+        {
+          "text": "Steinkohle aus einem Bergwerk",
+          "target": 3,
+          "feedback": "Aus Pflanzen der Vorzeit entstanden."
+        }
+      ],
+      "conclusion": "Fast jede Energie, die wir nutzen, war einmal Sonnenlicht, das Pflanzen eingefangen haben."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Verfolge die Energie in deinem Frühstücksei zurück bis zur Sonne.",
+        "hints": [
+          "Wovon hat sich das Huhn ernährt?",
+          "Woher hatte das Getreide seine Energie?"
+        ],
+        "model": "Die Energie im Ei stammt vom Huhn, das sie aus seinem Futter gewonnen hat, zum Beispiel aus Weizen und Mais. Diese Pflanzen haben durch Photosynthese Lichtenergie der Sonne in chemische Energie umgewandelt und als Stärke in ihren Körnern gespeichert. Das Huhn hat das Futter verdaut und die Energie in Bausteinen des Eis gespeichert. Wenn ich das Ei esse, nutze ich diese Energie über meine Zellatmung. Am Anfang der Kette steht also das Sonnenlicht.",
+        "criteria": [
+          "Ich nenne Futterpflanzen als Zwischenschritt.",
+          "Ich nenne die Photosynthese als Umwandlung von Licht in chemische Energie.",
+          "Ich ende bei der Sonne als Energiequelle."
+        ]
+      },
+      "2": {
+        "prompt": "Erkläre, warum das Verbrennen von Holz und das Verbrennen von Kohle für die Menge an Kohlenstoffdioxid in der Luft unterschiedlich zu bewerten sind.",
+        "hints": [
+          "Wann wurde das Kohlenstoffdioxid jeweils aus der Luft aufgenommen?",
+          "Wächst der Rohstoff nach?"
+        ],
+        "model": "Holz hat das Kohlenstoffdioxid, das beim Verbrennen frei wird, erst vor wenigen Jahrzehnten durch Photosynthese aus der Luft aufgenommen. Wenn neue Bäume nachwachsen, nehmen sie wieder ungefähr so viel auf. Kohle dagegen hat ihren Kohlenstoff vor Millionen Jahren gespeichert. Beim Verbrennen gelangt zusätzliches Kohlenstoffdioxid in die heutige Luft, das nicht in überschaubarer Zeit wieder gebunden wird. Holz ist nachwachsend, Kohle nicht. Allerdings ist auch Holz nur dann günstig, wenn wirklich nachgepflanzt wird.",
+        "criteria": [
+          "Ich unterscheide den Zeitpunkt der Aufnahme von Kohlenstoffdioxid.",
+          "Ich verwende die Begriffe nachwachsend und fossil richtig.",
+          "Ich nenne eine Bedingung oder Einschränkung."
+        ]
+      }
+    },
+    "figures": [
+      "photosynthese-bedeutung"
+    ]
+  },
+  {
+    "id": "bg6-pflanzen-reagieren",
+    "lb": 3,
+    "title": "Pflanzen reagieren auf ihre Umwelt",
+    "period": "NT6 1.2 · Informationsaufnahme, Informationsverarbeitung und Reaktion, aktive Bewegung",
+    "intro": "Morgens öffnet der Löwenzahn seine Blüten, abends schließt er sie. Pflanzen haben keine Augen und keine Nerven. Wie merken sie, dass es hell wird?",
+    "paragraphs": [
+      "Auch Pflanzen nehmen Reize aus ihrer Umwelt auf und reagieren darauf. Diese Fähigkeit heißt Reizbarkeit und ist ein Kennzeichen aller Lebewesen. Viele Reaktionen dienen der Ernährung: Spross und Blätter wachsen zum Licht hin, sodass die Pflanze mehr Licht für die Photosynthese bekommt. Die Wurzel wächst nach unten, wo Wasser und Mineralstoffe sind. Andere Reaktionen dienen der Fortpflanzung: Viele Blüten öffnen sich im Licht und schließen sich bei Dunkelheit oder Regen. Beim Löwenzahn oder Gänseblümchen bleibt der Pollen so nachts trocken, und die Blüte ist geöffnet, wenn tagsüber Insekten fliegen.",
+      "Wieder andere Reaktionen dienen dem Schutz. Berührt man die Blätter der Mimose, klappen ihre Fiederblättchen in Sekunden zusammen, und der Blattstiel senkt sich. So wirkt die Pflanze für Fraßfeinde weniger einladend. Pflanzen reagieren also auf Licht, Schwerkraft, Berührung und Temperatur. Die meisten Pflanzenbewegungen sind Wachstumsbewegungen und dauern Stunden oder Tage; nur wenige sind so schnell wie bei der Mimose. Pflanzen bewegen sich dabei nicht von der Stelle, sondern verändern die Stellung ihrer Organe. Für die Pflanze ist das lebenswichtig: Weil sie nicht weglaufen kann, muss sie sich an ihrem Standort möglichst gut ausrichten."
+    ],
+    "takeaway": "Pflanzen nehmen Reize wie Licht, Schwerkraft und Berührung auf und reagieren mit Bewegungen ihrer Organe. Bedeutung: Ernährung (Spross zum Licht, Wurzel nach unten), Fortpflanzung (Blüten öffnen und schließen), Schutz (Mimose klappt Blätter zusammen).",
+    "sourceIds": [
+      "lehrplan",
+      "wp-pflanzenbewegung",
+      "wp-mimose",
+      "wp-gewoehnlicher-loewenzahn"
+    ],
+    "quiz": {
+      "question": "Wozu dient es dem Löwenzahn, seine Blüten nachts zu schließen?",
+      "answer": "Der Pollen bleibt trocken und geschützt; geöffnet ist die Blüte, wenn tagsüber Insekten fliegen.",
+      "wrong": [
+        "So kann die Blüte nachts mehr Photosynthese betreiben.",
+        "So locken die Blüten nachts mehr Bienen an."
+      ],
+      "explanation": "Das Öffnen und Schließen dient der Fortpflanzung: Die Blüte ist dann offen, wenn Bestäuber unterwegs sind, und schützt den Pollen in der Nacht. Photosynthese braucht Licht."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Wozu dient die Reaktion?",
+      "instruction": "Ordne jede Reaktion ihrer Bedeutung für die Pflanze zu.",
+      "categories": [
+        "Ernährung",
+        "Fortpflanzung",
+        "Schutz"
+      ],
+      "entries": [
+        {
+          "text": "Kresse auf der Fensterbank wächst zum Fenster hin.",
+          "target": 0,
+          "feedback": "Mehr Licht für die Photosynthese."
+        },
+        {
+          "text": "Die Keimwurzel wächst nach unten, egal wie der Samen liegt.",
+          "target": 0,
+          "feedback": "Dort sind Wasser und Mineralstoffe."
+        },
+        {
+          "text": "Gänseblümchen schließen ihre Blüten bei Regen.",
+          "target": 1,
+          "feedback": "Der Pollen bleibt trocken."
+        },
+        {
+          "text": "Löwenzahnblüten öffnen sich am Morgen.",
+          "target": 1,
+          "feedback": "Offen, wenn Insekten fliegen."
+        },
+        {
+          "text": "Die Mimose klappt bei Berührung ihre Blätter zusammen.",
+          "target": 2,
+          "feedback": "Eine Abwehrreaktion."
+        },
+        {
+          "text": "Die Mimose senkt bei Erschütterung den Blattstiel.",
+          "target": 2,
+          "feedback": "Auch das wirkt auf Fraßfeinde abschreckend."
+        }
+      ],
+      "conclusion": "Pflanzen reagieren langsamer als Tiere, aber genauso zweckmäßig."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Beschreibe zwei verschiedene Reaktionen von Pflanzen auf Licht und erkläre jeweils ihre Bedeutung für das Überleben.",
+        "hints": [
+          "Wie reagiert der Spross auf Licht?",
+          "Wie reagieren manche Blüten?"
+        ],
+        "model": "Erste Reaktion: Der Spross einer Pflanze auf der Fensterbank krümmt sich zum Licht hin. So treffen mehr Lichtstrahlen auf die Blätter, und die Pflanze kann mehr Photosynthese betreiben und mehr Zucker bilden. Das dient der Ernährung. Zweite Reaktion: Die Blüten des Löwenzahns öffnen sich, wenn es hell wird, und schließen sich bei Dunkelheit. So ist die Blüte offen, wenn tagsüber Insekten fliegen und sie bestäuben können, und der Pollen bleibt nachts geschützt. Das dient der Fortpflanzung.",
+        "criteria": [
+          "Ich beschreibe zwei verschiedene Reaktionen auf Licht.",
+          "Ich ordne jeder Reaktion eine Bedeutung zu.",
+          "Ich begründe die Bedeutung für das Überleben."
+        ]
+      },
+      "2": {
+        "prompt": "Ein Mitschüler meint: „Pflanzen bewegen sich nicht, sie sind ja keine Tiere.“ Widerlege die Aussage mit Beispielen und erkläre, warum Bewegung für Pflanzen trotzdem anders aussieht.",
+        "hints": [
+          "Welche Pflanzenbewegungen kennst du?",
+          "Wie schnell sind sie, und bewegt sich die ganze Pflanze?"
+        ],
+        "model": "Pflanzen bewegen sich durchaus, aber anders als Tiere. Die Mimose klappt bei Berührung in Sekunden ihre Blätter zusammen, Löwenzahnblüten öffnen und schließen sich jeden Tag, und Keimlinge krümmen sich zum Licht. Die meisten dieser Bewegungen sind Wachstumsbewegungen und dauern Stunden oder Tage. Außerdem bewegt sich nie die ganze Pflanze von der Stelle, sondern nur ihre Organe ändern ihre Stellung. Weil Pflanzen fest verwurzelt sind, können sie nicht weglaufen, aber sie richten sich an ihrem Standort aus.",
+        "criteria": [
+          "Ich nenne mindestens zwei Beispiele für Pflanzenbewegungen.",
+          "Ich erkläre die geringere Geschwindigkeit.",
+          "Ich erkläre, dass sich Organe bewegen und nicht die ganze Pflanze."
+        ]
+      }
+    },
+    "figures": [
+      "pflanzenreaktionen"
+    ]
+  },
+  {
+    "id": "bg6-phototropismus",
+    "lb": 3,
+    "title": "Der Keimling wendet sich zum Licht",
+    "period": "NT6 1.2 · Informationsaufnahme, Informationsverarbeitung und Reaktion, aktive Bewegung",
+    "intro": "Steht ein Haferkeimling nur von einer Seite im Licht, krümmt er sich nach einigen Stunden dorthin. Was passiert dabei im Inneren?",
+    "paragraphs": [
+      "Die Krümmung zum Licht heißt Phototropismus. Stark vereinfacht läuft sie in drei Schritten ab. Erstens: Die Spitze des Keimlings nimmt das Licht auf und bemerkt, von welcher Seite es kommt. Zweitens: In der Spitze wird ein Wuchsstoff gebildet, der nach unten wandert und sich auf der Schattenseite stärker anreichert. Drittens: Wo mehr Wuchsstoff ist, strecken sich die Zellen stärker. Die Schattenseite wächst also schneller als die Lichtseite, und der Keimling krümmt sich zum Licht. Dass die Spitze das Licht wahrnimmt, zeigt ein klassisches Experiment: Deckt man die Spitze mit einer lichtdichten Kappe ab, krümmt sich der Keimling trotz Seitenlicht nicht. Wird stattdessen ein Stück weiter unten abgedeckt, krümmt er sich wie gewohnt.",
+      "Vergleiche das mit einer Reiz-Reaktions-Kette beim Menschen. Fliegt ein Ball auf dich zu, nehmen Sinneszellen im Auge den Lichtreiz auf. Nerven leiten Signale in Sekundenbruchteilen zum Gehirn, das sie verarbeitet und über Nerven den Muskeln das Signal zum Ausweichen gibt. Bei der Pflanze gibt es keine Nerven, kein Gehirn und keine Muskeln. Die Information wird durch einen Stoff weitergegeben, und die Bewegung entsteht durch unterschiedlich starkes Wachstum. Das dauert Stunden. Das Prinzip ist aber dasselbe: Reiz aufnehmen, Information weiterleiten, verarbeiten und mit einer Bewegung reagieren. Ein Keimling ohne jedes Licht wächst übrigens besonders schnell in die Länge und bleibt bleich; so erreicht er mit seinen Vorräten vielleicht doch noch das Licht."
+    ],
+    "takeaway": "Phototropismus stark vereinfacht: Die Spitze nimmt einseitiges Licht auf → ein Wuchsstoff gelangt auf die Schattenseite → dort strecken sich die Zellen stärker → Krümmung zum Licht. Mensch: Sinneszellen, Nerven, Gehirn, Muskeln, sehr schnell. Pflanze: Stoff statt Nerv, Wachstum statt Muskel, langsam.",
+    "sourceIds": [
+      "lehrplan",
+      "wp-pflanzenbewegung",
+      "kx-pflanze",
+      "wp-versuchskontrolle"
+    ],
+    "quiz": {
+      "question": "Ein Keimling mit abgedeckter Spitze krümmt sich trotz Seitenlicht nicht. Was zeigt das?",
+      "answer": "Die Spitze nimmt das Licht wahr.",
+      "wrong": [
+        "Die Kappe hält den Keimling mechanisch gerade.",
+        "Keimlinge brauchen zum Wachsen kein Licht."
+      ],
+      "explanation": "Nur ohne Licht an der Spitze bleibt die Krümmung aus. Deckt man weiter unten ab, krümmt er sich normal; also ist die Spitze der Ort der Lichtwahrnehmung."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Die Krümmung Schritt für Schritt",
+      "instruction": "Bringe die Schritte des Phototropismus in die richtige Reihenfolge.",
+      "categories": [],
+      "entries": [
+        {
+          "text": "Licht fällt nur von links auf den Keimling.",
+          "target": 0,
+          "feedback": "Der Reiz ist einseitiges Licht."
+        },
+        {
+          "text": "Die Spitze nimmt das Licht auf.",
+          "target": 1,
+          "feedback": "Hier liegt der Ort der Wahrnehmung."
+        },
+        {
+          "text": "Ein Wuchsstoff wandert nach unten, vor allem auf der rechten Schattenseite.",
+          "target": 2,
+          "feedback": "Die Information wird durch einen Stoff weitergegeben."
+        },
+        {
+          "text": "Die Zellen auf der Schattenseite strecken sich stärker.",
+          "target": 3,
+          "feedback": "Ungleiches Wachstum."
+        },
+        {
+          "text": "Der Keimling krümmt sich nach links zum Licht.",
+          "target": 4,
+          "feedback": "Die Reaktion: eine Wachstumsbewegung."
+        }
+      ],
+      "conclusion": "Reiz, Aufnahme, Weiterleitung, Reaktion: Diese Folge gibt es bei Pflanzen und Tieren."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre, warum sich ein Keimling auf der Fensterbank zum Fenster hin krümmt. Verwende die Begriffe Spitze, Wuchsstoff und Schattenseite.",
+        "hints": [
+          "Wo wird das Licht wahrgenommen?",
+          "Welche Seite wächst schneller?"
+        ],
+        "model": "Das Licht fällt nur vom Fenster her auf den Keimling. Die Spitze des Keimlings nimmt dieses einseitige Licht auf. Daraufhin gelangt ein Wuchsstoff von der Spitze nach unten, und zwar mehr auf die vom Fenster abgewandte Schattenseite. Dort strecken sich die Zellen stärker als auf der Lichtseite. Weil die Schattenseite schneller wächst, biegt sich der Keimling zum Fenster hin. So bekommen die Blätter später mehr Licht für die Photosynthese.",
+        "criteria": [
+          "Ich nenne die Spitze als Ort der Wahrnehmung.",
+          "Ich erkläre die Verteilung des Wuchsstoffs.",
+          "Ich erkläre die Krümmung durch ungleiches Wachstum."
+        ]
+      },
+      "2": {
+        "prompt": "Vergleiche die Reaktion eines Keimlings auf Seitenlicht mit deiner Reaktion, wenn dich jemand blendet und du die Augen schließt. Nenne zwei Gemeinsamkeiten und drei Unterschiede.",
+        "hints": [
+          "Welche Schritte haben beide gemeinsam?",
+          "Wie wird die Information weitergeleitet, wie schnell, womit wird bewegt?"
+        ],
+        "model": "Gemeinsamkeiten: Beide reagieren auf den Reiz Licht, und bei beiden folgen Reizaufnahme, Weiterleitung einer Information und eine Reaktion mit Bewegung. Unterschiede: Beim Menschen nehmen Sinneszellen im Auge den Reiz auf, beim Keimling die Spitze ohne eigenes Sinnesorgan. Beim Menschen leiten Nerven die Information zum Gehirn, bei der Pflanze ein Wuchsstoff ohne Nerven und Gehirn. Der Mensch bewegt sich mit Muskeln in Sekundenbruchteilen, der Keimling durch ungleiches Wachstum innerhalb von Stunden.",
+        "criteria": [
+          "Ich nenne zwei Gemeinsamkeiten.",
+          "Ich nenne Unterschiede bei Aufnahme und Weiterleitung.",
+          "Ich nenne den Unterschied bei Bewegung und Geschwindigkeit."
+        ]
+      }
+    },
+    "figures": [
+      "reiz-reaktion-vergleich"
+    ],
+    "lab": "phototropism"
+  }
+]
