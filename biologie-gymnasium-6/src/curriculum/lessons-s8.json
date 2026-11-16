@@ -1,0 +1,407 @@
+[
+  {
+    "id": "bg6-wirbeltierklassen",
+    "lb": 8,
+    "title": "Die fünf Wirbeltierklassen",
+    "period": "NT6 1.4 · Verwandtschaft der Wirbeltiere und Evolution",
+    "intro": "Wal, Pinguin und Hai leben im Meer und haben eine Spindelform. Trotzdem gehören sie zu drei verschiedenen Klassen. Woran erkennt man das?",
+    "paragraphs": [
+      "Alle Wirbeltiere haben eine Wirbelsäule aus einzelnen Wirbeln. Nach gemeinsamen Merkmalen teilt man sie in fünf Klassen ein: Fische, Amphibien, Reptilien, Vögel und Säugetiere. Zum kriteriengeleiteten Vergleich nutzt man vor allem Körperbedeckung, Körpertemperatur, Atmung sowie Fortpflanzung und Entwicklung. Fische haben Schuppen und Schleim, sind wechselwarm, atmen mit Kiemen und laichen meist im Wasser. Amphibien haben eine feuchte, drüsenreiche Haut, sind wechselwarm, atmen als Larven mit Kiemen und erwachsen mit Lunge und Haut; sie laichen im Wasser und machen eine Metamorphose durch. Reptilien haben eine trockene Haut mit Hornschuppen, sind wechselwarm, atmen mit Lungen und legen Eier mit ledriger Schale an Land.",
+      "Vögel haben Federn, sind gleichwarm, atmen mit Lungen und Luftsäcken und legen Eier mit Kalkschale, die sie ausbrüten. Säugetiere haben Haare, sind gleichwarm, atmen mit Lungen, bringen ihre Jungen meist lebend zur Welt und säugen sie mit Milch. Um ein unbekanntes Wirbeltier einzuordnen, prüfst du diese Merkmale nacheinander, zum Beispiel mit einem dichotomen Bestimmungsschlüssel, der bei jedem Schritt zwei Möglichkeiten anbietet. Wichtig ist, nicht auf den Lebensraum oder die Körperform hereinzufallen: Der Wal säugt seine Jungen und atmet mit Lungen, er ist ein Säugetier. Die Blindschleiche hat keine Beine, aber Hornschuppen und Lungen und ist ein Reptil, keine Schlange im engeren Sinn, sondern eine beinlose Echse."
+    ],
+    "takeaway": "Fische: Schuppen, wechselwarm, Kiemen, Laich im Wasser. Amphibien: feuchte Drüsenhaut, wechselwarm, Kiemen und später Lunge und Haut, Metamorphose. Reptilien: Hornschuppen, wechselwarm, Lunge, Eier an Land. Vögel: Federn, gleichwarm, Lunge mit Luftsäcken, Kalkeier. Säugetiere: Haare, gleichwarm, Lunge, lebend geboren, gesäugt.",
+    "sourceIds": [
+      "lehrplan",
+      "kx-wirbeltiere",
+      "wp-wirbeltiere",
+      "wp-bestimmungsschluessel",
+      "wp-blindschleiche",
+      "kx-wale"
+    ],
+    "quiz": {
+      "question": "Welche Merkmale kennzeichnen die Klasse der Säugetiere?",
+      "answer": "Haare oder Fell, gleichwarm, Junge werden mit Milch gesäugt",
+      "wrong": [
+        "Federn, gleichwarm, Eier mit Kalkschale",
+        "Hornschuppen, wechselwarm, Eier mit ledriger Schale an Land"
+      ],
+      "explanation": "Haare und das Säugen mit Milch gibt es nur bei Säugetieren. Federn und Kalkeier kennzeichnen Vögel, Hornschuppen und Eier mit ledriger Schale Reptilien."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Unbekannte Tiere einordnen",
+      "instruction": "Ordne jedes Tier anhand der angegebenen Merkmale seiner Klasse zu.",
+      "categories": [
+        "Fische",
+        "Amphibien",
+        "Reptilien",
+        "Vögel",
+        "Säugetiere"
+      ],
+      "entries": [
+        {
+          "text": "Seepferdchen: atmet mit Kiemen, lebt im Meer",
+          "target": 0,
+          "feedback": "Kiemen als erwachsenes Tier: Fisch."
+        },
+        {
+          "text": "Feuersalamander: feuchte Haut, Larven im Bach",
+          "target": 1,
+          "feedback": "Ein Amphib."
+        },
+        {
+          "text": "Blindschleiche: keine Beine, Hornschuppen, Lungen",
+          "target": 2,
+          "feedback": "Eine beinlose Echse, also ein Reptil."
+        },
+        {
+          "text": "Pinguin: Federn, Eier mit Kalkschale, kann nicht fliegen",
+          "target": 3,
+          "feedback": "Federn entscheiden: Vogel."
+        },
+        {
+          "text": "Fledermaus: Fell, säugt ihre Jungen, fliegt",
+          "target": 4,
+          "feedback": "Ein fliegendes Säugetier."
+        },
+        {
+          "text": "Delfin: säugt seine Jungen, atmet mit Lungen",
+          "target": 4,
+          "feedback": "Trotz Flossen ein Säugetier."
+        }
+      ],
+      "conclusion": "Klassenmerkmale wie Federn, Haare oder Kiemen entscheiden, nicht Lebensraum oder Körperform."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Vergleiche Grasfrosch und Zauneidechse kriteriengeleitet nach Körperbedeckung, Körpertemperatur, Atmung und Fortpflanzung.",
+        "hints": [
+          "Welche Merkmale haben beide gemeinsam?",
+          "Worin unterscheiden sich Haut und Fortpflanzung?"
+        ],
+        "model": "Körperbedeckung: Der Grasfrosch hat eine dünne, feuchte, drüsenreiche Haut, die Zauneidechse eine trockene Haut mit Hornschuppen. Körpertemperatur: Beide sind wechselwarm. Atmung: Der erwachsene Frosch atmet mit einfachen Lungen und über die Haut, als Kaulquappe mit Kiemen; die Eidechse atmet nur mit Lungen. Fortpflanzung: Der Frosch laicht im Wasser, und seine Larven machen eine Metamorphose durch. Die Eidechse hat eine innere Befruchtung und legt Eier mit ledriger Schale an Land. Der Frosch ist ein Amphib, die Eidechse ein Reptil.",
+        "criteria": [
+          "Ich vergleiche alle vier Kriterien.",
+          "Ich nenne Gemeinsamkeiten und Unterschiede.",
+          "Ich ordne beide Tiere ihrer Klasse zu."
+        ]
+      },
+      "2": {
+        "prompt": "Ein Schnabeltier hat Fell, säugt seine Jungen, legt aber Eier. Diskutiere, welcher Klasse es zuzuordnen ist und was das über Klassenmerkmale aussagt.",
+        "hints": [
+          "Welche Merkmale sprechen für Säugetiere, welches dagegen?",
+          "Sind Klassenmerkmale ausnahmslos?"
+        ],
+        "model": "Fell und das Säugen der Jungen mit Milch sind Merkmale der Säugetiere; sie kommen bei keiner anderen Klasse vor. Das Eierlegen passt eigentlich zu Reptilien und Vögeln. Weil Haare und Milch eindeutig sind, ordnet man das Schnabeltier den Säugetieren zu, es gehört zu einer kleinen Gruppe eierlegender Säugetiere. Das zeigt: Klassenmerkmale beschreiben, was typisch ist, aber nicht jede Art erfüllt alle. Man muss mehrere Merkmale zusammen betrachten und besonders die nutzen, die nur in einer Klasse vorkommen.",
+        "criteria": [
+          "Ich nenne Merkmale für und gegen die Säugetiere.",
+          "Ich ordne das Tier begründet zu.",
+          "Ich ziehe eine Folgerung über Klassenmerkmale."
+        ]
+      }
+    },
+    "figures": [
+      "wirbeltier-tabelle"
+    ],
+    "lab": "vertebrateKey"
+  },
+  {
+    "id": "bg6-evolution",
+    "lb": 8,
+    "title": "Evolution: Vorteile durch Unterschiede",
+    "period": "NT6 1.4 · Verwandtschaft der Wirbeltiere und Evolution",
+    "intro": "Kein Feldhase gleicht dem anderen ganz genau. Manche sind etwas schneller, manche haben ein dichteres Fell. Über viele Generationen können solche kleinen Unterschiede viel bewirken.",
+    "paragraphs": [
+      "Die Lebewesen einer Art unterscheiden sich in ihren Merkmalen; das nennt man Variation. Mäuse einer Art haben zum Beispiel verschieden helles oder dunkles Fell, verschieden lange Beine oder ein unterschiedlich gutes Gehör. Viele dieser Merkmale werden an die Nachkommen vererbt. In der Natur überleben nicht alle Tiere bis zur Fortpflanzung: Viele werden gefressen, finden zu wenig Nahrung oder erfrieren. Welche Tiere überleben, ist nicht nur Zufall. Leben Mäuse auf dunklem Boden, entdecken Greifvögel die hellen Mäuse leichter. Die dunkleren Mäuse überleben häufiger und bekommen mehr Junge, die das dunkle Fell erben.",
+      "Über viele Generationen nimmt so der Anteil der Tiere mit dem vorteilhaften Merkmal zu. Diesen Vorgang nennt man natürliche Auslese oder Selektion; er ist ein wichtiger Mechanismus der Evolution. Niemand plant ihn, und kein Tier verändert sich absichtlich. Die Umwelt, also Fressfeinde, Klima und Nahrungsangebot, entscheidet, welche Merkmale gerade von Vorteil sind. Ändert sich die Umwelt, können andere Merkmale vorteilhaft werden. Über sehr lange Zeiträume entstehen auf diese Weise neue Arten. Die Ähnlichkeiten innerhalb der Wirbeltierklassen weisen darauf hin, dass ihre Arten gemeinsame Vorfahren haben. Charles Darwin hat diese Erklärung im 19. Jahrhundert begründet."
+    ],
+    "takeaway": "Vereinfachtes Modell der Evolution: Lebewesen einer Art unterscheiden sich (Variation), viele Merkmale werden vererbt, die Umwelt begünstigt Tiere mit vorteilhaften Merkmalen (Auslese): Sie überleben häufiger und haben mehr Nachkommen. Über viele Generationen ändern sich so die Merkmale einer Art, ohne Plan und Ziel.",
+    "sourceIds": [
+      "lehrplan",
+      "kx-evolution",
+      "wp-selektion",
+      "kx-darwin"
+    ],
+    "quiz": {
+      "question": "Warum nimmt in einer Mäusegruppe auf dunklem Boden der Anteil dunkler Mäuse über viele Generationen zu?",
+      "answer": "Dunkle Mäuse werden seltener gefressen, haben mehr Junge und vererben das dunkle Fell.",
+      "wrong": [
+        "Helle Mäuse färben ihr Fell absichtlich dunkler, um sich zu verstecken.",
+        "Der dunkle Boden färbt das Fell der Mäuse dunkel."
+      ],
+      "explanation": "Evolution beruht auf Variation, Vererbung und Auslese. Kein Tier verändert sich absichtlich, und die Umgebung färbt das Fell nicht."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Auslese Schritt für Schritt",
+      "instruction": "Bringe die Schritte des vereinfachten Evolutionsmodells in die richtige Reihenfolge.",
+      "categories": [],
+      "entries": [
+        {
+          "text": "In einer Mäusegruppe gibt es helle und dunkle Tiere.",
+          "target": 0,
+          "feedback": "Variation innerhalb der Art."
+        },
+        {
+          "text": "Auf dunklem Boden entdecken Greifvögel helle Mäuse leichter.",
+          "target": 1,
+          "feedback": "Die Umwelt wirkt auf die Merkmale."
+        },
+        {
+          "text": "Dunkle Mäuse überleben häufiger bis zur Fortpflanzung.",
+          "target": 2,
+          "feedback": "Auslese."
+        },
+        {
+          "text": "Sie bekommen mehr Junge, die das dunkle Fell erben.",
+          "target": 3,
+          "feedback": "Vererbung."
+        },
+        {
+          "text": "Nach vielen Generationen sind die meisten Mäuse dunkel.",
+          "target": 4,
+          "feedback": "Die Merkmale der Gruppe haben sich verändert."
+        }
+      ],
+      "conclusion": "Variation, Vererbung und Auslese verändern Arten über viele Generationen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre mit dem vereinfachten Evolutionsmodell, warum Schneehasen im Winter ein weißes Fell haben könnten.",
+        "hints": [
+          "Welche Unterschiede gab es vermutlich bei den Vorfahren?",
+          "Welche Tiere wurden seltener gefressen?"
+        ],
+        "model": "Bei den Vorfahren der Schneehasen gab es vermutlich Unterschiede in der Fellfarbe im Winter: Manche wurden heller, manche blieben dunkler. In schneereichen Gebieten fielen dunkle Hasen auf dem Schnee auf und wurden von Füchsen und Greifvögeln leichter entdeckt. Hasen mit hellem Winterfell überlebten häufiger, bekamen mehr Junge und vererbten das Merkmal. Über viele Generationen nahm der Anteil weißer Tiere zu. Das ist eine vereinfachte Erklärung durch Variation, Vererbung und Auslese.",
+        "criteria": [
+          "Ich nenne Variation bei den Vorfahren.",
+          "Ich erkläre den Vorteil durch Fressfeinde.",
+          "Ich nenne Vererbung und viele Generationen."
+        ]
+      },
+      "2": {
+        "prompt": "Jemand sagt: „Die Giraffe hat ihren Hals gestreckt, um an hohe Blätter zu kommen, und deshalb haben ihre Jungen längere Hälse.“ Beurteile diese Erklärung mit dem Evolutionsmodell.",
+        "hints": [
+          "Wird ein durch Strecken erworbenes Merkmal vererbt?",
+          "Wie würde das Modell die langen Hälse erklären?"
+        ],
+        "model": "Die Erklärung ist falsch. Ein Merkmal, das ein Tier im Laufe seines Lebens durch Übung erwirbt, wird nicht an die Nachkommen vererbt; ein Sportler bekommt auch keine Kinder mit trainierten Muskeln. Nach dem Evolutionsmodell gab es bei den Vorfahren der Giraffen schon Tiere mit unterschiedlich langen Hälsen. Tiere mit längeren Hälsen erreichten in Zeiten knapper Nahrung mehr Blätter, überlebten häufiger und hatten mehr Junge, die den langen Hals erbten. Über viele Generationen wurden die Hälse so im Durchschnitt länger.",
+        "criteria": [
+          "Ich erkenne, dass erworbene Merkmale nicht vererbt werden.",
+          "Ich erkläre mit Variation, Auslese und Vererbung.",
+          "Ich nenne den Zeitraum vieler Generationen."
+        ]
+      }
+    },
+    "figures": [
+      "variation-auslese"
+    ]
+  },
+  {
+    "id": "bg6-zuechtung",
+    "lb": 8,
+    "title": "Züchtung: Vom Wolf zum Dackel",
+    "period": "NT6 1.4 · Verwandtschaft der Wirbeltiere und Evolution",
+    "intro": "Bernhardiner und Chihuahua sehen sehr verschieden aus. Trotzdem stammen beide vom Wolf ab. Das hat der Mensch bewirkt.",
+    "paragraphs": [
+      "Der Haushund stammt vom Wolf ab, das Hausrind vom inzwischen ausgestorbenen Auerochsen. Menschen haben über viele Generationen immer die Tiere zur Fortpflanzung ausgewählt, die gewünschte Merkmale hatten: Hunde, die gut wachen, jagen oder hüten, Rinder, die ruhig sind und viel Milch oder Fleisch liefern. Diese gezielte Auswahl heißt Züchtung. So sind die vielen Hunderassen und Nutztierrassen entstanden. Züchtung und natürliche Evolution haben Gemeinsamkeiten: Beide beruhen auf Unterschieden zwischen den Tieren, auf Vererbung und auf Auswahl. Der Unterschied liegt darin, wer auswählt: Bei der Züchtung wählt der Mensch nach seinem Ziel aus, und das geht oft schnell, in wenigen Jahrzehnten. In der Natur wirkt die Umwelt ohne Ziel über sehr viele Generationen.",
+      "Züchtung hat Vorteile. Nutztiere liefern mehr Milch, Eier, Fleisch oder Wolle, Hunde helfen als Blindenhund, Rettungshund oder Hütehund, und viele Heimtiere sind friedlich und an Menschen gewöhnt. Züchtung hat aber auch Nachteile. Wenn Merkmale übertrieben werden, leiden die Tiere. Hunde mit sehr kurzer Schnauze bekommen oft schlecht Luft, Hühner mit sehr hoher Legeleistung haben häufig Knochenprobleme. Werden Tiere so gezüchtet, dass sie Schmerzen, Leiden oder Schäden haben, spricht man von Qualzucht; sie ist in Deutschland durch das Tierschutzgesetz verboten. Außerdem geht die Vielfalt verloren, wenn überall nur wenige Hochleistungsrassen gehalten werden, und viele Zuchttiere könnten ohne den Menschen kaum überleben."
+    ],
+    "takeaway": "Züchtung: Der Mensch wählt Tiere mit gewünschten Merkmalen zur Fortpflanzung aus (Wolf → Hunderassen, Auerochse → Hausrind). Gemeinsam mit der Evolution: Variation, Vererbung, Auswahl; anders: Ziel des Menschen statt Umwelt, viel schneller. Vorteile: Leistung und Nutzen; Nachteile: Qualzucht, Krankheiten, Verlust an Vielfalt.",
+    "sourceIds": [
+      "lehrplan",
+      "kx-zucht",
+      "wp-zucht",
+      "wp-qualzucht",
+      "wp-haushund",
+      "wp-hausrind"
+    ],
+    "quiz": {
+      "question": "Was unterscheidet Züchtung von natürlicher Evolution?",
+      "answer": "Bei der Züchtung wählt der Mensch nach einem Ziel aus, in der Natur wirkt die Umwelt ohne Ziel.",
+      "wrong": [
+        "Bei der Züchtung gibt es keine Vererbung.",
+        "Evolution geht viel schneller als Züchtung."
+      ],
+      "explanation": "Beide beruhen auf Variation, Vererbung und Auswahl. Bei der Züchtung entscheidet der Mensch nach seinem Ziel, und sie verläuft meist viel schneller als die Evolution."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Vorteil oder Nachteil der Züchtung?",
+      "instruction": "Ordne jede Folge der Züchtung zu.",
+      "categories": [
+        "Vorteil",
+        "Nachteil"
+      ],
+      "entries": [
+        {
+          "text": "Kühe liefern viel mehr Milch als der Auerochse.",
+          "target": 0,
+          "feedback": "Ein Nutzen für die Ernährung."
+        },
+        {
+          "text": "Blindenhunde führen Menschen sicher durch die Stadt.",
+          "target": 0,
+          "feedback": "Gezüchtete Eigenschaften helfen Menschen."
+        },
+        {
+          "text": "Schafe liefern Wolle für Kleidung.",
+          "target": 0,
+          "feedback": "Auch das ist ein Zuchtziel."
+        },
+        {
+          "text": "Hunde mit sehr kurzer Schnauze bekommen schlecht Luft.",
+          "target": 1,
+          "feedback": "Ein übertriebenes Merkmal: Qualzucht."
+        },
+        {
+          "text": "Hochleistungshühner leiden häufig an Knochenproblemen.",
+          "target": 1,
+          "feedback": "Die Leistung schadet dem Tier."
+        },
+        {
+          "text": "Alte, robuste Rassen verschwinden.",
+          "target": 1,
+          "feedback": "Die Vielfalt geht verloren."
+        }
+      ],
+      "conclusion": "Züchtung muss Nutzen für den Menschen und Wohl der Tiere gegeneinander abwägen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Vergleiche die Entstehung des Dackels aus dem Wolf mit der Entstehung des weißen Winterfells beim Schneehasen.",
+        "hints": [
+          "Wer hat jeweils ausgewählt?",
+          "Was ist beiden Vorgängen gemeinsam?"
+        ],
+        "model": "Beim Dackel haben Menschen über viele Generationen immer die Hunde mit kurzen Beinen und langem Körper zur Zucht ausgewählt, weil sie gut in Fuchs- und Dachsbauten kriechen konnten. Der Mensch hatte ein Ziel, und das ging vergleichsweise schnell. Beim Schneehasen hat niemand ausgewählt: Füchse und Greifvögel haben im Schnee dunklere Hasen häufiger gefangen, sodass die weißen mehr Junge bekamen. Das ging ohne Ziel über sehr viele Generationen. Gemeinsam ist beiden, dass es Unterschiede gab, dass die Merkmale vererbt wurden und dass eine Auswahl stattfand.",
+        "criteria": [
+          "Ich nenne den Menschen als Auswählenden beim Dackel.",
+          "Ich nenne die Umwelt als Auswählende beim Schneehasen.",
+          "Ich nenne die Gemeinsamkeiten Variation, Vererbung und Auswahl."
+        ]
+      },
+      "2": {
+        "prompt": "Bewerte die Zucht von Hunden mit extrem kurzer Schnauze. Berücksichtige verschiedene Sichtweisen und komme zu einem begründeten Urteil.",
+        "hints": [
+          "Warum mögen manche Menschen solche Hunde?",
+          "Welche Folgen hat das Merkmal für das Tier?"
+        ],
+        "model": "Manche Menschen finden Hunde mit runden Köpfen und kurzer Schnauze besonders niedlich, und Züchter können sie gut verkaufen. Für die Tiere hat das Merkmal aber oft schwere Folgen: Die Atemwege sind verengt, viele Hunde röcheln, bekommen bei Wärme oder Bewegung schlecht Luft und müssen manchmal operiert werden. Wenn ein Zuchtziel dem Tier Leiden verursacht, handelt es sich um Qualzucht, die das Tierschutzgesetz verbietet. Ich halte solche Zuchten für nicht vertretbar, weil das Wohl des Tieres wichtiger ist als ein Aussehen, das Menschen gefällt. Wer einen Hund möchte, sollte auf gesunde Rassen achten.",
+        "criteria": [
+          "Ich nenne die Sichtweise der Halter oder Züchter.",
+          "Ich beschreibe die Folgen für das Tier.",
+          "Ich komme zu einem begründeten eigenen Urteil."
+        ]
+      }
+    },
+    "figures": [
+      "zuechtung-evolution"
+    ]
+  },
+  {
+    "id": "bg6-heim-nutztiere",
+    "lb": 8,
+    "title": "Heimtiere und Nutztiere verantwortlich halten",
+    "period": "NT6 1.4 · Verwandtschaft der Wirbeltiere und Evolution",
+    "intro": "Ein Kaninchen allein im kleinen Käfig, Hühner, die nie Tageslicht sehen: Wer Tiere hält oder ihre Produkte kauft, trägt Verantwortung.",
+    "paragraphs": [
+      "Heimtiere wie Hund, Katze, Kaninchen, Meerschweinchen oder Wellensittich leben mit Menschen zusammen. Sie stammen von wilden Vorfahren ab und haben deren Bedürfnisse behalten. Kaninchen und Meerschweinchen leben in Gruppen und dürfen nicht allein gehalten werden; Wellensittiche sind Schwarmvögel. Alle brauchen genug Platz zum Laufen, Graben oder Fliegen, Verstecke, passendes Futter, frisches Wasser, einen sauberen Stall und tierärztliche Versorgung. Das Tierschutzgesetz verlangt, dass jeder, der ein Tier hält, es seiner Art und seinen Bedürfnissen entsprechend ernährt, pflegt und verhaltensgerecht unterbringt. Vor der Anschaffung solltest du klären, ob Platz, Zeit, Geld und eine Betreuung im Urlaub vorhanden sind.",
+      "Nutztiere wie Rind, Schwein und Huhn liefern Fleisch, Milch, Eier, Leder oder Wolle. Auch sie haben Bedürfnisse: Platz, Licht, frische Luft, Beschäftigung und Kontakt zu Artgenossen. In manchen Ställen leben sehr viele Tiere auf engem Raum. Du kannst beim Einkauf mitentscheiden. Auf jedem Ei steht ein Code; die erste Ziffer nennt die Haltungsform der Hennen: 0 bedeutet ökologische Erzeugung, 1 Freilandhaltung, 2 Bodenhaltung und 3 Käfighaltung oder Kleingruppenhaltung. Auf Fleisch und Milch geben Kennzeichnungen mit Stufen Auskunft darüber, wie viel Platz und Auslauf die Tiere hatten. Wer weniger, dafür aus tiergerechterer Haltung stammende Tierprodukte kauft, kann so zum Tierschutz beitragen. Dabei musst du Preis, Tierwohl und eigene Gewohnheiten gegeneinander abwägen."
+    ],
+    "takeaway": "Tiergerechte Haltung: Artgenossen, Platz und Beschäftigung, passendes Futter, Pflege, Tierarzt; das Tierschutzgesetz verlangt Haltung nach Art und Bedürfnissen. Beim Einkauf: Eiercode (0 Bio, 1 Freiland, 2 Boden, 3 Käfig oder Kleingruppe) und Haltungskennzeichnungen beachten.",
+    "sourceIds": [
+      "lehrplan",
+      "tierschg-2",
+      "kx-haustier",
+      "wp-nutztier",
+      "kx-kaninchen",
+      "kx-meerschweinchen",
+      "kx-wellensittich",
+      "wp-eierkennzeichnung"
+    ],
+    "quiz": {
+      "question": "Was bedeutet die erste Ziffer 1 im Code auf einem Hühnerei?",
+      "answer": "Die Henne stammt aus Freilandhaltung.",
+      "wrong": [
+        "Das Ei ist ein Bio-Ei aus ökologischer Erzeugung.",
+        "Das Ei stammt aus Käfighaltung."
+      ],
+      "explanation": "0 steht für ökologische Erzeugung, 1 für Freilandhaltung, 2 für Bodenhaltung und 3 für Käfig- oder Kleingruppenhaltung."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Tiergerecht oder nicht?",
+      "instruction": "Ordne jede Haltung zu.",
+      "categories": [
+        "tiergerecht",
+        "nicht tiergerecht"
+      ],
+      "entries": [
+        {
+          "text": "Zwei Kaninchen mit großem Gehege, Verstecken und Auslauf",
+          "target": 0,
+          "feedback": "Artgenossen und Platz."
+        },
+        {
+          "text": "Wellensittiche zu zweit mit täglichem Freiflug",
+          "target": 0,
+          "feedback": "Schwarmvögel brauchen Gesellschaft und Flug."
+        },
+        {
+          "text": "Hund mit täglichen Spaziergängen und Beschäftigung",
+          "target": 0,
+          "feedback": "Bewegung und Aufgaben."
+        },
+        {
+          "text": "Ein einzelnes Meerschweinchen in einem kleinen Käfig",
+          "target": 1,
+          "feedback": "Meerschweinchen leben in Gruppen."
+        },
+        {
+          "text": "Ein Kaninchen nur mit Brot als Futter",
+          "target": 1,
+          "feedback": "Kaninchen brauchen Heu und frisches Grünfutter."
+        },
+        {
+          "text": "Ein Hund, der tagelang allein an der Kette steht",
+          "target": 1,
+          "feedback": "Ihm fehlen Bewegung und Kontakt."
+        }
+      ],
+      "conclusion": "Tiergerecht heißt: Die Haltung richtet sich nach den Bedürfnissen der Tierart."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Deine Familie möchte Meerschweinchen anschaffen. Erstelle eine Liste mit Fragen, die vorher geklärt werden müssen, und begründe zwei davon.",
+        "hints": [
+          "Was brauchen Meerschweinchen?",
+          "Wer kümmert sich, auch im Urlaub?"
+        ],
+        "model": "Fragen: Haben wir Platz für ein großes Gehege mit Verstecken und Auslauf? Können wir mindestens zwei Tiere halten? Wer füttert jeden Tag, reinigt den Stall und kontrolliert Zähne und Krallen? Wer versorgt die Tiere im Urlaub? Können wir Futter und Tierarztkosten bezahlen? Begründung: Meerschweinchen leben in Gruppen und leiden, wenn sie allein gehalten werden, deshalb braucht man mindestens zwei. Außerdem leben sie mehrere Jahre und brauchen täglich frisches Futter und Pflege, deshalb muss die Versorgung für die ganze Zeit geklärt sein.",
+        "criteria": [
+          "Ich nenne mehrere sinnvolle Fragen.",
+          "Ich begründe zwei Fragen mit den Bedürfnissen der Tiere.",
+          "Ich denke an Pflege, Kosten und Urlaub."
+        ]
+      },
+      "2": {
+        "prompt": "Im Supermarkt gibt es Eier mit dem Code 0, 1, 2 und 3 zu unterschiedlichen Preisen. Bewerte, welche Eier du kaufen würdest, und berücksichtige dabei Tierwohl, Preis und deine Gewohnheiten.",
+        "hints": [
+          "Was bedeuten die Ziffern für die Hennen?",
+          "Welche Abwägung musst du treffen?"
+        ],
+        "model": "Die Ziffer zeigt die Haltungsform: 0 ökologische Erzeugung mit Auslauf und Biofutter, 1 Freilandhaltung mit Auslauf ins Freie, 2 Bodenhaltung im Stall ohne Auslauf, 3 Käfig- oder Kleingruppenhaltung mit sehr wenig Platz. Je niedriger die Ziffer, desto mehr Platz und Auslauf haben die Hennen, desto teurer sind meist die Eier. Ich würde Eier mit 0 oder 1 kaufen, weil die Hennen dort ihr natürliches Verhalten wie Scharren und Picken besser ausleben können. Um den höheren Preis auszugleichen, kann man insgesamt etwas weniger Eier essen. Wer wenig Geld hat, muss abwägen; wichtig ist, bewusst zu entscheiden.",
+        "criteria": [
+          "Ich erkläre die Bedeutung der Ziffern.",
+          "Ich wäge Tierwohl und Preis ab.",
+          "Ich komme zu einer begründeten Entscheidung mit Konsequenz für den Alltag."
+        ]
+      }
+    },
+    "figures": [
+      "tiergerecht",
+      "eiercode"
+    ]
+  }
+]

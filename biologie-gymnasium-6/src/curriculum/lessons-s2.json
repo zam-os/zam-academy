@@ -1,0 +1,509 @@
+[
+  {
+    "id": "bg6-samen-frucht",
+    "lb": 2,
+    "title": "Samen und Frucht",
+    "period": "NT6 1.2 · Fortpflanzung, Wachstum und Individualentwicklung",
+    "intro": "In einer Kirsche steckt ein harter Kern, in einer Erbsenschote liegen mehrere Erbsen. Beides sind Früchte mit Samen, nur verschieden gebaut.",
+    "review": "Wiederholung aus NT5: Bau der Blüte, Bestäubung und Befruchtung",
+    "paragraphs": [
+      "Nach der Bestäubung und Befruchtung entwickelt sich in der Blüte etwas Neues. Aus der befruchteten Samenanlage wird der Samen, aus dem Fruchtknoten wird die Frucht. Die Frucht umschließt einen oder mehrere Samen und ist ihre Ausbreitungseinheit: Sie sorgt dafür, dass die Samen von der Mutterpflanze wegkommen. Bei der Kirsche wird die Wand des Fruchtknotens zu saftigem Fruchtfleisch und einem harten Steinkern, in dem der Samen liegt. Bei der Erbse wird der Fruchtknoten zur Hülse, in der mehrere Samen nebeneinander liegen. Im Alltag nennt man manche Samen Kerne und manche Früchte Nüsse; biologisch kommt es darauf an, was aus welchem Blütenteil entstanden ist.",
+      "Ein Samen besteht aus drei Teilen. Außen schützt ihn die feste Samenschale vor Austrocknung und Verletzungen. Innen liegt der Embryo, also die junge Pflanze mit Keimwurzel, Keimstängel und Keimknospe, aus der die ersten Laubblätter werden. Der dritte Teil ist ein Vorrat an Nährstoffen, das Nährgewebe, vor allem Stärke, Eiweiß und Fett. Davon lebt der Keimling, bis er selbst Zucker bilden kann. Bei der Bohne sind die Nährstoffe in zwei dicken Keimblättern gespeichert, die einen großen Teil des Samens ausmachen. Beim Maiskorn liegt neben dem kleinen Embryo ein großes, mehliges Nährgewebe. Klappst du eine eingeweichte Bohne auf, siehst du die Teile mit der Lupe oder dem Binokular."
+    ],
+    "takeaway": "Samenanlage → Samen, Fruchtknoten → Frucht. Die Frucht ist die Ausbreitungseinheit der Samen. Ein Samen besteht aus Samenschale (Schutz), Embryo (Keimwurzel, Keimstängel, Keimknospe) und Nährgewebe (Vorrat; bei der Bohne in den Keimblättern).",
+    "sourceIds": [
+      "lehrplan",
+      "kx-samen",
+      "kx-frucht",
+      "wp-gartenbohne"
+    ],
+    "quiz": {
+      "question": "Wozu dient das Nährgewebe eines Samens?",
+      "answer": "Es versorgt den Keimling mit Nährstoffen, bis er selbst Zucker bilden kann.",
+      "wrong": [
+        "Es schützt den Samen vor dem Austrocknen.",
+        "Es lockt Tiere an, die den Samen verbreiten."
+      ],
+      "explanation": "Das Nährgewebe ist der Vorrat des Keimlings. Den Schutz übernimmt die Samenschale, Tiere lockt das Fruchtfleisch der Frucht an."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Teile von Samen und Frucht",
+      "instruction": "Ordne jede Beschreibung dem richtigen Teil zu.",
+      "categories": [
+        "Samenschale",
+        "Embryo",
+        "Nährgewebe",
+        "Frucht"
+      ],
+      "entries": [
+        {
+          "text": "feste Hülle, schützt vor Austrocknung",
+          "target": 0,
+          "feedback": "Die Samenschale ist der Schutz."
+        },
+        {
+          "text": "besteht aus Keimwurzel, Keimstängel und Keimknospe",
+          "target": 1,
+          "feedback": "Der Embryo ist die junge Pflanze."
+        },
+        {
+          "text": "bei der Bohne in den zwei dicken Keimblättern",
+          "target": 2,
+          "feedback": "Hier liegt der Vorrat."
+        },
+        {
+          "text": "enthält vor allem Stärke und Eiweiß",
+          "target": 2,
+          "feedback": "Davon lebt der Keimling."
+        },
+        {
+          "text": "entsteht aus dem Fruchtknoten",
+          "target": 3,
+          "feedback": "Die Frucht umschließt die Samen."
+        },
+        {
+          "text": "bei der Kirsche: Fruchtfleisch und Steinkern",
+          "target": 3,
+          "feedback": "Der Samen liegt im Steinkern."
+        }
+      ],
+      "conclusion": "Die Frucht bringt den Samen fort; der Samen bringt alles für eine neue Pflanze mit."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Du weichst eine Bohne über Nacht ein, entfernst die Schale und klappst sie auf. Beschreibe, was du siehst, und nenne die Aufgabe jedes Teils.",
+        "hints": [
+          "Welche zwei großen Teile fallen auseinander?",
+          "Wo liegt die junge Pflanze?"
+        ],
+        "model": "Nach dem Entfernen der Samenschale fällt die Bohne in zwei dicke, gleich große Hälften auseinander: die Keimblätter. Sie enthalten das Nährgewebe, also den Vorrat an Stärke und Eiweiß für den Keimling. Zwischen ihnen liegt am Rand der kleine Embryo. Mit der Lupe erkenne ich die spitze Keimwurzel, den Keimstängel und die Keimknospe mit zwei winzigen, gefalteten Laubblättern. Die Samenschale hat den Samen vorher vor Austrocknung und Verletzung geschützt.",
+        "criteria": [
+          "Ich nenne Samenschale, Keimblätter und Embryo.",
+          "Ich gliedere den Embryo in Keimwurzel, Keimstängel und Keimknospe.",
+          "Ich nenne die Aufgabe jedes Teils."
+        ]
+      },
+      "2": {
+        "prompt": "In der Küche nennt man Tomaten Gemüse und Erdbeeren Obst. Erkläre, wie eine Biologin entscheidet, ob ein Pflanzenteil eine Frucht ist, und wende das auf die Tomate an.",
+        "hints": [
+          "Aus welchem Blütenteil entsteht eine Frucht?",
+          "Was findet man in einer Tomate?"
+        ],
+        "model": "Biologisch ist eine Frucht der Teil, der sich nach der Befruchtung aus dem Fruchtknoten einer Blüte entwickelt und die Samen umschließt. Ob etwas süß ist oder in der Küche als Obst gilt, spielt dafür keine Rolle. Eine Tomate entsteht aus dem Fruchtknoten der gelben Tomatenblüte und enthält viele Samen im Inneren. Biologisch ist sie also eine Frucht, auch wenn sie in der Küche als Gemüse verwendet wird.",
+        "criteria": [
+          "Ich nenne den Fruchtknoten als Ursprung der Frucht.",
+          "Ich trenne die biologische Bedeutung vom Küchenbegriff.",
+          "Ich wende das Kriterium richtig auf die Tomate an."
+        ]
+      }
+    },
+    "figures": [
+      "bohnensamen",
+      "bluete-zur-frucht"
+    ]
+  },
+  {
+    "id": "bg6-ausbreitung",
+    "lb": 2,
+    "title": "Ausbreitung von Früchten und Samen",
+    "period": "NT6 1.2 · Fortpflanzung, Wachstum und Individualentwicklung",
+    "intro": "Ein Löwenzahn bildet Hunderte Schirmchen, ein Kirschbaum süße Früchte. Beide verfolgen dasselbe Ziel auf ganz verschiedenen Wegen.",
+    "paragraphs": [
+      "Pflanzen können nicht laufen. Damit ihre Nachkommen nicht direkt unter der Mutterpflanze keimen, wo sie mit ihr um Licht, Wasser und Mineralstoffe konkurrieren würden, werden Früchte und Samen ausgebreitet. So können Pflanzen auch neue Standorte besiedeln. Viele nutzen den Wind: Der Löwenzahn bildet leichte Früchte mit einem Haarschirm, die Schirmchenflieger. Die Frucht des Ahorns hat einen Flügel und dreht sich beim Fallen wie ein Propeller; sie ist ein Schraubenflieger. Andere nutzen Tiere. Klettfrüchte wie die der Großen Klette haben Haken, die sich im Fell verfangen und später abgestreift werden. Lockfrüchte wie Kirsche oder Holunder haben süßes Fruchtfleisch. Vögel fressen sie, die harten Samen überstehen die Verdauung und werden anderswo ausgeschieden. Eichhörnchen und Eichelhäher verstecken Nüsse und Eicheln als Vorrat und vergessen manche davon.",
+      "Jede Strategie hat Kosten und Nutzen. Windfrüchte sind klein und billig; die Pflanze kann sehr viele davon bilden. Wohin sie fliegen, ist aber Zufall, und die meisten landen an Stellen, an denen sie nicht keimen können. Klettfrüchte brauchen kein Fruchtfleisch, sind aber auf vorbeistreifende Tiere angewiesen. Lockfrüchte kosten die Pflanze viel Zucker und Baustoffe, dafür tragen Vögel die Samen oft gezielt an Waldränder und Hecken, und manche Samen keimen nach der Darmpassage sogar besser. Welche Strategie sich lohnt, hängt vom Standort und den Tieren ab, die dort leben."
+    ],
+    "takeaway": "Ausbreitung verhindert Konkurrenz mit der Mutterpflanze und erschließt neue Standorte. Wind: Schirmchen- und Schraubenflieger (billig, viele, Zufall). Tiere: Klettfrüchte außen am Fell, Lockfrüchte innen durch Fressen, Verstecken von Vorräten (teurer, gezielter).",
+    "sourceIds": [
+      "lehrplan",
+      "wp-diaspore",
+      "kx-loewenzahn",
+      "wp-grosse-klette"
+    ],
+    "quiz": {
+      "question": "Welchen Vorteil hat eine Lockfrucht wie die Kirsche gegenüber einer Flugfrucht?",
+      "answer": "Vögel tragen die Samen gezielter fort, obwohl das Fruchtfleisch die Pflanze viel kostet.",
+      "wrong": [
+        "Die Kirsche kann dadurch viel mehr Samen bilden als der Löwenzahn.",
+        "Lockfrüchte brauchen keine Tiere zur Ausbreitung."
+      ],
+      "explanation": "Fruchtfleisch ist teuer, deshalb bildet ein Kirschbaum weniger Samen als ein Löwenzahn Schirmchen. Dafür bringen Vögel die Samen oft an günstige Stellen."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Wer verbreitet wen?",
+      "instruction": "Ordne jede Frucht ihrem Ausbreitungsweg zu.",
+      "categories": [
+        "Wind",
+        "Tiere außen (Klette)",
+        "Tiere innen (Lockfrucht)",
+        "Vorrat verstecken"
+      ],
+      "entries": [
+        {
+          "text": "Löwenzahn mit Haarschirm",
+          "target": 0,
+          "feedback": "Ein Schirmchenflieger."
+        },
+        {
+          "text": "Ahorn mit Flügel",
+          "target": 0,
+          "feedback": "Ein Schraubenflieger."
+        },
+        {
+          "text": "Große Klette mit Hakenspitzen",
+          "target": 1,
+          "feedback": "Sie hängt sich ins Fell."
+        },
+        {
+          "text": "Kirsche mit süßem Fruchtfleisch",
+          "target": 2,
+          "feedback": "Vögel fressen sie und scheiden den Kern aus."
+        },
+        {
+          "text": "Holunder mit dunklen Beeren",
+          "target": 2,
+          "feedback": "Auch eine Lockfrucht für Vögel."
+        },
+        {
+          "text": "Haselnuss mit harter Schale",
+          "target": 3,
+          "feedback": "Eichhörnchen verstecken sie und vergessen manche."
+        }
+      ],
+      "conclusion": "Die Form der Frucht verrät, wer oder was sie fortträgt."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre am Beispiel des Löwenzahns, wie der Bau der Frucht mit ihrer Ausbreitung zusammenhängt.",
+        "hints": [
+          "Wie ist die Frucht gebaut?",
+          "Was bewirkt der Haarschirm?"
+        ],
+        "model": "Die Löwenzahnfrucht ist sehr klein und leicht. Oben sitzt an einem Stiel ein Schirm aus feinen Haaren. Dieser Haarschirm bremst den Fall wie ein Fallschirm, sodass die Frucht lange in der Luft bleibt und schon von leichtem Wind weit fortgetragen werden kann. Weil eine Frucht wenig Baustoff kostet, bildet eine Pflanze sehr viele davon. So landen trotz vieler Verluste einige an Stellen, an denen sie keimen können.",
+        "criteria": [
+          "Ich beschreibe den Bau der Frucht.",
+          "Ich erkläre die Wirkung des Haarschirms.",
+          "Ich verbinde Bau und Funktion mit dem Wind."
+        ]
+      },
+      "2": {
+        "prompt": "Wäge Kosten und Nutzen der Windausbreitung beim Löwenzahn und der Ausbreitung durch Vögel bei der Kirsche gegeneinander ab.",
+        "hints": [
+          "Was muss die Pflanze jeweils herstellen?",
+          "Wie sicher kommen die Samen an einen guten Ort?"
+        ],
+        "model": "Der Löwenzahn investiert wenig in jede einzelne Frucht und kann deshalb sehr viele bilden. Der Wind trägt sie weit, aber zufällig; die meisten landen auf Straßen, Dächern oder im Wasser und keimen nicht. Die Kirsche muss viel Zucker und Baustoffe in das Fruchtfleisch stecken und bildet daher weniger Samen. Dafür fressen Vögel die Früchte gezielt und scheiden die Samen oft an Waldrändern und Hecken aus, wo gute Keimbedingungen herrschen. Beide Strategien sind erfolgreich: viele billige Versuche oder wenige teure, aber gezieltere.",
+        "criteria": [
+          "Ich nenne die Kosten beider Strategien.",
+          "Ich vergleiche Zahl und Erfolgsaussicht der Samen.",
+          "Ich komme zu einem begründeten Urteil."
+        ]
+      }
+    },
+    "figures": [
+      "ausbreitungstypen"
+    ],
+    "lab": "dispersal"
+  },
+  {
+    "id": "bg6-bionik-pflanzen",
+    "lb": 2,
+    "title": "Bionik: Pflanzen als Ideengeber",
+    "period": "NT6 1.2 · Fortpflanzung, Wachstum und Individualentwicklung",
+    "intro": "Ein Schweizer Ingenieur kam von einem Spaziergang mit seinem Hund zurück und fand Kletten im Fell. Daraus wurde eine Erfindung, die du heute an Schuhen und Jacken findest.",
+    "paragraphs": [
+      "Bionik verbindet Biologie und Technik. Ingenieurinnen und Ingenieure untersuchen, wie Strukturen von Lebewesen eine Aufgabe lösen, und übertragen das Prinzip auf technische Produkte. Ein klassisches Beispiel ist die Ahornfrucht: Ihr Flügel versetzt sie beim Fallen in Drehung, sodass sie wie ein kleiner Rotor langsam zu Boden sinkt. Auch beim Hubschrauber erzeugen drehende Rotorblätter eine Kraft nach oben; beim antriebslosen Sinken kann ein drehender Rotor sogar bremsen. Das Prinzip „drehender Flügel“ findet sich bei Frucht und Maschine. Die Haken der Klettfrucht verfangen sich in Tierhaaren. Nach diesem Vorbild entwickelte George de Mestral den Klettverschluss: Viele kleine Haken auf der einen Seite greifen in viele Schlaufen auf der anderen.",
+      "Ein weiteres Beispiel ist der Lotoseffekt. Die Blätter der Lotospflanze sind mit winzigen Noppen und Wachs bedeckt. Wassertropfen liegen nur auf den Spitzen, perlen ab und nehmen dabei Schmutzteilchen mit. Nach diesem Prinzip gibt es selbstreinigende Fassadenfarben und Beschichtungen. Bionik kopiert die Natur nicht einfach: Ein Klettverschluss besteht aus Kunststoff, nicht aus Pflanzenhaken, und ein Rotor ist viel größer und schwerer als eine Ahornfrucht. Übertragen wird das Wirkprinzip. Zum Vergleich gehst du deshalb so vor: Struktur in der Natur beschreiben, ihre Funktion nennen, das technische Produkt mit derselben Funktion suchen und Gemeinsamkeiten sowie Unterschiede benennen."
+    ],
+    "takeaway": "Bionik überträgt Wirkprinzipien von Lebewesen auf Technik: Ahornfrucht → Rotor (drehender Flügel bremst den Fall), Klette → Klettverschluss (Haken in Schlaufen), Lotusblatt → selbstreinigende Oberflächen (Wasser perlt ab). Übertragen wird das Prinzip, nicht die genaue Form.",
+    "sourceIds": [
+      "lehrplan",
+      "wp-bionik",
+      "wp-klettverschluss",
+      "wp-lotoseffekt"
+    ],
+    "quiz": {
+      "question": "Welches Prinzip übernimmt der Klettverschluss von der Klettfrucht?",
+      "answer": "Viele kleine Haken greifen in Schlaufen oder Haare und halten so fest.",
+      "wrong": [
+        "Ein klebriger Saft verbindet die beiden Seiten.",
+        "Ein drehender Flügel bremst den Fall."
+      ],
+      "explanation": "Die Klettfrucht hat elastische Haken, die sich in Fell verhaken. Beim Klettverschluss greifen Kunststoffhaken in Schlaufen. Der drehende Flügel ist das Prinzip der Ahornfrucht."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Vorbild und Technik",
+      "instruction": "Ordne jedes technische Produkt seinem pflanzlichen Vorbild zu.",
+      "categories": [
+        "Ahornfrucht",
+        "Klette",
+        "Lotusblatt"
+      ],
+      "entries": [
+        {
+          "text": "Rotorblätter, die beim Sinken drehen und bremsen",
+          "target": 0,
+          "feedback": "Drehender Flügel wie beim Schraubenflieger."
+        },
+        {
+          "text": "Kleiner Flugroboter mit nur einem Flügel, der sich dreht",
+          "target": 0,
+          "feedback": "Auch hier ist die Ahornfrucht das Vorbild."
+        },
+        {
+          "text": "Verschluss an Schuhen mit Haken und Schlaufen",
+          "target": 1,
+          "feedback": "Der Klettverschluss."
+        },
+        {
+          "text": "Blutdruckmanschette, die sich ohne Knopf schließt",
+          "target": 1,
+          "feedback": "Auch sie hält mit Klettverschluss."
+        },
+        {
+          "text": "Fassadenfarbe, an der Regen den Schmutz abwäscht",
+          "target": 2,
+          "feedback": "Der Lotoseffekt."
+        },
+        {
+          "text": "Beschichtung, von der Wassertropfen abperlen",
+          "target": 2,
+          "feedback": "Noppen und Wachs lassen Wasser abperlen."
+        }
+      ],
+      "conclusion": "Gleiche Aufgabe, gleiches Prinzip: In Natur und Technik finden sich oft ähnliche Lösungen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Vergleiche die Ahornfrucht mit einem Hubschrauberrotor: Nenne zwei Gemeinsamkeiten und zwei Unterschiede.",
+        "hints": [
+          "Was dreht sich jeweils?",
+          "Wie unterscheiden sich Antrieb, Material und Größe?"
+        ],
+        "model": "Gemeinsamkeiten: Bei beiden dreht sich ein Flügel um eine Achse, und die Drehung erzeugt eine Kraft, die gegen das Herunterfallen wirkt. Bei der Ahornfrucht verlangsamt das den Fall, beim Hubschrauber hält es die Maschine in der Luft. Unterschiede: Die Ahornfrucht hat keinen Motor; sie dreht sich nur durch die Luft beim Fallen und sinkt immer. Der Rotor wird von einem Motor angetrieben und kann den Hubschrauber steigen lassen. Außerdem besteht der Rotor aus Metall oder Kunststoff und ist viel größer.",
+        "criteria": [
+          "Ich nenne zwei Gemeinsamkeiten im Prinzip.",
+          "Ich nenne zwei Unterschiede.",
+          "Ich verwende den Begriff Bionik oder Wirkprinzip richtig."
+        ]
+      },
+      "2": {
+        "prompt": "Ein Hersteller wirbt: „Unsere Jacke ist bionisch, weil sie grün ist wie ein Blatt.“ Beurteile diese Werbung.",
+        "hints": [
+          "Was wird bei der Bionik übertragen?",
+          "Welche Funktion hätte eine bionische Jacke?"
+        ],
+        "model": "Die Werbung missbraucht den Begriff. Bionik bedeutet, ein Wirkprinzip aus der Natur, also wie eine Struktur eine Aufgabe löst, auf Technik zu übertragen. Eine grüne Farbe ahmt nur das Aussehen nach und löst keine Aufgabe nach einem natürlichen Vorbild. Bionisch wäre die Jacke zum Beispiel, wenn ihr Stoff nach dem Lotoseffekt Wasser und Schmutz abperlen ließe. Die Werbung will mit einem Fachwort verkaufen; sie ist daher eine bewertende, keine beschreibende Aussage.",
+        "criteria": [
+          "Ich erkläre, was Bionik wirklich bedeutet.",
+          "Ich begründe, warum die Farbe kein bionisches Prinzip ist.",
+          "Ich nenne ein passendes Gegenbeispiel."
+        ]
+      }
+    },
+    "figures": [
+      "bionik-pflanzen"
+    ]
+  },
+  {
+    "id": "bg6-ungeschlechtlich",
+    "lb": 2,
+    "title": "Ausläufer: Fortpflanzung ohne Blüte",
+    "period": "NT6 1.2 · Fortpflanzung, Wachstum und Individualentwicklung",
+    "intro": "Im Erdbeerbeet stehen im Herbst viel mehr Pflanzen als im Frühjahr, obwohl niemand gesät hat. Lange rote Triebe verraten, woher sie kommen.",
+    "paragraphs": [
+      "Samenpflanzen können sich auf zwei Wegen fortpflanzen. Bei der geschlechtlichen Fortpflanzung verschmelzen nach der Bestäubung eine männliche Keimzelle aus dem Pollen und eine Eizelle. Es entstehen Samen, deren Erbanlagen von zwei Eltern stammen. Bei der ungeschlechtlichen Fortpflanzung entsteht eine neue Pflanze aus einem Teil der Mutterpflanze, ohne Blüte und ohne Befruchtung. Die Erdbeere bildet dazu oberirdische Ausläufer. Das sind lange, dünne Seitentriebe, die über den Boden wachsen. An ihren Knoten entstehen Blätter und Wurzeln, und eine Tochterpflanze wächst an. Ist sie verwurzelt, kann die Verbindung reißen, und die Tochter lebt selbständig. Weitere Beispiele sind die Knollen der Kartoffel, aus denen neue Pflanzen austreiben, und Stecklinge, die Gärtner abschneiden und bewurzeln lassen.",
+      "Beide Wege haben Kosten und Nutzen. Ungeschlechtliche Fortpflanzung ist schnell und sicher: Es braucht keinen Partner und keine Bestäuber, und die Tochter wird anfangs von der Mutter mit Wasser und Nährstoffen versorgt. Die Nachkommen sind aber erbgleich und bleiben in der Nähe. Ist die Mutterpflanze gut an den Standort angepasst, ist das ein Vorteil. Verändern sich die Bedingungen oder kommt eine Krankheit, sind alle gleich anfällig. Geschlechtliche Fortpflanzung kostet mehr: Blüten, Nektar, Pollen und Früchte. Dafür sind die Nachkommen verschieden, einige kommen vielleicht mit neuen Bedingungen besser zurecht, und Samen können weit verbreitet werden und ungünstige Zeiten überdauern. Viele Pflanzen wie die Erdbeere nutzen beide Wege."
+    ],
+    "takeaway": "Ungeschlechtliche Fortpflanzung (Ausläufer, Knollen, Stecklinge): schnell, ohne Partner, Nachkommen erbgleich und nah. Geschlechtliche Fortpflanzung (Samen): aufwendiger, aber verschiedene Nachkommen, weite Ausbreitung, Überdauern. Viele Pflanzen nutzen beides.",
+    "sourceIds": [
+      "lehrplan",
+      "wp-auslaeufer",
+      "kx-erdbeere",
+      "wp-gartenerdbeere",
+      "kx-kartoffel"
+    ],
+    "quiz": {
+      "question": "Was gilt für Erdbeerpflanzen, die aus Ausläufern einer Mutterpflanze entstanden sind?",
+      "answer": "Sie haben dieselben Erbanlagen wie die Mutterpflanze.",
+      "wrong": [
+        "Sie sind durch Bestäubung entstanden.",
+        "Sie haben Erbanlagen von zwei verschiedenen Eltern."
+      ],
+      "explanation": "Ausläufer sind ungeschlechtliche Fortpflanzung: Ohne Befruchtung entstehen erbgleiche Tochterpflanzen. Erbanlagen von zwei Eltern gibt es nur bei Samen."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Geschlechtlich oder ungeschlechtlich?",
+      "instruction": "Ordne jede Aussage dem passenden Fortpflanzungsweg zu.",
+      "categories": [
+        "geschlechtlich",
+        "ungeschlechtlich"
+      ],
+      "entries": [
+        {
+          "text": "Eine Tochterpflanze wächst am Ausläufer an.",
+          "target": 1,
+          "feedback": "Ohne Blüte, ohne Befruchtung."
+        },
+        {
+          "text": "Aus einer Kartoffelknolle treibt eine neue Pflanze aus.",
+          "target": 1,
+          "feedback": "Auch das ist ungeschlechtlich."
+        },
+        {
+          "text": "Nachkommen sind erbgleich mit der Mutterpflanze.",
+          "target": 1,
+          "feedback": "Kennzeichen der ungeschlechtlichen Fortpflanzung."
+        },
+        {
+          "text": "Bienen bringen Pollen auf die Narbe.",
+          "target": 0,
+          "feedback": "Bestäubung gehört zur geschlechtlichen Fortpflanzung."
+        },
+        {
+          "text": "Nachkommen unterscheiden sich voneinander.",
+          "target": 0,
+          "feedback": "Erbanlagen von zwei Eltern mischen sich."
+        },
+        {
+          "text": "Samen überdauern den Winter im Boden.",
+          "target": 0,
+          "feedback": "Samen entstehen nur geschlechtlich."
+        }
+      ],
+      "conclusion": "Ungeschlechtlich: schnell und gleich. Geschlechtlich: aufwendig und vielfältig."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Beschreibe, wie aus einer Erdbeerpflanze im Sommer neue Pflanzen ohne Samen entstehen.",
+        "hints": [
+          "Was wächst aus der Mutterpflanze heraus?",
+          "Was passiert an den Knoten?"
+        ],
+        "model": "Die Erdbeerpflanze bildet im Sommer lange, dünne Ausläufer, die oberirdisch über den Boden wachsen. An bestimmten Stellen, den Knoten, entstehen kleine Blätter und Wurzeln. Die Wurzeln wachsen in die Erde, und eine Tochterpflanze entsteht. Solange der Ausläufer verbunden ist, versorgt die Mutterpflanze die Tochter mit. Später reißt die Verbindung oder vertrocknet, und die Tochter wächst selbständig weiter. Sie hat dieselben Erbanlagen wie die Mutter.",
+        "criteria": [
+          "Ich beschreibe den Ausläufer als oberirdischen Trieb.",
+          "Ich erkläre das Anwurzeln an den Knoten.",
+          "Ich nenne die Erbgleichheit."
+        ]
+      },
+      "2": {
+        "prompt": "Ein Bauer pflanzt auf einem großen Feld nur Kartoffeln aus Knollen einer einzigen Sorte. Bewerte Vor- und Nachteile, wenn eine neue Pflanzenkrankheit auftritt.",
+        "hints": [
+          "Wie ähnlich sind die Pflanzen untereinander?",
+          "Was wäre bei Pflanzen aus Samen anders?"
+        ],
+        "model": "Vorteil der Knollen: Alle Pflanzen sind erbgleich, wachsen gleichmäßig und haben die gewünschten Eigenschaften der Sorte, etwa Geschmack und Größe. Das erleichtert Anbau und Ernte. Tritt aber eine neue Krankheit auf, gegen die diese Sorte anfällig ist, sind alle Pflanzen gleich betroffen, und die ganze Ernte kann ausfallen. Bei Pflanzen aus Samen wären die Nachkommen verschieden; einige hätten vielleicht Eigenschaften, mit denen sie die Krankheit überstehen. Bauern bauen deshalb oft mehrere Sorten an.",
+        "criteria": [
+          "Ich nenne einen Vorteil der erbgleichen Pflanzen.",
+          "Ich erkläre das Risiko bei einer Krankheit.",
+          "Ich vergleiche mit der geschlechtlichen Fortpflanzung."
+        ]
+      }
+    },
+    "figures": [
+      "erdbeer-auslaeufer",
+      "fortpflanzung-kosten"
+    ]
+  },
+  {
+    "id": "bg6-keimung",
+    "lb": 2,
+    "title": "Keimung und Wachstum im Experiment",
+    "period": "NT6 1.2 · Fortpflanzung, Wachstum und Individualentwicklung",
+    "intro": "Kressesamen können jahrelang in der Tüte liegen, ohne zu keimen. Welche Bedingungen wecken sie auf? Das findest du selbst im Experiment heraus.",
+    "paragraphs": [
+      "Ein trockener Samen ist in einer Ruhephase. Damit er keimt, muss er zuerst Wasser aufnehmen. Er quillt, wird dicker, die Samenschale reißt auf, und die Lebensvorgänge im Embryo beginnen. Bei einer Bohne tritt zuerst die Keimwurzel aus und wächst nach unten. Dann schiebt sich der Keimstängel als Haken nach oben durch die Erde. An der Oberfläche entfalten sich die ersten Laubblätter und werden im Licht grün. Bis dahin lebt der Keimling von den Vorräten im Samen; die Keimblätter der Bohne schrumpfen und fallen schließlich ab. Ab jetzt bildet die Pflanze mit ihren Blättern selbst Zucker.",
+      "Welche Außenfaktoren die Keimung beeinflussen, prüfst du hypothesengeleitet. Hypothese: Wenn Kressesamen kein Wasser bekommen, keimen sie nicht. Du setzt eine Schale mit trockener Watte und eine Kontrollschale mit feuchter Watte an; Licht, Temperatur und Samenzahl sind gleich. Genauso prüfst du Licht, Temperatur und Sauerstoff, jeweils mit nur einer Variable. Typische Ergebnisse: Ohne Wasser keimt nichts. Unter abgekochtem Wasser mit einer Ölschicht fehlt Sauerstoff, und die Samen keimen nicht. In der Kälte des Kühlschranks keimen sie in derselben Zeit nicht. Kresse keimt im Dunkeln, die Keimlinge werden aber lang, dünn und gelblich. Für das Keimen braucht sie also kein Licht, für das gesunde Wachstum danach schon. Andere Pflanzen können sich anders verhalten; manche Samen keimen nur im Licht."
+    ],
+    "takeaway": "Zum Keimen brauchen Samen Wasser, Sauerstoff und eine passende Temperatur; Licht brauchen viele Samen nicht zum Keimen, aber zum Wachsen und Ergrünen. Jeder Faktor wird mit genau einer Variable und einem Kontrollversuch geprüft.",
+    "sourceIds": [
+      "lehrplan",
+      "wp-keimung",
+      "kx-bohne"
+    ],
+    "quiz": {
+      "question": "Kressesamen liegen unter abgekochtem Wasser mit einer Ölschicht und keimen nicht. Welcher Faktor fehlt?",
+      "answer": "Sauerstoff",
+      "wrong": [
+        "Wasser",
+        "Licht"
+      ],
+      "explanation": "Die Samen liegen im Wasser, Wasser fehlt also nicht. Abkochen entfernt gelöste Luft, und das Öl verhindert, dass neuer Sauerstoff hineingelangt. Licht braucht Kresse zum Keimen nicht."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Eine Bohne keimt",
+      "instruction": "Bringe die Schritte der Keimung in die richtige Reihenfolge.",
+      "categories": [],
+      "entries": [
+        {
+          "text": "Der trockene Samen nimmt Wasser auf und quillt.",
+          "target": 0,
+          "feedback": "Ohne Wasser beginnt nichts."
+        },
+        {
+          "text": "Die Samenschale reißt auf.",
+          "target": 1,
+          "feedback": "Der Samen ist zu dick für seine Schale geworden."
+        },
+        {
+          "text": "Die Keimwurzel tritt aus und wächst nach unten.",
+          "target": 2,
+          "feedback": "Zuerst verankert sich der Keimling."
+        },
+        {
+          "text": "Der Keimstängel schiebt sich als Haken durch die Erde.",
+          "target": 3,
+          "feedback": "Der Haken schützt die zarte Spitze."
+        },
+        {
+          "text": "Die ersten Laubblätter entfalten sich und werden grün.",
+          "target": 4,
+          "feedback": "Jetzt kann die Pflanze selbst Zucker bilden."
+        },
+        {
+          "text": "Die verbrauchten Keimblätter schrumpfen und fallen ab.",
+          "target": 5,
+          "feedback": "Der Vorrat ist aufgebraucht."
+        }
+      ],
+      "conclusion": "Erst die Vorräte, dann das eigene Licht: Der Keimling wechselt von der Versorgung aus dem Samen zur eigenen Photosynthese."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Plane ein Experiment zur Hypothese: „Kresse braucht Wärme zum Keimen.“",
+        "hints": [
+          "Was ist die Variable, was sind Konstanten?",
+          "Wie sieht der Kontrollversuch aus?"
+        ],
+        "model": "Ich setze zwei gleiche Schalen mit gleich feuchter Watte und je 20 Kressesamen an. Die Kontrollschale steht bei Zimmertemperatur, etwa 20 °C, die Versuchsschale im Kühlschrank bei etwa 4 °C. Weil es im Kühlschrank dunkel ist, stelle ich die Kontrollschale unter einen Karton, damit das Licht konstant bleibt. Die Temperatur ist die einzige Variable. Drei Tage lang zähle ich jeden Morgen die gekeimten Samen und trage sie in eine Tabelle ein. Keimen im Kühlschrank deutlich weniger, ist die Hypothese bestätigt.",
+        "criteria": [
+          "Ich verändere nur die Temperatur.",
+          "Ich halte Wasser, Licht und Samenzahl konstant.",
+          "Ich nenne Messgröße und Auswertung."
+        ]
+      },
+      "2": {
+        "prompt": "Ein Gärtner sät Bohnen zu tief in nasse, verdichtete Erde, und kaum eine keimt. Erkläre mithilfe der Keimungsfaktoren, woran das liegen kann.",
+        "hints": [
+          "Welcher Faktor fehlt in nasser, dichter Erde?",
+          "Was passiert, wenn der Vorrat zu früh aufgebraucht ist?"
+        ],
+        "model": "In nasser, verdichteter Erde sind die Zwischenräume mit Wasser gefüllt statt mit Luft. Den Samen fehlt dann Sauerstoff, den sie zum Keimen brauchen, ähnlich wie im Versuch unter Wasser mit Ölschicht. Außerdem ist nasse Erde im Frühjahr oft kalt, und Kälte bremst die Keimung. Liegt der Samen zu tief, muss der Keimstängel einen langen Weg zum Licht zurücklegen; reicht der Vorrat in den Keimblättern nicht, stirbt der Keimling, bevor er grüne Blätter bilden kann.",
+        "criteria": [
+          "Ich nenne Sauerstoffmangel als Ursache.",
+          "Ich nenne einen weiteren Faktor wie Kälte.",
+          "Ich erkläre die Rolle des Nährstoffvorrats bei zu tiefer Saat."
+        ]
+      }
+    },
+    "figures": [
+      "keimung-bohne"
+    ],
+    "lab": "germination"
+  }
+]

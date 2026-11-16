@@ -1,0 +1,504 @@
+[
+  {
+    "id": "bg6-fortpflanzung-wasser-land",
+    "lb": 6,
+    "title": "Fortpflanzung im Wasser und an Land",
+    "period": "NT6 1.3 · Fortpflanzung, Wachstum und Individualentwicklung",
+    "intro": "Ein Forellenweibchen gibt Tausende Eier ins Wasser ab, eine Zauneidechse vergräbt wenige Eier im warmen Sand. Beide Wege passen zu ihrem Lebensraum.",
+    "paragraphs": [
+      "Bei allen Wirbeltieren verschmelzen bei der Befruchtung eine Eizelle und eine Spermienzelle. Wo das geschieht, unterscheidet sich. Die meisten Fische haben eine äußere Befruchtung: Das Weibchen gibt Eier ins Wasser ab, den Laich, und das Männchen gibt seine Spermienzellen darüber. Die Eier haben keine feste Schale; sie würden an der Luft sofort austrocknen. Auch die meisten Amphibien laichen im Wasser, und die Larven wachsen dort heran. Diese Tiere sind für ihre Fortpflanzung an Gewässer gebunden. Weil viele Eier gefressen werden oder verpilzen, legen sie sehr viele davon.",
+      "Reptilien, Vögel und Säugetiere haben eine innere Befruchtung: Die Spermienzellen gelangen in den Körper des Weibchens. Reptilien legen Eier mit einer ledrigen Schale an Land, oft in warmen Sand oder Laub. Vögel legen Eier mit einer harten Kalkschale und brüten sie mit ihrer Körperwärme aus. In diesen Eiern liegt der Embryo in einer eigenen, mit Flüssigkeit gefüllten Eihülle, wie in einem kleinen Teich; eine Schale schützt ihn vor Austrocknung, Poren lassen Luft hindurch, und der Dotter versorgt ihn mit Nahrung. Bei den meisten Säugetieren entwickelt sich das Junge im Mutterleib und wird lebend geboren. Von den Fischen bis zu den Säugetieren nimmt so die Unabhängigkeit vom Wasser zu: Eihülle, Schale oder Mutterleib bieten dem Embryo das feuchte Milieu, das er braucht."
+    ],
+    "takeaway": "Fische und Amphibien: meist äußere Befruchtung, Laich ohne Schale im Wasser, an Gewässer gebunden. Reptilien, Vögel, Säugetiere: innere Befruchtung; beschalte Eier mit flüssigkeitsgefüllter Eihülle an Land oder Entwicklung im Mutterleib. Zunehmende Unabhängigkeit vom Wasser.",
+    "sourceIds": [
+      "lehrplan",
+      "kx-wirbeltiere",
+      "wp-amnion",
+      "kx-reptilien",
+      "kx-ei"
+    ],
+    "quiz": {
+      "question": "Warum können Fische ihren Laich nicht an Land ablegen?",
+      "answer": "Die Eier haben keine feste Schale und würden an der Luft austrocknen.",
+      "wrong": [
+        "Weil Fischeier nur mit Kalkschale befruchtet werden können.",
+        "Weil Fische ihre Eier ausbrüten müssen."
+      ],
+      "explanation": "Laich hat nur eine dünne Hülle. Erst Eier mit ledriger oder kalkiger Schale und einer flüssigkeitsgefüllten Eihülle schützen den Embryo an Land vor dem Austrocknen."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Wasser oder Land?",
+      "instruction": "Ordne jedes Merkmal der Fortpflanzung im Wasser oder an Land zu.",
+      "categories": [
+        "Fortpflanzung im Wasser",
+        "Fortpflanzung an Land"
+      ],
+      "entries": [
+        {
+          "text": "äußere Befruchtung im Wasser",
+          "target": 0,
+          "feedback": "Typisch für die meisten Fische und Frösche."
+        },
+        {
+          "text": "Laich ohne feste Schale",
+          "target": 0,
+          "feedback": "Er würde an Land austrocknen."
+        },
+        {
+          "text": "sehr viele Eier pro Weibchen",
+          "target": 0,
+          "feedback": "Viele gehen verloren."
+        },
+        {
+          "text": "innere Befruchtung im Körper des Weibchens",
+          "target": 1,
+          "feedback": "Unabhängig vom Wasser."
+        },
+        {
+          "text": "Eier mit ledriger oder kalkiger Schale",
+          "target": 1,
+          "feedback": "Schutz vor Austrocknung."
+        },
+        {
+          "text": "Embryo in einer flüssigkeitsgefüllten Eihülle",
+          "target": 1,
+          "feedback": "Ein eigener kleiner Teich im Ei."
+        }
+      ],
+      "conclusion": "Je unabhängiger vom Wasser, desto besser muss der Embryo vor Austrocknung geschützt sein."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Vergleiche die Fortpflanzung einer Forelle mit der eines Haushuhns in Bezug auf Befruchtung, Ei und Ort der Entwicklung.",
+        "hints": [
+          "Wo verschmelzen die Keimzellen?",
+          "Wie ist das Ei geschützt, und wo entwickelt es sich?"
+        ],
+        "model": "Bei der Forelle ist die Befruchtung äußerlich: Das Weibchen legt den Laich ins Wasser, und das Männchen gibt seine Spermienzellen darüber. Die Eier haben keine feste Schale und entwickeln sich im kühlen Wasser. Beim Huhn ist die Befruchtung innerlich, im Körper der Henne. Sie legt ein Ei mit harter Kalkschale an Land, in dem der Embryo in einer flüssigkeitsgefüllten Eihülle liegt und vom Dotter ernährt wird. Die Henne brütet das Ei mit ihrer Körperwärme aus.",
+        "criteria": [
+          "Ich vergleiche äußere und innere Befruchtung.",
+          "Ich vergleiche den Schutz der Eier.",
+          "Ich nenne den Ort der Entwicklung."
+        ]
+      },
+      "2": {
+        "prompt": "Erkläre, warum man sagt, die Wirbeltiere seien bei der Fortpflanzung „zunehmend unabhängig vom Wasser“, und begründe, welche Rolle Schale und Eihülle dabei spielen.",
+        "hints": [
+          "Was braucht jeder Embryo?",
+          "Wie bekommen ihn die verschiedenen Klassen?"
+        ],
+        "model": "Jeder Embryo braucht eine feuchte Umgebung, sonst trocknet er aus. Fische und die meisten Amphibien bieten diese Feuchtigkeit nur, indem sie im Wasser laichen; sie sind an Gewässer gebunden. Reptilien und Vögel legen Eier an Land. Dort liegt der Embryo in einer Eihülle mit Flüssigkeit, wie in einem eigenen kleinen Teich, und eine Schale verhindert das Austrocknen, lässt aber Luft durch Poren. Säugetiere bieten diese feuchte Umgebung im Mutterleib. Von Klasse zu Klasse wird das Wasser also durch immer bessere Schutzhüllen ersetzt.",
+        "criteria": [
+          "Ich nenne den Bedarf des Embryos an Feuchtigkeit.",
+          "Ich erkläre die Funktion von Schale und Eihülle.",
+          "Ich stelle die Reihe der Klassen begründet dar."
+        ]
+      }
+    },
+    "figures": [
+      "wasser-land-reihe"
+    ]
+  },
+  {
+    "id": "bg6-metamorphose",
+    "lb": 6,
+    "title": "Metamorphose: vom Laich zum Frosch",
+    "period": "NT6 1.3 · Fortpflanzung, Wachstum und Individualentwicklung",
+    "intro": "Im März liegen dicke Laichballen im Gartenteich, im Juni hüpfen winzige Frösche durchs Gras. Dazwischen verwandelt sich der ganze Körper.",
+    "paragraphs": [
+      "Amphibien bedeutet „doppellebig“: Viele leben als Larve im Wasser und als erwachsenes Tier meist an Land. Der Grasfrosch laicht im zeitigen Frühjahr. Ein Laichballen enthält meist 1000 bis 2500 Eier, jedes in einer Gallerthülle. Aus den Eiern schlüpfen Larven, die Kaulquappen. Zuerst atmen sie mit büschelartigen Außenkiemen, die bald von einer Hautfalte überwachsen werden; dann atmen sie mit Innenkiemen. Kaulquappen schwimmen mit einem Ruderschwanz, fressen Algen und Pflanzenreste und haben einen langen, gewundenen Darm.",
+      "Nach einigen Wochen beginnt die Metamorphose, die Umwandlung zum erwachsenen Tier. Zuerst wachsen die Hinterbeine, dann brechen die Vorderbeine durch. Gleichzeitig bilden sich Lungen; die Kaulquappe schnappt an der Oberfläche nach Luft. Der Schwanz wird zurückgebildet, und seine Baustoffe werden für den Umbau genutzt. Der Darm wird kürzer, denn der junge Frosch frisst nun kleine Tiere. Nach etwa zwei bis drei Monaten, je nach Wassertemperatur, geht der Jungfrosch an Land. Er atmet mit Lunge und feuchter Haut und springt mit seinen langen Hinterbeinen. Larve und erwachsenes Tier nutzen verschiedene Lebensräume und verschiedene Nahrung und machen sich dadurch keine Konkurrenz."
+    ],
+    "takeaway": "Metamorphose des Grasfrosches: Laich → Kaulquappe mit Außenkiemen → Innenkiemen, Ruderschwanz, Pflanzenkost → Hinterbeine → Vorderbeine und Lungen → Schwanz zurückgebildet → Jungfrosch an Land mit Lunge und Hautatmung, frisst kleine Tiere.",
+    "sourceIds": [
+      "lehrplan",
+      "wp-metamorphose",
+      "wp-grasfrosch",
+      "kx-frosch"
+    ],
+    "quiz": {
+      "question": "Welche Beine wachsen bei der Kaulquappe zuerst?",
+      "answer": "Die Hinterbeine",
+      "wrong": [
+        "Die Vorderbeine",
+        "Alle vier Beine gleichzeitig"
+      ],
+      "explanation": "Zuerst wachsen die Hinterbeine, erst später brechen die Vorderbeine durch. Der Schwanz wird danach zurückgebildet."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Ein Froschleben im Zeitraffer",
+      "instruction": "Bringe die Stadien der Entwicklung des Grasfrosches in die richtige Reihenfolge.",
+      "categories": [],
+      "entries": [
+        {
+          "text": "Laichballen mit vielen Eiern in Gallerthüllen",
+          "target": 0,
+          "feedback": "Im zeitigen Frühjahr im flachen Wasser."
+        },
+        {
+          "text": "Kaulquappe mit büschelartigen Außenkiemen",
+          "target": 1,
+          "feedback": "Kurz nach dem Schlüpfen."
+        },
+        {
+          "text": "Kaulquappe mit Innenkiemen und Ruderschwanz frisst Algen",
+          "target": 2,
+          "feedback": "Eine Hautfalte bedeckt die Kiemen."
+        },
+        {
+          "text": "Die Hinterbeine wachsen",
+          "target": 3,
+          "feedback": "Das erste Beinpaar."
+        },
+        {
+          "text": "Die Vorderbeine brechen durch, Lungen entwickeln sich",
+          "target": 4,
+          "feedback": "Jetzt schnappt sie nach Luft."
+        },
+        {
+          "text": "Der Schwanz ist zurückgebildet, der Jungfrosch geht an Land",
+          "target": 5,
+          "feedback": "Die Metamorphose ist abgeschlossen."
+        }
+      ],
+      "conclusion": "Bei der Metamorphose wird der ganze Körper umgebaut: Atmung, Fortbewegung und Ernährung ändern sich."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Vergleiche eine Kaulquappe mit einem erwachsenen Grasfrosch in Lebensraum, Atmung, Fortbewegung und Ernährung.",
+        "hints": [
+          "Wo leben beide?",
+          "Womit atmen, bewegen und ernähren sie sich?"
+        ],
+        "model": "Die Kaulquappe lebt nur im Wasser, der erwachsene Frosch überwiegend an Land in feuchter Umgebung. Die Kaulquappe atmet mit Kiemen, der Frosch mit einfachen Lungen und über seine feuchte Haut. Die Kaulquappe schwimmt mit einem Ruderschwanz, der Frosch springt mit langen Hinterbeinen und schwimmt mit Schwimmhäuten. Die Kaulquappe frisst Algen und Pflanzenreste und hat einen langen Darm, der Frosch frisst Insekten, Würmer und Schnecken und hat einen kürzeren Darm.",
+        "criteria": [
+          "Ich vergleiche Lebensraum und Atmung.",
+          "Ich vergleiche Fortbewegung.",
+          "Ich vergleiche Ernährung und Darm."
+        ]
+      },
+      "2": {
+        "prompt": "Erkläre, welchen Vorteil es für den Grasfrosch hat, dass Larve und erwachsenes Tier verschieden leben, und welche Gefahr darin liegt, wenn Laichgewässer verschwinden.",
+        "hints": [
+          "Konkurrieren Kaulquappen und Frösche um Nahrung?",
+          "Was braucht die Art unbedingt für ihre Fortpflanzung?"
+        ],
+        "model": "Kaulquappen leben im Wasser und fressen Algen, erwachsene Frösche leben an Land und fressen Insekten und Würmer. Weil sie verschiedene Lebensräume und verschiedene Nahrung nutzen, machen sich Junge und Alte keine Konkurrenz; insgesamt finden mehr Tiere genug Nahrung. Die Kehrseite: Der Grasfrosch braucht für die Fortpflanzung unbedingt ein Gewässer, weil Laich und Larven nur im Wasser überleben. Verschwinden Teiche und Tümpel, kann er sich nicht mehr fortpflanzen, auch wenn an Land genug Nahrung wäre.",
+        "criteria": [
+          "Ich erkläre den Vorteil fehlender Konkurrenz.",
+          "Ich nenne die Bindung an Gewässer.",
+          "Ich leite die Gefahr durch verschwindende Gewässer ab."
+        ]
+      }
+    },
+    "figures": [
+      "kaulquappe-frosch"
+    ],
+    "lab": "metamorphosis"
+  },
+  {
+    "id": "bg6-nesthocker-nestfluechter",
+    "lb": 6,
+    "title": "Nesthocker und Nestflüchter",
+    "period": "NT6 1.3 · Fortpflanzung, Wachstum und Individualentwicklung",
+    "intro": "Junge Amseln sind beim Schlüpfen nackt und blind. Junge Stockenten watscheln schon nach wenigen Stunden hinter ihrer Mutter zum Wasser.",
+    "paragraphs": [
+      "Ein Vogelei ist ein kleines Versorgungspaket. Die Kalkschale schützt den Embryo; durch feine Poren gelangt Luft hinein. Unter der Schale liegen zwei Schalenhäute, am stumpfen Ende eine Luftkammer. Das Eiklar enthält viel Wasser und schützt wie ein Polster. Der gelbe Dotter ist der Nahrungsvorrat. Auf ihm liegt die kleine Keimscheibe, aus der sich bei einem befruchteten Ei das Küken entwickelt. Zwei gedrehte Hagelschnüre halten den Dotter in der Mitte. Während des Brütens wärmen die Eltern das Ei, bis das Junge schlüpft.",
+      "Wie weit ein Junges beim Schlüpfen oder bei der Geburt entwickelt ist, unterscheidet sich stark. Nesthocker wie Amsel und Meise schlüpfen nackt oder kaum befiedert und mit geschlossenen Augen. Sie können sich nicht selbst wärmen, bleiben im Nest und werden von den Eltern wochenlang gefüttert. Nestflüchter wie Stockente und Haushuhn schlüpfen mit Daunen und offenen Augen, laufen und schwimmen bald und picken schon selbst Nahrung; die Mutter führt und wärmt sie. Das gibt es auch bei Säugetieren: Junge Kaninchen kommen nackt und blind in einem Bau zur Welt, junge Feldhasen mit Fell und offenen Augen auf freiem Feld. Nestflüchter entwickeln sich länger im Ei oder Mutterleib; Nesthocker kommen früher zur Welt und brauchen danach mehr Fürsorge."
+    ],
+    "takeaway": "Vogelei: Kalkschale mit Poren, Schalenhäute, Luftkammer, Eiklar, Dotter mit Keimscheibe, Hagelschnüre. Nesthocker (Amsel, Kaninchen): nackt, blind, lange gefüttert. Nestflüchter (Stockente, Feldhase): Daunen oder Fell, offene Augen, bald selbständig.",
+    "sourceIds": [
+      "lehrplan",
+      "wp-nesthocker",
+      "wp-nestfluechter",
+      "kx-huhn",
+      "kx-ei"
+    ],
+    "quiz": {
+      "question": "Welches Tier ist ein Nestflüchter?",
+      "answer": "Die Stockente",
+      "wrong": [
+        "Die Amsel",
+        "Das Kaninchen"
+      ],
+      "explanation": "Junge Stockenten schlüpfen mit Daunen und offenen Augen und können bald schwimmen. Amseln und Kaninchen sind nackt und blind und bleiben lange im Nest."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Nesthocker oder Nestflüchter?",
+      "instruction": "Ordne jedes Merkmal oder Tier zu.",
+      "categories": [
+        "Nesthocker",
+        "Nestflüchter"
+      ],
+      "entries": [
+        {
+          "text": "Junge Amsel",
+          "target": 0,
+          "feedback": "Nackt und blind im Nest."
+        },
+        {
+          "text": "Junges Kaninchen im Bau",
+          "target": 0,
+          "feedback": "Ein Nesthocker unter den Säugetieren."
+        },
+        {
+          "text": "wird wochenlang gefüttert und gewärmt",
+          "target": 0,
+          "feedback": "Typisch für Nesthocker."
+        },
+        {
+          "text": "Küken des Haushuhns",
+          "target": 1,
+          "feedback": "Pickt bald selbst."
+        },
+        {
+          "text": "Junger Feldhase auf dem Feld",
+          "target": 1,
+          "feedback": "Mit Fell und offenen Augen geboren."
+        },
+        {
+          "text": "läuft oder schwimmt kurz nach dem Schlüpfen",
+          "target": 1,
+          "feedback": "Typisch für Nestflüchter."
+        }
+      ],
+      "conclusion": "Beide Wege kommen bei Vögeln und Säugetieren vor."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Nenne die Teile eines Hühnereis und ihre Aufgabe für die Entwicklung des Kükens.",
+        "hints": [
+          "Welche Teile schützen, welche versorgen?",
+          "Woraus entsteht das Küken?"
+        ],
+        "model": "Die Kalkschale schützt den Embryo vor Verletzung und Austrocknung; durch ihre Poren gelangt Luft hinein. Darunter liegen zwei Schalenhäute, und am stumpfen Ende bildet sich eine Luftkammer. Das Eiklar enthält viel Wasser, polstert und liefert Eiweiß. Der Dotter ist der Vorrat an Nährstoffen. Auf ihm liegt die Keimscheibe; aus ihr entwickelt sich bei einem befruchteten Ei das Küken. Die Hagelschnüre halten den Dotter in der Mitte, sodass die Keimscheibe nicht an der Schale anliegt.",
+        "criteria": [
+          "Ich nenne mindestens fünf Teile.",
+          "Ich ordne jedem Teil eine Aufgabe zu.",
+          "Ich nenne die Keimscheibe als Ursprung des Kükens."
+        ]
+      },
+      "2": {
+        "prompt": "Feldhasen leben auf offenen Feldern, Kaninchen in Erdbauten. Erkläre, warum es zu dieser Lebensweise passt, dass junge Feldhasen Nestflüchter und junge Kaninchen Nesthocker sind.",
+        "hints": [
+          "Wo sind die Jungen nach der Geburt geschützt?",
+          "Was müssen Junge ohne Bau können?"
+        ],
+        "model": "Kaninchen bringen ihre Jungen in einem geschützten Erdbau zur Welt. Dort sind die nackten, blinden Jungen vor Feinden und Kälte sicher, und die Mutter kann sie in Ruhe säugen, bis sie entwickelt sind. Feldhasen haben keinen Bau; ihre Jungen liegen in einer flachen Mulde auf dem offenen Feld. Sie müssen deshalb gleich mit Fell geboren werden, um nicht zu frieren, offene Augen haben und sich bald bewegen können, um Feinden zu entkommen. Die Art der Entwicklung passt also zum Schutz, den der Lebensraum bietet.",
+        "criteria": [
+          "Ich beschreibe die Lebensräume beider Arten.",
+          "Ich erkläre, warum Kaninchenjunge im Bau geschützt sind.",
+          "Ich begründe die Merkmale der Feldhasenjungen."
+        ]
+      }
+    },
+    "figures": [
+      "vogelei",
+      "nesthocker-nestfluechter"
+    ]
+  },
+  {
+    "id": "bg6-elternaufwand",
+    "lb": 6,
+    "title": "Viele Junge oder viel Fürsorge?",
+    "period": "NT6 1.3 · Fortpflanzung, Wachstum und Individualentwicklung",
+    "intro": "Ein Kabeljauweibchen legt im Durchschnitt etwa eine Million Eier, eine Amsel meist vier bis fünf. Trotzdem gibt es beide Arten seit sehr langer Zeit.",
+    "paragraphs": [
+      "Unter Elternaufwand versteht man alles, was Eltern in ihren Nachwuchs investieren: Baustoffe und Energie für Eier, Zeit und Kraft für Nestbau, Brüten, Füttern und Verteidigen. Weil ein Tier nur begrenzt Energie hat, gibt es zwei Wege. Der Kabeljau legt sehr viele kleine Eier ins Meer und kümmert sich nicht weiter darum. Die allermeisten Eier und Larven werden gefressen oder sterben, aber bei so vielen überleben genug. Auch der Grasfrosch legt Laichballen mit meist 1000 bis 2500 Eiern und betreibt keine Brutpflege.",
+      "Beim Dreistachligen Stichling baut das Männchen ein Nest am Gewässergrund, lockt Weibchen zur Eiablage, bewacht die Eier und fächelt ihnen mit den Brustflossen frisches Wasser zu. Amseln legen meist vier bis fünf Eier; das Weibchen brütet, und beide Eltern füttern die Nestlinge. Säugetiere bringen oft nur wenige Junge zur Welt, säugen sie und schützen sie lange; beim Menschen dauert die Fürsorge viele Jahre. Es gilt: Je mehr Aufwand die Eltern in jedes einzelne Junge stecken, desto weniger Nachkommen können sie haben, aber desto größer ist die Überlebenschance jedes Jungen. Beide Wege führen dazu, dass im Durchschnitt etwa so viele Junge überleben, dass die Art erhalten bleibt."
+    ],
+    "takeaway": "Elternaufwand: Energie, Zeit und Schutz, die Eltern in Nachkommen investieren. Viele Nachkommen ohne Brutpflege (Kabeljau, Grasfrosch) oder wenige Nachkommen mit viel Fürsorge (Stichling, Amsel, Säugetiere). Je mehr Aufwand pro Junges, desto weniger Junge, desto höher ihre Überlebenschance.",
+    "sourceIds": [
+      "lehrplan",
+      "wp-elternaufwand",
+      "wp-brutpflege",
+      "wp-kabeljau",
+      "wp-stichling"
+    ],
+    "quiz": {
+      "question": "Warum legt der Kabeljau so viele Eier?",
+      "answer": "Ohne Brutpflege werden fast alle gefressen oder sterben; nur bei sehr vielen Eiern überleben genug.",
+      "wrong": [
+        "Weil seine Eier besonders groß und nährstoffreich sind.",
+        "Weil die Eltern jedes Ei einzeln bewachen."
+      ],
+      "explanation": "Der Kabeljau investiert wenig in jedes einzelne Ei. Die hohe Zahl gleicht die großen Verluste aus. Große Eier oder Bewachung wären viel Elternaufwand."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Wie viel Elternaufwand?",
+      "instruction": "Ordne jede Art einer Strategie zu.",
+      "categories": [
+        "viele Nachkommen, kaum Fürsorge",
+        "wenige Nachkommen, viel Fürsorge"
+      ],
+      "entries": [
+        {
+          "text": "Kabeljau: im Durchschnitt etwa eine Million Eier ins Meer",
+          "target": 0,
+          "feedback": "Keine Brutpflege."
+        },
+        {
+          "text": "Grasfrosch: Laichballen ohne Bewachung",
+          "target": 0,
+          "feedback": "Viele Eier, keine Brutpflege."
+        },
+        {
+          "text": "Erdkröte: lange Laichschnüre im Teich",
+          "target": 0,
+          "feedback": "Auch sie überlässt den Laich sich selbst."
+        },
+        {
+          "text": "Stichlingsmännchen bewacht Nest und Eier",
+          "target": 1,
+          "feedback": "Brutpflege durch den Vater."
+        },
+        {
+          "text": "Amsel: vier bis fünf Eier, beide Eltern füttern",
+          "target": 1,
+          "feedback": "Wenige Junge, viel Fürsorge."
+        },
+        {
+          "text": "Reh: meist ein bis zwei Kitze, monatelang gesäugt",
+          "target": 1,
+          "feedback": "Säugetiere investieren viel."
+        }
+      ],
+      "conclusion": "Zahl der Nachkommen und Fürsorge hängen zusammen: Energie lässt sich nur einmal ausgeben."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre am Beispiel von Kabeljau und Amsel den Zusammenhang zwischen Anzahl der Nachkommen und Brutpflege.",
+        "hints": [
+          "Wie viele Eier legen beide, und wie viel kümmern sie sich?",
+          "Wie groß ist jeweils die Überlebenschance eines einzelnen Jungen?"
+        ],
+        "model": "Der Kabeljau legt im Durchschnitt etwa eine Million Eier ins Meer und betreibt keine Brutpflege. Die Überlebenschance jedes einzelnen Eis ist sehr gering, aber wegen der riesigen Zahl überleben einige. Die Amsel legt meist nur vier bis fünf Eier, brütet sie aus, und beide Eltern füttern und wärmen die Jungen. Jedes Junge hat dadurch eine viel größere Überlebenschance. Weil Energie begrenzt ist, gilt: Je mehr Elternaufwand pro Junges, desto weniger Nachkommen.",
+        "criteria": [
+          "Ich vergleiche die Zahl der Nachkommen.",
+          "Ich vergleiche die Brutpflege.",
+          "Ich formuliere den Zusammenhang als Je-desto-Satz."
+        ]
+      },
+      "2": {
+        "prompt": "Ein Stichlingsmännchen fächelt seinen Eiern ständig frisches Wasser zu und verjagt Feinde. Erkläre, welchen Nutzen und welche Kosten dieses Verhalten für das Männchen hat.",
+        "hints": [
+          "Was brauchen die Eier im Nest?",
+          "Was kann das Männchen in dieser Zeit nicht tun?"
+        ],
+        "model": "Nutzen: Durch das Fächeln bekommen die Eier frisches, sauerstoffreiches Wasser, und durch das Bewachen werden weniger Eier gefressen. Mehr Junge überleben, und damit gibt das Männchen seine Erbanlagen erfolgreicher weiter. Kosten: In dieser Zeit verbraucht das Männchen viel Energie, kann selbst wenig fressen und ist für Fressfeinde auffällig. Es kann sich auch nicht gleichzeitig um weitere Weibchen und Nester kümmern. Der Elternaufwand lohnt sich, weil die Überlebenschance der Jungen deutlich steigt.",
+        "criteria": [
+          "Ich nenne den Nutzen für die Eier.",
+          "Ich nenne Kosten für das Männchen.",
+          "Ich wäge Nutzen und Kosten ab."
+        ]
+      }
+    },
+    "figures": [
+      "elternaufwand"
+    ]
+  },
+  {
+    "id": "bg6-kommunikation",
+    "lb": 6,
+    "title": "Signale an Artgenossen",
+    "period": "NT6 1.3 · Fortpflanzung, Wachstum und Individualentwicklung",
+    "intro": "Im Frühjahr singt die Amsel vom Dachfirst, der Stichling bekommt eine rote Kehle, und im Teich rufen die Frösche. Wem gelten diese Signale?",
+    "paragraphs": [
+      "Tiere derselben Art verständigen sich durch Signale; das nennt man innerartliche Kommunikation. Signale können Laute, Farben, Bewegungen oder Düfte sein. Bei der Fortpflanzung haben sie wichtige Aufgaben: Sie helfen, einen Partner der eigenen Art zu finden, zeigen, dass ein Tier zur Paarung bereit ist, und halten Rivalen fern. Das Amselmännchen singt im Frühjahr besonders in der Morgen- und Abenddämmerung von hohen Singwarten. Sein Gesang zeigt anderen Männchen, dass das Revier besetzt ist, und lockt Weibchen an. Froschmännchen rufen im Laichgewässer; viele Arten haben Schallblasen, die die Rufe verstärken. Weibchen finden so zum Gewässer und zu einem Partner.",
+      "Manche Signale sind sichtbar. Zur Fortpflanzungszeit bekommt das Männchen des Dreistachligen Stichlings eine leuchtend rote Kehle und Brust; diese Balztracht zeigt Weibchen und Rivalen, dass es bereit ist. Hat es ein Nest gebaut, lockt es ein Weibchen mit einem Zickzacktanz dorthin. Der Rothirsch röhrt in der Brunft laut und schreckt damit andere Hirsche ab. Weil die Signale arttypisch sind, verwechseln Tiere ihre Partner nicht mit anderen Arten. Signale haben aber auch Kosten: Ein auffälliger Sänger oder eine leuchtende Farbe kann auch Fressfeinde anlocken. Deshalb zeigen viele Tiere ihre Balztracht nur zur Fortpflanzungszeit."
+    ],
+    "takeaway": "Innerartliche Kommunikation durch Signale (Laute, Farben, Bewegungen). Bedeutung für die Fortpflanzung: Partner der eigenen Art finden, Paarungsbereitschaft zeigen, Rivalen fernhalten. Beispiele: Gesang der Amsel, Rufe der Frösche, Balztracht und Zickzacktanz des Stichlings, Röhren des Rothirschs.",
+    "sourceIds": [
+      "lehrplan",
+      "wp-balz",
+      "wp-stichling",
+      "kx-voegel"
+    ],
+    "quiz": {
+      "question": "Welche Bedeutung hat der Gesang eines Amselmännchens im Frühjahr?",
+      "answer": "Er zeigt anderen Männchen das besetzte Revier und lockt Weibchen an.",
+      "wrong": [
+        "Er warnt alle Tiere des Gartens vor Katzen.",
+        "Er hilft dem Männchen, Würmer im Boden zu finden."
+      ],
+      "explanation": "Reviergesang ist ein Signal an Artgenossen: Rivalen sollen fernbleiben, Weibchen sollen kommen. Warnrufe klingen anders, und Würmer findet die Amsel mit Augen und Gehör."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Wozu das Signal?",
+      "instruction": "Ordne jedes Signal seiner Hauptaufgabe zu.",
+      "categories": [
+        "Partner anlocken",
+        "Rivalen fernhalten"
+      ],
+      "entries": [
+        {
+          "text": "Das Stichlingsmännchen tanzt im Zickzack vor einem Weibchen.",
+          "target": 0,
+          "feedback": "Es lockt das Weibchen zum Nest."
+        },
+        {
+          "text": "Froschmännchen rufen im Laichgewässer.",
+          "target": 0,
+          "feedback": "Weibchen finden zum Teich und zum Partner."
+        },
+        {
+          "text": "Ein Pfau schlägt vor einer Henne ein Rad.",
+          "target": 0,
+          "feedback": "Ein auffälliges Balzsignal."
+        },
+        {
+          "text": "Der Rothirsch röhrt in der Brunft.",
+          "target": 1,
+          "feedback": "Er schreckt andere Hirsche ab."
+        },
+        {
+          "text": "Ein Stichlingsmännchen mit roter Kehle droht einem anderen.",
+          "target": 1,
+          "feedback": "Die rote Farbe wirkt auch auf Rivalen."
+        },
+        {
+          "text": "Ein Rotkehlchen singt, wenn ein anderes Männchen in sein Revier kommt.",
+          "target": 1,
+          "feedback": "Der Gesang verteidigt das Revier."
+        }
+      ],
+      "conclusion": "Viele Signale wirken doppelt: Sie locken Weibchen und warnen Rivalen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Beschreibe das Balzverhalten des Dreistachligen Stichlings und erkläre die Bedeutung der Signale.",
+        "hints": [
+          "Wie verändert sich das Männchen?",
+          "Was tut es, wenn ein Weibchen kommt?"
+        ],
+        "model": "Zur Fortpflanzungszeit bekommt das Stichlingsmännchen eine leuchtend rote Kehle und Brust, die Balztracht. Es besetzt ein Revier und baut am Gewässergrund ein Nest aus Pflanzenteilen. Andere Männchen erkennen an der roten Farbe einen Rivalen und werden vertrieben. Nähert sich ein Weibchen mit dickem Bauch voller Eier, schwimmt das Männchen im Zickzacktanz auf es zu und führt es zum Nest. Die Signale sorgen also dafür, dass Rivalen fernbleiben und ein paarungsbereites Weibchen der eigenen Art zum Nest findet.",
+        "criteria": [
+          "Ich beschreibe Balztracht und Nestbau.",
+          "Ich beschreibe den Zickzacktanz.",
+          "Ich erkläre die Bedeutung für Partnerwahl und Rivalen."
+        ]
+      },
+      "2": {
+        "prompt": "Viele Vogelmännchen sind im Frühjahr auffällig gefärbt oder singen laut. Wäge Nutzen und Kosten dieser Signale ab.",
+        "hints": [
+          "Was gewinnt das Männchen dadurch?",
+          "Wer bemerkt die Signale außer den Artgenossen?"
+        ],
+        "model": "Nutzen: Auffällige Farben und lauter Gesang helfen dem Männchen, ein Weibchen der eigenen Art zu finden und sein Revier gegen Rivalen zu verteidigen. Ein gutes Revier mit viel Nahrung erhöht die Chance, Junge großzuziehen. Kosten: Die Signale verbrauchen Energie, und sie machen das Männchen auch für Fressfeinde wie Sperber oder Katzen auffälliger. Deshalb zeigen viele Vögel das Prachtkleid nur in der Brutzeit und singen von Warten, von denen sie gut flüchten können. Insgesamt überwiegt der Nutzen, sonst gäbe es diese Signale nicht.",
+        "criteria": [
+          "Ich nenne den Nutzen für die Fortpflanzung.",
+          "Ich nenne Kosten wie Energie und Fressfeinde.",
+          "Ich komme zu einem begründeten Urteil."
+        ]
+      }
+    },
+    "figures": [
+      "balz-signale"
+    ]
+  }
+]
