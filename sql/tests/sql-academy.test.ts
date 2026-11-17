@@ -619,10 +619,24 @@ describe("version badge in English mode", () => {
 		/<span class="zam-version"[^>]*>([^<]*)<\/span>/
 			.exec(indexHtml)?.[1]
 			.replaceAll("&nbsp;", " ") ?? "";
-	it("translates the badge of this app", () => {
-		expect(german).toMatch(/^· Version 0\.\d+ · /);
+	it("translates the badge of this app at its actual version", () => {
+		const version = /^· Version (\d+)\.(\d+) · /.exec(german);
+		expect(version).not.toBeNull();
+		const [, major, minor] = version!;
+		const [label, title] =
+			Number(major) === 0
+				? ["teacher review open", "Not yet reviewed by a teacher"]
+				: Number(major) === 1
+					? ["reviewed by a teacher", "Reviewed by a teacher"]
+					: ["new package generation", "New package generation"];
 		expect(englishVersionBadge(german)).toEqual({
-			text: german.replace(/ · [^·]+$/, " · teacher review open"),
+			text: `· Version ${major}.${minor} · ${label.replaceAll(" ", " ")}`,
+			title,
+		});
+	});
+	it("translates version 0", () => {
+		expect(englishVersionBadge("· Version 0.3 · Lehrkraftprüfung offen")).toEqual({
+			text: "· Version 0.3 · teacher review open",
 			title: "Not yet reviewed by a teacher",
 		});
 	});
