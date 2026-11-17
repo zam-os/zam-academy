@@ -66,13 +66,15 @@ chrome.stdio[4].on("data", (chunk) => {
 		}
 	}
 });
-function send(method, params = {}, sessionId) {
+// The first command waits for Chrome's cold start, which can take longer than
+// 15 s on a busy CI runner; every later command keeps the short limit.
+function send(method, params = {}, sessionId, timeout = 15000) {
 	return new Promise((resolve, reject) => {
 		const id = ++seq;
 		const timer = setTimeout(() => {
 			pending.delete(id);
 			reject(Error(`Chrome timed out: ${method}`));
-		}, 15000);
+		}, timeout);
 		pending.set(id, {
 			resolve: (value) => {
 				clearTimeout(timer);
@@ -134,9 +136,12 @@ const route = async (hash) => {
 	await frame();
 };
 try {
-	const { targetId } = await send("Target.createTarget", {
-		url: "about:blank",
-	});
+	const { targetId } = await send(
+		"Target.createTarget",
+		{ url: "about:blank" },
+		undefined,
+		60000,
+	);
 	session = (await send("Target.attachToTarget", { targetId, flatten: true }))
 		.sessionId;
 	await page("Page.enable");
