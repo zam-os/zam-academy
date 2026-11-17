@@ -1,6 +1,12 @@
 import { WORLDS } from "./course/worlds";
 import "./styles.css";
-import { island, MOODS, type Mood } from "./companion/render";
+import "./island.css";
+import type { Mood } from "./companion/render";
+import { newCrossing, stoneValue, type Crossing } from "./companion/crossing";
+import { companionPanel, miloMessage } from "./companion/panel";
+import { islandMap } from "./ui/island-map";
+import type { World } from "./course/worlds";
+import { escapeHtml } from "./html";
 import { teacherPanel, loadTeacherPlayer } from "./media/player";
 import {
 	describe,
@@ -34,7 +40,7 @@ import {
 	type Task,
 } from "./practice/tasks";
 import { ProgressStore } from "./storage/progress";
-import { board, markedNumeral } from "./ui/board";
+import { board, markedNumeral, placeValuePreview } from "./ui/board";
 import { validLessonHash, lessonIdFromHash } from "./zam/zam-link";
 import { COURSE_LINKS, forestLesson } from "./course/catalog";
 import { ForestSession } from "./course/session";
@@ -61,33 +67,26 @@ function activeLessonId() {
 function activeWorld() {
 	return forest?.lesson.world ?? "forest";
 }
-function lessonNavigation(): string {
-	const world = activeWorld();
-	return `<nav class="forest-nav" aria-label="Lernwelten und Lektionen"><div class="world-tabs">${WORLDS.map((w) => `<a href="#lesson=${COURSE_LINKS.find((l) => (l.world ?? "forest") === w.id)?.id}" aria-current="${world === w.id ? "true" : "false"}">${w.icon} ${w.label}</a>`).join("")}</div><label class="forest-compact" for="forest-lesson">Deine Lektion<select id="forest-lesson">${WORLDS.map(
-		(w) =>
-			`<optgroup label="${w.label}">${COURSE_LINKS.filter(
-				(l) => (l.world ?? "forest") === w.id,
-			)
-				.map(
-					(l) =>
-						`<option value="${l.id}" ${activeLessonId() === l.id ? "selected" : ""}>${l.shortTitle}</option>`,
-				)
-				.join("")}</optgroup>`,
-	).join("")}</select></label><div class="forest-links">${COURSE_LINKS.filter(
-		(l) => (l.world ?? "forest") === world,
-	)
-		.map(
-			(lesson) =>
-				`<a class="forest-link" href="#lesson=${lesson.id}" aria-current="${activeLessonId() === lesson.id ? "page" : "false"}"><span aria-hidden="true">${lesson.icon}</span><strong>${lesson.shortTitle}</strong><small>Zwei Missionen entdecken</small></a>`,
-		)
-		.join("")}</div></nav>`;
-}
+let atlasOpen = false;
+let browsing: World = "forest";
 let view: "child" | "parent" | "settings" = "child";
 let feedback = "";
-let encouraging = false;
-let celebrating = false;
-let hello = false;
-let eating = false;
+let reaction: Mood = "curious";
+let reactionKey = "";
+let waves = 0;
+let game: Crossing | null = null;
+let round = 0;
+let retry = false;
+let sixInTens = false;
+function lessonNavigation(): string {
+	return islandMap(
+		activeLessonId(),
+		activeWorld(),
+		browsing,
+		atlasOpen,
+		view === "child",
+	);
+}
 let busy = false;
 let showReset = false;
 let answerDraft = "";
@@ -100,14 +99,6 @@ try {
 	quiet = localStorage.getItem("mathe4-quiet") === "true";
 	theme = localStorage.getItem("mathe4-theme") ?? "auto";
 } catch {}
-const escapeHtml = (s: string) =>
-	s.replace(
-		/[&<>"']/g,
-		(c) =>
-			({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[
-				c
-			] ?? c,
-	);
 const date = (at: number) =>
 	new Intl.DateTimeFormat("de-DE", {
 		day: "numeric",
@@ -138,33 +129,62 @@ function taskKey(p = store.state): string {
 			? `${p.later.id}/${p.later.index}`
 			: `journey/${p.step}`;
 }
-function mood(): Mood {
-	return (forest?.store.state.resting ?? store.state.resting)
-		? "resting"
-		: eating
-			? "snack"
-			: encouraging
-				? "encouraging"
-				: celebrating
-					? "celebrating"
-					: hello
-						? "welcoming"
-						: "curious";
-}
-function message(): string {
-	return (forest?.store.state.resting ?? store.state.resting)
-		? "Ich mache es mir gemütlich. Deine Entdeckungen warten auf dich."
-		: eating
-			? "Mmmh, danke! Jetzt genießen wir unsere Entdeckung."
-			: encouraging
-				? "Wir probieren einen anderen Weg. Ich bin bei dir."
-				: celebrating
-					? "Das haben wir zusammen entdeckt! Unser Zuhause wächst."
-					: hello
-						? "Wie schön, dass du da bist!"
-						: "Kleine Schritte, große Entdeckungen. Wollen wir loslegen?";
+function companionKey(): string {
+	return forest ? forestKey(forest.store.state) : taskKey();
 }
 
+function respond(mood: Mood): void {
+	reaction = mood;
+	reactionKey = companionKey();
+}
+
+function companionState() {
+	const p = forest?.store.state ?? store.state;
+	const mood: Mood = p.resting
+		? "resting"
+		: game?.step === 3
+			? "celebrating"
+			: game
+				? retry
+					? "encouraging"
+					: "curious"
+				: reactionKey === companionKey()
+					? reaction
+					: "curious";
+	return {
+		mood,
+		world: activeWorld(),
+		rewards: p.rewards,
+		consumed: p.consumed,
+		game: p.resting ? null : game,
+		retry,
+		waves,
+		sixInTens,
+		welcome: forest
+			? forest.store.state.stage === "welcome"
+			: store.state.step === "welcome",
+	};
+}
+
+function moveMilo(motion: "wave" | "cheer" | "nod" | "cross" | "snack"): void {
+	const target = app.querySelector(
+		motion === "wave" ? ".milo-paw" : ".milo-motion",
+	);
+	target?.classList.add(`motion-${motion}`);
+}
+
+// Playing with Milo leaves the lesson DOM, inputs and open explanations in place.
+function redrawMilo(focus?: string): void {
+	const panel = app.querySelector<HTMLElement>(".companion");
+	if (!panel) return;
+	const state = companionState();
+	panel.innerHTML = companionPanel(state);
+	panel.classList.toggle("playing", !!state.game);
+	if (focus)
+		panel.querySelector<HTMLElement>(focus)?.focus({ preventScroll: true });
+	const voice = document.querySelector<HTMLElement>("#milo-voice");
+	if (voice) voice.textContent = miloMessage(state);
+}
 function chime(): void {
 	if (!sound) return;
 	try {
@@ -199,14 +219,8 @@ function notices(): string {
 }
 
 function companion(): string {
-	const p = forest?.store.state ?? store.state;
-	const snack =
-		p.rewards.includes("mission-b") && !p.consumed.includes("mission-b");
-	return `<aside class="companion" aria-label="Milo und eure Insel">${island(mood(), p.rewards.includes("mission-a"), p.rewards.includes("mission-b"))}
-    <div class="companion-copy"><div class="companion-title"><h2>Milo</h2><span class="mood-label">${MOODS[mood()].replace(/^Milo /, "")}</span></div><p id="milo-message" aria-live="polite">${message()}</p>
-    <div class="care-actions"><button data-action="hello">♡ Hallo, Milo!</button><button data-action="snack" ${snack ? "" : "disabled"}>${p.consumed.includes("mission-b") ? "Apfel geteilt" : "♧ Apfel teilen"}</button></div>
-    <button class="text-button" data-action="rest">${p.resting ? "Aufwachen und weitermachen" : "Eine Pause machen"}</button>
-    <p class="care-note">Milo geht es auch in deinen Lernpausen gut.</p></div></aside>`;
+	const state = companionState();
+	return `<aside class="companion ${state.game ? "playing" : ""}" aria-label="Milo und eure Insel">${companionPanel(state)}</aside>`;
 }
 
 function taskView(task: Task): string {
@@ -256,11 +270,11 @@ function taskView(task: Task): string {
 function lesson(): string {
 	const p = store.state;
 	if (p.resting)
-		return `<div class="pause"><span class="large-symbol" aria-hidden="true">☾</span><p class="eyebrow">Eine gute Zeit für eine Pause</p><h2>Alles wartet auf dich.</h2><p>Milo ruht sich aus. Deine Werkstatt und deine Entdeckungen bleiben erhalten.</p><button class="primary" data-action="rest">Gemeinsam weitermachen</button></div>`;
+		return `<div class="pause"><span class="large-symbol" aria-hidden="true">☾</span><p class="eyebrow">Eine gute Zeit für eine Pause</p><h2 id="lesson-heading" tabindex="-1">Alles wartet auf dich.</h2><p>Milo ruht sich aus. Deine Werkstatt und deine Entdeckungen bleiben erhalten.</p><button class="primary" data-action="rest">Gemeinsam weitermachen</button></div>`;
 	const task = currentTask();
 	if (task) return taskView(task);
 	if (p.step === "welcome")
-		return `<span class="mission-label">Dein erstes Inselabenteuer</span><h2 id="lesson-heading" tabindex="-1">Milos Stellenwert-Werkstatt</h2><p class="lead">Hilf Milo, seine Werkstatt einzurichten. Baue Zahlen und entdecke, was jede Stelle bedeutet.</p><div class="welcome-example">${board([6, 0, 3, 0])}</div><p>Zwei kleine Missionen. Du kannst jederzeit eine Pause machen.</p><button class="primary" data-action="next">Mit Milo loslegen <span aria-hidden="true">→</span></button><p class="fine-print">Mit kleinen Zahlen starten · bis 999 999 weiterdenken</p>`;
+		return `<span class="mission-label">Dein erstes Inselabenteuer</span><h2 id="lesson-heading" tabindex="-1">Milos Stellenwert-Werkstatt</h2><p class="lead">Baue mit Milo Zahlen aus Hundertern, Zehnern und Einern. Probier schon mal aus, was passiert, wenn die 6 ihren Platz wechselt.</p><button class="primary" data-action="next">Mit Milo loslegen <span aria-hidden="true">→</span></button>${placeValuePreview(sixInTens)}`;
 	if (p.step === "learn-a")
 		return `<span class="mission-label">Mission 1 · Zahlen bauen</span><h2 id="lesson-heading" tabindex="-1">Jede Stelle hat ihren Wert.</h2><p class="lead">Links stehen die großen Bündel, rechts die Einer. Auch eine leere Spalte hat ihren Platz.</p>${board([6, 0, 3, 0])}<p class="explanation-callout"><strong>306</strong> heißt: 3 Hunderter, kein Zehner, 6 Einer. Die Null bewahrt den Platz der Zehner.</p><p>Vergleiche 306 und 360: Die 6 steht zuerst bei den Einern, dann bei den Zehnern. Ihr Wert ändert sich von 6 auf 60.</p><p class="merke"><strong>Merke:</strong> Eine Stelle weiter links bedeutet den zehnfachen Wert. Bei 30 407 bleiben Tausender- und Zehnerstelle leer. Die Nullen bewahren beide Plätze.</p><button class="primary" data-action="next">Jetzt baue ich eine andere Zahl</button>`;
 	if (p.step === "mission-a-end")
@@ -270,7 +284,7 @@ function lesson(): string {
 	if (p.step === "explain")
 		return `<span class="mission-label">Dein Gedanke zählt</span><h2 id="lesson-heading" tabindex="-1">Erkläre es Milo auf deine Art.</h2><p class="lead">Warum ist ein Hunderter genauso viel wie zehn Zehner?</p><p>Zeige es mit deinen Händen, mit Dingen auf dem Tisch oder erzähle es laut. Du kannst es auch jemandem zu Hause erklären.</p><p class="fine-print">Wir nehmen nichts auf. Deine Erklärung wird hier nicht automatisch bewertet.</p><div class="button-row"><button class="primary" data-action="explained">Ich habe es erklärt</button><button data-action="next">Weiter zu meinen neuen Aufgaben</button></div>`;
 	const completed = p.completed["mission-b"];
-	return `<div class="milestone"><span class="large-symbol" aria-hidden="true">✧</span><span class="mission-label">Deine Werkstatt ist bereit</span><h2 id="lesson-heading" tabindex="-1">Eine neue Entdeckung für dich und Milo.</h2><p>Du hast Stellenwerte ausprobiert und Bündel getauscht. Schau dir deine Schritte in der Elternansicht gemeinsam an.</p><p class="explanation-callout">${p.consumed.includes("mission-b") ? "Milo hat sich über euren Apfel gefreut." : "Ein Apfel wartet auf Milo. Du kannst ihn links mit ihm teilen."} Jetzt ist ein guter Moment zum Aufhören.</p><button data-action="practice-start" data-level="1">Weiterüben: Stufe 1</button><button data-action="practice-start" data-level="2">Weiterüben: Stufe 2</button><button class="primary" data-action="rest">Für heute fertig</button>${completed !== undefined && laterEligible(p, Date.now()) ? '<button data-action="later">Mit drei neuen Aufgaben nachschauen</button>' : '<p class="fine-print">Ab morgen kannst du mit drei neuen Aufgaben nachschauen, woran du dich erinnerst.</p>'}${feedback ? `<p role="status">${escapeHtml(feedback)}</p>` : ""}</div>`;
+	return `<div class="milestone"><span class="large-symbol" aria-hidden="true">✧</span><span class="mission-label">Deine Werkstatt ist bereit</span><h2 id="lesson-heading" tabindex="-1">Eine neue Entdeckung für dich und Milo.</h2><p>Du hast Stellenwerte ausprobiert und Bündel getauscht. Schau dir deine Schritte in der Elternansicht gemeinsam an.</p><p class="explanation-callout">${p.consumed.includes("mission-b") ? "Milo hat sich über euren Apfel gefreut." : "Ein Apfel wartet auf Milo. Du kannst ihn mit Milo teilen."} Jetzt ist ein guter Moment zum Aufhören.</p><button data-action="practice-start" data-level="1">Weiterüben: Stufe 1</button><button data-action="practice-start" data-level="2">Weiterüben: Stufe 2</button><button class="primary" data-action="rest">Für heute fertig</button>${completed !== undefined && laterEligible(p, Date.now()) ? '<button data-action="later">Mit drei neuen Aufgaben nachschauen</button>' : '<p class="fine-print">Ab morgen kannst du mit drei neuen Aufgaben nachschauen, woran du dich erinnerst.</p>'}${feedback ? `<p role="status">${escapeHtml(feedback)}</p>` : ""}</div>`;
 }
 
 function parent(): string {
@@ -313,23 +327,10 @@ function render(): void {
 		answerDraft = "";
 		answerKey = taskKey(p);
 	}
-	app.innerHTML = `<header class="site-header"><a class="brand" href="#lesson=${LESSON_ID}"><span class="brand-logo" aria-hidden="true">z</span><span>ZAM <strong>Entdeckerinsel</strong><small>Mathematik · 4. Klasse · Bayern</small></span></a></header>
-    <nav class="main-nav" aria-label="Hauptnavigation"><div>${(["child", "parent", "settings"] as const).map((v) => `<button data-action="view" data-view="${v}" aria-current="${view === v ? "page" : "false"}">${v === "child" ? "Mein Abenteuer" : v === "parent" ? "Für Eltern" : "Einstellungen"}</button>`).join("")}</div><button class="sound-toggle" data-action="sound" aria-pressed="${sound}" aria-label="Entdeckungsklänge ${sound ? "ausschalten" : "einschalten"}">${sound ? "♪ Klang an" : "♪ Klang aus"}</button></nav>
-    ${lessonNavigation()}${notices()}${loading ? '<p class="notice" role="status">Deine Lektion wird geladen.</p>' : ""}${activeStorage().mode === "recovery" ? recovery() : view === "parent" ? `<main>${forest?.parentView() ?? parent()}</main>` : view === "settings" ? `<main>${settings()}</main>` : `<main><div class="welcome-heading"><div><p class="eyebrow">Ein kleiner Schritt. Eine neue Entdeckung.</p><h1>Willkommen ${activeWorld() === "forest" ? "im Zahlenwald" : activeWorld() === "measure" ? "auf dem Messmarkt" : activeWorld() === "shape" ? "in der Formenbucht" : activeWorld() === "chance" ? "im Zufallsgarten" : "bei den Inselexpeditionen"}.</h1></div><span class="session-pill">Du bestimmst dein Tempo</span></div><div class="adventure-layout">${companion()}<div class="learning-column"><section class="lesson-card" aria-label="${forest ? escapeHtml(forest.lesson.title) : "Milos Stellenwert-Lektion"}" ${busy ? 'aria-busy="true"' : ""}>${forest?.lessonView() ?? lesson()}</section>${forest?.teacherPanel() ?? teacherPanel()}<div class="island-route" aria-label="Deine Lernwelt">${WORLDS.map((w) => `<span class="${w.id === activeWorld() ? "current" : ""}">${w.icon} ${w.label}<small>${w.lead}</small></span>`).join("")}</div></div></div><p class="progress-note">${activeProgress.rewards.length} von 2 Missionen dieser Lektion geübt · Pausen sind immer willkommen.</p></main>`}
-    <footer><span>Lernen. Entdecken. Gemeinsam wachsen.</span><span>Mathematik-Werkstatt · lokal auf deinem Gerät</span></footer>`;
-	app.querySelectorAll<HTMLButtonElement>("button").forEach((button) => {
-		button.addEventListener("click", () => {
-			void act(button).catch((error) => {
-				feedback =
-					error instanceof Error
-						? error.message
-						: "Das hat gerade nicht geklappt. Versuche es bitte noch einmal.";
-				if (forest) forest.feedback = feedback;
-				busy = false;
-				render();
-			});
-		});
-	});
+	app.innerHTML = `<header class="site-header"><a class="brand" href="#lesson=${LESSON_ID}"><span class="brand-logo" aria-hidden="true">Z</span><span>ZAM <strong>Entdeckerinsel</strong><small>Mathematik · 4. Klasse · Bayern</small></span></a>
+    <nav class="main-nav" aria-label="Hauptnavigation"><div>${(["child", "parent", "settings"] as const).map((v) => `<button data-action="view" data-view="${v}" aria-current="${view === v ? "page" : "false"}">${v === "child" ? "Mein Abenteuer" : v === "parent" ? "Für Eltern" : "Einstellungen"}</button>`).join("")}</div><button class="sound-toggle" data-action="sound" aria-pressed="${sound}" aria-label="Entdeckungsklänge ${sound ? "ausschalten" : "einschalten"}">${sound ? "♪ Klang an" : "♪ Klang aus"}</button></nav></header>
+    ${lessonNavigation()}${notices()}${loading ? '<p class="notice" role="status">Deine Lektion wird geladen.</p>' : ""}${activeStorage().mode === "recovery" ? recovery() : view === "parent" ? `<main>${forest?.parentView() ?? parent()}</main>` : view === "settings" ? `<main>${settings()}</main>` : `<main class="adventure"><div class="adventure-layout">${companion()}<div class="learning-column"><section class="lesson-card" aria-label="${forest ? escapeHtml(forest.lesson.title) : "Milos Stellenwert-Lektion"}" ${busy ? 'aria-busy="true"' : ""}><div class="mission-progress" role="img" aria-label="${activeProgress.rewards.length} von zwei Missionen geschafft"><span>Deine Missionen</span>${["mission-a", "mission-b"].map((id, i) => `<span class="mission-dot ${activeProgress.rewards.includes(id) ? "done" : ""}" aria-hidden="true">${activeProgress.rewards.includes(id) ? "✓" : i + 1}</span>`).join("")}</div>${forest?.lessonView() ?? lesson()}</section>${forest?.teacherPanel() ?? teacherPanel()}</div></div></main>`}
+    <footer><span>ZAM Academy · Entdeckerinsel</span><span>Mathematik-Werkstatt · lokal auf deinem Gerät</span></footer>`;
 	app
 		.querySelector<HTMLInputElement>("#answer")
 		?.addEventListener("keydown", (event) => {
@@ -366,15 +367,10 @@ function render(): void {
 			} catch {}
 			render();
 		});
-	app
-		.querySelector<HTMLSelectElement>("#forest-lesson")
-		?.addEventListener("change", (event) => {
-			const id = (event.target as HTMLSelectElement).value;
-			if (COURSE_LINKS.some((lesson) => lesson.id === id))
-				location.hash = `lesson=${id}`;
-		});
 	forest?.bind(app);
-	if (focusAction)
+	if (active?.id && document.getElementById(active.id)) {
+		document.getElementById(active.id)?.focus({ preventScroll: true });
+	} else if (focusAction)
 		app
 			.querySelector<HTMLElement>(
 				`[data-action="${focusAction}"]${focusCol ? `[data-col="${focusCol}"]` : ""}${focusView ? `[data-view="${focusView}"]` : ""}${focusValue !== undefined && focusAction !== "forest-model-set" ? `[data-value="${focusValue}"]` : ""}`,
@@ -391,7 +387,30 @@ function move(p: Progress): void {
 async function act(button: HTMLButtonElement): Promise<void> {
 	const action = button.dataset.action;
 	if (!action || busy || loading) return;
+	if (action === "atlas" || action === "atlas-world") {
+		if (action === "atlas") {
+			atlasOpen = !atlasOpen;
+			browsing = activeWorld();
+		} else {
+			const selected = WORLDS.find(
+				(world) => world.id === button.dataset.value,
+			);
+			if (selected) browsing = selected.id;
+		}
+		const map = app.querySelector(".island-map");
+		if (map) map.outerHTML = lessonNavigation();
+		app
+			.querySelector<HTMLElement>(
+				action === "atlas"
+					? '[data-action="atlas"]'
+					: '.atlas-world[aria-pressed="true"]',
+			)
+			?.focus({ preventScroll: true });
+		return;
+	}
 	if (action === "view") {
+		atlasOpen = false;
+		game = null;
 		view = button.dataset.view as typeof view;
 		feedback = "";
 		render();
@@ -423,10 +442,9 @@ async function act(button: HTMLButtonElement): Promise<void> {
 	}
 	if (action === "reset-confirm") {
 		await activeStorage().freshStart();
-		eating = false;
-		celebrating = false;
-		encouraging = false;
-		hello = false;
+		game = null;
+		sixInTens = false;
+		respond("curious");
 		answerDraft = "";
 		answerKey = "";
 		showReset = false;
@@ -440,30 +458,77 @@ async function act(button: HTMLButtonElement): Promise<void> {
 		if (host) loadTeacherPlayer(host);
 		return;
 	}
-	if (action === "hello") {
-		hello = true;
-		encouraging = false;
-		eating = false;
-		celebrating = false;
-		if (forest?.store.state.resting)
-			await forest.store.update((p) => {
-				p.resting = false;
-			});
-		else if (!forest && store.state.resting)
-			await store.update((p) => {
-				p.resting = false;
-			});
-		render();
+	if (
+		action === "move-six" &&
+		!forest &&
+		store.state.step === "welcome" &&
+		!store.state.resting
+	) {
+		game = null;
+		sixInTens = !sixInTens;
+		respond("exploring");
+		const preview = app.querySelector(".place-preview");
+		if (preview) preview.outerHTML = placeValuePreview(sixInTens);
+		app
+			.querySelector<HTMLElement>('[data-action="move-six"]')
+			?.focus({ preventScroll: true });
+		redrawMilo();
+		moveMilo("nod");
 		return;
 	}
+	if (
+		action === "hello" ||
+		action === "play" ||
+		action === "jump" ||
+		action === "leave-game"
+	) {
+		if (companionState().mood === "resting") return;
+		if (action === "hello" || action === "leave-game") {
+			const highFive = game?.step === 3 && action === "hello";
+			game = null;
+			if (action === "hello") waves++;
+			respond(
+				highFive ? "high-five" : action === "hello" ? "welcoming" : "curious",
+			);
+			redrawMilo(
+				action === "hello" ? '[data-action="hello"]' : '[data-action="play"]',
+			);
+			if (action === "hello") moveMilo("wave");
+		} else if (action === "play") {
+			game = newCrossing(round++);
+			retry = false;
+			redrawMilo('[data-action="jump"]');
+		} else if (game && game.step < 3) {
+			retry = Number(button.dataset.value) !== stoneValue(game, game.step + 1);
+			if (!retry) game.step++;
+			redrawMilo(
+				game.step === 3 ? '[data-action="hello"]' : '[data-action="jump"]',
+			);
+			moveMilo(retry ? "nod" : "cross");
+			if (game.step === 3) chime();
+		}
+		return;
+	}
+	game = null;
+	if (action === "rest") respond("curious");
 	if (forest) {
 		const session = forest,
 			before = forestKey(session.store.state);
 		await session.act(button, app);
-		if (forest === session && before !== forestKey(session.store.state))
-			app.querySelector<HTMLElement>("#lesson-heading")?.focus();
+		if (forest === session) {
+			if (before !== forestKey(session.store.state))
+				app.querySelector<HTMLElement>("#lesson-heading")?.focus();
+			else if (
+				["forest-check", "forest-choice", "forest-worked"].includes(action)
+			)
+				app
+					.querySelector<HTMLElement>(".feedback.success + button")
+					?.focus({ preventScroll: true });
+		}
 		return;
 	}
+	const rewardsBefore = store.state.rewards.length;
+	let motion: "cheer" | "nod" | "snack" | undefined;
 	const snapshotStep = store.state.step;
 	const snapshotKey = taskKey();
 	const task = currentTask();
@@ -485,7 +550,8 @@ async function act(button: HTMLButtonElement): Promise<void> {
 				) {
 					p.consumed.push("mission-b");
 					p.resting = false;
-					eating = true;
+					respond("snack");
+					motion = "snack";
 				}
 				return;
 			}
@@ -528,10 +594,6 @@ async function act(button: HTMLButtonElement): Promise<void> {
 					if (p.later.index === 2) p.later = null;
 					else p.later.index += 1;
 				} else move(p);
-				if (p.step === "mission-a-end" || p.step === "finished") {
-					celebrating = true;
-					chime();
-				}
 				return;
 			}
 			if (action === "later") {
@@ -561,7 +623,8 @@ async function act(button: HTMLButtonElement): Promise<void> {
 			if (action === "hint" || action === "solution") {
 				if (!p.helped.includes(snapshotKey)) p.helped.push(snapshotKey);
 				p.helped = p.helped.slice(-1000);
-				encouraging = true;
+				respond("encouraging");
+				motion = "nod";
 				feedback = action === "hint" ? task.hint : task.explanation;
 				return;
 			}
@@ -624,7 +687,8 @@ async function act(button: HTMLButtonElement): Promise<void> {
 								? "exit"
 								: "guided";
 				recordAttempt(p, task, snapshotKey, correct, Date.now(), mode);
-				encouraging = !correct;
+				respond(correct ? "correct" : "encouraging");
+				motion = correct ? "cheer" : "nod";
 				feedback = correct
 					? task.explanation
 					: mistakeHint(task, entered, p.workspace);
@@ -632,9 +696,21 @@ async function act(button: HTMLButtonElement): Promise<void> {
 		});
 	} finally {
 		busy = false;
+		if (!forest && store.state.rewards.length > rewardsBefore) {
+			respond("celebrating");
+			motion = "cheer";
+			chime();
+		}
 		render();
-		if (store.state.step !== snapshotStep || taskKey() !== snapshotKey)
-			app.querySelector<HTMLElement>("#lesson-heading")?.focus();
+		if (!forest && motion) moveMilo(motion);
+		if (!forest) {
+			if (store.state.step !== snapshotStep || taskKey() !== snapshotKey)
+				app.querySelector<HTMLElement>("#lesson-heading")?.focus();
+			else if (["check", "choice", "worked-continue"].includes(action))
+				app
+					.querySelector<HTMLElement>(".feedback.success + button")
+					?.focus({ preventScroll: true });
+		}
 	}
 }
 
@@ -644,7 +720,21 @@ store.onChange = () => {
 async function activateLesson(): Promise<void> {
 	const request = ++routeRequest;
 	loading = true;
-	const def = forestLesson(lessonIdFromHash(location.hash));
+	let id = lessonIdFromHash(location.hash);
+	if (!location.hash) {
+		try {
+			const saved = localStorage.getItem("mathe4-last-lesson");
+			if (saved && COURSE_LINKS.some((lesson) => lesson.id === saved))
+				id = saved;
+		} catch {}
+	}
+	if (!location.hash) {
+		// Give the first history entry its own lesson so Back can return to it.
+		try {
+			history.replaceState(history.state, "", `#lesson=${id}`);
+		} catch {}
+	}
+	const def = forestLesson(id);
 	forest = null;
 	if (def) {
 		let session = forestSessions.get(def.id);
@@ -652,13 +742,24 @@ async function activateLesson(): Promise<void> {
 			session = new ForestSession(def, (event) => {
 				if (forest?.lesson.id !== def.id) return;
 				if (event) {
-					encouraging = event === "encourage";
-					celebrating = event === "reward";
-					eating = event === "snack";
-					hello = true;
+					respond(
+						event === "encourage"
+							? "encouraging"
+							: event === "reward"
+								? "celebrating"
+								: event,
+					);
 					if (event === "reward") chime();
 				}
 				render();
+				if (event)
+					moveMilo(
+						event === "encourage"
+							? "nod"
+							: event === "snack"
+								? "snack"
+								: "cheer",
+					);
 			});
 			forestSessions.set(def.id, session);
 		}
@@ -669,10 +770,12 @@ async function activateLesson(): Promise<void> {
 	answerDraft = "";
 	answerKey = "";
 	showReset = false;
-	encouraging = false;
-	celebrating = false;
-	eating = false;
-	hello = false;
+	atlasOpen = false;
+	browsing = activeWorld();
+	waves = 0;
+	sixInTens = false;
+	game = null;
+	respond("curious");
 	render();
 	if (forest) await forest.open();
 	else {
@@ -681,12 +784,53 @@ async function activateLesson(): Promise<void> {
 	}
 	if (request !== routeRequest) return;
 	loading = false;
-	hello = forest
-		? forest.store.state.stage !== "welcome"
-		: store.state.step !== "welcome";
+	if (!location.hash || validLessonHash(location.hash)) {
+		try {
+			localStorage.setItem("mathe4-last-lesson", id);
+		} catch {}
+	}
 	render();
 	if (request > 1) app.querySelector<HTMLElement>("#lesson-heading")?.focus();
 }
+app.addEventListener("click", (event) => {
+	const target = event.target;
+	if (!(target instanceof Element)) return;
+	const link = target.closest<HTMLAnchorElement>(".atlas-lessons a, .brand");
+	if (
+		link &&
+		!event.metaKey &&
+		!event.ctrlKey &&
+		!event.shiftKey &&
+		!event.altKey &&
+		link.hash === location.hash
+	) {
+		event.preventDefault();
+		atlasOpen = false;
+		view = "child";
+		render();
+		app.querySelector<HTMLElement>("#lesson-heading")?.focus();
+		return;
+	}
+	const button = target.closest<HTMLButtonElement>("button[data-action]");
+	if (!button || button.disabled) return;
+	void act(button).catch((error) => {
+		feedback =
+			error instanceof Error ? error.message : "Versuche es bitte noch einmal.";
+		if (forest) forest.feedback = feedback;
+		busy = false;
+		render();
+	});
+});
+app.addEventListener("keydown", (event) => {
+	if (
+		event.key === "Escape" &&
+		atlasOpen &&
+		event.target instanceof Element &&
+		event.target.closest(".island-map")
+	) {
+		app.querySelector<HTMLButtonElement>('[data-action="atlas"]')?.click();
+	}
+});
 window.addEventListener("hashchange", () => {
 	void activateLesson();
 });

@@ -17,9 +17,17 @@ labelled column charts and saved replacement experiments. Numbers and results st
 between zero and one million. Written multiplication uses one/two-digit
 factors; written division uses divisors through 10, including remainders.
 
+Children can move the six between ones and tens on the opening board and see
+306 change to 360. They can start the current mission directly or open the illustrated island
+map to browse five worlds. Opening the app again on the same device returns to
+the last lesson when local storage is available. An explicit lesson link takes
+precedence. Tap Milo to wave or play an optional three-jump crossing in steps
+of two, five or ten. Play stays separate from lesson evidence. The quiet
+setting and the device’s reduced-motion preference both suppress animations.
+
 ## Status
 
-Published since 2026-11-04 at version 0.0, with teacher review still pending.
+First published at version 0.0 on 2026-11-04. Teacher review is pending.
 Thomas confirmed that no recording is available. The real teacher video,
 primary-school teacher content review and final video playback acceptance
 remain pending. The app truthfully shows this and supplies the illustrated
@@ -94,11 +102,10 @@ snack; inspect the parent evidence; finish and return. Check 320 px and
 desktop layouts, muted/default sound and reduced motion. Device/browser
 coverage and missing video checks are recorded in `acceptance.json`.
 
-The available browser tool permits HTTP(S) navigation only and refused the
-direct `file://` URL of the extracted ZIP. Its package bytes and paths were
-verified, but double-click startup and actual offline video playback are
-not claimed as observed. Those checks require a normal local browser and
-the final approved recording respectively; no browser-policy bypass was used.
+On 2026-11-17 the extracted 0.1 ZIP opened directly in Chrome on macOS with
+the browser offline. The first mission, Milo's crossing, the island map and
+returning to a saved lesson worked from the local file. Playback of the
+teacher video still awaits the approved recording.
 
 ## Content and persistence
 

@@ -189,13 +189,6 @@ main {
 	color: var(--muted);
 	white-space: nowrap;
 }
-.welcome-heading {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	gap: 20px;
-	margin-bottom: 25px;
-}
 .eyebrow {
 	text-transform: uppercase;
 	font-size: 11px;
@@ -203,14 +196,6 @@ main {
 	font-weight: 700;
 	color: var(--muted);
 	margin-bottom: 7px;
-}
-.session-pill {
-	color: var(--green);
-	background: var(--mint);
-	padding: 7px 12px;
-	border-radius: 24px;
-	font-size: 12px;
-	white-space: nowrap;
 }
 .adventure-layout {
 	display: grid;
@@ -231,53 +216,6 @@ main {
 	display: block;
 	width: 100%;
 	height: auto;
-}
-.companion-copy {
-	padding: 22px;
-}
-.companion-title {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	gap: 12px;
-}
-.companion-title h2 {
-	margin: 0;
-	font-size: 23px;
-}
-.mood-label {
-	font-size: 11px;
-	padding: 4px 8px;
-	background: var(--mint);
-	color: var(--green);
-	border-radius: 20px;
-}
-.companion-copy > p {
-	font-size: 14px;
-	color: var(--muted);
-	margin: 12px 0 18px;
-	min-height: 44px;
-}
-.care-actions {
-	display: flex;
-	gap: 8px;
-	flex-wrap: wrap;
-}
-.care-actions button {
-	flex: 1;
-	font-size: 13px;
-	padding: 9px;
-	white-space: nowrap;
-}
-.companion-copy > .text-button {
-	font-size: 12px;
-	margin-top: 8px;
-}
-.companion-copy > .care-note {
-	font-size: 11px;
-	color: var(--muted);
-	margin: 6px 0 0;
-	min-height: 0;
 }
 .learning-column {
 	grid-template-columns: minmax(0, 1fr);
@@ -645,29 +583,6 @@ main {
 .chapter-buttons button {
 	font-size: 12px;
 }
-.island-route {
-	display: grid;
-	grid-template-columns: repeat(var(--columns, 4), minmax(0, 1fr));
-	gap: 8px;
-	text-align: center;
-	color: var(--muted);
-	font-size: 13px;
-	margin: 6px 0;
-}
-.island-route .current {
-	color: var(--green);
-}
-.island-route small {
-	display: block;
-	font-size: 10px;
-	margin-top: 4px;
-	color: var(--muted);
-}
-.progress-note {
-	color: var(--muted);
-	font-size: 12px;
-	margin: 23px 0 0;
-}
 .explanation-callout {
 	background: #f2ebfa;
 	padding: 18px;
@@ -830,28 +745,6 @@ footer {
 	font-size: 11px;
 	color: var(--muted);
 }
-.mood-celebrating .milo-character {
-	animation: milo-hop 0.6s ease-out;
-	transform-origin: 239px 265px;
-}
-.mood-welcoming .milo-character {
-	animation: milo-welcome 0.5s ease-out;
-	transform-origin: 239px 265px;
-}
-@keyframes milo-hop {
-	0%,
-	100% {
-		translate: 0 0;
-	}
-	45% {
-		translate: 0 -16px;
-	}
-}
-@keyframes milo-welcome {
-	50% {
-		rotate: 3deg;
-	}
-}
 .quiet *,
 .quiet *:before,
 .quiet *:after {
@@ -893,17 +786,6 @@ footer {
 		gap: 20px;
 		grid-template-columns: minmax(235px, 0.78fr) minmax(0, 1.22fr);
 	}
-	.companion-copy {
-		padding: 17px;
-	}
-	.care-actions button {
-		flex-basis: 100%;
-	}
-	.companion-title {
-		align-items: start;
-		flex-direction: column;
-		gap: 7px;
-	}
 	.lesson-card {
 		padding: 23px;
 	}
@@ -915,10 +797,6 @@ footer {
 	}
 	.explanation-grid {
 		grid-template-columns: 1fr;
-	}
-	.island-route {
-		grid-template-columns: 1fr 1fr;
-		row-gap: 16px;
 	}
 	.parent-grid {
 		gap: 25px;
@@ -943,41 +821,8 @@ footer {
 		min-height: 230px;
 		object-fit: cover;
 	}
-	.companion-copy {
-		padding: 18px;
-	}
-	.companion-copy > p {
-		font-size: 13px;
-		min-height: 0;
-		margin: 10px 0;
-	}
-	.care-actions {
-		gap: 4px;
-	}
-	.care-actions button {
-		font-size: 12px;
-	}
-	.welcome-heading {
-		align-items: start;
-	}
-	.session-pill {
-		white-space: normal;
-		text-align: center;
-		max-width: 145px;
-	}
 	.parent-grid {
 		grid-template-columns: 1fr;
-	}
-	.companion-title {
-		flex-direction: row;
-		align-items: center;
-		flex-wrap: wrap;
-	}
-	.care-note {
-		line-height: 1.4;
-	}
-	.island-route {
-		grid-template-columns: repeat(var(--columns, 4), minmax(0, 1fr));
 	}
 	.parent-tip {
 		padding: 23px;
@@ -1025,44 +870,8 @@ footer {
 		/* biome-ignore lint/complexity/noImportantStyles: Override the numbered-token base size on narrow screens. */
 		font-size: 11px !important;
 	}
-	.welcome-heading {
-		display: block;
-		margin-bottom: 19px;
-	}
-	.session-pill {
-		display: inline-block;
-		max-width: none;
-		margin-top: 7px;
-		font-size: 11px;
-	}
-	.companion-copy {
-		padding: 13px;
-	}
 	.island-art {
 		min-height: 255px;
-	}
-	.companion-copy > p {
-		font-size: 12px;
-	}
-	.companion-title h2 {
-		font-size: 21px;
-	}
-	.mood-label {
-		font-size: 10px;
-		line-height: 1.3;
-	}
-	.care-actions button {
-		padding: 7px;
-		min-height: 44px;
-		white-space: normal;
-	}
-	.companion-copy > .text-button {
-		font-size: 11px;
-		line-height: 1.3;
-		text-align: left;
-	}
-	.companion-copy > .care-note {
-		font-size: 10px;
 	}
 	.lesson-card {
 		padding: 20px 14px;
@@ -1120,10 +929,6 @@ footer {
 	}
 	.teacher-content {
 		padding: 3px 16px 19px;
-	}
-	.island-route {
-		grid-template-columns: 1fr 1fr;
-		gap: 14px;
 	}
 	.notice {
 		margin-left: 16px;
@@ -1274,34 +1079,6 @@ input {
 		min-height: 0;
 		border-radius: 10px;
 	}
-	.companion-copy {
-		padding: 0;
-	}
-	.companion-title h2 {
-		font-size: 18px;
-	}
-	.companion-copy > p {
-		margin: 4px 0;
-		min-height: 0;
-		font-size: 12px;
-	}
-	.companion-copy > .care-note {
-		display: none;
-	}
-	.care-actions {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 4px;
-	}
-	.care-actions button {
-		min-height: 44px;
-		padding: 4px 8px;
-		font-size: 12px;
-	}
-	.companion-copy > .text-button {
-		min-height: 44px;
-		padding: 4px;
-	}
 	.place-column {
 		padding: 8px 0;
 	}
@@ -1339,73 +1116,6 @@ input {
 		margin-left: -8px;
 		margin-right: -8px;
 	}
-}
-
-@media (max-width: 700px) {
-	.companion .care-actions {
-		flex-wrap: nowrap;
-	}
-	.companion .care-actions button {
-		width: auto;
-		min-width: 0;
-		flex: 1 1 0;
-	}
-}
-
-/* Below 600 px a compact selector keeps the lesson links within the viewport. */
-.forest-nav {
-	display: grid;
-	grid-template-columns: repeat(4, minmax(0, 1fr));
-	gap: 0.8rem;
-	max-width: 1320px;
-	padding: 1.4rem 2rem 0;
-	margin: auto;
-}
-.forest-link {
-	display: grid;
-	grid-template-columns: 2.6rem 1fr;
-	align-items: center;
-	gap: 0.15rem 0.5rem;
-	padding: 1rem;
-	border: 2px solid transparent;
-	border-radius: 20px;
-	text-decoration: none;
-	color: var(--ink);
-	background: var(--paper, #fff);
-	box-shadow: 0 5px 18px #60467c0a;
-}
-.forest-link > span {
-	grid-row: span 2;
-	font-size: 1.7rem;
-	color: #7052a5;
-}
-.forest-link strong {
-	font-size: 0.92rem;
-	line-height: 1.3;
-}
-.forest-link small {
-	font-size: 0.73rem;
-	opacity: 0.7;
-}
-.forest-link[aria-current="page"] {
-	border-color: #8863bd;
-	background: #eee5fc;
-}
-.forest-link:focus-visible {
-	outline: 3px solid #8564b9;
-	outline-offset: 3px;
-}
-.forest-emblem {
-	display: grid;
-	place-items: center;
-	margin: 1rem auto;
-	width: 100px;
-	height: 100px;
-	border-radius: 32px;
-	font-size: 3.5rem;
-	color: #7152ab;
-	background: linear-gradient(135deg, #f8da88, #ddc9fb);
-	transform: rotate(-5deg);
 }
 .forest-goals {
 	padding-left: 1.4rem;
@@ -1551,35 +1261,7 @@ input {
 	padding: 0.3rem 1rem;
 	border-radius: 12px;
 }
-@media (max-width: 850px) {
-	.forest-nav {
-		grid-template-columns: repeat(2, minmax(0, 1fr));
-		padding: 1rem 1rem 0;
-		gap: 0.5rem;
-	}
-	.forest-link {
-		padding: 0.75rem;
-		border-radius: 16px;
-	}
-}
 @media (max-width: 420px) {
-	.forest-nav {
-		padding: 0.7rem 0.65rem 0;
-	}
-	.forest-link {
-		grid-template-columns: 1.5rem minmax(0, 1fr);
-		padding: 0.65rem 0.5rem;
-		gap: 0.15rem 0.3rem;
-	}
-	.forest-link > span {
-		font-size: 1.25rem;
-	}
-	.forest-link strong {
-		font-size: 0.78rem;
-	}
-	.forest-link small {
-		font-size: 0.66rem;
-	}
 	.number-gate {
 		gap: 0.3rem;
 		padding: 1rem 0.4rem;
@@ -1594,14 +1276,6 @@ input {
 	.path-controls {
 		gap: 0.4rem;
 	}
-}
-:root[data-theme="dark"] .forest-link {
-	background: #292336;
-	color: #f1ecf7;
-}
-:root[data-theme="dark"] .forest-link[aria-current="page"] {
-	background: #443254;
-	border-color: #ba98ef;
 }
 :root[data-theme="dark"] .number-gate,
 :root[data-theme="dark"] .selection-readout {
@@ -1618,14 +1292,6 @@ input {
 	color: #f7e8c1;
 }
 @media (prefers-color-scheme: dark) {
-	:root:not([data-theme="light"]) .forest-link {
-		background: #292336;
-		color: #f1ecf7;
-	}
-	:root:not([data-theme="light"]) .forest-link[aria-current="page"] {
-		background: #443254;
-		border-color: #ba98ef;
-	}
 	:root:not([data-theme="light"]) .number-gate,
 	:root:not([data-theme="light"]) .selection-readout {
 		background: #362b47;
@@ -1639,47 +1305,6 @@ input {
 	:root:not([data-theme="light"]) .treasure-model {
 		background: #3b3527;
 		color: #f7e8c1;
-	}
-}
-.forest-nav {
-	display: block;
-}
-.forest-links {
-	display: grid;
-	grid-template-columns: repeat(4, minmax(0, 1fr));
-	gap: 0.8rem;
-}
-.forest-compact {
-	display: none;
-}
-@media (max-width: 850px) {
-	.forest-links {
-		grid-template-columns: repeat(2, minmax(0, 1fr));
-		gap: 0.5rem;
-	}
-}
-@media (max-width: 600px) {
-	.forest-links {
-		display: none;
-	}
-	.forest-compact {
-		display: grid;
-		gap: 0.3rem;
-		font-weight: 700;
-		color: var(--muted);
-		font-size: 0.8rem;
-	}
-	.forest-compact select {
-		min-width: 0;
-		width: 100%;
-		min-height: 46px;
-		border: 1px solid var(--line);
-		border-radius: 14px;
-		padding: 0.6rem 0.75rem;
-		background: var(--surface);
-		color: var(--ink);
-		font: inherit;
-		font-size: 0.95rem;
 	}
 }
 
@@ -2040,26 +1665,6 @@ input {
 [data-theme="dark"][data-world="measure"] {
 	--world-accent: #eac071;
 }
-.world-tabs {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 0.5rem;
-	margin-bottom: 1rem;
-}
-.world-tabs a {
-	min-height: 44px;
-	display: inline-flex;
-	align-items: center;
-	padding: 0.5rem 1rem;
-	border: 2px solid var(--line);
-	border-radius: 2rem;
-	color: var(--ink);
-	text-decoration: none;
-}
-.world-tabs a[aria-current="true"] {
-	border-color: var(--world-accent);
-	background: var(--soft);
-}
 :root[data-world="measure"] .lesson-card {
 	border-top: 5px solid var(--world-accent);
 }
@@ -2332,4 +1937,3 @@ input {
 	cursor: pointer;
 	font-weight: 700;
 }
-

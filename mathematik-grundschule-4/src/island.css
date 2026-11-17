@@ -1,0 +1,627 @@
+/* The atlas and Milo share the ink, paper and water colours of an illustrated field guide. */
+:root {
+	--action: #176456;
+	--island-ink: #214b40;
+	--island-paper: #fcf9ef;
+	--island-line: #d6dece;
+	--island-wash: #e9f0e3;
+}
+:root[data-theme="dark"] {
+	--island-ink: #c5e9cf;
+	--island-paper: #232c29;
+	--island-line: #485c50;
+	--island-wash: #2f4138;
+}
+@media (prefers-color-scheme: dark) {
+	:root:not([data-theme="light"]) {
+		--island-ink: #c5e9cf;
+		--island-paper: #232c29;
+		--island-line: #485c50;
+		--island-wash: #2f4138;
+	}
+}
+body {
+	background: var(--island-paper);
+}
+#app {
+	max-width: 1220px;
+	background: transparent;
+	border: 0;
+	overflow: visible;
+}
+.site-header {
+	border-bottom: 1px solid var(--island-line);
+	padding-block: 15px;
+}
+.brand {
+	color: var(--island-ink);
+}
+.brand-logo {
+	background: #236858;
+	color: #fff3c8;
+	font:
+		italic bold 31px Georgia,
+		serif;
+	box-shadow: inset 0 -4px #174e45;
+}
+.brand strong {
+	font-weight: 800;
+}
+.main-nav {
+	padding: 0;
+	border: 0;
+	align-items: center;
+}
+.main-nav button[aria-current="page"] {
+	color: var(--island-ink);
+	background: var(--island-wash);
+}
+button.primary {
+	border-color: #175d51;
+	box-shadow: 0 3px 0 #114d43;
+}
+button.primary:hover:enabled {
+	background: #13594d;
+}
+button:focus-visible,
+a:focus-visible,
+summary:focus-visible,
+select:focus-visible {
+	outline: 3px solid #9165c4;
+	outline-offset: 2px;
+}
+.island-map {
+	padding: 0 36px;
+}
+.map-bar,
+.location,
+.atlas-toggle,
+.mission-progress,
+.milo-actions {
+	display: flex;
+	align-items: center;
+}
+.map-bar {
+	justify-content: space-between;
+	padding: 22px 0 16px;
+	gap: 10px;
+}
+.location {
+	gap: 13px;
+	min-width: 0;
+}
+.location-art {
+	width: 68px;
+	flex-shrink: 0;
+	line-height: 0;
+}
+.location-art svg {
+	width: 100%;
+}
+.location small,
+.mission-label {
+	color: var(--island-ink);
+	font-weight: 750;
+}
+.location small {
+	font-size: 12px;
+}
+.location h1,
+.location strong {
+	display: block;
+	font-family: Georgia, "Times New Roman", serif;
+	font-size: clamp(26px, 4.3vw, 44px);
+	margin: 0;
+	line-height: 1.06;
+	letter-spacing: -0.045em;
+	color: var(--island-ink);
+}
+.atlas-toggle {
+	gap: 8px;
+	font-size: 14px;
+	background: var(--surface);
+	color: var(--island-ink);
+	border-color: var(--island-line);
+}
+#atlas {
+	padding: clamp(16px, 2.5vw, 28px);
+	border: 1px solid var(--island-line);
+	background: var(--surface);
+	border-radius: 20px;
+	margin: 0 0 18px;
+}
+#atlas h2,
+#atlas h3 {
+	color: var(--island-ink);
+}
+#atlas h3 {
+	margin: 20px 0 10px;
+}
+#atlas h3 small {
+	font-size: 14px;
+	color: var(--muted);
+}
+.atlas-worlds {
+	display: grid;
+	grid-template-columns: repeat(5, minmax(0, 1fr));
+	gap: 8px;
+}
+.atlas-world {
+	background: var(--island-paper);
+	color: var(--island-ink);
+	padding: 8px;
+	display: grid;
+	justify-items: center;
+	border: 2px solid transparent;
+}
+.atlas-world svg {
+	width: min(100%, 95px);
+	height: 70px;
+}
+.atlas-world[aria-pressed="true"] {
+	border-color: var(--island-ink);
+	background: var(--island-wash);
+}
+.atlas-lessons {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
+	gap: 5px 14px;
+}
+.atlas-lessons a {
+	display: flex;
+	gap: 8px;
+	align-items: center;
+	justify-content: space-between;
+	min-height: 44px;
+	padding: 8px 10px;
+	color: var(--ink);
+	text-decoration: none;
+	border-bottom: 1px solid var(--island-line);
+	font-size: 14px;
+}
+.atlas-lessons a:hover,
+.atlas-lessons a[aria-current="page"] {
+	background: var(--island-wash);
+	color: var(--island-ink);
+	border-radius: 7px;
+}
+.adventure {
+	padding-top: 0;
+	min-height: auto;
+}
+.adventure-layout {
+	grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+	gap: clamp(16px, 2.2vw, 30px);
+}
+.companion,
+.lesson-card {
+	border: 1px solid var(--island-line);
+	border-radius: 22px;
+	box-shadow: 0 5px 0 color-mix(in srgb, var(--island-line) 45%, transparent);
+}
+.companion {
+	background: var(--surface);
+}
+.milo-scene {
+	display: block;
+	width: 100%;
+	padding: 0;
+	border: 0;
+	border-radius: 0;
+	position: relative;
+}
+.milo-scene:hover:enabled {
+	transform: none;
+}
+.milo-scene:focus-visible {
+	outline-offset: -4px;
+	z-index: 1;
+}
+.milo-scene > span {
+	position: absolute;
+	right: 10px;
+	bottom: 9px;
+	background: #fffae9;
+	color: #234e43;
+	border-radius: 15px;
+	padding: 4px 9px;
+	font-size: 12px;
+	box-shadow: 0 1px 4px #214b4030;
+}
+.companion .island-art {
+	width: 100%;
+	height: auto;
+	min-height: 0;
+	border-radius: 0;
+}
+.milo-panel-copy {
+	padding: clamp(15px, 2vw, 24px);
+}
+.milo-dialogue {
+	border-inline-start: 3px solid #ad8bd1;
+	padding-inline-start: 13px;
+}
+.milo-dialogue strong {
+	color: var(--ink);
+	font-size: 18px;
+}
+.milo-dialogue p {
+	margin: 2px 0 0;
+	font-size: 16px;
+}
+.milo-actions {
+	gap: 6px 11px;
+	flex-wrap: wrap;
+	margin-top: 15px;
+}
+.milo-actions button {
+	font-size: 14px;
+}
+.milo-actions button:not(.milo-link) {
+	background: var(--island-wash);
+	color: var(--island-ink);
+	border-color: var(--island-line);
+}
+.milo-actions .milo-link {
+	border-color: transparent;
+	color: var(--muted);
+	background: transparent;
+}
+.milo-actions .stone-choice {
+	min-width: 60px;
+	font-size: 20px;
+}
+.mission-progress {
+	gap: 5px;
+	justify-content: end;
+	margin-bottom: 14px;
+	font-size: 12px;
+	color: var(--muted);
+}
+.mission-progress > span:first-child {
+	margin-right: 3px;
+}
+.mission-dot {
+	display: grid;
+	place-items: center;
+	height: 23px;
+	width: 23px;
+	border: 1px dashed var(--muted);
+	border-radius: 50%;
+	font-weight: 700;
+}
+.mission-dot.done {
+	color: #fff;
+	background: #246b57;
+	border-color: #246b57;
+}
+.lesson-card {
+	padding: clamp(19px, 2.5vw, 32px);
+}
+.lesson-card h2 {
+	line-height: 1.14;
+}
+.lesson-card:has(.number-postcard) h2,
+.lesson-card:has(.forest-goals) h2 {
+	font-family: Georgia, "Times New Roman", serif;
+	font-size: clamp(27px, 3.2vw, 40px);
+	letter-spacing: -0.045em;
+	color: var(--island-ink);
+}
+.number-postcard {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	background: var(--island-paper);
+	padding: 16px 4px;
+	border-radius: 14px;
+	margin-top: 24px;
+	border: 1px solid var(--island-line);
+}
+.number-postcard > div {
+	display: grid;
+	justify-items: center;
+	align-content: end;
+	gap: 1px;
+	color: var(--island-ink);
+}
+.number-postcard > div + div {
+	border-inline-start: 1px solid var(--island-line);
+}
+.number-postcard b {
+	font-size: 27px;
+	line-height: 1.25;
+}
+.number-postcard small {
+	font-size: 12px;
+}
+.number-postcard span {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 38px;
+	margin-bottom: 5px;
+}
+.hundreds {
+	display: block;
+	width: 24px;
+	height: 24px;
+	border: 1px solid #276e61;
+	background-color: #78b5a1;
+	background-image:
+		linear-gradient(#276e6170 1px, transparent 1px),
+		linear-gradient(90deg, #276e6170 1px, transparent 1px);
+	background-size: 10% 10%;
+}
+.bundles:has(.hundreds) {
+	gap: 2px;
+}
+@media (max-width: 380px) {
+	.hundreds {
+		width: 19px;
+		height: 19px;
+	}
+}
+.place-equation {
+	margin: 7px 0 0;
+	text-align: center;
+	font-weight: 650;
+	color: var(--island-ink);
+}
+.ten-rod {
+	width: 5px;
+	height: 32px;
+	margin: 0 1px;
+	background: repeating-linear-gradient(
+		to top,
+		#dbad59 0 2.4px,
+		#8a692a 2.4px 3.2px
+	);
+}
+.place-preview button {
+	display: block;
+	margin: 8px auto 0;
+	font-size: 14px;
+	color: var(--island-ink);
+}
+.milo-scene .mood-curious .milo-eyes {
+	transform-box: fill-box;
+	transform-origin: center;
+	animation: milo-blink 3.6s linear;
+}
+@keyframes milo-blink {
+	0%,
+	59%,
+	65%,
+	100% {
+		transform: scaleY(1);
+	}
+	62% {
+		transform: scaleY(0.13);
+	}
+}
+.number-postcard .six-ones {
+	display: grid;
+	align-content: center;
+	grid-template-columns: repeat(3, 8px);
+	gap: 3px;
+}
+.six-ones i {
+	width: 8px;
+	height: 8px;
+	border: 1px solid #845aa1;
+	border-radius: 2px;
+	background: #c9a8dd;
+}
+.welcome-goals {
+	margin-top: 24px;
+	border-top: 1px solid var(--island-line);
+	padding-top: 10px;
+}
+.welcome-goals summary {
+	cursor: pointer;
+	padding-block: 10px;
+	color: var(--island-ink);
+	font-weight: 650;
+}
+.welcome-goals ul {
+	margin-bottom: 0;
+}
+footer {
+	margin-top: 14px;
+	border-color: var(--island-line);
+}
+.milo-paw,
+.milo-motion {
+	transform-origin: 0 0;
+}
+.motion-wave {
+	animation: paw-wave 0.7s ease-in-out;
+}
+.motion-cheer {
+	animation: milo-cheer 0.6s ease-out;
+}
+.motion-nod,
+.motion-snack {
+	animation: milo-nod 0.55s ease-in-out;
+}
+.motion-cross {
+	animation: stone-hop 0.46s ease-out;
+}
+@keyframes paw-wave {
+	25%,
+	70% {
+		transform: rotate(30deg);
+	}
+	48% {
+		transform: rotate(-12deg);
+	}
+}
+@keyframes milo-cheer {
+	40% {
+		transform: translateY(-16px) rotate(-6deg);
+	}
+	80% {
+		transform: scale(1.04, 0.96);
+	}
+}
+@keyframes milo-nod {
+	35%,
+	75% {
+		transform: rotate(5deg);
+	}
+}
+@keyframes stone-hop {
+	0% {
+		transform: translateX(-148px);
+	}
+	50% {
+		transform: translate(-74px, -48px) rotate(5deg);
+	}
+	88% {
+		transform: scale(1.06, 0.94);
+	}
+}
+@media (max-width: 850px) {
+	.site-header {
+		flex-wrap: wrap;
+		gap: 6px;
+	}
+	.main-nav {
+		flex: 1 1 auto;
+	}
+	.island-map {
+		padding-inline: 24px;
+	}
+	.atlas-worlds {
+		grid-template-columns: repeat(auto-fit, minmax(112px, 1fr));
+	}
+}
+@media (max-width: 700px) {
+	.site-header {
+		display: grid;
+		gap: 6px;
+		padding: 12px 16px 4px;
+	}
+	.main-nav {
+		width: 100%;
+		padding: 0;
+	}
+	.main-nav button {
+		font-size: 12px;
+	}
+	.main-nav .sound-toggle {
+		max-width: none;
+	}
+	.island-map {
+		padding-inline: 16px;
+	}
+	.map-bar {
+		padding: 12px 0;
+	}
+	.location {
+		gap: 7px;
+	}
+	.location-art {
+		width: 43px;
+	}
+	.location h1,
+	.location strong {
+		font-size: clamp(20px, 5vw, 29px);
+		overflow-wrap: anywhere;
+	}
+	.atlas-toggle {
+		padding: 7px 10px;
+		font-size: 12px;
+		flex-shrink: 0;
+		gap: 5px;
+	}
+	.adventure {
+		padding: 0 16px 18px;
+	}
+	.adventure-layout {
+		grid-template-columns: minmax(0, 1fr);
+		gap: 14px;
+	}
+	.companion {
+		display: grid;
+		grid-template-columns: minmax(105px, 0.65fr) minmax(0, 1fr);
+		align-items: stretch;
+		padding: 0;
+		gap: 0;
+	}
+	.companion .island-art {
+		height: 100%;
+		width: 100%;
+	}
+	.milo-scene {
+		align-self: stretch;
+		overflow: hidden;
+		background: #9ddcd1;
+	}
+	.milo-scene > span {
+		bottom: 5px;
+		right: 5px;
+		padding: 3px 7px;
+		font-size: 11px;
+	}
+	.milo-panel-copy {
+		padding: 12px;
+	}
+	.milo-dialogue {
+		padding: 0;
+		border: 0;
+	}
+	.milo-dialogue strong {
+		font-size: 16px;
+	}
+	.milo-dialogue p {
+		font-size: 13px;
+	}
+	.milo-actions {
+		margin-top: 5px;
+		gap: 1px 6px;
+	}
+	.milo-actions button {
+		padding: 4px 8px;
+		font-size: 12px;
+	}
+	.companion.playing {
+		display: block;
+	}
+	.companion.playing .island-art {
+		display: block;
+		height: auto;
+	}
+	.companion.playing .milo-panel-copy {
+		padding: 13px 16px;
+	}
+	.companion.playing .milo-dialogue p {
+		font-size: 15px;
+	}
+	.atlas-worlds {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 4px;
+	}
+	.atlas-world {
+		font-size: 12px;
+		overflow-wrap: anywhere;
+		padding: 4px 1px;
+	}
+	.atlas-world svg {
+		height: 43px;
+	}
+	.mission-progress {
+		margin-bottom: 9px;
+	}
+	.number-postcard {
+		margin-top: 18px;
+	}
+}
+@media (max-width: 380px) {
+	.location-art {
+		display: none;
+	}
+	.atlas-worlds {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
