@@ -457,7 +457,7 @@ function renderParents(): void {
 </section>
 <section class="card">
 	<h2>Mit ZAM wiederholen</h2>
-	<p>Zu jeder Lektion gibt es Wiederholungskarten (${cards} insgesamt). Mit ZAM kann Ihr Kind sie später in wachsenden Abständen wiederholen. Jede Karte führt zur passenden Lektion zurück. Die Karten stehen im ZAM-Katalog; als Vorschau können sie sich nach der fachlichen Prüfung noch ändern.</p>
+	<p>Zu jeder Lektion gibt es Wiederholungskarten (${cards} insgesamt). Mit ZAM kann Ihr Kind sie später in wachsenden Abständen wiederholen. Jede Karte führt zur passenden Lektion zurück. Die Karten stehen im ZAM-Katalog. Solange eine Lehrkraft das Paket noch nicht geprüft hat (Version 0), können sie sich noch ändern.</p>
 </section>
 <section class="card">
 	<h2>Daten und Zurücksetzen</h2>

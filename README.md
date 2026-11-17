@@ -8,6 +8,9 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | English 5 Gymnasium (Bavaria) | [`englisch-gymnasium-5/`](englisch-gymnasium-5/) | https://academy.zam-os.org/englisch-gymnasium-5/ | `zam-academy:englisch-gymnasium-5` |
 | Deutsch 5 Gymnasium (LehrplanPLUS Bayern) | [`deutsch-gymnasium-5/`](deutsch-gymnasium-5/) | https://academy.zam-os.org/deutsch-gymnasium-5/ | `zam-academy:deutsch-gymnasium-5` |
 | German 6 Realschule (Bavaria) | [`deutsch-realschule-6/`](deutsch-realschule-6/) | Built by Pages on merge | `zam-academy:deutsch-realschule-6` |
+| Grade 4 mathematics: 40 Discovery Island lessons with Milo (Bavaria) | [`mathematik-grundschule-4/`](mathematik-grundschule-4/) | https://academy.zam-os.org/mathematik-grundschule-4/ | `zam-academy:mathematik-grundschule-4` |
+| Grade 4 German: Tintos Wörterstadt, 45 lessons on language, spelling, the Grundwortschatz, reading and writing (Bavaria, LehrplanPLUS 2, 3.2/3.3, 4); the app does not rate free texts ([coverage](docs/deutsch-grundschule-4-coverage.md)) | [`deutsch-grundschule-4/`](deutsch-grundschule-4/) | https://academy.zam-os.org/deutsch-grundschule-4/ | `zam-academy:deutsch-grundschule-4` |
+| Grade 4 Heimat- und Sachunterricht: twenty discovery stations with Lotta (Bavaria) | [`hsu-grundschule-4/`](hsu-grundschule-4/) | https://academy.zam-os.org/hsu-grundschule-4/ | `zam-academy:hsu-grundschule-4` |
 | French 5 Gymnasium (Bavaria, first foreign language) | [`franzoesisch-gymnasium-5/`](franzoesisch-gymnasium-5/) | https://academy.zam-os.org/franzoesisch-gymnasium-5/ | `zam-academy:franzoesisch-gymnasium-5` |
 | Englisch 5 Mittelschule (LehrplanPLUS Bayern) | [`englisch-mittelschule-5/`](englisch-mittelschule-5/) | https://academy.zam-os.org/englisch-mittelschule-5/ | `zam-academy:englisch-mittelschule-5` |
 | Mathematics 5 Mittelschule (Bavaria) | [`mathematik-mittelschule-5/`](mathematik-mittelschule-5/) | Built by Pages on merge | `zam-academy:mathematik-mittelschule-5` |
@@ -88,7 +91,7 @@ The rules come from [ADR 2026-10-19](https://github.com/zam-os/zam/blob/main/doc
 - **CI installs every cell** into a throw-away library with the published `zam-core` (`scripts/validate-cells.mjs`).
 - **History changes require approval.** The catalog builder refuses cells with `replaces` or `retired_items` unless their `replaces-de-by.json` records a valid approval date and documents exactly those changes: every A/B row is replaced by its one named `academy_slug`, a C row is never replaced (it may be retired), and no undocumented `replaces` or `retired_items` exist. CI tests this safeguard; Pages checks it before building or uploading the site. An unapproved proposal therefore blocks publication.
 - **Local drafts stay unpublished.** Every package has `<app>/publication.json` with schema `1`, status `local-only` or `ready` and its package `version`. The catalog and public registry check exclude `local-only` cells; invalid metadata fails closed. Cell validation still checks drafts. The Pages loop refuses local-only or invalid markers before building or copying any app, even if its list accidentally includes a draft. Publication also requires the Pages entry and explicit release authority.
-- **Every package shows its version.** `0.n` means not yet accepted by a teacher of the grade, `1.n` accepted by one, `2.n` and higher a fully new package type. Every merged change to a package folder raises the minor number: `node scripts/package-version.mjs bump <app>` sets it in `publication.json`, in `academy.json` (the atlas shows it) and in the badge inside the app's `zam-home-link`. CI's `changes` job refuses a changed package whose version did not rise. Only Thomas raises the major number; `approval` in `publication.json` records his decision. The package version is not the cell `version`, which ZAM reads.
+- **Every package shows its version.** `0.n` means not yet accepted by a teacher of the grade, `1.n` accepted by one, `2.n` and higher a fully new package type. Every merged change to a package folder raises the minor number: `node scripts/package-version.mjs bump <app>` sets it in `publication.json`, in `academy.json` (the atlas shows it) and in the badge inside the app's `zam-home-link`. CI's `changes` job refuses a changed package whose version did not rise. Only Thomas raises the major number; `approval` in `publication.json` records his decision for that major number. The app shows the status as text next to the version (for example `Version 0.0 · Lehrkraftprüfung offen`), not only as a tooltip. The package version is not the cell `version`, which ZAM reads.
 - **Pages publishes** each app, its `cell.json`, and `/catalog.json` (`scripts/build-catalog.mjs`), with the SHA-256 of every cell. ZAM reads the catalog only on a learner's action. ZAM releases bundle a copy of each cell.
 - **A cell is released at its first publication,** in the catalog or in a ZAM release. From then on, its item ids, slugs and cited lessons stay stable; changes use `replaces` and raise the version.
 
@@ -96,16 +99,6 @@ For the Discovery Island primary-school pilot, Thomas explicitly approved
 transactional IndexedDB and a native player for an approved first-party
 teacher recording on 2026-10-31. The exception is scoped in [AGENTS.md](AGENTS.md);
 external video embeds and automatic media requests remain excluded.
-
-## Previews
-
-Published, but not yet reviewed by a primary-school teacher and without teacher videos.
-
-| App | Folder | App URL | Cell |
-| --- | --- | --- | --- |
-| Grade 4 mathematics: 40 Discovery Island lessons with Milo (Bavaria) | [`mathematik-grundschule-4/`](mathematik-grundschule-4/) | https://academy.zam-os.org/mathematik-grundschule-4/ | `zam-academy:mathematik-grundschule-4` |
-| Grade 4 German: Tintos Wörterstadt, 45 lessons on language, spelling, the Grundwortschatz, reading and writing (Bavaria, LehrplanPLUS 2, 3.2/3.3, 4); the app does not rate free texts ([coverage](docs/deutsch-grundschule-4-coverage.md)) | [`deutsch-grundschule-4/`](deutsch-grundschule-4/) | https://academy.zam-os.org/deutsch-grundschule-4/ | `zam-academy:deutsch-grundschule-4` |
-| Grade 4 Heimat- und Sachunterricht: twenty discovery stations with Lotta (Bavaria) | [`hsu-grundschule-4/`](hsu-grundschule-4/) | https://academy.zam-os.org/hsu-grundschule-4/ | `zam-academy:hsu-grundschule-4` |
 
 ## Develop
 
@@ -235,8 +228,8 @@ The [Englisch 8 package](englisch-realschule-8/) adds 51 lessons and 102 cards f
 
 The [French 8 package](franzoesisch-realschule-8/) adds 40 core lessons, two optional relative-clause extensions and 84 linked cards for Bavarian Realschule group IIIa. Its [coverage matrix](franzoesisch-realschule-8/coverage.json) indexes 56 expectations and topic entries as guided exercises or preparation. The [inventory](docs/franzoesisch-8-bestandsabgleich.md) documents four older grammar cards that remain active without history transfer. Natural audiovisual practice, spontaneous conversations, maps, research and a full vocabulary programme supplement the app. Pages publishes app and cell together on merge; ZAM fixture synchronization is separate.
 
-[Grade 5 German for Bavarian Realschule](deutsch-realschule-5/) is available
-for local evaluation with 37 lessons and 77 ZAM cards. Run
+[Grade 5 German for Bavarian Realschule](deutsch-realschule-5/) is published
+with 37 lessons and 77 ZAM cards. Run
 `npm ci && npm run dev` from the package folder (port 5222), or use
 `npm run package:zip` for a self-contained offline build.
 [Curriculum coverage and legacy card inventory](docs/deutsch-5-coverage.md)

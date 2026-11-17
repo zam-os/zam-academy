@@ -57,9 +57,11 @@ builds and the tests pass" is not the bar.
 9. **Never raise a package's major version yourself.** Version 1 needs a
    teacher of the grade to accept the package, version 2 and higher a new
    package type; both only on Thomas's explicit word. Record it in
-   `publication.json` as `"approval": { "date": "YYYY-MM-DD", "source": "…" }`
-   (his words and where he gave them); the registry test refuses a major
-   version above 0 without it.
+   `publication.json` as
+   `"approval": { "major": 1, "date": "YYYY-MM-DD", "source": "…" }`
+   (the major number he approved, his words and where he gave them); the
+   registry test refuses a major version above 0 without a record for exactly
+   that major, so a teacher's acceptance never counts for version 2.
 
 ## 1. Start from the curriculum
 

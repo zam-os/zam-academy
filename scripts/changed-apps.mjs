@@ -50,7 +50,7 @@ export function discoverApps(cwd = process.cwd()) {
 export function changedFilesSince(base, cwd = process.cwd()) {
   if (!base || /^0+$/.test(base)) return null;
   try {
-    return git(["diff", "--name-only", base, "HEAD"], cwd)
+    return git(["diff", "--name-only", "--no-renames", base, "HEAD"], cwd)
       .split("\n")
       .filter(Boolean);
   } catch {

@@ -28,19 +28,22 @@ test("versions compare by number and count fixes in the minor part", () => {
     assert.throws(() => nextVersion(bad), /invalid package version/);
 });
 
-test("a major version needs Thomas's recorded approval", () => {
+test("a major version needs Thomas's recorded approval of that major", () => {
+  const teacher = { major: 1, date: "2026-12-01", source: "Thomas, PR comment after the teacher review" };
   assert.doesNotThrow(() => assertVersionRecord({ version: "0.4" }, "x"));
-  assert.throws(() => assertVersionRecord({ version: "1.0" }, "x"), /approval record/);
+  assert.throws(() => assertVersionRecord({ version: "1.0" }, "x"), /approval record for major 1/);
   assert.throws(
-    () => assertVersionRecord({ version: "1.0", approval: { date: "soon", source: "Thomas said so in a chat" } }, "x"),
+    () => assertVersionRecord({ version: "1.0", approval: { ...teacher, date: "soon" } }, "x"),
     /approval record/,
   );
-  assert.doesNotThrow(() =>
-    assertVersionRecord(
-      { version: "1.0", approval: { date: "2026-12-01", source: "Thomas, PR comment after the teacher review" } },
-      "x",
-    ),
+  assert.throws(
+    () => assertVersionRecord({ version: "1.0", approval: { ...teacher, major: undefined } }, "x"),
+    /approval record/,
   );
+  assert.doesNotThrow(() => assertVersionRecord({ version: "1.3", approval: teacher }, "x"));
+  // The teacher's acceptance does not authorise a new package generation.
+  assert.throws(() => assertVersionRecord({ version: "2.0", approval: teacher }, "x"), /for major 2/);
+  assert.doesNotThrow(() => assertVersionRecord({ version: "2.0", approval: { ...teacher, major: 2 } }, "x"));
 });
 
 test("the badge sits inside the home link, replaces itself and ignores comments", () => {
@@ -51,8 +54,16 @@ test("the badge sits inside the home link, replaces itself and ignores comments"
   assert.equal(badgeIn(twice), versionBadge("0.1"));
   assert.equal(twice.match(/zam-version/g).length, 1);
   assert.equal(badgeIn(`<!-- ${LINK.replace("</a>", `${versionBadge("0.0")}</a>`)} -->${LINK}`), null);
-  assert.match(versionBadge("0.3"), /title="Noch nicht von einer Lehrkraft geprüft">· Version 0\.3</);
-  assert.match(versionBadge("1.0"), /title="Von einer Lehrkraft geprüft"/);
+  assert.match(
+    versionBadge("0.3"),
+    /title="Noch nicht von einer Lehrkraft geprüft">· Version&nbsp;0\.3 · Lehrkraftprüfung&nbsp;offen</,
+  );
+  assert.match(versionBadge("1.0"), /title="Von einer Lehrkraft geprüft">· Version&nbsp;1\.0 · von&nbsp;Lehrkraft&nbsp;geprüft</);
+  assert.match(versionBadge("2.0"), />· Version&nbsp;2\.0 · neue&nbsp;Paketgeneration</);
+  // The badge of an older form is replaced, not doubled.
+  const old = LINK.replace("</a>", ' <span class="zam-version" title="x">· Version 0.0</span></a>');
+  assert.equal(withBadge(old, "0.1").match(/zam-version/g).length, 1);
+  assert.equal(badgeIn(withBadge(old, "0.1")), versionBadge("0.1"));
 });
 
 function withRepo(run) {
@@ -100,6 +111,45 @@ test("a changed package must raise its version; bump sets all three places", () 
     assert.equal(JSON.parse(readFileSync(join(dir, "a/publication.json"), "utf8")).version, "0.1");
     assert.match(readFileSync(join(dir, "academy.json"), "utf8"), /"app": "a",\n {6}"version": "0\.1"/);
     assert.equal(badgeIn(readFileSync(join(dir, "a/index.html"), "utf8")), versionBadge("0.1"));
+  }));
+
+test("a refused bump changes no file", () =>
+  withRepo(({ dir, git }) => {
+    const files = ["a/publication.json", "a/index.html", "academy.json"];
+    const read = () => files.map((f) => readFileSync(join(dir, f), "utf8"));
+    const before = read();
+    // No approval record for major 1.
+    assert.throws(() => setVersion("a", "1.0", dir), /approval record/);
+    assert.deepEqual(read(), before);
+    // c is ready but has no registry entry: neither its publication nor its badge changes.
+    mkdirSync(join(dir, "c"));
+    writeFileSync(join(dir, "c/publication.json"), `${JSON.stringify({ schema: 1, status: "ready", version: "0.0" })}\n`);
+    writeFileSync(join(dir, "c/index.html"), `<body>${withBadge(LINK, "0.0")}</body>\n`);
+    const c = () => ["c/publication.json", "c/index.html"].map((f) => readFileSync(join(dir, f), "utf8"));
+    const cBefore = c();
+    assert.throws(() => setVersion("c", "0.1", dir), /academy\.json: c has no "version"/);
+    assert.deepEqual(c(), cBefore);
+    assert.equal(git("status", "--porcelain", "--", "a", "academy.json"), "");
+  }));
+
+test("a file moved between packages changes both", () =>
+  withRepo(({ dir, git, write, app }) => {
+    app("c", "0.0");
+    write("a/moved.txt", "a file that will move to c, long enough for rename detection\n");
+    commit(git);
+    const next = git("rev-parse", "HEAD");
+    git("mv", "a/moved.txt", "c/moved.txt");
+    app("c", "0.1");
+    commit(git);
+    // Only c raised its version; a lost a file and must raise its own.
+    assert.deepEqual(versionProblems(next, dir).map((p) => p.split(":")[0]), ["a"]);
+  }));
+
+test("a changed package without a valid version is reported, not thrown", () =>
+  withRepo(({ dir, git, write, base }) => {
+    write("a/publication.json", '{ "schema": 1, "status": "ready" }\n');
+    commit(git);
+    assert.deepEqual(versionProblems(base, dir), ["a: publication.json has no valid version (undefined)"]);
   }));
 
 test("a lowered version fails; unchanged, new and pre-version packages pass", () =>

@@ -181,14 +181,38 @@ test("every package has a version, and registry, app badge and atlas show the sa
   assert.ok(html.includes('h("dt", {}, "Version")'));
 });
 
-test("no package or atlas place is left in the retired preview state", () => {
-  for (const p of pakete) assert.equal(p.preview, undefined, p.app);
+// Wording of the retired preview and draft states. "Vorschau" alone stays
+// allowed in apps, where it can mean a preview of the learner's own work.
+const RETIRED_STATE =
+  /zam-preview-notice|zam-draft-notice|preview-label|Lokale Erprobung|lokaler Entwurf\.|ist ein lokaler Entwurf|local draft\b|Vorschau:|Vorschau;|als Vorschau|Werkstatt-Vorschau|Vorschau-Lektionen|Status der Vorschau|Erprobungsfassung|nach (?:seiner |der |einer )?Veröffentlichung|after publication/i;
+
+function* appTexts(app) {
+  const files = [join(app, "index.html"), join(app, "scripts", "build-release-zip.mjs")];
+  const walk = (dir) => {
+    for (const entry of readdirSync(join(root, dir), { withFileTypes: true })) {
+      const path = join(dir, entry.name);
+      if (entry.isDirectory()) walk(path);
+      else if (/\.(ts|tsx|js|mjs|css|html)$/.test(entry.name)) files.push(path);
+    }
+  };
+  if (existsSync(join(root, app, "src"))) walk(join(app, "src"));
+  for (const file of files)
+    if (existsSync(join(root, file))) yield [file, readFileSync(join(root, file), "utf8")];
+}
+
+test("no package or atlas place is left in the retired preview or draft state", () => {
+  for (const p of pakete) {
+    assert.equal(p.preview, undefined, p.app);
+    assert.ok(!/Vorschau|Entwurf|Erprobung/.test(p.desc ?? ""), `${p.app}: desc`);
+  }
   assert.ok(!/\bpreview\b|Vorschau/.test(html));
-  for (const app of discoverApps(root))
-    assert.ok(
-      !readFileSync(join(root, app, "index.html"), "utf8").includes("zam-preview-notice"),
-      app,
-    );
+  for (const app of discoverApps(root)) {
+    if (publicationStatus(join(root, app)) !== "ready") continue;
+    for (const [file, text] of appTexts(app)) {
+      const found = text.match(RETIRED_STATE);
+      assert.equal(found, null, `${file}: ${found?.[0]}`);
+    }
+  }
 });
 
 test("Grade 4 has its own island with the Grundschule packages and HSU ends there", () => {

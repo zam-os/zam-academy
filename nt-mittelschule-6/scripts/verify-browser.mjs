@@ -445,7 +445,7 @@ try {
 	assert.ok(
 		(
 			await evaluate('document.querySelector(".zam-version").innerText')
-		).startsWith("· Version 0."),
+		).match(/^· Version\s0\.\d+ · Lehrkraftprüfung\soffen$/),
 	);
 	let states = 0,
 		controls = 0,

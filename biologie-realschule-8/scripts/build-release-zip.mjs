@@ -49,7 +49,7 @@ Quellen & Praxis enthält die Druckansicht mit Aufgaben und getrennten Lösungen
 Eigene Antworten werden per Mustervergleich und Selbsteinschätzung geübt;
 Mikroskopieren, echte Experimente und Unterrichtsfeedback kommen hinzu.
 
-Die 60 zugehörigen ZAM-Karten werden nach Veröffentlichung über ZAM aufgenommen.
+Die 60 zugehörigen ZAM-Karten stehen im Academy-Katalog.
 Externe Quellen öffnen nur auf Klick und brauchen eine Verbindung.
 `,
 );
