@@ -7,7 +7,10 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | Physics 7 Realschule (Bavaria, Group I) | [`physik-realschule-7/`](physik-realschule-7/) | Built by Pages on merge | `zam-academy:physik-realschule-7` |
 | English 5 Gymnasium (Bavaria) | [`englisch-gymnasium-5/`](englisch-gymnasium-5/) | https://academy.zam-os.org/englisch-gymnasium-5/ | `zam-academy:englisch-gymnasium-5` |
 | Deutsch 5 Gymnasium (LehrplanPLUS Bayern) | [`deutsch-gymnasium-5/`](deutsch-gymnasium-5/) | https://academy.zam-os.org/deutsch-gymnasium-5/ | `zam-academy:deutsch-gymnasium-5` |
-| German 6 Realschule (Bavaria; local draft) | [`deutsch-realschule-6/`](deutsch-realschule-6/) | Local offline package | `zam-academy:deutsch-realschule-6` |
+| German 6 Realschule (Bavaria) | [`deutsch-realschule-6/`](deutsch-realschule-6/) | Built by Pages on merge | `zam-academy:deutsch-realschule-6` |
+| Grade 4 mathematics: 40 Discovery Island lessons with Milo (Bavaria) | [`mathematik-grundschule-4/`](mathematik-grundschule-4/) | https://academy.zam-os.org/mathematik-grundschule-4/ | `zam-academy:mathematik-grundschule-4` |
+| Grade 4 German: Tintos Wörterstadt, 45 lessons on language, spelling, the Grundwortschatz, reading and writing (Bavaria, LehrplanPLUS 2, 3.2/3.3, 4); the app does not rate free texts ([coverage](docs/deutsch-grundschule-4-coverage.md)) | [`deutsch-grundschule-4/`](deutsch-grundschule-4/) | https://academy.zam-os.org/deutsch-grundschule-4/ | `zam-academy:deutsch-grundschule-4` |
+| Grade 4 Heimat- und Sachunterricht: twenty discovery stations with Lotta (Bavaria) | [`hsu-grundschule-4/`](hsu-grundschule-4/) | https://academy.zam-os.org/hsu-grundschule-4/ | `zam-academy:hsu-grundschule-4` |
 | French 5 Gymnasium (Bavaria, first foreign language) | [`franzoesisch-gymnasium-5/`](franzoesisch-gymnasium-5/) | https://academy.zam-os.org/franzoesisch-gymnasium-5/ | `zam-academy:franzoesisch-gymnasium-5` |
 | Englisch 5 Mittelschule (LehrplanPLUS Bayern) | [`englisch-mittelschule-5/`](englisch-mittelschule-5/) | https://academy.zam-os.org/englisch-mittelschule-5/ | `zam-academy:englisch-mittelschule-5` |
 | Mathematics 5 Mittelschule (Bavaria) | [`mathematik-mittelschule-5/`](mathematik-mittelschule-5/) | Built by Pages on merge | `zam-academy:mathematik-mittelschule-5` |
@@ -46,11 +49,11 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | History 8 Realschule (Bavaria, all tracks) | [`geschichte-realschule-8/`](geschichte-realschule-8/) | https://academy.zam-os.org/geschichte-realschule-8/ | `zam-academy:geschichte-realschule-8` |
 | Geschichte 9 Realschule (LehrplanPLUS Bayern, gemeinsamer Lernpfad) | [`geschichte-realschule-9/`](geschichte-realschule-9/) | https://academy.zam-os.org/geschichte-realschule-9/ | `zam-academy:geschichte-realschule-9` |
 | Geschichte 10 Realschule (LehrplanPLUS Bayern, gemeinsamer Lernpfad) | [`geschichte-realschule-10/`](geschichte-realschule-10/) | https://academy.zam-os.org/geschichte-realschule-10/ | `zam-academy:geschichte-realschule-10` |
-| Geography 5 Realschule (preview; Bavaria, all tracks) | [`geographie-realschule-5/`](geographie-realschule-5/) | https://academy.zam-os.org/geographie-realschule-5/ | `zam-academy:geographie-realschule-5` |
+| Geography 5 Realschule (Bavaria, all tracks) | [`geographie-realschule-5/`](geographie-realschule-5/) | https://academy.zam-os.org/geographie-realschule-5/ | `zam-academy:geographie-realschule-5` |
 | Geographie 9 Realschule (LehrplanPLUS Bayern, gemeinsamer Lernpfad) | [`geographie-realschule-9/`](geographie-realschule-9/) | https://academy.zam-os.org/geographie-realschule-9/ | `zam-academy:geographie-realschule-9` |
-| Biology 6 Realschule (preview; Bavaria, all tracks) | [`biologie-realschule-6/`](biologie-realschule-6/) | https://academy.zam-os.org/biologie-realschule-6/ | `zam-academy:biologie-realschule-6` |
+| Biology 6 Realschule (Bavaria, all tracks) | [`biologie-realschule-6/`](biologie-realschule-6/) | https://academy.zam-os.org/biologie-realschule-6/ | `zam-academy:biologie-realschule-6` |
 | Biologie 10 Realschule (LehrplanPLUS Bayern, gemeinsamer Lernpfad) | [`biologie-realschule-10/`](biologie-realschule-10/) | https://academy.zam-os.org/biologie-realschule-10/ | `zam-academy:biologie-realschule-10` |
-| Biology 11 Gymnasium (preview; Bavarian Einführungsklasse) | [`biologie-gymnasium-11/`](biologie-gymnasium-11/) | https://academy.zam-os.org/biologie-gymnasium-11/ | `zam-academy:biologie-gymnasium-11` |
+| Biology 11 Gymnasium (Bavarian Einführungsklasse) | [`biologie-gymnasium-11/`](biologie-gymnasium-11/) | https://academy.zam-os.org/biologie-gymnasium-11/ | `zam-academy:biologie-gymnasium-11` |
 | Physik 10 Realschule (LehrplanPLUS Bayern, Zweig I und II/III) | [`physik-realschule-10/`](physik-realschule-10/) | https://academy.zam-os.org/physik-realschule-10/ | `zam-academy:physik-realschule-10` |
 | Algorithmen und Programmieren (DE/EN, LehrplanPLUS IT 2.6.1, jahrgangsübergreifend) | [`algorithmen/`](algorithmen/) | https://academy.zam-os.org/algorithmen/ | `zam-academy:algorithmen` |
 | Datennetze und Internet (DE/EN, LehrplanPLUS IT 2.5.1, HTTPS als Ergänzung) | [`datennetze/`](datennetze/) | https://academy.zam-os.org/datennetze/ | `zam-academy:datennetze` |
@@ -59,7 +62,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | Französisch 9 Realschule (LehrplanPLUS Bayern, Wahlpflichtfächergruppe IIIa, zweite Fremdsprache) | [`franzoesisch-realschule-9/`](franzoesisch-realschule-9/) | https://academy.zam-os.org/franzoesisch-realschule-9/ | `zam-academy:franzoesisch-realschule-9` |
 | Französisch 10 Realschule (LehrplanPLUS Bayern, Wahlpflichtfächergruppe IIIa, zweite Fremdsprache) | [`franzoesisch-realschule-10/`](franzoesisch-realschule-10/) | https://academy.zam-os.org/franzoesisch-realschule-10/ | `zam-academy:franzoesisch-realschule-10` |
 | Mathematik 10 Realschule (LehrplanPLUS Bayern, Zweig I und II/III) | [`mathematik-realschule-10/`](mathematik-realschule-10/) | https://academy.zam-os.org/mathematik-realschule-10/ | `zam-academy:mathematik-realschule-10` |
-| Mathematik 13 Gymnasium (LehrplanPLUS Bayern, erhöhtes Anforderungsniveau, Vorschau) | [`mathematik-gymnasium-13/`](mathematik-gymnasium-13/) | https://academy.zam-os.org/mathematik-gymnasium-13/ | `zam-academy:mathematik-gymnasium-13` |
+| Mathematik 13 Gymnasium (LehrplanPLUS Bayern, erhöhtes Anforderungsniveau) | [`mathematik-gymnasium-13/`](mathematik-gymnasium-13/) | https://academy.zam-os.org/mathematik-gymnasium-13/ | `zam-academy:mathematik-gymnasium-13` |
 | Deutsch 9 Realschule (LehrplanPLUS Bayern, alle Wahlpflichtfächergruppen) | [`deutsch-realschule-9/`](deutsch-realschule-9/) | https://academy.zam-os.org/deutsch-realschule-9/ | `zam-academy:deutsch-realschule-9` |
 | Informatik 10 Realschule · fünf wählbare IT-Vertiefungen (Bayern) | [`informatik-realschule-10/`](informatik-realschule-10/) | https://academy.zam-os.org/informatik-realschule-10/ | `zam-academy:informatik-realschule-10` |
 | Deutsch 10 Realschule (LehrplanPLUS Bayern, alle Wahlpflichtfächergruppen) | [`deutsch-realschule-10/`](deutsch-realschule-10/) | https://academy.zam-os.org/deutsch-realschule-10/ | `zam-academy:deutsch-realschule-10` |
@@ -75,7 +78,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | Deutsch 8 Mittelschule (LehrplanPLUS Bayern, Regelklasse und M-Zug) | [`deutsch-mittelschule-8/`](deutsch-mittelschule-8/) | https://academy.zam-os.org/deutsch-mittelschule-8/ | `zam-academy:deutsch-mittelschule-8` |
 | Geschichte/Politik/Geographie 5 Mittelschule (LehrplanPLUS Bayern) | [`gpg-mittelschule-5/`](gpg-mittelschule-5/) | Built by Pages on merge | `zam-academy:gpg-mittelschule-5` |
 | Natur und Technik 5 Mittelschule (LehrplanPLUS Bayern) | [`nt-mittelschule-5/`](nt-mittelschule-5/) | Built by Pages on merge | `zam-academy:nt-mittelschule-5` |
-| Natur und Technik 6 Mittelschule (preview; LehrplanPLUS Bayern) | [`nt-mittelschule-6/`](nt-mittelschule-6/) | https://academy.zam-os.org/nt-mittelschule-6/ | `zam-academy:nt-mittelschule-6` |
+| Natur und Technik 6 Mittelschule (LehrplanPLUS Bayern) | [`nt-mittelschule-6/`](nt-mittelschule-6/) | https://academy.zam-os.org/nt-mittelschule-6/ | `zam-academy:nt-mittelschule-6` |
 | Informatik 6 Gymnasium (LehrplanPLUS Bayern, Natur und Technik 6 Schwerpunkt Informatik) | [`informatik-gymnasium-6/`](informatik-gymnasium-6/) | Built by Pages on merge | `zam-academy:informatik-gymnasium-6` |
 
 ## How an app and its ZAM cell fit together
@@ -87,8 +90,8 @@ The rules come from [ADR 2026-10-19](https://github.com/zam-os/zam/blob/main/doc
 - **Lesson ids are a public contract.** Each app's test pins its lesson ids and checks that every card cites an existing lesson.
 - **CI installs every cell** into a throw-away library with the published `zam-core` (`scripts/validate-cells.mjs`).
 - **History changes require approval.** The catalog builder refuses cells with `replaces` or `retired_items` unless their `replaces-de-by.json` records a valid approval date and documents exactly those changes: every A/B row is replaced by its one named `academy_slug`, a C row is never replaced (it may be retired), and no undocumented `replaces` or `retired_items` exist. CI tests this safeguard; Pages checks it before building or uploading the site. An unapproved proposal therefore blocks publication.
-- **Local drafts stay unpublished.** An optional `<app>/publication.json` uses schema `1` and status `local-only`, `preview` or `ready`. The catalog and public registry check exclude `local-only` cells; invalid metadata fails closed, and missing metadata preserves existing behaviour.
-- **A preview is published.** A `preview` app is on Pages, in the atlas and in the catalog like a `ready` app, so its cell is released and its ids are a contract. It differs only in what it tells learners: `preview` in `academy.json` and the catalog entry and a visible `zam-preview-notice` in the app, because teacher review and videos are still open. To end a preview, set the marker to `ready`, remove `preview` and the notice; the registry test requires them to agree. Cell validation still checks drafts. The Pages loop refuses local-only or invalid markers before building or copying any app, even if its list accidentally includes a draft. Publication also requires the Pages entry and explicit release authority.
+- **Local drafts stay unpublished.** Every package has `<app>/publication.json` with schema `1`, status `local-only` or `ready` and its package `version`. The catalog and public registry check exclude `local-only` cells; invalid metadata fails closed. Cell validation still checks drafts. The Pages loop refuses local-only or invalid markers before building or copying any app, even if its list accidentally includes a draft. Publication also requires the Pages entry and explicit release authority.
+- **Every package shows its version.** `0.n` means not yet accepted by a teacher of the grade, `1.n` accepted by one, `2.n` and higher a fully new package type. Every merged change to a package folder raises the minor number: `node scripts/package-version.mjs bump <app>` sets it in `publication.json`, in `academy.json` (the atlas shows it) and in the badge inside the app's `zam-home-link`. CI's `changes` job refuses a changed package whose version did not rise. Only Thomas raises the major number; `approval` in `publication.json` records his decision for that major number. The app shows the status as text next to the version (for example `Version 0.0 · Lehrkraftprüfung offen`), not only as a tooltip. The package version is not the cell `version`, which ZAM reads.
 - **Pages publishes** each app, its `cell.json`, and `/catalog.json` (`scripts/build-catalog.mjs`), with the SHA-256 of every cell. ZAM reads the catalog only on a learner's action. ZAM releases bundle a copy of each cell.
 - **A cell is released at its first publication,** in the catalog or in a ZAM release. From then on, its item ids, slugs and cited lessons stay stable; changes use `replaces` and raise the version.
 
@@ -96,16 +99,6 @@ For the Discovery Island primary-school pilot, Thomas explicitly approved
 transactional IndexedDB and a native player for an approved first-party
 teacher recording on 2026-10-31. The exception is scoped in [AGENTS.md](AGENTS.md);
 external video embeds and automatic media requests remain excluded.
-
-## Previews
-
-Published, but not yet reviewed by a primary-school teacher and without teacher videos.
-
-| App | Folder | App URL | Cell |
-| --- | --- | --- | --- |
-| Grade 4 mathematics: 40 Discovery Island lessons with Milo (Bavaria) | [`mathematik-grundschule-4/`](mathematik-grundschule-4/) | https://academy.zam-os.org/mathematik-grundschule-4/ | `zam-academy:mathematik-grundschule-4` |
-| Grade 4 German: Tintos Wörterstadt, 45 lessons on language, spelling, the Grundwortschatz, reading and writing (Bavaria, LehrplanPLUS 2, 3.2/3.3, 4); the app does not rate free texts ([coverage](docs/deutsch-grundschule-4-coverage.md)) | [`deutsch-grundschule-4/`](deutsch-grundschule-4/) | https://academy.zam-os.org/deutsch-grundschule-4/ | `zam-academy:deutsch-grundschule-4` |
-| Grade 4 Heimat- und Sachunterricht: twenty discovery stations with Lotta (Bavaria) | [`hsu-grundschule-4/`](hsu-grundschule-4/) | https://academy.zam-os.org/hsu-grundschule-4/ | `zam-academy:hsu-grundschule-4` |
 
 ## Develop
 
@@ -149,16 +142,16 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # History 8: cd geschichte-realschule-8 (dev server on :5213)
 # Englisch 8: cd englisch-realschule-8 (dev server on :5214)
 # French 8: cd franzoesisch-realschule-8 (dev server on :5215)
-# Grade 4 mathematics preview: cd mathematik-grundschule-4 (dev server on :5216)
-# Grade 4 German preview: cd deutsch-grundschule-4 (dev server on :5217)
-# Grade 4 HSU preview: cd hsu-grundschule-4 (dev server on :5218)
+# Grade 4 mathematics: cd mathematik-grundschule-4 (dev server on :5216)
+# Grade 4 German: cd deutsch-grundschule-4 (dev server on :5217)
+# Grade 4 HSU: cd hsu-grundschule-4 (dev server on :5218)
 # Mathematik 5: cd mathematik-realschule-5 (dev server on :5220)
 # Mathematik 5 Gymnasium: cd mathematik-gymnasium-5 (dev server on :5221)
 # Mathematik 6 Gymnasium: cd mathematik-gymnasium-6 (dev server on :5225)
 # Mathematik 11 Gymnasium: cd mathematik-gymnasium-11 (dev server on :5224)
 # Mathematik 12 Gymnasium: cd mathematik-gymnasium-12 (dev server on :5222)
 # Englisch 5: cd englisch-realschule-5 (dev server on :5223)
-# Mathematik 13 Gymnasium (Vorschau): cd mathematik-gymnasium-13 (dev server on :5225)
+# Mathematik 13 Gymnasium: cd mathematik-gymnasium-13 (dev server on :5225)
 # Physik 11 Gymnasium: cd physik-gymnasium-11 (dev server on :5226)
 # Geography 5 Realschule: cd geographie-realschule-5 (dev server on :5240)
 # German 5 Mittelschule: cd deutsch-mittelschule-5 (dev server on :5230)
@@ -174,18 +167,18 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Biologie 5 Realschule: cd biologie-realschule-5 (dev server on :5238)
 # Geschichte/Politik/Geographie 5 Mittelschule: cd gpg-mittelschule-5 (dev server on :5241)
 # Natur und Technik 5 Mittelschule: cd nt-mittelschule-5 (dev server on :5243)
-# Natur und Technik 6 Mittelschule preview: cd nt-mittelschule-6 (dev server on :5250)
+# Natur und Technik 6 Mittelschule: cd nt-mittelschule-6 (dev server on :5250)
 # Mathematik 7 Gymnasium: cd mathematik-gymnasium-7 (dev server on :5242)
 # Geographie 5 Gymnasium: cd geographie-gymnasium-5 (dev server on :5244)
 # English 5 Gymnasium: cd englisch-gymnasium-5 (dev server on :5247)
 # German 5 Gymnasium: cd deutsch-gymnasium-5 (dev server on :5249)
-# German 6 Realschule local draft: cd deutsch-realschule-6 (dev server on :5254)
+# German 6 Realschule: cd deutsch-realschule-6 (dev server on :5254)
 # Biologie 5 Gymnasium: cd biologie-gymnasium-5 (dev server on :5246)
 # French 5 Gymnasium: cd franzoesisch-gymnasium-5 (dev server on :5245)
 # Englisch 5 Mittelschule: cd englisch-mittelschule-5 (dev server on :5248)
 # Informatik 6 Gymnasium: cd informatik-gymnasium-6 (dev server on :5251)
 # Biologie 6 Gymnasium: cd biologie-gymnasium-6 (dev server on :5253)
-# Grade 11 introductory biology preview: cd biologie-gymnasium-11 (dev server on :5227)
+# Grade 11 introductory biology: cd biologie-gymnasium-11 (dev server on :5227)
 npm ci
 npm run dev      # http://localhost:5180/uml/
 npm test
@@ -195,7 +188,7 @@ npm run package:zip   # offline zip in release/
 
 CI (`.github/workflows/ci.yml`) tests and builds the apps a pull request or push changed and uploads their offline zips as artifacts: an app is tested when a file in its folder changed, every app when the package jobs of the CI workflow changed or the base commit is unknown (`scripts/changed-apps.mjs`). The `cells` job validates every cell on each run. Pages runs no test suites. Pages (`.github/workflows/pages.yml`) publishes `index.html` plus every app's build on each push to `main`.
 
-The preview for Bavarian Grade 11 introductory biology is documented in the [package README](biologie-gymnasium-11/) and the [curriculum and legacy card comparison](docs/biologie-gymnasium-11-coverage.md). It is for the Einführungsklasse when biology is offered. Teacher review and videos remain open; the Academy listing and app show the preview status.
+The package for Bavarian Grade 11 introductory biology is documented in the [package README](biologie-gymnasium-11/) and the [curriculum and legacy card comparison](docs/biologie-gymnasium-11-coverage.md). It is for the Einführungsklasse when biology is offered. Teacher review and videos remain open; the Academy listing and app show version 0.
 
 The [grade-9 coverage inventory](docs/realschule-9-coverage.md) distinguishes migrated packages, partial legacy material and still-open curriculum work.
 
@@ -235,8 +228,8 @@ The [Englisch 8 package](englisch-realschule-8/) adds 51 lessons and 102 cards f
 
 The [French 8 package](franzoesisch-realschule-8/) adds 40 core lessons, two optional relative-clause extensions and 84 linked cards for Bavarian Realschule group IIIa. Its [coverage matrix](franzoesisch-realschule-8/coverage.json) indexes 56 expectations and topic entries as guided exercises or preparation. The [inventory](docs/franzoesisch-8-bestandsabgleich.md) documents four older grammar cards that remain active without history transfer. Natural audiovisual practice, spontaneous conversations, maps, research and a full vocabulary programme supplement the app. Pages publishes app and cell together on merge; ZAM fixture synchronization is separate.
 
-[Grade 5 German for Bavarian Realschule](deutsch-realschule-5/) is available
-for local evaluation with 37 lessons and 77 ZAM cards. Run
+[Grade 5 German for Bavarian Realschule](deutsch-realschule-5/) is published
+with 37 lessons and 77 ZAM cards. Run
 `npm ci && npm run dev` from the package folder (port 5222), or use
 `npm run package:zip` for a self-contained offline build.
 [Curriculum coverage and legacy card inventory](docs/deutsch-5-coverage.md)
@@ -253,8 +246,8 @@ records the verified official sources and the additional classroom practice.
 The [Deutsch 7 Mittelschule](deutsch-mittelschule-7/) and [Deutsch 8 Mittelschule](deutsch-mittelschule-8/) packages each add 37 lessons (36 per track: Regelklasse and M-Zug) and 74 linked ZAM cards across all four LehrplanPLUS Bayern areas (*Sprechen und Zuhören*, *Lesen, Literatur und Medien*, *Schreiben*, *Sprachgebrauch und Sprache*). Their [coverage and legacy inventory](docs/deutsch-mittelschule-7-8-coverage.md) checks all 142 Grade 7 and 144 Grade 8 verbatim expectations and confirms that no Mittelschule German `de-by` legacy cards exist.
 
 [Grade 5 geography for Bavarian Realschule](geographie-realschule-5/) is available
-as a preview with 31 illustrated lessons, seven learning areas and 62 linked ZAM
-cards. Teacher review and videos remain open and are visibly marked. The
+with 31 illustrated lessons, seven learning areas and 62 linked ZAM
+cards. Teacher review and videos remain open; the app shows version 0. The
 [curriculum and legacy inventory](docs/geographie-5-coverage.md) records all 30
 verbatim expectations and a proposal-only history mapping. Run locally on port
 5240 or create the offline ZIP with `npm run package:zip`.

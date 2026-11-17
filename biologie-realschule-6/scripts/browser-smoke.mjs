@@ -327,14 +327,14 @@ try {
 	);
 	assert.ok(
 		await evaluate(
-			`document.querySelector('.zam-preview-notice')?.getBoundingClientRect().height > 0`,
+			`document.querySelector('.zam-version')?.getBoundingClientRect().height > 0`,
 		),
-		"preview status is visible",
+		"package version is visible",
 	);
 	await click("#zam");
 	assert.match(
 		await evaluate('document.querySelector("dialog").innerText'),
-		/Vorschau im Academy-Katalog/,
+		/im Academy-Katalog verfügbar/,
 	);
 	assert.doesNotMatch(
 		await evaluate('document.querySelector("dialog").innerText'),
@@ -396,7 +396,7 @@ try {
 			"reload persistence",
 			"all model goals",
 			"field notebook",
-			"ZAM preview notice",
+			"visible package version",
 		],
 	};
 	writeFileSync(

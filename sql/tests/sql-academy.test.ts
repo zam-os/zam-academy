@@ -20,6 +20,8 @@ import {
   stageStats,
 } from "../src/storage/progress";
 import { lessonLink, parseTrainingDeepLink, ZAM_ACADEMY_APP_URL } from "../src/zam/zam-link";
+import { englishVersionBadge } from "../src/i18n/version-badge";
+import indexHtml from "../index.html?raw";
 
 const LOCALES: AppLocale[] = ["de", "en"];
 
@@ -609,4 +611,43 @@ describe("ZAM-Zelle (cell.json)", () => {
       }
     });
   });
+});
+
+describe("version badge in English mode", () => {
+	// The German badge as index.html carries it (&nbsp; as the browser reads it).
+	const german =
+		/<span class="zam-version"[^>]*>([^<]*)<\/span>/
+			.exec(indexHtml)?.[1]
+			.replaceAll("&nbsp;", " ") ?? "";
+	it("translates the badge of this app at its actual version", () => {
+		const version = /^· Version (\d+)\.(\d+) · /.exec(german);
+		expect(version).not.toBeNull();
+		const [, major, minor] = version!;
+		const [label, title] =
+			Number(major) === 0
+				? ["teacher review open", "Not yet reviewed by a teacher"]
+				: Number(major) === 1
+					? ["reviewed by a teacher", "Reviewed by a teacher"]
+					: ["new package generation", "New package generation"];
+		expect(englishVersionBadge(german)).toEqual({
+			text: `· Version ${major}.${minor} · ${label.replaceAll(" ", " ")}`,
+			title,
+		});
+	});
+	it("translates version 0", () => {
+		expect(englishVersionBadge("· Version 0.3 · Lehrkraftprüfung offen")).toEqual({
+			text: "· Version 0.3 · teacher review open",
+			title: "Not yet reviewed by a teacher",
+		});
+	});
+	it("follows the major number and refuses foreign text", () => {
+		expect(englishVersionBadge("· Version 1.4 · von Lehrkraft geprüft")).toEqual({
+			text: "· Version 1.4 · reviewed by a teacher",
+			title: "Reviewed by a teacher",
+		});
+		expect(englishVersionBadge("· Version 2.0 · neue Paketgeneration")?.text).toBe(
+			"· Version 2.0 · new package generation",
+		);
+		expect(englishVersionBadge("ZAM Academy")).toBeNull();
+	});
 });

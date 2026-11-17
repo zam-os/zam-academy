@@ -15,7 +15,7 @@ assert.deepEqual(
 );
 
 const homeLink =
-	/<a class="zam-home-link" href="https:\/\/academy\.zam-os\.org\/">Zur ZAM Academy<\/a>/;
+	/<a class="zam-home-link" href="https:\/\/academy\.zam-os\.org\/">Zur ZAM Academy <span class="zam-version" title="[^"]+">· Version&nbsp;\d+\.\d+ · [^<]+<\/span><\/a>/;
 assert.match(html.toString("utf8"), homeLink);
 
 // Strip the intentional plain outbound home link and any textual https:// references inside JSON/text; check zero external asset loads.

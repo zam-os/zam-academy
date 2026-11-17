@@ -5,6 +5,7 @@ import {
 	type Language,
 	languageHash,
 	readLanguage,
+	localizeVersionBadge,
 	translator,
 } from "./i18n";
 import {
@@ -240,6 +241,7 @@ function toolsView() {
 }
 function render(focus = false) {
 	document.documentElement.lang = language;
+	localizeVersionBadge(language === "en");
 	document.title = tr("Datennetze · ZAM Academy", "Networks · ZAM Academy");
 	app.innerHTML = `<a class="skip-link" href="#main-content">${tr("Zum Inhalt", "Skip to content")}</a>${header()}<div class="shell">${!storageAvailable ? `<div class="storage-warning" role="status">${tr("Dieser Browser erlaubt kein dauerhaftes Speichern. Du kannst weiterüben; beim Schließen kann der Fortschritt verloren gehen.", "This browser does not allow persistent storage. You can keep practising, but progress may be lost when you close it.")}</div>` : ""}${notice ? `<p class="notice" role="status">${e(noticeText())}</p>` : ""}${view === "lesson" ? lessonView() : view === "lab" ? labView() : toolsView()}</div><footer class="site-footer"><span>ZAM Academy · ${tr("Datennetze und Internet", "Networks and the Internet")}</span><p>${tr("LehrplanPLUS IT 2.5.1 · modular über Jahrgangsstufen 5–10, mit HTTPS-Ergänzung.<br>Für dein schulisches Modulangebot und praktische Arbeit im Unterricht.", "LehrplanPLUS IT 2.5.1 · modular across grades 5–10, with an HTTPS extension.<br>For school modules, hands-on practice and professional refreshers.")}</p><div><a href="https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/9/it" target="_blank" rel="noopener noreferrer">${tr("Lehrplan öffnen", "Open curriculum (German)")} ↗</a><button data-action="zam" class="text-button">${tr("Mit ZAM behalten", "Remember with ZAM")} ↗</button></div></footer><dialog id="reset-dialog"><h2>${tr("Fortschritt zurücksetzen?", "Reset your progress?")}</h2><p>${tr("Die bearbeiteten Lektionen, Laboraufträge und gespeicherten Einstellungen dieser App werden in diesem Browser zurückgesetzt.", "Completed lessons, lab challenges and saved settings for this app will be reset in this browser.")}</p><div class="dialog-actions"><button class="secondary" data-action="cancel-reset">${tr("Abbrechen", "Cancel")}</button><button class="primary" data-action="confirm-reset">${tr("Zurücksetzen", "Reset")}</button></div></dialog><dialog id="zam-dialog"><h2>${tr("Verstanden? Mit ZAM behalten.", "Understood it? Remember it with ZAM.")}</h2><p>${tr("Öffne in ZAM die Lern-Karten und wähle „Importieren → Aus der ZAM Academy“. Suche nach „Datennetze und Internet“ und nimm die Zelle auf, sobald sie veröffentlicht ist.", "In ZAM, open the learning cards and choose Import → From ZAM Academy. Look for “Datennetze und Internet” and enrol once it is published. The current ZAM cards are in German.")}</p><p>${tr("Jede Karte führt zurück in die passende Lektion. Die App benötigt keine Anmeldung; Lernkarten und Wiederholungen verwaltet ZAM.", "Each card links back to its lesson. This app needs no account; ZAM manages the cards and spaced repetition.")}</p><button class="primary" data-action="close-zam">${tr("Verstanden", "Got it")}</button></dialog>`;
 	if (focus)
