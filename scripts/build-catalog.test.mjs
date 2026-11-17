@@ -124,15 +124,18 @@ test("a local-only cell never enters the public catalog", () =>
     assert.deepEqual(buildCatalog(root).cells, []);
   }));
 
-test("a preview cell is published and marked in the catalog", () =>
+test("a ready cell with a package version is published without extra catalog fields", () =>
   withCatalog(({ root, app, tile, writeCell }) => {
     tile.atoms[0].practice_items[0].replaces = [];
     writeCell(tile);
     writeFileSync(
       join(app, "publication.json"),
-      JSON.stringify({ schema: 1, status: "preview" }),
+      JSON.stringify({ schema: 1, status: "ready", version: "0.3" }),
     );
-    assert.equal(buildCatalog(root).cells[0].preview, true);
+    assert.deepEqual(
+      Object.keys(buildCatalog(root).cells[0]).sort(),
+      ["app", "cell", "description", "id", "items", "language", "sha256", "title", "version"],
+    );
     assert.doesNotThrow(() => assertPublishedApp(app, "published by Pages"));
   }));
 
@@ -155,6 +158,10 @@ for (const publication of [
   {},
   { schema: 2, status: "ready" },
   { schema: 1, status: "unknown" },
+  { schema: 1, status: "preview" },
+  { schema: 1, status: "ready", version: "1" },
+  { schema: 1, status: "ready", version: "0.01" },
+  { schema: 1, status: "ready", version: 1 },
 ]) {
   test(`invalid publication metadata fails closed: ${JSON.stringify(publication)}`, () =>
     withCatalog(({ root, app }) => {
@@ -277,7 +284,8 @@ test("the actual Pages loop guard refuses drafts and invalid markers before publ
     assert.equal(legacy.status, 0, "a missing marker preserves existing publication");
     for (const [marker, allowed] of [
       ['{"schema":1,"status":"local-only"}', false],
-      ['{"schema":1,"status":"preview"}', true],
+      ['{"schema":1,"status":"preview"}', false],
+      ['{"schema":1,"status":"ready","version":"0.0"}', true],
       ['{"schema":1,"status":"ready"}', true],
       ['{"schema":2,"status":"ready"}', false],
       ['{malformed', false],

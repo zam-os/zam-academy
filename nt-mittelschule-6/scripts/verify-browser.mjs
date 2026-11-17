@@ -444,8 +444,8 @@ try {
 	);
 	assert.ok(
 		(
-			await evaluate('document.querySelector(".zam-preview-notice").innerText')
-		).includes("Vorschau"),
+			await evaluate('document.querySelector(".zam-version").innerText')
+		).startsWith("· Version 0."),
 	);
 	let states = 0,
 		controls = 0,
@@ -789,7 +789,7 @@ try {
 	);
 	assert.ok(
 		(await evaluate('document.querySelector("dialog").innerText')).includes(
-			"als Vorschau veröffentlicht",
+			"Lehrkraftprüfung und ergänzende Erklärvideos stehen noch aus",
 		),
 	);
 	await evaluate(`document.querySelector('dialog [data-close]').click()`);
@@ -912,7 +912,7 @@ try {
 					"temperature boundaries",
 					"reload persistence",
 					"draft invalidation",
-					"published preview ZAM dialog",
+					"published ZAM dialog",
 					"progress reset",
 				],
 				runtimeErrors: 0,

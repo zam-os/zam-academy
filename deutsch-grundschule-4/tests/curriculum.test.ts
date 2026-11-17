@@ -110,7 +110,7 @@ describe("Lehrplanabgleich", () => {
 		expect(row("4.4", 1)?.lessons).toEqual(["grundwortschatz-regeln", "grundwortschatz-formen", "grundwortschatz-merkwoerter"]);
 	});
 
-	it("is published as a preview", () => {
-		expect(publication).toMatchObject({ schema: 1, status: "preview" });
+	it("is published", () => {
+		expect(publication).toMatchObject({ schema: 1, status: "ready" });
 	});
 });

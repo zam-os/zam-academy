@@ -31,7 +31,10 @@ jobs:
       - uses: actions/setup-node@v5
         with:
           node-version: lts/*
-      - run: node --test scripts/changed-apps.test.mjs
+      - run: node --test scripts/changed-apps.test.mjs scripts/package-version.test.mjs
+      # Every merged change to a package raises its version (scripts/package-version.mjs).
+      - name: Changed packages raise their version
+        run: node scripts/package-version.mjs check "$BASE"
       - id: select
         run: |
           apps=$(node scripts/changed-apps.mjs "$BASE")
