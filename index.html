@@ -1147,18 +1147,27 @@
         return { subject: fach, combination: null };
       }
 
+      const packageGrades = (p) => p.grades ?? [p.grade];
+      const matchesGrade = (p, grade) => packageGrades(p).includes(grade);
+      function packageGradeLabel(p) {
+        const grades = packageGrades(p);
+        if (grades.length === 1) return p.grade == null ? "jahrgangsübergreifend" : `Klasse ${p.grade}`;
+        const consecutive = grades.every((g, i) => g === grades[0] + i);
+        return `Klassen ${consecutive ? `${grades[0]}–${grades.at(-1)}` : grades.join(", ")}`;
+      }
+
       const firstSchoolGrade = () => Math.min(...D.schulen.map((x) => x.from));
 
       function buildTrees() {
         const schulBy = Object.fromEntries(D.schulen.map((x) => [x.id, x]));
-        const pkgNode = (p, f, combination = null) => ({
+        const pkgNode = (p, f, combination = null, grade = p.grade) => ({
           kind: "pkg",
           id: p.id,
           label: p.title,
           glyph: combination ? combination.glyph : f.glyph,
           hue: f.hue,
           pkg: p,
-          grade: p.grade,
+          grade,
           school: schulBy[p.school],
           combination,
           offerKey: `package:${p.id}`,
@@ -1192,9 +1201,9 @@
             if (grade < school.from || grade > school.to) continue;
             const slot = curriculumSlot(f.id, grade, school.id);
             if (!slot) continue;
-            const packages = D.pakete.filter((p) => p.fach === slot.subject && p.grade === grade && p.school === school.id);
+            const packages = D.pakete.filter((p) => p.fach === slot.subject && matchesGrade(p, grade) && p.school === school.id);
             packages.forEach((p) => used.add(p.id));
-            if (packages.length) children.push(...packages.map((p) => pkgNode(p, f, slot.combination)));
+            if (packages.length) children.push(...packages.map((p) => pkgNode(p, f, slot.combination, grade)));
             else children.push(ghost(world ? `plan-k${grade}-${school.id}` : `plan-${school.id}`,
               slot.combination?.name ?? (world ? `Klasse ${grade}` : school.name), f, {
                 grade, school, world, combination: slot.combination,
@@ -1203,8 +1212,8 @@
               }));
           }
           // A grade-bound package without a school still has its own place.
-          D.pakete.filter((p) => p.fach === f.id && p.grade === grade && !p.school && !used.has(p.id))
-            .forEach((p) => children.push(pkgNode(p, f)));
+          D.pakete.filter((p) => p.fach === f.id && matchesGrade(p, grade) && !p.school && !used.has(p.id))
+            .forEach((p) => children.push(pkgNode(p, f, null, grade)));
           return children;
         };
 
@@ -1237,10 +1246,16 @@
             .filter((f) => f.bereich === b.id)
             .map((f) => {
               const kids = D.pakete.filter((p) => p.fach === f.id && p.grade == null).map((p) => pkgNode(p, f));
+              const packagesSeen = new Set(kids.map((n) => n.id));
               for (let g = firstGrade(f); g <= 13; g++) {
                 const nodes = gradeNodes(f, g, true);
                 const ordinary = nodes.filter((n) => n.planned && !n.combination);
-                kids.push(...nodes.filter((n) => !n.planned || n.combination));
+                kids.push(...nodes.filter((n) => {
+                  if (n.planned) return Boolean(n.combination);
+                  if (packagesSeen.has(n.id)) return false;
+                  packagesSeen.add(n.id);
+                  return true;
+                }));
                 // Keep the world lens compact: ordinary pending school offers
                 // share a grade marker; a combined subject keeps its own name.
                 if (ordinary.length) kids.push(ghost(`plan-k${g}`, `Klasse ${g}`, f, {
@@ -1258,8 +1273,8 @@
           node.path = parent ? [...path, node.id] : [];
           if (node.children) {
             node.children.forEach((c) => finish(c, node, node.path));
-            // Several paths can point to one combined subject. Count its
-            // canonical offer or package only once at the shared ancestors.
+            // Several subjects or grades can point to the same package.
+            // Count it only once at their shared ancestors.
             node.offerKeys = new Set(node.children.flatMap((c) => [...c.offerKeys]));
             node.liveKeys = new Set(node.children.flatMap((c) => [...c.liveKeys]));
           } else {
@@ -1645,7 +1660,7 @@
               h("dt", {}, "Lektionen"), h("dd", {}, String(k.lessons)),
               h("dt", {}, "Karten"), h("dd", {}, `${k.cards} in ZAM`),
               k.school ? [h("dt", {}, "Schulart"), h("dd", {}, schulName(k.school))] : null,
-              h("dt", {}, "Klasse"), h("dd", {}, k.grade ? String(k.grade) : "jahrgangsübergreifend"),
+              h("dt", {}, "Jahrgang"), h("dd", {}, packageGradeLabel(k)),
               k.zweige ? [h("dt", {}, "Zweige"), h("dd", {}, k.zweige)] : null,
               h("dt", {}, "Sprache"), h("dd", {}, k.lang.map((l) => l.toUpperCase()).join(" · ")),
             ),
@@ -1793,7 +1808,8 @@
         const walk = (n) => {
           if (n.kind !== "root" && enabled(n)) {
             const aliases = n.combination ? [n.combination.id, ...n.combination.paths.map((id) => D.faecher.find((f) => f.id === id)?.name)] : [];
-            const hay = [n.label, n.pkg?.desc, ...(n.pkg?.gebiete ?? []), ...aliases].filter(Boolean).join(" ").toLowerCase();
+            const gradeAliases = (n.pkg?.grades ?? []).map((g) => `${D.faecher.find((f) => f.id === n.pkg.fach)?.name ?? n.pkg.title} ${g} Klasse ${g}`);
+            const hay = [n.label, n.pkg?.desc, ...(n.pkg?.gebiete ?? []), ...aliases, ...gradeAliases].filter(Boolean).join(" ").toLowerCase();
             if (hay.includes(q) && (!n.pkg || !seenPackages.has(n.pkg.id))) {
               hits.push(n);
               if (n.pkg) seenPackages.add(n.pkg.id);
@@ -1843,12 +1859,12 @@
                 : h("span", { class: "na", "aria-label": label, title: label }, "·")));
               continue;
             }
-            const p = D.pakete.find((x) => x.fach === slot.subject && x.grade === g && x.school === sch.id);
+            const p = D.pakete.find((x) => x.fach === slot.subject && matchesGrade(x, g) && x.school === sch.id);
             const key = `${sch.id}:${g}:${slot.subject}`;
             total.add(key);
             if (p) live.add(key);
             const name = slot.combination?.name ?? f.name;
-            const label = `${name} Klasse ${g}, ${sch.name}${slot.combination ? `, Zugang über ${f.name}` : ""}: ${p ? (p.preview ? "verfügbar als Vorschau" : "verfügbar") : "noch nicht verfügbar"}`;
+            const label = `${name} Klasse ${g}, ${sch.name}${slot.combination ? `, Zugang über ${f.name}` : ""}: ${p ? (p.preview ? "verfügbar als Vorschau" : "verfügbar") : "noch nicht verfügbar"}${p?.grades?.length > 1 ? `, gemeinsames Paket für ${packageGradeLabel(p)}` : ""}`;
             tr.append(
               h("td", {}, p
                 ? h("button", { class: "cell", type: "button", style: `--h:${f.hue}`, title: label, "aria-label": label, onclick: () => { go([`k${g}`, f.id, p.id], "schule"); if (state.mode === "map") $("atlas").scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth" }); } }, "●")

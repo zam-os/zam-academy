@@ -23,7 +23,7 @@ copyFileSync(distHtml, join(bundleDir, appFile));
 
 const winBat = [
   "@echo off",
-  "title Informatik 8 Realschule · ZAM Academy",
+  "title Informatik 6–8 Realschule · ZAM Academy",
   `start "" "%~dp0${appFile}"`,
   "",
 ].join("\r\n");
@@ -56,25 +56,28 @@ writeFileSync(linuxShPath, linuxSh, "utf8");
 chmodSync(linuxShPath, 0o755);
 
 const readmeTxt = `========================================================================
-ZAM ACADEMY · INFORMATIK 8 REALSCHULE (LehrplanPLUS Bayern, IT 1.1–1.9)
+ZAM ACADEMY · INFORMATICS 6–8 REALSCHULE (BAVARIA)
 ========================================================================
 
-SOFORT-START OHNE INSTALLATION
-1. Entpacke dieses ZIP-Archiv in einen beliebigen Ordner.
-2. Starte die App per Doppelklick:
-   - Windows: "Start-Windows.bat" oder "${appFile}"
-   - macOS:   "${appFile}" oder "Start-Mac.command"
-   - Linux:   "${appFile}" oder "./start-linux.sh"
+One shared course for Grades 6, 7 and 8: the same 40 lessons and 87 ZAM cards.
+Your school chooses when to teach each introductory IT module (1.1–1.9).
 
-Keine Installation, kein Server und kein Internet erforderlich.
-Dein Fortschritt bleibt im Browser gespeichert.
+START WITHOUT INSTALLATION
+1. Extract this ZIP archive to a folder.
+2. Open the app with a double click:
+   - Windows: "Start-Windows.bat" or "${appFile}"
+   - macOS:   "${appFile}" or "Start-Mac.command"
+   - Linux:   "${appFile}" or "./start-linux.sh"
 
-Oben in der App wechselst du zwischen
-- 🌱 Level 1 (geführt: Hinweise und Zwischenschritte helfen) und
-- 🦅 Level 2 (Transfer: Aufgaben ohne Hilfe, wie im Leistungsnachweis).
+No installation, server or internet connection is required.
+Learner content is in German. Progress stays in this browser.
 
-Behalten mit ZAM: Die Zelle "Informatik 8 Realschule (ZAM Academy)" hält, was du
-hier geübt hast. Jede Karte verlinkt die Lektion, in der du geübt hast.
+Switch levels at the top:
+- Level 1: guided tasks with hints and intermediate steps
+- Level 2: transfer tasks in new contexts
+
+The same ZAM cell serves all three grades. Its existing title remains
+"Informatik 8 Realschule (ZAM Academy)"; each card links to its lesson.
 ========================================================================
 `;
 writeFileSync(join(bundleDir, "README-START.txt"), readmeTxt, "utf8");
