@@ -72,7 +72,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | Biologie 5 Realschule (LehrplanPLUS Bayern, gemeinsamer Lernpfad) | [`biologie-realschule-5/`](biologie-realschule-5/) | https://academy.zam-os.org/biologie-realschule-5/ | `zam-academy:biologie-realschule-5` |
 | Biologie 8 Realschule (LehrplanPLUS Bayern, gemeinsamer Lernpfad) | [`biologie-realschule-8/`](biologie-realschule-8/) | https://academy.zam-os.org/biologie-realschule-8/ | `zam-academy:biologie-realschule-8` |
 | Geographie 8 Realschule (LehrplanPLUS Bayern) | [`geographie-realschule-8/`](geographie-realschule-8/) | https://academy.zam-os.org/geographie-realschule-8/ | `zam-academy:geographie-realschule-8` |
-| Informatik 8 Realschule (LehrplanPLUS Bayern, IT-Anfangsunterricht 1.1–1.9, alle Wahlpflichtfächergruppen) | [`informatik-realschule-8/`](informatik-realschule-8/) | https://academy.zam-os.org/informatik-realschule-8/ | `zam-academy:informatik-realschule-8` |
+| Informatik 6–8 Realschule (Bavaria, LehrplanPLUS IT 1.1–1.9; one shared introductory course for all tracks) | [`informatik-realschule-8/`](informatik-realschule-8/) | https://academy.zam-os.org/informatik-realschule-8/ | `zam-academy:informatik-realschule-8` |
 | Deutsch 8 Realschule (LehrplanPLUS Bayern, alle Wahlpflichtfächergruppen) | [`deutsch-realschule-8/`](deutsch-realschule-8/) | https://academy.zam-os.org/deutsch-realschule-8/ | `zam-academy:deutsch-realschule-8` |
 | French 8 Realschule (Bavaria, IIIa) | [`franzoesisch-realschule-8/`](franzoesisch-realschule-8/) | Published by Pages on merge | `zam-academy:franzoesisch-realschule-8` |
 | Deutsch 7 Mittelschule (LehrplanPLUS Bayern, Regelklasse und M-Zug) | [`deutsch-mittelschule-7/`](deutsch-mittelschule-7/) | https://academy.zam-os.org/deutsch-mittelschule-7/ | `zam-academy:deutsch-mittelschule-7` |
@@ -138,7 +138,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Französisch 10: cd franzoesisch-realschule-10 (dev server on :5207)
 # Biologie 8: cd biologie-realschule-8 (dev server on :5208)
 # Chemie 8: cd chemie-realschule-8 (dev server on :5209)
-# Informatik 8: cd informatik-realschule-8 (dev server on :5211)
+# Informatics 6–8 Realschule: cd informatik-realschule-8 (dev server on :5211)
 # Deutsch 8: cd deutsch-realschule-8 (dev server on :5212)
 # History 8: cd geschichte-realschule-8 (dev server on :5213)
 # Englisch 8: cd englisch-realschule-8 (dev server on :5214)
@@ -204,7 +204,7 @@ Selecting a live package shows its details and an opening link directly below th
 
 `fachverbunde` defines combined subjects with one canonical id, school, grades and access `paths`. Mittelschule GPG (`gpg`, grades 5–10) is reachable through Geschichte, Politik und Gesellschaft and Geographie, and Mittelschule NT (`nt`, grades 5–10) through Biologie, Chemie and Physik in both lenses, the list and the coverage matrix. Each entry is explicitly named after its combined subject. The three routes point to one offer: common ancestors and matrix totals count it once, and search returns one package result. Until a package exists, the shared offer remains planned. A combined package is registered once with `fach: "gpg"` or `"nt"`, its grade and `school: "mittelschule"`; all routes then open the same app and do not create copies of cards or progress.
 
-To register a new package, add an entry to `pakete` in `academy.json` (app folder, Fach, grade, school, lesson and card counts); `node --test scripts/academy-registry.test.mjs` keeps it in sync with the app cells. UML groups several lessons per atom, so its curriculum test checks the registry's lesson count against the app's actual lessons. School types and subject start grades in the registry are a planning scaffold and can be edited freely.
+To register a new package, add an entry to `pakete` in `academy.json` (app folder, Fach, grade, school, lesson and card counts); `node --test scripts/academy-registry.test.mjs` keeps it in sync with the app cells. A shared course adds `grades` (for example `[6, 7, 8]`) to its single registry entry; `grade` remains one of those grades. All grade routes open the same app, and package, lesson and card totals count it once. UML groups several lessons per atom, so its curriculum test checks the registry's lesson count against the app's actual lessons. School types and subject start grades in the registry are a planning scaffold and can be edited freely.
 
 ## Privacy
 
@@ -220,7 +220,7 @@ The [Informatik 10 package](informatik-realschule-10/) adds 36 lessons and 72 ca
 
 Geographie 8: `cd geographie-realschule-8 && npm ci && npm run dev` (Port 5210). Die [Abdeckungsmatrix](geographie-realschule-8/coverage.json) ordnet alle 34 Pflicht-Kompetenzerwartungen den 34 Lektionen zu; [Bestandsabgleich](docs/geographie-8-bestandsabgleich.md).
 
-The [Informatik 8 package](informatik-realschule-8/) covers the IT Anfangsunterricht (modules 1.1–1.9, binding for all Wahlpflichtfächergruppen and completed by the end of grade 8) with 40 lessons, local workshops and 87 cards. Its [coverage matrix](informatik-realschule-8/coverage.json) maps all 35 Kompetenzerwartungen. The [legacy review](docs/informatik-8-bestandsabgleich.md) maps the 24 cards of the old Informatik 6–8 cells to 10 A, 1 B and 13 C rows; Thomas approved the mapping on 2026-10-27, so since cell 2026.10.2 it replaces the eleven A/B cards and retires the thirteen C cards. Since 2026.10.3 every atom binds its module for grades 6, 7 and 8, because LehrplanPLUS does not tie the modules to one grade.
+The [Informatics 6–8 package](informatik-realschule-8/) is the same shared course under Grades 6, 7 and 8 in the atlas, list and coverage matrix. All routes open the existing app and share its progress and ZAM cell. It covers the IT Anfangsunterricht (modules 1.1–1.9, binding for all Wahlpflichtfächergruppen and completed by the end of Grade 8) with 40 lessons, local workshops and 87 cards. Schools choose when to teach each module. Its [coverage matrix](informatik-realschule-8/coverage.json) maps all 35 Kompetenzerwartungen. The [legacy review](docs/informatik-8-bestandsabgleich.md) maps the 24 cards of the old Informatik 6–8 cells to 10 A, 1 B and 13 C rows; Thomas approved the mapping on 2026-10-27, so since cell 2026.10.2 it replaces the eleven A/B cards and retires the thirteen C cards. Since 2026.10.3 every atom binds its module for Grades 6, 7 and 8, because LehrplanPLUS does not tie the modules to one grade. The existing app URL, cell title, card identifiers and storage keys remain valid.
 
 The [Deutsch 8 package](deutsch-realschule-8/) adds 40 lessons, 80 linked cards and writing tasks on two levels for Realschule Bayern. Its [coverage matrix](deutsch-realschule-8/coverage.json) maps all 59 curriculum expectations to guided exercises or preparation for additional practice. The [inventory](docs/deutsch-8-bestandsabgleich.md) documents four existing argumentation cards that remain active, with no review-history transfer.
 

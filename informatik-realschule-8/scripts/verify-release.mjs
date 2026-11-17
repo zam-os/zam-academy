@@ -27,6 +27,11 @@ for (const file of [
   "README-START.txt",
 ])
   assert.ok(entries.includes(`${name}/${file}`));
+const startInstructions = execFileSync("unzip", ["-p", zip, `${name}/README-START.txt`], { encoding: "utf8" });
+assert.match(startInstructions, /Ein gemeinsames Paket für die Klassen 6, 7 und 8/);
+assert.match(startInstructions, /Entpacke dieses ZIP-Archiv/);
+assert.match(startInstructions, /Starte die App per Doppelklick/);
+assert.match(startInstructions, /Dein Fortschritt bleibt in diesem Browser gespeichert/);
 for (const starter of ["Start-Mac.command", "start-linux.sh"])
   execFileSync("sh", ["-n", join(root, "release", name, starter)]);
 console.log(

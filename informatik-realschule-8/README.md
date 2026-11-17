@@ -1,77 +1,59 @@
-# Informatik 8 · Realschule Bayern
+# Informatik 6–8 · Bavarian Realschule
 
-**40 Lektionen in neun Etappen, 87 ZAM-Karten.** Das Paket deckt den
-IT-Anfangsunterricht (Lernbereich 1, Module 1.1–1.9) des
-[LehrplanPLUS Informationstechnologie](https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/8/it)
-ab. Laut [Fachprofil](https://www.lehrplanplus.bayern.de/fachprofil/realschule/it)
-ist dieser Anfangsunterricht für **alle Wahlpflichtfächergruppen** verbindlich,
-beginnt je nach Schule in Jahrgangsstufe 5, 6 oder 7 und ist **spätestens mit
-Ende der Jahrgangsstufe 8 abgeschlossen** (Kompetenzniveau I). Deshalb gibt es
-einen gemeinsamen Lernpfad ohne Zweig-Filter. Welche Module eine Schule in
-welcher Klasse unterrichtet, entscheidet sie selbst. Lehrplan geprüft am
-27.10.2026; Zuordnung aller 35 Kompetenzerwartungen in [coverage.json](coverage.json).
+**One shared course for Grades 6, 7 and 8: 40 lessons, nine stages and 87 ZAM cards.** The atlas, list and coverage matrix link all three grades to the same app. The app URL, lesson and card identifiers, ZAM cell and browser storage remain the same, so learners continue with their existing progress.
 
-| Etappe | Modul | Lektionen | Werkstätten |
+Package version `0.1` includes the shared grade routes. The same version appears in the atlas and the app's Academy link; major version 0 means teacher acceptance is still open. This package version is separate from the existing ZAM cell version.
+
+- App: https://academy.zam-os.org/informatik-realschule-8/
+- Cell: `zam-academy:informatik-realschule-8` (the existing ZAM title is still “Informatik 8 Realschule (ZAM Academy)”)
+- Offline build: `release/ZAM-Academy-Informatik-8-offline.zip`
+
+The course follows [LehrplanPLUS Information Technology](https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/8/it), introductory modules 1.1–1.9, for all Wahlpflichtfächergruppen. The [subject profile](https://www.lehrplanplus.bayern.de/fachprofil/realschule/it) lets schools start in Grade 5, 6 or 7 and choose the distribution of modules. The introductory course ends by the end of Grade 8; the three atlas entries do not prescribe a separate syllabus for each grade. The shared scope was checked against the current official pages on 2026-11-17. The existing [coverage matrix](coverage.json) maps all 35 Kompetenzerwartungen.
+
+Grades 6–8 are the deliberate scope of these shared entry points and the existing cell bindings. Adding Grade 5 would be a separate curriculum-binding change and is outside this course's current atlas routes. The offline ZIP's startup instructions are in German for learners; repository documentation is in English.
+
+| Stage | Module | Lessons | Workshops |
 | --- | --- | ---: | --- |
-| 1 Texterfassung | IT 1.1 | 4 | Griffwege, Fehleranalyse, Überschrift formatieren, Arbeitsplatz einstellen |
-| 2 Einführung in die Programmierung | IT 1.2 | 5 | Rasenroboter, Ereignisse, Kassenprogramm, Lüftersteuerung, Schleifenroboter |
-| 3 Einführung in die Textverarbeitung | IT 1.3 | 4 | Schreibtempo, DIN 5008, Textobjekte, Layout |
-| 4 Informationsaustausch | IT 1.4 | 6 | Kommunikationsmodell, Bitschalter, ASCII/Morse, Digitalisierung, Gefahren, Datenschutzfälle |
-| 5 Einführung in die Bildbearbeitung | IT 1.5 | 4 | Zoom Pixel/Vektor, Bildgröße, Vektorhaus, Diagramm-Manipulation |
-| 6 Einführung in die Tabellenkalkulation | IT 1.6 | 5 | Datentypen, Formel kopieren, Funktionen, Datenfluss MwSt, Diagrammwahl |
-| 7 Informationsbeschaffung und -präsentation | IT 1.7 | 4 | Suchanfrage, CC-Lizenzen, Foliengestaltung, Vortragsverhalten |
-| 8 Grundlagen elektronischer Datenverarbeitung | IT 1.8 | 4 | EVA-Bauteile, Ordnerbaum, Softwarelizenzen, Passwortstärke |
-| 9 Digitale Medien | IT 1.9 | 4 | Werkzeugwahl, Netiquette, Geräte-Check, Datenspuren |
+| Touch typing | IT 1.1 | 4 | Finger paths, error analysis, heading formatting, workstation setup |
+| First programs | IT 1.2 | 5 | Garden robot, events, checkout program, fan controller, loops |
+| Word processing | IT 1.3 | 4 | Typing speed, DIN 5008, text objects, layout |
+| Exchanging information | IT 1.4 | 6 | Communication model, bits, ASCII/Morse, digitisation, risks, privacy |
+| Image editing | IT 1.5 | 4 | Pixel/vector zoom, image dimensions, vector house, misleading graphics |
+| Spreadsheets | IT 1.6 | 5 | Data types, formula copying, functions, VAT model, chart selection |
+| Research and presentation | IT 1.7 | 4 | Search queries, Creative Commons, slide design, presenting |
+| Computer systems | IT 1.8 | 4 | Input/processing/output, folder tree, software licences, passwords |
+| Digital media | IT 1.9 | 4 | Tool selection, netiquette, device protection, data traces |
 
-Jede Lektion hat eine Erklärung mit Beispiel und Merksatz, Fachbegriffe, einen
-Schnellcheck mit drei Antworten, eine Werkstatt mit drei Aufträgen (keiner zu
-Beginn erfüllt) und zwei Aufgabengeneratoren auf zwei Niveaus: Level 1 mit
-Hilfe, Level 2 als Transferaufgabe. Eine Lektion ist abgeschlossen, wenn der
-Schnellcheck stimmt, alle Werkstattaufträge erfüllt und drei Aufgaben auf
-Level 1 gelöst sind; drei Level-2-Aufgaben ergeben das Transferabzeichen.
-Fortschritt und Hell/Dunkel-Einstellung bleiben in `localStorage`.
+Each lesson has an explanation, worked example, key rule, quick check, a workshop with three goals and exercises at two levels. Completion requires the quick check, all workshop goals and three Level 1 tasks; three Level 2 tasks earn the transfer badge. Progress and theme settings stay in `localStorage`. Opening the course from another grade does not create another copy of that progress.
 
-## Grenzen
+## Practice beyond the app
 
-Die App bereitet die Arbeit am echten Gerät vor, ersetzt sie aber nicht:
-Blindschreiben und die Abschrift mit 80 Anschlägen pro Minute, eigene Programme
-in einer Entwicklungsumgebung, eigene Dokumente, Bilder, Tabellen und
-Präsentationen sowie Recherche und Vortrag vor der Gruppe gehören in den
-Unterricht. Rechtliche Hinweise (Urheberrecht, Recht am eigenen Bild, DSGVO,
-Lizenzen) sind vereinfachte Schulmodelle, keine Rechtsberatung. Die
-Passwort-Werkstatt rechnet mit angenommenen 10¹⁰ Versuchen pro Sekunde.
+The workshops prepare work at a real device. Touch typing and measured transcription, creating actual programs, documents, images, spreadsheets and presentations, independent research and speaking to a group still need practice outside the app. Legal examples are simplified school models. The password workshop assumes 10¹⁰ guesses per second.
 
-Der Aufbauunterricht (2.x) liegt in eigenen Paketen:
-[Algorithmen](../algorithmen/) (2.6.1), [Datennetze](../datennetze/) (2.5.1),
-[SQL](../sql/) (2.3) und [Informatik 10](../informatik-realschule-10/).
+Advanced IT modules remain in their existing packages: [Algorithms](../algorithmen/) (2.6.1), [Networks](../datennetze/) (2.5.1), [SQL](../sql/) (2.3) and [Informatics 10](../informatik-realschule-10/).
 
-## ZAM-Zelle und Bestandskarten
+## Existing ZAM cards
 
-`cell.json` (`zam-academy:informatik-realschule-8`, Version 2026.10.3) hat ein
-Atom je Lektion und zitiert jede Lektion als `#lesson=<id>`. Jedes Atom ist an
-sein IT-Modul in den Jahrgangsstufen 6, 7 und 8 gebunden, denn der
-LehrplanPLUS ordnet die Module keiner Jahrgangsstufe zu; so findet ZAM die Zelle
-in jeder dieser Stufen. ZAM enthält drei
-ältere Zellen zum Thema (`de-by:realschule-6/7/8-informatik-…`, 24 Karten).
-[`replaces-de-by.json`](replaces-de-by.json) ordnet jede alte Karte einer
-Kategorie zu (10 A, 1 B, 13 C); Thomas hat die Zuordnung am 27.10.2026
-freigegeben. Die elf A/B-Nachfolger übernehmen per `replaces` den Lernverlauf,
-die 13 C-Karten gehen per `retired_items` aus den aktiven Wiederholungen, ihre
-Historie bleibt erhalten. Begründung in
-[docs/informatik-8-bestandsabgleich.md](../docs/informatik-8-bestandsabgleich.md).
+The cell stays at version `2026.10.3`. Each atom already binds its module to Grades 6, 7 and 8. This atlas change creates no new cell or history transfer.
 
-## Entwickeln
+The existing [mapping](replaces-de-by.json), approved by Thomas on 2026-10-27, covers all 24 legacy Informatics 6–8 cards: ten A rows and one B row transfer histories through `replaces`; thirteen C rows are retired while their histories remain. See the [migration inventory](../docs/informatik-8-bestandsabgleich.md).
+
+## Development and verification
 
 ```bash
 npm ci
 npm run dev        # http://localhost:5211/informatik-realschule-8/
+npm run typecheck
 npm test
-npm run build      # Einzeldatei in dist/index.html
+npm run build
 npm run package:zip
+node scripts/verify-release.mjs
 ```
 
-Zellprüfung mit dem in CI gepinnten zam-core:
+At the repository root:
 
 ```bash
-ZAM_CORE=<file URL von zam-core/dist/index.js> node scripts/validate-migration.mjs
+node --test scripts/academy-registry.test.mjs scripts/build-catalog.test.mjs
 ```
+
+The registry checks the three grade routes, shared identity, unique package counts, coverage links and grade-specific search queries. The public catalog continues to contain one copy of the existing cell.

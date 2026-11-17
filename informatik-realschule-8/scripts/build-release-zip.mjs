@@ -23,7 +23,7 @@ copyFileSync(distHtml, join(bundleDir, appFile));
 
 const winBat = [
   "@echo off",
-  "title Informatik 8 Realschule · ZAM Academy",
+  "title Informatik 6–8 Realschule · ZAM Academy",
   `start "" "%~dp0${appFile}"`,
   "",
 ].join("\r\n");
@@ -47,7 +47,7 @@ const linuxSh = [
   "elif command -v gio >/dev/null 2>&1; then",
   `  gio open "$DIR/${appFile}"`,
   "else",
-  `  echo "Open $DIR/${appFile} in your web browser."`,
+  `  echo "Öffne $DIR/${appFile} in deinem Webbrowser."`,
   "fi",
   "",
 ].join("\n");
@@ -56,8 +56,12 @@ writeFileSync(linuxShPath, linuxSh, "utf8");
 chmodSync(linuxShPath, 0o755);
 
 const readmeTxt = `========================================================================
-ZAM ACADEMY · INFORMATIK 8 REALSCHULE (LehrplanPLUS Bayern, IT 1.1–1.9)
+ZAM ACADEMY · INFORMATIK 6–8 REALSCHULE BAYERN
 ========================================================================
+
+Ein gemeinsames Paket für die Klassen 6, 7 und 8: dieselben 40 Lektionen
+und 87 ZAM-Karten. Deine Schule legt fest, wann du die einzelnen Module
+des IT-Anfangsunterrichts (1.1–1.9) lernst.
 
 SOFORT-START OHNE INSTALLATION
 1. Entpacke dieses ZIP-Archiv in einen beliebigen Ordner.
@@ -67,14 +71,15 @@ SOFORT-START OHNE INSTALLATION
    - Linux:   "${appFile}" oder "./start-linux.sh"
 
 Keine Installation, kein Server und kein Internet erforderlich.
-Dein Fortschritt bleibt im Browser gespeichert.
+Dein Fortschritt bleibt in diesem Browser gespeichert. Wenn du das Paket
+aus einer anderen Klassenstufe öffnest, lernst du im selben Kurs weiter.
 
-Oben in der App wechselst du zwischen
-- 🌱 Level 1 (geführt: Hinweise und Zwischenschritte helfen) und
-- 🦅 Level 2 (Transfer: Aufgaben ohne Hilfe, wie im Leistungsnachweis).
+Oben in der App wechselst du zwischen:
+- Level 1 (geführt): Hinweise und Zwischenschritte helfen dir.
+- Level 2 (Transfer): Du wendest dein Wissen in neuen Situationen an.
 
-Behalten mit ZAM: Die Zelle "Informatik 8 Realschule (ZAM Academy)" hält, was du
-hier geübt hast. Jede Karte verlinkt die Lektion, in der du geübt hast.
+Alle drei Klassen nutzen dieselbe ZAM-Zelle. In ZAM heißt sie weiterhin
+"Informatik 8 Realschule (ZAM Academy)". Jede Karte verlinkt ihre Lektion.
 ========================================================================
 `;
 writeFileSync(join(bundleDir, "README-START.txt"), readmeTxt, "utf8");
