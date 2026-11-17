@@ -25,7 +25,7 @@ practice or preparation. The [curriculum and card inventory](../docs/deutsch-5-c
 explains the role of classroom practice and how the 16 legacy cards were
 compared. The 77 ZAM cards live in [the cell](cell.json).
 
-This package is published as a `preview` in ZAM Academy (`publication.json` status
-`preview`). Thomas approved `replaces-de-by.json` on 2026-11-13 (cell version
+This package is published in ZAM Academy at version 0.0 (`publication.json`;
+`0.n` means not yet accepted by a teacher of the grade). Thomas approved `replaces-de-by.json` on 2026-11-13 (cell version
 `2026.11.2`: 8 `replaces` transfers, 5 `retired_items`, 3 legacy cards kept
 active).

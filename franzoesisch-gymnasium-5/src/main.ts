@@ -491,7 +491,7 @@ document
 	?.addEventListener("click", () =>
 		showDialog(
 			"Mit ZAM behalten",
-			`<p>Für dieses Paket sind 120 Wiederholungsfragen vorbereitet. Jede führt zurück zu ihrer Lektion.</p><p>Das Paket ist ein lokaler Entwurf und noch nicht im Academy-Katalog veröffentlicht. Die Karten stehen in der cell.json des Quellpakets. Nach einer Freigabe wird es im ZAM-Importmenü „Aus der ZAM Academy“ erscheinen. Die Zelle heißt <strong>${esc(ZAM_CELL_ID)}</strong>. Du kannst hier bereits alle Lektionen offline üben.</p><p>Bis dahin kannst du hier ohne Konto weiterüben.</p>`,
+			`<p>Für dieses Paket sind 120 Wiederholungsfragen vorbereitet. Jede führt zurück zu ihrer Lektion.</p><p>Die Karten stehen im Academy-Katalog. In ZAM erscheint es im Importmenü „Aus der ZAM Academy“, sobald ZAM die Academy-Zelle übernommen hat. Die Zelle heißt <strong>${esc(ZAM_CELL_ID)}</strong>.</p><p>Du kannst hier auch ohne Konto alle Lektionen offline üben.</p>`,
 		),
 	);
 document.querySelector("#reset")?.addEventListener("click", () => {

@@ -320,7 +320,7 @@ document.querySelector("#zam")!.addEventListener("click", () => {
   const request = `Nimm mich in die Zelle „${CELL_TITLE}“ auf.`;
   showDialog(
     "Mit ZAM behalten",
-    `<p>Die Zelle enthält <strong>72 Karten</strong>. Jede führt zurück zur passenden Lektion. Eine Aufnahme der ganzen Zelle umfasst alle fünf Module.</p><p>Nach der Veröffentlichung findest du das Paket in ZAM unter <strong>Lern-Karten → Importieren → Aus der ZAM Academy</strong>. Öffne die Academy-Liste einmal, damit dein Agent neue Pakete aus dem lokalen Katalog aufnehmen kann.</p><p>Du kannst deinen Agenten dann bitten:</p><blockquote>${esc(request)}</blockquote><button class="button" id="copy-request">Bitte kopieren</button><p id="copy-status" role="status">Deine Texte und dein App-Fortschritt werden dabei nicht übertragen.</p>`,
+    `<p>Die Zelle enthält <strong>72 Karten</strong>. Jede führt zurück zur passenden Lektion. Eine Aufnahme der ganzen Zelle umfasst alle fünf Module.</p><p>Sobald ZAM die Academy-Zelle übernommen hat, findest du das Paket in ZAM unter <strong>Lern-Karten → Importieren → Aus der ZAM Academy</strong>. Öffne die Academy-Liste einmal, damit dein Agent neue Pakete aus dem lokalen Katalog aufnehmen kann.</p><p>Du kannst deinen Agenten dann bitten:</p><blockquote>${esc(request)}</blockquote><button class="button" id="copy-request">Bitte kopieren</button><p id="copy-status" role="status">Deine Texte und dein App-Fortschritt werden dabei nicht übertragen.</p>`,
   );
   dialog.querySelector("#copy-request")!.addEventListener("click", async () => {
     try {

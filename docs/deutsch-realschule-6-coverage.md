@@ -107,10 +107,12 @@ legacy cells. It never opens a configured learner library.
 
 ## Verification and publication
 
-The package is `local-only`: it is listed as a draft in the repository README
-but omitted from `academy.json`, Pages and the public catalog. CI discovers it
-by its own `package.json` and runs its tests, offline/curriculum checks, browser
-check and disposable-library check. Shared publication tooling is unchanged.
+The package was first merged as `local-only`. On 2026-11-17 Thomas asked to
+release it as `ready`: it is now in `academy.json`, Pages and the public
+catalog at package version 0.0 (no teacher acceptance yet). Its cell still
+declares neither `replaces` nor `retired_items`, so the catalog's mapping gate
+needs no approval. CI discovers it by its own `package.json` and runs its
+tests, offline/curriculum checks, browser check and disposable-library check.
 
 Reproduce the package checks from `deutsch-realschule-6`:
 

@@ -83,8 +83,7 @@ The visual workshop and Level 1 tasks count towards core progress.
 Listening uses only an already installed French voice. If none is available,
 a partner can read the accessible transcript. Source links need internet.
 
-The 120 linked ZAM cards are prepared in the source package's cell.json.
-This local draft is not published in the Academy catalog.
+The 120 linked ZAM cards are in the Academy catalog.
 No personal library or review history is modified by this offline app.
 `;
 writeFileSync(join(bundleDir, "README-START.txt"), readmeTxt, "utf8");

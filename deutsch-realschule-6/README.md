@@ -15,9 +15,11 @@ was explored, not mastery. The controls are native keyboard-accessible buttons.
 Regression checks tie the controls to their intended grammatical examples and
 check the listening route against the described directions and destination.
 
-The package is a local draft (`publication.json`: `local-only`). Teacher review
-and teacher videos remain open. It stays outside Pages, the public catalog and
-the Academy atlas. Its review-history mapping is a proposal, not an approval.
+The package is published at version 0.0 (`publication.json`; `0.n` means not
+yet accepted by a teacher of the grade): on Pages, in the public catalog and in
+the Academy atlas, so its lesson ids, item ids and slugs are a contract.
+Teacher review and teacher videos remain open. Its review-history mapping is a
+proposal, not an approval.
 
 Open [dist/index.html](dist/index.html) after building, or extract
 [release/ZAM-Academy-Deutsch-Realschule-6-offline.zip](release/ZAM-Academy-Deutsch-Realschule-6-offline.zip)
@@ -57,7 +59,7 @@ A plan or an app checkmark does not certify that reading. See the
 [curriculum and legacy inventory](../docs/deutsch-realschule-6-coverage.md).
 
 100 ZAM practice items live only in [cell.json](cell.json), two per lesson.
-Their source links use the eventual public lesson anchors. The
+Their source links use the public lesson anchors. The
 [legacy proposal](replaces-de-by.json) inventories twelve old items: four A
 candidates need Thomas's explicit approval; eight C items remain active. The
 cell declares neither `replaces` nor `retired_items`.

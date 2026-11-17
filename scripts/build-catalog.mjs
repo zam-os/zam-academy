@@ -16,6 +16,7 @@ import {
 import { basename, dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { assertMappingApproved } from "./mapping-approval.mjs";
+import { VERSION as PACKAGE_VERSION } from "./package-version.mjs";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const outFile = resolve(root, process.argv[2] ?? "site/catalog.json");
@@ -24,21 +25,24 @@ const APP = /^[a-z0-9][a-z0-9-]{0,31}$/;
 const VERSION = /^\d+(\.\d+)*$/;
 
 // Absence preserves existing published packages; malformed metadata fails closed.
+// Every package in this repo has the file with its version
+// (scripts/academy-registry.test.mjs); the version is checked here only for
+// its form.
 export function publicationStatus(dir) {
   const file = join(dir, "publication.json");
   if (!existsSync(file)) return "ready";
   const publication = JSON.parse(readFileSync(file, "utf8"));
   if (
     publication?.schema !== 1 ||
-    !["local-only", "preview", "ready"].includes(publication.status)
+    !["local-only", "ready"].includes(publication.status) ||
+    (publication.version !== undefined &&
+      !PACKAGE_VERSION.test(publication.version))
   ) {
     throw new Error(`${file}: invalid publication status`);
   }
   return publication.status;
 }
 
-// A preview is published like a ready app, with its ids as a contract; it only
-// says so to learners and marks its catalog entry.
 export const isPublishedApp = (dir) => publicationStatus(dir) !== "local-only";
 
 export function assertPublishedApp(dir, surface) {
@@ -73,9 +77,6 @@ export function buildCatalog(dir = root) {
       app: `/${app}/`,
       cell: `/${app}/cell.json`,
       sha256: createHash("sha256").update(bytes).digest("hex"),
-      ...(publicationStatus(join(dir, app)) === "preview"
-        ? { preview: true }
-        : {}),
     });
   }
   const ids = new Set(cells.map((cell) => cell.id));

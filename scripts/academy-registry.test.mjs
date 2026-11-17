@@ -9,6 +9,14 @@ import {
   buildCatalog,
   publicationStatus,
 } from "./build-catalog.mjs";
+import { discoverApps } from "./changed-apps.mjs";
+import {
+  assertVersionRecord,
+  badgeIn,
+  versionBadge,
+  versionNote,
+  VERSION,
+} from "./package-version.mjs";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const registry = JSON.parse(readFileSync(join(root, "academy.json"), "utf8"));
@@ -147,42 +155,64 @@ test("every app links back to the academy online and in an offline file", () => 
   }
 });
 
-test("a preview is published and marked in the registry, its app and the catalog", () => {
-  const catalog = new Map(buildCatalog(root).cells.map((c) => [c.app, c]));
-  const pagesLoop = readFileSync(
-    join(root, ".github/workflows/pages.yml"),
-    "utf8",
-  ).match(/^\s*for app in (.+); do$/m)[1];
-  const published = pagesLoop.split(" ");
-  const notice =
-    '<p class="zam-preview-notice" role="note"><strong>Vorschau:</strong> Noch nicht von einer Lehrkraft geprüft, Lehrvideos fehlen noch. Inhalte können sich ändern.</p>';
-  for (const p of pakete) {
-    const preview = publicationStatus(join(root, p.app)) === "preview";
-    assert.equal(Boolean(p.preview), preview, `${p.app}: registry and marker`);
+test("every package has a version, and registry, app badge and atlas show the same one", () => {
+  const registered = new Map(pakete.map((p) => [p.app, p]));
+  for (const app of discoverApps(root)) {
+    const file = join(root, app, "publication.json");
+    assert.ok(existsSync(file), `${app}: publication.json`);
+    const publication = JSON.parse(readFileSync(file, "utf8"));
+    assert.match(String(publication.version), VERSION, `${app}: version`);
+    assertVersionRecord(publication, file);
     assert.equal(
-      Boolean(catalog.get(`/${p.app}/`).preview),
-      preview,
-      `${p.app}: catalog`,
+      badgeIn(readFileSync(join(root, app, "index.html"), "utf8")),
+      versionBadge(publication.version),
+      `${app}: visible version badge inside the zam-home-link`,
     );
-    assert.equal(
-      readFileSync(join(root, p.app, "index.html"), "utf8")
-        .replace(/<!--[\s\S]*?-->/g, "")
-        .includes(notice),
-      preview,
-      `${p.app}: visible notice`,
-    );
-    if (preview) assert.ok(published.includes(p.app), `${p.app}: Pages`);
+    if (publicationStatus(join(root, app)) === "ready") {
+      assert.equal(registered.get(app)?.version, publication.version, `${app}: academy.json`);
+    }
   }
-  // Every place in the atlas that names a package says it is a preview.
-  for (const shown of [
-    "k.preview ? [h(",
-    "c.pkg?.preview",
-    "k.pkg?.preview",
-    "n.pkg?.preview",
-    "p.preview ?",
-    'n.pkg.preview ? "Vorschau · "',
-  ])
-    assert.ok(html.includes(shown), shown);
+  // The atlas explains the version in the package panel with the same words.
+  const atlasNote = new Function(
+    `${html.match(/const versionNote = [^\n]+/)[0]}; return versionNote;`,
+  )();
+  for (const v of ["0.0", "0.7", "1.0", "1.3", "2.0"])
+    assert.equal(atlasNote(v), versionNote(v).replace(/^./, (c) => c.toLowerCase()), v);
+  assert.ok(html.includes('h("dt", {}, "Version")'));
+});
+
+// Wording of the retired preview and draft states. "Vorschau" alone stays
+// allowed in apps, where it can mean a preview of the learner's own work.
+const RETIRED_STATE =
+  /zam-preview-notice|zam-draft-notice|preview-label|Lokale Erprobung|lokaler Entwurf\.|ist ein lokaler Entwurf|local draft\b|Vorschau:|Vorschau;|als Vorschau|Werkstatt-Vorschau|Vorschau-Lektionen|Status der Vorschau|Erprobungsfassung|nach (?:seiner |der |einer )?Veröffentlichung|after publication/i;
+
+function* appTexts(app) {
+  const files = [join(app, "index.html"), join(app, "scripts", "build-release-zip.mjs")];
+  const walk = (dir) => {
+    for (const entry of readdirSync(join(root, dir), { withFileTypes: true })) {
+      const path = join(dir, entry.name);
+      if (entry.isDirectory()) walk(path);
+      else if (/\.(ts|tsx|js|mjs|css|html)$/.test(entry.name)) files.push(path);
+    }
+  };
+  if (existsSync(join(root, app, "src"))) walk(join(app, "src"));
+  for (const file of files)
+    if (existsSync(join(root, file))) yield [file, readFileSync(join(root, file), "utf8")];
+}
+
+test("no package or atlas place is left in the retired preview or draft state", () => {
+  for (const p of pakete) {
+    assert.equal(p.preview, undefined, p.app);
+    assert.ok(!/Vorschau|Entwurf|Erprobung/.test(p.desc ?? ""), `${p.app}: desc`);
+  }
+  assert.ok(!/\bpreview\b|Vorschau/.test(html));
+  for (const app of discoverApps(root)) {
+    if (publicationStatus(join(root, app)) !== "ready") continue;
+    for (const [file, text] of appTexts(app)) {
+      const found = text.match(RETIRED_STATE);
+      assert.equal(found, null, `${file}: ${found?.[0]}`);
+    }
+  }
 });
 
 test("Grade 4 has its own island with the Grundschule packages and HSU ends there", () => {
@@ -669,6 +699,10 @@ test("package details place the opening link after the title and reset a previou
     assert.equal(link.tag, "a");
     assert.equal(link.attrs.href, `${node.pkg.app}/`);
     assert.deepEqual(link.children, ["Paket öffnen →"]);
+    const facts = panel.children.find((c) => c.tag === "dl").children.flat(Infinity);
+    const at = facts.findIndex((c) => c.tag === "dt" && c.children[0] === "Version");
+    assert.ok(at >= 0, `${node.pkg.app}: version fact`);
+    assert.ok(facts[at + 1].children[0].startsWith(`${node.pkg.version} · `), node.pkg.app);
   }
 });
 

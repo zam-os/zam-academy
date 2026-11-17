@@ -451,13 +451,13 @@ function renderParents(): void {
 <section class="card">
 	<h2>Übertritt und was die App nicht abdeckt</h2>
 	<p>Für den Übertritt zählen in Bayern Deutsch, Mathematik und Heimat- und Sachunterricht zusammen. Diese App übt einen Teil von Deutsch. Die Schreibwerkstatt übt Teilschritte des Schreibens, und am Schreibtisch kann Ihr Kind frei schreiben. Die App liest und bewertet diese Texte nicht; dafür braucht es Sie oder die Lehrkraft. Sprechen und Zuhören sind nicht enthalten, und auch das Sprachlabor ersetzt keine echten Gespräche. Lautes Lesen, Lesetempo, Gespräche über Bücher und die Bibliothek brauchen echte Praxis; die Lesewerkstatt übt das Verstehen. Den Grundwortschatz übt Ihr Kind hier am Bildschirm; die Wörter auch mit der Hand zu schreiben, bleibt wichtig. Das gilt ebenso für echte Bücher, Vorlesen und Gespräche.</p>
-	<p>Das ist eine Vorschau. Eine Grundschullehrkraft hat die Inhalte noch nicht fachlich freigegeben, und Lehrvideos fehlen noch.</p>
+	<p>Eine Grundschullehrkraft hat die Inhalte noch nicht fachlich freigegeben, deshalb beginnt die Versionsnummer mit 0. Lehrvideos fehlen noch.</p>
 	<ul class="source-list">${SOURCES.map((s) => `<li><a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.label)}</a></li>`).join("")}<li><a href="https://www.km.bayern.de/lernen/ubertritt-und-bildungswege/uebertritt" target="_blank" rel="noopener noreferrer">Bayerisches Kultusministerium · Übertritt</a></li></ul>
 	<p class="small">Links öffnen erst auf Ihren Klick.</p>
 </section>
 <section class="card">
 	<h2>Mit ZAM wiederholen</h2>
-	<p>Zu jeder Lektion gibt es Wiederholungskarten (${cards} insgesamt). Mit ZAM kann Ihr Kind sie später in wachsenden Abständen wiederholen. Jede Karte führt zur passenden Lektion zurück. Die Karten stehen im ZAM-Katalog; als Vorschau können sie sich nach der fachlichen Prüfung noch ändern.</p>
+	<p>Zu jeder Lektion gibt es Wiederholungskarten (${cards} insgesamt). Mit ZAM kann Ihr Kind sie später in wachsenden Abständen wiederholen. Jede Karte führt zur passenden Lektion zurück. Die Karten stehen im ZAM-Katalog. Solange eine Lehrkraft das Paket noch nicht geprüft hat (Version 0), können sie sich noch ändern.</p>
 </section>
 <section class="card">
 	<h2>Daten und Zurücksetzen</h2>

@@ -1,6 +1,6 @@
 # Englisch 6 Realschule (Bayern): Lehrplan, Umfang und Kartenbestand
 
-Stand: 17. November 2026. Das Paket umfasst 42 Lektionen in 8 Etappen mit 42 Atomen und 126 ZAM-Wiederholungskarten (`zam-academy:englisch-realschule-6`).
+Stand: 17. November 2026. Das Paket (Paketversion `0.0` laut [`englisch-realschule-6/publication.json`](../englisch-realschule-6/publication.json), ohne Lehrkraftprüfung) umfasst 42 Lektionen in 8 Etappen mit 42 Atomen und 126 ZAM-Wiederholungskarten (`zam-academy:englisch-realschule-6`).
 
 ## Offizielle Grundlage und Nachbarjahrgänge
 
@@ -51,7 +51,7 @@ Geprüft wurden beide einschlägigen Bestandszellen in `zam-os/zam` (Commit `e51
 ## Nachweise
 
 - Paketprüfungen in `englisch-realschule-6`: `npx tsc --noEmit`, `npm test` (`check-curriculum.mjs`: 42 rows, 0 not found + Vitest: 163 tests passed), `npm run build`, `npm run package:zip`.
-- Zellenprüfung mit `zam-core@0.54.0`: `node scripts/validate-cell.mjs` und am Stamm `node scripts/validate-cells.mjs` sowie `node --test scripts/build-catalog.test.mjs scripts/academy-registry.test.mjs`.
+- Zellenprüfung mit `zam-core@0.54.0`: `node scripts/validate-cell.mjs` und am Stamm `node scripts/validate-cells.mjs` sowie `node --test scripts/build-catalog.test.mjs scripts/academy-registry.test.mjs scripts/package-version.test.mjs scripts/changed-apps.test.mjs` und `node scripts/package-version.mjs check origin/main`.
 - Browserprüfung der gebauten `dist/index.html` in Headless Chrome (`node scripts/verify-browser.mjs`) über alle 42 Lektionen auf beiden Stufen im hellen und dunklen Thema, alle 126 Entdeckerziele, Explorer, Kartenebenen, Quiz/Kurzaufgaben/Mustervergleich, Reload-Persistenz und schmale Layouts (390 px, 720 px).
 
 ## Offen
