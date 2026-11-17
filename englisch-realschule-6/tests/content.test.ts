@@ -55,6 +55,7 @@ import {
 	US_ALASKA,
 	US_CITIES,
 	US_HAWAII,
+	US_MID_ATLANTIC,
 	US_MIDWEST,
 	US_NORTHEAST,
 	US_ROCKIES,
@@ -244,6 +245,7 @@ describe("explorers, geometry and schematic maps", () => {
 			rockies: US_ROCKIES,
 			midwest: US_MIDWEST,
 			south: US_SOUTH,
+			midAtlantic: US_MID_ATLANTIC,
 			northeast: US_NORTHEAST,
 		} as const;
 		for (const city of Object.values(US_CITIES)) {

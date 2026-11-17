@@ -165,7 +165,7 @@
 			"1": {
 				"language": "en",
 				"prompt": "Imagine yesterday at 5:00 p.m. Write four sentences in the Past Progressive saying what you, a friend and two family members were (or weren't) doing at that moment.",
-				"model": "Yesterday at 5:00 p.m., I was practising English in my room. My best friend was riding his bike to basketball training. My parents were cooking dinner in the kitchen, and my little sister wasn't sleeping — she was drawing a picture.",
+				"model": "Yesterday at 5:00 p.m., I was practising English in my room. My best friend was riding his bike to basketball training. My parents were cooking dinner in the kitchen. Meanwhile, my little sister wasn't sleeping — she was drawing a picture.",
 				"criteria": [
 					"Ich bilde was / were + Verb-ing bei Singular und Plural richtig.",
 					"Ich schreibe die -ing-Formen korrekt.",
@@ -249,13 +249,13 @@
 		],
 		"quiz": {
 			"optionLanguage": "de",
-			"question": "Wie lautet die Grundregel für die 3. Person Einzahl (he, she, it) im Simple Present?",
-			"answer": "He/she/it erhält ein -s bzw. -es am Verb („He, she, it – das 's' muss mit!“).",
+			"question": "Wann nutzt du in der Gegenwart das Present Progressive (am/is/are + -ing) statt des Simple Present?",
+			"answer": "Für Handlungen, die genau jetzt im Augenblick des Sprechens ablaufen (z. B. Look!, at the moment).",
 			"wrong": [
-				"He/she/it steht im Simple Present immer ohne Endung.",
-				"He/she/it bildet das Simple Present mit was + Verb-ing."
+				"Für regelmäßige Gewohnheiten, feste Fahrpläne und allgemeine Tatsachen (z. B. usually, every Monday).",
+				"Für abgeschlossene Handlungen gestern mit festen Zeitangaben wie yesterday oder ago."
 			],
-			"explanation": "Bei he, she, it hängt das Simple Present ein -s (oder -es nach Zischlaut/-o) an das Verb."
+			"explanation": "Gewohnheiten und feste Zeiten stehen im Simple Present (he/she/it + -s); das Present Progressive beschreibt Vorgänge, die gerade jetzt ablaufen."
 		},
 		"takeaway": "Gegenwart: Gewohnheit = Simple Present (he/she/it + -s); gerade jetzt = Present Progressive (am/is/are + -ing). Vergangenheit: Hintergrund/Dauer = Past Progressive (was/were + -ing); kurze Unterbrechung = Simple Past.",
 		"practice": [
@@ -401,10 +401,10 @@
 			"2": {
 				"language": "de",
 				"prompt": "Warum ist in 'He's lost his cap' das 's eine Kurzform von has und nicht von is? Erkläre es auf Deutsch an diesem Beispiel und nenne noch zwei unregelmäßige 3. Verbformen.",
-				"model": "Nach 's steht hier das past participle 'lost' von einem aktiven Geschehen ('Er hat seine Mütze verloren'), also steht 's für 'has' (Present Perfect: has lost). Bei is + Adjektiv/Ortsangabe oder -ing wäre es Simple Present/Progressive ('He's ready'). Weitere unregelmäßige 3. Formen sind z. B. written (von write) und seen (von see).",
+				"model": "In 'He's lost his cap' steht nach 's das past participle 'lost' mit dem direkten Objekt 'his cap' („er hat seine Mütze verloren“). Deshalb steht 's für 'has' (Present Perfect: has lost), während 'He is lost' ohne Objekt bedeuten würde, dass er sich verirrt hat. Weitere unregelmäßige 3. Formen sind z. B. written (von write) und seen (von see).",
 				"criteria": [
-					"Ich erkläre 's = has über das folgende past participle (lost).",
-					"Ich grenze es von 's = is ab.",
+					"Ich erkläre 's = has über das past participle 'lost' mit dem direkten Objekt 'his cap' (Abgrenzung zu 'he is lost').",
+					"Ich grenze es von 's = is + Adjektiv/Ortsangabe ab.",
 					"Ich nenne zwei echte unregelmäßige 3. Verbformen."
 				]
 			}
@@ -504,7 +504,7 @@
 			"1": {
 				"language": "en",
 				"prompt": "Look at three present situations and write one Present Perfect sentence for each: (1) the classroom looks tidy now, (2) you just arrived at the station, (3) you can't ride your bike because of a flat tyre.",
-				"model": "1. Someone has tidied the classroom, so everything looks neat! 2. We have just arrived at the station. 3. Oh no, I've got a flat tyre, or someone has broken my bike bell, so I can't ride right now.",
+				"model": "1. Someone has tidied the classroom, so everything looks neat! 2. We have just arrived at the station. 3. Someone has damaged my tyre, so I can't ride my bike right now.",
 				"criteria": [
 					"Alle drei Sätze nutzen have/has + 3. Verbform richtig.",
 					"Just steht an der richtigen Stelle zwischen Hilfsverb und Partizip.",
@@ -590,9 +590,9 @@
 		"quiz": {
 			"optionLanguage": "en",
 			"question": "Your friend drops her pencil case on the floor right next to you. Which instant decision uses the will-future correctly?",
-			"answer": "Wait, I'll help you pick them up!",
+			"answer": "Wait, I'll help you pick it up!",
 			"wrong": [
-				"Wait, I'll helped you pick them up!",
+				"Wait, I'll helped you pick it up!",
 				"Wait, I won't to help you!"
 			],
 			"explanation": "Nach will / 'll / won't steht immer die reine Grundform ohne -ed und ohne to."
@@ -708,7 +708,7 @@
 			"answer": "going-to-future (am / is / are + going to + Grundform)",
 			"wrong": [
 				"Simple Past (2. Verbform)",
-				"Present Progressive ohne going to"
+				"Past Progressive (was / were + Verb-ing)"
 			],
 			"explanation": "Für bereits beschlossene Pläne und Absichten (intentions) verwendet man am / is / are + going to + Grundform."
 		},

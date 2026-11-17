@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { findLesson } from "../src/curriculum";
+import { US_CITIES } from "../src/places-map";
 import { checkPractice } from "../src/practice";
 import {
 	comparisonSentence,
@@ -48,5 +49,25 @@ describe("Grade 6 Realschule pedagogical accuracy checks", () => {
 			expect(point.time).toMatch(/^1[67]:\d{2}$/);
 			expect(point.en).not.toMatch(/NaN|undefined/);
 		}
+	});
+
+	it("keeps review fixes intact across IPA, grammar prompts, and regions", () => {
+		const pron = findLesson("e6-pronunciation")!;
+		expect(pron.paragraphs.join(" ")).toContain("/təˈmeɪtoʊ/");
+		expect(pron.paragraphs.join(" ")).not.toContain("/təˈmeɪtəʊ/");
+		expect(pron.material).toContain("/təˈmeɪtoʊ/");
+		expect(pron.material).not.toContain("/təˈmeɪtəʊ/");
+
+		const will = findLesson("e6-will-future")!;
+		expect(will.quiz.answer).toContain("pick it up");
+		expect(will.quiz.wrong[0]).toContain("pick it up");
+
+		const ppUse = findLesson("e6-present-perfect-use")!;
+		expect(ppUse.tasks["1"].model).not.toContain("I've got");
+
+		const goingTo = findLesson("e6-going-to-future")!;
+		expect(goingTo.quiz.wrong.join(" ")).not.toContain("Present Progressive");
+
+		expect(US_CITIES.washington.region).toBe("midAtlantic");
 	});
 });

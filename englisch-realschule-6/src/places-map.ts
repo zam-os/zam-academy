@@ -27,7 +27,9 @@ export const US_MIDWEST = [
 
 export const US_SOUTH = [
 	[310, 184],
-	[492, 184],
+	[462, 184],
+	[462, 194],
+	[562, 194],
 	[528, 294],
 	[486, 298],
 	[462, 256],
@@ -36,11 +38,18 @@ export const US_SOUTH = [
 	[310, 268],
 ] as const satisfies readonly MapPoint[];
 
+export const US_MID_ATLANTIC = [
+	[462, 138],
+	[580, 138],
+	[562, 194],
+	[462, 194],
+] as const satisfies readonly MapPoint[];
+
 export const US_NORTHEAST = [
 	[462, 62],
 	[594, 52],
-	[574, 184],
-	[462, 184],
+	[580, 138],
+	[462, 138],
 ] as const satisfies readonly MapPoint[];
 
 export const US_ALASKA = [
@@ -64,8 +73,8 @@ export const US_CITIES = {
 	chicago: { name: "Chicago", pin: [404, 128] as MapPoint, labelAt: [404, 114] as MapPoint, anchor: "middle", region: "midwest" },
 	houston: { name: "Houston", pin: [358, 250] as MapPoint, labelAt: [358, 237] as MapPoint, anchor: "middle", region: "south" },
 	miami: { name: "Miami", pin: [498, 270] as MapPoint, labelAt: [494, 258] as MapPoint, anchor: "middle", region: "south" },
-	newYork: { name: "New York", pin: [538, 126] as MapPoint, labelAt: [534, 114] as MapPoint, anchor: "middle", region: "northeast" },
-	washington: { name: "Washington, D.C.", pin: [516, 162] as MapPoint, labelAt: [516, 149] as MapPoint, anchor: "middle", region: "northeast" },
+	newYork: { name: "New York", pin: [538, 116] as MapPoint, labelAt: [534, 102] as MapPoint, anchor: "middle", region: "northeast" },
+	washington: { name: "Washington, D.C.", pin: [510, 182] as MapPoint, labelAt: [508, 170] as MapPoint, anchor: "middle", region: "midAtlantic" },
 } as const;
 
 /* ---------- London Metropolis Zones ---------- */
@@ -199,13 +208,14 @@ function controls(layers: [string, string][]): string {
 }
 
 export function renderUsaMap(): string {
-	return `<figure class="places-map"><svg viewBox="0 0 640 330" role="img" aria-label="Lernskizze der USA mit fünf Regionen, Alaska und Hawaii. Norden ist oben. Nicht maßstäblich.">
+	return `<figure class="places-map"><svg viewBox="0 0 640 330" role="img" aria-label="Lernskizze der USA mit ihren Regionen, Alaska und Hawaii. Norden ist oben. Nicht maßstäblich.">
 	<rect width="640" height="330" rx="16" class="sea"/>
 	<g data-map-layer="regions">
 		<path class="land region" data-region="west" d="${path(US_WEST)} Z"/>
 		<path class="land region" data-region="rockies" d="${path(US_ROCKIES)} Z"/>
 		<path class="land region" data-region="midwest" d="${path(US_MIDWEST)} Z"/>
 		<path class="land region" data-region="south" d="${path(US_SOUTH)} Z"/>
+		<path class="land region" data-region="midAtlantic" d="${path(US_MID_ATLANTIC)} Z"/>
 		<path class="land region" data-region="northeast" d="${path(US_NORTHEAST)} Z"/>
 		<path class="land region" data-region="alaska" d="${path(US_ALASKA)} Z"/>
 		<path class="land region" data-region="hawaii" d="${path(US_HAWAII)} Z"/>
@@ -213,7 +223,8 @@ export function renderUsaMap(): string {
 		<text class="region-name" text-anchor="middle" x="252" y="114">Mountain</text>
 		<text class="region-name" text-anchor="middle" x="414" y="88">Midwest</text>
 		<text class="region-name" text-anchor="middle" x="412" y="216">South</text>
-		<text class="region-name" text-anchor="middle" x="526" y="86">Northeast</text>
+		<text class="region-name" text-anchor="middle" x="514" y="151">Mid-Atlantic</text>
+		<text class="region-name" text-anchor="middle" x="526" y="76">Northeast</text>
 		<text class="region-name" text-anchor="middle" x="72" y="68">Alaska</text>
 		<text class="region-name" text-anchor="middle" x="60" y="288">Hawaii</text>
 	</g>
