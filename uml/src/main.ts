@@ -12,6 +12,7 @@ import { renderPropertyInspector } from "./editor/inspector";
 import { type EditorTool, UmlCanvasController } from "./editor/uml-canvas";
 import { exportToMermaid, exportToPlantUml } from "./exporters/code-exporters";
 import { type AppLocale, UI_STRINGS } from "./i18n/translations";
+import { localizeVersionBadge } from "./i18n/version-badge";
 import {
   cloneDiagram,
   getDiagramTypeMeta,
@@ -316,6 +317,7 @@ class UmlLearningApp {
   private syncHeaderChrome(): void {
     const ui = this.ui;
     document.documentElement.lang = this.locale;
+    localizeVersionBadge(this.locale === "en");
 
     const brandTitle = document.getElementById("brand-title-text");
     const brandSubtitle = document.getElementById("brand-subtitle-text");

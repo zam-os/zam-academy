@@ -15,6 +15,7 @@ import { esc } from "./exercises/format";
 import { quizOrder } from "./exercises/quiz-order";
 import { createRng, seedFrom } from "./exercises/rng";
 import { UI_STRINGS, type UiStrings } from "./i18n/translations";
+import { localizeVersionBadge } from "./i18n/version-badge";
 import {
   type AppLocale,
   type Cardinality,
@@ -213,6 +214,7 @@ class SqlAcademyApp {
   private syncHeader(): void {
     const t = this.t;
     document.documentElement.lang = this.locale;
+    localizeVersionBadge(this.locale === "en");
     document.title = t.htmlTitle;
     this.setText("brand-title", t.brandTitle);
     this.setText("brand-subtitle", t.brandSubtitle);

@@ -20,6 +20,8 @@ import {
   stageStats,
 } from "../src/storage/progress";
 import { lessonLink, parseTrainingDeepLink, ZAM_ACADEMY_APP_URL } from "../src/zam/zam-link";
+import { englishVersionBadge } from "../src/i18n/version-badge";
+import indexHtml from "../index.html?raw";
 
 const LOCALES: AppLocale[] = ["de", "en"];
 
@@ -609,4 +611,29 @@ describe("ZAM-Zelle (cell.json)", () => {
       }
     });
   });
+});
+
+describe("version badge in English mode", () => {
+	// The German badge as index.html carries it (&nbsp; as the browser reads it).
+	const german =
+		/<span class="zam-version"[^>]*>([^<]*)<\/span>/
+			.exec(indexHtml)?.[1]
+			.replaceAll("&nbsp;", " ") ?? "";
+	it("translates the badge of this app", () => {
+		expect(german).toMatch(/^· Version 0\.\d+ · /);
+		expect(englishVersionBadge(german)).toEqual({
+			text: german.replace(/ · [^·]+$/, " · teacher review open"),
+			title: "Not yet reviewed by a teacher",
+		});
+	});
+	it("follows the major number and refuses foreign text", () => {
+		expect(englishVersionBadge("· Version 1.4 · von Lehrkraft geprüft")).toEqual({
+			text: "· Version 1.4 · reviewed by a teacher",
+			title: "Reviewed by a teacher",
+		});
+		expect(englishVersionBadge("· Version 2.0 · neue Paketgeneration")?.text).toBe(
+			"· Version 2.0 · new package generation",
+		);
+		expect(englishVersionBadge("ZAM Academy")).toBeNull();
+	});
 });

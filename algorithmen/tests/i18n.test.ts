@@ -23,6 +23,8 @@ import {
 	saveDraft,
 	switchProgressLocale,
 } from "../src/progress";
+import { englishVersionBadge } from "../src/i18n";
+import indexHtml from "../index.html?raw";
 
 describe("complete English refresher", () => {
 	it("keeps every public anchor, stage and quiz meaning in both languages", () => {
@@ -135,5 +137,30 @@ describe("complete English refresher", () => {
 			);
 			expect(lessonFromHash(hash)?.id).toBe("algo-while");
 		}
+	});
+});
+
+describe("version badge in English mode", () => {
+	// The German badge as index.html carries it (&nbsp; as the browser reads it).
+	const german =
+		/<span class="zam-version"[^>]*>([^<]*)<\/span>/
+			.exec(indexHtml)?.[1]
+			.replaceAll("&nbsp;", " ") ?? "";
+	it("translates the badge of this app", () => {
+		expect(german).toMatch(/^· Version 0\.\d+ · /);
+		expect(englishVersionBadge(german)).toEqual({
+			text: german.replace(/ · [^·]+$/, " · teacher review open"),
+			title: "Not yet reviewed by a teacher",
+		});
+	});
+	it("follows the major number and refuses foreign text", () => {
+		expect(englishVersionBadge("· Version 1.4 · von Lehrkraft geprüft")).toEqual({
+			text: "· Version 1.4 · reviewed by a teacher",
+			title: "Reviewed by a teacher",
+		});
+		expect(englishVersionBadge("· Version 2.0 · neue Paketgeneration")?.text).toBe(
+			"· Version 2.0 · new package generation",
+		);
+		expect(englishVersionBadge("ZAM Academy")).toBeNull();
 	});
 });
