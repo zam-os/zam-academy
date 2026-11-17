@@ -1810,7 +1810,12 @@
         const walk = (n) => {
           if (n.kind !== "root" && enabled(n)) {
             const aliases = n.combination ? [n.combination.id, ...n.combination.paths.map((id) => D.faecher.find((f) => f.id === id)?.name)] : [];
-            const gradeAliases = (n.pkg?.grades ?? []).map((g) => `${D.faecher.find((f) => f.id === n.pkg.fach)?.name ?? n.pkg.title} ${g} Klasse ${g}`);
+            // School results keep their own grade; the world lens has one
+            // shared package node and needs every grade as an alias.
+            const grades = n.pkg?.grades
+              ? state.lens === "schule" ? [n.grade] : n.pkg.grades
+              : [];
+            const gradeAliases = grades.map((g) => `${D.faecher.find((f) => f.id === n.pkg.fach)?.name ?? n.pkg.title} ${g} Klasse ${g}`);
             const hay = [n.label, n.pkg?.desc, ...(n.pkg?.gebiete ?? []), ...aliases, ...gradeAliases].filter(Boolean).join(" ").toLowerCase();
             if (hay.includes(q) && (!n.pkg || !seenPackages.has(n.pkg.id))) {
               hits.push(n);

@@ -615,16 +615,31 @@ test("search returns one shared package result even when it has three atlas path
   }
 });
 
-test("each grade can find the shared Informatics package once through search", () => {
+test("grade-specific searches open that grade's shared Informatics route in the school lens", () => {
   const code = html.slice(html.indexOf("function search(q)"), html.indexOf("/* ---------- coverage matrix"));
   const shared = pakete.find((p) => p.id === "informatik-realschule-8");
   for (const lens of ["schule", "welt"]) {
     for (const grade of [6, 7, 8]) {
       const results = element("ul");
-      new Function("D", "state", "$", "h", "enabled", "query", `${code}; search(query);`)(
-        registry, {lens, trees: atlasTrees()}, () => results, element, (n) => n.live > 0, `Informatik ${grade}`,
+      const queryInput = {value: `Informatik ${grade}`};
+      const visits = [];
+      new Function("D", "state", "$", "h", "enabled", "go", "query", `${code}; search(query);`)(
+        registry, {lens, trees: atlasTrees()}, (id) => id === "q" ? queryInput : results,
+        element, (n) => n.live > 0, (path) => visits.push(path), queryInput.value,
       );
-      assert.equal(descendants(results).filter((n) => n.tag === "button" && n.children.includes(shared.title)).length, 1, `${lens}: Grade ${grade}`);
+      const matches = descendants(results).filter((n) => n.tag === "button" && n.children.includes(shared.title));
+      assert.equal(matches.length, 1, `${lens}: Grade ${grade}`);
+      const result = matches[0];
+      if (lens === "schule") {
+        assert.ok(descendants(result).some((n) => n.tag === "small" && n.children.includes(`Klasse ${grade} › Informatik`)), `breadcrumb for Grade ${grade}`);
+      }
+      result.attrs.onclick();
+      const expected = lens === "schule"
+        ? [`k${grade}`, "informatik", shared.id]
+        : ["informatik", "informatik", shared.id];
+      assert.deepEqual(visits, [expected], `${lens}: Grade ${grade}`);
+      assert.equal(results.hidden, true);
+      assert.equal(queryInput.value, "");
     }
   }
 });

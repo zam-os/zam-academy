@@ -47,7 +47,7 @@ const linuxSh = [
   "elif command -v gio >/dev/null 2>&1; then",
   `  gio open "$DIR/${appFile}"`,
   "else",
-  `  echo "Open $DIR/${appFile} in your web browser."`,
+  `  echo "Öffne $DIR/${appFile} in deinem Webbrowser."`,
   "fi",
   "",
 ].join("\n");
@@ -56,28 +56,30 @@ writeFileSync(linuxShPath, linuxSh, "utf8");
 chmodSync(linuxShPath, 0o755);
 
 const readmeTxt = `========================================================================
-ZAM ACADEMY · INFORMATICS 6–8 REALSCHULE (BAVARIA)
+ZAM ACADEMY · INFORMATIK 6–8 REALSCHULE BAYERN
 ========================================================================
 
-One shared course for Grades 6, 7 and 8: the same 40 lessons and 87 ZAM cards.
-Your school chooses when to teach each introductory IT module (1.1–1.9).
+Ein gemeinsames Paket für die Klassen 6, 7 und 8: dieselben 40 Lektionen
+und 87 ZAM-Karten. Deine Schule legt fest, wann du die einzelnen Module
+des IT-Anfangsunterrichts (1.1–1.9) lernst.
 
-START WITHOUT INSTALLATION
-1. Extract this ZIP archive to a folder.
-2. Open the app with a double click:
-   - Windows: "Start-Windows.bat" or "${appFile}"
-   - macOS:   "${appFile}" or "Start-Mac.command"
-   - Linux:   "${appFile}" or "./start-linux.sh"
+SOFORT-START OHNE INSTALLATION
+1. Entpacke dieses ZIP-Archiv in einen beliebigen Ordner.
+2. Starte die App per Doppelklick:
+   - Windows: "Start-Windows.bat" oder "${appFile}"
+   - macOS:   "${appFile}" oder "Start-Mac.command"
+   - Linux:   "${appFile}" oder "./start-linux.sh"
 
-No installation, server or internet connection is required.
-Learner content is in German. Progress stays in this browser.
+Keine Installation, kein Server und kein Internet erforderlich.
+Dein Fortschritt bleibt in diesem Browser gespeichert. Wenn du das Paket
+aus einer anderen Klassenstufe öffnest, lernst du im selben Kurs weiter.
 
-Switch levels at the top:
-- Level 1: guided tasks with hints and intermediate steps
-- Level 2: transfer tasks in new contexts
+Oben in der App wechselst du zwischen:
+- Level 1 (geführt): Hinweise und Zwischenschritte helfen dir.
+- Level 2 (Transfer): Du wendest dein Wissen in neuen Situationen an.
 
-The same ZAM cell serves all three grades. Its existing title remains
-"Informatik 8 Realschule (ZAM Academy)"; each card links to its lesson.
+Alle drei Klassen nutzen dieselbe ZAM-Zelle. In ZAM heißt sie weiterhin
+"Informatik 8 Realschule (ZAM Academy)". Jede Karte verlinkt ihre Lektion.
 ========================================================================
 `;
 writeFileSync(join(bundleDir, "README-START.txt"), readmeTxt, "utf8");

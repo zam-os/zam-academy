@@ -1,4 +1,4 @@
-# Informatics 6–8 · Bavarian Realschule
+# Informatik 6–8 · Bavarian Realschule
 
 **One shared course for Grades 6, 7 and 8: 40 lessons, nine stages and 87 ZAM cards.** The atlas, list and coverage matrix link all three grades to the same app. The app URL, lesson and card identifiers, ZAM cell and browser storage remain the same, so learners continue with their existing progress.
 
@@ -9,6 +9,8 @@ Package version `0.1` includes the shared grade routes. The same version appears
 - Offline build: `release/ZAM-Academy-Informatik-8-offline.zip`
 
 The course follows [LehrplanPLUS Information Technology](https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/8/it), introductory modules 1.1–1.9, for all Wahlpflichtfächergruppen. The [subject profile](https://www.lehrplanplus.bayern.de/fachprofil/realschule/it) lets schools start in Grade 5, 6 or 7 and choose the distribution of modules. The introductory course ends by the end of Grade 8; the three atlas entries do not prescribe a separate syllabus for each grade. The shared scope was checked against the current official pages on 2026-11-17. The existing [coverage matrix](coverage.json) maps all 35 Kompetenzerwartungen.
+
+Grades 6–8 are the deliberate scope of these shared entry points and the existing cell bindings. Adding Grade 5 would be a separate curriculum-binding change and is outside this course's current atlas routes. The offline ZIP's startup instructions are in German for learners; repository documentation is in English.
 
 | Stage | Module | Lessons | Workshops |
 | --- | --- | ---: | --- |
