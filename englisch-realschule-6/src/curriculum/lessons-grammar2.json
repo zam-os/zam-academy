@@ -1,0 +1,799 @@
+[
+	{
+		"id": "e6-simple-past-rev",
+		"stage": "grammar2",
+		"title": "Simple Past revision: Regular, irregular & did",
+		"skill": "Das Simple Past aus Klasse 5 sicher wiederholen: -ed-Schreibung, unregelmäßige Verben sowie Fragen und Verneinungen mit did",
+		"bindings": [
+			"1.1",
+			"1.2",
+			"5"
+		],
+		"paragraphs": [
+			"Wiederholung aus Klasse 5: Für abgeschlossene Ereignisse und Handlungen in der Vergangenheit (z. B. yesterday, last week, two years ago, in 2023) verwendest du das Simple Past. Bei regelmäßigen Verben hängst du -ed an die Grundform: Achte auf Verdopplung nach kurzem betontem Vokal (stop → stopped), -y nach Konsonant wird zu -ied (cry → cried, aber play → played nach Vokal), und nach stummem -e kommt nur -d (live → lived).",
+			"Bei unregelmäßigen Verben lernst du die 2. Stammform (go → went, see → saw, buy → bought, have → had, take → took, be → was / were). Entscheidend für Fragen und Verneinungen außer bei be: Sobald das Hilfsverb did oder didn't im Satz steht, kehrt das Vollverb wieder in die Grundform zurück! Beispiel: „Did you visit the museum?“ — „Yes, I visited it, but we didn't buy souvenirs.“"
+		],
+		"material": "Holiday Journal · Two Days in Edinburgh\nLast Saturday we arrived in Edinburgh by train and walked up the Royal Mile. It stopped raining at noon, so we took great photos of the castle! My brother bought a tartan scarf, and we saw street musicians near the park. We didn't visit the zoo because we didn't have enough time — did you enjoy your weekend too?",
+		"materialLabel": "Eigenes englisches Übungsmaterial · Urlaubsbericht im Simple Past",
+		"materialLanguage": "en",
+		"sourceIds": [
+			"lp",
+			"lp5",
+			"bbc-le"
+		],
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "How do you form a negative sentence or question in the Simple Past with 'did'?",
+			"answer": "did / didn't + base form (infinitive), e. g. Did you go? / We didn't see it.",
+			"wrong": [
+				"did + past form (-ed / 2nd form), e. g. Did you went?",
+				"did / didn't + -ing form, e. g. We didn't going."
+			],
+			"explanation": "did trägt bereits die Vergangenheit; das Hauptverb steht deshalb immer in der Grundform (Infinitiv)."
+		},
+		"takeaway": "Simple Past für abgeschlossene Vergangenheit: regelmäßig mit -ed (stop → stopped, cry → cried), unregelmäßig 2. Form (go → went). Fragen/Verneinungen: did / didn't + Grundform!",
+		"practice": [
+			{
+				"prompt": "We didn't ___ the museum yesterday. (visit im verneinten Simple Past)",
+				"answers": [
+					"visit"
+				],
+				"feedback": "Nach didn't steht immer die Grundform: didn't visit."
+			},
+			{
+				"prompt": "At noon the rain finally ___. (Simple Past von stop: Rechtschreibung beachten!)",
+				"answers": [
+					"stopped"
+				],
+				"feedback": "Bei kurzem betontem Vokal verdoppelt sich das p: stopped."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Write four sentences in the Simple Past about last weekend: use one regular verb, one irregular verb, one negative sentence with 'didn't' and one question with 'Did ...?'.",
+				"model": "Last Sunday I played basketball with my friends in the park. Then we bought some cold drinks and went home together. Unfortunately, we didn't see our coach there. Did you do any sport at the weekend?",
+				"criteria": [
+					"Ich bilde eine regelmäßige und eine unregelmäßige Past-Form korrekt.",
+					"Nach didn't und Did steht das Vollverb in der Grundform.",
+					"Alle vier Sätze passen thematisch zum Wochenende."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Verbessere die drei Fehler in diesem Schülertext und erkläre jeden kurz auf Deutsch: 'Yesterday we goed to London. It stoped raining at two, and we didn't saw Big Ben.'",
+				"model": "1. 'goed' ist falsch, weil go unregelmäßig ist: 'Yesterday we went to London.' 2. Bei stop folgt nach kurzem Vokal p-Verdopplung: 'It stopped raining'. 3. Nach didn't muss immer die Grundform stehen statt saw: 'we didn't see Big Ben'.",
+				"criteria": [
+					"Ich korrigiere goed → went als unregelmäßiges Verb.",
+					"Ich korrigiere stoped → stopped wegen Konsonantenverdopplung.",
+					"Ich korrigiere didn't saw → didn't see wegen did + Grundform."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "sentence",
+			"goals": [
+				{
+					"label": "Frage mit did",
+					"before": "Did you",
+					"after": "the castle yesterday?",
+					"options": [
+						"visit",
+						"visited",
+						"visiting"
+					],
+					"answer": "visit",
+					"explanation": "Nach Did steht die Grundform visit."
+				},
+				{
+					"label": "Schreibung mit -ed",
+					"before": "The bus",
+					"after": "right outside the museum.",
+					"options": [
+						"stopped",
+						"stoped",
+						"stopping"
+					],
+					"answer": "stopped",
+					"explanation": "Kurzer betonter Vokal vor einfachem Konsonant → p verdoppeln: stopped."
+				},
+				{
+					"label": "Verneinung mit didn't",
+					"before": "Emma",
+					"after": "any souvenirs in the shop.",
+					"options": [
+						"didn't buy",
+						"didn't bought",
+						"not bought"
+					],
+					"answer": "didn't buy",
+					"explanation": "didn't + Grundform buy."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "e6-past-progressive",
+		"stage": "grammar2",
+		"title": "Past Progressive: Actions in progress in the past",
+		"skill": "Das Past Progressive mit was / were + Verb-ing bilden und laufende Vorgänge in der Vergangenheit beschreiben",
+		"bindings": [
+			"1.2",
+			"5"
+		],
+		"paragraphs": [
+			"Neu in Klasse 6 ist die Verlaufsform der Vergangenheit: das Past Progressive (auch Past Continuous). Du bildest es aus der Vergangenheitsform von be (was für I / he / she / it; were für you / we / they) plus dem Verb mit -ing. Für Verneinungen nimmst du wasn't / weren't + Verb-ing, und bei Fragen rückt Was oder Were nach vorn: „Were they watching the match at 5 p.m.?“",
+			"Verwendet wird das Past Progressive, wenn eine Handlung zu einem bestimmten Zeitpunkt in der Vergangenheit gerade im Ablauf war („At 4:20 p.m., Maya was reading in the park“) oder als Hintergrundszene einer Geschichte diente („The sun was shining and children were playing“). Beachte dieselben -ing-Schreibregeln wie beim Present Progressive: stummes -e fällt weg (make → making), kurzer Konsonant verdoppelt sich (sit → sitting). Teste den Zeitstrahl direkt darunter!"
+		],
+		"material": "Witness Notes · Park Mystery at 4:20 p.m.\nDetective: “What was everyone doing at 4:20 yesterday afternoon?”\nMaya: “I was reading a book on the wooden bench while the birds were singing.”\nSam: “Liam and I weren't playing football yet; we were sitting by the lake and eating apples.”\nDetective: “Was anybody riding a bike near the gate?”",
+		"materialLabel": "Eigenes englisches Übungsmaterial · Zeugenbefragung im Past Progressive",
+		"materialLanguage": "en",
+		"sourceIds": [
+			"lp",
+			"bbc-le"
+		],
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "How do you form the Past Progressive in English?",
+			"answer": "was / were + base verb with -ing (e. g. Maya was reading)",
+			"wrong": [
+				"have / has + past participle (e. g. Maya has read)",
+				"did / didn't + verb with -ing (e. g. Maya did reading)"
+			],
+			"explanation": "Das Past Progressive besteht immer aus was (Singular I/he/she/it) oder were (Plural/you) plus Verb mit -ing."
+		},
+		"takeaway": "Past Progressive = was / were + Verb-ing (Verneinung: wasn't / weren't + Verb-ing). Es beschreibt Handlungen, die zu einem Zeitpunkt in der Vergangenheit gerade abliefen.",
+		"practice": [
+			{
+				"prompt": "At 4:20 p.m., Maya ___ reading on the bench. (Past-Form von be für Maya)",
+				"answers": [
+					"was"
+				],
+				"feedback": "Bei der 3. Person Singular (Maya / she) steht was + Verb-ing."
+			},
+			{
+				"prompt": "Sam and Liam ___ sitting by the lake. (Past-Form von be für they)",
+				"answers": [
+					"were"
+				],
+				"feedback": "Im Plural (Sam and Liam = they) steht were + Verb-ing."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Imagine yesterday at 5:00 p.m. Write four sentences in the Past Progressive saying what you, a friend and two family members were (or weren't) doing at that moment.",
+				"model": "Yesterday at 5:00 p.m., I was practising English in my room. My best friend was riding his bike to basketball training. My parents were cooking dinner in the kitchen, and my little sister wasn't sleeping — she was drawing a picture.",
+				"criteria": [
+					"Ich bilde was / were + Verb-ing bei Singular und Plural richtig.",
+					"Ich schreibe die -ing-Formen korrekt.",
+					"Alle Sätze beschreiben laufende Handlungen zu einem vergangenen Zeitpunkt."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Schiebe den Regler auf dem Zeitstrahl auf 16:15 Uhr und auf 16:35 Uhr und erkläre auf Deutsch, welchen Teil des Geschehens man mit dem Past Progressive ausdrückt.",
+				"model": "Um 16:15 Uhr befindet man sich mitten in Mayas länger dauernder Hintergrundhandlung, deshalb benutzt man das Past Progressive: 'Maya was reading in the park.' Um 16:35 Uhr läuft diese Hintergrundhandlung weiter, genau dann tritt das kurze Klingeln des Telefons neu ein.",
+				"criteria": [
+					"Ich ordne 16:15 Uhr der laufenden Hintergrundhandlung zu.",
+					"Ich verwende die richtige Form was reading.",
+					"Ich erkläre den Unterschied zur kurzen Unterbrechung um 16:35 Uhr."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "timeline",
+			"goals": [
+				{
+					"label": "3. Person Singular",
+					"before": "At 4:15 p.m., Maya",
+					"after": "her book in the park.",
+					"options": [
+						"was reading",
+						"were reading",
+						"was read"
+					],
+					"answer": "was reading",
+					"explanation": "Singular (Maya) → was + reading."
+				},
+				{
+					"label": "Pluralform",
+					"before": "Meanwhile, two boys",
+					"after": "near the pond.",
+					"options": [
+						"were sitting",
+						"was sitting",
+						"were sit"
+					],
+					"answer": "were sitting",
+					"explanation": "Plural (two boys) → were + sitting (mit doppeltem t!)."
+				},
+				{
+					"label": "Verneinung im Past Progressive",
+					"before": "Sam and Liam",
+					"after": "football yet.",
+					"options": [
+						"weren't playing",
+						"didn't playing",
+						"wasn't playing"
+					],
+					"answer": "weren't playing",
+					"explanation": "Verneinung im Plural: weren't + Verb-ing."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "e6-simple-vs-prog",
+		"stage": "grammar2",
+		"title": "Simple vs. Progressive: Present and Past",
+		"skill": "Einfache Form und Verlaufsform in Gegenwart und Vergangenheit sicher gegenüberstellen",
+		"bindings": [
+			"1.2",
+			"5"
+		],
+		"paragraphs": [
+			"In der Gegenwart (Klasse 5 als Basis, Klasse 6 vertieft) unterscheidest du genau: Das Simple Present beschreibt Gewohnheiten, feste Fahrpläne und Tatsachen (always, usually, often, every day — und bei he/she/it gilt weiter: „He, she, it – das 's' muss mit!“). Das Present Progressive (am / is / are + Verb-ing) beschreibt Handlungen, die genau jetzt ablaufen (now, at the moment, Look!, Listen!).",
+			"In der Vergangenheit wirkt derselbe Unterschied beim Erzählen: Wenn eine längere Hintergrundhandlung im Past Progressive läuft („We were walking along the Thames …“) und plötzlich ein kurzes Ereignis eintritt („… when it started to rain“), steht die Hintergrundhandlung im Past Progressive (oft nach while) und die neue, unterbrechende oder nacheinander folgende Handlung im Simple Past (oft nach when)."
+		],
+		"material": "Compare Present & Past:\n1. Present: “Sam usually rides his bike to school, so he leaves at 7:40. Look! Today he is walking because his tyre is flat.”\n2. Past: “Yesterday afternoon, we were walking across Tower Bridge when a tour boat blew its horn. While I was taking a photo, my hat nearly flew into the river!”",
+		"materialLabel": "Eigenes englisches Übungsmaterial · Gegenüberstellung Simple vs. Progressive",
+		"materialLanguage": "en",
+		"sourceIds": [
+			"lp",
+			"bbc-le"
+		],
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Wie lautet die Grundregel für die 3. Person Einzahl (he, she, it) im Simple Present?",
+			"answer": "He/she/it erhält ein -s bzw. -es am Verb („He, she, it – das 's' muss mit!“).",
+			"wrong": [
+				"He/she/it steht im Simple Present immer ohne Endung.",
+				"He/she/it bildet das Simple Present mit was + Verb-ing."
+			],
+			"explanation": "Bei he, she, it hängt das Simple Present ein -s (oder -es nach Zischlaut/-o) an das Verb."
+		},
+		"takeaway": "Gegenwart: Gewohnheit = Simple Present (he/she/it + -s); gerade jetzt = Present Progressive (am/is/are + -ing). Vergangenheit: Hintergrund/Dauer = Past Progressive (was/were + -ing); kurze Unterbrechung = Simple Past.",
+		"practice": [
+			{
+				"prompt": "Listen! The street musicians ___ playing a Scottish song right now. (Present Progressive)",
+				"answers": [
+					"are"
+				],
+				"feedback": "Listen! zeigt die Gegenwart im Moment an; bei musicians (Plural) steht are playing."
+			},
+			{
+				"prompt": "We were walking through the park when it suddenly ___ to rain. (Simple Past von start)",
+				"answers": [
+					"started"
+				],
+				"feedback": "Die plötzlich eintretende Unterbrechung steht im Simple Past: started."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Write two short pairs of English sentences: (1) a present contrast with 'usually' and 'today / right now', (2) a past contrast with 'while / when' combining Past Progressive and Simple Past.",
+				"model": "1. Emma usually plays tennis on Fridays, but today she is watching a match at home. 2. While we were waiting at the bus stop, a bright red double-decker bus arrived.",
+				"criteria": [
+					"Im Gegenwartspaar stehen Simple Present und Present Progressive am richtigen Platz.",
+					"Im Vergangenheitspaar steht die Hintergrundhandlung im Past Progressive und die Unterbrechung im Simple Past.",
+					"Signalwörter und Verbformen sind fehlerfrei."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Übersetze diesen Satz ins Englische und begründe auf Deutsch die Wahl beider Zeitformen: „Während Tom im Wohnzimmer las, klingelte plötzlich die Türglocke.“",
+				"model": "While Tom was reading in the living room, the doorbell suddenly rang. — Das Lesen ist die länger laufende Hintergrundhandlung (darum Past Progressive: was reading nach while). Das Klingeln tritt kurz und plötzlich ein und unterbricht die Szene (darum Simple Past: rang).",
+				"criteria": [
+					"Die englische Übersetzung verwendet was reading und rang korrekt.",
+					"Ich ordne was reading als Hintergrundhandlung zu.",
+					"Ich erkläre rang als kurzes, eintretendes Ereignis."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "sentence",
+			"goals": [
+				{
+					"label": "Gewohnheit in der Gegenwart",
+					"before": "Every Monday Maya",
+					"after": "the bus to school.",
+					"options": [
+						"takes",
+						"is taking",
+						"was taking"
+					],
+					"answer": "takes",
+					"explanation": "Every Monday beschreibt eine Gewohnheit + 3. Person → Simple Present: takes."
+				},
+				{
+					"label": "Handlung im Moment",
+					"before": "Look! The tour boat",
+					"after": "under Tower Bridge now.",
+					"options": [
+						"is passing",
+						"passes",
+						"passed"
+					],
+					"answer": "is passing",
+					"explanation": "Look! und now zeigen die ablaufende Gegenwart an → is passing."
+				},
+				{
+					"label": "Unterbrochene Handlung",
+					"before": "We were crossing the street when we",
+					"after": "our teacher.",
+					"options": [
+						"met",
+						"were meeting",
+						"are meeting"
+					],
+					"answer": "met",
+					"explanation": "Das plötzliche Treffen unterbricht das Überqueren → Simple Past: met."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "e6-present-perfect-form",
+		"stage": "grammar2",
+		"title": "Present Perfect Simple: Have/has + past participle",
+		"skill": "Das Present Perfect Simple mit have / has + past participle (3. Verbform) sicher bilden",
+		"bindings": [
+			"1.2",
+			"5"
+		],
+		"paragraphs": [
+			"Neu in Klasse 6 lernst du das Present Perfect Simple. Gebildet wird es immer aus zwei Teilen: dem Hilfsverb have (bei he / she / it: has) und dem past participle (der 3. Verbform). Bei regelmäßigen Verben sieht die 3. Form genauso aus wie das Simple Past auf -ed (finish → finished, tidy → tidied, stop → stopped). Bei unregelmäßigen Verben brauchst du die 3. Spalte der Verbtabelle (go → gone, be → been, see → seen, do → done, write → written, lose → lost, buy → bought).",
+			"Beispiel für Kurzformen, Verneinung und Fragen: I have → I've, she has → she's (Achtung: nicht mit is verwechseln — dahinter folgt die 3. Verbform!). Verneinung mit haven't / hasn't: „He hasn't packed his bag.“ In Fragen rückt Have oder Has vor das Subjekt, und die Kurzantwort nimmt have/haven't bzw. has/hasn't wieder auf: „Have you seen my charger? — Yes, I have. / No, I haven't.“"
+		],
+		"material": "Getting ready for the trip · Checklist Dialogue:\nMum: “Have you packed your trainers yet, Mia?”\nMia: “Yes, I have! I've also written our shopping list, and Dad has bought the train tickets.”\nMum: “Great. Has your brother cleaned his hiking boots?”\nMia: “No, he hasn't finished yet, and he has lost his red cap!”",
+		"materialLabel": "Eigenes englisches Übungsmaterial · Checklisten-Dialog im Present Perfect",
+		"materialLanguage": "en",
+		"sourceIds": [
+			"lp",
+			"bbc-le"
+		],
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "Which sentence forms the Present Perfect Simple correctly?",
+			"answer": "She has written an e-mail to our partner class.",
+			"wrong": [
+				"She has wrote an e-mail to our partner class.",
+				"She is written an e-mail to our partner class."
+			],
+			"explanation": "Das Present Perfect bildet man mit have/has + 3. Verbform (past participle): written (nicht 2. Form wrote, nicht is)."
+		},
+		"takeaway": "Present Perfect Simple = have / has + past participle (3. Verbform). Fragen mit Have/Has + Subjekt + 3. Form; Verneinung mit haven't / hasn't; Kurzantworten: Yes, I have. / No, he hasn't.",
+		"practice": [
+			{
+				"prompt": "Dad has ___ the train tickets. (3. Verbform / past participle von buy)",
+				"answers": [
+					"bought"
+				],
+				"feedback": "buy – bought – bought: die 3. Form lautet bought."
+			},
+			{
+				"prompt": "Has Mia packed her trainers? Yes, she ___. (Kurzantwort)",
+				"answers": [
+					"has"
+				],
+				"feedback": "Bei Has-Fragen antwortet man kurz mit Yes, she has."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Write four sentences in the Present Perfect Simple about preparing for a school trip: two positive sentences (one with 'I've', one with 'she/he has'), one negative sentence and one question with short answer.",
+				"model": "I've packed my backpack and my raincoat. My classmate Tom has made two sandwiches for the train. We haven't forgotten our bus tickets! Have you checked the timetable? — Yes, I have.",
+				"criteria": [
+					"Ich wähle have und has passend zur Person.",
+					"Ich verwende gültige 3. Verbformen (past participles).",
+					"Verneinung, Frage und Kurzantwort sind korrekt."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Warum ist in 'He's lost his cap' das 's eine Kurzform von has und nicht von is? Erkläre es auf Deutsch an diesem Beispiel und nenne noch zwei unregelmäßige 3. Verbformen.",
+				"model": "Nach 's steht hier das past participle 'lost' von einem aktiven Geschehen ('Er hat seine Mütze verloren'), also steht 's für 'has' (Present Perfect: has lost). Bei is + Adjektiv/Ortsangabe oder -ing wäre es Simple Present/Progressive ('He's ready'). Weitere unregelmäßige 3. Formen sind z. B. written (von write) und seen (von see).",
+				"criteria": [
+					"Ich erkläre 's = has über das folgende past participle (lost).",
+					"Ich grenze es von 's = is ab.",
+					"Ich nenne zwei echte unregelmäßige 3. Verbformen."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "sentence",
+			"goals": [
+				{
+					"label": "Hilfsverb 3. Person Singular",
+					"before": "Maya",
+					"after": "tidied her desk.",
+					"options": [
+						"has",
+						"have",
+						"is"
+					],
+					"answer": "has",
+					"explanation": "Bei Maya (she) lautet das Hilfsverb has."
+				},
+				{
+					"label": "Unregelmäßiges past participle",
+					"before": "I have",
+					"after": "a poem for English class.",
+					"options": [
+						"written",
+						"wrote",
+						"write"
+					],
+					"answer": "written",
+					"explanation": "write – wrote – written: das past participle ist written."
+				},
+				{
+					"label": "Frage + Kurzantwort",
+					"before": "Have they arrived? No, they",
+					"after": ".",
+					"options": [
+						"haven't",
+						"didn't",
+						"aren't"
+					],
+					"answer": "haven't",
+					"explanation": "Auf Have they …? antwortet man mit No, they haven't."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "e6-present-perfect-use",
+		"stage": "grammar2",
+		"title": "Present Perfect: Recent actions & present results",
+		"skill": "Das Present Perfect Simple für gerade abgeschlossene Handlungen und sichtbare Folgen in der Gegenwart verwenden",
+		"bindings": [
+			"1.2",
+			"5"
+		],
+		"paragraphs": [
+			"Wofür benutzt man das Present Perfect Simple in Klasse 6? Immer dann, wenn eine Handlung aus der Vergangenheit bis in die Gegenwart hereinwirkt oder gerade erst passiert ist. Der Lehrplan betont genau zwei Kernfunktionen: (1) eine ganz frische Handlung (a recent action), oft mit just (gerade eben), already (schon) oder not … yet (noch nicht), und (2) ein heutiges Ergebnis einer Handlung (a present result of a past action).",
+			"Beispiel aus dem Alltag: „Look! Someone has cleaned the whiteboard — now it's completely empty!“ Oder: „I've lost my house key, so I can't open the door right now.“ Wichtig: Du schaust beim Present Perfect nicht auf das genaue Wann in der Vergangenheit, sondern auf das Ergebnis oder den aktuellen Stand im Hier und Jetzt. Den genauen Vergleich mit dem Simple Past bei festen Zeitangaben (yesterday, ago) lernst du erst in Klasse 7."
+		],
+		"material": "News from Room 14:\n• “Look! The rain has stopped, and the sun is shining — let's go outside!”\n• “We have just finished our poster about Scotland. The glue is still wet!”\n• “Oh no, Sam has broken his pencil, so he needs to borrow one.”\n• “Have you sent the message yet? — Yes, I have already clicked Send.”",
+		"materialLabel": "Eigenes englisches Übungsmaterial · Situationen mit Gegenwartsbezug",
+		"materialLanguage": "en",
+		"sourceIds": [
+			"lp",
+			"bbc-le"
+		],
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Wann passt das Present Perfect Simple im Satz 'I have lost my ticket, so I can't get in now'?",
+			"answer": "Wenn das vergangene Verlieren ein sichtbares Ergebnis in der Gegenwart hat (ich komme jetzt nicht hinein).",
+			"wrong": [
+				"Nur wenn man eine abgeschlossene Uhrzeit wie 'at 3 p.m. yesterday' betont.",
+				"Immer wenn eine zukünftige Absicht ausgedrückt wird."
+			],
+			"explanation": "Eine vergangene Handlung mit aktuellem Ergebnis (present result) oder eine gerade eben abgeschlossene Handlung (recent action) steht im Present Perfect Simple."
+		},
+		"takeaway": "Das Present Perfect Simple beschreibt eine gerade abgeschlossene Handlung (just, already, not … yet) oder ein jetzt sichtbares Ergebnis einer Handlung (a present result).",
+		"practice": [
+			{
+				"prompt": "Look! The rain has ___ (gerade eben) stopped — let's go out! (Signalwort für gerade eben)",
+				"answers": [
+					"just"
+				],
+				"feedback": "just steht zwischen have/has und der 3. Verbform für gerade eben."
+			},
+			{
+				"prompt": "He hasn't packed his sports bag ___. (Signalwort am Satzende bei Verneinung: noch nicht)",
+				"answers": [
+					"yet"
+				],
+				"feedback": "yet steht am Satzende in verneinten Sätzen und Fragen (noch nicht / schon)."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Look at three present situations and write one Present Perfect sentence for each: (1) the classroom looks tidy now, (2) you just arrived at the station, (3) you can't ride your bike because of a flat tyre.",
+				"model": "1. Someone has tidied the classroom, so everything looks neat! 2. We have just arrived at the station. 3. Oh no, I've got a flat tyre, or someone has broken my bike bell, so I can't ride right now.",
+				"criteria": [
+					"Alle drei Sätze nutzen have/has + 3. Verbform richtig.",
+					"Just steht an der richtigen Stelle zwischen Hilfsverb und Partizip.",
+					"Jeder Satz passt zu einem aktuellen Ergebnis oder einer frischen Handlung."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Ordne jedem der beiden englischen Sätze die passende Funktion auf Deutsch zu (frische Handlung oder sichtbares Gegenwartsergebnis) und erkläre deine Wahl:\na) 'We've already painted the charity sign — look at the bright colours!'\nb) 'Leo has just walked in through the door.'",
+				"model": "Satz a) zeigt vor allem ein sichtbares Ergebnis in der Gegenwart: Das Schild ist fertig bemalt und man sieht jetzt die leuchtenden Farben (zugleich mit already als bereits erledigt markiert). Satz b) drückt mit just eine ganz frische Handlung aus, die erst vor wenigen Sekunden passiert ist.",
+				"criteria": [
+					"Ich benenne beide Kernfunktionen (sichtbares Ergebnis und frische Handlung).",
+					"Ich erkläre die Rolle von already / den sichtbaren Farben in Satz a).",
+					"Ich erkläre just in Satz b) zutreffend."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "sentence",
+			"goals": [
+				{
+					"label": "Sichtbares Ergebnis jetzt",
+					"before": "Sam",
+					"after": "his keys, so he cannot open the locker.",
+					"options": [
+						"has lost",
+						"is losing",
+						"will lose"
+					],
+					"answer": "has lost",
+					"explanation": "Vergangenes Verlieren mit jetziger Folge → Present Perfect: has lost."
+				},
+				{
+					"label": "Gerade eben passiert",
+					"before": "The train has",
+					"after": "arrived at Platform 3.",
+					"options": [
+						"just",
+						"yet",
+						"ago"
+					],
+					"answer": "just",
+					"explanation": "just steht vor dem Partizip für gerade eben."
+				},
+				{
+					"label": "Noch nicht erledigt",
+					"before": "I haven't finished my homework",
+					"after": ".",
+					"options": [
+						"yet",
+						"just",
+						"yesterday"
+					],
+					"answer": "yet",
+					"explanation": "Am Ende eines verneinten Present-Perfect-Satzes steht yet."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "e6-will-future",
+		"stage": "grammar2",
+		"title": "Will-future: Predictions and instant decisions",
+		"skill": "Mit dem will-future Vorhersagen und spontane Entschlüsse für die Zukunft ausdrücken",
+		"bindings": [
+			"1.1",
+			"1.2",
+			"5"
+		],
+		"paragraphs": [
+			"Um über die Zukunft zu sprechen, lernst du in Klasse 6 zwei wichtige Formen getrennt nach ihrer Funktion kennen: Zuerst das will-future. Du bildest es ganz einfach für alle Personen gleich mit will (Kurzform 'll) + Grundform des Verbs. Die Verneinung heißt will not oder kurz won't + Grundform („It won't snow in July“). Bei Fragen steht Will vor dem Subjekt („Will you help me?“).",
+			"Wann nutzt du das will-future? Für zwei typische Situationen: (1) allgemeine Vorhersagen und Vermutungen (predictions), oft mit Signalwörtern wie I think, I hope, maybe oder probably („I think London will be sunny tomorrow“), und (2) spontane Entschlüsse genau im Moment des Sprechens (instant decisions): Das Telefon klingelt — „Hold on, I'll answer it!“"
+		],
+		"material": "Morning kitchen scene:\nDad: “Oh! Someone is knocking at the front door.”\nLeo: “I'll open it, Dad! Probably it's the postman with our new tickets.”\nMaya: “Look at the forecast: it says the wind will stop before lunch, and I hope our trip to the coast will be warm!”\nDad: “Don't worry, you won't need your winter boots.”",
+		"materialLabel": "Eigenes englisches Übungsmaterial · Alltagsszenen im will-future",
+		"materialLanguage": "en",
+		"sourceIds": [
+			"lp",
+			"bbc-le"
+		],
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "Your friend drops her pencil case on the floor right next to you. Which instant decision uses the will-future correctly?",
+			"answer": "Wait, I'll help you pick them up!",
+			"wrong": [
+				"Wait, I'll helped you pick them up!",
+				"Wait, I won't to help you!"
+			],
+			"explanation": "Nach will / 'll / won't steht immer die reine Grundform ohne -ed und ohne to."
+		},
+		"takeaway": "will-future = will ('ll) / won't + Grundform für alle Personen gleich. Verwendung: Vorhersagen/Vermutungen (I think / hope / probably) und spontane Entschlüsse im Sprechmoment.",
+		"practice": [
+			{
+				"prompt": "The phone is ringing! Hold on, I ___ answer it. (Kurzform oder will)",
+				"answers": [
+					"'ll",
+					"will"
+				],
+				"feedback": "Für einen spontanen Entschluss im Sprechmoment steht will oder 'll."
+			},
+			{
+				"prompt": "Don't worry, it ___ rain all week. (verneinte Kurzform von will not)",
+				"answers": [
+					"won't"
+				],
+				"feedback": "Die Kurzform von will not lautet won't (nicht *willn't)."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Write four English sentences with 'will / 'll / won't': two predictions about next summer (e.g. with 'I think' or 'probably') and two instant decisions when something happens right now.",
+				"model": "I think next summer will be very sunny in Bavaria. Maybe my family will travel to Scotland, and we won't forget our raincoats! Look, someone forgot their umbrella at the door — I'll run after them. Oh, we are out of milk? No problem, I'll buy some on my way home.",
+				"criteria": [
+					"Nach will / 'll / won't steht immer die Grundform.",
+					"Zwei Sätze zeigen Vermutungen oder Vorhersagen.",
+					"Zwei Sätze zeigen spontane Entschlüsse."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Erkläre auf Deutsch zwei häufige Fehler beim will-future anhand dieser falschen Sätze: 'She wills visit London.' und 'I think it willn't be cold.'",
+				"model": "1. Bei will bekommt die 3. Person Einzahl niemals ein -s — Modal- und Hilfsverben wie will bleiben für alle Personen gleich: 'She will visit London.' 2. Die verneinte Kurzform von will not heißt unregelmäßig 'won't', niemals 'willn't': 'I think it won't be cold.'",
+				"criteria": [
+					"Ich erkläre, dass will in der 3. Person kein -s erhält.",
+					"Ich ersetze willn't durch won't.",
+					"Beide verbesserten Sätze sind korrekt."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "sentence",
+			"goals": [
+				{
+					"label": "Spontaner Entschluss",
+					"before": "Your bag looks heavy —",
+					"after": "carry it for you!",
+					"options": [
+						"I'll",
+						"I'll to",
+						"I won't to"
+					],
+					"answer": "I'll",
+					"explanation": "Spontanes Hilfsangebot im Moment → I'll + Grundform."
+				},
+				{
+					"label": "Vorhersage mit Vermutung",
+					"before": "I think the concert",
+					"after": "amazing tomorrow.",
+					"options": [
+						"will be",
+						"wills be",
+						"will was"
+					],
+					"answer": "will be",
+					"explanation": "Nach I think folgt will + Grundform be."
+				},
+				{
+					"label": "Verneinung",
+					"before": "Don't worry, the dog",
+					"after": "bite you.",
+					"options": [
+						"won't",
+						"willn't",
+						"doesn't will"
+					],
+					"answer": "won't",
+					"explanation": "Die verneinte Form von will not ist won't."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "e6-going-to-future",
+		"stage": "grammar2",
+		"title": "Going-to-future: Intentions and visible signs",
+		"skill": "Mit dem going-to-future feste Pläne/Absichten und auf Gegenwärtigem beruhende Vorhersagen ausdrücken",
+		"bindings": [
+			"1.1",
+			"1.2",
+			"5"
+		],
+		"paragraphs": [
+			"Die zweite Zukunftsform in Klasse 6 ist das going-to-future. Du bildest es aus der Gegenwartsform von be (am / is / are) + going to + Grundform des Verbs. Vergiss dabei niemals das Hilfsverb am/is/are vor going to! Verneinungen lauten 'm not / isn't / aren't going to + Grundform, und in Fragen steht Am / Is / Are am Satzanfang („Are you going to watch the game?“).",
+			"Verwendet wird das going-to-future für: (1) bereits gefasste Pläne und Absichten (intentions), z. B. „Next Saturday we are going to clean up the park“, und (2) Vorhersagen, die auf deutlichen Anzeichen in der jetzigen Situation beruhen (predictions based on the present situation): „Look at those dark black clouds! It is going to rain.“ Im Alltags-Englisch hörst du es auch beim Planen von Ferien und Projekten."
+		],
+		"material": "Weekend Plan Board · Class 6c\n• Mia: “I've bought flour and apples — tomorrow afternoon I'm going to bake an apple pie for our charity stall!”\n• Coach: “Look at the dark clouds over the field! Take your jackets because it's going to rain soon.”\n• Sam & Leo: “We aren't going to play video games this Sunday; we are going to visit our cousins in York.”",
+		"materialLabel": "Eigenes englisches Übungsmaterial · Wochenendpläne im going-to-future",
+		"materialLanguage": "en",
+		"sourceIds": [
+			"lp",
+			"bbc-le"
+		],
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Welche Zukunftsform nutzt man für bereits gefasste feste Pläne und Absichten (z. B. „Ich habe vor, morgen mein Zimmer aufzuräumen“)?",
+			"answer": "going-to-future (am / is / are + going to + Grundform)",
+			"wrong": [
+				"Simple Past (2. Verbform)",
+				"Present Progressive ohne going to"
+			],
+			"explanation": "Für bereits beschlossene Pläne und Absichten (intentions) verwendet man am / is / are + going to + Grundform."
+		},
+		"takeaway": "going-to-future = am / is / are + going to + Grundform. Verwendung: feste Absichten/Pläne (intentions) und Vorhersagen aus sichtbaren Anzeichen in der Gegenwart.",
+		"practice": [
+			{
+				"prompt": "Look at those dark clouds! It ___ going to rain soon. (Hilfsverb bei It)",
+				"answers": [
+					"is",
+					"'s"
+				],
+				"feedback": "Bei it steht is (oder 's): It is going to rain."
+			},
+			{
+				"prompt": "We are ___ to visit Edinburgh next week. (fester Bestandteil nach are)",
+				"answers": [
+					"going"
+				],
+				"feedback": "We are going to visit … bildet das going-to-future."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Write four English sentences about your plans for the next holidays using 'going to': two things you are going to do, one thing you aren't going to do, and one question to a friend.",
+				"model": "Next holidays I am going to visit my grandparents in the countryside. My sister and I are going to learn how to bake pizza! We aren't going to wake up at six o'clock every morning. What are you going to do during the break?",
+				"criteria": [
+					"Ich vergesse vor going to niemals am, is oder are.",
+					"Ich bilde Verneinung und Frage im going-to-future richtig.",
+					"Alle Sätze drücken klare Ferienpläne aus."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Erkläre auf Deutsch anhand zweier englischer Beispielsätze die beiden Bedeutungen des going-to-future (Absicht/Plan und Anzeichen in der Gegenwart) und korrigiere den Fehler in 'Tom going to call me.'",
+				"model": "1. Absicht/Plan: 'I am going to tidy my room tomorrow.' — Ich habe mir das bereits vorgenommen. 2. Sichtbares Anzeichen jetzt: 'Look at that boy on the wet ice — he is going to fall!' — Man sieht schon in der Gegenwart, was gleich passiert. In 'Tom going to call me.' fehlt das Hilfsverb is: Richtig heißt es 'Tom is going to call me.'",
+				"criteria": [
+					"Ich zeige je ein passendes Beispiel für Plan/Absicht und sichtbares Anzeichen.",
+					"Ich erkläre beide Funktionen verständlich.",
+					"Ich ergänze das fehlende is in 'Tom is going to call me.'"
+				]
+			}
+		},
+		"workshop": {
+			"kind": "sentence",
+			"goals": [
+				{
+					"label": "Feste Absicht",
+					"before": "Next Saturday, Mia",
+					"after": "muffins for our school sale.",
+					"options": [
+						"is going to bake",
+						"going to bake",
+						"are going to bake"
+					],
+					"answer": "is going to bake",
+					"explanation": "Bei Mia (Singular) heißt es is going to + Grundform."
+				},
+				{
+					"label": "Sichtbares Anzeichen",
+					"before": "Look at the dark grey sky — it",
+					"after": "rain any minute!",
+					"options": [
+						"is going to",
+						"are going to",
+						"is going"
+					],
+					"answer": "is going to",
+					"explanation": "Vor dem Infinitiv rain gehört to zu is going to."
+				},
+				{
+					"label": "Verneinung im Plural",
+					"before": "We",
+					"after": "stay inside all weekend.",
+					"options": [
+						"aren't going to",
+						"isn't going to",
+						"don't going to"
+					],
+					"answer": "aren't going to",
+					"explanation": "Plural-Verneinung mit be: aren't going to."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": false
+	}
+]
