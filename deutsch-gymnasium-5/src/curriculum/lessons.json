@@ -1052,6 +1052,88 @@
 		}
 	},
 	{
+		"id": "d5-spielszene",
+		"stage": "lesen",
+		"title": "Spielszenen lesen und verstehen",
+		"skill": "Unterscheide Rollenname, Regieanweisung und Figurenrede.",
+		"bindings": ["2.2", "1.4"],
+		"paragraphs": [
+			"Eine Spielszene (ein kurzer Dramentext) wird nicht fortlaufend erzählt, sondern von Figuren direkt gespielt. Ein Personenverzeichnis nennt am Anfang die Figuren und den Spielort. Im Text zeigt der Rollenname vor dem Doppelpunkt sofort, wer spricht: ‚MIA: ...‘.",
+			"Angaben in Klammern hinter dem Namen oder mitten im Dialog heißen Regieanweisungen. Sie werden beim Aufführen nicht vorgelesen, sondern geben genaue Hinweise für Stimme, Mimik, Bewegung oder benötigte Requisiten: ‚TOM (flüsternd, deutet zur Tür): Hörst du das?‘ Die gesprochene Figurenrede braucht in Spielszenen keine Anführungszeichen."
+		],
+		"materialLabel": "Ausschnitt aus einer Spielszene",
+		"material": "Personen: Mia, Tom\nOrt: Treppenhaus der Bücherei\n\nMIA (hält eine kleine Taschenlampe fest, leise): Die Tür zum Lesesaal steht einen Spalt offen.\nTOM (bleibt stehen und horcht): Hörst du das? Da raschelt etwas hinter dem Regal.\nMIA (tritt vorsichtig einen Schritt näher): Wir schauen zuerst durch den Spalt, bevor wir hineingehen.",
+		"sourceIds": ["lehrplan"],
+		"check": {
+			"wrong": "Sie wird wie die Figurenrede laut vom Sprecher mitvorgelesen.",
+			"explanation": "Regieanweisungen geben Hinweise zu Haltung, Stimme, Bewegung oder Requisiten; laut gesprochen wird nur die Figurenrede dahinter."
+		},
+		"takeaway": "Der Rollenname bestimmt den Sprecherwechsel. Regieanweisungen werden gespielt, nicht vorgelesen.",
+		"lehrplan": "D5 · 2.2 · 1.4",
+		"cases": [
+			{
+				"prompt": "Was verraten Mias Worte und Regieanweisungen über ihr Verhalten im Treppenhaus?",
+				"options": [
+					"Mia handelt vorsichtig und leise, weil sie flüstert und zuerst durch den Spalt blicken will.",
+					"Mia reißt die Tür laut rufend ohne Zögern sofort weit auf."
+				],
+				"answer": "Mia handelt vorsichtig und leise, weil sie flüstert und zuerst durch den Spalt blicken will.",
+				"feedback": "‚leise‘, ‚vorsichtig‘ und ‚schauen zuerst durch den Spalt‘ belegen sowohl im Spielhinweis als auch im Satz ihre Vorsicht."
+			},
+			{
+				"prompt": "Welche Spielanweisung steckt in ‚TOM (bleibt stehen und horcht): Hörst du das?‘?",
+				"options": [
+					"Tom soll im Rennen möglichst laut in den Raum rufen.",
+					"Tom stoppt in der Bewegung und lauscht gespannt, bevor oder während er fragt."
+				],
+				"answer": "Tom stoppt in der Bewegung und lauscht gespannt, bevor oder während er fragt.",
+				"feedback": "Die eingeklammerte Regieanweisung beschreibt Körperhaltung und Aufmerksamkeit für die Bühne."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Nenne aus dem Szenenausschnitt je ein Beispiel für Rollenname, Regieanweisung und Figurenrede und erkläre kurz, was die Figur dabei spielt.",
+				"model": "Ein Rollenname ist ‚MIA‘ vor dem Doppelpunkt. Die Regieanweisung ‚(tritt vorsichtig einen Schritt näher)‘ zeigt ihre langsame Bewegung zur Tür; das wird nicht mitvorgelesen. Die Figurenrede ‚Wir schauen zuerst durch den Spalt, bevor wir hineingehen.‘ spricht Mia laut aus.",
+				"criteria": [
+					"Ich nenne alle drei Bestandteile am Text.",
+					"Ich zeige, dass die Regieanweisung nicht vorgelesen wird.",
+					"Ich erkläre die dargestellte Handlung oder Sprechweise."
+				]
+			},
+			"2": {
+				"prompt": "Schreibe die Spielszene um zwei eigene Repliken für Tom und Mia weiter. Nutze bei jeder Figur eine Regieanweisung für Stimme, Blick oder Bewegung.",
+				"model": "TOM (flüstert und lehnt sich neben Mia an den Türrahmen): Schau mal ganz unten am Tisch — dort liegt nur ein umgefallener Stapel Prospekte und ein offenes Fenster.\nMIA (atmet erleichtert auf und knipst die Taschenlampe aus): Dann hat nur der Wind die Blätter bewegt.",
+				"criteria": [
+					"Ich formatiere Rollenname, Doppelpunkt und Klammern.",
+					"Die Regieanweisungen passen zu Stimme oder Bewegung.",
+					"Der Dialog setzt die Situation schlüssig fort."
+				]
+			}
+		},
+		"extension": "Lest die Spielszene zu zweit mit verteilten Rollen vor oder spielt sie kurz. Prüft ohne Blick aufs Blatt, ob die Regieanweisungen an Stimme, Blick und Haltung erkennbar waren.",
+		"visual": {
+			"kind": "scene",
+			"title": "Aufbau einer Spielszene auf Bühne und Blatt",
+			"steps": [
+				{
+					"label": "Rollenname",
+					"text": "MIA: / TOM:",
+					"detail": "Der Name vor dem Doppelpunkt regelt den Sprecherwechsel beim Lesen und Proben."
+				},
+				{
+					"label": "Regieanweisung",
+					"text": "(bleibt stehen und horcht)",
+					"detail": "Hinweise in Klammern beschreiben Stimme, Blick, Bewegung oder Requisiten und werden gespielt statt vorgelesen."
+				},
+				{
+					"label": "Figurenrede",
+					"text": "Die Tür steht offen.",
+					"detail": "Die eigentlichen Sätze der Figur stehen direkt hinter dem Doppelpunkt, meist ohne Anführungszeichen."
+				}
+			]
+		}
+	},
+	{
 		"id": "d5-lesetagebuch",
 		"stage": "lesen",
 		"title": "Ein Buch auswählen und vorstellen",
@@ -3544,6 +3626,172 @@
 		}
 	},
 	{
+		"id": "d5-satzklammer",
+		"stage": "sprache",
+		"title": "Mehrteilige Prädikate und Satzklammer",
+		"skill": "Erkenne den finiten und den zweiten Prädikatsteil als Rahmen um das Mittelfeld.",
+		"bindings": ["4.2"],
+		"paragraphs": [
+			"Ein Prädikat kann aus einer einzelnen Verbform bestehen (‚liest‘) oder mehrteilig sein. Im Aussagesatz steht die gebeugte (finite) Verbform immer an zweiter Satzgliedposition als linke Klammer. Ein zweiter Verbteil — etwa ein Verbzusatz (‚auf‘), ein Partizip (‚aufgeschlagen‘) oder ein Infinitiv (‚aufschlagen‘) — rückt ans Satzende als rechte Klammer.",
+			"Zwischen beiden Prädikatsteilen liegen Subjekt, Objekte oder adverbiale Bestimmungen im Mittelfeld. Diese Bauform heißt Satzklammer: ‚Heute hat (links) Jonas sein Heft aufgeschlagen (rechts).‘ Auch wenn du das Vorfeld umstellst, bleiben linker und rechter Klammerteil an ihren festen Plätzen."
+		],
+		"materialLabel": "Vier Sätze mit ein- und mehrteiligem Prädikat",
+		"material": "Satz A: Heute schreibt Jonas eine Liste.\nSatz B: Heute schreibt Jonas eine Liste ab.\nSatz C: Heute hat Jonas eine Liste abgeschrieben.\nSatz D: Morgen will Jonas diese Liste vorlesen.",
+		"sourceIds": ["lehrplan"],
+		"check": {
+			"wrong": "„Morgen“ und „vortragen“",
+			"explanation": "Das finite Modalverb ‚will‘ bildet an zweiter Position die linke Klammer und der Infinitiv ‚vortragen‘ am Satzende die rechte Klammer des Prädikats."
+		},
+		"takeaway": "Mehrteilige Prädikate umklammern das Mittelfeld: Der finite Teil steht links an Position zwei, der Rest am Satzende.",
+		"lehrplan": "D5 · 4.2",
+		"cases": [
+			{
+				"prompt": "Woraus besteht das Prädikat in Satz B (‚Heute schreibt Jonas eine Liste ab‘)?",
+				"options": [
+					"nur aus „schreibt“",
+					"aus „schreibt“ und dem Verbzusatz „ab“ (vom Verb „abschreiben“)"
+				],
+				"answer": "aus „schreibt“ und dem Verbzusatz „ab“ (vom Verb „abschreiben“)",
+				"feedback": "‚abschreiben‘ ist ein trennbares Verb; ohne den Zusatz ‚ab‘ am Satzende verändert sich die Bedeutung zu ‚schreiben‘."
+			},
+			{
+				"prompt": "Welche Satzglieder stehen in Satz C innerhalb der Satzklammer zwischen ‚hat‘ und ‚abgeschrieben‘?",
+				"options": [
+					"„Jonas“ (Subjekt) und „eine Liste“ (Akkusativobjekt)",
+					"„Heute“ (Vorfeld) und „abgeschrieben“ (rechte Klammer)"
+				],
+				"answer": "„Jonas“ (Subjekt) und „eine Liste“ (Akkusativobjekt)",
+				"feedback": "‚Heute‘ steht vor dem finiten Verb im Vorfeld; ‚Jonas‘ und ‚eine Liste‘ liegen zwischen beiden Prädikatsteilen im Mittelfeld."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Bestimme in Satz B, Satz C und Satz D jeweils den linken und rechten Teil der Satzklammer und nenne die Satzglieder im Mittelfeld dazwischen.",
+				"model": "In Satz B bilden ‚schreibt‘ (links) und ‚ab‘ (rechts) die Klammer um ‚Jonas‘ und ‚eine Liste‘. In Satz C stehen ‚hat‘ und ‚abgeschrieben‘ um ‚Jonas‘ und ‚eine Liste‘. In Satz D umklammern ‚will‘ und ‚vorlesen‘ die Satzglieder ‚Jonas‘ und ‚diese Liste‘.",
+				"criteria": [
+					"Ich benenne beide Prädikatsteile in allen drei Sätzen.",
+					"Ich trenne das Vorfeld sauber vom Mittelfeld.",
+					"Ich ordne die Verbteile der linken und rechten Klammer zu."
+				]
+			},
+			"2": {
+				"prompt": "Forme ‚Leila räumt das Regal‘ zuerst ins Perfekt und dann in einen Satz mit ‚muss‘ um. Stelle einmal ‚Nach der Pause‘ ins Vorfeld und markiere beide Prädikatsteile.",
+				"model": "Nach der Pause hat (linke Klammer) Leila das Regal geräumt (rechte Klammer). Am Nachmittag muss (linke Klammer) Leila das Regal räumen (rechte Klammer). In beiden Sätzen rahmen die Verbteile Subjekt und Objekt ein.",
+				"criteria": [
+					"Beide Umformungen (Perfekt und Modalverb) sind grammatisch richtig.",
+					"Ein Zeitadverbiale steht sicher im Vorfeld vor dem finiten Verb.",
+					"Linker und rechter Prädikatsteil sind eindeutig markiert."
+				]
+			}
+		},
+		"visual": {
+			"kind": "bracket",
+			"title": "Wie ein mehrteiliges Prädikat die Satzklammer bildet",
+			"initial": {
+				"blocks": [
+					{
+						"text": "Das Mädchen",
+						"label": "Vorfeld · Subjekt",
+						"tone": "subject"
+					},
+					{
+						"text": "liest",
+						"label": "einteiliges Prädikat",
+						"tone": "predicate"
+					},
+					{
+						"text": "das Heft.",
+						"label": "Objekt",
+						"tone": "object"
+					}
+				]
+			},
+			"steps": [
+				{
+					"label": "Trennbares Verb",
+					"text": "schlägt … auf",
+					"detail": "Beim trennbaren Verb ‚aufschlagen‘ bleibt die gebeugte Form ‚schlägt‘ links und der Verbzusatz ‚auf‘ schließt den Satz.",
+					"blocks": [
+						{
+							"text": "Das Mädchen",
+							"label": "Vorfeld",
+							"tone": "subject"
+						},
+						{
+							"text": "schlägt",
+							"label": "linke Klammer",
+							"tone": "predicate"
+						},
+						{
+							"text": "das Heft",
+							"label": "Mittelfeld",
+							"tone": "object"
+						},
+						{
+							"text": "auf.",
+							"label": "rechte Klammer",
+							"tone": "predicate"
+						}
+					]
+				},
+				{
+					"label": "Perfekt bilden",
+					"text": "hat … aufgeschlagen",
+					"detail": "Im Perfekt steht das Hilfsverb ‚hat‘ in Position zwei und das Partizip ‚aufgeschlagen‘ am Ende.",
+					"blocks": [
+						{
+							"text": "Das Mädchen",
+							"label": "Vorfeld",
+							"tone": "subject"
+						},
+						{
+							"text": "hat",
+							"label": "linke Klammer",
+							"tone": "predicate"
+						},
+						{
+							"text": "das Heft",
+							"label": "Mittelfeld",
+							"tone": "object"
+						},
+						{
+							"text": "aufgeschlagen.",
+							"label": "rechte Klammer",
+							"tone": "predicate"
+						}
+					]
+				},
+				{
+					"label": "Modalverb nutzen",
+					"text": "will … aufschlagen",
+					"detail": "Auch ‚will … aufschlagen‘ bildet mit Hilfs-/Modalverb vorn und Infinitiv am Ende eine Satzklammer.",
+					"blocks": [
+						{
+							"text": "Das Mädchen",
+							"label": "Vorfeld",
+							"tone": "subject"
+						},
+						{
+							"text": "will",
+							"label": "linke Klammer",
+							"tone": "predicate"
+						},
+						{
+							"text": "das Heft",
+							"label": "Mittelfeld",
+							"tone": "object"
+						},
+						{
+							"text": "aufschlagen.",
+							"label": "rechte Klammer",
+							"tone": "predicate"
+						}
+					]
+				}
+			]
+		}
+	},
+	{
 		"id": "d5-adverbiale",
 		"stage": "sprache",
 		"title": "Zeit, Ort, Art und Grund unterscheiden",
@@ -4338,6 +4586,162 @@
 		}
 	},
 	{
+		"id": "d5-aehnliche-woerter",
+		"stage": "sprache",
+		"title": "Gleich und ähnlich klingende Wörter unterscheiden",
+		"skill": "Prüfe Wortart und Bedeutung bei Paaren wie seit/seid, viel/fiel und wieder/wider.",
+		"bindings": ["4.3", "4.2"],
+		"paragraphs": [
+			"Einige Wortpaare klingen gleich oder sehr ähnlich, gehören aber zu verschiedenen Wortarten und werden unterschiedlich geschrieben. Eine Rechtschreibprüfung übersieht solche Verwechslungen oft, weil beide Formen existieren. Bei ‚seit‘ und ‚seid‘ prüfst du Wortart und Bedeutung: ‚seid‘ mit d gehört als Verbform von ‚sein‘ immer zur Person ‚ihr‘ (‚Ihr seid bereit‘). ‚seit‘ mit t bezeichnet einen Zeitpunkt oder eine Zeitdauer (‚seit gestern‘).",
+			"Genauso trennst du ‚viel‘ und ‚fiel‘: ‚fiel‘ ist das Präteritum des Verbs ‚fallen‘ (fallen – fiel – gefallen); ‚viel‘ beschreibt eine große Menge als Gegenteil von ‚wenig‘. ‚wieder‘ mit ie bedeutet ‚noch einmal‘ oder ‚zurück‘ (‚wieder lesen‘), ‚wider‘ mit bloßem i heißt ‚gegen‘ (‚wider Willen‘, ‚widersprechen‘). Bei ‚Seite‘ und ‚Saite‘ oder ‚Waise‘ und ‚Weise‘ klärt die Wortfamilie den Zusammenhang."
+		],
+		"materialLabel": "Vier Sätze zum Prüfen der Wortart",
+		"material": "Satz eins: Ihr [seid/seit] [seid/seit] gestern eine aufmerksame Gruppe.\nSatz zwei: Nach dem Regen [viel/fiel] mir [viel/fiel] Neues auf.\nSatz drei: Er kommt [wider/wieder] und hilft nicht [wider/wieder] Willen.\nSatz vier: Auf dieser [Saite/Seite] des Hefts steht eine Frage zur zweiten [Saite/Seite] einer Geige.",
+		"sourceIds": ["lehrplan"],
+		"check": {
+			"wrong": "Es leitet dort einen Vergleich mit der Menge ‚wenig‘ ein.",
+			"explanation": "‚ihr seid‘ ist die gebeugte Form des Verbs ‚sein‘ (wir sind, ihr seid). Die Zeitangabe ‚seit gestern‘ schreibt man mit t am Ende."
+		},
+		"takeaway": "Bestimme zuerst die Wortart im Satz: Verbformen wie ‚seid‘ und ‚fiel‘ trennst du klar von ‚seit‘ und ‚viel‘.",
+		"lehrplan": "D5 · 4.3 · 4.2",
+		"cases": [
+			{
+				"prompt": "Welche Schreibweisen vervollständigen Satz eins richtig?",
+				"options": [
+					"Ihr seid seit gestern eine aufmerksame Gruppe.",
+					"Ihr seit seid gestern eine aufmerksame Gruppe."
+				],
+				"answer": "Ihr seid seit gestern eine aufmerksame Gruppe.",
+				"feedback": "‚seid‘ passt als Verbform zum Subjekt ‚Ihr‘; ‚seit gestern‘ benennt eine Zeitdauer seit einem Zeitpunkt."
+			},
+			{
+				"prompt": "Welche Formen gehören in Satz zwei?",
+				"options": [
+					"Nach dem Regen viel mir fiel Neues auf.",
+					"Nach dem Regen fiel mir viel Neues auf."
+				],
+				"answer": "Nach dem Regen fiel mir viel Neues auf.",
+				"feedback": "‚fiel‘ gehört zu ‚auffallen‘ im Präteritum; ‚viel Neues‘ nennt die Menge."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe die vier Sätze aus dem Material in der richtigen Schreibung auf und erkläre an ‚seit/seid‘ und ‚wieder/wider‘ deine Kontrollprobe.",
+				"model": "Ihr seid seit gestern eine aufmerksame Gruppe. Nach dem Regen fiel mir viel Neues auf. Er kommt wieder und hilft nicht wider Willen. Auf dieser Seite des Hefts steht eine Frage zur zweiten Saite einer Geige. ‚seid‘ gehört zum Verb ‚sein‘ bei ‚ihr‘, ‚seit‘ zur Zeit; ‚wieder‘ heißt noch einmal und ‚wider‘ bedeutet gegen.",
+				"criteria": [
+					"Alle acht Wörter sind richtig eingesetzt.",
+					"Ich erkläre ‚seid/seit‘ über Verbform und Zeitangabe.",
+					"Ich trenne ‚wieder‘ (noch einmal) und ‚wider‘ (gegen) richtig."
+				]
+			},
+			"2": {
+				"prompt": "Schreibe drei eigene Trainingssätze für eine Mitschülerin, in denen ‚seid/seit‘, ‚fiel/viel‘ und ‚wieder/wider‘ jeweils gemeinsam auftreten, und formuliere eine kurze Lösungshilfe.",
+				"model": "Ihr seid seit dem Vormittag fertig. Als ein Tropfen fiel, blieb noch viel Zeit zum Abwischen. Wir treffen uns wieder, auch wenn jemand wider die Regel spät startet. Probe: Verbformen von ‚sein‘ (seid) und ‚fallen‘ (fiel) zuerst über die Grundform prüfen; ‚wieder‘ meint erneut, ‚wider‘ meint gegen.",
+				"criteria": [
+					"Alle drei Wortpaare kommen sinnvoll vor.",
+					"Alle sechs Formen stehen im richtigen Satzzusammenhang.",
+					"Die Lösungshilfe nennt die passende Wortart- oder Bedeutungsprobe."
+				]
+			}
+		},
+		"visual": {
+			"kind": "spelling",
+			"title": "Wortart- und Bedeutungsprobe am gleich klingenden Wort",
+			"initial": {
+				"blocks": [
+					{
+						"text": "seit",
+						"label": "Zeit · Präposition",
+						"tone": "time"
+					},
+					{
+						"text": "Montag",
+						"label": "Nomen",
+						"tone": "noun"
+					}
+				]
+			},
+			"steps": [
+				{
+					"label": "Mit ‚ihr‘ prüfen → Verb",
+					"text": "Ihr seid bereit.",
+					"detail": "Steht das Verb zu ‚ihr‘ in einer Form von ‚sein‘ (wir sind, ihr seid), endet es auf d.",
+					"blocks": [
+						{
+							"text": "Ihr",
+							"label": "Pronomen",
+							"tone": "pronoun"
+						},
+						{
+							"text": "seid",
+							"label": "Verb · sein",
+							"tone": "predicate"
+						},
+						{
+							"text": "bereit.",
+							"label": "Adjektiv",
+							"tone": "adjective"
+						}
+					]
+				},
+				{
+					"label": "Handlung oder Menge?",
+					"text": "Es fiel viel Schnee.",
+					"detail": "‚fiel‘ ist das Präteritum von ‚fallen‘; ‚viel‘ beschreibt eine große Menge (Gegenteil von ‚wenig‘).",
+					"blocks": [
+						{
+							"text": "Es",
+							"label": "Subjekt",
+							"tone": "pronoun"
+						},
+						{
+							"text": "fiel",
+							"label": "Verb · fallen",
+							"tone": "predicate"
+						},
+						{
+							"text": "viel",
+							"label": "Menge",
+							"tone": "adjective"
+						},
+						{
+							"text": "Schnee.",
+							"label": "Nomen",
+							"tone": "noun"
+						}
+					]
+				},
+				{
+					"label": "‚noch einmal‘ oder ‚gegen‘?",
+					"text": "wieder … wider",
+					"detail": "‚wieder‘ mit ie steht für erneut oder zurück; ‚wider‘ mit i bedeutet ‚gegen‘, etwa in ‚widersprechen‘.",
+					"blocks": [
+						{
+							"text": "Sie",
+							"label": "Subjekt",
+							"tone": "pronoun"
+						},
+						{
+							"text": "kommt",
+							"label": "Verb",
+							"tone": "predicate"
+						},
+						{
+							"text": "wieder,",
+							"label": "noch einmal",
+							"tone": "time"
+						},
+						{
+							"text": "nicht wider Willen.",
+							"label": "gegen",
+							"tone": "reason"
+						}
+					]
+				}
+			]
+		}
+	},
+	{
 		"id": "d5-gross-und-s",
 		"stage": "sprache",
 		"title": "Großschreibung und s-Laute prüfen",
@@ -4471,6 +4875,152 @@
 						}
 					],
 					"length": "long"
+				}
+			]
+		}
+	},
+	{
+		"id": "d5-nominalisierung",
+		"stage": "sprache",
+		"title": "Nominalisierungen nach Signalwörtern prüfen",
+		"skill": "Schreibe Verben und Adjektive groß nach Artikeln, Präpositionen und Mengenangaben.",
+		"bindings": ["4.3", "4.2"],
+		"paragraphs": [
+			"Verben und Adjektive werden im Satz normalerweise kleingeschrieben. Werden sie aber wie ein Nomen gebraucht (Nominalisierung), schreibst du sie groß. Neben einem offenen Artikel (‚das Lachen‘, ‚ein lautes Rufen‘) weist auch ein versteckter Artikel in einer Präposition darauf hin: ‚beim‘ (= bei dem) Lesen, ‚zum‘ (= zu dem) Üben, ‚am‘ (= an dem) Schreiben, ‚im‘ (= in dem) Gehen.",
+			"Weitere wichtige Signalwörter sind Mengenangaben und unbestimmte Pronomen wie ‚etwas‘, ‚nichts‘, ‚viel‘, ‚wenig‘ oder ‚alles‘, wenn das Adjektiv dahinter selbst als Nomen gebraucht wird und kein eigenes Bezugsnomen folgt: ‚etwas Neues‘, ‚nichts Gutes‘, ‚viel Gutes‘. Folgt dagegen noch ein eigenes Nomen, beschreibt das Adjektiv dieses Nomen wie gewohnt und bleibt klein: ‚viel gutes Essen‘. Ebenso bleibt zwischen Artikel und nominalisiertem Wort ein Begleitadjektiv klein: ‚das laute Lesen‘."
+		],
+		"materialLabel": "Drei Sätze mit Nominalisierungen",
+		"material": "Satz eins: Beim Schreiben einer Spielszene hilft gemeinsames Überarbeiten und das laute Vorlesen.\nSatz zwei: Sie hoffte auf etwas Besonderes und verlor beim Lachen die Anspannung.\nSatz drei: Zum Ausruhen blieb nach dem Spiel wenig Zeit, doch nichts Schlimmes geschah.",
+		"sourceIds": ["lehrplan"],
+		"check": {
+			"wrong": "Weil das Wort dort als Verb im Präteritum steht.",
+			"explanation": "Auf ‚etwas‘ folgt hier kein eigenes Nomen, sondern ‚Spannendes‘ übernimmt selbst die Rolle eines Nomens (‚viel Gutes‘ im Unterschied zu ‚viel gutes Essen‘) und wird darum großgeschrieben."
+		},
+		"takeaway": "Prüfe vor einem Verb oder Adjektiv, ob ein Artikel, ein versteckter Artikel (beim/zum/am) oder ein Signalwort (etwas/nichts/viel) das Wort selbst zum Nomen macht; vor einem Bezugsnomen (‚viel gutes Essen‘) bleibt das Adjektiv klein.",
+		"lehrplan": "D5 · 4.3 · 4.2",
+		"cases": [
+			{
+				"prompt": "Welche Schreibweise trifft bei Artikel plus schmückendem Adjektiv zu?",
+				"options": [
+					"das laute Vorlesen",
+					"das Laute vorlesen"
+				],
+				"answer": "das laute Vorlesen",
+				"feedback": "‚laute‘ beschreibt das Vorlesen genauer und bleibt klein; der nominalisierte Kern ‚Vorlesen‘ (das Vorlesen) wird großgeschrieben."
+			},
+			{
+				"prompt": "Welche Fassung wendet versteckten Artikel und Mengenangabe richtig an?",
+				"options": [
+					"Zum probieren bringt niemand etwas gutes mit.",
+					"Zum Probieren bringt niemand etwas Gutes mit."
+				],
+				"answer": "Zum Probieren bringt niemand etwas Gutes mit.",
+				"feedback": "In ‚zum‘ steckt ‚zu dem‘ (‚das Probieren‘); auf ‚etwas‘ folgt hier kein eigenes Nomen, sondern das nominalisierte Adjektiv ‚Gutes‘."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Suche aus den drei Beispielsätzen zwei Nominalisierungen mit verstecktem Artikel und eine nach einer Mengenangabe heraus und begründe die Großschreibung jeweils kurz.",
+				"model": "‚beim Schreiben‘ (bei dem Schreiben) und ‚zum Ausruhen‘ (zu dem Ausruhen) enthalten versteckte Artikel; daher stehen ‚Schreiben‘ und ‚Ausruhen‘ groß. Nach der Mengenangabe ‚etwas‘ wird ‚Besonderes‘ als Nominalisierung großgeschrieben (ebenso ‚Schlimmes‘ nach ‚nichts‘).",
+				"criteria": [
+					"Ich nenne Beispiele mit verstecktem Artikel und löse ihn auf.",
+					"Ich nenne ein Beispiel nach Mengenangabe wie ‚etwas‘ oder ‚nichts‘.",
+					"Ich erkläre die Regel klar am Beispiel."
+				]
+			},
+			"2": {
+				"prompt": "Schreibe zwei eigene Sätze über die Schulbücherei. Verwende im ersten Satz ein Signalwort (‚etwas‘, ‚nichts‘ oder ‚viel‘) und im zweiten einen Artikel samt dazwischengestelltem Adjektiv.",
+				"model": "Am Regal entdeckte Ari heute etwas Spannendes über alte Schatzkarten. Das geduldige Suchen hat sich am Ende für die ganze Gruppe gelohnt.",
+				"criteria": [
+					"Der erste Satz nutzt ein passendes Signalwort richtig.",
+					"Der zweite Satz schreibt Begleitadjektiv klein und Kern groß.",
+					"Die Sätze passen zusammen und sind fehlerfrei."
+				]
+			}
+		},
+		"visual": {
+			"kind": "capital",
+			"title": "Signale für nominalisierte Verben und Adjektive",
+			"initial": {
+				"blocks": [
+					{
+						"text": "Wir",
+						"label": "Subjekt",
+						"tone": "pronoun"
+					},
+					{
+						"text": "lesen",
+						"label": "Verb · klein",
+						"tone": "predicate"
+					},
+					{
+						"text": "laut.",
+						"label": "Adverb · klein",
+						"tone": "adjective"
+					}
+				]
+			},
+			"steps": [
+				{
+					"label": "Versteckten Artikel auflösen",
+					"text": "beim (= bei dem) Lesen",
+					"detail": "Verschmolzene Präpositionen wie ‚beim‘, ‚zum‘, ‚am‘ enthalten einen Artikel und machen das Verb zum Nomen.",
+					"blocks": [
+						{
+							"text": "beim",
+							"label": "bei + dem",
+							"tone": "marker"
+						},
+						{
+							"text": "Lesen",
+							"label": "nominalisiert · groß",
+							"tone": "noun"
+						}
+					]
+				},
+				{
+					"label": "Adjektiv dazwischen",
+					"text": "das laute Lesen",
+					"detail": "Steht ein Adjektiv zwischen Artikel und Kern, bleibt das Adjektiv klein und das Kernwort groß.",
+					"blocks": [
+						{
+							"text": "das",
+							"label": "Artikel",
+							"tone": "case"
+						},
+						{
+							"text": "laute",
+							"label": "Adjektiv · klein",
+							"tone": "adjective"
+						},
+						{
+							"text": "Lesen",
+							"label": "Kern · groß",
+							"tone": "noun"
+						}
+					]
+				},
+				{
+					"label": "Mengenangabe nutzen",
+					"text": "etwas Spannendes",
+					"detail": "Steht nach ‚etwas‘, ‚nichts‘, ‚viel‘, ‚wenig‘ oder ‚alles‘ ein allein gebrauchtes Adjektiv ohne eigenes Bezugsnomen dahinter, wird es als Nomen großgeschrieben (‚viel Gutes‘, aber ‚viel gutes Essen‘).",
+					"blocks": [
+						{
+							"text": "etwas",
+							"label": "Signalwort",
+							"tone": "marker"
+						},
+						{
+							"text": "Spannendes",
+							"label": "nominalisiert · groß",
+							"tone": "noun"
+						},
+						{
+							"text": "entdecken",
+							"label": "Verb · klein",
+							"tone": "predicate"
+						}
+					]
 				}
 			]
 		}

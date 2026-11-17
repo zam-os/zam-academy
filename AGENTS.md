@@ -54,6 +54,14 @@ builds and the tests pass" is not the bar.
    touch `academy.json`, `.github/workflows/ci.yml`,
    `.github/workflows/pages.yml`, `README.md` and `docs/`. Changes to other
    packages go into their own PR.
+9. **Never raise a package's major version yourself.** Version 1 needs a
+   teacher of the grade to accept the package, version 2 and higher a new
+   package type; both only on Thomas's explicit word. Record it in
+   `publication.json` as
+   `"approval": { "major": 1, "date": "YYYY-MM-DD", "source": "…" }`
+   (the major number he approved, his words and where he gave them); the
+   registry test refuses a major version above 0 without a record for exactly
+   that major, so a teacher's acceptance never counts for version 2.
 
 ## 1. Start from the curriculum
 
@@ -315,7 +323,7 @@ Learners have review histories on them.
 
 - Branch from the current `main`, and merge `main` again before opening or
   updating the PR; a PR with conflicts gets no CI at all.
-- Register a published package in `academy.json` (`pakete`: app, Fach, grade, school,
+- Register a published package in `academy.json` (`pakete`: app, version, Fach, grade, school,
   Zweige, lesson and card counts), add it to the Pages list (CI finds a package by its
   `package.json` and tests only the packages a change touches), add the README row and a dev port, keep the `zam-home-link` back to
   `https://academy.zam-os.org/`, and make `npm run package:zip` work.
@@ -324,9 +332,19 @@ Learners have review histories on them.
   Changing the marker to `ready` does not replace release authority or the
   normal registration checks. Shared publication tooling belongs in its own
   PR rather than a new-package PR.
-- A package with status `preview` is published like `ready` (Pages, atlas,
-  catalog, ids as a contract) and shows a visible notice that teacher review
-  and videos are open. Thomas decides when a preview starts and ends.
+- Every package has a **package version** in `publication.json`
+  (`"version": "0.0"`), shown in the app inside the `zam-home-link` and in the
+  atlas (`academy.json`). `0.n`: not yet accepted by a teacher of the grade;
+  `1.n`: accepted by one; `2.n` and higher: a fully new, modernised package
+  type. A new package starts at `0.0`. Every merged change to a package folder
+  raises the minor number once:
+  `node scripts/package-version.mjs bump <app>` sets all three places, and the
+  `changes` job of CI fails when a changed package kept its version. Only
+  Thomas raises the major number (hard rule 9). The package version is not the
+  cell `version` in `cell.json`, which ZAM reads.
+- There is no `preview` status any more (Thomas's decision of 2026-11-17):
+  every published package is `ready`, and version 0 says that teacher review
+  is open.
 - Document the curriculum check and the card mapping in `docs/` (see
   `docs/bwr-bestandsabgleich.md`, `docs/physik-10-coverage.md`).
 
@@ -347,7 +365,8 @@ outside the repo (`npm init -y && npm i zam-core@<version>`), and
 `<file URL>` = `file:///<scratch folder>/node_modules/zam-core/dist/index.js`:
 
 ```bash
-node --test scripts/build-catalog.test.mjs scripts/academy-registry.test.mjs
+node --test scripts/build-catalog.test.mjs scripts/academy-registry.test.mjs scripts/package-version.test.mjs
+node scripts/package-version.mjs check origin/main   # every changed package raised its version
 ZAM_CORE=<file URL> node scripts/validate-cells.mjs
 ZAM_CORE=<file URL> node <app>/scripts/validate-migration.mjs   # when cards are replaced
 ```

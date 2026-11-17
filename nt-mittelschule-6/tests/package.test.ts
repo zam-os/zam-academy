@@ -77,7 +77,7 @@ describe("Complete Mittelschule Natur und Technik 6", () => {
 				expect(row.evidence).toMatch(/class|supervis/i);
 		}
 		expect([...used].sort()).toEqual(LESSONS.map((l) => l.id).sort());
-		expect(publication.status).toBe("preview");
+		expect(publication.status).toBe("ready");
 		for (const source of SOURCES) {
 			const checked = checks.find((c) => c.url === source.url);
 			expect(checked?.title).toMatch(

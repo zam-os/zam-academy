@@ -19,7 +19,7 @@ factors; written division uses divisors through 10, including remainders.
 
 ## Status
 
-Public preview since 2026-11-04, with teacher review still pending.
+Published since 2026-11-04 at version 0.0, with teacher review still pending.
 Thomas confirmed that no recording is available. The real teacher video,
 primary-school teacher content review and final video playback acceptance
 remain pending. The app truthfully shows this and supplies the illustrated
@@ -28,9 +28,9 @@ is included. See [the recording brief](docs/teacher-recording-brief.md),
 [acceptance record](acceptance.json), and
 [implementation plan](../docs/plans/2026-10-31-grade-4-discovery-island.md).
 
-The app and its cell are published as a preview (`publication.json`:
-`preview`, Thomas's decision of 2026-11-04), so their ids are a contract while
-teacher review and recordings are open. The registry lists 40 selectable
+The app and its cell are published (Thomas's decision of 2026-11-04), so their
+ids are a contract while teacher review and recordings are open; the version in
+`publication.json` stays below 1 until then. The registry lists 40 selectable
 lessons, while the cell has 43 atoms because the first workshop uses four atoms;
 the registry test exempts this package from requiring those counts to agree. No
 ZAM bundled fixture or personal learning library was edited.
@@ -40,7 +40,7 @@ work, outside practice and teacher review for all 54 coverage rows. Four focused
 lessons add quantity estimates/Fermi assumptions, calculation-method choice,
 story variation/source lookup and quantity ordering. The existing addition,
 decomposition and data lessons gain multiple summands, number words/stage notation
-and five-category tables respectively. Unfinished saves from the first preview
+and five-category tables respectively. Unfinished saves from the first publication
 retain their original task boards and evidence; new optional rounds use the added
 content. Content, physical practice and teacher assessment remain separate gates.
 
@@ -109,7 +109,7 @@ exponents and malformed or mixed dot/space groups remain invalid.
 
 - Lesson id: `stellenwerte-buendeln`; cell:
   `zam-academy:mathematik-grundschule-4`. Public links point to the hosted
-  preview.
+  app.
 - `cell.json` is the sole recall-card source: forty-three atoms, one hundred fifty-nine German
   items (eighty-seven binary fast checks and seventy-two synthesis tasks) with fixed ULIDs.
   Edit cards only in this file; there is no

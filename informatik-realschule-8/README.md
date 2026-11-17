@@ -2,6 +2,8 @@
 
 **One shared course for Grades 6, 7 and 8: 40 lessons, nine stages and 87 ZAM cards.** The atlas, list and coverage matrix link all three grades to the same app. The app URL, lesson and card identifiers, ZAM cell and browser storage remain the same, so learners continue with their existing progress.
 
+Package version `0.1` includes the shared grade routes. The same version appears in the atlas and the app's Academy link; major version 0 means teacher acceptance is still open. This package version is separate from the existing ZAM cell version.
+
 - App: https://academy.zam-os.org/informatik-realschule-8/
 - Cell: `zam-academy:informatik-realschule-8` (the existing ZAM title is still “Informatik 8 Realschule (ZAM Academy)”)
 - Offline build: `release/ZAM-Academy-Informatik-8-offline.zip`

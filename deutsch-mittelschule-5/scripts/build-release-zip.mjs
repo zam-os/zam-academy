@@ -36,7 +36,7 @@ chmodSync(join(bundle, "Start-Mac.command"), 0o755);
 chmodSync(join(bundle, "start-linux.sh"), 0o755);
 writeFileSync(
 	join(bundle, "README-START.txt"),
-	`ZAM ACADEMY · DEUTSCH 5 MITTELSCHULE\n\n1. ZIP entpacken.\n2. ${app} im Browser öffnen oder den passenden Starter nutzen.\n\nKeine Installation und kein Server nötig. 51 Lektionen mit 102 Fallentscheidungen\nund eigenen Aufgaben auf zwei Stufen. Entwürfe und Fortschritt bleiben in diesem\nBrowser; bei gesperrtem Speicher zeigt die App einen Hinweis.\n\nEigene Texte werden nicht automatisch bewertet. Mustervergleich und\nSelbsteinschätzung ersetzen kein Lehrkraftfeedback. Gespräche, Vorträge,\nRollenspiele, die Lektüre eines ganzen Kinder- oder Jugendbuchs und eigene Recherche ergänzen die App.\n\nDie 102 ZAM-Karten sind nach Veröffentlichung im Academy-Katalog verfügbar.\nExterne Quellen benötigen eine Verbindung und öffnen nur auf deinen Klick.\n`,
+	`ZAM ACADEMY · DEUTSCH 5 MITTELSCHULE\n\n1. ZIP entpacken.\n2. ${app} im Browser öffnen oder den passenden Starter nutzen.\n\nKeine Installation und kein Server nötig. 51 Lektionen mit 102 Fallentscheidungen\nund eigenen Aufgaben auf zwei Stufen. Entwürfe und Fortschritt bleiben in diesem\nBrowser; bei gesperrtem Speicher zeigt die App einen Hinweis.\n\nEigene Texte werden nicht automatisch bewertet. Mustervergleich und\nSelbsteinschätzung ersetzen kein Lehrkraftfeedback. Gespräche, Vorträge,\nRollenspiele, die Lektüre eines ganzen Kinder- oder Jugendbuchs und eigene Recherche ergänzen die App.\n\nDie 102 ZAM-Karten sind im Academy-Katalog verfügbar.\nExterne Quellen benötigen eine Verbindung und öffnen nur auf deinen Klick.\n`,
 );
 const zip = join(release, `${name}-offline.zip`);
 execFileSync("zip", ["-r", "-q", zip, name], { cwd: release });

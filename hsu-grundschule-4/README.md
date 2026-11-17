@@ -51,9 +51,9 @@ Supporting views:
 
 ## Status
 
-Public preview (`publication.json` status `"preview"`, Thomas's decision of
-2026-11-04): on GitHub Pages, in the atlas and in the catalog, with a visible
-notice while content review is open. Its ids are a contract from now on. No teacher videos are included (`AGENTS.md` Section 4:
+Published since 2026-11-04 (Thomas's decision): on GitHub Pages, in the atlas
+and in the catalog. Version 0.0 (`publication.json`) shows that content review
+is open. Its ids are a contract from now on. No teacher videos are included (`AGENTS.md` Section 4:
 new packages ship without external video links). Progress uses browser
 `localStorage` (`zam-hsu-gs4-v1`) only, with zero network requests and zero
 extra runtime dependencies.

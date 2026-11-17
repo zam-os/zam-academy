@@ -24,9 +24,9 @@ dynamischer Geometriesoftware, schriftliche Ausarbeitungen und Präsentationen
 geschehen auf Papier oder im Unterricht; die App erläutert und überprüft die
 zugehörigen Begriffe und Rechnungen.
 
-**Vorschau:** Dieses Paket ist noch nicht von einer Lehrkraft geprüft, die
+**Version 0.0:** Dieses Paket ist noch nicht von einer Lehrkraft geprüft, die
 Lehrervideos fehlen noch (sie kommen als separater Schritt). Die Kennungen der
-Lektionen und Karten sind auch in der Vorschau ein Vertrag.
+Lektionen und Karten sind ein Vertrag.
 
 ## Lehrplan und Nachbarjahrgänge
 

@@ -15,7 +15,7 @@ assert.deepEqual(
 );
 // An explicit outbound home link loads nothing until a learner clicks it.
 const homeLink =
-	/<a class="zam-home-link" href="https:\/\/academy\.zam-os\.org\/">Zur ZAM Academy<\/a>/;
+	/<a class="zam-home-link" href="https:\/\/academy\.zam-os\.org\/">Zur ZAM Academy <span class="zam-version" title="[^"]+">· Version&nbsp;\d+\.\d+ · [^<]+<\/span><\/a>/;
 assert.match(html.toString(), homeLink);
 assert.doesNotMatch(
 	html.toString().replace(homeLink, ""),

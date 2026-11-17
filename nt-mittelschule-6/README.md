@@ -65,10 +65,10 @@ current cell format rejects cross-tile prerequisite edges.
 
 ## Publication and verification
 
-`publication.json` declares `preview`, following Thomas's publication
-instruction in the Codex chat on 2026-11-15. The package is registered in the
+Published following Thomas's instruction in the Codex chat on 2026-11-15, at
+version 0.0 (`publication.json`). The package is registered in the
 public catalog, atlas and Pages build; deployment follows the PR merge. The
-visible preview notice and ZAM dialog state that teacher review and the
+version next to the Academy link and the ZAM dialog state that teacher review and the
 separate reviewed-video step remain open. Cell version `2026.11.2` preserves
 all lesson ids, atom ids, item ids and slugs. No videos, external
 fonts, remote images, accounts or background requests are added.
@@ -92,7 +92,7 @@ The browser verifier uses native headless Chrome and a disposable profile.
 It checks every lesson at both levels and in light/dark themes, every model
 view, all model goals, selected-chip contrast in explicit/system themes,
 requested mobile widths, heading and diagram-label bounds, negative controls,
-workshops, persistence, draft invalidation, reset and the published-preview
+workshops, persistence, draft invalidation, reset and the published
 ZAM dialog. Native pointer and keyboard events verify that marker dragging survives redraws and retains focus.
 Screenshots and its report are written to `/private/tmp/zam-nt6-browser`
 (override `BROWSER_QA_DIR`). No test dependency is added.

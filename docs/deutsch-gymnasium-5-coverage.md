@@ -19,9 +19,9 @@ and both legacy snapshot hashes. The result is 42 rows, zero missing passages.
 | Learning area | Lessons | What learners practise |
 | --- | ---: | --- |
 | Speaking and listening | 7 | Two local listening passages, main information, speech planning, meaningful pauses, fair conversations, reasons and scenic interpretation |
-| Reading and media | 12 | Reading traces, literary and factual purposes, fairy tales, fables, figures, poetry, reading diaries, tables, bar charts, research, media use and film effects |
+| Reading and media | 13 | Reading traces, literary and factual purposes, fairy tales, fables, figures, poetry, dramatic scenes (*Spielszenen*), reading diaries, tables, bar charts, research, media use and film effects |
 | Writing | 8 | Planning, narrative situation–event–outcome, continuation, procedures, factual events, personal requests, revision and text processing |
-| Language and spelling | 19 | Word classes and inflection, cases, pronouns, comparison, six tenses, word formation and meanings, sentence functions, all four named adverbial types, clause structure and spelling strategies |
+| Language and spelling | 22 | Word classes and inflection, cases, pronouns, comparison, six tenses, word formation and meanings, sentence functions, predicate brackets (*Satzklammer*), all four named adverbial types, clause structure, homophones (*gleich und ähnlich klingende Wörter*), nominalisations and spelling strategies |
 
 The closest shell is `deutsch-realschule-5`, including its reviewed progress
 merge logic and writing self-assessment. Shared foundations are retained, but
@@ -87,14 +87,20 @@ packages and are not claimed here. A later approved mapping must be resolved
 before bundling into ZAM; enrolling both old and successor cards first can
 make an eventual automatic merge impossible.
 
-## Local delivery and validation
+## Publication and validation
 
-This is a `local-only` package. It has no public registry or Pages entry and
-cannot enter the catalog. Public release, teacher review and adding teacher
-videos are separate decisions. A future release must register the package,
-its 46 lessons and 92 cards consistently and retain its pinned anchors and ids.
-The package introduces no npm dependency and uses no embeds, trackers or
-background HTTP requests.
+This package is published to Pages, the public catalog and the Academy atlas
+with its **50 lessons** and **100 cards** (`publication.json` removed; registered in `academy.json` and `.github/workflows/pages.yml`).
+Its existing 46 lesson anchors and 138 atom/item identifiers from PR #137 are
+unchanged; four additional lessons (`d5-spielszene`, `d5-satzklammer`,
+`d5-aehnliche-woerter`, `d5-nominalisierung`, 12 new ULIDs, total 150 identifiers)
+close the remaining Grade 5 gaps on dramatic scripts/stage directions,
+multi-part predicates/*Satzklammer*, homophones (`seit/seid`, `viel/fiel`,
+`wieder/wider`, `Saite/Seite`), and nominalisation signals (`beim/zum`, `etwas/nichts + Adjektiv`)
+without introducing Grade 6 topics (`das/dass`, passive, relative clauses).
+Teacher review, teacher videos and explicit approval of `replaces-de-by.json`
+remain separate decisions. The package introduces no npm dependency and uses no
+embeds, trackers or background HTTP requests.
 
 The package commands are documented in its
 [README](../deutsch-gymnasium-5/README.md). `npm run typecheck`, `npm test`,

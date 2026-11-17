@@ -76,8 +76,8 @@ describe("Review corrections", () => {
 
 describe("Working language models", () => {
 	const models = LESSONS.filter((l) => l.visual.initial);
-	it("provides visible content and three reachable exploration goals for all 19 language lessons", () => {
-		expect(models).toHaveLength(19);
+	it("provides visible content and three reachable exploration goals for all 22 language lessons", () => {
+		expect(models).toHaveLength(22);
 		expect(models.map((l) => l.id)).toEqual(
 			LESSONS.filter((l) => l.stage === "sprache").map((l) => l.id),
 		);
@@ -124,5 +124,24 @@ describe("Working language models", () => {
 		expect(words("woertliche-rede", 1).join(" ")).toBe(
 			"„Ich komme morgen“ , sagt Mia.",
 		);
+		expect(words("satzklammer", 1).join(" ")).toBe(
+			"Das Mädchen hat das Heft aufgeschlagen.",
+		);
+		expect(words("nominalisierung", 0).join(" ")).toBe("beim Lesen");
+		expect(words("aehnliche-woerter", 0).join(" ")).toBe("Ihr seid bereit.");
+	});
+	it("addresses PR 147 grammar and factual review corrections", () => {
+		const nom = lesson("nominalisierung");
+		expect(nom.paragraphs[1]).toContain("viel gutes Essen");
+		expect(nom.quiz.explanation).toContain("viel gutes Essen");
+		expect(nom.visual.steps[2].detail).toContain("viel gutes Essen");
+		const sk = lesson("satzklammer");
+		expect(sk.tasks[2].model).toContain("geräumt");
+		expect(sk.tasks[2].model).toContain("räumen");
+		expect(sk.tasks[2].model).not.toMatch(/aufgeräumt|aufräumen/);
+		const hom = lesson("aehnliche-woerter");
+		expect(hom.material).toContain("zweiten [Saite/Seite] einer Geige");
+		expect(hom.tasks[1].model).toContain("zweiten Saite einer Geige");
+		expect(JSON.stringify(hom)).not.toContain("zehnten");
 	});
 });

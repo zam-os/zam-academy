@@ -321,7 +321,7 @@ element("#theme").addEventListener("click", () => {
 element("#zam").addEventListener("click", () =>
 	showDialog(
 		"Mit ZAM behalten",
-		"<p>60 Wiederholungsfragen führen direkt zu den passenden Lektionen zurück.</p><p>Dieses Paket ist ein lokaler Entwurf. Nach seiner Veröffentlichung kannst du es in der ZAM Academy auswählen und aufnehmen. Bis dahin kannst du hier ohne Konto weiterüben.</p>",
+		"<p>60 Wiederholungsfragen führen direkt zu den passenden Lektionen zurück.</p><p>Die Karten stehen im Academy-Katalog. In ZAM nimmst du sie unter „Aus der ZAM Academy“ auf, sobald ZAM die Academy-Zelle übernommen hat. Hier kannst du auch ohne Konto weiterüben.</p>",
 	),
 );
 element("#reset").addEventListener("click", () => {

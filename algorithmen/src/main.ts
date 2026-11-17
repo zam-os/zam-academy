@@ -26,6 +26,7 @@ import {
 	runLabel,
 	stageNames,
 	trainingHash,
+	localizeVersionBadge,
 	UI,
 } from "./i18n";
 import {
@@ -131,6 +132,7 @@ function render() {
 	const t = UI[locale],
 		done = LESSONS.filter((lesson) => isComplete(progress, lesson.id)).length;
 	document.documentElement.lang = locale;
+	localizeVersionBadge(locale === "en");
 	document.title =
 		locale === "en"
 			? "Algorithms & Programming · ZAM Academy"
