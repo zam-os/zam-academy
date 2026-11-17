@@ -27,6 +27,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | Physik 9 Realschule (LehrplanPLUS Bayern) | [`physik-realschule-9/`](physik-realschule-9/) | https://academy.zam-os.org/physik-realschule-9/ | `zam-academy:physik-realschule-9` |
 | Relationale Datenbanken und SQL (DE/EN, LehrplanPLUS IT 2.3.1/2.3.2) | [`sql/`](sql/) | https://academy.zam-os.org/sql/ | `zam-academy:sql` |
 | Englisch 5 Realschule (LehrplanPLUS Bayern, für alle Schülerinnen und Schüler) | [`englisch-realschule-5/`](englisch-realschule-5/) | https://academy.zam-os.org/englisch-realschule-5/ | `zam-academy:englisch-realschule-5` |
+| Englisch 6 Realschule (LehrplanPLUS Bayern, alle Wahlpflichtfächergruppen) | [`englisch-realschule-6/`](englisch-realschule-6/) | https://academy.zam-os.org/englisch-realschule-6/ | `zam-academy:englisch-realschule-6` |
 | Englisch 8 Realschule (LehrplanPLUS Bayern, alle Wahlpflichtfächergruppen) | [`englisch-realschule-8/`](englisch-realschule-8/) | https://academy.zam-os.org/englisch-realschule-8/ | `zam-academy:englisch-realschule-8` |
 | Englisch 9 Realschule (LehrplanPLUS Bayern) | [`englisch-realschule-9/`](englisch-realschule-9/) | https://academy.zam-os.org/englisch-realschule-9/ | `zam-academy:englisch-realschule-9` |
 | Englisch 10 Realschule (LehrplanPLUS Bayern, alle Wahlpflichtfächergruppen) | [`englisch-realschule-10/`](englisch-realschule-10/) | https://academy.zam-os.org/englisch-realschule-10/ | `zam-academy:englisch-realschule-10` |
@@ -173,6 +174,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # English 5 Gymnasium: cd englisch-gymnasium-5 (dev server on :5247)
 # German 5 Gymnasium: cd deutsch-gymnasium-5 (dev server on :5249)
 # German 6 Realschule: cd deutsch-realschule-6 (dev server on :5254)
+# Englisch 6 Realschule: cd englisch-realschule-6 (dev server on :5255)
 # Biologie 5 Gymnasium: cd biologie-gymnasium-5 (dev server on :5246)
 # French 5 Gymnasium: cd franzoesisch-gymnasium-5 (dev server on :5245)
 # Englisch 5 Mittelschule: cd englisch-mittelschule-5 (dev server on :5248)
@@ -259,3 +261,5 @@ The [Informatik 6 Gymnasium package](informatik-gymnasium-6/) covers Natur und T
 The [Biologie 6 Gymnasium package](biologie-gymnasium-6/) covers Natur und Technik 6, Schwerpunkt Biologie (`NT6 1.1–1.5`) with 44 lessons in nine stations, 12 interactive models (fair test, microscope, seed dispersal, germination, waterweed, phototropism, body shape, body temperature, frog metamorphosis, echolocation, vertebrate key, pond food web), 59 drawings, two-level writing tasks and 88 linked ZAM cards. Its [coverage matrix](biologie-gymnasium-6/coverage.json) maps all 45 Kompetenzerwartungen of Lernbereich 1 verbatim. The [curriculum and legacy review](docs/biologie-gymnasium-6-coverage.md) proposes a mapping for the 16 cards of the two `de-by:gymnasium-6-biologie-*` cells (4 A, 0 B, 12 C keep-active); the cell declares no `replaces` until Thomas approves.
 
 The [Deutsch 5 Gymnasium package](deutsch-gymnasium-5/) adds 50 lessons across all four LehrplanPLUS Bayern areas (*Sprechen und Zuhören*, *Lesen und Medien*, *Schreiben*, *Sprache und Rechtschreibung*), including local audio passages, dramatic scenes (*Spielszenen*), 22 interactive language and spelling models, two-level writing tasks with self-assessment and 100 ZAM cards (`proposal-only` legacy inventory of all 16 old cards in [deutsch-gymnasium-5/replaces-de-by.json](deutsch-gymnasium-5/replaces-de-by.json)). See [Curriculum coverage and legacy inventory](docs/deutsch-gymnasium-5-coverage.md).
+
+The [Englisch 6 Realschule package](englisch-realschule-6/) adds 42 lessons in eight stages across all LehrplanPLUS Bayern Realschule areas (USA, London, regions of Britain, everyday life, sports and charity, media and digital communication, grade-6 grammar and vocabulary/text strategies) with 126 workshop goals, four local listening scripts, 21 verified source links and 126 linked ZAM cards (`proposal-only` legacy inventory of the 16 old `de-by` cards in [englisch-realschule-6/replaces-de-by.json](englisch-realschule-6/replaces-de-by.json), starting at package version `0.0`). See [Curriculum coverage and legacy inventory](docs/englisch-realschule-6-coverage.md).
