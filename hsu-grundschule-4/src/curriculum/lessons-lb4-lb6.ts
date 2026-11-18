@@ -10,7 +10,6 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 		title: "Zeitreise, Zeitleiste & historische Quellen",
 		shortTitle: "Zeitleiste & Quellen",
 		icon: "⏳",
-		hook: "Woher wissen wir heute, wie Kinder vor 200 Jahren in deinem Ort gelebt haben – und warum liegt das Jahr 1835 im 19. Jahrhundert?",
 		foundationNote:
 			"Aus der 1. und 2. Klasse kennst du schon Tagesablauf, Wochentage, Monate, Jahreszeiten und deine eigene Familiengeschichte.",
 		storyParagraphs: [
@@ -22,16 +21,19 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 			{
 				icon: "📏",
 				title: "Jahrhundert-Trick",
+				lottaPrompt: "Auf einem alten Haus steht 1900. Gehört es noch ins 19. Jahrhundert? Zähl die letzten Jahre mit mir.",
 				text: "1 bis 100 = 1. Jh., 1801 bis 1900 = 19. Jh., 2001 bis 2100 = 21. Jh. Bei glatten Hundertern wie 1900 bleibt es noch das 19. Jahrhundert!",
 			},
 			{
 				icon: "🏺",
 				title: "Vier Quellenarten",
+				lottaPrompt: "Eine Münze, ein Foto und ein Brief liegen vor uns. Was verrät dir jeder Fund über früher?",
 				text: "Sachquellen (Gegenstände/Bauten), Bildquellen (Fotos/Gemälde), Textquellen (Urkunden/Briefe) und Zeitzeugenberichte.",
 			},
 			{
 				icon: "🏛️",
 				title: "Quellen kritisch prüfen",
+				lottaPrompt: "Zwei Menschen erinnern sich verschieden an denselben Tag. Welche zweite Spur würdest du suchen?",
 				text: "Jede Quelle hat Grenzen: Ein Gemälde verschönert manchmal die Wirklichkeit, und Erinnerungen können nach Jahrzehnten verblassen.",
 			},
 		],
@@ -92,6 +94,7 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 			controls: [
 				{
 					key: "urkunde1340",
+					lottaPrompt: "Auf der Urkunde steht 1340. In welches Jahrhundert und an welchen Aufbewahrungsort passt sie?",
 					label: "Pergament-Urkunde von 1340",
 					options: [
 						{ value: "ungeklaert", label: "Noch nicht eingeordnet" },
@@ -107,6 +110,7 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 				},
 				{
 					key: "muffelMuenze",
+					lottaPrompt: "Die Münze ist aus Silber, die Zange aus Eisen. Was können uns solche Gegenstände über ihre Zeit erzählen?",
 					label: "Silbermünze von 1648 & alte Schmiedezange",
 					options: [
 						{ value: "ungeklaert", label: "Noch nicht eingeordnet" },
@@ -122,6 +126,7 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 				},
 				{
 					key: "fotoZeitzeuge",
+					lottaPrompt: "Auf dem Foto von 1905 steht ein Bahnhof. Womit könntest du prüfen, was damals dort geschah?",
 					label: "Altes Bahnhofsfoto von 1905 prüfen",
 					options: [
 						{ value: "ungeklaert", label: "Nur raten, was darauf zu sehen ist" },
@@ -216,7 +221,6 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 		title: "Erfindungen im Wandel, Fakten & Fiktion",
 		shortTitle: "Wandel, Fakten & Fiktion",
 		icon: "🏰",
-		hook: "Warum hatte das erste Fahrrad noch keine Pedale – und gab es im Mittelalter wirklich feuerspeiende Drachen?",
 		foundationNote:
 			"Aus Station 14 weißt du bereits, wie historische Quellen uns helfen, echte Spuren der Vergangenheit zu untersuchen.",
 		storyParagraphs: [
@@ -228,16 +232,19 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 			{
 				icon: "🚲",
 				title: "Vom Laufrad zum E-Bike",
+				lottaPrompt: "Stell dir ein Fahrrad ohne Pedale vor. Wie würdest du damit vom Fleck kommen?",
 				text: "1817 Draisine (ohne Pedale) → um 1870 Hochrad (Pedale am Vorderrad) → ab 1885 Niederrad mit Kette & Luftreifen → modernes Fahrrad.",
 			},
 			{
 				icon: "🐉",
 				title: "Fakt oder Fiktion?",
+				lottaPrompt: "Ein Ritter zieht im Film ein Zauberschwert. Welche Spur bräuchtest du, um etwas über echte Ritter zu erfahren?",
 				text: "Fakten lassen sich durch echte Quellen belegen. Fiktion sind ausgeschmückte Sagen, Legenden oder Film-Effekte.",
 			},
 			{
 				icon: "🕯️",
 				title: "Erinnerungskultur",
+				lottaPrompt: "Mitten auf dem Dorfplatz steht ein Denkmal. Was würdest du über die Menschen dahinter gern wissen?",
 				text: "Museen, Denkmäler und Gedenktage helfen einer Region, ihre Wurzeln zu verstehen und aus der Geschichte zu lernen.",
 			},
 		],
@@ -298,6 +305,7 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 			controls: [
 				{
 					key: "fahrradStufe",
+					lottaPrompt: "Stell dir vor, du sitzt auf dem Laufrad. Was machen deine Füße auf dem Hochrad anders?",
 					label: "Technik-Meilenstein wählen",
 					options: [
 						{ value: "draisine", label: "1817 Draisine (Abstoßen ohne Pedale)" },
@@ -310,6 +318,7 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 				},
 				{
 					key: "ritterCheck",
+					lottaPrompt: "Ein Burgbrief und ein Ritterfilm erzählen vom Mittelalter. Welche Quelle würdest du zuerst untersuchen?",
 					label: "Ritterfilm mit Zauberschwert & Burgbrief von 1390",
 					options: [
 						{ value: "allesEcht", label: "Beides als echte Tatsachen glauben" },
@@ -321,6 +330,7 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 				},
 				{
 					key: "gedenktag",
+					lottaPrompt: "Das Dorf feiert Geburtstag. Woran könnten sich die Menschen beim Fest gemeinsam erinnern?",
 					label: "Regionaler Gedenktag & Stadtjubiläum",
 					options: [
 						{ value: "egal", label: "Nur als schulfreien Tag ohne Bedeutung sehen" },
@@ -413,7 +423,6 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 		title: "Himmelsrichtungen, Kompass & Karten lesen",
 		shortTitle: "Kompass & Karten",
 		icon: "🧭",
-		hook: "Wie findest du mit Sonne, Kompass und Maßstab sicher ans Ziel – und wie passt ein ganzer Berg auf ein Blatt Papier?",
 		foundationNote:
 			"Aus der 1. und 2. Klasse kennst du schon Wege auf dem Schulgelände und einfache Lagebegriffe wie links, rechts, vorn und hinten.",
 		storyParagraphs: [
@@ -425,16 +434,19 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 			{
 				icon: "🧭",
 				title: "8 Himmelsrichtungen",
+				lottaPrompt: "Die Hütte liegt zwischen Süden und Osten. Wie heißt die Richtung, in die wir gehen?",
 				text: "Haupthimmelsrichtungen N, O, S, W und Nebenhimmelsrichtungen NO, SO, SW, NW; die Kompassnadel zeigt nach Norden.",
 			},
 			{
 				icon: "📐",
 				title: "Maßstab umrechnen",
+				lottaPrompt: "Auf meiner Karte ist der Bach 1 cm entfernt. Wie weit ist das draußen beim Maßstab 1 : 25 000?",
 				text: "100 cm = 1 m und 1 000 m = 1 km. Maßstab 1 : 25 000 bedeutet: 1 cm auf der Karte sind 250 m in echt.",
 			},
 			{
 				icon: "⛰️",
 				title: "Höhenschichten & Legende",
+				lottaPrompt: "Ein Berg ist auf der Karte ganz flach. Welcher Hinweis in der Legende verrät seine Höhe?",
 				text: "Grün = Tiefland, Gelb/Braun = Gebirge (je höher, desto dunkler braun), Blau = Flüsse und Seen.",
 			},
 		],
@@ -491,6 +503,7 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 			controls: [
 				{
 					key: "nordung",
+					lottaPrompt: "Mein Kompass liegt neben der Karte. Wie müssen Nordpfeil und rote Nadel zueinander stehen?",
 					label: "Karte mit dem Kompass einnorden",
 					options: [
 						{ value: "verdreht", label: "Karte liegt verkehrt herum (Süden oben)" },
@@ -502,6 +515,7 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 				},
 				{
 					key: "peilung",
+					lottaPrompt: "Starte an der Schule. In welcher Himmelsrichtung liegt die Hütte, wenn die Karte nach Norden zeigt?",
 					label: "Richtung zur Berghütte unten rechts bestimmen",
 					options: [
 						{ value: "nordwest", label: "Nordwest (NW)" },
@@ -511,6 +525,7 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 				},
 				{
 					key: "kartenwahl",
+					lottaPrompt: "Für unseren Fußweg brauche ich einzelne Wege. Welche Karte zeigt sie genau genug?",
 					label: "Kartenmaßstab für 3 km Fußweg wählen",
 					options: [
 						{
@@ -608,7 +623,6 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 		title: "Vom Heimatort nach Bayern, Europa & in die Welt",
 		shortTitle: "Bayern, Europa & Welt",
 		icon: "🗺️",
-		hook: "Wie reiht sich dein Wohnort in die 7 Regierungsbezirke Bayerns und die Welt ein – und wie schützen wir empfindliche Naturräume trotz Tourismus?",
 		foundationNote:
 			"Aus Station 16 kannst du Karten, Himmelsrichtungen und Höhenschichtenfarben bereits sicher lesen.",
 		storyParagraphs: [
@@ -620,16 +634,19 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 			{
 				icon: "🦁",
 				title: "7 Regierungsbezirke Bayerns",
+				lottaPrompt: "Oberbayern und Oberfranken klingen ähnlich. Welche weiteren Regierungsbezirke fallen dir ein?",
 				text: "Oberbayern, Niederbayern, Oberpfalz, Oberfranken, Mittelfranken, Unterfranken und Schwaben.",
 			},
 			{
 				icon: "🌊",
 				title: "Donau, Main & Alpen",
+				lottaPrompt: "So nah beieinander und doch zwei verschiedene Meere! Wohin fließen Main und Donau?",
 				text: "Der Main fließt zum Rhein (Nordsee), die Donau zum Schwarzen Meer. Höchster Berg Bayerns und Deutschlands ist die Zugspitze (2 962 m).",
 			},
 			{
 				icon: "🦌",
 				title: "Räume nutzen & schützen",
+				lottaPrompt: "Wir wandern durch ein Bergtal, in dem Tiere leben. Wie können wir zu Gast sein, ohne sie zu stören?",
 				text: "Wo Tourismus, Landwirtschaft und Naturschutz aufeinandertreffen, helfen Schutzgebiete, markierte Wege und Anreise per Bahn.",
 			},
 		],
@@ -686,6 +703,7 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 			controls: [
 				{
 					key: "raumkette",
+					lottaPrompt: "Vom Wohnort bis nach Europa wird der Kartenausschnitt immer größer. Wo ordnest du den Landkreis ein?",
 					label: "Raumgliederung vom Kleinen zum Großen",
 					options: [
 						{
@@ -700,6 +718,7 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 				},
 				{
 					key: "flusskarte",
+					lottaPrompt: "Such zuerst die Alpen. Wo liegen Main und Donau im Vergleich dazu?",
 					label: "Große Flüsse & Gebirge in Bayern zuordnen",
 					options: [
 						{ value: "vertauscht", label: "Main im Süden, Alpen im Norden" },
@@ -711,6 +730,7 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 				},
 				{
 					key: "bergtal",
+					lottaPrompt: "Das Tal ist bei Wanderern beliebt. Welcher Plan lässt auch den Tieren einen ruhigen Platz?",
 					label: "Konflikt im beliebten Bergtal lösen",
 					options: [
 						{
@@ -804,7 +824,6 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 		title: "Sicher mit dem Rad & nachhaltig mobil",
 		shortTitle: "Verkehr & Fahrradprüfung",
 		icon: "🚲",
-		hook: "Was gehört alles an ein verkehrssicheres Fahrrad, wie klappt das Linksabbiegen in 8 Schritten – und warum ist der tote Winkel so gefährlich?",
 		foundationNote:
 			"Aus der 1. und 2. Klasse kennst du sicheres Überqueren der Straße als Fußgänger; in der 4. Klasse folgt die Jugendverkehrsschule.",
 		storyParagraphs: [
@@ -816,16 +835,19 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 			{
 				icon: "🛑",
 				title: "Verkehrszeichen-Formen",
+				lottaPrompt: "Schilder erkennst du schon am Umriss. Welches hat acht Ecken?",
 				text: "Rotes Dreieck (Spitze oben) = Gefahr; runde Schilder = Vorschrift (rot: Verbot, blau: Gebot wie Radweg); Achteck = STOP.",
 			},
 			{
 				icon: "🚛",
 				title: "Toter Winkel",
+				lottaPrompt: "Du siehst den Lkw. Sieht dich auch die Person am Steuer? Denk an den toten Winkel.",
 				text: "Rechts neben Lkw oder Bus niemals vorfahren – im toten Winkel bist du unsichtbar. Sicher wartest du schräg dahinter!",
 			},
 			{
 				icon: "🌿",
 				title: "Umweltverbund",
+				lottaPrompt: "Morgen geht es zur Schule. Welche Wege fallen dir ein, für die du kein eigenes Auto brauchst?",
 				text: "Zu Fuß gehen, Radfahren, Bus und Bahn schonen Klima, Luft und Platz in der Stadt und halten deinen Körper fit.",
 			},
 		],
@@ -886,6 +908,7 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 			controls: [
 				{
 					key: "radCheck",
+					lottaPrompt: "Das Modellrad soll in der Dämmerung losfahren. Welche Ausrüstung hilft dir, gesehen zu werden?",
 					label: "Fahrrad-Ausrüstung vor dem Start",
 					options: [
 						{ value: "mangelhaft", label: "Nur 1 Bremse, kein Rücklicht, keine Klingel" },
@@ -897,6 +920,7 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 				},
 				{
 					key: "linksabbiegen",
+					lottaPrompt: "Beim Linksabbiegen kommt dir jemand entgegen. Finde im Modell die Stelle, an der du warten musst.",
 					label: "Linksabbiegen mit Gegenverkehr",
 					options: [
 						{ value: "schneiden", label: "Ohne Umschauen schräg die Kurve schneiden" },
@@ -908,6 +932,7 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 				},
 				{
 					key: "schulwegMobil",
+					lottaPrompt: "Vor dem Schultor stehen viele Autos. Wie könnten 25 Kinder mit weniger Verkehr ankommen?",
 					label: "Schulweg für 25 Kinder organisieren",
 					options: [
 						{ value: "elterntaxi", label: "25 einzelne Elterntaxis direkt vors Schultor" },
@@ -999,7 +1024,6 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 		title: "Hebel, Zahnräder, Werkzeuge & Produktion",
 		shortTitle: "Hebel, Zahnräder & Arbeit",
 		icon: "⚙️",
-		hook: "Wie öffnet ein kleiner Flaschenöffner mühelos einen festen Kronkorken – und wie trocknet die Salatschleuder ganz ohne Föhn?",
 		foundationNote:
 			"Aus dem Alltag kennst du Schere, Locher, Schneebesen und Fahrradkette – hier entdeckst du die technischen Prinzipien dahinter.",
 		storyParagraphs: [
@@ -1011,16 +1035,19 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 			{
 				icon: "🔧",
 				title: "Hebelgesetz im Alltag",
+				lottaPrompt: "Am langen Griff lässt sich der Nussknacker leicht zudrücken. Wo sitzt dabei die Nuss?",
 				text: "Langer Kraftarm, kurzer Lastarm: So brauchst du am Flaschenöffner, Nussknacker oder an der Schubkarre viel weniger Kraft.",
 			},
 			{
 				icon: "⚙️",
 				title: "Zahnrad & Fliehkraft",
+				lottaPrompt: "Zwei Zahnräder greifen ineinander. Wenn sich das erste nach rechts dreht, wohin dreht sich das zweite?",
 				text: "Benachbarte Zahnräder drehen gegenläufig; großes Rad treibt kleines Rad = schneller! Schnelle Drehung erzeugt Fliehkraft.",
 			},
 			{
 				icon: "👕",
 				title: "Handwerk vs. Massenware",
+				lottaPrompt: "Der Reißverschluss klemmt, der Stoff ist noch gut. Welche Idee hast du für die Jacke?",
 				text: "Massenproduktion senkt Preise, verbraucht aber viele Ressourcen. Reparieren, Tauschen und langlebige Qualität schützen die Umwelt.",
 			},
 		],
@@ -1081,6 +1108,7 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 			controls: [
 				{
 					key: "hebelArm",
+					lottaPrompt: "Die Kiste ist schwer. Wohin würdest du den Drehpunkt der Stange im Modell verschieben?",
 					label: "Drehpunkt unter der Brechstange setzen",
 					options: [
 						{ value: "kurz", label: "Kurzer Kraftarm, langer Lastarm (schwer!)" },
@@ -1092,6 +1120,7 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 				},
 				{
 					key: "getriebe",
+					lottaPrompt: "Die Salatschleuder soll sich schnell drehen. Was bewirkt das kleine Zahnrad am Ausgang?",
 					label: "Antrieb für die Salatschleuder wählen",
 					options: [
 						{
@@ -1106,6 +1135,7 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 				},
 				{
 					key: "jacke",
+					lottaPrompt: "Meine Lieblingsjacke ist noch schön. Wer könnte mir mit dem kaputten Verschluss helfen?",
 					label: "Reißverschluss an der Winterjacke klemmt",
 					options: [
 						{ value: "wegwerfen", label: "Sofort wegwerfen & Billigjacke nachkaufen" },
@@ -1196,7 +1226,6 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 		title: "Stabile Brücken, Papierprofile & Gleichgewicht",
 		shortTitle: "Brücken & Balance",
 		icon: "🌉",
-		hook: "Wie trägt ein einziges gefaltetes Blatt Papier ein schweres Buch – und warum steht die Steinerne Brücke in Regensburg seit fast 900 Jahren?",
 		foundationNote:
 			"Aus dem Bauen mit Bauklötzen weißt du schon, wann Türme wackeln; jetzt nutzt du echte Ingenieurs-Tricks für Stabilität und Balance.",
 		storyParagraphs: [
@@ -1208,16 +1237,19 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 			{
 				icon: "🌉",
 				title: "Vier Brückentypen",
+				lottaPrompt: "Schau bei der nächsten Brücke einmal unter die Fahrbahn und dann nach oben. Was trägt sie?",
 				text: "Balkenbrücke (Auflager), Bogenbrücke (Druck in Widerlager), Fachwerkbrücke (stabile Dreiecke), Hängebrücke (Pylone & Tragseile).",
 			},
 			{
 				icon: "📄",
 				title: "Profile & Dreiecke",
+				lottaPrompt: "Mein Blatt hängt zwischen den Ufern durch. Ob es mehr trägt, wenn ich es wie eine Ziehharmonika falte?",
 				text: "Zickzack-, U-, Winkel- und Rundprofile verhindern Durchbiegen; Diagonalstreben machen wackelige Vierecke zu stabilen Dreiecken.",
 			},
 			{
 				icon: "⚖️",
 				title: "Wippe im Gleichgewicht",
+				lottaPrompt: "Ein leichter Luchs und ein schwerer Bär wollen wippen. Wer sollte weiter außen sitzen?",
 				text: "Halbes Gewicht braucht doppelten Abstand vom Drehpunkt: Gewicht links · Abstand links = Gewicht rechts · Abstand rechts.",
 			},
 		],
@@ -1278,6 +1310,7 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 			controls: [
 				{
 					key: "fahrbahnProfil",
+					lottaPrompt: "Schau auf die Mitte der Papierbrücke. Was passiert unter dem Gewicht, wenn du das Blatt faltest?",
 					label: "Papierfahrbahn formen",
 					options: [
 						{ value: "flach", label: "Flaches Einzelblatt (biegt stark durch)" },
@@ -1286,6 +1319,7 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 				},
 				{
 					key: "aussteifung",
+					lottaPrompt: "Im Seitenteil siehst du Vierecke. Welche Formen entstehen, wenn eine Strebe schräg hindurchläuft?",
 					label: "Seitenträger aussteifen",
 					options: [
 						{ value: "viereck", label: "Offene Vierecksrahmen ohne Diagonalen" },
@@ -1294,6 +1328,7 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 				},
 				{
 					key: "waageRechts",
+					lottaPrompt: "Links liegen vier Bausteine, rechts nur zwei. Auf welchem Feld halten die zwei das Gleichgewicht?",
 					label: "Balkenwaage (links: 4 Bausteine auf Feld 2)",
 					options: [
 						{ value: "feld1", label: "Rechts 2 Bausteine auf Feld 1 setzen" },

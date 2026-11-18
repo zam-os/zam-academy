@@ -68,6 +68,27 @@ describe("Lotta's field map and council", () => {
 });
 
 describe("station steps", () => {
+	it("gives every discovery and lab step its own authored Lotta line", () => {
+		for (const lesson of LESSON_BY_ID.values()) {
+			const steps = lessonSteps(lesson);
+			const expected = [
+				...lesson.factCards.map((card) => card.lottaPrompt),
+				...lesson.lab.controls.map((control) => control.lottaPrompt),
+			];
+			const prompts = steps
+				.filter(
+					(step) =>
+						step.kind === "discover" ||
+						step.kind === "lab" ||
+						(step.kind === "council" && step.phase === "places"),
+				)
+				.map((step) => step.prompt);
+			expect(prompts).toEqual(expected);
+			expect(prompts.every((text) => text.trim().length > 0)).toBe(true);
+			expect(new Set(steps.map((step) => step.prompt)).size).toBe(steps.length);
+		}
+	});
+
 	it("keeps every fact, lab control and both task levels reachable", () => {
 		for (const lesson of LESSON_BY_ID.values()) {
 			const steps = lessonSteps(lesson);

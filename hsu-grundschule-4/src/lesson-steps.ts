@@ -22,10 +22,7 @@ export function lessonSteps(lesson: Lesson): LessonStep[] {
 		kind: "discover",
 		index,
 		label: card.title,
-		prompt:
-			index === 0
-				? lesson.hook
-				: "Blättere mit mir weiter. Was erfahren wir hier?",
+		prompt: card.lottaPrompt,
 	}));
 	steps.push({
 		kind: "quiz",
@@ -39,8 +36,7 @@ export function lessonSteps(lesson: Lesson): LessonStep[] {
 					kind: "council",
 					phase: "places",
 					label: "Zwei Orte vergleichen",
-					prompt:
-						"Wo bauen wir den Spielplatz? Stell das Modell auf beide Flächen.",
+					prompt: control.lottaPrompt,
 				},
 				{
 					kind: "council",
@@ -62,7 +58,7 @@ export function lessonSteps(lesson: Lesson): LessonStep[] {
 				kind: "lab",
 				control: control.key,
 				label: control.label,
-				prompt: "Probier eine Einstellung aus. Was verändert sich im Bild?",
+				prompt: control.lottaPrompt,
 			});
 		}
 	}

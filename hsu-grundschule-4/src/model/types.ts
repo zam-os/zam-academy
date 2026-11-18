@@ -21,6 +21,7 @@ export interface LabOption {
 }
 
 export interface LabControl {
+	lottaPrompt: string;
 	key: string;
 	label: string;
 	options: ReadonlyArray<LabOption>;
@@ -57,6 +58,7 @@ export interface QuickCheck {
 }
 
 export interface FactCard {
+	lottaPrompt: string;
 	icon: string;
 	title: string;
 	text: string;
@@ -90,7 +92,6 @@ export interface Lesson {
 	title: string;
 	shortTitle: string;
 	icon: string;
-	hook: string;
 	foundationNote: string;
 	storyParagraphs: ReadonlyArray<string>;
 	factCards: ReadonlyArray<FactCard>;

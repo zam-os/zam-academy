@@ -10,7 +10,6 @@ export const LESSONS_LB3: ReadonlyArray<Lesson> = [
 		title: "Lebensräume Wald & Gewässer: Stockwerke, Anpassung & Nahrungsnetze",
 		shortTitle: "Wald & Gewässer",
 		icon: "🌲",
-		hook: "Warum wohnt das Moos ganz unten im schattigen Waldkeller, während die Bachforelle nur in kühlem, klarem Wasser überlebt?",
 		foundationNote:
 			"Aus der 1. und 2. Klasse kennst du schon Wiese und Hecke – jetzt steigen wir durch alle Stockwerke des Waldes und tauchen in heimische Gewässer ein!",
 		storyParagraphs: [
@@ -22,16 +21,19 @@ export const LESSONS_LB3: ReadonlyArray<Lesson> = [
 			{
 				icon: "🌳",
 				title: "5 Stockwerke des Waldes",
+				lottaPrompt: "Vom Moos bis zur Baumkrone hat der Wald Stockwerke. Auf welcher Höhe streift mein Bauch durchs Gras?",
 				text: "Von unten nach oben: Wurzelschicht, Moosschicht, Krautschicht, Strauchschicht, Baumschicht.",
 			},
 			{
 				icon: "🐟",
 				title: "Angepasstheit am Wasser",
+				lottaPrompt: "Eine Ente paddelt an mir vorbei. Zwischen ihren Zehen spannt sich eine Haut. Wobei hilft sie wohl?",
 				text: "Forelle: Stromlinienform & Kiemen; Stockente: Schwimmhäute & Bürzeldrüse; Seerose: Luftkanäle für Auftrieb.",
 			},
 			{
 				icon: "🔗",
 				title: "Nahrungskette",
+				lottaPrompt: "Der Reiher fängt einen Fisch. Wovon hat sich wohl das Futter des Fisches ernährt?",
 				text: "Pflanze (Erzeuger) → Pflanzenfresser → Fleischfresser → Zersetzer (machen daraus wieder Nährsalze).",
 			},
 		],
@@ -92,6 +94,7 @@ export const LESSONS_LB3: ReadonlyArray<Lesson> = [
 			controls: [
 				{
 					key: "stockwerk",
+					lottaPrompt: "Klettere im Modell vom Waldboden in die Baumkrone. Wo findest du Schatten, wo mehr Licht?",
 					label: "Beobachtetes Wald-Stockwerk",
 					options: [
 						{ value: "moos", label: "Moosschicht (schattig & feucht)" },
@@ -101,6 +104,7 @@ export const LESSONS_LB3: ReadonlyArray<Lesson> = [
 				},
 				{
 					key: "bach",
+					lottaPrompt: "Zwei Bachläufe stehen zur Wahl. In welchem findet die Forelle eher kühles Wasser?",
 					label: "Zustand des Baches",
 					options: [
 						{ value: "belastet", label: "Begradigt, warm & mit Abwasser belastet" },
@@ -112,6 +116,7 @@ export const LESSONS_LB3: ReadonlyArray<Lesson> = [
 				},
 				{
 					key: "kette",
+					lottaPrompt: "Beginne bei der Alge und folge dem Futter bis zum Reiher. In welche Richtung gehören die Pfeile?",
 					label: "Nahrungskette schalten",
 					options: [
 						{
@@ -191,7 +196,6 @@ export const LESSONS_LB3: ReadonlyArray<Lesson> = [
 		title: "Verwandlungskünstler der Natur & vom Wolf zum Hund",
 		shortTitle: "Metamorphose & Hund",
 		icon: "🐸",
-		hook: "Wie wird aus einer kiemenatmenden Kaulquappe ein lungenatmender Frosch – und warum stammt jeder Haushund vom Wildtier Wolf ab?",
 		foundationNote:
 			"Aus der 1. und 2. Klasse weißt du schon, dass man Haustiere rücksichtsvoll behandelt – jetzt vergleichen wir ihre Abstammung vom Wolf und verfolgen ganze Tier-Entwicklungen!",
 		storyParagraphs: [
@@ -203,16 +207,19 @@ export const LESSONS_LB3: ReadonlyArray<Lesson> = [
 			{
 				icon: "🐸",
 				title: "Grasfrosch-Entwicklung",
+				lottaPrompt: "Die Kaulquappe hat einen Schwanz und keine Beine. Woran erkennst du später den jungen Frosch?",
 				text: "Laich → Kaulquappe (Kiemen) → erst Hinterbeine, dann Vorderbeine → Jungfrosch an Land (Lunge & feuchte Haut).",
 			},
 			{
 				icon: "🐞",
 				title: "Marienkäfer-Verwandlung",
+				lottaPrompt: "Eine Larve schnappt sich eine Blattlaus. Kaum zu glauben, dass aus diesem kleinen Jäger ein Marienkäfer wird!",
 				text: "Ei → Larve (Blattlausjäger) → Puppe (Ruhestadium mit Umbau) → erwachsener Käfer.",
 			},
 			{
 				icon: "🐕",
 				title: "Wolf & Haushund",
+				lottaPrompt: "Wolf und Haushund haben beide eine feine Nase. Was kann ein Hund damit bemerken, bevor du es siehst?",
 				text: "Gleiche Abstammung & feine Sinne; beim fremden Hund: ruhig stehen bleiben, Besitzer fragen, Fressplatz tabu!",
 			},
 		],
@@ -273,6 +280,7 @@ export const LESSONS_LB3: ReadonlyArray<Lesson> = [
 			controls: [
 				{
 					key: "art",
+					lottaPrompt: "Frosch oder Marienkäfer? Such dir ein Tier aus, dessen Verwandlung du verfolgen möchtest.",
 					label: "Beobachtete Tierart",
 					options: [
 						{ value: "frosch", label: "Grasfrosch (Lurch)" },
@@ -281,6 +289,7 @@ export const LESSONS_LB3: ReadonlyArray<Lesson> = [
 				},
 				{
 					key: "stadium",
+					lottaPrompt: "Halte bei Stufe drei an und wechsle die Tierart. Was passiert beim Frosch, was beim Käfer?",
 					label: "Entwicklungsstufe",
 					options: [
 						{ value: "s1", label: "Stufe 1 (Laich / Ei)" },
@@ -291,6 +300,7 @@ export const LESSONS_LB3: ReadonlyArray<Lesson> = [
 				},
 				{
 					key: "hund",
+					lottaPrompt: "Ein fremder Hund kommt näher. Welche Reaktion lässt ihm Platz und Ruhe?",
 					label: "Fremder Hund nähert sich",
 					options: [
 						{ value: "wegrennen", label: "Schreiend wegrennen & anstarren" },
@@ -371,7 +381,6 @@ export const LESSONS_LB3: ReadonlyArray<Lesson> = [
 		title: "Vom Bauernhof auf den Teller: Eiercode, Getreide & Regionalität",
 		shortTitle: "Bauernhof & Lebensmittel",
 		icon: "🌾",
-		hook: "Was verrät der rote Zahlencode auf jedem Hühnerei – und warum reisen Erdbeeren im Winter manchmal tausende Kilometer weit?",
 		foundationNote:
 			"Aus der 1. und 2. Klasse kennst du schon Nutztiere, Nutzpflanzen und die Erntezeit heimischer Obstsorten.",
 		storyParagraphs: [
@@ -383,16 +392,19 @@ export const LESSONS_LB3: ReadonlyArray<Lesson> = [
 			{
 				icon: "🥚",
 				title: "Eierstempel knacken",
+				lottaPrompt: "Auf dem Ei steht ein winziger Code. Welche Ziffer verrät dir, wie die Henne gehalten wurde?",
 				text: "0 = Bio, 1 = Freiland, 2 = Bodenhaltung, 3 = Käfig/Kleingruppe · DE = Deutschland · 09 = Bayern.",
 			},
 			{
 				icon: "🌾",
 				title: "Heimisches Getreide",
+				lottaPrompt: "Die Ähre sieht aus, als hätte sie einen Bart. Bei welchem Getreide fallen dir diese langen Borsten auf?",
 				text: "Ährengetreide: Weizen, Roggen, Gerste (lange Grannen). Rispengetreide: Hafer.",
 			},
 			{
 				icon: "🚜",
 				title: "Regional & saisonal",
+				lottaPrompt: "Im Januar und im Juni gibt es Erdbeeren zu kaufen. Wann könnten sie frisch vom Feld nebenan kommen?",
 				text: "Kurze Transportwege, keine beheizten Winter-Gewächshäuser, frische Ernte aus der Umgebung.",
 			},
 		],
@@ -453,6 +465,7 @@ export const LESSONS_LB3: ReadonlyArray<Lesson> = [
 			controls: [
 				{
 					key: "haltung",
+					lottaPrompt: "Ändere die erste Ziffer auf dem Ei. Welche Haltungsform zeigt der Stempel jetzt an?",
 					label: "1. Stelle im Eierstempel",
 					options: [
 						{ value: "3", label: "3 – Kleingruppe / Käfig" },
@@ -463,6 +476,7 @@ export const LESSONS_LB3: ReadonlyArray<Lesson> = [
 				},
 				{
 					key: "herkunft",
+					lottaPrompt: "Meine Lupe ist bereit! Such auf dem Ei die zwei Ziffern gleich hinter DE. Steckt Bayern darin?",
 					label: "Länder- & Regionskennung",
 					options: [
 						{ value: "fern", label: "Weiter Ferntransport" },
@@ -471,6 +485,7 @@ export const LESSONS_LB3: ReadonlyArray<Lesson> = [
 				},
 				{
 					key: "obst",
+					lottaPrompt: "Fürs Frühstück fehlen Früchte. Welches Obst hat gerade einen kurzen Weg vom Feld zu uns?",
 					label: "Obstkauf für das Frühstück",
 					options: [
 						{ value: "flugJanuar", label: "Eingeflogene Beeren im Januar" },
@@ -551,7 +566,6 @@ export const LESSONS_LB3: ReadonlyArray<Lesson> = [
 		title: "Stromkreise, Leiter, Gefahren & saubere Energie",
 		shortTitle: "Strom & Energie",
 		icon: "💡",
-		hook: "Wann genau leuchtet ein Lämpchen, warum leitet sogar eine Bleistiftmine Strom – und wie erzeugen Sonne und Wind Elektrizität?",
 		foundationNote:
 			"Aus der 1. und 2. Klasse kennst du schon verschiedene Stoffe wie Metall, Holz, Glas und Kunststoff – heute prüfen wir sie im Stromkreis!",
 		storyParagraphs: [
@@ -563,16 +577,19 @@ export const LESSONS_LB3: ReadonlyArray<Lesson> = [
 			{
 				icon: "🔌",
 				title: "Leiter & Nichtleiter",
+				lottaPrompt: "Eine Bleistiftmine zwischen den Metallstücken? Die hat sich bei den Leitern wohl doch nicht verirrt!",
 				text: "Leiter: Metalle (Kupfer, Eisen), Graphit (Bleistiftmine), Salzwasser. Nichtleiter: Plastik, Gummi, Holz, Glas.",
 			},
 			{
 				icon: "📐",
 				title: "Geschlossener Stromkreis",
+				lottaPrompt: "Das Lämpchen im Modell bleibt dunkel. Verfolge den Weg von einem Batteriepol bis zum anderen.",
 				text: "Von Pol zu Pol ohne Lücke! Wirkungen: Licht, Wärme, Bewegung und Magnetismus.",
 			},
 			{
 				icon: "⚡",
 				title: "230 V Gefahr & Umwelt",
+				lottaPrompt: "Wenn ich beim Rausgehen das Licht ausschalte, spare ich Strom. Wo fällt dir noch etwas ein?",
 				text: "Steckdose (230 V) = Lebensgefahr, Wasser leitet! Erneuerbare Energien + Stromsparen schützen das Klima.",
 			},
 		],
@@ -633,6 +650,7 @@ export const LESSONS_LB3: ReadonlyArray<Lesson> = [
 			controls: [
 				{
 					key: "schalter",
+					lottaPrompt: "Klick auf den Schalter und verfolge im Bild, wo sich der Stromkreis öffnet oder schließt.",
 					label: "Schalterstellung",
 					options: [
 						{ value: "offen", label: "Offen (unterbrochen)" },
@@ -641,6 +659,7 @@ export const LESSONS_LB3: ReadonlyArray<Lesson> = [
 				},
 				{
 					key: "stoff",
+					lottaPrompt: "Münze und Kunststofflineal wechseln sich im Modell ab. Bei welchem Material leuchtet die Lampe?",
 					label: "Prüfstoff in den Klemmen",
 					options: [
 						{ value: "plastik", label: "Kunststoff-Lineal" },
@@ -651,6 +670,7 @@ export const LESSONS_LB3: ReadonlyArray<Lesson> = [
 				},
 				{
 					key: "darstellung",
+					lottaPrompt: "Vergleiche das Bild der Schaltung mit dem Schaltplan. Welches Zeichen steht für die Lampe?",
 					label: "Ansicht & Energiewahl",
 					options: [
 						{ value: "aufbauKohle", label: "Aufbau-Bild · Kohlestrom" },
@@ -739,7 +759,6 @@ export const LESSONS_LB3: ReadonlyArray<Lesson> = [
 		title: "Feuer verstehen: Verbrennungsdreieck & richtig löschen",
 		shortTitle: "Feuer & Brandschutz",
 		icon: "🔥",
-		hook: "Welche drei Dinge braucht jedes Feuer gleichzeitig – und warum darf man brennendes Öl in der Pfanne niemals mit Wasser löschen?",
 		foundationNote:
 			"Aus der 1. und 2. Klasse kennst du schon Rauchmelder, Fluchtwege in der Schule und den sicheren Umgang mit Streichhölzern.",
 		storyParagraphs: [
@@ -751,16 +770,19 @@ export const LESSONS_LB3: ReadonlyArray<Lesson> = [
 			{
 				icon: "🔺",
 				title: "Das Verbrennungsdreieck",
+				lottaPrompt: "Zum Feuer gehören drei Bedingungen. An welche davon erinnert dich die Luft um uns herum?",
 				text: "1. Brennbarer Stoff + 2. Sauerstoff + 3. Entzündungstemperatur. Fehlt eine Ecke, geht das Feuer aus!",
 			},
 			{
 				icon: "🪣",
 				title: "Drei Löschprinzipien",
+				lottaPrompt: "Welche Ecke des Verbrennungsdreiecks fehlt, wenn die Flamme keinen Sauerstoff mehr bekommt?",
 				text: "Abkühlen (Wasser bei Holz), Ersticken / Sauerstoff entziehen (Deckel, Sand, Löschdecke), Brennstoff entfernen.",
 			},
 			{
 				icon: "⚠️",
 				title: "Achtung Fettbrand!",
+				lottaPrompt: "In der Küche brennt Öl in einer Pfanne. Warum wäre Wasser hier besonders gefährlich?",
 				text: "Niemals Wasser in brennendes Öl gießen (Fettexplosion)! Immer mit Topfdeckel oder Löschdecke ersticken.",
 			},
 		],
@@ -821,6 +843,7 @@ export const LESSONS_LB3: ReadonlyArray<Lesson> = [
 			controls: [
 				{
 					key: "brand",
+					lottaPrompt: "Im Modell siehst du eine Kerze, Holz und eine Pfanne. Was brennt jeweils?",
 					label: "Brandsituation im Labor",
 					options: [
 						{ value: "kerze", label: "Brennendes Teelicht auf feuerfester Unterlage" },
@@ -830,6 +853,7 @@ export const LESSONS_LB3: ReadonlyArray<Lesson> = [
 				},
 				{
 					key: "loeschmittel",
+					lottaPrompt: "Beim Abkühlen verändert sich eine Ecke des Verbrennungsdreiecks. Findest du sie im Modell?",
 					label: "Gewählte Lösch-Aktion",
 					options: [
 						{ value: "brennenLassen", label: "Nichts tun (alle 3 Ecken aktiv)" },
@@ -905,7 +929,6 @@ export const LESSONS_LB3: ReadonlyArray<Lesson> = [
 		title: "Wasser erforschen: Zustandsformen, Wasserkreislauf & Schutz",
 		shortTitle: "Wasser & Wasserkreislauf",
 		icon: "💧",
-		hook: "Warum geht auf der Erde kein Tropfen Wasser verloren – und wie reinigen Sand und Kies im Boden unser Trinkwasser?",
 		foundationNote:
 			"Aus der 1. und 2. Klasse kennst du schon Luft und Wetterbeobachtungen – heute erforschen wir mit Experimenten den ewigen Kreislauf des Wassers!",
 		storyParagraphs: [
@@ -917,16 +940,19 @@ export const LESSONS_LB3: ReadonlyArray<Lesson> = [
 			{
 				icon: "🌡️",
 				title: "3 Zustandsformen",
+				lottaPrompt: "Ein Eiswürfel schmilzt in meinem Becher. Wie heißt Wasser in dieser neuen Form?",
 				text: "Fest (Eis unter 0 °C), flüssig (0 °C bis 100 °C), gasförmig (unsichtbarer Wasserdampf; Siedepunkt 100 °C).",
 			},
 			{
 				icon: "☁️",
 				title: "Der Wasserkreislauf",
+				lottaPrompt: "Gestern war hier eine Pfütze. Heute ist der Boden trocken. Wohin könnte das Wasser gewandert sein?",
 				text: "Verdunstung → Aufsteigen & Abkühlen → Kondensation (Wolken) → Niederschlag → Versickerung → Grundwasser → Quelle → Fluss → Meer.",
 			},
 			{
 				icon: "🪨",
 				title: "Bodenfilter & Schutz",
+				lottaPrompt: "Ein Regentropfen versickert im Kies und trifft auf Ton. Wo kommt er schneller voran?",
 				text: "Sand & Kies lassen Wasser durch und filtern es; Ton/Lehm staut das Grundwasser. Kein Öl oder Gift ins Abwasser!",
 			},
 		],
@@ -987,6 +1013,7 @@ export const LESSONS_LB3: ReadonlyArray<Lesson> = [
 			controls: [
 				{
 					key: "sonne",
+					lottaPrompt: "Lass im Modell die Sonne auf den See scheinen. Was verändert sich über dem Wasser?",
 					label: "Sonneneinstrahlung über dem See",
 					options: [
 						{ value: "schwach", label: "Kühl & bedeckt (kaum Verdunstung)" },
@@ -995,6 +1022,7 @@ export const LESSONS_LB3: ReadonlyArray<Lesson> = [
 				},
 				{
 					key: "hoehenluft",
+					lottaPrompt: "Die Luft über dem Berg kühlt ab. An welcher Stelle entstehen kleine Wassertröpfchen?",
 					label: "Temperatur hoch oben am Berg",
 					options: [
 						{ value: "warm", label: "Warme Luft (noch kein Regen)" },
@@ -1003,6 +1031,7 @@ export const LESSONS_LB3: ReadonlyArray<Lesson> = [
 				},
 				{
 					key: "boden",
+					lottaPrompt: "Wir schauen unter die Wiese. Folge dem Wasser durch die Schichten bis zur Quelle.",
 					label: "Bodenprofil & Gewässerschutz",
 					options: [
 						{ value: "verdeckt", label: "Boden verdeckt" },
