@@ -550,7 +550,7 @@ describe("cell", () => {
   });
 });
 
-describe("proposed mapping of the old ZAM cell", () => {
+describe("approved mapping of the old ZAM cell", () => {
   const oldItems = legacy.atoms.flatMap((atom) => atom.practice_items) as Array<{
     id: string;
     question: string;
@@ -561,7 +561,7 @@ describe("proposed mapping of the old ZAM cell", () => {
     expect(source.sha256).toMatch(/^[a-f0-9]{64}$/);
     expect(source.tile_id).toBe(legacy.tile_id);
     expect(source.version).toBe(legacy.version);
-    // validate-cell.mjs additionally verifies the SHA-256 of the original bytes.
+    // validate-migration.mjs additionally verifies the SHA-256 of the original bytes.
     expect(mapping.rows.map((row) => row.de_by_id).sort()).toEqual(oldItems.map((item) => item.id).sort());
     for (const row of mapping.rows)
       expect(row.de_by_question).toBe(oldItems.find((item) => item.id === row.de_by_id)!.question);
@@ -570,12 +570,12 @@ describe("proposed mapping of the old ZAM cell", () => {
     expect(mapping.rows.filter((row) => row.category === "C")).toHaveLength(4);
   });
 
-  it("points each proposed A row at one existing card and keeps the C cards active", () => {
+  it("points each A row at one existing card and keeps the C cards active", () => {
     const slugs = items.map((item) => item.slug);
     for (const row of mapping.rows) {
       if (row.category === "A") {
         expect(slugs.filter((slug) => slug === row.academy_slug)).toHaveLength(1);
-        expect(row.action).toBe("propose-replace-after-approval");
+        expect(row.action).toBe("replace");
       } else {
         expect(row.academy_slug).toBeNull();
         expect(row.action).toBe("keep-active");
@@ -586,10 +586,19 @@ describe("proposed mapping of the old ZAM cell", () => {
     expect(new Set(targets).size).toBe(targets.length);
   });
 
-  it("stays a proposal: no approval, no replaces, no retired items", () => {
-    expect(mapping.status).toBe("proposal-only");
-    expect(mapping.approved).toBeNull();
-    for (const item of items) expect(item.replaces).toBeUndefined();
+  it("declares exactly the approved replaces and no retirements", () => {
+    expect(mapping.status).toBe("approved");
+    expect(mapping.approved).toBe("2026-11-18");
+    expect(mapping.source).toContain("„Mapping-Freigabe erteilt“");
+    expect(mapping.source).toContain("4 A / 0 B / 4 C");
+    const declared = items.flatMap((item) => (item.replaces ?? []).map((id) => [id, item.slug]));
+    expect(declared.sort()).toEqual(
+      mapping.rows
+        .filter((row) => row.category === "A")
+        .map((row) => [row.de_by_id, row.academy_slug])
+        .sort(),
+    );
+    for (const item of items) expect((item.replaces ?? []).length).toBeLessThanOrEqual(1);
     expect("retired_items" in cell).toBe(false);
   });
 });

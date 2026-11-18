@@ -1,8 +1,9 @@
 {
   "schema": 1,
-  "status": "proposal-only",
-  "approved": null,
-  "note": "Proposal for Thomas: 4 A / 0 B / 4 C. Nothing is transferred yet: the cell declares no replaces and no retired_items, all eight old cards stay active, and the catalog gate needs no approval for this version.",
+  "status": "approved",
+  "approved": "2026-11-18",
+  "source": "Thomas im Chat der Claude-Code-Desktop-Session zu PR zam-os/zam-academy#153 am 2026-11-18: „Mapping-Freigabe erteilt“. Freigegeben ist der dort vorgelegte Vorschlag 4 A / 0 B / 4 C; die vier C-Karten bleiben aktiv.",
+  "note": "Approved 4 A / 0 B / 4 C: the four A histories move to their successors via replaces; the four C cards stay active (no retired_items).",
   "source_repository": "zam-os/zam",
   "source_commit": "e517a1ef709e0e6ee5f968c342affeb5b14cef35",
   "sources": [
@@ -21,7 +22,7 @@
       "de_by_question": "Welche fundamentale Wende in der menschlichen Lebensweise bezeichnet der Begriff 'Neolithische Revolution' am Übergang von der Alt- zur Jungsteinzeit?",
       "category": "A",
       "academy_slug": "g6-jungsteinzeit-check",
-      "action": "propose-replace-after-approval",
+      "action": "replace",
       "reason": "Same atomic retrieval: the old card and g6-jungsteinzeit-check both ask what the term neolithische Revolution denotes and expect the transition to Sesshaftigkeit, Ackerbau and Viehzucht. The new binary check keeps the same correct option shape."
     },
     {
@@ -39,7 +40,7 @@
       "de_by_question": "Warum bezeichnete der antike griechische Geschichtsschreiber Herodot das Land Ägypten als 'Geschenk des Nils'?",
       "category": "A",
       "academy_slug": "g6-nil-check",
-      "action": "propose-replace-after-approval",
+      "action": "replace",
       "reason": "Same atomic retrieval: both cards ask why Herodot called Egypt a Geschenk des Nils and expect the annual flood with water and fertile silt. The new check uses the same question with a binary choice."
     },
     {
@@ -57,7 +58,7 @@
       "de_by_question": "Wer war in der Attischen Demokratie der Antike zur Mitbestimmung in der Volksversammlung (Ekklesia) wahlberechtigt?",
       "category": "A",
       "academy_slug": "g6-perikles-check",
-      "action": "propose-replace-after-approval",
+      "action": "replace",
       "reason": "Same atomic retrieval: both cards ask who could vote in the Athenian Volksversammlung and expect adult male citizens of Athens. The new answer omits the age detail 18/20, which the lesson treats as adult."
     },
     {
@@ -75,7 +76,7 @@
       "de_by_question": "Wer begründete nach den blutigen Bürgerkriegen als erster römischer Kaiser (Prinzipat, 27 v. Chr.) eine lange Friedensepoche (Pax Romana)?",
       "category": "A",
       "academy_slug": "g6-caesar-augustus-merken",
-      "action": "propose-replace-after-approval",
+      "action": "replace",
       "reason": "Same atomic retrieval: both cards ask who became the first Roman emperor in 27 v. Chr. and expect Augustus. The new question drops the Pax Romana phrasing, which the lesson teaches as Pax Augusta."
     },
     {

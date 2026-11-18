@@ -51,7 +51,7 @@ Die Zelle `de-by:realschule-6-geschichte-urgeschichte-antike`, Version
 (SHA-256 `9a5938aef9c8dbb3e9b8e52544004fcdaa981438194b770157bb97ae360d156f`).
 Sie hat vier Atome mit acht Karten.
 
-| Alte Karte | Inhalt | Vorschlag | Nachfolger |
+| Alte Karte | Inhalt | Kategorie | Nachfolger |
 | --- | --- | --- | --- |
 | J01 | Was bezeichnet die neolithische Revolution? | **A** | `g6-jungsteinzeit-check` |
 | J02 | Vergleich Alt- und Jungsteinzeit mit vielen Einzelheiten | **C**, aktiv lassen | – |
@@ -68,25 +68,26 @@ verteilt; eine Lernhistorie darf nicht auf mehrere Karten verteilt werden,
 deshalb C. J08 nennt Augsburg außerdem unter den Kastellen am Limes; die neue
 Lektion führt Augsburg als Hauptstadt der Provinz Raetien.
 
-Die Datei [`replaces-de-by.json`](../geschichte-realschule-6/replaces-de-by.json)
-ist ein Vorschlag (`"status": "proposal-only"`, `"approved": null`). Die Zelle
-erklärt weder `replaces` noch `retired_items`; alle acht alten Karten bleiben
-aktiv. `scripts/validate-cell.mjs` installiert die alte und die neue Zelle in
-einer Wegwerf-Bibliothek, legt 16 Reviews auf die alten Karten an und prüft:
-126 neue Karten, alte Karten und Reviews unverändert, Installation und Aufnahme
-wiederholbar.
+**Freigabe:** Thomas hat die Zuordnung am 18.11.2026 im Chat der
+Claude-Code-Session zu PR zam-os/zam-academy#153 freigegeben („Mapping-Freigabe
+erteilt“). [`replaces-de-by.json`](../geschichte-realschule-6/replaces-de-by.json)
+trägt `"status": "approved"` und `"approved": "2026-11-18"`. Die vier Nachfolger
+erklären `replaces`; die vier C-Karten bleiben wie vorgeschlagen aktiv, die
+Zelle hat keine `retired_items`. Weil die Freigabe vor der ersten
+Veröffentlichung kam, erscheinen die `replaces` gleich mit der ersten Version
+der Zelle (2026.11.1).
 
-**Fragen an Thomas:**
+`scripts/validate-migration.mjs` installiert die alte Zelle in einer
+Wegwerf-Bibliothek, legt 16 Reviews auf die acht alten Karten an und prüft:
+Die vier A-Historien (8 Reviews) gehen unverändert auf ihre Nachfolger über,
+die C-Karten bleiben, wiederholte Installation ändert nichts, 122 neue Karten
+starten frisch, und wer schon Karten auf alter und neuer ID hat, bekommt eine
+verweigerte automatische Zusammenführung.
 
-1. Gibst du die Zuordnung 4 A / 0 B / 4 C frei? Dann folgt eine Version mit
-   `replaces` an den vier Nachfolgern.
-2. Sollen die vier C-Karten aktiv bleiben oder mit `retired_items` aus den
-   aktiven Wiederholungen genommen werden?
-3. Das Paket Geschichte/Politik/Geographie 5 der Mittelschule nennt dieselbe
-   alte Zelle und hat sie bewusst nicht zugeordnet
-   ([`docs/gpg-mittelschule-5-coverage.md`](gpg-mittelschule-5-coverage.md)).
-   Gehört sie damit zu diesem Realschulpaket? Die Zellen
-   `de-by:gymnasium-6-geschichte-…` bleiben beim Gymnasium.
+Mit dieser Zuordnung gehört die alte Zelle zu diesem Realschulpaket; das
+Mittelschulpaket GPG 5 ([`docs/gpg-mittelschule-5-coverage.md`](gpg-mittelschule-5-coverage.md))
+hatte sie bewusst offen gelassen. Die Zellen `de-by:gymnasium-6-geschichte-…`
+bleiben beim Gymnasium.
 
 ## Quellen
 

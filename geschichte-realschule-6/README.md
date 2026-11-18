@@ -57,7 +57,7 @@ npm test
 npm run build
 npm run package:zip
 node scripts/check-curriculum.mjs
-ZAM_CORE=file:///<zam-core>/dist/index.js node scripts/validate-cell.mjs
+ZAM_CORE=file:///<zam-core>/dist/index.js node scripts/validate-migration.mjs
 ```
 
 `npm run package:zip` erzeugt `release/ZAM-Academy-Geschichte-6-offline.zip`
@@ -72,8 +72,10 @@ drei Karten (Schnellcheck, Merkkarte, Begründung). Jede Karte verweist auf
 Atom- und Kartenkennungen sind in `tests/fixtures/public-contract.json`
 festgeschrieben.
 
-Die ältere Zelle `de-by:realschule-6-geschichte-urgeschichte-antike` (acht
-Karten) bleibt unverändert aktiv. [`replaces-de-by.json`](replaces-de-by.json)
-schlägt 4 A / 0 B / 4 C vor; die Zelle erklärt bis zur Freigabe durch Thomas
-weder `replaces` noch `retired_items`. Siehe
+Für die ältere Zelle `de-by:realschule-6-geschichte-urgeschichte-antike` (acht
+Karten) gilt die von Thomas am 18.11.2026 freigegebene Zuordnung 4 A / 0 B / 4 C
+in [`replaces-de-by.json`](replaces-de-by.json): Vier Lernhistorien gehen über
+`replaces` auf ihre Nachfolger über, die vier C-Karten bleiben aktiv
+(keine `retired_items`). `scripts/validate-migration.mjs` prüft das in
+Wegwerf-Bibliotheken. Siehe
 [Bestandsabgleich](../docs/geschichte-6-bestandsabgleich.md).
