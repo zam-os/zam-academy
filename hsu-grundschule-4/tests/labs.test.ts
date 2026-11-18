@@ -42,6 +42,13 @@ describe("Interactive Mitmach-Labore across all 20 stations", () => {
 			const allStates = cartesianStates(lesson.lab.controls);
 			expect(allStates.length).toBeGreaterThanOrEqual(4);
 			for (const s of allStates) {
+				for (const goal of lesson.lab.goals) {
+					let state = s;
+					for (const key of goal.controls) {
+						state = applyLabOption(lesson, state, key, goal.witness[key]);
+					}
+					expect(goal.check(state)).toBe(true);
+				}
 				const ev = evaluateLab(lesson, s);
 				expect(ev.readouts.length).toBeGreaterThanOrEqual(2);
 				for (const ro of ev.readouts) {
