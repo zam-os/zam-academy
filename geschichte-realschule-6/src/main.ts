@@ -1,0 +1,545 @@
+import { CORE_LESSONS, CURRICULUM_URL, findLesson, LESSONS, SOURCES, STAGES, TERMS } from "./curriculum";
+import type { Diagram, Lesson, Level } from "./model/types";
+import {
+  completion,
+  freshProgress,
+  isComplete,
+  loadProgress,
+  saveProgress,
+  writingKey,
+} from "./storage/progress";
+import { showToast } from "./ui/toast";
+import {
+  canAcceptSelfAssessment,
+  canReviewDraft,
+  checkWorkshop,
+  esc,
+  initialOrder,
+  moveEntry,
+  shuffle,
+  STRIP,
+  stripPosition,
+  stripRange,
+  yearLabel,
+  yearOf,
+} from "./workshop";
+import { parseTrainingDeepLink, ZAM_CELL_TITLE, zamEnrolRequest } from "./zam/zam-link";
+
+let progress = loadProgress();
+let view: "path" | "lesson" | "reference" = "path";
+const main = document.querySelector<HTMLElement>("#main")!;
+const orders = new Map<string, number[]>();
+const assignments = new Map<string, number[]>();
+const workshopFeedback = new Set<string>();
+const quizSelections = new Map<string, number>();
+const comparisons = new Set<string>();
+const rubricChecks = new Map<string, boolean[]>();
+let storageWarningShown = false;
+
+/** Epoch bands of the time strip; the zones outside the scale have their own labels. */
+const EPOCHS: Array<{ label: string; from: number; to: number }> = [
+  { label: "Frühe Hochkulturen", from: -3000, to: -800 },
+  { label: "Antike", from: -800, to: 500 },
+  { label: "Frühmittelalter", from: 500, to: 1000 },
+];
+const TICKS: Array<{ year: number; label: string; minor?: boolean }> = [
+  { year: -3000, label: "3000 v. Chr." },
+  { year: -2000, label: "2000 v. Chr.", minor: true },
+  { year: -1000, label: "1000 v. Chr." },
+  { year: 0, label: "Chr. Geb." },
+  { year: 1000, label: "1000 n. Chr." },
+];
+
+function spanLabel(span: [number, number]): string {
+  if (span[1] < STRIP.from) return "Vorgeschichte, vor 3000 v. Chr.";
+  if (span[0] === span[1]) return `um ${yearLabel(span[0])}`;
+  const from = span[0] < STRIP.from ? "Vorgeschichte" : yearLabel(span[0]);
+  const to = span[1] > STRIP.to ? "heute" : yearLabel(span[1]);
+  return `${from} bis ${to}`;
+}
+
+/** The scale shared by the lesson strip and the Geschichtsfries. */
+function stripScale(): string {
+  return `<span class="ts-zone ts-before">Vorgeschichte</span><span class="ts-zone ts-after">bis heute</span>${EPOCHS.map(
+    (epoch) =>
+      `<span class="ts-band" style="left:${stripPosition(epoch.from)}%;width:${stripPosition(epoch.to) - stripPosition(epoch.from)}%">${esc(epoch.label)}</span>`,
+  ).join("")}`;
+}
+
+function stripTicks(): string {
+  return `<div class="ts-ticks" aria-hidden="true">${TICKS.map(
+    (tick) =>
+      `<span class="ts-tick ${tick.minor ? "minor" : ""}" style="left:${stripPosition(tick.year)}%">${esc(tick.label)}</span>`,
+  ).join("")}</div>`;
+}
+
+function timeStrip(span: [number, number]): string {
+  const range = stripRange(span);
+  return `<figure class="time-strip" aria-label="Zeitstreifen: ${esc(spanLabel(span))}"><div class="ts-track" aria-hidden="true">${stripScale()}<span class="ts-mark" style="left:${range.left}%;width:${range.width}%"></span></div>${stripTicks()}<figcaption><span class="ts-dot" aria-hidden="true"></span>Diese Lektion: ${esc(spanLabel(span))}</figcaption></figure>`;
+}
+
+/** The date part of a term such as "um 3000 v. Chr. Hochkultur in Ägypten". */
+function pinLabel(term: string): string {
+  const date =
+    term.match(/^(?:um |ab )?(?:\d+\. Jh\. [vn]\. Chr\.|\d+ [vn]\. Chr\.|\d+|Christi Geburt)/)?.[0] ??
+    term;
+  return date.replace("Christi Geburt", "Chr. Geb.");
+}
+
+/** Geschichtsfries: every lesson of the epoch Lernbereiche as a bar, the plan's dates as pins. */
+function renderFries(): string {
+  const rows = STAGES.filter((stage) => stage.lb >= 2)
+    .map((stage) => {
+      const bars = LESSONS.filter((lesson) => lesson.lb === stage.lb)
+        .map((lesson, index) => {
+          const range = stripRange(lesson.span);
+          // Three lanes per row, so lessons with the same span stay apart.
+          return `<button type="button" class="fries-bar" data-open="${lesson.id}" style="left:${range.left}%;width:${range.width}%;--lane:${index % 3}" title="${esc(`${lesson.title} · ${spanLabel(lesson.span)}`)}"><span class="visually-hidden">${esc(`${lesson.title}, ${spanLabel(lesson.span)}`)}</span></button>`;
+        })
+        .join("");
+      return `<div class="fries-row stage-scope" style="--stage-hue:${stage.hue}"><span class="fries-label"><span aria-hidden="true">${stage.icon}</span> ${esc(stage.shortTitle)}</span><div class="fries-track">${bars}</div></div>`;
+    })
+    .join("");
+  const pins = TERMS.filter((term) => term.year !== undefined)
+    .sort((a, b) => a.year! - b.year!)
+    .map(
+      (term, index) =>
+        `<button type="button" class="fries-pin" data-open="${term.lessonId}" style="left:${stripPosition(term.year!)}%;--level:${index % 4}" title="${esc(term.term)}"><span>${esc(pinLabel(term.term))}</span><span class="visually-hidden">: ${esc(term.term)}</span></button>`,
+    )
+    .join("");
+  return `<section class="panel fries" aria-labelledby="fries-heading"><span class="eyebrow">GESCHICHTSFRIES</span><h2 id="fries-heading">Deine Zeitreise auf einen Blick</h2><p class="small">Jeder Balken ist eine Lektion, jede Nadel ein Grundlegendes Datum des Lehrplans. Von 3000 v. Chr. bis 1000 n. Chr. ist die Leiste maßstabsgerecht; die Vorgeschichte links wäre maßstabsgerecht viele Meter lang. Tippe auf einen Balken, um die Lektion zu öffnen.</p><div class="fries-scale"><div class="fries-pins">${pins}</div><div class="ts-track fries-axis" aria-hidden="true">${stripScale()}</div>${stripTicks()}${rows}</div></section>`;
+}
+
+function renderDiagram(diagram: Diagram): string {
+  let body = "";
+  if (diagram.kind === "pyramid" || diagram.kind === "layers") {
+    const count = diagram.layers.length;
+    body = `<ol class="diagram-${diagram.kind}">${diagram.layers
+      .map((layer, index) => {
+        const width =
+          diagram.kind === "pyramid" ? 38 + (count > 1 ? (62 * index) / (count - 1) : 62) : 100;
+        return `<li style="--w:${width}%;--step:${index}"><strong>${esc(layer.label)}</strong><span>${esc(layer.note)}</span></li>`;
+      })
+      .join("")}</ol>`;
+  } else if (diagram.kind === "steps") {
+    body = `<ol class="diagram-steps ${diagram.repeats ? "repeats" : ""}" style="--count:${diagram.steps.length}">${diagram.steps
+      .map(
+        (step, index) =>
+          `<li style="--step:${index}"><span class="step-number" aria-hidden="true">${index + 1}</span><strong>${esc(step.label)}</strong><span>${esc(step.note)}</span></li>`,
+      )
+      .join("")}</ol>${diagram.repeats ? '<p class="repeat-note"><span aria-hidden="true">↻</span> Danach beginnt der Kreislauf von vorn.</p>' : ""}`;
+  } else if (diagram.kind === "compare") {
+    body = `<table class="diagram-compare"><thead><tr><th scope="col"><span class="visually-hidden">Merkmal</span></th><th scope="col">${esc(diagram.columns[0])}</th><th scope="col">${esc(diagram.columns[1])}</th></tr></thead><tbody>${diagram.rows
+      .map(
+        (row) =>
+          `<tr><th scope="row">${esc(row.aspect)}</th><td data-col="${esc(diagram.columns[0])}">${esc(row.values[0])}</td><td data-col="${esc(diagram.columns[1])}">${esc(row.values[1])}</td></tr>`,
+      )
+      .join("")}</tbody></table>`;
+  }
+  return `<figure class="diagram"><figcaption><span class="eyebrow">SCHAUBILD</span><strong>${esc(diagram.title)}</strong></figcaption>${body}<p class="small">${esc(diagram.caption)}</p></figure>`;
+}
+
+function pageUrl(fragment = ""): string {
+  const params = new URLSearchParams(location.search);
+  params.delete("lesson");
+  params.delete("level");
+  const search = params.toString();
+  return `${location.pathname}${search ? `?${search}` : ""}${fragment}`;
+}
+
+function switchView(next: typeof view): void {
+  view = next;
+  const fragment =
+    next === "lesson"
+      ? `#lesson=${progress.activeLessonId}&level=${progress.level}`
+      : next === "reference"
+        ? "#view=reference"
+        : "";
+  history.pushState(null, "", pageUrl(fragment));
+  render();
+  window.scrollTo({ top: 0, behavior: "instant" });
+  main.focus({ preventScroll: true });
+}
+
+function persist(): void {
+  if (!saveProgress(progress)) {
+    document.getElementById("storage-note")!.textContent =
+      "Speichern ist in diesem Browser gerade nicht möglich. Dein Fortschritt bleibt nur bis zum Schließen der Seite erhalten.";
+    if (!storageWarningShown)
+      showToast("Fortschritt kann gerade nur für diese Sitzung behalten werden.", "warning");
+    storageWarningShown = true;
+  }
+  const stats = completion(progress);
+  document.getElementById("progress-label")!.textContent =
+    `${stats.completed} / ${stats.total} Lektionen`;
+  (document.getElementById("progress") as HTMLProgressElement).value = stats.percent;
+}
+
+function openLesson(id: string): void {
+  const lesson = findLesson(id);
+  if (!lesson) return;
+  progress.activeLessonId = id;
+  view = "lesson";
+  history.pushState(null, "", `#lesson=${encodeURIComponent(id)}`);
+  persist();
+  render();
+  window.scrollTo({ top: 0, behavior: "instant" });
+  main.focus({ preventScroll: true });
+}
+
+function status(lesson: Lesson): string {
+  if (isComplete(progress, lesson.id)) return "Abgeschlossen";
+  if (
+    progress.quizDone.includes(lesson.id) ||
+    progress.workshopDone.includes(lesson.id) ||
+    progress.drafts[writingKey(lesson.id, 1)]
+  )
+    return "Begonnen";
+  return "Starten";
+}
+
+function renderPath(): string {
+  const stats = completion(progress);
+  return `<section class="hero"><div><span class="eyebrow">KLASSE 6 · ALLE ZWEIGE</span><h1>Von der Steinzeit bis Karl dem Großen. <br>Spuren lesen, Zeit ordnen.</h1><p>Jäger und Sammler, Pharaonen, Athener, Römer und Franken: Untersuche Funde und Quellen, ordne Ereignisse auf der Zeitleiste und begründe dein eigenes Urteil über Menschen der Vergangenheit.</p><button type="button" class="button accent" data-open="${esc(progress.activeLessonId)}">${stats.completed ? "Weiterlernen" : "Loslegen"}</button></div><aside class="hero-note"><span class="eyebrow">DEIN WEG DURCH GESCHICHTE</span><strong>Lesen → Untersuchen → Begründen</strong><p>${CORE_LESSONS.length} Lektionen · acht Lernbereiche<br>${LESSONS.filter((lesson) => lesson.diagram).length} Schaubilder und ein Geschichtsfries</p><p class="small">Ein Abschluss verbindet Schnellcheck, Werkstatt und eine eigene Antwort mit Selbsteinschätzung. Level 2 vertieft den Transfer.</p></aside></section>
+  ${renderFries()}
+  <div class="path-heading"><div><h2>Dein Lernpfad</h2><p>Jede Lektion ist frei zugänglich. Du kannst jederzeit zurückspringen.</p></div></div>
+  <div class="stages">${STAGES.map((stage) => {
+    const lessons = LESSONS.filter((lesson) => lesson.lb === stage.lb);
+    const complete = lessons.filter((lesson) => isComplete(progress, lesson.id)).length;
+    return `<section class="stage stage-scope" style="--stage-hue:${stage.hue}"><div class="stage-header"><span class="stage-icon" aria-hidden="true">${stage.icon}</span><div><span class="eyebrow">LERNBEREICH ${stage.lb}${stage.hours ? ` · CA. ${stage.hours} STD.` : ""}</span><h3>${esc(stage.shortTitle)}</h3></div><span class="stage-count">${complete} / ${lessons.length}</span></div><ol>${lessons.map((lesson) => `<li><button type="button" class="lesson-link ${isComplete(progress, lesson.id) ? "complete" : ""}" data-open="${lesson.id}"><span class="lesson-dot" aria-hidden="true">${isComplete(progress, lesson.id) ? "✓" : "·"}</span><span><strong>${esc(lesson.title)}</strong><small>${esc(lesson.period)}</small></span><span class="lesson-status">${status(lesson)}</span></button></li>`).join("")}</ol></section>`;
+  }).join(
+    "",
+  )}</div><aside class="notice"><strong>Geschichte auch außerhalb der App erleben</strong><p>Echte Funde, Bilder und Bauwerke siehst du im Museum, am Limes oder in einem Römerkastell. Exkursionen, Rollenspiele, Gespräche und die Arbeit mit Originalbildern und Karten gehören zum Unterricht. Die App bereitet sie vor und hilft beim Auswerten; die Bilder und Karten in den Übungen sind beschrieben, nicht abgebildet.</p><a href="${CURRICULUM_URL}" target="_blank" rel="noopener">Zum offiziellen Lehrplan</a></aside><button type="button" id="reset" class="text-button">Lokalen Fortschritt zurücksetzen</button>`;
+}
+
+function renderWorkshop(lesson: Lesson): string {
+  const work = lesson.workshop;
+  let order = orders.get(lesson.id);
+  if (!order) {
+    order = initialOrder(work, lesson.id);
+    orders.set(lesson.id, order);
+  }
+  const answer =
+    work.kind === "timeline" ? order : (assignments.get(lesson.id) ?? work.entries.map(() => -1));
+  const feedback = workshopFeedback.has(lesson.id);
+  const results = checkWorkshop(work, answer);
+  const solved = results.every(Boolean);
+  const years = work.entries.map((entry) => yearOf(entry.text));
+  const solvedStrip =
+    work.kind === "timeline" && feedback && solved && years.every((year) => year !== null)
+      ? `<figure class="time-strip solved-strip" aria-label="Die Ereignisse auf der Zeitleiste"><div class="ts-track" aria-hidden="true">${stripScale()}${years
+          .map(
+            (year, index) =>
+              `<span class="ts-pin" style="left:${stripPosition(year!)}%;--row:${index % 2}"><span>${index + 1}</span></span>`,
+          )
+          .join("")}</div>${stripTicks()}<figcaption>Deine Reihenfolge auf der Zeitleiste: Die Abstände zeigen, wie weit die Ereignisse auseinanderliegen.</figcaption></figure>`
+      : "";
+  return `<section class="panel workshop" aria-labelledby="workshop-heading"><div class="panel-heading"><span class="eyebrow">02 · WERKSTATT</span><span class="done-mark">${progress.workshopDone.includes(lesson.id) ? "✓ Einmal gelöst" : ""}</span></div><h2 id="workshop-heading">${esc(work.title)}</h2><p>${esc(work.instruction)}</p>
+  ${work.material ? `<div class="document"><span class="small">${esc(work.materialLabel ?? "Darstellungstext für diese Übung")}</span><p>${esc(work.material)}</p></div>` : ""}
+  ${work.sourceExcerpt ? `<figure class="document source"><figcaption><span class="source-badge">Originalquelle · übersetzt</span><strong>${esc(work.sourceExcerpt.title)}</strong><dl class="source-metadata"><dt>Urheber</dt><dd>${esc(work.sourceExcerpt.author)}</dd><dt>Datum</dt><dd>${esc(work.sourceExcerpt.date)}</dd><dt>Adressaten</dt><dd>${esc(work.sourceExcerpt.audience)}</dd></dl></figcaption><blockquote>${esc(work.sourceExcerpt.text)}</blockquote><p class="small">${esc(work.sourceExcerpt.context)}</p><a class="small" href="${esc(SOURCES.find((source) => source.id === work.sourceExcerpt!.sourceId)!.url)}" target="_blank" rel="noopener">Lateinischen Wortlaut prüfen ↗</a></figure>` : ""}
+  ${work.kind === "timeline" ? `<ol class="timeline">${order.map((entryIndex, position) => `<li><span class="position">${position + 1}</span><span class="event-text">${esc(work.entries[entryIndex].text)}</span><div class="move-buttons"><button type="button" data-move="${position}" data-delta="-1" aria-label="${esc(work.entries[entryIndex].text)} nach oben" ${position === 0 ? "disabled" : ""}>↑</button><button type="button" data-move="${position}" data-delta="1" aria-label="${esc(work.entries[entryIndex].text)} nach unten" ${position === order.length - 1 ? "disabled" : ""}>↓</button></div></li>`).join("")}</ol>` : `<ul class="cat-legend" aria-label="Kategorien">${work.categories.map((category, value) => `<li class="cat" data-cat="${value}">${esc(category)}</li>`).join("")}</ul><div class="classification">${work.entries.map((entry, index) => `<label data-cat="${answer[index]}"><span>${esc(entry.text)}</span><select data-assign="${index}"><option value="-1">Bitte zuordnen</option>${work.categories.map((category, value) => `<option value="${value}" ${answer[index] === value ? "selected" : ""}>${esc(category)}</option>`).join("")}</select></label>`).join("")}</div>`}
+  <button type="button" id="check-workshop" class="button secondary">${work.kind === "timeline" ? "Reihenfolge prüfen" : "Zuordnung prüfen"}</button>
+  ${feedback ? `<div class="feedback ${solved ? "success" : "hint"}" role="status"><strong>${solved ? (work.kind === "timeline" ? "Die Reihenfolge stimmt." : "Die Zuordnung stimmt.") : `${results.filter(Boolean).length} von ${results.length} stimmen. Prüfe die übrigen noch einmal.`}</strong><ul>${(work.kind === "timeline" ? order : work.entries.map((_, i) => i)).map((entryIndex, position) => `<li class="${results[position] ? "right" : "open"}">${results[position] ? `✓ ${esc(work.entries[entryIndex].feedback)}` : `→ ${work.kind === "timeline" ? `Platz ${position + 1}` : `Aussage ${position + 1}`} stimmt noch nicht.`}</li>`).join("")}</ul>${solved ? `<p>${esc(work.conclusion)}</p>` : ""}</div>` : ""}${solvedStrip}</section>`;
+}
+
+function renderWriting(lesson: Lesson): string {
+  const key = writingKey(lesson.id, progress.level);
+  const task = lesson.tasks[progress.level];
+  const draft = progress.drafts[key] ?? "";
+  const comparing = comparisons.has(key);
+  const checks = rubricChecks.get(key) ?? [false, false, false];
+  return `<section class="panel writing" aria-labelledby="writing-heading"><div class="panel-heading"><span class="eyebrow">03 · SELBST BEGRÜNDEN</span><span class="done-mark" id="writing-done">${progress.writingDone.includes(key) ? "✓ Selbst eingeschätzt" : ""}</span></div><h2 id="writing-heading">${progress.level === 1 ? "Level 1 · Mit Leitfragen arbeiten" : "Level 2 · Auf einen neuen Fall übertragen"}</h2><p class="task-prompt">${esc(task.prompt)}</p>
+  ${progress.level === 1 ? `<details><summary>Leitfragen anzeigen</summary><ul>${task.hints.map((hint) => `<li>${esc(hint)}</li>`).join("")}</ul></details>` : `<p class="small">Formuliere erst deinen eigenen Gedankengang. Die Vergleichsantwort folgt danach.</p>`}
+  <label class="answer-label" for="draft">Deine Antwort</label><textarea id="draft" rows="5" maxlength="8000" placeholder="Schreibe zwei bis vier begründete Sätze …">${esc(draft)}</textarea><p class="small">Dein Text bleibt in diesem Browser. Er wird nicht automatisch bewertet.</p><button type="button" id="compare" class="button secondary" ${canReviewDraft(draft) ? "" : "disabled"}>Mit einer möglichen Antwort vergleichen</button><span class="small" id="draft-note">${canReviewDraft(draft) ? "" : "Schreibe zunächst mindestens 20 Zeichen."}</span>
+  ${comparing ? `<div class="model-answer"><h3>Eine mögliche Antwort</h3><p>${esc(task.model)}</p><p>Andere Formulierungen und begründete Urteile sind möglich. Vergleiche deinen Text anhand dieser Kriterien:</p><div class="rubric">${task.criteria.map((criterion, i) => `<label><input type="checkbox" data-rubric="${i}" ${checks[i] ? "checked" : ""}>${esc(criterion)}</label>`).join("")}</div><div class="self-actions"><button type="button" class="button accent" id="accept-writing" ${canAcceptSelfAssessment(draft, checks) ? "" : "disabled"}>Meine Antwort erfüllt die Kriterien</button><button type="button" class="text-button" id="revise-writing">Ich überarbeite noch</button></div><p class="small">Diese Einschätzung gibst du selbst ab. Sie ist keine automatische Prüfung und verändert keine ZAM-Karten.</p></div>` : ""}</section>`;
+}
+
+function renderLesson(): string {
+  const lesson = findLesson(progress.activeLessonId)!;
+  const stage = STAGES.find((entry) => entry.lb === lesson.lb)!;
+  const options = shuffle([0, 1, 2], `${lesson.id}:quiz`);
+  const labels = [lesson.quiz.answer, ...lesson.quiz.wrong];
+  const selected = quizSelections.get(lesson.id);
+  const index = LESSONS.indexOf(lesson);
+  return `<article lang="de" class="stage-scope" style="--stage-hue:${stage.hue}"><div class="lesson-top"><button type="button" class="text-button" data-view="path">← Zum Lernpfad</button><label class="level-select">Arbeitsweise <select id="level"><option value="1" ${progress.level === 1 ? "selected" : ""}>Level 1 · mit Leitfragen</option><option value="2" ${progress.level === 2 ? "selected" : ""}>Level 2 · Transfer</option></select></label></div>
+  <header class="lesson-heading"><span class="eyebrow"><span aria-hidden="true">${stage.icon}</span> LERNBEREICH ${stage.lb} · ${esc(stage.shortTitle.toUpperCase())}</span><h1>${esc(lesson.title)}</h1><p class="period">${esc(lesson.period)}</p><p class="intro">${esc(lesson.intro)}</p>${timeStrip(lesson.span)}</header>
+  <div class="lesson-columns"><div class="lesson-content"><section class="panel reading"><span class="eyebrow">01 · VERSTEHEN</span>${lesson.paragraphs.map((paragraph) => `<p>${esc(paragraph)}</p>`).join("")}${lesson.diagram ? renderDiagram(lesson.diagram) : ""}<p class="takeaway"><strong>Merke</strong>${esc(lesson.takeaway)}</p></section>
+  <section class="panel quiz"><div class="panel-heading"><h2>Schnellcheck</h2><span class="done-mark">${progress.quizDone.includes(lesson.id) ? "✓ Einmal richtig" : ""}</span></div><p>${esc(lesson.quiz.question)}</p><div class="quiz-options">${options.map((i) => `<button type="button" data-choice="${i}" class="quiz-choice ${selected === i ? (i === 0 ? "selected right" : "selected wrong") : ""}" aria-pressed="${selected === i}">${esc(labels[i])}</button>`).join("")}</div>${selected !== undefined ? `<p class="feedback ${selected === 0 ? "success" : "hint"}" role="status"><strong>${selected === 0 ? "Richtig. " : "Prüfe noch einmal. "}</strong>${esc(selected === 0 ? lesson.quiz.explanation : lesson.quiz.whyWrong[selected - 1])}</p>` : ""}</section>
+  ${renderWorkshop(lesson)}${renderWriting(lesson)}</div><aside class="lesson-aside"><section class="aside-card"><h2>Dein Lernschritt</h2><ul class="checklist"><li>${progress.quizDone.includes(lesson.id) ? "✓" : "○"} Schnellcheck</li><li>${progress.workshopDone.includes(lesson.id) ? "✓" : "○"} Werkstatt gelöst</li><li id="aside-writing">${progress.writingDone.includes(writingKey(lesson.id, 1)) ? "✓" : "○"} Level 1 selbst eingeschätzt</li></ul><p class="small">Level 2 ist eine zusätzliche Vertiefung. Der Abschluss zählt Level 1.</p></section><section class="aside-card"><h2>Belege & weiterlernen</h2><ul class="source-list">${lesson.sourceIds
+    .map((id) => SOURCES.find((source) => source.id === id)!)
+    .map(
+      (source) =>
+        `<li><a href="${esc(source.url)}" target="_blank" rel="noopener">${esc(source.label)} ↗</a></li>`,
+    )
+    .join(
+      "",
+    )}</ul><p class="small">Die Erklärungen und Übungssätze sind eigens verfasste Darstellungen. Originalquellen sind ausdrücklich gekennzeichnet.</p></section><section class="aside-card"><h2>Damit es bleibt</h2><p class="small">ZAM hält das Wissen mit kurzen Wiederholungen fest. Jede Karte führt hierher zurück.</p><button type="button" class="button secondary" data-zam>In ZAM festigen</button></section></aside></div>
+  <nav class="lesson-navigation" aria-label="Lektionen">${index > 0 ? `<button type="button" data-open="${LESSONS[index - 1].id}" class="button secondary">← Vorherige Lektion</button>` : "<span></span>"}${index >= 0 && index < LESSONS.length - 1 ? `<button type="button" data-open="${LESSONS[index + 1].id}" class="button accent">Nächste Lektion →</button>` : `<button type="button" data-view="path" class="button accent">Zum Lernpfad</button>`}</nav></article>`;
+}
+
+function renderReference(): string {
+  return `<section class="reference"><span class="eyebrow">NACHSCHLAGEN</span><h1>Orientierung behalten</h1><p>Der Geschichtsfries ordnet alle Lektionen in der Zeit. Die Merksätze und die Grundlegenden Daten und Begriffe helfen beim Wiederholen.</p>${renderFries()}${STAGES.map(
+    (stage) =>
+      `<section class="panel stage-scope" style="--stage-hue:${stage.hue}"><h2><span aria-hidden="true">${stage.icon}</span> ${esc(stage.shortTitle)}</h2><dl>${LESSONS.filter(
+        (lesson) => lesson.lb === stage.lb,
+      )
+        .map(
+          (lesson) =>
+            `<dt><button type="button" data-open="${lesson.id}" class="text-button">${esc(lesson.title)}</button></dt><dd>${esc(lesson.takeaway)}</dd>`,
+        )
+        .join("")}</dl></section>`,
+  ).join(
+    "",
+  )}<section class="panel"><h2>Grundlegende Daten und Begriffe</h2><p>Der Lehrplan nennt diese Daten und Begriffe in den Lernbereichen 2 bis 7. Die Längsschnitte in den Lernbereichen 7 und 8 wenden sie in neuen Zusammenhängen an.</p>${STAGES.filter(
+    (stage) => TERMS.some((term) => term.lb === stage.lb),
+  )
+    .map(
+      (stage) =>
+        `<h3 class="stage-scope" style="--stage-hue:${stage.hue}"><span aria-hidden="true">${stage.icon}</span> ${esc(stage.shortTitle)}</h3><dl class="term-list">${TERMS.filter((term) => term.lb === stage.lb)
+          .map(
+            (term) =>
+              `<dt><button type="button" data-open="${term.lessonId}" class="text-button">${esc(term.term)}</button></dt><dd>${esc(term.explanation)}</dd>`,
+          )
+          .join("")}</dl>`,
+    )
+    .join(
+      "",
+    )}</section><section class="panel"><h2>Quellenbasis</h2><p>Lehrplanabgleich und Prüfung aller Links: 18. November 2026. Verlinkte Angebote öffnen erst, wenn du darauf klickst. Die App selbst benötigt keine externe Verbindung.</p><ul class="source-list">${SOURCES.map((source) => `<li><a href="${esc(source.url)}" target="_blank" rel="noopener">${esc(source.label)}</a></li>`).join("")}</ul></section></section>`;
+}
+
+function render(): void {
+  main.innerHTML =
+    view === "path" ? renderPath() : view === "lesson" ? renderLesson() : renderReference();
+  document.querySelectorAll<HTMLButtonElement>("header nav [data-view]").forEach((button) => {
+    button.setAttribute("aria-current", button.dataset.view === view ? "page" : "false");
+  });
+  main.querySelectorAll<HTMLButtonElement>("[data-open]").forEach((button) => {
+    button.addEventListener("click", () => openLesson(button.dataset.open!));
+  });
+  main.querySelectorAll<HTMLButtonElement>("[data-view]").forEach((button) => {
+    button.addEventListener("click", () => {
+      switchView(button.dataset.view as typeof view);
+    });
+  });
+  main.querySelector("#reset")?.addEventListener("click", showReset);
+  if (view === "lesson") bindLesson(findLesson(progress.activeLessonId)!);
+}
+
+function bindLesson(lesson: Lesson): void {
+  const key = writingKey(lesson.id, progress.level);
+  const work = lesson.workshop;
+  main.querySelector("#level")?.addEventListener("change", (event) => {
+    progress.level = Number((event.target as HTMLSelectElement).value) as Level;
+    history.replaceState(null, "", pageUrl(`#lesson=${lesson.id}&level=${progress.level}`));
+    persist();
+    render();
+    main.querySelector<HTMLSelectElement>("#level")?.focus({ preventScroll: true });
+  });
+  main.querySelectorAll<HTMLButtonElement>("[data-choice]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const choice = Number(button.dataset.choice);
+      quizSelections.set(lesson.id, choice);
+      if (choice === 0 && !progress.quizDone.includes(lesson.id)) progress.quizDone.push(lesson.id);
+      persist();
+      render();
+      main
+        .querySelector<HTMLButtonElement>(`[data-choice="${choice}"]`)
+        ?.focus({ preventScroll: true });
+    });
+  });
+  main.querySelectorAll<HTMLButtonElement>("[data-move]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const index = Number(button.dataset.move),
+        delta = Number(button.dataset.delta) as -1 | 1;
+      orders.set(lesson.id, moveEntry(orders.get(lesson.id)!, index, delta));
+      workshopFeedback.delete(lesson.id);
+      render();
+      main
+        .querySelector<HTMLButtonElement>(`[data-move="${index + delta}"][data-delta="${-delta}"]`)
+        ?.focus({ preventScroll: true });
+    });
+  });
+  main.querySelectorAll<HTMLSelectElement>("[data-assign]").forEach((select) => {
+    select.addEventListener("change", () => {
+      const answer = assignments.get(lesson.id) ?? work.entries.map(() => -1);
+      answer[Number(select.dataset.assign)] = Number(select.value);
+      assignments.set(lesson.id, answer);
+      select.closest("label")!.dataset.cat = select.value;
+      workshopFeedback.delete(lesson.id);
+      main.querySelector(".workshop .feedback")?.remove();
+    });
+  });
+  main.querySelector("#check-workshop")?.addEventListener("click", () => {
+    const answer =
+      work.kind === "timeline" ? orders.get(lesson.id)! : (assignments.get(lesson.id) ?? []);
+    if (checkWorkshop(work, answer).every(Boolean) && !progress.workshopDone.includes(lesson.id))
+      progress.workshopDone.push(lesson.id);
+    workshopFeedback.add(lesson.id);
+    persist();
+    render();
+    main.querySelector(".workshop .feedback")?.scrollIntoView({
+      block: "nearest",
+      behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth",
+    });
+  });
+  main.querySelector("#draft")?.addEventListener("input", (event) => {
+    const text = (event.target as HTMLTextAreaElement).value;
+    progress.drafts[key] = text;
+    progress.writingDone = progress.writingDone.filter((entry) => entry !== key);
+    rubricChecks.delete(key);
+    comparisons.delete(key);
+    main.querySelector(".model-answer")?.remove();
+    (main.querySelector("#compare") as HTMLButtonElement).disabled = !canReviewDraft(text);
+    main.querySelector("#draft-note")!.textContent = canReviewDraft(text)
+      ? ""
+      : "Schreibe zunächst mindestens 20 Zeichen.";
+    main.querySelector("#writing-done")!.textContent = "";
+    if (progress.level === 1)
+      main.querySelector("#aside-writing")!.textContent = "○ Level 1 selbst eingeschätzt";
+    persist();
+  });
+  main.querySelector("#compare")?.addEventListener("click", () => {
+    if (!canReviewDraft(progress.drafts[key] ?? "")) return;
+    comparisons.add(key);
+    render();
+    main.querySelector(".model-answer")?.scrollIntoView({
+      block: "nearest",
+      behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth",
+    });
+  });
+  main.querySelectorAll<HTMLInputElement>("[data-rubric]").forEach((checkbox) => {
+    checkbox.addEventListener("change", () => {
+      const checks = rubricChecks.get(key) ?? [false, false, false];
+      checks[Number(checkbox.dataset.rubric)] = checkbox.checked;
+      rubricChecks.set(key, checks);
+      (main.querySelector("#accept-writing") as HTMLButtonElement).disabled =
+        !canAcceptSelfAssessment(progress.drafts[key] ?? "", checks);
+    });
+  });
+  main.querySelector("#accept-writing")?.addEventListener("click", () => {
+    if (
+      !comparisons.has(key) ||
+      !canAcceptSelfAssessment(progress.drafts[key] ?? "", rubricChecks.get(key) ?? [])
+    )
+      return;
+    if (!progress.writingDone.includes(key)) progress.writingDone.push(key);
+    persist();
+    render();
+    showToast(
+      isComplete(progress, lesson.id)
+        ? "Lektion abgeschlossen. Du kannst weiterlernen oder Level 2 vertiefen."
+        : "Deine Selbsteinschätzung wurde gespeichert.",
+      isComplete(progress, lesson.id) ? "success" : "info",
+    );
+  });
+  main.querySelector("#revise-writing")?.addEventListener("click", () => {
+    comparisons.delete(key);
+    rubricChecks.delete(key);
+    progress.writingDone = progress.writingDone.filter((entry) => entry !== key);
+    persist();
+    render();
+    main.querySelector<HTMLTextAreaElement>("#draft")?.focus();
+  });
+  main.querySelectorAll("[data-zam]").forEach((button) => {
+    button.addEventListener("click", showZam);
+  });
+}
+
+function dialog(title: string, body: string): HTMLDialogElement {
+  document.querySelector("dialog")?.remove();
+  const element = document.createElement("dialog");
+  element.innerHTML = `<div class="dialog-heading"><h2>${esc(title)}</h2><button type="button" class="icon-button" data-close aria-label="Schließen">×</button></div>${body}`;
+  document.body.append(element);
+  element.querySelectorAll("[data-close]").forEach((button) => {
+    button.addEventListener("click", () => element.close());
+  });
+  element.addEventListener("close", () => element.remove(), { once: true });
+  element.showModal();
+  return element;
+}
+
+function showZam(): void {
+  const request = zamEnrolRequest();
+  const element = dialog(
+    "Geschichte mit ZAM behalten",
+    `<p>Hier erarbeitest du Zusammenhänge. ZAM erinnert dich später mit kurzen Fragen daran. Jede Karte führt zur passenden Lektion zurück. Die Zelle enthält drei Karten zu jeder Lektion.</p><ol><li>Öffne ZAM Studio → Lern-Karten → Importieren → „Aus der ZAM Academy“.</li><li>Wähle „${esc(ZAM_CELL_TITLE)}“ und „Aufnehmen“.</li></ol><p>Oder sage deinem Agenten in ZAM:</p><div class="request"><code>${esc(request)}</code><button type="button" class="button secondary" id="copy">Kopieren</button></div><p class="small" id="copy-status" role="status">Dein App-Fortschritt und deine Texte werden dabei nicht übertragen.</p><button type="button" class="button accent" data-close>Weiterlernen</button>`,
+  );
+  element.querySelector("#copy")!.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(request);
+      element.querySelector("#copy-status")!.textContent = "Kopiert.";
+    } catch {
+      element.querySelector("#copy-status")!.textContent =
+        "Bitte markiere und kopiere den Satz selbst.";
+    }
+  });
+}
+
+function showReset(): void {
+  const element = dialog(
+    "Fortschritt zurücksetzen?",
+    `<p>Die Schnellchecks, Werkstattabschlüsse, Selbsteinschätzungen und eigenen Texte dieser App werden gelöscht. Das lässt sich nicht rückgängig machen.</p><div class="self-actions"><button type="button" class="button secondary" data-close>Abbrechen</button><button type="button" class="button danger" id="confirm-reset">Zurücksetzen</button></div>`,
+  );
+  element.querySelector("#confirm-reset")!.addEventListener("click", () => {
+    progress = freshProgress();
+    orders.clear();
+    assignments.clear();
+    workshopFeedback.clear();
+    quizSelections.clear();
+    comparisons.clear();
+    rubricChecks.clear();
+    history.replaceState(null, "", pageUrl());
+    persist();
+    render();
+    element.close();
+  });
+}
+
+function applyDeepLink(): void {
+  const link = parseTrainingDeepLink(location.hash, location.search);
+  if (link.level) progress.level = link.level;
+  if (link.lessonId) {
+    const lesson = findLesson(link.lessonId);
+    if (lesson) {
+      progress.activeLessonId = lesson.id;
+      view = "lesson";
+    } else {
+      view = "path";
+      showToast(
+        "Diese Lektion ist nicht vorhanden. Wähle eine Lektion aus dem Lernpfad.",
+        "warning",
+      );
+    }
+  } else
+    view =
+      new URLSearchParams(location.hash.slice(1)).get("view") === "reference"
+        ? "reference"
+        : "path";
+  persist();
+  render();
+}
+
+document.querySelectorAll<HTMLButtonElement>(".header [data-view]").forEach((button) => {
+  button.addEventListener("click", () => {
+    switchView(button.dataset.view as typeof view);
+  });
+});
+document.getElementById("home")!.addEventListener("click", (event) => {
+  event.preventDefault();
+  switchView("path");
+});
+document.getElementById("zam")!.addEventListener("click", showZam);
+document.getElementById("theme")!.addEventListener("click", () => {
+  const current =
+    document.documentElement.dataset.theme ??
+    (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  const theme = current === "dark" ? "light" : "dark";
+  document.documentElement.dataset.theme = theme;
+  try {
+    localStorage.setItem("geschichte_rs6_theme", theme);
+  } catch {
+    /* The current page still changes theme. */
+  }
+});
+window.addEventListener("hashchange", applyDeepLink);
+applyDeepLink();
