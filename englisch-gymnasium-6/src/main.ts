@@ -514,16 +514,17 @@ document.querySelector("#reset")?.addEventListener("click", () => {
 window.addEventListener("hashchange", applyRoute);
 window.addEventListener("pagehide", cancelSpeech);
 window.addEventListener("storage", (event) => {
-	if (event.key !== STORAGE_KEY) return;
+	if (event.key !== null && event.key !== STORAGE_KEY) return;
 	// Read the current value: an older queued event must not undo a newer save.
 	const stored = loadProgress();
-	if (stored.resetAt > progress.resetAt) {
+	const reset = stored.resetAt > progress.resetAt;
+	if (reset) {
 		cancelSpeech();
 		practiceAnswers.clear();
 	}
 	progress = mergeProgress(stored, progress, baseline);
 	baseline = structuredClone(stored);
-	if (view === "path") renderPath();
+	if (reset || view === "path") render();
 	else syncSavedState();
 	renderStats();
 });

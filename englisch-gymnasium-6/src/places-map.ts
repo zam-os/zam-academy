@@ -235,7 +235,7 @@ export const TOWN_ROUTES = {
 	museum: {
 		label: "Zum Museum",
 		path: "M240 245 V165 H390",
-		note: "Go straight up King's Road and turn right into High Street. Walk past the crossroads; the museum is on the right.",
+		note: "Go straight up King's Road and turn right into High Street. Walk past the crossroads; the museum is on your left.",
 	},
 } as const;
 

@@ -266,6 +266,66 @@ try {
 		).includes("0 von 40"),
 	);
 
+	// Cross-tab reset: resetting in a second tab clears open lesson inputs and feedback
+	await evaluate(
+		`Array.from(document.querySelectorAll('.quiz-choice')).find(el=>el.textContent===${JSON.stringify(first.quiz.answer)}).click()`,
+	);
+	await evaluate(
+		`var answers=${JSON.stringify(first.practice.map((p) => p.answers[0]))};document.querySelectorAll('.practice-input').forEach((el,i)=>{el.value=answers[i];el.dispatchEvent(new Event('input',{bubbles:true}));});document.querySelector('#practice-form').requestSubmit()`,
+	);
+	await evaluate(
+		`var draft=document.querySelector('#draft');draft.value='Could I have a return ticket to Bath, please? Which platform does it leave from?';draft.dispatchEvent(new Event('input',{bubbles:true}));document.querySelector('#compare').click();document.querySelectorAll('.criterion').forEach(el=>{el.checked=true;el.dispatchEvent(new Event('change',{bubbles:true}));});document.querySelector('#accept').click()`,
+	);
+	assert.ok(
+		(
+			await evaluate('document.querySelector("#progress-strip").innerText')
+		).includes("1 von 40"),
+	);
+	const tab1Session = session;
+	const { targetId: tab2Id } = await send(
+		"Target.createTarget",
+		{ url: "about:blank" },
+		undefined,
+		60000,
+	);
+	session = (await send("Target.attachToTarget", { targetId: tab2Id, flatten: true }))
+		.sessionId;
+	await page("Page.enable");
+	await page("Runtime.enable");
+	await page("Page.navigate", {
+		url: pathToFileURL(join(root, "dist/index.html")).href,
+	});
+	for (let i = 0; i < 100; i++) {
+		if (await evaluate('!!document.querySelector("#reset")')) break;
+		await new Promise((r) => setTimeout(r, 25));
+	}
+	await evaluate(
+		'document.querySelector("#reset").click();document.querySelector("#confirm-reset").click();',
+	);
+	await send("Target.closeTarget", { targetId: tab2Id });
+	session = tab1Session;
+	for (let i = 0; i < 40; i++) {
+		const stripped = await evaluate(
+			'document.querySelector("#progress-strip")?.innerText ?? ""',
+		);
+		if (stripped.includes("0 von 40")) break;
+		await new Promise((r) => setTimeout(r, 25));
+	}
+	const afterCrossReset = await evaluate(`({
+		strip: document.querySelector("#progress-strip").innerText,
+		practiceValues: [...document.querySelectorAll(".practice-input")].map(el => el.value),
+		practiceFeedback: document.querySelector("#practice-feedback").innerText,
+		quizFeedback: document.querySelector("#quiz-feedback").innerText,
+		workshopStatus: document.querySelector("#workshop-status").textContent,
+		draft: document.querySelector("#draft").value
+	})`);
+	assert.ok(afterCrossReset.strip.includes("0 von 40"));
+	assert.deepEqual(afterCrossReset.practiceValues, ["", ""]);
+	assert.equal(afterCrossReset.practiceFeedback, "");
+	assert.equal(afterCrossReset.quizFeedback, "");
+	assert.ok(afterCrossReset.workshopStatus.startsWith("0 von 3"));
+	assert.equal(afterCrossReset.draft, "");
+
 	// Interactive Grade 6 explorers: comparison, timeline, directions, picture, UK/US maps, listening fallback
 	await route("#lesson=e6-adjectives&level=1");
 	await evaluate(
@@ -293,6 +353,12 @@ try {
 		(
 			await evaluate('document.querySelector("#route-readout").textContent')
 		).includes("Park Lane"),
+	);
+	await evaluate(`document.querySelector('[data-route=museum]').click()`);
+	assert.ok(
+		(
+			await evaluate('document.querySelector("#route-readout").textContent')
+		).includes("on your left."),
 	);
 
 	await route("#lesson=e6-picture-talk&level=1");

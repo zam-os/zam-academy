@@ -291,7 +291,7 @@
 			},
 			"2": {
 				"prompt": "Schreibe einen kurzen Dialog (5 Sätze), in dem ein Tourist den Weg zum Museum erfragt, ein Wort nicht versteht und höflich um Wiederholung bittet.",
-				"model": "Excuse me, how do I get to the museum? — Go straight up King's Road and turn right into High Street. — Sorry, could you repeat that? Turn left or right? — Turn right. The museum is on your right. — Thank you!",
+				"model": "Excuse me, how do I get to the museum? — Go straight up King's Road and turn right into High Street. — Sorry, could you repeat that? Turn left or right? — Turn right into High Street and walk past the crossroads. The museum is on your left. — Thank you!",
 				"criteria": [
 					"Ich beginne und ende höflich.",
 					"Ich baue eine Nachfrage zum Verständnis ein.",
@@ -629,7 +629,7 @@
 				"language": "en"
 			},
 			"2": {
-				"prompt": "Erkläre auf Deutsch anhand des Satzes 'While I was riding my bike, I saw an eagle' den Unterschied zwischen aspect (Verlaufsform vs. einfache Form) in der Vergangenheit.",
+				"prompt": "Erkläre auf Deutsch anhand des Satzes 'While I was riding my bike, I saw an eagle' den Unterschied im aspect zwischen Verlaufsform und einfacher Form in der Vergangenheit.",
 				"model": "Das past progressive (was riding) zeigt den Verlauf einer längeren Hintergrundhandlung im Gange. Das simple past (saw) zeigt die abgeschlossene, punktuelle Handlung, die währenddessen eintritt. Beide gehören zur Vergangenheit, drücken aber verschiedene Blickwinkel (aspect) aus.",
 				"criteria": [
 					"Ich ordne was riding der laufenden Handlung zu.",
@@ -807,7 +807,7 @@
 		],
 		"paragraphs": [
 			"Im Deutschen übersetzen wir beide Zeiten oft mit dem Perfekt ('Ich war in London' / 'Ich habe den Film gesehen'). Im Englischen gilt eine klare Grenze: Nennt der Satz einen abgeschlossenen Zeitpunkt in der Vergangenheit (yesterday, last week, two days ago, in 2024, when I was eight), steht zwingend das simple past: I visited Bath last summer. Es geht dann nur darum, wann es passiert ist.",
-			"Fehlt dieser feste Zeitpunkt und geht es um das Ergebnis jetzt oder um eine Erfahrung bis heute (ever = jemals, never = noch nie), steht das present perfect: Have you ever been to Bath? — Yes, I have! (Erfahrung). Kommt danach die konkrete Nachfrage nach dem Wann, wechselt das Gespräch sofort ins simple past: When did you go there? — I went there two years ago."
+			"Fehlt dieser feste Zeitpunkt, steht für das gegenwärtige Ergebnis das present perfect (I have just arrived). Als kleiner Ausblick auf Klasse 7 über den Kernstoff von Klasse 6 hinaus gilt dieselbe Form ohne festen Zeitpunkt auch für eine Erfahrung bis heute (ever = jemals, never = noch nie): Have you ever been to Bath? — Yes, I have! (Ausblick). Kommt danach die konkrete Nachfrage nach dem Wann, wechselt das Gespräch sofort ins simple past: When did you go there? — I went there two years ago."
 		],
 		"material": "Liam: Have you ever visited Cornwall?\nHannah: Yes, I have! Actually, I have just returned from St Ives.\nLiam: Oh, really? When did you travel there?\nHannah: We went there last August. We stayed near the beach for ten days, and I have never seen such clear blue water.",
 		"materialLabel": "Eigenes englisches Übungsmaterial · Zeitwechsel im Gespräch",
@@ -825,7 +825,7 @@
 			"explanation": "two days ago nennt einen abgeschlossenen Zeitpunkt und verlangt deshalb das simple past (saw).",
 			"optionLanguage": "en"
 		},
-		"takeaway": "Fester Zeitpunkt in der Vergangenheit (yesterday, last …, … ago, in 2024, When did …?) → simple past. Ergebnis jetzt oder Erfahrung bis heute (ever, never, just, already, yet) → present perfect.",
+		"takeaway": "Fester Zeitpunkt in der Vergangenheit (yesterday, last …, … ago, in 2024, When did …?) → simple past. Ergebnis jetzt (just, already, yet; kleiner Ausblick Klasse 7: Erfahrung bis heute mit ever, never) → present perfect.",
 		"practice": [
 			{
 				"prompt": "Life experience: Have you ___ seen Hadrian's Wall? (jemals)",
@@ -1959,10 +1959,9 @@
 			{
 				"prompt": "Main clause: If we finish early, we ___ go to the cinema. (Modalverb können)",
 				"answers": [
-					"can",
-					"will"
+					"can"
 				],
-				"feedback": "Im Hauptsatz des Konditionalsatzes I sind will, can oder ein Imperativ möglich."
+				"feedback": "Im Hauptsatz des Konditionalsatzes I steht hier für 'können' das Modalverb can (in anderen Kontexten sind je nach Bedeutung auch will oder ein Imperativ möglich)."
 			}
 		],
 		"tasks": {
@@ -2955,9 +2954,9 @@
 		],
 		"paragraphs": [
 			"Die Rocky Mountains (kurz the Rockies) sind eines der größten Gebirge Nordamerikas und erstrecken sich im Westen von Kanada über die USA hinweg bis nach New Mexico. Die höchsten Gipfel der US-Rockies liegen im Bundesstaat Colorado, wo auch große Städte wie Denver am Rand der Berge entstehen konnten.",
-			"Große Teile des Gebirges stehen durch Nationalparks und Waldgebiete unter Schutz. Je nach Jahreszeit treiben Besucher dort ganz unterschiedlichen Sport: Im Sommer wandern, zelten und klettern viele Menschen (hiking, camping, mountain biking), im Winter fahren sie Ski oder Snowboard (skiing). Beispiel: The Rocky Mountains are much higher than the hills in England, and public parks protect their wildlife."
+			"Große Teile des Gebirges stehen durch Nationalparks und Waldgebiete unter Schutz. Je nach Jahreszeit treiben Besucher dort ganz unterschiedlichen Sport: Im Sommer wandern, zelten und klettern viele Menschen (hiking, camping, mountain biking), im Winter fahren sie Ski oder Snowboard (skiing). Beispiel: The Rocky Mountains are much higher than the hills in England, and national parks protect their wildlife."
 		],
-		"material": "National Park note: The Rocky Mountains stretch from north to south across the western United States. Many of the highest summits are in Colorado. Public parks protect forests, rivers and wildlife, making the Rockies popular for hiking in summer and skiing in winter.",
+		"material": "National Park note: The Rocky Mountains stretch from north to south across the western United States. Many of the highest summits are in Colorado. National parks protect forests, rivers and wildlife, making the Rockies popular for hiking in summer and skiing in winter.",
 		"materialLabel": "Eigenes englisches Übungsmaterial · Reiseinfo zu den Rockies (nach Wikipedia)",
 		"materialLanguage": "en",
 		"sourceIds": [

@@ -207,6 +207,7 @@ describe("Grade 6 Gymnasium English teaching contract", () => {
 			"E6-06",
 			"E6-07",
 			"E6-10",
+			"E6-14",
 			"E6-19",
 			"E6-20",
 			"E6-29",
@@ -215,6 +216,9 @@ describe("Grade 6 Gymnasium English teaching contract", () => {
 			expect(coverage.rows.find((row) => row.id === id)?.status).toBe(
 				"supported",
 			);
+		expect(
+			coverage.rows.find((row) => row.id === "E6-17")?.evidence,
+		).toContain("Grade 7 outlook");
 		expect(coverage.neighbours.grade7.boundary).toContain(
 			"past perfect simple",
 		);
