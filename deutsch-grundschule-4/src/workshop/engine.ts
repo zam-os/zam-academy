@@ -158,6 +158,25 @@ export function wagonToFront(
 	return settle(ws, { ...state, order, moves: state.moves + 1 });
 }
 
+/**
+ * Drag and drop: take the wagon at `from` out and put it in at `to`. One
+ * move, judged once, so the places a dragged wagon passes on its way count
+ * for nothing.
+ */
+export function moveWagonTo(
+	ws: TrainWorkshop,
+	state: TrainState,
+	from: number,
+	to: number,
+): TrainState {
+	const n = state.order.length;
+	if (from === to || from < 0 || to < 0 || from >= n || to >= n) return state;
+	const order = [...state.order];
+	const [wagon] = order.splice(from, 1);
+	order.splice(to, 0, wagon);
+	return settle(ws, { ...state, order, moves: state.moves + 1 });
+}
+
 export const setEnd = (
 	ws: TrainWorkshop,
 	state: TrainState,

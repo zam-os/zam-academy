@@ -118,6 +118,7 @@ const nomen: Lesson = {
 			title: "Tintos Schreibmaschine",
 			intro:
 				"Oh nein! Tintos Schreibmaschine hat alle großen Buchstaben verschluckt. Tippe die Nomen an, damit Tinto weiß, welche Wörter er großschreiben muss. Den Satzanfang hat er schon.",
+			capitals: "type",
 			pens: [{ value: "N", label: "Nomen", colour: "blue" }],
 			puzzles: [
 				marks("hund", "Der kleine hund|N sucht im garten|N seinen knochen|N ."),
