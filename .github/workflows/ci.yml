@@ -84,6 +84,9 @@ jobs:
         env:
           CHROME_BIN: /usr/bin/google-chrome
         run: node scripts/verify-browser.mjs
+      - name: Check verbatim Geschichte 6 Realschule curriculum coverage
+        if: matrix.app == 'geschichte-realschule-6'
+        run: node scripts/check-curriculum.mjs
       - name: Check verbatim Grade 5 Gymnasium German curriculum coverage
         if: matrix.app == 'deutsch-gymnasium-5'
         run: node scripts/check-curriculum.mjs
@@ -208,6 +211,8 @@ jobs:
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node deutsch-realschule-5/scripts/validate-migration.mjs
       - name: Preserve existing histories when adding History 8
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node geschichte-realschule-8/scripts/validate-cell.mjs
+      - name: Move the four approved Geschichte 6 histories, keep the C cards active and refuse automatic merges
+        run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node geschichte-realschule-6/scripts/validate-migration.mjs
       - name: Preserve existing histories when adding French 8
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node franzoesisch-realschule-8/scripts/validate-cell.mjs
       - name: Verify Grade 5 Gymnasium French enrolment and recall
