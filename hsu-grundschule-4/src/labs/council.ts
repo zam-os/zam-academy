@@ -1,4 +1,4 @@
-import { renderLottaSvg } from "../companion/lotta";
+export type CouncilPhase = "places" | "voices" | "proposal";
 
 export const SITES = {
 	schulwiese: "Schulwiese",
@@ -127,28 +127,30 @@ function village(): string {
 		</g></svg>`;
 }
 
-export function renderCouncil(): string {
-	return `<section class="council-card" id="gemeinderat" aria-labelledby="council-title">
-		<header class="council-heading"><div aria-hidden="true">${renderLottaSvg("curious")}</div><div>
-			<h2 id="council-title">Wo bauen wir den Spielplatz?</h2>
-			<p>„Heute berät der Gemeinderat. Stell unser Modell an beide Orte und frag die Menschen im Dorf!“ <b>– Lotta</b></p>
-		</div></header>
-		<div class="council-model">${village()}<div class="site-choices" role="group" aria-label="Spielplatzmodell aufstellen">
-			${Object.entries(SITES)
-				.map(
-					([id, name]) =>
-						`<button type="button" class="option-pill" data-action="council-site" data-site="${id}">${name}</button>`,
-				)
-				.join("")}
-		</div></div>
-		<div class="council-floor"><h3>Stimmen aus dem Ort</h3>
-			<div class="resident-row">${residents.map((r, i) => `<button class="resident" type="button" data-action="council-listen" data-index="${i}">${portrait(r, i)}<span><b>${r.name}</b><small>${r.role}</small></span></button>`).join("")}</div>
-			<div class="resident-speech"><p data-quote aria-live="polite"></p><button type="button" class="btn" data-action="council-read" hidden>Vorlesen</button></div>
-			<div class="council-decision"><h3>Was schlägst du dem Gemeinderat vor?</h3>
-				<p data-guidance></p><div class="reason-options" role="group" aria-label="Deine Begründung"></div>
+export function renderCouncil(phase: CouncilPhase): string {
+	const sites = `<div class="site-choices" role="group" aria-label="Standort auswählen">
+		${Object.entries(SITES)
+			.map(
+				([id, name]) =>
+					`<button type="button" class="option-pill" data-action="council-site" data-site="${id}">${name}</button>`,
+			)
+			.join("")}
+	</div>`;
+	let activity = "";
+	if (phase === "voices") {
+		activity = `<div class="resident-row">${residents.map((r, i) => `<button class="resident" type="button" data-action="council-listen" data-index="${i}">${portrait(r, i)}<span><b>${r.name}</b><small>${r.role}</small></span></button>`).join("")}</div>
+			<div class="resident-speech"><p data-quote aria-live="polite"></p><button type="button" class="btn" data-action="council-read" hidden>Vorlesen</button></div>`;
+	} else if (phase === "proposal") {
+		activity = `<div class="council-decision">
+				<p data-guidance></p><button type="button" class="btn" data-action="council-consult">Menschen befragen</button>
+				<div class="reason-options" role="group" aria-label="Deine Begründung"></div>
 				<button type="button" class="btn btn-primary" data-action="council-submit">Vorschlag einbringen</button>
-				<p data-result role="status"></p></div>
-		</div></section>`;
+				<p data-result role="status"></p></div>`;
+	}
+	return `<section class="council-card" id="gemeinderat" aria-label="Spielplatz im Gemeinderat">
+		<div class="council-model">${phase === "places" ? village() : ""}${sites}</div>
+		${activity ? `<div class="council-floor">${activity}</div>` : ""}
+	</section>`;
 }
 
 export function updateCouncil(
@@ -174,17 +176,25 @@ export function updateCouncil(
 	}
 	const speaker =
 		meeting.resident === null ? null : residents[meeting.resident];
-	panel.querySelector("[data-quote]")!.textContent =
-		site && speaker
-			? speaker.name + " sagt: „" + speaker[site] + "“"
-			: site
-				? "Wessen Meinung zum Standort " +
-					SITES[site] +
-					" möchtest du erfahren?"
-				: "Wähle zuerst einen Standort für das Spielplatzmodell.";
-	panel.querySelector<HTMLButtonElement>("[data-action=council-read]")!.hidden =
-		!canRead || !speaker;
-	const reasons = panel.querySelector<HTMLElement>(".reason-options")!;
+	const quote = panel.querySelector("[data-quote]");
+	if (quote)
+		quote.textContent =
+			site && speaker
+				? speaker.name + " sagt: „" + speaker[site] + "“"
+				: site
+					? "Wessen Meinung zum Standort " +
+						SITES[site] +
+						" möchtest du erfahren?"
+					: "Wähle zuerst einen Standort für das Spielplatzmodell.";
+	const read = panel.querySelector<HTMLButtonElement>(
+		"[data-action=council-read]",
+	);
+	if (read) read.hidden = !canRead || !speaker;
+	const reasons = panel.querySelector<HTMLElement>(".reason-options");
+	if (!reasons) return;
+	panel.querySelector<HTMLButtonElement>(
+		"[data-action=council-consult]",
+	)!.hidden = meeting.consulted.size >= 2;
 	if (reasons.dataset.site !== (site ?? "")) {
 		reasons.innerHTML = site
 			? proposals[site]

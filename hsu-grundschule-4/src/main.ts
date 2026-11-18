@@ -1,7 +1,9 @@
 import "./styles.css";
 import "./fieldbook.css";
+import "./lesson.css";
+import { lessonSteps, renderLottaPanel, type LessonStep, type LottaReaction } from "./lesson-steps";
 import { renderFieldMap, walkToWorld } from "./companion/field-map";
-import { CouncilMeeting, renderCouncil, updateCouncil } from "./labs/council";
+import { CouncilMeeting, renderCouncil, updateCouncil, SITES } from "./labs/council";
 import { type LottaMood, renderStampSvg } from "./companion/lotta";
 import {
 	LESSON_BY_ID,
@@ -121,7 +123,13 @@ export function mountApp(root: HTMLElement): { destroy: () => void } {
 	>();
 	let quizSessionSalt =
 		Math.floor(Math.random() * 0x7fffffff) || 1;
-	const activeLevelByLesson = new Map<string, 1 | 2>();
+	const positions = new Map<string, number>();
+	let reaction: LottaReaction | null = null;
+	const screen = document.createElement("div");
+	const announcement = document.createElement("div");
+	announcement.className = "map-announcement";
+	announcement.setAttribute("role", "status");
+	root.replaceChildren(screen, announcement);
 	const taskSeedByKey = new Map<string, number>();
 	const currentTaskByKey = new Map<string, ExerciseTask>();
 	const taskFeedbackByKey = new Map<
@@ -129,6 +137,7 @@ export function mountApp(root: HTMLElement): { destroy: () => void } {
 		{ ok: boolean; text: string; selectedChoice?: number; rawInput?: string }
 	>();
 	const taskUsedHint = new Set<string>();
+	const numberDrafts = new Map<string, string>();
 	const taskHadWrongAttempt = new Set<string>();
 	const taskCountedSuccess = new Set<string>();
 
@@ -138,6 +147,7 @@ export function mountApp(root: HTMLElement): { destroy: () => void } {
 		const lesson = LESSON_BY_ID.get(id);
 		if (!lesson) return;
 		activeLessonId = id;
+		reaction = null;
 		mapWorld = lesson.stageId;
 		if (progress.lastLessonId !== id) {
 			progress = { ...progress, lastLessonId: id };
@@ -383,324 +393,259 @@ export function mountApp(root: HTMLElement): { destroy: () => void } {
 		`;
 	}
 
-	function renderLessonView(lesson: Lesson): string {
-		const stage = STAGE_BY_ID.get(lesson.stageId);
-		applyStagePalette(stage);
-
-		const lp = getLessonProgress(progress, lesson.id);
-		const complete = isLessonComplete(lp);
-		const labState = getLabState(lesson);
-		const labEval = evaluateLab(lesson, labState);
+	function renderQuiz(lesson: Lesson, solved: boolean): string {
 		const selectedQuiz = quizSelection.get(lesson.id);
 		const presentedQuizOptions = getQuickCheckOptions(lesson);
-		const quizCheck =
-			selectedQuiz !== undefined
-				? checkQuickCheckAnswer(lesson.quickCheck, selectedQuiz)
-				: null;
-		const activeLevel = activeLevelByLesson.get(lesson.id) ?? 1;
-		const task = getTask(lesson.id, activeLevel);
-		const taskKey = `${lesson.id}:${activeLevel}`;
-		const feedback = taskFeedbackByKey.get(taskKey);
-		const hintShown = taskUsedHint.has(task.id);
-
-		const prevLesson = LESSONS[lesson.number - 2];
-		const nextLesson = LESSONS[lesson.number];
-
-		return `
-			<article>
-				<div class="station-header-card">
-					<div class="station-kicker">${stage ? `${stage.icon} ${escapeHtml(stage.worldName)} · ` : ""}${escapeHtml(lesson.sectionCode)} · Station ${fmt(lesson.number)} von ${fmt(LESSONS.length)}</div>
-					<h1 class="station-main-title">${lesson.icon} ${escapeHtml(lesson.title)}</h1>
-					<p class="station-hook">${escapeHtml(lesson.hook)}</p>
-					<p class="foundation-note">🌱 ${escapeHtml(lesson.foundationNote)}</p>
-					<div class="jump-pills no-print">
-						<a class="jump-link" href="#wissen">1. Entdecken &amp; Merksatz</a>
-						<a class="jump-link" href="#check">2. Schlaufuchs-Check ${lp.quizSolved ? "✓" : ""}</a>
-						<a class="jump-link" href="#labor">3. Mitmach-Labor (${fmt(lp.goalsReached.length)}/${fmt(REQUIRED_LAB_GOALS)})</a>
-						<a class="jump-link" href="#probe">4. Proben-Check (${lp.level1Correct >= 1 && lp.level2Correct >= 1 ? "✓" : `${(lp.level1Correct >= 1 ? 1 : 0) + (lp.level2Correct >= 1 ? 1 : 0)}/2`})</a>
-					</div>
-				</div>
-
-				${lesson.id === "unsere-gemeinde" ? renderCouncil() : ""}
-
-				<section id="wissen" class="section-card">
-					<h2>1. Entdecken &amp; Verstehen</h2>
-					${lesson.storyParagraphs
-						.map((p) => `<p class="story-p">${escapeHtml(p)}</p>`)
-						.join("")}
-
-					<div class="fact-grid">
-						${lesson.factCards
-							.map(
-								(fc) => `
-								<div class="fact-card">
-									<h3>${fc.icon} ${escapeHtml(fc.title)}</h3>
-									<p>${escapeHtml(fc.text)}</p>
-								</div>
-							`,
-							)
-							.join("")}
-					</div>
-
-					<div class="example-box">
-						<h3>🔍 Alltags-Beispiel: ${escapeHtml(lesson.workedExample.title)}</h3>
-						<p>${escapeHtml(lesson.workedExample.scenario)}</p>
-						<ol class="example-steps">
-							${lesson.workedExample.steps
-								.map((step) => `<li>${escapeHtml(step)}</li>`)
-								.join("")}
-						</ol>
-						<p><strong>Ergebnis:</strong> ${escapeHtml(lesson.workedExample.conclusion)}</p>
-					</div>
-
-					<div class="merke-box">
-						<strong>📌 Merksatz für dein Forscherbuch</strong>
-						<span>${escapeHtml(lesson.merksatz)}</span>
-					</div>
-
-					<div class="quest-box">
-						<strong>🎒 Mini-Forscherauftrag für draußen &amp; zu Hause:</strong>
-						${escapeHtml(lesson.realWorldQuest)}
-					</div>
-				</section>
-
-				<section id="check" class="section-card">
-					<h2>2. Schlaufuchs-Check ${lp.quizSolved ? "✅" : ""}</h2>
-					<p><strong>${escapeHtml(lesson.quickCheck.question)}</strong></p>
-					<div class="choice-stack">
-						${presentedQuizOptions
-							.map((opt) => {
-								const isPicked = selectedQuiz === opt.optionId;
-								const isRight = opt.isCorrect;
-								const cls =
-									isPicked && isRight
+		const result =
+			selectedQuiz === undefined
+				? null
+				: checkQuickCheckAnswer(lesson.quickCheck, selectedQuiz);
+		const explanation = result?.correct
+			? lesson.quickCheck.explanation
+			: result?.feedback;
+		return `<p class="step-question">${escapeHtml(lesson.quickCheck.question)}</p>
+			<div class="choice-stack">
+				${presentedQuizOptions
+					.map((opt) => {
+						const isPicked = selectedQuiz === opt.optionId;
+						const isRight = opt.isCorrect;
+						const cls =
+							isPicked && isRight
+								? "is-correct"
+								: isPicked && !isRight
+									? "is-wrong"
+									: selectedQuiz === undefined && solved && isRight
 										? "is-correct"
-										: isPicked && !isRight
-											? "is-wrong"
-											: lp.quizSolved && isRight
-												? "is-correct"
+										: "";
+						return `
+							<button
+								type="button"
+								class="choice-btn ${cls}"
+								data-action="quiz-pick"
+								data-lesson-id="${lesson.id}"
+								data-option-id="${opt.optionId}"
+							>
+								${escapeHtml(opt.text)}
+							</button>
+						`;
+					})
+					.join("")}
+			</div>
+			${result && explanation && reaction?.message !== explanation ? `<p class="feedback-box ${result.correct ? "ok" : "warn"}">${escapeHtml(explanation)}</p>` : ""}
+			${result && !result.correct ? `<details class="reading"><summary>Merksatz nachlesen</summary><p>${escapeHtml(lesson.merksatz)}</p></details>` : ""}`;
+	}
+
+	function renderPractice(lesson: Lesson, activeLevel: 1 | 2): string {
+		const task = getTask(lesson.id, activeLevel);
+		const feedback = taskFeedbackByKey.get(`${lesson.id}:${activeLevel}`);
+		const hintShown = taskUsedHint.has(task.id);
+		return `<p class="step-question">${escapeHtml(task.prompt)}</p>
+			${
+				isNumberTask(task)
+					? `
+						<form class="number-row no-print" data-action="submit-number" data-lesson-id="${lesson.id}" data-level="${activeLevel}">
+							<label for="num-answer" class="brand-sub">Deine Antwort:</label>
+							<input
+								id="num-answer"
+								name="answer"
+								type="text"
+								inputmode="decimal"
+								autocomplete="off"
+								class="number-input"
+								placeholder="${escapeHtml(task.placeholder)}"
+								value="${escapeHtml(numberDrafts.get(task.id) ?? feedback?.rawInput ?? "")}"
+							/>
+							<span><strong>${escapeHtml(task.unit)}</strong></span>
+							<button type="submit" class="btn btn-primary">Prüfen</button>
+						</form>
+					`
+					: `
+						<div class="choice-stack">
+							${task.options
+								.map((opt, idx) => {
+									const picked = feedback?.selectedChoice === idx;
+									const cls =
+										picked && feedback?.ok
+											? "is-correct"
+											: picked && !feedback?.ok
+												? "is-wrong"
 												: "";
-								return `
-									<button
-										type="button"
-										class="choice-btn ${cls}"
-										data-action="quiz-pick"
-										data-lesson-id="${lesson.id}"
-										data-option-id="${opt.optionId}"
-									>
-										${escapeHtml(opt.text)}
-									</button>
-								`;
-							})
-							.join("")}
-					</div>
-					${
-						quizCheck !== null || lp.quizSolved
-							? `<div class="feedback-box ${(quizCheck?.correct ?? false) || lp.quizSolved ? "ok" : "warn"}">
-								${
-									(quizCheck?.correct ?? false) || lp.quizSolved
-										? `Super! ${escapeHtml(lesson.quickCheck.explanation)}`
-										: escapeHtml(quizCheck?.feedback ?? "")
-								}
-							</div>`
-							: ""
-					}
-				</section>
+									return `
+										<button
+											type="button"
+											class="choice-btn ${cls}"
+											data-action="task-choice"
+											data-lesson-id="${lesson.id}"
+											data-level="${activeLevel}"
+											data-index="${idx}"
+										>
+											${escapeHtml(opt)}
+										</button>
+									`;
+								})
+								.join("")}
+						</div>
+					`
+			}
 
-				<section id="labor" class="section-card">
-					<h2>3. Mitmach-Labor: ${escapeHtml(lesson.lab.title)}</h2>
-					<p>${escapeHtml(lesson.lab.intro)}</p>
+			<div class="level-tabs no-print">
+				<button type="button" class="btn" data-action="show-hint" data-task-id="${escapeHtml(task.id)}">💡 Lotta-Tipp zeigen</button>
+				<button type="button" class="btn" data-action="next-task" data-lesson-id="${lesson.id}" data-level="${activeLevel}">🔄 Andere Aufgabe</button>
+			</div>
 
-					<div class="lab-scene-wrap">
-						${renderLabSceneSvg(lesson, labState)}
-					</div>
+			${hintShown && reaction?.message !== task.hint ? `<div class="feedback-box">💡 <strong>Lottas Tipp:</strong> ${escapeHtml(task.hint)}</div>` : ""}
+			${feedback && reaction?.message !== feedback.text && (!hintShown || task.hint !== feedback.text) ? `<div class="feedback-box ${feedback.ok ? "ok" : "warn"}">${escapeHtml(feedback.text)}</div>` : ""}`;
+	}
 
-					<div class="lab-controls no-print">
-						${lesson.lab.controls.filter(ctrl => ctrl.key !== "vorschlag")
+	function renderReading(lesson: Lesson): string {
+		const example = lesson.workedExample;
+		return `<details class="reading"><summary>Erklärung &amp; Beispiel nachlesen</summary>
+			<p>${escapeHtml(lesson.foundationNote)}</p>
+			${lesson.storyParagraphs.map((p) => `<p>${escapeHtml(p)}</p>`).join("")}
+			<h3>${escapeHtml(example.title)}</h3><p>${escapeHtml(example.scenario)}</p>
+			<ol>${example.steps.map((p) => `<li>${escapeHtml(p)}</li>`).join("")}</ol>
+			<p>${escapeHtml(example.conclusion)}</p></details>`;
+	}
+
+	function renderStep(
+		lesson: Lesson,
+		step: LessonStep,
+		steps: LessonStep[],
+	): string {
+		const lp = getLessonProgress(progress, lesson.id);
+		switch (step.kind) {
+			case "discover": {
+				const card = lesson.factCards[step.index];
+				return `<div class="discovery-fact"><span aria-hidden="true">${card.icon}</span>
+					<p>${escapeHtml(card.text)}</p></div>${renderReading(lesson)}`;
+			}
+			case "quiz":
+				return renderQuiz(lesson, lp.quizSolved);
+			case "practice":
+				return renderPractice(lesson, step.level);
+			case "council":
+				return renderCouncil(step.phase);
+			case "lab": {
+				const state = getLabState(lesson);
+				const ctrl = lesson.lab.controls.find((c) => c.key === step.control)!;
+				return `<div class="lab-scene-wrap">${renderLabSceneSvg(lesson, state)}</div>
+					<div class="option-pills" role="group" aria-label="${escapeHtml(ctrl.label)}">
+					${ctrl.options
+						.map(
+							(
+								opt,
+							) => `<button type="button" class="option-pill" aria-pressed="${state[ctrl.key] === opt.value}"
+						data-action="lab-option" data-lesson-id="${lesson.id}" data-key="${escapeHtml(ctrl.key)}" data-value="${escapeHtml(opt.value)}">${escapeHtml(opt.label)}</button>`,
+						)
+						.join("")}</div>
+					<details class="reading"><summary>Beobachtungen &amp; Forscherziele (${lp.goalsReached.length}/${REQUIRED_LAB_GOALS})</summary>
+						<h3>${escapeHtml(lesson.lab.title)}</h3><p>${escapeHtml(lesson.lab.intro)}</p>
+						<dl>${lesson.lab
+							.readouts(state)
 							.map(
-								(ctrl) => `
-								<div class="lab-control-group" role="group" aria-label="${escapeHtml(ctrl.label)}">
-									<span class="lab-control-label">${escapeHtml(ctrl.label)}</span>
-									<div class="option-pills">
-										${ctrl.options
-											.map(
-												(opt) => `
-												<button
-													type="button"
-													class="option-pill"
-													aria-pressed="${labState[ctrl.key] === opt.value ? "true" : "false"}"
-													data-action="lab-option"
-													data-lesson-id="${lesson.id}"
-													data-key="${escapeHtml(ctrl.key)}"
-													data-value="${escapeHtml(opt.value)}"
-												>
-													${escapeHtml(opt.label)}
-												</button>
-											`,
-											)
-											.join("")}
-									</div>
-								</div>
-							`,
+								(ro) =>
+									`<dt>${escapeHtml(ro.label)}</dt><dd>${escapeHtml(ro.value)}</dd>`,
 							)
-							.join("")}
-					</div>
+							.join("")}</dl>
+						<ul>${lesson.lab.goals.map((g) => `<li>${lp.goalsReached.includes(g.id) ? "✓ " : ""}${escapeHtml(g.title)}</li>`).join("")}</ul></details>`;
+			}
+			case "book": {
+				const complete = isLessonComplete(lp);
+				const checklist = [
+					{
+						label: "Schlaufuchs-Check",
+						done: lp.quizSolved,
+						index: steps.findIndex((s) => s.kind === "quiz"),
+					},
+					{
+						label: `Labor (${lp.goalsReached.length}/${REQUIRED_LAB_GOALS})`,
+						done: lp.goalsReached.length >= REQUIRED_LAB_GOALS,
+						index: steps.findIndex((s) => s.kind === "lab"),
+					},
+					...([1, 2] as const).map((level) => ({
+						label: level === 1 ? "Spürnase" : "Proben-Profi",
+						done:
+							(level === 1 ? lp.level1Correct : lp.level2Correct) >=
+							REQUIRED_CORRECT_PER_LEVEL,
+						index: steps.findIndex(
+							(s) => s.kind === "practice" && s.level === level,
+						),
+					})),
+				];
+				return `${
+					complete
+						? `<div class="zam-handoff-box"><b>🏅 ${escapeHtml(lesson.stamp.title)}</b><p>Dein Stempel ist im Forscherbuch. In ZAM kannst du die passenden Lernkarten wiederholen.</p></div>`
+						: `<p>Das fehlt dir noch für deinen Stempel:</p><div class="option-pills">${checklist
+								.filter((c) => !c.done)
+								.map(
+									(c) =>
+										`<button type="button" class="btn" data-action="lesson-step" data-step="${c.index}">${c.label} →</button>`,
+								)
+								.join("")}</div>`
+				}
+					<p class="merke-box"><strong>Merksatz</strong>${escapeHtml(lesson.merksatz)}</p>
+					<details class="reading"><summary>Fachbegriffe &amp; Forscherauftrag</summary>
+					<dl>${lesson.probenWissen.map((pw) => `<dt>${escapeHtml(pw.term)}</dt><dd>${escapeHtml(pw.definition)}</dd>`).join("")}</dl>
+					<p>${escapeHtml(lesson.realWorldQuest)}</p></details>`;
+			}
+		}
+	}
 
-					${lesson.id === "unsere-gemeinde" ? '<a class="jump-link" href="#gemeinderat">Zum Spielplatzmodell mit Lotta ↑</a>' : ""}
-					<div class="readout-grid" aria-live="polite">
-						${labEval.readouts
-							.map(
-								(ro) => `
-								<div class="readout-card">
-									<div class="readout-label">${escapeHtml(ro.label)}</div>
-									<div class="readout-val">${escapeHtml(ro.value)}</div>
-								</div>
-							`,
-							)
-							.join("")}
-					</div>
-
-					<h3>Deine 3 Forscher-Ziele (${fmt(lp.goalsReached.length)}/${fmt(REQUIRED_LAB_GOALS)} entdeckt)</h3>
-					<ul class="goal-list">
-						${lesson.lab.goals
-							.map((goal) => {
-								const everReached = lp.goalsReached.includes(goal.id);
-								return `
-									<li class="goal-item ${everReached ? "is-reached" : ""}">
-										<span aria-hidden="true">${everReached ? "✅" : "🔎"}</span>
-										<span>${escapeHtml(goal.title)}</span>
-									</li>
-								`;
-							})
-							.join("")}
-					</ul>
+	function renderLessonView(lesson: Lesson): string {
+		applyStagePalette(STAGE_BY_ID.get(lesson.stageId));
+		const steps = lessonSteps(lesson);
+		const index = positions.get(lesson.id) ?? 0;
+		const step = steps[index];
+		const last = index === steps.length - 1;
+		const nextLesson = LESSONS[lesson.number];
+		return `<article class="lesson-shell">
+			<header class="lesson-heading"><button type="button" class="back-to-map" data-action="nav" data-view="map">← Karte</button>
+				<h1 class="station-main-title" title="${escapeHtml(lesson.title)}">${escapeHtml(lesson.shortTitle)}</h1>
+				<label class="step-picker"><span>Schritt ${index + 1} von ${steps.length}</span>
+				<select aria-label="Lernschritt auswählen" data-step-picker>${steps.map((s, i) => `<option value="${i}" ${i === index ? "selected" : ""}>${i + 1}. ${escapeHtml(s.label)}</option>`).join("")}</select></label>
+			</header>
+			<div class="lesson-desk">
+				${renderLottaPanel(reaction ?? { mood: "curious", message: step.prompt })}
+				<section class="step-card" aria-labelledby="step-heading" data-kind="${step.kind}">
+					<h2 id="step-heading" tabindex="-1">${escapeHtml(step.label)}</h2>
+					${renderStep(lesson, step, steps)}
+					<nav class="step-nav" aria-label="Durch die Station blättern">
+						<button type="button" class="btn" data-action="lesson-step" data-step="${index - 1}" ${index === 0 ? "disabled" : ""}>← Zurück</button>
+						${
+							last
+								? nextLesson
+									? `<button type="button" class="btn btn-primary" data-action="open-lesson" data-lesson-id="${nextLesson.id}">Nächste Station →</button>`
+									: '<button type="button" class="btn btn-primary" data-action="nav" data-view="map">Zur Karte →</button>'
+								: `<button type="button" class="btn btn-primary" data-action="lesson-step" data-step="${index + 1}">Weiter →</button>`
+						}
+					</nav>
 				</section>
+			</div></article>`;
+	}
 
-				<section id="probe" class="section-card">
-					<h2>4. Kurzer Proben-Check (einmal je Stufe)</h2>
-					<p>Löse eine Aufgabe als <strong>Spürnase</strong> und eine als <strong>Proben-Profi</strong>. Danach sitzen die Grundlagen für das Weiterlernen in ZAM!</p>
+	function goToStep(index: number): void {
+		const steps = lessonSteps(LESSON_BY_ID.get(activeLessonId)!);
+		if (!Number.isInteger(index) || !steps[index]) return;
+		positions.set(activeLessonId, index);
+		reaction = null;
+		render();
+		root
+			.querySelector<HTMLElement>("#step-heading")
+			?.focus({ preventScroll: true });
+		window.scrollTo({ top: 0, behavior: "instant" });
+	}
 
-					<div class="level-tabs no-print" role="tablist" aria-label="Schwierigkeitsstufe">
-						<button
-							type="button"
-							role="tab"
-							aria-selected="${activeLevel === 1 ? "true" : "false"}"
-							class="btn ${activeLevel === 1 ? "btn-primary" : ""}"
-							data-action="set-level"
-							data-lesson-id="${lesson.id}"
-							data-level="1"
-						>
-							🐾 Stufe 1: Spürnase ${lp.level1Correct >= REQUIRED_CORRECT_PER_LEVEL ? "✓" : ""}
-						</button>
-						<button
-							type="button"
-							role="tab"
-							aria-selected="${activeLevel === 2 ? "true" : "false"}"
-							class="btn ${activeLevel === 2 ? "btn-primary" : ""}"
-							data-action="set-level"
-							data-lesson-id="${lesson.id}"
-							data-level="2"
-						>
-							🎓 Stufe 2: Proben-Profi ${lp.level2Correct >= REQUIRED_CORRECT_PER_LEVEL ? "✓" : ""}
-						</button>
-					</div>
-
-					<p class="station-kicker">${escapeHtml(task.contextTag)}</p>
-					<p><strong>${escapeHtml(task.prompt)}</strong></p>
-
-					${
-						isNumberTask(task)
-							? `
-								<form class="number-row no-print" data-action="submit-number" data-lesson-id="${lesson.id}" data-level="${activeLevel}">
-									<label for="num-answer" class="brand-sub">Deine Antwort:</label>
-									<input
-										id="num-answer"
-										name="answer"
-										type="text"
-										inputmode="decimal"
-										autocomplete="off"
-										class="number-input"
-										placeholder="${escapeHtml(task.placeholder)}"
-										value="${escapeHtml(feedback?.rawInput ?? "")}"
-									/>
-									<span><strong>${escapeHtml(task.unit)}</strong></span>
-									<button type="submit" class="btn btn-primary">Prüfen</button>
-								</form>
-							`
-							: `
-								<div class="choice-stack">
-									${task.options
-										.map((opt, idx) => {
-											const picked = feedback?.selectedChoice === idx;
-											const cls =
-												picked && feedback?.ok
-													? "is-correct"
-													: picked && !feedback?.ok
-														? "is-wrong"
-														: "";
-											return `
-												<button
-													type="button"
-													class="choice-btn ${cls}"
-													data-action="task-choice"
-													data-lesson-id="${lesson.id}"
-													data-level="${activeLevel}"
-													data-index="${idx}"
-												>
-													${escapeHtml(opt)}
-												</button>
-											`;
-										})
-										.join("")}
-								</div>
-							`
-					}
-
-					<div class="level-tabs no-print">
-						<button type="button" class="btn" data-action="show-hint" data-task-id="${escapeHtml(task.id)}">💡 Lotta-Tipp zeigen</button>
-						<button type="button" class="btn" data-action="next-task" data-lesson-id="${lesson.id}" data-level="${activeLevel}">🔄 Andere Aufgabe</button>
-					</div>
-
-					${hintShown ? `<div class="feedback-box">💡 <strong>Lottas Tipp:</strong> ${escapeHtml(task.hint)}</div>` : ""}
-					${feedback ? `<div class="feedback-box ${feedback.ok ? "ok" : "warn"}">${escapeHtml(feedback.text)}</div>` : ""}
-
-					${
-						complete
-							? `
-								<div class="zam-handoff-box">
-									<strong>🏅 Forscher-Stempel „${escapeHtml(lesson.stamp.title)}“ gesammelt!</strong>
-									<p style="margin: 0.35rem 0 0;">Du hast diese Station komplett erkundet. Ab jetzt übernimmt <strong>ZAM</strong> mit den passenden Lernkarten die Wiederholung und sorgt für Abwechslung bis zur Probe!</p>
-								</div>
-							`
-							: ""
-					}
-				</section>
-
-				<section class="section-card">
-					<h2>📌 Wichtige Fachbegriffe dieser Station</h2>
-					<div class="fact-grid">
-						${lesson.probenWissen
-							.map(
-								(pw) => `
-								<div class="fact-card">
-									<h3>${escapeHtml(pw.term)}</h3>
-									<p>${escapeHtml(pw.definition)}</p>
-								</div>
-							`,
-							)
-							.join("")}
-					</div>
-				</section>
-
-				<div class="station-footer-nav no-print">
-					<button type="button" class="btn" data-action="nav" data-view="map">← Zur Entdeckerkarte</button>
-					<div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-						${prevLesson ? `<button type="button" class="btn" data-action="open-lesson" data-lesson-id="${prevLesson.id}">← Station ${fmt(prevLesson.number)}</button>` : ""}
-						${nextLesson ? `<button type="button" class="btn btn-primary" data-action="open-lesson" data-lesson-id="${nextLesson.id}">Weiter zu Station ${fmt(nextLesson.number)} →</button>` : ""}
-					</div>
-				</div>
-			</article>
-		`;
+	function react(mood: LottaMood, message: string): void {
+		const short =
+			message.length <= 125
+				? message
+				: mood === "celebrating"
+					? "Geschafft! Schau dir die Erklärung zu deiner Entdeckung an."
+					: mood === "encouraging"
+						? "Ich habe einen Tipp für dich. Lies ihn bei der Aufgabe."
+						: "Schau ins Modell. Unter „Beobachtungen“ findest du die Einzelheiten.";
+		reaction = { mood, message: short };
+		announcement.textContent = "Lotta: " + message;
 	}
 
 	function renderStempelView(): string {
@@ -932,6 +877,13 @@ export function mountApp(root: HTMLElement): { destroy: () => void } {
 				clearProgress();
 				progress = freshProgress();
 				mapWorld = "lb1";
+				taskSeedByKey.clear();
+				currentTaskByKey.clear();
+				taskUsedHint.clear();
+				taskHadWrongAttempt.clear();
+				positions.clear();
+				numberDrafts.clear();
+				reaction = null;
 				council = new CouncilMeeting();
 				lottaMood = "curious";
 				labStates.clear();
@@ -960,6 +912,16 @@ export function mountApp(root: HTMLElement): { destroy: () => void } {
 	}
 
 	function render(): void {
+		const focused = view === "lesson" ? document.activeElement : null;
+		const focusSelector =
+			focused instanceof HTMLElement && focused.closest(".step-card")
+				? focused.id
+					? "#" + CSS.escape(focused.id)
+					: Array.from(focused.attributes)
+							.filter((a) => a.name.startsWith("data-"))
+							.map((a) => `[${a.name}="${CSS.escape(a.value)}"]`)
+							.join("")
+				: "";
 		stopReading();
 		root.dataset.quiet = progress.quietMode ? "true" : "false";
 		const lesson = LESSON_BY_ID.get(activeLessonId) ?? LESSONS[0];
@@ -974,14 +936,19 @@ export function mountApp(root: HTMLElement): { destroy: () => void } {
 							? renderElternView()
 							: renderMapView();
 
-		root.innerHTML = `
+		screen.innerHTML = `
 			<div class="app-shell">
-				${renderTopbar()}
+				${view === "lesson" ? "" : renderTopbar()}
 				${renderNotices()}
 				<main id="main-content">${bodyHtml}</main>
 			</div>
 		`;
-		if (view === "lesson" && activeLessonId === "unsere-gemeinde") syncCouncil();
+		if (view === "lesson" && activeLessonId === "unsere-gemeinde")
+			syncCouncil();
+		if (focusSelector)
+			root
+				.querySelector<HTMLElement>(focusSelector)
+				?.focus({ preventScroll: true });
 		if (view === "eltern") {
 			wireResetDialog();
 		}
@@ -991,69 +958,120 @@ export function mountApp(root: HTMLElement): { destroy: () => void } {
 		if (!unlocked) return;
 		lottaMood = "celebrating";
 		lottaMessage = `Juhu! Du hast den Stempel „${lesson.stamp.title}“ verdient!`;
+		react("celebrating", lottaMessage);
 		playGentleChime(progress.soundEnabled);
 	}
 
 	function setLabOption(lesson: Lesson, key: string, val: string): void {
-		const nextState = applyLabOption(lesson, getLabState(lesson), key, val);
+		const before = getLabState(lesson);
+		const nextState = applyLabOption(lesson, before, key, val);
 		labStates.set(lesson.id, nextState);
 		const evaluated = evaluateLab(lesson, nextState);
-		if (evaluated.reachedGoalIds.length > 0) {
-			const res = recordLabGoals(progress, lesson.id, evaluated.reachedGoalIds);
+		const prior = lesson.lab.readouts(before);
+		const changed = evaluated.readouts.find(
+			(r, i) => prior[i]?.value !== r.value,
+		);
+		const res = recordLabGoals(progress, lesson.id, evaluated.reachedGoalIds);
+		const goal = lesson.lab.goals.find((g) => res.addedGoals.includes(g.id));
+		if (goal) {
+			react(
+				"celebrating",
+				key === "vorschlag"
+					? "Dein Vorschlag ist im Rat angekommen!"
+					: "Eine neue Entdeckung! " + (changed?.value ?? goal.title),
+			);
 			progress = res.progress;
 			persistProgress();
 			handleStampCelebration(res.stampUnlocked, lesson);
+		} else {
+			react(
+				"curious",
+				changed?.value ??
+					(key === "vorschlag"
+						? "Ich habe deinen neuen Vorschlag für den Rat notiert."
+						: "Schau genau hin. Was passiert mit einer anderen Einstellung?"),
+			);
 		}
 	}
 
 	const onClick = (event: Event): void => {
-		const anchor = (event.target as Element | null)?.closest<HTMLAnchorElement>("a.jump-link");
-		if (anchor && view === "lesson") {
-			const section = root.querySelector<HTMLElement>(anchor.hash);
-			if (section) {
-				event.preventDefault();
-				section.tabIndex = -1;
-				section.focus({ preventScroll: true });
-				section.scrollIntoView({ behavior: reducedMotion() ? "instant" : "smooth" });
-				return;
-			}
-		}
 		const target = (event.target as HTMLElement | null)?.closest<HTMLElement>(
 			"[data-action]",
 		);
 		if (!target) return;
 		const action = target.dataset.action;
 
+		if (action === "lesson-step") {
+			goToStep(Number(target.dataset.step));
+			return;
+		}
 		if (action === "choose-world") {
-			const world = STAGES.find(stage => stage.id === target.dataset.world);
+			const world = STAGES.find((stage) => stage.id === target.dataset.world);
 			const map = root.querySelector<HTMLElement>(".field-map");
 			if (!world || !map) return;
 			walkToWorld(map, mapWorld, world.id, reducedMotion());
 			mapWorld = world.id;
-			for (const button of map.querySelectorAll<HTMLButtonElement>(".map-place")) {
-				button.setAttribute("aria-pressed", String(button.dataset.world === mapWorld));
+			for (const button of map.querySelectorAll<HTMLButtonElement>(
+				".map-place",
+			)) {
+				button.setAttribute(
+					"aria-pressed",
+					String(button.dataset.world === mapWorld),
+				);
 			}
 			root.querySelector("#world-stations")!.innerHTML = renderWorldStations();
-			root.querySelector(".map-announcement")!.textContent = "Stationen für " + world.worldName + " unter der Karte.";
+			root.querySelector(".map-announcement")!.textContent =
+				"Stationen für " + world.worldName + " unter der Karte.";
 			return;
 		}
-		if (action?.startsWith("council-") && activeLessonId === "unsere-gemeinde") {
+		if (
+			action?.startsWith("council-") &&
+			activeLessonId === "unsere-gemeinde"
+		) {
 			stopReading();
 			if (action === "council-site") {
 				const site = target.dataset.site;
-				if (site === "schulwiese" || site === "obstanger") council.visit(site);
+				if (site === "schulwiese" || site === "obstanger") {
+					council.visit(site);
+					react(
+						"curious",
+						site === "schulwiese"
+							? "Neben der Schulwiese stehen Wohnhäuser. Wer könnte hier besonders gut spielen?"
+							: "Auf dem Obstanger wachsen alte Bäume. Wo hätten Spielgeräte Platz?",
+					);
+				}
 			} else if (action === "council-listen") {
 				council.listen(Number(target.dataset.index));
+				react(
+					"curious",
+					council.consulted.size >= 2
+						? "Du kennst jetzt mehrere Meinungen. Wie würdest du sie abwägen?"
+						: "Du hast eine Stimme gehört. Was denkt jemand anderes darüber?",
+				);
+			} else if (action === "council-consult") {
+				goToStep(
+					lessonSteps(LESSON_BY_ID.get(activeLessonId)!).findIndex(
+						(s) => s.kind === "council" && s.phase === "voices",
+					),
+				);
+				return;
 			} else if (action === "council-read") {
 				const voice = localVoice();
 				if (voice) {
-					reading = new SpeechSynthesisUtterance(root.querySelector("[data-quote]")!.textContent ?? "");
+					reading = new SpeechSynthesisUtterance(
+						root.querySelector("[data-quote]")!.textContent ?? "",
+					);
 					reading.lang = voice.lang;
 					reading.voice = voice;
 					window.speechSynthesis.speak(reading);
 				}
 			} else if (action === "council-reason") {
 				council.reason = Number(target.dataset.index);
+				if (council.site)
+					react(
+						"encouraging",
+						`Dein Plan für den Standort ${SITES[council.site]} hat eine Begründung. Möchtest du ihn einbringen?`,
+					);
 				council.submitted = false;
 			} else if (action === "council-submit") {
 				const site = council.submit();
@@ -1067,6 +1085,10 @@ export function mountApp(root: HTMLElement): { destroy: () => void } {
 				}
 			}
 			syncCouncil();
+			if (reaction && action !== "council-read") {
+				const panel = root.querySelector(".lesson-lotta");
+				if (panel) panel.outerHTML = renderLottaPanel(reaction);
+			}
 			return;
 		}
 		if (action === "nav") {
@@ -1085,7 +1107,12 @@ export function mountApp(root: HTMLElement): { destroy: () => void } {
 			const lesson = LESSON_BY_ID.get(id);
 			if (!lesson || Number.isNaN(optionId)) return;
 			quizSelection.set(id, optionId);
-			if (checkQuickCheckAnswer(lesson.quickCheck, optionId).correct) {
+			const answer = checkQuickCheckAnswer(lesson.quickCheck, optionId);
+			react(
+				answer.correct ? "celebrating" : "encouraging",
+				answer.correct ? lesson.quickCheck.explanation : answer.feedback,
+			);
+			if (answer.correct) {
 				const res = recordQuizSolved(progress, id);
 				progress = res.progress;
 				persistProgress();
@@ -1104,13 +1131,6 @@ export function mountApp(root: HTMLElement): { destroy: () => void } {
 			render();
 			return;
 		}
-		if (action === "set-level") {
-			const id = target.dataset.lessonId ?? activeLessonId;
-			const lvl = target.dataset.level === "2" ? 2 : 1;
-			activeLevelByLesson.set(id, lvl);
-			render();
-			return;
-		}
 		if (action === "task-choice") {
 			const id = target.dataset.lessonId ?? activeLessonId;
 			const lvl = target.dataset.level === "2" ? 2 : 1;
@@ -1120,6 +1140,7 @@ export function mountApp(root: HTMLElement): { destroy: () => void } {
 			const task = getTask(id, lvl);
 			if (task.kind !== "choice") return;
 			const res = checkChoiceTask(task, idx);
+			react(res.correct ? "celebrating" : "encouraging", res.feedback);
 			const key = `${id}:${lvl}`;
 			taskFeedbackByKey.set(key, {
 				ok: res.correct,
@@ -1151,8 +1172,11 @@ export function mountApp(root: HTMLElement): { destroy: () => void } {
 		}
 		if (action === "show-hint") {
 			const taskId = target.dataset.taskId;
-			if (taskId) {
+			const lesson = LESSON_BY_ID.get(activeLessonId)!;
+			const step = lessonSteps(lesson)[positions.get(lesson.id) ?? 0];
+			if (taskId && step.kind === "practice") {
 				taskUsedHint.add(taskId);
+				react("encouraging", getTask(lesson.id, step.level).hint);
 				render();
 			}
 			return;
@@ -1161,6 +1185,10 @@ export function mountApp(root: HTMLElement): { destroy: () => void } {
 			const id = target.dataset.lessonId ?? activeLessonId;
 			const lvl = target.dataset.level === "2" ? 2 : 1;
 			nextTask(id, lvl);
+			react(
+				"curious",
+				"Ein neuer Fall! Lies die Angaben diesmal noch einmal genau.",
+			);
 			render();
 			return;
 		}
@@ -1210,6 +1238,7 @@ export function mountApp(root: HTMLElement): { destroy: () => void } {
 		const input = form.querySelector<HTMLInputElement>('input[name="answer"]');
 		const raw = input?.value ?? "";
 		const res = checkNumberTask(task, raw);
+		react(res.correct ? "celebrating" : "encouraging", res.feedback);
 		const key = `${id}:${lvl}`;
 		taskFeedbackByKey.set(key, {
 			ok: res.correct,
@@ -1241,6 +1270,11 @@ export function mountApp(root: HTMLElement): { destroy: () => void } {
 
 	const onInput = (event: Event): void => {
 		const input = event.target as HTMLInputElement | null;
+		if (input?.id === "num-answer") {
+			const form = input.form;
+			if (form) numberDrafts.set(getTask(activeLessonId, form.dataset.level === "2" ? 2 : 1).id, input.value);
+			return;
+		}
 		if (!input || input.dataset.action !== "lexikon-search") return;
 		const pos = input.selectionStart ?? input.value.length;
 		lexikonQuery = input.value;
@@ -1254,6 +1288,15 @@ export function mountApp(root: HTMLElement): { destroy: () => void } {
 		}
 	};
 
+	const onChange = (event: Event): void => {
+		const select = event.target;
+		if (
+			select instanceof HTMLSelectElement &&
+			select.hasAttribute("data-step-picker")
+		)
+			goToStep(Number(select.value));
+	};
+
 	const onHashChange = (): void => {
 		syncFromHash();
 		render();
@@ -1262,6 +1305,7 @@ export function mountApp(root: HTMLElement): { destroy: () => void } {
 	root.addEventListener("click", onClick);
 	root.addEventListener("submit", onSubmit);
 	root.addEventListener("input", onInput);
+	root.addEventListener("change", onChange);
 	window.addEventListener("hashchange", onHashChange);
 	window.speechSynthesis?.addEventListener("voiceschanged", syncCouncil);
 
@@ -1273,6 +1317,7 @@ export function mountApp(root: HTMLElement): { destroy: () => void } {
 			root.removeEventListener("click", onClick);
 			root.removeEventListener("submit", onSubmit);
 			root.removeEventListener("input", onInput);
+			root.removeEventListener("change", onChange);
 			window.removeEventListener("hashchange", onHashChange);
 			window.speechSynthesis?.removeEventListener("voiceschanged", syncCouncil);
 			stopReading();

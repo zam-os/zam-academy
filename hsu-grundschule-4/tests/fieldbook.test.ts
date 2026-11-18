@@ -1,3 +1,4 @@
+import { lessonSteps } from "../src/lesson-steps";
 import { describe, expect, it } from "vitest";
 import { renderFieldMap } from "../src/companion/field-map";
 import { LESSON_BY_ID, STAGES } from "../src/curriculum";
@@ -64,4 +65,32 @@ describe("Lotta's field map and council", () => {
 			expect(meeting.submitted).toBe(false);
 		});
 	}
+});
+
+describe("station steps", () => {
+	it("keeps every fact, lab control and both task levels reachable", () => {
+		for (const lesson of LESSON_BY_ID.values()) {
+			const steps = lessonSteps(lesson);
+			expect(
+				steps.filter((s) => s.kind === "discover").map((s) => s.index),
+			).toEqual(lesson.factCards.map((_, i) => i));
+			expect(
+				steps.filter((s) => s.kind === "lab").map((s) => s.control),
+			).toEqual(
+				lesson.lab.controls
+					.filter((c) => c.key !== "vorschlag")
+					.map((c) => c.key),
+			);
+			expect(
+				steps.filter((s) => s.kind === "practice").map((s) => s.level),
+			).toEqual([1, 2]);
+			expect(steps.filter((s) => s.kind === "quiz")).toHaveLength(1);
+			expect(
+				steps.filter((s) => s.kind === "council").map((s) => s.phase),
+			).toEqual(
+				lesson.id === "unsere-gemeinde" ? ["places", "voices", "proposal"] : [],
+			);
+			expect(steps.at(-1)?.kind).toBe("book");
+		}
+	});
 });

@@ -10,6 +10,12 @@ The illustrated field map opens one world at a time. Select a landmark to walk
 there with Lotta and open a station. The bookmark returns to the last station
 visited on this device. Quiet mode and reduced motion both skip the walk.
 
+Each station shows one discovery card, lab control or practice task at a time.
+Children can page in either direction or choose a step directly. Lotta responds
+beside the task on wide screens and stays above it on narrow screens. The
+full explanation and worked example open on demand. The final field-book page
+links back to any activities still needed for the stamp.
+
 In the municipal council, pupils place a playground on either the school meadow
 or the orchard, consult residents and put forward a reasoned proposal. Either
 site can earn the existing common-good lab goal. Each resident's words appear
