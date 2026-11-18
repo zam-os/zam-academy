@@ -5,6 +5,7 @@ import { describe, expect, it } from "vitest";
 import html from "../index.html?raw";
 import { companionHtml, EVENTS, reaction } from "../src/companion";
 import { findLesson, LESSONS } from "../src/curriculum";
+import { makeTask } from "../src/exercises/tasks";
 import { isStep, learnHtml, learnNextHtml, learnPieces, stepperHtml, stepsOf } from "../src/flow";
 import { esc } from "../src/format";
 import { MOTION_KEY } from "../src/motion";
@@ -139,6 +140,38 @@ describe("Lektionsfluss", () => {
 		expect(bar).toContain('aria-label="Schnellcheck, 1 von 1 Stern"');
 		expect(bar).toContain('aria-label="Üben, 0 von 2 Sternen"');
 		expect(bar.match(/class="star on"/g)).toHaveLength(1);
+	});
+});
+
+describe("Lektionsfluss: Layout und Wegweiser (Zweitprüfung)", () => {
+	const rule = (selector: string) => css.match(new RegExp(`(^|\\n)${selector.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")} \\{[^}]*\\}`))?.[0] ?? "";
+
+	it("lets every step take the room it needs; number and stars never shrink out of the button", () => {
+		expect(rule(".stepper li")).toContain("flex: 1 1 auto");
+		expect(rule(".stepper li")).toContain("min-width: 0");
+		expect(rule(".stepper li")).not.toMatch(/min-width: \d*\.?\d+rem/);
+		expect(rule(".stepper-item .step,\n.stepper-stars")).toContain("flex: none");
+		expect(rule(".stepper-label")).toContain("text-overflow: ellipsis");
+		// Five steps (Schreibtisch) switch to the compact form earlier than four.
+		expect(css).toMatch(/@container \(max-width: 872px\) \{\s*\.stepper ol:has\(> li:nth-child\(5\)\)/);
+		expect(css).toMatch(/@container \(max-width: 700px\)/);
+	});
+
+	it("keeps the steps and Tinto's panel below the sticky header, however tall it wraps", () => {
+		expect(rule(".stepper")).toContain("scroll-margin-top: calc(var(--header-h");
+		expect(css).toContain("top: calc(var(--header-h, 4.6rem) + 1rem);");
+	});
+
+	it("points to steps, not to 'oben' or 'unten' on a page that no longer scrolls", () => {
+		const stale = /(Übungen|Aufgaben) (weiter )?unten|Text (weiter )?oben|(siehe|wie) (oben|unten)/;
+		for (const l of LESSONS) {
+			expect(l.workshop.intro, l.id).not.toMatch(stale);
+			for (const level of [1, 2] as const)
+				for (let i = 1; i <= 30; i += 1) {
+					const t = makeTask(l.id, l.generators, level, i);
+					expect(`${t.prompt} ${t.hint}`, `${l.id}/${level}`).not.toMatch(stale);
+				}
+		}
 	});
 });
 

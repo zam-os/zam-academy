@@ -239,6 +239,8 @@ function openLesson(id: string, level?: Level): void {
 	if (level) {
 		taskLevel = level;
 		step = 4;
+		// A link straight to the tasks: Tinto talks about practising, not reading.
+		companion = { ...companion, line: reaction("step-practice").line };
 	}
 }
 
@@ -301,8 +303,10 @@ function districtHtml(id: Stage["id"]): string {
 	const stage = STAGES.find((s) => s.id === id) ?? STAGES[0];
 	const lessons = LESSONS.filter((l) => l.stage === stage.id);
 	const done = lessons.filter((l) => isComplete(progress, l.id)).length;
-	return `<section class="district" data-stage="${stage.id}" aria-live="polite">
+	// Tinto's greeting stays next to the stations, also where the hero is scrolled away.
+	return `<section class="district" data-stage="${stage.id}">
 <header><span class="district-icon" aria-hidden="true">${stage.icon}</span><div><h2>${esc(stage.title)}</h2><p>${esc(stage.subtitle)}</p></div><span class="district-count">${done} / ${lessons.length} 🏅</span></header>
+<p class="district-hello"><span class="district-tinto" aria-hidden="true">${tinto("happy", "Tinto")}</span><span><strong>Tinto:</strong> ${esc(stage.greeting)}</span></p>
 <ol class="road">${lessons
 		.map(
 			(l, i) =>
@@ -435,7 +439,8 @@ function goStep(n: number): void {
 		heading.focus({ preventScroll: true });
 	}
 	const top = stepper.getBoundingClientRect().top;
-	if (top < 80 || top > window.innerHeight - 120)
+	const below = document.querySelector(".header")?.getBoundingClientRect().bottom ?? 0;
+	if (top < below + 8 || top > window.innerHeight - 120)
 		stepper.scrollIntoView({ behavior: calm() ? "auto" : "smooth", block: "start" });
 	const events: Record<Step, TintoEvent> = { 1: "learn", 2: "step-quiz", 3: "step-workshop", 4: "step-practice", 5: "step-desk" };
 	react(events[n]);
@@ -1180,6 +1185,15 @@ function applyRoute(): void {
 	}
 	render();
 }
+/* The sticky header wraps to two or three rows on small screens. Its height
+   keeps Tinto's panel and the steps of a lesson from sliding under it. */
+const header = document.querySelector<HTMLElement>(".header");
+function measureHeader(): void {
+	if (header) document.documentElement.style.setProperty("--header-h", `${Math.ceil(header.getBoundingClientRect().height)}px`);
+}
+if (header && typeof ResizeObserver !== "undefined") new ResizeObserver(measureHeader).observe(header);
+measureHeader();
+
 window.addEventListener("hashchange", applyRoute);
 applyRoute();
 persist();

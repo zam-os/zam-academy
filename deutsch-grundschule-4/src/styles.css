@@ -1964,7 +1964,8 @@ main[data-view="lesson"] {
 	}
 	.companion {
 		position: sticky;
-		top: 5.6rem;
+		/* Below the sticky header, whose height main.ts measures into --header-h. */
+		top: calc(var(--header-h, 4.6rem) + 1rem);
 	}
 }
 @media (max-width: 899px) {
@@ -2002,23 +2003,26 @@ main[data-view="lesson"] {
 	margin: 0.3rem 0 0;
 }
 .stepper {
-	scroll-margin-top: 6rem;
+	/* The header can wrap to three rows on a phone; never hide the steps under it. */
+	scroll-margin-top: calc(var(--header-h, 6rem) + 0.8rem);
 	margin-bottom: 1.1rem;
+	container-type: inline-size;
 }
 .stepper ol {
 	list-style: none;
 	margin: 0;
 	padding: 0;
 	display: flex;
-	flex-wrap: wrap;
 	gap: 0.4rem;
 }
+/* Each step takes the room its label needs; stars and number never shrink. */
 .stepper li {
-	flex: 1 1 0;
-	min-width: 7.6rem;
+	flex: 1 1 auto;
+	min-width: 0;
 }
 .stepper-item {
 	width: 100%;
+	min-width: 0;
 	display: flex;
 	align-items: center;
 	gap: 0.45rem;
@@ -2055,6 +2059,46 @@ main[data-view="lesson"] {
 .stepper-stars {
 	margin-left: auto;
 	white-space: nowrap;
+}
+.stepper-item .step,
+.stepper-stars {
+	flex: none;
+}
+.stepper-label {
+	min-width: 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+/* Too narrow for every label: only the current step keeps its name; the
+   others show number and stars and keep their full name for screen readers
+   in aria-label. All labels need about 870 px with five steps and 695 px
+   with four (measured in Chrome); below that the compact form takes over. */
+@media (min-width: 721px) {
+	@container (max-width: 872px) {
+		.stepper ol:has(> li:nth-child(5)) .stepper-item:not(.current) .stepper-label {
+			display: none;
+		}
+		.stepper ol:has(> li:nth-child(5)) .stepper-item:not(.current) {
+			justify-content: center;
+			padding-right: 0.5rem;
+		}
+		.stepper ol:has(> li:nth-child(5)) .stepper-item:not(.current) .stepper-stars {
+			margin-left: 0;
+		}
+	}
+	@container (max-width: 700px) {
+		.stepper-item:not(.current) .stepper-label {
+			display: none;
+		}
+		.stepper-item:not(.current) {
+			justify-content: center;
+			padding-right: 0.5rem;
+		}
+		.stepper-item:not(.current) .stepper-stars {
+			margin-left: 0;
+		}
+	}
 }
 .stepper-stars .star {
 	font-size: 1rem;
@@ -2946,6 +2990,20 @@ mark.changed {
 	}
 }
 
+.district-hello {
+	display: flex;
+	align-items: center;
+	gap: 0.6rem;
+	margin: 0;
+	padding: 0.6rem 1.2rem;
+	border-bottom: 2px solid var(--stage-soft);
+	font-weight: 600;
+}
+.district-tinto .tinto {
+	width: 46px;
+	height: 46px;
+}
+
 /* ---------- Tintos Spiel: Acht Arme, acht Wörter ---------- */
 .game-head p {
 	max-width: 62ch;
@@ -3186,13 +3244,12 @@ mark.changed {
 	}
 	.stepper-item {
 		font-size: 0.84rem;
-		gap: 0.3rem;
-		padding-right: 0.5rem;
+		gap: 0.25rem;
+		padding-right: 0.4rem;
 	}
-	.stepper-label {
-		min-width: 0;
-		overflow: hidden;
-		text-overflow: ellipsis;
+	.stepper-item .step {
+		width: 1.6rem;
+		height: 1.6rem;
 	}
 	.stepper-stars .star {
 		font-size: 0.85rem;

@@ -139,6 +139,8 @@ describe("Acht Arme, acht Wörter", () => {
 			}
 		expect(hint({ word: "lachen", cls: "verb", placed: false, misses: 1 }, "nomen")).toContain("„wir lachen“");
 		expect(hint({ word: "alt", cls: "adjektiv", placed: false, misses: 1 }, "verb")).toContain("„sehr alt“");
+		// "sehr wahr" sounds stilted (review of PR #156); a whole sentence helps more.
+		expect(hint({ word: "wahr", cls: "adjektiv", placed: false, misses: 1 }, "nomen")).toContain("Passt „Das ist wahr.“?");
 		expect(hint({ word: "Fisch", cls: "nomen", placed: false, misses: 1 }, "verb")).toContain("der, die oder das");
 	});
 

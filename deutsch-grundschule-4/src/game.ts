@@ -85,6 +85,9 @@ export function drop(round: Round, index: number, basket: WordClass): DropResult
 
 export const finished = (round: Round): boolean => round.cards.every((c) => c.placed);
 
+/** Adjectives for which "sehr …" sounds stilted get a sentence of their own. */
+const ADJECTIVE_TEST: Record<string, string> = { wahr: "„Das ist wahr.“" };
+
 /** What Tinto says after a wrong basket: the test that shows the word class. */
 export function hint(card: Card, basket: WordClass): string {
 	const wrong = BASKETS.find((b) => b.id === basket)?.label ?? "";
@@ -93,7 +96,7 @@ export function hint(card: Card, basket: WordClass): string {
 			? "Passt der, die oder das davor? Dann ist es ein Nomen."
 			: card.cls === "verb"
 				? `Passt „wir ${card.word}“? Dann ist es ein Verb.`
-				: `Passt „sehr ${card.word}“? Dann ist es ein Adjektiv.`;
+				: `Passt ${ADJECTIVE_TEST[card.word] ?? `„sehr ${card.word}“`}? Dann ist es ein Adjektiv.`;
 	return `„${card.word}“ gehört nicht zu den ${wrong}. ${test}`;
 }
 
