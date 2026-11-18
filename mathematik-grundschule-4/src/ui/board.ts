@@ -46,3 +46,15 @@ export function markedNumeral(value: number, column: number): string {
 		.join("");
 	return `<p class="digit-numeral" aria-label="${format(value)}, markierte Ziffer ${digits(value)[column]}">${text}</p>`;
 }
+
+/** A reversible introduction before the first saved mission. */
+export function placeValuePreview(tens: boolean): string {
+	const labels = ["Hunderter", "Zehner", "Einer"];
+	const counts = tens ? [3, 6, 0] : [3, 0, 6];
+	const pieces = [
+		'<i class="hundreds"></i>',
+		'<i class="ten-rod"></i>',
+		"<i></i>",
+	];
+	return `<div class="place-preview"><div class="number-postcard" role="img" aria-label="${counts.join("")}: ${counts.map((n, i) => n + " " + labels[i]).join(", ")}">${counts.map((n, i) => `<div aria-hidden="true"><span class="${i === 2 && n ? "six-ones" : "bundles"}">${n ? pieces[i].repeat(n) : "—"}</span><b>${n}</b><small>${labels[i]}</small></div>`).join("")}</div><p class="place-equation">${tens ? "360 = 300 + 60" : "306 = 300 + 6"}</p><button data-action="move-six">${tens ? "6 zu den Einern schieben →" : "← 6 zu den Zehnern schieben"}</button></div>`;
+}
