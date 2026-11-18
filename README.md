@@ -52,6 +52,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | Geschichte 9 Realschule (LehrplanPLUS Bayern, gemeinsamer Lernpfad) | [`geschichte-realschule-9/`](geschichte-realschule-9/) | https://academy.zam-os.org/geschichte-realschule-9/ | `zam-academy:geschichte-realschule-9` |
 | Geschichte 10 Realschule (LehrplanPLUS Bayern, gemeinsamer Lernpfad) | [`geschichte-realschule-10/`](geschichte-realschule-10/) | https://academy.zam-os.org/geschichte-realschule-10/ | `zam-academy:geschichte-realschule-10` |
 | Geography 5 Realschule (Bavaria, all tracks) | [`geographie-realschule-5/`](geographie-realschule-5/) | https://academy.zam-os.org/geographie-realschule-5/ | `zam-academy:geographie-realschule-5` |
+| Geography 6 Realschule (Bavaria, all tracks) | [`geographie-realschule-6/`](geographie-realschule-6/) | https://academy.zam-os.org/geographie-realschule-6/ | `zam-academy:geographie-realschule-6` |
 | Geographie 9 Realschule (LehrplanPLUS Bayern, gemeinsamer Lernpfad) | [`geographie-realschule-9/`](geographie-realschule-9/) | https://academy.zam-os.org/geographie-realschule-9/ | `zam-academy:geographie-realschule-9` |
 | Biology 6 Realschule (Bavaria, all tracks) | [`biologie-realschule-6/`](biologie-realschule-6/) | https://academy.zam-os.org/biologie-realschule-6/ | `zam-academy:biologie-realschule-6` |
 | Biologie 10 Realschule (LehrplanPLUS Bayern, gemeinsamer Lernpfad) | [`biologie-realschule-10/`](biologie-realschule-10/) | https://academy.zam-os.org/biologie-realschule-10/ | `zam-academy:biologie-realschule-10` |
@@ -156,6 +157,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Mathematik 13 Gymnasium: cd mathematik-gymnasium-13 (dev server on :5225)
 # Physik 11 Gymnasium: cd physik-gymnasium-11 (dev server on :5226)
 # Geography 5 Realschule: cd geographie-realschule-5 (dev server on :5240)
+# Geography 6 Realschule: cd geographie-realschule-6 (dev server on :5257)
 # German 5 Mittelschule: cd deutsch-mittelschule-5 (dev server on :5230)
 # German 6 Mittelschule: cd deutsch-mittelschule-6 (dev server on :5231)
 # Mathematics 5 Mittelschule: cd mathematik-mittelschule-5 (dev server on :5228)

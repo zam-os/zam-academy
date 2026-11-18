@@ -1,0 +1,324 @@
+[
+	{
+		"id": "landwirtschaft-standort",
+		"lb": 3,
+		"title": "Was wächst wo?",
+		"period": "Geo6 LB 3 · Landwirtschaft und Nahrungsmittel",
+		"intro": "Weizen, Oliven und Grünland haben unterschiedliche Ansprüche. Ein Betrieb entscheidet auch nach Böden, Gefälle, Kosten und Absatz.",
+		"paragraphs": [
+			"Ackerbau erzeugt Pflanzen auf Feldern, Viehzucht dient der Haltung und Zucht von Nutztieren. Eine Sonderkultur wie Spargel, Hopfen oder Wein braucht besondere Arbeit und oft bestimmte Standortbedingungen. Im Haupterwerbsbetrieb ist Landwirtschaft die wichtigste Erwerbsquelle des Haushalts. Im Nebenerwerb gibt es daneben eine bedeutende andere Erwerbstätigkeit. Staatliche Förderungen können betriebliche Entscheidungen beeinflussen.",
+			"Die Vegetationsperiode ist die Zeit, in der Pflanzen unter den örtlichen Bedingungen wachsen können. Ein langer warmer Sommer hilft wenig, wenn im entscheidenden Stadium Wasser fehlt. In flachen, fruchtbaren Teilen der nordfranzösischen Tiefebenen ist Getreideanbau günstig. Im Alpenvorland bietet Grünland Futter für Rinder. In Südspanien begünstigen warme Winter den Gemüseanbau, während trockene Zeiten Bewässerung nötig machen können."
+		],
+		"takeaway": "Vergleiche für Anbau immer Wärme, Zeitpunkt des Regens, Boden und Hangneigung.",
+		"sourceIds": [
+			"lehrplan"
+		],
+		"quiz": {
+			"question": "Warum ist die Verteilung des Niederschlags wichtig?",
+			"answer": "Wasser muss dann verfügbar sein, wenn die Pflanzen es brauchen.",
+			"wrong": [
+				"Nur der Jahreswert entscheidet über jede Ernte.",
+				"Regen verhindert grundsätzlich den Pflanzenanbau."
+			],
+			"explanation": "Eine niederschlagsreiche Winterzeit kann mit Trockenheit während des Wachstums zusammenfallen."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Landwirtschaft und Umwelt untersuchen",
+			"instruction": "Ordne jede Aussage zu. Prüfe deine Entscheidung und lies die Rückmeldung.",
+			"categories": [
+				"Ackerbau",
+				"Viehzucht",
+				"Sonderkultur"
+			],
+			"entries": [
+				{
+					"text": "Weizen auf flachem Lössboden.",
+					"target": 0,
+					"feedback": "Getreide gehört zum Ackerbau."
+				},
+				{
+					"text": "Milchkühe auf Grünland im Alpenvorland.",
+					"target": 1,
+					"feedback": "Das Grünland liefert den Rindern Futter."
+				},
+				{
+					"text": "Hopfen mit hohen Gerüsten in der Hallertau.",
+					"target": 2,
+					"feedback": "Hopfen braucht eine besondere Ausstattung und Pflege."
+				}
+			],
+			"conclusion": "Vergleiche für Anbau immer Wärme, Zeitpunkt des Regens, Boden und Hangneigung."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Vergleiche die Anbaubedingungen für Weizen in einer Tiefebene und Gemüse im trockenen Süden Spaniens.",
+				"hints": [
+					"Wie unterscheiden sich Boden oder Gelände?",
+					"Welche Rolle spielt die Niederschlagsverteilung?"
+				],
+				"model": "Auf ebenem, fruchtbarem Boden kann Weizen großflächig mit Maschinen angebaut werden. Südspaniens milde Winter ermöglichen Gemüseanbau auch in kühleren Monaten, aber bei zu wenig Regen ist Bewässerung nötig.",
+				"criteria": [
+					"Wie unterscheiden sich Boden oder Gelände?",
+					"Welche Rolle spielt die Niederschlagsverteilung?",
+					"Ich ordne beide Beispiele räumlich ein."
+				]
+			},
+			"2": {
+				"prompt": "Zwei Orte haben denselben Jahresniederschlag. Am ersten fällt viel im Sommer, am zweiten vor allem im Winter. Wo braucht Sommergemüse eher Bewässerung?",
+				"hints": [
+					"Wann wächst das Gemüse?",
+					"Wann fällt das Wasser?"
+				],
+				"model": "Am Ort mit Winterregen kann während des Sommerwachstums Wasser fehlen. Ob und wie viel Bewässerung nötig ist, hängt auch davon ab, wie viel Wasser im Boden gespeichert wird und wie viel verdunstet.",
+				"criteria": [
+					"Wann wächst das Gemüse?",
+					"Wann fällt das Wasser?",
+					"Ich nenne einen weiteren Faktor."
+				]
+			}
+		},
+		"model": "klima"
+	},
+	{
+		"id": "boden-wasser",
+		"lb": 3,
+		"title": "Boden und Wasser schützen",
+		"period": "Geo6 LB 3 · Landwirtschaft und Nahrungsmittel",
+		"intro": "Bei gleichem Regen sieht ein bepflanzter Hang anders aus als ein frisch umgegrabener.",
+		"paragraphs": [
+			"Boden speichert Wasser und Luft und hält Pflanzenwurzeln. Bedeckung schützt ihn vor direktem Aufprall der Tropfen. Bei Erosion tragen Wasser oder Wind Boden ab; fruchtbarer Oberboden kann verloren gehen. Schneller Abfluss an steilen Hängen, schwere Maschinen auf nassem Boden und lange unbedeckte Flächen können die Probleme verstärken. Zu viel Dünger kann Gewässer belasten.",
+			"Vergleiche im Unterricht zwei gleich geneigte Schalen mit ähnlichem Boden, eine mit Grasbewuchs und eine mit offenem Boden. Gieße jeweils gleich viel Wasser aus gleicher Höhe und fange den Abfluss in Bechern auf. Vergleiche Menge und Trübung. Wurzeln und Bedeckung können den Boden festhalten; die Trübung ist ein Anhaltspunkt für mitgeführte Teilchen."
+		],
+		"takeaway": "Ändere bei einem Versuch nur das Merkmal, dessen Wirkung du prüfen willst.",
+		"sourceIds": [
+			"lehrplan"
+		],
+		"quiz": {
+			"question": "Was deutet bei gleich aufgebauten Schalen auf stärkeren Bodenabtrag hin?",
+			"answer": "Mehr mitgeführter Boden im Auffanggefäß.",
+			"wrong": [
+				"Helleres Licht über einer Schale.",
+				"Eine andere Farbe des Bechers."
+			],
+			"explanation": "Mitgeführte Bodenteilchen sind ein beobachtbares Zeichen für Erosion."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Landwirtschaft und Umwelt untersuchen",
+			"instruction": "Ordne jede Aussage zu. Prüfe deine Entscheidung und lies die Rückmeldung.",
+			"categories": [
+				"Gleich halten",
+				"Gezielt ändern",
+				"Beobachten"
+			],
+			"entries": [
+				{
+					"text": "Wassermenge und Neigung der Schalen.",
+					"target": 0,
+					"feedback": "Sonst kann ein Unterschied von einer anderen Bedingung stammen."
+				},
+				{
+					"text": "Bepflanzung der Oberfläche.",
+					"target": 1,
+					"feedback": "Deren Wirkung möchtest du prüfen."
+				},
+				{
+					"text": "Menge und Trübung im Auffangbecher.",
+					"target": 2,
+					"feedback": "Das sind Hinweise auf Abfluss und Abtrag."
+				}
+			],
+			"conclusion": "Ändere bei einem Versuch nur das Merkmal, dessen Wirkung du prüfen willst."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Protokolliere einen Vergleich der beiden Bodenschalen: Nenne Aufbau, Beobachtung und mögliche Erklärung.",
+				"hints": [
+					"Welche Bedingungen bleiben gleich?",
+					"Was kannst du im Becher sehen?"
+				],
+				"model": "Gleiche Schalen bekommen gleich viel Wasser. Aus der Schale mit nacktem Boden läuft trüberes Wasser. Das spricht dafür, dass mehr Teilchen mitgerissen wurden. Die Grasdecke hat den Boden geschützt.",
+				"criteria": [
+					"Welche Bedingungen bleiben gleich?",
+					"Was kannst du im Becher sehen?",
+					"Ich trenne Beobachtung und Erklärung."
+				]
+			},
+			"2": {
+				"prompt": "Auf einem Hang läuft nach der Ernte oft braunes Wasser ab. Begründe zwei mögliche Schutzmaßnahmen.",
+				"hints": [
+					"Wie hältst du Boden fest?",
+					"Wie verlangsamst du Wasser?"
+				],
+				"model": "Eine Zwischenfrucht hält den Boden mit Wurzeln fest und bremst Tropfen. Heckenstreifen oder Bearbeitung quer zum Hang können Wasser abbremsen und Teilchen abfangen. Ich prüfe am Hang, ob sich Abflussrinnen bilden.",
+				"criteria": [
+					"Wie hältst du Boden fest?",
+					"Wie verlangsamst du Wasser?",
+					"Ich erkläre je eine Wirkung."
+				]
+			}
+		},
+		"model": "abfluss"
+	},
+	{
+		"id": "lebensmittel",
+		"lb": 3,
+		"title": "Vom Hof bis zum Einkauf",
+		"period": "Geo6 LB 3 · Landwirtschaft und Nahrungsmittel",
+		"intro": "Äpfel aus der Region, spanische Tomaten und Käse aus dem Alpenvorland haben verschiedene Wege hinter sich.",
+		"paragraphs": [
+			"Regional bezeichnet die Herkunft aus einem näheren Gebiet; saisonal bedeutet, dass ein Produkt zur üblichen Erntezeit angeboten wird. Lebensmittel gehen vom Anbau oder der Tierhaltung über Sortierung, gegebenenfalls Verarbeitung und Lagerung bis zum Verkauf. Ein Wochenmarkt kann kurze Wege bieten; auf Herkunftsschildern kannst du prüfen, ob ein Produkt wirklich in der Nähe erzeugt wurde. Im Supermarkt findest du sowohl regionale als auch importierte Ware.",
+			"In Regionen mit spezialisierten Geflügel- oder Schweinebetrieben können viele Tiere auf engem Raum gehalten werden. Große Betriebe liefern große Mengen, brauchen aber Futter und Energie; Gülle und Tierwohl sind wichtige Prüfpunkte. In Südspanien ermöglicht warmer Winter Gemüse aus Folien- oder Gewächshauskulturen; dabei sind Wasserbedarf, Arbeitsbedingungen und Transport zu berücksichtigen. Ein beheiztes heimisches Gewächshaus kann viel Energie brauchen. Ein kurzer Weg allein reicht daher zur Umweltbewertung nicht."
+		],
+		"takeaway": "Prüfe beim Einkauf Herkunft, Saison, Anbauweise, Verarbeitung und Transport gemeinsam.",
+		"sourceIds": [
+			"lehrplan"
+		],
+		"quiz": {
+			"question": "Was bedeutet saisonal bei Obst?",
+			"answer": "Es wird zu seiner üblichen Erntezeit angeboten.",
+			"wrong": [
+				"Es kommt immer aus dem eigenen Ort.",
+				"Es muss mit dem Flugzeug kommen."
+			],
+			"explanation": "Saison beschreibt, wann das Produkt wächst oder geerntet wird, nicht seine Herkunft."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Landwirtschaft und Umwelt untersuchen",
+			"instruction": "Ordne jede Aussage zu. Prüfe deine Entscheidung und lies die Rückmeldung.",
+			"categories": [
+				"Herkunft",
+				"Saison",
+				"Anbauweise"
+			],
+			"entries": [
+				{
+					"text": "Auf dem Schild steht Frankreich.",
+					"target": 0,
+					"feedback": "Das bezeichnet den Herkunftsstaat."
+				},
+				{
+					"text": "Heimischer Spargel wird im Frühjahr geerntet.",
+					"target": 1,
+					"feedback": "Der Hinweis nennt die typische Jahreszeit."
+				},
+				{
+					"text": "Tomaten wachsen im beheizten Gewächshaus.",
+					"target": 2,
+					"feedback": "Die Heizung ist Teil der Produktionsbedingungen."
+				}
+			],
+			"conclusion": "Prüfe beim Einkauf Herkunft, Saison, Anbauweise, Verarbeitung und Transport gemeinsam."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Untersuche Herkunftsschilder für drei Sorten. Entwirf eine Karte und ein Einkaufskriterium.",
+				"hints": [
+					"Welche Daten findest du am Schild?",
+					"Wie zeichnest du die Herkunft ein?"
+				],
+				"model": "Ich notiere Produkt, Staat und Datum und markiere die Staaten in einer Europakarte. Ein Balkendiagramm zählt die Sorten pro Staat. Bei gleicher Auswahl bevorzuge ich in der Regel saisonale Ware aus der Nähe, wenn die Art des Anbaus vergleichbar ist.",
+				"criteria": [
+					"Welche Daten findest du am Schild?",
+					"Wie zeichnest du die Herkunft ein?",
+					"Ich begründe ein Einkaufskriterium."
+				]
+			},
+			"2": {
+				"prompt": "Vergleiche im Winter eine lokale beheizte Gewächshaustomate und eine südspanische Tomate mit Lkw-Transport.",
+				"hints": [
+					"Welche Vorteile kennst du?",
+					"Welche Belastungen sind möglich?"
+				],
+				"model": "Die lokale Tomate hat einen kurzen Weg, die Heizung kann aber viel Energie benötigen. Die spanische Tomate hat einen längeren Weg und der Anbau kann Wasser in einer trockenen Region beanspruchen. Ich brauche Daten zu Heizung, Wasser und Transport für ein belastbares Urteil.",
+				"criteria": [
+					"Welche Vorteile kennst du?",
+					"Welche Belastungen sind möglich?",
+					"Ich benenne nötige Daten."
+				]
+			}
+		}
+	},
+	{
+		"id": "meer-fisch",
+		"lb": 3,
+		"title": "Fischerei, Aquakultur und Plastik",
+		"period": "Geo6 LB 3 · Landwirtschaft und Nahrungsmittel",
+		"intro": "Das Meer versorgt Menschen mit Nahrung. Fang, Zucht und Abfälle können seine Lebensräume verändern.",
+		"paragraphs": [
+			"Hochseefischerei fängt wild lebenden Fisch auf offenem Meer. Wird dauerhaft mehr entnommen, als nachwächst, schrumpft der Bestand. Unbeabsichtigt mitgefangene Tiere heißen Beifang. Aquakultur züchtet Wasserorganismen in kontrollierten Anlagen, etwa Fisch in Netzgehegen oder Muscheln an Leinen. Je nach Standort und Zuchtart können Futterbedarf, Ausscheidungen, Krankheiten oder entkommene Tiere die Umwelt belasten.",
+			"Plastik gelangt etwa durch Müll in Flüssen oder verlorene Fanggeräte ins Meer. Tiere können sich in Teilen verfangen oder kleine Teilchen aufnehmen. Vergleiche beim Fischkauf Art, Herkunft, Fang- oder Zuchtmethode. Weniger Einwegplastik und ordentlich entsorgter Müll mindern den Eintrag an der Quelle."
+		],
+		"takeaway": "Beurteile Meeresschutz nach Folgen für Bestand, andere Arten und Lebensraum.",
+		"sourceIds": [
+			"lehrplan"
+		],
+		"quiz": {
+			"question": "Was ist Beifang?",
+			"answer": "Ungewollt mitgefangene Tiere.",
+			"wrong": [
+				"Absichtlich gezüchtete Muscheln.",
+				"Verpackung für frischen Fisch."
+			],
+			"explanation": "Beifang entsteht, wenn etwa andere Fischarten oder Meerestiere im Fanggerät landen."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Landwirtschaft und Umwelt untersuchen",
+			"instruction": "Ordne jede Aussage zu. Prüfe deine Entscheidung und lies die Rückmeldung.",
+			"categories": [
+				"Wildfang",
+				"Aquakultur",
+				"Plastikeintrag"
+			],
+			"entries": [
+				{
+					"text": "Ein Netz fängt Fisch und unbeabsichtigt eine weitere Art.",
+					"target": 0,
+					"feedback": "Das unbeabsichtigt gefangene Tier ist Beifang."
+				},
+				{
+					"text": "Muscheln wachsen an Leinen für die Ernte.",
+					"target": 1,
+					"feedback": "Die Tiere werden gezielt in einer Anlage gehalten."
+				},
+				{
+					"text": "Ein verlorenes Fangnetz bleibt im Meer.",
+					"target": 2,
+					"feedback": "Kunststoff kann lange im Wasser verbleiben."
+				}
+			],
+			"conclusion": "Beurteile Meeresschutz nach Folgen für Bestand, andere Arten und Lebensraum."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Vergleiche je eine Umweltwirkung von Hochseefischerei und Aquakultur.",
+				"hints": [
+					"Was passiert beim Wildfang?",
+					"Welche Wirkung kann Zucht haben?"
+				],
+				"model": "Im Wildfang kann ein Bestand durch zu hohe Fangmengen sinken. In Aquakultur kann ungenutztes Futter das örtliche Wasser belasten. Die Wirkung hängt von Fanggerät, Standort und Zuchtart ab.",
+				"criteria": [
+					"Was passiert beim Wildfang?",
+					"Welche Wirkung kann Zucht haben?",
+					"Ich nenne je eine konkrete Ursache."
+				]
+			},
+			"2": {
+				"prompt": "Ein Laden wirbt für eine Fischsorte aus Aquakultur als grundsätzlich nachhaltig. Welche Angaben würdest du prüfen?",
+				"hints": [
+					"Welche Zuchtmethoden gibt es?",
+					"Welche Auswirkungen prüfst du?"
+				],
+				"model": "Ich prüfe Zuchtart, Herkunft, Futter und Auswirkungen auf die Wasserqualität. Eine Muschelkultur und eine mit Futter versorgte Fischzucht haben unterschiedliche Wirkungen. Erst konkrete Angaben erlauben eine Bewertung.",
+				"criteria": [
+					"Welche Zuchtmethoden gibt es?",
+					"Welche Auswirkungen prüfst du?",
+					"Ich vermeide ein Pauschalurteil."
+				]
+			}
+		}
+	}
+]
