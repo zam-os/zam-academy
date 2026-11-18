@@ -1,5 +1,8 @@
 import "./styles.css";
-import { type LottaMood, renderLottaSvg, renderStampSvg } from "./companion/lotta";
+import "./fieldbook.css";
+import { renderFieldMap, walkToWorld } from "./companion/field-map";
+import { CouncilMeeting, renderCouncil, updateCouncil } from "./labs/council";
+import { type LottaMood, renderStampSvg } from "./companion/lotta";
 import {
 	LESSON_BY_ID,
 	LESSONS,
@@ -24,7 +27,7 @@ import {
 	renderLabSceneSvg,
 } from "./labs";
 import { escapeHtml, fmt } from "./model/format";
-import type { ExerciseTask, LabState, Lesson, Stage } from "./model/types";
+import type { ExerciseTask, LabState, Lesson, Stage, StageId } from "./model/types";
 import {
 	clearProgress,
 	freshProgress,
@@ -102,10 +105,13 @@ export function mountApp(root: HTMLElement): { destroy: () => void } {
 
 	let view: ViewMode = "map";
 	let activeLessonId: string = LESSONS[0].id;
+	let mapWorld: StageId = LESSON_BY_ID.get(progress.lastLessonId ?? "")?.stageId ?? "lb1";
+	let council = new CouncilMeeting();
+	let reading: SpeechSynthesisUtterance | null = null;
 	let lexikonQuery = "";
 	let lottaMood: LottaMood = "curious";
 	let lottaMessage =
-		"Servus! Ich bin Luchs Lotta. Such dir eine Entdeckerwelt aus – jede Station machst du einmal in Ruhe durch, danach trainierst du die Karten schlau in ZAM weiter!";
+		"Tipp auf einen Ort. Ich laufe mit dir hin!";
 
 	const labStates = new Map<string, LabState>();
 	const quizSelection = new Map<string, number>();
@@ -128,12 +134,41 @@ export function mountApp(root: HTMLElement): { destroy: () => void } {
 
 	const knownLessonIds = new Set(LESSONS.map((l) => l.id));
 
+	function enterLesson(id: string): void {
+		const lesson = LESSON_BY_ID.get(id);
+		if (!lesson) return;
+		activeLessonId = id;
+		mapWorld = lesson.stageId;
+		if (progress.lastLessonId !== id) {
+			progress = { ...progress, lastLessonId: id };
+			persistProgress();
+		}
+	}
+
+	function reducedMotion(): boolean {
+		return progress.quietMode || window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+	}
+
+	function stopReading(): void {
+		if (reading) window.speechSynthesis.cancel();
+		reading = null;
+	}
+
+	function localVoice(): SpeechSynthesisVoice | undefined {
+		return window.speechSynthesis?.getVoices().find(voice => voice.localService && /^de(?:-|$)/i.test(voice.lang));
+	}
+
+	function syncCouncil(): void {
+		const panel = root.querySelector<HTMLElement>("#gemeinderat");
+		if (panel) updateCouncil(panel, council, Boolean(localVoice()));
+	}
+
 	function syncFromHash(): void {
 		const hash = window.location.hash;
 		const lessonId = parseLessonHash(hash, knownLessonIds);
 		if (lessonId) {
 			view = "lesson";
-			activeLessonId = lessonId;
+			enterLesson(lessonId);
 			return;
 		}
 		if (hash === "#view=stempel") {
@@ -150,7 +185,7 @@ export function mountApp(root: HTMLElement): { destroy: () => void } {
 	function navigateTo(nextView: ViewMode, lessonId?: string): void {
 		view = nextView;
 		if (nextView === "lesson" && lessonId && LESSON_BY_ID.has(lessonId)) {
-			activeLessonId = lessonId;
+			enterLesson(lessonId);
 			window.history.replaceState(null, "", `#lesson=${lessonId}`);
 		} else if (nextView === "map") {
 			window.history.replaceState(
@@ -162,7 +197,7 @@ export function mountApp(root: HTMLElement): { destroy: () => void } {
 			window.history.replaceState(null, "", `#view=${nextView}`);
 		}
 		render();
-		window.scrollTo({ top: 0, behavior: progress.quietMode ? "auto" : "smooth" });
+		window.scrollTo({ top: 0, behavior: reducedMotion() ? "auto" : "smooth" });
 	}
 
 	function isDarkActive(): boolean {
@@ -291,68 +326,60 @@ export function mountApp(root: HTMLElement): { destroy: () => void } {
 
 	function renderMapView(): string {
 		applyStagePalette(undefined);
-		const earned = countEarnedStamps();
-		const totalGoals = LESSONS.reduce(
-			(sum, l) => sum + getLessonProgress(progress, l.id).goalsReached.length,
-			0,
-		);
-		const dark = isDarkActive();
-
+		const last = LESSON_BY_ID.get(progress.lastLessonId ?? "");
 		return `
-			<section class="hero-card" aria-label="Begrüßung von Luchs Lotta">
-				<div class="lotta-wrap">${renderLottaSvg(progress.quietMode ? "resting" : lottaMood)}</div>
-				<div>
-					<h1 class="hero-title">Auf Entdeckungstour durch alle 6 HSU-Welten!</h1>
-					<p class="hero-speech">${escapeHtml(lottaMessage)}</p>
-					<div class="hero-pills">
-						<span class="stat-pill">🏅 ${fmt(earned)} von ${fmt(LESSONS.length)} Forscher-Stempeln</span>
-						<span class="stat-pill">🔬 ${fmt(totalGoals)} von ${fmt(LESSONS.length * 3)} Labor-Entdeckungen</span>
-						<span class="stat-pill">🎯 Einmal erforschen → in ZAM weiterüben</span>
-					</div>
+			<section class="atlas" aria-labelledby="atlas-title">
+				<header class="atlas-title"><div><h1 id="atlas-title">Lottas Entdeckerkarte</h1>
+					<p>${escapeHtml(lottaMessage)}</p></div>
+					${last ? `<button type="button" class="bookmark" data-action="open-lesson" data-lesson-id="${last.id}"><small>Hier warst du zuletzt</small><b>${escapeHtml(last.shortTitle)} →</b></button>` : ""}
+				</header>
+				${renderFieldMap(mapWorld, progress.quietMode ? "resting" : lottaMood)}
+			</section>
+			<div id="world-stations">${renderWorldStations()}</div>
+			<span class="map-announcement" role="status"></span>
+		`;
+	}
+
+	function renderWorldStations(): string {
+		const stage = STAGE_BY_ID.get(mapWorld)!;
+		const stageLessons = LESSONS.filter((l) => l.stageId === stage.id);
+		const stageDone = stageLessons.filter((l) =>
+			isLessonComplete(getLessonProgress(progress, l.id)),
+		).length;
+		const worldColor = isDarkActive() ? stage.accentDark : stage.accentLight;
+		return `
+			<section class="world-section" style="--world-color: ${worldColor}">
+				<div class="world-header">
+					<h2 class="world-title">${stage.icon} ${escapeHtml(stage.worldName)}</h2>
+					<span class="world-meta">${escapeHtml(stage.officialTitle)} · ${fmt(stageDone)}/${fmt(stageLessons.length)} Stempel</span>
+				</div>
+				<p class="world-sub">${escapeHtml(stage.subtitle)}</p>
+				<div class="station-grid">
+					${stageLessons
+						.map((lesson) => {
+							const lp = getLessonProgress(progress, lesson.id);
+							const complete = isLessonComplete(lp);
+							return `
+								<button
+									type="button"
+									class="world-card-btn ${complete ? "is-complete" : ""}"
+									data-action="open-lesson"
+									data-lesson-id="${lesson.id}"
+								>
+									<span class="station-top">
+										<span>Station ${fmt(lesson.number)} · ${escapeHtml(lesson.sectionCode.replace("HSU 3/4 · ", ""))}</span>
+										<span>${complete ? "🏅 Stempel da!" : lesson.icon}</span>
+									</span>
+									<span class="station-card-title">${escapeHtml(lesson.title)}</span>
+									<span class="station-progress-dots">
+										Labor ${fmt(lp.goalsReached.length)}/${fmt(REQUIRED_LAB_GOALS)} · Check ${lp.quizSolved ? "✓" : "○"} · Probe ${lp.level1Correct >= 1 && lp.level2Correct >= 1 ? "✓" : `${lp.level1Correct >= 1 ? "1" : "0"}/2`}
+									</span>
+								</button>
+							`;
+						})
+						.join("")}
 				</div>
 			</section>
-
-			${STAGES.map((stage) => {
-				const stageLessons = LESSONS.filter((l) => l.stageId === stage.id);
-				const stageDone = stageLessons.filter((l) =>
-					isLessonComplete(getLessonProgress(progress, l.id)),
-				).length;
-				const worldColor = dark ? stage.accentDark : stage.accentLight;
-				return `
-					<section class="world-section" style="--world-color: ${worldColor}">
-						<div class="world-header">
-							<h2 class="world-title">${stage.icon} ${escapeHtml(stage.worldName)}</h2>
-							<span class="world-meta">${escapeHtml(stage.officialTitle)} · ${fmt(stageDone)}/${fmt(stageLessons.length)} Stempel</span>
-						</div>
-						<p class="world-sub">${escapeHtml(stage.subtitle)}</p>
-						<div class="station-grid">
-							${stageLessons
-								.map((lesson) => {
-									const lp = getLessonProgress(progress, lesson.id);
-									const complete = isLessonComplete(lp);
-									return `
-										<button
-											type="button"
-											class="world-card-btn ${complete ? "is-complete" : ""}"
-											data-action="open-lesson"
-											data-lesson-id="${lesson.id}"
-										>
-											<span class="station-top">
-												<span>Station ${fmt(lesson.number)} · ${escapeHtml(lesson.sectionCode.replace("HSU 3/4 · ", ""))}</span>
-												<span>${complete ? "🏅 Stempel da!" : lesson.icon}</span>
-											</span>
-											<span class="station-card-title">${escapeHtml(lesson.title)}</span>
-											<span class="station-progress-dots">
-												Labor ${fmt(lp.goalsReached.length)}/${fmt(REQUIRED_LAB_GOALS)} · Check ${lp.quizSolved ? "✓" : "○"} · Probe ${lp.level1Correct >= 1 && lp.level2Correct >= 1 ? "✓" : `${lp.level1Correct >= 1 ? "1" : "0"}/2`}
-											</span>
-										</button>
-									`;
-								})
-								.join("")}
-						</div>
-					</section>
-				`;
-			}).join("")}
 		`;
 	}
 
@@ -393,6 +420,8 @@ export function mountApp(root: HTMLElement): { destroy: () => void } {
 						<a class="jump-link" href="#probe">4. Proben-Check (${lp.level1Correct >= 1 && lp.level2Correct >= 1 ? "✓" : `${(lp.level1Correct >= 1 ? 1 : 0) + (lp.level2Correct >= 1 ? 1 : 0)}/2`})</a>
 					</div>
 				</div>
+
+				${lesson.id === "unsere-gemeinde" ? renderCouncil() : ""}
 
 				<section id="wissen" class="section-card">
 					<h2>1. Entdecken &amp; Verstehen</h2>
@@ -487,7 +516,7 @@ export function mountApp(root: HTMLElement): { destroy: () => void } {
 					</div>
 
 					<div class="lab-controls no-print">
-						${lesson.lab.controls
+						${lesson.lab.controls.filter(ctrl => ctrl.key !== "vorschlag")
 							.map(
 								(ctrl) => `
 								<div class="lab-control-group" role="group" aria-label="${escapeHtml(ctrl.label)}">
@@ -517,6 +546,7 @@ export function mountApp(root: HTMLElement): { destroy: () => void } {
 							.join("")}
 					</div>
 
+					${lesson.id === "unsere-gemeinde" ? '<a class="jump-link" href="#gemeinderat">Zum Spielplatzmodell mit Lotta ↑</a>' : ""}
 					<div class="readout-grid" aria-live="polite">
 						${labEval.readouts
 							.map(
@@ -901,13 +931,15 @@ export function mountApp(root: HTMLElement): { destroy: () => void } {
 			if (decision === "confirm") {
 				clearProgress();
 				progress = freshProgress();
+				mapWorld = "lb1";
+				council = new CouncilMeeting();
+				lottaMood = "curious";
 				labStates.clear();
 				quizSelection.clear();
 				quizOptionsByLesson.clear();
 				quizSessionSalt = (quizSessionSalt + 0x9e3779b9) >>> 0 || 1;
 				taskFeedbackByKey.clear();
 				taskCountedSuccess.clear();
-				lottaMood = "curious";
 				lottaMessage =
 					"Dein Forscherbuch ist frisch aufgeschlagen – bereit für eine neue Entdeckungstour!";
 				render();
@@ -928,6 +960,7 @@ export function mountApp(root: HTMLElement): { destroy: () => void } {
 	}
 
 	function render(): void {
+		stopReading();
 		root.dataset.quiet = progress.quietMode ? "true" : "false";
 		const lesson = LESSON_BY_ID.get(activeLessonId) ?? LESSONS[0];
 		const bodyHtml =
@@ -948,6 +981,7 @@ export function mountApp(root: HTMLElement): { destroy: () => void } {
 				<main id="main-content">${bodyHtml}</main>
 			</div>
 		`;
+		if (view === "lesson" && activeLessonId === "unsere-gemeinde") syncCouncil();
 		if (view === "eltern") {
 			wireResetDialog();
 		}
@@ -960,13 +994,81 @@ export function mountApp(root: HTMLElement): { destroy: () => void } {
 		playGentleChime(progress.soundEnabled);
 	}
 
+	function setLabOption(lesson: Lesson, key: string, val: string): void {
+		const nextState = applyLabOption(lesson, getLabState(lesson), key, val);
+		labStates.set(lesson.id, nextState);
+		const evaluated = evaluateLab(lesson, nextState);
+		if (evaluated.reachedGoalIds.length > 0) {
+			const res = recordLabGoals(progress, lesson.id, evaluated.reachedGoalIds);
+			progress = res.progress;
+			persistProgress();
+			handleStampCelebration(res.stampUnlocked, lesson);
+		}
+	}
+
 	const onClick = (event: Event): void => {
+		const anchor = (event.target as Element | null)?.closest<HTMLAnchorElement>("a.jump-link");
+		if (anchor && view === "lesson") {
+			const section = root.querySelector<HTMLElement>(anchor.hash);
+			if (section) {
+				event.preventDefault();
+				section.tabIndex = -1;
+				section.focus({ preventScroll: true });
+				section.scrollIntoView({ behavior: reducedMotion() ? "instant" : "smooth" });
+				return;
+			}
+		}
 		const target = (event.target as HTMLElement | null)?.closest<HTMLElement>(
 			"[data-action]",
 		);
 		if (!target) return;
 		const action = target.dataset.action;
 
+		if (action === "choose-world") {
+			const world = STAGES.find(stage => stage.id === target.dataset.world);
+			const map = root.querySelector<HTMLElement>(".field-map");
+			if (!world || !map) return;
+			walkToWorld(map, mapWorld, world.id, reducedMotion());
+			mapWorld = world.id;
+			for (const button of map.querySelectorAll<HTMLButtonElement>(".map-place")) {
+				button.setAttribute("aria-pressed", String(button.dataset.world === mapWorld));
+			}
+			root.querySelector("#world-stations")!.innerHTML = renderWorldStations();
+			root.querySelector(".map-announcement")!.textContent = "Stationen für " + world.worldName + " unter der Karte.";
+			return;
+		}
+		if (action?.startsWith("council-") && activeLessonId === "unsere-gemeinde") {
+			stopReading();
+			if (action === "council-site") {
+				const site = target.dataset.site;
+				if (site === "schulwiese" || site === "obstanger") council.visit(site);
+			} else if (action === "council-listen") {
+				council.listen(Number(target.dataset.index));
+			} else if (action === "council-read") {
+				const voice = localVoice();
+				if (voice) {
+					reading = new SpeechSynthesisUtterance(root.querySelector("[data-quote]")!.textContent ?? "");
+					reading.lang = voice.lang;
+					reading.voice = voice;
+					window.speechSynthesis.speak(reading);
+				}
+			} else if (action === "council-reason") {
+				council.reason = Number(target.dataset.index);
+				council.submitted = false;
+			} else if (action === "council-submit") {
+				const site = council.submit();
+				if (site) {
+					setLabOption(LESSON_BY_ID.get(activeLessonId)!, "vorschlag", site);
+					render();
+					const result = root.querySelector<HTMLElement>("[data-result]")!;
+					result.tabIndex = -1;
+					result.focus({ preventScroll: true });
+					return;
+				}
+			}
+			syncCouncil();
+			return;
+		}
 		if (action === "nav") {
 			const next = (target.dataset.view as ViewMode) ?? "map";
 			navigateTo(next);
@@ -998,15 +1100,7 @@ export function mountApp(root: HTMLElement): { destroy: () => void } {
 			const val = target.dataset.value;
 			const lesson = LESSON_BY_ID.get(id);
 			if (!lesson || !key || val === undefined) return;
-			const nextState = applyLabOption(lesson, getLabState(lesson), key, val);
-			labStates.set(id, nextState);
-			const evaluated = evaluateLab(lesson, nextState);
-			if (evaluated.reachedGoalIds.length > 0) {
-				const res = recordLabGoals(progress, id, evaluated.reachedGoalIds);
-				progress = res.progress;
-				persistProgress();
-				handleStampCelebration(res.stampUnlocked, lesson);
-			}
+			setLabOption(lesson, key, val);
 			render();
 			return;
 		}
@@ -1049,8 +1143,8 @@ export function mountApp(root: HTMLElement): { destroy: () => void } {
 					handleStampCelebration(updated.stampUnlocked, lesson);
 				}
 			} else {
-				taskHadWrongAttempt.add(task.id);
 				lottaMood = "encouraging";
+				taskHadWrongAttempt.add(task.id);
 			}
 			render();
 			return;
@@ -1139,8 +1233,8 @@ export function mountApp(root: HTMLElement): { destroy: () => void } {
 				handleStampCelebration(updated.stampUnlocked, lesson);
 			}
 		} else if (res.validInput) {
-			taskHadWrongAttempt.add(task.id);
 			lottaMood = "encouraging";
+			taskHadWrongAttempt.add(task.id);
 		}
 		render();
 	};
@@ -1169,6 +1263,7 @@ export function mountApp(root: HTMLElement): { destroy: () => void } {
 	root.addEventListener("submit", onSubmit);
 	root.addEventListener("input", onInput);
 	window.addEventListener("hashchange", onHashChange);
+	window.speechSynthesis?.addEventListener("voiceschanged", syncCouncil);
 
 	syncFromHash();
 	render();
@@ -1179,6 +1274,8 @@ export function mountApp(root: HTMLElement): { destroy: () => void } {
 			root.removeEventListener("submit", onSubmit);
 			root.removeEventListener("input", onInput);
 			window.removeEventListener("hashchange", onHashChange);
+			window.speechSynthesis?.removeEventListener("voiceschanged", syncCouncil);
+			stopReading();
 		},
 	};
 }

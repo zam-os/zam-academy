@@ -156,6 +156,7 @@ export interface LessonProgress {
 
 export interface AppProgress {
 	schema: 1;
+	lastLessonId: string | null;
 	lessons: Record<string, LessonProgress>;
 	recentEvidence: AttemptEvidence[];
 	quietMode: boolean;

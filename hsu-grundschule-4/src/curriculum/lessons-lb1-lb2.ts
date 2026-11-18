@@ -271,7 +271,7 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 		lab: {
 			title: "Rathaus- & Gemeinde-Planer",
 			intro:
-				"Ordne die Aufgaben im Rathaus richtig zu und plane die freie Gemeindewiese so, dass Gemeinwohl und Naturschutz zusammenpassen!",
+				"Ordne die Aufgaben im Rathaus zu. Deinen Spielplatzvorschlag bringst du mit Lotta im Dorfmodell ein.",
 			controls: [
 				{
 					key: "wasserFeuerwehr",
@@ -290,22 +290,19 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 					],
 				},
 				{
-					key: "wiese",
-					label: "Beschluss für die freie Wiese",
+					key: "vorschlag",
+					label: "Vorschlag aus dem Dorfmodell",
 					options: [
-						{ value: "beton", label: "Komplett zubetonieren für Parkplätze" },
-						{ value: "nurRuhe", label: "Betreten für Kinder komplett verbieten" },
-						{
-							value: "ausgleich",
-							label: "Spielbereich + Ruhebank + Schutzhecke für Tiere",
-						},
+						{ value: "offen", label: "Noch offen" },
+						{ value: "schulwiese", label: "Schulwiese" },
+						{ value: "obstanger", label: "Obstanger" },
 					],
 				},
 			],
 			initialState: {
 				wasserFeuerwehr: "freiwillig",
 				buechereiBad: "pflicht",
-				wiese: "beton",
+				vorschlag: "offen",
 			},
 			goals: [
 				{
@@ -315,7 +312,7 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 					witness: {
 						wasserFeuerwehr: "pflicht",
 						buechereiBad: "pflicht",
-						wiese: "beton",
+						vorschlag: "offen",
 					},
 				},
 				{
@@ -326,20 +323,17 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 					witness: {
 						wasserFeuerwehr: "pflicht",
 						buechereiBad: "freiwillig",
-						wiese: "beton",
+						vorschlag: "offen",
 					},
 				},
 				{
 					id: "g2-gemeinwohl",
-					title: "Beschließe auf der Gemeindewiese den Ausgleich für alle Gruppen",
-					check: (s) =>
-						s.wasserFeuerwehr === "pflicht" &&
-						s.buechereiBad === "freiwillig" &&
-						s.wiese === "ausgleich",
+					title: "Vergleiche beide Standorte und bringe einen begründeten Vorschlag ein",
+					check: (s) => s.vorschlag === "schulwiese" || s.vorschlag === "obstanger",
 					witness: {
 						wasserFeuerwehr: "pflicht",
 						buechereiBad: "freiwillig",
-						wiese: "ausgleich",
+						vorschlag: "schulwiese",
 					},
 				},
 			],
@@ -354,11 +348,9 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 				{
 					label: "Gemeinderats-Abwägung",
 					value:
-						s.wiese === "ausgleich"
-							? "Gemeinwohl erreicht: Kinder, Senioren & Natur berücksichtigt"
-							: s.wiese === "beton"
-								? "Einseitig: Boden versiegelt, kein Platz für Kinder & Natur"
-								: "Einseitig: Bedürfnisse der Kinder wurden übergangen",
+						s.vorschlag === "schulwiese" ? "Vorschlag für die Schulwiese eingebracht."
+						: s.vorschlag === "obstanger" ? "Vorschlag für den Obstanger eingebracht."
+						: "Welchen Standort empfiehlst du dem Gemeinderat?",
 				},
 			],
 		},

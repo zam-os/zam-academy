@@ -6,6 +6,15 @@ all six *Lernbereiche* accompany learners and parents preparing for Grade 4
 *Proben* and the Bavarian transition year (*Übertrittsjahr*), guided by the
 Eurasian lynx **Lotta**.
 
+The illustrated field map opens one world at a time. Select a landmark to walk
+there with Lotta and open a station. The bookmark returns to the last station
+visited on this device. Quiet mode and reduced motion both skip the walk.
+
+In the municipal council, pupils place a playground on either the school meadow
+or the orchard, consult residents and put forward a reasoned proposal. Either
+site can earn the existing common-good lab goal. Each resident's words appear
+in writing. Read-aloud is available when the device offers a local German voice.
+
 ## Single-pass station flow → ZAM continuation
 
 Each station is designed to be experienced **once** in Academy to build vivid
@@ -52,7 +61,7 @@ Supporting views:
 ## Status
 
 Published since 2026-11-04 (Thomas's decision): on GitHub Pages, in the atlas
-and in the catalog. Version 0.0 (`publication.json`) shows that content review
+and in the catalog. The 0.x version in `publication.json` shows that content review
 is open. Its ids are a contract from now on. No teacher videos are included (`AGENTS.md` Section 4:
 new packages ship without external video links). Progress uses browser
 `localStorage` (`zam-hsu-gs4-v1`) only, with zero network requests and zero
