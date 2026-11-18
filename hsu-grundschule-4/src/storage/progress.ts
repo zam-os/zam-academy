@@ -23,6 +23,7 @@ export function emptyLessonProgress(): LessonProgress {
 export function freshProgress(): AppProgress {
 	return {
 		schema: 1,
+		lastLessonId: null,
 		lessons: {},
 		recentEvidence: [],
 		quietMode: false,
@@ -103,6 +104,7 @@ export function parseProgress(raw: string | null): {
 		return {
 			progress: {
 				schema: 1,
+				lastLessonId: typeof parsed.lastLessonId === "string" ? parsed.lastLessonId : null,
 				lessons,
 				recentEvidence,
 				quietMode: parsed.quietMode === true,

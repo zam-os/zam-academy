@@ -70,7 +70,7 @@ function renderSceneBody(lessonId: string, s: LabState): string {
 		case "unsere-gemeinde": {
 			const pflichtOk = s.wasserFeuerwehr === "pflicht";
 			const freiOk = s.buechereiBad === "freiwillig";
-			const wieseOk = s.wiese === "ausgleich";
+			const proposed = s.vorschlag === "schulwiese" || s.vorschlag === "obstanger";
 			return `
 				${panelCard(14, 14, 194, 212, "Wasser & Feuerwehr")}
 				<rect x="34" y="50" width="154" height="104" rx="10" fill="${pflichtOk ? "#dbeafe" : "#fef3c7"}" stroke="#3b82f6" stroke-width="1.8"/>
@@ -84,11 +84,10 @@ function renderSceneBody(lessonId: string, s: LabState): string {
 				<text x="320" y="124" text-anchor="middle" font-size="11.5" font-weight="700" fill="#312e81">Kultur &amp; Freizeitangebot</text>
 				${badge(240, 186, 160, freiOk ? "Freiwillige Aufgabe ✓" : "Als Pflicht markiert", freiOk)}
 
-				${panelCard(432, 14, 194, 212, "Rathaus-Wiesenplan")}
-				<rect x="452" y="50" width="154" height="104" rx="10" fill="${wieseOk ? "#dcfce7" : s.wiese === "nurRuhe" ? "#fef9c3" : "#e2e8f0"}" stroke="${wieseOk ? "#16a34a" : "#64748b"}" stroke-width="2"/>
-				<text x="529" y="88" text-anchor="middle" font-size="24">${wieseOk ? "🛝 🪑 🐝" : s.wiese === "nurRuhe" ? "🪑 🚫 ⚽" : "🚗 🚗 🚗"}</text>
-				<text x="529" y="122" text-anchor="middle" font-size="10" font-weight="700" fill="#1e293b">${wieseOk ? "Spiel + Bank + Blühstreifen" : s.wiese === "nurRuhe" ? "Kinder gehen leer aus" : "Alles zubetoniert"}</text>
-				${badge(449, 186, 160, wieseOk ? "Gemeinwohl-Lösung" : "Einseitiger Beschluss", wieseOk)}
+				${panelCard(432, 14, 194, 212, "Spielplatz im Gemeinderat")}
+				<text x="529" y="94" text-anchor="middle" font-size="30">🛝</text>
+				<text x="529" y="124" text-anchor="middle" font-size="12" fill="var(--lab-ink)">${s.vorschlag === "schulwiese" ? "Schulwiese" : s.vorschlag === "obstanger" ? "Obstanger" : "Standort offen"}</text>
+				${badge(449, 186, 160, proposed ? "Vorschlag eingebracht" : "Im Dorfmodell beraten", proposed)}
 			`;
 		}
 

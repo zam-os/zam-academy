@@ -469,7 +469,7 @@ const geschichten: Lesson = {
 		{
 			variant: "gap",
 			title: "Der Pfeil-Plan",
-			intro: "Die Sätze sind durcheinandergeraten. Gib jedem Satz eine Nummer: 1 geschieht zuerst. Jede Nummer gibt es nur einmal. Die Geschichten findest du in den Übungen unten.",
+			intro: "Die Sätze sind durcheinandergeraten. Gib jedem Satz eine Nummer: 1 geschieht zuerst. Jede Nummer gibt es nur einmal. Die ganzen Geschichten liest du später beim Üben.",
 			pens: [],
 			puzzles: [
 				gaps("brunnen", "{3|1|2} Sie angeln einen Schlüssel heraus.\n{1|2|3} Mia sieht etwas im Brunnen blitzen.\n{2|1|3} Sie holt Oma und einen Stock.", "Der Schlüssel im Brunnen", "Was muss zuerst passieren, damit das Nächste möglich ist?"),

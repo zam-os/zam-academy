@@ -152,7 +152,7 @@ export function forestLessonView(
 	const task = activeForestTask(p);
 	if (task) return forestTaskView(p, task, feedback, draft);
 	if (p.stage === "welcome")
-		return `<span class="mission-label">Ein neuer Ort auf der Entdeckerinsel</span><h2 id="lesson-heading" tabindex="-1">${escapeHtml(def.title)}</h2><div class="forest-emblem" aria-hidden="true">${def.icon}</div><p class="lead">${escapeHtml(def.lead)}</p><ul class="forest-goals">${def.goals.map((g) => `<li>${escapeHtml(g)}</li>`).join("")}</ul><p>Zwei Missionen mit Erklärung, drei Werkstattzielen und frischen Aufgaben. Du bestimmst dein Tempo.</p><button class="primary" data-action="forest-next">Mit Milo entdecken</button>`;
+		return `<span class="mission-label">Ein neuer Ort auf der Entdeckerinsel</span><h2 id="lesson-heading" tabindex="-1">${escapeHtml(def.title)}</h2><p class="lead">${escapeHtml(def.lead)}</p><button class="primary" data-action="forest-next">Mit Milo entdecken <span aria-hidden="true">→</span></button><details class="welcome-goals"><summary>Das entdeckst du hier</summary><ul class="forest-goals">${def.goals.map((g) => `<li>${escapeHtml(g)}</li>`).join("")}</ul></details>`;
 	if (p.stage === "learn")
 		return `<span class="mission-label">Mission 1 · Zusammenhänge entdecken</span><h2 id="lesson-heading" tabindex="-1">${escapeHtml(def.shortTitle)}</h2>${forestExplanation(def)}<button class="primary" data-action="forest-next">Jetzt selbst ausprobieren</button>`;
 	if (p.stage === "transfer")

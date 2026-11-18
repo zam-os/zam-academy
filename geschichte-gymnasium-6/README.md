@@ -29,14 +29,15 @@ All 40 verbatim Kompetenzerwartungen from the official Fachlehrplan map to these
 
 ```bash
 npm ci
-npm run dev           # http://localhost:5255/geschichte-gymnasium-6/
+npm run dev           # http://localhost:5259/geschichte-gymnasium-6/
 npx tsc --noEmit
 npm test              # 175 Vitest tests across 4 files
 node scripts/check-curriculum.mjs
+node scripts/validate-migration.mjs   # requires ZAM_CORE pointing to zam-core
 npm run package:zip   # builds dist/index.html & release/ZAM-Academy-Geschichte-6-Gymnasium-offline.zip
 ```
 
 ## ZAM Cell & Legacy Inventory
 
-- [cell.json](cell.json) (`zam-academy:geschichte-gymnasium-6`) contains 36 atoms (1 per lesson) and 72 recall items (each lesson has a binary `tier1_fast` check and a concise `tier2_synthesis` prompt) using 108 unique generated ULIDs pinned in [tests/fixtures/public-contract.json](tests/fixtures/public-contract.json). Every item cites `https://academy.zam-os.org/geschichte-gymnasium-6/#lesson=<id>`.
-- [replaces-de-by.json](replaces-de-by.json) records the **proposal-only** mapping (`"status": "proposal-only"`, `"approved": null`) for all 16 legacy items across the two Grade 6 history cells in `zam-os/zam`: 8 Category A single tier-1 successors proposed (`gg6-*-check`), 0 B, 8 C kept active. `cell.json` declares neither `replaces` nor `retired_items` until Thomas approves. Byte-exact LF snapshots and SHA-256 checksums live in `tests/fixtures/`.
+- [cell.json](cell.json) (`zam-academy:geschichte-gymnasium-6`) contains 36 atoms (1 per lesson) and 72 recall items (each lesson has a binary `tier1_fast` check and a concise `tier2_synthesis` prompt) using 108 unique generated ULIDs pinned in [tests/fixtures/public-contract.json](tests/fixtures/public-contract.json). Every item cites `https://academy.zam-os.org/geschichte-gymnasium-6/#lesson=<id>`, and the 8 Category A successors carry `replaces` per the approved mapping.
+- [replaces-de-by.json](replaces-de-by.json) records Thomas's approved mapping (`"status": "approved"`, `"approved": "2026-11-18"`) for all 16 legacy items across the two Grade 6 history cells in `zam-os/zam`: 8 Category A single tier-1 replacements (`gg6-*-check`), 0 B, 8 C kept active. Byte-exact LF snapshots and SHA-256 checksums live in `tests/fixtures/`, and [scripts/validate-migration.mjs](scripts/validate-migration.mjs) checks history migration and collision refusal against `zam-core`.

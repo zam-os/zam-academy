@@ -33,39 +33,39 @@ In accordance with `AGENTS.md` §1, activities that cannot occur strictly inside
 2. **LB 5.5** (`gg6-provinzen-bayern-limes`): Investigating Roman life in Bavaria via films or real museum/site excursions — the app provides interactive Bavarian site/Limes maps (`romanBavariaLimes`) and archaeological evidence (Castra Regina, Augsburg, Weißenburg, Passau, Via Claudia Augusta), while museum visits and films remain classroom/excursion work.
 3. **LB 7.2** (`gg6-familie-laengsschnitt` / family tasks): Optional personal family/living-environment project work (`"Fakultative Erweiterung"`) is scaffolded as a structured self-check task while personal interviews and family albums remain outside the app.
 
-## Legacy ZAM Card Mapping (`proposal-only`)
+## Legacy ZAM Card Mapping (`approved`: 2026-11-18)
 
 `zam-os/zam` (commit `e517a1ef709e0e6ee5f968c342affeb5b14cef35`) holds two Grade 6 history cells with 16 legacy items (`tests/fixtures/` holds byte-exact LF snapshots):
 - `de-by:gymnasium-6-geschichte-urgeschichte-aegypten-griechenland` (version `2026.08.1`, SHA-256 `5fe08fa9da2ce5dbb2626d34d98f7c83619ec4edee5b5d2a9b7897b539821cb5`, 8 items)
 - `de-by:gymnasium-6-geschichte-rom-imperium-limes-bayern` (version `2026.08.1`, SHA-256 `755dfa41a6069f30246e005b8a8187c5c2dad9cfa3b40911709ab528ea990f40`, 8 items)
 
-[`replaces-de-by.json`](../geschichte-gymnasium-6/replaces-de-by.json) is **`proposal-only`** (`"approved": null`): `cell.json` declares **no `replaces`** and **no `retired_items`** until Thomas approves.
-- **Category A (`8` items)**: Propose single tier-1 replacement (`gg6-*-check`) preserving learner history on identical atomic retrieval.
+[`replaces-de-by.json`](../geschichte-gymnasium-6/replaces-de-by.json) records Thomas's explicit approval on **2026-11-18** (`"status": "approved"`, `"approved": "2026-11-18"`), verified in disposable `zam-core` libraries by [`scripts/validate-migration.mjs`](../geschichte-gymnasium-6/scripts/validate-migration.mjs):
+- **Category A (`8` items)**: Single tier-1 successor (`gg6-*-check`) declares `replaces`, preserving learner FSRS history on identical atomic retrieval.
 - **Category B (`0` items)**
 - **Category C (`8` items, `keep-active`)**: Multi-part comparison or synthesis prompts split across multiple lessons or exceeding the shared core scope; stay active without history transfer.
 
-| Legacy Cell (`de-by:gymnasium-6-geschichte-*`) | Old ID | Cat. | Proposed Action | Proposed Successor Slug | Reason |
+| Legacy Cell (`de-by:gymnasium-6-geschichte-*`) | Legacy ID (`de_by_id`) | Cat. | Action | Successor Slug | Reason |
 | --- | --- | --- | --- | --- | --- |
-| `urgeschichte-aegypten-griechenland` | `01K4YH6A000000000000000J01` | A | `propose-replace-after-approval` | `gg6-jungsteinzeit-wandel-check` | Same atomic retrieval: what the Neolithic Revolution means (transition to sedentary life, farming and livestock). The successor quick check asks this exact question. |
+| `urgeschichte-aegypten-griechenland` | `01K4YH6A000000000000000J01` | A | `replace` | `gg6-jungsteinzeit-wandel-check` | Same atomic retrieval: what the Neolithic Revolution means (transition to sedentary life, farming and livestock). The successor quick check asks this exact question. |
 | `urgeschichte-aegypten-griechenland` | `01K4YH6A000000000000000J02` | C | `keep-active` | — | Multi-part comparison across Paleolithic and Neolithic economy, housing, tools, art and social consequences; split across `gg6-altsteinzeit` and `gg6-jungsteinzeit-wandel`. One history must not be spread over several cards. |
-| `urgeschichte-aegypten-griechenland` | `01K4YH6A000000000000000J03` | A | `propose-replace-after-approval` | `gg6-niljahr-bewaesserung-check` | Same atomic retrieval: why Herodotus called Egypt a gift of the Nile (annual flood depositing fertile silt). The successor quick check asks this exact question. |
+| `urgeschichte-aegypten-griechenland` | `01K4YH6A000000000000000J03` | A | `replace` | `gg6-niljahr-bewaesserung-check` | Same atomic retrieval: why Herodotus called Egypt a gift of the Nile (annual flood depositing fertile silt). The successor quick check asks this exact question. |
 | `urgeschichte-aegypten-griechenland` | `01K4YH6A000000000000000J04` | C | `keep-active` | — | Five-part synthesis prompt covering Nile irrigation, divine kingship, society pyramid, hieroglyphs/astronomy and mummification/Gizeh; spread across all five LB 2 lessons. |
-| `urgeschichte-aegypten-griechenland` | `01K4YH6A000000000000000J05` | A | `propose-replace-after-approval` | `gg6-griechenland-polis-check` | Same atomic retrieval: the Greek term for independent city-states with acropolis, agora and surrounding land (Polis). The successor quick check asks this exact question. |
+| `urgeschichte-aegypten-griechenland` | `01K4YH6A000000000000000J05` | A | `replace` | `gg6-griechenland-polis-check` | Same atomic retrieval: the Greek term for independent city-states with acropolis, agora and surrounding land (Polis). The successor quick check asks this exact question. |
 | `urgeschichte-aegypten-griechenland` | `01K4YH6A000000000000000J06` | C | `keep-active` | — | Multi-part comparison of pan-Hellenic ties (Olympia, Delphi, Homer) with Sparta (military oligarchy, agoge, helots) and Athens; goes into Sparta details beyond the shared path and spreads over LB 3. |
-| `urgeschichte-aegypten-griechenland` | `01K4YH6A000000000000000J07` | A | `propose-replace-after-approval` | `gg6-weg-zur-demokratie-solon-check` | Same atomic retrieval: the Athenian procedure of writing a politician's name on a pottery shard to banish him for ten years (Scherbengericht / Ostrakismos). |
+| `urgeschichte-aegypten-griechenland` | `01K4YH6A000000000000000J07` | A | `replace` | `gg6-weg-zur-demokratie-solon-check` | Same atomic retrieval: the Athenian procedure of writing a politician's name on a pottery shard to banish him for ten years (Scherbengericht / Ostrakismos). |
 | `urgeschichte-aegypten-griechenland` | `01K4YH6A000000000000000J08` | C | `keep-active` | — | Four-step constitutional history plus four institutions and exclusions of Athenian democracy; split across `gg6-weg-zur-demokratie-solon`, `gg6-perserkriege-demokratie` and `gg6-attische-demokratie-perikles`. |
-| `rom-imperium-limes-bayern` | `01K4YH6R000000000000000J01` | A | `propose-replace-after-approval` | `gg6-roemische-republik-check` | Same atomic retrieval: the Latin veto right used by Roman tribunes of the plebs to stop Senate or magistrate decisions. |
+| `rom-imperium-limes-bayern` | `01K4YH6R000000000000000J01` | A | `replace` | `gg6-roemische-republik-check` | Same atomic retrieval: the Latin veto right used by Roman tribunes of the plebs to stop Senate or magistrate decisions. |
 | `rom-imperium-limes-bayern` | `01K4YH6R000000000000000J02` | C | `keep-active` | — | Three-part synthesis covering Conflict of the Orders, constitutional principles, Cursus honorum and Senate; split across `gg6-roemische-republik`, its workshop and tasks. |
-| `rom-imperium-limes-bayern` | `01K4YH6R000000000000000J03` | A | `propose-replace-after-approval` | `gg6-caesar-augustus-prinzipat-check` | Same atomic retrieval: the title Augustus conferred on Octavian in 27 BC marking the start of the Roman Principate. |
+| `rom-imperium-limes-bayern` | `01K4YH6R000000000000000J03` | A | `replace` | `gg6-caesar-augustus-prinzipat-check` | Same atomic retrieval: the title Augustus conferred on Octavian in 27 BC marking the start of the Roman Principate. |
 | `rom-imperium-limes-bayern` | `01K4YH6R000000000000000J04` | C | `keep-active` | — | Four-part synthesis covering agrarian/military crisis, Caesar, Augustan Principate and Pax Romana; spread across `gg6-expansion-weltreich` and `gg6-caesar-augustus-prinzipat`. |
-| `rom-imperium-limes-bayern` | `01K4YH6R000000000000000J05` | A | `propose-replace-after-approval` | `gg6-provinzen-bayern-limes-check` | Same atomic retrieval: the Roman legionary camp founded in 179 AD at the Danube/Regen confluence that became Regensburg (Castra Regina). |
+| `rom-imperium-limes-bayern` | `01K4YH6R000000000000000J05` | A | `replace` | `gg6-provinzen-bayern-limes-check` | Same atomic retrieval: the Roman legionary camp founded in 179 AD at the Danube/Regen confluence that became Regensburg (Castra Regina). |
 | `rom-imperium-limes-bayern` | `01K4YH6R000000000000000J06` | C | `keep-active` | — | Four-part synthesis on Alpine campaign, Raetia/Noricum, Limes, Castra Regina and Romanisation; split across `gg6-provinzen-bayern-limes` figures, lab and cards. |
-| `rom-imperium-limes-bayern` | `01K4YH6R000000000000000J07` | A | `propose-replace-after-approval` | `gg6-voelkerwanderung-zerfall-check` | Same atomic retrieval: the year 476 AD when Odoacer deposed the last Western Roman emperor Romulus Augustulus. |
+| `rom-imperium-limes-bayern` | `01K4YH6R000000000000000J07` | A | `replace` | `gg6-voelkerwanderung-zerfall-check` | Same atomic retrieval: the year 476 AD when Odoacer deposed the last Western Roman emperor Romulus Augustulus. |
 | `rom-imperium-limes-bayern` | `01K4YH6R000000000000000J08` | C | `keep-active` | — | Four-part synthesis mixing Late Antiquity (313/380), 395 division, Migrations, 476 fall of West Rome and Roman legacy; spread across LB 5 (`gg6-christen-staatsreligion`) and LB 6. |
 
-### Neighbouring-grade note for Thomas
+### Neighbouring-grade note
 
-The Grade 7 legacy cell `de-by:gymnasium-7-geschichte-mittelalter-frankenreich-staedte-kreuzzuege-reformation` includes item `01K4H7M0000000000000000J01` asking about Charlemagne's imperial coronation on Christmas Day 800, which under current G9 LehrplanPLUS Bayern is taught in **Grade 6 LB 6** (covered here in `gg6-karl-der-grosse-kaisertum`), while item `01K4H7M0000000000000000J02` mixes Charlemagne with Grade 7 topics (*Lehnswesen* and *Investiturstreit*). Per `AGENTS.md` §6, the Grade 7 cell is **not** pulled into this mapping automatically; please decide in PR review whether `01K4H7M0000000000000000J01` should remain with a future Grade 7 package or be added when approving the history transfer.
+The Grade 7 legacy cell `de-by:gymnasium-7-geschichte-mittelalter-frankenreich-staedte-kreuzzuege-reformation` includes item `01K4H7M0000000000000000J01` asking about Charlemagne's imperial coronation on Christmas Day 800, which under current G9 LehrplanPLUS Bayern is taught in **Grade 6 LB 6** (covered here in `gg6-karl-der-grosse-kaisertum`), while item `01K4H7M0000000000000000J02` mixes Charlemagne with Grade 7 topics (*Lehnswesen* and *Investiturstreit*). Per `AGENTS.md` §6, the Grade 7 cell is left untouched so a future Grade 7 package handles its full inventory consistently.
 
 ## Verified Sources (102 URLs, checked 2026-11-18)
 

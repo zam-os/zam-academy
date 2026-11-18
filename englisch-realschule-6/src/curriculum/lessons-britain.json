@@ -1,0 +1,353 @@
+[
+	{
+		"id": "e6-scotland",
+		"stage": "britain",
+		"title": "Scotland: Highlands, cities and traditions",
+		"skill": "Schottlands Regionen, Lebensbedingungen und kulturelle Besonderheiten auf der Karte einordnen",
+		"bindings": [
+			"1.1",
+			"2",
+			"5"
+		],
+		"paragraphs": [
+			"Aus Klasse 5 kennst du bereits Edinburgh als Hauptstadt Schottlands. In Klasse 6 schaust du genauer auf die regionalen Lebensbedingungen Großbritanniens: Schottland besteht aus ganz verschiedenen Räumen. Im dünn besiedelten Norden und Nordwesten liegen die gebirgigen Highlands und zahlreiche Inseln mit Seen (lochs), Schafzucht und Tourismus; auf einigen kleinen Inseln sind Fähren (ferries) für den Schul- oder Einkaufsweg wichtig.",
+			"Beispiel aus dem zentralen Tiefland (Lowlands): Zwischen Glasgow (der größten Stadt Schottlands) und der Hauptstadt Edinburgh leben und arbeiten die meisten Menschen in Großstädten mit Hochschulen, Technik und Kulturfestivals. Schottische Besonderheiten wie der tartan (Karomuster), traditionelle Musik mit Dudelsack (bagpipes), die schottisch-gälische Sprache auf zweisprachigen Ortsschildern und das Fest Burns Night am 25. Januar prägen das kulturelle Selbstverständnis."
+		],
+		"material": "Regional Guide · Scotland\nScotland is in the north of Great Britain, and Edinburgh is its capital, while Glasgow is its biggest city. Most people live in the Central Lowlands between these two cities.\nFurther north, the Scottish Highlands have mountains, deep lakes called lochs and quiet villages. On western islands such as Skye or Mull, people use ferries and rural buses to travel between towns. Road signs in parts of the Highlands are written in both English and Scottish Gaelic. Famous traditions include tartan patterns and Burns Night on 25 January, celebrating the poet Robert Burns.",
+		"materialLabel": "Eigenes englisches Übungsmaterial · nach den verlinkten Quellen zu Schottland und Edinburgh",
+		"materialLanguage": "en",
+		"sourceIds": [
+			"lp",
+			"wiki-scotland",
+			"wiki-edinburgh",
+			"visitscotland"
+		],
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Wie unterscheiden sich die Lowlands und die Highlands in Schottland hauptsächlich?",
+			"answer": "In den Lowlands liegen die großen Städte Glasgow und Edinburgh; die Highlands im Norden sind bergig, dünner besiedelt und geprägt von Seen und Inseln.",
+			"wrong": [
+				"Edinburgh liegt auf den nördlichen Inseln, während die Highlands im Süden an London grenzen.",
+				"In den Highlands wohnen fast alle Schottinnen und Schotten, während Glasgow ein Dorf ist."
+			],
+			"explanation": "Die meisten Menschen wohnen im Zentralgürtel (Lowlands) um Glasgow und Edinburgh; die Highlands im Norden sind bergig und dünn besiedelt."
+		},
+		"takeaway": "Schottland verbindet städtisches Leben in den Lowlands (Glasgow, Edinburgh) mit den dünn besiedelten Highlands und Inseln im Norden. Typische Begriffe: loch, tartan, Gaelic, ferry.",
+		"practice": [
+			{
+				"prompt": "What is the Scottish word for a lake? A ___ (schottisches Wort für See)",
+				"answers": [
+					"loch"
+				],
+				"feedback": "In Schottland heißt ein See loch, zum Beispiel Loch Ness oder Loch Lomond."
+			},
+			{
+				"prompt": "Which Scottish city is the largest city (not the capital)? ___ (größte Stadt Schottlands)",
+				"answers": [
+					"Glasgow"
+				],
+				"feedback": "Edinburgh ist die Hauptstadt, Glasgow ist die einwohnerstärkste Stadt Schottlands."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Write four English sentences about Scotland: name the capital, the largest city, one fact about the Highlands and one Scottish tradition.",
+				"model": "Edinburgh is the capital of Scotland, and Glasgow is its biggest city. Both lie in the Lowlands, where most people live. In the northern Highlands there are mountains, lochs and quiet islands where ferries are important. On 25 January many people celebrate Burns Night with poetry and tartan.",
+				"criteria": [
+					"Ich nenne Edinburgh und Glasgow in der richtigen Rolle.",
+					"Ich beschreibe die Highlands oder Inseln passend.",
+					"Ich erwähne eine schottische Tradition."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Vergleiche auf Deutsch die Lebensbedingungen eines Jugendlichen in Edinburgh oder Glasgow mit dem Leben in einem Dorf in den schottischen Highlands oder auf einer Insel.",
+				"model": "In Edinburgh oder Glasgow sind Schulen, Kinos, Bibliotheken und Züge schnell erreichbar, und in den Städten gibt es viele verschiedene Arbeitsplätze. In einem Dorf in den Highlands oder auf einer Insel sind die Wege dagegen lang, man braucht oft Überlandbusse oder Fähren, und Landwirtschaft, Tourismus sowie zweisprachige Schilder auf Englisch und Gälisch prägen den Alltag stärker.",
+				"criteria": [
+					"Ich zeige Unterschiede bei Wegen und Verkehrsmitteln.",
+					"Ich nenne Lebens- oder Arbeitsbedingungen in Stadt und Region.",
+					"Ich beziehe mindestens ein regionales Merkmal (z. B. Gälisch, Fähren, Tourismus) ein."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "britain-regions",
+			"goals": [
+				{
+					"label": "Norden Schottlands",
+					"before": "Mountains, deep lochs and quiet villages lie in the",
+					"after": ".",
+					"options": [
+						"Highlands",
+						"South-West",
+						"Midlands"
+					],
+					"answer": "Highlands",
+					"explanation": "Die bergigen Highlands liegen im Norden Schottlands."
+				},
+				{
+					"label": "Zentraler Ballungsraum",
+					"before": "Edinburgh and Glasgow are both in the Scottish",
+					"after": ".",
+					"options": [
+						"Lowlands",
+						"Highlands",
+						"Cornwall"
+					],
+					"answer": "Lowlands",
+					"explanation": "Edinburgh und Glasgow liegen im dichter besiedelten Zentralgürtel (Lowlands)."
+				},
+				{
+					"label": "Verkehr auf den Inseln",
+					"before": "Between small western islands, people often travel by",
+					"after": ".",
+					"options": [
+						"ferry",
+						"Tube",
+						"tramway"
+					],
+					"answer": "ferry",
+					"explanation": "Fähren (ferries) verbinden die westlichen Inseln Schottlands mit dem Festland."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "e6-uk-regions",
+		"stage": "britain",
+		"title": "Life across UK regions: Town, coast and country",
+		"skill": "Lebensbedingungen in weiteren Regionen Großbritanniens (Wales, Nordengland, Südwesten) vergleichen",
+		"bindings": [
+			"1.1",
+			"2",
+			"5"
+		],
+		"paragraphs": [
+			"Großbritannien besteht nicht nur aus London und Schottland. Jede Region auf der Insel Great Britain hat eigene Landschaften, Geschichte und Arbeitswelten. In Wales im Westen sprechen viele Menschen neben Englisch auch Walisisch (Welsh / Cymraeg), und Orts- sowie Straßenschilder sind zweisprachig. Im Norden Englands prägen berühmte Nationalparks wie der Lake District und die Yorkshire Dales, historische Städte wie York sowie ehemalige Industriestädte wie Manchester oder Leeds das Bild.",
+			"Beispiel aus dem Südwesten: In Cornwall an der südwestlichen Küste sind Fischerei, kleine Landwirtschaft und Sommer-Tourismus wichtige Einkommensquellen. Weil dort im Sommer viele Gäste die Strände besuchen, steigen zeitweise die Mietpreise, während im Winter ruhige Monate folgen. Im Vergleich zur Metropole London liegen Schulen und Arbeitsplätze oft weiter auseinander, und Züge oder Regionalbusse sind für Jugendliche besonders wichtig."
+		],
+		"material": "Voices from three British regions:\n• Dylan (Wales): “At my school near Cardiff, we learn Welsh and English. Every road sign has both languages!”\n• Freya (Yorkshire, Northern England): “Our town sits between old stone mill buildings and green hills in a National Park. Tourists come to hike, and my mum works in a hospital in York.”\n• Owen (Cornwall, South-West England): “In July our coastal village is full of surfers and holiday families. In January it is quiet, and I take a 30-minute bus to school.”",
+		"materialLabel": "Eigenes englisches Übungsmaterial · Berichte zu Regionen Großbritanniens",
+		"materialLanguage": "en",
+		"sourceIds": [
+			"lp",
+			"wiki-wales",
+			"wiki-cornwall"
+		],
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Was haben Wales und Cornwall (Südwestengland) im Vergleich zur Metropole London gemeinsam?",
+			"answer": "Tourismus, ländlichere Regionen und regionale Besonderheiten spielen eine größere Rolle, und öffentliche Verkehrsmittel außerhalb von Großstädten sind seltener als die Londoner Tube.",
+			"wrong": [
+				"In Cornwall fährt alle zwei Minuten eine U-Bahn unter dem Meer.",
+				"In Wales wird Englisch auf allen Straßenschildern verboten."
+			],
+			"explanation": "Im Vergleich zur dichten U-Bahn-Metropole London haben Regionen wie Wales und Cornwall stärker ländliche oder touristische Strukturen und zweisprachige bzw. küstennahe Besonderheiten."
+		},
+		"takeaway": "Regionen Großbritanniens unterscheiden sich deutlich von London: Zweisprachigkeit in Wales, Nationalparks und historische sowie alte Industriestädte im Norden, Küstenleben und Saisontourismus in Cornwall.",
+		"practice": [
+			{
+				"prompt": "In Wales, road signs are written in English and ___. (zweite Sprache in Wales)",
+				"answers": [
+					"Welsh",
+					"Cymraeg"
+				],
+				"feedback": "In Wales sind Straßenschilder zweisprachig auf Englisch und Walisisch (Welsh)."
+			},
+			{
+				"prompt": "In Yorkshire, hikers visit the green hills of a National ___. (Schutzgebiet)",
+				"answers": [
+					"Park",
+					"park"
+				],
+				"feedback": "National Parks schützen Landschaften in Großbritannien und bieten Erholung."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Describe two British regions outside London in four English sentences (choose from Wales, Northern England or Cornwall) and give one detail for each.",
+				"model": "Wales lies in the west of Great Britain, and its capital is Cardiff. Road signs there are written in both Welsh and English. Cornwall is on the south-west coast, where many tourists visit the beaches in summer. In winter, life in coastal villages is much quieter.",
+				"criteria": [
+					"Ich wähle zwei britische Regionen außerhalb Londons.",
+					"Ich nenne je Region ein konkretes Merkmal aus dem Text.",
+					"Ich verwende klare englische Aussagesätze."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Warum wirkt sich starker Sommertourismus in einer Küstenregion wie Cornwall sowohl positiv als auch herausfordernd auf Jugendliche und Familien aus? Antworte auf Deutsch.",
+				"model": "Einerseits bringt Tourismus im Sommer Arbeitsplätze in Cafés, Läden und Ferienunterkünften und macht kleine Küstenorte lebendig. Andererseits werden Wohnungen für Einheimische durch Ferienhäuser oft teurer, die Straßen und Strände sind voll, und im Winter fällt ein Teil der Jobs wieder weg.",
+				"criteria": [
+					"Ich nenne mindestens einen Vorteil des Tourismus.",
+					"Ich benenne mindestens eine Kehrseite für Einheimische.",
+					"Ich beziehe mich konkret auf Küstenregionen wie Cornwall."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "sentence",
+			"goals": [
+				{
+					"label": "Zweisprachigkeit",
+					"before": "Road signs in Wales appear in",
+					"after": ".",
+					"options": [
+						"Welsh and English",
+						"French and German",
+						"Spanish and English"
+					],
+					"answer": "Welsh and English",
+					"explanation": "In Wales stehen Orts- und Straßennamen auf Walisisch und Englisch."
+				},
+				{
+					"label": "Nordengland",
+					"before": "Old mill towns in Yorkshire stand near",
+					"after": ".",
+					"options": [
+						"green National Parks",
+						"Pacific beaches",
+						"desert canyons"
+					],
+					"answer": "green National Parks",
+					"explanation": "Nordengland verbindet historische Industriestädte mit Nationalparks."
+				},
+				{
+					"label": "Südwestküste",
+					"before": "Cornwall is quiet in winter, while summer brings",
+					"after": "to the coast.",
+					"options": [
+						"holiday visitors",
+						"subway trains",
+						"snowstorms"
+					],
+					"answer": "holiday visitors",
+					"explanation": "Im Sommer besuchen viele Urlaubsgäste die Küstenorte in Cornwall."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "e6-travel-leaflet",
+		"stage": "britain",
+		"title": "Planning a trip: Mediating travel pages",
+		"skill": "Eine englische Reise-Internetseite erschließen, Informationen auf Deutsch mitteln und Wörter über Wortfamilien verstehen",
+		"bindings": [
+			"1.1",
+			"4",
+			"5"
+		],
+		"paragraphs": [
+			"Sprachmittlung (mediation) heißt: Du übersetzt nicht Wort für Wort, sondern gibst die wichtigen Informationen eines englischen Textes für jemanden verständlich und sinngemäß auf Deutsch wieder — zum Beispiel für deine Großeltern, die eine Reise-Webseite zu Edinburgh lesen möchten.",
+			"Beispiel zur Erschließung über Wortfamilien: Steht auf der Seite „daily guided walking tours“ oder „helpful staff“, kennst du schon day → daily, guide → guided und help → helpful. Wenn auf einem Flyer steht „Under 16s travel half-price when accompanied by an adult“, mittelst du sinngemäß: „Kinder und Jugendliche unter 16 Jahren zahlen in Begleitung eines Erwachsenen den halben Preis.“ Wichtige Zahlen, Zeiten und Einschränkungen dürfen dabei nicht verloren gehen."
+		],
+		"material": "VISIT SCOTLAND MINI-GUIDE · EDINBURGH CASTLE & HIGHLAND TRAIN\n• Edinburgh Castle Opening Hours: Daily 9:30 a.m. – 5:00 p.m. (last entry 4:00 p.m.).\n• Family Saver: Children aged 7–15 get a reduced ticket; under 7s enter free. Audio guides are available in German.\n• Rainy-day tip: Bring a waterproof jacket because the castle sits high on a windy rock!\n• Highland Scenic Train: Departs Edinburgh Waverley at 10:25. Wheelchair spaces and bike racks must be booked in advance.",
+		"materialLabel": "Eigenes englisches Übungsmaterial · fiktive Reise-Webseite für eine Sprachmittlungsübung",
+		"materialLanguage": "en",
+		"sourceIds": [
+			"lp",
+			"visitscotland",
+			"wiki-edinburgh"
+		],
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Deine Tante möchte um 16:15 Uhr noch schnell in Edinburgh Castle hinein. Was sagst du ihr auf Deutsch?",
+			"answer": "Das klappt leider nicht mehr, denn der letzte Einlass ist schon um 16:00 Uhr, auch wenn die Burg bis 17:00 Uhr geöffnet hat.",
+			"wrong": [
+				"Kein Problem, sie darf bis 17:00 Uhr jederzeit hineingehen.",
+				"Die Burg öffnet nachmittags erst um 16:00 Uhr."
+			],
+			"explanation": "last entry 4:00 p.m. bedeutet letzter Einlass um 16:00 Uhr; um 16:15 Uhr kommt man nicht mehr hinein."
+		},
+		"takeaway": "Bei der schriftlichen Sprachmittlung überträgst du nur relevante Kernaussagen und genaue Details (Zeiten, Preise, Hinweise) sinngemäß in gutes Deutsch; Wortfamilien (help → helpful) helfen beim Verstehen.",
+		"practice": [
+			{
+				"prompt": "Look at the word 'waterproof' (water + proof): Was bedeutet 'waterproof jacket' sinngemäß auf Deutsch? ___ Jacke (ein deutsches Adjektiv)",
+				"answers": [
+					"wasserdichte",
+					"regenfest",
+					"regenfeste",
+					"wasserdicht"
+				],
+				"feedback": "Aus water + proof erschließt man leicht wasserdicht."
+			},
+			{
+				"prompt": "When does the Highland Scenic Train leave Edinburgh Waverley? At ___ (Uhrzeit aus dem Text)",
+				"answers": [
+					"10:25"
+				],
+				"feedback": "Der Zug fährt um 10:25 Uhr ab."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "de",
+				"prompt": "Mittle die wichtigsten Informationen zu Edinburgh Castle (Öffnungszeiten, letzter Einlass, Preise für Kinder und Audioguide) in vier klaren deutschen Sätzen für deine Eltern.",
+				"model": "Edinburgh Castle hat täglich von 9:30 bis 17:00 Uhr geöffnet, allerdings ist der letzte Einlass bereits um 16:00 Uhr. Kinder unter 7 Jahren haben freien Eintritt, und Kinder zwischen 7 und 15 Jahren bekommen ein ermäßigtes Ticket. Vor Ort gibt es auch Audioguides auf Deutsch. Wegen des Windes oben auf dem Felsen empfiehlt sich eine wasserdichte Jacke.",
+				"criteria": [
+					"Ich gebe Öffnungszeiten und letzten Einlass richtig wieder.",
+					"Ich nenne beide Altersregeln und das deutsche Audioguide-Angebot.",
+					"Ich formuliere flüssiges, natürliches Deutsch statt wörtlicher Übersetzung."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Dein Onkel möchte mit seinem Fahrrad im Highland Scenic Train mitfahren und um 10:20 Uhr spontan am Bahnhof ein Ticket kaufen. Schreibe eine deutsche Nachricht mit den passenden Hinweisen und erkläre kurz, wie dir die Wortfamilie bei 'reduced' oder 'available' hilft.",
+				"model": "Lieber Onkel, der Zug fährt um 10:25 Uhr ab Edinburgh Waverley, aber Fahrradstellplätze müssen laut Webseite im Voraus reserviert werden — spontan um 10:20 Uhr reicht das also wahrscheinlich nicht. Beim Verstehen helfen Wortfamilien: reduced erinnert an reduzieren/ermäßigt, available passt zu verfügbar (z. B. Audioguides).",
+				"criteria": [
+					"Ich warne vor dem spontanen Fahrradtransport ohne Vorabbuchung.",
+					"Ich nenne die genaue Abfahrtszeit 10:25 Uhr.",
+					"Ich zeige an einem Beispiel, wie Wortfamilien beim Erschließen helfen."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "sequence",
+			"goals": [
+				{
+					"label": "Letzter Einlass",
+					"before": "last entry 4:00 p.m. bedeutet auf Deutsch:",
+					"after": "",
+					"options": [
+						"Letzter Einlass um 16:00 Uhr",
+						"Erster Einlass um 16:00 Uhr",
+						"Eintritt ab 16:00 Uhr kostenlos"
+					],
+					"answer": "Letzter Einlass um 16:00 Uhr",
+					"explanation": "p.m. steht für Nachmittag; last entry ist der späteste Zeitpunkt für den Eintritt."
+				},
+				{
+					"label": "Wortfamilie nutzen",
+					"before": "Aus 'reduce' erschließt du 'reduced ticket' als:",
+					"after": "",
+					"options": [
+						"ermäßigte Eintrittskarte",
+						"doppelt so teure Karte",
+						"abgelaufene Fahrkarte"
+					],
+					"answer": "ermäßigte Eintrittskarte",
+					"explanation": "reduce / reduzieren führt direkt zu ermäßigt."
+				},
+				{
+					"label": "Wichtige Einschränkung",
+					"before": "bike racks must be booked in advance heißt:",
+					"after": "",
+					"options": [
+						"Fahrradplätze vorab reservieren",
+						"Fahrräder sind im Zug verboten",
+						"Fahrräder fahren immer gratis mit"
+					],
+					"answer": "Fahrradplätze vorab reservieren",
+					"explanation": "in advance bedeutet im Voraus."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": false
+	}
+]

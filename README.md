@@ -6,6 +6,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | --- | --- | --- | --- |
 | Physics 7 Realschule (Bavaria, Group I) | [`physik-realschule-7/`](physik-realschule-7/) | Built by Pages on merge | `zam-academy:physik-realschule-7` |
 | English 5 Gymnasium (Bavaria) | [`englisch-gymnasium-5/`](englisch-gymnasium-5/) | https://academy.zam-os.org/englisch-gymnasium-5/ | `zam-academy:englisch-gymnasium-5` |
+| English 6 Gymnasium (Bavaria, 1. FS) | [`englisch-gymnasium-6/`](englisch-gymnasium-6/) | Built by Pages on merge | `zam-academy:englisch-gymnasium-6` |
 | Deutsch 5 Gymnasium (LehrplanPLUS Bayern) | [`deutsch-gymnasium-5/`](deutsch-gymnasium-5/) | https://academy.zam-os.org/deutsch-gymnasium-5/ | `zam-academy:deutsch-gymnasium-5` |
 | German 6 Realschule (Bavaria) | [`deutsch-realschule-6/`](deutsch-realschule-6/) | Built by Pages on merge | `zam-academy:deutsch-realschule-6` |
 | Grade 4 mathematics: 40 Discovery Island lessons with Milo (Bavaria) | [`mathematik-grundschule-4/`](mathematik-grundschule-4/) | https://academy.zam-os.org/mathematik-grundschule-4/ | `zam-academy:mathematik-grundschule-4` |
@@ -27,6 +28,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | Physik 9 Realschule (LehrplanPLUS Bayern) | [`physik-realschule-9/`](physik-realschule-9/) | https://academy.zam-os.org/physik-realschule-9/ | `zam-academy:physik-realschule-9` |
 | Relationale Datenbanken und SQL (DE/EN, LehrplanPLUS IT 2.3.1/2.3.2) | [`sql/`](sql/) | https://academy.zam-os.org/sql/ | `zam-academy:sql` |
 | Englisch 5 Realschule (LehrplanPLUS Bayern, für alle Schülerinnen und Schüler) | [`englisch-realschule-5/`](englisch-realschule-5/) | https://academy.zam-os.org/englisch-realschule-5/ | `zam-academy:englisch-realschule-5` |
+| Englisch 6 Realschule (LehrplanPLUS Bayern, alle Wahlpflichtfächergruppen) | [`englisch-realschule-6/`](englisch-realschule-6/) | https://academy.zam-os.org/englisch-realschule-6/ | `zam-academy:englisch-realschule-6` |
 | Englisch 8 Realschule (LehrplanPLUS Bayern, alle Wahlpflichtfächergruppen) | [`englisch-realschule-8/`](englisch-realschule-8/) | https://academy.zam-os.org/englisch-realschule-8/ | `zam-academy:englisch-realschule-8` |
 | Englisch 9 Realschule (LehrplanPLUS Bayern) | [`englisch-realschule-9/`](englisch-realschule-9/) | https://academy.zam-os.org/englisch-realschule-9/ | `zam-academy:englisch-realschule-9` |
 | Englisch 10 Realschule (LehrplanPLUS Bayern, alle Wahlpflichtfächergruppen) | [`englisch-realschule-10/`](englisch-realschule-10/) | https://academy.zam-os.org/englisch-realschule-10/ | `zam-academy:englisch-realschule-10` |
@@ -46,10 +48,12 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | Chemie 8 Realschule (LehrplanPLUS Bayern, Zweig I) | [`chemie-realschule-8/`](chemie-realschule-8/) | https://academy.zam-os.org/chemie-realschule-8/ | `zam-academy:chemie-realschule-8` |
 | Chemie 9 Realschule (LehrplanPLUS Bayern, Zweig I und II/III) | [`chemie-realschule-9/`](chemie-realschule-9/) | https://academy.zam-os.org/chemie-realschule-9/ | `zam-academy:chemie-realschule-9` |
 | Chemie 10 Realschule (LehrplanPLUS Bayern, Zweig I und II/III) | [`chemie-realschule-10/`](chemie-realschule-10/) | https://academy.zam-os.org/chemie-realschule-10/ | `zam-academy:chemie-realschule-10` |
+| Geschichte 6 Realschule (LehrplanPLUS Bayern, gemeinsamer Lernpfad) | [`geschichte-realschule-6/`](geschichte-realschule-6/) | Built by Pages on merge | `zam-academy:geschichte-realschule-6` |
 | History 8 Realschule (Bavaria, all tracks) | [`geschichte-realschule-8/`](geschichte-realschule-8/) | https://academy.zam-os.org/geschichte-realschule-8/ | `zam-academy:geschichte-realschule-8` |
 | Geschichte 9 Realschule (LehrplanPLUS Bayern, gemeinsamer Lernpfad) | [`geschichte-realschule-9/`](geschichte-realschule-9/) | https://academy.zam-os.org/geschichte-realschule-9/ | `zam-academy:geschichte-realschule-9` |
 | Geschichte 10 Realschule (LehrplanPLUS Bayern, gemeinsamer Lernpfad) | [`geschichte-realschule-10/`](geschichte-realschule-10/) | https://academy.zam-os.org/geschichte-realschule-10/ | `zam-academy:geschichte-realschule-10` |
 | Geography 5 Realschule (Bavaria, all tracks) | [`geographie-realschule-5/`](geographie-realschule-5/) | https://academy.zam-os.org/geographie-realschule-5/ | `zam-academy:geographie-realschule-5` |
+| Geography 6 Realschule (Bavaria, all tracks) | [`geographie-realschule-6/`](geographie-realschule-6/) | https://academy.zam-os.org/geographie-realschule-6/ | `zam-academy:geographie-realschule-6` |
 | Geographie 9 Realschule (LehrplanPLUS Bayern, gemeinsamer Lernpfad) | [`geographie-realschule-9/`](geographie-realschule-9/) | https://academy.zam-os.org/geographie-realschule-9/ | `zam-academy:geographie-realschule-9` |
 | Biology 6 Realschule (Bavaria, all tracks) | [`biologie-realschule-6/`](biologie-realschule-6/) | https://academy.zam-os.org/biologie-realschule-6/ | `zam-academy:biologie-realschule-6` |
 | Biologie 10 Realschule (LehrplanPLUS Bayern, gemeinsamer Lernpfad) | [`biologie-realschule-10/`](biologie-realschule-10/) | https://academy.zam-os.org/biologie-realschule-10/ | `zam-academy:biologie-realschule-10` |
@@ -71,7 +75,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | Biologie 5 Realschule (LehrplanPLUS Bayern, gemeinsamer Lernpfad) | [`biologie-realschule-5/`](biologie-realschule-5/) | https://academy.zam-os.org/biologie-realschule-5/ | `zam-academy:biologie-realschule-5` |
 | Biologie 8 Realschule (LehrplanPLUS Bayern, gemeinsamer Lernpfad) | [`biologie-realschule-8/`](biologie-realschule-8/) | https://academy.zam-os.org/biologie-realschule-8/ | `zam-academy:biologie-realschule-8` |
 | Geographie 8 Realschule (LehrplanPLUS Bayern) | [`geographie-realschule-8/`](geographie-realschule-8/) | https://academy.zam-os.org/geographie-realschule-8/ | `zam-academy:geographie-realschule-8` |
-| Informatik 8 Realschule (LehrplanPLUS Bayern, IT-Anfangsunterricht 1.1–1.9, alle Wahlpflichtfächergruppen) | [`informatik-realschule-8/`](informatik-realschule-8/) | https://academy.zam-os.org/informatik-realschule-8/ | `zam-academy:informatik-realschule-8` |
+| Informatik 6–8 Realschule (Bavaria, LehrplanPLUS IT 1.1–1.9; one shared introductory course for all tracks) | [`informatik-realschule-8/`](informatik-realschule-8/) | https://academy.zam-os.org/informatik-realschule-8/ | `zam-academy:informatik-realschule-8` |
 | Deutsch 8 Realschule (LehrplanPLUS Bayern, alle Wahlpflichtfächergruppen) | [`deutsch-realschule-8/`](deutsch-realschule-8/) | https://academy.zam-os.org/deutsch-realschule-8/ | `zam-academy:deutsch-realschule-8` |
 | French 8 Realschule (Bavaria, IIIa) | [`franzoesisch-realschule-8/`](franzoesisch-realschule-8/) | Published by Pages on merge | `zam-academy:franzoesisch-realschule-8` |
 | Deutsch 7 Mittelschule (LehrplanPLUS Bayern, Regelklasse und M-Zug) | [`deutsch-mittelschule-7/`](deutsch-mittelschule-7/) | https://academy.zam-os.org/deutsch-mittelschule-7/ | `zam-academy:deutsch-mittelschule-7` |
@@ -138,7 +142,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Französisch 10: cd franzoesisch-realschule-10 (dev server on :5207)
 # Biologie 8: cd biologie-realschule-8 (dev server on :5208)
 # Chemie 8: cd chemie-realschule-8 (dev server on :5209)
-# Informatik 8: cd informatik-realschule-8 (dev server on :5211)
+# Informatics 6–8 Realschule: cd informatik-realschule-8 (dev server on :5211)
 # Deutsch 8: cd deutsch-realschule-8 (dev server on :5212)
 # History 8: cd geschichte-realschule-8 (dev server on :5213)
 # Englisch 8: cd englisch-realschule-8 (dev server on :5214)
@@ -155,6 +159,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Mathematik 13 Gymnasium: cd mathematik-gymnasium-13 (dev server on :5225)
 # Physik 11 Gymnasium: cd physik-gymnasium-11 (dev server on :5226)
 # Geography 5 Realschule: cd geographie-realschule-5 (dev server on :5240)
+# Geography 6 Realschule: cd geographie-realschule-6 (dev server on :5257)
 # German 5 Mittelschule: cd deutsch-mittelschule-5 (dev server on :5230)
 # German 6 Mittelschule: cd deutsch-mittelschule-6 (dev server on :5231)
 # Mathematics 5 Mittelschule: cd mathematik-mittelschule-5 (dev server on :5228)
@@ -172,14 +177,17 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Mathematik 7 Gymnasium: cd mathematik-gymnasium-7 (dev server on :5242)
 # Geographie 5 Gymnasium: cd geographie-gymnasium-5 (dev server on :5244)
 # English 5 Gymnasium: cd englisch-gymnasium-5 (dev server on :5247)
+# English 6 Gymnasium: cd englisch-gymnasium-6 (dev server on :5256)
 # German 5 Gymnasium: cd deutsch-gymnasium-5 (dev server on :5249)
 # German 6 Realschule: cd deutsch-realschule-6 (dev server on :5254)
+# Englisch 6 Realschule: cd englisch-realschule-6 (dev server on :5255)
+# Geschichte 6 Realschule: cd geschichte-realschule-6 (dev server on :5258)
 # Biologie 5 Gymnasium: cd biologie-gymnasium-5 (dev server on :5246)
 # French 5 Gymnasium: cd franzoesisch-gymnasium-5 (dev server on :5245)
 # Englisch 5 Mittelschule: cd englisch-mittelschule-5 (dev server on :5248)
 # Informatik 6 Gymnasium: cd informatik-gymnasium-6 (dev server on :5251)
 # Biologie 6 Gymnasium: cd biologie-gymnasium-6 (dev server on :5253)
-# Geschichte 6 Gymnasium: cd geschichte-gymnasium-6 (dev server on :5255)
+# Geschichte 6 Gymnasium: cd geschichte-gymnasium-6 (dev server on :5259)
 # Grade 11 introductory biology: cd biologie-gymnasium-11 (dev server on :5227)
 npm ci
 npm run dev      # http://localhost:5180/uml/
@@ -204,7 +212,7 @@ Selecting a live package shows its details and an opening link directly below th
 
 `fachverbunde` defines combined subjects with one canonical id, school, grades and access `paths`. Mittelschule GPG (`gpg`, grades 5–10) is reachable through Geschichte, Politik und Gesellschaft and Geographie, and Mittelschule NT (`nt`, grades 5–10) through Biologie, Chemie and Physik in both lenses, the list and the coverage matrix. Each entry is explicitly named after its combined subject. The three routes point to one offer: common ancestors and matrix totals count it once, and search returns one package result. Until a package exists, the shared offer remains planned. A combined package is registered once with `fach: "gpg"` or `"nt"`, its grade and `school: "mittelschule"`; all routes then open the same app and do not create copies of cards or progress.
 
-To register a new package, add an entry to `pakete` in `academy.json` (app folder, Fach, grade, school, lesson and card counts); `node --test scripts/academy-registry.test.mjs` keeps it in sync with the app cells. UML groups several lessons per atom, so its curriculum test checks the registry's lesson count against the app's actual lessons. School types and subject start grades in the registry are a planning scaffold and can be edited freely.
+To register a new package, add an entry to `pakete` in `academy.json` (app folder, Fach, grade, school, lesson and card counts); `node --test scripts/academy-registry.test.mjs` keeps it in sync with the app cells. A shared course adds `grades` (for example `[6, 7, 8]`) to its single registry entry; `grade` remains one of those grades. All grade routes open the same app, and package, lesson and card totals count it once. UML groups several lessons per atom, so its curriculum test checks the registry's lesson count against the app's actual lessons. School types and subject start grades in the registry are a planning scaffold and can be edited freely.
 
 ## Privacy
 
@@ -220,9 +228,11 @@ The [Informatik 10 package](informatik-realschule-10/) adds 36 lessons and 72 ca
 
 Geographie 8: `cd geographie-realschule-8 && npm ci && npm run dev` (Port 5210). Die [Abdeckungsmatrix](geographie-realschule-8/coverage.json) ordnet alle 34 Pflicht-Kompetenzerwartungen den 34 Lektionen zu; [Bestandsabgleich](docs/geographie-8-bestandsabgleich.md).
 
-The [Informatik 8 package](informatik-realschule-8/) covers the IT Anfangsunterricht (modules 1.1–1.9, binding for all Wahlpflichtfächergruppen and completed by the end of grade 8) with 40 lessons, local workshops and 87 cards. Its [coverage matrix](informatik-realschule-8/coverage.json) maps all 35 Kompetenzerwartungen. The [legacy review](docs/informatik-8-bestandsabgleich.md) maps the 24 cards of the old Informatik 6–8 cells to 10 A, 1 B and 13 C rows; Thomas approved the mapping on 2026-10-27, so since cell 2026.10.2 it replaces the eleven A/B cards and retires the thirteen C cards. Since 2026.10.3 every atom binds its module for grades 6, 7 and 8, because LehrplanPLUS does not tie the modules to one grade.
+The [Informatics 6–8 package](informatik-realschule-8/) is the same shared course under Grades 6, 7 and 8 in the atlas, list and coverage matrix. All routes open the existing app and share its progress and ZAM cell. It covers the IT Anfangsunterricht (modules 1.1–1.9, binding for all Wahlpflichtfächergruppen and completed by the end of Grade 8) with 40 lessons, local workshops and 87 cards. Schools choose when to teach each module. Its [coverage matrix](informatik-realschule-8/coverage.json) maps all 35 Kompetenzerwartungen. The [legacy review](docs/informatik-8-bestandsabgleich.md) maps the 24 cards of the old Informatik 6–8 cells to 10 A, 1 B and 13 C rows; Thomas approved the mapping on 2026-10-27, so since cell 2026.10.2 it replaces the eleven A/B cards and retires the thirteen C cards. Since 2026.10.3 every atom binds its module for Grades 6, 7 and 8, because LehrplanPLUS does not tie the modules to one grade. The existing app URL, cell title, card identifiers and storage keys remain valid.
 
 The [Deutsch 8 package](deutsch-realschule-8/) adds 40 lessons, 80 linked cards and writing tasks on two levels for Realschule Bayern. Its [coverage matrix](deutsch-realschule-8/coverage.json) maps all 59 curriculum expectations to guided exercises or preparation for additional practice. The [inventory](docs/deutsch-8-bestandsabgleich.md) documents four existing argumentation cards that remain active, with no review-history transfer.
+
+The [Geschichte 6 package](geschichte-realschule-6/) teaches the Grade 6 Realschule history plan in 42 lessons, from methods and the Stone Age through Egypt, Greece and Rome to the Franks and Charlemagne, with two longitudinal sections on technology and historical figures. Every lesson shows a time strip to scale, 21 lessons draw a Schaubild, and the learning path opens with a Geschichtsfries of all lessons and dates. Its [coverage matrix](geschichte-realschule-6/coverage.json) maps all 44 expectations verbatim (checked by `scripts/check-curriculum.mjs`); the [inventory](docs/geschichte-6-bestandsabgleich.md) maps the eight older Grade 6 cards 4 A / 0 B / 4 C, approved by Thomas on 2026-11-18: four histories move via `replaces`, the four C cards stay active.
 
 The [History 8 package](geschichte-realschule-8/) adds 35 core lessons and three optional English extensions, 38 interactive workshops, 76 writing tasks and 76 linked cards. Its [coverage matrix](geschichte-realschule-8/coverage.json) maps all 38 indexed expectations to guided practice or preparation for further source, image, map, local and current-event work. The [inventory](docs/geschichte-8-bestandsabgleich.md) retains the eight older History 8 cards and their histories without transfer. Pages publishes the app and catalog on merge to main; synchronizing the bundled ZAM fixtures is a separate step.
 
@@ -262,4 +272,8 @@ The [Biologie 6 Gymnasium package](biologie-gymnasium-6/) covers Natur und Techn
 
 The [Deutsch 5 Gymnasium package](deutsch-gymnasium-5/) adds 50 lessons across all four LehrplanPLUS Bayern areas (*Sprechen und Zuhören*, *Lesen und Medien*, *Schreiben*, *Sprache und Rechtschreibung*), including local audio passages, dramatic scenes (*Spielszenen*), 22 interactive language and spelling models, two-level writing tasks with self-assessment and 100 ZAM cards (`proposal-only` legacy inventory of all 16 old cards in [deutsch-gymnasium-5/replaces-de-by.json](deutsch-gymnasium-5/replaces-de-by.json)). See [Curriculum coverage and legacy inventory](docs/deutsch-gymnasium-5-coverage.md).
 
-The [Geschichte 6 Gymnasium package](geschichte-gymnasium-6/) covers all seven LehrplanPLUS Bayern areas (*Der Mensch und seine Geschichte*, *Ägypten*, *Griechische Antike*, *Menschen machen Geschichte*, *Imperium Romanum*, *Von der Antike zum Mittelalter*, *Leben in der Familie*) with 36 lessons, 47 SVG figures and Natural-Earth historical maps (plus panorama and global timeline), 15 interactive models and map explorers, four *Kriterienkataloge*, two-level exercises, and 72 ZAM cards ([`proposal-only` legacy inventory](geschichte-gymnasium-6/replaces-de-by.json) of all 16 old Grade 6 items: 8 A, 0 B, 8 C keep-active; Grade 6 Gymnasium Geographie is recorded in `academy.json` under `kein_unterricht` per BayGSO Anlage 1). See [Curriculum coverage and legacy inventory](docs/geschichte-gymnasium-6-coverage.md).
+The [Englisch 6 Realschule package](englisch-realschule-6/) adds 42 lessons in eight stages across all LehrplanPLUS Bayern Realschule areas (USA, London, regions of Britain, everyday life, sports and charity, media and digital communication, grade-6 grammar and vocabulary/text strategies) with 126 workshop goals, four local listening scripts, 21 verified source links and 126 linked ZAM cards (`proposal-only` legacy inventory of the 16 old `de-by` cards in [englisch-realschule-6/replaces-de-by.json](englisch-realschule-6/replaces-de-by.json), starting at package version `0.0`). See [Curriculum coverage and legacy inventory](docs/englisch-realschule-6-coverage.md).
+
+The [Englisch 6 Gymnasium package](englisch-gymnasium-6/) continues English 5 for Bavarian Gymnasium (`1. Fremdsprache`) with 40 lessons in eight stages, interactive timeline, comparison, direction, picture-description, and UK/USA map workshops, local browser-speech and offline listening support, 80 short-answer checks, 80 two-level tasks with self-assessment, and 120 linked ZAM cards. Its [coverage matrix](englisch-gymnasium-6/coverage.json) checks all 40 verbatim expectations (`E6-01`–`E6-40`) against LehrplanPLUS Bayern, and [englisch-gymnasium-6/replaces-de-by.json](englisch-gymnasium-6/replaces-de-by.json) documents the approved 2026-11-18 mapping of all eight items in `de-by:gymnasium-6-englisch-past-tenses-present-perfect-adjectives` (3 category-A `replaces`, 5 category-C `keep-active`, validated by `englisch-gymnasium-6/scripts/validate-migration.mjs`) alongside a neighbouring-grade review of Grade 7. See [Curriculum coverage and legacy inventory](docs/englisch-gymnasium-6-coverage.md).
+
+The [Geschichte 6 Gymnasium package](geschichte-gymnasium-6/) covers all seven LehrplanPLUS Bayern areas (*Der Mensch und seine Geschichte*, *Ägypten*, *Griechische Antike*, *Menschen machen Geschichte*, *Imperium Romanum*, *Von der Antike zum Mittelalter*, *Leben in der Familie*) with 36 lessons, 47 SVG figures and Natural-Earth historical maps (plus panorama and global timeline), 15 interactive models and map explorers, four *Kriterienkataloge*, two-level exercises, and 72 ZAM cards. Its [legacy mapping](geschichte-gymnasium-6/replaces-de-by.json) was approved by Thomas on 2026-11-18 (8 A `replaces`, 0 B, 8 C `keep-active`, validated by `geschichte-gymnasium-6/scripts/validate-migration.mjs`; Grade 6 Gymnasium Geographie is recorded in `academy.json` under `kein_unterricht` per BayGSO Anlage 1). See [Curriculum coverage and legacy inventory](docs/geschichte-gymnasium-6-coverage.md).

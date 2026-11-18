@@ -36,7 +36,7 @@ chmodSync(join(bundle, "Start-Mac.command"), 0o755);
 chmodSync(join(bundle, "start-linux.sh"), 0o755);
 writeFileSync(
 	join(bundle, "README-START.txt"),
-	`ZAM ACADEMY · TINTOS WÖRTERSTADT · DEUTSCH 4. KLASSE (BAYERN)\n\n1. ZIP entpacken.\n2. ${app} im Browser öffnen oder den passenden Starter nutzen.\n\nKeine Installation und kein Server nötig. 45 Lektionen zu Wortarten,\nSätzen und Rechtschreibung mit Werkstatt-Spielen und Aufgaben auf zwei Stufen.\nSterne und Sticker bleiben in diesem Browser.\n\nVersion 0: Eine Grundschullehrkraft hat die Inhalte noch nicht\nfachlich freigegeben. Lesen, eigene Texte und Sprechen sind noch nicht enthalten.\nExterne Links öffnen nur auf deinen Klick.\n`,
+	`ZAM ACADEMY · TINTOS WÖRTERSTADT · DEUTSCH 4. KLASSE (BAYERN)\n\n1. ZIP entpacken.\n2. ${app} im Browser öffnen oder den passenden Starter nutzen.\n\nKeine Installation und kein Server nötig. 45 Lektionen zu Wortarten,\nSätzen, Rechtschreibung, Lesen und Schreiben, mit Werkstatt-Spielen,\nAufgaben auf zwei Stufen und Tinto als Begleiter.\nSterne, Sticker und eigene Texte bleiben in diesem Browser.\n\nVersion 0: Eine Grundschullehrkraft hat die Inhalte noch nicht\nfachlich freigegeben. Sprechen und Zuhören sind nicht enthalten.\nExterne Links öffnen nur auf deinen Klick.\n`,
 );
 const zip = join(release, `${name}-offline.zip`);
 execFileSync("zip", ["-r", "-q", zip, name], { cwd: release });
