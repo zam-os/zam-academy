@@ -1,6 +1,6 @@
 # Tintos Wörterstadt · Deutsch 4 · Grundschule Bayern
 
-**Version 0.0.** 45 Lektionen, 135 ZAM-Karten. Kinder der 4. Klasse üben
+**Version 0.1.** 45 Lektionen, 135 ZAM-Karten. Kinder der 4. Klasse üben
 hier Lesen, Schreiben, „Sprache untersuchen“ und „Richtig schreiben“ aus dem
 [LehrplanPLUS Deutsch 3/4](https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/deutsch)
 (Abgleich am 3. bis 5. November 2026). Begleiter ist Tinto, ein kleiner Tintenfisch,
@@ -20,8 +20,17 @@ App und Karten sind veröffentlicht, ihre IDs gelten ab jetzt als Vertrag.
 
 ## Aufbau einer Lektion
 
-1. **Verstehen:** kurze Erklärung in Kindersprache, Beispiel, Merksatz und
-   Fachbegriffe (auch gesammelt im Merkheft).
+Eine Lektion zeigt immer nur einen Schritt; eine Leiste oben führt durch die
+Schritte, und jeder bleibt frei wählbar. Ein Link mit `&level=1` oder
+`&level=2` öffnet gleich das Üben.
+
+1. **Verstehen:** kurze Erklärung in Kindersprache, Stück für Stück: erst die
+   Absätze („Weiter lesen“), dann das Beispiel Zeile für Zeile, dann der
+   Merksatz, den Tinto aufschreibt, zuletzt die Fachbegriffe als Karten zum
+   Umdrehen (erst überlegen, dann vergleichen; gesammelt auch im Merkheft).
+   „Alles auf einmal zeigen“ zeigt alles sofort; eine schon begonnene Lektion
+   öffnet ganz. Der Text wird nicht gekürzt, nur verteilt, und steht immer
+   vollständig in der Seite.
 2. **Schnellcheck:** drei Antworten. Frage und richtige Antwort stammen aus
    der ersten Karte in `cell.json`, die Lektion ergänzt nur eine weitere
    falsche Antwort und die Erklärung.
@@ -33,18 +42,45 @@ App und Karten sind veröffentlicht, ihre IDs gelten ab jetzt als Vertrag.
    Aufgaben. Nach einem Fehlversuch hilft ein Tipp, nach zwei kann das Kind
    die Lösung ansehen; diese Aufgabe zählt dann nicht.
 
-Jeder der vier Schritte bringt einen Stern. Mit vier Sternen klebt Tinto
-einen Sticker ins Stickerheft. Es gibt keine Strafen, keine Serien, keinen
+Schnellcheck, Werkstatt und die beiden Stufen bringen je einen Stern. Mit
+vier Sternen klebt Tinto einen Sticker ins Stickerheft. Lektionen mit freiem
+Schreiben haben als fünften Schritt den Schreibtisch, ohne Stern. Es gibt keine Strafen, keine Serien, keinen
 Zeitdruck und keine Ranglisten. Eingaben werden ohne Autokorrektur und mit
 genauer Groß- und Kleinschreibung geprüft; Leerzeichen und die Art der
 Anführungszeichen spielen keine Rolle.
+
+## Tinto als Begleiter
+
+Neben der Lektion sitzt Tinto in seiner Schreibstube unter Wasser (auf dem
+Handy über der Lektion). Er reagiert auf das, was das Kind tut, und wechselt
+dabei wie ein echter Tintenfisch die Farbe: rosa vor Freude, blau beim
+Nachdenken, türkis, wenn er Mut macht. Bei einem Fehler kratzt er sich am Kopf
+und ermutigt; er schimpft nie. Man kann ihm zuwinken (er winkt mit allen acht
+Armen zurück) oder ihn schlafen schicken. Was er sagt, steht in
+`src/companion.ts`; gespeichert wird davon nichts. Ist das Panel auf dem Handy
+weggescrollt, kommen Sterne, Ziele und Fehler zusätzlich als kurze Meldung.
+
+Die Werkstätten zeigen ihre Wirkung: Tintos Schreibmaschine schlägt beim
+Markieren den Großbuchstaben an, die Kronen-Jagd setzt Kronen auf, die
+Silbenschere zeichnet Silbenbögen und die Bausteinschere Kästen um die
+Bausteine, wie das Kind gerade geschnitten hat. Gelöste Lückenwörter rasten
+zum fertigen Wort zusammen. Im Satzzug fährt eine Lok vorne, die Waggons
+lassen sich ziehen (die Pfeile bleiben für die Tastatur) und gleiten an ihren
+Platz; ist der Satz richtig, dampft die Lok. Dreht das Kind an einer Maschine,
+leuchten die geänderten Wörter auf.
+
+**Ruhig:** Der Schalter mit der Schildkröte oben schaltet jede Bewegung ab
+(`deutsch_gs4_motion` im `localStorage`). Wünscht das Gerät weniger Bewegung
+(`prefers-reduced-motion`), bleibt die App immer ruhig. Inhalt und Abläufe
+sind in beiden Fällen dieselben. Alles ist CSS und SVG ohne neue Abhängigkeit.
 
 ## Fortschritt und Datenschutz
 
 Kein Konto, keine Anfragen an fremde Server. Sterne, Werkstattziele und
 gelöste Aufgaben liegen nur im `localStorage` dieses Browsers
 (`deutsch_gs4_progress_v1`), die Texte vom Schreibtisch unter
-`deutsch_gs4_texts_v1`. Die App liest und bewertet diese Texte nicht, und das
+`deutsch_gs4_texts_v1`, Thema und ruhige Ansicht unter `deutsch_gs4_theme` und
+`deutsch_gs4_motion`. Die App liest und bewertet diese Texte nicht, und das
 Zurücksetzen löscht sie mit. Alle Werte wachsen nur; mehrere Tabs werden durch
 Vereinigung und Maximum zusammengeführt. Ein Zurücksetzen beginnt eine neue
 Epoche, die auch ein älterer offener Tab übernimmt. Ist der Speicher

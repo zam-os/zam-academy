@@ -1,9 +1,12 @@
 import "./styles.css";
 import cell from "../cell.json";
+import { companionHtml, type CompanionState, type Motion, reaction, type TintoEvent } from "./companion";
 import { findLesson, LESSONS, quizOptions, SOURCES, STAGES } from "./curriculum";
 import { checkAnswer, makeTask, markup } from "./exercises/tasks";
 import { deskHtml } from "./desk";
+import { isStep, learnHtml, learnNextHtml, learnPieces, type Step, stepperHtml } from "./flow";
 import { esc } from "./format";
+import { calm, deviceCalm, glide, MOTION_KEY, positions, replay, scrollIntoViewGently, typewrite } from "./motion";
 import {
 	adoptStored,
 	completion,
@@ -21,13 +24,27 @@ import {
 	stars,
 } from "./storage/progress";
 import { clearTexts, loadText, saveText, TEXTS_KEY } from "./storage/texts";
-import { tinto } from "./tinto";
-import type { Level, ReadyLesson, SlotWorkshop, Task, TrainWorkshop, MachineWorkshop } from "./types";
+import { type Mood, morphTinto, tinto } from "./tinto";
+import type {
+	Level,
+	MachineState,
+	MachineWorkshop,
+	ReadyLesson,
+	SlotState,
+	SlotWorkshop,
+	Task,
+	TrainState,
+	TrainWorkshop,
+} from "./types";
 import {
 	type AnyState,
 	choosePen,
 	initialState,
+	isQuestion,
+	isStatement,
 	moveWagon,
+	moveWagonTo,
+	puzzleSolved,
 	reachedGoals,
 	setControl,
 	setEnd,
@@ -53,9 +70,13 @@ let view: View = "path";
 let lessonId = LESSONS[0].id;
 let routeNotice = "";
 
-/* Per-visit lesson state: the Werkstatt and the current task. */
+/* Per-visit lesson state: the step, the shown pieces, the Werkstatt and the current task. */
+let step: Step = 1;
+let learnShown = 1;
 let workshop: AnyState | null = null;
 let openHelp: string[] = [];
+/** The machine sentence before the last turn of a wheel; its changed words light up once. */
+let previousDisplay: string | undefined;
 interface TaskState {
 	task: Task;
 	level: Level;
@@ -67,6 +88,15 @@ interface TaskState {
 }
 let current: TaskState | null = null;
 let taskLevel: Level = progress.level;
+
+/* Tinto: what he looks like and says now. Nothing of it is stored. */
+let companion: CompanionState = { mood: "happy", line: "", resting: false };
+/** The place in town Tinto last greeted the child in. */
+let lastStage = "";
+const eventCounts: Partial<Record<TintoEvent, number>> = {};
+let moodTimer = 0;
+let companionVisible = true;
+let observer: IntersectionObserver | null = null;
 
 const lesson = (): ReadyLesson => findLesson(lessonId) ?? LESSONS[0];
 const stageOf = (l: ReadyLesson) => STAGES.find((s) => s.id === l.stage) ?? STAGES[0];
@@ -100,8 +130,66 @@ function starRow(id: string): string {
 	return `<span class="stars" aria-label="${starCount(s)} von 4 Sternen">${one(s.quiz, "Schnellcheck")}${one(s.workshop, "Werkstatt")}${one(s.level1, "Stufe 1")}${one(s.level2, "Stufe 2")}</span>`;
 }
 
-function bubble(text: string, mood: "happy" | "think" | "cheer" = "happy"): string {
+function bubble(text: string, mood: Mood = "happy"): string {
 	return `<div class="tinto-says">${tinto(mood)}<p class="bubble">${esc(text)}</p></div>`;
+}
+
+/* ---------- Tinto ---------- */
+
+/** Tinto reacts to something the child did; lines take turns. */
+function react(event: TintoEvent): void {
+	const n = eventCounts[event] ?? 0;
+	eventCounts[event] = n + 1;
+	const r = reaction(event, n);
+	showTinto(r.mood, r.line, r.motion, r.important);
+}
+
+function showTinto(mood: Mood, line: string, motion: Motion = "", important = false): void {
+	window.clearTimeout(moodTimer);
+	const resting = mood === "sleep";
+	companion = { mood, line, resting };
+	const button = main.querySelector<HTMLElement>(".tinto-button");
+	const svg = button?.querySelector<SVGSVGElement>("svg.tinto");
+	if (button && svg) {
+		morphTinto(svg, mood);
+		button.dataset.action = resting ? "wake" : "wave";
+		button.setAttribute("aria-label", resting ? "Tinto wecken" : "Tinto zuwinken");
+		if (motion) replay(svg, `do-${motion}`);
+	}
+	main.querySelector(".scene")?.classList.toggle("resting", resting);
+	const rest = main.querySelector<HTMLElement>("#tinto-rest");
+	if (rest) {
+		rest.dataset.action = resting ? "wake" : "rest";
+		rest.textContent = resting ? "☀️ Tinto wecken" : "💤 Pause";
+	}
+	const message = main.querySelector<HTMLElement>("#tinto-message");
+	if (message) {
+		message.textContent = line;
+		replay(message, "fresh");
+	}
+	// On a small screen the panel may be scrolled away; important news still reaches the child.
+	if (!message || (important && !companionVisible)) say(line);
+	// Joy and encouragement fade back into Tinto's calm face.
+	if (mood === "cheer" || mood === "encourage")
+		moodTimer = window.setTimeout(() => {
+			companion = { ...companion, mood: "happy" };
+			const now = main.querySelector<SVGSVGElement>(".tinto-button svg.tinto");
+			if (now) morphTinto(now, "happy");
+		}, 4500);
+}
+
+function observeCompanion(): void {
+	observer?.disconnect();
+	companionVisible = true;
+	const panel = main.querySelector("#companion");
+	if (!panel || typeof IntersectionObserver === "undefined") return;
+	observer = new IntersectionObserver(
+		([entry]) => {
+			companionVisible = entry.intersectionRatio > 0.4;
+		},
+		{ threshold: [0, 0.4, 1] },
+	);
+	observer.observe(panel);
 }
 
 /* ---------- navigation ---------- */
@@ -116,18 +204,41 @@ function setHash(): void {
 	history.replaceState(null, "", `${location.pathname}${location.search}${hash}`);
 }
 
+/** Enter a lesson. A new lesson starts at "Verstehen"; a level link goes straight to the tasks. */
+function openLesson(id: string, level?: Level): void {
+	const l = findLesson(id);
+	if (!l) return;
+	if (id !== lessonId || view !== "lesson") {
+		workshop = null;
+		current = null;
+		openHelp = [];
+		previousDisplay = undefined;
+		step = 1;
+		// A lesson already begun shows its whole explanation at once.
+		learnShown = starCount(stars(progress, id)) > 0 ? learnPieces(l).length : 1;
+		companion = {
+			mood: "happy",
+			line: l.stage !== lastStage ? stageOf(l).greeting : reaction("learn").line,
+			resting: false,
+		};
+		lastStage = l.stage;
+	}
+	lessonId = id;
+	view = "lesson";
+	if (level) {
+		taskLevel = level;
+		step = 4;
+	}
+}
+
 function navigate(target?: string): void {
 	routeNotice = "";
-	if (target && findLesson(target)) {
-		if (target !== lessonId || view !== "lesson") {
-			workshop = null;
-			current = null;
-			openHelp = [];
-		}
-		lessonId = target;
-		view = "lesson";
-	} else if (target === "stickers" || target === "heft" || target === "eltern") view = target;
-	else view = "path";
+	if (target && findLesson(target)) openLesson(target);
+	else {
+		if (target === "stickers" || target === "heft" || target === "eltern") view = target;
+		else view = "path";
+		lastStage = "";
+	}
 	setHash();
 	render();
 	main.focus();
@@ -142,6 +253,9 @@ function render(): void {
 	});
 	const l = lesson();
 	document.body.dataset.stage = view === "lesson" ? l.stage : "";
+	main.dataset.view = view;
+	observer?.disconnect();
+	companionVisible = true;
 	if (view === "lesson") renderLesson(l);
 	else if (view === "stickers") renderStickers();
 	else if (view === "heft") renderHeft();
@@ -160,7 +274,7 @@ function renderPath(): void {
 		: "Hallo, ich bin Tinto! Ich schreibe mit acht Armen. Komm mit durch meine Wörterstadt!";
 	main.innerHTML = `${routeNotice ? `<p class="notice" role="status">${esc(routeNotice)}</p>` : ""}
 <section class="hero">
-	${bubble(hello, c.stars ? "cheer" : "happy")}
+	<div class="tinto-says hero-tinto"><button type="button" class="tinto-button" data-action="wave" aria-label="Tinto zuwinken">${tinto(c.stars ? "cheer" : "happy")}</button><p class="bubble" id="tinto-message" aria-live="polite">${esc(hello)}</p></div>
 	<div class="hero-text">
 		<p class="eyebrow">Deutsch · 4. Klasse · Bayern</p>
 		<h1>Tintos Wörterstadt</h1>
@@ -181,6 +295,7 @@ function renderPath(): void {
 			.join("")}</ol></section>`;
 	}).join("")}</div>
 <aside class="notice">Tinto sammelt keine Daten. Deine Sterne und Texte bleiben nur in diesem Browser. Eltern finden Hinweise unter <button type="button" class="text-button" data-action="view" data-target="eltern">Für Eltern</button>.</aside>`;
+	companion = { mood: c.stars ? "cheer" : "happy", line: hello, resting: false };
 }
 
 /* ---------- Lektion ---------- */
@@ -189,55 +304,149 @@ function renderLesson(l: ReadyLesson): void {
 	const stage = stageOf(l);
 	const index = LESSONS.indexOf(l);
 	const s = stars(progress, l.id);
+	const hide = (n: Step) => (n === step ? "" : " hidden");
 	main.innerHTML = `<div class="lesson-top"><button type="button" class="text-button" data-action="view" data-target="path">← Zur Wörterstadt</button>${starRow(l.id)}</div>
+<div class="lesson-layout">
+${companionHtml(companion)}
+<div class="lesson-main">
 <header class="lesson-head">
 	<p class="eyebrow">${stage.icon} ${esc(stage.title)} · Lektion ${index + 1} von ${LESSONS.length}</p>
 	<h1>${esc(l.title)}</h1>
-	${bubble(l.skill, "happy")}
+	<p class="skill"><span aria-hidden="true">🎯</span> ${esc(l.skill)}</p>
 	<p class="small lehrplan">${esc(l.lehrplan)}</p>
 </header>
-<section class="card learn">
-	<h2><span class="step">1</span> Verstehen</h2>
-	${l.paragraphs.map((p) => `<p>${esc(p)}</p>`).join("")}
-	<div class="example"><h3>${esc(l.example.title)}</h3><ul>${l.example.lines.map((x) => `<li>${esc(x)}</li>`).join("")}</ul></div>
-	<div class="merke"><strong>Merke</strong><p>${esc(l.takeaway)}</p></div>
-	<dl class="terms">${l.terms.map((t) => `<div><dt>${esc(t.term)}</dt><dd>${esc(t.meaning)}</dd></div>`).join("")}</dl>
-	${l.wordbook ? `<details class="wordbook"><summary>Alle Wörter dieser Lektion</summary>${l.wordbook.groups.map((g) => `<h3>${esc(g.title)}</h3><p>${esc(g.words)}</p>`).join("")}<p class="small">${esc(l.wordbook.note)}</p></details>` : ""}
+<nav class="stepper" id="stepper" aria-label="Schritte dieser Lektion">${stepperHtml(l, step, s)}</nav>
+<section class="card learn" data-panel="1"${hide(1)}>
+	<h2 tabindex="-1"><span class="step">1</span> Verstehen</h2>
+	${learnHtml(l, learnShown)}
+	<div class="step-next" id="learn-next">${learnNextHtml(learnShown, learnPieces(l).length)}</div>
 </section>
-<section class="card" id="quiz-card">
-	<h2><span class="step">2</span> Schnellcheck <span class="star${s.quiz ? " on" : ""}" aria-label="${s.quiz ? "Stern verdient" : "Stern offen"}">★</span></h2>
+<section class="card" id="quiz-card" data-panel="2"${hide(2)}>
+	<h2 tabindex="-1"><span class="step">2</span> Schnellcheck <span class="star${s.quiz ? " on" : ""}" id="quiz-star" aria-label="${s.quiz ? "Stern verdient" : "Stern offen"}">★</span></h2>
 	<p class="question">${esc(l.quiz.question)}</p>
 	<div class="choices">${quizOptions(l)
 		.map((o) => `<button type="button" class="choice" data-action="quiz" data-value="${esc(o)}">${esc(o)}</button>`)
 		.join("")}</div>
 	<div id="quiz-feedback" role="status"></div>
+	<div class="step-next"><button type="button" class="button${s.quiz ? "" : " secondary"}" id="next-2" data-action="step" data-step="3">Weiter: Werkstatt →</button></div>
 </section>
-<section class="card" id="workshop-card">
-	<h2><span class="step">3</span> ${esc(l.workshop.title)} <span class="star${s.workshop ? " on" : ""}" id="workshop-star">★</span></h2>
-	${bubble(l.workshop.intro, "think")}
+<section class="card" id="workshop-card" data-panel="3"${hide(3)}>
+	<h2 tabindex="-1"><span class="step">3</span> ${esc(l.workshop.title)} <span class="star${s.workshop ? " on" : ""}" id="workshop-star">★</span></h2>
+	<p class="mission"><span aria-hidden="true">📜</span> ${esc(l.workshop.intro)}</p>
 	<ul class="goals" id="goals"></ul>
 	<div id="workshop-area" class="workshop"></div>
-	<button type="button" class="text-button" data-action="workshop-reset">↺ Werkstatt neu starten</button>
+	<div class="step-next"><button type="button" class="text-button" data-action="workshop-reset">↺ Werkstatt neu starten</button><button type="button" class="button${s.workshop ? "" : " secondary"}" id="next-3" data-action="step" data-step="4">Weiter: Üben →</button></div>
 </section>
-<section class="card" id="practice-card">
-	<h2><span class="step">4</span> Üben</h2>
+<section class="card" id="practice-card" data-panel="4"${hide(4)}>
+	<h2 tabindex="-1"><span class="step">4</span> Üben</h2>
 	<div class="level-tabs" role="tablist" aria-label="Stufe">
 		<button type="button" role="tab" data-action="level" data-level="1" aria-selected="${taskLevel === 1}">🌱 Stufe 1 · Mit Tipp ${s.level1 ? "★" : ""}</button>
 		<button type="button" role="tab" data-action="level" data-level="2" aria-selected="${taskLevel === 2}">🏅 Stufe 2 · Probe-Training ${s.level2 ? "★" : ""}</button>
 	</div>
 	<div id="practice-area"></div>
+	${l.desk ? '<div class="step-next"><button type="button" class="button secondary" data-action="step" data-step="5">Weiter: Schreibtisch →</button></div>' : ""}
 </section>
-${l.desk ? deskHtml(l.id, l.desk, loadText(l.id)) : ""}
+${l.desk ? `<div data-panel="5"${hide(5)}>${deskHtml(l.id, l.desk, loadText(l.id))}</div>` : ""}
 <nav class="lesson-nav" aria-label="Lektionen">
 	<button type="button" class="button secondary" data-action="open" data-lesson="${LESSONS[index - 1]?.id ?? ""}" ${index === 0 ? "disabled" : ""}>← Vorige Lektion</button>
 	<button type="button" class="button" data-action="open" data-lesson="${LESSONS[index + 1]?.id ?? ""}" ${index === LESSONS.length - 1 ? "disabled" : ""}>Nächste Lektion →</button>
-</nav>`;
+</nav>
+</div>
+</div>`;
 	if (!workshop) workshop = initialState(l.workshop);
 	renderWorkshop();
 	renderPractice();
+	observeCompanion();
 }
 
-function renderWorkshop(): void {
+/** Show one step of the lesson; the others stay in the page, hidden. */
+function goStep(n: number): void {
+	const l = lesson();
+	if (!isStep(l, n)) return;
+	step = n;
+	main.querySelectorAll<HTMLElement>("[data-panel]").forEach((panel) => {
+		panel.hidden = Number(panel.dataset.panel) !== n;
+	});
+	const stepper = element("#stepper");
+	stepper.innerHTML = stepperHtml(l, n, stars(progress, l.id));
+	const panel = main.querySelector<HTMLElement>(`[data-panel="${n}"]`);
+	replay(panel, "enter");
+	const heading = panel?.querySelector<HTMLElement>("h2");
+	if (heading) {
+		heading.tabIndex = -1;
+		heading.focus({ preventScroll: true });
+	}
+	const top = stepper.getBoundingClientRect().top;
+	if (top < 80 || top > window.innerHeight - 120)
+		stepper.scrollIntoView({ behavior: calm() ? "auto" : "smooth", block: "start" });
+	const events: Record<Step, TintoEvent> = { 1: "learn", 2: "step-quiz", 3: "step-workshop", 4: "step-practice", 5: "step-desk" };
+	react(events[n]);
+}
+
+/** Show the explanation up to piece `count`. One new piece gets Tinto's comment. */
+function showPieces(count: number): void {
+	const l = lesson();
+	const pieces = learnPieces(l);
+	const before = learnShown;
+	learnShown = Math.min(pieces.length, Math.max(learnShown, count));
+	if (learnShown === before) return;
+	const one = learnShown - before === 1;
+	main.querySelectorAll<HTMLElement>(".piece").forEach((el) => {
+		if (Number(el.dataset.piece) < learnShown && el.hidden) {
+			el.hidden = false;
+			if (one) replay(el, "fresh");
+		}
+	});
+	const next = element("#learn-next");
+	const hadFocus = next.contains(document.activeElement);
+	if (learnShown < pieces.length) {
+		// Keep the button (and its focus); only the counter changes.
+		const counter = next.querySelector(".piece-count");
+		if (counter) counter.textContent = `${learnShown} / ${pieces.length}`;
+	} else {
+		next.innerHTML = learnNextHtml(learnShown, pieces.length);
+		if (hadFocus) next.querySelector<HTMLElement>("button")?.focus();
+	}
+	if (!one) {
+		react("learn-done");
+		return;
+	}
+	const piece = pieces[learnShown - 1];
+	const shown = main.querySelector<HTMLElement>(`.piece[data-piece="${learnShown - 1}"]`);
+	if (piece.kind === "merke") {
+		const ink = shown?.querySelector<HTMLElement>(".ink");
+		if (ink) typewrite(ink, l.takeaway);
+		react("merke");
+	} else if (piece.kind === "example") react("example");
+	else if (piece.kind === "terms") react("terms");
+	scrollIntoViewGently(next);
+}
+
+function refreshStars(earned?: Step): void {
+	const l = lesson();
+	const s = stars(progress, l.id);
+	main.querySelector(".lesson-top .stars")?.replaceWith(document.createRange().createContextualFragment(starRow(l.id)));
+	const stepper = main.querySelector("#stepper");
+	if (stepper) stepper.innerHTML = stepperHtml(l, step, s);
+	const quizStar = main.querySelector("#quiz-star");
+	quizStar?.classList.toggle("on", s.quiz);
+	quizStar?.setAttribute("aria-label", s.quiz ? "Stern verdient" : "Stern offen");
+	main.querySelector("#workshop-star")?.classList.toggle("on", s.workshop);
+	main.querySelector("#next-2")?.classList.toggle("secondary", !s.quiz);
+	main.querySelector("#next-3")?.classList.toggle("secondary", !s.workshop);
+	if (earned) replay(main.querySelector(`#stepper [data-step="${earned}"]`), "pop");
+}
+
+const trainOk = (): boolean => {
+	const ws = lesson().workshop;
+	return ws.kind === "train" && !!workshop && (isStatement(ws, workshop as TrainState) || isQuestion(ws, workshop as TrainState));
+};
+
+/**
+ * Draw the Werkstatt. `changed` names the element the child just changed (it
+ * pops), `fresh` the goals just reached, `solved` a puzzle just finished.
+ */
+function renderWorkshop(changed?: string, fresh: string[] = [], solved?: string): void {
 	const l = lesson();
 	if (!workshop) return;
 	const reached = new Set(progress.goals[l.id] ?? []);
@@ -245,24 +454,46 @@ function renderWorkshop(): void {
 	element("#goals").innerHTML = l.workshop.goals
 		.map(
 			(g) =>
-				`<li class="${reached.has(g.id) ? "done" : ""}${live.has(g.id) ? " live" : ""}"><span aria-hidden="true">${reached.has(g.id) ? "✅" : "🎯"}</span> ${esc(g.label)}</li>`,
+				`<li class="${reached.has(g.id) ? "done" : ""}${live.has(g.id) ? " live" : ""}${fresh.includes(g.id) && !calm() ? " just-done" : ""}"><span aria-hidden="true">${reached.has(g.id) ? "✅" : "🎯"}</span> ${esc(g.label)}</li>`,
 		)
 		.join("");
-	element("#workshop-area").innerHTML = workshopHtml(l.workshop, workshop, openHelp);
+	const area = element("#workshop-area");
+	// Wagons glide from where they stood to their new places.
+	const before = positions(area, "[data-wagon]", "wagon");
+	area.innerHTML = workshopHtml(l.workshop, workshop, openHelp, previousDisplay);
+	previousDisplay = undefined;
+	glide(area, "[data-wagon]", "wagon", before);
+	if (changed) replay(area.querySelector(changed), "pop");
+	if (solved) replay(area.querySelector(`[data-puzzle-box="${CSS.escape(solved)}"]`), "just-solved");
 	element("#workshop-star").classList.toggle("on", stars(progress, l.id).workshop);
 }
 
-function afterWorkshopChange(): void {
+function afterWorkshopChange(changed?: string, solved?: string): void {
 	const l = lesson();
 	if (!workshop) return;
 	const before = stars(progress, l.id).workshop;
 	const fresh = recordGoals(progress, l.id, reachedGoals(l.workshop, workshop));
-	if (fresh.length) {
-		persist();
-		say(stars(progress, l.id).workshop && !before ? "Alle drei Ziele geschafft! Ein Stern für dich ⭐" : "Ziel erreicht! 🎯");
-		celebrateIfDone();
+	renderWorkshop(changed, fresh, solved);
+	if (!fresh.length) {
+		// A puzzle solved once more still makes Tinto happy, without a new goal.
+		if (solved) react("task-right");
+		return;
 	}
-	renderWorkshop();
+	persist();
+	const star = stars(progress, l.id).workshop && !before;
+	react(star ? "workshop-star" : "goal");
+	if (star) refreshStars(3);
+	celebrateIfDone();
+}
+
+/** Move a wagon and let the locomotive toot when the train becomes a right sentence. */
+function changeTrain(change: (ws: TrainWorkshop, state: TrainState) => TrainState): void {
+	const ws = lesson().workshop;
+	if (ws.kind !== "train" || !workshop) return;
+	const wasOk = trainOk();
+	workshop = change(ws, workshop as TrainState);
+	afterWorkshopChange();
+	if (!wasOk && trainOk()) replay(main.querySelector(".loco"), "toot");
 }
 
 function newTask(level: Level): void {
@@ -319,14 +550,18 @@ function answer(value: string): void {
 	const l = lesson();
 	if (!current || current.solved || current.revealed) return;
 	const result = checkAnswer(current.task, value);
+	let filled = 0;
 	if (result.correct) {
 		current.solved = true;
 		const n = recordSolved(progress, l.id, current.level);
 		persist();
+		filled = Math.min(n, l.requiredCorrect);
 		current.tone = "success";
 		current.message = `<strong>Richtig!</strong> ${esc(current.task.explanation.replace(/^Richtig: /, "So heißt es: "))}`;
-		if (n === l.requiredCorrect)
-			say(current.level === 1 ? "Stufe 1 geschafft! Ein Stern ⭐" : "Probe-Training geschafft! Ein Stern ⭐");
+		if (n === l.requiredCorrect) {
+			react(current.level === 1 ? "level1-star" : "level2-star");
+			refreshStars(4);
+		} else react("task-right");
 		celebrateIfDone();
 		// The star in the tab label may have changed.
 		const tabs = main.querySelectorAll<HTMLButtonElement>("[data-action=level]");
@@ -341,8 +576,18 @@ function answer(value: string): void {
 			: current.tries === 1
 				? "Noch nicht ganz. Lies den Tipp und probiere es noch einmal."
 				: "Fast! Schau dir die Aufgabe noch einmal genau an.";
+		react("task-wrong");
 	}
 	renderPractice();
+	const area = element("#practice-area");
+	if (result.correct) {
+		replay(area.querySelector(`.dot:nth-child(${filled})`), "pop");
+		replay(area.querySelector(".feedback"), "pop");
+	} else
+		replay(
+			current.task.kind === "text" ? area.querySelector(".answer-row") : area.querySelector(`[data-action=answer][data-value="${CSS.escape(value)}"]`),
+			"wobble",
+		);
 	if (current.task.kind === "text" && !current.solved)
 		main.querySelector<HTMLInputElement>("#answer")?.focus();
 	else main.querySelector<HTMLElement>("[data-action=next-task]")?.focus();
@@ -353,10 +598,12 @@ function celebrateIfDone(): void {
 	if (!isComplete(progress, l.id) || progress.celebrated.includes(l.id)) return;
 	progress.celebrated.push(l.id);
 	persist();
+	react("sticker");
 	const next = LESSONS[LESSONS.indexOf(l) + 1];
+	const confetti = Array.from({ length: 14 }, (_, i) => `<i style="--i:${i}"></i>`).join("");
 	showDialog(
 		"Sticker verdient!",
-		`<div class="celebrate">${tinto("cheer")}<div class="sticker big" aria-hidden="true">${l.sticker.emoji}</div><p><strong>${esc(l.sticker.name)}</strong> klebt jetzt in deinem Stickerheft.</p><p>Alle vier Sterne in „${esc(l.title)}“. Super gemacht!</p></div>
+		`<div class="celebrate"><div class="confetti" aria-hidden="true">${confetti}</div>${tinto("cheer")}<div class="sticker big" aria-hidden="true">${l.sticker.emoji}</div><p><strong>${esc(l.sticker.name)}</strong> klebt jetzt in deinem Stickerheft.</p><p>Alle vier Sterne in „${esc(l.title)}“. Super gemacht!</p></div>
 <div class="dialog-actions"><button type="button" class="button secondary" data-dialog="stickers">Stickerheft ansehen</button>${next ? `<button type="button" class="button" data-dialog="next">Weiter: ${esc(next.title)}</button>` : ""}</div>`,
 	);
 	dialog.querySelector("[data-dialog=stickers]")?.addEventListener("click", () => {
@@ -474,6 +721,12 @@ function showDialog(title: string, html: string): void {
 
 /* ---------- events ---------- */
 
+/** A selector for the slot the child just tapped, so that it can pop. */
+const slotSelector = (puzzle: string, slot: number): string => {
+	const at = `[data-puzzle="${CSS.escape(puzzle)}"][data-slot="${slot}"]`;
+	return `${at}[aria-pressed="true"], .mark-box${at}[class*="pen-"]`;
+};
+
 main.addEventListener("click", (event) => {
 	const target = (event.target as HTMLElement).closest<HTMLElement>("[data-action]");
 	if (!target || target.tagName === "FORM") return;
@@ -487,32 +740,68 @@ main.addEventListener("click", (event) => {
 		case "view":
 			navigate(target.dataset.target);
 			return;
+		case "wave":
+			react("wave");
+			return;
+		case "rest":
+			react("rest");
+			return;
+		case "wake":
+			react("wake");
+			return;
+		case "step":
+			goStep(Number(target.dataset.step));
+			return;
+		case "learn-more":
+			showPieces(learnShown + 1);
+			return;
+		case "learn-all":
+			showPieces(learnPieces(l).length);
+			return;
+		case "flip": {
+			const turned = !target.classList.contains("turned");
+			target.classList.toggle("turned", turned);
+			target.setAttribute("aria-pressed", String(turned));
+			target.setAttribute(
+				"aria-label",
+				turned ? `${target.dataset.term}: ${target.dataset.meaning}` : `${target.dataset.term}. Karte umdrehen`,
+			);
+			return;
+		}
 		case "quiz": {
 			const correct = target.dataset.value === l.quiz.answer;
-			main.querySelectorAll(".choice[data-action=quiz]").forEach((b) => b.classList.toggle("picked", b === target));
+			main.querySelectorAll(".choice[data-action=quiz]").forEach((b) => {
+				b.classList.toggle("picked", b === target);
+				b.classList.remove("is-right", "is-wrong");
+			});
+			target.classList.add(correct ? "is-right" : "is-wrong");
+			replay(target, correct ? "pop" : "wobble");
 			element("#quiz-feedback").innerHTML = correct
 				? `<p class="feedback success"><strong>Richtig!</strong> ${esc(l.quiz.explanation)}</p>`
-				: '<p class="feedback hint">Hm, noch nicht. Lies die Erklärung oben noch einmal und probiere eine andere Antwort.</p>';
+				: '<p class="feedback hint">Hm, noch nicht. Lies die Erklärung noch einmal und probiere eine andere Antwort.</p>';
 			if (correct && !progress.quizDone.includes(l.id)) {
 				recordQuiz(progress, l.id);
 				persist();
-				say("Schnellcheck geschafft! Ein Stern ⭐");
-				main.querySelector("#quiz-card .star")?.classList.add("on");
-				main.querySelector(".lesson-top .stars")?.replaceWith(document.createRange().createContextualFragment(starRow(l.id)));
+				react("quiz-star");
+				refreshStars(2);
 				celebrateIfDone();
-			}
+			} else react(correct ? "quiz-right" : "quiz-wrong");
 			return;
 		}
 		case "slot":
 			if (ws.kind === "slots" && workshop) {
-				workshop = tapSlot(ws as SlotWorkshop, workshop as never, target.dataset.puzzle ?? "", Number(target.dataset.slot), target.dataset.choice);
-				afterWorkshopChange();
+				const puzzle = target.dataset.puzzle ?? "";
+				const slot = Number(target.dataset.slot);
+				const was = puzzleSolved(ws as SlotWorkshop, workshop as SlotState, puzzle);
+				workshop = tapSlot(ws as SlotWorkshop, workshop as SlotState, puzzle, slot, target.dataset.choice);
+				const now = puzzleSolved(ws as SlotWorkshop, workshop as SlotState, puzzle);
+				afterWorkshopChange(slotSelector(puzzle, slot), !was && now ? puzzle : undefined);
 			}
 			return;
 		case "pen":
 			if (ws.kind === "slots" && workshop) {
-				workshop = choosePen(ws as SlotWorkshop, workshop as never, target.dataset.pen ?? "");
-				renderWorkshop();
+				workshop = choosePen(ws as SlotWorkshop, workshop as SlotState, target.dataset.pen ?? "");
+				renderWorkshop(`[data-action="pen"][data-pen="${CSS.escape(target.dataset.pen ?? "")}"]`);
 			}
 			return;
 		case "help": {
@@ -523,26 +812,26 @@ main.addEventListener("click", (event) => {
 		}
 		case "wagon-left":
 		case "wagon-right":
-		case "wagon-front":
-			if (ws.kind === "train" && workshop) {
-				const pos = Number(target.dataset.pos);
-				workshop =
-					action === "wagon-front"
-						? wagonToFront(ws as TrainWorkshop, workshop as never, pos)
-						: moveWagon(ws as TrainWorkshop, workshop as never, pos, action === "wagon-left" ? -1 : 1);
-				afterWorkshopChange();
-			}
+		case "wagon-front": {
+			const pos = Number(target.dataset.pos);
+			changeTrain((train, state) =>
+				action === "wagon-front"
+					? wagonToFront(train, state, pos)
+					: moveWagon(train, state, pos, action === "wagon-left" ? -1 : 1),
+			);
 			return;
+		}
 		case "end":
-			if (ws.kind === "train" && workshop) {
-				workshop = setEnd(ws as TrainWorkshop, workshop as never, target.dataset.end === "?" ? "?" : ".");
-				afterWorkshopChange();
-			}
+			changeTrain((train, state) => setEnd(train, state, target.dataset.end === "?" ? "?" : "."));
 			return;
 		case "control":
 			if (ws.kind === "machine" && workshop) {
-				workshop = setControl(ws as MachineWorkshop, workshop as never, target.dataset.control ?? "", target.dataset.value ?? "");
-				afterWorkshopChange();
+				const machine = ws as MachineWorkshop;
+				previousDisplay = machine.view((workshop as MachineState).values).display;
+				const control = target.dataset.control ?? "";
+				const value = target.dataset.value ?? "";
+				workshop = setControl(machine, workshop as MachineState, control, value);
+				afterWorkshopChange(`[data-control="${CSS.escape(control)}"][data-value="${CSS.escape(value)}"]`);
 			}
 			return;
 		case "workshop-reset":
@@ -567,11 +856,13 @@ main.addEventListener("click", (event) => {
 				const extra = current.task.explanation.startsWith("Richtig: ") ? "" : ` ${esc(current.task.explanation)}`;
 				current.message = `Die Lösung: <strong>${esc(current.task.accept[0])}</strong>${extra} Diese Aufgabe zählt nicht. Die nächste schaffst du!`;
 				renderPractice();
+				react("task-reveal");
 			}
 			return;
 		case "next-task":
 			newTask(taskLevel);
 			renderPractice();
+			replay(main.querySelector("#practice-area .task"), "enter");
 			main.querySelector<HTMLElement>("#answer, #practice-area .choice")?.focus();
 			return;
 		case "desk-clear":
@@ -603,6 +894,72 @@ main.addEventListener("click", (event) => {
 			return;
 	}
 });
+
+/* Satzzug: drag a wagon by its text to a new place. The arrow buttons stay for keyboards. */
+interface Drag {
+	from: number;
+	x: number;
+	y: number;
+	home: DOMRect;
+	el: HTMLElement;
+	pointer: number;
+	moved: boolean;
+	to: number;
+}
+let drag: Drag | null = null;
+
+/** The place of the wagon nearest to the pointer; the wagon's own place counts too. */
+function dropPlace(x: number, y: number, d: Drag): number {
+	let best = d.from;
+	let distance = Math.hypot(x - (d.home.left + d.home.width / 2), y - (d.home.top + d.home.height / 2));
+	main.querySelectorAll<HTMLElement>(".wagon[data-pos]").forEach((w) => {
+		if (w === d.el) return;
+		const r = w.getBoundingClientRect();
+		const here = Math.hypot(x - (r.left + r.width / 2), y - (r.top + r.height / 2));
+		if (here < distance) {
+			distance = here;
+			best = Number(w.dataset.pos);
+		}
+	});
+	return best;
+}
+
+main.addEventListener("pointerdown", (event) => {
+	const handle = (event.target as HTMLElement).closest<HTMLElement>("[data-drag]");
+	const el = handle?.closest<HTMLElement>(".wagon");
+	if (!handle || !el || !workshop || lesson().workshop.kind !== "train" || event.button > 0) return;
+	const from = Number(handle.dataset.drag);
+	drag = { from, x: event.clientX, y: event.clientY, home: el.getBoundingClientRect(), el, pointer: event.pointerId, moved: false, to: from };
+	el.setPointerCapture(event.pointerId);
+});
+
+main.addEventListener("pointermove", (event) => {
+	if (!drag || event.pointerId !== drag.pointer) return;
+	const dx = event.clientX - drag.x;
+	const dy = event.clientY - drag.y;
+	if (!drag.moved && Math.hypot(dx, dy) < 6) return;
+	drag.moved = true;
+	drag.el.classList.add("dragging");
+	drag.el.style.transform = `translate(${dx}px, ${dy}px) rotate(-2deg)`;
+	drag.to = dropPlace(event.clientX, event.clientY, drag);
+	const to = drag.to;
+	const from = drag.from;
+	main.querySelectorAll<HTMLElement>(".wagon[data-pos]").forEach((w) =>
+		w.classList.toggle("drop-target", to !== from && Number(w.dataset.pos) === to),
+	);
+});
+
+function endDrag(event: PointerEvent, drop: boolean): void {
+	if (!drag || event.pointerId !== drag.pointer) return;
+	const { from, to, moved, el } = drag;
+	drag = null;
+	el.classList.remove("dragging");
+	main.querySelectorAll(".drop-target").forEach((w) => w.classList.remove("drop-target"));
+	if (drop && moved && to !== from) changeTrain((train, state) => moveWagonTo(train, state, from, to));
+	else el.style.transform = "";
+}
+main.addEventListener("pointerup", (event) => endDrag(event, true));
+main.addEventListener("pointercancel", (event) => endDrag(event, false));
 
 main.addEventListener("input", (event) => {
 	const area = event.target;
@@ -637,6 +994,32 @@ element("#theme").addEventListener("click", () => {
 		/* The theme works for this visit. */
 	}
 });
+
+/* The calm view: no movement at all. The device setting for reduced motion always wins. */
+const motionButton = element<HTMLButtonElement>("#motion");
+function showMotion(): void {
+	const quiet = calm();
+	motionButton.setAttribute("aria-pressed", String(quiet));
+	motionButton.disabled = deviceCalm();
+	motionButton.title = deviceCalm()
+		? "Dein Gerät wünscht wenig Bewegung. Deshalb bleibt alles ruhig."
+		: quiet
+			? "Ruhige Ansicht ist an: nichts bewegt sich."
+			: "Ruhige Ansicht: Tinto und die Werkstätten bewegen sich nicht.";
+}
+motionButton.addEventListener("click", () => {
+	const quiet = document.documentElement.dataset.motion !== "calm";
+	if (quiet) document.documentElement.dataset.motion = "calm";
+	else delete document.documentElement.dataset.motion;
+	try {
+		localStorage.setItem(MOTION_KEY, quiet ? "calm" : "move");
+	} catch {
+		/* The setting works for this visit. */
+	}
+	showMotion();
+});
+showMotion();
+
 window.addEventListener("storage", (event) => {
 	// Another tab changed or reset the texts: show what is stored now, so that the
 	// next keystroke here cannot bring a deleted text back.
@@ -655,18 +1038,15 @@ function applyRoute(): void {
 	const link = parseDeepLink(location.hash, location.search);
 	routeNotice = "";
 	if (link.level) taskLevel = link.level;
-	if (link.lessonId && findLesson(link.lessonId)) {
-		if (link.lessonId !== lessonId || view !== "lesson") {
-			workshop = null;
-			current = null;
-		}
-		lessonId = link.lessonId;
-		view = "lesson";
-	} else if (link.view === "stickers" || link.view === "heft" || link.view === "eltern") view = link.view;
+	if (link.lessonId && findLesson(link.lessonId)) openLesson(link.lessonId, link.level);
 	else {
-		view = "path";
-		if (link.lessonId || location.hash.includes("lesson="))
-			routeNotice = "Diese Lektion gibt es nicht. Wähle eine Station in der Wörterstadt.";
+		if (link.view === "stickers" || link.view === "heft" || link.view === "eltern") view = link.view;
+		else {
+			view = "path";
+			if (link.lessonId || location.hash.includes("lesson="))
+				routeNotice = "Diese Lektion gibt es nicht. Wähle eine Station in der Wörterstadt.";
+		}
+		lastStage = "";
 	}
 	render();
 }
