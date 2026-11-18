@@ -52,7 +52,7 @@ Anfragen; Quellenlinks öffnen erst auf Klick.
 
 ```sh
 npm ci
-npm run dev          # http://localhost:5256/geschichte-realschule-6/
+npm run dev          # http://localhost:5257/geschichte-realschule-6/
 npm test
 npm run build
 npm run package:zip
