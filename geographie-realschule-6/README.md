@@ -15,7 +15,7 @@ The training app and its exercises run offline. Progress, drafts and research no
 
 ```sh
 npm ci
-npm run dev          # http://localhost:5256/geographie-realschule-6/
+npm run dev          # http://localhost:5257/geographie-realschule-6/
 npm run verify:content
 npm test
 npm run package:zip

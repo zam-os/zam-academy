@@ -14,7 +14,7 @@ export default defineConfig({
 		),
 	},
 	server: {
-		port: 5256,
+		port: 5257,
 		open: false,
 	},
 	build: {
