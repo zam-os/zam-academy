@@ -49,6 +49,16 @@ export function glide(root: ParentNode, selector: string, key: string, before: M
 	});
 }
 
+/** Let an element fly in from where something else stood (a word into a basket). */
+export function flyFrom(from: DOMRect, element: Element | null | undefined): void {
+	if (!element || calm()) return;
+	const to = element.getBoundingClientRect();
+	element.animate(
+		[{ transform: `translate(${from.left - to.left}px, ${from.top - to.top}px) scale(1.25)` }, { transform: "none" }],
+		{ duration: 520, easing: "cubic-bezier(.2,.8,.3,1.15)" },
+	);
+}
+
 let typing = 0;
 
 /**

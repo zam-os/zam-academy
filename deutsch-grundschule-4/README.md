@@ -69,6 +69,28 @@ lassen sich ziehen (die Pfeile bleiben für die Tastatur) und gleiten an ihren
 Platz; ist der Satz richtig, dampft die Lok. Dreht das Kind an einer Maschine,
 leuchten die geänderten Wörter auf.
 
+## Stadtplan
+
+Die Startseite zeigt die Wörterstadt als gezeichnete Karte: sieben Orte an
+einer Straße, in der Reihenfolge der Lektionen. Tippt das Kind auf einen Ort,
+läuft Tinto dorthin, begrüßt es mit dem Gruß des Ortes, und darunter
+erscheinen dessen Stationen. Die Stadt wächst mit dem Fortschritt: Für jeden
+Sticker leuchtet eine der 45 Laternen, ein Ort mit Sticker bekommt helle
+Fenster, ein fertiger Ort hisst eine Fahne, und mit dem ersten fertigen Ort
+sprudelt der Brunnen. Alles wird aus dem gespeicherten Fortschritt
+gezeichnet (`src/town.ts`).
+
+## Tintos Spiel: Acht Arme, acht Wörter
+
+Im Hafen der Stadt (und über „🎲 Spiel“ neben jeder Lektion) hält Tinto acht
+Wörter, eines in jedem Arm. Das Kind tippt ein Wort an und dann den Korb:
+Nomen, Verben oder Adjektive. Richtig, fliegt das Wort in den Korb; sonst
+nennt Tinto die Probe, die hilft (der, die, das davor? „wir …“? „sehr …“?).
+Wie Milos Sprungspiel zählt es für keinen Stern, speichert nichts und kennt
+keine Zeit. Die 101 Wörter (46 Nomen, 38 Verben, 17 Adjektive) stammen aus dem Grundwortschatz 3/4 des ISB; ein
+Test prüft jedes gegen die amtliche Liste. Verwendet werden nur Wörter mit
+einer klaren Wortart, in ihrer richtigen Schreibung (`src/game.ts`).
+
 **Ruhig:** Der Schalter mit der Schildkröte oben schaltet jede Bewegung ab
 (`deutsch_gs4_motion` im `localStorage`). Wünscht das Gerät weniger Bewegung
 (`prefers-reduced-motion`), bleibt die App immer ruhig. Inhalt und Abläufe

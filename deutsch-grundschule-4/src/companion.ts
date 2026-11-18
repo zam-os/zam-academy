@@ -31,7 +31,10 @@ export type TintoEvent =
 	| "sticker"
 	| "wave"
 	| "rest"
-	| "wake";
+	| "wake"
+	| "game-start"
+	| "game-right"
+	| "game-done";
 
 export interface Reaction {
 	mood: Mood;
@@ -108,6 +111,13 @@ const REACTIONS: Record<TintoEvent, { mood: Mood; motion: Motion; important?: bo
 	},
 	rest: { mood: "sleep", motion: "", lines: ["Ich mache ein Nickerchen im Tintenfass. Tipp auf mich, dann wache ich auf."] },
 	wake: { mood: "happy", motion: "jump", lines: ["Ausgeschlafen! Weiter geht's."] },
+	"game-start": { mood: "happy", motion: "wave", lines: ["Ich halte acht Wörter, in jedem Arm eines. Hilfst du mir beim Sortieren?"] },
+	"game-right": {
+		mood: "cheer",
+		motion: "jump",
+		lines: ["Plumps, richtig im Korb!", "Genau! Wieder ein Arm frei.", "Richtig! Weiter so.", "Stimmt! Das ging schnell."],
+	},
+	"game-done": { mood: "cheer", motion: "spin", lines: ["Alle acht Arme sind frei! Danke fürs Sortieren."] },
 };
 
 export const EVENTS = Object.keys(REACTIONS) as TintoEvent[];
@@ -159,7 +169,7 @@ export function companionHtml(state: CompanionState): string {
 	return `<aside class="companion" id="companion" aria-label="Tinto, dein Begleiter">
 	<div class="scene${state.resting ? " resting" : ""}">${sceneArt()}<button type="button" class="tinto-button" data-action="${state.resting ? "wake" : "wave"}" aria-label="${state.resting ? "Tinto wecken" : "Tinto zuwinken"}">${tinto(state.mood)}</button></div>
 	<div class="companion-talk"><p class="companion-name">Tinto</p><p id="tinto-message" class="companion-line" aria-live="polite">${esc(state.line)}</p></div>
-	<div class="companion-actions"><button type="button" class="pill" data-action="wave">👋 Zuwinken</button>${restButton(state.resting)}</div>
+	<div class="companion-actions"><button type="button" class="pill" data-action="wave">👋 Zuwinken</button>${restButton(state.resting)}<button type="button" class="pill" data-action="view" data-target="spiel">🎲 Spiel</button></div>
 </aside>`;
 }
 

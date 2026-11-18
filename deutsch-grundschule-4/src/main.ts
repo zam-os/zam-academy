@@ -6,7 +6,8 @@ import { checkAnswer, makeTask, markup } from "./exercises/tasks";
 import { deskHtml } from "./desk";
 import { isStep, learnHtml, learnNextHtml, learnPieces, type Step, stepperHtml } from "./flow";
 import { esc } from "./format";
-import { calm, deviceCalm, glide, MOTION_KEY, positions, replay, scrollIntoViewGently, typewrite } from "./motion";
+import { drop, finished, gameHtml, hint, newRound, type Round, type WordClass } from "./game";
+import { calm, deviceCalm, flyFrom, glide, MOTION_KEY, positions, replay, scrollIntoViewGently, typewrite } from "./motion";
 import {
 	adoptStored,
 	completion,
@@ -25,12 +26,14 @@ import {
 } from "./storage/progress";
 import { clearTexts, loadText, saveText, TEXTS_KEY } from "./storage/texts";
 import { type Mood, morphTinto, tinto } from "./tinto";
+import { PLACES, type TownState, tintoSpot, townHtml } from "./town";
 import type {
 	Level,
 	MachineState,
 	MachineWorkshop,
 	ReadyLesson,
 	SlotState,
+	Stage,
 	SlotWorkshop,
 	Task,
 	TrainState,
@@ -54,7 +57,7 @@ import {
 import { workshopHtml } from "./workshop/view";
 import { parseDeepLink } from "./zam/zam-link";
 
-type View = "path" | "lesson" | "stickers" | "heft" | "eltern";
+type View = "path" | "lesson" | "stickers" | "heft" | "eltern" | "spiel";
 
 function element<T extends Element = HTMLElement>(selector: string): T {
 	const found = document.querySelector<T>(selector);
@@ -97,6 +100,14 @@ const eventCounts: Partial<Record<TintoEvent, number>> = {};
 let moodTimer = 0;
 let companionVisible = true;
 let observer: IntersectionObserver | null = null;
+
+/* The Stadtplan: the place the child looks at. */
+let district: Stage["id"] | null = null;
+
+/* Tinto's game: the round, the word he holds up, and the lesson to go back to. */
+let round: Round | null = null;
+let picked: number | null = null;
+let gameReturn: string | null = null;
 
 const lesson = (): ReadyLesson => findLesson(lessonId) ?? LESSONS[0];
 const stageOf = (l: ReadyLesson) => STAGES.find((s) => s.id === l.stage) ?? STAGES[0];
@@ -235,7 +246,15 @@ function navigate(target?: string): void {
 	routeNotice = "";
 	if (target && findLesson(target)) openLesson(target);
 	else {
-		if (target === "stickers" || target === "heft" || target === "eltern") view = target;
+		if (target === "spiel") {
+			gameReturn = view === "lesson" ? lessonId : view === "spiel" ? gameReturn : null;
+			if (view !== "spiel") {
+				round = null;
+				picked = null;
+				companion = { ...companion, mood: "happy", line: reaction("game-start").line };
+			}
+		}
+		if (target === "stickers" || target === "heft" || target === "eltern" || target === "spiel") view = target;
 		else view = "path";
 		lastStage = "";
 	}
@@ -260,15 +279,60 @@ function render(): void {
 	else if (view === "stickers") renderStickers();
 	else if (view === "heft") renderHeft();
 	else if (view === "eltern") renderParents();
+	else if (view === "spiel") renderGame();
 	else renderPath();
 	stats();
 }
 
 /* ---------- Stadtplan ---------- */
 
+function townState(): TownState {
+	return {
+		districts: STAGES.map((stage) => {
+			const lessons = LESSONS.filter((l) => l.stage === stage.id);
+			return { id: stage.id, done: lessons.filter((l) => isComplete(progress, l.id)).length, total: lessons.length };
+		}),
+		lanterns: LESSONS.map((l) => isComplete(progress, l.id)),
+	};
+}
+
+/** The stations of one place in town. */
+function districtHtml(id: Stage["id"]): string {
+	const stage = STAGES.find((s) => s.id === id) ?? STAGES[0];
+	const lessons = LESSONS.filter((l) => l.stage === stage.id);
+	const done = lessons.filter((l) => isComplete(progress, l.id)).length;
+	return `<section class="district" data-stage="${stage.id}" aria-live="polite">
+<header><span class="district-icon" aria-hidden="true">${stage.icon}</span><div><h2>${esc(stage.title)}</h2><p>${esc(stage.subtitle)}</p></div><span class="district-count">${done} / ${lessons.length} 🏅</span></header>
+<ol class="road">${lessons
+		.map(
+			(l, i) =>
+				`<li><button type="button" class="station${isComplete(progress, l.id) ? " complete" : ""}" data-action="open" data-lesson="${l.id}"><span class="station-badge" aria-hidden="true">${isComplete(progress, l.id) ? l.sticker.emoji : i + 1}</span><span class="station-name">${esc(l.title)}</span>${starRow(l.id)}</button></li>`,
+		)
+		.join("")}</ol></section>`;
+}
+
+/** Choose a place on the map: Tinto walks there and greets, its stations appear below. */
+function chooseDistrict(id: Stage["id"]): void {
+	const stage = STAGES.find((s) => s.id === id);
+	if (!stage) return;
+	district = id;
+	main.querySelectorAll<HTMLElement>("[data-action=district]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.stage === id)));
+	const walker = main.querySelector<HTMLElement>("#town-tinto");
+	if (walker) {
+		walker.setAttribute("style", tintoSpot(PLACES[id]));
+		replay(walker, "walking");
+	}
+	const box = element("#district");
+	box.innerHTML = districtHtml(id);
+	replay(box.firstElementChild, "enter");
+	showTinto("happy", stage.greeting, "wave");
+}
+
 function renderPath(): void {
 	const c = completion(progress);
 	const next = LESSONS.find((l) => !isComplete(progress, l.id));
+	const place = district ?? (next ?? LESSONS[0]).stage;
+	district = place;
 	const hello = c.stars
 		? `Schön, dass du wieder da bist! Du hast schon ${c.stars} Sterne gesammelt.`
 		: "Hallo, ich bin Tinto! Ich schreibe mit acht Armen. Komm mit durch meine Wörterstadt!";
@@ -282,18 +346,12 @@ function renderPath(): void {
 		<button type="button" class="button big" data-action="open" data-lesson="${(next ?? LESSONS[0]).id}">${c.stars ? "Weiter geht's" : "Los geht's"} → ${esc((next ?? LESSONS[0]).title)}</button>
 	</div>
 </section>
-<div class="districts">${STAGES.map((stage) => {
-		const lessons = LESSONS.filter((l) => l.stage === stage.id);
-		const done = lessons.filter((l) => isComplete(progress, l.id)).length;
-		return `<section class="district" data-stage="${stage.id}">
-<header><span class="district-icon" aria-hidden="true">${stage.icon}</span><div><h2>${esc(stage.title)}</h2><p>${esc(stage.subtitle)}</p></div><span class="district-count">${done} / ${lessons.length} 🏅</span></header>
-<ol class="road">${lessons
-			.map(
-				(l, i) =>
-					`<li><button type="button" class="station${isComplete(progress, l.id) ? " complete" : ""}" data-action="open" data-lesson="${l.id}"><span class="station-badge" aria-hidden="true">${isComplete(progress, l.id) ? l.sticker.emoji : i + 1}</span><span class="station-name">${esc(l.title)}</span>${starRow(l.id)}</button></li>`,
-			)
-			.join("")}</ol></section>`;
-	}).join("")}</div>
+<section class="town" aria-labelledby="town-title">
+	<h2 id="town-title">Wohin möchtest du?</h2>
+	${townHtml(townState(), STAGES, place, tinto("happy", "Tinto"))}
+	<p class="small town-legend">Für jeden Sticker leuchtet eine Laterne. Hast du einen Ort geschafft, weht dort eine Fahne, und der Brunnen sprudelt.</p>
+</section>
+<div id="district">${districtHtml(place)}</div>
 <aside class="notice">Tinto sammelt keine Daten. Deine Sterne und Texte bleiben nur in diesem Browser. Eltern finden Hinweise unter <button type="button" class="text-button" data-action="view" data-target="eltern">Für Eltern</button>.</aside>`;
 	companion = { mood: c.stars ? "cheer" : "happy", line: hello, resting: false };
 }
@@ -616,6 +674,55 @@ function celebrateIfDone(): void {
 	});
 }
 
+/* ---------- Tintos Spiel ---------- */
+
+function renderGame(): void {
+	if (!round) round = newRound(Math.random);
+	const back = gameReturn ? findLesson(gameReturn) : undefined;
+	main.innerHTML = `<div class="page-head">${
+		back
+			? `<button type="button" class="text-button" data-action="open" data-lesson="${back.id}">← Zurück zu „${esc(back.title)}“</button>`
+			: '<button type="button" class="text-button" data-action="view" data-target="path">← Zur Wörterstadt</button>'
+	}</div>${gameHtml(round, picked, tinto(companion.mood), companion.line || reaction("game-start").line)}`;
+}
+
+function pickCard(index: number): void {
+	if (!round || round.cards[index]?.placed) return;
+	picked = picked === index ? null : index;
+	renderGame();
+	main.querySelector<HTMLElement>(`[data-card="${index}"]`)?.focus();
+	if (picked !== null) showTinto("think", `Wohin gehört „${round.cards[index].word}“? Tippe auf einen Korb.`);
+}
+
+function dropCard(basket: WordClass): void {
+	if (!round || picked === null) return;
+	const index = picked;
+	const card = round.cards[index];
+	const from = main.querySelector(`[data-card="${index}"]`)?.getBoundingClientRect();
+	const result = drop(round, index, basket);
+	round = result.round;
+	if (result.right) {
+		picked = null;
+		renderGame();
+		// The word flies from Tinto's arm into the basket.
+		const chips = main.querySelectorAll(`[data-basket="${basket}"] .basket-word`);
+		if (from) flyFrom(from, chips[chips.length - 1]);
+		replay(main.querySelector(`[data-basket="${basket}"]`), "catch");
+		if (finished(round)) {
+			react("game-done");
+			main.querySelector<HTMLElement>("[data-action=game-new]")?.focus();
+		} else {
+			react("game-right");
+			main.querySelector<HTMLElement>("[data-action=game-card]")?.focus();
+		}
+	} else {
+		renderGame();
+		replay(main.querySelector(`[data-basket="${basket}"]`), "wobble");
+		showTinto("encourage", hint(card, basket), "scratch");
+		main.querySelector<HTMLElement>(`[data-card="${index}"]`)?.focus();
+	}
+}
+
 /* ---------- Stickerheft, Merkheft, Eltern ---------- */
 
 function renderStickers(): void {
@@ -685,6 +792,7 @@ function renderParents(): void {
 	<h2>Was Ihr Kind hier übt</h2>
 	<p>Tintos Wörterstadt übt ${LESSONS.length} Themen aus dem LehrplanPLUS Deutsch der Jahrgangsstufen 3 und 4 in Bayern: Sprache untersuchen (Wortarten, die vier Fälle, Zeitformen, Wortbildung, Satzarten, wörtliche Rede, Satzglieder, Bindewörter) und Richtig schreiben (Silben, kurze und lange Selbstlaute, Verlängern, Ableiten, Großschreibung, Wörterbuch, verbindlicher Grundwortschatz) sowie Lesen (Textarten, Lesestrategien, Sachtexte und Tabellen, Geschichten, Figuren, Sprachbilder, Gedichte, Medien).</p>
 	<p>Jede Lektion hat eine kurze Erklärung, einen Schnellcheck, eine Werkstatt zum Ausprobieren und Aufgaben auf zwei Stufen. Stufe 1 gibt einen Tipp. Stufe 2 übt ohne Tipp, ähnlich wie in einer Probe.</p>
+	<p>Im Hafen der Wörterstadt wartet Tintos Spiel „Acht Arme, acht Wörter“: Ihr Kind sortiert Wörter aus dem Grundwortschatz nach Nomen, Verben und Adjektiven. Das Spiel ist freiwillig, zählt für keinen Stern und speichert nichts. Mit dem Schalter „Ruhig“ (Schildkröte) lassen sich alle Bewegungen abschalten.</p>
 </section>
 <section class="card">
 	<h2>Stand in diesem Browser</h2>
@@ -742,6 +850,23 @@ main.addEventListener("click", (event) => {
 			return;
 		case "wave":
 			react("wave");
+			return;
+		case "district":
+			chooseDistrict((target.dataset.stage ?? "werkstatt") as Stage["id"]);
+			return;
+		case "game-card":
+			pickCard(Number(target.dataset.card));
+			return;
+		case "game-basket":
+			dropCard((target.dataset.basket ?? "nomen") as WordClass);
+			return;
+		case "game-new":
+			round = newRound(Math.random, round?.cards.map((c) => c.word));
+			picked = null;
+			companion = { ...companion, line: reaction("game-start").line };
+			renderGame();
+			react("game-start");
+			main.querySelector<HTMLElement>("[data-action=game-card]")?.focus();
 			return;
 		case "rest":
 			react("rest");
@@ -1040,7 +1165,12 @@ function applyRoute(): void {
 	if (link.level) taskLevel = link.level;
 	if (link.lessonId && findLesson(link.lessonId)) openLesson(link.lessonId, link.level);
 	else {
-		if (link.view === "stickers" || link.view === "heft" || link.view === "eltern") view = link.view;
+		if (link.view === "spiel" && view !== "spiel") {
+			round = null;
+			gameReturn = null;
+			companion = { ...companion, mood: "happy", line: reaction("game-start").line };
+		}
+		if (link.view === "stickers" || link.view === "heft" || link.view === "eltern" || link.view === "spiel") view = link.view;
 		else {
 			view = "path";
 			if (link.lessonId || location.hash.includes("lesson="))
