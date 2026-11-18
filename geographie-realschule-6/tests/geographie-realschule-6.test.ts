@@ -157,9 +157,12 @@ describe("maps, scenarios and quantitative models", () => {
 			expect(renderStateFinder(code)).toContain(state);
 		}
 		expect(renderStateFinder("TUR")).toContain("Ankara");
-		expect(renderStateFinder("DEU")).toContain(
-			'class="map-country selected-country" data-map-country="DEU"',
-		);
+		for (const code of ["DEU", "KOS"]) {
+			expect(renderStateFinder(code)).toContain(
+				`class="map-country selected-country" data-map-country="${code}"`,
+			);
+		}
+		expect(renderStateFinder("KOS")).toContain("Pristina");
 	});
 });
 

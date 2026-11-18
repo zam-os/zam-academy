@@ -57,8 +57,18 @@ const lookups: Record<string, Record<string, MapScene>> = {
 			places: [
 				["Atlantik", -17, 45, "Westlich Europas"],
 				["Mittelmeer", 15, 35, "Südlich von Italien"],
-				["Schwarzes Meer", 35, 43.2, "Hier mündet die Donau."],
-				["Nordsee", 2, 56.3, "Hier mündet der Rhein."],
+				[
+					"Schwarzes Meer",
+					35,
+					43.2,
+					"Die Donau erreicht das Meer im Donaudelta an der Nordwestküste.",
+				],
+				[
+					"Nordsee",
+					2,
+					56.3,
+					"Der Rhein erreicht das Meer an der niederländischen Küste.",
+				],
 			],
 			routes: [
 				{
@@ -477,7 +487,7 @@ const additionalContexts: Record<string, string> = {
 	NLD: "Amsterdam ist die Hauptstadt. Regierung und Parlament sitzen in Den Haag.",
 	RUS: "Russland liegt in Europa und Asien. Moskau liegt im europäischen Teil.",
 	TUR: "Die Türkei liegt in Europa und Asien. Ankara liegt im asiatischen Teil.",
-	XKX: "Der Staat Kosovo wird von einem Teil der anderen Staaten anerkannt.",
+	KOS: "Der Staat Kosovo wird von einem Teil der anderen Staaten anerkannt.",
 	CYP: "Zypern liegt im östlichen Mittelmeer und gehört zur Europäischen Union.",
 	ARM: "Je nach Fragestellung werden Staaten im Kaukasusraum unterschiedlich zugeordnet.",
 	AZE: "Je nach Grenzziehung wird der Kaukasusraum Europa, Asien oder beiden zugeordnet.",

@@ -12,6 +12,11 @@ const chromeBinary =
 const lessons = Array.from({ length: 7 }, (_, i) =>
 	JSON.parse(readFileSync(`${root}/src/curriculum/lessons-lb${i + 1}.json`)),
 ).flat();
+const cell = JSON.parse(readFileSync(`${root}/cell.json`, "utf8"));
+const cardCount = cell.atoms.reduce(
+	(count, atom) => count + atom.practice_items.length,
+	0,
+);
 const chrome = spawn(
 	chromeBinary,
 	[
@@ -203,7 +208,24 @@ try {
 		await screenshot(`reference-${theme}`);
 	}
 
+	await evaluate(`document.querySelector('#zam').click()`);
+	assert.ok(
+		(
+			await evaluate(`document.querySelector('dialog[open]').innerText`)
+		).includes(`Die Zelle enthält ${cardCount} Karten`),
+	);
+	await evaluate(`document.querySelector('dialog [data-close]').click()`);
+
 	await navigate("#lesson=europa-natur&level=1");
+	await evaluate(`document.querySelector('[data-scenario="relief"]').click()`);
+	const waterwayKey = await evaluate(
+		`document.querySelector('.exploration .pin-key').innerText`,
+	);
+	assert.match(waterwayKey, /Donaudelta an der Nordwestküste/);
+	assert.match(
+		waterwayKey,
+		/Rhein erreicht das Meer an der niederländischen Küste/,
+	);
 	await evaluate(`document.querySelector('[data-scenario="states"]').click();
 		const dropdown = document.querySelector('[data-model-country]');
 		dropdown.value = 'TUR'; dropdown.dispatchEvent(new Event('change', {bubbles:true}));`);
@@ -221,6 +243,17 @@ try {
 		"TUR",
 	);
 	await screenshot("state-finder");
+	await evaluate(`(() => {
+		const dropdown = document.querySelector('[data-model-country]');
+		dropdown.value = 'KOS';
+		dropdown.dispatchEvent(new Event('change', {bubbles:true}));
+	})()`);
+	assert.equal(
+		await evaluate(
+			`document.querySelector('.selected-country').dataset.mapCountry`,
+		),
+		"KOS",
+	);
 	await evaluate(`document.querySelector('[data-choice="1"]').click()`);
 	assert.match(
 		await evaluate('document.querySelector(".quiz .feedback").innerText'),
@@ -312,7 +345,7 @@ try {
 		[],
 	);
 	console.log(
-		`Opened ${pages} desktop lesson/level/theme combinations and ${lessons.length} mobile lessons. Checked ${scenarioChanges} model selections, both reference views, state search, draft restoration and project inputs. Images: ${output}`,
+		`Opened ${pages} desktop lesson/level/theme combinations and ${lessons.length} mobile lessons. Checked ${scenarioChanges} model selections, both reference views, the ZAM card count, river-mouth labels, state search, draft restoration and project inputs. Images: ${output}`,
 	);
 } finally {
 	chrome.kill();

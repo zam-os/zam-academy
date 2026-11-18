@@ -23,7 +23,7 @@ export const EUROPEAN_STATES: ReadonlyArray<
 	["IRL", "Irland", "Dublin", -6.26, 53.35],
 	["ISL", "Island", "Reykjavík", -21.94, 64.15],
 	["ITA", "Italien", "Rom", 12.5, 41.9],
-	["XKX", "Kosovo", "Pristina", 21.17, 42.66],
+	["KOS", "Kosovo", "Pristina", 21.17, 42.66],
 	["HRV", "Kroatien", "Zagreb", 15.98, 45.81],
 	["LVA", "Lettland", "Riga", 24.11, 56.95],
 	["LIE", "Liechtenstein", "Vaduz", 9.52, 47.14],
