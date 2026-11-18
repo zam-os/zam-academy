@@ -64,6 +64,15 @@ test("registry references known subjects and schools and unique ids", () => {
       p.grade === null || (p.grade >= 4 && p.grade <= 13),
       `${p.id}: grade`,
     );
+    if (p.grades !== undefined) {
+      assert.ok(Array.isArray(p.grades) && p.grades.length > 0, `${p.id}: grades`);
+      assert.deepEqual(p.grades, [...new Set(p.grades)].sort((a, b) => a - b), `${p.id}: ordered, unique grades`);
+      assert.ok(p.grades.includes(p.grade), `${p.id}: primary grade`);
+      const school = registry.schulen.find((s) => s.id === p.school);
+      for (const grade of p.grades) {
+        assert.ok(Number.isInteger(grade) && grade >= (school?.from ?? 4) && grade <= (school?.to ?? 13), `${p.id}: grade in school range`);
+      }
+    }
   }
 });
 
@@ -255,7 +264,7 @@ test("kein_unterricht names known subjects and schools, explains itself and neve
     assert.ok(
       !pakete.some(
         (p) =>
-          p.fach === e.fach && p.grade === e.grade && p.school === e.school,
+          p.fach === e.fach && (p.grades ?? [p.grade]).includes(e.grade) && p.school === e.school,
       ),
       `${where}: a package exists for a cell declared as no-lesson`,
     );
@@ -495,6 +504,40 @@ test("coverage distinguishes pre-start grades from explicit timetable gaps and e
   }
 });
 
+test("Realschule Informatics links Grades 6–8 to one canonical package in both atlas lenses", () => {
+  const trees = atlasTrees();
+  const shared = pakete.find((p) => p.id === "informatik-realschule-8");
+  assert.deepEqual(shared.grades, [6, 7, 8]);
+  assert.equal(shared.title, "Informatik 6–8");
+  assert.equal(pakete.filter((p) => p.app === shared.app).length, 1);
+  for (const grade of [6, 7, 8]) {
+    const node = schoolSubject(trees, grade, "informatik").children.find((n) => n.school?.id === "realschule");
+    assert.equal(node.pkg, shared);
+    assert.equal(node.grade, grade);
+    assert.equal(node.offerKey, `package:${shared.id}`);
+    assert.deepEqual(node.path, [`k${grade}`, "informatik", shared.id]);
+  }
+  assert.equal(schoolSubject(trees, 9, "informatik").children.some((n) => n.pkg === shared), false);
+  const world = trees.welt.children.flatMap((n) => n.children).find((n) => n.id === "informatik");
+  assert.equal(world.children.filter((n) => n.pkg === shared).length, 1);
+  assert.equal(new Set(world.children.map((n) => n.id)).size, world.children.length);
+  assert.equal(trees.schule.live, pakete.length);
+  assert.equal(trees.welt.live, pakete.length);
+});
+
+test("the coverage matrix exposes the same Informatics course in all three grades", () => {
+  const { nodes, visits } = matrix(registry, "realschule");
+  const row = nodes.matrix.children.find((n) => n.tag === "tbody").children[registry.faecher.findIndex((f) => f.id === "informatik")];
+  for (const grade of [6, 7, 8]) {
+    const mark = row.children[grade - 3].children[0];
+    assert.equal(mark.tag, "button");
+    assert.ok(mark.attrs.title.includes("gemeinsames Paket für Klassen 6–8"));
+    assert.equal(mark.attrs.title, mark.attrs["aria-label"]);
+    mark.attrs.onclick();
+  }
+  assert.deepEqual(visits, [6, 7, 8].map((g) => [`k${g}`, "informatik", "informatik-realschule-8"]));
+});
+
 test("the coverage matrix links all three paths to one future package and counts the offer once", () => {
   const { data, p } = withGpgPackage(),
     { nodes, visits } = matrix(data);
@@ -569,6 +612,35 @@ test("search returns one shared package result even when it has three atlas path
       1,
       query,
     );
+  }
+});
+
+test("grade-specific searches open that grade's shared Informatics route in the school lens", () => {
+  const code = html.slice(html.indexOf("function search(q)"), html.indexOf("/* ---------- coverage matrix"));
+  const shared = pakete.find((p) => p.id === "informatik-realschule-8");
+  for (const lens of ["schule", "welt"]) {
+    for (const grade of [6, 7, 8]) {
+      const results = element("ul");
+      const queryInput = {value: `Informatik ${grade}`};
+      const visits = [];
+      new Function("D", "state", "$", "h", "enabled", "go", "query", `${code}; search(query);`)(
+        registry, {lens, trees: atlasTrees()}, (id) => id === "q" ? queryInput : results,
+        element, (n) => n.live > 0, (path) => visits.push(path), queryInput.value,
+      );
+      const matches = descendants(results).filter((n) => n.tag === "button" && n.children.includes(shared.title));
+      assert.equal(matches.length, 1, `${lens}: Grade ${grade}`);
+      const result = matches[0];
+      if (lens === "schule") {
+        assert.ok(descendants(result).some((n) => n.tag === "small" && n.children.includes(`Klasse ${grade} › Informatik`)), `breadcrumb for Grade ${grade}`);
+      }
+      result.attrs.onclick();
+      const expected = lens === "schule"
+        ? [`k${grade}`, "informatik", shared.id]
+        : ["informatik", "informatik", shared.id];
+      assert.deepEqual(visits, [expected], `${lens}: Grade ${grade}`);
+      assert.equal(results.hidden, true);
+      assert.equal(queryInput.value, "");
+    }
   }
 });
 
@@ -687,7 +759,8 @@ test("package details place the opening link after the title and reset a previou
       append(...children);
     };
     panel.scrollTop = 200;
-    new Function("state", "$", "h", "schulName", `${render}; renderPanel();`)(
+    const helpers = html.slice(modelStart, html.indexOf("function buildTrees()", modelStart));
+    new Function("state", "$", "h", "schulName", `${helpers}; ${render}; renderPanel();`)(
       { sel: node },
       () => panel,
       element,
@@ -699,6 +772,11 @@ test("package details place the opening link after the title and reset a previou
     assert.equal(link.tag, "a");
     assert.equal(link.attrs.href, `${node.pkg.app}/`);
     assert.deepEqual(link.children, ["Paket öffnen →"]);
+    if (node.pkg.grades?.length > 1) {
+      const facts = descendants(panel).find((n) => n.attrs?.class === "facts");
+      assert.ok(descendants(facts).some((n) => n.tag === "dd" && n.children.includes("Klassen 6–8")));
+      assert.ok(descendants(panel).some((n) => n.tag === "p" && n.children.includes(node.pkg.desc)));
+    }
     const facts = panel.children.find((c) => c.tag === "dl").children.flat(Infinity);
     const at = facts.findIndex((c) => c.tag === "dt" && c.children[0] === "Version");
     assert.ok(at >= 0, `${node.pkg.app}: version fact`);

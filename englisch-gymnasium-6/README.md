@@ -25,7 +25,7 @@ ZAM_CORE=file:///path/to/zam-core/dist/index.js node scripts/validate-migration.
 node scripts/verify-browser.mjs
 ```
 
-`npm test` checks the saved curriculum hashes and all 40 verbatim coverage rows before Vitest. Use `zam-core` 0.54.0, the version pinned in repository CI. `npm run dev` uses port 5255.
+`npm test` checks the saved curriculum hashes and all 40 verbatim coverage rows before Vitest. Use `zam-core` 0.54.0, the version pinned in repository CI. `npm run dev` uses port 5256.
 
 ## Curriculum boundary and old cards
 
