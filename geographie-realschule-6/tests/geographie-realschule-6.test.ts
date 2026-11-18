@@ -214,10 +214,11 @@ describe("ZAM cell contract and legacy review history", () => {
 		).toEqual({ lessonId: LESSONS[0].id, level: 2 });
 		expect(zamEnrolRequest()).toContain(ZAM_CELL_TITLE);
 	});
-	it("maps each neighbouring legacy item once in the proposal without applying transfers", () => {
+	it("declares exactly the three approved transfers and keeps the other legacy cards active", () => {
 		const items = cell.atoms.flatMap((atom) => atom.practice_items);
-		expect(mapping.status).toBe("proposal-only");
-		expect(mapping.approved).toBeNull();
+		expect(mapping.status).toBe("approved");
+		expect(mapping.approved).toBe("2026-11-18");
+		expect(cell.version).toBe("2026.11.2");
 		expect(mapping.rows.map((row) => row.de_by_id)).toEqual(
 			legacy.atoms.flatMap((atom) =>
 				atom.practice_items.map((item) => item.id),
@@ -232,14 +233,22 @@ describe("ZAM cell contract and legacy review history", () => {
 				expect(
 					items.filter((item) => item.slug === row.academy_slug),
 				).toHaveLength(1);
-				expect(row.action).toBe("propose-replace-after-approval");
+				expect(row.action).toBe("replace");
 			} else {
 				expect(row.academy_slug).toBeNull();
 				expect(row.action).toBe("keep-active");
 			}
 		}
 		expect("retired_items" in cell).toBe(false);
-		expect(items.some((item) => "replaces" in item)).toBe(false);
+		expect(
+			items
+				.filter((item) => "replaces" in item)
+				.map((item) => [item.slug, item.replaces]),
+		).toEqual([
+			["geo6-europa-natur-check", ["01K4G7E0000000000000000J01"]],
+			["geo6-europa-alltag-check", ["01K4G7E0000000000000000J07"]],
+			["geo6-klimaraeume-check", ["01K4G7E0000000000000000J03"]],
+		]);
 	});
 });
 

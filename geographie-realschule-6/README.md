@@ -24,4 +24,4 @@ npm run verify:browser
 
 The ZIP in `release/` contains a standalone HTML file and launchers. Unzip and open the HTML file to start. The browser check opens the built file directly and uses `CHROME_BIN` if Chrome is installed outside the default macOS path.
 
-The [ZAM cell](cell.json) has 50 review cards, each linked to its lesson. The [curriculum and legacy review](../docs/geographie-6-coverage.md) explains the pending proposal for three cards from the former Grade 7 Europe cell. Package version 0.0 is awaiting teacher review.
+The [ZAM cell](cell.json) has 50 review cards, each linked to its lesson. The [curriculum and legacy review](../docs/geographie-6-coverage.md) explains the three approved review-history transfers from the former Grade 7 Europe cell. Package version 0.0 is awaiting teacher review.
