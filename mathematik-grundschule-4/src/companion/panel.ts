@@ -1,4 +1,5 @@
-import { jumpChoices, jumpPrompt, type Crossing } from "./crossing";
+import { format } from "../math/place-value";
+import { jumpPrompt, type Crossing } from "./crossing";
 import { type Mood, island } from "./render";
 import type { World } from "../course/worlds";
 
@@ -60,10 +61,10 @@ export function companionPanel(state: CompanionState): string {
 			? `${
 					finished
 						? '<button data-action="hello">✋ Einschlagen</button><button data-action="play">Noch eine Runde</button>'
-						: jumpChoices(game)
+						: game.choices[game.step]
 								.map(
 									(choice) =>
-										`<button class="stone-choice" data-action="jump" data-value="${choice}" aria-label="Zur ${choice} springen">${choice}</button>`,
+										`<button class="stone-choice" data-action="jump" data-value="${choice}" aria-label="Zur ${format(choice)} springen">${format(choice)}</button>`,
 								)
 								.join("")
 				}<button class="milo-link" data-action="leave-game">Spiel schließen</button>`

@@ -48,6 +48,7 @@ body {
 	font-weight: 800;
 }
 .main-nav {
+	margin-inline-start: auto;
 	padding: 0;
 	border: 0;
 	align-items: center;
@@ -178,6 +179,10 @@ select:focus-visible {
 	text-decoration: none;
 	border-bottom: 1px solid var(--island-line);
 	font-size: 14px;
+}
+.atlas-lessons small {
+	flex-shrink: 0;
+	font-weight: 700;
 }
 .atlas-lessons a:hover,
 .atlas-lessons a[aria-current="page"] {
@@ -444,6 +449,9 @@ footer {
 .motion-snack {
 	animation: milo-nod 0.55s ease-in-out;
 }
+.backwards {
+	--hop-from: 148px;
+}
 .motion-cross {
 	animation: stone-hop 0.46s ease-out;
 }
@@ -472,10 +480,10 @@ footer {
 }
 @keyframes stone-hop {
 	0% {
-		transform: translateX(-148px);
+		transform: translateX(var(--hop-from, -148px));
 	}
 	50% {
-		transform: translate(-74px, -48px) rotate(5deg);
+		transform: translate(calc(var(--hop-from, -148px) / 2), -48px) rotate(5deg);
 	}
 	88% {
 		transform: scale(1.06, 0.94);
@@ -487,7 +495,7 @@ footer {
 		gap: 6px;
 	}
 	.main-nav {
-		flex: 1 1 auto;
+		flex: 0 1 auto;
 	}
 	.island-map {
 		padding-inline: 24px;
@@ -499,18 +507,25 @@ footer {
 @media (max-width: 700px) {
 	.site-header {
 		display: grid;
+		grid-template-columns: minmax(0, 1fr) auto;
+		grid-template-areas: "brand sound" "navigation navigation";
 		gap: 6px;
 		padding: 12px 16px 4px;
 	}
+	.brand {
+		grid-area: brand;
+	}
 	.main-nav {
+		grid-area: navigation;
 		width: 100%;
 		padding: 0;
 	}
 	.main-nav button {
 		font-size: 12px;
 	}
-	.main-nav .sound-toggle {
-		max-width: none;
+	.sound-toggle {
+		grid-area: sound;
+		justify-self: end;
 	}
 	.island-map {
 		padding-inline: 16px;

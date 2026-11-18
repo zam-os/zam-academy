@@ -21,8 +21,9 @@ Children can move the six between ones and tens on the opening board and see
 306 change to 360. They can start the current mission directly or open the illustrated island
 map to browse five worlds. Opening the app again on the same device returns to
 the last lesson when local storage is available. An explicit lesson link takes
-precedence. Tap Milo to wave or play an optional three-jump crossing in steps
-of two, five or ten. Play stays separate from lesson evidence. The quiet
+precedence. Tap Milo to wave or play an optional three-jump crossing with new starting numbers. Children
+count forwards and backwards in steps of 100 to 5,000 across a place-value
+boundary, with landings up to one million. Play stays separate from lesson evidence. The quiet
 setting and the device’s reduced-motion preference both suppress animations.
 
 ## Status

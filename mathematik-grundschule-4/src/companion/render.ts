@@ -1,3 +1,4 @@
+import { format } from "../math/place-value";
 import { stoneValue, type Crossing } from "./crossing";
 import type { World } from "../course/worlds";
 
@@ -89,11 +90,13 @@ export function island(
 	bridge: boolean,
 	game: Crossing | null,
 ): string {
-	const x = game ? stones[game.step] : 238;
+	const backwards = game && game.stride < 0;
+	const positions = backwards ? [...stones].reverse() : stones;
+	const x = game ? positions[game.step] : 238;
 	const pose = game
 		? "translate(" + x + " 171) scale(.77)"
 		: "translate(239 160) scale(1.2)";
-	return `<svg class="island-art mood-${mood}" viewBox="0 0 500 255" preserveAspectRatio="xMidYMid slice" role="img" aria-label="${MOODS[mood]}.${game ? ` Milo steht auf dem Stein mit der Zahl ${stoneValue(game)}.` : ""}">
+	return `<svg class="island-art mood-${mood}${backwards ? " backwards" : ""}" viewBox="0 0 500 255" preserveAspectRatio="xMidYMid slice" role="img" aria-label="${MOODS[mood]}.${game ? ` Milo steht auf dem Stein mit der Zahl ${format(stoneValue(game))}.` : ""}">
 	<defs>
 		<linearGradient id="milo-sky" x2="0" y2="1"><stop stop-color="#a7dfda"/><stop offset="1" stop-color="#fff0c5"/></linearGradient>
 		<linearGradient id="milo-water" x2=".2" y2="1"><stop stop-color="#81cfc4"/><stop offset="1" stop-color="#469e9f"/></linearGradient>
@@ -109,7 +112,7 @@ export function island(
 	${
 		game
 			? `<g transform="translate(435 104) scale(.38)">${landmarks[world]}</g>
-		${stones.map((stone, i) => `<g transform="translate(${stone} 213)"><ellipse cy="13" rx="44" ry="5" fill="#317f82" opacity=".45"/><path d="M-42-3q4-14 42-15t42 15l-5 13q-35 11-73 0Z" fill="${i <= game.step ? "#c18b55" : "#7e9b92"}"/><ellipse cy="-3" rx="42" ry="12" fill="${i <= game.step ? "#ffdc8b" : "#d9e2c2"}"/><text y="5" text-anchor="middle" fill="#324f46" font-size="20" font-weight="bold">${i <= game.step ? stoneValue(game, i) : i === game.step + 1 ? "?" : "·"}</text></g>`).join("")}`
+		${positions.map((stone, i) => `<g transform="translate(${stone} 213)"><ellipse cy="13" rx="44" ry="5" fill="#317f82" opacity=".45"/><path d="M-42-3q4-14 42-15t42 15l-5 13q-35 11-73 0Z" fill="${i <= game.step ? "#c18b55" : "#7e9b92"}"/><ellipse cy="-3" rx="42" ry="12" fill="${i <= game.step ? "#ffdc8b" : "#d9e2c2"}"/><text y="5" text-anchor="middle" fill="#324f46" font-size="17" font-weight="bold">${i <= game.step ? format(stoneValue(game, i)) : i === game.step + 1 ? "?" : "·"}</text></g>`).join("")}`
 			: `<ellipse cx="252" cy="217" rx="207" ry="13" fill="none" stroke="#bce5d6" stroke-width="2"/>
 	<path d="M37 177q63-40 211-40t213 41q-6 26-58 35l-39 6-35 11-66-1-45 4-54-7-51-3q-67-9-76-46Z" fill="#bd9066"/>
 	<path d="M42 184q86 23 215 22t197-22q-19 22-81 29-163 25-283-1Z" fill="#e6ba7f"/>

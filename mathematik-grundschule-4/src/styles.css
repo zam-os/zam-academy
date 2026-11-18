@@ -173,7 +173,8 @@ main {
 	gap: 6px;
 	flex-wrap: wrap;
 }
-.main-nav button {
+.main-nav button,
+.sound-toggle {
 	border-color: transparent;
 	background: transparent;
 	font-size: 13px;
@@ -185,7 +186,7 @@ main {
 	color: #603fa5;
 	font-weight: 700;
 }
-.main-nav .sound-toggle {
+.sound-toggle {
 	color: var(--muted);
 	white-space: nowrap;
 }
@@ -864,11 +865,8 @@ footer {
 		min-height: 44px;
 	}
 	.sound-toggle {
-		max-width: 64px;
-		/* biome-ignore lint/complexity/noImportantStyles: Keep all labels visible on narrow screens. */
-		white-space: normal !important;
-		/* biome-ignore lint/complexity/noImportantStyles: Override the numbered-token base size on narrow screens. */
-		font-size: 11px !important;
+		font-size: 12px;
+		padding-inline: 6px;
 	}
 	.island-art {
 		min-height: 255px;

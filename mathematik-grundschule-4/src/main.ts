@@ -3,7 +3,7 @@ import "./styles.css";
 import "./island.css";
 import type { Mood } from "./companion/render";
 import { newCrossing, stoneValue, type Crossing } from "./companion/crossing";
-import { companionPanel, miloMessage } from "./companion/panel";
+import { companionPanel } from "./companion/panel";
 import { islandMap } from "./ui/island-map";
 import type { World } from "./course/worlds";
 import { escapeHtml } from "./html";
@@ -173,6 +173,15 @@ function moveMilo(motion: "wave" | "cheer" | "nod" | "cross" | "snack"): void {
 	target?.classList.add(`motion-${motion}`);
 }
 
+// Keep one persistent live region for both lesson renders and companion-only updates.
+function announceMilo(): void {
+	const voice = document.getElementById("milo-voice");
+	const message = loading
+		? ""
+		: (app.querySelector("#milo-message")?.textContent ?? "");
+	if (voice && voice.textContent !== message) voice.textContent = message;
+}
+
 // Playing with Milo leaves the lesson DOM, inputs and open explanations in place.
 function redrawMilo(focus?: string): void {
 	const panel = app.querySelector<HTMLElement>(".companion");
@@ -182,8 +191,7 @@ function redrawMilo(focus?: string): void {
 	panel.classList.toggle("playing", !!state.game);
 	if (focus)
 		panel.querySelector<HTMLElement>(focus)?.focus({ preventScroll: true });
-	const voice = document.querySelector<HTMLElement>("#milo-voice");
-	if (voice) voice.textContent = miloMessage(state);
+	announceMilo();
 }
 function chime(): void {
 	if (!sound) return;
@@ -328,7 +336,7 @@ function render(): void {
 		answerKey = taskKey(p);
 	}
 	app.innerHTML = `<header class="site-header"><a class="brand" href="#lesson=${LESSON_ID}"><span class="brand-logo" aria-hidden="true">Z</span><span>ZAM <strong>Entdeckerinsel</strong><small>Mathematik · 4. Klasse · Bayern</small></span></a>
-    <nav class="main-nav" aria-label="Hauptnavigation"><div>${(["child", "parent", "settings"] as const).map((v) => `<button data-action="view" data-view="${v}" aria-current="${view === v ? "page" : "false"}">${v === "child" ? "Mein Abenteuer" : v === "parent" ? "Für Eltern" : "Einstellungen"}</button>`).join("")}</div><button class="sound-toggle" data-action="sound" aria-pressed="${sound}" aria-label="Entdeckungsklänge ${sound ? "ausschalten" : "einschalten"}">${sound ? "♪ Klang an" : "♪ Klang aus"}</button></nav></header>
+    <nav class="main-nav" aria-label="Hauptnavigation"><div>${(["child", "parent", "settings"] as const).map((v) => `<button data-action="view" data-view="${v}" aria-current="${view === v ? "page" : "false"}">${v === "child" ? "Mein Abenteuer" : v === "parent" ? "Für Eltern" : "Einstellungen"}</button>`).join("")}</div></nav><button class="sound-toggle" data-action="sound" aria-pressed="${sound}" aria-label="Entdeckungsklänge ${sound ? "ausschalten" : "einschalten"}">${sound ? "♪ Klang an" : "♪ Klang aus"}</button></header>
     ${lessonNavigation()}${notices()}${loading ? '<p class="notice" role="status">Deine Lektion wird geladen.</p>' : ""}${activeStorage().mode === "recovery" ? recovery() : view === "parent" ? `<main>${forest?.parentView() ?? parent()}</main>` : view === "settings" ? `<main>${settings()}</main>` : `<main class="adventure"><div class="adventure-layout">${companion()}<div class="learning-column"><section class="lesson-card" aria-label="${forest ? escapeHtml(forest.lesson.title) : "Milos Stellenwert-Lektion"}" ${busy ? 'aria-busy="true"' : ""}><div class="mission-progress" role="img" aria-label="${activeProgress.rewards.length} von zwei Missionen geschafft"><span>Deine Missionen</span>${["mission-a", "mission-b"].map((id, i) => `<span class="mission-dot ${activeProgress.rewards.includes(id) ? "done" : ""}" aria-hidden="true">${activeProgress.rewards.includes(id) ? "✓" : i + 1}</span>`).join("")}</div>${forest?.lessonView() ?? lesson()}</section>${forest?.teacherPanel() ?? teacherPanel()}</div></div></main>`}
     <footer><span>ZAM Academy · Entdeckerinsel</span><span>Mathematik-Werkstatt · lokal auf deinem Gerät</span></footer>`;
 	app
@@ -367,6 +375,7 @@ function render(): void {
 			} catch {}
 			render();
 		});
+	announceMilo();
 	forest?.bind(app);
 	if (active?.id && document.getElementById(active.id)) {
 		document.getElementById(active.id)?.focus({ preventScroll: true });
