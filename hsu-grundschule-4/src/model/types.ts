@@ -21,7 +21,6 @@ export interface LabOption {
 }
 
 export interface LabControl {
-	lottaPrompt: string;
 	key: string;
 	label: string;
 	options: ReadonlyArray<LabOption>;
@@ -31,6 +30,9 @@ export type LabState = Record<string, string>;
 
 export interface LabGoal {
 	id: string;
+	label: string;
+	lottaPrompt: string;
+	controls: readonly string[];
 	title: string;
 	check: (state: LabState) => boolean;
 	witness: LabState;

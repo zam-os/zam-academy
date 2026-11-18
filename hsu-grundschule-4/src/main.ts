@@ -1,7 +1,7 @@
 import "./styles.css";
 import "./fieldbook.css";
 import "./lesson.css";
-import { lessonSteps, renderLottaPanel, type LessonStep, type LottaReaction } from "./lesson-steps";
+import { firstMissingLabStep, lessonSteps, renderLottaPanel, type LessonStep, type LottaReaction } from "./lesson-steps";
 import { renderFieldMap, walkToWorld } from "./companion/field-map";
 import { CouncilMeeting, renderCouncil, updateCouncil, SITES } from "./labs/council";
 import { type LottaMood, renderStampSvg } from "./companion/lotta";
@@ -29,7 +29,7 @@ import {
 	renderLabSceneSvg,
 } from "./labs";
 import { escapeHtml, fmt } from "./model/format";
-import type { ExerciseTask, LabState, Lesson, Stage, StageId } from "./model/types";
+import type { ExerciseTask, LabControl, LabState, Lesson, Stage, StageId } from "./model/types";
 import {
 	clearProgress,
 	freshProgress,
@@ -346,7 +346,6 @@ export function mountApp(root: HTMLElement): { destroy: () => void } {
 				${renderFieldMap(mapWorld, progress.quietMode ? "resting" : lottaMood)}
 			</section>
 			<div id="world-stations">${renderWorldStations()}</div>
-			<span class="map-announcement" role="status"></span>
 		`;
 	}
 
@@ -507,6 +506,31 @@ export function mountApp(root: HTMLElement): { destroy: () => void } {
 			<p>${escapeHtml(example.conclusion)}</p></details>`;
 	}
 
+	function renderLabSetting(control: LabControl, state: LabState, compact: boolean): string {
+		const key = escapeHtml(control.key);
+		const label = escapeHtml(control.label);
+		const value = state[control.key];
+		if (compact) {
+			const selected = control.options.find((option) => option.value === value)!;
+			return `<label class="goal-setting"><b>${label}</b>
+				<span class="goal-select"><span aria-hidden="true">${escapeHtml(selected.label)}</span>
+					<select data-lab-control="${key}">
+						${control.options.map((opt) => `<option value="${escapeHtml(opt.value)}" ${value === opt.value ? "selected" : ""}>${escapeHtml(opt.label)}</option>`).join("")}
+					</select></span></label>`;
+		}
+		return `<fieldset class="goal-setting"><legend>${label}</legend>
+			<div class="option-pills">${control.options.map((opt) =>
+				`<button type="button" class="option-pill" aria-pressed="${value === opt.value}"
+					data-action="lab-option" data-key="${key}" data-value="${escapeHtml(opt.value)}">${escapeHtml(opt.label)}</button>`
+			).join("")}</div></fieldset>`;
+	}
+
+	function renderLabProgress(lesson: Lesson, reached: readonly string[]): string {
+		return `<div class="goal-progress"><strong>Forscherziele (${reached.length}/${REQUIRED_LAB_GOALS})</strong>
+			<ul>${lesson.lab.goals.map((g) => `<li><span aria-hidden="true">${reached.includes(g.id) ? "✓" : "○"}</span>
+				<span class="visually-hidden">${reached.includes(g.id) ? "Erreicht" : "Offen"}:</span> ${escapeHtml(g.label)}</li>`).join("")}</ul></div>`;
+	}
+
 	function renderStep(
 		lesson: Lesson,
 		step: LessonStep,
@@ -524,30 +548,19 @@ export function mountApp(root: HTMLElement): { destroy: () => void } {
 			case "practice":
 				return renderPractice(lesson, step.level);
 			case "council":
-				return renderCouncil(step.phase);
+				return renderCouncil(step.phase) + renderLabProgress(lesson, lp.goalsReached);
 			case "lab": {
 				const state = getLabState(lesson);
-				const ctrl = lesson.lab.controls.find((c) => c.key === step.control)!;
-				return `<div class="lab-scene-wrap">${renderLabSceneSvg(lesson, state)}</div>
-					<div class="option-pills" role="group" aria-label="${escapeHtml(ctrl.label)}">
-					${ctrl.options
-						.map(
-							(
-								opt,
-							) => `<button type="button" class="option-pill" aria-pressed="${state[ctrl.key] === opt.value}"
-						data-action="lab-option" data-lesson-id="${lesson.id}" data-key="${escapeHtml(ctrl.key)}" data-value="${escapeHtml(opt.value)}">${escapeHtml(opt.label)}</button>`,
-						)
-						.join("")}</div>
-					<details class="reading"><summary>Beobachtungen &amp; Forscherziele (${lp.goalsReached.length}/${REQUIRED_LAB_GOALS})</summary>
+				const controls = lesson.lab.controls.filter((c) => step.goal.controls.includes(c.key));
+				return `<p class="lab-task">${escapeHtml(step.goal.title)}</p>
+					<div class="lab-scene-wrap">${renderLabSceneSvg(lesson, state)}</div>
+					${controls.map((c) => renderLabSetting(c, state, controls.length > 1)).join("")}
+					${renderLabProgress(lesson, lp.goalsReached)}
+					<details class="reading" data-observations><summary>Beobachtungen im Modell</summary>
 						<h3>${escapeHtml(lesson.lab.title)}</h3><p>${escapeHtml(lesson.lab.intro)}</p>
-						<dl>${lesson.lab
-							.readouts(state)
-							.map(
-								(ro) =>
-									`<dt>${escapeHtml(ro.label)}</dt><dd>${escapeHtml(ro.value)}</dd>`,
-							)
-							.join("")}</dl>
-						<ul>${lesson.lab.goals.map((g) => `<li>${lp.goalsReached.includes(g.id) ? "✓ " : ""}${escapeHtml(g.title)}</li>`).join("")}</ul></details>`;
+						<dl>${lesson.lab.readouts(state).map((ro) =>
+							`<dt>${escapeHtml(ro.label)}</dt><dd>${escapeHtml(ro.value)}</dd>`
+						).join("")}</dl></details>`;
 			}
 			case "book": {
 				const complete = isLessonComplete(lp);
@@ -560,7 +573,7 @@ export function mountApp(root: HTMLElement): { destroy: () => void } {
 					{
 						label: `Labor (${lp.goalsReached.length}/${REQUIRED_LAB_GOALS})`,
 						done: lp.goalsReached.length >= REQUIRED_LAB_GOALS,
-						index: steps.findIndex((s) => s.kind === "lab"),
+						index: firstMissingLabStep(steps, lp.goalsReached),
 					},
 					...([1, 2] as const).map((level) => ({
 						label: level === 1 ? "Spürnase" : "Proben-Profi",
@@ -635,17 +648,19 @@ export function mountApp(root: HTMLElement): { destroy: () => void } {
 		window.scrollTo({ top: 0, behavior: "instant" });
 	}
 
-	function react(mood: LottaMood, message: string): void {
+	function react(mood: LottaMood, message: string, fullMessage = message): void {
+		reaction = { mood, message };
+		announcement.textContent = "Lotta: " + fullMessage;
+	}
+
+	function reactToAnswer(mood: "celebrating" | "encouraging", message: string): void {
 		const short =
 			message.length <= 125
 				? message
 				: mood === "celebrating"
 					? "Geschafft! Schau dir die Erklärung zu deiner Entdeckung an."
-					: mood === "encouraging"
-						? "Ich habe einen Tipp für dich. Lies ihn bei der Aufgabe."
-						: "Schau ins Modell. Unter „Beobachtungen“ findest du die Einzelheiten.";
-		reaction = { mood, message: short };
-		announcement.textContent = "Lotta: " + message;
+					: "Ich habe einen Tipp für dich. Lies ihn bei der Aufgabe.";
+		react(mood, short, message);
 	}
 
 	function renderStempelView(): string {
@@ -994,6 +1009,15 @@ export function mountApp(root: HTMLElement): { destroy: () => void } {
 		}
 	}
 
+	function changeLabSetting(key: string, value: string): void {
+		const lesson = LESSON_BY_ID.get(activeLessonId)!;
+		if (getLabState(lesson)[key] === value) return;
+		const observationsOpen = root.querySelector<HTMLDetailsElement>("[data-observations]")?.open;
+		setLabOption(lesson, key, value);
+		render();
+		if (observationsOpen) root.querySelector<HTMLDetailsElement>("[data-observations]")!.open = true;
+	}
+
 	const onClick = (event: Event): void => {
 		const target = (event.target as HTMLElement | null)?.closest<HTMLElement>(
 			"[data-action]",
@@ -1020,7 +1044,7 @@ export function mountApp(root: HTMLElement): { destroy: () => void } {
 				);
 			}
 			root.querySelector("#world-stations")!.innerHTML = renderWorldStations();
-			root.querySelector(".map-announcement")!.textContent =
+			announcement.textContent =
 				"Stationen für " + world.worldName + " unter der Karte.";
 			return;
 		}
@@ -1032,7 +1056,9 @@ export function mountApp(root: HTMLElement): { destroy: () => void } {
 			if (action === "council-site") {
 				const site = target.dataset.site;
 				if (site === "schulwiese" || site === "obstanger") {
-					council.visit(site);
+					const step = lessonSteps(LESSON_BY_ID.get(activeLessonId)!)[positions.get(activeLessonId) ?? 0];
+					if (step.kind !== "council") return;
+					council.selectSite(site, step.phase);
 					react(
 						"curious",
 						site === "schulwiese"
@@ -1048,10 +1074,11 @@ export function mountApp(root: HTMLElement): { destroy: () => void } {
 						? "Du kennst jetzt mehrere Meinungen. Wie würdest du sie abwägen?"
 						: "Du hast eine Stimme gehört. Was denkt jemand anderes darüber?",
 				);
-			} else if (action === "council-consult") {
+			} else if (action === "council-consult" || action === "council-compare") {
+				const phase = action === "council-compare" ? "places" : "voices";
 				goToStep(
 					lessonSteps(LESSON_BY_ID.get(activeLessonId)!).findIndex(
-						(s) => s.kind === "council" && s.phase === "voices",
+						(s) => s.kind === "council" && s.phase === phase,
 					),
 				);
 				return;
@@ -1108,7 +1135,7 @@ export function mountApp(root: HTMLElement): { destroy: () => void } {
 			if (!lesson || Number.isNaN(optionId)) return;
 			quizSelection.set(id, optionId);
 			const answer = checkQuickCheckAnswer(lesson.quickCheck, optionId);
-			react(
+			reactToAnswer(
 				answer.correct ? "celebrating" : "encouraging",
 				answer.correct ? lesson.quickCheck.explanation : answer.feedback,
 			);
@@ -1122,13 +1149,8 @@ export function mountApp(root: HTMLElement): { destroy: () => void } {
 			return;
 		}
 		if (action === "lab-option") {
-			const id = target.dataset.lessonId ?? activeLessonId;
-			const key = target.dataset.key;
-			const val = target.dataset.value;
-			const lesson = LESSON_BY_ID.get(id);
-			if (!lesson || !key || val === undefined) return;
-			setLabOption(lesson, key, val);
-			render();
+			if (target.dataset.key && target.dataset.value !== undefined)
+				changeLabSetting(target.dataset.key, target.dataset.value);
 			return;
 		}
 		if (action === "task-choice") {
@@ -1140,7 +1162,7 @@ export function mountApp(root: HTMLElement): { destroy: () => void } {
 			const task = getTask(id, lvl);
 			if (task.kind !== "choice") return;
 			const res = checkChoiceTask(task, idx);
-			react(res.correct ? "celebrating" : "encouraging", res.feedback);
+			reactToAnswer(res.correct ? "celebrating" : "encouraging", res.feedback);
 			const key = `${id}:${lvl}`;
 			taskFeedbackByKey.set(key, {
 				ok: res.correct,
@@ -1164,7 +1186,6 @@ export function mountApp(root: HTMLElement): { destroy: () => void } {
 					handleStampCelebration(updated.stampUnlocked, lesson);
 				}
 			} else {
-				lottaMood = "encouraging";
 				taskHadWrongAttempt.add(task.id);
 			}
 			render();
@@ -1176,7 +1197,7 @@ export function mountApp(root: HTMLElement): { destroy: () => void } {
 			const step = lessonSteps(lesson)[positions.get(lesson.id) ?? 0];
 			if (taskId && step.kind === "practice") {
 				taskUsedHint.add(taskId);
-				react("encouraging", getTask(lesson.id, step.level).hint);
+				reactToAnswer("encouraging", getTask(lesson.id, step.level).hint);
 				render();
 			}
 			return;
@@ -1238,7 +1259,7 @@ export function mountApp(root: HTMLElement): { destroy: () => void } {
 		const input = form.querySelector<HTMLInputElement>('input[name="answer"]');
 		const raw = input?.value ?? "";
 		const res = checkNumberTask(task, raw);
-		react(res.correct ? "celebrating" : "encouraging", res.feedback);
+		reactToAnswer(res.correct ? "celebrating" : "encouraging", res.feedback);
 		const key = `${id}:${lvl}`;
 		taskFeedbackByKey.set(key, {
 			ok: res.correct,
@@ -1262,7 +1283,6 @@ export function mountApp(root: HTMLElement): { destroy: () => void } {
 				handleStampCelebration(updated.stampUnlocked, lesson);
 			}
 		} else if (res.validInput) {
-			lottaMood = "encouraging";
 			taskHadWrongAttempt.add(task.id);
 		}
 		render();
@@ -1290,11 +1310,9 @@ export function mountApp(root: HTMLElement): { destroy: () => void } {
 
 	const onChange = (event: Event): void => {
 		const select = event.target;
-		if (
-			select instanceof HTMLSelectElement &&
-			select.hasAttribute("data-step-picker")
-		)
-			goToStep(Number(select.value));
+		if (!(select instanceof HTMLSelectElement)) return;
+		if (select.hasAttribute("data-step-picker")) goToStep(Number(select.value));
+		else if (select.dataset.labControl) changeLabSetting(select.dataset.labControl, select.value);
 	};
 
 	const onHashChange = (): void => {
@@ -1302,6 +1320,13 @@ export function mountApp(root: HTMLElement): { destroy: () => void } {
 		render();
 	};
 
+	const systemTheme = window.matchMedia("(prefers-color-scheme: dark)");
+	const onSystemThemeChange = (): void => {
+		if (getStoredTheme() !== "system") return;
+		if (view === "lesson") applyStagePalette(STAGE_BY_ID.get(LESSON_BY_ID.get(activeLessonId)!.stageId));
+		else if (view === "map" || view === "stempel") render();
+	};
+	systemTheme.addEventListener("change", onSystemThemeChange);
 	root.addEventListener("click", onClick);
 	root.addEventListener("submit", onSubmit);
 	root.addEventListener("input", onInput);
@@ -1314,6 +1339,7 @@ export function mountApp(root: HTMLElement): { destroy: () => void } {
 
 	return {
 		destroy() {
+			systemTheme.removeEventListener("change", onSystemThemeChange);
 			root.removeEventListener("click", onClick);
 			root.removeEventListener("submit", onSubmit);
 			root.removeEventListener("input", onInput);

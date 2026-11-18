@@ -108,7 +108,8 @@
 	transform: translate(-25%, -65%);
 	filter: drop-shadow(0 2px 1px #414c3a55);
 }
-.map-announcement {
+.map-announcement,
+.visually-hidden {
 	position: absolute;
 	width: 1px;
 	height: 1px;
@@ -292,6 +293,6 @@
 		font-size: 0.78rem;
 	}
 	.map-traveller {
-		transform: translate(0, -25%);
+		transform: translate(-30%, -40%);
 	}
 }

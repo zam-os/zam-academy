@@ -94,7 +94,6 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 			controls: [
 				{
 					key: "kabine",
-					lottaPrompt: "In der 4b wird gewählt. Wie kann jedes Kind abstimmen, ohne dass andere seine Wahl sehen?",
 					label: "Abstimmung",
 					options: [
 						{ value: "zuruf", label: "Offener Zuruf im Raum" },
@@ -103,7 +102,6 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 				},
 				{
 					key: "stimmrecht",
-					lottaPrompt: "Lass einmal nur die erste Reihe wählen. Wessen Stimme fehlt dann?",
 					label: "Stimmenverteilung",
 					options: [
 						{ value: "ersteReihe", label: "Nur erste Reihe wählt" },
@@ -112,7 +110,6 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 				},
 				{
 					key: "pausenstreit",
-					lottaPrompt: "Zwei Gruppen wollen in der Pause kicken. Welcher Plan gibt beiden Zeit auf dem Platz?",
 					label: "Streit um das Fußballfeld",
 					options: [
 						{ value: "schimpfen", label: "Laut streiten, wer stärker ist" },
@@ -131,6 +128,9 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 			goals: [
 				{
 					id: "g1-wahl",
+					label: "Geheim wählen",
+					lottaPrompt: "In der 4b wird gewählt. Wie kann jedes Kind abstimmen, ohne dass andere seine Wahl sehen?",
+					controls: ["kabine", "stimmrecht"],
 					title: "Mache die Klassensprecherwahl geheim, allgemein und gleich",
 					check: (s) => s.kabine === "geheim" && s.stimmrecht === "alleGleich",
 					witness: {
@@ -141,6 +141,9 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 				},
 				{
 					id: "g1-kompromiss",
+					label: "Das Fußballfeld teilen",
+					lottaPrompt: "Zwei Gruppen wollen in der Pause kicken. Welcher Plan gibt beiden Zeit auf dem Platz?",
+					controls: ["pausenstreit"],
 					title: "Löse den Pausenstreit mit einem inklusiven Kompromiss",
 					check: (s) => s.pausenstreit === "kompromiss",
 					witness: {
@@ -151,6 +154,9 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 				},
 				{
 					id: "g1-komplett",
+					label: "Fair in der Klasse",
+					lottaPrompt: "Kannst du die Wahl und den Streit um den Platz so regeln, dass jedes Kind mitbestimmt?",
+					controls: ["kabine", "stimmrecht", "pausenstreit"],
 					title: "Verbinde gültige Wahl und fairen Pausenhof-Kompromiss",
 					check: (s) =>
 						s.kabine === "geheim" &&
@@ -282,7 +288,6 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 			controls: [
 				{
 					key: "wasserFeuerwehr",
-					lottaPrompt: "Stell dir einen Ort ohne Feuerwehr vor. Darf die Gemeinde selbst entscheiden, ob sie eine braucht?",
 					label: "Feuerwehr & Trinkwasser einordnen",
 					options: [
 						{ value: "freiwillig", label: "Als freiwillige Aufgabe" },
@@ -291,7 +296,6 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 				},
 				{
 					key: "buechereiBad",
-					lottaPrompt: "Im Rathaus wird über ein Freibad beraten. Gehört es zur selben Gruppe wie die Feuerwehr?",
 					label: "Stadtbücherei & Freibad einordnen",
 					options: [
 						{ value: "pflicht", label: "Als Pflichtaufgabe" },
@@ -300,7 +304,6 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 				},
 				{
 					key: "vorschlag",
-					lottaPrompt: "Wo bauen wir den Spielplatz? Stell das Modell auf beide Flächen.",
 					label: "Vorschlag aus dem Dorfmodell",
 					options: [
 						{ value: "offen", label: "Noch offen" },
@@ -317,6 +320,9 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 			goals: [
 				{
 					id: "g2-pflicht",
+					label: "Feuerwehr und Trinkwasser",
+					lottaPrompt: "Stell dir einen Ort ohne Feuerwehr vor. Darf die Gemeinde selbst entscheiden, ob sie eine braucht?",
+					controls: ["wasserFeuerwehr"],
 					title: "Ordne Feuerwehr und Trinkwasser als Pflichtaufgabe zu",
 					check: (s) => s.wasserFeuerwehr === "pflicht",
 					witness: {
@@ -327,6 +333,9 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 				},
 				{
 					id: "g2-trennung",
+					label: "Bücherei und Freibad",
+					lottaPrompt: "Im Rathaus wird über ein Freibad beraten. Gehört es zur selben Gruppe wie die Feuerwehr?",
+					controls: ["wasserFeuerwehr", "buechereiBad"],
 					title: "Trenne Pflichtaufgaben und freiwillige Aufgaben fehlerfrei",
 					check: (s) =>
 						s.wasserFeuerwehr === "pflicht" && s.buechereiBad === "freiwillig",
@@ -338,6 +347,9 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 				},
 				{
 					id: "g2-gemeinwohl",
+					label: "Spielplatz im Dorf",
+					lottaPrompt: "Wo bauen wir den Spielplatz? Stell das Modell auf beide Flächen.",
+					controls: ["vorschlag"],
 					title: "Vergleiche beide Standorte und bringe einen begründeten Vorschlag ein",
 					check: (s) => s.vorschlag === "schulwiese" || s.vorschlag === "obstanger",
 					witness: {
@@ -464,7 +476,6 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 			controls: [
 				{
 					key: "lupe",
-					lottaPrompt: "Zwei Packungen sehen fast gleich aus. Nimm meine Lupe und vergleiche den Preis pro Kilo.",
 					label: "Lottas Werbe-Lupe",
 					options: [
 						{ value: "aus", label: "Aus (nur bunte Packung sehen)" },
@@ -473,7 +484,6 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 				},
 				{
 					key: "regal",
-					lottaPrompt: "Ich gehe in die Hocke. Welche Waren entdecke ich hier unten, die mir im Stehen entgangen sind?",
 					label: "Untersuchter Ort im Markt",
 					options: [
 						{ value: "sicht", label: "Sichtzone (Augenhöhe)" },
@@ -483,7 +493,6 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 				},
 				{
 					key: "wahl",
-					lottaPrompt: "Nach unserem Picknick bleibt Verpackung übrig. Welches Gefäß kann noch einmal benutzt werden?",
 					label: "Getränk im Einkaufskorb",
 					options: [
 						{ value: "einweg", label: "Einweg-Trinkpäckchen mit Strohhalm" },
@@ -502,18 +511,27 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 			goals: [
 				{
 					id: "g3-bueckzone",
+					label: "Unten im Regal",
+					lottaPrompt: "Ich gehe in die Hocke. Welche Waren entdecke ich hier unten, die mir im Stehen entgangen sind?",
+					controls: ["lupe", "regal"],
 					title: "Prüfe mit eingeschalteter Werbe-Lupe die günstige Bückzone",
 					check: (s) => s.lupe === "an" && s.regal === "bueck",
 					witness: { lupe: "an", regal: "bueck", wahl: "einweg" },
 				},
 				{
 					id: "g3-quengel",
+					label: "An der Kasse",
+					lottaPrompt: "Beim Warten an der Kasse fällt mir eine kleine Packung ins Auge. Was verrät die Werbe-Lupe über ihren Preis?",
+					controls: ["lupe", "regal"],
 					title: "Entlarve mit der Werbe-Lupe die Quengelware an der Kasse",
 					check: (s) => s.lupe === "an" && s.regal === "kasse",
 					witness: { lupe: "an", regal: "kasse", wahl: "einweg" },
 				},
 				{
 					id: "g3-mehrweg",
+					label: "Getränke fürs Picknick",
+					lottaPrompt: "Nach unserem Picknick bleibt Verpackung übrig. Welches Gefäß kann noch einmal benutzt werden?",
+					controls: ["lupe", "wahl"],
 					title: "Wähle das abfallarme Mehrweg-Getränk mit eingeschalteter Lupe",
 					check: (s) => s.lupe === "an" && s.wahl === "mehrweg",
 					witness: { lupe: "an", regal: "sicht", wahl: "mehrweg" },
@@ -640,7 +658,6 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 			controls: [
 				{
 					key: "licht",
-					lottaPrompt: "Wechsle im Modell vom hellen Tag zur Dämmerung. Behalte den schwarzen Punkt in der Mitte im Blick.",
 					label: "Umgebungslicht",
 					options: [
 						{ value: "zimmer", label: "Normales Zimmerlicht" },
@@ -650,7 +667,6 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 				},
 				{
 					key: "schutz",
-					lottaPrompt: "Erst kommt ein Staubkorn, dann rinnt Schweiß von der Stirn. Was schützt das Auge in jedem Fall?",
 					label: "Schutz-Probe",
 					options: [
 						{ value: "ruhig", label: "Keine Gefahr" },
@@ -660,7 +676,6 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 				},
 				{
 					key: "ansicht",
-					lottaPrompt: "Von vorn sehen wir die Pupille. Was entdeckst du hinter der Pupille, wenn du zum Längsschnitt wechselst?",
 					label: "Labor-Ansicht",
 					options: [
 						{ value: "aussen", label: "Außenansicht (Iris & Pupille)" },
@@ -676,18 +691,27 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 			goals: [
 				{
 					id: "g4-pupille",
+					label: "Die Pupille im Licht",
+					lottaPrompt: "Wechsle im Modell vom hellen Tag zur Dämmerung. Behalte den schwarzen Punkt in der Mitte im Blick.",
+					controls: ["licht"],
 					title: "Beobachte, wie sich die Pupille an einem hellen Sonnentag verengt",
 					check: (s) => s.licht === "sonne",
 					witness: { licht: "sonne", schutz: "ruhig", ansicht: "aussen" },
 				},
 				{
 					id: "g4-schutz",
+					label: "Schutz vor Staub",
+					lottaPrompt: "Erst kommt ein Staubkorn, dann rinnt Schweiß von der Stirn. Was schützt das Auge in jedem Fall?",
+					controls: ["schutz"],
 					title: "Teste Lider, Wimpern und Tränenflüssigkeit bei einem Staubkorn",
 					check: (s) => s.schutz === "staub",
 					witness: { licht: "zimmer", schutz: "staub", ansicht: "aussen" },
 				},
 				{
 					id: "g4-laengsschnitt",
+					label: "Der Weg des Lichts",
+					lottaPrompt: "Von vorn sehen wir die Pupille. Was entdeckst du hinter der Pupille, wenn du zum Längsschnitt wechselst?",
+					controls: ["ansicht"],
 					title: "Verfolge im Längsschnitt den Lichtweg bis zur Netzhaut",
 					check: (s) => s.ansicht === "innen",
 					witness: { licht: "zimmer", schutz: "ruhig", ansicht: "innen" },
@@ -816,7 +840,6 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 			controls: [
 				{
 					key: "monat",
-					lottaPrompt: "Spring im Modell vom ersten zum fünften Monat. Welche Veränderung fällt dir auf?",
 					label: "Zeitpunkt vor der Geburt",
 					options: [
 						{ value: "m1", label: "1. Monat (etwa reiskorngroß)" },
@@ -826,7 +849,6 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 				},
 				{
 					key: "fokus",
-					lottaPrompt: "Stell die Lupe auf die Nabelschnur. Kannst du ihren Weg vom Baby zur Plazenta verfolgen?",
 					label: "Schutz- & Versorgungs-Lupe",
 					options: [
 						{ value: "ueberblick", label: "Gesamtüberblick" },
@@ -836,7 +858,6 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 				},
 				{
 					key: "lebensphase",
-					lottaPrompt: "Was kann sich beim Größerwerden verändern? Such im Modell ein Beispiel für Körper oder Gefühle.",
 					label: "Blick aufs Größerwerden",
 					options: [
 						{ value: "grundschule", label: "Grundschulzeit" },
@@ -852,6 +873,9 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 			goals: [
 				{
 					id: "g5-schutz",
+					label: "Schutz im fünften Monat",
+					lottaPrompt: "Im fünften Monat strampelt das Baby schon. Was federt seine Bewegungen ab? Schau mit der Lupe nach.",
+					controls: ["monat", "fokus"],
 					title: "Untersuche im 5. Monat den Schutz durch Fruchtblase & Fruchtwasser",
 					check: (s) => s.monat === "m5" && s.fokus === "fruchtblase",
 					witness: {
@@ -862,6 +886,9 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 				},
 				{
 					id: "g5-versorgung",
+					label: "Die Nabelschnur",
+					lottaPrompt: "Stell den neunten Monat ein. Kannst du mit der Lupe den Weg vom Baby zur Plazenta verfolgen?",
+					controls: ["monat", "fokus"],
 					title: "Verfolge bis zum 9. Monat die Versorgung über Plazenta & Nabelschnur",
 					check: (s) => s.monat === "m9" && s.fokus === "nabelschnur",
 					witness: {
@@ -872,6 +899,9 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 				},
 				{
 					id: "g5-pubertaet",
+					label: "Größer werden",
+					lottaPrompt: "Was kann sich beim Größerwerden verändern? Such im Modell ein Beispiel für Körper oder Gefühle.",
+					controls: ["lebensphase"],
 					title: "Entdecke die körperlichen und seelischen Veränderungen der Pubertät",
 					check: (s) => s.lebensphase === "pubertaet",
 					witness: {
@@ -1004,7 +1034,6 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 			controls: [
 				{
 					key: "fall",
-					lottaPrompt: "Such im Modell einen Fall aus. Was ist passiert, und wie geht es dem Kind?",
 					label: "Unfall-Situation",
 					options: [
 						{ value: "knie", label: "Kleine Schürfwunde am Knie" },
@@ -1017,7 +1046,6 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 				},
 				{
 					key: "hilfe",
-					lottaPrompt: "Was hilft dem Kind in deinem Fall? Vergleiche die Möglichkeiten im Erste-Hilfe-Koffer.",
 					label: "Gewählte Maßnahme",
 					options: [
 						{ value: "nichts", label: "Abwarten und weitergehen" },
@@ -1037,7 +1065,6 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 				},
 				{
 					key: "telefon",
-					lottaPrompt: "Jetzt geht es ums Telefon. In welchem der drei Fälle braucht ihr sofort den Rettungsdienst?",
 					label: "Telefon-Entscheidung",
 					options: [
 						{ value: "keinNotruf", label: "Eltern/Lehrkraft informieren (kein 112)" },
@@ -1056,6 +1083,9 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 			goals: [
 				{
 					id: "g6-wunde",
+					label: "Das aufgeschürfte Knie",
+					lottaPrompt: "Ein Kind ist hingefallen und hat sich das Knie aufgeschürft. Was hilft ihm jetzt?",
+					controls: ["fall", "hilfe", "telefon"],
 					title: "Versorge die kleine Schürfwunde am Knie fachgerecht ohne 112-Fehlalarm",
 					check: (s) =>
 						s.fall === "knie" &&
@@ -1069,6 +1099,9 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 				},
 				{
 					id: "g6-stich",
+					label: "Der Wespenstich",
+					lottaPrompt: "Eine Wespe hat ein Kind in die Hand gestochen. Schau in den Koffer. Was kannst du für die Hand auswählen?",
+					controls: ["fall", "hilfe", "telefon"],
 					title: "Kühle den Wespenstich an der Hand richtig",
 					check: (s) =>
 						s.fall === "stich" &&
@@ -1082,6 +1115,9 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 				},
 				{
 					id: "g6-notfall",
+					label: "Hilfe im Notfall",
+					lottaPrompt: "Im dritten Fall reagiert die Person nicht und atmet normal. Wie holst du Hilfe?",
+					controls: ["fall", "hilfe", "telefon"],
 					title: "Handle bei Bewusstlosigkeit mit stabiler Seitenlage und Notruf 112",
 					check: (s) =>
 						s.fall === "bewusstlos" &&
@@ -1219,7 +1255,6 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 			controls: [
 				{
 					key: "plakat",
-					lottaPrompt: "Schau dir das Werbefoto mit und ohne Filter an. Welche Unterschiede entdeckst du?",
 					label: "Foto-Prüfer",
 					options: [
 						{ value: "filter", label: "Retuschiertes Werbeplakat glauben" },
@@ -1228,7 +1263,6 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 				},
 				{
 					key: "grenze",
-					lottaPrompt: "Ein Geheimnis macht einem Kind Angst. Wähle eine Reaktion, mit der es Unterstützung bekommt.",
 					label: "Reaktion bei einem ‚schlechten Geheimnis‘",
 					options: [
 						{ value: "schweigen", label: "Aus Angst still bleiben" },
@@ -1240,7 +1274,6 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 				},
 				{
 					key: "freizeit",
-					lottaPrompt: "Nach einem langen Schultag ist Zeit für dich. Was würde dir heute guttun?",
 					label: "Nachmittags-Gestaltung",
 					options: [
 						{ value: "nurSofa", label: "4 Stunden allein vor dem Bildschirm" },
@@ -1259,6 +1292,9 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 			goals: [
 				{
 					id: "g7-filter",
+					label: "Das bearbeitete Foto",
+					lottaPrompt: "Schau dir das Werbefoto mit und ohne Filter an. Welche Unterschiede entdeckst du?",
+					controls: ["plakat"],
 					title: "Decke mit dem Foto-Prüfer die künstliche Bildbearbeitung auf",
 					check: (s) => s.plakat === "echt",
 					witness: {
@@ -1269,6 +1305,9 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 				},
 				{
 					id: "g7-grenze",
+					label: "Hilfe holen",
+					lottaPrompt: "Ein Geheimnis macht einem Kind Angst. Wähle eine Reaktion, mit der es Unterstützung bekommt.",
+					controls: ["grenze"],
 					title: "Wähle die starke Schutz-Reaktion bei einem schlechten Geheimnis",
 					check: (s) => s.grenze === "hilfeHolen",
 					witness: {
@@ -1279,6 +1318,9 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 				},
 				{
 					id: "g7-wohlbefinden",
+					label: "Ein guter Nachmittag",
+					lottaPrompt: "Nach einem langen Schultag ist Zeit für dich. Was würde dir heute guttun?",
+					controls: ["plakat", "grenze", "freizeit"],
 					title: "Kombiniere echte Vielfalt, klare Grenzen und aktive Freizeit",
 					check: (s) =>
 						s.plakat === "echt" &&

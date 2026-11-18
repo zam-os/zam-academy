@@ -94,7 +94,6 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 			controls: [
 				{
 					key: "urkunde1340",
-					lottaPrompt: "Auf der Urkunde steht 1340. In welches Jahrhundert und an welchen Aufbewahrungsort passt sie?",
 					label: "Pergament-Urkunde von 1340",
 					options: [
 						{ value: "ungeklaert", label: "Noch nicht eingeordnet" },
@@ -110,7 +109,6 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 				},
 				{
 					key: "muffelMuenze",
-					lottaPrompt: "Die Münze ist aus Silber, die Zange aus Eisen. Was können uns solche Gegenstände über ihre Zeit erzählen?",
 					label: "Silbermünze von 1648 & alte Schmiedezange",
 					options: [
 						{ value: "ungeklaert", label: "Noch nicht eingeordnet" },
@@ -126,7 +124,6 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 				},
 				{
 					key: "fotoZeitzeuge",
-					lottaPrompt: "Auf dem Foto von 1905 steht ein Bahnhof. Womit könntest du prüfen, was damals dort geschah?",
 					label: "Altes Bahnhofsfoto von 1905 prüfen",
 					options: [
 						{ value: "ungeklaert", label: "Nur raten, was darauf zu sehen ist" },
@@ -145,6 +142,9 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 			goals: [
 				{
 					id: "urkunde-gesichert",
+					label: "Die Urkunde von 1340",
+					lottaPrompt: "Auf der Urkunde steht 1340. In welches Jahrhundert und an welchen Aufbewahrungsort passt sie?",
+					controls: ["urkunde1340"],
 					title: "Urkunde von 1340 als Textquelle des 14. Jh. im Archiv sichern",
 					check: (s) => s.urkunde1340 === "text14archiv",
 					witness: {
@@ -155,6 +155,9 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 				},
 				{
 					id: "sachquelle-museum",
+					label: "Die Münze von 1648",
+					lottaPrompt: "Die Münze ist aus Silber, die Zange aus Eisen. Was können uns solche Gegenstände über ihre Zeit erzählen?",
+					controls: ["muffelMuenze"],
 					title: "Münze von 1648 als Sachquelle des 17. Jh. im Museum ausstellen",
 					check: (s) => s.muffelMuenze === "sach17museum",
 					witness: {
@@ -165,6 +168,9 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 				},
 				{
 					id: "quellen-abgleich",
+					label: "Das alte Bahnhofsfoto",
+					lottaPrompt: "Auf dem Foto von 1905 steht ein Bahnhof. Womit könntest du prüfen, was damals dort geschah?",
+					controls: ["urkunde1340", "muffelMuenze", "fotoZeitzeuge"],
 					title: "Komplette Orts-Zeitleiste (14., 17. & 20. Jh.) quellenkritisch prüfen",
 					check: (s) =>
 						s.urkunde1340 === "text14archiv" &&
@@ -305,7 +311,6 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 			controls: [
 				{
 					key: "fahrradStufe",
-					lottaPrompt: "Stell dir vor, du sitzt auf dem Laufrad. Was machen deine Füße auf dem Hochrad anders?",
 					label: "Technik-Meilenstein wählen",
 					options: [
 						{ value: "draisine", label: "1817 Draisine (Abstoßen ohne Pedale)" },
@@ -318,7 +323,6 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 				},
 				{
 					key: "ritterCheck",
-					lottaPrompt: "Ein Burgbrief und ein Ritterfilm erzählen vom Mittelalter. Welche Quelle würdest du zuerst untersuchen?",
 					label: "Ritterfilm mit Zauberschwert & Burgbrief von 1390",
 					options: [
 						{ value: "allesEcht", label: "Beides als echte Tatsachen glauben" },
@@ -330,7 +334,6 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 				},
 				{
 					key: "gedenktag",
-					lottaPrompt: "Das Dorf feiert Geburtstag. Woran könnten sich die Menschen beim Fest gemeinsam erinnern?",
 					label: "Regionaler Gedenktag & Stadtjubiläum",
 					options: [
 						{ value: "egal", label: "Nur als schulfreien Tag ohne Bedeutung sehen" },
@@ -349,6 +352,9 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 			goals: [
 				{
 					id: "fahrrad-durchbruch",
+					label: "Vom Hochrad zum Niederrad",
+					lottaPrompt: "Hoch oben auf dem Hochrad wäre mir mulmig. Bei welchem Fahrrad kann ich tiefer sitzen und trotzdem in die Pedale treten?",
+					controls: ["fahrradStufe"],
 					title: "Alltagstaugliches Sicherheitsniederrad mit Kettenantrieb auswählen",
 					check: (s) => s.fahrradStufe === "niederrad",
 					witness: {
@@ -359,6 +365,9 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 				},
 				{
 					id: "fakt-fiktion-getrennt",
+					label: "Burgbrief und Ritterfilm",
+					lottaPrompt: "Ein Burgbrief und ein Ritterfilm erzählen vom Mittelalter. Welche Quelle würdest du zuerst untersuchen?",
+					controls: ["ritterCheck"],
 					title: "Historische Quelle (Fakt) und Film-Fiktion sauber trennen",
 					check: (s) => s.ritterCheck === "getrennt",
 					witness: {
@@ -369,6 +378,9 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 				},
 				{
 					id: "geschichts-profi",
+					label: "Ein Fest erinnert",
+					lottaPrompt: "Das Dorf feiert Geburtstag. Woran könnten sich die Menschen beim Fest gemeinsam erinnern?",
+					controls: ["fahrradStufe", "ritterCheck", "gedenktag"],
 					title: "Technikwandel, Quellenblick und Erinnerungskultur verbinden",
 					check: (s) =>
 						s.fahrradStufe === "niederrad" &&
@@ -503,7 +515,6 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 			controls: [
 				{
 					key: "nordung",
-					lottaPrompt: "Mein Kompass liegt neben der Karte. Wie müssen Nordpfeil und rote Nadel zueinander stehen?",
 					label: "Karte mit dem Kompass einnorden",
 					options: [
 						{ value: "verdreht", label: "Karte liegt verkehrt herum (Süden oben)" },
@@ -515,7 +526,6 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 				},
 				{
 					key: "peilung",
-					lottaPrompt: "Starte an der Schule. In welcher Himmelsrichtung liegt die Hütte, wenn die Karte nach Norden zeigt?",
 					label: "Richtung zur Berghütte unten rechts bestimmen",
 					options: [
 						{ value: "nordwest", label: "Nordwest (NW)" },
@@ -525,7 +535,6 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 				},
 				{
 					key: "kartenwahl",
-					lottaPrompt: "Für unseren Fußweg brauche ich einzelne Wege. Welche Karte zeigt sie genau genug?",
 					label: "Kartenmaßstab für 3 km Fußweg wählen",
 					options: [
 						{
@@ -547,6 +556,9 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 			goals: [
 				{
 					id: "karte-genordet",
+					label: "Die Karte einnorden",
+					lottaPrompt: "Mein Kompass liegt neben der Karte. Wie müssen Nordpfeil und rote Nadel zueinander stehen?",
+					controls: ["nordung"],
 					title: "Karte mithilfe des Kompasses korrekt nach Norden ausrichten",
 					check: (s) => s.nordung === "genordet",
 					witness: {
@@ -557,6 +569,9 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 				},
 				{
 					id: "wanderkarte-gewaehlt",
+					label: "Eine Karte zum Wandern",
+					lottaPrompt: "Für unseren Fußweg brauche ich einzelne Wege. Welche Karte zeigt sie genau genug?",
+					controls: ["kartenwahl"],
 					title: "Detailreiche Wanderkarte (1 : 25 000) statt stark generalisierter Karte wählen",
 					check: (s) => s.kartenwahl === "wanderkarte",
 					witness: {
@@ -567,6 +582,9 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 				},
 				{
 					id: "huette-gepeilt",
+					label: "Der Weg zur Hütte",
+					lottaPrompt: "Starte an der Schule. In welcher Himmelsrichtung liegt die Hütte, wenn die Karte nach Norden zeigt?",
+					controls: ["nordung", "peilung", "kartenwahl"],
 					title: "Mit genordeter Wanderkarte die Berghütte sicher im Südosten (SO) anpeilen",
 					check: (s) =>
 						s.nordung === "genordet" &&
@@ -703,7 +721,6 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 			controls: [
 				{
 					key: "raumkette",
-					lottaPrompt: "Vom Wohnort bis nach Europa wird der Kartenausschnitt immer größer. Wo ordnest du den Landkreis ein?",
 					label: "Raumgliederung vom Kleinen zum Großen",
 					options: [
 						{
@@ -718,7 +735,6 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 				},
 				{
 					key: "flusskarte",
-					lottaPrompt: "Such zuerst die Alpen. Wo liegen Main und Donau im Vergleich dazu?",
 					label: "Große Flüsse & Gebirge in Bayern zuordnen",
 					options: [
 						{ value: "vertauscht", label: "Main im Süden, Alpen im Norden" },
@@ -730,7 +746,6 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 				},
 				{
 					key: "bergtal",
-					lottaPrompt: "Das Tal ist bei Wanderern beliebt. Welcher Plan lässt auch den Tieren einen ruhigen Platz?",
 					label: "Konflikt im beliebten Bergtal lösen",
 					options: [
 						{
@@ -752,6 +767,9 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 			goals: [
 				{
 					id: "zwiebelschalen-klar",
+					label: "Vom Wohnort nach Europa",
+					lottaPrompt: "Vom Wohnort bis nach Europa wird der Kartenausschnitt immer größer. Wo ordnest du den Landkreis ein?",
+					controls: ["raumkette"],
 					title: "Politische Gliederung von der Gemeinde bis Europa richtig ordnen",
 					check: (s) => s.raumkette === "geordnet",
 					witness: {
@@ -762,6 +780,9 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 				},
 				{
 					id: "bayern-topographie",
+					label: "Flüsse und Berge",
+					lottaPrompt: "Such zuerst die Alpen. Wo liegen Main und Donau im Vergleich dazu?",
+					controls: ["flusskarte"],
 					title: "Main, Donau und Alpen auf der Bayernkarte richtig verorten",
 					check: (s) => s.flusskarte === "richtig",
 					witness: {
@@ -772,6 +793,9 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 				},
 				{
 					id: "raumschutz-gelungen",
+					label: "Unterwegs im Bergtal",
+					lottaPrompt: "Das Tal ist bei Wanderern beliebt. Welcher Plan lässt auch den Tieren einen ruhigen Platz?",
+					controls: ["raumkette", "flusskarte", "bergtal"],
 					title: "Bayern-Orientierung mit sanftem Tourismus im Bergtal verbinden",
 					check: (s) =>
 						s.raumkette === "geordnet" &&
@@ -908,7 +932,6 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 			controls: [
 				{
 					key: "radCheck",
-					lottaPrompt: "Das Modellrad soll in der Dämmerung losfahren. Welche Ausrüstung hilft dir, gesehen zu werden?",
 					label: "Fahrrad-Ausrüstung vor dem Start",
 					options: [
 						{ value: "mangelhaft", label: "Nur 1 Bremse, kein Rücklicht, keine Klingel" },
@@ -920,7 +943,6 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 				},
 				{
 					key: "linksabbiegen",
-					lottaPrompt: "Beim Linksabbiegen kommt dir jemand entgegen. Finde im Modell die Stelle, an der du warten musst.",
 					label: "Linksabbiegen mit Gegenverkehr",
 					options: [
 						{ value: "schneiden", label: "Ohne Umschauen schräg die Kurve schneiden" },
@@ -932,7 +954,6 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 				},
 				{
 					key: "schulwegMobil",
-					lottaPrompt: "Vor dem Schultor stehen viele Autos. Wie könnten 25 Kinder mit weniger Verkehr ankommen?",
 					label: "Schulweg für 25 Kinder organisieren",
 					options: [
 						{ value: "elterntaxi", label: "25 einzelne Elterntaxis direkt vors Schultor" },
@@ -951,6 +972,9 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 			goals: [
 				{
 					id: "rad-tuev-ok",
+					label: "Ein sicheres Fahrrad",
+					lottaPrompt: "Das Modellrad soll in der Dämmerung losfahren. Welche Ausrüstung hilft dir, gesehen zu werden?",
+					controls: ["radCheck"],
 					title: "Fahrrad vollständig verkehrssicher ausstatten",
 					check: (s) => s.radCheck === "verkehrssicher",
 					witness: {
@@ -961,6 +985,9 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 				},
 				{
 					id: "sicher-links-abgebogen",
+					label: "Links abbiegen",
+					lottaPrompt: "Beim Linksabbiegen kommt dir jemand entgegen. Finde im Modell die Stelle, an der du warten musst.",
+					controls: ["radCheck", "linksabbiegen"],
 					title: "Mit verkehrssicherem Rad regelgerecht im weiten Bogen links abbiegen",
 					check: (s) =>
 						s.radCheck === "verkehrssicher" && s.linksabbiegen === "achtPunkte",
@@ -972,6 +999,9 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 				},
 				{
 					id: "nachhaltiger-schulweg",
+					label: "Unser Schulweg",
+					lottaPrompt: "Vor dem Schultor stehen viele Autos. Wie könnten 25 Kinder mit weniger Verkehr ankommen?",
+					controls: ["radCheck", "linksabbiegen", "schulwegMobil"],
 					title: "Verkehrssicherheit und umweltfreundlichen Schulweg kombinieren",
 					check: (s) =>
 						s.radCheck === "verkehrssicher" &&
@@ -1108,7 +1138,6 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 			controls: [
 				{
 					key: "hebelArm",
-					lottaPrompt: "Die Kiste ist schwer. Wohin würdest du den Drehpunkt der Stange im Modell verschieben?",
 					label: "Drehpunkt unter der Brechstange setzen",
 					options: [
 						{ value: "kurz", label: "Kurzer Kraftarm, langer Lastarm (schwer!)" },
@@ -1120,7 +1149,6 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 				},
 				{
 					key: "getriebe",
-					lottaPrompt: "Die Salatschleuder soll sich schnell drehen. Was bewirkt das kleine Zahnrad am Ausgang?",
 					label: "Antrieb für die Salatschleuder wählen",
 					options: [
 						{
@@ -1135,7 +1163,6 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 				},
 				{
 					key: "jacke",
-					lottaPrompt: "Meine Lieblingsjacke ist noch schön. Wer könnte mir mit dem kaputten Verschluss helfen?",
 					label: "Reißverschluss an der Winterjacke klemmt",
 					options: [
 						{ value: "wegwerfen", label: "Sofort wegwerfen & Billigjacke nachkaufen" },
@@ -1154,6 +1181,9 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 			goals: [
 				{
 					id: "hebel-leicht",
+					label: "Die schwere Kiste",
+					lottaPrompt: "Die Kiste ist schwer. Wohin würdest du den Drehpunkt der Stange im Modell verschieben?",
+					controls: ["hebelArm"],
 					title: "Mit langem Kraftarm die schwere Kiste leicht anheben",
 					check: (s) => s.hebelArm === "lang",
 					witness: {
@@ -1164,6 +1194,9 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 				},
 				{
 					id: "schleuder-schnell",
+					label: "Die Salatschleuder",
+					lottaPrompt: "Die Salatschleuder soll sich schnell drehen. Was bewirkt das kleine Zahnrad am Ausgang?",
+					controls: ["getriebe"],
 					title: "3-fache Drehzahl am Schleuderkorb durch Übersetzung Groß → Klein erreichen",
 					check: (s) => s.getriebe === "grossAufKlein",
 					witness: {
@@ -1174,6 +1207,9 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 				},
 				{
 					id: "technik-nachhaltig",
+					label: "Die kaputte Jacke",
+					lottaPrompt: "Meine Lieblingsjacke ist noch schön. Wer könnte mir mit dem kaputten Verschluss helfen?",
+					controls: ["hebelArm", "getriebe", "jacke"],
 					title: "Hebel, schnelles Getriebe und nachhaltige Reparatur vereinen",
 					check: (s) =>
 						s.hebelArm === "lang" &&
@@ -1310,7 +1346,6 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 			controls: [
 				{
 					key: "fahrbahnProfil",
-					lottaPrompt: "Schau auf die Mitte der Papierbrücke. Was passiert unter dem Gewicht, wenn du das Blatt faltest?",
 					label: "Papierfahrbahn formen",
 					options: [
 						{ value: "flach", label: "Flaches Einzelblatt (biegt stark durch)" },
@@ -1319,7 +1354,6 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 				},
 				{
 					key: "aussteifung",
-					lottaPrompt: "Im Seitenteil siehst du Vierecke. Welche Formen entstehen, wenn eine Strebe schräg hindurchläuft?",
 					label: "Seitenträger aussteifen",
 					options: [
 						{ value: "viereck", label: "Offene Vierecksrahmen ohne Diagonalen" },
@@ -1328,7 +1362,6 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 				},
 				{
 					key: "waageRechts",
-					lottaPrompt: "Links liegen vier Bausteine, rechts nur zwei. Auf welchem Feld halten die zwei das Gleichgewicht?",
 					label: "Balkenwaage (links: 4 Bausteine auf Feld 2)",
 					options: [
 						{ value: "feld1", label: "Rechts 2 Bausteine auf Feld 1 setzen" },
@@ -1348,6 +1381,9 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 			goals: [
 				{
 					id: "profil-stabil",
+					label: "Papierfahrbahn formen",
+					lottaPrompt: "Schau auf die Mitte der Papierbrücke. Was passiert unter dem Gewicht, wenn du das Blatt faltest?",
+					controls: ["fahrbahnProfil"],
 					title: "Durchbiegen der Fahrbahn durch ein Zickzack-Profil stoppen",
 					check: (s) => s.fahrbahnProfil === "zickzack",
 					witness: {
@@ -1358,6 +1394,9 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 				},
 				{
 					id: "fachwerk-fertig",
+					label: "Dreiecke in der Brücke",
+					lottaPrompt: "Im Seitenteil siehst du Vierecke. Welche Formen entstehen, wenn eine Strebe schräg hindurchläuft?",
+					controls: ["fahrbahnProfil", "aussteifung"],
 					title: "Brücke mit Zickzack-Profil und Dreiecks-Fachwerk tragfähig machen",
 					check: (s) =>
 						s.fahrbahnProfil === "zickzack" && s.aussteifung === "dreieck",
@@ -1369,6 +1408,9 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 				},
 				{
 					id: "waage-im-lot",
+					label: "Die Waage im Gleichgewicht",
+					lottaPrompt: "Links liegen vier Bausteine, rechts nur zwei. Auf welchem Feld halten die zwei das Gleichgewicht?",
+					controls: ["fahrbahnProfil", "aussteifung", "waageRechts"],
 					title: "Stabile Brücke UND Balkenwaage ins Gleichgewicht (4 · 2 = 2 · 4) bringen",
 					check: (s) =>
 						s.fahrbahnProfil === "zickzack" &&

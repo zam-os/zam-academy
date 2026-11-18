@@ -1,4 +1,4 @@
-import { lessonSteps } from "../src/lesson-steps";
+import { firstMissingLabStep, lessonSteps } from "../src/lesson-steps";
 import { describe, expect, it } from "vitest";
 import { renderFieldMap } from "../src/companion/field-map";
 import { LESSON_BY_ID, STAGES } from "../src/curriculum";
@@ -42,13 +42,29 @@ describe("Lotta's field map and council", () => {
 		}
 	});
 
+	it("only counts places explored in the model, even when returning to the selected site", () => {
+		const meeting = new CouncilMeeting();
+		meeting.selectSite("schulwiese", "voices");
+		meeting.listen(0);
+		meeting.listen(1);
+		meeting.selectSite("obstanger", "proposal");
+		meeting.reason = 0;
+		expect(meeting.visited.size).toBe(0);
+		expect(meeting.submit()).toBeNull();
+		meeting.selectSite("obstanger", "places");
+		expect(meeting.visited.size).toBe(1);
+		expect(meeting.submit()).toBeNull();
+		meeting.selectSite("schulwiese", "places");
+		expect(meeting.ready).toBe(true);
+	});
+
 	for (const chosen of Object.keys(SITES) as Site[]) {
 		it(`accepts a reasoned proposal for ${chosen} after weighing alternatives`, () => {
 			const meeting = new CouncilMeeting();
 			const other = chosen === "obstanger" ? "schulwiese" : "obstanger";
-			meeting.visit(other);
+			meeting.selectSite(other, "places");
 			meeting.listen(0);
-			meeting.visit(chosen);
+			meeting.selectSite(chosen, "places");
 			meeting.listen(0);
 			expect(meeting.ready).toBe(false);
 			expect(meeting.submit()).toBeNull();
@@ -60,7 +76,7 @@ describe("Lotta's field map and council", () => {
 			const goal = LESSON_BY_ID.get("unsere-gemeinde")!.lab.goals[2];
 			expect(goal.id).toBe("g2-gemeinwohl");
 			expect(goal.check({ vorschlag: chosen })).toBe(true);
-			meeting.visit(other);
+			meeting.selectSite(other, "places");
 			expect(meeting.reason).toBeNull();
 			expect(meeting.submitted).toBe(false);
 		});
@@ -73,7 +89,7 @@ describe("station steps", () => {
 			const steps = lessonSteps(lesson);
 			const expected = [
 				...lesson.factCards.map((card) => card.lottaPrompt),
-				...lesson.lab.controls.map((control) => control.lottaPrompt),
+				...lesson.lab.goals.map((goal) => goal.lottaPrompt),
 			];
 			const prompts = steps
 				.filter(
@@ -95,13 +111,16 @@ describe("station steps", () => {
 			expect(
 				steps.filter((s) => s.kind === "discover").map((s) => s.index),
 			).toEqual(lesson.factCards.map((_, i) => i));
-			expect(
-				steps.filter((s) => s.kind === "lab").map((s) => s.control),
-			).toEqual(
-				lesson.lab.controls
-					.filter((c) => c.key !== "vorschlag")
-					.map((c) => c.key),
+			const labSteps = steps.filter((s) => s.kind === "lab" || s.kind === "council")
+				.filter((s) => s.kind === "lab" || s.phase === "places");
+			expect(labSteps.map((s) => s.goal)).toEqual(lesson.lab.goals);
+			expect(new Set(labSteps.flatMap((s) => s.goal.controls))).toEqual(
+				new Set(lesson.lab.controls.map((c) => c.key)),
 			);
+			for (const [index, goal] of lesson.lab.goals.entries()) {
+				const others = lesson.lab.goals.filter((g) => g !== goal).map((g) => g.id);
+				expect(steps[firstMissingLabStep(steps, others)]).toBe(labSteps[index]);
+			}
 			expect(
 				steps.filter((s) => s.kind === "practice").map((s) => s.level),
 			).toEqual([1, 2]);

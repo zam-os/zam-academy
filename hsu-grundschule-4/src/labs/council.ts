@@ -60,10 +60,10 @@ export class CouncilMeeting {
 	reason: number | null = null;
 	submitted = false;
 
-	visit(site: Site): void {
+	selectSite(site: Site, phase: CouncilPhase): void {
+		if (phase === "places") this.visited.add(site);
 		if (site === this.site) return;
 		this.site = site;
-		this.visited.add(site);
 		this.resident = null;
 		this.reason = null;
 		this.submitted = false;
@@ -142,12 +142,14 @@ export function renderCouncil(phase: CouncilPhase): string {
 			<div class="resident-speech"><p data-quote aria-live="polite"></p><button type="button" class="btn" data-action="council-read" hidden>Vorlesen</button></div>`;
 	} else if (phase === "proposal") {
 		activity = `<div class="council-decision">
-				<p data-guidance></p><button type="button" class="btn" data-action="council-consult">Menschen befragen</button>
+				<p data-guidance></p>
+				<button type="button" class="btn" data-action="council-compare">Orte im Modell vergleichen</button>
+				<button type="button" class="btn" data-action="council-consult">Menschen befragen</button>
 				<div class="reason-options" role="group" aria-label="Deine Begründung"></div>
 				<button type="button" class="btn btn-primary" data-action="council-submit">Vorschlag einbringen</button>
 				<p data-result role="status"></p></div>`;
 	}
-	return `<section class="council-card" id="gemeinderat" aria-label="Spielplatz im Gemeinderat">
+	return `<section class="council-card" id="gemeinderat" data-phase="${phase}" aria-label="Spielplatz im Gemeinderat">
 		<div class="council-model">${phase === "places" ? village() : ""}${sites}</div>
 		${activity ? `<div class="council-floor">${activity}</div>` : ""}
 	</section>`;
@@ -164,6 +166,11 @@ export function updateCouncil(
 		"[data-action=council-site]",
 	)) {
 		button.setAttribute("aria-pressed", String(button.dataset.site === site));
+		if (panel.dataset.phase === "places") {
+			const place = button.dataset.site as Site;
+			button.textContent = SITES[place] + (meeting.visited.has(place) ? " ✓" : "");
+			button.setAttribute("aria-label", SITES[place] + (meeting.visited.has(place) ? ", erkundet" : ", noch offen"));
+		}
 	}
 	for (const button of panel.querySelectorAll<HTMLButtonElement>(
 		"[data-action=council-listen]",
@@ -192,6 +199,9 @@ export function updateCouncil(
 	if (read) read.hidden = !canRead || !speaker;
 	const reasons = panel.querySelector<HTMLElement>(".reason-options");
 	if (!reasons) return;
+	panel.querySelector<HTMLButtonElement>(
+		"[data-action=council-compare]",
+	)!.hidden = meeting.visited.size === 2;
 	panel.querySelector<HTMLButtonElement>(
 		"[data-action=council-consult]",
 	)!.hidden = meeting.consulted.size >= 2;
