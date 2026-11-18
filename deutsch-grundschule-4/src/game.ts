@@ -14,10 +14,11 @@ import type { Rng } from "./types";
 
 export type WordClass = "nomen" | "verb" | "adjektiv";
 
-export const BASKETS: { id: WordClass; label: string; colour: string }[] = [
-	{ id: "nomen", label: "Nomen", colour: "blue" },
-	{ id: "verb", label: "Verben", colour: "red" },
-	{ id: "adjektiv", label: "Adjektive", colour: "green" },
+/** `dative`: after "zu den" (Dativ Plural), which differs for "Adjektive". */
+export const BASKETS: { id: WordClass; label: string; dative: string; colour: string }[] = [
+	{ id: "nomen", label: "Nomen", dative: "Nomen", colour: "blue" },
+	{ id: "verb", label: "Verben", dative: "Verben", colour: "red" },
+	{ id: "adjektiv", label: "Adjektive", dative: "Adjektiven", colour: "green" },
 ];
 
 const NOMEN =
@@ -90,7 +91,7 @@ const ADJECTIVE_TEST: Record<string, string> = { wahr: "„Das ist wahr.“" };
 
 /** What Tinto says after a wrong basket: the test that shows the word class. */
 export function hint(card: Card, basket: WordClass): string {
-	const wrong = BASKETS.find((b) => b.id === basket)?.label ?? "";
+	const wrong = BASKETS.find((b) => b.id === basket)?.dative ?? "";
 	const test =
 		card.cls === "nomen"
 			? "Passt der, die oder das davor? Dann ist es ein Nomen."
@@ -129,7 +130,9 @@ export function tentacle(slot: number): string {
 
 /** The game page. `selected` is the card Tinto holds up. */
 export function gameHtml(round: Round, selected: number | null, tintoSvg: string, line: string): string {
-	const placed = (cls: WordClass) => round.cards.filter((c) => c.placed && c.cls === cls);
+	// Keep each card's index, so the chip of the word just sorted can fly in.
+	const placed = (cls: WordClass) =>
+		round.cards.map((c, i) => ({ ...c, i })).filter((c) => c.placed && c.cls === cls);
 	const done = round.cards.filter((c) => c.placed).length;
 	const arms = round.cards
 		.map(
@@ -148,7 +151,7 @@ export function gameHtml(round: Round, selected: number | null, tintoSvg: string
 	const baskets = BASKETS.map(
 		(b) =>
 			`<button type="button" class="basket pen-${b.colour}" data-action="game-basket" data-basket="${b.id}" ${selected === null ? "disabled" : ""} aria-label="In den Korb ${b.label}${selected !== null ? ` legen: ${esc(round.cards[selected]?.word ?? "")}` : ""}"><span class="basket-label">${b.label}</span><span class="basket-words">${placed(b.id)
-				.map((c) => `<span class="basket-word">${esc(c.word)}</span>`)
+				.map((c) => `<span class="basket-word" data-chip="${c.i}">${esc(c.word)}</span>`)
 				.join("")}</span><span class="basket-weave" aria-hidden="true"></span></button>`,
 	).join("");
 	return `<section class="game" aria-labelledby="game-title">

@@ -29,6 +29,14 @@ export const stepsOf = (l: ReadyLesson): Step[] => (l.desk ? [1, 2, 3, 4, 5] : [
 
 export const isStep = (l: ReadyLesson, n: number): n is Step => (stepsOf(l) as number[]).includes(n);
 
+/**
+ * Does opening lesson `id` keep its open step, workshop and task? Yes while
+ * it is open, and when the child comes back to it from Tinto's game (review
+ * of PR #156); every other way in starts the lesson afresh.
+ */
+export const keepsLesson = (view: string, open: string, gameReturn: string | null, id: string): boolean =>
+	id === open && (view === "lesson" || (view === "spiel" && gameReturn === id));
+
 export function learnPieces(l: ReadyLesson): Piece[] {
 	return [
 		...l.paragraphs.map((text): Piece => ({ kind: "text", text })),

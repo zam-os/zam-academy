@@ -4,7 +4,7 @@ import { companionHtml, type CompanionState, type Motion, reaction, type TintoEv
 import { findLesson, LESSONS, quizOptions, SOURCES, STAGES } from "./curriculum";
 import { checkAnswer, makeTask, markup } from "./exercises/tasks";
 import { deskHtml } from "./desk";
-import { isStep, learnHtml, learnNextHtml, learnPieces, type Step, stepperHtml } from "./flow";
+import { isStep, keepsLesson, learnHtml, learnNextHtml, learnPieces, type Step, stepperHtml } from "./flow";
 import { esc } from "./format";
 import { drop, finished, gameHtml, hint, newRound, type Round, type WordClass } from "./game";
 import { calm, deviceCalm, flyFrom, glide, MOTION_KEY, positions, replay, scrollIntoViewGently, typewrite } from "./motion";
@@ -215,11 +215,18 @@ function setHash(): void {
 	history.replaceState(null, "", `${location.pathname}${location.search}${hash}`);
 }
 
+/** What Tinto says when a step opens. */
+const STEP_EVENTS: Record<Step, TintoEvent> = { 1: "learn", 2: "step-quiz", 3: "step-workshop", 4: "step-practice", 5: "step-desk" };
+
 /** Enter a lesson. A new lesson starts at "Verstehen"; a level link goes straight to the tasks. */
 function openLesson(id: string, level?: Level): void {
 	const l = findLesson(id);
 	if (!l) return;
-	if (id !== lessonId || view !== "lesson") {
+	if (view === "spiel" && keepsLesson(view, lessonId, gameReturn, id)) {
+		// Back from the game: the same step, workshop and task as before.
+		companion = { mood: "happy", line: reaction(STEP_EVENTS[step]).line, resting: false };
+		lastStage = l.stage;
+	} else if (!keepsLesson(view, lessonId, gameReturn, id)) {
 		workshop = null;
 		current = null;
 		openHelp = [];
@@ -442,8 +449,7 @@ function goStep(n: number): void {
 	const below = document.querySelector(".header")?.getBoundingClientRect().bottom ?? 0;
 	if (top < below + 8 || top > window.innerHeight - 120)
 		stepper.scrollIntoView({ behavior: calm() ? "auto" : "smooth", block: "start" });
-	const events: Record<Step, TintoEvent> = { 1: "learn", 2: "step-quiz", 3: "step-workshop", 4: "step-practice", 5: "step-desk" };
-	react(events[n]);
+	react(STEP_EVENTS[n]);
 }
 
 /** Show the explanation up to piece `count`. One new piece gets Tinto's comment. */
@@ -710,8 +716,7 @@ function dropCard(basket: WordClass): void {
 		picked = null;
 		renderGame();
 		// The word flies from Tinto's arm into the basket.
-		const chips = main.querySelectorAll(`[data-basket="${basket}"] .basket-word`);
-		if (from) flyFrom(from, chips[chips.length - 1]);
+		if (from) flyFrom(from, main.querySelector(`[data-basket="${basket}"] [data-chip="${index}"]`));
 		replay(main.querySelector(`[data-basket="${basket}"]`), "catch");
 		if (finished(round)) {
 			react("game-done");

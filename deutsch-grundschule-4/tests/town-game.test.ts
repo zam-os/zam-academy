@@ -133,12 +133,15 @@ describe("Acht Arme, acht Wörter", () => {
 		for (const w of GAME_WORDS)
 			for (const b of BASKETS.filter((x) => x.id !== w.cls)) {
 				const text = hint({ ...w, placed: false, misses: 1 }, b.id);
-				expect(text).toContain(`„${w.word}“ gehört nicht zu den ${b.label}.`);
+				expect(text).toContain(`„${w.word}“ gehört nicht zu den ${b.dative}.`);
 				// The template around the word (which may itself be "schlecht") never judges.
 				expect(text.replaceAll(w.word, "Wort")).not.toMatch(/falsch|schlecht/i);
 			}
 		expect(hint({ word: "lachen", cls: "verb", placed: false, misses: 1 }, "nomen")).toContain("„wir lachen“");
 		expect(hint({ word: "alt", cls: "adjektiv", placed: false, misses: 1 }, "verb")).toContain("„sehr alt“");
+		// Dativ Plural after "zu den" (review of PR #156): "zu den Adjektiven", never "zu den Adjektive".
+		expect(hint({ word: "Fisch", cls: "nomen", placed: false, misses: 1 }, "adjektiv")).toContain("gehört nicht zu den Adjektiven.");
+		expect(BASKETS.map((b) => b.dative)).toEqual(["Nomen", "Verben", "Adjektiven"]);
 		// "sehr wahr" sounds stilted (review of PR #156); a whole sentence helps more.
 		expect(hint({ word: "wahr", cls: "adjektiv", placed: false, misses: 1 }, "nomen")).toContain("Passt „Das ist wahr.“?");
 		expect(hint({ word: "Fisch", cls: "nomen", placed: false, misses: 1 }, "verb")).toContain("der, die oder das");
@@ -165,5 +168,12 @@ describe("Acht Arme, acht Wörter", () => {
 		expect(done).toContain('data-action="game-new"');
 		expect(done).not.toContain('data-action="game-card"');
 		expect(done.match(/class="basket-word"/g)).toHaveLength(ARMS);
+		// Every chip names its card, so the word just sorted is the one that flies in.
+		for (let i = 0; i < ARMS; i += 1) expect(done, String(i)).toContain(`data-chip="${i}">${round.cards[i].word}<`);
+		const late = drop(round, 7, round.cards[7].cls).round;
+		const early = drop(late, 0, round.cards[0].cls).round;
+		const page = gameHtml(early, null, tinto("happy"), "");
+		expect(page).toContain(`data-chip="0">${round.cards[0].word}<`);
+		expect(page).toContain(`data-chip="7">${round.cards[7].word}<`);
 	});
 });

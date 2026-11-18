@@ -77,7 +77,8 @@ export function typewrite(target: HTMLElement, text: string): void {
 	target.textContent = "";
 	target.classList.add("writing");
 	typing = window.setInterval(() => {
-		shown = Math.min(letters.length, shown + per);
+		// "Ruhig" switched on while Tinto writes: show the whole sentence now.
+		shown = calm() ? letters.length : Math.min(letters.length, shown + per);
 		target.textContent = letters.slice(0, shown).join("");
 		if (shown >= letters.length) {
 			window.clearInterval(typing);

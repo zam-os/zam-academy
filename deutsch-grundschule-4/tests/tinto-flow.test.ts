@@ -1,14 +1,14 @@
 // Tinto as a companion, the step flow of a lesson and the visible effects of
 // the Werkstätten. The DOM side (animations) is checked in the browser; here
 // the pure parts are pinned: what is rendered, said and computed.
-import { describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 import html from "../index.html?raw";
 import { companionHtml, EVENTS, reaction } from "../src/companion";
 import { findLesson, LESSONS } from "../src/curriculum";
 import { makeTask } from "../src/exercises/tasks";
-import { isStep, learnHtml, learnNextHtml, learnPieces, stepperHtml, stepsOf } from "../src/flow";
+import { isStep, keepsLesson, learnHtml, learnNextHtml, learnPieces, stepperHtml, stepsOf } from "../src/flow";
 import { esc } from "../src/format";
-import { MOTION_KEY } from "../src/motion";
+import { MOTION_KEY, typewrite } from "../src/motion";
 import { freshProgress, stars } from "../src/storage/progress";
 import css from "../src/styles.css?raw";
 import { MOODS, type Mood, tinto } from "../src/tinto";
@@ -120,6 +120,17 @@ describe("Lektionsfluss", () => {
 		expect(learnNextHtml(1, 6)).toContain('data-action="learn-all"');
 		expect(learnNextHtml(6, 6)).toContain('data-step="2"');
 		expect(learnNextHtml(6, 6)).not.toContain("learn-more");
+	});
+
+	it("keeps a lesson as it was when the child comes back from Tinto's game", () => {
+		// Review of PR #156: the way back from the game used to reset the lesson.
+		expect(keepsLesson("spiel", "nomen-artikel", "nomen-artikel", "nomen-artikel")).toBe(true);
+		expect(keepsLesson("lesson", "nomen-artikel", null, "nomen-artikel")).toBe(true);
+		// Other ways in start afresh.
+		expect(keepsLesson("spiel", "nomen-artikel", null, "nomen-artikel")).toBe(false);
+		expect(keepsLesson("spiel", "nomen-artikel", "vier-faelle", "nomen-artikel")).toBe(false);
+		expect(keepsLesson("path", "nomen-artikel", "nomen-artikel", "nomen-artikel")).toBe(false);
+		expect(keepsLesson("lesson", "nomen-artikel", null, "vier-faelle")).toBe(false);
 	});
 
 	it("has four steps, and a fifth only with a Schreibtisch", () => {
@@ -288,6 +299,30 @@ describe("Satzzug: Ziehen und Ablegen", () => {
 });
 
 describe("Ruhige Ansicht", () => {
+	afterEach(() => {
+		vi.useRealTimers();
+		vi.unstubAllGlobals();
+	});
+
+	it("finishes Tinto's writing at once when 'Ruhig' is switched on midway", () => {
+		vi.useFakeTimers();
+		const dataset: Record<string, string> = {};
+		vi.stubGlobal("document", { documentElement: { dataset } });
+		vi.stubGlobal("matchMedia", () => ({ matches: false }));
+		vi.stubGlobal("window", globalThis);
+		const classes = new Set<string>();
+		const target = { textContent: "", classList: { add: (c: string) => classes.add(c), remove: (c: string) => classes.delete(c) } };
+		const text = "Nomen benennen Lebewesen, Dinge und Gedachtes. Sie haben einen Artikel.";
+		typewrite(target as unknown as HTMLElement, text);
+		vi.advanceTimersByTime(90);
+		expect(target.textContent.length).toBeGreaterThan(0);
+		expect(target.textContent.length).toBeLessThan(text.length);
+		dataset.motion = "calm";
+		vi.advanceTimersByTime(30);
+		expect(target.textContent).toBe(text);
+		expect(classes.has("writing")).toBe(false);
+	});
+
 	it("stops every movement for the calm view and for the device setting", () => {
 		expect(css).toMatch(/:root\[data-motion="calm"\] \*,[^{]*\{\s*animation: none !important;\s*transition: none !important;/);
 		expect(css).toMatch(/@media \(prefers-reduced-motion: reduce\) \{\s*\*,[^{]*\{\s*animation: none !important;/);
