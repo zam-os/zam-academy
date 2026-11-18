@@ -6,6 +6,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | --- | --- | --- | --- |
 | Physics 7 Realschule (Bavaria, Group I) | [`physik-realschule-7/`](physik-realschule-7/) | Built by Pages on merge | `zam-academy:physik-realschule-7` |
 | English 5 Gymnasium (Bavaria) | [`englisch-gymnasium-5/`](englisch-gymnasium-5/) | https://academy.zam-os.org/englisch-gymnasium-5/ | `zam-academy:englisch-gymnasium-5` |
+| English 6 Gymnasium (Bavaria, 1. FS) | [`englisch-gymnasium-6/`](englisch-gymnasium-6/) | Built by Pages on merge | `zam-academy:englisch-gymnasium-6` |
 | Deutsch 5 Gymnasium (LehrplanPLUS Bayern) | [`deutsch-gymnasium-5/`](deutsch-gymnasium-5/) | https://academy.zam-os.org/deutsch-gymnasium-5/ | `zam-academy:deutsch-gymnasium-5` |
 | German 6 Realschule (Bavaria) | [`deutsch-realschule-6/`](deutsch-realschule-6/) | Built by Pages on merge | `zam-academy:deutsch-realschule-6` |
 | Grade 4 mathematics: 40 Discovery Island lessons with Milo (Bavaria) | [`mathematik-grundschule-4/`](mathematik-grundschule-4/) | https://academy.zam-os.org/mathematik-grundschule-4/ | `zam-academy:mathematik-grundschule-4` |
@@ -171,6 +172,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Mathematik 7 Gymnasium: cd mathematik-gymnasium-7 (dev server on :5242)
 # Geographie 5 Gymnasium: cd geographie-gymnasium-5 (dev server on :5244)
 # English 5 Gymnasium: cd englisch-gymnasium-5 (dev server on :5247)
+# English 6 Gymnasium: cd englisch-gymnasium-6 (dev server on :5255)
 # German 5 Gymnasium: cd deutsch-gymnasium-5 (dev server on :5249)
 # German 6 Realschule: cd deutsch-realschule-6 (dev server on :5254)
 # Biologie 5 Gymnasium: cd biologie-gymnasium-5 (dev server on :5246)
@@ -259,3 +261,5 @@ The [Informatik 6 Gymnasium package](informatik-gymnasium-6/) covers Natur und T
 The [Biologie 6 Gymnasium package](biologie-gymnasium-6/) covers Natur und Technik 6, Schwerpunkt Biologie (`NT6 1.1–1.5`) with 44 lessons in nine stations, 12 interactive models (fair test, microscope, seed dispersal, germination, waterweed, phototropism, body shape, body temperature, frog metamorphosis, echolocation, vertebrate key, pond food web), 59 drawings, two-level writing tasks and 88 linked ZAM cards. Its [coverage matrix](biologie-gymnasium-6/coverage.json) maps all 45 Kompetenzerwartungen of Lernbereich 1 verbatim. The [curriculum and legacy review](docs/biologie-gymnasium-6-coverage.md) proposes a mapping for the 16 cards of the two `de-by:gymnasium-6-biologie-*` cells (4 A, 0 B, 12 C keep-active); the cell declares no `replaces` until Thomas approves.
 
 The [Deutsch 5 Gymnasium package](deutsch-gymnasium-5/) adds 50 lessons across all four LehrplanPLUS Bayern areas (*Sprechen und Zuhören*, *Lesen und Medien*, *Schreiben*, *Sprache und Rechtschreibung*), including local audio passages, dramatic scenes (*Spielszenen*), 22 interactive language and spelling models, two-level writing tasks with self-assessment and 100 ZAM cards (`proposal-only` legacy inventory of all 16 old cards in [deutsch-gymnasium-5/replaces-de-by.json](deutsch-gymnasium-5/replaces-de-by.json)). See [Curriculum coverage and legacy inventory](docs/deutsch-gymnasium-5-coverage.md).
+
+The [Englisch 6 Gymnasium package](englisch-gymnasium-6/) continues English 5 for Bavarian Gymnasium (`1. Fremdsprache`) with 40 lessons in eight stages, interactive timeline, comparison, direction, picture-description, and UK/USA map workshops, local browser-speech and offline listening support, 80 short-answer checks, 80 two-level tasks with self-assessment, and 120 linked ZAM cards. Its [coverage matrix](englisch-gymnasium-6/coverage.json) checks all 40 verbatim expectations (`E6-01`–`E6-40`) against LehrplanPLUS Bayern, and [englisch-gymnasium-6/replaces-de-by.json](englisch-gymnasium-6/replaces-de-by.json) documents the approved 2026-11-18 mapping of all eight items in `de-by:gymnasium-6-englisch-past-tenses-present-perfect-adjectives` (3 category-A `replaces`, 5 category-C `keep-active`, validated by `englisch-gymnasium-6/scripts/validate-migration.mjs`) alongside a neighbouring-grade review of Grade 7. See [Curriculum coverage and legacy inventory](docs/englisch-gymnasium-6-coverage.md).
