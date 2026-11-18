@@ -1150,7 +1150,7 @@ dialog::backdrop {
 }
 .ts-track {
   position: relative;
-  height: 2.4rem;
+  height: 2.7rem;
   border-radius: 0.6rem;
   background: var(--soft);
   overflow: hidden;
@@ -1174,15 +1174,24 @@ dialog::backdrop {
   padding: 0.3rem 0.2rem 0;
   align-items: flex-start;
 }
+/* Narrow epochs such as the Frühmittelalter break at their soft hyphens instead of being cut off. */
+.ts-band {
+  white-space: normal;
+  text-overflow: clip;
+  text-align: center;
+  line-height: 1.05;
+  hyphens: manual;
+}
 .ts-zone {
-  width: 10%;
+  /* The zones end exactly where the scale (STRIP in workshop.ts) begins and ends. */
+  width: 12%;
   background: repeating-linear-gradient(135deg, var(--soft) 0 6px, var(--surface) 6px 12px);
 }
 .ts-before {
   left: 0;
 }
 .ts-after {
-  left: 90%;
+  left: 88%;
 }
 .ts-band {
   border-left: 1px solid var(--line);
@@ -1264,7 +1273,16 @@ dialog::backdrop {
   margin-top: 1.2rem;
 }
 .solved-strip .ts-track {
-  height: 3.1rem;
+  height: 3.3rem;
+}
+/* The true place of each event; the numbered pin above may be moved aside to stay readable. */
+.ts-pin-tick {
+  position: absolute;
+  bottom: 0;
+  width: 2px;
+  height: 0.7rem;
+  transform: translateX(-50%);
+  background: var(--accent);
 }
 
 /* Geschichtsfries on the path and in the reference. */
@@ -1336,7 +1354,8 @@ dialog::backdrop {
 }
 .fries-track {
   position: relative;
-  height: 2.2rem;
+  /* One lane per set of overlapping lessons (assignLanes in workshop.ts). */
+  height: calc(0.4rem + var(--lanes, 3) * 0.6rem);
   border-radius: 0.5rem;
   background: var(--accent-soft);
   border: 1px solid var(--line);
@@ -1562,8 +1581,12 @@ dialog::backdrop {
     font-size: 0;
   }
   .ts-band {
-    justify-content: flex-start;
-    font-size: 0.56rem;
+    font-size: 0.54rem;
+    letter-spacing: 0;
+    padding-inline: 0;
+  }
+  .ts-track {
+    height: 3rem;
   }
   .ts-tick {
     font-size: 0.58rem;

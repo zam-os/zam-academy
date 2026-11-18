@@ -8,7 +8,7 @@
   "subject": "geschichte",
   "core_lessons": 42,
   "optional_lessons": [],
-  "scope_note": "Ein gemeinsamer Fachlehrplan für alle Wahlpflichtfächergruppen, deshalb ohne track. Die Kompetenzerwartungen stehen wortgleich wie auf der am 18.11.2026 direkt abgerufenen Seite (Kopie in tests/fixtures/lehrplanplus-g6.html, nur Leerraum normalisiert). Lernbereich 1 wird in eigenen Methodenlektionen geübt und in allen Lernbereichen angewendet. Rollenspiele, Comics, Exkursionen, die Arbeit mit dem eigenen Schulbuch und mit Originalbildern und echten Geschichtskarten finden im Unterricht statt; solche Zeilen tragen den Status „supported“ oder nennen die Grenze in evidence. Lehrervideos folgen als separater Schritt.",
+  "scope_note": "Ein gemeinsamer Fachlehrplan für alle Wahlpflichtfächergruppen, deshalb ohne track. Die Kompetenzerwartungen stehen wortgleich wie auf der am 18.11.2026 direkt abgerufenen Seite (Kopie in tests/fixtures/lehrplanplus-g6.html, nur Leerraum normalisiert). Lernbereich 1 wird in eigenen Methodenlektionen geübt und in allen Lernbereichen angewendet. Rollenspiele, Comics, Exkursionen, die Arbeit mit dem eigenen Schulbuch und mit Originalbildern und echten Geschichtskarten finden im Unterricht statt; solche Zeilen tragen den Status „supported“ und nennen in evidence das nötige Material. Das gilt auch für die vier Zeilen zur Arbeit mit Geschichtskarten: Die App beschreibt Karten, zeigt sie aber nicht. Lehrervideos folgen als separater Schritt.",
   "outside_app": [
     "Bilder, Bauwerke und Geschichtskarten sind in den Übungen beschrieben, nicht abgebildet; Originale zeigen Schulbuch, Museum und die verlinkten Seiten.",
     "Exkursionen (Limes, Römermuseum, Kelten- oder Ägyptenmuseum), Rollenspiele, Comics und Rekonstruktionsbilder gestalten die Schülerinnen und Schüler im Unterricht.",
@@ -45,8 +45,8 @@
         "g6-polis",
         "g6-rom-anfaenge"
       ],
-      "status": "implemented",
-      "evidence": "g6-karten: Fragenkatalog an eine beschriebene Karte zum Alexanderzug und an Schaubilder; g6-zeitleiste: Zeitrechnung, Jahrhunderte, Zeitleiste und Geschichtsfries. Jede Lektion zeigt einen maßstabsgerechten Zeitstreifen, Lernpfad und Nachschlagen einen Geschichtsfries, 21 Lektionen ein Schaubild. Karten sind in den Übungen beschrieben, nicht abgebildet; echte Geschichtskarten liefert das Schulbuch."
+      "status": "supported",
+      "evidence": "Die App liefert Schaubilder und Zeitleisten: g6-zeitleiste übt Zeitrechnung, Jahrhunderte, Zeitleiste und Geschichtsfries, jede Lektion zeigt einen maßstabsgerechten Zeitstreifen, Lernpfad und Nachschlagen einen Geschichtsfries, 21 Lektionen ein Schaubild. g6-karten übt den Fragenkatalog an eine Geschichtskarte (Thema, Zeit, Raum, Legende, Maßstab) an einer beschriebenen Karte zum Alexanderzug. Geschichtskarten selbst zeigt die App nicht; dafür brauchen die Lernenden die Karte zum Alexanderzug aus Schulbuch oder Geschichtsatlas."
     },
     {
       "lb": 1,
@@ -177,8 +177,8 @@
       "lessons": [
         "g6-polis"
       ],
-      "status": "implemented",
-      "evidence": "Werkstatt wertet eine beschriebene Karte Griechenlands aus und trennt Beobachtung und Folgerung für die Entstehung der Poleis."
+      "status": "supported",
+      "evidence": "Die Werkstatt wertet eine beschriebene Karte Griechenlands aus und trennt Beobachtung und Folgerung für die Entstehung der Poleis. Die Karte selbst zeigt die App nicht; dafür brauchen die Lernenden eine physische Karte Griechenlands aus Schulbuch oder Geschichtsatlas."
     },
     {
       "lb": 4,
@@ -235,8 +235,8 @@
       "lessons": [
         "g6-rom-anfaenge"
       ],
-      "status": "implemented",
-      "evidence": "Aufstieg Roms in Etappen (Zeitleiste von 753 v. Chr. bis 117 n. Chr.), feste Fragen an Karten verschiedener Zeitpunkte; Level 2 vergleicht zwei Karten. Die Karten selbst liefert das Schulbuch."
+      "status": "supported",
+      "evidence": "Aufstieg Roms in Etappen (Zeitleiste von 753 v. Chr. bis 117 n. Chr.) und ein fester Fragenkatalog an Karten verschiedener Zeitpunkte; Level 2 vergleicht die Ausdehnung um 270 v. Chr. und 117 n. Chr. Die Karten selbst zeigt die App nicht; dafür brauchen die Lernenden Karten zur Ausdehnung des Römischen Reiches aus Schulbuch oder Geschichtsatlas."
     },
     {
       "lb": 5,
@@ -333,8 +333,8 @@
       "lessons": [
         "g6-dreiteilung"
       ],
-      "status": "implemented",
-      "evidence": "„Völkerwanderung“ und Dreiteilung um 750 nach beschriebenen Karten, Schaubild der Etappen, Vergleich mit Migration heute in Level 2. Die Karten selbst liefert das Schulbuch."
+      "status": "supported",
+      "evidence": "„Völkerwanderung“ und Dreiteilung um 750 nach beschriebenen Karten, Schaubild der Etappen, Vergleich mit Migration heute in Level 2. Die Karten selbst zeigt die App nicht; dafür brauchen die Lernenden Karten zur „Völkerwanderung“ und zur Mittelmeerwelt um 750 aus Schulbuch oder Geschichtsatlas."
     },
     {
       "lb": 6,

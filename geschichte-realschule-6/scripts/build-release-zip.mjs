@@ -71,7 +71,7 @@ Dein Fortschritt bleibt im Browser gespeichert.
 
 Oben in der App wechselst du zwischen
 - 🌱 Level 1 (geführt: Leitfragen helfen) und
-- 🦅 Level 2 (Transfer: selbständig begründen).
+- 🦅 Level 2 (Transfer: selbstständig begründen).
 
 Behalten mit ZAM: Die Zelle "Geschichte 6 Realschule (ZAM Academy)" hält, was du
 hier geübt hast. Jede Karte verlinkt die Lektion, in der du geübt hast.

@@ -27,11 +27,15 @@ deshalb keinen `track`.
 Kompetenzerwartungen wortgleich Lektionen zu.
 `node geschichte-realschule-6/scripts/check-curriculum.mjs` prüft das gegen die
 gespeicherte Seite: „44 competences, 0 not found; page SHA-256 matches“.
-Zwei Zeilen tragen `supported` statt `implemented`, weil ihr Kern im Unterricht
-stattfindet: eigene Comics, Rekonstruktionsbilder und Rollenspiele (LB 1,
-Narration) und die Arbeit mit dem eigenen Schulbuch und echten Filmen (LB 1,
-Medien). Karten und Bilder sind in den Übungen beschrieben, nicht abgebildet;
-die betroffenen Zeilen sagen das in `evidence`.
+Sechs Zeilen tragen `supported` statt `implemented`. Bei zweien findet der Kern
+im Unterricht statt: eigene Comics, Rekonstruktionsbilder und Rollenspiele
+(LB 1, Narration) und die Arbeit mit dem eigenen Schulbuch und echten Filmen
+(LB 1, Medien). Die übrigen vier verlangen Arbeit mit Geschichtskarten (LB 1
+Karten und Schaubilder, LB 4 Poleis, LB 5 Ausdehnung des Imperium Romanum,
+LB 6 „Völkerwanderung“ und Dreiteilung). Die App beschreibt diese Karten und
+übt den Fragenkatalog, zeigt die Karten aber nicht; jede dieser Zeilen nennt in
+`evidence`, welche Karte aus Schulbuch oder Geschichtsatlas die Lernenden
+brauchen.
 
 Alle 33 Grundlegenden Daten und Begriffe stehen mit Erklärung und Lektion im
 Nachschlagen. „753 v. Chr. mythische Gründung Roms“ nennt der Lehrplan nur in

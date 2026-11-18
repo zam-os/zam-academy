@@ -89,7 +89,7 @@ export const methods: Lesson[] = [
       "Ägypten, Athen, Rom, Karl der Große: Wer Ereignisse auf einer Zeitleiste ordnet, sieht, was gleichzeitig, früher oder viel später geschah.",
     paragraphs: [
       "Wir zählen die Jahre ab Christi Geburt. Was davor lag, bekommt den Zusatz „v. Chr.“ (vor Christus), danach „n. Chr.“ (nach Christus). Vor Christi Geburt zählt man rückwärts: 3000 v. Chr. liegt weiter zurück als 753 v. Chr. Ein Jahr 0 gibt es nicht; auf das Jahr 1 v. Chr. folgt direkt das Jahr 1 n. Chr.",
-      "Ein Jahrhundert umfasst hundert Jahre. Das 1. Jahrhundert n. Chr. reicht von 1 bis 100, das 5. Jahrhundert v. Chr. von 500 bis 401 v. Chr. Die Zahl des Jahrhunderts ist also um eins größer als die Hunderterstelle: 753 v. Chr. liegt im 8. Jahrhundert v. Chr. Beispielrechnung: Von 753 v. Chr. bis 14 n. Chr. vergingen 753 + 14 − 1 = 766 Jahre, weil das Jahr 0 fehlt.",
+      "Ein Jahrhundert umfasst hundert Jahre. Das 1. Jahrhundert n. Chr. reicht von 1 bis 100, das 5. Jahrhundert v. Chr. von 500 bis 401 v. Chr. So findest du das Jahrhundert: Teile die Jahreszahl durch 100 und runde auf. 753 geteilt durch 100 ergibt 7,53, aufgerundet 8; 753 v. Chr. liegt also im 8. Jahrhundert v. Chr. Achte auf volle Hunderter: 500 geteilt durch 100 ergibt genau 5, deshalb gehört 500 v. Chr. noch zum 5. Jahrhundert v. Chr., 501 v. Chr. dagegen schon zum 6. Beispielrechnung: Von 753 v. Chr. bis 14 n. Chr. vergingen 753 + 14 − 1 = 766 Jahre, weil das Jahr 0 fehlt.",
       "Auf einer Zeitleiste stehen die Jahre in gleichen Abständen: Jeder Zentimeter bedeutet dieselbe Zeitspanne. Ein Geschichtsfries zeigt zusätzlich farbige Bänder für ganze Epochen, etwa die Antike von etwa 800 v. Chr. bis um 500 n. Chr. und danach das Mittelalter. Die Altsteinzeit ist so lang, dass sie auf einer solchen Leiste weit über den Rand hinausragen würde. Der farbige Streifen oben in jeder Lektion zeigt dir, wo ihr Thema liegt.",
     ],
     takeaway:
@@ -101,9 +101,9 @@ export const methods: Lesson[] = [
       ["Im 7. Jahrhundert v. Chr.", "Im 75. Jahrhundert v. Chr."],
       [
         "Das 7. Jahrhundert v. Chr. reicht von 700 bis 601 v. Chr.; 753 liegt davor.",
-        "Ein Jahrhundert hat hundert Jahre, nicht zehn. Teile durch hundert und zähle eins dazu.",
+        "Ein Jahrhundert hat hundert Jahre, nicht zehn. Teile durch hundert und runde auf: 7,53 wird zu 8.",
       ],
-      "Das 8. Jahrhundert v. Chr. reicht von 800 bis 701 v. Chr. Die Hunderterstelle 7 plus eins ergibt das 8. Jahrhundert.",
+      "Das 8. Jahrhundert v. Chr. reicht von 800 bis 701 v. Chr. 753 geteilt durch 100 ergibt 7,53; aufgerundet ist das das 8. Jahrhundert.",
     ),
     workshop: timeline(
       [

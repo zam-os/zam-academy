@@ -18,6 +18,8 @@ import {
   moveEntry,
   shuffle,
   STRIP,
+  assignLanes,
+  spreadPins,
   stripPosition,
   stripRange,
   yearLabel,
@@ -40,7 +42,8 @@ let storageWarningShown = false;
 const EPOCHS: Array<{ label: string; from: number; to: number }> = [
   { label: "Frühe Hochkulturen", from: -3000, to: -800 },
   { label: "Antike", from: -800, to: 500 },
-  { label: "Frühmittelalter", from: 500, to: 1000 },
+  // Soft hyphens let the narrow band wrap instead of cutting the word.
+  { label: "Früh\u00admittel\u00adalter", from: 500, to: 1000 },
 ];
 const TICKS: Array<{ year: number; label: string; minor?: boolean }> = [
   { year: -3000, label: "3000 v. Chr." },
@@ -78,6 +81,21 @@ function timeStrip(span: [number, number]): string {
   return `<figure class="time-strip" aria-label="Zeitstreifen: ${esc(spanLabel(span))}"><div class="ts-track" aria-hidden="true">${stripScale()}<span class="ts-mark" style="left:${range.left}%;width:${range.width}%"></span></div>${stripTicks()}<figcaption><span class="ts-dot" aria-hidden="true"></span>Diese Lektion: ${esc(spanLabel(span))}</figcaption></figure>`;
 }
 
+/**
+ * Numbered pins for the solved timeline. Close years are spread apart; a tick
+ * at the bottom of the strip keeps each event's true place.
+ */
+function pinsFor(years: number[]): string {
+  const positions = years.map((year) => stripPosition(year));
+  const spread = spreadPins(positions);
+  return positions
+    .map(
+      (position, index) =>
+        `<span class="ts-pin-tick" style="left:${position}%"></span><span class="ts-pin" style="left:${spread[index]}%;--row:${index % 2}"><span>${index + 1}</span></span>`,
+    )
+    .join("");
+}
+
 /** The date part of a term such as "um 3000 v. Chr. Hochkultur in Ägypten". */
 function pinLabel(term: string): string {
   const date =
@@ -90,14 +108,17 @@ function pinLabel(term: string): string {
 function renderFries(): string {
   const rows = STAGES.filter((stage) => stage.lb >= 2)
     .map((stage) => {
-      const bars = LESSONS.filter((lesson) => lesson.lb === stage.lb)
+      const lessons = LESSONS.filter((lesson) => lesson.lb === stage.lb);
+      const ranges = lessons.map((lesson) => stripRange(lesson.span));
+      // Overlapping lessons get their own lane, so every bar stays visible and clickable.
+      const lanes = assignLanes(ranges);
+      const bars = lessons
         .map((lesson, index) => {
-          const range = stripRange(lesson.span);
-          // Three lanes per row, so lessons with the same span stay apart.
-          return `<button type="button" class="fries-bar" data-open="${lesson.id}" style="left:${range.left}%;width:${range.width}%;--lane:${index % 3}" title="${esc(`${lesson.title} · ${spanLabel(lesson.span)}`)}"><span class="visually-hidden">${esc(`${lesson.title}, ${spanLabel(lesson.span)}`)}</span></button>`;
+          const range = ranges[index];
+          return `<button type="button" class="fries-bar" data-open="${lesson.id}" style="left:${range.left}%;width:${range.width}%;--lane:${lanes[index]}" title="${esc(`${lesson.title} · ${spanLabel(lesson.span)}`)}"><span class="visually-hidden">${esc(`${lesson.title}, ${spanLabel(lesson.span)}`)}</span></button>`;
         })
         .join("");
-      return `<div class="fries-row stage-scope" style="--stage-hue:${stage.hue}"><span class="fries-label"><span aria-hidden="true">${stage.icon}</span> ${esc(stage.shortTitle)}</span><div class="fries-track">${bars}</div></div>`;
+      return `<div class="fries-row stage-scope" style="--stage-hue:${stage.hue}"><span class="fries-label"><span aria-hidden="true">${stage.icon}</span> ${esc(stage.shortTitle)}</span><div class="fries-track" style="--lanes:${Math.max(3, ...lanes.map((lane) => lane + 1))}">${bars}</div></div>`;
     })
     .join("");
   const pins = TERMS.filter((term) => term.year !== undefined)
@@ -180,7 +201,7 @@ function openLesson(id: string): void {
   if (!lesson) return;
   progress.activeLessonId = id;
   view = "lesson";
-  history.pushState(null, "", `#lesson=${encodeURIComponent(id)}`);
+  history.pushState(null, "", pageUrl(`#lesson=${encodeURIComponent(id)}&level=${progress.level}`));
   persist();
   render();
   window.scrollTo({ top: 0, behavior: "instant" });
@@ -227,19 +248,14 @@ function renderWorkshop(lesson: Lesson): string {
   const years = work.entries.map((entry) => yearOf(entry.text));
   const solvedStrip =
     work.kind === "timeline" && feedback && solved && years.every((year) => year !== null)
-      ? `<figure class="time-strip solved-strip" aria-label="Die Ereignisse auf der Zeitleiste"><div class="ts-track" aria-hidden="true">${stripScale()}${years
-          .map(
-            (year, index) =>
-              `<span class="ts-pin" style="left:${stripPosition(year!)}%;--row:${index % 2}"><span>${index + 1}</span></span>`,
-          )
-          .join("")}</div>${stripTicks()}<figcaption>Deine Reihenfolge auf der Zeitleiste: Die Abstände zeigen, wie weit die Ereignisse auseinanderliegen.</figcaption></figure>`
+      ? `<figure class="time-strip solved-strip" aria-label="Die Ereignisse auf der Zeitleiste"><div class="ts-track" aria-hidden="true">${stripScale()}${pinsFor(years as number[])}</div>${stripTicks()}<figcaption>Deine Reihenfolge auf der Zeitleiste: Die Abstände zeigen, wie weit die Ereignisse auseinanderliegen.</figcaption></figure>`
       : "";
   return `<section class="panel workshop" aria-labelledby="workshop-heading"><div class="panel-heading"><span class="eyebrow">02 · WERKSTATT</span><span class="done-mark">${progress.workshopDone.includes(lesson.id) ? "✓ Einmal gelöst" : ""}</span></div><h2 id="workshop-heading">${esc(work.title)}</h2><p>${esc(work.instruction)}</p>
   ${work.material ? `<div class="document"><span class="small">${esc(work.materialLabel ?? "Darstellungstext für diese Übung")}</span><p>${esc(work.material)}</p></div>` : ""}
   ${work.sourceExcerpt ? `<figure class="document source"><figcaption><span class="source-badge">Originalquelle · übersetzt</span><strong>${esc(work.sourceExcerpt.title)}</strong><dl class="source-metadata"><dt>Urheber</dt><dd>${esc(work.sourceExcerpt.author)}</dd><dt>Datum</dt><dd>${esc(work.sourceExcerpt.date)}</dd><dt>Adressaten</dt><dd>${esc(work.sourceExcerpt.audience)}</dd></dl></figcaption><blockquote>${esc(work.sourceExcerpt.text)}</blockquote><p class="small">${esc(work.sourceExcerpt.context)}</p><a class="small" href="${esc(SOURCES.find((source) => source.id === work.sourceExcerpt!.sourceId)!.url)}" target="_blank" rel="noopener">Lateinischen Wortlaut prüfen ↗</a></figure>` : ""}
   ${work.kind === "timeline" ? `<ol class="timeline">${order.map((entryIndex, position) => `<li><span class="position">${position + 1}</span><span class="event-text">${esc(work.entries[entryIndex].text)}</span><div class="move-buttons"><button type="button" data-move="${position}" data-delta="-1" aria-label="${esc(work.entries[entryIndex].text)} nach oben" ${position === 0 ? "disabled" : ""}>↑</button><button type="button" data-move="${position}" data-delta="1" aria-label="${esc(work.entries[entryIndex].text)} nach unten" ${position === order.length - 1 ? "disabled" : ""}>↓</button></div></li>`).join("")}</ol>` : `<ul class="cat-legend" aria-label="Kategorien">${work.categories.map((category, value) => `<li class="cat" data-cat="${value}">${esc(category)}</li>`).join("")}</ul><div class="classification">${work.entries.map((entry, index) => `<label data-cat="${answer[index]}"><span>${esc(entry.text)}</span><select data-assign="${index}"><option value="-1">Bitte zuordnen</option>${work.categories.map((category, value) => `<option value="${value}" ${answer[index] === value ? "selected" : ""}>${esc(category)}</option>`).join("")}</select></label>`).join("")}</div>`}
   <button type="button" id="check-workshop" class="button secondary">${work.kind === "timeline" ? "Reihenfolge prüfen" : "Zuordnung prüfen"}</button>
-  ${feedback ? `<div class="feedback ${solved ? "success" : "hint"}" role="status"><strong>${solved ? (work.kind === "timeline" ? "Die Reihenfolge stimmt." : "Die Zuordnung stimmt.") : `${results.filter(Boolean).length} von ${results.length} stimmen. Prüfe die übrigen noch einmal.`}</strong><ul>${(work.kind === "timeline" ? order : work.entries.map((_, i) => i)).map((entryIndex, position) => `<li class="${results[position] ? "right" : "open"}">${results[position] ? `✓ ${esc(work.entries[entryIndex].feedback)}` : `→ ${work.kind === "timeline" ? `Platz ${position + 1}` : `Aussage ${position + 1}`} stimmt noch nicht.`}</li>`).join("")}</ul>${solved ? `<p>${esc(work.conclusion)}</p>` : ""}</div>` : ""}${solvedStrip}</section>`;
+  ${feedback ? `<div class="feedback ${solved ? "success" : "hint"}" role="status" tabindex="-1"><strong>${solved ? (work.kind === "timeline" ? "Die Reihenfolge stimmt." : "Die Zuordnung stimmt.") : `${results.filter(Boolean).length} von ${results.length} stimmen. Prüfe die übrigen noch einmal.`}</strong><ul>${(work.kind === "timeline" ? order : work.entries.map((_, i) => i)).map((entryIndex, position) => `<li class="${results[position] ? "right" : "open"}">${results[position] ? `✓ ${esc(work.entries[entryIndex].feedback)}` : `→ ${work.kind === "timeline" ? `Platz ${position + 1}` : `Aussage ${position + 1}`} stimmt noch nicht.`}</li>`).join("")}</ul>${solved ? `<p>${esc(work.conclusion)}</p>` : ""}</div>` : ""}${solvedStrip}</section>`;
 }
 
 function renderWriting(lesson: Lesson): string {
@@ -248,10 +264,10 @@ function renderWriting(lesson: Lesson): string {
   const draft = progress.drafts[key] ?? "";
   const comparing = comparisons.has(key);
   const checks = rubricChecks.get(key) ?? [false, false, false];
-  return `<section class="panel writing" aria-labelledby="writing-heading"><div class="panel-heading"><span class="eyebrow">03 · SELBST BEGRÜNDEN</span><span class="done-mark" id="writing-done">${progress.writingDone.includes(key) ? "✓ Selbst eingeschätzt" : ""}</span></div><h2 id="writing-heading">${progress.level === 1 ? "Level 1 · Mit Leitfragen arbeiten" : "Level 2 · Auf einen neuen Fall übertragen"}</h2><p class="task-prompt">${esc(task.prompt)}</p>
+  return `<section class="panel writing" aria-labelledby="writing-heading"><div class="panel-heading"><span class="eyebrow">03 · SELBST BEGRÜNDEN</span><span class="done-mark" id="writing-done">${progress.writingDone.includes(key) ? "✓ Selbst eingeschätzt" : ""}</span></div><h2 id="writing-heading" tabindex="-1">${progress.level === 1 ? "Level 1 · Mit Leitfragen arbeiten" : "Level 2 · Auf einen neuen Fall übertragen"}</h2><p class="task-prompt">${esc(task.prompt)}</p>
   ${progress.level === 1 ? `<details><summary>Leitfragen anzeigen</summary><ul>${task.hints.map((hint) => `<li>${esc(hint)}</li>`).join("")}</ul></details>` : `<p class="small">Formuliere erst deinen eigenen Gedankengang. Die Vergleichsantwort folgt danach.</p>`}
   <label class="answer-label" for="draft">Deine Antwort</label><textarea id="draft" rows="5" maxlength="8000" placeholder="Schreibe zwei bis vier begründete Sätze …">${esc(draft)}</textarea><p class="small">Dein Text bleibt in diesem Browser. Er wird nicht automatisch bewertet.</p><button type="button" id="compare" class="button secondary" ${canReviewDraft(draft) ? "" : "disabled"}>Mit einer möglichen Antwort vergleichen</button><span class="small" id="draft-note">${canReviewDraft(draft) ? "" : "Schreibe zunächst mindestens 20 Zeichen."}</span>
-  ${comparing ? `<div class="model-answer"><h3>Eine mögliche Antwort</h3><p>${esc(task.model)}</p><p>Andere Formulierungen und begründete Urteile sind möglich. Vergleiche deinen Text anhand dieser Kriterien:</p><div class="rubric">${task.criteria.map((criterion, i) => `<label><input type="checkbox" data-rubric="${i}" ${checks[i] ? "checked" : ""}>${esc(criterion)}</label>`).join("")}</div><div class="self-actions"><button type="button" class="button accent" id="accept-writing" ${canAcceptSelfAssessment(draft, checks) ? "" : "disabled"}>Meine Antwort erfüllt die Kriterien</button><button type="button" class="text-button" id="revise-writing">Ich überarbeite noch</button></div><p class="small">Diese Einschätzung gibst du selbst ab. Sie ist keine automatische Prüfung und verändert keine ZAM-Karten.</p></div>` : ""}</section>`;
+  ${comparing ? `<div class="model-answer"><h3 tabindex="-1">Eine mögliche Antwort</h3><p>${esc(task.model)}</p><p>Andere Formulierungen und begründete Urteile sind möglich. Vergleiche deinen Text anhand dieser Kriterien:</p><div class="rubric">${task.criteria.map((criterion, i) => `<label><input type="checkbox" data-rubric="${i}" ${checks[i] ? "checked" : ""}>${esc(criterion)}</label>`).join("")}</div><div class="self-actions"><button type="button" class="button accent" id="accept-writing" ${canAcceptSelfAssessment(draft, checks) ? "" : "disabled"}>Meine Antwort erfüllt die Kriterien</button><button type="button" class="text-button" id="revise-writing">Ich überarbeite noch</button></div><p class="small">Diese Einschätzung gibst du selbst ab. Sie ist keine automatische Prüfung und verändert keine ZAM-Karten.</p></div>` : ""}</section>`;
 }
 
 function renderLesson(): string {
@@ -377,6 +393,8 @@ function bindLesson(lesson: Lesson): void {
     workshopFeedback.add(lesson.id);
     persist();
     render();
+    // render() replaced the button; keyboard focus moves to the feedback that answers it.
+    main.querySelector<HTMLElement>(".workshop .feedback")?.focus({ preventScroll: true });
     main.querySelector(".workshop .feedback")?.scrollIntoView({
       block: "nearest",
       behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth",
@@ -402,6 +420,7 @@ function bindLesson(lesson: Lesson): void {
     if (!canReviewDraft(progress.drafts[key] ?? "")) return;
     comparisons.add(key);
     render();
+    main.querySelector<HTMLElement>(".model-answer h3")?.focus({ preventScroll: true });
     main.querySelector(".model-answer")?.scrollIntoView({
       block: "nearest",
       behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth",
@@ -425,6 +444,7 @@ function bindLesson(lesson: Lesson): void {
     if (!progress.writingDone.includes(key)) progress.writingDone.push(key);
     persist();
     render();
+    main.querySelector<HTMLElement>("#writing-heading")?.focus({ preventScroll: true });
     showToast(
       isComplete(progress, lesson.id)
         ? "Lektion abgeschlossen. Du kannst weiterlernen oder Level 2 vertiefen."

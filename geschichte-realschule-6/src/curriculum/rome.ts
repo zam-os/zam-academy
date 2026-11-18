@@ -70,7 +70,7 @@ export const rome: Lesson[] = [
         ["Sage richtig wiedergegeben", "Spätere Entstehung genannt", "Funde als Gegenbeleg genannt"],
       ),
       2: writing(
-        "Du vergleichst zwei Karten: Rom um 270 v. Chr. und das Reich im Jahr 117 n. Chr. Beschreibe die Veränderung und nenne zwei Ursachen.",
+        "Schlage in deinem Schulbuch oder Geschichtsatlas zwei Karten auf: Rom um 270 v. Chr. und das Reich im Jahr 117 n. Chr. Um 270 v. Chr. beherrschte Rom Mittel- und Süditalien, 117 n. Chr. reichte das Reich von Britannien bis Mesopotamien. Beschreibe die Veränderung und nenne zwei Ursachen.",
         ["Welche Gebiete kamen dazu?", "Wie gewann Rom diese Gebiete?"],
         "Um 270 v. Chr. beherrschte Rom fast nur Italien. 117 n. Chr. reichte das Reich von Britannien bis Mesopotamien und umfasste alle Küsten des Mittelmeers. Ursachen waren erfolgreiche Kriege, etwa gegen Karthago, und Bündnisse mit anderen Städten und Völkern. Eroberte Gebiete wurden als Provinzen verwaltet und durch Legionen gesichert.",
         ["Veränderung beschrieben", "Zwei Ursachen genannt", "Fachbegriff Provinz verwendet"],

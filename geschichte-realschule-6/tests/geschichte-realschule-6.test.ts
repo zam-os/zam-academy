@@ -13,6 +13,7 @@ import {
   writingKey,
 } from "../src/storage/progress";
 import {
+  assignLanes,
   canAcceptSelfAssessment,
   canReviewDraft,
   checkWorkshop,
@@ -20,6 +21,7 @@ import {
   initialOrder,
   moveEntry,
   shuffle,
+  spreadPins,
   stripPosition,
   stripRange,
   yearLabel,
@@ -173,11 +175,52 @@ describe("curriculum and public lesson contract", () => {
       expect(range.width).toBeGreaterThanOrEqual(1);
     }
     // Prehistory lies left of the scale, the present right of it.
-    expect(stripRange(findLesson("g6-altsteinzeit")!.span)).toEqual({ left: 0, width: 10 });
-    expect(stripRange(findLesson("g6-technik-heute")!.span)).toEqual({ left: 90, width: 10 });
+    // The zones end exactly where the scale starts, so no gap opens beside the epochs.
+    expect(stripRange(findLesson("g6-altsteinzeit")!.span)).toEqual({ left: 0, width: 12 });
+    expect(stripRange(findLesson("g6-technik-heute")!.span)).toEqual({ left: 88, width: 12 });
     expect(stripPosition(-3000)).toBe(12);
     expect(stripPosition(1000)).toBe(88);
     expect(stripPosition(-753)).toBeLessThan(stripPosition(-450));
+  });
+
+  it("gives overlapping lessons of a Geschichtsfries row their own lanes", () => {
+    for (const stage of STAGES.filter((entry) => entry.lb >= 2)) {
+      const ranges = LESSONS.filter((lesson) => lesson.lb === stage.lb).map((lesson) =>
+        stripRange(lesson.span),
+      );
+      const lanes = assignLanes(ranges);
+      for (let a = 0; a < ranges.length; a++)
+        for (let b = a + 1; b < ranges.length; b++) {
+          if (lanes[a] !== lanes[b]) continue;
+          const [first, second] = ranges[a].left <= ranges[b].left ? [ranges[a], ranges[b]] : [ranges[b], ranges[a]];
+          expect(first.left + first.width, `LB ${stage.lb}`).toBeLessThanOrEqual(second.left);
+        }
+    }
+    // Reported in review: Stadt Rom and Juden, Provinzen and Erbe Roms shared a lane.
+    const rome = LESSONS.filter((lesson) => lesson.lb === 5);
+    const lanes = assignLanes(rome.map((lesson) => stripRange(lesson.span)));
+    const lane = (id: string) => lanes[rome.findIndex((lesson) => lesson.id === id)];
+    expect(lane("g6-stadt-rom")).not.toBe(lane("g6-juden"));
+    expect(lane("g6-provinzen")).not.toBe(lane("g6-erbe-roms"));
+  });
+
+  it("spreads the pins of close years on the solved timeline", () => {
+    const positions = [-500, -490, -480, -479, -478, -462].map((year) => stripPosition(year));
+    const spread = spreadPins(positions);
+    for (let i = 1; i < spread.length; i++) expect(spread[i] - spread[i - 1]).toBeGreaterThanOrEqual(3.999);
+    const mean = (values: number[]) => values.reduce((sum, value) => sum + value, 0) / values.length;
+    expect(Math.abs(mean(spread) - mean(positions))).toBeLessThan(0.01);
+    // Pins far apart stay where they are.
+    expect(spreadPins([20, 50, 80])).toEqual([20, 50, 80]);
+  });
+
+  it("teaches the century rule with the boundary of full hundreds", () => {
+    const text = findLesson("g6-zeitleiste")!.paragraphs.join(" ");
+    expect(text).toContain("Teile die Jahreszahl durch 100 und runde auf");
+    expect(text).toContain("500 v. Chr. noch zum 5. Jahrhundert v. Chr., 501 v. Chr. dagegen schon zum 6.");
+    expect(text).not.toContain("Hunderterstelle");
+    const century = (year: number) => Math.ceil(year / 100);
+    expect([century(753), century(500), century(501), century(100), century(1)]).toEqual([8, 5, 6, 1, 1]);
   });
 
   it("reads years before and after Christ", () => {
@@ -271,7 +314,14 @@ describe("coverage of the Kompetenzerwartungen", () => {
     }
     expect(
       coverage.rows.filter((row) => row.status === "supported").map((row) => row.lessons[0]),
-    ).toEqual(["g6-erzaehlen", "g6-informieren"]);
+    ).toEqual(["g6-erzaehlen", "g6-karten", "g6-informieren", "g6-polis", "g6-rom-anfaenge", "g6-dreiteilung"]);
+    // The app describes historical maps but shows none: every map row says which map the learner needs.
+    const mapRows = coverage.rows.filter((row) => row.competence.includes("Geschichtskarte"));
+    expect(mapRows).toHaveLength(4);
+    for (const row of mapRows) {
+      expect(row.status).toBe("supported");
+      expect(row.evidence).toContain("aus Schulbuch oder Geschichtsatlas");
+    }
     const covered = new Set(coverage.rows.flatMap((row) => row.lessons));
     for (const lesson of LESSONS) expect(covered.has(lesson.id), lesson.id).toBe(true);
   });

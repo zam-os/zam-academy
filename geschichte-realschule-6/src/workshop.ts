@@ -80,15 +80,65 @@ export function yearLabel(year: number): string {
  */
 export const STRIP = { from: -3000, to: 1000, left: 12, right: 88 } as const;
 export function stripPosition(year: number): number {
-  if (year < STRIP.from) return 5;
-  if (year > STRIP.to) return 95;
+  if (year < STRIP.from) return STRIP.left / 2;
+  if (year > STRIP.to) return (STRIP.right + 100) / 2;
   return STRIP.left + ((year - STRIP.from) / (STRIP.to - STRIP.from)) * (STRIP.right - STRIP.left);
 }
 
 /** The highlighted part of the strip for a span, at least one percent wide. */
 export function stripRange(span: [number, number]): { left: number; width: number } {
-  const start = span[0] < STRIP.from ? 0 : span[0] > STRIP.to ? 90 : stripPosition(span[0]);
-  const end = span[1] > STRIP.to ? 100 : span[1] < STRIP.from ? 10 : stripPosition(span[1]);
+  const start =
+    span[0] < STRIP.from ? 0 : span[0] > STRIP.to ? STRIP.right : stripPosition(span[0]);
+  const end =
+    span[1] > STRIP.to ? 100 : span[1] < STRIP.from ? STRIP.left : stripPosition(span[1]);
   const left = Math.min(start, end);
   return { left, width: Math.max(1, Math.abs(end - start)) };
+}
+
+/**
+ * Lanes for the bars of one Geschichtsfries row: each bar takes the first lane
+ * whose last bar ends at least `gap` percent before it starts, so no two bars
+ * of a lane overlap and every bar stays clickable. Returns one lane per range,
+ * in the given order.
+ */
+export function assignLanes(ranges: Array<{ left: number; width: number }>, gap = 0.8): number[] {
+  const lanes = new Array<number>(ranges.length);
+  const laneEnds: number[] = [];
+  ranges
+    .map((range, index) => ({ ...range, index }))
+    .sort((a, b) => a.left - b.left || b.width - a.width)
+    .forEach((range) => {
+      let lane = laneEnds.findIndex((end) => end + gap <= range.left);
+      if (lane === -1) lane = laneEnds.length;
+      laneEnds[lane] = range.left + range.width;
+      lanes[range.index] = lane;
+    });
+  return lanes;
+}
+
+/**
+ * Pin positions on the solved time strip. Pins for close years (the Perserkriege
+ * span 38 years, a fraction of a percent of the strip) are pushed apart to at
+ * least `gap` percent, keeping their order and staying near their true place.
+ */
+export function spreadPins(positions: number[], gap = 4): number[] {
+  const order = positions.map((_, index) => index).sort((a, b) => positions[a] - positions[b]);
+  const sorted = order.map((index) => positions[index]);
+  const spread = [...sorted];
+  for (let pass = 0; pass < 200; pass++) {
+    let moved = false;
+    for (let i = 1; i < spread.length; i++) {
+      const overlap = gap - (spread[i] - spread[i - 1]);
+      if (overlap > 1e-9) {
+        spread[i - 1] -= overlap / 2;
+        spread[i] += overlap / 2;
+        moved = true;
+      }
+    }
+    for (let i = 0; i < spread.length; i++) spread[i] = Math.min(98, Math.max(2, spread[i]));
+    if (!moved) break;
+  }
+  const result = new Array<number>(positions.length);
+  order.forEach((index, rank) => (result[index] = spread[rank]));
+  return result;
 }
