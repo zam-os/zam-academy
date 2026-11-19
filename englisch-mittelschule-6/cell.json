@@ -3,7 +3,7 @@
 	"tile_id": "zam-academy:englisch-mittelschule-6",
 	"version": "2026.11.1",
 	"title": "Englisch 6 Mittelschule (ZAM Academy)",
-	"description": "English as a first foreign language in Bavarian Mittelschule Grade 6 (LehrplanPLUS): 36 lessons, 108 workshop goals, 72 production tasks and 108 linked recall cards. Listening comprehension, spontaneous speech and classroom interactions supplement the app.",
+	"description": "English as a first foreign language in Bavarian Mittelschule Grade 6 (LehrplanPLUS): 36 lessons, 108 workshop goals, 72 production tasks and 109 linked recall cards. Listening comprehension, spontaneous speech and classroom interactions supplement the app.",
 	"publisher": "ZAM Academy",
 	"sources": [
 		{
@@ -168,14 +168,32 @@
 					"language": "de",
 					"tier": "tier1_fast",
 					"bloom_level": 1,
-					"question": "Wie viele Bundesstaaten gehören insgesamt zu den USA, und wie heißt ihre Hauptstadt?",
-					"concept": "50 Staaten; Hauptstadt ist Washington, D.C.",
+					"question": "Wie viele Bundesstaaten gehören insgesamt zu den USA?",
+					"concept": "50 Bundesstaaten",
 					"source_link": "https://academy.zam-os.org/englisch-mittelschule-6/#lesson=e6m-usa-states-capital",
 					"fast_check": {
 						"type": "binary_choice",
 						"options": [
-							"50 Staaten; Hauptstadt ist Washington, D.C.",
-							"48 Staaten; Hauptstadt ist New York"
+							"50 Bundesstaaten",
+							"48 Bundesstaaten"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M7V32KDXJQ0AEQEJ8Z0V5M6C",
+					"slug": "e6m-usa-states-capital-dc-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wie heißt die Hauptstadt der USA?",
+					"concept": "Washington, D.C.",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-6/#lesson=e6m-usa-states-capital",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Washington, D.C.",
+							"New York"
 						],
 						"correct_index": 0
 					}
@@ -618,10 +636,10 @@
 					"language": "de",
 					"tier": "tier2_synthesis",
 					"bloom_level": 2,
-					"question": "Nenne einen typischen Unterschied zwischen britischem und deutschem Schulalltag aus der Lektion.",
-					"concept": "In Großbritannien tragen die meisten Schülerinnen und Schüler eine Schuluniform (und essen abends warm).",
+					"question": "Wann essen viele Familien in Großbritannien ihre warme Hauptmahlzeit ('dinner')?",
+					"concept": "am Abend",
 					"source_link": "https://academy.zam-os.org/englisch-mittelschule-6/#lesson=e6m-routines-problems",
-					"sample_solution": "Schuluniform in Großbritannien / Nachmittags-Clubs / Hauptmahlzeit (dinner) am Abend"
+					"sample_solution": "am Abend"
 				}
 			]
 		},
@@ -698,10 +716,10 @@
 					"language": "de",
 					"tier": "tier2_synthesis",
 					"bloom_level": 2,
-					"question": "Nenne drei englische Möbelwörter aus dem Zimmerbild (Sam's room).",
-					"concept": "bed, desk, chair (oder shelf, lamp, rug)",
+					"question": "Was bedeutet das englische Möbelwort 'shelf' auf Deutsch?",
+					"concept": "Regal",
 					"source_link": "https://academy.zam-os.org/englisch-mittelschule-6/#lesson=e6m-room-flat-prepositions",
-					"sample_solution": "bed, desk, chair, shelf, lamp, rug"
+					"sample_solution": "Regal"
 				}
 			]
 		},
@@ -1430,10 +1448,10 @@
 					"language": "de",
 					"tier": "tier2_synthesis",
 					"bloom_level": 2,
-					"question": "Nenne ein Beispiel für einen Internationalismus über mehrere Sprachen hinweg.",
-					"concept": "chocolate (Schokolade, cioccolata, czekolada) oder salad / museum",
+					"question": "Woran erkennst du einen Internationalismus wie 'chocolate' oder 'museum' beim Lesen neuer englischer Texte?",
+					"concept": "Das Wort sieht in mehreren Sprachen sehr ähnlich aus und hat dieselbe Bedeutung.",
 					"source_link": "https://academy.zam-os.org/englisch-mittelschule-6/#lesson=e6m-clusters-internationalisms",
-					"sample_solution": "chocolate / salad / sport / museum"
+					"sample_solution": "Das Wort sieht in mehreren Sprachen sehr ähnlich aus und hat dieselbe Bedeutung."
 				}
 			]
 		},
@@ -1499,7 +1517,7 @@
 					"question": "Welche Lesetechnik hilft beim schnellen Finden von Preisen oder Zeiten in einer Broschüre?",
 					"concept": "gezielt auf Überschriften, Zahlen und Schlüsselwörter (keywords) achten",
 					"source_link": "https://academy.zam-os.org/englisch-mittelschule-6/#lesson=e6m-learning-strategies",
-					"sample_solution": "auf Überschriften, Bilder und Schlüsselwörter (keywords) achten"
+					"sample_solution": "gezielt auf Überschriften, Zahlen und Schlüsselwörter (keywords) achten"
 				},
 				{
 					"id": "01M7TEGM1EAF46YP466E6FH74N",
@@ -1635,14 +1653,14 @@
 					"language": "de",
 					"tier": "tier1_fast",
 					"bloom_level": 1,
-					"question": "Was ist im Englischen ein 'video call' und wofür steht 'nature documentary'?",
-					"concept": "Videoanruf und Naturdokumentation",
+					"question": "Was bedeutet 'video call' auf Deutsch?",
+					"concept": "Videoanruf",
 					"source_link": "https://academy.zam-os.org/englisch-mittelschule-6/#lesson=e6m-reading-tv-digital",
 					"fast_check": {
 						"type": "binary_choice",
 						"options": [
-							"Videoanruf und Naturdokumentation",
-							"Briefumschlag und Souvenirladen"
+							"Videoanruf",
+							"Briefumschlag"
 						],
 						"correct_index": 0
 					}
@@ -1653,10 +1671,10 @@
 					"language": "de",
 					"tier": "tier2_synthesis",
 					"bloom_level": 2,
-					"question": "Was bedeutet im Chat die kurze Zusage 'Deal! See you online at 7:30.'?",
+					"question": "Was bedeutet im Chat die kurze Zusage 'Deal! See you online at 7:30 pm.'?",
 					"concept": "Abgemacht! Wir sehen uns um 19:30 Uhr online.",
 					"source_link": "https://academy.zam-os.org/englisch-mittelschule-6/#lesson=e6m-reading-tv-digital",
-					"sample_solution": "Abgemacht! Wir sehen uns um 7:30 Uhr online."
+					"sample_solution": "Abgemacht! Wir sehen uns um 19:30 Uhr online."
 				},
 				{
 					"id": "01M7TEGM1MDC64PMKPSJQAYG64",
@@ -1664,10 +1682,10 @@
 					"language": "de",
 					"tier": "tier2_synthesis",
 					"bloom_level": 2,
-					"question": "Nenne zwei englische Freizeitbegriffe für Lesen oder Fernsehen.",
-					"concept": "comic, adventure story, wildlife show, TV channel",
+					"question": "Was bedeutet 'nature documentary' auf Deutsch?",
+					"concept": "Naturdokumentation",
 					"source_link": "https://academy.zam-os.org/englisch-mittelschule-6/#lesson=e6m-reading-tv-digital",
-					"sample_solution": "adventure comic, wildlife show, documentary, channel"
+					"sample_solution": "Naturdokumentation"
 				}
 			]
 		},
@@ -1899,7 +1917,7 @@
 					"question": "Was bedeutet 'Sign up by Thursday' in einer deutschen Sprachmittlung für eine Veranstaltung?",
 					"concept": "Melde dich bis Donnerstag an.",
 					"source_link": "https://academy.zam-os.org/englisch-mittelschule-6/#lesson=e6m-mediation-leisure",
-					"sample_solution": "Melde dich (bzw. melden Sie sich) bis spätestens Donnerstag an."
+					"sample_solution": "Melde dich bis spätestens Donnerstag an."
 				},
 				{
 					"id": "01M7TEGM1XRS932J9JDN1E0P8D",
@@ -2574,14 +2592,14 @@
 					"language": "de",
 					"tier": "tier1_fast",
 					"bloom_level": 1,
-					"question": "Wie lautet die 3. Person Einzahl von 'have to' und was bedeutet 'don't have to'?",
-					"concept": "he/she/it has to | don't have to = nicht müssen (keine Pflicht)",
+					"question": "Wie lautet die 3. Person Einzahl (he/she/it) von 'have to'?",
+					"concept": "has to",
 					"source_link": "https://academy.zam-os.org/englisch-mittelschule-6/#lesson=e6m-modals-can-must-have-to",
 					"fast_check": {
 						"type": "binary_choice",
 						"options": [
-							"he/she/it has to | don't have to = nicht müssen (keine Pflicht)",
-							"he/she/it musts to | don't have to = streng verboten"
+							"has to",
+							"haves to"
 						],
 						"correct_index": 0
 					}
@@ -2823,10 +2841,10 @@
 					"language": "de",
 					"tier": "tier2_synthesis",
 					"bloom_level": 2,
-					"question": "Wie antwortest du kurz auf 'Will Mia help us tomorrow?' (positiv und negativ)?",
-					"concept": "Yes, she will. / No, she won't.",
+					"question": "Wie lautet die verneinte Kurzantwort auf 'Will Mia help us tomorrow?'?",
+					"concept": "No, she won't.",
 					"source_link": "https://academy.zam-os.org/englisch-mittelschule-6/#lesson=e6m-will-future",
-					"sample_solution": "Yes, she will. / No, she won't."
+					"sample_solution": "No, she won't."
 				},
 				{
 					"id": "01M7TEGM31XGTAMXVXZ16QS946",

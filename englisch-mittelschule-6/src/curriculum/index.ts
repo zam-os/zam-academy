@@ -7,6 +7,6 @@ export const LESSONS = data as unknown as Lesson[];
 export const CORE_LESSONS = LESSONS.filter((lesson) => !lesson.optional);
 export const STAGES = outline.stages as Stage[];
 export const SOURCES = outline.sources as Source[];
-export const CARD_COUNT = LESSONS.length * 3;
+export const CARD_COUNT = 109;
 export const findLesson = (id: string): Lesson | undefined =>
 	LESSONS.find((lesson) => lesson.id === id);

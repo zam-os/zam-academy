@@ -7,9 +7,11 @@
 - **Aufbauquelle (5. Klasse):** <https://www.lehrplanplus.bayern.de/fachlehrplan/mittelschule/5/englisch>
   - Snapshot gespeichert in [`englisch-mittelschule-6/tests/fixtures/curriculum-e5.html`](../englisch-mittelschule-6/tests/fixtures/curriculum-e5.html)
   - SHA-256: `41e6691545b91a1e4bd9b3216b2089cd1b3024f1ebeb6ece054f445fc81c7c18`
+  - Geprüft am: `2026-11-19`
 - **Abgrenzung (7. Klasse Regelklasse):** <https://www.lehrplanplus.bayern.de/fachlehrplan/mittelschule/7/englisch/regelklasse>
   - Snapshot gespeichert in [`englisch-mittelschule-6/tests/fixtures/curriculum-e7r.html`](../englisch-mittelschule-6/tests/fixtures/curriculum-e7r.html)
   - SHA-256: `1d4c7dbcd50fe2389536c4ca558bab6618755d02427c086c8d5ff622291beab1`
+  - Geprüft am: `2026-11-19`
 
 ## 1. Abdeckung der Kompetenzerwartungen
 
@@ -33,7 +35,7 @@ Die Matrix [`englisch-mittelschule-6/coverage.json`](../englisch-mittelschule-6/
 
 ## 3. Bestandsabgleich (`zam-os/zam`)
 
-Geprüft wurde [`zam-os/zam`](https://github.com/zam-os/zam) (`tests/fixtures/curriculum/` und `src/kernel/library/bundled-cells.ts`) am Commit `1ff016cfd7a0765c5338eb4248d0c14f3b92261c` (`2026-11-19`):
+Geprüft wurde [`zam-os/zam`](https://github.com/zam-os/zam) (`tests/fixtures/legacy/` und `src/kernel/library/bundled-cells.ts`) am Commit `1ff016cfd7a0765c5338eb4248d0c14f3b92261c` (`2026-11-19`):
 
 - Es existieren **keine** `de-by:mittelschule-*`-Bestandszellen.
 - Die thematisch benachbarten Sechstklass-Zellen anderer Schularten (`de-by:realschule-6-englisch-grammatik-grundlagen` und `de-by:gymnasium-6-englisch-past-tenses-present-perfect-adjectives`) wurden bereits im Realschul- bzw. Gymnasiumspaket (`englisch-realschule-6`, #162; `englisch-gymnasium-6`, #154) inventarisiert und ersetzt.

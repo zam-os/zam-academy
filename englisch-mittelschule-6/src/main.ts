@@ -13,6 +13,7 @@ import {
 	canReview,
 	checkPractice,
 	esc,
+	isReferenceLanguageLesson,
 	practiceFeedback,
 	quizFeedback,
 	quizOptions,
@@ -265,8 +266,8 @@ function renderLesson(lesson: Lesson): void {
 	main.innerHTML = `<div class="lesson-top"><button type="button" class="text-button" id="back">← Zum Lernpfad</button><label class="level-select" for="level">Aufgabenstufe <select id="level"><option value="1" ${progress.level === 1 ? "selected" : ""}>Level 1 · Anwenden</option><option value="2" ${progress.level === 2 ? "selected" : ""}>Level 2 · Transfer</option></select></label></div>
     <div class="lesson-heading" style="--stage-hue:${stage.hue}"><div class="eyebrow">${esc(stage.title)}${lesson.optional ? " · freiwillige Ergänzung" : ""}</div><h1 lang="en">${esc(lesson.title)}</h1><p class="intro">${esc(lesson.skill)}</p></div>
     <div class="lesson-columns" style="--lesson-hue:${stage.hue}"><div class="lesson-content"><section class="panel"><h2>Verstehen</h2>${lesson.paragraphs.map((text) => `<p>${esc(text)}</p>`).join("")}<aside class="takeaway"><strong>Merke</strong><p>${esc(lesson.takeaway)}</p></aside></section>
-    ${renderWorkshop(lesson)}
-    <section class="panel" aria-labelledby="material-heading"><h2 id="material-heading">${lesson.listening ? "Zuerst hören" : "Dein Material"}</h2><p class="small">${esc(lesson.materialLabel)}</p>${lesson.listening ? `<p>Höre zuerst ohne mitzulesen. Die lokale Computerstimme spricht ein Übungsskript (${lesson.listeningAccent === "en-US" ? "amerikanisches Englisch" : "britisches Englisch"}); natürliche Stimmen und Hörsehtexte übst du zusätzlich.</p><div class="self-actions"><button type="button" class="button accent" id="listen">Skript anhören</button><button type="button" class="button secondary" id="stop-listen">Stoppen</button></div><p class="small" id="voice-status" role="status"></p><details id="transcript"><summary>Transkript / Text zum Vorlesen</summary><p class="material" lang="${lesson.materialLanguage}">${esc(lesson.material)}</p></details><label class="toggle"><input type="checkbox" id="partner-listened" ${progress.listening[lesson.id]?.partner ? "checked" : ""}>Ein Partner hat mir den Text vorgelesen; ich habe zuerst ohne Mitlesen zugehört.</label><p class="small" id="listened-status" role="status"></p>` : `${renderGraphic(lesson)}${renderScene(lesson)}<p class="material" lang="${lesson.materialLanguage}">${esc(lesson.material)}</p>`}</section>
+    ${renderWorkshop(lesson, lesson.listening ? "" : renderScene(lesson))}
+    <section class="panel" aria-labelledby="material-heading"><h2 id="material-heading">${lesson.listening ? "Zuerst hören" : "Dein Material"}</h2><p class="small">${esc(lesson.materialLabel)}</p>${lesson.listening ? `<p>Höre zuerst ohne mitzulesen. Die lokale Computerstimme spricht ein Übungsskript (${lesson.listeningAccent === "en-US" ? "amerikanisches Englisch" : "britisches Englisch"}); natürliche Stimmen und Hörsehtexte übst du zusätzlich.</p><div class="self-actions"><button type="button" class="button accent" id="listen">Skript anhören</button><button type="button" class="button secondary" id="stop-listen">Stoppen</button></div><p class="small" id="voice-status" role="status"></p><details id="transcript"><summary>Transkript / Text zum Vorlesen</summary><p class="material" lang="${lesson.materialLanguage}">${esc(lesson.material)}</p></details><label class="toggle"><input type="checkbox" id="partner-listened" ${progress.listening[lesson.id]?.partner ? "checked" : ""}>Ein Partner hat mir den Text vorgelesen; ich habe zuerst ohne Mitlesen zugehört.</label><p class="small" id="listened-status" role="status"></p>` : `${renderGraphic(lesson)}<p class="material" lang="${lesson.materialLanguage}">${esc(lesson.material)}</p>`}</section>
     <section class="panel"><h2>1 · Schnellcheck</h2><p lang="en">${esc(lesson.quiz.question)}</p><div class="quiz-options">${quizOptions(
 			lesson,
 		)
@@ -481,11 +482,7 @@ function bindListening(lesson: Lesson): void {
 function renderReference(): void {
 	const listeningCount = LESSONS.filter((lesson) => lesson.listening).length;
 	main.innerHTML = `<div class="reference"><div class="eyebrow">Nachschlagen und weiterüben</div><h1>Sprache im Zusammenhang</h1><p>Öffne die passende Lektion und übe mit einem eigenen Beispiel.</p><section class="panel"><h2>Sprache, Strukturen und Methoden</h2><ul class="reference-links">${LESSONS.filter(
-		(lesson) =>
-			lesson.stage === "words-structures" ||
-			lesson.stage === "tenses-syntax" ||
-			lesson.bindings.some((b) => /\b1\.2\b|\b4\b/.test(b)) ||
-			lesson.optional,
+		isReferenceLanguageLesson,
 	)
 		.map(
 			(lesson) =>

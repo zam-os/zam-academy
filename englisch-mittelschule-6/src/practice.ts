@@ -20,7 +20,14 @@ export const normalise = (value: string): string =>
 		.trim()
 		.toLocaleLowerCase("en")
 		.replace(/\s+/g, " ")
+		.replace(/(\d),(\d)/g, "$1.$2")
 		.replace(/[.!?]+$/, "");
+
+export const isReferenceLanguageLesson = (lesson: Lesson): boolean =>
+	lesson.stage === "words-structures" ||
+	lesson.stage === "tenses-syntax" ||
+	lesson.bindings.some((binding) => /\bE6\s+(1\.2|4)\b/.test(binding)) ||
+	Boolean(lesson.optional);
 
 export function checkPractice(
 	practice: Practice[],

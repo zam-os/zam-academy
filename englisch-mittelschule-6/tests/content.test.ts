@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import cell from "../cell.json";
 import coverage from "../coverage.json";
-import { CORE_LESSONS, LESSONS, SOURCES, STAGES } from "../src/curriculum";
+import { CARD_COUNT, CORE_LESSONS, LESSONS, SOURCES, STAGES } from "../src/curriculum";
 import {
 	renderTownMap,
 	renderUkCitiesMap,
@@ -96,6 +96,16 @@ describe("englisch-mittelschule-6 curriculum content", () => {
 	});
 
 	it("stays strictly inside Mittelschule Grade 6 boundaries (no Grade 7 grammar)", () => {
+		const checkNoGrade7 = (combined: string) => {
+			expect(combined).not.toMatch(
+				/\b(present perfect|going-to-future|past progressive|should|shouldn't|myself|yourself|himself|herself|ourselves|themselves|mine|yours|theirs)\b/i,
+			);
+			expect(combined).not.toMatch(/\b(was|were)\s+\w+ing\b/i);
+			expect(combined).not.toMatch(
+				/\b(more|most)\s+(interesting|expensive|exciting|difficult|beautiful|comfortable|important|popular|famous)\b/i,
+			);
+		};
+
 		for (const lesson of LESSONS) {
 			const combined = [
 				...lesson.paragraphs,
@@ -104,18 +114,35 @@ describe("englisch-mittelschule-6 curriculum content", () => {
 				lesson.quiz.question,
 				lesson.quiz.answer,
 				...lesson.quiz.wrong,
-				...lesson.practice.map((p) => p.prompt),
+				lesson.quiz.explanation,
+				...lesson.practice.map((p) => `${p.prompt} ${p.feedback}`),
+				lesson.tasks[1].prompt,
+				lesson.tasks[2].prompt,
+				...lesson.tasks[1].criteria,
+				...lesson.tasks[2].criteria,
 				lesson.tasks[1].model,
 				lesson.tasks[2].model,
+				...lesson.workshop.goals.flatMap((g) => [
+					g.label,
+					g.before ?? "",
+					g.after ?? "",
+					...g.options,
+					g.explanation,
+				]),
 			].join(" ");
+			checkNoGrade7(combined);
+		}
 
-			expect(combined).not.toMatch(
-				/\b(present perfect|going-to-future|past progressive|should|shouldn't|myself|yourself|himself|herself|ourselves|themselves|mine|yours|theirs)\b/i,
-			);
-			expect(combined).not.toMatch(/\b(was|were)\s+\w+ing\b/i);
-			expect(combined).not.toMatch(
-				/\b(more|most)\s+(interesting|expensive|exciting|difficult|beautiful|comfortable|important|popular|famous)\b/i,
-			);
+		for (const atom of cell.atoms) {
+			for (const item of atom.practice_items) {
+				const combined = [
+					item.question,
+					item.concept,
+					item.sample_solution ?? "",
+					...(item.fast_check?.options ?? []),
+				].join(" ");
+				checkNoGrade7(combined);
+			}
 		}
 	});
 
@@ -247,10 +274,11 @@ describe("englisch-mittelschule-6 curriculum content", () => {
 			expect(seenIds.has(atom.id)).toBe(false);
 			seenIds.add(atom.id);
 
-			expect(atom.practice_items).toHaveLength(3);
+			expect(atom.practice_items.length).toBeGreaterThanOrEqual(3);
+			expect(atom.practice_items.length).toBeLessThanOrEqual(4);
 			expect(c.id).toBe(atom.id);
 			expect(c.slug).toBe(atom.slug);
-			expect(c.items).toHaveLength(3);
+			expect(c.items).toHaveLength(atom.practice_items.length);
 
 			for (let j = 0; j < atom.practice_items.length; j++) {
 				const item = atom.practice_items[j];
@@ -261,7 +289,8 @@ describe("englisch-mittelschule-6 curriculum content", () => {
 				expect(c.items[j]).toEqual({ id: item.id, slug: item.slug });
 			}
 		}
-		expect(totalItems).toBe(108);
+		expect(totalItems).toBe(109);
+		expect(CARD_COUNT).toBe(totalItems);
 	});
 
 	it("enforces writing length and self-check gates", () => {

@@ -11,7 +11,7 @@ Eigenständige Offline-Web-App für Englisch in der **6. Klasse Mittelschule** n
   4. `leisure` — Freizeit, Reisen, Medien und Texte (Sportveranstaltungen mit Grafik & Hörtext, Lesen/Fernsehen/digitale Kommunikation, Ferien & Reisen, Feiertage in UK & USA, Sprachmittlung Freizeitprogramm, kreative Gedichte & Steckbriefe)
   5. `words-structures` — Sprachwerkstatt I: Zahlen, Pronomen und Wortschatz (Grundzahlen bis 1000 mit interaktivem Zerleger, Ordnungszahlen bis 31 & Daten mit Explorer, *feet/teeth/clothes*, Mengenbezeichnungen *cup/box of* & *of*-Genitiv, Objektpronomen, Indefinitpronomen & *these/those*, *phrasal verbs*/Kollokationen/*Gerund*, Präpositionen & Konjunktionen)
   6. `tenses-syntax` — Sprachwerkstatt II: Steigerung, Modalverben, Zeiten und Satzbau (germanische Steigerung mit *-er*/*the ...-est* plus *good/bad* im Balken-Explorer, Modalverben *can/can't/must/have (got) to*, *present tense progressive*, *simple present* vs. *present progressive*, *will-future*, Adverbien & *SVO* mit Ort vor Zeit)
-- **108 Werkstatt-Ziele** (3 pro Lektion), **72 Schreib-/Sprechaufgaben** (Level 1 + Level 2) mit Selbstkontrolle und **108 ZAM-Lernkarten** (`cell.json`, 3 pro Atom).
+- **108 Werkstatt-Ziele** (3 pro Lektion), **72 Schreib-/Sprechaufgaben** (Level 1 + Level 2) mit Selbstkontrolle und **109 ZAM-Lernkarten** (`cell.json`, 3–4 pro Atom).
 - **Lehrplan-Abgrenzung:** Baut auf Klasse 5 auf (UK, 0–100, `` `s ``-Genitiv, *simple present*, *simple past*) und grenzt Inhalte der **7. Klasse Mittelschule** (*present perfect simple*, *going-to-future*, *past progressive*, romanische Steigerung mit *more/most*, *should/shouldn't*, Reflexiv-/Possessiv-/Relativpronomen, *much/many*-Kontrast) ausdrücklich aus.
 
 ## Entwicklung und Prüfung

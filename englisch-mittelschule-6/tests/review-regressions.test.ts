@@ -19,7 +19,7 @@ import {
 	US_WEST,
 	WALES_LAND,
 } from "../src/places-map";
-import { checkPractice } from "../src/practice";
+import { checkPractice, isReferenceLanguageLesson } from "../src/practice";
 import {
 	britishDateSpoken,
 	comparisonOutput,
@@ -127,6 +127,55 @@ describe("reviewed learner-facing language and curriculum rules", () => {
 			false,
 			false,
 		]);
+
+		const souvenir = findLesson("e6m-souvenir-newsagent")!;
+		expect(checkPractice(souvenir.practice, ["6.50", "£10"])).toEqual([true, true]);
+		expect(checkPractice(souvenir.practice, ["£6.50", "10 pounds"])).toEqual([
+			true,
+			true,
+		]);
+		expect(checkPractice(souvenir.practice, ["6,50", "10"])).toEqual([true, true]);
+		expect(checkPractice(souvenir.practice, ["£6,50", "ten pounds"])).toEqual([
+			true,
+			true,
+		]);
+		expect(
+			checkPractice(souvenir.practice, ["6 pounds 50", "ten pounds"]),
+		).toEqual([true, true]);
+		expect(
+			checkPractice(souvenir.practice, ["six pounds fifty", "10"]),
+		).toEqual([true, true]);
+		expect(checkPractice(souvenir.practice, ["5,50", "10"])).toEqual([false, true]);
+		expect(checkPractice(souvenir.practice, ["£7.50", "10"])).toEqual([
+			false,
+			true,
+		]);
+
+		expect(isReferenceLanguageLesson(findLesson("e6m-routines-problems")!)).toBe(
+			false,
+		);
+		expect(
+			isReferenceLanguageLesson(findLesson("e6m-learning-strategies")!),
+		).toBe(true);
+		expect(isReferenceLanguageLesson(findLesson("e6m-numbers-to-1000")!)).toBe(
+			true,
+		);
+		expect(
+			isReferenceLanguageLesson(findLesson("e6m-adjectives-comparison")!),
+		).toBe(true);
+
+		const room = findLesson("e6m-room-flat-prepositions")!;
+		expect(room.material).not.toContain("blue shelf");
+		expect(room.quiz.question).not.toContain("blue shelf");
+
+		const lost = findLesson("e6m-lost-notices-signs")!;
+		expect(lost.quiz.answer).not.toContain("Jackentasche");
+		expect(lost.quiz.explanation).not.toContain("Schülerausweis");
+
+		const pronouns = findLesson("e6m-object-indefinite-demo")!;
+		expect(
+			pronouns.workshop.goals.map((g) => g.explanation).join(" "),
+		).not.toContain("Tom and me = we");
 	});
 
 	it("produces finite readouts for numbers, ordinals and comparisons without Romance more/most", () => {

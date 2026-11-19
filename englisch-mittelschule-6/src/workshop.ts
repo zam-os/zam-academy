@@ -176,7 +176,7 @@ function illustration(lesson: Lesson): string {
 	return "";
 }
 
-export function renderWorkshop(lesson: Lesson): string {
+export function renderWorkshop(lesson: Lesson, sceneHtml = ""): string {
 	const mode = lesson.workshop.mode ?? "select";
 	const useChips = mode === "chips" || mode === "order" || mode === "hotspot";
 	const hint =
@@ -187,7 +187,7 @@ export function renderWorkshop(lesson: Lesson): string {
 				: mode === "hotspot"
 					? "Erkunde das Bild bzw. die Karte und klicke den passenden Baustein an."
 					: "Wähle passende Bausteine aus, prüfe das Ergebnis und erreiche alle drei Ziele. Du kannst jede Auswahl ändern.";
-	return `<section class="panel workshop" aria-labelledby="workshop-title"><h2 id="workshop-title">Deine Entdeckerwerkstatt</h2><p>${hint}</p>${illustration(lesson)}<div class="construction">${lesson.workshop.goals
+	return `<section class="panel workshop" aria-labelledby="workshop-title"><h2 id="workshop-title">Deine Entdeckerwerkstatt</h2><p>${hint}</p>${illustration(lesson)}${sceneHtml}<div class="construction">${lesson.workshop.goals
 		.map((goal, i) => {
 			const rotated = [
 				...goal.options.slice(i + 1),
