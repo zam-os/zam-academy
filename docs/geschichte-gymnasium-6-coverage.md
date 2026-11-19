@@ -33,13 +33,13 @@ In accordance with `AGENTS.md` §1, activities that cannot occur strictly inside
 2. **LB 5.5** (`gg6-provinzen-bayern-limes`): Investigating Roman life in Bavaria via films or real museum/site excursions — the app provides interactive Bavarian site/Limes maps (`romanBavariaLimes`) and archaeological evidence (Castra Regina, Augsburg, Weißenburg, Passau, Via Claudia Augusta), while museum visits and films remain classroom/excursion work.
 3. **LB 7.2** (`gg6-familie-laengsschnitt` / family tasks): Optional personal family/living-environment project work (`"Fakultative Erweiterung"`) is scaffolded as a structured self-check task while personal interviews and family albums remain outside the app.
 
-## Legacy ZAM Card Mapping (`approved`: 2026-11-18)
+## Legacy ZAM Card Mapping (`approved`: 2026-11-19)
 
 `zam-os/zam` (commit `e517a1ef709e0e6ee5f968c342affeb5b14cef35`) holds two Grade 6 history cells with 16 legacy items (`tests/fixtures/` holds byte-exact LF snapshots):
 - `de-by:gymnasium-6-geschichte-urgeschichte-aegypten-griechenland` (version `2026.08.1`, SHA-256 `5fe08fa9da2ce5dbb2626d34d98f7c83619ec4edee5b5d2a9b7897b539821cb5`, 8 items)
 - `de-by:gymnasium-6-geschichte-rom-imperium-limes-bayern` (version `2026.08.1`, SHA-256 `755dfa41a6069f30246e005b8a8187c5c2dad9cfa3b40911709ab528ea990f40`, 8 items)
 
-[`replaces-de-by.json`](../geschichte-gymnasium-6/replaces-de-by.json) records Thomas's explicit approval on **2026-11-18** (`"status": "approved"`, `"approved": "2026-11-18"`), verified in disposable `zam-core` libraries by [`scripts/validate-migration.mjs`](../geschichte-gymnasium-6/scripts/validate-migration.mjs):
+[`replaces-de-by.json`](../geschichte-gymnasium-6/replaces-de-by.json) records Thomas's explicit confirmation on **2026-11-19** (following his initial go-ahead on **2026-11-18**; `"status": "approved"`, `"approved": "2026-11-19"`), verified in disposable `zam-core` libraries by [`scripts/validate-migration.mjs`](../geschichte-gymnasium-6/scripts/validate-migration.mjs):
 - **Category A (`8` items)**: Single tier-1 successor (`gg6-*-check`) declares `replaces`, preserving learner FSRS history on identical atomic retrieval.
 - **Category B (`0` items)**
 - **Category C (`8` items, `keep-active`)**: Multi-part comparison or synthesis prompts split across multiple lessons or exceeding the shared core scope; stay active without history transfer.
@@ -63,9 +63,9 @@ In accordance with `AGENTS.md` §1, activities that cannot occur strictly inside
 | `rom-imperium-limes-bayern` | `01K4YH6R000000000000000J07` | A | `replace` | `gg6-voelkerwanderung-zerfall-check` | Same atomic retrieval: the year 476 AD when Odoacer deposed the last Western Roman emperor Romulus Augustulus. |
 | `rom-imperium-limes-bayern` | `01K4YH6R000000000000000J08` | C | `keep-active` | — | Four-part synthesis mixing Late Antiquity (313/380), 395 division, Migrations, 476 fall of West Rome and Roman legacy; spread across LB 5 (`gg6-christen-staatsreligion`) and LB 6. |
 
-### Neighbouring-grade note
+### Neighbouring-grade note & legacy cell retirement
 
-The Grade 7 legacy cell `de-by:gymnasium-7-geschichte-mittelalter-frankenreich-staedte-kreuzzuege-reformation` includes item `01K4H7M0000000000000000J01` asking about Charlemagne's imperial coronation on Christmas Day 800, which under current G9 LehrplanPLUS Bayern is taught in **Grade 6 LB 6** (covered here in `gg6-karl-der-grosse-kaisertum`), while item `01K4H7M0000000000000000J02` mixes Charlemagne with Grade 7 topics (*Lehnswesen* and *Investiturstreit*). Per `AGENTS.md` §6, the Grade 7 cell is left untouched so a future Grade 7 package handles its full inventory consistently.
+The Grade 7 legacy cell `de-by:gymnasium-7-geschichte-mittelalter-frankenreich-staedte-kreuzzuege-reformation` includes item `01K4H7M0000000000000000J01` asking about Charlemagne's imperial coronation on Christmas Day 800, which under current G9 LehrplanPLUS Bayern is taught in **Grade 6 LB 6** (covered here in `gg6-karl-der-grosse-kaisertum`), while item `01K4H7M0000000000000000J02` mixes Charlemagne with Grade 7 topics (*Lehnswesen* and *Investiturstreit*). Per Thomas's explicit decision on **2026-11-19**, the Grade 7 cell stays untouched (`01K4H7M0000000000000000J01` is not pulled into this mapping), and both legacy Grade 6 cells (`de-by:gymnasium-6-geschichte-urgeschichte-aegypten-griechenland` and `de-by:gymnasium-6-geschichte-rom-imperium-limes-bayern`) are to be retired from `zam-os/zam`'s `src/kernel/library/bundled-cells.ts` to `tests/fixtures/legacy/` in the follow-up `academy:sync` PR so new learners only receive `zam-academy:geschichte-gymnasium-6`.
 
 ## Verified Sources (104 URLs, checked 2026-11-18/19)
 

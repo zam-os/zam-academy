@@ -391,7 +391,7 @@ describe("Coverage matrix, ZAM cell, and legacy proposal contract", () => {
 
   it("maps every legacy Grade 6 item cleanly under Thomas's approved mapping", () => {
     expect(replaces.status).toBe("approved");
-    expect(replaces.approved).toBe("2026-11-18");
+    expect(replaces.approved).toBe("2026-11-19");
     expect(replaces.sources).toHaveLength(2);
     for (const src of replaces.sources) {
       expect(src.sha256).toMatch(/^[0-9a-f]{64}$/);

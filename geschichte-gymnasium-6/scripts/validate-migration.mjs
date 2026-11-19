@@ -2,7 +2,7 @@
 // Runs against the same pinned published zam-core as the Academy's cell checks.
 // Uses only disposable libraries. No learner library or configuration is opened.
 //
-// Checks the mapping Thomas approved on 2026-11-18 (replaces-de-by.json):
+// Checks the mapping Thomas approved on 2026-11-19 (replaces-de-by.json):
 // the 8 A histories move unchanged onto their successors, the 8 C cards stay
 // active and untouched, repeated installs change nothing, and a learner holding
 // cards on both an old id and its successor makes the install refuse an
