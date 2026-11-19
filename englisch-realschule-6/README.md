@@ -35,3 +35,5 @@ node scripts/verify-browser.mjs
 ```
 
 Siehe auch [docs/englisch-realschule-6-coverage.md](../docs/englisch-realschule-6-coverage.md) für die vollständige Lehrplan- und Bestandsdokumentation.
+
+The [approved mapping](replaces-de-by.json) transfers 5 matching review histories. The 11 keep-active cards retain their histories on their existing IDs.
