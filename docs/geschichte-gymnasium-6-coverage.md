@@ -67,9 +67,9 @@ In accordance with `AGENTS.md` §1, activities that cannot occur strictly inside
 
 The Grade 7 legacy cell `de-by:gymnasium-7-geschichte-mittelalter-frankenreich-staedte-kreuzzuege-reformation` includes item `01K4H7M0000000000000000J01` asking about Charlemagne's imperial coronation on Christmas Day 800, which under current G9 LehrplanPLUS Bayern is taught in **Grade 6 LB 6** (covered here in `gg6-karl-der-grosse-kaisertum`), while item `01K4H7M0000000000000000J02` mixes Charlemagne with Grade 7 topics (*Lehnswesen* and *Investiturstreit*). Per `AGENTS.md` §6, the Grade 7 cell is left untouched so a future Grade 7 package handles its full inventory consistently.
 
-## Verified Sources (102 URLs, checked 2026-11-18)
+## Verified Sources (104 URLs, checked 2026-11-18/19)
 
-Every external source URL in [`src/curriculum/outline.json`](../geschichte-gymnasium-6/src/curriculum/outline.json) was fetched live (`curl -sL -A "Mozilla/5.0"`) on 2026-11-18 and verified against HTTP 200 and its `<title>`:
+Every external source URL in [`src/curriculum/outline.json`](../geschichte-gymnasium-6/src/curriculum/outline.json) was fetched live (`curl -sL -A "Mozilla/5.0"`) and verified against HTTP 200 and its `<title>`:
 
 | # | ID | Label | URL | Status | Verified HTML Title |
 | --- | --- | --- | --- | --- | --- |
@@ -175,3 +175,5 @@ Every external source URL in [`src/curriculum/outline.json`](../geschichte-gymna
 | 100 | `wiki-familie` | Wikipedia · Familie | https://de.wikipedia.org/wiki/Familie | HTTP 200 | Familie – Wikipedia |
 | 101 | `klexikon-verwandtschaft` | Klexikon · Verwandtschaft | https://klexikon.zum.de/wiki/Familie | HTTP 200 | Verwandtschaft – Klexikon – das Kinderlexikon |
 | 102 | `wiki-geschlechterrolle` | Wikipedia · Geschlechterrolle | https://de.wikipedia.org/wiki/Geschlechterrolle | HTTP 200 | Geschlechterrolle – Wikipedia |
+| 103 | `wiki-panathenaeische-amphore` | Wikipedia · Panathenäische Preisamphoren | https://de.wikipedia.org/wiki/Panathen%C3%A4ische_Preisamphore | HTTP 200 | Panathenäische Preisamphoren – Wikipedia |
+| 104 | `wiki-totentempel-hatschepsut` | Wikipedia · Totentempel der Hatschepsut | https://de.wikipedia.org/wiki/Totentempel_der_Hatschepsut | HTTP 200 | Totentempel der Hatschepsut – Wikipedia |

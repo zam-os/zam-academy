@@ -146,7 +146,7 @@ export const FIGURES: Record<string, Figure> = {
     render: griechischeKulturSpuren,
   },
   saeulenVaseQuelle: {
-    caption: "Gegenständliche und bildliche Quellen aus Griechenland (Säulenordnungen und Amphore).",
+    caption: "Gegenständliche und schriftliche Quelle: griechische Säulenordnungen und Panathenäische Preisamphore (Athen, um 530 v. Chr.) mit drei Läufern und Preisinschrift.",
     render: saeulenVaseQuelle,
   },
   verfassungswegAthen: {
@@ -166,7 +166,7 @@ export const FIGURES: Record<string, Figure> = {
     render: athenVsHeute,
   },
   herrscherbildnisAnalyse: {
-    caption: "Kriterienkatalog zur Untersuchung eines antiken Herrscherbildnisses.",
+    caption: "Sitzstatue der Hatschepsut aus Kalkstein (Totentempel Deir el-Bahari, ca. 1479–1458 v. Chr., heute Metropolitan Museum of Art) mit Nemes, Uräusschlange, Zeremonialbart, Schendyt und Kartusche „Maat-ka-Re“.",
     render: herrscherbildnisAnalyse,
   },
   hatschepsutSpielraum: {

@@ -16,6 +16,7 @@ import {
   heroPanorama,
   renderFigure,
 } from "../src/figures";
+import { FRANKS_CITIES, FRANKS_FRAME, atCrop } from "../src/figures/maps";
 import { LABS } from "../src/labs";
 import {
   STORAGE_KEY,
@@ -55,6 +56,13 @@ function collectLearnerTexts(lesson: (typeof LESSONS)[number]): string[] {
     lesson.title,
     lesson.intro,
     ...lesson.paragraphs,
+    ...(lesson.sourceExcerpt
+      ? [
+          lesson.sourceExcerpt.label,
+          lesson.sourceExcerpt.quote,
+          lesson.sourceExcerpt.attribution,
+        ]
+      : []),
     lesson.takeaway,
     lesson.quiz.question,
     lesson.quiz.answer,
@@ -104,11 +112,11 @@ describe("Geschichte 6 Gymnasium: curriculum, figures, conventions", () => {
     expect(new Set(LESSONS.map((l) => l.id)).size).toBe(36);
   });
 
-  it("verifies all 102 sources are referenced and formatted properly", () => {
+  it("verifies all 104 sources are referenced and formatted properly", () => {
     expect(CURRICULUM_URL).toBe(
       "https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/6/geschichte",
     );
-    expect(SOURCES).toHaveLength(102);
+    expect(SOURCES).toHaveLength(104);
     const sourceIds = new Set(SOURCES.map((s) => s.id));
     expect(sourceIds.size).toBe(SOURCES.length);
     for (const source of SOURCES) {
@@ -125,6 +133,20 @@ describe("Geschichte 6 Gymnasium: curriculum, figures, conventions", () => {
       }
     }
     expect(usedSources.size).toBe(SOURCES.length);
+
+    for (const slug of ["gg6-kultur-olympia-theater", "gg6-hatschepsut-herrscherin"]) {
+      const lesson = findLesson(slug);
+      expect(lesson?.sourceExcerpt?.quote.length).toBeGreaterThan(30);
+      expect(lesson?.sourceExcerpt?.attribution.length).toBeGreaterThan(10);
+    }
+
+    for (const city of FRANKS_CITIES) {
+      const [x, y] = atCrop(FRANKS_FRAME, city.lon, city.lat);
+      expect(x).toBeGreaterThanOrEqual(24);
+      expect(x).toBeLessThanOrEqual(FRANKS_FRAME.width - 24);
+      expect(y).toBeGreaterThanOrEqual(24);
+      expect(y).toBeLessThanOrEqual(FRANKS_FRAME.height - 30);
+    }
   });
 
   it("validates all 47 SVG figures, hero panorama, global timeline, 15 labs, and Kriterienkataloge", () => {

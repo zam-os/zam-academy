@@ -226,14 +226,20 @@
     ],
     "paragraphs": [
       "Politisch war Griechenland zersplittert, kulturell aber erstaunlich verbunden. Alle Griechen sprachen Dialekte derselben Sprache und benutzten dieselbe Buchstabenschrift mit Vokalen. Sie verehrten gemeinsam die zwölf olympischen Götter um Zeus, Athene und Apollon und pilgerten zum berühmten Orakel von Delphi. Die großen Epen des Homer – Ilias und Odyssee – kannte fast jedes Kind. Und ab 776 v. Chr. versammelten sich Sportler aus allen Poleis alle vier Jahre zu den Olympischen Spielen, während derer ein heiliger Gottesfriede galt.",
-      "Auch die Kunst des Theaters nahm dort ihren Ausgang: Auf halbrunden Freilichtbühnen spielten Schauspieler mit Masken Tragödien und Komödien über Schicksal, Recht und Politik. Wenn wir heute antike Vasenbilder, Statuen, Säulentempel (dorisch, ionisch, korinthisch) oder kurze Inschriften mithilfe eines Kriterienkatalogs untersuchen, entdecken wir noch heute Spuren im eigenen Umfeld: vom Münchner Königsplatz über Olympische Spiele bis zu Wörtern wie Theater, Stadion, Musik und Demokratie."
+      "Auch das Theater und kostbare Preisgefäße zeugen von dieser gemeinsamen Kultur. Die abgebildete Panathenäische Preisamphore aus Athen (schwarzfigurig, um 530 v. Chr.) zeigt drei Stadionläufer im vollen Sprint und trägt an der dorischen Säule links die griechische Preisinschrift „ΤΩΝ ΑΘΗΝΗΘΕΝ ΑΘΛΩΝ“ („Von den Wettkämpfen in Athen“). Gefüllt mit rund 38 Litern feinsten attischen Olivenöls belohnte ein solches Gefäß den Sieger vor den Augen ganz Griechenlands. Und wie der Geschichtsschreiber Herodot um 430 v. Chr. festhielt, verbanden gemeinsame Sprache, Götterheiligtümer und Bräuche die verfeindeten Städte bis in unsere eigene Gegenwart – etwa am Münchner Königsplatz oder in Wörtern wie Theater, Stadion, Musik und Demokratie."
     ],
+    "sourceExcerpt": {
+      "label": "Herodot, Historien, Buch VIII, Kapitel 144 (um 430 v. Chr.)",
+      "quote": "Sodann verbindet uns das gemeinsame Griechentum durch dasselbe Blut und dieselbe Sprache, durch gemeinsame Heiligtümer und Opfer für die Götter und durch dieselben Sitten und Gebräuche.",
+      "attribution": "Athenische Antwort an die Gesandten Spartas (479 v. Chr.), überliefert bei Herodot (deutsche Übersetzung)"
+    },
     "takeaway": "Sprache, Götterwelt, Homers Epen, Olympische Spiele und Theater verbanden alle Poleis und prägen Europas Kultur bis in unsere Gegenwart.",
     "sourceIds": [
       "lehrplan",
       "wiki-olympia",
       "klexikon-olympia",
-      "wiki-theater-antike"
+      "wiki-theater-antike",
+      "wiki-panathenaeische-amphore"
     ],
     "figures": [
       "griechischeKulturSpuren",
@@ -302,29 +308,29 @@
     },
     "tasks": {
       "1": {
-        "prompt": "Untersuche die abgebildete griechische Amphore (Vase) anhand des Kriterienkatalogs: Beschreibe Form und Bildszene und erkläre ihren Wert als Quelle.",
+        "prompt": "Untersuche die abgebildete Panathenäische Preisamphore (Athen, um 530 v. Chr.) anhand des Kriterienkatalogs: Beschreibe erkennbare Bild- und Schriftmerkmale und erkläre ihren Quellenwert.",
         "hints": [
-          "Achte auf Material (gebrannter Ton), Form (zwei Henkel) und die Figuren auf dem Bildfeld.",
-          "Überlege: Wozu diente das Gefäß und was erfahren wir aus den Malereien – was aber vielleicht auch nicht?"
+          "Achte auf Gefäßform (zwei Henkel, schwarzer Firnis mit tonfarbenem Bildfeld), die drei Stadionläufer und die Inschrift „Von den Wettkämpfen in Athen“.",
+          "Überlege: Welchen Preis erhielt der Sieger darin (38 Liter Olivenöl) – und welches Idealbild wollten Auftraggeber vermitteln?"
         ],
-        "model": "Die abgebildete Vase ist eine gegenständliche und zugleich bildliche Quelle aus gebranntem Ton mit zwei Henkeln (Amphore). Sie diente im Alltag oder bei Festen zur Aufbewahrung von Wein oder Öl. Auf der Außenwand sind Figuren im Profil aufgemalt. Als Quelle verrät uns die Vase viel über Kleidung, Sport, Feste und Göttergeschichten – allerdings zeigt sie oft Wunsch- und Idealbilder wohlhabender Käufer und bildet nicht jedes harte Alltagsdetail ungefiltert ab.",
+        "model": "Die schwarzfigurige Panathenäische Preisamphore stammt aus Athen (um 530 v. Chr.) und verbindet gegenständliche, bildliche und schriftliche Quelle: Sie hat zwei Henkel und einen großen Bauch für rund 38 Liter attisches Olivenöl. Auf dem tonfarbenen Bildfeld sieht man drei Stadionläufer im Sprint; die griechische Inschrift weist das Gefäß ausdrücklich als Siegespreis der Wettkämpfe in Athen aus. Als Quelle zeigt sie den hohen Rang sportlicher Siege für Polis und Religion – spiegelt aber vor allem das Ruhmesideal der Sieger und Auftraggeber, weniger den Alltag einfacher Arbeitsleute.",
         "criteria": [
-          "Bestimmt die Vase als gegenständliche und bildliche Quelle.",
-          "Beschreibt sichtbare Merkmale (Form, Bemalung) sachgerecht.",
-          "Formuliert mit Fachbegriffen eine klare Aussage und Grenze dieser Quelle."
+          "Bestimmt Herkunft/Gattung (Athen um 530 v. Chr., Preisamphore).",
+          "Beschreibt sichtbare Merkmale (drei Läufer, Henkelgefäß, griechische Preisinschrift).",
+          "Deutet den Zweck (Siegerpreis Olivenöl) samt Aussagegrenze mit Fachbegriffen."
         ]
       },
       "2": {
-        "prompt": "Nenne mindestens drei Spuren des antiken Griechenlands, denen du in Bayern oder in deinem Alltag begegnen kannst, und ordne sie kurz ein.",
+        "prompt": "Lies den Quellenauszug von Herodot (Historien, VIII, 144) oben und nenne mindestens drei kulturelle Gemeinsamkeiten aller Griechen sowie drei Spuren davon in Bayern oder deinem Alltag.",
         "hints": [
-          "Denke an Gebäude mit Säulen (z. B. Königsplatz in München, Walhalla bei Regensburg), ans Theater, an Sport oder an Fachwörter.",
-          "Erkläre, warum man diese antiken Formen viel später erneut aufgegriffen hat."
+          "Im Textauszug nennt Herodot Sprache, Heiligtümer/Opfer und Bräuche – verknüpfe sie mit Homers Epen, Olympia oder Theater.",
+          "Denke bei den Spuren heute an München (Königsplatz), Regensburg (Walhalla), Sportfeste oder Fachwörter."
         ],
-        "model": "Erstens begegnet man in Städten wie München (z. B. Propyläen und Glyptothek am Königsplatz) oder in der Walhalla bei Regensburg griechischen Säulenordnungen, die als Zeichen für Bildung und Baukunst übernommen wurden. Zweitens gehen unsere modernen Olympischen Spiele alle vier Jahre auf das Fest von Olympia zurück. Drittens nutzen wir im Alltag zahllose griechische Wörter wie Theater, Stadion, Museum, Philosophie und Demokratie.",
+        "model": "Im Quellenauszug bei Herodot erklären die Athener, dass alle Griechen gemeinsame Sprache, Heiligtümer, Opfer und Bräuche verbinden – genau wie Homers Epen und die Olympischen Spiele mit ihrem Gottesfrieden. Bis heute begegnen uns mindestens drei Spuren: erstens griechische Säulenordnungen am Münchner Königsplatz (Propyläen, Glyptothek) oder der Walhalla bei Regensburg, zweitens unsere modernen Olympischen Spiele alle vier Jahre und drittens Begriffe im Alltag wie Theater, Stadion, Musik und Demokratie.",
         "criteria": [
-          "Nennt drei konkrete Beispiele aus Architektur, Sport, Kultur oder Sprache.",
-          "Verknüpft die heutige Erscheinung korrekt mit ihrem griechischen Ursprung.",
-          "Erklärt verständlich die Bedeutung für unsere Lebenswelt."
+          "Bezieht sich direkt auf den Herodot-Auszug (Sprache, Heiligtümer, Bräuche).",
+          "Nennt drei konkrete Spuren in Architektur, Sport, Kultur oder Sprache.",
+          "Verknüpft Antike und heutige Lebenswelt sachlich und präzise."
         ]
       }
     }
@@ -441,9 +447,9 @@
     ],
     "paragraphs": [
       "Zu Beginn des 5. Jahrhunderts v. Chr. reichte das gewaltige Perserreich bis nach Kleinasien und bedrohte die griechischen Städte. Als der persische Großkönig Truppen übers Meer schickte, gelang 490 v. Chr. den schwerbewaffneten athenischen Fußsoldaten ein überraschender Sieg bei Marathon. Zehn Jahre später griff ein noch größeres persisches Heer zu Land und zu Wasser an: Nach dem Opferkampf von König Leonidas und seinen Spartanern am Engpass der Thermopylen wurde Athen geräumt und niedergebrannt.",
-      "Die Wende gelang auf See – dank eines kühnen Plans des Politikers Themistokles. Athen hatte zuvor aus neuen Silberfunden rund zweihundert schnelle Kriegsschiffe gebaut, sogenannte Trieren. Jede Triere brauchte rund 170 Ruderer, die meist aus der ärmsten Bürgerschicht stammten (den Theten). 480 v. Chr. lockten die Griechen die riesige persische Flotte in die enge Bucht von Salamis und siegten glänzend; 479 v. Chr. folgte der Landsieg bei Plataiai. Dieser Erfolg hatte tiefgreifende Folgen im Inneren: Weil die einfachen Ruderer die Freiheit Athens erkämpft hatten, forderten und erhielten sie nun auch politisch volles Mitbestimmungsrecht."
+      "Die Wende gelang auf See – dank eines kühnen Plans des Politikers Themistokles. Athen hatte zuvor aus neuen Silberfunden rund zweihundert schnelle Kriegsschiffe gebaut, sogenannte Trieren. Jede Triere brauchte rund 170 Ruderer, die meist aus der ärmsten Bürgerschicht stammten (den Theten). 480 v. Chr. lockten die Griechen die riesige persische Flotte in die enge Bucht von Salamis und siegten glänzend; 479 v. Chr. folgte der Landsieg bei Plataiai. Obwohl die Theten schon seit Solon und Kleisthenes Sitz und Stimme in der Volksversammlung hatten, wuchs durch ihren Einsatz auf der Flotte ihr politisches Gewicht gewaltig: Ohne sie war Athen wehrlos – das bereitete spätere Reformen unter Perikles vor."
     ],
-    "takeaway": "Der Sieg durch die Flotte bei Salamis (480 v. Chr.) machte die ärmeren Ruderer unverzichtbar – und gab ihnen die politische Macht zum vollen Ausbau der Demokratie.",
+    "takeaway": "Der Sieg durch die Flotte bei Salamis (480 v. Chr.) machte die ärmeren Ruderer (Theten) unverzichtbar – das vervielfachte ihr politisches Gewicht in der Volksversammlung.",
     "sourceIds": [
       "lehrplan",
       "wiki-perserkriege",
@@ -454,17 +460,17 @@
     ],
     "lab": "persianWars",
     "quiz": {
-      "question": "Warum stärkte die siegreiche Seeschlacht bei Salamis (480 v. Chr.) besonders die demokratischen Rechte der ärmeren Bürger Athens?",
-      "answer": "Auf den Trieren ruderten vor allem die ärmsten Bürger (Theten); wer die Polis im Kampf rettete, beanspruchte nun auch volles Mitbestimmungsrecht.",
+      "question": "Warum stärkte die siegreiche Seeschlacht bei Salamis (480 v. Chr.) besonders das politische Gewicht der ärmeren Bürger Athens?",
+      "answer": "Die Theten saßen zwar schon in der Volksversammlung, ruderten bei Salamis aber zu Zehntausenden die Trieren und wurden so militärisch unverzichtbar.",
       "wrong": [
         "Weil nur reiche Pferdebesitzer auf den Ruderbänken sitzen durften.",
         "Weil der persische König nach der Schlacht Athen eine Demokratie vorschrieb."
       ],
-      "explanation": "Vor den Perserkriegen trugen vor allem Wohlhabende in schwerer Rüstung die Verteidigung; auf der Flotte entschieden nun tausende einfache Bürger über das Überleben Athens."
+      "explanation": "Vor den Perserkriegen trugen vor allem Wohlhabende in schwerer Rüstung die Verteidigung; auf der Flotte entschieden nun tausende Theten über das Überleben Athens und gewannen dadurch enormen Einfluss."
     },
     "workshop": {
       "kind": "timeline",
-      "title": "Von der Bedrohung bis zur vollen Mitsprache",
+      "title": "Von der Bedrohung bis zum wachsenden Einfluss der Ruderer",
       "instruction": "Ordne den Ursache-Wirkungs-Ablauf von den Perserkriegen bis zur gestärkten Demokratie richtig.",
       "categories": [],
       "entries": [
@@ -489,25 +495,25 @@
           "feedback": "Der Seebund brachte Athen Schutz und große Einkünfte."
         },
         {
-          "text": "Folge im Inneren: Ärmere Bürger verlangen und erhalten volle Rechte und Tagegelder",
+          "text": "Folge im Inneren: Ärmere Bürger (Theten) gewinnen in der Volksversammlung deutlich mehr Gewicht",
           "target": 4,
-          "feedback": "Militärischer Beitrag der Ruderer und politische Rechte wuchsen zusammen."
+          "feedback": "Der militärische Beitrag der Ruderer stärkte ihre Rolle – Tagegelder (Diäten) folgten später unter Perikles."
         }
       ],
       "conclusion": "Außenpolitische Verteidigung und innerer Verfassungswandel hingen in Athen eng zusammen."
     },
     "tasks": {
       "1": {
-        "prompt": "Erkläre den Zusammenhang zwischen dem Bau der Trieren-Flotte in den Perserkriegen und dem Ausbau der attischen Demokratie.",
+        "prompt": "Erkläre den Zusammenhang zwischen dem Bau der Trieren-Flotte in den Perserkriegen und dem wachsenden politischen Gewicht der ärmeren Bürger (Theten).",
         "hints": [
           "Vergleiche, wer zuvor die teure Ausrüstung als Hoplit bezahlen konnte und wer auf den Schiffen ruderte.",
-          "Zeige, welche Forderungen die Ruderer nach dem Sieg bei Salamis (480 v. Chr.) stellten."
+          "Unterscheide: In der Volksversammlung saßen Theten schon länger – was veränderte Salamis 480 v. Chr.?"
         ],
-        "model": "Früher mussten Kämpfer in Athen ihre teure Rüstung selbst bezahlen; deshalb hatten reichere Bürger im Staat das größte Gewicht. Für die zweihundert Trieren gegen die Perser brauchte Athen jedoch rund 34 000 Ruderer – vor allem ärmere Bürger ohne großen Besitz (Theten). Nach ihrem entscheidenden Sieg bei Salamis (480 v. Chr.) konnten sie mit Recht fordern, bei allen Gesetzen und Ämtern voll mitzuentscheiden.",
+        "model": "Früher mussten Kämpfer in Athen ihre teure Rüstung als Hoplit selbst bezahlen; deshalb prägten wohlhabende Bauern und Adlige das Bild der Verteidigung. Für die zweihundert Trieren gegen die Perser brauchte Athen jedoch rund 34 000 Ruderer – vor allem Theten. Obwohl sie schon seit Solon und Kleisthenes in der Volksversammlung abstimmen durften, vervielfachte der Seesieg bei Salamis (480 v. Chr.) ihr politisches Gewicht und bereitete spätere Reformen wie die Tagegelder unter Perikles vor.",
         "criteria": [
           "Erklärt den Einsatz der ärmeren Bevölkerung (Theten) als Ruderer.",
           "Stellt die Verbindung zum Sieg bei Salamis (480 v. Chr.) her.",
-          "Begründet nachvollziehbar, warum daraus mehr politische Mitsprache folgte."
+          "Zeigt sachgerecht, warum das Gewicht der Theten stieg (nicht erst die erstmalige Aufnahme)."
         ]
       },
       "2": {

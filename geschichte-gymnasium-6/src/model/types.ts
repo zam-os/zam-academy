@@ -61,6 +61,12 @@ export interface CriteriaCatalog {
   steps: string[];
 }
 
+export interface SourceExcerpt {
+  label: string;
+  quote: string;
+  attribution: string;
+}
+
 export interface Lesson {
   /** Public contract once published: every card links to this anchor. */
   id: string;
@@ -71,6 +77,8 @@ export interface Lesson {
   period: string;
   intro: string;
   paragraphs: string[];
+  /** Attributed translated historical source excerpt when analyzing written sources. */
+  sourceExcerpt?: SourceExcerpt;
   takeaway: string;
   sourceIds: string[];
   quiz: Check;

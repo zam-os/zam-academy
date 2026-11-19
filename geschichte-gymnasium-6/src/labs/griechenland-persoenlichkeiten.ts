@@ -218,13 +218,13 @@ const WAR_PHASES: Record<
     year: "480 v. Chr.",
     title: "Seeschlacht bei Salamis",
     result: "Themistokles lockt die große persische Flotte in die enge Bucht; wendige Trieren siegen.",
-    impact: "Entscheidend: 170 Ruderer pro Triere sind arme Bürger (Theten) – ihr Einsatz begründet ihr volles Mitbestimmungsrecht!",
+    impact: "Entscheidend: 170 Ruderer pro Triere sind ärmere Bürger (Theten), die schon in der Volksversammlung saßen – ihr Kriegseinsatz vervielfacht ihr politisches Gewicht.",
   },
   plataiai: {
     year: "479 v. Chr.",
     title: "Schlacht bei Plataiai",
     result: "Das vereinte griechische Landheer schlägt das verbliebene Perserheer auf dem Festland zurück.",
-    impact: "Athen wird zur führenden Seemacht im Seebund – Reichtum und Macht fließen in den Ausbau der Demokratie.",
+    impact: "Athen wird zur führenden Seemacht im Seebund – der Einfluss der ärmeren Flottenbesatzungen treibt weitere demokratische Reformen voran.",
   },
 };
 
@@ -287,10 +287,10 @@ export const persianWars: LabDef = {
             ${label(206, 198, "Griechische Poleis", "lbl tiny strong")}`}
        ${panel(304, 52, 290, 172, "panel-bg")}
        ${labels(318, 76, "Ablauf & militärische Lage:", "lbl small strong", "start", 16)}
-       ${labels(318, 100, phase === "marathon" ? "Athener Fußbürger besiegen gelandete\npersische Truppen vor den Toren." : phase === "thermopylen" ? "Opfergang am engen Pass verschafft\nder Flotte Zeit zum Sammeln." : phase === "salamis" ? "In der schmalen Bucht rammen flinke\nTrieren die großen Perserschiffe." : "Vereintes Landheer siegt; danach\nführen Athen und seine Flotte den Schutz.", "lbl tiny", "start", 15)}
+       ${labels(318, 100, phase === "marathon" ? "Athener Fußbürger besiegen das persische\nLandungsheer an der Küste bei Marathon." : phase === "thermopylen" ? "Opfergang am engen Pass verschafft\nder Flotte Zeit zum Sammeln." : phase === "salamis" ? "In der schmalen Bucht rammen flinke\nTrieren die großen Perserschiffe." : "Vereintes Landheer siegt; danach\nführen Athen und seine Flotte den Schutz.", "lbl tiny", "start", 15)}
        <line x1="318" y1="154" x2="580" y2="154" stroke="var(--line)"/>
        ${label(318, 172, "Folge für die Demokratie:", "lbl small strong", "start")}
-       ${labels(318, 192, showTrireme ? "Wer beim Sieg rudert, verlangt auch in\nder Volksversammlung gleiches Stimmrecht!" : "Schalte die Triere ein, um zu sehen,\nwer diesen Sieg ermöglichte.", "lbl tiny strong", "start", 15)}`,
+       ${labels(318, 192, showTrireme ? "Theten saßen schon in der Volksversammlung –\nihr Rudereinsatz vervielfacht ihr Gewicht!" : "Schalte die Triere ein, um zu sehen,\nwer diesen Sieg ermöglichte.", "lbl tiny strong", "start", 15)}`,
     );
   },
   readout: (s) => {
@@ -435,12 +435,12 @@ export const athensDemocracy: LabDef = {
 /* ---------- 8. Alexanders Eroberungszug (LB 4) ---------- */
 
 const ALEX_STAGES = [
-  { step: 1, year: "334 v. Chr.", place: "Granikos (Kleinasien)", lon: 27.3, lat: 40.2, km: 700, status: "Erster Sieg über persische Statthalter – Beginn des Feldzugs." },
-  { step: 2, year: "333 v. Chr.", place: "Issos (Syrien)", lon: 36.2, lat: 36.8, km: 1900, status: "Sieg über Großkönig Dareios III.; Zugang zur Mittelmeerküste." },
-  { step: 3, year: "332 v. Chr.", place: "Ägypten / Alexandria", lon: 29.9, lat: 31.2, km: 2900, status: "Als Befreier & Pharao begrüßt; Gründung von Alexandria." },
-  { step: 4, year: "331 v. Chr.", place: "Gaugamela & Babylon", lon: 44.4, lat: 32.5, km: 4400, status: "Entscheidungssieg über das Perserreich; Einzug in Babylon." },
-  { step: 5, year: "326 v. Chr.", place: "Indus (Grenze des Zugs)", lon: 71.0, lat: 32.5, km: 7600, status: "Heer meutert nach Regen und Jahren des Marschierens → Umkehr!" },
-  { step: 6, year: "323 v. Chr.", place: "Tod in Babylon & Zerfall", lon: 44.4, lat: 32.5, km: 8200, status: "Alexander stirbt mit 32 Jahren ohne festen Erben → Reich zerfällt in Diadochenreiche." },
+  { step: 1, year: "334 v. Chr.", place: "Granikos (Kleinasien)", lon: 27.3, lat: 40.2, distLabel: "ca. 700 km Marsch", status: "Erster Sieg über persische Statthalter – Beginn des Feldzugs." },
+  { step: 2, year: "333 v. Chr.", place: "Issos (Syrien)", lon: 36.2, lat: 36.8, distLabel: "ca. 1900 km Marsch", status: "Sieg über Großkönig Dareios III.; Zugang zur Mittelmeerküste." },
+  { step: 3, year: "332 v. Chr.", place: "Ägypten / Alexandria", lon: 29.9, lat: 31.2, distLabel: "ca. 2900 km Marsch", status: "Als Befreier & Pharao begrüßt; Gründung von Alexandria." },
+  { step: 4, year: "331 v. Chr.", place: "Gaugamela & Babylon", lon: 44.4, lat: 32.5, distLabel: "ca. 4400 km Marsch", status: "Entscheidungssieg über das Perserreich; Einzug in Babylon." },
+  { step: 5, year: "326 v. Chr.", place: "Indus (Grenze des Zugs)", lon: 71.0, lat: 32.5, distLabel: "ca. 7600 km Hinweg", status: "Heer meutert nach Regen und Jahren des Marschierens → Umkehr!" },
+  { step: 6, year: "323 v. Chr.", place: "Tod in Babylon & Zerfall", lon: 44.4, lat: 32.5, distLabel: "langer Rückmarsch durch die Gedrosische Wüste", status: "Nach entbehrungsreichem Rückzug stirbt Alexander mit 32 Jahren ohne festen Erben → Reich zerfällt." },
 ];
 
 export const alexanderCampaign: LabDef = {
@@ -509,8 +509,8 @@ export const alexanderCampaign: LabDef = {
        ${label(cur[0], cur[1] - 12, st.place, "lbl small strong")}
        ${showLimits ? `<circle cx="${f1(pts[5][0])}" cy="${f1(pts[5][1])}" r="14" fill="none" stroke="var(--f-purple)" stroke-width="2.5" stroke-dasharray="4 3"/>${label(pts[5][0] - 8, pts[5][1] + 22, "Umkehr am Indus (7600 km!)", "lbl tiny strong", "end")}` : ""}
        ${northArrow(f.width - 26, 26)}
-       ${panel(12, 238, 390, 110, "panel-bg")}
-       ${label(24, 260, `${st.year} · ${st.place} (${st.km} km Weg)`, "lbl small strong", "start")}
+       ${panel(12, 238, 396, 110, "panel-bg")}
+       ${label(24, 260, `${st.year} · ${st.place} (${st.distLabel})`, "lbl small strong", "start")}
        ${labels(
          24,
          282,
@@ -525,7 +525,7 @@ export const alexanderCampaign: LabDef = {
   },
   readout: (s) => {
     const st = ALEX_STAGES[num(s, "step") - 1];
-    return `${st.year} ${st.place} (etwa ${st.km} km Marsch): ${st.status}`;
+    return `${st.year} ${st.place} (${st.distLabel}): ${st.status}`;
   },
 };
 

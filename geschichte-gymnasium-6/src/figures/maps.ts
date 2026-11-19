@@ -104,11 +104,11 @@ export const JUDAEA_FRAME: CropFrame = {
 
 export const FRANKS_FRAME: CropFrame = {
   map: MAPS.rome,
-  x0: 60,
-  y0: 76,
-  scale: 2.05,
+  x0: 46,
+  y0: 72,
+  scale: 1.78,
   width: 620,
-  height: 400,
+  height: 430,
 };
 
 /* ---------- LB 2: Ägypten – Geschenk des Nils ---------- */
@@ -268,6 +268,20 @@ export function judaeaDiasporaKarte(): string {
 
 /* ---------- LB 6: Frankenreich um 800 ---------- */
 
+export const FRANKS_CITIES: Array<{
+  name: string;
+  lon: number;
+  lat: number;
+}> = [
+  { name: "Aachen", lon: 6.08, lat: 50.77 },
+  { name: "Paderborn", lon: 8.75, lat: 51.72 },
+  { name: "Regensburg", lon: 12.1, lat: 49.02 },
+  { name: "Augsburg", lon: 10.9, lat: 48.37 },
+  { name: "Paris", lon: 2.35, lat: 48.86 },
+  { name: "Barcelona", lon: 2.17, lat: 41.39 },
+  { name: "Rom", lon: 12.5, lat: 41.9 },
+];
+
 export function mapFrankenreich800(): string {
   const f = FRANKS_FRAME;
   const [aax, aay] = atCrop(f, 6.08, 50.77);
@@ -311,22 +325,22 @@ export function mapFrankenreich800(): string {
     ${dot(pax2, pay2, "city")}
     ${dot(inx, iny, "city")}
     ${dot(bax, bay, "city")}
-    ${label(aax - 10, aay - 8, "Aachen (Pfalz)", "lbl small strong", "end")}
+    ${label(aax + 10, aay + 3, "Aachen (Pfalz)", "lbl small strong", "start")}
     ${label(pax + 8, pay - 6, "Paderborn", "lbl tiny", "start")}
     ${label(rex + 8, rey - 4, "Regensburg", "lbl tiny", "start")}
     ${label(inx - 8, iny + 12, "Augsburg", "lbl tiny", "end")}
     ${label(pax2 - 8, pay2 + 4, "Paris", "lbl tiny", "end")}
-    ${label(bax - 8, bay + 6, "Spanische Mark", "lbl tiny", "end")}
+    ${label(bax - 8, bay + 4, "Spanische Mark", "lbl tiny", "end")}
     ${label(rox + 10, roy + 4, "Rom (800 Krönung)", "lbl small strong", "start")}
-    ${label(100, 310, "Mittelmeer", "lbl small sea-label")}
-    ${label(60, 120, "Atlantik", "lbl small sea-label")}
+    ${label(315, 388, "Mittelmeer", "lbl small sea-label")}
+    ${label(68, 210, "Atlantik", "lbl small sea-label")}
     ${northArrow(f.width - 28, 30)}
-    ${panel(370, 260, 238, 126, "panel-bg")}
-    <rect x="382" y="274" width="18" height="12" rx="2" class="zone-franks"/>
-    ${label(406, 284, "Frankenreich um 800 (vereinfacht)", "lbl tiny strong", "start")}
-    <line x1="382" y1="302" x2="400" y2="302" class="route-main"/>
-    ${label(406, 306, "Reiseweg nach Rom (800)", "lbl tiny", "start")}
-    ${labels(382, 326, "Verbindung dreier Traditionen:\n• Germanisch: Treue & Reisekönigtum\n• Römisch: Kaiseridee & Latein\n• Christlich: Schutz der Kirche", "lbl tiny", "start", 15)}`;
+    ${panel(12, 12, 236, 122, "panel-bg")}
+    <rect x="24" y="26" width="18" height="12" rx="2" class="zone-franks"/>
+    ${label(48, 36, "Frankenreich um 800 (vereinfacht)", "lbl tiny strong", "start")}
+    <line x1="24" y1="54" x2="42" y2="54" class="route-main"/>
+    ${label(48, 58, "Reiseweg nach Rom (800)", "lbl tiny", "start")}
+    ${labels(24, 78, "Verbindung dreier Traditionen:\n• Germanisch: Treue & Reisekönigtum\n• Römisch: Kaiseridee & Latein\n• Christlich: Schutz der Kirche", "lbl tiny", "start", 14.5)}`;
 
   return svg(
     f.width,

@@ -138,41 +138,133 @@ export const romanRepublic: LabDef = {
 
 /* ---------- 11. Ausdehnung des Imperium Romanum (LB 5) ---------- */
 
-const EXPANSION_STAGES = [
+export const EXPANSION_STAGES: Array<{
+  step: number;
+  year: string;
+  title: string;
+  desc: string;
+  polys: Array<Array<[number, number]>>;
+}> = [
   {
     step: 1,
     year: "um 500 v. Chr.",
     title: "Stadtstaat Rom in Latium",
     desc: "Kleiner Stadtstaat am Tiber in Mittelitalien.",
-    poly: [
-      [11.8, 42.6], [13.2, 42.6], [13.5, 41.3], [11.9, 41.5],
+    polys: [
+      [
+        [11.8, 42.4],
+        [13.2, 42.4],
+        [13.5, 41.4],
+        [11.9, 41.5],
+      ],
     ],
   },
   {
     step: 2,
     year: "um 270 v. Chr.",
     title: "Herrschaft über Italien",
-    desc: "Rom eint ganz Mittel- und Süditalien (bis zur Poebene).",
-    poly: [
-      [8.2, 44.4], [12.5, 44.2], [14.0, 42.0], [18.4, 40.1], [15.6, 37.9], [14.2, 40.7], [10.4, 43.7],
+    desc: "Rom eint die italische Halbinsel südlich von Arno und Rubikon (bis nach Süditalien).",
+    polys: [
+      [
+        [10.2, 43.9],
+        [12.7, 44.1],
+        [14.2, 42.5],
+        [16.2, 41.9],
+        [18.5, 40.1],
+        [17.9, 39.8],
+        [16.7, 40.3],
+        [16.6, 38.9],
+        [15.6, 37.9],
+        [15.5, 38.3],
+        [15.8, 39.7],
+        [13.8, 40.9],
+        [12.1, 41.7],
+        [11.0, 42.5],
+        [10.1, 43.4],
+      ],
     ],
   },
   {
     step: 3,
     year: "146 v. Chr.",
     title: "Sieg über Karthago & Griechenland",
-    desc: "Nach den Punischen Kriegen beherrscht Rom große Teile Spaniens, Nordafrikas (Karthago) und Griechenlands.",
-    poly: [
-      [-6.0, 41.0], [3.5, 43.5], [12.5, 44.8], [24.0, 41.2], [29.0, 38.0], [22.4, 36.4], [10.3, 33.5], [7.5, 36.8], [15.5, 37.5], [-6.0, 36.0],
+    desc: "Nach den Punischen Kriegen und dem Makedonienkrieg beherrscht Rom Italien, Hispanien, Karthago (Provinz Africa) sowie Makedonien und Griechenland.",
+    polys: [
+      [
+        [7.4, 45.8],
+        [13.8, 45.9],
+        [14.2, 42.5],
+        [18.5, 40.1],
+        [15.9, 37.8],
+        [15.4, 36.6],
+        [12.4, 37.7],
+        [8.3, 38.8],
+        [8.1, 43.0],
+        [7.5, 44.0],
+      ],
+      [
+        [-6.5, 37.0],
+        [-4.8, 38.8],
+        [-1.5, 41.8],
+        [3.3, 42.4],
+        [0.5, 38.3],
+        [-5.6, 35.9],
+      ],
+      [
+        [8.6, 37.3],
+        [11.2, 37.1],
+        [11.2, 34.4],
+        [9.5, 34.4],
+        [8.5, 36.2],
+      ],
+      [
+        [19.4, 41.6],
+        [24.8, 41.3],
+        [24.6, 37.5],
+        [22.4, 36.3],
+        [20.5, 37.8],
+        [19.4, 40.2],
+      ],
     ],
   },
   {
     step: 4,
     year: "44 v. Chr.",
     title: "Caesars Eroberungen (Gallien & Osten)",
-    desc: "Gallien bis zum Rhein, Kleinasien, Syrien und große Teile des Mittelmeers gehören zu Rom.",
-    poly: [
-      [-8.5, 43.4], [-4.5, 48.5], [3.0, 51.2], [8.2, 48.0], [14.0, 46.5], [27.0, 42.5], [38.0, 38.0], [36.5, 32.0], [28.0, 36.5], [11.0, 33.0], [-6.0, 36.0],
+    desc: "Gallien bis zum Rhein, ganz Hispanien, Griechenland, Kleinasien (ab 133 v. Chr.), Syrien und Teile Nordafrikas gehören zu Rom – Ägypten und der Donauraum noch nicht.",
+    polys: [
+      [
+        [-9.0, 43.0],
+        [-4.8, 48.6],
+        [2.8, 51.0],
+        [6.2, 51.3],
+        [8.0, 47.6],
+        [13.6, 46.1],
+        [18.5, 42.8],
+        [26.2, 41.3],
+        [36.5, 41.8],
+        [38.2, 37.0],
+        [36.6, 32.8],
+        [35.0, 32.8],
+        [35.4, 36.2],
+        [27.0, 36.5],
+        [22.4, 36.2],
+        [15.4, 36.6],
+        [8.0, 38.5],
+        [4.5, 42.6],
+        [0.8, 38.5],
+        [-5.8, 35.9],
+        [-9.0, 37.0],
+      ],
+      [
+        [6.5, 37.2],
+        [11.3, 37.1],
+        [15.5, 32.2],
+        [23.8, 32.8],
+        [24.0, 30.2],
+        [9.0, 32.5],
+        [6.5, 35.2],
+      ],
     ],
   },
   {
@@ -180,9 +272,33 @@ const EXPANSION_STAGES = [
     year: "117 n. Chr.",
     title: "Größte Ausdehnung (Kaiserzeit)",
     desc: "Von Britannien und dem Limes an Rhein & Donau bis Ägypten, Syrien und Mesopotamien (Mare Nostrum).",
-    poly: [],
+    polys: [],
   },
 ];
+
+function pointInPoly(poly: Array<[number, number]>, lon: number, lat: number): boolean {
+  let inside = false;
+  for (let i = 0, j = poly.length - 1; i < poly.length; j = i++) {
+    const [xi, yi] = poly[i];
+    const [xj, yj] = poly[j];
+    const intersect =
+      (yi > lat) !== (yj > lat) &&
+      lon < ((xj - xi) * (lat - yi)) / (yj - yi) + xi;
+    if (intersect) inside = !inside;
+  }
+  return inside;
+}
+
+/** Tests whether a geographic coordinate falls inside the schematic Roman overlay for stage 1–4. */
+export function isInRomanExpansionStage(
+  stage: number,
+  lon: number,
+  lat: number,
+): boolean {
+  const entry = EXPANSION_STAGES[stage - 1];
+  if (!entry || entry.polys.length === 0) return false;
+  return entry.polys.some((poly) => pointInPoly(poly, lon, lat));
+}
 
 export const romanExpansionMap: LabDef = {
   title: "Geschichtskarte: Ausdehnung des Imperium Romanum",
@@ -227,13 +343,19 @@ export const romanExpansionMap: LabDef = {
     const [rx, ry] = at(m, 12.5, 41.9);
     const [kx, ky] = at(m, 10.3, 36.8);
     const [ax, ay] = at(m, 23.7, 38.0);
+    const [ex, ey] = at(m, 27.34, 37.94);
     const [lux, luy] = at(m, -1.8, 51.5);
     const [alx, aly] = at(m, 29.9, 31.2);
 
     const empireLayer =
       stage === 5
         ? `<g class="empire">${m.layers.empire.map((sh) => `<path d="${sh.d}"/>`).join("")}</g>`
-        : `<polygon class="zone-rome" points="${st.poly.map(([lo, la]) => at(m, lo, la).map(f1).join(",")).join(" ")}"/>`;
+        : st.polys
+            .map(
+              (poly) =>
+                `<polygon class="zone-rome" points="${poly.map(([lo, la]) => at(m, lo, la).map(f1).join(",")).join(" ")}"/>`,
+            )
+            .join("");
 
     return svg(
       MED_FULL_W,
@@ -245,6 +367,7 @@ export const romanExpansionMap: LabDef = {
        ${dot(rx, ry, "capital", 6)}
        ${label(rx + 9, ry - 4, "Rom", "lbl small strong", "start")}
        ${stage >= 3 ? `${dot(kx, ky, "city")}${label(kx - 8, ky + 14, "Karthago", "lbl tiny strong", "end")}${dot(ax, ay, "city")}${label(ax + 8, ay + 4, "Athen", "lbl tiny strong", "start")}` : ""}
+       ${stage >= 4 ? `${dot(ex, ey, "city")}${label(ex + 8, ey + 4, "Ephesos", "lbl tiny", "start")}` : ""}
        ${stage === 5 ? `${dot(lux, luy, "city")}${label(lux - 8, luy - 6, "Britannien", "lbl tiny", "end")}${dot(alx, aly, "city")}${label(alx - 8, aly + 12, "Alexandria", "lbl tiny", "end")}` : ""}
        ${northArrow(MED_FULL_W - 28, 30)}
        ${panel(16, 444, 412, 136, "panel-bg")}

@@ -2700,3 +2700,22 @@ article[data-lb] .panel {
   stroke: var(--accent);
   stroke-width: 3;
 }
+.source-excerpt {
+  margin: 18px 0;
+  padding: 14px 18px;
+  border-left: 4px solid var(--accent);
+  background: var(--accent-soft);
+  border-radius: 0 12px 12px 0;
+}
+.source-excerpt .eyebrow {
+  display: block;
+  margin-bottom: 6px;
+}
+.source-excerpt p {
+  margin: 0 0 8px;
+  font-style: italic;
+}
+.source-excerpt footer {
+  font-size: 0.88rem;
+  color: var(--ink-muted);
+}

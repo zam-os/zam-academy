@@ -8,6 +8,10 @@ import {
   yearSpanNoZero,
 } from "../src/labs/core";
 import { freshLab, LABS, trackedGoals } from "../src/labs/index";
+import {
+  EXPANSION_STAGES,
+  isInRomanExpansionStage,
+} from "../src/labs/rom-mittelalter-familie";
 import type { LabKind } from "../src/model/types";
 
 const KINDS = Object.keys(LABS) as LabKind[];
@@ -248,4 +252,82 @@ describe("Geschichte 6 interactive historical labs and maps", () => {
       }
     },
   );
+
+  it("matches historically checked territorial boundaries across Roman expansion stages 1–4", () => {
+    expect(EXPANSION_STAGES).toHaveLength(5);
+
+    const expected: Record<
+      number,
+      { inside: Array<[number, number]>; outside: Array<[number, number]> }
+    > = {
+      1: {
+        inside: [[12.5, 41.9]], // Rom
+        outside: [
+          [14.2, 41.1], // Capua
+          [17.2, 40.5], // Tarent
+          [10.32, 36.85], // Karthago
+          [23.72, 37.98], // Athen
+          [27.34, 37.94], // Ephesos
+        ],
+      },
+      2: {
+        inside: [
+          [12.5, 41.9], // Rom
+          [14.2, 41.1], // Capua
+          [17.2, 40.5], // Tarent
+        ],
+        outside: [
+          [15.29, 37.07], // Syrakus
+          [9.19, 45.46], // Mailand
+          [10.32, 36.85], // Karthago
+          [23.72, 37.98], // Athen
+          [27.34, 37.94], // Ephesos
+        ],
+      },
+      3: {
+        inside: [
+          [12.5, 41.9], // Rom
+          [15.29, 37.07], // Syrakus
+          [9.19, 45.46], // Mailand
+          [10.32, 36.85], // Karthago
+          [-0.28, 39.68], // Sagunt
+          [23.72, 37.98], // Athen
+        ],
+        outside: [
+          [27.34, 37.94], // Ephesos (Asia erst ab 133/129 v. Chr.)
+          [5.37, 43.3], // Massalia
+          [2.35, 48.86], // Paris
+          [29.92, 31.2], // Alexandria
+        ],
+      },
+      4: {
+        inside: [
+          [12.5, 41.9], // Rom
+          [10.32, 36.85], // Karthago
+          [-0.28, 39.68], // Sagunt
+          [-4.78, 37.88], // Corduba
+          [5.37, 43.3], // Massalia
+          [2.35, 48.86], // Paris
+          [23.72, 37.98], // Athen
+          [27.34, 37.94], // Ephesos
+          [36.16, 36.2], // Antiochia
+        ],
+        outside: [
+          [29.92, 31.2], // Alexandria (Ägypten erst ab 30 v. Chr.)
+          [10.9, 48.37], // Augsburg (Raetien erst ab 15 v. Chr.)
+          [-0.12, 51.51], // London (Britannien erst ab 43 n. Chr.)
+        ],
+      },
+    };
+
+    for (const [stageStr, { inside, outside }] of Object.entries(expected)) {
+      const stage = Number(stageStr);
+      for (const [lon, lat] of inside) {
+        expect(isInRomanExpansionStage(stage, lon, lat)).toBe(true);
+      }
+      for (const [lon, lat] of outside) {
+        expect(isInRomanExpansionStage(stage, lon, lat)).toBe(false);
+      }
+    }
+  });
 });

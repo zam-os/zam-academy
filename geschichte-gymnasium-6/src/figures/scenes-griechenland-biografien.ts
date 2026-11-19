@@ -7,7 +7,6 @@ import {
   chain,
   column,
   compare,
-  crown,
   label,
   labels,
   panel,
@@ -117,25 +116,37 @@ export function griechischeKulturSpuren(): string {
 export function saeulenVaseQuelle(): string {
   return svg(
     640,
-    250,
-    "Gegenständliche Quellen der griechischen Antike: drei Säulenordnungen und eine rotfigurige/schwarzfigurige Amphore",
-    `${panel(8, 8, 624, 234, "panel-bg")}
-     ${label(200, 34, "Säulenordnungen (Bauwerke in Bayern & Athen)", "lbl small strong")}
-     ${column(82, 168, 96, "doric")}
-     ${labels(82, 188, "Dorisch\n(schlicht, kräftig)", "lbl tiny", "middle", 13)}
-     ${column(200, 168, 96, "ionic")}
-     ${labels(200, 188, "Ionisch\n(Schneckenkapitell)", "lbl tiny", "middle", 13)}
-     ${column(318, 168, 96, "corinthian")}
-     ${labels(318, 188, "Korinthisch\n(Blattkapitell)", "lbl tiny", "middle", 13)}
-     <line x1="396" y1="24" x2="396" y2="226" stroke="var(--line)" stroke-width="2"/>
-     ${label(510, 34, "Vase als Bildquelle", "lbl small strong")}
-     <path d="M482 64 H538 L526 84 C554 106 552 158 524 182 H496 C468 158 466 106 494 84 Z" fill="#c96532" stroke="var(--f-ink)" stroke-width="2"/>
-     <path d="M486 84 Q456 96 476 126" fill="none" stroke="var(--f-ink)" stroke-width="4"/>
-     <path d="M534 84 Q564 96 544 126" fill="none" stroke="var(--f-ink)" stroke-width="4"/>
-     <rect x="488" y="106" width="44" height="44" rx="6" fill="#231f1b"/>
-     <circle cx="510" cy="122" r="6" fill="#e69a5c"/>
-     <path d="M500 146 L510 128 L520 146 Z" fill="#e69a5c"/>
-     ${labels(510, 206, "Zeigt Alltag, Sport, Götter –\naber immer aus Sicht der\nWerkstatt und Käufer.", "lbl tiny", "middle", 14)}`,
+    270,
+    "Gegenständliche Quellen der griechischen Antike: drei Säulenordnungen und eine Panathenäische Preisamphore (Athen, schwarzfigurig, um 530 v. Chr.) mit drei Stadionläufern",
+    `${panel(8, 8, 624, 254, "panel-bg")}
+     ${label(172, 34, "Säulenordnungen (Athen & München)", "lbl small strong")}
+     ${column(68, 180, 96, "doric")}
+     ${labels(68, 202, "Dorisch\n(schlicht, kräftig)", "lbl tiny", "middle", 13)}
+     ${column(172, 180, 96, "ionic")}
+     ${labels(172, 202, "Ionisch\n(Schneckenkapitell)", "lbl tiny", "middle", 13)}
+     ${column(276, 180, 96, "corinthian")}
+     ${labels(276, 202, "Korinthisch\n(Blattkapitell)", "lbl tiny", "middle", 13)}
+     <line x1="334" y1="24" x2="334" y2="246" stroke="var(--line)" stroke-width="2"/>
+     ${label(484, 34, "Panathenäische Preisamphore (ca. 530 v. Chr.)", "lbl tiny strong")}
+     <path d="M532 54 H582 L572 72 C602 96 598 160 570 186 H544 C516 160 512 96 542 72 Z" fill="#1f1b18" stroke="var(--f-ink)" stroke-width="2"/>
+     <rect x="541" y="186" width="32" height="10" rx="2" fill="#1f1b18"/>
+     <rect x="530" y="49" width="54" height="7" rx="3" fill="#1f1b18"/>
+     <path d="M536 72 Q506 86 527 116" fill="none" stroke="#1f1b18" stroke-width="4.5"/>
+     <path d="M578 72 Q608 86 587 116" fill="none" stroke="#1f1b18" stroke-width="4.5"/>
+     <rect x="528" y="88" width="58" height="68" rx="8" fill="#d97b42" stroke="#1f1b18" stroke-width="1.5"/>
+     <!-- Drei schwarzfigurige Stadionläufer im Lauf -->
+     <g fill="#1c1815" stroke="#1c1815" stroke-width="2.1" stroke-linecap="round">
+       <circle cx="540" cy="107" r="3.6"/>
+       <path d="M540 111 L542 126 L535 141 M542 126 L548 139 M540 116 L533 124 M540 116 L547 121" fill="none"/>
+       <circle cx="557" cy="105" r="3.6"/>
+       <path d="M557 109 L559 124 L552 140 M559 124 L565 137 M557 114 L550 122 M557 114 L564 119" fill="none"/>
+       <circle cx="574" cy="108" r="3.6"/>
+       <path d="M574 112 L576 126 L569 141 M576 126 L582 138 M574 117 L567 124 M574 117 L581 122" fill="none"/>
+     </g>
+     ${label(346, 94, "Inschrift (griech.):", "lbl tiny strong", "start")}
+     ${labels(346, 111, "ΤΩΝ ΑΘΗΝΗΘΕΝ\nΑΘΛΩΝ\n(„Von den Wettkämpfen\nin Athen“)", "lbl tiny", "start", 13)}
+     ${arrow(458, 118, 518, 118)}
+     ${labels(484, 222, "Preisgefäß für 38 Liter Olivenöl (Athen);\nzeigt Sportbild & schriftliche Herkunft", "lbl tiny", "middle", 14)}`,
   );
 }
 
@@ -205,7 +216,7 @@ export function triereUrsacheWirkung(): string {
       },
       {
         head: "Politische Forderung",
-        body: "Wer für Athen rudert, will\nauch mitbestimmen → voller\nAusbau der Demokratie",
+        body: "Wer für Athen rudert, stärkt\nsein Gewicht in der Polis\n→ Weg für Reformen (Perikles)",
         colour: "#1e6b4f",
       },
     ],
@@ -248,24 +259,43 @@ export function athenVsHeute(): string {
 export function herrscherbildnisAnalyse(): string {
   return svg(
     640,
-    250,
-    "Vorgegebener Kriterienkatalog am Beispiel einer Herrscherdarstellung: Haltung, Kleidung, Insignien, Inschrift und Aussageabsicht",
-    `${panel(8, 8, 624, 234, "panel-bg")}
-     <rect x="28" y="28" width="212" height="194" rx="12" fill="var(--f-sand)" stroke="var(--f-line)" stroke-width="2"/>
-     ${crown(134, 62, 1.1)}
-     ${person(134, 152, 1.5, "cloth-linen", "out")}
-     <rect x="98" y="156" width="72" height="16" rx="4" fill="var(--f-stone)"/>
-     <line x1="168" y1="126" x2="184" y2="96" stroke="var(--f-yellow)" stroke-width="4" stroke-linecap="round"/>
-     <circle cx="134" cy="186" r="14" fill="var(--f-panel)" stroke="var(--f-line)"/>
-     ${label(134, 190, "Kartusche", "lbl tiny")}
-     ${arrow(156, 52, 260, 52)}
-     ${arrow(174, 108, 260, 108)}
-     ${arrow(160, 148, 260, 160)}
-     ${arrow(152, 186, 260, 206)}
-     ${label(268, 56, "1. Kopfschmuck / Krone: zeigt das höchste Amt (z. B. Doppelkrone)", "lbl tiny strong", "start")}
-     ${label(268, 112, "2. Insignien & Haltung: Zepter, Bart oder Thron zeigen Würde und Macht", "lbl tiny strong", "start")}
-     ${label(268, 164, "3. Kleidung & Idealbild: verjüngt und makellos – kein Schnappschuss!", "lbl tiny strong", "start")}
-     ${label(268, 210, "4. Inschrift & Absicht: Wer hat das Bild in Auftrag gegeben – und wofür?", "lbl tiny strong", "start")}`,
+    270,
+    "Sitzstatue der Pharaonin Hatschepsut aus Kalkstein (Deir el-Bahari, ca. 1479–1458 v. Chr.): Kriterienkatalog am konkreten Kunstwerk",
+    `${panel(8, 8, 624, 254, "panel-bg")}
+     <rect x="24" y="24" width="220" height="222" rx="12" fill="var(--f-sand)" stroke="var(--f-line)" stroke-width="2"/>
+     ${label(134, 42, "Sitzstatue Deir el-Bahari", "lbl tiny strong")}
+     <!-- Kalkstein-Blockthron & Sockel -->
+     <rect x="74" y="138" width="96" height="72" rx="3" fill="var(--f-stone)" stroke="var(--f-ink)" stroke-width="1.5"/>
+     <rect x="64" y="206" width="122" height="24" rx="3" fill="var(--f-stone)" stroke="var(--f-ink)" stroke-width="1.5"/>
+     <!-- Gestreiftes Nemes-Kopftuch + Uräusschlange -->
+     <path d="M110 74 Q134 52 158 74 L164 114 H148 L146 94 H122 L120 114 H104 Z" fill="#c79e3b" stroke="var(--f-ink)" stroke-width="1.5"/>
+     <line x1="114" y1="68" x2="154" y2="68" stroke="var(--f-ink)" stroke-width="1.2"/>
+     <line x1="110" y1="78" x2="158" y2="78" stroke="var(--f-ink)" stroke-width="1.2"/>
+     <circle cx="134" cy="64" r="3" fill="var(--f-red)"/>
+     <!-- Ruhiges Gesicht & Zeremonialbart -->
+     <circle cx="134" cy="88" r="13" class="skin"/>
+     <rect x="131" y="99" width="6" height="16" rx="2" fill="#4f3e2d"/>
+     <!-- Oberkörper & Unterarme flach auf Knien -->
+     <path d="M116 106 H152 L156 146 H112 Z" fill="var(--f-stone)" stroke="var(--f-ink)" stroke-width="1.4"/>
+     <path d="M112 114 L104 146 H122 M156 114 L164 146 H146" fill="none" stroke="var(--f-ink)" stroke-width="4" stroke-linecap="round"/>
+     <!-- Gefalteter Königsschurz (Schendyt) & Beine -->
+     <rect x="114" y="144" width="44" height="32" rx="3" fill="#e6dec8" stroke="var(--f-ink)" stroke-width="1.4"/>
+     <line x1="126" y1="144" x2="126" y2="176" stroke="var(--f-line)"/>
+     <line x1="136" y1="144" x2="136" y2="176" stroke="var(--f-line)"/>
+     <line x1="146" y1="144" x2="146" y2="176" stroke="var(--f-line)"/>
+     <rect x="120" y="176" width="12" height="30" fill="var(--f-stone)" stroke="var(--f-ink)" stroke-width="1.2"/>
+     <rect x="140" y="176" width="12" height="30" fill="var(--f-stone)" stroke="var(--f-ink)" stroke-width="1.2"/>
+     <!-- Kartusche auf dem Sockel -->
+     <rect x="86" y="210" width="78" height="16" rx="8" fill="var(--f-panel)" stroke="var(--f-line)"/>
+     ${label(125, 222, "Maat-ka-Re", "lbl tiny strong")}
+     ${arrow(162, 66, 258, 66)}
+     ${arrow(140, 108, 258, 118)}
+     ${arrow(160, 158, 258, 170)}
+     ${arrow(166, 218, 258, 220)}
+     ${labels(266, 56, "1. Grunddaten & Auftrag (Deir el-Bahari):\n    Kalkstein-Sitzstatue im Auftrag Hatschepsuts\n    (ca. 1479–1458 v. Chr., heute New York)", "lbl tiny strong", "start", 14)}
+     ${labels(266, 110, "2. Insignien (Nemes, Uräus, Zeremonialbart):\n    Klassische männliche Zeichen des Gottkönigs", "lbl tiny strong", "start", 14)}
+     ${labels(266, 162, "3. Haltung & Kleidung (Thron, Schendyt):\n    Aufrecht, Hände flach auf den Knien – zeitlose Würde", "lbl tiny strong", "start", 14)}
+     ${labels(266, 212, "4. Inschrift & Absicht („Maat-ka-Re“):\n    Kartusche belegt rechtmäßige Pharaonen-Herrschaft", "lbl tiny strong", "start", 14)}`,
   );
 }
 

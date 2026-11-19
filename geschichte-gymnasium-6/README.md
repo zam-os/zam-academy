@@ -21,7 +21,7 @@ All 40 verbatim Kompetenzerwartungen from the official Fachlehrplan map to these
 ## Privacy & Architecture
 
 - **All visualizations offline**: 47 lesson SVG scenes and Natural-Earth historical maps, 15 interactive historical models/map explorers (with 45 provenance-tested exploration goals), a Lernpfad hero panorama, and a scrollable cross-epoch timeline — zero third-party embeds, analytics, external fonts, or background network requests.
-- **Verified source links**: All 102 external educational/reference URLs were checked against HTTP 200 and recorded with their HTML page titles on 18 November 2026 ([docs/geschichte-gymnasium-6-coverage.md](../docs/geschichte-gymnasium-6-coverage.md)); they open only when clicked by the learner.
+- **Verified source links**: All 104 external educational/reference URLs were checked against HTTP 200 and recorded with their HTML page titles on 18–19 November 2026 ([docs/geschichte-gymnasium-6-coverage.md](../docs/geschichte-gymnasium-6-coverage.md)); they open only when clicked by the learner.
 - **Local persistence**: Progress and theme are stored locally under `geschichte_gy6_academy_progress_v1` and `geschichte_gy6_theme`.
 - **Teacher videos**: Not included in this initial `0.0` version (`AGENTS.md` §4 separates initial authoring from video curation).
 
@@ -31,7 +31,7 @@ All 40 verbatim Kompetenzerwartungen from the official Fachlehrplan map to these
 npm ci
 npm run dev           # http://localhost:5259/geschichte-gymnasium-6/
 npx tsc --noEmit
-npm test              # 175 Vitest tests across 4 files
+npm test              # 176 Vitest tests across 4 files
 node scripts/check-curriculum.mjs
 node scripts/validate-migration.mjs   # requires ZAM_CORE pointing to zam-core
 npm run package:zip   # builds dist/index.html & release/ZAM-Academy-Geschichte-6-Gymnasium-offline.zip

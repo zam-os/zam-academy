@@ -164,7 +164,7 @@ const STRATA = [
   { depth: 2, name: "Schicht 2 · Frühmittelalter", age: "ca. 600–800 n. Chr.", find: "Karolingische Tonscherbe", cls: "strata-1" },
   { depth: 3, name: "Schicht 3 · Römische Kaiserzeit", age: "ca. 100–300 n. Chr.", find: "Römische Münze & Terra Sigillata", cls: "strata-2" },
   { depth: 4, name: "Schicht 4 · Jungsteinzeit", age: "ca. 4500 v. Chr.", find: "Geschliffenes Steinbeil & Verkohltes Korn", cls: "strata-3" },
-  { depth: 5, name: "Schicht 5 · Altsteinzeit", age: "ca. 18 000 v. Chr.", find: "Geschlagener Feuerstein-Faustkeil", cls: "strata-4" },
+  { depth: 5, name: "Schicht 5 · Späte Altsteinzeit", age: "ca. 18 000 v. Chr.", find: "Feuerstein-Klinge & Knochennadel", cls: "strata-4" },
 ];
 
 export const excavationStratigraphy: LabDef = {
