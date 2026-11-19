@@ -57,4 +57,4 @@ Browser interaction checks completed a lesson through the quiz, workshop, model 
 
 After the generator changes, `node /tmp/zam-physik7-review-browser.mjs` repeated the 96 desktop and 48 phone-width states and the interaction checks, with no script exceptions or external requests. After the final force-arrow adjustment, `node /tmp/zam-physik7-force-review.mjs` checked the eight diagram variants described above, including contact geometry and collinearity; screenshots in both themes were inspected. These browser harnesses and outputs remain outside the repository.
 
-This records local implementation and verification. PR publication and deployment are separate actions; neither mapping approval nor teacher review is claimed.
+Thomas approved the two same-retrieval transfers. Teacher review remains open.
