@@ -84,6 +84,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | Natur und Technik 5 Mittelschule (LehrplanPLUS Bayern) | [`nt-mittelschule-5/`](nt-mittelschule-5/) | Built by Pages on merge | `zam-academy:nt-mittelschule-5` |
 | Natur und Technik 6 Mittelschule (LehrplanPLUS Bayern) | [`nt-mittelschule-6/`](nt-mittelschule-6/) | https://academy.zam-os.org/nt-mittelschule-6/ | `zam-academy:nt-mittelschule-6` |
 | Informatik 6 Gymnasium (LehrplanPLUS Bayern, Natur und Technik 6 Schwerpunkt Informatik) | [`informatik-gymnasium-6/`](informatik-gymnasium-6/) | Built by Pages on merge | `zam-academy:informatik-gymnasium-6` |
+| Geschichte 6 Gymnasium (LehrplanPLUS Bayern, alle Ausbildungsrichtungen) | [`geschichte-gymnasium-6/`](geschichte-gymnasium-6/) | Built by Pages on merge | `zam-academy:geschichte-gymnasium-6` |
 
 ## How an app and its ZAM cell fit together
 
@@ -186,6 +187,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Englisch 5 Mittelschule: cd englisch-mittelschule-5 (dev server on :5248)
 # Informatik 6 Gymnasium: cd informatik-gymnasium-6 (dev server on :5251)
 # Biologie 6 Gymnasium: cd biologie-gymnasium-6 (dev server on :5253)
+# Geschichte 6 Gymnasium: cd geschichte-gymnasium-6 (dev server on :5259)
 # Grade 11 introductory biology: cd biologie-gymnasium-11 (dev server on :5227)
 npm ci
 npm run dev      # http://localhost:5180/uml/
@@ -273,3 +275,5 @@ The [Deutsch 5 Gymnasium package](deutsch-gymnasium-5/) adds 50 lessons across a
 The [Englisch 6 Realschule package](englisch-realschule-6/) adds 42 lessons in eight stages across all LehrplanPLUS Bayern Realschule areas (USA, London, regions of Britain, everyday life, sports and charity, media and digital communication, grade-6 grammar and vocabulary/text strategies) with 126 workshop goals, four local listening scripts, 21 verified source links and 126 linked ZAM cards (`proposal-only` legacy inventory of the 16 old `de-by` cards in [englisch-realschule-6/replaces-de-by.json](englisch-realschule-6/replaces-de-by.json), starting at package version `0.0`). See [Curriculum coverage and legacy inventory](docs/englisch-realschule-6-coverage.md).
 
 The [Englisch 6 Gymnasium package](englisch-gymnasium-6/) continues English 5 for Bavarian Gymnasium (`1. Fremdsprache`) with 40 lessons in eight stages, interactive timeline, comparison, direction, picture-description, and UK/USA map workshops, local browser-speech and offline listening support, 80 short-answer checks, 80 two-level tasks with self-assessment, and 120 linked ZAM cards. Its [coverage matrix](englisch-gymnasium-6/coverage.json) checks all 40 verbatim expectations (`E6-01`–`E6-40`) against LehrplanPLUS Bayern, and [englisch-gymnasium-6/replaces-de-by.json](englisch-gymnasium-6/replaces-de-by.json) documents the approved 2026-11-18 mapping of all eight items in `de-by:gymnasium-6-englisch-past-tenses-present-perfect-adjectives` (3 category-A `replaces`, 5 category-C `keep-active`, validated by `englisch-gymnasium-6/scripts/validate-migration.mjs`) alongside a neighbouring-grade review of Grade 7. See [Curriculum coverage and legacy inventory](docs/englisch-gymnasium-6-coverage.md).
+
+The [Geschichte 6 Gymnasium package](geschichte-gymnasium-6/) covers all seven LehrplanPLUS Bayern areas (*Der Mensch und seine Geschichte*, *Ägypten*, *Griechische Antike*, *Menschen machen Geschichte*, *Imperium Romanum*, *Von der Antike zum Mittelalter*, *Leben in der Familie*) with 36 lessons, 47 SVG figures and Natural-Earth historical maps (plus panorama and global timeline), 15 interactive models and map explorers, four *Kriterienkataloge*, two-level exercises, and 72 ZAM cards. Its [legacy mapping](geschichte-gymnasium-6/replaces-de-by.json) was approved by Thomas on 2026-11-18 (8 A `replaces`, 0 B, 8 C `keep-active`, validated by `geschichte-gymnasium-6/scripts/validate-migration.mjs`; Grade 6 Gymnasium Geographie is recorded in `academy.json` under `kein_unterricht` per BayGSO Anlage 1). See [Curriculum coverage and legacy inventory](docs/geschichte-gymnasium-6-coverage.md).

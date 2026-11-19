@@ -1,0 +1,736 @@
+[
+  {
+    "id": "gg6-rom-gruendung-mythos",
+    "lb": 5,
+    "title": "753 v. Chr.: Gründungsmythos Roms und historische Anfänge",
+    "period": "LB 5 · Das Imperium Romanum",
+    "intro": "Wurde Rom wirklich an einem Tag von Zwillingen gegründet, die eine Wölfin aufzog – oder erzählen Ausgrabungen eine andere Geschichte?",
+    "grundwissen": [
+      "753 v. Chr. mythische Gründung Roms",
+      "Mythos vs. Geschichtsschreibung",
+      "Tiberfurt & Hügeldörfer"
+    ],
+    "paragraphs": [
+      "Nach der berühmten römischen Sage setzte ein böser König die Zwillingsbrüder Romulus und Remus, Söhne des Kriegsgottes Mars, in einem Korb auf dem Tiber aus. Eine Wölfin soll sie gerettet und gesäugt haben, bis ein Hirte sie fand. Als Erwachsene stritten die Brüder darüber, auf welchem Hügel die neue Stadt stehen sollte; Romulus erschlug Remus und soll am 21. April 753 v. Chr. die ersten Mauern um den Palatin gezogen haben. Noch heute gilt 753 v. Chr. als traditionelles Datum der mythischen Gründung Roms.",
+      "Die moderne Geschichtsschreibung vergleicht solche Erzählungen (Narrationen) kritisch mit archäologischen Überresten. Denn die Sage wurde erst Jahrhunderte später aufgeschrieben, als Rom längst mächtig war und seine Herkunft auf den Kriegsgott Mars zurückführen wollte. Ausgrabungen am Tiber belegen ein anderes Bild: Seit dem 10. und 8. Jahrhundert v. Chr. lebten Bauern und Hirten in mehreren kleinen Dörfern auf den Hügeln an einer flachen Flussfurt und der Salzstraße. Erst langsam wuchsen diese Dörfer unter starkem etruskischem Einfluss zu einer ummauerten Stadt zusammen. So zeigt sich der Unterschied zwischen einem sinnstiftenden Mythos und überprüfbarer Geschichtsschreibung."
+    ],
+    "takeaway": "Ein Mythos (wie Romulus und Remus 753 v. Chr.) soll Stolz und Herkunft erklären; überprüfbare Geschichtsschreibung stützt sich dagegen auf archäologische und kritische Befunde.",
+    "sourceIds": [
+      "lehrplan",
+      "wiki-rom",
+      "wiki-romulus-remus"
+    ],
+    "figures": [
+      "romMythosVsForschung"
+    ],
+    "quiz": {
+      "question": "Was unterscheidet den Gründungsmythos von Romulus und Remus (753 v. Chr.) von einer wissenschaftlichen Geschichtsdarstellung?",
+      "answer": "Der Mythos entstand viel später zur Verherrlichung Roms; die Forschung untersucht dagegen älteste Hüttenreste, Gräber und die Lage an der Tiberfurt.",
+      "wrong": [
+        "Ein Mythos ist immer eine Lüge ohne jeden Bezug zu einem echten Ort.",
+        "Geschichtsschreibung verlässt sich ausschließlich auf Göttersagen ohne Bodenfunde."
+      ],
+      "explanation": "Sagen und Mythen verraten viel darüber, wie spätere Römer sich selbst sehen wollten – aber sie ersetzen keine datierbaren Funde."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Mythos oder überprüfbarer archäologischer Befund?",
+      "instruction": "Ordne jede Aussage über die Anfänge Roms richtig zu.",
+      "categories": [
+        "Gründungsmythos (Sage)",
+        "Archäologie & Geschichtswissenschaft"
+      ],
+      "entries": [
+        {
+          "text": "Eine Wölfin nährt die Zwillinge Romulus und Remus am Ufer des Tiber",
+          "target": 0,
+          "feedback": "Bildhafte Erzählung, die Rom Mut und göttlichen Schutz durch Mars zuschreibt."
+        },
+        {
+          "text": "Spuren von runden Pfostenhütten und Gräbern aus dem 9. und 8. Jh. v. Chr. auf dem Palatin",
+          "target": 1,
+          "feedback": "Datierbare Überreste einer frühen Bauernsiedlung."
+        },
+        {
+          "text": "Handelskreuzung zwischen der Salzstraße und einer wichtigen Furt über den Tiber",
+          "target": 1,
+          "feedback": "Erklärt nüchtern, warum sich dort viele Menschen ansiedelten."
+        },
+        {
+          "text": "Rom entsteht an einem einzigen Tag (21. April 753 v. Chr.) durch den ersten König Romulus",
+          "target": 0,
+          "feedback": "Mythen verdichten lange Entwicklungen gern auf einen Helden und ein Datum."
+        },
+        {
+          "text": "Mehrere getrennte Hügeldörfer wachsen erst unter etruskischem Einfluss zusammen",
+          "target": 1,
+          "feedback": "Zeigt eine langsame Stadtentwicklung über viele Generationen."
+        },
+        {
+          "text": "Der Kriegsgott Mars gilt als Vater der Stadtgründer",
+          "target": 0,
+          "feedback": "Spiegelt das Selbstbild Roms als siegreiche Macht wider."
+        }
+      ],
+      "conclusion": "Wer Mythos und überprüfbare Befunde trennt, erkennt sowohl die tatsächlichen Anfänge als auch die Wunschbilder der Antike."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Vergleiche den Mythos um Romulus und Remus mit den archäologischen Erkenntnissen zur Entstehung Roms.",
+        "hints": [
+          "Nenne kurz die Kernaussage des Mythos (753 v. Chr., Wölfin, Romulus).",
+          "Stelle ihr die Bodenfunde (Hügeldörfer, Tiberfurt, Salzhandel) gegenüber."
+        ],
+        "model": "Der Mythos erzählt, dass die Zwillinge Romulus und Remus von einer Wölfin gesäugt wurden und Romulus am 21. April 753 v. Chr. die Stadt allein gründete. Archäologische Ausgrabungen zeigen dagegen, dass Rom langsam entstand: Seit dem 10. und 8. Jh. v. Chr. lagen mehrere Hirtendörfer an einer wichtigen Tiberfurt und der Salzstraße und wuchsen erst unter etruskischem Einfluss zu einer Stadt zusammen.",
+        "criteria": [
+          "Der Gründungsmythos (inkl. 753 v. Chr.) ist korrekt wiedergegeben.",
+          "Die archäologischen Befunde zur Stadtentstehung sind genannt.",
+          "Der Unterschied zwischen beiden Zugängen wird deutlich."
+        ]
+      },
+      "2": {
+        "prompt": "Erkläre, warum römische Geschichtsschreiber Jahrhunderte nach den Anfängen die Sage von Romulus und Remus trotzdem begeistert weiterzählten – und welchen Wert der Mythos heute für Historiker hat.",
+        "hints": [
+          "Überlege, welches Selbstbild eine Großmacht braucht, wenn sie von sich erzählt.",
+          "Frage: Was lernt ein Historiker aus einer Sage, auch wenn kein echtes Ereignis darin steckt?"
+        ],
+        "model": "Als Rom später das Mittelmeer beherrschte, wollte die Stadt nicht von einfachen Hirten abstammen, sondern von den Söhnen des Kriegsgottes Mars – der Mythos stiftete Stolz und Gemeinschaftssinn. Für Historiker heute ist die Sage deshalb keine Tatsachenbeschreibung von 753 v. Chr., wohl aber eine wertvolle Quelle für das Denken, die Werte und den Herrschaftsanspruch der Römer in späterer Zeit.",
+        "criteria": [
+          "Erklärt die politische und identitätsstiftende Funktion des Mythos für Rom.",
+          "Zeigt, welche Aussagekraft eine Sage trotzdem für die Forschung besitzt.",
+          "Trennt sauber zwischen Faktenebene und Deutungsebene."
+        ]
+      }
+    }
+  },
+  {
+    "id": "gg6-roemische-republik",
+    "lb": 5,
+    "title": "Senat, Konsuln, Volkstribune: Die Römische Republik",
+    "period": "LB 5 · Das Imperium Romanum",
+    "intro": "Nach der Vertreibung der Könige schworen die Römer, nie wieder einen Alleinherrscher zu dulden. Wie sicherten sie ihre Republik?",
+    "grundwissen": [
+      "Republik & Senat (Grundbegriffe)",
+      "Diktator (Notamt)",
+      "Ständekämpfe & Veto-Recht"
+    ],
+    "paragraphs": [
+      "Um 500 v. Chr. beendeten die Römer die Königsherrschaft und schufen eine Republik (res publica = „öffentliche Sache“). Zwei strenge Regeln sollten jeden Rückfall in die Alleinherrschaft verhindern: Jedes Staatsamt galt immer nur ein Jahr (Annuität), und jedes Amt war mindestens doppelt besetzt (Kollegialität), sodass zwei Kollegen sich gegenseitig stoppen konnten. Auf der Ämterlaufbahn (Cursus honorum) stieg man vom Quästor (Kasse) über Ädil (Stadt) und Prätor (Richter) bis zu den zwei Konsuln an der Spitze auf. Nur im höchsten Notfall durfte ein Diktator ernannt werden – streng befristet auf höchstens sechs Monate.",
+      "Doch in der frühen Republik stritten zwei Gruppen um Macht: die reichen adligen Familien (Patrizier) und das einfache Volk der Bauern, Handwerker und Händler (Plebejer). In den langen Ständekämpfen erzwangen die Plebejer durch Auszug aus der Stadt auf den Heiligen Berg eigene Schutzbeamte: die unantastbaren Volkstribune. Mit einem einzigen Wort – „Veto!“ („Ich verbiete!“) – konnten sie jeden Beschluss des mächtigen Senats (der Versammlung erfahrener ehemaliger Beamter) blockieren. Gleichzeitig legten die Zwölftafelgesetze (ca. 450 v. Chr.) das Recht für alle sichtbar schriftlich fest."
+    ],
+    "takeaway": "Annuität (1 Jahr), Kollegialität (mindestens 2 Kollegen), Senat und das Veto der Volkstribune sollten in der Republik jede Alleinherrschaft verhindern.",
+    "sourceIds": [
+      "lehrplan",
+      "wiki-roemische-republik",
+      "wiki-senat",
+      "wiki-cursus-honorum",
+      "wiki-volkstribun"
+    ],
+    "figures": [
+      "cursusHonorum"
+    ],
+    "lab": "romanRepublic",
+    "quiz": {
+      "question": "Mit welchem mächtigen Einspruchsrecht (lateinisch für „Ich verbiete!“) konnten die römischen Volkstribune jede Senatsentscheidung zum Schutz der Plebejer sofort stoppen?",
+      "answer": "Mit dem Veto-Recht (Veto)",
+      "wrong": [
+        "Mit dem Befehl eines lebenslangen Diktators",
+        "Mit dem Scherbengericht auf Tonscherben"
+      ],
+      "explanation": "Die Person eines Volkstribuns galt als unantastbar; sein „Veto“ blockierte ungerechte Gesetze oder Beschlüsse sofort."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Ämter und Organe der Römischen Republik",
+      "instruction": "Ordne jede Aussage dem passenden Organ oder Grundsatz der Römischen Republik zu.",
+      "categories": [
+        "Senat & hohe Ämter (Cursus honorum)",
+        "Schutz der Plebejer",
+        "Schutz vor Alleinherrschaft"
+      ],
+      "entries": [
+        {
+          "text": "Zwei Konsuln führen im Wechsel Staat und Armee",
+          "target": 0,
+          "feedback": "Spitze der Ämterlaufbahn, in den Volksversammlungen jährlich gewählt."
+        },
+        {
+          "text": "Volkstribune sind unverletzlich und dürfen Beschlüsse mit Veto stoppen",
+          "target": 1,
+          "feedback": "Errungenschaft der Plebejer nach den Ständekämpfen."
+        },
+        {
+          "text": "Jedes reguläre Amt endet spätestens nach genau einem Jahr (Annuität)",
+          "target": 2,
+          "feedback": "Danach musste der Beamte Rechenschaft über sein Handeln ablegen."
+        },
+        {
+          "text": "Der Senat (ca. 300 Ex-Beamte) berät Finanzen, Krieg und Außenpolitik",
+          "target": 0,
+          "feedback": "Da Senatoren auf Lebenszeit blieben, war der Senat das politische Zentrum."
+        },
+        {
+          "text": "Ein Diktator erhält im äußersten Notfall Vollmacht für höchstens 6 Monate",
+          "target": 2,
+          "feedback": "Zeitliche Befristung sollte den Missbrauch als Königsmacht ausschließen."
+        },
+        {
+          "text": "Zwölftafelgesetze schreiben Regeln öffentlich auf dem Forum nieder",
+          "target": 1,
+          "feedback": "Schützte Bürger vor willkürlichen Urteilen adliger Richter."
+        }
+      ],
+      "conclusion": "Die Römische Republik verband adlige Erfahrung (Senat), bürgerliche Wahlen und Schutzrechte gegen Machtmissbrauch."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre, wie Annuität, Kollegialität und das Veto-Recht der Volkstribune zusammenwirkten, um die Römische Republik zu schützen.",
+        "hints": [
+          "Definiere zuerst kurz Annuität und Kollegialität.",
+          "Erkläre dann, wovor die Volkstribune einfache Bürger (Plebejer) bewahrten."
+        ],
+        "model": "Durch die Annuität durfte niemand ein Amt länger als ein Jahr behalten, sodass sich keine dauerhafte Macht verfestigte. Durch die Kollegialität waren Ämter wie das Konsulat doppelt besetzt und die Amtsinhaber kontrollierten sich gegenseitig. Zusätzlich schützten die Volkstribune mit ihrem Veto-Recht die Plebejer vor ungerechten Beschlüssen des Senats oder der Konsuln.",
+        "criteria": [
+          "Annuität (1 Jahr) und Kollegialität (mind. 2 Kollegen) sind richtig erklärt.",
+          "Die Schutzfunktion des Veto-Rechts für die Plebejer ist beschrieben.",
+          "Alle Begriffe sind sinnvoll auf das Ziel (keine Alleinherrschaft) bezogen."
+        ]
+      },
+      "2": {
+        "prompt": "Man nennt die Römische Republik oft noch keine Demokratie wie in Athen oder heute. Beurteile, warum – und welche Macht trotz aller Kontrollen beim Senat lag.",
+        "hints": [
+          "Überlege, wer überhaupt in die hohen Ämter gewählt werden konnte (unbezahlte Ämter!) und wer nach dem Amt im Senat saß.",
+          "Vergleiche das Gewicht armer und reicher Bürger bei Abstimmungen."
+        ],
+        "model": "In Rom wählten zwar Volksversammlungen die Beamten, doch anders als in Athen unter Perikles gab es keine Tagegelder: Nur reiche Familien konnten sich unbezahlte Ämter und aufwendige Wahlkämpfe leisten. Zudem hatten Wohlhabende bei den Abstimmungen stärkeres Stimmgewicht, und alle ehemaligen Spitzenbeamten saßen auf Lebenszeit im Senat, der den Staat praktisch lenkte. Die Republik war daher eher eine Adelsherrschaft mit bürgerlicher Kontrolle als eine volle Demokratie.",
+        "criteria": [
+          "Nennt fehlende Vergütung oder ungleiches Stimmgewicht als Einschränkung.",
+          "Erklärt die dauerhafte Vormachtstellung des Senats (Lebenszeit).",
+          "Kommt zu einer differenzierten Bewertung zwischen Republik und Demokratie."
+        ]
+      }
+    }
+  },
+  {
+    "id": "gg6-expansion-weltreich",
+    "lb": 5,
+    "title": "Vom Stadtstaat zum Weltreich: Das Imperium Romanum wächst",
+    "period": "LB 5 · Das Imperium Romanum",
+    "intro": "In wenigen Jahrhunderten wuchs Rom von einer Stadt am Tiber zur alleinigen Herrin rund um das Mittelmeer. Welche Folgen hatte dieser Aufstieg?",
+    "grundwissen": [
+      "Geschichtskarte auswerten",
+      "Provinz (Grundbegriff)",
+      "Punische Kriege"
+    ],
+    "paragraphs": [
+      "Mithilfe einer Geschichtskarte lässt sich die schrittweise Ausdehnung des Imperium Romanum genau verfolgen. Zunächst einte Rom bis um 270 v. Chr. Italien. Im Westen stieß es auf die reiche Handelsmacht Karthago: In den drei blutigen Punischen Kriegen (264–146 v. Chr.) – bekannt durch Hannibals Zug über die Alpen – besiegte Rom den Rivalen und übernahm Sizilien, Spanien und Nordafrika als erste Provinzen (unterworfene Gebiete außerhalb Italiens unter einem römischen Statthalter). Bis 146 v. Chr. folgten auch Griechenland und große Teile des östlichen Mittelmeerraums.",
+      "Im 1. Jahrhundert v. Chr. eroberte Gaius Julius Caesar Gallien bis an den Rhein; unter den Kaisern reichte das Reich schließlich bis nach Britannien, an Donau und Limes sowie bis Ägypten und Syrien – das Mittelmeer wurde zum römischen „Mare Nostrum“ („Unser Meer“). Doch das riesige Wachstum brachte daheim schwere Krisen: Römische Kleinbauern kämpften jahrelang in fernen Kriegen, verloren ihre Höfe an reiche Großgrundbesitzer (die tausende Kriegsgefangene als Sklaven einsetzten) und strömten verarmt nach Rom. Gleichzeitig folgten Berufssoldaten immer stärker ihrem Feldherrn statt dem Senat."
+    ],
+    "takeaway": "Rom wuchs durch Eroberung von Provinzen zur Mittelmeer-Weltmacht – doch der Reichtum aus den Kriegen verschärfte soziale Not und Machtkämpfe im Inneren.",
+    "sourceIds": [
+      "lehrplan",
+      "wiki-roemisches-reich",
+      "klexikon-roemer",
+      "wiki-punische-kriege"
+    ],
+    "figures": [
+      "expansionFolgen"
+    ],
+    "lab": "romanExpansionMap",
+    "kriterien": {
+      "title": "Vorgegebener Kriterienkatalog: Eine Geschichtskarte zur Reichsausdehnung auswerten",
+      "steps": [
+        "Zeitschnitt und Raum erfassen: Welche Etappen (Jahreszahlen) und welche Küsten oder Gebirge zeigt die Karte?",
+        "Farben und Grenzen der Legende prüfen: Wie vergrößert sich das Herrschaftsgebiet von Schritt zu Schritt?",
+        "Strategische Räume deuten: Warum waren Seewege (Mittelmeer), Straßen und Flüsse (Rhein, Donau) so entscheidend?",
+        "Auswirkungen erschließen: Welche neuen Probleme brachte ein riesiges Weltreich für die Regierung einer Stadt?"
+      ]
+    },
+    "quiz": {
+      "question": "Was bezeichneten die Römer seit der Zeit ihrer großen Eroberungen als „Provinz“?",
+      "answer": "Ein erobertes Gebiet außerhalb Italiens, das von einem römischen Statthalter verwaltet wurde und Abgaben zahlte.",
+      "wrong": [
+        "Den kleinen Marktplatz in der Mitte der Stadt Rom.",
+        "Einen frei gewählten Rat von Handwerkern innerhalb einer griechischen Polis."
+      ],
+      "explanation": "Aus Provinzen wie Sizilien, Gallien oder Ägypten bezog Rom Getreide, Steuern, Rohstoffe und Rekruten."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Etappen des römischen Weltreichs",
+      "instruction": "Ordne die fünf Ausdehnungsetappen von der kleinsten bis zur größten Ausdehnung.",
+      "categories": [],
+      "entries": [
+        {
+          "text": "um 500 v. Chr.: Rom ist ein kleiner Stadtstaat in Mittelitalien am Tiber",
+          "target": 0,
+          "feedback": "Ausgangspunkt der römischen Republik."
+        },
+        {
+          "text": "um 270 v. Chr.: Rom beherrscht ganz Mittel- und Süditalien",
+          "target": 1,
+          "feedback": "Durch Bündnisse und Straßen sicherte Rom Italien ab."
+        },
+        {
+          "text": "146 v. Chr.: Sieg über Karthago und Zerstörung Korinths – West- und Ostmittelmeer unter Rom",
+          "target": 2,
+          "feedback": "Rom steigt zur unangefochtenen Vormacht im Mittelmeerraum auf."
+        },
+        {
+          "text": "58–50 v. Chr.: Caesar erobert ganz Gallien bis an den Rhein",
+          "target": 3,
+          "feedback": "Verschaffte Caesar treue Legionen und gewaltigen Reichtum."
+        },
+        {
+          "text": "117 n. Chr.: Größte Ausdehnung von Britannien und dem Limes bis Ägypten und Mesopotamien",
+          "target": 4,
+          "feedback": "Unter Kaiser Trajan erreichte das Imperium Romanum seine weitesten Grenzen."
+        }
+      ],
+      "conclusion": "Mit jeder Etappe auf der Karte stiegen die Anforderungen an Straßen, Heer und Verwaltung."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Werte das Karten-Labor zur Ausdehnung des Imperium Romanum anhand des Kriterienkatalogs aus und beschreibe zwei Folgen des schnellen Wachstums.",
+        "hints": [
+          "Nenne mindestens drei Etappen von 500 v. Chr. bis 117 n. Chr.",
+          "Erkläre eine äußere Folge (Provinzen, Handel) und eine innere Krise (Bauern, Sklaven, Heer)."
+        ],
+        "model": "Die Karte zeigt, wie sich Rom von einem kleinen Gebiet am Tiber (um 500 v. Chr.) über Italien (270 v. Chr.) und die Mittelmeerküsten (146 v. Chr.) bis zu einem Weltreich rund um das „Mare Nostrum“ von Britannien bis Ägypten (117 n. Chr.) ausdehnte. Außenpolitisch brachte dies riesige Provinzen, Steuern und blühenden Seehandel. Innenpolitisch verarmten jedoch viele römische Bauern durch lange Kriege, während billige Sklaven auf Großgütern arbeiteten und Soldaten sich an ihre Feldherren banden.",
+        "criteria": [
+          "Nennt mindestens drei räumlich-zeitliche Etappen korrekt.",
+          "Beschreibt sowohl äußere (Provinzen/Handel) als auch innere (Sozial-/Militärkrise) Folgen.",
+          "Verwendet den Grundbegriff Provinz richtig."
+        ]
+      },
+      "2": {
+        "prompt": "Warum überforderte das riesige Weltreich schließlich die alte Verfassung einer kleinen Stadt-Republik? Begründe mit mindestens zwei Beispielen.",
+        "hints": [
+          "Denke an die kurze Amtszeit von einem Jahr (Annuität) in fernen Provinzen wie Spanien oder Syrien.",
+          "Überlege, warum Generäle wie Caesar nach langen Feldzügen oft mächtiger waren als der Senat in Rom."
+        ],
+        "model": "Die Verfassung der Republik war für einen kleinen Stadtstaat gedacht, in dem sich Bürger auf dem Marktplatz trafen. Für ein Weltreich passten die alten Regeln nicht mehr: Ein Konsul oder Statthalter konnte innerhalb von nur einem Jahr kaum ferne Provinzen lenken, weshalb mächtige Generäle jahrelange Sonderkommandos bekamen. Ihre Berufssoldaten erwarteten Landversorgung nicht mehr vom zerstrittenen Senat, sondern von ihrem eigenen Feldherrn – das ebnete dem Bürgerkrieg den Weg.",
+        "criteria": [
+          "Zeigt den Widerspruch zwischen Stadtverfassung (1-Jahres-Ämter) und Weltreich.",
+          "Erklärt die Verlagerung der Soldatentreue vom Staat auf Generäle.",
+          "Formuliert eine überzeugende Begründung."
+        ]
+      }
+    }
+  },
+  {
+    "id": "gg6-caesar-augustus-prinzipat",
+    "lb": 5,
+    "title": "Caesar und Augustus: Von der Republik zum Prinzipat",
+    "period": "LB 5 · Das Imperium Romanum",
+    "intro": "Wie gelang dem jungen Octavian als Augustus, was Caesar das Leben kostete – nämlich die Alleinherrschaft dauerhaft durchzusetzen?",
+    "grundwissen": [
+      "1. Jh. v. Chr. Republik → Kaiserzeit",
+      "um Christi Geburt Zeitalter des Augustus",
+      "Caesar & Diktator"
+    ],
+    "paragraphs": [
+      "Im 1. Jahrhundert v. Chr. versank die Römische Republik in Bürgerkriegen zwischen mächtigen Feldherren. Nach seinem Sieg in Gallien überschritt Gaius Julius Caesar 49 v. Chr. mit seinem Heer gegen das Gesetz den Grenzfluss Rubikon („Die Würfel sind gefallen“) und schlug seine Rivalen. Als er sich 44 v. Chr. jedoch zum Diktator auf Lebenszeit ernennen ließ und damit offen gegen die geheiligte Regel der kurzen Amtszeit verstieß, ermordete ihn eine Gruppe von Senatoren um Brutus und Cassius am 15. März 44 v. Chr.",
+      "Die Mörder hofften, die Republik sei gerettet – doch ein neuer Bürgerkrieg brach aus. Aus ihm ging Caesars Großneffe und Adoptivsohn Octavian als Sieger hervor. 27 v. Chr. verlieh ihm der Senat den Ehrentitel Augustus („der Erhabene“). Augustus lernte aus Caesars Fehler: Er nannte sich niemals König oder Diktator, sondern bescheiden Princeps („Erster Bürger“). Offiziell stellte er Senat, Konsuln und Wahlen wieder her – faktisch bündelte er den Oberbefehl über fast alle Legionen, die Macht der Volkstribune (Veto-Recht) und das höchste Priesteramt auf Lebenszeit. Dieses neue Kaisersystem hieß Prinzipat und brachte um Christi Geburt eine lange Friedenszeit (Pax Romana)."
+    ],
+    "takeaway": "Auf Caesars Ermordung folgte Augustus’ Prinzipat: Unter Beibehaltung republikanischer Namen entstand um Christi Geburt die dauerhafte römische Kaiserzeit.",
+    "sourceIds": [
+      "lehrplan",
+      "wiki-caesar",
+      "wiki-augustus",
+      "wiki-prinzipat"
+    ],
+    "figures": [
+      "republikZumPrinzipat"
+    ],
+    "quiz": {
+      "question": "Welchen Ehrentitel (lateinisch für „der Erhabene“) verlieh der Senat im Jahr 27 v. Chr. Caesars Großneffen und Adoptivsohn Octavian, womit das römische Kaiserreich begründet wurde?",
+      "answer": "Augustus (Imperator Caesar Augustus)",
+      "wrong": [
+        "Rex (römischer Erbkönig)",
+        "Konsul auf sechs Monate"
+      ],
+      "explanation": "Octavian wählte bewusst Titel wie „Augustus“ und „Princeps“ (Erster unter Gleichen), um die Empfindlichkeit der Senatoren zu schonen."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Vom Ende der Republik ins Zeitalter des Augustus",
+      "instruction": "Ordne die fünf historischen Ereignisse des 1. Jahrhunderts v. Chr. in die richtige zeitliche Folge.",
+      "categories": [],
+      "entries": [
+        {
+          "text": "49 v. Chr.: Caesar überschreitet mit seinen Legionen den Rubikon",
+          "target": 0,
+          "feedback": "Ausbruch des großen Bürgerkriegs gegen den Senat und Pompeius."
+        },
+        {
+          "text": "15. März 44 v. Chr.: Caesar wird als Diktator auf Lebenszeit ermordet",
+          "target": 1,
+          "feedback": "Die Verschwörer wollten die alte Republik retten, lösten aber neue Kämpfe aus."
+        },
+        {
+          "text": "31 v. Chr.: Caesars Adoptivsohn Octavian besiegt Antonius und Kleopatra bei Actium",
+          "target": 2,
+          "feedback": "Damit war Octavian der letzte mächtige Heerführer im gesamten Reich."
+        },
+        {
+          "text": "27 v. Chr.: Der Senat verleiht Octavian den Titel „Augustus“ (Beginn des Prinzipats)",
+          "target": 3,
+          "feedback": "Die Fassade der Republik blieb stehen, die Macht lag beim ersten Kaiser."
+        },
+        {
+          "text": "um Christi Geburt: Zeitalter des Augustus und langer innerer Frieden (Pax Romana)",
+          "target": 4,
+          "feedback": "Handel, Straßenbau und Städte blühten rund um das Mittelmeer."
+        }
+      ],
+      "conclusion": "Mit Augustus ging die Römische Republik endgültig in das Kaisertum (Prinzipat) über."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Beschreibe den Unterschied zwischen Caesars offenem Auftreten als „Diktator auf Lebenszeit“ und der geschickten Politik des Augustus im Prinzipat.",
+        "hints": [
+          "Vergleiche die Titel und den Umgang mit dem Senat bei beiden Politikern.",
+          "Nenne mindestens zwei Vollmachten, die Augustus im Hintergrund bündelte."
+        ],
+        "model": "Caesar brach offen mit der Republik, als er sich 44 v. Chr. zum Diktator auf Lebenszeit ernennen ließ – das führte zu seiner Ermordung durch Senatoren. Augustus vermied ab 27 v. Chr. die verhassten Titel König und Diktator, ließ Senat und Konsuln dem Schein nach weiterarbeiten und nannte sich nur „Princeps“ (Erster Bürger). Tatsächlich behielt er auf Lebenszeit den Oberbefehl über das Heer, die Rechte der Volkstribune (Veto) und das höchste Priesteramt.",
+        "criteria": [
+          "Stellt Caesars offenen Bruch (Diktator auf Lebenszeit) dem Schein des Augustus gegenüber.",
+          "Erklärt den Begriff Prinzipat (Princeps).",
+          "Benennt konkrete Machtmittel des Augustus (Heer, Veto/Tribunenrecht, Finanzen)."
+        ]
+      },
+      "2": {
+        "prompt": "Viele Römerinnen und Römer akzeptierten die Alleinherrschaft des Augustus ohne neuen Aufstand. Erkläre, welche Wünsche der Bevölkerung dabei eine Rolle spielten – und was verloren ging.",
+        "hints": [
+          "Denke an fast hundert Jahre Bürgerkriege vor 31 v. Chr. (Sehnsucht nach Frieden und Brot).",
+          "Überlege, welche Freiheiten von Bürgern und Senat dafür aufgegeben wurden."
+        ],
+        "model": "Nach fast hundert Jahren voller Bürgerkriege, Plünderungen und Unsicherheit sehnten sich Bauern, Händler und Stadtbewohner vor allem nach Frieden, Rechtssicherheit und voller Getreideversorgung – genau das brachte die Pax Romana unter Augustus. Dafür verzichteten sie jedoch auf echte politische Mitbestimmung: Wahlen verloren an Bedeutung, und alle wichtigen Entscheidungen hingen fortan vom Willen und Charakter eines einzigen Kaisers ab.",
+        "criteria": [
+          "Erklärt die große Friedenssehnsucht nach den Bürgerkriegen.",
+          "Benennt den Preis der neuen Ruhe (Verlust politischer Freiheit und Kontrolle).",
+          "Bewertet diesen Umbruch sachlich und ausgewogen."
+        ]
+      }
+    }
+  },
+  {
+    "id": "gg6-provinzen-bayern-limes",
+    "lb": 5,
+    "title": "Römer in Bayern: Raetien, Noricum, Limes und Romanisierung",
+    "period": "LB 5 · Das Imperium Romanum",
+    "intro": "Auch ein großer Teil des heutigen Bayerns gehörte über vierhundert Jahre lang zum Römischen Reich. Welche Spuren prägen unseren Heimatraum noch heute?",
+    "grundwissen": [
+      "Limes & Provinz (Grundbegriffe)",
+      "Romanisierung",
+      "Spuren Roms in Bayern"
+    ],
+    "paragraphs": [
+      "Um 15 v. Chr. eroberten die Truppen des Augustus das Alpenvorland bis an die Donau. Auf dem Boden des heutigen Bayern entstanden zwei römische Provinzen: Raetia (Schwaben, Oberbayern und Teile Frankens) mit der Provinzhauptstadt Augusta Vindelicum (Augsburg) und im Osten jenseits des Inn Noricum (mit Orten wie Passau). Ab dem 1. Jahrhundert n. Chr. sicherten die Römer die Nordgrenze zwischen Rhein und Donau durch den rund 550 Kilometer langen Obergermanisch-Raetischen Limes – erst eine Schneise mit hölzernen Wachtürmen und Palisaden, später in Raetien eine durchgehende Steinmauer mit Kastellen wie Weißenburg (Biriciana) und dem großen Legionslager Castra Regina (Regensburg, 179 n. Chr.).",
+      "Der Limes war keine undurchdringliche Mauer, sondern eine kontrollierte Zoll-, Handels- und Überwachungslinie. Im Schutz der Truppen veränderte sich das Leben der keltischen Bevölkerung tiefgreifend – man nennt dies Romanisierung. Entlang fester gepflasterter Reichsstraßen wie der Via Claudia Augusta wuchsen Städte nach römischem Vorbild mit Steinbauten, Trinkwasserleitungen, Thermen mit Fußbodenheizung (Hypokausten), Märkten und lateinischer Schrift. Auch viele Wörter unseres Alltags wie Mauer, Fenster, Keller, Straße, Ziegel und Wein stammen aus dem Lateinischen, und in vielen bayerischen Museen (oder vor Ort in Augsburg, Regensburg, Kempten und Weißenburg) lassen sich diese gegenständlichen Befunde direkt besichtigen."
+    ],
+    "takeaway": "In den Provinzen Raetien und Noricum brachten Straßen, Limes-Kastelle und Städte wie Augsburg und Regensburg römische Bau-, Wohn- und Sprachkultur nach Bayern.",
+    "sourceIds": [
+      "lehrplan",
+      "wiki-raetia",
+      "wiki-noricum",
+      "wiki-limes",
+      "wiki-castra-regina",
+      "wiki-augusta-vindelicum",
+      "wiki-via-claudia",
+      "wiki-romanisierung",
+      "archaeologie-bayern"
+    ],
+    "figures": [
+      "romanisierungAlltag"
+    ],
+    "lab": "romanBavariaLimes",
+    "quiz": {
+      "question": "Wie hieß das 179 n. Chr. unter Kaiser Marc Aurel gegründete römische Legionslager an der Mündung des Regen in die Donau, aus dem die heutige bayerische Stadt Regensburg hervorging?",
+      "answer": "Castra Regina (Lager am Regen)",
+      "wrong": [
+        "Augusta Vindelicum (Augsburg)",
+        "Cambodunum (Kempten)"
+      ],
+      "explanation": "Teile des gewaltigen Nordtors (Porta Praetoria) von Castra Regina stehen noch heute sichtbar in der Regensburger Altstadt."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Römische Spuren in Bayern: Militär oder Romanisierung des Alltags?",
+      "instruction": "Ordne die sechs Befunde richtig ein: Grenzsicherung/Militär oder Romanisierung von Städten, Straßen und Sprache.",
+      "categories": [
+        "Grenzsicherung (Limes & Militär)",
+        "Romanisierung (Städte, Alltag & Sprache)"
+      ],
+      "entries": [
+        {
+          "text": "Legionslager Castra Regina (Regensburg) für rund 6000 Soldaten",
+          "target": 0,
+          "feedback": "Sicherte ab 179 n. Chr. die wichtige Donau-Linie gegen Germanien."
+        },
+        {
+          "text": "Öffentliche Thermen mit Fußbodenheizung (Hypokausten) in Kempten und Weißenburg",
+          "target": 1,
+          "feedback": "Brachte römische Badekultur und Bautechnik in die Provinzen."
+        },
+        {
+          "text": "Wachtürme und Steinmauer des 550 km langen Limes mit Zollkontrolle",
+          "target": 0,
+          "feedback": "Frühwarnsystem und regulierte Grenz- und Handelslinie."
+        },
+        {
+          "text": "Gutshöfe (Villae rusticae) liefern Korn, Obst und Wein an Städte und Lager",
+          "target": 1,
+          "feedback": "Römische Landwirtschaft führte auch Kirschen, Äpfel und Walnüsse ein."
+        },
+        {
+          "text": "Deutsche Lehnwörter aus dem Lateinischen wie Fenster, Mauer, Straße und Keller",
+          "target": 1,
+          "feedback": "Zeigt, welche Techniken die einheimische Bevölkerung von Rom übernahm."
+        },
+        {
+          "text": "Reiterkastell Biriciana in Weißenburg direkt hinter der Grenze",
+          "target": 0,
+          "feedback": "Schnelle Reitertruppen patrouillierten entlang der raetischen Grenze."
+        }
+      ],
+      "conclusion": "Militärische Präsenz und kultureller Austausch (Romanisierung) veränderten Süddeutschland über Jahrhunderte."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre den Begriff „Romanisierung“ anhand von drei konkreten Beispielen aus dem heutigen Bayern (Provinzen Raetien und Noricum).",
+        "hints": [
+          "Beschreibe kurz, was Romanisierung bedeutet (Übernahme römischer Lebensweise, Sprache und Technik).",
+          "Nutze Beispiele aus Städtebau (Augsburg, Kempten), Straßen, Gutshöfen oder Lehnwörtern."
+        ],
+        "model": "Unter Romanisierung versteht man, dass die einheimische Bevölkerung in den Provinzen Schritt für Schritt römische Sprache, Bauweisen und Lebensgewohnheiten übernahm. In Bayern (Raetien und Noricum) zeigt sich das erstens in Städten wie Augusta Vindelicum (Augsburg) oder Cambodunum (Kempten) mit Steinhäusern, Thermen und Fußbodenheizungen. Zweitens verbanden gepflasterte Straßen wie die Via Claudia Augusta die Regionen, und drittens stecken bis heute lateinische Lehnwörter wie Mauer, Fenster oder Straße in unserer Sprache.",
+        "criteria": [
+          "Definiert Romanisierung sachlich richtig.",
+          "Nennt drei konkrete Beispiele mit Bezug zu Bayern/Raetien/Noricum.",
+          "Verknüpft Vergangenheit mit bis heute sichtbaren Spuren."
+        ]
+      },
+      "2": {
+        "prompt": "Stell dir vor, du unternimmst eine Exkursion an ein Limes-Kastell oder Römermuseum in Bayern. Formuliere drei gezielte Beobachtungsfragen, mit denen du archäologische Funde vor Ort untersuchen würdest.",
+        "hints": [
+          "Denke an Überreste wie Grabsteine, Schuhe, Heizungsrohre, Münzen oder Mauerreste.",
+          "Frage nach Material, Herkunft, Zweck und dem Alltagsleben der Menschen."
+        ],
+        "model": "Erste Frage (Alltag & Herkunft): Aus welchen Materialien bestehen Schuhe, Geschirr oder Werkzeuge – wurden sie vor Ort hergestellt oder über Straßen aus Italien importiert? Zweite Frage (Romanisierung): Zeigen Inschriften auf Grabsteinen keltische oder lateinische Namen, und verraten sie, aus welchen Teilen des Imperiums die Soldaten hierher kamen? Dritte Frage (Funktion): Wie belegen Mauerreste, Badebecken oder Getreidespeicher das Zusammenspiel von Militärlager und zivilem Dorf (Vicus)?",
+        "criteria": [
+          "Drei konkrete, auf archäologische Überreste gerichtete Fragen sind formuliert.",
+          "Die Fragen erschließen historische Zusammenhänge (Handel, Herkunft, Alltag).",
+          "Zeigt Methodensicherheit im Umgang mit gegenständlichen Quellen."
+        ]
+      }
+    }
+  },
+  {
+    "id": "gg6-juden-im-reich-diaspora",
+    "lb": 5,
+    "title": "Juden im Römischen Reich: Tempelzerstörung und Diaspora",
+    "period": "LB 5 · Das Imperium Romanum",
+    "intro": "Wie gingen die Römer mit dem Judentum um – und wie prägte die Zerstörung des Jerusalemer Tempels die jüdische Geschichte auf Dauer?",
+    "grundwissen": [
+      "Judentum (Grundbegriff)",
+      "Diaspora",
+      "Tempelzerstörung 70 n. Chr."
+    ],
+    "paragraphs": [
+      "Die Juden in der Provinz Judäa glaubten an einen einzigen Gott (Monotheismus) und lehnten den römischen Kaiserkult streng ab. Zunächst gestand Rom ihnen aus Respekt vor ihrer alten Tradition eine Sonderstellung zu: Sie durften in ihren Synagogen beten, den Sabbat einhalten und waren vom Opfer für den Kaiser befreit. Doch hohe Steuern, Eingriffe mancher Statthalter und politische Spannungen führten im Jahr 66 n. Chr. zu einem großen jüdischen Aufstand gegen die römische Herrschaft.",
+      "Die römische Antwort war unerbittlich: Im Jahr 70 n. Chr. eroberten römische Truppen Jerusalem und zerstörten den Heiligen Tempel – an diese Zerstörung erinnern noch heute Darstellungen auf dem Titusbogen in Rom. Nach einem weiteren niedergeschlagenen Aufstand (132–135 n. Chr.) verloren noch mehr Jüdinnen und Juden ihre Heimat. Viele lebten fortan verstreut in Städten rund um das Mittelmeer – von Alexandria über Antiochia und Ephesos bis nach Rom (und später auch an den Rhein). Diesen Zustand des Lebens außerhalb des eigenen Ursprungslands nennt man Diaspora („Zerstreuung“). Ohne zentralen Tempel wurden nun die Synagoge, das gemeinsame Gebet und das Studium der heiligen Schriften (Tora) zum verbindenden Band weltweit."
+    ],
+    "takeaway": "Nach der Zerstörung des Jerusalemer Tempels 70 n. Chr. lebten viele Juden verstreut in der Diaspora, blieben aber durch Synagogen und die Tora verbunden.",
+    "sourceIds": [
+      "lehrplan",
+      "wiki-diaspora",
+      "wiki-juedischer-krieg",
+      "klexikon-judentum",
+      "wiki-judentum"
+    ],
+    "figures": [
+      "judaeaDiasporaKarte",
+      "diasporaWandel"
+    ],
+    "quiz": {
+      "question": "Was bedeutet der historische Begriff „Diaspora“ im Zusammenhang mit dem Judentum im Römischen Reich?",
+      "answer": "Das verstreute Leben jüdischer Gemeinden außerhalb ihres Ursprungslands Judäa, zum Beispiel in Städten rund um das Mittelmeer.",
+      "wrong": [
+        "Den Namen des wichtigsten römischen Steuerbezirks in Gallien.",
+        "Einen jährlichen Festzug von Senatoren durch Rom."
+      ],
+      "explanation": "Aus dem Griechischen für „Zerstreuung“: Nach 70 und 135 n. Chr. bildeten sich jüdische Gemeinden in vielen Provinzen des Reichs."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Umgang mit dem Judentum und Folgen der Diaspora",
+      "instruction": "Ordne die Aussagen den passenden Phasen und Entwicklungen zu.",
+      "categories": [
+        "Vor dem Aufstand (Sonderstatus)",
+        "Konflikt & Tempelzerstörung",
+        "Leben in der Diaspora"
+      ],
+      "entries": [
+        {
+          "text": "Befreiung vom römischen Kaiserkult aus Achtung vor dem Eingottglauben",
+          "target": 0,
+          "feedback": "Rom achtete zunächst die alte religiöse Überlieferung in Judäa."
+        },
+        {
+          "text": "Aufstand ab 66 n. Chr. gegen drückende Steuern und römische Herrschaft",
+          "target": 1,
+          "feedback": "Spannungen eskalierten in den Jüdischen Krieg."
+        },
+        {
+          "text": "Eroberung Jerusalems und Zerstörung des Tempels im Jahr 70 n. Chr.",
+          "target": 1,
+          "feedback": "Der zentrale Opferkult im Tempel war damit beendet."
+        },
+        {
+          "text": "Jüdische Gemeinden entstehen in Alexandria, Antiochia, Athen und Rom",
+          "target": 2,
+          "feedback": "Menschen nahmen ihre Traditionen an neue Wohnorte im Reich mit."
+        },
+        {
+          "text": "Synagoge und gemeinsame Lesung der Tora ersetzen den Tempel als Mittelpunkt",
+          "target": 2,
+          "feedback": "Ermöglichte den Erhalt von Glauben und Kultur ohne eigenen Staat."
+        },
+        {
+          "text": "Sabbatruhe und eigene Speisegebote werden anfangs geduldet",
+          "target": 0,
+          "feedback": "Solange Ruhe herrschte, beließ Rom oft lokale Gewohnheiten."
+        }
+      ],
+      "conclusion": "Die Diaspora zeigt, wie eine Gemeinschaft über viele Länder hinweg ihre Identität durch Sprache, Schrift und Feste bewahren kann."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre, wie sich das Verhältnis zwischen dem Römischen Reich und den Juden im 1. und 2. Jahrhundert n. Chr. verschärfte und was der Begriff „Diaspora“ bedeutet.",
+        "hints": [
+          "Beginne mit der anfänglichen Duldung (Sonderstellung).",
+          "Nenne die Zerstörung des Tempels 70 n. Chr. und erkläre, wie die Gemeinden danach weiterlebten."
+        ],
+        "model": "Zuerst gestand Rom den Juden in Judäa wegen ihres alten Eingottglaubens Freiheit vom Kaiserkult zu. Nach Unruhen über hohe Steuern und Eingriffe brachen jedoch Aufstände aus: 70 n. Chr. eroberten römische Legionen Jerusalem und zerstörten den Tempel; nach einem weiteren Aufstand 135 n. Chr. verließen noch mehr Menschen das Land. Fortan lebten viele Juden verstreut in Städten rund um das Mittelmeer – das nennt man Diaspora („Zerstreuung“). Zusammengehalten wurden diese Gemeinden nun durch Synagogen und das Studium der Tora.",
+        "criteria": [
+          "Erklärt den Wandel von der Duldung zum offenen Konflikt (70 n. Chr.).",
+          "Definiert Diaspora historisch zutreffend.",
+          "Zeigt die neue Rolle von Synagoge und Tora für den Zusammenhalt."
+        ]
+      },
+      "2": {
+        "prompt": "Bis heute spielen Synagoge und gemeinsame Feste im Judentum weltweit – auch in Bayern – eine zentrale Rolle. Begründe, warum die historischen Erfahrungen der Diaspora dafür so wichtig wurden.",
+        "hints": [
+          "Überlege: Wenn das zentrale Heiligtum zerstört ist, wie bleibt eine Minderheit über tausende Kilometer hinweg verbunden?",
+          "Denke an feste Texte (Tora), Gebetshäuser (Synagogen) und gelebte Traditionen."
+        ],
+        "model": "Nach dem Verlust des einen Tempels in Jerusalem musste das jüdische Leben überall tragfähig werden, egal in welcher Stadt eine Familie wohnte. Statt eines einzigen Orts wurde das geschriebene Wort (Tora), die örtliche Synagoge und die gemeinsame Feier von Sabbat und Festen zum „tragbaren Mittelpunkt“. Genau dadurch überdauerte das Judentum über fast zweitausend Jahre in Europa und weltweit – auch wenn jüdische Gemeinden oft Vorurteile und Verfolgung erlebten.",
+        "criteria": [
+          "Verbindet die Tempelzerstörung mit dem Wandel hin zu Buch/Synagoge.",
+          "Erklärt plausibel die Langlebigkeit einer Minderheitenkultur.",
+          "Bezieht die Gegenwart sachlich ein."
+        ]
+      }
+    }
+  },
+  {
+    "id": "gg6-christen-staatsreligion",
+    "lb": 5,
+    "title": "Christen im Römischen Reich: Von der Verfolgung zur Staatsreligion",
+    "period": "LB 5 · Das Imperium Romanum",
+    "intro": "Wie konnte eine kleine, zeitweise grausam verfolgte Glaubensgruppe innerhalb von dreihundert Jahren zur einzigen Staatsreligion des Imperiums werden?",
+    "grundwissen": [
+      "Christentum (Grundbegriff)",
+      "Mailänder Vereinbarung 313",
+      "Staatsreligion 380/391"
+    ],
+    "paragraphs": [
+      "Ausgangspunkt des Christentums war das Wirken Jesu von Nazaret in Judäa um 30 n. Chr. Seine Anhänger glaubten an einen Gott, an Nächstenliebe und an die Gleichheit aller Menschen vor Gott – auch der Armen, Frauen und Sklaven. Weil sich Christen weigerten, dem Kaiser als Gott zu opfern, galten sie den römischen Behörden als staatsfeindlich. Über die ersten drei Jahrhunderte hinweg kam es daher immer wieder zu Ausgrenzung und blutigen Verfolgungen, etwa unter den Kaisern Nero und Diokletian. Dennoch breiteten sich christliche Gemeinden entlang der guten römischen Straßen und Seewege rasch im ganzen Reich aus.",
+      "Im 4. Jahrhundert n. Chr. folgte einer der größten Umbrüche in der Geschichte des Imperium Romanum. Kaiser Konstantin der Große erkannte die wachsende Stärke der Christen und erließ im Jahr 313 n. Chr. mit der Mailänder Vereinbarung Religionsfreiheit für alle Religionen, besonders das Christentum („Konstantinische Wende“). Schon wenige Jahrzehnte später ging Kaiser Theodosius I. noch einen entscheidenden Schritt weiter: 380 und 391 n. Chr. erhob er das Christentum zur alleinigen verbindlichen Staatsreligion und verbot alle alten Götterkulte sowie die Olympischen Spiele."
+    ],
+    "takeaway": "Auf Verfolgungen folgten 313 n. Chr. die Duldung durch Konstantin und 380/391 n. Chr. die Erhebung zur alleinigen Staatsreligion unter Theodosius.",
+    "sourceIds": [
+      "lehrplan",
+      "wiki-christentum-rom",
+      "wiki-konstantin",
+      "wiki-mailand",
+      "klexikon-christentum",
+      "wiki-christentum"
+    ],
+    "figures": [
+      "christentumZeitleiste"
+    ],
+    "quiz": {
+      "question": "Was änderte sich für die Christen im Römischen Reich durch die Mailänder Vereinbarung von 313 n. Chr. unter Kaiser Konstantin?",
+      "answer": "Das Christentum wurde geduldet, Verfolgungen endeten und Gemeinden bekamen beschlagnahmten Besitz zurück.",
+      "wrong": [
+        "Alle anderen Religionen wurden bereits im Jahr 313 vollständig verboten.",
+        "Die Christen erhielten eine eigene Provinz abseits des Mittelmeers zugewiesen."
+      ],
+      "explanation": "313 brachte Religionsfreiheit und Gleichstellung – erst ab 380/391 unter Kaiser Theodosius wurde das Christentum alleinige Staatsreligion."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Der Aufstieg des Christentums im Imperium",
+      "instruction": "Ordne die fünf Stationen von den Anfängen bis zur Staatsreligion zeitlich richtig.",
+      "categories": [],
+      "entries": [
+        {
+          "text": "um 30 n. Chr.: Wirken und Kreuzigung Jesu in Judäa; erste Gemeinden entstehen",
+          "target": 0,
+          "feedback": "Entstand im jüdischen Umfeld und öffnete sich rasch für alle Völker im Reich."
+        },
+        {
+          "text": "1.–3. Jh. n. Chr.: Verweigerung des Kaiserkults führt zu zeitweiligen Christenverfolgungen",
+          "target": 1,
+          "feedback": "Trotz Verfolgung wuchs der Zusammenhalt in den Gemeinden durch Hilfe für Arme und Kranke."
+        },
+        {
+          "text": "313 n. Chr.: Mailänder Vereinbarung unter Kaiser Konstantin erlaubt das Christentum frei",
+          "target": 2,
+          "feedback": "Wichtige Wende: Vom verbotenen Glauben zur geförderten Religion."
+        },
+        {
+          "text": "380/391 n. Chr.: Kaiser Theodosius erklärt das Christentum zur alleinigen Staatsreligion",
+          "target": 3,
+          "feedback": "Andere Tempel wurden geschlossen; die antiken Olympischen Spiele endeten."
+        },
+        {
+          "text": "Folgezeit: Die christliche Kirche prägt Verwaltung, Bildung und Kultur Europas bis ins Mittelalter",
+          "target": 4,
+          "feedback": "Bischöfe übernahmen oft auch wichtige Ordnungsaufgaben in den Städten."
+        }
+      ],
+      "conclusion": "Aus einer kleinen, verfolgten Gruppe wurde die prägende Religion der Spätantike und des Mittelalters."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Beschreibe den tiefgreifenden Umbruch für die Christen zwischen 313 n. Chr. (Konstantin) und 380/391 n. Chr. (Theodosius).",
+        "hints": [
+          "Erkläre zuerst, warum Christen zuvor überhaupt verfolgt wurden (Kaiserkult).",
+          "Unterscheide genau zwischen Religionsfreiheit/Duldung (313) und alleiniger Staatsreligion (380/391)."
+        ],
+        "model": "Zuvor waren Christen im Römischen Reich zeitweise verfolgt worden, weil sie dem Kaiser keine göttlichen Opfer brachten. Im Jahr 313 n. Chr. beendete Kaiser Konstantin mit der Mailänder Vereinbarung diese Verfolgung und gewährte freie Religionsausübung. Unter Kaiser Theodosius folgte 380/391 n. Chr. ein noch größerer Umbruch: Nun wurde das Christentum zur alleinigen Staatsreligion erhoben, während alte Tempelkulte verboten wurden.",
+        "criteria": [
+          "Begründet die Konflikte vor 313 sachlich (Ablehnung des Kaiserkults).",
+          "Unterscheidet präzise zwischen 313 (Freiheit/Duldung) und 380/391 (Staatsreligion).",
+          "Kennzeichnet den Wandel als tiefen Umbruch im Imperium Romanum."
+        ]
+      },
+      "2": {
+        "prompt": "Vergleiche zwei historische Entwicklungen: Als Christen verfolgt waren, forderten sie Duldung für ihren Glauben; als sie Staatsreligion wurden, verbot der Staat andere Kulte. Beurteile diesen Wandel.",
+        "hints": [
+          "Überlege, was Religionsfreiheit bedeutet – gilt sie nur für die eigene Gruppe oder auch für Andersdenkende?",
+          "Formuliere ein Urteil aus heutiger Sicht (z. B. Grundgesetz)."
+        ],
+        "model": "Die Mailänder Vereinbarung von 313 n. Chr. war ein großer Fortschritt für religiöse Toleranz, weil Menschen wegen ihres Glaubens nicht mehr verfolgt werden durften. Mit der Erhebung zur alleinigen Staatsreligion 380/391 ging diese Freiheit jedoch für andere Religionen wieder verloren: Alte Kulte wurden verboten, und auch das Judentum geriet zunehmend unter Druck. Aus heutiger Sicht gehört zu echter Glaubensfreiheit, dass jeder Mensch frei wählen darf – auch Minderheiten.",
+        "criteria": [
+          "Erkennt den Unterschied zwischen Gleichberechtigung (313) und Ausschluss anderer (380/391).",
+          "Stellt einen klaren Bezug zur modernen Vorstellung von Religionsfreiheit her.",
+          "Urteilt nachvollziehbar und fair."
+        ]
+      }
+    }
+  }
+]
