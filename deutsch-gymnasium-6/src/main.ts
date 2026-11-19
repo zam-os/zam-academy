@@ -348,7 +348,7 @@ element("#theme").addEventListener("click", () => {
 element("#zam").addEventListener("click", () =>
 	showDialog(
 		"Mit ZAM behalten",
-		"<p>Zu den Lektionen gehören 98 Wiederholungsfragen für ZAM. Dieses Paket ist eine lokale Fassung. Nach der Veröffentlichung kannst du die Karten über „Aus der ZAM Academy“ laden.</p>",
+		"<p>Zu den Lektionen gehören 98 Wiederholungsfragen. Öffne in ZAM „Aus der ZAM Academy“ und wähle „Deutsch 6 Gymnasium“.</p>",
 	),
 );
 element("#reset").addEventListener("click", () => {

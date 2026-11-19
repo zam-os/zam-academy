@@ -13,7 +13,7 @@ Each lesson has a worked example, an interactive model with three targets, a qui
 
 ```sh
 npm ci
-npm run dev         # http://localhost:5258/
+npm run dev         # http://localhost:5260/
 npm test
 npm run check:curriculum
 npm run package:zip # release/ZAM-Academy-Deutsch-Gymnasium-6-offline.zip
@@ -22,4 +22,4 @@ npm run test:browser
 
 Run `npm run test:browser` after building the app. Set `CHROME_BIN` to the local Chrome executable when the default macOS path does not apply. The ZIP contains a single HTML file and starters for Windows, macOS and Linux. The two speech recordings are embedded, with transcripts. Source pages open on request.
 
-Version 0.0 is a local edition with teacher review pending. [cell.json](cell.json) holds 98 ZAM review items with stable lesson links. The [curriculum and legacy review](../docs/deutsch-gymnasium-6-coverage.md) documents the evidence and the scope of the card proposal.
+Version 0.0 has teacher review pending. [cell.json](cell.json) holds 98 ZAM review items with stable lesson links. The [curriculum and legacy review](../docs/deutsch-gymnasium-6-coverage.md) documents the evidence and the scope of the card proposal.

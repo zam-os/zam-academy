@@ -36,7 +36,7 @@ chmodSync(join(bundle, "Start-Mac.command"), 0o755);
 chmodSync(join(bundle, "start-linux.sh"), 0o755);
 writeFileSync(
 	join(bundle, "README-START.txt"),
-	`ZAM ACADEMY · DEUTSCH 6 GYMNASIUM\n\n1. Extract this ZIP.\n2. Open ${app} in your browser or use the matching starter.\n\nNo installation, server or account is needed. The package contains 49 lessons,\n98 case decisions and guided and transfer tasks. Audio and visuals are embedded.\nDrafts and progress remain in this browser. A notice appears if storage is blocked.\n\nFree writing uses model comparison and self-assessment. It is not automatically\ngraded. Real conversations, talks, performances, independent research and at least\none complete children's or young adult book complement the app.\n\nVersion 0.0: local edition. Teacher review is pending.\nSource links need a connection and open only when clicked.\n`,
+	`ZAM ACADEMY · DEUTSCH 6 GYMNASIUM\n\n1. Extract this ZIP.\n2. Open ${app} in your browser or use the matching starter.\n\nNo installation, server or account is needed. The package contains 49 lessons,\n98 case decisions and guided and transfer tasks. Audio and visuals are embedded.\nDrafts and progress remain in this browser. A notice appears if storage is blocked.\n\nFree writing uses model comparison and self-assessment. It is not automatically\ngraded. Real conversations, talks, performances, independent research and at least\none complete children's or young adult book complement the app.\n\nVersion 0.0: teacher review is pending.\nSource links need a connection and open only when clicked.\n`,
 );
 const zip = join(release, `${name}-offline.zip`);
 execFileSync("zip", ["-r", "-q", zip, name], { cwd: release });

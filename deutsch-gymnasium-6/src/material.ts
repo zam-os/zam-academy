@@ -18,6 +18,6 @@ export function renderMaterial(lesson: Lesson): string {
 		return `<p>${instruction} Die Aufnahme nutzt eine Computerstimme.</p><audio controls preload="none" aria-label="${esc(lesson.title)} · Computerstimme" src="${esc(audio)}"></audio><details><summary>Hörtext als Text</summary>${text}</details>`;
 	}
 	if (lesson.id === "d6-diskontinuierlich")
-		return `<table class="material-table"><caption>Erfundener Fahrplan · keine aktuelle Verkehrsauskunft</caption><thead><tr><th scope="col">Fahrt</th><th scope="col">Schule ab</th><th scope="col">Museum an</th></tr></thead><tbody><tr><th scope="row">A</th><td>14:10 Uhr</td><td>14:28 Uhr</td></tr><tr><th scope="row">B</th><td>14:30 Uhr</td><td>14:48 Uhr</td></tr><tr><th scope="row">C</th><td>14:50 Uhr</td><td>15:08 Uhr</td></tr></tbody></table>${text}`;
+		return `<table class="material-table"><caption>Erfundener Fahrplan · Linie 4</caption><thead><tr><th scope="col">Fahrt</th><th scope="col">Schule ab</th><th scope="col">Museum an</th></tr></thead><tbody><tr><th scope="row">A</th><td>14:10 Uhr</td><td>14:28 Uhr</td></tr><tr><th scope="row">B</th><td>14:30 Uhr</td><td>14:48 Uhr</td></tr><tr><th scope="row">C</th><td>14:50 Uhr</td><td>15:08 Uhr</td></tr></tbody></table>${text}`;
 	return text;
 }

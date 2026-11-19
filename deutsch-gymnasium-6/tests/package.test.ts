@@ -43,7 +43,7 @@ const lesson = (slug: string) => {
 };
 
 describe("Grade 6 Gymnasium package contract", () => {
-	it("pins new ULIDs, lesson anchors, independent storage and local-only publication", () => {
+	it("pins new ULIDs, lesson anchors, independent storage and publication metadata", () => {
 		expect(LESSONS.map((l) => l.id)).toEqual(contract.lessons);
 		expect(LESSONS).toHaveLength(49);
 		expect(cell.atoms).toHaveLength(49);
@@ -58,7 +58,7 @@ describe("Grade 6 Gymnasium package contract", () => {
 		expect(
 			STAGES.map((s) => LESSONS.filter((l) => l.stage === s.id).length),
 		).toEqual([8, 12, 8, 21]);
-		expect(publication).toMatchObject({ schema: 1, status: "local-only" });
+		expect(publication).toMatchObject({ schema: 1, status: "ready" });
 		expect(STORAGE_KEY).toContain("deutsch_gym6");
 		expect(STORAGE_KEY).not.toMatch(/rs6|rs5|mittelschule/);
 	});

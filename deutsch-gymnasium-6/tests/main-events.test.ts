@@ -155,7 +155,7 @@ async function openApp(route = "", initial = freshProgress()) {
 		node.dataset.view = view;
 		return node;
 	});
-	const url = new URL(`http://localhost/deutsch-realschule-6/${route}`);
+	const url = new URL(`http://localhost/deutsch-gymnasium-6/${route}`);
 	const windowFixture = Object.assign(new EventTarget(), { scrollTo: vi.fn() });
 	vi.stubGlobal("document", {
 		documentElement: { dataset: {} },
