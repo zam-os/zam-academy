@@ -76,8 +76,8 @@ Every row has its own reason. Several old synthesis prompts bundle much more
 than a new short retrieval, so a shared topic cannot move their mastery. The
 old narrative perspective generalisation, inserted-speech punctuation schema
 and absolute spelling rules need particular care; the new lessons do not copy
-those claims. The one A proposal preserves the same atomic numbers question.
-Thomas approved 1 same-retrieval transfers on 2026-11-19. The published mapping uses `replaces` for those transfers. The 15 keep-active cards retain their review histories on their existing IDs. The attached migration check covers repeated installs and conflicting histories.
+those claims. The approved A transfer covers the same question about traditional fairy-tale numbers.
+Thomas approved one same-retrieval transfer on 2026-11-19. The published mapping uses `replaces` for those transfers. The 15 keep-active cards retain their review histories on their existing IDs. The attached migration check covers repeated installs and conflicting histories.
 
 The neighbouring-grade legacy inventory contains no Gymnasium Grade 4 or Grade
 6 German cell. Realschule and Mittelschule histories belong to their respective
