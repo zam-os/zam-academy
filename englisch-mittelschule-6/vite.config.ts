@@ -7,7 +7,7 @@ export default defineConfig({
 	base: "/englisch-mittelschule-6/",
 	plugins: [viteSingleFile()],
 	server: {
-		port: 5261,
+		port: 5262,
 		strictPort: true,
 		open: false,
 	},
