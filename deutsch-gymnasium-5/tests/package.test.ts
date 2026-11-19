@@ -98,17 +98,17 @@ describe("Grade 5 Gymnasium package contract", () => {
 			),
 		];
 		expect(old).toHaveLength(16);
-		expect(mapping.status).toBe("proposal-only");
-		expect(mapping.approved).toBeNull();
-		expect(mapping.rows.map((r) => r.old_id).sort()).toEqual(
+		expect(mapping.status).toBe("approved");
+		expect(mapping.approved).toBe("2026-11-19");
+		expect(mapping.rows.map((r) => r.de_by_id).sort()).toEqual(
 			old.map((i) => i.id).sort(),
 		);
-		expect(new Set(mapping.rows.map((r) => r.old_id)).size).toBe(16);
+		expect(new Set(mapping.rows.map((r) => r.de_by_id)).size).toBe(16);
 		expect(mapping.rows.filter((r) => r.category === "A")).toHaveLength(1);
 		expect(mapping.rows.filter((r) => r.category === "C")).toHaveLength(15);
 		for (const row of mapping.rows) {
 			expect(row.action).toBe(
-				row.category === "A" ? "propose-replace-after-approval" : "keep-active",
+				row.category === "A" ? "replace" : "keep-active",
 			);
 			if (row.academy_slug)
 				expect(
@@ -120,7 +120,6 @@ describe("Grade 5 Gymnasium package contract", () => {
 		expect(cell).not.toHaveProperty("retired_items");
 		for (const atom of cell.atoms)
 			for (const item of atom.practice_items) {
-				expect(item).not.toHaveProperty("replaces");
 				expect(old.some((o) => o.id === item.id)).toBe(false);
 			}
 	});

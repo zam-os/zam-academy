@@ -61,7 +61,7 @@ to the compared draft. The two writing levels keep separate drafts and
 completion. Editing removes the old confirmation. localStorage failures leave
 practice usable and display an explicit save warning.
 
-## Legacy evidence and proposed history decisions
+## Legacy evidence and approved mapping
 
 Both legacy Gymnasium Grade 5 German cells are captured byte-for-byte from
 `zam-os/zam`; their exact source commit, paths and LF-byte SHA-256 values are
@@ -69,7 +69,7 @@ in [`replaces-de-by.json`](../deutsch-gymnasium-5/replaces-de-by.json).
 
 | Legacy cell | Items | Proposal |
 | --- | ---: | --- |
-| `de-by:gymnasium-5-deutsch-erzaehlen-maerchen-fabeln` | 8 | One A proposal for traditional fairy-tale numbers; seven C keep-active rows |
+| `de-by:gymnasium-5-deutsch-erzaehlen-maerchen-fabeln` | 8 | One approved A transfer for traditional fairy-tale numbers; seven C keep-active rows |
 | `de-by:gymnasium-5-deutsch-grammatik-faelle-rechtschreibung` | 8 | Eight C keep-active rows |
 
 Every row has its own reason. Several old synthesis prompts bundle much more
@@ -77,9 +77,7 @@ than a new short retrieval, so a shared topic cannot move their mastery. The
 old narrative perspective generalisation, inserted-speech punctuation schema
 and absolute spelling rules need particular care; the new lessons do not copy
 those claims. The one A proposal preserves the same atomic numbers question.
-Thomas has not approved that transfer: `approved` is null, no practice item
-declares `replaces`, and there is no `retired_items` list. All old review
-evidence remains active and unchanged. No B mapping is proposed.
+Thomas approved 1 same-retrieval transfers on 2026-11-19. The published mapping uses `replaces` for those transfers. The 15 keep-active cards retain their review histories on their existing IDs. The attached migration check covers repeated installs and conflicting histories.
 
 The neighbouring-grade legacy inventory contains no Gymnasium Grade 4 or Grade
 6 German cell. Realschule and Mittelschule histories belong to their respective
