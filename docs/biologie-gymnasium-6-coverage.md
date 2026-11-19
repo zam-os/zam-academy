@@ -76,11 +76,9 @@ Thomas approved 3 same-retrieval transfers on 2026-11-19. The published mapping 
 | Säuger/Vögel `…J07` | Welche Flugart nutzen Greifvögel und Störche, um in aufsteigenden warmen Luftstr… | **A** | `replace` | `bg6-fliegen-check` – Same atomic retrieval: the flight type of buzzards and storks rising in warm updrafts without wingbeats (Segelflug). The successor quick check asks exactly this. |
 | Säuger/Vögel `…J08` | Erkläre die Entstehung des dynamischen Auftriebs am gewölbten Vogelflügel nach d… | **C** | `keep-active` | Multi-part prompt on lift after Bernoulli, four flight types, the structure of the bird egg and altricial versus precocial young; spread over bg6-fliegen and bg6-nesthocker-nestfluechter and partly beyond NT6. |
 
-### Questions for Thomas
+### Legacy scope
 
-1. Approve the four A rows? `…6F…J05` → `bg6-fortpflanzung-wasser-land-recall` moves a tier-1 history to a tier-2 card; if that is unwanted, it becomes C.
-2. `de-by:gymnasium-5-biologie-pflanzen-bluetenbau-samen` `J01`, `J02`, `J07`, `J08` (plant organs, vascular bundles, germination conditions, seed structure) stay keep-active in the approved mapping of `biologie-gymnasium-5`, whose notes point to NT6 1.2. This package does not claim them. Should a later step let `bg6-keimung-recall` (germination conditions) or `bg6-samen-frucht-recall` (seed parts) replace `J07` or `J08`?
-3. None of the 13 C cards is proposed for retirement. Several contain content beyond NT6 (countercurrent yield figures, Archaeopteryx, Bernoulli lift); should any leave active reviews?
+The three approved replacements preserve the same retrieval. The amniotic-egg question and the twelve other C cards keep their existing IDs and learning history. The Grade 5 biology fixtures stay under the Grade 5 package's mapping.
 
 ## Sources
 
