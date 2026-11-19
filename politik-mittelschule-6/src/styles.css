@@ -912,6 +912,11 @@ dialog::backdrop {
   }
 }
 @media (max-width: 390px) {
+  .lesson-heading h1 {
+    font-size: clamp(1.65rem, 8.5vw, 2rem);
+    hyphens: auto;
+    overflow-wrap: anywhere;
+  }
   .header-actions {
     width: 100%;
   }
@@ -1151,24 +1156,24 @@ article[data-lb] .panel {
 }
 .diagram-hierarchy {
   grid-auto-flow: row;
-  justify-items: center;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  row-gap: 1.25rem;
 }
 .diagram-hierarchy li {
+  grid-column: span 2;
   align-items: center;
   text-align: center;
+  hyphens: auto;
 }
-.diagram-hierarchy li:nth-child(1) {
-  width: 64%;
-}
-.diagram-hierarchy li:nth-child(2) {
-  width: 82%;
-}
-.diagram-hierarchy li:nth-child(3) {
-  width: 100%;
+.diagram-hierarchy li:last-child {
+  grid-column: 2 / span 2;
 }
 @media (max-width: 540px) {
   .diagram {
     grid-auto-flow: row;
+  }
+  .diagram-hierarchy li {
+    padding-inline: 0.4rem;
   }
   .diagram-flow li + li::before {
     content: "↓";

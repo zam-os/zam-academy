@@ -50,7 +50,8 @@ export const FIGURES: Record<string, FigureDef> = {
   },
   staende: {
     title: "Das Modell der drei Stände",
-    caption: "Die Form zeigt vereinfacht Rang und Einfluss. Die Breite steht für keine gemessene Personenzahl.",
+    caption:
+      "Klerus und Adel stehen oben, weil sie oft mehr Rechte und Einfluss hatten als die arbeitenden Menschen. Wie viel Macht ein Abt oder eine Herzogin tatsächlich hatte, hing von ihren jeweiligen Rechten ab.",
     layout: "hierarchy",
     items: [
       ["🔔", "Klerus · beten", "Zum Beispiel Priester und Äbtissinnen"],
