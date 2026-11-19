@@ -96,19 +96,11 @@ this package's twelve-item proposal. Overlapping knowledge is not authority to
 transfer their histories; any future cross-grade mapping needs a separate
 explicit decision and must avoid duplicate ownership.
 
-The cell validator uses a disposable library with CI's published `zam-core`
-version. It checks installation without enrolment, 100 fresh cards, repeated
-installation/enrolment and unchanged cards/reviews after installing the two
-legacy cells. It never opens a configured learner library.
+The migration validator uses disposable libraries and the published `zam-core` version pinned by CI. It checks fresh enrolment, four history transfers, all eight keep-active histories, idempotent installation and conflicting histories.
 
 ## Verification and publication
 
-The package was first merged as `local-only`. On 2026-11-17 Thomas asked to
-release it as `ready`: it is now in `academy.json`, Pages and the public
-catalog at package version 0.0 (no teacher acceptance yet). Its cell still
-declares neither `replaces` nor `retired_items`, so the catalog's mapping gate
-needs no approval. CI discovers it by its own `package.json` and runs its
-tests, offline/curriculum checks, browser check and disposable-library check.
+The package first appeared in the Academy catalog at 0.0. Version 0.1 publishes the four approved replacements. CI runs the package tests, offline and curriculum checks, browser checks and the migration validator.
 
 Reproduce the package checks from `deutsch-realschule-6`:
 
@@ -141,5 +133,4 @@ ZAM_CORE=file:///path/to/zam-core/dist/index.js node scripts/validate-cells.mjs
 ZAM_CORE=file:///path/to/zam-core/dist/index.js node deutsch-realschule-6/scripts/validate-cell.mjs
 ```
 
-Publishing the app and later synchronising the ZAM bundle are separate steps.
-No publication, mapping approval or legacy retirement is performed here.
+The published cell is the input to the ZAM bundle sync. The ZAM release archives the superseded school-cell fixtures.
