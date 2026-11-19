@@ -65,10 +65,9 @@ function learnerText(l: (typeof LESSONS)[number]): string {
   ].join("\n");
 }
 
-/** Successors proposed in replaces-de-by.json; none declares replaces before Thomas approves. */
+/** Successors approved in replaces-de-by.json. */
 const PROPOSED_SUCCESSORS: Record<string, string> = {
   "01K4YB6F000000000000000J03": "bg6-metamorphose-check",
-  "01K4YB6F000000000000000J05": "bg6-fortpflanzung-wasser-land-recall",
   "01K4YB6S000000000000000J01": "bg6-wirbeltierklassen-check",
   "01K4YB6S000000000000000J07": "bg6-fliegen-check",
 };
@@ -230,7 +229,6 @@ describe("ZAM cell and public contract", () => {
         expect(item.id).toMatch(ULID_RE);
         expect(seen.has(item.id)).toBe(false);
         seen.add(item.id);
-        expect("replaces" in item).toBe(false);
         expect(item.source_link).toBe(atom.source_link);
       }
       expect(t1.slug).toBe(`${lesson.id}-check`);
@@ -260,9 +258,9 @@ describe("ZAM cell and public contract", () => {
     expect(cell.sources.map((s) => s.uri)).toEqual(SOURCES.map((s) => s.url));
   });
 
-  it("keeps the card mapping a proposal and maps every old item exactly once", () => {
-    expect(mapping.status).toBe("proposal-only");
-    expect(mapping.approved).toBeNull();
+  it("maps every old item exactly once", () => {
+    expect(mapping.status).toBe("approved");
+    expect(mapping.approved).toBe("2026-11-19");
     expect(mapping.sources).toHaveLength(2);
     const fixtures = import.meta.glob<{ default: { tile_id: string; atoms: Array<{ practice_items: Array<{ id: string }> }> } }>(
       "./fixtures/de-by-*.json",
@@ -271,7 +269,7 @@ describe("ZAM cell and public contract", () => {
     expect(Object.values(fixtures).map((f) => f.default.tile_id).sort()).toEqual(mapping.sources.map((s) => s.tile_id).sort());
     const oldIds = Object.values(fixtures).flatMap((f) => f.default.atoms.flatMap((a) => a.practice_items.map((it) => it.id)));
     expect(oldIds).toHaveLength(16);
-    expect(mapping.rows.map((r) => r.old_id).sort()).toEqual([...oldIds].sort());
+    expect(mapping.rows.map((r) => r.de_by_id).sort()).toEqual([...oldIds].sort());
     const slugs = cell.atoms.flatMap((a) => a.practice_items.map((it) => it.slug));
     for (const row of mapping.rows) {
       expect(["A", "B", "C"]).toContain(row.category);
@@ -280,12 +278,12 @@ describe("ZAM cell and public contract", () => {
         expect(row.academy_slug).toBeNull();
         expect(row.action).toBe("keep-active");
       } else {
-        expect(row.action).toBe("propose-replace-after-approval");
+        expect(row.action).toBe("replace");
         expect(slugs.filter((s) => s === row.academy_slug)).toHaveLength(1);
-        expect(PROPOSED_SUCCESSORS[row.old_id]).toBe(row.academy_slug);
+        expect(PROPOSED_SUCCESSORS[row.de_by_id]).toBe(row.academy_slug);
       }
     }
-    expect(mapping.rows.filter((r) => r.category === "A")).toHaveLength(4);
+    expect(mapping.rows.filter((r) => r.category === "A")).toHaveLength(3);
     expect(mapping.rows.filter((r) => r.category === "B")).toHaveLength(0);
     const successors = mapping.rows.filter((r) => r.academy_slug).map((r) => r.academy_slug);
     expect(new Set(successors).size).toBe(successors.length);
