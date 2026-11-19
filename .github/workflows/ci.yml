@@ -74,13 +74,13 @@ jobs:
       - name: Check verbatim Englisch 6 Realschule curriculum coverage
         if: matrix.app == 'englisch-realschule-6'
         run: node scripts/check-curriculum.mjs
-      - name: Check Grade 6 Realschule German curriculum and offline bundle
-        if: matrix.app == 'deutsch-realschule-6'
+      - name: Check Grade 6 German curriculum and offline bundle
+        if: matrix.app == 'deutsch-realschule-6' || matrix.app == 'deutsch-gymnasium-6'
         run: |
           node scripts/check-curriculum.mjs
           node scripts/verify-release.mjs
-      - name: Check Grade 6 Realschule German in headless Chrome
-        if: matrix.app == 'deutsch-realschule-6'
+      - name: Check Grade 6 German in headless Chrome
+        if: matrix.app == 'deutsch-realschule-6' || matrix.app == 'deutsch-gymnasium-6'
         env:
           CHROME_BIN: /usr/bin/google-chrome
         run: node scripts/verify-browser.mjs
@@ -223,6 +223,8 @@ jobs:
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node englisch-gymnasium-5/scripts/validate-migration.mjs
       - name: Verify Grade 6 Realschule German enrolment and preserve legacy evidence
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node deutsch-realschule-6/scripts/validate-cell.mjs
+      - name: Validate Grade 6 Gymnasium German cell and preserve legacy history
+        run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node deutsch-gymnasium-6/scripts/validate-cell.mjs
       - name: Verify Grade 5 Gymnasium German enrolment and preserve legacy evidence
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node deutsch-gymnasium-5/scripts/validate-cell.mjs
       - name: Verify Grade 5 Mittelschule English enrolment and recall

@@ -1,0 +1,2924 @@
+[
+	{
+		"id": "d6-sprachebenen",
+		"stage": "sprache",
+		"title": "Standard, Umgangssprache und Dialekt passend wählen",
+		"skill": "Du achtest auf Situation und Gegenüber und respektierst sprachliche Vielfalt.",
+		"bindings": [
+			"4.1"
+		],
+		"paragraphs": [
+			"Standardsprache erleichtert die überregionale Verständigung und wird in vielen schulischen und förmlichen Situationen erwartet. Umgangssprache ist oft lockerer und stärker situationsgebunden. Dialekte haben eigene regionale Formen und Regeln; sie sind kein fehlerhaftes Deutsch.",
+			"Beispiel: „Servus, kannst du kurz mit anpacken?“ passt in einen vertrauten Alltag. „Guten Tag, könnten Sie uns beim Tragen helfen?“ passt eher zu einer unbekannten erwachsenen Person. Passe Anrede und Wortwahl an, ohne den Eigenwert anderer Sprachformen abzuwerten. Frage bei einer unbekannten regionalen Wendung respektvoll nach.",
+			"Auch Figuren in literarischen Texten sprechen manchmal Dialekt. In einem bayerisch gefärbten Dialog kann „I geh hoam“ gegenüber „Ich gehe heim“ Nähe oder einen regionalen Bezug andeuten. Die genaue Form kann sich von Ort zu Ort unterscheiden."
+		],
+		"material": "Situation A: Du begrüßt eine vertraute Person aus deiner Gruppe. Situation B: Du bittest eine unbekannte Besucherin um eine Auskunft. Situation C: Eine Person verwendet ein regionales Wort, das du noch nicht kennst.",
+		"materialLabel": "Eigens geschriebener Übungstext · Beispieldaten sind erfunden",
+		"sourceIds": [
+			"lehrplan"
+		],
+		"takeaway": "Angemessenheit hängt von Situation und Gegenüber ab; Dialekt und Umgangssprache haben eigenen Wert.",
+		"lehrplan": "D6 · 4.1",
+		"check": {
+			"wrong": "Standardsprache ist in keiner Situation nützlich.",
+			"explanation": "Sprachliche Vielfalt wird respektiert; zugleich kann Standardsprache die gemeinsame Verständigung erleichtern."
+		},
+		"visual": {
+			"kind": "register",
+			"title": "Standard, Umgangssprache und Dialekt passend wählen · im Modell",
+			"steps": [
+				{
+					"label": "Vertraut",
+					"text": "Servus, hilfst du kurz?",
+					"detail": "Ein lockerer Gruß kann Nähe ausdrücken, wenn er zur Beziehung passt.",
+					"blocks": [
+						{
+							"text": "Servus, hilfst du kurz?",
+							"label": "vertraut",
+							"tone": "speech"
+						}
+					]
+				},
+				{
+					"label": "Förmlich",
+					"text": "Guten Tag, könnten Sie …?",
+					"detail": "Eine höfliche Anrede erleichtert die Ansprache einer unbekannten Person.",
+					"blocks": [
+						{
+							"text": "Guten Tag, könnten Sie helfen?",
+							"label": "förmlich",
+							"tone": "report"
+						}
+					]
+				},
+				{
+					"label": "Nachfragen",
+					"text": "Was bedeutet dieses Wort?",
+					"detail": "Eine respektvolle Rückfrage klärt Verstehen, ohne eine Sprachform abzuwerten.",
+					"blocks": [
+						{
+							"text": "Was bedeutet das regionale Wort?",
+							"label": "Verstehen klären",
+							"tone": "comparison"
+						}
+					]
+				}
+			],
+			"initial": {
+				"blocks": [
+					{
+						"text": "Bitte um Hilfe",
+						"label": "Sprechabsicht",
+						"tone": "neutral"
+					}
+				]
+			}
+		},
+		"cases": [
+			{
+				"prompt": "Du verstehst ein Dialektwort nicht. Was hilft?",
+				"options": [
+					"Ich frage nach der Bedeutung.",
+					"Ich erkläre die Person für ungebildet."
+				],
+				"answer": "Ich frage nach der Bedeutung.",
+				"feedback": "Eine unbekannte Form ist ein Anlass zum Nachfragen und nicht zur Abwertung."
+			},
+			{
+				"prompt": "Was passt zur Buchvorstellung vor Gästen?",
+				"options": [
+					"Absichtlich nur unverständliche Gruppenwörter.",
+					"Eine allgemein verständliche Standardsprache."
+				],
+				"answer": "Eine allgemein verständliche Standardsprache.",
+				"feedback": "Adressatenbezug heißt, Verständlichkeit für das tatsächliche Publikum zu ermöglichen."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Formuliere für A einen lockeren und für B einen höflichen Gruß mit Bitte.",
+				"model": "A: Servus, kannst du mir beim Aufbauen helfen? B: Guten Tag, könnten Sie mir bitte sagen, wo der Eingang zur Ausstellung ist?",
+				"criteria": [
+					"Ich beachte die Beziehung.",
+					"Ich formuliere eine klare Bitte.",
+					"Ich wähle passende Anreden."
+				]
+			},
+			"2": {
+				"prompt": "Ein Kind sagt: „Wer Dialekt spricht, kann kein richtiges Deutsch.“ Antworte sachlich und erkläre, wann Standardsprache hilfreich ist.",
+				"model": "Dialekte haben eigene Formen und Regeln und sind kein Zeichen fehlender Fähigkeit. Standardsprache hilft, wenn Menschen aus verschiedenen Regionen zusammenkommen oder ein förmlicher Anlass vorliegt. Man kann je nach Situation unterschiedliche Sprachformen nutzen.",
+				"criteria": [
+					"Ich widerspreche ohne Abwertung.",
+					"Ich erkläre den Eigenwert des Dialekts.",
+					"Ich nenne eine Funktion der Standardsprache."
+				]
+			}
+		},
+		"extension": "Erprobe passende Formulierungen im Gespräch und sammle regionale Wörter mit ihren Bedeutungen. Frage nach, statt Sprachformen zu bewerten."
+	},
+	{
+		"id": "d6-redensarten",
+		"stage": "sprache",
+		"title": "Sprachbilder und Sprichwörter entschlüsseln",
+		"skill": "Du unterscheidest wörtliche und übertragene Bedeutung und prüfst Herkunft.",
+		"bindings": [
+			"4.1",
+			"4.2"
+		],
+		"paragraphs": [
+			"Eine Redensart ist eine feste Wendung mit übertragener Bedeutung, etwa „das Handtuch werfen“ für „aufgeben“. Ein Sprichwort formuliert meist einen ganzen Satz mit einer verallgemeinerten Erfahrung, etwa „Viele Köche verderben den Brei“. Solche Sätze gelten nicht ausnahmslos für jede Situation.",
+			"Die Wendung „das Handtuch werfen“ stammt aus dem Boxsport: Ein geworfenes Handtuch signalisiert die Aufgabe des Kampfes. Außerhalb des Sports wird das Bild auf andere Aufgaben übertragen. Nicht jede im Internet erzählte Herkunft ist gesichert. Prüfe eine verlässliche Erklärung und kennzeichne Unsicherheiten.",
+			"Beispiel: „Nach dem dritten Fehlversuch warf ich das Handtuch“ bedeutet nicht, dass wirklich ein Handtuch flog. Erkläre die Bedeutung aus dem Zusammenhang und prüfe, ob das Sprachbild für den Text und das Publikum passt."
+		],
+		"material": "A · „Nach drei misslungenen Modellen warf Kim das Handtuch.“ B · „Nach dem Schwimmen warf Kim das Handtuch in den Wäschekorb.“ C · „Viele Köche verderben den Brei.“",
+		"materialLabel": "Eigens geschriebener Übungstext · Beispieldaten sind erfunden",
+		"sourceIds": [
+			"lehrplan",
+			"handtuch"
+		],
+		"takeaway": "Deute das Bild aus dem Zusammenhang; eine anschauliche Herkunftserklärung muss verlässlich sein.",
+		"lehrplan": "D6 · 4.1 / 4.2",
+		"check": {
+			"wrong": "Jede Aufgabe besonders erfolgreich abschließen.",
+			"explanation": "Die feste Wendung überträgt ein Aufgabesignal aus dem Boxsport auf andere Situationen."
+		},
+		"visual": {
+			"kind": "meaning",
+			"title": "Sprachbilder und Sprichwörter entschlüsseln · im Modell",
+			"steps": [
+				{
+					"label": "Wörtlich",
+					"text": "Handtuch in den Wäschekorb",
+					"detail": "Hier beschreibt der Satz eine tatsächliche Handlung mit einem Gegenstand.",
+					"blocks": [
+						{
+							"text": "ein echtes Handtuch",
+							"label": "Gegenstand",
+							"tone": "noun"
+						},
+						{
+							"text": "in die Wäsche werfen",
+							"label": "wörtlich",
+							"tone": "predicate"
+						}
+					]
+				},
+				{
+					"label": "Übertragen",
+					"text": "das Handtuch werfen → aufgeben",
+					"detail": "Die Redensart überträgt das Aufgabesignal aus dem Boxsport auf andere Aufgaben. Hier wird kein echtes Handtuch geworfen.",
+					"blocks": [
+						{
+							"text": "das Handtuch werfen",
+							"label": "Redensart",
+							"tone": "speech"
+						},
+						{
+							"text": "einen Versuch aufgeben",
+							"label": "übertragene Bedeutung",
+							"tone": "neutral"
+						},
+						{
+							"text": "Boxsport",
+							"label": "Herkunftsbereich dieser Redensart",
+							"tone": "stem"
+						}
+					]
+				},
+				{
+					"label": "Einordnen",
+					"text": "Viele Köche verderben den Brei.",
+					"detail": "Dieses Sprichwort verallgemeinert eine Erfahrung mit ungeordneter Einmischung. Gute Absprache kann Zusammenarbeit ermöglichen; der Satz gilt nicht ausnahmslos.",
+					"blocks": [
+						{
+							"text": "Viele Köche verderben den Brei.",
+							"label": "Sprichwort",
+							"tone": "speech"
+						},
+						{
+							"text": "keine ausnahmslose Regel",
+							"label": "Geltung prüfen",
+							"tone": "comparison"
+						}
+					]
+				}
+			],
+			"initial": {
+				"blocks": [
+					{
+						"text": "das Handtuch werfen",
+						"label": "Wendung",
+						"tone": "neutral"
+					}
+				]
+			}
+		},
+		"cases": [
+			{
+				"prompt": "In welchem Beispiel ist die Wendung übertragen?",
+				"options": [
+					"In A beim Modellbau.",
+					"In B beim Wäschekorb."
+				],
+				"answer": "In A beim Modellbau.",
+				"feedback": "Der Kontext entscheidet, ob eine tatsächliche oder eine bildhafte Handlung gemeint ist."
+			},
+			{
+				"prompt": "Muss jede Zusammenarbeit scheitern, weil es viele Köche gibt?",
+				"options": [
+					"Ja, ausnahmslos jede Gruppe scheitert.",
+					"Nein, das Sprichwort ist eine zugespitzte Erfahrung."
+				],
+				"answer": "Nein, das Sprichwort ist eine zugespitzte Erfahrung.",
+				"feedback": "Eine sprichwörtliche Verallgemeinerung ist kein Gesetz für alle Situationen."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Erkläre A und B mit eigenen Worten und nenne den Herkunftsbereich der Redensart.",
+				"model": "In A gibt Kim nach mehreren Fehlversuchen auf. In B wirft Kim ein echtes Handtuch in die Wäsche. Die übertragene Wendung geht auf ein Aufgabesignal im Boxsport zurück.",
+				"criteria": [
+					"Ich unterscheide wörtlich und übertragen.",
+					"Ich erkläre die Bedeutung im Kontext.",
+					"Ich nenne den gesicherten Herkunftsbereich."
+				]
+			},
+			"2": {
+				"prompt": "Schreibe eine kurze Szene, in der das Sprichwort mit den Köchen passend erscheint, und eine, in der gute Zusammenarbeit das Problem verhindert. Ziehe einen begrenzten Schluss.",
+				"model": "Drei Kinder ändern gleichzeitig ungefragt denselben Plakattext; am Ende passen die Teile nicht zusammen. Mit klaren Aufgaben und gemeinsamer Absprache gelingt es dagegen. Das Sprichwort warnt vor ungeordneter Einmischung, beweist aber nicht, dass Gruppenarbeit schlecht ist.",
+				"criteria": [
+					"Ich zeige zwei konkrete Situationen.",
+					"Ich deute das Sprichwort.",
+					"Ich vermeide eine ausnahmslose Behauptung."
+				]
+			}
+		}
+	},
+	{
+		"id": "d6-wortarten",
+		"stage": "sprache",
+		"title": "Wortarten und ihre Formen sicher verwenden",
+		"skill": "Du unterscheidest veränderbare Wörter und ihren Gebrauch im Satz.",
+		"bindings": [
+			"4.2"
+		],
+		"paragraphs": [
+			"Nomen, Artikel, Pronomen, Adjektive und Verben können ihre Form verändern: Sie sind flektierbar. Nomen, Artikel, Pronomen und Adjektive werden dekliniert; Verben werden konjugiert. Adjektive können häufig gesteigert werden. Die Wortart beschreibt eine Eigenschaft des Wortes, nicht seine Aufgabe als Satzglied.",
+			"Aus Jahrgangsstufe 5 kennst du auch Numeralien, Präpositionen, Adverbien und Konjunktionen. Beispiel: „Der schnelle Läufer rannte gestern.“ „schnelle“ ist ein Adjektiv, „gestern“ ein Adverb. In „Er läuft schnell“ bleibt „schnell“ ein Adjektiv, auch wenn es die Art des Laufens beschreibt. Wortart und Satzgliedfunktion sind verschiedene Ebenen.",
+			"Wiederholung aus D5: Verb, Nomen, Artikel, Adjektiv, Pronomen und Numerale findest du im Satz über ihre Form und Verwendung. Adverbien wie heute, Präpositionen wie neben, Konjunktionen wie und und Subjunktionen wie weil verändern ihre Form nicht. Präpositionen stehen bei einer Wortgruppe und regieren einen Kasus, Konjunktionen verbinden etwa gleichrangige Teile und Subjunktionen leiten Nebensätze ein."
+		],
+		"material": "Die junge Leserin schenkt ihrem Bruder heute zwei spannende Bücher. Formvergleich: das spannende Buch – die spannenden Bücher; sie schenkt – wir schenken; schnell – schneller – am schnellsten.",
+		"materialLabel": "Eigens geschriebener Übungstext · Beispieldaten sind erfunden",
+		"sourceIds": [
+			"lehrplan"
+		],
+		"takeaway": "Wortart und Satzglied sind verschieden. Flexion verändert Formen durch Deklination oder Konjugation.",
+		"lehrplan": "D6 · 4.2",
+		"check": {
+			"wrong": "Satzschlusszeichen.",
+			"explanation": "Flexion bezeichnet Formveränderungen wie Deklination und Konjugation."
+		},
+		"visual": {
+			"kind": "wordparts",
+			"title": "Wortarten und ihre Formen sicher verwenden · im Modell",
+			"steps": [
+				{
+					"label": "Deklinieren",
+					"text": "das spannende Buch → die spannenden Bücher",
+					"detail": "Artikel, Adjektiv und Nomen passen ihre Formen an Numerus und Kasus an.",
+					"blocks": [
+						{
+							"text": "das spannende Buch",
+							"label": "Singular: Deklination",
+							"tone": "noun"
+						},
+						{
+							"text": "die spannenden Bücher",
+							"label": "Plural: Deklination",
+							"tone": "case"
+						}
+					]
+				},
+				{
+					"label": "Konjugieren",
+					"text": "sie schenkt → wir schenken",
+					"detail": "Das Verb verändert sich unter anderem nach Person und Numerus.",
+					"blocks": [
+						{
+							"text": "sie schenkt → wir schenken",
+							"label": "Person/Numerus: Konjugation",
+							"tone": "predicate"
+						}
+					]
+				},
+				{
+					"label": "Unterscheiden",
+					"text": "das schnelle Kind ↔ das Kind läuft schnell",
+					"detail": "„schnelle“ beschreibt als Attribut das Kind. „schnell“ beschreibt beim Laufen die Art und Weise. In beiden Fällen ist die Wortart Adjektiv.",
+					"blocks": [
+						{
+							"text": "das schnelle Kind",
+							"label": "Adjektiv als gebeugtes Attribut",
+							"tone": "adjective"
+						},
+						{
+							"text": "das Kind läuft schnell",
+							"label": "Adjektiv adverbial, ungebeugt",
+							"tone": "adjective"
+						}
+					]
+				}
+			],
+			"initial": {
+				"blocks": [
+					{
+						"text": "das spannende Buch",
+						"label": "Singular",
+						"tone": "noun"
+					}
+				]
+			}
+		},
+		"cases": [
+			{
+				"prompt": "Welche Wortart ist „heute“?",
+				"options": [
+					"Ein Adverb.",
+					"Ein Artikel."
+				],
+				"answer": "Ein Adverb.",
+				"feedback": "„Heute“ ist hier ein Zeitadverb und bleibt unverändert."
+			},
+			{
+				"prompt": "Was zeigt „sie schenkt – wir schenken“?",
+				"options": [
+					"Steigerung eines Adjektivs.",
+					"Konjugation des Verbs."
+				],
+				"answer": "Konjugation des Verbs.",
+				"feedback": "Die Formen unterscheiden Person und Numerus des Verbs."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Bestimme die Wortarten von „Die junge Leserin schenkt heute zwei Bücher“ und erkläre eine Formveränderung.",
+				"model": "Die: Artikel; junge: Adjektiv; Leserin: Nomen; schenkt: Verb; heute: Adverb; zwei: Numerale; Bücher: Nomen. „Sie schenkt“ wird bei „wir“ zu „wir schenken“.",
+				"criteria": [
+					"Ich bestimme die Wörter im Satz.",
+					"Ich unterscheide Wortart und Funktion.",
+					"Ich erkläre eine Flexionsform."
+				]
+			},
+			"2": {
+				"prompt": "Bestimme die Wortarten in „Heute lesen wir zwei spannende Sagen, und die Lehrerin wartet neben der Tür, weil sie etwas zeigen möchte.“ Suche insbesondere die drei verschiedenen unveränderlichen Verbindungs- oder Bezugswörter.",
+				"model": "Heute: Adverb. Lesen, wartet, zeigen, möchte: Verben. Wir, sie, etwas: Pronomen. Zwei: Numerale. Spannende: Adjektiv. Sagen, Lehrerin, Tür: Nomen. Die und der: Artikel. Und: Konjunktion. Neben: Präposition. Weil: Subjunktion.",
+				"criteria": [
+					"Ich bestimme die veränderlichen Wortarten am Beispiel.",
+					"Ich unterscheide Konjunktion und Subjunktion.",
+					"Ich erkenne neben als Präposition."
+				]
+			}
+		}
+	},
+	{
+		"id": "d6-zeitformen",
+		"stage": "sprache",
+		"title": "Sechs Tempora und Vorzeitigkeit nutzen",
+		"skill": "Du setzt Zeitformen nach ihrer Funktion ein, einschließlich Futur II.",
+		"bindings": [
+			"4.2"
+		],
+		"paragraphs": [
+			"Die sechs Tempora sind Präsens: sie liest; Präteritum: sie las; Perfekt: sie hat gelesen; Plusquamperfekt: sie hatte gelesen; Futur I: sie wird lesen; Futur II: sie wird gelesen haben. Die Formen zeigen zeitliche Beziehungen und können je nach Zusammenhang weitere Funktionen haben.",
+			"Für Vorzeitigkeit in einer Erzählung im Präteritum verwendest du das Plusquamperfekt: „Nachdem sie das Buch gelesen hatte, gab sie es zurück.“ Das Lesen liegt vor der Rückgabe. Futur II kann etwas als zu einem künftigen Zeitpunkt abgeschlossen darstellen: „Bis Freitag wird sie das Buch gelesen haben.“ Eine Zeitform ist mehr als ein bloßes Zeitwort wie „gestern“."
+		],
+		"material": "Zeitlinie: zuerst lesen, später zurückgeben. Formen: Sie liest. Sie las. Sie hat gelesen. Sie hatte gelesen. Sie wird lesen. Sie wird gelesen haben. Beispielsatz: Nachdem sie das Buch gelesen hatte, gab sie es zurück.",
+		"materialLabel": "Eigens geschriebener Übungstext · Beispieldaten sind erfunden",
+		"sourceIds": [
+			"lehrplan"
+		],
+		"takeaway": "Bilde die Tempora korrekt und prüfe die zeitliche Beziehung zwischen den Ereignissen.",
+		"lehrplan": "D6 · 4.2",
+		"check": {
+			"wrong": "Das Präsens.",
+			"explanation": "Das Plusquamperfekt zeigt hier ein vor einem vergangenen Bezugspunkt abgeschlossenes Ereignis."
+		},
+		"visual": {
+			"kind": "tense",
+			"title": "Sechs Tempora und Vorzeitigkeit nutzen · im Modell",
+			"steps": [
+				{
+					"label": "Vergangen",
+					"text": "las; hat gelesen",
+					"detail": "Präteritum und Perfekt stellen Vergangenes dar; ihre Verwendung hängt auch von Textsorte und Situation ab.",
+					"blocks": [
+						{
+							"text": "sie las",
+							"label": "Präteritum",
+							"tone": "predicate"
+						},
+						{
+							"text": "sie hat gelesen",
+							"label": "Perfekt",
+							"tone": "time"
+						}
+					]
+				},
+				{
+					"label": "Davor",
+					"text": "hatte gelesen → gab zurück",
+					"detail": "Die Plusquamperfektform ordnet das Lesen vor die Rückgabe im Präteritum ein.",
+					"blocks": [
+						{
+							"text": "sie hatte gelesen",
+							"label": "Plusquamperfekt: davor",
+							"tone": "time"
+						},
+						{
+							"text": "sie gab zurück",
+							"label": "Präteritum: danach",
+							"tone": "predicate"
+						}
+					]
+				},
+				{
+					"label": "Künftig fertig",
+					"text": "wird gelesen haben",
+					"detail": "Futur II stellt das Lesen hier als bis zu einem zukünftigen Zeitpunkt abgeschlossen dar.",
+					"blocks": [
+						{
+							"text": "sie wird lesen",
+							"label": "Futur I",
+							"tone": "time"
+						},
+						{
+							"text": "sie wird gelesen haben",
+							"label": "Futur II",
+							"tone": "predicate"
+						}
+					]
+				}
+			],
+			"initial": {
+				"blocks": [
+					{
+						"text": "sie liest",
+						"label": "Präsens",
+						"tone": "predicate"
+					}
+				]
+			}
+		},
+		"cases": [
+			{
+				"prompt": "Was geschieht zuerst? „Nachdem sie gelesen hatte, gab sie es zurück.“",
+				"options": [
+					"Das Lesen.",
+					"Die Rückgabe."
+				],
+				"answer": "Das Lesen.",
+				"feedback": "Die Vorzeitigkeit ist durch Plusquamperfekt und „nachdem“ markiert."
+			},
+			{
+				"prompt": "Welche Form ist Futur II?",
+				"options": [
+					"Sie wird lesen.",
+					"Sie wird gelesen haben."
+				],
+				"answer": "Sie wird gelesen haben.",
+				"feedback": "Futur II enthält hier „wird“, das Partizip II und „haben“."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Bilde „sie liest“ in allen sechs Tempora und erkläre die Reihenfolge im Beispielsatz.",
+				"model": "Präsens: sie liest. Präteritum: sie las. Perfekt: sie hat gelesen. Plusquamperfekt: sie hatte gelesen. Futur I: sie wird lesen. Futur II: sie wird gelesen haben. Zuerst liest sie, dann gibt sie zurück.",
+				"criteria": [
+					"Ich bilde alle sechs Formen.",
+					"Ich unterscheide Futur I und II.",
+					"Ich erkläre die Vorzeitigkeit."
+				]
+			},
+			"2": {
+				"prompt": "Schreibe zwei Sätze über eine vergangene Rückgabe mit vorher abgeschlossenem Lesen und einen Satz über ein bis Freitag abgeschlossenes Lesen. Begründe die Formen.",
+				"model": "Nachdem ich das Buch gelesen hatte, gab ich es am Montag zurück. Zuvor hatte ich eine Lesekarte angelegt. Bis Freitag werde ich auch das zweite Buch gelesen haben. Das Plusquamperfekt markiert frühere Ereignisse zur Rückgabe, Futur II den Abschluss bis Freitag.",
+				"criteria": [
+					"Ich verknüpfe vergangene Ereignisse korrekt.",
+					"Ich bilde Futur II.",
+					"Ich begründe die zeitlichen Beziehungen."
+				]
+			}
+		}
+	},
+	{
+		"id": "d6-aktiv-passiv",
+		"stage": "sprache",
+		"title": "Aktiv und Passiv nach Aussageabsicht wählen",
+		"skill": "Du veränderst den Blick auf Handlung und handelnde Person.",
+		"bindings": [
+			"4.1",
+			"4.2"
+		],
+		"paragraphs": [
+			"Im Aktiv steht die handelnde Person oft als Subjekt im Vordergrund: „Die Klasse baut den Tisch auf.“ Im Vorgangspassiv wird das Geschehen am Tisch zum Ausgangspunkt: „Der Tisch wird aufgebaut.“ Die handelnde Person kann ergänzt werden: „von der Klasse“.",
+			"Das Vorgangspassiv wird mit einer Form von „werden“ und Partizip II gebildet. Präsens: „wird aufgebaut“, Präteritum: „wurde aufgebaut“. Verwechsle es nicht mit Futur I: „Die Klasse wird aufbauen“ hat einen Infinitiv. „Der Tisch ist aufgebaut“ beschreibt dagegen einen Zustand. Nicht jedes Verb und nicht jedes Objekt lässt sich nach demselben Muster ins Passiv umformen."
+		],
+		"material": "Aktiv: Die Klasse sortiert die Bücher. Passiv: Die Bücher werden von der Klasse sortiert. Ohne Handelnde: Die Bücher werden sortiert. Vergangenheit: Die Bücher wurden sortiert. Zustand: Die Bücher sind sortiert.",
+		"materialLabel": "Eigens geschriebener Übungstext · Beispieldaten sind erfunden",
+		"sourceIds": [
+			"lehrplan"
+		],
+		"takeaway": "Wähle die Form nach dem Schwerpunkt; Vorgangspassiv: werden + Partizip II.",
+		"lehrplan": "D6 · 4.1 / 4.2",
+		"check": {
+			"wrong": "Die Klasse sortierte die Bücher.",
+			"explanation": "„Werden“ plus Partizip II stellt hier den Vorgang aus Sicht der Bücher dar."
+		},
+		"visual": {
+			"kind": "sentence",
+			"title": "Aktiv und Passiv nach Aussageabsicht wählen · im Modell",
+			"steps": [
+				{
+					"label": "Aktiv",
+					"text": "Die Klasse sortiert die Bücher.",
+					"detail": "Das Subjekt nennt die handelnde Gruppe; die Bücher sind Akkusativobjekt.",
+					"blocks": [
+						{
+							"text": "Die Klasse",
+							"label": "Subjekt: Handelnde",
+							"tone": "subject"
+						},
+						{
+							"text": "sortiert",
+							"label": "Prädikat im Aktiv",
+							"tone": "predicate"
+						},
+						{
+							"text": "die Bücher.",
+							"label": "Akkusativobjekt",
+							"tone": "object"
+						}
+					]
+				},
+				{
+					"label": "Passiv",
+					"text": "Die Bücher werden sortiert.",
+					"detail": "Das frühere Akkusativobjekt wird zum Subjekt; die handelnde Gruppe kann fehlen.",
+					"blocks": [
+						{
+							"text": "Die Bücher",
+							"label": "Subjekt",
+							"tone": "subject"
+						},
+						{
+							"text": "werden sortiert.",
+							"label": "Vorgangspassiv im Präsens",
+							"tone": "predicate"
+						}
+					]
+				},
+				{
+					"label": "Handelnde ergänzen",
+					"text": "Die Bücher werden von der Klasse sortiert.",
+					"detail": "Im Passiv bleibt der Vorgang im Mittelpunkt. Die Gruppe, die handelt, wird mit „von der Klasse“ ausdrücklich ergänzt.",
+					"blocks": [
+						{
+							"text": "Die Bücher",
+							"label": "Subjekt",
+							"tone": "subject"
+						},
+						{
+							"text": "werden",
+							"label": "finites Verb",
+							"tone": "predicate"
+						},
+						{
+							"text": "von der Klasse",
+							"label": "Handelnde ergänzt",
+							"tone": "object"
+						},
+						{
+							"text": "sortiert.",
+							"label": "Partizip II",
+							"tone": "predicate"
+						}
+					]
+				}
+			],
+			"initial": {
+				"blocks": [
+					{
+						"text": "sortieren",
+						"label": "Handlung",
+						"tone": "predicate"
+					},
+					{
+						"text": "Klasse; Bücher",
+						"label": "Beteiligte",
+						"tone": "neutral"
+					}
+				]
+			}
+		},
+		"cases": [
+			{
+				"prompt": "Was wird aus „die Bücher“ bei der Umformung?",
+				"options": [
+					"Das Subjekt des Passivsatzes.",
+					"Ein Dativobjekt."
+				],
+				"answer": "Das Subjekt des Passivsatzes.",
+				"feedback": "Das Akkusativobjekt des Aktivsatzes entspricht hier dem Subjekt im Passiv."
+			},
+			{
+				"prompt": "Wann ist Passiv zweckmäßig?",
+				"options": [
+					"Wenn jede Handlung absichtlich verschwiegen werden muss.",
+					"Wenn der Vorgang wichtig ist und die handelnde Person nebensächlich bleibt."
+				],
+				"answer": "Wenn der Vorgang wichtig ist und die handelnde Person nebensächlich bleibt.",
+				"feedback": "Die Aussageabsicht entscheidet; Passiv ist kein allgemeines Gebot zum Verschweigen."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Forme „Die Klasse öffnet den Raum“ ins Passiv im Präsens und Präteritum um. Nenne die handelnde Gruppe einmal.",
+				"model": "Der Raum wird von der Klasse geöffnet. Der Raum wurde geöffnet. „Der Raum“ ist im Passiv das Subjekt; „wird“ und „wurde“ unterscheiden die Zeitformen.",
+				"criteria": [
+					"Ich bilde werden und Partizip II.",
+					"Ich beachte das neue Subjekt.",
+					"Ich unterscheide Präsens und Präteritum."
+				]
+			},
+			"2": {
+				"prompt": "Schreibe für eine Anleitung und einen Ereignisbericht je einen passenden Passivsatz zu den Büchern. Vergleiche ihn mit einem Aktivsatz und begründe die Wahl.",
+				"model": "Anleitung: Die Bücher werden nach Themen sortiert. Bericht: Die Bücher wurden am Montag sortiert. Aktiv: Die Klasse sortierte die Bücher. Im Passiv steht der Vorgang im Mittelpunkt; der Aktivsatz hebt die handelnde Klasse hervor.",
+				"criteria": [
+					"Ich passe die Zeitform an die Funktion an.",
+					"Ich bilde korrekte Passivsätze.",
+					"Ich erkläre den veränderten Schwerpunkt."
+				]
+			}
+		}
+	},
+	{
+		"id": "d6-objekte",
+		"stage": "sprache",
+		"title": "Objekte erkennen und korrekt bilden",
+		"skill": "Du unterscheidest Akkusativ-, Dativ-, Genitiv- und Präpositionalobjekte.",
+		"bindings": [
+			"4.2"
+		],
+		"paragraphs": [
+			"Objekte ergänzen das Verb. Frage bei Akkusativobjekten „wen oder was?“, bei Dativobjekten „wem?“ und bei Genitivobjekten „wessen?“. Beispiel: „Mina schenkt ihrem Bruder ein Buch“ enthält Dativobjekt und Akkusativobjekt. Der Kasus richtet sich nach dem Verb und der Konstruktion.",
+			"Genitivobjekte sind seltener: „Die Gruppe bedarf deiner Hilfe“ – wessen bedarf sie? Präpositionalobjekte haben eine zum Verb gehörende Präposition: „Jo wartet auf den Bus“ – worauf wartet Jo? Ein Ortsausdruck wie „am Bahnhof“ ist dagegen eine Ortsangabe. Eine Frageprobe hilft nur, wenn du den Zusammenhang und das Verb mitprüfst."
+		],
+		"material": "Mina schenkt ihrem Bruder ein Buch. Die Gruppe bedarf deiner Hilfe. Jo wartet am Bahnhof auf den Bus. Ersatz: Mina schenkt ihm ein Buch. Jo wartet darauf.",
+		"materialLabel": "Eigens geschriebener Übungstext · Beispieldaten sind erfunden",
+		"sourceIds": [
+			"lehrplan"
+		],
+		"takeaway": "Bestimme das Objekt mit Verb, Kasus und passender Frage; eine Präposition allein beweist noch kein Objekt.",
+		"lehrplan": "D6 · 4.2",
+		"check": {
+			"wrong": "Wann schenkt Mina ein Buch?",
+			"explanation": "„Ihrem Bruder“ ist die Dativ-Ergänzung zum Verb „schenken“."
+		},
+		"visual": {
+			"kind": "sentence",
+			"title": "Objekte erkennen und korrekt bilden · im Modell",
+			"steps": [
+				{
+					"label": "Akkusativ",
+					"text": "ein Buch: wen oder was?",
+					"detail": "Das Geschenkte wird hier als Akkusativobjekt bezeichnet.",
+					"blocks": [
+						{
+							"text": "ein Buch",
+							"label": "Akkusativobjekt",
+							"tone": "object"
+						},
+						{
+							"text": "wen oder was?",
+							"label": "Frage",
+							"tone": "case"
+						}
+					]
+				},
+				{
+					"label": "Dativ und Genitiv",
+					"text": "ihrem Bruder; deiner Hilfe",
+					"detail": "„Wem?“ und „wessen?“ unterscheiden die Kasus; die Verbkonstruktion muss passen.",
+					"blocks": [
+						{
+							"text": "ihrem Bruder",
+							"label": "Dativobjekt: wem?",
+							"tone": "case"
+						},
+						{
+							"text": "deiner Hilfe",
+							"label": "Genitivobjekt bei bedarf",
+							"tone": "case"
+						}
+					]
+				},
+				{
+					"label": "Präpositional",
+					"text": "auf den Bus: worauf?",
+					"detail": "Die Verbindung „warten auf“ verlangt hier die Präposition; „am Bahnhof“ nennt dagegen den Ort.",
+					"blocks": [
+						{
+							"text": "auf den Bus",
+							"label": "Präpositionalobjekt",
+							"tone": "object"
+						},
+						{
+							"text": "am Bahnhof",
+							"label": "Lokaladverbiale",
+							"tone": "place"
+						}
+					]
+				}
+			],
+			"initial": {
+				"blocks": [
+					{
+						"text": "Mina",
+						"label": "Subjekt",
+						"tone": "subject"
+					},
+					{
+						"text": "schenkt",
+						"label": "Prädikat",
+						"tone": "predicate"
+					},
+					{
+						"text": "ihrem Bruder ein Buch.",
+						"label": "Objekte",
+						"tone": "object"
+					}
+				]
+			}
+		},
+		"cases": [
+			{
+				"prompt": "Was ist „deiner Hilfe“ bei „bedarf“?",
+				"options": [
+					"Ein Genitivobjekt.",
+					"Ein Akkusativobjekt."
+				],
+				"answer": "Ein Genitivobjekt.",
+				"feedback": "Die Konstruktion lautet „einer Sache bedürfen“; die Frage ist „wessen?“."
+			},
+			{
+				"prompt": "Was ist „am Bahnhof“ im Wartesatz?",
+				"options": [
+					"Automatisch ein Präpositionalobjekt.",
+					"Eine Ortsangabe."
+				],
+				"answer": "Eine Ortsangabe.",
+				"feedback": "Die Ortsangabe beschreibt, wo gewartet wird; die feste Verbindung ist „warten auf“."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Bestimme die vier Objektarten in den Beispielsätzen und notiere die Fragen.",
+				"model": "Ein Buch: Akkusativobjekt, wen oder was? Ihrem Bruder: Dativobjekt, wem? Deiner Hilfe: Genitivobjekt, wessen? Auf den Bus: Präpositionalobjekt, worauf?",
+				"criteria": [
+					"Ich erkenne alle vier Arten.",
+					"Ich frage im vollständigen Satz.",
+					"Ich verwechsle den Bahnhof nicht mit einem Objekt."
+				]
+			},
+			"2": {
+				"prompt": "Erkläre den Unterschied zwischen „auf den Bus“ und „am Bahnhof“ und ersetze beide in einem sinnvollen neuen Wartesatz.",
+				"model": "„Auf den Bus“ ist die feste Ergänzung zu „warten auf“ und kann durch „auf den Zug“ ersetzt werden. „Am Bahnhof“ ist eine Ortsangabe und kann durch „am Bahnsteig“ ersetzt werden. Jo wartet am Bahnsteig auf den Zug. Der neue Satz bewahrt die Objektverbindung und verändert den Ort.",
+				"criteria": [
+					"Ich unterscheide Verbverbindung und Ortsangabe.",
+					"Ich halte die nötige Präposition ein.",
+					"Ich prüfe auch den Sinn meines neuen Satzes."
+				]
+			}
+		}
+	},
+	{
+		"id": "d6-adverbiale",
+		"stage": "sprache",
+		"title": "Zeit, Ort, Art und Grund genau angeben",
+		"skill": "Du unterscheidest Adverbien als Wortart und Adverbiale als Satzfunktion.",
+		"bindings": [
+			"4.2"
+		],
+		"paragraphs": [
+			"Adverbiale konkretisieren Umstände einer Handlung. Temporaladverbiale geben Zeit an: wann, wie lange? Lokaladverbiale nennen Ort oder Richtung: wo, wohin? Modaladverbiale erklären Art und Weise: wie? Kausaladverbiale geben den Grund an: warum?",
+			"Ein Adverb ist eine Wortart, ein Adverbiale eine Satzgliedfunktion. „Heute“ ist ein Adverb und im Satz eine Zeitangabe. „Am Montag“ besteht aus mehreren Wörtern und hat dieselbe Funktion. Auch ein adverbial gebrauchtes Adjektiv wie „vorsichtig“ kann eine Modalangabe bilden. Bestimme immer im ganzen Satz."
+		],
+		"material": "Heute trägt Mina im Flur vorsichtig eine Dose wegen ihres zerbrechlichen Inhalts. Übersicht: heute – Zeit; im Flur – Ort; vorsichtig – Art und Weise; wegen ihres zerbrechlichen Inhalts – Grund.",
+		"materialLabel": "Eigens geschriebener Übungstext · Beispieldaten sind erfunden",
+		"sourceIds": [
+			"lehrplan"
+		],
+		"takeaway": "Wann? Wo oder wohin? Wie? Warum? Die Funktion bestimmst du im ganzen Satz.",
+		"lehrplan": "D6 · 4.2",
+		"check": {
+			"wrong": "Akkusativobjekt: Es nennt das Geschenkte.",
+			"explanation": "Die warum-Frage passt zum Grund des Drinnenbleibens."
+		},
+		"visual": {
+			"kind": "sentence",
+			"title": "Zeit, Ort, Art und Grund genau angeben · im Modell",
+			"steps": [
+				{
+					"label": "Zeit und Ort",
+					"text": "heute; im Flur",
+					"detail": "Wann? und wo? unterscheiden zwei Umstände derselben Handlung.",
+					"blocks": [
+						{
+							"text": "heute",
+							"label": "Temporal: wann?",
+							"tone": "time"
+						},
+						{
+							"text": "im Flur",
+							"label": "Lokal: wo?",
+							"tone": "place"
+						}
+					]
+				},
+				{
+					"label": "Art",
+					"text": "vorsichtig",
+					"detail": "Die wie-Frage beschreibt die Art des Tragens; die Wortart ist hier Adjektiv.",
+					"blocks": [
+						{
+							"text": "vorsichtig",
+							"label": "Modal: wie?",
+							"tone": "manner"
+						}
+					]
+				},
+				{
+					"label": "Grund",
+					"text": "wegen des zerbrechlichen Inhalts",
+					"detail": "Die warum-Frage erklärt, weshalb Mina vorsichtig trägt.",
+					"blocks": [
+						{
+							"text": "wegen des zerbrechlichen Inhalts",
+							"label": "Kausal: warum?",
+							"tone": "reason"
+						}
+					]
+				}
+			],
+			"initial": {
+				"blocks": [
+					{
+						"text": "Mina trägt eine Dose.",
+						"label": "Kernsatz",
+						"tone": "neutral"
+					}
+				]
+			}
+		},
+		"cases": [
+			{
+				"prompt": "Welche Wörter sind eine Zeitangabe?",
+				"options": [
+					"Am Montag.",
+					"Mit großer Vorsicht."
+				],
+				"answer": "Am Montag.",
+				"feedback": "„Am Montag“ beantwortet wann; „mit großer Vorsicht“ beantwortet wie."
+			},
+			{
+				"prompt": "Ist jedes Adverbiale ein einziges Adverb?",
+				"options": [
+					"Ja, es darf nur aus einem Wort bestehen.",
+					"Nein, auch eine mehrteilige Wortgruppe kann ein Adverbiale sein."
+				],
+				"answer": "Nein, auch eine mehrteilige Wortgruppe kann ein Adverbiale sein.",
+				"feedback": "„Im Flur“ ist eine Wortgruppe und im Satz eine Lokaladverbiale."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe einen Satz mit allen vier Arten und ordne sie mit Fragen zu.",
+				"model": "Am Montag arbeitet Jo in der Bücherei sorgfältig wegen eines wichtigen Auftrags. Wann? Am Montag. Wo? In der Bücherei. Wie? Sorgfältig. Warum? Wegen eines wichtigen Auftrags.",
+				"criteria": [
+					"Ich bilde einen sinnvollen Satz.",
+					"Ich verwende alle vier Arten.",
+					"Meine Fragen passen zu den Angaben."
+				]
+			},
+			"2": {
+				"prompt": "Ersetze „heute“ durch eine Wortgruppe und „vorsichtig“ durch eine andere Modalangabe. Erkläre, warum die Satzfunktionen erhalten bleiben, obwohl die Wörter wechseln.",
+				"model": "Am Dienstag trägt Mina im Flur mit großer Vorsicht eine Dose. „Am Dienstag“ und „heute“ beantworten beide die wann-Frage. „Mit großer Vorsicht“ und „vorsichtig“ beantworten die wie-Frage. Die Wortform ändert sich, die Funktion bleibt gleich.",
+				"criteria": [
+					"Ich ersetze Zeit- und Modalangabe.",
+					"Ich frage im Satz nach der Funktion.",
+					"Ich unterscheide Funktion und Wortart."
+				]
+			}
+		}
+	},
+	{
+		"id": "d6-praedikativ",
+		"stage": "sprache",
+		"title": "Prädikative mit sein, werden und bleiben erkennen",
+		"skill": "Du unterscheidest Kennzeichnung, Objekt und Artangabe.",
+		"bindings": [
+			"4.2"
+		],
+		"paragraphs": [
+			"Ein Prädikativ sagt aus, wer, was oder wie jemand oder etwas ist, wird oder bleibt. Es kann aus einem Adjektiv oder einer Nomengruppe bestehen. Eine Nomengruppe, die das Subjekt kennzeichnet, steht im Nominativ. Das Verb und die Kennzeichnung bilden zusammen die Aussage über das Subjekt.",
+			"Beispiel: In „Nuri bleibt ruhig“ kennzeichnet „ruhig“ Nuri. In „Nuri liest ruhig“ sagt „ruhig“, wie Nuri liest: Es ist hier ein Modaladverbiale. In „Nuri wird ein guter Leser“ steht „ein guter Leser“ im Nominativ und kennzeichnet das Subjekt."
+		],
+		"material": "Nuri ist neugierig. Nuri wird ein guter Leser. Nuri bleibt ruhig. Nuri liest ruhig. Nuri leiht ein neues Buch aus.",
+		"materialLabel": "Eigens geschriebener Übungstext",
+		"sourceIds": [
+			"lehrplan"
+		],
+		"takeaway": "Prüfe, ob die Ergänzung bei sein, werden oder bleiben das Subjekt kennzeichnet. Bestimme dann ihre Form.",
+		"check": {
+			"wrong": "Ein Modaladverbiale zum Vorgang des Laufens.",
+			"explanation": "„Müde“ kennzeichnet Mina und ergänzt „ist“."
+		},
+		"visual": {
+			"kind": "sentence",
+			"title": "Dieselbe Figur, drei Funktionen",
+			"initial": {
+				"blocks": [
+					{
+						"label": "Figur",
+						"text": "Nuri",
+						"tone": "subject"
+					}
+				]
+			},
+			"steps": [
+				{
+					"label": "Eigenschaft",
+					"text": "Nuri bleibt ruhig.",
+					"detail": "Ruhig ist eine Eigenschaft, die in diesem Satz Nuri zugeschrieben wird.",
+					"blocks": [
+						{
+							"label": "Subjekt",
+							"text": "Nuri",
+							"tone": "subject"
+						},
+						{
+							"label": "Verb",
+							"text": "bleibt",
+							"tone": "predicate"
+						},
+						{
+							"label": "Prädikativ",
+							"text": "ruhig.",
+							"tone": "adjective"
+						}
+					]
+				},
+				{
+					"label": "Nominativ",
+					"text": "Nuri wird ein guter Leser.",
+					"detail": "Ein guter Leser kennzeichnet Nuri und steht wie das Subjekt im Nominativ.",
+					"blocks": [
+						{
+							"label": "Subjekt",
+							"text": "Nuri",
+							"tone": "subject"
+						},
+						{
+							"label": "Verb",
+							"text": "wird",
+							"tone": "predicate"
+						},
+						{
+							"label": "Prädikativ im Nominativ",
+							"text": "ein guter Leser.",
+							"tone": "noun"
+						}
+					]
+				},
+				{
+					"label": "Art und Weise",
+					"text": "Nuri liest ruhig.",
+					"detail": "Ruhig beschreibt jetzt die Art des Lesens.",
+					"blocks": [
+						{
+							"label": "Subjekt",
+							"text": "Nuri",
+							"tone": "subject"
+						},
+						{
+							"label": "Verb",
+							"text": "liest",
+							"tone": "predicate"
+						},
+						{
+							"label": "Modaladverbiale",
+							"text": "ruhig.",
+							"tone": "manner"
+						}
+					]
+				}
+			]
+		},
+		"cases": [
+			{
+				"prompt": "Was ist „ein guter Leser“ in „Nuri wird ein guter Leser“?",
+				"options": [
+					"Prädikativ im Nominativ",
+					"Akkusativobjekt"
+				],
+				"answer": "Prädikativ im Nominativ",
+				"feedback": "Die Wortgruppe kennzeichnet das Subjekt. Im Akkusativ hieße es „einen guten Leser“."
+			},
+			{
+				"prompt": "Wo beschreibt „ruhig“ die Art einer Tätigkeit?",
+				"options": [
+					"Nuri ist ruhig.",
+					"Nuri liest ruhig."
+				],
+				"answer": "Nuri liest ruhig.",
+				"feedback": "In „liest ruhig“ erfährst du, auf welche Weise Nuri liest."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Bestimme „neugierig“ in „Nuri ist neugierig“. Schreibe dazu einen Satz mit „bleiben“ und derselben Funktion.",
+				"model": "„Neugierig“ ist ein Prädikativ und kennzeichnet Nuri. Auch in „Nuri bleibt neugierig“ kennzeichnet es das Subjekt.",
+				"criteria": [
+					"Ich nenne die Funktion.",
+					"Ich sage, wen das Wort kennzeichnet.",
+					"Mein eigener Satz nutzt bleiben."
+				]
+			},
+			"2": {
+				"prompt": "Baue mit „wird“ eine Kennzeichnung im Nominativ und mit „trifft“ ein Akkusativobjekt. Nutze „neuer Torwart“.",
+				"model": "„Nuri wird ein neuer Torwart.“ Die Ergänzung kennzeichnet Nuri. „Nuri trifft einen neuen Torwart.“ Die zweite Ergänzung ist ein Akkusativobjekt.",
+				"criteria": [
+					"Mein erster Satz kennzeichnet das Subjekt.",
+					"Mein zweiter Satz enthält ein Objekt.",
+					"Ich zeige den Kasusunterschied."
+				]
+			}
+		},
+		"lehrplan": "D6 · 4.2"
+	},
+	{
+		"id": "d6-satzverknuepfung",
+		"stage": "sprache",
+		"title": "Satzreihe und Satzgefüge sinnvoll verbinden",
+		"skill": "Du drückst Beziehungen durch passende Konjunktionen und Verbpositionen aus.",
+		"bindings": [
+			"4.2",
+			"4.3"
+		],
+		"paragraphs": [
+			"Eine Satzreihe verbindet gleichrangige Hauptsätze: „Es regnet, aber wir gehen hinaus.“ Im Aussagesatz steht das finite Verb an zweiter Satzgliedstelle. Ein Satzgefüge verbindet Hauptsatz und Nebensatz: „Wir bleiben drinnen, weil es regnet.“ Im eingeleiteten Nebensatz steht das finite Verb am Ende.",
+			"Nebenordnende Konjunktionen wie „und“, „aber“ oder „denn“ verbinden Gleichrangiges. Unterordnende Konjunktionen wie „weil“, „dass“ oder „als“ leiten Nebensätze ein. Die Wahl verändert den Sinn: „weil“ nennt einen Grund, „als“ in unserem Beispiel den Zeitpunkt. Verbinde nicht nur formal, sondern prüfe die logische Beziehung."
+		],
+		"material": "Es regnet. Wir bleiben drinnen. → Wir bleiben drinnen, weil es regnet.\nEs regnet, aber wir gehen hinaus.\nAls es klingelte, gingen wir hinaus.",
+		"materialLabel": "Eigens geschriebener Übungstext · Beispieldaten sind erfunden",
+		"sourceIds": [
+			"lehrplan"
+		],
+		"takeaway": "Gleichrangige Hauptsätze bilden eine Satzreihe; ein abhängiger Nebensatz bildet mit dem Hauptsatz ein Satzgefüge.",
+		"lehrplan": "D6 · 4.2 / 4.3",
+		"check": {
+			"wrong": "Es regnet. Wir warten.",
+			"explanation": "„Weil“ leitet einen abhängigen Nebensatz mit finitem Verb am Ende ein."
+		},
+		"visual": {
+			"kind": "sentence",
+			"title": "Satzreihe und Satzgefüge sinnvoll verbinden · im Modell",
+			"steps": [
+				{
+					"label": "Nebenordnung",
+					"text": "Es regnet, aber wir gehen hinaus.",
+					"detail": "Die beiden Hauptsätze bleiben gleichrangig; „aber“ markiert einen Gegensatz.",
+					"blocks": [
+						{
+							"text": "Es regnet,",
+							"label": "Hauptsatz",
+							"tone": "subject"
+						},
+						{
+							"text": "aber wir gehen hinaus.",
+							"label": "gleichrangiger Hauptsatz: Gegensatz",
+							"tone": "report"
+						}
+					]
+				},
+				{
+					"label": "Unterordnung",
+					"text": "Wir bleiben drinnen, weil es regnet.",
+					"detail": "Der Nebensatz begründet die Handlung und hat das finite Verb am Ende.",
+					"blocks": [
+						{
+							"text": "Wir bleiben drinnen,",
+							"label": "Hauptsatz",
+							"tone": "subject"
+						},
+						{
+							"text": "weil es regnet.",
+							"label": "Nebensatz",
+							"tone": "subordinate"
+						}
+					]
+				},
+				{
+					"label": "Nebensatz zuerst",
+					"text": "Als es klingelte, gingen wir hinaus.",
+					"detail": "Der vorangestellte Nebensatz nennt den Zeitpunkt. Das finite Verb des Hauptsatzes folgt direkt nach dem Komma.",
+					"blocks": [
+						{
+							"label": "Nebensatz",
+							"text": "Als es klingelte,",
+							"tone": "subordinate"
+						},
+						{
+							"label": "Verb des Hauptsatzes",
+							"text": "gingen",
+							"tone": "predicate"
+						},
+						{
+							"label": "Rest des Hauptsatzes",
+							"text": "wir hinaus.",
+							"tone": "subject"
+						}
+					]
+				}
+			],
+			"initial": {
+				"blocks": [
+					{
+						"text": "Es regnet.",
+						"label": "Hauptsatz",
+						"tone": "subject"
+					},
+					{
+						"text": "Wir bleiben drinnen.",
+						"label": "Hauptsatz",
+						"tone": "neutral"
+					}
+				]
+			}
+		},
+		"cases": [
+			{
+				"prompt": "Welche Verbindung nennt einen Grund?",
+				"options": [
+					"weil es regnet",
+					"als es klingelte"
+				],
+				"answer": "weil es regnet",
+				"feedback": "„Weil“ nennt den Grund. „Als“ gibt hier den Zeitpunkt an."
+			},
+			{
+				"prompt": "Welche Wortstellung stimmt?",
+				"options": [
+					"Als es klingelte, wir gingen hinaus.",
+					"Als es klingelte, gingen wir hinaus."
+				],
+				"answer": "Als es klingelte, gingen wir hinaus.",
+				"feedback": "Der vorangestellte Nebensatz besetzt die erste Stelle. Danach folgt das finite Verb des Hauptsatzes."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Verbinde „Es regnet“ und „Wir bleiben drinnen“ einmal mit denn und einmal mit weil. Kennzeichne die Satzarten.",
+				"model": "Wir bleiben drinnen, denn es regnet. Das ist eine Satzreihe. Wir bleiben drinnen, weil es regnet. Das ist ein Satzgefüge; im Nebensatz steht „regnet“ am Ende.",
+				"criteria": [
+					"Ich nutze beide Konjunktionen.",
+					"Ich halte die Wortstellung ein.",
+					"Ich unterscheide Reihe und Gefüge."
+				]
+			},
+			"2": {
+				"prompt": "Verbinde „Die Aula war leer“ und „Die Lesung war vorbei“ zu einem Satzgefüge mit einem Grund. Stelle dann den Nebensatz an den Anfang.",
+				"model": "Die Aula war leer, weil die Lesung vorbei war. Weil die Lesung vorbei war, war die Aula leer.",
+				"criteria": [
+					"Ich nenne den Grund mit weil.",
+					"Ich trenne den Nebensatz mit einem Komma.",
+					"Nach dem vorangestellten Nebensatz folgt das finite Verb des Hauptsatzes."
+				]
+			}
+		}
+	},
+	{
+		"id": "d6-adverbialsaetze",
+		"stage": "sprache",
+		"title": "Zeit, Grund, Zweck und Art als Nebensatz ausdrücken",
+		"skill": "Du unterscheidest vier Arten von Adverbialsätzen.",
+		"bindings": [
+			"4.2",
+			"4.3"
+		],
+		"paragraphs": [
+			"Ein Adverbialsatz übernimmt die Aufgabe einer Adverbialbestimmung. Frage nach dem Bezug zum Hauptsatz. Wann führt zum Temporalsatz, warum oder weshalb zum Kausalsatz, wozu oder mit welcher Absicht zum Finalsatz und wie oder wodurch zum Modalsatz. In den gezeigten Nebensätzen steht das finite Verb am Ende.",
+			"Beispiel: „Wir gehen leise, damit die Klasse arbeiten kann“ beantwortet die Frage „Wozu gehen wir leise?“. Der Nebensatz nennt den angestrebten Zweck. „Wir gehen leise, weil die Klasse arbeitet“ nennt mit weil den Grund für das Verhalten."
+		],
+		"material": "Nachdem wir geklingelt haben, warten wir. Wir warten, weil noch Unterricht ist. Wir warten draußen, damit es drinnen ruhig bleibt. Wir verständigen uns, indem wir Handzeichen geben.",
+		"materialLabel": "Eigens geschriebener Übungstext",
+		"sourceIds": [
+			"lehrplan"
+		],
+		"takeaway": "Entscheide nach der Bedeutung. Eine Handlung kann einen Grund und zugleich einen anderen Zweck haben.",
+		"check": {
+			"wrong": "nachdem die Lesung begonnen hat",
+			"explanation": "Damit leitet hier den Zweck des Handelns ein."
+		},
+		"visual": {
+			"kind": "sentence",
+			"title": "Ein Hauptsatz mit verschiedenen Beziehungen",
+			"initial": {
+				"blocks": [
+					{
+						"label": "Hauptsatz",
+						"text": "Wir warten draußen.",
+						"tone": "subject"
+					}
+				]
+			},
+			"steps": [
+				{
+					"label": "Zeit",
+					"text": "Wann warten wir?",
+					"detail": "Temporalsätze verorten das Warten in der Zeit.",
+					"blocks": [
+						{
+							"label": "Temporalsatz",
+							"text": "Nachdem wir geklingelt haben,",
+							"tone": "time"
+						},
+						{
+							"label": "Hauptsatz",
+							"text": "warten wir.",
+							"tone": "subject"
+						}
+					]
+				},
+				{
+					"label": "Grund oder Zweck",
+					"text": "Warum oder wozu?",
+					"detail": "Weil erklärt den Grund. Damit benennt das Ziel, das erreicht werden soll.",
+					"blocks": [
+						{
+							"label": "Kausalsatz",
+							"text": "weil noch Unterricht ist.",
+							"tone": "reason"
+						},
+						{
+							"label": "Finalsatz",
+							"text": "damit es drinnen ruhig bleibt.",
+							"tone": "subordinate"
+						}
+					]
+				},
+				{
+					"label": "Art und Weise",
+					"text": "Wie gelingt es?",
+					"detail": "Der Modalsatz beschreibt das Mittel der Verständigung.",
+					"blocks": [
+						{
+							"label": "Hauptsatz",
+							"text": "Wir verständigen uns,",
+							"tone": "subject"
+						},
+						{
+							"label": "Modalsatz",
+							"text": "indem wir Handzeichen geben.",
+							"tone": "manner"
+						}
+					]
+				}
+			]
+		},
+		"cases": [
+			{
+				"prompt": "Welche Funktion hat „damit es drinnen ruhig bleibt“?",
+				"options": [
+					"Finalsatz: Zweck",
+					"Kausalsatz: Grund"
+				],
+				"answer": "Finalsatz: Zweck",
+				"feedback": "Der Nebensatz nennt, was die Wartenden erreichen wollen."
+			},
+			{
+				"prompt": "Was beantwortet „indem wir Handzeichen geben“?",
+				"options": [
+					"Wann verständigen wir uns?",
+					"Wie oder wodurch verständigen wir uns?"
+				],
+				"answer": "Wie oder wodurch verständigen wir uns?",
+				"feedback": "Handzeichen sind hier das Mittel der Verständigung."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Benenne die vier Nebensätze im Text und notiere jeweils die passende Frage.",
+				"model": "Nachdem: Temporalsatz, wann? Weil: Kausalsatz, warum? Damit: Finalsatz, wozu? Indem: Modalsatz, wie?",
+				"criteria": [
+					"Ich bestimme den Satz mit nachdem.",
+					"Ich halte Grund und Zweck auseinander.",
+					"Ich bestimme den Satz mit indem."
+				]
+			},
+			"2": {
+				"prompt": "Schreibe zur Handlung „Wir schließen die Tür“ einmal einen Grund und einmal einen Zweck. Nutze zwei verschiedene Nebensätze.",
+				"model": "Wir schließen die Tür, weil es im Flur laut ist. Wir schließen die Tür, damit die Lesung ungestört bleibt.",
+				"criteria": [
+					"Ich erkläre im ersten Satz, warum wir handeln.",
+					"Der Zweck ist ein Ziel.",
+					"Ich trenne beide Nebensätze mit Komma ab."
+				]
+			}
+		},
+		"lehrplan": "D6 · 4.2 / 4.3"
+	},
+	{
+		"id": "d6-subjekt-objektsatz",
+		"stage": "sprache",
+		"title": "Nebensätze als Subjekt oder Objekt erkennen",
+		"skill": "Du prüfst mit einer Ersatzprobe, was ein ganzer Nebensatz leistet.",
+		"bindings": [
+			"4.2",
+			"4.3"
+		],
+		"paragraphs": [
+			"Ein Nebensatz kann als Ganzes ein Satzglied ersetzen. Der Subjektsatz besetzt die Stelle des Subjekts. Frage „Wer oder was?“. Der Objektsatz besetzt eine Objektstelle. In den Beispielen zum Akkusativ fragst du „Wen oder was?“. Das Subjekt des übergeordneten Satzes kann getrennt genannt sein.",
+			"Beispiel: „Dass das Tor offen ist, überrascht Nuri.“ Wer oder was überrascht Nuri? Dass das Tor offen ist. „Nuri bemerkt, dass das Tor offen ist.“ Wer bemerkt etwas? Nuri. Was bemerkt Nuri? Dass das Tor offen ist."
+		],
+		"material": "Dass das Tor offen ist, überrascht Nuri. Nuri bemerkt, dass das Tor offen ist. Nuri weiß noch nicht, wer das Tor geöffnet hat.",
+		"materialLabel": "Eigens geschriebener Übungstext",
+		"sourceIds": [
+			"lehrplan"
+		],
+		"takeaway": "Betrachte den Nebensatz als Ganzes. Bestimme seine Funktion vom Verb des übergeordneten Satzes aus.",
+		"check": {
+			"wrong": "Der Nebensatz ist ein Akkusativobjekt.",
+			"explanation": "„Dein Besuch freut uns“ zeigt, dass das ausgetauschte Satzglied im Nominativ steht."
+		},
+		"visual": {
+			"kind": "sentence",
+			"title": "Ein Nebensatz wechselt seine Aufgabe",
+			"initial": {
+				"blocks": [
+					{
+						"label": "Nebensatz",
+						"text": "dass das Tor offen ist",
+						"tone": "subordinate"
+					}
+				]
+			},
+			"steps": [
+				{
+					"label": "Subjekt",
+					"text": "Wer oder was überrascht?",
+					"detail": "Die Probe „Dieser Umstand überrascht Nuri“ macht die Subjektstelle sichtbar.",
+					"blocks": [
+						{
+							"label": "Subjektsatz",
+							"text": "Dass das Tor offen ist,",
+							"tone": "subordinate"
+						},
+						{
+							"label": "Verb",
+							"text": "überrascht",
+							"tone": "predicate"
+						},
+						{
+							"label": "Objekt",
+							"text": "Nuri.",
+							"tone": "object"
+						}
+					]
+				},
+				{
+					"label": "Objekt",
+					"text": "Was bemerkt Nuri?",
+					"detail": "Nuri ist das Subjekt. „Nuri bemerkt diesen Umstand“ zeigt die Objektstelle.",
+					"blocks": [
+						{
+							"label": "Subjekt",
+							"text": "Nuri",
+							"tone": "subject"
+						},
+						{
+							"label": "Verb",
+							"text": "bemerkt,",
+							"tone": "predicate"
+						},
+						{
+							"label": "Objektsatz",
+							"text": "dass das Tor offen ist.",
+							"tone": "object"
+						}
+					]
+				},
+				{
+					"label": "Indirekte Frage",
+					"text": "Was weiß Nuri noch nicht?",
+					"detail": "Auch eine eingebettete Frage kann die Objektstelle füllen.",
+					"blocks": [
+						{
+							"label": "Hauptsatz",
+							"text": "Nuri weiß noch nicht,",
+							"tone": "subject"
+						},
+						{
+							"label": "Objektsatz",
+							"text": "wer das Tor geöffnet hat.",
+							"tone": "object"
+						}
+					]
+				}
+			]
+		},
+		"cases": [
+			{
+				"prompt": "Was ist der Nebensatz in „Dass es still ist, fällt mir auf“?",
+				"options": [
+					"Subjektsatz",
+					"Objektsatz"
+				],
+				"answer": "Subjektsatz",
+				"feedback": "„Diese Stille fällt mir auf“ zeigt, was auffällt und im Nominativ steht."
+			},
+			{
+				"prompt": "Was ist der Nebensatz in „Mira fragt, ob alle da sind“?",
+				"options": [
+					"Subjektsatz",
+					"Objektsatz"
+				],
+				"answer": "Objektsatz",
+				"feedback": "Mira ist das Subjekt. Die indirekte Frage sagt, was sie fragt."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Ersetze die Nebensätze der ersten beiden Sätze durch „dieser Umstand“ oder „diesen Umstand“. Bestimme die Funktion.",
+				"model": "Dieser Umstand überrascht Nuri: Subjekt. Nuri bemerkt diesen Umstand: Akkusativobjekt.",
+				"criteria": [
+					"Ich ersetze jeweils den ganzen Nebensatz.",
+					"Ich verwende die passende Form.",
+					"Ich nenne beide Funktionen."
+				]
+			},
+			"2": {
+				"prompt": "Schreibe einen Satz mit einer indirekten Frage als Objekt und einen Satz, in dem ein dass-Satz Subjekt ist.",
+				"model": "Mira weiß, wer den Brief gebracht hat. Dass der Brief nass ist, stört Mira.",
+				"criteria": [
+					"Meine indirekte Frage ist ein Objekt.",
+					"Mein dass-Satz ist ein Subjekt.",
+					"Beide Nebensätze sind durch Komma getrennt."
+				]
+			}
+		},
+		"lehrplan": "D6 · 4.2 / 4.3"
+	},
+	{
+		"id": "d6-relativsaetze",
+		"stage": "sprache",
+		"title": "Mit Relativsätzen genauer werden",
+		"skill": "Du beziehst das Relativpronomen richtig und klammerst den Nebensatz mit Kommas ab.",
+		"bindings": [
+			"4.2",
+			"4.3"
+		],
+		"paragraphs": [
+			"Ein Relativsatz beschreibt meist ein Nomen oder Pronomen näher. „Das Buch, das ich lese, ist spannend.“ Das Relativpronomen richtet sich in Genus und Numerus nach dem Bezugswort. Sein Kasus hängt von seiner Aufgabe im Relativsatz ab.",
+			"Beispiel: „Das Kind, dem ich helfe, liest.“ „Kind“ ist Neutrum Singular, aber „dem“ steht im Dativ, weil es im Relativsatz die Ergänzung zu „helfen“ ist. Das finite Verb steht im eingeleiteten Relativsatz am Ende. Ein eingeschobener Relativsatz braucht links und rechts ein Komma."
+		],
+		"material": "Das Buch ist spannend. Ich lese das Buch. → Das Buch, das ich lese, ist spannend. Das Kind liest. Ich helfe dem Kind. → Das Kind, dem ich helfe, liest.",
+		"materialLabel": "Eigens geschriebener Übungstext · Beispieldaten sind erfunden",
+		"sourceIds": [
+			"lehrplan"
+		],
+		"takeaway": "Bezugswort für Genus und Numerus, Satzaufgabe für Kasus; Relativsätze werden mit Kommas abgegrenzt.",
+		"lehrplan": "D6 · 4.2 / 4.3",
+		"check": {
+			"wrong": "den",
+			"explanation": "„Helfen“ verlangt hier Dativ; das Relativpronomen übernimmt den Kasus aus seinem Nebensatz."
+		},
+		"visual": {
+			"kind": "sentence",
+			"title": "Mit Relativsätzen genauer werden · im Modell",
+			"steps": [
+				{
+					"label": "Bezug",
+					"text": "das Kind → Neutrum Singular",
+					"detail": "Das Bezugswort gibt Genus und Numerus vor.",
+					"blocks": [
+						{
+							"text": "Das Kind,",
+							"label": "Bezugswort",
+							"tone": "subject"
+						},
+						{
+							"text": "dem ich helfe,",
+							"label": "Relativsatz",
+							"tone": "subordinate"
+						},
+						{
+							"text": "liest.",
+							"label": "Hauptsatz weiter",
+							"tone": "predicate"
+						}
+					]
+				},
+				{
+					"label": "Kasus",
+					"text": "die Frau → der ich danke",
+					"detail": "„Frau“ gibt Femininum Singular vor. Weil „danken“ Dativ verlangt, heißt das Relativpronomen hier „der“.",
+					"blocks": [
+						{
+							"text": "Die Frau,",
+							"label": "Femininum",
+							"tone": "subject"
+						},
+						{
+							"text": "der ich danke,",
+							"label": "Dativ im Relativsatz",
+							"tone": "subordinate"
+						},
+						{
+							"text": "kommt.",
+							"label": "Hauptsatz",
+							"tone": "predicate"
+						}
+					]
+				},
+				{
+					"label": "Numerus",
+					"text": "die Bücher → die ich lese",
+					"detail": "„Bücher“ ist Plural. Im Relativsatz bezeichnet „die“ das Akkusativobjekt zu „lesen“; die beiden Kommas grenzen den Einschub ab.",
+					"blocks": [
+						{
+							"text": "Die Bücher,",
+							"label": "Plural",
+							"tone": "subject"
+						},
+						{
+							"text": "die ich lese,",
+							"label": "Akkusativ im Relativsatz",
+							"tone": "subordinate"
+						},
+						{
+							"text": "liegen hier.",
+							"label": "Hauptsatz",
+							"tone": "predicate"
+						}
+					]
+				}
+			],
+			"initial": {
+				"blocks": [
+					{
+						"text": "Das Kind liest.",
+						"label": "Hauptsatz",
+						"tone": "subject"
+					},
+					{
+						"text": "Ich helfe dem Kind.",
+						"label": "zweiter Gedanke",
+						"tone": "object"
+					}
+				]
+			}
+		},
+		"cases": [
+			{
+				"prompt": "Welcher Satz ist richtig abgegrenzt?",
+				"options": [
+					"Das Buch, das ich lese, ist spannend.",
+					"Das Buch, das ich lese ist spannend."
+				],
+				"answer": "Das Buch, das ich lese, ist spannend.",
+				"feedback": "Ein eingeschobener Relativsatz braucht auch am Ende ein Komma."
+			},
+			{
+				"prompt": "Wo steht das finite Verb im Relativsatz?",
+				"options": [
+					"Immer unmittelbar nach dem Relativpronomen.",
+					"Am Ende: „das ich lese“."
+				],
+				"answer": "Am Ende: „das ich lese“.",
+				"feedback": "Der eingeleitete Nebensatz hat hier Verbendstellung."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Verbinde die beiden Beispielpaare zu Relativsätzen und erkläre „dem“.",
+				"model": "Das Buch, das ich lese, ist spannend. Das Kind, dem ich helfe, liest. „Dem“ steht im Dativ, weil es zu „helfen“ gehört.",
+				"criteria": [
+					"Ich beziehe die Pronomen richtig.",
+					"Ich setze beide Kommas.",
+					"Ich erkläre den Kasus im Nebensatz."
+				]
+			},
+			"2": {
+				"prompt": "Verbinde „Die Bücher liegen hier. Ich habe die Bücher ausgeliehen“ und „Die Frau kommt. Ich danke der Frau“. Vergleiche die Relativpronomen.",
+				"model": "Die Bücher, die ich ausgeliehen habe, liegen hier. Die Frau, der ich danke, kommt. „Die“ steht als Akkusativ im Plural; „der“ ist Dativ Singular Femininum zu „danken“. Bezugswort und Aufgabe im Nebensatz wirken zusammen.",
+				"criteria": [
+					"Ich bilde zwei korrekte Relativsätze.",
+					"Ich beachte Verbendstellung und Kommas.",
+					"Ich begründe die unterschiedlichen Kasusformen."
+				]
+			}
+		}
+	},
+	{
+		"id": "d6-oberbegriffe",
+		"stage": "sprache",
+		"title": "Ober- und Unterbegriffe passend wählen",
+		"skill": "Du bündelst Begriffe und wechselst sinnvoll zwischen Überblick und Einzelheit.",
+		"bindings": [
+			"4.2"
+		],
+		"paragraphs": [
+			"Ein Oberbegriff fasst mehrere Arten zusammen. Ein Unterbegriff bezeichnet eine davon genauer. Prüfe mit einem Satz wie „Ein Haiku ist ein Gedicht“. Ein Wort kann zugleich Ober- und Unterbegriff sein: Gedicht ist genauer als literarischer Text und weiter als Haiku.",
+			"Beispiel: Für eine Regalliste hilft „Schreibgeräte“ als Oberbegriff von Bleistift und Filzstift. In einer Anleitung ist „Markiere mit einem Filzstift“ genauer. Wähle so genau, wie es dein Ziel verlangt."
+		],
+		"material": "Für den Lesetisch werden eine griechische Sage, ein Reiseführer, ein Jugendroman und ein Lexikon sortiert. Für die Beschriftung stehen „Literarische Texte“, „Sachtexte“, „Bücher“ und „Jugendroman“ zur Wahl.",
+		"materialLabel": "Eigens geschriebener Übungstext",
+		"sourceIds": [
+			"lehrplan"
+		],
+		"takeaway": "Teste die Beziehung mit „X ist eine Art von Y“. Nutze den Oberbegriff zum Bündeln und den Unterbegriff zum Präzisieren.",
+		"check": {
+			"wrong": "Filzstiftspitze",
+			"explanation": "Mit beiden Stiften kann man schreiben. Schreibgerät umfasst beide."
+		},
+		"visual": {
+			"kind": "meaning",
+			"title": "Ein Regal, drei Ebenen",
+			"initial": {
+				"blocks": [
+					{
+						"label": "Weit",
+						"text": "Texte",
+						"tone": "subject"
+					}
+				]
+			},
+			"steps": [
+				{
+					"label": "Gruppieren",
+					"text": "Literarische Texte und Sachtexte",
+					"detail": "Diese Gruppen sind enger als Texte und fassen je mehrere Formen zusammen.",
+					"blocks": [
+						{
+							"label": "Literarischer Text",
+							"text": "Sage und Roman",
+							"tone": "subject"
+						},
+						{
+							"label": "Sachtext",
+							"text": "Lexikonartikel und Reiseführer",
+							"tone": "predicate"
+						}
+					]
+				},
+				{
+					"label": "Genauer werden",
+					"text": "Roman → Jugendroman",
+					"detail": "Jugendroman ist enger als Roman. Beide können in derselben Begriffskette stehen.",
+					"blocks": [
+						{
+							"label": "Oberbegriff",
+							"text": "Roman",
+							"tone": "subject"
+						},
+						{
+							"label": "Unterbegriff",
+							"text": "Jugendroman",
+							"tone": "image"
+						}
+					]
+				},
+				{
+					"label": "Probe",
+					"text": "Ein Jugendroman ist ein Roman.",
+					"detail": "Die Umkehrung gilt nicht allgemein. Ein Roman kann sich an andere Lesende richten.",
+					"blocks": [
+						{
+							"label": "Tragfähige Beziehung",
+							"text": "Jugendroman → Roman → literarischer Text",
+							"tone": "reason"
+						}
+					]
+				}
+			]
+		},
+		"cases": [
+			{
+				"prompt": "Welcher Oberbegriff passt für griechische Sage und Jugendroman?",
+				"options": [
+					"Literarische Texte",
+					"Reiseführer"
+				],
+				"answer": "Literarische Texte",
+				"feedback": "Sage und Roman sind beide literarische Textformen."
+			},
+			{
+				"prompt": "Wie benennst du „Buch“ für ein Regal mit Jugendromanen möglichst genau?",
+				"options": [
+					"Gedrucktes",
+					"Jugendroman"
+				],
+				"answer": "Jugendroman",
+				"feedback": "Jugendroman nennt die passende Untergruppe."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Sortiere Sage, Lexikon, Reiseführer und Jugendroman in zwei Gruppen. Erkläre eine Zuordnung.",
+				"model": "Literarische Texte: Sage und Jugendroman. Sachtexte: Reiseführer und Lexikon. Ein Lexikon bietet nachschlagbare Informationen.",
+				"criteria": [
+					"Meine zwei Oberbegriffe passen.",
+					"Ich ordne alle vier Beispiele zu.",
+					"Ich begründe eine Wahl."
+				]
+			},
+			"2": {
+				"prompt": "Schreibe einen knappen Wegweiser für die Bibliothek. Verwende einen Oberbegriff und mindestens zwei Unterbegriffe, die jüngere Kinder verstehen.",
+				"model": "Bei den Sachbüchern findest du Tierbücher und Bastelbücher. Wenn du eine Faltanleitung suchst, geh zu den Bastelbüchern.",
+				"criteria": [
+					"Mein Oberbegriff bündelt passende Gruppen.",
+					"Meine Beispiele sind unterschiedliche Untergruppen.",
+					"Mein Wegweiser hilft bei einer konkreten Suche."
+				]
+			}
+		},
+		"lehrplan": "D6 · 4.2"
+	},
+	{
+		"id": "d6-dehnung",
+		"stage": "sprache",
+		"title": "Lange Vokale richtig schreiben",
+		"skill": "Wiederholung aus Klasse 5 · Unterscheide „ie“, Dehnungs-h, Doppelvokal und einfache Schreibung.",
+		"bindings": [
+			"4.3"
+		],
+		"paragraphs": [
+			"Ein langer Vokal braucht nicht immer ein besonderes Zeichen: „Tal“ und „Hut“. Langes i schreibst du in vielen heimischen Wörtern als „ie“, etwa „Brief“. Wörter wie „Tiger“ und „Igel“ haben langes i ohne „e“.",
+			"Ein Dehnungs-h kann vor l, m, n oder r stehen, etwa in „Wahl“, „nehmen“, „Zahn“ und „Ohr“. Aus dem langen Klang allein kannst du es nicht vorhersagen: „Tal“ und „Ton“ kommen ohne h aus. Einige Wörter haben einen Doppelvokal, zum Beispiel „Saal“, „See“ oder „Boot“."
+		],
+		"materialLabel": "Wörter vergleichen",
+		"material": "Tal – Saal – Wahl\nBrief – Tiger\nTon – Sohn\nBoot – Brot\n„Wir wanderten durch das Tal und sahen später den Saal.“",
+		"sourceIds": [
+			"lehrplan"
+		],
+		"check": {
+			"wrong": "l, m, n und t",
+			"explanation": "In „Wahl“, „nehmen“, „Zahn“ und „Ohr“ steht nach dem h einer dieser Buchstaben. Nicht jedes passende Wort braucht h."
+		},
+		"takeaway": "Hör die Vokallänge. Merke oder prüfe die Schreibung, wenn derselbe lange Laut unterschiedlich geschrieben werden kann.",
+		"lehrplan": "D6 · 4.3",
+		"cases": [
+			{
+				"prompt": "Welches Paar zeigt langes i auf zwei Schreibweisen?",
+				"options": [
+					"Brief und Tiger.",
+					"Saal und Zahn."
+				],
+				"answer": "Brief und Tiger.",
+				"feedback": "„Brief“ hat ie, „Tiger“ hat einfaches i. Beide i-Laute sind lang."
+			},
+			{
+				"prompt": "Welche Schreibung passt zur Bedeutung „ein Raum für viele Menschen“?",
+				"options": [
+					"Sahl",
+					"Saal"
+				],
+				"answer": "Saal",
+				"feedback": "„Saal“ hat einen Doppelvokal. „Wahl“ klingt ähnlich und hat Dehnungs-h."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Ordne „Wahl“, „See“, „Lied“ und „Tal“ nach ihrer Schreibung.",
+				"model": "Wahl: Dehnungs-h. See: Doppelvokal. Lied: ie. Tal: einfacher Vokal.",
+				"criteria": [
+					"Ich finde das Dehnungs-h.",
+					"Ich erkenne Doppelvokal und ie.",
+					"Ich erkenne die einfache Schreibung."
+				]
+			},
+			"2": {
+				"prompt": "Erkläre einer Person, warum der lange Laut nicht genügt, um „Ton“ und „Sohn“ richtig zu schreiben. Gib einen Merksatz.",
+				"model": "Beide Wörter haben ein langes o und danach ein n. „Sohn“ wird mit h geschrieben, „Ton“ ohne. Ich merke: Der Sohn hört einen Ton.",
+				"criteria": [
+					"Ich erkenne den langen Vokal in beiden.",
+					"Ich erkläre die verschiedenen Schreibweisen.",
+					"Mein Merksatz verwendet beide Wörter korrekt."
+				]
+			}
+		},
+		"visual": {
+			"kind": "vowel",
+			"title": "Ein langer Vokal, verschiedene Schreibungen",
+			"initial": {
+				"blocks": [
+					{
+						"text": "Tal",
+						"label": "langes a ohne Zusatz",
+						"tone": "vowel"
+					}
+				],
+				"length": "long"
+			},
+			"steps": [
+				{
+					"label": "Dehnungs-h untersuchen",
+					"text": "Wahl",
+					"detail": "In Wahl steht nach dem langen a ein Dehnungs-h. Der lange Klang allein sagt das h nicht voraus.",
+					"blocks": [
+						{
+							"text": "Wa",
+							"label": "langer Vokal",
+							"tone": "vowel"
+						},
+						{
+							"text": "h",
+							"label": "Dehnungszeichen",
+							"tone": "marker"
+						},
+						{
+							"text": "l",
+							"label": "Konsonant",
+							"tone": "stem"
+						}
+					],
+					"length": "long"
+				},
+				{
+					"label": "Langes i untersuchen",
+					"text": "Brief",
+					"detail": "In Brief wird der lange i-Laut als ie geschrieben. Tiger zeigt, dass es auch andere Schreibweisen gibt.",
+					"blocks": [
+						{
+							"text": "Br",
+							"label": "Anfang",
+							"tone": "stem"
+						},
+						{
+							"text": "ie",
+							"label": "langer i-Laut",
+							"tone": "vowel"
+						},
+						{
+							"text": "f",
+							"label": "Ende",
+							"tone": "stem"
+						}
+					],
+					"length": "long"
+				},
+				{
+					"label": "Doppelvokal untersuchen",
+					"text": "See",
+					"detail": "See schreibt den langen e-Laut mit ee. Die konkrete Wortschreibung musst du kennen oder nachschlagen.",
+					"blocks": [
+						{
+							"text": "S",
+							"label": "Anfang",
+							"tone": "stem"
+						},
+						{
+							"text": "ee",
+							"label": "langer e-Laut",
+							"tone": "vowel"
+						}
+					],
+					"length": "long"
+				}
+			]
+		}
+	},
+	{
+		"id": "d6-schaerfung",
+		"stage": "sprache",
+		"title": "Kurze Vokale, Doppelkonsonanten, ck und tz",
+		"skill": "Wiederholung aus Klasse 5 · Hör den betonten Vokal und prüfe die Konsonanten danach.",
+		"bindings": [
+			"4.3"
+		],
+		"paragraphs": [
+			"Folgt in einem einfachen Wortstamm nach einem kurzen betonten Vokal nur ein Konsonantenlaut, wird dessen Buchstabe häufig verdoppelt: „rennen“, „Kamm“. Für k schreibt man dabei in der Regel „ck“ und für z „tz“: „backen“, „Katze“.",
+			"Bei mehreren verschiedenen Konsonanten nach dem kurzen Vokal ist keine zusätzliche Verdopplung nötig: „Kante“, „Winter“. Bei Fremdwörtern und häufigen kurzen Wörtern gibt es Ausnahmen. Sprich den Wortstamm deutlich und prüfe unsichere Wörter im Wörterbuch."
+		],
+		"materialLabel": "Wortpaare zum Hören",
+		"material": "Kamm – kam\nRate – Ratte\nbacken – Haken\nKatze – Kerze\n„Wir backen, während der Mantel am Haken hängt.“",
+		"sourceIds": [
+			"lehrplan"
+		],
+		"check": {
+			"wrong": "ch und ss",
+			"explanation": "„Backen“ und „Katze“ zeigen die üblichen Schreibungen nach kurzem betonten Vokal."
+		},
+		"takeaway": "Hör auf den betonten Vokal und zähle die Konsonantenlaute danach. Merke dir „ck“ und „tz“.",
+		"lehrplan": "D6 · 4.3",
+		"cases": [
+			{
+				"prompt": "Welches Wort bezeichnet das Nagetier?",
+				"options": [
+					"Rate",
+					"Ratte"
+				],
+				"answer": "Ratte",
+				"feedback": "Der Tiername hat kurzes a und zwei t. „Rate“ hat langes a."
+			},
+			{
+				"prompt": "Welche Schreibung passt zu „Brot im Ofen zubereiten“?",
+				"options": [
+					"backen",
+					"baken"
+				],
+				"answer": "backen",
+				"feedback": "Der Vokal ist kurz. Im Wortstamm steht dafür vor der Endung ck."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Erkläre die Schreibung von „Kamm“, „Katze“ und „Kante“.",
+				"model": "Kamm: kurzes a und ein m-Laut, darum mm. Katze: nach kurzem a steht tz. Kante: Nach kurzem a folgen n und t.",
+				"criteria": [
+					"Ich höre das kurze a.",
+					"Ich erkläre mm und tz.",
+					"Ich erkläre die zwei Konsonanten in „Kante“."
+				]
+			},
+			"2": {
+				"prompt": "Schreibe je einen Satz mit „kam“ und „Kamm“. Erkläre, wie die Aussprache zur Schreibung passt.",
+				"model": "Sie kam zur Tür. Der Kamm lag auf dem Tisch. „Kam“ hat ein langes a und ein m, „Kamm“ hat ein kurzes a und zwei m.",
+				"criteria": [
+					"Ich verwende beide Wörter passend.",
+					"Ich höre den Unterschied in der Vokallänge.",
+					"Ich erkläre die Buchstaben am Ende."
+				]
+			}
+		},
+		"visual": {
+			"kind": "vowel",
+			"title": "Vokallänge und folgende Buchstaben vergleichen",
+			"initial": {
+				"blocks": [
+					{
+						"text": "R",
+						"label": "Anfang",
+						"tone": "stem"
+					},
+					{
+						"text": "a",
+						"label": "lang",
+						"tone": "vowel"
+					},
+					{
+						"text": "te",
+						"label": "Ende",
+						"tone": "stem"
+					}
+				],
+				"length": "long"
+			},
+			"steps": [
+				{
+					"label": "Rate mit Ratte vergleichen",
+					"text": "Ratte: kurzes a, tt",
+					"detail": "Ratte bezeichnet das Tier. Der kurze betonte Vokal steht hier vor dem verdoppelten t.",
+					"blocks": [
+						{
+							"text": "R",
+							"label": "Anfang",
+							"tone": "stem"
+						},
+						{
+							"text": "a",
+							"label": "kurz",
+							"tone": "vowel"
+						},
+						{
+							"text": "tt",
+							"label": "Doppelkonsonant",
+							"tone": "marker"
+						},
+						{
+							"text": "e",
+							"label": "Endung",
+							"tone": "ending"
+						}
+					],
+					"length": "short"
+				},
+				{
+					"label": "Den k-Laut untersuchen",
+					"text": "backen: kurzes a, ck",
+					"detail": "Beim üblichen Schärfungsmuster steht für den k-Laut ck statt kk.",
+					"blocks": [
+						{
+							"text": "b",
+							"label": "Anfang",
+							"tone": "stem"
+						},
+						{
+							"text": "a",
+							"label": "kurz",
+							"tone": "vowel"
+						},
+						{
+							"text": "ck",
+							"label": "k-Laut",
+							"tone": "marker"
+						},
+						{
+							"text": "en",
+							"label": "Endung",
+							"tone": "ending"
+						}
+					],
+					"length": "short"
+				},
+				{
+					"label": "Den z-Laut untersuchen",
+					"text": "Katze: kurzes a, tz",
+					"detail": "Nach dem kurzen betonten a steht hier tz statt zz.",
+					"blocks": [
+						{
+							"text": "K",
+							"label": "Anfang",
+							"tone": "stem"
+						},
+						{
+							"text": "a",
+							"label": "kurz",
+							"tone": "vowel"
+						},
+						{
+							"text": "tz",
+							"label": "z-Laut",
+							"tone": "marker"
+						},
+						{
+							"text": "e",
+							"label": "Endung",
+							"tone": "ending"
+						}
+					],
+					"length": "short"
+				}
+			]
+		}
+	},
+	{
+		"id": "d6-aehnliche-woerter",
+		"stage": "sprache",
+		"title": "Gleich und ähnlich klingende Wörter unterscheiden",
+		"skill": "Wiederholung aus Klasse 5 · Prüfe Wortart und Bedeutung bei Paaren wie seit/seid, viel/fiel und wieder/wider.",
+		"bindings": [
+			"4.3"
+		],
+		"paragraphs": [
+			"Einige Wortpaare klingen gleich oder sehr ähnlich, gehören aber zu verschiedenen Wortarten und werden unterschiedlich geschrieben. Eine Rechtschreibprüfung übersieht solche Verwechslungen oft, weil beide Formen existieren. Bei ‚seit‘ und ‚seid‘ prüfst du Wortart und Bedeutung: ‚seid‘ mit d gehört als Verbform von ‚sein‘ immer zur Person ‚ihr‘ (‚Ihr seid bereit‘). ‚seit‘ mit t bezeichnet einen Zeitpunkt oder eine Zeitdauer (‚seit gestern‘).",
+			"Genauso trennst du ‚viel‘ und ‚fiel‘: ‚fiel‘ ist das Präteritum des Verbs ‚fallen‘ (fallen – fiel – gefallen); ‚viel‘ beschreibt eine große Menge als Gegenteil von ‚wenig‘. ‚wieder‘ mit ie bedeutet ‚noch einmal‘ oder ‚zurück‘ (‚wieder lesen‘), ‚wider‘ mit bloßem i heißt ‚gegen‘ (‚wider Willen‘, ‚widersprechen‘). Bei ‚Seite‘ und ‚Saite‘ oder ‚Waise‘ und ‚Weise‘ klärt die Wortfamilie den Zusammenhang."
+		],
+		"materialLabel": "Vier Sätze zum Prüfen der Wortart",
+		"material": "Satz eins: Ihr [seid/seit] [seid/seit] gestern eine aufmerksame Gruppe.\nSatz zwei: Nach dem Regen [viel/fiel] mir [viel/fiel] Neues auf.\nSatz drei: Er kommt [wider/wieder] und hilft nicht [wider/wieder] Willen.\nSatz vier: Auf dieser [Saite/Seite] des Hefts steht eine Frage zur zweiten [Saite/Seite] einer Geige.",
+		"sourceIds": [
+			"lehrplan"
+		],
+		"check": {
+			"wrong": "Es leitet dort einen Vergleich mit der Menge ‚wenig‘ ein.",
+			"explanation": "‚ihr seid‘ ist die gebeugte Form des Verbs ‚sein‘ (wir sind, ihr seid). Die Zeitangabe ‚seit gestern‘ schreibt man mit t am Ende."
+		},
+		"takeaway": "Bestimme zuerst die Wortart im Satz: Verbformen wie ‚seid‘ und ‚fiel‘ trennst du klar von ‚seit‘ und ‚viel‘.",
+		"lehrplan": "D6 · 4.3",
+		"cases": [
+			{
+				"prompt": "Welche Schreibweisen vervollständigen Satz eins richtig?",
+				"options": [
+					"Ihr seid seit gestern eine aufmerksame Gruppe.",
+					"Ihr seit seid gestern eine aufmerksame Gruppe."
+				],
+				"answer": "Ihr seid seit gestern eine aufmerksame Gruppe.",
+				"feedback": "‚seid‘ passt als Verbform zum Subjekt ‚Ihr‘; ‚seit gestern‘ benennt eine Zeitdauer seit einem Zeitpunkt."
+			},
+			{
+				"prompt": "Welche Formen gehören in Satz zwei?",
+				"options": [
+					"Nach dem Regen viel mir fiel Neues auf.",
+					"Nach dem Regen fiel mir viel Neues auf."
+				],
+				"answer": "Nach dem Regen fiel mir viel Neues auf.",
+				"feedback": "‚fiel‘ gehört zu ‚auffallen‘ im Präteritum; ‚viel Neues‘ nennt die Menge."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe die vier Sätze aus dem Material in der richtigen Schreibung auf und erkläre an ‚seit/seid‘ und ‚wieder/wider‘ deine Kontrollprobe.",
+				"model": "Ihr seid seit gestern eine aufmerksame Gruppe. Nach dem Regen fiel mir viel Neues auf. Er kommt wieder und hilft nicht wider Willen. Auf dieser Seite des Hefts steht eine Frage zur zweiten Saite einer Geige. ‚seid‘ gehört zum Verb ‚sein‘ bei ‚ihr‘, ‚seit‘ zur Zeit; ‚wieder‘ heißt noch einmal und ‚wider‘ bedeutet gegen.",
+				"criteria": [
+					"Alle acht Wörter sind richtig eingesetzt.",
+					"Ich erkläre ‚seid/seit‘ über Verbform und Zeitangabe.",
+					"Ich trenne ‚wieder‘ (noch einmal) und ‚wider‘ (gegen) richtig."
+				]
+			},
+			"2": {
+				"prompt": "Schreibe drei eigene Trainingssätze für eine Mitschülerin, in denen ‚seid/seit‘, ‚fiel/viel‘ und ‚wieder/wider‘ jeweils gemeinsam auftreten, und formuliere eine kurze Lösungshilfe.",
+				"model": "Ihr seid seit dem Vormittag fertig. Als ein Tropfen fiel, blieb noch viel Zeit zum Abwischen. Wir treffen uns wieder, auch wenn jemand wider die Regel spät startet. Probe: Verbformen von ‚sein‘ (seid) und ‚fallen‘ (fiel) zuerst über die Grundform prüfen; ‚wieder‘ meint erneut, ‚wider‘ meint gegen.",
+				"criteria": [
+					"Alle drei Wortpaare kommen sinnvoll vor.",
+					"Alle sechs Formen stehen im richtigen Satzzusammenhang.",
+					"Die Lösungshilfe nennt die passende Wortart- oder Bedeutungsprobe."
+				]
+			}
+		},
+		"visual": {
+			"kind": "spelling",
+			"title": "Wortart- und Bedeutungsprobe am gleich klingenden Wort",
+			"initial": {
+				"blocks": [
+					{
+						"text": "seit",
+						"label": "Zeit · Präposition",
+						"tone": "time"
+					},
+					{
+						"text": "Montag",
+						"label": "Nomen",
+						"tone": "noun"
+					}
+				]
+			},
+			"steps": [
+				{
+					"label": "Mit ‚ihr‘ prüfen → Verb",
+					"text": "Ihr seid bereit.",
+					"detail": "Steht das Verb zu ‚ihr‘ in einer Form von ‚sein‘ (wir sind, ihr seid), endet es auf d.",
+					"blocks": [
+						{
+							"text": "Ihr",
+							"label": "Pronomen",
+							"tone": "pronoun"
+						},
+						{
+							"text": "seid",
+							"label": "Verb · sein",
+							"tone": "predicate"
+						},
+						{
+							"text": "bereit.",
+							"label": "Adjektiv",
+							"tone": "adjective"
+						}
+					]
+				},
+				{
+					"label": "Handlung oder Menge?",
+					"text": "Es fiel viel Schnee.",
+					"detail": "‚fiel‘ ist das Präteritum von ‚fallen‘; ‚viel‘ beschreibt eine große Menge (Gegenteil von ‚wenig‘).",
+					"blocks": [
+						{
+							"text": "Es",
+							"label": "Subjekt",
+							"tone": "pronoun"
+						},
+						{
+							"text": "fiel",
+							"label": "Verb · fallen",
+							"tone": "predicate"
+						},
+						{
+							"text": "viel",
+							"label": "Menge",
+							"tone": "adjective"
+						},
+						{
+							"text": "Schnee.",
+							"label": "Nomen",
+							"tone": "noun"
+						}
+					]
+				},
+				{
+					"label": "‚noch einmal‘ oder ‚gegen‘?",
+					"text": "wieder … wider",
+					"detail": "‚wieder‘ mit ie steht für erneut oder zurück; ‚wider‘ mit i bedeutet ‚gegen‘, etwa in ‚widersprechen‘.",
+					"blocks": [
+						{
+							"text": "Sie",
+							"label": "Subjekt",
+							"tone": "pronoun"
+						},
+						{
+							"text": "kommt",
+							"label": "Verb",
+							"tone": "predicate"
+						},
+						{
+							"text": "wieder,",
+							"label": "noch einmal",
+							"tone": "time"
+						},
+						{
+							"text": "nicht wider Willen.",
+							"label": "gegen",
+							"tone": "reason"
+						}
+					]
+				}
+			]
+		}
+	},
+	{
+		"id": "d6-das-dass",
+		"stage": "sprache",
+		"title": "Das und dass mit der Ersatzprobe unterscheiden",
+		"skill": "Du prüfst Artikel und Pronomen und erkennst die Konjunktion.",
+		"bindings": [
+			"4.3"
+		],
+		"paragraphs": [
+			"„Das“ kann Artikel oder Pronomen sein. Wenn du es im passenden Zusammenhang sinnvoll durch „dieses“, „jenes“ oder „welches“ ersetzen kannst, schreibst du ein s. Als Artikel: das Buch → dieses Buch. Als Relativpronomen: das Buch, das ich lese → welches ich lese.",
+			"„Dass“ ist eine unterordnende Konjunktion und lässt sich nicht so ersetzen: „Ich hoffe, dass du kommst.“ Die Probe muss im Satz wirklich sinnvoll sein; ein beliebig hineingesetztes Ersatzwort genügt nicht. Kommas und s-Zahl sind zwei Prüfungen: Ein Komma vor dem Wort bedeutet nicht automatisch „dass“."
+		],
+		"material": "Ich hoffe, dass du das Buch, das ich dir geliehen habe, bald liest. Proben: dieses Buch; welches ich dir geliehen habe. Dagegen: „Ich hoffe, dieses du …“ ergibt keinen passenden Satz.",
+		"materialLabel": "Eigens geschriebener Übungstext · Beispieldaten sind erfunden",
+		"sourceIds": [
+			"lehrplan"
+		],
+		"takeaway": "Ersatzprobe im Zusammenhang: dieses, jenes oder welches stützen „das“; die Konjunktion heißt „dass“.",
+		"lehrplan": "D6 · 4.3",
+		"check": {
+			"wrong": "Immer, gestern oder dort.",
+			"explanation": "Eine sinnvolle Ersetzung durch eines dieser Wörter zeigt Artikel- oder Pronomengebrauch."
+		},
+		"visual": {
+			"kind": "sentence",
+			"title": "Das und dass mit der Ersatzprobe unterscheiden · im Modell",
+			"steps": [
+				{
+					"label": "Artikel",
+					"text": "das Buch → dieses Buch",
+					"detail": "Das Begleitwort zum Nomen wird mit einem s geschrieben.",
+					"blocks": [
+						{
+							"text": "das Buch",
+							"label": "Artikel",
+							"tone": "noun"
+						},
+						{
+							"text": "dieses Buch",
+							"label": "Ersatzprobe",
+							"tone": "pronoun"
+						}
+					]
+				},
+				{
+					"label": "Relativpronomen",
+					"text": "das ich lese → welches ich lese",
+					"detail": "Das Pronomen bezieht sich auf das Buch; das Komma ist kein Grund für Doppel-s.",
+					"blocks": [
+						{
+							"text": "das ich lese",
+							"label": "Relativpronomen",
+							"tone": "subordinate"
+						},
+						{
+							"text": "welches ich lese",
+							"label": "Ersatzprobe",
+							"tone": "pronoun"
+						}
+					]
+				},
+				{
+					"label": "Konjunktion",
+					"text": "Ich hoffe, dass du kommst.",
+					"detail": "Die unterordnende Konjunktion lässt die Ersatzprobe nicht zu.",
+					"blocks": [
+						{
+							"text": "Ich hoffe,",
+							"label": "Hauptsatz",
+							"tone": "subject"
+						},
+						{
+							"text": "dass du kommst.",
+							"label": "Konjunktion und Nebensatz",
+							"tone": "subordinate"
+						},
+						{
+							"text": "kein passendes Ersatzwort",
+							"label": "dieses/jenes/welches passen nicht",
+							"tone": "marker"
+						}
+					]
+				}
+			],
+			"initial": {
+				"blocks": [
+					{
+						"text": "Ich hoffe, … du … Buch liest.",
+						"label": "Prüfstellen",
+						"tone": "neutral"
+					}
+				]
+			}
+		},
+		"cases": [
+			{
+				"prompt": "Was ergänzt „Ich weiß, … du kommst“?",
+				"options": [
+					"dass",
+					"das"
+				],
+				"answer": "dass",
+				"feedback": "Hier leitet die Konjunktion den Inhalt des Wissens ein; „dieses du kommst“ passt nicht."
+			},
+			{
+				"prompt": "Was ergänzt „Das Heft, … dort liegt“?",
+				"options": [
+					"dass",
+					"das"
+				],
+				"answer": "das",
+				"feedback": "„Welches dort liegt“ ist eine sinnvolle Probe für das Relativpronomen."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Setze das oder dass ein und begründe: „Ich hoffe, … du … Heft, … dort liegt, mitbringst.“",
+				"model": "Ich hoffe, dass du das Heft, das dort liegt, mitbringst. Erstes „dass“: Konjunktion. Zweites „das“: dieses Heft. Drittes „das“: welches dort liegt.",
+				"criteria": [
+					"Ich prüfe alle drei Stellen.",
+					"Ich nutze sinnvolle Ersatzwörter.",
+					"Ich trenne Pronomen und Konjunktion."
+				]
+			},
+			"2": {
+				"prompt": "Erkläre einem jüngeren Kind, warum „Nach jedem Komma steht dass“ falsch ist. Gib ein Gegenbeispiel und ein Beispiel mit Konjunktion.",
+				"model": "Ein Komma grenzt auch Relativsätze ab: Das Buch, das ich lese, ist spannend. Hier passt „welches“, also „das“. In „Ich hoffe, dass du liest“ klappt diese Probe nicht; dort steht die Konjunktion „dass“.",
+				"criteria": [
+					"Ich widerlege die falsche Regel.",
+					"Ich prüfe beide Beispiele.",
+					"Ich erkläre die Funktionen verständlich."
+				]
+			}
+		}
+	},
+	{
+		"id": "d6-nominalisierung",
+		"stage": "sprache",
+		"title": "Nominalisierte Verben und Adjektive erkennen",
+		"skill": "Du nutzt Nomensignale und prüfst die Funktion im Satz.",
+		"bindings": [
+			"4.3"
+		],
+		"paragraphs": [
+			"Verben und Adjektive können wie Nomen gebraucht werden und werden dann großgeschrieben: „das Lesen“, „beim Schreiben“, „etwas Neues“. Signale sind etwa Artikel, verschmolzene Präpositionen wie „beim“ sowie Wörter wie „etwas“, „nichts“ oder „viel“ vor nominalisierten Adjektiven.",
+			"Prüfe immer den Zusammenhang. In „das schnelle Kind“ gehört das Adjektiv zu einem folgenden Nomen und bleibt klein. In „das Schnelle gefällt mir“ wird das Adjektiv selbst nominal gebraucht. Eine Probe lautet: Welche Funktion hat das Wort hier, und gibt es ein Nomen, das es näher beschreibt?"
+		],
+		"material": "Wir lesen leise. Das Lesen macht Freude. Beim Lesen mache ich Notizen. Ich entdecke etwas Neues. Das neue Buch liegt hier. Viel Schönes wartet auf uns.",
+		"materialLabel": "Eigens geschriebener Übungstext · Beispieldaten sind erfunden",
+		"sourceIds": [
+			"lehrplan"
+		],
+		"takeaway": "Nomensignale helfen; die Funktion im Satz entscheidet über die Großschreibung.",
+		"lehrplan": "D6 · 4.3",
+		"check": {
+			"wrong": "Das Neue Buch liegt hier.",
+			"explanation": "„Beim“ bedeutet „bei dem“; „Lesen“ wird hier als Nomen gebraucht."
+		},
+		"visual": {
+			"kind": "capital",
+			"title": "Nominalisierte Verben und Adjektive erkennen · im Modell",
+			"steps": [
+				{
+					"label": "Verb",
+					"text": "Wir lesen leise.",
+					"detail": "„lesen“ ist hier die finite Verbform und wird kleingeschrieben. „Wir“ steht nur wegen des Satzanfangs groß.",
+					"blocks": [
+						{
+							"text": "Wir",
+							"label": "Subjekt",
+							"tone": "subject"
+						},
+						{
+							"text": "lesen",
+							"label": "finite Verbform: klein",
+							"tone": "predicate"
+						},
+						{
+							"text": "leise.",
+							"label": "Art und Weise",
+							"tone": "manner"
+						}
+					]
+				},
+				{
+					"label": "Nominalisiert",
+					"text": "das Lesen; beim Lesen",
+					"detail": "Der Infinitiv übernimmt eine Nomenfunktion und wird großgeschrieben. „Beim“ bedeutet „bei dem“ und ist hier ebenfalls ein Nomensignal.",
+					"blocks": [
+						{
+							"text": "Das Lesen macht Freude.",
+							"label": "nominalisierter Infinitiv nach Artikel",
+							"tone": "noun"
+						},
+						{
+							"text": "Beim Lesen mache ich Notizen.",
+							"label": "bei dem + nominalisierter Infinitiv",
+							"tone": "noun"
+						}
+					]
+				},
+				{
+					"label": "Adjektivvergleich",
+					"text": "etwas Neues ↔ das neue Buch",
+					"detail": "Ein nominalisiertes Adjektiv wird groß, das Attribut vor „Buch“ bleibt klein.",
+					"blocks": [
+						{
+							"text": "etwas Neues",
+							"label": "nominalisiertes Adjektiv",
+							"tone": "noun"
+						},
+						{
+							"text": "das neue Buch",
+							"label": "Attribut bleibt klein",
+							"tone": "adjective"
+						}
+					]
+				}
+			],
+			"initial": {
+				"blocks": [
+					{
+						"text": "wir lesen",
+						"label": "Verb",
+						"tone": "predicate"
+					},
+					{
+						"text": "das neue Buch",
+						"label": "Attribut",
+						"tone": "adjective"
+					}
+				]
+			}
+		},
+		"cases": [
+			{
+				"prompt": "Was ergänzt „Ich erfahre etwas …“?",
+				"options": [
+					"Neues.",
+					"neues."
+				],
+				"answer": "Neues.",
+				"feedback": "„Etwas“ ist hier ein Signal für den nominalen Gebrauch des Adjektivs."
+			},
+			{
+				"prompt": "Warum ist „neue“ in „das neue Buch“ klein?",
+				"options": [
+					"Nach Artikeln wird grundsätzlich alles groß.",
+					"Es beschreibt das folgende Nomen Buch."
+				],
+				"answer": "Es beschreibt das folgende Nomen Buch.",
+				"feedback": "Das folgende Nomen trägt die Nomenfunktion; das Adjektiv ist ein Attribut."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Korrigiere „beim lesen lerne ich etwas neues über das neue buch“ und erkläre drei Großschreibungen.",
+				"model": "Beim Lesen lerne ich etwas Neues über das neue Buch. „Lesen“ und „Neues“ sind nominalisiert. „Buch“ ist ein Nomen; „neue“ beschreibt es und bleibt klein.",
+				"criteria": [
+					"Ich beachte Satzanfang und Nomen.",
+					"Ich erkenne beide Nominalisierungen.",
+					"Ich begründe die kleine Adjektivform."
+				]
+			},
+			"2": {
+				"prompt": "Schreibe drei Satzpaare, die jeweils ein Verb oder Adjektiv erst gewöhnlich und dann nominalisiert verwenden. Erkläre eines genauer.",
+				"model": "Wir schreiben gern. Das Schreiben macht Freude. Das Buch ist spannend. Etwas Spannendes liegt bereit. Die Kinder laufen schnell. Beim Laufen sprechen sie wenig. „Beim“ enthält „dem“ und zeigt hier den nominalen Gebrauch von „Laufen“.",
+				"criteria": [
+					"Meine Paare ändern die Funktion.",
+					"Ich schreibe die Formen passend.",
+					"Ich erkläre die Nominalisierung im Zusammenhang."
+				]
+			}
+		}
+	},
+	{
+		"id": "d6-fremdwoerter",
+		"stage": "sprache",
+		"title": "Fremdwörter verstehen und passend einsetzen",
+		"skill": "Du nutzt Bedeutung, Herkunftsbausteine und sichere Schreibweisen.",
+		"bindings": [
+			"4.3"
+		],
+		"paragraphs": [
+			"Fremdwörter sind Wörter, die aus anderen Sprachen übernommen wurden. Viele gebräuchliche Wörter haben griechische oder lateinische Wurzeln. „Telefon“ enthält griechische Bausteine für „fern“ und „Stimme“; lateinisch „video“ bedeutet „ich sehe“, „audio“ bedeutet „ich höre“. Solche Bausteine helfen beim Verstehen, ersetzen aber kein Wörterbuch.",
+			"Wähle ein Fremdwort, wenn es genau passt und dein Publikum es versteht. „Wir benötigen ein Mikrofon“ ist genauer als „Wir brauchen so ein Ding zum Sprechen“. Nicht jedes ähnlich klingende Wort wird gleich geschrieben: Telefon und Mikrofon haben f, Physik hat ph. Sichere schwierige Wörter in einer Wortliste."
+		],
+		"material": "Wortliste: Telefon – Gespräch über Entfernung; Mikrofon – Gerät zum Aufnehmen oder Übertragen von Schall; Video – bewegte Bilder; Audio – Bezug zum Hören oder zu Tonaufnahmen; Physik – Naturwissenschaft. Herkunftsbausteine sind Hilfen, keine vollständigen heutigen Definitionen.",
+		"materialLabel": "Eigens geschriebener Übungstext · Beispieldaten sind erfunden",
+		"sourceIds": [
+			"lehrplan"
+		],
+		"takeaway": "Bedeutung klären, passend verwenden und die Schreibweise prüfen; ein Fremdwort ist kein Schmuckwort.",
+		"lehrplan": "D6 · 4.3",
+		"check": {
+			"wrong": "Jedes lange Fremdwort macht jeden Text automatisch besser.",
+			"explanation": "Das Gerät und die bezeichnete Funktion passen zusammen."
+		},
+		"visual": {
+			"kind": "wordparts",
+			"title": "Fremdwörter verstehen und passend einsetzen · im Modell",
+			"steps": [
+				{
+					"label": "Bedeutung",
+					"text": "Mikrofon nimmt Schall auf",
+					"detail": "Die heutige Verwendung muss zur Aussage passen und verständlich sein.",
+					"blocks": [
+						{
+							"text": "Mikrofon",
+							"label": "Gerät",
+							"tone": "noun"
+						},
+						{
+							"text": "nimmt Schall auf",
+							"label": "heutige Bedeutung",
+							"tone": "predicate"
+						}
+					]
+				},
+				{
+					"label": "Herkunft",
+					"text": "video: ich sehe; audio: ich höre",
+					"detail": "Lateinisch „audio“ bedeutet „ich höre“, „video“ bedeutet „ich sehe“. Die Herkunft hilft beim Verstehen, ersetzt aber keine heutige Sachdefinition.",
+					"blocks": [
+						{
+							"text": "audio → ich höre",
+							"label": "lateinischer Herkunftsbezug",
+							"tone": "stem"
+						},
+						{
+							"text": "video → ich sehe",
+							"label": "lateinischer Herkunftsbezug",
+							"tone": "stem"
+						}
+					]
+				},
+				{
+					"label": "Schreibung",
+					"text": "Telefon, Mikrofon; Physik",
+					"detail": "Ähnliche Laute haben verschiedene Schreibungen. Eine geprüfte Wortliste unterstützt das Lernen.",
+					"blocks": [
+						{
+							"text": "Telefon",
+							"label": "f",
+							"tone": "marker"
+						},
+						{
+							"text": "Mikrofon",
+							"label": "f",
+							"tone": "marker"
+						},
+						{
+							"text": "Physik",
+							"label": "ph",
+							"tone": "marker"
+						}
+					]
+				}
+			],
+			"initial": {
+				"blocks": [
+					{
+						"text": "Audio",
+						"label": "Wort",
+						"tone": "noun"
+					},
+					{
+						"text": "Video",
+						"label": "Wort",
+						"tone": "noun"
+					}
+				]
+			}
+		},
+		"cases": [
+			{
+				"prompt": "Welche Schreibweise ist richtig?",
+				"options": [
+					"Mikrofon",
+					"Mickrofon"
+				],
+				"answer": "Mikrofon",
+				"feedback": "Die Wortliste sichert die Schreibweise des konkreten Wortes."
+			},
+			{
+				"prompt": "Ein Publikum kennt „Audio“ nicht. Was hilft?",
+				"options": [
+					"Ich ergänze möglichst viele weitere unbekannte Wörter.",
+					"Ich erkläre es als Bezug zu Ton oder Hören."
+				],
+				"answer": "Ich erkläre es als Bezug zu Ton oder Hören.",
+				"feedback": "Eine Erklärung erleichtert den adressatenbezogenen Gebrauch."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe drei Sätze mit Telefon, Mikrofon und Video und erkläre einen Herkunftsbaustein.",
+				"model": "Mit dem Telefon rufe ich an. Das Mikrofon nimmt unsere Stimmen auf. Im Video sehen wir den Ablauf. Der lateinische Ausdruck „video“ bedeutet „ich sehe“.",
+				"criteria": [
+					"Ich verwende drei Wörter sinnvoll.",
+					"Ich schreibe sie nach der Wortliste.",
+					"Ich erkläre einen Herkunftsbezug."
+				]
+			},
+			"2": {
+				"prompt": "Überarbeite für jüngere Kinder: „Die auditive Rezeption erfolgt mittels Mikrofon.“ Kläre, was sachlich nicht stimmt, und formuliere verständlich.",
+				"model": "Ein Mikrofon nimmt Schall auf; es ist kein Gerät, mit dem wir hören. Verständlich wäre: Wir nehmen unsere Stimmen mit einem Mikrofon auf. Danach hören wir die Aufnahme über einen Lautsprecher.",
+				"criteria": [
+					"Ich prüfe auch die sachliche Bedeutung.",
+					"Ich formuliere verständlich.",
+					"Ich nutze ein Fremdwort nur passend."
+				]
+			}
+		}
+	},
+	{
+		"id": "d6-zeichensetzung",
+		"stage": "sprache",
+		"title": "Satzgrenzen und direkte Rede sichtbar machen",
+		"skill": "Du setzt Kommas bei Nebensätzen und unterscheidest sie von Satzschlusszeichen.",
+		"bindings": [
+			"4.3"
+		],
+		"paragraphs": [
+			"Kommas gliedern Satzstrukturen. Nebensätze werden vom übergeordneten Satz abgegrenzt. Ein eingeschobener Nebensatz bekommt zwei Kommas. Gleichrangige Hauptsätze kannst du mit Komma reihen: „Es klingelte, die Tür ging auf.“ Auch vor „aber“ oder „denn“ steht zwischen Hauptsätzen ein Komma.",
+			"Bei direkter Rede hängt die Zeichensetzung von der Stellung des Begleitsatzes ab. Vorangestellt: Jo sagt: „Ich komme.“ Nachgestellt: „Ich komme“, sagt Jo. Frage- und Ausrufezeichen bleiben in der Rede erhalten: „Kommst du?“, fragt Jo. Der Punkt der einfachen Aussage entfällt vor dem nachgestellten Begleitsatz.",
+			"Zwei mit „und“ oder „oder“ verbundene selbständige Hauptsätze können zur deutlichen Gliederung ein Komma erhalten. Ein darin eingeschobener Nebensatz muss trotzdem abgeschlossen werden: „Mina sagt, dass sie kommt, und Jo wartet.“ Prüfe die Struktur statt nach Atempausen zu raten.",
+			"In einer Aufzählung trennst du gleichrangige Teile mit Kommas: „Wir brauchen Papier, Stifte, Scheren und Kleber.“ Wenn „und“ oder „oder“ die letzten Glieder direkt verbindet, setzt du dort kein Komma.",
+			"Schiebst du den Begleitsatz in dieselbe wörtliche Aussage ein, steht auf beiden Seiten des Begleitsatzes je ein Komma: „Morgen“, sagte Jo, „komme ich pünktlich.“"
+		],
+		"material": "Wir bleiben drinnen, weil es regnet. Das Buch, das ich lese, ist spannend. Es regnet, aber wir gehen hinaus. Jo sagt: „Ich komme.“ „Kommst du?“, fragt Mina. Wir brauchen Papier, Stifte und Kleber.",
+		"materialLabel": "Eigens geschriebener Übungstext · Beispieldaten sind erfunden",
+		"sourceIds": [
+			"lehrplan"
+		],
+		"takeaway": "Satzstruktur zuerst prüfen; Kommas grenzen Nebensätze ab und direkte Rede hat eigene Zeichen.",
+		"lehrplan": "D6 · 4.3",
+		"check": {
+			"wrong": "Das Buch das ich lese, ist spannend.",
+			"explanation": "Der eingeschobene Nebensatz braucht ein Komma vor und nach „das ich lese“."
+		},
+		"visual": {
+			"kind": "speech",
+			"title": "Satzgrenzen und direkte Rede sichtbar machen · im Modell",
+			"steps": [
+				{
+					"label": "Nebensatz",
+					"text": "Wir bleiben drinnen, weil es regnet.",
+					"detail": "Das Komma trennt die Satzteile, das finite Verb steht im Nebensatz am Ende.",
+					"blocks": [
+						{
+							"text": "Wir bleiben drinnen,",
+							"label": "Hauptsatz mit Grenzkomma",
+							"tone": "subject"
+						},
+						{
+							"text": "weil es",
+							"label": "Beginn des Nebensatzes",
+							"tone": "subordinate"
+						},
+						{
+							"text": "regnet.",
+							"label": "finites Verb am Nebensatzende",
+							"tone": "predicate"
+						}
+					]
+				},
+				{
+					"label": "Einschub",
+					"text": "Das Buch, das ich lese, ist spannend.",
+					"detail": "Die zwei Kommas bilden einen Rahmen für den eingeschobenen Nebensatz.",
+					"blocks": [
+						{
+							"text": "Das Buch,",
+							"label": "Hauptsatzbeginn und öffnendes Komma",
+							"tone": "subject"
+						},
+						{
+							"text": "das ich lese,",
+							"label": "Relativsatz und schließendes Komma",
+							"tone": "subordinate"
+						},
+						{
+							"text": "ist spannend.",
+							"label": "Fortsetzung des Hauptsatzes",
+							"tone": "predicate"
+						}
+					]
+				},
+				{
+					"label": "Direkte Rede",
+					"text": "„Kommst du?“, fragt Mina.",
+					"detail": "Das Fragezeichen bleibt in den Anführungszeichen; nach ihnen folgt das Komma zum Begleitsatz.",
+					"blocks": [
+						{
+							"text": "„Kommst du?“,",
+							"label": "Frage mit anschließendem Komma",
+							"tone": "speech"
+						},
+						{
+							"text": "fragt Mina.",
+							"label": "nachgestellter Begleitsatz",
+							"tone": "report"
+						}
+					]
+				}
+			],
+			"initial": {
+				"blocks": [
+					{
+						"text": "Wir bleiben drinnen weil es regnet",
+						"label": "Satzgrenze noch prüfen",
+						"tone": "neutral"
+					}
+				]
+			}
+		},
+		"cases": [
+			{
+				"prompt": "Welche Zeichensetzung ist richtig?",
+				"options": [
+					"„Ich komme“, sagt Jo.",
+					"„Ich komme.“ sagt Jo."
+				],
+				"answer": "„Ich komme“, sagt Jo.",
+				"feedback": "Bei nachgestelltem Begleitsatz ersetzt hier das Komma den Punkt der direkten Aussage."
+			},
+			{
+				"prompt": "Wo steht in der Aufzählung kein Komma?",
+				"options": [
+					"Zwischen Papier und Stifte.",
+					"Vor „und Kleber“."
+				],
+				"answer": "Vor „und Kleber“.",
+				"feedback": "Die einfache Aufzählung setzt zwischen den übrigen Gliedern Kommas, aber nicht vor „und“."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Setze die Zeichen: „Das Buch das ich lese ist neu“ und „Kommst du fragt Jo“.",
+				"model": "Das Buch, das ich lese, ist neu. „Kommst du?“, fragt Jo. Der Relativsatz ist eingeschoben; die direkte Frage behält ihr Fragezeichen und wird vom Begleitsatz getrennt.",
+				"criteria": [
+					"Ich setze beide Einschubkommas.",
+					"Ich setze Anführungszeichen und Fragezeichen.",
+					"Ich grenze den Begleitsatz ab."
+				]
+			},
+			"2": {
+				"prompt": "Setze die Satzzeichen: Nuri holte Papier Stifte und Kleber aber die Schere fehlte Dann rief Mira Hast du sie in der Aula gesehen",
+				"model": "Nuri holte Papier, Stifte und Kleber, aber die Schere fehlte. Dann rief Mira: „Hast du sie in der Aula gesehen?“",
+				"criteria": [
+					"Ich trenne die Aufzählung richtig.",
+					"Ich setze das Komma vor aber.",
+					"Ich setze Doppelpunkt, Anführungszeichen und Fragezeichen."
+				]
+			}
+		}
+	},
+	{
+		"id": "d6-schreibstrategien",
+		"stage": "sprache",
+		"title": "Schreibweisen mit Strategien klären",
+		"skill": "Du verlängerst, leitest ab und unterscheidest Dehnung und Schärfung.",
+		"bindings": [
+			"4.3"
+		],
+		"paragraphs": [
+			"Wähle die Strategie passend zur Unsicherheit. Verlängern macht Auslaute hörbar: Tag – Tage, Wald – Wälder. Ableiten verbindet verwandte Wörter: Häuser – Haus. Sprich Silben deutlich und prüfe den Stamm; bloßes Raten nach dem Klang reicht nicht immer.",
+			"Lange betonte Vokale können verschieden geschrieben werden: lesen ohne besonderes Dehnungszeichen, fühlen mit h, See mit Doppelvokal, spielen mit ie. Ein langes i wird häufig als ie geschrieben, aber nicht immer. Bei kurzen betonten Vokalen hilft die Schärfung: offen hat ff, Ofen hat f. Regeln, Wortverwandtschaft und geprüfte Merkwörter ergänzen sich."
+		],
+		"material": "Prüfpaare: Tag – Tage; Wald – Wälder; Häuser – Haus; Ofen – offen; spielen – Spiel; fühlen – Gefühl; See. Merkregel: Nicht jede Vokallänge hat dasselbe Schreibzeichen.",
+		"materialLabel": "Eigens geschriebener Übungstext · Beispieldaten sind erfunden",
+		"sourceIds": [
+			"lehrplan"
+		],
+		"takeaway": "Unsicherheit benennen → passende Strategie wählen → Schreibweise begründen oder nachschlagen.",
+		"lehrplan": "D6 · 4.3",
+		"check": {
+			"wrong": "Ich verdopple grundsätzlich jeden letzten Buchstaben.",
+			"explanation": "Die Verlängerung macht den im Auslaut verhärteten Konsonanten erkennbar."
+		},
+		"visual": {
+			"kind": "extension",
+			"title": "Schreibweisen mit Strategien klären · im Modell",
+			"steps": [
+				{
+					"label": "Verlängern",
+					"text": "Tag → Tage",
+					"detail": "Ein hörbarer Laut in der längeren Form hilft bei der Auslautschreibung.",
+					"blocks": [
+						{
+							"text": "Tag",
+							"label": "Auslaut g",
+							"tone": "stem"
+						},
+						{
+							"text": "Tage",
+							"label": "Verlängerung",
+							"tone": "ending"
+						}
+					]
+				},
+				{
+					"label": "Ableiten",
+					"text": "Häuser → Haus",
+					"detail": "Der verwandte Stamm hilft, die Schreibung mit äu zu begründen.",
+					"blocks": [
+						{
+							"text": "Häuser",
+							"label": "äu",
+							"tone": "marker"
+						},
+						{
+							"text": "Haus",
+							"label": "verwandter Stamm",
+							"tone": "stem"
+						}
+					]
+				},
+				{
+					"label": "Vokallänge",
+					"text": "Ofen ↔ offen",
+					"detail": "Das Vergleichspaar zeigt langen und kurzen betonten Vokal; daraus folgt keine Regel für jedes Wort.",
+					"blocks": [
+						{
+							"text": "Ofen",
+							"label": "langer betonter Vokal",
+							"tone": "vowel"
+						},
+						{
+							"text": "offen",
+							"label": "kurzer betonter Vokal",
+							"tone": "ending"
+						}
+					]
+				}
+			],
+			"initial": {
+				"blocks": [
+					{
+						"text": "Tag / Häuser / offen",
+						"label": "unsichere Stellen",
+						"tone": "neutral"
+					}
+				]
+			}
+		},
+		"cases": [
+			{
+				"prompt": "Was hilft bei „Wald“?",
+				"options": [
+					"Die verwandte längere Form „Wälder“.",
+					"Ein zufällig gewähltes Synonym."
+				],
+				"answer": "Die verwandte längere Form „Wälder“.",
+				"feedback": "Die Verlängerung zeigt den stammgleichen Auslaut d."
+			},
+			{
+				"prompt": "Muss jeder lange Vokal ein h bekommen?",
+				"options": [
+					"Ja, auch „lesen“ braucht ein h.",
+					"Nein, etwa „lesen“ und „See“ zeigen andere Schreibungen."
+				],
+				"answer": "Nein, etwa „lesen“ und „See“ zeigen andere Schreibungen.",
+				"feedback": "Dehnung wird im Deutschen auf verschiedene Weise dargestellt."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Begründe Tag, Häuser und offen jeweils mit einer passenden Strategie oder einem Vergleich.",
+				"model": "Tag: Verlängern zu Tage zeigt g. Häuser: Ableiten von Haus erklärt äu. Offen: Der kurze betonte Vokal steht vor ff; der Vergleich mit Ofen macht den Längenunterschied hörbar.",
+				"criteria": [
+					"Ich wähle passende Strategien.",
+					"Ich nenne konkrete Vergleichsformen.",
+					"Ich erfinde keine allgemeine h-Regel."
+				]
+			},
+			"2": {
+				"prompt": "Erstelle einen Prüfplan für einen eigenen Text mit unsicheren Auslauten und langen Vokalen. Gib ein verlängerbares Wort und ein Merkwort an und erkläre, wann du nachschlägst.",
+				"model": "Ich markiere zuerst die unsichere Stelle. Bei „Tag“ verlängere ich zu „Tage“. Bei „See“ prüfe und merke ich die Doppelvokalschreibung. Wenn die Strategie die Schreibung nicht sicher klärt, nutze ich ein Wörterbuch und notiere die richtige Form mit einem eigenen Satz.",
+				"criteria": [
+					"Ich beginne bei der konkreten Unsicherheit.",
+					"Ich unterscheide Strategie und Merkwort.",
+					"Ich plane eine verlässliche Kontrolle."
+				]
+			}
+		}
+	}
+]
