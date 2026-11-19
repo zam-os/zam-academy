@@ -61,7 +61,7 @@ to the compared draft. The two writing levels keep separate drafts and
 completion. Editing removes the old confirmation. localStorage failures leave
 practice usable and display an explicit save warning.
 
-## Legacy evidence and proposed history decisions
+## Legacy evidence and approved mapping
 
 Both legacy Gymnasium Grade 5 German cells are captured byte-for-byte from
 `zam-os/zam`; their exact source commit, paths and LF-byte SHA-256 values are
@@ -69,17 +69,15 @@ in [`replaces-de-by.json`](../deutsch-gymnasium-5/replaces-de-by.json).
 
 | Legacy cell | Items | Proposal |
 | --- | ---: | --- |
-| `de-by:gymnasium-5-deutsch-erzaehlen-maerchen-fabeln` | 8 | One A proposal for traditional fairy-tale numbers; seven C keep-active rows |
+| `de-by:gymnasium-5-deutsch-erzaehlen-maerchen-fabeln` | 8 | One approved A transfer for traditional fairy-tale numbers; seven C keep-active rows |
 | `de-by:gymnasium-5-deutsch-grammatik-faelle-rechtschreibung` | 8 | Eight C keep-active rows |
 
 Every row has its own reason. Several old synthesis prompts bundle much more
 than a new short retrieval, so a shared topic cannot move their mastery. The
 old narrative perspective generalisation, inserted-speech punctuation schema
 and absolute spelling rules need particular care; the new lessons do not copy
-those claims. The one A proposal preserves the same atomic numbers question.
-Thomas has not approved that transfer: `approved` is null, no practice item
-declares `replaces`, and there is no `retired_items` list. All old review
-evidence remains active and unchanged. No B mapping is proposed.
+those claims. The approved A transfer covers the same question about traditional fairy-tale numbers.
+Thomas approved one same-retrieval transfer on 2026-11-19. The published mapping uses `replaces` for those transfers. The 15 keep-active cards retain their review histories on their existing IDs. The attached migration check covers repeated installs and conflicting histories.
 
 The neighbouring-grade legacy inventory contains no Gymnasium Grade 4 or Grade
 6 German cell. Realschule and Mittelschule histories belong to their respective
@@ -98,8 +96,7 @@ close the remaining Grade 5 gaps on dramatic scripts/stage directions,
 multi-part predicates/*Satzklammer*, homophones (`seit/seid`, `viel/fiel`,
 `wieder/wider`, `Saite/Seite`), and nominalisation signals (`beim/zum`, `etwas/nichts + Adjektiv`)
 without introducing Grade 6 topics (`das/dass`, passive, relative clauses).
-Teacher review, teacher videos and explicit approval of `replaces-de-by.json`
-remain separate decisions. The package introduces no npm dependency and uses no
+Teacher review and teacher videos remain separate steps. The package introduces no npm dependency and uses no
 embeds, trackers or background HTTP requests.
 
 The package commands are documented in its
@@ -108,10 +105,7 @@ The package commands are documented in its
 verification cover content contracts, cases, progress, all lesson/level/theme
 views, local audio and the offline ZIP. Repository registry/catalog tests and
 `scripts/validate-cells.mjs` use the published zam-core 0.54.0 pinned by CI.
-`scripts/validate-cell.mjs` additionally installs and enrols in a disposable
-library, records a review, repeats installation and preserves all sixteen
-legacy cards and their review evidence. These checks do not substitute for
-teacher evaluation or the independent review required before merging.
+`scripts/validate-cell.mjs` runs the migration validator against disposable libraries. It checks fresh enrolment, one approved history transfer, preservation of the fifteen keep-active cards, repeat installation and refusal to merge two histories.
 
 ## Review follow-up
 
@@ -142,12 +136,8 @@ The follow-up retains all 46 lesson anchors and 138 atom/item identifiers.
   browser check exercises every transformation. They are not a mastery grade.
   Other diagrams now show their content within the figure, and the fable has
   a recognisable leafy tree, crow and fox.
-- Related C-row practice uses `related_slug`, reserving `academy_slug` for the
-  one A proposal. Approval remains null; future activation must add a migration
-  conflict check for existing old and new cards.
+- Related C-row practice uses `related_slug`. The approved replacement uses `academy_slug`. The migration validator checks conflicting histories.
 - Development uses strict port 5249 after checking the other open package PRs
   (#138: 5247, #139: 5248, #140: 5247). The next merge must still refresh main.
 
-The explicitly labelled draft README row follows the repository's existing
-local-draft convention. Publication, teacher review, videos and any history
-transfer remain separate from these review corrections.
+The Academy catalog publishes the approved mapping. Teacher review and teacher videos are separate steps.

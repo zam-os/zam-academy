@@ -65,8 +65,8 @@ describe("Review corrections", () => {
 		);
 		expect(lesson("vorgang").extension).not.toContain("Tierbild");
 	});
-	it("keeps related material distinct from an unapproved successor", () => {
-		expect(mapping.approved).toBeNull();
+	it("keeps related material distinct from an approved successor", () => {
+		expect(mapping.approved).toBe("2026-11-19");
 		for (const row of mapping.rows) {
 			if (row.category === "C") expect(row).not.toHaveProperty("academy_slug");
 			else expect(row).toHaveProperty("academy_slug", "d5-maerchen-check");
