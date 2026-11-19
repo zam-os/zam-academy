@@ -1,0 +1,684 @@
+[
+  {
+    "id": "burg",
+    "lb": 3,
+    "title": "Wer lebte auf der Burg?",
+    "period": "Burg · Alltag und Herrschaft",
+    "intro": "Mauer, Wohnsaal, Stall: Schau dir an, was diese Orte über das Leben auf einer Burg verraten.",
+    "paragraphs": [
+      "Eine Burg konnte zugleich Wohnort, Schutzanlage und Sitz einer Herrschaft sein. Die Familie des Burgherrn lebte dort mit Bediensteten, Wachen und weiteren Menschen, die zum Hof gehörten. Essen, Futter und Brennstoff mussten beschafft und gelagert werden. Auch das Tor musste bewacht werden.",
+      "In der Burg Burghausen wohnten die bayerischen Herzöge zeitweise. Der Fürstenbau enthielt Wohnräume. Mauern und Tore sicherten den Zugang. Ein großer Saal hatte eine andere Aufgabe: Wer dort Abgesandte empfing, konnte seinen Rang zeigen und politische Angelegenheiten besprechen. Die Aufgaben und Gebäude waren von Burg zu Burg verschieden."
+    ],
+    "takeaway": "Eine Burg konnte Wohnort, Schutzanlage und Sitz weltlicher Herrschaft zugleich sein.",
+    "sourceIds": [
+      "lehrplan",
+      "burghausen"
+    ],
+    "figures": [
+      "burg"
+    ],
+    "quiz": {
+      "question": "Was zeigt, dass eine Burg auch ein Herrschaftssitz sein konnte?",
+      "answer": "Der Burgherr empfing Abgesandte im Saal.",
+      "wrong": [
+        "Die Küche versorgte die Bewohner mit Essen.",
+        "Die Wache öffnete morgens das Tor."
+      ],
+      "explanation": "Beim Empfang sprach der Burgherr mit Vertretern anderer Orte. Küche und Tor erfüllten dagegen Aufgaben des Alltags und des Schutzes."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Was verrät der Burghof?",
+      "instruction": "Ordne jeden Hinweis zu und prüfe danach deine Lösung.",
+      "material": "Auf der erfundenen Burg Falkenstein wird ein Tag vorbereitet. Welche Aufgabe steht bei jeder Beobachtung im Vordergrund?",
+      "materialLabel": "Erfundener Fall zum Üben",
+      "categories": [
+        "Schutz",
+        "Versorgung",
+        "Herrschaft"
+      ],
+      "entries": [
+        {
+          "text": "Eine Wache prüft am Tor, wer in den Hof darf.",
+          "target": 0,
+          "feedback": "Wer den Zugang kontrolliert, schützt die Burg."
+        },
+        {
+          "text": "Die Köchin lässt Mehl für das Brot holen.",
+          "target": 1,
+          "feedback": "Die Küche versorgt die Menschen auf der Burg."
+        },
+        {
+          "text": "Der Burgherr empfängt den Gesandten eines Nachbarn.",
+          "target": 2,
+          "feedback": "Ein Gesandter vertritt jemanden bei einem Gespräch zwischen Herrschaften."
+        },
+        {
+          "text": "Vor Einbruch der Dunkelheit wird der Zugang verschlossen.",
+          "target": 0,
+          "feedback": "Das geschlossene Tor erschwert den Zutritt."
+        },
+        {
+          "text": "Der Stallknecht legt für die Pferde Heu bereit.",
+          "target": 1,
+          "feedback": "Auch Tiere brauchen jeden Tag Futter."
+        }
+      ],
+      "conclusion": "Auf der Burg liefen Schutz, Versorgung und Herrschaft nebeneinander. Viele Menschen trugen dazu bei."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre an Tor, Küche und Saal, was man auf einer Burg tat.",
+        "hints": [
+          "Wer brauchte das Tor?",
+          "Wer nutzte Küche und Saal?"
+        ],
+        "model": "Die Wache kontrollierte am Tor den Zugang. In der Küche wurden die Bewohner versorgt. Im Saal empfing der Burgherr Gäste oder Abgesandte und zeigte dabei seinen Rang.",
+        "criteria": [
+          "drei Orte genannt",
+          "die Arbeit der Menschen beschrieben",
+          "Schutz, Versorgung und Herrschaft unterschieden"
+        ]
+      },
+      "2": {
+        "prompt": "Von einer Burg stehen nur ein Tor und die Reste eines großen Saals. Was kannst du daraus schließen? Was bleibt offen?",
+        "hints": [
+          "Welche Funktion legt jedes Bauwerk nahe?",
+          "Was verraten die Reste über die Bewohner?"
+        ],
+        "model": "Das Tor spricht dafür, dass man den Zugang kontrollierte. Der Saal könnte für Empfänge genutzt worden sein. Wer dort wohnte und welche Gäste kamen, weiß ich allein durch die Mauern noch nicht.",
+        "criteria": [
+          "zwei bauliche Hinweise ausgewertet",
+          "eine mögliche Nutzung begründet",
+          "eine offene Frage genannt"
+        ]
+      }
+    }
+  },
+  {
+    "id": "kloster",
+    "lb": 3,
+    "title": "Ein Tag im Kloster",
+    "period": "Kloster · Gebet, Arbeit und Wissen",
+    "intro": "Die Glocke ruft zum Gebet. Später arbeitet jemand im Garten und ein anderer schreibt an einem Buch.",
+    "paragraphs": [
+      "Ein Kloster ist eine Gemeinschaft von Mönchen oder Nonnen, die nach einer Ordensregel leben. Eine Äbtissin leitete ein Frauenkloster, ein Abt leitete ein Männerkloster. Gemeinsame Gebetszeiten strukturierten den Tag. Dazwischen wurde gearbeitet, etwa im Garten oder in einer Werkstatt. Je nach Kloster versorgte die Gemeinschaft auch Gäste, Bedürftige oder Kranke.",
+      "Manche Klöster waren Orte der Bildung. In Schreibstuben kopierten Menschen Bücher von Hand, in Bibliotheken bewahrten sie Handschriften auf. In Tegernsee arbeiteten um das Jahr 1000 Schreiber und Buchmaler, darunter Froumund und sein Schüler Ellinger. Ein Kloster konnte zugleich Land besitzen und Abgaben von Höfen erhalten."
+    ],
+    "takeaway": "Die Ordensregel bestimmte den Klosteralltag. Manche Klöster bewahrten Wissen und waren außerdem Grundherren.",
+    "sourceIds": [
+      "lehrplan",
+      "tegernsee"
+    ],
+    "figures": [
+      "kloster"
+    ],
+    "quiz": {
+      "question": "Welche Aufgabe hatte ein Skriptorium in einem mittelalterlichen Kloster?",
+      "answer": "Dort wurden Handschriften abgeschrieben.",
+      "wrong": [
+        "Dort lagerten die Getreideabgaben.",
+        "Dort fand das gemeinsame Gebet statt."
+      ],
+      "explanation": "Skriptorium ist das Fachwort für die Schreibstube. Für Vorräte und Gebet gab es andere Räume."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Wozu dient diese Arbeit?",
+      "instruction": "Ordne jeden Hinweis zu und prüfe danach deine Lösung.",
+      "material": "In einem erfundenen Kloster beobachtest du fünf Tätigkeiten. Achte auf ihren jeweiligen Zweck.",
+      "materialLabel": "Erfundener Fall zum Üben",
+      "categories": [
+        "Gebet",
+        "Versorgung",
+        "Wissen"
+      ],
+      "entries": [
+        {
+          "text": "Eine Nonne kopiert ein Buch für die Bibliothek.",
+          "target": 2,
+          "feedback": "Das Abschreiben macht einen Text für weitere Leserinnen und Leser verfügbar."
+        },
+        {
+          "text": "Die Gemeinschaft versammelt sich zum Morgengebet.",
+          "target": 0,
+          "feedback": "Die Gemeinschaft kommt zu einer festen Gebetszeit zusammen."
+        },
+        {
+          "text": "Ein Bruder arbeitet im Gemüsegarten für die Küche.",
+          "target": 1,
+          "feedback": "Das Gemüse dient der Ernährung."
+        },
+        {
+          "text": "Ein Schreiber übt mit seinem Schüler das Lesen einer Handschrift.",
+          "target": 2,
+          "feedback": "Der Schüler lernt, einen geschriebenen Text zu lesen."
+        },
+        {
+          "text": "Die Nonnen bringen einer Reisenden Essen.",
+          "target": 1,
+          "feedback": "Die Gemeinschaft versorgt eine Person, die zu Gast ist."
+        }
+      ],
+      "conclusion": "Gemeinsames Gebet, praktische Arbeit und der Umgang mit Büchern konnten zum Leben im selben Kloster gehören."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Beschreibe drei Tätigkeiten im Kloster und erkläre, wozu sie dienten.",
+        "hints": [
+          "Denke an Kirche, Garten und Schreibstube.",
+          "Was wurde gebraucht oder weitergegeben?"
+        ],
+        "model": "In der Kirche betete die Gemeinschaft zu festen Zeiten. Der Garten lieferte Gemüse. In einer Schreibstube wurden Bücher kopiert, damit die Texte gelesen und weitergegeben werden konnten.",
+        "criteria": [
+          "drei Tätigkeiten genannt",
+          "den Zweck jeder Tätigkeit erklärt",
+          "einen Beitrag zur Bildung beschrieben"
+        ]
+      },
+      "2": {
+        "prompt": "Ein fremdes Kloster leiht der Schreibstube ein seltenes Buch für vier Wochen. Erkläre, wie das Buch dort weiterwirken kann, nachdem es zurückgegeben wurde.",
+        "hints": [
+          "Was können Schreibende mit dem Buch tun?",
+          "Wer kann die neue Handschrift nutzen?"
+        ],
+        "model": "Die Schreibenden können den Text von Hand kopieren. Nach der Rückgabe bleibt die Abschrift in der Bibliothek. Wer lesen kann, kann den Text benutzen oder erneut abschreiben.",
+        "criteria": [
+          "Abschreiben als Methode erklärt",
+          "Aufbewahren oder Weitergeben beschrieben",
+          "die Zeit nach der Rückgabe erklärt"
+        ]
+      }
+    }
+  },
+  {
+    "id": "macht",
+    "lb": 3,
+    "title": "Wer durfte bestimmen?",
+    "period": "Burg und Kloster · Macht und Gericht",
+    "intro": "Ein Herzog und ein Abt haben verschiedene Aufgaben. Beide können Besitz und Einfluss haben.",
+    "paragraphs": [
+      "Weltliche Herrschaft ist die Macht, die etwa ein Herzog als Landesherr ausübt. Er konnte ein Gebiet verwalten und, je nach Recht, Abgaben fordern oder ein Gericht einsetzen. Geistliche Macht beruhte auf einer Stellung in der Kirche. Ein Abt etwa leitete das religiöse Leben seiner Gemeinschaft und achtete auf ihre Regel.",
+      "Die Bereiche konnten sich überschneiden. Ein Kloster konnte Land besitzen und als Grundherr von Höfen Abgaben verlangen. Manche Äbte hatten für bestimmte Fälle auch Gerichtsrechte. Im Mittelalter hing es vom Ort, von den dort geltenden Rechten und vom Fall ab, wer richten durfte und welche Strafe drohte. Geldbußen waren zum Beispiel möglich. Der Titel allein verrät also noch nicht alle Rechte einer Person."
+    ],
+    "takeaway": "Geistliche Macht beruhte auf einem kirchlichen Amt. Auch Klöster konnten Land besitzen und weltliche Rechte ausüben.",
+    "sourceIds": [
+      "lehrplan",
+      "burghausen",
+      "tegernsee",
+      "hofmark"
+    ],
+    "figures": [
+      "macht"
+    ],
+    "quiz": {
+      "question": "Welche Aufgabe eines Abtes zeigt seine geistliche Macht?",
+      "answer": "Er leitet das religiöse Leben im Kloster.",
+      "wrong": [
+        "Er erhebt eine Abgabe von einem Hof.",
+        "Er kümmert sich um einen Pachtvertrag."
+      ],
+      "explanation": "Abgaben und Pacht betreffen Besitz und Rechte. Das religiöse Leben zu leiten gehört zum geistlichen Amt."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Welche Art von Macht siehst du?",
+      "instruction": "Ordne jeden Hinweis zu und prüfe danach deine Lösung.",
+      "material": "Ein Herzog und ein Abt leben in derselben Gegend. In diesem Beispiel darf ein Gericht des Abtes kleine Streitfälle seines Dorfes behandeln.",
+      "materialLabel": "Erfundener Fall zum Üben",
+      "categories": [
+        "Geistliche Aufgabe",
+        "Weltliches Herrschaftsrecht"
+      ],
+      "entries": [
+        {
+          "text": "Der Abt entscheidet über die Ordnung des gemeinsamen Gebets.",
+          "target": 0,
+          "feedback": "Er leitet das religiöse Leben der Gemeinschaft."
+        },
+        {
+          "text": "Der Herzog bestellt einen Richter für ein Gebiet.",
+          "target": 1,
+          "feedback": "Der Herzog nutzt ein Herrschaftsrecht."
+        },
+        {
+          "text": "Das Kloster fordert von einem seiner Höfe die fällige Abgabe.",
+          "target": 1,
+          "feedback": "Hier nutzt das Kloster Rechte als Grundherr."
+        },
+        {
+          "text": "Der Abt sorgt dafür, dass die Ordensregel eingehalten wird.",
+          "target": 0,
+          "feedback": "Die Regel bestimmt das Leben seiner Ordensgemeinschaft."
+        },
+        {
+          "text": "Das Gericht des Abtes entscheidet über einen Streit um einen Zaun.",
+          "target": 1,
+          "feedback": "Ein zugestandenes Gerichtsrecht ist weltlich, auch wenn es ein Abt ausüben darf."
+        }
+      ],
+      "conclusion": "Entscheidend ist, welches Recht jemand in der konkreten Situation nutzt. Geistliche konnten auch weltliche Rechte haben."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Stelle Herzog und Abt gegenüber. Erkläre außerdem, warum ein Abt in einem Dorf Abgaben verlangen konnte.",
+        "hints": [
+          "Welches Amt hat der Abt?",
+          "Welche Rechte können mit Landbesitz verbunden sein?"
+        ],
+        "model": "Der Herzog konnte als Landesherr ein Gebiet verwalten. Der Abt leitete das religiöse Leben seines Klosters. Gehörte ein Hof zum Kloster, konnte es je nach Vereinbarung oder geltendem Recht Abgaben verlangen.",
+        "criteria": [
+          "eine weltliche Aufgabe beschrieben",
+          "eine geistliche Aufgabe beschrieben",
+          "die Abgabe am Landbesitz und Recht erklärt"
+        ]
+      },
+      "2": {
+        "prompt": "Ein Mitschüler sagt: „Wo ein Abt lebt, entscheidet er auch über jeden Streit.“ Prüfe die Aussage mit dem Fall aus der Werkstatt.",
+        "hints": [
+          "Welches Recht ist im Fall ausdrücklich genannt?",
+          "Was weißt du über andere Orte und andere Streitfälle?"
+        ],
+        "model": "Der Abt hat im Beispiel ein Gerichtsrecht für kleine Streitfälle in seinem Dorf. Daran erkenne ich, dass ein Abt weltliche Rechte haben konnte. Ich müsste die Rechte des Ortes und die Art des Streits kennen, bevor ich wüsste, wer in einem anderen Fall entscheiden durfte.",
+        "criteria": [
+          "das Recht im Fall beschrieben",
+          "die Aussage geprüft",
+          "zwei nötige Informationen genannt"
+        ]
+      }
+    }
+  },
+  {
+    "id": "bildung",
+    "lb": 3,
+    "title": "Wer konnte etwas lernen?",
+    "period": "Erziehung und Bildung · Hof, Kloster und Werkstatt",
+    "intro": "Wie lernte ein Kind im Mittelalter? Der Lernort hing oft davon ab, wo und in welcher Familie es aufwuchs.",
+    "paragraphs": [
+      "Viele Kinder lernten durch Zuschauen und Mithelfen in der Familie. In einem Handwerksbetrieb konnten Lehrlinge Fertigkeiten eines Berufs erlernen. An einem adeligen Hof gehörten je nach Aufgabe etwa höfische Umgangsformen und das Reiten zur Ausbildung. In manchen Kloster- oder Stadtschulen wurde Lesen und Schreiben unterrichtet. Eine allgemeine Schulpflicht wie heute gab es im Mittelalter nicht.",
+      "Die Möglichkeiten hingen unter anderem vom Wohnort, von Besitz und Geschlecht ab. Mädchen konnten zum Beispiel in einem Frauenkloster lesen lernen oder in der Familienwerkstatt handwerkliches Wissen erwerben. Ein Kind aus einem Dorf, das früh auf dem Hof mitarbeiten musste, hatte oft weniger Gelegenheit, eine Schule zu besuchen. Zwei Kinder im selben Alter konnten so sehr verschieden aufwachsen."
+    ],
+    "takeaway": "Wo und wie Kinder lernten, hing im Mittelalter stark von Familie, Wohnort, Geschlecht und verfügbaren Lernorten ab.",
+    "sourceIds": [
+      "lehrplan",
+      "tegernsee",
+      "zuenfte"
+    ],
+    "figures": [
+      "bildung"
+    ],
+    "quiz": {
+      "question": "Warum lernten zwei Kinder im Mittelalter nicht unbedingt dasselbe?",
+      "answer": "Ihre Familien, Lernorte und späteren Aufgaben konnten verschieden sein.",
+      "wrong": [
+        "Überall bekamen alle Kinder denselben Unterricht.",
+        "Wer zehn Jahre alt war, durfte nur noch in der Familie lernen."
+      ],
+      "explanation": "Für Kinder gab es verschiedene Lernwege. Es gab keinen gemeinsamen Schulunterricht für alle."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Drei Lernorte",
+      "instruction": "Ordne jeden Hinweis zu und prüfe danach deine Lösung.",
+      "material": "Drei erfundene Kinder berichten, was sie gerade lernen. Ordne nur nach den Hinweisen in ihren Berichten zu.",
+      "materialLabel": "Erfundener Fall zum Üben",
+      "categories": [
+        "Am Adelshof",
+        "In der Schreibstube",
+        "In der Werkstatt"
+      ],
+      "entries": [
+        {
+          "text": "Ich übe mit meiner Meisterin, wie ich Leder für Schuhe zuschneide.",
+          "target": 2,
+          "feedback": "Eine Meisterin zeigt eine handwerkliche Fertigkeit."
+        },
+        {
+          "text": "Ich lerne, wie man Gäste beim Empfang des Herzogs begrüßt.",
+          "target": 0,
+          "feedback": "Höfische Umgangsformen gehören zu den Aufgaben am Adelshof."
+        },
+        {
+          "text": "Ich kopiere mit der Feder eine Seite aus einem alten Buch des Klosters.",
+          "target": 1,
+          "feedback": "Die Handschrift wird in der Schreibstube kopiert."
+        },
+        {
+          "text": "Der Meister zeigt mir, wie ich eine feste Naht für die Schuhe mache.",
+          "target": 2,
+          "feedback": "An einem echten Stück lässt sich handwerkliche Arbeit üben."
+        },
+        {
+          "text": "Mein Lehrer hilft mir, die lateinischen Wörter der Vorlage zu entziffern.",
+          "target": 1,
+          "feedback": "Die Buchvorlage ist hier der Hinweis auf die Schreibstube."
+        }
+      ],
+      "conclusion": "Lernorte gaben Kindern unterschiedliche Möglichkeiten. Manche Fertigkeiten konnte man an mehreren Orten lernen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Vergleiche das Lernen in einer Handwerkswerkstatt mit dem Lernen in einer Schreibstube. Nenne eine Gemeinsamkeit.",
+        "hints": [
+          "Was wird jeweils hergestellt?",
+          "Wie kann eine erfahrene Person helfen?"
+        ],
+        "model": "In der Werkstatt übt ein Lehrling Handgriffe, um zum Beispiel Schuhe herzustellen. In der Schreibstube übt ein Schüler Lesen und Schreiben, um einen Text zu kopieren. An beiden Orten lernt er, indem er zuschaut, übt und Rückmeldung erhält.",
+        "criteria": [
+          "beide Lernorte beschrieben",
+          "einen Unterschied erklärt",
+          "eine Gemeinsamkeit genannt"
+        ]
+      },
+      "2": {
+        "prompt": "Ein erfundenes Dorf liegt weit von der nächsten Schule entfernt. Ein Kind möchte lesen lernen und muss tagsüber zu Hause mitarbeiten. Beschreibe ein Hindernis und einen möglichen Lernweg.",
+        "hints": [
+          "Wer könnte helfen?",
+          "Woran könnte der Plan dennoch scheitern?"
+        ],
+        "model": "Der Weg ist weit und die Arbeit bindet die Zeit des Kindes. Falls jemand im Dorf lesen kann und Zeit hat, könnte das Kind bei dieser Person an freien Abenden die Buchstaben lernen. Ohne eine solche Person wäre das schwer.",
+        "criteria": [
+          "ein Hindernis aus dem Fall benannt",
+          "einen möglichen Lernweg erklärt",
+          "eine Bedingung dafür genannt"
+        ]
+      }
+    }
+  },
+  {
+    "id": "staende",
+    "lb": 3,
+    "title": "Die Ständegesellschaft",
+    "period": "Mittelalter · Rang, Rechte und Pflichten",
+    "intro": "Das Ständemodell hilft dir zu erklären, warum Menschen zur selben Zeit sehr verschiedene Rechte hatten.",
+    "paragraphs": [
+      "Ein verbreitetes mittelalterliches Modell ordnete die Gesellschaft in drei Stände. Der Klerus, also die Geistlichkeit, stand für das Beten. Der Adel sollte herrschen und schützen. Die arbeitenden Menschen, vor allem Bauern und Bäuerinnen, sorgten für Nahrung; in einer vereinfachten Darstellung gehören auch Handwerker und Kaufleute in diese Gruppe. Klerus und Adel hatten häufig mehr Einfluss und besondere Rechte.",
+      "Das Modell zeigt, wie manche Menschen die Gesellschaft ordnen wollten. Es zeigt nicht alle damaligen Lebenswege und sagt nichts über genaue Bevölkerungszahlen aus. In der Regel prägte die Herkunft den Stand und die Möglichkeiten. Der Eintritt ins Kloster war ein möglicher Weg in ein anderes Leben. Auch hatte eine wohlhabende Kaufmannsfamilie in einer Stadt oft mehr Einfluss als eine abhängige Bauernfamilie."
+    ],
+    "takeaway": "Das Ständemodell unterscheidet Geistlichkeit, Adel und arbeitende Menschen. Ihre Rechte und ihr Einfluss waren ungleich verteilt.",
+    "sourceIds": [
+      "lehrplan",
+      "staende"
+    ],
+    "figures": [
+      "staende"
+    ],
+    "quiz": {
+      "question": "Wofür steht der Klerus im mittelalterlichen Drei-Stände-Modell?",
+      "answer": "für die Geistlichkeit",
+      "wrong": [
+        "für die Adelsfamilien",
+        "für alle Handwerksberufe"
+      ],
+      "explanation": "Priester, Mönche und Nonnen werden hier der Geistlichkeit zugeordnet."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Ordne die Beispiele in das Modell ein",
+      "instruction": "Ordne jeden Hinweis zu und prüfe danach deine Lösung.",
+      "material": "Die Gruppen aus dem Modell sind Hilfen zum Ordnen. Achte bei jeder Person auf ihre Stellung im Beispiel.",
+      "materialLabel": "Erfundener Fall zum Üben",
+      "categories": [
+        "Klerus",
+        "Adel",
+        "Arbeitende Menschen"
+      ],
+      "entries": [
+        {
+          "text": "Eine Äbtissin leitet eine Gemeinschaft von Nonnen.",
+          "target": 0,
+          "feedback": "Sie gehört im Modell zur Geistlichkeit."
+        },
+        {
+          "text": "Ein Graf verwaltet Ländereien seiner Familie.",
+          "target": 1,
+          "feedback": "Der Titel Graf verweist auf den Adel."
+        },
+        {
+          "text": "Eine Bäuerin bestellt das Feld und liefert einen Teil der Ernte ab.",
+          "target": 2,
+          "feedback": "Feldarbeit und Abgaben gehörten für viele Bauern zum Alltag."
+        },
+        {
+          "text": "Ein Kaufmann verkauft Salz auf dem Markt.",
+          "target": 2,
+          "feedback": "Handel zählt im vereinfachten Modell zu den wirtschaftlichen Tätigkeiten der arbeitenden Bevölkerung."
+        },
+        {
+          "text": "Ein Priester betreut eine Gemeinde.",
+          "target": 0,
+          "feedback": "Ein Priester gehört zum Klerus."
+        },
+        {
+          "text": "Eine Herzogin aus einer Adelsfamilie empfängt Gäste am Hof.",
+          "target": 1,
+          "feedback": "Sie gehört zur weltlichen Adelsfamilie."
+        }
+      ],
+      "conclusion": "Die Gruppen helfen beim Vergleich. Einkommen, Einfluss und Rechte konnten innerhalb derselben Gruppe sehr verschieden sein."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Beschreibe die drei Stände und erkläre an einem Beispiel, was an dieser Ordnung hierarchisch war.",
+        "hints": [
+          "Was war die Aufgabe jedes Stands im Modell?",
+          "Wer konnte über andere bestimmen oder Abgaben verlangen?"
+        ],
+        "model": "Im Modell betet der Klerus, der Adel herrscht und schützt, und die arbeitenden Menschen erzeugen Lebensmittel und Waren. Ein adliger Grundherr konnte Abgaben von Bauern verlangen. Er hatte damit gegenüber den abhängigen Bauern besondere Rechte.",
+        "criteria": [
+          "die drei Stände genannt",
+          "ihre Aufgaben beschrieben",
+          "ungleiche Rechte an einem Beispiel erklärt"
+        ]
+      },
+      "2": {
+        "prompt": "Eine wohlhabende Kaufmannsfamilie gehört im Modell zu den arbeitenden Menschen. Erkläre, warum ihr Beispiel das Modell ergänzt.",
+        "hints": [
+          "Was teilt die Familie mit anderen der Gruppe?",
+          "Was kann sie von einer abhängigen Bauernfamilie unterscheiden?"
+        ],
+        "model": "Die Familie verdient ihren Lebensunterhalt durch Handel und gehört deshalb in die Gruppe der arbeitenden Menschen. Sie kann aber viel Geld haben und durch Handel Einfluss gewinnen. Eine abhängige Bauernfamilie hatte andere Pflichten und oft weniger Möglichkeiten. Das Modell fasst sehr unterschiedliche Menschen zusammen.",
+        "criteria": [
+          "die Zuordnung erklärt",
+          "einen konkreten Unterschied genannt",
+          "eine Grenze des Modells begründet"
+        ]
+      }
+    },
+    "review": "Wiederholung aus GPG 5 · Die Gesellschaftspyramide im alten Ägypten lesen"
+  },
+  {
+    "id": "stadt-land",
+    "lb": 3,
+    "title": "Bauern, Handwerker und Kaufleute",
+    "period": "Stadt und Land · Arbeit und Abhängigkeit",
+    "intro": "Ein Sack Getreide verbindet Dorf und Stadt. Doch wer darf ihn behalten, wer muss etwas abgeben und wer verkauft ihn?",
+    "paragraphs": [
+      "Viele Bauernfamilien lebten auf dem Land. Manche bewirtschafteten eigenes Land, andere nutzten Land eines Grundherrn. Je nach Verhältnis schuldeten sie einen Teil der Ernte, Geld oder Arbeit. Für Menschen in persönlicher Unfreiheit konnte auch der Wegzug eingeschränkt sein. Der Alltag hing also stark davon ab, welche Rechte und Pflichten eine Familie hatte.",
+      "In der Stadt arbeiteten Handwerker in Werkstätten und Kaufleute handelten mit Waren. Zünfte regelten in vielen Städten Ausbildung und Zugang zu einem Handwerk. Das Bürgerrecht konnte zusätzliche Rechte geben. Nicht alle Stadtbewohner besaßen es. Ein Markt verband Stadt und Land: Bauern konnten dort Waren anbieten, Handwerker und Kaufleute wiederum Lebensmittel und Rohstoffe beziehen."
+    ],
+    "takeaway": "Landwirtschaft, Handwerk und Handel verbanden Stadt und Land. Besitz, Bürgerrecht und Abhängigkeiten bestimmten die Spielräume.",
+    "sourceIds": [
+      "lehrplan",
+      "staende",
+      "zuenfte"
+    ],
+    "figures": [
+      "stadt-land"
+    ],
+    "quiz": {
+      "question": "Was regelte eine Zunft in vielen mittelalterlichen Städten?",
+      "answer": "die Ausbildung und den Zugang zum Handwerk",
+      "wrong": [
+        "den Gottesdienst im Kloster",
+        "die Abgaben aller Bauern im Umland"
+      ],
+      "explanation": "Zünfte waren Zusammenschlüsse eines Handwerks. Zu ihren Regeln konnte gehören, wie man ausgebildet wurde."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Folge den Waren und Pflichten",
+      "instruction": "Ordne jeden Hinweis zu und prüfe danach deine Lösung.",
+      "material": "In einem erfundenen Marktort leben eine Bauernfamilie, eine Schusterin und ein Salzhändler. Welche Rolle steht in jedem Satz im Vordergrund?",
+      "materialLabel": "Erfundener Fall zum Üben",
+      "categories": [
+        "Landwirtschaft",
+        "Handwerk",
+        "Handel"
+      ],
+      "entries": [
+        {
+          "text": "Die Familie erntet Korn und liefert einen Teil als Abgabe an den Grundherrn.",
+          "target": 0,
+          "feedback": "Die Familie nutzt die Felder und schuldet einen Teil ihrer Ernte."
+        },
+        {
+          "text": "Eine Schusterin verarbeitet Leder zu Schuhen.",
+          "target": 1,
+          "feedback": "Sie stellt in ihrer Werkstatt ein neues Produkt her."
+        },
+        {
+          "text": "Ein Kaufmann kauft Salz in einer anderen Stadt und verkauft es hier.",
+          "target": 2,
+          "feedback": "Dasselbe Gut wird eingekauft und weiterverkauft."
+        },
+        {
+          "text": "Ein Lehrling übt bei der Schusterin eine feste Naht.",
+          "target": 1,
+          "feedback": "In der Werkstatt erlernt er die Arbeit des Handwerks."
+        },
+        {
+          "text": "Ein Händler organisiert die Lieferung von Salzsäcken zum nächsten Markt.",
+          "target": 2,
+          "feedback": "Er organisiert den Transport und Verkauf der Handelsware."
+        }
+      ],
+      "conclusion": "Die Rollen griffen ineinander. Was jemand tun durfte oder schuldete, hing von seiner Stellung und den örtlichen Regeln ab."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre anhand eines Marktbesuchs, wie eine Bauernfamilie, eine Schusterin und ein Kaufmann zusammenhängen.",
+        "hints": [
+          "Welche Waren kann jede Person mitbringen oder kaufen?",
+          "Wer fertigt etwas an und wer verkauft etwas weiter?"
+        ],
+        "model": "Die Bauernfamilie kann Korn zum Markt bringen und Schuhe kaufen. Die Schusterin stellt die Schuhe her und kann selbst Lebensmittel einkaufen. Der Kaufmann kann Salz von auswärts heranbringen und am Markt verkaufen.",
+        "criteria": [
+          "alle drei Rollen genannt",
+          "die Waren sinnvoll zugeordnet",
+          "eine Verbindung zwischen Stadt und Land beschrieben"
+        ]
+      },
+      "2": {
+        "prompt": "Ein unfreier Bauer und ein Kaufmann wollen beide in eine andere Stadt ziehen. Erkläre, welche Hindernisse der Bauer haben könnte und was wir über den Kaufmann noch wissen müssten.",
+        "hints": [
+          "Welche Bindung kann den Bauern treffen?",
+          "Welche Regeln könnten am Zielort gelten?"
+        ],
+        "model": "Der unfreie Bauer kann dem Grundherrn persönlich verpflichtet sein und darf den Hof möglicherweise nicht einfach verlassen. Beim Kaufmann müsste ich wissen, ob der Zielort ihn aufnimmt und unter welchen Regeln er dort handeln oder Bürger werden darf.",
+        "criteria": [
+          "eine mögliche Bindung des Bauern erklärt",
+          "eine offene Frage am Zielort genannt",
+          "die Möglichkeiten der beiden verglichen"
+        ]
+      }
+    }
+  },
+  {
+    "id": "freiheit",
+    "lb": 3,
+    "title": "Welche Freiheiten hast du heute?",
+    "period": "Mittelalter und Gegenwart · Grundrechte",
+    "intro": "Stell dir vor, dein Beruf wäre von deiner Herkunft abhängig. Was würde sich für dich ändern?",
+    "paragraphs": [
+      "In der Ständegesellschaft waren Rechte und Chancen unterschiedlich verteilt. Wer auf einem abhängigen Hof aufwuchs, konnte den Ort und seine Arbeit oft nur eingeschränkt wechseln. Wer zu einer adeligen Familie gehörte, hatte andere Möglichkeiten. Die Verhältnisse waren je nach Zeit, Ort und Familie verschieden.",
+      "Heute schützt das Grundgesetz in Deutschland die Gleichheit vor dem Gesetz und die Freiheit des Glaubens. Es schützt auch die freie Berufswahl für Deutsche. Für eine Ausbildung oder einen Beruf können dennoch Voraussetzungen gelten. Wer etwa Ärztin werden möchte, muss zuerst die vorgeschriebene Ausbildung abschließen. Dass ein Recht besteht, heißt außerdem nicht, dass alle Menschen praktisch dieselben Chancen haben."
+    ],
+    "takeaway": "Heutige Grundrechte schützen Freiheiten und Gleichheit vor dem Gesetz. Zugangsvoraussetzungen und unterschiedliche Chancen gibt es weiterhin.",
+    "sourceIds": [
+      "lehrplan",
+      "staende",
+      "grundgesetz"
+    ],
+    "figures": [
+      "freiheit"
+    ],
+    "quiz": {
+      "question": "Was bedeutet freie Berufswahl in Deutschland?",
+      "answer": "Die Herkunft schreibt keinen Beruf vor. Für manche Berufe gelten Voraussetzungen.",
+      "wrong": [
+        "Jede Bewerbung muss angenommen werden.",
+        "Die Familie darf den Beruf rechtlich festlegen."
+      ],
+      "explanation": "Das Grundgesetz schützt die Berufswahl. Eine Zulassung, Ausbildung oder Auswahl kann trotzdem erforderlich sein."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Welches Recht ist hier gemeint?",
+      "instruction": "Ordne jeden Hinweis zu und prüfe danach deine Lösung.",
+      "material": "Lies die erfundenen Fälle. Wähle jeweils das Recht, um das es in der Situation hauptsächlich geht.",
+      "materialLabel": "Erfundener Fall zum Üben",
+      "categories": [
+        "Gleichheit vor dem Gesetz",
+        "Glaubensfreiheit",
+        "Berufsfreiheit"
+      ],
+      "entries": [
+        {
+          "text": "Eine Behörde will für dieselbe Regel Sonderrechte für Adelige einführen.",
+          "target": 0,
+          "feedback": "Ob jemand adelig ist, darf ihm vor dem Gesetz kein Sonderrecht geben."
+        },
+        {
+          "text": "Ein Kind entscheidet sich später für einen anderen Beruf als seine Eltern.",
+          "target": 2,
+          "feedback": "Eine freie Berufswahl lässt diese Entscheidung zu."
+        },
+        {
+          "text": "Ein Erwachsener entscheidet, ob er einer Religion angehören möchte.",
+          "target": 1,
+          "feedback": "Die Glaubensfreiheit schützt die religiöse Entscheidung."
+        },
+        {
+          "text": "Eine Jugendliche strebt einen Beruf an, für den sie zuerst eine Ausbildung braucht.",
+          "target": 2,
+          "feedback": "Voraussetzungen können gelten, obwohl die Wahl des Berufs frei ist."
+        },
+        {
+          "text": "Zwei Menschen stehen wegen desselben Falls vor Gericht. Einer beruft sich auf seine adelige Herkunft.",
+          "target": 0,
+          "feedback": "Für beide gilt das Gesetz unabhängig von ihrem Familienrang."
+        }
+      ],
+      "conclusion": "Unterscheide zwischen einem verbrieften Recht und der Frage, wie leicht Menschen es im Alltag nutzen können."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Vergleiche die Berufsmöglichkeiten einer abhängigen Bauernfamilie im Mittelalter mit der Berufswahl heute. Warum ist der Unterschied wichtig?",
+        "hints": [
+          "Welche Rolle spielte die Herkunft?",
+          "Was darf jemand heute selbst entscheiden und was muss er dafür tun?"
+        ],
+        "model": "Wer früher auf einem abhängigen Hof aufwuchs, war oft durch Arbeitspflichten und die Bindung an den Hof eingeschränkt. Heute kann man einen anderen Beruf wählen als die Eltern, muss aber zum Beispiel einen Abschluss erreichen. Das ist wichtig, weil man eigene Fähigkeiten und Wünsche bei der Wahl berücksichtigen kann.",
+        "criteria": [
+          "eine mittelalterliche Einschränkung erklärt",
+          "heutige Wahl und eine Voraussetzung unterschieden",
+          "die Bedeutung begründet"
+        ]
+      },
+      "2": {
+        "prompt": "Zwei Jugendliche wollen denselben Beruf lernen. Für eine ist der Ausbildungsbetrieb gut erreichbar. Der andere hat keine passende Busverbindung. Vergleiche das mit einer durch Herkunft eingeschränkten Berufswahl und beurteile den Unterschied.",
+        "hints": [
+          "Dürfen sich beide bewerben?",
+          "Was macht es für eine Person schwieriger und was könnte helfen?"
+        ],
+        "model": "Heute dürfen sich beide für die Ausbildung bewerben. Der schlechte Busanschluss erschwert einer Person den Zugang. Das ist ein praktisches Hindernis, keine rechtliche Pflicht, den Beruf der Eltern zu übernehmen. Eine bessere Verbindung könnte helfen, dass beide ihr Recht leichter nutzen können.",
+        "criteria": [
+          "ein Recht und ein praktisches Hindernis unterschieden",
+          "einen Unterschied zum Mittelalter erklärt",
+          "eine begründete Bewertung oder Hilfe beschrieben"
+        ]
+      }
+    }
+  }
+]
