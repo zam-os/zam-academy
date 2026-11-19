@@ -41,12 +41,12 @@ Geprüft wurden beide einschlägigen Bestandszellen in `zam-os/zam` (Commit `e51
 1. `de-by:realschule-6-englisch-grammatik-grundlagen` (`8` Karten, `SHA-256: 071ddb8c8873995521289549608d07ed6cea671c87c7757ce2358db7b7fc94fa`)
 2. `de-by:realschule-7-englisch-grammatik-tenses` (`8` Karten, `SHA-256: c1378fe282934048ac31a9eacafe318cc338aa9acfb428a7aa6f2c7a190deefd`)
 
-| Altzelle | A (Vorschlag) | B | C (`keep-active`) | Begründung |
+| Altzelle | Approved A | B | C (`keep-active`) | Begründung |
 | --- | ---: | ---: | ---: | --- |
 | `de-by:realschule-6-englisch-grammatik-grundlagen` | 2 | 0 | 6 | A: `J03` (`did` + Grundform → `e6-simple-past-rev-check`), `J07` (`mine` → `e6-possessives-check`). C: `J01` (3. Person `-s` im Simple Present stammt aus Klasse 5; `e6-simple-vs-prog-check` prüft in Klasse 6 den Aspektunterschied Simple vs. Progressive), 3 mehrteilige Synthesen (`J02`, `J04`, `J08`) sowie `J05`/`J06` (`mustn't` / `needn't`, die im LehrplanPLUS erst in Klasse 7 stehen). |
 | `de-by:realschule-7-englisch-grammatik-tenses` | 3 | 0 | 5 | 3 von 4 Atomen der alten Klasse-7-Zelle liegen im LehrplanPLUS in **Klasse 6** (Past Progressive, Zukunftsformen, Adjektivsteigerung). A: `J03` (`was/were + -ing` → `e6-past-progressive-check`), `J05` (going-to-future für feste Pläne → `e6-going-to-future-check`, das den in E6 ausgeschlossenen `will`-Kontrast in seinen Optionen meidet und Doppelabrufe verhindert), `J07` (`good – better – best` → `e6-comparatives-check`). C: `J01`/`J02` (Present Perfect vs. Simple Past gehört zu Klasse 7), `J04`/`J08` (mehrteilige Synthesen) sowie `J06` (mehrteilige Kontrastaufgabe `will` vs. `going-to`). |
 
-**Status:** [`englisch-realschule-6/replaces-de-by.json`](../englisch-realschule-6/replaces-de-by.json) steht auf `"status": "proposal-only"` und `"approved": null`. Die Zelle `cell.json` deklariert in der Erstveröffentlichung weder `replaces` noch `retired_items`. **Offene Frage an Thomas im PR:** Soll die Nachbarzelle `de-by:realschule-7-englisch-grammatik-tenses` wie in `Physik 11 Gymnasium` in diesem Klasse-6-Abgleich bleiben (da 3 der 4 Themen im LehrplanPLUS in Klasse 6 stehen) oder für das spätere Paket `englisch-realschule-7` zurückgehalten werden?
+Thomas approved 5 same-retrieval transfers on 2026-11-19. The published mapping uses `replaces` for those transfers. The 11 keep-active cards retain their review histories on their existing IDs. The migration validator checks repeated installs and conflicting histories. The Grade 7 school cell remains listed at Grade 7.
 
 ## Nachweise
 
@@ -57,4 +57,3 @@ Geprüft wurden beide einschlägigen Bestandszellen in `zam-os/zam` (Commit `e51
 ## Offen
 
 - Fachliche Durchsicht durch eine Realschullehrkraft und Ergänzung geprüfter Lehrervideos (eigener Schritt).
-- Entscheidung von Thomas über die Freigabe von `replaces-de-by.json` (und Aufnahme von `de-by:realschule-7-englisch-grammatik-tenses`).

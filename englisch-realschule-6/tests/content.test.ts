@@ -370,12 +370,12 @@ describe("answer handling, progress and routes", () => {
 	});
 });
 
-describe("ZAM content and proposal-only legacy inventory", () => {
-	it("pins identifiers and keeps cell free of replaces until Thomas approves", () => {
+describe("ZAM content and approved legacy mapping", () => {
+	it("pins identifiers and applies the approved legacy mapping", () => {
 		expect(cell.tile_id).toBe(ZAM_CELL_ID);
-		expect(mapping.approved).toBeNull();
-		expect(mapping.status).toBe("proposal-only");
-		expect(JSON.stringify(cell)).not.toMatch(/"replaces"|"retired_items"/);
+		expect(mapping.approved).toBe("2026-11-19");
+		expect(mapping.status).toBe("approved");
+		expect(cell).not.toHaveProperty("retired_items");
 		expect(
 			cell.atoms.map((atom) => ({
 				id: atom.id,
@@ -393,7 +393,7 @@ describe("ZAM content and proposal-only legacy inventory", () => {
 		);
 		for (const row of mapping.rows) {
 			expect(legacyItems.some((item) => item.id === row.de_by_id)).toBe(true);
-			if (row.action === "propose-replace-after-approval") {
+			if (row.action === "replace") {
 				expect(row.category).toBe("A");
 				expect(items.filter((item) => item.slug === row.academy_slug)).toHaveLength(1);
 			} else {
