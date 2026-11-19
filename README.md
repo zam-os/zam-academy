@@ -13,6 +13,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | Grade 4 mathematics: 40 Discovery Island lessons with Milo (Bavaria) | [`mathematik-grundschule-4/`](mathematik-grundschule-4/) | https://academy.zam-os.org/mathematik-grundschule-4/ | `zam-academy:mathematik-grundschule-4` |
 | Grade 4 German: Tintos Wörterstadt, 45 lessons on language, spelling, the Grundwortschatz, reading and writing (Bavaria, LehrplanPLUS 2, 3.2/3.3, 4); the app does not rate free texts ([coverage](docs/deutsch-grundschule-4-coverage.md)) | [`deutsch-grundschule-4/`](deutsch-grundschule-4/) | https://academy.zam-os.org/deutsch-grundschule-4/ | `zam-academy:deutsch-grundschule-4` |
 | Grade 4 Heimat- und Sachunterricht: twenty discovery stations with Lotta (Bavaria) | [`hsu-grundschule-4/`](hsu-grundschule-4/) | https://academy.zam-os.org/hsu-grundschule-4/ | `zam-academy:hsu-grundschule-4` |
+| French 6 Gymnasium (Bavaria, first and second foreign language) | [`franzoesisch-gymnasium-6/`](franzoesisch-gymnasium-6/) | https://academy.zam-os.org/franzoesisch-gymnasium-6/ | `zam-academy:franzoesisch-gymnasium-6` |
 | French 5 Gymnasium (Bavaria, first foreign language) | [`franzoesisch-gymnasium-5/`](franzoesisch-gymnasium-5/) | https://academy.zam-os.org/franzoesisch-gymnasium-5/ | `zam-academy:franzoesisch-gymnasium-5` |
 | Englisch 5 Mittelschule (LehrplanPLUS Bayern) | [`englisch-mittelschule-5/`](englisch-mittelschule-5/) | https://academy.zam-os.org/englisch-mittelschule-5/ | `zam-academy:englisch-mittelschule-5` |
 | Mathematics 5 Mittelschule (Bavaria) | [`mathematik-mittelschule-5/`](mathematik-mittelschule-5/) | Built by Pages on merge | `zam-academy:mathematik-mittelschule-5` |
@@ -187,6 +188,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Englisch 6 Realschule: cd englisch-realschule-6 (dev server on :5255)
 # Geschichte 6 Realschule: cd geschichte-realschule-6 (dev server on :5258)
 # Biologie 5 Gymnasium: cd biologie-gymnasium-5 (dev server on :5246)
+# French 6 Gymnasium: cd franzoesisch-gymnasium-6 (dev server on :5262)
 # French 5 Gymnasium: cd franzoesisch-gymnasium-5 (dev server on :5245)
 # Englisch 5 Mittelschule: cd englisch-mittelschule-5 (dev server on :5248)
 # Informatik 6 Gymnasium: cd informatik-gymnasium-6 (dev server on :5251)
