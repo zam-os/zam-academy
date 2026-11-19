@@ -86,11 +86,7 @@ the das/dass substitution test. Eight C rows retain the old items: their prompts
 combine several retrievals or contain absolute rules that the new instruction
 qualifies. No old history is divided across new cards.
 
-The proposal has `approved: null`. The cell declares neither `replaces` nor
-`retired_items`. Thomas's explicit approval is needed before activating any A
-mapping; package creation grants none. All twelve old cards remain active.
-Before activation, add a migration validator that refuses a learner holding
-both the old item and its proposed successor, and raise the cell version.
+Thomas approved 4 same-retrieval transfers on 2026-11-19. The published mapping uses `replaces` for those transfers. The 8 keep-active cards retain their review histories on their existing IDs. The attached migration check covers repeated installs and conflicting histories.
 
 The neighbouring Grade 5 snapshots were checked against the already published
 Grade 5 package and its mapping. The two active Grade 7 German cells were also
