@@ -8,6 +8,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | English 5 Gymnasium (Bavaria) | [`englisch-gymnasium-5/`](englisch-gymnasium-5/) | https://academy.zam-os.org/englisch-gymnasium-5/ | `zam-academy:englisch-gymnasium-5` |
 | English 6 Gymnasium (Bavaria, 1. FS) | [`englisch-gymnasium-6/`](englisch-gymnasium-6/) | Built by Pages on merge | `zam-academy:englisch-gymnasium-6` |
 | Deutsch 5 Gymnasium (LehrplanPLUS Bayern) | [`deutsch-gymnasium-5/`](deutsch-gymnasium-5/) | https://academy.zam-os.org/deutsch-gymnasium-5/ | `zam-academy:deutsch-gymnasium-5` |
+| German 6 Gymnasium (Bavarian LehrplanPLUS) | [`deutsch-gymnasium-6/`](deutsch-gymnasium-6/) | Built by Pages on merge | `zam-academy:deutsch-gymnasium-6` |
 | German 6 Realschule (Bavaria) | [`deutsch-realschule-6/`](deutsch-realschule-6/) | Built by Pages on merge | `zam-academy:deutsch-realschule-6` |
 | Grade 4 mathematics: 40 Discovery Island lessons with Milo (Bavaria) | [`mathematik-grundschule-4/`](mathematik-grundschule-4/) | https://academy.zam-os.org/mathematik-grundschule-4/ | `zam-academy:mathematik-grundschule-4` |
 | Grade 4 German: Tintos Wörterstadt, 45 lessons on language, spelling, the Grundwortschatz, reading and writing (Bavaria, LehrplanPLUS 2, 3.2/3.3, 4); the app does not rate free texts ([coverage](docs/deutsch-grundschule-4-coverage.md)) | [`deutsch-grundschule-4/`](deutsch-grundschule-4/) | https://academy.zam-os.org/deutsch-grundschule-4/ | `zam-academy:deutsch-grundschule-4` |
@@ -179,6 +180,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # English 5 Gymnasium: cd englisch-gymnasium-5 (dev server on :5247)
 # English 6 Gymnasium: cd englisch-gymnasium-6 (dev server on :5256)
 # German 5 Gymnasium: cd deutsch-gymnasium-5 (dev server on :5249)
+# German 6 Gymnasium: cd deutsch-gymnasium-6 (dev server on :5260)
 # German 6 Realschule: cd deutsch-realschule-6 (dev server on :5254)
 # Englisch 6 Realschule: cd englisch-realschule-6 (dev server on :5255)
 # Geschichte 6 Realschule: cd geschichte-realschule-6 (dev server on :5258)

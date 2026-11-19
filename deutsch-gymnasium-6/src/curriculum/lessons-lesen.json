@@ -1,0 +1,1241 @@
+[
+	{
+		"id": "d6-lesestrategien",
+		"stage": "lesen",
+		"title": "Für ein Leseziel die passende Strategie wählen",
+		"skill": "Du liest suchend, überfliegend oder genau und prüfst dein Verstehen.",
+		"bindings": [
+			"2.1"
+		],
+		"paragraphs": [
+			"Dein Leseziel entscheidet über die Strategie. Suchendes Lesen findet eine bestimmte Angabe. Überfliegendes Lesen verschafft einen Überblick über Überschriften und Aufbau. Genaues Lesen klärt Zusammenhänge, unbekannte Wörter und Bezüge.",
+			"Beispiel: Du suchst nur die Rückgabefrist: Scanne nach „Rückgabe“. Willst du die Ausleihregeln erklären, lies die Bedingungen genau und fasse sie zusammen. Markiere sparsam. Wenn fast alles farbig ist, erkennst du die Kerninformation nicht mehr."
+		],
+		"material": "Schulbücherei: Die Ausleihe ist dienstags und donnerstags in der großen Pause geöffnet. Die Leihfrist beträgt drei Wochen. Eine Verlängerung ist möglich, wenn niemand das Buch vorgemerkt hat. Für beschädigte Bücher sprichst du das Büchereiteam an.",
+		"materialLabel": "Eigens geschriebener Übungstext · Beispieldaten sind erfunden",
+		"sourceIds": [
+			"lehrplan"
+		],
+		"takeaway": "Lege zuerst dein Leseziel fest und prüfe anschließend, ob du es erreicht hast.",
+		"lehrplan": "D6 · 2.1",
+		"check": {
+			"wrong": "Ich markiere jedes Wort im Text.",
+			"explanation": "Die Bedingung „wenn niemand das Buch vorgemerkt hat“ ist für die Antwort entscheidend."
+		},
+		"visual": {
+			"kind": "flow",
+			"title": "Für ein Leseziel die passende Strategie wählen · im Modell",
+			"steps": [
+				{
+					"label": "Orientieren",
+					"text": "Worum geht es?",
+					"detail": "Überfliege Überschrift und Aufbau, bevor du eine passende Strategie wählst."
+				},
+				{
+					"label": "Erarbeiten",
+					"text": "Angabe oder Zusammenhang?",
+					"detail": "Suchendes Lesen reicht für eine Uhrzeit; eine Bedingung verlangt genaues Lesen."
+				},
+				{
+					"label": "Prüfen",
+					"text": "Kann ich es erklären?",
+					"detail": "Formuliere die Antwort mit eigenen Worten und kontrolliere sie am Text."
+				}
+			]
+		},
+		"cases": [
+			{
+				"prompt": "Du suchst die Öffnungstage. Welche Strategie passt?",
+				"options": [
+					"Nach Wochentagen suchen.",
+					"Den Text auswendig lernen."
+				],
+				"answer": "Nach Wochentagen suchen.",
+				"feedback": "Eine gezielte Suchfrage braucht keine vollständige Abschrift."
+			},
+			{
+				"prompt": "Wann ist Verlängern möglich?",
+				"options": [
+					"Immer ohne jede Bedingung.",
+					"Wenn niemand das Buch vorgemerkt hat."
+				],
+				"answer": "Wenn niemand das Buch vorgemerkt hat.",
+				"feedback": "Der wenn-Satz schränkt die Möglichkeit ein."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Beantworte die Frage nach den Öffnungstagen und die nach der Verlängerung. Benenne jeweils deine Lesestrategie.",
+				"model": "Dienstags und donnerstags: suchendes Lesen. Verlängern geht, wenn niemand das Buch vorgemerkt hat: genaues Lesen der Bedingung.",
+				"criteria": [
+					"Ich nenne die Tage richtig.",
+					"Ich übernehme die Bedingung vollständig.",
+					"Ich begründe zwei Strategien."
+				]
+			},
+			"2": {
+				"prompt": "Plane, wie du einen längeren unbekannten Sachtext für einen Vortrag liest. Erkläre, was du bei einer unklaren Stelle tust.",
+				"model": "Zuerst verschaffe ich mir anhand der Überschriften einen Überblick. Dann lese ich die für meine Leitfrage wichtigen Abschnitte genau und notiere Kernaussagen. Unklare Wörter kläre ich im Zusammenhang oder im Wörterbuch; danach prüfe ich meine Zusammenfassung am Text.",
+				"criteria": [
+					"Ich beginne mit einem Leseziel.",
+					"Ich kombiniere passende Strategien.",
+					"Ich plane eine Verstehenskontrolle."
+				]
+			}
+		}
+	},
+	{
+		"id": "d6-textsorten",
+		"stage": "lesen",
+		"title": "Erzählung, Szene, Gedicht und Sachtext",
+		"skill": "Du erkennst Textformen an Merkmalen und Leseabsicht.",
+		"bindings": [
+			"2.1",
+			"2.2"
+		],
+		"paragraphs": [
+			"Ein erzählender Text entfaltet eine Handlung aus einer Erzählperspektive. Eine dramatische Szene lässt Figuren sprechen und kann Spielanweisungen enthalten. Ein Gedicht setzt Sprache in Verse und oft in Strophen, auch ohne Reim. Ein pragmatischer Sachtext will zum Beispiel informieren oder anleiten.",
+			"Beispiel: Steht „Mira (leise): Hat jemand den Schlüssel?“ mit Figurenname und Spielhinweis auf dem Blatt, spricht das für eine Szene. Steht dort „Schlüssel liegen während der Ausleihe im Sekretariat“, prüfst du, wo genau du den Schlüssel bekommst."
+		],
+		"material": "A   Mira drückte die Klinke. Die Tür blieb zu.\nB   MIRA (leise): Hast du den Schlüssel?\nC   Die Tür träumt im Flur / vom Wind auf der Heide. / Ein Schritt weckt sie auf.\nD   Der Schlüssel zur Bücherei hängt während der Pause im Sekretariat.",
+		"materialLabel": "Eigens geschriebener Übungstext",
+		"sourceIds": [
+			"lehrplan"
+		],
+		"takeaway": "Nutze Form und Leseabsicht gemeinsam. Reihenfolge, Rede, Verse und Sachangaben geben dir Hinweise.",
+		"check": {
+			"wrong": "Ein Titel mit dem Namen einer Figur.",
+			"explanation": "Rollenrede zeigt, wer spricht. Spielanweisungen können etwa die Bewegung nennen."
+		},
+		"visual": {
+			"kind": "sequence",
+			"title": "Vier Texte über dieselbe Tür",
+			"initial": {
+				"blocks": [
+					{
+						"label": "Gemeinsamer Gegenstand",
+						"text": "Eine verschlossene Tür",
+						"tone": "subject"
+					}
+				]
+			},
+			"steps": [
+				{
+					"label": "Erzählung und Szene",
+					"text": "Erzählstimme oder Rollenrede",
+					"detail": "A erzählt ein Ereignis. B verteilt Rede und Spielhinweis an eine Figur.",
+					"blocks": [
+						{
+							"label": "A · Erzählung",
+							"text": "Mira drückte die Klinke.",
+							"tone": "subject"
+						},
+						{
+							"label": "B · Szene",
+							"text": "MIRA (leise): Hast du den Schlüssel?",
+							"tone": "speech"
+						}
+					]
+				},
+				{
+					"label": "Gedicht",
+					"text": "Vers und Bild",
+					"detail": "Die Zeilenumbrüche und die träumende Tür lenken die Aufmerksamkeit auf Form und Sprachbild.",
+					"blocks": [
+						{
+							"label": "C · Vers",
+							"text": "Die Tür träumt im Flur",
+							"tone": "image"
+						}
+					]
+				},
+				{
+					"label": "Sachtext",
+					"text": "Eine überprüfbare Angabe",
+					"detail": "Der Hinweis nennt den Aufbewahrungsort und hat einen praktischen Zweck.",
+					"blocks": [
+						{
+							"label": "D · Information",
+							"text": "während der Pause",
+							"tone": "time"
+						},
+						{
+							"label": "Aufbewahrungsort",
+							"text": "im Sekretariat",
+							"tone": "place"
+						}
+					]
+				}
+			]
+		},
+		"cases": [
+			{
+				"prompt": "Woran erkennst du in B eine Szene?",
+				"options": [
+					"Figurenname und Hinweis zur Sprechweise",
+					"Der Schlüssel kommt im Text vor."
+				],
+				"answer": "Figurenname und Hinweis zur Sprechweise",
+				"feedback": "Der Figurenname verteilt die Rede und „leise“ gibt eine Spielanweisung."
+			},
+			{
+				"prompt": "Welche Frage beantwortet D?",
+				"options": [
+					"Wie fühlt sich die Tür?",
+					"Wo ist der Schlüssel in der Pause?"
+				],
+				"answer": "Wo ist der Schlüssel in der Pause?",
+				"feedback": "D nennt einen Ort für eine praktische Suche."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Ordne A bis D je eine Textform zu und nenne zu jeder Form ein Merkmal.",
+				"model": "A Erzählung: eine Figur handelt. B Szene: Rollenrede. C Gedicht: Verse und eine träumende Tür. D Sachtext: Information über den Aufbewahrungsort.",
+				"criteria": [
+					"Ich ordne alle vier zu.",
+					"Ich nenne sichtbare Merkmale.",
+					"Ich erkläre D mit seinem Zweck."
+				]
+			},
+			"2": {
+				"prompt": "Verwandle A in eine kurze spielbare Szene. Ergänze eine Antwort einer zweiten Figur und eine passende Spielanweisung.",
+				"model": "MIRA (rüttelt an der Klinke): Die Tür ist zu.\nBEN (zeigt den Gang hinunter): Im Sekretariat hängt der Schlüssel.",
+				"criteria": [
+					"Die Figuren sprechen selbst.",
+					"Die Rede passt zur verschlossenen Tür.",
+					"Meine Anweisung lässt sich spielen."
+				]
+			}
+		},
+		"lehrplan": "D6 · 2.1 / 2.2"
+	},
+	{
+		"id": "d6-ariadne",
+		"stage": "lesen",
+		"title": "Mit Ariadnes Faden durch die Sage",
+		"skill": "Du untersuchst Ort, Wunder und Figurenentscheidungen in einer Sage der Antike.",
+		"bindings": [
+			"2.2"
+		],
+		"paragraphs": [
+			"Sagen können wirkliche Orte mit überlieferten, wunderbaren Ereignissen verbinden. Kreta ist eine wirkliche Insel. Der Minotauros gehört zur griechischen Sagenwelt. Sagen wurden in unterschiedlichen Fassungen weitererzählt. Untersuche, welche Entscheidung den Verlauf gerade deiner Fassung verändert.",
+			"Beispiel: Der Faden ist ein gewöhnlicher Gegenstand. Ariadne macht ihn zum Werkzeug. Theseus kann seinen Weg zurückverfolgen, weil er den Faden am Eingang befestigt. Das zeigt, was Planung und Hilfe in dieser Geschichte leisten."
+		],
+		"material": "Kreta. Vor dem Eingang zum Labyrinth hielt Ariadne Theseus ein Knäuel hin. „Binde das Ende hier fest“, flüsterte sie. Theseus wickelte den Faden ab, bis ihn tief im Bau der Minotauros, halb Mensch, halb Stier, stellte. Als das Wesen besiegt war, sahen alle Gänge gleich aus. Theseus tastete nach dem Faden und folgte ihm zurück bis zu Ariadne.",
+		"materialLabel": "Eigene Nacherzählung nach der griechischen Sage",
+		"sourceIds": [
+			"lehrplan",
+			"ariadne"
+		],
+		"takeaway": "Trenne Schauplatz und Sagenelemente. Erkläre Figurenentscheidungen mit einem Beleg aus deinem Text.",
+		"check": {
+			"wrong": "Der Wind führt ihn nach draußen.",
+			"explanation": "Der Text verbindet den Rückweg mit dem am Eingang befestigten Faden."
+		},
+		"visual": {
+			"kind": "maze",
+			"title": "Ariadnes Wegskizze",
+			"initial": {
+				"blocks": [
+					{
+						"label": "Ort",
+						"text": "Kreta",
+						"tone": "place"
+					},
+					{
+						"label": "Problem",
+						"text": "Kein Wegweiser im Labyrinth",
+						"tone": "reason"
+					}
+				]
+			},
+			"steps": [
+				{
+					"label": "Eingang",
+					"text": "Den Faden festbinden",
+					"detail": "Ein fester Startpunkt ermöglicht die Rückkehr zum Eingang.",
+					"blocks": [
+						{
+							"label": "Ariadnes Plan",
+							"text": "Faden am Eingang befestigen",
+							"tone": "place"
+						}
+					]
+				},
+				{
+					"label": "Im Labyrinth",
+					"text": "Abwickeln und Spuren legen",
+					"detail": "Die Spur entsteht auf dem Hinweg. Das wunderbare Wesen bleibt ein Element der Sage.",
+					"blocks": [
+						{
+							"label": "Theseus",
+							"text": "wickelt ab",
+							"tone": "predicate"
+						},
+						{
+							"label": "Minotauros",
+							"text": "halb Mensch, halb Stier",
+							"tone": "image"
+						}
+					]
+				},
+				{
+					"label": "Rückweg",
+					"text": "Der Spur folgen",
+					"detail": "Die Lösung hängt an Ariadnes Entscheidung vor dem Aufbruch.",
+					"blocks": [
+						{
+							"label": "Theseus",
+							"text": "folgt dem Faden",
+							"tone": "predicate"
+						},
+						{
+							"label": "Ariadne",
+							"text": "wartet am Eingang",
+							"tone": "place"
+						}
+					]
+				}
+			]
+		},
+		"cases": [
+			{
+				"prompt": "Was gehört in dieser Fassung ausdrücklich zur Sagenwelt?",
+				"options": [
+					"Der halb menschliche, halb stiergestaltige Minotauros.",
+					"Die Insel Kreta."
+				],
+				"answer": "Der halb menschliche, halb stiergestaltige Minotauros.",
+				"feedback": "Der Text setzt ein wunderbares Wesen an einen realen Ort."
+			},
+			{
+				"prompt": "Warum funktioniert Ariadnes Plan?",
+				"options": [
+					"Der Faden leuchtet von selbst.",
+					"Das feste Ende markiert den Ausgang."
+				],
+				"answer": "Das feste Ende markiert den Ausgang.",
+				"feedback": "Der Text erklärt den Rückweg durch den befestigten Faden."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Nenne einen realen Schauplatz, ein wundersames Element und einen Beleg für Ariadnes Beitrag.",
+				"model": "Kreta ist ein wirklicher Ort. Der Minotauros ist das wunderbare Wesen. Ariadne sagt „Binde das Ende hier fest“ und sichert damit den Rückweg.",
+				"criteria": [
+					"Ich nenne den Schauplatz.",
+					"Ich benenne das Sagenelement.",
+					"Ich belege Ariadnes Beitrag."
+				]
+			},
+			"2": {
+				"prompt": "Erzähle den Rückweg in drei Sätzen aus Ariadnes Sicht. Was kann sie sehen und was kann sie nur vermuten?",
+				"model": "Ich wartete am Eingang und spürte ein Zittern im Faden. Ob Theseus an einer Kreuzung stand? Da erschien er zwischen den Mauern und hielt das Knäuel hoch.",
+				"criteria": [
+					"Ich schreibe aus Ariadnes Sicht.",
+					"Ich markiere ihre Vermutung.",
+					"Der Faden bleibt wichtig."
+				]
+			}
+		},
+		"extension": "Notiere eine Situation, in der eine Idee von jemand anderem dir geholfen hat. Vergleiche sie mit Ariadnes Beitrag, ohne die Handlung der Sage für Geschichte zu halten.",
+		"lehrplan": "D6 · 2.2"
+	},
+	{
+		"id": "d6-figuren",
+		"stage": "lesen",
+		"title": "Figuren und Orte mit Belegen beschreiben",
+		"skill": "Du unterscheidest Beobachtung, Zitat und begründete Deutung.",
+		"bindings": [
+			"2.2"
+		],
+		"paragraphs": [
+			"Beschreibe eine Figur nicht nur mit einem Eigenschaftswort. Sammle, was sie tut, sagt oder denkt, und leite daraus eine vorsichtige Deutung ab. Ein kurzes, genaues Zitat belegt deine Aussage. Erfundene Wörter gehören nicht in Anführungszeichen.",
+			"Beispiel: „Mina schob das Blatt unter den Tisch.“ Das kann Unsicherheit zeigen, beweist aber noch keine Lüge. Prüfe den Zusammenhang. Auch Orte wirken: Ein enger, dunkler Flur kann die Unsicherheit verstärken. Verbinde deine eigene Erfahrung mit dem Text, ohne der Figur dein Wissen aufzuzwingen."
+		],
+		"material": "Mina stand vor dem hellen Klassenzimmer. Im dunklen Flur hielt sie ihr Blatt mit beiden Händen fest. „Vielleicht lachen sie“, dachte sie. Als Jo sie anlächelte, richtete sie sich auf und trat ein.",
+		"materialLabel": "Eigens geschriebener Übungstext · Beispieldaten sind erfunden",
+		"sourceIds": [
+			"lehrplan"
+		],
+		"takeaway": "Aussage → genauer Textbeleg → vorsichtige Deutung: So beschreibst du Figuren und ihre Umgebung.",
+		"lehrplan": "D6 · 2.2",
+		"check": {
+			"wrong": "Mina ist sicher wütend, weil der Flur dunkel ist.",
+			"explanation": "Der Gedanke belegt eine mögliche Unsicherheit; die Deutung bleibt auf die Szene bezogen."
+		},
+		"visual": {
+			"kind": "scene",
+			"title": "Figuren und Orte mit Belegen beschreiben · im Modell",
+			"steps": [
+				{
+					"label": "Beobachtung",
+					"text": "hält das Blatt fest",
+					"detail": "Eine beobachtbare Handlung ist die Grundlage; ein Eigenschaftswort ist schon eine Deutung."
+				},
+				{
+					"label": "Beleg",
+					"text": "„Vielleicht lachen sie“",
+					"detail": "Ein genaues kurzes Zitat stützt die Aussage und muss im Text wirklich vorkommen."
+				},
+				{
+					"label": "Entwicklung",
+					"text": "richtet sich auf und tritt ein",
+					"detail": "Die spätere Handlung zeigt eine Veränderung. Der Kontrast der Orte unterstützt die Szene."
+				}
+			]
+		},
+		"cases": [
+			{
+				"prompt": "Was ist ein genaues Zitat?",
+				"options": [
+					"„richtete sie sich auf“",
+					"„Mina war plötzlich die Mutigste“"
+				],
+				"answer": "„richtete sie sich auf“",
+				"feedback": "Nur die erste Formulierung steht tatsächlich im Übungstext."
+			},
+			{
+				"prompt": "Welche Deutung ist angemessen?",
+				"options": [
+					"Jo kennt sicher alle Gedanken Minas.",
+					"Jos Lächeln scheint Mina zu ermutigen."
+				],
+				"answer": "Jos Lächeln scheint Mina zu ermutigen.",
+				"feedback": "„Scheint“ kennzeichnet eine begründete Deutung statt einer unbelegten Gewissheit."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Beschreibe Minas anfängliches Gefühl und ihre Veränderung. Nutze ein kurzes Zitat.",
+				"model": "Mina wirkt zunächst unsicher. Das zeigt ihr Gedanke „Vielleicht lachen sie“. Nach Jos Lächeln richtet sie sich auf und betritt den Raum; sie scheint ermutigt.",
+				"criteria": [
+					"Ich benenne eine Entwicklung.",
+					"Mein Zitat stimmt mit dem Text überein.",
+					"Ich trenne Deutung und sichere Angabe."
+				]
+			},
+			"2": {
+				"prompt": "Erkläre, wie der Gegensatz von Flur und Klassenzimmer zur Szene passt. Verbinde dies vorsichtig mit einer eigenen Erfahrung oder einem erfundenen Vergleich.",
+				"model": "Der dunkle Flur passt zu Minas anfänglicher Unsicherheit, das helle Klassenzimmer kann als offenerer Raum wirken. Das ist eine Deutung der Gestaltung, keine feste Regel über Dunkelheit. Ähnlich kann eine freundliche Begrüßung bei einem ersten Vortrag Mut machen.",
+				"criteria": [
+					"Ich beziehe mich auf beide Orte.",
+					"Ich kennzeichne die Interpretation.",
+					"Ich verbinde Text und Erfahrung nachvollziehbar."
+				]
+			}
+		}
+	},
+	{
+		"id": "d6-perspektive",
+		"stage": "lesen",
+		"title": "Eine Szene aus anderer Sicht erzählen",
+		"skill": "Du veränderst die Perspektive und bewahrst die gesicherten Handlungsschritte.",
+		"bindings": [
+			"2.2",
+			"3.2"
+		],
+		"paragraphs": [
+			"Beim Perspektivwechsel bleibt der Handlungskern erhalten, aber Wahrnehmung und Wissen ändern sich. Eine Ich-Figur weiß nur, was sie erlebt, erinnert, erfährt oder vermutet. Die Gedanken anderer Figuren darf sie nicht als sichere Tatsache erzählen.",
+			"Beispiel: Aus „Jo sah, wie Mina das Blatt festhielt“ wird in Jos Ich-Sicht „Ich sah ihre Hände am Blatt und fragte mich, ob sie nervös war“. Die Vermutung ist erlaubt, wenn du sie als solche kennzeichnest. Eine Fortsetzung soll an den Schluss anschließen und keinen vorherigen Angaben widersprechen."
+		],
+		"material": "Jo wartete im Klassenzimmer. Durch die offene Tür sah Jo Mina im Flur, das Blatt fest in den Händen. Jo lächelte. Mina richtete sich auf und kam herein. Was auf dem Blatt stand, wusste Jo nicht.",
+		"materialLabel": "Eigens geschriebener Übungstext · Beispieldaten sind erfunden",
+		"sourceIds": [
+			"lehrplan"
+		],
+		"takeaway": "Neue Perspektive, begrenztes Wissen: Behalte den Handlungskern und kennzeichne Vermutungen.",
+		"lehrplan": "D6 · 2.2 / 3.2",
+		"check": {
+			"wrong": "Ich hatte das Blatt gelesen, obwohl ich es nie gesehen hatte.",
+			"explanation": "Der Satz macht eine Vermutung sichtbar und behauptet keinen Zugang zu fremden Gedanken."
+		},
+		"visual": {
+			"kind": "story",
+			"title": "Eine Szene aus anderer Sicht erzählen · im Modell",
+			"steps": [
+				{
+					"label": "Bewahren",
+					"text": "Tür offen; Mina hält ein Blatt",
+					"detail": "Gesicherte Angaben bleiben auch beim Perspektivwechsel erhalten."
+				},
+				{
+					"label": "Verändern",
+					"text": "Ich sehe Mina im Flur.",
+					"detail": "Wahrnehmung und Wortwahl werden aus der neuen Sicht erzählt."
+				},
+				{
+					"label": "Begrenzen",
+					"text": "Was steht auf dem Blatt?",
+					"detail": "Jos Wissenslücke darf nicht ohne neues Ereignis verschwinden."
+				}
+			]
+		},
+		"cases": [
+			{
+				"prompt": "Welche Fortsetzung ist anschlussfähig?",
+				"options": [
+					"Mina zeigt Jo später das Blatt.",
+					"Jo erinnert sich daran, es vorhin gelesen zu haben."
+				],
+				"answer": "Mina zeigt Jo später das Blatt.",
+				"feedback": "Erst ein neues Ereignis kann die ausdrücklich genannte Wissenslücke schließen."
+			},
+			{
+				"prompt": "Was ist eine produktive Methode?",
+				"options": [
+					"Den Text nur wortgleich abschreiben.",
+					"Eine Szene aus einer anderen Figurensicht neu schreiben."
+				],
+				"answer": "Eine Szene aus einer anderen Figurensicht neu schreiben.",
+				"feedback": "Umschreiben kann das Verständnis der Figuren und ihrer Wissensgrenzen vertiefen."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe die Szene in Jos Ich-Perspektive mit einer ausdrücklich markierten Vermutung.",
+				"model": "Ich sah Mina im Flur. Sie hielt ihr Blatt fest. Vielleicht war sie nervös. Ich lächelte sie an; dann kam sie herein. Was auf dem Blatt stand, wusste ich nicht.",
+				"criteria": [
+					"Ich halte die Ich-Sicht ein.",
+					"Ich bewahre die Handlungsschritte.",
+					"Ich kennzeichne eine Vermutung."
+				]
+			},
+			"2": {
+				"prompt": "Setze die Szene aus Jos Sicht fort. Lass Jo etwas Neues über das Blatt erfahren und begründe, weshalb das Wissen nun zulässig ist.",
+				"model": "Mina setzte sich neben mich und zeigte mir ihr Blatt. Darauf stand ein Gedicht für ihren Vortrag. Nun konnte ich darüber berichten, weil Mina es mir gezeigt hatte; vorher kannte ich den Inhalt nicht.",
+				"criteria": [
+					"Meine Fortsetzung knüpft an den Schluss an.",
+					"Neue Informationen werden durch ein Ereignis zugänglich.",
+					"Ich erkläre die Wissensgrenze."
+				]
+			}
+		}
+	},
+	{
+		"id": "d6-gedicht",
+		"stage": "lesen",
+		"title": "Klang und Bilder eines Gedichts erkunden",
+		"skill": "Du erklärst die Wirkung von Reim, Lautmalerei und bildhaften Ausdrücken.",
+		"bindings": [
+			"1.2",
+			"2.2"
+		],
+		"paragraphs": [
+			"Gedichte sind häufig in Verse und Strophen gegliedert. Reime verbinden ähnlich klingende Versenden. Lautmalerei ahmt Geräusche nach; bildhafte Ausdrücke übertragen Vorstellungen. Eine Frage oder ein Ausruf kann die Stimmung ebenfalls gestalten.",
+			"Beispiel: „Der Wind flüstert“ schreibt dem Wind eine menschliche Handlung zu: eine Personifikation. „Der Wind klingt wie eine Flöte“ ist ein Vergleich mit „wie“. Nenne nicht nur das Mittel, sondern erläutere, was es an dieser Stelle vorstellbar oder hörbar macht. Auch Erzählungen und Szenen verwenden solche Mittel."
+		],
+		"material": "Der Regen klopft ans Fenster sacht,\nder Hof liegt still in dunkler Nacht.\nPlitsch, platsch! Ein Tropfen springt ins Licht.\nWer hört das kleine Regengedicht?",
+		"materialLabel": "Eigens geschriebener Übungstext · Beispieldaten sind erfunden",
+		"sourceIds": [
+			"lehrplan"
+		],
+		"takeaway": "Gestaltungsmittel benennen, belegen und ihre Wirkung im Zusammenhang erklären.",
+		"lehrplan": "D6 · 1.2 / 2.2",
+		"check": {
+			"wrong": "Ein Beweis für ein festes Reimschema jedes Gedichts.",
+			"explanation": "Der Klang der Wörter erinnert an auftreffende Tropfen."
+		},
+		"visual": {
+			"kind": "poem",
+			"title": "Klang und Bilder eines Gedichts erkunden · im Modell",
+			"steps": [
+				{
+					"label": "Reim",
+					"text": "sacht – Nacht; Licht – Gedicht",
+					"detail": "Je zwei benachbarte Versenden reimen sich: Hier entsteht ein Paarreim."
+				},
+				{
+					"label": "Geräusch",
+					"text": "Plitsch, platsch!",
+					"detail": "Die Lautmalerei macht die Tropfen beim Lesen oder Hören vorstellbar."
+				},
+				{
+					"label": "Bild",
+					"text": "Der Regen klopft.",
+					"detail": "Die menschliche Handlung lässt den Regen wie einen Besucher am Fenster erscheinen."
+				}
+			]
+		},
+		"cases": [
+			{
+				"prompt": "Welcher Ausdruck ist ein Vergleich?",
+				"options": [
+					"Der Wind klingt wie eine Flöte.",
+					"Der Wind flüstert."
+				],
+				"answer": "Der Wind klingt wie eine Flöte.",
+				"feedback": "„Wie“ verknüpft zwei Vorstellungen; „flüstert“ ist hier eine Personifikation."
+			},
+			{
+				"prompt": "Welche Deutung erklärt eine Wirkung?",
+				"options": [
+					"Es gibt Wörter im Gedicht.",
+					"„Plitsch, platsch“ macht das Tropfengeräusch hörbar."
+				],
+				"answer": "„Plitsch, platsch“ macht das Tropfengeräusch hörbar.",
+				"feedback": "Eine Wirkungserklärung geht über das bloße Aufzählen von Mitteln hinaus."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Finde im Gedicht einen Reim, eine Lautmalerei und ein sprachliches Bild. Erkläre eines davon genauer.",
+				"model": "„sacht“ und „Nacht“ reimen sich. „Plitsch, platsch“ ist Lautmalerei. „Der Regen klopft“ ist eine Personifikation; sie lässt den Regen wie einen Besucher erscheinen.",
+				"criteria": [
+					"Ich belege drei Mittel.",
+					"Ich unterscheide Klang und Bild.",
+					"Ich erkläre eine Wirkung."
+				]
+			},
+			"2": {
+				"prompt": "Schreibe vier eigene Verse zu einem Wettergeräusch. Nutze eine Lautmalerei und einen Vergleich oder eine Personifikation; begründe deine Gestaltung.",
+				"model": "Der Wind zieht singend durch das Tor,\nein leises Hui dringt an mein Ohr.\nEr klingt wie eine Flöte fern,\nich höre dieses Liedchen gern.\n„Hui“ ahmt den Wind nach; der Flötenvergleich lässt ihn hell und musikalisch wirken.",
+				"criteria": [
+					"Ich gestalte vier eigene Verse.",
+					"Ich nutze Klang und Bild bewusst.",
+					"Ich erkläre die beabsichtigte Wirkung."
+				]
+			}
+		}
+	},
+	{
+		"id": "d6-ganzschrift",
+		"stage": "lesen",
+		"title": "Ein ganzes Buch mit Lesetagebuch begleiten",
+		"skill": "Du sammelst Lesespuren, vergleichst Medien und bereitest eine Buchempfehlung vor.",
+		"bindings": [
+			"2.1",
+			"2.2"
+		],
+		"paragraphs": [
+			"Wähle ein Kinder- oder Jugendbuch und notiere nach jedem Leseabschnitt kurz, was sich verändert. Trenne Handlungsnotiz, Textbeleg und eigene Frage. Eine Seiten- oder Kapitelangabe macht den Eintrag für dich und andere auffindbar.",
+			"Beispiel: Zu einer Szene an einer Dachluke notierst du „Kapitel 3: Mina steigt doch hinauf“. Der Satz „Sie steckte den Brief wieder ein“ kann zeigen, dass sie ihre Entscheidung noch einmal überdenkt. In einem Hörbuch kann eine lange Pause das Zögern hörbar machen. Vergleiche selbst am Beispiel eines Buchs, wie Text und eine andere Fassung dieselbe Stelle gestalten."
+		],
+		"material": "Fiktiver Romananfang · Kapitel 1: Mina findet einen Brief an der Dachluke. Kapitel 2: Sie fragt ihren Bruder, wem das Siegel gehört. Kapitel 3: „Sie steckte den Brief wieder ein. Erst als es unten still wurde, stieg sie zur Luke hinauf.“",
+		"materialLabel": "Eigens geschriebener Übungstext",
+		"sourceIds": [
+			"lehrplan"
+		],
+		"takeaway": "Halte Beobachtung, Fundstelle und eigene Reaktion fest. Prüfe deine Leseempfehlung im Gespräch mit anderen.",
+		"check": {
+			"wrong": "Ein Urteil ohne Beispiel.",
+			"explanation": "Die Fundstelle macht die Beobachtung am Text nachvollziehbar."
+		},
+		"visual": {
+			"kind": "sequence",
+			"title": "So entsteht eine Lesespur",
+			"initial": {
+				"blocks": [
+					{
+						"label": "Leseabschnitt",
+						"text": "Kapitel 3",
+						"tone": "subject"
+					}
+				]
+			},
+			"steps": [
+				{
+					"label": "Notiz",
+					"text": "Was verändert sich?",
+					"detail": "Ein Kerngedanke hält den Fortschritt der Handlung fest.",
+					"blocks": [
+						{
+							"label": "Ereignis",
+							"text": "Mina steigt schließlich zur Luke.",
+							"tone": "predicate"
+						}
+					]
+				},
+				{
+					"label": "Fundstelle",
+					"text": "Welches Detail zeigt das Zögern?",
+					"detail": "Die Kapitelangabe macht den Wortlaut wieder auffindbar.",
+					"blocks": [
+						{
+							"label": "Kapitel 3",
+							"text": "„Sie steckte den Brief wieder ein.“",
+							"tone": "speech"
+						}
+					]
+				},
+				{
+					"label": "Reaktion",
+					"text": "Welche Frage bleibt?",
+					"detail": "Eigene Fragen helfen, nachfolgende Entscheidungen der Figur zu verfolgen.",
+					"blocks": [
+						{
+							"label": "Lesefrage",
+							"text": "Warum wartet Mina, bis es still ist?",
+							"tone": "reason"
+						}
+					]
+				}
+			]
+		},
+		"cases": [
+			{
+				"prompt": "Welche Notiz lässt dich die Stelle später gut belegen?",
+				"options": [
+					"Kap. 3: Mina wartet auf Stille, bevor sie hinaufsteigt.",
+					"Irgendwo war es spannend."
+				],
+				"answer": "Kap. 3: Mina wartet auf Stille, bevor sie hinaufsteigt.",
+				"feedback": "Kapitel und Textdetail führen dich zur Stelle zurück."
+			},
+			{
+				"prompt": "Wie vergleichst du Hörbuch und Buch sinnvoll?",
+				"options": [
+					"Entscheide nach der Länge beider Fassungen.",
+					"Wähle dieselbe Szene und beschreibe die Wirkung des Sprechens und der Worte."
+				],
+				"answer": "Wähle dieselbe Szene und beschreibe die Wirkung des Sprechens und der Worte.",
+				"feedback": "An derselben Szene kannst du Unterschiede der Gestaltung belegen."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe zu Kapitel 3 eine Notiz, einen kurzen Beleg und eine persönliche Frage.",
+				"model": "Mina steigt nach einer Wartezeit hinauf. Beleg: „Erst als es unten still wurde“ (Kapitel 3). Ich frage mich, ob sie heimlich auf den Dachboden will.",
+				"criteria": [
+					"Ich fasse das Ereignis zusammen.",
+					"Ich belege es mit Kapitel und Wortlaut.",
+					"Ich trenne meine Frage von der Handlung."
+				]
+			},
+			"2": {
+				"prompt": "Wähle eine Schlüsselstelle aus deinem Buch und bereite eine begründete Empfehlung für ein anderes Kind vor. Falls es eine Hör- oder Filmfassung gibt, vergleiche dieselbe Stelle auch dort.",
+				"model": "Als Strukturmuster: „Kapitel 3 hat mich neugierig gemacht, weil Mina den Brief versteckt. Ich empfehle das Buch dir, wenn du Geheimnisse magst. In einer Hörfassung könnte eine Pause vor dem Aufstieg Minas Zögern betonen.“",
+				"criteria": [
+					"Ich nenne Buch und Fundstelle.",
+					"Ich begründe die Empfehlung mit der Stelle.",
+					"Ich helfe dem anderen Kind bei seiner Auswahl."
+				]
+			}
+		},
+		"extension": "Lies mindestens ein ganzes Buch. Tauscht in der Klasse Empfehlungen aus und notiert anschließend je ein Buch, das ihr aufgrund eines guten Beispiels lesen möchtet.",
+		"lehrplan": "D6 · 2.1 / 2.2"
+	},
+	{
+		"id": "d6-sachtexte",
+		"stage": "lesen",
+		"title": "Bericht, Beschreibung und Anleitung erkennen",
+		"skill": "Du erschließt Textfunktion, Aufbau und gesicherte Informationen.",
+		"bindings": [
+			"2.1",
+			"2.3"
+		],
+		"paragraphs": [
+			"Ein Bericht informiert darüber, was geschehen ist. Eine Beschreibung stellt Merkmale eines Gegenstands oder Ortes geordnet dar. Eine Anleitung erklärt, wie du etwas ausführst. Prüfe Funktion, Aufbau und typische sprachliche Mittel gemeinsam; ein einzelnes Verb genügt nicht.",
+			"Ein kurzer Zeitungsbericht beginnt häufig mit einer Überschrift und einem Einstieg mit Wer, Was, Wann und Wo. Der folgende Text erläutert Ablauf, Hintergründe und Folgen. Quellenangaben helfen zu prüfen, wer etwas beobachtet hat. Nicht bekannte Ursachen darfst du beim Übernehmen für einen Vortrag nicht ergänzen."
+		],
+		"material": "A · Am Montag eröffnete die Klasse 6b im Schulhaus einen Büchertauschtisch. Zuerst sortierten die Kinder die Bücher, danach erklärten sie die Tauschregeln. Laut Klassenleitung wurden am ersten Tag dreißig Bücher getauscht. B · Der Tisch ist rechteckig, hell und einen Meter breit. C · Lege dein Buch auf den Tisch und nimm eine Tauschmarke.",
+		"materialLabel": "Eigens geschriebener Übungstext · Beispieldaten sind erfunden",
+		"sourceIds": [
+			"lehrplan"
+		],
+		"takeaway": "Frage nach der Funktion: Was geschah? Wie ist etwas? Wie geht etwas?",
+		"lehrplan": "D6 · 2.1 / 2.3",
+		"check": {
+			"wrong": "Die Farbe eines Gegenstands beschreiben.",
+			"explanation": "Die Aufforderungen erklären, was die lesende Person tun soll."
+		},
+		"visual": {
+			"kind": "flow",
+			"title": "Bericht, Beschreibung und Anleitung erkennen · im Modell",
+			"steps": [
+				{
+					"label": "Berichten",
+					"text": "Was geschah am Montag?",
+					"detail": "Der Einstieg ordnet ein Ereignis ein; weitere Angaben entfalten den Ablauf."
+				},
+				{
+					"label": "Beschreiben",
+					"text": "Wie sieht der Tisch aus?",
+					"detail": "Merkmale werden sachlich geordnet, ohne eine Handlungskette zu erzählen."
+				},
+				{
+					"label": "Instruieren",
+					"text": "Buch ablegen → Marke nehmen",
+					"detail": "Die Schritte sollen von Lesenden ausgeführt werden können."
+				}
+			]
+		},
+		"cases": [
+			{
+				"prompt": "Welche Angabe ist der Klassenleitung zugeschrieben?",
+				"options": [
+					"Dreißig Bücher wurden getauscht.",
+					"Der Tisch wurde am Freitag zerstört."
+				],
+				"answer": "Dreißig Bücher wurden getauscht.",
+				"feedback": "Die Quellenformulierung „laut Klassenleitung“ kennzeichnet die Herkunft der Zahl."
+			},
+			{
+				"prompt": "Welche Überschrift passt zu A?",
+				"options": [
+					"So baust du einen Tisch",
+					"Klasse 6b eröffnet Büchertauschtisch"
+				],
+				"answer": "Klasse 6b eröffnet Büchertauschtisch",
+				"feedback": "Die Überschrift soll dem Ereignis und der Textfunktion entsprechen."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Ordne A, B und C den Textfunktionen zu und notiere aus A vier W-Angaben.",
+				"model": "A berichtet, B beschreibt, C leitet an. Wer: Klasse 6b. Was: Eröffnung eines Büchertauschtischs. Wann: Montag. Wo: Schulhaus.",
+				"criteria": [
+					"Ich unterscheide drei Funktionen.",
+					"Ich entnehme vier gesicherte Angaben.",
+					"Ich erfinde keine Hintergründe."
+				]
+			},
+			"2": {
+				"prompt": "Plane einen kurzen Vortrag über den Tauschtisch. Wähle aus A bis C Informationen aus und erkläre, welche Quelle du für eine fehlende Angabe befragen würdest.",
+				"model": "Ich erkläre Anlass, Ablauf und Tauschregel. Die Zahl von dreißig Büchern gebe ich als Angabe der Klassenleitung wieder. Für die Öffnungszeit befrage ich das Büchereiteam, weil sie in keinem der Texte steht.",
+				"criteria": [
+					"Ich wähle passend zum Vortragsziel aus.",
+					"Ich kennzeichne die Herkunft einer Angabe.",
+					"Ich kläre eine tatsächliche Informationslücke."
+				]
+			}
+		},
+		"extension": "Lies in einem altersgemäßen Sachbuch oder einer Kinder- und Jugendzeitschrift zu einem eigenen Interesse. Begründe deine Auswahl und stelle eine neue Information mit Fundstelle vor."
+	},
+	{
+		"id": "d6-diskontinuierlich",
+		"stage": "lesen",
+		"title": "Fahrplan und Schaubild sicher auswerten",
+		"skill": "Du liest Beschriftung, Einheit und Bedingungen, bevor du eine Entscheidung triffst.",
+		"bindings": [
+			"2.3"
+		],
+		"paragraphs": [
+			"Bei einer Tabelle oder einem Schaubild stehen Informationen nicht in einer fortlaufenden Satzfolge. Lies zuerst Titel, Spalten, Zeilen und Einheiten. Suche danach die Werte für deine Frage. Vergleiche nur Angaben, die sich auf dieselbe Grundgesamtheit und dieselbe Einheit beziehen.",
+			"Beispiel: Eine Fahrt beginnt um 14:10 Uhr und endet um 14:28 Uhr. Das sind achtzehn Minuten. Kommst du erst um 14:12 Uhr an die Haltestelle, ist diese Fahrt schon abgefahren. Ein Fahrplanbeispiel ist keine aktuelle Verkehrsauskunft."
+		],
+		"material": "Buchwahl von zwanzig Kindern: Abenteuer acht, Tiere sechs, Fantasie vier, Sachbuch zwei Stimmen.",
+		"materialLabel": "Eigens geschriebener Übungstext · Beispieldaten sind erfunden",
+		"sourceIds": [
+			"lehrplan"
+		],
+		"takeaway": "Lies Beschriftungen und Bedingungen mit: Ein richtiger Wert allein beantwortet noch keine Entscheidungsfrage.",
+		"lehrplan": "D6 · 2.3",
+		"check": {
+			"wrong": "Fahrt C ist die einzige Fahrt am Tag.",
+			"explanation": "Fahrt A ist schon abgefahren; B ist die nächste angegebene Möglichkeit."
+		},
+		"visual": {
+			"kind": "chart",
+			"title": "Fahrplan und Schaubild sicher auswerten · im Modell",
+			"steps": [
+				{
+					"label": "Ablesen",
+					"text": "Abenteuer: acht Stimmen",
+					"detail": "Der Wert gehört zur beschrifteten Kategorie und zur erfundenen Gruppe von zwanzig Kindern."
+				},
+				{
+					"label": "Vergleichen",
+					"text": "Tiere sechs, Fantasie vier",
+					"detail": "Die beiden Kategorien unterscheiden sich um zwei Stimmen. Das ist eine absolute Differenz."
+				},
+				{
+					"label": "Einordnen",
+					"text": "zwanzig Stimmen insgesamt",
+					"detail": "Acht plus sechs plus vier plus zwei ergeben zwanzig. Die Aussage gilt für diese erfundene Gruppe, nicht für alle Kinder."
+				}
+			]
+		},
+		"cases": [
+			{
+				"prompt": "Wie lange dauert Fahrt B?",
+				"options": [
+					"Achtzehn Minuten.",
+					"Dreißig Minuten."
+				],
+				"answer": "Achtzehn Minuten.",
+				"feedback": "Von 14:30 bis 14:48 vergehen achtzehn Minuten."
+			},
+			{
+				"prompt": "Was zeigt die Buchwahl sicher?",
+				"options": [
+					"Alle Kinder in Bayern mögen Abenteuer am liebsten.",
+					"In dieser Gruppe wurden Abenteuer am häufigsten gewählt."
+				],
+				"answer": "In dieser Gruppe wurden Abenteuer am häufigsten gewählt.",
+				"feedback": "Die erfundenen zwanzig Stimmen erlauben keine Verallgemeinerung auf ganz Bayern."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Du bist um 14:12 Uhr an der Schule und musst vor 15 Uhr am Museum sein. Wähle die erste passende Fahrt und begründe mit zwei Uhrzeiten.",
+				"model": "Ich nehme Fahrt B um 14:30 Uhr. Sie kommt um 14:48 Uhr und damit vor 15 Uhr an. Fahrt A ist um 14:12 Uhr bereits abgefahren.",
+				"criteria": [
+					"Ich beachte die Ausgangszeit.",
+					"Ich nenne Abfahrt und Ankunft.",
+					"Ich prüfe die Zielbedingung."
+				]
+			},
+			"2": {
+				"prompt": "Beschreibe die Buchwahl in drei Sätzen und erkläre eine Grenze der Aussage. Ergänze, wie sich eine spätere Ankunft an der Haltestelle um 14:35 Uhr auf den Museumsbesuch vor 15 Uhr auswirkt.",
+				"model": "Acht Kinder wählen Abenteuer, sechs Tiere, vier Fantasie und zwei Sachbücher. Abenteuer liegt vorn; die Daten gelten nur für diese erfundene Gruppe. Um 14:35 Uhr wäre Fahrt B weg. Fahrt C käme erst um 15:08 Uhr an und erfüllte die Bedingung „vor 15 Uhr“ nicht.",
+				"criteria": [
+					"Ich vergleiche die Werte richtig.",
+					"Ich nenne die Reichweite der Daten.",
+					"Ich prüfe eine veränderte Zeitbedingung."
+				]
+			}
+		}
+	},
+	{
+		"id": "d6-recherche",
+		"stage": "lesen",
+		"title": "Informationen finden und prüfen",
+		"skill": "Du nutzt Suchbegriffe, Nachschlagewerke und Quellenvergleich gezielt.",
+		"bindings": [
+			"2.3",
+			"2.4"
+		],
+		"paragraphs": [
+			"Formuliere eine konkrete Frage und wähle passende Suchbegriffe. Eine Bibliothek ordnet Medien nach Bereichen und Signaturen; ein Wörterbuch erklärt Wörter; ein Sachbuch beantwortet Themenfragen. Ein Suchtreffer ist zunächst nur ein Wegweiser, kein Beweis.",
+			"Prüfe, wer eine Information veröffentlicht, ob die Quelle für deine Frage zuständig ist, ob ein Datum wichtig ist und welche Belege sie nennt. Vergleiche entscheidende Angaben mit einer zweiten unabhängigen Quelle. Zwei Seiten mit derselben abgeschriebenen Meldung sind keine unabhängige Bestätigung.",
+			"Beispiel: Für die Öffnung der Schulbücherei fragst du das Büchereiteam oder liest seinen aktuellen Aushang. Ein alter privater Blog ist dafür weniger geeignet. Halte Titel, Herausgeber, Fundstelle und bei veränderlichen Angaben das Datum fest.",
+			"In der Bibliothek ordnen Signaturen die Medien am Regal. Suche im Katalog nach Titel, Thema oder Autor und notiere die Signatur des passenden Treffers. Nutze für eine Internetsuche wenige genaue Begriffe. Prüfe, wer das Angebot veröffentlicht, wer im Impressum verantwortlich ist, und ob die Datierung zu deiner Frage passt."
+		],
+		"material": "Fiktive Fundstellen zur Ausleihe: A · Aktueller Aushang des Büchereiteams: Dienstag und Donnerstag, große Pause. B · Privater Blog von vor drei Jahren: täglich geöffnet. C · Schulordnung ohne Angaben zur Bücherei.",
+		"materialLabel": "Eigens geschriebener Übungstext · Beispieldaten sind erfunden",
+		"sourceIds": [
+			"lehrplan"
+		],
+		"takeaway": "Passende Quelle finden, Zuständigkeit und Aktualität prüfen, wichtige Angaben unabhängig vergleichen.",
+		"lehrplan": "D6 · 2.3 / 2.4",
+		"check": {
+			"wrong": "Eine Seite ohne jede Angabe zur Bücherei.",
+			"explanation": "Zuständigkeit, Aktualität und Inhalt passen hier zur Frage."
+		},
+		"visual": {
+			"kind": "flow",
+			"title": "Informationen finden und prüfen · im Modell",
+			"steps": [
+				{
+					"label": "Fragen",
+					"text": "Wann öffnet unsere Bücherei?",
+					"detail": "Eine genaue Frage hilft bei der Wahl von Suchbegriffen und Medium."
+				},
+				{
+					"label": "Prüfen",
+					"text": "Wer sagt das; wie aktuell?",
+					"detail": "Die zuständige Stelle ist bei Öffnungszeiten besonders wichtig."
+				},
+				{
+					"label": "Sichern",
+					"text": "Quelle und offene Widersprüche",
+					"detail": "Bei widersprüchlichen Angaben fragst du nach und dokumentierst, welche Information bestätigt wurde."
+				}
+			]
+		},
+		"cases": [
+			{
+				"prompt": "Zwei Seiten übernehmen dieselbe Meldung. Was gilt?",
+				"options": [
+					"Das sind keine zwei unabhängigen Bestätigungen.",
+					"Die Aussage ist dadurch automatisch bewiesen."
+				],
+				"answer": "Das sind keine zwei unabhängigen Bestätigungen.",
+				"feedback": "Unabhängigkeit verlangt unterschiedliche Informationswege, nicht nur unterschiedliche Adressen."
+			},
+			{
+				"prompt": "A und B widersprechen sich. Wie gehst du vor?",
+				"options": [
+					"Ich nehme die angenehmere Öffnungszeit.",
+					"Ich prüfe Datum und frage beim Büchereiteam nach."
+				],
+				"answer": "Ich prüfe Datum und frage beim Büchereiteam nach.",
+				"feedback": "Ein Widerspruch wird durch Prüfung geklärt und nicht durch Wunschdenken."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Wähle aus A bis C eine Quelle und begründe die Wahl mit Zuständigkeit, Aktualität und Inhalt.",
+				"model": "Ich wähle A: Das Büchereiteam ist zuständig, der Aushang ist aktuell und nennt die gesuchten Zeiten. B ist alt; C enthält die gesuchte Information nicht.",
+				"criteria": [
+					"Ich prüfe die zuständige Stelle.",
+					"Ich beachte das Datum.",
+					"Ich prüfe den tatsächlichen Inhalt."
+				]
+			},
+			"2": {
+				"prompt": "Entwirf einen Rechercheplan für einen Vortrag zu einem Sachthema. Benenne zwei unterschiedliche Quellentypen und erkläre, was du bei widersprüchlichen Angaben tust.",
+				"model": "Ich formuliere zuerst eine Leitfrage. Dann suche ich ein passendes Sachbuch und eine fachlich zuständige Internetquelle. Ich notiere Titel, Herausgeber und Fundstelle. Bei Widersprüchen prüfe ich Datum, Begriffe und Belege und kläre, ob die Angaben überhaupt dasselbe meinen.",
+				"criteria": [
+					"Ich formuliere eine Leitfrage.",
+					"Ich plane unterschiedliche Quellen.",
+					"Ich beschreibe eine Prüfung von Widersprüchen."
+				]
+			}
+		},
+		"extension": "Suche in der Schulbücherei ein altersgerechtes Sachbuch zum Thema Labyrinth. Notiere Titel, Signatur und eine Fundstelle. Suche anschließend mit einer Kindersuchmaschine nach „Labyrinth Museum“ und vergleiche Absender, Datum und Nutzen beider Treffer."
+	},
+	{
+		"id": "d6-medientagebuch",
+		"stage": "lesen",
+		"title": "Die eigene Medienzeit beobachten",
+		"skill": "Du untersuchst Ziel, Zeit und Wirkung deiner eigenen Medienwahl.",
+		"bindings": [
+			"2.4"
+		],
+		"paragraphs": [
+			"Ein Medientagebuch verbindet eine Beobachtung mit einer Frage. Halte fest, welches Medium du wie lange verwendet hast, welches Ziel du hattest und wie du dich danach fühltest. Mit einer einzelnen Notiz findest du einen möglichen Zusammenhang. Vergleiche mehrere Einträge, bevor du ein Muster vermutest.",
+			"Beispiel: Du suchst zehn Minuten nach einer Bastelanleitung und verstehst danach den nächsten Schritt. Später schaust du länger kurze Clips, als du geplant hattest. Bei der ersten Nutzung hat dir das Medium beim Lernen geholfen. Die zweite Notiz gibt dir Anlass, deine Zeit im Blick zu behalten."
+		],
+		"material": "Zwei erfundene Einträge von Kim: 16 Uhr, 12 Minuten Anleitung für die Klappkarte, danach konnte ich anfangen. 19 Uhr, 35 Minuten lustige Clips, danach war ich müde und hatte mein Buch kaum geöffnet.",
+		"materialLabel": "Eigens geschriebener Übungstext",
+		"sourceIds": [
+			"lehrplan"
+		],
+		"takeaway": "Vergleiche dein Ziel mit Dauer und Wirkung. Probiere eine kleine Änderung und beobachte, was sie bewirkt.",
+		"check": {
+			"wrong": "Nur die Meinung anderer über die App.",
+			"explanation": "Diese Angaben helfen dir, deine Absicht mit dem tatsächlichen Verlauf zu vergleichen."
+		},
+		"visual": {
+			"kind": "sequence",
+			"title": "Zwei Medienmomente vergleichen",
+			"initial": {
+				"blocks": [
+					{
+						"label": "Tageseinträge",
+						"text": "Anleitung und Kurzclips",
+						"tone": "subject"
+					}
+				]
+			},
+			"steps": [
+				{
+					"label": "Ziel",
+					"text": "Wozu geöffnet?",
+					"detail": "Ein konkretes Ziel lässt sich nachher auf Erfolg prüfen.",
+					"blocks": [
+						{
+							"label": "Anleitung",
+							"text": "Bastelschritt lernen",
+							"tone": "subject"
+						},
+						{
+							"label": "Clips",
+							"text": "kurz abschalten",
+							"tone": "image"
+						}
+					]
+				},
+				{
+					"label": "Dauer",
+					"text": "12 und 35 Minuten",
+					"detail": "Zeige Nutzungsdauer und Uhrzeit getrennt.",
+					"blocks": [
+						{
+							"label": "Anleitung",
+							"text": "12 Minuten",
+							"tone": "time"
+						},
+						{
+							"label": "Clips",
+							"text": "35 Minuten",
+							"tone": "reason"
+						}
+					]
+				},
+				{
+					"label": "Wirkung",
+					"text": "Startklar oder müde?",
+					"detail": "Ein Eintrag gibt einen Hinweis; wiederholte Beobachtungen prüfen ihn.",
+					"blocks": [
+						{
+							"label": "Anleitung",
+							"text": "Karte begonnen",
+							"tone": "predicate"
+						},
+						{
+							"label": "Clips",
+							"text": "Lesen verschoben",
+							"tone": "subordinate"
+						}
+					]
+				}
+			]
+		},
+		"cases": [
+			{
+				"prompt": "Welche Chance zeigt der erste Eintrag?",
+				"options": [
+					"Kim lernt einen konkreten Bastelschritt.",
+					"Kim weiß sicher, welche Apps süchtig machen."
+				],
+				"answer": "Kim lernt einen konkreten Bastelschritt.",
+				"feedback": "Der Eintrag belegt den Lernerfolg bei dieser Anleitung."
+			},
+			{
+				"prompt": "Welche Frage hilft beim Prüfen des zweiten Eintrags?",
+				"options": [
+					"Wer in meiner Klasse hat das beste Handy?",
+					"Was ändert sich, wenn ich vor den Clips lese?"
+				],
+				"answer": "Was ändert sich, wenn ich vor den Clips lese?",
+				"feedback": "Die Frage führt zu einer Änderung, deren Wirkung Kim beobachten kann."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Vergleiche Kims beiden Einträge nach Ziel, Dauer und Wirkung.",
+				"model": "Die Anleitung hilft beim Basteln und dauert zwölf Minuten. Kim wollte sich mit Clips entspannen. Nach 35 Minuten ist Kim müde und hat wenig gelesen.",
+				"criteria": [
+					"Ich vergleiche die Ziele.",
+					"Ich nenne die Dauer beider Aktivitäten.",
+					"Ich beschreibe die beobachtete Wirkung."
+				]
+			},
+			"2": {
+				"prompt": "Formuliere eine überprüfbare Frage zu einem eigenen Medienmoment und einen Plan für zwei Beobachtungen.",
+				"model": "Kann ich am Abend leichter lesen, wenn ich die Clips erst danach schaue? Ich probiere an einem Abend Lesen zuerst und an einem anderen die bisherige Reihenfolge. Ich notiere Beginn, Dauer und ob ich mich konzentriert fühle.",
+				"criteria": [
+					"Meine Frage ist konkret.",
+					"Ich kann die beiden Beobachtungen vergleichen.",
+					"Ich entscheide erst anhand der Notizen."
+				]
+			}
+		},
+		"lehrplan": "D6 · 2.4"
+	},
+	{
+		"id": "d6-film",
+		"stage": "lesen",
+		"title": "Kamera und Ton in einer Szene untersuchen",
+		"skill": "Du wechselst Bildausschnitt und Perspektive und erklärst ihre Wirkung.",
+		"bindings": [
+			"2.4"
+		],
+		"paragraphs": [
+			"Die Einstellung beschreibt, wie viel du im Bild siehst. Eine Totale zeigt Umgebung und Orientierung. Eine Nah- oder Detailaufnahme lenkt den Blick stärker auf Gesicht oder Gegenstand. Die Perspektive bezeichnet den Blickwinkel. Aus der Untersicht blickst du nach oben; dieselbe Figur kann dadurch größer wirken.",
+			"Beispiel: In der Totalen siehst du im Flur einen Menschen und eine geschlossene Tür. In der Detailaufnahme füllt die Hand an der Klinke das Bild. Ein plötzliches Knarren kann Spannung verstärken. Auch Kamerabewegung, etwa ein Schwenk, kann den Blick von der Tür zur Figur führen."
+		],
+		"material": "Storyboard: Ein Kind betritt einen leeren Flur, entdeckt eine geschlossene Tür und legt die Hand auf die Klinke. Die Tür knarrt. Die Kamera könnte anschließend von der Hand zum Gesicht schwenken.",
+		"materialLabel": "Eigens geschriebener Übungstext",
+		"sourceIds": [
+			"lehrplan"
+		],
+		"takeaway": "Nenne zuerst das sicht- oder hörbare Mittel. Erläutere dann, worauf es die Aufmerksamkeit lenkt.",
+		"check": {
+			"wrong": "Ausschließlich die Zahl der abgebildeten Figuren.",
+			"explanation": "Die Perspektive verändert, von wo aus du auf den Gegenstand blickst."
+		},
+		"visual": {
+			"kind": "camera",
+			"title": "Kamerawerkstatt am selben Ort",
+			"initial": {
+				"blocks": [
+					{
+						"label": "Ausgangsszene",
+						"text": "Flur mit geschlossener Tür",
+						"tone": "subject"
+					}
+				]
+			},
+			"steps": [
+				{
+					"label": "Totale",
+					"text": "Flur und Figur",
+					"detail": "Du siehst die Umgebung und kannst Abstand und Lage der Dinge einschätzen.",
+					"blocks": [
+						{
+							"label": "Bildausschnitt",
+							"text": "Der ganze Flur",
+							"tone": "place"
+						},
+						{
+							"label": "Wirkung",
+							"text": "Orientierung",
+							"tone": "predicate"
+						}
+					]
+				},
+				{
+					"label": "Detail",
+					"text": "Die Klinke füllt das Bild",
+					"detail": "Der enge Ausschnitt zeigt, worauf es im Moment ankommt.",
+					"blocks": [
+						{
+							"label": "Bildausschnitt",
+							"text": "Hand an der Klinke",
+							"tone": "place"
+						},
+						{
+							"label": "Wirkung",
+							"text": "Blick auf die Handlung",
+							"tone": "predicate"
+						}
+					]
+				},
+				{
+					"label": "Untersicht",
+					"text": "Vom Boden nach oben",
+					"detail": "Der niedrige Blickpunkt lässt die Tür hoch und möglicherweise bedrohlich wirken.",
+					"blocks": [
+						{
+							"label": "Perspektive",
+							"text": "Blick von unten",
+							"tone": "place"
+						},
+						{
+							"label": "Wirkung",
+							"text": "Tür wirkt hoch",
+							"tone": "predicate"
+						}
+					]
+				}
+			]
+		},
+		"cases": [
+			{
+				"prompt": "Du willst zuerst zeigen, wie weit das Kind von der Tür entfernt ist. Was passt?",
+				"options": [
+					"Totale",
+					"Detailaufnahme der Klinke"
+				],
+				"answer": "Totale",
+				"feedback": "Eine Totale zeigt Figur und Umgebung in ihrem räumlichen Zusammenhang."
+			},
+			{
+				"prompt": "Was ist hier ein Geräusch, das den Moment verschärfen kann?",
+				"options": [
+					"Der leere Flur.",
+					"Das plötzliche Knarren."
+				],
+				"answer": "Das plötzliche Knarren.",
+				"feedback": "Der Flur ist im Bild zu sehen. Das Knarren ist zu hören."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Beschreibe, wie sich dieselbe Tür in der Totalen und im Detail auf die Zuschauenden auswirkt.",
+				"model": "Die Totale zeigt, wo die Tür liegt. Im Detail sehe ich vor allem die Klinke. Dadurch warte ich darauf, dass sich die Tür bewegt.",
+				"criteria": [
+					"Ich nenne beide Einstellungen.",
+					"Ich beschreibe das jeweils Sichtbare.",
+					"Ich erkläre die Wirkung aus dem Bild heraus."
+				]
+			},
+			"2": {
+				"prompt": "Plane zwei Einstellungen und einen Ton, mit denen eine verlorene Schlüsselszene spannend wird. Begründe die Reihenfolge.",
+				"model": "Zuerst zeigt die Totale den leeren Flur. Dann zeigt ein Detail das leere Schlüsselloch. Ein metallisches Klirren hinter der Tür lenkt die Aufmerksamkeit auf etwas, das die Figur noch nicht sehen kann.",
+				"criteria": [
+					"Meine erste Einstellung gibt Orientierung.",
+					"Meine zweite Einstellung hat einen anderen Ausschnitt.",
+					"Mein Ton trägt zur Spannung bei."
+				]
+			}
+		},
+		"extension": "Wähle eine kurze Filmszene, die du sehen darfst. Notiere zwei Einstellungen, eine Kamerabewegung oder einen Perspektivwechsel sowie ein Geräusch oder Musik und begründe ihre Wirkung.",
+		"lehrplan": "D6 · 2.4"
+	}
+]
