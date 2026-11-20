@@ -191,22 +191,21 @@ describe("cell and unapproved mapping contract", () => {
 			Object.keys(MODEL_SCENARIOS).length,
 		);
 	});
-	it("proposes exactly two same-retrieval candidates without changing old evidence", () => {
-		expect(mapping.approved).toBeNull();
-		expect(mapping.status).toBe("proposal-only");
+	it("maps the two approved same-retrieval items", () => {
+		expect(mapping.approved).toBe("2026-11-19");
+		expect(mapping.status).toBe("approved");
 		expect(mapping.rows).toHaveLength(16);
 		expect(new Set(mapping.rows.map((r) => r.de_by_id)).size).toBe(16);
 		expect(mapping.rows.filter((r) => r.category === "A")).toHaveLength(2);
 		expect(mapping.rows.filter((r) => r.category === "C")).toHaveLength(14);
 		const items = cell.atoms.flatMap((a) => a.practice_items);
-		expect(items.every((i) => !i.replaces?.length)).toBe(true);
 		expect(cell.retired_items ?? []).toEqual([]);
 		for (const row of mapping.rows) {
 			if (row.category === "A") {
 				expect(items.filter((i) => i.slug === row.academy_slug)).toHaveLength(
 					1,
 				);
-				expect(row.action).toBe("propose-replace-after-approval");
+				expect(row.action).toBe("replace");
 			} else {
 				expect(row.academy_slug).toBeNull();
 				expect(row.action).toBe("keep-active");

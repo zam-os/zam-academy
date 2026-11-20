@@ -1,0 +1,246 @@
+[
+	{
+		"id": "energiequellen",
+		"lb": 5,
+		"title": "Energiequellen in Europa",
+		"period": "Geo6 LB 5 · Energie",
+		"intro": "Energie ist an natürlichen Standorten verfügbar und wird je nach Technik unterschiedlich genutzt.",
+		"paragraphs": [
+			"Kohle, Erdöl und Erdgas sind fossile Energieträger. Sie entstanden über sehr lange Zeiträume und ihre Vorräte sind begrenzt. Bei ihrer Verbrennung entsteht unter anderem CO₂. Wind, Sonneneinstrahlung, Wasserkraft und Erdwärme sind erneuerbare Quellen. Auch erneuerbare Anlagen brauchen Rohstoffe und Platz und können Tiere oder Gewässer beeinflussen.",
+			"Erdöl und Erdgas werden unter anderem in der Nordsee gefördert. An windreichen Küsten und auf See ist Windkraft interessant; Wasserkraft nutzt etwa in Norwegen Höhenunterschiede und Wasser, und im sonnigen Süden Europas sind die Bedingungen für Solarstrom oft günstig. Erkunde mithilfe einer Karte, welche Quellen bei dir genutzt werden und welche auf absehbare Zeit wirtschaftlich und ökologisch sinnvoll sein könnten."
+		],
+		"takeaway": "Beurteile eine Energiequelle nach Standort, Verfügbarkeit, Kosten und Folgen für die Umwelt.",
+		"sourceIds": [
+			"lehrplan"
+		],
+		"quiz": {
+			"question": "Warum gilt Erdgas als fossil?",
+			"answer": "Es entsteht geologisch sehr langsam und seine Vorräte sind begrenzt.",
+			"wrong": [
+				"Es wird jeden Tag in denselben Mengen erneuert.",
+				"Es kommt nur aus Meereswellen."
+			],
+			"explanation": "Die Entstehung dauert im Vergleich zur Nutzung sehr lange."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Energie einordnen",
+			"instruction": "Ordne jede Aussage zu. Prüfe deine Entscheidung und lies die Rückmeldung.",
+			"categories": [
+				"Fossil",
+				"Erneuerbar",
+				"Standortfrage"
+			],
+			"entries": [
+				{
+					"text": "Erdgas aus einer Lagerstätte.",
+					"target": 0,
+					"feedback": "Es wird aus einem begrenzten Vorrat gefördert."
+				},
+				{
+					"text": "Wind an einer Küste.",
+					"target": 1,
+					"feedback": "Luftbewegungen entstehen fortlaufend neu."
+				},
+				{
+					"text": "Reicht die Wassermenge für ein Kraftwerk in trockenen Monaten?",
+					"target": 2,
+					"feedback": "Die Nutzung hängt vom örtlichen und zeitlichen Angebot ab."
+				}
+			],
+			"conclusion": "Beurteile eine Energiequelle nach Standort, Verfügbarkeit, Kosten und Folgen für die Umwelt."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Vergleiche eine Solaranlage und ein Gaskraftwerk mit je einem Vorteil und einer Belastung.",
+				"hints": [
+					"Wie verfügbar ist die Energie?",
+					"Welche Umweltwirkungen gibt es?"
+				],
+				"model": "Solarstrom nutzt die Sonne, die tagsüber und nach Wetter unterschiedlich verfügbar ist; Herstellung und Fläche zählen mit. Ein Gaskraftwerk kann bei Brennstoffangebot gezielt laufen, braucht aber Gas und setzt beim Verbrennen CO₂ frei.",
+				"criteria": [
+					"Wie verfügbar ist die Energie?",
+					"Welche Umweltwirkungen gibt es?",
+					"Ich nenne je einen Nutzen und eine Belastung."
+				]
+			},
+			"2": {
+				"prompt": "Eine Gemeinde plant Solarstrom. Vergleiche ein Schuldach und eine Wiese als Standorte.",
+				"hints": [
+					"Welche Fläche ist schon bebaut?",
+					"Welche Nutzung könnte betroffen sein?"
+				],
+				"model": "Ein geeignetes Dach nutzt vorhandene Fläche, hat aber möglicherweise wenig Platz oder Schatten. Eine Wiese erlaubt mehr Anlagen, kann aber Landwirtschaft oder Lebensräume verdrängen. Ich vergleiche Ertrag, Kosten und Flächennutzung.",
+				"criteria": [
+					"Welche Fläche ist schon bebaut?",
+					"Welche Nutzung könnte betroffen sein?",
+					"Ich entscheide mit Bedingungen."
+				]
+			}
+		},
+		"model": "energie"
+	},
+	{
+		"id": "nordlink",
+		"lb": 5,
+		"title": "Energie verbindet Staaten",
+		"period": "Geo6 LB 5 · Energie",
+		"intro": "Über Grenzen hinweg fließen Strom, Erdgas und Erdöl. Für unterschiedliche Energieträger braucht es unterschiedliche Netze.",
+		"paragraphs": [
+			"Strom fließt über Freileitungen oder Kabel, Erdgas und Erdöl können durch Pipelines transportiert werden. Europa ist durch Netze verbunden. Grenzleitungen ermöglichen Austausch, wenn Orte zu unterschiedlichen Zeiten mehr erzeugen oder brauchen. Deutschland kann Strom aus Nachbarländern beziehen oder dorthin liefern. Die Richtung ist vom Angebot und vom Bedarf abhängig.",
+			"NordLink verbindet das deutsche Stromnetz bei Wilster in Schleswig-Holstein mit Norwegen bei Tonstad/Ertsmyra. Ein Seekabel durchquert unter anderem Teile der Nordsee. Bei viel Windstrom kann Strom nach Norwegen fließen; norwegische Wasserkraft kann umgekehrt Strom nach Deutschland liefern. Für das Urteil zählen Kosten und Versorgung, Auswirkungen von Bau und Nutzung auf Natur sowie Fragen nach Preisen und Akzeptanz."
+		],
+		"takeaway": "Verfolge auf einer Karte Start, Ziel und Übertragungsweg. Prüfe Nutzen und Belastung auf beiden Seiten.",
+		"sourceIds": [
+			"lehrplan",
+			"statnett"
+		],
+		"quiz": {
+			"question": "Was transportiert NordLink?",
+			"answer": "Elektrische Energie.",
+			"wrong": [
+				"Erdgas.",
+				"Rohöl."
+			],
+			"explanation": "NordLink verbindet zwei Stromnetze über ein Kabel."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Energie einordnen",
+			"instruction": "Ordne jede Aussage zu. Prüfe deine Entscheidung und lies die Rückmeldung.",
+			"categories": [
+				"Ökonomisch",
+				"Ökologisch",
+				"Sozial"
+			],
+			"entries": [
+				{
+					"text": "Kosten für Bau, Betrieb und Nutzung der Leitung.",
+					"target": 0,
+					"feedback": "Die Kosten gehören zur Wirtschaftlichkeit."
+				},
+				{
+					"text": "Auswirkungen des Kabelbaus auf den Meeresboden.",
+					"target": 1,
+					"feedback": "Das betrifft den Naturraum."
+				},
+				{
+					"text": "Akzeptanz bei Menschen am Landanschluss.",
+					"target": 2,
+					"feedback": "Interessen der Menschen sind eine soziale Frage."
+				}
+			],
+			"conclusion": "Verfolge auf einer Karte Start, Ziel und Übertragungsweg. Prüfe Nutzen und Belastung auf beiden Seiten."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Verorte NordLink und erkläre einen möglichen Vorteil für beide Länder.",
+				"hints": [
+					"Wo liegen die Anschlüsse?",
+					"Welche Wege nimmt der Strom?"
+				],
+				"model": "Die Leitung verbindet Norddeutschland und Südnorwegen über die Nordsee. Deutschland kann bei Bedarf norwegischen Strom beziehen. Norwegen kann bei reichlichem Windangebot Strom aus Deutschland nutzen. Die Richtung kann wechseln.",
+				"criteria": [
+					"Wo liegen die Anschlüsse?",
+					"Welche Wege nimmt der Strom?",
+					"Ich nenne einen wechselseitigen Nutzen."
+				]
+			},
+			"2": {
+				"prompt": "Ein Ort nahe einem Landanschluss befürwortet die Versorgung, befürchtet aber Eingriffe. Formuliere ein bedingtes Urteil mit ökonomischer, ökologischer und sozialer Sicht.",
+				"hints": [
+					"Welche Kosten stehen welchem Nutzen gegenüber?",
+					"Welche Natur und Personen sind betroffen?"
+				],
+				"model": "Ich würde die Leitung unterstützen, wenn der Nutzen für die Versorgung die Kosten rechtfertigt, empfindliche Lebensräume möglichst geschont werden und Anwohnende im Planungsprozess gehört werden. Für das Urteil brauche ich Planungsunterlagen und Angaben zu Alternativen.",
+				"criteria": [
+					"Welche Kosten stehen welchem Nutzen gegenüber?",
+					"Welche Natur und Personen sind betroffen?",
+					"Ich verbinde alle drei Gesichtspunkte."
+				]
+			}
+		},
+		"model": "energie"
+	},
+	{
+		"id": "energie-vor-ort",
+		"lb": 5,
+		"title": "Energie in Schule und Haushalt",
+		"period": "Geo6 LB 5 · Energie",
+		"intro": "Eine Schule braucht Energie zum Heizen, Beleuchten und Betreiben von Geräten. Diese Verbräuche lassen sich getrennt untersuchen.",
+		"paragraphs": [
+			"Frage nach der Wärmequelle deiner Schule und nach dem Stromlieferweg. Eine Wärmepumpe braucht Strom und nutzt zusätzlich Wärme aus ihrer Umgebung. Ein Fernwärmenetz liefert Wärme aus einer Anlage über Leitungen. Eine eigene Photovoltaikanlage erzeugt tagsüber Strom; ein Gebäude kann zugleich über das Netz versorgt sein. Wärmezähler und Stromzähler erfassen unterschiedliche Verbräuche. Überlasse das Ablesen geschützter Anlagen dem zuständigen Personal.",
+			"Für elektrische Geräte gilt als Näherung: Energie in Kilowattstunden ist Leistung in Kilowatt mal Betriebszeit in Stunden. Ein Gerät mit 100 W, das drei Stunden läuft, nutzt 0,3 kWh. Vergleiche Verbrauchsdaten nur bei ähnlicher Nutzung und beachte beim Heizen auch die Außentemperatur. Kleine Änderungen kannst du über mehrere Tage prüfen, etwa Licht auszuschalten, wenn es ausreichend hell ist."
+		],
+		"takeaway": "Unterscheide Energiequelle, Lieferweg und Nutzung und vergleiche gleich lange Zeiträume.",
+		"sourceIds": [
+			"lehrplan"
+		],
+		"quiz": {
+			"question": "Was passiert bei gleicher Leistung, wenn ein Gerät doppelt so lange läuft?",
+			"answer": "Der Energieverbrauch verdoppelt sich.",
+			"wrong": [
+				"Die Leistung verdoppelt sich automatisch.",
+				"Der Energieverbrauch bleibt gleich."
+			],
+			"explanation": "Die Energie hängt von Leistung und Betriebszeit ab."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Energie einordnen",
+			"instruction": "Ordne jede Aussage zu. Prüfe deine Entscheidung und lies die Rückmeldung.",
+			"categories": [
+				"Energiequelle",
+				"Lieferweg",
+				"Nutzung"
+			],
+			"entries": [
+				{
+					"text": "Sonnenlicht an einer Photovoltaikanlage.",
+					"target": 0,
+					"feedback": "Die Anlage wandelt einen Teil der Strahlungsenergie in Strom um."
+				},
+				{
+					"text": "Leitungen einer Fernwärmeversorgung.",
+					"target": 1,
+					"feedback": "Sie bringen Wärme zum Gebäude."
+				},
+				{
+					"text": "Licht im Klassenraum.",
+					"target": 2,
+					"feedback": "Hier wird Strom genutzt."
+				}
+			],
+			"conclusion": "Unterscheide Energiequelle, Lieferweg und Nutzung und vergleiche gleich lange Zeiträume."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Plane, wie du Wärme- und Stromversorgung deiner Schule untersuchst.",
+				"hints": [
+					"Welche zwei Versorgungsarten brauchst du?",
+					"Wo bekommst du erlaubte Angaben?"
+				],
+				"model": "Ich frage mit Erlaubnis nach der Heizungsart und der Stromversorgung. Dann trenne ich Heizung und elektrische Geräte in einer Skizze und vergleiche freigegebene Daten aus vergleichbaren Zeiträumen. Ich notiere, ob das Wetter den Heizbedarf verändert haben kann.",
+				"criteria": [
+					"Welche zwei Versorgungsarten brauchst du?",
+					"Wo bekommst du erlaubte Angaben?",
+					"Ich nenne einen Grund für unterschiedliche Werte."
+				]
+			},
+			"2": {
+				"prompt": "Eine Lampe mit 60 W läuft fünf Stunden. Eine mit 10 W liefert ausreichend Licht. Berechne, wie viel Energie der Wechsel in der Zeit spart.",
+				"hints": [
+					"Wie wandelst du W in kW um?",
+					"Wie viel nutzen beide Lampen in fünf Stunden?"
+				],
+				"model": "Die erste Lampe nutzt 0,06 kW · 5 h = 0,3 kWh. Die zweite nutzt 0,01 kW · 5 h = 0,05 kWh. Der Unterschied beträgt 0,25 kWh.",
+				"criteria": [
+					"Wie wandelst du W in kW um?",
+					"Wie viel nutzen beide Lampen in fünf Stunden?",
+					"Ich gebe die Differenz mit Einheit an."
+				]
+			}
+		},
+		"model": "verbrauch"
+	}
+]

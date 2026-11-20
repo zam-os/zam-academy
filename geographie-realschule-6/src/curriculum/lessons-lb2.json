@@ -1,0 +1,409 @@
+[
+	{
+		"id": "wetter-messen",
+		"lb": 2,
+		"title": "Wetter beobachten und messen",
+		"period": "Geo6 LB 2 · Wetter und Klima",
+		"intro": "Vergleiche deine Beobachtungen über mehrere Tage zu einer festen Uhrzeit.",
+		"paragraphs": [
+			"Wetter beschreibt den Zustand der Luft an einem Ort zu einer bestimmten Zeit. Zu den Wetterelementen gehören Temperatur, Niederschlag, Bewölkung, Windrichtung, Windgeschwindigkeit und Luftfeuchtigkeit. Miss die Temperatur mit einem Thermometer im Schatten an einem gut belüfteten Platz. Ein frei stehender Regenmesser erfasst den Niederschlag seit der letzten Leerung in Millimetern. Eine Windfahne zeigt die Richtung, aus der der Wind kommt. Ein Windmesser erfasst seine Geschwindigkeit.",
+			"Beispiel: Im Regenmesser stehen nach einem Tag 6 mm Wasser. Das entspricht 6 l auf 1 m². Vergleiche nur gleiche Messzeiten und Bedingungen. Im Unterricht kannst du zwei Thermometer in Sonne und Schatten vergleichen und erklären, warum direkte Sonne das Ergebnis der Lufttemperatur verfälscht. Bewölkung kannst du als Anteil des bedeckten Himmels schätzen."
+		],
+		"takeaway": "Notiere zu jeder Beobachtung Ort, Uhrzeit, Größe und Einheit.",
+		"sourceIds": [
+			"lehrplan",
+			"klima"
+		],
+		"quiz": {
+			"question": "Was bedeutet Westwind?",
+			"answer": "Der Wind kommt von Westen.",
+			"wrong": [
+				"Der Wind zieht nach Westen.",
+				"Im Westen regnet es immer."
+			],
+			"explanation": "Die Windrichtung wird nach der Herkunft der Luft benannt."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Wetter und Klima untersuchen",
+			"instruction": "Ordne jede Aussage zu. Prüfe deine Entscheidung und lies die Rückmeldung.",
+			"categories": [
+				"Thermometer",
+				"Regenmesser",
+				"Windfahne"
+			],
+			"entries": [
+				{
+					"text": "Misst 14 °C im Schatten.",
+					"target": 0,
+					"feedback": "Grad Celsius ist die Einheit der Temperatur."
+				},
+				{
+					"text": "Erfasst 6 mm in einem Tag.",
+					"target": 1,
+					"feedback": "Millimeter bezeichnet die Höhe des gesammelten Wassers."
+				},
+				{
+					"text": "Zeigt Westwind an.",
+					"target": 2,
+					"feedback": "Der Wind kommt von Westen."
+				}
+			],
+			"conclusion": "Notiere zu jeder Beobachtung Ort, Uhrzeit, Größe und Einheit."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Plane eine Wetterbeobachtung für die Schulwoche mit drei Wetterelementen.",
+				"hints": [
+					"Wo und wann misst du?",
+					"Welche Instrumente nutzt du?"
+				],
+				"model": "Ich messe täglich um 12 Uhr die Temperatur im Schatten und den Niederschlag seit gestern um 12 Uhr. Am selben Ort notiere ich die Windrichtung. Ergebnisse kommen mit Datum und Einheit in eine Tabelle.",
+				"criteria": [
+					"Wo und wann misst du?",
+					"Welche Instrumente nutzt du?",
+					"Ich nenne die Einheiten für Temperatur und Niederschlag."
+				]
+			},
+			"2": {
+				"prompt": "Zwei Gruppen messen gleichzeitig 18 °C und 24 °C. Eines der Thermometer liegt auf einer sonnigen Fensterbank. Wie prüfst du die Ursache?",
+				"hints": [
+					"Welche Messbedingung ist verschieden?",
+					"Was muss beim Vergleich gleich sein?"
+				],
+				"model": "Ich bringe beide Geräte an denselben schattigen und belüfteten Ort und warte, bis die Anzeige stabil ist. Nähern sich die Werte, erklärt die direkte Erwärmung die Abweichung. Sonst prüfe ich Geräte und Messort weiter.",
+				"criteria": [
+					"Welche Messbedingung ist verschieden?",
+					"Was muss beim Vergleich gleich sein?",
+					"Ich erkläre, was die Ergebnisse bedeuten."
+				]
+			}
+		}
+	},
+	{
+		"id": "wetter-vorhersage",
+		"lb": 2,
+		"title": "Wetterberichte vergleichen",
+		"period": "Geo6 LB 2 · Wetter und Klima",
+		"intro": "Eine Wettervorhersage zeigt, was wahrscheinlich eintreten wird. Deine Beobachtung zeigt, was bereits passiert ist.",
+		"paragraphs": [
+			"Satellitenbilder zeigen unter anderem Wolken, Radar zeigt gegenwärtigen Niederschlag, und Messstationen liefern Werte nahe der Erdoberfläche. Wettermodelle rechnen daraus mögliche Entwicklungen. Vergleiche Angaben aus zwei Quellen nur für denselben Ort, dieselben Stunden und denselben Ausgabestand. Ein Regensymbol sagt oft nur, dass im betrachteten Zeitraum Niederschlag möglich oder wahrscheinlich ist.",
+			"Für München erwarten zwei erfundene Berichte am Vormittag Sonne und am Nachmittag Schauer. Einer gibt 16 Uhr an, der andere lässt zwischen 14 und 18 Uhr offen. Formuliere daraus: Vormittags meist trocken, nachmittags Schauer möglich; die genaue Zeit ist unsicher. Prüfe am nächsten Tag anhand eigener Beobachtungen, was tatsächlich eingetreten ist."
+		],
+		"takeaway": "Nenne in deiner Vorhersage Ort, Zeit, erwartetes Wetter und Unsicherheit.",
+		"sourceIds": [
+			"lehrplan"
+		],
+		"quiz": {
+			"question": "Was musst du vor dem Quellenvergleich prüfen?",
+			"answer": "Ort, Zeitraum und Stand der Prognose.",
+			"wrong": [
+				"Ob die Symbole dieselbe Farbe haben.",
+				"Ob beide Quellen dieselbe Schriftart nutzen."
+			],
+			"explanation": "Ein anderer Ort oder Zeitpunkt kann andere Wetterbedingungen bedeuten."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Wetter und Klima untersuchen",
+			"instruction": "Ordne jede Aussage zu. Prüfe deine Entscheidung und lies die Rückmeldung.",
+			"categories": [
+				"Beobachtung",
+				"Vorhersage",
+				"Auswertung"
+			],
+			"entries": [
+				{
+					"text": "Unser Regenmesser enthält um 12 Uhr 3 mm.",
+					"target": 0,
+					"feedback": "Der Wert ist bereits gemessen."
+				},
+				{
+					"text": "Für morgen sind nachmittags Schauer möglich.",
+					"target": 1,
+					"feedback": "Der Satz betrifft künftiges Wetter."
+				},
+				{
+					"text": "Der angekündigte Regen begann laut Protokoll erst abends.",
+					"target": 2,
+					"feedback": "Hier wird Prognose mit Beobachtung verglichen."
+				}
+			],
+			"conclusion": "Nenne in deiner Vorhersage Ort, Zeit, erwartetes Wetter und Unsicherheit."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Bericht A meldet am Samstag in Garmisch ab Mittag Schauer. Bericht B erwartet ab 15 Uhr Regen. Formuliere eine Vorhersage mit einer Unsicherheit.",
+				"hints": [
+					"Welcher Ort und Tag?",
+					"Was sagen beide ähnlich voraus?"
+				],
+				"model": "Für Garmisch kann es am Samstagnachmittag regnen. Die Berichte unterscheiden sich beim erwarteten Beginn; ab Mittag sollten wir mit Schauern rechnen.",
+				"criteria": [
+					"Welcher Ort und Tag?",
+					"Was sagen beide ähnlich voraus?",
+					"Ich benenne den unsicheren Beginn."
+				]
+			},
+			"2": {
+				"prompt": "Eine Quelle zeigt für die Alpen Sonne, eine zweite Regen für einen Talort. Nenne zwei mögliche Gründe und plane einen fairen Vergleich.",
+				"hints": [
+					"Welche Ortsangaben fehlen?",
+					"Welche Zeitangaben brauchst du?"
+				],
+				"model": "Die Quellen können verschiedene Orte, Höhen oder Stunden meinen. Ich stelle beide auf denselben Talort und Zeitraum ein und prüfe den Ausgabestand. Erst dann beurteile ich, ob die Aussagen auseinandergehen.",
+				"criteria": [
+					"Welche Ortsangaben fehlen?",
+					"Welche Zeitangaben brauchst du?",
+					"Ich beschreibe einen fairen Vergleich."
+				]
+			}
+		}
+	},
+	{
+		"id": "klimadiagramm",
+		"lb": 2,
+		"title": "Klimadiagramme lesen und zeichnen",
+		"period": "Geo6 LB 2 · Wetter und Klima",
+		"intro": "Ein kalter Apriltag sagt wenig darüber, wie warm der April an einem Ort gewöhnlich ist.",
+		"paragraphs": [
+			"Klima beschreibt typische Wetterbedingungen und Schwankungen über einen langen Zeitraum. Für Normalwerte betrachtet man üblicherweise 30 Jahre. Ein Klimadiagramm zeigt für jeden Monat die mittlere Temperatur und die mittlere Niederschlagssumme des Monats. Lies zuerst Ort, Höhe, Zeitraum und Achsen. Temperaturen stehen in °C, Niederschläge in mm. Hier stellt eine Linie die Temperatur dar und Balken zeigen Niederschlag.",
+			"Im Übungsprofil Binnenland hat der Januar −4 °C und der Juli 22 °C. Der Abstand beträgt 26 °C. Addiere für den Jahresniederschlag die zwölf Monatswerte; den Mittelwert der Monatstemperaturen erhältst du näherungsweise aus ihrer Summe geteilt durch zwölf. Zeichne aus der Modell-Tabelle ein eigenes Monatsdiagramm mit zwei beschrifteten Skalen. In Walter-Lieth-Diagrammen kannst du Trockenzeiten über den Vergleich von P und 2 · T erkennen; prüfe zuerst, ob die Skalen dieses Verhältnis zeigen."
+		],
+		"takeaway": "Lies die Werte an der jeweils passenden Achse ab und beschreibe den Verlauf.",
+		"sourceIds": [
+			"lehrplan",
+			"klima"
+		],
+		"quiz": {
+			"question": "Wie groß ist der Temperaturunterschied zwischen −4 °C und 22 °C?",
+			"answer": "26 °C",
+			"wrong": [
+				"18 °C",
+				"22 °C"
+			],
+			"explanation": "Von −4 °C bis zum Nullpunkt sind es 4 °C, von dort bis 22 °C weitere 22 °C."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Wetter und Klima untersuchen",
+			"instruction": "Ordne jede Aussage zu. Prüfe deine Entscheidung und lies die Rückmeldung.",
+			"categories": [
+				"Temperaturlinie",
+				"Niederschlagsbalken",
+				"Metadaten"
+			],
+			"entries": [
+				{
+					"text": "Der Juli hat 22 °C.",
+					"target": 0,
+					"feedback": "Die Temperatur liest du an der °C-Skala."
+				},
+				{
+					"text": "Im März sind es 40 mm.",
+					"target": 1,
+					"feedback": "Die Niederschlagsmenge liest du an der mm-Skala."
+				},
+				{
+					"text": "Die Werte stammen aus einer 30-jährigen Messperiode.",
+					"target": 2,
+					"feedback": "Der Zeitraum gehört zu den Angaben über die Daten."
+				}
+			],
+			"conclusion": "Lies die Werte an der jeweils passenden Achse ab und beschreibe den Verlauf."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Zeichne aus dem Binnenlandprofil ein Diagramm für Januar bis März und beschreibe den Verlauf.",
+				"hints": [
+					"Welche Achse nutzt du wofür?",
+					"Welche drei Wertepaarungen brauchst du?"
+				],
+				"model": "Auf der Monatsachse stehen Januar, Februar und März. Die Temperaturlinie steigt von −4 °C über −2 °C auf 3 °C. Die Niederschlagsbalken steigen von 30 über 35 auf 40 mm.",
+				"criteria": [
+					"Welche Achse nutzt du wofür?",
+					"Welche drei Wertepaarungen brauchst du?",
+					"Ich beschrifte Monate und Einheiten."
+				]
+			},
+			"2": {
+				"prompt": "Ein Klimadiagramm zeigt im Sommer hohe Temperaturen, aber niedrige Niederschlagsbalken. Ein Freund nennt deshalb das ganze Jahr trocken. Wie prüfst du die Aussage?",
+				"hints": [
+					"Was fehlt im Blick auf den Sommer?",
+					"Was verrät die Niederschlagsverteilung?"
+				],
+				"model": "Ich lese auch die Wintermonate und die Jahressumme ab. Ein Ort kann trockene Sommer und regenreiche Winter haben. Für die Frage nach Trockenmonaten prüfe ich, ob das Diagramm einen geeigneten Maßstab für den Vergleich von Temperatur und Niederschlag nutzt.",
+				"criteria": [
+					"Was fehlt im Blick auf den Sommer?",
+					"Was verrät die Niederschlagsverteilung?",
+					"Ich unterscheide trockene Monate und das ganze Jahr."
+				]
+			}
+		},
+		"model": "klima"
+	},
+	{
+		"id": "klimaraeume",
+		"lb": 2,
+		"title": "Europas Klima und Vegetation",
+		"period": "Geo6 LB 2 · Wetter und Klima",
+		"intro": "Warum gibt es in Westnorwegen milde Küstenorte und in Südspanien Pflanzen mit harten Blättern?",
+		"paragraphs": [
+			"Breitenlage beeinflusst Sonnenstand und Tageslänge, vor allem im Jahresverlauf. Mit der Höhe nimmt die Temperatur meist ab. Das Meer erwärmt und kühlt langsamer als Land; mit feuchten Westwinden sind die Winter an Europas Atlantikseite oft milder und die Sommer kühler als im Binnenland ähnlicher Breite. Der Nordatlantikstrom führt vergleichsweise warmes Wasser Richtung Europa und trägt besonders im Nordwesten zur Milderung bei.",
+			"An Europas Westrand ist der Jahresgang oft maritim, im Osten stärker kontinental. Im Mittelmeerraum sind Sommer häufig heiß und trocken, Winter milder und regnerischer. Viele Hartlaubpflanzen, etwa Steineichen, begrenzen mit festen Blättern ihren Wasserverlust. Im Norden Skandinaviens wird die Wachstumszeit kurz, Nadelwald geht nach Norden oder in größerer Höhe in offene Vegetation über. Im Süden hilft das Speichern von Winterregen, mit trockenen Sommern umzugehen."
+		],
+		"takeaway": "Vergleiche Orte ähnlicher Breite, wenn du den Einfluss der Meeresentfernung untersuchen möchtest.",
+		"sourceIds": [
+			"lehrplan",
+			"klima"
+		],
+		"quiz": {
+			"question": "Welche Temperaturkurve passt eher zu maritimem Klima?",
+			"answer": "Milder Winter und mäßig warmer Sommer.",
+			"wrong": [
+				"Sehr kalter Winter und sehr heißer Sommer.",
+				"Überall exakt dieselbe Temperatur."
+			],
+			"explanation": "Das Meer dämpft den jahreszeitlichen Temperaturunterschied."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Wetter und Klima untersuchen",
+			"instruction": "Ordne jede Aussage zu. Prüfe deine Entscheidung und lies die Rückmeldung.",
+			"categories": [
+				"Atlantikküste",
+				"Binnenland",
+				"Mittelmeer"
+			],
+			"entries": [
+				{
+					"text": "Milder Winter und eher geringe jährliche Temperaturschwankung.",
+					"target": 0,
+					"feedback": "Das Meer gleicht Temperaturunterschiede aus."
+				},
+				{
+					"text": "Kaltes Wintermittel und heißeres Sommermittel bei ähnlicher Breite.",
+					"target": 1,
+					"feedback": "Land erwärmt und kühlt rascher als Wasser."
+				},
+				{
+					"text": "Trockener Sommer und viele winterliche Niederschläge.",
+					"target": 2,
+					"feedback": "Dieses Muster ist typisch für viele Mittelmeerräume."
+				}
+			],
+			"conclusion": "Vergleiche Orte ähnlicher Breite, wenn du den Einfluss der Meeresentfernung untersuchen möchtest."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Vergleiche die Temperaturspanne der drei Übungsprofile und erkläre den Unterschied zwischen Küste und Binnenland.",
+				"hints": [
+					"Suche Minimum und Maximum.",
+					"Erkläre die Wirkung des Meeres."
+				],
+				"model": "Atlantik hat mit 13 °C die kleinste Spanne, das Binnenland mit 26 °C die größte. Das Mittelmeerprofil hat 17 °C. Das langsam aufheizende und abkühlende Meer mildert die Küste.",
+				"criteria": [
+					"Suche Minimum und Maximum.",
+					"Erkläre die Wirkung des Meeres.",
+					"Ich vergleiche alle drei Profile."
+				]
+			},
+			"2": {
+				"prompt": "Zwei Orte liegen gleich weit nördlich und gleich nah am Meer. Einer liegt deutlich höher. Was erwartest du für Temperatur und Pflanzenwachstum?",
+				"hints": [
+					"Welcher Faktor unterscheidet sich?",
+					"Wie beeinflusst er Pflanzen?"
+				],
+				"model": "Der höhere Ort ist meist kühler und hat häufig kürzere Wachstumszeiten. Die genaue Vegetation hängt auch von Niederschlag, Hanglage und Boden ab. Ich prüfe eine Höhenkarte und Stationsdaten.",
+				"criteria": [
+					"Welcher Faktor unterscheidet sich?",
+					"Wie beeinflusst er Pflanzen?",
+					"Ich nenne eine weitere mögliche Einflussgröße."
+				]
+			}
+		},
+		"model": "klima"
+	},
+	{
+		"id": "hochwasser",
+		"lb": 2,
+		"title": "Wenn Flüsse über die Ufer treten",
+		"period": "Geo6 LB 2 · Wetter und Klima",
+		"intro": "Starkregen kann gefährlich werden, wenn Wasser schneller zusammenläuft, als es abfließen kann.",
+		"paragraphs": [
+			"Bei Starkregen kann ein Boden weniger Wasser aufnehmen, als gerade fällt. Vorher durchfeuchteter Boden und versiegelte Flächen verstärken häufig den Abfluss. Wasser sammelt sich in tieferen Lagen und in Bächen. Steigt ein Fluss über seine Ufer, entsteht eine Überschwemmung. Auf Kreta wurden am 1. Oktober 2026 nach heftigen Regenfällen Überflutungen gemeldet. Schäden betrafen unter anderem Straßen und Gebäude.",
+			"Deiche halten Wasser bis zu einer begrenzten Höhe zurück, schützen aber keine Flächen außerhalb des Deichs. Rückhalteflächen und Auen geben dem Wasser Platz und können Hochwasserspitzen senken. Warnmeldungen und Sperrungen verringern die Gefahr für Menschen. In der Skizze trifft derselbe Regen auf zwei Modellflächen; es handelt sich um eine vereinfachte Darstellung des Abflusses."
+		],
+		"takeaway": "Beim Hochwasserschutz helfen zurückgehaltenes Wasser, freigehaltene Flächen und rechtzeitige Warnungen.",
+		"sourceIds": [
+			"lehrplan",
+			"kreta"
+		],
+		"quiz": {
+			"question": "Was kann eine freie Flussaue bei Hochwasser leisten?",
+			"answer": "Sie bietet dem Fluss zeitweise Ausbreitungsraum.",
+			"wrong": [
+				"Sie verhindert in jedem Fall mehr Regen.",
+				"Sie lässt den Wasserstand überall steigen."
+			],
+			"explanation": "Wasser verteilt sich auf einer größeren Fläche und kann langsamer weiterfließen."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Wetter und Klima untersuchen",
+			"instruction": "Ordne jede Aussage zu. Prüfe deine Entscheidung und lies die Rückmeldung.",
+			"categories": [
+				"Auslöser",
+				"Verstärker",
+				"Schutz"
+			],
+			"entries": [
+				{
+					"text": "In kurzer Zeit fällt sehr viel Regen.",
+					"target": 0,
+					"feedback": "Der starke Niederschlag setzt den Vorgang in Gang."
+				},
+				{
+					"text": "Viele Flächen im Einzugsgebiet sind asphaltiert.",
+					"target": 1,
+					"feedback": "Auf Asphalt versickert meist wenig Wasser."
+				},
+				{
+					"text": "Warnung und Sperrung tiefer Straßen.",
+					"target": 2,
+					"feedback": "Sie halten Menschen von Gefahrenbereichen fern."
+				}
+			],
+			"conclusion": "Beim Hochwasserschutz helfen zurückgehaltenes Wasser, freigehaltene Flächen und rechtzeitige Warnungen."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Erkläre mit drei Schritten, warum Starkregen im Ort zu einer Überschwemmung führen kann.",
+				"hints": [
+					"Was passiert mit dem Regen?",
+					"Wohin fließt er?"
+				],
+				"model": "Starkregen fällt schneller, als er versickern kann. Wasser strömt über Oberflächen zu einem Bach. Der Pegel steigt und der Bach tritt über das Ufer.",
+				"criteria": [
+					"Was passiert mit dem Regen?",
+					"Wohin fließt er?",
+					"Ich erkläre die Überflutung am Bach."
+				]
+			},
+			"2": {
+				"prompt": "Zwei Dörfer wollen sich vor Hochwasser schützen. Eines plant höhere Deiche, das andere Auen und Warnsysteme. Vergleiche die Wirkung und eine Grenze beider Ansätze.",
+				"hints": [
+					"Wie wird Wasser zurückgehalten?",
+					"Wie werden Menschen geschützt?"
+				],
+				"model": "Ein Deich schützt bestimmte Flächen bis zu seiner Bemessung und kann den Raum für den Fluss einengen. Auen nehmen zeitweise Wasser auf, brauchen aber Platz. Warnungen ermöglichen Vorsorge, verhindern jedoch keine Gebäudeschäden. Eine Kombination hängt von Gelände und Gefahrenkarte ab.",
+				"criteria": [
+					"Wie wird Wasser zurückgehalten?",
+					"Wie werden Menschen geschützt?",
+					"Ich nenne Grenzen beider Ansätze."
+				]
+			}
+		},
+		"model": "abfluss"
+	}
+]

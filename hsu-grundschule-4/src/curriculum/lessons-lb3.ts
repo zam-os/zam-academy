@@ -10,7 +10,6 @@ export const LESSONS_LB3: ReadonlyArray<Lesson> = [
 		title: "Lebensräume Wald & Gewässer: Stockwerke, Anpassung & Nahrungsnetze",
 		shortTitle: "Wald & Gewässer",
 		icon: "🌲",
-		hook: "Warum wohnt das Moos ganz unten im schattigen Waldkeller, während die Bachforelle nur in kühlem, klarem Wasser überlebt?",
 		foundationNote:
 			"Aus der 1. und 2. Klasse kennst du schon Wiese und Hecke – jetzt steigen wir durch alle Stockwerke des Waldes und tauchen in heimische Gewässer ein!",
 		storyParagraphs: [
@@ -22,16 +21,19 @@ export const LESSONS_LB3: ReadonlyArray<Lesson> = [
 			{
 				icon: "🌳",
 				title: "5 Stockwerke des Waldes",
+				lottaPrompt: "Vom Moos bis zur Baumkrone hat der Wald Stockwerke. Auf welcher Höhe streift mein Bauch durchs Gras?",
 				text: "Von unten nach oben: Wurzelschicht, Moosschicht, Krautschicht, Strauchschicht, Baumschicht.",
 			},
 			{
 				icon: "🐟",
 				title: "Angepasstheit am Wasser",
+				lottaPrompt: "Eine Ente paddelt an mir vorbei. Zwischen ihren Zehen spannt sich eine Haut. Wobei hilft sie wohl?",
 				text: "Forelle: Stromlinienform & Kiemen; Stockente: Schwimmhäute & Bürzeldrüse; Seerose: Luftkanäle für Auftrieb.",
 			},
 			{
 				icon: "🔗",
 				title: "Nahrungskette",
+				lottaPrompt: "Der Reiher fängt einen Fisch. Wovon hat sich wohl das Futter des Fisches ernährt?",
 				text: "Pflanze (Erzeuger) → Pflanzenfresser → Fleischfresser → Zersetzer (machen daraus wieder Nährsalze).",
 			},
 		],
@@ -133,18 +135,27 @@ export const LESSONS_LB3: ReadonlyArray<Lesson> = [
 			goals: [
 				{
 					id: "g8-baumkrone",
+					label: "Oben in der Baumkrone",
+					lottaPrompt: "Klettere im Modell vom Waldboden in die Baumkrone. Wo findest du Schatten, wo mehr Licht?",
+					controls: ["stockwerk"],
 					title: "Untersuche die lichtreiche Baumschicht ganz oben im Wald",
 					check: (s) => s.stockwerk === "baum",
 					witness: { stockwerk: "baum", bach: "belastet", kette: "falsch" },
 				},
 				{
 					id: "g8-forelle",
+					label: "Ein Bach für die Forelle",
+					lottaPrompt: "Zwei Bachläufe stehen zur Wahl. In welchem findet die Forelle eher kühles Wasser?",
+					controls: ["bach"],
 					title: "Stelle für die Bachforelle einen kühlen, naturnahen Bach her",
 					check: (s) => s.bach === "naturnah",
 					witness: { stockwerk: "moos", bach: "naturnah", kette: "falsch" },
 				},
 				{
 					id: "g8-nahrungskette",
+					label: "Wer frisst wen?",
+					lottaPrompt: "Beginne bei der Alge und folge dem Futter bis zum Reiher. In welche Richtung gehören die Pfeile?",
+					controls: ["bach", "kette"],
 					title: "Verbinde naturnahen Bach und richtige Gewässer-Nahrungskette",
 					check: (s) => s.bach === "naturnah" && s.kette === "wasserKette",
 					witness: {
@@ -191,7 +202,6 @@ export const LESSONS_LB3: ReadonlyArray<Lesson> = [
 		title: "Verwandlungskünstler der Natur & vom Wolf zum Hund",
 		shortTitle: "Metamorphose & Hund",
 		icon: "🐸",
-		hook: "Wie wird aus einer kiemenatmenden Kaulquappe ein lungenatmender Frosch – und warum stammt jeder Haushund vom Wildtier Wolf ab?",
 		foundationNote:
 			"Aus der 1. und 2. Klasse weißt du schon, dass man Haustiere rücksichtsvoll behandelt – jetzt vergleichen wir ihre Abstammung vom Wolf und verfolgen ganze Tier-Entwicklungen!",
 		storyParagraphs: [
@@ -203,16 +213,19 @@ export const LESSONS_LB3: ReadonlyArray<Lesson> = [
 			{
 				icon: "🐸",
 				title: "Grasfrosch-Entwicklung",
+				lottaPrompt: "Die Kaulquappe hat einen Schwanz und keine Beine. Woran erkennst du später den jungen Frosch?",
 				text: "Laich → Kaulquappe (Kiemen) → erst Hinterbeine, dann Vorderbeine → Jungfrosch an Land (Lunge & feuchte Haut).",
 			},
 			{
 				icon: "🐞",
 				title: "Marienkäfer-Verwandlung",
+				lottaPrompt: "Eine Larve schnappt sich eine Blattlaus. Kaum zu glauben, dass aus diesem kleinen Jäger ein Marienkäfer wird!",
 				text: "Ei → Larve (Blattlausjäger) → Puppe (Ruhestadium mit Umbau) → erwachsener Käfer.",
 			},
 			{
 				icon: "🐕",
 				title: "Wolf & Haushund",
+				lottaPrompt: "Wolf und Haushund haben beide eine feine Nase. Was kann ein Hund damit bemerken, bevor du es siehst?",
 				text: "Gleiche Abstammung & feine Sinne; beim fremden Hund: ruhig stehen bleiben, Besitzer fragen, Fressplatz tabu!",
 			},
 		],
@@ -309,18 +322,27 @@ export const LESSONS_LB3: ReadonlyArray<Lesson> = [
 			goals: [
 				{
 					id: "g9-frosch",
+					label: "Von der Kaulquappe zum Frosch",
+					lottaPrompt: "Wähle den Grasfrosch. In welcher Stufe entdeckst du Beine an der Kaulquappe?",
+					controls: ["art", "stadium"],
 					title: "Verfolge beim Grasfrosch Stufe 3: Übergang zu Beinen und Lungenatmung",
 					check: (s) => s.art === "frosch" && s.stadium === "s3",
 					witness: { art: "frosch", stadium: "s3", hund: "wegrennen" },
 				},
 				{
 					id: "g9-puppe",
+					label: "Die Puppe des Marienkäfers",
+					lottaPrompt: "Halte bei Stufe drei an und wechsle die Tierart. Was passiert beim Frosch, was beim Käfer?",
+					controls: ["art", "stadium"],
 					title: "Entdecke beim Marienkäfer Stufe 3: die Puppenruhe",
 					check: (s) => s.art === "kaefer" && s.stadium === "s3",
 					witness: { art: "kaefer", stadium: "s3", hund: "wegrennen" },
 				},
 				{
 					id: "g9-hund",
+					label: "Begegnung mit einem Hund",
+					lottaPrompt: "Ein fremder Hund kommt näher. Welche Reaktion lässt ihm Platz und Ruhe?",
+					controls: ["hund"],
 					title: "Wähle das sichere Verhalten gegenüber dem fremden Hund",
 					check: (s) => s.hund === "ruhig",
 					witness: { art: "frosch", stadium: "s1", hund: "ruhig" },
@@ -371,7 +393,6 @@ export const LESSONS_LB3: ReadonlyArray<Lesson> = [
 		title: "Vom Bauernhof auf den Teller: Eiercode, Getreide & Regionalität",
 		shortTitle: "Bauernhof & Lebensmittel",
 		icon: "🌾",
-		hook: "Was verrät der rote Zahlencode auf jedem Hühnerei – und warum reisen Erdbeeren im Winter manchmal tausende Kilometer weit?",
 		foundationNote:
 			"Aus der 1. und 2. Klasse kennst du schon Nutztiere, Nutzpflanzen und die Erntezeit heimischer Obstsorten.",
 		storyParagraphs: [
@@ -383,16 +404,19 @@ export const LESSONS_LB3: ReadonlyArray<Lesson> = [
 			{
 				icon: "🥚",
 				title: "Eierstempel knacken",
+				lottaPrompt: "Auf dem Ei steht ein winziger Code. Welche Ziffer verrät dir, wie die Henne gehalten wurde?",
 				text: "0 = Bio, 1 = Freiland, 2 = Bodenhaltung, 3 = Käfig/Kleingruppe · DE = Deutschland · 09 = Bayern.",
 			},
 			{
 				icon: "🌾",
 				title: "Heimisches Getreide",
+				lottaPrompt: "Die Ähre sieht aus, als hätte sie einen Bart. Bei welchem Getreide fallen dir diese langen Borsten auf?",
 				text: "Ährengetreide: Weizen, Roggen, Gerste (lange Grannen). Rispengetreide: Hafer.",
 			},
 			{
 				icon: "🚜",
 				title: "Regional & saisonal",
+				lottaPrompt: "Im Januar und im Juni gibt es Erdbeeren zu kaufen. Wann könnten sie frisch vom Feld nebenan kommen?",
 				text: "Kurze Transportwege, keine beheizten Winter-Gewächshäuser, frische Ernte aus der Umgebung.",
 			},
 		],
@@ -489,18 +513,27 @@ export const LESSONS_LB3: ReadonlyArray<Lesson> = [
 			goals: [
 				{
 					id: "g10-bioBayern",
+					label: "Ein Bio-Ei aus Bayern",
+					lottaPrompt: "Meine Lupe ist bereit! Such auf dem Ei die zwei Ziffern gleich hinter DE. Steckt Bayern darin?",
+					controls: ["haltung", "herkunft"],
 					title: "Stelle den Code 0-DE-09 für ein Bio-Ei aus Bayern ein",
 					check: (s) => s.haltung === "0" && s.herkunft === "de09",
 					witness: { haltung: "0", herkunft: "de09", obst: "flugJanuar" },
 				},
 				{
 					id: "g10-freiland",
+					label: "Die Henne im Freiland",
+					lottaPrompt: "Ändere die erste Ziffer auf dem Ei. Welche Haltungsform zeigt der Stempel jetzt an?",
+					controls: ["haltung"],
 					title: "Prüfe die Freilandhaltung (Code 1) mit täglichem Auslauf",
 					check: (s) => s.haltung === "1",
 					witness: { haltung: "1", herkunft: "fern", obst: "flugJanuar" },
 				},
 				{
 					id: "g10-saison",
+					label: "Frühstück vom Bauernhof",
+					lottaPrompt: "Fürs Frühstück fehlen Früchte. Welches Obst hat gerade einen kurzen Weg vom Feld zu uns?",
+					controls: ["haltung", "herkunft", "obst"],
 					title: "Kombiniere regionale bayerische Herkunft mit saisonalem Obstkauf",
 					check: (s) =>
 						(s.haltung === "0" || s.haltung === "1") &&
@@ -551,7 +584,6 @@ export const LESSONS_LB3: ReadonlyArray<Lesson> = [
 		title: "Stromkreise, Leiter, Gefahren & saubere Energie",
 		shortTitle: "Strom & Energie",
 		icon: "💡",
-		hook: "Wann genau leuchtet ein Lämpchen, warum leitet sogar eine Bleistiftmine Strom – und wie erzeugen Sonne und Wind Elektrizität?",
 		foundationNote:
 			"Aus der 1. und 2. Klasse kennst du schon verschiedene Stoffe wie Metall, Holz, Glas und Kunststoff – heute prüfen wir sie im Stromkreis!",
 		storyParagraphs: [
@@ -563,16 +595,19 @@ export const LESSONS_LB3: ReadonlyArray<Lesson> = [
 			{
 				icon: "🔌",
 				title: "Leiter & Nichtleiter",
+				lottaPrompt: "Eine Bleistiftmine zwischen den Metallstücken? Die hat sich bei den Leitern wohl doch nicht verirrt!",
 				text: "Leiter: Metalle (Kupfer, Eisen), Graphit (Bleistiftmine), Salzwasser. Nichtleiter: Plastik, Gummi, Holz, Glas.",
 			},
 			{
 				icon: "📐",
 				title: "Geschlossener Stromkreis",
+				lottaPrompt: "Das Lämpchen im Modell bleibt dunkel. Verfolge den Weg von einem Batteriepol bis zum anderen.",
 				text: "Von Pol zu Pol ohne Lücke! Wirkungen: Licht, Wärme, Bewegung und Magnetismus.",
 			},
 			{
 				icon: "⚡",
 				title: "230 V Gefahr & Umwelt",
+				lottaPrompt: "Wenn ich beim Rausgehen das Licht ausschalte, spare ich Strom. Wo fällt dir noch etwas ein?",
 				text: "Steckdose (230 V) = Lebensgefahr, Wasser leitet! Erneuerbare Energien + Stromsparen schützen das Klima.",
 			},
 		],
@@ -669,6 +704,9 @@ export const LESSONS_LB3: ReadonlyArray<Lesson> = [
 			goals: [
 				{
 					id: "g11-kupfer",
+					label: "Eine Münze im Stromkreis",
+					lottaPrompt: "Die Kupfermünze steckt zwischen den Klemmen. Was muss mit dem Schalter passieren, damit die Lampe leuchtet?",
+					controls: ["schalter", "stoff"],
 					title: "Schließe den Stromkreis mit der Kupfermünze, sodass die Lampe leuchtet",
 					check: (s) => s.schalter === "zu" && s.stoff === "kupfer",
 					witness: {
@@ -679,6 +717,9 @@ export const LESSONS_LB3: ReadonlyArray<Lesson> = [
 				},
 				{
 					id: "g11-graphitPlan",
+					label: "Eine Bleistiftmine im Stromkreis",
+					lottaPrompt: "Ob eine Bleistiftmine auch Strom leitet? Teste sie im geschlossenen Stromkreis und schau dir den Schaltplan an.",
+					controls: ["schalter", "stoff", "darstellung"],
 					title: "Bringe die Lampe mit Graphit zum Leuchten und zeige den Schaltplan",
 					check: (s) =>
 						s.schalter === "zu" &&
@@ -692,6 +733,9 @@ export const LESSONS_LB3: ReadonlyArray<Lesson> = [
 				},
 				{
 					id: "g11-isolator",
+					label: "Ein Holzstäbchen im Stromkreis",
+					lottaPrompt: "Jetzt tausche ich die Münze gegen trockenes Holz. Was macht die Lampe, wenn der Schalter geschlossen ist?",
+					controls: ["schalter", "stoff"],
 					title: "Prüfe bei geschlossenem Schalter, dass trockenes Holz isoliert",
 					check: (s) => s.schalter === "zu" && s.stoff === "holz",
 					witness: {
@@ -739,7 +783,6 @@ export const LESSONS_LB3: ReadonlyArray<Lesson> = [
 		title: "Feuer verstehen: Verbrennungsdreieck & richtig löschen",
 		shortTitle: "Feuer & Brandschutz",
 		icon: "🔥",
-		hook: "Welche drei Dinge braucht jedes Feuer gleichzeitig – und warum darf man brennendes Öl in der Pfanne niemals mit Wasser löschen?",
 		foundationNote:
 			"Aus der 1. und 2. Klasse kennst du schon Rauchmelder, Fluchtwege in der Schule und den sicheren Umgang mit Streichhölzern.",
 		storyParagraphs: [
@@ -751,16 +794,19 @@ export const LESSONS_LB3: ReadonlyArray<Lesson> = [
 			{
 				icon: "🔺",
 				title: "Das Verbrennungsdreieck",
+				lottaPrompt: "Zum Feuer gehören drei Bedingungen. An welche davon erinnert dich die Luft um uns herum?",
 				text: "1. Brennbarer Stoff + 2. Sauerstoff + 3. Entzündungstemperatur. Fehlt eine Ecke, geht das Feuer aus!",
 			},
 			{
 				icon: "🪣",
 				title: "Drei Löschprinzipien",
+				lottaPrompt: "Welche Ecke des Verbrennungsdreiecks fehlt, wenn die Flamme keinen Sauerstoff mehr bekommt?",
 				text: "Abkühlen (Wasser bei Holz), Ersticken / Sauerstoff entziehen (Deckel, Sand, Löschdecke), Brennstoff entfernen.",
 			},
 			{
 				icon: "⚠️",
 				title: "Achtung Fettbrand!",
+				lottaPrompt: "In der Küche brennt Öl in einer Pfanne. Warum wäre Wasser hier besonders gefährlich?",
 				text: "Niemals Wasser in brennendes Öl gießen (Fettexplosion)! Immer mit Topfdeckel oder Löschdecke ersticken.",
 			},
 		],
@@ -848,18 +894,27 @@ export const LESSONS_LB3: ReadonlyArray<Lesson> = [
 			goals: [
 				{
 					id: "g12-kerze",
+					label: "Das Teelicht",
+					lottaPrompt: "Im Modell brennt ein Teelicht. Was passiert mit der Flamme, wenn ihr der Sauerstoff fehlt?",
+					controls: ["brand", "loeschmittel"],
 					title: "Ersticke das Teelicht durch Entzug von Sauerstoff",
 					check: (s) => s.brand === "kerze" && s.loeschmittel === "ersticken",
 					witness: { brand: "kerze", loeschmittel: "ersticken" },
 				},
 				{
 					id: "g12-holz",
+					label: "Das Lagerfeuer",
+					lottaPrompt: "Beim Abkühlen verändert sich eine Ecke des Verbrennungsdreiecks. Findest du sie im Modell?",
+					controls: ["brand", "loeschmittel"],
 					title: "Kühle das Holz-Lagerfeuer mit Wasser unter die Entzündungstemperatur",
 					check: (s) => s.brand === "lagerfeuer" && s.loeschmittel === "wasser",
 					witness: { brand: "lagerfeuer", loeschmittel: "wasser" },
 				},
 				{
 					id: "g12-fett",
+					label: "Die Pfanne",
+					lottaPrompt: "In der Pfanne brennt Fett. Welche Wahl im Modell nimmt der Flamme den Sauerstoff?",
+					controls: ["brand", "loeschmittel"],
 					title: "Lösche den Fettbrand in der Pfanne sicher durch Ersticken (ohne Wasser!)",
 					check: (s) =>
 						s.brand === "fettpfanne" && s.loeschmittel === "ersticken",
@@ -905,7 +960,6 @@ export const LESSONS_LB3: ReadonlyArray<Lesson> = [
 		title: "Wasser erforschen: Zustandsformen, Wasserkreislauf & Schutz",
 		shortTitle: "Wasser & Wasserkreislauf",
 		icon: "💧",
-		hook: "Warum geht auf der Erde kein Tropfen Wasser verloren – und wie reinigen Sand und Kies im Boden unser Trinkwasser?",
 		foundationNote:
 			"Aus der 1. und 2. Klasse kennst du schon Luft und Wetterbeobachtungen – heute erforschen wir mit Experimenten den ewigen Kreislauf des Wassers!",
 		storyParagraphs: [
@@ -917,16 +971,19 @@ export const LESSONS_LB3: ReadonlyArray<Lesson> = [
 			{
 				icon: "🌡️",
 				title: "3 Zustandsformen",
+				lottaPrompt: "Ein Eiswürfel schmilzt in meinem Becher. Wie heißt Wasser in dieser neuen Form?",
 				text: "Fest (Eis unter 0 °C), flüssig (0 °C bis 100 °C), gasförmig (unsichtbarer Wasserdampf; Siedepunkt 100 °C).",
 			},
 			{
 				icon: "☁️",
 				title: "Der Wasserkreislauf",
+				lottaPrompt: "Gestern war hier eine Pfütze. Heute ist der Boden trocken. Wohin könnte das Wasser gewandert sein?",
 				text: "Verdunstung → Aufsteigen & Abkühlen → Kondensation (Wolken) → Niederschlag → Versickerung → Grundwasser → Quelle → Fluss → Meer.",
 			},
 			{
 				icon: "🪨",
 				title: "Bodenfilter & Schutz",
+				lottaPrompt: "Ein Regentropfen versickert im Kies und trifft auf Ton. Wo kommt er schneller voran?",
 				text: "Sand & Kies lassen Wasser durch und filtern es; Ton/Lehm staut das Grundwasser. Kein Öl oder Gift ins Abwasser!",
 			},
 		],
@@ -1021,18 +1078,27 @@ export const LESSONS_LB3: ReadonlyArray<Lesson> = [
 			goals: [
 				{
 					id: "g13-verdunstung",
+					label: "Wasser über dem See",
+					lottaPrompt: "Lass im Modell die Sonne auf den See scheinen. Was verändert sich über dem Wasser?",
+					controls: ["sonne"],
 					title: "Starte mit starker Sonnenwärme die Verdunstung über dem See",
 					check: (s) => s.sonne === "stark",
 					witness: { sonne: "stark", hoehenluft: "warm", boden: "verdeckt" },
 				},
 				{
 					id: "g13-kondensation",
+					label: "Wolken am Berg",
+					lottaPrompt: "Die Luft über dem Berg kühlt ab. An welcher Stelle entstehen kleine Wassertröpfchen?",
+					controls: ["sonne", "hoehenluft"],
 					title: "Löse durch Verdunstung + kühle Höhenluft Wolkenbildung und Regen aus",
 					check: (s) => s.sonne === "stark" && s.hoehenluft === "kuehl",
 					witness: { sonne: "stark", hoehenluft: "kuehl", boden: "verdeckt" },
 				},
 				{
 					id: "g13-kreislauf",
+					label: "Vom Regen zur Quelle",
+					lottaPrompt: "Wir schauen unter die Wiese. Folge dem Wasser durch die Schichten bis zur Quelle.",
+					controls: ["sonne", "hoehenluft", "boden"],
 					title: "Schließe den gesamten Wasserkreislauf inklusive Bodenfilter und Quelle",
 					check: (s) =>
 						s.sonne === "stark" &&

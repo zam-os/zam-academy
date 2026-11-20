@@ -459,7 +459,7 @@ const sprachen: Lesson = {
 	generators: {
 		1: [
 			(rng) => sort(rng, "Was ist das?", KINDS_OF_LANGUAGE, "Hörst du etwas, siehst du etwas, oder ertastest du etwas? Gehört es zu einer Region oder einem Alter?", "art"),
-			(rng) => sort(rng, "Was stimmt über dieses Thema?", TRUE_FACTS, "Denke an das, was im Text oben steht.", "fakt"),
+			(rng) => sort(rng, "Was stimmt über dieses Thema?", TRUE_FACTS, "Denke an das, was du bei „Verstehen“ gelesen hast.", "fakt"),
 		],
 		2: [
 			(rng) => sort(rng, "Was kannst du aus diesem Vergleich schließen?", COMPARE, "Was ist gleich, was ist anders? Warum könnte das so sein?", "vergleich"),

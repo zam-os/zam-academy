@@ -30,6 +30,9 @@ export type LabState = Record<string, string>;
 
 export interface LabGoal {
 	id: string;
+	label: string;
+	lottaPrompt: string;
+	controls: readonly string[];
 	title: string;
 	check: (state: LabState) => boolean;
 	witness: LabState;
@@ -57,6 +60,7 @@ export interface QuickCheck {
 }
 
 export interface FactCard {
+	lottaPrompt: string;
 	icon: string;
 	title: string;
 	text: string;
@@ -90,7 +94,6 @@ export interface Lesson {
 	title: string;
 	shortTitle: string;
 	icon: string;
-	hook: string;
 	foundationNote: string;
 	storyParagraphs: ReadonlyArray<string>;
 	factCards: ReadonlyArray<FactCard>;
@@ -156,6 +159,7 @@ export interface LessonProgress {
 
 export interface AppProgress {
 	schema: 1;
+	lastLessonId: string | null;
 	lessons: Record<string, LessonProgress>;
 	recentEvidence: AttemptEvidence[];
 	quietMode: boolean;
