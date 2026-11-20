@@ -14,6 +14,7 @@ import {
 import {
 	canAccept,
 	canReview,
+	caseOptions,
 	checkCases,
 	esc,
 	normalise,
@@ -165,7 +166,10 @@ describe("Grade 7 Realschule package contract", () => {
 					l.cases.map((c) => c.options.find((o) => o !== c.answer) ?? ""),
 				),
 			).toEqual([false, false]);
-			for (const c of l.cases) {
+			for (const [index, c] of l.cases.entries()) {
+				const rendered = caseOptions(l, index);
+				expect(rendered).toContain(c.answer);
+				expect(new Set(rendered).size).toBe(c.options.length);
 				expect(c.options).toContain(c.answer);
 				expect(new Set(c.options).size).toBe(c.options.length);
 				expect(c.feedback.length).toBeGreaterThan(30);
@@ -377,5 +381,27 @@ describe("Learner boundaries", () => {
 		expect(
 			trainingBaseUrl("/deutsch-realschule-7/", "?lesson=old&level=1&from=zam"),
 		).toBe("/deutsch-realschule-7/?from=zam");
+	});
+
+	it("varies case option positions so no fixed-position strategy passes", () => {
+		const positions = LESSONS.flatMap((l) =>
+			l.cases.map((c, index) => caseOptions(l, index).indexOf(c.answer)),
+		);
+		expect(positions.filter((pos) => pos === 0).length).toBeGreaterThan(0);
+		expect(positions.filter((pos) => pos === 1).length).toBeGreaterThan(0);
+		for (const pattern of [
+			[0, 0],
+			[1, 1],
+			[0, 1],
+			[1, 0],
+		] as const) {
+			const passing = LESSONS.filter((l) => {
+				const chosen = l.cases.map(
+					(_, index) => caseOptions(l, index)[pattern[index]],
+				);
+				return checkCases(l.cases, chosen).every(Boolean);
+			});
+			expect(passing.length).toBeLessThan(LESSONS.length);
+		}
 	});
 });

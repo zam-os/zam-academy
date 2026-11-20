@@ -25,6 +25,7 @@ async function openApp(route = "", initial = freshProgress()) {
 			.replace(/&lt;/g, "<")
 			.replace(/&gt;/g, ">")
 			.replace(/&amp;/g, "&");
+	let activeElement: ElementFixture;
 	class ElementFixture extends EventTarget {
 		dataset: Record<string, string | undefined> = {};
 		attrs = new Map<string, string>();
@@ -33,10 +34,13 @@ async function openApp(route = "", initial = freshProgress()) {
 		checked = false;
 		disabled = false;
 		hidden = true;
+		inMain = false;
 		inputs: ElementFixture[] = [];
 		private html = "";
 		classList = { toggle: vi.fn() };
-		focus = vi.fn();
+		focus = vi.fn(() => {
+			activeElement = this;
+		});
 		scrollIntoView = vi.fn();
 		showModal = vi.fn();
 		close = vi.fn();
@@ -81,6 +85,7 @@ async function openApp(route = "", initial = freshProgress()) {
 	}
 	function mount(owner: ElementFixture, html: string) {
 		if (owner.id === "main") {
+			if (activeElement.inMain) activeElement = body;
 			widgets.clear();
 			quiz = [];
 			groups = [];
@@ -94,6 +99,7 @@ async function openApp(route = "", initial = freshProgress()) {
 		for (const match of html.matchAll(/\bid="([^"]+)"/g)) {
 			const id = match[1];
 			const node = new ElementFixture(id);
+			node.inMain = true;
 			const tag = html.slice(
 				html.lastIndexOf("<", match.index),
 				html.indexOf(">", match.index) + 1,
@@ -111,6 +117,7 @@ async function openApp(route = "", initial = freshProgress()) {
 			/<button class="quiz-choice">([\s\S]*?)<\/button>/g,
 		)) {
 			const node = new ElementFixture();
+			node.inMain = true;
 			node.textContent = decode(match[1]);
 			quiz.push(node);
 		}
@@ -118,24 +125,32 @@ async function openApp(route = "", initial = freshProgress()) {
 			/<fieldset class="case" data-case="\d+">([\s\S]*?)<\/fieldset>/g,
 		)) {
 			const group = new ElementFixture();
+			group.inMain = true;
 			for (const input of match[1].matchAll(/<input\b[^>]*>/g)) {
 				const node = new ElementFixture();
+				node.inMain = true;
 				node.value = decode(input[0].match(/value="([^"]*)"/)?.[1] ?? "");
 				node.checked = /\bchecked\b/.test(input[0]);
 				group.inputs.push(node);
 			}
 			groups.push(group);
 		}
-		for (const _ of html.matchAll(/class="criterion"/g))
-			criteria.push(new ElementFixture());
+		for (const _ of html.matchAll(/class="criterion"/g)) {
+			const node = new ElementFixture();
+			node.inMain = true;
+			criteria.push(node);
+		}
 		for (const match of html.matchAll(
 			/<button[^>]*data-lesson="([^"]+)"[^>]*>/g,
 		)) {
 			const node = new ElementFixture();
+			node.inMain = true;
 			node.dataset.lesson = match[1];
 			lessonButtons.push(node);
 		}
 	}
+	const body = new ElementFixture("body");
+	activeElement = body;
 	const main = new ElementFixture("main");
 	const staticNodes = new Map(
 		[
@@ -159,6 +174,9 @@ async function openApp(route = "", initial = freshProgress()) {
 	const windowFixture = Object.assign(new EventTarget(), { scrollTo: vi.fn() });
 	vi.stubGlobal("document", {
 		documentElement: { dataset: {} },
+		get activeElement() {
+			return activeElement;
+		},
 		querySelector: (q: string) => staticNodes.get(q) ?? widgets.get(q) ?? null,
 		querySelectorAll: (q: string) => (q === "[data-view]" ? nav : []),
 	});
@@ -181,6 +199,7 @@ async function openApp(route = "", initial = freshProgress()) {
 	return {
 		url,
 		stored,
+		activeElement: () => activeElement,
 		node: (id: string) => {
 			const node = widgets.get(`#${id}`) ?? staticNodes.get(`#${id}`);
 			if (!node) throw new Error(`Missing fixture element: ${id}`);
@@ -239,6 +258,8 @@ describe("Actual page event handlers", () => {
 		});
 		await app.node("back").click();
 		expect(app.node("main").innerHTML).toContain('class="stage-count">0/10');
+		app.node("level").focus();
+		expect(app.activeElement()).toBe(app.node("level"));
 		if (!finish) throw new Error("Missing queued save");
 		finish();
 		await vi.waitFor(() => {
@@ -249,6 +270,7 @@ describe("Actual page event handlers", () => {
 			expect(app.node("main").innerHTML).toContain(
 				`class="lesson-link complete" data-lesson="${lesson.id}"`,
 			);
+			expect(app.activeElement()).toBe(app.node("level"));
 		});
 		vi.stubGlobal("navigator", {});
 		await app.node("continue").click();
@@ -418,5 +440,28 @@ describe("Actual page event handlers", () => {
 		expect(app.node("writing-status").textContent).toContain(
 			"erneut vergleichen",
 		);
+	});
+	it("rejects always selecting the first case radio button and restores correct order on submit", async () => {
+		const [firstPattern, secondPattern] = [
+			LESSONS.find((l) => l.cases[0].options[0] === l.cases[0].answer),
+			LESSONS.find((l) => l.cases[0].options[0] !== l.cases[0].answer),
+		];
+		if (!firstPattern || !secondPattern)
+			throw new Error("Expected both case option rotations");
+		for (const lesson of [firstPattern, secondPattern]) {
+			const app = await openApp(`#lesson=${lesson.id}`);
+			for (const [index, group] of app.groups().entries())
+				app.chooseCase(index, group.inputs[0].value);
+			app
+				.node("cases-form")
+				.dispatchEvent(new Event("submit", { cancelable: true }));
+			expect(app.node("case-feedback").innerHTML).toContain("1 von 2 richtig.");
+			for (const [index, item] of lesson.cases.entries())
+				app.chooseCase(index, item.answer);
+			app
+				.node("cases-form")
+				.dispatchEvent(new Event("submit", { cancelable: true }));
+			expect(app.node("case-feedback").innerHTML).toContain("2 von 2 richtig.");
+		}
 	});
 });

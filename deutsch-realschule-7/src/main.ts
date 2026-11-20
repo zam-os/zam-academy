@@ -1,7 +1,14 @@
 import "./styles.css";
 import { findLesson, LESSONS, SOURCES, STAGES } from "./curriculum";
 import { renderMaterial } from "./material";
-import { canAccept, canReview, checkCases, esc, quizOptions } from "./practice";
+import {
+	canAccept,
+	canReview,
+	caseOptions,
+	checkCases,
+	esc,
+	quizOptions,
+} from "./practice";
 import {
 	completion,
 	confirmWriting,
@@ -39,6 +46,24 @@ function stats(): void {
 	element("#progress-strip").innerHTML =
 		`<label for="path-progress">Level ${progress.level}: ${count.completed} von ${count.total} bearbeitet</label><progress id="path-progress" value="${count.completed}" max="${count.total}"></progress>`;
 }
+function captureMainFocus(): (() => void) | undefined {
+	const active = document.activeElement as
+		| (Element & { dataset?: DOMStringMap })
+		| null;
+	if (!active) return undefined;
+	if (typeof main.contains === "function" && !main.contains(active))
+		return undefined;
+	if (active === main) return () => main.focus();
+	const lesson = active.dataset?.lesson;
+	if (lesson)
+		return () =>
+			[...main.querySelectorAll<HTMLElement>("[data-lesson]")]
+				.find((el) => el.dataset.lesson === lesson)
+				?.focus();
+	const id = active.id;
+	if (id) return () => main.querySelector<HTMLElement>(`#${id}`)?.focus();
+	return undefined;
+}
 async function persist(): Promise<void> {
 	const active = progress;
 	const saved = await saveProgress(active);
@@ -47,7 +72,9 @@ async function persist(): Promise<void> {
 	if (view === "path") {
 		// Navigation rendered before the asynchronous merge. Refresh the path's
 		// lesson marks, stage counts and next task from the adopted progress.
+		const restoreFocus = captureMainFocus();
 		render();
+		restoreFocus?.();
 		return;
 	}
 	const draft = main.querySelector<HTMLTextAreaElement>("#draft");
@@ -155,7 +182,7 @@ function renderLesson(lesson: Lesson): void {
 			.join(
 				"",
 			)}</div><div id="quiz-feedback" role="status"></div>${progress.quizDone.includes(lesson.id) ? '<p class="done-mark" id="quiz-done">Schon richtig bearbeitet · du kannst erneut prüfen.</p>' : ""}</section>
-    <section class="panel"><h2>2 · Am Fall entscheiden</h2><p class="small">Wähle für jeden Fall die passende Aussage. Du erhältst zu jeder Entscheidung eine Begründung.</p><form id="cases-form">${lesson.cases.map((c, i) => `<fieldset class="case" data-case="${i}"><legend>${esc(c.prompt)}</legend>${c.options.map((o) => `<label><input type="radio" name="case-${i}" required ${answers[i] === o ? "checked" : ""} value="${esc(o)}"><span>${esc(o)}</span></label>`).join("")}</fieldset>`).join("")}<button class="button secondary" type="submit">Entscheidungen prüfen</button></form><div id="case-feedback" role="status"></div></section>
+    <section class="panel"><h2>2 · Am Fall entscheiden</h2><p class="small">Wähle für jeden Fall die passende Aussage. Du erhältst zu jeder Entscheidung eine Begründung.</p><form id="cases-form">${lesson.cases.map((c, i) => `<fieldset class="case" data-case="${i}"><legend>${esc(c.prompt)}</legend>${caseOptions(lesson, i).map((o) => `<label><input type="radio" name="case-${i}" required ${answers[i] === o ? "checked" : ""} value="${esc(o)}"><span>${esc(o)}</span></label>`).join("")}</fieldset>`).join("")}<button class="button secondary" type="submit">Entscheidungen prüfen</button></form><div id="case-feedback" role="status"></div></section>
     <section class="panel"><h2>3 · Mit eigenen Worten</h2><p class="task-prompt">${esc(task.prompt)}</p><label class="answer-label" for="draft">Dein Entwurf</label><textarea id="draft" maxlength="8000" rows="7" aria-describedby="draft-note">${esc(progress.drafts[key] ?? "")}</textarea><span id="draft-note" class="small">Mindestens 20 Zeichen öffnen den Mustervergleich. Das ist keine Qualitätsbewertung. Eigene gute Lösungen können anders aussehen.</span><div class="self-actions"><button class="button secondary" id="compare" ${canReview(progress.drafts[key] ?? "") ? "" : "disabled"}>Mit einem Muster vergleichen</button></div><div id="comparison"></div><p class="done-mark" id="writing-status" role="status">${progress.writingDone.includes(key) ? "Eigene Antwort verglichen und selbst eingeschätzt." : ""}</p></section>
     ${lesson.extension ? `<section class="panel"><h2>4 · In der Praxis weitergehen</h2><p>${esc(lesson.extension)}</p><p class="small">Diese zusätzliche Leistung wird hier nicht automatisch geprüft oder als erledigt bestätigt.</p></section>` : ""}</div>
     <aside class="lesson-aside"><section class="aside-card"><h2>Deine Schritte</h2><ol><li>Schnellcheck beantworten</li><li>Zwei Fälle entscheiden</li><li>Selbst schreiben und vergleichen</li></ol><p class="small">Level 1 und Level 2 haben eigene Entwürfe und Abschlüsse. Die Fallentscheidungen und der Schnellcheck gelten für beide.</p></section><section class="aside-card"><h2>Quellen und weiterlesen</h2><ul class="source-list">${lesson.sourceIds
