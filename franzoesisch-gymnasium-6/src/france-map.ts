@@ -29,7 +29,7 @@ export const FRANCE_CITIES = {
 	paris: { name: "Paris", pin: [270, 120], labelAt: [280, 124] },
 	lyon: { name: "Lyon", pin: [365, 230], labelAt: [378, 228] },
 	marseille: { name: "Marseille", pin: [370, 344], labelAt: [378, 337] },
-	toulouse: { name: "Toulouse", pin: [271, 326], labelAt: [279, 335] },
+	toulouse: { name: "Toulouse", pin: [271, 326], labelAt: [286, 329] },
 	bordeaux: { name: "Bordeaux", pin: [229, 276], labelAt: [239, 270] },
 	rennes: { name: "Rennes", pin: [150, 127], labelAt: [158, 132] },
 	nantes: { name: "Nantes", pin: [175, 192], labelAt: [184, 211] },
@@ -102,7 +102,7 @@ export const FRANCE_MOUNTAINS = [
 	},
 	{
 		name: "Pyrénées",
-		labelAt: [245, 345],
+		labelAt: [252, 345],
 		peaks: [
 			[[231, 350], [223, 361], [239, 361]],
 			[[252, 355], [244, 368], [260, 368]],
