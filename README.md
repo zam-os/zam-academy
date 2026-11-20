@@ -89,6 +89,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | Natur und Technik 6 Mittelschule (LehrplanPLUS Bayern) | [`nt-mittelschule-6/`](nt-mittelschule-6/) | https://academy.zam-os.org/nt-mittelschule-6/ | `zam-academy:nt-mittelschule-6` |
 | Grade 7 Natur und Technik, Bavarian Mittelschule (R7 and M7) | [nt-mittelschule-7/](nt-mittelschule-7/) | https://academy.zam-os.org/nt-mittelschule-7/ | `zam-academy:nt-mittelschule-7` |
 | Informatik 6 Gymnasium (LehrplanPLUS Bayern, Natur und Technik 6 Schwerpunkt Informatik) | [`informatik-gymnasium-6/`](informatik-gymnasium-6/) | Built by Pages on merge | `zam-academy:informatik-gymnasium-6` |
+| Informatik 6 Mittelschule (LehrplanPLUS Bayern) | [`informatik-mittelschule-6/`](informatik-mittelschule-6/) | Built by Pages on merge | `zam-academy:informatik-mittelschule-6` |
 | Geschichte 6 Gymnasium (LehrplanPLUS Bayern, alle Ausbildungsrichtungen) | [`geschichte-gymnasium-6/`](geschichte-gymnasium-6/) | Built by Pages on merge | `zam-academy:geschichte-gymnasium-6` |
 
 ## How an app and its ZAM cell fit together
@@ -196,6 +197,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Englisch 5 Mittelschule: cd englisch-mittelschule-5 (dev server on :5248)
 # Englisch 6 Mittelschule: cd englisch-mittelschule-6 (dev server on :5262)
 # Informatik 6 Gymnasium: cd informatik-gymnasium-6 (dev server on :5251)
+# Informatik 6 Mittelschule: cd informatik-mittelschule-6 (dev server on :5265)
 # Biologie 6 Gymnasium: cd biologie-gymnasium-6 (dev server on :5253)
 # Geschichte 6 Gymnasium: cd geschichte-gymnasium-6 (dev server on :5259)
 # Grade 11 introductory biology: cd biologie-gymnasium-11 (dev server on :5227)
@@ -289,3 +291,5 @@ The [Englisch 6 Gymnasium package](englisch-gymnasium-6/) continues English 5 fo
 The [Geschichte 6 Gymnasium package](geschichte-gymnasium-6/) covers all seven LehrplanPLUS Bayern areas (*Der Mensch und seine Geschichte*, *Ägypten*, *Griechische Antike*, *Menschen machen Geschichte*, *Imperium Romanum*, *Von der Antike zum Mittelalter*, *Leben in der Familie*) with 36 lessons, 47 SVG figures and Natural-Earth historical maps (plus panorama and global timeline), 15 interactive models and map explorers, four *Kriterienkataloge*, two-level exercises, and 72 ZAM cards. Its [legacy mapping](geschichte-gymnasium-6/replaces-de-by.json) was approved by Thomas on 2026-11-18 (8 A `replaces`, 0 B, 8 C `keep-active`, validated by `geschichte-gymnasium-6/scripts/validate-migration.mjs`; Grade 6 Gymnasium Geographie is recorded in `academy.json` under `kein_unterricht` per BayGSO Anlage 1). See [Curriculum coverage and legacy inventory](docs/geschichte-gymnasium-6-coverage.md).
 
 The [Englisch 6 Mittelschule package](englisch-mittelschule-6/) continues English 5 for Bavarian Mittelschule with 36 lessons in six stages across all five LehrplanPLUS areas (UK countries & major cities, 50 US states & Washington, D.C., youth hostel/souvenir shop/newsagent, town directions, daily routines, flat & room scene, hometown & weather, school clubs & class trips, note-making & mediation, numbers up to 1000, ordinals up to 31st, irregular plurals `feet`/`teeth`/`clothes`, `of`-genitive, object/indefinite/demonstrative pronouns, Germanic comparison `-er`/`the …-est` plus `good`/`bad`, modals `can`/`must`/`have (got) to`, `present progressive`, `will-future` and `SVO` place before time), five British/American listening scripts, 108 workshop goals, 72 two-level tasks, and 109 linked ZAM cards. See [Curriculum coverage and legacy inventory](docs/englisch-mittelschule-6-coverage.md).
+
+The [Informatik 6 Mittelschule package](informatik-mittelschule-6/) covers both Lernbereiche of the Bavarian Mittelschule Grade 6 curriculum (*Digitaler Informationsaustausch* and *Programmieren*) with 12 lessons, interactive workshops (search-filter lab, source checker, Creative Commons license checker, data protection cases, password & malware lab, backup simulator, and figure grids synchronized with Nassi-Shneiderman structograms), two-level exercises, and 36 linked ZAM cards. Its [coverage matrix](informatik-mittelschule-6/coverage.json) maps all 6 verbatim expectations and 7 content bullets (`0` missing). See [Curriculum coverage and legacy inventory](docs/informatik-mittelschule-6-coverage.md).
