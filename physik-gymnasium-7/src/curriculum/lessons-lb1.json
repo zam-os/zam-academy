@@ -303,15 +303,15 @@
     "intro": "Mit Waage und Messzylinder findest du heraus, woraus ein Körper bestehen könnte.",
     "paragraphs": [
       "Bei einem Quader berechnest du das Volumen aus Länge, Breite und Höhe. Ein Stein oder eine Schraube hat keine einfache Form. Ihr Volumen bestimmst du mit der Differenzmethode: Du füllst Wasser in einen Messzylinder und liest den Wasserstand V₁ ab. Dann lässt du den Körper an einem Faden vorsichtig hineingleiten, bis er ganz untertaucht, und liest V₂ ab. Der Körper verdrängt so viel Wasser, wie er selbst Raum einnimmt: V = V₂ − V₁. Die Masse bestimmst du vorher mit der Waage, solange der Körper trocken ist.",
-      "Jede Messung ist nur begrenzt genau. Am Messzylinder liest du auf Augenhöhe am tiefsten Punkt der gewölbten Wasseroberfläche ab, und zwar auf den nächsten Teilstrich genau. Bei einer 5-ml-Teilung kann ein abgelesener Wert deshalb um bis zu 2,5 ml danebenliegen, bei einer 1-ml-Teilung nur um 0,5 ml. Rechne mit dem kleinsten und dem größten möglichen Volumen und gib einen Bereich für die Dichte an. Mit diesem Bereich suchst du in einer Dichtetabelle, etwa im Internet, nach passenden Stoffen.",
-      "Beispiel: Eine Schraube hat die Masse 62,4 g. Der Wasserstand steigt von 50 ml auf 58 ml, also ist V = 8 ml = 8 cm³ und ρ = 62,4 g : 8 cm³ = 7,8 g/cm³. Mit der 1-ml-Teilung liegt V zwischen 7,5 cm³ und 8,5 cm³, die Dichte also zwischen etwa 7,3 g/cm³ und 8,3 g/cm³. In diesem Bereich liegt in der Tabelle nur Eisen. Passen zwei Stoffe, etwa Aluminium und Granit, die beide etwa 2,7 g/cm³ haben, brauchst du weitere Eigenschaften wie Aussehen, Magnetismus oder elektrische Leitfähigkeit."
+      "Jede Messung ist nur begrenzt genau. Am Messzylinder liest du auf Augenhöhe am tiefsten Punkt der gewölbten Wasseroberfläche ab, und zwar auf den nächsten Teilstrich genau. Bei einer 5-ml-Teilung kann ein abgelesener Wert deshalb um bis zu 2,5 ml danebenliegen, bei einer 1-ml-Teilung nur um 0,5 ml. Füllst du das Wasser vorher genau bis zu einem Teilstrich, ist V₁ exakt, und nur V₂ ist unsicher; liest du beide Stände frei ab, addieren sich die Unsicherheiten. Rechne mit dem kleinsten und dem größten möglichen Volumen und gib einen Bereich für die Dichte an. Mit diesem Bereich suchst du in einer Dichtetabelle, etwa im Internet, nach passenden Stoffen.",
+      "Beispiel: Eine Schraube hat die Masse 62,4 g. Das Wasser steht vorher genau auf der 50-ml-Marke und steigt auf 58 ml, also ist V = 8 ml = 8 cm³ und ρ = 62,4 g : 8 cm³ = 7,8 g/cm³. Mit der 1-ml-Teilung liegt V zwischen 7,5 cm³ und 8,5 cm³, die Dichte also zwischen etwa 7,3 g/cm³ und 8,3 g/cm³. In diesem Bereich liegt in der Tabelle nur Eisen. Passen zwei Stoffe, etwa Aluminium und Granit, die beide etwa 2,7 g/cm³ haben, brauchst du weitere Eigenschaften wie Aussehen, Magnetismus oder elektrische Leitfähigkeit."
     ],
     "takeaway": "Volumen unregelmäßiger Körper: V = V₂ − V₁. Weil jede Ablesung ungenau ist, gibst du die Dichte als Bereich an und vergleichst sie mit einer Tabelle.",
     "formulas": [
       "V = V₂ − V₁ (Differenzmethode)",
       "ρ = m / (V₂ − V₁)",
       "Ablesegenauigkeit: etwa ein halber Teilstrich",
-      "Dichtebereich: m / V_größt bis m / V_kleinst"
+      "Dichtebereich: m durch größtes bis m durch kleinstes Volumen"
     ],
     "sourceIds": ["lp", "messzylinder", "dichtetabelle"],
     "quiz": {
@@ -340,9 +340,9 @@
     },
     "tasks": {
       "1": {
-        "prompt": "Ein Anhänger hat die Masse 52,8 g. Im Messzylinder mit 1-ml-Teilung steigt das Wasser von 50 ml auf 56 ml. Berechne die Dichte und ihren Bereich und entscheide mit der Tabelle (Messing 8,4 g/cm³, Kupfer 8,8 g/cm³), ob du den Stoff sicher bestimmen kannst.",
-        "hints": ["V = V₂ − V₁; der abgelesene Wert kann um 0,5 ml danebenliegen.", "Teile die Masse durch das größte und das kleinste Volumen."],
-        "model": "Das Volumen ist V = 56 ml − 50 ml = 6 ml = 6 cm³, die Dichte ρ = 52,8 g : 6 cm³ = 8,8 g/cm³. Mit V zwischen 5,5 cm³ und 6,5 cm³ liegt die Dichte zwischen etwa 8,1 g/cm³ und 9,6 g/cm³. Messing und Kupfer liegen beide in diesem Bereich. Der Stoff lässt sich so nicht sicher bestimmen; ein feinerer Messzylinder oder die Farbe helfen weiter.",
+        "prompt": "Ein Anhänger hat die Masse 52,8 g. Im Messzylinder mit 1-ml-Teilung steht das Wasser vorher genau auf der 50-ml-Marke und steigt auf 56 ml. Berechne die Dichte und ihren Bereich und entscheide mit der Tabelle (Messing 8,4 g/cm³, Kupfer 8,8 g/cm³), ob du den Stoff sicher bestimmen kannst.",
+        "hints": ["V = V₂ − V₁; nur V₂ ist unsicher, um höchstens 0,5 ml.", "Teile die Masse durch das größte und das kleinste Volumen."],
+        "model": "Das Volumen ist V = 56 ml − 50 ml = 6 ml = 6 cm³, die Dichte ρ = 52,8 g : 6 cm³ = 8,8 g/cm³. Weil V₁ exakt ist und nur V₂ um 0,5 ml danebenliegen kann, liegt V zwischen 5,5 cm³ und 6,5 cm³, und die Dichte zwischen etwa 8,1 g/cm³ und 9,6 g/cm³. Messing und Kupfer liegen beide in diesem Bereich. Der Stoff lässt sich so nicht sicher bestimmen; ein feinerer Messzylinder oder die Farbe helfen weiter.",
         "criteria": ["Volumen und Dichte richtig berechnet", "Bereich aus der Ablesegenauigkeit bestimmt", "begründet, dass zwei Stoffe passen"]
       },
       "2": {

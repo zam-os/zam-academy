@@ -1,50 +1,51 @@
 # Physik 7 Gymnasium · ZAM Academy
 
-Physik für die 7. Klasse am Gymnasium in Bayern nach LehrplanPLUS. In der Jahrgangsstufe 7 gibt es am Gymnasium noch kein eigenes Fach Physik: Sie ist der **Schwerpunkt Physik von Natur und Technik 7** (Lernbereich 1 „Physik in Natur und Technik entdecken“, ca. 28 Stunden). Der Schwerpunkt Informatik (Lernbereich 2) gehört nicht zu diesem Paket. Veröffentlichung nach Merge unter https://academy.zam-os.org/physik-gymnasium-7/.
+Physics for Grade 7 at the Bavarian Gymnasium, following LehrplanPLUS. In Grade 7 the Gymnasium has no separate subject Physik: physics is the **Schwerpunkt Physik of Natur und Technik 7** (Lernbereich 1 „Physik in Natur und Technik entdecken“, about 28 hours). The Schwerpunkt Informatik (Lernbereich 2) is not part of this package. Published after merge at https://academy.zam-os.org/physik-gymnasium-7/.
 
-## Lernen
+## Learning
 
-Jeder Abschnitt des Fachlehrplans ist eine Etappe mit eigener Akzentfarbe:
+Each section of the Fachlehrplan is a stage with its own accent colour:
 
-1. **NT7 1.1 · Magnete und Dichte** (7 Lektionen): Beobachten, beschreiben, deuten am Modellversuch; Dauermagnete; Elementarmagnete; Orientierung mit Kompass und Erdmagnetfeld; Dichte; Dichtebestimmung mit dem Messzylinder; Werkstoffe nach ihrer Dichte bewerten.
-2. **NT7 1.2 · Licht und Schatten** (8): Lichtquellen und Sehvorgang; Farben durch Reflexion und Absorption; farbige Schatten erkunden; geradlinige Ausbreitung; Kern-, Halb- und Übergangsschatten; Mondphasen; Sonnen- und Mondfinsternis; Sehen und gesehen werden.
-3. **NT7 1.3 · Ladung und Strom** (6): Ladung und Kern-Hülle-Modell; Reibungselektrizität; Strom als bewegte Ladungen; Wärme- und Leuchtwirkung; magnetische Wirkung des Stroms; UND-, ODER- und Wechselschaltung.
+1. **NT7 1.1 · Magnete und Dichte** (7 lessons): observing and interpreting a model experiment; permanent magnets; the model of Elementarmagnete; orientation with compass and the Earth's magnetic field; density; measuring density with a measuring cylinder; judging materials by their density.
+2. **NT7 1.2 · Licht und Schatten** (8): light sources and seeing; colours by reflection and absorption; exploring coloured shadows; rectilinear propagation; core, half and transition shadow; phases of the Moon; solar and lunar eclipses; seeing and being seen.
+3. **NT7 1.3 · Ladung und Strom** (6): charge and the nucleus–shell model; frictional electricity; current as moving charges; heating and lighting effect; magnetic effect of current; AND, OR and two-way switching.
 
-Jede Lektion hat eine Erklärung mit Beispiel und Merksatz, Fachbegriffe zum Nachschlagen, einen Schnellcheck, eine Werkstatt (zuordnen oder ordnen) und zwei Schreibaufgaben mit Vergleichsantwort und drei Kriterien zur Selbsteinschätzung (Level 1 mit Leitfragen, Level 2 als Transfer). 20 Lektionen haben ein Modelllabor mit Zeichnung, Reglern und benannten Vergleichssituationen; die Lektion zur Wärme- und Leuchtwirkung hat statt eines Modells eine feste Abbildung, die zum Erdmagnetfeld zusätzlich zum Modell eine. Die drei Dichte-Lektionen haben Rechenaufgaben auf zwei Stufen; der Prüfer akzeptiert Dezimalkomma und Dezimalpunkt und erkennt typische Fehler (Faktor 1000, vertauschte Division).
+Every lesson has an explanation with a worked example („Beispiel: …“) and a key rule, terms for the reference view, a quick check, a workshop (classify or order) and two writing tasks with a comparison answer and three self-assessment criteria (Level 1 with guiding questions, Level 2 as transfer). 20 lessons have a model lab with a drawing, controls and named comparisons; the lesson on heating and lighting has a fixed drawing instead, the lesson on the Earth's field has one in addition to its model. The three density lessons have calculation tasks on two levels; the checker accepts decimal comma and point and recognises typical slips (factor 1000, swapped division).
 
-Eine Lektion ist abgeschlossen nach Schnellcheck, Werkstatt und selbst eingeschätzter Antwort in Level 1, dazu allen Modellvergleichen und gegebenenfalls drei selbst gelösten Rechenaufgaben. Texte werden **nicht automatisch bewertet**.
+A lesson is complete after the quick check, the workshop and a self-assessed Level 1 answer, plus all model comparisons and, where present, three calculation tasks solved without the solution. Texts are **not graded automatically**.
 
-## Zeichnungen und Farben
+## Drawings and colours
 
-- Eine Akzentfarbe je Abschnitt (`[data-lb]` in `src/styles.css`): Beere für Magnete und Dichte, Bernstein für Licht, Blau für Strom.
-- Eine Farbe je Art von Größe, in allen Zeichnungen gleich und in der Legende benannt: Nordpol und positive Ladung rot, Südpol grün, Elektronen und negative Ladung blau, Länge und Volumen petrol, Kraft orange, Licht gold, Winkel violett, Körper und Masse magenta. Farbiges Licht und Körperfarben erscheinen in ihrer echten Farbe.
-- Bewegung startet nie von selbst: Im geschlossenen Stromkreis und in der eingeschalteten Schaltung zeigt „Bewegung zeigen“ die wandernden Elektronen.
+- One accent per section (`[data-lb]` in `src/styles.css`): berry for magnets and density, amber for light, blue for current.
+- One colour per kind of quantity, the same in every drawing and named in its legend: north pole and positive charge red, south pole green, electrons and negative charge blue, length and volume petrol, force orange, light gold, angle violet, body and mass magenta. Coloured light and body colours appear in their real colour.
+- Motion never starts on its own. In a closed circuit and a switched-on circuit, „Bewegung zeigen“ moves the electrons from the minus to the plus pole, only along closed branches.
+- The continuous lamp in the shadow lab shades every point of the screen by the share of the lamp the object hides from it, so it never shows a lit gap between two shadows.
 
-`tests/visual.test.ts` prüft Textalternativen, Legenden, endliche Koordinaten und einen Kontrast von mindestens 4,5 : 1 für Textfarben in beiden Farbschemata.
+`tests/visual.test.ts` checks text alternatives, legends, finite coordinates, the electron paths, the coil's battery and a contrast of at least 4.5 : 1 for text colours in both themes.
 
-## Echte Experimente
+## Real experiments
 
-Der Fachlehrplan nennt sechs Schülerexperimente (Permanentmagnet, Dichtebestimmung, Farben beleuchteter Gegenstände, Schattenbilder, magnetische Wirkung des Stroms, Schaltungen im Alltag). **Modelle ersetzen sie nicht.** Das lokale Versuchsnotizbuch hat für jedes einen Platz mit Frage, Aufbau, Beobachtungen und Ergebnis; „selbst durchgeführt“ ist eine eigene Angabe. Fotos, Skizzen auf Papier, Internetrecherche und der Aufbau mit Schaltungssoftware gehören in den Unterricht; [coverage.json](coverage.json) kennzeichnet solche Kompetenzen mit `supported`.
+The Fachlehrplan names six Schülerexperimente (permanent magnet, density, colours of lit objects, shadow images, magnetic effect of current, everyday circuits). **Models do not replace them.** The local experiment notebook has a slot for each with question, setup, observations and result; „selbst durchgeführt“ is the learner's own statement. Photos, drawings on paper, internet research and building circuits with circuit software belong in class; [coverage.json](coverage.json) marks those competences `supported`.
 
-Keine Konten, keine Telemetrie, keine externen Laufzeitanfragen. Fortschritt, Texte und Notizen bleiben in `localStorage` (`physik_gym7_academy_progress_v1`). Fachquellen sind einfache Links. Lehrervideos folgen als eigener Schritt.
+No accounts, no telemetry, no external runtime requests. Progress, texts and notes stay in `localStorage` (`physik_gym7_academy_progress_v1`). Sources are plain links. Teacher videos follow as a separate step.
 
-## ZAM und vorhandene Karten
+## ZAM and existing cards
 
-`cell.json` ist der einzige Ort der **63 Karten**: ein Atom je Lektion mit zwei schnellen Karten und einer Synthesekarte, gebunden an `nt_gym`, Jahrgangsstufe 7, `lb1.1` bis `lb1.3`. Jede Karte verweist auf `#lesson=<id>`; die Tests pinnen alle 21 Anker.
+`cell.json` is the only place of the **63 cards**: one atom per lesson with two fast cards and one synthesis card, bound to `nt_gym`, grade 7, `lb1.1` to `lb1.3`. Every card cites `#lesson=<id>`; the tests pin all 21 anchors.
 
-`replaces-de-by.json` ist ein **Vorschlag** (`proposal-only`, nicht freigegeben) für die 8 Karten der beiden Altzellen `de-by:gymnasium-7-physik-…`: alle C, aktiv lassen. Die Zelle deklariert kein `replaces` und kein `retired_items`. Die Schnappschüsse liegen bytegenau in `tests/fixtures/`.
+`replaces-de-by.json` is a **proposal** (`proposal-only`, not approved) for the 8 cards of the two legacy cells `de-by:gymnasium-7-physik-…`: all C, keep active. The cell declares no `replaces` and no `retired_items`. Byte-exact snapshots are in `tests/fixtures/`.
 
-Näheres: [docs/physik-gymnasium-7-coverage.md](../docs/physik-gymnasium-7-coverage.md).
+Details: [docs/physik-gymnasium-7-coverage.md](../docs/physik-gymnasium-7-coverage.md).
 
-## Entwickeln und prüfen
+## Develop and check
 
 ```bash
 npm ci
-npm run dev          # http://localhost:5265/physik-gymnasium-7/
+npm run dev          # http://localhost:5266/physik-gymnasium-7/
 npm test
 npm run typecheck
 npm run build
-npm run package:zip  # Single-file-App und Offline-Launcher in release/
+npm run package:zip  # single-file app and offline launchers in release/
 ```
 
-Keine zusätzliche Abhängigkeit gegenüber `physik-gymnasium-11`, dessen Shell dieses Paket übernimmt.
+No dependency beyond those of `physik-gymnasium-11`, whose shell this package takes over.

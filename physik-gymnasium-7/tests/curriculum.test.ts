@@ -140,7 +140,8 @@ describe("published lesson and cell contract", () => {
         expect(paragraph).not.toMatch(/<[a-z/]/i);
       }
       // Every lesson works through a concrete case.
-      expect(lesson.paragraphs.some((p) => p.startsWith("Beispiel"))).toBe(true);
+      // The shell sets a paragraph apart as the example only when it opens with "Beispiel: ".
+      expect(lesson.paragraphs.filter((p) => p.startsWith("Beispiel: "))).toHaveLength(1);
       expect(lesson.takeaway.length).toBeGreaterThan(40);
       expect(lesson.formulas.length).toBeGreaterThanOrEqual(3);
       expect(new Set([lesson.quiz.answer, ...lesson.quiz.wrong]).size).toBe(3);
@@ -204,7 +205,7 @@ describe("published lesson and cell contract", () => {
     }
     expect(perSection).toEqual({ "1.1": 5, "1.2": 4, "1.3": 5 });
     // Real experiments, photos and building circuits happen in class.
-    expect(coverage.rows.filter((r) => r.status === "supported")).toHaveLength(5);
+    expect(coverage.rows.filter((r) => r.status === "supported")).toHaveLength(7);
     for (const content of coverage.contents) {
       expect(curriculumText.includes(normal(content.content)), content.content).toBe(true);
       for (const id of content.lessons) expect(findLesson(id), id).toBeDefined();

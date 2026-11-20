@@ -543,16 +543,41 @@ export function shadowSize(a: number, g: number) {
   return { size: (g * SCREEN) / a, factor: SCREEN / a };
 }
 
-/** Two lamps (or the ends of a lamp) d cm apart; an object of 6 cm width a cm away. */
+/**
+ * Two small lamps d cm apart, or a continuous lamp of length d, and an
+ * object of 6 cm width a cm away. The core shadow is the same for both:
+ * there neither lamp nor any point of the continuous lamp is visible.
+ * Two lamps can leave a lit gap between two half shadows; a continuous
+ * lamp cannot, because the object always hides its middle part from the
+ * centre of the screen.
+ */
 export const OBJECT_WIDTH = 6;
-export function penumbra(d: number, a: number) {
+export function penumbra(d: number, a: number, extended = false) {
   const k = SCREEN / a,
     each = OBJECT_WIDTH * k,
     centre = (d / 2) * (k - 1),
     core = Math.max(0, each - 2 * centre),
     total = each + 2 * centre,
-    gap = Math.max(0, 2 * centre - each);
-  return { core, total, half: (total - core - gap) / 2, gap, each };
+    gap = extended ? 0 : Math.max(0, 2 * centre - each);
+  return {
+    core,
+    total,
+    half: (total - core - gap) / 2,
+    gap,
+    each,
+    centreShade: extended ? blockedShare(d, a, 0) : core > 0 ? 1 : gap > 0 ? 0 : 0.5,
+  };
+}
+/**
+ * The share of a continuous lamp (from −d/2 to d/2) that the object hides
+ * from the point y cm on the screen: 0 fully lit, 1 core shadow.
+ */
+export function blockedShare(d: number, a: number, y: number): number {
+  const q = a / SCREEN,
+    lo = (-OBJECT_WIDTH / 2 - y * q) / (1 - q),
+    hi = (OBJECT_WIDTH / 2 - y * q) / (1 - q),
+    hidden = Math.max(0, Math.min(hi, d / 2) - Math.max(lo, -d / 2));
+  return d > 0 ? hidden / d : Math.abs(y) <= (OBJECT_WIDTH / 2) / q ? 1 : 0;
 }
 
 /** Moon at angle theta from the direction of the sun (0 = new moon). */

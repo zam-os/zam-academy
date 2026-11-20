@@ -164,7 +164,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Mathematik 12 Gymnasium: cd mathematik-gymnasium-12 (dev server on :5222)
 # Englisch 5: cd englisch-realschule-5 (dev server on :5223)
 # Mathematik 13 Gymnasium: cd mathematik-gymnasium-13 (dev server on :5225)
-# Physik 7 Gymnasium: cd physik-gymnasium-7 (dev server on :5265)
+# Physik 7 Gymnasium: cd physik-gymnasium-7 (dev server on :5266)
 # Physik 11 Gymnasium: cd physik-gymnasium-11 (dev server on :5226)
 # Geography 5 Realschule: cd geographie-realschule-5 (dev server on :5240)
 # Geography 6 Realschule: cd geographie-realschule-6 (dev server on :5257)

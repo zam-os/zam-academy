@@ -202,6 +202,52 @@ describe("figures of the model lab", () => {
   });
 });
 
+describe("circuit drawings (review of #169)", () => {
+  const flows = (values: Record<string, number>) =>
+    [...renderFigure("schaltung", values).matchAll(/<path d="([^"]+)" class="ln q-m flow"\/>/g)].map((m) => m[1]);
+  it("lets electrons leave the minus pole and reach the plus pole", () => {
+    // The battery sits at x = 60 between y = 135 (plus) and y = 145 (minus).
+    for (const values of [
+      { type: 0, a: 1, b: 1 },
+      { type: 1, a: 1, b: 0 },
+      { type: 1, a: 0, b: 1 },
+      { type: 2, a: 1, b: 1 },
+      { type: 2, a: 0, b: 0 },
+    ])
+      for (const d of flows(values)) {
+        expect(d.startsWith("M60 150"), JSON.stringify(values)).toBe(true);
+        expect(d.endsWith("V130"), JSON.stringify(values)).toBe(true);
+      }
+    expect(flows({ type: 0, a: 1, b: 0 })).toEqual([]);
+  });
+  it("animates only the closed branch of the ODER circuit", () => {
+    const upper = flows({ type: 1, a: 1, b: 0 }),
+      lower = flows({ type: 1, a: 0, b: 1 });
+    expect(upper).toHaveLength(1);
+    expect(lower).toHaveLength(1);
+    // Branch B runs 60 px below the top wire.
+    expect(upper[0]).not.toContain("V120");
+    expect(lower[0]).toContain("V120");
+    expect(flows({ type: 1, a: 1, b: 1 })).toHaveLength(2);
+  });
+  it("follows the chosen wire in the Wechselschaltung", () => {
+    expect(flows({ type: 2, a: 1, b: 1 })[0]).toContain(" 80H");
+    expect(flows({ type: 2, a: 0, b: 0 })[0]).toContain(" 130H");
+  });
+  it("connects the coil's battery, swaps its poles on reversal and opens the switch", () => {
+    const plus = (html: string) => /<line x1="(\d+)" y1="215" x2="\1" y2="245"/.exec(html)?.[1];
+    const asDrawn = renderFigure("spule", { on: 1, dir: 0, n: 200, core: 1 }),
+      reversed = renderFigure("spule", { on: 1, dir: 1, n: 200, core: 1 }),
+      off = renderFigure("spule", { on: 0, dir: 0, n: 200, core: 1 });
+    expect(plus(asDrawn)).toBe("215");
+    expect(plus(reversed)).toBe("225");
+    // The wires end at the plates.
+    expect(asDrawn).toContain("H215M225 230H");
+    expect(asDrawn).toContain('x1="150" y1="230" x2="176" y2="230"');
+    expect(off).not.toContain('x1="150" y1="230" x2="176" y2="230"');
+  });
+});
+
 describe("layout of the model lab", () => {
   it("lets the value of a slider wrap below a long name instead of leaving the card", () => {
     const head = RULES.find(([selector]) => selector === ".control-head")?.[1] ?? "";

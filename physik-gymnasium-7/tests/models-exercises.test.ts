@@ -7,6 +7,7 @@ import type { CalculationKind, Level, ModelKind } from "../src/model/types";
 import {
   applyScenario,
   atomCharge,
+  blockedShare,
   bodyColour,
   circuit,
   clipsHeld,
@@ -149,7 +150,7 @@ describe("physical invariants and limiting cases", () => {
     expect(shadowSize(10, 4).size).toBeGreaterThan(shadowSize(90, 4).size);
   });
   it("splits shadows into core and half shadow as in the worked example", () => {
-    expect(penumbra(8, 50)).toEqual({ core: 4, total: 20, half: 8, gap: 0, each: 12 });
+    expect(penumbra(8, 50)).toMatchObject({ core: 4, total: 20, half: 8, gap: 0, each: 12 });
     expect(penumbra(16, 50).core).toBe(0);
     expect(penumbra(16, 50).gap).toBe(4);
     expect(penumbra(4, 50).core).toBeGreaterThan(penumbra(16, 50).core);
@@ -158,6 +159,28 @@ describe("physical invariants and limiting cases", () => {
       for (const a of [20, 50, 80]) {
         const r = penumbra(d, a);
         expect(r.core + 2 * r.half + r.gap).toBeCloseTo(r.total);
+      }
+  });
+  it("never leaves a lit gap behind a continuous lamp (review of #169)", () => {
+    // 16 cm lamp, object 50 cm away: two lamps leave a lit gap, a continuous lamp does not.
+    expect(penumbra(16, 50).gap).toBe(4);
+    const continuous = penumbra(16, 50, true);
+    expect(continuous).toMatchObject({ core: 0, gap: 0, total: 28 });
+    // The 6 cm object hides the middle 12 cm of the lamp from the centre of the screen.
+    expect(continuous.centreShade).toBeCloseTo(0.75);
+    expect(blockedShare(16, 50, 0)).toBeCloseTo(0.75);
+    expect(blockedShare(8, 50, 0)).toBe(1);
+    expect(blockedShare(16, 50, 14)).toBeCloseTo(0);
+    for (const d of [2, 8, 16, 20])
+      for (const a of [20, 30, 50, 80]) {
+        const r = penumbra(d, a, true);
+        expect(r.gap).toBe(0);
+        expect(r.core + 2 * r.half).toBeCloseTo(r.total);
+        // Inside the core every point of the lamp is hidden; inside the shadow some are.
+        if (r.core > 0) expect(blockedShare(d, a, r.core / 2 - 0.01)).toBeCloseTo(1, 2);
+        for (let y = -r.total / 2 + 0.05; y < r.total / 2; y += 0.5)
+          expect(blockedShare(d, a, y)).toBeGreaterThan(0);
+        expect(blockedShare(d, a, r.total / 2 + 0.1)).toBe(0);
       }
   });
   it("follows the Moon through its phases", () => {

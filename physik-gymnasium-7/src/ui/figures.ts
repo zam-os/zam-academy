@@ -22,6 +22,7 @@ import {
   ordering,
   clipsHeld,
   penumbra,
+  blockedShare,
   poles,
   pseudoNoise,
   RUB_PAIRS,
@@ -174,6 +175,20 @@ function battery(x: number, y: number): string {
     line(x - 8, y + 5, x + 8, y + 5, "ink", "thick") +
     text(x + 26, y - 1, "+", "ink", "start", "strong") +
     text(x + 26, y + 16, "−", "ink", "start", "strong")
+  );
+}
+/**
+ * A battery in a horizontal wire: the long plate is the plus pole. The
+ * wires end at the plates, at x − 5 and x + 5.
+ */
+function batteryH(x: number, y: number, plusLeft: boolean): string {
+  const plusX = plusLeft ? x - 5 : x + 5,
+    minusX = plusLeft ? x + 5 : x - 5;
+  return (
+    line(plusX, y - 15, plusX, y + 15, "ink", "thick") +
+    line(minusX, y - 8, minusX, y + 8, "ink", "thick") +
+    text(plusX + (plusLeft ? -10 : 10), y - 18, "+", "ink", "middle", "strong") +
+    text(minusX + (plusLeft ? 10 : -10), y - 18, "−", "ink", "middle", "strong")
   );
 }
 /** A simple eye looking left. */
@@ -639,7 +654,7 @@ const FIGURES: Record<ModelKind, (v: Values) => Figure> = {
   },
   halbschatten: (v) => {
     const extended = v.source === 1,
-      r = penumbra(v.d, v.a),
+      r = penumbra(v.d, v.a, extended),
       lampX = 40,
       screenX = 440,
       px = (screenX - lampX) / SCREEN,
@@ -652,17 +667,22 @@ const FIGURES: Record<ModelKind, (v: Values) => Figure> = {
       sy = (cm: number) => clamp(cy - cm * vy, 6, 294);
     let body = line(screenX, 10, screenX, 290, "ink");
     const lo = edge(lamps[1], -OBJECT_WIDTH / 2),
-      hi = edge(lamps[0], OBJECT_WIDTH / 2),
-      coreLo = edge(lamps[0], -OBJECT_WIDTH / 2),
-      coreHi = edge(lamps[1], OBJECT_WIDTH / 2);
-    // Screen bands: half shadow (or transition) outside, core shadow inside.
-    if (extended)
-      body +=
-        `<defs><linearGradient id="ph7-up" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="currentColor" stop-opacity="0.9"/><stop offset="1" stop-color="currentColor" stop-opacity="0"/></linearGradient><linearGradient id="ph7-down" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="currentColor" stop-opacity="0.9"/><stop offset="1" stop-color="currentColor" stop-opacity="0"/></linearGradient></defs>` +
-        `<g class="q-ink gradient"><rect x="${screenX}" y="${n(sy(hi))}" width="12" height="${n(Math.max(0, sy(Math.max(coreHi, coreLo)) - sy(hi)))}" fill="url(#ph7-up)"/><rect x="${screenX}" y="${n(sy(Math.min(coreLo, coreHi)))}" width="12" height="${n(Math.max(0, sy(lo) - sy(Math.min(coreLo, coreHi))))}" fill="url(#ph7-down)"/></g>`;
-    else body += rect(screenX, sy(hi), 12, sy(lo) - sy(hi), "mute", "soft-strong");
-    if (r.core > 0) body += rect(screenX, sy(r.core / 2), 12, sy(-r.core / 2) - sy(r.core / 2), "ink");
-    if (r.gap > 0) body += rect(screenX, sy(r.gap / 2), 12, sy(-r.gap / 2) - sy(r.gap / 2), "e", "soft");
+      hi = edge(lamps[0], OBJECT_WIDTH / 2);
+    if (extended) {
+      // The screen in thin slices, each as dark as the share of the lamp it cannot see.
+      const slices = 72,
+        step = (hi - lo) / slices;
+      for (let i = 0; i < slices; i++) {
+        const y = lo + (i + 0.5) * step,
+          share = blockedShare(v.d, v.a, y);
+        if (share < 0.02) continue;
+        body += `<rect x="${screenX}" y="${n(sy(y + step / 2))}" width="12" height="${n(Math.max(0.6, sy(y - step / 2) - sy(y + step / 2) + 0.3))}" class="fl q-${share > 0.98 ? "ink" : "mute"}" style="fill-opacity:${n(share > 0.98 ? 1 : 0.15 + 0.75 * share)}"/>`;
+      }
+    } else {
+      body += rect(screenX, sy(hi), 12, sy(lo) - sy(hi), "mute", "soft-strong");
+      if (r.core > 0) body += rect(screenX, sy(r.core / 2), 12, sy(-r.core / 2) - sy(r.core / 2), "ink");
+      if (r.gap > 0) body += rect(screenX, sy(r.gap / 2), 12, sy(-r.gap / 2) - sy(r.gap / 2), "e", "soft");
+    }
     for (const lampY of lamps)
       body +=
         line(lampX, sy(lampY), screenX, sy(edge(lampY, OBJECT_WIDTH / 2)), "e", "thin") +
@@ -670,19 +690,27 @@ const FIGURES: Record<ModelKind, (v: Values) => Figure> = {
     body += extended
       ? rect(lampX - 5, sy(v.d / 2), 10, v.d * vy, "e", "body")
       : dot(lampX, sy(lamps[0]), 7, "e", "body") + dot(lampX, sy(lamps[1]), 7, "e", "body");
+    const verdict =
+      r.core > 0
+        ? `Kernschatten ${fmt(r.core, 1)} cm`
+        : extended
+          ? `Kein Kernschatten; Mitte zu ${fmt(100 * r.centreShade, 0)} % abgeschattet`
+          : r.gap > 0
+            ? "Kein Kernschatten; Mitte wieder hell"
+            : "Kein Kernschatten";
     body +=
       rect(ox - 3, sy(OBJECT_WIDTH / 2), 6, OBJECT_WIDTH * vy, "x") +
       text(screenX - 8, Math.max(16, sy(hi) - 8), extended ? "Übergangsschatten" : "Halbschatten", "mute", "end", "tick") +
-      (r.core > 0 ? text(screenX - 8, cy + 4, `Kernschatten ${fmt(r.core, 1)} cm`, "ink", "end", "tick") : text(screenX - 8, cy + 4, "kein Kernschatten", "ink", "end", "tick"));
+      text(240, 292, verdict, r.core > 0 ? "ink" : "mute", "middle", "tick");
     return {
-      label: `${extended ? "Eine ausgedehnte Leuchte" : "Zwei kleine Lampen"} über ${fmt(v.d)} Zentimeter, Gegenstand von ${OBJECT_WIDTH} Zentimetern in ${fmt(v.a)} Zentimetern Abstand. Kernschatten ${fmt(r.core, 1)} Zentimeter, ${extended ? "Übergangsschatten" : "Halbschatten"} je ${fmt(r.half, 1)} Zentimeter.`,
+      label: `${extended ? "Eine ausgedehnte Leuchte" : "Zwei kleine Lampen"} über ${fmt(v.d)} Zentimeter, Gegenstand von ${OBJECT_WIDTH} Zentimetern in ${fmt(v.a)} Zentimetern Abstand. ${verdict}; ${extended ? "Übergangsschatten" : "Halbschatten"} je ${fmt(r.half, 1)} Zentimeter.`,
       height: 300,
       body,
       legend: [
         ["e", "Lampen und Randstrahlen"],
         ["x", "Gegenstand"],
-        ["ink", "Kernschatten auf dem Schirm"],
-        ["mute", extended ? "Übergangsschatten" : "Halbschatten"],
+        ["ink", "Schirm; schwarz: Kernschatten ohne Licht"],
+        ["mute", extended ? "Übergangsschatten: je dunkler, desto mehr der Leuchte ist verdeckt" : "Halbschatten: Licht nur einer Lampe"],
       ],
     };
   },
@@ -938,9 +966,11 @@ const FIGURES: Record<ModelKind, (v: Values) => Figure> = {
       body += `<path d="M${n(x)} ${cy + 34}C${n(x - step * 0.6)} ${cy}, ${n(x - step * 0.6)} ${cy - 34}, ${n(x + step / 2)} ${cy - 34}C${n(x + step * 1.1)} ${cy - 34}, ${n(x + step * 1.1)} ${cy + 20}, ${n(x + step)} ${cy + 34}" class="ln q-x"/>`;
     }
     body +=
-      `<path d="M${x0} ${cy + 34}V230H190M250 230H${x1}V${cy + 34}" class="ln q-ink"/>` +
-      battery(220, 230) +
-      (v.on ? "" : line(170, 230, 190, 210, "ink")) +
+      `<path d="M${x0} ${cy + 34}V230H150M176 230H215M225 230H${x1}V${cy + 34}" class="ln q-ink"/>` +
+      batteryH(220, 230, v.dir === 0) +
+      dot(150, 230, 3.5, "ink") +
+      dot(176, 230, 3.5, "ink") +
+      (v.on ? line(150, 230, 176, 230, "ink") : line(150, 230, 172, 210, "ink")) +
       text(220, 270, v.on ? (v.dir ? "umgepolt, Strom an" : "Strom an") : "Strom aus", "ink", "middle", "tick");
     if (r.magnetic) {
       const rightN = r.rightPole === "Nordpol";
@@ -977,16 +1007,22 @@ const FIGURES: Record<ModelKind, (v: Values) => Figure> = {
         (closed ? line(x - 22, y, x + 22, y, "ink") : line(x - 22, y, x + 16, y - 20, "ink")) +
         text(x, y - 26, `${name} = ${closed ? 1 : 0}`, "ink", "middle", "tick");
     let body = battery(L, (T + B) / 2) + lampSymbol(R, (T + B) / 2, on);
-    let current = "";
+    let current: string[] = [];
     if (v.type === 0) {
       body += `<path d="M${L} ${(T + B) / 2 - 10}V${T}H148M192 ${T}H268M312 ${T}H${R}V${(T + B) / 2 - 14}M${R} ${(T + B) / 2 + 14}V${B}H${L}V${(T + B) / 2 + 10}" class="ln q-ink"/>` + sw(170, T, v.a === 1, "A") + sw(290, T, v.b === 1, "B");
-      current = `M${L} ${B}V${T}H${R}V${B}H${L}`;
+      current = [`M${L} ${(T + B) / 2 + 10}V${B}H${R}V${T}H${L}V${(T + B) / 2 - 10}`];
     } else if (v.type === 1) {
       body +=
         `<path d="M${L} ${(T + B) / 2 - 10}V${T}H198M242 ${T}H${R}V${(T + B) / 2 - 14}M${R} ${(T + B) / 2 + 14}V${B}H${L}V${(T + B) / 2 + 10}M150 ${T}V${T + 60}H198M242 ${T + 60}H300V${T}" class="ln q-ink"/>` +
         sw(220, T, v.a === 1, "A") +
         sw(220, T + 60, v.b === 1, "B");
-      current = `M${L} ${B}V${T}H${R}V${B}H${L}`;
+      // Only the closed branches carry electrons.
+      const start = `M${L} ${(T + B) / 2 + 10}V${B}H${R}V${T}H300`,
+        end = `H${L}V${(T + B) / 2 - 10}`;
+      current = [
+        ...(v.a === 1 ? [`${start}H150${end}`] : []),
+        ...(v.b === 1 ? [`${start}V${T + 60}H150V${T}${end}`] : []),
+      ];
     } else {
       const sA = 150,
         sB = 330,
@@ -1004,9 +1040,11 @@ const FIGURES: Record<ModelKind, (v: Values) => Figure> = {
         text(sA, up - 16, `A: Hebel ${v.a ? "oben" : "unten"}`, "ink", "middle", "tick") +
         text(sB, up - 16, `B: Hebel ${v.b ? "oben" : "unten"}`, "ink", "middle", "tick");
       const wire = v.a ? up : down;
-      current = `M${L} ${B}V${(up + down) / 2}H${sA - 24}L${sA + 20} ${wire}H${sB - 20}L${sB + 24} ${(up + down) / 2}H${R}V${B}H${L}`;
+      current = [
+        `M${L} ${(T + B) / 2 + 10}V${B}H${R}V${(up + down) / 2}H${sB + 24}L${sB - 20} ${wire}H${sA + 20}L${sA - 24} ${(up + down) / 2}H${L}V${(T + B) / 2 - 10}`,
+      ];
     }
-    if (on) body += `<path d="${current}" class="ln q-m flow"/>`;
+    if (on) for (const d of current) body += `<path d="${d}" class="ln q-m flow"/>`;
     body += text(240, 262, on ? "Lampe an" : "Lampe aus", on ? "ok" : "mute", "middle", "strong");
     return {
       label: `${["UND-Schaltung: zwei Schalter in Reihe", "ODER-Schaltung: zwei Schalter parallel", "Wechselschaltung mit zwei Wechselschaltern"][v.type]}. Schalter A = ${v.a}, Schalter B = ${v.b}. Die Lampe ist ${on ? "an" : "aus"}.`,
@@ -1018,7 +1056,7 @@ const FIGURES: Record<ModelKind, (v: Values) => Figure> = {
         ["m", "geschlossener Weg der Elektronen"],
         ["mute", "Stromkreis unterbrochen: Lampe aus"],
       ],
-      ...(on ? { motion: "Die Elektronen laufen im geschlossenen Stromkreis um." } : {}),
+      ...(on ? { motion: "Die Elektronen laufen vom Minuspol durch die geschlossenen Schalter und die Lampe zum Pluspol." } : {}),
     };
   },
 };
@@ -1027,29 +1065,32 @@ const FIGURES: Record<ModelKind, (v: Values) => Figure> = {
 const ILLUSTRATIONS: Record<string, () => Figure> = {
   erdmagnetfeld: () => {
     const cx = 240,
-      cy = 160,
+      cy = 165,
       R = 82;
     let body = "";
-    for (const k of [1.35, 1.9, 2.6])
+    for (const k of [1.3, 1.75, 2.2])
       body +=
         `<ellipse cx="${n(cx - R * k * 0.55)}" cy="${cy}" rx="${n(R * k * 0.55)}" ry="${n(R * k * 0.62)}" class="ln q-mute thin"/>` +
         `<ellipse cx="${n(cx + R * k * 0.55)}" cy="${cy}" rx="${n(R * k * 0.55)}" ry="${n(R * k * 0.62)}" class="ln q-mute thin"/>`;
     body +=
       `<circle cx="${cx}" cy="${cy}" r="${R}" class="earth"/>` +
-      rect(cx - 10, cy - 52, 20, 52, "sp", "body") +
-      rect(cx - 10, cy, 20, 52, "p", "body") +
-      text(cx + 18, cy - 30, "S", "ink", "start", "strong") +
-      text(cx + 18, cy + 40, "N", "ink", "start", "strong") +
-      text(cx, cy - R - 14, "geographischer Nordpol", "ink", "middle", "tick") +
-      text(cx, cy + R + 24, "geographischer Südpol", "ink", "middle", "tick") +
-      needle(cx - 150, cy - 60, 30, 90, 3.5) +
-      needle(cx + 150, cy - 60, 30, 90, 3.5) +
-      needle(cx - 170, cy + 40, 30, 90, 3.5) +
-      text(cx - 160, cy + 76, "Kompassnadeln zeigen nach Norden", "ink", "start", "tick");
+      `<rect x="${cx - 11}" y="${cy - 54}" width="22" height="54" class="magnet-south"/>` +
+      `<rect x="${cx - 11}" y="${cy}" width="22" height="54" class="magnet-north"/>` +
+      `<text x="${cx}" y="${cy - 21}" text-anchor="middle" class="on-dot">S</text>` +
+      `<text x="${cx}" y="${cy + 33}" text-anchor="middle" class="on-dot">N</text>` +
+      line(cx, cy - R, cx, 32, "ink", "thin") +
+      text(cx, 24, "geographischer Nordpol: magnetischer Südpol", "ink", "middle", "tick") +
+      line(cx, cy + R, cx, 300, "ink", "thin") +
+      text(cx, 318, "geographischer Südpol: magnetischer Nordpol", "ink", "middle", "tick") +
+      needle(cx - 160, cy - 62, 30, 90, 3.5) +
+      needle(cx + 160, cy - 62, 30, 90, 3.5) +
+      needle(cx - 175, cy + 50, 30, 90, 3.5) +
+      needle(cx + 175, cy + 50, 30, 90, 3.5) +
+      text(12, 50, "Kompassnadeln zeigen nach Norden", "ink", "start", "tick");
     return {
       label:
         "Die Erde mit einem gedachten Stabmagneten im Inneren. Sein magnetischer Südpol liegt beim geographischen Nordpol, sein Nordpol beim geographischen Südpol. Rundherum liegen Feldlinien; Kompassnadeln zeigen mit dem Nordpol nach Norden.",
-      height: 300,
+      height: 330,
       body,
       legend: [
         ["p", "Nordpol"],
@@ -1069,7 +1110,7 @@ const ILLUSTRATIONS: Record<string, () => Figure> = {
         out += arrow(cx + 50 * Math.cos(a), 110 + 50 * Math.sin(a), cx + 80 * Math.cos(a), 110 + 80 * Math.sin(a), "e");
       }
       for (let i = 0; i < heat; i++) {
-        const y = 80 + i * 26;
+        const y = 126 + i * 18;
         out += `<path d="M${cx + 48} ${y}c8 -6 14 6 22 0s14 6 22 0" class="ln q-f"/>`;
       }
       return out + text(cx, 214, name, "ink", "middle", "tick");

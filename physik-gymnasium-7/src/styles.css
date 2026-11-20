@@ -2119,3 +2119,14 @@ input[type="range"]::-moz-range-thumb {
   stroke: none;
   font-size: 14px;
 }
+/* Fixed pole colours carry white letters in both themes. */
+.physics-figure .magnet-north {
+  fill: #c81e1e;
+  stroke: var(--fig-bg);
+  stroke-width: 2;
+}
+.physics-figure .magnet-south {
+  fill: #047857;
+  stroke: var(--fig-bg);
+  stroke-width: 2;
+}

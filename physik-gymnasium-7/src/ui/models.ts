@@ -235,19 +235,21 @@ function modelBody(kind: ModelKind, v: Record<string, number>): string {
       );
     }
     case "halbschatten": {
-      const r = penumbra(v.d, v.a),
-        extended = v.source === 1;
+      const extended = v.source === 1,
+        r = penumbra(v.d, v.a, extended);
       return (
         kv(
           [
-            ["Schatten einer einzelnen Lampe", `${fmt(r.each, 1)} cm`],
+            [extended ? "Schatten eines Punkts der Leuchte" : "Schatten einer einzelnen Lampe", `${fmt(r.each, 1)} cm`],
             ["Kernschatten", r.core > 0 ? `${fmt(r.core, 1)} cm` : "keiner"],
             [extended ? "Übergangsschatten je Seite" : "Halbschatten je Seite", `${fmt(r.half, 1)} cm`],
             ["Ganzer Schattenbereich", `${fmt(r.total, 1)} cm`],
+            ...(extended && r.core === 0 ? [["Mitte des Schirms abgeschattet", `${fmt(100 * r.centreShade, 0)} %`]] : []),
           ],
           extended ? "Ausgedehnte Leuchte" : "Zwei kleine Lampen",
         ) +
-        (r.gap > 0 ? verdict("Die beiden Schatten haben sich getrennt: Dazwischen ist der Schirm wieder hell.") : "") +
+        (r.gap > 0 ? verdict("Die beiden Schatten haben sich getrennt: Dazwischen sieht der Schirm beide Lampen und ist wieder hell.") : "") +
+        (extended && r.core === 0 ? verdict("Kein Kernschatten, aber keine helle Lücke: Die Mitte sieht nur einen Teil der Leuchte.") : "") +
         note(`Gegenstand ${OBJECT_WIDTH_TEXT} breit, Schirm ${SCREEN} cm von den Lampen entfernt. Bei der ausgedehnten Leuchte wird es vom Kernschatten nach außen allmählich heller.`)
       );
     }
