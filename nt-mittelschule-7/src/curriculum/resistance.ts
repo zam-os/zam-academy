@@ -20,8 +20,8 @@ export const RESISTANCE = makeStage(
 			title: "Wie stark ein Bauteil den Strom begrenzt",
 			subtitle: "Berechne aus Spannung und Stromstärke den Widerstand.",
 			text: [
-				"Ein enger Durchgang bremst in einem Vergleichsmodell einen Fluss. In einem elektrischen Kreis begrenzt ein größerer Widerstand bei gleicher Spannung die Stromstärke. Das Modell hilft bei der Vorstellung. Elektrische Ladungen bewegen sich in einem Leiter anders als Personen in einem Durchgang.",
-				"Bei 4 V und 0,1 A ist der Widerstand 4 V geteilt durch 0,1 A, also 40 Ω. Liegen an einem ohmschen Widerstand bei gleichbleibender Temperatur 8 V an, fließen 0,2 A und der Quotient bleibt 40 Ω. Nicht jedes Bauteil verhält sich so. Bei einem warm werdenden Glühfaden kann sich der Widerstand ändern.",
+				"Ein enger Durchgang bremst in einem Vergleichsmodell einen Fluss. In einem elektrischen Kreis begrenzt ein größerer Widerstand bei gleicher Spannung die Stromstärke. Der Durchgang veranschaulicht, wie der Fluss begrenzt wird. Die Bewegung elektrischer Ladungen im Metall folgt anderen Regeln.",
+				"Bei 4 V und 0,1 A ist der Widerstand 4 V geteilt durch 0,1 A, also 40 Ω. Liegen an einem ohmschen Widerstand bei gleichbleibender Temperatur 8 V an, fließen 0,2 A und der Quotient bleibt 40 Ω. Dieses proportionale Verhältnis von Spannung und Stromstärke bei konstanter Temperatur heißt Ohm’sches Gesetz, benannt nach Georg Simon Ohm. Für andere Bauteile kann sich der Quotient verändern. Bei einem warm werdenden Glühfaden kann sich der Widerstand ändern.",
 			],
 			rule: "R = U ÷ I. Miss U in Volt und I in Ampere. Der Quotient hat die Einheit Ohm (Ω).",
 			quiz: [

@@ -32,7 +32,7 @@ Download both official Grade 7 pages with a browser User-Agent and pass their HT
 
 ## Verification
 
-- `npm ci`, `npm run typecheck`, `npm test` and `npm run package:zip` completed. The 116 tests include numeric answers, lesson and track bindings, and reachable goals for all 36 models. The ZIP check compares the archived HTML with the standalone build and verifies all launch scripts.
+- `npm ci`, `npm run typecheck`, `npm test` and `npm run package:zip` completed. The 118 tests include numeric answers, lesson and track bindings, and reachable goals for all 36 models. The ZIP check compares the archived HTML with the standalone build and verifies all launch scripts.
 - `node scripts/check-curriculum.mjs <R7.html> <M7.html>` matched 36 R7 and 41 M7 expectations exactly, with zero missing or changed rows.
 - `node --test scripts/build-catalog.test.mjs scripts/academy-registry.test.mjs scripts/package-version.test.mjs` passed 69 tests. `node scripts/validate-cells.mjs` installed the 108 items with the CI-pinned zam-core 0.54.0.
 - Chromium DevTools checked the extracted ZIP app at both exercise levels and in both color themes for all 36 lessons. The browser checks also exercised track selection, notes, quiz feedback, atom balance, two parallel branches, gas-exchange direction, mobile layout, storage after reload, and the ZAM dialog. The offline document initiated zero HTTP(S) requests.

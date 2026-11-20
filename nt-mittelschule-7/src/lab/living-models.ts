@@ -47,7 +47,7 @@ export const airway = [
 	],
 	[
 		"Kehlkopf und Luftröhre",
-		"Die Luft strömt am Kehlkopf vorbei. Knorpelspangen halten die Luftröhre offen.",
+		"Die Luft strömt durch den Kehlkopf. Knorpelspangen halten die Luftröhre offen.",
 	],
 	[
 		"Bronchien und Bronchiolen",

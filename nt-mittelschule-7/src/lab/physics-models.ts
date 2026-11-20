@@ -120,12 +120,12 @@ export const physicsLabs = {
 			goal(
 				"rotation",
 				"Lass den Rotor drehen, während die Netzanbindung noch fehlt.",
-				(v) => v.wind === 1 && !v.grid,
+				(v) => v.wind > 0 && !v.grid,
 			),
 			goal(
 				"delivery",
 				"Stelle das Modell so ein, dass Energie ins Netz gelangt.",
-				(v) => v.wind === 1 && v.grid === 1,
+				(v) => v.wind > 0 && v.grid === 1,
 			),
 			goal(
 				"limit",

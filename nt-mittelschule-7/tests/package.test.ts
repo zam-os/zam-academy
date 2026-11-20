@@ -17,7 +17,7 @@ import {
 	nextLesson,
 	previousLesson,
 } from "../src/curriculum";
-import { checkTask } from "../src/exercises/checker";
+import { checkTask, wrongAnswerHint } from "../src/exercises/checker";
 import { createRng } from "../src/exercises/rng";
 import {
 	computeReadouts,
@@ -37,6 +37,7 @@ import {
 	circuitClosed,
 	exampleWire,
 	ohmicResistance,
+	physicsLabs,
 } from "../src/lab/physics-models";
 
 const shared = [
@@ -230,6 +231,38 @@ describe("chemistry models", () => {
 		expect(shells(11)).toEqual([2, 8, 1]);
 		expect(shells(18)).toEqual([2, 8, 8]);
 	});
+});
+
+it("credits rotation and grid delivery at both operating wind speeds", () => {
+	for (const wind of [1, 2]) {
+		expect(
+			reachedGoals(physicsLabs.wind, { wind, grid: 0 }).map((goal) => goal.id),
+		).toEqual(["rotation"]);
+		expect(
+			reachedGoals(physicsLabs.wind, { wind, grid: 1 }).map((goal) => goal.id),
+		).toEqual(["delivery"]);
+	}
+});
+
+it("gives a model or calculation hint for missed biology and physics tasks", () => {
+	const firstTask = (id: string) =>
+		ALL_LESSONS.find((lesson) => lesson.id === id)!.exercises[0].make(
+			createRng(1),
+			1,
+		);
+	const breathing = firstTask("atemwege");
+	const choice = breathing.fields[0];
+	if (choice.kind !== "choice") throw new Error("Expected a choice field");
+	expect(
+		wrongAnswerHint(
+			breathing,
+			checkTask(breathing, [String((choice.correctIndex + 1) % 3)]),
+		),
+	).toContain("Beobachtung oder zum Merksatz");
+	const resistance = firstTask("widerstand");
+	expect(wrongAnswerHint(resistance, checkTask(resistance, ["31"]))).toContain(
+		"Rechenweg und die Einheiten",
+	);
 });
 
 describe("electric circuits", () => {

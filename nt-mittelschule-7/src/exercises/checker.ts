@@ -202,15 +202,15 @@ const plain = (html: string) =>
     .replace(/\s*=\s*$/, "")
     .trim();
 
-/** Feedback for chemistry decisions and calculations; never reveal the result. */
+/** Helps the learner check an answer before seeing the solution. */
 export function wrongAnswerHint(task: ExerciseTask, result: TaskResult): string {
   if (result.status === "invalid")
-    return "Fülle jedes Feld aus. Dezimalzahlen mit Komma und Brüche wie 3/2 sind möglich.";
+    return "Wähle eine Antwort oder fülle das Zahlenfeld aus. Dezimalzahlen kannst du mit Komma eingeben.";
   if (result.status !== "wrong") return "";
   for (const [index, field] of task.fields.entries()) {
     if (result.fields[index].status !== "wrong") continue;
     if (field.kind === "choice")
-      return `Prüfe die Auswahl bei „${plain(field.label)}“. Vergleiche die Teilchenrolle oder die Beobachtung mit dem Modell.`;
+      return `Prüfe die Auswahl bei „${plain(field.label)}“. Welche Aussage passt zur Beobachtung oder zum Merksatz?`;
     const value = result.fields[index].parsed;
     for (const slip of field.slips ?? []) {
       if (
@@ -220,10 +220,10 @@ export function wrongAnswerHint(task: ExerciseTask, result: TaskResult): string 
         return slip.hint;
     }
     if (value !== null && field.answer !== 0 && Math.abs(value + field.answer) < 1e-8)
-      return "Prüfe das Vorzeichen: Ladung und Energieaufnahme werden mit Vorzeichen bilanziert.";
+      return "Prüfe das Vorzeichen und lies die gesuchte Größe noch einmal.";
   }
   const correct = result.fields.filter((field) => field.status === "correct").length;
   return correct
-    ? "Ein Teil stimmt schon. Prüfe die übrigen Felder, Einheiten und die kleinsten ganzzahligen Verhältnisse."
-    : "Prüfe die Stoff- oder Ladungsbilanz und die Einheiten. Der nächste Tipp hilft beim Lösungsweg.";
+    ? "Ein Teil stimmt schon. Prüfe die übrigen Felder und die angegebenen Einheiten."
+    : "Prüfe deinen Rechenweg und die Einheiten. Der nächste Tipp hilft beim Lösungsweg.";
 }
