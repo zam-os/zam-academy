@@ -8,6 +8,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | English 5 Gymnasium (Bavaria) | [`englisch-gymnasium-5/`](englisch-gymnasium-5/) | https://academy.zam-os.org/englisch-gymnasium-5/ | `zam-academy:englisch-gymnasium-5` |
 | Deutsch 5 Gymnasium (LehrplanPLUS Bayern) | [`deutsch-gymnasium-5/`](deutsch-gymnasium-5/) | https://academy.zam-os.org/deutsch-gymnasium-5/ | `zam-academy:deutsch-gymnasium-5` |
 | German 6 Realschule (Bavaria) | [`deutsch-realschule-6/`](deutsch-realschule-6/) | Built by Pages on merge | `zam-academy:deutsch-realschule-6` |
+| German 7 Realschule (Bavaria) | [`deutsch-realschule-7/`](deutsch-realschule-7/) | Built by Pages on merge | `zam-academy:deutsch-realschule-7` |
 | Grade 4 mathematics: 40 Discovery Island lessons with Milo (Bavaria) | [`mathematik-grundschule-4/`](mathematik-grundschule-4/) | https://academy.zam-os.org/mathematik-grundschule-4/ | `zam-academy:mathematik-grundschule-4` |
 | Grade 4 German: Tintos Wörterstadt, 45 lessons on language, spelling, the Grundwortschatz, reading and writing (Bavaria, LehrplanPLUS 2, 3.2/3.3, 4); the app does not rate free texts ([coverage](docs/deutsch-grundschule-4-coverage.md)) | [`deutsch-grundschule-4/`](deutsch-grundschule-4/) | https://academy.zam-os.org/deutsch-grundschule-4/ | `zam-academy:deutsch-grundschule-4` |
 | Grade 4 Heimat- und Sachunterricht: twenty discovery stations with Lotta (Bavaria) | [`hsu-grundschule-4/`](hsu-grundschule-4/) | https://academy.zam-os.org/hsu-grundschule-4/ | `zam-academy:hsu-grundschule-4` |
@@ -173,6 +174,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # English 5 Gymnasium: cd englisch-gymnasium-5 (dev server on :5247)
 # German 5 Gymnasium: cd deutsch-gymnasium-5 (dev server on :5249)
 # German 6 Realschule: cd deutsch-realschule-6 (dev server on :5254)
+# German 7 Realschule: cd deutsch-realschule-7 (dev server on :5255)
 # Biologie 5 Gymnasium: cd biologie-gymnasium-5 (dev server on :5246)
 # French 5 Gymnasium: cd franzoesisch-gymnasium-5 (dev server on :5245)
 # Englisch 5 Mittelschule: cd englisch-mittelschule-5 (dev server on :5248)
@@ -259,3 +261,5 @@ The [Informatik 6 Gymnasium package](informatik-gymnasium-6/) covers Natur und T
 The [Biologie 6 Gymnasium package](biologie-gymnasium-6/) covers Natur und Technik 6, Schwerpunkt Biologie (`NT6 1.1–1.5`) with 44 lessons in nine stations, 12 interactive models (fair test, microscope, seed dispersal, germination, waterweed, phototropism, body shape, body temperature, frog metamorphosis, echolocation, vertebrate key, pond food web), 59 drawings, two-level writing tasks and 88 linked ZAM cards. Its [coverage matrix](biologie-gymnasium-6/coverage.json) maps all 45 Kompetenzerwartungen of Lernbereich 1 verbatim. The [curriculum and legacy review](docs/biologie-gymnasium-6-coverage.md) proposes a mapping for the 16 cards of the two `de-by:gymnasium-6-biologie-*` cells (4 A, 0 B, 12 C keep-active); the cell declares no `replaces` until Thomas approves.
 
 The [Deutsch 5 Gymnasium package](deutsch-gymnasium-5/) adds 50 lessons across all four LehrplanPLUS Bayern areas (*Sprechen und Zuhören*, *Lesen und Medien*, *Schreiben*, *Sprache und Rechtschreibung*), including local audio passages, dramatic scenes (*Spielszenen*), 22 interactive language and spelling models, two-level writing tasks with self-assessment and 100 ZAM cards (`proposal-only` legacy inventory of all 16 old cards in [deutsch-gymnasium-5/replaces-de-by.json](deutsch-gymnasium-5/replaces-de-by.json)). See [Curriculum coverage and legacy inventory](docs/deutsch-gymnasium-5-coverage.md).
+
+The [Deutsch 7 Realschule package](deutsch-realschule-7/) covers all 57 verbatim LehrplanPLUS Bayern expectations across 50 lessons (10 speaking/listening, 14 reading/media, 10 writing and 16 language/spelling with interactive models), two local audio passages, case decisions, two-level writing tasks and 100 ZAM cards (`proposal-only` legacy inventory of all 10 old Grade 7 cards in [deutsch-realschule-7/replaces-de-by.json](deutsch-realschule-7/replaces-de-by.json)). See [Curriculum coverage and legacy inventory](docs/deutsch-realschule-7-coverage.md).
