@@ -1,0 +1,349 @@
+[
+  {
+    "id": "ladungen",
+    "lb": 3,
+    "title": "Elektrische Ladung und das Kern-Hülle-Modell",
+    "period": "NT7 1.3 · Elektrische Stromkreise",
+    "intro": "Es gibt zwei Arten von Ladung, und beide stecken in jedem Atom.",
+    "paragraphs": [
+      "Es gibt zwei Arten elektrischer Ladung: positive und negative. Gleichnamige Ladungen stoßen sich ab, ungleichnamige ziehen sich an, ähnlich wie bei magnetischen Polen. Ladungen und Magnetpole sind aber verschiedene Dinge: Ein geladener Stab zieht auch Papierschnipsel an, ein Magnet nicht; ein Magnet zieht Eisen an, auch wenn es gar nicht geladen ist.",
+      "Woher kommen die Ladungen? Alle Stoffe bestehen aus Atomen. Nach dem Kern-Hülle-Modell hat jedes Atom einen winzigen Atomkern in der Mitte, der positiv geladen ist; in ihm sitzen die positiv geladenen Protonen und die ungeladenen Neutronen. Um den Kern herum liegt die viel größere Atomhülle mit den negativ geladenen Elektronen. Ein Proton und ein Elektron tragen gleich viel Ladung, nur mit entgegengesetztem Vorzeichen. Hat ein Atom gleich viele Elektronen wie Protonen, ist es nach außen elektrisch neutral.",
+      "Beispiel: Ein Lithiumatom hat drei Protonen im Kern und drei Elektronen in der Hülle; es ist neutral. Gibt es ein Elektron ab, bleiben drei positive und zwei negative Ladungen: Das Teilchen ist einfach positiv geladen. Nimmt ein Sauerstoffatom mit acht Protonen zwei zusätzliche Elektronen auf, ist es zweifach negativ geladen. Die Protonen im Kern ändern sich bei solchen Vorgängen nicht; nur Elektronen der Hülle können von einem Körper zum anderen übergehen."
+    ],
+    "takeaway": "Atome haben einen positiv geladenen Kern und eine Hülle aus negativ geladenen Elektronen. Ein Körper ist geladen, wenn er mehr oder weniger Elektronen als Protonen hat.",
+    "formulas": [
+      "gleichnamige Ladungen stoßen sich ab",
+      "ungleichnamige Ladungen ziehen sich an",
+      "Atomkern: Protonen (+) und Neutronen",
+      "Atomhülle: Elektronen (−)",
+      "Elektronenüberschuss: negativ · Elektronenmangel: positiv"
+    ],
+    "sourceIds": ["lp", "atom", "rutherford"],
+    "quiz": {
+      "question": "Ein Körper hat mehr Elektronen als Protonen. Wie ist er geladen?",
+      "answer": "Er ist negativ geladen.",
+      "wrong": ["Er ist positiv geladen.", "Er ist elektrisch neutral."],
+      "explanation": "Jedes überzählige Elektron bringt eine negative Ladung mit, die kein Proton ausgleicht. Ein Elektronenüberschuss macht den Körper negativ."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Kern oder Hülle?",
+      "instruction": "Ordne jede Aussage dem Teil des Atoms zu, zu dem sie passt.",
+      "categories": ["Atomkern", "Atomhülle"],
+      "entries": [
+        { "text": "enthält die Protonen", "target": 0, "feedback": "Die Protonen sitzen im Kern." },
+        { "text": "enthält die Elektronen", "target": 1, "feedback": "Die Elektronen bilden die Hülle." },
+        { "text": "ist positiv geladen", "target": 0, "feedback": "Wegen der Protonen ist der Kern positiv." },
+        { "text": "nimmt fast den ganzen Raum des Atoms ein", "target": 1, "feedback": "Der Kern ist im Vergleich winzig." },
+        { "text": "enthält fast die ganze Masse des Atoms", "target": 0, "feedback": "Elektronen sind sehr leicht." },
+        { "text": "gibt beim Reiben Teilchen an andere Körper ab", "target": 1, "feedback": "Nur Elektronen gehen über." }
+      ],
+      "conclusion": "Der Kern ist klein, schwer und positiv; die Hülle ist groß, leicht und negativ. Laden heißt: Elektronen der Hülle wandern."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Ein Kohlenstoffatom hat sechs Protonen. Beschreibe mit dem Kern-Hülle-Modell, wie es im neutralen Zustand aufgebaut ist und was sich ändert, wenn es ein Elektron verliert.",
+        "hints": ["Wie viele Elektronen hat ein neutrales Atom?", "Was bleibt im Kern gleich?"],
+        "model": "Im Kern sitzen sechs positiv geladene Protonen und dazu Neutronen. In der Hülle befinden sich im neutralen Zustand sechs Elektronen; positive und negative Ladungen gleichen sich aus. Verliert das Atom ein Elektron, sind in der Hülle nur noch fünf Elektronen. Eine positive Ladung bleibt unausgeglichen, das Teilchen ist einfach positiv geladen. Der Kern ändert sich dabei nicht.",
+        "criteria": ["Aufbau aus Kern und Hülle beschrieben", "Neutralität mit gleicher Anzahl begründet", "Ladung nach Elektronenverlust richtig angegeben"]
+      },
+      "2": {
+        "prompt": "Erkläre, warum beim Aufladen eines Körpers immer Elektronen von einem Körper zum anderen wandern und nicht Protonen, und was das für die Ladung des abgebenden Körpers bedeutet.",
+        "hints": ["Wo sitzen Protonen, wo Elektronen?", "Was fehlt dem Körper, der Elektronen abgibt?"],
+        "model": "Die Protonen sitzen fest im winzigen Atomkern im Inneren des Atoms. Die Elektronen bilden die äußere Hülle; an der Oberfläche eines Körpers können einige von ihnen zu einem anderen Körper übergehen. Gibt ein Körper Elektronen ab, hat er danach mehr Protonen als Elektronen. Ihm fehlen negative Ladungen, er ist also positiv geladen, obwohl er keine Protonen dazubekommen hat.",
+        "criteria": ["Lage von Protonen und Elektronen genutzt", "Übergang nur der Elektronen begründet", "Elektronenmangel als positive Ladung erklärt"]
+      }
+    },
+    "model": "atom"
+  },
+  {
+    "id": "reibungselektrizitaet",
+    "lb": 3,
+    "title": "Reibungselektrizität",
+    "period": "NT7 1.3 · Elektrische Stromkreise",
+    "intro": "Ein an den Haaren geriebener Luftballon klebt an der Wand, weil Ladungen getrennt wurden.",
+    "paragraphs": [
+      "Reibst du zwei Körper aus verschiedenen Stoffen aneinander, gehen Elektronen von einem Körper auf den anderen über. Der Körper, der Elektronen aufnimmt, hat danach einen Elektronenüberschuss und ist negativ geladen. Der andere hat einen Elektronenmangel und ist genauso stark positiv geladen. Beim Reiben entsteht also keine Ladung aus dem Nichts; sie wird nur getrennt. Welcher Körper die Elektronen bekommt, hängt von den Stoffen ab: Ein Luftballon an Haaren und ein Kunststoffstab an einem Wolltuch werden negativ, ein Glasstab an einem Seidentuch positiv.",
+      "Ein geladener Ballon zieht auch ungeladene Papierschnipsel an. Im Papier werden die Elektronen vom negativen Ballon ein wenig weggedrängt; die zugewandte Seite wird dadurch leicht positiv und vom Ballon angezogen. Zwei gleich behandelte Ballons tragen gleichnamige Ladungen und stoßen sich ab. Kommt ein stark geladener Körper einem anderen sehr nahe, können die Elektronen auf einmal überspringen: Es knistert, und im Dunkeln sieht man manchmal einen winzigen Funken.",
+      "Beispiel aus dem Alltag: Du gehst mit Gummisohlen über einen Teppich und fasst dann eine Türklinke aus Metall an. Beim Gehen werden durch Reibung Ladungen getrennt, und dein Körper wird aufgeladen. An der Klinke gleichen sich die Ladungen schlagartig aus, und du spürst einen kleinen Schlag. Auch das Knistern beim Ausziehen eines Fleecepullovers und die abstehenden Haare nach dem Kämmen sind Reibungselektrizität. Bei trockener Winterluft tritt sie besonders deutlich auf, weil die Ladungen dann schlechter abfließen."
+    ],
+    "takeaway": "Beim Reiben gehen Elektronen über: Ein Körper wird negativ, der andere gleich stark positiv. Geladene Körper ziehen auch ungeladene leichte Körper an.",
+    "formulas": [
+      "Elektronenüberschuss: negativ geladen",
+      "Elektronenmangel: positiv geladen",
+      "Luftballon an Haaren: Ballon negativ, Haare positiv",
+      "Glasstab an Seide: Glas positiv, Seide negativ"
+    ],
+    "sourceIds": ["lp", "reibung", "elektrizitaet"],
+    "quiz": {
+      "question": "Ein Kunststoffstab wird mit einem Wolltuch gerieben und ist danach negativ geladen. Was gilt für das Tuch?",
+      "answer": "Es ist positiv geladen, weil es Elektronen abgegeben hat.",
+      "wrong": [
+        "Es ist negativ geladen, weil beide Körper gerieben wurden.",
+        "Es bleibt neutral, weil nur der Stab geladen wird."
+      ],
+      "explanation": "Die Elektronen, die der Stab zusätzlich hat, stammen aus dem Tuch. Dem Tuch fehlen genauso viele Elektronen; es ist positiv geladen."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Warum der Ballon an der Wand haftet",
+      "instruction": "Bringe Handlung und Erklärung in die richtige Reihenfolge.",
+      "categories": [],
+      "entries": [
+        { "text": "Du reibst den Luftballon an deinen Haaren.", "target": 0, "feedback": "Der Auslöser." },
+        { "text": "Elektronen gehen von den Haaren auf den Ballon über.", "target": 1, "feedback": "Ladungen werden getrennt." },
+        { "text": "Der Ballon ist negativ, die Haare sind positiv geladen.", "target": 2, "feedback": "Überschuss und Mangel." },
+        { "text": "Du hältst den Ballon an die Wand.", "target": 3, "feedback": "Die Wand ist ungeladen." },
+        { "text": "In der Wand werden Elektronen ein wenig vom Ballon weggedrängt.", "target": 4, "feedback": "Gleichnamige Ladungen stoßen sich ab." },
+        { "text": "Die Wandoberfläche ist dort leicht positiv, und der Ballon haftet.", "target": 5, "feedback": "Ungleichnamige Ladungen ziehen sich an." }
+      ],
+      "conclusion": "Die Anziehung einer ungeladenen Wand erklärt sich mit zwei Regeln: Ladungen werden getrennt, und ungleichnamige ziehen sich an."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre mit dem Begriff Elektronenübergang, warum deine Haare nach dem Abnehmen einer Wollmütze in alle Richtungen abstehen.",
+        "hints": ["Was passiert zwischen Mütze und Haaren beim Abziehen?", "Welche Ladung tragen alle Haare danach?"],
+        "model": "Beim Abziehen reibt die Mütze über die Haare, und Elektronen gehen zwischen Haaren und Wolle über. Danach tragen alle Haare dieselbe Art von Ladung. Gleichnamige Ladungen stoßen sich ab: Jedes Haar wird von den anderen weggedrückt, deshalb stehen sie in alle Richtungen ab. Die Mütze ist entgegengesetzt geladen.",
+        "criteria": ["Elektronenübergang beim Reiben genannt", "gleiche Ladung aller Haare erkannt", "Abstoßung gleichnamiger Ladungen als Grund"]
+      },
+      "2": {
+        "prompt": "In Fabriken, in denen feiner Mehl- oder Holzstaub in der Luft liegt, gelten strenge Regeln gegen Funken. Erkläre, wie sich ein Förderband aus Gummi durch Reibung aufladen kann und warum man es über Metallbürsten ableitet.",
+        "hints": ["Woran reibt das Band?", "Was passiert, wenn sich viel Ladung plötzlich ausgleicht?"],
+        "model": "Das Gummiband reibt ständig an Rollen und am Fördergut. Dabei gehen Elektronen über, und das Band lädt sich immer stärker auf. Kommt es einem Metallteil nahe, können die Ladungen plötzlich als Funke überspringen. In staubiger Luft kann ein Funke eine Staubexplosion auslösen. Metallbürsten, die das Band berühren, leiten die Ladungen laufend ab, sodass sich keine große Ladung ansammelt.",
+        "criteria": ["Aufladen durch Reibung beschrieben", "Funke als plötzlicher Ladungsausgleich erklärt", "Ableiten als Schutz begründet"]
+      }
+    },
+    "model": "reiben"
+  },
+  {
+    "id": "strom",
+    "lb": 3,
+    "title": "Elektrischer Strom: bewegte Ladungen",
+    "period": "NT7 1.3 · Elektrische Stromkreise",
+    "intro": "In einem geschlossenen Stromkreis bewegen sich Elektronen wie die Glieder einer Fahrradkette.",
+    "paragraphs": [
+      "Ein elektrischer Strom ist die gerichtete Bewegung von Ladungen. In Metalldrähten bewegen sich Elektronen, die sich im Metall frei bewegen können. Eine Batterie oder ein Netzgerät treibt sie an: Am Minuspol herrscht Elektronenüberschuss, am Pluspol Elektronenmangel. Verbindest du die Pole über Drähte und eine Lampe, bewegen sich Elektronen vom Minuspol durch Draht und Lampe zum Pluspol und durch die Batterie wieder zurück.",
+      "Strom fließt nur in einem geschlossenen Stromkreis. Ein Schalter öffnet oder schließt den Kreis. Stoffe, durch die Strom fließen kann, heißen Leiter: Metalle wie Kupfer und Eisen, aber auch Graphit, aus dem Bleistiftminen bestehen. Holz, Kunststoff und Glas sind Nichtleiter oder Isolatoren. Deshalb bestehen Kabel aus Kupferdraht in einer Kunststoffhülle. Leiter und Isolatoren kennst du schon aus der Grundschule; jetzt erklärst du den Unterschied mit beweglichen Ladungen.",
+      "Beispiel: Schließt du den Schalter, leuchtet die Lampe sofort, obwohl die einzelnen Elektronen im Draht nur sehr langsam vorankommen, oft nur Bruchteile eines Millimeters pro Sekunde. Der Grund: Die Elektronen sind schon überall im Draht. Wie bei einer Fahrradkette setzt der Antrieb alle Glieder gleichzeitig in Bewegung. Die Batterie liefert also keine Elektronen, sondern bringt die vorhandenen in Bewegung. In der Schule experimentierst du nur mit Batterien oder Netzgeräten mit kleiner Spannung; die Steckdose ist tabu."
+    ],
+    "takeaway": "Elektrischer Strom ist die gerichtete Bewegung von Ladungen. In Metallen bewegen sich Elektronen, und zwar nur in einem geschlossenen Stromkreis aus Leitern.",
+    "formulas": [
+      "Strom: gerichtete Bewegung von Ladungen",
+      "Elektronen: vom Minuspol durch den Stromkreis zum Pluspol",
+      "Leiter: Metalle, Graphit",
+      "Isolatoren: Kunststoff, Holz, Glas"
+    ],
+    "sourceIds": ["lp", "strom", "elektrizitaet"],
+    "quiz": {
+      "question": "Warum leuchtet eine Lampe sofort, wenn du den Schalter schließt, obwohl die Elektronen im Draht sehr langsam sind?",
+      "answer": "Die Elektronen sind schon im ganzen Draht und setzen sich alle gleichzeitig in Bewegung.",
+      "wrong": [
+        "Die Elektronen rasen mit Lichtgeschwindigkeit von der Batterie zur Lampe.",
+        "Die Lampe enthält einen Vorrat an Elektronen, der zuerst verbraucht wird."
+      ],
+      "explanation": "Wie bei einer Fahrradkette bewegt der Antrieb alle Glieder auf einmal. Die Elektronen in der Lampe beginnen sofort zu fließen, auch wenn jedes einzelne nur langsam vorankommt."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Leiter oder Isolator?",
+      "instruction": "Sage voraus, ob die Lampe leuchtet, wenn der Gegenstand die Lücke im Stromkreis überbrückt.",
+      "categories": ["Leiter: Lampe leuchtet", "Isolator: Lampe bleibt aus"],
+      "entries": [
+        { "text": "Kupferdraht", "target": 0, "feedback": "Metalle haben frei bewegliche Elektronen." },
+        { "text": "Bleistiftmine aus Graphit", "target": 0, "feedback": "Graphit leitet, obwohl es kein Metall ist." },
+        { "text": "Aluminiumfolie", "target": 0, "feedback": "Aluminium ist ein guter Leiter." },
+        { "text": "Kunststofflineal", "target": 1, "feedback": "Kunststoff ist ein Isolator." },
+        { "text": "trockenes Holzstäbchen", "target": 1, "feedback": "Trockenes Holz leitet praktisch nicht." },
+        { "text": "Glasstab", "target": 1, "feedback": "Glas ist ein Isolator." }
+      ],
+      "conclusion": "Ob ein Stoff leitet, hängt davon ab, ob sich in ihm Ladungen frei bewegen können."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Beschreibe, was mit den Elektronen in einem Stromkreis aus Batterie, Schalter und Lampe geschieht, wenn du den Schalter schließt und wieder öffnest. Verwende die Begriffe Minuspol, Pluspol und geschlossener Stromkreis.",
+        "hints": ["In welche Richtung bewegen sich die Elektronen?", "Was ändert der offene Schalter?"],
+        "model": "Bei geschlossenem Schalter ist der Stromkreis geschlossen. Die Batterie treibt die Elektronen an, die schon in Drähten und Lampe sind: Sie bewegen sich vom Minuspol durch die Lampe zum Pluspol und in der Batterie wieder zurück. Die Lampe leuchtet. Öffne ich den Schalter, ist der Kreis unterbrochen; die Elektronen können nicht mehr umlaufen, und die Lampe erlischt. Die Elektronen verschwinden dabei nicht, sie bleiben im Draht.",
+        "criteria": ["Bewegungsrichtung Minuspol → Pluspol", "Bedeutung des geschlossenen Kreises erklärt", "Elektronen bleiben im Leiter"]
+      },
+      "2": {
+        "prompt": "Jana sagt: „Die Lampe verbraucht den Strom, deshalb kommt am Pluspol weniger an.“ Korrigiere die Aussage mit dem Modell der Fahrradkette.",
+        "hints": ["Werden die Glieder einer Kette verbraucht?", "Was gibt die Lampe ab?"],
+        "model": "In der Fahrradkette kommen hinten genauso viele Glieder an, wie vorne loslaufen; keines wird verbraucht. Genauso fließen im Stromkreis am Pluspol genauso viele Elektronen an, wie am Minuspol losgehen. Die Lampe verbraucht keine Elektronen. Sie wandelt Energie um, die die Batterie über die bewegten Elektronen liefert, und gibt sie als Licht und Wärme ab. Fachlich richtig ist also: Die Batterie gibt Energie ab, die Lampe wandelt sie um.",
+        "criteria": ["Kettenmodell richtig angewendet", "gleiche Anzahl Elektronen vor und nach der Lampe", "Energieumwandlung statt Verbrauch genannt"]
+      }
+    },
+    "model": "stromkreis"
+  },
+  {
+    "id": "waerme-licht",
+    "lb": 3,
+    "title": "Wärme- und Leuchtwirkung des Stroms",
+    "period": "NT7 1.3 · Elektrische Stromkreise",
+    "intro": "Fließt Strom durch einen dünnen Draht, wird er heiß und kann hell glühen.",
+    "paragraphs": [
+      "Elektrischer Strom hat Wirkungen, an denen du ihn erkennst; die Elektronen selbst siehst du nicht. Fließt Strom durch einen Draht, wird der Draht warm: Das ist die Wärmewirkung. Sie ist umso deutlicher, je dünner der Draht ist und je stärker der Strom. Toaster, Wasserkocher, Föhn und Heizlüfter nutzen sie: In ihnen steckt ein Heizdraht, der beim Stromfluss heiß wird.",
+      "Wird ein sehr dünner Draht so heiß, dass er glüht, sendet er Licht aus: Das ist die Leuchtwirkung. In einer Glühlampe glüht ein Draht aus Wolfram bei mehr als 2000 °C; dabei entsteht viel mehr Wärme als Licht. Leuchtdioden, kurz LEDs, erzeugen Licht auf andere Weise und werden dabei viel weniger warm. Deshalb haben sie die Glühlampe im Haushalt weitgehend ersetzt. In einer Leuchtstoffröhre leuchten ein Gas und eine Leuchtschicht, kein glühender Draht.",
+      "Beispiel für einen fachsprachlich korrekten Text: „Wird der Toaster eingeschaltet, fließt elektrischer Strom durch die Heizdrähte. Die Drähte erwärmen sich so stark, dass sie rot glühen. Die Wärmewirkung bräunt das Brot; das rote Glühen ist eine Leuchtwirkung, die hier nur nebenbei auftritt.“ Vermeide Alltagssätze wie „Der Strom wird im Toaster verbraucht“ oder „Der Draht ist voller Strom“. Sage stattdessen, was der Strom bewirkt und in welche Form die Energie umgewandelt wird."
+    ],
+    "takeaway": "Strom erkennst du an seinen Wirkungen: Ein Draht, durch den Strom fließt, wird warm (Wärmewirkung) und kann glühen und leuchten (Leuchtwirkung).",
+    "formulas": [
+      "Wärmewirkung: Draht erwärmt sich beim Stromfluss",
+      "Leuchtwirkung: glühender Draht oder LED sendet Licht aus",
+      "Glühlampe: viel Wärme, wenig Licht"
+    ],
+    "sourceIds": ["lp", "gluehlampe", "strom"],
+    "quiz": {
+      "question": "Welches Gerät nutzt vor allem die Wärmewirkung des elektrischen Stroms?",
+      "answer": "der Wasserkocher",
+      "wrong": ["die LED-Taschenlampe", "die Türklingel"],
+      "explanation": "Im Wasserkocher erwärmt der Strom einen Heizdraht, der das Wasser erhitzt. Die Taschenlampe nutzt die Leuchtwirkung, die Klingel die magnetische Wirkung."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Erwünschte und unerwünschte Wirkungen",
+      "instruction": "Welche Wirkung des Stroms soll das Gerät haben, oder ist die Wärme nur Nebenwirkung?",
+      "categories": ["Wärmewirkung ist erwünscht", "Leuchtwirkung ist erwünscht", "Wärme ist eine unerwünschte Nebenwirkung"],
+      "entries": [
+        { "text": "Toaster", "target": 0, "feedback": "Die Heizdrähte sollen das Brot rösten." },
+        { "text": "LED-Fahrradlicht", "target": 1, "feedback": "Es soll leuchten, Wärme braucht es nicht." },
+        { "text": "warmes Ladekabel eines Handys", "target": 2, "feedback": "Das Kabel soll nur leiten; die Wärme geht verloren." },
+        { "text": "Föhn", "target": 0, "feedback": "Ein Heizdraht erwärmt die Luft." },
+        { "text": "Schreibtischlampe", "target": 1, "feedback": "Sie soll Licht geben." },
+        { "text": "heißer Laptop nach langem Spielen", "target": 2, "feedback": "Die Wärme muss sogar weggelüftet werden." }
+      ],
+      "conclusion": "Fast immer entsteht beim Stromfluss Wärme. Ob sie erwünscht ist, hängt vom Zweck des Geräts ab."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Schreibe einen kurzen Text von drei bis vier Sätzen darüber, wie ein Wasserkocher funktioniert. Verwende die Fachbegriffe elektrischer Strom, Heizdraht und Wärmewirkung korrekt.",
+        "hints": ["Was passiert beim Einschalten im Gerät?", "Vermeide „Strom wird verbraucht“."],
+        "model": "Schaltet man den Wasserkocher ein, schließt sich ein Stromkreis, und elektrischer Strom fließt durch einen Heizdraht im Boden des Geräts. Durch die Wärmewirkung des Stroms wird der Heizdraht sehr heiß. Er gibt die Wärme an das Wasser ab, bis es kocht. Ein Schalter unterbricht dann den Stromkreis, und die Erwärmung hört auf.",
+        "criteria": ["Stromkreis und Heizdraht genannt", "Wärmewirkung korrekt verwendet", "keine Alltagsformulierung wie „Strom verbraucht“"]
+      },
+      "2": {
+        "prompt": "Früher hingen in Wohnzimmern Glühlampen, heute meist LED-Lampen. Erkläre in einem kurzen Sachtext, welche Wirkungen des Stroms bei beiden auftreten und warum eine Glühlampe beim Anfassen heiß ist, eine LED-Lampe meist nur warm.",
+        "hints": ["Wie entsteht das Licht in der Glühlampe?", "Was ist bei der LED anders?"],
+        "model": "In der Glühlampe fließt Strom durch einen sehr dünnen Wolframdraht. Durch die Wärmewirkung wird er über 2000 °C heiß und glüht; die Leuchtwirkung entsteht hier erst durch die große Hitze. Dabei wird viel mehr Energie in Wärme als in Licht umgewandelt, deshalb ist die Lampe heiß. Eine LED erzeugt Licht ohne glühenden Draht. Sie zeigt vor allem die Leuchtwirkung; Wärme entsteht nur wenig, deshalb wird sie nur warm.",
+        "criteria": ["Wärme- und Leuchtwirkung bei der Glühlampe verknüpft", "Unterschied zur LED genannt", "fachsprachlich korrekter Sachtext"]
+      }
+    }
+  },
+  {
+    "id": "elektromagnet",
+    "lb": 3,
+    "title": "Magnetische Wirkung des Stroms",
+    "period": "NT7 1.3 · Elektrische Stromkreise",
+    "intro": "Ein Draht, durch den Strom fließt, lenkt eine Kompassnadel ab.",
+    "paragraphs": [
+      "Im Jahr 1820 bemerkte der dänische Physiker Hans Christian Ørsted, dass ein Draht, durch den Strom fließt, eine Kompassnadel in seiner Nähe ablenkt. Strom hat also auch eine magnetische Wirkung. Schaltest du den Strom ab, dreht sich die Nadel zurück nach Norden. Polst du die Batterie um, wird die Nadel in die andere Richtung abgelenkt.",
+      "Wickelst du den Draht zu einer Spule, verstärkt sich die Wirkung: Die Spule verhält sich wie ein Stabmagnet mit Nord- und Südpol. Mehr Windungen machen den Elektromagneten stärker, ein Eisenkern in der Spule noch viel stärker, denn das Eisen wird selbst magnetisiert. Anders als ein Dauermagnet lässt sich ein Elektromagnet ein- und ausschalten, und seine Pole tauschen, wenn du die Anschlüsse vertauschst. Kräne auf Schrottplätzen, Türöffner, Klingeln und Lautsprecher nutzen das.",
+      "Beispiel für ein strukturiertes Versuchsprotokoll: Frage: Wovon hängt die Stärke eines Elektromagneten ab? Vermutung: Mit mehr Windungen hält er mehr Nägel. Aufbau: Spulen mit 200 und 400 Windungen, Netzgerät mit kleiner Spannung, Eisenkern, kleine Eisennägel, dazu eine Skizze. Durchführung: Nur die Windungszahl ändern, alles andere gleich lassen. Beobachtung: Mit 400 Windungen hängen mehr Nägel am Kern. Ergebnis: Die Vermutung ist bestätigt. Schalte den Strom zwischen den Messungen ab, denn die Spule wird warm."
+    ],
+    "takeaway": "Fließt Strom durch einen Draht, entsteht eine magnetische Wirkung. Eine Spule wirkt wie ein Stabmagnet; mehr Windungen und ein Eisenkern verstärken sie, Umpolen vertauscht die Pole.",
+    "formulas": [
+      "Ørsted 1820: Strom lenkt die Kompassnadel ab",
+      "Spule mit Strom: Elektromagnet mit Nord- und Südpol",
+      "stärker durch mehr Windungen und einen Eisenkern",
+      "Umpolen: Nord- und Südpol tauschen"
+    ],
+    "sourceIds": ["lp", "oersted", "elektromagnet"],
+    "quiz": {
+      "question": "Wodurch kannst du einen Elektromagneten stärker machen, ohne an der Batterie etwas zu ändern?",
+      "answer": "Durch mehr Windungen oder einen Eisenkern in der Spule.",
+      "wrong": [
+        "Durch Umpolen der Batterie.",
+        "Durch einen Kern aus Kupfer statt aus Eisen."
+      ],
+      "explanation": "Mehr Windungen verstärken die magnetische Wirkung des Stroms, ein Eisenkern wird selbst magnetisiert. Umpolen vertauscht nur die Pole, Kupfer lässt sich nicht magnetisieren."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Ein Versuchsprotokoll aufbauen",
+      "instruction": "Bringe die Teile des Protokolls zum Elektromagneten in die richtige Reihenfolge.",
+      "categories": [],
+      "entries": [
+        { "text": "Frage: Macht ein Eisenkern den Elektromagneten stärker?", "target": 0, "feedback": "Die Frage steht am Anfang." },
+        { "text": "Vermutung: Mit Eisenkern hält die Spule mehr Nägel.", "target": 1, "feedback": "Eine prüfbare Vorhersage." },
+        { "text": "Aufbau: Spule, Netzgerät mit kleiner Spannung, Schalter, Nägel; Skizze.", "target": 2, "feedback": "Materialliste und Skizze." },
+        { "text": "Durchführung: erst ohne, dann mit Kern messen; Windungen und Netzgerät bleiben gleich.", "target": 3, "feedback": "Nur eine Größe wird verändert." },
+        { "text": "Beobachtung: ohne Kern 1 Nagel, mit Kern 6 Nägel.", "target": 4, "feedback": "Messwerte ohne Deutung." },
+        { "text": "Ergebnis: Der Eisenkern verstärkt die Wirkung; die Vermutung ist bestätigt.", "target": 5, "feedback": "Die Antwort auf die Frage." }
+      ],
+      "conclusion": "Ein strukturiertes Protokoll macht einen Versuch für andere wiederholbar."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Ein Elektromagnet an einem Kran hebt Schrott und lässt ihn über einem Container fallen. Erkläre, warum man dafür keinen Dauermagneten nehmen kann und welche Eigenschaften des Elektromagneten genutzt werden.",
+        "hints": ["Wie bekommt man den Schrott wieder los?", "Was macht den Kranmagneten so stark?"],
+        "model": "Ein Dauermagnet würde den Schrott immer festhalten; man bekäme ihn über dem Container nicht wieder los. Ein Elektromagnet ist nur magnetisch, solange Strom fließt. Schaltet der Kranführer den Strom ab, verliert der Magnet seine Wirkung, und der Schrott fällt herunter. Viele Windungen und ein großer Eisenkern machen den Kranmagneten so stark, dass er schwere Eisenteile heben kann.",
+        "criteria": ["Abschaltbarkeit als entscheidender Vorteil", "Problem des Dauermagneten erkannt", "Verstärkung durch Windungen oder Eisenkern genannt"]
+      },
+      "2": {
+        "prompt": "Plane ein Experiment, das zeigt, dass ein Eisenkern einen Elektromagneten verstärkt. Gib an, welche Größe du veränderst, welche du gleich hältst, was du beobachtest und welche Sicherheitshinweise du beachtest.",
+        "hints": ["Wie misst du die Stärke ganz einfach?", "Was darf sich zwischen den beiden Messungen nicht ändern?"],
+        "model": "Ich verändere nur, ob ein Eisenkern in der Spule steckt. Gleich bleiben Spule, Windungszahl, Netzgerät und Einstellung sowie die Art der Nägel. Als Maß für die Stärke zähle ich, wie viele kleine Eisennägel die Spule hält, und wiederhole jede Messung dreimal. Ich erwarte mit Kern deutlich mehr Nägel. Sicherheit: nur ein Netzgerät mit kleiner Spannung, Strom zwischen den Messungen abschalten, weil die Spule warm wird, und nicht an die Steckdose.",
+        "criteria": ["veränderte und gleich gehaltene Größen getrennt", "messbare Beobachtung geplant", "passende Sicherheitshinweise genannt"]
+      }
+    },
+    "model": "spule"
+  },
+  {
+    "id": "schaltungen",
+    "lb": 3,
+    "title": "Schaltungen für Alltagsprobleme",
+    "period": "NT7 1.3 · Elektrische Stromkreise",
+    "intro": "Mit zwei Schaltern lässt sich eine Lampe auf drei verschiedene Arten steuern.",
+    "paragraphs": [
+      "In Schaltplänen stellst du Bauteile mit genormten Schaltzeichen dar: Batterie, Lampe, Schalter und Leitungen als gerade Linien. Liegen zwei Schalter hintereinander in einem Stromkreis, in Reihe, leuchtet die Lampe nur, wenn A UND B geschlossen sind. So funktioniert eine Sicherheitsschaltung, etwa an einer Maschine, die erst bei geschlossener Schutzhaube anläuft. Liegen die Schalter nebeneinander, parallel, genügt A ODER B, wie bei einer Klingel, die man an zwei Türen drücken kann.",
+      "Im Treppenhaus soll das Licht unten wie oben ein- und ausgeschaltet werden können. Dafür gibt es die Wechselschaltung mit zwei Wechselschaltern. Ein Wechselschalter verbindet seinen mittleren Anschluss entweder mit der oberen oder mit der unteren von zwei Leitungen, die zwischen den beiden Schaltern verlaufen. Die Lampe leuchtet, wenn beide Schalter dieselbe Leitung wählen. Jedes Umlegen an einem der beiden Schalter ändert deshalb den Zustand der Lampe.",
+      "Beispiel für das Vorgehen: Du entwirfst die Schaltung zuerst mit einer Simulationssoftware und prüfst alle vier Schalterstellungen in einer Tabelle. Erst wenn die Simulation stimmt, baust du die Schaltung mit einer Batterie oder einem Netzgerät mit kleiner Spannung auf, niemals an der Steckdose. Du baust nur bei offenem Stromkreis um, prüfst die Funktion und dokumentierst Schaltplan, Tabelle und ein Foto. Wird ein Bauteil heiß oder riecht es verbrannt, schaltest du sofort ab."
+    ],
+    "takeaway": "Schalter in Reihe: UND-Schaltung. Schalter parallel: ODER-Schaltung. Wechselschaltung: Jeder der beiden Schalter kann die Lampe ein- und ausschalten.",
+    "formulas": [
+      "UND-Schaltung: Schalter in Reihe",
+      "ODER-Schaltung: Schalter parallel",
+      "Wechselschaltung: zwei Wechselschalter, zwei Leitungen dazwischen",
+      "Experimentieren nur mit Batterie oder Netzgerät mit kleiner Spannung"
+    ],
+    "sourceIds": ["lp", "wechselschaltung", "schaltzeichen"],
+    "quiz": {
+      "question": "Eine Maschine soll nur laufen, wenn die Schutzhaube geschlossen UND der Startknopf gedrückt ist. Welche Schaltung brauchst du?",
+      "answer": "Zwei Schalter in Reihe, also eine UND-Schaltung.",
+      "wrong": [
+        "Zwei Schalter parallel, also eine ODER-Schaltung.",
+        "Eine Wechselschaltung mit zwei Wechselschaltern."
+      ],
+      "explanation": "In Reihe muss der Strom durch beide Schalter. Nur wenn beide geschlossen sind, ist der Stromkreis geschlossen."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Eine Treppenhausschaltung entwickeln",
+      "instruction": "Bringe die Schritte von der Problemstellung bis zur Dokumentation in eine sinnvolle Reihenfolge.",
+      "categories": [],
+      "entries": [
+        { "text": "Problem beschreiben: Das Flurlicht soll an beiden Enden schaltbar sein.", "target": 0, "feedback": "Erst die Aufgabe klären." },
+        { "text": "Schaltplan mit zwei Wechselschaltern in der Simulationssoftware entwerfen.", "target": 1, "feedback": "In der Simulation ist ein Fehler ungefährlich." },
+        { "text": "Alle vier Schalterstellungen simulieren und in eine Tabelle eintragen.", "target": 2, "feedback": "So prüfst du jede Möglichkeit." },
+        { "text": "Schaltung mit Kleinspannung bei offenem Stromkreis aufbauen.", "target": 3, "feedback": "Umbauen nur ohne Strom." },
+        { "text": "Funktion prüfen; bei Wärme oder Geruch sofort abschalten.", "target": 4, "feedback": "Sicherheitshinweise beim Testen beachten." },
+        { "text": "Schaltplan, Tabelle und Foto dokumentieren.", "target": 5, "feedback": "Die Dokumentation schließt die Arbeit ab." }
+      ],
+      "conclusion": "Erst simulieren, dann aufbauen: So findest du Fehler früh und experimentierst sicher."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Eine Fahrradklingel soll sowohl vom linken als auch vom rechten Lenkergriff aus läuten. Entscheide, welche Schaltung du brauchst, beschreibe den Schaltplan in Worten und gib die Tabelle für alle vier Schalterstellungen an.",
+        "hints": ["Genügt ein Taster, oder müssen beide gedrückt sein?", "Tabelle: A, B, Klingel"],
+        "model": "Es genügt, einen der beiden Taster zu drücken; das ist eine ODER-Schaltung. Die Batterie ist mit der Klingel verbunden, und die beiden Taster liegen nebeneinander, parallel, in zwei Zweigen, die beide zur Batterie zurückführen. Tabelle: A = 0, B = 0: Klingel aus. A = 1, B = 0: Klingel an. A = 0, B = 1: Klingel an. A = 1, B = 1: Klingel an.",
+        "criteria": ["ODER-Schaltung erkannt", "Parallelschaltung der Taster beschrieben", "Tabelle mit allen vier Stellungen richtig"]
+      },
+      "2": {
+        "prompt": "In einem langen Flur soll das Licht an beiden Enden geschaltet werden. Erkläre, warum zwei gewöhnliche Ein-Aus-Schalter in Reihe oder parallel dafür nicht geeignet sind und wie die Wechselschaltung das Problem löst.",
+        "hints": ["Was passiert in Reihe, wenn ein Schalter offen ist?", "Was passiert parallel, wenn ein Schalter geschlossen ist?"],
+        "model": "In Reihe brennt das Licht nur, wenn beide Schalter geschlossen sind. Ist am anderen Ende der Schalter offen, kann ich das Licht nicht einschalten. Parallel brennt das Licht, sobald ein Schalter geschlossen ist; dann kann ich es am anderen Ende nicht ausschalten. Bei der Wechselschaltung verbinden zwei Leitungen die Wechselschalter. Die Lampe leuchtet, wenn beide dieselbe Leitung wählen. Jedes Umlegen eines Schalters wechselt die Leitung und ändert damit den Zustand, egal wie der andere Schalter steht.",
+        "criteria": ["Nachteil der Reihenschaltung erklärt", "Nachteil der Parallelschaltung erklärt", "Wirkungsweise der Wechselschaltung beschrieben"]
+      }
+    },
+    "model": "schaltung"
+  }
+]

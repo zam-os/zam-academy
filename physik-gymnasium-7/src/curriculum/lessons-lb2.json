@@ -1,0 +1,469 @@
+[
+  {
+    "id": "sehen",
+    "lb": 2,
+    "title": "Lichtquellen und der Sehvorgang",
+    "period": "NT7 1.2 · Optische Phänomene",
+    "intro": "Du siehst einen Gegenstand nur, wenn Licht von ihm in dein Auge fällt.",
+    "paragraphs": [
+      "Lichtquellen wie die Sonne, eine Kerzenflamme oder eine Lampe erzeugen selbst Licht. Die meisten Dinge um dich herum sind dagegen beleuchtete Körper: Ein Buch, der Mond oder deine Hand leuchten nicht selbst. Sie werfen einen Teil des Lichts, das auf sie fällt, in alle Richtungen zurück. In einem völlig dunklen Raum siehst du deshalb auch ein weißes Blatt nicht, obwohl es da ist.",
+      "Licht breitet sich von einer Quelle geradlinig nach allen Seiten aus. In Zeichnungen stellst du es mit Lichtstrahlen dar: geraden Linien mit einem Pfeil in Ausbreitungsrichtung. Ein Lichtstrahl ist ein Modell; in Wirklichkeit gibt es immer ein Lichtbündel. Sehen funktioniert so: Licht geht von der Lichtquelle aus, trifft auf den Gegenstand, wird von ihm zurückgeworfen und gelangt ins Auge. Das Auge sendet keine Strahlen aus; es empfängt nur Licht.",
+      "Beispiel: Du liest abends unter der Schreibtischlampe. Die Lampe sendet Licht aus, das Buch wirft einen Teil davon zurück, und dieser Teil fällt in deine Augen. Stellst du einen Ordner zwischen Lampe und Buch, liegt das Buch im Schatten, und du kannst kaum noch lesen. Hältst du den Ordner zwischen Buch und Augen, erreicht kein Licht vom Buch dein Auge. In beiden Fällen ist der Weg des Lichts unterbrochen, aber an verschiedenen Stellen."
+    ],
+    "takeaway": "Sehen heißt: Licht gelangt von einer Lichtquelle, direkt oder über einen beleuchteten Körper, in das Auge. Das Auge selbst sendet kein Licht aus.",
+    "formulas": [
+      "Lichtquelle: erzeugt selbst Licht",
+      "beleuchteter Körper: wirft Licht zurück",
+      "Lichtstrahl: Modell, gerade Linie mit Pfeil",
+      "Sehvorgang: Lichtquelle → Gegenstand → Auge"
+    ],
+    "sourceIds": ["lp", "licht"],
+    "quiz": {
+      "question": "Warum siehst du den Mond am Nachthimmel?",
+      "answer": "Er wirft Sonnenlicht zurück, das in dein Auge gelangt.",
+      "wrong": [
+        "Er leuchtet selbst wie eine kleine Sonne.",
+        "Deine Augen senden Strahlen aus, die den Mond abtasten."
+      ],
+      "explanation": "Der Mond ist ein beleuchteter Körper. Sonnenlicht trifft ihn, ein Teil wird zurückgeworfen und erreicht dein Auge."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Selbst leuchtend oder beleuchtet?",
+      "instruction": "Ordne jeden Gegenstand ein.",
+      "categories": ["Lichtquelle", "beleuchteter Körper"],
+      "entries": [
+        { "text": "Sonne", "target": 0, "feedback": "Sie erzeugt ihr Licht selbst." },
+        { "text": "Glühwürmchen", "target": 0, "feedback": "Es erzeugt Licht in seinem Körper." },
+        { "text": "Mond", "target": 1, "feedback": "Er wirft Sonnenlicht zurück." },
+        { "text": "Kerzenflamme", "target": 0, "feedback": "Die heiße Flamme sendet Licht aus." },
+        { "text": "Fahrradreflektor", "target": 1, "feedback": "Er leuchtet nur, wenn Licht auf ihn fällt." },
+        { "text": "Spiegel", "target": 1, "feedback": "Ein Spiegel wirft Licht zurück, erzeugt aber keines." }
+      ],
+      "conclusion": "Ob etwas eine Lichtquelle ist, prüfst du im dunklen Raum: Nur Lichtquellen bleiben dort sichtbar."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Beschreibe den Sehvorgang, wenn du im Klassenzimmer die Schrift an der Tafel liest. Benenne die Lichtquelle, den beleuchteten Körper und den Weg des Lichts.",
+        "hints": ["Woher kommt das Licht im Klassenzimmer?", "In welcher Reihenfolge läuft das Licht?"],
+        "model": "Lichtquellen sind die Deckenlampen oder die Sonne, deren Licht durch die Fenster fällt. Das Licht breitet sich geradlinig aus und trifft auf die Tafel, einen beleuchteten Körper. Die Tafel und die Kreideschrift werfen einen Teil des Lichts zurück, die helle Schrift mehr als die dunkle Tafel. Dieses Licht gelangt in meine Augen, und ich sehe die Schrift.",
+        "criteria": ["Lichtquelle benannt", "Tafel als beleuchteter Körper erkannt", "Weg Lichtquelle → Tafel → Auge beschrieben"]
+      },
+      "2": {
+        "prompt": "Max behauptet: „Katzen sehen im völlig dunklen Keller, weil ihre Augen leuchten.“ Prüfe die Aussage mit deinem Wissen über den Sehvorgang.",
+        "hints": ["Leuchten Katzenaugen selbst?", "Was braucht jedes Auge zum Sehen?"],
+        "model": "Katzenaugen leuchten nicht selbst. Sie werfen Licht, das auf sie fällt, besonders gut zurück, deshalb glänzen sie im Scheinwerferlicht. Zum Sehen muss aber Licht von einem Gegenstand in das Auge gelangen. Im völlig dunklen Keller gibt es kein Licht, also kann auch eine Katze dort nichts sehen. Katzen kommen nur mit viel weniger Licht aus als Menschen.",
+        "criteria": ["Leuchten als Zurückwerfen erkannt", "Sehvorgang korrekt angewendet", "Behauptung begründet zurückgewiesen"]
+      }
+    },
+    "model": "sehen"
+  },
+  {
+    "id": "farben",
+    "lb": 2,
+    "title": "Warum Gegenstände farbig sind",
+    "period": "NT7 1.2 · Optische Phänomene",
+    "intro": "Ein Gegenstand färbt das Licht nicht, er wählt aus, welches Licht er zurückwirft.",
+    "paragraphs": [
+      "Aus Natur und Technik 5 weißt du: Weißes Sonnenlicht lässt sich mit einem Prisma in die Farben des Regenbogens zerlegen. Weißes Licht ist also eine Mischung aus vielen Farben. Für die folgenden Überlegungen genügt ein vereinfachtes Modell mit drei Anteilen: Rot, Grün und Blau. Zusammen ergeben sie Weiß.",
+      "Trifft Licht auf einen Gegenstand, wirft er einen Teil davon zurück; man sagt, er reflektiert ihn. Den Rest nimmt er auf, er absorbiert ihn, und das Licht wird dabei in Wärme umgewandelt. Die Farbe, die du siehst, ist die Farbe des reflektierten Lichts. Eine rote Paprika reflektiert vor allem rotes Licht und absorbiert Grün und Blau. Ein weißes Blatt reflektiert alle Anteile, ein schwarzer Pullover absorbiert fast alles und wird in der Sonne besonders warm.",
+      "Beispiel: Beleuchtest du die rote Paprika nur mit grünem Licht, erscheint sie schwarz. Sie absorbiert das grüne Licht, und rotes Licht, das sie zurückwerfen könnte, ist gar nicht da. Ein weißes Blatt unter derselben Lampe sieht grün aus, denn es wirft jede Farbe zurück, die auf es fällt. Ein gelbes T-Shirt reflektiert Rot und Grün; unter rotem Licht wirkt es deshalb rot. Die Farbe eines Gegenstands hängt also auch vom Licht ab, mit dem du ihn beleuchtest."
+    ],
+    "takeaway": "Ein Gegenstand reflektiert einen Teil des Lichts und absorbiert den Rest. Du siehst die Farbe des reflektierten Lichts; fehlt sie in der Beleuchtung, wirkt der Gegenstand dunkel.",
+    "formulas": [
+      "Reflexion: Licht wird zurückgeworfen",
+      "Absorption: Licht wird aufgenommen, es entsteht Wärme",
+      "weißes Licht (Modell): Rot + Grün + Blau",
+      "gelber Gegenstand: reflektiert Rot und Grün"
+    ],
+    "sourceIds": ["lp", "koerperfarbe", "licht"],
+    "quiz": {
+      "question": "Wie sieht ein weißes Blatt aus, das nur von einer roten Lampe beleuchtet wird?",
+      "answer": "Es sieht rot aus.",
+      "wrong": [
+        "Es sieht weiß aus, weil es weiß ist.",
+        "Es sieht schwarz aus, weil es das rote Licht absorbiert."
+      ],
+      "explanation": "Ein weißes Blatt reflektiert jede Farbe, die auf es fällt. Kommt nur rotes Licht an, wirft es nur rotes Licht zurück."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Welche Farbe siehst du?",
+      "instruction": "Sage voraus, wie die Gegenstände unter der jeweiligen Beleuchtung aussehen.",
+      "categories": ["erscheint rot", "erscheint schwarz", "erscheint grün"],
+      "entries": [
+        { "text": "Erdbeere im weißen Licht", "target": 0, "feedback": "Sie reflektiert den roten Anteil." },
+        { "text": "Erdbeere im blauen Licht", "target": 1, "feedback": "Blau wird absorbiert, Rot ist nicht vorhanden." },
+        { "text": "Weißes Blatt im grünen Licht", "target": 2, "feedback": "Weiß wirft das grüne Licht zurück." },
+        { "text": "Gelbe Banane im roten Licht", "target": 0, "feedback": "Gelb reflektiert Rot und Grün; hier kommt nur Rot an." },
+        { "text": "Gelbe Banane im blauen Licht", "target": 1, "feedback": "Gelb absorbiert Blau." },
+        { "text": "Grüne Gurke im weißen Licht", "target": 2, "feedback": "Sie reflektiert den grünen Anteil." }
+      ],
+      "conclusion": "Die gesehene Farbe ist das, was die Beleuchtung anbietet und der Gegenstand zurückwirft."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Über Fleischtheken hängen oft rötliche Lampen. Erkläre mit Reflexion und Absorption, warum das Fleisch darunter besonders rot und frisch wirkt.",
+        "hints": ["Welchen Anteil des Lichts reflektiert rotes Fleisch?", "Was ändert sich, wenn die Lampe besonders viel Rot enthält?"],
+        "model": "Rotes Fleisch reflektiert vor allem den roten Anteil des Lichts und absorbiert Grün und Blau. Eine rötliche Lampe liefert besonders viel rotes Licht und wenig von den anderen Farben. Das Fleisch wirft dann viel rotes Licht zurück, während graue oder bräunliche Stellen, die viel Grün und Blau absorbieren, kaum auffallen. Deshalb wirkt das Fleisch röter und frischer, als es im Tageslicht aussähe.",
+        "criteria": ["Reflexion des roten Anteils beschrieben", "Wirkung der rötlichen Beleuchtung erklärt", "Täuschung gegenüber dem Tageslicht erkannt"]
+      },
+      "2": {
+        "prompt": "Für eine Theateraufführung brauchst du ein Kostüm, das im weißen Licht leuchtend gelb, unter blauem Scheinwerferlicht aber schwarz aussieht. Begründe, ob ein gelbes Kostüm geeignet ist, und beschreibe einen Versuch, mit dem du es vorher prüfst.",
+        "hints": ["Welche Anteile reflektiert ein gelber Stoff?", "Wie kannst du blaues Licht im Klassenzimmer erzeugen?"],
+        "model": "Ein gelber Stoff reflektiert im Modell Rot und Grün und absorbiert Blau. Im weißen Licht sieht er gelb aus. Unter rein blauem Licht wird alles Licht absorbiert, der Stoff erscheint schwarz. Das Kostüm ist also geeignet. Zur Prüfung beleuchte ich eine Stoffprobe im abgedunkelten Raum mit einer Taschenlampe, vor die ich eine blaue Farbfolie halte, und vergleiche mit einer weißen Lampe. Echte Stoffe reflektieren oft etwas von allen Farben, deshalb ist der Versuch wichtig.",
+        "criteria": ["Reflexion und Absorption des gelben Stoffes richtig", "Vorhersage für blaues Licht begründet", "sinnvoller Prüfversuch beschrieben"]
+      }
+    },
+    "model": "farbe"
+  },
+  {
+    "id": "farbige-schatten",
+    "lb": 2,
+    "title": "Farben und Schatten erkunden",
+    "period": "NT7 1.2 · Optische Phänomene",
+    "intro": "Mit farbigen Lampen entstehen bunte Schatten, die du mit eigenen Fotos festhältst.",
+    "paragraphs": [
+      "Ein Schatten entsteht dort, wo ein undurchsichtiger Gegenstand das Licht einer Lampe abhält. Mit zwei oder drei farbigen Lampen wird es überraschend: Stellt man eine rote und eine grüne Lampe nebeneinander und hält einen Stab davor, erscheint die weiße Wand gelb, und der Stab wirft zwei Schatten, einen roten und einen grünen. Solche Phänomene erkundest du im Schülerexperiment. Plane vorher, was du verändern willst, und halte alle anderen Bedingungen gleich.",
+      "Farbiges Licht, das auf dieselbe Stelle einer weißen Wand fällt, mischt sich: Rot und Grün ergeben Gelb, Rot und Blau Purpur, Grün und Blau Türkis, alle drei zusammen Weiß. Diese Mischung von Licht heißt additive Farbmischung. Jeder Schatten bekommt das Licht aller Lampen außer der einen, deren Licht der Gegenstand abhält. Der Schatten der roten Lampe ist deshalb grün, wenn nur noch die grüne Lampe ihn beleuchtet. Er liegt auf der Seite, die der roten Lampe gegenüberliegt.",
+      "Beispiel für die Dokumentation: Fotografiere jeden Versuch mit dem Handy von derselben Stelle aus und ohne Blitz, damit der Blitz die Farben nicht überdeckt. Notiere zu jedem Foto, welche Lampen an waren und wo sie standen. Formuliere eine Vermutung und einen Erklärungsansatz, etwa: „Ich vermute, der linke Schatten ist grün, weil dort nur das grüne Licht ankommt.“ Prüfe die Vermutung, indem du die grüne Lampe ausschaltest. Beachte, dass Handykameras Farben oft etwas anders wiedergeben, als du sie siehst."
+    ],
+    "takeaway": "Farbiges Licht mischt sich auf der Wand additiv: Rot und Grün ergeben Gelb, alle drei Weiß. Ein Schatten hat die Mischfarbe der Lampen, die ihn noch beleuchten.",
+    "formulas": [
+      "Rot + Grün = Gelb",
+      "Rot + Blau = Purpur",
+      "Grün + Blau = Türkis",
+      "Rot + Grün + Blau = Weiß"
+    ],
+    "sourceIds": ["lp", "farbmischung", "schatten"],
+    "quiz": {
+      "question": "Eine rote und eine grüne Lampe beleuchten eine weiße Wand und einen Stab. Welche Farbe hat der Schatten, den die rote Lampe erzeugt?",
+      "answer": "Grün, weil dort nur noch das grüne Licht ankommt.",
+      "wrong": [
+        "Rot, weil die rote Lampe ihn erzeugt.",
+        "Schwarz, weil in einem Schatten gar kein Licht ist."
+      ],
+      "explanation": "Der Stab hält nur das rote Licht ab. Die grüne Lampe beleuchtet diese Stelle weiterhin, also erscheint der Schatten grün."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Vom Phänomen zur Erklärung",
+      "instruction": "Bringe die Schritte deines Experiments in eine sinnvolle Reihenfolge.",
+      "categories": [],
+      "entries": [
+        { "text": "Phänomen beobachten: Der Stab wirft zwei verschiedenfarbige Schatten.", "target": 0, "feedback": "Am Anfang steht das Staunen." },
+        { "text": "Frage formulieren: Warum hat jeder Schatten eine andere Farbe?", "target": 1, "feedback": "Die Frage lenkt den Versuch." },
+        { "text": "Vermutung aufschreiben: Jeder Schatten bekommt nur das Licht der anderen Lampe.", "target": 2, "feedback": "Erst vermuten, dann prüfen." },
+        { "text": "Versuch planen: eine Lampe nach der anderen ausschalten, sonst nichts verändern.", "target": 3, "feedback": "Nur eine Bedingung wird verändert." },
+        { "text": "Durchführen und jeden Zustand ohne Blitz fotografieren.", "target": 4, "feedback": "Fotos dokumentieren die Beobachtungen." },
+        { "text": "Fotos vergleichen und die Vermutung bestätigen oder verwerfen.", "target": 5, "feedback": "Erst jetzt steht die Erklärung." }
+      ],
+      "conclusion": "Ein Experiment prüft eine Vermutung. Fotos machen deine Beobachtungen für andere nachvollziehbar."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Eine rote, eine grüne und eine blaue Lampe sind eingeschaltet. Welche Farbe hat die Wand, welche Farben haben die drei Schatten? Begründe ausführlich für einen der Schatten.",
+        "hints": ["Die Wand bekommt das Licht aller Lampen.", "Welches Licht fehlt im Schatten der blauen Lampe?"],
+        "model": "Die Wand bekommt rotes, grünes und blaues Licht und erscheint weiß. Im Schatten der roten Lampe fehlt Rot; Grün und Blau mischen sich zu Türkis. Im Schatten der grünen Lampe mischen sich Rot und Blau zu Purpur. Im Schatten der blauen Lampe fehlt Blau, dort kommen Rot und Grün an, und der Schatten ist gelb. Der Stab hält jeweils nur das Licht einer Lampe ab.",
+        "criteria": ["Wand als weiß erkannt", "alle drei Schattenfarben richtig", "eine Schattenfarbe mit fehlendem Licht begründet"]
+      },
+      "2": {
+        "prompt": "Ein Mitschüler hat die rote Lampe links und die blaue rechts aufgestellt. Er schreibt: „Die Wand war lila, die Schatten rot und blau, aber vertauscht.“ Erkläre, was er mit „vertauscht“ beobachtet hat, und formuliere die Beobachtung fachlich korrekt.",
+        "hints": ["Auf welcher Seite liegt der Schatten einer Lampe?", "Welches Licht beleuchtet diesen Schatten?"],
+        "model": "Der Schatten, den die rote Lampe erzeugt, liegt rechts, weil sich das Licht geradlinig ausbreitet und der Stab es von links kommend nach rechts abschattet. Dort kommt nur das blaue Licht an, der Schatten ist blau. Der Schatten der blauen Lampe liegt links und ist rot. Fachlich korrekt: Die Wand erscheint purpurfarben; der Schatten der roten Lampe ist blau und liegt rechts, der Schatten der blauen Lampe ist rot und liegt links.",
+        "criteria": ["Lage der Schatten mit geradliniger Ausbreitung erklärt", "Farben aus dem fehlenden Licht begründet", "Beobachtung mit Fachbegriffen formuliert"]
+      }
+    },
+    "model": "farbschatten"
+  },
+  {
+    "id": "schatten",
+    "lb": 2,
+    "title": "Licht breitet sich geradlinig aus",
+    "period": "NT7 1.2 · Optische Phänomene",
+    "intro": "Ein Schatten zeigt dir, dass Licht sich auf geraden Linien ausbreitet.",
+    "paragraphs": [
+      "Ein Schatten ist der Bereich hinter einem undurchsichtigen Körper, in den kein Licht der Lampe gelangt. Seine Form erklärst du mit Lichtstrahlen: Von einer kleinen, fast punktförmigen Lampe zeichnest du gerade Linien, die den Rand des Gegenstands gerade berühren. Diese Randstrahlen begrenzen den Schatten auf dem Schirm. Dass der Schatten scharf begrenzt ist und die Form des Gegenstands hat, zeigt: Licht breitet sich geradlinig aus.",
+      "Die Größe des Schattens hängt von den Abständen ab. Steht der Gegenstand nahe an der Lampe, laufen die Randstrahlen stark auseinander, und der Schatten wird groß. Steht er nahe am Schirm, ist der Schatten kaum größer als der Gegenstand selbst. Beim Schattentheater nutzt man das: Eine Figur, die zur Lampe hin bewegt wird, wächst auf der Leinwand. Auch dein eigener Schatten ändert sich: Steht die Sonne tief, treffen die Randstrahlen flach auf den Boden, und der Schatten wird lang.",
+      "Beispiel: Die Lampe steht 100 cm vor dem Schirm, ein 4 cm großer Gegenstand 50 cm vor der Lampe, also genau in der Mitte. Bis zum Schirm ist der Weg der Randstrahlen doppelt so lang wie bis zum Gegenstand, deshalb wird der Schatten doppelt so groß: 8 cm. Rückst du den Gegenstand auf 20 cm an die Lampe heran, ist der Weg zum Schirm fünfmal so lang, und der Schatten wird 20 cm groß."
+    ],
+    "takeaway": "Licht breitet sich geradlinig aus. Je näher ein Gegenstand an der Lampe steht, desto größer ist sein Schatten auf dem Schirm.",
+    "formulas": [
+      "Schatten: Bereich ohne Licht hinter einem undurchsichtigen Körper",
+      "Randstrahlen begrenzen den Schatten",
+      "Gegenstand näher an der Lampe: größerer Schatten"
+    ],
+    "sourceIds": ["lp", "schatten", "licht"],
+    "quiz": {
+      "question": "Beim Schattentheater soll eine Figur auf der Leinwand größer werden. Was tust du?",
+      "answer": "Ich bewege die Figur näher zur Lampe.",
+      "wrong": [
+        "Ich bewege die Figur näher zur Leinwand.",
+        "Ich stelle die Lampe weiter von der Figur weg."
+      ],
+      "explanation": "Nahe an der Lampe laufen die Randstrahlen stark auseinander. Bis zur Leinwand weiten sie sich weit auf, und der Schatten wird groß."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Größer oder kleiner?",
+      "instruction": "Wie ändert sich der Schatten, wenn du jeweils nur eine Sache veränderst?",
+      "categories": ["Schatten wird größer", "Schatten wird kleiner"],
+      "entries": [
+        { "text": "Gegenstand näher zur Lampe", "target": 0, "feedback": "Die Randstrahlen öffnen sich weiter bis zum Schirm." },
+        { "text": "Gegenstand näher zum Schirm", "target": 1, "feedback": "Der Schatten wird fast so klein wie der Gegenstand." },
+        { "text": "Schirm weiter von Lampe und Gegenstand weg", "target": 0, "feedback": "Die Randstrahlen laufen länger auseinander." },
+        { "text": "Lampe weiter vom Gegenstand weg, Schirm bleibt stehen", "target": 1, "feedback": "Der Gegenstand steht dann vergleichsweise nahe am Schirm." },
+        { "text": "Größerer Gegenstand", "target": 0, "feedback": "Ein größerer Gegenstand hält mehr Licht ab." },
+        { "text": "Kleinerer Gegenstand", "target": 1, "feedback": "Weniger Licht wird abgehalten." }
+      ],
+      "conclusion": "Mit zwei Randstrahlen kannst du jede dieser Änderungen vorhersagen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Beschreibe eine Skizze, die erklärt, warum der Schatten eines Balls im Licht einer kleinen Lampe scharf begrenzt und rund ist.",
+        "hints": ["Zeichne Lampe, Ball, Schirm und die Randstrahlen.", "Was gilt für Licht außerhalb und innerhalb der Randstrahlen?"],
+        "model": "In der Skizze steht links die kleine Lampe, in der Mitte der Ball, rechts der Schirm. Von der Lampe zeichne ich zwei gerade Randstrahlen, die den Ball oben und unten gerade berühren und bis zum Schirm laufen. Zwischen ihnen gelangt kein Licht hinter den Ball: Das ist der Schatten. Weil das Licht geradlinig läuft und von einem kleinen Punkt kommt, ist der Rand scharf. Da der Ball von allen Seiten rund ist, berühren die Randstrahlen ihn auf einem Kreis, und der Schatten ist rund.",
+        "criteria": ["Aufbau mit Lampe, Ball, Schirm beschrieben", "Randstrahlen als Grenze des Schattens erklärt", "Schärfe und Form begründet"]
+      },
+      "2": {
+        "prompt": "Am Nachmittag ist dein Schatten auf dem Schulhof viel länger, als du groß bist. Erkläre mit der geradlinigen Ausbreitung des Lichts, warum der Schatten umso länger wird, je tiefer die Sonne steht.",
+        "hints": ["Zeichne den Randstrahl über deinen Kopf.", "Wie flach trifft er bei tiefer Sonne auf den Boden?"],
+        "model": "Der Randstrahl, der gerade über meinen Kopf läuft, ist eine gerade Linie von der Sonne zum Boden. Wo er den Boden trifft, endet mein Schatten. Steht die Sonne hoch, fällt der Strahl steil ein, und der Schatten ist kurz. Steht sie tief, verläuft der Strahl flach und trifft den Boden erst weit hinter mir. Deshalb wird der Schatten länger, je tiefer die Sonne steht.",
+        "criteria": ["Randstrahl über den Kopf genutzt", "Zusammenhang zwischen Einfallswinkel und Schattenlänge", "geradlinige Ausbreitung als Begründung"]
+      }
+    },
+    "model": "schatten"
+  },
+  {
+    "id": "kernschatten",
+    "lb": 2,
+    "title": "Kernschatten, Halbschatten und Übergangsschatten",
+    "period": "NT7 1.2 · Optische Phänomene",
+    "intro": "Zwei Lampen oder eine große Leuchte erzeugen Schatten mit hellen und dunklen Bereichen.",
+    "paragraphs": [
+      "Beleuchten zwei Lampen einen Gegenstand, wirft jede einen eigenen Schatten. Wo sich die beiden Schatten überlappen, kommt von keiner Lampe Licht an: Das ist der Kernschatten. Wo nur der Schatten einer Lampe liegt, beleuchtet die andere Lampe den Schirm noch: Das ist ein Halbschatten. Er ist heller als der Kernschatten, aber dunkler als die voll beleuchtete Umgebung.",
+      "Rücken die Lampen weiter auseinander, wird der Kernschatten schmaler und die Halbschatten werden breiter; schließlich trennen sich die beiden Schatten ganz. Eine ausgedehnte Lichtquelle, etwa eine lange Leuchtstoffröhre oder die Sonne, kannst du dir als viele Lampen nebeneinander vorstellen. Dann gibt es keinen scharfen Rand zwischen Kernschatten und Licht: Die Helligkeit nimmt allmählich zu. Diesen Bereich nennt man Übergangsschatten.",
+      "Beispiel: Zwei Lampen stehen 8 cm auseinander, ein 6 cm breiter Gegenstand 50 cm vor ihnen, der Schirm 100 cm. Jede Lampe allein wirft einen 12 cm breiten Schatten. Die beiden Schatten sind um 8 cm gegeneinander verschoben und überlappen deshalb nur auf 4 cm: So breit ist der Kernschatten. Rechts und links davon liegt je ein 8 cm breiter Halbschatten. Rückt der Gegenstand näher an den Schirm, wird der Kernschatten breiter."
+    ],
+    "takeaway": "Kernschatten: Kein Licht erreicht diesen Bereich. Halbschatten: Nur das Licht einer Lampe kommt an. Übergangsschatten: Bei einer ausgedehnten Lichtquelle wird es allmählich heller.",
+    "formulas": [
+      "Kernschatten: von keiner Lampe beleuchtet",
+      "Halbschatten: von einer der Lampen beleuchtet",
+      "Übergangsschatten: Helligkeit nimmt allmählich zu (ausgedehnte Lichtquelle)"
+    ],
+    "sourceIds": ["lp", "schatten"],
+    "quiz": {
+      "question": "Ein Bereich auf dem Schirm wird nur von einer von zwei Lampen beleuchtet. Wie heißt er?",
+      "answer": "Halbschatten",
+      "wrong": ["Kernschatten", "Übergangsschatten"],
+      "explanation": "Im Halbschatten fehlt das Licht einer Lampe, das der anderen kommt noch an. Im Kernschatten fehlt das Licht beider Lampen."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Schattenbereiche erkennen",
+      "instruction": "Ordne jede Beschreibung dem passenden Schattenbereich zu.",
+      "categories": ["Kernschatten", "Halbschatten", "Übergangsschatten"],
+      "entries": [
+        { "text": "Hier kommt von keiner der beiden Lampen Licht an.", "target": 0, "feedback": "Beide Schatten überlappen." },
+        { "text": "Nur die linke Lampe beleuchtet diese Stelle.", "target": 1, "feedback": "Das Licht der rechten Lampe fehlt." },
+        { "text": "Unter einer langen Deckenleuchte hat der Schatten deiner Hand einen verschwommenen Rand.", "target": 2, "feedback": "Eine ausgedehnte Lichtquelle macht den Rand weich." },
+        { "text": "Bei einer totalen Sonnenfinsternis stehst du in diesem Teil des Mondschattens.", "target": 0, "feedback": "Die Sonne ist ganz verdeckt." },
+        { "text": "Ein Fußballspieler im Flutlicht: Diese Stelle wird nur von einem Mast nicht beleuchtet.", "target": 1, "feedback": "Die anderen Masten beleuchten sie noch." },
+        { "text": "Am Rand des Schattens eines Baumes wird es zur Sonne hin allmählich heller.", "target": 2, "feedback": "Die Sonne ist eine ausgedehnte Lichtquelle." }
+      ],
+      "conclusion": "Wie dunkel eine Stelle ist, hängt davon ab, wie viel der Lichtquelle von dort aus noch zu sehen ist."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Im Flutlicht eines Fußballstadions hat jeder Spieler vier Schatten. Erkläre, wie sie entstehen und warum sie heller sind als der Schatten unter einer einzelnen Straßenlaterne.",
+        "hints": ["Wie viele Lichtquellen gibt es?", "Wie viele Masten beleuchten einen dieser Schatten noch?"],
+        "model": "Das Stadion wird von vier Flutlichtmasten beleuchtet. Jeder Mast erzeugt einen eigenen Schatten des Spielers in die Richtung, die von ihm wegzeigt. Jeder dieser Schatten wird aber noch von den drei anderen Masten beleuchtet; es sind also Halbschatten und deshalb recht hell. Nur direkt an den Füßen, wo sich alle vier überlappen, liegt ein Kernschatten. Unter einer einzelnen Laterne fehlt im Schatten das ganze Licht, er ist dunkel.",
+        "criteria": ["vier Lichtquellen als Ursache erkannt", "Schatten als Halbschatten eingeordnet", "Unterschied zur einzelnen Lampe begründet"]
+      },
+      "2": {
+        "prompt": "Halte deine Hand unter eine lange Deckenleuchte. Je weiter die Hand vom Tisch entfernt ist, desto verschwommener wird ihr Schatten. Erkläre das mit Kernschatten und Übergangsschatten.",
+        "hints": ["Stell dir die Leuchte als viele Lampen nebeneinander vor.", "Was passiert, wenn der Gegenstand näher an die Lichtquelle rückt?"],
+        "model": "Die lange Leuchte wirkt wie viele Lampen nebeneinander. Jede wirft einen etwas verschobenen Schatten der Hand. Ist die Hand nahe am Tisch, sind die Schatten kaum gegeneinander verschoben: Der Kernschatten ist groß, der Übergangsschatten schmal, der Schatten wirkt scharf. Hebt man die Hand zur Leuchte hin, werden die Schatten stärker gegeneinander verschoben. Der Kernschatten schrumpft, der Übergangsschatten wird breiter, und der Rand wird verschwommen.",
+        "criteria": ["Leuchte als viele Lampen gedeutet", "Verschiebung der Einzelschatten beschrieben", "Änderung von Kern- und Übergangsschatten erklärt"]
+      }
+    },
+    "model": "halbschatten"
+  },
+  {
+    "id": "mondphasen",
+    "lb": 2,
+    "title": "Mondphasen",
+    "period": "NT7 1.2 · Optische Phänomene",
+    "intro": "Wir sehen immer den Teil der beleuchteten Mondhälfte, der gerade zur Erde zeigt.",
+    "paragraphs": [
+      "Die Sonne beleuchtet immer eine Hälfte des Mondes, genau wie eine Hälfte der Erde. Der Mond umläuft die Erde, und je nachdem, wo er auf seiner Bahn steht, sehen wir von der Erde aus einen größeren oder kleineren Teil seiner beleuchteten Hälfte. Von Neumond zu Neumond dauert es etwa 29,5 Tage. Daher kommt das Wort Monat.",
+      "Steht der Mond zwischen Erde und Sonne, zeigt seine unbeleuchtete Seite zu uns: Neumond. Danach wächst die beleuchtete Fläche, bei uns am rechten Rand beginnend: zunehmende Sichel, zunehmender Halbmond, zunehmender Mond. Steht die Erde zwischen Sonne und Mond, sehen wir die ganze beleuchtete Hälfte: Vollmond. Danach nimmt der Mond ab, und nur noch der linke Teil leuchtet. Eine Merkhilfe: Der abnehmende Mond sieht aus wie die Rundung eines geschriebenen kleinen a.",
+      "Beispiel für die Zusammenfassung eines Sachtextes: Zuerst markierst du die Fachbegriffe wie Neumond, zunehmend, Vollmond und abnehmend. Dann ordnest du die Aussagen in der Reihenfolge, in der sie im Monatslauf vorkommen. Schließlich schreibst du wenige eigene Sätze und ergänzt eine Zeichnung: die Sonne am Rand, die Erde in der Mitte, der Mond in acht Stellungen auf seiner Bahn, jeweils mit der beleuchteten Hälfte zur Sonne hin. Daneben zeichnest du, wie die Phase von der Erde aus aussieht, und beschriftest alles sorgfältig."
+    ],
+    "takeaway": "Die Sonne beleuchtet immer eine Mondhälfte. Wie viel wir davon sehen, hängt von der Stellung des Mondes zu Erde und Sonne ab: Neumond, zunehmend, Vollmond, abnehmend, in etwa 29,5 Tagen.",
+    "formulas": [
+      "Neumond: Mond zwischen Erde und Sonne",
+      "Vollmond: Erde zwischen Sonne und Mond",
+      "zunehmend: bei uns rechts beleuchtet",
+      "Neumond bis Neumond: etwa 29,5 Tage"
+    ],
+    "sourceIds": ["lp", "mond", "mondphase"],
+    "quiz": {
+      "question": "Warum sehen wir den Mond bei Neumond nicht?",
+      "answer": "Seine beleuchtete Hälfte zeigt von der Erde weg zur Sonne.",
+      "wrong": [
+        "Der Schatten der Erde fällt dann auf den Mond.",
+        "Die Sonne beleuchtet den Mond in dieser Zeit nicht."
+      ],
+      "explanation": "Bei Neumond steht der Mond zwischen Erde und Sonne. Die Sonne beleuchtet seine Rückseite, zur Erde zeigt die dunkle Seite. Der Erdschatten spielt nur bei einer Mondfinsternis eine Rolle."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Einen Sachtext ordnen",
+      "instruction": "Lies den Sachtext und bringe die Mondphasen in die Reihenfolge eines Monats, beginnend mit Neumond.",
+      "materialLabel": "Sachtext (eigens verfasst)",
+      "material": "Der Mond zeigt sich jeden Abend etwas später und etwas anders. Nach dem Neumond erscheint er als schmale Sichel kurz nach Sonnenuntergang tief im Westen. Eine Woche später ist er zur Hälfte beleuchtet und steht bei Sonnenuntergang hoch im Süden. Nach etwa zwei Wochen geht der volle Mond auf, wenn die Sonne untergeht, und ist die ganze Nacht zu sehen. Danach geht er immer später auf, und in der letzten Woche sieht man die schmale Sichel nur noch am Morgenhimmel.",
+      "categories": [],
+      "entries": [
+        { "text": "Neumond: Der Mond ist nicht zu sehen.", "target": 0, "feedback": "Start des Monatslaufs." },
+        { "text": "Zunehmende Sichel am Abendhimmel im Westen, rechts beleuchtet.", "target": 1, "feedback": "Wenige Tage nach Neumond." },
+        { "text": "Zunehmender Halbmond: Die rechte Hälfte leuchtet, bei Sonnenuntergang im Süden.", "target": 2, "feedback": "Etwa eine Woche nach Neumond." },
+        { "text": "Vollmond: Die ganze Scheibe leuchtet die Nacht hindurch.", "target": 3, "feedback": "Nach etwa zwei Wochen." },
+        { "text": "Abnehmender Halbmond: Die linke Hälfte leuchtet, er geht erst um Mitternacht auf.", "target": 4, "feedback": "Etwa drei Wochen nach Neumond." },
+        { "text": "Abnehmende Sichel kurz vor Sonnenaufgang am Morgenhimmel.", "target": 5, "feedback": "Kurz vor dem nächsten Neumond." }
+      ],
+      "conclusion": "Wer die Aussagen eines Textes in eine zeitliche Reihenfolge bringt, hat das Wichtigste schon für die Zusammenfassung erfasst."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Fasse den Sachtext aus der Werkstatt in drei bis vier eigenen Sätzen zusammen. Verwende die Fachbegriffe Neumond, zunehmend, Vollmond und abnehmend.",
+        "hints": ["Halte dich an die Reihenfolge des Monats.", "Nenne auch, wann der Mond am Himmel zu sehen ist."],
+        "model": "Nach dem Neumond ist der Mond als zunehmende Sichel am Abendhimmel im Westen zu sehen. Etwa eine Woche später ist er als zunehmender Halbmond zur Hälfte beleuchtet. Nach zwei Wochen ist Vollmond; der Mond geht bei Sonnenuntergang auf und leuchtet die ganze Nacht. Danach wird er abnehmend, geht immer später auf und ist am Ende als schmale Sichel nur noch am Morgen zu sehen.",
+        "criteria": ["Reihenfolge des Monats eingehalten", "alle vier Fachbegriffe korrekt verwendet", "eigene Formulierungen statt Abschreiben"]
+      },
+      "2": {
+        "prompt": "Ein Kalender zeigt für den 3. eines Monats Vollmond. Gib an, wann ungefähr der nächste Neumond und der nächste Vollmond sind, und erkläre mit der Stellung von Sonne, Erde und Mond, warum der Vollmond die ganze Nacht zu sehen ist.",
+        "hints": ["Von Vollmond zu Neumond vergeht etwa ein halber Monat.", "Wo steht der Vollmond, von der Erde aus gesehen, im Vergleich zur Sonne?"],
+        "model": "Von Vollmond zu Vollmond vergehen etwa 29,5 Tage, von Vollmond zu Neumond etwa die Hälfte. Der nächste Neumond ist also um den 18. des Monats, der nächste Vollmond etwa am 2. oder 3. des Folgemonats. Bei Vollmond steht die Erde zwischen Sonne und Mond. Der Mond steht von der Erde aus gesehen der Sonne genau gegenüber: Er geht auf, wenn die Sonne untergeht, und unter, wenn sie aufgeht. Deshalb ist er die ganze Nacht zu sehen.",
+        "criteria": ["Termine aus der Dauer von etwa 29,5 Tagen abgeleitet", "Stellung Sonne – Erde – Mond beschrieben", "Sichtbarkeit die ganze Nacht begründet"]
+      }
+    },
+    "model": "mondphasen"
+  },
+  {
+    "id": "finsternisse",
+    "lb": 2,
+    "title": "Sonnen- und Mondfinsternis",
+    "period": "NT7 1.2 · Optische Phänomene",
+    "intro": "Finsternisse sind riesige Schattenwürfe von Mond und Erde.",
+    "paragraphs": [
+      "Bei einer Sonnenfinsternis steht der Mond genau zwischen Sonne und Erde, und sein Schatten fällt auf die Erde. Wer im Kernschatten des Mondes steht, sieht die Sonne ganz verdeckt: totale Sonnenfinsternis. Der Kernschatten trifft aber nur einen schmalen Streifen der Erde. Im viel größeren Halbschatten ist die Sonne nur teilweise verdeckt: partielle Sonnenfinsternis. Eine Sonnenfinsternis kann es deshalb nur bei Neumond geben.",
+      "Bei einer Mondfinsternis steht die Erde zwischen Sonne und Mond, und der Mond wandert durch den Schatten der Erde. Das geht nur bei Vollmond. Weil der Erdschatten am Ort des Mondes viel größer ist als der Mond, sehen alle Menschen auf der Nachtseite der Erde die Finsternis gleichzeitig. Der verfinsterte Mond verschwindet meist nicht ganz, sondern leuchtet schwach kupferrot, denn die Lufthülle der Erde lenkt etwas rotes Sonnenlicht in den Schatten.",
+      "Beispiel: Warum gibt es nicht jeden Monat eine Finsternis? Die Mondbahn ist gegen die Bahnebene der Erde um etwa 5° geneigt. Meist zieht der Mond bei Neumond knapp oberhalb oder unterhalb der Sonne vorbei, und sein Schatten verfehlt die Erde; bei Vollmond verfehlt er den Erdschatten. Nur wenn Neumond oder Vollmond nahe an den Stellen liegt, an denen die Mondbahn die Erdbahnebene schneidet, kommt es zu einer Finsternis. Achtung: Schau nie ohne zugelassene Sonnenfinsternisbrille in die Sonne, auch nicht bei einer partiellen Finsternis; das Licht kann die Netzhaut bleibend schädigen."
+    ],
+    "takeaway": "Sonnenfinsternis: bei Neumond, der Mondschatten trifft die Erde. Mondfinsternis: bei Vollmond, der Mond läuft durch den Erdschatten. Wegen der geneigten Mondbahn geschieht das nur selten.",
+    "formulas": [
+      "Sonnenfinsternis: Sonne, Mond, Erde auf einer Linie, nur bei Neumond",
+      "Mondfinsternis: Sonne, Erde, Mond auf einer Linie, nur bei Vollmond",
+      "Mondbahn: etwa 5° gegen die Erdbahnebene geneigt"
+    ],
+    "sourceIds": ["lp", "sofi", "mofi"],
+    "quiz": {
+      "question": "Warum können viel mehr Menschen eine totale Mondfinsternis sehen als eine totale Sonnenfinsternis?",
+      "answer": "Der Mond liegt dann ganz im großen Erdschatten, und das sieht die ganze Nachtseite der Erde.",
+      "wrong": [
+        "Der Mond ist größer als die Sonne und deshalb von überall zu sehen.",
+        "Bei einer Sonnenfinsternis ist es Tag, und am Tag sieht man keine Finsternis."
+      ],
+      "explanation": "Bei der Mondfinsternis wird der Mond selbst dunkel; das sieht jeder, der ihn gerade sehen kann. Der Kernschatten des Mondes dagegen trifft nur einen schmalen Streifen der Erde."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Sonnenfinsternis oder Mondfinsternis?",
+      "instruction": "Ordne jede Aussage zu.",
+      "categories": ["Sonnenfinsternis", "Mondfinsternis", "trifft auf beide zu"],
+      "entries": [
+        { "text": "nur bei Neumond möglich", "target": 0, "feedback": "Der Mond muss zwischen Sonne und Erde stehen." },
+        { "text": "nur bei Vollmond möglich", "target": 1, "feedback": "Die Erde muss zwischen Sonne und Mond stehen." },
+        { "text": "Ein Himmelskörper liegt im Schatten eines anderen.", "target": 2, "feedback": "Beide Finsternisse sind Schattenwürfe." },
+        { "text": "Total ist sie nur in einem schmalen Streifen zu sehen.", "target": 0, "feedback": "Der Kernschatten des Mondes ist auf der Erde klein." },
+        { "text": "Der verfinsterte Himmelskörper leuchtet kupferrot.", "target": 1, "feedback": "Rotes Licht wird durch die Lufthülle in den Erdschatten gelenkt." },
+        { "text": "Sonne, Erde und Mond stehen ungefähr auf einer Linie.", "target": 2, "feedback": "Nur dann trifft ein Schatten den anderen Körper." }
+      ],
+      "conclusion": "Beide Finsternisse folgen aus der geradlinigen Ausbreitung des Lichts; sie unterscheiden sich darin, wessen Schatten auf wen fällt."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erstelle eine anschauliche Zusammenfassung zur Mondfinsternis für die Schülerzeitung: drei Sätze und eine Zeichnung, die du in Worten beschreibst.",
+        "hints": ["Wie stehen Sonne, Erde und Mond?", "Was sieht man, und wer kann es sehen?"],
+        "model": "Bei einer Mondfinsternis steht die Erde genau zwischen Sonne und Mond, und der Vollmond wandert durch den Schatten der Erde. Er wird dunkel und leuchtet oft kupferrot, weil die Lufthülle der Erde etwas rotes Licht in den Schatten lenkt. Alle Menschen auf der Nachtseite der Erde können die Finsternis gleichzeitig sehen. Zeichnung: links die Sonne, in der Mitte die Erde mit einem kegelförmigen Kernschatten nach rechts und einem breiteren Halbschatten, rechts der Mond im Kernschatten; alle Teile sind beschriftet.",
+        "criteria": ["Stellung von Sonne, Erde, Mond richtig", "Rotfärbung oder Sichtbarkeit erklärt", "Zeichnung mit Kern- und Halbschatten beschrieben"]
+      },
+      "2": {
+        "prompt": "Eine Freundin sagt: „Bei jedem Neumond müsste es eine Sonnenfinsternis geben.“ Erkläre ihr fachlich korrekt, warum das nicht so ist, und nenne die Sicherheitsregel für das Beobachten einer Sonnenfinsternis.",
+        "hints": ["Liegt die Mondbahn in derselben Ebene wie die Erdbahn?", "Was kann das Sonnenlicht im Auge anrichten?"],
+        "model": "Die Idee ist verständlich, denn bei Neumond steht der Mond ungefähr zwischen Sonne und Erde. Die Mondbahn ist aber um etwa 5° gegen die Erdbahnebene geneigt. Meist läuft der Mond bei Neumond deshalb ein Stück oberhalb oder unterhalb der Linie Sonne – Erde vorbei, und sein Schatten verfehlt die Erde. Nur wenn der Neumond nahe einem Schnittpunkt der Mondbahn mit der Erdbahnebene liegt, gibt es eine Finsternis. Beim Beobachten gilt: nie ohne zugelassene Sonnenfinsternisbrille in die Sonne schauen, weil das Licht die Netzhaut schädigt.",
+        "criteria": ["Neigung der Mondbahn als Grund genannt", "Folge für den Mondschatten erklärt", "Sicherheitsregel mit Begründung"]
+      }
+    },
+    "model": "finsternis"
+  },
+  {
+    "id": "licht-sicherheit",
+    "lb": 2,
+    "title": "Sehen und gesehen werden",
+    "period": "NT7 1.2 · Optische Phänomene",
+    "intro": "Im Dunkeln bist du nur sicher, wenn genug Licht von dir in die Augen der anderen fällt.",
+    "paragraphs": [
+      "Eine Autofahrerin sieht einen Fußgänger nur, wenn Licht von ihm in ihre Augen gelangt. Nachts kommt dieses Licht vor allem von den eigenen Scheinwerfern: Es muss den Fußgänger erreichen und von ihm zurückgeworfen werden. Dunkle Kleidung absorbiert fast das ganze Licht, helle Kleidung reflektiert viel mehr. Reflektoren und Reflexstreifen werfen das Licht gezielt dorthin zurück, woher es kam, also zum Auto und damit zu den Augen der Fahrerin.",
+      "Der ADAC nennt für schlechte Sicht: Dunkel gekleidete Fußgänger erkennt man erst aus rund 25 m Entfernung, mit reflektierender Kleidung aus bis zu 140 m. Die Stadt Zürich gibt für helle Kleidung etwa 40 m an. Ein Auto, das aus 50 km/h notbremst, braucht nach dem ADAC aber etwa 28 m bis zum Stillstand. Bei dunkler Kleidung reicht die Strecke also nicht. Die Empfehlung „Trag helle Kleidung und Reflektoren“ hat damit einen klaren physikalischen Kern: mehr reflektiertes Licht, frühere Erkennung.",
+      "Beispiel: Intensive Lichtquellen sind gefährlich für die Augen. Ein Laserpointer bündelt sein Licht stark; trifft der Strahl ins Auge, wird das Licht auf einen winzigen Fleck der Netzhaut gesammelt und kann sie bleibend schädigen. Das Bundesamt für Strahlenschutz rät: Trifft ein Laserstrahl ins Auge, die Augen bewusst schließen und den Kopf abwenden; Laserpointer nie auf Menschen oder Fahrzeuge richten, weil Geblendete die Kontrolle verlieren können. Ebenso gilt: Nie direkt in die Sonne schauen und andere nicht mit Fernlicht blenden."
+    ],
+    "takeaway": "Gesehen wirst du nur, wenn genug Licht von dir ins Auge der anderen fällt: Helle Kleidung und Reflektoren werfen mehr Licht zurück. Sehr intensives Licht wie Laser oder Sonne schädigt das Auge.",
+    "formulas": [
+      "Erkennbarkeit nachts: dunkel etwa 25 m, hell etwa 40 m, Reflektoren bis 140 m",
+      "Anhalteweg bei Notbremsung aus 50 km/h: etwa 28 m",
+      "Reflektor: wirft Licht zur Lichtquelle zurück"
+    ],
+    "sourceIds": ["lp", "adac", "zuerich", "laserpointer"],
+    "quiz": {
+      "question": "Warum ist ein Fahrradreflektor nachts für Autofahrer so gut zu sehen?",
+      "answer": "Er wirft das Scheinwerferlicht gezielt zum Auto zurück.",
+      "wrong": [
+        "Er erzeugt selbst Licht, sobald es dunkel wird.",
+        "Er absorbiert das Scheinwerferlicht besonders stark."
+      ],
+      "explanation": "Ein Reflektor ist ein beleuchteter Körper. Er wirft viel Licht genau in die Richtung zurück, aus der es kommt, also zu den Augen der Fahrerin."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Der physikalische Kern von Sicherheitsregeln",
+      "instruction": "Welcher physikalische Gedanke steckt in der Empfehlung?",
+      "categories": ["mehr Licht zurückwerfen, um gesehen zu werden", "das Auge vor zu viel Licht schützen"],
+      "entries": [
+        { "text": "Trag im Herbst eine Warnweste über der dunklen Jacke.", "target": 0, "feedback": "Helle Flächen und Reflexstreifen werfen viel Licht zurück." },
+        { "text": "Bring Reflektoren an Schulranzen und Fahrrad an.", "target": 0, "feedback": "Reflektoren schicken das Licht zum Auto zurück." },
+        { "text": "Schau eine Sonnenfinsternis nur mit Schutzbrille an.", "target": 1, "feedback": "Die Brille lässt nur einen winzigen Teil des Lichts durch." },
+        { "text": "Richte einen Laserpointer nie auf Personen.", "target": 1, "feedback": "Gebündeltes Licht kann die Netzhaut schädigen und blenden." },
+        { "text": "Wähle für den Schulweg im Winter helle statt schwarzer Kleidung.", "target": 0, "feedback": "Schwarz absorbiert fast alles Licht." },
+        { "text": "Blende entgegenkommende Fahrer nicht mit dem Fernlicht.", "target": 1, "feedback": "Geblendete sehen kurzzeitig fast nichts." }
+      ],
+      "conclusion": "Viele Verkehrsregeln folgen direkt aus dem Sehvorgang: Licht muss ins Auge gelangen, aber nicht zu viel davon."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre einem Fünftklässler mit dem Sehvorgang, warum er auf dem Schulweg im Dezember Reflektoren tragen soll. Verwende die Begriffe Reflexion und Absorption.",
+        "hints": ["Woher kommt nachts das Licht, mit dem die Fahrerin dich sieht?", "Was passiert mit dem Licht an dunkler Kleidung?"],
+        "model": "Eine Autofahrerin sieht dich nur, wenn Licht von dir in ihre Augen kommt. Im Dunkeln stammt dieses Licht von ihren Scheinwerfern. Deine dunkle Jacke absorbiert fast das ganze Licht, es kommt kaum etwas zurück, und sie erkennt dich erst aus etwa 25 m. Ein Reflektor dagegen reflektiert das Licht genau zum Auto zurück. Dann sieht sie dich schon aus über 100 m und hat genug Zeit zum Bremsen.",
+        "criteria": ["Sehvorgang mit Scheinwerfer als Lichtquelle", "Reflexion und Absorption korrekt verwendet", "Bedeutung für den Anhalteweg genannt"]
+      },
+      "2": {
+        "prompt": "Ein Werbetext behauptet: „Unsere schwarze Jacke ist dank Spezialstoff nachts genauso gut sichtbar wie eine Warnweste.“ Nenne die physikalische Aussage, die darin steckt, und beschreibe, wie du sie mit einer Taschenlampe in einem dunklen Raum prüfen könntest.",
+        "hints": ["Was müsste der Stoff mit dem Licht tun?", "Wo musst du stehen, wenn du wie eine Fahrerin schauen willst?"],
+        "model": "Die physikalische Aussage lautet: Der schwarze Stoff wirft im Dunkeln genauso viel Licht zur Lichtquelle zurück wie eine Warnweste. Zur Prüfung hänge ich Jacke und Warnweste nebeneinander an die Wand eines dunklen Raumes. Ich halte die Taschenlampe dicht neben meine Augen, wie Scheinwerfer und Fahrerin, und gehe langsam zurück. Ich notiere, bis zu welchem Abstand ich jedes Kleidungsstück noch erkenne. Nur wenn die Abstände gleich sind, stimmt die Behauptung.",
+        "criteria": ["Aussage als Reflexion zur Lichtquelle formuliert", "Versuch mit Lampe nahe am Auge geplant", "fairer Vergleich mit Warnweste und Auswertung"]
+      }
+    },
+    "model": "sichtbarkeit"
+  }
+]
