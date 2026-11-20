@@ -1,10 +1,23 @@
 import { expect, it } from "vitest";
+import appHtml from "../index.html?raw";
 import { LESSONS } from "../src/curriculum";
 import type { ModelKind } from "../src/model/types";
 import { MODEL_SCENARIOS, modelReady, recordExploration } from "../src/models";
 import { completion, freshProgress, isComplete, parseProgress } from "../src/storage/progress";
 import { renderModel } from "../src/ui/models";
 import { canAcceptSelfAssessment, canReviewDraft } from "../src/workshop";
+
+it("uses a theme storage key reserved for Grade 7 Realschule biology", () => {
+	const key = "biologie_rs7_theme";
+	expect(appHtml).toContain(`data-theme-storage-key="${key}"`);
+	const otherPackages = import.meta.glob<string>(
+		["../../biologie-*/index.html", "!../../biologie-realschule-7/index.html"],
+		{ eager: true, import: "default", query: "?raw" },
+	);
+	for (const html of Object.values(otherPackages)) {
+		expect(html).not.toContain(key);
+	}
+});
 
 const kinds = Object.keys(MODEL_SCENARIOS) as ModelKind[];
 it.each(kinds)("%s has reachable model goals and a different drawing for each state", (kind) => {

@@ -1,13 +1,14 @@
 <!doctype html>
-<html lang="de">
+<html lang="de" data-theme-storage-key="biologie_rs7_theme">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="color-scheme" content="light dark" />
     <script>
       try {
-        const theme = localStorage.getItem("biologie_rs7_theme");
-        if (theme === "light" || theme === "dark") document.documentElement.dataset.theme = theme;
+        const { dataset } = document.documentElement;
+        const theme = localStorage.getItem(dataset.themeStorageKey);
+        if (theme === "light" || theme === "dark") dataset.theme = theme;
       } catch {}
     </script>
     <title>Biologie 7 Realschule · ZAM Academy</title>

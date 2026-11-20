@@ -514,13 +514,14 @@ document.getElementById("home")!.addEventListener("click", (event) => {
 });
 document.getElementById("zam")!.addEventListener("click", showZam);
 document.getElementById("theme")!.addEventListener("click", () => {
+	const { dataset } = document.documentElement;
 	const current =
-		document.documentElement.dataset.theme ??
+		dataset.theme ??
 		(matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
 	const theme = current === "dark" ? "light" : "dark";
-	document.documentElement.dataset.theme = theme;
+	dataset.theme = theme;
 	try {
-		localStorage.setItem("biologie_rs6_theme", theme);
+		if (dataset.themeStorageKey) localStorage.setItem(dataset.themeStorageKey, theme);
 	} catch {
 		/* The current page still changes theme. */
 	}
