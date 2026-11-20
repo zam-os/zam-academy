@@ -1,0 +1,621 @@
+[
+	{
+		"id": "b7-untersuchen",
+		"lb": 1,
+		"title": "Ein fairer Pflanzenversuch",
+		"period": "B7 · Lernbereich 1",
+		"intro": "Wie findest du heraus, ob Licht eine beobachtete Veränderung verursacht?",
+		"paragraphs": [
+			"Beginne mit einer prüfbaren Frage und formuliere eine Vermutung. Lege fest, was du veränderst, was du misst und was gleich bleibt. Führe die Untersuchung nach Anleitung durch, protokolliere die Beobachtungen und prüfe, ob die Daten zur Vermutung passen.",
+			"Mara will wissen, wie Licht das Wachstum junger Bohnen in einer Woche beeinflusst. Sie verteilt vergleichbare Pflanzen auf helle und dunkle Plätze, hält Temperatur und Wasserzugabe möglichst gleich und misst die Höhe mit demselben Lineal jeweils ab der Erdoberfläche. Die helle Gruppe dient als Vergleich. Mehrere Pflanzen pro Gruppe helfen, Zufall und ungewöhnliche Einzelfälle zu erkennen.",
+			"Schreibe Messwerte mit Einheit auf. Unterschiedliche Ausgangshöhen können täuschen, wenn du nur die Endhöhe vergleichst. Miss die Veränderung pro Pflanze. Wachstum hat mehrere Merkmale: Höhe allein sagt zum Beispiel wenig über Blattfarbe und Gesundheit aus."
+		],
+		"takeaway": "Ein fairer Vergleich ändert gezielt einen Einfluss und hält die übrigen Bedingungen möglichst gleich.",
+		"sourceIds": [
+			"lp"
+		],
+		"quiz": {
+			"question": "Welcher Aufbau prüft den Einfluss des Lichts?",
+			"answer": "Beide Gruppen bekommen gleich viel Wasser; die Beleuchtung unterscheidet sich.",
+			"wrong": [
+				"Eine Gruppe steht dunkel und bleibt trocken; die andere steht hell und bekommt Wasser.",
+				"Beide Gruppen stehen gleich hell; eine wird häufiger gemessen."
+			],
+			"explanation": "Licht ist die untersuchte Variable. Weitere Unterschiede würden die Auswertung erschweren."
+		},
+		"visual": {
+			"title": "Vom Plan zum Ergebnis",
+			"kind": "flow",
+			"steps": [
+				{
+					"label": "Frage und Vermutung",
+					"detail": "Was könnte den Unterschied erklären?"
+				},
+				{
+					"label": "Plan und Vergleich",
+					"detail": "Eine Bedingung gezielt ändern"
+				},
+				{
+					"label": "Messen",
+					"detail": "Mit gleicher Methode protokollieren"
+				},
+				{
+					"label": "Auswerten",
+					"detail": "Ergebnis und Fehlerquellen prüfen"
+				}
+			]
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Werkstatt",
+			"instruction": "Ordne jeden Eintrag zu und prüfe deine Auswahl.",
+			"material": "Mara prüft die Wirkung der Beleuchtung auf die Höhenänderung.",
+			"categories": [
+				"Veränderte Bedingung",
+				"Messgröße",
+				"Gleich gehalten"
+			],
+			"entries": [
+				{
+					"text": "Helligkeit am Standort",
+					"target": 0,
+					"feedback": "Mara verändert gezielt die Beleuchtung."
+				},
+				{
+					"text": "Höhenänderung in cm",
+					"target": 1,
+					"feedback": "Die Differenz zwischen zwei Höhenmessungen ist das Ergebnis."
+				},
+				{
+					"text": "Wassermenge pro Pflanze",
+					"target": 2,
+					"feedback": "Gleiche Wasserzugabe begrenzt eine mögliche Störgröße."
+				}
+			],
+			"conclusion": "Ein fairer Vergleich ändert gezielt einen Einfluss und hält die übrigen Bedingungen möglichst gleich."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Zwei Gruppen unterscheiden sich in Beleuchtung und Wassermenge. Wie änderst du den Aufbau, um Licht fair zu prüfen?",
+				"hints": [
+					"Wähle einen Einfluss.",
+					"Entscheide, was du messen willst."
+				],
+				"model": "Ich gebe allen Pflanzen gleich viel Wasser und halte Art und Temperatur möglichst gleich. Nur die Beleuchtung unterscheidet sich. Ich messe die Höhe zu Beginn und am Ende bei jeder Pflanze gleich.",
+				"criteria": [
+					"Ich nenne Licht als Variable.",
+					"Ich benenne eine Konstante.",
+					"Ich beschreibe eine vergleichbare Messung."
+				]
+			},
+			"2": {
+				"prompt": "Du willst prüfen, ob eine Abdeckung die Wasserabgabe von Blättern beeinflusst. Plane einen fairen Vergleich mit zwei gleichartigen Pflanzen.",
+				"hints": [
+					"Überlege, was du ändern willst.",
+					"Lege einen messbaren Vergleich fest."
+				],
+				"model": "Ich wähle vergleichbare Pflanzen und ändere nur die Abdeckung an den Blattflächen einer Gruppe. Licht und Temperatur bleiben gleich. Ich vergleiche die Masseabnahme über dieselbe Zeit und decke bei beiden die Erde ab, damit deren Verdunstung das Ergebnis weniger beeinflusst.",
+				"criteria": [
+					"Ich beschreibe beide Gruppen.",
+					"Ich nenne eine geeignete Messgröße.",
+					"Ich beziehe eine Fehlerquelle ein."
+				]
+			}
+		}
+	},
+	{
+		"id": "b7-mikroskopieren",
+		"lb": 1,
+		"title": "Mikroskopbild, Zeichnung und Modell",
+		"period": "B7 · Lernbereich 1",
+		"intro": "Mit der passenden Methode lernst du etwas über Form oder Funktion.",
+		"paragraphs": [
+			"Ein Lichtmikroskop macht kleine Strukturen sichtbar. Für ein durchsichtiges Präparat legst du nach der Anleitung der Lehrkraft eine dünne Probe in einen Wassertropfen auf dem Objektträger und deckst sie ab. Beginne mit der kleinsten Vergrößerung, suche eine gut sichtbare Stelle und stelle scharf. Wechsle erst danach zur höheren Vergrößerung und stelle fein nach. In der Schule zeigt dir die Lehrkraft den sicheren Umgang mit Glas und Schneidewerkzeugen.",
+			"Eine biologische Zeichnung hält fest, was du wirklich siehst: klare Linien, Beschriftungen, Präparat und Vergrößerung. Luftblasen können im Bild auffallen. Vergleiche mehrere Stellen und ein Schema, bevor du sie als Zellbestandteil deutest.",
+			"Beispiel: Mit einem dünnen Sprossquerschnitt untersuchst du, wo Leitbündel liegen. Eine Schemazeichnung zeigt ihre Anordnung übersichtlicher. Ein Röhrenmodell kann Stofftransport veranschaulichen, lässt aber lebende Gewebe und manche Transportmechanismen weg."
+		],
+		"takeaway": "Mikroskopbild, Beobachtungszeichnung und Modell beantworten unterschiedliche Fragen.",
+		"sourceIds": [
+			"lp"
+		],
+		"quiz": {
+			"question": "Wann wechselst du zur höheren Vergrößerung?",
+			"answer": "Wenn die Stelle bei kleiner Vergrößerung scharf in der Mitte liegt.",
+			"wrong": [
+				"Bevor du das Präparat auflegst.",
+				"Sobald du einen unscharfen Rand siehst."
+			],
+			"explanation": "Der kleinere Bildausschnitt bei hoher Vergrößerung macht die Suche schwieriger."
+		},
+		"visual": {
+			"title": "Von der Probe zum Modell",
+			"kind": "flow",
+			"steps": [
+				{
+					"label": "Präparat",
+					"detail": "Dünne, lichtdurchlässige Probe"
+				},
+				{
+					"label": "Mikroskopbild",
+					"detail": "Sichtbare Einzelheiten"
+				},
+				{
+					"label": "Zeichnung",
+					"detail": "Beobachtete Strukturen beschriften"
+				},
+				{
+					"label": "Modell",
+					"detail": "Ausgewählte Eigenschaften erklären"
+				}
+			]
+		},
+		"workshop": {
+			"kind": "timeline",
+			"title": "Ein Präparat scharf sehen",
+			"instruction": "Bringe die Schritte am Lichtmikroskop in eine sinnvolle Reihenfolge.",
+			"material": "Die Aufgabe beginnt nach der Vorbereitung an der Station.",
+			"categories": [],
+			"entries": [
+				{
+					"text": "Kleinste Vergrößerung wählen und Präparat einlegen.",
+					"target": 0,
+					"feedback": "Am Anfang brauchst du einen möglichst großen Überblick."
+				},
+				{
+					"text": "Geeignete Stelle suchen und scharf stellen.",
+					"target": 1,
+					"feedback": "Die Stelle muss gut erkennbar sein."
+				},
+				{
+					"text": "Ausschnitt in die Mitte bringen.",
+					"target": 2,
+					"feedback": "So bleibt er beim Wechsel im kleineren Bildausschnitt."
+				},
+				{
+					"text": "Höhere Vergrößerung wählen und fein nachstellen.",
+					"target": 3,
+					"feedback": "Erst jetzt vergrößerst du die ausgesuchte Stelle."
+				}
+			],
+			"conclusion": "Mikroskopbild, Beobachtungszeichnung und Modell beantworten unterschiedliche Fragen."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Warum beginnst du nach dem Auflegen eines Präparats mit der kleinsten Vergrößerung? Beschreibe die nächsten Schritte.",
+				"hints": [
+					"Überlege, wie groß dein Sichtfeld ist.",
+					"Berücksichtige die Lage der ausgewählten Stelle."
+				],
+				"model": "Bei kleiner Vergrößerung sehe ich mehr vom Präparat. Ich suche eine geeignete Stelle, stelle sie scharf und bringe sie zur Mitte. Dann wechsle ich zur stärkeren Vergrößerung und stelle fein nach.",
+				"criteria": [
+					"Ich begründe die kleine Vergrößerung.",
+					"Ich nenne das Scharfstellen und Zentrieren.",
+					"Ich beschreibe den Wechsel."
+				]
+			},
+			"2": {
+				"prompt": "Du bekommst ein Röhrenmodell und ein Mikroskopbild des Sprosses. Womit beantwortest du die Frage, wo Bündel liegen, und womit erklärst du ihre Transportfunktion?",
+				"hints": [
+					"Trenne Lage und Funktion.",
+					"Nenne eine Grenze des Modells."
+				],
+				"model": "Im Mikroskopbild suche ich die realen Bündel und beschrifte ihre Lage in einer Zeichnung. Das Röhrenmodell zeigt einen möglichen Transportweg. Es erklärt zum Beispiel nicht den Aufbau der Siebröhren aus lebenden Zellen.",
+				"criteria": [
+					"Ich wähle eine Methode für die Lage.",
+					"Ich wähle eine Darstellung für die Funktion.",
+					"Ich erläutere eine Grenze."
+				]
+			}
+		}
+	},
+	{
+		"id": "b7-quellen",
+		"lb": 1,
+		"title": "Quellen unter der Lupe",
+		"period": "B7 · Lernbereich 1",
+		"intro": "Kannst du einer Infografik über das Gehör trauen?",
+		"paragraphs": [
+			"Prüfe, wer eine Aussage veröffentlicht, welches Ziel die Seite hat und welche Belege sie nennt. Eine Werbung will möglicherweise etwas verkaufen. Ein genanntes Fachinstitut und ein nachvollziehbarer Verweis auf Untersuchungen geben dir Anhaltspunkte für einen Vergleich.",
+			"Beispiel: Eine Kopfhörerwerbung verspricht Schutz für jede Lautstärke. Eine Fachinformation zum Gehör erklärt, warum sowohl die Lautstärke als auch die Dauer einer Belastung zählen. Achte beim Vergleich darauf, ob beide Texte wirklich dieselbe Frage beantworten.",
+			"Halte die Information fest, die deine Frage beantwortet, und gib Autor oder Institution, Titel und Link an. Wenn Quellen widersprechen, prüfe die konkreten Belege und unterscheide zwischen einer Aussage und dem Beleg dafür."
+		],
+		"takeaway": "Eine prüfbare Quelle nennt Herkunft und Belege; vergleiche ihre Aussagen mit einer unabhängigen Fachquelle.",
+		"sourceIds": [
+			"lp",
+			"noise"
+		],
+		"quiz": {
+			"question": "Welches Merkmal hilft dir beim Überprüfen einer Aussage?",
+			"answer": "Ein namentlich genannter Fachautor mit auffindbaren Belegen.",
+			"wrong": [
+				"Ein hochwertiges Titelbild.",
+				"Viele geteilte Kopien desselben Beitrags."
+			],
+			"explanation": "Ein Beleg muss auffindbar sein; Wiederholungen derselben Aussage sind kein unabhängiger Vergleich."
+		},
+		"visual": {
+			"title": "So prüfst du eine Aussage",
+			"kind": "flow",
+			"steps": [
+				{
+					"label": "Herkunft",
+					"detail": "Wer hat sie veröffentlicht?"
+				},
+				{
+					"label": "Absicht",
+					"detail": "Informieren, überzeugen oder verkaufen?"
+				},
+				{
+					"label": "Belege",
+					"detail": "Kannst du die Begründung prüfen?"
+				},
+				{
+					"label": "Vergleich",
+					"detail": "Was sagt eine unabhängige Quelle?"
+				}
+			]
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Werkstatt",
+			"instruction": "Ordne jeden Eintrag zu und prüfe deine Auswahl.",
+			"material": "Ordne Hinweise zur Prüfung einer Infografik über laute Musik.",
+			"categories": [
+				"Herkunft",
+				"Absicht",
+				"Beleg"
+			],
+			"entries": [
+				{
+					"text": "Die Redaktion und ihre Fachleute sind genannt.",
+					"target": 0,
+					"feedback": "Damit kannst du nachsehen, wer den Text verantwortet."
+				},
+				{
+					"text": "Am Ende führt ein Rabattcode direkt zum Kauf.",
+					"target": 1,
+					"feedback": "Der Kaufaufruf weist auf ein Verkaufsinteresse hin."
+				},
+				{
+					"text": "Der Artikel nennt die Untersuchung hinter einer Grafik.",
+					"target": 2,
+					"feedback": "Du kannst prüfen, ob die Grafik die Untersuchung richtig wiedergibt."
+				}
+			],
+			"conclusion": "Eine prüfbare Quelle nennt Herkunft und Belege; vergleiche ihre Aussagen mit einer unabhängigen Fachquelle."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Du hast eine anonyme Grafik und eine Fachinformation mit Quellenangaben. Welche nutzt du zuerst und wie überprüfst du sie?",
+				"hints": [
+					"Achte auf die Herkunft.",
+					"Nenne einen Vergleichsschritt."
+				],
+				"model": "Ich beginne mit der Fachinformation, da Institution und Belege auffindbar sind. Ich suche nach einer unabhängigen Fachquelle zur gleichen Frage. Bei abweichenden Aussagen überprüfe ich die genannten Untersuchungen und ihre Bedingungen.",
+				"criteria": [
+					"Ich begründe die Quellenauswahl.",
+					"Ich benenne einen prüfbaren Hinweis.",
+					"Ich beschreibe den unabhängigen Vergleich."
+				]
+			},
+			"2": {
+				"prompt": "Zwei Artikel zitieren dieselbe Untersuchung, aber nur einer bezieht sich auf Jugendliche. Welcher eignet sich für einen Vortrag über die Klasse besser? Was prüfst du noch?",
+				"hints": [
+					"Prüfe die untersuchte Personengruppe.",
+					"Unterscheide Originalquelle und Zusammenfassung."
+				],
+				"model": "Zunächst eignet sich der Text über Jugendliche. Ich prüfe im Original, welche Gruppe untersucht wurde und worauf sich die Aussage genau bezieht. Beide Artikel beruhen auf derselben Untersuchung und zählen darum nicht als zwei unabhängige Belege.",
+				"criteria": [
+					"Ich begründe die Relevanz der Altersgruppe.",
+					"Ich kontrolliere die Originaluntersuchung.",
+					"Ich erkläre die fehlende Unabhängigkeit."
+				]
+			}
+		}
+	},
+	{
+		"id": "b7-darstellen",
+		"lb": 1,
+		"title": "Beobachtungen darstellen und erklären",
+		"period": "B7 · Lernbereich 1",
+		"intro": "Eine gute Darstellung macht verständlich, was du beobachtet hast.",
+		"paragraphs": [
+			"Im Protokoll hältst du Frage, Material, Durchführung und Ergebnis getrennt fest. Eine Tabelle eignet sich für genaue Messwerte und Einheiten. Ein Diagramm zeigt zum Beispiel eine Veränderung über die Zeit. Eine beschriftete Zeichnung zeigt, wo Teile liegen.",
+			"Beispiel: In einem erfundenen Datensatz wächst Pflanze A von 5 cm auf 9 cm, Pflanze B von 5 cm auf 6 cm. A wächst um 4 cm, B um 1 cm. Das ist eine Auswertung der Zahlen. Ob Beleuchtung den Unterschied verursacht hat, hängt davon ab, welche weiteren Bedingungen kontrolliert wurden.",
+			"Für einen kurzen Vortrag zeigst du die passende Darstellung, nennst die Frage, benennst das Ergebnis mit Fachbegriffen und sagst, welche Schlussfolgerung das Material trägt. Eine mögliche Gegenprobe hilft, ein Argument einzuschätzen."
+		],
+		"takeaway": "Wähle die Darstellung passend zur Frage und trenne Beobachtung, Erklärung und Schlussfolgerung.",
+		"sourceIds": [
+			"lp"
+		],
+		"quiz": {
+			"question": "Welches Medium zeigt am besten, wo sich Spaltöffnungen im gewählten Blattausschnitt befinden?",
+			"answer": "Eine beschriftete Zeichnung des Ausschnitts.",
+			"wrong": [
+				"Ein Kreisdiagramm ohne Größenangaben.",
+				"Eine sortierte Liste der Messzeiten."
+			],
+			"explanation": "Die Zeichnung kann die Lage zeigen und einzelne Strukturen markieren."
+		},
+		"visual": {
+			"title": "Passende Darstellungen",
+			"kind": "compare",
+			"steps": [
+				{
+					"label": "Tabelle",
+					"detail": "Genaue Werte mit Einheiten"
+				},
+				{
+					"label": "Diagramm",
+					"detail": "Verlauf oder Vergleich auf einen Blick"
+				},
+				{
+					"label": "Zeichnung",
+					"detail": "Lage und Form von Strukturen"
+				}
+			]
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Werkstatt",
+			"instruction": "Ordne jeden Eintrag zu und prüfe deine Auswahl.",
+			"material": "Beispiel aus einem Versuch mit zwei Pflanzen.",
+			"categories": [
+				"Beobachtung",
+				"Deutung",
+				"Nächster Prüfschritt"
+			],
+			"entries": [
+				{
+					"text": "Der Spross ist 9 cm hoch.",
+					"target": 0,
+					"feedback": "Die Höhe kannst du direkt messen und mit Einheit festhalten."
+				},
+				{
+					"text": "Die unterschiedliche Beleuchtung könnte zur Höhenänderung beigetragen haben.",
+					"target": 1,
+					"feedback": "Das ist eine mögliche Erklärung für die Messwerte."
+				},
+				{
+					"text": "Weitere Pflanzen unter gleichen Bedingungen untersuchen.",
+					"target": 2,
+					"feedback": "Mit einer Wiederholung kannst du die Erklärung weiter prüfen."
+				}
+			],
+			"conclusion": "Wähle die Darstellung passend zur Frage und trenne Beobachtung, Erklärung und Schlussfolgerung."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Formuliere aus dem Beispiel je einen Satz zur Beobachtung und zur vorsichtigen Deutung. Welche Darstellung würdest du für die Klasse wählen?",
+				"hints": [
+					"Nutze beide Zahlenpaare.",
+					"Unterscheide die gemessene Höhe und den möglichen Einfluss."
+				],
+				"model": "A wuchs in dieser Woche um 4 cm, B um 1 cm. Ein Einfluss der Beleuchtung ist möglich, wenn die übrigen Bedingungen gleich waren. Für den Vortrag eignen sich zwei Säulen für die Höhenänderungen, in cm beschriftet.",
+				"criteria": [
+					"Ich nenne beide Höhenänderungen.",
+					"Ich formuliere die Deutung unter einer Bedingung.",
+					"Ich begründe die Wahl der Darstellung."
+				]
+			},
+			"2": {
+				"prompt": "Ein Schüler sagt: Weil Pflanze A höher ist, war sie gesünder. Finde ein Gegenbeispiel und erstelle einen Aufbau für eine kurze Erklärung.",
+				"hints": [
+					"Denke an lange, blasse Triebe.",
+					"Ordne Frage, Beleg und Schlussfolgerung."
+				],
+				"model": "Eine im Dunkeln gewachsene Pflanze kann lange, blasse Triebe haben. Ich beginne mit der Frage nach Gesundheit, zeige die gemessenen Höhen und ergänze eine beschriftete Abbildung zu Blattfarbe und Wuchsform. Daraus schließe ich, dass die Höhe allein nicht ausreicht.",
+				"criteria": [
+					"Ich finde ein biologisches Gegenbeispiel.",
+					"Ich plane eine passende Darstellung.",
+					"Ich beschreibe die Grenze der Messung."
+				]
+			}
+		}
+	},
+	{
+		"id": "b7-entscheiden",
+		"lb": 1,
+		"title": "Begründet entscheiden",
+		"period": "B7 · Lernbereich 1",
+		"intro": "Beim Gehörschutz spielen Wissen und persönliche Kriterien zusammen.",
+		"paragraphs": [
+			"Ein Urteil beginnt mit einer konkreten Konfliktfrage. Sammle Handlungsoptionen. Vergleiche für jede Option mögliche Folgen jetzt und später. Formuliere anschließend, welche Werte oder Kriterien du besonders wichtig findest, etwa Gesundheit, Teilhabe oder Rücksicht.",
+			"Beispiel: Am Konzert steht Deniz nah am Lautsprecher. Dort kann die Belastung hoch sein. Weiter hinten stehen, Pausen an ruhigeren Orten und passender Gehörschutz können die Belastung verringern. Deniz gewichtet Gehörschutz besonders stark, möchte aber weiter mit der Gruppe feiern. Die Gruppe sucht zusammen einen anderen Platz.",
+			"Ein gutes Argument verbindet eine Behauptung mit einem biologischen Grund und einem passenden Beispiel. Eine Behauptung wie „Alle hören später wieder normal“ kannst du mit dem biologischen Gegenargument prüfen, dass geschädigte Sinneszellen im Innenohr beim Menschen nicht nachwachsen."
+		],
+		"takeaway": "Vergleiche Handlungsoptionen nach Folgen und begründe, welches Kriterium für deine Entscheidung zählt.",
+		"sourceIds": [
+			"lp",
+			"noise"
+		],
+		"quiz": {
+			"question": "Welche Aussage enthält ein Kriterium und einen biologischen Grund?",
+			"answer": "Ich wähle mehr Abstand, weil ich mein Gehör schützen und die Schallbelastung senken möchte.",
+			"wrong": [
+				"Ich bleibe stehen, weil es andere auch tun.",
+				"Ich wähle den besten Platz, weil er gut ist."
+			],
+			"explanation": "Der Satz verknüpft das Ziel Gehörschutz mit einer Folge der gewählten Option."
+		},
+		"visual": {
+			"title": "Ein Weg zur Entscheidung",
+			"kind": "flow",
+			"steps": [
+				{
+					"label": "Konfliktfrage",
+					"detail": "Was soll entschieden werden?"
+				},
+				{
+					"label": "Optionen",
+					"detail": "Welche Wege gibt es?"
+				},
+				{
+					"label": "Folgen",
+					"detail": "Was passiert jetzt oder später?"
+				},
+				{
+					"label": "Abwägung",
+					"detail": "Was zählt für dich am meisten?"
+				}
+			]
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Werkstatt",
+			"instruction": "Ordne jeden Eintrag zu und prüfe deine Auswahl.",
+			"material": "Die Klasse diskutiert Regeln für laute Musik bei einer Feier.",
+			"categories": [
+				"Option",
+				"Mögliche Folge",
+				"Kriterium"
+			],
+			"entries": [
+				{
+					"text": "Links und rechts vom Lautsprecher einen Mindestabstand lassen.",
+					"target": 0,
+					"feedback": "Das ist eine umsetzbare Handlung."
+				},
+				{
+					"text": "Weniger starke Belastung für die Sinneszellen des Innenohrs.",
+					"target": 1,
+					"feedback": "Das ist eine mögliche Wirkung der Maßnahme."
+				},
+				{
+					"text": "Die Musik soll Spaß machen und für alle zugänglich bleiben.",
+					"target": 2,
+					"feedback": "Daran lässt sich eine Regel beurteilen."
+				}
+			],
+			"conclusion": "Vergleiche Handlungsoptionen nach Folgen und begründe, welches Kriterium für deine Entscheidung zählt."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Vergleiche leiser hören und kürzer hören. Welche Kombination wählst du, wenn dir Gehörschutz besonders wichtig ist?",
+				"hints": [
+					"Vergleiche die Stärke und die Dauer.",
+					"Formuliere eine Option mit beiden Mitteln."
+				],
+				"model": "Ich stelle die Musik leiser und lege Hörpausen ein. Leiser hören senkt die Schallbelastung in diesem Moment; Pausen verkürzen die Zeit, in der das Ohr belastet wird. Beides passt zu meinem Kriterium Gehörschutz.",
+				"criteria": [
+					"Ich vergleiche beide Möglichkeiten.",
+					"Ich beschreibe beide Arten der Entlastung.",
+					"Ich benenne mein Kriterium."
+				]
+			},
+			"2": {
+				"prompt": "Ein Klassenzimmer neben dem Pausenraum ist laut. Vergleiche eine leisere Musikregel und einen getrennten Ruhebereich. Begründe eine Lösung für mehrere Interessen.",
+				"hints": [
+					"Denke auch an Menschen, die Ruhe brauchen.",
+					"Bedenke den Unterricht und die Pause."
+				],
+				"model": "Ein niedrigerer Pegel hilft auch dem angrenzenden Unterricht. Ein Ruhebereich gibt einzelnen Schülerinnen und Schülern eine Wahl. Ich würde beides kombinieren, weil mir Rücksicht und die Möglichkeit, gemeinsam Musik zu hören, wichtig sind.",
+				"criteria": [
+					"Ich nenne zwei Optionen.",
+					"Ich vergleiche Folgen für mehrere Gruppen.",
+					"Ich begründe meine Gewichtung."
+				]
+			}
+		}
+	},
+	{
+		"id": "b7-organspende",
+		"lb": 1,
+		"title": "Organspende als ethische Frage",
+		"period": "B7 · Lernbereich 1",
+		"intro": "Eine fiktive Entscheidung zeigt, wie biologische Fakten und Werte zusammenwirken.",
+		"paragraphs": [
+			"Noor liest in einer Fallgeschichte von einem Patienten, dessen Herz seine Aufgabe nicht mehr ausreichend erfüllt. In bestimmten Fällen kann ein geeignetes Spenderorgan die Funktion übernehmen. Eine Transplantation ist eine Behandlung mit Voraussetzungen und Risiken; im Beispiel wird keine konkrete Person um eine Entscheidung gebeten.",
+			"Noor findet zwei wichtige Werte: Solidarität mit Menschen, die auf ein Organ warten, und Selbstbestimmung über den eigenen Körper. Beide Werte können die Entscheidung beeinflussen. Weitere Fragen sind möglich, etwa wie Angehörige eine dokumentierte Entscheidung nachvollziehen können.",
+			"Wenn du den Fall besprichst, kannst du erst das Problem mit eigenen Worten beschreiben, dann mögliche Gründe für und gegen eine Zustimmung nennen und schließlich die Gewichtung der fiktiven Person begründen. Eine Position kann sich ändern, wenn zusätzliche Fragen geklärt sind."
+		],
+		"takeaway": "Trenne beim Urteilen medizinische Fakten, persönliche Werte und die begründete Handlung.",
+		"sourceIds": [
+			"lp"
+		],
+		"quiz": {
+			"question": "Welche Aussage ist eine Wertung?",
+			"answer": "Selbstbestimmung ist für Noor im Beispiel besonders wichtig.",
+			"wrong": [
+				"Das Herz pumpt Blut durch den Körper.",
+				"Ein Spenderherz kann unter geeigneten Bedingungen eine Herzfunktion übernehmen."
+			],
+			"explanation": "Eine Wertung sagt, welcher Maßstab für eine Person wichtig ist."
+		},
+		"visual": {
+			"title": "Fakten und Werte im Fall Noor",
+			"kind": "compare",
+			"steps": [
+				{
+					"label": "Biologischer Sachverhalt",
+					"detail": "Ein Organ erfüllt eine Funktion."
+				},
+				{
+					"label": "Wert",
+					"detail": "Zum Beispiel Solidarität oder Selbstbestimmung"
+				},
+				{
+					"label": "Position",
+					"detail": "Eine Person begründet ihre Entscheidung."
+				}
+			]
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Werkstatt",
+			"instruction": "Ordne jeden Eintrag zu und prüfe deine Auswahl.",
+			"material": "Noor möchte in der fiktiven Situation verschiedene Aussagen sauber trennen.",
+			"categories": [
+				"Sachverhalt",
+				"Wert",
+				"Handlungsoption"
+			],
+			"entries": [
+				{
+					"text": "Ein geeignetes Spenderorgan kann eine ausgefallene Funktion übernehmen.",
+					"target": 0,
+					"feedback": "Das beschreibt eine mögliche medizinische Wirkung."
+				},
+				{
+					"text": "Solidarität mit Menschen auf der Warteliste",
+					"target": 1,
+					"feedback": "Solidarität kann als Maßstab in die Entscheidung eingehen."
+				},
+				{
+					"text": "Vor der Entscheidung weitere Fachinformationen einholen.",
+					"target": 2,
+					"feedback": "Das ist ein möglicher nächster Schritt."
+				}
+			],
+			"conclusion": "Trenne beim Urteilen medizinische Fakten, persönliche Werte und die begründete Handlung."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Nenne ein Argument für Zustimmung, einen Grund für Zurückhaltung und einen möglichen nächsten Schritt für Noor.",
+				"hints": [
+					"Unterscheide Folgen und Werte.",
+					"Noor kann zunächst Informationen sammeln."
+				],
+				"model": "Die Aussicht, einem erkrankten Menschen zu helfen, kann für Zustimmung sprechen. Noor kann zögern, wenn Fragen zum Eingriff oder zu ihren Vorstellungen von Selbstbestimmung offen sind. Sie kann verlässliche Fachinformationen prüfen und ihre Gedanken mit einer Vertrauensperson besprechen.",
+				"criteria": [
+					"Ich nenne einen zustimmenden Grund.",
+					"Ich nenne einen verständlichen Grund für Zurückhaltung.",
+					"Ich formuliere einen nächsten Schritt."
+				]
+			},
+			"2": {
+				"prompt": "Zwei Personen stimmen aus sehr verschiedenen Gründen derselben Option zu. Wie zeigst du in einer Präsentation, dass beide begründet urteilen?",
+				"hints": [
+					"Nenne erst die gemeinsame Option.",
+					"Trenne dann die Gewichtungen."
+				],
+				"model": "Beide möchten zustimmen. Eine Person gewichtet die mögliche Hilfe besonders stark. Die andere findet es wichtig, eine bewusst geprüfte und klar mitgeteilte eigene Entscheidung zu treffen. Ich stelle beide Begründungen dar und ordne sie Solidarität und Selbstbestimmung zu.",
+				"criteria": [
+					"Ich benenne die gemeinsame Option.",
+					"Ich benenne zwei verschiedene Gewichtungen.",
+					"Ich verwende die Werte passend."
+				]
+			}
+		}
+	}
+]
