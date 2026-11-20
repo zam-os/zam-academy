@@ -1,0 +1,729 @@
+{
+	"curriculum": "https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/7/deutsch",
+	"checked": "2026-11-20",
+	"curriculum_sha256": "af33d0cdfe8d161a236072fce94ea3f2e7cd0c3115132602081ba25267415e6f",
+	"tracks": "Shared curriculum for all pupils; no separate Wahlpflichtfächergruppen.",
+	"areas": [
+		{
+			"lb": 1,
+			"hours": null
+		},
+		{
+			"lb": 2,
+			"hours": null
+		},
+		{
+			"lb": 3,
+			"hours": null
+		},
+		{
+			"lb": 4,
+			"hours": null
+		}
+	],
+	"neighbours": [
+		{
+			"grade": 6,
+			"file": "tests/fixtures/lehrplanplus-d6.html",
+			"sha256": "36499d79d3509ebd437df314bd8f1cdce66002c1c7928cea65575c9cfa859fe8"
+		},
+		{
+			"grade": 8,
+			"file": "tests/fixtures/lehrplanplus-d8.html",
+			"sha256": "565d9a23fc70b0e5d94a632251034f8d67e414c496dcc2548eb7a402fa4b3948"
+		}
+	],
+	"optional_lessons": [],
+	"rows": [
+		{
+			"id": "1.1.1",
+			"lb": 1,
+			"section": "1.1",
+			"position": 1,
+			"competence": "greifen Aussagen anderer auf, machen sich ggf. Notizen zu Referaten, Gesprächsverläufen und Debatten, um Wesentliches festzuhalten und nachzubereiten.",
+			"lessons": [
+				"d7-notizen-debatte"
+			],
+			"status": "supported",
+			"evidence": "The synthetic classroom debate audio trains two-column note-taking to capture arguments and prepare follow-up contributions. Live discussions and real-time note verification take place outside the app."
+		},
+		{
+			"id": "1.1.2",
+			"lb": 1,
+			"section": "1.1",
+			"position": 2,
+			"competence": "beschreiben die Wirkung ausgewählter Gestaltungsmittel von Hörtexten und entnehmen diesen (z. B. Rundfunkbeiträgen oder Auszügen aus Hörbüchern) wesentliche Informationen, sichern sie (z. B. durch Zeitstrahl, Mindmap) und geben sie inhaltlich korrekt wieder.",
+			"lessons": [
+				"d7-hoerbeitrag-gestaltung"
+			],
+			"status": "supported",
+			"evidence": "The synthetic school-radio passage models pausing and emphasis alongside timeline fact extraction. Authentic radio broadcasts and audiobook excerpts remain required outside the app."
+		},
+		{
+			"id": "1.1.3",
+			"lb": 1,
+			"section": "1.1",
+			"position": 3,
+			"competence": "hören anderen aktiv zu und unterscheiden die Sprechabsichten anderer (informieren, unterhalten oder überzeugen), um angemessen auf Redebeiträge zu reagieren und dazu begründet Stellung zu nehmen.",
+			"lessons": [
+				"d7-sprechabsichten"
+			],
+			"status": "supported",
+			"evidence": "Dialogue cases distinguish informing, entertaining and persuading and train reasoned responses. Active listening in live conversations requires interlocutors outside the app."
+		},
+		{
+			"id": "1.1.4",
+			"lb": 1,
+			"section": "1.1",
+			"position": 4,
+			"competence": "überprüfen Gespräche bzw. Diskussionen auf ihr Gelingen, reflektieren mithilfe von Rückmeldungen ihr eigenes Gesprächsverhalten und das anderer.",
+			"lessons": [
+				"d7-sprechabsichten"
+			],
+			"status": "supported",
+			"evidence": "Criteria and reflection prompts evaluate turn-taking and follow-up quality. Real-time feedback on personal conversational behaviour remains partner and classroom practice."
+		},
+		{
+			"id": "1.2.1",
+			"lb": 1,
+			"section": "1.2",
+			"position": 1,
+			"competence": "stellen Sachverhalte strukturiert dar (z. B. durch Kurzreferate), indem sie Notizen (z. B. Stichwortzettel) und geeignete Medien verwenden, um Informationen verständlich an andere weiterzugeben. Sie nutzen Rückmeldungen anderer, um ihren Vortrag zu verbessern.",
+			"lessons": [
+				"d7-kurzreferat"
+			],
+			"status": "supported",
+			"evidence": "Learners condense full-text notes into cue cards paired with visual slides and define feedback criteria. Delivering a live short talk and revising it after audience feedback remain classroom practice."
+		},
+		{
+			"id": "1.2.2",
+			"lb": 1,
+			"section": "1.2",
+			"position": 2,
+			"competence": "schildern anschaulich und nachvollziehbar unter Einsatz typischer sprachlicher Mittel (z. B. Vergleiche, Personifikationen) eigene Beobachtungen und Eindrücke, um den Zuhörern Stimmungen zu vermitteln oder eigene Empfindungen auszudrücken.",
+			"lessons": [
+				"d7-muendlich-schildern"
+			],
+			"status": "supported",
+			"evidence": "Guided prompts transform sensory notes into vivid descriptions with similes and personification. Oral delivery to listeners to convey mood remains partner practice."
+		},
+		{
+			"id": "1.2.3",
+			"lb": 1,
+			"section": "1.2",
+			"position": 3,
+			"competence": "berichten folgerichtig (z. B. über Veranstaltungen, Ereignisse), indem sie Wichtiges von Unwichtigem unterscheiden sowie Kausalzusammenhänge darstellen.",
+			"lessons": [
+				"d7-folgerichtig-berichten"
+			],
+			"status": "supported",
+			"evidence": "Exercises filter out irrelevant details and connect triggers to outcomes with causal links. Delivering an oral report to the class remains external practice."
+		},
+		{
+			"id": "1.2.4",
+			"lb": 1,
+			"section": "1.2",
+			"position": 4,
+			"competence": "tragen eigene und fremde Texte (sowohl lyrische als auch pointierte Texte, wie z. B. Witze oder Sketche, Mundartlyrik) wirkungsvoll und betont (auch frei) vor, indem sie diese aufbereiten (z. B. Symbole für Stimmhöhe, Pausen, Lautstärke verwenden) und nutzen das Feedback anderer, um ihre Vortragsweise zu verbessern.",
+			"lessons": [
+				"d7-vortragsgestaltung"
+			],
+			"status": "supported",
+			"evidence": "Tasks mark pauses, emphasis and volume changes on lyrical and pointed texts including dialect examples. Reading aloud or reciting from memory and applying live feedback happen outside the app."
+		},
+		{
+			"id": "1.3.1",
+			"lb": 1,
+			"section": "1.3",
+			"position": 1,
+			"competence": "halten Gesprächsregeln ein, um in verschiedenen alltäglichen Gesprächssituationen (insbesondere Entschuldigung, Anliegen) eine gelingende Kommunikation sicherzustellen.",
+			"lessons": [
+				"d7-entschuldigung-anliegen"
+			],
+			"status": "supported",
+			"evidence": "Case analyses and dialogue drafts practise sincere apologies without excuses and polite requests. Conducting real everyday conversations remains interpersonal practice."
+		},
+		{
+			"id": "1.3.2",
+			"lb": 1,
+			"section": "1.3",
+			"position": 2,
+			"competence": "argumentieren angeleitet im Rahmen von Diskussionen (z. B. mithilfe von Rollenkarten), übernehmen verschiedene Rollen (z. B. Diskutantin, Schriftführer) und beachten dabei grundlegende, gemeinsam erarbeitete Diskussionsregeln.",
+			"lessons": [
+				"d7-rollendiskussion"
+			],
+			"status": "supported",
+			"evidence": "Role-card materials model chairing, pro/con arguing and minute-taking under shared discussion rules. Real moderated group discussions happen in class."
+		},
+		{
+			"id": "1.3.3",
+			"lb": 1,
+			"section": "1.3",
+			"position": 3,
+			"competence": "bereiten Informationen auf und veranschaulichen Ergebnisse (u. a. die Auswertung einer selbst erstellten Umfrage), z. B. mithilfe von Diagrammen und Tabellen, um in Gesprächen und Diskussionen eigene Standpunkte fundiert zu vertreten.",
+			"lessons": [
+				"d7-rollendiskussion"
+			],
+			"status": "supported",
+			"evidence": "Sample survey figures are evaluated accurately without overstatement to support discussion positions. Conducting and graphing an original survey happens outside the app."
+		},
+		{
+			"id": "1.4.1",
+			"lb": 1,
+			"section": "1.4",
+			"position": 1,
+			"competence": "formen zentrale Passagen (z. B. Konflikte) aus literarischen Texten (v. a. Balladen bzw. Erzählgedichte, Kurzgeschichten) in Dialoge um. Sie versetzen sich in die Rollen von Figuren, um (durch angemessenen Einsatz von Körperhaltung, Gestik, Mimik, Sprache und Wortschatz) Handlungs- und Gesprächsverläufe, unterschiedliche Gefühle, Charaktereigenschaften oder Einstellungen darzustellen (z. B. pantomimisch oder als Standbilder), das Textverständnis zu vertiefen und ihre Empathiefähigkeit zu steigern.",
+			"lessons": [
+				"d7-szenischer-dialog"
+			],
+			"status": "supported",
+			"evidence": "Narrative conflict passages are converted into dialogue with stage directions and freeze-frame plans. Embodying roles physically through posture, gesture and mimicry requires live staging."
+		},
+		{
+			"id": "1.4.2",
+			"lb": 1,
+			"section": "1.4",
+			"position": 2,
+			"competence": "geben anderen (unter Beachtung der Feedbackregeln) konstruktiv Rückmeldungen zu ihrem Spiel und berücksichtigen Rückmeldungen anderer zu ihrer eigenen szenischen Arbeit, um ihr Verständnis für künstlerische Gestaltungsweisen zu vertiefen.",
+			"lessons": [
+				"d7-szenischer-dialog"
+			],
+			"status": "supported",
+			"evidence": "Cases model constructive observation-and-effect feedback for scenic work. Giving and applying live performance feedback remains group practice."
+		},
+		{
+			"id": "2.1.1",
+			"lb": 2,
+			"section": "2.1",
+			"position": 1,
+			"competence": "wenden Lesetechniken und -strategien (z. B. selektives, überfliegendes Lesen) je nach Lesezweck, Lesephase und Aufgabenstellung weitgehend selbständig an, um Texten zügig Informationen zu entnehmen und deren Sinn zu erfassen.",
+			"lessons": [
+				"d7-lesestrategien-layout"
+			],
+			"status": "implemented",
+			"evidence": "Case checks and transfer plans train choosing skimming or scanning according to reading goal and text structure."
+		},
+		{
+			"id": "2.1.2",
+			"lb": 2,
+			"section": "2.1",
+			"position": 2,
+			"competence": "nutzen Strukturierungshilfen (z. B. Symbole, Skizzen), um Textinhalte im Wesentlichen zu erfassen und Handlungsverläufe, Figurenkonstellationen bzw. wesentliche Aussagen und Zusammenhänge zu klären.",
+			"lessons": [
+				"d7-strukturierungshilfen"
+			],
+			"status": "implemented",
+			"evidence": "An interactive constellation diagram and symbol system map character conflicts, allies and turning points in narrative passages."
+		},
+		{
+			"id": "2.1.3",
+			"lb": 2,
+			"section": "2.1",
+			"position": 3,
+			"competence": "formulieren Erwartungen an Texte, indem sie die Besonderheiten des Layouts (z. B. Teilüberschriften, Spalten, Fett- bzw. Kursivdruck, Vorspann, Illustrationen) nutzen, um das eigene Leseverstehen zu vertiefen.",
+			"lessons": [
+				"d7-lesestrategien-layout"
+			],
+			"status": "supported",
+			"evidence": "Exercises derive reading expectations from subheadings, lead paragraphs and bold cues; applying this to full print magazines happens outside the app."
+		},
+		{
+			"id": "2.2.1",
+			"lb": 2,
+			"section": "2.2",
+			"position": 1,
+			"competence": "grenzen pragmatische von literarischen Texten ab, unterscheiden zwischen epischen (Erzählung, Kurzgeschichte), lyrischen (z. B. Ballade) und dramatischen Texten (z. B. Jugendtheaterstücke) und erschließen Inhalt, Aussage und ggf. Gestaltung. Sie vertiefen so ihr Verständnis für Sprache und Literatur und erkennen deren Vielfalt.",
+			"lessons": [
+				"d7-gattungen-ballade"
+			],
+			"status": "implemented",
+			"evidence": "Examples, interactive triad model and writing tasks distinguish pragmatic from literary texts and classify epic, lyric and dramatic features in ballads, stories and plays."
+		},
+		{
+			"id": "2.2.2",
+			"lb": 2,
+			"section": "2.2",
+			"position": 2,
+			"competence": "erfassen wesentliche Elemente erzählender Texte (u. a. unmittelbarer Beginn, offenes Ende) und versetzen sich in literarische Figuren, um deren Handlungsmotive nachzuvollziehen und ihre Empathiefähigkeit weiterzuentwickeln.",
+			"lessons": [
+				"d7-kurzgeschichte"
+			],
+			"status": "implemented",
+			"evidence": "An original short story with immediate opening and open ending models analysing character motives and implicit conflict."
+		},
+		{
+			"id": "2.2.3",
+			"lb": 2,
+			"section": "2.2",
+			"position": 3,
+			"competence": "stellen angeleitet Zusammenhänge zwischen Text, Entstehungszeit und dem Leben der Autorin/des Autors her, um dies als eine Möglichkeit zu begreifen, literarische Texte interpretieren und einordnen zu können.",
+			"lessons": [
+				"d7-text-entstehungszeit"
+			],
+			"status": "supported",
+			"evidence": "Historical context notes link Goethe's 'Erlkönig' to its source ballad and 18th-century conditions while guarding against biographical equation; broader author research stays outside the app."
+		},
+		{
+			"id": "2.2.4",
+			"lb": 2,
+			"section": "2.2",
+			"position": 4,
+			"competence": "wenden produktive Methoden an, um ihr Textverständnis und ihre Deutung zum Ausdruck zu bringen (z. B. offenes Ende einer Kurzgeschichte auflösen, Vorgeschichte zu einer Kurzgeschichte entwickeln, Erzählungen in Dialoge umwandeln, Charaktersteckbriefe erstellen).",
+			"lessons": [
+				"d7-kurzgeschichte"
+			],
+			"status": "implemented",
+			"evidence": "Level 1 and Level 2 writing tasks build character profiles, resolve an open ending and write a consistent backstory from a character's perspective."
+		},
+		{
+			"id": "2.2.5",
+			"lb": 2,
+			"section": "2.2",
+			"position": 5,
+			"competence": "unterscheiden die Funktion sprachlicher Mittel (z. B. Symbol, Vergleich, Personifikation, Ellipse), erschließen die Besonderheiten lyrischer Texte (z. B. sprachliche Bilder, Reim, lyrisches Ich) und nutzen dieses Wissen zum Erschließen des Textgehalts und zur Gestaltung eigener Texte.",
+			"lessons": [
+				"d7-lyrik-sprachliche-mittel"
+			],
+			"status": "implemented",
+			"evidence": "An original poem trains identifying and interpreting the lyrical I, rhyme, simile, personification, symbol and ellipsis as well as composing a stanza."
+		},
+		{
+			"id": "2.2.6",
+			"lb": 2,
+			"section": "2.2",
+			"position": 6,
+			"competence": "beschreiben Protagonisten, Handlungsmotive und Stimmungen in Texten der literarischen Tradition (v. a. Mittelalter und Barock) und der Gegenwart, z. B. zu den Themen „Abenteuer und Herausforderungen\", „Leben in bewegten/problematischen Zeiten“, „Zuneigung, Verehrung, Liebe“, um einerseits die zeitliche Gebundenheit, andererseits die Überzeitlichkeit elementarer Lebenssituationen sowie die Reaktionen darauf zu begreifen.",
+			"lessons": [
+				"d7-mittelalter-barock-gegenwart"
+			],
+			"status": "implemented",
+			"evidence": "Public-domain Baroque verse by Gryphius is compared with medieval motifs and a contemporary scene to separate historical change from timeless human themes."
+		},
+		{
+			"id": "2.2.7",
+			"lb": 2,
+			"section": "2.2",
+			"position": 7,
+			"competence": "begründen eigene Lesevorlieben (auch Sachbücher) z. B. mittels Referaten, Rezensionen für die Schülerzeitung, Aktionen wie „Buch des Monats“, Werbeplakaten, Lese-Litfaßsäule.",
+			"lessons": [
+				"d7-buchrezension-leseportfolio"
+			],
+			"status": "supported",
+			"evidence": "Critique criteria train writing spoiler-free book recommendations and poster lines; presenting book talks or displays in class remains external."
+		},
+		{
+			"id": "2.2.8",
+			"lb": 2,
+			"section": "2.2",
+			"position": 8,
+			"competence": "dokumentieren ihre vielfältigen Leseerfahrungen (darunter mindestens ein Kinder- bzw. Jugendbuch) beispielsweise mittels Text-Bild-Collage, Figuren-Album, Portfolio, Stichwortsammlung. Dabei reflektieren sie ihre individuellen Leseerfahrungen, vergleichen sie mit denen anderer und erkennen, dass Lesen wesentlich zu ihrer eigenen Persönlichkeits- und Wertebildung beiträgt.",
+			"lessons": [
+				"d7-buchrezension-leseportfolio"
+			],
+			"status": "supported",
+			"evidence": "Portfolio prompts guide character albums and reflection questions; reading at least one complete children's or youth book and comparing portfolios with peers happen outside the app."
+		},
+		{
+			"id": "2.3.1",
+			"lb": 2,
+			"section": "2.3",
+			"position": 1,
+			"competence": "nutzen diskontinuierliche Texte (z. B. Zeitleisten, Tabellen, einfache Diagramme) für eine zielgerichtete und zügige Information.",
+			"lessons": [
+				"d7-diskontinuierliche-texte"
+			],
+			"status": "implemented",
+			"evidence": "Companion survey table and interactive bar chart train accurate extraction of totals, shares and scope limits."
+		},
+		{
+			"id": "2.3.2",
+			"lb": 2,
+			"section": "2.3",
+			"position": 2,
+			"competence": "unterscheiden pragmatische Textsorten und die jeweils vorherrschende Textfunktion (informieren, instruieren, unterhalten, appellieren) aufgrund typischer sprachlicher und inhaltlicher Merkmale (z. B. Zahlen, Ausrufesätze), ihres spezifischen Aufbaus und Layouts, um u. a. Verfasserabsichten und damit verbundene Wirkungen zu reflektieren.",
+			"lessons": [
+				"d7-textfunktionen"
+			],
+			"status": "implemented",
+			"evidence": "Three parallel texts on the same topic distinguish informing, instructing and appealing by layout, mood and sentence markers."
+		},
+		{
+			"id": "2.3.3",
+			"lb": 2,
+			"section": "2.3",
+			"position": 3,
+			"competence": "entnehmen pragmatischen Texten wesentliche Inhalte und geben sie dem Textaufbau gemäß wieder oder bereiten sie als Tabellen, einfache Diagramme oder Zeitleisten auf, z. B. zur Veranschaulichung für Referate.",
+			"lessons": [
+				"d7-diskontinuierliche-texte"
+			],
+			"status": "implemented",
+			"evidence": "Transfer tasks convert continuous prose statistics into a clearly titled, three-column table and trend summary."
+		},
+		{
+			"id": "2.3.4",
+			"lb": 2,
+			"section": "2.3",
+			"position": 4,
+			"competence": "unterscheiden zwischen vorwiegend berichtenden Textsorten (Nachricht, Bericht, Hintergrundbericht) und berichtend-unterhaltenden Mischformen (Feature, kurze Reportagen über altersangemessene Themen), um z. B. den Informationsgehalt von Texten zu bewerten.",
+			"lessons": [
+				"d7-bericht-reportage-feature"
+			],
+			"status": "implemented",
+			"evidence": "Paired news and scenic openings distinguish factual reporting genres from entertaining-informative reportage and feature writing."
+		},
+		{
+			"id": "2.3.5",
+			"lb": 2,
+			"section": "2.3",
+			"position": 5,
+			"competence": "zeigen den Zusammenhang zwischen den Zielen, Strategien und Mitteln von Print- und Internetwerbung auf, indem sie verschiedene Anzeigen bzw. Werbetexte vergleichen, um das eigene Medienverhalten zu reflektieren.",
+			"lessons": [
+				"d7-werbung-print-internet"
+			],
+			"status": "supported",
+			"evidence": "Parallel print and banner samples expose countdown urgency, slogans and peer pressure; collecting and comparing authentic live advertisements happens outside the app."
+		},
+		{
+			"id": "2.4.1",
+			"lb": 2,
+			"section": "2.4",
+			"position": 1,
+			"competence": "vergleichen die Informationsmöglichkeiten von Printmedien und elektronischen Medien (z. B. Nachschlagewerke, Informationsbroschüren, Internetlexika, Suchmaschinen) und nutzen sie zielgerichtet, indem sie geeignete Suchstrategien und Auswertungstechniken anwenden.",
+			"lessons": [
+				"d7-recherche-wirklichkeit"
+			],
+			"status": "supported",
+			"evidence": "Exercises refine search keywords and combine print reference works with online sources; independent library and web searches occur outside the app."
+		},
+		{
+			"id": "2.4.2",
+			"lb": 2,
+			"section": "2.4",
+			"position": 2,
+			"competence": "erkennen die Wirklichkeitsprägung durch Medien (z. B. durch Bild-Medien wie Doku-Soaps, Videoplattformen, Werbeclips) und beurteilen vergleichend deren Informations- und Wahrheitsgehalt, um z. B. Einflüsse auf eigene Vorstellungen zu beurteilen.",
+			"lessons": [
+				"d7-recherche-wirklichkeit"
+			],
+			"status": "supported",
+			"evidence": "Cases evaluate selective camera framing, music and missing expert voices; analysing authentic broadcasts, docu-soaps and video clips remains outside the app."
+		},
+		{
+			"id": "2.4.3",
+			"lb": 2,
+			"section": "2.4",
+			"position": 3,
+			"competence": "untersuchen und bewerten das Medienangebot für Jugendliche (z. B. Internetforen oder -seiten sowie serielle Formate für Jugendliche, Computerspiele, Kurzfilme), vor allem im Hinblick auf unterschiedliche zielgruppenorientierte Vorgehensweisen, um selbst eine überlegte Auswahl zu treffen.",
+			"lessons": [
+				"d7-jugendmedien-netiquette"
+			],
+			"status": "supported",
+			"evidence": "Cases identify retention loops and in-app purchase triggers in youth games and videos; evaluating full real games, series or forums happens outside the app."
+		},
+		{
+			"id": "2.4.4",
+			"lb": 2,
+			"section": "2.4",
+			"position": 4,
+			"competence": "reflektieren ihr Wissen sowie ihre Erfahrungen und Gewohnheiten im Umgang mit Online-Kommunikationsformen und nutzen selbst entwickelte Regeln zur Kommunikation („Netiquette“) und zum Schutz von persönlichen Daten im Netz.",
+			"lessons": [
+				"d7-jugendmedien-netiquette"
+			],
+			"status": "supported",
+			"evidence": "Forum examples train spotting leaked school/location details and formulating netiquette and privacy rules; applying them in real online spaces stays external."
+		},
+		{
+			"id": "3.1.1",
+			"lb": 3,
+			"section": "3.1",
+			"position": 1,
+			"competence": "verfassen eigene Texte strukturiert, indem sie wichtige formale Vorgaben beachten, und nutzen grundlegende Funktionen von Textverarbeitungsprogrammen (Schriftarten, Hervorhebungen, Einfügen von Bildern, Spalten), um so z. B. Arbeitsergebnisse übersichtlich darzustellen oder entsprechend zu gestalten.",
+			"lessons": [
+				"d7-layout-formulare"
+			],
+			"status": "supported",
+			"evidence": "Layout concepts plan font discipline, contrast, columns and image slots; formatting real documents in word-processing software takes place outside the app."
+		},
+		{
+			"id": "3.1.2",
+			"lb": 3,
+			"section": "3.1",
+			"position": 2,
+			"competence": "wenden bei der Übernahme von Inhalten aus Textvorlagen grundlegende Strategien an (einfache Zitierregeln, indirekte Rede und Paraphrase).",
+			"lessons": [
+				"d7-zitieren-paraphrasieren"
+			],
+			"status": "implemented",
+			"evidence": "Guided and transfer exercises practise line-cited partial quotations, independent paraphrases and indirect speech from source lines."
+		},
+		{
+			"id": "3.1.3",
+			"lb": 3,
+			"section": "3.1",
+			"position": 3,
+			"competence": "unterscheiden die Grundformen schriftlicher Darstellung selbständig und halten beim Erzählen, Informieren und einfachen Argumentieren die dem Schreibanlass angemessene Schreibform ein. Standardisierte Textformen (z. B. Anmeldeformulare) verwenden sie korrekt.",
+			"lessons": [
+				"d7-layout-formulare"
+			],
+			"status": "implemented",
+			"evidence": "Tasks separate narrative, informative and argumentative forms across fields and practise completing a standardised club registration form accurately."
+		},
+		{
+			"id": "3.2.1",
+			"lb": 3,
+			"section": "3.2",
+			"position": 1,
+			"competence": "sammeln Ideen (z. B. mittels Mindmapping-Verfahren), werten Informationsmaterial aus, ordnen ihre Ideen (z. B. mithilfe von Schreibplänen) und geben eigenen Texten dadurch Struktur.",
+			"lessons": [
+				"d7-schreibplan-mindmap"
+			],
+			"status": "implemented",
+			"evidence": "Unordered notes are filtered for relevance, grouped into mindmap branches and arranged into an outline with introduction, body and conclusion."
+		},
+		{
+			"id": "3.2.2",
+			"lb": 3,
+			"section": "3.2",
+			"position": 2,
+			"competence": "schildern Situationen und Ereignisse inhaltlich genau, sprachlich anschaulich und abwechslungsreich, um ihre Umwelt bewusster zu erfassen, ihr Ausdrucksvermögen zu verbessern und andere an der subjektiven Wahrnehmung einer Situation teilhaben zu lassen.",
+			"lessons": [
+				"d7-schriftlich-schildern"
+			],
+			"status": "implemented",
+			"evidence": "Tasks expand raw situation notes into multi-sensory vivid prose with varied sentence openings and clear subjective perspective."
+		},
+		{
+			"id": "3.2.3",
+			"lb": 3,
+			"section": "3.2",
+			"position": 3,
+			"competence": "schreiben Texte in andere Textsorten um und zeigen so ihr Verständnis für Handlungsverläufe und -zusammenhänge sowie die Motive und Charaktereigenschaften der handelnden Figuren.",
+			"lessons": [
+				"d7-textsortenwechsel-vorlagen"
+			],
+			"status": "implemented",
+			"evidence": "Learners transform a third-person narrative conflict into a factual news item and a first-person diary entry while preserving character consistency."
+		},
+		{
+			"id": "3.2.4",
+			"lb": 3,
+			"section": "3.2",
+			"position": 4,
+			"competence": "verfassen, ausgehend von verschiedenen Vorlagen (z. B. Texten, Bildern, ggf. auch Filmsequenzen), eigene Texte und beachten dabei inhaltliche Vorgaben (z. B. Erzählanfänge, Figurenkonstellationen) und formale Kriterien (z. B. Textsorte).",
+			"lessons": [
+				"d7-textsortenwechsel-vorlagen"
+			],
+			"status": "supported",
+			"evidence": "Transfer tasks continue a given story opening with fixed conflict elements; writing from full real paintings or film clips extends beyond this text app."
+		},
+		{
+			"id": "3.2.5",
+			"lb": 3,
+			"section": "3.2",
+			"position": 5,
+			"competence": "informieren über den Inhalt pragmatischer und literarischer Texte, indem sie die Thematik benennen und Wesentliches in knapper Form darstellen (z. B. als Tabelle, Cluster, Diagramm oder zusammenhängenden Text).",
+			"lessons": [
+				"d7-inhaltsangabe"
+			],
+			"status": "implemented",
+			"evidence": "Exercises practise writing concise summaries of literary and factual texts in the present tense (with Perfekt for anteriority) as prose and structured schemas."
+		},
+		{
+			"id": "3.2.6",
+			"lb": 3,
+			"section": "3.2",
+			"position": 6,
+			"competence": "beschreiben – ausgehend von textbezogenen Fragen (z. B. nach Aussageabsicht, Beziehungen zwischen handelnden Figuren, Konflikt- und Handlungsverlauf) - funktional verschiedene Kriterien literarischer und pragmatischer Texte (z. B. auch dokumentierende Filmsequenzen), um Absichten und Wirkungen zu erfassen und so begründet zu Text und Thematik schriftlich Stellung beziehen zu können.",
+			"lessons": [
+				"d7-textbezogene-stellungnahme"
+			],
+			"status": "supported",
+			"evidence": "Tasks analyse intent, visual omissions and character actions before taking a reasoned position; applying this to full film sequences remains external practice."
+		},
+		{
+			"id": "3.2.7",
+			"lb": 3,
+			"section": "3.2",
+			"position": 7,
+			"competence": "beschreiben Vorgänge sachlich richtig und sprachlich präzise, um andere zu instruieren bzw. über Abläufe zu informieren.",
+			"lessons": [
+				"d7-vorgangsbeschreibung"
+			],
+			"status": "implemented",
+			"evidence": "Guided and transfer tasks convert incomplete notes into chronological present-tense instructions with materials, clear verbs and a final check."
+		},
+		{
+			"id": "3.2.8",
+			"lb": 3,
+			"section": "3.2",
+			"position": 8,
+			"competence": "treten für Anliegen aus dem persönlichen Erfahrungsbereich argumentativ ein (z. B. in Briefen an die SMV oder die Schulleitung), berücksichtigen dabei den Adressaten und überzeugen andere von ihren Standpunkten.",
+			"lessons": [
+				"d7-argumentativer-brief"
+			],
+			"status": "supported",
+			"evidence": "Learners revise and write reasoned letters to school leadership and student council addressing counter-arguments; submitting real school requests happens in school."
+		},
+		{
+			"id": "3.3.1",
+			"lb": 3,
+			"section": "3.3",
+			"position": 1,
+			"competence": "nutzen zunehmend selbständig geeignete Strategien, Proben und Grundwissen, um beim Verfassen eigener Texte formale sowie Ausdrucks- und Satzbaufehler zu vermeiden; sie klären selbständig rechtschriftliche und grammatikalische Fragestellungen mithilfe von Nachschlagewerken (auch digitale) und nehmen ggf. mithilfe des Computers Rechtschreibprüfungen vor.",
+			"lessons": [
+				"d7-schreibkonferenz-ueberarbeiten"
+			],
+			"status": "supported",
+			"evidence": "Exercises apply clause, replacement and dictionary strategies while noting spellchecker limits; consulting external dictionaries and computer spellcheckers takes place outside the app."
+		},
+		{
+			"id": "3.3.2",
+			"lb": 3,
+			"section": "3.3",
+			"position": 2,
+			"competence": "beurteilen eigene und fremde Texte anhand geeigneter Kriterien und nutzen zur Verbesserung konstruktive Kritik und Hinweise aus Feedback-Verfahren (z. B. Schreibkonferenzen) sowie die Kenntnis eigener Fehlerschwerpunkte.",
+			"lessons": [
+				"d7-schreibkonferenz-ueberarbeiten"
+			],
+			"status": "supported",
+			"evidence": "Criteria checklists guide structural and stylistic revision; holding live writing conferences to assess peers' drafts remains classroom practice."
+		},
+		{
+			"id": "4.1.1",
+			"lb": 4,
+			"section": "4.1",
+			"position": 1,
+			"competence": "verwenden häufig gebrauchte Fremdwörter in eigenen Texten, um ihren Wortschatz zu erweitern und sich präzise und der Funktion des Textes gemäß auszudrücken.",
+			"lessons": [
+				"d7-fremdwoerter-funktion"
+			],
+			"status": "implemented",
+			"evidence": "Exercises choose context-appropriate loanwords for functional precision and integrate them into short factual prose."
+		},
+		{
+			"id": "4.1.2",
+			"lb": 4,
+			"section": "4.1",
+			"position": 2,
+			"competence": "wenden ihr exemplarisches Wissen über die historische Entwicklung des deutschen Wortschatzes (z. B. Historismen, Bedeutungswandel, veränderte Schreibung, Einfluss fremder Sprachen) beim Lesen und Schreiben an und vertiefen so ihr Sprachbewusstsein.",
+			"lessons": [
+				"d7-wortgeschichte-bedeutungswandel"
+			],
+			"status": "implemented",
+			"evidence": "An interactive word-history model and cases examine historicisms, semantic shift, historical spelling changes and early borrowings."
+		},
+		{
+			"id": "4.1.3",
+			"lb": 4,
+			"section": "4.1",
+			"position": 3,
+			"competence": "bewerten Modeerscheinungen in der Sprache (z. B. Jugendsprache, Sprache in der Werbung) im Hinblick auf deren Wirkung und auf mögliche Verständigungsschwierigkeiten und begreifen so Veränderungen im Sprachgebrauch (Satzlänge, Weglassen von Artikeln und Rückgang der Genitivverwendung) u. a. als Spiegel einer sich verändernden Gesellschaft.",
+			"lessons": [
+				"d7-jugendsprache-sprachwandel"
+			],
+			"status": "implemented",
+			"evidence": "Register model and tasks evaluate youth and advertising trends alongside shorter sentences, omitted articles and declining genitive usage."
+		},
+		{
+			"id": "4.2.1",
+			"lb": 4,
+			"section": "4.2",
+			"position": 1,
+			"competence": "gebrauchen die aus Jahrgangsstufe 6 bekannten sprachlichen Strukturen richtig und nutzen ihre Kenntnisse für das Verfassen eigener Texte und für die mündliche Kommunikation. Sie verwenden Ober- und Unterbegriffe, um ihre Gedanken zu strukturieren.",
+			"lessons": [
+				"d7-ober-unterbegriffe-d6"
+			],
+			"status": "implemented",
+			"evidence": "Exercises consolidate Grade 6 active/passive voice, cases and tense sequence while structuring concepts with hypernyms and hyponyms."
+		},
+		{
+			"id": "4.2.2",
+			"lb": 4,
+			"section": "4.2",
+			"position": 2,
+			"competence": "unterscheiden zwischen Indikativ und Konjunktiv hinsichtlich des richtigen Gebrauchs der indirekten Rede.",
+			"lessons": [
+				"d7-indikativ-konjunktiv-rede"
+			],
+			"status": "implemented",
+			"evidence": "An interactive speech model and conversion tasks distinguish indicative from Konjunktiv I and unambiguous Konjunktiv II substitution in indirect speech."
+		},
+		{
+			"id": "4.2.3",
+			"lb": 4,
+			"section": "4.2",
+			"position": 3,
+			"competence": "unterscheiden Satzglieder und Attribute (vorangestellt und nachgestellt), erkennen Adverbiale sicher und wenden ihr Wissen beim Verfassen eigener Texte überlegt an, um diese inhaltlich präzise sowie grammatikalisch und stilistisch korrekt zu gestalten.",
+			"lessons": [
+				"d7-attribute-vor-nachgestellt",
+				"d7-adverbiale-bestimmungen"
+			],
+			"status": "implemented",
+			"evidence": "Two dedicated language models separate movable clause constituents and adverbials from pre- and post-nominal attributes bound to head nouns."
+		},
+		{
+			"id": "4.2.4",
+			"lb": 4,
+			"section": "4.2",
+			"position": 4,
+			"competence": "verwenden Adverbialsätze (Kausal-, Temporal-, Modal-, Lokalsatz) und Attributsätze richtig, um ihre Texte formal korrekt sowie inhaltlich und stilistisch dem Schreibanlass entsprechend zu gestalten (z. B. lebendig und abwechslungsreich schildern).",
+			"lessons": [
+				"d7-kausal-temporalsaetze",
+				"d7-modal-lokal-attributsaetze"
+			],
+			"status": "implemented",
+			"evidence": "Two clause models practise causal, temporal (simultaneous and anterior tense order), modal, local and attributive clauses."
+		},
+		{
+			"id": "4.2.5",
+			"lb": 4,
+			"section": "4.2",
+			"position": 5,
+			"competence": "erweitern und verkürzen Sätze bewusst und verknüpfen sie miteinander (z. B. durch Konjunktionen und Pronominaladverbien) zu Satzreihen und Satzgefügen, um logische Zusammenhänge sprachlich korrekt wiederzugeben.",
+			"lessons": [
+				"d7-satzreihe-satzgefuege"
+			],
+			"status": "implemented",
+			"evidence": "Syntax model and tasks compare coordinate clauses with pronominal adverbs, subordinate clauses and concise prepositional phrase reductions."
+		},
+		{
+			"id": "4.3.1",
+			"lb": 4,
+			"section": "4.3",
+			"position": 1,
+			"competence": "setzen Rechtschreibstrategien und -techniken unter Zuhilfenahme geeigneter Nachschlagewerke (auch digitaler Art) und grammatikalischer Regeln (v. a. bei der Unterscheidung von „das“/„dass“, bei der Zeichensetzung in Satzgefüge und Satzreihe sowie beim Zitieren und dem Apostroph) selbständig um.",
+			"lessons": [
+				"d7-das-oder-dass",
+				"d7-komma-satzreihe-satzgefuege",
+				"d7-zitieren-apostroph"
+			],
+			"status": "implemented",
+			"evidence": "Three interactive models train das/dass replacement tests, comma placement across clause structures and quotation/apostrophe punctuation."
+		},
+		{
+			"id": "4.3.2",
+			"lb": 4,
+			"section": "4.3",
+			"position": 2,
+			"competence": "wenden Regeln zur Zusammen- und Getrenntschreibung sowie zur Groß- und Kleinschreibung richtig an (z. B. zu Nominalisierungen, Farbbezeichnungen, Zahlen- und Zeitangaben), indem sie geeignete Strategien verwenden (z. B. Erkennungsfragen: Wie? Was?). Häufig gebrauchte Fremdwörter schreiben sie richtig, indem sie z. B. den Wortstamm und Suffixe bzw. Präfixe erkennen.",
+			"lessons": [
+				"d7-gross-kleinschreibung",
+				"d7-getrennt-zusammen",
+				"d7-fremdwoerter-funktion"
+			],
+			"status": "implemented",
+			"evidence": "Language models and tests cover nominalisation, colours, numbers, time expressions, compound separation rules and prefix/stem/suffix loanword spelling."
+		},
+		{
+			"id": "4.3.3",
+			"lb": 4,
+			"section": "4.3",
+			"position": 3,
+			"competence": "erkennen mithilfe von Strategien (z. B. Fehleranalyse in Tabellen) individuelle Fehlerschwerpunkte.",
+			"lessons": [
+				"d7-fehleranalyse-strategien"
+			],
+			"status": "implemented",
+			"evidence": "A dictionary-lookup model and error-table exercises train categorising recurring mistakes and matching each pattern to a counter-check."
+		}
+	]
+}

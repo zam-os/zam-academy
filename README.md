@@ -10,6 +10,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | Deutsch 5 Gymnasium (LehrplanPLUS Bayern) | [`deutsch-gymnasium-5/`](deutsch-gymnasium-5/) | https://academy.zam-os.org/deutsch-gymnasium-5/ | `zam-academy:deutsch-gymnasium-5` |
 | German 6 Gymnasium (Bavarian LehrplanPLUS) | [`deutsch-gymnasium-6/`](deutsch-gymnasium-6/) | Built by Pages on merge | `zam-academy:deutsch-gymnasium-6` |
 | German 6 Realschule (Bavaria) | [`deutsch-realschule-6/`](deutsch-realschule-6/) | Built by Pages on merge | `zam-academy:deutsch-realschule-6` |
+| German 7 Realschule (Bavaria) | [`deutsch-realschule-7/`](deutsch-realschule-7/) | Built by Pages on merge | `zam-academy:deutsch-realschule-7` |
 | Grade 4 mathematics: 40 Discovery Island lessons with Milo (Bavaria) | [`mathematik-grundschule-4/`](mathematik-grundschule-4/) | https://academy.zam-os.org/mathematik-grundschule-4/ | `zam-academy:mathematik-grundschule-4` |
 | Grade 4 German: Tintos Wörterstadt, 45 lessons on language, spelling, the Grundwortschatz, reading and writing (Bavaria, LehrplanPLUS 2, 3.2/3.3, 4); the app does not rate free texts ([coverage](docs/deutsch-grundschule-4-coverage.md)) | [`deutsch-grundschule-4/`](deutsch-grundschule-4/) | https://academy.zam-os.org/deutsch-grundschule-4/ | `zam-academy:deutsch-grundschule-4` |
 | Grade 4 Heimat- und Sachunterricht: twenty discovery stations with Lotta (Bavaria) | [`hsu-grundschule-4/`](hsu-grundschule-4/) | https://academy.zam-os.org/hsu-grundschule-4/ | `zam-academy:hsu-grundschule-4` |
@@ -191,6 +192,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # German 5 Gymnasium: cd deutsch-gymnasium-5 (dev server on :5249)
 # German 6 Gymnasium: cd deutsch-gymnasium-6 (dev server on :5260)
 # German 6 Realschule: cd deutsch-realschule-6 (dev server on :5254)
+# German 7 Realschule: cd deutsch-realschule-7 (dev server on :5268)
 # Englisch 6 Realschule: cd englisch-realschule-6 (dev server on :5255)
 # Geschichte 6 Realschule: cd geschichte-realschule-6 (dev server on :5258)
 # Biologie 5 Gymnasium: cd biologie-gymnasium-5 (dev server on :5246)
@@ -287,6 +289,8 @@ The [Informatik 6 Gymnasium package](informatik-gymnasium-6/) covers Natur und T
 The [Biologie 6 Gymnasium package](biologie-gymnasium-6/) covers Natur und Technik 6, Schwerpunkt Biologie (`NT6 1.1–1.5`) with 44 lessons in nine stations, 12 interactive models (fair test, microscope, seed dispersal, germination, waterweed, phototropism, body shape, body temperature, frog metamorphosis, echolocation, vertebrate key, pond food web), 59 drawings, two-level writing tasks and 88 linked ZAM cards. Its [coverage matrix](biologie-gymnasium-6/coverage.json) maps all 45 Kompetenzerwartungen of Lernbereich 1 verbatim. The [curriculum and legacy review](docs/biologie-gymnasium-6-coverage.md) records the approved mapping for both Grade 6 biology cells (3 A transfers and 13 C keep-active items).
 
 The [Deutsch 5 Gymnasium package](deutsch-gymnasium-5/) adds 50 lessons across all four LehrplanPLUS Bayern areas (*Sprechen und Zuhören*, *Lesen und Medien*, *Schreiben*, *Sprache und Rechtschreibung*), including local audio passages, dramatic scenes (*Spielszenen*), 22 interactive language and spelling models, two-level writing tasks with self-assessment and 100 ZAM cards (one approved history transfer and fifteen keep-active cards in the [legacy mapping](deutsch-gymnasium-5/replaces-de-by.json)). See [Curriculum coverage and legacy inventory](docs/deutsch-gymnasium-5-coverage.md).
+
+The [Deutsch 7 Realschule package](deutsch-realschule-7/) covers all 57 verbatim LehrplanPLUS Bayern expectations across 50 lessons (10 speaking/listening, 14 reading/media, 10 writing and 16 language/spelling with interactive models), two local audio passages, case decisions, two-level writing tasks and 100 ZAM cards (`proposal-only` legacy inventory of all 10 old Grade 7 cards in [deutsch-realschule-7/replaces-de-by.json](deutsch-realschule-7/replaces-de-by.json)). See [Curriculum coverage and legacy inventory](docs/deutsch-realschule-7-coverage.md).
 
 The [Englisch 6 Realschule package](englisch-realschule-6/) adds 42 lessons in eight stages across all LehrplanPLUS Bayern Realschule areas (USA, London, regions of Britain, everyday life, sports and charity, media and digital communication, grade-6 grammar and vocabulary/text strategies) with 126 workshop goals, four local listening scripts, 21 verified source links and 126 linked ZAM cards (five approved history transfers and eleven keep-active cards in the [legacy mapping](englisch-realschule-6/replaces-de-by.json)). See [Curriculum coverage and legacy inventory](docs/englisch-realschule-6-coverage.md).
 
