@@ -27,6 +27,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | German 6 Mittelschule (Bavaria) | [`deutsch-mittelschule-6/`](deutsch-mittelschule-6/) | Built by Pages on merge | `zam-academy:deutsch-mittelschule-6` |
 | UML 2.5.1 | [`uml/`](uml/) | https://academy.zam-os.org/uml/ | `zam-academy:uml` |
 | Physik 8 Realschule (LehrplanPLUS Bayern, Zweig I und II/III) | [`physik-realschule-8/`](physik-realschule-8/) | https://academy.zam-os.org/physik-realschule-8/ | `zam-academy:physik-realschule-8` |
+| Physik 7 Gymnasium (LehrplanPLUS Bayern, Natur und Technik 7, Schwerpunkt Physik) | [`physik-gymnasium-7/`](physik-gymnasium-7/) | Built by Pages on merge | `zam-academy:physik-gymnasium-7` |
 | Physik 11 Gymnasium (LehrplanPLUS Bayern, alle Ausbildungsrichtungen, Profilbereich NTG) | [`physik-gymnasium-11/`](physik-gymnasium-11/) | https://academy.zam-os.org/physik-gymnasium-11/ | `zam-academy:physik-gymnasium-11` |
 | Physik 9 Realschule (LehrplanPLUS Bayern) | [`physik-realschule-9/`](physik-realschule-9/) | https://academy.zam-os.org/physik-realschule-9/ | `zam-academy:physik-realschule-9` |
 | Relationale Datenbanken und SQL (DE/EN, LehrplanPLUS IT 2.3.1/2.3.2) | [`sql/`](sql/) | https://academy.zam-os.org/sql/ | `zam-academy:sql` |
@@ -163,6 +164,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Mathematik 12 Gymnasium: cd mathematik-gymnasium-12 (dev server on :5222)
 # Englisch 5: cd englisch-realschule-5 (dev server on :5223)
 # Mathematik 13 Gymnasium: cd mathematik-gymnasium-13 (dev server on :5225)
+# Physik 7 Gymnasium: cd physik-gymnasium-7 (dev server on :5266)
 # Physik 11 Gymnasium: cd physik-gymnasium-11 (dev server on :5226)
 # Geography 5 Realschule: cd geographie-realschule-5 (dev server on :5240)
 # Geography 6 Realschule: cd geographie-realschule-6 (dev server on :5257)
@@ -277,6 +279,8 @@ verbatim expectations and a proposal-only history mapping. Run locally on port
 5240 or create the offline ZIP with `npm run package:zip`.
 
 The [Biologie 5 Realschule package](biologie-realschule-5/) adds 25 lessons, four interactive models (microscope, cell comparison, human torso, and arm lever), 50 case decisions, 50 two-level writing tasks, and 50 linked ZAM cards across all four LehrplanPLUS Bayern areas (`biologie-realschule-5/coverage.json`, all 40 verbatim expectations verified). The [legacy review](docs/biologie-5-bestandsabgleich.md) proposes 5 category-A replacements and retains 19 cards active across the three Grade 5 `de-by` cells (`proposal-only`, `approved: null`; `cell.json` ships without `replaces` or `retired_items` until approved).
+
+The [Physik 7 Gymnasium package](physik-gymnasium-7/) covers Natur und Technik 7 – Schwerpunkt Physik (`NT7 1.1–1.3`, about 28 hours) with 21 lessons, 20 editable models with drawings, density calculations on two levels and a notebook for the six Schülerexperimente. Its [coverage matrix](physik-gymnasium-7/coverage.json) quotes all 14 Kompetenzerwartungen and 15 content bullets verbatim. The [curriculum and legacy review](docs/physik-gymnasium-7-coverage.md) proposes keeping all eight cards of the two old `de-by:gymnasium-7-physik-…` cells active (8 C, no transfer); the mapping is proposal-only until Thomas decides. The Schwerpunkt Informatik of NT7 is not part of it.
 
 The [Informatik 6 Gymnasium package](informatik-gymnasium-6/) covers Natur und Technik – Schwerpunkt Informatik 6 (`NT6 2.1–2.3`) with 12 lessons, interactive workshops and SVG labs across all three learning areas, two-level exercises, and 36 linked ZAM cards. Its [coverage matrix](informatik-gymnasium-6/coverage.json) maps all 14 Kompetenzerwartungen and 18 content bullets verbatim against LehrplanPLUS Bayern. The [curriculum and legacy review](docs/informatik-gymnasium-6-coverage.md) documents the mapping Thomas approved on 2026-11-15 for the eight cards of `de-by:gymnasium-6-natur-technik-informatik-vektorgrafik-texte` (2 A, 6 C keep-active); from cell version 2026.11.2 the two A successors declare `replaces`. It also flags the Grade 5 cell `de-by:gymnasium-5-natur-technik-mikroskop-experiment-oop` (`J05–J08`), which `biologie-gymnasium-5` maps.
 
