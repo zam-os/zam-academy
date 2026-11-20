@@ -1,0 +1,522 @@
+{
+	"schema": 1,
+	"checked": "2026-11-20",
+	"curriculum": "https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/7/biologie",
+	"curriculum_sha256": "dd0b36b523b92585b3556aca44e92ef4ffef2d007d9a2badcb948025a26d416a",
+	"school_type": "realschule",
+	"subject": "biologie",
+	"grade": 7,
+	"tracks": [
+		"I",
+		"II",
+		"IIIa",
+		"IIIb"
+	],
+	"scope_note": "The ISB publishes a shared Biology 7 curriculum. Process skills have no separate hour allocation.",
+	"core_lessons": 27,
+	"optional_lessons": [],
+	"stages": [
+		{
+			"lb": 1,
+			"title": "Prozessbezogene Kompetenzen",
+			"hours": null
+		},
+		{
+			"lb": 2,
+			"title": "Die Zelle – Grundbaustein aller Lebewesen",
+			"hours": 10
+		},
+		{
+			"lb": 3,
+			"title": "Stoffwechselvorgänge bei Pflanzen",
+			"hours": 15
+		},
+		{
+			"lb": 4,
+			"title": "Organsysteme des Menschen",
+			"hours": 30
+		}
+	],
+	"rows": [
+		{
+			"lb": 1,
+			"section": "1.1",
+			"position": 1,
+			"competence": "verwenden mithilfe von Anleitungen Mess- und Laborgeräte sowie geeignete Substanzen sachgerecht und zielführend, um Untersuchungen wie Messungen oder Experimente durchzuführen.",
+			"lessons": [
+				"b7-untersuchen",
+				"b7-mikroskopieren"
+			],
+			"status": "supported",
+			"evidence": "Planning, suitable measuring instruments and preparation guidance. Hands-on equipment and safe use require instruction."
+		},
+		{
+			"lb": 1,
+			"section": "1.1",
+			"position": 2,
+			"competence": "beobachten reale oder abgebildete biologische Phänomene, um sie anhand von vorgegebenen Kriterien strukturiert zu beschreiben.",
+			"lessons": [
+				"b7-zellvergleich",
+				"b7-laubblatt"
+			],
+			"status": "implemented",
+			"evidence": "Observe the depictions using the same structure, position and form criteria."
+		},
+		{
+			"lb": 1,
+			"section": "1.1",
+			"position": 3,
+			"competence": "vergleichen unter vorgegebener Schwerpunktsetzung reale oder abgebildete biologische Phänomene und erkennen anhand von Gemeinsamkeiten und Unterschieden wiederkehrende biologische Prinzipien wie die Basiskonzepte.",
+			"lessons": [
+				"b7-zellvergleich",
+				"b7-vielzeller",
+				"b7-laubblatt",
+				"b7-atmung"
+			],
+			"status": "implemented",
+			"evidence": "Compare cells and examples of surface area and structure matching function."
+		},
+		{
+			"lb": 1,
+			"section": "1.1",
+			"position": 4,
+			"competence": "stellen unter Anleitung einfache Präparate her und mikroskopieren sie, um Strukturen zu erkennen und zu zeichnen sowie sie mithilfe einer Schemazeichnung zu beschriften.",
+			"lessons": [
+				"b7-mikroskopieren",
+				"b7-laubblatt"
+			],
+			"status": "supported",
+			"evidence": "Preparation sequence, centering, on-screen schemes and drawing guidance. Preparation and microscopy take place in class."
+		},
+		{
+			"lb": 1,
+			"section": "1.1",
+			"position": 5,
+			"competence": "führen anhand von konkreten Anleitungen einfache Experimente durch, unterscheiden Variablen und Konstanten und wählen geeignete Kontrollversuche aus einer Zusammenstellung aus.",
+			"lessons": [
+				"b7-untersuchen",
+				"b7-fotosynthese"
+			],
+			"status": "supported",
+			"evidence": "Identify variable, constants and a suitable control and interpret a model example. Carrying out the experiment requires class."
+		},
+		{
+			"lb": 1,
+			"section": "1.1",
+			"position": 6,
+			"competence": "unterscheiden die Phasen einer naturwissenschaftlichen Untersuchung, bringen die Phasen in die richtige Reihenfolge bzw. planen oder vervollständigen den Ablauf eines Erkenntniswegs anhand begründeter Kriterien, um Fragestellungen systematisch zu bearbeiten.",
+			"lessons": [
+				"b7-untersuchen",
+				"b7-darstellen"
+			],
+			"status": "implemented",
+			"evidence": "Work from a question through hypothesis, investigation, records and a qualified conclusion."
+		},
+		{
+			"lb": 1,
+			"section": "1.1",
+			"position": 7,
+			"competence": "wählen zu einer Problemstellung eine Erkenntnismethode aus und begründen die Auswahl.",
+			"lessons": [
+				"b7-mikroskopieren",
+				"b7-darstellen"
+			],
+			"status": "implemented",
+			"evidence": "Choose a method or representation to answer a question about location or function and justify the choice."
+		},
+		{
+			"lb": 1,
+			"section": "1.1",
+			"position": 8,
+			"competence": "beschreiben systematisch Fehlerquellen und begründen Möglichkeiten der Fehlervermeidung für naturwissenschaftliche Untersuchungen.",
+			"lessons": [
+				"b7-untersuchen",
+				"b7-mikroskopieren",
+				"b7-fotosynthese"
+			],
+			"status": "implemented",
+			"evidence": "Spot confounds together with measurement, preparation and interpretation errors and justify corrections."
+		},
+		{
+			"lb": 1,
+			"section": "1.1",
+			"position": 9,
+			"competence": "übertragen Sachverhalte auf ein Modell bzw. setzen ein Modell zu einem Sachverhalt in Bezug und erläutern durch den Vergleich von Modell und Realität Möglichkeiten und Grenzen eines Modells.",
+			"lessons": [
+				"b7-mikroskopieren",
+				"b7-ohr",
+				"b7-nervenzelle"
+			],
+			"status": "implemented",
+			"evidence": "Compare the representative and omitted properties of a model with the biological process."
+		},
+		{
+			"lb": 1,
+			"section": "1.1",
+			"position": 10,
+			"competence": "erstellen nach Anleitung einfache Modelle, die vorgegebene Aspekte biologischer Sachverhalte abbilden, um Eigenschaften oder Zusammenhänge zu beschreiben.",
+			"lessons": [
+				"b7-mikroskopieren",
+				"b7-zellvergleich",
+				"b7-ohr",
+				"b7-nervenzelle"
+			],
+			"status": "supported",
+			"evidence": "Plan an improved model with structurally appropriate labels or symbols. Construct and present it during class."
+		},
+		{
+			"lb": 1,
+			"section": "1.2",
+			"position": 1,
+			"competence": "wählen anhand mehrerer Kriterien begründet aus vorgegebenen Quellen aus, um die Güte von Informationsquellen zu biologischen Inhalten einzuschätzen und Informationen nach vorgegebenen Fragestellungen zu erschließen.",
+			"lessons": [
+				"b7-quellen"
+			],
+			"status": "implemented",
+			"evidence": "Evaluate source authorship, intention, evidence and independence using a contextual example."
+		},
+		{
+			"lb": 1,
+			"section": "1.2",
+			"position": 2,
+			"competence": "protokollieren Arbeitsabläufe bzw. Ergebnisse nach Vorgaben, um sie mithilfe von aussagekräftigen Texten, einfachen Tabellen, Grafiken bzw. Zeichnungen nachvollziehbar darzustellen.",
+			"lessons": [
+				"b7-untersuchen",
+				"b7-darstellen",
+				"b7-mikroskopieren"
+			],
+			"status": "implemented",
+			"evidence": "Use a protocol structure, a numerical example and criteria for labeled observation drawings."
+		},
+		{
+			"lb": 1,
+			"section": "1.2",
+			"position": 3,
+			"competence": "stellen einfache biologische Sachverhalte (z. B. Strukturen, Funktionen oder Zusammenhänge) dar oder überführen sie in eine sachgerechte Darstellungsform (z. B. Tabelle, Grafik, Zeichnung, Symbol, Text).",
+			"lessons": [
+				"b7-darstellen",
+				"b7-vielzeller",
+				"b7-stoffwechsel"
+			],
+			"status": "implemented",
+			"evidence": "Choose a representation and turn sample data or a biological relationship into an organized depiction."
+		},
+		{
+			"lb": 1,
+			"section": "1.2",
+			"position": 4,
+			"competence": "verwenden biologische Fachbegriffe, um Sachverhalte und biologische Zusammenhänge sachgerecht zu beschreiben und nachvollziehbar weiterzugeben.",
+			"lessons": [
+				"b7-darstellen",
+				"b7-ohr",
+				"b7-laubblatt"
+			],
+			"status": "implemented",
+			"evidence": "Use precise vocabulary in explanations about leaf and ear structures."
+		},
+		{
+			"lb": 1,
+			"section": "1.2",
+			"position": 5,
+			"competence": "beschreiben Beziehungen zwischen wenigen Fakten oder Sachverhalten und stellen so biologische Zusammenhänge her.",
+			"lessons": [
+				"b7-spaltoeffnungen",
+				"b7-zellatmung",
+				"b7-stoffwechsel"
+			],
+			"status": "implemented",
+			"evidence": "Explain cause and effect for stomata, gas exchange and organ cooperation."
+		},
+		{
+			"lb": 1,
+			"section": "1.2",
+			"position": 6,
+			"competence": "nutzen angemessene biologietypische Medien (z. B. Originalia, Abbildungen, Modelle) oder Protokolle, um Sachverhalte nach einer vorgegebenen Struktur in weitgehend freier Rede sachgerecht darzustellen bzw. mithilfe von Anschauungsmaterial zu präsentieren.",
+			"lessons": [
+				"b7-darstellen",
+				"b7-organspende"
+			],
+			"status": "supported",
+			"evidence": "Plans for a short presentation with material. Free spoken delivery and peer feedback take place with an audience."
+		},
+		{
+			"lb": 1,
+			"section": "1.2",
+			"position": 7,
+			"competence": "stellen ihre Position dar, indem sie Behauptungen biologisch fachlich korrekt begründen und mit geeigneten Beispielen untermauern.",
+			"lessons": [
+				"b7-entscheiden",
+				"b7-darstellen"
+			],
+			"status": "implemented",
+			"evidence": "Connect a claim with a biological reason and an example."
+		},
+		{
+			"lb": 1,
+			"section": "1.2",
+			"position": 8,
+			"competence": "erfassen Argumente weitgehend ohne Hilfe und finden biologische Beispiele, die ein Argument infrage stellen können.",
+			"lessons": [
+				"b7-entscheiden",
+				"b7-darstellen",
+				"b7-zellvergleich"
+			],
+			"status": "implemented",
+			"evidence": "Find and explain counterexamples to claims about hearing, growth and cell structures."
+		},
+		{
+			"lb": 1,
+			"section": "1.3",
+			"position": 1,
+			"competence": "arbeiten ein ethisch-moralisches Problem (z. B. eigene Entscheidung zur Organspende) aus einfachen, didaktisch reduzierten Vorlagen (z. B. Text, Film, Hörspiel) heraus, nennen dazu wenige Pro- und Contra-Argumente und geben die eigene Einstellung dazu wieder.",
+			"lessons": [
+				"b7-organspende"
+			],
+			"status": "implemented",
+			"evidence": "Use a fictional transplantation case to identify the ethical question, arguments for and against, and a reasoned position."
+		},
+		{
+			"lb": 1,
+			"section": "1.3",
+			"position": 2,
+			"competence": "bewerten und entscheiden nach der Berücksichtigung einzelner Kriterien, die auf der Grundlage einzelner Werte oder Normen ausgewählt wurden (z. B. Rauchverbot überall?).",
+			"lessons": [
+				"b7-entscheiden",
+				"b7-organspende"
+			],
+			"status": "implemented",
+			"evidence": "Apply values and criteria to weigh options without prescribing a personal decision."
+		},
+		{
+			"lb": 1,
+			"section": "1.3",
+			"position": 3,
+			"competence": "beschreiben zu einer Konfliktfrage mit biologischem Inhalt Handlungsoptionen, um mögliche Folgen – auch mittelfristige – zu vergleichen (z. B. Lautes Musikhören: ja oder nein?).",
+			"lessons": [
+				"b7-entscheiden",
+				"b7-gesundheit"
+			],
+			"status": "implemented",
+			"evidence": "Compare hearing protection options, their immediate effects and potential longer-term effects."
+		},
+		{
+			"lb": 2,
+			"section": "2",
+			"position": 1,
+			"competence": "mikroskopieren oder verwenden Abbildungen von typischen Tier- und Pflanzenzellen, vergleichen diese miteinander und nennen einige Beispiele der Variation im Aufbau der Zellen. Dadurch erkennen sie Zellen als kleinste Bau- und Funktionseinheit von Lebewesen.",
+			"lessons": [
+				"b7-zellvergleich",
+				"b7-mikroskopieren"
+			],
+			"status": "implemented",
+			"evidence": "Compare three labeled representations, including variations among plant cells; connect them to microscopy."
+		},
+		{
+			"lb": 2,
+			"section": "2",
+			"position": 2,
+			"competence": "legen die Funktionen der wichtigsten tierischen und pflanzlichen Zellorganellen dar.",
+			"lessons": [
+				"b7-zellorganellen",
+				"b7-zellvergleich"
+			],
+			"status": "implemented",
+			"evidence": "Describe membranes, cytoplasm, nuclei, mitochondria, ribosomes, walls, vacuoles and chloroplasts."
+		},
+		{
+			"lb": 2,
+			"section": "2",
+			"position": 3,
+			"competence": "stellen die Organisation eines Vielzellers aus Zellen, Geweben, Organen und Organsystemen zu einem Organismus dar und gewinnen dadurch einen Überblick über verschiedene Organisationsebenen.",
+			"lessons": [
+				"b7-vielzeller"
+			],
+			"status": "implemented",
+			"evidence": "Map cell, tissue, organ, organ system and organism from one example."
+		},
+		{
+			"lb": 2,
+			"section": "2",
+			"position": 4,
+			"competence": "beobachten ausgewählte Einzeller, beschreiben den Aufbau, die Lebensweise und die Vermehrung und entwickeln so eine Faszination vom Mikrokosmos. Gleichzeitig leiten sie ab, dass Lebewesen aus nur einer Zelle bestehen können.",
+			"lessons": [
+				"b7-einzeller"
+			],
+			"status": "supported",
+			"evidence": "Identify structures, behavior and asexual division using diagram and observation prompts. Observe real specimens in class."
+		},
+		{
+			"lb": 2,
+			"section": "2",
+			"position": 5,
+			"competence": "setzen die Organisation von Vielzellern mit der Arbeitsteilung in Bezug und stellen sie Einzellern gegenüber, um eine Vorstellung von den vielfältigen Organisationen von Lebensformen zu erhalten.",
+			"lessons": [
+				"b7-einzeller",
+				"b7-vielzeller"
+			],
+			"status": "implemented",
+			"evidence": "Compare cellular self-sufficiency with tissue specialization and interdependence."
+		},
+		{
+			"lb": 3,
+			"section": "3",
+			"position": 1,
+			"competence": "mikroskopieren geeignete Präparate der Pflanzenorgane oder verwenden entsprechende Abbildungen, um den Aufbau zu beschreiben.",
+			"lessons": [
+				"b7-mikroskopieren",
+				"b7-wurzel",
+				"b7-sprossachse",
+				"b7-laubblatt"
+			],
+			"status": "implemented",
+			"evidence": "Use labeled depictions and slice comparisons to describe the root, stem and leaf."
+		},
+		{
+			"lb": 3,
+			"section": "3",
+			"position": 2,
+			"competence": "stellen mithilfe von Untersuchungen Zusammenhänge zwischen dem Bau und der Funktion von Wurzel, Sprossachse, Laubblatt und ggf. Blüte in Bezug auf die Wasser- und Mineralstoffaufnahme und dem Stofftransport her.",
+			"lessons": [
+				"b7-wurzel",
+				"b7-sprossachse",
+				"b7-laubblatt",
+				"b7-untersuchen"
+			],
+			"status": "supported",
+			"evidence": "Compare representative structures and trace transport through a model and sample investigation. Real work with plants belongs in class."
+		},
+		{
+			"lb": 3,
+			"section": "3",
+			"position": 3,
+			"competence": "identifizieren den Gasaustausch an den Spaltöffnungen als Voraussetzung für Fotosynthese und Zellatmung.",
+			"lessons": [
+				"b7-laubblatt",
+				"b7-spaltoeffnungen",
+				"b7-zellatmung"
+			],
+			"status": "implemented",
+			"evidence": "Link stomatal gas exchange to the inputs and outputs of both processes."
+		},
+		{
+			"lb": 3,
+			"section": "3",
+			"position": 4,
+			"competence": "legen – auch mithilfe von geeigneten Experimenten – die Faktoren des Stoffwechselvorgangs der Fotosynthese dar und leiten die Wortgleichung ab. Auf dieser Grundlage erläutern sie die Bedeutung der Pflanzen als Produzenten für die Ausgangsstoffe der Zellatmung und damit für das vielfältige Leben auf der Erde.",
+			"lessons": [
+				"b7-fotosynthese",
+				"b7-zellatmung"
+			],
+			"status": "implemented",
+			"evidence": "Use a controlled example and qualitative gas balance to interpret the word equation and the producer role."
+		},
+		{
+			"lb": 3,
+			"section": "3",
+			"position": 5,
+			"competence": "stellen die Bedeutung der Fotosynthese für die Pflanzen selbst dar, und vergleichen sie mit der Zellatmung. Somit begreifen sie die Fotosynthese als einzigartigen Energieumwandlungsprozess.",
+			"lessons": [
+				"b7-fotosynthese",
+				"b7-zellatmung"
+			],
+			"status": "implemented",
+			"evidence": "Contrast the sign of energy transfer, cellular locations and light dependency."
+		},
+		{
+			"lb": 4,
+			"section": "4",
+			"position": 1,
+			"competence": "ordnen die Bestandteile der Organsysteme Verdauung, Herz-Kreislaufsystem, Nerven- und Hormonsystem den jeweiligen Funktionen zu. Durch diese grundlegenden Kenntnisse erlangen sie die Voraussetzung für einen selbstbestimmten und damit gesundheitserhaltenden und -förderlichen Umgang mit dem eigenen Körper.",
+			"lessons": [
+				"b7-ernaehrung",
+				"b7-verdauung",
+				"b7-kreislauf",
+				"b7-nervensystem",
+				"b7-nervenzelle",
+				"b7-hormone"
+			],
+			"status": "implemented",
+			"evidence": "Match structures with their functions across the four systems."
+		},
+		{
+			"lb": 4,
+			"section": "4",
+			"position": 2,
+			"competence": "erläutern das Zusammenwirken einzelner Organsysteme (z. B. zwischen Verdauungs- und Kreislaufsystem). Dadurch begreifen sie das Zusammenspiel der Organsysteme im eigenen Organismus als Voraussetzung für einen selbstbestimmten Umgang mit dem eigenen Körper.",
+			"lessons": [
+				"b7-verdauung",
+				"b7-atmung",
+				"b7-kreislauf",
+				"b7-stoffwechsel"
+			],
+			"status": "implemented",
+			"evidence": "Follow nutrients and oxygen to a working tissue and carbon dioxide back to the lungs."
+		},
+		{
+			"lb": 4,
+			"section": "4",
+			"position": 3,
+			"competence": "leiten anhand eines Überblicks über die Sinnesorgane des Menschen das allgemeine Prinzip der Leistung von Sinneszellen ab. Damit erlangen sie eine Vorstellung von Reizaufnahme und Reizverarbeitung als notwendige Voraussetzung für die Kommunikation mit der Umwelt und den Mitmenschen.",
+			"lessons": [
+				"b7-sinne",
+				"b7-ohr",
+				"b7-nervensystem"
+			],
+			"status": "implemented",
+			"evidence": "Compare suitable stimuli and explain transduction and signal processing."
+		},
+		{
+			"lb": 4,
+			"section": "4",
+			"position": 4,
+			"competence": "beschreiben auch mithilfe von Abbildungen, Modellen bzw. Experimenten den Bau und die Funktion des Ohrs. Dadurch entwickeln sie eine Vorstellung der Reizaufnahme aus der Umwelt durch ein Sinnesorgan und leiten Schutzmaßnahmen ab.",
+			"lessons": [
+				"b7-ohr",
+				"b7-gesundheit",
+				"b7-entscheiden"
+			],
+			"status": "implemented",
+			"evidence": "Explore a labeled ear model, distinguish mechanical stages and nerve signals, and identify hearing protection."
+		},
+		{
+			"lb": 4,
+			"section": "4",
+			"position": 5,
+			"competence": "vergleichen Nerven- und Hormonsystem und verfügen dadurch über das grundlegende Verständnis von zwei unterschiedlichen Steuerungsmechanismen des Körpers.",
+			"lessons": [
+				"b7-nervensystem",
+				"b7-nervenzelle",
+				"b7-hormone"
+			],
+			"status": "implemented",
+			"evidence": "Compare routes, target cells and examples of nerve and hormone action."
+		},
+		{
+			"lb": 4,
+			"section": "4",
+			"position": 6,
+			"competence": "stellen einen Zusammenhang zwischen Atmung und Verdauung her, um Stoffwechselvorgänge als essenzielle Energielieferanten für alle körperlichen und geistigen Tätigkeiten zu begründen und damit eine verantwortungsbewusste Nahrungsaufnahme zu fördern.",
+			"lessons": [
+				"b7-ernaehrung",
+				"b7-verdauung",
+				"b7-atmung",
+				"b7-stoffwechsel"
+			],
+			"status": "implemented",
+			"evidence": "Relate digestion and respiration to the energy demands of body cells."
+		},
+		{
+			"lb": 4,
+			"section": "4",
+			"position": 7,
+			"competence": "leiten aus der Kenntnis möglicher Gefahren für einzelne Organe oder Organsysteme angemessene Prophylaxen ab und schlagen für mögliche Schädigungen sinnvolle Behandlungsmöglichkeiten vor. Dadurch entwickeln sie ein Bewusstsein für die Notwendigkeit, den eigenen Körper zu schützen.",
+			"lessons": [
+				"b7-gesundheit",
+				"b7-ohr",
+				"b7-entscheiden"
+			],
+			"status": "implemented",
+			"evidence": "Choose prevention, distinguish impaired hearing from a diagnosis and explain why treatment depends on the cause."
+		}
+	]
+}

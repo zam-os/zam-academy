@@ -1,0 +1,427 @@
+[
+	{
+		"id": "b7-zellvergleich",
+		"lb": 2,
+		"title": "Tier- und Pflanzenzellen vergleichen",
+		"period": "B7 · Lernbereich 2",
+		"intro": "Entdecke im Schema, welche Strukturen die Zellen gemeinsam haben.",
+		"paragraphs": [
+			"Zellen sind die kleinsten Bau- und Funktionseinheiten von Lebewesen. Eine typische Tierzelle und eine typische grüne Pflanzenzelle besitzen Zellmembran, Zellplasma und Zellkern. In beiden kommen außerdem Mitochondrien und Ribosomen vor.",
+			"Eine Pflanzenzelle besitzt außerhalb ihrer Membran eine feste Zellwand. Reife Pflanzenzellen haben häufig eine große Vakuole. Grüne Blattzellen enthalten Chloroplasten. Zwiebelhautzellen aus dem Inneren der Zwiebel besitzen zwar Zellwände, aber normalerweise keine Chloroplasten.",
+			"Vergleiche ein Schema von Blattzelle, Zwiebelhautzelle und tierischer Mundschleimhautzelle nach denselben Kriterien: äußere Begrenzung, sichtbare Strukturen und Form. Das Modell zeichnet die Strukturen deutlicher, als sie im Lichtmikroskop zu sehen sind; die winzigen Ribosomen sind dort nicht einzeln erkennbar."
+		],
+		"takeaway": "Die Zellwand unterscheidet Pflanzenzellen von Tierzellen; Chloroplasten kommen in grünen Pflanzenteilen vor.",
+		"sourceIds": [
+			"lp"
+		],
+		"quiz": {
+			"question": "Eine Zelle hat eine feste Zellwand und keine erkennbaren Chloroplasten. Welches Beispiel passt?",
+			"answer": "Eine Zelle der inneren Zwiebelhaut.",
+			"wrong": [
+				"Eine menschliche Mundschleimhautzelle.",
+				"Eine typische grüne Blattzelle mit sichtbar grünen Chloroplasten."
+			],
+			"explanation": "Nicht jede Pflanzenzelle betreibt Fotosynthese. Die Zellwand bleibt ein Kennzeichen."
+		},
+		"visual": {
+			"title": "Wonach du beim Vergleich suchst",
+			"kind": "compare",
+			"steps": [
+				{
+					"label": "Beide Zelltypen",
+					"detail": "Membran, Zellplasma, Zellkern, Mitochondrien und Ribosomen"
+				},
+				{
+					"label": "Pflanzenzelle",
+					"detail": "Zusätzlich Zellwand und häufig große Vakuole"
+				},
+				{
+					"label": "Grüne Blattzelle",
+					"detail": "Mit Chloroplasten"
+				}
+			]
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Werkstatt",
+			"instruction": "Ordne jeden Eintrag zu und prüfe deine Auswahl.",
+			"material": "Ordne jeweils die engste zutreffende Gruppe zu.",
+			"categories": [
+				"Beide typischen Zelltypen",
+				"Pflanzenzelle",
+				"Grüne Blattzelle"
+			],
+			"entries": [
+				{
+					"text": "Zellmembran grenzt das Zellplasma ab.",
+					"target": 0,
+					"feedback": "Diese Membran ist beiden Zelltypen gemeinsam."
+				},
+				{
+					"text": "Eine feste Zellwand liegt außen.",
+					"target": 1,
+					"feedback": "Sie kommt auch in der inneren Zwiebelhaut vor."
+				},
+				{
+					"text": "Viele Chloroplasten nehmen Licht auf.",
+					"target": 2,
+					"feedback": "Das passt zur grünen Blattzelle."
+				}
+			],
+			"conclusion": "Die Zellwand unterscheidet Pflanzenzellen von Tierzellen; Chloroplasten kommen in grünen Pflanzenteilen vor."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Vergleiche Mundschleimhaut- und Zwiebelhautzelle nach Begrenzung und Zellkern.",
+				"hints": [
+					"Achte auf Wand und Membran.",
+					"Überlege, welche Struktur beide haben."
+				],
+				"model": "Beide typischen Zellen haben Zellmembran und Zellkern. Die Zwiebelhautzelle hat zusätzlich eine feste Zellwand außerhalb der Membran. Die Mundschleimhautzelle hat keine Zellwand.",
+				"criteria": [
+					"Ich nenne die gemeinsame Membran.",
+					"Ich ordne die Zellwand zu.",
+					"Ich nenne den gemeinsamen Zellkern."
+				]
+			},
+			"2": {
+				"prompt": "Eine Mitschülerin meint: Ohne Chloroplasten ist eine Zelle tierisch. Widerlege das mit einer Beobachtung und nenne eine Grenze des Lichtmikroskops.",
+				"hints": [
+					"Erinnere dich an die Zwiebel.",
+					"Denke an sehr kleine Organellen."
+				],
+				"model": "Die innere Zwiebelhaut besitzt Zellwände, obwohl ihre Zellen normalerweise keine Chloroplasten haben. Eine Zeichnung muss festhalten, was wirklich erkennbar ist. Ribosomen sind im Schullichtmikroskop nicht einzeln sichtbar.",
+				"criteria": [
+					"Ich verwende die innere Zwiebelhaut als Gegenbeispiel.",
+					"Ich leite das Kennzeichen Zellwand ab.",
+					"Ich nenne eine Grenze der Beobachtung."
+				]
+			}
+		},
+		"model": "cells"
+	},
+	{
+		"id": "b7-zellorganellen",
+		"lb": 2,
+		"title": "Aufgaben der Zellbestandteile",
+		"period": "B7 · Lernbereich 2",
+		"intro": "Ordne jedem Bestandteil seine Aufgabe in der Zelle zu.",
+		"paragraphs": [
+			"Die Zellmembran grenzt die Zelle ab und regelt den Stoffaustausch. Im Zellplasma liegen Zellbestandteile und laufen viele Reaktionen ab. Der Zellkern enthält den größten Teil der Erbinformation und wirkt an der Steuerung der Zelle mit.",
+			"Ribosomen bauen Eiweiße. Mitochondrien machen bei der Zellatmung Energie aus energiereichen Stoffen für viele Zellvorgänge verfügbar. Chloroplasten betreiben Fotosynthese. Die große Vakuole enthält Zellsaft und trägt mit ihrem Innendruck zur Stabilität bei. Die Zellwand stützt und begrenzt die Ausdehnung.",
+			"Beispiel: Bei Wassermangel geht Wasser aus der Vakuole verloren. Der Druck gegen die Zellwand lässt nach, sodass junge Blätter schlaff werden können."
+		],
+		"takeaway": "Die Aufgaben der Zellbestandteile ergänzen sich. Die Zelle kann dadurch Stoffe austauschen, aufbauen und nutzen.",
+		"sourceIds": [
+			"lp"
+		],
+		"quiz": {
+			"question": "Welche Struktur baut Eiweiße auf?",
+			"answer": "Ribosomen.",
+			"wrong": [
+				"Vakuolen.",
+				"Chloroplasten."
+			],
+			"explanation": "Ribosomen setzen die Bausteine der Eiweiße zusammen."
+		},
+		"visual": {
+			"title": "Vier Aufgaben im Zellinneren",
+			"kind": "compare",
+			"steps": [
+				{
+					"label": "Zellkern",
+					"detail": "Erbinformation"
+				},
+				{
+					"label": "Ribosomen",
+					"detail": "Eiweiße aufbauen"
+				},
+				{
+					"label": "Mitochondrien",
+					"detail": "Energie aus Zucker nutzbar machen"
+				},
+				{
+					"label": "Vakuole",
+					"detail": "Zellsaft aufnehmen und Zelldruck stützen"
+				}
+			]
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Werkstatt",
+			"instruction": "Ordne jeden Eintrag zu und prüfe deine Auswahl.",
+			"material": "Welcher Bestandteil erfüllt die Aufgabe?",
+			"categories": [
+				"Zellmembran",
+				"Chloroplast",
+				"Mitochondrium",
+				"Vakuole"
+			],
+			"entries": [
+				{
+					"text": "Regelt den Stoffaustausch mit der Umgebung.",
+					"target": 0,
+					"feedback": "Die Membran lässt Stoffe selektiv passieren."
+				},
+				{
+					"text": "Nutzt Licht zur Herstellung von Zucker.",
+					"target": 1,
+					"feedback": "Fotosynthese läuft im Chloroplasten."
+				},
+				{
+					"text": "Macht bei der Zellatmung Energie für Zellvorgänge verfügbar.",
+					"target": 2,
+					"feedback": "Dieser Vorgang ist an Mitochondrien gebunden."
+				},
+				{
+					"text": "Enthält Zellsaft; bei Füllung steigt der Innendruck.",
+					"target": 3,
+					"feedback": "Die Vakuole wirkt mit der Zellwand zusammen."
+				}
+			],
+			"conclusion": "Die Aufgaben der Zellbestandteile ergänzen sich. Die Zelle kann dadurch Stoffe austauschen, aufbauen und nutzen."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Warum kann ein junger Trieb bei Wassermangel schlaff werden?",
+				"hints": [
+					"Beschreibe die Rolle der Vakuole.",
+					"Beziehe die feste Zellwand ein."
+				],
+				"model": "Die Vakuole verliert Wasser. Innen drückt der Zellinhalt weniger stark gegen die Zellwand. Der geringere Druck macht das Gewebe schlaffer.",
+				"criteria": [
+					"Ich nenne den Wasserverlust.",
+					"Ich erkläre den sinkenden Innendruck.",
+					"Ich verbinde das mit der Beobachtung."
+				]
+			},
+			"2": {
+				"prompt": "Eine grüne Blattzelle wird dunkel gestellt. Welche ihrer Organellen können für den Energiebedarf der Zelle weiterarbeiten und wozu braucht sie Ribosomen?",
+				"hints": [
+					"Trenne Lichtnutzung und Zellatmung.",
+					"Überlege, was Ribosomen herstellen."
+				],
+				"model": "Mitochondrien können bei vorhandenem Zucker und Sauerstoff weiterhin Energie verfügbar machen. Chloroplasten betreiben im Dunkeln keine Fotosynthese. Ribosomen bauen Eiweiße, die die Zelle für ihre Arbeit und ihren Aufbau braucht.",
+				"criteria": [
+					"Ich beschreibe Mitochondrien und Bedingungen.",
+					"Ich erkläre, was im Dunkeln aussetzt.",
+					"Ich nenne die Aufgabe der Ribosomen."
+				]
+			}
+		}
+	},
+	{
+		"id": "b7-einzeller",
+		"lb": 2,
+		"title": "Einzeller unter der Lupe",
+		"period": "B7 · Lernbereich 2",
+		"intro": "Ein Pantoffeltierchen erledigt alle Lebensaufgaben mit nur einer Zelle.",
+		"paragraphs": [
+			"Das Pantoffeltierchen lebt im Wasser. Viele kurze Wimpern bewegen es fort und strudeln Nahrung zu einer Öffnung, dem Zellmund. Nahrung gelangt in Nahrungsvakuolen. Eine pulsierende Vakuole gibt überschüssiges Wasser ab.",
+			"Ein Pantoffeltierchen vermehrt sich in der Regel durch Querteilung. Dabei entstehen aus einem Individuum zwei. Wimpern und Vakuolen haben unterschiedliche Aufgaben, gehören aber alle zu derselben Zelle.",
+			"Beispiel: Im Schaubild erkennst du ein Tierchen mit Wimpern und seitlichem Zellmund. Stell dir bei der Querteilung eine Trennlinie quer zur Längsachse vor. Beide neu entstehenden Zellen können selbstständig leben. Eine Amöbe bewegt sich dagegen mit veränderlichen Ausstülpungen, den Scheinfüßchen."
+		],
+		"takeaway": "Einzeller bestehen aus einer einzigen Zelle, die alle lebensnotwendigen Aufgaben übernimmt.",
+		"sourceIds": [
+			"lp"
+		],
+		"quiz": {
+			"question": "Wozu nutzt das Pantoffeltierchen seine Wimpern?",
+			"answer": "Zum Schwimmen und zum Heranstrudeln von Nahrung.",
+			"wrong": [
+				"Um in Blättern Zucker herzustellen.",
+				"Um die Zelle mit einer festen Zellwand zu umgeben."
+			],
+			"explanation": "Die Wimpern bewegen sich und erzeugen einen gezielten Wasserstrom."
+		},
+		"visual": {
+			"title": "Pantoffeltierchen im Wasser",
+			"kind": "compare",
+			"steps": [
+				{
+					"label": "Wimpern",
+					"detail": "Bewegen und Nahrung heranstrudeln"
+				},
+				{
+					"label": "Zellmund",
+					"detail": "Nahrung aufnehmen"
+				},
+				{
+					"label": "Pulsierende Vakuole",
+					"detail": "Überschüssiges Wasser abgeben"
+				},
+				{
+					"label": "Querteilung",
+					"detail": "Zwei selbstständige Zellen entstehen"
+				}
+			]
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Werkstatt",
+			"instruction": "Ordne jeden Eintrag zu und prüfe deine Auswahl.",
+			"material": "Ordne die Beobachtungen beim Pantoffeltierchen zu.",
+			"categories": [
+				"Fortbewegung oder Heranstrudeln",
+				"Wasserhaushalt",
+				"Vermehrung"
+			],
+			"entries": [
+				{
+					"text": "Viele Wimpern schlagen in Wellen.",
+					"target": 0,
+					"feedback": "Die Schläge bewegen das Tierchen und das Wasser daneben."
+				},
+				{
+					"text": "Eine Vakuole füllt und entleert sich in Abständen.",
+					"target": 1,
+					"feedback": "So gibt die Zelle überschüssiges Wasser ab."
+				},
+				{
+					"text": "Eine Zelle trennt sich quer in zwei Zellen.",
+					"target": 2,
+					"feedback": "Durch Querteilung nimmt die Zahl der Einzeller zu."
+				}
+			],
+			"conclusion": "Einzeller bestehen aus einer einzigen Zelle, die alle lebensnotwendigen Aufgaben übernimmt."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Erkläre an zwei Zellbestandteilen, wie das Pantoffeltierchen ohne Organe im Wasser zurechtkommt.",
+				"hints": [
+					"Wähle zwei aus Wimpern, Zellmund und Vakuole.",
+					"Verbinde Bau und Aufgabe."
+				],
+				"model": "Die Wimpern bewegen das Pantoffeltierchen und strudeln Nahrung zum Zellmund. Eine pulsierende Vakuole führt überschüssiges Wasser nach außen ab. Beide Strukturen sind Teile derselben Zelle.",
+				"criteria": [
+					"Ich nenne zwei Strukturen.",
+					"Ich beschreibe ihre Funktionen.",
+					"Ich mache deutlich, dass es eine Zelle ist."
+				]
+			},
+			"2": {
+				"prompt": "Unter dem Mikroskop zieht ein unbekannter Einzeller seine Form in die Länge und umfließt Nahrung. Was spricht für eine Amöbe und welche Beobachtung würdest du zusätzlich machen?",
+				"hints": [
+					"Achte auf vorübergehende Ausstülpungen.",
+					"Vergleiche die Fortbewegung mit der des Pantoffeltierchens."
+				],
+				"model": "Die Formänderung und das Umfließen passen zu Scheinfüßchen einer Amöbe. Ich beobachte mehrere Bewegungen und achte auf veränderliche Fortsätze oder einen regelmäßigen Wimpernschlag. So vergleiche ich die Merkmale statt nur einen einzelnen Umriss.",
+				"criteria": [
+					"Ich begründe die Vermutung.",
+					"Ich nenne beobachtbare Merkmale.",
+					"Ich beschreibe einen prüfbaren Vergleich."
+				]
+			}
+		}
+	},
+	{
+		"id": "b7-vielzeller",
+		"lb": 2,
+		"title": "Von der Zelle zum Organismus",
+		"period": "B7 · Lernbereich 2",
+		"intro": "Bei Vielzellern ermöglicht Arbeitsteilung spezialisierte Aufgaben.",
+		"paragraphs": [
+			"Ähnliche Zellen arbeiten in einem Gewebe zusammen. Mehrere Gewebe bilden ein Organ. Organe mit gemeinsamen Aufgaben bilden ein Organsystem. Alle Organsysteme zusammen bilden den Organismus.",
+			"Beispiel: Eine Herzmuskelzelle gehört zum Herzmuskelgewebe. Im Herz arbeiten Muskelgewebe, Bindegewebe, Nervengewebe und weitere Gewebe zusammen. Das Herz arbeitet mit den Blutgefäßen im Herz-Kreislaufsystem, das Teil des Menschen ist.",
+			"Bei einem Pantoffeltierchen erfüllt eine einzige Zelle lebensnotwendige Aufgaben. Bei einem Vielzeller können Zellen spezialisiert sein, etwa Muskelzellen auf Verkürzung. Sie sind dann auf die Versorgung und das Zusammenspiel mit anderen Zellen angewiesen."
+		],
+		"takeaway": "Arbeitsteilung verbindet spezialisierte Zellen über Gewebe, Organe und Organsysteme zu einem Organismus.",
+		"sourceIds": [
+			"lp"
+		],
+		"quiz": {
+			"question": "Welche Reihenfolge führt von klein zu groß?",
+			"answer": "Zelle → Gewebe → Organ → Organsystem → Organismus.",
+			"wrong": [
+				"Gewebe → Organ → Zelle → Organismus → Organsystem.",
+				"Zelle → Organsystem → Gewebe → Organ → Organismus."
+			],
+			"explanation": "Mehrere Gewebe arbeiten in einem Organ zusammen."
+		},
+		"visual": {
+			"title": "Beispiel Mensch",
+			"kind": "flow",
+			"steps": [
+				{
+					"label": "Herzmuskelzelle",
+					"detail": "Verkürzt sich"
+				},
+				{
+					"label": "Herzmuskelgewebe",
+					"detail": "Viele Muskelzellen wirken zusammen"
+				},
+				{
+					"label": "Herz",
+					"detail": "Mehrere Gewebe bilden ein Organ"
+				},
+				{
+					"label": "Kreislauf",
+					"detail": "Herz und Gefäße gehören zum Menschen"
+				}
+			]
+		},
+		"workshop": {
+			"kind": "timeline",
+			"title": "Vom Einzelteil zum Ganzen",
+			"instruction": "Sortiere nach der Organisationsebene. Beginne bei der kleinsten.",
+			"material": "Beispiel Herz und Blutkreislauf.",
+			"categories": [],
+			"entries": [
+				{
+					"text": "Herzmuskelzelle",
+					"target": 0,
+					"feedback": "Sie ist eine einzelne spezialisierte Zelle."
+				},
+				{
+					"text": "Herzmuskelgewebe",
+					"target": 1,
+					"feedback": "Viele spezialisierte Zellen arbeiten zusammen."
+				},
+				{
+					"text": "Herz",
+					"target": 2,
+					"feedback": "Mehrere Gewebe bilden das Organ."
+				},
+				{
+					"text": "Herz-Kreislaufsystem",
+					"target": 3,
+					"feedback": "Herz und Gefäße bilden das Organsystem."
+				},
+				{
+					"text": "Mensch",
+					"target": 4,
+					"feedback": "Alle Organsysteme bilden den Organismus."
+				}
+			],
+			"conclusion": "Arbeitsteilung verbindet spezialisierte Zellen über Gewebe, Organe und Organsysteme zu einem Organismus."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Erkläre mit drei Stufen, wie eine Herzmuskelzelle zum Pumpen des Herzens beiträgt.",
+				"hints": [
+					"Beginne mit der einzelnen Zelle.",
+					"Erkläre das Zusammenspiel der Gewebe."
+				],
+				"model": "Eine Herzmuskelzelle kann sich verkürzen. Viele arbeiten im Herzmuskelgewebe zusammen. Das Gewebe bildet mit weiteren Geweben das Herz, dessen Muskelkraft das Blut antreibt.",
+				"criteria": [
+					"Ich nenne Zelle, Gewebe und Organ.",
+					"Ich beschreibe die Aufgabe der Zelle.",
+					"Ich verbinde die Stufen mit der Pumpwirkung."
+				]
+			},
+			"2": {
+				"prompt": "Eine Herzmuskelzelle und ein Pantoffeltierchen leben beide. Warum kann nur eines ohne andere Zellen einen ganzen Organismus bilden?",
+				"hints": [
+					"Vergleiche Spezialisierung und Selbstständigkeit.",
+					"Nutze je eine konkrete Aufgabe."
+				],
+				"model": "Das Pantoffeltierchen nimmt selbst Nahrung auf, bewegt sich und kann sich vermehren. Die Herzmuskelzelle ist auf das Verkürzen spezialisiert. Im Körper ist sie auf andere Zellen und Organe angewiesen, die sie zum Beispiel mit Sauerstoff versorgen.",
+				"criteria": [
+					"Ich beschreibe eine Leistung des Einzellers.",
+					"Ich nenne die Spezialisierung.",
+					"Ich erkläre die Abhängigkeit."
+				]
+			}
+		}
+	}
+]
