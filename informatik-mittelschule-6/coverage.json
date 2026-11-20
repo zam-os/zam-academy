@@ -1,0 +1,140 @@
+{
+  "curriculum": "https://www.lehrplanplus.bayern.de/fachlehrplan/mittelschule/6/informatik",
+  "checked": "2026-11-20",
+  "curriculum_sha256": "42d74b9865187ac281d1875d10b18abd7e10f4f74985895374fa3b887220b7f8",
+  "school_type": "mittelschule",
+  "grade": 6,
+  "subject": "informatik",
+  "track": "Gemeinsamer Fachlehrplan für alle 6. Klassen der Mittelschule (getrennte Fachlehrpläne für Regelklasse und Mittlere-Reife-Klasse ab Jgst. 7).",
+  "hours": "Auf der Fachlehrplanseite Inf6 ohne Stundenangabe ausgewiesen (zwei Lernbereiche neben dem Lehrgang Tastschreiben in Jgst. 5/6 laut Fachprofil Informatik 3.1).",
+  "note": "Alle sechs Kompetenzerwartungen und sieben Inhaltsspiegelstriche der Lernbereiche 1 (Digitaler Informationsaustausch) und 2 (Programmieren) werden auf zwölf Lektionen in zwei Etappen verteilt.",
+  "optional_lessons": [],
+  "rows": [
+    {
+      "lb": "1",
+      "position": 1,
+      "competence": "sammeln digitales Informationsmaterial, setzen sich kritisch mit dessen Inhalten auseinander und erstellen Beurteilungskriterien für die Qualität von Informationen, um die Medienwirkung einzuschätzen.",
+      "lessons": [
+        "ms6-suchstrategien",
+        "ms6-informationsqualitaet"
+      ],
+      "status": "supported",
+      "evidence": "ms6-suchstrategien vermittelt und trainiert verfeinerte Suchoperatoren (exakte Wortfolge, Ausschluss, site:, filetype:pdf, Zeitraum) in einer lokalen Such-Filter-Werkstatt und zweistufigen Aufgaben. ms6-informationsqualitaet vermittelt die Beurteilungskriterien (Informationsgehalt, Vertrauenswürdigkeit, Aktualität, Zweitquelle, Medienwirkung) am interaktiven Quellen-Prüfer. Das freie Sammeln und Vergleichen echter Online-Webseiten zu einem eigenen Projektthema erfolgt im Unterricht.",
+      "additional": "Zu einem konkreten Unterrichtsthema selbständig digitale Quellen im Netz sammeln, eigene Kriterienliste im Heft aufstellen und Quellen vergleichen."
+    },
+    {
+      "lb": "1",
+      "position": 2,
+      "competence": "berücksichtigen bei der Nutzung von Informationsquellen Regeln des Urheber- und Lizenzrechts.",
+      "lessons": [
+        "ms6-urheberrecht-lizenzen"
+      ],
+      "status": "implemented",
+      "evidence": "ms6-urheberrecht-lizenzen erklärt den automatischen Urheberrechtsschutz, eigene vs. fremde Werke, Creative-Commons-Lizenzmodelle (CC0, BY, SA, NC, ND inkl. Abgrenzung von privatem Bearbeiten und Veröffentlichen) sowie vollständige Quellenangaben mit interaktivem Lizenzprüfer, Schnellcheck und zwei Aufgabenniveaus.",
+      "additional": "Bei eigenen Schulpräsentationen und Arbeitsblättern alle verwendeten Bilder und Texte mit vollständiger Quellenangabe dokumentieren."
+    },
+    {
+      "lb": "1",
+      "position": 3,
+      "competence": "beschreiben grundlegende Maßnahmen zur Sicherung ihrer personenbezogenen Daten vor dem Zugriff unberechtigter Dritter sowie zur Vermeidung von Datenverlust, um diese im Alltag umzusetzen.",
+      "lessons": [
+        "ms6-personenbezogene-daten",
+        "ms6-passwoerter-virenschutz",
+        "ms6-datensicherung"
+      ],
+      "status": "implemented",
+      "evidence": "Drei gezielte Lektionen sichern die drei Säulen: Datensparsamkeit, Recht am eigenen Bild und Geräte-Abmeldung in ms6-personenbezogene-daten; Passwortregeln (Länge, Nichterratbarkeit/Merksatz, einzigartig je Dienst sowie Schutz vor Schadsoftware und Updates) in ms6-passwoerter-virenschutz; Schutz vor Datenverlust durch regelmäßige Backups auf getrennten Speichermedien in ms6-datensicherung.",
+      "additional": "Im eigenen Alltag und am Schulrechner konsequent abmelden, Updates einspielen und persönliche Daten sparsam freigeben."
+    },
+    {
+      "lb": "2",
+      "position": 1,
+      "competence": "untersuchen Abläufe (z. B. Bewegung einer Figur) und gliedern diese in sinnvolle Teilschritte, um diese mit algorithmischen Grundstrukturen in geeigneten Notationsformen darzustellen.",
+      "lessons": [
+        "ms6-ablaeufe-sequenz",
+        "ms6-bedingungen",
+        "ms6-alternative",
+        "ms6-bedingte-wiederholung",
+        "ms6-schachtelung"
+      ],
+      "status": "implemented",
+      "evidence": "Fünf aufeinander aufbauende Lektionen zerlegen Figuren- und Alltagsabläufe in Teilschritte und übersetzen sie synchron in Nassi-Shneiderman-Struktogramme für Sequenz, Bedingung, ein- und zweiseitige Alternative, kopfgesteuerte bedingte Wiederholung sowie deren Schachtelung.",
+      "additional": "Zu einem eigenen Alltagsablauf oder Bewegungsparcours ein Struktogramm im Heft zeichnen."
+    },
+    {
+      "lb": "2",
+      "position": 2,
+      "competence": "verwenden teilweise angeleitet in einfachen Entwicklungsumgebungen algorithmische Grundstrukturen, um Abläufe zu modellieren und implementieren.",
+      "lessons": [
+        "ms6-ablaeufe-sequenz",
+        "ms6-alternative",
+        "ms6-bedingte-wiederholung",
+        "ms6-schachtelung",
+        "ms6-testen-optimieren"
+      ],
+      "status": "supported",
+      "evidence": "In interaktiven Werkstätten werden Sequenzen, Alternativen, bedingte Wiederholungen und verschachtelte Programme Schritt für Schritt auf Spielfeldern zusammengesetzt und unmittelbar ausgeführt. Das selbständige Arbeiten in der konkreten schulischen Entwicklungsumgebung (z. B. Block- oder Lernprogramm) bleibt Teil des Präsenzunterrichts.",
+      "additional": "Die in der App entworfenen Struktogramme in der schulischen Entwicklungsumgebung als eigenes Programm umsetzen."
+    },
+    {
+      "lb": "2",
+      "position": 3,
+      "competence": "testen und optimieren teilweise angeleitet ihre mit algorithmischen Grundstrukturen modellierten Abläufe.",
+      "lessons": [
+        "ms6-testen-optimieren"
+      ],
+      "status": "supported",
+      "evidence": "ms6-testen-optimieren vermittelt systematisches Testen mit Normal- und Randfällen (z. B. Ganglänge 0 und 5), Fehlererkennung (starre Sequenz, verdrehte Bedingung, Endlosschleife) sowie Optimierung (Streichen überflüssiger Drehungen, allgemeine Schleifen) an der Test-Werkstatt. Das Testen und Verbessern eigener Schulprogramme erfolgt in der Lernumgebung im Unterricht.",
+      "additional": "Eigene Programme mit extremen Randfällen (z. B. Abstand 0 oder Hindernis direkt am Start) in der Schulsoftware prüfen und verkürzen."
+    }
+  ],
+  "contents": [
+    {
+      "lb": "1",
+      "content": "verfeinerte Suchstrategien",
+      "lessons": ["ms6-suchstrategien"]
+    },
+    {
+      "lb": "1",
+      "content": "Beurteilungskriterien für Qualität von Informationen (z. B. Informationsgehalt, Vertrauenswürdigkeit der Quelle)",
+      "lessons": ["ms6-informationsqualitaet"]
+    },
+    {
+      "lb": "1",
+      "content": "Urheberrecht und Lizenzmodelle (z. B. Creative Commons)",
+      "lessons": ["ms6-urheberrecht-lizenzen"]
+    },
+    {
+      "lb": "1",
+      "content": "grundlegende Maßnahmen zur Sicherung personenbezogener Daten (z. B. Verwendung sicherer Passwörter, Einsatz von Virenschutzprogrammen)",
+      "lessons": ["ms6-personenbezogene-daten", "ms6-passwoerter-virenschutz"]
+    },
+    {
+      "lb": "1",
+      "content": "Bedeutung von Datensicherung",
+      "lessons": ["ms6-datensicherung"]
+    },
+    {
+      "lb": "2",
+      "content": "algorithmische Grundstrukturen (Anweisung, Sequenz, Bedingung, Alternative, bedingte Wiederholung sowie deren Schachtelung)",
+      "lessons": [
+        "ms6-ablaeufe-sequenz",
+        "ms6-bedingungen",
+        "ms6-alternative",
+        "ms6-bedingte-wiederholung",
+        "ms6-schachtelung"
+      ]
+    },
+    {
+      "lb": "2",
+      "content": "Notationsformen (z. B. Struktogramm)",
+      "lessons": [
+        "ms6-ablaeufe-sequenz",
+        "ms6-alternative",
+        "ms6-bedingte-wiederholung",
+        "ms6-schachtelung",
+        "ms6-testen-optimieren"
+      ]
+    }
+  ]
+}
