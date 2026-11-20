@@ -32,7 +32,7 @@ key (`deutsch_rs7_progress_v1`). Sources open only on a click.
 
 ```sh
 npm ci
-npm run dev                 # port 5267
+npm run dev                 # port 5268
 npm run typecheck
 npm test
 npm run check:curriculum
