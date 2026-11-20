@@ -28,6 +28,6 @@ node scripts/verify-browser.mjs
 ZAM_CORE=file:///path/to/zam-core/dist/index.js node scripts/validate-cell.mjs
 ```
 
-Browser verification uses installed headless Chrome. Set `CHROME_BIN` if Chrome is outside the default macOS location and `BROWSER_QA_DIR` to choose a report directory. The browser checks both task levels in both themes for every lesson, tests all workshop targets, and checks language input, path switching, progress persistence and responsive widths. Use zam-core 0.54.0 as pinned in CI. The dev server uses port 5262.
+Browser verification uses installed headless Chrome. Set `CHROME_BIN` if Chrome is outside the default macOS location and `BROWSER_QA_DIR` to choose a report directory. The browser checks both task levels in both themes for every lesson, tests all workshop targets, and checks language input, path switching, progress persistence and responsive widths. Use zam-core 0.54.0 as pinned in CI. The dev server uses port 5263.
 
 See the [curriculum and legacy inventory record](../docs/franzoesisch-gymnasium-6-coverage.md). Package version 0.0 is awaiting teacher review.

@@ -138,7 +138,7 @@ describe("Grade 6 first- and second-language French teaching contract", () => {
 			for (const id of row.lessons)
 				expect(findLesson(id)?.track).toBe(row.track.toLowerCase());
 		}
-		for (const id of ["F1-01", "F1-06", "F1-25", "F1-35", "F1-48", "F2-01", "F2-24", "F2-32", "F2-45"])
+		for (const id of ["F1-01", "F1-06", "F1-13", "F1-25", "F1-35", "F1-48", "F2-01", "F2-11", "F2-24", "F2-32", "F2-45"])
 			expect(coverage.rows.find((row) => row.id === id)?.status).toBe("supported");
 	});
 	it("puts the advanced structures only on the first-language path", () => {

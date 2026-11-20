@@ -90,6 +90,31 @@ export const FRANCE_RIVERS = {
 	{ name: string; labelAt: MapPoint; points: readonly MapPoint[] }
 >;
 
+export const FRANCE_MOUNTAINS = [
+	{
+		name: "Alpes",
+		labelAt: [392, 251],
+		peaks: [
+			[[416, 239], [410, 255], [423, 255]],
+			[[421, 266], [415, 281], [427, 281]],
+			[[424, 291], [416, 307], [432, 307]],
+		],
+	},
+	{
+		name: "Pyrénées",
+		labelAt: [245, 345],
+		peaks: [
+			[[231, 350], [223, 361], [239, 361]],
+			[[252, 355], [244, 368], [260, 368]],
+			[[275, 360], [266, 374], [280, 374]],
+		],
+	},
+] as const satisfies readonly {
+	name: string;
+	labelAt: MapPoint;
+	peaks: readonly (readonly MapPoint[])[];
+}[];
+
 const path = (points: readonly MapPoint[]) =>
 	points.map(([x, y], i) => `${i ? "L" : "M"}${x} ${y}`).join(" ");
 
@@ -111,7 +136,10 @@ export function renderFranceMap(showSaone = false): string {
 				`<path data-river="${id}" d="${path(river.points)}"/><text data-river-label="${id}" x="${river.labelAt[0]}" y="${river.labelAt[1]}">${river.name}</text>`,
 		)
 		.join("")}</g>
-	<g data-map-layer="mountains" class="map-mountains"><path d="M415 234 l-14 27 26 0 Z M423 264 l-14 27 26 0 Z M423 293 l-14 27 26 0 Z M230 350 l-14 22 26 0 Z M257 361 l-14 22 26 0 Z M283 364 l-14 22 26 0 Z"/><text x="452" y="283">Alpes</text><text x="182" y="407">Pyrénées</text></g>
+	<g data-map-layer="mountains" class="map-mountains">${FRANCE_MOUNTAINS.map(
+		({ name, labelAt: [x, y], peaks }) =>
+			`<path d="${peaks.map((peak) => `${path(peak)} Z`).join(" ")}"/><text x="${x}" y="${y}" text-anchor="middle">${name}</text>`,
+	).join("")}</g>
 	<g data-map-layer="cities" class="map-cities">${Object.entries(FRANCE_CITIES)
 		.map(
 			([id, city]) =>

@@ -4,9 +4,11 @@ import cell from "../cell.json";
 import legacy from "./fixtures/de-by-gymnasium-7-franzoesisch-passe-compose-relativsaetze-verneinung-kvt.json";
 import { completion, freshProgress, currentTrack } from "../src/storage/progress";
 import { findLesson } from "../src/curriculum";
+import { checkPractice } from "../src/practice";
 import {
 	FRANCE_CITIES,
 	FRANCE_LAND,
+	FRANCE_MOUNTAINS,
 	FRANCE_RIVERS,
 	SAONE,
 	type MapPoint,
@@ -45,6 +47,13 @@ function onLand([x, y]: MapPoint): boolean {
 }
 
 describe("reviewed learner-facing language", () => {
+	it("accepts both common decimal separators in the bakery price", () => {
+		const price = findLesson("f6-2-mediation")!.practice[0];
+		for (const input of ["1,50", "1.50", "1,5", "1.5"])
+			expect(checkPractice([price], [input])).toEqual([true]);
+		expect(checkPractice([price], ["1,05"])).toEqual([false]);
+	});
+
 	it("makes the possessive quiz a first-person utterance completed by the whole answer", () => {
 		const quiz = findLesson("f6-2-famille")!.quiz;
 		expect(quiz.question.replace("…", ` ${quiz.answer}.`)).toBe(
@@ -71,6 +80,15 @@ describe("reviewed learner-facing language", () => {
 });
 
 describe("map meaning survives schematic simplification", () => {
+	it("places both mountain ranges and their labels on the mainland", () => {
+		for (const { name, labelAt, peaks } of FRANCE_MOUNTAINS) {
+			expect(onLand(labelAt), name).toBe(true);
+			for (const peak of peaks)
+				for (const point of peak)
+					expect(onLand(point), `${name} at ${point}`).toBe(true);
+		}
+	});
+
 	it("puts Paris, Lyon, Nantes, Bordeaux and Toulouse on the rivers taught in the lesson", () => {
 		for (const [city, river] of [
 			[FRANCE_CITIES.paris, FRANCE_RIVERS.seine],
@@ -124,6 +142,7 @@ describe("neighbouring-grade ownership is explicit and transfers no mastery", ()
 	it("accounts for all four legacy items once and prepares two valid successors", () => {
 		expect(mapping.schema).toBe(1);
 		expect(mapping.source_commit).toMatch(/^[0-9a-f]{40}$/);
+		expect(mapping.status).toBe("proposal-only");
 		expect(mapping.approved).toBeNull();
 		const ids = legacy.atoms.flatMap((atom) => atom.practice_items.map((item) => item.id));
 		expect(mapping.rows.map((row) => row.old_item_id).sort()).toEqual(ids.sort());

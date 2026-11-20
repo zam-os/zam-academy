@@ -24,6 +24,6 @@ ZAM's bundled-cell registry and curriculum fixtures at `1ff016cfd7a0765c5338eb42
 - Two category C items stay active. One covers a broader combination of past-tense rules, including reflexives. The other combines relative clauses, negation and partitive articles, and remains with Grade 7 under the earlier scope decision recorded for the [Grade 5 package](franzoesisch-gymnasium-5-coverage.md).
 - Grade 5 Academy cards and Realschule cells cover different curriculum positions. The package declares no replacements for them.
 
-The Grade 7 comparisons are proposal-only. The cell has no `replaces` or `retired_items` entries. Implementing a transfer would require an explicit scope and mapping decision from Thomas.
+The Grade 7 comparisons are proposal-only. The cell has no `replaces` or `retired_items` entries. Implementing a transfer would require an explicit scope and mapping decision from Thomas. The `ne … jamais` candidate has an equivalent card in the second-language path. A follow-up migration should account for learners who already hold both Grade 6 cards.
 
 The app tracks first- and second-language lesson progress independently. ZAM receives one cell for Gymnasium Grade 6. Topic codes and language domains distinguish the paths, since they are foreign-language sequences rather than Gymnasium Ausbildungsrichtungen.

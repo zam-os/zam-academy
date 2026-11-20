@@ -340,6 +340,23 @@ try {
 		await evaluate('document.querySelectorAll("[data-river]").length'),
 		4,
 	);
+	const mountains = await evaluate(`(() => {
+		const land = document.querySelector("svg .land");
+		return [...document.querySelectorAll(".map-mountains text")].map((label) => {
+			const { x, y, width, height } = label.getBBox();
+			return {
+				name: label.textContent,
+				onLand: [[x, y], [x + width, y], [x, y + height], [x + width, y + height]]
+					.every(([px, py]) => land.isPointInFill(new DOMPoint(px, py))),
+			};
+		});
+	})()`);
+	assert.deepEqual(mountains, [
+		{ name: "Alpes", onLand: true },
+		{ name: "Pyrénées", onLand: true },
+	]);
+	await evaluate('document.querySelector("[data-map-focus=mountains]").click()');
+	await screenshot("mountain-labels");
 	await evaluate('document.querySelector("[data-map-focus=rivers]").click()');
 	assert.equal(
 		await evaluate(
