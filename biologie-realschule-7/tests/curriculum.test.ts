@@ -88,28 +88,23 @@ describe("ZAM cell", () => {
 		}
 	});
 
-	it("keeps the old plant cell partitioned without transferring or retiring history", () => {
+	it("declares exactly the approved plant card replacements and keeps the other cards active", () => {
 		expect(publication.status).toBe("local-only");
-		expect(mapping.approved).toBeNull();
-		expect(mapping.status).toBe("proposal-only");
+		expect(mapping.approved).toBe("2026-11-20");
+		expect(mapping.status).toBe("approved");
 		const legacyItems = snapshot.atoms.flatMap((a) => a.practice_items);
 		expect(mapping.rows.map((row) => row.de_by_id)).toEqual(legacyItems.map(({ id }) => id));
 		expect(mapping.rows.map((row) => row.de_by_question)).toEqual(legacyItems.map(({ question }) => question));
-		const proposed = mapping.rows.flatMap((row) => row.academy_slug ? [row.academy_slug] : []);
-		expect(new Set(proposed).size).toBe(4);
 		const items = cell.atoms.flatMap((a) => a.practice_items);
-		expect(proposed.every((slug) => items.filter((i) => i.slug === slug).length === 1)).toBe(true);
-		for (const row of mapping.rows) {
-			if (row.category === "A") {
-				expect(row.action).toBe("propose-replace-after-approval");
-				expect(row.academy_slug).not.toBeNull();
-			} else {
-				expect(row.category).toBe("C");
-				expect(row.action).toBe("keep-active");
-				expect(row.academy_slug).toBeNull();
-			}
-		}
+		const replacements = mapping.rows.filter(({ category }) => category === "A");
+		expect(replacements).toHaveLength(4);
+		expect(new Set(replacements.map(({ academy_slug }) => academy_slug)).size).toBe(4);
+		expect(items.flatMap((item) => "replaces" in item ? [{ slug: item.slug, ids: item.replaces }] : []))
+			.toEqual(replacements.map((row) => ({ slug: row.academy_slug, ids: [row.de_by_id] })));
+		expect(replacements.every(({ action }) => action === "replace")).toBe(true);
+		expect(mapping.rows.filter(({ category, action, academy_slug }) =>
+			category === "C" && action === "keep-active" && academy_slug === null,
+		)).toHaveLength(4);
 		expect(cell).not.toHaveProperty("retired_items");
-		expect(items.every((item) => !Object.hasOwn(item, "replaces"))).toBe(true);
 	});
 });
