@@ -55,14 +55,14 @@
             "type": "binary_choice",
             "options": [
               "Sie findet nur Seiten mit exakt dieser Wortfolge",
-              "Sie schließt alle Werbeanzeigen automatisch vom Kauf aus"
+              "Sie markiert Begriffe nur als besonders wichtige Überschrift"
             ],
             "correct_index": 0
           },
           "choice_distractors": [
             {
-              "text": "Sie schließt alle Werbeanzeigen automatisch vom Kauf aus",
-              "reason": "Werbung wird nicht über Anführungszeichen entfernt, sondern Anführungszeichen erzwingen die genaue Wortfolge."
+              "text": "Sie markiert Begriffe nur als besonders wichtige Überschrift",
+              "reason": "Anführungszeichen gewichten Wörter nicht bloß stärker, sondern erzwingen genau die angegebene zusammenhängende Wortfolge."
             },
             {
               "text": "Sie durchsucht ausschließlich PDF-Dateien auf Schulservern",
@@ -77,24 +77,24 @@
           "tier": "tier1_fast",
           "bloom_level": 1,
           "question": "Wie schließt du in einer Suchanfrage Treffer zum Thema ‚Shop‘ richtig aus?",
-          "concept": "Mit einem Minuszeichen ohne Leerzeichen vor dem Wort",
+          "concept": "Mit dem Operator - direkt ohne Leerzeichen vor dem Wort",
           "source_link": "https://academy.zam-os.org/informatik-mittelschule-6/#lesson=ms6-suchstrategien",
           "fast_check": {
             "type": "binary_choice",
             "options": [
-              "Mit einem Minuszeichen ohne Leerzeichen vor dem Wort",
-              "Mit einem Pluszeichen direkt hinter dem gesuchten Wort"
+              "Mit dem Operator - direkt ohne Leerzeichen vor dem Wort",
+              "Mit einem Bindestrich und Leerzeichen vor dem Störwort"
             ],
             "correct_index": 0
           },
           "choice_distractors": [
             {
-              "text": "Mit einem Pluszeichen direkt hinter dem gesuchten Wort",
-              "reason": "Das Pluszeichen schließt kein Wort aus; zum Ausblenden setzt man das Minus direkt vor das Störwort."
+              "text": "Mit einem Bindestrich und Leerzeichen vor dem Störwort",
+              "reason": "Steht zwischen - und dem Wort ein Leerzeichen, schließt die Suchmaschine das Wort nicht zuverlässig aus."
             },
             {
-              "text": "Indem man das ungewünschte Wort in Großbuchstaben schreibt",
-              "reason": "Groß- und Kleinschreibung ändert bei Suchmaschinen die Bedeutung nicht und schließt nichts aus."
+              "text": "Mit dem Zusatzwort ‚ohne‘ direkt vor dem Störwort",
+              "reason": "Suchmaschinen werten ‚ohne‘ meist als normales Textwort und nicht als technischen Ausschlussoperator wie -shop."
             }
           ]
         },
@@ -104,18 +104,18 @@
           "language": "de",
           "tier": "tier2_synthesis",
           "bloom_level": 2,
-          "question": "Erkläre, wie du für ein Referat über den Biber in Bayern mithilfe von drei Suchoperatoren unpassende Shops und veraltete Blogs herausfilterst.",
-          "concept": "Exakte Wortfolge, Ausschlussoperator und Domain- bzw. Zeitraumfilter gezielt kombinieren.",
+          "question": "Erkläre, wie du für ein Referat über den Biber in Bayern mithilfe von drei Suchoperatoren unpassende Seiten mit ‚Bettwäsche‘ oder ‚Shop‘ und veraltete Blogs herausfilterst.",
+          "concept": "Exakte Wortfolge, Ausschlussoperator - und Domain- bzw. Zeitraumfilter gezielt kombinieren.",
           "source_link": "https://academy.zam-os.org/informatik-mittelschule-6/#lesson=ms6-suchstrategien",
-          "sample_solution": "Zuerst fasst man den Kernbegriff als exakte Wortfolge in Anführungszeichen (\"biber in bayern\"). Danach blendet der Ausschlussoperator ohne Leerzeichen unerwünschte Themen aus (−bettwäsche −shop). Schließlich grenzt site:bayern.de die Herkunft auf verlässliche Landesstellen ein und ein aktueller Zeitraumfilter sortiert veraltete Beiträge aus.",
+          "sample_solution": "Zuerst fasst man den Kernbegriff als exakte Wortfolge in Anführungszeichen (\"biber in bayern\"). Danach blendet der Ausschlussoperator ohne Leerzeichen Seiten mit den unerwünschten Begriffen aus (-bettwäsche -shop). Schließlich grenzt site:bayern.de die Herkunft auf verlässliche Landesstellen ein und der Zeitraumfilter sortiert veraltete Beiträge aus.",
           "choice_distractors": [
             {
-              "text": "Alle Fragen als langen Satz mit Fragezeichen eintippen und nur die erste Anzeige öffnen.",
-              "reason": "Füllwörter verwässern die Trefferliste, und die obersten Suchtreffer sind oft bezahlte Anzeigen."
+              "text": "Die Frage als vollständigen Satz mit Fragezeichen eingeben und sofort das erste Ergebnis wählen.",
+              "reason": "Füllwörter verwässern die Trefferliste, und die obersten Suchtreffer sind oft bezahlte Anzeigen statt fachlicher Belege."
             },
             {
-              "text": "Den gesuchten Tiernamen zehnmal wiederholen und fremde Webseiten niemals einschränken.",
-              "reason": "Wiederholen verbessert die Relevanz nicht; erst Operatoren wie Anführungszeichen, Ausschluss und site: filtern sauber."
+              "text": "Zwischen Bindestrich und Ausschlusswort ein Leerzeichen lassen und auf site:-Filter verzichten.",
+              "reason": "Ein Leerzeichen nach dem - macht den Ausschluss unwirksam, und ohne Domainfilter erscheinen zahlreiche beliebige Webseiten."
             }
           ]
         }
@@ -169,18 +169,18 @@
             "type": "binary_choice",
             "options": [
               "Das vollständige Impressum mit Namen und Kontaktdaten",
-              "Die Hintergrundfarbe und Größe der Werbebanner am Rand"
+              "Die Anzahl positiver Kommentare unter dem Artikel"
             ],
             "correct_index": 0
           },
           "choice_distractors": [
             {
-              "text": "Die Hintergrundfarbe und Größe der Werbebanner am Rand",
-              "reason": "Gestaltung und Werbebanner verraten nicht, wer rechtlich für den Inhalt verantwortlich zeichnet."
+              "text": "Die Anzahl positiver Kommentare unter dem Artikel",
+              "reason": "Kommentare und Zustimmung zeigen keine redaktionelle Verantwortung und können leicht manipuliert sein."
             },
             {
-              "text": "Die Anzahl der Ausrufezeichen in der großen Überschrift",
-              "reason": "Viele Ausrufezeichen deuten oft auf reißerische Aufmachung hin, nicht auf Seriosität."
+              "text": "Ein professionelles Layout mit großem Logo oben links",
+              "reason": "Auch anonyme oder werbliche Seiten können seriös aussehen; rechtliche Verantwortung nennt nur das Impressum."
             }
           ]
         },
@@ -197,18 +197,18 @@
             "type": "binary_choice",
             "options": [
               "In mindestens einer zweiten unabhängigen Fachquelle nachschlagen",
-              "Den Beitrag zehnmal teilen und Kommentare darunter zählen"
+              "Im selben Blog weitere Artikel derselben Autorin lesen"
             ],
             "correct_index": 0
           },
           "choice_distractors": [
             {
-              "text": "Den Beitrag zehnmal teilen und Kommentare darunter zählen",
-              "reason": "Hohe Klick- oder Kommentarzahlen beweisen niemals die sachliche Richtigkeit eines Inhalts."
+              "text": "Im selben Blog weitere Artikel derselben Autorin lesen",
+              "reason": "Weitere Texte derselben Quelle sind nicht unabhängig und wiederholen mögliche Fehler oder Vorurteile."
             },
             {
-              "text": "Die eigene Wunschmeinung ohne weitere Prüfung sofort übernehmen",
-              "reason": "Subjektives Gefallen ersetzt keine Prüfung von Aktualität, Belegen und Vertrauenswürdigkeit."
+              "text": "Prüfen, wie oft der Link in sozialen Netzwerken geteilt wurde",
+              "reason": "Hohe Teilungs- oder Klickzahlen messen Aufmerksamkeit und ersetzen keine inhaltliche Gegenprüfung."
             }
           ]
         },
@@ -224,11 +224,11 @@
           "sample_solution": "Bei Online-Material prüft man Informationsgehalt (belegte Fakten statt Parolen), Vertrauenswürdigkeit (Impressum, Fachkompetenz, keine versteckte Verkaufsabsicht), Aktualität (Erstellungsdatum) sowie eine unabhängige Zweitquelle. Gleichzeitig muss man die Medienwirkung durchschauen, weil schrille Überschriften, dramatische Musik oder aus dem Kontext gerissene Bilder Gefühle wecken und schnelles Urteilen verleiten.",
           "choice_distractors": [
             {
-              "text": "Webseiten sind automatisch hochwertig, sobald sie bunte Grafiken und viele Emojis zeigen.",
-              "reason": "Aufmachung und Emojis sagen nichts über Faktengehalt, Absicht oder Vertrauenswürdigkeit aus."
+              "text": "Eine übersichtliche Gestaltung und viele Klicks belegen bereits die fachliche Zuverlässigkeit einer Quelle.",
+              "reason": "Aufmachung und Reichweite sagen nichts über Faktengehalt, Absicht oder fachliche Vertrauenswürdigkeit aus."
             },
             {
-              "text": "Die Suche bricht nach dem allerersten Treffer ab, weil die Suchmaschine nur Wahrheiten anzeigt.",
+              "text": "Die Suche bricht nach dem ersten Suchmaschinentreffer ab, weil dort stets geprüfte Quellen stehen.",
               "reason": "Suchmaschinen ordnen nach Stichwortpassung und Beliebtheit, prüfen aber weder Richtigkeit noch Quellenqualität."
             }
           ]
@@ -245,13 +245,7 @@
       "reduction": "formal",
       "typical_age_min": 11,
       "source_link": "https://academy.zam-os.org/informatik-mittelschule-6/#lesson=ms6-urheberrecht-lizenzen",
-      "prerequisites": [
-        {
-          "atom_id": "01M7VTG6G39RXPP0WM9V9KCXF6",
-          "type": "soft",
-          "rationale": "Baut fachlich auf „Informationen kritisch prüfen und Medienwirkung einschätzen“ auf."
-        }
-      ],
+      "prerequisites": [],
       "curricula": [
         {
           "provider": "zam-academy",
@@ -283,18 +277,18 @@
             "type": "binary_choice",
             "options": [
               "Sofort automatisch bei der Erstellung auch ohne ©-Zeichen",
-              "Erst nachdem ein Notar ein kleines ©-Zeichen aufgedruckt hat"
+              "Erst nach einer Anmeldung oder sobald ein ©-Symbol angebracht ist"
             ],
             "correct_index": 0
           },
           "choice_distractors": [
             {
-              "text": "Erst nachdem ein Notar ein kleines ©-Zeichen aufgedruckt hat",
+              "text": "Erst nach einer Anmeldung oder sobald ein ©-Symbol angebracht ist",
               "reason": "In Deutschland entsteht das Urheberrecht ohne Anmeldung und ohne Pflicht zum ©-Vermerk sofort mit dem Werk."
             },
             {
-              "text": "Nur wenn das Bild mindestens tausendmal geteilt wurde",
-              "reason": "Die Reichweite oder Beliebtheit spielt für die Entstehung des Urheberrechts keine Rolle."
+              "text": "Nur wenn das Werk beruflich auf einer Firmenwebseite veröffentlicht wird",
+              "reason": "Auch private Fotos, Schülerzeichnungen und Texte genießen ab ihrer Erstellung vollen Urheberrechtsschutz."
             }
           ]
         },
@@ -305,24 +299,24 @@
           "tier": "tier1_fast",
           "bloom_level": 1,
           "question": "Was verbietet das Creative-Commons-Kürzel ‚ND‘ in ‚CC BY-ND‘?",
-          "concept": "Jede Veränderung oder Bearbeitung des fremden Werks",
+          "concept": "Bearbeitete Fassungen des Werks weiterzugeben",
           "source_link": "https://academy.zam-os.org/informatik-mittelschule-6/#lesson=ms6-urheberrecht-lizenzen",
           "fast_check": {
             "type": "binary_choice",
             "options": [
-              "Jede Veränderung oder Bearbeitung des fremden Werks",
-              "Jede Angabe von Urheber, Buchtitel oder Webseite"
+              "Bearbeitete Fassungen des Werks weiterzugeben",
+              "Das unveränderte Werk mit Quellenangabe zu nutzen"
             ],
             "correct_index": 0
           },
           "choice_distractors": [
             {
-              "text": "Jede Angabe von Urheber, Buchtitel oder Webseite",
-              "reason": "Die Namensnennung fordert ‚BY‘; ‚ND‘ (No Derivatives) untersagt das Bearbeiten und Verfremden."
+              "text": "Das unveränderte Werk mit Quellenangabe zu nutzen",
+              "reason": "Die unveränderte Weitergabe mit Namensnennung erlaubt CC BY-ND; untersagt ist das Teilen oder Veröffentlichen bearbeiteter Fassungen."
             },
             {
-              "text": "Jede Nutzung des unveränderten Bildes auf einem Schulrechner",
-              "reason": "Unverändert mit Namensnennung darf ein CC-BY-ND-Werk gerade verwendet werden."
+              "text": "Das Werk privat auf dem eigenen Gerät zuzuschneiden",
+              "reason": "Für den eigenen rein privaten Gebrauch ohne Teilen sind Bearbeitungen unter CC BY-ND erlaubt; erst die Weitergabe ist untersagt."
             }
           ]
         },
@@ -338,11 +332,11 @@
           "sample_solution": "Eine Suchmaschine wie Google erstellt keine eigenen Fotos, sondern verweist nur auf fremde Webseiten – sie ersetzt also weder Nutzungsrecht noch Fundort. Zu einer vollständigen Quellenangabe gehören der Name des Urhebers bzw. Rechteinhabers, der Titel des Werks, die genaue Internetadresse (URL), das Abrufdatum sowie die genaue Lizenz (z. B. CC BY).",
           "choice_distractors": [
             {
-              "text": "Das Wort ‚Internet‘ unter dem Bild genügt, solange man das Foto selbst etwas kleiner zieht.",
+              "text": "Als Quellenangabe reicht der Name der Suchmaschine, wenn das Bild verkleinert eingefügt wird.",
               "reason": "Ohne Urheber, genaue Adresse und Lizenz lässt sich die rechtmäßige Nutzung nicht belegen; Verkleinern ändert am Urheberrecht nichts."
             },
             {
-              "text": "Jedes frei im Browser angezeigte Foto darf ohne Namensnennung beliebig weiterverkauft werden.",
+              "text": "Frei über eine Suche sichtbare Bilder gelten als gemeinfrei und brauchen keinen Urhebernachweis.",
               "reason": "Sichtbarkeit im Browser macht ein Werk nicht gemeinfrei; CC BY verlangt ausdrücklich die Namensnennung."
             }
           ]
@@ -359,13 +353,7 @@
       "reduction": "formal",
       "typical_age_min": 11,
       "source_link": "https://academy.zam-os.org/informatik-mittelschule-6/#lesson=ms6-personenbezogene-daten",
-      "prerequisites": [
-        {
-          "atom_id": "01M7VTG6G4N5MJPA5V5D1G5T0D",
-          "type": "soft",
-          "rationale": "Baut fachlich auf „Urheberrecht und Lizenzmodelle (Creative Commons)“ auf."
-        }
-      ],
+      "prerequisites": [],
       "curricula": [
         {
           "provider": "zam-academy",
@@ -397,18 +385,18 @@
             "type": "binary_choice",
             "options": [
               "Sie beziehen sich auf eine bestimmte oder erkennbare Person",
-              "Sie enthalten ausschließlich allgemeine Wetterwerte eines Landes"
+              "Sie umfassen ausschließlich vollständige Vor- und Nachnamen"
             ],
             "correct_index": 0
           },
           "choice_distractors": [
             {
-              "text": "Sie enthalten ausschließlich allgemeine Wetterwerte eines Landes",
-              "reason": "Wetter- oder Öffnungszeiten betreffen keine Einzelperson und sind allgemeine Sachangaben."
+              "text": "Sie umfassen ausschließlich vollständige Vor- und Nachnamen",
+              "reason": "Auch Telefonnummern, Adressen, Fotos, Standortdaten oder eindeutige Umschreibungen ohne Namen sind personenbezogen."
             },
             {
-              "text": "Sie dürfen immer ohne Einschränkung öffentlich geteilt werden",
-              "reason": "Personenbezogene Daten stehen unter besonderem Schutz und werden gerade nicht beliebig veröffentlicht."
+              "text": "Sie dürfen bei privaten Konten jederzeit ohne Einwilligung geteilt werden",
+              "reason": "Personenbezogene Daten stehen unter besonderem Schutz und dürfen gerade nicht unberechtigt weitergegeben werden."
             }
           ]
         },
@@ -425,18 +413,18 @@
             "type": "binary_choice",
             "options": [
               "Vorher die Einwilligung der abgebildeten Personen einholen",
-              "Das Foto einfach posten, sofern niemand lacht oder winkt"
+              "Das Foto teilen, sobald man selbst auch darauf zu sehen ist"
             ],
             "correct_index": 0
           },
           "choice_distractors": [
             {
-              "text": "Das Foto einfach posten, sofern niemand lacht oder winkt",
-              "reason": "Das Recht am eigenen Bild gilt unabhängig vom Gesichtsausdruck; ohne Einwilligung ist Teilen unzulässig."
+              "text": "Das Foto teilen, sobald man selbst auch darauf zu sehen ist",
+              "reason": "Dass man ein Foto selbst gemacht hat oder mit abgebildet ist, ersetzt niemals die Einwilligung aller anderen Personen."
             },
             {
-              "text": "Nur den eigenen Namen unter das Gruppenfoto schreiben",
-              "reason": "Eine Unterschrift ersetzt niemals die Zustimmung aller abgebildeten Menschen."
+              "text": "Einfach teilen, solange unter dem Bild keine echten Namen stehen",
+              "reason": "Erkennbare Gesichter unterliegen auch ohne Namensangabe dem Recht am eigenen Bild."
             }
           ]
         },
@@ -452,12 +440,12 @@
           "sample_solution": "Erstens folgt man der Datensparsamkeit und trägt bei Spielen oder Foren möglichst nur Spitznamen statt echter Adressen oder Telefonnummern ein. Zweitens entzieht man Apps überflüssige Berechtigungen wie Standort oder Kontakte. Drittens sperrt man sein Gerät per PIN und meldet sich am Schulcomputer nach jeder Stunde sauber ab.",
           "choice_distractors": [
             {
-              "text": "Alle App-Rechte sofort freigeben und am Schulrechner dauerhaft angemeldet bleiben.",
-              "reason": "Unnötige App-Zugriffe geben Privatdaten preis, und offene Konten erlauben Fremdzugriff durch Nachfolgende."
+              "text": "Alle App-Rechte freigeben und am Schulrechner nach der Stunde einfach nur den Monitor ausschalten.",
+              "reason": "Unnötige App-Zugriffe sammeln Privatdaten, und durch Abschalten des Monitors bleibt das Benutzerkonto für Nachfolgende offen."
             },
             {
-              "text": "Immer die Telefonnummer von Freunden statt der eigenen in fremde Online-Formulare tippen.",
-              "reason": "Fremde personenbezogene Daten ungefragt weiterzugeben verletzt erst recht den Datenschutz anderer."
+              "text": "Bei Anmeldungen auf unbekannten Seiten die echte Telefonnummer von Mitschülern eintragen.",
+              "reason": "Fremde personenbezogene Daten ungefragt einzutragen verletzt den Datenschutz anderer statt die eigene Privatsphäre sauber zu schützen."
             }
           ]
         }
@@ -504,25 +492,25 @@
           "language": "de",
           "tier": "tier1_fast",
           "bloom_level": 1,
-          "question": "Welche Eigenschaften machen ein Passwort im Alltag wirklich widerstandsfähig gegen Erraten?",
-          "concept": "Mindestens 12 Zeichen mit 4 Arten ohne Privatdaten",
+          "question": "Welche Eigenschaften machen ein Passwort laut BSI im Alltag wirklich stark?",
+          "concept": "Lang, nicht erratbar und einzigartig je Dienst",
           "source_link": "https://academy.zam-os.org/informatik-mittelschule-6/#lesson=ms6-passwoerter-virenschutz",
           "fast_check": {
             "type": "binary_choice",
             "options": [
-              "Mindestens 12 Zeichen mit 4 Arten ohne Privatdaten",
-              "Der eigene Vorname direkt zusammen mit dem Geburtsjahr"
+              "Lang, nicht erratbar und einzigartig je Dienst",
+              "Kurz mit Name, Geburtsjahr und einem Ausrufezeichen"
             ],
             "correct_index": 0
           },
           "choice_distractors": [
             {
-              "text": "Der eigene Vorname direkt zusammen mit dem Geburtsjahr",
-              "reason": "Vornamen und Geburtsdaten lassen sich aus Profilen und Bekanntenkreisen sofort erraten."
+              "text": "Kurz mit Name, Geburtsjahr und einem Ausrufezeichen",
+              "reason": "Kurze Passwörter mit persönlichen Daten werden trotz Sonderzeichen rasch erraten oder durchprobiert; entscheidend sind Länge, Unvorhersehbarkeit und Einzigartigkeit."
             },
             {
-              "text": "Eine kurze Zahlenfolge aus sechs Ziffern für alle Dienste",
-              "reason": "Kurze Ziffernfolgen probieren Computer blitzschnell durch, und ein Passwort für alles gefährdet sämtliche Konten."
+              "text": "Dasselbe komplexe Passwort gleichmäßig für alle Konten",
+              "reason": "Wird ein einziger Dienst gehackt, gefährdet ein mehrfach verwendetes Passwort sofort sämtliche weiteren Konten."
             }
           ]
         },
@@ -539,18 +527,18 @@
             "type": "binary_choice",
             "options": [
               "Updates schließen Sicherheitslücken in Programmen und System",
-              "Updates färben die Fensterrahmen nur moderner und heller"
+              "Ein aktueller Virenscanner schließt alte Lücken automatisch mit"
             ],
             "correct_index": 0
           },
           "choice_distractors": [
             {
-              "text": "Updates färben die Fensterrahmen nur moderner und heller",
-              "reason": "Sicherheitsupdates dienen nicht bloß dem Aussehen, sondern beheben bekannte Einfallstore für Schadsoftware."
+              "text": "Ein aktueller Virenscanner schließt alte Lücken automatisch mit",
+              "reason": "Ein Virenschutzprogramm erkennt bekannte Schädlinge, behebt aber keine Fehler und Lücken im Betriebssystem oder Browser."
             },
             {
-              "text": "Ohne Updates löscht die Tastatur automatisch Sonderzeichen",
-              "reason": "Tastatureingaben bleiben erhalten; das Risiko bei fehlenden Updates sind offene Schwachstellen in Programmen."
+              "text": "Ohne Updates melden Webseiten alle gespeicherten Passwörter ab",
+              "reason": "Gespeicherte Passwörter bleiben erhalten; die Gefahr fehlender Updates sind bekannte Einfallstore in veralteten Programmen."
             }
           ]
         },
@@ -560,18 +548,18 @@
           "language": "de",
           "tier": "tier2_synthesis",
           "bloom_level": 2,
-          "question": "Erkläre, wie die Merksatz-Methode zu einem starken Passwort führt und welche Schutzmaßnahmen gegen Schadsoftware dazugehören.",
-          "concept": "Anfangsbuchstaben mit Zahlen und Sonderzeichen bilden ein langes Passwort; Virenschutz und Updates sichern das Gerät.",
+          "question": "Erkläre anhand von Merksatz und langer Passphrase, worauf es bei einem starken Passwort nach BSI ankommt und was zum Geräteschutz gehört.",
+          "concept": "Länge, Nicht-Erratbarkeit per Merksatz oder Passphrase und Einzigartigkeit; dazu Virenschutz und Updates.",
           "source_link": "https://academy.zam-os.org/informatik-mittelschule-6/#lesson=ms6-passwoerter-virenschutz",
-          "sample_solution": "Bei der Merksatz-Methode denkt man sich einen persönlichen Satz ohne verräterische Namen aus und übernimmt Anfangsbuchstaben, Ziffern und Satzzeichen zu mindestens zwölf Zeichen, z. B. ergänzt durch ein dienstspezifisches Kürzel. Ergänzend schützen ein aktuelles Virenschutzprogramm, zeitnahe Updates und Skepsis bei unbekannten Mail-Anhängen vor Schadsoftware.",
+          "sample_solution": "Entscheidend sind große Länge, Nicht-Erratbarkeit (keine Namen, Geburtsdaten oder einfache Wörterbuchwörter) und ein einzigartiges Passwort für jeden Dienst. Laut BSI schützt sowohl ein komplexes Merksatz-Passwort ab 12 Zeichen als auch ebenso stark eine lange Passphrase aus 20 bis 25 Zeichen mit schon zwei Zeichenarten. Ergänzend sichern ein aktuelles Virenschutzprogramm, zeitnahe Updates und Vorsicht bei unbekannten Anhängen das Gerät.",
           "choice_distractors": [
             {
-              "text": "Ein einzelnes kurzes Wort aus dem Wörterbuch wählen und auf dem Monitor mit Klebezettel notieren.",
-              "reason": "Kurze Wörterbuchwörter werden schnell geknackt, und offene Zettel hebeln jeden Passwortschutz aus."
+              "text": "Ein siebenstelliges Passwort mit allen vier Zeichenarten ist bereits sicher und darf für mehrere Konten gelten.",
+              "reason": "Zu geringe Länge und Mehrfachverwendung machen ein Konto trotz Sonderzeichen leicht angreifbar und gefährden Nachbarkonten."
             },
             {
-              "text": "Alle Sicherheitsupdates jahrelang abbrechen und jedes fremde Anhangsprogramm neugierig anklicken.",
-              "reason": "Ungeprüfte Anhänge und veraltete Software gehören zu den häufigsten Einfallstoren für Trojaner und Viren."
+              "text": "Eine Passphrase ohne Ziffern oder Sonderzeichen bietet selbst bei über zwanzig Zeichen keinerlei Schutz vor Erraten.",
+              "reason": "Gerade große Länge kombiniert mit unzusammenhängenden Wörtern (z. B. 20 bis 25 Zeichen aus Groß-/Kleinbuchstaben) schützt sehr wirksam."
             }
           ]
         }
@@ -587,13 +575,7 @@
       "reduction": "formal",
       "typical_age_min": 11,
       "source_link": "https://academy.zam-os.org/informatik-mittelschule-6/#lesson=ms6-datensicherung",
-      "prerequisites": [
-        {
-          "atom_id": "01M7VTG6G6N6R4ZB9JBSCEFD7A",
-          "type": "soft",
-          "rationale": "Baut fachlich auf „Sichere Passwörter und Schutz vor Schadsoftware“ auf."
-        }
-      ],
+      "prerequisites": [],
       "curricula": [
         {
           "provider": "zam-academy",
@@ -625,18 +607,18 @@
             "type": "binary_choice",
             "options": [
               "Bei Defekt der Festplatte fallen beide Kopien zugleich aus",
-              "Weil zwei Ordner auf derselben Platte die Dateigröße verdreifachen"
+              "Zwei gleichartige Kopien auf derselben Platte stören das Laden"
             ],
             "correct_index": 0
           },
           "choice_distractors": [
             {
-              "text": "Weil zwei Ordner auf derselben Platte die Dateigröße verdreifachen",
-              "reason": "Eine Kopie verdoppelt zwar ihren Platzbedarf, das eigentliche Risiko ist aber der gemeinsame Ausfall derselben Platte."
+              "text": "Zwei gleichartige Kopien auf derselben Platte stören das Laden",
+              "reason": "Beide Ordner bleiben im Normalbetrieb lesbar; das eigentliche Problem ist die fehlende technische Trennung beim Ausfall."
             },
             {
-              "text": "Weil man Dateien aus einem zweiten Ordner nicht ausdrucken kann",
-              "reason": "Druckbarkeit hängt nicht vom Ordner ab; das Problem ist fehlende technische Trennung der Speicher."
+              "text": "Ein zweiter Ordner belegt einfach unnötig viel Platz auf dem Stick",
+              "reason": "Der Speicherbedarf verdoppelt sich zwar, doch das echte Risiko ist der gemeinsame Verlust beider Kopien bei Hardwaredefekt."
             }
           ]
         },
@@ -653,18 +635,18 @@
             "type": "binary_choice",
             "options": [
               "Wie viel neue Arbeit nach einem Störfall höchstens fehlt",
-              "Wie viele Farben der USB-Stick beim Anschließen blinkt"
+              "Ob geöffnete Dokumente auf demselben Rechner automatisch mitkopiert werden"
             ],
             "correct_index": 0
           },
           "choice_distractors": [
             {
-              "text": "Wie viele Farben der USB-Stick beim Anschließen blinkt",
-              "reason": "Das Sicherungsintervall hat nichts mit dem Aussehen des Datenträgers zu tun."
+              "text": "Ob geöffnete Dokumente auf demselben Rechner automatisch mitkopiert werden",
+              "reason": "Ob live gesichert wird oder von Hand, trennt Programme nicht vom Backup-Zeitplan – der Abstand bestimmt den maximalen Datenverlust."
             },
             {
-              "text": "Ob das Betriebssystem automatisch in Großbuchstaben schreibt",
-              "reason": "Die Schreibweise bleibt unberührt; kurze Abstände begrenzen den möglichen Datenverlust."
+              "text": "Wie viele frühere Dateiversionen auf dem Laptop verbleiben dürfen",
+              "reason": "Der Sicherungsabstand bestimmt den Zeitraum seit dem letzten Backup, also wie viele neue Änderungen im Ernstfall verloren wären."
             }
           ]
         },
@@ -733,18 +715,18 @@
             "type": "binary_choice",
             "options": [
               "Sie muss eindeutig und direkt ausführbar sein",
-              "Sie darf möglichst ungenau und frei deutbar bleiben"
+              "Sie darf im Einzelfall auch grob geschätzt bleiben"
             ],
             "correct_index": 0
           },
           "choice_distractors": [
             {
-              "text": "Sie darf möglichst ungenau und frei deutbar bleiben",
+              "text": "Sie darf im Einzelfall auch grob geschätzt bleiben",
               "reason": "Computer können unklare Vorgaben wie ‚ein bisschen weiter‘ nicht zuverlässig ausführen."
             },
             {
-              "text": "Sie muss mindestens zehn verschiedene Farben enthalten",
-              "reason": "Farben haben mit der Eindeutigkeit einer Handlungsanweisung nichts zu tun."
+              "text": "Sie muss immer aus einer ganzen Schleife bestehen",
+              "reason": "Eine einzelne Anweisung ist ein kleinster Einzelschritt wie ‚vor gehen‘, noch keine Kontrollstruktur."
             }
           ]
         },
@@ -761,18 +743,18 @@
             "type": "binary_choice",
             "options": [
               "Schritt für Schritt von oben nach unten",
-              "Immer von unten nach oben rückwärts"
+              "Von unten nach oben beginnend beim letzten Kasten"
             ],
             "correct_index": 0
           },
           "choice_distractors": [
             {
-              "text": "Immer von unten nach oben rückwärts",
+              "text": "Von unten nach oben beginnend beim letzten Kasten",
               "reason": "Im Struktogramm steht die erste auszuführende Anweisung ganz oben, nicht unten."
             },
             {
-              "text": "Gleichzeitig von beiden Seiten nach innen",
-              "reason": "Sequenzen laufen nacheinander von oben nach unten ab, niemals parallel von außen."
+              "text": "Spaltenweise nebeneinander von links nach rechts",
+              "reason": "Spalten nebeneinander zeigen Alternativen (wahr/falsch); aufeinanderfolgende Sequenzschritte stehen untereinander."
             }
           ]
         },
@@ -788,11 +770,11 @@
           "sample_solution": "Steht Karo auf A5 mit Blick nach Norden, führt ‚rechts drehen · vor · vor‘ nach Osten auf Feld C5. Vertauscht man die Befehle zu ‚vor · vor · rechts drehen‘, fährt die Figur zuerst nach Norden auf A3 und dreht erst dort – sie landet auf einem ganz anderen Feld (oder prallt gegen ein Hindernis). Deshalb plant ein Struktogramm jeden Teilschritt in der exakten Reihenfolge.",
           "choice_distractors": [
             {
-              "text": "Ein Computer sortiert alle Befehle vor dem Start selbständig so, wie es am besten aussieht.",
-              "reason": "Der Rechner verändert die Reihenfolge einer Sequenz niemals eigenmächtig, sondern führt genau Zeile für Zeile aus."
+              "text": "Die Umgebung sortiert alle Bausteine vor dem Start automatisch in die zielführende Reihenfolge.",
+              "reason": "Der Rechner verändert die Reihenfolge einer Sequenz niemals eigenmächtig, sondern führt genau Schritt für Schritt aus."
             },
             {
-              "text": "Drehungen wirken immer erst ganz am Ende des gesamten Struktogramms.",
+              "text": "Drehungen wirken sich erst ganz am Ende des gesamten Struktogramms auf das Ziel aus.",
               "reason": "Jede Drehung verändert sofort die Blickrichtung für alle nachfolgenden ‚vor‘-Schritte."
             }
           ]
@@ -847,17 +829,17 @@
             "type": "binary_choice",
             "options": [
               "Eindeutig entweder wahr oder falsch",
-              "Immer gleichzeitig wahr und ein bisschen falsch"
+              "Manchmal vielleicht oder teilweise wahr"
             ],
             "correct_index": 0
           },
           "choice_distractors": [
             {
-              "text": "Immer gleichzeitig wahr und ein bisschen falsch",
+              "text": "Manchmal vielleicht oder teilweise wahr",
               "reason": "Eine Informatik-Bedingung lässt keine Zwischenstufen zu, sondern entscheidet eindeutig zwischen wahr und falsch."
             },
             {
-              "text": "Eine beliebige Dezimalzahl zwischen null und tausend",
+              "text": "Immer eine beliebige ganze Schrittzahl",
               "reason": "Zahlen können in einem Vergleich stecken, das Prüfergebnis der Bedingung ist aber stets wahr oder falsch."
             }
           ]
@@ -875,18 +857,18 @@
             "type": "binary_choice",
             "options": [
               "Wahr, weil 10 < 10 falsch ist und ‚nicht‘ dies umkehrt",
-              "Falsch, weil 10 genau an der Grenze liegt"
+              "Falsch, weil 10 genau auf dem Grenzwert liegt"
             ],
             "correct_index": 0
           },
           "choice_distractors": [
             {
-              "text": "Falsch, weil 10 genau an der Grenze liegt",
+              "text": "Falsch, weil 10 genau auf dem Grenzwert liegt",
               "reason": "10 < 10 ist falsch; die Verneinung ‚nicht‘ dreht falsch gerade in wahr um."
             },
             {
-              "text": "Ungültig, weil ‚nicht‘ nur bei Buchstaben funktioniert",
-              "reason": "Die Verneinung lässt sich auf jede beliebige wahre oder falsche Bedingung anwenden."
+              "text": "Unbestimmt, solange die Punktzahl nicht größer als 10 ist",
+              "reason": "Jeder Vergleich an der Grenze liefert sofort eindeutig ‚wahr‘ oder ‚falsch‘."
             }
           ]
         },
@@ -902,11 +884,11 @@
           "sample_solution": "Bei ‚wert > 15‘ muss der Wert echt größer als 15 sein: Für wert = 15 ergibt der Vergleich ‚falsch‘, erst ab 16 wird er ‚wahr‘. Bei ‚wert ≥ 15‘ reicht schon Gleichheit, sodass wert = 15 bereits ‚wahr‘ ergibt. Stellt man ‚nicht (...)‘ davor, wird aus ‚wahr‘ immer ‚falsch‘ und aus ‚falsch‘ immer ‚wahr‘.",
           "choice_distractors": [
             {
-              "text": "Beide Zeichen verlangen exakt dieselben Zahlen und ‚nicht‘ löscht die ganze Bedingung.",
+              "text": "Beide Vergleichszeichen prüfen dieselben Zahlen und ‚nicht‘ überspringt die ganze Zeile.",
               "reason": "Gerade beim Grenzwert 15 unterscheiden sich ‚>‘ und ‚≥‘, und ‚nicht‘ kehrt den Wahrheitswert um."
             },
             {
-              "text": "‚> 15‘ schließt die 15 ein, während ‚≥ 15‘ erst bei der Zahl 20 beginnt.",
+              "text": "‚> 15‘ schließt die 15 ein, während ‚≥ 15‘ erst bei der nächsthöheren Zahl beginnt.",
               "reason": "Der Querstrich unter ‚≥‘ steht gerade für ‚oder gleich‘, während ‚>‘ Gleichheit ausschließt."
             }
           ]
@@ -961,18 +943,18 @@
             "type": "binary_choice",
             "options": [
               "Der ‚dann‘-Zweig wird übersprungen und es geht danach weiter",
-              "Das Programm hält sofort vollständig an und bricht ab"
+              "Das Programm hält an dieser Stelle vollständig an"
             ],
             "correct_index": 0
           },
           "choice_distractors": [
             {
-              "text": "Das Programm hält sofort vollständig an und bricht ab",
+              "text": "Das Programm hält an dieser Stelle vollständig an",
               "reason": "Ein falsches Ergebnis beendet nicht das Programm, sondern überspringt nur den ‚dann‘-Block."
             },
             {
-              "text": "Der ‚dann‘-Zweig läuft aus Sicherheit zweimal hintereinander",
-              "reason": "Nur bei wahrer Bedingung wird der ‚dann‘-Zweig genau einmal ausgeführt."
+              "text": "Die Bedingung wird solange wiederholt, bis sie wahr wird",
+              "reason": "Eine Verzweigung prüft einmal; mehrmaliges Prüfen ist erst Aufgabe einer bedingten Wiederholung."
             }
           ]
         },
@@ -989,17 +971,17 @@
             "type": "binary_choice",
             "options": [
               "Wenn sowohl bei ‚wahr‘ als auch bei ‚falsch‘ etwas passieren soll",
-              "Nur wenn im ‚falsch‘-Zweig überhaupt keine Anweisung steht"
+              "Wenn bei ‚falsch‘ gar nichts Besonderes ausgeführt werden soll"
             ],
             "correct_index": 0
           },
           "choice_distractors": [
             {
-              "text": "Nur wenn im ‚falsch‘-Zweig überhaupt keine Anweisung steht",
-              "reason": "Wenn bei ‚falsch‘ nichts getan werden soll, genügt gerade die einseitige Alternative."
+              "text": "Wenn bei ‚falsch‘ gar nichts Besonderes ausgeführt werden soll",
+              "reason": "Wenn bei ‚falsch‘ nichts getan werden soll, genügt gerade die einseitige Alternative ohne sonst-Zweig."
             },
             {
-              "text": "Wenn beide Zweige in jedem Fall gleichzeitig ablaufen müssen",
+              "text": "Wenn beide Zweige in jedem Durchlauf nacheinander laufen müssen",
               "reason": "Auch bei einer zweiseitigen Alternative wird immer genau einer der beiden Zweige betreten."
             }
           ]
@@ -1075,18 +1057,18 @@
             "type": "binary_choice",
             "options": [
               "Die Bedingung wird bereits vor dem ersten Durchlauf geprüft",
-              "Weil jede Schleife den ersten Durchlauf grundsätzlich auslässt"
+              "Die Bedingung wird erst nach dem ersten Durchlauf geprüft"
             ],
             "correct_index": 0
           },
           "choice_distractors": [
             {
-              "text": "Weil jede Schleife den ersten Durchlauf grundsätzlich auslässt",
-              "reason": "Bei wahrer Startbedingung startet sie sehr wohl sofort – 0-mal läuft sie nur, wenn die Bedingung direkt falsch ist."
+              "text": "Die Bedingung wird erst nach dem ersten Durchlauf geprüft",
+              "reason": "Würde sie erst danach geprüft, liefe der Körper immer mindestens einmal; die kopfgesteuerte Schleife prüft vorab."
             },
             {
-              "text": "Weil im Struktogramm alle Anweisungen rückwärts gelesen werden",
-              "reason": "Der Grund ist die kopfgesteuerte Prüfung vor dem Einstieg in den Körper, keine umgekehrte Leserichtung."
+              "text": "Jede Schleife überspringt am Programmstart ihren ersten Durchlauf",
+              "reason": "Bei wahrer Startbedingung startet sie sofort – 0-mal läuft sie nur, wenn die Bedingung direkt falsch ist."
             }
           ]
         },
@@ -1103,18 +1085,18 @@
             "type": "binary_choice",
             "options": [
               "Die Anweisungen im Körper lassen die Bedingung immer wahr",
-              "Weil auf dem Feld eine Mauer steht und der Weg blockiert ist"
+              "Auf dem Feld steht ein Stein, der die Figur sofort aufhält"
             ],
             "correct_index": 0
           },
           "choice_distractors": [
             {
-              "text": "Weil auf dem Feld eine Mauer steht und der Weg blockiert ist",
-              "reason": "Steht sofort eine Mauer vor der Figur, wird ‚vorne frei‘ falsch und die Schleife stoppt sofort."
+              "text": "Auf dem Feld steht ein Stein, der die Figur sofort aufhält",
+              "reason": "Steht sofort ein Stein vor der Figur, wird ‚vorne frei‘ falsch und die Schleife stoppt sofort."
             },
             {
-              "text": "Weil man das Wort ‚solange‘ großgeschrieben hat",
-              "reason": "Endlosschleifen entstehen durch fehlende Veränderung Richtung Abbruch im Körper, nicht durch Schreibweise."
+              "text": "Im Schleifenkopf fehlt die genaue Angabe der Schrittzahl",
+              "reason": "‚solange‘ braucht gerade keine feste Schrittzahl, sondern eine Veränderung im Körper Richtung Abbruch."
             }
           ]
         },
@@ -1130,11 +1112,11 @@
           "sample_solution": "Die feste Wiederholung nutzt man, wenn die exakte Anzahl der Durchläufe vorab bekannt ist (z. B. vier Seiten eines Quadrats). Ist der Abstand unbekannt, prüft ‚solange <Bedingung>‘ vor jedem Lauf erneut. Um eine Endlosschleife zu vermeiden, muss der Schleifenkörper die Situation gezielt verändern (etwa durch ‚vor gehen‘ Richtung Hindernis), bis die Bedingung falsch wird.",
           "choice_distractors": [
             {
-              "text": "‚solange‘ eignet sich nur, wenn genau drei Schritte bekannt sind; Endlosschleifen beendet man durch fehlende Bedingungen.",
-              "reason": "Gerade bei unbekannter Schrittzahl wählt man ‚solange‘, und eine fehlende Bedingung oder fehlender Fortschritt verursacht Endlosläufe."
+              "text": "‚solange‘ eignet sich nur für bekannte Schrittzahlen; Endlosschleifen verhindert man durch Entfernen der Bedingung.",
+              "reason": "Gerade bei unbekannter Schrittzahl wählt man ‚solange‘, und fehlender Fortschritt oder fehlende Abbruchbedingungen verursachen Endlosläufe."
             },
             {
-              "text": "Beide Schleifen laufen immer genau viermal durch und prüfen die Bedingung erst nach dem Programmende.",
+              "text": "Beide Schleifen laufen mindestens einmal durch und prüfen die Bedingung erst am Ende des Blocks.",
               "reason": "Bedingte Wiederholungen prüfen kopfgesteuert vor jedem Durchlauf und können je nach Lage 0-mal oder beliebig oft laufen."
             }
           ]
@@ -1189,17 +1171,17 @@
             "type": "binary_choice",
             "options": [
               "Von außen nach innen: zuerst äußere Bedingung, dann innen",
-              "Nur den innersten ‚sonst‘-Kasten und ganz ohne Schleifenkopf"
+              "Von innen nach außen: erst ‚sonst‘, danach Schleifenkopf"
             ],
             "correct_index": 0
           },
           "choice_distractors": [
             {
-              "text": "Nur den innersten ‚sonst‘-Kasten und ganz ohne Schleifenkopf",
+              "text": "Von innen nach außen: erst ‚sonst‘, danach Schleifenkopf",
               "reason": "Die äußere Schleifenbedingung bestimmt bei jedem Durchlauf überhaupt erst, ob der innere Block startet."
             },
             {
-              "text": "Immer alle Zweige gleichzeitig von unten nach oben",
+              "text": "Alle Zweige gleichzeitig von unten nach oben abarbeiten",
               "reason": "Auch verschachtelte Struktogramme werden von außen nach innen und von oben nach unten abgearbeitet."
             }
           ]
@@ -1217,18 +1199,18 @@
             "type": "binary_choice",
             "options": [
               "Die Figur fährt vor und biegt an Kurven automatisch ab",
-              "Die Figur bleibt auf dem Startfeld stehen, bis der Timer abläuft"
+              "Die Figur bleibt vor der ersten Ecke stehen und stoppt"
             ],
             "correct_index": 0
           },
           "choice_distractors": [
             {
-              "text": "Die Figur bleibt auf dem Startfeld stehen, bis der Timer abläuft",
-              "reason": "Mit ‚wenn vorne frei dann vor sonst rechts‘ bewegt sich die Figur gezielt um Ecken bis zum Ziel."
+              "text": "Die Figur bleibt vor der ersten Ecke stehen und stoppt",
+              "reason": "Mit ‚wenn vorne frei dann vor sonst rechts‘ bewegt sich die Figur auch um Ecken herum weiter bis zum Ziel."
             },
             {
-              "text": "Jedes Hindernis wird durch das Struktogramm unsichtbar gelöscht",
-              "reason": "Das Programm weicht Hindernissen durch gesteuerte Drehungen aus, statt sie zu löschen."
+              "text": "Sie ersetzt das Prüfen der Zielbedingung im äußeren Rahmen",
+              "reason": "Die äußere Schleifenbedingung bleibt nötig, damit die Fahrt auf dem Zielfeld sauber endet."
             }
           ]
         },
@@ -1248,7 +1230,7 @@
               "reason": "Steht die Alternative außen, wird während der Fahrt nicht mehr auf neu auftauchende Wände reagiert."
             },
             {
-              "text": "Innerhalb einer Schleife darf aus Platzgründen niemals eine zweiseitige Verzweigung gezeichnet werden.",
+              "text": "Innerhalb einer Schleife darf aus Platzgründen niemals eine zweiseitige Verzweigung stehen.",
               "reason": "Gerade das Einsetzen von Verzweigungen in den L-Rahmen einer Schleife bildet die zentrale Schachtelung."
             }
           ]
@@ -1303,18 +1285,18 @@
             "type": "binary_choice",
             "options": [
               "Randfälle decken versteckte Fehler starrer Abläufe auf",
-              "Weil Programme bei Abstand 0 automatisch doppelt so schnell rechnen"
+              "Ein bestandener Standardtest gilt immer auch an Grenzen"
             ],
             "correct_index": 0
           },
           "choice_distractors": [
             {
-              "text": "Weil Programme bei Abstand 0 automatisch doppelt so schnell rechnen",
-              "reason": "Randfälle machen Fehler wie falsche Startprüfungen oder starre Schrittzahlen sofort sichtbar."
+              "text": "Ein bestandener Standardtest gilt immer auch an Grenzen",
+              "reason": "Gerade bei Grenzen wie Länge 0 oder Gleichheit (>) vs. (≥) versagen Abläufe, die beim Standardtest richtig wirkten."
             },
             {
-              "text": "Weil man sonst in keinem Editor eine Schleife einfügen darf",
-              "reason": "Schleifen lassen sich unabhängig von Tests einbauen, aber erst vielfältige Tests beweisen ihre Korrektheit."
+              "text": "Bei Abstand 0 bricht jede Entwicklungsumgebung gezielt ab",
+              "reason": "Gut getestete bedingte Schleifen behandeln Abstand 0 sauber mit 0 Durchläufen ohne Absturz."
             }
           ]
         },
@@ -1331,17 +1313,17 @@
             "type": "binary_choice",
             "options": [
               "Das wirkungslose Paar ‚links · rechts‘ komplett streichen",
-              "Viermal ‚rechts‘ zwischen beide ‚vor‘-Blöcke zusätzlich einfügen"
+              "‚links · rechts‘ direkt hinter die drei ‚vor‘-Schritte legen"
             ],
             "correct_index": 0
           },
           "choice_distractors": [
             {
-              "text": "Viermal ‚rechts‘ zwischen beide ‚vor‘-Blöcke zusätzlich einfügen",
-              "reason": "Zusätzliche 360-Grad-Drehungen blähen den Code noch weiter auf, statt ihn zu optimieren."
+              "text": "‚links · rechts‘ direkt hinter die drei ‚vor‘-Schritte legen",
+              "reason": "Verschieben behält die überflüssigen Bausteine bei; Streichen verkürzt das Programm ohne Wirkungsverlust."
             },
             {
-              "text": "Alle ‚vor‘-Befehle löschen und nur die Drehungen behalten",
+              "text": "Alle ‚vor‘-Befehle entfernen und nur die Drehungen behalten",
               "reason": "Ohne die ‚vor‘-Schritte erreicht die Figur das ursprüngliche Ziel nicht mehr."
             }
           ]
@@ -1362,8 +1344,8 @@
               "reason": "Ungeprüfte Randfälle führen oft zu Zusammenstößen oder Endlosschleifen, sobald sich Eingaben leicht ändern."
             },
             {
-              "text": "Jeden Fehler durch doppeltes Kopieren derselben Sequenz und Entfernen aller Schleifen beheben.",
-              "reason": "Verdoppeln vergrößert den Code und behebt keine Logikfehler; Optimieren kürzt und verallgemeinert."
+              "text": "Schleifen durch mehrfach hintereinander kopierte Sequenzen ersetzen, damit der Ablauf kürzer wirkt.",
+              "reason": "Kopieren verlängert den Code und macht ihn unflexibel für wechselnde Weglängen; Schleifen kürzen und verallgemeinern."
             }
           ]
         }

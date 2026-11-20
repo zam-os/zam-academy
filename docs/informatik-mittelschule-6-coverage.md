@@ -4,9 +4,10 @@ Stand: 20. November 2026. Paket: [`informatik-mittelschule-6/`](../informatik-mi
 
 ## Lehrplanbasis (LehrplanPLUS Bayern)
 
-An der bayerischen Mittelschule wird Informatik in Jahrgangsstufe 6 als 1-stündiges Pflichtfach laut BayMSO Anlage 1 gemeinsam für alle 6. Klassen (noch ohne Differenzierung in Regelklasse und M-Zug, die erst ab Jahrgangsstufe 7 beginnt) unterrichtet:
+Für Informatik in Jahrgangsstufe 6 weist LehrplanPLUS Bayern einen gemeinsamen Fachlehrplan für alle 6. Klassen der Mittelschule aus (ohne eigene Stundenzahlen auf der Lehrplanseite; eigene Fachlehrpläne für Regelklasse und Mittlere-Reife-Klasse erscheinen erst ab Jahrgangsstufe 7). Laut Abschnitt 3.1 des Fachprofils Informatik umfasst der Lehrplan in den Jahrgangsstufen 5 und 6 nur zwei Lernbereiche, damit Raum für den Lehrgang Tastschreiben bleibt:
 
-- **Quelle:** <https://www.lehrplanplus.bayern.de/fachlehrplan/mittelschule/6/informatik>
+- **Fachlehrplan Inf6:** <https://www.lehrplanplus.bayern.de/fachlehrplan/mittelschule/6/informatik>
+- **Fachprofil Informatik Mittelschule (3.1 Aufbau):** <https://www.lehrplanplus.bayern.de/fachprofil/mittelschule/informatik>
 - **Geprüft am:** 20. November 2026 (live abgerufen)
 - **Archivierter HTML-Snapshot:** [`informatik-mittelschule-6/tests/fixtures/curriculum.html`](../informatik-mittelschule-6/tests/fixtures/curriculum.html)
 - **SHA-256:** `42d74b9865187ac281d1875d10b18abd7e10f4f74985895374fa3b887220b7f8`
@@ -26,8 +27,8 @@ Alle 6 Kompetenzerwartungen und 7 Inhaltsspiegelstriche aus `Inf6 Lernbereich 1`
 
 ### Abgrenzung zu Nachbarjahrgängen
 
-- **Aufbauend auf Informatik 5 (`Inf5`):** Verfeinerte Suchstrategien schließen an einfache Internetdienste/Textsuche aus Klasse 5 an, Urheberrecht und Lizenzen bauen auf erste Quellenangaben auf, und bedingte Wiederholungen/Alternativen/Schachtelungen knüpfen an den Algorithmus-Begriff, Sequenzen, feste Wiederholungen (`wiederhole n-mal`) und Struktogramme aus Klasse 5 an.
-- **Abgrenzung zu Informatik 7 (`Inf7`):** Variablen/Datentypen (`Bezeichner`, `Datentypen`), Objektorientierung (Objekte, Attribute, Methoden), Raster-/Vektorgrafik-Bildbearbeitung sowie Kommunikationsplattformen/Phishing/Spam folgen erst ab Jahrgangsstufe 7 und werden bewusst ausgespart.
+- **Aufbauend auf Informatik 5 (`Inf5`):** <https://www.lehrplanplus.bayern.de/fachlehrplan/mittelschule/5/informatik> — Verfeinerte Suchstrategien schließen an einfache Internetdienste/Textsuche aus Klasse 5 an, Urheberrecht und Lizenzen bauen auf erste Quellenangaben auf, und bedingte Wiederholungen/Alternativen/Schachtelungen knüpfen an den Algorithmus-Begriff, Sequenzen, feste Wiederholungen (`wiederhole n-mal`) und Struktogramme aus Klasse 5 an.
+- **Abgrenzung zu Informatik 7 (`Inf7`):** Ab Jahrgangsstufe 7 liegen getrennte Fachlehrpläne für die Regelklasse (<https://www.lehrplanplus.bayern.de/fachlehrplan/mittelschule/7/informatik/regelklasse>) und die Mittlere-Reife-Klasse (<https://www.lehrplanplus.bayern.de/fachlehrplan/mittelschule/7/informatik/mittlere-reife-klasse>) vor. Dort folgen Kommunikationsplattformen/-dienste (inkl. Spam und Phishing), Raster- und Vektorgrafiken mit objektorientierter Sichtweise (Objekte, Attribute, Attributwerte) sowie Methoden und — in der Mittlere-Reife-Klasse — Variablenkonzepte (`Bezeichner`, `Datentypen`); diese Inhalte werden in Klasse 6 bewusst ausgespart.
 
 ## Bestehende ZAM-Karten (`replaces-de-by.json`)
 

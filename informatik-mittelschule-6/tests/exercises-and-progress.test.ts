@@ -98,18 +98,21 @@ describe("All exercise generators across varied seeds and both levels", () => {
     });
   }
 
-  it("accepts ASCII hyphen and Unicode minus in search query exclusion tasks", () => {
+  it("uses ASCII hyphen in canonical search queries and accepts Unicode minus as fallback", () => {
     const such = findLessonById("ms6-suchstrategien")?.lesson;
     expect(such).toBeDefined();
     const builder = such!.exercises.find((g) => g.id === "ms6-suche-anfrage-bauen");
     expect(builder).toBeDefined();
-    for (let seed = 0; seed < 12; seed++) {
-      const task = builder!.make(createRng(seedFrom(`suche:${seed}`)), 1);
-      const field = task.fields[0];
-      expect(field.kind).toBe("text");
-      if (field.kind === "text") {
-        expect(checkTask(task, [field.answers[0].replace(/−/g, "-")]).status).toBe("correct");
-        expect(checkTask(task, [field.answers[0]]).status).toBe("correct");
+    for (const level of [1, 2] as const) {
+      for (let seed = 0; seed < 12; seed++) {
+        const task = builder!.make(createRng(seedFrom(`suche:${level}:${seed}`)), level);
+        const field = task.fields[0];
+        expect(field.kind).toBe("text");
+        if (field.kind === "text") {
+          expect(field.answers[0]).not.toContain("−");
+          expect(checkTask(task, [field.answers[0]]).status).toBe("correct");
+          expect(checkTask(task, [field.answers[0].replace(/-/g, "−")]).status).toBe("correct");
+        }
       }
     }
   });

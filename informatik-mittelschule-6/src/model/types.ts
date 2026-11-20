@@ -144,6 +144,8 @@ export interface NumberField {
   tolerance?: number;
   /** Absolute tolerance in the answer's unit, when rounding conventions differ. */
   absTolerance?: number;
+  /** Optional custom placeholder instead of the automatic integer/decimal hint. */
+  placeholder?: string;
   /**
    * Typical wrong results and what to say about them, e.g. bits counted as
    * bytes or the gross price divided by 0,19.

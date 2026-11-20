@@ -25,7 +25,7 @@ Jede Lektion bietet eine verständliche Erklärung mit Beispiel und Merksatz, ei
 
 ```bash
 npm ci
-npm run dev          # http://localhost:5264/informatik-mittelschule-6/
+npm run dev          # http://localhost:5265/informatik-mittelschule-6/
 npx tsc --noEmit
 npm test
 npm run build        # Einzeldatei-Build in dist/index.html

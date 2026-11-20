@@ -1,6 +1,6 @@
 import type { LabDefinition, LabValues, Stage } from "../model/types";
 import { caseLab } from "../lab/case-lab";
-import { clamp, line, open, rect, text, W } from "../lab/svg";
+import { clamp, line, open, rect, text, W, wrapText } from "../lab/svg";
 import { cases, cc, lesson, numberField, textField, withSlips } from "./helpers";
 import { fmt } from "../exercises/format";
 
@@ -20,12 +20,12 @@ interface SearchHit {
 
 const SEARCH_HITS: SearchHit[] = [
   { title: "Biber-Schutz in Bayern (lfu.bayern.de)", year: 2025, domain: "bayern.de", exactPhrase: true, shop: false, song: false, relevant: true },
-  { title: "Lebensraum Biber in Bayern (stmelf.bayern.de)", year: 2024, domain: "bayern.de", exactPhrase: true, shop: false, song: false, relevant: true },
-  { title: "Naturpark-Bericht: Biber in Bayern (naturpark.bayern.de)", year: 2022, domain: "bayern.de", exactPhrase: true, shop: false, song: false, relevant: true },
+  { title: "Lebensraum Biber (stmelf.bayern.de)", year: 2024, domain: "bayern.de", exactPhrase: true, shop: false, song: false, relevant: true },
+  { title: "Naturpark-Bericht: Biber (bayern.de)", year: 2022, domain: "bayern.de", exactPhrase: true, shop: false, song: false, relevant: true },
   { title: "Merkblatt Biberberatung (lfu.bayern.de)", year: 2016, domain: "bayern.de", exactPhrase: true, shop: false, song: false, relevant: true },
   { title: "Kinderlied: Der kleine Biber in Bayern", year: 2023, domain: "musik.example", exactPhrase: true, shop: false, song: true, relevant: false },
-  { title: "Biber-Bettwäsche Bayern-Edition · Shop", year: 2025, domain: "shop.example", exactPhrase: false, shop: true, song: false, relevant: false },
-  { title: "Flanell-Bettwäsche Biber im Angebot · Shop", year: 2024, domain: "kauf.example", exactPhrase: false, shop: true, song: false, relevant: false },
+  { title: "Biber-Bettwäsche Bayern · Online-Shop", year: 2025, domain: "shop.example", exactPhrase: false, shop: true, song: false, relevant: false },
+  { title: "Flanell-Bettwäsche Biber · Shop", year: 2024, domain: "kauf.example", exactPhrase: false, shop: true, song: false, relevant: false },
   { title: "Reiseblog: Biber an der Isar beobachtet", year: 2023, domain: "blog.example", exactPhrase: false, shop: false, song: false, relevant: true },
   { title: "Alte Schülerzeitung über Biber in Bayern", year: 2012, domain: "schule.example", exactPhrase: true, shop: false, song: false, relevant: true },
   { title: "Vereinsfest FC Bayern · Biber-Maskottchen", year: 2024, domain: "verein.example", exactPhrase: false, shop: false, song: false, relevant: false },
@@ -44,8 +44,8 @@ function filterHits(v: LabValues): SearchHit[] {
 
 function queryString(v: LabValues): string {
   const parts = [v.begriff === 1 ? '"biber in bayern"' : "biber bayern"];
-  if (v.ausschluss === 1) parts.push("−lied");
-  if (v.ausschluss === 2) parts.push("−bettwäsche −shop");
+  if (v.ausschluss === 1) parts.push("-lied");
+  if (v.ausschluss === 2) parts.push("-bettwäsche -shop");
   if (v.siteFilter === 1) parts.push("site:bayern.de");
   if (v.zeitraum > 2010) parts.push(`ab ${v.zeitraum}`);
   return parts.join(" ");
@@ -70,11 +70,11 @@ const suchLab: LabDefinition = {
     {
       key: "ausschluss",
       type: "choice",
-      label: "Ausschluss mit Minus",
+      label: "Ausschluss mit Bindestrich (-)",
       options: [
         { value: 0, label: "kein Ausschluss" },
-        { value: 1, label: "−lied (Musik ausschließen)" },
-        { value: 2, label: "−bettwäsche −shop (Werbung ausschließen)" },
+        { value: 1, label: "-lied (Seiten mit ‚lied‘ ausschließen)" },
+        { value: 2, label: "-bettwäsche -shop (diese Wörter ausschließen)" },
       ],
       value: 0,
     },
@@ -116,7 +116,7 @@ const suchLab: LabDefinition = {
   goals: [
     {
       id: "g1",
-      text: "Schließe die Bettwäsche-Angebote mit −bettwäsche −shop aus.",
+      text: "Schließe Seiten mit ‚Bettwäsche‘ oder ‚Shop‘ über -bettwäsche -shop aus.",
       check: (v) => v.ausschluss === 2 && filterHits(v).every((h) => !h.shop),
     },
     {
@@ -154,9 +154,13 @@ const suchLab: LabDefinition = {
     render(v) {
       const list = filterHits(v);
       const hx = 44 + ((v.zeitraum - 2010) / 16) * 432;
+      const queryLines = wrapText(`Suche: ${queryString(v)}`, 56);
       let out = open("Such-Filter-Werkstatt");
-      out += rect(20, 14, W - 40, 34, "lab-panel", 'rx="8"');
-      out += text(32, 36, `Suche: ${queryString(v)}`.slice(0, 56), "lab-text-small");
+      out += rect(20, 10, W - 40, 44, "lab-panel", 'rx="8"');
+      queryLines.forEach((ln, idx) => {
+        const ly = queryLines.length === 1 ? 37 : 28 + idx * 16;
+        out += text(32, ly, ln, "lab-text-small");
+      });
 
       const shown = list.slice(0, 5);
       if (shown.length === 0) {
@@ -164,9 +168,9 @@ const suchLab: LabDefinition = {
         out += text(260, 160, "Keine Treffer für diesen Filter (Zeitraum lockern!).", "lab-text-muted", "middle");
       } else {
         shown.forEach((hit, idx) => {
-          const y = 58 + idx * 39;
-          out += rect(20, y, W - 40, 34, hit.relevant ? "lab-fill-ok" : "lab-fill-b", 'rx="8"');
-          out += text(32, y + 21, `${hit.relevant ? "✓" : "✗"} ${hit.title}`.slice(0, 48), hit.relevant ? "lab-text-ok" : "lab-text-b");
+          const y = 62 + idx * 38;
+          out += rect(20, y, W - 40, 33, hit.relevant ? "lab-fill-ok" : "lab-fill-b", 'rx="8"');
+          out += text(32, y + 21, `${hit.relevant ? "✓" : "✗"} ${hit.title}`, hit.relevant ? "lab-text-ok" : "lab-text-b");
           out += text(W - 32, y + 21, String(hit.year), "lab-text-small", "end");
         });
       }
@@ -179,7 +183,7 @@ const suchLab: LabDefinition = {
       out += `<g class="lab-handle lab-handle-a" data-handle="zeitHandle" tabindex="0" role="slider" aria-label="Treffer ab Jahr" aria-valuemin="2010" aria-valuemax="2026" aria-valuenow="${v.zeitraum}">`;
       out += `<circle cx="${hx}" cy="294" r="16" class="lab-handle-hit" />`;
       out += `<circle cx="${hx}" cy="294" r="7.5" class="lab-handle-dot" />`;
-      out += text(hx, 322, `ab ${v.zeitraum}`, "lab-text-a", "middle");
+      out += text(clamp(hx, 64, W - 64), 322, `ab ${v.zeitraum}`, "lab-text-a", "middle");
       out += "</g>";
       out += text(44, 282, "2010", "lab-text-tick");
       out += text(476, 282, "2026", "lab-text-tick", "end");
@@ -323,7 +327,7 @@ const quellenPrueferLab: LabDefinition = {
 
       let out = open("Quellen-Prüfer");
       out += rect(20, 16, W - 40, 134, allOk ? "lab-fill-ok" : "lab-panel", 'rx="12"');
-      out += text(36, 46, headline.slice(0, 48), v.tonfall === 1 ? "lab-text-ok" : "lab-text-bad");
+      out += text(36, 46, headline, v.tonfall === 1 ? "lab-text-ok" : "lab-text-bad");
       out += text(36, 72, sender, v.absender === 2 ? "lab-text-small" : "lab-text-b");
       out += text(
         36,
@@ -377,10 +381,11 @@ const LICENSE_NAMES = [
 ] as const;
 
 const USAGE_NAMES = [
-  "Unverändert + Quelle",
-  "Bearbeiten + Quelle",
-  "Kommerziell nutzen",
-  "Ohne Urhebernennung",
+  "Unverändert teilen (+ Quelle)",
+  "Privat bearbeiten (nicht teilen)",
+  "Bearbeitet teilen (+ Quelle)",
+  "Kommerziell nutzen (+ Quelle)",
+  "Ohne Urhebernennung teilen",
 ] as const;
 
 function checkLicense(lizenz: number, nutzung: number): LicenseCheck {
@@ -397,24 +402,24 @@ function checkLicense(lizenz: number, nutzung: number): LicenseCheck {
     return {
       allowed: false,
       badges,
-      reason: "Ohne Erlaubnis oder freie Lizenz darf ein fremdes Werk nicht frei weiterverwendet werden.",
+      reason: "Ohne Erlaubnis oder freie Lizenz darf ein fremdes Werk nicht frei weitergegeben werden.",
     };
   }
   if (lizenz === 1) {
     return {
       allowed: true,
       badges,
-      reason: "CC0 ist gemeinfrei: Nutzung und Bearbeitung sind frei, eine Fundstelle anzugeben ist dennoch sauber.",
+      reason: "CC0 ist gemeinfrei: Nutzung, Bearbeitung und Weitergabe sind frei; eine Fundstelle ist fairer Stil.",
     };
   }
-  if (nutzung === 3) {
+  if (nutzung === 4) {
     return {
       allowed: false,
       badges,
-      reason: "Das Kürzel BY verlangt bei jeder Verwendung eine klare Namensnennung des Urhebers.",
+      reason: "Das Kürzel BY verlangt beim Weitergeben immer eine klare Namensnennung des Urhebers.",
     };
   }
-  if (lizenz === 4 && nutzung === 2) {
+  if (lizenz === 4 && nutzung === 3) {
     return {
       allowed: false,
       badges,
@@ -423,16 +428,23 @@ function checkLicense(lizenz: number, nutzung: number): LicenseCheck {
   }
   if (lizenz === 5 && nutzung === 1) {
     return {
-      allowed: false,
+      allowed: true,
       badges,
-      reason: "ND (No Derivatives) verbietet das Bearbeiten, Zuschneiden oder Verändern des Werks.",
+      reason: "Erlaubt: CC BY-ND gestattet private Bearbeitungen für sich selbst, solange sie nicht geteilt werden.",
     };
   }
-  if (lizenz === 3 && nutzung === 1) {
+  if (lizenz === 5 && nutzung === 2) {
+    return {
+      allowed: false,
+      badges,
+      reason: "ND (No Derivatives) verbietet das Teilen oder Veröffentlichen bearbeiteter Fassungen.",
+    };
+  }
+  if (lizenz === 3 && nutzung === 2) {
     return {
       allowed: true,
       badges,
-      reason: "Erlaubt mit Namensnennung – das neue Werk muss aber wieder unter derselben Lizenz (SA) stehen.",
+      reason: "Erlaubt mit Namensnennung – die geteilte Bearbeitung muss aber unter derselben Lizenz (SA) stehen.",
     };
   }
   return {
@@ -446,7 +458,7 @@ const ccWerkstattLab: LabDefinition = {
   kind: "ms6-cc-werkstatt",
   title: "Creative-Commons-Lizenzprüfer",
   intro:
-    "Teste verschiedene Creative-Commons-Lizenzen gegen vier Nutzungswünsche und beobachte, welche Kürzel (BY, SA, NC, ND) eine Handlung erlauben oder verbieten.",
+    "Teste Creative-Commons-Lizenzen gegen fünf Nutzungsfälle – achte besonders bei CC BY-ND auf den Unterschied zwischen rein privatem Bearbeiten und dem Veröffentlichen einer Bearbeitung.",
   params: [
     {
       key: "lizenz",
@@ -460,12 +472,13 @@ const ccWerkstattLab: LabDefinition = {
       type: "choice",
       label: "Geplante Nutzung",
       options: [
-        { value: 0, label: "Unverändert einfügen (mit vollständiger Quelle)" },
-        { value: 1, label: "Bild zuschneiden / beschriften (Bearbeiten + Quelle)" },
-        { value: 2, label: "Auf verkauften Heften / Shirts nutzen (kommerziell)" },
-        { value: 3, label: "Im Internet ohne Namensnennung posten" },
+        { value: 0, label: "Unverändert veröffentlichen (mit vollständiger Quelle)" },
+        { value: 1, label: "Privat zuschneiden / notieren (nicht teilen)" },
+        { value: 2, label: "Zugeschnitten / beschriftet veröffentlichen (+ Quelle)" },
+        { value: 3, label: "Unverändert auf verkauften Heften drucken (kommerziell)" },
+        { value: 4, label: "Im Internet ohne Namensnennung posten" },
       ],
-      value: 3,
+      value: 4,
     },
   ],
   readouts: [
@@ -484,48 +497,49 @@ const ccWerkstattLab: LabDefinition = {
   goals: [
     {
       id: "g1",
-      text: "Wähle das Bearbeiten mit Quelle und eine CC-Lizenz, die Bearbeitungen erlaubt.",
-      check: (v) => v.nutzung === 1 && checkLicense(v.lizenz, v.nutzung).allowed,
+      text: "Prüfe bei CC BY-ND die rein private Bearbeitung (ohne Teilen).",
+      check: (v) => v.lizenz === 5 && v.nutzung === 1,
     },
     {
       id: "g2",
-      text: "Prüfe beim Bearbeiten gezielt CC BY-ND und erkenne, warum ND das Bearbeiten verbietet.",
-      check: (v) => v.nutzung === 1 && v.lizenz === 5,
+      text: "Prüfe bei CC BY-ND das Veröffentlichen einer Bearbeitung und erkenne das Weitergabeverbot.",
+      check: (v) => v.lizenz === 5 && v.nutzung === 2,
     },
     {
       id: "g3",
-      text: "Finde das Modell, bei dem sogar eine Nutzung ohne Pflicht-Namensnennung erlaubt ist.",
-      check: (v) => v.nutzung === 3 && v.lizenz === 1,
+      text: "Wähle das Veröffentlichen einer Bearbeitung mit Quelle und eine CC-Lizenz, die geteilte Bearbeitungen erlaubt.",
+      check: (v) => v.nutzung === 2 && v.lizenz >= 1 && checkLicense(v.lizenz, v.nutzung).allowed,
     },
   ],
   witnesses: {
-    g1: { lizenz: 2, nutzung: 1 },
-    g2: { lizenz: 5, nutzung: 1 },
-    g3: { lizenz: 1, nutzung: 3 },
+    g1: { lizenz: 5, nutzung: 1 },
+    g2: { lizenz: 5, nutzung: 2 },
+    g3: { lizenz: 2, nutzung: 2 },
   },
   view: {
     render(v) {
       const res = checkLicense(v.lizenz, v.nutzung);
       let out = open("Creative-Commons-Lizenzprüfer");
-      out += rect(24, 20, W - 48, 96, "lab-panel", 'rx="12"');
-      out += text(42, 48, `Lizenz: ${LICENSE_NAMES[v.lizenz]}`, "lab-text-big");
+      out += rect(24, 18, W - 48, 94, "lab-panel", 'rx="12"');
+      out += text(42, 46, `Lizenz: ${LICENSE_NAMES[v.lizenz]}`, "lab-text-big");
       let bx = 42;
       res.badges.forEach((badge) => {
         const bw = Math.max(72, badge.length * 10 + 28);
-        out += rect(bx, 62, bw, 34, "lab-fill-a", 'rx="17"');
-        out += text(bx + bw / 2, 84, badge, "lab-text-a", "middle");
+        out += rect(bx, 60, bw, 34, "lab-fill-a", 'rx="17"');
+        out += text(bx + bw / 2, 82, badge, "lab-text-a", "middle");
         bx += bw + 10;
       });
 
-      out += rect(24, 134, W - 48, 56, "lab-shape", 'rx="10"');
-      out += text(42, 166, `Plan: ${USAGE_NAMES[v.nutzung]}`, "lab-text");
+      out += rect(24, 128, W - 48, 54, "lab-shape", 'rx="10"');
+      out += text(42, 160, `Plan: ${USAGE_NAMES[v.nutzung]}`, "lab-text");
 
-      out += rect(24, 208, W - 48, 108, res.allowed ? "lab-fill-ok" : "lab-bad", 'rx="12"');
-      out += text(260, 240, res.allowed ? "✓ Nutzung erlaubt" : "✗ Nutzung nicht erlaubt", res.allowed ? "lab-text-ok" : "lab-text-bad", "middle");
-      out += text(260, 272, res.reason.slice(0, 62), "lab-text-small", "middle");
-      if (res.reason.length > 62) {
-        out += text(260, 292, res.reason.slice(62, 124), "lab-text-small", "middle");
-      }
+      const reasonLines = wrapText(res.reason, 56);
+      out += rect(24, 198, W - 48, 122, res.allowed ? "lab-fill-ok" : "lab-bad", 'rx="12"');
+      out += text(260, 232, res.allowed ? "✓ Nutzung erlaubt" : "✗ Nutzung nicht erlaubt", res.allowed ? "lab-text-ok" : "lab-text-bad", "middle");
+      reasonLines.forEach((ln, idx) => {
+        const ry = reasonLines.length <= 2 ? 264 + idx * 20 : 258 + idx * 19;
+        out += text(260, ry, ln, "lab-text-small", "middle");
+      });
       return `${out}</svg>`;
     },
   },
@@ -599,17 +613,28 @@ function charsetSize(code: number): number {
   return [26, 52, 62, 80][code] ?? 26;
 }
 
+function minLenForCharset(zeichensatz: number): number {
+  if (zeichensatz === 3) return 12;
+  if (zeichensatz === 2) return 15;
+  if (zeichensatz === 1) return 20;
+  return 27; // nur Kleinbuchstaben allein erfüllen keinen 2-Arten-Schutz
+}
+
+function strongByLengthAndSet(v: LabValues): boolean {
+  return v.laenge >= minLenForCharset(v.zeichensatz);
+}
+
 function samplePassword(v: LabValues): string {
   const pool =
     v.persoenlich === 0
-      ? "max2014geheim!!!"
+      ? "max2014geheim!max2014geh!!"
       : v.zeichensatz === 0
-        ? "sonneblumewaldxx"
+        ? "kranichwolketannegabelmond"
         : v.zeichensatz === 1
-          ? "SonneBlumeWaldXx"
+          ? "KranichWolkeTanneGabelMond"
           : v.zeichensatz === 2
-            ? "Sonne7Blume4Wald"
-            : "Mk6!sZ9#pW3?bL2&";
+            ? "Kranich7Wolke4Tanne9Gabel2"
+            : "M6k!sZ9#pW3?bL2&tQ8+nR5@yF";
   return pool.slice(0, v.laenge);
 }
 
@@ -626,7 +651,7 @@ const passwortLab: LabDefinition = {
   kind: "ms6-passwort-labor",
   title: "Passwort- und Geräteschutz-Labor",
   intro:
-    "Stelle Länge, Zeichenarten, Merksatz-Regel und Geräteschutz ein. Ziehe den Punkt für die Passwortlänge.",
+    "Erkunde das Zusammenspiel von Passwortlänge, Zeichenvorrat, Nicht-Erratbarkeit und Einzigartigkeit (z. B. kurzes komplexes Passwort oder lange Passphrase aus mindestens 20 Zeichen).",
   params: [
     {
       key: "laenge",
@@ -634,7 +659,7 @@ const passwortLab: LabDefinition = {
       label: "Passwortlänge",
       unit: "Zeichen",
       min: 4,
-      max: 16,
+      max: 26,
       step: 1,
       value: 6,
     },
@@ -653,10 +678,10 @@ const passwortLab: LabDefinition = {
     {
       key: "persoenlich",
       type: "choice",
-      label: "Aufbau des Passworts",
+      label: "Erratbarkeit & Einzigartigkeit",
       options: [
-        { value: 0, label: "Vorname / Geburtsjahr enthalten" },
-        { value: 1, label: "Merksatz ohne persönliche Daten" },
+        { value: 0, label: "Privatdaten / Wörterbuchwort oder mehrfach genutzt" },
+        { value: 1, label: "Nicht erratbar (Merksatz/Passphrase) & nur 1 Dienst" },
       ],
       value: 0,
     },
@@ -682,34 +707,34 @@ const passwortLab: LabDefinition = {
       label: "Schutzniveau",
       emphasis: true,
       compute: (v) =>
-        v.laenge >= 12 && v.zeichensatz === 3 && v.persoenlich === 1 && v.schutz === 1
+        strongByLengthAndSet(v) && v.persoenlich === 1 && v.schutz === 1
           ? "Sehr gut geschützt"
           : v.persoenlich === 0
-            ? "Leicht erratbar (persönliche Daten!)"
-            : "Noch Lücken im Schutz",
+            ? "Leicht erratbar oder mehrfach genutzt!"
+            : "Zu kurz für den gewählten Zeichensatz oder Geräteschutz offen",
     },
   ],
   goals: [
     {
       id: "g1",
-      text: "Wähle mindestens 12 Zeichen Länge und alle vier Zeichenarten.",
-      check: (v) => v.laenge >= 12 && v.zeichensatz === 3,
+      text: "Teste eine lange Passphrase: mind. 20 Zeichen aus 2 Zeichenarten (Groß/Klein), nicht erratbar und einzigartig.",
+      check: (v) => v.persoenlich === 1 && v.zeichensatz === 1 && v.laenge >= 20,
     },
     {
       id: "g2",
-      text: "Nutze die Merksatz-Methode ohne persönliche Daten und aktiviere Virenschutz + Updates.",
-      check: (v) => v.persoenlich === 1 && v.schutz === 1,
+      text: "Erreiche starken Schutz über höhere Komplexität: 12 bis 16 Zeichen mit allen 4 Zeichenarten (einzigartig).",
+      check: (v) => v.persoenlich === 1 && v.zeichensatz === 3 && v.laenge >= 12 && v.laenge <= 16,
     },
     {
       id: "g3",
-      text: "Erfülle alle vier Schutzmaßnahmen gleichzeitig (‚Sehr gut geschützt‘).",
-      check: (v) => v.laenge >= 12 && v.zeichensatz === 3 && v.persoenlich === 1 && v.schutz === 1,
+      text: "Sichere Passwort und Gerät gemeinsam (‚Sehr gut geschützt‘ inkl. Virenschutz & Updates).",
+      check: (v) => strongByLengthAndSet(v) && v.persoenlich === 1 && v.schutz === 1,
     },
   ],
   witnesses: {
-    g1: { laenge: 12, zeichensatz: 3, persoenlich: 0, schutz: 0 },
-    g2: { laenge: 6, zeichensatz: 0, persoenlich: 1, schutz: 1 },
-    g3: { laenge: 14, zeichensatz: 3, persoenlich: 1, schutz: 1 },
+    g1: { laenge: 22, zeichensatz: 1, persoenlich: 1, schutz: 0 },
+    g2: { laenge: 14, zeichensatz: 3, persoenlich: 1, schutz: 0 },
+    g3: { laenge: 22, zeichensatz: 1, persoenlich: 1, schutz: 1 },
   },
   view: {
     handles: {
@@ -717,14 +742,16 @@ const passwortLab: LabDefinition = {
         x: "laenge",
         drag(point): Partial<LabValues> {
           const t = clamp((point.x - 44) / 432, 0, 1);
-          return { laenge: clamp(Math.round(4 + t * 12), 4, 16) };
+          return { laenge: clamp(Math.round(4 + t * 22), 4, 26) };
         },
       },
     },
     render(v) {
-      const pwOk = v.laenge >= 12 && v.zeichensatz === 3 && v.persoenlich === 1;
+      const lenOk = strongByLengthAndSet(v);
+      const pwOk = lenOk && v.persoenlich === 1;
       const allOk = pwOk && v.schutz === 1;
-      const hx = 44 + ((v.laenge - 4) / 12) * 432;
+      const minStrong = minLenForCharset(v.zeichensatz);
+      const hx = 44 + ((v.laenge - 4) / 22) * 432;
       const sample = samplePassword(v);
       let out = open("Passwort- und Geräteschutz-Labor");
       out += rect(24, 18, W - 48, 66, pwOk ? "lab-fill-ok" : "lab-panel", 'rx="12"');
@@ -739,18 +766,22 @@ const passwortLab: LabDefinition = {
 
       // Längen-Handle
       out += line(44, 114, 476, 114, "lab-thin");
-      out += rect(44 + ((12 - 4) / 12) * 432, 108, 432 - ((12 - 4) / 12) * 432, 12, "lab-fill-ok", 'rx="6"');
-      out += `<g class="lab-handle lab-handle-a" data-handle="laengeHandle" tabindex="0" role="slider" aria-label="Passwortlänge" aria-valuemin="4" aria-valuemax="16" aria-valuenow="${v.laenge}">`;
+      if (minStrong <= 26) {
+        const zx = 44 + ((minStrong - 4) / 22) * 432;
+        out += rect(zx, 108, 476 - zx, 12, "lab-fill-ok", 'rx="6"');
+      }
+      out += `<g class="lab-handle lab-handle-a" data-handle="laengeHandle" tabindex="0" role="slider" aria-label="Passwortlänge" aria-valuemin="4" aria-valuemax="26" aria-valuenow="${v.laenge}">`;
       out += `<circle cx="${hx}" cy="114" r="16" class="lab-handle-hit" />`;
       out += `<circle cx="${hx}" cy="114" r="7.5" class="lab-handle-dot" />`;
-      out += text(hx, 142, `${v.laenge} Zeichen`, v.laenge >= 12 ? "lab-text-ok" : "lab-text-bad", "middle");
+      out += text(clamp(hx, 64, W - 64), 142, `${v.laenge} Zeichen`, lenOk ? "lab-text-ok" : "lab-text-bad", "middle");
       out += "</g>";
 
-      // Vier Schutz-Kacheln
+      const thresholdNote =
+        minStrong <= 26 ? `${v.zeichensatz + 1} Arten: ≥ ${minStrong} Z.` : "Ab 2 Zeichenarten";
       const checks = [
-        { label: "Länge ≥ 12", ok: v.laenge >= 12 },
-        { label: "4 Zeichenarten", ok: v.zeichensatz === 3 },
-        { label: "Keine Privatdaten", ok: v.persoenlich === 1 },
+        { label: `Länge (${v.laenge}) & Vorrat`, ok: lenOk },
+        { label: thresholdNote, ok: lenOk },
+        { label: "Unerratbar & 1 Dienst", ok: v.persoenlich === 1 },
         { label: "Virenschutz & Updates", ok: v.schutz === 1 },
       ];
       checks.forEach((c, i) => {
@@ -761,7 +792,7 @@ const passwortLab: LabDefinition = {
       });
 
       out += rect(24, 282, W - 48, 36, allOk ? "lab-fill-ok" : "lab-shape", 'rx="10"');
-      out += text(260, 305, allOk ? "Schutz vollständig: Starkes Passwort + aktueller Geräteschutz" : "Mindestens ein Kriterium ist noch ungeschützt", allOk ? "lab-text-ok" : "lab-text-muted", "middle");
+      out += text(260, 304, allOk ? "Starkes einzigartiges Passwort + Geräteschutz" : "Prüfe Länge × Vorrat, Einzigartigkeit und Geräteschutz", allOk ? "lab-text-small lab-text-ok" : "lab-text-muted", "middle");
       return `${out}</svg>`;
     },
   },
@@ -898,9 +929,13 @@ const backupLab: LabDefinition = {
         out += text(p.x + 75, 100, p.note, "lab-text-small", "middle");
       });
 
-      out += rect(24, 140, W - 48, 72, res.ok ? "lab-fill-ok" : v.ereignis === 0 ? "lab-panel" : "lab-bad", 'rx="12"');
-      out += text(260, 170, res.status, res.ok ? "lab-text-ok" : v.ereignis === 0 ? "lab-text-big" : "lab-text-bad", "middle");
-      out += text(260, 196, res.detail.slice(0, 68), "lab-text-small", "middle");
+      const detailLines = wrapText(res.detail, 58);
+      out += rect(24, 132, W - 48, 86, res.ok ? "lab-fill-ok" : v.ereignis === 0 ? "lab-panel" : "lab-bad", 'rx="12"');
+      out += text(260, 158, res.status, res.ok ? "lab-text-ok" : v.ereignis === 0 ? "lab-text-big" : "lab-text-bad", "middle");
+      detailLines.forEach((ln, idx) => {
+        const dy = detailLines.length === 1 ? 188 : 182 + idx * 19;
+        out += text(260, dy, ln, "lab-text-small", "middle");
+      });
 
       out += text(44, 246, "Sicherungsabstand: jeder 1. bis 30. Tag", "lab-text-small");
       out += line(44, 272, 476, 272, "lab-thin");
@@ -908,7 +943,7 @@ const backupLab: LabDefinition = {
       out += `<g class="lab-handle lab-handle-a" data-handle="intervallHandle" tabindex="0" role="slider" aria-label="Sicherungsabstand in Tagen" aria-valuemin="1" aria-valuemax="30" aria-valuenow="${v.intervall}">`;
       out += `<circle cx="${hx}" cy="272" r="16" class="lab-handle-hit" />`;
       out += `<circle cx="${hx}" cy="272" r="7.5" class="lab-handle-dot" />`;
-      out += text(hx, 302, `alle ${v.intervall} Tage`, v.intervall <= 7 ? "lab-text-ok" : "lab-text-bad", "middle");
+      out += text(clamp(hx, 64, W - 64), 302, `alle ${v.intervall} Tage`, v.intervall <= 7 ? "lab-text-ok" : "lab-text-bad", "middle");
       out += "</g>";
       return `${out}</svg>`;
     },
@@ -932,29 +967,29 @@ export const STAGE_INFORMATIONSAUSTAUSCH: Stage = {
       id: "ms6-suchstrategien",
       title: "Verfeinerte Suchstrategien",
       subtitle: "Exakte Wortfolgen, Begriffe ausschließen, Seiten- und Zeitfilter gezielt kombinieren",
-      why: "Wer nur ein einzelnes Wort eintippt, bekommt Millionen Treffer voller Werbung – mit Suchoperatoren findest du in Sekunden passende Fachseiten.",
+      why: "Wer nur ein einzelnes Wort eintippt, bekommt oft unpassende Zufallstreffer – mit Suchoperatoren findest du in Sekunden gezielte Fachseiten.",
       html: `<p>In Klasse 5 hast du bereits erste Internetdienste genutzt und einfache Begriffe in eine Suchmaschine eingegeben. In Klasse 6 lernst du <strong>verfeinerte Suchstrategien</strong>, damit du auch bei schwierigen Schulthemen zielgenau verlässliche Treffer findest.</p>
 <ul>
 <li><strong>Gezielte Stichwörter:</strong> Verzichte auf lange Fragesätze und kombiniere treffende Fachwörter (z. B. <code>biber lebensraum bayern</code> statt „Wo wohnt eigentlich der Biber?“).</li>
 <li><strong>Exakte Wortfolge <code>"..."</code>:</strong> Wörter in Anführungszeichen sucht die Maschine genau in dieser Reihenfolge nebeneinander, etwa <code>"biber in bayern"</code>.</li>
-<li><strong>Begriffe ausschließen <code>−wort</code>:</strong> Ein Minus direkt vor einem Wort (ohne Leerzeichen dazwischen, auf der Tastatur <code>-wort</code>) blendet unerwünschte Bedeutungen aus, z. B. <code>−bettwäsche −shop</code>.</li>
+<li><strong>Begriffe ausschließen <code>-wort</code>:</strong> Ein Bindestrich/Minuszeichen direkt vor einem Wort (ohne Leerzeichen dazwischen!) schließt Seiten aus, die dieses Wort enthalten, z. B. <code>-bettwäsche -shop</code>.</li>
 <li><strong>Webseiten einschränken <code>site:</code>:</strong> Mit <code>site:bayern.de</code> oder <code>site:.de</code> durchsuchst du gezielt bestimmte Seitenbereiche, z. B. amtliche Landesstellen.</li>
 <li><strong>Dateityp &amp; Zeitraum:</strong> Mit <code>filetype:pdf</code> findest du gezielt Arbeitsblätter oder Berichte; über die Filter der Suchmaschine grenzst du Treffer auf aktuelle Jahre ein.</li>
 </ul>
-<div class="example"><strong>Beispiel:</strong> Die Suche <code>biber bayern</code> zeigt auch Bettwäsche-Shops und Kinderlieder. Erst die verfeinerte Abfrage <code>"biber in bayern" −bettwäsche −shop site:bayern.de</code> liefert gezielt aktuelle Fachseiten bayerischer Umweltämter.</div>
-<div class="merke"><strong>Merke:</strong> Mit Anführungszeichen (<code>"..."</code>), Ausschluss (<code>−wort</code> ohne Leerzeichen), Domain-Filter (<code>site:</code>), Dateityp (<code>filetype:</code>) und Zeitraum filterst du Treffer gezielt vor.</div>`,
-      rule: 'Exakte Wortfolge ("...") + Ausschluss (−wort) + Domain/Typ (site:, filetype:) = präzise Treffer',
+<div class="example"><strong>Beispiel:</strong> Die Suche <code>biber bayern</code> zeigt auch Seiten zu Bettwäsche-Shops und Kinderliedern. Erst die verfeinerte Abfrage <code>"biber in bayern" -bettwäsche -shop site:bayern.de</code> blendet diese unpassenden Themen aus und liefert gezielt Fachseiten bayerischer Umweltämter.</div>
+<div class="merke"><strong>Merke:</strong> Mit Anführungszeichen (<code>"..."</code>), Ausschluss (<code>-wort</code> ohne Leerzeichen), Domain-Filter (<code>site:</code>), Dateityp (<code>filetype:</code>) und Zeitraum filterst du Treffer gezielt vor.</div>`,
+      rule: 'Exakte Wortfolge ("...") + Ausschluss (-wort) + Domain/Typ (site:, filetype:) = präzise Treffer',
       terms: [
         ['Exakte Wortfolge ("...")', 'Findet die Wörter exakt in dieser Reihenfolge', 'Verhindert verstreute Zufallstreffer'],
-        ["Ausschluss (−wort)", "Blendet Treffer mit diesem Wort aus (ohne Leerzeichen nach dem Minus)", "Auf der Tastatur mit Bindestrich -wort"],
+        ["Ausschluss (-wort)", "Schließt Treffer mit diesem Wort aus (Bindestrich ohne Leerzeichen)", "z. B. jaguar -auto"],
         ["Domain- und Dateifilter", "site:domain.de begrenzt die Seite · filetype:pdf sucht PDF-Dateien", "Ideal für amtliche Berichte und Merkblätter"],
       ],
       quiz: [
-        "Mit welcher Eingabe schließt du bei der Suche nach dem Tier ‚Jaguar‘ gezielt alle Autohäuser aus?",
-        "jaguar −auto",
-        "jaguar − auto",
+        "Mit welcher Eingabe schließt du bei der Suche nach dem Tier ‚Jaguar‘ gezielt Seiten zum Thema ‚Auto‘ aus?",
+        "jaguar -auto",
+        "jaguar - auto",
         "jaguar ohne auto",
-        "Nur ein Minuszeichen direkt ohne Leerzeichen vor dem unerwünschten Wort (−auto) schließt dieses Wort sauber aus.",
+        "Nur der Bindestrich/das Minuszeichen direkt ohne Leerzeichen vor dem unerwünschten Wort (-auto) schließt dieses Wort aus.",
       ],
       lab: suchLab,
       exercises: [
@@ -964,21 +999,21 @@ export const STAGE_INFORMATIONSAUSTAUSCH: Stage = {
             cc(
               "Du suchst genau nach dem Buchtitel ‚Der rote Faden‘ und willst keine Seiten, auf denen die drei Wörter irgendwo verstreut stehen.",
               '"Der rote Faden"',
-              ["Der −rote −Faden", "site:Der_rote_Faden"],
+              ["Der -rote -Faden", "site:Der_rote_Faden"],
               "Anführungszeichen erzwingen genau diese zusammenhängende Wortfolge.",
               "Welches Zeichenpaar hält mehrere Wörter genau in ihrer Reihenfolge zusammen?",
             ),
             cc(
-              "Bei der Suche nach ‚Apfel‘ für Biologie erscheinen nur Technik-Seiten über Smartphones. Was ergänzt du am sinnvollsten?",
-              "apfel baum −iphone −handy",
-              ["apfel +iphone +handy", "site:apfel.com"],
-              "Mit dem Minuszeichen direkt vor den Störwörtern verschwinden die Smartphone-Treffer.",
-              "Wie blendest du ein störendes Thema aus der Trefferliste aus?",
+              "Bei der Suche nach ‚Apfel‘ für Biologie erscheinen viele Technik-Seiten zu iPhone und Handy. Was ergänzt du am sinnvollsten?",
+              "apfel baum -iphone -handy",
+              ["apfel - iphone - handy", "site:apfel.com"],
+              "Mit dem Minuszeichen direkt ohne Leerzeichen vor den Störwörtern werden Seiten mit diesen Begriffen ausgeblendet.",
+              "Wie blendest du ein störendes Thema sauber aus der Trefferliste aus?",
             ),
             cc(
               "Du möchtest nur Informationsblätter im PDF-Format zum Thema Hochwasserschutz finden.",
               "hochwasserschutz filetype:pdf",
-              ["hochwasserschutz −pdf", '"filetype pdf"'],
+              ["hochwasserschutz -pdf", '"filetype pdf"'],
               "Der Operator filetype:pdf filtert gezielt auf PDF-Dokumente.",
               "Welcher Suchoperator wählt ein bestimmtes Dateiformat aus?",
             ),
@@ -987,21 +1022,21 @@ export const STAGE_INFORMATIONSAUSTAUSCH: Stage = {
             cc(
               "Für GPG suchst du ein offizielles PDF zum Thema Jugendschutz direkt von einer bayerischen Landesbehörde (Endung bayern.de), ohne Zeitungsartikel. Welche Kombination passt?",
               "jugendschutz site:bayern.de filetype:pdf",
-              ['"jugendschutz bayern" −pdf', "jugendschutz −site:bayern.de"],
+              ['"jugendschutz bayern" -pdf', "jugendschutz -site:bayern.de"],
               "site:bayern.de begrenzt die Quelle auf Landesbehörden und filetype:pdf wählt gezielt offizielle Infoblätter.",
               "Kombiniere den Webseiten-Filter für Bayern mit dem passenden Dateityp-Operator.",
             ),
             cc(
               "Eine Schülerin tippt ‚Was ist eigentlich der Unterschied zwischen einem Laptop und einem Tablet bitte?‘ ein und findet unübersichtliche Foren. Was verbessert die Suche am stärksten?",
               "Füllwörter weglassen und gezielte Fachbegriffe wie ‚laptop tablet unterschied‘ nutzen",
-              ["Alle Wörter in Großbuchstaben schreiben", "Jedes einzelne Wort in eigene Anführungszeichen setzen"],
+              ["Alle Wörter der Frage in Großbuchstaben eintippen", "Jedes einzelne Fragewort zusätzlich in Anführungszeichen setzen"],
               "Suchmaschinen arbeiten mit klaren Schlüsselwörtern viel genauer als mit umgangssprachlichen Füllwörtern.",
               "Braucht eine Suchmaschine höfliche Sätze oder klare Schlüsselwörter?",
             ),
             cc(
               "Für das Jahr 2026 suchst du aktuelle Fahrradregeln und findest viele veraltete Texte aus 2011. Was hilft am zuverlässigsten?",
               "In den Suchfiltern den Zeitraum auf das letzte Jahr eingrenzen",
-              ["Die alte Seite zehnmal neu laden", "Den Suchbegriff dreimal hintereinander eintippen"],
+              ["Den Suchbegriff mehrfach wiederholt hintereinander eingeben", "Die gefundenen Treffer zusätzlich nach alphabetischer URL sortieren"],
               "Der Zeitfilter der Suchmaschine sortiert überholte Treffer aus früheren Jahren aus.",
               "Welches Werkzeug der Suchmaschine schließt veraltete Beiträge aus?",
             ),
@@ -1016,25 +1051,25 @@ export const STAGE_INFORMATIONSAUSTAUSCH: Stage = {
                   topic: "den Schutz des Eisvogels",
                   phrase: '"eisvogel schutz"',
                   exclude: "restaurant",
-                  answer: '"eisvogel schutz" −restaurant',
-                  alt: '−restaurant "eisvogel schutz"',
-                  noQuotes: "eisvogel schutz −restaurant",
+                  answer: '"eisvogel schutz" -restaurant',
+                  alt: '-restaurant "eisvogel schutz"',
+                  noQuotes: "eisvogel schutz -restaurant",
                 },
                 {
                   topic: "die historische Altstadt von Regensburg",
                   phrase: '"altstadt regensburg"',
                   exclude: "hotel",
-                  answer: '"altstadt regensburg" −hotel',
-                  alt: '−hotel "altstadt regensburg"',
-                  noQuotes: "altstadt regensburg −hotel",
+                  answer: '"altstadt regensburg" -hotel',
+                  alt: '-hotel "altstadt regensburg"',
+                  noQuotes: "altstadt regensburg -hotel",
                 },
                 {
                   topic: "das richtige Verhalten bei Gewitter",
                   phrase: '"verhalten bei gewitter"',
                   exclude: "roman",
-                  answer: '"verhalten bei gewitter" −roman',
-                  alt: '−roman "verhalten bei gewitter"',
-                  noQuotes: "verhalten bei gewitter −roman",
+                  answer: '"verhalten bei gewitter" -roman',
+                  alt: '-roman "verhalten bei gewitter"',
+                  noQuotes: "verhalten bei gewitter -roman",
                 },
               ];
               const item = rng.pick(casesL1);
@@ -1044,7 +1079,7 @@ export const STAGE_INFORMATIONSAUSTAUSCH: Stage = {
                   `Exakte Wortfolge: ${item.phrase}`,
                   `Auszuschließen: ${item.exclude}`,
                 ],
-                formulaHint: 'Setze die exakte Wortfolge in "..." und stelle direkt vor das auszuschließende Wort ein − (oder -).',
+                formulaHint: 'Setze die exakte Wortfolge in "..." und stelle direkt ohne Leerzeichen vor das auszuschließende Wort ein -.',
                 fields: [
                   textField(
                     "Suchanfrage",
@@ -1052,25 +1087,27 @@ export const STAGE_INFORMATIONSAUSTAUSCH: Stage = {
                     'z. B. "wortfolge" -ausschluss',
                     [
                       [item.noQuotes, 'Vergiss die Anführungszeichen "..." um die exakte Wortfolge nicht.'],
-                      [`${item.phrase} ${item.exclude}`, `Setze direkt vor „${item.exclude}“ das Minuszeichen (− oder -).`],
+                      [`${item.phrase} ${item.exclude}`, `Setze direkt vor „${item.exclude}“ ein - ohne Leerzeichen.`],
+                      [`${item.phrase} - ${item.exclude}`, "Zwischen - und dem Wort darf kein Leerzeichen stehen."],
                     ],
                   ),
                 ],
                 steps: [
                   `Exakte Wortfolge mit Anführungszeichen: ${item.phrase}`,
-                  `Ausschluss direkt mit Minus davor: −${item.exclude}`,
+                  `Ausschluss direkt mit Bindestrich davor: -${item.exclude}`,
                   `<strong>${item.answer}</strong>`,
                 ],
               };
             }
             const casesL2 = [
               {
-                thema: "ein PDF zu Wasserkraft auf der Domain bayern.de ohne Werbung",
-                a1: "wasserkraft site:bayern.de filetype:pdf −werbung",
-                a2: "wasserkraft filetype:pdf site:bayern.de −werbung",
-                a3: '"wasserkraft" site:bayern.de filetype:pdf −werbung',
-                noSite: "wasserkraft filetype:pdf −werbung",
-                noPdf: "wasserkraft site:bayern.de −werbung",
+                thema: "ein PDF zu Wasserkraft auf der Domain bayern.de ohne Seiten mit dem Wort ‚shop‘",
+                a1: "wasserkraft site:bayern.de filetype:pdf -shop",
+                a2: "wasserkraft filetype:pdf site:bayern.de -shop",
+                a3: '"wasserkraft" site:bayern.de filetype:pdf -shop',
+                noSite: "wasserkraft filetype:pdf -shop",
+                noPdf: "wasserkraft site:bayern.de -shop",
+                noExclude: "wasserkraft site:bayern.de filetype:pdf",
               },
               {
                 thema: "die exakte Wortfolge ‚solarenergie schule‘ auf der Domain bildung.de als PDF",
@@ -1079,6 +1116,7 @@ export const STAGE_INFORMATIONSAUSTAUSCH: Stage = {
                 a3: 'site:bildung.de "solarenergie schule" filetype:pdf',
                 noSite: '"solarenergie schule" filetype:pdf',
                 noPdf: '"solarenergie schule" site:bildung.de',
+                noExclude: "solarenergie schule site:bildung.de filetype:pdf",
               },
             ];
             const item = rng.pick(casesL2);
@@ -1093,12 +1131,13 @@ export const STAGE_INFORMATIONSAUSTAUSCH: Stage = {
                   [
                     [item.noSite, "Ergänze den Domain-Filter site:... laut Aufgabe."],
                     [item.noPdf, "Vergiss den Dateityp-Filter filetype:pdf nicht."],
+                    [item.noExclude, "Prüfe, ob noch ein Ausschluss mit - oder exakte Anführungszeichen fehlen."],
                   ],
                 ),
               ],
               steps: [
                 "Bestimme Hauptbegriff bzw. exakte Wortfolge.",
-                "Ergänze site:-Filter, filetype:pdf und gegebenenfalls −ausschluss.",
+                "Ergänze site:-Filter, filetype:pdf und gegebenenfalls -ausschluss.",
                 `<strong>${item.a1}</strong>`,
               ],
             };
@@ -1129,10 +1168,10 @@ export const STAGE_INFORMATIONSAUSTAUSCH: Stage = {
         ["Medienwirkung", "Gezielter Einsatz von Schlagzeilen, Bildern, Ton und Wortwahl auf Gefühle und Meinung", "Emotionale Aufmachung kritisch hinterfragen"],
       ],
       quiz: [
-        "Welche Quelle ist für ein Sachthema in einem Schulreferat am vertrauenswürdigsten?",
-        "Eine sachliche Fachseite mit vollständigem Impressum, aktuellem Datum und belegten Zahlen",
-        "Ein anonymer Beitrag ohne Namen, der in Großbuchstaben eine Sensation ankündigt",
-        "Ein Werbetext eines Herstellers, der nur das eigene Produkt als einzig gutes lobt",
+        "Welche Quelle ist für ein Sachthema im Schulreferat am vertrauenswürdigsten?",
+        "Fachseite mit Impressum, aktuellem Datum und belegten Zahlen",
+        "Bekannter Freizeitblog mit tausenden positiven Leser-Kommentaren",
+        "Ausführlicher Testbericht direkt auf einer Hersteller-Verkaufsseite",
         "Impressum, Sachlichkeit, Aktualität und Belege zeigen, wer verantwortlich ist und worauf sich die Aussagen stützen.",
       ],
       lab: quellenPrueferLab,
@@ -1144,8 +1183,8 @@ export const STAGE_INFORMATIONSAUSTAUSCH: Stage = {
               "Auf einer Webseite findest du ein beeindruckendes Ergebnis, aber weder Autor noch Impressum und kein Datum. Wie gehst du vor?",
               "Die Aussage nicht ungeprüft übernehmen, sondern in einer zweiten, vertrauenswürdigen Quelle gegenprüfen",
               [
-                "Die Zahl trotzdem sofort übernehmen, weil die Seite bunt gestaltet ist",
-                "Die URL kürzen und als eigene Messung ausgeben",
+                "Die Zahl trotzdem übernehmen, weil die Seite professionell und modern aufgebaut ist",
+                "Prüfen, ob dieselbe Webseite viele positive Kommentare von Leserinnen erhält",
               ],
               "Ohne erkennbare Verantwortliche und Aktualität lässt sich die Zuverlässigkeit nicht einschätzen.",
               "Wie prüfst du Aussagen einer unbekannten Seite?",
@@ -1154,8 +1193,8 @@ export const STAGE_INFORMATIONSAUSTAUSCH: Stage = {
               "Was erfährst du beim Blick ins Impressum einer Webseite?",
               "Wer die Seite betreibt, wer für den Inhalt verantwortlich ist und wie man den Herausgeber erreicht",
               [
-                "Welche Schriftgröße auf deinem Bildschirm eingestellt ist",
-                "Wie viele Personen das Bild heute bereits heruntergeladen haben",
+                "Wie viele Besucher den Artikel in der letzten Woche angeklickt haben",
+                "Ob alle Rechenbeispiele auf der Seite bereits von einer Lehrkraft korrigiert wurden",
               ],
               "Das Impressum benennt Herausgeber und Kontaktadresse – ein zentraler Anhaltspunkt für Seriosität.",
               "Wozu dient das gesetzlich vorgesehene Impressum?",
@@ -1164,8 +1203,8 @@ export const STAGE_INFORMATIONSAUSTAUSCH: Stage = {
               "Welche Angabe hilft dir, veraltete Daten auszusortieren?",
               "Das Veröffentlichungs- oder Aktualisierungsdatum des Artikels",
               [
-                "Die Anzahl der Werbebanner am Seitenrand",
-                "Die Lieblingsfarbe des Webdesigners",
+                "Das Datum, an dem dein eigener Computer zuletzt gestartet wurde",
+                "Die durchschnittliche Länge der einzelnen Absätze im Text",
               ],
               "Besonders bei Bevölkerungs-, Technik- oder Umweltzahlen entscheidet das Erstellungsdatum über die Brauchbarkeit.",
               "Welches Merkmal verrät, wie neu eine Information ist?",
@@ -1176,8 +1215,8 @@ export const STAGE_INFORMATIONSAUSTAUSCH: Stage = {
               "Ein sehr professionell wirkender Artikel auf ‚gesund-kaufen.example‘ warnt vor allen normalen Trinkflaschen und empfiehlt ganz am Ende genau eine teure Spezialflasche mit Bestell-Link. Welches Kriterium mahnt zur Vorsicht?",
               "Die Absicht der Quelle ist wirtschaftliche Werbung, nicht neutrale Aufklärung",
               [
-                "Der Artikel enthält wahrscheinlich zu viele sachliche Belege",
-                "Die Schriftart ist besonders gut lesbar",
+                "Die Webseite nutzt wahrscheinlich zu viele wissenschaftliche Fremdwörter",
+                "Der Beitrag vergleicht zu wenig Werbung miteinander und wirkt zu schlicht",
               ],
               "Wer eigene Produkte verkauft, hat ein klares Eigeninteresse und wählt Fakten oft einseitig aus.",
               "Frage nach der Absicht des Herausgebers: informieren oder verkaufen?",
@@ -1186,8 +1225,8 @@ export const STAGE_INFORMATIONSAUSTAUSCH: Stage = {
               "Du findest eine interessante Zahl aus dem Jahr 2012 zur Smartphone-Nutzung von Jugendlichen. Warum eignet sie sich nicht für einen Bericht über das Jahr 2026?",
               "Wegen mangelnder Aktualität hat sich die Nutzung seither stark verändert",
               [
-                "Weil Zahlen aus dem Internet nach fünf Jahren rechtlich ungültig sind",
-                "Weil man im Jahr 2012 noch keine Prozentwerte berechnen konnte",
+                "Weil Zahlen aus dem Internet nach fünf Jahren rechtlich ungültig werden",
+                "Weil man vor zehn Jahren noch keine Umfragen an Schulen durchführen durfte",
               ],
               "Technik- und Mediennutzung wandeln sich rasch – ein Beleg aus 2012 beschreibt nicht die heutige Situation.",
               "Welches Qualitätskriterium passt bei einer 14 Jahre alten Technikzahl nicht?",
@@ -1196,8 +1235,8 @@ export const STAGE_INFORMATIONSAUSTAUSCH: Stage = {
               "Zwei seriöse, voneinander unabhängige Quellen nennen exakt die gleiche Einwohnerzahl, eine dritte kleine Fanseite nennt das Doppelte. Was schließt du daraus?",
               "Die übereinstimmenden verlässlichen Quellen sind deutlich glaubwürdiger; den Ausreißer übernimmst du nicht",
               [
-                "Die größere Zahl ist immer richtig, weil sie beeindruckender wirkt",
-                "Du bildest einfach den Mittelwert aus allen drei Seiten",
+                "Du bildest einfach den Durchschnitt aus allen drei genannten Werten",
+                "Die größere Zahl ist meist neuer und ersetzt automatisch die kleineren Werte",
               ],
               "Die Gegenprüfung mit mehreren unabhängigen Fachquellen entlarvt Ausreißer und Falschmeldungen.",
               "Wozu dient die Zweitquellen-Prüfung?",
@@ -1211,8 +1250,8 @@ export const STAGE_INFORMATIONSAUSTAUSCH: Stage = {
               "Ein kurzer Clip nutzt dramatische Gruselmusik, schnelle Schnitte und die Überschrift ‚SCHOCK FÜR ALLE SCHÜLER!!‘. Was soll diese Aufmachung in erster Linie bewirken?",
               "Starke Emotionen wie Angst oder Neugier wecken, damit man schnell klickt und teilt, bevor man nachdenkt",
               [
-                "Möglichst nüchtern verschiedene Gegenargumente abwägen",
-                "Die genaue Quellenangabe übersichtlich hervorheben",
+                "Möglichst nüchtern verschiedene Gegenargumente sachlich gegenüberstellen",
+                "Eine vollständige Liste aller Behörden-Links übersichtlich einblenden",
               ],
               "Starke Gefühle überdecken ruhiges Prüfen – genau deshalb prüfen wir Medienwirkung bewusst.",
               "Welche Wirkung haben Schock-Überschriften und dramatische Effekte auf Betrachter?",
@@ -1221,8 +1260,8 @@ export const STAGE_INFORMATIONSAUSTAUSCH: Stage = {
               "Warum wirken bearbeitete oder aus dem Zusammenhang gerissene Bilder besonders stark auf Leserinnen und Leser?",
               "Bilder prägen sich blitzschnell emotional ein und werden oft ohne Hinterfragen für bare Münze genommen",
               [
-                "Weil Bilder niemals bearbeitet werden können",
-                "Weil man bei Bildern keine Quelle benötigt",
+                "Weil Fotos im Internet erst nach einer staatlichen Prüfung hochgeladen werden dürfen",
+                "Weil jedes digitale Bild automatisch seinen Aufnahmeort als Quelle enthält",
               ],
               "Ein Bild erzeugt sofort einen Eindruck – daher prüfen wir Bildquelle, Kontext und mögliche Bearbeitung.",
               "Warum vertrauen viele Menschen Bildern schneller als langem Text?",
@@ -1231,8 +1270,8 @@ export const STAGE_INFORMATIONSAUSTAUSCH: Stage = {
               "Woran erkennst du einen sachlichen Bericht im Vergleich zu einem reißerischen Meinungsbeitrag?",
               "An ruhiger Wortwahl, belegten Fakten, genannten Grenzen und dem Verzicht auf Übertreibungen",
               [
-                "An besonders vielen Ausrufezeichen und Schimpfwörtern",
-                "Daran, dass jede Gegenmeinung lächerlich gemacht wird",
+                "An besonders vielen Ausrufezeichen und zugespitzten Gefühlsbegriffen",
+                "Daran, dass jede abweichende Ansicht lächerlich gemacht wird",
               ],
               "Sachliche Information trennt Fakten von Wertungen und bleibt in der Wortwahl ruhig.",
               "Wie unterscheiden sich sachliche Information und emotionale Beeinflussung sprachlich?",
@@ -1243,8 +1282,8 @@ export const STAGE_INFORMATIONSAUSTAUSCH: Stage = {
               "Ein bekannter Video-Creator zeigt ein Getränk ‚ganz zufällig‘ in jedem seiner Clips, ohne es als Werbung zu kennzeichnen, und lobt es überschwänglich. Wie ordnest du die Medienwirkung ein?",
               "Versteckte Produktplatzierung nutzt Sympathie und Vertrauen der Zuschauer als Werbung",
               [
-                "Es handelt sich um eine neutrale wissenschaftliche Langzeitstudie",
-                "Die Erwähnung ist frei von jedem Einfluss auf die Zuschauenden",
+                "Es handelt sich um eine neutrale und unabhängige Produktprüfung",
+                "Ohne offizielles Werbelogo beeinflusst eine Empfehlung niemanden",
               ],
               "Wer eine bekannte Person mag, übernimmt Empfehlungen unkritischer – genau darauf baut Schleichwerbung.",
               "Warum setzen Unternehmen sympathische Vorbilder statt nüchterner Tabellen ein?",
@@ -1253,8 +1292,8 @@ export const STAGE_INFORMATIONSAUSTAUSCH: Stage = {
               "Unter einem reißerischen Beitrag stehen hunderte empörte Kommentare ohne einen einzigen Beleg. Was sollte dein nächster Schritt sein?",
               "Nicht mit dem Strom mitschwimmen, sondern zuerst Originalquelle und sachliche Medien prüfen",
               [
-                "Den Beitrag sofort teilen, damit man nichts verpasst",
-                "Die Lautstärke aufdrehen und den Kommentaren blind vertrauen",
+                "Den Beitrag direkt teilen, damit auch andere mitdiskutieren können",
+                "Die mehrheitliche Meinung aus den Kommentaren als Beleg übernehmen",
               ],
               "Viele emotionale Kommentare ersetzen keine geprüften Fakten und verstärken oft nur Gruppendruck.",
               "Bedeuten viele Aufregungs-Kommentare automatisch, dass ein Beitrag stimmt?",
@@ -1280,28 +1319,28 @@ export const STAGE_INFORMATIONSAUSTAUSCH: Stage = {
       subtitle: "Fremde Werke rechtmäßig nutzen, Creative-Commons-Lizenzen unterscheiden und sauber zitieren",
       why: "Einfach ein Bild aus der Suchmaschine zu kopieren verstößt gegen das Urheberrecht – freie Lizenzen zeigen dir den sauberen Weg.",
       html: `<p>In Klasse 5 hast du bereits erste Quellen zu deiner Stoffsammlung notiert. Jetzt lernst du die Regeln des <strong>Urheber- und Lizenzrechts</strong> genauer kennen. Sobald ein Mensch ein Foto schießt, einen Text schreibt, eine Grafik zeichnet oder Musik komponiert, entsteht automatisch das <strong>Urheberrecht</strong> – auch ohne ein kleines ©-Zeichen.</p>
-<p>Fremde Werke darfst du nicht einfach beliebig ins Netz stellen. Neben der Verwendung <strong>eigener</strong> Fotos und Zeichnungen helfen dir <strong>Lizenzmodelle</strong> wie <strong>Creative Commons (CC)</strong>. Über vier einfache Kürzel legt die Urheberin fest, was erlaubt ist:</p>
+<p>Fremde Werke darfst du nicht einfach beliebig weitergeben oder ins Netz stellen. Neben der Verwendung <strong>eigener</strong> Fotos und Zeichnungen helfen dir <strong>Lizenzmodelle</strong> wie <strong>Creative Commons (CC)</strong>. Über vier einfache Kürzel legt die Urheberin fest, was beim Nutzen und Weitergeben erlaubt ist:</p>
 <ul>
-<li><code>CC0</code> (gemeinfrei): Nutzung und Veränderung sind ohne einschränkende Pflichten frei erlaubt.</li>
-<li><code>BY</code> (Namensnennung): Du musst Urheber, Titel, Lizenz und Fundstelle nennen.</li>
-<li><code>SA</code> (Weitergabe unter gleichen Bedingungen): Bearbeitete Fassungen müssen dieselbe Lizenz behalten.</li>
+<li><code>CC0</code> (gemeinfrei): Nutzung, Veränderung und Weitergabe sind ohne einschränkende Pflichten frei erlaubt.</li>
+<li><code>BY</code> (Namensnennung): Beim Weitergeben musst du Urheber, Titel, Lizenz und Fundstelle nennen.</li>
+<li><code>SA</code> (Weitergabe unter gleichen Bedingungen): Geteilte bearbeitete Fassungen müssen dieselbe Lizenz behalten.</li>
 <li><code>NC</code> (nicht kommerziell): Keine Nutzung für kommerzielle Zwecke bzw. Verkauf.</li>
-<li><code>ND</code> (keine Bearbeitung): Das Werk darfst du nicht verändern, zuschneiden oder verfremden.</li>
+<li><code>ND</code> (keine Bearbeitung): Du darfst eine bearbeitete oder zugeschnittene Fassung <strong>nicht veröffentlichen oder weitergeben</strong> (für eigene rein private Notizen ohne Weitergabe bleibt das Anpassen jedoch erlaubt).</li>
 </ul>
-<div class="example"><strong>Beispiel:</strong> Ein Foto steht unter <code>CC BY-NC</code>. Du darfst es im unveröffentlichten oder nicht-kommerziellen Schulprojekt einbauen und musst Urheber, Titel, Link, Abrufdatum und <code>CC BY-NC</code> angeben. Auf verkaufte Schulfest-T-Shirts darf das Motiv wegen <code>NC</code> nicht. Eine Angabe wie „Quelle: Google“ ist <strong>niemals</strong> gültig.</div>
-<div class="merke"><strong>Merke:</strong> Fremde Werke stehen automatisch unter Urheberrecht. Nutze eigene Werke oder freie Lizenzen wie Creative Commons, beachte jedes Lizenzkürzel (<code>BY</code>, <code>SA</code>, <code>NC</code>, <code>ND</code>) und gib eine vollständige Quelle an – niemals bloß eine Suchmaschine.</div>`,
+<div class="example"><strong>Beispiel:</strong> Ein Foto steht unter <code>CC BY-NC</code>. Du darfst es im nicht-kommerziellen Schulprojekt einbauen und musst Urheber, Titel, Link, Abrufdatum und <code>CC BY-NC</code> angeben. Auf verkaufte Schulfest-T-Shirts darf das Motiv wegen <code>NC</code> nicht. Eine Angabe wie „Quelle: Google“ ist <strong>niemals</strong> gültig.</div>
+<div class="merke"><strong>Merke:</strong> Fremde Werke stehen automatisch unter Urheberrecht. Nutze eigene Werke oder freie Lizenzen wie Creative Commons, beachte jedes Lizenzkürzel (<code>BY</code>, <code>SA</code>, <code>NC</code>, <code>ND</code> beim Teilen) und gib eine vollständige Quelle an – niemals bloß eine Suchmaschine.</div>`,
       rule: "Urheberrecht gilt automatisch · CC-Kürzel beachten (BY, SA, NC, ND) · Suchmaschinen sind keine Quellen",
       terms: [
         ["Urheberrecht", "Schützt automatisch Texte, Fotos, Grafiken, Musik und Videos", "Gilt ab Erstellung auch ohne ©-Symbol"],
-        ["Creative Commons (CC)", "BY = Namensnennung · SA = gleiche Lizenz · NC = nicht kommerziell · ND = keine Bearbeitung · CC0 = frei", "Erlaubt Nutzung unter festen Bedingungen"],
+        ["Creative Commons (CC)", "BY = Namensnennung · SA = gleiche Lizenz · NC = nicht kommerziell · ND = keine bearbeitete Fassung teilen · CC0 = frei", "Erlaubt Nutzung unter festen Bedingungen"],
         ["Vollständige Quellenangabe", "Urheber · Titel · genaue URL / Buch · Lizenz · Abrufdatum", "„Quelle: Google“ reicht nicht"],
       ],
       quiz: [
-        "Was verlangt das Lizenzkürzel ‚ND‘ bei einem Bild mit der Lizenz ‚CC BY-ND‘?",
-        "Du darfst das Bild zwar mit Namensnennung verwenden, es aber nicht verändern oder bearbeiten",
-        "Du musst weder Urheber noch Webseite als Quelle nennen",
-        "Du darfst das Bild nur nachts herunterladen",
-        "ND steht für ‚No Derivatives‘ (keine Bearbeitung): Das Werk bleibt unverändert.",
+        "Was verbietet das Lizenzkürzel ‚ND‘ bei einem Bild mit der Lizenz ‚CC BY-ND‘?",
+        "Bearbeitete Fassungen dieses Werks weiterzugeben",
+        "Das unveränderte Werk mit voller Quelle anzuzeigen",
+        "Das bearbeitete Bild nur für eigene Notizen zu nutzen",
+        "ND steht für ‚No Derivatives‘: Rein privat darfst du das Werk zuschneiden, aber veränderte Fassungen darfst du nicht teilen oder veröffentlichen.",
       ],
       lab: ccWerkstattLab,
       exercises: [
@@ -1312,24 +1351,24 @@ export const STAGE_INFORMATIONSAUSTAUSCH: Stage = {
               "Ein Foto im Internet trägt kein ©-Symbol und keinen Hinweis zur Lizenz. Darfst du es einfach für deine Klassen-Webseite übernehmen?",
               "Nein, das Urheberrecht schützt jedes fremde Werk automatisch ab seiner Erstellung",
               [
-                "Ja, ohne ©-Symbol gehört das Bild automatisch allen",
-                "Ja, wenn du es mit einem Bildprogramm etwas heller machst",
+                "Ja, ohne ©-Symbol gehört das Bild automatisch zu Creative Commons",
+                "Ja, wenn du es mit einem Bildprogramm zuschneidest oder umfärbst",
               ],
               "Das Urheberrecht entsteht automatisch und erfordert Erlaubnis oder eine passende freie Lizenz.",
               "Braucht das Urheberrecht in Deutschland ein besonderes ©-Symbol?",
             ),
             cc(
-              "Du findest eine Zeichnung unter ‚CC BY‘. Welche Bedingung musst du bei der Verwendung auf jeden Fall erfüllen?",
+              "Du findest eine Zeichnung unter ‚CC BY‘ und willst sie in einem Handout weitergeben. Welche Bedingung musst du auf jeden Fall erfüllen?",
               "Urheber, Titel, genaue Fundstelle und die Lizenz ‚CC BY‘ angeben",
               [
-                "Eine Lizenzgebühr an die Suchmaschine überweisen",
-                "Die Zeichnung vorher unbedingt schwarzweiß drucken",
+                "Es reicht, unter das Bild nur den Namen der Suchmaschine zu schreiben",
+                "Eine CC-BY-Zeichnung darf ausschließlich im privaten Ordner gespeichert werden",
               ],
               "BY verpflichtet zur Namensnennung mit Titel, Link und Angabe der Lizenz.",
               "Wofür steht das Kürzel BY bei Creative Commons?",
             ),
             cc(
-              "Welches Lizenzmodell verzichtet auf weitere Einschränkungen und erlaubt sogar eine freie Nutzung ohne Verpflichtungen?",
+              "Welches Lizenzmodell verzichtet auf weitere Einschränkungen und erlaubt sogar eine Nutzung ohne verpflichtende Bedingungen?",
               "CC0 (gemeinfrei)",
               ["CC BY-ND", "Alle Rechte vorbehalten"],
               "Mit CC0 verzichtet der Urheber auf einschränkende Vorbehalte und gibt das Werk gemeinfrei frei.",
@@ -1338,21 +1377,21 @@ export const STAGE_INFORMATIONSAUSTAUSCH: Stage = {
           ],
           [
             cc(
-              "Für das Schulfest-Programmheft soll ein Foto unter ‚CC BY-ND‘ zugeschnitten und mit lustigen Sprechblasen beklebt werden. Ist das erlaubt?",
-              "Nein, denn ND verbietet jede Bearbeitung oder Veränderung des Werks",
+              "Für die öffentlich verteilte Schülerzeitung soll ein Foto unter ‚CC BY-ND‘ zugeschnitten und mit Sprechblasen veröffentlicht werden. Ist die Weitergabe dieser Bearbeitung erlaubt?",
+              "Nein, denn ND erlaubt keine Veröffentlichung bearbeiteter Fassungen (nur rein private Anpassungen ohne Teilen)",
               [
-                "Ja, denn BY erlaubt automatisch jede Veränderung",
-                "Ja, solange das Heft bunt gedruckt wird",
+                "Ja, denn BY erlaubt automatisch jede Veränderung auch beim Veröffentlichen",
+                "Ja, solange du das veränderte Bild deutlich kleiner darstellst",
               ],
-              "Wegen ND (keine Bearbeitung) darfst du das Foto nur unverändert einbinden – Sprechblasen verändern das Werk.",
-              "Achte genau auf die Bedeutung des Zusatzes ‚ND‘.",
+              "Wegen ND darfst du das Foto nur unverändert teilen oder veröffentlichen – für bloße eigene Notizen wäre eine Anpassung erlaubt.",
+              "Unterscheide genau: privates Bearbeiten ohne Teilen vs. Veröffentlichen der Bearbeitung unter ‚ND‘.",
             ),
             cc(
               "Eine Schülerfirma verkauft selbst gestaltete Postkarten auf dem Weihnachtsmarkt und möchte eine Grafik mit ‚CC BY-NC‘ aufdrucken. Darf sie das?",
               "Nein, denn ‚NC‘ verbietet die kommerzielle Nutzung bzw. den Verkauf",
               [
-                "Ja, solange der Preis unter fünf Euro liegt",
-                "Ja, wenn ‚NC‘ ganz klein auf der Rückseite steht",
+                "Ja, solange der gesamte Erlös für ein Schulprojekt gedacht ist",
+                "Ja, wenn der Name des Urhebers auf der Rückseite abgedruckt wird",
               ],
               "NC (Non-Commercial) schließt kommerzielle Verwendung gegen Bezahlung aus.",
               "Prüfe das Kürzel ‚NC‘ im Lizenzmodell!",
@@ -1361,8 +1400,8 @@ export const STAGE_INFORMATIONSAUSTAUSCH: Stage = {
               "Du bearbeitest eine Landkarte mit ‚CC BY-SA‘ für dein Referat und lädst die neue Karte auf der freien Schulplattform hoch. Was fordert ‚SA‘?",
               "Die neue bearbeitete Karte muss wieder unter derselben Lizenz ‚CC BY-SA‘ weitergegeben werden",
               [
-                "Du musst alle anderen Bilder in der Präsentation löschen",
-                "Du darfst das Wort ‚Bayern‘ nicht verändern",
+                "Die neue bearbeitete Karte muss unter ‚CC0‘ ohne Namensnennung stehen",
+                "Du musst alle anderen Bilder auf derselben Seite ebenfalls unter ‚CC BY-SA‘ stellen",
               ],
               "SA (Share Alike) sichert, dass Weiterentwicklungen frei bleiben und unter gleichen Bedingungen geteilt werden.",
               "Wofür steht ‚SA‘ (Weitergabe unter gleichen Bedingungen)?",
@@ -1386,8 +1425,8 @@ export const STAGE_INFORMATIONSAUSTAUSCH: Stage = {
               "Welche Bausteine gehören zu einer vollständigen Online-Quellenangabe für eine frei lizenzierte Grafik?",
               "Urheber, Titel, genaue Internetadresse (URL), Abrufdatum und Lizenzname",
               [
-                "Nur das Wort ‚Internet‘ und der Browsername",
-                "Ausschließlich die Dateigröße in Kilobyte",
+                "Nur der Name der Plattform (z. B. ‚Wikipedia‘) und der Suchbegriff",
+                "Ausschließlich die Überschrift der Präsentation und das Dateiformat",
               ],
               "Nur mit allen fünf Angaben lässt sich die Herkunft eindeutig nachweisen und die Lizenz einhalten.",
               "Welche Infos braucht man, um genau das Bild samt Lizenz prüfen zu können?",
@@ -1396,8 +1435,8 @@ export const STAGE_INFORMATIONSAUSTAUSCH: Stage = {
               "Warum notierst du bei Internetquellen immer das Abrufdatum?",
               "Weil Webseiten sich später verändern oder gelöscht werden können",
               [
-                "Weil Texte sonst nach einer Woche unsichtbar werden",
-                "Weil sonst die Datei auf dem USB-Stick nicht speichert",
+                "Weil Links zu Webseiten nach einer Woche technisch verfallen",
+                "Weil jede Quelle erst nach Angabe des Datums zitierfähig wird",
               ],
               "Das Abrufdatum hält fest, wann genau der zitierte Stand online zu lesen war.",
               "Bleibt eine Internetseite dauerhaft unverändert?",
@@ -1408,8 +1447,8 @@ export const STAGE_INFORMATIONSAUSTAUSCH: Stage = {
               "Du nimmst für ein Referat über die Donau selbst ein Foto am Flussufer auf. Wie kennzeichnet man es am besten?",
               "Mit dem Hinweis ‚Eigenes Foto‘ (und Datum/Ort), weil du selbst Urheberin oder Urheber bist",
               [
-                "Mit ‚Quelle: Google‘ zur Sicherheit",
-                "Mit der Lizenz eines fremden Lexikons",
+                "Mit ‚Quelle: Google‘ zur Absicherung",
+                "Mit der Lizenz eines fremden Online-Lexikons",
               ],
               "Auch bei eigenen Bildern macht ein kurzer Hinweis sofort klar, dass keine fremden Rechte verletzt wurden.",
               "Wem gehören selbst aufgenommene Fotos?",
@@ -1418,8 +1457,8 @@ export const STAGE_INFORMATIONSAUSTAUSCH: Stage = {
               "Du nutzt für einen Vortrag im Klassenzimmer ein Zitat aus einem gedruckten Lexikon. Was gehört in die Quellenangabe?",
               "Autor oder Herausgeber, Buchtitel, Erscheinungsjahr und Seitenzahl",
               [
-                "Nur ‚ein dickes Buch aus dem Regal‘",
-                "Eine erfundene Internetadresse",
+                "Nur der Titel des Referats und ‚Aus einem Lexikon‘",
+                "Eine geschätzte Internetadresse desselben Verlags",
               ],
               "Auch gedruckte Bücher werden genau mit Titel, Herausgeber, Jahr und Seitenzahl belegt.",
               "Wie findet eine Leserin deine Textstelle im Buch exakt wieder?",
@@ -1428,8 +1467,8 @@ export const STAGE_INFORMATIONSAUSTAUSCH: Stage = {
               "Ein Mitschüler schlägt vor, einfach ‚Bild: Wikipedia‘ unter jedes Foto zu schreiben und die Lizenz wegzulassen. Reicht das bei CC-BY-Bildern?",
               "Nein, es fehlen der eigentliche Urheber, der genaue Dateilink, das Abrufdatum und der Lizenzname",
               [
-                "Ja, ‚Wikipedia‘ allein reicht für jedes Foto im Internet",
-                "Ja, solange das Bild kleiner als ein Viertel der Seite ist",
+                "Ja, ‚Wikipedia‘ allein reicht als Plattform-Angabe für jedes Foto",
+                "Ja, solange die Bilder nur innerhalb einer Präsentation gezeigt werden",
               ],
               "Der Plattformname ersetzt weder den Namen des Fotografen noch die verpflichtende Lizenzangabe.",
               "Wer ist Urheber eines Fotos auf Wikimedia Commons – die Plattform oder der Fotograf?",
@@ -1460,11 +1499,11 @@ export const STAGE_INFORMATIONSAUSTAUSCH: Stage = {
         ["Recht am eigenen Bild", "Jede Person bestimmt selbst über Fotos und Videos von sich", "Fremde Aufnahmen nie ungefragt teilen"],
       ],
       quiz: [
-        "Welcher Grundsatz schützt deine Privatsphäre bei der Anmeldung auf einer Freizeitplattform am wirksamsten?",
-        "Datensparsamkeit: nur unbedingt nötige Angaben machen und statt des vollen Namens einen Spitznamen wählen",
-        "Möglichst immer echte Wohnadresse und Handynummer öffentlich eintragen",
-        "Dasselbe Profilfoto gemeinsam mit Namen und Schuladresse posten",
-        "Je weniger persönliche Daten auf Plattformen liegen, desto geringer ist die Gefahr von Missbrauch durch Dritte.",
+        "Welcher Grundsatz schützt deine Daten bei der Anmeldung auf einer Freizeitplattform am wirksamsten?",
+        "Datensparsamkeit: nur nötige Felder füllen und Spitznamen",
+        "Profil auf privat stellen und dort echte Wohnadresse eintragen",
+        "Ein starkes Passwort wählen, dann ist Datensparsamkeit unnötig",
+        "Je weniger persönliche Daten auf Plattformen liegen, desto geringer ist das Risiko bei Datenlecks oder Missbrauch durch Dritte.",
       ],
       lab: datenLab,
       exercises: [
@@ -1485,8 +1524,8 @@ export const STAGE_INFORMATIONSAUSTAUSCH: Stage = {
               "Auf einem Klassenfoto sind zwölf Kinder deutlich erkennbar. Darf man das Foto einfach öffentlich hochladen?",
               "Nein, wegen des Rechts am eigenen Bild braucht man die Einwilligung der Abgebildeten (bei Kindern der Eltern)",
               [
-                "Ja, sobald man selbst auch auf dem Bild zu sehen ist",
-                "Ja, wenn das Bild am Dienstag aufgenommen wurde",
+                "Ja, sobald man selbst auch mit auf dem Gruppenfoto zu sehen ist",
+                "Ja, solange kein Vor- und Nachname unter dem Foto steht",
               ],
               "Jeder abgebildete Mensch entscheidet mit, ob Aufnahmen von ihm veröffentlicht werden.",
               "Welches Recht schützt Menschen auf Fotos und Videos?",
@@ -1495,8 +1534,8 @@ export const STAGE_INFORMATIONSAUSTAUSCH: Stage = {
               "Warum sollte eine einfache Notiz-App keinen dauerhaften Zugriff auf deinen genauen GPS-Standort erhalten?",
               "Weil sie den Standort für Notizen gar nicht braucht und so unnötig persönliche Bewegungsdaten sammelt",
               [
-                "Weil GPS sonst Buchstaben auf dem Bildschirm verdreht",
-                "Weil Notizen nur ohne Strom funktionieren",
+                "Weil Standortdaten eine feste Internetverbindung verlangen, sonst verschwinden Notizen",
+                "Weil die Notiz-App ohne GPS automatisch keine Fotos mehr speichern kann",
               ],
               "Nach dem Prinzip der Datensparsamkeit vergibst du nur notwendige App-Berechtigungen.",
               "Braucht eine Notiz-App deinen Aufenthaltsort?",
@@ -1507,8 +1546,8 @@ export const STAGE_INFORMATIONSAUSTAUSCH: Stage = {
               "In einem öffentlich einsehbaren Forum steht kein Vor- und Nachname, aber: ‚Der Sechstklässler aus Zimmer 204 der Grund- und Mittelschule Musterdorf, der gestern beim Radrennen gewonnen hat.‘ Sind das personenbezogene Daten?",
               "Ja, denn über diese Hinweise lässt sich genau eine Person eindeutig bestimmen",
               [
-                "Nein, weil der Vorname nicht genannt wurde",
-                "Nein, weil Schulsport niemals persönlich sein kann",
+                "Nein, erst die Kombination aus vollem Namen und Wohnadresse gilt als personenbezogen",
+                "Nein, weil schulische Erfolge allgemein öffentliche Tatsachen sind",
               ],
               "Auch indirekt identifizierbare Angaben zählen zu den personenbezogenen Daten.",
               "Kann man die gemeinte Person trotz fehlendem Namen zweifelsfrei herausfinden?",
@@ -1517,8 +1556,8 @@ export const STAGE_INFORMATIONSAUSTAUSCH: Stage = {
               "Ein Mitschüler will deinen Schul-Account schnell für ein Referat mitbenutzen, weil er sein eigenes Kennwort vergessen hat. Was ist richtig?",
               "Zugangsdaten geheim halten und den Mitschüler die Lehrkraft um Hilfe für seinen eigenen Account bitten lassen",
               [
-                "Ihm dein Passwort auf einen Zettel schreiben",
-                "Ihn unter deinem Namen weiterarbeiten lassen, bis er fertig ist",
+                "Ihm dein Passwort kurz aufschreiben, wenn er es nach der Stunde wieder vergisst",
+                "Ihn unter deinem Konto tippen lassen, solange du selbst daneben sitzen bleibst",
               ],
               "Wer unter deinem Konto handelt, greift auf deine privaten Daten zu; Handlungen werden dir zugerechnet.",
               "Warum bleiben Zugangsdaten streng persönlich?",
@@ -1527,11 +1566,11 @@ export const STAGE_INFORMATIONSAUSTAUSCH: Stage = {
               "Was bedeutet es für den Informatikraum, wenn du am Ende der Stunde noch kurz die Pausenglocke hörst und sofort aufstehst?",
               "Du musst dich trotzdem kurz abmelden oder den Bildschirm sperren, damit niemand auf deine Daten zugreift",
               [
-                "Der nächste Schüler meldet dich schon irgendwann ab",
-                "Solange der Monitor ausgeschaltet wird, ist dein Konto sicher abgemeldet",
+                "Der Schulrechner meldet geöffnete Konten sofort beim Klingeln von allein ab",
+                "Solange du nur den Monitor ausschaltest, ist dein Benutzerkonto sicher gesperrt",
               ],
               "Nur den Bildschirm auszuschalten sperrt das Konto nicht – jeder Handgriff danach wäre weiterhin in deinem Namen.",
-              "Reicht es, lediglich den Monitor auszuknipsen?",
+              "Reicht es, lediglich den Monitor auszuschalten?",
             ),
           ],
         ),
@@ -1542,8 +1581,8 @@ export const STAGE_INFORMATIONSAUSTAUSCH: Stage = {
               "Welche Einstellung schützt ein verlorenes oder kurz liegengelassenes Smartphone sofort vor fremden Blicken?",
               "Eine automatische Bildschirmsperre mit PIN, Muster oder Biometrie",
               [
-                "Eine besonders helle Hintergrundbeleuchtung",
-                "Das Ausschalten der Lautstärke",
+                "Die Deaktivierung aller Benachrichtigungen im Flugmodus",
+                "Das Ausblenden von App-Symbolen auf der ersten Startseite",
               ],
               "Ohne Bildschirmsperre kann jede fremde Person sofort Nachrichten, Fotos und Konten öffnen.",
               "Wie verhinderst du, dass Finder direkt auf deine Apps zugreifen?",
@@ -1552,8 +1591,8 @@ export const STAGE_INFORMATIONSAUSTAUSCH: Stage = {
               "Ein neues Online-Quiz möchte neben einem Spitznamen unbedingt deine echte Telefonnummer und deinen Schulnamen wissen, um eine Urkunde anzuzeigen. Wie entscheidest du?",
               "Keine echten Privatdaten angeben oder ein seriöses Angebot ohne Datenzwang wählen",
               [
-                "Alle Daten wahrheitsgemäß eintragen, damit es schnell geht",
-                "Die Telefonnummer deiner Mitschülerin statt deiner eigenen eintippen",
+                "Alle Daten wahrheitsgemäß eintragen, damit der Dienst keine Fehlermeldung zeigt",
+                "Stattdessen die Telefonnummer deiner Eltern oder Freunde eintragen",
               ],
               "Unnötige Datensammlungen meidest du konsequent (Datensparsamkeit); fremde Daten gibt man ohnehin nie ein.",
               "Darfst du für ein einfaches Online-Quiz deine Privatnummer preisgeben?",
@@ -1562,8 +1601,8 @@ export const STAGE_INFORMATIONSAUSTAUSCH: Stage = {
               "Wann prüfst du die Berechtigungen einer App am sinnvollsten?",
               "Bereits beim Installieren und regelmäßig in den Geräteeinstellungen",
               [
-                "Erst wenn das Gerät gar keinen Speicherplatz mehr hat",
-                "Niemals, Apps brauchen immer alle Rechte",
+                "Erst wenn das Gerät eine Meldung zu knappem Speicherplatz anzeigt",
+                "Gar nicht, da Apps aus offiziellen Stores ohnehin nur nötige Rechte anfordern",
               ],
               "Unnötige Zugriffe auf Kontakte, Kamera, Mikrofon und Standort verhinderst du direkt beim Einrichten.",
               "Wann kannst du überflüssige App-Rechte abdrehen?",
@@ -1574,8 +1613,8 @@ export const STAGE_INFORMATIONSAUSTAUSCH: Stage = {
               "Eine kostenlose Fotobearbeitungs-App möchte im Hintergrund deine Kontakte, deinen Standort und den Kalender auslesen. Was machst du?",
               "Kontakte, Standort und Kalender verweigern – zum Bildbearbeiten reicht gezielter Zugriff auf ausgewählte Fotos",
               [
-                "Alles erlauben, weil kostenlose Apps sonst langsamer rechnen",
-                "Nur den Kalender sperren, aber das gesamte Telefonbuch freigeben",
+                "Alles erlauben, weil kostenlose Apps die Berechtigungen zur Farbberechnung brauchen",
+                "Nur den Kalender sperren, aber Standort und Kontakte freigeben",
               ],
               "Auch für gute Funktionen genügt der minimal nötige Zugriff auf einzelne gewählte Dateien.",
               "Welche Daten braucht ein Fotoprogramm wirklich?",
@@ -1584,8 +1623,8 @@ export const STAGE_INFORMATIONSAUSTAUSCH: Stage = {
               "Warum schaltest du im Browser nach der Arbeit auf einem fremden oder öffentlichen PC zusätzlich auf ‚Abmelden‘ (Logout) statt nur das Fenster zu schließen?",
               "Damit das angemeldete Konto sicher beendet ist und niemand beim nächsten Öffnen deine Sitzung übernimmt",
               [
-                "Weil der Browser beim Schließen alle Bilder ausdruckt",
-                "Damit die Tastatur für die nächste Person gereinigt wird",
+                "Weil der Browser beim bloßen Schließen eine Kopie der geheimen Passwörter auf dem Desktop ablegt",
+                "Weil das Schließen des Fensters offene Webseiten immer im Hintergrund weiter bearbeitet",
               ],
               "Auf fremden Geräten kann die Sitzung beim bloßen Schließen eines Tabs gespeichert bleiben – erst Abmelden beendet sie.",
               "Was passiert auf einem fremden PC, wenn man angemeldet bleibt?",
@@ -1595,7 +1634,7 @@ export const STAGE_INFORMATIONSAUSTAUSCH: Stage = {
               "Sofort endgültig löschen – niemand darf gegen seinen Willen fotografiert oder festgehalten werden",
               [
                 "Behalten und nur versprechen, es niemandem zu zeigen",
-                "Das Foto verkleinern und in einer privaten Gruppe posten",
+                "Das Foto unkenntlich zuschneiden und in einer privaten Gruppe posten",
               ],
               "Das Recht am eigenen Bild und Persönlichkeitsrechte verbieten unerwünschte Aufnahmen und verlangen das Löschen.",
               "Darf ein Bild gegen den Willen der abgebildeten Person behalten werden?",
@@ -1608,28 +1647,30 @@ export const STAGE_INFORMATIONSAUSTAUSCH: Stage = {
     lesson(STAGE_ID, "1", 5, {
       id: "ms6-passwoerter-virenschutz",
       title: "Sichere Passwörter und Schutz vor Schadsoftware",
-      subtitle: "Starke Passwörter nach der Merksatz-Methode bilden und Geräte mit Virenschutz sowie Updates absichern",
-      why: "Ein schwaches Passwort wie ‚123456‘ oder ein veraltetes Gerät öffnet fremden Personen in Sekunden die Tür zu all deinen Konten.",
-      html: `<p>Um deine Konten und Geräte vor unbefugtem Zugriff zu schützen, greifen <strong>sichere Passwörter</strong> und ein aktueller <strong>Schutz vor Schadsoftware</strong> Hand in Hand.</p>
+      subtitle: "Passwortlänge, Nicht-Erratbarkeit und Einzigartigkeit nutzen sowie Geräte absichern",
+      why: "Ein kurzes, erratbares oder mehrfach genutztes Passwort und fehlende Updates öffnen fremden Personen die Tür zu deinen Konten.",
+      html: `<p>Um deine Konten und Geräte vor unbefugtem Zugriff zu schützen, greifen <strong>starke Passwörter</strong> und ein aktueller <strong>Schutz vor Schadsoftware</strong> Hand in Hand.</p>
 <ul>
-<li><strong>Regeln für ein sicheres Passwort:</strong> Mindestens <code>12</code> Zeichen lang; Mischung aus <strong>Großbuchstaben</strong>, <strong>Kleinbuchstaben</strong>, <strong>Ziffern</strong> und <strong>Sonderzeichen</strong>; keine Namen, Geburtsdaten oder einfache Wörter aus dem Wörterbuch; für jeden wichtigen Dienst ein <strong>eigenes Passwort</strong>.</li>
-<li><strong>Merksatz-Methode:</strong> Bilde aus einem leicht merkbaren Satz die Anfangsbuchstaben und füge Zahlen sowie Zeichen ein. Aus „<em>Meine 6. Klasse hat heute Informatik um 8 Uhr!</em>“ wird etwa <code>M6KhhIu8U!</code> (oder noch etwas länger: <code>M6KhhI&amp;u8U!26</code>).</li>
-<li><strong>Virenschutzprogramme &amp; Updates:</strong> Ein aktuelles <strong>Virenschutzprogramm</strong> erkennt bekannte Schadsoftware (Viren, Trojaner). Genauso wichtig sind <strong>regelmäßige Updates</strong> für Betriebssystem und Apps, weil sie Sicherheitslücken schließen, und Vorsicht bei unbekannten E-Mail-Anhängen oder Downloads.</li>
+<li><strong>Länge und Nicht-Erratbarkeit statt starrer Sonderzeichen-Pflicht:</strong> Ein Passwort schützt vor allem durch seine <strong>Länge</strong>, dadurch, dass es <strong>nicht erratbar</strong> ist (keine Namen, Geburtsdaten, Tastaturmuster oder Wörterbuchwörter), und durch <strong>Einzigartigkeit</strong> (für jeden Dienst ein eigenes Passwort).</li>
+<li><strong>Zwei bewährte Wege (nach BSI-Empfehlung):</strong>
+  <br>– <em>Komplexes Passwort</em> mit mindestens <code>12</code> Zeichen aus verschiedenen Zeichenarten (z. B. über die <strong>Merksatz-Methode</strong> aus den Anfangsbuchstaben eines Satzes wie „Meine 6. Klasse hat heute Informatik um 8 Uhr!“ → <code>M6KhhI&amp;u8U!26</code>);
+  <br>– oder eine <em>lange Passphrase</em> mit etwa <code>20</code> bis <code>25</code> Zeichen aus schon zwei Zeichenarten, etwa vier unzusammenhängenden Wörtern mit Groß- und Kleinbuchstaben (z. B. <code>KranichWolkeTanneGabel</code>).</li>
+<li><strong>Virenschutzprogramme &amp; Updates:</strong> Ein aktuelles <strong>Virenschutzprogramm</strong> erkennt bekannte Schadsoftware (Viren, Trojaner). Genauso wichtig sind <strong>regelmäßige Updates</strong> für Betriebssystem und Apps, weil sie Sicherheitslücken schließen, sowie Vorsicht bei unbekannten Mail-Anhängen.</li>
 </ul>
-<div class="example"><strong>Beispiel:</strong> Ein vierstelliges Ziffern-Passwort hat nur <code>10 · 10 · 10 · 10 = 10 000</code> Möglichkeiten – ein Computer probiert das blitzschnell durch. Nutzt man <code>12</code> Zeichen aus <code>80</code> möglichen Zeichen (Groß, Klein, Ziffern, Sonderzeichen), steigt die Zahl der Möglichkeiten unvorstellbar stark an.</div>
-<div class="merke"><strong>Merke:</strong> Sichere Passwörter sind mindestens <code>12</code> Zeichen lang, nutzen alle vier Zeichenarten und keine Privatdaten – zusammen mit einem aktuellen <strong>Virenschutzprogramm</strong> und <strong>Updates</strong> schützen sie vor Fremdzugriff.</div>`,
-      rule: "Mind. 12 Zeichen + 4 Zeichenarten + Merksatz ohne Privatdaten + aktueller Virenschutz & Updates",
+<div class="example"><strong>Beispiel:</strong> <code>Haus#9!</code> nutzt zwar alle vier Zeichenarten, ist mit <code>7</code> Zeichen aber viel zu kurz – und steht es auf mehreren Seiten, gefährdet ein Leck alle Konten. Eine einzigartige Passphrase wie <code>KranichWolkeTanneGabel</code> (<code>22</code> Zeichen, 2 Zeichenarten) oder ein langer Merksatz wie <code>M6KhhI&amp;u8U!26</code> widerstehen automatischem Ausprobieren dagegen sehr stark.</div>
+<div class="merke"><strong>Merke:</strong> Stärke entsteht durch <strong>Länge</strong>, <strong>Nicht-Erratbarkeit</strong> (Passphrase mit <code>20</code>–<code>25</code> Zeichen aus 2 Arten oder mind. <code>12</code> Zeichen mit höherer Vielfalt) und <strong>ein eigenes Passwort je Dienst</strong> – ergänzt durch aktuellen <strong>Virenschutz</strong> und <strong>Updates</strong>.</div>`,
+      rule: "Stark = lang + nicht erratbar (z. B. ≥ 20 Z. mit 2 Arten oder ≥ 12 Z. komplex) + je Dienst einzigartig + Updates",
       terms: [
-        ["Sicheres Passwort", "Mind. 12 Zeichen · Groß, Klein, Ziffern, Sonderzeichen · keine Namen/Daten · je Dienst einzigartig", "Merksatz-Methode erleichtert das Erinnern"],
+        ["Starkes Passwort / Passphrase", "Nicht erratbar + je Dienst einzigartig: ca. 20–25 Zeichen (2 Arten) oder mind. 12 Zeichen (komplex)", "Länge schlägt starre Sonderzeichen-Tricks"],
         ["Virenschutzprogramm", "Prüft Dateien und Downloads auf bekannte Schadsoftware", "Muss stets aktuell gehalten werden"],
         ["Schadsoftware & Updates", "Viren oder Trojaner nutzen oft veraltete Programme aus", "Sicherheitsupdates zeitnah installieren"],
       ],
       quiz: [
-        "Welches Passwort ist am sichersten und lässt sich mit einem Merksatz gut behalten?",
-        "I6M#l2026!wS (aus einem langen Merksatz ohne eigenen Namen oder Geburtsdatum)",
-        "Lukas2014 (Vorname und Geburtsjahr)",
-        "123456789012 (zwölf aufeinanderfolgende Ziffern)",
-        "Nur ein Passwort mit mindestens 12 Zeichen, vier Zeichenarten und ohne persönliche Daten oder einfache Reihen widersteht automatischem Ausprobieren.",
+        "Welches Konto-Passwort bietet laut BSI-Empfehlung verlässlichen Schutz?",
+        "KranichWolkeTanneGabel (22 Zeichen, nur für einen Dienst)",
+        "Haus#9! (alle vier Zeichenarten, auch für zwei weitere Shops)",
+        "Lukas2014!Bayern (Vorname, Geburtsjahr und Ausrufezeichen)",
+        "Länge, Unvorhersehbarkeit (keine Privatdaten) und Einzigartigkeit je Dienst zählen am meisten – auch eine 22-stellige Passphrase aus zwei Zeichenarten ist sehr stark.",
       ],
       lab: passwortLab,
       exercises: [
@@ -1637,31 +1678,31 @@ export const STAGE_INFORMATIONSAUSTAUSCH: Stage = {
           "ms6-passwort-bewerten",
           [
             cc(
-              "Was macht den Ausdruck ‚Hund123!‘ für ein wichtiges Konto trotz Ziffer und Sonderzeichen noch angreifbar?",
-              "Es ist zu kurz (8 Zeichen) und enthält ein bekanntes Wörterbuchwort samt simpler Zahlenreihe",
+              "Warum bleibt das Passwort ‚Hund123!‘ für ein wichtiges Konto trotz Großbuchstabe, Ziffer und Ausrufezeichen angreifbar?",
+              "Es ist mit 8 Zeichen zu kurz und kombiniert nur ein bekanntes Wörterbuchwort mit einer simplen Zahlenreihe",
               [
-                "Es enthält ein Ausrufezeichen, das verboten ist",
-                "Es beginnt mit einem Großbuchstaben",
+                "Weil es nicht die maximale Länge von exakt zwölf Sonderzeichen erreicht",
+                "Weil jedes starke Passwort verpflichtend mindestens zwei Ziffern enthalten muss",
               ],
-              "Wörterbuchwörter mit angehängtem ‚123!‘ stehen in jeder Angreiferliste und die Länge liegt unter 12 Zeichen.",
-              "Vergleiche Länge und Aufbau mit unseren vier Passwort-Regeln.",
+              "Wörterbuchwörter mit angehängtem ‚123!‘ stehen in jeder Angreiferliste und die Länge ist zu kurz – egal wie viele Zeichenarten darin stecken.",
+              "Prüfe Länge und Erratbarkeit statt nur nach einem Sonderzeichen zu schauen.",
             ),
             cc(
               "Warum solltest du nicht überall genau dasselbe Passwort verwenden?",
               "Wird ein einziger Dienst gehackt, wären sonst sofort alle anderen Konten ebenfalls gefährdet",
               [
-                "Weil ein Computer sonst die Buchstaben vertauscht",
-                "Weil jede Webseite das erste Passwort nach sieben Tagen löscht",
+                "Weil sich dasselbe Passwort nach einigen Monaten technisch von selbst abnutzt",
+                "Weil Suchmaschinen gleiche Passwörter in verschiedenen Apps automatisch sperren",
               ],
-              "Eigene Passwörter (oder Passwort-Zusätze pro Dienst) begrenzen Schäden auf genau einen Dienst.",
+              "Einzigartige Passwörter je Dienst (oder mit sicherem Passwort-Manager) begrenzen Schäden bei Datenlecks auf genau einen Dienst.",
               "Was passiert, wenn eines deiner Konten ein Datenleck hat?",
             ),
             cc(
               "Welche zwei Maßnahmen schützen deinen Rechner technisch am zuverlässigsten vor Schadsoftware?",
               "Ein aktuelles Virenschutzprogramm und das regelmäßige Einspielen von Sicherheitsupdates",
               [
-                "Den Bildschirm besonders dunkel stellen und den Ton abschalten",
-                "Alle Programme auf dem Desktop alphabetisch anordnen",
+                "Immer denselben Browser verwenden und den Arbeitsspeicher abends leeren",
+                "Programme im Anwendungsordner regelmäßig umbenennen und verschieben",
               ],
               "Updates schließen bekannte Sicherheitslücken und der Virenschutz prüft Dateien laufend auf Schädlinge.",
               "Wie wehrt man bekannte Lücken und infizierte Dateien ab?",
@@ -1669,21 +1710,21 @@ export const STAGE_INFORMATIONSAUSTAUSCH: Stage = {
           ],
           [
             cc(
-              "Eine Schülerin bildet nach der Merksatz-Regel aus ‚Jeden Montag trinke ich 2 Tassen Tee um 7 Uhr!‘ das Passwort ‚JMti2TTu7U!‘. Wie beurteilst du das Ergebnis?",
-              "Sehr guter Ansatz (Groß, Klein, Ziffern, Sonderzeichen, keine Privatdaten) – mit einem weiteren Zeichen erreicht es mindestens 12 Stellen",
+              "Eine Schülerin wählt für ihr Schul-Cloud-Konto allein die 22 Zeichen lange, zufällig kombinierte Passphrase ‚KranichWolkeTanneGabel‘ (nur Groß- und Kleinbuchstaben, keine Sonderzeichen). Wie beurteilst du das Ergebnis?",
+              "Sehr stark – mit 22 Zeichen aus 2 Zeichenarten, ohne Privatdaten und einzigartig für einen Dienst erfüllt sie die BSI-Empfehlung",
               [
-                "Völlig unbrauchbar, weil eine Zahl vorkommt",
-                "Unsicher, weil jemand ihren Wochentag leicht erraten kann",
+                "Völlig unsicher – ohne mindestens eine Ziffer und ein Sonderzeichen ist jedes Passwort in Sekunden geknackt",
+                "Zu lang zum sicheren Speichern, sodass ein Browser die letzten Zeichen abschneidet",
               ],
-              "Der Merksatz kombiniert alle Zeichenarten; ab 12 Zeichen (11 sind hier noch eines zu kurz) erfüllt es alle Regeln.",
-              "Zähle die Länge von ‚JMti2TTu7U!‘ genau nach und prüfe die Zeichenarten.",
+              "Es gibt keine starre Pflicht zu allen vier Zeichenarten: Eine lange, nicht erratbare und einzigartige Passphrase (20–25 Zeichen, 2 Arten) bietet sehr hohen Schutz.",
+              "Vergleiche das Zusammenspiel von großer Länge, Nicht-Erratbarkeit und Einzigartigkeit.",
             ),
             cc(
               "Du bekommst eine E-Mail von einem unbekannten Absender mit dem Anhang ‚Gewinn_Dokument.exe‘. Wie reagierst du richtig?",
               "Anhang nicht öffnen, E-Mail löschen oder bei Unklarheit eine vertraute Person fragen",
               [
-                "Kurz anklicken, um zu sehen, ob ein Gewinn darin steht",
-                "Erst das Passwort deines Kontos als Antwort zurückschicken",
+                "Anhang erst einmal öffnen, um im Textfenster nachzusehen, worum es geht",
+                "Dem Absender kurz antworten und nach dem Namen der Firma fragen",
               ],
               "Ausführbare Dateien (.exe) von unbekannten Absendern enthalten häufig Schadsoftware.",
               "Ist ein unbekannter Programm-Anhang harmlos?",
@@ -1692,8 +1733,8 @@ export const STAGE_INFORMATIONSAUSTAUSCH: Stage = {
               "Warum genügt ein Virenschutzprogramm allein nicht, wenn jemand auf dem Rechner alle Betriebssystem-Updates ein Jahr lang ablehnt?",
               "Veraltete Programme behalten bekannte Sicherheitslücken, durch die neue Angriffe eindringen können",
               [
-                "Weil der Virenschutz ohne Updates keine Farben mehr darstellen kann",
-                "Weil das Passwort sich automatisch auf ‚1234‘ zurücksetzt",
+                "Weil der Virenschutz nach zwölf Monaten automatisch alle Passwörter deaktiviert",
+                "Weil ohne Systemupdates jede WLAN-Verbindung unverschlüsselt übertragen wird",
               ],
               "Virenschutz und zeitnahe Updates ergänzen sich als Schutzschicht gegen unterschiedliche Angriffe.",
               "Was genau reparieren regelmäßige Software-Updates?",
@@ -1801,9 +1842,9 @@ export const STAGE_INFORMATIONSAUSTAUSCH: Stage = {
       ],
       quiz: [
         "Warum schützt eine Kopie deines Referats in einem zweiten Ordner derselben Laptop-Festplatte nicht zuverlässig?",
-        "Geht die Festplatte kaputt oder wird der Laptop gestohlen, sind beide Kopien gleichzeitig verloren",
-        "Weil man Kopien auf demselben Laptop gar nicht wieder öffnen darf",
-        "Weil sich Dateien in einem zweiten Ordner von selbst in PDF verwandeln",
+        "Beide Kopien liegen auf derselben Platte und fallen aus",
+        "Ein zweiter Ordner belegt zu viel Speicher auf der Platte",
+        "Einmaliges Speichern mit Strg+S schützt ebenso gegen Defekte",
         "Nur ein räumlich und technisch getrenntes Medium (z. B. USB-Stick oder Cloud) übersteht einen Festplattenschaden oder Geräteverlust.",
       ],
       lab: backupLab,
@@ -1815,8 +1856,8 @@ export const STAGE_INFORMATIONSAUSTAUSCH: Stage = {
               "Tim legt vor der Abgabe einen Ordner ‚Referat_Sicherung‘ auf dem Desktop desselben Computers an. Ist seine Arbeit damit gegen einen Festplattenschaden gesichert?",
               "Nein, beide Ordner liegen auf demselben Datenträger und fallen gemeinsam aus",
               [
-                "Ja, weil zwei verschiedene Ordnernamen ausreichen",
-                "Ja, weil der Desktop automatisch feuerfest ist",
+                "Ja, solange der Sicherungsordner mit einem eigenen Passwort geschützt ist",
+                "Ja, weil getrennte Ordnernamen auf dem Desktop unabhängig voneinander arbeiten",
               ],
               "Erst ein zweites, getrenntes Speichermedium schützt bei einem Defekt des Hauptlaufwerks.",
               "Auf welchem Bauteil liegen sowohl das Original als auch der zweite Ordner?",
@@ -1825,8 +1866,8 @@ export const STAGE_INFORMATIONSAUSTAUSCH: Stage = {
               "Was ist ein häufiger Grund dafür, dass wichtige Daten ohne jeden technischen Defekt verschwinden?",
               "Versehentliches Löschen, Überschreiben einer Datei oder Verlust eines ungesicherten USB-Sticks",
               [
-                "Ein zu langes Passwort mit Sonderzeichen",
-                "Zu viele sachliche Quellenangaben im Dokument",
+                "Das Umbenennen eines Projektordners von Groß- in Kleinbuchstaben",
+                "Das häufige Öffnen derselben Datei in verschiedenen Textprogrammen",
               ],
               "Bedienfehler wie versehentliches Löschen passieren täglich – ein Backup macht sie rückgängig.",
               "Kann ein Mensch wichtige Dateien aus Versehen selbst verlieren?",
@@ -1835,8 +1876,8 @@ export const STAGE_INFORMATIONSAUSTAUSCH: Stage = {
               "Warum lohnt sich eine kurze Probe-Wiederherstellung nach dem Backup?",
               "Damit man sicher weiß, dass die gesicherten Dateien vollständig und lesbar zurückgeladen werden können",
               [
-                "Damit der USB-Stick dadurch mehr Gigabyte Speicher erhält",
-                "Damit alle älteren Kopien automatisch gelöscht werden",
+                "Damit fehlerhafte Dateien automatisch komprimiert und repariert werden",
+                "Damit alle vorherigen Sicherungen sauber vom USB-Stick gelöscht werden",
               ],
               "Eine Sicherung, die sich im Ernstfall nicht öffnen lässt, nützt nichts – ein kurzes Prüfen gibt Sicherheit.",
               "Woher weißt du, ob ein Backup im Ernstfall wirklich funktioniert?",
@@ -1847,8 +1888,8 @@ export const STAGE_INFORMATIONSAUSTAUSCH: Stage = {
               "Eine Schülerin sichert ihr Jahresprojekt einmal im September und danach bis Mai nie wieder. Im Mai stürzt der Rechner ab. Welches Problem entsteht?",
               "Alle Änderungen aus fast acht Monaten fehlen im alten Backup",
               [
-                "Es entsteht gar kein Problem, das Backup aktualisiert sich gedanklich von selbst",
-                "Die Daten vom September sind plötzlich auch verloren",
+                "Es entsteht kein Problem, weil ältere Backups neue Änderungen im Hintergrund mitziehen",
+                "Der Verlust betrifft nur gelöschte Entwürfe, da geöffnete Projekte immer aktuell bleiben",
               ],
               "Ein Backup hält immer nur den Stand fest, den die Dateien zum Zeitpunkt der Sicherung hatten.",
               "Was steht in einer acht Monate alten Kopie über die Arbeit von gestern?",
@@ -1857,8 +1898,8 @@ export const STAGE_INFORMATIONSAUSTAUSCH: Stage = {
               "Nach dem Kopieren auf eine externe Festplatte bleibt diese dauerhaft am PC eingesteckt. Warum empfiehlt man für wichtige Sicherungen ein Ausstecken oder einen zweiten Ort (z. B. Schulcloud)?",
               "Damit Schadsoftware oder ein Blitzschaden am PC nicht gleichzeitig alle angesteckten Laufwerke erfasst",
               [
-                "Weil eingesteckte Festplatten jeden Tag kleiner werden",
-                "Weil man sie sonst nicht mehr mit Mauszeigern anklicken kann",
+                "Damit ein dauerhaft verbundenes Laufwerk im Ruhemodus keine Dateien verschiebt",
+                "Weil angeschlossene Festplatten nach einem Neustart alle Kopien überschreiben",
               ],
               "Getrennt gelagerte Datenträger oder eine Cloud-Sicherung bleiben unberührt, wenn Schadsoftware lokale Laufwerke befällt.",
               "Was passiert mit einem dauerhaft angeschlossenen Laufwerk bei Schadsoftware auf dem PC?",
@@ -1867,8 +1908,8 @@ export const STAGE_INFORMATIONSAUSTAUSCH: Stage = {
               "Du hast nur noch einen 4-GB-USB-Stick frei, aber deine komplette Fotosammlung ist 60 GB groß. Welche Lösung ist am sinnvollsten?",
               "Zuerst das Wichtigste auf dem Stick sichern und für alle Fotos ein ausreichend großes Medium wählen (keine wichtigen Daten ungesichert lassen)",
               [
-                "Einfach 56 GB ungesichert lassen und darauf hoffen, dass nichts passiert",
-                "Die Fotos auf demselben Laptop doppelt speichern und Stick weglegen",
+                "Einfach den Hauptteil ungesichert auf dem Laptop lassen, solange er neu ist",
+                "Alle Fotos einfach in einen zweiten Ordner derselben internen Platte kopieren",
               ],
               "Priorisieren rettet das Wichtigste sofort, ersetzt für den Rest aber kein passend dimensioniertes externes Backup.",
               "Welches Prinzip schützt alle unersetzlichen Dateien zuverlässig?",

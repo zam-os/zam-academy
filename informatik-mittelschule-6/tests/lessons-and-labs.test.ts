@@ -74,6 +74,16 @@ describe("LehrplanPLUS Mittelschule Informatik 6 (LB 1–2)", () => {
       const strippedHtml = lesson.explanationHtml.replace(/<[^>]+>/g, " ");
       expect(strippedHtml, `${lesson.id}: decimal comma`).not.toMatch(/\d\.\d/);
     }
+    const longestCorrectCount = ALL_LESSONS.filter((lesson) => {
+      const rightLen = lesson.quiz.options[lesson.quiz.correctIndex].length;
+      const maxWrongLen = Math.max(
+        ...lesson.quiz.options
+          .filter((_, idx) => idx !== lesson.quiz.correctIndex)
+          .map((opt) => opt.length),
+      );
+      return rightLen > maxWrongLen;
+    }).length;
+    expect(longestCorrectCount).toBeLessThanOrEqual(4);
   });
 
   it("maps every verbatim Kompetenzerwartung and content bullet of Inf6 LB 1–2 to lessons, and covers every lesson", () => {
@@ -202,11 +212,97 @@ describe("Subject details checked in review", () => {
       zeitraum: 2022,
     });
     expect(String(filtered.hits)).toBe("3 (3 fachlich · 0 unpassend)");
+    expect(String(filtered.query)).toContain("-bettwäsche -shop");
+    expect(String(filtered.query)).not.toContain("−");
 
     const ccLesson = must(findLessonById("ms6-urheberrecht-lizenzen")).lesson;
-    expect(computeReadouts(ccLesson.lab, { lizenz: 5, nutzung: 1 }).status).toBe("Nicht erlaubt");
-    expect(computeReadouts(ccLesson.lab, { lizenz: 2, nutzung: 1 }).status).toBe("Erlaubt");
-    expect(computeReadouts(ccLesson.lab, { lizenz: 1, nutzung: 3 }).status).toBe("Erlaubt");
+    expect(computeReadouts(ccLesson.lab, { lizenz: 5, nutzung: 1 }).status).toBe("Erlaubt");
+    expect(computeReadouts(ccLesson.lab, { lizenz: 5, nutzung: 2 }).status).toBe("Nicht erlaubt");
+    expect(computeReadouts(ccLesson.lab, { lizenz: 2, nutzung: 2 }).status).toBe("Erlaubt");
+    expect(computeReadouts(ccLesson.lab, { lizenz: 1, nutzung: 4 }).status).toBe("Erlaubt");
+
+    const pwLesson = must(findLessonById("ms6-passwoerter-virenschutz")).lesson;
+    expect(computeReadouts(pwLesson.lab, { laenge: 22, zeichensatz: 1, persoenlich: 1, schutz: 1 }).status).toBe("Sehr gut geschützt");
+    expect(computeReadouts(pwLesson.lab, { laenge: 12, zeichensatz: 3, persoenlich: 1, schutz: 1 }).status).toBe("Sehr gut geschützt");
+    expect(computeReadouts(pwLesson.lab, { laenge: 12, zeichensatz: 3, persoenlich: 0, schutz: 1 }).status).not.toBe("Sehr gut geschützt");
+    expect(computeReadouts(pwLesson.lab, { laenge: 10, zeichensatz: 3, persoenlich: 1, schutz: 1 }).status).not.toBe("Sehr gut geschützt");
+  });
+
+  it("renders full workshop and structogram texts without mid-word splits or truncated endings", () => {
+    const joinedSvgText = (svg: string) =>
+      [...svg.matchAll(/<text\b[^>]*>([^<]*)<\/text>/g)]
+        .map((m) =>
+          m[1]
+            .replace(/&amp;/g, "&")
+            .replace(/&lt;/g, "<")
+            .replace(/&gt;/g, ">")
+            .replace(/&quot;/g, '"'),
+        )
+        .join(" ")
+        .replace(/\s+/g, " ");
+
+    const search = must(findLessonById("ms6-suchstrategien")).lesson.lab;
+    for (const begriff of [0, 1]) {
+      for (const ausschluss of [0, 1, 2]) {
+        for (const siteFilter of [0, 1]) {
+          const vals = { begriff, ausschluss, siteFilter, zeitraum: 2022 };
+          const readouts = computeReadouts(search, vals);
+          const rendered = joinedSvgText(search.view.render(vals, readouts));
+          expect(rendered).toContain(`Suche: ${String(readouts.query)}`);
+        }
+      }
+    }
+
+    const quellen = must(findLessonById("ms6-informationsqualitaet")).lesson.lab;
+    for (const tonfall of [0, 1]) {
+      const vals = { absender: 2, tonfall, quellenAnzahl: 2, alterJahre: 1 };
+      const rendered = joinedSvgText(quellen.view.render(vals, computeReadouts(quellen, vals)));
+      expect(rendered).toContain(
+        tonfall === 1
+          ? "Trinkwasserbericht 2026: Messwerte im Überblick"
+          : "SCHOCK-BERICHT: DAS VERSCHWEIGEN SIE DIR!!",
+      );
+    }
+
+    const cc = must(findLessonById("ms6-urheberrecht-lizenzen")).lesson.lab;
+    for (let lizenz = 0; lizenz <= 5; lizenz++) {
+      for (let nutzung = 0; nutzung <= 4; nutzung++) {
+        const vals = { lizenz, nutzung };
+        const readouts = computeReadouts(cc, vals);
+        const rendered = joinedSvgText(cc.view.render(vals, readouts));
+        expect(rendered, `CC ${lizenz}/${nutzung}`).toContain(String(readouts.hinweis));
+      }
+    }
+
+    const backup = must(findLessonById("ms6-datensicherung")).lesson.lab;
+    for (let ort = 0; ort <= 3; ort++) {
+      for (let ereignis = 0; ereignis <= 3; ereignis++) {
+        const vals = { ort, intervall: 7, ereignis };
+        const readouts = computeReadouts(backup, vals);
+        const rendered = joinedSvgText(backup.view.render(vals, readouts));
+        expect(rendered, `Backup ${ort}/${ereignis}`).toContain(String(readouts.erklaerung));
+      }
+    }
+
+    const schleife = must(findLessonById("ms6-bedingte-wiederholung")).lesson.lab;
+    const sVals = { hindernisZeile: 2, schleifenArt: 1, koerper: 2 };
+    const sText = joinedSvgText(schleife.view.render(sVals, computeReadouts(schleife, sVals)));
+    expect(sText).toContain("solange vorne frei");
+    expect(sText).toContain("links drehen · rechts drehen");
+
+    const alt = must(findLessonById("ms6-alternative")).lesson.lab;
+    const aVals = { sensor: 1, art: 1, dannAktion: 1, sonstAktion: 0 };
+    const aText = joinedSvgText(alt.view.render(aVals, computeReadouts(alt, aVals)));
+    expect(aText).toContain("vorne Hindernis?");
+    expect(aText).toContain("rechts drehen");
+    expect(aText).toContain("links drehen");
+
+    const schachtel = must(findLessonById("ms6-schachtelung")).lesson.lab;
+    const scVals = { parcours: 0, aussen: 1, wennFrei: 1, sonst: 2 };
+    const scText = joinedSvgText(schachtel.view.render(scVals, computeReadouts(schachtel, scVals)));
+    expect(scText).toContain("solange nicht auf Stern");
+    expect(scText).toContain("vorne frei?");
+    expect(scText).toContain("vor gehen");
   });
 
   it("tracks figure movement, endless loops, nested courses, and boundary debugging", () => {

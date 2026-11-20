@@ -672,9 +672,13 @@ class InformatikApp {
                 </fieldset>`;
               }
               const isText = field.kind === "text";
+              const placeholder = isText
+                ? field.placeholder
+                : (field.placeholder ?? (field.digits === 0 ? "z. B. 5" : "z. B. 2,5"));
+              const inputMode = isText ? "text" : (field.digits === 0 ? "numeric" : "decimal");
               return `<label class="task-input ${isText ? "task-input-code" : ""}">
                 <span class="task-label">${field.label}</span>
-                <input type="text" inputmode="${isText ? "text" : "decimal"}" autocomplete="off" spellcheck="false" data-field="${index}" value="${esc(this.taskInputs[index] ?? "")}" placeholder="${isText ? esc(field.placeholder) : "z. B. 2,5"}" ${locked ? "disabled" : ""} />
+                <input type="text" inputmode="${inputMode}" autocomplete="off" spellcheck="false" data-field="${index}" value="${esc(this.taskInputs[index] ?? "")}" placeholder="${esc(placeholder)}" ${locked ? "disabled" : ""} />
                 ${field.kind === "number" && field.unit ? `<span class="task-unit">${esc(field.unit)}</span>` : ""}
               </label>`;
             })
