@@ -1,0 +1,401 @@
+[
+	{
+		"id": "f7-intonation",
+		"stage": "f7-echanges",
+		"title": "Tu as quel âge ?",
+		"skill": "Fragen durch Intonation und mit nachgestelltem Fragewort stellen",
+		"bindings": ["1.2-grammatik", "1.2-aussprache", "1.1-sprechen"],
+		"paragraphs": [
+			"Die einfachste Frage ist ein Aussagesatz mit steigender Stimme am Ende: Tu as un chien ? ↗ Die Wortstellung ändert sich nicht. Im Gespräch hängst du ein Fragewort oft einfach hinten an: Tu habites où ? Tu as quel âge ? C’est qui ? Ça coûte combien ? Tu arrives quand ? Die Stimme fällt dann am Ende wieder etwas ab.",
+			"Bei Ja-Nein-Fragen steigt die Stimme also bis zum Schluss, bei Fragen mit Fragewort liegt der Ton auf dem Fragewort. Beispiel: Tu viens samedi ? ↗ – Oui ! – Tu arrives à quelle heure ? – À trois heures. Diese Fragen sind typisch für die gesprochene Sprache unter Freunden. Im Geschriebenen steht vor dem Fragezeichen ein Leerzeichen: Ça va ?"
+		],
+		"material": "Hugo : Salut ! Tu es nouvelle ? Zoé : Oui, je m’appelle Zoé. Hugo : Tu as quel âge ? Zoé : Douze ans. Hugo : Et tu habites où ? Zoé : Rue Victor Hugo. Hugo : C’est qui, là-bas ? Zoé : C’est ma sœur, Lucie. Hugo : Elle aime le foot ? Zoé : Oui, beaucoup !",
+		"materialLabel": "Eigenes Übungsmaterial · erfundene Personen",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp-f7"],
+		"quiz": {
+			"optionLanguage": "fr",
+			"question": "Wie fragst du einen Freund locker nach seinem Wohnort?",
+			"answer": "Tu habites où ?",
+			"wrong": ["Où tu habites pas ?", "Tu où habites ?"],
+			"explanation": "In der gesprochenen Sprache steht das Fragewort oft am Ende."
+		},
+		"takeaway": "Ja-Nein-Frage: Aussagesatz mit steigender Stimme. Fragewort am Ende: Tu habites où ? Tu as quel âge ? C’est qui ? Wortstellung bleibt wie im Aussagesatz.",
+		"practice": [
+			{ "prompt": "Nach dem Alter fragen: Tu as quel ___ ?", "answers": ["âge"], "feedback": "Tu as quel âge ?" },
+			{ "prompt": "Nach einer Person fragen: C’est ___ ?", "answers": ["qui"], "feedback": "C’est qui ? fragt nach einer Person." }
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe vier Intonationsfragen an eine neue Mitschülerin: Name, Alter, Wohnort und ob sie ein Haustier hat. Lies sie laut mit passender Stimme.",
+				"model": "Tu t’appelles comment ? Tu as quel âge ? Tu habites où ? Tu as un animal ?",
+				"criteria": ["Ich stelle vier Fragen ohne Umstellung.", "Das Fragewort steht am Ende.", "Ich spreche Ja-Nein-Fragen mit steigender Stimme."]
+			},
+			"2": {
+				"prompt": "Erfinde ein Gespräch mit sechs Zeilen zwischen zwei Jugendlichen, die sich im Ferienlager kennenlernen. Verwende mindestens drei verschiedene nachgestellte Fragewörter.",
+				"model": "– Salut ! Tu t’appelles comment ? – Malik. Et toi ? – Emma. Tu habites où ? – À Lyon. Tu as quel âge ? – Treize ans. Tu arrives quand ? – Ce soir !",
+				"criteria": ["Ich verwende drei verschiedene Fragewörter.", "Jede Frage bekommt eine Antwort.", "Mein Gespräch klingt natürlich."]
+			}
+		},
+		"workshop": {
+			"kind": "dialogue",
+			"goals": [
+				{ "label": "Alter", "before": "Tu as", "after": "âge ?", "options": ["quel", "qui", "où"], "answer": "quel", "explanation": "Tu as quel âge ?" },
+				{ "label": "Wohnort", "before": "Tu habites", "after": "?", "options": ["où", "qui", "combien"], "answer": "où", "explanation": "Où fragt nach dem Ort." },
+				{ "label": "Person", "before": "C’est", "after": ", là-bas ?", "options": ["qui", "quand", "où"], "answer": "qui", "explanation": "Qui fragt nach einer Person." }
+			]
+		},
+		"explorer": {
+			"caption": "Satzmelodie · Wähle eine Frage",
+			"steps": [
+				{ "label": "Ja oder nein", "icon": "↗", "example": "Tu as un chien ?", "detail": "Die Stimme steigt bis zum Ende." },
+				{ "label": "Fragewort hinten", "icon": "↗↘", "example": "Tu habites où ?", "detail": "Betonung auf dem Fragewort, dann fällt die Stimme." },
+				{ "label": "Aussage", "icon": "↘", "example": "Tu as un chien.", "detail": "Gleiche Wörter, aber die Stimme fällt: keine Frage." }
+			]
+		},
+		"listening": false,
+		"speaking": true
+	},
+	{
+		"id": "f7-est-ce-que",
+		"stage": "f7-echanges",
+		"title": "Est-ce que tu viens ?",
+		"skill": "Fragen mit est-ce que und qu’est-ce que stellen",
+		"bindings": ["1.2-grammatik", "1.2-aussprache", "1.1-sprechen"],
+		"paragraphs": [
+			"Mit est-ce que machst du aus jedem Aussagesatz eine Ja-Nein-Frage. Est-ce que steht am Anfang, danach bleibt alles wie im Aussagesatz: Tu aimes le foot. → Est-ce que tu aimes le foot ? Vor Vokal wird est-ce que zu est-ce qu’: Est-ce qu’il y a un bus ? Est-ce qu’elle vient ? Diese Frage passt zu allen Situationen, auch in der Schule und mit Erwachsenen.",
+			"Wenn du nach einer Sache fragst (was?), sagst du qu’est-ce que: Qu’est-ce que tu fais samedi ? – Je vais au cinéma. Qu’est-ce que tu manges ? – Une pizza. Die Stimme steigt bei est-ce que-Fragen am Ende weniger stark, weil est-ce que die Frage schon anzeigt. Beispiel: Est-ce que vous avez des frères et sœurs ? – Oui, j’ai un frère."
+		],
+		"material": "Léa : Est-ce que tu viens à ma fête samedi ? Hugo : Oui, super ! Qu’est-ce que je peux apporter ? Léa : Des chips. Est-ce qu’Inès vient aussi ? Hugo : Oui, elle vient avec moi. Qu’est-ce qu’on fait après la fête ? Léa : On regarde un film.",
+		"materialLabel": "Eigenes Übungsmaterial · erfundene Personen",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp-f7"],
+		"quiz": {
+			"optionLanguage": "fr",
+			"question": "Mache eine Frage: Il y a un bus.",
+			"answer": "Est-ce qu’il y a un bus ?",
+			"wrong": ["Est-ce que il y a un bus ?", "Qu’est-ce qu’il y a un bus ?"],
+			"explanation": "Vor Vokal wird est-ce que zu est-ce qu’; die Ja-Nein-Frage braucht kein qu’."
+		},
+		"takeaway": "Ja-Nein-Frage: Est-ce que + Aussagesatz ? (vor Vokal est-ce qu’). Frage nach einer Sache: Qu’est-ce que + Aussagesatz ?",
+		"practice": [
+			{ "prompt": "___ tu aimes le chocolat ? (Ja-Nein-Frage)", "answers": ["Est-ce que"], "feedback": "Est-ce que macht eine Ja-Nein-Frage." },
+			{ "prompt": "___ tu fais samedi ? (was?)", "answers": ["Qu’est-ce que", "Qu'est-ce que"], "feedback": "Qu’est-ce que fragt nach einer Sache." }
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Bilde aus diesen Sätzen Fragen mit est-ce que: Tu as un vélo. Elle habite à Lyon. Vous aimez la musique. Il y a une piscine.",
+				"model": "Est-ce que tu as un vélo ? Est-ce qu’elle habite à Lyon ? Est-ce que vous aimez la musique ? Est-ce qu’il y a une piscine ?",
+				"criteria": ["Est-ce que steht am Anfang.", "Ich schreibe est-ce qu’ vor Vokal.", "Die Wortstellung danach bleibt gleich."]
+			},
+			"2": {
+				"prompt": "Du planst ein Wochenende mit deiner Austauschpartnerin. Schreibe fünf Fragen an sie: drei mit est-ce que und zwei mit qu’est-ce que.",
+				"model": "Est-ce que tu aimes le sport ? Est-ce que tu veux aller à la piscine ? Est-ce qu’il y a un cinéma chez toi ? Qu’est-ce que tu fais le dimanche ? Qu’est-ce que tu aimes manger ?",
+				"criteria": ["Ich stelle drei Ja-Nein-Fragen mit est-ce que.", "Ich stelle zwei Fragen mit qu’est-ce que.", "Die Fragen passen zur Situation."]
+			}
+		},
+		"workshop": {
+			"kind": "dialogue",
+			"goals": [
+				{ "label": "Ja-Nein", "before": "", "after": "tu viens à ma fête ?", "options": ["Est-ce que", "Qu’est-ce que", "Est-ce qu’"], "answer": "Est-ce que", "explanation": "Est-ce que vor Konsonant." },
+				{ "label": "Vor Vokal", "before": "", "after": "Inès vient aussi ?", "options": ["Est-ce qu’", "Est-ce que", "Qu’est-ce qu’"], "answer": "Est-ce qu’", "explanation": "Vor Vokal: est-ce qu’." },
+				{ "label": "Was?", "before": "", "after": "on fait après ?", "options": ["Qu’est-ce qu’", "Est-ce qu’", "Où est-ce qu’"], "answer": "Qu’est-ce qu’", "explanation": "Qu’est-ce que fragt nach „was“." }
+			]
+		},
+		"explorer": {
+			"caption": "Frage bauen · Wähle einen Baustein",
+			"steps": [
+				{ "label": "Aussage", "icon": "•", "example": "Tu aimes le foot.", "detail": "Ausgangssatz." },
+				{ "label": "+ est-ce que", "icon": "?", "example": "Est-ce que tu aimes le foot ?", "detail": "Ja-Nein-Frage, der Rest bleibt gleich." },
+				{ "label": "+ qu’est-ce que", "icon": "❓", "example": "Qu’est-ce que tu aimes ?", "detail": "Frage nach einer Sache: was?" }
+			]
+		},
+		"listening": false,
+		"speaking": true
+	},
+	{
+		"id": "f7-questions",
+		"stage": "f7-echanges",
+		"title": "Où est-ce que tu habites ?",
+		"skill": "Fragewörter mit est-ce que verwenden",
+		"bindings": ["1.2-grammatik", "1.1-sprechen"],
+		"paragraphs": [
+			"Fragewörter stehen vor est-ce que: où (wo, wohin), d’où (woher), quand (wann), comment (wie), pourquoi (warum), à quelle heure (um wie viel Uhr). Danach folgt der Aussagesatz: Où est-ce que tu habites ? Quand est-ce que tu arrives ? Comment est-ce que tu vas au collège ? Auf pourquoi antwortest du mit parce que (weil): Pourquoi est-ce que tu restes à la maison ? – Parce que je suis malade.",
+			"Beispiel für ein Interview: D’où est-ce que tu viens ? – Je viens de Marseille. À quelle heure est-ce que le cours commence ? – À huit heures. Comment est-ce que tu vas au collège ? – À vélo. Achte auf die Antwort: Sie nimmt das Fragewort auf. Auf où folgt ein Ort, auf quand eine Zeit, auf comment eine Art und Weise."
+		],
+		"material": "Interview pour le journal du collège : – Où est-ce que tu habites ? – À Rennes. – D’où est-ce que ta famille vient ? – De Marseille. – Comment est-ce que tu vas au collège ? – À vélo. – À quelle heure est-ce que tu arrives ? – À huit heures moins le quart. – Pourquoi est-ce que tu aimes le collège ? – Parce que j’ai beaucoup d’amis.",
+		"materialLabel": "Eigenes Übungsmaterial · erfundenes Interview",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp-f7"],
+		"quiz": {
+			"optionLanguage": "fr",
+			"question": "Antwort: „À vélo.“ Welche Frage passt?",
+			"answer": "Comment est-ce que tu vas au collège ?",
+			"wrong": ["Où est-ce que tu vas ?", "Quand est-ce que tu vas au collège ?"],
+			"explanation": "Comment fragt nach der Art und Weise: à vélo."
+		},
+		"takeaway": "Fragewort + est-ce que + Aussagesatz: où, d’où, quand, comment, pourquoi, à quelle heure. Auf pourquoi antwortest du mit parce que.",
+		"practice": [
+			{ "prompt": "___ est-ce que tu arrives ? – Demain.", "answers": ["Quand"], "feedback": "Quand fragt nach der Zeit." },
+			{ "prompt": "Pourquoi … ? – ___ je suis malade.", "answers": ["Parce que"], "feedback": "Auf pourquoi antwortest du mit parce que." }
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe zu diesen Antworten die passenden Fragen mit est-ce que: À Munich. – À sept heures. – En bus. – Parce que j’adore les animaux.",
+				"model": "Où est-ce que tu habites ? À quelle heure est-ce que tu manges ? Comment est-ce que tu vas au collège ? Pourquoi est-ce que tu veux un chien ?",
+				"criteria": ["Jedes Fragewort passt zur Antwort.", "Nach dem Fragewort steht est-ce que.", "Die Wortstellung danach stimmt."]
+			},
+			"2": {
+				"prompt": "Bereite ein Interview für die Schülerzeitung mit einer französischen Gastschülerin vor. Schreibe sechs Fragen mit sechs verschiedenen Fragewörtern und erfinde kurze Antworten.",
+				"model": "Où est-ce que tu habites ? – À Nantes. D’où est-ce que tu viens ? – De Lyon. Quand est-ce que tu rentres ? – Vendredi. Comment est-ce que tu trouves Augsburg ? – Super ! Pourquoi est-ce que tu apprends l’allemand ? – Parce que ma mère est allemande. À quelle heure est-ce que tu manges ? – À midi.",
+				"criteria": ["Ich verwende sechs verschiedene Fragewörter.", "Jede Frage hat est-ce que.", "Die Antworten passen zu den Fragen."]
+			}
+		},
+		"workshop": {
+			"kind": "dialogue",
+			"goals": [
+				{ "label": "Ort", "before": "", "after": "est-ce que tu habites ? – À Rennes.", "options": ["Où", "Quand", "Pourquoi"], "answer": "Où", "explanation": "Où fragt nach dem Ort." },
+				{ "label": "Uhrzeit", "before": "", "after": "est-ce que tu arrives ? – À huit heures.", "options": ["À quelle heure", "Comment", "D’où"], "answer": "À quelle heure", "explanation": "À quelle heure fragt nach der Uhrzeit." },
+				{ "label": "Grund", "before": "", "after": "est-ce que tu restes ici ? – Parce que je suis malade.", "options": ["Pourquoi", "Où", "Comment"], "answer": "Pourquoi", "explanation": "Pourquoi fragt nach dem Grund." }
+			]
+		},
+		"explorer": {
+			"caption": "Fragewörter · Wähle eine Frage",
+			"steps": [
+				{ "label": "où ?", "icon": "📍", "example": "Où est-ce que tu habites ? – À Rennes.", "detail": "Antwort: ein Ort." },
+				{ "label": "quand ?", "icon": "📅", "example": "Quand est-ce que tu arrives ? – Samedi.", "detail": "Antwort: eine Zeit." },
+				{ "label": "pourquoi ?", "icon": "💬", "example": "Pourquoi est-ce que tu restes ici ? – Parce que je suis malade.", "detail": "Antwort: parce que …" }
+			]
+		},
+		"listening": false,
+		"speaking": true
+	},
+	{
+		"id": "f7-avec-qui",
+		"stage": "f7-echanges",
+		"title": "Avec qui ? De quoi ?",
+		"skill": "Fragen mit Präposition und qui oder quoi stellen",
+		"bindings": ["1.2-grammatik", "1.1-sprechen"],
+		"paragraphs": [
+			"Wenn eine Präposition zur Frage gehört, steht sie vor qui (wer, bei Personen) oder quoi (was, bei Sachen): avec qui (mit wem), à qui (wem), pour qui (für wen), de quoi (wovon, worüber), avec quoi (womit). Im Gespräch steht die Frage oft am Ende: Tu vas au cinéma avec qui ? Tu parles de quoi ? Mit est-ce que steht sie am Anfang: Avec qui est-ce que tu vas au cinéma ?",
+			"Sehr häufig ist C’est à qui ? (Wem gehört das?). Die Antwort: C’est à moi. C’est à Hugo. Beispiel: Le stylo bleu, c’est à qui ? – C’est à Léa. Pour qui est-ce que tu fais ce gâteau ? – Pour ma grand-mère. Merke: Im Deutschen hängt die Präposition oft am Fragewort (womit, wovon), im Französischen steht sie getrennt davor."
+		],
+		"material": "Madame Dubois : Ce sac à dos, c’est à qui ? Hugo : C’est à Théo. Léa : Tu vas à la piscine avec qui ? Inès : Avec ma cousine. Léa : Et vous parlez de quoi ? Inès : Du match de samedi. Léa : Pour qui est-ce que tu fais ce dessin ? Inès : Pour mon petit frère.",
+		"materialLabel": "Eigenes Übungsmaterial · erfundene Personen",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp-f7"],
+		"quiz": {
+			"optionLanguage": "fr",
+			"question": "„Wem gehört das Heft?“",
+			"answer": "Le cahier, c’est à qui ?",
+			"wrong": ["Le cahier, c’est qui ?", "Le cahier, c’est de quoi ?"],
+			"explanation": "C’est à qui ? fragt, wem etwas gehört."
+		},
+		"takeaway": "Präposition + qui (Personen) / quoi (Sachen): avec qui, à qui, pour qui, de quoi. C’est à qui ? – C’est à moi.",
+		"practice": [
+			{ "prompt": "Tu vas au parc avec ___ ? – Avec Léa.", "answers": ["qui"], "feedback": "Bei Personen: qui." },
+			{ "prompt": "Vous parlez de ___ ? – Du film.", "answers": ["quoi"], "feedback": "Bei Sachen: quoi." }
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe zu diesen Antworten die Frage: Avec mon frère. – C’est à Léa. – Du film. – Pour ma mère.",
+				"model": "Tu joues avec qui ? Le stylo, c’est à qui ? Vous parlez de quoi ? Tu fais ce gâteau pour qui ?",
+				"criteria": ["Ich verwende die passende Präposition.", "Ich wähle qui für Personen und quoi für Sachen.", "Meine Fragen passen zu den Antworten."]
+			},
+			"2": {
+				"prompt": "Nach der Stunde liegen im Klassenzimmer drei vergessene Dinge. Schreibe einen kurzen Dialog, in dem du herausfindest, wem sie gehören.",
+				"model": "– La trousse rouge, c’est à qui ? – C’est à moi ! – Et le cahier, c’est à qui ? – C’est à Malik. – Et le sac de sport ? – C’est à Emma.",
+				"criteria": ["Ich frage mit c’est à qui ?", "Ich antworte mit c’est à + Person.", "Der Dialog nennt drei Dinge."]
+			}
+		},
+		"workshop": {
+			"kind": "dialogue",
+			"goals": [
+				{ "label": "Mit wem?", "before": "Tu vas à la piscine avec", "after": "?", "options": ["qui", "quoi", "où"], "answer": "qui", "explanation": "Avec qui fragt nach einer Person." },
+				{ "label": "Worüber?", "before": "Vous parlez de", "after": "?", "options": ["quoi", "qui", "quand"], "answer": "quoi", "explanation": "De quoi fragt nach einer Sache." },
+				{ "label": "Wem gehört's?", "before": "Ce sac, c’est", "after": "qui ?", "options": ["à", "de", "avec"], "answer": "à", "explanation": "C’est à qui ? – Wem gehört das?" }
+			]
+		},
+		"explorer": {
+			"caption": "Fundkiste · Wähle einen Gegenstand",
+			"steps": [
+				{ "label": "Rucksack", "icon": "🎒", "example": "Ce sac à dos, c’est à qui ? – C’est à Théo.", "detail": "à qui: wem?" },
+				{ "label": "Kino", "icon": "🎬", "example": "Tu vas au cinéma avec qui ? – Avec Inès.", "detail": "avec qui: mit wem?" },
+				{ "label": "Gespräch", "icon": "💬", "example": "Vous parlez de quoi ? – Du match.", "detail": "de quoi: worüber?" }
+			]
+		},
+		"listening": false,
+		"speaking": true
+	},
+	{
+		"id": "f7-imperatif",
+		"stage": "f7-echanges",
+		"title": "Regarde ! Ne parle pas !",
+		"skill": "Bitten und Aufforderungen mit dem Imperativ formulieren",
+		"bindings": ["1.2-grammatik", "1.1-sprechen"],
+		"paragraphs": [
+			"Der Imperativ hat drei Formen und kein Subjektpronomen. Bei regelmäßigen ‑er-Verben nimmst du die Präsensform ohne Pronomen: tu regardes → Regarde ! (ohne s), nous regardons → Regardons ! (Lasst uns schauen!), vous regardez → Regardez ! (Schaut! / Schauen Sie!). Achtung: In der tu-Form fällt das s weg: Écoute ! Mange !",
+			"Verneint steht ne … pas um das Verb: Ne parle pas ! Ne mangez pas en classe ! N’oublie pas ton livre ! Mit s’il te plaît oder s’il vous plaît wird eine Aufforderung zur Bitte: Ferme la porte, s’il te plaît. Beispiel: Madame Dubois sagt zur Klasse: Écoutez bien et ne parlez pas ! Zu einem Schüler: Théo, regarde le tableau, s’il te plaît."
+		],
+		"material": "Les règles de la classe : Écoutez le professeur. Levez la main. Ne mangez pas en classe. Rangez vos affaires. Et pour Théo : Théo, ferme la porte, s’il te plaît ! N’oublie pas ton cahier ! Allez, travaillons ensemble !",
+		"materialLabel": "Eigenes Übungsmaterial · erfundene Klassenregeln",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp-f7"],
+		"quiz": {
+			"optionLanguage": "fr",
+			"question": "Sag zu einem Freund: „Hör zu!“",
+			"answer": "Écoute !",
+			"wrong": ["Écoutes !", "Tu écoute !"],
+			"explanation": "In der tu-Form des Imperativs fällt bei ‑er-Verben das s weg."
+		},
+		"takeaway": "Imperativ ohne Pronomen: Regarde ! (tu, ohne s) · Regardons ! (nous) · Regardez ! (vous). Verneint: Ne parle pas ! N’oublie pas !",
+		"practice": [
+			{ "prompt": "Zur ganzen Klasse: ___ ! (écouter)", "answers": ["Écoutez"], "feedback": "Vous-Form: Écoutez !" },
+			{ "prompt": "Zu einer Freundin, verneint: Ne ___ pas ! (parler)", "answers": ["parle"], "feedback": "Ne parle pas! – tu-Form ohne s." }
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe für deine Klasse fünf Regeln im Imperativ (vous-Form), davon zwei verneint.",
+				"model": "Écoutez bien. Levez la main. Rangez vos affaires. Ne mangez pas en classe. Ne parlez pas pendant les tests.",
+				"criteria": ["Ich verwende die vous-Form ohne Pronomen.", "Zwei Regeln sind verneint.", "Die Verben sind regelmäßige ‑er-Verben."]
+			},
+			"2": {
+				"prompt": "Dein jüngerer Bruder macht sich für die Schule fertig. Gib ihm vier Aufforderungen in der tu-Form, davon eine verneint, und eine Bitte mit s’il te plaît.",
+				"model": "Mange ton petit-déjeuner ! Range ta chambre ! Ferme la porte, s’il te plaît. N’oublie pas ton sac ! Regarde l’heure !",
+				"criteria": ["Ich verwende die tu-Form ohne s.", "Eine Aufforderung ist verneint.", "Ich formuliere eine Bitte mit s’il te plaît."]
+			}
+		},
+		"workshop": {
+			"kind": "sequence",
+			"goals": [
+				{ "label": "tu", "before": "Théo,", "after": "la porte !", "options": ["ferme", "fermes", "tu fermes"], "answer": "ferme", "explanation": "Tu-Form ohne s und ohne Pronomen." },
+				{ "label": "vous, verneint", "before": "Ne", "after": "pas en classe !", "options": ["mangez", "mangeons", "manges"], "answer": "mangez", "explanation": "Ne mangez pas: vous-Form verneint." },
+				{ "label": "nous", "before": "Allez,", "after": "ensemble !", "options": ["travaillons", "travaille", "nous travaillons"], "answer": "travaillons", "explanation": "Travaillons: Lasst uns arbeiten." }
+			]
+		},
+		"explorer": {
+			"caption": "Wen sprichst du an? Wähle eine Person",
+			"steps": [
+				{ "label": "eine Person (tu)", "icon": "🧒", "example": "Regarde ! Ne regarde pas !", "detail": "Ohne s: regarde.", "tone": "v" },
+				{ "label": "wir (nous)", "icon": "👥", "example": "Regardons !", "detail": "Lasst uns schauen!", "tone": "v" },
+				{ "label": "ihr / Sie (vous)", "icon": "👩‍🏫", "example": "Regardez le tableau !", "detail": "Für mehrere Personen oder höflich.", "tone": "v" }
+			]
+		},
+		"listening": false,
+		"speaking": true
+	},
+	{
+		"id": "f7-me-te",
+		"stage": "f7-echanges",
+		"title": "Tu m’aides ?",
+		"skill": "Die Objektpronomen me, te, nous, vous verwenden",
+		"bindings": ["1.2-grammatik", "1.1-sprechen"],
+		"paragraphs": [
+			"Me (mich), te (dich), nous (uns) und vous (euch, Sie) stehen als direktes Objekt vor dem konjugierten Verb: Tu m’aides ? (Hilfst du mir?) Je t’invite. (Ich lade dich ein.) Il nous regarde. (Er schaut uns an.) Je vous écoute. (Ich höre euch zu.) Vor Vokal werden me und te zu m’ und t’: Tu m’écoutes ? Je t’aime bien.",
+			"In der Verneinung steht das Pronomen mit dem Verb zwischen ne und pas: Il ne m’écoute pas. Je ne te cherche pas. Tu ne nous invites pas ? Achtung beim Übersetzen: aider und écouter haben im Französischen ein direktes Objekt, im Deutschen sagt man „mir helfen“, „dir zuhören“. Beispiel: Léa, tu m’aides avec les devoirs ? – Oui, je t’aide après le dîner."
+		],
+		"material": "Hugo : Léa, tu m’aides avec les maths ? Léa : Oui, je t’aide après le dîner. Hugo : Merci ! Et samedi, tu nous invites à ta fête, moi et Théo ? Léa : Bien sûr, je vous invite ! Hugo : Super. Mais ma sœur ne m’écoute pas, elle veut venir aussi !",
+		"materialLabel": "Eigenes Übungsmaterial · erfundene Personen",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp-f7"],
+		"quiz": {
+			"optionLanguage": "fr",
+			"question": "„Er hört mir nicht zu.“",
+			"answer": "Il ne m’écoute pas.",
+			"wrong": ["Il ne écoute pas me.", "Il m’écoute ne pas."],
+			"explanation": "Pronomen und Verb stehen zusammen zwischen ne und pas; vor Vokal m’."
+		},
+		"takeaway": "me / te / nous / vous stehen vor dem Verb, vor Vokal m’ / t’. Verneint: ne + Pronomen + Verb + pas: Il ne m’écoute pas.",
+		"practice": [
+			{ "prompt": "Tu ___ aides ? (mir; vor Vokal)", "answers": ["m’", "m'"], "feedback": "Vor Vokal wird me zu m’." },
+			{ "prompt": "Je ___ invite, toi et Théo. (euch)", "answers": ["vous"], "feedback": "Vous: euch." }
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Ersetze die Person durch ein Pronomen: Léa aide moi. → Léa … Il invite toi. → Il … Tu écoutes nous ? → Tu … Je ne cherche pas vous. → Je …",
+				"model": "Léa m’aide. Il t’invite. Tu nous écoutes ? Je ne vous cherche pas.",
+				"criteria": ["Das Pronomen steht vor dem Verb.", "Ich schreibe m’ und t’ vor Vokal.", "In der Verneinung steht das Pronomen nach ne."]
+			},
+			"2": {
+				"prompt": "Schreibe eine kurze Nachricht an deine Freundin: Bitte sie um Hilfe, lade sie ein und sag, dass dein Bruder dir nicht zuhört. Verwende me, te und nous oder vous.",
+				"model": "Salut Inès ! Tu m’aides avec le français demain ? Je t’invite après chez moi. Mon frère ne m’écoute pas ! Après, ma mère nous invite au café.",
+				"criteria": ["Ich verwende me, te und nous oder vous.", "Ein Satz ist verneint.", "Die Pronomen stehen an der richtigen Stelle."]
+			}
+		},
+		"workshop": {
+			"kind": "sentence",
+			"goals": [
+				{ "label": "mir", "before": "Tu", "after": "aides avec les maths ?", "options": ["m’", "me", "moi"], "answer": "m’", "explanation": "Vor Vokal: m’." },
+				{ "label": "euch", "before": "Je", "after": "invite à ma fête.", "options": ["vous", "nous", "te"], "answer": "vous", "explanation": "Vous: euch." },
+				{ "label": "verneint", "before": "Ma sœur ne", "after": "pas.", "options": ["m’écoute", "écoute me", "m’écoute ne"], "answer": "m’écoute", "explanation": "Pronomen + Verb zwischen ne und pas." }
+			]
+		},
+		"explorer": {
+			"caption": "Satzbau · Wo steht das Pronomen?",
+			"steps": [
+				{ "label": "bejaht", "icon": "→", "example": "Tu m’aides ?", "detail": "Pronomen direkt vor dem Verb." },
+				{ "label": "verneint", "icon": "⟨ ⟩", "example": "Il ne m’écoute pas.", "detail": "ne + Pronomen + Verb + pas" },
+				{ "label": "Plural", "icon": "👥", "example": "Je vous invite.", "detail": "nous / vous sehen aus wie die Subjektpronomen." }
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "f7-toniques",
+		"stage": "f7-echanges",
+		"title": "Avec moi, chez toi",
+		"skill": "Betonte Pronomen nach Präpositionen und zur Betonung verwenden",
+		"bindings": ["1.2-wortschatz", "1.2-grammatik", "1.1-sprechen"],
+		"paragraphs": [
+			"Die betonten Pronomen (les pronoms toniques) heißen moi, toi, lui, elle, nous, vous, eux, elles. Du brauchst sie nach Präpositionen: avec moi (mit mir), chez toi (bei dir), pour lui (für ihn), sans nous (ohne uns), pour vous (für euch / Sie), avec eux (mit ihnen). Chez heißt „bei“ oder „zu jemandem nach Hause“: On va chez toi ? Je reste chez moi.",
+			"Außerdem stehen sie in kurzen Antworten und zur Betonung: Qui veut une crêpe ? – Moi ! Et toi ? – Moi aussi. Moi, j’aime le foot, et toi ? C’est lui, mon frère. Beispiel: Tu viens avec nous au parc ? – Non, je reste chez moi. – Dommage ! Sans toi, ce n’est pas drôle."
+		],
+		"material": "Inès : On va au parc. Tu viens avec nous ? Hugo : Non, je reste chez moi. Je fais mes devoirs. Inès : Dommage ! Sans toi, ce n’est pas drôle. Et Léa et Zoé ? Hugo : Elles sont chez elles. Inès : Bon, je vais au parc avec Théo et Malik. Le gâteau, c’est pour eux !",
+		"materialLabel": "Eigenes Übungsmaterial · erfundene Personen",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp-f7"],
+		"quiz": {
+			"optionLanguage": "fr",
+			"question": "„Kommst du mit uns?“",
+			"answer": "Tu viens avec nous ?",
+			"wrong": ["Tu viens avec on ?", "Tu viens avec notre ?"],
+			"explanation": "Nach der Präposition avec steht das betonte Pronomen nous."
+		},
+		"takeaway": "moi, toi, lui, elle, nous, vous, eux, elles nach Präpositionen (avec moi, chez toi, pour lui, sans nous), in Kurzantworten (Moi aussi !) und zur Betonung.",
+		"practice": [
+			{ "prompt": "Je reste chez ___. (bei mir)", "answers": ["moi"], "feedback": "Chez moi: bei mir zu Hause." },
+			{ "prompt": "Le gâteau, c’est pour ___. (für sie, Jungen)", "answers": ["eux"], "feedback": "Eux steht für mehrere Jungen oder eine gemischte Gruppe." }
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Ergänze die betonten Pronomen: Tu viens avec ___ ? (uns) – On va chez ___ ? (dich) – C’est pour ___. (ihn) – ___, j’adore le chocolat. (ich)",
+				"model": "Tu viens avec nous ? On va chez toi ? C’est pour lui. Moi, j’adore le chocolat.",
+				"criteria": ["Ich verwende nach Präpositionen das betonte Pronomen.", "Ich wähle die richtige Person.", "Ich betone mit Moi am Satzanfang."]
+			},
+			"2": {
+				"prompt": "Plane mit Freunden einen Nachmittag. Schreibe einen Dialog mit sechs Zeilen, in dem du mindestens vier verschiedene betonte Pronomen nach Präpositionen oder in Kurzantworten verwendest.",
+				"model": "– On va chez toi samedi ? – Oui ! Tu viens avec Léa ? – Non, sans elle. Elle est chez ses grands-parents. – Et Théo et Malik ? – Je joue avec eux le dimanche. – Moi aussi !",
+				"criteria": ["Ich verwende vier verschiedene betonte Pronomen.", "Sie stehen nach Präpositionen oder als Kurzantwort.", "Der Dialog ist verständlich."]
+			}
+		},
+		"workshop": {
+			"kind": "dialogue",
+			"goals": [
+				{ "label": "bei mir", "before": "Je reste chez", "after": ".", "options": ["moi", "me", "je"], "answer": "moi", "explanation": "Nach chez steht moi." },
+				{ "label": "ohne dich", "before": "Sans", "after": ", ce n’est pas drôle.", "options": ["toi", "te", "tu"], "answer": "toi", "explanation": "Nach sans steht toi." },
+				{ "label": "Kurzantwort", "before": "J’adore le foot. –", "after": "aussi !", "options": ["Moi", "Je", "Me"], "answer": "Moi", "explanation": "Moi aussi: ich auch." }
+			]
+		},
+		"explorer": {
+			"caption": "Mit wem? Wähle eine Präposition",
+			"steps": [
+				{ "label": "avec", "icon": "🤝", "example": "avec moi, avec toi, avec eux", "detail": "mit mir, mit dir, mit ihnen" },
+				{ "label": "chez", "icon": "🏠", "example": "chez moi, chez toi, chez elle", "detail": "bei mir zu Hause, zu dir nach Hause" },
+				{ "label": "pour / sans", "icon": "🎁", "example": "pour lui, sans nous", "detail": "für ihn, ohne uns" }
+			]
+		},
+		"listening": false,
+		"speaking": true
+	}
+]

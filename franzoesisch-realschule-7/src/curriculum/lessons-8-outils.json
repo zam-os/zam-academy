@@ -1,0 +1,579 @@
+[
+	{
+		"id": "f7-ecouter",
+		"stage": "f7-outils",
+		"title": "Allô, c’est Inès !",
+		"skill": "Einen kurzen Alltagsdialog hören und Schlüsselwörter entnehmen",
+		"bindings": ["1.1-hoeren", "4"],
+		"paragraphs": [
+			"Beim Hören musst du nicht jedes Wort verstehen. Lies vorher die Aufgabe und überlege, was du suchst: Wer spricht? Worum geht es? Wann und wo? Beim ersten Hören achtest du nur auf den Zusammenhang, beim zweiten Hören auf Schlüsselwörter wie Namen, Zahlen, Tage und Orte. Notiere sie kurz mit Stichworten, nicht in ganzen Sätzen.",
+			"Hilfen beim Hören: bekannte Wörter (samedi, cinéma, piscine), Wörter, die ähnlich wie im Deutschen oder Englischen klingen (le film, super), und der Ton der Stimme: Eine Frage steigt, ein Ja klingt fröhlich. Beispiel: Du hörst „samedi … quinze heures … piscine“. Daraus kannst du schließen: Am Samstag um 15 Uhr geht es ins Schwimmbad."
+		],
+		"material": "– Allô ? – Salut Hugo, c’est Inès ! – Ah, salut Inès ! Ça va ? – Oui, ça va. Dis, tu veux aller à la piscine samedi ? – Samedi ? Oui, d’accord. À quelle heure ? – À quinze heures. On prend le bus ensemble ? – Bonne idée ! Le bus part à deux heures et demie, devant la boulangerie. – Super. Ma sœur vient aussi. – D’accord. À samedi !",
+		"materialLabel": "Eigenes Hörskript · lokal vorlesen lassen oder von einem Partner vorlesen lassen",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp-f7"],
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Wohin gehen Inès und Hugo am Samstag?",
+			"answer": "Ins Schwimmbad.",
+			"wrong": ["Ins Kino.", "In die Bäckerei."],
+			"explanation": "Inès fragt: Tu veux aller à la piscine samedi ? Die Bäckerei ist nur der Treffpunkt für den Bus."
+		},
+		"takeaway": "Vor dem Hören: Aufgabe lesen und Fragen klären. 1. Hören: Zusammenhang. 2. Hören: Schlüsselwörter (Namen, Zahlen, Tage, Orte) in Stichworten notieren.",
+		"practice": [
+			{ "prompt": "Um wie viel Uhr fährt der Bus? Schreibe die Uhrzeit mit 24 Stunden.", "answers": ["14:30", "14.30", "14 h 30", "14h30", "14 Uhr 30"], "feedback": "Deux heures et demie: 14:30 Uhr." },
+			{ "prompt": "Wer kommt außerdem mit? Inès’ ___ (deutsch)", "answers": ["Schwester"], "feedback": "Ma sœur vient aussi: Inès’ Schwester." }
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Höre den Dialog zweimal ohne Mitlesen und notiere Stichworte auf Deutsch: Wer? Was? Wann? Wo ist der Treffpunkt?",
+				"model": "Inès und Hugo (und Inès’ Schwester) · Schwimmbad · Samstag, 15 Uhr · Bus um 14:30 Uhr vor der Bäckerei.",
+				"criteria": ["Ich nenne alle Personen.", "Ich nenne Aktivität, Tag und Uhrzeiten.", "Ich habe zuerst ohne Mitlesen gehört."],
+				"language": "de"
+			},
+			"2": {
+				"prompt": "Hugos Mutter versteht kein Französisch. Schreibe für sie eine kurze Nachricht auf Deutsch mit allen wichtigen Informationen aus dem Telefonat.",
+				"model": "Hallo Mama, ich gehe am Samstag mit Inès und ihrer Schwester ins Schwimmbad. Wir treffen uns um 14:30 Uhr vor der Bäckerei und fahren mit dem Bus. Wir sind um 15 Uhr dort. Hugo",
+				"criteria": ["Ich nenne Ziel, Personen und Uhrzeiten.", "Ich nenne den Treffpunkt.", "Die Nachricht ist kurz und verständlich."],
+				"language": "de"
+			}
+		},
+		"workshop": {
+			"kind": "sequence",
+			"goals": [
+				{ "label": "Wer ruft an?", "before": "C’est", "after": "!", "options": ["Inès", "Hugo", "la sœur"], "answer": "Inès", "explanation": "Salut Hugo, c’est Inès !" },
+				{ "label": "Ziel", "before": "Tu veux aller à la", "after": "?", "options": ["piscine", "boulangerie", "plage"], "answer": "piscine", "explanation": "Sie gehen ins Schwimmbad." },
+				{ "label": "Treffpunkt", "before": "Le bus part devant la", "after": ".", "options": ["boulangerie", "piscine", "gare"], "answer": "boulangerie", "explanation": "Treffpunkt ist die Bäckerei." }
+			]
+		},
+		"explorer": {
+			"caption": "Hörstrategie · Wähle einen Schritt",
+			"steps": [
+				{ "label": "Vorher", "icon": "📝", "example": "Qui ? Quoi ? Quand ? Où ?", "detail": "Aufgabe lesen, Fragen klären." },
+				{ "label": "1. Hören", "icon": "👂", "example": "Un coup de téléphone entre amis.", "detail": "Nur den Zusammenhang verstehen." },
+				{ "label": "2. Hören", "icon": "🔑", "example": "samedi · quinze heures · piscine", "detail": "Schlüsselwörter in Stichworten notieren." }
+			]
+		},
+		"listening": true,
+		"speaking": false
+	},
+	{
+		"id": "f7-histoire",
+		"stage": "f7-outils",
+		"title": "Une histoire en photos",
+		"skill": "Eine kurze Bildergeschichte lesen und Fragen dazu beantworten",
+		"bindings": ["1.1-lesen", "3", "4"],
+		"paragraphs": [
+			"Bei kurzen Geschichten helfen Bilder und Fotos beim Verstehen. Schau zuerst die Bilder an und stelle eine Vermutung an. Lies dann den Text und suche die W-Fragen: Qui ? (wer), Où ? (wo), Quand ? (wann), Qu’est-ce qui se passe ? (was passiert). Markiere Personen, Orte und Zeiten mit verschiedenen Farben, wenn du auf Papier arbeitest.",
+			"Beispiel: Bild 1 zeigt einen Hund im Park. Text: Samedi matin, Hugo va au parc avec son chien, Filou. Wer? Hugo und Filou. Wo? Im Park. Wann? Samstagmorgen. Wenn ein Wort fehlt, hilft oft das Bild: Filou court après un ballon. Auf dem Bild rennt der Hund hinter einem Ball her. Antworten auf Fragen schreibst du kurz und mit den Wörtern aus dem Text."
+		],
+		"material": "Photo 1 : Samedi matin, Hugo va au parc avec son chien, Filou. Photo 2 : Filou voit un ballon et il part ! Photo 3 : Hugo cherche son chien partout. Il est triste. Photo 4 : Une fille arrive avec Filou et le ballon. C’est Zoé, la nouvelle voisine. Photo 5 : Hugo, Zoé et Filou jouent ensemble au parc.",
+		"materialLabel": "Eigene Bildergeschichte · erfundene Personen",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp-f7"],
+		"quiz": {
+			"optionLanguage": "fr",
+			"question": "Qui trouve Filou ?",
+			"answer": "Zoé, la nouvelle voisine.",
+			"wrong": ["Hugo.", "Le ballon."],
+			"explanation": "Auf Foto 4 bringt Zoé, die neue Nachbarin, Filou zurück."
+		},
+		"takeaway": "Zuerst Bilder ansehen und vermuten, dann lesen. Qui ? Où ? Quand ? Qu’est-ce qui se passe ? Personen, Orte und Zeiten markieren. Kurz mit Wörtern aus dem Text antworten.",
+		"practice": [
+			{ "prompt": "Où va Hugo ? Au ___.", "answers": ["parc"], "feedback": "Hugo va au parc." },
+			{ "prompt": "Comment s’appelle le chien ?", "answers": ["Filou"], "feedback": "Le chien s’appelle Filou." }
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Beantworte auf Französisch: Qui est Hugo ? Où est-ce qu’il va ? Quand ? Pourquoi est-ce qu’il est triste ?",
+				"model": "Hugo est un garçon avec un chien, Filou. Il va au parc. C’est samedi matin. Il est triste parce qu’il cherche son chien.",
+				"criteria": ["Ich beantworte alle vier Fragen.", "Ich nutze Wörter aus dem Text.", "Ich antworte in kurzen Sätzen."]
+			},
+			"2": {
+				"prompt": "Schreibe ein sechstes Foto zur Geschichte: Was passiert danach? Schreibe zwei bis drei Sätze im Präsens oder futur composé und beschreibe, was auf dem Bild zu sehen wäre.",
+				"model": "Photo 6 : Hugo invite Zoé chez lui. Ils mangent des crêpes dans la cuisine. Demain, ils vont aller au parc avec Filou. Auf dem Bild: Hugo und Zoé am Küchentisch, Filou schläft unter dem Tisch.",
+				"criteria": ["Meine Fortsetzung passt zur Geschichte.", "Ich schreibe zwei bis drei richtige Sätze.", "Ich beschreibe das Bild."]
+			}
+		},
+		"workshop": {
+			"kind": "storyboard",
+			"goals": [
+				{ "label": "Foto 1: Ort", "before": "Hugo va au", "after": "avec Filou.", "options": ["parc", "collège", "marché"], "answer": "parc", "explanation": "Die Geschichte beginnt im Park." },
+				{ "label": "Foto 3: Gefühl", "before": "Hugo cherche son chien. Il est", "after": ".", "options": ["triste", "content", "fatigué"], "answer": "triste", "explanation": "Hugo ist traurig, weil Filou weg ist." },
+				{ "label": "Foto 4: Person", "before": "C’est Zoé, la nouvelle", "after": ".", "options": ["voisine", "prof", "sœur"], "answer": "voisine", "explanation": "Zoé ist die neue Nachbarin." }
+			]
+		},
+		"explorer": {
+			"caption": "Bildergeschichte · Wähle ein Foto",
+			"steps": [
+				{ "label": "Photo 1", "icon": "🌳🐕", "example": "Samedi matin, Hugo va au parc avec son chien.", "detail": "Wer? Wo? Wann?" },
+				{ "label": "Photo 3", "icon": "😢", "example": "Hugo cherche son chien partout.", "detail": "Problem: Filou ist weg." },
+				{ "label": "Photo 5", "icon": "👦👧🐕", "example": "Hugo, Zoé et Filou jouent ensemble.", "detail": "Lösung: eine neue Freundschaft." }
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "f7-affiche",
+		"stage": "f7-outils",
+		"title": "Une affiche en français",
+		"skill": "Daten, Öffnungszeiten und Preise aus Plakaten und Schildern auf Deutsch weitergeben",
+		"bindings": ["1.1-sprachmittlung", "1.1-lesen", "3"],
+		"paragraphs": [
+			"Plakate und Schilder sind kurz, aber voller Informationen. Suche gezielt nach dem, was gefragt ist: Datum (samedi 21 juin), Uhrzeit (de 15 h à 18 h), Ort (au gymnase du collège), Preis (entrée : 2 €; gratuit heißt kostenlos). Auf Schildern stehen oft ouvert (geöffnet), fermé (geschlossen), du lundi au vendredi (von Montag bis Freitag) und tarif réduit (ermäßigt).",
+			"Beim Vermitteln gibst du nur das Wichtige sinngemäß auf Deutsch weiter, keine Wort-für-Wort-Übersetzung. Beispiel: Auf dem Schild steht Piscine municipale – ouvert du mardi au dimanche de 10 h à 19 h – fermé le lundi – entrée : 3 €, enfants : 1,50 €. Du sagst: Das Schwimmbad hat Dienstag bis Sonntag von 10 bis 19 Uhr offen, montags ist zu. Für Kinder kostet es 1,50 €."
+		],
+		"material": "FÊTE DE LA MUSIQUE AU COLLÈGE JULES VERNE – samedi 21 juin – de 15 h à 18 h – dans la cour (s’il pleut : au gymnase) – concerts des élèves, danse, karaoké – entrée gratuite – crêpes et boissons : 1 € – Venez nombreux !",
+		"materialLabel": "Eigenes Übungsplakat · erfundene Veranstaltung",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp-f7"],
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Was kostet der Eintritt zur Fête de la musique?",
+			"answer": "Nichts, der Eintritt ist frei.",
+			"wrong": ["1 Euro.", "2 Euro."],
+			"explanation": "Entrée gratuite heißt freier Eintritt; 1 € kosten Crêpes und Getränke."
+		},
+		"takeaway": "Gezielt suchen: Datum, Uhrzeit, Ort, Preis. ouvert / fermé · du lundi au vendredi · entrée gratuite = Eintritt frei · tarif réduit = ermäßigt. Sinngemäß vermitteln, nicht Wort für Wort.",
+		"practice": [
+			{ "prompt": "„geschlossen“ auf einem Schild: ___", "answers": ["fermé"], "feedback": "Fermé heißt geschlossen." },
+			{ "prompt": "Wo findet das Fest statt, wenn es regnet? Im ___ (Französisch)", "answers": ["gymnase"], "feedback": "S’il pleut : au gymnase." }
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Dein Vater fragt, worum es auf dem Plakat geht. Gib ihm auf Deutsch in drei Sätzen alle wichtigen Angaben weiter.",
+				"model": "Am Samstag, dem 21. Juni, ist von 15 bis 18 Uhr ein Musikfest im Schulhof des Collège Jules Verne, bei Regen in der Turnhalle. Schüler spielen Konzerte, es gibt Tanz und Karaoke. Der Eintritt ist frei, Crêpes und Getränke kosten 1 €.",
+				"criteria": ["Ich nenne Datum, Uhrzeit und Ort.", "Ich nenne das Programm.", "Ich gebe Eintritt und Preise richtig weiter."],
+				"language": "de"
+			},
+			"2": {
+				"prompt": "Gestalte ein eigenes kurzes Plakat auf Französisch für ein Schulfest oder einen Flohmarkt mit Datum, Uhrzeit, Ort, Programm und Preis. Schreibe darunter, was eine deutsche Person davon wissen muss.",
+				"model": "GRAND MARCHÉ AUX PUCES – dimanche 5 octobre – de 9 h à 14 h – dans la cour de la Realschule – livres, jeux, vêtements – entrée gratuite – gâteaux : 1,50 €. Auf Deutsch: Flohmarkt am Sonntag, 5. Oktober, 9 bis 14 Uhr im Schulhof, Eintritt frei, Kuchen 1,50 €.",
+				"criteria": ["Mein Plakat nennt alle wichtigen Angaben.", "Die französischen Angaben sind korrekt.", "Ich fasse sinngemäß auf Deutsch zusammen."]
+			}
+		},
+		"workshop": {
+			"kind": "poster",
+			"goals": [
+				{ "label": "Datum", "before": "Wann?", "after": "", "options": ["samedi 21 juin", "dimanche 1er juin", "lundi 21 juillet"], "answer": "samedi 21 juin", "explanation": "Das Fest ist am samedi 21 juin." },
+				{ "label": "Ort bei Regen", "before": "S’il pleut :", "after": "", "options": ["au gymnase", "dans la cour", "à la cantine"], "answer": "au gymnase", "explanation": "Bei Regen in der Turnhalle." },
+				{ "label": "Eintritt", "before": "entrée", "after": "", "options": ["gratuite", "1 €", "fermée"], "answer": "gratuite", "explanation": "Der Eintritt ist kostenlos." }
+			]
+		},
+		"explorer": {
+			"caption": "Plakat lesen · Wähle eine Angabe",
+			"steps": [
+				{ "label": "Wann?", "icon": "📅", "example": "samedi 21 juin, de 15 h à 18 h", "detail": "Samstag, 21. Juni, 15 bis 18 Uhr" },
+				{ "label": "Wo?", "icon": "📍", "example": "dans la cour (s’il pleut : au gymnase)", "detail": "Schulhof, bei Regen Turnhalle" },
+				{ "label": "Wie viel?", "icon": "€", "example": "entrée gratuite – crêpes : 1 €", "detail": "Eintritt frei, Crêpes 1 €" }
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "f7-traduire",
+		"stage": "f7-outils",
+		"title": "Mot à mot ?",
+		"skill": "Einfache Texte übersetzen und Wort-für-Wort-Fallen vermeiden",
+		"bindings": ["1.1-sprachmittlung", "1.2-wortschatz", "1.2-grammatik"],
+		"paragraphs": [
+			"Wörter und Wendungen lassen sich nicht immer eins zu eins übersetzen. J’ai douze ans heißt nicht „Ich habe zwölf Jahre“, sondern „Ich bin zwölf Jahre alt“. Il y a un parc heißt „Es gibt einen Park“. Ça va ? heißt „Wie geht’s?“. Le collège ist kein College, sondern die Schule für Elf- bis Fünfzehnjährige. Solche falschen Freunde (faux amis) klingen ähnlich, bedeuten aber etwas anderes.",
+			"Übersetze deshalb immer den ganzen Sinn und prüfe am Ende, ob der deutsche Satz natürlich klingt. Beispiel: Le samedi, je fais du vélo avec mon père. Wort für Wort: „Der Samstag, ich mache vom Fahrrad mit meinem Vater.“ Sinngemäß: „Samstags fahre ich mit meinem Vater Fahrrad.“ Auch Artikel verhalten sich anders: J’aime le chocolat heißt „Ich mag Schokolade“, ohne Artikel."
+		],
+		"material": "Salut ! J’ai douze ans et je suis en cinquième au collège. Le samedi, je fais du vélo avec mon père. Dans ma ville, il y a une piscine. J’aime le chocolat, mais je n’aime pas les épinards. Et toi, ça va ?",
+		"materialLabel": "Eigenes Übungsmaterial · erfundene Person",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp-f7"],
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Wie übersetzt du „J’ai douze ans.“?",
+			"answer": "Ich bin zwölf Jahre alt.",
+			"wrong": ["Ich habe zwölf Jahre.", "Ich habe zwölf Jahre alt."],
+			"explanation": "Avoir … ans entspricht im Deutschen „… Jahre alt sein“."
+		},
+		"takeaway": "Sinn übersetzen, nicht Wort für Wort: j’ai douze ans = ich bin zwölf; il y a = es gibt; le samedi = samstags; j’aime le chocolat = ich mag Schokolade. Faux amis: le collège ≠ College.",
+		"practice": [
+			{ "prompt": "„Il y a une piscine“ heißt: Es ___ ein Schwimmbad.", "answers": ["gibt"], "feedback": "Il y a: es gibt." },
+			{ "prompt": "„Le samedi“ übersetzt du mit einem Wort: ___", "answers": ["samstags"], "feedback": "Le samedi: samstags, jeden Samstag." }
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Übersetze den Text aus dem Material sinngemäß ins Deutsche.",
+				"model": "Hallo! Ich bin zwölf Jahre alt und gehe in die siebte Klasse (in Frankreich: cinquième am collège). Samstags fahre ich mit meinem Vater Fahrrad. In meiner Stadt gibt es ein Schwimmbad. Ich mag Schokolade, aber keinen Spinat. Und wie geht’s dir?",
+				"criteria": ["Ich übersetze den Sinn, nicht Wort für Wort.", "Ich vermeide die Fallen bei ans, il y a und le samedi.", "Mein deutscher Text klingt natürlich."],
+				"language": "de"
+			},
+			"2": {
+				"prompt": "Suche drei weitere Beispiele, bei denen eine Wort-für-Wort-Übersetzung falsch wäre (aus dem Buch oder diesem Paket). Schreibe jeweils die falsche und die richtige Übersetzung auf.",
+				"model": "Ça va ? – falsch: „Das geht?“, richtig: „Wie geht’s?“. Je fais du judo. – falsch: „Ich mache vom Judo“, richtig: „Ich mache Judo“. Il est quelle heure ? – falsch: „Er ist welche Stunde?“, richtig: „Wie spät ist es?“",
+				"criteria": ["Ich nenne drei passende Beispiele.", "Ich zeige jeweils die Falle.", "Meine richtige Übersetzung stimmt."],
+				"language": "de"
+			}
+		},
+		"workshop": {
+			"kind": "sentence",
+			"goals": [
+				{ "label": "Alter", "before": "J’ai douze ans. →", "after": "", "options": ["Ich bin zwölf Jahre alt.", "Ich habe zwölf Jahre.", "Ich habe zwölf."], "answer": "Ich bin zwölf Jahre alt.", "explanation": "Alter: avoir … ans = … Jahre alt sein." },
+				{ "label": "Es gibt", "before": "Il y a un parc. →", "after": "", "options": ["Es gibt einen Park.", "Er hat da einen Park.", "Da hat einen Park."], "answer": "Es gibt einen Park.", "explanation": "Il y a = es gibt." },
+				{ "label": "Falscher Freund", "before": "le collège →", "after": "", "options": ["die Schule (für 11- bis 15-Jährige)", "das College", "die Kollegen"], "answer": "die Schule (für 11- bis 15-Jährige)", "explanation": "Le collège ist die französische Mittelstufe." }
+			]
+		},
+		"explorer": {
+			"caption": "Übersetzungsfalle · Wähle einen Satz",
+			"steps": [
+				{ "label": "Alter", "icon": "🎂", "example": "J’ai douze ans. → Ich bin zwölf Jahre alt.", "detail": "Nicht: Ich habe zwölf Jahre." },
+				{ "label": "Sport", "icon": "🚲", "example": "Je fais du vélo. → Ich fahre Fahrrad.", "detail": "Nicht: Ich mache vom Fahrrad." },
+				{ "label": "Vorliebe", "icon": "🍫", "example": "J’aime le chocolat. → Ich mag Schokolade.", "detail": "Im Deutschen ohne Artikel." }
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "f7-deviner",
+		"stage": "f7-outils",
+		"title": "Je devine les mots",
+		"skill": "Unbekannte Wörter aus Englisch, Deutsch, Bild und Zusammenhang erschließen",
+		"bindings": ["1.2-wortschatz", "3", "4"],
+		"paragraphs": [
+			"Viele französische Wörter kannst du erschließen, ohne sie gelernt zu haben. Aus dem Englischen: la musique (music), la question (question), important (important), intéressant (interesting), le parc (park), la table (table). Aus dem Deutschen: le chocolat (Schokolade), le théâtre (Theater), la photo (Foto). Endungen helfen: ‑tion bleibt oft gleich (la nation), ‑ique entspricht oft ‑ik oder ‑ic (la musique, la république).",
+			"Außerdem verraten Bilder, Zahlen und der Zusammenhang viel. Beispiel: Au zoo, il y a des éléphants, des girafes et des crocodiles. Zoo, éléphants, girafes und crocodiles erkennst du aus dem Deutschen und Englischen. Vorsicht bei falschen Freunden: la cave ist der Keller, le collège ist keine Hochschule. Prüfe deine Vermutung deshalb im Zusammenhang oder im Wörterbuch."
+		],
+		"material": "Le week-end, ma classe visite le zoo de La Flèche. Il y a des éléphants, des girafes, des crocodiles et des pingouins. C’est très intéressant ! Le guide explique l’importance de la protection des animaux. Après, nous faisons un pique-nique dans le parc. Super excursion !",
+		"materialLabel": "Eigenes Übungsmaterial · Ausflug mit erschließbaren Wörtern",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp-f7"],
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Was bedeutet „la protection des animaux“? Tipp: protection – protect.",
+			"answer": "der Tierschutz",
+			"wrong": ["die Tierfütterung", "der Tierpark"],
+			"explanation": "Protection kennst du aus dem Englischen (protect = schützen)."
+		},
+		"takeaway": "Erschließen aus Englisch (intéressant – interesting), Deutsch (le chocolat – Schokolade), Endungen (‑tion, ‑ique), Bildern und Zusammenhang. Vorsicht bei faux amis; im Zweifel nachschlagen.",
+		"practice": [
+			{ "prompt": "„intéressant“ heißt auf Deutsch: ___", "answers": ["interessant"], "feedback": "Intéressant: interessant (englisch interesting)." },
+			{ "prompt": "„un pique-nique“ heißt auf Deutsch: ein ___", "answers": ["Picknick"], "feedback": "Pique-nique klingt wie Picknick." }
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Unterstreiche im Material alle Wörter, die du aus dem Englischen oder Deutschen erschließen kannst. Schreibe fünf davon mit der deutschen Bedeutung und der Hilfe auf.",
+				"model": "le zoo – Zoo (deutsch); les éléphants – Elefanten (deutsch/englisch); intéressant – interessant (englisch interesting); la protection – Schutz (englisch protection); un pique-nique – Picknick (deutsch).",
+				"criteria": ["Ich finde fünf erschließbare Wörter.", "Ich nenne die Bedeutung.", "Ich nenne, welche Sprache geholfen hat."],
+				"language": "de"
+			},
+			"2": {
+				"prompt": "Finde in einem französischen Text deines Lehrbuchs fünf neue Wörter, die du erschließen kannst, und ein Wort, bei dem die Vermutung falsch wäre. Erkläre, wie du es geprüft hast.",
+				"model": "Erschlossen: la famille (family), le sport, la télévision, le problème (problem), la banane (Banane). Falsche Vermutung: la cave sieht aus wie „cave“ (Höhle), bedeutet aber Keller; das habe ich im Wörterbuch geprüft.",
+				"criteria": ["Ich nenne fünf erschlossene Wörter.", "Ich nenne einen faux ami.", "Ich erkläre meine Prüfung."],
+				"language": "de"
+			}
+		},
+		"workshop": {
+			"kind": "sentence",
+			"goals": [
+				{ "label": "Englisch hilft", "before": "important =", "after": "", "options": ["wichtig", "wichtiger Import", "unwichtig"], "answer": "wichtig", "explanation": "Englisch important: wichtig." },
+				{ "label": "Deutsch hilft", "before": "le chocolat =", "after": "", "options": ["die Schokolade", "der Kakaobaum", "der Kuchen"], "answer": "die Schokolade", "explanation": "Chocolat klingt wie Schokolade." },
+				{ "label": "Falscher Freund", "before": "la cave =", "after": "", "options": ["der Keller", "die Höhle", "das Café"], "answer": "der Keller", "explanation": "La cave ist ein faux ami: der Keller." }
+			]
+		},
+		"explorer": {
+			"caption": "Brücken bauen · Wähle eine Hilfe",
+			"steps": [
+				{ "label": "Englisch", "icon": "🇬🇧", "example": "la question – question, intéressant – interesting", "detail": "Viele Wörter sind verwandt." },
+				{ "label": "Deutsch", "icon": "🇩🇪", "example": "le chocolat – Schokolade, le théâtre – Theater", "detail": "Auch im Deutschen gibt es französische Wörter." },
+				{ "label": "Vorsicht", "icon": "⚠️", "example": "la cave = der Keller", "detail": "Faux ami: Vermutung prüfen." }
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "f7-carte-postale",
+		"stage": "f7-outils",
+		"title": "Une carte postale",
+		"skill": "Eine Postkarte oder persönliche E-Mail mit Anrede und Schluss schreiben",
+		"bindings": ["1.1-schreiben", "3", "4"],
+		"paragraphs": [
+			"Eine Postkarte oder persönliche E-Mail hat eine feste Form. Anrede: Salut Hugo ! / Cher Hugo, / Chère Inès, (an Erwachsene: Bonjour Madame Dubois,). Dann kommen kurze Informationen: wo du bist, was du machst, was dir gefällt, was du vorhast. Verbinde sie mit et, ou und mais. Schluss: À bientôt ! Bisous (unter Freunden), Amitiés (freundlich) und dein Name.",
+			"Beispiel: Chère Inès, je suis en vacances à Saint-Malo avec ma famille. Il fait beau et la plage est super ! Le matin, je nage et l’après-midi, je fais du vélo. Mais mon frère est malade. Demain, nous allons visiter un phare. À bientôt ! Bisous, Léa. Achte auf die Akzente und auf die Großschreibung am Satzanfang; Wochentage und Monate bleiben klein."
+		],
+		"material": "Chère Inès, je suis en vacances à Saint-Malo avec ma famille. Il fait beau et la plage est super ! Le matin, je nage et l’après-midi, je fais du vélo. Mais mon frère est malade, il reste à l’hôtel. Demain, nous allons visiter un phare. À bientôt ! Bisous, Léa",
+		"materialLabel": "Eigene Beispielpostkarte · erfundene Personen",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp-f7"],
+		"quiz": {
+			"optionLanguage": "fr",
+			"question": "Welcher Schluss passt zu einer Postkarte an eine Freundin?",
+			"answer": "À bientôt ! Bisous, Léa",
+			"wrong": ["Bonjour Madame, Léa", "Joyeux anniversaire, Léa"],
+			"explanation": "À bientôt und Bisous sind ein typischer Schluss unter Freunden."
+		},
+		"takeaway": "Anrede (Salut … ! / Cher … , / Chère … ,) – kurze Infos mit et, ou, mais – Plan mit aller + Infinitiv – Schluss (À bientôt ! Bisous / Amitiés) + Name.",
+		"practice": [
+			{ "prompt": "Anrede für Hugo: ___ Hugo,", "answers": ["Cher"], "feedback": "Für Jungen: cher." },
+			{ "prompt": "Gegensatz: La plage est super, ___ mon frère est malade.", "answers": ["mais"], "feedback": "Mais: aber." }
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe eine Postkarte aus den Ferien (50 bis 60 Wörter) mit Anrede, drei Informationen, einem Plan für morgen und Schluss. Verwende et und mais.",
+				"model": "Cher Hugo, je suis en vacances au lac de Garde avec mes parents. Il fait chaud et l’eau est super ! Le matin, je nage et l’après-midi, je joue au volley. Mais ma sœur déteste l’eau. Demain, nous allons faire du vélo. À bientôt ! Amitiés, Jonas",
+				"criteria": ["Meine Karte hat Anrede und Schluss.", "Ich verwende et und mais.", "Ich nenne einen Plan im futur composé."]
+			},
+			"2": {
+				"prompt": "Schreibe eine E-Mail an deine neue französische Brieffreundin: Stelle dich vor, beschreibe deine Familie und deine Hobbys und stelle zwei Fragen (70 bis 80 Wörter).",
+				"model": "Salut Chloé ! Je m’appelle Lena, j’ai douze ans et j’habite à Regensburg. J’ai un frère et un chat. J’adore la musique et je joue de la guitare, mais je n’aime pas le foot. Le week-end, je fais du vélo avec mes amies. Et toi, tu as des frères et sœurs ? Qu’est-ce que tu aimes faire ? À bientôt ! Bisous, Lena",
+				"criteria": ["Ich stelle mich und meine Familie vor.", "Ich nenne Hobbys mit Vorlieben.", "Ich stelle zwei Fragen und habe Anrede und Schluss."]
+			}
+		},
+		"workshop": {
+			"kind": "sequence",
+			"goals": [
+				{ "label": "Anrede", "before": "", "after": "Inès,", "options": ["Chère", "Bisous", "À bientôt"], "answer": "Chère", "explanation": "Die Karte beginnt mit der Anrede." },
+				{ "label": "Verbindung", "before": "Le matin, je nage", "after": "l’après-midi, je fais du vélo.", "options": ["et", "mais", "ou"], "answer": "et", "explanation": "Et verbindet zwei Aktivitäten." },
+				{ "label": "Schluss", "before": "À bientôt !", "after": ", Léa", "options": ["Bisous", "Chère", "Salut"], "answer": "Bisous", "explanation": "Bisous ist ein Gruß unter Freunden." }
+			]
+		},
+		"explorer": {
+			"caption": "Postkarte · Wähle einen Teil",
+			"steps": [
+				{ "label": "Anrede", "icon": "✉️", "example": "Chère Inès,", "detail": "chère für Mädchen, cher für Jungen" },
+				{ "label": "Text", "icon": "🏖", "example": "Je nage et je fais du vélo, mais mon frère est malade.", "detail": "Kurze Infos mit et, ou, mais" },
+				{ "label": "Schluss", "icon": "👋", "example": "À bientôt ! Bisous, Léa", "detail": "Gruß und Name" }
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "f7-formulaire",
+		"stage": "f7-outils",
+		"title": "Une fiche d’inscription",
+		"skill": "Ein einfaches Formular mit Angaben zur eigenen Person ausfüllen",
+		"bindings": ["1.1-schreiben", "1.2-wortschatz"],
+		"paragraphs": [
+			"In Formularen, zum Beispiel für einen Sportverein, ein Ferienlager oder einen Schüleraustausch, findest du immer ähnliche Felder: Nom (Familienname), Prénom (Vorname), Âge, Date de naissance (Geburtsdatum), Adresse, Code postal (Postleitzahl), Ville (Stadt), Pays (Land), Téléphone, Courriel oder E-mail, Loisirs (Hobbys), Langues parlées (Sprachen). Achtung: Nom ist der Familienname, Prénom der Vorname.",
+			"Das Geburtsdatum schreibst du in Frankreich als Tag/Monat/Jahr: 14/03/2014. In Felder trägst du meist nur Stichworte ein, keine Sätze: Loisirs : foot, guitare. Gib persönliche Daten nur dort ein, wo es wirklich nötig ist, und übe hier nur mit erfundenen Angaben. Beispiel: Nom : Martin – Prénom : Léa – Âge : 12 ans – Ville : Rennes – Langues : français, anglais."
+		],
+		"material": "COLONIE DE VACANCES « LES PETITS PHARES » – FICHE D’INSCRIPTION. Nom : … Prénom : … Âge : … Date de naissance : … / … / … Adresse : … Code postal : … Ville : … Pays : … Téléphone des parents : … Langues parlées : … Loisirs : … Allergies : … Signature des parents : …",
+		"materialLabel": "Eigenes Übungsformular · nur mit erfundenen Angaben ausfüllen",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp-f7"],
+		"quiz": {
+			"optionLanguage": "fr",
+			"question": "Was trägst du bei „Prénom“ ein?",
+			"answer": "den Vornamen",
+			"wrong": ["den Familiennamen", "das Geburtsdatum"],
+			"explanation": "Prénom ist der Vorname, Nom der Familienname."
+		},
+		"takeaway": "Nom = Familienname, Prénom = Vorname, Date de naissance = Geburtsdatum (TT/MM/JJJJ), Code postal, Ville, Pays, Loisirs, Langues parlées. In Formularen Stichworte statt Sätze; nur erfundene Daten zum Üben.",
+		"practice": [
+			{ "prompt": "„Postleitzahl“ im Formular: code ___", "answers": ["postal"], "feedback": "Le code postal." },
+			{ "prompt": "„Hobbys“ im Formular: ___", "answers": ["Loisirs", "loisirs"], "feedback": "Les loisirs." }
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Fülle das Formular aus dem Material für eine erfundene Person aus. Schreibe Stichworte, keine Sätze.",
+				"model": "Nom : Weber – Prénom : Mia – Âge : 12 ans – Date de naissance : 08/02/2014 – Adresse : 4, Schulstraße – Code postal : 86150 – Ville : Augsburg – Pays : Allemagne – Langues parlées : allemand, anglais, un peu de français – Loisirs : natation, dessin – Allergies : non",
+				"criteria": ["Ich fülle jedes Feld passend aus.", "Ich unterscheide Nom und Prénom.", "Ich schreibe das Datum als TT/MM/JJJJ."]
+			},
+			"2": {
+				"prompt": "Erstelle aus den Formularangaben einen kurzen Steckbrief in ganzen Sätzen (fünf Sätze), damit sich die Betreuer im Ferienlager ein Bild machen können.",
+				"model": "Je m’appelle Mia Weber. J’ai douze ans et j’habite à Augsburg, en Allemagne. Je parle allemand, anglais et un peu français. J’adore nager et dessiner. Je n’ai pas d’allergies.",
+				"criteria": ["Ich mache aus Stichworten ganze Sätze.", "Ich nenne alle wichtigen Angaben.", "Meine Verbformen stimmen."]
+			}
+		},
+		"workshop": {
+			"kind": "sequence",
+			"goals": [
+				{ "label": "Familienname", "before": "", "after": ": Martin", "options": ["Nom", "Prénom", "Ville"], "answer": "Nom", "explanation": "Nom ist der Familienname." },
+				{ "label": "Stadt", "before": "", "after": ": Rennes", "options": ["Ville", "Pays", "Âge"], "answer": "Ville", "explanation": "Ville ist die Stadt." },
+				{ "label": "Datum", "before": "Date de naissance :", "after": "", "options": ["14/03/2014", "2014-14-03", "März 14"], "answer": "14/03/2014", "explanation": "Tag/Monat/Jahr." }
+			]
+		},
+		"explorer": {
+			"caption": "Formularfelder · Wähle ein Feld",
+			"steps": [
+				{ "label": "Nom / Prénom", "icon": "🪪", "example": "Nom : Martin – Prénom : Léa", "detail": "Familienname / Vorname" },
+				{ "label": "Date de naissance", "icon": "🎂", "example": "14/03/2014", "detail": "Tag/Monat/Jahr" },
+				{ "label": "Loisirs", "icon": "⚽", "example": "Loisirs : foot, guitare", "detail": "Stichworte statt Sätze" }
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "f7-vocabulaire",
+		"stage": "f7-outils",
+		"title": "Mon fichier de vocabulaire",
+		"skill": "Wortschatz mit Kartei, Vernetzung und Nachschlagewerken festigen",
+		"bindings": ["1.2-wortschatz", "4"],
+		"paragraphs": [
+			"Neue Wörter merkst du dir besser, wenn du sie mehrfach und auf verschiedene Arten übst. Eine Vokabelkarte hat vorne das deutsche Wort, hinten das französische mit Artikel, einem Beispielsatz und vielleicht einer Zeichnung: le cadeau, des cadeaux – Pour mon anniversaire, j’ai beaucoup de cadeaux. Eine Verbkarte zeigt alle sechs Präsensformen. In einem Karteikasten mit Fächern wandern gewusste Karten nach hinten, schwierige bleiben vorne.",
+			"Vernetze Wörter in Mindmaps (alles rund um la maison oder les loisirs) und höre die Audiodateien deines Lehrwerks, um die Aussprache nachzusprechen. Im Lehrwerk findest du hinten den Vokabelanhang und Grammatikübersichten. Online-Wörterbücher zeigen oft mehrere Bedeutungen; wähle die, die zum Satz passt, und achte auf die Angaben m (maskulin) und f (feminin)."
+		],
+		"material": "Ma fiche : RECTO : das Geschenk. VERSO : le cadeau, des cadeaux (m) – « Pour mon anniversaire, j’ai beaucoup de cadeaux. » Ma fiche verbe : prendre – je prends, tu prends, il prend, nous prenons, vous prenez, ils prennent. Ma carte mentale « la maison » : la cuisine, le salon, la chambre, la salle de bains, le jardin.",
+		"materialLabel": "Eigenes Übungsmaterial · Beispielkarten",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp-f7", "dictcc"],
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Was gehört unbedingt auf die französische Seite einer Vokabelkarte für ein Nomen?",
+			"answer": "Das Wort mit Artikel und ein Beispielsatz.",
+			"wrong": ["Nur das Wort ohne Artikel.", "Nur die deutsche Übersetzung."],
+			"explanation": "Mit dem Artikel lernst du das Geschlecht, mit dem Beispielsatz die Verwendung."
+		},
+		"takeaway": "Vokabelkarte: Wort mit Artikel, Plural, Beispielsatz, Bild. Verbkarte: alle sechs Formen. Karteikasten, Mindmaps, Hören und Nachsprechen. Im Wörterbuch auf m / f und die passende Bedeutung achten.",
+		"practice": [
+			{ "prompt": "Im Wörterbuch steht hinter „maison“ ein f. Der Artikel ist also: ___", "answers": ["la"], "feedback": "F heißt feminin: la maison." },
+			{ "prompt": "Plural auf der Karte: le cadeau, des ___", "answers": ["cadeaux"], "feedback": "Unregelmäßiger Plural gehört auf die Karte." }
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Erstelle drei Vokabelkarten zu Wörtern aus diesem Paket: Vorderseite Deutsch, Rückseite Französisch mit Artikel, Plural (wenn besonders) und Beispielsatz.",
+				"model": "1. das Tier – l’animal (m), des animaux – J’adore les animaux. 2. die Küche – la cuisine (f) – Ma mère est dans la cuisine. 3. das Mäppchen – la trousse (f) – Ma trousse est dans mon sac.",
+				"criteria": ["Jede Karte hat Artikel und Geschlecht.", "Jede Karte hat einen Beispielsatz.", "Ich notiere besondere Pluralformen."]
+			},
+			"2": {
+				"prompt": "Erstelle eine Mindmap zum Thema „les loisirs“ mit mindestens zehn Wörtern in drei Ästen. Schlage zwei Wörter, die du selbst brauchst, im verlinkten Online-Wörterbuch nach und notiere, welche Bedeutung zu deinem Satz passt.",
+				"model": "Äste: sport (le foot, le basket, le judo, la natation), musique (la guitare, le piano, chanter), écrans (les jeux vidéo, l’ordinateur, les vidéos). Nachgeschlagen: das Klettern – l’escalade (f); das Skateboard – le skate (m).",
+				"criteria": ["Meine Mindmap hat drei Äste und zehn Wörter.", "Ich notiere die Artikel.", "Ich habe zwei eigene Wörter nachgeschlagen."]
+			}
+		},
+		"workshop": {
+			"kind": "sequence",
+			"goals": [
+				{ "label": "Karte", "before": "Verso :", "after": "– J’ai beaucoup de cadeaux.", "options": ["le cadeau, des cadeaux (m)", "cadeau", "das Geschenk"], "answer": "le cadeau, des cadeaux (m)", "explanation": "Artikel, Plural und Geschlecht gehören dazu." },
+				{ "label": "Wörterbuch", "before": "maison, f →", "after": "maison", "options": ["la", "le", "un"], "answer": "la", "explanation": "F bedeutet feminin." },
+				{ "label": "Karteikasten", "before": "Eine gewusste Karte wandert", "after": ".", "options": ["ins nächste Fach", "in den Papierkorb", "ins erste Fach"], "answer": "ins nächste Fach", "explanation": "Gewusste Karten wandern nach hinten." }
+			]
+		},
+		"explorer": {
+			"caption": "Lerntechniken · Wähle eine Methode",
+			"steps": [
+				{ "label": "Kartei", "icon": "🗂", "example": "le cadeau, des cadeaux (m)", "detail": "Wort mit Artikel, Plural und Beispielsatz." },
+				{ "label": "Mindmap", "icon": "🕸", "example": "la maison → la cuisine, la chambre, le jardin", "detail": "Wörter zu einem Thema vernetzen." },
+				{ "label": "Hören", "icon": "🎧", "example": "Écouter et répéter", "detail": "Audiodateien hören und laut nachsprechen." }
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "f7-accents",
+		"stage": "f7-outils",
+		"title": "Écrire avec les accents",
+		"skill": "Französische Texte mit Akzenten richtig schreiben und Fehler erkennen",
+		"bindings": ["1.1-schreiben", "4"],
+		"paragraphs": [
+			"Akzente gehören zur Rechtschreibung und können die Bedeutung ändern: a (hat) und à (in, nach), ou (oder) und où (wo). Am Computer mit deutscher Tastatur tippst du é mit der Taste ´ und dann e, è mit ` und e, ê mit ^ und e. Das ç bekommst du am Mac mit Alt (Option) + c, unter Windows mit Alt + 0231 auf dem Ziffernblock; auf dem Handy hältst du den Buchstaben gedrückt.",
+			"Führe eine Fehlerliste: Schreibe Wörter auf, bei denen du dich öfter vertust, und markiere die Stelle, zum Beispiel le frère (nicht frere), nous commençons (ç), ils mangent (‑ent ist stumm, aber geschrieben). Lies eigene Texte zweimal: einmal auf den Inhalt, einmal nur auf Akzente, Endungen und Artikel. Beispiel: Où est mon cahier ? Il est à l’école."
+		],
+		"material": "Où est Léa ? Elle est à l’école. Son frère a un vélo. Tu préfères le thé ou le café ? Noël, c’est en décembre. Nous commençons à huit heures. Ma fête est le premier février.",
+		"materialLabel": "Eigenes Übungsmaterial",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp-f7"],
+		"quiz": {
+			"optionLanguage": "fr",
+			"question": "Welcher Satz ist richtig geschrieben?",
+			"answer": "Où est Léa ? Elle est à l’école.",
+			"wrong": ["Ou est Léa ? Elle est a l’école.", "Où est Lea ? Elle est à l’ecole."],
+			"explanation": "Où (wo) und à (in) brauchen den accent grave, Léa und école den accent aigu."
+		},
+		"takeaway": "a ≠ à, ou ≠ où. Tippen: ´ + e = é, ` + e = è, ^ + e = ê, ç mit Alt + c (Mac) oder Alt + 0231 (Windows). Fehlerliste führen, zweimal Korrektur lesen.",
+		"practice": [
+			{ "prompt": "Il ___ un vélo. (hat)", "answers": ["a"], "feedback": "A ohne Akzent: Form von avoir." },
+			{ "prompt": "Il est ___ l’école. (in)", "answers": ["à"], "feedback": "À mit accent grave: Präposition." }
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Korrigiere den Text und schreibe ihn richtig ab: Ou est mon frere ? Il est a la piscine. Nous commencons le cours a huit heures. Noel, c’est en decembre.",
+				"model": "Où est mon frère ? Il est à la piscine. Nous commençons le cours à huit heures. Noël, c’est en décembre.",
+				"criteria": ["Ich setze alle Akzente richtig.", "Ich unterscheide ou / où und a / à.", "Ich schreibe ç und ë."]
+			},
+			"2": {
+				"prompt": "Lege eine persönliche Fehlerliste mit fünf Einträgen an: das falsche Wort, das richtige Wort und eine kurze Regel. Nutze Fehler aus deinen eigenen Texten in diesem Paket.",
+				"model": "1. frere → frère (accent grave). 2. nous mangons → nous mangeons (e vor o). 3. j’aime chocolat → j’aime le chocolat (Artikel). 4. a l’école → à l’école (Präposition). 5. ils parle → ils parlent (‑ent).",
+				"criteria": ["Meine Liste hat fünf Einträge.", "Ich nenne zu jedem Fehler eine Regel.", "Die Fehler stammen aus meinen Texten."]
+			}
+		},
+		"workshop": {
+			"kind": "sentence",
+			"goals": [
+				{ "label": "wo", "before": "", "after": "est Léa ?", "options": ["Où", "Ou", "Oú"], "answer": "Où", "explanation": "Où (wo) mit accent grave." },
+				{ "label": "in", "before": "Elle est", "after": "l’école.", "options": ["à", "a", "á"], "answer": "à", "explanation": "À (in) mit accent grave." },
+				{ "label": "Cédille", "before": "Nous", "after": "à huit heures.", "options": ["commençons", "commencons", "commenćons"], "answer": "commençons", "explanation": "Ç vor o." }
+			]
+		},
+		"explorer": {
+			"caption": "Akzente · Wähle ein Zeichen",
+			"steps": [
+				{ "label": "é", "icon": "´", "example": "l’école, Léa, l’élève", "detail": "accent aigu: geschlossenes e" },
+				{ "label": "è / à / où", "icon": "`", "example": "le frère, à l’école, Où ?", "detail": "accent grave: offenes e oder andere Bedeutung" },
+				{ "label": "ç / ë", "icon": "¸ ¨", "example": "le garçon, Noël", "detail": "Cédille: [s] vor a, o, u · Trema: Vokale getrennt" }
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "f7-sketch",
+		"stage": "f7-outils",
+		"title": "On joue une scène",
+		"skill": "Einen Minidialog gestaltend vortragen und Texte verständlich vorlesen",
+		"bindings": ["1.2-aussprache", "1.1-sprechen", "3"],
+		"paragraphs": [
+			"Ein kurzer Sketch macht Spaß und trainiert die Aussprache. Lerne einen Minidialog auswendig oder schreibe einen eigenen. Beim Vortragen helfen Körpersprache (zeigen, nicken, staunen) und Gegenstände wie ein Rucksack oder eine Baguette. Sprich langsam und deutlich und schau dein Publikum an.",
+			"Beim Vorlesen eines besprochenen Textes achtest du auf drei Dinge: stumme Endungen (ils parlent klingt wie il parle), Bindungen (les‿amis, vous‿êtes) und die Satzmelodie: Bei Fragen steigt die Stimme, am Satzende fällt sie. Markiere vorher im Text die Bindungen mit einem Bogen und die Pausen mit einem Strich. Beispiel: Salut, les‿amis ! | Vous‿êtes prêts ? ↗"
+		],
+		"material": "Au café. Léa : Salut, les amis ! Vous êtes prêts ? Hugo : Oui ! Mais où est Inès ? Léa : Elle arrive. Regarde, elle est là ! Inès : Pardon, je suis en retard ! Le serveur : Bonjour ! Qu’est-ce que vous prenez ? Inès : Trois chocolats chauds, s’il vous plaît ! Hugo : Et trois croissants !",
+		"materialLabel": "Eigener Minidialog · erfundene Personen",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp-f7"],
+		"quiz": {
+			"optionLanguage": "fr",
+			"question": "Wo sprichst du beim Vorlesen eine Bindung (liaison)?",
+			"answer": "Vous êtes prêts ?",
+			"wrong": ["Hugo arrive.", "Le serveur."],
+			"explanation": "Êtes beginnt mit Vokal: vous‿êtes [vuzɛt]."
+		},
+		"takeaway": "Vortragen: auswendig, langsam, mit Körpersprache und Gegenständen. Vorlesen: stumme Endungen, Bindungen (les‿amis, vous‿êtes) und Satzmelodie beachten; Text vorher markieren.",
+		"practice": [
+			{ "prompt": "„ils parlent“ klingt wie: il ___", "answers": ["parle"], "feedback": "Die Endung ‑ent ist stumm." },
+			{ "prompt": "Bei les‿amis klingt das s wie welcher Laut? (ein Buchstabe)", "answers": ["z"], "feedback": "Les‿amis: [lezami]." }
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Markiere im Material die Bindungen und Pausen, übe den Dialog mit zwei Partnern und notiere, welche Gegenstände und Gesten ihr verwendet.",
+				"model": "Bindungen: les‿amis, Vous‿êtes. Pausen nach „Salut, les amis !“ und „Oui !“. Gegenstände: drei Tassen, eine Speisekarte. Gesten: Inès winkt und zeigt auf die Uhr, Hugo zeigt auf die Croissants.",
+				"criteria": ["Ich markiere Bindungen und Pausen.", "Ich plane Gesten und Gegenstände.", "Ich übe den Dialog laut mit Partnern."]
+			},
+			"2": {
+				"prompt": "Schreibe einen eigenen Minidialog (acht Zeilen, drei Personen) zu einer Alltagssituation wie Einkaufen, Verabreden oder Wegfragen. Plane, wie ihr ihn mit Körpersprache vorspielt.",
+				"model": "À la boulangerie. Max : Bonjour, Madame ! La vendeuse : Bonjour ! Vous désirez ? Max : Je voudrais trois croissants. Mia : Et une baguette, s’il vous plaît ! La vendeuse : Ça fait quatre euros dix. Max : Oh non, où est mon argent ? Mia : Ici, dans ton sac ! La vendeuse : Merci, au revoir ! Gesten: Max sucht hektisch, Mia zeigt auf den Rucksack.",
+				"criteria": ["Mein Dialog hat acht Zeilen und drei Personen.", "Die Situation ist alltäglich und verständlich.", "Ich plane Körpersprache für den Vortrag."]
+			}
+		},
+		"workshop": {
+			"kind": "storyboard",
+			"goals": [
+				{ "label": "Bindung", "before": "Salut,", "after": "! (mit Bindung)", "options": ["les‿amis", "les | amis", "le amis"], "answer": "les‿amis", "explanation": "Vor Vokal wird gebunden." },
+				{ "label": "Melodie", "before": "Vous êtes prêts ?", "after": "", "options": ["Stimme steigt ↗", "Stimme fällt ↘", "Stimme bleibt gleich"], "answer": "Stimme steigt ↗", "explanation": "Ja-Nein-Fragen steigen am Ende." },
+				{ "label": "Geste", "before": "Pardon, je suis en retard ! →", "after": "", "options": ["auf die Uhr zeigen", "den Croissant essen", "einschlafen"], "answer": "auf die Uhr zeigen", "explanation": "Die Geste passt zu „zu spät“." }
+			]
+		},
+		"explorer": {
+			"caption": "Storyboard · Wähle eine Szene",
+			"steps": [
+				{ "label": "Begrüßung", "icon": "👋", "example": "Léa : Salut, les‿amis ! Vous‿êtes prêts ?", "detail": "Bindungen sprechen, Frage steigt." },
+				{ "label": "Zu spät", "icon": "⏰", "example": "Inès : Pardon, je suis en retard !", "detail": "Geste: auf die Uhr zeigen." },
+				{ "label": "Bestellung", "icon": "☕🥐", "example": "Trois chocolats chauds, s’il vous plaît !", "detail": "Höflich und deutlich sprechen." }
+			]
+		},
+		"listening": false,
+		"speaking": true
+	}
+]
