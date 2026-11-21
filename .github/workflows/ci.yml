@@ -105,6 +105,9 @@ jobs:
       - name: Check verbatim Geschichte 6 Realschule curriculum coverage
         if: matrix.app == 'geschichte-realschule-6'
         run: node scripts/check-curriculum.mjs
+      - name: Check verbatim Geschichte 7 Realschule curriculum coverage
+        if: matrix.app == 'geschichte-realschule-7'
+        run: node scripts/check-curriculum.mjs
       - name: Check verbatim Grade 5 Gymnasium German curriculum coverage
         if: matrix.app == 'deutsch-gymnasium-5'
         run: node scripts/check-curriculum.mjs

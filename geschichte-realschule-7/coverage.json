@@ -1,0 +1,454 @@
+{
+  "schema": 1,
+  "checked": "2026-11-21",
+  "curriculum": "https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/7/geschichte",
+  "curriculum_sha256": "012212a7a994760563235bddb3cf1d4885d114739b114901a42201b2d2c02a54",
+  "school_type": "realschule",
+  "grade": 7,
+  "subject": "geschichte",
+  "core_lessons": 38,
+  "optional_lessons": [
+    "g7-en-village-and-town",
+    "g7-en-monks-and-knights",
+    "g7-en-new-horizons"
+  ],
+  "scope_note": "Ein gemeinsamer Fachlehrplan für alle Wahlpflichtfächergruppen, deshalb ohne track. Alle 42 Kompetenzerwartungen stehen wortgleich wie auf der am 21.11.2026 direkt abgerufenen Seite (Kopie in tests/fixtures/lehrplanplus-g7.html, Leerraum normalisiert, inklusive des Originalschreibfehlers „staaliche“ in LB 7.2). Lernbereich 1 wird in eigenen Methodenlektionen geübt und in allen Lernbereichen angewendet. Kreative Gestaltungen (Comics, Hörspiele), Stadterkundungen oder Museumsbesuche, echte Geschichtskarten aus Schulbuch oder Geschichtsatlas sowie gedruckte Bücher und freie Recherche ergänzen die App; solche Zeilen tragen den Status „supported“ und nennen das benötigte Material in evidence. Lernbereich 8 (Bilingualer Sachfachunterricht) ist wie im Lehrplan optional. Lehrervideos folgen als separater Schritt.",
+  "outside_app": [
+    "Geschichtskarten, Originalbilder und Bauwerke sind in den Übungen beschrieben, nicht abgebildet; Originale zeigen Schulbuch, Geschichtsatlas, Museum, Bauwerke vor Ort und die verlinkten Fachseiten.",
+    "Eigene Comics, Rekonstruktionsbilder, Hörspiele, Stadterkundungen und Museumsbesuche (Stadtmuseum, Altstadt, Kloster, Barockschloss) finden im Unterricht statt.",
+    "Lektion g7-medien-recherchieren und Lektion g7-welthandel-heute haben den Stand November 2026; eigene Recherchen in gedruckten Büchern und digitalen Angeboten führen die Lernenden selbst durch.",
+    "Eigene Texte werden nicht automatisch bewertet; die Selbsteinschätzung ersetzt keine Rückmeldung der Lehrkraft."
+  ],
+  "rows": [
+    {
+      "lb": 1,
+      "competence": "erschließen Quellen mittels vorbereiteter Fragestellungen und stellen erste quellenkritische Fragen zum Autor. Insbesondere grenzen sie Bild- und Sachquellen (z. B. Flugblätter aus der Zeit der Reformation) von später entstandenen Geschichtsbildern (z. B. Historienbildern) und Rekonstruktionen ab.",
+      "lessons": [
+        "g7-quellen-und-bilder",
+        "g7-ottonen-und-reisekoenigtum",
+        "g7-luther-und-1517"
+      ],
+      "status": "implemented",
+      "evidence": "g7-quellen-und-bilder übt vorbereitete quellenkritische Fragen nach Urheber, Zeit und Absicht sowie die Abgrenzung zeitgenössischer Bild- und Sachquellen (u. a. Flugblätter der Reformationszeit) von späteren Historienbildern und Rekonstruktionen; g7-ottonen-und-reisekoenigtum und g7-luther-und-1517 (mit Auszug aus den 95 Thesen) wenden Quellenkritik am Beispiel an."
+    },
+    {
+      "lb": 1,
+      "competence": "bilden historische Narrationen, ggf. mit gestalterisch-kreativem Anspruch (z. B. Comic, Rekonstruktionsbild, Hörspielskript), in denen sie die christlich-eurozentrische Sicht um weitere Perspektiven ergänzen, wie z. B. Sicht der Juden, der Muslime, der süd- und mittelamerikanischen Ureinwohner, der Afrikaner oder der Osmanen.",
+      "lessons": [
+        "g7-perspektiven-erzaehlen",
+        "g7-juedisches-leben-mittelalter",
+        "g7-kreuzzuege",
+        "g7-konstantinopel-1453",
+        "g7-kolonialisierung-folgen"
+      ],
+      "status": "supported",
+      "evidence": "g7-perspektiven-erzaehlen klärt Regeln sachgerechter historischer Narration und des Perspektivwechsels (Juden, Muslime, Osmanen, mittel- und südamerikanische Ureinwohner, Afrikaner); Level 2 entwirft eine Hörspielszene. Eigene Comics, Rekonstruktionsbilder oder vertonte Hörspiele gestalten die Schülerinnen und Schüler im Unterricht."
+    },
+    {
+      "lb": 1,
+      "competence": "untersuchen einfache Statistiken und Diagramme (z. B. zur Sozialgeschichte der Stadt) sowie Schaubilder (z. B. zum Gesellschaftsaufbau) und erklären oder vervollständigen Geschichtskarten, wie z. B. zu territorialen Veränderungen oder Entdeckungsfahrten.",
+      "lessons": [
+        "g7-karten-und-daten",
+        "g7-ottonen-und-reisekoenigtum",
+        "g7-entdeckungsfahrten-1492",
+        "g7-westfaelischer-friede"
+      ],
+      "status": "supported",
+      "evidence": "g7-karten-und-daten erschließt Schaubilder und Sozialdaten der spätmittelalterlichen Stadt und erklärt Arbeitsschritte für Karten zu Entdeckungsfahrten und Gebietsänderungen; g7-ottonen-und-reisekoenigtum und g7-westfaelischer-friede wenden dies an. Die App beschreibt Karten und zeigt Struktur-Schaubilder, benötigt aber echte Geschichtskarten aus Schulbuch oder Geschichtsatlas."
+    },
+    {
+      "lb": 1,
+      "competence": "verwenden epochentypische Merkmale von Romanik, Gotik und Barock, um ausgewählte Bauwerke (ggf. des Heimatraums) in ihrer Gestalt und Funktion zu beschreiben.",
+      "lessons": [
+        "g7-baustile-erkennen",
+        "g7-staufer-ritter-architektur",
+        "g7-barock-in-bayern",
+        "g7-bauwerke-antike-mittelalter"
+      ],
+      "status": "implemented",
+      "evidence": "g7-baustile-erkennen trainiert Unterscheidungsmerkmale und Funktionen von Romanik, Gotik und Barock; g7-staufer-ritter-architektur, g7-barock-in-bayern und g7-bauwerke-antike-mittelalter vertiefen Gestalt und Aussage an Beispielen aus Bayern und Franken. Vor Ort lassen sich Bauwerke des Heimatraums zusätzlich erkunden."
+    },
+    {
+      "lb": 1,
+      "competence": "verwenden sowohl gedruckte als auch ausgewählte digitale Medien (z. B. geeignete Internetseiten), um gezielt Antworten auf historische Fragen zu finden.",
+      "lessons": [
+        "g7-medien-recherchieren"
+      ],
+      "status": "supported",
+      "evidence": "g7-medien-recherchieren vermittelt Suchstrategien und Prüfmerkmale für gedruckte Nachschlagewerke und seriöse digitale Angebote (Museen, Archive, Lexika) und verlinkt geprüfte Zielseiten. Die eigentliche Arbeit im eigenen gedruckten Buch und die selbstständige Recherche finden im Unterricht oder zu Hause statt."
+    },
+    {
+      "lb": 2,
+      "competence": "erkennen, dass durch die christlich geprägten Lebens- und Herrschaftsformen sowie durch die historischen Entwicklungen im Mittelalter wichtige Grundlagen der europäischen Kultur und Staatlichkeit geschaffen wurden. Dazu vergleichen sie die im Mittelalter bestehende enge Verbindung von christlicher Religion und politischer Herrschaft mit der Situation in einem modernen Staat.",
+      "lessons": [
+        "g7-christentum-und-herrschaft"
+      ],
+      "status": "implemented",
+      "evidence": "g7-christentum-und-herrschaft erklärt die Verflechtung von christlicher Kirche, Gottesgnadentum und Politik im Mittelalter und stellt ihr in Text, Vergleichs-Schaubild, Werkstatt und Aufgaben den modernen demokratischen Rechtsstaat gegenüber."
+    },
+    {
+      "lb": 2,
+      "competence": "untersuchen z. B. anhand einfacher Geschichtskarten und Schaubilder verschiedene Strukturen und Entwicklungen des Mittelalters (z. B. Reisekönigtum, Territorialisierung).",
+      "lessons": [
+        "g7-ottonen-und-reisekoenigtum",
+        "g7-koenig-reich-kurfuersten"
+      ],
+      "status": "supported",
+      "evidence": "g7-ottonen-und-reisekoenigtum und g7-koenig-reich-kurfuersten erklären Reisekönigtum, Königspfalzen und Territorialisierung anhand von Ablauf-Schaubild, Pyramidenmodell und Fallzuordnung. Für die eigene Kartenarbeit brauchen Lernende eine Geschichtskarte zum Reisekönigtum und zur Territorialisierung im Reich aus Schulbuch oder Geschichtsatlas."
+    },
+    {
+      "lb": 2,
+      "competence": "werten einfache bildliche und schriftliche Quellen zur Entstehung des Ottonischen Reiches und zum Investiturstreit aus, um die unterschiedliche Art der Rechtfertigung von Herrschaft zu verstehen.",
+      "lessons": [
+        "g7-ottonen-und-reisekoenigtum",
+        "g7-investiturstreit"
+      ],
+      "status": "implemented",
+      "evidence": "g7-ottonen-und-reisekoenigtum und g7-investiturstreit vergleichen kaiserliches Selbstverständnis und päpstlichen Reformanspruch von Otto I. über Heinrich IV. und Gregor VII. bis zum Wormser Konkordat 1122 mit Vergleichs-Schaubild, Zeitleiste und Urteilsaufgaben."
+    },
+    {
+      "lb": 2,
+      "competence": "untersuchen an einfachen Beispielen der Architektur (z. B. an Kirchen und Herrschaftsbauten) und der höfischen Kultur die christlich geprägte Bild- und Symbolsprache und die mittelalterliche Lebenswelt, um die bis heute in unserem kulturellen Umfeld sichtbaren Relikte jener Zeit als solche zu identifizieren und ihren kulturellen Wert einzuschätzen.",
+      "lessons": [
+        "g7-staufer-ritter-architektur",
+        "g7-kloester",
+        "g7-baustile-erkennen"
+      ],
+      "status": "implemented",
+      "evidence": "g7-staufer-ritter-architektur untersucht höfische Kultur, Rittertum, Minnesang sowie Kirchen- und Burgenbau um 1200; g7-kloester und g7-baustile-erkennen erklären christliche Bildsprache und sichtbare kulturelle Relikte in Bayern."
+    },
+    {
+      "lb": 2,
+      "competence": "analysieren die Gründe und Ursachen für den Aufschwung des Städtewesens (z. B. anhand von zeitgenössischen Bild- und Textquellen) und verbalisieren verschiedene, das Stadtleben prägende Aspekte sowie die Strukturen und Besonderheiten der mittelalterlichen Stadt (z. B. in einem Stadtmuseum oder bei einer Stadterkundung).",
+      "lessons": [
+        "g7-stadt-und-buerger",
+        "g7-juedisches-leben-mittelalter"
+      ],
+      "status": "supported",
+      "evidence": "g7-stadt-und-buerger analysiert Ursachen des Städteaufschwungs, Stadtrechte, Zünfte und Sozialstruktur anhand einer Pyramide und Klassifikation; g7-juedisches-leben-mittelalter zeigt die Rolle jüdischer Gemeinden. Ein realer Besuch im Stadtmuseum oder eine Stadterkundung findet im Unterricht statt."
+    },
+    {
+      "lb": 2,
+      "competence": "erfassen äußere Bedrohungen, denen die Menschen im Mittelalter ausgesetzt waren (z. B. Seuchen, Missernten) und untersuchen, wie Menschen mit diesen Herausforderungen umgegangen sind.",
+      "lessons": [
+        "g7-seuchen-und-krisen",
+        "g7-juedisches-leben-mittelalter"
+      ],
+      "status": "implemented",
+      "evidence": "g7-seuchen-und-krisen erklärt Missernten und den Schwarzen Tod ab 1347/48 sowie den Umgang der Menschen zwischen Gebet, Quarantäne und falscher Sündenbock-Suche; g7-juedisches-leben-mittelalter vertieft Pogrome in Krisenzeiten."
+    },
+    {
+      "lb": 2,
+      "competence": "belegen an Beispielen die Erweiterung (geographisch, wirtschaftlich, wissenschaftlich) des mittelalterlichen Weltbildes durch die Kreuzzüge und diskutieren den kulturellen Austausch vor dem Hintergrund religiöser Unterschiede, indem sie z. B. Quellentexte christlicher und muslimischer Autoren zu den Kreuzzügen auswerten.",
+      "lessons": [
+        "g7-kreuzzuege"
+      ],
+      "status": "implemented",
+      "evidence": "g7-kreuzzuege belegt die geographische, wirtschaftliche und wissenschaftliche Erweiterung des Weltbildes durch die Kreuzzüge und kontrastiert christliche und muslimische Sichtweisen in Vergleichs-Schaubild, Werkstatt und Aufgaben."
+    },
+    {
+      "lb": 2,
+      "competence": "leiten aus dem historischen Aufeinandertreffen verschiedener Völker und Kulturen (z. B. Kreuzzüge) die Notwendigkeit eines friedfertigen Dialogs ab.",
+      "lessons": [
+        "g7-kreuzzuege",
+        "g7-perspektiven-erzaehlen"
+      ],
+      "status": "implemented",
+      "evidence": "g7-kreuzzuege leitet in Schreibaufgabe Level 2 unmittelbar aus dem Vergleich der Perspektiven die Notwendigkeit von Wissen, Respekt und friedfertigem Dialog zwischen Völkern und Religionen ab."
+    },
+    {
+      "lb": 2,
+      "competence": "gliedern Leben und Herrschaft im Mittelalter u. a. mithilfe der Grundlegenden Daten 962 Kaiserkrönung Ottos des Großen und um 1200 kulturelle Blüte zur Zeit der Staufer.",
+      "lessons": [
+        "g7-ottonen-und-reisekoenigtum",
+        "g7-staufer-ritter-architektur"
+      ],
+      "status": "implemented",
+      "evidence": "g7-ottonen-und-reisekoenigtum lehrt 962 Kaiserkrönung Ottos des Großen (Zeitleisten-Werkstatt und Geschichtsfries-Nadel), g7-staufer-ritter-architektur die kulturelle Blüte um 1200 zur Zeit der Staufer."
+    },
+    {
+      "lb": 2,
+      "competence": "wenden die Grundlegenden Begriffe Grundherrschaft, Lehnswesen, Adel, Investiturstreit, Kreuzzug, Stadtrecht, Bürger, Ghetto, Kurfürsten, Stände, Kloster sicher an.",
+      "lessons": [
+        "g7-grundherrschaft-und-staende",
+        "g7-lehnswesen",
+        "g7-kloester",
+        "g7-investiturstreit",
+        "g7-kreuzzuege",
+        "g7-stadt-und-buerger",
+        "g7-juedisches-leben-mittelalter",
+        "g7-koenig-reich-kurfuersten"
+      ],
+      "status": "implemented",
+      "evidence": "Alle elf Grundlegenden Begriffe von Lernbereich 2 werden in den zugeordneten Lektionen erarbeitet, in Werkstätten und Schreibaufgaben angewandt und im Nachschlagen erklärt."
+    },
+    {
+      "lb": 3,
+      "competence": "erkennen, dass Fortschritt und Wandel in der Zeit der Renaissance durch die Rezeption der Antike möglich waren. Sie reflektieren dabei die Bedeutung von Vergangenem für die Gegenwart.",
+      "lessons": [
+        "g7-renaissance-und-antike"
+      ],
+      "status": "implemented",
+      "evidence": "g7-renaissance-und-antike erklärt die Wiederentdeckung antiker Schriften und Bauwerke im Humanismus und reflektiert in der Transferaufgabe, wie Vergangenes Denkanstöße für unsere Gegenwart liefert."
+    },
+    {
+      "lb": 3,
+      "competence": "erkennen das neue Menschenbild der Renaissance als eine wesentliche Voraussetzung für den tiefgreifenden Wandel vom Mittelalter zur Neuzeit. An Beispielen aus Wissenschaft und Kultur (z. B. Leonardo da Vinci) untersuchen sie, wie sich darin bereits unser modernes Welt- und Menschenbild (z. B. Galileo Galilei) zeigt.",
+      "lessons": [
+        "g7-menschenbild-und-wissenschaft"
+      ],
+      "status": "implemented",
+      "evidence": "g7-menschenbild-und-wissenschaft untersucht den Wandel des Menschen- und Weltbildes am Beispiel von Leonardo da Vinci und Galileo Galilei und arbeitet den Übergang zu Beobachtung, Experiment und moderner Wissenschaft heraus."
+    },
+    {
+      "lb": 3,
+      "competence": "identifizieren und erläutern am Beispiel des Buchdrucks die gesellschaftlichen Auswirkungen technischer Erfindungen im Bereich der Informationsverarbeitung und -verbreitung, um sie mit der digitalen Revolution am Beginn des 21. Jahrhunderts zu vergleichen.",
+      "lessons": [
+        "g7-buchdruck"
+      ],
+      "status": "implemented",
+      "evidence": "g7-buchdruck erklärt Johannes Gutenbergs Verfahren mit beweglichen Metalllettern, ordnet Wirkungen im Vergleich zur digitalen Revolution des 21. Jahrhunderts zu und fordert in Level 2 einen begründeten Vergleich."
+    },
+    {
+      "lb": 3,
+      "competence": "hinterfragen Motive und Folgen der Entdeckungsfahrten (z. B. „Entdeckung“ Amerikas) und der europäischen Kolonialisierung, um wirtschaftliche und kulturelle Konsequenzen bis zur Gegenwart zu beschreiben. Dabei reflektieren sie die Folgen für die in den Kolonialgebieten ursprünglich angestammten Kulturen und begreifen an einfachen Beispielen die Hintergründe heutiger weltweiter Konfrontationen und Kooperationen.",
+      "lessons": [
+        "g7-entdeckungsfahrten-1492",
+        "g7-kolonialisierung-folgen"
+      ],
+      "status": "implemented",
+      "evidence": "g7-entdeckungsfahrten-1492 und g7-kolonialisierung-folgen prüfen Motive, Technik und Folgen der Eroberungen für indigene Kulturen und den Sklavenhandel sowie fortdauernde globale Auswirkungen bis heute."
+    },
+    {
+      "lb": 3,
+      "competence": "setzen sich mit der kontroversen Beurteilung der Eroberung Konstantinopels 1453 auseinander, um die perspektivische Gebundenheit der Bewertung historischer Ereignisse zu erfassen.",
+      "lessons": [
+        "g7-konstantinopel-1453"
+      ],
+      "status": "implemented",
+      "evidence": "g7-konstantinopel-1453 stellt byzantinisch-westeuropäische und osmanische Bewertungen der Eroberung Konstantinopels 1453 gegenüber und erschließt die Standortgebundenheit historischer Urteile."
+    },
+    {
+      "lb": 3,
+      "competence": "wenden die Grundlegenden Begriffe Neuzeit und Renaissance sowie die Grundlegenden Daten 1453 Eroberung Konstantinopels und 1492 „Entdeckung“ Amerikas an, um die Epochengrenze zwischen Mittelalter und Neuzeit zu diskutieren.",
+      "lessons": [
+        "g7-renaissance-und-antike",
+        "g7-konstantinopel-1453",
+        "g7-entdeckungsfahrten-1492",
+        "g7-kolonialisierung-folgen"
+      ],
+      "status": "implemented",
+      "evidence": "Die Begriffe Neuzeit und Renaissance sowie die Daten 1453 Eroberung Konstantinopels und 1492 „Entdeckung“ Amerikas werden in g7-kolonialisierung-folgen (inklusive Vergleichs-Schaubild) zur Diskussion der Epochengrenze angewandt."
+    },
+    {
+      "lb": 4,
+      "competence": "nutzen ihre Kenntnisse zu den Umbruchs- und Krisenerscheinungen im 16. Jahrhundert sowie über Verlauf und Hauptakteure der Reformation (Luther, Karl V.) und das sich daraus ergebende veränderte Verhältnis von Politik und Religion, um Ursachen und Wirkungen historischer Prozesse beispielhaft zu beschreiben.",
+      "lessons": [
+        "g7-luther-und-1517",
+        "g7-bauernkrieg-und-reich"
+      ],
+      "status": "implemented",
+      "evidence": "g7-luther-und-1517 und g7-bauernkrieg-und-reich behandeln Krisenstimmung des 16. Jahrhunderts, Martin Luther, Kaiser Karl V., Wormser Reichstag 1521, Bauernkrieg 1525 und das neue Zusammenspiel von Fürstenpolitik und Kirche."
+    },
+    {
+      "lb": 4,
+      "competence": "arbeiten u. a. an zeitgenössischen Bild- und Textquellen heraus, wie wichtig Religion für das Denken und Handeln der Menschen zur Zeit der Reformation gewesen ist.",
+      "lessons": [
+        "g7-luther-und-1517",
+        "g7-bauernkrieg-und-reich"
+      ],
+      "status": "implemented",
+      "evidence": "g7-luther-und-1517 arbeitet mit dem übersetzten Originalauszug aus den 95 Thesen (These 27 und 36) sowie der Beschreibung reformatorischer Flugschriften die zentrale Rolle des Glaubens im 16. Jahrhundert heraus."
+    },
+    {
+      "lb": 4,
+      "competence": "bewerten die Auswirkungen der Reformation auf die päpstliche Kirche, auf Gesellschaft und Politik im Reich. Damit sind sie u. a. in der Lage, das Nebeneinander verschiedener Konfessionen im heutigen Deutschland historisch zu erklären.",
+      "lessons": [
+        "g7-konfessionalisierung"
+      ],
+      "status": "implemented",
+      "evidence": "g7-konfessionalisierung untersucht Konzil von Trient, Jesuiten, Augsburger Religionsfrieden 1555 und die regionale Konfessionsentwicklung in Deutschland als historische Erklärung des heutigen Nebeneinanders."
+    },
+    {
+      "lb": 4,
+      "competence": "untersuchen vor dem Hintergrund des modernen Menschenbildes irrationale Phänomene (z. B. Verfolgung und Ausgrenzung von Teilen der Bevölkerung) und ziehen ggf. Parallelen zu aktuellen Erscheinungen der Stigmatisierung und Ausgrenzung.",
+      "lessons": [
+        "g7-hexenverfolgung"
+      ],
+      "status": "implemented",
+      "evidence": "g7-hexenverfolgung analysiert die frühneuzeitlichen Hexenprozesse auch mit bayerisch-fränkischem Bezug anhand des modernen Menschenbildes und zieht in der Werkstatt und Transferaufgabe sachliche Parallelen zu heutiger Ausgrenzung und Stigmatisierung."
+    },
+    {
+      "lb": 4,
+      "competence": "gliedern das konfessionelle Zeitalter vor allem mithilfe des Grundlegenden Datums 1517 Beginn der Reformation und wenden die Grundlegenden Begriffe Luther und Reformation im historischen Zusammenhang richtig an.",
+      "lessons": [
+        "g7-luther-und-1517",
+        "g7-bauernkrieg-und-reich",
+        "g7-konfessionalisierung"
+      ],
+      "status": "implemented",
+      "evidence": "Das Grundlegende Datum 1517 Beginn der Reformation sowie die Begriffe Luther und Reformation gliedern Lernbereich 4 in Erklärung, Zeitleiste, Geschichtsfries und Nachschlagen."
+    },
+    {
+      "lb": 5,
+      "competence": "untersuchen wesentliche Gründe, die zum Dreißigjährigen Krieg und zum neuen europäischen Staatensystem nach 1648 führten, und bewerten in diesem Zusammenhang das Streben nach friedlichen Lösungen politischer wie religiöser Konfliktfragen in der Gegenwart.",
+      "lessons": [
+        "g7-dreissigjaehriger-krieg",
+        "g7-westfaelischer-friede"
+      ],
+      "status": "implemented",
+      "evidence": "g7-dreissigjaehriger-krieg und g7-westfaelischer-friede erklären Auslöser, Europäisierung und das Verhandlungsergebnis von 1648 und würdigen den Wert friedlicher Kompromisse für Gegenwartskonflikte."
+    },
+    {
+      "lb": 5,
+      "competence": "beurteilen die Folgen der Kriegsführung der Frühen Neuzeit (z. B. Auswirkungen auf die Bevölkerung im Dreißigjährigen Krieg), indem sie einen landesgeschichtlichen und ggf. auch einen regionalen Bezug herstellen.",
+      "lessons": [
+        "g7-dreissigjaehriger-krieg"
+      ],
+      "status": "implemented",
+      "evidence": "g7-dreissigjaehriger-krieg untersucht die Verpflegung von Söldnerheeren, Hunger und Seuchen und stellt den landesgeschichtlichen Bezug zu den Verwüstungen in Bayern und Franken ab 1632 her."
+    },
+    {
+      "lb": 5,
+      "competence": "erkennen am Beispiel des französischen Absolutismus, dass diese Herrschaftsform Staat und Gesellschaft in Europa veränderte. Sie nutzen diese Erkenntnis, um z. B. kulturelle Zeugnisse (z. B. Residenzen, Parkanlagen), aber auch Anfänge moderner staatlicher Strukturen (z. B. Verwaltung, Infrastruktur, stehendes Heer) einzuordnen.",
+      "lessons": [
+        "g7-absolutismus-frankreich"
+      ],
+      "status": "implemented",
+      "evidence": "g7-absolutismus-frankreich trennt in Schaubild, Werkstatt und Aufgaben höfische Repräsentation (Versailles, Parks) von Anfängen moderner Staatlichkeit (Berufsverwaltung, Infrastruktur, stehendes Heer) unter Ludwig XIV."
+    },
+    {
+      "lb": 5,
+      "competence": "beschreiben den Vorbildcharakter des französischen Absolutismus für Europas Fürsten anhand der Herrschaftsbauten der Epoche, indem sie ein landesgeschichtliches (ggf. ein regionales) Beispiel für den Barock und seine repräsentative Funktion untersuchen.",
+      "lessons": [
+        "g7-barock-in-bayern"
+      ],
+      "status": "implemented",
+      "evidence": "g7-barock-in-bayern untersucht das französische Vorbild an bayerischen und fränkischen Barockbauten (Schloss Nymphenburg, Neues Schloss Schleißheim, Würzburger Residenz, Markgräfliches Opernhaus Bayreuth)."
+    },
+    {
+      "lb": 5,
+      "competence": "erfassen das Prinzip der „balance of power“ und beschreiben die Problematik einer hegemonialen Außenpolitik als permanente Gefahr für den Frieden im Europa des 17. und 18. Jahrhunderts.",
+      "lessons": [
+        "g7-hegemonie-und-balance"
+      ],
+      "status": "implemented",
+      "evidence": "g7-hegemonie-und-balance erklärt Hegemonialpolitik und das Gegenprinzip der „balance of power“ anhand von Koalitionskriegen des 17. und 18. Jahrhunderts und beurteilt die Gefahren für den Frieden."
+    },
+    {
+      "lb": 5,
+      "competence": "wenden die Grundlegenden Daten 1618–1648 Dreißigjähriger Krieg und 17./18. Jh. Absolutismus in Europa und die Grundlegenden Begriffe Westfälischer Friede, Absolutismus, Hegemonie im Zusammenhang sicher an.",
+      "lessons": [
+        "g7-dreissigjaehriger-krieg",
+        "g7-westfaelischer-friede",
+        "g7-absolutismus-frankreich",
+        "g7-hegemonie-und-balance"
+      ],
+      "status": "implemented",
+      "evidence": "1618–1648 Dreißigjähriger Krieg, 17./18. Jh. Absolutismus in Europa sowie Westfälischer Friede, Absolutismus und Hegemonie werden im historischen Zusammenhang geübt und auf dem Geschichtsfries markiert."
+    },
+    {
+      "lb": 6,
+      "competence": "nutzen die Erkenntnis, dass bestimmte Bauwerke Aufschluss über das politische oder gesellschaftliche Selbstverständnis ihrer Bauherrn bzw. einer Epoche geben, um die Bedeutung historischer Gebäude zu erfassen, die sie in ihrem Alltag oder in den Medien wahrnehmen.",
+      "lessons": [
+        "g7-bauwerke-antike-mittelalter",
+        "g7-bauwerke-barock-heute"
+      ],
+      "status": "implemented",
+      "evidence": "g7-bauwerke-antike-mittelalter und g7-bauwerke-barock-heute leiten dazu an, öffentliche Bauwerke im Alltag und in Medien als Ausdruck politischen oder religiösen Selbstverständnisses zu deuten."
+    },
+    {
+      "lb": 6,
+      "competence": "analysieren Gemeinsamkeiten und Unterschiede von Bauwerken verschiedener Epochen und ggf. verschiedener Religionen anhand vorgegebener Kriterien, indem sie u. a. Fotografien, Gemälde, Pläne und Skizzen untersuchen und Vergleiche anstellen zu heutigen öffentlichen Bauten. Sie erörtern dabei, welches Herrschaftsverständnis bzw. welche gesellschaftliche Ordnung in den untersuchten Baudenkmälern deutlich wird.",
+      "lessons": [
+        "g7-bauwerke-antike-mittelalter",
+        "g7-bauwerke-religionen",
+        "g7-bauwerke-barock-heute"
+      ],
+      "status": "implemented",
+      "evidence": "Alle drei Lektionen in Lernbereich 6 vergleichen Bauwerke verschiedener Epochen und der drei großen Religionen Christentum, Judentum und Islam kriteriengeleitet mit heutigen Bauten wie dem Reichstag (Originalfotos stellen die verlinkten Seiten und eigene Erkundungen bereit)."
+    },
+    {
+      "lb": 6,
+      "competence": "vergleichen die ursprüngliche Funktion historischer Bauwerke mit ihrer heutigen und erörtern dabei Aufgabe und Sinn des Denkmalschutzes.",
+      "lessons": [
+        "g7-bauwerke-barock-heute"
+      ],
+      "status": "implemented",
+      "evidence": "g7-bauwerke-barock-heute stellt früheren Funktionen absolutistischer Schlösser ihre heutige museale Nutzung gegenüber und erörtert Nutzen und Kosten des Denkmalschutzes."
+    },
+    {
+      "lb": 6,
+      "competence": "ordnen ausgewählte historische Bauwerke den Epochen Antike, Mittelalter und Neuzeit begründet zu und nutzen Grundlegende Daten und Begriffe der Geschichte, wie z. B. 5. Jh. v. Chr. Blütezeit Athens; 800 Kaiserkrönung Karls des Großen; 17./18. Jh. Absolutismus in Europa; Polis, Demokratie, Monarchie, König, Kaiser, Kloster, Christentum, Judentum, Islam, Absolutismus und Aristokratie, um Zusammenhänge zwischen Architektur, Herrschaftsform und Religion zu beschreiben.",
+      "lessons": [
+        "g7-bauwerke-antike-mittelalter",
+        "g7-bauwerke-religionen",
+        "g7-bauwerke-barock-heute"
+      ],
+      "status": "implemented",
+      "evidence": "Die Grundlegenden Daten (5. Jh. v. Chr. Blütezeit Athens, 800 Kaiserkrönung Karls des Großen, 17./18. Jh. Absolutismus in Europa) und alle genannten Begriffe verknüpfen in LB 6 Architektur, Herrschaft und Religion."
+    },
+    {
+      "lb": 7,
+      "competence": "erkennen in dem historischen Längsschnitt den Zusammenhang von Wirtschaft, Politik und Kultur. Sie nutzen ihre Kenntnisse über Antike, Mittelalter und Neuzeit, um Unterschiede und Gemeinsamkeiten zur heutigen globalisierten Welt zu benennen.",
+      "lessons": [
+        "g7-handel-am-limes",
+        "g7-hanse-und-fugger",
+        "g7-welthandel-heute"
+      ],
+      "status": "implemented",
+      "evidence": "Die drei Lektionen in Lernbereich 7 verfolgen die Verflechtung von Wirtschaft, Politik und Kultur von der Antike über Mittelalter und Frühe Neuzeit bis zur heutigen Globalisierung."
+    },
+    {
+      "lb": 7,
+      "competence": "untersuchen anhand des Obergermanisch-Rätischen Limes die staaliche Steuerung von Handelsbeziehungen und beschreiben die langfristigen Auswirkungen des Kulturkontakts zwischen Römern und Germanen auf Sprache und Lebenswelt. Dabei gewinnen sie die Erkenntnis, dass wirtschaftliche Beziehungen und der daraus resultierende kulturelle Austausch die Lebenswelt der Menschen zu allen Zeiten geprägt haben.",
+      "lessons": [
+        "g7-handel-am-limes"
+      ],
+      "status": "implemented",
+      "evidence": "g7-handel-am-limes untersucht Zölle, Übergänge und Waffenverbote am Obergermanisch-Rätischen Limes sowie die sprachlichen und alltäglichen Folgen der Romanisierung im bayerischen Grenzraum."
+    },
+    {
+      "lb": 7,
+      "competence": "erklären am Beispiel der Hanse, wie sich ein überregionales Handelsnetz entwickelte, das auf der Grundlage von wirtschaftlichem Erfolg u. a. die städtische Kultur über Staaten und Länder hinweg langfristig prägte, oder erklären am Beispiel der Fugger die Wechselwirkung von Warenaustausch und Kulturtransfer, indem sie deren weltweite wirtschaftliche und politische Beziehungen ebenso untersuchen (z. B. Fugger als Königsmacher) wie ihre kulturellen Leistungen (z. B. Fugger als Mäzene und Stifter).",
+      "lessons": [
+        "g7-hanse-und-fugger"
+      ],
+      "status": "implemented",
+      "evidence": "g7-hanse-und-fugger deckt beide Wahlmöglichkeiten des Lehrplans ab: das überregionale Handels- und Kulturnetz der Hanse mit Kontoren und Backsteingotik ebenso wie Frühkapitalismus, Königsmacher-Rolle und Mäzenatentum/Fuggerei der Augsburger Fugger."
+    },
+    {
+      "lb": 7,
+      "competence": "wenden ihnen bekannte Grundlegende Daten und Begriffe, wie z. B. Limes, Romanisierung, Provinz, Grundherrschaft, Stadtrecht, Bürger, Mittelalter, Renaissance oder Neuzeit, sicher an, um Zusammenhänge zwischen Handelsbeziehungen und Kulturkontakten zu beschreiben.",
+      "lessons": [
+        "g7-handel-am-limes",
+        "g7-hanse-und-fugger",
+        "g7-welthandel-heute"
+      ],
+      "status": "implemented",
+      "evidence": "Alle aufgeführten Grundlegenden Begriffe (Limes, Romanisierung, Provinz, Grundherrschaft, Stadtrecht, Bürger, Mittelalter, Renaissance, Neuzeit) werden in Zusammenhängen zwischen Handel und Kulturkontakt angewandt."
+    },
+    {
+      "lb": 8,
+      "competence": "setzen die englische Sprache als Mittel zur authentischen Kommunikation ein und nehmen einen sprachlichen und inhaltlichen Perspektivenwechsel vor. So begreifen sie, dass die Fremdsprache ein Spiegel kultureller Besonderheiten und Unterschiede ist, um historische Phänomene multiperspektivisch zu betrachten und zu erschließen.",
+      "lessons": [
+        "g7-en-village-and-town",
+        "g7-en-monks-and-knights",
+        "g7-en-new-horizons"
+      ],
+      "status": "implemented",
+      "evidence": "Die drei optionalen englischsprachigen Lektionen üben gezielten sprachlichen und inhaltlichen Perspektivenwechsel zwischen englischer und deutscher Terminologie (u. a. manor vs. Grundherrschaft, “discovery” vs. Perspektive indigener Völker)."
+    },
+    {
+      "lb": 8,
+      "competence": "nutzen ihre historischen Kenntnisse, um faktengestützt Themen der Jahrgangsstufe zu diskutieren, indem sie fachspezifisches Vokabular (Englisch, Deutsch) gezielt und reflektiert einsetzen sowie sprachliche und inhaltliche Phänomene kritisch hinterfragen.",
+      "lessons": [
+        "g7-en-village-and-town",
+        "g7-en-monks-and-knights",
+        "g7-en-new-horizons"
+      ],
+      "status": "implemented",
+      "evidence": "Alle drei bilingualen Lektionen fordern zweisprachiges Fachvokabular und begründete englische Argumentation in Klassifikation und zwei Schreibniveaus; lebendige Klassengespräche ergänzen dies im Unterricht."
+    }
+  ]
+}
