@@ -1643,6 +1643,18 @@ dialog::backdrop {
 	}
 }
 
+/* The small storage note at the writing desk (AGENTS.md rule 7). */
+.desk-info {
+	margin: -0.25rem 0 0.75rem;
+}
+.desk-info summary {
+	cursor: pointer;
+	width: fit-content;
+}
+.desk-info p {
+	margin: 0.35rem 0 0;
+}
+
 /* The Grundwortschatz list in a lesson. */
 .wordbook {
 	margin-top: 1rem;
