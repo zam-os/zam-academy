@@ -1,0 +1,457 @@
+[
+	{
+		"id": "e7-celts",
+		"stage": "history",
+		"title": "The Celts: Britain and Ireland before the Romans",
+		"skill": "Spuren der Kelten beschreiben und einen Sachtext erst global, dann im Detail lesen",
+		"bindings": ["1.1", "2", "4", "5"],
+		"paragraphs": [
+			"Lange bevor es England, Schottland oder Irland gab, lebten auf beiden Inseln keltische Stämme. Sie wohnten in Rundhäusern (roundhouses), bauten befestigte Dörfer auf Hügeln (hillforts) und hatten Priester, die Druiden (Druids). Die Kelten schrieben kaum etwas auf; was wir über sie wissen, stammt aus Ausgrabungen und aus Berichten römischer Autoren. Ihre Sprachen leben bis heute weiter: Irisch (Irish), Schottisch-Gälisch (Scottish Gaelic) und Walisisch (Welsh) sind keltische Sprachen.",
+			"Bei einem Sachtext hilft dir eine feste Reihenfolge. Zuerst liest du für den Gesamtzusammenhang (reading for gist): Worum geht es? Dann suchst du gezielt Einzelheiten (reading for detail), zum Beispiel Namen, Orte und Zahlen. Beispiel: Die Frage „Where did the Celts live in dangerous times?“ beantwortest du mit einer kurzen Detailinformation: „They moved into hillforts.“ Unbekannte Wörter erschließt du oft aus dem Zusammenhang oder über die Nähe zum Deutschen: metalworker – Metallhandwerker."
+		],
+		"material": "Fact file · The Celts\nAbout 2,500 years ago, many Celtic tribes lived in Britain and Ireland. Most people were farmers. They grew wheat, kept cows and sheep and lived in roundhouses with thatched roofs. In dangerous times, they moved into hillforts – villages on hills with walls and ditches around them. The Celts were also skilled metalworkers: they made beautiful jewellery, swords and shields from iron, bronze and gold. Their priests, the Druids, were teachers and judges, too. The Celts did not write books, so a lot of what we know comes from archaeologists and from Roman writers. Today you can still hear Celtic languages: Irish in Ireland, Scottish Gaelic in Scotland and Welsh in Wales.",
+		"materialLabel": "Eigenes englisches Übungsmaterial · Sachtext (Fact file)",
+		"materialLanguage": "en",
+		"sourceIds": ["lp", "wiki-celts"],
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "Welche Aussage steht so im Fact file?",
+			"answer": "The Druids were priests, teachers and judges.",
+			"wrong": [
+				"The Celts wrote many books about their history.",
+				"The Celts lived in big stone castles."
+			],
+			"explanation": "Laut Text waren die Druiden Priester und zugleich Lehrer und Richter. Bücher schrieben die Kelten nicht, und sie lebten in roundhouses und hillforts, nicht in Steinburgen."
+		},
+		"takeaway": "Die Kelten lebten vor den Römern in Britannien und Irland (roundhouses, hillforts, Druids). Keltische Sprachen heute: Irish, Scottish Gaelic, Welsh. Lesen: erst for gist, dann for detail.",
+		"practice": [
+			{
+				"prompt": "The Celts lived in round houses with thatched roofs. In the text they are called ___. (ein Wort aus dem Text)",
+				"answers": ["roundhouses"],
+				"feedback": "roundhouses: runde Häuser mit einem Dach aus Stroh oder Schilf."
+			},
+			{
+				"prompt": "Welsh, Irish and Scottish Gaelic are ___ languages. (Adjektiv aus dem Text)",
+				"answers": ["Celtic"],
+				"feedback": "Celtic languages: Diese drei Sprachen stammen von den Sprachen der Kelten ab."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Read the fact file again. Write four sentences about the Celts: where they lived, what their houses were like, what they made and which languages still exist today.",
+				"model": "The Celts lived in Britain and Ireland about 2,500 years ago. They lived in roundhouses with thatched roofs, and in dangerous times they moved into hillforts. They were skilled metalworkers and made jewellery, swords and shields. Today people still speak Celtic languages like Irish, Scottish Gaelic and Welsh.",
+				"criteria": [
+					"Ich nenne Ort und Zeit (Britain and Ireland, about 2,500 years ago).",
+					"Ich beschreibe Wohnen und Handwerk mit Wörtern aus dem Text.",
+					"Ich nenne mindestens zwei keltische Sprachen von heute."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Erkläre einer Mitschülerin auf Deutsch, woher wir überhaupt etwas über die Kelten wissen, obwohl sie kaum etwas aufgeschrieben haben. Nenne zwei Arten von Quellen und je ein Beispiel.",
+				"model": "Die Kelten haben fast nichts aufgeschrieben. Wir wissen trotzdem etwas über sie, weil Archäologen Reste ihrer Rundhäuser, Hügelfestungen, Schmuckstücke und Waffen ausgegraben haben. Außerdem haben römische Autoren über die Kelten berichtet, zum Beispiel über die Druiden. Diese Berichte muss man vorsichtig lesen, weil die Römer die Kelten von außen und oft als Feinde beschrieben.",
+				"criteria": [
+					"Ich nenne Ausgrabungen (Archäologie) als Quelle mit einem Beispiel.",
+					"Ich nenne römische Berichte als zweite Quelle.",
+					"Ich erkläre, warum man römische Berichte kritisch lesen sollte."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "history-timeline",
+			"goals": [
+				{
+					"label": "Wohnen",
+					"before": "The Celts lived in",
+					"after": "with thatched roofs.",
+					"options": ["roundhouses", "castles", "skyscrapers"],
+					"answer": "roundhouses",
+					"explanation": "Keltische Familien wohnten in Rundhäusern mit Strohdach."
+				},
+				{
+					"label": "Priester",
+					"before": "The Celtic priests were called",
+					"after": ".",
+					"options": ["Druids", "Normans", "Vikings"],
+					"answer": "Druids",
+					"explanation": "Die Druiden waren Priester, Lehrer und Richter der Kelten."
+				},
+				{
+					"label": "Keltische Sprache heute",
+					"before": "A Celtic language that people still speak in Wales is",
+					"after": ".",
+					"options": ["Welsh", "Latin", "French"],
+					"answer": "Welsh",
+					"explanation": "Walisisch (Welsh) ist eine keltische Sprache; Latein und Französisch sind es nicht."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "e7-romans",
+		"stage": "history",
+		"title": "Roman Britain: Roads, baths and Hadrian's Wall",
+		"skill": "Spuren der Römer in Britannien auf einer Karte zeigen und auf Englisch beschreiben",
+		"bindings": ["1.1", "2", "3", "5"],
+		"paragraphs": [
+			"Im Jahr 43 n. Chr. schickte Kaiser Claudius ein Heer nach Britannien. Der Süden der Insel wurde zur römischen Provinz Britannia. Die Römer bauten gerade Straßen, Städte mit Bädern und Märkten und gründeten Londinium, das heutige London. Ab dem Jahr 122 ließ Kaiser Hadrian im Norden eine Mauer quer über die Insel bauen: den Hadrianswall (Hadrian's Wall). Er sollte die Grenze zu den Stämmen im Norden sichern. Schottland (Caledonia) und Irland (Hibernia) wurden nie römische Provinz. Um 410 zogen die römischen Soldaten wieder ab.",
+			"Spuren der Römer findest du bis heute. Städtenamen auf -chester oder -caster (Manchester, Lancaster) gehen auf das lateinische castra (Lager) zurück. In Bath kannst du die römischen Bäder besichtigen; die Stadt hieß damals Aquae Sulis. Beispiel für eine Kartenbeschreibung auf Englisch: „Hadrian's Wall is in the north of England. It runs from the west coast to the east coast.“ Für Lage und Richtung brauchst du in the north/south of, from … to … und near."
+		],
+		"material": "Visitor leaflet · Walking along Hadrian's Wall\nWelcome to Hadrian's Wall! The Roman emperor Hadrian ordered his soldiers to build this wall in AD 122. It runs across the north of England, from the Solway Firth in the west to the River Tyne in the east. Every Roman mile there was a small fort called a milecastle. Soldiers from many parts of the Roman Empire lived here, for example from today's Spain, Belgium and Syria. Today you can walk along the Hadrian's Wall Path. Visit the forts, look at the old stones and imagine life as a Roman soldier in the cold, wet north!",
+		"materialLabel": "Eigenes englisches Übungsmaterial · Besucherfaltblatt",
+		"materialLanguage": "en",
+		"sourceIds": ["lp", "wiki-roman-britain", "wiki-hadrian"],
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "Welche Aussage über Hadrian's Wall stimmt laut Faltblatt?",
+			"answer": "It runs across the north of England from the west to the east.",
+			"wrong": [
+				"It runs along the south coast of England.",
+				"It was built by the Celts against the Romans."
+			],
+			"explanation": "Hadrian ließ die Mauer ab AD 122 von römischen Soldaten bauen. Sie verläuft quer durch Nordengland, vom Solway Firth im Westen bis zum River Tyne im Osten."
+		},
+		"takeaway": "AD 43: Die Römer erobern den Süden der Insel (Britannia). Ab AD 122: Hadrian's Wall im Norden. Caledonia und Hibernia wurden nie römisch. Spuren: Straßen, Bäder (Bath), Ortsnamen auf -chester.",
+		"practice": [
+			{
+				"prompt": "The Romans called London ___. (lateinischer Name)",
+				"answers": ["Londinium"],
+				"feedback": "Londinium war eine wichtige Stadt der Provinz Britannia."
+			},
+			{
+				"prompt": "Hadrian's Wall is ___ the north of England. (Präposition)",
+				"answers": ["in"],
+				"feedback": "in the north of England: Lage innerhalb eines Landes."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Use the map in the workshop. Write four sentences about Roman Britain: when the Romans came, where Hadrian's Wall is, one Roman town and what the Romans built.",
+				"model": "The Romans came to Britain in AD 43. Hadrian's Wall is in the north of England and runs from the west coast to the east coast. Londinium was an important Roman town; today it is London. The Romans built straight roads, towns and baths, for example in Bath.",
+				"criteria": [
+					"Ich nenne das Jahr AD 43 korrekt.",
+					"Ich beschreibe die Lage des Walls mit in the north of und from … to ….",
+					"Ich nenne eine Römerstadt und ein Bauwerk der Römer."
+				]
+			},
+			"2": {
+				"language": "en",
+				"prompt": "You are a Roman soldier at Hadrian's Wall. Write a short letter home (60 to 80 words). Describe the weather, your work and one thing you miss.",
+				"model": "Dear Mother,\nGreetings from the north of Britannia! It is cold and wet here, and the wind never stops. Every day we walk along the wall and watch the land in the north. Sometimes we repair the stones of our milecastle. My friends come from Spain and Syria, so we speak Latin together. I miss the warm sun and your bread very much. Please write soon!\nYour son, Marcus",
+				"criteria": [
+					"Ich verwende Anrede und Schlussformel eines persönlichen Briefs.",
+					"Ich beschreibe Wetter und Arbeit mit Informationen aus dem Faltblatt.",
+					"Ich drücke ein Gefühl aus (I miss …)."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "roman-britain",
+			"goals": [
+				{
+					"label": "Jahr der Eroberung",
+					"before": "The Romans invaded Britain in",
+					"after": ".",
+					"options": ["AD 43", "AD 1066", "AD 410"],
+					"answer": "AD 43",
+					"explanation": "AD 43 schickte Kaiser Claudius das Heer; um 410 zogen die Römer ab, 1066 kamen die Normannen."
+				},
+				{
+					"label": "Lage des Walls",
+					"before": "Hadrian's Wall is in the",
+					"after": "of England.",
+					"options": ["north", "south", "middle"],
+					"answer": "north",
+					"explanation": "Der Wall sicherte die Nordgrenze der Provinz Britannia."
+				},
+				{
+					"label": "Nie römisch",
+					"before": "The Romans never conquered",
+					"after": ", the island in the west.",
+					"options": ["Ireland", "London", "Bath"],
+					"answer": "Ireland",
+					"explanation": "Hibernia (Irland) wurde nie römische Provinz; London und Bath lagen in Britannia."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "e7-anglo-saxons",
+		"stage": "history",
+		"title": "Anglo-Saxons and Vikings: Where English comes from",
+		"skill": "Angelsachsen und Wikinger einordnen und die Herkunft englischer Wörter erklären",
+		"bindings": ["1.1", "1.2", "2", "5"],
+		"paragraphs": [
+			"Nachdem die Römer um 410 abgezogen waren, kamen ab etwa 450 germanische Siedler über die Nordsee: Angeln (Angles), Sachsen (Saxons) und Jüten (Jutes) aus dem heutigen Norddeutschland und Dänemark. Sie gründeten eigene Königreiche. Von den Angeln hat England seinen Namen: Angle-land wurde zu England. Ihre Sprache, das Altenglische (Old English), ist mit dem Deutschen verwandt. Deshalb ähneln sich bis heute viele Grundwörter: house – Haus, water – Wasser, bread – Brot.",
+			"Ab 793 überfielen Wikinger (Vikings) aus Skandinavien die Küsten, zuerst das Kloster Lindisfarne. Später siedelten sie im Norden und Osten Englands; König Alfred der Große (Alfred the Great) besiegte 878 ein Wikingerheer. Auch die Wikinger haben Wörter hinterlassen, zum Beispiel sky, egg und window (wind-eye). Beispiel: Wenn du ein unbekanntes englisches Wort liest, hilft oft die Nähe zum Deutschen: „The Saxons built wooden halls“ – wooden hall = hölzerne Halle."
+		],
+		"material": "Museum audio guide · Hall 3: The Anglo-Saxons\nYou are standing in a reconstructed Anglo-Saxon hall. After the Romans had left Britain, new people came across the North Sea. They were Angles, Saxons and Jutes, and they came from the area of today's northern Germany and Denmark. They were farmers, not city people, so they built wooden houses and halls instead of stone towns. Their language was Old English. Many everyday words we use today, like house, water, man and land, come from Old English. In the next room you will meet the Vikings, who attacked the monastery of Lindisfarne in 793.",
+		"materialLabel": "Eigenes englisches Übungsmaterial · Audioguide-Text eines Museums",
+		"materialLanguage": "en",
+		"sourceIds": ["lp", "wiki-anglo-saxons", "bitesize-anglo-saxons"],
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "Woher kamen die Angeln, Sachsen und Jüten laut Audioguide?",
+			"answer": "From the area of today's northern Germany and Denmark.",
+			"wrong": [
+				"From Rome in today's Italy.",
+				"From Normandy in today's France."
+			],
+			"explanation": "Die Angelsachsen kamen über die Nordsee aus dem Gebiet des heutigen Norddeutschlands und Dänemarks. Aus Rom kamen die Römer, aus der Normandie später die Normannen."
+		},
+		"takeaway": "Ab etwa 450: Angles, Saxons und Jutes siedeln in Britannien (England = land of the Angles). Old English ist mit dem Deutschen verwandt. Ab 793: Vikings; 878 besiegt Alfred the Great die Wikinger.",
+		"practice": [
+			{
+				"prompt": "The name England comes from the ___. (Volksstamm, Plural)",
+				"answers": ["Angles"],
+				"feedback": "Angle-land wurde zu England: das Land der Angeln."
+			},
+			{
+				"prompt": "The language of the Anglo-Saxons is called ___ English. (Adjektiv)",
+				"answers": ["Old"],
+				"feedback": "Old English (Altenglisch) war die Sprache der Angelsachsen."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Write four sentences for a museum quiz card about the Anglo-Saxons: who they were, where they came from, how they lived and one word that comes from Old English.",
+				"model": "The Anglo-Saxons were Angles, Saxons and Jutes. They came from today's northern Germany and Denmark after the Romans had left. They were farmers and built wooden houses and halls. The word water comes from Old English, and it is similar to the German word Wasser.",
+				"criteria": [
+					"Ich nenne die drei Gruppen und ihre Herkunft.",
+					"Ich beschreibe die Lebensweise (farmers, wooden halls).",
+					"Ich nenne ein Wort aus dem Old English mit deutschem Vergleich."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Ein Freund wundert sich, dass viele englische Wörter dem Deutschen ähneln. Erkläre ihm auf Deutsch mit Hilfe der Geschichte, woran das liegt, und nenne drei Wortpaare als Beleg.",
+				"model": "Das liegt an den Angelsachsen. Ab etwa 450 kamen Angeln, Sachsen und Jüten aus dem Gebiet des heutigen Norddeutschlands und Dänemarks nach Britannien. Ihre Sprache, das Altenglische, ist eine germanische Sprache wie das Deutsche. Deshalb sind viele Grundwörter verwandt, zum Beispiel house und Haus, water und Wasser, bread und Brot.",
+				"criteria": [
+					"Ich nenne die Einwanderung der Angelsachsen als Grund.",
+					"Ich erkläre die Verwandtschaft von Old English und Deutsch.",
+					"Ich nenne drei passende Wortpaare."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "history-timeline",
+			"goals": [
+				{
+					"label": "Herkunft der Siedler",
+					"before": "The Angles and Saxons came across the",
+					"after": ".",
+					"options": ["North Sea", "Atlantic Ocean", "Mediterranean Sea"],
+					"answer": "North Sea",
+					"explanation": "Aus Norddeutschland und Dänemark führte der Weg über die Nordsee."
+				},
+				{
+					"label": "Wikingerüberfall",
+					"before": "In 793 the",
+					"after": "attacked the monastery of Lindisfarne.",
+					"options": ["Vikings", "Romans", "Normans"],
+					"answer": "Vikings",
+					"explanation": "Der Überfall auf Lindisfarne 793 gilt als Beginn der Wikingerzeit in England."
+				},
+				{
+					"label": "Wort aus dem Old English",
+					"before": "A word from Old English that is similar to German is",
+					"after": ".",
+					"options": ["water", "castle", "beef"],
+					"answer": "water",
+					"explanation": "water – Wasser stammt aus dem Old English; castle und beef kamen später über das Französische der Normannen."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "e7-normans",
+		"stage": "history",
+		"title": "1066: The Normans conquer England",
+		"skill": "Die normannische Eroberung als Erzählung in zeitlicher Reihenfolge wiedergeben",
+		"bindings": ["1.1", "1.2", "2", "5"],
+		"paragraphs": [
+			"Im Jahr 1066 starb der englische König Edward. Harold Godwinson wurde König, doch Herzog Wilhelm von der Normandie (William of Normandy) beanspruchte den Thron ebenfalls. Er landete mit seinem Heer in Südengland und siegte am 14. Oktober 1066 in der Schlacht von Hastings (Battle of Hastings); Harold fiel. Wilhelm, nun William the Conqueror, ließ überall Burgen bauen, zum Beispiel den Tower of London, und 1086 im Domesday Book alles Land, alle Menschen und Tiere auflisten. Die Geschichte der Eroberung ist auf dem rund 70 Meter langen Teppich von Bayeux (Bayeux Tapestry) gestickt.",
+			"Die Normannen sprachen Französisch. Für etwa 300 Jahre sprach der Adel Französisch, das einfache Volk Englisch. Daher hat Englisch oft zwei Wörter für eine Sache: Die angelsächsischen Bauern hüteten pig, cow und sheep; auf den Tischen der normannischen Herren kamen pork, beef und mutton an. Beispiel für eine Erzählung in der richtigen Reihenfolge: „First, King Edward died. Then William sailed to England. Finally, he won the Battle of Hastings.“ Signalwörter wie first, then, after that und finally ordnen die Ereignisse."
+		],
+		"material": "School radio · History in two minutes: 1066\nPresenter: “In January 1066, King Edward of England died without children. Harold Godwinson became king, but William, the Duke of Normandy, was angry. He said that Edward had promised him the crown. So William built a fleet and sailed across the English Channel. On 14 October 1066 the two armies met near Hastings. The battle lasted all day. In the end, Harold died and William won. On Christmas Day 1066, William was crowned in Westminster Abbey. From then on, people called him William the Conqueror.”",
+		"materialLabel": "Eigenes englisches Übungsmaterial · Schulradio-Beitrag",
+		"materialLanguage": "en",
+		"sourceIds": ["lp", "wiki-norman-conquest", "wiki-bayeux"],
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "Warum war William laut Radiobeitrag wütend?",
+			"answer": "He said that Edward had promised him the crown.",
+			"wrong": [
+				"He said that the Vikings had burnt his castle.",
+				"He said that Harold had lost the battle."
+			],
+			"explanation": "William behauptete, Edward habe ihm die Krone versprochen. Deshalb segelte er nach England; die Schlacht selbst kam erst danach."
+		},
+		"takeaway": "14 October 1066: William of Normandy wins the Battle of Hastings. Folgen: Burgen (Tower of London), Domesday Book (1086), Französisch als Sprache des Adels, Doppelwörter wie pig – pork, cow – beef.",
+		"practice": [
+			{
+				"prompt": "William won the Battle of ___ in 1066. (Ortsname)",
+				"answers": ["Hastings"],
+				"feedback": "Die Schlacht von Hastings fand am 14. Oktober 1066 statt."
+			},
+			{
+				"prompt": "The animal is a cow, but the meat on the table is ___. (Wort aus dem Französischen)",
+				"answers": ["beef"],
+				"feedback": "cow (angelsächsisch) – beef (normannisch-französisch, vgl. bœuf)."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Retell the story of 1066 in five sentences. Use first, then, after that, in the end and finally.",
+				"model": "First, King Edward of England died without children in January 1066. Then Harold Godwinson became king, but William of Normandy wanted the crown, too. After that, William sailed across the English Channel with his army. In the end, he won the Battle of Hastings on 14 October 1066. Finally, he was crowned King of England on Christmas Day.",
+				"criteria": [
+					"Ich erzähle die Ereignisse in der richtigen Reihenfolge.",
+					"Ich verwende die fünf Signalwörter passend.",
+					"Ich nenne Namen, Ort und Datum der Schlacht korrekt."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Erkläre auf Deutsch, warum es im Englischen für viele Tiere und ihr Fleisch zwei verschiedene Wörter gibt. Nutze drei Wortpaare und die Geschichte nach 1066.",
+				"model": "Nach 1066 sprach der normannische Adel Französisch, die angelsächsischen Bauern sprachen weiter Englisch. Die Bauern versorgten die lebenden Tiere und benutzten dafür ihre englischen Wörter: cow, pig, sheep. Das Fleisch kam auf die Tische der normannischen Herren, die es mit französischen Wörtern bezeichneten: beef (bœuf), pork (porc), mutton (mouton). Beide Wortreihen blieben im Englischen erhalten.",
+				"criteria": [
+					"Ich erkläre die zwei Sprachen von Adel und Volk nach 1066.",
+					"Ich ordne die Wörter den Bauern bzw. den Herren zu.",
+					"Ich nenne drei richtige Wortpaare."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "history-timeline",
+			"goals": [
+				{
+					"label": "Sieger von Hastings",
+					"before": "In 1066",
+					"after": "won the Battle of Hastings.",
+					"options": ["William of Normandy", "Alfred the Great", "Emperor Claudius"],
+					"answer": "William of Normandy",
+					"explanation": "William of Normandy wurde nach seinem Sieg William the Conqueror genannt."
+				},
+				{
+					"label": "Normannische Burg",
+					"before": "William built the",
+					"after": "in London.",
+					"options": ["Tower of London", "Hadrian's Wall", "Lindisfarne monastery"],
+					"answer": "Tower of London",
+					"explanation": "Mit dem Tower of London sicherten die Normannen ihre Herrschaft über die Stadt."
+				},
+				{
+					"label": "Wort für das Fleisch",
+					"before": "The animal is a pig; the meat is",
+					"after": ".",
+					"options": ["pork", "piglet", "bacon roll"],
+					"answer": "pork",
+					"explanation": "pork kommt vom französischen porc, das die normannischen Herren benutzten."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "e7-famine-emigration",
+		"stage": "history",
+		"title": "The Great Famine: Irish emigration to the USA",
+		"skill": "Ursachen und Folgen der irischen Auswanderung in die USA aus einem längeren Text erschließen",
+		"bindings": ["1.1", "2", "3", "5"],
+		"paragraphs": [
+			"Um 1845 lebten in Irland über acht Millionen Menschen; viele arme Familien ernährten sich fast nur von Kartoffeln. Ab 1845 vernichtete eine Pflanzenkrankheit (potato blight) die Ernten mehrere Jahre hintereinander. Es begann die Große Hungersnot (Great Famine), die bis etwa 1852 dauerte. Rund eine Million Menschen starben, und mehr als eine Million verließen das Land. Viele reisten über Liverpool oder irische Häfen nach Quebec, Boston oder New York. Die überfüllten Segelschiffe nannte man coffin ships, weil auf der wochenlangen Überfahrt viele Menschen starben.",
+			"In den USA wurden die Iren zu einer der großen Einwanderergruppen. Viele arbeiteten zuerst schwer als Hafen-, Bau- oder Eisenbahnarbeiter, oft gegen Vorurteile. Heute haben viele Amerikaner irische Vorfahren (Irish Americans), und die Parade zum St Patrick's Day in New York ist berühmt. Beispiel für Ursache und Folge auf Englisch: „The potato crop failed, so many families had nothing to eat. Because of the famine, they emigrated to America.“ Mit so, because (of) und that's why verknüpfst du Ursache und Folge."
+		],
+		"material": "Letter from New York, 1849 (invented for this lesson)\nDear Brother,\nI arrived in New York last week after six long weeks at sea. Our ship was full of hungry people, and some of them died on the way. I have already found work at the docks. The work is hard and the pay is low, and some people here do not like the Irish. But nobody goes hungry in our street. When I have saved enough money, I will send you a ticket. Please tell Mother not to worry. I think of home every day.\nYour loving brother, Patrick",
+		"materialLabel": "Eigenes englisches Übungsmaterial · erfundener Auswandererbrief nach historischen Berichten",
+		"materialLanguage": "en",
+		"sourceIds": ["lp", "wiki-famine", "wiki-irish-americans"],
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "Was plant Patrick laut Brief?",
+			"answer": "He wants to send his brother a ticket to America.",
+			"wrong": [
+				"He wants to go back to Ireland next week.",
+				"He wants to buy a farm with potatoes in New York."
+			],
+			"explanation": "Patrick schreibt: „When I have saved enough money, I will send you a ticket.“ So holten viele Auswanderer ihre Familien nach."
+		},
+		"takeaway": "Great Famine (1845 bis etwa 1852): Kartoffelfäule, rund eine Million Tote, über eine Million Auswanderer, u. a. nach Quebec, Boston und New York. Ursache und Folge: so, because (of), that's why.",
+		"practice": [
+			{
+				"prompt": "The disease that destroyed the potatoes is called potato ___. (Fachbegriff)",
+				"answers": ["blight"],
+				"feedback": "potato blight: Kartoffelfäule, eine Pflanzenkrankheit."
+			},
+			{
+				"prompt": "The potatoes failed, ___ many people left Ireland. (Folge: ein Wort)",
+				"answers": ["so"],
+				"feedback": "so leitet die Folge ein: …, so many people left Ireland."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Answer in full sentences: Why did so many people leave Ireland after 1845? Where did they go? How did Patrick feel in New York? Use because, so and that's why.",
+				"model": "Many people left Ireland because the potato crop failed for several years and there was a terrible famine. They went to cities like New York, Boston and Quebec. The work in New York was hard and some people did not like the Irish. That's why Patrick felt homesick, but he was also glad that nobody went hungry, so he wanted to bring his brother to America.",
+				"criteria": [
+					"Ich nenne die Ursache der Auswanderung.",
+					"Ich nenne mindestens zwei Ziele der Auswanderer.",
+					"Ich verknüpfe Ursache und Folge mit because, so und that's why."
+				]
+			},
+			"2": {
+				"language": "en",
+				"prompt": "Write Patrick's brother's answer (70 to 90 words). Describe the situation in Ireland and say how he feels about leaving home.",
+				"model": "Dear Patrick,\nThank you for your letter. We were so happy to hear that you arrived safely. Here at home the situation is still bad. The potatoes in our field are black again, and many neighbours have left the village. Mother is weak, but she smiles when we read your letter. I am afraid of the long journey, but I am also excited. If you send a ticket, I will come in spring and bring Mother's shawl for you.\nYour brother, Michael",
+				"criteria": [
+					"Ich antworte mit Anrede, Bezug auf den Brief und Schlussformel.",
+					"Ich beschreibe die Lage in Irland mit Details.",
+					"Ich drücke Gefühle aus (happy, afraid, excited)."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "emigration-route",
+			"goals": [
+				{
+					"label": "Ursache",
+					"before": "The famine started when the",
+					"after": "crop failed.",
+					"options": ["potato", "wheat", "apple"],
+					"answer": "potato",
+					"explanation": "Die Kartoffelfäule zerstörte ab 1845 die wichtigste Nahrung armer Familien."
+				},
+				{
+					"label": "Hafen in den USA",
+					"before": "Many Irish emigrants arrived in",
+					"after": ".",
+					"options": ["New York", "Edinburgh", "Hastings"],
+					"answer": "New York",
+					"explanation": "New York und Boston waren wichtige Ankunftshäfen in den USA, Quebec in Kanada."
+				},
+				{
+					"label": "Ursache und Folge",
+					"before": "There was no food,",
+					"after": "many families left their homes.",
+					"options": ["so", "because", "although"],
+					"answer": "so",
+					"explanation": "so leitet die Folge ein; because würde die Ursache einleiten."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": false
+	}
+]

@@ -1,0 +1,457 @@
+[
+	{
+		"id": "e7-relative-who-which",
+		"stage": "grammar1",
+		"title": "Defining relative clauses with who, which and that",
+		"skill": "Personen und Dinge mit notwendigen Relativsätzen mit who, which und that genauer beschreiben",
+		"bindings": ["1.2", "5"],
+		"paragraphs": [
+			"Ein notwendiger Relativsatz (defining relative clause) sagt genau, wen oder was du meinst. Ohne ihn wäre der Satz unklar. Für Personen verwendest du who, für Dinge und Tiere which. That kannst du für Personen und Dinge verwenden; es klingt etwas umgangssprachlicher. Das Relativpronomen steht direkt nach dem Nomen, das es erklärt. Beispiel: „The girl who plays the fiddle is from Galway.“ – Welches Mädchen? Das, das Geige spielt. „The castle which William built is in London.“",
+			"Anders als im Deutschen steht bei notwendigen Relativsätzen kein Komma: „The boy who won the race is my cousin.“ (Deutsch: Der Junge, der das Rennen gewann, …). Achte außerdem darauf, dass du das Nomen nicht noch einmal mit einem Pronomen wiederholst. Falsch: „The book which I read it was exciting.“ Richtig: „The book which I read was exciting.“"
+		],
+		"material": "Quiz cards · Who or what is it?\n1. It's a person who tells stories about a detective in London. (Arthur Conan Doyle)\n2. It's a wall which the Romans built across the north of England. (Hadrian's Wall)\n3. It's a festival that people celebrate on 17 March. (St Patrick's Day)\n4. He's the king who defeated the Vikings in 878. (Alfred the Great)\n5. It's a river which flows through Limerick. (the Shannon)\nNow write your own quiz cards for your partner!",
+		"materialLabel": "Eigenes englisches Übungsmaterial · Ratekarten",
+		"materialLanguage": "en",
+		"sourceIds": ["lp", "bbc-le", "cambridge"],
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "Welcher Satz ist richtig?",
+			"answer": "The teacher who helped me is from Ireland.",
+			"wrong": [
+				"The teacher which helped me is from Ireland.",
+				"The teacher, who helped me, she is from Ireland."
+			],
+			"explanation": "Für Personen steht who (oder that), nicht which. Notwendige Relativsätze haben kein Komma, und das Subjekt wird nicht mit she wiederholt."
+		},
+		"takeaway": "Defining relative clauses: who für Personen, which für Dinge und Tiere, that für beides. Kein Komma, das Nomen nicht mit einem Pronomen wiederholen: The book which I read was exciting.",
+		"practice": [
+			{
+				"prompt": "The man ___ found the treasure map was a sailor. (Relativpronomen für Personen)",
+				"answers": ["who", "that"],
+				"feedback": "who (oder that) für Personen."
+			},
+			{
+				"prompt": "The bus ___ goes to the airport leaves at nine. (Relativpronomen für Dinge)",
+				"answers": ["which", "that"],
+				"feedback": "which (oder that) für Dinge."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Write five quiz cards like the ones in the material. Use who for people and which or that for things. Your partner must guess the answer.",
+				"model": "1. It's a woman who wrote the Harry Potter books. (J. K. Rowling) 2. It's an animal which lives in the sea and has eight arms. (an octopus) 3. It's a city which is the capital of Northern Ireland. (Belfast) 4. He's a detective who lives in Baker Street. (Sherlock Holmes) 5. It's a sport that Irish people play with a hurley. (hurling)",
+				"criteria": [
+					"Ich verwende who für Personen und which/that für Dinge.",
+					"Meine Relativsätze haben kein Komma.",
+					"Jede Karte ist eindeutig lösbar."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Ein Mitschüler schreibt: „The boy, which sits next to me, he is from Cork.“ Erkläre ihm auf Deutsch alle drei Fehler und schreibe den Satz richtig.",
+				"model": "Erstens steht für Personen who (oder that), nicht which. Zweitens hat ein notwendiger Relativsatz im Englischen keine Kommas, anders als im Deutschen. Drittens darf das Subjekt nach dem Relativsatz nicht noch einmal mit he wiederholt werden. Richtig heißt es: „The boy who sits next to me is from Cork.“",
+				"criteria": [
+					"Ich erkläre den Fehler which statt who.",
+					"Ich erkläre die fehlenden Kommas.",
+					"Ich erkläre das doppelte Subjekt und schreibe den Satz richtig."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "sentence",
+			"goals": [
+				{
+					"label": "Person",
+					"before": "Ciara is the girl",
+					"after": "plays the fiddle.",
+					"options": ["who", "which", "where"],
+					"answer": "who",
+					"explanation": "Für eine Person steht who."
+				},
+				{
+					"label": "Ding",
+					"before": "This is the map",
+					"after": "Jim found in the chest.",
+					"options": ["which", "who", "whose"],
+					"answer": "which",
+					"explanation": "Für eine Sache steht which (oder that)."
+				},
+				{
+					"label": "Kein doppeltes Subjekt",
+					"before": "The castle which William built",
+					"after": "in London.",
+					"options": ["is", "it is", "which is"],
+					"answer": "is",
+					"explanation": "Das Subjekt (the castle) wird nicht mit it wiederholt."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "e7-relative-whose-where",
+		"stage": "grammar1",
+		"title": "Relative clauses with whose and where",
+		"skill": "Besitz mit whose und Orte mit where in Relativsätzen ausdrücken",
+		"bindings": ["1.2", "5"],
+		"paragraphs": [
+			"Mit whose drückst du Besitz oder Zugehörigkeit aus (deutsch: dessen, deren). Nach whose folgt immer ein Nomen: „That's the girl whose brother plays hurling.“ – das Mädchen, dessen Bruder Hurling spielt. Whose kann sich auf Personen und Dinge beziehen: „It's a city whose streets are full of music.“ Verwechsle whose nicht mit who's: who's ist die Kurzform von who is oder who has.",
+			"Mit where beschreibst du einen Ort genauer (deutsch: wo, in dem, in der). Beispiel: „Dublin is the city where my aunt lives.“ – „This is the inn where Jim Hawkins grew up.“ Ein Tipp: Wenn du im Deutschen „in dem“ oder „wo“ sagen kannst und es um einen Ort geht, passt meist where. Frag dich bei jedem Relativsatz: Person (who), Ding (which), Besitz (whose) oder Ort (where)?"
+		],
+		"material": "Tour guide script · A walk through Dublin\n“Good morning, everyone! On our left you can see Trinity College. It's the university where students have studied for over 400 years. Next is Temple Bar, the area where you can hear live music every evening. Later we'll pass a statue of Molly Malone, a woman whose story people know from a famous song. Then we'll visit the Little Museum of Dublin, a museum whose rooms are full of objects that people from Dublin gave to it. Our last stop is St Stephen's Green, a park where Dubliners have lunch on sunny days.”",
+		"materialLabel": "Eigenes englisches Übungsmaterial · Text einer Stadtführung",
+		"materialLanguage": "en",
+		"sourceIds": ["lp", "wiki-dublin", "cambridge"],
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "Welcher Satz verwendet whose richtig?",
+			"answer": "That's the boy whose dog won the prize.",
+			"wrong": [
+				"That's the boy who's dog won the prize.",
+				"That's the boy whose won the prize."
+			],
+			"explanation": "Nach whose folgt ein Nomen (whose dog). who's ist die Kurzform von who is/who has und passt hier nicht."
+		},
+		"takeaway": "whose + Nomen = dessen/deren (Besitz): the girl whose brother … where = wo/in dem (Ort): the city where my aunt lives. Nicht verwechseln: whose (Besitz) und who's (= who is / who has).",
+		"practice": [
+			{
+				"prompt": "Galway is the town ___ my cousin goes to school. (Relativpronomen für einen Ort)",
+				"answers": ["where"],
+				"feedback": "where für Orte: the town where …"
+			},
+			{
+				"prompt": "She's the singer ___ songs I love. (Relativpronomen für Besitz)",
+				"answers": ["whose"],
+				"feedback": "whose + Nomen: the singer whose songs …"
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Write a short tour guide text (five sentences) about your hometown or a place you like. Use where at least twice and whose at least twice.",
+				"model": "Welcome to Landshut! This is the old town, where you can see colourful houses. On the hill is Trausnitz Castle, a castle whose towers you can see from far away. Next is the market square, where people meet on Saturdays. Then we'll visit a café whose cakes are famous in the whole region. Our last stop is the river park, where you can relax by the water.",
+				"criteria": [
+					"Ich verwende where mindestens zweimal für Orte.",
+					"Ich verwende whose mindestens zweimal mit Nomen.",
+					"Der Text klingt wie eine Stadtführung."
+				]
+			},
+			"2": {
+				"language": "en",
+				"prompt": "Combine the sentences into one using who, which, whose or where. a) This is Aoife. Her father is a fisherman. b) I visited the village. My granny was born there. c) Ireland has a famous river. It flows through Limerick. d) I know a teacher. She speaks Irish.",
+				"model": "a) This is Aoife, whose father is a fisherman. b) I visited the village where my granny was born. c) Ireland has a famous river which flows through Limerick. d) I know a teacher who speaks Irish.",
+				"criteria": [
+					"Ich wähle das passende Relativpronomen für jeden Satz.",
+					"Ich lasse überflüssige Pronomen (her, there, it, she) weg.",
+					"Alle vier Sätze sind grammatisch korrekt."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "dublin-map",
+			"goals": [
+				{
+					"label": "Ort",
+					"before": "Temple Bar is the area",
+					"after": "you can hear live music.",
+					"options": ["where", "which", "whose"],
+					"answer": "where",
+					"explanation": "Für einen Ort steht where."
+				},
+				{
+					"label": "Besitz",
+					"before": "Molly Malone is a woman",
+					"after": "story people know from a song.",
+					"options": ["whose", "who's", "who"],
+					"answer": "whose",
+					"explanation": "whose story: deren Geschichte (Besitz)."
+				},
+				{
+					"label": "Kurzform",
+					"before": "",
+					"after": "coming to the tour tomorrow? (= Who is)",
+					"options": ["Who's", "Whose", "Where's"],
+					"answer": "Who's",
+					"explanation": "Who's = Who is; whose drückt Besitz aus."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "e7-contact-clauses",
+		"stage": "grammar1",
+		"title": "Contact clauses: Relative clauses without a pronoun",
+		"skill": "Erkennen, wann man das Relativpronomen weglassen kann, und contact clauses bilden",
+		"bindings": ["1.2", "5"],
+		"paragraphs": [
+			"Im Englischen kann man das Relativpronomen oft weglassen. Dann entsteht ein contact clause (Relativsatz ohne Relativpronomen). Das geht nur, wenn das Relativpronomen Objekt des Relativsatzes ist, das heißt, wenn direkt danach ein eigenes Subjekt folgt. Beispiel: „The film (which) we watched was exciting.“ Nach which folgt das Subjekt we – also darfst du which weglassen: „The film we watched was exciting.“",
+			"Ist das Relativpronomen selbst das Subjekt, musst du es stehen lassen. Beispiel: „The girl who lives next door is from Cork.“ Nach who folgt sofort das Verb lives; who ist das Subjekt und kann nicht wegfallen. Test: Steht nach who/which/that direkt ein Nomen oder Pronomen (I, you, we, my sister …)? Dann ist ein contact clause möglich. Steht direkt ein Verb da? Dann bleibt das Pronomen."
+		],
+		"material": "Chat · After the school trip to Ireland\nMia: “The hostel we stayed in was so cosy!”\nJonas: “Yes, and the guide who showed us Galway was really funny.”\nMia: “Do you still have the photos you took at the Cliffs of Moher?”\nJonas: “Sure. And the song the band played in the pub was amazing. I've already downloaded it.”\nMia: “The only thing I didn't like was the long bus ride.”\nJonas: “True. But the boy who sat next to me slept the whole time!”",
+		"materialLabel": "Eigenes englisches Übungsmaterial · Chat zweier Jugendlicher",
+		"materialLanguage": "en",
+		"sourceIds": ["lp", "bbc-le", "cambridge"],
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "In welchem Satz darf das Relativpronomen nicht wegfallen?",
+			"answer": "The guide who showed us Galway was funny.",
+			"wrong": [
+				"The photos which you took are great.",
+				"The song that the band played was amazing."
+			],
+			"explanation": "Nach who folgt direkt das Verb showed: who ist Subjekt und muss bleiben. In den anderen Sätzen folgt ein eigenes Subjekt (you, the band), daher ist ein contact clause möglich."
+		},
+		"takeaway": "Contact clause = Relativsatz ohne who/which/that. Nur möglich, wenn das Relativpronomen Objekt ist (danach folgt ein Subjekt): the film we watched. Ist es Subjekt (danach folgt ein Verb), bleibt es: the girl who lives next door.",
+		"practice": [
+			{
+				"prompt": "The hostel ___ we stayed in was cosy. (Pronomen weglassen? Schreibe „-“, wenn ja.)",
+				"answers": ["-", "which", "that"],
+				"feedback": "Nach dem Leerraum folgt das Subjekt we: which/that kann wegfallen (contact clause)."
+			},
+			{
+				"prompt": "The boy ___ sat next to me slept. (Relativpronomen, hier notwendig)",
+				"answers": ["who", "that"],
+				"feedback": "Nach dem Pronomen folgt direkt das Verb sat; es ist Subjekt und bleibt."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Find all relative clauses in the chat. Write them down and mark which ones are contact clauses. Then say why the pronoun cannot be left out in the other sentences.",
+				"model": "Contact clauses: the hostel we stayed in; the photos you took at the Cliffs of Moher; the song the band played in the pub; the only thing I didn't like. With pronoun: the guide who showed us Galway; the boy who sat next to me. In these two sentences who is the subject, because a verb (showed, sat) follows directly. That's why who cannot be left out.",
+				"criteria": [
+					"Ich finde alle sechs Relativsätze.",
+					"Ich ordne contact clauses und Sätze mit Pronomen richtig zu.",
+					"Ich begründe mit Subjekt bzw. Objekt."
+				]
+			},
+			"2": {
+				"language": "en",
+				"prompt": "Write six sentences about a trip, a film or a book: three with contact clauses and three where the relative pronoun is necessary. Underline or mark the subject after the pronoun in the contact clauses.",
+				"model": "1. The book [I] read last week was about pirates. 2. The beach [we] visited had white sand. 3. The film [my brother] chose was too long. 4. The teacher who organised the trip speaks Irish. 5. The bus which took us to the airport was late. 6. The girl who won the quiz is in my class.",
+				"criteria": [
+					"Drei Sätze sind korrekte contact clauses.",
+					"In drei Sätzen ist das Pronomen als Subjekt notwendig.",
+					"Ich markiere das Subjekt nach der Lücke."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "sentence",
+			"goals": [
+				{
+					"label": "Contact clause",
+					"before": "The film",
+					"after": "was exciting.",
+					"options": ["we watched", "watched we", "it we watched"],
+					"answer": "we watched",
+					"explanation": "Ohne Pronomen folgt direkt das Subjekt we: the film we watched."
+				},
+				{
+					"label": "Pronomen notwendig",
+					"before": "The girl",
+					"after": "next door is from Cork.",
+					"options": ["who lives", "lives", "she lives"],
+					"answer": "who lives",
+					"explanation": "who ist hier Subjekt (danach folgt das Verb) und darf nicht fehlen."
+				},
+				{
+					"label": "Objekt erkennen",
+					"before": "The photos you took",
+					"after": "great.",
+					"options": ["are", "they are", "which are"],
+					"answer": "are",
+					"explanation": "the photos (you took) are great: Nach dem contact clause folgt das Verb des Hauptsatzes."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "e7-adverbs-manner",
+		"stage": "grammar1",
+		"title": "Adverbs of manner: How do you do it?",
+		"skill": "Mit adverbs of manner beschreiben, wie jemand etwas tut, und sie von Adjektiven unterscheiden",
+		"bindings": ["1.2", "5"],
+		"paragraphs": [
+			"Ein Adjektiv beschreibt ein Nomen (wie jemand oder etwas ist): „She is a careful driver.“ Ein Adverb der Art und Weise (adverb of manner) beschreibt ein Verb (wie jemand etwas tut): „She drives carefully.“ Im Deutschen sehen beide oft gleich aus (vorsichtig), im Englischen hängst du meist -ly an das Adjektiv: quiet → quietly, slow → slowly. Rechtschreibung: -y wird zu -ily (happy → happily, easy → easily), -le wird zu -ly (terrible → terribly), -ic wird zu -ically (fantastic → fantastically).",
+			"Einige Adverbien sind unregelmäßig: good → well, fast → fast, hard → hard, late → late. Vorsicht: hardly bedeutet „kaum“ und lately „in letzter Zeit“. Nach Verben wie be, look, sound, feel, taste und smell steht ein Adjektiv, weil es den Zustand des Subjekts beschreibt: „You look tired.“, „The soup tastes good.“ Beispiel aus dem Sport: „Ciara is a good player. She plays well.“"
+		],
+		"material": "Match report · Hurling under-14 final\nWhat a match! The Galway girls started slowly and nervously, and after ten minutes they were losing by three points. But then their captain, Ciara Burke, ran fast along the left side and passed the sliotar perfectly to her friend Niamh, who scored easily. In the second half both teams played hard, and the fans shouted loudly. Two minutes before the end, Galway scored again. The crowd went wild! After the match Ciara said happily: “We didn't play well at the start, but we fought brilliantly. I feel great!”",
+		"materialLabel": "Eigenes englisches Übungsmaterial · Spielbericht",
+		"materialLanguage": "en",
+		"sourceIds": ["lp", "bbc-le", "wiki-gaa"],
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "Welcher Satz ist richtig?",
+			"answer": "Niamh plays well, and she is a good player.",
+			"wrong": [
+				"Niamh plays good, and she is a well player.",
+				"Niamh plays goodly, and she is a good player."
+			],
+			"explanation": "good ist das Adjektiv (vor dem Nomen player), well das unregelmäßige Adverb (zum Verb plays). goodly gibt es in diesem Sinn nicht."
+		},
+		"takeaway": "Adjektiv beschreibt ein Nomen (a careful driver), Adverb of manner ein Verb (drives carefully). Bildung: + -ly, happy → happily, terrible → terribly. Unregelmäßig: good → well, fast, hard, late. Nach be, look, sound, feel, taste, smell: Adjektiv.",
+		"practice": [
+			{
+				"prompt": "The fans shouted ___. (loud als Adverb)",
+				"answers": ["loudly"],
+				"feedback": "loud → loudly: Das Adverb beschreibt, wie sie riefen."
+			},
+			{
+				"prompt": "She didn't play ___ at the start. (good als Adverb)",
+				"answers": ["well"],
+				"feedback": "good → well: unregelmäßiges Adverb."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Find six adverbs of manner in the match report. Write them with the adjective they come from and say which ones are irregular.",
+				"model": "slowly – slow, nervously – nervous, fast – fast (irregular), perfectly – perfect, easily – easy, hard – hard (irregular), loudly – loud, happily – happy, well – good (irregular), brilliantly – brilliant.",
+				"criteria": [
+					"Ich finde mindestens sechs Adverbien.",
+					"Ich nenne das passende Adjektiv.",
+					"Ich erkenne die unregelmäßigen Formen fast, hard und well."
+				]
+			},
+			"2": {
+				"language": "en",
+				"prompt": "Write a short report (60 to 80 words) about a game, a concert or a school event. Use at least five different adverbs of manner, one irregular adverb and one adjective after look, sound or feel.",
+				"model": "Last Friday our school band played at the summer party. At first the singer sang very quietly because she was nervous. But soon the drummer played loudly and fast, and everybody danced happily. The guitarist played the solo perfectly. Only the trumpet player came late and had to run quickly to the stage. After the concert we all felt tired but proud, and the teachers said that we had played really well.",
+				"criteria": [
+					"Ich verwende mindestens fünf verschiedene Adverbien richtig.",
+					"Ich verwende ein unregelmäßiges Adverb (well, fast, hard, late).",
+					"Nach look, sound oder feel steht ein Adjektiv."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "sentence",
+			"goals": [
+				{
+					"label": "Regelmäßiges Adverb",
+					"before": "The fans shouted",
+					"after": ".",
+					"options": ["loudly", "loud", "louder"],
+					"answer": "loudly",
+					"explanation": "Das Adverb loudly beschreibt das Verb shouted."
+				},
+				{
+					"label": "Unregelmäßig",
+					"before": "Ciara ran",
+					"after": "along the left side.",
+					"options": ["fast", "fastly", "quick"],
+					"answer": "fast",
+					"explanation": "fast bleibt als Adverb fast; fastly gibt es nicht."
+				},
+				{
+					"label": "Adjektiv nach feel",
+					"before": "After the match Ciara felt",
+					"after": ".",
+					"options": ["great", "greatly", "well done"],
+					"answer": "great",
+					"explanation": "Nach feel beschreibt ein Adjektiv den Zustand der Person: I feel great."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "e7-question-tags",
+		"stage": "grammar1",
+		"title": "Question tags: You're from Cork, aren't you?",
+		"skill": "Question tags bilden und mit fallender oder steigender Intonation passend einsetzen",
+		"bindings": ["1.2", "2", "5"],
+		"paragraphs": [
+			"Ein question tag ist eine kurze Frage am Satzende, wie im Deutschen „…, oder?“ oder „…, nicht wahr?“. Grundregel: Ist der Satz bejaht, ist der tag verneint; ist der Satz verneint, ist der tag bejaht. Der tag wiederholt das Hilfsverb (be, have, can, will …) und verwendet ein Pronomen: „You're from Cork, aren't you?“ – „She can swim, can't she?“ – „They haven't arrived yet, have they?“ Fehlt ein Hilfsverb, nimmst du do, does oder did: „You like hurling, don't you?“ – „He played well, didn't he?“",
+			"Besonderheiten: I am → aren't I? („I'm late, aren't I?“), Let's → shall we? („Let's go, shall we?“). Mit der Stimme zeigst du, was du meinst: Fällt die Stimme am Ende (↘), erwartest du Zustimmung, zum Beispiel beim Smalltalk über das Wetter: „It's a lovely day, isn't it?“ Steigt sie (↗), bist du wirklich unsicher und fragst nach: „The bus leaves at ten, doesn't it?“ Question tags machen Gespräche freundlicher und laden zum Antworten ein."
+		],
+		"material": "Dialogue · Small talk at the bus stop in Cork\nOld lady: “It's a lovely day, isn't it?”\nTom: “Yes, it is. Much better than yesterday.”\nOld lady: “You're not from here, are you?”\nTom: “No, I'm from Germany. I'm on a school exchange.”\nOld lady: “How nice! You speak English very well. You've been to the English Market, haven't you?”\nTom: “Not yet. It's near the city centre, isn't it?”\nOld lady: “Yes, just five minutes from here. Oh, here comes the bus. You'll get on with me, won't you?”\nTom: “Sure. Thanks for your help!”",
+		"materialLabel": "Eigenes englisches Hörskript · Smalltalk an der Bushaltestelle",
+		"materialLanguage": "en",
+		"sourceIds": ["lp", "bbc-le", "cambridge"],
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "Welcher question tag ist richtig?",
+			"answer": "Tom likes hurling, doesn't he?",
+			"wrong": [
+				"Tom likes hurling, isn't he?",
+				"Tom likes hurling, doesn't Tom?"
+			],
+			"explanation": "Ohne Hilfsverb im Satz nimmst du do/does/did: likes → doesn't. Im tag steht ein Pronomen (he), nicht der Name."
+		},
+		"takeaway": "Question tags: bejahter Satz → verneinter tag, verneinter Satz → bejahter tag; Hilfsverb + Pronomen (aren't you? can't she?), sonst do/does/did. I am → aren't I? Let's → shall we? Stimme fällt ↘: Zustimmung erwartet; steigt ↗: echte Frage.",
+		"practice": [
+			{
+				"prompt": "You've been to Dublin, ___? (question tag)",
+				"answers": ["haven't you"],
+				"feedback": "You have been … → haven't you?"
+			},
+			{
+				"prompt": "She plays the fiddle, ___? (question tag)",
+				"answers": ["doesn't she"],
+				"feedback": "Kein Hilfsverb im Satz: plays → doesn't she?"
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Add question tags: a) It's cold today, … b) You can't speak Irish, … c) We met in Galway, … d) I'm in your group, … e) Let's go to the park, … Then mark with an arrow whether your voice falls or rises if you expect agreement.",
+				"model": "a) It's cold today, isn't it? ↘ b) You can't speak Irish, can you? ↘ c) We met in Galway, didn't we? ↘ d) I'm in your group, aren't I? ↘ e) Let's go to the park, shall we? ↘ When I expect agreement, my voice falls at the end.",
+				"criteria": [
+					"Alle fünf tags haben das richtige Hilfsverb und Pronomen.",
+					"Ich beachte die Sonderfälle aren't I und shall we.",
+					"Ich markiere die fallende Intonation für erwartete Zustimmung."
+				]
+			},
+			"2": {
+				"language": "en",
+				"prompt": "Write a small-talk dialogue (eight lines) between you and a host parent on your first morning in Ireland. Use at least five different question tags and react to them.",
+				"model": "Host mum: Good morning! You slept well, didn't you?\nMe: Yes, I did, thank you. The bed is really comfortable.\nHost mum: It's raining again, isn't it? Typical Irish weather!\nMe: That's true. But it isn't cold, is it?\nHost mum: No, it's quite mild. You'd like some toast, wouldn't you?\nMe: Yes, please. We're going to the school at nine, aren't we?\nHost mum: That's right. Let's leave at half past eight, shall we?",
+				"criteria": [
+					"Ich verwende mindestens fünf verschiedene, korrekte question tags.",
+					"Die Antworten passen zu den tags.",
+					"Der Dialog wirkt höflich und natürlich."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "intonation",
+			"goals": [
+				{
+					"label": "Bejahter Satz",
+					"before": "You're from Cork,",
+					"after": "?",
+					"options": ["aren't you", "are you", "don't you"],
+					"answer": "aren't you",
+					"explanation": "Bejahter Satz mit are → verneinter tag aren't you."
+				},
+				{
+					"label": "Ohne Hilfsverb",
+					"before": "He played well,",
+					"after": "?",
+					"options": ["didn't he", "wasn't he", "hasn't he"],
+					"answer": "didn't he",
+					"explanation": "Simple Past ohne Hilfsverb → did: didn't he?"
+				},
+				{
+					"label": "Sonderfall",
+					"before": "I'm late,",
+					"after": "?",
+					"options": ["aren't I", "amn't I", "isn't I"],
+					"answer": "aren't I",
+					"explanation": "Zu I am gehört der tag aren't I."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": true
+	}
+]

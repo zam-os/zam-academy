@@ -1,0 +1,639 @@
+[
+	{
+		"id": "e7-past-vs-perfect",
+		"stage": "grammar2",
+		"title": "Simple past or present perfect?",
+		"skill": "Simple Past und Present Perfect nach Zeitbezug und Signalwörtern sicher unterscheiden",
+		"bindings": ["1.2", "5"],
+		"paragraphs": [
+			"Das Simple Past verwendest du für Handlungen, die zu einem bestimmten, abgeschlossenen Zeitpunkt in der Vergangenheit stattfanden. Typische Signalwörter sind yesterday, last week, in 2019, two days ago und when …? Beispiel: „I visited Dublin last summer.“ Das Present Perfect (have/has + past participle) verwendest du, wenn der Zeitpunkt unwichtig oder unbestimmt ist und das Ergebnis jetzt zählt, oder wenn ein Zeitraum bis jetzt reicht. Signalwörter: ever, never, already, yet, just, so far, since und for. Beispiel: „I have never been to Belfast.“",
+			"Anders als im Deutschen darfst du das Present Perfect nicht mit einem abgeschlossenen Zeitpunkt verbinden. Falsch: „I have seen the film yesterday.“ Richtig: „I saw the film yesterday.“ Oft wechseln beide Zeiten im Gespräch: Mit dem Present Perfect fragst du allgemein nach einer Erfahrung, mit dem Simple Past erzählst du die Einzelheiten. „Have you ever been to Ireland?“ – „Yes, I have. I went to Galway in 2023. It rained every day!“"
+		],
+		"material": "Interview · An exchange student in Cork\nReporter: “Lena, how long have you been in Ireland now?”\nLena: “I've been here for three months.”\nReporter: “Have you visited many places?”\nLena: “Yes, I have. Last weekend I went to the Cliffs of Moher, and in October my host family took me to Dublin.”\nReporter: “Have you tried any Irish food yet?”\nLena: “Oh yes! I've already eaten Irish stew, and yesterday I tried black pudding for the first time. I didn't like it very much!”\nReporter: “Have you ever played hurling?”\nLena: “No, I've never played it, but I watched a match on Sunday.”",
+		"materialLabel": "Eigenes englisches Übungsmaterial · Interview mit einer Austauschschülerin",
+		"materialLanguage": "en",
+		"sourceIds": ["lp", "bbc-le", "cambridge"],
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "Welcher Satz ist richtig?",
+			"answer": "I tried black pudding yesterday.",
+			"wrong": [
+				"I have tried black pudding yesterday.",
+				"I have try black pudding yesterday."
+			],
+			"explanation": "yesterday nennt einen abgeschlossenen Zeitpunkt in der Vergangenheit. Deshalb steht das Simple Past (tried), nicht das Present Perfect."
+		},
+		"takeaway": "Simple Past: abgeschlossener Zeitpunkt (yesterday, last week, in 2019, ago, When …?). Present Perfect: unbestimmter Zeitpunkt, Ergebnis jetzt oder Zeitraum bis jetzt (ever, never, already, yet, just, since, for). Nie: have + yesterday.",
+		"practice": [
+			{
+				"prompt": "I ___ to Galway two years ago. (go in der richtigen Zeitform)",
+				"answers": ["went"],
+				"feedback": "two years ago: abgeschlossener Zeitpunkt → Simple Past went."
+			},
+			{
+				"prompt": "___ you ever seen a hurling match? (Hilfsverb)",
+				"answers": ["Have"],
+				"feedback": "ever fragt nach einer Erfahrung → Present Perfect: Have you ever seen …?"
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Find all verbs in the interview. Sort them into simple past and present perfect and write the signal word that helped you for each one.",
+				"model": "Present perfect: have been (how long, for three months), have visited (no time), have tried (yet), have eaten (already), have played (ever/never). Simple past: went (last weekend), took (in October), tried (yesterday), didn't like (yesterday), watched (on Sunday).",
+				"criteria": [
+					"Ich finde die Verbformen beider Zeiten.",
+					"Ich ordne sie richtig zu.",
+					"Ich nenne zu jeder Form ein passendes Signalwort oder den Grund."
+				]
+			},
+			"2": {
+				"language": "en",
+				"prompt": "Interview a partner (or imagine one) about their experiences. Write four questions with Have you ever …? and the answers. In each answer, add one sentence in the simple past with details.",
+				"model": "1. Have you ever been to London? – Yes, I have. I went there with my class in May. 2. Have you ever eaten sushi? – Yes, I have. I ate it at my cousin's birthday last year. 3. Have you ever played in a band? – No, I haven't, but I sang in the school choir in Year 5. 4. Have you ever met a famous person? – Yes! I met a football player at the airport in 2022.",
+				"criteria": [
+					"Meine Fragen verwenden Have you ever + past participle.",
+					"Die Kurzantworten passen (Yes, I have / No, I haven't).",
+					"Die Details stehen mit Zeitangabe im Simple Past."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "sentence",
+			"goals": [
+				{
+					"label": "Abgeschlossener Zeitpunkt",
+					"before": "Last weekend Lena",
+					"after": "to the Cliffs of Moher.",
+					"options": ["went", "has gone", "has been going"],
+					"answer": "went",
+					"explanation": "last weekend → Simple Past."
+				},
+				{
+					"label": "Erfahrung",
+					"before": "I",
+					"after": "never played hurling.",
+					"options": ["have", "did", "was"],
+					"answer": "have",
+					"explanation": "never ohne Zeitpunkt → Present Perfect: I have never played."
+				},
+				{
+					"label": "Ergebnis jetzt",
+					"before": "Oh no, I",
+					"after": "my key! I can't open the door.",
+					"options": ["have lost", "lost yesterday", "was losing"],
+					"answer": "have lost",
+					"explanation": "Das Ergebnis zählt jetzt (die Tür bleibt zu) → Present Perfect."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "e7-perfect-progressive",
+		"stage": "grammar2",
+		"title": "Present perfect progressive with since and for",
+		"skill": "Mit dem Present Perfect Progressive und since/for ausdrücken, wie lange etwas schon andauert",
+		"bindings": ["1.2", "5"],
+		"paragraphs": [
+			"Das Present Perfect Progressive (have/has + been + -ing-Form) verwendest du für Handlungen, die in der Vergangenheit begonnen haben und bis jetzt andauern. Im Deutschen steht hier meist das Präsens mit „seit“: „Ich lerne seit drei Jahren Englisch.“ Im Englischen sagst du: „I have been learning English for three years.“ Fragen bildest du mit How long …?: „How long have you been waiting?“ Verneinung: „She hasn't been sleeping well.“",
+			"Mit since nennst du den Startpunkt (since 2 p.m., since Monday, since 2022, since I was six). Mit for nennst du die Dauer (for two hours, for three days, for a long time). Beispiel mit dem Regler: Aoife übt seit 1 p.m. Geige, jetzt ist es 5 p.m.: „She has been practising since 1 p.m. She has been practising for 4 hours.“ Einige Verben wie know, like oder have (besitzen) bilden keine -ing-Form; dann steht das Present Perfect Simple: „I have known her for years.“"
+		],
+		"material": "Text messages · Where are you?\nMum (5:10 p.m.): “Where are you, Aoife? Dinner is ready.”\nAoife (5:12 p.m.): “Sorry! I've been practising the fiddle at Granny's since one o'clock. We've been playing the same tune for four hours!”\nMum: “Four hours? Your fingers must hurt!”\nAoife: “A bit. But the competition is on Saturday, and I've been looking forward to it for weeks.”\nMum: “OK. Dad has been waiting in the car outside Granny's house for ten minutes. Hurry up!”",
+		"materialLabel": "Eigenes englisches Übungsmaterial · Textnachrichten",
+		"materialLanguage": "en",
+		"sourceIds": ["lp", "bbc-le", "cambridge"],
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "Welcher Satz ist richtig?",
+			"answer": "Dad has been waiting outside for ten minutes.",
+			"wrong": [
+				"Dad is waiting outside since ten minutes.",
+				"Dad has been waiting outside since ten minutes."
+			],
+			"explanation": "Eine Handlung, die bis jetzt andauert, steht im Present Perfect Progressive. Bei einer Dauer (ten minutes) steht for, nicht since."
+		},
+		"takeaway": "Present Perfect Progressive = have/has + been + -ing: Handlung begann früher und dauert bis jetzt an (deutsch: seit + Präsens). since + Zeitpunkt (since 1 p.m.), for + Zeitraum (for four hours). How long have you been …?",
+		"practice": [
+			{
+				"prompt": "I have been learning English ___ 2020. (since oder for)",
+				"answers": ["since"],
+				"feedback": "2020 ist ein Zeitpunkt → since."
+			},
+			{
+				"prompt": "We have been waiting ___ twenty minutes. (since oder for)",
+				"answers": ["for"],
+				"feedback": "twenty minutes ist eine Dauer → for."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Write five sentences about yourself with the present perfect progressive: two with since and three with for (e.g. hobbies, school, music, sports).",
+				"model": "I have been playing football since I was seven. I have been going to this school since September 2024. I have been learning the guitar for two years. My friends and I have been chatting in our group for an hour. My little brother has been sleeping for twenty minutes.",
+				"criteria": [
+					"Ich bilde have/has + been + -ing korrekt.",
+					"Ich verwende since mit Zeitpunkten und for mit Zeiträumen.",
+					"Die Sätze beschreiben Handlungen, die bis jetzt andauern."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Deine Freundin übersetzt „Ich warte seit einer Stunde.“ mit „I wait since one hour.“ Erkläre ihr auf Deutsch beide Fehler und gib die richtige Übersetzung sowie eine zweite Version mit since an.",
+				"model": "Erstens steht im Englischen für eine Handlung, die schon eine Weile andauert und noch nicht vorbei ist, nicht das Simple Present, sondern das Present Perfect Progressive: I have been waiting. Zweitens ist „eine Stunde“ eine Dauer, deshalb steht for und nicht since. Richtig ist: „I have been waiting for an hour.“ Mit since nennt man den Startpunkt, zum Beispiel: „I have been waiting since four o'clock.“",
+				"criteria": [
+					"Ich erkläre, warum das Present Perfect Progressive nötig ist.",
+					"Ich erkläre den Unterschied zwischen since und for.",
+					"Ich gebe beide richtigen englischen Sätze an."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "since-for",
+			"goals": [
+				{
+					"label": "Zeitpunkt",
+					"before": "Aoife has been practising",
+					"after": "one o'clock.",
+					"options": ["since", "for", "ago"],
+					"answer": "since",
+					"explanation": "one o'clock ist ein Startpunkt → since."
+				},
+				{
+					"label": "Dauer",
+					"before": "They have been playing the same tune",
+					"after": "four hours.",
+					"options": ["for", "since", "during"],
+					"answer": "for",
+					"explanation": "four hours ist eine Dauer → for."
+				},
+				{
+					"label": "Form",
+					"before": "Dad",
+					"after": "waiting in the car for ten minutes.",
+					"options": ["has been", "is", "has"],
+					"answer": "has been",
+					"explanation": "Present Perfect Progressive: has been waiting."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "e7-past-perfect",
+		"stage": "grammar2",
+		"title": "Past perfect: What had happened before?",
+		"skill": "Mit dem Past Perfect ausdrücken, was vor einer anderen Handlung in der Vergangenheit schon geschehen war",
+		"bindings": ["1.2", "5"],
+		"paragraphs": [
+			"Wenn du in der Vergangenheit erzählst und auf etwas zurückblickst, das noch früher geschehen war, verwendest du das Past Perfect (Vorvergangenheit). Es wird mit had + past participle gebildet, für alle Personen gleich: I had left, she had seen, they had gone. Verneinung: hadn't + past participle. Beispiel: „When Liam arrived at the bus stop, the bus had already left.“ Zuerst fuhr der Bus ab (Past Perfect), danach kam Liam an (Simple Past).",
+			"Typische Signalwörter sind already, before, after, when, by the time und never … before. Beispiel: „After she had finished her homework, she went out.“ – „I had never seen the sea before I went to Cornwall.“ Erzählst du Ereignisse einfach in der richtigen Reihenfolge, reicht das Simple Past: „The bus left. Then Liam arrived.“ Das Past Perfect brauchst du, wenn du die Reihenfolge umdrehst oder das frühere Ereignis betonst."
+		],
+		"material": "Story · A bad start to the school trip\nOn the morning of the school trip to Dublin, everything went wrong for Liam. He woke up late because he had forgotten to set his alarm. When he got to the kitchen, his brother had already eaten the last bowl of cereal. Liam ran to the bus stop, but when he arrived at 10:20, the bus had left five minutes before. Luckily his teacher had given everybody her phone number. Liam called her, and she told him to take the next train. When he finally met his class at the station in Dublin, they had saved him a sandwich.",
+		"materialLabel": "Eigenes englisches Übungsmaterial · Kurzgeschichte",
+		"materialLanguage": "en",
+		"sourceIds": ["lp", "bbc-le", "cambridge"],
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "Warum wachte Liam zu spät auf?",
+			"answer": "Because he had forgotten to set his alarm.",
+			"wrong": [
+				"Because his brother had eaten his cereal.",
+				"Because the bus had left five minutes before."
+			],
+			"explanation": "Das Vergessen des Weckers geschah vor dem Aufwachen und steht deshalb im Past Perfect. Die anderen Ereignisse passierten erst danach."
+		},
+		"takeaway": "Past Perfect = had + past participle: Was war vor einem anderen vergangenen Ereignis schon geschehen? When Liam arrived, the bus had already left. Signalwörter: already, before, after, when, by the time, never … before.",
+		"practice": [
+			{
+				"prompt": "When we got to the cinema, the film had already ___. (start: 3. Verbform)",
+				"answers": ["started"],
+				"feedback": "had started: Der Film begann vor unserer Ankunft."
+			},
+			{
+				"prompt": "I ___ never seen the sea before I went to Cornwall. (Hilfsverb)",
+				"answers": ["had"],
+				"feedback": "had never seen: Vorvergangenheit vor der Reise."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Read the story again. Write four sentences that show which action happened first. Use the past perfect for the earlier action and the simple past for the later one.",
+				"model": "Liam had forgotten to set his alarm, so he woke up late. His brother had already eaten the last cereal when Liam got to the kitchen. The bus had left at 10:15, before Liam arrived at 10:20. The teacher had given everybody her phone number, so Liam could call her.",
+				"criteria": [
+					"Ich verwende das Past Perfect für die frühere Handlung.",
+					"Ich verwende das Simple Past für die spätere Handlung.",
+					"Die Reihenfolge stimmt mit der Geschichte überein."
+				]
+			},
+			"2": {
+				"language": "en",
+				"prompt": "Write your own short story (80 to 100 words) about a day when everything went wrong. Use the past perfect at least four times with already, before, after or by the time.",
+				"model": "Last Saturday was a disaster. By the time I got up, my sister had already used all the hot water. After I had dressed quickly, I ran to the sports hall. But the coach had moved the training to another hall, and nobody had told me! When I finally arrived, the team had already started the warm-up. I played badly because I hadn't eaten any breakfast. In the evening I found out that my friends had planned a surprise party for me, so the day ended well after all.",
+				"criteria": [
+					"Ich verwende das Past Perfect mindestens viermal korrekt.",
+					"Ich nutze Signalwörter wie already, before, after, by the time.",
+					"Meine Geschichte ist zeitlich logisch erzählt."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "past-perfect",
+			"goals": [
+				{
+					"label": "Frühere Handlung",
+					"before": "When Liam arrived, the bus",
+					"after": ".",
+					"options": ["had left", "left", "has left"],
+					"answer": "had left",
+					"explanation": "Der Bus fuhr vor Liams Ankunft ab: Past Perfect had left."
+				},
+				{
+					"label": "Spätere Handlung",
+					"before": "After he had called his teacher, he",
+					"after": "the next train.",
+					"options": ["took", "had taken", "has taken"],
+					"answer": "took",
+					"explanation": "Die spätere Handlung steht im Simple Past: took."
+				},
+				{
+					"label": "Verneinung",
+					"before": "He was hungry because he",
+					"after": "breakfast.",
+					"options": ["hadn't eaten", "didn't ate", "hasn't eaten"],
+					"answer": "hadn't eaten",
+					"explanation": "Verneinung im Past Perfect: hadn't + past participle."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "e7-must-have-to",
+		"stage": "grammar2",
+		"title": "Must, have to, mustn't and needn't",
+		"skill": "Pflichten, Verbote und fehlende Notwendigkeit mit must, have to, mustn't und needn't ausdrücken",
+		"bindings": ["1.2", "2", "5"],
+		"paragraphs": [
+			"Mit must und have to drückst du eine Pflicht aus (müssen). Must klingt oft nach einer eigenen Überzeugung oder einer festen Regel: „I must call Granny today.“ Have to verwendest du, wenn jemand anderes oder die Umstände die Pflicht vorgeben: „We have to wear a uniform at school.“ Must hat nur eine Form in der Gegenwart. Für die Vergangenheit und Zukunft nimmst du have to: „Yesterday I had to walk home.“ – „Tomorrow we will have to get up early.“",
+			"Vorsicht bei der Verneinung, hier unterscheiden sich Englisch und Deutsch stark: mustn't bedeutet „nicht dürfen“, also ein Verbot: „You mustn't go near the cliff edge.“ Wenn etwas nicht nötig ist (nicht müssen, nicht brauchen), sagst du needn't oder don't have to: „You needn't bring food – there's a café.“ – „You don't have to come if you're tired.“ Merke: „Du musst nicht“ heißt nie „you mustn't“."
+		],
+		"material": "Rules · Youth hostel in Galway\nWelcome to our hostel! Please read our house rules:\n• You must check in at reception before 10 p.m.\n• You mustn't smoke anywhere in the building.\n• You mustn't play loud music after 11 p.m. Other guests are sleeping.\n• You needn't bring towels – we give you two for free.\n• You don't have to make your bed, but please take off the sheets when you leave.\n• Breakfast is from 7 to 9 a.m. You have to clear your table after breakfast.\nEnjoy your stay in Galway!",
+		"materialLabel": "Eigenes englisches Übungsmaterial · Hausordnung einer Jugendherberge",
+		"materialLanguage": "en",
+		"sourceIds": ["lp", "bbc-le", "cambridge"],
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "Welche Regel drückt ein Verbot aus?",
+			"answer": "You mustn't play loud music after 11 p.m.",
+			"wrong": [
+				"You needn't bring towels.",
+				"You don't have to make your bed."
+			],
+			"explanation": "mustn't bedeutet „nicht dürfen“ (Verbot). needn't und don't have to bedeuten „nicht müssen“: Es ist nicht nötig, aber erlaubt."
+		},
+		"takeaway": "must / have to = müssen (have to auch für Vergangenheit und Zukunft: had to, will have to). mustn't = nicht dürfen (Verbot). needn't / don't have to = nicht müssen, nicht brauchen. „Du musst nicht“ ≠ you mustn't.",
+		"practice": [
+			{
+				"prompt": "You ___ swim here – it's dangerous! (Verbot: ein Wort)",
+				"answers": ["mustn't", "must not"],
+				"feedback": "mustn't: Verbot (nicht dürfen)."
+			},
+			{
+				"prompt": "Yesterday we ___ to wait for the bus for an hour. (have to in der Vergangenheit)",
+				"answers": ["had"],
+				"feedback": "must hat keine Vergangenheitsform: had to."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Write six rules for your classroom or your sports club: two with must or have to, two with mustn't and two with needn't or don't have to.",
+				"model": "You must be on time for training. You have to bring your own water bottle. You mustn't wear outdoor shoes in the gym. You mustn't use your phone during training. You needn't bring a ball – the club has enough balls. You don't have to come to the Saturday game if you have a family celebration.",
+				"criteria": [
+					"Ich verwende je zwei Formen für Pflicht, Verbot und keine Notwendigkeit.",
+					"Die Bedeutung jeder Regel passt zum Modalverb.",
+					"Ich verwende nach den Modalverben den Infinitiv ohne to (außer have to)."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Dein Freund übersetzt „Du musst morgen nicht kommen.“ mit „You mustn't come tomorrow.“ Erkläre ihm auf Deutsch, was sein Satz auf Englisch bedeutet, und gib zwei richtige Übersetzungen an.",
+				"model": "Sein Satz bedeutet auf Englisch „Du darfst morgen nicht kommen“, also ein Verbot. Das ist ein großer Unterschied! „Nicht müssen“ heißt im Englischen needn't oder don't have to. Richtig ist: „You needn't come tomorrow.“ oder „You don't have to come tomorrow.“",
+				"criteria": [
+					"Ich erkläre, dass mustn't ein Verbot ausdrückt.",
+					"Ich nenne needn't und don't have to als Entsprechung von „nicht müssen“.",
+					"Ich gebe beide Sätze korrekt an."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "sentence",
+			"goals": [
+				{
+					"label": "Verbot",
+					"before": "You",
+					"after": "smoke anywhere in the building.",
+					"options": ["mustn't", "needn't", "don't have to"],
+					"answer": "mustn't",
+					"explanation": "mustn't: Rauchen ist verboten."
+				},
+				{
+					"label": "Nicht nötig",
+					"before": "You",
+					"after": "bring towels – we give you two.",
+					"options": ["needn't", "mustn't", "must"],
+					"answer": "needn't",
+					"explanation": "needn't: Es ist nicht nötig, Handtücher mitzubringen."
+				},
+				{
+					"label": "Vergangenheit",
+					"before": "Yesterday we",
+					"after": "clear our table after breakfast.",
+					"options": ["had to", "must", "musted"],
+					"answer": "had to",
+					"explanation": "must hat keine Vergangenheit; dafür steht had to."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "e7-ought-might",
+		"stage": "grammar2",
+		"title": "Ought to and might: Advice and possibility",
+		"skill": "Ratschläge mit ought to und should geben und Möglichkeiten mit might ausdrücken",
+		"bindings": ["1.2", "5"],
+		"paragraphs": [
+			"Mit ought to gibst du einen Rat oder sagst, was richtig wäre (sollte). Es bedeutet fast dasselbe wie should, klingt aber etwas förmlicher. Nach ought steht immer to + Grundform: „You ought to take a raincoat.“ Verneinung: „You ought not to stay up so late.“ Im Alltag sagt man häufiger should/shouldn't: „You should take a raincoat.“ – „You shouldn't stay up so late.“",
+			"Mit might drückst du eine Möglichkeit aus (könnte, vielleicht). Nach might steht die Grundform ohne to: „It might rain later.“ = Vielleicht regnet es später. Verneinung: „She might not come.“ = Vielleicht kommt sie nicht. Might ist unsicherer als will: „It will rain.“ (sicher) – „It might rain.“ (möglich). Beispiel für einen Rat mit Begründung: „You ought to take an umbrella because it might rain.“"
+		],
+		"material": "Advice column · Ask Aunt Aileen\nDear Aunt Aileen,\nNext month I'm going on a school exchange to Ireland. I'm a bit nervous because my English isn't perfect, and I might not understand my host family. What should I do?\nNervous Nina (13)\n\nDear Nina,\nDon't worry! First, you ought to learn a few phrases for asking again, like “Sorry, could you say that again?” Second, you might feel homesick at the start – that's normal. You ought to bring some photos of your family. And you should pack a raincoat: it might rain even in summer!\nAunt Aileen",
+		"materialLabel": "Eigenes englisches Übungsmaterial · Ratgeberkolumne",
+		"materialLanguage": "en",
+		"sourceIds": ["lp", "bbc-le", "cambridge"],
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "Welcher Satz drückt eine Möglichkeit aus?",
+			"answer": "You might feel homesick at the start.",
+			"wrong": [
+				"You ought to bring some photos of your family.",
+				"You should pack a raincoat."
+			],
+			"explanation": "might drückt aus, dass etwas möglich ist (vielleicht). ought to und should geben einen Rat."
+		},
+		"takeaway": "ought to + Grundform = sollte (Rat), ähnlich wie should: You ought to take a raincoat. might + Grundform = könnte, vielleicht (Möglichkeit): It might rain. might ist unsicherer als will.",
+		"practice": [
+			{
+				"prompt": "You ought ___ learn some phrases. (fehlendes Wort)",
+				"answers": ["to"],
+				"feedback": "ought to + Grundform: ought to learn."
+			},
+			{
+				"prompt": "Take an umbrella. It ___ rain later. (Möglichkeit: vielleicht)",
+				"answers": ["might"],
+				"feedback": "might rain: Es könnte regnen."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Your friend wants to go on a hiking trip in Ireland. Give five pieces of advice with ought to or should and explain at least three of them with might.",
+				"model": "You ought to wear good boots because the paths might be muddy. You should take a warm jacket because it might get cold on the hills. You ought to check the weather before you start. You should tell somebody where you are going because you might get lost. And you ought to take enough water and some snacks.",
+				"criteria": [
+					"Ich gebe fünf Ratschläge mit ought to oder should.",
+					"Ich begründe mindestens drei mit might.",
+					"Nach ought steht to, nach might und should die Grundform ohne to."
+				]
+			},
+			"2": {
+				"language": "en",
+				"prompt": "Write your own letter to Aunt Aileen about a small problem (40 to 50 words). Then write her answer (50 to 70 words) with ought to, should and might.",
+				"model": "Dear Aunt Aileen,\nMy best friend has a new friend, and now she spends all her time with her. I feel left out. What should I do?\nLonely Leo\n\nDear Leo,\nYou ought to talk to your friend and tell her how you feel. She might not know that you are sad. You should also invite both of them to do something together – you might like the new girl, too! And you ought to meet other classmates, so you have more than one friend.\nAunt Aileen",
+				"criteria": [
+					"Mein Brief beschreibt ein Problem und bittet um Rat.",
+					"Die Antwort verwendet ought to, should und might richtig.",
+					"Beide Texte haben Anrede und Schluss."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "dialogue",
+			"goals": [
+				{
+					"label": "Rat",
+					"before": "You ought",
+					"after": "bring some photos of your family.",
+					"options": ["to", "–", "for"],
+					"answer": "to",
+					"explanation": "Nach ought steht immer to."
+				},
+				{
+					"label": "Möglichkeit",
+					"before": "It",
+					"after": "rain even in summer.",
+					"options": ["might", "might to", "mights"],
+					"answer": "might",
+					"explanation": "might + Grundform ohne to, ohne -s."
+				},
+				{
+					"label": "Sicher oder möglich?",
+					"before": "I'm not sure. She",
+					"after": "come to the party.",
+					"options": ["might not", "will", "must"],
+					"answer": "might not",
+					"explanation": "Bei Unsicherheit passt might (not), nicht will oder must."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "e7-if-type-0-1",
+		"stage": "grammar2",
+		"title": "If-clauses type 0 and type 1",
+		"skill": "Allgemeingültige und reale Bedingungen mit if-clauses Typ 0 und Typ 1 ausdrücken",
+		"bindings": ["1.2", "5"],
+		"paragraphs": [
+			"Bedingungssätze (if-clauses) haben zwei Teile: den if-Satz mit der Bedingung und den Hauptsatz mit der Folge. Beim Typ 0 gilt die Folge immer, zum Beispiel bei Naturgesetzen oder festen Regeln. In beiden Teilen steht das Simple Present: „If you heat ice, it melts.“ – „If it rains in Galway, the streets get wet.“ Hier kannst du if fast immer durch when (immer wenn) ersetzen.",
+			"Beim Typ 1 ist die Bedingung real und gut möglich, meist in der Zukunft. Im if-Satz steht das Simple Present, im Hauptsatz will + Grundform (oder ein Modalverb bzw. ein Imperativ): „If it rains on Saturday, we will watch a film at home.“ – „If you see Ciara, tell her about the match.“ Wichtig: Im if-Satz steht nie will. Falsch: „If it will rain …“. Steht der if-Satz vorne, setzt du ein Komma; steht er hinten, meist nicht: „We'll stay at home if it rains.“"
+		],
+		"material": "Planning chat · Saturday trip to the beach\nAoife: “If the weather is good on Saturday, we'll take the bus to Salthill beach.”\nCiara: “Great! If we leave at ten, we'll be there before eleven.”\nAoife: “What if it rains?”\nCiara: “If it rains, we'll go to the aquarium instead.”\nAoife: “Good idea. And if you put hot chocolate in a flask, it stays warm for hours.”\nCiara: “Right. If my brother finishes his homework, he'll come, too.”\nAoife: “OK. If you see Niamh, ask her if she wants to come.”",
+		"materialLabel": "Eigenes englisches Übungsmaterial · Planungschat",
+		"materialLanguage": "en",
+		"sourceIds": ["lp", "bbc-le", "cambridge"],
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "Welcher Satz ist richtig?",
+			"answer": "If it rains, we will go to the aquarium.",
+			"wrong": [
+				"If it will rain, we will go to the aquarium.",
+				"If it rains, we went to the aquarium."
+			],
+			"explanation": "Typ 1: if + Simple Present, Hauptsatz will + Grundform. Im if-Satz steht nie will, und die Folge steht nicht im Simple Past."
+		},
+		"takeaway": "Typ 0 (immer gültig): if + Simple Present → Simple Present. Typ 1 (real, möglich): if + Simple Present → will + Grundform (oder Modalverb/Imperativ). Nie will im if-Satz. Komma, wenn der if-Satz vorne steht.",
+		"practice": [
+			{
+				"prompt": "If the weather is good, we ___ go to the beach. (Hilfsverb für die Zukunft)",
+				"answers": ["will", "'ll"],
+				"feedback": "Typ 1: Hauptsatz mit will + Grundform."
+			},
+			{
+				"prompt": "If my brother ___ his homework, he'll come. (finish im if-Satz)",
+				"answers": ["finishes"],
+				"feedback": "Im if-Satz steht das Simple Present: he finishes."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Complete the sentences for yourself (type 1): a) If I have time this weekend, … b) If my friends come to my house, … c) If I get a good mark in English, … d) If it snows tomorrow, … e) I'll be very happy if …",
+				"model": "a) If I have time this weekend, I'll go to the climbing hall. b) If my friends come to my house, we'll play video games. c) If I get a good mark in English, my parents will be proud. d) If it snows tomorrow, we'll build a snowman in the garden. e) I'll be very happy if our team wins the final.",
+				"criteria": [
+					"Im if-Satz steht das Simple Present.",
+					"Im Hauptsatz steht will + Grundform.",
+					"Ich setze das Komma richtig, wenn der if-Satz vorne steht."
+				]
+			},
+			"2": {
+				"language": "en",
+				"prompt": "Write a short guide “Survival tips for exchange students” (six sentences). Use type 0 for general facts and type 1 for advice and possible situations. Mark each sentence with 0 or 1.",
+				"model": "(0) If you speak slowly, people understand you better. (0) If you smile, people are friendlier. (1) If you don't understand a word, your host family will explain it. (1) If you feel homesick, call your friends at home. (1) If you try the local food, you'll discover new favourites. (0) If it rains in Ireland, people just carry on – so pack a raincoat!",
+				"criteria": [
+					"Ich verwende beide Typen korrekt.",
+					"Ich kennzeichne jeden Satz mit dem richtigen Typ.",
+					"Die Tipps passen zum Thema."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "if-machine",
+			"goals": [
+				{
+					"label": "Typ 0",
+					"before": "If you heat ice, it",
+					"after": ".",
+					"options": ["melts", "will melt", "melted"],
+					"answer": "melts",
+					"explanation": "Typ 0 (immer wahr): Simple Present in beiden Teilen."
+				},
+				{
+					"label": "Typ 1 Hauptsatz",
+					"before": "If it rains on Saturday, we",
+					"after": "a film at home.",
+					"options": ["will watch", "watched", "would watch"],
+					"answer": "will watch",
+					"explanation": "Typ 1: will + Grundform im Hauptsatz."
+				},
+				{
+					"label": "Typ 1 if-Satz",
+					"before": "If my brother",
+					"after": "his homework, he'll come.",
+					"options": ["finishes", "will finish", "finished"],
+					"answer": "finishes",
+					"explanation": "Im if-Satz von Typ 1 steht das Simple Present, nie will."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "e7-if-type-2",
+		"stage": "grammar2",
+		"title": "If-clauses type 2: If I lived in Dublin …",
+		"skill": "Unwahrscheinliche oder nur gedachte Bedingungen mit if-clauses Typ 2 ausdrücken",
+		"bindings": ["1.2", "5"],
+		"paragraphs": [
+			"Mit dem Typ 2 sprichst du über Bedingungen, die unwahrscheinlich oder nur gedacht sind. Im if-Satz steht das Simple Past, im Hauptsatz would + Grundform (deutsch: würde …). Obwohl das Simple Past verwendet wird, geht es um die Gegenwart oder Zukunft: „If I lived in Dublin, I would go to a hurling match every week.“ (Ich wohne aber nicht in Dublin.) – „If I had a million euros, I would buy a house by the sea.“",
+			"Bei be verwendest du im if-Satz oft were für alle Personen, besonders in Ratschlägen: „If I were you, I would take the train.“ (An deiner Stelle würde ich …) Im Alltag hörst du auch „If I was …“. Wie bei Typ 1 steht im if-Satz nie would. Falsch: „If I would have time …“. Richtig: „If I had time, I would help you.“ Vergleich: „If I get the job, I'll buy a bike.“ (Typ 1, gut möglich) – „If I won the lottery, I'd buy a horse.“ (Typ 2, unwahrscheinlich)"
+		],
+		"material": "Class survey · What would you do if …?\nQuestion 1: What would you do if you were the head of our school?\nNiamh: “If I were the head, I would start school at ten o'clock!”\nKasia: “I would build a skate park in the playground.”\nQuestion 2: Where would you live if you could live anywhere?\nOwen: “If I could live anywhere, I would live in New York. I'd go to a Broadway show every weekend.”\nLeila: “I'd live on an island in the west of Ireland. If I lived there, I would have a horse and a dog.”\nQuestion 3: If you met a famous person, who would it be?\nJonas: “If I met a famous person, I'd like it to be a hurling star.”",
+		"materialLabel": "Eigenes englisches Übungsmaterial · Klassenumfrage",
+		"materialLanguage": "en",
+		"sourceIds": ["lp", "bbc-le", "cambridge"],
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "Welcher Satz ist ein richtiger if-Satz Typ 2?",
+			"answer": "If I had more time, I would learn the fiddle.",
+			"wrong": [
+				"If I would have more time, I would learn the fiddle.",
+				"If I have more time, I would learn the fiddle."
+			],
+			"explanation": "Typ 2: if + Simple Past (had), Hauptsatz would + Grundform. Im if-Satz steht nie would, und have passt zu Typ 1, nicht zu would."
+		},
+		"takeaway": "Typ 2 (unwahrscheinlich oder nur gedacht): if + Simple Past → would + Grundform. If I were you, I would … für Ratschläge. Nie would im if-Satz. Typ 1 = gut möglich (will), Typ 2 = unwahrscheinlich (would).",
+		"practice": [
+			{
+				"prompt": "If I ___ a million euros, I would buy a horse. (have im if-Satz Typ 2)",
+				"answers": ["had"],
+				"feedback": "Typ 2: if + Simple Past: If I had …"
+			},
+			{
+				"prompt": "If I were you, I ___ take the train. (Hilfsverb im Hauptsatz)",
+				"answers": ["would", "'d"],
+				"feedback": "Hauptsatz Typ 2: would + Grundform."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Answer the three survey questions for yourself in full type 2 sentences. Add one more sentence with “If I were you, I would …” as advice for a friend.",
+				"model": "If I were the head of our school, I would give every class a trip to Ireland. If I could live anywhere, I would live in Cork near the sea. If I met a famous person, I would ask a famous author to visit our school. My friend is always tired in the morning. If I were you, I would go to bed earlier.",
+				"criteria": [
+					"Im if-Satz steht das Simple Past (oder were).",
+					"Im Hauptsatz steht would + Grundform.",
+					"Ich gebe einen Rat mit If I were you, I would …"
+				]
+			},
+			"2": {
+				"language": "en",
+				"prompt": "Write a short text (70 to 90 words): “If I lived in Ireland for a year …”. Use type 2 at least four times and include at least two facts you learnt about Ireland in this course.",
+				"model": "If I lived in Ireland for a year, I would go to a school in Galway. I would learn some Irish, because if I spoke a few words, people would be happy. If I joined a GAA club, I would try camogie or hurling. On 17 March I would march in the St Patrick's Day parade. If I had enough money, I would travel north to Belfast and pay with pounds there. And if it rained every day, I wouldn't mind – the island would be very green!",
+				"criteria": [
+					"Ich verwende Typ 2 mindestens viermal korrekt.",
+					"Ich baue mindestens zwei Fakten über Irland ein.",
+					"Mein Text ist zusammenhängend mit linking words."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "if-machine",
+			"goals": [
+				{
+					"label": "if-Satz Typ 2",
+					"before": "If I",
+					"after": "in Dublin, I would go to every hurling match.",
+					"options": ["lived", "live", "would live"],
+					"answer": "lived",
+					"explanation": "Typ 2: if + Simple Past (lived)."
+				},
+				{
+					"label": "Hauptsatz Typ 2",
+					"before": "If I had a horse, I",
+					"after": "it every day.",
+					"options": ["would ride", "will ride", "rode"],
+					"answer": "would ride",
+					"explanation": "Typ 2: Hauptsatz mit would + Grundform."
+				},
+				{
+					"label": "Ratschlag",
+					"before": "If I",
+					"after": "you, I would take the train.",
+					"options": ["were", "am", "would be"],
+					"answer": "were",
+					"explanation": "If I were you … ist die feste Wendung für einen Rat."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": true
+	}
+]

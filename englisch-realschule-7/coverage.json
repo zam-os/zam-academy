@@ -1,0 +1,768 @@
+{
+	"curriculum": "https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/7/englisch",
+	"checked": "2026-11-21",
+	"curriculum_sha256": "7540b982b36116b2bcb0f3284a12b6e8cb4903ebafb47b008d32fa85f2b0dbcc",
+	"previous": {
+		"grade": 6,
+		"url": "https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/6/englisch",
+		"sha256": "2c303039abfabcfd1203cf32b1d06bb46c5fed805ec7d3bca4bed392d2c019c1",
+		"note": "Grade 6 teaches the USA, London, regions of Britain, simple past (revision), past progressive, simple vs progressive, present perfect simple (recent action, present result), will and going-to future, comparison of adjectives and pronouns. Grade 7 builds on the present perfect simple (contrast with the simple past, since/for) and on the grade-6 directions (now detailed directions and the tourist information centre)."
+	},
+	"neighbour": {
+		"grade": 8,
+		"url": "https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/8/englisch",
+		"sha256": "72038cddc11960aba09b08d961ed641dc68a1f2a2e6d72e401945e687f80d342",
+		"boundary": "Grade 8 introduces reflexive and emphatic pronouns, each other, verbs with two objects as grammar, subject/object and negative questions, the passive and personal passive, if-clauses type 3 and receptive participle constructions, plus North America as the cultural focus. Those targets are outside this Grade 7 package; verbs with two objects appear here only as vocabulary chunks, as the Grade 7 Wortschatz list requires."
+	},
+	"scope": "Bavaria, Realschule, Englisch; one common Fachlehrplan for Jahrgangsstufe 7 across all Wahlpflichtfächergruppen.",
+	"indexing": "E7-01…E7-63 are package-local row identifiers in source order. Each listed vocabulary and grammar structure has its own row after its parent expectation. Topic blocks under LB 5 are included with their official approximate hours; heading and content are joined as one row.",
+	"hours_note": "LB 5 Themengebiete lists ca. 25, 25, 20, 10, 17, 10 and 5 hours; LB 1 to 4 list no separate hour allocations.",
+	"optional_lessons": [],
+	"rows": [
+		{
+			"id": "E7-01",
+			"lb": "1.1",
+			"competence": "verstehen in zunehmend natürlichem Tempo artikulierte Sprachäußerungen und Gespräche, wenn deutlich und in vorwiegend britischer oder amerikanischer Standardsprache gesprochen und weitgehend bekanntes oder leicht erschließbares Sprachmaterial verwendet wird.",
+			"lessons": [
+				"e7-dublin-directions",
+				"e7-youth-interview",
+				"e7-lit-sherlock",
+				"e7-pronunciation"
+			],
+			"status": "supported",
+			"evidence": "Four original listening scripts (tourist information dialogue, radio interview, radio play, poem) with optional local synthetic reading, partner-reading fallback and comprehension checks. Natural BE/AE speech at increasing speed stays with authentic recordings in class."
+		},
+		{
+			"id": "E7-02",
+			"lb": "1.1",
+			"competence": "erfassen auch längere, klar strukturierte Hör- und Hörsehtexte (z. B. einfache Interviews, Filmausschnitte) zu alltäglichen und bekannten Themen, die ggf. über persönliche Interessensgebiete hinausgehen. Sie entnehmen ihnen sowohl Global- als auch Detailinformationen und erkennen dabei deutlich hervortretende Meinungen der Sprecher.",
+			"lessons": [
+				"e7-youth-interview",
+				"e7-lit-sherlock",
+				"e7-dublin-directions"
+			],
+			"status": "supported",
+			"evidence": "The interview and radio play train gist, detail and recognising speakers' opinions (I think …, What I don't like …) with note-taking tasks. Real interviews and film clips (Hörsehtexte) are practised additionally outside the app."
+		},
+		{
+			"id": "E7-03",
+			"lb": "1.1",
+			"competence": "verstehen und erschließen die Inhalte auch längerer erzählender, beschreibender und berichtender Texte (z. B. Artikel aus Sprachzeitschriften und Jugendmagazinen) sowie einfacher Gebrauchstexte (z. B. Internetseiten zu kulturellen Veranstaltungen, Anzeigen, Reiseprospekte), die alltägliche und bekannte, auch über persönliche Interessensgebiete hinausgehende Themen (z. B. irische Emigration in die USA) aufgreifen und vorwiegend bekanntes sowie erschließbares Sprachmaterial enthalten.",
+			"lessons": [
+				"e7-celts",
+				"e7-romans",
+				"e7-anglo-saxons",
+				"e7-famine-emigration",
+				"e7-ireland-map",
+				"e7-ireland-culture",
+				"e7-school-diversity",
+				"e7-usa-entertainment",
+				"e7-ireland-brochure"
+			],
+			"status": "implemented",
+			"evidence": "Longer narrative, descriptive and reporting texts (fact files, travel blog, emigrant letter, magazine articles) and simple functional texts (visitor leaflet, brochure, fact list), including Irish emigration to the USA, with quick checks, gap tasks and two-level writing tasks."
+		},
+		{
+			"id": "E7-04",
+			"lb": "1.1",
+			"competence": "erfassen die wesentlichen Inhalte didaktisierter englischsprachiger Jugendliteratur oder didaktischer Werke als Ganzschrift oder in Auszügen. Dabei wenden sie unter Anleitung verschiedene Verfahren des extensiven Lesens an, u. a. Erschließen einzelner unbekannter Wörter und Übergehen unbekannter Wörter, die für das Verständnis nicht relevant sind.",
+			"lessons": [
+				"e7-lit-treasure-island",
+				"e7-lit-sherlock",
+				"e7-lit-dahl-rowling"
+			],
+			"status": "supported",
+			"evidence": "Adapted extracts and a reading log train extensive reading (skip or infer unknown words). Reading a complete graded reader or class novel stays in class."
+		},
+		{
+			"id": "E7-05",
+			"lb": "1.1",
+			"competence": "wenden zunehmend selbständig verschiedene Lesetechniken (reading for gist, reading for detail, skimming, scanning) an.",
+			"lessons": [
+				"e7-celts",
+				"e7-lit-treasure-island",
+				"e7-ireland-brochure"
+			],
+			"status": "implemented",
+			"evidence": "Reading for gist and detail, skimming and scanning are explained with examples and applied in tasks that ask for gist, details and selective information."
+		},
+		{
+			"id": "E7-06",
+			"lb": "1.1",
+			"competence": "verständigen sich in typischen Alltagssituationen, wenn in deutlich artikulierter Standardsprache gesprochen wird, indem sie beispielsweise Kontakte knüpfen und einfache Auskünfte einholen oder erteilen, z. B. bei detaillierten Wegbeschreibungen oder im Touristeninformationszentrum.",
+			"lessons": [
+				"e7-dublin-directions",
+				"e7-usa-shopping",
+				"e7-paraphrasing",
+				"e7-mediation-guide"
+			],
+			"status": "supported",
+			"evidence": "Model dialogues for the tourist information centre, detailed directions, shopping and asking for help, written role plays and notes for speaking. Real spoken interaction with a partner stays outside the app; nothing is recorded or rated automatically."
+		},
+		{
+			"id": "E7-07",
+			"lb": "1.1",
+			"competence": "stellen Arbeitsergebnisse vor und äußern sich zu alltäglichen und bekannten Themen, die ggf. über den eigenen Erfahrungsbereich hinausgehen (z. B. aktuelle Ereignisse, Jugendkultur), wobei sie ein erweitertes Wortschatzrepertoire einsetzen. Im Rahmen eines short talk verwenden sie ggf. Notizen als Hilfestellung.",
+			"lessons": [
+				"e7-short-talk",
+				"e7-youth-music-film",
+				"e7-youth-sport-fashion"
+			],
+			"status": "supported",
+			"evidence": "Phrases for a short talk, cue cards with key words only and youth culture topics are prepared in writing. Giving the talk to a real audience happens in class."
+		},
+		{
+			"id": "E7-08",
+			"lb": "1.1",
+			"competence": "berichten und erzählen weitgehend frei, jedoch mit einfachen Satzstrukturen und ggf. mithilfe eigener Notizen, über Erfahrungen, vergangene sowie zukünftige Aktivitäten und Ereignisse.",
+			"lessons": [
+				"e7-normans",
+				"e7-past-perfect",
+				"e7-usa-holidays-food",
+				"e7-if-type-0-1"
+			],
+			"status": "supported",
+			"evidence": "Retelling past events in sequence (first, then, after that), past perfect stories, diary entries and plans for the future are written and can be spoken from notes; free oral narration is practised with a partner."
+		},
+		{
+			"id": "E7-09",
+			"lb": "1.1",
+			"competence": "bringen Gefühle und Meinungen in einfachen Worten zum Ausdruck.",
+			"lessons": [
+				"e7-youth-music-film",
+				"e7-youth-sport-fashion",
+				"e7-lit-dahl-rowling"
+			],
+			"status": "implemented",
+			"evidence": "Phrases for feelings and opinions (I'm really into …, I can't stand …, It makes me feel …, on the one hand … on the other hand) with reasons, practised in quick checks, workshops and writing tasks."
+		},
+		{
+			"id": "E7-10",
+			"lb": "1.1",
+			"competence": "gehen auf den Gesprächspartner angemessen ein, indem sie in einfacher Form nachfragen und um Wiederholung bzw. Klärung bitten, wenn sie etwas nicht verstehen.",
+			"lessons": [
+				"e7-dublin-directions",
+				"e7-question-tags",
+				"e7-paraphrasing"
+			],
+			"status": "supported",
+			"evidence": "Phrases for asking for repetition and clarification (Could you say that again? Did you say … or …?) and question tags for friendly small talk are modelled and used in written dialogues; live conversation stays in class."
+		},
+		{
+			"id": "E7-11",
+			"lb": "1.1",
+			"competence": "verfassen auch längere zusammenhängende Texte (z. B. Briefe, E-Mails, Dialoge, Geschichten) zu vertrauten Themen zunehmend selbständig. In alltagstypische Formulare (z. B. Anmeldeformulare) tragen sie auch detaillierte, zusammenhängende Informationen ein.",
+			"lessons": [
+				"e7-letters-forms",
+				"e7-famine-emigration",
+				"e7-romans",
+				"e7-lit-sherlock",
+				"e7-past-perfect"
+			],
+			"status": "implemented",
+			"evidence": "Letters, e-mails, dialogues and stories of 70 to 120 words with model comparison and self-assessment criteria, plus a detailed registration form for a summer school."
+		},
+		{
+			"id": "E7-12",
+			"lb": "1.1",
+			"competence": "achten beim Verfassen von Texten auf korrekte Rechtschreibung und vermehrt auch auf angemessene formale Gestaltung (Situations- und Adressatenbezug, Aufbau, Strukturierung von Texten durch die Verwendung von linking words).",
+			"lessons": [
+				"e7-letters-forms",
+				"e7-error-log",
+				"e7-ireland-culture"
+			],
+			"status": "implemented",
+			"evidence": "Letter structure, greetings and closings, linking words and register are explained with a layout graphic; the error log trains careful correction of one's own texts."
+		},
+		{
+			"id": "E7-13",
+			"lb": "1.1",
+			"competence": "erfassen auch längere, klar strukturierte Texte (z. B. Broschüren), die weitgehend bekanntes oder erschließbares Sprachmaterial enthalten und alltägliche und bekannte Themen aufgreifen, indem sie Global- und Detailinformationen sinngemäß auf Deutsch wiedergeben. Dabei wenden sie zunehmend selbständig grundlegende Erschließungsstrategien (u. a. Erschließung von Wortschatz mithilfe einfacher Wortbildungsgesetze) an.",
+			"lessons": [
+				"e7-ireland-brochure",
+				"e7-word-formation"
+			],
+			"status": "implemented",
+			"evidence": "A brochure about the Cliffs of Moher is mediated into German for a named addressee; unknown words are inferred with simple word-formation rules (visit-or, un-forget-able)."
+		},
+		{
+			"id": "E7-14",
+			"lb": "1.1",
+			"competence": "agieren in alltäglichen Kommunikationssituationen als Sprachmittler (z. B. bei touristischen Führungen, detaillierten Wegbeschreibungen für englischsprachige Besucher) und geben dabei die wesentlichen Inhalte und Details in der jeweils anderen Sprache verständlich, adressatenbezogen und überwiegend spontan wieder. Bei Verständnisproblemen setzen sie zunehmend selbständig grundlegende Kompensationsstrategien (z. B. einfache Umschreibung) ein.",
+			"lessons": [
+				"e7-mediation-guide",
+				"e7-dublin-directions",
+				"e7-paraphrasing"
+			],
+			"status": "supported",
+			"evidence": "Mediation for English-speaking visitors (guided tour, directions, bakery) and compensation strategies such as paraphrasing are modelled and written as dialogues. Spontaneous oral mediation stays in class."
+		},
+		{
+			"id": "E7-15",
+			"lb": "1.2",
+			"competence": "wenden den in vorausgegangenen Jahrgangsstufen erworbenen Wortschatz auch in neuen Zusammenhängen an. Sie nutzen ein erweitertes Repertoire an Wortschatz, das sich auf die Themen unter 7.5 bezieht, um sich in typischen Alltagssituationen (z. B. beim Einholen von Auskünften) sowie zu alltäglichen und bekannten Themen, die auch über persönliche Interessensgebiete hinausgehen (z. B. irische Kultur), zu äußern. Dabei verwenden sie u. a. folgende Wendungen und Strukturen:",
+			"lessons": [
+				"e7-short-talk",
+				"e7-paraphrasing",
+				"e7-verb-chunks",
+				"e7-phrasal-chunks",
+				"e7-must-have-to",
+				"e7-ought-might",
+				"e7-ireland-culture"
+			],
+			"status": "implemented",
+			"evidence": "Topic vocabulary for Ireland, history, youth culture, school and the USA plus all listed phrases and structures (rows below) with quick checks, gap tasks and workshops."
+		},
+		{
+			"id": "E7-16",
+			"lb": "1.2",
+			"competence": "basic phrases for giving a short presentation",
+			"lessons": [
+				"e7-short-talk"
+			],
+			"status": "implemented",
+			"evidence": "Today I'm going to talk about …, First …, As you can see …, To sum up …, Thank you for listening."
+		},
+		{
+			"id": "E7-17",
+			"lb": "1.2",
+			"competence": "paraphrases, e. g. it’s a synonym of …",
+			"lessons": [
+				"e7-paraphrasing",
+				"e7-mediation-guide"
+			],
+			"status": "implemented",
+			"evidence": "It's a synonym of …, It's the opposite of …, It's a kind of …, It's a thing you use to …, It's a person who …, It's a place where …"
+		},
+		{
+			"id": "E7-18",
+			"lb": "1.2",
+			"competence": "propword one",
+			"lessons": [
+				"e7-paraphrasing"
+			],
+			"status": "implemented",
+			"evidence": "the blue one, bigger ones, which one with practice and workshop goals."
+		},
+		{
+			"id": "E7-19",
+			"lb": "1.2",
+			"competence": "modal verbs: ought to, might, mustn’t, needn’t",
+			"lessons": [
+				"e7-must-have-to",
+				"e7-ought-might"
+			],
+			"status": "implemented",
+			"evidence": "mustn't (prohibition) vs needn't/don't have to (no necessity); ought to for advice and might for possibility."
+		},
+		{
+			"id": "E7-20",
+			"lb": "1.2",
+			"competence": "chunks: common verbs with two objects, e. g. to give",
+			"lessons": [
+				"e7-verb-chunks"
+			],
+			"status": "implemented",
+			"evidence": "give sb sth / give sth to sb, buy/make sth for sb, as chunks."
+		},
+		{
+			"id": "E7-21",
+			"lb": "1.2",
+			"competence": "prepositional idioms, e. g. by heart",
+			"lessons": [
+				"e7-verb-chunks"
+			],
+			"status": "implemented",
+			"evidence": "by heart, on purpose, by mistake, in time, on time."
+		},
+		{
+			"id": "E7-22",
+			"lb": "1.2",
+			"competence": "collocations, e. g. to keep a promise",
+			"lessons": [
+				"e7-verb-chunks"
+			],
+			"status": "implemented",
+			"evidence": "keep a promise, make a mistake, do homework, take a photo, have a good time."
+		},
+		{
+			"id": "E7-23",
+			"lb": "1.2",
+			"competence": "phrasal verbs, e. g. to work out",
+			"lessons": [
+				"e7-phrasal-chunks"
+			],
+			"status": "implemented",
+			"evidence": "work out, find out, look up, give up, carry on, set off; pronoun position (look it up)."
+		},
+		{
+			"id": "E7-24",
+			"lb": "1.2",
+			"competence": "common chunks with verb + to-infinitive",
+			"lessons": [
+				"e7-phrasal-chunks"
+			],
+			"status": "implemented",
+			"evidence": "decide, hope, want, plan, manage, promise, learn, forget + to-infinitive."
+		},
+		{
+			"id": "E7-25",
+			"lb": "1.2",
+			"competence": "common chunks with verb + -ing",
+			"lessons": [
+				"e7-phrasal-chunks"
+			],
+			"status": "implemented",
+			"evidence": "enjoy, finish, avoid, mind, keep, practise, imagine, suggest + -ing."
+		},
+		{
+			"id": "E7-26",
+			"lb": "1.2",
+			"competence": "nutzen zum Erschließen von Vokabular einfache Wortbildungsgesetze, wie die Verwendung von Präfixen und Suffixen, Zusammensetzungen, Ableitungen sowie Konversion, z. B. cold > a cold[/lang].",
+			"lessons": [
+				"e7-word-formation",
+				"e7-ireland-brochure",
+				"e7-lit-treasure-island"
+			],
+			"status": "implemented",
+			"evidence": "Prefixes, suffixes, compounds, derivation and conversion (cold > a cold) with a colour-coded word family graphic and inference tasks."
+		},
+		{
+			"id": "E7-27",
+			"lb": "1.2",
+			"competence": "verstehen zentrale grammatikalische Fachbegriffe bei der Erarbeitung von Grammatikphänomenen, bei der Bearbeitung von Aufgaben und der Verwendung von Nachschlagewerken.",
+			"lessons": [
+				"e7-dictionary",
+				"e7-word-formation"
+			],
+			"status": "implemented",
+			"evidence": "noun, verb, adjective, adverb, preposition, pronoun, irregular, countable; dictionary abbreviations sb and sth."
+		},
+		{
+			"id": "E7-28",
+			"lb": "1.2",
+			"competence": "beschreiben Personen, Gegenstände, Orte sowie Sachverhalte genauer, indem sie u. a. ausgewählte komplexe Sätze verwenden. Sie verstehen und formulieren idiomatische Wendungen in Fragen.",
+			"lessons": [
+				"e7-relative-who-which",
+				"e7-relative-whose-where",
+				"e7-contact-clauses",
+				"e7-adverbs-manner",
+				"e7-question-tags"
+			],
+			"status": "implemented",
+			"evidence": "Complex sentences with relative clauses, adverbs of manner and question tags (idiomatic phrases in questions); rows for each structure below."
+		},
+		{
+			"id": "E7-29",
+			"lb": "1.2",
+			"competence": "defining relative clauses with who, which, that, whose, where",
+			"lessons": [
+				"e7-relative-who-which",
+				"e7-relative-whose-where"
+			],
+			"status": "implemented",
+			"evidence": "who/which/that, whose and where with no commas and no repeated pronoun."
+		},
+		{
+			"id": "E7-30",
+			"lb": "1.2",
+			"competence": "contact clauses",
+			"lessons": [
+				"e7-contact-clauses"
+			],
+			"status": "implemented",
+			"evidence": "Leaving out the object relative pronoun; subject pronouns stay."
+		},
+		{
+			"id": "E7-31",
+			"lb": "1.2",
+			"competence": "adverbs of manner",
+			"lessons": [
+				"e7-adverbs-manner"
+			],
+			"status": "implemented",
+			"evidence": "-ly formation and spelling, irregular well/fast/hard/late, adjectives after look/sound/feel."
+		},
+		{
+			"id": "E7-32",
+			"lb": "1.2",
+			"competence": "question tags",
+			"lessons": [
+				"e7-question-tags"
+			],
+			"status": "implemented",
+			"evidence": "Positive/negative tags, do/does/did, aren't I, shall we, falling and rising intonation."
+		},
+		{
+			"id": "E7-33",
+			"lb": "1.2",
+			"competence": "stellen mit zunehmender Sicherheit und Differenziertheit zeitliche Bezüge her und drücken Verpflichtungen, Bedingungen sowie hypothetische Sachverhalte aus.",
+			"lessons": [
+				"e7-past-vs-perfect",
+				"e7-perfect-progressive",
+				"e7-past-perfect",
+				"e7-must-have-to",
+				"e7-if-type-0-1",
+				"e7-if-type-2"
+			],
+			"status": "implemented",
+			"evidence": "Tenses, obligation and conditions; rows for each structure below."
+		},
+		{
+			"id": "E7-34",
+			"lb": "1.2",
+			"competence": "contrast: simple past and present perfect",
+			"lessons": [
+				"e7-past-vs-perfect"
+			],
+			"status": "implemented",
+			"evidence": "Finished time vs unfinished time/result now, signal words, Have you ever …? + simple past details."
+		},
+		{
+			"id": "E7-35",
+			"lb": "1.2",
+			"competence": "present perfect progressive (with since/for)",
+			"lessons": [
+				"e7-perfect-progressive"
+			],
+			"status": "implemented",
+			"evidence": "have/has been + -ing with since (point in time) and for (period), interactive since/for timeline."
+		},
+		{
+			"id": "E7-36",
+			"lb": "1.2",
+			"competence": "past perfect simple",
+			"lessons": [
+				"e7-past-perfect",
+				"e7-lit-sherlock"
+			],
+			"status": "implemented",
+			"evidence": "had + past participle for the earlier of two past events, interactive bus timeline."
+		},
+		{
+			"id": "E7-37",
+			"lb": "1.2",
+			"competence": "modal verbs: must / have to",
+			"lessons": [
+				"e7-must-have-to"
+			],
+			"status": "implemented",
+			"evidence": "must vs have to, had to and will have to for other tenses."
+		},
+		{
+			"id": "E7-38",
+			"lb": "1.2",
+			"competence": "if-clauses: types 0/1",
+			"lessons": [
+				"e7-if-type-0-1"
+			],
+			"status": "implemented",
+			"evidence": "Type 0 (always true) and type 1 (real condition), no will in the if-clause, comma rule."
+		},
+		{
+			"id": "E7-39",
+			"lb": "1.2",
+			"competence": "if-clauses: type 2",
+			"lessons": [
+				"e7-if-type-2"
+			],
+			"status": "implemented",
+			"evidence": "if + simple past, would + infinitive; If I were you …; type 1 vs type 2."
+		},
+		{
+			"id": "E7-40",
+			"lb": "1.2",
+			"competence": "sprechen Sätze mit bekanntem Sprachmaterial korrekt und mit weitgehend richtiger Intonation aus und wenden ihre Kenntnisse über grundlegende Zusammenhänge von Lautung und Schreibung auch an, um die Aussprache von unbekanntem Sprachmaterial zu erschließen.",
+			"lessons": [
+				"e7-pronunciation",
+				"e7-question-tags"
+			],
+			"status": "supported",
+			"evidence": "Silent letters, sound-spelling rules and intonation are explained and marked; correct spoken pronunciation is not assessed by the app."
+		},
+		{
+			"id": "E7-41",
+			"lb": "1.2",
+			"competence": "lesen oder tragen inhaltlich und sprachlich erarbeitete Texte lautrichtig, verständlich und mit richtiger Intonation gestaltend vor.",
+			"lessons": [
+				"e7-pronunciation",
+				"e7-short-talk"
+			],
+			"status": "supported",
+			"evidence": "A poem and a short talk are prepared for reading aloud with pauses and intonation marks; the performance itself happens with a partner or in class."
+		},
+		{
+			"id": "E7-42",
+			"lb": "1.2",
+			"competence": "nutzen ausgewählte elektronische Hilfsmittel oder Nachschlagewerke zunehmend selbständig, um die Aussprache unbekannter Wörter zu klären oder Ausspracheprobleme zu vermeiden.",
+			"lessons": [
+				"e7-pronunciation",
+				"e7-dictionary"
+			],
+			"status": "supported",
+			"evidence": "Phonetic transcription and the audio function of online learner dictionaries (linked) are used in a task; the lookup itself happens outside the app."
+		},
+		{
+			"id": "E7-43",
+			"lb": "2",
+			"competence": "verfügen über ausgewählte Kenntnisse zu Irland sowie über die Lebenswelten von Gleichaltrigen in verschiedenen englischsprachigen Ländern und nutzen diese, um anderen Lebensweisen offen und verständnisvoll zu begegnen und eigene Einstellungen zu reflektieren. Durch die Beschäftigung mit englischsprachigen Texten setzen sie sich mit kulturellen Gemeinsamkeiten und Unterschieden auseinander.",
+			"lessons": [
+				"e7-ireland-map",
+				"e7-ireland-culture",
+				"e7-ireland-economy",
+				"e7-ireland-politics",
+				"e7-school-diversity",
+				"e7-usa-family"
+			],
+			"status": "implemented",
+			"evidence": "Geography, culture, economy and politics of Ireland and the lives of teenagers in Ireland, England and the USA, with comparison tasks that reflect one's own attitudes."
+		},
+		{
+			"id": "E7-44",
+			"lb": "2",
+			"competence": "zeigen anhand von Kenntnissen über prägende historische Ereignisse in Großbritannien und Irland ein besseres Verständnis für spezifische Gegebenheiten in diesen Ländern.",
+			"lessons": [
+				"e7-celts",
+				"e7-romans",
+				"e7-anglo-saxons",
+				"e7-normans",
+				"e7-famine-emigration",
+				"e7-ireland-politics"
+			],
+			"status": "implemented",
+			"evidence": "Celts, Romans, Anglo-Saxons and Vikings, the Norman Conquest, the Great Famine and the Good Friday Agreement, with an interactive timeline and schematic maps."
+		},
+		{
+			"id": "E7-45",
+			"lb": "2",
+			"competence": "agieren in simulierten und ggf. realen typischen Alltagssituationen angemessen, indem sie spezifische Kommunikations- und Interaktionsregeln anwenden, u. a. wenn sie höflich nachfragen oder angemessene Anrede- und Schlussformeln in persönlichen Schreiben verwenden.",
+			"lessons": [
+				"e7-dublin-directions",
+				"e7-question-tags",
+				"e7-letters-forms",
+				"e7-must-have-to"
+			],
+			"status": "supported",
+			"evidence": "Polite requests, clarification, small talk with question tags and greetings/closings in personal letters are modelled and written; real situations stay outside the app."
+		},
+		{
+			"id": "E7-46",
+			"lb": "3",
+			"competence": "reagieren mündlich auf Texte und bildliche Darstellungen (z. B. Fotos, sehr einfache Grafiken), indem sie diese ggf. mithilfe von vorgegebenen Redemitteln beschreiben, in Szenen nachspielen oder in Standbilder umsetzen und dabei charakteristische Gestaltungsmerkmale wie Intonation und Körpersprache bewusst einsetzen.",
+			"lessons": [
+				"e7-youth-music-film",
+				"e7-ireland-economy",
+				"e7-romans"
+			],
+			"status": "supported",
+			"evidence": "Describing simple charts and maps with given phrases is practised in writing; role plays, freeze frames and body language happen in class."
+		},
+		{
+			"id": "E7-47",
+			"lb": "3",
+			"competence": "reagieren schriftlich auf Texte, indem sie Aufbau und grundlegende sprachliche Merkmale von persönlichen Schreiben wie Mitteilungen, Briefen oder E-Mails erkennen (u. a. Anrede und Schlussformel) und diese bei der Gestaltung eigener Texte einbringen, wenn sie z. B. auf persönliche Schreiben antworten oder Tagebucheinträge verfassen.",
+			"lessons": [
+				"e7-letters-forms",
+				"e7-famine-emigration",
+				"e7-ireland-culture",
+				"e7-lit-dahl-rowling",
+				"e7-usa-holidays-food"
+			],
+			"status": "implemented",
+			"evidence": "Replies to personal letters and e-mails and diary entries (including from a character's point of view), with the letter layout graphic and self-assessment criteria."
+		},
+		{
+			"id": "E7-48",
+			"lb": "3",
+			"competence": "verwenden verschiedene Quellen zur Informationsbeschaffung (z. B. Sprach- oder Jugendzeitschriften, ausgewählte Internetseiten) und erfassen mit Anleitung wesentliche Inhalte.",
+			"lessons": [
+				"e7-ireland-economy",
+				"e7-ireland-brochure",
+				"e7-usa-entertainment"
+			],
+			"status": "supported",
+			"evidence": "Checked links to official and reference websites and tasks that ask where to find current figures; the research itself is done outside the app."
+		},
+		{
+			"id": "E7-49",
+			"lb": "4",
+			"competence": "wenden zunehmend selbständig Strategien des Lese-, Hör- und Hörsehverstehens an, indem sie visuelle und akustische Elemente (z. B. Bildmaterial, sehr einfache Grafiken, Geräusche, Filmkulisse, Intonation der Sprecher) sowie den situativen Kontext und sprachliche Vorkenntnisse (z. B. Wortfamilien, Wortfelder, einfache Wortbildungsgesetze, Nähe zur Muttersprache oder anderen Fremdsprachen) nutzen, um Wortschatz und Texte zu erschließen. Sie wenden verschiedene Lesetechniken an und nutzen selbständig einfache Arbeitstechniken, wie z. B. das Markieren von Schlüsselstellen und das Anfertigen von Notizen.",
+			"lessons": [
+				"e7-youth-interview",
+				"e7-celts",
+				"e7-lit-treasure-island",
+				"e7-word-formation"
+			],
+			"status": "implemented",
+			"evidence": "Listening and reading strategies (predicting, gist/detail, notes, key words, inferring from word families, word formation and closeness to German) with tasks."
+		},
+		{
+			"id": "E7-50",
+			"lb": "4",
+			"competence": "wenden zunehmend selbständig grundlegende Strategien der mündlichen und schriftlichen Sprachproduktion an, indem sie Körpersprache, Bildmaterial, Realien oder Vermeidungsstrategien einsetzen (u. a. einfache Umschreibung von Wörtern oder Phrasen), um sprachliche Hürden zu überwinden und Sachverhalte darzustellen.",
+			"lessons": [
+				"e7-paraphrasing",
+				"e7-mediation-guide"
+			],
+			"status": "supported",
+			"evidence": "Paraphrasing and avoidance strategies are explained and written; using body language and realia happens in live speaking."
+		},
+		{
+			"id": "E7-51",
+			"lb": "4",
+			"competence": "setzen weitgehend selbständig ein erweitertes Repertoire an Methoden zur Wortschatzfestigung und -strukturierung ein, indem sie detaillierte Wortfelder erstellen, Vokabeln im Kontext erläuternder Beispielsätze erfassen und Wörter durch die Einbindung in einen passenden Kontext erklären oder passende Definitionen finden.",
+			"lessons": [
+				"e7-error-log",
+				"e7-paraphrasing"
+			],
+			"status": "implemented",
+			"evidence": "Detailed word fields, example sentences and own definitions with a workshop and writing tasks."
+		},
+		{
+			"id": "E7-52",
+			"lb": "4",
+			"competence": "nutzen auch ohne Anleitung verschiedene Teile des Lehrwerks zum Nachschlagen und Lernen und verwenden ausgewählte, ggf. elektronische Hilfsmittel zunehmend selbständig, um die Bedeutung von Vokabeln in einem bestimmten Kontext nachzuschlagen und aus einer Auswahl möglicher Bedeutungen die passende Übersetzung herauszufinden.",
+			"lessons": [
+				"e7-dictionary"
+			],
+			"status": "supported",
+			"evidence": "Choosing the right meaning from a dictionary entry by part of speech and context; independent work with the textbook and electronic dictionaries happens outside the app."
+		},
+		{
+			"id": "E7-53",
+			"lb": "4",
+			"competence": "setzen bei der Darstellung von Rechercheergebnissen Techniken zur Veranschaulichung ein, indem sie Informationen auf einfache Art inhaltlich untergliedern, bei Bedarf hervorheben oder mithilfe von Bildmaterial die Aufmerksamkeit und das Verständnis der Zuhörer steigern.",
+			"lessons": [
+				"e7-short-talk"
+			],
+			"status": "supported",
+			"evidence": "Structuring, highlighting and using pictures are planned on a cue card; the presentation of real research results happens in class."
+		},
+		{
+			"id": "E7-54",
+			"lb": "4",
+			"competence": "nehmen einige ihrer Stärken und Schwächen bewusst wahr und reflektieren mit Hilfestellung mögliche Fehlerquellen. Sie vermeiden Fehler, indem sie z. B. unter Anleitung einfache Fehlerprotokolle erstellen.",
+			"lessons": [
+				"e7-error-log"
+			],
+			"status": "implemented",
+			"evidence": "An error log with wrong sentence, correction, own rule and own example, plus naming strengths and weaknesses."
+		},
+		{
+			"id": "E7-55",
+			"lb": "5",
+			"competence": "bewältigen Kommunikationssituationen innerhalb der angegebenen Themengebiete mithilfe der in den Lernbereichen 1 bis 4 ausgewiesenen Kompetenzen. Aktuelle Themen finden dabei besondere Berücksichtigung.",
+			"lessons": [
+				"e7-dublin-directions",
+				"e7-usa-shopping",
+				"e7-mediation-guide",
+				"e7-short-talk"
+			],
+			"status": "supported",
+			"evidence": "Communication situations within all topic areas are prepared in the lessons; current topics are added by the teacher."
+		},
+		{
+			"id": "E7-56",
+			"lb": "5",
+			"competence": "setzen sich auf der Grundlage ihrer Kenntnisse bewusst mit der englischen Sprache und den mit ihr verbundenen Kulturräumen auseinander. Der landeskundliche Schwerpunkt liegt dabei auf Großbritannien, Irland und dem Leben in den USA.",
+			"lessons": [
+				"e7-anglo-saxons",
+				"e7-normans",
+				"e7-ireland-culture",
+				"e7-usa-family",
+				"e7-school-types"
+			],
+			"status": "implemented",
+			"evidence": "Origins of English vocabulary (Old English, Norman French), Irish as a language, BE/AE differences (public school, trash, sneakers) and the regional focus on Great Britain, Ireland and the USA."
+		},
+		{
+			"id": "E7-57",
+			"lb": "5",
+			"competence": "Schlaglichter der Geschichte Großbritanniens und Irlands (ca. 25 Std.): u. a. Spuren der Kelten, Römer, Angelsachsen und Normannen; irische Emigration in die USA",
+			"lessons": [
+				"e7-celts",
+				"e7-romans",
+				"e7-anglo-saxons",
+				"e7-normans",
+				"e7-famine-emigration"
+			],
+			"status": "implemented",
+			"evidence": "Five lessons from the Celts to the Normans and Irish emigration to the USA, with the history timeline, the Roman Britain map and the emigration route map."
+		},
+		{
+			"id": "E7-58",
+			"lb": "5",
+			"competence": "Irland als Teil Europas (ca. 25 Std.): geographische, kulturelle, wirtschaftliche und politische Aspekte",
+			"lessons": [
+				"e7-ireland-map",
+				"e7-ireland-culture",
+				"e7-ireland-economy",
+				"e7-ireland-politics",
+				"e7-dublin-directions",
+				"e7-ireland-brochure"
+			],
+			"status": "implemented",
+			"evidence": "Six lessons on geographical, cultural, economic and political aspects with the Ireland and Dublin maps."
+		},
+		{
+			"id": "E7-59",
+			"lb": "5",
+			"competence": "Jugendkultur (ca. 20 Std.): unterschiedliche Aspekte, wie z. B. Sport, Musik, Film, Theater, Mode sowie deren Erscheinungsformen und Hintergründe der Entstehung",
+			"lessons": [
+				"e7-youth-music-film",
+				"e7-youth-sport-fashion",
+				"e7-youth-interview",
+				"e7-short-talk"
+			],
+			"status": "implemented",
+			"evidence": "Music, film, theatre, sport and fashion with their origins (hip-hop, punk, skateboarding) and an invented class survey chart."
+		},
+		{
+			"id": "E7-60",
+			"lb": "5",
+			"competence": "Lebensraum Schule (ca. 10 Std.): schulischer Alltag in einem englischsprachigen Land (z. B. ethnische Vielfalt, private und staatliche Schulen, Internatsschulen)",
+			"lessons": [
+				"e7-school-types",
+				"e7-school-diversity"
+			],
+			"status": "implemented",
+			"evidence": "State, private and boarding schools in England and the USA (public school as a false friend) and ethnic diversity at school."
+		},
+		{
+			"id": "E7-61",
+			"lb": "5",
+			"competence": "Leben in den USA (ca. 17 Std.): häusliche und familiäre Situation, Bräuche und Feste, Esskultur, Mode, Einkaufen, Unterhaltungsindustrie, Sportarten",
+			"lessons": [
+				"e7-usa-family",
+				"e7-usa-holidays-food",
+				"e7-usa-shopping",
+				"e7-usa-entertainment"
+			],
+			"status": "implemented",
+			"evidence": "Home and family, customs and festivals, food, fashion and shopping with a sales tax explorer, entertainment industry and sports."
+		},
+		{
+			"id": "E7-62",
+			"lb": "5",
+			"competence": "Einblicke in die englischsprachige Jugendliteratur (ca. 10 Std.): Zugang z. B. über Lektüre, Hörbuch, graphic novel, Verfilmung, Theater; Kenntnis ausgewählter Autoren (z. B. R. L. Stevenson, A. Conan Doyle, R. Dahl, J. K. Rowling[/lang])",
+			"lessons": [
+				"e7-lit-treasure-island",
+				"e7-lit-sherlock",
+				"e7-lit-dahl-rowling"
+			],
+			"status": "implemented",
+			"evidence": "Stevenson, Conan Doyle, Dahl and Rowling; access via adapted extracts, a radio play, audiobooks, graphic novels and film adaptations."
+		},
+		{
+			"id": "E7-63",
+			"lb": "5",
+			"competence": "weitere Interessensgebiete der Schülerinnen und Schüler (ca. 5 Std.)",
+			"lessons": [
+				"e7-error-log",
+				"e7-short-talk"
+			],
+			"status": "supported",
+			"evidence": "Learners choose their own topic for the short talk and their own word field; further interests are chosen with the teacher."
+		}
+	]
+}
