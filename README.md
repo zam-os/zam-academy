@@ -69,6 +69,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | Physik 10 Realschule (LehrplanPLUS Bayern, Zweig I und II/III) | [`physik-realschule-10/`](physik-realschule-10/) | https://academy.zam-os.org/physik-realschule-10/ | `zam-academy:physik-realschule-10` |
 | Algorithmen und Programmieren (DE/EN, LehrplanPLUS IT 2.6.1, jahrgangsübergreifend) | [`algorithmen/`](algorithmen/) | https://academy.zam-os.org/algorithmen/ | `zam-academy:algorithmen` |
 | Datennetze und Internet (DE/EN, LehrplanPLUS IT 2.5.1, HTTPS als Ergänzung) | [`datennetze/`](datennetze/) | https://academy.zam-os.org/datennetze/ | `zam-academy:datennetze` |
+| BwR 7 Realschule (LehrplanPLUS Bayern, Zweig II und IIIa) | [`bwr-realschule-7/`](bwr-realschule-7/) | Built by Pages on merge | `zam-academy:bwr-realschule-7` |
 | BwR 9 Realschule (LehrplanPLUS Bayern, Zweig II) | [`bwr-realschule-9/`](bwr-realschule-9/) | https://academy.zam-os.org/bwr-realschule-9/ | `zam-academy:bwr-realschule-9` |
 | Wirtschaft und Recht 9 Realschule (LehrplanPLUS Bayern, WPFG I und III) | [`wirtschaft-recht-realschule-9/`](wirtschaft-recht-realschule-9/) | https://academy.zam-os.org/wirtschaft-recht-realschule-9/ | `zam-academy:wirtschaft-recht-realschule-9` |
 | Französisch 9 Realschule (LehrplanPLUS Bayern, Wahlpflichtfächergruppe IIIa, zweite Fremdsprache) | [`franzoesisch-realschule-9/`](franzoesisch-realschule-9/) | https://academy.zam-os.org/franzoesisch-realschule-9/ | `zam-academy:franzoesisch-realschule-9` |
@@ -135,6 +136,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Physik 10: cd physik-realschule-10 (dev server on :5188)
 # Algorithmen: cd algorithmen (dev server on :5189)
 # Datennetze: cd datennetze (dev server on :5190)
+# BwR 7: cd bwr-realschule-7 (dev server on :5272)
 # BwR 9: cd bwr-realschule-9 (dev server on :5191)
 # Wirtschaft und Recht 9: cd wirtschaft-recht-realschule-9 (dev server on :5192)
 # Deutsch 9: cd deutsch-realschule-9 (dev server on :5193)
@@ -202,7 +204,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Biologie 7 Realschule: cd biologie-realschule-7 (dev server on :5267)
 # German 7 Realschule: cd deutsch-realschule-7 (dev server on :5268)
 # Englisch 6 Realschule: cd englisch-realschule-6 (dev server on :5255)
-# Englisch 7 Realschule: cd englisch-realschule-7 (dev server on :5272)
+# Englisch 7 Realschule: cd englisch-realschule-7 (dev server on :5273)
 # Geschichte 6 Realschule: cd geschichte-realschule-6 (dev server on :5258)
 # Geschichte 7 Realschule: cd geschichte-realschule-7 (dev server on :5271)
 # Biologie 5 Gymnasium: cd biologie-gymnasium-5 (dev server on :5246)
@@ -319,3 +321,5 @@ The [Geschichte 6 Gymnasium package](geschichte-gymnasium-6/) covers all seven L
 The [Englisch 6 Mittelschule package](englisch-mittelschule-6/) continues English 5 for Bavarian Mittelschule with 36 lessons in six stages across all five LehrplanPLUS areas (UK countries & major cities, 50 US states & Washington, D.C., youth hostel/souvenir shop/newsagent, town directions, daily routines, flat & room scene, hometown & weather, school clubs & class trips, note-making & mediation, numbers up to 1000, ordinals up to 31st, irregular plurals `feet`/`teeth`/`clothes`, `of`-genitive, object/indefinite/demonstrative pronouns, Germanic comparison `-er`/`the …-est` plus `good`/`bad`, modals `can`/`must`/`have (got) to`, `present progressive`, `will-future` and `SVO` place before time), five British/American listening scripts, 108 workshop goals, 72 two-level tasks, and 109 linked ZAM cards. See [Curriculum coverage and legacy inventory](docs/englisch-mittelschule-6-coverage.md).
 
 The [Informatik 6 Mittelschule package](informatik-mittelschule-6/) covers both Lernbereiche of the Bavarian Mittelschule Grade 6 curriculum (*Digitaler Informationsaustausch* and *Programmieren*) with 12 lessons, interactive workshops (search-filter lab, source checker, Creative Commons license checker, data protection cases, password & malware lab, backup simulator, and figure grids synchronized with Nassi-Shneiderman structograms), two-level exercises, and 36 linked ZAM cards. Its [coverage matrix](informatik-mittelschule-6/coverage.json) maps all 6 verbatim expectations and 7 content bullets (`0` missing). See [Curriculum coverage and legacy inventory](docs/informatik-mittelschule-6-coverage.md).
+
+The [BwR 7 Realschule package](bwr-realschule-7/) covers Betriebswirtschaftslehre/Rechnungswesen in Wahlpflichtfächergruppe II (36 lessons across all five learning areas, 84 curriculum hours) and Wahlpflichtfächergruppe IIIa (25 lessons across four learning areas, 56 curriculum hours), with eight interactive labs, case workshops, fillable sales invoice template, ISB BwR 7 account list, track-filtered formula collection, two-level practice exercises, and 72 linked ZAM cards. Its [coverage matrix](bwr-realschule-7/coverage.json) checks all 28 (II) and 20 (IIIa) verbatim expectations; [bwr-realschule-7/replaces-de-by.json](bwr-realschule-7/replaces-de-by.json) documents a `proposal-only` mapping (`approved: null`) for all ten cards of the two existing `de-by:realschule-7-bwr-*` cells, so `cell.json` ships without `replaces` or `retired_items` until reviewed. Teacher review and teacher videos remain open (package version 0.0). See [Curriculum coverage and legacy inventory](docs/bwr-7-coverage.md).
