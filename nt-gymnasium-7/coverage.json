@@ -1,0 +1,225 @@
+{
+  "schema": 1,
+  "curriculum": "https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/7/nt_gym",
+  "checked": "2026-11-20",
+  "curriculum_sha256": "cea4bb14c000123381f6343db4856e30e82f16a7a84b887a70dd8b04b189361e",
+  "school_type": "gymnasium",
+  "grade": 7,
+  "subject": "nt_gym",
+  "hours": {
+    "1.1": 10,
+    "1.2": 10,
+    "1.3": 8,
+    "2.1": 8,
+    "2.2": 5,
+    "2.3": 11,
+    "2.4": 4
+  },
+  "physics_coverage": "../physik-gymnasium-7/coverage.json",
+  "rows": [
+    {
+      "lb": "2.1",
+      "position": 1,
+      "competence": "analysieren Strukturen vernetzter Informationen aus ihrem Lebensumfeld (z. B. Lexikoneinträge, Webseiten der Schule) und modellieren entsprechende Hypertextstrukturen mithilfe objektorientierter Konzepte.",
+      "status": "implemented",
+      "lessons": [
+        "inf7-hypertext-graph"
+      ],
+      "evidence": "A school wiki models links as objects with a destination and as directed edges. The graph lab lets learners follow and repair the navigation."
+    },
+    {
+      "lb": "2.1",
+      "position": 2,
+      "competence": "nutzen effektive Strategien zur Informationsbeschaffung im Internet und bewerten ihre Suchergebnisse kritisch hinsichtlich Wahrheitsgehalt und Qualität, indem sie z. B. die Art der Informationsquellen (etwa Werbeseiten, Blogeinträge, wissenschaftliche Publikationen) berücksichtigen.",
+      "status": "supported",
+      "lessons": [
+        "inf7-quellen-pruefen"
+      ],
+      "evidence": "The learner narrows search terms and compares simulated results with different evidence and purposes. Live search and evaluation of the resulting pages take place in class."
+    },
+    {
+      "lb": "2.1",
+      "position": 3,
+      "competence": "nutzen die grundlegenden Funktionen eines geeigneten Werkzeugs (WYSIWYG-Editor) zur Erstellung einer Hypertextstruktur; hierbei berücksichtigen sie grundlegende Aspekte des Urheberrechts und wenden einfache Zitiernormen (Quellenangaben) an.",
+      "status": "implemented",
+      "lessons": [
+        "inf7-wiki-editor"
+      ],
+      "evidence": "Learners create and save pages with live preview, choose and test an internal link, and enter a source credit after checking usage conditions."
+    },
+    {
+      "lb": "2.1",
+      "position": 4,
+      "competence": "beschreiben den prinzipiellen Mechanismus für die Übermittlung elektronischer Dokumente unter Verwendung ihres Wissens über Struktur und Funktionsweise des Internets.",
+      "status": "implemented",
+      "lessons": [
+        "inf7-client-server"
+      ],
+      "evidence": "The network model steps through a request and its reply. Guided and transfer tasks distinguish IP addresses, URLs and the roles of the three devices."
+    },
+    {
+      "lb": "2.2",
+      "position": 1,
+      "competence": "bewerten verschiedene digitale Kommunikationsmöglichkeiten hinsichtlich ihrer Chancen, Risiken und Auswirkungen auf das Individuum und die Gesellschaft, um sie im privaten oder schulischen Kontext sicher sowie aus medienpädagogischer Sicht sinnvoll einsetzen zu können.",
+      "status": "implemented",
+      "lessons": [
+        "inf7-digitale-kommunikation",
+        "inf7-datenschutz-sicherheit"
+      ],
+      "evidence": "Learners select channels by audience, evaluate misinformation and practise responding to harassment, misleading identities, malicious downloads and subscriptions."
+    },
+    {
+      "lb": "2.2",
+      "position": 2,
+      "competence": "beachten grundlegende Regeln zum Schutz von Persönlichkeitsrechten im Rahmen der digitalen Kommunikation. Dabei wird ihnen das Spannungsfeld zwischen dem Recht des Einzelnen und den Interessen anderer bewusst.",
+      "status": "implemented",
+      "lessons": [
+        "inf7-datenschutz-sicherheit"
+      ],
+      "evidence": "Scenarios ask learners to balance a group’s interest in publishing a photo against the privacy of a person whose image or data is visible."
+    },
+    {
+      "lb": "2.3",
+      "position": 1,
+      "competence": "analysieren und strukturieren geeignete Problemstellungen u. a. aus ihrer Erfahrungswelt (z. B. Bedienung eines Geräts), entwickeln Algorithmen zu deren Lösung und beschreiben diese unter effizienter Verwendung von Kontrollstrukturen.",
+      "status": "implemented",
+      "lessons": [
+        "inf7-sequenz",
+        "inf7-verzweigung",
+        "inf7-feste-schleife",
+        "inf7-bedingte-schleife"
+      ],
+      "evidence": "Learners trace and choose steps and decide whether the situation calls for a sequence, a branch, a fixed-count loop or a condition-controlled loop."
+    },
+    {
+      "lb": "2.3",
+      "position": 2,
+      "competence": "setzen unter sinnvoller Nutzung algorithmischer Bausteine einfache Algorithmen mithilfe geeigneter Programmierwerkzeuge um.",
+      "status": "implemented",
+      "lessons": [
+        "inf7-sequenz",
+        "inf7-verzweigung",
+        "inf7-feste-schleife",
+        "inf7-bedingte-schleife"
+      ],
+      "evidence": "The browser simulator runs learner-configured program blocks step by step, including both branches, fixed counts and zero-iteration condition cases."
+    },
+    {
+      "lb": "2.4",
+      "position": 1,
+      "competence": "entwickeln innerhalb eines festen Zeitrahmens im Team eine Hypertextstruktur zu einem vorgegebenen Thema oder eine Lösung zu einer geeigneten Aufgabenstellung aus der Algorithmik (z. B. Physical Computing).",
+      "status": "supported",
+      "lessons": [
+        "inf7-projekt-planen",
+        "inf7-projekt-sichern"
+      ],
+      "evidence": "The project brief and timeline prepare a 40-minute team wiki about shadows. Actual collaboration and presentation take place in class."
+    },
+    {
+      "lb": "2.4",
+      "position": 2,
+      "competence": "nutzen ihre Informatikkenntnisse zur Sicherung von Zwischenständen und ggf. zur Dokumentation ihres Arbeitsprozesses.",
+      "status": "implemented",
+      "lessons": [
+        "inf7-projekt-sichern"
+      ],
+      "evidence": "The wiki editor saves and reopens named checkpoints, and the workshop asks learners to compare a test result and record a change. The team can carry the same workflow into its shared classroom tool."
+    }
+  ],
+  "contents": [
+    {
+      "lb": "2.1",
+      "content": "Analyse und Modellierung von Hypertextstrukturen, u. a. mithilfe der Klasse VERWEIS; Zieladresse als Attribut eines Verweises",
+      "lessons": [
+        "inf7-hypertext-graph"
+      ]
+    },
+    {
+      "lb": "2.1",
+      "content": "Darstellung der Objektstruktur einer Hypertextstruktur: Graph, bestehend aus Knoten und Kanten",
+      "lessons": [
+        "inf7-hypertext-graph"
+      ]
+    },
+    {
+      "lb": "2.1",
+      "content": "Struktur und Funktionsweise des Internets: Client, Server, Vermittlungsrechner (Router); Dienste (u. a. World Wide Web); einfache Beispiele für die Adressierung im Internet (z. B. IP-Adresse, URL)",
+      "lessons": [
+        "inf7-client-server"
+      ]
+    },
+    {
+      "lb": "2.1",
+      "content": "Informationsquellen im Internet, z. B. Suchmaschinen, Enzyklopädien",
+      "lessons": [
+        "inf7-quellen-pruefen"
+      ]
+    },
+    {
+      "lb": "2.1",
+      "content": "Fachbegriffe: Hypertext, Verweis, Graph, Client, Server",
+      "lessons": [
+        "inf7-hypertext-graph",
+        "inf7-client-server"
+      ]
+    },
+    {
+      "lb": "2.2",
+      "content": "digitale Kommunikationsmöglichkeiten, z. B. E-Mail, Messenger, soziale Netzwerke",
+      "lessons": [
+        "inf7-digitale-kommunikation"
+      ]
+    },
+    {
+      "lb": "2.2",
+      "content": "Schutz eigener Endgeräte durch Software (z. B. Firewall und Virenschutz) und durch Verwendung sicherer Passwörter",
+      "lessons": [
+        "inf7-datenschutz-sicherheit"
+      ]
+    },
+    {
+      "lb": "2.2",
+      "content": "Persönlichkeitsrecht und Datenschutz im Rahmen der digitalen Kommunikation, u. a. personenbezogene Daten, Recht am eigenen Bild",
+      "lessons": [
+        "inf7-datenschutz-sicherheit"
+      ]
+    },
+    {
+      "lb": "2.2",
+      "content": "Gefahrenpotenziale (z. B. Viren, Trojaner, gefälschte virtuelle Identität, Abofallen, Fake News), Verhaltensregeln im Kontext der digitalen Kommunikation (auch unter Berücksichtigung ethischer Aspekte), Cybermobbing als Beispiel eines Missbrauchs digitaler Kommunikationsmittel",
+      "lessons": [
+        "inf7-digitale-kommunikation",
+        "inf7-datenschutz-sicherheit"
+      ]
+    },
+    {
+      "lb": "2.3",
+      "content": "Algorithmus: Definition des Begriffs, Strukturelemente (Anweisung, Sequenz, ein- und zweiseitig bedingte Anweisung, Wiederholung mit fester Anzahl, Wiederholung mit Bedingung)",
+      "lessons": [
+        "inf7-sequenz",
+        "inf7-verzweigung",
+        "inf7-feste-schleife",
+        "inf7-bedingte-schleife"
+      ]
+    },
+    {
+      "lb": "2.3",
+      "content": "Fachbegriffe: Algorithmus, Anweisung, Sequenz, ein- und zweiseitig bedingte Anweisung, Wiederholung mit fester Anzahl, Wiederholung mit Bedingung",
+      "lessons": [
+        "inf7-sequenz",
+        "inf7-verzweigung",
+        "inf7-feste-schleife",
+        "inf7-bedingte-schleife"
+      ]
+    },
+    {
+      "lb": "2.4",
+      "content": "Grundlagen der Projektarbeit, insbesondere Zeitmanagement und Arbeitsteilung, ggf. Dokumentation",
+      "lessons": [
+        "inf7-projekt-planen",
+        "inf7-projekt-sichern"
+      ]
+    }
+  ],
+  "optional_lessons": []
+}
