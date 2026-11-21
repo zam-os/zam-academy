@@ -263,6 +263,8 @@ jobs:
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node franzoesisch-gymnasium-5/scripts/validate-cell.mjs
       - name: Verify Grade 6 Gymnasium French enrolment and recall
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node franzoesisch-gymnasium-6/scripts/validate-cell.mjs
+      - name: Verify approved franzoesisch-gymnasium-6 history migration
+        run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node franzoesisch-gymnasium-6/scripts/validate-migration.mjs
       - name: Verify Grade 5 Gymnasium English enrolment and recall
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node englisch-gymnasium-5/scripts/validate-cell.mjs
       - name: Check the approved Englisch 5 Gymnasium history migration
