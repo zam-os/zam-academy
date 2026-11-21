@@ -34,7 +34,7 @@ const items: CellItem[] = atoms.flatMap((atom) => atom.practice_items as unknown
 describe("ZAM cell zam-academy:nt-gymnasium-7", () => {
   it("has 12 atoms (one per lesson) and 36 cards with frozen ULIDs from the public contract", () => {
     expect(cell.tile_id).toBe(ZAM_CELL_ID);
-    expect(cell.version).toBe("2026.11.1");
+    expect(cell.version).toBe("2026.11.2");
     expect(atoms).toHaveLength(12);
     expect(items).toHaveLength(36);
     const ids = [...atoms.map((a) => a.id), ...items.map((i) => i.id)];
@@ -109,11 +109,11 @@ describe("ZAM cell zam-academy:nt-gymnasium-7", () => {
     }
   });
 
-  it("keeps old review histories active and records one proposed equivalent", () => {
-    expect(mapping.status).toBe("proposal-only");
-    expect(mapping.approved).toBeNull();
+  it("moves the approved class-concept history and keeps three legacy cards active", () => {
+    expect(mapping.status).toBe("approved");
+    expect(mapping.approved).toBe("2026-11-21");
     expect("retired_items" in cell).toBe(false);
-    expect(items.filter((item) => item.replaces !== undefined)).toHaveLength(0);
+    expect(items.filter((item) => item.replaces !== undefined)).toHaveLength(1);
 
     type LegacyTile = { tile_id: string; atoms: Array<{ practice_items: Array<{ id: string }> }> };
     const legacy = legacy7 as unknown as LegacyTile;
@@ -132,8 +132,8 @@ describe("ZAM cell zam-academy:nt-gymnasium-7", () => {
         expect(row.academy_slug).toBeNull();
         expect(["keep-active", "propose-retire-after-approval"]).toContain(row.action);
       } else {
-        expect(row.action).toBe("propose-replace-after-approval");
-        expect(bySlug.has(must(row.academy_slug)), row.de_by_id).toBe(true);
+        expect(row.action).toBe("replace");
+        expect(bySlug.get(must(row.academy_slug))?.replaces).toEqual([row.de_by_id]);
       }
     }
     expect(mapping.rows.filter((r) => r.category === "A")).toHaveLength(1);
