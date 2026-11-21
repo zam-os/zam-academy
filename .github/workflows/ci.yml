@@ -136,6 +136,12 @@ jobs:
         env:
           CHROME_BIN: /usr/bin/google-chrome
         run: node scripts/verify-browser.mjs
+      - name: Check the Natur und Technik 7 Pages build
+        if: matrix.app == 'nt-gymnasium-7'
+        run: |
+          npm run build:pages
+          test -f dist/index.html
+          test ! -e dist/physik
       - name: Rebuild the Natur und Technik 7 bundle when checking its Physics source
         if: matrix.app == 'physik-gymnasium-7'
         working-directory: nt-gymnasium-7

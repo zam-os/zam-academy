@@ -77,7 +77,7 @@ In Informatik wechselst du oben zwischen
 - 🦅 Level 2 (Transfer: Aufgaben ohne Hilfe, wie im Leistungsnachweis).
 
 Das Paket enthält den vorhandenen Physik-Lernpfad.
-Die ZAM-Lernkarten für Informatik sind zur Veröffentlichung vorgesehen.
+Die Informatik-Lernkarten findest du im Academy-Katalog in ZAM Studio.
 ========================================================================
 `;
 writeFileSync(join(bundleDir, "README-START.txt"), readmeTxt, "utf8");
