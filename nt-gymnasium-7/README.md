@@ -11,7 +11,11 @@ The Academy entry point opens the existing Physics package at its canonical URL.
 
 Informatics includes a directed graph workshop, a visual wiki editor with named checkpoints, a model of a web request, and a step-through programming tool that runs configured commands. Each lesson has a worked example, reference terms, a quick check and three workshop goals. Each exercise generator offers at least three different scenarios per level. All eight lessons in NT7 2.1 and 2.3 include an exercise generator that asks for a typed answer. The project brief uses a wiki about shadows to connect both focuses. The [curriculum and card comparison](../docs/nt-gymnasium-7-coverage.md) records classroom activities that the app supports.
 
-The browser stores practice progress. Wiki drafts are held for the current session, and learners download and reopen named checkpoints as local files. An offline build links the two focuses from the shared overview. Version 0.0 is a local draft. Teacher review and publication are pending.
+Version 0.0 is a local draft. Teacher review and publication are pending.
+
+## For parents and teachers
+
+Informatics practice progress, wiki drafts and named checkpoints stay in the browser profile on the device. Device accounts, browsers, browser profiles and website origins have separate storage. If several learners share an account and browser profile, use **Fortschritt zurücksetzen** in the Informatics learning path at the end of each session. This clears the progress, draft and checkpoints from the browser. The optional file export saves a separate copy in the device’s file system.
 
 ## Run locally
 

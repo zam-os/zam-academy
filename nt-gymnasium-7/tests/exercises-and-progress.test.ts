@@ -7,12 +7,21 @@ import {
   isLessonComplete,
   isStageComplete,
   isTransferDone,
+  LEARNER_PROGRESS_KEY,
   loadLearnerProgress,
   mergeLearnerProgress,
   overallStats,
   resetLearnerProgress,
   saveLearnerProgress,
 } from "../src/storage/progress";
+import {
+  loadWikiDraft,
+  loadWikiVersions,
+  saveWikiDraft,
+  saveWikiVersions,
+  WIKI_DRAFT_KEY,
+  WIKI_VERSIONS_KEY,
+} from "../src/storage/wiki";
 import type { ExerciseTask } from "../src/model/types";
 
 const SEEDS = 80;
@@ -132,6 +141,7 @@ describe("Learner progress persistence", () => {
     vi.stubGlobal("localStorage", {
       getItem: (key: string) => memory.get(key) ?? null,
       setItem: (key: string, value: string) => memory.set(key, value),
+      removeItem: (key: string) => memory.delete(key),
     });
   });
   afterEach(() => vi.unstubAllGlobals());
@@ -199,6 +209,36 @@ describe("Learner progress persistence", () => {
     const cleared = resetLearnerProgress();
     expect(cleared.quizDone).toEqual([]);
     expect(loadLearnerProgress().solved).toEqual({});
+  });
+
+  it("restores a wiki draft and its versions, then removes all three learner keys on reset", () => {
+    const draft = loadWikiDraft();
+    draft.pages[0].body = "Unser Versuch über Schatten";
+    memory.set(WIKI_DRAFT_KEY, JSON.stringify(draft.pages));
+    expect(loadWikiDraft().pages[0].body).toBe(draft.pages[0].body);
+
+    expect(saveWikiVersions([{ name: "schattenwiki-v1", pages: draft.pages }])).toBe(true);
+    draft.pages[0].body = "Die zweite Fassung";
+    expect(saveWikiDraft(draft)).toBe(true);
+    expect(loadWikiVersions()[0].pages[0].body).toBe("Unser Versuch über Schatten");
+    expect(loadWikiDraft()).toEqual(draft);
+
+    saveLearnerProgress(loadLearnerProgress());
+    for (const key of [LEARNER_PROGRESS_KEY, WIKI_DRAFT_KEY, WIKI_VERSIONS_KEY]) {
+      expect(memory.has(key)).toBe(true);
+    }
+    memory.set("informatik_gym7_theme", "dark");
+    memory.set("physik_gym7_academy_progress_v1", "existing Physics progress");
+    resetLearnerProgress();
+
+    expect(memory).toEqual(
+      new Map([
+        ["informatik_gym7_theme", "dark"],
+        ["physik_gym7_academy_progress_v1", "existing Physics progress"],
+      ]),
+    );
+    expect(loadWikiDraft().pages[0].body).toBe("");
+    expect(loadWikiVersions()).toEqual([]);
   });
 });
 

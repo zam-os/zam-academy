@@ -1,6 +1,12 @@
 import type { DifficultyLevel, Lesson, Stage } from "../model/types";
+import { WIKI_DRAFT_KEY, WIKI_VERSIONS_KEY } from "./wiki";
 
-const STORAGE_KEY = "informatik_gym7_academy_progress_v1";
+export const LEARNER_PROGRESS_KEY = "informatik_gym7_academy_progress_v1";
+export const LEARNER_STORAGE_KEYS: readonly string[] = [
+  WIKI_DRAFT_KEY,
+  WIKI_VERSIONS_KEY,
+  LEARNER_PROGRESS_KEY,
+];
 
 export interface LearnerProgress {
   activeLessonId: string;
@@ -120,7 +126,7 @@ export function mergeLearnerProgress(
 
 export function loadLearnerProgress(): LearnerProgress {
   try {
-    return parseLearnerProgress(localStorage.getItem(STORAGE_KEY)) ?? defaults();
+    return parseLearnerProgress(localStorage.getItem(LEARNER_PROGRESS_KEY)) ?? defaults();
   } catch {
     return defaults();
   }
@@ -128,10 +134,10 @@ export function loadLearnerProgress(): LearnerProgress {
 
 export function saveLearnerProgress(progress: LearnerProgress): LearnerProgress {
   try {
-    const stored = parseLearnerProgress(localStorage.getItem(STORAGE_KEY));
+    const stored = parseLearnerProgress(localStorage.getItem(LEARNER_PROGRESS_KEY));
     const next = stored ? mergeLearnerProgress(stored, progress) : progress;
     Object.assign(progress, next);
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
+    localStorage.setItem(LEARNER_PROGRESS_KEY, JSON.stringify(next));
     return next;
   } catch {
     // Storage may be full or blocked; the app keeps working in memory.
@@ -142,7 +148,7 @@ export function saveLearnerProgress(progress: LearnerProgress): LearnerProgress 
 export function resetLearnerProgress(): LearnerProgress {
   const fresh = defaults();
   try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(fresh));
+    for (const key of LEARNER_STORAGE_KEYS) localStorage.removeItem(key);
   } catch {
     // Storage may be full or blocked; the app keeps working in memory.
   }

@@ -116,7 +116,7 @@ export const STAGE_PROJEKT: Stage = {
       why: "Mit gesicherten und beschriebenen Ständen kannst du einen Fehler eingrenzen oder einen funktionierenden Stand wieder öffnen.",
       html: explain(
         [
-          'Speichere zu den Meilensteinen einen eigenen Zwischenstand, zum Beispiel <code>schattenwiki-v1</code> und nach einer Änderung <code>schattenwiki-v2</code>. Übe das Sichern und Öffnen im <a href="#lesson=inf7-wiki-editor">Wiki-Editor</a> mit „Zwischenstand als Datei speichern“ und „Datei öffnen“. Legt die Kopien für die Teamarbeit am vereinbarten Ort ab. Prüft, ob sie sich mit allen benötigten Dateien öffnen lassen.',
+          'Speichere zu den Meilensteinen einen eigenen Zwischenstand, zum Beispiel <code>schattenwiki-v1</code> und nach einer Änderung <code>schattenwiki-v2</code>. Übe das Sichern und Öffnen im <a href="#lesson=inf7-wiki-editor">Wiki-Editor</a> mit „Zwischenstand speichern“ und „Zwischenstand öffnen“. Legt die Kopien für die Teamarbeit am vereinbarten Ort ab. Prüft, ob sie sich mit allen benötigten Dateien öffnen lassen.',
           "Ein kurzer Protokolleintrag hält fest, wer wann was geändert hat, was getestet wurde und was noch offen ist. Eine Testliste kann pro Zeile Ausgangsseite, gewählten Link, erwartetes Ziel und beobachtetes Ziel enthalten.",
           "Wähle vor der Abgabe einen geprüften Stand. Teste von der Startseite aus, ob Besucher alle Seiten erreichen, prüfen können, woher ein Bild stammt, und wieder zum Anfang finden.",
         ],

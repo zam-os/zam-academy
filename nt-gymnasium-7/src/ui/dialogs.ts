@@ -40,6 +40,10 @@ export function showZamDialog(): void {
         <button type="button" class="icon-btn" data-close aria-label="Schließen">✕</button>
       </div>
       <p>Die Lernkarten zu „${esc(ZAM_CELL_TITLE)}“ gehören zu diesem Entwurf. Die Aufnahme über den Academy-Katalog ist nach der Veröffentlichung möglich.</p>
+      <details>
+        <summary>Für Eltern und Lehrkräfte</summary>
+        <p>Der Lernstand und die Wiki-Texte bleiben im Browserprofil auf diesem Gerät. Browser, Profile, Benutzerkonten und Websites haben getrennte Speicher. Wenn sich Lernende ein Konto und Browserprofil teilen, wählen sie am Ende im Informatik-Lernpfad „Fortschritt zurücksetzen“. Das löscht den Lernstand und das Wiki samt Zwischenständen aus dem Browser. Exportierte Dateien lassen sich im Dateiordner löschen.</p>
+      </details>
       <div class="dialog-actions">
         <button type="button" class="btn btn-primary" data-close>Zurück zum Üben</button>
       </div>
@@ -83,7 +87,7 @@ export function confirmReset(onConfirm: () => void): void {
     `
     <div class="dialog-inner">
       <h2 class="dialog-title">Fortschritt zurücksetzen?</h2>
-      <p>Alle Schnellchecks, Werkstattaufträge und gelösten Aufgaben werden gelöscht. Das lässt sich nicht rückgängig machen.</p>
+      <p>Alle Schnellchecks, Werkstattaufträge, gelösten Aufgaben und deine Wiki-Seiten samt Zwischenständen werden aus dem Browser gelöscht. Das lässt sich nicht rückgängig machen.</p>
       <div class="dialog-actions">
         <button type="button" class="btn btn-secondary" data-close>Abbrechen</button>
         <button type="button" class="btn btn-danger" id="reset-confirm-btn">Zurücksetzen</button>

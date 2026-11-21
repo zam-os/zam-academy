@@ -187,17 +187,37 @@ try {
 
   await evaluate('location.hash="#lesson=inf7-wiki-editor"');
   await until("!!document.querySelector('.wiki-editor')");
+  assert.equal(await evaluate("document.querySelector('.wiki-text-info').open"), false);
+  await click(".wiki-text-info summary");
+  assert.ok(
+    await evaluate(
+      "document.querySelector('.wiki-text-info[open] p').innerText.includes('Fortschritt zurücksetzen')",
+    ),
+  );
+  await click(".wiki-text-info summary");
   await setInput('[data-wiki-field="title"]', "Unser Schatten-Wiki");
   await setInput('[data-wiki-field="body"]', "<img src=example> Versuchsbeschreibung");
   assert.equal(await evaluate("document.querySelector('.wiki-preview img') === null"), true);
   await setInput('[data-wiki-field="target"]', "1");
   await click("[data-wiki-link]");
   assert.equal(await evaluate("document.querySelector('[data-wiki-page]').value"), "1");
+  await setInput("[data-version-name]", "schattenwiki-v1");
+  await click("[data-version-save]");
+  await page("Page.reload");
+  await until("document.querySelector('.wiki-preview h5')?.textContent === 'Unser Schatten-Wiki'");
+  assert.equal(await evaluate("document.querySelector('[data-version-list]').value"), "schattenwiki-v1");
+  await setInput('[data-wiki-field="title"]', "Zweite Fassung");
+  await click("[data-version-open]");
+  assert.equal(
+    await evaluate("document.querySelector('.wiki-preview h5').textContent"),
+    "Unser Schatten-Wiki",
+  );
+
   const downloadFolder = join(profile, "downloads");
   mkdirSync(downloadFolder);
   await send("Browser.setDownloadBehavior", { behavior: "allow", downloadPath: downloadFolder });
-  await setInput("[data-version-name]", "schattenwiki-v1");
-  await click("[data-version-save]");
+  await click(".wiki-file-options summary");
+  await click("[data-version-export]");
   const downloaded = join(downloadFolder, "schattenwiki-v1.json");
   for (let attempt = 0; attempt < 100 && !existsSync(downloaded); attempt++) {
     await new Promise((resolve) => setTimeout(resolve, 30));
@@ -208,12 +228,6 @@ try {
   assert.equal(checkpoint.pages[0].title, "Unser Schatten-Wiki");
   assert.equal(checkpoint.pages[0].target, 1);
 
-  await page("Page.reload");
-  await until("document.querySelector('.wiki-preview h5')?.textContent === 'Schulwiki'");
-  assert.equal(
-    await evaluate("Object.keys(localStorage).some(key => key.startsWith('informatik_gym7_wiki'))"),
-    false,
-  );
   const openCheckpoint = async (path) => {
     const { root } = await page("DOM.getDocument");
     const { nodeId } = await page("DOM.querySelector", {
@@ -222,6 +236,7 @@ try {
     });
     await page("DOM.setFileInputFiles", { nodeId, files: [path] });
   };
+  await setInput('[data-wiki-field="title"]', "Entwurf vor dem Import");
   await openCheckpoint(downloaded);
   await until("document.querySelector('.wiki-preview h5')?.textContent === 'Unser Schatten-Wiki'");
   assert.equal(await evaluate("document.querySelector('.wiki-preview img') === null"), true);
@@ -280,6 +295,52 @@ try {
   assert.ok(await fitsScreen(), "mobile wiki lesson");
   await screenshot("wiki-mobile", ".wiki-editor");
 
+  const learnerKeys = [
+    "informatik_gym7_academy_progress_v1",
+    "informatik_gym7_wiki_v1",
+    "informatik_gym7_wiki_versions_v1",
+  ];
+  const storedLearnerKeys = () =>
+    evaluate(`${JSON.stringify(learnerKeys)}.filter(key => localStorage.getItem(key) !== null)`);
+  assert.deepEqual(await storedLearnerKeys(), learnerKeys);
+  const firstSession = session;
+  const { targetId: secondTarget } = await send("Target.createTarget", { url: "about:blank" });
+  const secondSession = (
+    await send("Target.attachToTarget", {
+      targetId: secondTarget,
+      flatten: true,
+    })
+  ).sessionId;
+  session = secondSession;
+  await page("Page.enable");
+  await page("Runtime.enable");
+  await navigate(
+    `${course}#lesson=inf7-wiki-editor`,
+    "document.querySelector('.wiki-preview h5')?.textContent === 'Unser Schatten-Wiki'",
+  );
+  session = firstSession;
+
+  await click('[data-view="path"]');
+  await click("#reset-progress-btn");
+  assert.ok(await evaluate("document.querySelector('#reset-dialog').innerText.includes('Wiki-Seiten')"));
+  await click("#reset-dialog [data-close]");
+  assert.deepEqual(await storedLearnerKeys(), learnerKeys);
+  await click("#reset-progress-btn");
+  await click("#reset-confirm-btn");
+  assert.deepEqual(await storedLearnerKeys(), []);
+  assert.ok(
+    existsSync(downloaded),
+    "a previously exported copy remains in the selected download folder",
+  );
+
+  session = secondSession;
+  await until("!!document.querySelector('.path') && !document.querySelector('.wiki-editor')");
+  await evaluate('location.hash="#lesson=inf7-wiki-editor"');
+  await until("document.querySelector('.wiki-preview h5')?.textContent === 'Schulwiki'");
+  assert.equal(await evaluate("document.querySelector('[data-version-list]').options.length"), 0);
+  await send("Target.closeTarget", { targetId: secondTarget });
+  session = firstSession;
+
   await layout(1280, 1080);
   await click('[data-view="overview"]');
   await click(".subject-physics a");
@@ -299,7 +360,7 @@ try {
     [],
   );
   console.log(
-    `Chrome checked ${lessonViews} Informatics lesson views, both themes, mobile, file-backed wiki checkpoints, a typed exercise, robot goals and the Physics round trip.`,
+    `Chrome checked ${lessonViews} Informatics lesson views, both themes, mobile, wiki storage and files, reset across tabs, a typed exercise, robot goals and the Physics round trip.`,
   );
 } finally {
   chrome.kill();

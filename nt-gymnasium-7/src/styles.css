@@ -2202,7 +2202,21 @@ code {
 @media (max-width: 660px) {
   .subject-grid { grid-template-columns: 1fr; }
 }
-.wiki-file-actions { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.wiki-field-title { display: flex; align-items: start; gap: 0.4rem; }
+.wiki-text-info summary {
+  display: grid;
+  place-items: center;
+  min-width: 1.5rem;
+  min-height: 1.5rem;
+  justify-self: start;
+  border-radius: 50%;
+  color: var(--brand);
+  cursor: pointer;
+  list-style: none;
+}
+.wiki-text-info summary::-webkit-details-marker { display: none; }
+.wiki-text-info p { margin: 0.2rem 0 0.4rem; font-size: 0.9rem; color: var(--muted); }
+.wiki-file-actions { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 0.45rem; }
 .wiki-versions-form > label { display: grid; gap: 0.3rem; }
 .wiki-versions-form {
   display: grid;

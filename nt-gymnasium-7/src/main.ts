@@ -11,7 +11,7 @@ import { MODULE_TITLES } from "./curriculum/helpers";
 import { checkTask, type TaskResult, wrongAnswerHint } from "./exercises/checker";
 import { esc, fmt, fmtUnit } from "./exercises/format";
 import { quizOrder } from "./exercises/quiz-order";
-import { createWikiDraft, mountHypertextEditor } from "./lab/hypertext-editor";
+import { mountHypertextEditor } from "./lab/hypertext-editor";
 import { createRng, seedFrom } from "./exercises/rng";
 import {
   applyAction,
@@ -36,6 +36,8 @@ import {
   isQuizDone,
   isStageComplete,
   isTransferDone,
+  LEARNER_PROGRESS_KEY,
+  LEARNER_STORAGE_KEYS,
   type LearnerProgress,
   loadLearnerProgress,
   overallStats,
@@ -44,6 +46,7 @@ import {
   solvedCount,
   stageStats,
 } from "./storage/progress";
+import { loadWikiDraft, type WikiDraft } from "./storage/wiki";
 import { confirmReset, showStageCelebration, showZamDialog } from "./ui/dialogs";
 import { showToast } from "./ui/toast";
 import { physicsLink, subjectOverview } from "./ui/subject-overview";
@@ -56,7 +59,7 @@ const THEME_KEY = "informatik_gym7_theme";
 class InformatikApp {
   private progress: LearnerProgress;
   private view: ActiveView = "overview";
-  private readonly wikiDraft = createWikiDraft();
+  private wikiDraft?: WikiDraft;
   private readonly labValues = new Map<string, LabValues>();
   private dragging: { handle: string; pointer: number } | null = null;
   private task: ExerciseTask | null = null;
@@ -86,7 +89,12 @@ class InformatikApp {
       }
     });
     window.addEventListener("storage", (event) => {
-      if (event.key !== "informatik_gym7_academy_progress_v1") return;
+      if (event.key === null) return;
+      if (event.newValue === null && LEARNER_STORAGE_KEYS.includes(event.key)) {
+        this.resetPracticeView(loadLearnerProgress());
+        return;
+      }
+      if (event.key !== LEARNER_PROGRESS_KEY) return;
       const incoming = loadLearnerProgress();
       this.progress = {
         ...incoming,
@@ -96,6 +104,14 @@ class InformatikApp {
       this.syncHeader();
       if (this.view === "path" || this.view === "overview") this.render();
     });
+  }
+
+  private resetPracticeView(progress: LearnerProgress): void {
+    this.progress = progress;
+    this.wikiDraft = undefined;
+    this.labValues.clear();
+    this.resetTask();
+    this.switchView("path");
   }
 
   /** Opens the lesson a ZAM card cites (`#lesson=<id>`, optionally `&level=2`). */
@@ -284,12 +300,8 @@ class InformatikApp {
       ?.addEventListener("click", () => this.openLesson(active.lesson.id));
     host.querySelector("#reset-progress-btn")?.addEventListener("click", () => {
       confirmReset(() => {
-        this.progress = resetLearnerProgress();
-        this.labValues.clear();
-        this.resetTask();
-        this.syncHeader();
-        this.render();
-        showToast("Fortschritt zurückgesetzt.", "info");
+        this.resetPracticeView(resetLearnerProgress());
+        showToast("Fortschritt und Wiki zurückgesetzt.", "info");
       });
     });
     host.querySelectorAll<HTMLElement>("[data-open-lesson]").forEach((element) => {
@@ -437,7 +449,7 @@ class InformatikApp {
     const labHost = host.querySelector<HTMLElement>("#lab-card");
     if (labHost) this.renderLab(labHost, lesson);
     const wikiEditor = host.querySelector<HTMLElement>("#wiki-editor");
-    if (wikiEditor) mountHypertextEditor(wikiEditor, this.wikiDraft);
+    if (wikiEditor) mountHypertextEditor(wikiEditor, (this.wikiDraft ??= loadWikiDraft()));
     const statusHost = host.querySelector<HTMLElement>("#status-card");
     if (statusHost) this.renderStatus(statusHost, lesson);
     if (this.taskLessonId !== lesson.id || this.taskLevel !== level || !this.task) {

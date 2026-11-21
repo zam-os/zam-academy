@@ -18,6 +18,6 @@ Grade 6 teaches object modelling and the hierarchical organisation of documents 
 
 ## Card history and discoverability
 
-Physics keeps its existing app, cell and identifiers. The combined course compiles the Physics source for local and offline use and opens the canonical Physics app when served by the Academy. The existing Physics listing is already searchable in the Academy atlas via “Natur und Technik 7”. The combined overview remains local until publication is authorised. Wiki checkpoints are downloaded and reopened as files on the learner’s device.
+Physics keeps its existing app, cell and identifiers. The combined course compiles the Physics source for local and offline use and opens the canonical Physics app when served by the Academy. The existing Physics listing is already searchable in the Academy atlas via “Natur und Technik 7”. The combined overview remains local until publication is authorised. Wiki drafts and checkpoints stay in the browser profile, and the Informatics reset clears them with exercise progress. Learners can also export or reopen local checkpoint files.
 
 The [Informatics mapping proposal](../nt-gymnasium-7/replaces-de-by.json) traces all four old Grade 7 Informatics cards to their source commit. It proposes one A match for the class concept and keeps three C cards active. The three combine several prompts or ask for DOM nesting inside a single document, whereas the current curriculum models links between documents. The proposal is unapproved; the new cell declares neither replacements nor retirements.
