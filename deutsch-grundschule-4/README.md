@@ -103,7 +103,10 @@ gelöste Aufgaben liegen nur im `localStorage` dieses Browsers
 (`deutsch_gs4_progress_v1`), die Texte vom Schreibtisch unter
 `deutsch_gs4_texts_v1`, Thema und ruhige Ansicht unter `deutsch_gs4_theme` und
 `deutsch_gs4_motion`. Die App liest und bewertet diese Texte nicht, und das
-Zurücksetzen löscht sie mit. Alle Werte wachsen nur; mehrere Tabs werden durch
+Zurücksetzen löscht sie mit. Der Browser trennt den Speicher nach
+Benutzerkonto, Browser und Profil. Am Schreibtisch erklärt das nur ein kleines
+„ⓘ Wo bleibt mein Text?“; die Elternseite rät, bei einem geteilten Konto am Ende
+zurückzusetzen (AGENTS.md, Regel 7). Alle Werte wachsen nur; mehrere Tabs werden durch
 Vereinigung und Maximum zusammengeführt. Ein Zurücksetzen beginnt eine neue
 Epoche, die auch ein älterer offener Tab übernimmt. Ist der Speicher
 gesperrt, bleibt die Sitzung nutzbar und zeigt einen Hinweis.

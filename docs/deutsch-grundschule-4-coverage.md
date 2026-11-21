@@ -128,9 +128,10 @@ andere Medien aus 2.4.6.
 Die App bewertet keine freien Texte. Die Aufgaben üben Teilschritte: sammeln,
 ordnen, auswählen, vergleichen. Am Schreibtisch jeder Schreibwerkstatt-Lektion
 schreibt das Kind frei und prüft sich selbst mit einer Liste. Das bringt keinen
-Stern, die Texte bleiben im Browser (`deutsch_gs4_texts_v1`), und auf einem
-gemeinsam genutzten Gerät können andere sie lesen; die App sagt das dort und auf
-der Elternseite. Wie gut ein Kind selbst schreibt, zeigt die App deshalb nicht.
+Stern, die Texte bleiben im Browser (`deutsch_gs4_texts_v1`), getrennt nach
+Benutzerkonto, Browser und Profil. Ein kleines „ⓘ Wo bleibt mein Text?“ am
+Schreibtisch und die Elternseite erklären das und raten bei einem geteilten
+Konto zum Löschen am Ende (AGENTS.md, Regel 7). Wie gut ein Kind selbst schreibt, zeigt die App deshalb nicht.
 Das bleibt Sache von Lehrkraft und Eltern.
 
 Zur Abgrenzung: Deutsch 1/2 kennt bereits das Schreiben zu eigenen Themen, das
