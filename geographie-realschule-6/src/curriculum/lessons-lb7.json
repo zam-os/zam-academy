@@ -1,0 +1,170 @@
+[
+	{
+		"id": "aktuelles-quellen",
+		"lb": 7,
+		"title": "Ein Ereignis verorten und prüfen",
+		"period": "Geo6 LB 7 · Aktuelle geographische Fragestellung",
+		"intro": "Beginne mit einem Ereignis aus den Nachrichten. Aus seiner Lage entsteht eine geographische Frage.",
+		"paragraphs": [
+			"Beim Starkregen auf Kreta im Oktober 2026 meldete der Copernicus-Kartendienst Überschwemmungen. Ein Medienbericht beschrieb unter anderem Straßenschäden und gesperrte Wege. Verorte zuerst Griechenland und Kreta im östlichen Mittelmeer. Markiere danach die genannten Orte auf einer Karte. Frage zum Beispiel, warum Straßen in Tälern bei Starkregen unterbrochen werden können.",
+			"Eine Fachquelle kann eine Karte, Messwerte oder methodische Hinweise liefern. Eine Medienquelle berichtet, was Menschen beobachten und welche Folgen den Alltag betreffen. Prüfe Urheber, Datum, Kartenausschnitt und ob ein zweiter Bericht unabhängig ist. Suche für deinen Recherchebogen zwei Quellen zu einem Ereignis, das jetzt für dich aktuell ist."
+		],
+		"takeaway": "Formuliere eine Frage mit Ort, Vorgang und einer möglichen räumlichen Beziehung.",
+		"sourceIds": [
+			"lehrplan",
+			"kreta",
+			"nachricht"
+		],
+		"quiz": {
+			"question": "Welche Frage ist geographisch untersuchbar?",
+			"answer": "Warum waren bestimmte Talstraßen nach dem Starkregen unterbrochen?",
+			"wrong": [
+				"Wie oft kommt der Buchstabe K in Kreta vor?",
+				"Welche Schlagzeile ist am längsten?"
+			],
+			"explanation": "Die Frage verbindet räumliche Lage, Naturvorgang und eine Folge."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Eine Untersuchung aufbauen",
+			"instruction": "Ordne jede Aussage zu. Prüfe deine Entscheidung und lies die Rückmeldung.",
+			"categories": [
+				"Verorten",
+				"Fachquelle",
+				"Medienbericht"
+			],
+			"entries": [
+				{
+					"text": "Kreta südlich des griechischen Festlands eintragen.",
+					"target": 0,
+					"feedback": "Die Karte zeigt, wo das Ereignis stattfand."
+				},
+				{
+					"text": "Eine amtliche Karte möglicher betroffener Flächen prüfen.",
+					"target": 1,
+					"feedback": "Die Karte beantwortet eine räumliche Fachfrage."
+				},
+				{
+					"text": "In einem Bericht nach Auswirkungen auf Wege und Schule suchen.",
+					"target": 2,
+					"feedback": "Die Nachricht beschreibt Folgen für den Alltag."
+				}
+			],
+			"conclusion": "Formuliere eine Frage mit Ort, Vorgang und einer möglichen räumlichen Beziehung."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Formuliere zum Kreta-Beispiel eine geographische Frage und nenne zwei Arten geeigneter Quellen.",
+				"hints": [
+					"Wo war das Ereignis?",
+					"Welche räumliche Beziehung willst du erklären?"
+				],
+				"model": "Ich frage, warum Starkregen bestimmte Talstraßen gefährdete. Eine Höhenkarte zeigt Täler und Gefälle. Eine amtliche Ereigniskarte oder ein Bericht kann betroffene Orte angeben. Ich vergleiche dieselben Orte und Daten.",
+				"criteria": [
+					"Wo war das Ereignis?",
+					"Welche räumliche Beziehung willst du erklären?",
+					"Ich nenne zwei passende Quellentypen."
+				]
+			},
+			"2": {
+				"prompt": "Zwei Nachrichten melden dieselbe gesperrte Straße mit demselben Foto. Erkläre, wie du prüfst, ob es zwei unabhängige Belege sind.",
+				"hints": [
+					"Wer hat das Foto bereitgestellt?",
+					"Woher hat jede Nachricht ihre Information?"
+				],
+				"model": "Ich prüfe Bildquelle, Urheber, Zeit und ob beide Texte dieselbe Agentur nennen oder voneinander übernehmen. Danach suche ich eine amtliche Karte oder eine öffentliche Meldung der zuständigen Stelle für die betroffene Straße.",
+				"criteria": [
+					"Wer hat das Foto bereitgestellt?",
+					"Woher hat jede Nachricht ihre Information?",
+					"Ich suche einen unabhängigen Beleg."
+				]
+			}
+		},
+		"model": "kreta",
+		"projectStep": "evidence"
+	},
+	{
+		"id": "aktuelles-urteil",
+		"lb": 7,
+		"title": "Belege erklären und ein Urteil vorstellen",
+		"period": "Geo6 LB 7 · Aktuelle geographische Fragestellung",
+		"intro": "Zeige auf einer Karte, wo dein Ereignis stattfand. Erkläre dann, woran du eine Ursache oder eine Folge erkennst.",
+		"paragraphs": [
+			"Beginne eine kurze Präsentation mit Datum, Ort und Frage. Zeige einen Karten- oder Diagrammbefund, vergleiche ihn mit einer zweiten Quelle und nenne, wer betroffen ist. Trenne Beobachtung, Erklärung und Urteil. Beurteile Maßnahmen mit einem Kriterium, etwa Schutz, Kosten oder Folgen für die Umwelt.",
+			"Auf Kreta wurden nach dem Starkregen Anfang Oktober 2026 Schäden gemeldet. Wasser kann sich in engen Tälern sammeln; das ist eine plausible Erklärung für gefährdete Talstraßen. Um sie für eine bestimmte Brücke zu belegen, brauchst du eine geeignete Gelände- und Gewässerkarte sowie Angaben zum Ereignis an genau dieser Stelle. Warnung, rechtzeitige Sperrung und angepasster Bau sind verschieden wirksame Optionen."
+		],
+		"takeaway": "Begründe dein Urteil mit einem Befund und sage, welche Angabe noch fehlt.",
+		"sourceIds": [
+			"lehrplan",
+			"kreta",
+			"nachricht"
+		],
+		"quiz": {
+			"question": "Welche Aussage ist ein begründetes Urteil?",
+			"answer": "Eine rechtzeitige Sperrung kann Menschen an der betroffenen Brücke schützen; sie verhindert aber keine Schäden am Bauwerk.",
+			"wrong": [
+				"Im Bericht steht, dass eine Brücke beschädigt wurde.",
+				"Das Ereignis fand auf Kreta statt."
+			],
+			"explanation": "Die Aussage wägt Wirkung und Grenze einer Maßnahme ab."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Eine Untersuchung aufbauen",
+			"instruction": "Ordne jede Aussage zu. Prüfe deine Entscheidung und lies die Rückmeldung.",
+			"categories": [
+				"Beobachtung",
+				"Erklärung",
+				"Urteil"
+			],
+			"entries": [
+				{
+					"text": "Ein Bericht meldet eine beschädigte Brücke.",
+					"target": 0,
+					"feedback": "Das ist ein dokumentierter berichteter Befund."
+				},
+				{
+					"text": "Wasser aus mehreren Hängen kann sich im Tal sammeln.",
+					"target": 1,
+					"feedback": "Das beschreibt einen möglichen räumlichen Zusammenhang."
+				},
+				{
+					"text": "Eine Sperrung schützt Personen, erschwert aber den Zugang.",
+					"target": 2,
+					"feedback": "Die Bewertung benennt Wirkungen für verschiedene Bedürfnisse."
+				}
+			],
+			"conclusion": "Begründe dein Urteil mit einem Befund und sage, welche Angabe noch fehlt."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Entwirf eine kurze Präsentation zum Kreta-Beispiel mit einem vorläufigen Urteil.",
+				"hints": [
+					"Welche Karte zeigst du zuerst?",
+					"Welche zwei Quellen unterscheidest du?"
+				],
+				"model": "Ich zeige zuerst Kreta und den betroffenen Ort. Dann beschreibe ich aus den Quellen den Starkregen und die Schäden. Vorläufig befürworte ich frühe Warnungen und Straßensperren zum Schutz von Menschen. Für bauliche Maßnahmen brauche ich lokale Karten und Daten.",
+				"criteria": [
+					"Welche Karte zeigst du zuerst?",
+					"Welche zwei Quellen unterscheidest du?",
+					"Ich schließe mit Maßnahme und Unsicherheit."
+				]
+			},
+			"2": {
+				"prompt": "Ein Freund behauptet, eine Straßensperrung beweise, dass die Straße schon überflutet war. Beurteile die Aussage und nenne nötige Daten.",
+				"hints": [
+					"Welche Beobachtung ist gesichert?",
+					"Welche Deutung ist voreilig?"
+				],
+				"model": "Eine Straße kann vorsorglich gesperrt werden. Ich suche die Zeit und Begründung der Sperrung sowie unabhängige Fotos, eine amtliche Meldung oder eine Hochwasserkarte mit passendem Datum. Erst das erlaubt eine Aussage über die tatsächliche Überflutung.",
+				"criteria": [
+					"Welche Beobachtung ist gesichert?",
+					"Welche Deutung ist voreilig?",
+					"Ich nenne einen überprüfbaren Beleg."
+				]
+			}
+		},
+		"model": "kreta",
+		"projectStep": "judgment"
+	}
+]

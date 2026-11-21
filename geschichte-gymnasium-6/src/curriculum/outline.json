@@ -1,0 +1,582 @@
+{
+  "stages": [
+    {
+      "lb": 1,
+      "code": "LB 1",
+      "hours": "ca. 6 Std.",
+      "title": "Der Mensch und seine Geschichte",
+      "shortTitle": "Mensch & Geschichte",
+      "icon": "🪨"
+    },
+    {
+      "lb": 2,
+      "code": "LB 2",
+      "hours": "ca. 6 Std.",
+      "title": "Ägypten – eine frühe Hochkultur",
+      "shortTitle": "Altes Ägypten",
+      "icon": "🔺"
+    },
+    {
+      "lb": 3,
+      "code": "LB 3",
+      "hours": "ca. 10 Std.",
+      "title": "Die griechische Antike",
+      "shortTitle": "Griechische Antike",
+      "icon": "🏛️"
+    },
+    {
+      "lb": 4,
+      "code": "LB 4",
+      "hours": "ca. 6 Std.",
+      "title": "Menschen machen Geschichte (Längsschnitt)",
+      "shortTitle": "Menschen & Macht",
+      "icon": "⚔️"
+    },
+    {
+      "lb": 5,
+      "code": "LB 5",
+      "hours": "ca. 12 Std.",
+      "title": "Das Imperium Romanum",
+      "shortTitle": "Imperium Romanum",
+      "icon": "🦅"
+    },
+    {
+      "lb": 6,
+      "code": "LB 6",
+      "hours": "ca. 8 Std.",
+      "title": "Von der Antike zum Mittelalter",
+      "shortTitle": "Antike → Mittelalter",
+      "icon": "👑"
+    },
+    {
+      "lb": 7,
+      "code": "LB 7",
+      "hours": "ca. 6 Std.",
+      "title": "Gesellschaftsordnung im Kleinen: Leben in der Familie (Längsschnitt)",
+      "shortTitle": "Leben in der Familie",
+      "icon": "🏡"
+    }
+  ],
+  "sources": [
+    {
+      "id": "lehrplan",
+      "label": "LehrplanPLUS Bayern · Geschichte 6 Gymnasium",
+      "url": "https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/6/geschichte"
+    },
+    {
+      "id": "klexikon-geschichte",
+      "label": "Klexikon · Geschichte",
+      "url": "https://klexikon.zum.de/wiki/Geschichte"
+    },
+    {
+      "id": "wiki-geschichte",
+      "label": "Wikipedia · Geschichte",
+      "url": "https://de.wikipedia.org/wiki/Geschichte"
+    },
+    {
+      "id": "wiki-zeitrechnung",
+      "label": "Wikipedia · Christliche Zeitrechnung",
+      "url": "https://de.wikipedia.org/wiki/Christliche_Zeitrechnung"
+    },
+    {
+      "id": "wiki-quelle",
+      "label": "Wikipedia · Quelle (Geschichtswissenschaft)",
+      "url": "https://de.wikipedia.org/wiki/Quelle_(Geschichtswissenschaft)"
+    },
+    {
+      "id": "klexikon-quelle",
+      "label": "Klexikon · Quelle",
+      "url": "https://klexikon.zum.de/wiki/Quelle"
+    },
+    {
+      "id": "wiki-ueberlieferung",
+      "label": "Wikipedia · Tradition (Geschichtswissenschaft)",
+      "url": "https://de.wikipedia.org/wiki/Tradition_(Geschichtswissenschaft)"
+    },
+    {
+      "id": "wiki-archaeologie",
+      "label": "Wikipedia · Archäologie",
+      "url": "https://de.wikipedia.org/wiki/Arch%C3%A4ologie"
+    },
+    {
+      "id": "klexikon-archaeologie",
+      "label": "Klexikon · Archäologie",
+      "url": "https://klexikon.zum.de/wiki/Arch%C3%A4ologie"
+    },
+    {
+      "id": "wiki-stratigraphie",
+      "label": "Wikipedia · Stratigraphie (Archäologie)",
+      "url": "https://de.wikipedia.org/wiki/Stratigraphie_(Arch%C3%A4ologie)"
+    },
+    {
+      "id": "wiki-altsteinzeit",
+      "label": "Wikipedia · Altsteinzeit",
+      "url": "https://de.wikipedia.org/wiki/Altsteinzeit"
+    },
+    {
+      "id": "klexikon-steinzeit",
+      "label": "Klexikon · Steinzeit",
+      "url": "https://klexikon.zum.de/wiki/Steinzeit"
+    },
+    {
+      "id": "wiki-feuer",
+      "label": "Wikipedia · Feuer",
+      "url": "https://de.wikipedia.org/wiki/Feuer"
+    },
+    {
+      "id": "wiki-faustkeil",
+      "label": "Wikipedia · Faustkeil",
+      "url": "https://de.wikipedia.org/wiki/Faustkeil"
+    },
+    {
+      "id": "wiki-jungsteinzeit",
+      "label": "Wikipedia · Jungsteinzeit",
+      "url": "https://de.wikipedia.org/wiki/Jungsteinzeit"
+    },
+    {
+      "id": "wiki-neolithische-rev",
+      "label": "Wikipedia · Neolithische Revolution",
+      "url": "https://de.wikipedia.org/wiki/Neolithische_Revolution"
+    },
+    {
+      "id": "wiki-hochkultur",
+      "label": "Wikipedia · Hochkultur (Geschichtswissenschaft)",
+      "url": "https://de.wikipedia.org/wiki/Hochkultur_(Geschichtswissenschaft)"
+    },
+    {
+      "id": "klexikon-aegypten",
+      "label": "Klexikon · Altes Ägypten",
+      "url": "https://klexikon.zum.de/wiki/Altes_%C3%84gypten"
+    },
+    {
+      "id": "wiki-altes-aegypten",
+      "label": "Wikipedia · Altes Ägypten",
+      "url": "https://de.wikipedia.org/wiki/Altes_%C3%84gypten"
+    },
+    {
+      "id": "wiki-nil",
+      "label": "Wikipedia · Nil",
+      "url": "https://de.wikipedia.org/wiki/Nil"
+    },
+    {
+      "id": "klexikon-nil",
+      "label": "Klexikon · Nil",
+      "url": "https://klexikon.zum.de/wiki/Nil"
+    },
+    {
+      "id": "wiki-hieroglyphen",
+      "label": "Wikipedia · Ägyptische Hieroglyphen",
+      "url": "https://de.wikipedia.org/wiki/%C3%84gyptische_Hieroglyphen"
+    },
+    {
+      "id": "klexikon-hieroglyphen",
+      "label": "Klexikon · Hieroglyphen",
+      "url": "https://klexikon.zum.de/wiki/Hieroglyphen"
+    },
+    {
+      "id": "wiki-gizeh",
+      "label": "Wikipedia · Pyramiden von Gizeh",
+      "url": "https://de.wikipedia.org/wiki/Pyramiden_von_Gizeh"
+    },
+    {
+      "id": "klexikon-pyramide",
+      "label": "Klexikon · Pyramide",
+      "url": "https://klexikon.zum.de/wiki/Pyramide"
+    },
+    {
+      "id": "wiki-totengericht",
+      "label": "Wikipedia · Totengericht",
+      "url": "https://de.wikipedia.org/wiki/Totengericht"
+    },
+    {
+      "id": "wiki-pharao",
+      "label": "Wikipedia · Pharao",
+      "url": "https://de.wikipedia.org/wiki/Pharao"
+    },
+    {
+      "id": "klexikon-pharao",
+      "label": "Klexikon · Pharao",
+      "url": "https://klexikon.zum.de/wiki/Pharao"
+    },
+    {
+      "id": "wiki-monarchie",
+      "label": "Wikipedia · Monarchie",
+      "url": "https://de.wikipedia.org/wiki/Monarchie"
+    },
+    {
+      "id": "bpb-monarchie",
+      "label": "bpb · Monarchie",
+      "url": "https://www.bpb.de/kurz-knapp/lexika/politiklexikon/17865/monarchie/"
+    },
+    {
+      "id": "wiki-griechenland-antike",
+      "label": "Wikipedia · Antikes Griechenland",
+      "url": "https://de.wikipedia.org/wiki/Antikes_Griechenland"
+    },
+    {
+      "id": "klexikon-griechenland",
+      "label": "Klexikon · Altes Griechenland",
+      "url": "https://klexikon.zum.de/wiki/Altes_Griechenland"
+    },
+    {
+      "id": "wiki-polis",
+      "label": "Wikipedia · Polis",
+      "url": "https://de.wikipedia.org/wiki/Polis"
+    },
+    {
+      "id": "wiki-kolonisation",
+      "label": "Wikipedia · Griechische Kolonisation",
+      "url": "https://de.wikipedia.org/wiki/Griechische_Kolonisation"
+    },
+    {
+      "id": "wiki-migration",
+      "label": "Wikipedia · Migration",
+      "url": "https://de.wikipedia.org/wiki/Migration"
+    },
+    {
+      "id": "klexikon-migration",
+      "label": "Klexikon · Migration",
+      "url": "https://klexikon.zum.de/wiki/Migration"
+    },
+    {
+      "id": "wiki-olympia",
+      "label": "Wikipedia · Olympische Spiele der Antike",
+      "url": "https://de.wikipedia.org/wiki/Olympische_Spiele_der_Antike"
+    },
+    {
+      "id": "klexikon-olympia",
+      "label": "Klexikon · Olympische Spiele",
+      "url": "https://klexikon.zum.de/wiki/Olympische_Spiele"
+    },
+    {
+      "id": "wiki-theater-antike",
+      "label": "Wikipedia · Theater der griechischen Antike",
+      "url": "https://de.wikipedia.org/wiki/Theater_der_griechischen_Antike"
+    },
+    {
+      "id": "wiki-solon",
+      "label": "Wikipedia · Solon",
+      "url": "https://de.wikipedia.org/wiki/Solon"
+    },
+    {
+      "id": "wiki-kleisthenes",
+      "label": "Wikipedia · Kleisthenes von Athen",
+      "url": "https://de.wikipedia.org/wiki/Kleisthenes_von_Athen"
+    },
+    {
+      "id": "wiki-scherbengericht",
+      "label": "Wikipedia · Scherbengericht",
+      "url": "https://de.wikipedia.org/wiki/Scherbengericht"
+    },
+    {
+      "id": "wiki-ostrakon",
+      "label": "Wikipedia · Ostrakon",
+      "url": "https://de.wikipedia.org/wiki/Ostrakon"
+    },
+    {
+      "id": "wiki-perserkriege",
+      "label": "Wikipedia · Perserkriege",
+      "url": "https://de.wikipedia.org/wiki/Perserkriege"
+    },
+    {
+      "id": "wiki-triere",
+      "label": "Wikipedia · Triere",
+      "url": "https://de.wikipedia.org/wiki/Triere"
+    },
+    {
+      "id": "wiki-attische-demokratie",
+      "label": "Wikipedia · Attische Demokratie",
+      "url": "https://de.wikipedia.org/wiki/Attische_Demokratie"
+    },
+    {
+      "id": "wiki-perikles",
+      "label": "Wikipedia · Perikles",
+      "url": "https://de.wikipedia.org/wiki/Perikles"
+    },
+    {
+      "id": "klexikon-demokratie",
+      "label": "Klexikon · Demokratie",
+      "url": "https://klexikon.zum.de/wiki/Demokratie"
+    },
+    {
+      "id": "bpb-demokratie",
+      "label": "bpb · Demokratie",
+      "url": "https://www.bpb.de/kurz-knapp/lexika/politiklexikon/17321/demokratie/"
+    },
+    {
+      "id": "wiki-hatschepsut",
+      "label": "Wikipedia · Hatschepsut",
+      "url": "https://de.wikipedia.org/wiki/Hatschepsut"
+    },
+    {
+      "id": "wiki-themistokles",
+      "label": "Wikipedia · Themistokles",
+      "url": "https://de.wikipedia.org/wiki/Themistokles"
+    },
+    {
+      "id": "wiki-alexander",
+      "label": "Wikipedia · Alexander der Große",
+      "url": "https://de.wikipedia.org/wiki/Alexander_der_Gro%C3%9Fe"
+    },
+    {
+      "id": "klexikon-alexander",
+      "label": "Klexikon · Alexander der Große",
+      "url": "https://klexikon.zum.de/wiki/Alexander_der_Gro%C3%9Fe"
+    },
+    {
+      "id": "wiki-hellenismus",
+      "label": "Wikipedia · Hellenismus",
+      "url": "https://de.wikipedia.org/wiki/Hellenismus"
+    },
+    {
+      "id": "wiki-rom",
+      "label": "Wikipedia · Rom",
+      "url": "https://de.wikipedia.org/wiki/Gr%C3%BCndung_Roms"
+    },
+    {
+      "id": "wiki-romulus-remus",
+      "label": "Wikipedia · Romulus und Remus",
+      "url": "https://de.wikipedia.org/wiki/Romulus_und_Remus"
+    },
+    {
+      "id": "wiki-roemische-republik",
+      "label": "Wikipedia · Römische Republik",
+      "url": "https://de.wikipedia.org/wiki/R%C3%B6mische_Republik"
+    },
+    {
+      "id": "wiki-senat",
+      "label": "Wikipedia · Römischer Senat",
+      "url": "https://de.wikipedia.org/wiki/R%C3%B6mischer_Senat"
+    },
+    {
+      "id": "wiki-cursus-honorum",
+      "label": "Wikipedia · Cursus honorum",
+      "url": "https://de.wikipedia.org/wiki/Cursus_honorum"
+    },
+    {
+      "id": "wiki-volkstribun",
+      "label": "Wikipedia · Volkstribun",
+      "url": "https://de.wikipedia.org/wiki/Volkstribun"
+    },
+    {
+      "id": "wiki-roemisches-reich",
+      "label": "Wikipedia · Römisches Reich",
+      "url": "https://de.wikipedia.org/wiki/R%C3%B6misches_Reich"
+    },
+    {
+      "id": "klexikon-roemer",
+      "label": "Klexikon · Römisches Reich",
+      "url": "https://klexikon.zum.de/wiki/Altes_Rom"
+    },
+    {
+      "id": "wiki-punische-kriege",
+      "label": "Wikipedia · Punische Kriege",
+      "url": "https://de.wikipedia.org/wiki/Punische_Kriege"
+    },
+    {
+      "id": "wiki-caesar",
+      "label": "Wikipedia · Gaius Iulius Caesar",
+      "url": "https://de.wikipedia.org/wiki/Gaius_Iulius_Caesar"
+    },
+    {
+      "id": "wiki-augustus",
+      "label": "Wikipedia · Augustus",
+      "url": "https://de.wikipedia.org/wiki/Augustus"
+    },
+    {
+      "id": "wiki-prinzipat",
+      "label": "Wikipedia · Prinzipat",
+      "url": "https://de.wikipedia.org/wiki/Prinzipat"
+    },
+    {
+      "id": "wiki-raetia",
+      "label": "Wikipedia · Raetia",
+      "url": "https://de.wikipedia.org/wiki/Raetia"
+    },
+    {
+      "id": "wiki-noricum",
+      "label": "Wikipedia · Noricum",
+      "url": "https://de.wikipedia.org/wiki/Noricum"
+    },
+    {
+      "id": "wiki-limes",
+      "label": "Wikipedia · Obergermanisch-Raetischer Limes",
+      "url": "https://de.wikipedia.org/wiki/Obergermanisch-Raetischer_Limes"
+    },
+    {
+      "id": "wiki-romanisierung",
+      "label": "Wikipedia · Romanisierung",
+      "url": "https://de.wikipedia.org/wiki/Romanisierung"
+    },
+    {
+      "id": "wiki-castra-regina",
+      "label": "Wikipedia · Castra Regina",
+      "url": "https://de.wikipedia.org/wiki/Castra_Regina"
+    },
+    {
+      "id": "wiki-augusta-vindelicum",
+      "label": "Wikipedia · Augusta Vindelicum",
+      "url": "https://de.wikipedia.org/wiki/Augusta_Vindelicum"
+    },
+    {
+      "id": "wiki-via-claudia",
+      "label": "Wikipedia · Via Claudia Augusta",
+      "url": "https://de.wikipedia.org/wiki/Via_Claudia_Augusta"
+    },
+    {
+      "id": "archaeologie-bayern",
+      "label": "Archäologische Staatssammlung",
+      "url": "https://www.archaeologie.bayern/"
+    },
+    {
+      "id": "wiki-diaspora",
+      "label": "Wikipedia · Jüdische Diaspora",
+      "url": "https://de.wikipedia.org/wiki/J%C3%BCdische_Diaspora"
+    },
+    {
+      "id": "wiki-juedischer-krieg",
+      "label": "Wikipedia · Jüdischer Krieg",
+      "url": "https://de.wikipedia.org/wiki/J%C3%BCdischer_Krieg"
+    },
+    {
+      "id": "klexikon-judentum",
+      "label": "Klexikon · Judentum",
+      "url": "https://klexikon.zum.de/wiki/Judentum"
+    },
+    {
+      "id": "wiki-judentum",
+      "label": "Wikipedia · Judentum",
+      "url": "https://de.wikipedia.org/wiki/Judentum"
+    },
+    {
+      "id": "wiki-christentum-rom",
+      "label": "Wikipedia · Urchristentum",
+      "url": "https://de.wikipedia.org/wiki/Urchristentum"
+    },
+    {
+      "id": "wiki-konstantin",
+      "label": "Wikipedia · Konstantin der Große",
+      "url": "https://de.wikipedia.org/wiki/Konstantin_der_Gro%C3%9Fe"
+    },
+    {
+      "id": "wiki-mailand",
+      "label": "Wikipedia · Mailänder Vereinbarung",
+      "url": "https://de.wikipedia.org/wiki/Mail%C3%A4nder_Vereinbarung"
+    },
+    {
+      "id": "klexikon-christentum",
+      "label": "Klexikon · Christentum",
+      "url": "https://klexikon.zum.de/wiki/Christentum"
+    },
+    {
+      "id": "wiki-christentum",
+      "label": "Wikipedia · Christentum",
+      "url": "https://de.wikipedia.org/wiki/Christentum"
+    },
+    {
+      "id": "wiki-voelkerwanderung",
+      "label": "Wikipedia · Völkerwanderung",
+      "url": "https://de.wikipedia.org/wiki/V%C3%B6lkerwanderung"
+    },
+    {
+      "id": "wiki-spaetantike",
+      "label": "Wikipedia · Spätantike",
+      "url": "https://de.wikipedia.org/wiki/Sp%C3%A4tantike"
+    },
+    {
+      "id": "wiki-byzanz",
+      "label": "Wikipedia · Byzantinisches Reich",
+      "url": "https://de.wikipedia.org/wiki/Byzantinisches_Reich"
+    },
+    {
+      "id": "wiki-islam",
+      "label": "Wikipedia · Islam",
+      "url": "https://de.wikipedia.org/wiki/Islam"
+    },
+    {
+      "id": "klexikon-islam",
+      "label": "Klexikon · Islam",
+      "url": "https://klexikon.zum.de/wiki/Islam"
+    },
+    {
+      "id": "wiki-frankenreich",
+      "label": "Wikipedia · Fränkisches Reich",
+      "url": "https://de.wikipedia.org/wiki/Frankenreich"
+    },
+    {
+      "id": "wiki-karl-der-grosse",
+      "label": "Wikipedia · Karl der Große",
+      "url": "https://de.wikipedia.org/wiki/Karl_der_Gro%C3%9Fe"
+    },
+    {
+      "id": "klexikon-karl",
+      "label": "Klexikon · Karl der Große",
+      "url": "https://klexikon.zum.de/wiki/Karl_der_Gro%C3%9Fe"
+    },
+    {
+      "id": "wiki-karolinger",
+      "label": "Wikipedia · Karolinger",
+      "url": "https://de.wikipedia.org/wiki/Karolinger"
+    },
+    {
+      "id": "wiki-kaiser",
+      "label": "Wikipedia · Kaiser",
+      "url": "https://de.wikipedia.org/wiki/Kaiser"
+    },
+    {
+      "id": "wiki-mittelalter",
+      "label": "Wikipedia · Mittelalter",
+      "url": "https://de.wikipedia.org/wiki/Mittelalter"
+    },
+    {
+      "id": "klexikon-mittelalter",
+      "label": "Klexikon · Mittelalter",
+      "url": "https://klexikon.zum.de/wiki/Mittelalter"
+    },
+    {
+      "id": "wiki-zeitalter",
+      "label": "Wikipedia · Zeitalter",
+      "url": "https://de.wikipedia.org/wiki/Epoche_(Geschichte)"
+    },
+    {
+      "id": "wiki-oikos",
+      "label": "Wikipedia · Oikos",
+      "url": "https://de.wikipedia.org/wiki/Oikos"
+    },
+    {
+      "id": "wiki-familia",
+      "label": "Wikipedia · Familia",
+      "url": "https://de.wikipedia.org/wiki/Familia"
+    },
+    {
+      "id": "wiki-pater-familias",
+      "label": "Wikipedia · Pater familias",
+      "url": "https://de.wikipedia.org/wiki/Pater_familias"
+    },
+    {
+      "id": "wiki-familie",
+      "label": "Wikipedia · Familie",
+      "url": "https://de.wikipedia.org/wiki/Familie"
+    },
+    {
+      "id": "klexikon-verwandtschaft",
+      "label": "Klexikon · Verwandtschaft",
+      "url": "https://klexikon.zum.de/wiki/Familie"
+    },
+    {
+      "id": "wiki-geschlechterrolle",
+      "label": "Wikipedia · Geschlechterrolle",
+      "url": "https://de.wikipedia.org/wiki/Geschlechterrolle"
+    },
+    {
+      "id": "wiki-panathenaeische-amphore",
+      "label": "Wikipedia · Panathenäische Preisamphoren",
+      "url": "https://de.wikipedia.org/wiki/Panathen%C3%A4ische_Preisamphore"
+    },
+    {
+      "id": "wiki-totentempel-hatschepsut",
+      "label": "Wikipedia · Totentempel der Hatschepsut",
+      "url": "https://de.wikipedia.org/wiki/Totentempel_der_Hatschepsut"
+    }
+  ]
+}

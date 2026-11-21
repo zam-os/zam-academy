@@ -1,0 +1,788 @@
+[
+	{
+		"id": "d6-hoerbericht",
+		"stage": "sprechen",
+		"title": "Einen Hörbericht ordnen",
+		"skill": "Du unterscheidest Kernaussage, Ablauf und nicht belegte Vermutung.",
+		"bindings": [
+			"1.1"
+		],
+		"paragraphs": [
+			"Höre einen kurzen Beitrag zuerst als Ganzes: Was ist geschehen? Notiere beim zweiten Hören Wer, Was, Wann und Wo sowie wichtige Handlungsschritte. Eine Zeitlinie ordnet den Ablauf. Ein unbekanntes Wort kannst du gezielt klären.",
+			"Beispiel: „Das Seil riss. Danach wurde das Spiel unterbrochen.“ Die Abfolge ist belegt. Warum das Seil riss, ist dadurch noch nicht bekannt. Deine Zusammenfassung bleibt bei den gesicherten Angaben und kennzeichnet offene Fragen. Der Übungsbericht ist mit einer Computerstimme gesprochen; authentische Beiträge übst du zusätzlich."
+		],
+		"material": "Schulradio, Übungsbericht. Am Dienstag um zehn Uhr startete auf dem Schulhof das Spiel der sechsten Klassen. Nach fünf Minuten riss beim Tauziehen das Seil. Die Sportlehrerin unterbrach das Spiel sofort. Niemand wurde verletzt. Nach einer Kontrolle wurde das Spiel mit einem neuen Seil fortgesetzt. Warum das erste Seil riss, ist noch nicht geklärt.",
+		"materialLabel": "Eigens geschriebener Übungstext · Beispieldaten sind erfunden",
+		"sourceIds": [
+			"lehrplan"
+		],
+		"takeaway": "Sichere Kernaussage und Reihenfolge; eine offene Ursache bleibt offen.",
+		"lehrplan": "D6 · 1.1",
+		"check": {
+			"wrong": "Die Ursache ist für jeden Bericht unwichtig.",
+			"explanation": "Eine Zusammenfassung erfindet keine Erklärung für eine offene Frage."
+		},
+		"visual": {
+			"kind": "timeline",
+			"title": "Einen Hörbericht ordnen · im Modell",
+			"steps": [
+				{
+					"label": "Ereignis",
+					"text": "Tauziehen auf dem Schulhof",
+					"detail": "Wer, was, wann und wo bilden die knappe Orientierung zum Bericht."
+				},
+				{
+					"label": "Ablauf",
+					"text": "Seilriss → Unterbrechung → Kontrolle",
+					"detail": "Die Pfeile sichern die gehörte Reihenfolge. „Danach“ belegt noch keine Ursache."
+				},
+				{
+					"label": "Ergebnis",
+					"text": "Fortsetzung; niemand verletzt",
+					"detail": "Auch das Ergebnis gehört dazu. Der Grund des Seilrisses bleibt ausdrücklich ungeklärt."
+				}
+			]
+		},
+		"cases": [
+			{
+				"prompt": "Was passierte nach dem Seilriss?",
+				"options": [
+					"Die Lehrerin unterbrach das Spiel.",
+					"Die Klassen begannen sofort ein neues Spiel."
+				],
+				"answer": "Die Lehrerin unterbrach das Spiel.",
+				"feedback": "Erst nach Unterbrechung und Kontrolle wurde weitergespielt."
+			},
+			{
+				"prompt": "Welche Aussage ist belegt?",
+				"options": [
+					"Das Seil war absichtlich zerschnitten.",
+					"Niemand wurde verletzt."
+				],
+				"answer": "Niemand wurde verletzt.",
+				"feedback": "Der Text nennt keine absichtliche Beschädigung; diese Behauptung wäre erfunden."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Notiere vier W-Angaben und drei Handlungsschritte aus dem Hörbericht.",
+				"model": "Wer: sechste Klassen und Sportlehrerin. Was: Seilriss beim Tauziehen. Wann: Dienstag gegen zehn Uhr. Wo: Schulhof. Ablauf: Seilriss → Spielunterbrechung → Kontrolle und Fortsetzung mit neuem Seil.",
+				"criteria": [
+					"Ich sichere vier W-Angaben.",
+					"Ich ordne den Ablauf.",
+					"Ich erfinde keine Ursache."
+				]
+			},
+			"2": {
+				"prompt": "Schreibe eine Zusammenfassung für ein abwesendes Klassenmitglied. Erkläre anschließend, weshalb die Behauptung „Jemand hat das Seil beschädigt“ nicht gesichert ist.",
+				"model": "Beim Tauziehen der sechsten Klassen am Dienstag auf dem Schulhof riss ein Seil. Die Sportlehrerin unterbrach das Spiel und ließ es nach einer Kontrolle mit einem neuen Seil fortsetzen. Niemand wurde verletzt. Eine absichtliche Beschädigung ist nicht belegt, weil die Ursache laut Bericht noch ungeklärt ist.",
+				"criteria": [
+					"Ich fasse mit eigenen Worten zusammen.",
+					"Ich nenne Ablauf und Ausgang.",
+					"Ich trenne Information von Vermutung."
+				]
+			}
+		},
+		"extension": "Höre einen kurzen echten Kindernachrichten- oder Podcastbeitrag, den deine Lehrkraft auswählt. Sichere Notizen und beantworte Inhalts- und Anschlussfragen. Der synthetische Übungstext ersetzt diese Praxis nicht."
+	},
+	{
+		"id": "d6-feedback",
+		"stage": "sprechen",
+		"title": "Wertschätzend Rückmeldung geben",
+		"skill": "Du verbindest eine Beobachtung mit Wirkung und einem konkreten Vorschlag.",
+		"bindings": [
+			"1.1",
+			"1.2"
+		],
+		"paragraphs": [
+			"Gutes Feedback bewertet keine Person. Es nennt eine beobachtete Stelle, erklärt ihre Wirkung und schlägt einen machbaren nächsten Schritt vor. „Du bist schlecht“ hilft nicht. „Bei den Ortsnamen warst du sehr schnell; ich konnte sie nicht notieren“ benennt ein lösbares Problem.",
+			"Beispiel: „Deine Gliederung war klar. Nach dem zweiten Abschnitt fehlte mir eine Pause. Probiere dort eine kurze Sprechpause.“ Wer Rückmeldung bekommt, kann nachfragen, einen Vorschlag erproben und den Unterschied überprüfen. Zustimmung und Kritik brauchen einen Bezug zum Gesagten."
+		],
+		"material": "Nach einem Vortrag sagt Nuri: „Die Reihenfolge war verständlich. Bei den drei Spielregeln hast du sehr schnell gesprochen; ich konnte nur eine notieren. Könntest du nach jeder Regel eine Pause machen?“",
+		"materialLabel": "Eigens geschriebener Übungstext · Beispieldaten sind erfunden",
+		"sourceIds": [
+			"lehrplan"
+		],
+		"takeaway": "Beobachtung → Wirkung → Vorschlag: So wird Feedback konkret und fair.",
+		"lehrplan": "D6 · 1.1 / 1.2",
+		"check": {
+			"wrong": "War irgendwie komisch.",
+			"explanation": "Die Rückmeldung nennt eine überprüfbare Stelle und einen nächsten Schritt."
+		},
+		"visual": {
+			"kind": "flow",
+			"title": "Wertschätzend Rückmeldung geben · im Modell",
+			"steps": [
+				{
+					"label": "Beobachten",
+					"text": "drei Regeln sehr schnell",
+					"detail": "Beschreibe etwas Hör- oder Sichtbares statt einer pauschalen Eigenschaft der Person."
+				},
+				{
+					"label": "Wirkung",
+					"text": "nur eine Regel notiert",
+					"detail": "Die Wirkung erklärt, warum du eine Veränderung vorschlägst."
+				},
+				{
+					"label": "Erproben",
+					"text": "nach jeder Regel pausieren",
+					"detail": "Ein Vorschlag wird nützlich, wenn die vortragende Person ihn ausprobieren und prüfen kann."
+				}
+			]
+		},
+		"cases": [
+			{
+				"prompt": "Welche Aussage ist sachbezogen?",
+				"options": [
+					"Bei der Überschrift habe ich deinen roten Faden erkannt.",
+					"Du bist immer ein Genie."
+				],
+				"answer": "Bei der Überschrift habe ich deinen roten Faden erkannt.",
+				"feedback": "Ein konkreter Bezug ist hilfreicher als eine allgemeine Bewertung der Person."
+			},
+			{
+				"prompt": "Wie nutzt du eine Rückmeldung?",
+				"options": [
+					"Ich übernehme jede Kritik ungeprüft.",
+					"Ich erprobe den Vorschlag und frage nach der Wirkung."
+				],
+				"answer": "Ich erprobe den Vorschlag und frage nach der Wirkung.",
+				"feedback": "Prüfe, ob eine Veränderung dein Vortragsziel unterstützt."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Formuliere zu folgendem Problem Feedback: Ein Vortrag ist gut gegliedert, aber die Ortsnamen sind kaum hörbar.",
+				"model": "Deine Gliederung hilft mir beim Folgen. Die Ortsnamen konnte ich nicht gut hören. Sprich sie bitte etwas lauter und mache danach eine kurze Pause.",
+				"criteria": [
+					"Ich nenne eine Stärke.",
+					"Ich beschreibe eine konkrete Schwierigkeit.",
+					"Ich schlage eine machbare Änderung vor."
+				]
+			},
+			"2": {
+				"prompt": "Eine Person sagt nur „zu langweilig“. Formuliere zwei klärende Nachfragen und einen überprüfbaren Verbesserungsplan.",
+				"model": "An welcher Stelle hast du den Faden verloren? Hätte dir dort ein Beispiel geholfen? Ich ergänze nach der zweiten Regel ein Beispiel und frage danach, ob die Regel verständlicher geworden ist.",
+				"criteria": [
+					"Ich frage nach einer konkreten Stelle.",
+					"Ich vermeide Gegenangriffe.",
+					"Mein Plan lässt sich erproben und überprüfen."
+				]
+			}
+		},
+		"extension": "Trage einer Person einen kurzen Text zweimal vor. Lass dir zu Lesefluss, Leserichtigkeit und Betonung Rückmeldung geben und prüfe eine gezielte Änderung."
+	},
+	{
+		"id": "d6-vorlesen",
+		"stage": "sprechen",
+		"title": "Mit Stimme und Blick gestalten",
+		"skill": "Du planst Betonung, Pausen und Blickkontakt passend zum Text.",
+		"bindings": [
+			"1.2"
+		],
+		"paragraphs": [
+			"Vorlesen vermittelt Bedeutung. Fasse zusammengehörige Wörter zu Sprechgruppen zusammen, halte an Sinnabschnitten inne und betone wichtige Wörter. Lautstärke und Tempo sollen zur Situation passen. Lauter ist nicht automatisch spannender.",
+			"Beispiel: „Vor der Tür / stand plötzlich / ein riesiger Koffer.“ Die kurze Pause vor „ein riesiger Koffer“ lenkt die Aufmerksamkeit auf den Fund. Lies die Stelle auch ohne diese Pause und vergleiche die Wirkung. Hebe an vorbereiteten Stellen den Blick; die Zeile darfst du vorher suchen.",
+			"Auch einen unbekannten Sachtext bereitest du vor: Überfliege ihn, kläre schwierige Wörter und markiere Sinnabschnitte. Ein Gedicht lernst du strophenweise, indem du wiederholt ohne Vorlage sprichst. Eine Betonung folgt dem Sinn; ein Versende verlangt nicht automatisch eine Pause."
+		],
+		"material": "Vor der Tür stand plötzlich ein riesiger Koffer. Lea blieb stehen. „Der war eben noch nicht da“, flüsterte sie. Aus dem Koffer klopfte es dreimal. Lea holte ihre Mutter.",
+		"materialLabel": "Eigens geschriebener Übungstext · Beispieldaten sind erfunden",
+		"sourceIds": [
+			"lehrplan"
+		],
+		"takeaway": "Betonung und Pausen verdeutlichen den Sinn; eine passende Wirkung braucht kein ständiges Schreien.",
+		"lehrplan": "D6 · 1.2",
+		"check": {
+			"wrong": "Indem du jedes einzelne Wort gleich stark betonst.",
+			"explanation": "Eine bewusste Pause richtet die Aufmerksamkeit auf die folgende Information."
+		},
+		"visual": {
+			"kind": "scene",
+			"title": "Mit Stimme und Blick gestalten · im Modell",
+			"steps": [
+				{
+					"label": "Vorbereiten",
+					"text": "Sprechgruppen markieren",
+					"detail": "Trenne an Sinnstellen, damit zusammengehörige Wörter beim Hören erkennbar bleiben."
+				},
+				{
+					"label": "Gestalten",
+					"text": "Pause vor dem Fund",
+					"detail": "Vergleiche zwei Vortragsweisen derselben Stelle und begründe die unterschiedliche Wirkung."
+				},
+				{
+					"label": "Überprüfen",
+					"text": "Rückmeldung einholen",
+					"detail": "Frage andere nach Verständlichkeit, Leserichtigkeit und Wirkung; erprobe eine Veränderung."
+				}
+			]
+		},
+		"cases": [
+			{
+				"prompt": "Welche Stelle passt zu einer leisen Stimme?",
+				"options": [
+					"„flüsterte sie“",
+					"Jede Stelle unabhängig vom Inhalt"
+				],
+				"answer": "„flüsterte sie“",
+				"feedback": "Die Redebegleitung gibt einen Hinweis für die passende Sprechweise."
+			},
+			{
+				"prompt": "Du liest ein Wort falsch. Was hilft?",
+				"options": [
+					"Immer schneller weiterlesen.",
+					"Kurz korrigieren und im passenden Tempo fortfahren."
+				],
+				"answer": "Kurz korrigieren und im passenden Tempo fortfahren.",
+				"feedback": "Leserichtigkeit ist wichtiger als fehlerlos zu wirken; eine ruhige Korrektur hilft dem Verstehen."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Markiere im Übungstext mit / drei sinnvolle Pausen und begründe eine Betonung.",
+				"model": "Vor der Tür / stand plötzlich ein riesiger Koffer. / Lea blieb stehen. Ich betone „riesiger“, weil die Größe den ungewöhnlichen Fund hervorhebt.",
+				"criteria": [
+					"Meine Pausen trennen Sinnabschnitte.",
+					"Ich wähle ein wichtiges Wort zur Betonung.",
+					"Ich begründe die Wirkung."
+				]
+			},
+			"2": {
+				"prompt": "Plane zwei unterschiedliche Vortragsweisen für die Kofferszene: neugierig und beunruhigt. Erkläre drei Veränderungen, ohne den Wortlaut zu verändern.",
+				"model": "Neugierig lese ich „plötzlich“ heller und etwas schneller. Beunruhigt senke ich die Stimme und verlängere die Pause vor dem Klopfen. In beiden Fassungen bleibe ich verständlich und sehe nach dem ersten Satz kurz zum Publikum.",
+				"criteria": [
+					"Ich verändere Stimme und Tempo passend.",
+					"Ich begründe die Wirkung am Text.",
+					"Ich plane Blickkontakt ein."
+				]
+			}
+		},
+		"extension": "Lies den Koffertext jemandem vor. Lies danach einen unbekannten Lexikonabschnitt sinnbetont. Lerne schließlich eine Strophe aus der Gedichtlektion auswendig und lass dir Rückmeldung zu Tempo, Pausen und Betonung geben."
+	},
+	{
+		"id": "d6-frei-sprechen",
+		"stage": "sprechen",
+		"title": "Mit Stichworten frei sprechen",
+		"skill": "Du passt deine Gliederung an Anlass und Zuhörende an.",
+		"bindings": [
+			"1.2"
+		],
+		"paragraphs": [
+			"Überlege zuerst, was nach deinem Beitrag hängen bleiben soll. Beim Erzählen führt der Aufbau über ein Ereignis zum Ausgang. Beim Informieren ordnest du Fakten so, dass auch Neueinsteiger folgen. Beim Argumentieren stützt du deinen Vorschlag mit einem Grund. Notiere Stichwörter und denke dir einen Einstieg und einen Schluss aus.",
+			"Beispiel: Neue Fünftklässler sollen den Pausendienst kennenlernen. Deine Stichwörter „Ort → Zeiten → Aufgabe“ halten die Reihenfolge fest. Erkläre zuerst, wo sie sich melden, und führe ein unbekanntes Wort wie „Ausleihliste“ an einem Beispiel ein."
+		],
+		"material": "Am Mittwoch wird auf dem Pausenhof eine Spielkiste eröffnet. Jedes Kind trägt seinen Namen in eine Liste ein und gibt das Spiel vor dem Klingeln zurück. Beim Probelauf hatte ein Ball gefehlt, bis ihn Lio unter der Bank fand.",
+		"materialLabel": "Eigens geschriebener Übungstext",
+		"sourceIds": [
+			"lehrplan"
+		],
+		"takeaway": "Schreib auf deinen Zettel wenige Stichwörter. Sprich in ganzen Sätzen und nenne gleich den Anlass.",
+		"check": {
+			"wrong": "Meinung → Gegenmeinung → Appell",
+			"explanation": "Die Reihenfolge folgt dem Weg eines Kindes bei der Ausleihe."
+		},
+		"visual": {
+			"kind": "sequence",
+			"title": "Ein Ereignis, drei Sprechziele",
+			"initial": {
+				"blocks": [
+					{
+						"label": "Anlass",
+						"text": "Die neue Spielkiste",
+						"tone": "subject"
+					}
+				]
+			},
+			"steps": [
+				{
+					"label": "Erzählen",
+					"text": "Lios Suche",
+					"detail": "Der verlorene Ball liefert das Ereignis. Der Fund beendet die Geschichte.",
+					"blocks": [
+						{
+							"label": "Anfang",
+							"text": "Die Kiste öffnet",
+							"tone": "subject"
+						},
+						{
+							"label": "Ereignis",
+							"text": "Ein Ball fehlt",
+							"tone": "predicate"
+						},
+						{
+							"label": "Ausgang",
+							"text": "Lio findet ihn",
+							"tone": "time"
+						}
+					]
+				},
+				{
+					"label": "Informieren",
+					"text": "Eine Ausleihe erklären",
+					"detail": "Neue Kinder brauchen die Reihenfolge, damit sie selbst etwas ausleihen können.",
+					"blocks": [
+						{
+							"label": "Ort",
+							"text": "Pausenhof",
+							"tone": "subject"
+						},
+						{
+							"label": "Zuerst",
+							"text": "Name in die Liste",
+							"tone": "predicate"
+						},
+						{
+							"label": "Zuletzt",
+							"text": "Vor dem Klingeln zurück",
+							"tone": "time"
+						}
+					]
+				},
+				{
+					"label": "Argumentieren",
+					"text": "Für eine klare Regel werben",
+					"detail": "Die Rückgaberegel erhält einen Grund, den die Gruppe nachvollziehen kann.",
+					"blocks": [
+						{
+							"label": "Vorschlag",
+							"text": "Rückgabe vor dem Klingeln",
+							"tone": "subject"
+						},
+						{
+							"label": "Grund",
+							"text": "So geht weniger verloren",
+							"tone": "reason"
+						}
+					]
+				}
+			]
+		},
+		"cases": [
+			{
+				"prompt": "Neue Kinder fragen, wie man ausleiht. Welchen Einstieg wählst du?",
+				"options": [
+					"„So leiht ihr ein Spiel aus.“",
+					"„Lio kroch unter die Bank.“"
+				],
+				"answer": "„So leiht ihr ein Spiel aus.“",
+				"feedback": "Die Kinder brauchen zuerst die Ausleihregel."
+			},
+			{
+				"prompt": "Was gehört auf deinen Stichwortzettel?",
+				"options": [
+					"Der ganze Beitrag Wort für Wort",
+					"Pausenhof → Liste → Rückgabe"
+				],
+				"answer": "Pausenhof → Liste → Rückgabe",
+				"feedback": "Wenige Stichwörter helfen beim freien Sprechen."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe drei Stichwörter für eine Ausleih-Erklärung. Sage den Beitrag laut und notiere deinen ersten Satz.",
+				"model": "Pausenhof → Name → Rückgabe. „Auf dem Pausenhof findet ihr die neue Spielkiste.“",
+				"criteria": [
+					"Ich habe drei Stichwörter.",
+					"Meine Reihenfolge ist praktisch.",
+					"Mein erster Satz nennt den Ort."
+				]
+			},
+			"2": {
+				"prompt": "Wirb im Klassenrat mit einem kurzen freien Beitrag für eine zweite Spielkiste. Notiere deinen Einstieg, einen Grund und den Schluss.",
+				"model": "„Ich schlage eine zweite Spielkiste vor. So müssen die beiden Hofgruppen nicht warten, bis eine Kiste frei wird. Können wir es eine Woche lang ausprobieren?“",
+				"criteria": [
+					"Mein Einstieg nennt den Vorschlag.",
+					"Mein Grund erklärt den Nutzen.",
+					"Mein Schluss richtet sich an den Klassenrat."
+				]
+			}
+		},
+		"lehrplan": "D6 · 1.2"
+	},
+	{
+		"id": "d6-kurzvortrag",
+		"stage": "sprechen",
+		"title": "Einen Kurzvortrag sichtbar gliedern",
+		"skill": "Du wählst Inhalte für dein Publikum und nutzt eine verständliche Visualisierung.",
+		"bindings": [
+			"1.2"
+		],
+		"paragraphs": [
+			"Ein Kurzvortrag braucht eine Leitfrage und eine erkennbare Reihenfolge: Einstieg, zwei oder drei geordnete Hauptpunkte, Abschluss. Ein Stichwortzettel erinnert dich an die Gedanken; er ist kein Text zum Ablesen. Erkläre unbekannte Begriffe für dein Publikum.",
+			"Beispiel zur Leitfrage „Wie läuft unser Büchertausch?“: Eine Skizze zeigt Buch mitbringen → auswählen → tauschen. Du erklärst dazu die Regeln und zeigst jeweils auf den passenden Schritt. Eine Folie mit deinem vollständigen Vortragstext lenkt vom Zuhören ab."
+		],
+		"material": "Büchertausch: Jede Person bringt am Freitag ein gut erhaltenes Kinderbuch mit. Am Tauschtisch erhält sie dafür eine Tauschmarke. Mit der Marke wählt sie ein anderes Buch. Beschädigte Bücher werden nicht angenommen.",
+		"materialLabel": "Eigens geschriebener Übungstext · Beispieldaten sind erfunden",
+		"sourceIds": [
+			"lehrplan"
+		],
+		"takeaway": "Leitfrage, geordnete Hauptpunkte und ein passendes Bild helfen deinem Publikum.",
+		"lehrplan": "D6 · 1.2",
+		"check": {
+			"wrong": "Viele dekorative Bilder ohne Bezug.",
+			"explanation": "Die Visualisierung macht den Ablauf sichtbar und ergänzt das gesprochene Wort."
+		},
+		"visual": {
+			"kind": "flow",
+			"title": "Einen Kurzvortrag sichtbar gliedern · im Modell",
+			"steps": [
+				{
+					"label": "Einstieg",
+					"text": "Wie funktioniert der Tausch?",
+					"detail": "Die Leitfrage zeigt dem Publikum, was es am Ende verstanden haben soll."
+				},
+				{
+					"label": "Hauptteil",
+					"text": "Buch → Marke → neues Buch",
+					"detail": "Die Reihenfolge erklärt den Ablauf; kurze Beschriftungen reichen als Orientierung."
+				},
+				{
+					"label": "Abschluss",
+					"text": "gut erhalten; Freitag",
+					"detail": "Die wichtigsten Bedingungen werden am Ende noch einmal knapp gesichert."
+				}
+			]
+		},
+		"cases": [
+			{
+				"prompt": "Du sprichst vor einer fünften Klasse. Was erklärst du?",
+				"options": [
+					"Was eine Tauschmarke ist.",
+					"Nur Fachwörter, die niemand kennt."
+				],
+				"answer": "Was eine Tauschmarke ist.",
+				"feedback": "Adressatenbezug bedeutet, fehlendes Vorwissen verständlich zu ergänzen."
+			},
+			{
+				"prompt": "Wie nutzt du deinen Stichwortzettel?",
+				"options": [
+					"Ich lese jeden Satz mit gesenktem Blick ab.",
+					"Ich sehe kurz darauf und spreche zum Publikum."
+				],
+				"answer": "Ich sehe kurz darauf und spreche zum Publikum.",
+				"feedback": "Stichwörter unterstützen freies Sprechen und Blickkontakt."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Erstelle einen Stichwortzettel mit Einstieg, drei Schritten und Abschluss für den Büchertausch.",
+				"model": "Einstieg: neues Lesefutter durch Tauschen. Schritte: gut erhaltenes Buch mitbringen; Tauschmarke bekommen; anderes Buch auswählen. Abschluss: Freitag, nur gut erhaltene Kinderbücher.",
+				"criteria": [
+					"Ich nenne das Ziel.",
+					"Ich ordne drei Hauptpunkte.",
+					"Ich sichere Zeitpunkt und Bedingung."
+				]
+			},
+			"2": {
+				"prompt": "Plane einen einminütigen Vortrag für neue Kinder über einen selbst gewählten schulischen Ablauf. Beschreibe auch dein Bild und eine Frage an das Publikum.",
+				"model": "Zum Büchertausch erkläre ich zuerst das Ziel. Dann zeige ich drei Kästen: Buch abgeben, Marke erhalten, neues Buch wählen. Ich erkläre, dass eine Marke zum Tausch berechtigt. Am Ende frage ich: Was musst du am Freitag mitbringen?",
+				"criteria": [
+					"Ich passe die Erklärung an neue Kinder an.",
+					"Mein Bild zeigt eine Beziehung oder Reihenfolge.",
+					"Ich prüfe eine Kernaussage mit einer Frage."
+				]
+			}
+		},
+		"extension": "Halte den Vortrag vor anderen. Bitte um Rückmeldung zu Aufbau, Verständlichkeit, Blickkontakt und Bildnutzung. Die App kann diese Durchführung nicht beurteilen."
+	},
+	{
+		"id": "d6-gespraech",
+		"stage": "sprechen",
+		"title": "Im Gespräch gemeinsam weiterkommen",
+		"skill": "Du greifst Gedanken auf und trägst Konflikte mit Ich-Botschaften aus.",
+		"bindings": [
+			"1.1",
+			"1.3"
+		],
+		"paragraphs": [
+			"Ein Gespräch gelingt, wenn du zuhörst, ausreden lässt und auf den vorherigen Beitrag eingehst. Wiederhole einen Gedanken sinngemäß, bevor du ergänzt oder widersprichst. Begründe deinen Standpunkt und bleibe beim Thema.",
+			"Beispiel: „Du möchtest in der Pause Ball spielen. Ich brauche daneben einen ruhigen Platz, weil ich lesen möchte. Können wir zwei Bereiche festlegen?“ Die Ich-Botschaft beschreibt eine eigene Wahrnehmung oder ein Bedürfnis. „Ich finde, du bist rücksichtslos“ bleibt ein Vorwurf an die andere Person."
+		],
+		"material": "Mila: „Der ganze Hof sollte zum Ballspielen da sein.“ Ben: „Ich lese in der Pause gern. Wenn der Ball neben mir landet, verliere ich den Faden.“ Mila: „Du brauchst also einen ruhigen Platz. Vielleicht teilen wir den Hof auf.“",
+		"materialLabel": "Eigens geschriebener Übungstext · Beispieldaten sind erfunden",
+		"sourceIds": [
+			"lehrplan"
+		],
+		"takeaway": "Greife den Gedanken anderer auf, begründe deinen Standpunkt und suche eine konkrete Lösung.",
+		"lehrplan": "D6 · 1.1 / 1.3",
+		"check": {
+			"wrong": "Du darfst ab jetzt gar nicht mehr spielen.",
+			"explanation": "Die Aussage beschreibt ein eigenes Bedürfnis und vermeidet eine Abwertung."
+		},
+		"visual": {
+			"kind": "flow",
+			"title": "Im Gespräch gemeinsam weiterkommen · im Modell",
+			"steps": [
+				{
+					"label": "Zuhören",
+					"text": "Du brauchst einen ruhigen Platz.",
+					"detail": "Das sinngemäße Wiederholen zeigt, welches Bedürfnis du verstanden hast."
+				},
+				{
+					"label": "Begründen",
+					"text": "Ich verliere sonst den Faden.",
+					"detail": "Der Grund macht den Standpunkt für die andere Person nachvollziehbar."
+				},
+				{
+					"label": "Aushandeln",
+					"text": "Spielzone und Ruhezone",
+					"detail": "Ein Lösungsvorschlag berücksichtigt beide Bedürfnisse und kann gemeinsam geprüft werden."
+				}
+			]
+		},
+		"cases": [
+			{
+				"prompt": "Du möchtest widersprechen. Was tust du zuerst?",
+				"options": [
+					"Ich lasse die andere Person ausreden.",
+					"Ich spreche lauter als sie."
+				],
+				"answer": "Ich lasse die andere Person ausreden.",
+				"feedback": "Ausredenlassen ermöglicht, den tatsächlichen Gedanken aufzugreifen."
+			},
+			{
+				"prompt": "Welche Begründung passt zur Ruhezone?",
+				"options": [
+					"Alle müssen meine Idee mögen.",
+					"Dort können Kinder ungestört lesen."
+				],
+				"answer": "Dort können Kinder ungestört lesen.",
+				"feedback": "Eine Begründung erklärt den Nutzen und fordert keine bloße Zustimmung."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe drei Gesprächsbeiträge: einen Gedanken aufgreifen, den eigenen Wunsch begründen, eine Lösung vorschlagen.",
+				"model": "Du möchtest Platz zum Ballspielen. Ich wünsche mir eine ruhige Ecke, weil ich dort lesen kann. Können wir eine Spielzone und eine Ruhezone markieren?",
+				"criteria": [
+					"Ich greife den anderen Wunsch auf.",
+					"Ich begründe meinen Wunsch.",
+					"Ich schlage eine gemeinsame Lösung vor."
+				]
+			},
+			"2": {
+				"prompt": "In einer Gruppe reden zwei Kinder ständig gleichzeitig. Formuliere eine faire Regel, einen vermittelnden Beitrag und einen begründeten Standpunkt zur Hofaufteilung.",
+				"model": "Wir lassen jeden Beitrag zu Ende sprechen und melden uns. Ich möchte zuerst verstehen, welche Fläche ihr zum Spielen braucht. Eine Ruhezone wäre sinnvoll, weil dort auch Kinder mit anderen Pausenwünschen Platz hätten.",
+				"criteria": [
+					"Meine Regel gilt für alle.",
+					"Ich frage wertschätzend nach.",
+					"Ich begründe einen lebensnahen Standpunkt."
+				]
+			}
+		},
+		"extension": "Erprobt das Gespräch mit wechselnden Rollen. Erst eine echte Gesprächssituation zeigt, ob Zuhören, Blickkontakt und Ausredenlassen gelingen."
+	},
+	{
+		"id": "d6-diskutieren",
+		"stage": "sprechen",
+		"title": "Einen Appell begründet vertreten",
+		"skill": "Du gibst deinen Zuhörenden einen nachvollziehbaren Grund zum Handeln.",
+		"bindings": [
+			"1.3"
+		],
+		"paragraphs": [
+			"Eine Behauptung sagt, was du für richtig hältst. Ein Grund erklärt, warum. Ein Beispiel kann den Grund greifbar machen. Ein Appell bittet andere um eine konkrete Handlung. In einer Diskussion hörst du den Einwand zu Ende und antwortest auf den angesprochenen Punkt.",
+			"Beispiel: „Wir sollten die Bank trocken halten, weil man sich dann nach einem Schauer wieder hinsetzen kann. Helft mir bitte, die Plane rechtzeitig aufzulegen.“ Die Bitte hat ein klares Ziel und einen passenden Grund."
+		],
+		"material": "Der Klassenrat entscheidet über die Spielkiste. Eva möchte eine Liste für ausgeliehene Spiele. Sam sorgt sich, dass das Eintragen in der Pause zu lange dauert.",
+		"materialLabel": "Eigens geschriebener Übungstext",
+		"sourceIds": [
+			"lehrplan"
+		],
+		"takeaway": "Stütze einen konkreten Appell mit einem Grund und antworte auf den Einwand, den du tatsächlich gehört hast.",
+		"check": {
+			"wrong": "Ein Beispiel zu einem anderen Thema.",
+			"explanation": "Der Grund zeigt, warum die gewünschte Handlung sinnvoll ist."
+		},
+		"visual": {
+			"kind": "sequence",
+			"title": "Ein Vorschlag für den Klassenrat",
+			"initial": {
+				"blocks": [
+					{
+						"label": "Streitfrage",
+						"text": "Wie können Spiele zuverlässig zurückkommen?",
+						"tone": "subject"
+					}
+				]
+			},
+			"steps": [
+				{
+					"label": "Behauptung",
+					"text": "Eine Liste einführen",
+					"detail": "Der Vorschlag sagt, was sich ändern soll.",
+					"blocks": [
+						{
+							"label": "Vorschlag",
+							"text": "Wir führen eine Ausleihliste.",
+							"tone": "subject"
+						}
+					]
+				},
+				{
+					"label": "Grund",
+					"text": "Schnell sehen, was fehlt",
+					"detail": "Der Grund zeigt den Nutzen der Liste und passt zum Vorschlag.",
+					"blocks": [
+						{
+							"label": "Grund",
+							"text": "So sehen wir, welches Spiel noch fehlt.",
+							"tone": "reason"
+						}
+					]
+				},
+				{
+					"label": "Appell mit Einwand",
+					"text": "Eine Woche testen",
+					"detail": "Name und Spiel genügen. Das antwortet auf Sams Einwand zur Dauer.",
+					"blocks": [
+						{
+							"label": "Einwand",
+							"text": "Die Liste kostet Zeit.",
+							"tone": "subordinate"
+						},
+						{
+							"label": "Antwort",
+							"text": "Zwei kurze Angaben reichen.",
+							"tone": "reason"
+						},
+						{
+							"label": "Appell",
+							"text": "Probiert die Liste eine Woche lang.",
+							"tone": "predicate"
+						}
+					]
+				}
+			]
+		},
+		"cases": [
+			{
+				"prompt": "Welche Begründung passt zur Liste?",
+				"options": [
+					"Wir erkennen, wer ein fehlendes Spiel ausgeliehen hat.",
+					"Listen gefallen mir schon immer."
+				],
+				"answer": "Wir erkennen, wer ein fehlendes Spiel ausgeliehen hat.",
+				"feedback": "Der passende Grund erklärt, was die Liste beim Ausleihen verbessert."
+			},
+			{
+				"prompt": "Welche Bitte kann die Gruppe unmittelbar umsetzen?",
+				"options": [
+					"Spielt bitte verantwortungsvoller.",
+					"Tragt vor dem Spielen euren Namen und das Spiel ein."
+				],
+				"answer": "Tragt vor dem Spielen euren Namen und das Spiel ein.",
+				"feedback": "Name und Spiel sind zwei klare Angaben, mit denen alle anfangen können."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Ergänze Evas Vorschlag um einen Grund und einen Appell. Trage die drei Teile laut vor.",
+				"model": "Ich bin für die Liste. So finden wir heraus, wer ein Spiel noch hat. Tragt bitte euren Namen und das Spiel ein.",
+				"criteria": [
+					"Ich nenne die Liste.",
+					"Mein Grund passt zur Ausleihe.",
+					"Meine Bitte ist konkret."
+				]
+			},
+			"2": {
+				"prompt": "Beantworte Sams Einwand und schlage eine auf eine Woche begrenzte Probe vor.",
+				"model": "Du fürchtest, dass Schreiben unsere Pause verkürzt. Mit Name und Spiel dauert es nur wenige Sekunden. Lasst uns das eine Woche testen und dann gemeinsam entscheiden.",
+				"criteria": [
+					"Ich fasse den Einwand sachlich auf.",
+					"Meine Antwort spart Schreibzeit.",
+					"Ich begrenze die Probe."
+				]
+			}
+		},
+		"extension": "Diskutiert die Spielkiste zu dritt. Eine Person fasst beide Gründe zusammen und achtet darauf, dass jede Person ausreden kann.",
+		"lehrplan": "D6 · 1.3"
+	},
+	{
+		"id": "d6-szenisch",
+		"stage": "sprechen",
+		"title": "Figuren durch Spiel verstehen",
+		"skill": "Du zeigst Motive durch Stimme und Körper und erprobst Handlungsalternativen.",
+		"bindings": [
+			"1.2",
+			"1.4"
+		],
+		"paragraphs": [
+			"Beim szenischen Spielen fragst du zuerst: Was will die Figur? Was steht ihr im Weg? Stimme, Gestik, Mimik und Körperhaltung machen diese Deutung sichtbar. Ein Spiel bleibt eine begründbare Interpretation; der Text kann mehrere Deutungen zulassen.",
+			"Beispiel: Sam hält das gefundene Heft eng an sich, spricht leise und schaut zur Tür. Das kann Unsicherheit zeigen. Mit aufrechtem Stand und lauter Forderung wirkt dieselbe Figur entschlossen. Beobachtende benennen das sichtbare Mittel und seine Wirkung, statt die spielende Person zu bewerten."
+		],
+		"material": "Sam findet im Flur ein Heft. Darin steht kein Name. Jo sagt: „Gib es mir, ich weiß schon, wem es gehört.“ Sam zögert: „Ich bringe es lieber ins Sekretariat.“ Jo verschränkt die Arme.",
+		"materialLabel": "Eigens geschriebener Übungstext · Beispieldaten sind erfunden",
+		"sourceIds": [
+			"lehrplan"
+		],
+		"takeaway": "Eine Rollenidee verbindet Textbeleg, Motiv und bewusst gewählte Ausdrucksmittel.",
+		"lehrplan": "D6 · 1.2 / 1.4",
+		"check": {
+			"wrong": "Die Person spielt grundsätzlich falsch.",
+			"explanation": "Die Aussage nennt sichtbare Mittel und eine daraus abgeleitete Wirkung."
+		},
+		"visual": {
+			"kind": "scene",
+			"title": "Figuren durch Spiel verstehen · im Modell",
+			"steps": [
+				{
+					"label": "Motiv",
+					"text": "Sam will das Heft sicher abgeben.",
+					"detail": "Der Wunsch erklärt das Zögern und lässt sich mit Sams Aussage begründen."
+				},
+				{
+					"label": "Ausdruck",
+					"text": "leise Stimme; Blick zur Tür",
+					"detail": "Vergleiche, wie Haltung und Stimme deine Deutung für andere erkennbar machen."
+				},
+				{
+					"label": "Alternative",
+					"text": "gemeinsam nachfragen",
+					"detail": "Eine neue Handlung kann den Konflikt lösen; sie muss zur Situation passen."
+				}
+			]
+		},
+		"cases": [
+			{
+				"prompt": "Welche Alternative bleibt nachvollziehbar?",
+				"options": [
+					"Sam und Jo fragen gemeinsam im Sekretariat nach.",
+					"Sam weiß plötzlich ohne Hinweis den Namen."
+				],
+				"answer": "Sam und Jo fragen gemeinsam im Sekretariat nach.",
+				"feedback": "Eine Alternative darf den Konflikt weiterführen, aber keine fehlende Information als Tatsache erfinden."
+			},
+			{
+				"prompt": "Was gehört auf einen Beobachtungsbogen?",
+				"options": [
+					"Nur „gut“ oder „schlecht“.",
+					"Mittel, konkrete Stelle und Wirkung."
+				],
+				"answer": "Mittel, konkrete Stelle und Wirkung.",
+				"feedback": "Gezielte Beobachtungen helfen, eine Darstellung bewusst zu verändern."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe für Sam zwei Regieanweisungen und begründe, welches Motiv sie zeigen.",
+				"model": "Sam hält das Heft vorsichtig fest und spricht ruhig. Das zeigt, dass Sam es zuverlässig zurückgeben möchte und die Situation nicht verschärfen will.",
+				"criteria": [
+					"Ich nutze Stimme und Körper.",
+					"Ich begründe ein Motiv mit dem Text.",
+					"Ich trenne Figur und spielende Person."
+				]
+			},
+			"2": {
+				"prompt": "Schreibe eine kurze alternative Szene und einen Beobachtungsauftrag für das Publikum.",
+				"model": "Sam: „Wir können zusammen ins Sekretariat gehen.“ Jo löst die verschränkten Arme: „Dann komme ich mit.“ Beobachtet, ob Jos veränderte Haltung den Übergang von Abwehr zu Zusammenarbeit sichtbar macht.",
+				"criteria": [
+					"Meine Alternative passt zum Konflikt.",
+					"Ich setze Ausdrucksmittel bewusst ein.",
+					"Mein Beobachtungsauftrag nennt ein prüfbares Merkmal."
+				]
+			}
+		},
+		"extension": "Spielt die Szene mit zwei unterschiedlichen Deutungen und gebt euch anhand eines Beobachtungsbogens Rückmeldung zu Stimme, Haltung, Mimik und Gestik."
+	}
+]

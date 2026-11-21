@@ -113,18 +113,18 @@ describe("Grade 6 Realschule package contract", () => {
 			t.atoms.flatMap((a) => a.practice_items),
 		);
 		expect(old).toHaveLength(12);
-		expect(mapping.status).toBe("proposal-only");
-		expect(mapping.approved).toBeNull();
-		expect(mapping.rows.map((r) => r.old_id).sort()).toEqual(
+		expect(mapping.status).toBe("approved");
+		expect(mapping.approved).toBe("2026-11-19");
+		expect(mapping.rows.map((r) => r.de_by_id).sort()).toEqual(
 			old.map((i) => i.id).sort(),
 		);
-		expect(new Set(mapping.rows.map((r) => r.old_id)).size).toBe(12);
+		expect(new Set(mapping.rows.map((r) => r.de_by_id)).size).toBe(12);
 		expect(mapping.rows.filter((r) => r.category === "A")).toHaveLength(4);
 		expect(mapping.rows.filter((r) => r.category === "C")).toHaveLength(8);
 		for (const row of mapping.rows) {
 			expect(row.reason.length).toBeGreaterThan(40);
 			expect(row.action).toBe(
-				row.category === "A" ? "propose-replace-after-approval" : "keep-active",
+				row.category === "A" ? "replace" : "keep-active",
 			);
 			if (row.academy_slug)
 				expect(items.filter((i) => i.slug === row.academy_slug)).toHaveLength(
@@ -134,7 +134,6 @@ describe("Grade 6 Realschule package contract", () => {
 		}
 		expect(cell).not.toHaveProperty("retired_items");
 		for (const i of items) {
-			expect(i).not.toHaveProperty("replaces");
 			expect(old.some((o) => o.id === i.id)).toBe(false);
 		}
 	});

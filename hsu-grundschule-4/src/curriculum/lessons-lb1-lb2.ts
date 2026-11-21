@@ -10,7 +10,6 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 		title: "Fair zusammenleben, wählen & Kinderrechte",
 		shortTitle: "Demokratie & Kinderrechte",
 		icon: "🗳️",
-		hook: "Wie entscheidet eine Klasse gerecht, wenn nicht alle dasselbe wollen – und welche Rechte hat jedes Kind?",
 		foundationNote:
 			"Aus der 1. und 2. Klasse kennst du schon Klassenregeln und einfache Kompromisse im Gesprächskreis.",
 		storyParagraphs: [
@@ -22,16 +21,19 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 			{
 				icon: "🗳️",
 				title: "Die 5 Wahlgrundsätze",
+				lottaPrompt: "Ben möchte wählen, ohne dass ihm jemand über die Schulter schaut. Welche Idee hast du für die Klasse?",
 				text: "Allgemein, frei, gleich, geheim und unmittelbar – so bleibt jede demokratische Wahl fair.",
 			},
 			{
 				icon: "🤝",
 				title: "Rechte & Pflichten",
+				lottaPrompt: "Ich möchte im Klassenrat unbedingt etwas sagen. Mira spricht noch. Was wäre jetzt fair?",
 				text: "Wer das Recht hat, mitzubestimmen und gehört zu werden, hat auch die Pflicht, Regeln einzuhalten und andere zu achten.",
 			},
 			{
 				icon: "🌍",
 				title: "Kinderrechte & Vielfalt",
+				lottaPrompt: "Mia und Amir feiern zu Hause unterschiedliche Feste. Welche Rechte haben die beiden gemeinsam?",
 				text: "Die UN-Kinderrechtskonvention schützt jedes Kind. Verschiedene Feste, Speisen und Bräuche bereichern unser Zusammenleben.",
 			},
 		],
@@ -126,6 +128,9 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 			goals: [
 				{
 					id: "g1-wahl",
+					label: "Geheim wählen",
+					lottaPrompt: "In der 4b wird gewählt. Wie kann jedes Kind abstimmen, ohne dass andere seine Wahl sehen?",
+					controls: ["kabine", "stimmrecht"],
 					title: "Mache die Klassensprecherwahl geheim, allgemein und gleich",
 					check: (s) => s.kabine === "geheim" && s.stimmrecht === "alleGleich",
 					witness: {
@@ -136,6 +141,9 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 				},
 				{
 					id: "g1-kompromiss",
+					label: "Das Fußballfeld teilen",
+					lottaPrompt: "Zwei Gruppen wollen in der Pause kicken. Welcher Plan gibt beiden Zeit auf dem Platz?",
+					controls: ["pausenstreit"],
 					title: "Löse den Pausenstreit mit einem inklusiven Kompromiss",
 					check: (s) => s.pausenstreit === "kompromiss",
 					witness: {
@@ -146,6 +154,9 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 				},
 				{
 					id: "g1-komplett",
+					label: "Fair in der Klasse",
+					lottaPrompt: "Kannst du die Wahl und den Streit um den Platz so regeln, dass jedes Kind mitbestimmt?",
+					controls: ["kabine", "stimmrecht", "pausenstreit"],
 					title: "Verbinde gültige Wahl und fairen Pausenhof-Kompromiss",
 					check: (s) =>
 						s.kabine === "geheim" &&
@@ -193,7 +204,6 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 		title: "Unsere Gemeinde: Rathaus, Ämter & Entscheidungen",
 		shortTitle: "Rathaus & Gemeinde",
 		icon: "🏛️",
-		hook: "Wer sorgt eigentlich dafür, dass aus dem Wasserhahn Trinkwasser kommt, die Feuerwehr ausrückt und ein neuer Spielplatz entsteht?",
 		foundationNote:
 			"Aus der Schule kennst du Klassensprecher und Regeln – in deiner Wohnort-Gemeinde funktioniert Mitbestimmung im Großen ganz ähnlich.",
 		storyParagraphs: [
@@ -205,16 +215,19 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 			{
 				icon: "🚒",
 				title: "Pflichtaufgaben",
+				lottaPrompt: "Ich fülle meine Trinkflasche am Wasserhahn. Wer kümmert sich darum, dass dort sauberes Wasser ankommt?",
 				text: "Muss jede Gemeinde erledigen: Trinkwasser, Abwasser, Feuerwehr, Grundschulgebäude, Straßenbau.",
 			},
 			{
 				icon: "🏊",
 				title: "Freiwillige Aufgaben",
+				lottaPrompt: "Im Ort ist Geld für ein neues Angebot da. Würdest du lieber ein Freibad oder eine Bücherei vorschlagen?",
 				text: "Schöne Zusatzangebote, wenn genug Geld im Haushalt ist: Freibad, Bücherei, Musikschule, Feste.",
 			},
 			{
 				icon: "🪪",
 				title: "Übertragene Aufgaben",
+				lottaPrompt: "Für ihren neuen Ausweis geht Mia ins Rathaus. Da erledigt die Gemeinde einen Auftrag des Staates.",
 				text: "Staatliche Aufgaben im Rathaus: Einwohnermeldeamt (Pässe/Ausweise), Standesamt, Organisation von Wahlen.",
 			},
 		],
@@ -271,7 +284,7 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 		lab: {
 			title: "Rathaus- & Gemeinde-Planer",
 			intro:
-				"Ordne die Aufgaben im Rathaus richtig zu und plane die freie Gemeindewiese so, dass Gemeinwohl und Naturschutz zusammenpassen!",
+				"Ordne die Aufgaben im Rathaus zu. Deinen Spielplatzvorschlag bringst du mit Lotta im Dorfmodell ein.",
 			controls: [
 				{
 					key: "wasserFeuerwehr",
@@ -290,56 +303,59 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 					],
 				},
 				{
-					key: "wiese",
-					label: "Beschluss für die freie Wiese",
+					key: "vorschlag",
+					label: "Vorschlag aus dem Dorfmodell",
 					options: [
-						{ value: "beton", label: "Komplett zubetonieren für Parkplätze" },
-						{ value: "nurRuhe", label: "Betreten für Kinder komplett verbieten" },
-						{
-							value: "ausgleich",
-							label: "Spielbereich + Ruhebank + Schutzhecke für Tiere",
-						},
+						{ value: "offen", label: "Noch offen" },
+						{ value: "schulwiese", label: "Schulwiese" },
+						{ value: "obstanger", label: "Obstanger" },
 					],
 				},
 			],
 			initialState: {
 				wasserFeuerwehr: "freiwillig",
 				buechereiBad: "pflicht",
-				wiese: "beton",
+				vorschlag: "offen",
 			},
 			goals: [
 				{
 					id: "g2-pflicht",
+					label: "Feuerwehr und Trinkwasser",
+					lottaPrompt: "Stell dir einen Ort ohne Feuerwehr vor. Darf die Gemeinde selbst entscheiden, ob sie eine braucht?",
+					controls: ["wasserFeuerwehr"],
 					title: "Ordne Feuerwehr und Trinkwasser als Pflichtaufgabe zu",
 					check: (s) => s.wasserFeuerwehr === "pflicht",
 					witness: {
 						wasserFeuerwehr: "pflicht",
 						buechereiBad: "pflicht",
-						wiese: "beton",
+						vorschlag: "offen",
 					},
 				},
 				{
 					id: "g2-trennung",
+					label: "Bücherei und Freibad",
+					lottaPrompt: "Im Rathaus wird über ein Freibad beraten. Gehört es zur selben Gruppe wie die Feuerwehr?",
+					controls: ["wasserFeuerwehr", "buechereiBad"],
 					title: "Trenne Pflichtaufgaben und freiwillige Aufgaben fehlerfrei",
 					check: (s) =>
 						s.wasserFeuerwehr === "pflicht" && s.buechereiBad === "freiwillig",
 					witness: {
 						wasserFeuerwehr: "pflicht",
 						buechereiBad: "freiwillig",
-						wiese: "beton",
+						vorschlag: "offen",
 					},
 				},
 				{
 					id: "g2-gemeinwohl",
-					title: "Beschließe auf der Gemeindewiese den Ausgleich für alle Gruppen",
-					check: (s) =>
-						s.wasserFeuerwehr === "pflicht" &&
-						s.buechereiBad === "freiwillig" &&
-						s.wiese === "ausgleich",
+					label: "Spielplatz im Dorf",
+					lottaPrompt: "Wo bauen wir den Spielplatz? Stell das Modell auf beide Flächen.",
+					controls: ["vorschlag"],
+					title: "Vergleiche beide Standorte und bringe einen begründeten Vorschlag ein",
+					check: (s) => s.vorschlag === "schulwiese" || s.vorschlag === "obstanger",
 					witness: {
 						wasserFeuerwehr: "pflicht",
 						buechereiBad: "freiwillig",
-						wiese: "ausgleich",
+						vorschlag: "schulwiese",
 					},
 				},
 			],
@@ -354,11 +370,9 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 				{
 					label: "Gemeinderats-Abwägung",
 					value:
-						s.wiese === "ausgleich"
-							? "Gemeinwohl erreicht: Kinder, Senioren & Natur berücksichtigt"
-							: s.wiese === "beton"
-								? "Einseitig: Boden versiegelt, kein Platz für Kinder & Natur"
-								: "Einseitig: Bedürfnisse der Kinder wurden übergangen",
+						s.vorschlag === "schulwiese" ? "Vorschlag für die Schulwiese eingebracht."
+						: s.vorschlag === "obstanger" ? "Vorschlag für den Obstanger eingebracht."
+						: "Welchen Standort empfiehlst du dem Gemeinderat?",
 				},
 			],
 		},
@@ -378,7 +392,6 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 		title: "Medienprofi, Werbetricks & bewusster Einkauf",
 		shortTitle: "Medien & Konsum",
 		icon: "🛒",
-		hook: "Warum liegen teure Süßigkeiten im Supermarkt genau auf deiner Augenhöhe – und stimmt alles, was Werbung verspricht?",
 		foundationNote:
 			"Aus der 1. und 2. Klasse kennst du schon den Unterschied zwischen lebenswichtigen Grundbedürfnissen und bloßen Wünschen beim Taschengeld.",
 		storyParagraphs: [
@@ -390,16 +403,19 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 			{
 				icon: "📱",
 				title: "Funktionen von Medien",
+				lottaPrompt: "Ein Podcast bringt mich zum Lachen. In einem anderen lerne ich Vogelstimmen kennen. Wofür nutzt du Medien?",
 				text: "Information (lernen/wissen), Kommunikation (austauschen) und Unterhaltung (Spaß/Entspannung) – oft auch gemischt!",
 			},
 			{
 				icon: "👀",
 				title: "Regal-Tricks im Markt",
+				lottaPrompt: "Vor meiner Nase steht eine bunte Müslipackung. Wo im Regal könnte ich noch nachsehen?",
 				text: "Sicht-/Griffzone = teure Markenware; Bück- und Streckzone = günstigere Ware; Kasse = Quengelware.",
 			},
 			{
 				icon: "♻️",
 				title: "Nachhaltiger Konsum",
+				lottaPrompt: "Mein Rucksack hat ein Loch. Ob ich ihn mit einem Flicken noch auf die nächste Wanderung mitnehmen kann?",
 				text: "Qualität statt Wegwerfware, Mehrweg statt Einweg und vor jedem Kauf fragen: Wunsch oder echter Bedarf?",
 			},
 		],
@@ -495,18 +511,27 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 			goals: [
 				{
 					id: "g3-bueckzone",
+					label: "Unten im Regal",
+					lottaPrompt: "Ich gehe in die Hocke. Welche Waren entdecke ich hier unten, die mir im Stehen entgangen sind?",
+					controls: ["lupe", "regal"],
 					title: "Prüfe mit eingeschalteter Werbe-Lupe die günstige Bückzone",
 					check: (s) => s.lupe === "an" && s.regal === "bueck",
 					witness: { lupe: "an", regal: "bueck", wahl: "einweg" },
 				},
 				{
 					id: "g3-quengel",
+					label: "An der Kasse",
+					lottaPrompt: "Beim Warten an der Kasse fällt mir eine kleine Packung ins Auge. Was verrät die Werbe-Lupe über ihren Preis?",
+					controls: ["lupe", "regal"],
 					title: "Entlarve mit der Werbe-Lupe die Quengelware an der Kasse",
 					check: (s) => s.lupe === "an" && s.regal === "kasse",
 					witness: { lupe: "an", regal: "kasse", wahl: "einweg" },
 				},
 				{
 					id: "g3-mehrweg",
+					label: "Getränke fürs Picknick",
+					lottaPrompt: "Nach unserem Picknick bleibt Verpackung übrig. Welches Gefäß kann noch einmal benutzt werden?",
+					controls: ["lupe", "wahl"],
 					title: "Wähle das abfallarme Mehrweg-Getränk mit eingeschalteter Lupe",
 					check: (s) => s.lupe === "an" && s.wahl === "mehrweg",
 					witness: { lupe: "an", regal: "sicht", wahl: "mehrweg" },
@@ -549,7 +574,6 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 		title: "Wunderwerk Auge: Aufbau, Sehen & Schutz",
 		shortTitle: "Das Auge",
 		icon: "👁️",
-		hook: "Warum wird der schwarze Punkt in deinem Auge bei Sonnenschein blitzschnell klein – und wieso steht das Bild im Auge eigentlich kopf?",
 		foundationNote:
 			"Aus der 1. und 2. Klasse kennst du unsere fünf Sinne – heute erforschen wir unser wichtigstes Sinnesorgan bis ins Innere!",
 		storyParagraphs: [
@@ -561,16 +585,19 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 			{
 				icon: "🛡️",
 				title: "Natürlicher Schutz",
+				lottaPrompt: "Ein Staubkorn fliegt auf mein Auge zu. Was tut mein Körper, bevor ich überhaupt darüber nachdenke?",
 				text: "Augenhöhle (Stöße), Augenbrauen (Schweiß), Lider & Wimpern (Staub), Tränenflüssigkeit (Reinigung).",
 			},
 			{
 				icon: "☀️",
 				title: "Pupillenreflex",
+				lottaPrompt: "Eben warst du noch draußen, jetzt gehst du ins dunkle Kino. Was macht deine Pupille?",
 				text: "Helles Licht → Pupille klein (Blendungsschutz). Dunkelheit → Pupille groß (mehr Lichteinfall).",
 			},
 			{
 				icon: "🧠",
 				title: "Der Weg des Lichts",
+				lottaPrompt: "Folge dem Licht durch das Auge. Wo entsteht das Bild, das auf dem Kopf steht?",
 				text: "Hornhaut → Pupille → Linse → Glaskörper → Netzhaut (Bild steht kopf) → Sehnerv → Gehirn.",
 			},
 		],
@@ -664,18 +691,27 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 			goals: [
 				{
 					id: "g4-pupille",
+					label: "Die Pupille im Licht",
+					lottaPrompt: "Wechsle im Modell vom hellen Tag zur Dämmerung. Behalte den schwarzen Punkt in der Mitte im Blick.",
+					controls: ["licht"],
 					title: "Beobachte, wie sich die Pupille an einem hellen Sonnentag verengt",
 					check: (s) => s.licht === "sonne",
 					witness: { licht: "sonne", schutz: "ruhig", ansicht: "aussen" },
 				},
 				{
 					id: "g4-schutz",
+					label: "Schutz vor Staub",
+					lottaPrompt: "Erst kommt ein Staubkorn, dann rinnt Schweiß von der Stirn. Was schützt das Auge in jedem Fall?",
+					controls: ["schutz"],
 					title: "Teste Lider, Wimpern und Tränenflüssigkeit bei einem Staubkorn",
 					check: (s) => s.schutz === "staub",
 					witness: { licht: "zimmer", schutz: "staub", ansicht: "aussen" },
 				},
 				{
 					id: "g4-laengsschnitt",
+					label: "Der Weg des Lichts",
+					lottaPrompt: "Von vorn sehen wir die Pupille. Was entdeckst du hinter der Pupille, wenn du zum Längsschnitt wechselst?",
+					controls: ["ansicht"],
 					title: "Verfolge im Längsschnitt den Lichtweg bis zur Netzhaut",
 					check: (s) => s.ansicht === "innen",
 					witness: { licht: "zimmer", schutz: "ruhig", ansicht: "innen" },
@@ -720,7 +756,6 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 		title: "Groß werden: Neues Leben & Beginn der Pubertät",
 		shortTitle: "Entwicklung & Pubertät",
 		icon: "🌱",
-		hook: "Wie wächst ein Baby neun Monate lang geschützt im Bauch der Mutter heran – und was verändert sich auf dem Weg zum Jugendlichen?",
 		foundationNote:
 			"Aus der 1. und 2. Klasse weißt du schon, was dich als Person einzigartig macht und wie gute Pflege und Ernährung deinen Körper stärken.",
 		storyParagraphs: [
@@ -732,16 +767,19 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 			{
 				icon: "🫧",
 				title: "Fruchtblase & Fruchtwasser",
+				lottaPrompt: "Ein Baby kann im Bauch strampeln. Was umgibt es dabei wie ein weiches Kissen?",
 				text: "Umhüllen das Baby wie ein warmes Schutzkissen gegen Stöße und ermöglichen Bewegungen.",
 			},
 			{
 				icon: "🔗",
 				title: "Plazenta & Nabelschnur",
+				lottaPrompt: "Ein ungeborenes Kind isst noch kein Brot. Auf welchem Weg bekommt es Nährstoffe?",
 				text: "Versorgen das ungeborene Kind 9 Monate lang zuverlässig mit Sauerstoff und Nährstoffen.",
 			},
 			{
 				icon: "🌿",
 				title: "Beginnende Pubertät",
+				lottaPrompt: "Mia braucht schon wieder neue Schuhe. Bens alte Schuhe passen noch. Dabei sind die beiden gleich alt!",
 				text: "Jedes Kind entwickelt sich im eigenen Tempo – Körperpflege, Geduld und Respekt helfen dabei.",
 			},
 		],
@@ -835,6 +873,9 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 			goals: [
 				{
 					id: "g5-schutz",
+					label: "Schutz im fünften Monat",
+					lottaPrompt: "Im fünften Monat strampelt das Baby schon. Was federt seine Bewegungen ab? Schau mit der Lupe nach.",
+					controls: ["monat", "fokus"],
 					title: "Untersuche im 5. Monat den Schutz durch Fruchtblase & Fruchtwasser",
 					check: (s) => s.monat === "m5" && s.fokus === "fruchtblase",
 					witness: {
@@ -845,6 +886,9 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 				},
 				{
 					id: "g5-versorgung",
+					label: "Die Nabelschnur",
+					lottaPrompt: "Stell den neunten Monat ein. Kannst du mit der Lupe den Weg vom Baby zur Plazenta verfolgen?",
+					controls: ["monat", "fokus"],
 					title: "Verfolge bis zum 9. Monat die Versorgung über Plazenta & Nabelschnur",
 					check: (s) => s.monat === "m9" && s.fokus === "nabelschnur",
 					witness: {
@@ -855,6 +899,9 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 				},
 				{
 					id: "g5-pubertaet",
+					label: "Größer werden",
+					lottaPrompt: "Was kann sich beim Größerwerden verändern? Such im Modell ein Beispiel für Körper oder Gefühle.",
+					controls: ["lebensphase"],
 					title: "Entdecke die körperlichen und seelischen Veränderungen der Pubertät",
 					check: (s) => s.lebensphase === "pubertaet",
 					witness: {
@@ -903,7 +950,6 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 		title: "Erste Hilfe leisten & den Notruf 112 absetzen",
 		shortTitle: "Erste Hilfe & 112",
 		icon: "🚑",
-		hook: "Ein Kind stürzt auf dem Schulhof – was tust du zuerst, wie versorgst du kleine Wunden und welche fünf W-Fragen braucht die 112?",
 		foundationNote:
 			"Aus der 1. und 2. Klasse weißt du schon, wie wichtig Achtsamkeit für deinen Körper ist – jetzt lernst du, im Notfall ruhig und überlegt zu helfen.",
 		storyParagraphs: [
@@ -915,16 +961,19 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 			{
 				icon: "☎️",
 				title: "Notruf 112 & 5 W-Fragen",
+				lottaPrompt: "Auf dem Schulhof braucht jemand Hilfe. Wie beschreibst du am Telefon den Ort so, dass er gut zu finden ist?",
 				text: "Wo? Was? Wie viele? Welche Art der Verletzung? Warten auf Rückfragen! Europaweit kostenlos.",
 			},
 			{
 				icon: "🩹",
 				title: "Kleine Verletzungen",
+				lottaPrompt: "Beim Fangenspielen hat sich Ben das Knie aufgeschürft. Was aus dem Erste-Hilfe-Kasten passt dazu?",
 				text: "Schürfwunde keimfrei mit Pflaster abdecken; Prellung/Stich am Arm kühlen; Nasenbluten: Kopf nach vorn!",
 			},
 			{
 				icon: "🛟",
 				title: "Schock & Bewusstlosigkeit",
+				lottaPrompt: "Ein Kind antwortet nicht, als du es ansprichst. Wen kannst du sofort zu Hilfe rufen?",
 				text: "Kreislaufschwäche: Beine hochlagern & wärmen. Bewusstlos mit normaler Atmung: stabile Seitenlage + 112!",
 			},
 		],
@@ -1034,6 +1083,9 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 			goals: [
 				{
 					id: "g6-wunde",
+					label: "Das aufgeschürfte Knie",
+					lottaPrompt: "Ein Kind ist hingefallen und hat sich das Knie aufgeschürft. Was hilft ihm jetzt?",
+					controls: ["fall", "hilfe", "telefon"],
 					title: "Versorge die kleine Schürfwunde am Knie fachgerecht ohne 112-Fehlalarm",
 					check: (s) =>
 						s.fall === "knie" &&
@@ -1047,6 +1099,9 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 				},
 				{
 					id: "g6-stich",
+					label: "Der Wespenstich",
+					lottaPrompt: "Eine Wespe hat ein Kind in die Hand gestochen. Schau in den Koffer. Was kannst du für die Hand auswählen?",
+					controls: ["fall", "hilfe", "telefon"],
 					title: "Kühle den Wespenstich an der Hand richtig",
 					check: (s) =>
 						s.fall === "stich" &&
@@ -1060,6 +1115,9 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 				},
 				{
 					id: "g6-notfall",
+					label: "Hilfe im Notfall",
+					lottaPrompt: "Im dritten Fall reagiert die Person nicht und atmet normal. Wie holst du Hilfe?",
+					controls: ["fall", "hilfe", "telefon"],
 					title: "Handle bei Bewusstlosigkeit mit stabiler Seitenlage und Notruf 112",
 					check: (s) =>
 						s.fall === "bewusstlos" &&
@@ -1113,7 +1171,6 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 		title: "Starke Gefühle, eigene Grenzen & Wohlbefinden",
 		shortTitle: "Gefühle & Grenzen",
 		icon: "💛",
-		hook: "Warum darfst du immer ‚Nein!‘ sagen, wenn dir eine Nähe unangenehm ist – und wieso sehen Menschen auf Werbeplakaten oft unnatürlich makellos aus?",
 		foundationNote:
 			"Aus der 1. und 2. Klasse kennst du schon Wut-Stopp-Tricks und weißt, dass Gefühle wichtige Signale deines Körpers sind.",
 		storyParagraphs: [
@@ -1125,16 +1182,19 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 			{
 				icon: "🛑",
 				title: "Mein Körper gehört mir",
+				lottaPrompt: "Mira möchte heute keine Umarmung. Mit welchen Worten könnte sie das sagen?",
 				text: "Du hast das Recht, bei unangenehmer Nähe klar ‚Nein!‘ zu sagen – und respektierst auch jedes ‚Stopp!‘ anderer.",
 			},
 			{
 				icon: "🗣️",
 				title: "Gute vs. schlechte Geheimnisse",
+				lottaPrompt: "Eine Überraschung kann richtig schön sein. Und wenn ein Geheimnis plötzlich Angst macht? Wer hört dir zu?",
 				text: "Macht ein Geheimnis Angst oder Druck, darfst und sollst du es immer einer Vertrauensperson erzählen.",
 			},
 			{
 				icon: "🚲",
 				title: "Echt statt gefiltert",
+				lottaPrompt: "Wie sähe mein Fell wohl mit einem Fotofilter aus? Auf einem Plakat lässt sich so manches verändern.",
 				text: "Werbebilder sind bearbeitet. Bewegung, Freunde, Hobbys und Erholung schenken echtes Wohlbefinden.",
 			},
 		],
@@ -1232,6 +1292,9 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 			goals: [
 				{
 					id: "g7-filter",
+					label: "Das bearbeitete Foto",
+					lottaPrompt: "Schau dir das Werbefoto mit und ohne Filter an. Welche Unterschiede entdeckst du?",
+					controls: ["plakat"],
 					title: "Decke mit dem Foto-Prüfer die künstliche Bildbearbeitung auf",
 					check: (s) => s.plakat === "echt",
 					witness: {
@@ -1242,6 +1305,9 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 				},
 				{
 					id: "g7-grenze",
+					label: "Hilfe holen",
+					lottaPrompt: "Ein Geheimnis macht einem Kind Angst. Wähle eine Reaktion, mit der es Unterstützung bekommt.",
+					controls: ["grenze"],
 					title: "Wähle die starke Schutz-Reaktion bei einem schlechten Geheimnis",
 					check: (s) => s.grenze === "hilfeHolen",
 					witness: {
@@ -1252,6 +1318,9 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 				},
 				{
 					id: "g7-wohlbefinden",
+					label: "Ein guter Nachmittag",
+					lottaPrompt: "Nach einem langen Schultag ist Zeit für dich. Was würde dir heute guttun?",
+					controls: ["plakat", "grenze", "freizeit"],
 					title: "Kombiniere echte Vielfalt, klare Grenzen und aktive Freizeit",
 					check: (s) =>
 						s.plakat === "echt" &&
