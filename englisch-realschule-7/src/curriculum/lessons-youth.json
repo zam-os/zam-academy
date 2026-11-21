@@ -1,0 +1,366 @@
+[
+	{
+		"id": "e7-youth-music-film",
+		"stage": "youth",
+		"title": "Music, film and theatre: What are you into?",
+		"skill": "Über Musik, Filme und Theater sprechen, Gefühle und Meinungen in einfachen Worten ausdrücken",
+		"bindings": ["1.1", "1.2", "3", "5"],
+		"paragraphs": [
+			"Jugendkulturen entstehen oft an einem bestimmten Ort und zu einer bestimmten Zeit. Hip-Hop entstand Anfang der 1970er-Jahre auf Straßenpartys (block parties) in der Bronx, einem Stadtteil von New York; dazu gehören Rap, DJing, Breakdance und Graffiti. Punk entstand Mitte der 1970er-Jahre in den USA und in Großbritannien, zum Beispiel mit den Sex Pistols in London: laut, schnell und gegen die Erwachsenenwelt. Heute hören Jugendliche Musik vor allem über Streaming und teilen Clips, und viele Schulen haben Theater- oder Musical-Gruppen (drama club).",
+			"Für Gefühle und Meinungen brauchst du feste Wendungen: I'm really into … (Ich stehe total auf …), I'm a big fan of …, It makes me feel happy/calm, I can't stand … (Ich kann … nicht ausstehen), In my opinion …, I find it boring/exciting. Begründe deine Meinung immer mit because. Beispiel: „I'm really into hip-hop because the lyrics tell stories about real life. Slow ballads make me feel tired, so I can't stand them.“"
+		],
+		"material": "Podcast · Teen Talk, episode 12\nHost: “Today we ask: What music and films are you into?”\nMaya (13): “I'm a big fan of K-pop. The dances are amazing, and the music makes me feel happy. I learn the choreographies with my friends.”\nOwen (14): “I can't stand pop music. In my opinion, it all sounds the same. I'm into old punk songs because they're fast and loud.”\nLeila (13): “I prefer films to music. My favourite film genre is fantasy because I love dragons and magic. Next month our drama club is doing a musical, and I've got a small part. I'm nervous but excited!”",
+		"materialLabel": "Eigenes englisches Übungsmaterial · Podcast-Ausschnitt",
+		"materialLanguage": "en",
+		"sourceIds": ["lp", "wiki-youth-culture", "wiki-hip-hop", "wiki-punk"],
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "Wer äußert eine negative Meinung?",
+			"answer": "Owen: “I can't stand pop music.”",
+			"wrong": [
+				"Maya: “The music makes me feel happy.”",
+				"Leila: “I love dragons and magic.”"
+			],
+			"explanation": "I can't stand … drückt deutliche Ablehnung aus. Maya und Leila äußern positive Gefühle."
+		},
+		"takeaway": "Hip-Hop: Anfang der 1970er, Bronx (New York). Punk: Mitte der 1970er, USA und Großbritannien. Meinungen und Gefühle: I'm really into …, I can't stand …, It makes me feel …, In my opinion … + because.",
+		"practice": [
+			{
+				"prompt": "I'm a big ___ of K-pop. (Nomen: Anhänger)",
+				"answers": ["fan"],
+				"feedback": "I'm a big fan of …: Ich bin ein großer Fan von …"
+			},
+			{
+				"prompt": "I can't ___ pop music. (Verb: nicht ausstehen können)",
+				"answers": ["stand"],
+				"feedback": "I can't stand …: starke Ablehnung."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Answer the podcast question yourself: What music, films or theatre are you into, and what can't you stand? Write five sentences with at least three phrases from the lesson and because.",
+				"model": "I'm really into rock music because my brother plays the drums in a band. Rock songs make me feel strong and full of energy. I can't stand horror films because they give me bad dreams. In my opinion, comedies are the best films for a cinema night with friends. I'd like to join the drama club next year because I enjoy acting.",
+				"criteria": [
+					"Ich nenne Vorlieben und Abneigungen.",
+					"Ich verwende mindestens drei Wendungen für Gefühle und Meinungen.",
+					"Ich begründe meine Meinungen mit because."
+				]
+			},
+			"2": {
+				"language": "en",
+				"prompt": "Look at the class 7c survey in the workshop. Write a short report (60 to 80 words): What do most students do? What do only a few do? Give your own opinion about the result.",
+				"model": "The survey shows what students in class 7c do in their free time. Most of them listen to music at least once a week. More than half do sport, and about half watch films and series. Only a few go to a theatre or drama club. In my opinion, that's a pity, because acting on a stage can make you more confident. Maybe the school should offer a free drama workshop.",
+				"criteria": [
+					"Ich beschreibe die Grafik mit most, more than half und only a few.",
+					"Ich kennzeichne die Werte als Ergebnis dieser Umfrage.",
+					"Ich gebe eine begründete eigene Meinung."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "youth-survey",
+			"goals": [
+				{
+					"label": "Herkunft des Hip-Hop",
+					"before": "Hip-hop started in the 1970s in",
+					"after": ", New York.",
+					"options": ["the Bronx", "Hollywood", "Liverpool"],
+					"answer": "the Bronx",
+					"explanation": "Hip-Hop entstand auf block parties in der Bronx."
+				},
+				{
+					"label": "Gefühl ausdrücken",
+					"before": "K-pop dances make me",
+					"after": "happy.",
+					"options": ["feel", "feeling", "to feel"],
+					"answer": "feel",
+					"explanation": "make sb feel + Adjektiv: It makes me feel happy (ohne to)."
+				},
+				{
+					"label": "Grafik lesen",
+					"before": "",
+					"after": "students in class 7c go to a drama club.",
+					"options": ["Only a few", "Most", "All"],
+					"answer": "Only a few",
+					"explanation": "Der kürzeste Balken (15 %) zeigt: nur wenige."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": true
+	},
+	{
+		"id": "e7-youth-sport-fashion",
+		"stage": "youth",
+		"title": "Skate parks and second-hand style: Sport and fashion",
+		"skill": "Über Sport- und Modetrends sprechen, Hintergründe nennen und Pro- und Kontra-Meinungen formulieren",
+		"bindings": ["1.1", "2", "3", "5"],
+		"paragraphs": [
+			"Viele Jugendtrends kommen von der Straße. Skateboarding entstand in Kalifornien, als Surfer auch an Land „surfen“ wollten; seit den Spielen von Tokio 2020 (ausgetragen 2021) ist es olympisch. Auch Mode ist Teil der Jugendkultur: Turnschuhe (trainers, AE: sneakers), Hoodies und Caps stammen aus Sport und Streetwear. Gleichzeitig wird second-hand und vintage beliebter, weil billige, schnell wechselnde Mode (fast fashion) viele Ressourcen verbraucht. In vielen Schulen in Großbritannien und Irland tragen Schülerinnen und Schüler Schuluniform, deshalb zeigen sie ihren Stil vor allem in der Freizeit.",
+			"Für eine Diskussion brauchst du Redemittel für Pro und Kontra: On the one hand … on the other hand … (einerseits … andererseits), One advantage is … / One disadvantage is …, I agree with … because …, I don't agree because …. Beispiel: „On the one hand, fast fashion is cheap. On the other hand, the clothes often don't last long. That's why I prefer second-hand shops.“"
+		],
+		"material": "School newspaper · Is second-hand the new cool?\nLast Saturday, the students of class 8a organised a clothes swap in the school hall. Everybody brought clothes they no longer wore and took home something “new”. “I found a vintage denim jacket for free,” says Ruby (13). “It's better for the planet than buying new clothes every month.” Not everybody agrees. “On the one hand, the swap was fun,” says Tom (14). “On the other hand, I like new trainers, and I don't want to wear somebody else's old shoes.” After the swap, the leftover clothes went to a charity shop in town.",
+		"materialLabel": "Eigenes englisches Übungsmaterial · Artikel einer Schülerzeitung",
+		"materialLanguage": "en",
+		"sourceIds": ["lp", "wiki-youth-culture", "wiki-skate-olympics"],
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "Welche Meinung vertritt Tom?",
+			"answer": "The swap was fun, but he prefers new trainers.",
+			"wrong": [
+				"Second-hand clothes are always better for everybody.",
+				"The school should stop all clothes swaps."
+			],
+			"explanation": "Tom nennt beide Seiten: On the one hand … fun, on the other hand … I like new trainers."
+		},
+		"takeaway": "Skateboarding: aus Kalifornien, olympisch seit Tokio 2020. Mode: trainers (BE) = sneakers (AE), second-hand, vintage, fast fashion. Diskutieren: On the one hand … on the other hand …, One advantage/disadvantage is …, I (don't) agree because …",
+		"practice": [
+			{
+				"prompt": "The American English word for trainers is ___. (AE-Wort)",
+				"answers": ["sneakers"],
+				"feedback": "trainers (BE) = sneakers (AE): Turnschuhe."
+			},
+			{
+				"prompt": "On the one hand it's cheap. On the other ___, it doesn't last long. (ein Wort)",
+				"answers": ["hand"],
+				"feedback": "On the one hand … on the other hand …: einerseits … andererseits."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Should your school organise a clothes swap? Write five sentences with one advantage, one disadvantage and your own opinion. Use on the one hand and on the other hand.",
+				"model": "Our school should organise a clothes swap once a year. One advantage is that it is good for the environment because people wear the clothes again. On the one hand, students can get new styles for free. On the other hand, some people don't like wearing old clothes. In my opinion, the swap is a great idea if the clothes are clean and in good condition.",
+				"criteria": [
+					"Ich nenne einen Vorteil und einen Nachteil.",
+					"Ich verwende on the one hand / on the other hand richtig.",
+					"Ich formuliere eine begründete eigene Meinung."
+				]
+			},
+			"2": {
+				"language": "en",
+				"prompt": "Write a comment for the school newspaper's website (70 to 90 words) on the question: “Should skateboarding be a school sport?” Give two reasons and react to one counter-argument.",
+				"model": "I think skateboarding should be a school sport. First, it is an Olympic sport now, so it is not just a hobby any more. Second, it teaches balance, courage and patience. Some people say that skateboarding is too dangerous. I don't agree because students can wear helmets and pads, and a teacher can start with easy tricks. Our town already has a skate park next to the school, so we would not even need new equipment.",
+				"criteria": [
+					"Ich nenne zwei Gründe mit first und second.",
+					"Ich gebe ein Gegenargument wieder und entkräfte es.",
+					"Mein Kommentar passt zu Adressat und Textsorte."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "sentence",
+			"goals": [
+				{
+					"label": "Herkunft",
+					"before": "Skateboarding started in",
+					"after": "when surfers wanted to surf on land.",
+					"options": ["California", "Dublin", "Bavaria"],
+					"answer": "California",
+					"explanation": "Skateboarding entstand unter Surfern in Kalifornien."
+				},
+				{
+					"label": "BE und AE",
+					"before": "British trainers are American",
+					"after": ".",
+					"options": ["sneakers", "boots", "sandals"],
+					"answer": "sneakers",
+					"explanation": "trainers (BE) und sneakers (AE) bezeichnen beide Turnschuhe."
+				},
+				{
+					"label": "Kontra einleiten",
+					"before": "",
+					"after": "fast fashion clothes often don't last long.",
+					"options": ["On the other hand,", "Because of", "So that"],
+					"answer": "On the other hand,",
+					"explanation": "On the other hand leitet die Gegenseite ein."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": true
+	},
+	{
+		"id": "e7-youth-interview",
+		"stage": "youth",
+		"title": "Listening: An interview with a young Irish musician",
+		"skill": "Ein längeres Interview global und im Detail verstehen und die Meinung der Sprechenden erkennen",
+		"bindings": ["1.1", "2", "4", "5"],
+		"paragraphs": [
+			"Bei einem längeren Hörtext wie einem Interview hilft dir eine Hörstrategie. Vor dem Hören liest du die Aufgaben und überlegst, was du schon über das Thema weißt. Beim ersten Hören achtest du auf das Thema und die Personen (listening for gist). Beim zweiten Hören notierst du Stichwörter zu Einzelheiten (listening for detail): Zahlen, Orte, Gründe. Auch Geräusche, Musik und die Stimme helfen: Eine fröhliche, schnelle Stimme zeigt Begeisterung, eine langsame, leise Stimme eher Zweifel.",
+			"Meinungen erkennst du an Signalwörtern: I think …, I believe …, For me …, The best thing is …, What I don't like is …. Beispiel aus dem Interview: „What I don't like is the travelling. Ten hours in a van is really boring.“ Hier sagt die Sprecherin deutlich ihre Meinung. Notiere beim Hören nur Stichwörter, zum Beispiel: travel – boring, ten hours – van."
+		],
+		"material": "Radio interview · Young talent from Galway\nPresenter: “My guest today is Ciara, she's sixteen and she plays the fiddle in a folk band. Ciara, when did you start?”\nCiara: “I started when I was six. My granny played the fiddle, too, so there was always music in our house.”\nPresenter: “Your band played at a festival in Germany last summer. How was that?”\nCiara: “It was brilliant! The audience didn't understand the Irish songs, but they danced anyway. I think music is a language everybody understands.”\nPresenter: “Is there anything you don't like about being in a band?”\nCiara: “What I don't like is the travelling. Ten hours in a van is really boring. But the best thing is meeting people from other countries.”",
+		"materialLabel": "Eigenes englisches Hörskript · Radiointerview",
+		"materialLanguage": "en",
+		"sourceIds": ["lp", "bbc-le"],
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "Welche Meinung äußert Ciara über Musik?",
+			"answer": "She thinks music is a language everybody understands.",
+			"wrong": [
+				"She thinks folk music is boring for young people.",
+				"She thinks the audience in Germany didn't like the band."
+			],
+			"explanation": "Ciara sagt: „I think music is a language everybody understands.“ Das Publikum verstand die Texte nicht, tanzte aber trotzdem."
+		},
+		"takeaway": "Hörstrategie: vorher Aufgaben lesen, erst for gist, dann for detail hören, nur Stichwörter notieren. Meinungen erkennen: I think …, For me …, The best thing is …, What I don't like is …",
+		"practice": [
+			{
+				"prompt": "Ciara started playing the fiddle when she was ___. (Zahl als Wort oder Ziffer)",
+				"answers": ["six", "6"],
+				"feedback": "Sie begann mit sechs Jahren; ihre Großmutter spielte auch Geige."
+			},
+			{
+				"prompt": "What I don't like is the ___. (Nomen aus dem Interview)",
+				"answers": ["travelling", "traveling"],
+				"feedback": "Ciara findet die langen Fahrten im Kleinbus (van) langweilig."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Listen or read again. Make notes in a table with three columns: facts about Ciara, what she likes, what she doesn't like. Then write three full sentences from your notes.",
+				"model": "Facts: 16, from Galway, plays fiddle in a folk band since age 6, festival in Germany. Likes: meeting people from other countries, the dancing audience. Doesn't like: travelling, ten hours in a van. Sentences: Ciara is sixteen and plays the fiddle in a folk band from Galway. She loves meeting people from other countries. She doesn't like travelling because ten hours in a van is boring.",
+				"criteria": [
+					"Meine Notizen bestehen aus Stichwörtern, nicht aus ganzen Sätzen.",
+					"Ich trenne Fakten, Vorlieben und Abneigungen richtig.",
+					"Meine drei Sätze geben die Notizen korrekt wieder."
+				]
+			},
+			"2": {
+				"language": "en",
+				"prompt": "Prepare four interview questions for a young musician or athlete from your area and write the answers you expect. Include one question about likes and one about dislikes.",
+				"model": "1. When did you start playing football? – I started when I was five. 2. What is the best thing about your team? – The best thing is that we are like a family. 3. What don't you like about the sport? – What I don't like is training in the rain in November. 4. What are your plans for next year? – I'm going to try out for the regional team.",
+				"criteria": [
+					"Ich formuliere vier verschiedene, sinnvolle Interviewfragen.",
+					"Eine Frage zielt auf Vorlieben, eine auf Abneigungen.",
+					"Die erwarteten Antworten verwenden Meinungsredemittel."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "dialogue",
+			"goals": [
+				{
+					"label": "Globalverstehen",
+					"before": "The interview is mainly about Ciara's life as a",
+					"after": ".",
+					"options": ["musician", "footballer", "teacher"],
+					"answer": "musician",
+					"explanation": "Es geht um ihr Leben als Geigerin in einer Folkband."
+				},
+				{
+					"label": "Detail",
+					"before": "Last summer her band played at a festival in",
+					"after": ".",
+					"options": ["Germany", "Galway", "America"],
+					"answer": "Germany",
+					"explanation": "Das Festival war in Deutschland; Galway ist ihre Heimat."
+				},
+				{
+					"label": "Meinung",
+					"before": "For Ciara, the best thing is",
+					"after": "people from other countries.",
+					"options": ["meeting", "to meet with", "met"],
+					"answer": "meeting",
+					"explanation": "The best thing is meeting …: Nach is steht hier die -ing-Form."
+				}
+			]
+		},
+		"listening": true,
+		"speaking": false
+	},
+	{
+		"id": "e7-short-talk",
+		"stage": "youth",
+		"title": "Giving a short talk on youth culture",
+		"skill": "Einen short talk mit Stichwortkarten aufbauen, Redemittel einsetzen und Ergebnisse anschaulich präsentieren",
+		"bindings": ["1.1", "1.2", "4", "5"],
+		"paragraphs": [
+			"Ein short talk dauert meist zwei bis drei Minuten. Er hat eine Einleitung, einen gegliederten Hauptteil und einen Schluss. Typische Redemittel (basic phrases for giving a short presentation) sind: Today I'm going to talk about … / First, … Second, … Finally, … / Let me show you this picture. / As you can see, … / To sum up, … / Thank you for listening. Do you have any questions? Auf deine Stichwortkarte (cue card) schreibst du nur Schlüsselwörter, keine ganzen Sätze, damit du frei sprichst und deine Zuhörer anschaust.",
+			"Damit dein Publikum folgen kann, veranschaulichst du deine Ergebnisse: Du gliederst sie in zwei bis drei Punkte, hebst das Wichtigste hervor (eine Farbe, ein großes Wort) und zeigst ein Bild oder eine einfache Grafik. Beispiel für einen Einstieg: „Today I'm going to talk about K-pop. First, I'll tell you where it comes from. Then I'll show you why it's so popular with teenagers.“ Wenn dir ein Wort fehlt, umschreibst du es: „It's a kind of dance group …“."
+		],
+		"material": "Cue card · Short talk: Skateboarding\n• Intro: Today – skateboarding – a sport and a lifestyle\n• 1 Origin: California – surfers – “surfing on the street”\n• 2 Today: Olympic sport since Tokyo 2020 – skate parks in many towns\n• 3 Style: baggy trousers – trainers – caps – own videos online\n• Picture: photo of our local skate park\n• End: To sum up … – my opinion: try it! – questions?",
+		"materialLabel": "Eigenes englisches Übungsmaterial · Stichwortkarte für einen short talk",
+		"materialLanguage": "en",
+		"sourceIds": ["lp", "bbc-le", "wiki-skate-olympics"],
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "Welcher Satz passt an den Schluss eines short talk?",
+			"answer": "To sum up, skateboarding is a sport and a lifestyle. Thank you for listening.",
+			"wrong": [
+				"Today I'm going to talk about skateboarding.",
+				"First, I'll tell you where skateboarding comes from."
+			],
+			"explanation": "To sum up fasst am Schluss zusammen, danach bedankst du dich. Die anderen Sätze gehören in die Einleitung."
+		},
+		"takeaway": "Short talk: Einleitung (Today I'm going to talk about …), Hauptteil (First, Second, Finally; As you can see …), Schluss (To sum up …, Thank you for listening. Any questions?). Stichwortkarte nur mit Schlüsselwörtern; Ergebnisse gliedern, hervorheben, mit Bild zeigen.",
+		"practice": [
+			{
+				"prompt": "Today I'm going to ___ about skateboarding. (Verb für einen Vortrag)",
+				"answers": ["talk"],
+				"feedback": "Today I'm going to talk about …: typischer Einstieg."
+			},
+			{
+				"prompt": "To ___ up, it's a sport and a lifestyle. (Verb: zusammenfassen)",
+				"answers": ["sum"],
+				"feedback": "To sum up …: Zusammenfassung am Schluss."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Use the cue card and write out your short talk on skateboarding (about 100 words) with an introduction, three parts and an ending. Then practise it aloud with only the cue card.",
+				"model": "Today I'm going to talk about skateboarding, a sport and a lifestyle. First, skateboarding comes from California, where surfers wanted to surf on the street. Second, it has been an Olympic sport since the Tokyo 2020 Games, and many towns now have skate parks. Let me show you this photo of our local skate park. As you can see, it's full of teenagers. Third, skaters have their own style: baggy trousers, trainers and caps, and many film their tricks. To sum up, skateboarding is much more than a hobby. My advice: try it! Thank you for listening. Do you have any questions?",
+				"criteria": [
+					"Mein Text hat Einleitung, drei Teile und einen Schluss.",
+					"Ich verwende mindestens fünf Präsentationsredemittel.",
+					"Ich übe den Vortrag frei mit der Stichwortkarte."
+				]
+			},
+			"2": {
+				"language": "en",
+				"prompt": "Choose your own youth culture topic (a music style, a sport, a film, a fashion trend). Write a cue card with only key words and say how you will make your results clear (structure, highlighting, picture).",
+				"model": "Cue card · Short talk: K-pop\n• Intro: K-pop – music from South Korea – fans all over the world\n• 1 Music: catchy songs – Korean + English words\n• 2 Dance: groups – perfect choreographies – dance covers by fans\n• 3 Fans: online communities – concerts – merch\n• Picture: poster with group photo, key word FANS in big red letters\n• End: To sum up – my opinion – questions?\nI will use three numbered parts, write the key word in red and show one picture.",
+				"criteria": [
+					"Meine Stichwortkarte enthält nur Schlüsselwörter.",
+					"Sie hat Einleitung, gegliederten Hauptteil und Schluss.",
+					"Ich nenne mindestens zwei Mittel zur Veranschaulichung."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "sequence",
+			"goals": [
+				{
+					"label": "Einleitung",
+					"before": "",
+					"after": "I'm going to talk about skateboarding.",
+					"options": ["Today", "To sum up,", "Finally"],
+					"answer": "Today",
+					"explanation": "Today I'm going to talk about … eröffnet den Vortrag."
+				},
+				{
+					"label": "Auf ein Bild verweisen",
+					"before": "Let me show you this photo. As you can",
+					"after": ", the park is full.",
+					"options": ["see", "look", "watch"],
+					"answer": "see",
+					"explanation": "As you can see …: feste Wendung, wenn du auf ein Bild zeigst."
+				},
+				{
+					"label": "Schluss",
+					"before": "Thank you for",
+					"after": ". Do you have any questions?",
+					"options": ["listening", "listen", "to listen"],
+					"answer": "listening",
+					"explanation": "Thank you for listening: nach for steht die -ing-Form."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": true
+	}
+]
