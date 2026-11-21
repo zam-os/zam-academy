@@ -1,8 +1,8 @@
 {
 	"schema": 1,
-	"status": "proposal-only",
-	"approved": null,
-	"source": "Vorschlag, nicht freigegeben. Zwei Einzelabrufe der Altzellen fallen im LehrplanPLUS in Jahrgangsstufe 7 und hätten in diesem Paket einen Nachfolger mit wörtlich gleicher Frage und inhaltsgleicher Antwort (2 A). Beide Karten stehen auch im freigegebenen Mapping von englisch-realschule-6 (dort keep-active); welches Paket sie übernimmt, entscheidet Thomas. Alle übrigen Karten bleiben aktiv, fünf davon hat englisch-realschule-6 bereits ersetzt (neighbour_successor). Die Zelle deklariert bis zur Freigabe weder replaces noch retired_items.",
+	"status": "approved",
+	"approved": "2026-11-21",
+	"source": "Thomas explicitly approved both proposed history transfers in the Claude Code chat for Academy PR #180 on 2026-11-21: „Approve both“ (answer to the question „Approve the two A history transfers in the card mapping?“, which also asked him to decide which package takes the two cards that the approved Englisch 6 mapping lists as keep-active). Thus J01 of de-by:realschule-7-englisch-grammatik-tenses moves to e7-past-vs-perfect-check and J05 of de-by:realschule-6-englisch-grammatik-grundlagen moves to e7-must-have-to-check. Englisch 6 transfers neither card (keep-active there), so each history moves to exactly one package. All other old cards stay active; five of them were already replaced by englisch-realschule-6 (neighbour_successor). No retired_items.",
 	"source_repository": "https://github.com/zam-os/zam",
 	"source_commit": "7897672c2caa8435c89bf39eac41e1efc75521c2",
 	"sources": [
@@ -28,9 +28,8 @@
 			"de_by_question": "Welche Zeitform muss im Englischen zwingend gewählt werden, wenn ein Signalwort einen genau abgeschlossenen Zeitpunkt in der Vergangenheit benennt (z. B. 'yesterday', 'in 2018', 'two days ago')?",
 			"category": "A",
 			"academy_slug": "e7-past-vs-perfect-check",
-			"action": "propose-replace-after-approval",
-			"reason": "Derselbe Einzelabruf: Bei einem Signalwort für einen abgeschlossenen Zeitpunkt (yesterday, in 2018, two days ago) steht das Simple Past. Wörtlich gleiche Frage; inhaltsgleiche Antwort (alt: „Das Past Simple (einfache Vergangenheit …)“, neu: „das Simple Past (Past Simple)“) und inhaltsgleiche binäre Auswahl gegen das Present Perfect Simple. Der Kontrast Simple Past / Present Perfect steht im LehrplanPLUS in Jahrgangsstufe 7 (E7 1.2 Grammatik).",
-			"open_question": "Englisch 6 (freigegeben 2026-11-19) führt diese Karte als keep-active. Eine Übertragung hier würde sie einem zweiten Paket zuordnen (AGENTS.md §6); Thomas entscheidet, welches Paket die Historie übernimmt."
+			"action": "replace",
+			"reason": "Derselbe Einzelabruf: Bei einem Signalwort für einen abgeschlossenen Zeitpunkt (yesterday, in 2018, two days ago) steht das Simple Past. Wörtlich gleiche Frage; inhaltsgleiche Antwort (alt: „Das Past Simple (einfache Vergangenheit …)“, neu: „das Simple Past (Past Simple)“) und inhaltsgleiche binäre Auswahl gegen das Present Perfect Simple. Der Kontrast Simple Past / Present Perfect steht im LehrplanPLUS in Jahrgangsstufe 7 (E7 1.2 Grammatik). Freigegeben von Thomas am 2026-11-21 („Approve both“); Englisch 6 überträgt diese Karte nicht (dort keep-active)."
 		},
 		{
 			"de_by_cell": "de-by:realschule-7-englisch-grammatik-tenses",
@@ -141,9 +140,8 @@
 			"de_by_question": "Was drückt das englische Modalverb 'mustn't' im Gegensatz zu 'needn't' aus?",
 			"category": "A",
 			"academy_slug": "e7-must-have-to-check",
-			"action": "propose-replace-after-approval",
-			"reason": "Derselbe Einzelabruf: mustn't drückt im Gegensatz zu needn't ein Verbot aus. Wörtlich gleiche Frage; inhaltsgleiche Antwort (alt: „Ein striktes Verbot (‚Du darfst nicht!‘)“, neu: „ein Verbot (du darfst nicht)“) und binäre Auswahl gegen „keine Notwendigkeit“. mustn't und needn't stehen im LehrplanPLUS in Jahrgangsstufe 7 (E7 1.2 Wortschatz: modal verbs); englisch-realschule-6 hat die Karte deshalb aktiv gelassen.",
-			"open_question": "Englisch 6 (freigegeben 2026-11-19) führt diese Karte als keep-active. Eine Übertragung hier würde sie einem zweiten Paket zuordnen (AGENTS.md §6); Thomas entscheidet, welches Paket die Historie übernimmt."
+			"action": "replace",
+			"reason": "Derselbe Einzelabruf: mustn't drückt im Gegensatz zu needn't ein Verbot aus. Wörtlich gleiche Frage; inhaltsgleiche Antwort (alt: „Ein striktes Verbot (‚Du darfst nicht!‘)“, neu: „ein Verbot (du darfst nicht)“) und binäre Auswahl gegen „keine Notwendigkeit“. mustn't und needn't stehen im LehrplanPLUS in Jahrgangsstufe 7 (E7 1.2 Wortschatz: modal verbs); englisch-realschule-6 hat die Karte deshalb aktiv gelassen. Freigegeben von Thomas am 2026-11-21 („Approve both“); Englisch 6 überträgt diese Karte nicht (dort keep-active)."
 		},
 		{
 			"de_by_cell": "de-by:realschule-6-englisch-grammatik-grundlagen",

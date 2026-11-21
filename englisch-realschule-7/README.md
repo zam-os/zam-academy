@@ -33,10 +33,10 @@ npm run package:zip   # release/ZAM-Academy-Englisch-Realschule-7-offline.zip + 
 ## Validierung mit zam-core und Chrome
 
 ```bash
-ZAM_CORE=file:///path/to/zam-core/dist/index.js node scripts/validate-cell.mjs
+ZAM_CORE=file:///path/to/zam-core/dist/index.js node scripts/validate-migration.mjs
 node scripts/verify-browser.mjs
 ```
 
 Siehe [docs/englisch-realschule-7-coverage.md](../docs/englisch-realschule-7-coverage.md) für Lehrplanabgleich, Abgrenzung zu Klasse 6 und 8 und den Kartenbestand.
 
-Der [Bestandsabgleich](replaces-de-by.json) ist ein Vorschlag (`proposal-only`, `approved: null`). Bis Thomas ihn freigibt, deklariert die Zelle weder `replaces` noch `retired_items`; alle alten Karten behalten ihre Lernhistorie.
+Den [Bestandsabgleich](replaces-de-by.json) hat Thomas am 21.11.2026 freigegeben („Approve both“): Zwei alte Karten (`…E7T…J01`, `…E6G…J05`) übertragen ihre Lernhistorie auf `e7-past-vs-perfect-check` und `e7-must-have-to-check`, die übrigen 14 bleiben aktiv. `scripts/validate-migration.mjs` prüft die Übertragung.

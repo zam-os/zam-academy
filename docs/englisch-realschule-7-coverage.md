@@ -46,28 +46,33 @@ Geprüft wurden die englischen Realschulzellen der Jahrgangsstufen 6 bis 8 in `z
 
 Die Klasse-8-Zelle (`conditional-reported-speech`) behandelt if-clauses Typ 3 und indirekte Rede; beides ist kein Klasse-7-Stoff, sie bleibt bei Englisch 8.
 
-| Altzelle | A (Vorschlag) | B | C keep-active | davon durch Englisch 6 bereits ersetzt |
+| Altzelle | A (freigegeben) | B | C keep-active | davon durch Englisch 6 bereits ersetzt |
 | --- | ---: | ---: | ---: | ---: |
 | `realschule-7-englisch-grammatik-tenses` | 1 | 0 | 7 | davon 3 |
 | `realschule-6-englisch-grammatik-grundlagen` | 1 | 0 | 7 | davon 2 |
 
-- **A, `propose-replace-after-approval`:** `J01` der Klasse-7-Zelle (Signalwort für abgeschlossenen Zeitpunkt → Simple Past) → `e7-past-vs-perfect-check`; `J05` der Klasse-6-Zelle (`mustn't` im Gegensatz zu `needn't` → Verbot) → `e7-must-have-to-check`. Beide Nachfolger stellen wörtlich dieselbe Frage; Antwort und binäre Auswahl sind inhaltsgleich, nicht wortgleich (z. B. alt „Das Past Simple (einfache Vergangenheit …)“, neu „das Simple Past (Past Simple)“). Ein Test und `validate-cell.mjs` prüfen die wörtlich gleiche Frage. Beide Karten führt auch das freigegebene Mapping von Englisch 6, dort als `keep-active`; jede A-Zeile trägt deshalb eine `open_question`.
+- **A, `replace` (freigegeben am 21.11.2026):** `J01` der Klasse-7-Zelle (Signalwort für abgeschlossenen Zeitpunkt → Simple Past) → `e7-past-vs-perfect-check`; `J05` der Klasse-6-Zelle (`mustn't` im Gegensatz zu `needn't` → Verbot) → `e7-must-have-to-check`. Beide Nachfolger stellen wörtlich dieselbe Frage; Antwort und binäre Auswahl sind inhaltsgleich, nicht wortgleich (z. B. alt „Das Past Simple (einfache Vergangenheit …)“, neu „das Simple Past (Past Simple)“). Ein Test und `validate-migration.mjs` prüfen die wörtlich gleiche Frage. Beide Karten führt auch das freigegebene Mapping von Englisch 6, dort als `keep-active`: Englisch 6 überträgt sie nicht, also wandert jede Historie zu genau einem Paket (AGENTS.md §6).
 - **C, `keep-active`:** die mehrteiligen Sammelabrufe (`J02`, `J04`, `J06`, `J08` der Klasse-7-Zelle; `J06` der Klasse-6-Zelle) und Klasse-5/6-Stoff der Klasse-6-Zelle (`J01`, `J02`, `J04`, `J08`). Kein Nachfolger enthält den ganzen Abruf, eine Lernhistorie wird nicht auf mehrere Karten verteilt.
 - **C, `keep-active` mit `neighbour_successor`:** fünf Karten, die der freigegebene Abgleich von Englisch 6 (19.11.2026) bereits ersetzt; dieses Paket übernimmt und deklariert nichts. Es verwendet nur die Aktionen aus AGENTS.md §6. Ein Test liest die Mapping-Datei von Englisch 6 und prüft, dass `neighbour_successor` genau dort steht, wo Englisch 6 ersetzt.
 
-Nach der Standardregel (Entscheidung vom 22.10.2026) erscheint die Zelle zuerst ohne `replaces` und `retired_items`. `scripts/validate-cell.mjs` installiert beide Altzellen mit 16 Karten und 32 Bewertungen, dann die neue Zelle zweimal und alle 135 Karten: Kein alter Karteneintrag und keine Bewertung ändert sich, und eine Wiederholung ist idempotent.
+Thomas hat beide Übertragungen vor dem Merge freigegeben, deshalb erscheinen die `replaces` schon mit der ersten Veröffentlichung (Zellversion `2026.11.2`, ohne `retired_items`). `scripts/validate-migration.mjs` (auch über `validate-cell.mjs`, in CI im Job `cells`) installiert beide Altzellen mit 16 Karten und 32 Bewertungen. Dann installiert es die neue Zelle und prüft:
 
-**Offene Fragen an Thomas:** (1) Freigabe der zwei A-Übertragungen. (2) Beide A-Karten stehen auch im freigegebenen Mapping von Englisch 6 (`keep-active`): `…E7T…J01` aus der Klasse-7-Zelle und `…E6G…J05` aus der Klasse-6-Zelle, die zam-os/zam nicht mehr bündelt. Nach AGENTS.md §6 übernimmt nur ein Paket eine Karte; welches Paket die Historie bekommt, entscheidet Thomas.
+- Die zwei Historien wandern unverändert (4 Bewertungen) auf ihre Nachfolger, und die zwei alten Ids verlassen die aktiven Wiederholungen.
+- Die übrigen 14 Altkarten bleiben unverändert aktiv.
+- Eine zweite Installation ändert nichts.
+- Wer Karten auf einer alten Id und ihrem Nachfolger hält, bei dem verweigert die Installation die automatische Zusammenführung.
+
+**Freigabe:** Thomas hat am 21.11.2026 im Claude-Code-Chat zu PR #180 mit „Approve both“ beide A-Übertragungen freigegeben und damit auch entschieden, dass Englisch 7 die zwei Karten übernimmt, die Englisch 6 aktiv gelassen hatte (`…E7T…J01`; `…E6G…J05` aus der Klasse-6-Zelle, die zam-os/zam nicht mehr bündelt). Das steht in `approved` und `source` von `replaces-de-by.json`.
 
 Die 180 Ids der Zelle (45 Atome, 135 Karten) hat ein ULID-Generator in einem einmaligen Skript außerhalb des Repos gezogen: Zeitstempel in Millisekunden plus 80 Zufallsbits aus `os.urandom`. Innerhalb derselben Millisekunde zählt er den Zufallsteil monoton um 1 hoch (monotone ULID-Fabrik). Deshalb laufen die Ids fortlaufend und teilen ein Präfix.
 
 ## Nachweise
 
 - Paket: `npx tsc --noEmit`, `npm test` (`63 curriculum rows, 0 not found` und Vitest `171 passed`, nach dem Review erneut), `npm run build`, `npm run package:zip` (`verify-release`: ZIP mit identischem HTML und drei Startern).
-- Zelle mit `zam-core@0.54.0`: `node scripts/validate-cell.mjs` und am Stamm `node scripts/validate-cells.mjs` (`135 items`, ok).
+- Zelle mit `zam-core@0.54.0`: `node scripts/validate-migration.mjs` (`2 approved histories move unchanged (4 reviews), 14 legacy cards stay active, reinstallation changes nothing and a collision is rejected`) und am Stamm `node scripts/validate-cells.mjs` (`135 items`, ok) sowie `node scripts/build-catalog.mjs` (Freigabe-Gate).
 - Browser: `node scripts/verify-browser.mjs` mit Headless Chrome über alle 45 Lektionen, beide Stufen, helles und dunkles Thema (180 Ansichten), alle 135 Ziele, Explorer, Kartenebenen, Quiz, Kurzaufgaben, Mustervergleich, Reload-Persistenz, Hinweis „Wo bleibt mein Text?“, Breiten 390 und 720 px, keine Laufzeitfehler, keine Netzwerkanfragen.
 
 ## Offen
 
 - Fachliche Durchsicht durch eine Realschullehrkraft der Jahrgangsstufe 7 und geprüfte Lehrervideos (eigener Schritt).
-- Freigabe oder Ablehnung des Kartenvorschlags durch Thomas.
+- ZAM bündelt die Zelle mit `npm run academy:sync` in zam-os/zam, nachdem die Academy sie veröffentlicht hat (eigener Schritt).

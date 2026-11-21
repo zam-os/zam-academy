@@ -448,14 +448,22 @@ describe("answer handling, progress and routes", () => {
 	});
 });
 
-describe("ZAM content and proposal-only legacy mapping", () => {
-	it("pins identifiers and keeps the mapping a proposal", () => {
+describe("ZAM content and approved legacy mapping", () => {
+	it("pins identifiers and declares exactly the two approved transfers", () => {
 		expect(cell.tile_id).toBe(ZAM_CELL_ID);
 		expect(ZAM_CELL_ID).toBe("zam-academy:englisch-realschule-7");
-		expect(mapping.status).toBe("proposal-only");
-		expect(mapping.approved).toBeNull();
+		// Thomas approved both transfers on 2026-11-21 ("Approve both").
+		expect(mapping.status).toBe("approved");
+		expect(mapping.approved).toBe("2026-11-21");
+		expect(mapping.source).toContain("Approve both");
 		expect(cell).not.toHaveProperty("retired_items");
-		for (const item of items) expect(item).not.toHaveProperty("replaces");
+		const declared = items
+			.filter((item) => "replaces" in item)
+			.map((item) => [item.slug, (item as { replaces?: string[] }).replaces]);
+		expect(declared).toEqual([
+			["e7-past-vs-perfect-check", ["01K4E7T0000000000000000J01"]],
+			["e7-must-have-to-check", ["01K4E6G0000000000000000J05"]],
+		]);
 		expect(
 			cell.atoms.map((atom) => ({
 				id: atom.id,
@@ -469,7 +477,7 @@ describe("ZAM content and proposal-only legacy mapping", () => {
 		for (const id of ids) expect(id).toMatch(/^[0-7][0-9A-HJKMNP-TV-Z]{25}$/);
 	});
 
-	it("has exactly one row per old card and proposes only same-retrieval transfers", () => {
+	it("has exactly one row per old card and transfers only same-retrieval cards", () => {
 		expect(mapping.rows).toHaveLength(legacyItems.length);
 		expect(new Set(mapping.rows.map((row) => row.de_by_id)).size).toBe(
 			legacyItems.length,
@@ -479,18 +487,22 @@ describe("ZAM content and proposal-only legacy mapping", () => {
 			expect(old).toBeDefined();
 			expect(row.de_by_question).toBe(old!.question);
 			expect(["A", "C"]).toContain(row.category);
-			if (row.action === "propose-replace-after-approval") {
+			if (row.action === "replace") {
 				expect(row.category).toBe("A");
 				const successor = items.filter((item) => item.slug === row.academy_slug);
 				expect(successor).toHaveLength(1);
 				expect(successor[0].tier).toBe(old!.tier);
 				expect(successor[0].question).toBe(old!.question);
-				// Englisch 6 lists the card too (keep-active): Thomas decides.
-				expect((row as { open_question?: string }).open_question).toContain(
-					"Thomas",
-				);
+				expect((successor[0] as { replaces?: string[] }).replaces).toEqual([
+					row.de_by_id,
+				]);
+				// Englisch 6 keeps the card active and transfers nothing, so the
+				// history moves to exactly one package (AGENTS.md §6).
+				expect(
+					neighbourMapping.rows.find((entry) => entry.de_by_id === row.de_by_id)
+						?.action,
+				).toBe("keep-active");
 			} else {
-				// AGENTS.md §6 knows only these actions for a proposal.
 				expect(row.action).toBe("keep-active");
 				expect(row.category).toBe("C");
 				expect(row.academy_slug).toBeNull();
@@ -507,7 +519,7 @@ describe("ZAM content and proposal-only legacy mapping", () => {
 			else expect(successor).toBeUndefined();
 		}
 		expect(
-			mapping.rows.filter((row) => row.action === "propose-replace-after-approval"),
+			mapping.rows.filter((row) => row.action === "replace"),
 		).toHaveLength(2);
 		expect(mapping.rows.filter((row) => row.action === "keep-active")).toHaveLength(14);
 		expect(

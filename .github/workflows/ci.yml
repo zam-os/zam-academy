@@ -313,8 +313,8 @@ jobs:
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node englisch-realschule-5/scripts/validate-migration.mjs
       - name: Verify Grade 6 Realschule English enrolment and preserve legacy evidence
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node englisch-realschule-6/scripts/validate-cell.mjs
-      - name: Verify Grade 7 Realschule English enrolment and keep legacy histories untouched (proposal-only mapping)
-        run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node englisch-realschule-7/scripts/validate-cell.mjs
+      - name: Move the two approved Englisch 7 histories and refuse automatic merges
+        run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node englisch-realschule-7/scripts/validate-migration.mjs
       - name: Verify the Grade 4 starter enrolment and recall path
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node mathematik-grundschule-4/scripts/validate-cell.mjs
       - name: Enrol and recall the Grade 4 German draft without touching other histories
