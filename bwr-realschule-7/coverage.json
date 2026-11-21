@@ -1,0 +1,408 @@
+{
+  "schema": 1,
+  "checked": "2026-11-21",
+  "curriculum": "https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/7/bwl-rechnungswesen/wpfg2",
+  "curriculum_sha256": "bd12fb717fe05926e9af88d7ffaefa1f4e071c37fedcfb9bba0689660087f6e8",
+  "curriculum_iiia": "https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/7/bwl-rechnungswesen/wpfg3a",
+  "curriculum_iiia_sha256": "0e5e9e353baed2b6db885130494f2cf4b89300c6c329dbbae12c60e7780055b8",
+  "school_type": "realschule",
+  "grade": 7,
+  "subject": "bwr",
+  "tracks": {
+    "II": "Wahlpflichtfächergruppe II (Lernbereiche 1 bis 5, 36 Lektionen)",
+    "IIIa": "Wahlpflichtfächergruppe IIIa (Lernbereiche 1 bis 4, 25 Lektionen)"
+  },
+  "core_lessons": {
+    "II": 36,
+    "IIIa": 25
+  },
+  "optional_lessons": [],
+  "praxis_note": "Die im Fachlehrplan empfohlene praxisorientierte Maßnahme (z. B. Erkundung eines regionalen Fertigungsunternehmens) sowie eigene Familienbudget-Erhebungen bleiben Aufgaben des Unterrichts vor Ort; die App bereitet Belege, Funktionsbereiche und Unternehmensstrukturen am Modellbetrieb Radwerk Brenner GmbH und Familie Weber vor.",
+  "scope_note": "Beide LehrplanPLUS-Seiten (wpfg2 und wpfg3a) am 21. November 2026 direkt abgerufen. Alle 28 Kompetenzerwartungen für Zweig II und alle 20 Kompetenzerwartungen für Zweig IIIa stehen wortgleich in rows.",
+  "rows": [
+    {
+      "track": "II",
+      "lb": 1,
+      "competence": "stellen die Einnahmen und Ausgaben privater Haushalte gegenüber, um sich einen Überblick über deren finanzielle Situation zu verschaffen. Sie bewerten Ausgabewünsche von Familienmitgliedern kritisch auch im Hinblick auf die Gefahr einer Überschuldung.",
+      "lessons": ["hh-einkommen-budget"],
+      "status": "implemented",
+      "evidence": "Erklärung zu Einkommensquellen, festen/veränderlichen Ausgaben und Überschuldung, Budget-Labor mit Ziel, Haushaltsplan-Rechnung auf zwei Niveaus und Begründungsaufgaben."
+    },
+    {
+      "track": "II",
+      "lb": 1,
+      "competence": "hinterfragen eigene Konsumgewohnheiten und leiten Konsequenzen für einen verantwortungsbewussten Umgang mit dem Einkommen ab.",
+      "lessons": ["hh-konsum"],
+      "status": "implemented",
+      "evidence": "Erklärung der fünf Konsumkriterien (Notwendigkeit, Kosten, Qualität, Prestige, Nachhaltigkeit), Fallwerkstatt zu Kaufmotiven und zweistufige Urteilsaufgaben."
+    },
+    {
+      "track": "II",
+      "lb": 1,
+      "competence": "analysieren und überprüfen Belege eines Familienhaushalts, um die für den Verbraucher wesentlichen Informationen, z. B. im Hinblick auf die Bezahlung, zu entnehmen.",
+      "lessons": ["hh-belege"],
+      "status": "implemented",
+      "evidence": "Unterscheidung von Kassenbon, Quittung, Rechnung und Kontoauszug, Fallwerkstatt zur Belegwahl, Kassenbon-/Rechnungs-Aufgaben auf zwei Niveaus."
+    },
+    {
+      "track": "II",
+      "lb": 1,
+      "competence": "wählen geeignete Zahlungsmöglichkeiten für familientypische Situationen aus, indem sie die jeweiligen Vor- und Nachteile abwägen und sie aus der Sicht des kritischen Verbrauchers bewerten.",
+      "lessons": ["hh-zahlungsverkehr"],
+      "status": "implemented",
+      "evidence": "Vergleich von Bargeld, Überweisung, Dauerauftrag, Lastschrift, Debitkarte, Kreditkarte und Online-Bezahldiensten nach Praktikabilität, Gebühren, Sicherheit und Datenschutz."
+    },
+    {
+      "track": "II",
+      "lb": 1,
+      "competence": "wenden die Prozentrechnung insbesondere in ökonomischen Kontexten an und überprüfen die Richtigkeit der Ergebnisse durch Abschätzen.",
+      "lessons": ["hh-prozent-grundlagen", "hh-prozent-aenderung"],
+      "status": "implemented",
+      "evidence": "Grundwert, Prozentwert und Prozentsatz sowie vermehrter und verminderter Grundwert mit Rechengeneratoren auf beiden Niveaus und Überschlagskontrolle."
+    },
+    {
+      "track": "II",
+      "lb": 1,
+      "competence": "entnehmen und bewerten die in Infografiken dargestellten Informationen, indem sie die Grafiken anhand typischer Kriterien untersuchen und Diagrammarten unterscheiden.",
+      "lessons": ["hh-infografiken"],
+      "status": "implemented",
+      "evidence": "Qualitätskriterien und Diagrammarten, interaktives Achsenverzerrungs-Labor mit SVG-Säulen, Fallwerkstatt und Aufgaben zur Diagrammkritik."
+    },
+    {
+      "track": "II",
+      "lb": 2,
+      "competence": "ordnen die Unternehmen der regionalen Wirtschaft in gängige Kategorien (z. B. Branche, Unternehmensgröße) ein, um einen Überblick über die lokale Wirtschaftsstruktur zu erhalten.",
+      "lessons": ["un-wirtschaftsstruktur"],
+      "status": "supported",
+      "evidence": "Wirtschaftssektoren, Fertigungs- vs. Dienstleistungsunternehmen und Unternehmensgrößen mit Einordnungs-Werkstatt; die konkrete Erkundung der eigenen Region bleibt Unterrichtsarbeit."
+    },
+    {
+      "track": "II",
+      "lb": 2,
+      "competence": "formulieren und begründen unterschiedliche Unternehmensziele. Sie berücksichtigen dabei Aspekte des nachhaltigen Wirtschaftens.",
+      "lessons": ["un-ziele-nachhaltigkeit"],
+      "status": "implemented",
+      "evidence": "Ökonomische, soziale und ökologische Ziele, Zielkonflikte und Zielharmonie sowie EMAS/ISO-Zertifizierung mit Fallwerkstatt und Begründungen."
+    },
+    {
+      "track": "II",
+      "lb": 2,
+      "competence": "stellen Chancen, Risiken und Formalitäten einer Unternehmensgründung auf Grundlage einer Geschäftsidee dar. Sie charakterisieren in diesem Zusammenhang die betrieblichen Produktionsfaktoren. Für verschiedene Unternehmen begründen sie die Wahl von Standort und Rechtsform.",
+      "lessons": ["un-produktionsfaktoren", "un-standort", "un-rechtsformen", "un-gruendung-firma"],
+      "status": "implemented",
+      "evidence": "Vier eigene Lektionen zu Produktionsfaktoren, harten/weichen Standortfaktoren (inkl. Labor und Rechenaufgaben), Einzelunternehmung vs. GmbH sowie Businessplan, Handelsregister und Firma."
+    },
+    {
+      "track": "II",
+      "lb": 2,
+      "competence": "systematisieren Gemeinsamkeiten im betrieblichen Fertigungsprozess verschiedener Fertigungsunternehmen und stellen die Funktionsbereiche in einem Modell dar.",
+      "lessons": ["un-funktionsbereiche"],
+      "status": "supported",
+      "evidence": "Modell aus Materialwirtschaft, Produktion und Absatz samt Leitungs- und Verwaltungsfunktionen; die Betriebserkundung vor Ort ergänzt das Modell im Unterricht."
+    },
+    {
+      "track": "II",
+      "lb": 3,
+      "competence": "erstellen auf der Grundlage von Inventurverzeichnissen ein Inventar.",
+      "lessons": ["gb-inventur-inventar"],
+      "status": "implemented",
+      "evidence": "Körperliche Inventur vs. Buchinventur, Gliederung des Inventars (A Vermögen, B Schulden, C Reinvermögen) und zweistufige Inventar-Rechenaufgaben."
+    },
+    {
+      "track": "II",
+      "lb": 3,
+      "competence": "stellen die Vermögenswerte und Vermögensquellen am Beispiel eines Unternehmens gegenüber und begründen dabei die Gültigkeit der Bilanzgleichung.",
+      "lessons": ["gb-bilanz"],
+      "status": "implemented",
+      "evidence": "Aufbau der Bilanz (Aktiva/Passiva), interaktive Bilanzwaage als Labor, Bilanzgleichungs-Aufgaben und Begründung zur Summengleichheit."
+    },
+    {
+      "track": "II",
+      "lb": 3,
+      "competence": "erfassen Veränderungen in der Bilanz aufgrund von Geschäftsvorfällen. Dabei unterscheiden sie bestandsverändernde Vorgänge und grenzen diese von erfolgswirksamen Vorgängen ab.",
+      "lessons": ["gb-bilanzveraenderungen", "gb-bestand-vs-erfolg"],
+      "status": "implemented",
+      "evidence": "Bilanzveränderungs-Simulator als Labor mit Rechenaufgaben für alle vier Veränderungsarten sowie eigene Lektion zur Trennung von Bestand und Erfolg."
+    },
+    {
+      "track": "II",
+      "lb": 3,
+      "competence": "bilden ausgehend von Belegen die Buchungssätze für bestandsverändernde Geschäftsvorfälle und erfassen sie in Konten. Dabei berücksichtigen die Schülerinnen und Schüler die Grundsätze ordnungsmäßiger Buchführung.",
+      "lessons": ["gb-bestandskonten", "gb-buchungssatz"],
+      "status": "implemented",
+      "evidence": "Aktiv- und Passivkonten (alle 14 ISB-Konten), T-Konten-Abschlussrechner, Vier-Schritte-Buchungsregel „Soll an Haben“, GoB und einfache/zusammengesetzte Buchungsaufgaben."
+    },
+    {
+      "track": "II",
+      "lb": 3,
+      "competence": "formulieren Geschäftsvorfälle auf der Grundlage von Buchungssätzen und Eintragungen in Konten und überprüfen die Übereinstimmung von Buchung und Beleg.",
+      "lessons": ["gb-geschaeftsvorfaelle"],
+      "status": "implemented",
+      "evidence": "Rückübersetzung von Buchungssätzen in Geschäftsvorfälle, Beleg-Buchungs-Prüfwerkstatt und Fehlerkorrekturaufgaben auf zwei Niveaus."
+    },
+    {
+      "track": "II",
+      "lb": 3,
+      "competence": "berechnen an einfachen Zahlenbeispielen jeweils Warenwert, Umsatzsteuer und Rechnungsbetrag.",
+      "lessons": ["gb-umsatzsteuer-rechnen"],
+      "status": "implemented",
+      "evidence": "Steuer-Labor (19 % / 7 %), Netto-zu-Brutto- sowie Brutto-zu-Netto-Rechengenerator auf zwei Niveaus."
+    },
+    {
+      "track": "II",
+      "lb": 3,
+      "competence": "erfassen Ein- und Verkaufsvorgänge unter Berücksichtigung der Umsatzsteuer buchhalterisch.",
+      "lessons": ["gb-umsatzsteuer-buchen"],
+      "status": "implemented",
+      "evidence": "Konten 2600 VORST und 4800 UST, getrennte Buchung beim Anlagenkauf (Niveau 1) und Fertigerzeugnisverkauf (Niveau 2)."
+    },
+    {
+      "track": "II",
+      "lb": 4,
+      "competence": "stellen ausgehend von einem Unternehmen den betrieblichen Produktionsprozess in einem Modell dar und ermitteln am konkreten Beispiel aus der Gegenüberstellung von Aufwendungen und Erträgen den Periodenerfolg.",
+      "lessons": ["pp-produktionsprozess"],
+      "status": "implemented",
+      "evidence": "Modell des Produktionsprozesses, Erfolgskonten ohne Anfangsbestand, Periodenerfolgsrechner (mit Bestandsvorgang als Prüffalle auf Niveau 2)."
+    },
+    {
+      "track": "II",
+      "lb": 4,
+      "competence": "treffen Beschaffungsentscheidungen, indem sie bei verschiedenen Werkstoffangeboten den günstigsten Preis ermitteln. Bei dieser Entscheidung berücksichtigen sie auch nichtmonetäre Faktoren (z. B. Qualität, Lieferzeit).",
+      "lessons": ["pp-werkstoffe", "pp-angebotsvergleich"],
+      "status": "implemented",
+      "evidence": "Abgrenzung der vier Werkstoffarten, Angebotsvergleich-Labor mit Sofortrabatt, rechnerischer Angebotsvergleich und qualitative Abwägung von Qualität und Lieferzeit."
+    },
+    {
+      "track": "II",
+      "lb": 4,
+      "competence": "erfassen Einkaufsvorgänge für Werkstoffe buchhalterisch. Die dafür relevanten Informationen (z. B. Warenwert, Werkstoffart) entnehmen sie Belegen oder Geschäftsvorfällen.",
+      "lessons": ["pp-einkauf-werkstoffe"],
+      "status": "implemented",
+      "evidence": "Aufwandsorientierte Buchung auf 6000 AWR, 6010 AWF, 6020 AWH, 6030 AWB plus 2600 VORST inkl. Direktabzug von Sofortrabatten auf zwei Niveaus."
+    },
+    {
+      "track": "II",
+      "lb": 4,
+      "competence": "vervollständigen Verkaufsbelege für Fertigerzeugnisse auf der Grundlage von Vordrucken. Sie erfassen den Verkauf von Fertigerzeugnissen buchhalterisch. Die dafür relevanten Informationen (z. B. Warenwert, Menge) entnehmen sie Belegen oder Geschäftsvorfällen.",
+      "lessons": ["pp-verkauf-fe", "pp-verkaufsbeleg"],
+      "status": "implemented",
+      "evidence": "Absatzbuchungen auf 5000 UEFE + 4800 UST aus Menge und Stückpreis (auch mit Sofortrabatt) sowie Lektion zum Vervollständigen und Prüfen von Verkaufsbelegen auf Vordrucken."
+    },
+    {
+      "track": "II",
+      "lb": 5,
+      "competence": "eröffnen die Geschäftsbuchführung, indem sie die Anfangsbestände in die aktiven und passiven Bestandskonten übernehmen.",
+      "lessons": ["sg-eroeffnung"],
+      "status": "implemented",
+      "evidence": "Eröffnung der Aktiv- (Soll) und Passivkonten (Haben) aus der Eröffnungsbilanz sowie klare Abgrenzung zu Erfolgskonten ohne Anfangsbestand."
+    },
+    {
+      "track": "II",
+      "lb": 5,
+      "competence": "erfassen laufende Buchungen im Grund- und Hauptbuch.",
+      "lessons": ["sg-grund-hauptbuch"],
+      "status": "implemented",
+      "evidence": "Zusammenspiel von Grundbuch und Hauptbuch mit Gegenkonten, Einordnungs-Werkstatt und Buchungs- sowie Kontenstandaufgaben."
+    },
+    {
+      "track": "II",
+      "lb": 5,
+      "competence": "schließen die Aufwands- und Ertragskonten auf das Konto Gewinn und Verlust formal richtig ab. Dabei begründen sie, welche Art von Erfolg das Unternehmen in der betrachteten Periode erzielt hat.",
+      "lessons": ["sg-guv-abschluss"],
+      "status": "implemented",
+      "evidence": "Abschluss von 6000–6030 und 5000 UEFE auf 8020 GUV, Deutung von Reingewinn und Reinverlust sowie Buchungsaufgaben auf zwei Niveaus."
+    },
+    {
+      "track": "II",
+      "lb": 5,
+      "competence": "führen die Erfolgsrechnung und die Bestandsrechnung buchhalterisch im Konto Eigenkapital zusammen.",
+      "lessons": ["sg-eigenkapital-nahtstelle"],
+      "status": "implemented",
+      "evidence": "Abschlussfluss-Labor (Erfolgskonten → GUV → 3000 EK → SBK), Gewinn- und Verlustabschlussaufgaben auf 3000 EK."
+    },
+    {
+      "track": "II",
+      "lb": 5,
+      "competence": "stellen die Vermögenslage des Unternehmens dar, indem sie die Bestandskonten im Hauptbuch abschließen.",
+      "lessons": ["sg-sbk-schlussbilanz"],
+      "status": "implemented",
+      "evidence": "Abschluss der Aktiv- und Passivkonten an 8010 SBK sowie Gegenüberstellung von SBK und HGB-Schlussbilanz."
+    },
+    {
+      "track": "II",
+      "lb": 5,
+      "competence": "interpretieren die betriebswirtschaftliche Entwicklung, indem sie die Eröffnungs- und Schlussbilanz miteinander vergleichen.",
+      "lessons": ["sg-bilanzvergleich"],
+      "status": "implemented",
+      "evidence": "Analyse von Eigenkapitalveränderung, Eigenkapitalquote, Fremdkapital und Liquidität im zweistufigen Bilanzvergleich."
+    },
+    {
+      "track": "II",
+      "lb": 5,
+      "competence": "ermitteln auf Grundlage der Werte von Ist- und Sollrechnung Inventurdifferenzen und stellen dafür mögliche Ursachen dar.",
+      "lessons": ["sg-inventurdifferenzen"],
+      "status": "implemented",
+      "evidence": "Berechnung mengen- und wertmäßiger Inventurdifferenzen (Ist minus Soll) und Fallwerkstatt sowie Begründungen zu Ursachen."
+    },
+    {
+      "track": "IIIa",
+      "lb": 1,
+      "competence": "stellen die Einnahmen und Ausgaben privater Haushalte gegenüber, um sich einen Überblick über deren finanzielle Situation zu verschaffen.",
+      "lessons": ["hh-einkommen-budget"],
+      "status": "implemented",
+      "evidence": "Haushaltsplan von Familie Weber, interaktives Budget-Labor und Aufgaben auf zwei Niveaus."
+    },
+    {
+      "track": "IIIa",
+      "lb": 1,
+      "competence": "hinterfragen eigene Konsumgewohnheiten kritisch und leiten Konsequenzen für einen verantwortungsbewussten Umgang mit dem Einkommen ab.",
+      "lessons": ["hh-konsum"],
+      "status": "implemented",
+      "evidence": "Konsumkriterien (Notwendigkeit, Prestige, Kosten, Qualität, Nachhaltigkeit) und konkrete Verhaltensregeln."
+    },
+    {
+      "track": "IIIa",
+      "lb": 1,
+      "competence": "analysieren und überprüfen Belege eines Familienhaushalts, um die für den Verbraucher wesentlichen Informationen, z. B. im Hinblick auf die Bezahlung, zu entnehmen.",
+      "lessons": ["hh-belege"],
+      "status": "implemented",
+      "evidence": "Analyse von Kassenbon, Quittung, Rechnung und Kontoauszug mit Kontrollrechnungen."
+    },
+    {
+      "track": "IIIa",
+      "lb": 1,
+      "competence": "wählen geeignete Zahlungsmöglichkeiten für familientypische Situationen aus, indem sie die jeweiligen Vor- und Nachteile abwägen und sie aus der Sicht des kritischen Verbrauchers bewerten.",
+      "lessons": ["hh-zahlungsverkehr"],
+      "status": "implemented",
+      "evidence": "Vor- und Nachteile moderner Zahlungsarten nach Praktikabilität, Gebühren, Sicherheit und Datenschutz."
+    },
+    {
+      "track": "IIIa",
+      "lb": 1,
+      "competence": "wenden die Prozentrechnung insbesondere in ökonomischen Kontexten an und überprüfen die Richtigkeit der Ergebnisse durch Abschätzen.",
+      "lessons": ["hh-prozent-grundlagen"],
+      "status": "implemented",
+      "evidence": "Grundwert, Prozentwert und Prozentsatz in Haushaltskontexten mit Überschlagsprüfung."
+    },
+    {
+      "track": "IIIa",
+      "lb": 2,
+      "competence": "ordnen die Unternehmen der regionalen Wirtschaft in gängige Kategorien (z. B. Branche, Unternehmensgröße) ein, um einen Überblick über die lokale Wirtschaftsstruktur zu erhalten.",
+      "lessons": ["un-wirtschaftsstruktur"],
+      "status": "supported",
+      "evidence": "Wirtschaftsbereiche, Branchen und Größenklassen; reale Erkundung vor Ort ergänzt die App im Unterricht."
+    },
+    {
+      "track": "IIIa",
+      "lb": 2,
+      "competence": "formulieren und begründen unterschiedliche Unternehmensziele. Sie berücksichtigen dabei Aspekte des nachhaltigen Wirtschaftens.",
+      "lessons": ["un-ziele-nachhaltigkeit"],
+      "status": "implemented",
+      "evidence": "Ökonomische, soziale und ökologische Ziele sowie Zielkonflikte und Zielharmonie."
+    },
+    {
+      "track": "IIIa",
+      "lb": 2,
+      "competence": "stellen ausgewählte Aspekte bei der Unternehmensgründung dar. Für verschiedene Unternehmen begründen sie die Wahl von Standort und Rechtsform. Sie charakterisieren in diesem Zusammenhang die betrieblichen Produktionsfaktoren.",
+      "lessons": ["un-produktionsfaktoren", "un-standort", "un-rechtsformen"],
+      "status": "implemented",
+      "evidence": "Produktionsfaktoren, Standortbewertung (inkl. Labor) sowie Einzelunternehmung vs. GmbH mit Gründungsaspekten."
+    },
+    {
+      "track": "IIIa",
+      "lb": 2,
+      "competence": "systematisieren Gemeinsamkeiten im betrieblichen Fertigungsprozess verschiedener Fertigungsunternehmen und stellen die Funktionsbereiche in einem Modell dar.",
+      "lessons": ["un-funktionsbereiche"],
+      "status": "supported",
+      "evidence": "Grundmodell der Funktionsbereiche Beschaffung, Produktion, Absatz und Verwaltung; reale Betriebserkundung im Unterricht."
+    },
+    {
+      "track": "IIIa",
+      "lb": 3,
+      "competence": "erstellen auf der Grundlage von Inventurverzeichnissen ein Inventar.",
+      "lessons": ["gb-inventur-inventar"],
+      "status": "implemented",
+      "evidence": "Inventurarten, Aufbau des Inventars und Berechnungsaufgaben."
+    },
+    {
+      "track": "IIIa",
+      "lb": 3,
+      "competence": "stellen die Vermögenswerte und Vermögensquellen am Beispiel eines Unternehmens gegenüber und begründen dabei die Gültigkeit der Bilanzgleichung.",
+      "lessons": ["gb-bilanz"],
+      "status": "implemented",
+      "evidence": "Bilanzstruktur (Aktiva/Passiva), Bilanzwaage als Labor und Aufgaben zur Bilanzgleichung."
+    },
+    {
+      "track": "IIIa",
+      "lb": 3,
+      "competence": "erfassen Veränderungen in der Bilanz aufgrund von Geschäftsvorfällen. Dabei unterscheiden sie bestandsverändernde Vorgänge und grenzen diese von erfolgswirksamen Vorgängen ab.",
+      "lessons": ["gb-bilanzveraenderungen", "gb-bestand-vs-erfolg"],
+      "status": "implemented",
+      "evidence": "Alle vier Bilanzveränderungen im Simulator und Aufgaben sowie Abgrenzung zu erfolgswirksamen Vorgängen."
+    },
+    {
+      "track": "IIIa",
+      "lb": 3,
+      "competence": "bilden ausgehend von Belegen die Buchungssätze für bestandsverändernde Geschäftsvorfälle und erfassen sie in Konten. Dabei berücksichtigen die Schülerinnen und Schüler die Grundsätze ordnungsmäßiger Buchführung.",
+      "lessons": ["gb-bestandskonten", "gb-buchungssatz"],
+      "status": "implemented",
+      "evidence": "Aktive und passive Bestandskonten, Regel „Soll an Haben“, GoB und Buchungstraining."
+    },
+    {
+      "track": "IIIa",
+      "lb": 3,
+      "competence": "formulieren Geschäftsvorfälle auf der Grundlage von Buchungssätzen und Eintragungen in Konten und überprüfen die Übereinstimmung von Buchung und Beleg.",
+      "lessons": ["gb-geschaeftsvorfaelle"],
+      "status": "implemented",
+      "evidence": "Rückübersetzung in Geschäftsvorfälle sowie Belegabgleich und Fehlerkorrektur."
+    },
+    {
+      "track": "IIIa",
+      "lb": 3,
+      "competence": "berechnen an einfachen Zahlenbeispielen jeweils Warenwert, Umsatzsteuer und Rechnungsbetrag.",
+      "lessons": ["gb-umsatzsteuer-rechnen"],
+      "status": "implemented",
+      "evidence": "Umsatzsteuer-Labor (19 % / 7 %) und Vorwärts-/Rückwärtsrechnungen."
+    },
+    {
+      "track": "IIIa",
+      "lb": 3,
+      "competence": "erfassen Ein- und Verkaufsvorgänge unter Berücksichtigung der Umsatzsteuer buchhalterisch.",
+      "lessons": ["gb-umsatzsteuer-buchen"],
+      "status": "implemented",
+      "evidence": "Buchung mit 2600 VORST beim Einkauf und 4800 UST beim Verkauf."
+    },
+    {
+      "track": "IIIa",
+      "lb": 4,
+      "competence": "stellen ausgehend von einem Unternehmen den betrieblichen Produktionsprozess in einem Modell dar und ermitteln am konkreten Beispiel aus der Gegenüberstellung von Aufwendungen und Erträgen den Periodenerfolg.",
+      "lessons": ["pp-produktionsprozess"],
+      "status": "implemented",
+      "evidence": "Produktionsprozess-Modell, Erfolgskonten und Periodenerfolgs-Aufgaben."
+    },
+    {
+      "track": "IIIa",
+      "lb": 4,
+      "competence": "treffen Beschaffungsentscheidungen, indem sie bei verschiedenen Werkstoffangeboten den günstigsten Preis ermitteln. Bei dieser Entscheidung berücksichtigen sie auch nichtmonetäre Faktoren (z. B. Qualität, Lieferzeit).",
+      "lessons": ["pp-werkstoffe", "pp-angebotsvergleich"],
+      "status": "implemented",
+      "evidence": "Werkstoffarten, Angebotsvergleich-Labor mit Sofortrabatt sowie nichtmonetäre Bewertungsaufgaben."
+    },
+    {
+      "track": "IIIa",
+      "lb": 4,
+      "competence": "erfassen Einkaufsvorgänge für Werkstoffe buchhalterisch. Die dafür relevanten Informationen (z. B. Warenwert, Werkstoffart) entnehmen sie Belegen oder Geschäftsvorfällen.",
+      "lessons": ["pp-einkauf-werkstoffe"],
+      "status": "implemented",
+      "evidence": "Aufwandsbuchungen 6000–6030 + 2600 VORST mit Direktabzug von Sofortrabatten."
+    },
+    {
+      "track": "IIIa",
+      "lb": 4,
+      "competence": "erfassen den Verkauf von Fertigerzeugnissen buchhalterisch. Die dafür relevanten Informationen (z. B. Warenwert, Menge) entnehmen sie Belegen oder Geschäftsvorfällen.",
+      "lessons": ["pp-verkauf-fe"],
+      "status": "implemented",
+      "evidence": "Absatzbuchungen auf 5000 UEFE und 4800 UST aus Warenwert und Menge (auch mit Sofortrabatt)."
+    }
+  ]
+}
