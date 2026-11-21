@@ -12,7 +12,7 @@ export const absolutism: Lesson[] = [
     intro:
       "Ein Streit um Glaubensrechte in Prag löste einen dreißigjährigen Flächenbrand aus, der ganze Landstriche in Mitteleuropa und Bayern verwüstete.",
     paragraphs: [
-      "Der Augsburger Religionsfriede von 1555 hatte den Konflikt nur vertagt: Reformierte blieben ausgeschlossen, und über Kirchengüter stritten Katholiken und Protestanten immer erbitterter. Katholische und evangelische Reichsstände schlossen getrennte Militärbündnisse – die Union und die Liga unter Führung des bayerischen Herzogs Maximilian I. Als böhmische Protestanten 1618 kaiserliche Gesandte aus einem Fenster der Prager Burg warfen (Prager Fenstersturz), eskalierte die Lage zum Krieg.",
+      "Der Augsburger Religionsfriede von 1555 hatte den Konflikt nur vertagt: Reformierte blieben ausgeschlossen, und über Kirchengüter stritten Katholiken und Protestanten immer erbitterter. Evangelische und katholische Reichsstände schlossen getrennte Militärbündnisse – die protestantische Union (1608, unter Führung des pfälzischen Kurfürsten) und die katholische Liga (1609, unter Führung des bayerischen Herzogs Maximilian I.). Als böhmische Protestanten 1618 kaiserliche Gesandte aus einem Fenster der Prager Burg warfen (Prager Fenstersturz), eskalierte die Lage zum Krieg.",
       "Was als konfessioneller Aufstand begann, weitete sich bald zu einem europäischen Machtkampf aus. Erst griff Dänemark ein, dann kämpften Schweden unter König Gustav Adolf und schließlich sogar das katholische Frankreich an der Seite der Protestanten gegen die Habsburger. Es ging längst nicht mehr nur um Religion, sondern um Vormacht in Europa und die Rechte der Reichsfürsten gegenüber dem Kaiser.",
       "Die Bevölkerung trug die furchtbarste Last der frühneuzeitlichen Kriegsführung. Söldnerheere lebten oft nach dem Grundsatz „Der Krieg ernährt den Krieg“, plünderten Dörfer, pressten Städte aus und schleppten Hunger und Pest ein. Auch Bayern und Franken wurden ab 1632 schwer getroffen: Schwedische wie kaiserliche Truppen verwüsteten Orte etwa um Landsberg, Landshut, Ingolstadt oder Nürnberg; mancherorts überlebte nur ein Drittel oder die Hälfte der Menschen.",
     ],
@@ -39,8 +39,8 @@ export const absolutism: Lesson[] = [
           "Ein Streit um Glaubens- und Ständerechte löst den großen Krieg aus.",
         ],
         [
-          "1620 n. Chr.: Truppen des Kaisers und der katholischen Liga siegen in der Schlacht am Weißen Berg.",
-          "Herzog Maximilian I. von Bayern gewinnt für seine Hilfe die Kurwürde.",
+          "1620 n. Chr.: Truppen des Kaisers und der katholischen Liga unter Maximilian I. siegen in der Schlacht am Weißen Berg bei Prag.",
+          "Der Sieg beendet den böhmischen Aufstand; 1623 erhält Herzog Maximilian I. von Bayern dafür förmlich die pfälzische Kurwürde (1628 auch die Oberpfalz).",
         ],
         [
           "1632 n. Chr.: Schwedens König Gustav Adolf stößt nach Süddeutschland vor und besetzt München.",
@@ -60,7 +60,7 @@ export const absolutism: Lesson[] = [
           "Denke an die Lücken im Augsburger Religionsfrieden und an Union/Liga.",
           "Erwähne das Eingreifen ausländischer Mächte wie Schweden und Frankreich.",
         ],
-        "Ursachen waren die ungelösten Streitfragen seit 1555 – etwa der Ausschluss der Reformierten und Streit um Kirchengüter – sowie die Bildung bewaffneter Bündnisse wie Union und Liga. Nach dem Prager Fenstersturz 1618 griffen Nachbarmächte wie Dänemark, Schweden und das katholische Frankreich ein, um die Vorherrschaft des Kaisers zu brechen. So wurden Machtinteressen wichtiger als die Religion.",
+        "Ursachen waren die ungelösten Streitfragen seit 1555 – etwa der Ausschluss der Reformierten und Streit um Kirchengüter – sowie die Bildung bewaffneter Bündnisse: der protestantischen Union unter Kurpfalz und der katholischen Liga unter Herzog Maximilian I. von Bayern. Nach dem Prager Fenstersturz 1618 griffen Nachbarmächte wie Dänemark, Schweden und das katholische Frankreich ein, um die Vorherrschaft des Kaisers zu brechen. So wurden Machtinteressen wichtiger als die Religion.",
         [
           "Zwei Kriegsursachen genannt",
           "Eingreifen europäischer Mächte erklärt",

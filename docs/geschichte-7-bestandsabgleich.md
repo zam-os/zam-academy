@@ -97,7 +97,7 @@ bleiben unberührt bei ihren jeweiligen Paketen.
 
 ## Quellen
 
-Alle 43 Links wurden am 21.11.2026 geöffnet und ihr Seitentitel gelesen
+Alle 44 Links wurden am 21.11.2026 geöffnet und ihr Seitentitel gelesen
 (`curl -sL -A "Mozilla/5.0" <url>`). Ein kurzer Originalauszug aus Martin
 Luthers 95 Thesen (These 27 und 36, 1517) steht sprachlich leicht geglättet
 in `g7-luther-und-1517` mit Link zur Textausgabe auf Wikisource. Lehrervideos

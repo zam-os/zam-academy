@@ -17,6 +17,11 @@ export const SOURCES: Source[] = [
     url: planetWissen("geschichte/mittelalter/leben_im_mittelalter/index.html"),
   },
   {
+    id: "klexikon-otto",
+    label: "Klexikon · Otto der Große",
+    url: "https://klexikon.zum.de/wiki/Otto_der_Gro%C3%9Fe",
+  },
+  {
     id: "pw-salier",
     label: "Planet Wissen · Mittelalter: Salier",
     url: planetWissen("geschichte/mittelalter/die_salier/index.html"),
@@ -184,8 +189,8 @@ export const SOURCES: Source[] = [
   },
   {
     id: "denkmalschutz",
-    label: "Deutsche Stiftung Denkmalschutz",
-    url: "https://www.denkmalschutz.de/aktuelles.html",
+    label: "Bayerisches Denkmalschutzgesetz (BayDSchG) · Bürgerservice BAYERN.RECHT",
+    url: "https://www.gesetze-bayern.de/Content/Document/BayDSchG",
   },
   {
     id: "reichstag",
@@ -369,7 +374,7 @@ export const TERMS: Term[] = [
     lb: 2,
     term: "Ghetto",
     explanation:
-      "Abgeschlossenes Stadtviertel, auf das jüdische Bewohner in der Vormoderne oft gegen ihren Willen räumlich beschränkt wurden.",
+      "Abgeschlossenes Zwangsviertel für jüdische Stadtbewohner, wie es ab der Frühen Neuzeit (Venedig 1516) eingerichtet wurde; im Mittelalter lebten Gemeinden meist in Judenvierteln oder Judengassen.",
     lessonId: "g7-juedisches-leben-mittelalter",
   },
   {

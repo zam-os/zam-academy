@@ -129,7 +129,7 @@ export const middleAges: Lesson[] = [
     ],
     takeaway:
       "962 wurde Otto der Große in Rom zum Kaiser gekrönt; als Reisekönig hielt er das Reich durch persönliche Gegenwart in Pfalzen und Klöstern zusammen.",
-    sourceIds: ["lehrplan", "pw-salier", "pw-mittelalter"],
+    sourceIds: ["lehrplan", "klexikon-otto", "pw-mittelalter"],
     quiz: check(
       "Warum regierten die ostfränkisch-deutschen Könige im 10. Jahrhundert als Reisekönige?",
       "Ohne feste Hauptstadt sicherten persönliche Präsenz, Rechtsprechung vor Ort und Pfalzvorräte die Macht.",
@@ -620,7 +620,7 @@ export const middleAges: Lesson[] = [
     intro:
       "Im Heiligen Römischen Reich erbte kein Kronprinz automatisch die Krone. Ein festes Wahlrecht musste Doppelwahlen verhindern – zugleich erstarkten die Landesfürsten.",
     paragraphs: [
-      "Anders als etwa in Frankreich blieb das Heilige Römische Reich Deutscher Nation eine Wahlmonarchie. Nach dem Ende der Stauferzeit stritten mehrere Fürstenparteien oft jahrelang um den Thron, sodass zeitweise sogar zwei Könige gleichzeitig gewählt wurden. Gleichzeitig wuchsen die Gebiete der Fürsten durch Burgenbau, eigene Gerichte und Steuern zu geschlossenen Landesherrschaften zusammen – diesen Vorgang nennt man Territorialisierung.",
+      "Anders als etwa in Frankreich blieb das Heilige Römische Reich (erst seit dem späten 15. Jahrhundert mit dem Zusatz „Deutscher Nation“) eine Wahlmonarchie. Nach dem Ende der Stauferzeit stritten mehrere Fürstenparteien oft jahrelang um den Thron, sodass zeitweise sogar zwei Könige gleichzeitig gewählt wurden. Gleichzeitig wuchsen die Gebiete der Fürsten durch Burgenbau, eigene Gerichte und Steuern zu geschlossenen Landesherrschaften zusammen – diesen Vorgang nennt man Territorialisierung.",
       "Um Doppelwahlen und Einmischungen des Papstes endgültig zu beenden, erließ Kaiser Karl IV. im Jahr 1356 das Reichsgrundgesetz der Goldenen Bulle. Darin legte er genau sieben Kurfürsten fest, die den römisch-deutschen König künftig per Mehrheitsbeschluss in Frankfurt wählten: drei geistliche Erzbischöfe (Mainz, Köln, Trier) und vier weltliche Fürsten (König von Böhmen, Pfalzgraf bei Rhein, Herzog von Sachsen, Markgraf von Brandenburg).",
       "Mit dem Reichsgesetz gewann das Reich feste Wahlregeln, aber keinen starken Zentralstaat. Neben den Kurfürsten vertraten auch die übrigen Fürsten sowie später Reichsstädte ihre Interessen als Reichsstände auf Reichstagen. Viele kleine und große Territorien, darunter das Herzogtum Bayern, entwickelten ihre eigene Verwaltung und Rechtsprechung weiter.",
     ],
@@ -839,7 +839,7 @@ export const middleAges: Lesson[] = [
         { label: "Patrizier (Ratsgeschlechter)", note: "reiche Großkaufleute · besetzen den Stadtrat und hohe Ämter" },
         { label: "Zunfthandwerker und Kleinhändler", note: "Bürger mit Hausbesitz · organisiert in strengen Zünften" },
         { label: "Gesellen, Lehrlinge und Dienstboten", note: "arbeiten in Werkstätten und Haushalten · meist ohne Bürgerrecht" },
-        { label: "Tagelöhner, Bettler und Ausgegrenzte", note: "arme Bewohner sowie Menschen in verachteten Berufen und Juden am Rand" },
+        { label: "Tagelöhner, Bettler und Randgruppen", note: "arme Bewohner und verachtete Berufe ohne Bürgerrecht (jüdische Gemeinden standen unter eigenem Schutzrecht außerhalb der christlichen Ständeordnung)" },
       ],
       caption:
         "Stadtfreiheit bedeutete nicht Gleichheit: Politische Rechte lagen bei den Bürgern, in vielen Reichsstädten vor allem bei den Patriziern.",
@@ -916,10 +916,10 @@ export const middleAges: Lesson[] = [
     paragraphs: [
       "In zahlreichen mittelalterlichen Städten bereicherten jüdische Familien das wirtschaftliche und kulturelle Leben. Sie unterhielten eigene Synagogen, Schulen und rituelle Bäder (Mikwen), pflegten gelehrte Studien und brachten durch Fernkontakte wichtige Kenntnisse in Handel, Medizin und Geldwesen ein. Gleichzeitig schlossen christliche Zünfte sie vom Handwerk und vom Besitz landwirtschaftlicher Güter aus.",
       "Deshalb arbeiteten viele Juden als Händler oder im Geldverleih gegen Zinsen, der Christen nach kirchlichem Recht lange verboten war. Rechtlich standen sie als „Kammerknechte“ unter dem direkten Schutz des Königs oder eines Stadtherrn und mussten dafür hohe Schutzsteuern zahlen. Sie genossen zwar Schutzbriefe, besaßen aber kein gleichberechtigtes christliches Bürgerrecht.",
-      "Sobald Seuchen, Schuldenkrisen oder religiöser Hass aufflammten – etwa beim ersten Kreuzzug 1096 oder während der großen Pest 1348/49 –, wurden Juden häufig als Sündenböcke beschuldigt. Manche Städte wiesen sie in abgeschlossene Viertel ein, sogenannte Ghettos, oder vertrieben die Gemeinden gewaltsam nach grausamen Übergriffen (Pogromen). Die Sicht der jüdischen Gemeinden erinnert daran, dass christliche Stadtfreiheit Minderheiten keineswegs einschloss.",
+      "Sobald Seuchen, Schuldenkrisen oder religiöser Hass aufflammten – etwa beim ersten Kreuzzug 1096 oder während der großen Pest 1348/49 –, wurden Juden häufig als Sündenböcke beschuldigt und Gemeinden in grausamen Übergriffen (Pogromen) verfolgt oder vertrieben. Während jüdische Familien im Mittelalter meist in eigenen Judenvierteln oder Judengassen lebten, sperrten manche Städte sie am Übergang zur Frühen Neuzeit (erstmals 1516 in Venedig) in ummauerte, nachts verschlossene Zwangsviertel ein: die Ghettos. Die Sicht der jüdischen Gemeinden erinnert daran, dass christliche Stadtfreiheit Minderheiten keineswegs einschloss.",
     ],
     takeaway:
-      "Jüdische Gemeinden trugen viel zu Handel, Bildung und Stadtkultur bei, lebten aber trotz königlicher Schutzbriefe oft ausgegrenzt in Ghettos und bedroht von Verfolgung.",
+      "Jüdische Gemeinden trugen viel zu Handel, Bildung und Stadtkultur bei, lebten aber trotz königlicher Schutzbriefe in einer gefährdeten Sonderstellung in Judenvierteln – ab der Frühen Neuzeit teils in abgeschlossenen Ghettos – und waren von Verfolgung bedroht.",
     sourceIds: ["lehrplan", "pw-judentum", "pw-pest"],
     quiz: check(
       "Warum übten viele jüdische Stadtbewohner im Mittelalter Berufe im Handel und Geldverleih aus?",
@@ -954,9 +954,9 @@ export const middleAges: Lesson[] = [
           "In Krisenzeiten wurden Minderheiten schutzlos zu Sündenböcken gemacht.",
         ],
         [
-          "Ein ummauerter Straßenbereich – das Ghetto – trennt jüdische Häuser vom übrigen Stadtgebiet.",
+          "Am Übergang zur Frühen Neuzeit (wie ab 1516 in Venedig) zwingt ein ummauertes Ghetto jüdische Familien in ein nachts verschlossenes Viertel.",
           2,
-          "Räumliche Abschottung und oft ein Erkennungszeichen auf der Kleidung zeigten die Abgrenzung.",
+          "Während mittelalterliche Judenviertel meist offen lagen, schuf das frühneuzeitliche Ghetto räumliche Zwangsabschottung.",
         ],
         [
           "Jüdische Gelehrte und Ärzte vermitteln Schriften aus dem arabischen Raum weiter nach Europa.",
@@ -973,7 +973,7 @@ export const middleAges: Lesson[] = [
           "Beschreibe Rechte über Schutzbriefe und Berufe außerhalb der Zünfte.",
           "Erkläre den Begriff Ghetto und Gefahren in Krisenzeiten.",
         ],
-        "Jüdische Familien waren vom Handwerk in christlichen Zünften ausgeschlossen und standen gegen hohe Schutzsteuern unter dem unsicheren Schutz eines Königs oder Stadtherrn. Viele arbeiteten deshalb im Handel oder Geldverleih. In manchen Städten mussten sie getrennt in einem abgeschlossenen Wohnviertel leben, dem Ghetto, und wurden in Krisen wie der Pestzeit häufig Opfer von Gewalt und Vertreibung.",
+        "Jüdische Familien waren vom Handwerk in christlichen Zünften ausgeschlossen und standen gegen hohe Schutzsteuern unter dem unsicheren Schutz eines Königs oder Stadtherrn. Viele arbeiteten deshalb im Handel oder Geldverleih und wohnten im Mittelalter in Judenvierteln oder Judengassen, in Krisen wie der Pestzeit 1348/49 oft bedroht von Pogromen und Vertreibung. Ein Ghetto war dagegen ein ummauertes, abgeschlossenes Zwangsviertel, wie es ab der Frühen Neuzeit (Venedig 1516) eingerichtet wurde.",
         [
           "Berufliche und rechtliche Sonderstellung erklärt",
           "Begriff Ghetto korrekt definiert",
@@ -1006,14 +1006,14 @@ export const middleAges: Lesson[] = [
     paragraphs: [
       "Im 14. Jahrhundert kühlte sich das Klima in Europa ab, und Starkregen verdarb wiederholt das Getreide. Da kaum Reserven für mehrere Jahre lagerten und Transporte langsam waren, stiegen nach einer Missernte die Brotpreise sprunghaft an. Unterernährung schwächte die Menschen besonders in dicht gedrängten Städten und auf dem Land.",
       "Ab 1347/48 erreichte über Handelsschiffe aus dem Mittelmeerraum eine verheerende Seuche Europa: der „Schwarze Tod“, die Pest. Binnen weniger Jahre starb schätzungsweise ein Drittel der europäischen Bevölkerung. Ganze Dörfer fielen wüst, Handwerksbetriebe verloren ihre Meister, und der Alltag brach vielerorts zusammen.",
-      "Weil niemand Flöhe und Bakterien als Überträger kannte, deuteten viele Menschen die Seuche als Strafe Gottes oder vermuteten „vergiftete Luft“. Sie reagierten sehr unterschiedlich: Manche beteten in Prozessionen oder geißelten sich öffentlich; andere flohen auf Landgüter. Zugleich entwickelten Städte aber auch kluge Schutzmaßnahmen wie Quarantäne – Schiffe mussten 40 Tage warten –, strengere Sauberkeitsordnungen, Pestspitäler außerhalb der Mauern und geschlossene Märkte.",
+      "Weil niemand Flöhe und Bakterien als Überträger kannte, deuteten viele Menschen die Seuche als Strafe Gottes oder vermuteten „vergiftete Luft“. Sie reagierten sehr unterschiedlich: Manche beteten in Prozessionen oder geißelten sich öffentlich; andere flohen auf Landgüter. In den folgenden Jahrzehnten des Spätmittelalters entwickelten Hafen- und Handelsstädte bei neuen Pestwellen aber auch wirksame Schutzmaßnahmen: Ab 1377 führte Ragusa (Dubrovnik) die Absonderung ankommender Schiffe und Reisender ein (zunächst für 30 Tage, später auf 40 Tage erweitert: Quarantäne), dazu kamen strengere Sauberkeitsordnungen, Pestspitäler außerhalb der Mauern und geschlossene Märkte.",
     ],
     takeaway:
       "Missernten und die Pest um 1348 kosteten Millionen Menschen das Leben; die Reaktionen reichten von Verzweiflung und Verfolgung bis zu frühen Quarantäneregeln.",
     sourceIds: ["lehrplan", "pw-pest", "pw-mittelalter"],
     quiz: check(
-      "Welche Maßnahme gegen die Ausbreitung von Seuchen entwickelten Hafen- und Handelsstädte schon im Spätmittelalter?",
-      "Die Quarantäne, also eine 40-tägige Absonderung von Schiffen und Reisenden.",
+      "Welche Maßnahme gegen die Ausbreitung späterer Pestwellen entwickelten Hafen- und Handelsstädte im Spätmittelalter (ab 1377 in Ragusa)?",
+      "Die Quarantäne, also eine mehrwöchige Absonderung ankommender Schiffe und Reisender.",
       [
         "Die gezielte Impfung aller Einwohner durch Ärzte der kaiserlichen Reichskammer.",
         "Den Einsatz moderner Antibiotika, die in Klöstern aus Penicillin gewonnen wurden.",
@@ -1022,7 +1022,7 @@ export const middleAges: Lesson[] = [
         "Impfstoffe entstanden erst Jahrhunderte später in der Neuzeit; das mittelalterliche Wissen kannte keine Erreger.",
         "Antibiotika wurden erst im 20. Jahrhundert entdeckt.",
       ],
-      "Auch ohne Kenntnis von Bakterien beobachteten städtische Räte die Ansteckung über Reisende und führten Wartezeiten (italienisch quaranta = vierzig) ein.",
+      "Auch ohne Kenntnis von Bakterien beobachteten städtische Räte die Ansteckung über Reisende und führten ab 1377 Wartezeiten von zunächst 30 und später 40 Tagen (italienisch quaranta = vierzig) ein.",
     ),
     workshop: classify(
       "Wie Menschen im Mittelalter auf Seuchen reagierten",
@@ -1034,14 +1034,14 @@ export const middleAges: Lesson[] = [
           "Viele Zeitgenossen deuteten die Seuche religiös als Prüfung oder Strafe.",
         ],
         [
-          "Ankommende Handelsschiffe müssen mit Besatzung und Ware 40 Tage vor dem Hafen warten.",
+          "Ab 1377 müssen ankommende Handelsschiffe und Reisende in Hafenstädten wie Ragusa vor dem Einlaufen wochenlang abgesondert warten.",
           1,
-          "Die Quarantäne begrenzte die Einschleppung von Krankheiten wirksam.",
+          "Aus der zunächst 30- und später 40-tägigen Absonderung entstand im Spätmittelalter die Quarantäne.",
         ],
         [
-          "Ärzte tragen Schnabelmasken mit duftenden Kräutern gegen vermeintlich giftige Luft.",
+          "Menschen verbrennen Wacholderholz und aromatische Kräuter in den Stuben, um vermeintlich giftige Dämpfe aus der Luft zu vertreiben.",
           1,
-          "Man vermutete Dämpfe als Ursache; die Kräuter schützten immerhin etwas vor Tröpfchen, kaum vor Flöhen.",
+          "Nach der mittelalterlichen Miasmenlehre hielt man üble Dämpfe für die Ursache; erst im 17. Jahrhundert kamen Schnabelmasken auf.",
         ],
         [
           "Gerüchte beschuldigen Randgruppen oder jüdische Gemeinden der Brunnenvergiftung.",
@@ -1076,7 +1076,7 @@ export const middleAges: Lesson[] = [
           "Nenne eine Ähnlichkeit (z. B. Quarantäne oder Abstandsregeln) und einen großen Unterschied im Wissen.",
           "Beziehe auch Gefahren durch Gerüchte mit ein.",
         ],
-        "Sowohl im Mittelalter als auch heute versuchte man, Ansteckung durch Quarantäne und geschlossene Versammlungen einzudämmen. Während heute jedoch Viren und Bakterien mikroskopisch erforscht, Medikamente und Impfstoffe entwickelt werden, kannte man 1348 keine Erreger und deutete die Krankheit oft als Gottesstrafe. Zudem zeigt ein Vergleich, wie gefährlich Sündenbock-Gerüchte in jeder Krise sind.",
+        "Sowohl im Spätmittelalter als auch heute versuchte man, Ansteckung durch Absonderung von Reisenden (Quarantäne ab 1377) und geschlossene Versammlungen einzudämmen. Während heute jedoch Viren und Bakterien mikroskopisch erforscht, Medikamente und Impfstoffe entwickelt werden, kannte man 1348 keine Erreger und deutete die Krankheit oft als Gottesstrafe. Zudem zeigt ein Vergleich, wie gefährlich Sündenbock-Gerüchte in jeder Krise sind.",
         [
           "Gemeinsame Schutzmaßnahme Quarantäne genannt",
           "Unterschied im medizinischen Wissen erklärt",

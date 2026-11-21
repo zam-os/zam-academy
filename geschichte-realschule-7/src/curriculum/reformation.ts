@@ -286,7 +286,7 @@ export const reformation: Lesson[] = [
           "Beziehe die Reformation, den Augsburger Religionsfrieden und die Rolle der Reichsstände ein.",
           "Zeige auch die Gegenreform der katholischen Kirche.",
         ],
-        "Nach 1517 schlossen sich einige Landesfürsten und Reichsstädte wie Nürnberg oder Augsburg der Reformation an, während zum Beispiel die bayerischen Herzöge katholisch blieben und die Kirche nach dem Konzil von Trient innerlich erneuerten. Weil der Augsburger Religionsfriede 1555 diese territoriale Aufteilung festschrieb, entwickelten sich dauerhaft katholische und evangelische Regionen nebeneinander – heute verbunden durch gemeinsame Religionsfreiheit.",
+        "Nach 1517 schlossen sich einige Landesfürsten und Reichsstädte wie Nürnberg der Reformation an, während das Herzogtum Bayern katholisch blieb und die Kirche nach dem Konzil von Trient innerlich erneuerte; Reichsstädte wie Augsburg wurden nach 1555 gemischtkonfessionell (paritätisch). Weil der Augsburger Religionsfriede 1555 diese Aufteilung reichsrechtlich absicherte, entwickelten sich dauerhaft katholische, evangelische und gemischte Regionen nebeneinander – heute verbunden durch gemeinsame Religionsfreiheit.",
         [
           "Spaltung nach 1517 und Territorien erklärt",
           "Augsburger Religionsfrieden als Festschreibung genannt",
