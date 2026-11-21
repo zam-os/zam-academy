@@ -54,42 +54,7 @@ try {
 		for (const item of items) await zam.ensureCard(db, item.id, user);
 		assert.deepEqual(await snapshot(), before);
 	}
-	// Installation must leave every existing legacy retrieval and its evidence
-	// alone. The proposal file grants neither replacement nor retirement.
-	const mapping = JSON.parse(
-		readFileSync(new URL("../replaces-de-by.json", import.meta.url), "utf8"),
-	);
-	const oldItems = [];
-	for (const source of mapping.sources) {
-		const old = JSON.parse(
-			readFileSync(new URL(`../${source.file}`, import.meta.url), "utf8"),
-		);
-		await zam.installKvtTile(db, old);
-		for (const atom of old.atoms)
-			for (const item of atom.practice_items) {
-				await zam.ensureCard(db, item.id, user);
-				oldItems.push(item);
-			}
-	}
-	assert.equal(oldItems.length, 10);
-	const oldCard = await zam.ensureCard(db, oldItems[0].id, user);
-	await zam.evaluateRating(db, {
-		cardId: oldCard.id,
-		tokenId: oldItems[0].id,
-		userId: user,
-		rating: 3,
-		answerFormat: "recall",
-		now: new Date("2026-11-20T12:00:00Z"),
-	});
-	const mixed = await snapshot();
-	assert.equal(mixed.cards.length, 110);
-	assert.equal(mixed.reviews.length, 2);
-	await zam.installKvtTile(db, tile);
-	for (const item of items) await zam.ensureCard(db, item.id, user);
-	assert.deepEqual(await snapshot(), mixed);
-	console.log(
-		"ok: install creates no cards; 100 fresh cards enrol; repeated install/enrol preserves recall; all 10 legacy cards and their review evidence stay unchanged.",
-	);
+	console.log("ok: install creates no cards; 100 fresh cards enrol; repeated install and enrolment preserve recall.");
 } finally {
 	if (db) await db.close();
 	rmSync(dir, { recursive: true, force: true });

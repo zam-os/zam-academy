@@ -271,8 +271,10 @@ jobs:
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node englisch-gymnasium-5/scripts/validate-migration.mjs
       - name: Verify Grade 6 Realschule German enrolment and preserve legacy evidence
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node deutsch-realschule-6/scripts/validate-cell.mjs
-      - name: Verify Grade 7 Realschule German enrolment and preserve legacy evidence
+      - name: Verify Grade 7 Realschule German enrolment and recall
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node deutsch-realschule-7/scripts/validate-cell.mjs
+      - name: Verify approved deutsch-realschule-7 history migration
+        run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node deutsch-realschule-7/scripts/validate-migration.mjs
       - name: Validate approved migration for biologie-gymnasium-6
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node biologie-gymnasium-6/scripts/validate-migration.mjs
       - name: Validate Grade 6 Gymnasium German cell and preserve legacy history

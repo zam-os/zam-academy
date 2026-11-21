@@ -64,7 +64,7 @@ describe("Grade 7 Realschule package contract", () => {
 		expect(publication).toMatchObject({
 			schema: 1,
 			status: "ready",
-			version: "0.0",
+			version: "0.1",
 		});
 		expect(STORAGE_KEY).toContain("deutsch_rs7");
 		expect(STORAGE_KEY).not.toMatch(/gym|rs5|rs6|mittelschule/);
@@ -113,24 +113,24 @@ describe("Grade 7 Realschule package contract", () => {
 		expect(coverage.neighbours.map((n) => n.grade)).toEqual([6, 8]);
 	});
 
-	it("inventories all ten legacy items without activating any history transfer", () => {
+	it("moves four approved histories and keeps the other six legacy cards active", () => {
 		const old: Array<{ id: string }> = [];
 		for (const tile of [inhaltsangabeCell, satzstrukturenCell])
 			for (const atom of tile.atoms)
 				for (const item of atom.practice_items) old.push(item);
 		expect(old).toHaveLength(10);
-		expect(mapping.status).toBe("proposal-only");
-		expect(mapping.approved).toBeNull();
-		expect(mapping.rows.map((r) => r.old_id).sort()).toEqual(
+		expect(mapping.status).toBe("approved");
+		expect(mapping.approved).toBe("2026-11-21");
+		expect(mapping.rows.map((r) => r.de_by_id).sort()).toEqual(
 			old.map((i) => i.id).sort(),
 		);
-		expect(new Set(mapping.rows.map((r) => r.old_id)).size).toBe(10);
+		expect(new Set(mapping.rows.map((r) => r.de_by_id)).size).toBe(10);
 		expect(mapping.rows.filter((r) => r.category === "A")).toHaveLength(4);
 		expect(mapping.rows.filter((r) => r.category === "C")).toHaveLength(6);
 		for (const row of mapping.rows) {
 			expect(row.reason.length).toBeGreaterThan(40);
 			expect(row.action).toBe(
-				row.category === "A" ? "propose-replace-after-approval" : "keep-active",
+				row.category === "A" ? "replace" : "keep-active",
 			);
 			if (row.academy_slug)
 				expect(items.filter((i) => i.slug === row.academy_slug)).toHaveLength(
@@ -140,7 +140,9 @@ describe("Grade 7 Realschule package contract", () => {
 		}
 		expect(cell).not.toHaveProperty("retired_items");
 		for (const i of items) {
-			expect(i).not.toHaveProperty("replaces");
+			const row = mapping.rows.find((candidate) => candidate.academy_slug === i.slug);
+			if (row?.category === "A") expect(i).toMatchObject({ replaces: [row.de_by_id] });
+			else expect(i).not.toHaveProperty("replaces");
 			expect(old.some((o) => o.id === i.id)).toBe(false);
 		}
 	});
