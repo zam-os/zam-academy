@@ -246,6 +246,28 @@ describe("Grade 7 Realschule English teaching contract", () => {
 		expect(JSON.stringify(LESSONS)).not.toMatch(
 			/passive|type 3|reported speech|reflexive|each other|participle construction/i,
 		);
+		// The passive is Grade 8 grammar. Learners never have to produce or choose
+		// one; reading texts may show it receptively (e.g. "was crowned").
+		const passive =
+			/\b(?:is|are|was|were|be|been|being|isn't|aren't|wasn't|weren't)\s+(?:\w+ly\s+)?(\w+ed|built|made|written|given|sold|spoken|held|known|born|found|done|seen|taken|sung|shown|told|bought|brought|thrown|chosen|drawn|grown|hidden|stolen|worn|torn|kept|left|lost|lit|put|read|set|shut|cut|hit|run|won|taught|caught|paid|sent|spent)\b/gi;
+		const adjectives = new Set(["skilled", "red", "amazed", "scared", "tired"]);
+		const productive = [
+			...LESSONS.map((lesson) =>
+				JSON.stringify([
+					lesson.quiz,
+					lesson.practice,
+					lesson.tasks,
+					lesson.workshop,
+					lesson.takeaway,
+				]),
+			),
+			...items.map((item) => `${item.question} ${item.concept}`),
+		].join(" ");
+		const found = [...productive.matchAll(passive)].filter(
+			(match) => !adjectives.has(match[1].toLowerCase()),
+		);
+		expect(found.map((match) => match[0])).toEqual([]);
+		expect(productive).not.toMatch(/played with|was built|is used in/);
 		expect(findLesson("e7-past-vs-perfect")!.paragraphs.join(" ")).toContain(
 			"Simple Past",
 		);
@@ -463,29 +485,36 @@ describe("ZAM content and proposal-only legacy mapping", () => {
 				expect(successor).toHaveLength(1);
 				expect(successor[0].tier).toBe(old!.tier);
 				expect(successor[0].question).toBe(old!.question);
-			} else if (row.action === "settled-in-englisch-realschule-6") {
-				expect(row.category).toBe("C");
-				expect(row.academy_slug).toBeNull();
-				const approved = neighbourMapping.rows.find(
-					(entry) => entry.de_by_id === row.de_by_id,
-				);
-				expect(approved?.action).toBe("replace");
-				expect((row as { neighbour_successor?: string }).neighbour_successor).toBe(
-					`zam-academy:englisch-realschule-6/${approved?.academy_slug}`,
+				// Englisch 6 lists the card too (keep-active): Thomas decides.
+				expect((row as { open_question?: string }).open_question).toContain(
+					"Thomas",
 				);
 			} else {
+				// AGENTS.md §6 knows only these actions for a proposal.
 				expect(row.action).toBe("keep-active");
 				expect(row.category).toBe("C");
 				expect(row.academy_slug).toBeNull();
 			}
+			const neighbour = neighbourMapping.rows.find(
+				(entry) => entry.de_by_id === row.de_by_id,
+			);
+			const successor = (row as { neighbour_successor?: string })
+				.neighbour_successor;
+			if (neighbour?.action === "replace")
+				expect(successor).toBe(
+					`zam-academy:englisch-realschule-6/${neighbour.academy_slug}`,
+				);
+			else expect(successor).toBeUndefined();
 		}
 		expect(
 			mapping.rows.filter((row) => row.action === "propose-replace-after-approval"),
 		).toHaveLength(2);
+		expect(mapping.rows.filter((row) => row.action === "keep-active")).toHaveLength(14);
 		expect(
-			mapping.rows.filter((row) => row.action === "settled-in-englisch-realschule-6"),
+			mapping.rows.filter(
+				(row) => (row as { neighbour_successor?: string }).neighbour_successor,
+			),
 		).toHaveLength(5);
-		expect(mapping.rows.filter((row) => row.action === "keep-active")).toHaveLength(9);
 	});
 
 	it.each(cell.atoms)(

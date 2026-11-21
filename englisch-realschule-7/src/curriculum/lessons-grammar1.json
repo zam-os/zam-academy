@@ -140,8 +140,8 @@
 			},
 			"2": {
 				"language": "en",
-				"prompt": "Combine the sentences into one using who, which, whose or where. a) This is Aoife. Her father is a fisherman. b) I visited the village. My granny was born there. c) Ireland has a famous river. It flows through Limerick. d) I know a teacher. She speaks Irish.",
-				"model": "a) This is Aoife, whose father is a fisherman. b) I visited the village where my granny was born. c) Ireland has a famous river which flows through Limerick. d) I know a teacher who speaks Irish.",
+				"prompt": "Combine the sentences into one using who, which, whose or where. a) This is Aoife. Her father is a fisherman. b) I visited the village. My granny grew up there. c) Ireland has a famous river. It flows through Limerick. d) I know a teacher. She speaks Irish.",
+				"model": "a) This is Aoife, whose father is a fisherman. b) I visited the village where my granny grew up. c) Ireland has a famous river which flows through Limerick. d) I know a teacher who speaks Irish.",
 				"criteria": [
 					"Ich wähle das passende Relativpronomen für jeden Satz.",
 					"Ich lasse überflüssige Pronomen (her, there, it, she) weg.",
@@ -221,8 +221,8 @@
 		"tasks": {
 			"1": {
 				"language": "en",
-				"prompt": "Find all relative clauses in the chat. Write them down and mark which ones are contact clauses. Then say why the pronoun cannot be left out in the other sentences.",
-				"model": "Contact clauses: the hostel we stayed in; the photos you took at the Cliffs of Moher; the song the band played in the pub; the only thing I didn't like. With pronoun: the guide who showed us Galway; the boy who sat next to me. In these two sentences who is the subject, because a verb (showed, sat) follows directly. That's why who cannot be left out.",
+				"prompt": "Find all relative clauses in the chat. Write them down and mark which ones are contact clauses. Then say why the other sentences must keep the pronoun.",
+				"model": "Contact clauses: the hostel we stayed in; the photos you took at the Cliffs of Moher; the song the band played in the pub; the only thing I didn't like. With pronoun: the guide who showed us Galway; the boy who sat next to me. In these two sentences who is the subject, because a verb (showed, sat) follows directly. That's why who must stay.",
 				"criteria": [
 					"Ich finde alle sechs Relativsätze.",
 					"Ich ordne contact clauses und Sätze mit Pronomen richtig zu.",

@@ -6,7 +6,7 @@ Stand: 21. November 2026. Das Paket (Paketversion `0.0` laut [`englisch-realschu
 
 - **Jahrgangsstufe 7:** [LehrplanPLUS Realschule Englisch 7](https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/7/englisch), live abgerufen am 21.11.2026 (`curl` mit Browser-User-Agent), gesichert in [`englisch-realschule-7/tests/fixtures/lehrplanplus-e7.html`](../englisch-realschule-7/tests/fixtures/lehrplanplus-e7.html) (`SHA-256: 7540b982b36116b2bcb0f3284a12b6e8cb4903ebafb47b008d32fa85f2b0dbcc`, identisch mit dem Abruf von Englisch 6 am 17.11.2026). Es gibt einen gemeinsamen Fachlehrplan für alle Wahlpflichtfächergruppen.
 - **Vorjahr Jahrgangsstufe 6:** `lehrplanplus-e6.html` (`SHA-256: 2c303039abfabcfd1203cf32b1d06bb46c5fed805ec7d3bca4bed392d2c019c1`). Klasse 7 baut auf dem Present Perfect Simple der Klasse 6 auf (jetzt Kontrast zum Simple Past, since/for) und auf den Wegbeschreibungen (jetzt detailliert, in der Touristeninformation).
-- **Folgejahr Jahrgangsstufe 8:** `lehrplanplus-e8.html` (`SHA-256: 72038cddc11960aba09b08d961ed641dc68a1f2a2e6d72e401945e687f80d342`). **Bewusst ausgeschlossen** bleiben Passiv und personal passive, if-clauses Typ 3, reflexive und emphatische Pronomen, each other, subject/object und negative questions, Partizipialkonstruktionen sowie Nordamerika als Länderschwerpunkt. Verben mit zwei Objekten stehen in Klasse 7 nur als Wortschatz-Chunk (Klasse 8: Grammatik). Ein Test sucht diese Begriffe in allen Lektionen (`keeps the Grade 7 grammar boundary clear of Grade 8 topics`).
+- **Folgejahr Jahrgangsstufe 8:** `lehrplanplus-e8.html` (`SHA-256: 72038cddc11960aba09b08d961ed641dc68a1f2a2e6d72e401945e687f80d342`). **Bewusst ausgeschlossen** bleiben Passiv und personal passive, if-clauses Typ 3, reflexive und emphatische Pronomen, each other, subject/object und negative questions, Partizipialkonstruktionen sowie Nordamerika als Länderschwerpunkt. Verben mit zwei Objekten übt das Paket so, wie die Wortschatzliste der Klasse 7 sie nennt („chunks: common verbs with two objects, e. g. to give“): beide Wortstellungen (give sb sth / give sth to sb, buy/make sth for sb) als feste Muster; als Grammatikthema folgen sie in Klasse 8. Kein Aufgabentext, keine Kurzaufgabe, keine Quizoption, kein Werkstattziel und keine Karte verlangt ein Passiv; Lesetexte dürfen es rezeptiv enthalten (z. B. „was crowned“). Der Test `keeps the Grade 7 grammar boundary clear of Grade 8 topics` sucht dafür sowohl die Begriffe als auch die Konstruktion be + Partizip in allen produktiven Teilen und Karten.
 
 Die 63 Zeilen in [`englisch-realschule-7/coverage.json`](../englisch-realschule-7/coverage.json) enthalten alle Kompetenzerwartungen, jede aufgeführte Wortschatz- und Grammatikstruktur als eigene Zeile und die sieben Themengebiete mit Stundenangabe. `node scripts/check-curriculum.mjs` prüft alle drei HTML-Hashes und sucht jede Zeile wörtlich im bereinigten Seitentext: `ok: 63 curriculum rows, 0 not found`. Die Seite enthält an zwei Stellen das Artefakt `[/lang]`; die Zeilen übernehmen es wörtlich.
 
@@ -46,22 +46,24 @@ Geprüft wurden die englischen Realschulzellen der Jahrgangsstufen 6 bis 8 in `z
 
 Die Klasse-8-Zelle (`conditional-reported-speech`) behandelt if-clauses Typ 3 und indirekte Rede; beides ist kein Klasse-7-Stoff, sie bleibt bei Englisch 8.
 
-| Altzelle | A (Vorschlag) | B | C keep-active | C schon durch Englisch 6 geregelt |
+| Altzelle | A (Vorschlag) | B | C keep-active | davon durch Englisch 6 bereits ersetzt |
 | --- | ---: | ---: | ---: | ---: |
-| `realschule-7-englisch-grammatik-tenses` | 1 | 0 | 4 | 3 |
-| `realschule-6-englisch-grammatik-grundlagen` | 1 | 0 | 5 | 2 |
+| `realschule-7-englisch-grammatik-tenses` | 1 | 0 | 7 | davon 3 |
+| `realschule-6-englisch-grammatik-grundlagen` | 1 | 0 | 7 | davon 2 |
 
-- **A, `propose-replace-after-approval`:** `J01` der Klasse-7-Zelle (Signalwort für abgeschlossenen Zeitpunkt → Simple Past) → `e7-past-vs-perfect-check`; `J05` der Klasse-6-Zelle (`mustn't` im Gegensatz zu `needn't` → Verbot) → `e7-must-have-to-check`. Beide Nachfolger stellen dieselbe Frage wörtlich, mit derselben Antwort und derselben binären Auswahl; ein Test und `validate-cell.mjs` prüfen das.
+- **A, `propose-replace-after-approval`:** `J01` der Klasse-7-Zelle (Signalwort für abgeschlossenen Zeitpunkt → Simple Past) → `e7-past-vs-perfect-check`; `J05` der Klasse-6-Zelle (`mustn't` im Gegensatz zu `needn't` → Verbot) → `e7-must-have-to-check`. Beide Nachfolger stellen wörtlich dieselbe Frage; Antwort und binäre Auswahl sind inhaltsgleich, nicht wortgleich (z. B. alt „Das Past Simple (einfache Vergangenheit …)“, neu „das Simple Past (Past Simple)“). Ein Test und `validate-cell.mjs` prüfen die wörtlich gleiche Frage. Beide Karten führt auch das freigegebene Mapping von Englisch 6, dort als `keep-active`; jede A-Zeile trägt deshalb eine `open_question`.
 - **C, `keep-active`:** die mehrteiligen Sammelabrufe (`J02`, `J04`, `J06`, `J08` der Klasse-7-Zelle; `J06` der Klasse-6-Zelle) und Klasse-5/6-Stoff der Klasse-6-Zelle (`J01`, `J02`, `J04`, `J08`). Kein Nachfolger enthält den ganzen Abruf, eine Lernhistorie wird nicht auf mehrere Karten verteilt.
-- **C, `settled-in-englisch-realschule-6`:** fünf Karten, die der freigegebene Abgleich von Englisch 6 (19.11.2026) bereits ersetzt (`neighbour_successor`); dieses Paket übernimmt sie nicht. Ein Test liest dazu die Mapping-Datei von Englisch 6.
+- **C, `keep-active` mit `neighbour_successor`:** fünf Karten, die der freigegebene Abgleich von Englisch 6 (19.11.2026) bereits ersetzt; dieses Paket übernimmt und deklariert nichts. Es verwendet nur die Aktionen aus AGENTS.md §6. Ein Test liest die Mapping-Datei von Englisch 6 und prüft, dass `neighbour_successor` genau dort steht, wo Englisch 6 ersetzt.
 
 Nach der Standardregel (Entscheidung vom 22.10.2026) erscheint die Zelle zuerst ohne `replaces` und `retired_items`. `scripts/validate-cell.mjs` installiert beide Altzellen mit 16 Karten und 32 Bewertungen, dann die neue Zelle zweimal und alle 135 Karten: Kein alter Karteneintrag und keine Bewertung ändert sich, und eine Wiederholung ist idempotent.
 
-**Offene Fragen an Thomas:** (1) Freigabe der zwei A-Übertragungen. (2) Ob die Klasse-6-Zelle, die Englisch 6 bereits abgeglichen hat und die zam-os/zam nicht mehr bündelt, für die Karte `J05` in dieses Mapping gehört (Regel aus AGENTS.md §6: eine Karte wird nur von einem Paket übernommen; Englisch 6 hat sie nur `keep-active` gelassen).
+**Offene Fragen an Thomas:** (1) Freigabe der zwei A-Übertragungen. (2) Beide A-Karten stehen auch im freigegebenen Mapping von Englisch 6 (`keep-active`): `…E7T…J01` aus der Klasse-7-Zelle und `…E6G…J05` aus der Klasse-6-Zelle, die zam-os/zam nicht mehr bündelt. Nach AGENTS.md §6 übernimmt nur ein Paket eine Karte; welches Paket die Historie bekommt, entscheidet Thomas.
+
+Die 180 Ids der Zelle (45 Atome, 135 Karten) hat ein ULID-Generator in einem einmaligen Skript außerhalb des Repos gezogen: Zeitstempel in Millisekunden plus 80 Zufallsbits aus `os.urandom`. Innerhalb derselben Millisekunde zählt er den Zufallsteil monoton um 1 hoch (monotone ULID-Fabrik). Deshalb laufen die Ids fortlaufend und teilen ein Präfix.
 
 ## Nachweise
 
-- Paket: `npx tsc --noEmit`, `npm test` (`63 curriculum rows, 0 not found` und Vitest `171 passed`), `npm run build`, `npm run package:zip` (`verify-release`: ZIP mit identischem HTML und drei Startern).
+- Paket: `npx tsc --noEmit`, `npm test` (`63 curriculum rows, 0 not found` und Vitest `171 passed`, nach dem Review erneut), `npm run build`, `npm run package:zip` (`verify-release`: ZIP mit identischem HTML und drei Startern).
 - Zelle mit `zam-core@0.54.0`: `node scripts/validate-cell.mjs` und am Stamm `node scripts/validate-cells.mjs` (`135 items`, ok).
 - Browser: `node scripts/verify-browser.mjs` mit Headless Chrome über alle 45 Lektionen, beide Stufen, helles und dunkles Thema (180 Ansichten), alle 135 Ziele, Explorer, Kartenebenen, Quiz, Kurzaufgaben, Mustervergleich, Reload-Persistenz, Hinweis „Wo bleibt mein Text?“, Breiten 390 und 720 px, keine Laufzeitfehler, keine Netzwerkanfragen.
 

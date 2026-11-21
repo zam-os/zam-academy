@@ -198,7 +198,7 @@
 		"quiz": {
 			"optionLanguage": "en",
 			"question": "Warum zahlt Noah mehr als 40 Dollar?",
-			"answer": "Because sales tax is added at the checkout.",
+			"answer": "Because the shop adds sales tax at the checkout.",
 			"wrong": [
 				"Because he buys a large instead of a medium.",
 				"Because he pays by card, not in cash."
@@ -280,7 +280,7 @@
 		"bindings": ["1.1", "2", "3", "5"],
 		"paragraphs": [
 			"Die USA haben eine riesige Unterhaltungsindustrie (entertainment industry). Hollywood, ein Stadtteil von Los Angeles, ist das Zentrum der Filmindustrie. Am Broadway in New York laufen große Musicals und Theaterstücke. Nashville in Tennessee gilt als Hauptstadt der Countrymusik (Music City). Heute schauen viele Menschen Filme und Serien über Streamingdienste, die oft in Kalifornien produziert werden. Auch Videospiele, Comics und Superheldenfilme gehören zu dieser Industrie.",
-			"Beliebte Sportarten sind American Football, Baseball, Basketball und Eishockey. Schon an der High School gibt es Schulmannschaften, Cheerleader und große Spiele am Freitagabend. Gute Sportlerinnen und Sportler bekommen manchmal ein Stipendium (scholarship) für ein College. Beispiel für eine Beschreibung: „Baseball is played with a bat and a ball. Each team has nine players on the field.“ Bei Regeln hilft dir die Form is/are played with …"
+			"Beliebte Sportarten sind American Football, Baseball, Basketball und Eishockey. Schon an der High School gibt es Schulmannschaften, Cheerleader und große Spiele am Freitagabend. Gute Sportlerinnen und Sportler bekommen manchmal ein Stipendium (scholarship) für ein College. Beispiel für eine Beschreibung: „You play baseball with a bat and a ball. Each team has nine players on the field.“ Bei Regeln helfen dir die Wendungen you play it with …, each team has … und you can / you can't …"
 		],
 		"material": "Fact file · Five things to know about American entertainment\n1. Hollywood is a part of Los Angeles. The big “HOLLYWOOD” sign stands on a hill above the city.\n2. Broadway is a street in New York, but people also use the word for the theatres around Times Square.\n3. Nashville in Tennessee is called Music City because so many country musicians record their songs there.\n4. Many American high schools have a football team, a marching band and cheerleaders. The Friday night game is a big event for the whole town.\n5. The final of the American football season is the Super Bowl. Millions of people watch it on TV – some only for the adverts and the half-time show!",
 		"materialLabel": "Eigenes englisches Übungsmaterial · Faktenliste",
@@ -304,7 +304,7 @@
 				"feedback": "Hollywood liegt in Los Angeles, Kalifornien."
 			},
 			{
-				"prompt": "Baseball is played with a ___ and a ball. (Schläger beim Baseball)",
+				"prompt": "You play baseball with a ___ and a ball. (Schläger beim Baseball)",
 				"answers": ["bat"],
 				"feedback": "bat: Schläger beim Baseball und Cricket; racket beim Tennis."
 			}
@@ -313,7 +313,7 @@
 			"1": {
 				"language": "en",
 				"prompt": "Which American film, series, song or sport do you like best? Write five sentences: what it is, where it comes from, why you like it and one thing you don't like about it.",
-				"model": "My favourite American series is a comedy about a group of friends in New York. It was produced by a streaming service in California. I like it because the characters are funny and they always help their friends. I also like the music in the opening song. What I don't like is that the new episodes come out very late.",
+				"model": "My favourite American series is a comedy about a group of friends in New York. A streaming service in California produced it. I like it because the characters are funny and they always help their friends. I also like the music in the opening song. What I don't like is that the new episodes come out very late.",
 				"criteria": [
 					"Ich beschreibe meine Wahl mit Herkunft.",
 					"Ich begründe meine Meinung.",
@@ -322,11 +322,11 @@
 			},
 			"2": {
 				"language": "en",
-				"prompt": "Explain the rules of a sport you know (60 to 80 words) for an American exchange student. Use is/are played with … and each team has ….",
-				"model": "Handball is very popular in Germany. It is played indoors with a small ball that you throw with your hands. Each team has seven players on the court, and one of them is the goalkeeper. You can take only three steps with the ball, then you must bounce it, pass it or shoot. A game has two halves of thirty minutes. The team that scores more goals wins. Maybe you can come to my club's training next week!",
+				"prompt": "Explain the rules of a sport you know (60 to 80 words) for an American exchange student. Use you play it with …, each team has … and you can / you can't ….",
+				"model": "Handball is very popular in Germany. You play it indoors with a small ball, and you throw the ball with your hands. Each team has seven players on the court, and one of them is the goalkeeper. You can take only three steps with the ball, then you must bounce it, pass it or shoot. A game has two halves of thirty minutes. The team that scores more goals wins. Maybe you can come to my club's training next week!",
 				"criteria": [
 					"Ich erkläre mindestens drei Regeln verständlich.",
-					"Ich verwende is played with und each team has.",
+					"Ich verwende you play it with, each team has und you can / you can't.",
 					"Ich spreche den Adressaten am Ende persönlich an."
 				]
 			}

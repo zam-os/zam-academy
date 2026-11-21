@@ -26,7 +26,7 @@
 		"takeaway": "Die Kelten lebten vor den Römern in Britannien und Irland (roundhouses, hillforts, Druids). Keltische Sprachen heute: Irish, Scottish Gaelic, Welsh. Lesen: erst for gist, dann for detail.",
 		"practice": [
 			{
-				"prompt": "The Celts lived in round houses with thatched roofs. In the text they are called ___. (ein Wort aus dem Text)",
+				"prompt": "The Celts lived in round houses with thatched roofs. The text has one word for these houses: ___. (ein Wort aus dem Text)",
 				"answers": ["roundhouses"],
 				"feedback": "roundhouses: runde Häuser mit einem Dach aus Stroh oder Schilf."
 			},
@@ -71,7 +71,7 @@
 				},
 				{
 					"label": "Priester",
-					"before": "The Celtic priests were called",
+					"before": "The priests of the Celts were the",
 					"after": ".",
 					"options": ["Druids", "Normans", "Vikings"],
 					"answer": "Druids",
@@ -110,7 +110,7 @@
 			"answer": "It runs across the north of England from the west to the east.",
 			"wrong": [
 				"It runs along the south coast of England.",
-				"It was built by the Celts against the Romans."
+				"The Celts built it against the Romans."
 			],
 			"explanation": "Hadrian ließ die Mauer ab AD 122 von römischen Soldaten bauen. Sie verläuft quer durch Nordengland, vom Solway Firth im Westen bis zum River Tyne im Osten."
 		},
@@ -213,7 +213,7 @@
 				"feedback": "Angle-land wurde zu England: das Land der Angeln."
 			},
 			{
-				"prompt": "The language of the Anglo-Saxons is called ___ English. (Adjektiv)",
+				"prompt": "The Anglo-Saxons spoke ___ English. (Adjektiv)",
 				"answers": ["Old"],
 				"feedback": "Old English (Altenglisch) war die Sprache der Angelsachsen."
 			}
@@ -313,7 +313,7 @@
 			"1": {
 				"language": "en",
 				"prompt": "Retell the story of 1066 in five sentences. Use first, then, after that, in the end and finally.",
-				"model": "First, King Edward of England died without children in January 1066. Then Harold Godwinson became king, but William of Normandy wanted the crown, too. After that, William sailed across the English Channel with his army. In the end, he won the Battle of Hastings on 14 October 1066. Finally, he was crowned King of England on Christmas Day.",
+				"model": "First, King Edward of England died without children in January 1066. Then Harold Godwinson became king, but William of Normandy wanted the crown, too. After that, William sailed across the English Channel with his army. In the end, he won the Battle of Hastings on 14 October 1066. Finally, he became King of England on Christmas Day.",
 				"criteria": [
 					"Ich erzähle die Ereignisse in der richtigen Reihenfolge.",
 					"Ich verwende die fünf Signalwörter passend.",
@@ -390,7 +390,7 @@
 		"takeaway": "Great Famine (1845 bis etwa 1852): Kartoffelfäule, rund eine Million Tote, über eine Million Auswanderer, u. a. nach Quebec, Boston und New York. Ursache und Folge: so, because (of), that's why.",
 		"practice": [
 			{
-				"prompt": "The disease that destroyed the potatoes is called potato ___. (Fachbegriff)",
+				"prompt": "The name of the disease that destroyed the potatoes is potato ___. (Fachbegriff)",
 				"answers": ["blight"],
 				"feedback": "potato blight: Kartoffelfäule, eine Pflanzenkrankheit."
 			},

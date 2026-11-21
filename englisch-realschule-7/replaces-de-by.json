@@ -2,7 +2,7 @@
 	"schema": 1,
 	"status": "proposal-only",
 	"approved": null,
-	"source": "Vorschlag, nicht freigegeben. Zwei Einzelabrufe der Altzellen fallen im LehrplanPLUS in Jahrgangsstufe 7 und hätten in diesem Paket einen gleichwertigen Nachfolger (2 A). Alle übrigen Karten sind entweder durch den freigegebenen Abgleich von englisch-realschule-6 geregelt oder bleiben aktiv. Die Zelle deklariert bis zur Freigabe weder replaces noch retired_items.",
+	"source": "Vorschlag, nicht freigegeben. Zwei Einzelabrufe der Altzellen fallen im LehrplanPLUS in Jahrgangsstufe 7 und hätten in diesem Paket einen Nachfolger mit wörtlich gleicher Frage und inhaltsgleicher Antwort (2 A). Beide Karten stehen auch im freigegebenen Mapping von englisch-realschule-6 (dort keep-active); welches Paket sie übernimmt, entscheidet Thomas. Alle übrigen Karten bleiben aktiv, fünf davon hat englisch-realschule-6 bereits ersetzt (neighbour_successor). Die Zelle deklariert bis zur Freigabe weder replaces noch retired_items.",
 	"source_repository": "https://github.com/zam-os/zam",
 	"source_commit": "7897672c2caa8435c89bf39eac41e1efc75521c2",
 	"sources": [
@@ -29,7 +29,8 @@
 			"category": "A",
 			"academy_slug": "e7-past-vs-perfect-check",
 			"action": "propose-replace-after-approval",
-			"reason": "Derselbe Einzelabruf: Bei einem Signalwort für einen abgeschlossenen Zeitpunkt (yesterday, in 2018, two days ago) steht das Simple Past. Gleiche Frage, gleiche Antwort und dieselbe binäre Auswahl gegen das Present Perfect Simple. Der Kontrast Simple Past / Present Perfect steht im LehrplanPLUS in Jahrgangsstufe 7 (E7 1.2 Grammatik)."
+			"reason": "Derselbe Einzelabruf: Bei einem Signalwort für einen abgeschlossenen Zeitpunkt (yesterday, in 2018, two days ago) steht das Simple Past. Wörtlich gleiche Frage; inhaltsgleiche Antwort (alt: „Das Past Simple (einfache Vergangenheit …)“, neu: „das Simple Past (Past Simple)“) und inhaltsgleiche binäre Auswahl gegen das Present Perfect Simple. Der Kontrast Simple Past / Present Perfect steht im LehrplanPLUS in Jahrgangsstufe 7 (E7 1.2 Grammatik).",
+			"open_question": "Englisch 6 (freigegeben 2026-11-19) führt diese Karte als keep-active. Eine Übertragung hier würde sie einem zweiten Paket zuordnen (AGENTS.md §6); Thomas entscheidet, welches Paket die Historie übernimmt."
 		},
 		{
 			"de_by_cell": "de-by:realschule-7-englisch-grammatik-tenses",
@@ -46,9 +47,9 @@
 			"de_by_question": "Wie wird das Past Continuous (Past Progressive) im Englischen gebildet?",
 			"category": "C",
 			"academy_slug": null,
-			"action": "settled-in-englisch-realschule-6",
+			"action": "keep-active",
 			"neighbour_successor": "zam-academy:englisch-realschule-6/e6-past-progressive-check",
-			"reason": "Bereits durch den freigegebenen Bestandsabgleich von englisch-realschule-6 (approved 2026-11-19) geregelt: e6-past-progressive-check ersetzt diese Karte. Das Past Progressive ist Stoff der Jahrgangsstufe 6; dieses Paket übernimmt nichts."
+			"reason": "Bereits durch den freigegebenen Bestandsabgleich von englisch-realschule-6 (approved 2026-11-19) geregelt: e6-past-progressive-check ersetzt diese Karte dort. Dieses Paket übernimmt nichts und deklariert nichts; die Zeile steht nur, damit jede Alt-Id genau eine Zeile hat."
 		},
 		{
 			"de_by_cell": "de-by:realschule-7-englisch-grammatik-tenses",
@@ -65,9 +66,9 @@
 			"de_by_question": "Welche Zukunftsform verwendet man im Englischen für bereits gefasste feste Pläne und Absichten für die Zukunft (z. B. 'Ich habe beschlossen, morgen mein Zimmer aufzuräumen')?",
 			"category": "C",
 			"academy_slug": null,
-			"action": "settled-in-englisch-realschule-6",
+			"action": "keep-active",
 			"neighbour_successor": "zam-academy:englisch-realschule-6/e6-going-to-future-check",
-			"reason": "Bereits durch den freigegebenen Bestandsabgleich von englisch-realschule-6 (approved 2026-11-19) geregelt: e6-going-to-future-check ersetzt diese Karte. Zukunftsformen sind Stoff der Jahrgangsstufe 6; dieses Paket übernimmt nichts."
+			"reason": "Bereits durch den freigegebenen Bestandsabgleich von englisch-realschule-6 (approved 2026-11-19) geregelt: e6-going-to-future-check ersetzt diese Karte dort. Dieses Paket übernimmt nichts und deklariert nichts; die Zeile steht nur, damit jede Alt-Id genau eine Zeile hat."
 		},
 		{
 			"de_by_cell": "de-by:realschule-7-englisch-grammatik-tenses",
@@ -84,9 +85,9 @@
 			"de_by_question": "Wie lautet die unregelmäßige Steigerung (Komparativ und Superlativ) des englischen Adjektivs 'good'?",
 			"category": "C",
 			"academy_slug": null,
-			"action": "settled-in-englisch-realschule-6",
+			"action": "keep-active",
 			"neighbour_successor": "zam-academy:englisch-realschule-6/e6-comparatives-check",
-			"reason": "Bereits durch den freigegebenen Bestandsabgleich von englisch-realschule-6 (approved 2026-11-19) geregelt: e6-comparatives-check ersetzt diese Karte. Die Steigerung von Adjektiven ist Stoff der Jahrgangsstufe 6; dieses Paket übernimmt nichts."
+			"reason": "Bereits durch den freigegebenen Bestandsabgleich von englisch-realschule-6 (approved 2026-11-19) geregelt: e6-comparatives-check ersetzt diese Karte dort. Dieses Paket übernimmt nichts und deklariert nichts; die Zeile steht nur, damit jede Alt-Id genau eine Zeile hat."
 		},
 		{
 			"de_by_cell": "de-by:realschule-7-englisch-grammatik-tenses",
@@ -121,9 +122,9 @@
 			"de_by_question": "Wie wird eine Frage oder Verneinung im englischen Simple Past mit dem Hilfsverb 'did' gebildet?",
 			"category": "C",
 			"academy_slug": null,
-			"action": "settled-in-englisch-realschule-6",
+			"action": "keep-active",
 			"neighbour_successor": "zam-academy:englisch-realschule-6/e6-simple-past-rev-check",
-			"reason": "Bereits durch den freigegebenen Bestandsabgleich von englisch-realschule-6 (approved 2026-11-19) geregelt: e6-simple-past-rev-check ersetzt diese Karte. Dieses Paket übernimmt nichts."
+			"reason": "Bereits durch den freigegebenen Bestandsabgleich von englisch-realschule-6 (approved 2026-11-19) geregelt: e6-simple-past-rev-check ersetzt diese Karte dort. Dieses Paket übernimmt nichts und deklariert nichts; die Zeile steht nur, damit jede Alt-Id genau eine Zeile hat."
 		},
 		{
 			"de_by_cell": "de-by:realschule-6-englisch-grammatik-grundlagen",
@@ -141,7 +142,8 @@
 			"category": "A",
 			"academy_slug": "e7-must-have-to-check",
 			"action": "propose-replace-after-approval",
-			"reason": "Derselbe Einzelabruf: mustn't drückt im Gegensatz zu needn't ein Verbot aus. Gleiche Frage, gleiche Antwort (Verbot) und binäre Auswahl gegen „keine Notwendigkeit“. mustn't und needn't stehen im LehrplanPLUS in Jahrgangsstufe 7 (E7 1.2 Wortschatz: modal verbs); englisch-realschule-6 hat die Karte deshalb aktiv gelassen. Offene Frage an Thomas: Die Altzelle liegt in zam-os/zam inzwischen unter tests/fixtures/legacy und wird nicht mehr gebündelt."
+			"reason": "Derselbe Einzelabruf: mustn't drückt im Gegensatz zu needn't ein Verbot aus. Wörtlich gleiche Frage; inhaltsgleiche Antwort (alt: „Ein striktes Verbot (‚Du darfst nicht!‘)“, neu: „ein Verbot (du darfst nicht)“) und binäre Auswahl gegen „keine Notwendigkeit“. mustn't und needn't stehen im LehrplanPLUS in Jahrgangsstufe 7 (E7 1.2 Wortschatz: modal verbs); englisch-realschule-6 hat die Karte deshalb aktiv gelassen.",
+			"open_question": "Englisch 6 (freigegeben 2026-11-19) führt diese Karte als keep-active. Eine Übertragung hier würde sie einem zweiten Paket zuordnen (AGENTS.md §6); Thomas entscheidet, welches Paket die Historie übernimmt."
 		},
 		{
 			"de_by_cell": "de-by:realschule-6-englisch-grammatik-grundlagen",
@@ -158,9 +160,9 @@
 			"de_by_question": "Welches Wort ist das korrekte eigenständige Possessivpronomen (steht allein ohne nachfolgendes Nomen) für 'meins / meiner' im Englischen (z. B. 'This book is ...')?",
 			"category": "C",
 			"academy_slug": null,
-			"action": "settled-in-englisch-realschule-6",
+			"action": "keep-active",
 			"neighbour_successor": "zam-academy:englisch-realschule-6/e6-possessives-check",
-			"reason": "Bereits durch den freigegebenen Bestandsabgleich von englisch-realschule-6 (approved 2026-11-19) geregelt: e6-possessives-check ersetzt diese Karte. Dieses Paket übernimmt nichts."
+			"reason": "Bereits durch den freigegebenen Bestandsabgleich von englisch-realschule-6 (approved 2026-11-19) geregelt: e6-possessives-check ersetzt diese Karte dort. Dieses Paket übernimmt nichts und deklariert nichts; die Zeile steht nur, damit jede Alt-Id genau eine Zeile hat."
 		},
 		{
 			"de_by_cell": "de-by:realschule-6-englisch-grammatik-grundlagen",

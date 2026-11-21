@@ -131,7 +131,7 @@
 			"1": {
 				"language": "en",
 				"prompt": "Write a short profile of Irish culture for your class website: language, one sport, music and one festival. Write four or five sentences.",
-				"model": "In the Republic of Ireland, Irish is the first official language, but most people speak English every day. Many young people play hurling or camogie with a wooden stick called a hurley. Traditional music is played with the fiddle, the tin whistle and a drum called the bodhrán. On 17 March people celebrate St Patrick's Day with parades and green clothes.",
+				"model": "In the Republic of Ireland, Irish is the first official language, but most people speak English every day. Many young people play hurling or camogie with a wooden stick called a hurley. Musicians play traditional music with the fiddle, the tin whistle and a drum, the bodhrán. On 17 March people celebrate St Patrick's Day with parades and green clothes.",
 				"criteria": [
 					"Ich beschreibe die Sprachsituation korrekt.",
 					"Ich erkläre eine gälische Sportart mit einem Detail.",
@@ -292,19 +292,19 @@
 			"answer": "The violence stopped and both communities share the government.",
 			"wrong": [
 				"Northern Ireland became part of the Republic of Ireland.",
-				"All walls between the areas were taken down immediately."
+				"People took down all walls between the areas immediately."
 			],
 			"explanation": "Nach dem Good Friday Agreement endete der größte Teil der Gewalt und beide Gemeinschaften regieren gemeinsam. Nordirland blieb Teil des Vereinigten Königreichs, und manche Mauern stehen noch."
 		},
 		"takeaway": "Republik: President (Staatsoberhaupt), Taoiseach (Regierungschef), Parlament Oireachtas mit Dáil, EU seit 1973. Nordirland: Teil des UK, Assembly in Stormont. The Troubles (ab Ende der 1960er), Good Friday Agreement am 10. April 1998, offene Grenze.",
 		"practice": [
 			{
-				"prompt": "The head of government in the Republic of Ireland is called the ___. (irisches Wort)",
+				"prompt": "The head of government in the Republic of Ireland has an Irish title: the ___. (irisches Wort)",
 				"answers": ["Taoiseach"],
 				"feedback": "Der Taoiseach führt die Regierung; der President ist Staatsoberhaupt."
 			},
 			{
-				"prompt": "The peace agreement of 1998 is called the Good ___ Agreement. (Feiertag)",
+				"prompt": "The name of the peace agreement of 1998 is the Good ___ Agreement. (Feiertag)",
 				"answers": ["Friday"],
 				"feedback": "Es wurde am Karfreitag, dem 10. April 1998, geschlossen."
 			}
@@ -344,7 +344,7 @@
 				},
 				{
 					"label": "Friedensabkommen",
-					"before": "The Good Friday Agreement was signed in",
+					"before": "The two sides signed the Good Friday Agreement in",
 					"after": ".",
 					"options": ["1998", "1973", "1066"],
 					"answer": "1998",
