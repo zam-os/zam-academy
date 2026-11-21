@@ -77,7 +77,8 @@ Practical investigations, presentations and classroom discussion take place
 outside the app. Written answers are self-assessed against explicit criteria.
 
 The companion ZAM cell contains 54 cards and is supplied separately as
-cell.json in the source package. This local version has no catalog entry.
+cell.json in the source package. ZAM can also import it from the ZAM Academy
+catalog (https://academy.zam-os.org/).
 `;
 writeFileSync(join(bundleDir, "README-START.txt"), readmeTxt, "utf8");
 
