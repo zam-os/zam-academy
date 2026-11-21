@@ -183,7 +183,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Biologie 5 Realschule: cd biologie-realschule-5 (dev server on :5238)
 # Geschichte/Politik/Geographie 5 Mittelschule: cd gpg-mittelschule-5 (dev server on :5241)
 # Politics and Society 6 Mittelschule: cd politik-mittelschule-6 (dev server on :5261)
-# Politics and Society 7 Mittelschule: cd politik-mittelschule-7 (dev server on :5267)
+# Politics and Society 7 Mittelschule: cd politik-mittelschule-7 (dev server on :5269)
 # Natur und Technik 5 Mittelschule: cd nt-mittelschule-5 (dev server on :5243)
 # Natur und Technik 6 Mittelschule: cd nt-mittelschule-6 (dev server on :5250)
 # Grade 7 Natur und Technik: cd nt-mittelschule-7 (dev server on :5264)

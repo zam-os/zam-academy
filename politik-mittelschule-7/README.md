@@ -22,6 +22,6 @@ node scripts/check-curriculum.mjs
 ZAM_CORE=file:///absolute/path/to/zam-core/dist/index.js node scripts/validate-cell.mjs
 ```
 
-Vite serves the package at `http://localhost:5267/politik-mittelschule-7/`. The ZIP is `release/ZAM-Academy-Politik-7-offline.zip`.
+Vite serves the package at `http://localhost:5269/politik-mittelschule-7/`. The ZIP is `release/ZAM-Academy-Politik-7-offline.zip`.
 
 The cell has 15 atoms and 45 practice cards, three per lesson, bound to GPG 7 learning area 3 for the tracks each lesson serves. The package starts at version 0.0 pending teacher review. See [coverage.json](coverage.json) for the official expectations and [the coverage notes](../docs/politik-mittelschule-7-coverage.md) for sources and the legacy inventory.

@@ -15,11 +15,12 @@ Neighbouring content: GPG 7 learning area 2 treats industrialisation, imperialis
 
 ## Source checks
 
-`node scripts/check-curriculum.mjs` checks the SHA-256 of both stored curriculum pages and finds every quoted expectation in them: 8 rows, 0 not found. Each source a lesson shows was fetched once on 20 or 21 November 2026 and its page title read:
+`node scripts/check-curriculum.mjs` checks the SHA-256 of both stored curriculum pages and finds every quoted expectation in them: 8 rows, 0 not found. Each of the 28 sources a lesson shows was fetched once on 20 or 21 November 2026 and its page title read:
 
 | Source | Page title read | Used for |
 | --- | --- | --- |
-| [LeMO Sozialgesetzgebung](https://www.dhm.de/lemo/kapitel/kaiserreich/innenpolitik/sozialgesetze) | LeMO Zeitstrahl - Kaiserreich - Innenpolitik - Sozialgesetzgebung | 12–14 hours, contributions, pension at 70, 1890s protections |
+| [LeMO Sozialgesetzgebung](https://www.dhm.de/lemo/kapitel/kaiserreich/innenpolitik/sozialgesetze) | LeMO Zeitstrahl - Kaiserreich - Innenpolitik - Sozialgesetzgebung | 12–14 hours, contributions, pension at 70 |
+| [FES Chronik, 8. Mai 1891](https://library.fes.de/fulltext/bibliothek/chronik/band1/e235e481.html) | 8. Mai 1891 | Gewerbeordnung 1891: Sunday rest, no factory work under 13, eleven hours for women workers only (LeMO states the eleven hours without restricting them to women) |
 | [LeMO Arbeiterfrage und Streikbewegung](https://www.dhm.de/lemo/kapitel/kaiserreich/innenpolitik/arbeiterfrage-und-streikbewegung) | … Arbeiterfrage und Streikbewegung | 1889 miners' strike, demands |
 | [LeMO Arbeiterbewegung](https://www.dhm.de/lemo/kapitel/kaiserreich/innenpolitik/arbeiterbewegung) | … Arbeiterbewegung | ADAV 1863, SDAP 1869, Gotha 1875, SPD 1890, Christian unions |
 | [LeMO Sozialistengesetz](https://www.dhm.de/lemo/kapitel/kaiserreich/innenpolitik/sozialistengesetz) | … Sozialistengesetz | 1878 ban |
@@ -36,13 +37,15 @@ Neighbouring content: GPG 7 learning area 2 treats industrialisation, imperialis
 | [LeMO Mietskaserne](https://www.dhm.de/lemo/kapitel/kaiserreich/alltagsleben/mietskaserne) | … Mietskaserne | tenement layout |
 | [LeMO Neue Industrien](https://www.dhm.de/lemo/kapitel/kaiserreich/industrie/neue) | … Neue Industrien | Siemens, AEG, 600 chemists at Bayer |
 | [LeMO Warenhäuser](https://www.dhm.de/lemo/kapitel/kaiserreich/alltagsleben/warenhaeuser) | … Warenhäuser | sales staff as employees |
+| [LeMO Bismarcks Bündnissystem](https://www.dhm.de/lemo/kapitel/kaiserreich/aussenpolitik/bismarcks-buendnissystem) | … Bismarcks Bündnissystem | Zweibund 1879 as mutual aid against a Russian attack |
 | [LeMO Weg in den Krieg](https://www.dhm.de/lemo/kapitel/erster-weltkrieg/kriegsverlauf/weg-in-den-krieg) | … Weg in den Krieg | arms race, army 1913 |
 | [LeMO Flottenbau](https://www.dhm.de/lemo/kapitel/kaiserreich/aussenpolitik/flottenbau) | … Flottenbau | naval race |
 | [LeMO Kolonialpolitik](https://www.dhm.de/lemo/kapitel/kaiserreich/aussenpolitik/kolonialpolitik) | … Kolonialpolitik | colonial associations |
 | [LeMO Juli-Krise 1914](https://www.dhm.de/lemo/kapitel/erster-weltkrieg/kriegsverlauf/juli-krise-1914) | … Juli-Krise 1914 | dates of the July Crisis |
 | [LeMO Kriegserklärungen](https://www.dhm.de/lemo/kapitel/erster-weltkrieg/kriegsverlauf/kriegserklaerungen) | … Kriegserklärungen | blocs, Italy 1915 |
 | [bpb, Annika Mombauer](https://www.bpb.de/shop/zeitschriften/apuz/182558/julikrise-und-kriegsschuld-thesen-und-stand-der-forschung/) | Julikrise und Kriegsschuld – Thesen und Stand der Forschung \| Erster Weltkrieg \| bpb.de | Article 231, Fischer, Clark, Krumeich |
-| [LeMO Versailler Vertrag](https://www.dhm.de/lemo/kapitel/weimarer-republik/aussenpolitik/versailles) | … Versailler Vertrag | all treaty terms, 132 billion gold marks |
+| [LeMO Versailler Vertrag](https://www.dhm.de/lemo/kapitel/weimarer-republik/aussenpolitik/versailles) | … Versailler Vertrag | treaty terms, plebiscites (including the areas that stayed German) |
+| [LeMO Reparationen](https://www.dhm.de/lemo/kapitel/weimarer-republik/aussenpolitik/reparationen) | … Reparationen | total fixed in London in May 1921: 132 billion marks (the LeMO overview of Weimar foreign policy says 132 billion gold marks) |
 | [LeMO Dolchstoßlegende](https://www.dhm.de/lemo/kapitel/weimarer-republik/innenpolitik/dolchstosslegende) | … Dolchstoßlegende | the legend and why it was false |
 
 The war-guilt lesson presents positions as summaries, not quotations, and does not settle the debate. It follows the bpb overview: Fischer argued for main, not sole, German responsibility; Clark stresses the part of all great powers; critics such as Krumeich still see the greatest responsibility in Berlin.

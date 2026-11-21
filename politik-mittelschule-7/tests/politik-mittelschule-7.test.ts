@@ -183,7 +183,12 @@ describe("Politik und Gesellschaft 7: curriculum and teaching material", () => {
     expect(text("sozialgesetze")).toMatch(/1883[\s\S]*1884[\s\S]*1889/);
     expect(text("sozialgesetze")).toContain("70. Lebensjahr");
     expect(text("sozialgesetze")).toContain("zu zwei Dritteln die Arbeiter");
-    expect(text("sozialgesetze")).toContain("elf Stunden");
+    // FES chronicle of the 1891 Gewerbeordnung: eleven hours for women workers only.
+    expect(text("sozialgesetze")).toContain("Arbeitszeit von Arbeiterinnen auf elf Stunden");
+    expect(text("sozialgesetze")).toContain("Für erwachsene Männer gab es weiter keine Höchstarbeitszeit");
+    // LeMO Bismarcks Bündnissystem: the Zweibund was a defensive alliance against Russia.
+    expect(text("kriegsursachen")).not.toContain("in jedem Fall");
+    expect(text("kriegsursachen")).toContain("falls Russland einen von ihnen angreift");
     // LeMO Arbeiterfrage und Streikbewegung, Arbeiterbewegung
     expect(text("zusammenschluss")).toContain("fast 90 000 Bergleute");
     expect(text("zusammenschluss")).toMatch(/1863[\s\S]*1869[\s\S]*1875[\s\S]*1878/);
@@ -212,6 +217,8 @@ describe("Politik und Gesellschaft 7: curriculum and teaching material", () => {
     expect(text("versailles")).toContain("100 000 Berufssoldaten");
     expect(text("versailles")).toContain("15 000 Mann");
     expect(text("versailles")).toContain("132 Milliarden Goldmark");
+    expect(findLesson("versailles")!.sourceIds).toContain("lemo-reparationen");
+    expect(text("versailles")).toContain("Westpreußen östlich der Weichsel");
     expect(text("versailles")).toContain("10. Januar 1920");
     // Fischer did not claim sole guilt; the Dolchstoß claim is called false.
     expect(all).not.toMatch(/Fischer[^.]*Alleinschuld/);

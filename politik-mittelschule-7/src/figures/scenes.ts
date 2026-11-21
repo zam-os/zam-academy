@@ -331,7 +331,7 @@ export const VERSAILLES_LOSSES: ReadonlyArray<readonly [x: number, y: number, re
   [400, 34, "Nordschleswig", "geteilt mit Dänemark (Abstimmung)"],
   [640, 60, "Memelgebiet", "alliierte Kontrolle"],
   [560, 112, "Danzig", "Freie Stadt (Völkerbund)"],
-  [680, 196, "Posen, Westpreußen", "an Polen"],
+  [680, 196, "Posen, Westpreußen", "an Polen (Teile blieben)"],
   [600, 306, "Hultschiner Ländchen", "an die Tschechoslowakei"],
   [116, 92, "Eupen-Malmedy", "an Belgien (Abstimmung)"],
   [96, 196, "Elsass-Lothringen", "an Frankreich"],
