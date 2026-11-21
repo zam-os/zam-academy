@@ -111,7 +111,7 @@ export function renderModel(lesson: Lesson, explored: string[], id?: string): st
 				<defs><marker id="model-arrow" markerWidth="6" markerHeight="6" orient="auto" refX="4" refY="3"><path d="M0 0 6 3 0 6Z" fill="context-stroke"/></marker></defs>
 				${diagram}
 			</svg>
-			<figcaption id="model-observation" tabindex="-1">${scenario ? esc(scenario.observation) : `Vorschau: ${esc(scenarios[0].label)}. Wähle eine Ansicht, um sie zu untersuchen.`}</figcaption>
+			<figcaption id="model-observation" tabindex="-1">${scenario ? esc(scenario.observation) : `Startansicht: ${esc(scenarios[0].label)}. Wähle eine Ansicht, um sie zu untersuchen.`}</figcaption>
 		</figure>
 		<button type="button" class="button secondary" id="record-model" ${!scenario || explored.includes(scenario.id) ? "disabled" : ""}>Beobachtung festhalten</button>
 		<ul class="model-goals" aria-label="Modellziele">${scenarios.map((entry) => `<li>${explored.includes(entry.id) ? "✓" : "○"} ${esc(entry.goal)}</li>`).join("")}</ul>

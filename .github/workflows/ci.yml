@@ -126,6 +126,24 @@ jobs:
       - name: Check verbatim Mittelschule curriculum coverage
         if: matrix.app == 'informatik-mittelschule-6' || matrix.app == 'nt-mittelschule-6' || matrix.app == 'nt-mittelschule-5' || matrix.app == 'gpg-mittelschule-5' || matrix.app == 'politik-mittelschule-6' || matrix.app == 'politik-mittelschule-7' || matrix.app == 'deutsch-mittelschule-5' || matrix.app == 'deutsch-mittelschule-6' || matrix.app == 'deutsch-mittelschule-7' || matrix.app == 'deutsch-mittelschule-8' || matrix.app == 'mathematik-mittelschule-5' || matrix.app == 'mathematik-mittelschule-6' || matrix.app == 'mathematik-mittelschule-9' || matrix.app == 'mathematik-mittelschule-10' || matrix.app == 'englisch-mittelschule-5' || matrix.app == 'englisch-mittelschule-6'
         run: node scripts/check-curriculum.mjs
+      - name: Check Natur und Technik 7 curriculum and offline bundle
+        if: matrix.app == 'nt-gymnasium-7'
+        run: |
+          node scripts/check-curriculum.mjs
+          node scripts/verify-release.mjs
+      - name: Check Natur und Technik 7 in headless Chrome
+        if: matrix.app == 'nt-gymnasium-7'
+        env:
+          CHROME_BIN: /usr/bin/google-chrome
+        run: node scripts/verify-browser.mjs
+      - name: Rebuild the Natur und Technik 7 bundle when checking its Physics source
+        if: matrix.app == 'physik-gymnasium-7'
+        working-directory: nt-gymnasium-7
+        run: |
+          npm ci
+          npm run package:zip
+          node scripts/check-curriculum.mjs
+          node scripts/verify-release.mjs
       - uses: actions/upload-artifact@v4
         with:
           name: zam-academy-${{ matrix.app }}-offline

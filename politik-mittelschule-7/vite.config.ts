@@ -7,7 +7,7 @@ export default defineConfig({
   base: "/politik-mittelschule-7/",
   plugins: [viteSingleFile()],
   server: {
-    port: 5269,
+    port: 5270,
     open: false,
   },
   build: {

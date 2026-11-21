@@ -37,15 +37,20 @@ describe("Schreibwerkstatt", () => {
 		}
 	});
 
-	it("escapes the stored text and warns about names and shared devices", () => {
+	it("escapes the stored text and explains its storage only behind a small marker", () => {
 		const desk = lesson("berichten").desk;
 		if (!desk) throw new Error("desk");
 		const html = deskHtml("berichten", desk, '</textarea><img src=x onerror="alert(1)">');
 		expect(html).not.toContain("<img");
 		expect(html).toContain("&lt;img");
 		expect(html).toContain(`maxlength="${MAX_TEXT}"`);
-		expect(html).toMatch(/gemeinsamen Gerät/);
-		expect(html).toMatch(/keine Namen/);
+		// AGENTS.md rule 7: no prominent shared-account warning, a clickable marker instead.
+		const info = html.match(/<details class="desk-info[^"]*">([\s\S]*?)<\/details>/)?.[1] ?? "";
+		expect(info).toMatch(/<summary>[\s\S]*Wo bleibt mein Text\?<\/summary>/);
+		expect(info).toMatch(/eigenes Benutzerkonto/);
+		expect(info).toMatch(/lösche am Ende deinen Text/);
+		const visible = html.replace(/<details[\s\S]*?<\/details>/, "");
+		expect(visible).not.toMatch(/gemeinsamen Gerät|andere ihn lesen|Benutzerkonto/);
 	});
 
 	it("leaves exactly the named basic question open in each report", () => {

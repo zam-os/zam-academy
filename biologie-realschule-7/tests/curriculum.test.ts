@@ -89,7 +89,7 @@ describe("ZAM cell", () => {
 	});
 
 	it("declares exactly the approved plant card replacements and keeps the other cards active", () => {
-		expect(publication.status).toBe("local-only");
+		expect(publication.status).toBe("ready");
 		expect(mapping.approved).toBe("2026-11-20");
 		expect(mapping.status).toBe("approved");
 		const legacyItems = snapshot.atoms.flatMap((a) => a.practice_items);

@@ -826,7 +826,7 @@ function renderParents(): void {
 </section>
 <section class="card">
 	<h2>Daten und Zurücksetzen</h2>
-	<p>Es gibt kein Konto, keine Werbung und keine Verbindung zu fremden Servern. Der Fortschritt und die Texte vom Schreibtisch liegen nur im Speicher dieses Browsers. Auf einem gemeinsam genutzten Gerät können andere diese Texte lesen.</p>
+	<p>Es gibt kein Konto, keine Werbung und keine Verbindung zu fremden Servern. Der Fortschritt und die Texte vom Schreibtisch liegen nur im Speicher dieses Browsers auf diesem Gerät. Der Browser trennt sie nach Benutzerkonto, Browser und Profil und gleicht sie nicht mit anderen Geräten ab. Hat Ihr Kind ein eigenes Benutzerkonto, sieht niemand sonst seine Texte. Teilen sich mehrere Kinder ein Konto, setzen Sie am Ende des Übens mit dem Knopf unten alles zurück; das löscht auch die Texte.</p>
 	<button type="button" class="button danger" data-action="reset">Fortschritt zurücksetzen</button>
 </section>`;
 }

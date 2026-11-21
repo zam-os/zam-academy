@@ -78,6 +78,12 @@ SOFORT-START OHNE INSTALLATION
 Keine Installation, kein Server und kein Internet erforderlich.
 Dein Fortschritt bleibt im Browser gespeichert.
 
+Für Eltern und Lehrkräfte: Fortschritt und eigene Texte liegen nur im
+Speicher dieses Browsers auf diesem Gerät. Der Browser trennt sie nach
+Benutzerkonto, Browser und Profil und gleicht sie nicht ab. Teilen sich
+mehrere Kinder ein Konto, setzt am Ende mit „Lokalen Fortschritt
+zurücksetzen“ auf dem Lernpfad alles zurück; das löscht auch die Texte.
+
 In einer Lektion wählst du unter „Arbeitsweise“ zwischen
 - „Level 1 · mit Leitfragen“ und
 - „Level 2 · Transfer“.

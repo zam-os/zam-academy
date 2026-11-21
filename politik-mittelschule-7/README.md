@@ -8,7 +8,7 @@ German-language lessons for Grade 7, learning area 3 of Geschichte/Politik/Geogr
 
 The Regelklasse path has 13 lessons and the M-Zug path 15. Learners choose their track on the learning path; the two M7 lessons stay open to everyone as optional extensions. Every lesson has a drawn diagram, a three-option quick check, a classification or ordering workshop with feedback per entry, and writing tasks with model answers and criteria on two levels. The quick check, workshop and Level 1 self-assessment count towards completion.
 
-Progress and writing stay in the browser (`politik_ms7_academy_progress_v1`). The offline ZIP contains a single HTML app and launchers for Windows, macOS and Linux. Source links open only on a click.
+Progress and writing stay in the browser (`politik_ms7_academy_progress_v1`); a small "ⓘ Wo bleibt mein Text?" marker next to the writing field explains this, the offline ZIP notes say the same for parents and teachers, and the progress reset deletes the texts too (AGENTS.md rule 7). The offline ZIP contains a single HTML app and launchers for Windows, macOS and Linux. Source links open only on a click.
 
 ## Develop and verify
 
@@ -22,6 +22,6 @@ node scripts/check-curriculum.mjs
 ZAM_CORE=file:///absolute/path/to/zam-core/dist/index.js node scripts/validate-cell.mjs
 ```
 
-Vite serves the package at `http://localhost:5269/politik-mittelschule-7/`. The ZIP is `release/ZAM-Academy-Politik-7-offline.zip`.
+Vite serves the package at `http://localhost:5270/politik-mittelschule-7/`. The ZIP is `release/ZAM-Academy-Politik-7-offline.zip`.
 
 The cell has 15 atoms and 45 practice cards, three per lesson, bound to GPG 7 learning area 3 for the tracks each lesson serves. The package starts at version 0.0 pending teacher review. See [coverage.json](coverage.json) for the official expectations and [the coverage notes](../docs/politik-mittelschule-7-coverage.md) for sources and the legacy inventory.
