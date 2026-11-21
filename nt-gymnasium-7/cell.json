@@ -223,7 +223,7 @@
             "type": "binary_choice",
             "options": [
               "Mit Liniennummer, Ort und Zeitraum",
-              "Mit möglichst vielen unpassenden Wörtern"
+              "Nur mit dem Namen des Verkehrsunternehmens"
             ],
             "correct_index": 0
           }
@@ -328,7 +328,7 @@
             "type": "binary_choice",
             "options": [
               "Ein Router",
-              "Ein Texteditor"
+              "Ein Webserver"
             ],
             "correct_index": 0
           }
@@ -425,11 +425,11 @@
           "language": "de",
           "tier": "tier2_synthesis",
           "bloom_level": 3,
-          "question": "Eine AG muss kurzfristig ihren Treffpunkt ändern. Welcher freigegebene digitale Kanal eignet sich und warum?",
-          "concept": "Der geschlossene AG-Chat erreicht die Beteiligten schnell.",
+          "question": "Eine feste Gruppe muss kurzfristig etwas intern abstimmen. Welcher freigegebene Kanal passt und warum?",
+          "concept": "Ein geschlossener Gruppenchat ermöglicht schnelle Antworten im vorgesehenen Empfängerkreis.",
           "source_link": "https://academy.zam-os.org/nt-gymnasium-7/#lesson=inf7-digitale-kommunikation",
           "materiality": "material",
-          "sample_solution": "Im geschlossenen Gruppenchat erhalten die Mitglieder die Nachricht und können sofort reagieren. Ein öffentlicher Kanal würde Personen erreichen, für die der Treffpunkt gar keine Bedeutung hat."
+          "sample_solution": "Im geschlossenen Gruppenchat erreicht die Nachricht die beteiligten Personen. Sie können sofort aufeinander antworten. Ein öffentlicher Beitrag würde auch Menschen erreichen, die zur Abstimmung nichts beitragen können."
         }
       ]
     },
@@ -929,7 +929,7 @@
             "type": "binary_choice",
             "options": [
               "Die Ausgangsseiten und die vorgesehenen Zielseiten",
-              "Nur die gewünschte Schriftfarbe"
+              "Die fertigen Seitentexte ohne geplante Linkziele"
             ],
             "correct_index": 0
           }
@@ -940,11 +940,11 @@
           "language": "de",
           "tier": "tier2_synthesis",
           "bloom_level": 3,
-          "question": "Wie kann ein Team ein dreiseitiges Wiki in 40 Minuten planen und testen?",
-          "concept": "Entwurf, Umsetzung und Test in drei klaren Zeitfenstern planen.",
+          "question": "Warum sollte ein Team bei einem zeitlich begrenzten Wiki-Projekt für Entwurf, Umsetzung und Test eigene Zeitfenster einplanen?",
+          "concept": "Die Zeitfenster machen Übergaben überprüfbar und lassen Zeit, Fehler vor der Abgabe zu korrigieren.",
           "source_link": "https://academy.zam-os.org/nt-gymnasium-7/#lesson=inf7-projekt-planen",
           "materiality": "material",
-          "sample_solution": "Das Team skizziert zuerst die drei Seiten und Verweise. Anschließend setzt es die Seiten und Verweise um. Vor der Abgabe bleibt ein eigenes Fenster, in dem eine Person jede Seite und ihre Verweise prüft."
+          "sample_solution": "Der Entwurf legt Seiten und Verweise fest. Die Umsetzung braucht diesen Plan, und die Funktionsprüfung braucht die umgesetzten Seiten. Reservierte Testzeit stellt sicher, dass das Team gefundene Fehler vor der Abgabe beheben kann."
         }
       ]
     },

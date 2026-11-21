@@ -1,55 +1,50 @@
 import { esc } from "../exercises/format";
 
-const KEY = "informatik_gym7_wiki_v1";
-const VERSION_KEY = "informatik_gym7_wiki_versions_v1";
 const TOPICS = ["Schulwiki", "Bücherei", "Arbeitsgemeinschaften"];
+const MAX_CHECKPOINT_BYTES = 32768;
+const TEXT_FIELDS = { title: 60, body: 700, label: 50, source: 230 } as const;
 type Page = { title: string; body: string; target: number | null; label: string; source: string };
-type Checkpoint = { name: string; pages: Page[] };
+type Checkpoint = { schema: 1; name: string; pages: Page[] };
 
-function defaults(): Page[] {
-  return TOPICS.map((title) => ({ title, body: "", target: null, label: "", source: "" }));
+export function createWikiDraft(): { pages: Page[]; name: string } {
+  return {
+    name: "schulwiki-v1",
+    pages: TOPICS.map((title) => ({ title, body: "", target: null, label: "", source: "" })),
+  };
 }
 
-function readPages(data: unknown): Page[] | undefined {
-  if (!Array.isArray(data) || data.length !== TOPICS.length) return undefined;
+function readCheckpoint(text: string): Checkpoint {
+  const document = JSON.parse(text) as Partial<Checkpoint> | null;
   if (
-    !data.every(
+    document?.schema !== 1 ||
+    typeof document.name !== "string" ||
+    !document.name.trim() ||
+    document.name.length > 45 ||
+    !Array.isArray(document.pages) ||
+    document.pages.length !== TOPICS.length ||
+    !document.pages.every(
       (page) =>
         page &&
-        ["title", "body", "label", "source"].every((field) => typeof page[field] === "string") &&
+        Object.entries(TEXT_FIELDS).every(([key, max]) => {
+          const value = page[key as keyof typeof TEXT_FIELDS];
+          return typeof value === "string" && value.length <= max;
+        }) &&
         (page.target === null ||
           (Number.isInteger(page.target) && page.target >= 0 && page.target < TOPICS.length)),
     )
   )
-    return undefined;
-  return data;
+    throw new Error("Invalid wiki checkpoint");
+  return { schema: 1, name: document.name, pages: document.pages };
 }
 
-function readStorage(key: string): unknown {
-  try {
-    return JSON.parse(localStorage.getItem(key) ?? "null");
-  } catch {
-    return undefined;
-  }
-}
-
-function loadVersions(): Checkpoint[] {
-  const saved = readStorage(VERSION_KEY);
-  return Array.isArray(saved)
-    ? saved.flatMap((entry) => {
-        const pages = readPages(entry?.pages);
-        return typeof entry?.name === "string" && pages ? [{ name: entry.name, pages }] : [];
-      })
-    : [];
-}
-
-export function mountHypertextEditor(root: HTMLElement): void {
-  let pages = readPages(readStorage(KEY)) ?? defaults();
-  let versions = loadVersions();
+export function mountHypertextEditor(
+  root: HTMLElement,
+  draft: ReturnType<typeof createWikiDraft>,
+): void {
   let current = 0;
   root.innerHTML = `
     <h4>Dein Schulwiki</h4>
-    <p>Schreibe eigene Texte, füge einen Verweis ein und probiere ihn in der Vorschau aus. Verwende erfundene Angaben.</p>
+    <p>Schreibe eigene Texte, füge einen Verweis ein und probiere ihn in der Vorschau aus. Verwende erfundene Angaben. Speichere deinen Stand als Datei, bevor du den Browser schließt.</p>
     <label>Seite bearbeiten <select data-wiki-page>${TOPICS.map((title, i) => `<option value="${i}">${title}</option>`).join("")}</select></label>
     <div class="wiki-grid">
       <div class="wiki-fields">
@@ -61,16 +56,14 @@ export function mountHypertextEditor(root: HTMLElement): void {
       </div>
       <article class="wiki-preview" aria-label="Seitenvorschau"></article>
     </div>
-    <button type="button" class="btn btn-secondary btn-sm" data-wiki-save>Wiki in diesem Browser speichern</button>
-    <details class="wiki-versions">
-      <summary>Zwischenstände</summary>
-      <div class="wiki-versions-form">
-        <label>Name für den neuen Zwischenstand <input data-version-name maxlength="45" placeholder="z. B. schattenwiki-v1"></label>
-        <button type="button" class="btn btn-secondary btn-sm" data-version-save>Zwischenstand sichern</button>
-        <label>Gesicherter Stand <select data-version-list></select></label>
-        <button type="button" class="btn btn-secondary btn-sm" data-version-open>Stand als Entwurf öffnen</button>
+    <div class="wiki-versions-form">
+      <label>Name des Zwischenstands <input data-version-name maxlength="45" placeholder="z. B. schattenwiki-v1"></label>
+      <div class="wiki-file-actions">
+        <button type="button" class="btn btn-secondary btn-sm" data-version-save>Zwischenstand als Datei speichern</button>
+        <button type="button" class="btn btn-secondary btn-sm" data-version-open>Datei öffnen</button>
+        <input type="file" accept=".json,application/json" data-version-file hidden aria-label="Wiki-Zwischenstand">
       </div>
-    </details>
+    </div>
     <p data-wiki-status role="status"></p>`;
   const picker = root.querySelector<HTMLSelectElement>("[data-wiki-page]")!;
   const preview = root.querySelector<HTMLElement>(".wiki-preview")!;
@@ -81,24 +74,17 @@ export function mountHypertextEditor(root: HTMLElement): void {
     ),
   ];
 
-  const titleOf = (index: number) => pages[index].title.trim() || TOPICS[index];
+  const titleOf = (index: number) => draft.pages[index].title.trim() || TOPICS[index];
   const target = root.querySelector<HTMLSelectElement>('[data-wiki-field="target"]')!;
   const versionName = root.querySelector<HTMLInputElement>("[data-version-name]")!;
-  const versionList = root.querySelector<HTMLSelectElement>("[data-version-list]")!;
+  const versionFile = root.querySelector<HTMLInputElement>("[data-version-file]")!;
   const versionOpen = root.querySelector<HTMLButtonElement>("[data-version-open]")!;
-
-  function renderVersions(): void {
-    versionList.replaceChildren(
-      ...versions.map((version, index) => new Option(version.name, String(index))),
-    );
-    versionOpen.disabled = versions.length === 0;
-  }
 
   function renderPreview(): void {
     for (const [index, option] of [...picker.options].entries()) option.textContent = titleOf(index);
     for (const [index, option] of [...target.options].slice(1).entries())
       option.textContent = titleOf(index);
-    const page = pages[current];
+    const page = draft.pages[current];
     preview.innerHTML = `
       <h5>${esc(page.title || "Seite ohne Überschrift")}</h5>
       <p>${esc(page.body || "Hier erscheint dein Text.")}</p>
@@ -111,19 +97,22 @@ export function mountHypertextEditor(root: HTMLElement): void {
     picker.value = String(index);
     for (const input of inputs) {
       const key = input.dataset.wikiField as keyof Page;
-      input.value = String(pages[index][key] ?? "");
+      input.value = String(draft.pages[index][key] ?? "");
     }
     renderPreview();
   }
 
   switchPage(0);
-  renderVersions();
+  versionName.value = draft.name;
+  versionName.addEventListener("input", () => {
+    draft.name = versionName.value;
+  });
   picker.addEventListener("change", () => switchPage(Number(picker.value)));
   for (const input of inputs) {
     input.addEventListener("input", () => {
       const field = input.dataset.wikiField as keyof Page;
-      if (field === "target") pages[current].target = input.value ? Number(input.value) : null;
-      else pages[current][field] = input.value;
+      if (field === "target") draft.pages[current].target = input.value ? Number(input.value) : null;
+      else draft.pages[current][field] = input.value;
       status.textContent = "Änderungen noch nicht gespeichert.";
       renderPreview();
     });
@@ -134,40 +123,42 @@ export function mountHypertextEditor(root: HTMLElement): void {
     switchPage(Number(link.dataset.wikiLink));
     picker.focus();
   });
-  root.querySelector("[data-wiki-save]")?.addEventListener("click", () => {
-    try {
-      localStorage.setItem(KEY, JSON.stringify(pages));
-      status.textContent = "Wiki gespeichert.";
-    } catch {
-      status.textContent = "Der Browser kann den Entwurf gerade nicht speichern.";
-    }
-  });
   root.querySelector("[data-version-save]")?.addEventListener("click", () => {
     const name = versionName.value.trim();
-    const existing = loadVersions();
-    if (!name || existing.some((version) => version.name === name)) {
-      status.textContent = "Gib dem Zwischenstand einen eigenen Namen.";
+    const stem = name.replace(/[^\p{L}\p{N}_-]+/gu, "-").replace(/^-+|-+$/g, "");
+    if (!stem) {
+      status.textContent = "Gib dem Zwischenstand einen Namen mit Buchstaben oder Zahlen.";
       versionName.focus();
       return;
     }
-    const version = { name, pages: pages.map((page) => ({ ...page })) };
-    try {
-      const updated = [...existing, version];
-      localStorage.setItem(VERSION_KEY, JSON.stringify(updated));
-      versions = updated;
-      renderVersions();
-      versionList.value = String(versions.length - 1);
-      versionName.value = "";
-      status.textContent = `Zwischenstand „${name}“ gespeichert.`;
-    } catch {
-      status.textContent = "Der Browser kann keinen weiteren Stand speichern.";
-    }
+
+    const checkpoint: Checkpoint = { schema: 1, name, pages: draft.pages };
+    const file = new Blob([JSON.stringify(checkpoint, null, 2) + "\n"], { type: "application/json" });
+    const url = URL.createObjectURL(file);
+    const download = document.createElement("a");
+    download.href = url;
+    download.download = `${stem}.json`;
+    download.click();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+    status.textContent = `Download von „${stem}.json“ gestartet.`;
   });
-  versionOpen.addEventListener("click", () => {
-    const version = versions[Number(versionList.value)];
-    if (!version) return;
-    pages = version.pages.map((page) => ({ ...page }));
-    switchPage(0);
-    status.textContent = `„${version.name}“ ist geöffnet. Speichere das Wiki, um diesen Stand als Entwurf zu übernehmen.`;
+
+  versionOpen.addEventListener("click", () => versionFile.click());
+  versionFile.addEventListener("change", async () => {
+    const [file] = versionFile.files ?? [];
+    versionFile.value = "";
+    if (!file) return;
+    try {
+      if (file.size > MAX_CHECKPOINT_BYTES) throw new Error("Wiki checkpoint is too large");
+      const checkpoint = readCheckpoint(await file.text());
+      draft.pages = checkpoint.pages;
+      draft.name = checkpoint.name;
+      versionName.value = checkpoint.name;
+      switchPage(0);
+      status.textContent = `Zwischenstand „${checkpoint.name}“ geöffnet.`;
+    } catch {
+      status.textContent =
+        "Die Datei ist kein gültiger Wiki-Zwischenstand. Dein Entwurf bleibt geöffnet.";
+    }
   });
 }

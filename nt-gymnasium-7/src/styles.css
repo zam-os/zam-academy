@@ -2202,13 +2202,8 @@ code {
 @media (max-width: 660px) {
   .subject-grid { grid-template-columns: 1fr; }
 }
-.wiki-versions {
-  margin-top: 1rem;
-}
-.wiki-versions summary {
-  cursor: pointer;
-  font-weight: 650;
-}
+.wiki-file-actions { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.wiki-versions-form > label { display: grid; gap: 0.3rem; }
 .wiki-versions-form {
   display: grid;
   justify-items: start;

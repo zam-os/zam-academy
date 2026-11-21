@@ -131,7 +131,7 @@ const SETTINGS: Record<
       },
       {
         id: "without-else",
-        text: "Lass den Roboter bei freiem Weg mit einem einseitigen Programm am Start.",
+        text: "Setze „Hoch“ nur in den Dann-Zweig. Teste, dass der Roboter bei freiem Weg am Start bleibt.",
         check: (v) =>
           v.wall === 0 && v.yes === 2 && v.no === 0 && finished("branch", v) && at("branch", v, 0, 2),
       },
@@ -219,7 +219,7 @@ function summary(mode: Mode, v: LabValues): string {
   if (mode === "until" && finished(mode, v)) {
     const [x, y] = target(mode, v) ?? [0, 2];
     if (p.x === x && p.y === y) return `Ziel erreicht. Durchläufe: ${v.step}.`;
-    return "Die Bedingung bleibt wahr. Das Modell stoppt nach fünf Durchläufen.";
+    return "Die Bedingung bleibt wahr. Ohne die Grenze des Modells würde dieses Programm weiterlaufen. Das Modell stoppt nach fünf Durchläufen.";
   }
   if (finished(mode, v)) return "Programm beendet.";
   return "Nächster Schritt ist bereit.";

@@ -2,6 +2,8 @@ import { caseLab } from "../lab/case-lab";
 import { hypertextGraph, webRequest } from "../lab/diagrams";
 import type { Stage } from "../model/types";
 import { cc, drills, explain, lesson } from "./helpers";
+import { graphVariants, editorVariants, searchVariants, webVariants } from "./practice-hypertext";
+import { countLinks, editLink, countOriginals, readUrl } from "./practice-input";
 
 const id = "hypertext";
 const module = "2.1";
@@ -56,56 +58,44 @@ export const STAGE_HYPERTEXT: Stage = {
         "Der Pfeil beginnt bei Startseite und endet bei Termine. Für einen Rückweg ist ein zweiter Pfeil nötig.",
       ],
       lab: hypertextGraph,
-      exercises: drills(
-        [
-          cc(
-            "Bei Start → Mensa klickst du auf den Link. Wo landest du?",
-            "Mensa",
-            ["Start", "Sekretariat"],
-            "Die Pfeilspitze zeigt auf Mensa.",
-            "Lies den Pfeil in seiner Richtung.",
-          ),
-          cc(
-            "Start → Mensa, Mensa → Speiseplan. Was ergänzt du, damit der Rückweg direkt von Speiseplan zu Start führt?",
-            "Speiseplan → Start",
-            ["Start → Speiseplan", "Mensa → Start"],
-            "Der Rückweg muss bei Speiseplan beginnen und bei Start enden.",
-            "Suche zunächst die Ausgangsseite.",
-          ),
-        ],
-        [
-          cc(
-            "Welches Attribut ändert das Ziel des Links „Kontakt“?",
-            "Zieladresse",
-            ["Linktext", "Seitentitel"],
-            "Die Zieladresse steuert, wohin der Link führt.",
-            "Trenne die Aufschrift vom Ziel.",
-          ),
-          cc(
-            "Der Link „Kontakt“ öffnet fälschlich die AG-Liste. Welche Änderung behebt den Fehler und behält die Beschriftung?",
-            "Die Zieladresse durch die Kontaktadresse ersetzen.",
-            ["Den Linktext in „AGs“ ändern.", "Die AG-Liste in „Kontakt“ umbenennen."],
-            "Der neue Zielwert lenkt dasselbe Verweisobjekt auf die richtige Seite.",
-            "Frage, welches Attribut die Navigation steuert.",
-          ),
-        ],
-        [
-          cc(
-            "Wie viele Verweise hat Start bei Start → Kontakt und Start → Mensa?",
-            "Zwei",
-            ["Einen", "Drei"],
-            "Bei Start verlaufen zwei ausgehende Kanten.",
-            "Zähle nur Pfeile, die bei Start beginnen.",
-          ),
-          cc(
-            "Start → A, A → B, B → Start. Welche Eigenschaft zeigt das?",
-            "Einen gerichteten Kreis",
-            ["Drei Seiten ohne Verbindung", "Einen Ordnerbaum"],
-            "Du erreichst nach drei Verweisen wieder den Ausgangspunkt.",
-            "Folge den Pfeilen bis du nicht weiterkommst oder zum Start zurückkehrst.",
-          ),
-        ],
-      ),
+      exercises: [
+        ...drills(
+          graphVariants,
+          [
+            cc(
+              "Bei Start → Mensa klickst du auf den Link. Wo landest du?",
+              "Mensa",
+              ["Start", "Sekretariat"],
+              "Die Pfeilspitze zeigt auf Mensa.",
+              "Lies den Pfeil in seiner Richtung.",
+            ),
+            cc(
+              "Start → Mensa, Mensa → Speiseplan. Was ergänzt du, damit der Rückweg direkt von Speiseplan zu Start führt?",
+              "Speiseplan → Start",
+              ["Start → Speiseplan", "Mensa → Start"],
+              "Der Rückweg muss bei Speiseplan beginnen und bei Start enden.",
+              "Suche zunächst die Ausgangsseite.",
+            ),
+          ],
+          [
+            cc(
+              "Welches Attribut ändert das Ziel des Links „Kontakt“?",
+              "Zieladresse",
+              ["Linktext", "Seitentitel"],
+              "Die Zieladresse steuert, wohin der Link führt.",
+              "Trenne die Aufschrift vom Ziel.",
+            ),
+            cc(
+              "Der Link „Kontakt“ öffnet fälschlich die AG-Liste. Welche Änderung behebt den Fehler und behält die Beschriftung?",
+              "Die Zieladresse durch die Kontaktadresse ersetzen.",
+              ["Den Linktext in „AGs“ ändern.", "Die AG-Liste in „Kontakt“ umbenennen."],
+              "Der neue Zielwert lenkt dasselbe Verweisobjekt auf die richtige Seite.",
+              "Frage, welches Attribut die Navigation steuert.",
+            ),
+          ],
+        ),
+        countLinks,
+      ],
     }),
     lesson(id, module, 2, {
       id: "inf7-wiki-editor",
@@ -176,56 +166,44 @@ export const STAGE_HYPERTEXT: Stage = {
           { text: "Entscheide, was vor der Nutzung des Lageplans zu prüfen ist.", cases: [2] },
         ],
       }),
-      exercises: drills(
-        [
-          cc(
-            "Welcher Linktext hilft beim schnellen Lesen?",
-            "Öffnungszeiten der Bücherei",
-            ["Hier", "Weiter"],
-            "Der Text verrät den erwarteten Inhalt.",
-            "Stell dir den Link ohne seinen Absatz vor.",
-          ),
-          cc(
-            "Zwei Links heißen „mehr“. Einer führt zur Mensa, einer zur Bücherei. Welche Änderung hilft?",
-            "Jeden Link nach dem Inhalt seines Ziels benennen.",
-            ["Beide Links in Großbuchstaben schreiben.", "Beide Linkziele zusammenlegen."],
-            "Die Lesenden können beide Ziele schon vor dem Klick unterscheiden.",
-            "Prüfe, ob der Link allein verständlich ist.",
-          ),
-        ],
-        [
-          cc(
-            "Was gehört bei einer übernommenen Online-Grafik zur Quellenangabe?",
-            "Name, Titel, Fundstelle und Abrufdatum",
-            ["Nur die Bildgröße", "Nur der Name meines Wikis"],
-            "So lässt sich nachvollziehen, woher die Grafik stammt.",
-            "Gib einer anderen Person genug Angaben zum Wiederfinden.",
-          ),
-          cc(
-            "Die Grafik darf mit Namens- und Lizenzangabe genutzt werden. Was gehört neben die Grafik?",
-            "Quellenangabe mit Name und geforderter Lizenzangabe",
-            ["Nur „im Internet gefunden“", "Nur der Dateiname"],
-            "Damit lässt sich die Herkunft prüfen und die Bedingung wird erfüllt.",
-            "Lies die Bedingungen der angegebenen Lizenz.",
-          ),
-        ],
-        [
-          cc(
-            "Woran merkst du, ob dein Verweis funktioniert?",
-            "Ich klicke ihn in der Vorschau an und prüfe die Zielseite.",
-            ["Ich zähle die Buchstaben.", "Ich schaue nur auf den Linktext."],
-            "Erst die Navigation prüft das gespeicherte Ziel.",
-            "Teste aus Sicht eines Besuchers.",
-          ),
-          cc(
-            "Nach dem Sortieren der Seiten führt der Weg zum AG-Plan ins Leere. Was ist der erste sinnvolle Test?",
-            "Die gespeicherte Zieladresse mit dem aktuellen Speicherort vergleichen.",
-            ["Den Titel des AG-Plans fett machen.", "Alle Quellen löschen."],
-            "Ein verschobenes Dokument kann einen neuen Verweis benötigen.",
-            "Untersuche zuerst den Weg zwischen den Seiten.",
-          ),
-        ],
-      ),
+      exercises: [
+        ...drills(
+          editorVariants,
+          [
+            cc(
+              "Welcher Linktext hilft beim schnellen Lesen?",
+              "Öffnungszeiten der Bücherei",
+              ["Hier", "Weiter"],
+              "Der Text verrät den erwarteten Inhalt.",
+              "Stell dir den Link ohne seinen Absatz vor.",
+            ),
+            cc(
+              "Zwei Links heißen „mehr“. Einer führt zur Mensa, einer zur Bücherei. Welche Änderung hilft?",
+              "Jeden Link nach dem Inhalt seines Ziels benennen.",
+              ["Beide Links in Großbuchstaben schreiben.", "Beide Linkziele zusammenlegen."],
+              "Die Lesenden können beide Ziele schon vor dem Klick unterscheiden.",
+              "Prüfe, ob der Link allein verständlich ist.",
+            ),
+          ],
+          [
+            cc(
+              "Was gehört bei einer übernommenen Online-Grafik zur Quellenangabe?",
+              "Name, Titel, Fundstelle und Abrufdatum",
+              ["Nur die Bildgröße", "Nur der Name meines Wikis"],
+              "So lässt sich nachvollziehen, woher die Grafik stammt.",
+              "Gib einer anderen Person genug Angaben zum Wiederfinden.",
+            ),
+            cc(
+              "Die Grafik darf mit Namens- und Lizenzangabe genutzt werden. Was gehört neben die Grafik?",
+              "Quellenangabe mit Name und geforderter Lizenzangabe",
+              ["Nur „im Internet gefunden“", "Nur der Dateiname"],
+              "Damit lässt sich die Herkunft prüfen und die Bedingung wird erfüllt.",
+              "Lies die Bedingungen der angegebenen Lizenz.",
+            ),
+          ],
+        ),
+        editLink,
+      ],
     }),
     lesson(id, module, 3, {
       id: "inf7-quellen-pruefen",
@@ -295,59 +273,44 @@ export const STAGE_HYPERTEXT: Stage = {
           { text: "Finde die Fundstelle mit einer beschriebenen Untersuchungsmethode.", cases: [2] },
         ],
       }),
-      exercises: drills(
-        [
-          cc(
-            "Welche Suche passt zur Frage nach den Öffnungszeiten einer bestimmten Bücherei?",
-            "Stadtbibliothek Rosenheim Öffnungszeiten",
-            ["Was kann ich machen", "Bücher gut"],
-            "Ort, Einrichtung und Information grenzen die Suche ein.",
-            "Suche mit wenigen passenden Stichwörtern.",
-          ),
-          cc(
-            "Du findest viele alte Einträge zu einem Busfahrplan. Wie grenzt du deine Suche ein?",
-            "Linie, Ort und Gültigkeitsjahr ergänzen.",
-            ["Nur „Bus“ eintippen.", "Nach dem hübschesten Vorschaubild suchen."],
-            "Diese Merkmale unterscheiden passende aktuelle Fahrpläne.",
-            "Überlege, was die unerwünschten Treffer gemeinsam haben.",
-          ),
-        ],
-        [
-          cc(
-            "Welche Quelle klärt, ob der Schulausflug verschoben wurde?",
-            "Die aktuelle Mitteilung der Schule",
-            ["Ein Werbebanner", "Ein Blogbeitrag über den Ausflug vom Vorjahr"],
-            "Die Schule kennt den Termin und hat die aktuelle Mitteilung veröffentlicht.",
-            "Frage, wer die Änderung bekannt gibt.",
-          ),
-          cc(
-            "Ein Shop verspricht doppelte Akkulaufzeit. Was ist ein geeigneter Vergleich?",
-            "Ein unabhängiger Test unter ähnlichen Bedingungen",
-            ["Ein zweiter Shop mit identischem Werbetext", "Die Anzahl der Sterne im Logo"],
-            "Ein unabhängiger Test liefert Messdaten unter bekannten Bedingungen.",
-            "Prüfe Belege und mögliche Verkaufsinteressen.",
-          ),
-        ],
-        [
-          cc(
-            "Was sollte ein Sachtext für überprüfbare Aussagen nennen?",
-            "Passende Belege und ihre Herkunft",
-            ["Möglichst viele Emojis", "Eine sehr große Überschrift"],
-            "Du musst nachvollziehen können, woher die Aussage stammt.",
-            "Suche nach überprüfbarem Material.",
-          ),
-          cc(
-            "Zwei Seiten nennen dieselbe Zahl und verlinken dieselbe Ursprungstabelle. Was folgt?",
-            "Beide Berichte stützen sich auf denselben Beleg.",
-            [
-              "Die Zahl wurde zweimal unabhängig gemessen.",
-              "Die Zahl ist falsch, weil sie zweimal vorkommt.",
-            ],
-            "Die Zahl darf trotzdem stimmen. Zum Gegencheck brauchst du einen eigenständigen Beleg.",
-            "Verfolge beide Links bis zur ursprünglichen Herkunft.",
-          ),
-        ],
-      ),
+      exercises: [
+        ...drills(
+          searchVariants,
+          [
+            cc(
+              "Welche Suche passt zur Frage nach den Öffnungszeiten einer bestimmten Bücherei?",
+              "Stadtbibliothek Rosenheim Öffnungszeiten",
+              ["Was kann ich machen", "Bücher gut"],
+              "Ort, Einrichtung und Information grenzen die Suche ein.",
+              "Suche mit wenigen passenden Stichwörtern.",
+            ),
+            cc(
+              "Du findest viele alte Einträge zu einem Busfahrplan. Wie grenzt du deine Suche ein?",
+              "Linie, Ort und Gültigkeitsjahr ergänzen.",
+              ["Nur „Bus“ eintippen.", "Nach dem hübschesten Vorschaubild suchen."],
+              "Diese Merkmale unterscheiden passende aktuelle Fahrpläne.",
+              "Überlege, was die unerwünschten Treffer gemeinsam haben.",
+            ),
+          ],
+          [
+            cc(
+              "Welche Quelle klärt, ob der Schulausflug verschoben wurde?",
+              "Die aktuelle Mitteilung der Schule",
+              ["Ein Werbebanner", "Ein Blogbeitrag über den Ausflug vom Vorjahr"],
+              "Die Schule kennt den Termin und hat die aktuelle Mitteilung veröffentlicht.",
+              "Frage, wer die Änderung bekannt gibt.",
+            ),
+            cc(
+              "Ein Shop verspricht doppelte Akkulaufzeit. Was ist ein geeigneter Vergleich?",
+              "Ein unabhängiger Test unter ähnlichen Bedingungen",
+              ["Ein zweiter Shop mit identischem Werbetext", "Die Anzahl der Sterne im Logo"],
+              "Ein unabhängiger Test liefert Messdaten unter bekannten Bedingungen.",
+              "Prüfe Belege und mögliche Verkaufsinteressen.",
+            ),
+          ],
+        ),
+        countOriginals,
+      ],
     }),
     lesson(id, module, 4, {
       id: "inf7-client-server",
@@ -381,59 +344,44 @@ export const STAGE_HYPERTEXT: Stage = {
         "Der Browser erhält die Daten vom Server und stellt das Dokument für dich dar.",
       ],
       lab: webRequest,
-      exercises: drills(
-        [
-          cc(
-            "Welche Rolle übernimmt der Browser beim Abruf?",
-            "Client",
-            ["Router", "Server"],
-            "Der Browser schickt die Anfrage und verarbeitet die Antwort.",
-            "Wer möchte hier eine Seite haben?",
-          ),
-          cc(
-            "Ein Gerät vermittelt die Anfrage auf dem Weg und speichert die Schulwebseite nicht. Welche Rolle hat es?",
-            "Router",
-            ["Client", "Webserver"],
-            "Die Vermittlung zwischen Netzen gehört zum Router.",
-            "Trenne das Weiterleiten vom Bereitstellen.",
-          ),
-        ],
-        [
-          cc(
-            "Welcher Teil von https://schule.example/wiki ist der Pfad?",
-            "/wiki",
-            ["https", "schule.example"],
-            "Der Pfad wählt das Dokument auf dem zuständigen Server.",
-            "Suche den Teil nach dem Rechnernamen.",
-          ),
-          cc(
-            "Eine Schule verschiebt die Seite von /wiki nach /wissen und behält den Rechnernamen. Was ändert sie an der URL?",
-            "Den Pfad",
-            ["Die Art des Webzugriffs", "Den Rechnernamen"],
-            "Der neue Pfad führt zu einer Ressource am selben Rechnernamen.",
-            "Vergleiche beide Adressbestandteile.",
-          ),
-        ],
-        [
-          cc(
-            "Welche Reihenfolge passt zum Modell einer Anforderung?",
-            "Client → Router → Server",
-            ["Server → Client → Router", "Router → Server → Client"],
-            "Der Client startet und der Router vermittelt zum Server.",
-            "Beginne beim Gerät, auf dem du geklickt hast.",
-          ),
-          cc(
-            "Anfrage erreicht Server, doch im Browser erscheint noch nichts. Welche Phase fehlt im Modell?",
-            "Die Antwort vom Server muss den Client erreichen.",
-            [
-              "Ein Router muss die Seite neu schreiben.",
-              "Der Browser muss selbst Server für diese Seite werden.",
-            ],
-            "Die Darstellung kann beginnen, wenn die Antwort ankommt.",
-            "Unterscheide Hinweg und Rückweg.",
-          ),
-        ],
-      ),
+      exercises: [
+        ...drills(
+          webVariants,
+          [
+            cc(
+              "Welche Rolle übernimmt der Browser beim Abruf?",
+              "Client",
+              ["Router", "Server"],
+              "Der Browser schickt die Anfrage und verarbeitet die Antwort.",
+              "Wer möchte hier eine Seite haben?",
+            ),
+            cc(
+              "Ein Gerät vermittelt die Anfrage auf dem Weg und speichert die Schulwebseite nicht. Welche Rolle hat es?",
+              "Router",
+              ["Client", "Webserver"],
+              "Die Vermittlung zwischen Netzen gehört zum Router.",
+              "Trenne das Weiterleiten vom Bereitstellen.",
+            ),
+          ],
+          [
+            cc(
+              "Welcher Teil von https://schule.example/wiki ist der Pfad?",
+              "/wiki",
+              ["https", "schule.example"],
+              "Der Pfad wählt das Dokument auf dem zuständigen Server.",
+              "Suche den Teil nach dem Rechnernamen.",
+            ),
+            cc(
+              "Eine Schule verschiebt die Seite von /wiki nach /wissen und behält den Rechnernamen. Was ändert sie an der URL?",
+              "Den Pfad",
+              ["Die Art des Webzugriffs", "Den Rechnernamen"],
+              "Der neue Pfad führt zu einer Ressource am selben Rechnernamen.",
+              "Vergleiche beide Adressbestandteile.",
+            ),
+          ],
+        ),
+        readUrl,
+      ],
     }),
   ],
 };

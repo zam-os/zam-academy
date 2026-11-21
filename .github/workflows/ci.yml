@@ -131,6 +131,19 @@ jobs:
         run: |
           node scripts/check-curriculum.mjs
           node scripts/verify-release.mjs
+      - name: Check Natur und Technik 7 in headless Chrome
+        if: matrix.app == 'nt-gymnasium-7'
+        env:
+          CHROME_BIN: /usr/bin/google-chrome
+        run: node scripts/verify-browser.mjs
+      - name: Rebuild the Natur und Technik 7 bundle when checking its Physics source
+        if: matrix.app == 'physik-gymnasium-7'
+        working-directory: nt-gymnasium-7
+        run: |
+          npm ci
+          npm run package:zip
+          node scripts/check-curriculum.mjs
+          node scripts/verify-release.mjs
       - uses: actions/upload-artifact@v4
         with:
           name: zam-academy-${{ matrix.app }}-offline

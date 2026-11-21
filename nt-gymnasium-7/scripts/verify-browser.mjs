@@ -1,5 +1,5 @@
 import { spawn } from "node:child_process";
-import { mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import assert from "node:assert/strict";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
@@ -193,23 +193,71 @@ try {
   await setInput('[data-wiki-field="target"]', "1");
   await click("[data-wiki-link]");
   assert.equal(await evaluate("document.querySelector('[data-wiki-page]').value"), "1");
-  await click("[data-wiki-save]");
-  await click(".wiki-versions summary");
+  const downloadFolder = join(profile, "downloads");
+  mkdirSync(downloadFolder);
+  await send("Browser.setDownloadBehavior", { behavior: "allow", downloadPath: downloadFolder });
   await setInput("[data-version-name]", "schattenwiki-v1");
   await click("[data-version-save]");
-  await setInput('[data-wiki-field="title"]', "Neuer Titel");
-  await click("[data-version-open]");
+  const downloaded = join(downloadFolder, "schattenwiki-v1.json");
+  for (let attempt = 0; attempt < 100 && !existsSync(downloaded); attempt++) {
+    await new Promise((resolve) => setTimeout(resolve, 30));
+  }
+  assert.ok(existsSync(downloaded), "the browser downloaded the wiki checkpoint");
+  const checkpoint = JSON.parse(readFileSync(downloaded, "utf8"));
+  assert.equal(checkpoint.name, "schattenwiki-v1");
+  assert.equal(checkpoint.pages[0].title, "Unser Schatten-Wiki");
+  assert.equal(checkpoint.pages[0].target, 1);
+
+  await page("Page.reload");
+  await until("document.querySelector('.wiki-preview h5')?.textContent === 'Schulwiki'");
+  assert.equal(
+    await evaluate("Object.keys(localStorage).some(key => key.startsWith('informatik_gym7_wiki'))"),
+    false,
+  );
+  const openCheckpoint = async (path) => {
+    const { root } = await page("DOM.getDocument");
+    const { nodeId } = await page("DOM.querySelector", {
+      nodeId: root.nodeId,
+      selector: "[data-version-file]",
+    });
+    await page("DOM.setFileInputFiles", { nodeId, files: [path] });
+  };
+  await openCheckpoint(downloaded);
+  await until("document.querySelector('.wiki-preview h5')?.textContent === 'Unser Schatten-Wiki'");
+  assert.equal(await evaluate("document.querySelector('.wiki-preview img') === null"), true);
+  const invalid = join(downloadFolder, "invalid.json");
+  writeFileSync(invalid, '{"schema":1,"name":"invalid","pages":[]}');
+  await openCheckpoint(invalid);
+  await until("document.querySelector('[data-wiki-status]')?.textContent.includes('kein gültiger')");
   assert.equal(
     await evaluate("document.querySelector('.wiki-preview h5').textContent"),
     "Unser Schatten-Wiki",
   );
-  await click("[data-wiki-save]");
-  await page("Page.reload");
-  await until("document.querySelector('.wiki-preview h5')?.textContent === 'Unser Schatten-Wiki'");
-  assert.equal(
-    await evaluate("document.querySelector('[data-version-list] option').textContent"),
-    "schattenwiki-v1",
+
+  await evaluate('location.hash="#lesson=inf7-feste-schleife&level=1"');
+  await until(
+    "document.querySelector('.lesson-title')?.textContent === 'Wiederholen mit fester Anzahl'",
   );
+  for (
+    let attempt = 0;
+    attempt < 3 && !(await evaluate("!!document.querySelector('[data-field]')"));
+    attempt++
+  ) {
+    await click("#task-new-btn");
+  }
+  assert.equal(await evaluate("document.querySelector('[data-field]').inputMode"), "numeric");
+  const prompt = await evaluate("document.querySelector('.task-prompt').textContent");
+  const [, repeats, perRound] = prompt.match(/läuft (\d+)-mal.*jeweils (\d+) Spielmarken/);
+  const answer = Number(repeats) * Number(perRound);
+  await setInput("[data-field]", String(answer + 1));
+  await click("#task-check-btn");
+  assert.ok(await evaluate("document.querySelector('#task-feedback').classList.contains('is-warning')"));
+  await setInput("[data-field]", String(answer));
+  await click("#task-check-btn");
+  assert.ok(
+    (await evaluate("document.querySelector('#task-feedback').textContent")).includes("Richtig"),
+  );
+  await screenshot("written-answer", "#exercise-card");
 
   await evaluate('location.hash="#lesson=inf7-bedingte-schleife"');
   await until("!!document.querySelector('[data-action=step]')");
@@ -251,7 +299,7 @@ try {
     [],
   );
   console.log(
-    `Chrome checked ${lessonViews} Informatics lesson views, both themes, mobile, wiki snapshots, robot goals and the Physics round trip.`,
+    `Chrome checked ${lessonViews} Informatics lesson views, both themes, mobile, file-backed wiki checkpoints, a typed exercise, robot goals and the Physics round trip.`,
   );
 } finally {
   chrome.kill();

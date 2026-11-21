@@ -15,11 +15,12 @@ import {
 } from "../src/storage/progress";
 import type { ExerciseTask } from "../src/model/types";
 
-const SEEDS = 40;
+const SEEDS = 80;
 
 describe("All exercise generators across varied seeds and both levels", () => {
   for (const lesson of ALL_LESSONS) {
     it(lesson.id, () => {
+      const inputLevels = new Set<number>();
       for (const generator of lesson.exercises) {
         const prompts = { 1: new Set<string>(), 2: new Set<string>() };
         for (const level of [1, 2] as const) {
@@ -27,6 +28,7 @@ describe("All exercise generators across varied seeds and both levels", () => {
             const label = `${lesson.id} ${generator.id} seed=${seed} level=${level}`;
             const task = generator.make(createRng(seedFrom(`${seed}:${level}:${lesson.id}`)), level);
             prompts[level].add(task.prompt);
+            if (task.fields.some((field) => field.kind !== "choice")) inputLevels.add(level);
             for (const text of [task.prompt, ...task.given, ...task.steps, task.formulaHint ?? ""]) {
               expect(text, `${label}: real minus sign`).not.toMatch(/(^|[\s(:=>])-\d/);
               expect(text, label).not.toMatch(/\bNaN\b|undefined|Infinity|\[object/);
@@ -50,7 +52,12 @@ describe("All exercise generators across varied seeds and both levels", () => {
               field.kind === "number" && field.unit ? `${answers[index]} ${field.unit}` : answers[index],
             );
             expect(checkTask(task, withUnits).status, `${label}: with unit`).toBe("correct");
-            expect(checkTask(task, answers.map(() => "")).status).toBe("invalid");
+            expect(
+              checkTask(
+                task,
+                answers.map(() => ""),
+              ).status,
+            ).toBe("invalid");
             for (const [index, field] of task.fields.entries()) {
               if (field.kind === "choice") {
                 expect(field.options.length, label).toBeGreaterThanOrEqual(3);
@@ -61,7 +68,8 @@ describe("All exercise generators across varied seeds and both levels", () => {
                 for (const accepted of field.answers) {
                   const typed = [...answers];
                   typed[index] = accepted.toLowerCase();
-                  if (!field.caseSensitive) expect(checkTask(task, typed).status, `${label}: ${accepted}`).toBe("correct");
+                  if (!field.caseSensitive)
+                    expect(checkTask(task, typed).status, `${label}: ${accepted}`).toBe("correct");
                 }
               } else {
                 expect(Number.isFinite(field.answer)).toBe(true);
@@ -91,9 +99,16 @@ describe("All exercise generators across varied seeds and both levels", () => {
               }
             }
           }
+          expect(
+            prompts[level].size,
+            `${lesson.id} ${generator.id} Level ${level}: distinct prompts`,
+          ).toBeGreaterThanOrEqual(3);
         }
         const overlap = [...prompts[2]].filter((p) => prompts[1].has(p));
         expect(overlap, `${lesson.id} ${generator.id}: Level 1 and Level 2 differ`).toHaveLength(0);
+      }
+      if (lesson.module === "2.1" || lesson.module === "2.3") {
+        expect([...inputLevels].sort(), `${lesson.id}: learners write their own answer`).toEqual([1, 2]);
       }
     });
   }

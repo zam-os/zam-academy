@@ -9,9 +9,9 @@ A single entry point for both focuses of Grade 7 Natur und Technik at a Bavarian
 
 The Academy entry point opens the existing Physics package at its canonical URL. Local web builds and the offline ZIP compile that same source and provide a return link to the joint overview. All 63 Physics cards, their lesson anchors and the Physics progress key belong to the existing app. The new cell adds 36 Informatics cards only, each with a lesson link. Installing this cell has no effect on legacy cards.
 
-Informatics includes a directed graph workshop, a visual wiki editor with named checkpoints, a model of a web request, and a step-through programming tool that runs configured commands. Each lesson has a worked example, reference terms, a quick check, three workshop goals and three different tasks at each of two levels. The project brief uses a wiki about shadows to connect both focuses. The [curriculum and card comparison](../docs/nt-gymnasium-7-coverage.md) records classroom activities that the app supports.
+Informatics includes a directed graph workshop, a visual wiki editor with named checkpoints, a model of a web request, and a step-through programming tool that runs configured commands. Each lesson has a worked example, reference terms, a quick check and three workshop goals. Each exercise generator offers at least three different scenarios per level. All eight lessons in NT7 2.1 and 2.3 include an exercise generator that asks for a typed answer. The project brief uses a wiki about shadows to connect both focuses. The [curriculum and card comparison](../docs/nt-gymnasium-7-coverage.md) records classroom activities that the app supports.
 
-Progress and wiki text are stored in the browser. Version 0.0 is a local draft. Teacher review and publication are pending.
+The browser stores practice progress. Wiki drafts are held for the current session, and learners download and reopen named checkpoints as local files. An offline build links the two focuses from the shared overview. Version 0.0 is a local draft. Teacher review and publication are pending.
 
 ## Run locally
 
@@ -28,4 +28,4 @@ node scripts/verify-release.mjs
 node scripts/verify-browser.mjs   # built files in Headless Chrome; set CHROME_BIN if needed
 ```
 
-Extract the ZIP and open `index.html`. It includes both focuses and works offline.
+Extract the ZIP and open `index.html`. It includes both focuses and works offline. CI rebuilds and verifies the shared offline bundle when it checks the source Physics package.

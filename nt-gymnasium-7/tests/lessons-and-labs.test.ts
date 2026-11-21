@@ -213,6 +213,7 @@ describe("Subject models", () => {
     expect(run(sequence, "step", { first: 2, second: 1 }, 2).status).toMatch(/Stopp/);
     expect(run(sequence, "step", { first: 1, second: 2, third: 3 }, 3).position).toBe("Spalte 2, Zeile 2 · markiert");
     const branch = lab("inf7-verzweigung");
+    expect(reachedGoals(branch, applyAction(branch, defaultLabValues(branch), "step"))).toEqual([]);
     expect(run(branch, "step", { wall: 1, yes: 2, no: 1 }, 1).position).toBe("Spalte 1, Zeile 2");
     expect(run(branch, "step", { wall: 0, yes: 2, no: 1 }, 1).position).toBe("Spalte 2, Zeile 3");
   });

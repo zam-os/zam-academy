@@ -1,6 +1,7 @@
 import { caseLab } from "../lab/case-lab";
 import type { Stage } from "../model/types";
 import { cc, drills, explain, lesson } from "./helpers";
+import { channelVariants, privacyVariants } from "./practice-communication";
 
 const id = "kommunikation";
 const module = "2.2";
@@ -89,6 +90,7 @@ export const STAGE_KOMMUNIKATION: Stage = {
         ],
       }),
       exercises: drills(
+        channelVariants,
         [
           cc(
             "Was braucht eine Mail zur Hausaufgabe, damit sie leicht einzuordnen ist?",
@@ -219,6 +221,7 @@ export const STAGE_KOMMUNIKATION: Stage = {
         ],
       }),
       exercises: drills(
+        privacyVariants,
         [
           cc(
             "Welche Angabe ist personenbezogen?",

@@ -11,7 +11,7 @@ import { MODULE_TITLES } from "./curriculum/helpers";
 import { checkTask, type TaskResult, wrongAnswerHint } from "./exercises/checker";
 import { esc, fmt, fmtUnit } from "./exercises/format";
 import { quizOrder } from "./exercises/quiz-order";
-import { mountHypertextEditor } from "./lab/hypertext-editor";
+import { createWikiDraft, mountHypertextEditor } from "./lab/hypertext-editor";
 import { createRng, seedFrom } from "./exercises/rng";
 import {
   applyAction,
@@ -56,6 +56,7 @@ const THEME_KEY = "informatik_gym7_theme";
 class InformatikApp {
   private progress: LearnerProgress;
   private view: ActiveView = "overview";
+  private readonly wikiDraft = createWikiDraft();
   private readonly labValues = new Map<string, LabValues>();
   private dragging: { handle: string; pointer: number } | null = null;
   private task: ExerciseTask | null = null;
@@ -436,7 +437,7 @@ class InformatikApp {
     const labHost = host.querySelector<HTMLElement>("#lab-card");
     if (labHost) this.renderLab(labHost, lesson);
     const wikiEditor = host.querySelector<HTMLElement>("#wiki-editor");
-    if (wikiEditor) mountHypertextEditor(wikiEditor);
+    if (wikiEditor) mountHypertextEditor(wikiEditor, this.wikiDraft);
     const statusHost = host.querySelector<HTMLElement>("#status-card");
     if (statusHost) this.renderStatus(statusHost, lesson);
     if (this.taskLessonId !== lesson.id || this.taskLevel !== level || !this.task) {
@@ -691,7 +692,7 @@ class InformatikApp {
               const isText = field.kind === "text";
               return `<label class="task-input ${isText ? "task-input-code" : ""}">
                 <span class="task-label">${field.label}</span>
-                <input type="text" inputmode="${isText ? "text" : "decimal"}" autocomplete="off" spellcheck="false" data-field="${index}" value="${esc(this.taskInputs[index] ?? "")}" placeholder="${isText ? esc(field.placeholder) : "z. B. 2,5"}" ${locked ? "disabled" : ""} />
+                <input type="text" inputmode="${isText ? "text" : field.digits === 0 ? "numeric" : "decimal"}" autocomplete="off" spellcheck="false" data-field="${index}" value="${esc(this.taskInputs[index] ?? "")}" placeholder="${isText ? esc(field.placeholder) : field.digits === 0 ? "z. B. 3" : "z. B. 2,5"}" ${locked ? "disabled" : ""} />
                 ${field.kind === "number" && field.unit ? `<span class="task-unit">${esc(field.unit)}</span>` : ""}
               </label>`;
             })
@@ -704,7 +705,7 @@ class InformatikApp {
           <button type="button" class="btn btn-ghost btn-sm" id="task-reveal-btn" ${locked ? "hidden" : ""}>Lösungsweg zeigen</button>
         </div>
       </form>
-      <p class="task-feedback" id="task-feedback">${this.taskSolved ? "✅ Richtig!" : this.taskRevealed ? "Lösungsweg angezeigt. Diese Aufgabe zählt nicht, die nächste schon." : "Fülle alle Felder aus. Dezimalzahlen kannst du mit Komma schreiben, Groß- und Kleinschreibung zählt bei Texteingaben meist nicht."}</p>
+      <p class="task-feedback" id="task-feedback">${this.taskSolved ? "✅ Richtig!" : this.taskRevealed ? "Lösungsweg angezeigt. Diese Aufgabe zählt nicht, die nächste schon." : task.fields.every((field) => field.kind === "choice") ? "Wähle eine Antwort und prüfe sie." : "Trage deine Lösung ein und prüfe sie."}</p>
       <div class="task-solution" id="task-solution" ${locked || this.taskTips > 0 ? "" : "hidden"}>
         <strong>${locked ? "Lösungsweg" : "Tipp"}</strong>
         <ol>${task.steps

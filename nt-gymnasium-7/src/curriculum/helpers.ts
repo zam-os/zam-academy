@@ -1,12 +1,14 @@
-import type { ChoiceField, ExerciseGenerator, ExerciseTask, LabDefinition, Lesson, ModuleCode } from "../model/types";
+import type {
+  ChoiceField,
+  ExerciseGenerator,
+  ExerciseTask,
+  LabDefinition,
+  Lesson,
+  ModuleCode,
+} from "../model/types";
 import type { Rng } from "../exercises/rng";
 
-function choiceField(
-  rng: Rng,
-  label: string,
-  answer: string,
-  others: string[],
-): ChoiceField {
+function choiceField(rng: Rng, label: string, answer: string, others: string[]): ChoiceField {
   const options = rng.shuffle([...new Set([answer, ...others])]);
   return { kind: "choice", label, options, correctIndex: options.indexOf(answer) };
 }
@@ -34,7 +36,7 @@ export function cc(
  * Level 1 draws a guided case and shows its hint as the scaffold; Level 2
  * draws a transfer case, so the level changes the task, not only the wording.
  */
-export function cases(id: string, guided: ChoiceCase[], transfer: ChoiceCase[]): ExerciseGenerator {
+function cases(id: string, guided: ChoiceCase[], transfer: ChoiceCase[]): ExerciseGenerator {
   return {
     id,
     make(rng, level): ExerciseTask {
@@ -108,12 +110,24 @@ export function lesson(
 }
 
 export function explain(paragraphs: string[], example: string, rule: string): string {
-  return paragraphs.map((paragraph) => `<p>${paragraph}</p>`).join("") +
+  return (
+    paragraphs.map((paragraph) => `<p>${paragraph}</p>`).join("") +
     `<div class="example"><strong>Beispiel</strong><p>${example}</p></div>` +
-    `<div class="merke"><strong>Merke</strong><p>${rule}</p></div>`;
+    `<div class="merke"><strong>Merke</strong><p>${rule}</p></div>`
+  );
 }
 
-/** Every round uses a different scenario; the next round shuffles the answer positions. */
-export function drills(...pairs: Array<[ChoiceCase, ChoiceCase]>): ExerciseGenerator[] {
-  return pairs.map(([guided, transfer], index) => cases(`runde-${index + 1}`, [guided], [transfer]));
+type ExtraCases = [ChoiceCase, ChoiceCase];
+type ExtraRound = [guided: ExtraCases, transfer: ExtraCases];
+export type DrillVariations = [ExtraRound, ExtraRound] | [ExtraRound, ExtraRound, ExtraRound];
+
+/** Each round practises one skill in three different scenarios per level. */
+export function drills(
+  variations: DrillVariations,
+  ...pairs: Array<[ChoiceCase, ChoiceCase]>
+): ExerciseGenerator[] {
+  return pairs.map(([guided, transfer], index) => {
+    const [guidedVariants, transferVariants] = variations[index];
+    return cases(`runde-${index + 1}`, [guided, ...guidedVariants], [transfer, ...transferVariants]);
+  });
 }
