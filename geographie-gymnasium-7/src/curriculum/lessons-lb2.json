@@ -1,0 +1,260 @@
+[
+  {
+    "id": "europa-teilraume",
+    "lb": 2,
+    "title": "Staaten und Teilräume Europas",
+    "period": "Geo7 2 · Orientierung",
+    "intro": "Norwegen, Spanien und Polen liegen alle in Europa. Ihre Lage lässt sich mit Himmelsrichtungen, Meeren und Nachbarstaaten genauer beschreiben.",
+    "paragraphs": [
+      "Eine häufige Einteilung unterscheidet Norden, Westen, Mittel-, Osten und Süden. Je nach Atlas können Grenzen zwischen Teilräumen abweichen. Nutze deshalb die Legende und begründe deine Zuordnung mit Merkmalen der Lage.",
+      "Spanien liegt auf der Iberischen Halbinsel im Südwesten Europas. Norwegen liegt im Norden auf der Skandinavischen Halbinsel. Tschechien lässt sich mit der Lage zwischen Deutschland, Polen, Österreich und der Slowakei in Mitteleuropa verorten."
+    ],
+    "takeaway": "Verorte Staaten mit mehreren Anhaltspunkten wie Himmelsrichtung, Nachbarn, Halbinseln und Meeren.",
+    "sourceIds": [
+      "lehrplan",
+      "natural-earth"
+    ],
+    "quiz": {
+      "question": "Welcher Staat liegt auf der Iberischen Halbinsel?",
+      "answer": "Portugal.",
+      "wrong": [
+        "Schweden.",
+        "Griechenland."
+      ],
+      "explanation": "Portugal liegt am Atlantik westlich von Spanien."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Staaten verorten",
+      "instruction": "Ordne nach der Lage auf der Europakarte zu.",
+      "categories": [
+        "Norden",
+        "Südwesten",
+        "Mitteleuropa"
+      ],
+      "entries": [
+        {
+          "text": "Norwegen",
+          "target": 0,
+          "feedback": "Norwegen liegt auf der Skandinavischen Halbinsel."
+        },
+        {
+          "text": "Spanien",
+          "target": 1,
+          "feedback": "Spanien liegt auf der Iberischen Halbinsel."
+        },
+        {
+          "text": "Tschechien",
+          "target": 2,
+          "feedback": "Tschechien liegt unter anderem zwischen Deutschland und der Slowakei."
+        }
+      ],
+      "conclusion": "Verorte Staaten mit mehreren Anhaltspunkten wie Himmelsrichtung, Nachbarn, Halbinseln und Meeren."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Beschreibe Portugals Lage in Europa mit einem Nachbarn und einem Meer.",
+        "hints": [
+          "Suche die Iberische Halbinsel.",
+          "Welches Land liegt östlich?"
+        ],
+        "model": "Portugal liegt im Südwesten Europas auf der Iberischen Halbinsel. Es grenzt an Spanien und an den Atlantik.",
+        "criteria": [
+          "Ich nenne den Südwesten.",
+          "Ich nenne Spanien.",
+          "Ich nenne den Atlantik."
+        ]
+      },
+      "2": {
+        "prompt": "Warum kann ein Atlas Slowenien Mitteleuropa und ein anderer Südosteuropa zuordnen?",
+        "hints": [
+          "Teilräume haben Auswahlkriterien.",
+          "Betrachte Alpen, Adria und Nachbarn."
+        ],
+        "model": "Slowenien liegt im Übergang zwischen Alpenraum und nördlicher Adria. Je nachdem, ob der Atlas Alpenbezüge oder die Lage an der Adria und zum Balkan betont, ergibt sich eine andere Gruppierung.",
+        "criteria": [
+          "Ich nenne zwei räumliche Bezüge.",
+          "Ich unterscheide Kriterien.",
+          "Ich begründe die abweichende Zuordnung."
+        ]
+      }
+    },
+    "figures": [
+      "staaten"
+    ],
+    "lab": "teilraeume"
+  },
+  {
+    "id": "eu-binnenmarkt",
+    "lb": 2,
+    "title": "Wie Europa zusammenarbeitet",
+    "period": "Geo7 2 · EU · Binnenmarkt · Alltag",
+    "intro": "Ein Fahrrad kann in einem Land gebaut und in einem anderen verkauft werden. Gemeinsame Regeln machen viele solcher Wege einfacher.",
+    "paragraphs": [
+      "Die europäische Einigung entwickelte sich nach dem Zweiten Weltkrieg aus dem Ziel, Frieden durch Zusammenarbeit zu sichern. EU-Staaten vereinbaren gemeinsame Regeln in bestimmten Bereichen. Europa, EU, Euroraum und Schengen haben unterschiedliche Abgrenzungen.",
+      "Im Binnenmarkt geht es um den freien Verkehr von Waren, Personen, Dienstleistungen und Kapital. Beim Fahrrad geht es um eine Ware. Wenn eine Firma in einem anderen Mitgliedstaat eine Reparatur anbietet, geht es um eine Dienstleistung."
+    ],
+    "takeaway": "Ordne Beispiele nach dem, was sich über Grenzen bewegt: Waren, Personen, Dienstleistungen oder Kapital.",
+    "sourceIds": [
+      "lehrplan",
+      "eu"
+    ],
+    "quiz": {
+      "question": "Welche Freiheit des EU-Binnenmarkts steht beim Verkauf von in Portugal hergestellten Fahrrädern nach Deutschland im Vordergrund?",
+      "answer": "Freier Warenverkehr.",
+      "wrong": [
+        "Freier Kapitalverkehr.",
+        "Freier Dienstleistungsverkehr."
+      ],
+      "explanation": "Ein Fahrrad ist eine Ware, die gehandelt und transportiert wird."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Vier Freiheiten im Alltag",
+      "instruction": "Ordne das Beispiel der naheliegenden Freiheit zu.",
+      "categories": [
+        "Waren",
+        "Personen",
+        "Dienstleistungen",
+        "Kapital"
+      ],
+      "entries": [
+        {
+          "text": "Fahrräder werden über die Grenze verkauft",
+          "target": 0,
+          "feedback": "Handel mit Gegenständen zählt zu Waren."
+        },
+        {
+          "text": "Eine Person nimmt eine Stelle in einem anderen EU-Land an",
+          "target": 1,
+          "feedback": "Hier steht die Freizügigkeit einer Person im Mittelpunkt."
+        },
+        {
+          "text": "Ein Planungsbüro bietet einen Auftrag im EU-Ausland an",
+          "target": 2,
+          "feedback": "Die Firma erbringt eine Leistung."
+        },
+        {
+          "text": "Eine Person legt Geld in einem anderen EU-Staat an",
+          "target": 3,
+          "feedback": "Geldanlage ist ein Beispiel für Kapitalverkehr."
+        }
+      ],
+      "conclusion": "Ordne Beispiele nach dem, was sich über Grenzen bewegt: Waren, Personen, Dienstleistungen oder Kapital."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Gib für Waren und Dienstleistungen je ein Beispiel europäischer Zusammenarbeit.",
+        "hints": [
+          "Eine Ware ist ein Gegenstand.",
+          "Eine Dienstleistung ist eine Tätigkeit für andere."
+        ],
+        "model": "Eine Firma liefert Käse in ein anderes EU-Land. Ein dort beauftragtes Reparaturunternehmen kommt über die Grenze, um eine Maschine zu warten.",
+        "criteria": [
+          "Ich nenne eine Ware.",
+          "Ich nenne eine Dienstleistung.",
+          "Ich stelle jeweils den Bezug zu zwei EU-Staaten her."
+        ]
+      },
+      "2": {
+        "prompt": "Zwei Nachbarregionen planen eine Bahnverbindung. Erkläre einen wirtschaftlichen, einen politischen und einen kulturellen Grund, warum sie zusammenarbeiten.",
+        "hints": [
+          "Denke an Pendeln, gemeinsame Regeln und Begegnung.",
+          "Ordne deine drei Gründe."
+        ],
+        "model": "Die Bahn erleichtert Arbeit und Handel über die Grenze. Behörden müssen Bau und Betrieb abstimmen. Reisende und Schulgruppen können leichter kulturelle Angebote im Nachbarland besuchen.",
+        "criteria": [
+          "Ich beschreibe einen wirtschaftlichen Nutzen.",
+          "Ich nenne eine politische Absprache.",
+          "Ich nenne eine kulturelle Möglichkeit."
+        ]
+      }
+    },
+    "figures": [
+      "binnenmarkt"
+    ]
+  },
+  {
+    "id": "kultur-migration",
+    "lb": 2,
+    "title": "Sprachen, Lebensweisen und Migration",
+    "period": "Geo7 2 · Einheit und Vielfalt",
+    "intro": "An einer Staatsgrenze wechseln Sprachen und Bräuche oft nicht schlagartig. In vielen Regionen gehören mehrere Sprachen zum Alltag.",
+    "paragraphs": [
+      "Amtssprachen werden in öffentlichen Einrichtungen verwendet. Minderheitensprachen und Familiensprachen zeigen zusätzliche Vielfalt. Ein Beispiel aus einer Schule oder einer Familie beschreibt eine Perspektive, keine Eigenschaft aller Menschen eines Landes.",
+      "Menschen ziehen etwa für Ausbildung, Arbeit oder Familie um. Herkunftsorte können Arbeitskräfte verlieren und von Rücküberweisungen profitieren. Zielorte gewinnen Erfahrungen und Fachkräfte, brauchen aber auch zugängliche Informationen, Wohnraum und faire Teilhabe."
+    ],
+    "takeaway": "Vergleiche konkrete Lebenssituationen. Betrachte Migration aus der Sicht von Herkunfts- und Zielorten und der Menschen selbst.",
+    "sourceIds": [
+      "lehrplan"
+    ],
+    "quiz": {
+      "question": "Welche Untersuchung vergleicht Lebensweisen fair?",
+      "answer": "Zwei konkrete Schulalltage vergleichen und Gemeinsamkeiten sowie Unterschiede begründen.",
+      "wrong": [
+        "Aus einer Familie auf alle Einwohner schließen.",
+        "Nur die Amtssprachen zählen und daraus den Schulalltag ableiten."
+      ],
+      "explanation": "Konkrete, vergleichbare Beispiele vermeiden unbelegte Verallgemeinerungen."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Wer erlebt welche Veränderung?",
+      "instruction": "Ordne die Folge ihrer Perspektive zu.",
+      "categories": [
+        "Herkunftsort",
+        "Zielort",
+        "Zugewanderte Person"
+      ],
+      "entries": [
+        {
+          "text": "Eine Dorfpraxis muss nach dem Wegzug neu besetzt werden",
+          "target": 0,
+          "feedback": "Der Herkunftsort verliert eine Arbeitskraft."
+        },
+        {
+          "text": "Eine Stadt baut mehrsprachige Beratungsangebote aus",
+          "target": 1,
+          "feedback": "Das Angebot entsteht am Zielort."
+        },
+        {
+          "text": "Eine Person lernt neue Arbeitswege und Abläufe",
+          "target": 2,
+          "feedback": "Das ist eine Erfahrung der umgezogenen Person."
+        }
+      ],
+      "conclusion": "Vergleiche konkrete Lebenssituationen. Betrachte Migration aus der Sicht von Herkunfts- und Zielorten und der Menschen selbst."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre, wie zwei Sprachen den Alltag in einer zweisprachigen Grenzregion prägen können.",
+        "hints": [
+          "Denke an Schilder, Schule oder Vereine.",
+          "Vermeide ein Urteil über alle Menschen der Region."
+        ],
+        "model": "Öffentliche Schilder können beide Sprachen benutzen. Manche Familien sprechen zu Hause eine andere Sprache als in der Schule. Welche Sprache jemand nutzt, kann von Situation und Gesprächspartner abhängen.",
+        "criteria": [
+          "Ich beschreibe zwei konkrete Situationen.",
+          "Ich erkenne Vielfalt innerhalb einer Region.",
+          "Ich vermeide Verallgemeinerungen."
+        ]
+      },
+      "2": {
+        "prompt": "Eine Schule nimmt Jugendliche auf, die neu aus dem Ausland kommen. Entwickle eine Maßnahme und erkläre, wie sie den Zugang zum Schulalltag verbessert.",
+        "hints": [
+          "Denke an verständliche Orientierung und gemeinsame Tätigkeiten.",
+          "Gib an, wer die Maßnahme umsetzt."
+        ],
+        "model": "Eine Schülergruppe stellt einen bebilderten Schulplan mit wichtigen Begriffen bereit und begleitet neue Mitschülerinnen beim ersten Rundgang. Das hilft beim Finden der Räume und schafft Gelegenheit, einander kennenzulernen.",
+        "criteria": [
+          "Ich schlage eine umsetzbare Maßnahme vor.",
+          "Ich nenne die Beteiligten.",
+          "Ich erkläre den Beitrag zur Teilhabe."
+        ]
+      }
+    },
+    "figures": [
+      "migration"
+    ]
+  }
+]

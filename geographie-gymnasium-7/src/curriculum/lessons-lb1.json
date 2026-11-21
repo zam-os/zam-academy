@@ -1,0 +1,340 @@
+[
+  {
+    "id": "karten-skizzieren",
+    "lb": 1,
+    "title": "Karten lesen und skizzieren",
+    "period": "Geo7 1 · Physische und thematische Karten",
+    "intro": "Die gleiche Region kann auf zwei Karten ganz verschieden aussehen. Was du erkennst, hängt von der Frage der Karte ab.",
+    "paragraphs": [
+      "Eine physische Karte zeigt Relief, Höhen und Gewässer. Eine thematische Karte stellt ein ausgewähltes Thema dar, etwa Hafenstandorte oder Verkehrsverbindungen. Die Legende sagt dir, was Farben, Flächen und Symbole bedeuten.",
+      "Für eine Skizze zum Seehandel zeichnest du zuerst den Küstenverlauf grob ein. Markiere dann die Häfen und zeichne ausgewählte Verbindungen. Titel, Nordrichtung und Legende machen deine Auswahl nachvollziehbar."
+    ],
+    "takeaway": "Wähle zuerst eine Kartenfrage. Nutze dann Legende und Orientierung, um die passenden Informationen in einer Skizze festzuhalten.",
+    "sourceIds": [
+      "lehrplan",
+      "natural-earth"
+    ],
+    "quiz": {
+      "question": "Welche Karte beantwortet am besten die Frage nach Seehäfen und ihren Verbindungen?",
+      "answer": "Eine thematische Verkehrskarte.",
+      "wrong": [
+        "Eine reine Reliefkarte.",
+        "Eine Karte der Vegetationszonen."
+      ],
+      "explanation": "Eine Verkehrskarte zeigt die gesuchten Standorte und Routen."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Zeichen für eine Kartenskizze",
+      "instruction": "Ordne die Zeichen ihrer Funktion zu.",
+      "categories": [
+        "Lage",
+        "Verbindung",
+        "Orientierung"
+      ],
+      "entries": [
+        {
+          "text": "Ein Punkt für Rotterdam",
+          "target": 0,
+          "feedback": "Ein Punkt markiert einen einzelnen Ort."
+        },
+        {
+          "text": "Eine Linie zwischen zwei Häfen",
+          "target": 1,
+          "feedback": "Die Linie zeigt eine Route."
+        },
+        {
+          "text": "Ein Pfeil mit N",
+          "target": 2,
+          "feedback": "Der Pfeil zeigt die Nordrichtung."
+        }
+      ],
+      "conclusion": "Wähle zuerst eine Kartenfrage. Nutze dann Legende und Orientierung, um die passenden Informationen in einer Skizze festzuhalten."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Skizziere aus der Karte zwei Häfen und den Seeweg zwischen ihnen. Welche Informationen braucht deine Skizze?",
+        "hints": [
+          "Zeichne nur wichtige Küstenlinien.",
+          "Erkläre Punkte und Linien in der Legende."
+        ],
+        "model": "Ich skizziere die Küste und markiere Rotterdam und Hamburg. Eine Linie zeigt den Seeweg. Titel, Nordpfeil und Legende erklären den Ausschnitt und die Zeichen.",
+        "criteria": [
+          "Ich zeichne einen räumlichen Bezug ein.",
+          "Ich nutze verständliche Zeichen.",
+          "Ich ergänze Orientierung und Legende."
+        ]
+      },
+      "2": {
+        "prompt": "Du willst zeigen, welche Flussebenen durch Hochwasser gefährdet sein könnten. Welche zwei Kartenebenen würdest du kombinieren?",
+        "hints": [
+          "Überlege, was das Relief über tief liegende Gebiete sagt.",
+          "Ergänze eine Karte mit einem betroffenen Thema."
+        ],
+        "model": "Ich kombiniere ein Relief mit einer Karte von Flussläufen und bekannten Überschwemmungsflächen. So kann ich tief liegende Abschnitte einordnen und markieren, wo die Überflutungsflächen liegen.",
+        "criteria": [
+          "Ich nenne eine physische Ebene.",
+          "Ich nenne eine passende thematische Ebene.",
+          "Ich erkläre den Gewinn der Überlagerung."
+        ]
+      }
+    },
+    "figures": [
+      "haefen"
+    ],
+    "lab": "kartenebenen",
+    "review": "Wiederholung aus Geographie 5: Kartenarten und Legende"
+  },
+  {
+    "id": "bilder-vergleichen",
+    "lb": 1,
+    "title": "Bilder und Satellitenbilder auswerten",
+    "period": "Geo7 1 · Beobachtung und Deutung",
+    "intro": "Im Satellitenbild wirken ein Kanal und ein Straßenabschnitt manchmal ähnlich. Suche erst nach Formen und Mustern.",
+    "paragraphs": [
+      "Beginne mit Blickrichtung, Ausschnitt und Datum. Beschreibe sichtbar erkennbare Strukturen wie Wasserflächen, regelmäßige Dächer oder Feldgrenzen. Deute erst danach, welche Nutzung dahinterstehen könnte.",
+      "Das Radarbild zeigt dunkle Wasserflächen und helle Siedlungen. Es kombiniert Messungen aus August 2022, Januar 2023 und Juni 2023. Die Farben entstehen durch die Überlagerung der Messungen. Vergleiche die Draufsicht mit der allgemeineren Hafenskizze."
+    ],
+    "takeaway": "Beschreibe sichtbare Merkmale, prüfe die Aufnahmebedingungen und begründe deine Deutung mit konkreten Spuren.",
+    "sourceIds": [
+      "lehrplan",
+      "esa"
+    ],
+    "quiz": {
+      "question": "Welche Aussage ist zunächst eine Beobachtung?",
+      "answer": "Mehrere lange Becken zweigen vom Fluss ab.",
+      "wrong": [
+        "Die Stadt braucht einen neuen Hafen.",
+        "In den Becken werden nur Container umgeladen."
+      ],
+      "explanation": "Die Form und Lage der Becken sind beobachtbar, ihre genaue Nutzung muss man belegen."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Was lässt sich aus dem Bild folgern?",
+      "instruction": "Ordne Beobachtung, Deutung oder eine offene Frage zu.",
+      "categories": [
+        "Beobachtung",
+        "Deutung",
+        "Offene Frage"
+      ],
+      "entries": [
+        {
+          "text": "Rechteckige Flächen liegen parallel zum Kai",
+          "target": 0,
+          "feedback": "Anordnung und Form sind erkennbar."
+        },
+        {
+          "text": "Es könnte ein Containerlager sein",
+          "target": 1,
+          "feedback": "Das ist eine aus dem Muster abgeleitete Vermutung."
+        },
+        {
+          "text": "Wie viele Container werden pro Jahr umgeladen?",
+          "target": 2,
+          "feedback": "Für die Menge brauchst du weitere Daten."
+        }
+      ],
+      "conclusion": "Beschreibe sichtbare Merkmale, prüfe die Aufnahmebedingungen und begründe deine Deutung mit konkreten Spuren."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Beschreibe die gezeigte Draufsicht in drei Zonen und markiere sie in einer Skizze.",
+        "hints": [
+          "Unterscheide Wasser, Kai und Hinterland.",
+          "Beginne mit Lage und Form."
+        ],
+        "model": "Das Hafenbecken liegt zwischen Wasserweg und Kai. Neben der Kaimauer liegen regelmäßig angeordnete Flächen. Straßen verbinden den Kai mit dem Hinterland. Ich beschrifte die drei Zonen in der Skizze.",
+        "criteria": [
+          "Ich unterscheide drei Zonen.",
+          "Ich beschreibe sichtbare Formen oder Lagen.",
+          "Ich ordne die Zonen in einer eigenen Skizze an."
+        ]
+      },
+      "2": {
+        "prompt": "Ein Winterbild zeigt einen Acker hell, ein Sommerbild zeigt ihn grün. Erkläre, welche Zusatzinformationen du zur Beurteilung brauchst.",
+        "hints": [
+          "Prüfe Aufnahmedatum und Bilddarstellung.",
+          "Überlege, ob eine einmalige Farbe eine Nutzungsänderung beweist."
+        ],
+        "model": "Ich prüfe, ob beide Bilder aus derselben Perspektive und mit vergleichbarer Farbdarstellung aufgenommen wurden. Die Jahreszeit kann die Farbe erklären. Feldgrenzen oder wiederholte Aufnahmen helfen festzustellen, ob sich die Nutzung geändert hat.",
+        "criteria": [
+          "Ich beachte die Jahreszeit.",
+          "Ich prüfe Perspektive oder Farbgebung.",
+          "Ich begründe eine weitere Prüfung."
+        ]
+      }
+    },
+    "figures": [
+      "hafenbild"
+    ]
+  },
+  {
+    "id": "diagramme-lesen",
+    "lb": 1,
+    "title": "Diagramme und Statistiken lesen",
+    "period": "Geo7 1 · Linie, Band und Fläche",
+    "intro": "Aus denselben Zahlen kann man einen Verlauf oder Anteile darstellen. Das Diagramm muss zur Frage passen.",
+    "paragraphs": [
+      "Ein Liniendiagramm zeigt eine Entwicklung über die Zeit. Ein Banddiagramm teilt ein Ganzes in Abschnitte. Ein Flächendiagramm mit Symbolen muss die Fläche proportional zum Wert darstellen. Die Kantenlänge eines Quadrats darf nicht einfach verdoppelt werden, wenn nur der Wert doppelt so groß ist.",
+      "In einer Modellstadt fahren 45 von 100 Personen mit Bus oder Bahn, 35 mit dem Auto und 20 mit dem Rad. Im Banddiagramm entsprechen die drei Anteile 45, 35 und 20 Prozent. Prüfe Einheit und Bezugsgröße, bevor du die Zahlen vergleichst."
+    ],
+    "takeaway": "Lies Titel, Einheit, Achsen und Bezugsgröße, bevor du eine Entwicklung oder einen Anteil deutest.",
+    "sourceIds": [
+      "lehrplan"
+    ],
+    "quiz": {
+      "question": "Welche Darstellung eignet sich für die Anteile verschiedener Verkehrsmittel an allen Wegen?",
+      "answer": "Ein Banddiagramm.",
+      "wrong": [
+        "Eine Linie ohne Zeitachse.",
+        "Eine einzelne Zahl für den größten Anteil."
+      ],
+      "explanation": "Das Banddiagramm zeigt sowohl einzelne Anteile als auch das Ganze."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Die passende Darstellung wählen",
+      "instruction": "Welche Darstellung beantwortet die Frage am besten?",
+      "categories": [
+        "Linie",
+        "Band",
+        "Tabelle"
+      ],
+      "entries": [
+        {
+          "text": "Wie verändert sich die Temperatur von Januar bis Dezember?",
+          "target": 0,
+          "feedback": "Eine Zeitreihe lässt sich als Linie darstellen."
+        },
+        {
+          "text": "Wie verteilt sich ein Ganzes auf drei Verkehrsmittel?",
+          "target": 1,
+          "feedback": "Die Abschnitte des Bands zeigen Anteile."
+        },
+        {
+          "text": "Welchen exakten Wert hat jede einzelne Messung?",
+          "target": 2,
+          "feedback": "In einer Tabelle lassen sich Werte genau nachschlagen."
+        }
+      ],
+      "conclusion": "Lies Titel, Einheit, Achsen und Bezugsgröße, bevor du eine Entwicklung oder einen Anteil deutest."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Zeichne ein 10 cm langes Band für die Modellstadt und gib die Längen der drei Abschnitte an.",
+        "hints": [
+          "10 cm entsprechen 100 Prozent.",
+          "Beginne mit Bus und Bahn."
+        ],
+        "model": "Für Bus und Bahn markiere ich 4,5 cm, für das Auto 3,5 cm und für das Rad 2 cm. Die Abschnitte ergeben zusammen 10 cm.",
+        "criteria": [
+          "Ich nutze das Ganze als Maßstab.",
+          "Ich zeichne oder nenne alle drei passenden Längen.",
+          "Ich ergänze eine Legende."
+        ]
+      },
+      "2": {
+        "prompt": "Eine Grafik stellt doppelt so viele Wege durch ein Quadrat mit doppelter Seitenlänge dar. Erkläre die Verzerrung und schlage eine Darstellung vor.",
+        "hints": [
+          "Fläche ist Länge mal Breite.",
+          "Vergleiche zwei gleich breite Balken."
+        ],
+        "model": "Doppelte Seitenlänge ergibt vierfache Fläche. Die Grafik übertreibt die Verdopplung. Ein Balkendiagramm mit gleich breiten Balken und einer gemeinsamen Skala zeigt das Verhältnis korrekt.",
+        "criteria": [
+          "Ich erkenne die vierfache Fläche.",
+          "Ich benenne die falsche Wirkung.",
+          "Ich schlage eine geeignete Darstellung vor."
+        ]
+      }
+    },
+    "figures": [
+      "verkehrsanteile"
+    ]
+  },
+  {
+    "id": "quellen-prufen",
+    "lb": 1,
+    "title": "Geographische Quellen prüfen",
+    "period": "Geo7 1 · Recherche und digitale Karten",
+    "intro": "Ein Reiseblog nennt eine Küste sauber, eine Messkarte zeigt dort belastete Abschnitte. Prüfe, welche Frage jede Quelle beantwortet.",
+    "paragraphs": [
+      "Halte zuerst Urheber, Datum, Ort und Zweck fest. Reiseberichte können Beobachtungen liefern. Presseberichte wählen Beispiele aus. Messportale nennen meist Messstellen, Zeitraum und Parameter. Das sind verschiedene Arten von Belegen.",
+      "Ein digitales Geomedium lässt dich Ebenen vergleichen. Schalte zum Beispiel Häfen und Wasserwege einzeln ein. Dokumentiere für eigene Karten die ausgewählte Ansicht, Datengrundlage und das Abrufdatum."
+    ],
+    "takeaway": "Vergleiche Quelle, Zeitpunkt, Maßstab und Messgröße. Gib bei einer eigenen Darstellung an, woher ihre Daten kommen.",
+    "sourceIds": [
+      "lehrplan",
+      "watt",
+      "natural-earth"
+    ],
+    "quiz": {
+      "question": "Was prüfst du zuerst, wenn zwei Karten zur gleichen Küste unterschiedliche Werte zeigen?",
+      "answer": "Ob Messzeit, Ort und Messgröße übereinstimmen.",
+      "wrong": [
+        "Welche Karte mehr Farben hat.",
+        "Welche Karte zuerst angezeigt wurde."
+      ],
+      "explanation": "Verschiedene Orte, Zeitpunkte oder Messgrößen können die Abweichung erklären."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Aussage und Beleg",
+      "instruction": "Ordne der Frage eine geeignete Grundlage zu.",
+      "categories": [
+        "Messdatensatz",
+        "Erfahrungsbericht",
+        "Thematische Karte"
+      ],
+      "entries": [
+        {
+          "text": "Welche Werte wurden im Juni gemessen?",
+          "target": 0,
+          "feedback": "Messreihen enthalten Datum und Werte."
+        },
+        {
+          "text": "Wie beschreibt jemand den Aufenthalt am Ort?",
+          "target": 1,
+          "feedback": "Der Bericht gibt eine einzelne Perspektive wieder."
+        },
+        {
+          "text": "Wo liegen die Messstellen?",
+          "target": 2,
+          "feedback": "Eine Karte verortet die Stationen."
+        }
+      ],
+      "conclusion": "Vergleiche Quelle, Zeitpunkt, Maßstab und Messgröße. Gib bei einer eigenen Darstellung an, woher ihre Daten kommen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Suche in der verlinkten Informationsseite zum Wattenmeer zwei Angaben zu einem Ort oder Schutzthema und dokumentiere ihre Herkunft.",
+        "hints": [
+          "Schreibe die Überschrift der Seite auf.",
+          "Notiere Institution und Abrufdatum."
+        ],
+        "model": "Nach der Recherche notiere ich zwei Aussagen mit der genauen Seite, der verantwortlichen Einrichtung und dem Datum. So kann jemand meine Angaben wiederfinden und prüfen.",
+        "criteria": [
+          "Ich dokumentiere die genaue Seite.",
+          "Ich trenne die beiden Aussagen.",
+          "Ich nenne Institution und Abrufdatum."
+        ]
+      },
+      "2": {
+        "prompt": "Eine Karte zeigt die Wasserqualität für einen einzigen Badetag. Welche Darstellung bräuchtest du für die Behauptung, die Küste werde über Jahre sauberer?",
+        "hints": [
+          "Für einen Trend brauchst du mehrere Zeitpunkte.",
+          "Halte Messgröße und Stationen vergleichbar."
+        ],
+        "model": "Ich brauche eine Zeitreihe derselben Messgröße an vergleichbaren Stationen. Ein Liniendiagramm mit mehreren Jahren und Angaben zu Messmethode und Jahreszeit erleichtert den Vergleich.",
+        "criteria": [
+          "Ich verlange mehrere Jahre.",
+          "Ich halte die Messung vergleichbar.",
+          "Ich wähle eine passende Darstellungsform."
+        ]
+      }
+    },
+    "figures": [
+      "haefen"
+    ]
+  }
+]
