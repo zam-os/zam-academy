@@ -65,19 +65,19 @@ and peer writing conferences remain required outside the app. Reading records
 explicitly require documenting reading experiences including at least one
 complete children's or youth book (*mindestens ein Kinder- bzw. Jugendbuch*).
 
-Teacher review and teacher videos remain open (`version: "0.0"`). No teacher
+Teacher review and teacher videos remain open (`version: "0.1"`). No teacher
 videos are added during package creation.
 
 ## Existing cards and review evidence
 
-The [proposal](../deutsch-realschule-7/replaces-de-by.json) inventories all ten
+The [approved mapping](../deutsch-realschule-7/replaces-de-by.json) inventories all ten
 items from the two active Grade 7 cells in `zam-os/zam` (commit
 `bae34e7dfe7d01838e448a65f15871c3549ae3fc`):
 
 - `de-by:realschule-7-deutsch-inhaltsangabe-sachtexte-literatur`: 4 items (`01K4D7N0000000000000000J01`–`J04`).
 - `de-by:realschule-7-deutsch-satzstrukturen-adverbialsaetze-kommasetzung`: 6 items (`01K4D7S0000000000000000J01`–`J06`).
 
-Four Category A candidates propose replacing equivalent atomic retrievals:
+Four Category A items carry their review histories to equivalent Academy items:
 - `01K4D7N0000000000000000J01` → `d7-inhaltsangabe-check` (Präsens as the basic tense of an Inhaltsangabe, Perfekt for anteriority).
 - `01K4D7N0000000000000000J03` → `d7-gattungen-ballade-check` (why a ballad unites Epik, Lyrik and Dramatik).
 - `01K4D7S0000000000000000J01` → `d7-satzreihe-satzgefuege-check` (verb-final position in introduced subordinate clauses).
@@ -85,9 +85,8 @@ Four Category A candidates propose replacing equivalent atomic retrievals:
 
 Six Category C items stay active (`keep-active`) because they bundle multiple
 rules/examples into a single prompt (`J02`, `J04`, `S02`, `S04`, `S06`) or test a
-Konzessivsatz taxonomy (`S03`) not listed in Grade 7 LehrplanPLUS 4.2.4. The
-proposal has `"approved": null`, and `cell.json` declares neither `replaces`
-nor `retired_items` until Thomas explicitly approves.
+Konzessivsatz taxonomy (`S03`) not listed in Grade 7 LehrplanPLUS 4.2.4. Thomas
+approved the four transfers on 2026-11-21. The cell declares no retirements.
 
 ## Verification
 

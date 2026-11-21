@@ -18,10 +18,9 @@ separation and dictionary-backed error tables. All 50 visuals have three
 exploration goals that start unchecked. These goals record what was explored,
 not mastery.
 
-The package is published at version 0.0 (`publication.json`; `0.n` means not
+The package is published at version 0.1 (`publication.json`; `0.n` means not
 yet accepted by a teacher of the grade), so its lesson ids, item ids and slugs
-are a contract. Teacher review and teacher videos remain open. Its
-review-history mapping is a proposal, not an approval.
+are a contract. Teacher review and teacher videos remain open. Thomas approved the four history transfers on 2026-11-21.
 
 Open [dist/index.html](dist/index.html) after building, or extract
 [release/ZAM-Academy-Deutsch-Realschule-7-offline.zip](release/ZAM-Academy-Deutsch-Realschule-7-offline.zip)
@@ -62,10 +61,7 @@ least one complete children's or youth book. See the
 
 100 ZAM practice items live only in [cell.json](cell.json), two per lesson, each
 with two curated distractors checked against `zam-core`. Their source links use
-the public lesson anchors. The [legacy proposal](replaces-de-by.json) inventories
-ten old items from the two Grade 7 `de-by` cells: four Category A candidates
-need Thomas's explicit approval; six Category C items remain active. The cell
-declares neither `replaces` nor `retired_items`.
+the public lesson anchors. The [approved mapping](replaces-de-by.json) covers ten practice items from two Grade 7 school cells. Four equivalent items carry review history to their Academy successors. The other six stay active.
 
 Validate installation, enrolment and preservation of old evidence with the
 published `zam-core` version pinned in repository CI:
