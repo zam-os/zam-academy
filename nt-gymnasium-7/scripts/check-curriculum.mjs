@@ -92,9 +92,9 @@ for (const id of mapped) {
 
 const mapping = JSON.parse(readFileSync(join(root, "replaces-de-by.json"), "utf8"));
 for (const source of mapping.sources) {
-  const bytes = readFileSync(resolve(root, source.fixture));
+  const bytes = readFileSync(resolve(root, source.file));
   if (createHash("sha256").update(bytes).digest("hex") !== source.sha256) {
-    console.error(`SHA-256 mismatch for legacy snapshot: ${source.fixture}`);
+    console.error(`SHA-256 mismatch for legacy snapshot: ${source.file}`);
     missing++;
   }
 }
