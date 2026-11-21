@@ -138,26 +138,26 @@ describe("map meaning survives schematic simplification", () => {
 	});
 });
 
-describe("neighbouring-grade ownership is explicit and transfers no mastery", () => {
-	it("accounts for all four legacy items once and prepares two valid successors", () => {
+describe("approved history transfers from the neighbouring grade", () => {
+	it("moves two approved histories and keeps the other two legacy cards active", () => {
 		expect(mapping.schema).toBe(1);
 		expect(mapping.source_commit).toMatch(/^[0-9a-f]{40}$/);
-		expect(mapping.status).toBe("proposal-only");
-		expect(mapping.approved).toBeNull();
+		expect(mapping.status).toBe("approved");
+		expect(mapping.approved).toBe("2026-11-21");
 		const ids = legacy.atoms.flatMap((atom) => atom.practice_items.map((item) => item.id));
-		expect(mapping.rows.map((row) => row.old_item_id).sort()).toEqual(ids.sort());
+		expect(mapping.rows.map((row) => row.de_by_id).sort()).toEqual(ids.sort());
 		const items = cell.atoms.flatMap((atom) => atom.practice_items);
 		for (const row of mapping.rows) {
 			expect(row.reason.length).toBeGreaterThan(40);
-			if (row.classification === "A") {
-				expect(row.action).toBe("propose-replace-after-approval");
-				expect(items.filter((item) => item.slug === row.successor_slug)).toHaveLength(1);
+			if (row.category === "A") {
+				expect(row.action).toBe("replace");
+				expect(items.find((item) => item.slug === row.academy_slug)).toMatchObject({ replaces: [row.de_by_id] });
 			} else {
 				expect(row.action).toBe("keep-active");
-				expect(row.successor_slug).toBeUndefined();
+				expect(row.academy_slug).toBeUndefined();
 			}
 		}
-		expect(mapping.rows.filter((row) => row.classification === "A")).toHaveLength(2);
+		expect(mapping.rows.filter((row) => row.category === "A")).toHaveLength(2);
 	});
 });
 

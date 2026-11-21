@@ -20,10 +20,10 @@ The first-language path builds on [Grade 5](https://www.lehrplanplus.bayern.de/f
 
 ZAM's bundled-cell registry and curriculum fixtures at `1ff016cfd7a0765c5338eb4248d0c14f3b92261c` contain no legacy Gymnasium French Grade 6 cell. The neighbouring Grade 7 cell includes four items. The original bytes are pinned by SHA-256 in `replaces-de-by.json`.
 
-- Two category A candidates retrieve the same knowledge as the first-language Grade 6 cards on the feminine plural of *arrivé* with *être* and the negation *ne … jamais*.
+- Two category A items retrieve the same knowledge as the first-language Grade 6 cards on the feminine plural of *arrivé* with *être* and the negation *ne … jamais*.
 - Two category C items stay active. One covers a broader combination of past-tense rules, including reflexives. The other combines relative clauses, negation and partitive articles, and remains with Grade 7 under the earlier scope decision recorded for the [Grade 5 package](franzoesisch-gymnasium-5-coverage.md).
 - Grade 5 Academy cards and Realschule cells cover different curriculum positions. The package declares no replacements for them.
 
-The Grade 7 comparisons are proposal-only. The cell has no `replaces` or `retired_items` entries. Implementing a transfer would require an explicit scope and mapping decision from Thomas. The `ne … jamais` candidate has an equivalent card in the second-language path. A follow-up migration should account for learners who already hold both Grade 6 cards.
+Thomas approved the two Grade 7 transfers on 2026-11-21. Both successors belong to the first-language path. The separate second-language card for `ne … jamais` retains its own ID and history. If a learner holds both a legacy card and its declared successor, ZAM refuses to merge those histories automatically.
 
 The app tracks first- and second-language lesson progress independently. ZAM receives one cell for Gymnasium Grade 6. Topic codes and language domains distinguish the paths, since they are foreign-language sequences rather than Gymnasium Ausbildungsrichtungen.

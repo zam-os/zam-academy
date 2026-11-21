@@ -230,11 +230,11 @@ describe("answer handling, progress and routes", () => {
 	});
 });
 describe("ZAM content and identifier contracts", () => {
-	it("pins identifiers and has no history transfer", () => {
+	it("pins identifiers and keeps the approved mapping free of retirements", () => {
 		expect(cell.tile_id).toBe(ZAM_CELL_ID);
-		expect(mapping.approved).toBeNull();
+		expect(mapping.approved).toBe("2026-11-21");
 		expect(mapping.rows).toHaveLength(4);
-		expect(JSON.stringify(cell)).not.toMatch(/"replaces"|"retired_items"/);
+		expect(cell).not.toHaveProperty("retired_items");
 		expect(
 			cell.atoms.map((a) => ({
 				id: a.id,
