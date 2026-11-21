@@ -1,0 +1,184 @@
+[
+	{
+		"id": "e7-school-types",
+		"stage": "school",
+		"title": "State, private or boarding school?",
+		"skill": "Staatliche Schulen, Privatschulen und Internate in England und den USA unterscheiden und vergleichen",
+		"bindings": ["1.1", "1.2", "2", "5"],
+		"paragraphs": [
+			"In England besuchen die meisten Kinder eine kostenlose staatliche Schule (state school). Daneben gibt es Privatschulen, für die Eltern Schulgeld (fees) bezahlen. Vorsicht, falscher Freund: Alte, berühmte Privatschulen wie Eton College heißen in England ausgerechnet public schools. In den USA ist eine public school dagegen eine kostenlose staatliche Schule; Privatschulen heißen dort private schools. In einem Internat (boarding school) wohnen die Schülerinnen und Schüler während der Schulzeit (term) in Häusern auf dem Schulgelände und fahren nur in den Ferien nach Hause.",
+			"In Großbritannien und Irland tragen fast alle Kinder eine Schuluniform (school uniform), oft mit Blazer, Krawatte und Schulwappen; an staatlichen Schulen in den USA ist das selten. Für Vergleiche brauchst du: In England …, whereas in the USA … (während), both … and …, neither … nor …, the same as, different from. Beispiel: „In England a public school is a private school, whereas in the USA a public school is free.“"
+		],
+		"material": "E-mail · Life at a boarding school\nHi Lukas,\nGreetings from my new school in the north of England! It's a boarding school, so I live here during term. I share a room with two other girls in a house called Elm House. Every house has a housemaster or housemistress who looks after us. We have lessons until four, then sports or clubs, and after dinner there's “prep” – that's homework time. We all wear a dark blue uniform with the school badge. I miss my family, but I can phone them every evening, and at half-term I'm going home for a week.\nLove, Emily",
+		"materialLabel": "Eigenes englisches Übungsmaterial · E-Mail aus einem Internat",
+		"materialLanguage": "en",
+		"sourceIds": ["lp", "wiki-edu-england", "wiki-boarding", "wiki-eton", "wiki-edu-us"],
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "Was ist an einer amerikanischen public school anders als an einer englischen public school?",
+			"answer": "In the USA a public school is free; in England it is an expensive private school.",
+			"wrong": [
+				"In the USA a public school is always a boarding school.",
+				"There is no difference: both are free state schools."
+			],
+			"explanation": "public school ist ein falscher Freund zwischen BE und AE: In England ist es eine teure Privatschule (z. B. Eton), in den USA eine kostenlose staatliche Schule."
+		},
+		"takeaway": "England: state school (kostenlos), independent/„public“ school (Schulgeld). USA: public school (kostenlos), private school (Schulgeld). Boarding school: Wohnen während des term. Vergleichen: whereas, both … and, different from.",
+		"practice": [
+			{
+				"prompt": "At a boarding school you live at school during ___. (Schulhalbjahr / Trimester)",
+				"answers": ["term"],
+				"feedback": "during term: während der Schulzeit; in den Ferien fährt man heim."
+			},
+			{
+				"prompt": "In England a public school is a private school, ___ in the USA it is free. (Vergleichswort: während)",
+				"answers": ["whereas", "while"],
+				"feedback": "whereas oder while stellen zwei Dinge gegenüber."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Read Emily's e-mail. Answer in full sentences: Where does Emily live during term? Who looks after the students? What is “prep”? What does she miss?",
+				"model": "During term Emily lives at her boarding school in the north of England, in a house called Elm House. A housemaster or housemistress looks after the students. “Prep” is the time after dinner when the students do their homework. She misses her family, but she can phone them every evening.",
+				"criteria": [
+					"Ich beantworte alle vier Fragen vollständig.",
+					"Ich verwende Informationen aus der E-Mail.",
+					"Ich schreibe ganze Sätze im Simple Present."
+				]
+			},
+			"2": {
+				"language": "en",
+				"prompt": "Answer Emily as Lukas. Compare your school in Bavaria with her boarding school (80 to 100 words). Use whereas, both … and and different from. Say if you would like to go to a boarding school and why.",
+				"model": "Hi Emily,\nThanks for your e-mail! My school is very different from yours. I go to a Realschule in Bavaria, and I go home every afternoon, whereas you live at school. We don't wear a uniform; most of us wear jeans and hoodies. Both your school and mine have sports clubs in the afternoon. I'm in the climbing club. I think a boarding school sounds exciting, but I wouldn't like to go there because I'd miss my dog and my friends. Enjoy half-term!\nBest wishes, Lukas",
+				"criteria": [
+					"Ich vergleiche mindestens drei Punkte (Wohnen, Uniform, Freizeit).",
+					"Ich verwende whereas, both … and und different from.",
+					"Ich begründe, ob ich ins Internat möchte."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "school-compare",
+			"goals": [
+				{
+					"label": "England: kostenlose Schule",
+					"before": "Most children in England go to a free",
+					"after": "school.",
+					"options": ["state", "public", "boarding"],
+					"answer": "state",
+					"explanation": "Die kostenlose Schule heißt in England state school."
+				},
+				{
+					"label": "USA: kostenlose Schule",
+					"before": "In the USA a free state school is called a",
+					"after": "school.",
+					"options": ["public", "private", "boarding"],
+					"answer": "public",
+					"explanation": "In den USA ist die public school die kostenlose staatliche Schule."
+				},
+				{
+					"label": "Internat",
+					"before": "At a",
+					"after": "school you live at school during term.",
+					"options": ["boarding", "day", "state"],
+					"answer": "boarding",
+					"explanation": "Im Internat (boarding school) wohnt man während der Schulzeit."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "e7-school-diversity",
+		"stage": "school",
+		"title": "Many languages, one class: Diversity at school",
+		"skill": "Ethnische Vielfalt im Schulalltag eines englischsprachigen Landes beschreiben und offen darauf reagieren",
+		"bindings": ["1.1", "2", "3", "5"],
+		"paragraphs": [
+			"In vielen Schulen in Großbritannien, Irland und den USA sitzen Kinder mit Familien aus vielen Ländern zusammen. In Städten wie London, Birmingham, Dublin oder New York sprechen Schülerinnen und Schüler zu Hause oft eine andere Sprache als in der Schule, zum Beispiel Polnisch, Urdu, Spanisch oder Arabisch. Schulen feiern diese Vielfalt (diversity) mit internationalen Tagen, zweisprachigen Büchern oder Festen wie Diwali, Eid und dem chinesischen Neujahrsfest. Wer neu ist und noch wenig Englisch kann, bekommt häufig Unterstützung in kleinen Gruppen.",
+			"Wenn du über andere Lebensweisen sprichst, bleibst du respektvoll und neugierig. Statt zu urteilen („That's strange.“) stellst du offene Fragen: „What do you usually do at Eid?“, „How do you say hello in Polish?“. Du vergleichst mit deinem eigenen Leben: „We also celebrate with a big family dinner.“ Beispiel aus einer Schülerzeitung: „In our class we speak eleven languages, but English is the language we all share.“"
+		],
+		"material": "School magazine · One class, eleven languages\nClass 7B at Riverside Academy in Birmingham is a small world. The students' families come from Poland, Pakistan, Nigeria, Somalia, Jamaica, Romania and, of course, England. Together they speak eleven languages at home. “When I came from Poland two years ago, I only knew a few English words,” says Kasia (12). “My classmate Amir helped me every day. Now I help new students.” Every year the class organises an International Day with food, music and games from all their countries. “The best part is the food table,” laughs Amir. “I always try something new.”",
+		"materialLabel": "Eigenes englisches Übungsmaterial · Artikel eines Schulmagazins",
+		"materialLanguage": "en",
+		"sourceIds": ["lp", "wiki-edu-england", "bbc-le"],
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "Wie hat Kasia Englisch gelernt?",
+			"answer": "Her classmate Amir helped her every day.",
+			"wrong": [
+				"She already spoke perfect English in Poland.",
+				"She learnt it only at the International Day."
+			],
+			"explanation": "Kasia kannte anfangs nur wenige Wörter; ihr Mitschüler Amir half ihr jeden Tag. Heute hilft sie selbst neuen Schülern."
+		},
+		"takeaway": "Vielfalt (diversity) gehört zum Schulalltag in vielen englischsprachigen Ländern: viele Familiensprachen, gemeinsame Sprache Englisch, Feste wie Diwali oder Eid. Respektvoll reagieren: offene Fragen statt Urteile, mit dem eigenen Leben vergleichen.",
+		"practice": [
+			{
+				"prompt": "When many different cultures live together, we talk about ___. (Nomen aus der Lektion)",
+				"answers": ["diversity"],
+				"feedback": "diversity: Vielfalt."
+			},
+			{
+				"prompt": "___ do you usually do at Eid? (offenes Fragewort)",
+				"answers": ["What"],
+				"feedback": "Offene W-Fragen zeigen Interesse statt eines Urteils."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "A new student from Ukraine joins your class. Write five friendly sentences or questions you could say on the first day to help them feel welcome.",
+				"model": "Hi, I'm Mia. Welcome to our class! Would you like to sit next to me? How do you say hello in Ukrainian? If you don't understand something, just ask me – I can show you the canteen and the gym. What kind of music or sports do you like?",
+				"criteria": [
+					"Ich begrüße freundlich und stelle mich vor.",
+					"Ich biete konkrete Hilfe an.",
+					"Ich stelle mindestens zwei offene, respektvolle Fragen."
+				]
+			},
+			"2": {
+				"language": "en",
+				"prompt": "Write a short article (80 to 100 words) for your school magazine: How could your school celebrate the different languages and cultures of its students? Give two ideas and say why they are good.",
+				"model": "Many students at our school have families from other countries, so I think we should celebrate our languages and cultures. My first idea is a Language Wall in the entrance hall. Every student writes “Welcome” in their family language. This shows that every language is important. My second idea is an International Day like at Riverside Academy in Birmingham, with food, music and games. Students could learn something new and talk to people they don't know well. In the end, we would all understand each culture a bit better.",
+				"criteria": [
+					"Ich nenne zwei konkrete Ideen.",
+					"Ich begründe jede Idee.",
+					"Mein Artikel hat Einleitung und Schluss und nutzt linking words."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "dialogue",
+			"goals": [
+				{
+					"label": "Detail",
+					"before": "The students in class 7B speak",
+					"after": "languages at home.",
+					"options": ["eleven", "seven", "two"],
+					"answer": "eleven",
+					"explanation": "Laut Artikel sprechen die Familien elf Sprachen."
+				},
+				{
+					"label": "Gemeinsame Sprache",
+					"before": "The language they all share at school is",
+					"after": ".",
+					"options": ["English", "Polish", "Urdu"],
+					"answer": "English",
+					"explanation": "Englisch ist die gemeinsame Schulsprache."
+				},
+				{
+					"label": "Respektvoll fragen",
+					"before": "",
+					"after": "do you say hello in Polish?",
+					"options": ["How", "Why", "Who"],
+					"answer": "How",
+					"explanation": "How do you say … in …? fragt freundlich nach einem Wort."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": true
+	}
+]

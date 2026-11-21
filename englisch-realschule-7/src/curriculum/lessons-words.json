@@ -1,0 +1,818 @@
+[
+	{
+		"id": "e7-paraphrasing",
+		"stage": "words_texts",
+		"title": "When a word is missing: Paraphrasing and the propword one",
+		"skill": "Fehlende Wörter umschreiben und Wiederholungen mit dem Stützwort one / ones vermeiden",
+		"bindings": ["1.1", "1.2", "4"],
+		"paragraphs": [
+			"Wenn dir beim Sprechen ein Wort fehlt, umschreibst du es (paraphrasing), statt aufzuhören. Hilfreiche Redemittel: It's a synonym of … (Es bedeutet dasselbe wie …), It's the opposite of …, It's a kind of …, It's a thing you use to …, It's a person who …, It's a place where …. Beispiel: Dir fällt „Schlüsselanhänger“ nicht ein: „It's a small thing which you put on your keys, a kind of decoration.“ Auch Gesten, Bilder oder ein ähnliches Wort helfen (Kompensationsstrategien).",
+			"Um ein Nomen nicht zu wiederholen, verwendest du im Englischen das Stützwort (propword) one, im Plural ones: „I don't like the red T-shirt. I prefer the blue one.“ – „These shoes are too small. Have you got bigger ones?“ Im Deutschen lässt man das Nomen einfach weg („Ich nehme das blaue.“), im Englischen braucht ein Adjektiv ein Nomen oder one dahinter. Typisch sind auch Which one? und this one / that one."
+		],
+		"material": "Dialogue · At a souvenir shop in Dublin\nShop assistant: “Can I help you?”\nTom: “Yes, I'm looking for a … oh, I don't know the word. It's a thing you put on your keys. It's a kind of small decoration.”\nShop assistant: “Ah, a key ring!”\nTom: “Yes, that's it! Do you have one with a shamrock?”\nShop assistant: “Sure. We have a green one and a gold one.”\nTom: “I'll take the green one, please. And I need two postcards for my grandparents. Have you got any funny ones?”\nShop assistant: “These ones with sheep are very popular.”",
+		"materialLabel": "Eigenes englisches Übungsmaterial · Einkaufsdialog",
+		"materialLanguage": "en",
+		"sourceIds": ["lp", "cambridge", "oxford"],
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "Welcher Satz verwendet das Stützwort richtig?",
+			"answer": "I don't want the big bag. I'll take the small one.",
+			"wrong": [
+				"I don't want the big bag. I'll take the small.",
+				"I don't want the big bag. I'll take the small ones bag."
+			],
+			"explanation": "Nach einem Adjektiv braucht das Englische ein Nomen oder das Stützwort one: the small one. Im Plural heißt es ones, ohne Nomen danach."
+		},
+		"takeaway": "Umschreiben: It's a synonym of …, It's the opposite of …, It's a kind of …, It's a thing you use to …, It's a person who …, It's a place where … Stützwort: the blue one, bigger ones, which one?",
+		"practice": [
+			{
+				"prompt": "I don't like the red cap. I prefer the black ___. (Stützwort)",
+				"answers": ["one"],
+				"feedback": "the black one: one ersetzt das Nomen cap."
+			},
+			{
+				"prompt": "„Huge“ is a ___ of „very big“. (Nomen: gleichbedeutendes Wort)",
+				"answers": ["synonym"],
+				"feedback": "It's a synonym of …: Es bedeutet dasselbe wie …"
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Explain these words without saying them: a) umbrella, b) teacher, c) library, d) cold (the opposite). Use four different phrases from the lesson.",
+				"model": "a) It's a thing you use when it rains so that you don't get wet. b) It's a person who works at a school and helps students learn. c) It's a place where you can borrow books for free. d) It's the opposite of hot.",
+				"criteria": [
+					"Ich verwende vier verschiedene Umschreibungen.",
+					"Jede Umschreibung ist eindeutig.",
+					"Ich nenne das gesuchte Wort selbst nicht."
+				]
+			},
+			"2": {
+				"language": "en",
+				"prompt": "Write a shopping dialogue (eight lines) in which you need two things whose names you don't know in English. Paraphrase them and use one or ones at least three times.",
+				"model": "Assistant: Hello! Can I help you?\nMe: Yes, please. I need a … it's a thing you use to charge your phone in another country.\nAssistant: Oh, an adapter! Here's one for Irish sockets.\nMe: Great, thanks. And I'm looking for a kind of small bag for coins.\nAssistant: A purse? We have a leather one and some colourful ones.\nMe: Can I see the colourful ones?\nAssistant: Of course. Which one do you like?\nMe: The yellow one, please.",
+				"criteria": [
+					"Ich umschreibe zwei Wörter verständlich.",
+					"Ich verwende one/ones mindestens dreimal richtig.",
+					"Der Dialog ist höflich und folgerichtig."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "dialogue",
+			"goals": [
+				{
+					"label": "Umschreibung für einen Ort",
+					"before": "A library is a place",
+					"after": "you can borrow books.",
+					"options": ["where", "who", "what"],
+					"answer": "where",
+					"explanation": "It's a place where … umschreibt einen Ort."
+				},
+				{
+					"label": "Gegenteil",
+					"before": "„Cheap“ is the",
+					"after": "of „expensive“.",
+					"options": ["opposite", "synonym", "same"],
+					"answer": "opposite",
+					"explanation": "It's the opposite of …: das Gegenteil von …"
+				},
+				{
+					"label": "Stützwort Plural",
+					"before": "These shoes are too small. Have you got bigger",
+					"after": "?",
+					"options": ["ones", "one", "-"],
+					"answer": "ones",
+					"explanation": "Im Plural heißt das Stützwort ones."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": true
+	},
+	{
+		"id": "e7-verb-chunks",
+		"stage": "words_texts",
+		"title": "Word partners: Two objects, idioms and collocations",
+		"skill": "Verben mit zwei Objekten, präpositionale Wendungen und feste Wortverbindungen sicher verwenden",
+		"bindings": ["1.2", "4"],
+		"paragraphs": [
+			"Manche Verben haben zwei Objekte: eine Person und eine Sache, zum Beispiel give, send, show, tell, bring, buy. Du kannst sie auf zwei Arten verbinden: „She gave her brother a book.“ (Person vor Sache, ohne Präposition) oder „She gave a book to her brother.“ (Sache zuerst, Person mit to). Bei buy und make steht die Person mit for: „Dad bought a ticket for me.“ = „Dad bought me a ticket.“",
+			"Feste Wortverbindungen (collocations) und Wendungen mit Präposition (prepositional idioms) lernst du am besten als ganze Chunks. Collocations: keep a promise (ein Versprechen halten), make a mistake (einen Fehler machen), do your homework, take a photo, have a good time. Prepositional idioms: by heart (auswendig), on purpose (absichtlich), by mistake (aus Versehen), in time (rechtzeitig), on time (pünktlich). Beispiel: „I learnt the poem by heart, and I kept my promise to recite it.“"
+		],
+		"material": "Diary entry · Granny's birthday\nToday was Granny's 80th birthday. I had promised to play a song for her, and I kept my promise! I had learnt the words by heart. Before the party, Dad bought a cake for her, and my sister made her a card. When we gave Granny our presents, she told us a funny story about her first birthday party in Ireland. I took a lot of photos. Only one thing went wrong: my little cousin dropped a glass of orange juice by mistake – not on purpose, of course. But we all had a great time.",
+		"materialLabel": "Eigenes englisches Übungsmaterial · Tagebucheintrag",
+		"materialLanguage": "en",
+		"sourceIds": ["lp", "cambridge", "oxford"],
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "Welcher Satz ist richtig?",
+			"answer": "My sister made Granny a card.",
+			"wrong": [
+				"My sister made to Granny a card.",
+				"My sister did Granny a card."
+			],
+			"explanation": "Mit zwei Objekten steht die Person ohne Präposition vor der Sache (made Granny a card) oder mit for dahinter (made a card for Granny). Eine Karte basteln heißt make, nicht do."
+		},
+		"takeaway": "Zwei Objekte: give sb sth = give sth to sb; buy/make sb sth = buy/make sth for sb. Collocations: keep a promise, make a mistake, do homework, take a photo, have a good time. Idioms: by heart, on purpose, by mistake, in time, on time.",
+		"practice": [
+			{
+				"prompt": "I learnt the poem by ___. (auswendig)",
+				"answers": ["heart"],
+				"feedback": "by heart: auswendig."
+			},
+			{
+				"prompt": "She always ___ her promises. (ein Versprechen halten)",
+				"answers": ["keeps"],
+				"feedback": "keep a promise: ein Versprechen halten."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Rewrite each sentence in the other word order: a) Mum gave me a present. b) I sent a postcard to my aunt. c) Can you show us the way? d) Dad bought me a jacket.",
+				"model": "a) Mum gave a present to me. b) I sent my aunt a postcard. c) Can you show the way to us? d) Dad bought a jacket for me.",
+				"criteria": [
+					"Ich stelle Person und Sache richtig um.",
+					"Ich verwende to bei give, send, show.",
+					"Ich verwende for bei buy."
+				]
+			},
+			"2": {
+				"language": "en",
+				"prompt": "Write a short story (70 to 90 words) about a birthday or a party. Use at least four collocations and two prepositional idioms from the lesson.",
+				"model": "Last Saturday I had a party for my thirteenth birthday. I had promised my friends a pizza party, and I kept my promise. My mum made a huge pizza, and we took lots of photos. My best friend had learnt a funny poem by heart, and everybody laughed. Unfortunately, I made a mistake: I sent the invitation to the wrong group by mistake, so two boys from another class came, too. But in the end we all had a great time.",
+				"criteria": [
+					"Ich verwende mindestens vier collocations korrekt.",
+					"Ich verwende mindestens zwei prepositional idioms korrekt.",
+					"Meine Geschichte ist zusammenhängend und in der Vergangenheit erzählt."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "sentence",
+			"goals": [
+				{
+					"label": "Zwei Objekte",
+					"before": "Dad bought a cake",
+					"after": "Granny.",
+					"options": ["for", "to", "–"],
+					"answer": "for",
+					"explanation": "buy sth for sb: Bei buy steht die Person mit for."
+				},
+				{
+					"label": "Collocation",
+					"before": "Everybody can",
+					"after": "a mistake.",
+					"options": ["make", "do", "take"],
+					"answer": "make",
+					"explanation": "make a mistake: einen Fehler machen."
+				},
+				{
+					"label": "Präpositionale Wendung",
+					"before": "He didn't do it on purpose; he did it by",
+					"after": ".",
+					"options": ["mistake", "heart", "time"],
+					"answer": "mistake",
+					"explanation": "by mistake: aus Versehen, das Gegenteil von on purpose."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "e7-phrasal-chunks",
+		"stage": "words_texts",
+		"title": "Phrasal verbs and verb + to-infinitive or -ing",
+		"skill": "Häufige phrasal verbs verstehen und Verben mit to-infinitive oder -ing-Form richtig verbinden",
+		"bindings": ["1.2", "4"],
+		"paragraphs": [
+			"Ein phrasal verb besteht aus einem Verb und einem kleinen Wort wie up, out, on, off. Zusammen haben sie oft eine neue Bedeutung, die du als Ganzes lernst: work out (herausfinden, lösen; auch: trainieren), find out (herausfinden), look up (nachschlagen), give up (aufgeben), carry on (weitermachen), set off (aufbrechen), turn up (auftauchen). Beispiel: „I couldn't work out the answer, so I looked the word up in the dictionary.“ Ist das Objekt ein Pronomen, steht es meist in der Mitte: look it up, work it out.",
+			"Nach manchen Verben folgt to + Grundform (to-infinitive), nach anderen die -ing-Form. Mit to-infinitive: decide, hope, want, plan, manage, promise, learn, forget: „We decided to visit Cork.“ Mit -ing: enjoy, finish, avoid, mind, keep, practise, imagine, suggest: „I enjoy playing the fiddle.“ – „Would you mind opening the window?“ Lerne die Verben deshalb immer im Chunk: to decide to do sth, to enjoy doing sth."
+		],
+		"material": "Blog post · Our cycling tour in Connemara\nOn the first day we set off early in the morning. We had planned to cycle forty kilometres, but the wind was so strong that we nearly gave up. Luckily, Dad kept telling jokes, and we carried on. In the afternoon we found out that the youth hostel was closed! Mum looked up another hostel on her phone and managed to book three beds. In the evening we enjoyed eating fish and chips by the sea. I've learnt to read a map, and I've promised to come back next summer.",
+		"materialLabel": "Eigenes englisches Übungsmaterial · Blogeintrag",
+		"materialLanguage": "en",
+		"sourceIds": ["lp", "cambridge", "oxford"],
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "Welcher Satz ist richtig?",
+			"answer": "We enjoyed eating fish and chips.",
+			"wrong": [
+				"We enjoyed to eat fish and chips.",
+				"We enjoyed eat fish and chips."
+			],
+			"explanation": "Nach enjoy folgt die -ing-Form: enjoy doing sth."
+		},
+		"takeaway": "Phrasal verbs als Ganzes lernen: work out, find out, look up, give up, carry on, set off. Pronomen in die Mitte: look it up. Verb + to-infinitive: decide, hope, want, plan, manage, promise. Verb + -ing: enjoy, finish, avoid, mind, keep, practise.",
+		"practice": [
+			{
+				"prompt": "I don't know this word. I'll look it ___. (Partikel)",
+				"answers": ["up"],
+				"feedback": "look sth up: etwas nachschlagen; das Pronomen steht in der Mitte."
+			},
+			{
+				"prompt": "We decided ___ visit Cork. (fehlendes Wort)",
+				"answers": ["to"],
+				"feedback": "decide to do sth: Nach decide folgt to + Grundform."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Find six phrasal verbs or verb chunks in the blog post. Write them down with the German meaning and decide: phrasal verb, verb + to-infinitive or verb + -ing.",
+				"model": "set off – aufbrechen (phrasal verb); give up – aufgeben (phrasal verb); keep telling – immer weiter erzählen (verb + -ing); carry on – weitermachen (phrasal verb); find out – herausfinden (phrasal verb); look up – nachschlagen (phrasal verb); manage to book – es schaffen zu buchen (verb + to-infinitive); enjoy eating – gern essen (verb + -ing); plan to cycle, learn to read, promise to come (verb + to-infinitive).",
+				"criteria": [
+					"Ich finde mindestens sechs Ausdrücke.",
+					"Ich gebe eine passende deutsche Bedeutung an.",
+					"Ich ordne sie richtig den drei Gruppen zu."
+				]
+			},
+			"2": {
+				"language": "en",
+				"prompt": "Write about your plans and hobbies (60 to 80 words). Use three verbs with to-infinitive, three verbs with -ing and two phrasal verbs.",
+				"model": "This year I want to learn the guitar, and I hope to play in the school band. I practise playing every afternoon, but sometimes I can't work out the chords, so I look them up online. I really enjoy listening to Irish folk music. I've decided to save money for a concert ticket. I'll never give up, even when my fingers hurt. My brother doesn't mind listening, but my sister keeps complaining!",
+				"criteria": [
+					"Ich verwende drei Verben mit to-infinitive richtig.",
+					"Ich verwende drei Verben mit -ing richtig.",
+					"Ich verwende zwei phrasal verbs passend."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "sentence",
+			"goals": [
+				{
+					"label": "Phrasal verb",
+					"before": "The wind was strong, but we didn't give",
+					"after": ".",
+					"options": ["up", "out", "off"],
+					"answer": "up",
+					"explanation": "give up: aufgeben."
+				},
+				{
+					"label": "Verb + to-infinitive",
+					"before": "Mum managed",
+					"after": "three beds.",
+					"options": ["to book", "booking", "book"],
+					"answer": "to book",
+					"explanation": "manage to do sth: es schaffen, etwas zu tun."
+				},
+				{
+					"label": "Verb + -ing",
+					"before": "Would you mind",
+					"after": "the window?",
+					"options": ["opening", "to open", "open"],
+					"answer": "opening",
+					"explanation": "mind doing sth: Nach mind folgt die -ing-Form."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "e7-word-formation",
+		"stage": "words_texts",
+		"title": "Building words: Prefixes, suffixes, compounds and conversion",
+		"skill": "Unbekannte Wörter mit Wortbildungsregeln erschließen und Wortfamilien aufbauen",
+		"bindings": ["1.1", "1.2", "4"],
+		"paragraphs": [
+			"Viele englische Wörter kannst du aus Bausteinen erschließen. Präfixe (prefixes) stehen vorne und ändern die Bedeutung: un- und dis- verneinen (unhappy, dislike), re- heißt „wieder“ (rewrite). Suffixe (suffixes) stehen hinten und ändern oft die Wortart: -er/-or bilden Personen (teacher, visitor), -ful und -less Adjektive (helpful, helpless), -ness und -ment Nomen (kindness, excitement), -ly Adverbien (quickly). Zusammensetzungen (compounds) verbinden zwei Wörter: homework, football, bus stop.",
+			"Bei der Konversion (conversion) bleibt das Wort gleich, nur die Wortart ändert sich: cold (kalt) – a cold (eine Erkältung), to text (simsen) – a text, a walk – to walk. Den Unterschied erkennst du am Satzbau: Steht a/the davor, ist es ein Nomen. Beispiel: „I've got a terrible cold.“ – „It's cold outside.“ Mit Wortfamilien lernst du mehrere Wörter auf einmal: help, helper, helpful, helpless, unhelpful."
+		],
+		"material": "Word puzzle · Can you work them out?\n1. A person who paints is a painter. A person who visits is a … (visitor)\n2. If something has no use, it is … (useless)\n3. The opposite of tidy is … (untidy)\n4. If you write a text again, you … it. (rewrite)\n5. The feeling when you are very excited is … (excitement)\n6. A room where you sleep is a … (bedroom)\n7. „I've got a cold.“ Here, cold is not an adjective but a … (noun)",
+		"materialLabel": "Eigenes englisches Übungsmaterial · Worträtsel",
+		"materialLanguage": "en",
+		"sourceIds": ["lp", "cambridge", "oxford"],
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "Was bedeutet „careless“?",
+			"answer": "without care (nachlässig, unvorsichtig)",
+			"wrong": [
+				"full of care (sorgfältig)",
+				"a person who cares (Pfleger)"
+			],
+			"explanation": "Das Suffix -less bedeutet „ohne“: careless = ohne Sorgfalt. -ful bedeutet „voll“ (careful), -er bildet eine Person (carer)."
+		},
+		"takeaway": "Präfixe: un-, dis- (nicht), re- (wieder). Suffixe: -er/-or (Person), -ful/-less (Adjektiv: voll/ohne), -ness/-ment (Nomen), -ly (Adverb). Compounds: homework. Konversion: cold – a cold, to text – a text.",
+		"practice": [
+			{
+				"prompt": "The opposite of „friendly“ is ___. (Präfix + friendly)",
+				"answers": ["unfriendly"],
+				"feedback": "un- verneint: unfriendly."
+			},
+			{
+				"prompt": "„I've got a cold.“ – Here cold is a ___. (Wortart auf Englisch)",
+				"answers": ["noun"],
+				"feedback": "Konversion: Mit a davor ist cold ein Nomen (Erkältung)."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Build a word family with four to six words for each of these words: play, care, kind. Name the part you added (prefix, suffix, compound).",
+				"model": "play: player (suffix -er), playful (suffix -ful), playground (compound), replay (prefix re-). care: careful (suffix -ful), careless (suffix -less), carefully (suffixes -ful and -ly), carer (suffix -er). kind: kindness (suffix -ness), unkind (prefix un-), kindly (suffix -ly).",
+				"criteria": [
+					"Ich bilde zu jedem Wort mehrere echte Wörter.",
+					"Ich benenne den Baustein richtig.",
+					"Ich verwende mindestens ein Präfix, ein Suffix und ein Kompositum."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Erkläre auf Deutsch an drei Beispielen aus der Lektion, wie dir Wortbildung beim Lesen eines unbekannten Textes hilft, und nenne ein Beispiel, bei dem Konversion dich in die Irre führen könnte.",
+				"model": "Wenn ich ein unbekanntes Wort wie unforgettable lese, zerlege ich es: un- heißt nicht, forget heißt vergessen, -able heißt man kann es. Also bedeutet es unvergesslich. Bei helpless weiß ich: -less bedeutet ohne, also hilflos. Bei bedroom erkenne ich die Zusammensetzung aus bed und room: Schlafzimmer. Konversion kann in die Irre führen, wenn ich cold immer als „kalt“ lese. In „I've got a cold“ steht a davor, also ist es ein Nomen und heißt Erkältung.",
+				"criteria": [
+					"Ich erkläre drei Beispiele mit Präfix, Suffix oder Kompositum.",
+					"Ich zeige, wie ich die Bedeutung aus den Teilen erschließe.",
+					"Ich erkläre ein Beispiel für Konversion."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "word-builder",
+			"goals": [
+				{
+					"label": "Suffix „ohne“",
+					"before": "help + -less =",
+					"after": "(hilflos)",
+					"options": ["helpless", "helpful", "helper"],
+					"answer": "helpless",
+					"explanation": "-less bedeutet „ohne“: helpless."
+				},
+				{
+					"label": "Präfix",
+					"before": "not helpful =",
+					"after": "",
+					"options": ["unhelpful", "dishelpful", "rehelpful"],
+					"answer": "unhelpful",
+					"explanation": "un- verneint Adjektive: unhelpful."
+				},
+				{
+					"label": "Konversion",
+					"before": "In „Thanks for your help“, help is a",
+					"after": ".",
+					"options": ["noun", "verb", "adjective"],
+					"answer": "noun",
+					"explanation": "Nach your steht ein Nomen: the help (Konversion von to help)."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "e7-dictionary",
+		"stage": "words_texts",
+		"title": "Using a dictionary: Finding the right meaning",
+		"skill": "Im Wörterbuch die passende Bedeutung im Kontext auswählen und grammatische Fachbegriffe verstehen",
+		"bindings": ["1.2", "4"],
+		"paragraphs": [
+			"Viele Wörter haben mehrere Bedeutungen. Im zweisprachigen oder elektronischen Wörterbuch findest du deshalb oft eine ganze Liste. Du wählst die passende Bedeutung aus dem Zusammenhang: Prüfe zuerst die Wortart (noun, verb, adjective), dann die Beispielsätze und Bereichsangaben wie (sport) oder (school). Beispiel: In „The match was very exciting.“ heißt match „Spiel“, in „Can I have a match? I want to light the candle.“ heißt match „Streichholz“.",
+			"Wörterbücher und Grammatikteile im Lehrwerk verwenden Fachbegriffe: noun (Nomen), verb, adjective, adverb, preposition, pronoun, singular, plural, irregular (unregelmäßig), countable/uncountable (zählbar/nicht zählbar). Abkürzungen wie sb (somebody) und sth (something) zeigen dir, wie ein Wort im Satz steht: „remind sb of sth“ = jemanden an etwas erinnern. Am Ende setzt du die gewählte Bedeutung in den Satz ein und prüfst, ob er Sinn ergibt."
+		],
+		"material": "Dictionary entry (simplified) · light\nlight /laɪt/\n1 noun: the brightness from the sun or a lamp – Licht. „The light in this room is too dark for reading.“\n2 noun: a lamp – Lampe, Licht. „Turn off the light, please.“\n3 adjective: not heavy – leicht. „My bag is very light.“\n4 adjective: pale, not dark – hell. „She wore a light blue jacket.“\n5 verb (irregular: lit, lit): to make something start to burn – anzünden. „We lit a fire on the beach.“",
+		"materialLabel": "Eigenes englisches Übungsmaterial · vereinfachter Wörterbucheintrag",
+		"materialLanguage": "en",
+		"sourceIds": ["lp", "cambridge", "oxford"],
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "Welche Bedeutung von light passt in „This suitcase is light, I can carry it easily.“?",
+			"answer": "3 adjective: not heavy – leicht",
+			"wrong": [
+				"1 noun: the brightness from the sun – Licht",
+				"5 verb: to make something start to burn – anzünden"
+			],
+			"explanation": "Im Satz beschreibt light den Koffer (Adjektiv) und das Tragen zeigt: nicht schwer. Deshalb passt Bedeutung 3."
+		},
+		"takeaway": "Passende Bedeutung finden: Wortart prüfen, Beispielsätze und Bereichsangaben lesen, Bedeutung im Satz testen. Fachbegriffe: noun, verb, adjective, adverb, preposition, pronoun, irregular, countable/uncountable; sb = somebody, sth = something.",
+		"practice": [
+			{
+				"prompt": "In a dictionary, „sth“ means ___. (ganzes Wort)",
+				"answers": ["something"],
+				"feedback": "sth = something, sb = somebody."
+			},
+			{
+				"prompt": "„We lit a fire.“ Here light is a ___. (Wortart auf Englisch)",
+				"answers": ["verb"],
+				"feedback": "lit ist die Vergangenheitsform des unregelmäßigen Verbs light."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Look at the dictionary entry. Choose the right meaning (1 to 5) for each sentence and translate it: a) Can you light the candles? b) It gets light at six. c) I'd like a light green T-shirt. d) The lights in the stadium went out.",
+				"model": "a) meaning 5 (verb): Kannst du die Kerzen anzünden? b) meaning 4 (adjective, not dark): Um sechs wird es hell. c) meaning 4 (adjective): Ich hätte gern ein hellgrünes T-Shirt. d) meaning 2 (noun): Die Lichter im Stadion gingen aus.",
+				"criteria": [
+					"Ich wähle zu jedem Satz eine passende Bedeutung.",
+					"Ich nenne die Wortart.",
+					"Meine Übersetzungen ergeben im Deutschen Sinn."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Erkläre einer jüngeren Schülerin auf Deutsch in vier Schritten, wie sie im Online-Wörterbuch die richtige Übersetzung für „bank“ in „We sat on the bank of the River Shannon.“ findet.",
+				"model": "Erstens gibst du bank ein und schaust, welche Wortarten es gibt. Zweitens bestimmst du die Wortart im Satz: Vor bank steht the, also ist es ein Nomen. Drittens liest du die Bedeutungen und Beispielsätze: Neben „Bank (Geldinstitut)“ gibt es „Ufer“, mit Beispielen wie „the bank of a river“. Viertens setzt du die Bedeutung in den Satz ein: „Wir saßen am Ufer des Shannon.“ Das ergibt Sinn, „auf der Bank des Shannon“ nicht.",
+				"criteria": [
+					"Ich beschreibe vier sinnvolle Schritte.",
+					"Ich nutze Wortart und Kontext zur Auswahl.",
+					"Ich gebe die passende Übersetzung „Ufer“ an."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "sentence",
+			"goals": [
+				{
+					"label": "Bedeutung im Kontext",
+					"before": "„The match was exciting.“ Here match means",
+					"after": ".",
+					"options": ["Spiel", "Streichholz", "passen"],
+					"answer": "Spiel",
+					"explanation": "Ein Spiel kann spannend sein; der Kontext entscheidet."
+				},
+				{
+					"label": "Fachbegriff",
+					"before": "Quickly is an",
+					"after": ".",
+					"options": ["adverb", "adjective", "article"],
+					"answer": "adverb",
+					"explanation": "quickly beschreibt ein Verb und ist ein adverb."
+				},
+				{
+					"label": "Abkürzung",
+					"before": "„remind sb of sth“: sb means",
+					"after": ".",
+					"options": ["somebody", "something", "sometimes"],
+					"answer": "somebody",
+					"explanation": "sb = somebody (jemand), sth = something (etwas)."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "e7-pronunciation",
+		"stage": "words_texts",
+		"title": "Sounds, silent letters and reading aloud",
+		"skill": "Aussprache mit Lautschrift und Ausspracheregeln erschließen und einen Text mit richtiger Intonation vortragen",
+		"bindings": ["1.2", "4"],
+		"paragraphs": [
+			"Im Englischen passen Schreibung und Aussprache oft nicht genau zusammen. Einige Regeln helfen dir trotzdem: Stumme Buchstaben (silent letters) sprichst du nicht, zum Beispiel k vor n (knee, knight), w vor r (write, wrong), b nach m (climb, lamb), t in castle und listen, l in walk und half, gh in night und daughter. Für unbekannte Wörter schaust du die Lautschrift im Wörterbuch an oder hörst dir die Aussprache im elektronischen Wörterbuch an: island /ˈaɪlənd/, Ireland /ˈaɪələnd/.",
+			"Beim Vorlesen eines Textes achtest du auf Betonung und Satzmelodie (intonation). Bei Fragen mit Fragewort (Where …? What …?) und bei Aussagesätzen fällt die Stimme am Ende, bei Ja/Nein-Fragen steigt sie meist: „Where do you live? ↘“ – „Do you like hurling? ↗“. Pausen machst du an Kommas und Punkten. Übe einen Text erst leise, markiere schwierige Wörter und Pausen und lies ihn dann laut und gestaltend vor, so als würdest du die Geschichte erzählen."
+		],
+		"material": "Poem for reading aloud · The Knight of the Island (written for this lesson)\nA knight once lived on a lonely island,\nhe climbed the castle wall at night.\nHe listened to the wind and the waves,\nand wrote a letter by candlelight.\n“Where is my daughter? Do you know?”\nhe asked the sea, the moon, the sky.\nThe answer came with the morning light:\n“She's sailing home – so don't you cry.”",
+		"materialLabel": "Eigenes englisches Gedicht zum Vortragen · mit vielen stummen Buchstaben",
+		"materialLanguage": "en",
+		"sourceIds": ["lp", "oxford", "cambridge", "bbc-le"],
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "In welchem Wort ist ein Buchstabe stumm?",
+			"answer": "climb",
+			"wrong": ["club", "camp"],
+			"explanation": "In climb wird das b nach m nicht gesprochen /klaɪm/. In club und camp sprichst du alle Konsonanten."
+		},
+		"takeaway": "Silent letters: k vor n (knight), w vor r (write), b nach m (climb), t in castle/listen, l in walk/half, gh in night. Aussprache im Wörterbuch (Lautschrift, Audio) prüfen. Intonation: W-Fragen und Aussagen ↘, Ja/Nein-Fragen meist ↗.",
+		"practice": [
+			{
+				"prompt": "Which letter is silent in „knight“? (ein Buchstabe am Anfang)",
+				"answers": ["k"],
+				"feedback": "knight /naɪt/: k vor n ist stumm, gh auch."
+			},
+			{
+				"prompt": "Which letter is silent in „castle“? (ein Buchstabe in der Mitte)",
+				"answers": ["t"],
+				"feedback": "castle /ˈkɑːsl/: t ist stumm, wie in listen."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Find all words with silent letters in the poem. Write each word and the silent letter(s). Then practise reading the poem aloud with pauses and the right intonation for the question.",
+				"model": "knight (k, gh), island (s), climbed (b), castle (t), night (gh), listened (t), wrote (w), candlelight (gh), daughter (gh), know (k), light (gh), answer (w). The question “Where is my daughter?” falls at the end because it starts with where; “Do you know?” rises.",
+				"criteria": [
+					"Ich finde mindestens acht Wörter mit stummen Buchstaben.",
+					"Ich nenne den stummen Buchstaben richtig.",
+					"Ich erkläre die Intonation der Fragen."
+				]
+			},
+			"2": {
+				"language": "en",
+				"prompt": "Choose five new words from a text you are reading. Look up their pronunciation in an online dictionary, copy the phonetic transcription and write one tip for each word to help you remember it.",
+				"model": "1. island /ˈaɪlənd/ – the s is silent, like in the German word „Eiland“ without s. 2. receipt /rɪˈsiːt/ – the p is silent. 3. comfortable /ˈkʌmftəbl/ – say only three syllables: comf-ta-ble. 4. Wednesday /ˈwenzdeɪ/ – the first d is silent. 5. Leicester /ˈlestə/ – the city has only two syllables.",
+				"criteria": [
+					"Ich gebe fünf Wörter mit korrekter Lautschrift an.",
+					"Ich nenne eine Besonderheit der Aussprache.",
+					"Meine Merktipps sind hilfreich."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "intonation",
+			"goals": [
+				{
+					"label": "Stummer Buchstabe",
+					"before": "In „write“ the letter",
+					"after": "is silent.",
+					"options": ["w", "r", "t"],
+					"answer": "w",
+					"explanation": "w vor r ist stumm: write /raɪt/."
+				},
+				{
+					"label": "W-Frage",
+					"before": "„Where do you live?“ – at the end your voice",
+					"after": ".",
+					"options": ["falls", "rises", "stops"],
+					"answer": "falls",
+					"explanation": "Bei W-Fragen fällt die Stimme am Ende."
+				},
+				{
+					"label": "Ja/Nein-Frage",
+					"before": "„Do you like hurling?“ – at the end your voice usually",
+					"after": ".",
+					"options": ["rises", "falls", "whispers"],
+					"answer": "rises",
+					"explanation": "Bei Ja/Nein-Fragen steigt die Stimme meist."
+				}
+			]
+		},
+		"listening": true,
+		"speaking": true
+	},
+	{
+		"id": "e7-letters-forms",
+		"stage": "words_texts",
+		"title": "Personal letters, e-mails and forms",
+		"skill": "Persönliche Schreiben adressatengerecht gliedern, mit linking words verbinden und Formulare ausfüllen",
+		"bindings": ["1.1", "2", "3", "5"],
+		"paragraphs": [
+			"Persönliche Briefe und E-Mails haben einen festen Aufbau: Anrede mit Komma (Dear Siobhan, / Hi Tom,), eine Einleitung mit Bezug (Thanks for your letter. / How are you?), einen gegliederten Hauptteil und eine Schlussformel (Write back soon! / Best wishes, / Love,) mit deinem Namen. Den Hauptteil verbindest du mit linking words: first, then, after that, finally (Reihenfolge), and, also, too (Ergänzung), but, however (Gegensatz), because, so (Grund und Folge). Bei Erwachsenen, die du nicht gut kennst, schreibst du höflicher: Dear Mrs Kelly, … Kind regards,",
+			"In Formulare (forms), zum Beispiel für eine Sommerschule, trägst du Angaben genau und vollständig ein. Typische Felder: first name, surname (Nachname), date of birth (Geburtsdatum), nationality, address, postcode, e-mail, emergency contact (Notfallkontakt), dietary requirements (Essenswünsche, Allergien). Datum im britischen Englisch: 14/05/2012 oder 14 May 2012 (Tag zuerst); im amerikanischen Englisch steht der Monat zuerst: 05/14/2012."
+		],
+		"material": "Letter · From your Irish penfriend\nDear Lena,\nThanks a lot for your last letter and the photos of Munich. How are you? I'm really excited because I've signed up for the Galway Summer Music School in July. First, we'll have workshops in the morning, and then we'll play in a big concert at the end of the week. However, I need a friend to come with me! Would you like to join me? You'd have to fill in the online form before 30 April. I'd love to show you my town.\nWrite back soon!\nBest wishes,\nSiobhan",
+		"materialLabel": "Eigenes englisches Übungsmaterial · Brief einer irischen Brieffreundin",
+		"materialLanguage": "en",
+		"sourceIds": ["lp", "bbc-bitesize", "cambridge"],
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "Was soll Lena laut Brief tun?",
+			"answer": "Fill in the online form before 30 April.",
+			"wrong": [
+				"Send photos of Galway to Siobhan.",
+				"Play in a concert in Munich in July."
+			],
+			"explanation": "Siobhan lädt Lena zur Sommermusikschule ein; dafür muss Lena das Onlineformular vor dem 30. April ausfüllen."
+		},
+		"takeaway": "Persönlicher Brief: Anrede mit Komma, Einleitung mit Bezug, Hauptteil mit linking words (first, then, however, because, so), Schlussformel. Formulare: genau und vollständig; first name, surname, date of birth, emergency contact. BE: Tag/Monat, AE: Monat/Tag.",
+		"practice": [
+			{
+				"prompt": "Your family name in a form is your ___. (Feldname)",
+				"answers": ["surname", "last name"],
+				"feedback": "surname (BE) oder last name: Nachname."
+			},
+			{
+				"prompt": "The workshops are fun. ___, I need a friend to come with me. (linking word: jedoch)",
+				"answers": ["However"],
+				"feedback": "However leitet einen Gegensatz ein, mit Komma danach."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Answer Siobhan's letter (100 to 120 words). Thank her, say if you can come and why, ask two questions about the summer school and use at least four different linking words.",
+				"model": "Dear Siobhan,\nThanks a lot for your letter and the invitation! I'd love to come to Galway with you. First, I asked my parents, and they said yes because I've been saving money for a trip to Ireland. I've also talked to my music teacher, so I can practise the songs before July. However, I have two questions. Do we need to bring our own instruments? And where will we sleep – in a hostel or with families? I'll fill in the online form this weekend, before 30 April. After that, I'll book my flight. I can't wait to see you!\nWrite back soon!\nBest wishes,\nLena",
+				"criteria": [
+					"Mein Brief hat Anrede, Einleitung mit Bezug, Hauptteil und Schlussformel.",
+					"Ich verwende mindestens vier verschiedene linking words.",
+					"Ich beantworte die Einladung und stelle zwei Fragen."
+				]
+			},
+			"2": {
+				"language": "en",
+				"prompt": "Fill in the registration form for the Galway Summer Music School for yourself (use invented data if you like): first name, surname, date of birth (British format), nationality, instrument, years of experience, emergency contact, dietary requirements, and one sentence: Why do you want to take part?",
+				"model": "First name: Lena\nSurname: Bauer\nDate of birth: 14/05/2012\nNationality: German\nInstrument: violin (fiddle)\nYears of experience: 5\nEmergency contact: Anna Bauer (mother), +49 … (invented)\nDietary requirements: vegetarian, no nuts\nWhy do you want to take part? I want to learn Irish folk tunes and play together with young musicians from other countries.",
+				"criteria": [
+					"Ich fülle alle Felder vollständig und passend aus.",
+					"Das Datum steht im britischen Format (Tag zuerst).",
+					"Mein Satz zur Teilnahme ist begründet und fehlerfrei."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "letter-layout",
+			"goals": [
+				{
+					"label": "Anrede",
+					"before": "",
+					"after": "Siobhan,",
+					"options": ["Dear", "Yours", "Best"],
+					"answer": "Dear",
+					"explanation": "Dear … ist die übliche Anrede im Brief."
+				},
+				{
+					"label": "Gegensatz",
+					"before": "The workshops sound great.",
+					"after": ", I need a friend to come with me.",
+					"options": ["However", "Because", "First"],
+					"answer": "However",
+					"explanation": "However leitet einen Gegensatz ein."
+				},
+				{
+					"label": "Formular",
+					"before": "In a form, „date of birth“ means your",
+					"after": ".",
+					"options": ["Geburtsdatum", "Geburtsort", "Anreisetag"],
+					"answer": "Geburtsdatum",
+					"explanation": "date of birth: Geburtsdatum; place of birth wäre der Geburtsort."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "e7-error-log",
+		"stage": "words_texts",
+		"title": "Learning smarter: Error log and vocabulary networks",
+		"skill": "Eigene Stärken und Schwächen erkennen, ein Fehlerprotokoll führen und Wortschatz in Wortfeldern und Beispielsätzen festigen",
+		"bindings": ["1.2", "4"],
+		"paragraphs": [
+			"Fehler gehören zum Lernen. Wichtig ist, dass du deine typischen Fehler erkennst und gezielt übst. Dafür führst du ein Fehlerprotokoll (error log): Du schreibst den falschen Satz, die Korrektur, die Regel in eigenen Worten und einen eigenen neuen Beispielsatz auf. Nach einigen Wochen siehst du, welche Fehler sich wiederholen, zum Beispiel immer das fehlende -s bei he/she/it oder since statt for. Diese Bereiche übst du dann besonders.",
+			"Auch beim Wortschatz helfen Methoden. In einem Wortfeld (word field) ordnest du Wörter zu einem Thema, zum Beispiel „Ireland“: geography (island, coast, river), culture (fiddle, hurling, shamrock), history (famine, emigration). Lerne neue Wörter immer mit einem erklärenden Beispielsatz („The famine forced many families to emigrate.“) oder mit einer eigenen Definition („A fiddle is a violin used in folk music.“). So behältst du sie besser als in einer einfachen Liste."
+		],
+		"material": "Error log · Ben's notes after the last test\n1. Wrong: “I have seen the film yesterday.” Right: “I saw the film yesterday.” Rule: yesterday = finished time → simple past. My example: “I met Ciara last week.”\n2. Wrong: “I wait since two hours.” Right: “I have been waiting for two hours.” Rule: for + time span, since + point in time. My example: “I have been learning the fiddle for a year.”\n3. Wrong: “She play hurling.” Right: “She plays hurling.” Rule: he/she/it → -s. My example: “My brother watches every match.”\nWhat I'm good at: vocabulary, reading. What I need to practise: tenses!",
+		"materialLabel": "Eigenes englisches Übungsmaterial · Fehlerprotokoll eines Schülers",
+		"materialLanguage": "en",
+		"sourceIds": ["lp", "bbc-le", "cambridge"],
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Was gehört zu einem hilfreichen Eintrag im Fehlerprotokoll?",
+			"answer": "Falscher Satz, Korrektur, Regel in eigenen Worten und ein neuer eigener Beispielsatz",
+			"wrong": [
+				"Nur die richtige Lösung, damit man den Fehler schnell vergisst",
+				"Nur die Note der Klassenarbeit"
+			],
+			"explanation": "Erst mit Regel und eigenem Beispiel verstehst du den Fehler und kannst ihn künftig vermeiden. Die Note allein zeigt nicht, was du üben musst."
+		},
+		"takeaway": "Error log: falscher Satz → Korrektur → Regel in eigenen Worten → eigenes Beispiel; wiederkehrende Fehler gezielt üben. Wortschatz: Wortfelder, Beispielsätze und eigene Definitionen statt bloßer Listen.",
+		"practice": [
+			{
+				"prompt": "A list of your own mistakes with corrections is an error ___. (Nomen)",
+				"answers": ["log"],
+				"feedback": "error log: Fehlerprotokoll."
+			},
+			{
+				"prompt": "Words about one topic, e.g. island, coast, river, form a word ___. (Nomen)",
+				"answers": ["field"],
+				"feedback": "word field: Wortfeld."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Start your own error log. Write three typical mistakes you make in English (or use mistakes from this course) with correction, rule and your own example. Then name one strength and one weakness.",
+				"model": "1. Wrong: “If it will rain, we stay at home.” Right: “If it rains, we'll stay at home.” Rule: no will in the if-clause. Example: “If I have time, I'll call you.” 2. Wrong: “You mustn't come tomorrow.” (I wanted to say: Du musst nicht.) Right: “You needn't come tomorrow.” Rule: mustn't = not allowed. Example: “You needn't bring food.” 3. Wrong: “The book which I read it was great.” Right: “The book which I read was great.” Rule: don't repeat the noun with it. My strength: listening. My weakness: if-clauses.",
+				"criteria": [
+					"Jeder Eintrag hat Fehler, Korrektur, Regel und eigenes Beispiel.",
+					"Die Korrekturen und Regeln stimmen.",
+					"Ich nenne eine Stärke und eine Schwäche."
+				]
+			},
+			"2": {
+				"language": "en",
+				"prompt": "Make a word field “Youth culture” with at least four groups (e.g. music, sport, fashion, media) and three words each. Then write a definition or an example sentence for four of the words.",
+				"model": "Music: fiddle, hip-hop, lyrics. Sport: skateboarding, hurling, coach. Fashion: trainers, second-hand, hoodie. Media: podcast, streaming, audiobook. Definitions: Lyrics are the words of a song. A coach is a person who trains a team. Second-hand clothes are clothes that somebody wore before. I listen to a podcast about football every Monday.",
+				"criteria": [
+					"Mein Wortfeld hat mindestens vier Gruppen mit je drei passenden Wörtern.",
+					"Meine Definitionen sind verständlich und richtig.",
+					"Ich nutze Relativsätze oder Beispielsätze."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "sequence",
+			"goals": [
+				{
+					"label": "Eintrag im error log",
+					"before": "After the correction, write the",
+					"after": "in your own words.",
+					"options": ["rule", "mark", "date"],
+					"answer": "rule",
+					"explanation": "Die Regel in eigenen Worten hilft, den Fehler zu verstehen."
+				},
+				{
+					"label": "Wortfeld",
+					"before": "Island, coast and river belong to the word field",
+					"after": ".",
+					"options": ["geography", "music", "fashion"],
+					"answer": "geography",
+					"explanation": "Diese Wörter gehören zum Wortfeld Geographie."
+				},
+				{
+					"label": "Definition",
+					"before": "A fiddle is a violin",
+					"after": "is used in folk music.",
+					"options": ["which", "who", "where"],
+					"answer": "which",
+					"explanation": "Für Definitionen von Dingen passt ein Relativsatz mit which."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "e7-mediation-guide",
+		"stage": "words_texts",
+		"title": "Mediation: Guiding English-speaking visitors in your town",
+		"skill": "In Alltagssituationen spontan zwischen Deutsch und Englisch vermitteln und Lücken mit Umschreibungen überbrücken",
+		"bindings": ["1.1", "2", "4"],
+		"paragraphs": [
+			"Bei der mündlichen Sprachmittlung hilfst du Menschen, die sich nicht verstehen, zum Beispiel einer englischsprachigen Gastfamilie bei einer Stadtführung oder an der Bushaltestelle. Du gibst nur das Wichtige sinngemäß wieder, nicht jedes Wort. Sprich die Personen direkt an und kündige an, was du tust: „The guide says that …“, „She wants to know if …“, „He's asking where …“. Umgekehrt sagst du auf Deutsch: „Sie möchte wissen, ob …“.",
+			"Wenn dir ein Wort fehlt, nutzt du Kompensationsstrategien: umschreiben („It's a kind of church tower with a round top.“), ein einfacheres Wort wählen, zeigen oder ein Bild benutzen. Bei Begriffen ohne Entsprechung erklärst du kurz: „Maibaum – it's a tall decorated pole which villages put up in May.“ Für detaillierte Wegbeschreibungen übersetzt du genau: „Gehen Sie bis zur Ampel“ = „Go as far as the traffic lights.“"
+		],
+		"material": "Situation · Guided tour in Regensburg\nTour guide (in German): „Die Steinerne Brücke wurde im 12. Jahrhundert gebaut und ist eine der ältesten erhaltenen Steinbrücken Deutschlands. Direkt daneben liegt die Historische Wurstkuchl, eine der ältesten Garküchen der Welt.“\nMrs Brown: “Sorry, what did she say about the bridge?”\nYou: “She says the Stone Bridge was built in the 12th century. It's one of the oldest stone bridges in Germany that still exist. And next to it there's the Historic Sausage Kitchen – it's one of the oldest restaurants of its kind in the world, a kind of very old snack bar.”\nMrs Brown: “Wonderful! Could you ask her if we can go up the tower later?”",
+		"materialLabel": "Eigenes Übungsmaterial · Sprachmittlungssituation (Deutsch und Englisch)",
+		"materialLanguage": "en",
+		"sourceIds": ["lp", "bbc-le"],
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "Welche Vermittlung ist am besten?",
+			"answer": "She says the bridge is very old – it was built in the 12th century.",
+			"wrong": [
+				"The Stone Bridge became in the twelfth year hundred built.",
+				"She says something about a bridge, I don't know."
+			],
+			"explanation": "Eine gute Sprachmittlung gibt das Wichtige verständlich und vollständig wieder. Wörtliches Übersetzen führt zu falschem Englisch, und ohne Inhalt hilft die Vermittlung nicht."
+		},
+		"takeaway": "Mündlich mitteln: das Wichtige sinngemäß, direkt und höflich wiedergeben (She says that …, He wants to know if …). Lücken überbrücken: umschreiben, einfacheres Wort, zeigen, kurz erklären.",
+		"practice": [
+			{
+				"prompt": "She wants to know ___ we can go up the tower. (ob)",
+				"answers": ["if", "whether"],
+				"feedback": "want to know if/whether …: wissen wollen, ob …"
+			},
+			{
+				"prompt": "„Gehen Sie bis zur Ampel“ = Go as far as the traffic ___. (Nomen, Plural)",
+				"answers": ["lights"],
+				"feedback": "traffic lights: Ampel."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "An English-speaking tourist asks you at the station in your town how to get to the old town. Write the directions you give in English (six to eight sentences) and explain one local word they will see on signs.",
+				"model": "Go out of the main exit and turn left. Walk along the main road as far as the traffic lights. Cross the road there and go straight on into the pedestrian zone. You'll pass a big department store on your right. After about five minutes you'll reach the market square with the town hall. On the signs you'll see the word „Altstadt“ – that means old town. Enjoy your visit!",
+				"criteria": [
+					"Meine Wegbeschreibung ist genau und folgerichtig.",
+					"Ich verwende mindestens fünf Ausdrücke für Wege.",
+					"Ich erkläre ein deutsches Wort verständlich auf Englisch."
+				]
+			},
+			"2": {
+				"language": "en",
+				"prompt": "Write a mediation dialogue (eight to ten lines) at a Bavarian bakery: your English-speaking guest wants to buy something, the shop assistant speaks only German. Mediate in both directions and paraphrase at least two typical German words.",
+				"model": "Guest: What's that brown twisted bread?\nYou: It's a Brezel – a pretzel. It's a kind of salty bread in a knot shape.\nGuest: I'd like two, please. And what's that cake with crumbs?\nYou (to the assistant): Sie möchte zwei Brezeln. Und was ist das für ein Kuchen?\nAssistant: Das ist Streuselkuchen mit Zwetschgen.\nYou: It's Streuselkuchen – a plum cake with sweet crumbs on top.\nGuest: Lovely! How much is it all?\nYou (to the assistant): Was macht das zusammen?\nAssistant: Vier Euro achtzig.\nYou: She says it's four euros eighty.",
+				"criteria": [
+					"Ich vermittle in beide Richtungen.",
+					"Ich umschreibe mindestens zwei deutsche Wörter verständlich.",
+					"Ich gebe das Wichtige sinngemäß und höflich wieder."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "dialogue",
+			"goals": [
+				{
+					"label": "Wiedergabe einleiten",
+					"before": "",
+					"after": "says the bridge was built in the 12th century.",
+					"options": ["She", "Her", "Says she"],
+					"answer": "She",
+					"explanation": "She says (that) … leitet die Wiedergabe ein."
+				},
+				{
+					"label": "Frage weitergeben",
+					"before": "He wants to know",
+					"after": "the museum is open.",
+					"options": ["if", "that", "what"],
+					"answer": "if",
+					"explanation": "Ja/Nein-Fragen gibst du mit if oder whether weiter."
+				},
+				{
+					"label": "Kompensation",
+					"before": "A Maibaum is a tall decorated pole",
+					"after": "villages put up in May.",
+					"options": ["which", "who", "whose"],
+					"answer": "which",
+					"explanation": "Mit einem Relativsatz (which) umschreibst du einen Begriff ohne Entsprechung."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": true
+	}
+]
