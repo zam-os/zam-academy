@@ -65,7 +65,7 @@ function isNamedDraft(value: unknown): value is WikiDraft {
   );
 }
 
-/** Restore both the named draft and the page array used in the first local draft. */
+/** Restore named drafts and the page arrays written by early builds. */
 export function loadWikiDraft(): WikiDraft {
   const saved = readStoredJson(WIKI_DRAFT_KEY);
   if (isNamedDraft(saved)) return saved;
