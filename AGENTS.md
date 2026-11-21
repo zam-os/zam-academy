@@ -337,11 +337,15 @@ Learners have review histories on them.
   Zweige, lesson and card counts), add it to the Pages list (CI finds a package by its
   `package.json` and tests only the packages a change touches), add the README row and a dev port, keep the `zam-home-link` back to
   `https://academy.zam-os.org/`, and make `npm run package:zip` work.
-- A local draft with `publication.json` status `local-only` stays out of the
-  public catalog, atlas registry and Pages list. CI still validates its cell.
-  Changing the marker to `ready` does not replace release authority or the
-  normal registration checks. Shared publication tooling belongs in its own
-  PR rather than a new-package PR.
+- Every new package goes public with its first merge: `publication.json`
+  status `ready`, version `0.0`, registered in `academy.json`, the Pages list
+  and the README (Thomas's decision of 2026-11-21: with so many packages a
+  hidden one gets lost; version 0 already says that teacher review is open).
+  The status `local-only` keeps a package out of the public catalog, atlas
+  registry and Pages list. Use it only when Thomas asks for it for that
+  package, and say so in the PR. CI still validates the cell of a
+  `local-only` package. Shared publication tooling belongs in its own PR
+  rather than a new-package PR.
 - Every package has a **package version** in `publication.json`
   (`"version": "0.0"`), shown in the app inside the `zam-home-link` and in the
   atlas (`academy.json`). `0.n`: not yet accepted by a teacher of the grade;

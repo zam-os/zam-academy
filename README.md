@@ -78,6 +78,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | BwR 10 Realschule (LehrplanPLUS Bayern, Zweig II) | [`bwr-realschule-10/`](bwr-realschule-10/) | https://academy.zam-os.org/bwr-realschule-10/ | `zam-academy:bwr-realschule-10` |
 | Politik und Gesellschaft 10 Realschule (LehrplanPLUS Bayern, gemeinsamer Lernpfad) | [`politik-realschule-10/`](politik-realschule-10/) | https://academy.zam-os.org/politik-realschule-10/ | `zam-academy:politik-realschule-10` |
 | Biologie 5 Realschule (LehrplanPLUS Bayern, gemeinsamer Lernpfad) | [`biologie-realschule-5/`](biologie-realschule-5/) | https://academy.zam-os.org/biologie-realschule-5/ | `zam-academy:biologie-realschule-5` |
+| Biologie 7 Realschule (LehrplanPLUS Bayern, gemeinsamer Lernpfad) | [`biologie-realschule-7/`](biologie-realschule-7/) | https://academy.zam-os.org/biologie-realschule-7/ | `zam-academy:biologie-realschule-7` |
 | Biologie 8 Realschule (LehrplanPLUS Bayern, gemeinsamer Lernpfad) | [`biologie-realschule-8/`](biologie-realschule-8/) | https://academy.zam-os.org/biologie-realschule-8/ | `zam-academy:biologie-realschule-8` |
 | Geographie 8 Realschule (LehrplanPLUS Bayern) | [`geographie-realschule-8/`](geographie-realschule-8/) | https://academy.zam-os.org/geographie-realschule-8/ | `zam-academy:geographie-realschule-8` |
 | Informatik 6–8 Realschule (Bavaria, LehrplanPLUS IT 1.1–1.9; one shared introductory course for all tracks) | [`informatik-realschule-8/`](informatik-realschule-8/) | https://academy.zam-os.org/informatik-realschule-8/ | `zam-academy:informatik-realschule-8` |
@@ -192,6 +193,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # German 5 Gymnasium: cd deutsch-gymnasium-5 (dev server on :5249)
 # German 6 Gymnasium: cd deutsch-gymnasium-6 (dev server on :5260)
 # German 6 Realschule: cd deutsch-realschule-6 (dev server on :5254)
+# Biologie 7 Realschule: cd biologie-realschule-7 (dev server on :5267)
 # German 7 Realschule: cd deutsch-realschule-7 (dev server on :5268)
 # Englisch 6 Realschule: cd englisch-realschule-6 (dev server on :5255)
 # Geschichte 6 Realschule: cd geschichte-realschule-6 (dev server on :5258)
@@ -281,6 +283,8 @@ verbatim expectations and a proposal-only history mapping. Run locally on port
 5240 or create the offline ZIP with `npm run package:zip`.
 
 The [Biologie 5 Realschule package](biologie-realschule-5/) adds 25 lessons, four interactive models (microscope, cell comparison, human torso, and arm lever), 50 case decisions, 50 two-level writing tasks, and 50 linked ZAM cards across all four LehrplanPLUS Bayern areas (`biologie-realschule-5/coverage.json`, all 40 verbatim expectations verified). The [legacy review](docs/biologie-5-bestandsabgleich.md) proposes 5 category-A replacements and retains 19 cards active across the three Grade 5 `de-by` cells (`proposal-only`, `approved: null`; `cell.json` ships without `replaces` or `retired_items` until approved).
+
+The [Biologie 7 Realschule package](biologie-realschule-7/) covers the shared LehrplanPLUS path for all Wahlpflichtfächergruppen with 27 lessons on cells and unicellular organisms, plant metabolism and human organ systems, six interactive models and 54 linked ZAM cards. The [curriculum and legacy review](docs/biologie-realschule-7-coverage.md) records the mapping Thomas approved on 2026-11-20 (4 transfers, 4 old cards kept active).
 
 The [Physik 7 Gymnasium package](physik-gymnasium-7/) covers Natur und Technik 7 – Schwerpunkt Physik (`NT7 1.1–1.3`, about 28 hours) with 21 lessons, 20 editable models with drawings, density calculations on two levels and a notebook for the six Schülerexperimente. Its [coverage matrix](physik-gymnasium-7/coverage.json) quotes all 14 Kompetenzerwartungen and 15 content bullets verbatim. The [curriculum and legacy review](docs/physik-gymnasium-7-coverage.md) proposes keeping all eight cards of the two old `de-by:gymnasium-7-physik-…` cells active (8 C, no transfer); the mapping is proposal-only until Thomas decides. The Schwerpunkt Informatik of NT7 is not part of it.
 
