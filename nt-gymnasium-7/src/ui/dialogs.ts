@@ -39,7 +39,11 @@ export function showZamDialog(): void {
         <h2 class="dialog-title">Informatik 7 mit ZAM behalten</h2>
         <button type="button" class="icon-btn" data-close aria-label="Schließen">✕</button>
       </div>
-      <p>Die Lernkarten zu „${esc(ZAM_CELL_TITLE)}“ gehören zu diesem Entwurf. Die Aufnahme über den Academy-Katalog ist nach der Veröffentlichung möglich.</p>
+      <p>Wiederhole die Informatik-Themen mit 36 Lernkarten. Jede Karte führt dich zur passenden Lektion.</p>
+      <ol class="dialog-steps">
+        <li>Öffne in ZAM Studio <strong>Lern-Karten</strong>, wähle <strong>Importieren</strong> und dann <strong>„Aus der ZAM Academy“</strong>.</li>
+        <li>Wähle <strong>„${esc(ZAM_CELL_TITLE)}“</strong> und klicke auf <strong>„Aufnehmen“</strong>.</li>
+      </ol>
       <details>
         <summary>Für Eltern und Lehrkräfte</summary>
         <p>Der Lernstand und die Wiki-Texte bleiben im Browserprofil auf diesem Gerät. Browser, Profile, Benutzerkonten und Websites haben getrennte Speicher. Wenn sich Lernende ein Konto und Browserprofil teilen, wählen sie am Ende im Informatik-Lernpfad „Fortschritt zurücksetzen“. Das löscht den Lernstand und das Wiki samt Zwischenständen aus dem Browser. Exportierte Dateien lassen sich im Dateiordner löschen.</p>
