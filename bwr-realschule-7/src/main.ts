@@ -16,14 +16,15 @@ import {
   skipAttempt,
   submitAttempt,
 } from "./exercises/attempt";
-import { ACCOUNTS } from "./finance";
+import { ACCOUNT_LIST, fmt, fmtInt } from "./finance";
 import { bindLab, labHtml } from "./labs";
-import type { LearnerEntry, Lesson, Track } from "./model/types";
+import type { InvoiceTemplate, LearnerEntry, Lesson, Track } from "./model/types";
 import {
   completion,
   isComplete,
   keyOf,
   loadProgress,
+  resetProgress,
   saveProgress,
 } from "./storage/progress";
 import { canAcceptSelfAssessment, checkWorkshop, esc, shuffle } from "./workshop";
@@ -64,8 +65,12 @@ function deepLink() {
 deepLink();
 
 function navigate(id: string) {
-  if (!findLesson(id)) return;
+  const linked = findLesson(id);
+  if (!linked) return;
   p.active = id;
+  if (!linked.tracks.includes(p.track)) {
+    p.track = linked.tracks[0];
+  }
   history.replaceState(null, "", `#lesson=${encodeURIComponent(id)}`);
   persist();
   render();
@@ -91,7 +96,7 @@ function render() {
       },
     ).join(
       "",
-    )}</nav><p class="small">36 Lektionen in Zweig II · 25 in Zweig IIIa.<br>Familie Weber und das Radwerk Brenner sind erfundene Lernbeispiele.<br>Ohne Anmeldung. Lokal gespeichert.</p></aside>
+    )}</nav><p class="small">36 Lektionen in Zweig II · 25 in Zweig IIIa.<br>Familie Weber und das Radwerk Brenner sind erfundene Lernbeispiele.<br>Ohne Anmeldung. Lokal gespeichert.</p><button type="button" id="reset-progress" class="quiet reset-button">Fortschritt zurücksetzen</button></aside>
     <main id="lesson" tabindex="-1"><div id="storage-warning" class="notice" ${persistent ? "hidden" : ""}>Dieser Browser erlaubt das Speichern gerade nicht. Du kannst weiterlernen; dein Fortschritt bleibt nur bis zum Schließen erhalten.</div><div class="lesson-top"><span class="eyebrow">${esc(lesson.lehrplan)}</span><label class="level-switch">Übungsniveau <select id="level"><option value="1" ${p.level === 1 ? "selected" : ""}>1 · Mit Leitfragen</option><option value="2" ${p.level === 2 ? "selected" : ""}>2 · Übertragen</option></select></label></div><h2 class="lesson-title">${esc(lesson.title)}</h2><p class="intro">${esc(lesson.intro)}</p>${!lesson.tracks.includes(p.track) ? '<p class="notice">Diese Lektion gehört im LehrplanPLUS zum Zweig II und wurde über einen direkten Link geöffnet.</p>' : ""}<div class="reading">${lesson.paragraphs.map((x) => `<p>${esc(x)}</p>`).join("")}</div><div class="takeaway"><span>Zum Mitnehmen</span><p>${esc(lesson.takeaway)}</p></div>
     <div class="evidence" id="evidence"></div>${lesson.lab ? labHtml(lesson.lab) : ""}${quizHtml(lesson)}${workshopHtml(lesson)}${lesson.practice ? practiceHtml(lesson) : ""}${writingHtml(lesson)}<div class="lesson-end"><p id="completion-note"></p><button id="next" class="primary">Nächste Lektion →</button></div><details class="source-details"><summary>Quellen zu dieser Lektion</summary><ul>${lesson.sourceIds
       .map((id) => {
@@ -102,7 +107,7 @@ function render() {
       })
       .join(
         "",
-      )}</ul><p class="small">Lehrplan- und Quellenabgleich: ${EDITORIAL_DATE}. Alle Fallwerte und Texte sind eigens verfasste Lernbeispiele.</p></details>${footerHtml()}</main></div>`;
+      )}</ul><p class="small">Lehrplan- und Quellenabgleich: ${EDITORIAL_DATE}. Alle Fallwerte und Texte sind eigens verfasste Lernbeispiele.</p></details>${footerHtml()}</main></div><dialog id="reset-dialog" class="reset-dialog" aria-labelledby="reset-dialog-title"><h2 id="reset-dialog-title">Fortschritt zurücksetzen?</h2><p>Schnellchecks, Fallwerkstätten, selbst gelöste Aufgaben, Modellziele, Selbsteinschätzungen und alle eigenen Texte dieser App werden gelöscht. Das lässt sich nicht rückgängig machen.</p><div class="actions"><button type="button" id="cancel-reset" class="quiet">Abbrechen</button><button type="button" id="confirm-reset" class="primary">Alles zurücksetzen</button></div></dialog>`;
 
   document.querySelectorAll<HTMLButtonElement>("[data-lesson]").forEach((b) => {
     b.addEventListener("click", () => navigate(b.dataset.lesson ?? ""));
@@ -127,6 +132,24 @@ function render() {
     const d = $<HTMLDetailsElement>("#reference");
     d.open = true;
     d.scrollIntoView({ behavior: "smooth" });
+  });
+  const resetDialog = $<HTMLDialogElement>("#reset-dialog");
+  $("#reset-progress").addEventListener("click", () => {
+    if (typeof resetDialog.showModal === "function") resetDialog.showModal();
+    else resetDialog.setAttribute("open", "");
+  });
+  $("#cancel-reset").addEventListener("click", () => {
+    if (typeof resetDialog.close === "function") resetDialog.close();
+    else resetDialog.removeAttribute("open");
+  });
+  $("#confirm-reset").addEventListener("click", () => {
+    Object.assign(p, resetProgress(p.track));
+    attempts.clear();
+    history.replaceState(null, "", `#lesson=${encodeURIComponent(p.active)}`);
+    if (typeof resetDialog.close === "function") resetDialog.close();
+    else resetDialog.removeAttribute("open");
+    persist();
+    render();
   });
   $("#next").addEventListener("click", () => {
     const index = visible.findIndex((l) => l.id === lesson.id);
@@ -255,20 +278,42 @@ function attemptFor(l: Lesson) {
   return a;
 }
 
+function invoiceFieldHtml(a: Attempt, fieldIndex: number): string {
+  const field = a.task.fields[fieldIndex];
+  const label = `${field?.label ?? "Betrag"} (${field?.unit ?? "Euro"})`;
+  return `<input class="invoice-input" name="number-${fieldIndex}" value="${esc(a.values[fieldIndex] ?? "")}" inputmode="decimal" autocomplete="off" maxlength="60" placeholder="0,00" aria-label="${esc(label)}" required ${a.finished ? "disabled" : ""}>`;
+}
+
+function invoiceHtml(inv: InvoiceTemplate, a: Attempt): string {
+  return `<div class="invoice-doc" aria-label="Ausgangsrechnung zum Ausfüllen"><div class="invoice-head"><div><strong>${esc(inv.seller)}</strong><br><span class="small">${esc(inv.sellerAddress)}</span></div><div><span class="eyebrow">Ausgangsrechnung</span><br><strong>An:</strong> ${esc(inv.buyer)}<br><span class="small">${esc(inv.buyerAddress)}</span></div></div><div class="invoice-meta small"><span><strong>Beleg-Nr.:</strong> ${esc(inv.invoiceNo)}</span><span><strong>Rechnungsdatum:</strong> ${esc(inv.date)}</span><span><strong>Lieferdatum:</strong> ${esc(inv.deliveryDate)}</span></div><div class="table-scroll"><table class="invoice-table"><thead><tr><th scope="col">Pos.</th><th scope="col">Artikelbezeichnung</th><th scope="col">Menge</th><th scope="col">Einzelpreis netto</th><th scope="col">Gesamtpreis netto (€)</th></tr></thead><tbody>${inv.rows
+    .map(
+      (r) =>
+        `<tr><td>${r.pos}</td><td>${esc(r.description)}</td><td>${fmtInt(r.qty)} ${esc(r.unit)}</td><td>${fmt(r.unitPrice)} €</td><td>${r.fieldIndex !== undefined ? invoiceFieldHtml(a, r.fieldIndex) : `${fmt(r.total ?? 0)} €`}</td></tr>`,
+    )
+    .join("")}</tbody><tfoot>${inv.summary
+    .map(
+      (s) =>
+        `<tr class="${s.strong ? "invoice-total" : ""}"><th scope="row" colspan="4">${esc(s.label)}</th><td>${s.fieldIndex !== undefined ? invoiceFieldHtml(a, s.fieldIndex) : `${fmt(s.amount ?? 0)} €`}</td></tr>`,
+    )
+    .join("")}</tfoot></table></div><p class="small">${esc(inv.paymentTerms)}</p></div>`;
+}
+
 function practiceHtml(l: Lesson) {
   const a = attemptFor(l);
-  return `<section class="panel" id="practice"><div class="eyebrow">03 · Rechnen und buchen · Niveau ${p.level}</div><h2>Deine Rechnung zählt</h2><p>${esc(a.task.prompt)}</p><form id="calculation"><div class="number-fields">${a.task.fields.map((f, i) => `<label>${esc(f.label)} (${esc(f.unit)})<input name="number-${i}" value="${esc(a.values[i] ?? "")}" inputmode="decimal" autocomplete="off" maxlength="60" required ${a.finished ? "disabled" : ""}></label>`).join("")}</div>${
+  const trackAccounts = ACCOUNT_LIST.filter((acc) => acc.tracks.includes(p.track));
+  return `<section class="panel" id="practice"><div class="eyebrow">03 · Rechnen und buchen · Niveau ${p.level}</div><h2>Deine Rechnung zählt</h2><p>${esc(a.task.prompt)}</p><form id="calculation">${
+    a.task.invoice
+      ? invoiceHtml(a.task.invoice, a)
+      : `<div class="number-fields">${a.task.fields.map((f, i) => `<label>${esc(f.label)} (${esc(f.unit)})<input name="number-${i}" value="${esc(a.values[i] ?? "")}" inputmode="decimal" autocomplete="off" maxlength="60" required ${a.finished ? "disabled" : ""}></label>`).join("")}</div>`
+  }${
     a.task.booking.length
-      ? `<p class="small">Buche mit Soll/Haben, Konto und Betrag je Zeile. Die Reihenfolge ist frei; Beträge bitte auf Cent runden.</p><div class="booking">${a.task.booking
+      ? `<p class="small">Buche mit Soll/Haben, Konto (ISB-Kürzel) und Betrag je Zeile. Die Reihenfolge ist frei; Beträge bitte auf Cent runden.</p><div class="booking">${a.task.booking
           .map(
             (_, i) =>
-              `<fieldset class="booking-row"><legend>Zeile ${i + 1}</legend><label>Seite<select name="side-${i}" required ${a.finished ? "disabled" : ""}><option value="">Wählen</option><option value="debit" ${a.entries[i]?.side === "debit" ? "selected" : ""}>Soll</option><option value="credit" ${a.entries[i]?.side === "credit" ? "selected" : ""}>Haben</option></select></label><label>Konto<select name="account-${i}" required ${a.finished ? "disabled" : ""}><option value="">Konto wählen</option>${Object.entries(
-                ACCOUNTS,
-              )
-                .sort(([a], [b]) => a.localeCompare(b))
+              `<fieldset class="booking-row"><legend>Zeile ${i + 1}</legend><label>Seite<select name="side-${i}" required ${a.finished ? "disabled" : ""}><option value="">Wählen</option><option value="debit" ${a.entries[i]?.side === "debit" ? "selected" : ""}>Soll</option><option value="credit" ${a.entries[i]?.side === "credit" ? "selected" : ""}>Haben</option></select></label><label>Konto<select name="account-${i}" required ${a.finished ? "disabled" : ""}><option value="">Konto wählen</option>${trackAccounts
                 .map(
-                  ([code, name]) =>
-                    `<option value="${code}" ${a.entries[i]?.account === code ? "selected" : ""}>${code} ${esc(name)}</option>`,
+                  (acc) =>
+                    `<option value="${acc.code}" ${a.entries[i]?.account === acc.code ? "selected" : ""}>${esc(acc.code)} · ${esc(acc.name)}</option>`,
                 )
                 .join(
                   "",
@@ -322,7 +367,7 @@ function writingHtml(l: Lesson) {
   const task = l.tasks[p.level],
     key = keyOf(l.id, p.level),
     draft = p.drafts[key] ?? "";
-  return `<section class="panel"><div class="eyebrow">${l.practice ? "04" : "03"} · Begründen · Niveau ${p.level}</div><h2>In deinen eigenen Worten</h2><p>${esc(task.prompt)}</p><details><summary>Leitfragen</summary><ul>${task.hints.map((h) => `<li>${esc(h)}</li>`).join("")}</ul></details><label for="draft">Deine Begründung</label><textarea id="draft" maxlength="8000" rows="5" placeholder="Erkläre den Zusammenhang und begründe dein Urteil …">${esc(draft)}</textarea><p class="small">Dein Text wird lokal gespeichert und nicht automatisch bewertet.</p><button id="compare-writing" ${draft.trim().length < 20 ? "disabled" : ""}>Mit dem Beispiel vergleichen</button><div id="self-review" ${p.assessed.includes(key) ? "" : "hidden"}><div class="solution"><strong>Ein mögliches Beispiel</strong><p>${esc(task.model)}</p></div><p>Prüfe deinen eigenen Text an diesen Kriterien:</p>${task.criteria.map((criterion, i) => `<label class="criterion"><input type="checkbox" name="criterion" value="${i}" ${p.assessed.includes(key) ? "checked" : ""}> ${esc(criterion)}</label>`).join("")}<button id="accept-writing">Eigene Einschätzung speichern</button><p id="writing-feedback" role="status"></p></div></section>`;
+  return `<section class="panel"><div class="eyebrow">${l.practice ? "04" : "03"} · Begründen · Niveau ${p.level}</div><h2>In deinen eigenen Worten</h2><p>${esc(task.prompt)}</p><details><summary>Leitfragen</summary><ul>${task.hints.map((h) => `<li>${esc(h)}</li>`).join("")}</ul></details><label for="draft">Deine Begründung</label><textarea id="draft" maxlength="8000" rows="5" placeholder="Erkläre den Zusammenhang und begründe dein Urteil …">${esc(draft)}</textarea><details class="text-info"><summary><span aria-hidden="true">ⓘ</span> Wo bleibt mein Text?</summary><p class="small">Dein Text bleibt nur in diesem Browser auf diesem Gerät. Die App liest, bewertet oder verschickt ihn nicht. Hast du dein eigenes Benutzerkonto oder teilst du es mit anderen? Falls du es teilst, lösche am Ende den Lernstand und die Texte über „Fortschritt zurücksetzen“ in der Seitenleiste.</p></details><button id="compare-writing" ${draft.trim().length < 20 ? "disabled" : ""}>Mit dem Beispiel vergleichen</button><div id="self-review" ${p.assessed.includes(key) ? "" : "hidden"}><div class="solution"><strong>Ein mögliches Beispiel</strong><p>${esc(task.model)}</p></div><p>Prüfe deinen eigenen Text an diesen Kriterien:</p>${task.criteria.map((criterion, i) => `<label class="criterion"><input type="checkbox" name="criterion" value="${i}" ${p.assessed.includes(key) ? "checked" : ""}> ${esc(criterion)}</label>`).join("")}<button id="accept-writing">Eigene Einschätzung speichern</button><p id="writing-feedback" role="status"></p></div></section>`;
 }
 
 function bindWriting(l: Lesson) {
@@ -360,22 +405,41 @@ function bindWriting(l: Lesson) {
 }
 
 function footerHtml() {
-  const accountEntries = Object.entries(ACCOUNTS).sort(([a], [b]) => a.localeCompare(b));
-  return `<details id="reference" class="panel"><summary>Formelsammlung, Kontenplan, Quellen und Behalten mit ZAM</summary><h2>Formelsammlung</h2>${STAGES.map(
-    (s) =>
-      `<h3>${s.lb} · ${esc(s.title)}</h3><dl class="formulas">${FORMULAS.filter((f) => f.lb === s.lb)
-        .map(
-          (f) =>
-            `<div><dt><button class="formula-link" data-lesson="${f.lesson}">${esc(f.name)}</button></dt><dd>${esc(f.rule)}</dd></div>`,
+  const visibleStages = STAGES.filter((s) => s.tracks.includes(p.track));
+  const groups = [
+    "Aktive Bestandskonten",
+    "Passive Bestandskonten",
+    "Aufwandskonten",
+    "Ertragskonten",
+    "Abschlusskonten",
+  ] as const;
+  const visibleAccounts = ACCOUNT_LIST.filter((acc) => acc.tracks.includes(p.track));
+  return `<details id="reference" class="panel"><summary>Formelsammlung, Kontenliste, Quellen und Hinweise</summary><h2>Formelsammlung (Zweig ${esc(p.track)})</h2>${visibleStages
+    .map(
+      (s) =>
+        `<h3>${s.lb} · ${esc(s.title)}</h3><dl class="formulas">${FORMULAS.filter(
+          (f) => f.lb === s.lb && Boolean(findLesson(f.lesson)?.tracks.includes(p.track)),
         )
-        .join("")}</dl>`,
-  ).join(
-    "",
-  )}<h2>ISB-Kontenplan BwR 7 (Auszug)</h2><div class="accounts-grid">${accountEntries
-    .map(([code, name]) => `<div><strong>${code}</strong> ${esc(name)}</div>`)
+          .map(
+            (f) =>
+              `<div><dt><button class="formula-link" data-lesson="${f.lesson}">${esc(f.name)}</button></dt><dd>${esc(f.rule)}</dd></div>`,
+          )
+          .join("")}</dl>`,
+    )
+    .join("")}<h2>ISB-Kontenliste für BwR 7</h2>${groups
+    .map((group) => {
+      const items = visibleAccounts.filter((acc) => acc.group === group);
+      if (!items.length) return "";
+      return `<h3>${esc(group)}</h3><div class="accounts-grid">${items
+        .map(
+          (acc) =>
+            `<div><strong>${esc(acc.code)}</strong> ${esc(acc.name)} <span class="ikr-ref">(IKR ab Kl. 8: ${esc(acc.ikr)})</span></div>`,
+        )
+        .join("")}</div>`;
+    })
     .join(
       "",
-    )}</div><p class="small">Kontennummern und Abkürzungen nach dem offiziellen ISB-Kontenplan (LehrplanPLUS).</p><h2>Mit ZAM behalten</h2><p>Die zugehörige Zelle hält das Gelernte mit Wiederholungskarten fest. Karten führen direkt zur passenden Lektion.</p><p class="small">Die Anfrage an deinen ZAM-Agenten lautet: „${esc(zamEnrolRequest())}“</p><h2>Nachschlagen</h2><ul>${SOURCES.map((s) => `<li><a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.label)}</a></li>`).join("")}</ul><p class="small">BwR 7 wird in Wahlpflichtfächergruppe II (Lernbereiche 1 bis 5) und Wahlpflichtfächergruppe IIIa (Lernbereiche 1 bis 4) unterrichtet. Keine externen Laufzeitanfragen, Konten oder Telemetrie. Stand: ${EDITORIAL_DATE}.</p></details>`;
+    )}<p class="small">Kontokürzel nach der amtlichen ISB-Kontenliste für BwR 7 (LehrplanPLUS, Stand 01.06.2016); vierstellige Kontonummern nach dem IKR werden ab Jahrgangsstufe 8 verlangt (ISB-Handreichung 2025-06, S. 20).</p><h2>Mit ZAM behalten</h2><p>Die zugehörige Zelle hält das Gelernte mit Wiederholungskarten fest. Karten führen direkt zur passenden Lektion.</p><p class="small">Die Anfrage an deinen ZAM-Agenten lautet: „${esc(zamEnrolRequest())}“</p><h2>Hinweise für Eltern und Lehrkräfte</h2><p class="small">Lernstand und eigene Begründungstexte bleiben ausschließlich lokal im <code>localStorage</code> dieses Browsers, getrennt nach Benutzerkonto des Geräts, Browser, Profil und Herkunft, und werden weder synchronisiert noch ausgewertet oder übertragen. Wird ein Benutzerkonto von mehreren Lernenden gemeinsam genutzt, sollten Lernstand und eigene Texte am Ende einer Übungssitzung über „Fortschritt zurücksetzen“ in der Seitenleiste gelöscht werden.</p><h2>Nachschlagen</h2><ul>${SOURCES.map((s) => `<li><a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.label)}</a></li>`).join("")}</ul><p class="small">BwR 7 wird in Wahlpflichtfächergruppe II (Lernbereiche 1 bis 5) und Wahlpflichtfächergruppe IIIa (Lernbereiche 1 bis 4) unterrichtet. Keine externen Laufzeitanfragen, Konten oder Telemetrie. Stand: ${EDITORIAL_DATE}.</p></details>`;
 }
 
 window.addEventListener("hashchange", () => {

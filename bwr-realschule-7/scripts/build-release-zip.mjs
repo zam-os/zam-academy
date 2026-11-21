@@ -68,8 +68,10 @@ SOFORT-START OHNE INSTALLATION
 
 Die App benötigt keine Installation, keinen Server und keine externe Verbindung.
 Nur das Öffnen der verlinkten Quellen braucht eine Internetverbindung.
-Fortschritt und eigene Texte bleiben in diesem Browser, sofern er lokales
+Fortschritt und eigene Texte bleiben ausschließlich in diesem Browser, sofern er lokales
 Speichern erlaubt. Bei gesperrtem Speicher zeigt die App einen Hinweis.
+Hast du dein eigenes Benutzerkonto oder teilst du es mit anderen? Falls du es teilst,
+lösche am Ende den Lernstand und alle eigenen Texte über „Fortschritt zurücksetzen“.
 
 In der App wählst du links deine Wahlpflichtfächergruppe:
 - Zweig II (36 Lektionen, Lernbereiche 1 bis 5)

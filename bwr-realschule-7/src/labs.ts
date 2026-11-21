@@ -145,15 +145,15 @@ export const LABS: Record<LabKind, LabSpec> = {
   },
   closingFlow: {
     description:
-      "Die Erfolgskonten (Aufwendungen und Umsatzerlöse) schließen über 8020 GUV ab. Der Reingewinn oder Reinverlust fließt dann in das Konto 3000 EK und bestimmt den Wert im 8010 SBK.",
+      "Die Erfolgskonten (Aufwendungen und Umsatzerlöse) schließen über GUV ab. Der Reingewinn oder Reinverlust fließt dann in das Konto EK und bestimmt den Wert im SBK.",
     goal: "Erziele bei unverändertem Anfangsbestand des Eigenkapitals (180.000 Euro) einen Reingewinn und bringe das End-Eigenkapital auf genau 200.000 Euro.",
     controls: [
-      n("ekStart", "Anfangsbestand 3000 EK (Euro)", 50000, 1_000_000, 5000),
-      n("uefe", "5000 UEFE · Umsatzerlöse (Euro)", 0, 1_000_000, 5000),
-      n("awr", "6000 AWR · Rohstoffe (Euro)", 0, 500_000, 5000),
-      n("awf", "6010 AWF · Fremdbauteile (Euro)", 0, 500_000, 5000),
-      n("awh", "6020 AWH · Hilfsstoffe (Euro)", 0, 200_000, 1000),
-      n("awb", "6030 AWB · Betriebsstoffe (Euro)", 0, 200_000, 1000),
+      n("ekStart", "Anfangsbestand EK (Euro)", 50000, 1_000_000, 5000),
+      n("uefe", "UEFE · Umsatzerlöse (Euro)", 0, 1_000_000, 5000),
+      n("awr", "AWR · Rohstoffe (Euro)", 0, 500_000, 5000),
+      n("awf", "AWF · Fremdbauteile (Euro)", 0, 500_000, 5000),
+      n("awh", "AWH · Hilfsstoffe (Euro)", 0, 200_000, 1000),
+      n("awb", "AWB · Betriebsstoffe (Euro)", 0, 200_000, 1000),
     ],
     defaults: { ekStart: 180000, uefe: 110000, awr: 70000, awf: 35000, awh: 10000, awb: 5000 },
   },
@@ -328,9 +328,9 @@ function renderResult(kind: LabKind, v: Values): string {
       return `${table(
         ["Aktiva", "Euro", "Passiva", "Euro"],
         [
-          ["Anlagevermögen", r.av, "Eigenkapital (3000 EK)", r.ek],
-          ["Umlaufvermögen", r.uv, "Langfr. Darlehen (4250 LBKV)", r.lbkv],
-          ["", "", "Verbindlichkeiten LL (4400 VE)", r.ve],
+          ["Anlagevermögen", r.av, "Eigenkapital (EK)", r.ek],
+          ["Umlaufvermögen", r.uv, "Langfr. Darlehen (LBKV)", r.lbkv],
+          ["", "", "Verbindlichkeiten LL (VE)", r.ve],
           ["Neue Bilanzsumme", r.total, "Neue Bilanzsumme", r.total],
         ],
       )}<p class="result">${esc(label)} Veränderung zur Ausgangsbilanz: ${r.deltaTotal >= 0 ? "+" : ""}${fmt(r.deltaTotal)} Euro.</p>`;
@@ -373,18 +373,18 @@ function renderResult(kind: LabKind, v: Values): string {
         ekEnd = ekStart + out.result;
       const closingBooking =
         out.kind === "profit"
-          ? bookingLine([["8020 GUV", out.absResult]], [["3000 EK", out.absResult]])
+          ? bookingLine([["GUV", out.absResult]], [["EK", out.absResult]])
           : out.kind === "loss"
-            ? bookingLine([["3000 EK", out.absResult]], [["8020 GUV", out.absResult]])
+            ? bookingLine([["EK", out.absResult]], [["GUV", out.absResult]])
             : "<p>Aufwendungen und Erträge sind gleich hoch; das Eigenkapital bleibt unverändert.</p>";
       return `${table(
         ["Rechnungsschritt", "Euro"],
         [
-          ["Erträge (5000 UEFE)", out.totalRevenue],
-          ["Aufwendungen (6000–6030)", out.totalExpense],
+          ["Erträge (UEFE)", out.totalRevenue],
+          ["Aufwendungen (AWR–AWB)", out.totalExpense],
           [out.kind === "loss" ? "Reinverlust" : "Reingewinn / Ergebnis", out.result],
-          ["Anfangsbestand 3000 EK", ekStart],
-          ["Endbestand 3000 EK (→ 8010 SBK)", ekEnd],
+          ["Anfangsbestand EK", ekStart],
+          ["Endbestand EK (→ SBK)", ekEnd],
         ],
       )}${closingBooking}`;
     }

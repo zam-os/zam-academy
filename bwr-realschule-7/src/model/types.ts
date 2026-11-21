@@ -89,12 +89,45 @@ export interface NumericField {
   unit: string;
 }
 
+export interface InvoiceRow {
+  pos: number;
+  description: string;
+  qty: number;
+  unit: string;
+  unitPrice: number;
+  /** Index into `Exercise.fields` when this line's net total must be completed by the learner. */
+  fieldIndex?: number;
+  /** Pre-filled net total when the row is already completed on the template. */
+  total?: number;
+}
+
+export interface InvoiceSummaryRow {
+  label: string;
+  fieldIndex?: number;
+  amount?: number;
+  strong?: boolean;
+}
+
+export interface InvoiceTemplate {
+  seller: string;
+  sellerAddress: string;
+  buyer: string;
+  buyerAddress: string;
+  invoiceNo: string;
+  date: string;
+  deliveryDate: string;
+  paymentTerms: string;
+  rows: InvoiceRow[];
+  summary: InvoiceSummaryRow[];
+}
+
 export interface Exercise {
   prompt: string;
   hint: string;
   fields: NumericField[];
   booking: Entry[];
   solution: string;
+  invoice?: InvoiceTemplate;
 }
 
 export interface LearnerEntry {

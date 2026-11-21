@@ -5,6 +5,7 @@ import { checkBooking, checkExercise, numberMatches, parseNumbers } from "../src
 import { makeExercise } from "../src/exercises/generators";
 import { createRng } from "../src/exercises/rng";
 import {
+  ACCOUNT_LIST,
   ACCOUNTS,
   balanceShift,
   changedBase,
@@ -180,22 +181,60 @@ describe("strict but usable answer checking", () => {
       expect(parseNumbers(invalid)).toEqual([]);
   });
 
-  it("accepts reordered or split bookings and rejects wrong side, account or cent", () => {
+  it("accepts reordered or split bookings with official BwR 7 Kürzel and rejects wrong side, account or cent", () => {
+    expect(ACCOUNT_LIST).toHaveLength(23);
+    expect(ACCOUNTS["Vorräte"]).toBe("Vorräte an Werkstoffen");
     const expected = [
-      { side: "debit" as const, account: "6000", amount: 1000 },
-      { side: "debit" as const, account: "2600", amount: 190 },
-      { side: "credit" as const, account: "4400", amount: 1190 },
+      { side: "debit" as const, account: "AWR", amount: 1000 },
+      { side: "debit" as const, account: "VORST", amount: 190 },
+      { side: "credit" as const, account: "VE", amount: 1190 },
     ];
     const actual = [
-      { side: "credit", account: "4400", amount: "1.190,00" },
-      { side: "debit", account: "2600", amount: "190" },
-      { side: "debit", account: "6000", amount: "1000,00" },
+      { side: "credit", account: "VE", amount: "1.190,00" },
+      { side: "debit", account: "VORST", amount: "190" },
+      { side: "debit", account: "AWR", amount: "1000,00" },
     ];
     expect(checkBooking(expected, actual)).toBe(true);
     expect(checkBooking(expected, [{ ...actual[0], amount: "1190,01" }, actual[1], actual[2]])).toBe(false);
     expect(
-      checkBooking(expected, [actual[0], actual[1], { side: "credit", account: "6000", amount: "1000" }]),
+      checkBooking(expected, [actual[0], actual[1], { side: "credit", account: "AWR", amount: "1000" }]),
     ).toBe(false);
+  });
+
+  it("keeps cash change nonnegative, closing balance assets nonnegative, and renders fillable invoices", () => {
+    for (let seed = 1; seed <= 200; seed++) {
+      const receipt = makeExercise("receipt", createRng(seed), 1);
+      expect(receipt.fields[0].answer, `receipt:${seed}:total`).toBeGreaterThan(0);
+      expect(receipt.fields[1].answer, `receipt:${seed}:change`).toBeGreaterThanOrEqual(0);
+
+      const cmp1 = makeExercise("bilanzCompare", createRng(seed), 1);
+      expect(cmp1.prompt, `bilanzCompare:1:${seed}`).not.toContain("−");
+      const cmp2 = makeExercise("bilanzCompare", createRng(seed), 2);
+      expect(cmp2.prompt, `bilanzCompare:2:${seed}`).not.toContain("−");
+      expect(cmp2.fields[0].answer, `bilanzCompare:share0:${seed}`).toBeGreaterThan(0);
+      expect(cmp2.fields[0].answer, `bilanzCompare:share0:${seed}`).toBeLessThan(100);
+      expect(cmp2.fields[1].answer, `bilanzCompare:share1:${seed}`).toBeGreaterThan(0);
+      expect(cmp2.fields[1].answer, `bilanzCompare:share1:${seed}`).toBeLessThan(100);
+
+      for (const lvl of [1, 2] as const) {
+        const inv = makeExercise("inventar", createRng(seed), lvl);
+        expect(inv.fields[2].answer, `inventar:${lvl}:${seed}:ek`).toBeGreaterThan(0);
+      }
+    }
+
+    for (let seed = 1; seed <= 50; seed++) {
+      for (const lvl of [1, 2] as const) {
+        const doc = makeExercise("invoiceComplete", createRng(seed), lvl);
+        expect(doc.invoice, `invoice:${lvl}:${seed}`).toBeDefined();
+        const indices = [
+          ...doc.invoice!.rows.flatMap((r) => (r.fieldIndex !== undefined ? [r.fieldIndex] : [])),
+          ...doc.invoice!.summary.flatMap((s) => (s.fieldIndex !== undefined ? [s.fieldIndex] : [])),
+        ];
+        expect(indices, `invoice indices ${lvl}:${seed}`).toEqual(
+          doc.fields.map((_, idx) => idx),
+        );
+      }
+    }
   });
 
   it("creates balanced, solvable, cent-exact tasks across all 24 families, and level 2 changes the task", () => {

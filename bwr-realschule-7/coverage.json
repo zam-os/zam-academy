@@ -130,7 +130,7 @@
       "competence": "bilden ausgehend von Belegen die Buchungssätze für bestandsverändernde Geschäftsvorfälle und erfassen sie in Konten. Dabei berücksichtigen die Schülerinnen und Schüler die Grundsätze ordnungsmäßiger Buchführung.",
       "lessons": ["gb-bestandskonten", "gb-buchungssatz"],
       "status": "implemented",
-      "evidence": "Aktiv- und Passivkonten (alle 14 ISB-Konten), T-Konten-Abschlussrechner, Vier-Schritte-Buchungsregel „Soll an Haben“, GoB und einfache/zusammengesetzte Buchungsaufgaben."
+      "evidence": "Aktiv- und Passivkonten (alle ISB-BwR-7-Kontokürzel inkl. Vorräte), T-Konten-Abschlussrechner, Vier-Schritte-Buchungsregel „Soll an Haben“, GoB und einfache/zusammengesetzte Buchungsaufgaben."
     },
     {
       "track": "II",
@@ -154,7 +154,7 @@
       "competence": "erfassen Ein- und Verkaufsvorgänge unter Berücksichtigung der Umsatzsteuer buchhalterisch.",
       "lessons": ["gb-umsatzsteuer-buchen"],
       "status": "implemented",
-      "evidence": "Konten 2600 VORST und 4800 UST, getrennte Buchung beim Anlagenkauf (Niveau 1) und Fertigerzeugnisverkauf (Niveau 2)."
+      "evidence": "Konten VORST und UST, getrennte Buchung beim Anlagenkauf (Niveau 1) und Fertigerzeugnisverkauf (Niveau 2)."
     },
     {
       "track": "II",
@@ -178,7 +178,7 @@
       "competence": "erfassen Einkaufsvorgänge für Werkstoffe buchhalterisch. Die dafür relevanten Informationen (z. B. Warenwert, Werkstoffart) entnehmen sie Belegen oder Geschäftsvorfällen.",
       "lessons": ["pp-einkauf-werkstoffe"],
       "status": "implemented",
-      "evidence": "Aufwandsorientierte Buchung auf 6000 AWR, 6010 AWF, 6020 AWH, 6030 AWB plus 2600 VORST inkl. Direktabzug von Sofortrabatten auf zwei Niveaus."
+      "evidence": "Aufwandsorientierte Buchung auf AWR, AWF, AWH, AWB plus VORST inkl. Direktabzug von Sofortrabatten auf zwei Niveaus."
     },
     {
       "track": "II",
@@ -186,7 +186,7 @@
       "competence": "vervollständigen Verkaufsbelege für Fertigerzeugnisse auf der Grundlage von Vordrucken. Sie erfassen den Verkauf von Fertigerzeugnissen buchhalterisch. Die dafür relevanten Informationen (z. B. Warenwert, Menge) entnehmen sie Belegen oder Geschäftsvorfällen.",
       "lessons": ["pp-verkauf-fe", "pp-verkaufsbeleg"],
       "status": "implemented",
-      "evidence": "Absatzbuchungen auf 5000 UEFE + 4800 UST aus Menge und Stückpreis (auch mit Sofortrabatt) sowie Lektion zum Vervollständigen und Prüfen von Verkaufsbelegen auf Vordrucken."
+      "evidence": "Absatzbuchungen auf UEFE + UST aus Menge und Stückpreis (auch mit Sofortrabatt) sowie ausfüllbarer Ausgangsrechnungs-Vordruck samt Buchung in pp-verkaufsbeleg auf zwei Niveaus."
     },
     {
       "track": "II",
@@ -210,7 +210,7 @@
       "competence": "schließen die Aufwands- und Ertragskonten auf das Konto Gewinn und Verlust formal richtig ab. Dabei begründen sie, welche Art von Erfolg das Unternehmen in der betrachteten Periode erzielt hat.",
       "lessons": ["sg-guv-abschluss"],
       "status": "implemented",
-      "evidence": "Abschluss von 6000–6030 und 5000 UEFE auf 8020 GUV, Deutung von Reingewinn und Reinverlust sowie Buchungsaufgaben auf zwei Niveaus."
+      "evidence": "Abschluss von AWR–AWB und UEFE auf GUV, Deutung von Reingewinn und Reinverlust sowie Buchungsaufgaben auf zwei Niveaus."
     },
     {
       "track": "II",
@@ -218,7 +218,7 @@
       "competence": "führen die Erfolgsrechnung und die Bestandsrechnung buchhalterisch im Konto Eigenkapital zusammen.",
       "lessons": ["sg-eigenkapital-nahtstelle"],
       "status": "implemented",
-      "evidence": "Abschlussfluss-Labor (Erfolgskonten → GUV → 3000 EK → SBK), Gewinn- und Verlustabschlussaufgaben auf 3000 EK."
+      "evidence": "Abschlussfluss-Labor (Erfolgskonten → GUV → EK → SBK), Gewinn- und Verlustabschlussaufgaben auf EK."
     },
     {
       "track": "II",
@@ -226,7 +226,7 @@
       "competence": "stellen die Vermögenslage des Unternehmens dar, indem sie die Bestandskonten im Hauptbuch abschließen.",
       "lessons": ["sg-sbk-schlussbilanz"],
       "status": "implemented",
-      "evidence": "Abschluss der Aktiv- und Passivkonten an 8010 SBK sowie Gegenüberstellung von SBK und HGB-Schlussbilanz."
+      "evidence": "Abschluss der Aktiv- und Passivkonten an SBK sowie Gegenüberstellung von SBK und HGB-Schlussbilanz."
     },
     {
       "track": "II",
@@ -370,7 +370,7 @@
       "competence": "erfassen Ein- und Verkaufsvorgänge unter Berücksichtigung der Umsatzsteuer buchhalterisch.",
       "lessons": ["gb-umsatzsteuer-buchen"],
       "status": "implemented",
-      "evidence": "Buchung mit 2600 VORST beim Einkauf und 4800 UST beim Verkauf."
+      "evidence": "Buchung mit VORST beim Einkauf und UST beim Verkauf."
     },
     {
       "track": "IIIa",
@@ -394,7 +394,7 @@
       "competence": "erfassen Einkaufsvorgänge für Werkstoffe buchhalterisch. Die dafür relevanten Informationen (z. B. Warenwert, Werkstoffart) entnehmen sie Belegen oder Geschäftsvorfällen.",
       "lessons": ["pp-einkauf-werkstoffe"],
       "status": "implemented",
-      "evidence": "Aufwandsbuchungen 6000–6030 + 2600 VORST mit Direktabzug von Sofortrabatten."
+      "evidence": "Aufwandsbuchungen AWR–AWB + VORST mit Direktabzug von Sofortrabatten."
     },
     {
       "track": "IIIa",
@@ -402,7 +402,7 @@
       "competence": "erfassen den Verkauf von Fertigerzeugnissen buchhalterisch. Die dafür relevanten Informationen (z. B. Warenwert, Menge) entnehmen sie Belegen oder Geschäftsvorfällen.",
       "lessons": ["pp-verkauf-fe"],
       "status": "implemented",
-      "evidence": "Absatzbuchungen auf 5000 UEFE und 4800 UST aus Warenwert und Menge (auch mit Sofortrabatt)."
+      "evidence": "Absatzbuchungen auf UEFE und UST aus Warenwert und Menge (auch mit Sofortrabatt)."
     }
   ]
 }

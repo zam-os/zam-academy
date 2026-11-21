@@ -883,6 +883,108 @@ td:first-child {
   padding: 6px 0;
   border-bottom: 1px solid var(--line);
 }
+.ikr-ref {
+  color: var(--muted);
+  font-size: 11px;
+}
+.text-info {
+  margin: 10px 0 14px;
+}
+.text-info summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 600;
+}
+.text-info p {
+  margin: 8px 0 0;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--soft-2);
+}
+.reset-button {
+  width: 100%;
+  margin-top: 12px;
+  font-size: 12px;
+  min-height: 38px;
+}
+.reset-dialog {
+  max-width: 460px;
+  border: 1px solid var(--line-strong);
+  border-radius: 12px;
+  background: var(--surface);
+  color: var(--ink);
+  padding: 24px;
+}
+.reset-dialog::backdrop {
+  background: rgb(0 0 0 / 0.55);
+}
+.reset-dialog h2 {
+  margin-top: 0;
+}
+.invoice-doc {
+  margin: 14px 0 18px;
+  padding: 16px 18px;
+  border: 1px solid var(--line-strong);
+  border-radius: 10px;
+  background: var(--soft-2);
+}
+.invoice-head {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+}
+.invoice-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+  margin: 10px 0 12px;
+}
+.invoice-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+.invoice-table th,
+.invoice-table td {
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+}
+.invoice-table th:last-child,
+.invoice-table td:last-child,
+.invoice-table th:nth-child(3),
+.invoice-table td:nth-child(3),
+.invoice-table th:nth-child(4),
+.invoice-table td:nth-child(4) {
+  text-align: right;
+  white-space: nowrap;
+}
+.invoice-table tfoot th {
+  text-align: right;
+  font-weight: 600;
+}
+.invoice-table tfoot .invoice-total th,
+.invoice-table tfoot .invoice-total td {
+  font-weight: 700;
+  border-top: 2px solid var(--line-strong);
+}
+.invoice-input {
+  width: 120px;
+  max-width: 100%;
+  min-height: 36px;
+  padding: 6px 8px;
+  border: 1px solid var(--line-strong);
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--ink);
+  text-align: right;
+}
 :root[data-lb="1"] {
   --stage-hue: 162;
 }

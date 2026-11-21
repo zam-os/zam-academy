@@ -11,17 +11,17 @@ Lernpaket für **Betriebswirtschaftslehre / Rechnungswesen (BwR)** in Jahrgangss
 
 - **Lernbereich 1 · Wirtschaftliches Handeln im privaten Haushalt** (7 Lektionen in II / 5 in IIIa): Einkommen und Ausgaben, Überschuldungsgefahr, Konsumentscheidungen, Belege, Zahlungsverkehr, Prozentrechnung, vermehrter/verminderter Grundwert (II) und Infografiken (II).
 - **Lernbereich 2 · Wirtschaftliches Handeln im Unternehmen** (7 Lektionen in II / 6 in IIIa): Wirtschaftsstruktur, nachhaltige Unternehmensziele, Produktionsfaktoren, Standortwahl, Einzelunternehmung vs. GmbH, Businessplan/Handelsregister/Firma (II) und Funktionsbereiche im Fertigungsbetrieb.
-- **Lernbereich 3 · Einführung in die Geschäftsbuchführung** (9 Lektionen in II und IIIa): Inventur und Inventar, Bilanz und Bilanzgleichung, vier Bilanzveränderungen, bestands- vs. erfolgswirksame Vorgänge, Aktiv-/Passivkonten (alle 14 ISB-Konten), Buchungssatz und GoB, Rückwärtsformulierung und Belegprüfung, Umsatzsteuer rechnen und buchen (`2600 VORST` / `4800 UST`).
-- **Lernbereich 4 · Buchhalterische Erfassung des betrieblichen Produktionsprozesses** (6 Lektionen in II / 5 in IIIa): Produktionsprozess und Periodenerfolg, vier Werkstoffarten (`6000 AWR` bis `6030 AWB`), Angebotsvergleich mit Sofortrabatt und nichtmonetären Faktoren, Einkauf von Werkstoffen, Verkauf von Fertigerzeugnissen (`5000 UEFE`) sowie Verkaufsbelege auf Vordrucken (II).
-- **Lernbereich 5 · Strukturierung der Geschäftsbuchführung** (7 Lektionen in II; in IIIa erst ab Klasse 8): Konteneröffnung aus der Eröffnungsbilanz, Grund- und Hauptbuch, Abschluss über `8020 GUV`, das Konto `3000 EK` als Nahtstelle, `8010 SBK` vs. Schlussbilanz, Bilanzvergleich sowie Inventurdifferenzen.
+- **Lernbereich 3 · Einführung in die Geschäftsbuchführung** (9 Lektionen in II und IIIa): Inventur und Inventar, Bilanz und Bilanzgleichung, vier Bilanzveränderungen, bestands- vs. erfolgswirksame Vorgänge, Aktiv-/Passivkonten nach der ISB-Kontenliste für BwR 7 (alle Kontokürzel inkl. `Vorräte`), Buchungssatz und GoB, Rückwärtsformulierung und Belegprüfung, Umsatzsteuer rechnen und buchen (`VORST` / `UST`).
+- **Lernbereich 4 · Buchhalterische Erfassung des betrieblichen Produktionsprozesses** (6 Lektionen in II / 5 in IIIa): Produktionsprozess und Periodenerfolg, vier Werkstoffarten (`AWR` bis `AWB`), Angebotsvergleich mit Sofortrabatt und nichtmonetären Faktoren, Einkauf von Werkstoffen, Verkauf von Fertigerzeugnissen (`UEFE`) sowie ausfüllbare Verkaufsbelege auf Vordrucken (II).
+- **Lernbereich 5 · Strukturierung der Geschäftsbuchführung** (7 Lektionen in II; in IIIa erst ab Klasse 8): Konteneröffnung aus der Eröffnungsbilanz, Grund- und Hauptbuch, Abschluss über `GUV`, das Konto `EK` als Nahtstelle, `SBK` vs. Schlussbilanz, Bilanzvergleich sowie Inventurdifferenzen.
 
-Die App enthält **acht veränderbare Modelle** mit erreichbaren Zielen, **24 Aufgabenfamilien** auf zwei Niveaus (mit centgenauer Buchungsprüfung nach ISB-Kontenplan LehrplanPLUS) sowie eine Formelsammlung samt Kontenübersicht.
+Die App enthält **acht veränderbare Modelle** mit erreichbaren Zielen, **24 Aufgabenfamilien** auf zwei Niveaus (mit centgenauer Buchungsprüfung nach der amtlichen ISB-Kontenliste für BwR 7; vierstellige IKR-Kontonummern folgen laut ISB-Handreichung ab Jahrgangsstufe 8) sowie eine nach Zweig gefilterte Formelsammlung samt Kontenübersicht.
 
 ## Entwicklung und Prüfung
 
 ```bash
 npm ci
-npm run dev      # http://localhost:5255/bwr-realschule-7/
+npm run dev      # http://localhost:5272/bwr-realschule-7/
 npm test
 npm run build    # Einzeldatei in dist/index.html
 npm run package:zip
@@ -29,4 +29,6 @@ node scripts/check-curriculum.mjs
 node scripts/verify-release.mjs
 ```
 
-Fortschritt und eigene Texte bleiben lokal im `localStorage` des Browsers (`bwr_rs7_academy_progress_v1`). Keine externen Anfragen, Konten oder Tracker.
+## Datenschutz und Hinweise für Eltern und Lehrkräfte
+
+Fortschritt und eigene Begründungstexte bleiben ausschließlich lokal im `localStorage` des Browsers (`bwr_rs7_academy_progress_v1`), getrennt nach Benutzerkonto des Geräts, Browser, Profil und Herkunft; es findet keine Synchronisierung, Auswertung oder Übertragung an Dritte statt. Hast du dein eigenes Benutzerkonto oder teilst du es mit anderen? Falls du ein Konto mit anderen Lernenden teilst, lösche am Ende den Lernstand und alle eigenen Texte über **„Fortschritt zurücksetzen“** in der Seitenleiste.

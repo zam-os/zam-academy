@@ -6,7 +6,8 @@ import legacyKonten from "./fixtures/de-by-realschule-7-bwr-bestandskonten-buchu
 import legacyBilanz from "./fixtures/de-by-realschule-7-bwr-unternehmen-inventur-bilanz-kvt.json";
 import contract from "./fixtures/public-contract.json";
 import { CORE_LESSONS, findLesson, FORMULAS, LESSONS, lessonsFor, SOURCES, STAGES } from "../src/curriculum";
-import { completion, freshProgress, isComplete, keyOf, parseProgress } from "../src/storage/progress";
+import { ACCOUNT_LIST } from "../src/finance";
+import { completion, freshProgress, isComplete, keyOf, parseProgress, resetProgress, STORAGE_KEY } from "../src/storage/progress";
 import { canAcceptSelfAssessment, checkWorkshop } from "../src/workshop";
 import { lessonLink, parseTrainingDeepLink } from "../src/zam/zam-link";
 
@@ -138,17 +139,28 @@ describe("public learning contract", () => {
     expect(JSON.stringify(LESSONS)).not.toContain('"practice_items"');
   });
 
-  it("writes German learner text with the real minus sign and decimal comma", () => {
+  it("writes German learner text with the real minus sign, decimal comma and BwR 7 Kürzel", () => {
     expect(LEARNER_TEXT).not.toMatch(/(^|[\s(„"])-\d/);
     expect(LEARNER_TEXT).not.toMatch(/\d\.\d{1,2}(?!\d)/);
     expect(LEARNER_TEXT).not.toMatch(/\bSie (können|müssen|sollen)\b/);
+    expect(LEARNER_TEXT).not.toMatch(
+      /\b(?:0500|0530|0700|0840|0860|0870|2000|2010|2020|2030|2400|2600|2800|2880|3000|4200|4250|4400|4800|5000|6000|6010|6020|6030|8010|8020)\s+(?:GR|BVG|MA|FP|BM|BGA|R|F|H|B|FO|VORST|BK|KA|EK|KBKV|LBKV|VE|UST|UEFE|AWR|AWF|AWH|AWB|SBK|GUV)\b/,
+    );
   });
 
-  it("has a Formelsammlung whose every rule names an existing lesson of its stage", () => {
+  it("has a Formelsammlung whose every rule names an existing lesson of its stage and filters cleanly for IIIa", () => {
     expect(FORMULAS.length).toBeGreaterThanOrEqual(20);
     for (const f of FORMULAS) expect(findLesson(f.lesson)?.lb).toBe(f.lb);
     for (const lb of [1, 2, 3, 4, 5]) expect(FORMULAS.some((f) => f.lb === lb)).toBe(true);
     expect(new Set(STAGES.map((s) => s.hue)).size).toBe(STAGES.length);
+
+    const iiiaStages = STAGES.filter((s) => s.tracks.includes("IIIa"));
+    expect(iiiaStages.map((s) => s.lb)).toEqual([1, 2, 3, 4]);
+    const iiiaFormulas = FORMULAS.filter((f) => Boolean(findLesson(f.lesson)?.tracks.includes("IIIa")));
+    expect(iiiaFormulas.length).toBeGreaterThan(0);
+    for (const f of iiiaFormulas) expect(findLesson(f.lesson)?.tracks).toContain("IIIa");
+    expect(ACCOUNT_LIST.filter((a) => a.tracks.includes("IIIa"))).toHaveLength(21);
+    expect(ACCOUNT_LIST.filter((a) => a.tracks.includes("II"))).toHaveLength(23);
   });
 
   for (const lesson of LESSONS)
@@ -272,5 +284,22 @@ describe("learning evidence, track switching and local recovery", () => {
       level: 2,
     });
     expect(parseTrainingDeepLink("#lesson=<script>&level=7")).toEqual({});
+  });
+
+  it("resets progress and free learner texts via resetProgress", () => {
+    const store = new Map<string, string>([[STORAGE_KEY, '{"drafts":{"hh-konsum:1":"Eigener Testtext"}}']]);
+    const prevStorage = (globalThis as { localStorage?: unknown }).localStorage;
+    Object.defineProperty(globalThis, "localStorage", {
+      configurable: true,
+      value: { removeItem: (k: string) => store.delete(k) },
+    });
+    try {
+      const wiped = resetProgress("IIIa");
+      expect(store.has(STORAGE_KEY)).toBe(false);
+      expect(wiped).toEqual({ ...freshProgress(), track: "IIIa" });
+    } finally {
+      if (prevStorage === undefined) delete (globalThis as { localStorage?: unknown }).localStorage;
+      else Object.defineProperty(globalThis, "localStorage", { configurable: true, value: prevStorage });
+    }
   });
 });

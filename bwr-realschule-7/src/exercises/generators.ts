@@ -37,17 +37,17 @@ const C = (account: string, amount: number): Entry => ({
 const pick = <T>(rng: Rng, items: readonly T[]): T => items[rng.int(0, items.length - 1)];
 
 const MATERIALS = [
-  { account: "6000", short: "AWR", label: "Rohstoffe (z. B. Aluminiumrohre)", unit: "Stange(n)" },
-  { account: "6010", short: "AWF", label: "Fremdbauteile (z. B. Fahrradbremsen)", unit: "Set(s)" },
-  { account: "6020", short: "AWH", label: "Hilfsstoffe (z. B. Rahmenlack)", unit: "Dose(n)" },
-  { account: "6030", short: "AWB", label: "Betriebsstoffe (z. B. Maschinenöl)", unit: "Kanister" },
+  { account: "AWR", short: "AWR", label: "Rohstoffe (z. B. Aluminiumrohre)", unit: "Stange(n)" },
+  { account: "AWF", short: "AWF", label: "Fremdbauteile (z. B. Fahrradbremsen)", unit: "Set(s)" },
+  { account: "AWH", short: "AWH", label: "Hilfsstoffe (z. B. Rahmenlack)", unit: "Dose(n)" },
+  { account: "AWB", short: "AWB", label: "Betriebsstoffe (z. B. Maschinenöl)", unit: "Kanister" },
 ] as const;
 
 const ASSETS = [
-  { account: "0700", label: "eine Schweißmaschine (0700 MA)" },
-  { account: "0840", label: "einen Lieferwagen (0840 FP)" },
-  { account: "0860", label: "einen Bürodrucker (0860 BM)" },
-  { account: "0870", label: "Werkstattregale (0870 BGA)" },
+  { account: "MA", label: "eine Schweißmaschine (MA)" },
+  { account: "FP", label: "einen Lieferwagen (FP)" },
+  { account: "BM", label: "einen Bürodrucker (BM)" },
+  { account: "BGA", label: "Werkstattregale (BGA)" },
 ] as const;
 
 export function makeExercise(kind: PracticeKind, rng: Rng, level: Level): Exercise {
@@ -83,13 +83,13 @@ export function makeExercise(kind: PracticeKind, rng: Rng, level: Level): Exerci
     }
 
     case "receipt": {
-      const qty1 = rng.int(2, 6);
-      const p1 = rng.int(3, 12) + 0.5;
-      const qty2 = rng.int(1, 5);
-      const p2 = rng.int(2, 10);
+      const qty1 = rng.int(2, 5);
+      const p1 = rng.int(3, 9) + 0.5;
+      const qty2 = rng.int(1, 4);
+      const p2 = rng.int(2, 7);
       const sum = euro(toCents(p1) * qty1 + toCents(p2) * qty2);
       if (level === 1) {
-        const paid = sum <= 50 ? 50 : 100;
+        const paid = [20, 50, 100, 200].find((bill) => bill >= sum) ?? 200;
         task.prompt = `Kassenbon im Supermarkt: ${qty1} × Müsli zu je ${fmt(p1)} Euro und ${qty2} × Saft zu je ${fmt(p2)} Euro. Bezahlt wird bar mit einem ${fmtInt(paid)}-Euro-Schein. Ermittle den Gesamtbetrag (brutto) und das Rückgeld.`;
         task.hint = "Einzelbeträge addieren; Rückgeld = gezahlter Betrag − Gesamtbetrag.";
         field("Gesamtbetrag", sum);
@@ -128,13 +128,13 @@ export function makeExercise(kind: PracticeKind, rng: Rng, level: Level): Exerci
 
     case "percentChange": {
       const rate = pick(rng, [5, 10, 15, 20, 25]);
-      const orig = rng.int(6, 45) * 20;
+      const orig = rng.int(12, 45) * 20;
       const incMode = rng.int(0, 1) === 0;
       if (level === 1) {
         const result = changedBase(orig, rate, incMode ? "inc" : "dec");
         task.prompt = incMode
           ? `Ein Jugendfahrrad kostete bisher ${fmt(orig)} Euro. Der Preis steigt um ${fmtInt(rate)} %. Berechne den neuen Preis (vermehrter Grundwert).`
-          : `Ein Fahrradhelm kostet regulär ${fmt(orig)} Euro. Im Angebot wird der Preis um ${fmtInt(rate)} % gesenkt. Berechne den neuen Preis (verminderter Grundwert).`;
+          : `Ein Trekkingrad kostet regulär ${fmt(orig)} Euro. Im Angebot wird der Preis um ${fmtInt(rate)} % gesenkt. Berechne den neuen Preis (verminderter Grundwert).`;
         task.hint = incMode
           ? "Vermehrter Grundwert: Ausgangswert · (100 + p) : 100."
           : "Verminderter Grundwert: Ausgangswert · (100 − p) : 100.";
@@ -174,11 +174,11 @@ export function makeExercise(kind: PracticeKind, rng: Rng, level: Level): Exerci
     }
 
     case "inventar": {
-      const ma = rng.int(40, 120) * 1000;
-      const fp = rng.int(20, 60) * 1000;
-      const bk = rng.int(10, 40) * 1000;
-      const lbkv = rng.int(30, 80) * 1000;
-      const ve = rng.int(5, 25) * 1000;
+      const ma = rng.int(60, 140) * 1000;
+      const fp = rng.int(30, 70) * 1000;
+      const bk = rng.int(15, 45) * 1000;
+      const lbkv = rng.int(25, 65) * 1000;
+      const ve = rng.int(5, 20) * 1000;
       if (level === 1) {
         const r = inventarTotals([ma, fp], [bk], [lbkv, ve]);
         task.prompt = `Aus dem Inventar der Radwerk Brenner GmbH: Maschinen ${fmt(ma)} Euro, Fuhrpark ${fmt(fp)} Euro, Bankguthaben ${fmt(bk)} Euro, Darlehen ${fmt(lbkv)} Euro, Verbindlichkeiten gegenüber Lieferanten ${fmt(ve)} Euro. Ermittle die Summe des Vermögens, die Summe der Schulden und das Reinvermögen (Eigenkapital).`;
@@ -209,13 +209,13 @@ export function makeExercise(kind: PracticeKind, rng: Rng, level: Level): Exerci
       const ve = rng.int(10, 40) * 1000;
       const ek = total - lbkv - ve;
       if (level === 1) {
-        task.prompt = `In der Bilanz stehen Anlagevermögen ${fmt(av)} Euro und Umlaufvermögen ${fmt(uv)} Euro. Auf der Passivseite stehen Eigenkapital ${fmt(ek)} Euro und langfristige Bankverbindlichkeiten ${fmt(lbkv)} Euro; gesucht sind die Verbindlichkeiten aus Lieferungen und Leistungen (4400 VE). Ermittle Bilanzsumme und VE.`;
+        task.prompt = `In der Bilanz stehen Anlagevermögen ${fmt(av)} Euro und Umlaufvermögen ${fmt(uv)} Euro. Auf der Passivseite stehen Eigenkapital ${fmt(ek)} Euro und langfristige Bankverbindlichkeiten ${fmt(lbkv)} Euro; gesucht sind die Verbindlichkeiten aus Lieferungen und Leistungen (VE). Ermittle Bilanzsumme und VE.`;
         task.hint = "Bilanzsumme = Aktiva = Passiva. VE = Bilanzsumme − Eigenkapital − Darlehen.";
         field("Bilanzsumme", total);
-        field("Verbindlichkeiten (4400 VE)", ve);
+        field("Verbindlichkeiten (VE)", ve);
       } else {
         const share = percentOf(toCents(ek), toCents(total));
-        task.prompt = `Vermögen: Anlagevermögen ${fmt(av)} Euro, Umlaufvermögen ${fmt(uv)} Euro. Schulden: Darlehen ${fmt(lbkv)} Euro und Verbindlichkeiten LL ${fmt(ve)} Euro. Ermittle das Eigenkapital (3000 EK) und die Eigenkapitalquote (Eigenkapital · 100 : Bilanzsumme).`;
+        task.prompt = `Vermögen: Anlagevermögen ${fmt(av)} Euro, Umlaufvermögen ${fmt(uv)} Euro. Schulden: Darlehen ${fmt(lbkv)} Euro und Verbindlichkeiten LL ${fmt(ve)} Euro. Ermittle das Eigenkapital (EK) und die Eigenkapitalquote (Eigenkapital · 100 : Bilanzsumme).`;
         task.hint = "Eigenkapital = Bilanzsumme − Schulden. Danach Anteil an der Bilanzsumme in Prozent berechnen.";
         field("Eigenkapital", ek);
         field("Eigenkapitalquote", share, "%");
@@ -255,10 +255,10 @@ export function makeExercise(kind: PracticeKind, rng: Rng, level: Level): Exerci
           "minderung",
           amt2,
         );
-        task.prompt = `Ausgangsbilanz (Summe ${fmt(startTotal)} Euro): AV ${fmt(base.av)} Euro, UV ${fmt(base.uv)} Euro, VE ${fmt(base.ve)} Euro. Erst wird ein Baugrundstück auf Ziel (Rechnung) für ${fmt(amt)} Euro gekauft, danach wird eine alte Rechnung über ${fmt(amt2)} Euro per Bank beglichen. Ermittle die endgültige Bilanzsumme und die verbleibenden Verbindlichkeiten (4400 VE).`;
+        task.prompt = `Ausgangsbilanz (Summe ${fmt(startTotal)} Euro): AV ${fmt(base.av)} Euro, UV ${fmt(base.uv)} Euro, VE ${fmt(base.ve)} Euro. Erst wird ein Baugrundstück auf Ziel (Rechnung) für ${fmt(amt)} Euro gekauft, danach wird eine alte Rechnung über ${fmt(amt2)} Euro per Bank beglichen. Ermittle die endgültige Bilanzsumme und die verbleibenden Verbindlichkeiten (VE).`;
         task.hint = "Beide Veränderungen Schritt für Schritt verfolgen: erst Bilanzverlängerung, dann Bilanzverkürzung.";
         field("Endgültige Bilanzsumme", step2.total);
-        field("Verbindlichkeiten (4400 VE)", step2.ve);
+        field("Verbindlichkeiten (VE)", step2.ve);
       }
       break;
     }
@@ -271,13 +271,13 @@ export function makeExercise(kind: PracticeKind, rng: Rng, level: Level): Exerci
       const red2 = rng.int(1, 5) * 1000;
       if (level === 1) {
         const r = tAccountClosing("active", ab, [add1, add2], [red1]);
-        task.prompt = `Auf dem Aktivkonto 2800 BK (Bank) stehen ein Anfangsbestand von ${fmt(ab)} Euro, zwei Zugänge über ${fmt(add1)} Euro und ${fmt(add2)} Euro sowie ein Abgang von ${fmt(red1)} Euro. Berechne die Kontensumme (Soll) und den Schlussbestand (SB).`;
+        task.prompt = `Auf dem Aktivkonto BK (Bank) stehen ein Anfangsbestand von ${fmt(ab)} Euro, zwei Zugänge über ${fmt(add1)} Euro und ${fmt(add2)} Euro sowie ein Abgang von ${fmt(red1)} Euro. Berechne die Kontensumme (Soll) und den Schlussbestand (SB).`;
         task.hint = "Aktivkonto: AB und Zugänge stehen im Soll, Abgänge und Schlussbestand im Haben.";
         field("Kontensumme", r.sideTotal);
         field("Schlussbestand (SB)", r.balance);
       } else {
         const r = tAccountClosing("passive", ab, [add1], [red1, red2]);
-        task.prompt = `Auf dem Passivkonto 4400 VE (Verbindlichkeiten) stehen ein Anfangsbestand von ${fmt(ab)} Euro, ein Zugang von ${fmt(add1)} Euro sowie zwei Abgänge durch Überweisung über ${fmt(red1)} Euro und ${fmt(red2)} Euro. Berechne die Kontensumme (Haben) und den Schlussbestand (SB).`;
+        task.prompt = `Auf dem Passivkonto VE (Verbindlichkeiten) stehen ein Anfangsbestand von ${fmt(ab)} Euro, ein Zugang von ${fmt(add1)} Euro sowie zwei Abgänge durch Überweisung über ${fmt(red1)} Euro und ${fmt(red2)} Euro. Berechne die Kontensumme (Haben) und den Schlussbestand (SB).`;
         task.hint = "Passivkonto: AB und Zugänge stehen im Haben, Abgänge und Schlussbestand im Soll.";
         field("Kontensumme", r.sideTotal);
         field("Schlussbestand (SB)", r.balance);
@@ -291,26 +291,26 @@ export function makeExercise(kind: PracticeKind, rng: Rng, level: Level): Exerci
         const cases = [
           {
             text: `Barabhebung vom Bankkonto für die Geschäftskasse über ${fmt(amt)} Euro.`,
-            d: "2880",
-            c: "2800",
+            d: "KA",
+            c: "BK",
             hint: "Kasse (Aktivkonto) nimmt zu → Soll; Bank (Aktivkonto) nimmt ab → Haben.",
           },
           {
-            text: `Ein Kunde begleicht unsere offene Forderung (2400 FO) über ${fmt(amt)} Euro per Banküberweisung.`,
-            d: "2800",
-            c: "2400",
+            text: `Ein Kunde begleicht unsere offene Forderung (FO) über ${fmt(amt)} Euro per Banküberweisung.`,
+            d: "BK",
+            c: "FO",
             hint: "Bank (Aktivkonto) nimmt zu → Soll; Forderungen (Aktivkonto) nehmen ab → Haben.",
           },
           {
-            text: `Wir begleichen eine Lieferantenrechnung (4400 VE) über ${fmt(amt)} Euro durch Banküberweisung.`,
-            d: "4400",
-            c: "2800",
+            text: `Wir begleichen eine Lieferantenrechnung (VE) über ${fmt(amt)} Euro durch Banküberweisung.`,
+            d: "VE",
+            c: "BK",
             hint: "Verbindlichkeiten (Passivkonto) nehmen ab → Soll; Bank (Aktivkonto) nimmt ab → Haben.",
           },
           {
-            text: `Umwandlung von Lieferantenverbindlichkeiten (4400 VE) über ${fmt(amt)} Euro in ein langfristiges Bankdarlehen (4250 LBKV).`,
-            d: "4400",
-            c: "4250",
+            text: `Umwandlung von Lieferantenverbindlichkeiten (VE) über ${fmt(amt)} Euro in ein langfristiges Bankdarlehen (LBKV).`,
+            d: "VE",
+            c: "LBKV",
             hint: "VE (Passivkonto) nimmt ab → Soll; LBKV (Passivkonto) nimmt zu → Haben.",
           },
         ] as const;
@@ -323,14 +323,14 @@ export function makeExercise(kind: PracticeKind, rng: Rng, level: Level): Exerci
         const part2 = rng.int(2, 10) * 1000;
         const total = part1 + part2;
         if (rng.int(0, 1) === 0) {
-          task.prompt = `Das Radwerk Brenner kauft ein unbebautes Betriebsgrundstück (0500 GR, steuerfrei) für ${fmt(total)} Euro: ${fmt(part1)} Euro werden durch ein langfristiges Bankdarlehen (4250 LBKV) finanziert, die restlichen ${fmt(part2)} Euro per Banküberweisung bezahlt. Bilde den zusammengesetzten Buchungssatz.`;
+          task.prompt = `Das Radwerk Brenner kauft ein unbebautes Betriebsgrundstück (GR, steuerfrei) für ${fmt(total)} Euro: ${fmt(part1)} Euro werden durch ein langfristiges Bankdarlehen (LBKV) finanziert, die restlichen ${fmt(part2)} Euro per Banküberweisung bezahlt. Bilde den zusammengesetzten Buchungssatz.`;
           task.hint = "Grundstücke nehmen im Soll zu; LBKV im Haben zu, Bank im Haben ab.";
-          book(D("0500", total), C("4250", part1), C("2800", part2));
+          book(D("GR", total), C("LBKV", part1), C("BK", part2));
         } else {
-          task.prompt = `Wir tilgen per Banküberweisung gleichzeitig ein kurzfristiges Bankdarlehen (4200 KBKV) in Höhe von ${fmt(part1)} Euro und begleichen eine Lieferantenverbindlichkeit (4400 VE) über ${fmt(part2)} Euro. Ermittle den gesamten Bankabgang und bilde den Buchungssatz.`;
+          task.prompt = `Wir tilgen per Banküberweisung gleichzeitig ein kurzfristiges Bankdarlehen (KBKV) in Höhe von ${fmt(part1)} Euro und begleichen eine Lieferantenverbindlichkeit (VE) über ${fmt(part2)} Euro. Ermittle den gesamten Bankabgang und bilde den Buchungssatz.`;
           task.hint = "Beide Passivkonten nehmen im Soll ab; Bank nimmt um die Summe im Haben ab.";
           field("Gesamter Bankabgang", total);
-          book(D("4200", part1), D("4400", part2), C("2800", total));
+          book(D("KBKV", part1), D("VE", part2), C("BK", total));
         }
       }
       break;
@@ -342,16 +342,16 @@ export function makeExercise(kind: PracticeKind, rng: Rng, level: Level): Exerci
         const cases = [
           {
             beleg: `Kontoauszug: Überweisung an einen Lieferanten zum Ausgleich einer offenen Rechnung über ${fmt(amt)} Euro.`,
-            wrong: `2800 BK ${fmt(amt)} € an 4400 VE ${fmt(amt)} €`,
-            d: "4400",
-            c: "2800",
-            hint: "Auf dem Kontoauszug nimmt 2800 BK ab (Haben) und die Schuld 4400 VE wird weniger (Soll).",
+            wrong: `BK ${fmt(amt)} € an VE ${fmt(amt)} €`,
+            d: "VE",
+            c: "BK",
+            hint: "Auf dem Kontoauszug nimmt BK ab (Haben) und die Schuld VE wird weniger (Soll).",
           },
           {
             beleg: `Quittung: Einzahlung von Bargeld aus der Kasse auf das Geschäftskonto über ${fmt(amt)} Euro.`,
-            wrong: `2880 KA ${fmt(amt)} € an 2800 BK ${fmt(amt)} €`,
-            d: "2800",
-            c: "2880",
+            wrong: `KA ${fmt(amt)} € an BK ${fmt(amt)} €`,
+            d: "BK",
+            c: "KA",
             hint: "Die Bank wächst (Soll), die Kasse leert sich (Haben).",
           },
         ] as const;
@@ -362,9 +362,9 @@ export function makeExercise(kind: PracticeKind, rng: Rng, level: Level): Exerci
       } else {
         const net = rng.int(4, 24) * 500;
         const vat = vatFromNet(net, 19);
-        task.prompt = `Belegprüfung — Ausgangsrechnung über ${fmt(vat.gross)} Euro brutto (darin ${fmt(vat.net)} Euro netto plus ${fmt(vat.vat)} Euro Umsatzsteuer) für gelieferte Jugendräder auf Ziel. Falscher Vorschlag: „5000 UEFE an 2400 FO“. Ermittle die fehlende Vorsteuer- oder Umsatzsteuerbuchung und bilde den vollständigen richtigen Buchungssatz.`;
-        task.hint = "Forderungen (2400 FO) nehmen brutto im Soll zu; 5000 UEFE (netto) und 4800 UST (Steuer) stehen im Haben.";
-        book(D("2400", vat.gross), C("5000", vat.net), C("4800", vat.vat));
+        task.prompt = `Belegprüfung — Ausgangsrechnung über ${fmt(vat.gross)} Euro brutto (darin ${fmt(vat.net)} Euro netto plus ${fmt(vat.vat)} Euro Umsatzsteuer) für gelieferte Jugendräder auf Ziel. Falscher Vorschlag: „UEFE an FO“. Ermittle die fehlende Vorsteuer- oder Umsatzsteuerbuchung und bilde den vollständigen richtigen Buchungssatz.`;
+        task.hint = "Forderungen (FO) nehmen brutto im Soll zu; UEFE (netto) und UST (Steuer) stehen im Haben.";
+        book(D("FO", vat.gross), C("UEFE", vat.net), C("UST", vat.vat));
       }
       break;
     }
@@ -394,19 +394,19 @@ export function makeExercise(kind: PracticeKind, rng: Rng, level: Level): Exerci
       if (level === 1) {
         const asset = pick(rng, ASSETS);
         task.prompt = `Das Radwerk Brenner kauft ${asset.label} auf Ziel (Rechnung später bezahlen) für ${fmt(v.net)} Euro netto zuzüglich 19 % Umsatzsteuer. Ermittle Vorsteuer und Bruttobetrag und bilde den Buchungssatz.`;
-        task.hint = "Anlagekonto (netto) und 2600 VORST im Soll; 4400 VE (brutto) im Haben.";
+        task.hint = "Anlagekonto (netto) und VORST im Soll; VE (brutto) im Haben.";
         field("Vorsteuer", v.vat);
         field("Bruttobetrag", v.gross);
-        book(D(asset.account, v.net), D("2600", v.vat), C("4400", v.gross));
+        book(D(asset.account, v.net), D("VORST", v.vat), C("VE", v.gross));
       } else {
         const viaBank = rng.int(0, 1) === 0;
-        const payAcc = viaBank ? "2800" : "2400";
+        const payAcc = viaBank ? "BK" : "FO";
         const payWord = viaBank ? "gegen sofortige Banküberweisung" : "auf Ziel (Ausgangsrechnung)";
         task.prompt = `Verkauf eigener Fertigerzeugnisse ${payWord} für ${fmt(v.gross)} Euro brutto einschließlich 19 % Umsatzsteuer. Berechne den Nettoerlös sowie die Umsatzsteuer und buche den Verkauf.`;
-        task.hint = "Netto = Brutto · 100 : 119. Zahlungs-/Forderungskonto brutto im Soll; 5000 UEFE (netto) und 4800 UST im Haben.";
+        task.hint = "Netto = Brutto · 100 : 119. Zahlungs-/Forderungskonto brutto im Soll; UEFE (netto) und UST im Haben.";
         field("Nettoerlös", v.net);
         field("Umsatzsteuer", v.vat);
-        book(D(payAcc, v.gross), C("5000", v.net), C("4800", v.vat));
+        book(D(payAcc, v.gross), C("UEFE", v.net), C("UST", v.vat));
       }
       break;
     }
@@ -419,13 +419,13 @@ export function makeExercise(kind: PracticeKind, rng: Rng, level: Level): Exerci
       const awb = rng.int(1, 6) * 1000;
       const out = periodOutcome([rev], [awr, awf, awh, awb]);
       if (level === 1) {
-        task.prompt = `Im Quartal fallen an: Umsatzerlöse (5000 UEFE) ${fmt(rev)} Euro, Aufwendungen für Rohstoffe ${fmt(awr)} Euro, Fremdbauteile ${fmt(awf)} Euro, Hilfsstoffe ${fmt(awh)} Euro und Betriebsstoffe ${fmt(awb)} Euro. Ermittle die Summe der Aufwendungen und den Periodenerfolg (Verlust negativ).`;
+        task.prompt = `Im Quartal fallen an: Umsatzerlöse (UEFE) ${fmt(rev)} Euro, Aufwendungen für Rohstoffe (AWR) ${fmt(awr)} Euro, Fremdbauteile (AWF) ${fmt(awf)} Euro, Hilfsstoffe (AWH) ${fmt(awh)} Euro und Betriebsstoffe (AWB) ${fmt(awb)} Euro. Ermittle die Summe der Aufwendungen und den Periodenerfolg (Verlust negativ).`;
         task.hint = "Periodenerfolg = Summe Erträge − Summe Aufwendungen.";
         field("Summe Aufwendungen", out.totalExpense);
         field("Periodenerfolg", out.result);
       } else {
         const machine = rng.int(15, 45) * 1000;
-        task.prompt = `Vorgänge im Monat: Verkauf von Jugendrädern (5000 UEFE) ${fmt(rev)} Euro; Werkstoffverbrauch: Rohstoffe ${fmt(awr)} Euro, Fremdbauteile ${fmt(awf)} Euro, Hilfs- und Betriebsstoffe zusammen ${fmt(awh + awb)} Euro. Außerdem wird eine Schweißmaschine (0700 MA) für ${fmt(machine)} Euro per Bank gekauft. Ermittle die erfolgswirksamen Aufwendungen und den Periodenerfolg (Verlust negativ).`;
+        task.prompt = `Vorgänge im Monat: Verkauf von Jugendrädern (UEFE) ${fmt(rev)} Euro; Werkstoffverbrauch: Rohstoffe (AWR) ${fmt(awr)} Euro, Fremdbauteile (AWF) ${fmt(awf)} Euro, Hilfs- und Betriebsstoffe (AWH/AWB) zusammen ${fmt(awh + awb)} Euro. Außerdem wird eine Schweißmaschine (MA) für ${fmt(machine)} Euro per Bank gekauft. Ermittle die erfolgswirksamen Aufwendungen und den Periodenerfolg (Verlust negativ).`;
         task.hint = "Der Kauf einer Maschine per Bank ist nur ein Aktivtausch (bestandsverändernd) und gehört nicht zu den Aufwendungen.";
         field("Erfolgswirksame Aufwendungen", out.totalExpense);
         field("Periodenerfolg", out.result);
@@ -464,11 +464,11 @@ export function makeExercise(kind: PracticeKind, rng: Rng, level: Level): Exerci
       if (level === 1) {
         const net = rng.int(6, 40) * 200;
         const v = vatFromNet(net, 19);
-        task.prompt = `Eingangsrechnung über ${m1.label} für ${fmt(v.net)} Euro netto plus 19 % Umsatzsteuer, Zahlung auf Ziel (4400 VE). Ermittle Vorsteuer und Bruttobetrag und buche den Werkstoffeinkauf.`;
-        task.hint = `Werkstoffaufwand (${m1.account} ${m1.short}) und 2600 VORST im Soll an 4400 VE im Haben.`;
+        task.prompt = `Eingangsrechnung über ${m1.label} für ${fmt(v.net)} Euro netto plus 19 % Umsatzsteuer, Zahlung auf Ziel (VE). Ermittle Vorsteuer und Bruttobetrag und buche den Werkstoffeinkauf.`;
+        task.hint = `Werkstoffaufwand (${m1.short}) und VORST im Soll an VE im Haben.`;
         field("Vorsteuer", v.vat);
         field("Bruttobetrag", v.gross);
-        book(D(m1.account, v.net), D("2600", v.vat), C("4400", v.gross));
+        book(D(m1.account, v.net), D("VORST", v.vat), C("VE", v.gross));
       } else {
         const m2 = MATERIALS[(idx + 1) % MATERIALS.length];
         const list1 = rng.int(10, 40) * 100;
@@ -478,11 +478,11 @@ export function makeExercise(kind: PracticeKind, rng: Rng, level: Level): Exerci
         const n2 = offerPrice(list2, rab, 19).net;
         const totalNet = euro(toCents(n1) + toCents(n2));
         const v = vatFromNet(totalNet, 19);
-        task.prompt = `Eingangsrechnung auf Ziel (4400 VE): ${m1.label} zum Listenpreis von ${fmt(list1)} Euro netto und ${m2.label} zum Listenpreis von ${fmt(list2)} Euro netto. Auf beide Positionen gewährt der Lieferer ${fmtInt(rab)} % Sofortrabatt; dazu kommen 19 % Umsatzsteuer. Ermittle die Vorsteuer sowie den Bruttobetrag und bilde den zusammengesetzten Buchungssatz.`;
-        task.hint = "Auf beide Listenpreise jeweils den Sofortrabatt abziehen, die Nettobeträge buchen, 19 % Vorsteuer berechnen und die Bruttosumme an 4400 VE buchen.";
+        task.prompt = `Eingangsrechnung auf Ziel (VE): ${m1.label} zum Listenpreis von ${fmt(list1)} Euro netto und ${m2.label} zum Listenpreis von ${fmt(list2)} Euro netto. Auf beide Positionen gewährt der Lieferer ${fmtInt(rab)} % Sofortrabatt; dazu kommen 19 % Umsatzsteuer. Ermittle die Vorsteuer sowie den Bruttobetrag und bilde den zusammengesetzten Buchungssatz.`;
+        task.hint = "Auf beide Listenpreise jeweils den Sofortrabatt abziehen, die Nettobeträge buchen, 19 % Vorsteuer berechnen und die Bruttosumme an VE buchen.";
         field("Vorsteuer", v.vat);
         field("Bruttobetrag", v.gross);
-        book(D(m1.account, n1), D(m2.account, n2), D("2600", v.vat), C("4400", v.gross));
+        book(D(m1.account, n1), D(m2.account, n2), D("VORST", v.vat), C("VE", v.gross));
       }
       break;
     }
@@ -493,21 +493,21 @@ export function makeExercise(kind: PracticeKind, rng: Rng, level: Level): Exerci
       const listTotal = qty * unitP;
       if (level === 1) {
         const v = vatFromNet(listTotal, 19);
-        task.prompt = `Ausgangsrechnung an einen Sporthändler auf Ziel (2400 FO): ${fmtInt(qty)} Jugendräder zu je ${fmt(unitP)} Euro netto plus 19 % Umsatzsteuer. Ermittle Nettoerlös, Umsatzsteuer und Rechnungsbetrag (brutto) und buche den Verkauf.`;
-        task.hint = "2400 FO (brutto) im Soll an 5000 UEFE (netto) und 4800 UST im Haben.";
+        task.prompt = `Ausgangsrechnung an einen Sporthändler auf Ziel (FO): ${fmtInt(qty)} Jugendräder zu je ${fmt(unitP)} Euro netto plus 19 % Umsatzsteuer. Ermittle Nettoerlös, Umsatzsteuer und Rechnungsbetrag (brutto) und buche den Verkauf.`;
+        task.hint = "FO (brutto) im Soll an UEFE (netto) und UST im Haben.";
         field("Nettoerlös", v.net);
         field("Umsatzsteuer", v.vat);
         field("Bruttobetrag", v.gross);
-        book(D("2400", v.gross), C("5000", v.net), C("4800", v.vat));
+        book(D("FO", v.gross), C("UEFE", v.net), C("UST", v.vat));
       } else {
         const rab = pick(rng, [5, 10]);
         const o = offerPrice(listTotal, rab, 19);
         task.prompt = `Ausgangsrechnung an ein Fahrradgeschäft (sofortige Banküberweisung): ${fmtInt(qty)} Jugendräder zu je ${fmt(unitP)} Euro Listenpreis netto abzüglich ${fmtInt(rab)} % Sofortrabatt, zuzüglich 19 % Umsatzsteuer. Ermittle den Nettoerlös nach Rabatt, die Umsatzsteuer sowie den Bruttobetrag und buche den Verkauf.`;
-        task.hint = "Erst Rabatt abziehen, dann 19 % Umsatzsteuer auf den Nettoerlös aufschlagen; 2800 BK im Soll an 5000 UEFE und 4800 UST.";
+        task.hint = "Erst Rabatt abziehen, dann 19 % Umsatzsteuer auf den Nettoerlös aufschlagen; BK im Soll an UEFE und UST.";
         field("Nettoerlös nach Rabatt", o.net);
         field("Umsatzsteuer", o.vat);
         field("Bruttobetrag", o.gross);
-        book(D("2800", o.gross), C("5000", o.net), C("4800", o.vat));
+        book(D("BK", o.gross), C("UEFE", o.net), C("UST", o.vat));
       }
       break;
     }
@@ -517,24 +517,75 @@ export function makeExercise(kind: PracticeKind, rng: Rng, level: Level): Exerci
       const p1 = rng.int(20, 45) * 10;
       const q2 = rng.int(4, 15);
       const p2 = rng.int(10, 25) * 10;
-      const subtotal = q1 * p1 + q2 * p2;
+      const total1 = q1 * p1;
+      const total2 = q2 * p2;
+      const subtotal = total1 + total2;
+      const invoiceNo = `AR-2026-${rng.int(104, 989)}`;
       if (level === 1) {
         const v = vatFromNet(subtotal, 19);
-        task.prompt = `Vervollständige den Verkaufsbeleg auf Ziel (2400 FO): Position 1: ${fmtInt(q1)} Jugendräder je ${fmt(p1)} Euro netto; Position 2: ${fmtInt(q2)} City-Roller je ${fmt(p2)} Euro netto; plus 19 % Umsatzsteuer. Ermittle die Nettosumme, die Umsatzsteuer und den Rechnungsbetrag und buche den Beleg.`;
-        task.hint = "Positionswerte addieren, 19 % Umsatzsteuer berechnen und 2400 FO an 5000 UEFE und 4800 UST buchen.";
+        task.prompt =
+          "Vervollständige die Lücken im Vordruck dieser Ausgangsrechnung der Radwerk Brenner GmbH und bilde anschließend den Buchungssatz (Verkauf auf Ziel über FO).";
+        task.hint =
+          "Position 2 berechnen (Menge · Einzelpreis), Nettosumme bilden, 19 % Umsatzsteuer aufschlagen und FO (brutto) an UEFE (netto) und UST buchen.";
+        field("Gesamtpreis Pos. 2 (netto)", total2);
         field("Nettosumme", v.net);
-        field("Umsatzsteuer", v.vat);
-        field("Rechnungsbetrag", v.gross);
-        book(D("2400", v.gross), C("5000", v.net), C("4800", v.vat));
+        field("Umsatzsteuer (19 %)", v.vat);
+        field("Rechnungsbetrag (brutto)", v.gross);
+        book(D("FO", v.gross), C("UEFE", v.net), C("UST", v.vat));
+        task.invoice = {
+          seller: "Radwerk Brenner GmbH",
+          sellerAddress: "Gewerbepark Nord 8 · 84030 Ergolding",
+          buyer: "Zweiradhandel Alpenblick e. K.",
+          buyerAddress: "Bahnhofstraße 14 · 83022 Rosenheim",
+          invoiceNo,
+          date: "14.10.2026",
+          deliveryDate: "14.10.2026",
+          paymentTerms: "Zahlbar innerhalb von 14 Tagen rein netto (Zielverkauf auf FO).",
+          rows: [
+            { pos: 1, description: "Jugendfahrrad „Isar 24“", qty: q1, unit: "Stück", unitPrice: p1, total: total1 },
+            { pos: 2, description: "City-Roller „Alu Klapp“", qty: q2, unit: "Stück", unitPrice: p2, fieldIndex: 0 },
+          ],
+          summary: [
+            { label: "Nettosumme", fieldIndex: 1 },
+            { label: "+ 19 % Umsatzsteuer", fieldIndex: 2 },
+            { label: "Rechnungsbetrag (brutto)", fieldIndex: 3, strong: true },
+          ],
+        };
       } else {
         const rab = pick(rng, [5, 10]);
         const o = offerPrice(subtotal, rab, 19);
-        task.prompt = `Vervollständige den Verkaufsbeleg auf Ziel (2400 FO): Position 1: ${fmtInt(q1)} Jugendräder je ${fmt(p1)} Euro netto; Position 2: ${fmtInt(q2)} City-Roller je ${fmt(p2)} Euro netto. Abzüglich ${fmtInt(rab)} % Sofortrabatt auf die Zwischensumme, danach 19 % Umsatzsteuer. Ermittle den Rabattbetrag, den Nettobetrag und den Rechnungsbetrag und buche den Beleg.`;
-        task.hint = "Zwischensumme berechnen, Sofortrabatt abziehen, auf den Nettobetrag 19 % Umsatzsteuer aufschlagen und buchen.";
-        field("Rabattbetrag", o.discount);
-        field("Nettobetrag", o.net);
-        field("Rechnungsbetrag", o.gross);
-        book(D("2400", o.gross), C("5000", o.net), C("4800", o.vat));
+        task.prompt = `Vervollständige den Ausgangsrechnungs-Vordruck einschließlich ${fmtInt(rab)} % Kunden-Sofortrabatt und buche den Beleg auf Ziel (FO).`;
+        task.hint =
+          "Zuerst beide Positionswerte und die Zwischensumme berechnen, dann den Sofortrabatt abziehen, auf den Nettobetrag 19 % Umsatzsteuer aufschlagen und FO an UEFE und UST buchen.";
+        field("Gesamtpreis Pos. 1 (netto)", total1);
+        field("Gesamtpreis Pos. 2 (netto)", total2);
+        field("Zwischensumme netto", subtotal);
+        field(`Sofortrabatt (${fmtInt(rab)} %)`, o.discount);
+        field("Nettobetrag nach Rabatt", o.net);
+        field("Umsatzsteuer (19 %)", o.vat);
+        field("Rechnungsbetrag (brutto)", o.gross);
+        book(D("FO", o.gross), C("UEFE", o.net), C("UST", o.vat));
+        task.invoice = {
+          seller: "Radwerk Brenner GmbH",
+          sellerAddress: "Gewerbepark Nord 8 · 84030 Ergolding",
+          buyer: "Sporthaus Bergland GmbH",
+          buyerAddress: "Marktplatz 5 · 87435 Kempten",
+          invoiceNo,
+          date: "19.10.2026",
+          deliveryDate: "18.10.2026",
+          paymentTerms: "Zahlbar innerhalb von 14 Tagen rein netto (Zielverkauf auf FO).",
+          rows: [
+            { pos: 1, description: "Jugendfahrrad „Isar 26“", qty: q1, unit: "Stück", unitPrice: p1, fieldIndex: 0 },
+            { pos: 2, description: "City-Roller „Alu Klapp“", qty: q2, unit: "Stück", unitPrice: p2, fieldIndex: 1 },
+          ],
+          summary: [
+            { label: "Zwischensumme netto", fieldIndex: 2 },
+            { label: `− ${fmtInt(rab)} % Sofortrabatt`, fieldIndex: 3 },
+            { label: "Nettobetrag nach Rabatt", fieldIndex: 4 },
+            { label: "+ 19 % Umsatzsteuer", fieldIndex: 5 },
+            { label: "Rechnungsbetrag (brutto)", fieldIndex: 6, strong: true },
+          ],
+        };
       }
       break;
     }
@@ -546,17 +597,17 @@ export function makeExercise(kind: PracticeKind, rng: Rng, level: Level): Exerci
       if (level === 1) {
         const pay = rng.int(2, 12) * 1000;
         const endBk = euro(toCents(ab) - toCents(pay));
-        task.prompt = `Anfangsbestand auf 2800 BK: ${fmt(ab)} Euro. Geschäftsfall im Grund- und Hauptbuch: Begleichung einer offenen Lieferantenverbindlichkeit (4400 VE) über ${fmt(pay)} Euro per Bank. Ermittle den neuen Kontostand von 2800 BK und buche den Geschäftsfall.`;
-        task.hint = "2800 BK ist ein Aktivkonto: Der Bankabgang steht im Haben und verringert den Bestand.";
-        field("Neuer Kontostand 2800 BK", endBk);
-        book(D("4400", pay), C("2800", pay));
+        task.prompt = `Anfangsbestand auf BK: ${fmt(ab)} Euro. Geschäftsfall im Grund- und Hauptbuch: Begleichung einer offenen Lieferantenverbindlichkeit (VE) über ${fmt(pay)} Euro per Bank. Ermittle den neuen Kontostand von BK und buche den Geschäftsfall.`;
+        task.hint = "BK ist ein Aktivkonto: Der Bankabgang steht im Haben und verringert den Bestand.";
+        field("Neuer Kontostand BK", endBk);
+        book(D("VE", pay), C("BK", pay));
       } else {
         const endVe = euro(toCents(ab) + toCents(v.gross));
-        task.prompt = `Anfangsbestand auf 4400 VE: ${fmt(ab)} Euro. Geschäftsfall: Kauf von Rohstoffen (6000 AWR) auf Ziel für ${fmt(v.net)} Euro netto plus 19 % Umsatzsteuer. Ermittle die Vorsteuer und den neuen Kontostand auf 4400 VE und buche den Geschäftsfall.`;
-        task.hint = "Die Bruttoschuld erhöht das Passivkonto 4400 VE im Haben.";
+        task.prompt = `Anfangsbestand auf VE: ${fmt(ab)} Euro. Geschäftsfall: Kauf von Rohstoffen (AWR) auf Ziel für ${fmt(v.net)} Euro netto plus 19 % Umsatzsteuer. Ermittle die Vorsteuer und den neuen Kontostand auf VE und buche den Geschäftsfall.`;
+        task.hint = "Die Bruttoschuld erhöht das Passivkonto VE im Haben.";
         field("Vorsteuer", v.vat);
-        field("Neuer Kontostand 4400 VE", endVe);
-        book(D("6000", v.net), D("2600", v.vat), C("4400", v.gross));
+        field("Neuer Kontostand VE", endVe);
+        book(D("AWR", v.net), D("VORST", v.vat), C("VE", v.gross));
       }
       break;
     }
@@ -568,17 +619,17 @@ export function makeExercise(kind: PracticeKind, rng: Rng, level: Level): Exerci
       const uefe = rng.int(45, 130) * 1000;
       if (level === 1) {
         const out = periodOutcome([uefe], [awr, awf]);
-        task.prompt = `Abschluss der Erfolgskonten: 6000 AWR ${fmt(awr)} Euro, 6010 AWF ${fmt(awf)} Euro, 5000 UEFE ${fmt(uefe)} Euro. Ermittle die Summe der Aufwendungen und den Periodenerfolg (Verlust negativ) und schließe die beiden Aufwandskonten über 8020 GUV ab.`;
-        task.hint = "Aufwandskonten stehen im Soll und werden im Haben an 8020 GUV abgeschlossen.";
+        task.prompt = `Abschluss der Erfolgskonten: AWR ${fmt(awr)} Euro, AWF ${fmt(awf)} Euro, UEFE ${fmt(uefe)} Euro. Ermittle die Summe der Aufwendungen und den Periodenerfolg (Verlust negativ) und schließe die beiden Aufwandskonten über GUV ab.`;
+        task.hint = "Aufwandskonten stehen im Soll und werden im Haben an GUV abgeschlossen.";
         field("Summe Aufwendungen", out.totalExpense);
         field("Periodenerfolg", out.result);
-        book(D("8020", out.totalExpense), C("6000", awr), C("6010", awf));
+        book(D("GUV", out.totalExpense), C("AWR", awr), C("AWF", awf));
       } else {
         const out = periodOutcome([uefe], [awr, awf, awh]);
-        task.prompt = `Salden der Erfolgskonten: 5000 UEFE ${fmt(uefe)} Euro, 6000 AWR ${fmt(awr)} Euro, 6010 AWF ${fmt(awf)} Euro, 6020 AWH ${fmt(awh)} Euro. Ermittle den Periodenerfolg (Verlust negativ) und schließe das Ertragskonto 5000 UEFE auf 8020 GUV ab.`;
-        task.hint = "Ertragskonten stehen im Haben und werden im Soll an 8020 GUV abgeschlossen.";
+        task.prompt = `Salden der Erfolgskonten: UEFE ${fmt(uefe)} Euro, AWR ${fmt(awr)} Euro, AWF ${fmt(awf)} Euro, AWH ${fmt(awh)} Euro. Ermittle den Periodenerfolg (Verlust negativ) und schließe das Ertragskonto UEFE auf GUV ab.`;
+        task.hint = "Ertragskonten stehen im Haben und werden im Soll an GUV abgeschlossen.";
         field("Periodenerfolg", out.result);
-        book(D("5000", uefe), C("8020", uefe));
+        book(D("UEFE", uefe), C("GUV", uefe));
       }
       break;
     }
@@ -590,20 +641,20 @@ export function makeExercise(kind: PracticeKind, rng: Rng, level: Level): Exerci
         const rev = exp + rng.int(8, 35) * 1000;
         const out = periodOutcome([rev], [exp]);
         const ekEnd = ekStart + out.result;
-        task.prompt = `Konto 3000 EK hat einen Anfangsbestand von ${fmt(ekStart)} Euro. Auf 8020 GUV stehen ${fmt(rev)} Euro Erträge und ${fmt(exp)} Euro Aufwendungen. Ermittle den Reingewinn und das End-Eigenkapital und buche den Abschluss von 8020 GUV auf 3000 EK.`;
-        task.hint = "Gewinn mehrt das Eigenkapital: 8020 GUV im Soll an 3000 EK im Haben.";
+        task.prompt = `Konto EK hat einen Anfangsbestand von ${fmt(ekStart)} Euro. Auf GUV stehen ${fmt(rev)} Euro Erträge und ${fmt(exp)} Euro Aufwendungen. Ermittle den Reingewinn und das End-Eigenkapital und buche den Abschluss von GUV auf EK.`;
+        task.hint = "Gewinn mehrt das Eigenkapital: GUV im Soll an EK im Haben.";
         field("Reingewinn", out.result);
         field("End-Eigenkapital", ekEnd);
-        book(D("8020", out.absResult), C("3000", out.absResult));
+        book(D("GUV", out.absResult), C("EK", out.absResult));
       } else {
         const rev = exp - rng.int(4, 25) * 1000;
         const out = periodOutcome([rev], [exp]);
         const ekEnd = ekStart + out.result;
-        task.prompt = `Konto 3000 EK hat einen Anfangsbestand von ${fmt(ekStart)} Euro. Auf 8020 GUV stehen ${fmt(rev)} Euro Erträge und ${fmt(exp)} Euro Aufwendungen. Ermittle den Periodenerfolg (Verlust negativ) und das End-Eigenkapital und buche den Abschluss von 8020 GUV auf 3000 EK.`;
-        task.hint = "Verlust mindert das Eigenkapital: 3000 EK im Soll an 8020 GUV im Haben.";
+        task.prompt = `Konto EK hat einen Anfangsbestand von ${fmt(ekStart)} Euro. Auf GUV stehen ${fmt(rev)} Euro Erträge und ${fmt(exp)} Euro Aufwendungen. Ermittle den Periodenerfolg (Verlust negativ) und das End-Eigenkapital und buche den Abschluss von GUV auf EK.`;
+        task.hint = "Verlust mindert das Eigenkapital: EK im Soll an GUV im Haben.";
         field("Periodenerfolg", out.result);
         field("End-Eigenkapital", ekEnd);
-        book(D("3000", out.absResult), C("8020", out.absResult));
+        book(D("EK", out.absResult), C("GUV", out.absResult));
       }
       break;
     }
@@ -613,41 +664,40 @@ export function makeExercise(kind: PracticeKind, rng: Rng, level: Level): Exerci
         const fp = rng.int(30, 80) * 1000;
         const bk = rng.int(15, 50) * 1000;
         const sum = fp + bk;
-        task.prompt = `Schlussbestände zweier aktiver Bestandskonten: 0840 FP ${fmt(fp)} Euro und 2800 BK ${fmt(bk)} Euro. Ermittle deren Summe im Schlussbilanzkonto und schließe beide Konten auf 8010 SBK ab.`;
-        task.hint = "Aktivkonten schließen im Haben an 8010 SBK (im Soll) ab.";
+        task.prompt = `Schlussbestände zweier aktiver Bestandskonten: FP ${fmt(fp)} Euro und BK ${fmt(bk)} Euro. Ermittle deren Summe im Schlussbilanzkonto und schließe beide Konten auf SBK ab.`;
+        task.hint = "Aktivkonten schließen im Haben an SBK (im Soll) ab.";
         field("Summe Aktiva im Beispiel", sum);
-        book(D("8010", sum), C("0840", fp), C("2800", bk));
+        book(D("SBK", sum), C("FP", fp), C("BK", bk));
       } else {
         const ek = rng.int(90, 200) * 1000;
         const ve = rng.int(15, 45) * 1000;
         const sum = ek + ve;
-        task.prompt = `Schlussbestände zweier passiver Bestandskonten: 3000 EK ${fmt(ek)} Euro und 4400 VE ${fmt(ve)} Euro. Ermittle die Summe im Schlussbilanzkonto und schließe beide Konten auf 8010 SBK ab.`;
-        task.hint = "Passivkonten schließen im Soll an 8010 SBK (im Haben) ab.";
+        task.prompt = `Schlussbestände zweier passiver Bestandskonten: EK ${fmt(ek)} Euro und VE ${fmt(ve)} Euro. Ermittle die Summe im Schlussbilanzkonto und schließe beide Konten auf SBK ab.`;
+        task.hint = "Passivkonten schließen im Soll an SBK (im Haben) ab.";
         field("Summe Passiva im Beispiel", sum);
-        book(D("3000", ek), D("4400", ve), C("8010", sum));
+        book(D("EK", ek), D("VE", ve), C("SBK", sum));
       }
       break;
     }
 
     case "bilanzCompare": {
-      const av0 = rng.int(100, 200) * 1000;
-      const uv0 = rng.int(40, 90) * 1000;
+      const av0 = rng.int(100, 180) * 1000;
+      const uv0 = rng.int(50, 100) * 1000;
       const total0 = av0 + uv0;
-      const fk0 = rng.int(50, 110) * 1000;
+      const fk0 = rng.int(60, 110) * 1000;
       const ek0 = total0 - fk0;
-      const ekDelta = (rng.int(0, 1) === 0 ? 1 : -1) * rng.int(5, 25) * 1000;
-      const fkDelta = (rng.int(0, 1) === 0 ? 1 : -1) * rng.int(4, 20) * 1000;
+      const ekDelta = (rng.int(0, 1) === 0 ? 1 : -1) * rng.int(5, 20) * 1000;
       const ek1 = ek0 + ekDelta;
-      const fk1 = fk0 + fkDelta;
-      const total1 = ek1 + fk1;
+      const av1 = av0 + rng.int(-10, 20) * 1000;
+      const uv1 = uv0 + rng.int(-10, 20) * 1000;
+      const total1 = av1 + uv1;
+      const fk1 = total1 - ek1;
       if (level === 1) {
         task.prompt = `Eröffnungsbilanz: Eigenkapital ${fmt(ek0)} Euro, Fremdkapital ${fmt(fk0)} Euro. Schlussbilanz: Eigenkapital ${fmt(ek1)} Euro, Fremdkapital ${fmt(fk1)} Euro (keine Einlagen oder Entnahmen). Ermittle die Veränderung des Eigenkapitals und die Veränderung der Bilanzsumme (Abnahme negativ).`;
         task.hint = "Veränderung = Schlusswert − Anfangswert. Ohne Einlagen/Entnahmen zeigt die EK-Veränderung den Erfolg.";
         field("Veränderung Eigenkapital", ekDelta);
         field("Veränderung Bilanzsumme", total1 - total0);
       } else {
-        const av1 = av0 + rng.int(-10, 20) * 1000;
-        const uv1 = total1 - av1;
         const share0 = percentOf(toCents(ek0), toCents(total0));
         const share1 = percentOf(toCents(ek1), toCents(total1));
         task.prompt = `Eröffnungsbilanz: AV ${fmt(av0)} Euro, UV ${fmt(uv0)} Euro, EK ${fmt(ek0)} Euro, FK ${fmt(fk0)} Euro. Schlussbilanz: AV ${fmt(av1)} Euro, UV ${fmt(uv1)} Euro, EK ${fmt(ek1)} Euro, FK ${fmt(fk1)} Euro. Berechne die alte und die neue Eigenkapitalquote (in %) sowie die Eigenkapitalveränderung (Abnahme negativ).`;

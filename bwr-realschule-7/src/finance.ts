@@ -1,3 +1,5 @@
+import type { Track } from "./model/types";
+
 /** Round decimal inputs with integer fractions; model balances stay in cents. */
 function decimalRatio(value: number): [bigint, bigint] {
   if (!Number.isFinite(value)) throw new Error("Geldbeträge müssen endliche Zahlen sein.");
@@ -327,32 +329,50 @@ export function inventoryDiff(bookQty: number, actualQty: number, unitPrice: num
   };
 }
 
-/** Accounts of the official ISB Kontenplan (LehrplanPLUS) used in BwR 7. */
-export const ACCOUNTS: Record<string, string> = {
-  "0500": "GR · Grundstücke",
-  "0530": "BVG · Betriebs- und Verwaltungsgebäude",
-  "0700": "MA · Maschinen und Anlagen",
-  "0840": "FP · Fuhrpark",
-  "0860": "BM · Büromaschinen",
-  "0870": "BGA · Büromöbel und Geschäftsausstattung",
-  "2000": "R · Rohstoffe (Fertigungsmaterial)",
-  "2010": "F · Fremdbauteile",
-  "2020": "H · Hilfsstoffe",
-  "2030": "B · Betriebsstoffe",
-  "2400": "FO · Forderungen aus Lieferungen und Leistungen",
-  "2600": "VORST · Vorsteuer",
-  "2800": "BK · Bank (Kontokorrentkonto)",
-  "2880": "KA · Kasse",
-  "3000": "EK · Eigenkapital",
-  "4200": "KBKV · Kurzfristige Bankverbindlichkeiten (bis zu einem Jahr)",
-  "4250": "LBKV · Langfristige Bankverbindlichkeiten",
-  "4400": "VE · Verbindlichkeiten aus Lieferungen und Leistungen",
-  "4800": "UST · Umsatzsteuer",
-  "5000": "UEFE · Umsatzerlöse für eigene Erzeugnisse",
-  "6000": "AWR · Aufwendungen für Rohstoffe",
-  "6010": "AWF · Aufwendungen für Fremdbauteile",
-  "6020": "AWH · Aufwendungen für Hilfsstoffe",
-  "6030": "AWB · Aufwendungen für Betriebsstoffe",
-  "8010": "SBK · Schlussbilanzkonto",
-  "8020": "GUV · Gewinn- und Verlustkonto",
-};
+export interface AccountSpec {
+  code: string;
+  name: string;
+  group:
+    | "Aktive Bestandskonten"
+    | "Passive Bestandskonten"
+    | "Aufwandskonten"
+    | "Ertragskonten"
+    | "Abschlusskonten";
+  ikr: string;
+  tracks: Track[];
+}
+
+/**
+ * Official ISB Kontenliste für BwR 7 (LehrplanPLUS, Stand 01.06.2016):
+ * 23 accounts using abbreviations (including Vorräte); four-digit IKR numbers
+ * are introduced from Grade 8 onward (ISB Handreichung 2025-06, p. 20) and kept here only as reference.
+ */
+export const ACCOUNT_LIST: readonly AccountSpec[] = [
+  { code: "GR", name: "Grundstücke", group: "Aktive Bestandskonten", ikr: "0500", tracks: ["II", "IIIa"] },
+  { code: "BVG", name: "Betriebs- und Verwaltungsgebäude", group: "Aktive Bestandskonten", ikr: "0530", tracks: ["II", "IIIa"] },
+  { code: "MA", name: "Maschinen und Anlagen", group: "Aktive Bestandskonten", ikr: "0700", tracks: ["II", "IIIa"] },
+  { code: "FP", name: "Fuhrpark", group: "Aktive Bestandskonten", ikr: "0840", tracks: ["II", "IIIa"] },
+  { code: "BM", name: "Büromaschinen", group: "Aktive Bestandskonten", ikr: "0860", tracks: ["II", "IIIa"] },
+  { code: "BGA", name: "Büromöbel und Geschäftsausstattung", group: "Aktive Bestandskonten", ikr: "0870", tracks: ["II", "IIIa"] },
+  { code: "Vorräte", name: "Vorräte an Werkstoffen", group: "Aktive Bestandskonten", ikr: "2000–2030", tracks: ["II", "IIIa"] },
+  { code: "FO", name: "Forderungen aus Lieferungen und Leistungen", group: "Aktive Bestandskonten", ikr: "2400", tracks: ["II", "IIIa"] },
+  { code: "VORST", name: "Vorsteuer", group: "Aktive Bestandskonten", ikr: "2600", tracks: ["II", "IIIa"] },
+  { code: "BK", name: "Bank", group: "Aktive Bestandskonten", ikr: "2800", tracks: ["II", "IIIa"] },
+  { code: "KA", name: "Kasse", group: "Aktive Bestandskonten", ikr: "2880", tracks: ["II", "IIIa"] },
+  { code: "EK", name: "Eigenkapital", group: "Passive Bestandskonten", ikr: "3000", tracks: ["II", "IIIa"] },
+  { code: "KBKV", name: "Kurzfristige Bankverbindlichkeiten (bis zu 1 Jahr Laufzeit)", group: "Passive Bestandskonten", ikr: "4200", tracks: ["II", "IIIa"] },
+  { code: "LBKV", name: "Langfristige Bankverbindlichkeiten (ab 1 Jahr Laufzeit)", group: "Passive Bestandskonten", ikr: "4250", tracks: ["II", "IIIa"] },
+  { code: "VE", name: "Verbindlichkeiten aus Lieferungen und Leistungen", group: "Passive Bestandskonten", ikr: "4400", tracks: ["II", "IIIa"] },
+  { code: "UST", name: "Umsatzsteuer", group: "Passive Bestandskonten", ikr: "4800", tracks: ["II", "IIIa"] },
+  { code: "AWR", name: "Aufwendungen für Rohstoffe", group: "Aufwandskonten", ikr: "6000", tracks: ["II", "IIIa"] },
+  { code: "AWF", name: "Aufwendungen für Fremdbauteile", group: "Aufwandskonten", ikr: "6010", tracks: ["II", "IIIa"] },
+  { code: "AWH", name: "Aufwendungen für Hilfsstoffe", group: "Aufwandskonten", ikr: "6020", tracks: ["II", "IIIa"] },
+  { code: "AWB", name: "Aufwendungen für Betriebsstoffe", group: "Aufwandskonten", ikr: "6030", tracks: ["II", "IIIa"] },
+  { code: "UEFE", name: "Umsatzerlöse für eigene Erzeugnisse", group: "Ertragskonten", ikr: "5000", tracks: ["II", "IIIa"] },
+  { code: "GUV", name: "Gewinn- und Verlustkonto", group: "Abschlusskonten", ikr: "8020", tracks: ["II"] },
+  { code: "SBK", name: "Schlussbilanzkonto", group: "Abschlusskonten", ikr: "8010", tracks: ["II"] },
+];
+
+export const ACCOUNTS: Record<string, string> = Object.fromEntries(
+  ACCOUNT_LIST.map((a) => [a.code, a.name]),
+);

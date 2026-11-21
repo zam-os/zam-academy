@@ -1341,11 +1341,11 @@
           "language": "de",
           "tier": "tier1_fast",
           "bloom_level": 2,
-          "question": "Welche der vier Bilanzveränderungen liegt vor, wenn ein Betrieb einen neuen Lieferwagen (0840 FP) für 35.000,00 Euro per Banküberweisung kauft?",
+          "question": "Welche der vier Bilanzveränderungen liegt vor, wenn ein Betrieb einen neuen Lieferwagen (FP) für 35.000,00 Euro per Banküberweisung kauft?",
           "concept": "Aktivtausch (Fuhrpark nimmt zu, Bank nimmt ab; die Bilanzsumme bleibt unverändert).",
           "source_link": "https://academy.zam-os.org/bwr-realschule-7/#lesson=gb-bilanzveraenderungen",
           "materiality": "material",
-          "sample_solution": "Beide berührten Posten stehen auf der Aktivseite: 0840 FP wächst um 35.000,00 Euro, 2800 BK sinkt um 35.000,00 Euro. Die Bilanzsumme ändert sich nicht.",
+          "sample_solution": "Beide berührten Posten stehen auf der Aktivseite: FP wächst um 35.000,00 Euro, BK sinkt um 35.000,00 Euro. Die Bilanzsumme ändert sich nicht.",
           "fast_check": {
             "type": "binary_choice",
             "options": [
@@ -1501,7 +1501,7 @@
           "language": "de",
           "tier": "tier1_fast",
           "bloom_level": 2,
-          "question": "Auf welcher Kontoseite (Soll oder Haben) stehen bei einem aktiven Bestandskonto (z. B. 0840 FP, 2800 BK, 2880 KA) der Anfangsbestand und die Zugänge?",
+          "question": "Auf welcher Kontoseite (Soll oder Haben) stehen bei einem aktiven Bestandskonto (z. B. FP, BK, KA) der Anfangsbestand und die Zugänge?",
           "concept": "Auf der Soll-Seite (links).",
           "source_link": "https://academy.zam-os.org/bwr-realschule-7/#lesson=gb-bestandskonten",
           "materiality": "material",
@@ -1605,7 +1605,7 @@
           "concept": "Schritte: Konten → Aktiv/Passiv → Zugang/Abgang → Soll/Haben („Soll an Haben“). GoB: Keine Buchung ohne Beleg, zeitgerecht, klar, vollständig, nicht unleserlich ändern.",
           "source_link": "https://academy.zam-os.org/bwr-realschule-7/#lesson=gb-buchungssatz",
           "materiality": "material",
-          "sample_solution": "Die vier Denkschritte bestimmen zuerst die Kontonummern, ihre Kontoart, Zu- oder Abnahme und daraus Soll oder Haben. Nach den GoB muss jede Buchung durch einen Beleg gedeckt sein, nachvollziehbar bleiben und darf bei Korrekturen niemals überklebt werden."
+          "sample_solution": "Die vier Denkschritte bestimmen zuerst die betroffenen Konten, ihre Kontoart, Zu- oder Abnahme und daraus Soll oder Haben. Nach den GoB muss jede Buchung durch einen Beleg gedeckt sein, nachvollziehbar bleiben und darf bei Korrekturen niemals überklebt werden."
         }
       ]
     },
@@ -1661,11 +1661,11 @@
           "language": "de",
           "tier": "tier1_fast",
           "bloom_level": 2,
-          "question": "Welcher Geschäftsfall steckt hinter dem Buchungssatz „4400 VE 2.500,00 € an 2800 BK 2.500,00 €“?",
+          "question": "Welcher Geschäftsfall steckt hinter dem Buchungssatz „VE 2.500,00 € an BK 2.500,00 €“?",
           "concept": "Begleichung einer offenen Lieferantenrechnung über 2.500,00 Euro per Banküberweisung.",
           "source_link": "https://academy.zam-os.org/bwr-realschule-7/#lesson=gb-geschaeftsvorfaelle",
           "materiality": "material",
-          "sample_solution": "4400 VE (Passivkonto) nimmt im Soll ab, und 2800 BK (Aktivkonto) nimmt im Haben ab — eine Lieferantenschuld wird also per Bank bezahlt.",
+          "sample_solution": "VE (Passivkonto) nimmt im Soll ab, und BK (Aktivkonto) nimmt im Haben ab — eine Lieferantenschuld wird also per Bank bezahlt.",
           "fast_check": {
             "type": "binary_choice",
             "options": [
@@ -1838,15 +1838,15 @@
           "tier": "tier1_fast",
           "bloom_level": 2,
           "question": "Welche Konten verwendest du für die Umsatzsteuer beim Einkauf einer Maschine und beim Verkauf eigener Erzeugnisse?",
-          "concept": "Beim Einkauf 2600 VORST im Soll; beim Verkauf 4800 UST im Haben.",
+          "concept": "Beim Einkauf VORST im Soll; beim Verkauf UST im Haben.",
           "source_link": "https://academy.zam-os.org/bwr-realschule-7/#lesson=gb-umsatzsteuer-buchen",
           "materiality": "material",
-          "sample_solution": "2600 VORST ist eine Forderung an das Finanzamt (Einkauf, Soll); 4800 UST ist eine Verbindlichkeit gegenüber dem Finanzamt (Verkauf, Haben).",
+          "sample_solution": "VORST ist eine Forderung an das Finanzamt (Einkauf, Soll); UST ist eine Verbindlichkeit gegenüber dem Finanzamt (Verkauf, Haben).",
           "fast_check": {
             "type": "binary_choice",
             "options": [
-              "Beim Einkauf 2600 VORST im Soll; beim Verkauf 4800 UST im Haben.",
-              "Beim Einkauf 4800 UST im Haben; beim Verkauf 2600 VORST im Soll."
+              "Beim Einkauf VORST im Soll; beim Verkauf UST im Haben.",
+              "Beim Einkauf UST im Haben; beim Verkauf VORST im Soll."
             ],
             "correct_index": 0
           }
@@ -1858,10 +1858,10 @@
           "tier": "tier2_synthesis",
           "bloom_level": 2,
           "question": "Warum stehen Anlagegut oder Werkstoff netto im Soll und Zahlungs- bzw. Schuldenkonten immer brutto?",
-          "concept": "Der Betrieb schuldet oder erhält den vollen Bruttobetrag, aktiviert oder verbucht aber nur den Nettowert, weil 2600 VORST und 4800 UST direkt mit dem Finanzamt abgerechnet werden.",
+          "concept": "Der Betrieb schuldet oder erhält den vollen Bruttobetrag, aktiviert oder verbucht aber nur den Nettowert, weil VORST und UST direkt mit dem Finanzamt abgerechnet werden.",
           "source_link": "https://academy.zam-os.org/bwr-realschule-7/#lesson=gb-umsatzsteuer-buchen",
           "materiality": "material",
-          "sample_solution": "Gegenüber Lieferanten (4400 VE) und Kunden (2400 FO) oder auf der Bank (2800 BK) fließen stets Bruttobeträge. Da die Vorsteuer zurückgefordert und die Umsatzsteuer abgeführt wird, zeigen Vermögens- und Erfolgskonten nur reine Nettobeträge."
+          "sample_solution": "Gegenüber Lieferanten (VE) und Kunden (FO) oder auf der Bank (BK) fließen stets Bruttobeträge. Da die Vorsteuer zurückgefordert und die Umsatzsteuer abgeführt wird, zeigen Vermögens- und Erfolgskonten nur reine Nettobeträge."
         }
       ]
     },
@@ -1926,7 +1926,7 @@
           "concept": "Aufwendungen im Soll (sie mindern das Eigenkapital), Erträge im Haben (sie mehren das Eigenkapital).",
           "source_link": "https://academy.zam-os.org/bwr-realschule-7/#lesson=pp-produktionsprozess",
           "materiality": "material",
-          "sample_solution": "Erfolgskonten sind Unterkonten des Passivkontos 3000 EK. Deshalb stehen Eigenkapitalminderungen (Aufwendungen) im Soll und Eigenkapitalmehrungen (Erträge) im Haben.",
+          "sample_solution": "Erfolgskonten sind Unterkonten des Passivkontos EK. Deshalb stehen Eigenkapitalminderungen (Aufwendungen) im Soll und Eigenkapitalmehrungen (Erträge) im Haben.",
           "fast_check": {
             "type": "binary_choice",
             "options": [
@@ -1952,7 +1952,7 @@
           ],
           "source_link": "https://academy.zam-os.org/bwr-realschule-7/#lesson=pp-produktionsprozess",
           "materiality": "material",
-          "sample_solution": "Beschaffung von Werkstoffen erzeugt Aufwendungen (6000–6030), Fertigung schafft Fertigerzeugnisse, deren Verkauf Erträge auf 5000 UEFE bringt. Erträge > Aufwendungen bedeutet Gewinn; Aufwendungen > Erträge bedeutet Verlust. Reine Bestandsumschichtungen zählen nicht."
+          "sample_solution": "Beschaffung von Werkstoffen erzeugt Aufwendungen (AWR–AWB), Fertigung schafft Fertigerzeugnisse, deren Verkauf Erträge auf UEFE bringt. Erträge > Aufwendungen bedeutet Gewinn; Aufwendungen > Erträge bedeutet Verlust. Reine Bestandsumschichtungen zählen nicht."
         }
       ]
     },
@@ -2008,7 +2008,7 @@
           "language": "de",
           "tier": "tier1_fast",
           "bloom_level": 2,
-          "question": "Worin unterscheiden sich Hilfsstoffe (6020 AWH) und Betriebsstoffe (6030 AWB)?",
+          "question": "Worin unterscheiden sich Hilfsstoffe (AWH) und Betriebsstoffe (AWB)?",
           "concept": "Hilfsstoffe gehen als Nebenbestandteile ins Produkt ein (z. B. Lack, Schrauben); Betriebsstoffe werden beim Herstellen verbraucht (z. B. Strom, Schmieröl).",
           "source_link": "https://academy.zam-os.org/bwr-realschule-7/#lesson=pp-werkstoffe",
           "materiality": "material",
@@ -2028,8 +2028,8 @@
           "language": "de",
           "tier": "tier2_synthesis",
           "bloom_level": 2,
-          "question": "Systematisiere alle vier Werkstoffarten im Fertigungsbetrieb mit je einem Beispiel und ISB-Kontonummer.",
-          "concept": "6000 AWR Rohstoffe (Hauptmaterial), 6010 AWF Fremdbauteile (fertige Teile), 6020 AWH Hilfsstoffe (Nebenbestandteil), 6030 AWB Betriebsstoffe (Maschinenverbrauch).",
+          "question": "Systematisiere alle vier Werkstoffarten im Fertigungsbetrieb mit je einem Beispiel und ISB-Kürzel.",
+          "concept": "AWR Rohstoffe (Hauptmaterial), AWF Fremdbauteile (fertige Teile), AWH Hilfsstoffe (Nebenbestandteil), AWB Betriebsstoffe (Maschinenverbrauch).",
           "source_link": "https://academy.zam-os.org/bwr-realschule-7/#lesson=pp-werkstoffe",
           "materiality": "material",
           "sample_solution": "Rohstoffe prägen das Erzeugnis durch eigene Bearbeitung. Fremdbauteile werden fertig zugekauft und eingebaut. Hilfsstoffe bleiben nebensächlich im Produkt, während Betriebsstoffe Maschinen und Hallen betreiben."
@@ -2179,15 +2179,15 @@
           "tier": "tier1_fast",
           "bloom_level": 2,
           "question": "Wie buchst du den Kauf von Aluminiumrohren (Rohstoffe) für 3.000,00 Euro netto plus 570,00 Euro Vorsteuer auf Ziel?",
-          "concept": "6000 AWR 3.000,00 € und 2600 VORST 570,00 € an 4400 VE 3.570,00 €",
+          "concept": "AWR 3.000,00 € und VORST 570,00 € an VE 3.570,00 €",
           "source_link": "https://academy.zam-os.org/bwr-realschule-7/#lesson=pp-einkauf-werkstoffe",
           "materiality": "material",
-          "sample_solution": "In BwR 7 werden Werkstoffeinkäufe aufwandsorientiert gebucht: 6000 AWR (netto) und 2600 VORST stehen im Soll, 4400 VE (brutto) steht im Haben.",
+          "sample_solution": "In BwR 7 werden Werkstoffeinkäufe aufwandsorientiert gebucht: AWR (netto) und VORST stehen im Soll, VE (brutto) steht im Haben.",
           "fast_check": {
             "type": "binary_choice",
             "options": [
-              "6000 AWR 3.000,00 € und 2600 VORST 570,00 € an 4400 VE 3.570,00 €",
-              "2000 R 3.570,00 € an 4400 VE 3.570,00 €"
+              "AWR 3.000,00 € und VORST 570,00 € an VE 3.570,00 €",
+              "Vorräte 3.570,00 € an VE 3.570,00 €"
             ],
             "correct_index": 0
           }
@@ -2199,10 +2199,10 @@
           "tier": "tier2_synthesis",
           "bloom_level": 2,
           "question": "Worauf achtest du beim Buchen einer Eingangsrechnung mit zwei verschiedenen Werkstoffarten und einem Sofortrabatt?",
-          "concept": "Sofortrabatt von beiden Listenpreisen einzeln abziehen, beide gekürzten Nettowerte auf 6000–6030 plus 19 % 2600 VORST im Soll an 4400 VE bzw. 2800 BK im Haben buchen.",
+          "concept": "Sofortrabatt von beiden Listenpreisen einzeln abziehen, beide gekürzten Nettowerte auf AWR–AWB plus 19 % VORST im Soll an VE bzw. BK im Haben buchen.",
           "source_link": "https://academy.zam-os.org/bwr-realschule-7/#lesson=pp-einkauf-werkstoffe",
           "materiality": "material",
-          "sample_solution": "Jeder Werkstoffanteil landet netto nach Rabatt auf seinem passenden Aufwandskonto (AWR, AWF, AWH oder AWB). Auf die gemeinsame Nettosumme berechnet man 19 % Vorsteuer (2600 VORST) und gleicht die Bruttosumme über 4400 VE oder 2800 BK im Haben aus."
+          "sample_solution": "Jeder Werkstoffanteil landet netto nach Rabatt auf seinem passenden Aufwandskonto (AWR, AWF, AWH oder AWB). Auf die gemeinsame Nettosumme berechnet man 19 % Vorsteuer (VORST) und gleicht die Bruttosumme über VE oder BK im Haben aus."
         }
       ]
     },
@@ -2264,15 +2264,15 @@
           "tier": "tier1_fast",
           "bloom_level": 2,
           "question": "Wie lautet der Buchungssatz beim Verkauf von Fertigerzeugnissen für 2.000,00 Euro netto plus 380,00 Euro USt auf Ziel?",
-          "concept": "2400 FO 2.380,00 € an 5000 UEFE 2.000,00 € und 4800 UST 380,00 €",
+          "concept": "FO 2.380,00 € an UEFE 2.000,00 € und UST 380,00 €",
           "source_link": "https://academy.zam-os.org/bwr-realschule-7/#lesson=pp-verkauf-fe",
           "materiality": "material",
-          "sample_solution": "Die Kundenforderung (2400 FO) wächst brutto im Soll; auf der Habenseite stehen der Nettoerlös auf 5000 UEFE und die Umsatzsteuer auf 4800 UST.",
+          "sample_solution": "Die Kundenforderung (FO) wächst brutto im Soll; auf der Habenseite stehen der Nettoerlös auf UEFE und die Umsatzsteuer auf UST.",
           "fast_check": {
             "type": "binary_choice",
             "options": [
-              "2400 FO 2.380,00 € an 5000 UEFE 2.000,00 € und 4800 UST 380,00 €",
-              "5000 UEFE 2.000,00 € und 4800 UST 380,00 € an 2400 FO 2.380,00 €"
+              "FO 2.380,00 € an UEFE 2.000,00 € und UST 380,00 €",
+              "UEFE 2.000,00 € und UST 380,00 € an FO 2.380,00 €"
             ],
             "correct_index": 0
           }
@@ -2284,10 +2284,10 @@
           "tier": "tier2_synthesis",
           "bloom_level": 2,
           "question": "Wie gehst du vor, wenn du aus Menge, Stückpreis und ggf. Kundenrabatt einen Verkauf von Fertigerzeugnissen buchst?",
-          "concept": "Menge · Einzelpreis minus Sofortrabatt ergibt Nettoerlös (5000 UEFE); plus 19 % 4800 UST bucht man brutto im Soll auf 2400 FO bzw. 2800 BK.",
+          "concept": "Menge · Einzelpreis minus Sofortrabatt ergibt Nettoerlös (UEFE); plus 19 % UST bucht man brutto im Soll auf FO bzw. BK.",
           "source_link": "https://academy.zam-os.org/bwr-realschule-7/#lesson=pp-verkauf-fe",
           "materiality": "material",
-          "sample_solution": "Entscheidend auf der Verkaufsrechnung ist die Trennung in Zahlungs-/Forderungskonto (brutto im Soll), echtes Ertragskonto 5000 UEFE (netto nach Rabatt im Haben) und Steuerschuld 4800 UST (19 % im Haben)."
+          "sample_solution": "Entscheidend auf der Verkaufsrechnung ist die Trennung in Zahlungs-/Forderungskonto (brutto im Soll), echtes Ertragskonto UEFE (netto nach Rabatt im Haben) und Steuerschuld UST (19 % im Haben)."
         }
       ]
     },
@@ -2357,7 +2357,7 @@
           "concept": "Kopfdaten (§ 14 UStG: Namen, Rechnungsnummer, Lieferdatum), Positionen (Menge · Preis), Netto nach Rabatt, 19 % USt, Bruttobetrag und Zahlungsziel.",
           "source_link": "https://academy.zam-os.org/bwr-realschule-7/#lesson=pp-verkaufsbeleg",
           "materiality": "material",
-          "sample_solution": "Nur eine formell und rechnerisch vollständige Ausgangsrechnung erlaubt dem Kunden den Vorsteuerabzug und liefert für unsere Buchhaltung die exakten Zahlen für 2400 FO, 5000 UEFE und 4800 UST."
+          "sample_solution": "Nur eine formell und rechnerisch vollständige Ausgangsrechnung erlaubt dem Kunden den Vorsteuerabzug und liefert für unsere Buchhaltung die exakten Zahlen für FO, UEFE und UST."
         }
       ]
     },
@@ -2423,7 +2423,7 @@
           "language": "de",
           "tier": "tier2_synthesis",
           "bloom_level": 2,
-          "question": "Warum starten Erfolgskonten (6000–6030, 5000 UEFE) bei null, während Bestandskonten Anfangsbestände tragen?",
+          "question": "Warum starten Erfolgskonten (AWR–AWB, UEFE) bei null, während Bestandskonten Anfangsbestände tragen?",
           "concept": "Bestandskonten zeigen dauerhafte Stichtagsbestände (Vermögen/Schulden), Erfolgskonten messen dagegen nur Aufwendungen und Erträge genau eines Geschäftsjahres.",
           "source_link": "https://academy.zam-os.org/bwr-realschule-7/#lesson=sg-eroeffnung",
           "materiality": "material",
@@ -2511,7 +2511,7 @@
       "atom_uri": "urn:zam:atom:01M7Z7D73M5JAKRRTCSKCVWASD",
       "namespace": "zam-academy-bwr-realschule-7",
       "slug": "bwr7-sg-guv-abschluss",
-      "title": "Aufwands- und Ertragskonten auf 8020 GUV abschließen",
+      "title": "Aufwands- und Ertragskonten auf GUV abschließen",
       "domain": "bwr/abschluss",
       "reduction": "formal",
       "typical_age_min": 12.5,
@@ -2553,16 +2553,16 @@
           "language": "de",
           "tier": "tier1_fast",
           "bloom_level": 2,
-          "question": "Auf welcher Seite des Kontos 8020 GUV stehen beim Jahresabschluss alle Aufwendungen und auf welcher alle Erträge?",
-          "concept": "Aufwendungen stehen im Soll von 8020 GUV, Erträge stehen im Haben.",
+          "question": "Auf welcher Seite des Kontos GUV stehen beim Jahresabschluss alle Aufwendungen und auf welcher alle Erträge?",
+          "concept": "Aufwendungen stehen im Soll von GUV, Erträge stehen im Haben.",
           "source_link": "https://academy.zam-os.org/bwr-realschule-7/#lesson=sg-guv-abschluss",
           "materiality": "material",
-          "sample_solution": "Aufwandskonten schließen über „8020 GUV an Aufwandskonto“ ab (Soll des GUV), Ertragskonten über „Ertragskonto an 8020 GUV“ (Haben des GUV).",
+          "sample_solution": "Aufwandskonten schließen über „GUV an Aufwandskonto“ ab (Soll des GUV), Ertragskonten über „Ertragskonto an GUV“ (Haben des GUV).",
           "fast_check": {
             "type": "binary_choice",
             "options": [
-              "Aufwendungen stehen im Soll von 8020 GUV, Erträge stehen im Haben.",
-              "Erträge stehen im Soll von 8020 GUV, Aufwendungen im Haben."
+              "Aufwendungen stehen im Soll von GUV, Erträge stehen im Haben.",
+              "Erträge stehen im Soll von GUV, Aufwendungen im Haben."
             ],
             "correct_index": 0
           }
@@ -2573,11 +2573,11 @@
           "language": "de",
           "tier": "tier2_synthesis",
           "bloom_level": 2,
-          "question": "Wie liest du am Konto 8020 GUV formal und inhaltlich ab, ob ein Reingewinn oder Reinverlust entstanden ist?",
+          "question": "Wie liest du am Konto GUV formal und inhaltlich ab, ob ein Reingewinn oder Reinverlust entstanden ist?",
           "concept": "Haben > Soll (Erträge > Aufwendungen): Reingewinn, Ausgleichssaldo steht im Soll des GUV; Soll > Haben (Aufwendungen > Erträge): Reinverlust, Saldo steht im Haben des GUV.",
           "source_link": "https://academy.zam-os.org/bwr-realschule-7/#lesson=sg-guv-abschluss",
           "materiality": "material",
-          "sample_solution": "Weil der Ausgleichssaldo beim T-Konto immer auf der wertmäßig kleineren Seite steht, zeigt ein Saldo im Soll des 8020 GUV einen Ertragsüberschuss (Reingewinn) und ein Saldo im Haben einen Aufwandsüberschuss (Reinverlust) an."
+          "sample_solution": "Weil der Ausgleichssaldo beim T-Konto immer auf der wertmäßig kleineren Seite steht, zeigt ein Saldo im Soll des GUV einen Ertragsüberschuss (Reingewinn) und ein Saldo im Haben einen Aufwandsüberschuss (Reinverlust) an."
         }
       ]
     },
@@ -2586,7 +2586,7 @@
       "atom_uri": "urn:zam:atom:01M7Z7D73N188HN46DY339B9X4",
       "namespace": "zam-academy-bwr-realschule-7",
       "slug": "bwr7-sg-eigenkapital-nahtstelle",
-      "title": "3000 EK als Nahtstelle: GUV auf Eigenkapital abschließen",
+      "title": "EK als Nahtstelle: GUV auf Eigenkapital abschließen",
       "domain": "bwr/abschluss",
       "reduction": "formal",
       "typical_age_min": 12.5,
@@ -2623,16 +2623,16 @@
           "language": "de",
           "tier": "tier1_fast",
           "bloom_level": 2,
-          "question": "Wie lautet der Abschlussbuchungssatz von 8020 GUV auf 3000 EK, wenn ein Unternehmen einen Reingewinn erzielt hat?",
-          "concept": "8020 GUV an 3000 EK (das Eigenkapital steigt im Haben).",
+          "question": "Wie lautet der Abschlussbuchungssatz von GUV auf EK, wenn ein Unternehmen einen Reingewinn erzielt hat?",
+          "concept": "GUV an EK (das Eigenkapital steigt im Haben).",
           "source_link": "https://academy.zam-os.org/bwr-realschule-7/#lesson=sg-eigenkapital-nahtstelle",
           "materiality": "material",
-          "sample_solution": "Ein Gewinn mehrt das Eigenkapital. Da 3000 EK ein Passivkonto ist, steht die Mehrung im Haben — der Buchungssatz lautet 8020 GUV an 3000 EK (bei Verlust umgekehrt).",
+          "sample_solution": "Ein Gewinn mehrt das Eigenkapital. Da EK ein Passivkonto ist, steht die Mehrung im Haben — der Buchungssatz lautet GUV an EK (bei Verlust umgekehrt).",
           "fast_check": {
             "type": "binary_choice",
             "options": [
-              "8020 GUV an 3000 EK (das Eigenkapital steigt im Haben).",
-              "3000 EK an 8020 GUV (das Eigenkapital sinkt im Soll)."
+              "GUV an EK (das Eigenkapital steigt im Haben).",
+              "EK an GUV (das Eigenkapital sinkt im Soll)."
             ],
             "correct_index": 0
           }
@@ -2643,11 +2643,11 @@
           "language": "de",
           "tier": "tier2_synthesis",
           "bloom_level": 2,
-          "question": "Warum bildet das Konto 3000 EK die „Nahtstelle“ zwischen Bestands- und Erfolgskonten?",
-          "concept": "Es nimmt den im 8020 GUV gesammelten Periodenerfolg auf (Gewinn +, Verlust −) und überträgt den neuen Endbestand des Eigenkapitals über 8010 SBK in die Schlussbilanz.",
+          "question": "Warum bildet das Konto EK die „Nahtstelle“ zwischen Bestands- und Erfolgskonten?",
+          "concept": "Es nimmt den im GUV gesammelten Periodenerfolg auf (Gewinn +, Verlust −) und überträgt den neuen Endbestand des Eigenkapitals über SBK in die Schlussbilanz.",
           "source_link": "https://academy.zam-os.org/bwr-realschule-7/#lesson=sg-eigenkapital-nahtstelle",
           "materiality": "material",
-          "sample_solution": "Ohne den Abschluss von 8020 GUV über 3000 EK blieben die Veränderungen aus Aufwendungen und Erträgen unberücksichtigt, sodass die Passivseite der Schlussbilanz nicht mit dem neuen Vermögen auf der Aktivseite übereinstimmen würde."
+          "sample_solution": "Ohne den Abschluss von GUV über EK blieben die Veränderungen aus Aufwendungen und Erträgen unberücksichtigt, sodass die Passivseite der Schlussbilanz nicht mit dem neuen Vermögen auf der Aktivseite übereinstimmen würde."
         }
       ]
     },
@@ -2656,7 +2656,7 @@
       "atom_uri": "urn:zam:atom:01M7Z7D73PY1CA85KTTT01SVS3",
       "namespace": "zam-academy-bwr-realschule-7",
       "slug": "bwr7-sg-sbk-schlussbilanz",
-      "title": "Bestandskonten auf 8010 SBK abschließen und Schlussbilanz erstellen",
+      "title": "Bestandskonten auf SBK abschließen und Schlussbilanz erstellen",
       "domain": "bwr/abschluss",
       "reduction": "formal",
       "typical_age_min": 12.5,
@@ -2693,16 +2693,16 @@
           "language": "de",
           "tier": "tier1_fast",
           "bloom_level": 2,
-          "question": "Mit welchem Buchungssatz schließt du die aktiven und die passiven Bestandskonten auf das Konto 8010 SBK ab?",
-          "concept": "Aktivkonten: 8010 SBK an Aktivkonto; Passivkonten: Passivkonto an 8010 SBK.",
+          "question": "Mit welchem Buchungssatz schließt du die aktiven und die passiven Bestandskonten auf das Konto SBK ab?",
+          "concept": "Aktivkonten: SBK an Aktivkonto; Passivkonten: Passivkonto an SBK.",
           "source_link": "https://academy.zam-os.org/bwr-realschule-7/#lesson=sg-sbk-schlussbilanz",
           "materiality": "material",
-          "sample_solution": "Im Schlussbilanzkonto stehen wie in der Schlussbilanz alle Aktivbestände links im Soll („8010 SBK an Aktivkonto“) und alle Passivbestände rechts im Haben („Passivkonto an 8010 SBK“).",
+          "sample_solution": "Im Schlussbilanzkonto stehen wie in der Schlussbilanz alle Aktivbestände links im Soll („SBK an Aktivkonto“) und alle Passivbestände rechts im Haben („Passivkonto an SBK“).",
           "fast_check": {
             "type": "binary_choice",
             "options": [
-              "Aktivkonten: 8010 SBK an Aktivkonto; Passivkonten: Passivkonto an 8010 SBK.",
-              "Aktivkonten: Aktivkonto an 8010 SBK; Passivkonten: 8010 SBK an Passivkonto."
+              "Aktivkonten: SBK an Aktivkonto; Passivkonten: Passivkonto an SBK.",
+              "Aktivkonten: Aktivkonto an SBK; Passivkonten: SBK an Passivkonto."
             ],
             "correct_index": 0
           }
@@ -2713,11 +2713,11 @@
           "language": "de",
           "tier": "tier2_synthesis",
           "bloom_level": 2,
-          "question": "Worin unterscheiden sich das Schlussbilanzkonto (8010 SBK) und die Schlussbilanz nach § 242 HGB?",
-          "concept": "8010 SBK ist ein Buchungskonto mit Soll/Haben, Kontonummern und Gegenkonten; die Schlussbilanz gliedert ohne Kontonummern nach Aktiva/Passiva mit Ort, Datum und Unterschrift.",
+          "question": "Worin unterscheiden sich das Schlussbilanzkonto (SBK) und die Schlussbilanz nach § 242 HGB?",
+          "concept": "SBK ist ein Buchungskonto mit Soll/Haben, Kontokürzeln und Gegenkonten; die Schlussbilanz gliedert nach Aktiva/Passiva mit Ort, Datum und Unterschrift.",
           "source_link": "https://academy.zam-os.org/bwr-realschule-7/#lesson=sg-sbk-schlussbilanz",
           "materiality": "material",
-          "sample_solution": "Beide zeigen exakt dieselben Schlusswerte des Betriebsvermögens und Kapitals. Während 8010 SBK den technischen Abschluss des Hauptbuchs bildet, ist die Schlussbilanz das geordnete externe Dokument des Jahresabschlusses."
+          "sample_solution": "Beide zeigen exakt dieselben Schlusswerte des Betriebsvermögens und Kapitals. Während SBK den technischen Abschluss des Hauptbuchs bildet, ist die Schlussbilanz das geordnete externe Dokument des Jahresabschlusses."
         }
       ]
     },

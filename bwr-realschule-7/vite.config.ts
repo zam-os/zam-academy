@@ -7,7 +7,7 @@ export default defineConfig({
   base: "/bwr-realschule-7/",
   plugins: [viteSingleFile()],
   server: {
-    port: 5271,
+    port: 5272,
     open: false,
   },
   build: {

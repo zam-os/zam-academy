@@ -113,3 +113,12 @@ export function saveProgress(progress: Progress) {
     return false;
   }
 }
+
+export function resetProgress(track: Track = "II"): Progress {
+  try {
+    localStorage.removeItem(STORAGE_KEY);
+  } catch {
+    /* State still resets in memory if storage removal is blocked. */
+  }
+  return { ...freshProgress(), track };
+}
