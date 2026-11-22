@@ -10,7 +10,7 @@ Nach dem Build lässt sich [dist/index.html](dist/index.html) direkt öffnen, od
 
 ```sh
 npm ci
-npm run dev                 # Port 5274
+npm run dev                 # Port 5276
 npx tsc --noEmit
 npm test
 npm run check:curriculum

@@ -45,6 +45,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | Mathematik 6 Gymnasium (LehrplanPLUS Bayern) | [`mathematik-gymnasium-6/`](mathematik-gymnasium-6/) | https://academy.zam-os.org/mathematik-gymnasium-6/ | `zam-academy:mathematik-gymnasium-6` |
 | Mathematik 7 Gymnasium (LehrplanPLUS Bayern) | [`mathematik-gymnasium-7/`](mathematik-gymnasium-7/) | https://academy.zam-os.org/mathematik-gymnasium-7/ | `zam-academy:mathematik-gymnasium-7` |
 | Geographie 5 Gymnasium (LehrplanPLUS Bayern) | [`geographie-gymnasium-5/`](geographie-gymnasium-5/) | Built by Pages on merge | `zam-academy:geographie-gymnasium-5` |
+| Geographie 7 Gymnasium (LehrplanPLUS Bayern) | [`geographie-gymnasium-7/`](geographie-gymnasium-7/) | Built by Pages on merge | `zam-academy:geographie-gymnasium-7` |
 | Biologie 5 Gymnasium: Natur und Technik 5, Schwerpunkt Biologie (LehrplanPLUS Bayern) | [`biologie-gymnasium-5/`](biologie-gymnasium-5/) | Built by Pages on merge | `zam-academy:biologie-gymnasium-5` |
 | Biologie 6 Gymnasium: Natur und Technik 6, Schwerpunkt Biologie (LehrplanPLUS Bayern) | [`biologie-gymnasium-6/`](biologie-gymnasium-6/) | Built by Pages on merge | `zam-academy:biologie-gymnasium-6` |
 | Mathematik 11 Gymnasium (LehrplanPLUS Bayern) | [`mathematik-gymnasium-11/`](mathematik-gymnasium-11/) | https://academy.zam-os.org/mathematik-gymnasium-11/ | `zam-academy:mathematik-gymnasium-11` |
@@ -88,6 +89,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | Geographie 8 Realschule (LehrplanPLUS Bayern) | [`geographie-realschule-8/`](geographie-realschule-8/) | https://academy.zam-os.org/geographie-realschule-8/ | `zam-academy:geographie-realschule-8` |
 | Informatik 6–8 Realschule (Bavaria, LehrplanPLUS IT 1.1–1.9; one shared introductory course for all tracks) | [`informatik-realschule-8/`](informatik-realschule-8/) | https://academy.zam-os.org/informatik-realschule-8/ | `zam-academy:informatik-realschule-8` |
 | Deutsch 8 Realschule (LehrplanPLUS Bayern, alle Wahlpflichtfächergruppen) | [`deutsch-realschule-8/`](deutsch-realschule-8/) | https://academy.zam-os.org/deutsch-realschule-8/ | `zam-academy:deutsch-realschule-8` |
+| Französisch 7 Realschule (LehrplanPLUS Bayern, IIIa, erstes Lernjahr) | [`franzoesisch-realschule-7/`](franzoesisch-realschule-7/) | Built by Pages on merge | `zam-academy:franzoesisch-realschule-7` |
 | French 8 Realschule (Bavaria, IIIa) | [`franzoesisch-realschule-8/`](franzoesisch-realschule-8/) | Published by Pages on merge | `zam-academy:franzoesisch-realschule-8` |
 | Deutsch 7 Mittelschule (LehrplanPLUS Bayern, Regelklasse und M-Zug) | [`deutsch-mittelschule-7/`](deutsch-mittelschule-7/) | https://academy.zam-os.org/deutsch-mittelschule-7/ | `zam-academy:deutsch-mittelschule-7` |
 | Deutsch 8 Mittelschule (LehrplanPLUS Bayern, Regelklasse und M-Zug) | [`deutsch-mittelschule-8/`](deutsch-mittelschule-8/) | https://academy.zam-os.org/deutsch-mittelschule-8/ | `zam-academy:deutsch-mittelschule-8` |
@@ -201,12 +203,13 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # English 6 Gymnasium: cd englisch-gymnasium-6 (dev server on :5256)
 # German 5 Gymnasium: cd deutsch-gymnasium-5 (dev server on :5249)
 # German 6 Gymnasium: cd deutsch-gymnasium-6 (dev server on :5260)
-# German 7 Gymnasium: cd deutsch-gymnasium-7 (dev server on :5274)
+# German 7 Gymnasium: cd deutsch-gymnasium-7 (dev server on :5276)
 # German 6 Realschule: cd deutsch-realschule-6 (dev server on :5254)
 # Biologie 7 Realschule: cd biologie-realschule-7 (dev server on :5267)
 # German 7 Realschule: cd deutsch-realschule-7 (dev server on :5268)
 # Englisch 6 Realschule: cd englisch-realschule-6 (dev server on :5255)
 # Englisch 7 Realschule: cd englisch-realschule-7 (dev server on :5273)
+# Französisch 7 Realschule: cd franzoesisch-realschule-7 (dev server on :5275)
 # Geschichte 6 Realschule: cd geschichte-realschule-6 (dev server on :5258)
 # Geschichte 7 Realschule: cd geschichte-realschule-7 (dev server on :5271)
 # Biologie 5 Gymnasium: cd biologie-gymnasium-5 (dev server on :5246)
@@ -217,6 +220,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Informatik 6 Gymnasium: cd informatik-gymnasium-6 (dev server on :5251)
 # Informatik 6 Mittelschule: cd informatik-mittelschule-6 (dev server on :5265)
 # Biologie 6 Gymnasium: cd biologie-gymnasium-6 (dev server on :5253)
+# Geography 7 Gymnasium: cd geographie-gymnasium-7 (dev server on :5274)
 # Geschichte 6 Gymnasium: cd geschichte-gymnasium-6 (dev server on :5259)
 # Grade 11 introductory biology: cd biologie-gymnasium-11 (dev server on :5227)
 npm ci
@@ -269,6 +273,8 @@ The [Geschichte 7 package](geschichte-realschule-7/) covers the Grade 7 Realschu
 The [History 8 package](geschichte-realschule-8/) adds 35 core lessons and three optional English extensions, 38 interactive workshops, 76 writing tasks and 76 linked cards. Its [coverage matrix](geschichte-realschule-8/coverage.json) maps all 38 indexed expectations to guided practice or preparation for further source, image, map, local and current-event work. The [inventory](docs/geschichte-8-bestandsabgleich.md) retains the eight older History 8 cards and their histories without transfer. Pages publishes the app and catalog on merge to main; synchronizing the bundled ZAM fixtures is a separate step.
 
 The [Englisch 8 package](englisch-realschule-8/) adds 51 lessons and 102 cards for all Wahlpflichtfächergruppen: North American history, the USA, New York and other cities, Canada, the grade-8 grammar (pronouns, two objects, questions, passive and personal passive, if-clauses type 0–3, receptive participle constructions) and American youth literature. Its [coverage matrix](englisch-realschule-8/coverage.json) maps all 44 Kompetenzerwartungen and topic rows. The [legacy review](docs/englisch-8-bestandsabgleich.md) maps the four old grammar cards to 1 A and 3 C rows; Thomas approved the mapping on 2026-10-29, so since cell 2026.10.2 the type-3 card replaces its equivalent old card and the three C cards stay active.
+
+The [Französisch 7 Realschule package](franzoesisch-realschule-7/) covers the first year of French in group IIIa with 54 lessons in eight stages and 162 linked cards: greetings and introductions, sounds and accents, numbers to 100, articles and plurals, être, avoir and the present tense, questions, the imperative and pronouns, time and dates, school and free time, the futur composé, home, town and shopping, Paris, Brittany and festivals, and listening, reading, mediation, writing and learning methods. Its [coverage matrix](franzoesisch-realschule-7/coverage.json) maps all 70 expectations and topic entries of the official curriculum verbatim; the [curriculum and card record](docs/franzoesisch-7-coverage.md) documents the approved mapping of the four legacy grade 7 cards: two histories move to their successors, two cards stay active.
 
 The [French 8 package](franzoesisch-realschule-8/) adds 40 core lessons, two optional relative-clause extensions and 84 linked cards for Bavarian Realschule group IIIa. Its [coverage matrix](franzoesisch-realschule-8/coverage.json) indexes 56 expectations and topic entries as guided exercises or preparation. The [inventory](docs/franzoesisch-8-bestandsabgleich.md) documents four older grammar cards that remain active without history transfer. Natural audiovisual practice, spontaneous conversations, maps, research and a full vocabulary programme supplement the app. Pages publishes app and cell together on merge; ZAM fixture synchronization is separate.
 

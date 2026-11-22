@@ -292,8 +292,8 @@ describe("Actual page event handlers", () => {
 		},
 	);
 	it.each([
-		"d7-komma-satzreihe-satzgefuege",
-		"d7-modal-lokal-attributsaetze",
+		"d7-komma-apposition-nachtrag",
+		"d7-konzessiv-adversativsaetze",
 		"d7-argumentativer-brief",
 	])(
 		"does not disclose %s's explanation on a wrong click",

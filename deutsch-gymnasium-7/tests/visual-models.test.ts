@@ -36,17 +36,17 @@ describe("Displayed language models and their Grade 7 Gymnasium purpose", () => 
 		);
 	});
 
-	it("contrasts mood, attribute density and clause structure effects in jugendsprache-sprachwandel", () => {
-		expect(words("jugendsprache-sprachwandel", 0)).toContain("werde pünktlich geschlossen");
-		expect(words("jugendsprache-sprachwandel", 1)).toContain("Das schwere, knarrende");
-		expect(words("jugendsprache-sprachwandel", 2)).toContain("Obwohl drei Schüler rannten");
+	it("contrasts mood, attribute density and clause structure effects in sprachliche-gestaltung-wirkung", () => {
+		expect(words("sprachliche-gestaltung-wirkung", 0)).toContain("werde pünktlich geschlossen");
+		expect(words("sprachliche-gestaltung-wirkung", 1)).toContain("Das schwere, knarrende");
+		expect(words("sprachliche-gestaltung-wirkung", 2)).toContain("Obwohl drei Schüler rannten");
 	});
 
-	it("shows case flexibility, verb bracket and cognate roots in ober-unterbegriffe-d6", () => {
-		expect(words("ober-unterbegriffe-d6", 0)).toBe("Den Text liest das Kind.");
-		expect(words("ober-unterbegriffe-d6", 1)).toContain("hat");
-		expect(words("ober-unterbegriffe-d6", 1)).toContain("gelesen.");
-		expect(words("ober-unterbegriffe-d6", 2)).toContain("lat. scribere");
+	it("shows case flexibility, verb bracket and cognate roots in sprache-system-sprachvergleich", () => {
+		expect(words("sprache-system-sprachvergleich", 0)).toBe("Den Text liest das Kind.");
+		expect(words("sprache-system-sprachvergleich", 1)).toContain("hat");
+		expect(words("sprache-system-sprachvergleich", 1)).toContain("gelesen.");
+		expect(words("sprache-system-sprachvergleich", 2)).toContain("lat. scribere");
 	});
 
 	it("builds abstract nouns and splits loanword components in fremdwoerter-funktion", () => {
@@ -64,10 +64,10 @@ describe("Displayed language models and their Grade 7 Gymnasium purpose", () => 
 		expect(words("indikativ-konjunktiv-rede", 2)).toContain("sein Team werde");
 	});
 
-	it("gradates modality, irrealis and politeness with Konjunktiv II in adverbiale-bestimmungen", () => {
-		expect(words("adverbiale-bestimmungen", 0)).toContain("dürfte");
-		expect(words("adverbiale-bestimmungen", 1)).toContain("Wenn ein Schlüssel da wäre");
-		expect(words("adverbiale-bestimmungen", 2)).toContain("Könnten Sie");
+	it("gradates modality, irrealis and politeness with Konjunktiv II in konjunktiv-zwei-modalitaet", () => {
+		expect(words("konjunktiv-zwei-modalitaet", 0)).toContain("dürfte");
+		expect(words("konjunktiv-zwei-modalitaet", 1)).toContain("Wenn ein Schlüssel da wäre");
+		expect(words("konjunktiv-zwei-modalitaet", 2)).toContain("Könnten Sie");
 	});
 
 	it("keeps pre- and post-nominal attributes attached to their head noun", () => {
@@ -83,16 +83,16 @@ describe("Displayed language models and their Grade 7 Gymnasium purpose", () => 
 		);
 	});
 
-	it("contrasts conditional and consecutive clauses and adverbials in kausal-temporalsaetze", () => {
-		expect(words("kausal-temporalsaetze", 0)).toContain("Falls es trocken bleibt,");
-		expect(words("kausal-temporalsaetze", 1)).toContain("sodass wir im Hof spielten.");
-		expect(words("kausal-temporalsaetze", 2)).toContain("Bei gutem Wetter");
+	it("contrasts conditional and consecutive clauses and adverbials in konditional-konsekutivsaetze", () => {
+		expect(words("konditional-konsekutivsaetze", 0)).toContain("Falls es trocken bleibt,");
+		expect(words("konditional-konsekutivsaetze", 1)).toContain("sodass wir im Hof spielten.");
+		expect(words("konditional-konsekutivsaetze", 2)).toContain("Bei gutem Wetter");
 	});
 
-	it("contrasts concessive and adversative clauses and adverbials in modal-lokal-attributsaetze", () => {
-		expect(words("modal-lokal-attributsaetze", 0)).toContain("Obwohl es stürmte,");
-		expect(words("modal-lokal-attributsaetze", 1)).toContain("Trotz des heftigen Sturms");
-		expect(words("modal-lokal-attributsaetze", 2)).toContain(
+	it("contrasts concessive and adversative clauses and adverbials in konzessiv-adversativsaetze", () => {
+		expect(words("konzessiv-adversativsaetze", 0)).toContain("Obwohl es stürmte,");
+		expect(words("konzessiv-adversativsaetze", 1)).toContain("Trotz des heftigen Sturms");
+		expect(words("konzessiv-adversativsaetze", 2)).toContain(
 			"während die Achte in die Aula umzog.",
 		);
 	});
@@ -103,20 +103,20 @@ describe("Displayed language models and their Grade 7 Gymnasium purpose", () => 
 		expect(words("satzreihe-satzgefuege", 2)).toContain("sodass man im Flur leuchtete.");
 	});
 
-	it("marks obligatory commas for infinitive and participle groups in das-oder-dass", () => {
-		expect(words("das-oder-dass", 0)).toContain("um den Preis zu gewinnen.");
-		expect(words("das-oder-dass", 1)).toContain("Sie denkt daran,");
-		expect(words("das-oder-dass", 2)).toContain("Vom Lärm geweckt,");
+	it("marks obligatory commas for infinitive and participle groups in komma-infinitiv-partizip", () => {
+		expect(words("komma-infinitiv-partizip", 0)).toContain("um den Preis zu gewinnen.");
+		expect(words("komma-infinitiv-partizip", 1)).toContain("Sie denkt daran,");
+		expect(words("komma-infinitiv-partizip", 2)).toContain("Vom Lärm geweckt,");
 	});
 
-	it("keeps appositions in congruent case and encloses postposed specifications in komma-satzreihe-satzgefuege", () => {
-		expect(words("komma-satzreihe-satzgefuege", 0)).toContain(
+	it("keeps appositions in congruent case and encloses postposed specifications in komma-apposition-nachtrag", () => {
+		expect(words("komma-apposition-nachtrag", 0)).toContain(
 			"die neue Bibliotheksleiterin,",
 		);
-		expect(words("komma-satzreihe-satzgefuege", 1)).toContain(
+		expect(words("komma-apposition-nachtrag", 1)).toContain(
 			"dem erfahrenen Trainer,",
 		);
-		expect(words("komma-satzreihe-satzgefuege", 2)).toContain(
+		expect(words("komma-apposition-nachtrag", 2)).toContain(
 			"vor allem Naturballaden,",
 		);
 	});

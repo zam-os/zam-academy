@@ -1,0 +1,380 @@
+[
+	{
+		"id": "f7-verbes-er",
+		"stage": "f7-verbes",
+		"title": "Je parle, nous parlons",
+		"skill": "Regelmäßige Verben auf ‑er im Präsens bilden",
+		"bindings": ["1.2-grammatik", "1.1-sprechen"],
+		"paragraphs": [
+			"Die meisten französischen Verben enden im Infinitiv auf ‑er: parler (sprechen), habiter (wohnen), jouer (spielen), aimer (mögen), regarder (anschauen). Du streichst ‑er und hängst die Endungen an: je parle, tu parles, il / elle / on parle, nous parlons, vous parlez, ils / elles parlent.",
+			"Vier Formen klingen gleich: parle, parles, parle und parlent sprichst du alle [paʁl]; das ‑ent der 3. Person Plural ist stumm. Hörbar sind nur ‑ons [ɔ̃] und ‑ez [e]. Beginnt das Verb mit Vokal, wird je zu j’ und bei nous, vous, ils, elles sprichst du eine Bindung: j’habite, nous‿habitons [nuzabitɔ̃]. Beispiel: Le soir, nous regardons un film. Léa et Hugo jouent aux cartes."
+		],
+		"material": "Léa habite à Rennes. Le soir, elle regarde la télé avec son frère. Ils aiment les séries. Hugo joue de la guitare. Et vous, vous parlez anglais ? – Oui, nous parlons anglais et un peu français. J’adore les langues !",
+		"materialLabel": "Eigenes Übungsmaterial · erfundene Personen",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp-f7"],
+		"quiz": {
+			"optionLanguage": "fr",
+			"question": "Léa et Hugo ___ aux cartes. (jouer)",
+			"answer": "jouent",
+			"wrong": ["jouons", "jouez"],
+			"explanation": "Ils / elles: Endung ‑ent, die stumm bleibt."
+		},
+		"takeaway": "‑er-Verben: Stamm + ‑e, ‑es, ‑e, ‑ons, ‑ez, ‑ent. Gesprochen gleich: parle, parles, parle, parlent. Hörbar: nous parlons, vous parlez.",
+		"practice": [
+			{ "prompt": "Nous ___ français. (parler)", "answers": ["parlons"], "feedback": "Nous: Endung ‑ons." },
+			{ "prompt": "Tu ___ à Lyon ? (habiter)", "answers": ["habites"], "feedback": "Tu: Endung ‑es, stumm." }
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Konjugiere regarder in allen sechs Personen und markiere die Endungen. Schreibe dann einen Satz mit nous.",
+				"model": "je regarde, tu regardes, il regarde, nous regardons, vous regardez, ils regardent. Nous regardons un film.",
+				"criteria": ["Ich schreibe alle sechs Formen.", "Ich verwende die richtigen Endungen.", "Mein Satz mit nous ist richtig."]
+			},
+			"2": {
+				"prompt": "Schreibe fünf Sätze darüber, was deine Familie am Abend macht. Verwende fünf verschiedene ‑er-Verben und mindestens vier verschiedene Personen.",
+				"model": "Le soir, je joue avec mon chien. Ma mère regarde un film. Mon frère écoute de la musique. Nous mangeons ensemble. Mes grands-parents téléphonent souvent.",
+				"criteria": ["Ich verwende fünf verschiedene ‑er-Verben.", "Ich verwende vier verschiedene Personen.", "Alle Endungen stimmen."]
+			}
+		},
+		"workshop": {
+			"kind": "sentence",
+			"goals": [
+				{ "label": "nous", "before": "Nous", "after": "anglais.", "options": ["parlons", "parlez", "parlent"], "answer": "parlons", "explanation": "Nous parlons." },
+				{ "label": "ils", "before": "Ils", "after": "les séries.", "options": ["aiment", "aimons", "aimes"], "answer": "aiment", "explanation": "Ils aiment: ‑ent ist stumm." },
+				{ "label": "tu", "before": "Tu", "after": "à Rennes ?", "options": ["habites", "habitez", "habite"], "answer": "habites", "explanation": "Tu habites: Endung ‑es." }
+			]
+		},
+		"conjugation": [
+			{ "verb": "parler", "meaning": "sprechen", "rows": [["je", "parl", "e"], ["tu", "parl", "es"], ["il / elle / on", "parl", "e"], ["nous", "parl", "ons"], ["vous", "parl", "ez"], ["ils / elles", "parl", "ent"]], "note": "Stumm: ‑e, ‑es, ‑e, ‑ent. Hörbar: ‑ons, ‑ez." }
+		],
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "f7-cer-ger",
+		"stage": "f7-verbes",
+		"title": "Nous mangeons, nous commençons",
+		"skill": "Verben auf ‑cer und ‑ger richtig schreiben",
+		"bindings": ["1.2-grammatik"],
+		"paragraphs": [
+			"Verben auf ‑cer und ‑ger sind regelmäßig, ändern aber bei nous die Schreibung, damit der Laut gleich bleibt. Bei ‑ger steht vor ‑ons ein e: manger → nous mangeons, nager → nous nageons. Ohne e würde g vor o hart klingen wie in gorille. Bei ‑cer bekommt c eine Cédille: commencer → nous commençons, lancer → nous lançons. Ohne Cédille würde c vor o wie [k] klingen.",
+			"Alle anderen Formen bleiben normal: je mange, tu manges, vous mangez, ils mangent; je commence, vous commencez. Beispiel: À la cantine, nous mangeons à midi. Le cours commence à huit heures. Nous commençons avec les maths. Merke: Die Änderung gibt es nur, wenn danach a oder o folgt, im Präsens also nur bei nous."
+		],
+		"material": "Au collège, les cours commencent à huit heures. Le lundi, nous commençons avec le français. À midi, nous mangeons à la cantine. Le mercredi après-midi, nous nageons à la piscine. Vous mangez à la cantine aussi ?",
+		"materialLabel": "Eigenes Übungsmaterial · erfundener Stundenplan",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp-f7"],
+		"quiz": {
+			"optionLanguage": "fr",
+			"question": "À midi, nous ___ à la cantine. (manger)",
+			"answer": "mangeons",
+			"wrong": ["mangons", "mangez"],
+			"explanation": "Bei ‑ger steht vor ‑ons ein e: nous mangeons."
+		},
+		"takeaway": "‑ger: nous mangeons (e vor o). ‑cer: nous commençons (ç vor o). Sonst ganz regelmäßig wie parler.",
+		"practice": [
+			{ "prompt": "Nous ___ à huit heures. (commencer)", "answers": ["commençons"], "feedback": "Ç vor o: nous commençons." },
+			{ "prompt": "Nous ___ à la piscine. (nager)", "answers": ["nageons"], "feedback": "E vor o: nous nageons." }
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe zu manger und commencer je die Form mit je, nous und ils und markiere die besondere Schreibung.",
+				"model": "je mange, nous mangeons, ils mangent; je commence, nous commençons, ils commencent.",
+				"criteria": ["Ich schreibe nous mangeons mit e.", "Ich schreibe nous commençons mit ç.", "Die übrigen Formen sind regelmäßig."]
+			},
+			"2": {
+				"prompt": "Beschreibe einen Schultag deiner Klasse in drei Sätzen mit nous. Verwende commencer, manger und nager oder ranger.",
+				"model": "Nous commençons à huit heures. À midi, nous mangeons à la cantine. Le jeudi, nous nageons à la piscine.",
+				"criteria": ["Ich verwende drei ‑cer- oder ‑ger-Verben mit nous.", "Die Schreibung ist richtig.", "Meine Sätze beschreiben einen Schultag."]
+			}
+		},
+		"workshop": {
+			"kind": "sentence",
+			"goals": [
+				{ "label": "‑ger", "before": "Nous", "after": "à midi.", "options": ["mangeons", "mangons", "mangeont"], "answer": "mangeons", "explanation": "E erhält den weichen Laut." },
+				{ "label": "‑cer", "before": "Nous", "after": "avec le français.", "options": ["commençons", "commencons", "commenssons"], "answer": "commençons", "explanation": "Ç erhält den [s]-Laut." },
+				{ "label": "ohne Änderung", "before": "Vous", "after": "à la cantine ?", "options": ["mangez", "mangeez", "mangeons"], "answer": "mangez", "explanation": "Vor e gibt es keine Änderung." }
+			]
+		},
+		"conjugation": [
+			{ "verb": "manger", "meaning": "essen", "rows": [["je", "mang", "e"], ["tu", "mang", "es"], ["il / elle / on", "mang", "e"], ["nous", "mange", "ons"], ["vous", "mang", "ez"], ["ils / elles", "mang", "ent"]], "note": "nous mangeons: e vor o" },
+			{ "verb": "commencer", "meaning": "beginnen", "rows": [["je", "commenc", "e"], ["tu", "commenc", "es"], ["il / elle / on", "commenc", "e"], ["nous", "commenç", "ons"], ["vous", "commenc", "ez"], ["ils / elles", "commenc", "ent"]], "note": "nous commençons: ç vor o" }
+		],
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "f7-aller-faire",
+		"stage": "f7-verbes",
+		"title": "Je vais, je fais",
+		"skill": "Die unregelmäßigen Verben aller und faire verwenden",
+		"bindings": ["1.2-grammatik", "1.1-sprechen"],
+		"paragraphs": [
+			"Aller (gehen, fahren) endet auf ‑er, ist aber unregelmäßig: je vais, tu vas, il / elle / on va, nous allons, vous allez, ils / elles vont. Wohin du gehst, sagst du mit à: Je vais à Paris. Je vais à la piscine. Mit Ça va ? fragst du, wie es geht; auch das kommt von aller.",
+			"Faire (machen, tun) ist ebenfalls unregelmäßig: je fais, tu fais, il / elle / on fait, nous faisons, vous faites, ils / elles font. Achtung: vous faites (nicht vous faisez) und nous faisons wird [fəzɔ̃] gesprochen. Beispiel: Qu’est-ce que tu fais samedi ? – Je vais à la piscine avec Léa. Ils font du vélo. Viele Freizeitausdrücke brauchen faire: faire du sport, faire les devoirs (die Hausaufgaben machen)."
+		],
+		"material": "Samedi, Léa et Inès vont au marché. Hugo fait du vélo avec son père. Moi, je fais mes devoirs et après, je vais à la piscine. Et vous, qu’est-ce que vous faites ? – Nous allons au cinéma !",
+		"materialLabel": "Eigenes Übungsmaterial · erfundene Personen",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp-f7"],
+		"quiz": {
+			"optionLanguage": "fr",
+			"question": "Qu’est-ce que vous ___ samedi ? (faire)",
+			"answer": "faites",
+			"wrong": ["faisez", "font"],
+			"explanation": "Die vous-Form von faire ist unregelmäßig: vous faites."
+		},
+		"takeaway": "aller: vais, vas, va, allons, allez, vont. faire: fais, fais, fait, faisons, faites, font. Aufpassen bei vous faites und ils vont / ils font.",
+		"practice": [
+			{ "prompt": "Ils ___ au cinéma. (aller)", "answers": ["vont"], "feedback": "Ils vont: sie gehen." },
+			{ "prompt": "Hugo ___ du vélo. (faire)", "answers": ["fait"], "feedback": "Il fait: er macht." }
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Ergänze: Je ___ à l’école. Nous ___ les devoirs. Vous ___ au parc ? Elles ___ du sport.",
+				"model": "Je vais à l’école. Nous faisons les devoirs. Vous allez au parc ? Elles font du sport.",
+				"criteria": ["Ich unterscheide aller und faire nach der Bedeutung.", "Ich verwende die unregelmäßigen Formen richtig.", "Ich schreibe nous faisons und elles font richtig."]
+			},
+			"2": {
+				"prompt": "Schreibe eine kurze Nachricht an eine Freundin: Was machen du und deine Familie am Wochenende, und wohin geht ihr? Verwende aller und faire je zweimal.",
+				"model": "Salut Emma ! Samedi, je vais au marché avec ma mère. Mon père fait du jardinage. Dimanche, nous allons chez ma grand-mère et nous faisons un gâteau. Et toi ?",
+				"criteria": ["Ich verwende aller und faire je zweimal.", "Ich verwende mehrere Personen.", "Die Nachricht hat Gruß und Frage."]
+			}
+		},
+		"workshop": {
+			"kind": "sentence",
+			"goals": [
+				{ "label": "aller, ils", "before": "Léa et Inès", "after": "au marché.", "options": ["vont", "font", "allent"], "answer": "vont", "explanation": "Ils / elles vont." },
+				{ "label": "faire, vous", "before": "Qu’est-ce que vous", "after": "?", "options": ["faites", "faisez", "fait"], "answer": "faites", "explanation": "Vous faites ist unregelmäßig." },
+				{ "label": "aller, je", "before": "Je", "after": "à la piscine.", "options": ["vais", "vas", "va"], "answer": "vais", "explanation": "Je vais." }
+			]
+		},
+		"conjugation": [
+			{ "verb": "aller", "meaning": "gehen, fahren", "rows": [["je", "vais", ""], ["tu", "vas", ""], ["il / elle / on", "va", ""], ["nous", "all", "ons"], ["vous", "all", "ez"], ["ils / elles", "vont", ""]], "note": "Nur nous und vous sehen regelmäßig aus." },
+			{ "verb": "faire", "meaning": "machen", "rows": [["je", "fais", ""], ["tu", "fais", ""], ["il / elle / on", "fait", ""], ["nous", "fais", "ons"], ["vous", "faites", ""], ["ils / elles", "font", ""]], "note": "Vous faites, nicht vous faisez." }
+		],
+		"listening": false,
+		"speaking": true
+	},
+	{
+		"id": "f7-prendre",
+		"stage": "f7-verbes",
+		"title": "Je prends le bus",
+		"skill": "Das unregelmäßige Verb prendre verwenden",
+		"bindings": ["1.2-grammatik", "5"],
+		"paragraphs": [
+			"Prendre heißt nehmen und wird oft gebraucht: prendre le bus (den Bus nehmen), prendre un croissant (ein Croissant nehmen), prendre le petit-déjeuner (frühstücken). Die Formen: je prends, tu prends, il / elle / on prend, nous prenons, vous prenez, ils / elles prennent. Im Singular hörst du nur [pʁɑ̃]; das d und das s sind stumm.",
+			"Im Plural ändert sich der Stamm: nous prenons und vous prenez mit einem n, ils prennent mit nn. Beispiel: Le matin, je prends le bus à sept heures et demie. Mes parents prennent la voiture. Au café: Qu’est-ce que vous prenez ? – Je prends un chocolat chaud, s’il vous plaît. Genauso gehen apprendre (lernen) und comprendre (verstehen): Je ne comprends pas."
+		],
+		"material": "Le matin, Léa prend le petit-déjeuner avec sa sœur. Après, elles prennent le bus pour aller au collège. Hugo ne prend pas le bus : il va au collège à vélo. Au café : – Qu’est-ce que vous prenez ? – Nous prenons deux jus d’orange, s’il vous plaît.",
+		"materialLabel": "Eigenes Übungsmaterial · erfundene Personen",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp-f7"],
+		"quiz": {
+			"optionLanguage": "fr",
+			"question": "Mes parents ___ la voiture.",
+			"answer": "prennent",
+			"wrong": ["prenent", "prendent"],
+			"explanation": "Ils / elles prennent: mit doppeltem n."
+		},
+		"takeaway": "prendre: prends, prends, prend, prenons, prenez, prennent. Im Plural fällt das d weg; ils prennent mit nn. Ebenso apprendre, comprendre.",
+		"practice": [
+			{ "prompt": "Qu’est-ce que vous ___ ? (prendre)", "answers": ["prenez"], "feedback": "Vous prenez." },
+			{ "prompt": "Léa ___ le bus. (prendre)", "answers": ["prend"], "feedback": "Il / elle prend, mit d." }
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Ergänze mit prendre: Je ___ le bus. Nous ___ un croissant. Ils ___ le train. Tu ___ le petit-déjeuner ?",
+				"model": "Je prends le bus. Nous prenons un croissant. Ils prennent le train. Tu prends le petit-déjeuner ?",
+				"criteria": ["Ich verwende im Singular prends / prend.", "Ich schreibe nous prenons mit einem n.", "Ich schreibe ils prennent mit nn."]
+			},
+			"2": {
+				"prompt": "Du bist mit deiner Familie in einem Café in Frankreich. Schreibe einen kurzen Dialog mit der Bedienung. Jede Person bestellt etwas; verwende prendre mindestens dreimal mit verschiedenen Personen.",
+				"model": "– Bonjour ! Qu’est-ce que vous prenez ? – Je prends un chocolat chaud. Ma sœur prend un jus d’orange et mes parents prennent deux cafés, s’il vous plaît. – Très bien.",
+				"criteria": ["Ich verwende prendre mit drei Personen.", "Ich bestelle höflich.", "Der Dialog hat Frage und Antwort."]
+			}
+		},
+		"workshop": {
+			"kind": "sentence",
+			"goals": [
+				{ "label": "il", "before": "Léa", "after": "le petit-déjeuner.", "options": ["prend", "prends", "prent"], "answer": "prend", "explanation": "Elle prend: mit d." },
+				{ "label": "nous", "before": "Nous", "after": "deux jus d’orange.", "options": ["prenons", "prennons", "prendons"], "answer": "prenons", "explanation": "Nous prenons: ein n." },
+				{ "label": "elles", "before": "Elles", "after": "le bus.", "options": ["prennent", "prenent", "prendent"], "answer": "prennent", "explanation": "Elles prennent: nn." }
+			]
+		},
+		"conjugation": [
+			{ "verb": "prendre", "meaning": "nehmen", "rows": [["je", "prend", "s"], ["tu", "prend", "s"], ["il / elle / on", "prend", ""], ["nous", "pren", "ons"], ["vous", "pren", "ez"], ["ils / elles", "prenn", "ent"]], "note": "Im Plural ohne d; ils prennent mit nn." }
+		],
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "f7-vouloir-pouvoir",
+		"stage": "f7-verbes",
+		"title": "Je voudrais… On peut…",
+		"skill": "Wünsche und Vorschläge mit vouloir und pouvoir äußern",
+		"bindings": ["1.2-grammatik", "1.2-wortschatz", "1.1-sprechen"],
+		"paragraphs": [
+			"Vouloir heißt wollen: je veux, tu veux, il / elle / on veut, nous voulons, vous voulez, ils / elles veulent. Pouvoir heißt können oder dürfen: je peux, tu peux, il / elle / on peut, nous pouvons, vous pouvez, ils / elles peuvent. Nach beiden Verben steht oft ein Infinitiv: Tu veux jouer ? Je peux venir ?",
+			"Höflich äußerst du einen Wunsch mit je voudrais (ich möchte): Je voudrais un croissant, s’il vous plaît. Einen Vorschlag machst du mit On peut … ? (Wir können …): On peut aller au parc ? Antworten: D’accord ! Bonne idée ! oder Non, je ne peux pas. Beispiel: Tu veux venir au cinéma samedi ? – Oui, je veux bien ! – On peut prendre le bus ensemble."
+		],
+		"material": "Inès : Léa, tu veux venir au cinéma samedi ? Léa : Je voudrais bien, mais je ne peux pas. Je vais chez ma grand-mère. Inès : Dommage ! On peut aller au parc dimanche ? Léa : Oui, bonne idée ! Mes frères veulent venir aussi. Ils peuvent ? Inès : Bien sûr !",
+		"materialLabel": "Eigenes Übungsmaterial · erfundene Personen",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp-f7"],
+		"quiz": {
+			"optionLanguage": "fr",
+			"question": "Du möchtest in der Bäckerei höflich ein Croissant.",
+			"answer": "Je voudrais un croissant, s’il vous plaît.",
+			"wrong": ["Je veux un croissant !", "Je peux un croissant."],
+			"explanation": "Je voudrais ist die höfliche Form für einen Wunsch."
+		},
+		"takeaway": "vouloir: veux, veux, veut, voulons, voulez, veulent · pouvoir: peux, peux, peut, pouvons, pouvez, peuvent. Höflich: je voudrais. Vorschlag: On peut … ?",
+		"practice": [
+			{ "prompt": "Tu ___ venir ? (vouloir)", "answers": ["veux"], "feedback": "Tu veux: du willst." },
+			{ "prompt": "Ils ___ venir aussi ? (pouvoir)", "answers": ["peuvent"], "feedback": "Ils peuvent: sie können." }
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe drei Vorschläge für Samstag mit On peut … ? und antworte auf einen davon mit Zustimmung, auf einen mit Ablehnung.",
+				"model": "On peut aller à la piscine ? – D’accord ! On peut jouer au foot ? – Non, je ne peux pas. On peut regarder un film ?",
+				"criteria": ["Ich mache drei Vorschläge mit on peut + Infinitiv.", "Ich stimme einmal zu.", "Ich lehne einmal höflich ab."]
+			},
+			"2": {
+				"prompt": "Deine französische Brieffreundin lädt dich ins Kino ein, aber du kannst nicht. Antworte mit einer Begründung und schlage einen anderen Tag und eine andere Aktivität vor.",
+				"model": "Merci, je voudrais bien, mais samedi je ne peux pas : je vais chez mon oncle. On peut aller à la piscine dimanche ? Mes cousins veulent venir aussi.",
+				"criteria": ["Ich lehne höflich mit Grund ab.", "Ich mache einen neuen Vorschlag mit on peut.", "Ich verwende vouloir oder je voudrais."]
+			}
+		},
+		"workshop": {
+			"kind": "dialogue",
+			"goals": [
+				{ "label": "Höflicher Wunsch", "before": "Je", "after": "un croissant, s’il vous plaît.", "options": ["voudrais", "veux", "peux"], "answer": "voudrais", "explanation": "Je voudrais ist höflich." },
+				{ "label": "Vorschlag", "before": "On", "after": "aller au parc ?", "options": ["peut", "peux", "veulent"], "answer": "peut", "explanation": "On peut: 3. Person Singular." },
+				{ "label": "Ablehnung", "before": "Non, je ne", "after": "pas.", "options": ["peux", "peut", "pouvons"], "answer": "peux", "explanation": "Je ne peux pas: ich kann nicht." }
+			]
+		},
+		"conjugation": [
+			{ "verb": "vouloir", "meaning": "wollen", "rows": [["je", "veux", ""], ["tu", "veux", ""], ["il / elle / on", "veut", ""], ["nous", "voul", "ons"], ["vous", "voul", "ez"], ["ils / elles", "veul", "ent"]], "note": "Höflich: je voudrais." },
+			{ "verb": "pouvoir", "meaning": "können", "rows": [["je", "peux", ""], ["tu", "peux", ""], ["il / elle / on", "peut", ""], ["nous", "pouv", "ons"], ["vous", "pouv", "ez"], ["ils / elles", "peuv", "ent"]], "note": "Vorschlag: On peut … ?" }
+		],
+		"listening": false,
+		"speaking": true
+	},
+	{
+		"id": "f7-negation",
+		"stage": "f7-verbes",
+		"title": "Je ne joue pas",
+		"skill": "Sätze mit ne … pas verneinen",
+		"bindings": ["1.2-grammatik", "1.1-sprechen"],
+		"paragraphs": [
+			"Die Verneinung hat im Französischen zwei Teile. Ne steht vor dem konjugierten Verb, pas direkt danach: Je joue. → Je ne joue pas. Vor Vokal oder stummem h wird ne zu n’: Il n’aime pas les maths. Elle n’habite pas à Paris. Beim futur composé umklammert die Verneinung die Form von aller: Je ne vais pas jouer.",
+			"Nach pas wird aus un, une und des meist de oder d’: J’ai un chien. → Je n’ai pas de chien. Il y a des bus. → Il n’y a pas de bus. Le, la und les bleiben: Je n’aime pas le foot. In der gesprochenen Alltagssprache fällt ne oft weg (J’aime pas), in der Schule schreibst du immer ne … pas. Beispiel: Le mercredi, Léa ne va pas au collège l’après-midi."
+		],
+		"material": "Hugo n’aime pas le lundi. Il ne joue pas au foot, il n’a pas de cours de sport et il n’y a pas de frites à la cantine. Léa n’habite pas à Paris, elle habite à Rennes. Elle n’a pas de chien, mais elle a un chat.",
+		"materialLabel": "Eigenes Übungsmaterial · erfundene Personen",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp-f7"],
+		"quiz": {
+			"optionLanguage": "fr",
+			"question": "Verneine: J’ai un chien.",
+			"answer": "Je n’ai pas de chien.",
+			"wrong": ["Je n’ai pas un chien.", "Je ne pas ai de chien."],
+			"explanation": "Ne vor, pas nach dem Verb; un wird nach pas zu de."
+		},
+		"takeaway": "ne + Verb + pas · vor Vokal n’ · un, une, des → de nach pas · le, la, les bleiben.",
+		"practice": [
+			{ "prompt": "Il ___ aime pas les maths.", "answers": ["n’", "n'"], "feedback": "Vor Vokal wird ne zu n’." },
+			{ "prompt": "Il n’y a pas ___ frites.", "answers": ["de"], "feedback": "Des wird nach pas zu de." }
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Verneine die Sätze: Je joue au foot. Elle habite à Lyon. Nous avons des devoirs. Tu aimes le chocolat ?",
+				"model": "Je ne joue pas au foot. Elle n’habite pas à Lyon. Nous n’avons pas de devoirs. Tu n’aimes pas le chocolat ?",
+				"criteria": ["Ne und pas stehen um das Verb.", "Ich schreibe n’ vor Vokal.", "Ich verwende de nach pas, aber le bleibt."]
+			},
+			"2": {
+				"prompt": "Schreibe fünf Sätze darüber, was es in deinem Ort nicht gibt oder was du am Montag nicht machst. Verwende mindestens zweimal pas de.",
+				"model": "Dans mon village, il n’y a pas de piscine et il n’y a pas de cinéma. Le lundi, je ne joue pas au foot. Je ne regarde pas la télé. Ma sœur n’a pas de cours l’après-midi.",
+				"criteria": ["Ich schreibe fünf verneinte Sätze.", "Ich verwende mindestens zweimal pas de.", "Ich verwende n’ vor Vokal."]
+			}
+		},
+		"workshop": {
+			"kind": "sentence",
+			"goals": [
+				{ "label": "Stellung", "before": "Hugo ne joue", "after": "au foot.", "options": ["pas", "ne", "de"], "answer": "pas", "explanation": "Pas folgt direkt auf das Verb." },
+				{ "label": "vor Vokal", "before": "Léa", "after": "habite pas à Paris.", "options": ["n’", "ne", "pas"], "answer": "n’", "explanation": "Vor Vokal: n’." },
+				{ "label": "nach pas", "before": "Elle n’a pas", "after": "chien.", "options": ["de", "un", "des"], "answer": "de", "explanation": "Un wird nach pas zu de." }
+			]
+		},
+		"explorer": {
+			"caption": "Verneinungsklammer · Wähle einen Satz",
+			"steps": [
+				{ "label": "Verb", "icon": "⟨ ⟩", "example": "Je ne joue pas.", "detail": "Ne und pas umklammern das Verb.", "tone": "v" },
+				{ "label": "Vokal", "icon": "n’", "example": "Il n’aime pas les maths.", "detail": "Vor Vokal wird ne zu n’." },
+				{ "label": "Menge", "icon": "0", "example": "Je n’ai pas de chien.", "detail": "Un, une, des werden nach pas zu de." }
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "f7-cod",
+		"stage": "f7-verbes",
+		"title": "Je regarde un film",
+		"skill": "Sätze mit direktem Objekt in der Reihenfolge S‑V‑O bilden",
+		"bindings": ["1.2-grammatik", "4"],
+		"paragraphs": [
+			"Ein französischer Aussagesatz folgt meist der Reihenfolge Subjekt – Verb – Objekt (S‑V‑O), wie im Englischen: Léa (S) regarde (V) un film (O). I (S) watch (V) a film (O). Das direkte Objekt (le complément d’objet direct) folgt ohne Präposition auf das Verb und antwortet auf die Frage „wen oder was?“: Hugo cherche son sac. Wen oder was sucht Hugo? Son sac.",
+			"Im Deutschen kann das Verb nach vorne rücken: Heute sehe ich einen Film. Im Französischen bleibt das Subjekt vor dem Verb, eine Zeitangabe steht davor oder am Ende: Aujourd’hui, je regarde un film. Je regarde un film aujourd’hui. Typische Verben mit direktem Objekt: regarder, écouter, chercher, aimer, prendre, faire. Beispiel: Le soir, mon père écoute la radio."
+		],
+		"material": "Aujourd’hui, Léa cherche son livre de français. Elle regarde sous le lit. Hugo écoute de la musique. Le soir, mon père prépare le dîner et ma mère lit le journal. Le samedi, nous faisons un gâteau.",
+		"materialLabel": "Eigenes Übungsmaterial · erfundene Personen",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp-f7"],
+		"quiz": {
+			"optionLanguage": "fr",
+			"question": "„Heute sehe ich einen Film.“",
+			"answer": "Aujourd’hui, je regarde un film.",
+			"wrong": ["Aujourd’hui regarde je un film.", "Aujourd’hui, un film je regarde."],
+			"explanation": "Das Subjekt bleibt vor dem Verb; das Objekt folgt."
+		},
+		"takeaway": "Subjekt – Verb – Objekt, wie im Englischen. Das direkte Objekt steht ohne Präposition hinter dem Verb. Zeitangaben am Anfang oder am Ende, das Subjekt bleibt vor dem Verb.",
+		"practice": [
+			{ "prompt": "Ordne: un gâteau / fait / Léa", "answers": ["Léa fait un gâteau"], "feedback": "S‑V‑O: Léa fait un gâteau." },
+			{ "prompt": "Wen oder was sucht Hugo? Hugo cherche ___ sac.", "answers": ["son"], "feedback": "Son sac ist das direkte Objekt." }
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Ordne die Wörter zu Sätzen und unterstreiche das direkte Objekt: la radio / écoute / mon père – aujourd’hui / cherche / Léa / son livre.",
+				"model": "Mon père écoute la radio. Aujourd’hui, Léa cherche son livre. Objekte: la radio, son livre.",
+				"criteria": ["Ich bilde Sätze in der Reihenfolge S‑V‑O.", "Die Zeitangabe steht am Anfang mit Komma.", "Ich erkenne das direkte Objekt."]
+			},
+			"2": {
+				"prompt": "Übersetze und erkläre auf Deutsch den Unterschied in der Wortstellung: „Am Samstag backen wir einen Kuchen.“ – „Heute höre ich Musik.“",
+				"model": "Le samedi, nous faisons un gâteau. Aujourd’hui, j’écoute de la musique. Im Deutschen steht das Verb an zweiter Stelle vor dem Subjekt; im Französischen bleibt die Reihenfolge Subjekt – Verb – Objekt.",
+				"criteria": ["Ich übersetze beide Sätze richtig.", "Ich erkläre die Wortstellung.", "Ich vergleiche mit dem Deutschen."],
+				"language": "de"
+			}
+		},
+		"workshop": {
+			"kind": "sentence",
+			"goals": [
+				{ "label": "Subjekt", "before": "Aujourd’hui,", "after": "regarde un film.", "options": ["je", "film", "un"], "answer": "je", "explanation": "Das Subjekt steht vor dem Verb." },
+				{ "label": "Verb", "before": "Mon père", "after": "la radio.", "options": ["écoute", "la", "radio"], "answer": "écoute", "explanation": "Das Verb folgt auf das Subjekt." },
+				{ "label": "Objekt", "before": "Hugo cherche", "after": ".", "options": ["son sac", "à son sac", "sac son"], "answer": "son sac", "explanation": "Das direkte Objekt folgt ohne Präposition." }
+			]
+		},
+		"explorer": {
+			"caption": "Satzbausteine · Wähle eine Sprache",
+			"steps": [
+				{ "label": "Français", "icon": "S V O", "example": "Aujourd’hui, je regarde un film.", "detail": "Subjekt vor Verb, Objekt danach." },
+				{ "label": "English", "icon": "S V O", "example": "Today, I watch a film.", "detail": "Gleiche Reihenfolge wie im Französischen." },
+				{ "label": "Deutsch", "icon": "V S O", "example": "Heute sehe ich einen Film.", "detail": "Das Verb steht an zweiter Stelle, das Subjekt rückt nach hinten." }
+			]
+		},
+		"listening": false,
+		"speaking": false
+	}
+]

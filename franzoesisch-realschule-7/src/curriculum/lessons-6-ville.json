@@ -1,0 +1,330 @@
+[
+	{
+		"id": "f7-maison",
+		"stage": "f7-ville",
+		"title": "Le chat est sous la table",
+		"skill": "Mit Ortsangaben sagen, wo etwas ist",
+		"bindings": ["1.2-wortschatz", "1.1-sprechen", "5"],
+		"paragraphs": [
+			"Wo etwas ist, sagst du mit Präpositionen: dans (in), sur (auf), sous (unter), devant (vor), derrière (hinter), à côté de (neben). Dazu kommt das Verb être: Le chat est sous la table. Mon sac est dans ma chambre. Wo jemand wohnt, sagst du mit à + Stadt (J’habite à Lyon) oder chez + Person (chez moi, chez Léa: bei Léa zu Hause).",
+			"Zimmer der Wohnung: la cuisine (Küche), le salon (Wohnzimmer), la salle de bains (Bad), la chambre (Schlafzimmer), le jardin (Garten). Möbel: le lit, la table, la chaise, l’armoire (Schrank), le bureau (Schreibtisch). Beispiel: Dans ma chambre, il y a un lit et un bureau. Mon ordinateur est sur le bureau. Mes chaussures sont sous le lit. Achte auf de bei à côté de: à côté de la fenêtre, à côté du lit (de + le = du)."
+		],
+		"material": "Ma chambre est petite, mais elle est super. Il y a un lit, un bureau et une armoire. Mon ordinateur est sur le bureau. Mon sac à dos est devant la porte. Mes chaussures sont sous le lit. Et où est Minou ? Il est derrière l’armoire ! Ou dans le carton ?",
+		"materialLabel": "Eigenes Übungsmaterial · erfundenes Zimmer",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp-f7"],
+		"quiz": {
+			"optionLanguage": "fr",
+			"question": "Die Katze liegt unter dem Tisch.",
+			"answer": "Le chat est sous la table.",
+			"wrong": ["Le chat est sur la table.", "Le chat est dans la table."],
+			"explanation": "Sous heißt unter, sur heißt auf."
+		},
+		"takeaway": "dans (in) · sur (auf) · sous (unter) · devant (vor) · derrière (hinter) · à côté de (neben) · chez + Person (bei). Mit être: Le chat est sous la table.",
+		"practice": [
+			{ "prompt": "L’ordinateur est ___ le bureau. (auf)", "answers": ["sur"], "feedback": "Sur heißt auf." },
+			{ "prompt": "Le sac est ___ la porte. (vor)", "answers": ["devant"], "feedback": "Devant heißt vor." }
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Beschreibe dein Zimmer oder ein erfundenes Zimmer in vier Sätzen. Verwende vier verschiedene Ortsangaben.",
+				"model": "Dans ma chambre, il y a un lit et un bureau. Ma lampe est sur le bureau. Mon sac est sous le bureau. Mon armoire est à côté de la fenêtre.",
+				"criteria": ["Ich verwende vier verschiedene Präpositionen.", "Ich verwende il y a und être.", "Ich nenne Möbel mit Artikel."]
+			},
+			"2": {
+				"prompt": "Dein Gast aus Frankreich sucht Dinge. Schreibe einen Dialog: Er fragt nach seinem Handy, seinen Schuhen und dem Bad; du antwortest jeweils genau.",
+				"model": "– Où est mon portable ? – Il est sur la table, dans la cuisine. – Et mes chaussures ? – Elles sont devant la porte. – Où est la salle de bains ? – À côté de ta chambre.",
+				"criteria": ["Ich frage und antworte mit où est / où sont.", "Ich verwende passende Präpositionen.", "Ich ersetze Nomen mit il / elles."]
+			}
+		},
+		"workshop": {
+			"kind": "scene",
+			"goals": [
+				{ "label": "unter", "before": "Le chat est", "after": "la table.", "options": ["sous", "sur", "devant"], "answer": "sous", "explanation": "Sous: unter." },
+				{ "label": "in", "before": "Le chat est", "after": "le carton.", "options": ["dans", "derrière", "sur"], "answer": "dans", "explanation": "Dans: in." },
+				{ "label": "hinter", "before": "Minou est", "after": "l’armoire.", "options": ["derrière", "devant", "sous"], "answer": "derrière", "explanation": "Derrière: hinter." }
+			]
+		},
+		"listening": false,
+		"speaking": true
+	},
+	{
+		"id": "f7-au-du",
+		"stage": "f7-ville",
+		"title": "Je vais au parc",
+		"skill": "Zusammengezogene Artikel au, aux, du, des verwenden",
+		"bindings": ["1.2-grammatik", "1.2-wortschatz"],
+		"paragraphs": [
+			"Die Präpositionen à und de verschmelzen mit le und les: à + le = au, à + les = aux, de + le = du, de + les = des. Mit la und l’ verschmelzen sie nicht: à la, à l’, de la, de l’. Beispiele mit à: Je vais au parc, à la piscine, à l’école, aux toilettes. Je joue au foot.",
+			"Beispiele mit de: Je rentre du collège. C’est le vélo du voisin (das Fahrrad des Nachbarn). La maison des grands-parents. Je parle de la fête. Beispiel: Le samedi, je vais au marché avec ma mère, puis à la boulangerie. Après, nous allons chez ma tante, à côté du cinéma. Merke: Das Verschmelzen passiert nur mit le und les."
+		],
+		"material": "Samedi, c’est le grand tour de Léa ! Le matin, elle va au marché, puis à la boulangerie. À midi, elle mange au restaurant avec ses parents. L’après-midi, elle va à la piscine et à l’hôtel de ville. Le soir, elle rentre du centre-ville en bus.",
+		"materialLabel": "Eigenes Übungsmaterial · erfundene Person",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp-f7"],
+		"quiz": {
+			"optionLanguage": "fr",
+			"question": "Je vais ___ cinéma.",
+			"answer": "au",
+			"wrong": ["à le", "à la"],
+			"explanation": "Cinéma ist maskulin: à + le wird zu au."
+		},
+		"takeaway": "à + le = au · à + les = aux · de + le = du · de + les = des. à la, à l’, de la, de l’ bleiben getrennt.",
+		"practice": [
+			{ "prompt": "Je vais ___ piscine. (à + la)", "answers": ["à la"], "feedback": "À la bleibt getrennt." },
+			{ "prompt": "C’est le vélo ___ voisin. (de + le)", "answers": ["du"], "feedback": "De + le = du." }
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Ergänze: Je vais ___ parc (le), ___ école (l’), ___ toilettes (les) et ___ boulangerie (la).",
+				"model": "Je vais au parc, à l’école, aux toilettes et à la boulangerie.",
+				"criteria": ["Ich verschmelze à mit le und les.", "Ich lasse à la und à l’ getrennt.", "Ich schreibe aux im Plural."]
+			},
+			"2": {
+				"prompt": "Beschreibe deinen Samstag in fünf Sätzen: Wohin gehst du, woher kommst du zurück? Verwende au, à la, aux und du.",
+				"model": "Le samedi matin, je vais au marché avec mon père. Ensuite, nous allons à la boulangerie. L’après-midi, je joue au basket. Le soir, je rentre du club de sport. Mes parents vont aux magasins.",
+				"criteria": ["Ich verwende au, à la, aux und du.", "Die Artikel passen zum Geschlecht der Nomen.", "Meine Sätze ergeben einen Tagesablauf."]
+			}
+		},
+		"workshop": {
+			"kind": "map",
+			"goals": [
+				{ "label": "à + le", "before": "Elle va", "after": "marché.", "options": ["au", "à le", "du"], "answer": "au", "explanation": "À + le = au." },
+				{ "label": "à + les", "before": "Je vais", "after": "toilettes.", "options": ["aux", "à les", "des"], "answer": "aux", "explanation": "À + les = aux." },
+				{ "label": "de + le", "before": "Elle rentre", "after": "centre-ville.", "options": ["du", "de le", "au"], "answer": "du", "explanation": "De + le = du." }
+			]
+		},
+		"explorer": {
+			"caption": "Stadtplan · Wähle ein Ziel",
+			"steps": [
+				{ "label": "le parc", "icon": "🌳", "example": "Je vais au parc.", "detail": "à + le = au", "tone": "m" },
+				{ "label": "la piscine", "icon": "🏊", "example": "Je vais à la piscine.", "detail": "à la bleibt getrennt", "tone": "f" },
+				{ "label": "les magasins", "icon": "🛍", "example": "Je vais aux magasins.", "detail": "à + les = aux", "tone": "pl" }
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "f7-transports",
+		"stage": "f7-ville",
+		"title": "En bus ou à vélo ?",
+		"skill": "Wohnort und Verkehrsmittel beschreiben",
+		"bindings": ["1.2-wortschatz", "1.1-sprechen", "5"],
+		"paragraphs": [
+			"Mit Verkehrsmitteln, in die du einsteigst, sagst du en: en bus, en train, en voiture, en métro, en tram. Mit Fahrzeugen, auf denen du sitzt, und zu Fuß sagst du à: à vélo, à pied, à trottinette (Roller). Nach dem Weg zur Schule fragst du: Comment est-ce que tu vas au collège ? – Je vais au collège à vélo oder einfach: À vélo.",
+			"Deinen Wohnort beschreibst du so: J’habite à Augsburg (Stadt), dans un village (in einem Dorf), en ville (in der Stadt), à la campagne (auf dem Land), dans une maison oder dans un appartement. Beispiel: J’habite dans un village à la campagne. Le matin, je vais au collège en bus. Le trajet dure vingt minutes. Mon frère, lui, va à l’école à pied."
+		],
+		"material": "Léa habite à Rennes, dans un appartement au centre-ville. Elle va au collège à pied. Hugo habite dans un petit village. Le matin, il prend le bus à sept heures. Inès va au collège à vélo, mais quand il pleut, elle va au collège en voiture avec sa mère. Le week-end, la famille de Léa va à Saint-Malo en train.",
+		"materialLabel": "Eigenes Übungsmaterial · erfundene Personen",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp-f7"],
+		"quiz": {
+			"optionLanguage": "fr",
+			"question": "„Ich fahre mit dem Fahrrad zur Schule.“",
+			"answer": "Je vais à l’école à vélo.",
+			"wrong": ["Je vais à l’école en pied.", "Je vais à l’école avec vélo."],
+			"explanation": "Beim Fahrrad sagst du à vélo, zu Fuß à pied."
+		},
+		"takeaway": "en bus, en train, en voiture, en métro · à vélo, à pied. J’habite à + Stadt, dans un village, en ville, à la campagne.",
+		"practice": [
+			{ "prompt": "Je vais au collège ___ pied.", "answers": ["à"], "feedback": "Zu Fuß: à pied." },
+			{ "prompt": "Nous allons à Paris ___ train.", "answers": ["en"], "feedback": "Mit dem Zug: en train." }
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe drei Sätze: Wo wohnst du, wie kommst du zur Schule, und wie fährt deine Familie in den Urlaub?",
+				"model": "J’habite dans une maison à la campagne. Je vais au collège en bus. En vacances, nous allons en Italie en voiture.",
+				"criteria": ["Ich beschreibe meinen Wohnort.", "Ich verwende en oder à passend zum Verkehrsmittel.", "Ich schreibe drei ganze Sätze."]
+			},
+			"2": {
+				"prompt": "Mache eine kleine Umfrage in der Klasse: Wie kommen fünf Mitschüler zur Schule? Schreibe das Ergebnis auf Französisch, mit Zahlen.",
+				"model": "Dans ma classe, deux élèves vont au collège à pied. Huit élèves prennent le bus. Cinq élèves vont au collège à vélo et trois vont au collège en voiture. Moi, je vais au collège en tram.",
+				"criteria": ["Ich nenne mehrere Verkehrsmittel mit Zahlen.", "Ich verwende en und à richtig.", "Die Verbformen passen zu den Personen."]
+			}
+		},
+		"workshop": {
+			"kind": "route",
+			"goals": [
+				{ "label": "Fahrrad", "before": "Inès va au collège", "after": ".", "options": ["à vélo", "au vélo", "à la vélo"], "answer": "à vélo", "explanation": "Auf dem Fahrrad: à vélo." },
+				{ "label": "Zug", "before": "Ils vont à Saint-Malo", "after": ".", "options": ["en train", "à train", "au train"], "answer": "en train", "explanation": "In den Zug steigst du ein: en train." },
+				{ "label": "Wohnort", "before": "Hugo habite", "after": "village.", "options": ["dans un", "à un", "en"], "answer": "dans un", "explanation": "Dans un village: in einem Dorf." }
+			]
+		},
+		"explorer": {
+			"caption": "Schulweg · Wähle ein Verkehrsmittel",
+			"steps": [
+				{ "label": "Bus", "icon": "🚌", "example": "Je vais au collège en bus.", "detail": "Einsteigen: en" },
+				{ "label": "Fahrrad", "icon": "🚲", "example": "Je vais au collège à vélo.", "detail": "Auf etwas sitzen: à" },
+				{ "label": "zu Fuß", "icon": "🚶", "example": "Je vais au collège à pied.", "detail": "à pied" }
+			]
+		},
+		"listening": false,
+		"speaking": true
+	},
+	{
+		"id": "f7-quantites",
+		"stage": "f7-ville",
+		"title": "Un kilo de pommes",
+		"skill": "Mengen mit de angeben",
+		"bindings": ["1.2-grammatik", "1.2-wortschatz", "5"],
+		"paragraphs": [
+			"Nach einer Mengenangabe steht de (vor Vokal d’) ohne Artikel: un kilo de pommes, un litre de lait, une bouteille d’eau, un paquet de chips, une boîte de thon, un morceau de fromage, un peu de sucre, beaucoup de bananes. Auch nach pas steht de: Il n’y a pas de lait. Je n’ai pas de chips.",
+			"Lebensmittel: le pain, la baguette, le lait, le fromage, le beurre, les œufs, les pommes, les tomates, les bananes, l’eau, le jus d’orange. Beispiel für eine Einkaufsliste: deux baguettes, un litre de lait, six œufs, un kilo de tomates, beaucoup de pommes. Achtung: Bei beaucoup de steht kein Artikel: beaucoup de pommes, nicht beaucoup des pommes."
+		],
+		"material": "La liste de courses de Léa : deux baguettes, un litre de lait, un paquet de beurre, six œufs, un kilo de pommes, un morceau de fromage, une bouteille d’eau et beaucoup de bananes. Pas de chips ! Il y a encore un peu de jus d’orange dans le frigo.",
+		"materialLabel": "Eigenes Übungsmaterial · erfundene Einkaufsliste",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp-f7"],
+		"quiz": {
+			"optionLanguage": "fr",
+			"question": "„eine Flasche Wasser“",
+			"answer": "une bouteille d’eau",
+			"wrong": ["une bouteille de l’eau", "une bouteille des eaux"],
+			"explanation": "Nach einer Mengenangabe steht de, vor Vokal d’, ohne Artikel."
+		},
+		"takeaway": "Menge + de + Nomen ohne Artikel: un kilo de pommes, beaucoup de lait, un peu de sucre. Vor Vokal d’: une bouteille d’eau. Nach pas: pas de.",
+		"practice": [
+			{ "prompt": "un litre ___ lait", "answers": ["de"], "feedback": "Nach der Menge: de." },
+			{ "prompt": "beaucoup ___ amis", "answers": ["d’", "d'"], "feedback": "Vor Vokal: d’amis." }
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe eine Einkaufsliste für ein Frühstück mit sechs Dingen und Mengenangaben.",
+				"model": "deux baguettes, un paquet de beurre, un pot de confiture, un litre de lait, un kilo d’oranges, un peu de fromage",
+				"criteria": ["Ich verwende sechs Mengenangaben.", "Nach der Menge steht de oder d’.", "Ich verwende keinen Artikel nach de."]
+			},
+			"2": {
+				"prompt": "Ihr plant ein Picknick zu viert. Schreibe auf Französisch, was ihr schon habt, was fehlt (pas de) und was ihr kaufen müsst (je vais acheter …).",
+				"model": "Nous avons beaucoup de pommes et une bouteille d’eau. Mais nous n’avons pas de pain et il n’y a pas de jus. Alors, je vais acheter deux baguettes, un paquet de chips et un litre de jus d’orange.",
+				"criteria": ["Ich nenne Vorhandenes mit Mengen.", "Ich nenne Fehlendes mit pas de.", "Ich plane den Einkauf im futur composé."]
+			}
+		},
+		"workshop": {
+			"kind": "recipe",
+			"goals": [
+				{ "label": "Kilo", "before": "un kilo", "after": "pommes", "options": ["de", "des", "du"], "answer": "de", "explanation": "Nach der Menge: de." },
+				{ "label": "Flasche", "before": "une bouteille", "after": "eau", "options": ["d’", "de l’", "des"], "answer": "d’", "explanation": "Vor Vokal: d’." },
+				{ "label": "viel", "before": "beaucoup", "after": "bananes", "options": ["de", "des", "les"], "answer": "de", "explanation": "Beaucoup de ohne Artikel." }
+			]
+		},
+		"explorer": {
+			"caption": "Einkaufskorb · Wähle ein Produkt",
+			"steps": [
+				{ "label": "Milch", "icon": "🥛", "example": "un litre de lait", "detail": "Menge + de" },
+				{ "label": "Wasser", "icon": "💧", "example": "une bouteille d’eau", "detail": "Vor Vokal: d’" },
+				{ "label": "Äpfel", "icon": "🍎🍎🍎", "example": "un kilo de pommes, beaucoup de pommes", "detail": "Auch bei viel: de ohne Artikel" }
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "f7-courses",
+		"stage": "f7-ville",
+		"title": "Ça fait combien ?",
+		"skill": "Beim Einkaufen Preise verstehen und für andere vermitteln",
+		"bindings": ["1.1-hoeren", "1.1-sprachmittlung", "1.1-sprechen", "1.2-wortschatz", "2"],
+		"paragraphs": [
+			"Auf dem Markt oder in der Bäckerei hörst du: Bonjour, vous désirez ? (Was wünschen Sie?) Du antwortest: Je voudrais un kilo de tomates, s’il vous plaît. Nach dem Preis fragst du: Ça coûte combien ? oder am Ende: Ça fait combien ? Der Preis klingt so: deux euros cinquante (2,50 €), un euro vingt (1,20 €). Zum Schluss: Voilà. – Merci, au revoir !",
+			"Oft hilfst du jemandem, der kein Französisch spricht, zum Beispiel deinen Eltern. Dann gibst du das Wichtigste sinngemäß auf Deutsch weiter, nicht Wort für Wort: Die Verkäuferin fragt, was wir möchten. Die Tomaten kosten 3,20 €. Wenn du ein Wort nicht kennst, zeigst du darauf oder beschreibst es: Je voudrais ça, s’il vous plaît. Gestik und Mimik helfen."
+		],
+		"material": "Au marché : – Bonjour, Madame, vous désirez ? – Bonjour ! Je voudrais un kilo de tomates et six œufs, s’il vous plaît. – Voilà. Et avec ça ? – Une bouteille de jus de pomme. Ça fait combien ? – Ça fait sept euros quarante. – Voilà dix euros. – Et voici deux euros soixante. Merci, au revoir !",
+		"materialLabel": "Eigenes Hörskript · erfundene Preise",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp-f7"],
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Die Verkäuferin sagt: „Ça fait sept euros quarante.“ Was sagst du deiner Mutter?",
+			"answer": "Es kostet 7,40 Euro.",
+			"wrong": ["Es kostet 74 Euro.", "Es kostet 7,14 Euro."],
+			"explanation": "Sept euros quarante: 7 Euro und 40 Cent."
+		},
+		"takeaway": "Vous désirez ? – Je voudrais … · Ça coûte / Ça fait combien ? – deux euros cinquante. Beim Vermitteln das Wichtigste sinngemäß auf Deutsch sagen; zeigen und beschreiben hilft.",
+		"practice": [
+			{ "prompt": "Wie viel Rückgeld bekommst du bei 10 € für 7,40 €? (Zahl wie 2,60)", "answers": ["2,60", "2.60", "2,6", "2.6"], "feedback": "10 € − 7,40 € = 2,60 €: deux euros soixante." },
+			{ "prompt": "Nach dem Preis fragen: Ça fait ___ ?", "answers": ["combien"], "feedback": "Ça fait combien ?" }
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Höre das Skript zuerst ohne Mitlesen. Notiere auf Deutsch: Was kauft die Kundin, wie viel kostet es, wie viel Rückgeld bekommt sie?",
+				"model": "Sie kauft ein Kilo Tomaten, sechs Eier und eine Flasche Apfelsaft. Es kostet 7,40 €. Sie bezahlt mit 10 € und bekommt 2,60 € zurück.",
+				"criteria": ["Ich nenne die drei Produkte.", "Ich nenne Preis und Rückgeld richtig.", "Ich habe zuerst ohne Mitlesen zugehört."],
+				"language": "de"
+			},
+			"2": {
+				"prompt": "Du bist mit deinem Vater, der kein Französisch spricht, in einer Bäckerei. Schreibe den Dialog auf Französisch und daneben, was du deinem Vater jeweils auf Deutsch sagst.",
+				"model": "Verkäuferin: Bonjour, vous désirez ? – Ich: Sie fragt, was wir möchten. – Papa: Zwei Croissants und ein Brot. – Ich: Deux croissants et une baguette, s’il vous plaît. – Verkäuferin: Ça fait trois euros dix. – Ich: Das kostet 3,10 €.",
+				"criteria": ["Ich übertrage sinngemäß in beide Richtungen.", "Ich nenne den Preis richtig auf Deutsch.", "Ich bin höflich zur Verkäuferin."]
+			}
+		},
+		"workshop": {
+			"kind": "number",
+			"goals": [
+				{ "label": "Wunsch", "before": "Je", "after": "un kilo de tomates.", "options": ["voudrais", "coûte", "fais"], "answer": "voudrais", "explanation": "Je voudrais: ich möchte." },
+				{ "label": "Preisfrage", "before": "Ça fait", "after": "?", "options": ["combien", "comment", "quand"], "answer": "combien", "explanation": "Combien: wie viel." },
+				{ "label": "Preis", "before": "2,50 € =", "after": "", "options": ["deux euros cinquante", "deux euros quinze", "vingt-cinq euros"], "answer": "deux euros cinquante", "explanation": "2 Euro und 50 Cent." }
+			]
+		},
+		"explorer": {
+			"caption": "Marktstand · Wähle ein Produkt",
+			"steps": [
+				{ "label": "Tomaten", "icon": "🍅", "example": "Un kilo de tomates : trois euros vingt.", "detail": "3,20 €" },
+				{ "label": "Eier", "icon": "🥚", "example": "Six œufs : deux euros soixante-dix.", "detail": "2,70 €" },
+				{ "label": "Saft", "icon": "🧃", "example": "Une bouteille de jus de pomme : un euro cinquante.", "detail": "1,50 €" }
+			]
+		},
+		"listening": true,
+		"speaking": true
+	},
+	{
+		"id": "f7-chemin",
+		"stage": "f7-ville",
+		"title": "Pardon, la gare ?",
+		"skill": "Einfach nach dem Weg fragen und Antworten vermitteln",
+		"bindings": ["1.1-sprachmittlung", "1.1-sprechen", "1.2-wortschatz"],
+		"paragraphs": [
+			"Nach dem Weg fragst du höflich und einfach: Pardon, Madame, la gare, s’il vous plaît ? oder Excusez-moi, où est la poste ? Antworten: C’est tout droit (geradeaus), à gauche (links), à droite (rechts), à côté de la pharmacie (neben der Apotheke), en face (gegenüber). Oft hörst du auch Tournez à gauche (Biegen Sie links ab) und Prenez la première rue à droite.",
+			"Wenn du für deine Familie fragst, gibst du die Antwort kurz auf Deutsch weiter: Geradeaus, dann die erste Straße rechts, der Bahnhof ist neben der Apotheke. Hast du etwas nicht verstanden, sagst du: Pardon, vous pouvez répéter, s’il vous plaît ? Plus lentement, s’il vous plaît (langsamer). Zeigen mit der Hand und eine Skizze auf Papier helfen, wenn Wörter fehlen."
+		],
+		"material": "– Pardon, Madame, la gare, s’il vous plaît ? – La gare ? Alors, vous allez tout droit. Ensuite, vous prenez la première rue à droite. La gare est à côté de la pharmacie. – Pardon, vous pouvez répéter plus lentement, s’il vous plaît ? – Tout droit, puis à droite. C’est à cinq minutes à pied. – Merci beaucoup !",
+		"materialLabel": "Eigenes Übungsmaterial · erfundene Straße",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp-f7"],
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "„Vous allez tout droit, puis à gauche.“ Was sagst du deiner Familie?",
+			"answer": "Geradeaus und dann links.",
+			"wrong": ["Rechts und dann geradeaus.", "Zurück und dann links."],
+			"explanation": "Tout droit heißt geradeaus, à gauche links."
+		},
+		"takeaway": "Pardon, … s’il vous plaît ? · tout droit, à gauche, à droite, à côté de, en face. Nicht verstanden: Vous pouvez répéter plus lentement ? Zeigen und Skizzen helfen.",
+		"practice": [
+			{ "prompt": "„geradeaus“: tout ___", "answers": ["droit"], "feedback": "Tout droit: geradeaus." },
+			{ "prompt": "„rechts“: à ___", "answers": ["droite"], "feedback": "À droite: rechts." }
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Lies das Material und erkläre deiner Familie auf Deutsch in einem Satz, wie sie zum Bahnhof kommt.",
+				"model": "Wir gehen geradeaus, dann die erste Straße rechts; der Bahnhof ist neben der Apotheke, ungefähr fünf Minuten zu Fuß.",
+				"criteria": ["Ich nenne alle Richtungen in der richtigen Reihenfolge.", "Ich nenne den Orientierungspunkt.", "Ich übertrage sinngemäß, nicht Wort für Wort."],
+				"language": "de"
+			},
+			"2": {
+				"prompt": "Ein französischer Tourist fragt dich in deiner Stadt nach dem Weg zum Rathaus (la mairie). Schreibe einen Dialog, in dem du einfach erklärst und ein Wort durch Zeigen ersetzt.",
+				"model": "– Pardon, la mairie, s’il vous plaît ? – Oui ! Vous allez tout droit, puis à gauche. La mairie est en face de … (je montre l’église) … de ça. – Merci ! – De rien, au revoir !",
+				"criteria": ["Ich erkläre mit tout droit, à gauche oder à droite.", "Ich ersetze ein fehlendes Wort durch Zeigen.", "Ich bin höflich."]
+			}
+		},
+		"workshop": {
+			"kind": "route",
+			"goals": [
+				{ "label": "Höflich fragen", "before": "", "after": ", Madame, la gare, s’il vous plaît ?", "options": ["Pardon", "Salut", "Au revoir"], "answer": "Pardon", "explanation": "Pardon leitet höflich eine Frage ein." },
+				{ "label": "Richtung", "before": "Vous allez tout", "after": ".", "options": ["droit", "droite", "gauche"], "answer": "droit", "explanation": "Tout droit: geradeaus." },
+				{ "label": "Nachfragen", "before": "Vous pouvez répéter plus", "after": ", s’il vous plaît ?", "options": ["lentement", "à droite", "beaucoup"], "answer": "lentement", "explanation": "Plus lentement: langsamer." }
+			]
+		},
+		"listening": false,
+		"speaking": true
+	}
+]
