@@ -117,14 +117,21 @@ describe("public learning contract", () => {
     }
   });
 
-  it("keeps cards short, exact, in one form per field and free of unapproved replaces", () => {
+  it("keeps cards short, exact, in one form per field and declares only approved replaces", () => {
     expect((cell as { retired_items?: unknown[] }).retired_items).toBeUndefined();
+    const approvedSlugs = new Set(
+      mapping.rows.filter((r) => r.category === "A").map((r) => r.academy_slug),
+    );
     for (const item of ITEMS) {
       expect(item.id).toMatch(/^[0-7][0-9A-HJKMNP-TV-Z]{25}$/);
       expect(item.source_link).toMatch(
         /^https:\/\/academy\.zam-os\.org\/bwr-realschule-7\/#lesson=[a-z0-9-]+$/,
       );
-      expect(item.replaces).toBeUndefined();
+      if (approvedSlugs.has(item.slug)) {
+        expect(item.replaces).toHaveLength(1);
+      } else {
+        expect(item.replaces).toBeUndefined();
+      }
       // ZAM's bundle check: a field is either plain text or segments, never both.
       expect(item.question !== undefined).not.toBe(item.question_segments !== undefined);
       expect(item.concept !== undefined).not.toBe(item.concept_segments !== undefined);
@@ -196,18 +203,18 @@ describe("public learning contract", () => {
     });
 });
 
-describe("existing ZAM cards (proposal-only)", () => {
+describe("existing ZAM cards (approved A transfers)", () => {
   const oldItems = [
     ...legacyBilanz.atoms.flatMap((a) => a.practice_items as unknown as Item[]),
     ...legacyKonten.atoms.flatMap((a) => a.practice_items as unknown as Item[]),
   ];
 
-  it("maps all ten old Grade 7 items as proposal-only without declaring replaces or retired_items", () => {
-    expect(mapping.status).toBe("proposal-only");
-    expect(mapping.approved).toBeNull();
+  it("maps all ten old Grade 7 items with the four approved A replaces and no retired_items", () => {
+    expect(mapping.status).toBe("approved");
+    expect(mapping.approved).toBe("2026-11-22");
     expect(mapping.rows.map((r) => r.de_by_id)).toEqual(oldItems.map((i) => i.id));
     expect(mapping.sources.map((s) => s.tile_id)).toEqual([legacyBilanz.tile_id, legacyKonten.tile_id]);
-    expect(ITEMS.filter((i) => i.replaces?.length)).toHaveLength(0);
+    expect(ITEMS.filter((i) => i.replaces?.length)).toHaveLength(4);
 
     const aSlugs: string[] = [];
     for (const row of mapping.rows) {
@@ -215,10 +222,11 @@ describe("existing ZAM cards (proposal-only)", () => {
       expect(row.de_by_question).toBe(old?.question);
       expect(row.reason.length).toBeGreaterThan(60);
       if (row.category === "A") {
-        expect(row.action).toBe("propose-replace-after-approval");
+        expect(row.action).toBe("replace");
         expect(row.academy_slug).toBeTruthy();
         const matches = ITEMS.filter((i) => i.slug === row.academy_slug);
         expect(matches).toHaveLength(1);
+        expect(matches[0].replaces).toEqual([row.de_by_id]);
         aSlugs.push(row.academy_slug!);
       } else {
         expect(row.category).toBe("C");

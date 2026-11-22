@@ -52,7 +52,8 @@ try {
     for (const item of items) await zam.ensureCard(db, item.id, user);
     assert.deepEqual(await snapshot(), before);
   }
-  // Proposal-only mapping grants neither replacement nor retirement: all 10 legacy cards remain untouched.
+  // Approved mapping transfers 4 A-row histories to their Academy successors
+  // and keeps the 6 C-row legacy cards intact.
   const mapping = JSON.parse(
     readFileSync(new URL("../replaces-de-by.json", import.meta.url), "utf8"),
   );
@@ -64,29 +65,46 @@ try {
     await zam.installKvtTile(db, old);
     for (const atom of old.atoms) {
       for (const item of atom.practice_items) {
-        await zam.ensureCard(db, item.id, user);
         oldItems.push(item);
       }
     }
   }
   assert.equal(oldItems.length, 10);
-  const oldCard = await zam.ensureCard(db, oldItems[0].id, user);
-  await zam.evaluateRating(db, {
-    cardId: oldCard.id,
-    tokenId: oldItems[0].id,
-    userId: user,
-    rating: 3,
-    answerFormat: "recall",
-    now: new Date("2026-11-21T15:00:00Z"),
+  const dir2 = mkdtempSync(join(tmpdir(), "zam-bwr-rs7-migrate-"));
+  const db2 = await zam.openDatabase({
+    dbPath: join(dir2, "library.db"),
+    initialize: true,
+    useConfiguredCloud: false,
   });
-  const mixed = await snapshot();
-  assert.equal(mixed.cards.length, 82);
-  assert.equal(mixed.reviews.length, 2);
-  await zam.installKvtTile(db, tile);
-  for (const item of items) await zam.ensureCard(db, item.id, user);
-  assert.deepEqual(await snapshot(), mixed);
+  try {
+    for (const source of mapping.sources) {
+      const old = JSON.parse(
+        readFileSync(new URL(`../${source.file}`, import.meta.url), "utf8"),
+      );
+      await zam.installKvtTile(db2, old);
+    }
+    for (const item of oldItems) {
+      const card = await zam.ensureCard(db2, item.id, user);
+      await zam.evaluateRating(db2, {
+        cardId: card.id,
+        tokenId: item.id,
+        userId: user,
+        rating: 3,
+        answerFormat: "recall",
+        now: new Date("2026-11-21T15:00:00Z"),
+      });
+    }
+    await zam.installKvtTile(db2, tile);
+    for (const item of items) await zam.ensureCard(db2, item.id, user);
+    const allCards = await db2.prepare("SELECT token_id, reps FROM cards").all();
+    assert.equal(allCards.length, 72 + 6, "4 A cards transferred, 6 C cards kept");
+    assert.equal(allCards.filter((c) => c.reps > 0).length, 10, "all 10 histories preserved");
+  } finally {
+    await db2.close();
+    rmSync(dir2, { recursive: true, force: true });
+  }
   console.log(
-    "ok: install creates no cards; 72 fresh cards enrol; repeated install/enrol preserves recall; all 10 legacy cards and review evidence stay unchanged.",
+    "ok: install creates no cards; 72 fresh cards enrol; repeated install/enrol preserves recall; 4 approved A-rows transfer history and 6 C-rows stay intact.",
   );
 } finally {
   if (db) await db.close();
