@@ -20,8 +20,9 @@ export const LB1_2_FIGURES: Record<string, ConceptFigure> = {
   "hh-einkommen-budget": {
     title: "Monatsbudget der Familie Weber",
     question: "Wie bleibt am Monatsende ein Sparpolster statt einer Lücke?",
-    alt: "Drei Schritte der Budgetplanung: links 3.600 € Einnahmen, in der Mitte feste Ausgaben 2.200 € und veränderliche Ausgaben 1.040 €, rechts 360 € Überschuss als Sparpolster.",
-    caption: "Modellwerte von Familie Weber: Feste Ausgaben laufen jeden Monat weiter; veränderliche Ausgaben und Wünsche lassen sich steuern.",
+    alt: "Drei Schritte der Budgetplanung aus dem Lektionsbeispiel von Familie Weber: links 3.400,00 € Einnahmen (3.150 € Gehälter + 250 € Kindergeld), in der Mitte 2.100,00 € feste und 1.050,00 € veränderliche Ausgaben (zusammen 3.150,00 €), rechts 250,00 € monatlicher Überschuss als Sparpolster.",
+    caption:
+      "Zahlen aus dem Lektionsbeispiel der Familie Weber (3.400 € Einnahmen − 3.150 € Ausgaben = 250 € Überschuss); im Labor unten erprobst du ein weiteres Monatsmodell mit 3.600 € Einkommen und 10 % Sparziel.",
     parts: [
       {
         label: "Einnahmen",
@@ -39,17 +40,17 @@ export const LB1_2_FIGURES: Record<string, ConceptFigure> = {
     draw: () =>
       group(
         1,
-        `${card(14, 18, 174, 214)}${badge(36, 40, 1)}${label(101, 45, "Einnahmen", "heading")}${coins(101, 102, 1.15)}<rect x="34" y="152" width="134" height="22" rx="6" class="v-green"/>${label(101, 167, "3.600,00 €", "micro on-fill")}${lines(101, 196, "Gehalt · Kindergeld\nmonatlicher Zufluss", "micro")}`,
+        `${card(14, 18, 174, 214)}${badge(36, 40, 1)}${label(101, 45, "Einnahmen", "heading")}${coins(101, 102, 1.15)}<rect x="34" y="152" width="134" height="22" rx="6" class="v-green"/>${label(101, 167, "3.400,00 €", "micro on-fill")}${lines(101, 196, "Gehalt · Kindergeld\nmonatlicher Zufluss", "micro")}`,
       ) +
       arrow(190, 124, 210, 124) +
       group(
         2,
-        `${card(212, 18, 176, 214)}${badge(234, 40, 2)}${label(300, 45, "Ausgaben", "heading")}${house(266, 98, 0.72)}${pill(302, 74, 72, 24, "Fest 2.200 €", "v-coral-fill", "micro")}${pill(302, 106, 72, 24, "Var. 1.040 €", "v-orange-fill", "micro")}<rect x="232" y="152" width="84" height="22" rx="5" class="v-coral"/><rect x="318" y="152" width="50" height="22" rx="5" class="v-orange"/>${lines(300, 196, "Miete, Strom, Einkauf\nund Zusatzwünsche", "micro")}`,
+        `${card(212, 18, 176, 214)}${badge(234, 40, 2)}${label(300, 45, "Ausgaben", "heading")}${house(266, 98, 0.72)}${pill(302, 74, 72, 24, "Fest 2.100 €", "v-coral-fill", "micro")}${pill(302, 106, 72, 24, "Var. 1.050 €", "v-orange-fill", "micro")}<rect x="232" y="152" width="89" height="22" rx="5" class="v-coral"/><rect x="323" y="152" width="45" height="22" rx="5" class="v-orange"/>${lines(300, 196, "Miete, Strom, Einkauf\nund Zusatzwünsche", "micro")}`,
       ) +
       arrow(390, 124, 410, 124) +
       group(
         3,
-        `${card(412, 18, 174, 214)}${badge(434, 40, 3)}${label(499, 45, "Saldo & Ziel", "heading")}${shield(499, 98, 0.9, "v-teal")}${pill(434, 148, 130, 28, "+ 360,00 € · 10 %", "v-teal-fill", "micro")}${lines(499, 196, "Rücklage hält Luft\nfür Notfälle frei", "micro")}`,
+        `${card(412, 18, 174, 214)}${badge(434, 40, 3)}${label(499, 45, "Saldo & Ziel", "heading")}${shield(499, 98, 0.9, "v-teal")}${pill(430, 148, 138, 28, "+ 250,00 € Rücklage", "v-teal-fill", "micro")}${lines(499, 196, "Rücklage hält Luft\nfür Notfälle frei", "micro")}`,
       ),
   },
 
@@ -192,7 +193,7 @@ export const LB1_2_FIGURES: Record<string, ConceptFigure> = {
       ) +
       group(
         2,
-        `${card(14, 132, 360, 100)}${badge(36, 154, 2)}${label(198, 159, "Prozentsatz p = Anteil von 100", "heading")}<rect x="34" y="180" width="320" height="32" rx="7" class="v-soft-fill"/><rect x="34" y="180" width="96" height="32" rx="7" class="v-teal"/>${label(82, 201, "12 %", "small on-fill")}${label(238, 201, "restliche 88 %", "micro")}`,
+        `${card(14, 132, 360, 100)}${badge(36, 154, 2)}${label(198, 159, "Prozentsatz p = Anteil von 100", "heading")}<rect x="34" y="180" width="320" height="32" rx="7" class="v-soft-fill"/><rect x="34" y="180" width="38.4" height="32" rx="5" class="v-teal"/>${label(80, 201, "12 % (= 300 €)", "small", "start")}${label(270, 201, "restliche 88 %", "micro")}`,
       ) +
       arrow(378, 86, 406, 106) +
       arrow(378, 174, 406, 146) +
@@ -234,7 +235,7 @@ export const LB1_2_FIGURES: Record<string, ConceptFigure> = {
       ) +
       group(
         3,
-        `${card(236, 132, 350, 100)}${badge(258, 154, 3)}${label(414, 158, "Vermehrter Grundwert (z. B. + 19 % USt)", "heading")}<rect x="258" y="176" width="248" height="24" rx="5" class="v-blue"/><rect x="508" y="176" width="56" height="24" rx="5" class="v-gold"/>${label(382, 193, "100 % = 400 €", "micro on-fill")}${label(536, 193, "+19 %", "micro")}${label(410, 220, "100 % + 19 % = 119 %  (= 476,00 €)", "micro")}`,
+        `${card(236, 132, 350, 100)}${badge(258, 154, 3)}${label(414, 158, "Vermehrter Grundwert (z. B. + 19 % USt)", "heading")}<rect x="258" y="176" width="257" height="24" rx="5" class="v-blue"/><rect x="515" y="176" width="49" height="24" rx="5" class="v-gold"/>${label(386, 193, "100 % = 400 €", "micro on-fill")}${label(539.5, 193, "+19 %", "micro")}${label(410, 220, "100 % + 19 % = 119 %  (= 476,00 €)", "micro")}`,
       ),
   },
 
@@ -344,14 +345,15 @@ export const LB1_2_FIGURES: Record<string, ConceptFigure> = {
   },
 
   "un-produktionsfaktoren": {
-    title: "Die drei betrieblichen Produktionsfaktoren",
-    question: "Welche Faktoren werden über Jahre genutzt und welche in der Fertigung verbraucht?",
-    alt: "Drei Säulen im Radwerk Brenner: links menschliche Arbeit (Schweißer und Planung), in der Mitte Betriebsmittel zum Gebrauch (Halle, Schweißanlage), rechts Werkstoffe zum Verbrauch (Alurohre, Schrauben, Strom).",
-    caption: "Betriebsmittel werden langfristig genutzt (Gebrauch); Werkstoffe gehen ins Produkt ein oder werden verbraucht.",
+    title: "Die vier betrieblichen Produktionsfaktoren",
+    question: "Wie wirken ausführende Arbeit, dispositiver Faktor, Betriebsmittel und Werkstoffe zusammen?",
+    alt: "Vier betriebliche Produktionsfaktoren im Radwerk Brenner: links die beiden menschlichen Faktoren (1. ausführende Arbeit in der Werkstatt und 2. dispositiver Faktor der Geschäftsleitung für Planung, Organisation und Kontrolle), in der Mitte 3. Betriebsmittel zum mehrjährigen Gebrauch (Halle, Schweißanlage, Fuhrpark), rechts 4. Werkstoffe zum Verbrauch (Alurohre, Schaltung, Lack, Strom).",
+    caption:
+      "Der Lehrplan unterscheidet vier Produktionsfaktoren: ausführende Arbeit, dispositiver Faktor (Geschäftsleitung/Planung), Betriebsmittel (Gebrauch) und Werkstoffe (Verbrauch).",
     parts: [
       {
-        label: "Menschliche Arbeit",
-        note: "Sowohl die ausführende Arbeit an der Werkbank als auch die planende und leitende Arbeit im Büro steuern die Fertigung.",
+        label: "Arbeit & dispositiver Faktor",
+        note: "Ausführende Arbeit (Schweißen, Montage, Verkauf) und der dispositive Faktor (Geschäftsführung: Planen, Organisieren, Entscheiden) bilden zusammen die beiden menschlichen Produktionsfaktoren.",
       },
       {
         label: "Betriebsmittel (Gebrauch)",
@@ -365,15 +367,15 @@ export const LB1_2_FIGURES: Record<string, ConceptFigure> = {
     draw: () =>
       group(
         1,
-        `${card(14, 18, 174, 214)}${badge(36, 40, 1)}${label(101, 45, "Arbeit", "heading")}${person(80, 114, "v-blue")}${person(122, 114, "v-teal")}${pill(30, 142, 142, 26, "Leitend & ausführend", "v-soft-fill", "micro")}${lines(101, 194, "Planung, Schweißen,\nPrüfung & Verkauf", "micro")}`,
+        `${card(14, 18, 174, 214)}${badge(36, 40, 1)}${label(112, 45, "Arbeit & Leitung", "heading")}${person(78, 96, "v-blue")}${person(124, 96, "v-teal")}${pill(24, 112, 154, 28, "1. Ausführende Arbeit", "v-blue-fill", "micro")}${pill(24, 146, 154, 28, "2. Dispositiver Faktor", "v-teal-fill", "micro")}${lines(101, 196, "Montage & Verkauf (1)\nLeitung & Planung (2)", "micro")}`,
       ) +
       group(
         2,
-        `${card(212, 18, 176, 214)}${badge(234, 40, 2)}${label(300, 45, "Betriebsmittel", "heading")}${factory(300, 102, 0.88)}${pill(232, 142, 136, 26, "Gebrauch · längerfristig", "v-blue-fill", "micro")}${lines(300, 194, "Halle, Maschinen,\nFuhrpark, Büromöbel", "micro")}`,
+        `${card(212, 18, 176, 214)}${badge(234, 40, 2)}${label(300, 45, "3. Betriebsmittel", "heading")}${factory(300, 102, 0.88)}${pill(232, 142, 136, 26, "Gebrauch · längerfristig", "v-blue-fill", "micro")}${lines(300, 194, "Halle, Maschinen,\nFuhrpark, Büromöbel", "micro")}`,
       ) +
       group(
         3,
-        `${card(412, 18, 174, 214)}${badge(434, 40, 3)}${label(499, 45, "Werkstoffe", "heading")}${bike(499, 100, 0.78)}${pill(428, 142, 142, 26, "Verbrauch · je Stück", "v-orange-fill", "micro")}${lines(499, 194, "Alurohr, Schaltung,\nLack & Schweißstrom", "micro")}`,
+        `${card(412, 18, 174, 214)}${badge(434, 40, 3)}${label(499, 45, "4. Werkstoffe", "heading")}${bike(499, 100, 0.78)}${pill(428, 142, 142, 26, "Verbrauch · je Stück", "v-orange-fill", "micro")}${lines(499, 194, "Alurohr, Schaltung,\nLack & Schweißstrom", "micro")}`,
       ),
   },
 
@@ -381,7 +383,8 @@ export const LB1_2_FIGURES: Record<string, ConceptFigure> = {
     title: "Standortfaktoren und Nutzwertanalyse",
     question: "Wie hilft eine gewichtete Punktetabelle bei einer nachvollziehbaren Standortwahl?",
     alt: "Links Standort A Gewerbepark mit guten Verkehrs- und Platzwerten, in der Mitte Standort B Innenstadtrand mit hoher Laufkundschaft, rechts die gewichtete Nutzwertrechnung.",
-    caption: "Gewichte gewichten weiche und harte Kriterien (Summe 100 %) — so entscheidet nicht bloß der Bauch.",
+    caption:
+      "Die Prozentgewichte (Summe 100 %) verbinden harte und weiche Standortfaktoren auf einer Punkteskala von 1 (sehr schlecht) bis 6 (sehr gut).",
     parts: [
       {
         label: "Standort A (Gewerbepark)",
@@ -392,8 +395,8 @@ export const LB1_2_FIGURES: Record<string, ConceptFigure> = {
         note: "Liegt stark bei Laufkundschaft, hat aber hohe Mieten und kaum Platz für Anlieferung und Lager.",
       },
       {
-        label: "Gewichtete Gesamtnote",
-        note: "Jeder Faktor erhält ein Prozentgewicht (zusammen 100 %) und Noten von 1 bis 6. Die höchste gewichtete Summe gewinnt.",
+        label: "Gewichtete Gesamtpunkte",
+        note: "Jeder Faktor erhält ein Prozentgewicht (zusammen 100 %) und Punkte von 1 (sehr schlecht) bis 6 (sehr gut). Die höchste gewichtete Punktsumme gewinnt.",
       },
     ],
     draw: () =>
@@ -407,14 +410,14 @@ export const LB1_2_FIGURES: Record<string, ConceptFigure> = {
       ) +
       group(
         3,
-        `${card(412, 18, 174, 214)}${badge(434, 40, 3)}${label(499, 45, "Nutzwert", "heading")}${pill(430, 74, 138, 28, "Σ Gewichte = 100 %", "v-soft-fill", "micro")}<rect x="432" y="114" width="134" height="22" rx="4" class="v-teal"/>${label(499, 129, "A: z. B. 5,10 Pkt.", "micro on-fill")}<rect x="432" y="144" width="90" height="22" rx="4" class="v-orange"/>${label(477, 159, "B: 3,20", "micro on-fill")}${lines(499, 194, "Faktor-Gewicht × Punkte\n= klares Urteil", "micro")}`,
+        `${card(412, 18, 174, 214)}${badge(434, 40, 3)}${label(499, 45, "Punktwert (1–6)", "heading")}${pill(430, 74, 138, 28, "Σ Gewichte = 100 %", "v-soft-fill", "micro")}<rect x="432" y="114" width="134" height="22" rx="4" class="v-teal"/>${label(499, 129, "A: z. B. 5,10 Pkt.", "micro on-fill")}<rect x="432" y="144" width="90" height="22" rx="4" class="v-orange"/>${label(477, 159, "B: 3,20 Pkt.", "micro on-fill")}${lines(499, 194, "1 = sehr schlecht · 6 = sehr gut\nhöchste Punktsumme gewinnt", "micro")}`,
       ),
   },
 
   "un-rechtsformen": {
-    title: "Einzelunternehmung (e. K.) und GmbH im Vergleich",
+    title: "Einzelunternehmung und GmbH im Vergleich",
     question: "Worin unterscheiden sich Mindestkapital, Leitung und Haftung?",
-    alt: "Links Einzelunternehmung Lena Brenner e. K. mit alleiniger Leitung und unbeschränkter Haftung bis ins Privatvermögen, in der Mitte GmbH mit mindestens 25.000 € Stammkapital und Geschäftsführung, rechts Vergleich der Haftungsgrenze.",
+    alt: "Links Einzelunternehmung mit einer Inhaberin, alleiniger Leitung und unbeschränkter Haftung bis ins Privatvermögen, in der Mitte GmbH mit mindestens 25.000 € Stammkapital, Geschäftsführung und HRB-Eintrag, rechts Vergleich der Haftungsgrenze.",
     caption: "Mehr Sicherheit durch beschränkte Haftung kostet bei der GmbH ein höheres Mindestkapital und mehr Gründungsaufwand.",
     parts: [
       {
@@ -433,11 +436,11 @@ export const LB1_2_FIGURES: Record<string, ConceptFigure> = {
     draw: () =>
       group(
         1,
-        `${card(14, 18, 180, 214)}${badge(36, 40, 1)}${label(112, 44, "e. K. (1 Inhaber)", "heading")}${person(104, 98, "v-coral")}${pill(30, 124, 148, 26, "Kein Mindestkapital", "v-soft-fill", "micro")}${pill(30, 158, 148, 26, "Alleinige Leitung", "v-coral-fill", "micro")}${lines(104, 206, "volle Haftung mit\ndem Privatvermögen", "micro")}`,
+        `${card(14, 18, 180, 214)}${badge(36, 40, 1)}${label(112, 44, "Einzelunternehmung", "heading")}${person(104, 98, "v-coral")}${pill(30, 124, 148, 26, "Kein Mindestkapital", "v-soft-fill", "micro")}${pill(30, 158, 148, 26, "Alleinige Leitung", "v-coral-fill", "micro")}${lines(104, 206, "volle Haftung mit\ndem Privatvermögen", "micro")}`,
       ) +
       group(
         2,
-        `${card(210, 18, 180, 214)}${badge(232, 40, 2)}${label(308, 44, "GmbH", "heading")}${person(282, 98, "v-blue")}${person(318, 98, "v-teal")}${pill(226, 124, 148, 26, "Stammkap. ≥ 25.000 €", "v-gold-fill", "micro")}${pill(226, 158, 148, 26, "Geschäftsführer/-in", "v-blue-fill", "micro")}${lines(300, 206, "Abteilung B · strengere\nGründungsregeln", "micro")}`,
+        `${card(210, 18, 180, 214)}${badge(232, 40, 2)}${label(308, 44, "GmbH", "heading")}${person(282, 98, "v-blue")}${person(318, 98, "v-teal")}${pill(226, 124, 148, 26, "Stammkap. ≥ 25.000 €", "v-gold-fill", "micro")}${pill(226, 158, 148, 26, "Geschäftsführer/-in", "v-blue-fill", "micro")}${lines(300, 206, "Notarieller Vertrag\nEintragung ins HRB", "micro")}`,
       ) +
       group(
         3,

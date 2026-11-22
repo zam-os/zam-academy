@@ -222,7 +222,7 @@ export const LB3_FIGURES: Record<string, ConceptFigure> = {
       },
       {
         label: "2 · Konten & Seite",
-        note: "Bestimme beide betroffenen Konten, ob sie aktiv oder passiv sind und ob sie zu- (+) oder abnehmen (−). Daraus folgen Soll und Haben.",
+        note: "Bestimme beide Konten und ihre Kontoart: Aktivkonten mehren im Soll (+) und mindern im Haben (−); Passivkonten mehren im Haben (+) und mindern im Soll (−).",
       },
       {
         label: "3 · Soll an Haben",
@@ -242,7 +242,7 @@ export const LB3_FIGURES: Record<string, ConceptFigure> = {
       arrow(186, 124, 204, 124) +
       group(
         2,
-        `${card(206, 18, 186, 214)}${badge(228, 40, 2)}${label(300, 45, "Kontenanalyse", "heading")}${pill(222, 68, 154, 34, "MA (aktiv) + → Soll", "v-blue-fill", "micro")}${pill(222, 112, 154, 34, "BK (aktiv) − → Haben", "v-orange-fill", "micro")}${lines(299, 182, "Mehrung im Soll?\nMinderung im Haben?", "micro")}`,
+        `${card(206, 18, 186, 214)}${badge(228, 40, 2)}${label(300, 45, "Kontenanalyse", "heading")}${pill(222, 68, 154, 34, "MA (aktiv) + → Soll", "v-blue-fill", "micro")}${pill(222, 112, 154, 34, "BK (aktiv) − → Haben", "v-orange-fill", "micro")}${lines(299, 182, "Aktiv: + Soll · − Haben\nPassiv: + Haben · − Soll", "micro")}`,
       ) +
       arrow(394, 124, 412, 124) +
       group(
@@ -295,7 +295,7 @@ export const LB3_FIGURES: Record<string, ConceptFigure> = {
     title: "Netto, Umsatzsteuer und Brutto berechnen",
     question: "Warum ist der Nettobetrag immer 100 % — auch beim Rückrechnen aus Brutto?",
     alt: "Aufbau eines Preises als gestapelter Balken: 100 % Warenwert netto (z. B. 500 €) plus 19 % Umsatzsteuer (95 €) ergeben zusammen 119 % Bruttorechnungsbetrag (595 €).",
-    caption: "Achtung Häufiger Fehler: 19 % von 595 € wäre falsch gerechnet — Brutto sind bereits 119 %, daher Netto = Brutto : 1,19.",
+    caption: "Achtung — häufiger Fehler: 19 % von 595 € wäre falsch gerechnet — Brutto sind bereits 119 %, daher Netto = Brutto : 1,19.",
     parts: [
       {
         label: "Warenwert netto (100 %)",
@@ -313,7 +313,7 @@ export const LB3_FIGURES: Record<string, ConceptFigure> = {
     draw: () =>
       group(
         1,
-        `${card(14, 18, 174, 214)}${badge(36, 40, 1)}${label(101, 45, "Netto = 100 %", "heading")}<rect x="34" y="76" width="134" height="72" rx="8" class="v-blue"/>${label(101, 108, "Warenwert", "small on-fill")}${label(101, 130, "500,00 € (100 %)", "micro on-fill")}${lines(101, 182, "Basis ohne Steuer\nfür Aufwands-/Erlöskonto", "micro")}`,
+        `${card(14, 18, 174, 214)}${badge(36, 40, 1)}${label(101, 45, "Netto = 100 %", "heading")}<rect x="34" y="84" width="134" height="60" rx="7" class="v-blue"/>${label(101, 110, "Warenwert", "small on-fill")}${label(101, 130, "500,00 € (100 %)", "micro on-fill")}${lines(101, 182, "Basis ohne Steuer\nfür Aufwands-/Erlöskonto", "micro")}`,
       ) +
       group(
         2,
@@ -321,7 +321,7 @@ export const LB3_FIGURES: Record<string, ConceptFigure> = {
       ) +
       group(
         3,
-        `${card(412, 18, 174, 214)}${badge(434, 40, 3)}${label(499, 45, "Brutto = 119 %", "heading")}<rect x="432" y="72" width="134" height="44" rx="6" class="v-blue"/><rect x="432" y="118" width="134" height="24" rx="6" class="v-gold"/>${label(499, 98, "100 % = 500 €", "micro on-fill")}${label(499, 134, "+ 19 % = 95 €", "micro")}${pill(428, 152, 142, 26, "Brutto = 595,00 €", "v-accent-fill", "micro")}${lines(499, 200, "Netto = Brutto : 1,19", "micro")}`,
+        `${card(412, 18, 174, 214)}${badge(434, 40, 3)}${label(499, 45, "Brutto = 119 %", "heading")}<rect x="424" y="71" width="64" height="11.4" rx="3" class="v-gold"/><rect x="424" y="84" width="64" height="60" rx="5" class="v-blue"/>${label(456, 118, "100 %", "micro on-fill")}${label(494, 80, "+ 19 % (95 €)", "micro", "start")}${label(494, 118, "500,00 €", "micro", "start")}${pill(424, 154, 150, 26, "Brutto = 595,00 €", "v-accent-fill", "micro")}${lines(499, 200, "Netto = Brutto : 1,19", "micro")}`,
       ),
   },
 

@@ -327,6 +327,34 @@ describe("illustrations and dynamic lab diagrams", () => {
       expect(renderStageArt(stage.lb)).toContain("<svg");
       expect(stageIcon(stage.lb)).toContain("<svg");
     }
+
+    const budgetFig = renderFigure("hh-einkommen-budget");
+    expect(budgetFig).toContain("3.400,00 €");
+    expect(budgetFig).toContain("Fest 2.100 €");
+    expect(budgetFig).toContain("Var. 1.050 €");
+    expect(budgetFig).toContain("+ 250,00 €");
+    expect(renderFigure("hh-prozent-grundlagen")).toContain('width="38.4"');
+    const prodFig = renderFigure("un-produktionsfaktoren");
+    expect(prodFig).toContain("1. Ausführende Arbeit");
+    expect(prodFig).toContain("2. Dispositiver Faktor");
+    const locFig = renderFigure("un-standort");
+    expect(locFig).not.toContain("Note");
+    expect(locFig).not.toContain("Gesamtnote");
+    const legalFig = renderFigure("un-rechtsformen");
+    expect(legalFig).toContain("Einzelunternehmung");
+    expect(legalFig).toContain("HRB");
+    expect(legalFig).not.toContain("Abteilung B");
+    const bookFig = renderFigure("gb-buchungssatz");
+    expect(bookFig).toContain("Aktiv: + Soll");
+    expect(bookFig).toContain("Passiv: + Haben");
+    const vatFig = renderFigure("gb-umsatzsteuer-rechnen");
+    expect(vatFig).toContain('height="60"');
+    expect(vatFig).toContain('height="11.4"');
+    const ledgerFig = renderFigure("sg-grund-hauptbuch");
+    expect(ledgerFig).toContain("AWR");
+    expect(ledgerFig).toContain("VORST");
+    expect(ledgerFig).toContain("VE");
+    expect(renderFigure("sg-bilanzvergleich")).toContain("ohne Einlagen");
   });
 
   it("renders a live SVG visualization in all 8 interactive labs without NaN or undefined", () => {
@@ -336,5 +364,16 @@ describe("illustrations and dynamic lab diagrams", () => {
       expect(html, kind).toContain('class="chart lab-svg"');
       expect(html, kind).not.toMatch(/\bNaN\b|\bundefined\b/);
     }
+    const vatHtml = renderResult("vat", LABS.vat.defaults);
+    expect(vatHtml).toContain("19 %");
+    expect(vatHtml).not.toContain("19%");
+    const exhaustedEk = renderResult("closingFlow", {
+      ...LABS.closingFlow.defaults,
+      ekStart: 50000,
+      uefe: 0,
+      awr: 100000,
+    });
+    expect(exhaustedEk).toContain("EK aufgezehrt");
+    expect(exhaustedEk).not.toContain("EK neu im Haben:");
   });
 });

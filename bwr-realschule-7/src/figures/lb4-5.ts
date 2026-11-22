@@ -253,7 +253,8 @@ export const LB4_5_FIGURES: Record<string, ConceptFigure> = {
     title: "Bestandskonten aus der Eröffnungsbilanz eröffnen",
     question: "Wie gelangen alle Werte der Eröffnungsbilanz in die einzelnen T-Konten?",
     alt: "Links die Eröffnungsbilanz mit Aktiva und Passiva; Pfeile nach rechts übertragen die aktiven Posten (MA, Vorräte, BK) in das Soll aktiver T-Konten und die passiven Posten (EK, VE) in das Haben passiver T-Konten.",
-    caption: "Eröffnungs- und Schlussbilanz sind spiegelverkehrt zu den Seiten? Nein — bei T-Konten übernimmt jedes Konto die Seite der Bilanz!",
+    caption:
+      "Jedes Bestandskonto übernimmt seinen Anfangsbestand auf genau derselben Seite, auf der der Posten in der Eröffnungsbilanz steht: Aktiva links (Soll), Passiva rechts (Haben).",
     parts: [
       {
         label: "Eröffnungsbilanz (01.01.)",
@@ -333,35 +334,44 @@ export const LB4_5_FIGURES: Record<string, ConceptFigure> = {
     draw: () =>
       group(
         1,
-        `${card(14, 18, 170, 214)}${badge(36, 40, 1)}${label(100, 45, "1 · Beleg", "heading")}${receiptDoc(32, 66, 134, 106, "RECHNUNG #207", [
+        `${card(14, 18, 150, 214)}${badge(34, 40, 1)}${label(92, 45, "1 · Beleg", "heading")}${receiptDoc(24, 66, 130, 106, "RECHNUNG #207", [
           "15.11. · Rohstoffe",
-          "Netto:  1.000,00 €",
-          "+ VORST:  190,00 €",
+          "Netto: 1.000,00 €",
+          "+ VORST: 190,00 €",
           "Brutto: 1.190,00 €",
-        ])}${lines(99, 200, "Datum & Beträge\nprüfen und ordnen", "micro")}`,
+        ])}${lines(89, 200, "Datum & Beträge\nprüfen und ordnen", "micro")}`,
       ) +
-      arrow(186, 124, 204, 124) +
+      arrow(166, 124, 180, 124) +
       group(
         2,
-        `${card(206, 18, 186, 214)}${badge(228, 40, 2)}${label(300, 45, "2 · Grundbuch", "heading")}${receiptDoc(220, 66, 158, 106, "ZEITLICHE FOLGE", [
-          "15.11. AWR   1.000 €",
-          "       VORST   190 €",
-          "    an VE    1.190 €",
-        ])}${lines(299, 200, "chronologisch als\nBuchungssatz notiert", "micro")}`,
+        `${card(182, 18, 156, 214)}${badge(202, 40, 2)}${label(268, 45, "2 · Grundbuch", "heading")}${receiptDoc(192, 66, 136, 106, "ZEITLICHE FOLGE", [
+          "15.11. AWR 1.000 €",
+          "VORST 190 €",
+          "an VE 1.190 €",
+        ])}${lines(260, 200, "chronologisch als\nBuchungssatz notiert", "micro")}`,
       ) +
-      arrow(394, 124, 412, 124) +
+      arrow(340, 124, 354, 124) +
       group(
         3,
-        `${card(414, 18, 172, 214)}${badge(436, 40, 3)}${label(502, 45, "3 · Hauptbuch", "heading")}${tAccountBox(
-          426,
-          64,
-          148,
+        `${card(356, 18, 230, 214)}${badge(378, 40, 3)}${label(476, 45, "3 · Hauptbuch", "heading")}${tAccountBox(
+          366,
+          62,
+          100,
           56,
           "AWR",
           ["1.000"],
           [],
           "v-soft-fill",
-        )}${tAccountBox(426, 126, 148, 56, "VE", [], ["1.190"], "v-soft-fill")}${lines(500, 204, "Übertrag auf alle\nbetroffenen T-Konten", "micro")}`,
+        )}${tAccountBox(
+          476,
+          62,
+          100,
+          56,
+          "VORST",
+          ["190"],
+          [],
+          "v-soft-fill",
+        )}${tAccountBox(366, 126, 210, 56, "VE", [], ["1.190"], "v-soft-fill")}${lines(471, 202, "Soll 1.190 € = Haben 1.190 €\nauf allen 3 Konten", "micro")}`,
       ),
   },
 
@@ -504,7 +514,8 @@ export const LB4_5_FIGURES: Record<string, ConceptFigure> = {
     title: "Eröffnungs- und Schlussbilanz vergleichen",
     question: "Was verrät der Jahresvergleich über Wachstum, Erfolg und Finanzierung des Betriebs?",
     alt: "Vergleich von Eröffnungsbilanz am 01.01. und Schlussbilanz am 31.12.: links Entwicklung von Anlage- und Umlaufvermögen, in der Mitte Veränderung von Eigenkapital und Schulden, rechts Beurteilung von Eigenkapitalquote und Liquidität.",
-    caption: "Steigt das Eigenkapital (ohne private Einlagen), hat das Radwerk profitabel gewirtschaftet; die Schulden zeigen, wie investiert wurde.",
+    caption:
+      "Steigt das Eigenkapital (ohne private Einlagen und ohne Entnahmen), hat das Radwerk profitabel gewirtschaftet; die Schulden zeigen, wie investiert wurde.",
     parts: [
       {
         label: "Vermögensstruktur (Aktiva)",
@@ -512,7 +523,7 @@ export const LB4_5_FIGURES: Record<string, ConceptFigure> = {
       },
       {
         label: "Kapitalstruktur (Passiva)",
-        note: "Der Vergleich des Eigenkapitals zeigt den Jahreserfolg; veränderte Darlehen und VE zeigen den Finanzierungsweg.",
+        note: "Ohne private Einlagen und ohne Entnahmen zeigt die Eigenkapitalzunahme den Reingewinn; veränderte Darlehen und VE zeigen den Finanzierungsweg.",
       },
       {
         label: "Stabilität beurteilen",
@@ -526,7 +537,7 @@ export const LB4_5_FIGURES: Record<string, ConceptFigure> = {
       ) +
       group(
         2,
-        `${card(210, 18, 182, 214)}${badge(232, 40, 2)}${label(308, 44, "Kapital (EK / FK)", "heading")}<rect x="240" y="96" width="44" height="74" rx="4" class="v-green"/><rect x="310" y="72" width="44" height="98" rx="4" class="v-green"/>${label(262, 188, "EK alt", "micro")}${label(332, 188, "EK neu", "micro")}${lines(301, 212, "Δ EK zeigt Gewinn!", "micro")}`,
+        `${card(210, 18, 182, 214)}${badge(232, 40, 2)}${label(308, 44, "Kapital (EK / FK)", "heading")}<rect x="240" y="96" width="44" height="74" rx="4" class="v-green"/><rect x="310" y="72" width="44" height="98" rx="4" class="v-green"/>${label(262, 188, "EK alt", "micro")}${label(332, 188, "EK neu", "micro")}${lines(301, 206, "Δ EK (ohne Einlagen/\nEntnahmen) = Gewinn", "micro")}`,
       ) +
       group(
         3,
