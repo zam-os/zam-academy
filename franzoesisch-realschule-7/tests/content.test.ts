@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import cell from "../cell.json";
+import { cell } from "./cell-types";
 import coverage from "../coverage.json";
 import mapping from "../replaces-de-by.json";
 import contract from "./fixtures/public-contract.json";
@@ -252,9 +252,9 @@ describe("answer handling, progress and routes", () => {
 	});
 });
 describe("ZAM content and identifier contracts", () => {
-	it("pins identifiers and keeps the proposal-only cell free of replacements", () => {
+	it("pins identifiers and keeps the approved cell free of retirements", () => {
 		expect(cell.tile_id).toBe(ZAM_CELL_ID);
-		expect(mapping.approved).toBeNull();
+		expect(mapping.approved).toBe("2026-11-22");
 		expect(mapping.rows).toHaveLength(4);
 		expect(cell).not.toHaveProperty("retired_items");
 		expect(

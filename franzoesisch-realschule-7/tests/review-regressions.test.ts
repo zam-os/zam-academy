@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import mapping from "../replaces-de-by.json";
-import cell from "../cell.json";
+import { cell } from "./cell-types";
 import legacy from "./fixtures/de-by-realschule-7-franzoesisch-starter-grammatik-verben-kvt.json";
 import { completion, freshProgress } from "../src/storage/progress";
 import { findLesson } from "../src/curriculum";
@@ -171,33 +171,36 @@ describe("map meaning survives schematic simplification", () => {
 	});
 });
 
-describe("proposal-only mapping of the legacy grade 7 cell", () => {
-	it("maps every legacy item once and declares nothing before approval", () => {
+describe("approved mapping of the legacy grade 7 cell", () => {
+	it("maps every legacy item once and moves exactly the two approved histories", () => {
 		expect(mapping.schema).toBe(1);
-		expect(mapping.status).toBe("proposal-only");
-		expect(mapping.approved).toBeNull();
+		expect(mapping.status).toBe("approved");
+		expect(mapping.approved).toBe("2026-11-22");
+		expect(mapping.source).toContain("Beide A freigeben");
 		expect(mapping.source_commit).toMatch(/^[0-9a-f]{40}$/);
 		const ids = legacy.atoms.flatMap((atom) => atom.practice_items.map((item) => item.id));
 		expect(mapping.rows.map((row) => row.de_by_id).sort()).toEqual([...ids].sort());
 		const items = cell.atoms.flatMap((atom) => atom.practice_items);
-		for (const item of items) {
-			expect(item).not.toHaveProperty("replaces");
-		}
 		expect(cell).not.toHaveProperty("retired_items");
 		for (const row of mapping.rows) {
 			expect(row.reason.length).toBeGreaterThan(40);
 			if (row.category === "A") {
-				expect(row.action).toBe("propose-replace-after-approval");
-				expect(items.filter((item) => item.slug === row.academy_slug)).toHaveLength(1);
+				expect(row.action).toBe("replace");
+				const successors = items.filter((item) => item.slug === row.academy_slug);
+				expect(successors).toHaveLength(1);
+				expect(successors[0]).toMatchObject({ replaces: [row.de_by_id] });
 			} else {
 				expect(row.category).toBe("C");
-				expect(["keep-active", "propose-retire-after-approval"]).toContain(row.action);
+				expect(row.action).toBe("keep-active");
 				expect(row.academy_slug).toBeNull();
 			}
 		}
-		expect(mapping.rows.filter((row) => row.category === "A")).toHaveLength(2);
+		// One history never spreads over several cards.
+		const replaced = items.flatMap((item) => item.replaces ?? []);
+		expect(replaced.sort()).toEqual(mapping.rows.filter((row) => row.category === "A").map((row) => row.de_by_id).sort());
+		expect(items.filter((item) => item.replaces)).toHaveLength(2);
 	});
-	it("proposes successors that ask the same retrieval", () => {
+	it("gives each history a successor that asks the same retrieval", () => {
 		const items = cell.atoms.flatMap((atom) => atom.practice_items);
 		const ont = items.find((item) => item.slug === "f7-etre-avoir-check")!;
 		expect(ont.fast_check?.options).toEqual(["ils / elles ont", "ils / elles sont"]);

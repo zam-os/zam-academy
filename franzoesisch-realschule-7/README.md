@@ -21,7 +21,7 @@ Progress and the learners' own texts stay in this browser on this device; nothin
 
 ## ZAM cards
 
-The cell `zam-academy:franzoesisch-realschule-7` holds 162 cards, three per lesson, each linked to its lesson. ZAM already has the older cell `de-by:realschule-7-franzoesisch-starter-grammatik-verben` with four cards. Its mapping in `replaces-de-by.json` is a proposal only (two A rows, two C rows keep-active); the cell declares no `replaces` and no `retired_items` until Thomas approves it. See [the curriculum and card record](../docs/franzoesisch-7-coverage.md).
+The cell `zam-academy:franzoesisch-realschule-7` holds 162 cards, three per lesson, each linked to its lesson. ZAM already has the older cell `de-by:realschule-7-franzoesisch-starter-grammatik-verben` with four cards. Thomas approved the mapping in `replaces-de-by.json` on 2026-11-22: two A rows move their review histories to `f7-etre-avoir-check` and `f7-negation-recall` via `replaces`, and the two C cards stay active (no `retired_items`). See [the curriculum and card record](../docs/franzoesisch-7-coverage.md).
 
 ## Verify locally
 
@@ -33,6 +33,7 @@ npm run build
 npm run package:zip
 node scripts/verify-browser.mjs
 ZAM_CORE=file:///path/to/zam-core/dist/index.js node scripts/validate-cell.mjs
+ZAM_CORE=file:///path/to/zam-core/dist/index.js node scripts/validate-migration.mjs
 ```
 
 Browser verification uses installed headless Chrome (`CHROME_BIN` if it is elsewhere, `BROWSER_QA_DIR` for the screenshots). Use zam-core 0.54.0 as pinned in CI. The dev server uses port 5274. Package version 0.0: teacher review is open.
