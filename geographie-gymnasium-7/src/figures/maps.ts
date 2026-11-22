@@ -16,7 +16,7 @@ export const europeRegions = {
 const stateLabels: Record<string, Place[]> = {
   north: [["Norwegen", 10, 61], ["Finnland", 27, 66], ["Island", -19, 65]],
   southwest: [["Portugal", -8.05, 40.5], ["Spanien", -2.7, 41.1]],
-  centre: [["Deutschland", 8.1, 53.4], ["Polen", 19.2, 53], ["Tschechien", 16, 48.2]],
+  centre: [["Deutschland", 8.7, 52.4], ["Polen", 20.1, 53.1], ["Tschechien", 15.5, 49.8]],
 };
 
 function annotate([name, lon, lat]: Place, mark = false): string {
@@ -54,13 +54,13 @@ export function portsMap(showRoutes = true): string {
   const labels = label(rx - 8, ry + 16, "Rotterdam", "lbl geo-map-label", "end")
     + label(hx + 7, hy - 9, "Hamburg", "lbl geo-map-label", "start")
     + label(dx + 10, dy + 20, "Duisburg", "lbl geo-map-label", "start");
-  return europeMap("Rotterdam und Hamburg an der Nordsee sowie Duisburg im Hinterland", routes +
+  return europeMap("Rotterdam an der Nordsee, Hamburg an der Elbe und Duisburg im Hinterland", routes +
     dot(rx, ry) + dot(hx, hy) + dot(dx, dy) + labels);
 }
 
 export function reliefMap(): string {
   const labels: Place[] = [
-    ["Pyrenäen", 0.3, 40.3], ["Alpen", 11, 45], ["Ural", 59, 62],
+    ["Pyrenäen", 0.3, 42.65], ["Alpen", 10.5, 46.8], ["Ural", 59, 62],
     ["Osteuropäische Ebene", 37, 53], ["Skandinavisches Gebirge", 13, 65],
   ];
   const ridges: Location[][] = [
@@ -87,7 +87,8 @@ export function tectonicMap(): string {
 
 export function connectionsMap(): string {
   const [x, y] = project([12.66, 55.62]);
-  const point = dot(x, y) + label(x + 12, y - 8, "Öresund", "lbl geo-map-label", "start");
-  const names: Place[] = [["Dänemark", 6.5, 53.8], ["Schweden", 18.8, 59.5]];
+  const leader = `<line class="geo-leader" x1="${x}" y1="${y}" x2="${x + 28}" y2="${y + 17}"/>`;
+  const point = leader + dot(x, y) + label(x + 33, y + 22, "Öresund", "lbl geo-map-label", "start");
+  const names: Place[] = [["Dänemark", 9.2, 56.1], ["Schweden", 18.8, 59.5]];
   return europeMap("Öresund zwischen Dänemark und Schweden", point + names.map((entry) => annotate(entry)).join(""), ["DNK", "SWE"]);
 }

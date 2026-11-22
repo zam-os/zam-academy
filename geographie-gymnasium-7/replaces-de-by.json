@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "status": "proposal-only",
-  "approved": null,
+  "status": "approved",
+  "approved": "2026-11-22",
   "source_repository": "https://github.com/zam-os/zam",
   "source_commit": "d83ea3b2f93609b7ed25432c1cb37774dc59c537",
-  "source": "Initial inventory against the Grade 7 Bavarian geography curriculum. Approval is open.",
-  "neighbouring_grade_review": "Grade 6's legacy Europe cell overlaps Geo7, so its eight items are inventoried here. Grade 8's legacy tropics and deserts cell is outside the Grade 7 scope.",
+  "source": "Thomas explicitly approved the two proposed A transfers in the Codex chat for Academy PR #183 on 2026-11-22: “Freigabe für Kartenübernahmen erteilt”",
+  "neighbouring_grade_review": "The legacy Grade 6 Europe cell overlaps Geo7, and the approval includes its Ural Mountains retrieval. The legacy Grade 8 tropics and deserts cell is outside the Grade 7 scope.",
   "sources": [
     {
       "file": "tests/fixtures/de-by-gymnasium-7-geographie-europa-naturraeume-klima-plattentektonik-kvt.json",
@@ -43,7 +43,7 @@
       "de_by_cell": "de-by:gymnasium-7-geographie-europa-naturraeume-klima-plattentektonik",
       "de_by_id": "01K4G7P0000000000000000J03",
       "category": "A",
-      "action": "propose-replace-after-approval",
+      "action": "replace",
       "academy_slug": "geo7-klima-vergleichen-check",
       "reason": "Both cards retrieve the North Atlantic Current as the continuation of the Gulf Stream system towards northwestern Europe. The new wording drops the absolute claim about ice-free ports."
     },
@@ -59,7 +59,7 @@
       "de_by_cell": "de-by:gymnasium-6-geographie-europa-raeume-wirtschaft-eu",
       "de_by_id": "01K4YG6E000000000000000J01",
       "category": "A",
-      "action": "propose-replace-after-approval",
+      "action": "replace",
       "academy_slug": "geo7-europa-naturraume-check",
       "reason": "Both questions ask for the mountain range at the conventional eastern boundary. The old answer mentions the Ural River as additional context."
     },

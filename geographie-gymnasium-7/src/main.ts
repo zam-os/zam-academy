@@ -22,6 +22,7 @@ import {
   confirmWriting,
   invalidateWriting,
   recordQuizAnswer,
+  quizKey,
   recordWorkshopAnswer,
   updateDraft,
   freshProgress,
@@ -135,7 +136,8 @@ function openLesson(id: string): void {
 function status(lesson: Lesson): string {
   if (isComplete(progress, lesson.id)) return "Abgeschlossen";
   if (
-    progress.quizDone.includes(lesson.id) ||
+    progress.quizDone.includes(quizKey(lesson.id, 1)) ||
+    progress.quizDone.includes(quizKey(lesson.id, 2)) ||
     progress.workshopDone.includes(lesson.id) ||
     progress.labGoals.some((key) => key.startsWith(`${lesson.id}:`)) ||
     progress.drafts[writingKey(lesson.id, 1)]
@@ -146,7 +148,7 @@ function status(lesson: Lesson): string {
 
 function renderPath(): string {
   const stats = completion(progress);
-  return `<section class="hero"><div><span class="eyebrow">GYMNASIUM · JAHRGANGSSTUFE 7</span><h1>Europa in<br>seinen Räumen</h1><p>Warum sind Winter an vielen Atlantikküsten milder? Was verbindet Metropolen, Häfen und ländliche Räume? Vergleiche Karten und probiere aus, wie Klima, Verkehr und Wasser Europas Landschaften prägen.</p><button type="button" class="button accent" data-open="${esc(progress.activeLessonId)}">${stats.completed ? "Weiterlernen" : "Loslegen"}</button><div class="hero-strip" aria-hidden="true">${STAGES.map((stage) => `<span data-lb="${stage.lb}">${stage.icon} ${esc(stage.shortTitle)}</span>`).join("")}</div></div><aside class="hero-note"><div class="geo-hero-map">${regionsMap()}</div><p>${LESSONS.length} Lektionen · ${STAGES.length} Lernbereiche<br>${LESSONS.filter((lesson) => lesson.lab).length} interaktive Modelle, dazu Karten und Schaubilder</p><p class="small">Eine Lektion ist geschafft, wenn du den Schnellcheck richtig hast, die Werkstatt löst und deine eigene Antwort auf Level 1 mit der Musterantwort vergleichst. Die Labore und Level 2 vertiefen.</p></aside></section>
+  return `<section class="hero"><div><span class="eyebrow">GYMNASIUM · JAHRGANGSSTUFE 7</span><h1>Europa in<br>seinen Räumen</h1><p>Warum sind Winter an vielen Atlantikküsten milder? Was verbindet Metropolen, Häfen und ländliche Räume? Vergleiche Karten und probiere aus, wie Klima, Verkehr und Wasser Europas Landschaften prägen.</p><button type="button" class="button accent" data-open="${esc(progress.activeLessonId)}">${stats.completed ? "Weiterlernen" : "Loslegen"}</button><div class="hero-strip" aria-hidden="true">${STAGES.map((stage) => `<span data-lb="${stage.lb}">${stage.icon} ${esc(stage.shortTitle)}</span>`).join("")}</div></div><aside class="hero-note"><div class="geo-hero-map">${regionsMap()}</div><p>${LESSONS.length} Lektionen · ${STAGES.length} Lernbereiche<br>${LESSONS.filter((lesson) => lesson.lab).length} interaktive Modelle, dazu Karten und Schaubilder</p><p class="small">Löse für den Abschluss die Werkstatt und beantworte auf beiden Stufen je eine Frage richtig. Labore und Schreibaufgaben helfen dir beim Üben.</p></aside></section>
   <div class="path-heading"><div><h2>Dein Lernpfad</h2><p>Jede Lektion ist frei zugänglich. Du kannst jederzeit zurückspringen.</p></div></div>
   <div class="stages">${STAGES.map((stage) => {
       const lessons = LESSONS.filter((lesson) => lesson.lb === stage.lb);
@@ -187,16 +189,18 @@ function renderWriting(lesson: Lesson): string {
   const checks = rubricChecks.get(key) ?? [false, false, false];
   return `<section class="panel writing" aria-labelledby="writing-heading"><div class="panel-heading"><span class="eyebrow">03 · SELBST BEGRÜNDEN</span><span class="done-mark" id="writing-done">${progress.writingDone.includes(key) ? "✓ Selbst eingeschätzt" : ""}</span></div><h2 id="writing-heading">${progress.level === 1 ? "Mit Leitfragen arbeiten" : "Auf einen neuen Fall übertragen"}</h2><p class="task-prompt">${esc(task.prompt)}</p>
   ${progress.level === 1 ? `<details><summary>Leitfragen anzeigen</summary><ul>${task.hints.map((hint) => `<li>${esc(hint)}</li>`).join("")}</ul></details>` : `<p class="small">Formuliere erst deinen eigenen Gedankengang. Die Vergleichsantwort folgt danach.</p>`}
-  <label class="answer-label" for="draft">Deine Antwort</label><textarea id="draft" rows="5" maxlength="8000" placeholder="Schreibe zwei bis vier begründete Sätze …">${esc(draft)}</textarea><p class="small">Dein Text bleibt in diesem Browser. Er wird nicht automatisch bewertet.</p><button type="button" id="compare" class="button secondary" ${canReviewDraft(draft) ? "" : "disabled"}>Mit einer möglichen Antwort vergleichen</button><span class="small" id="draft-note">${canReviewDraft(draft) ? "" : "Schreibe zunächst mindestens 20 Zeichen."}</span>
+  <label class="answer-label" for="draft">Deine Antwort</label><textarea id="draft" rows="5" maxlength="8000" placeholder="Schreibe zwei bis vier begründete Sätze …">${esc(draft)}</textarea><details class="small writing-privacy"><summary>Wo bleibt mein Text?</summary><p>Dein Text bleibt in deinem Browserprofil. Du vergleichst ihn selbst mit der Beispielantwort. Teilst du dein Benutzerkonto mit anderen? Lösche zum Schluss über „Lokalen Fortschritt zurücksetzen“ deinen Lernstand und deine Texte.</p></details><button type="button" id="compare" class="button secondary" ${canReviewDraft(draft) ? "" : "disabled"}>Mit einer möglichen Antwort vergleichen</button><span class="small" id="draft-note">${canReviewDraft(draft) ? "" : "Schreibe zunächst mindestens 20 Zeichen."}</span>
   ${comparing ? `<div class="model-answer"><h3>Eine mögliche Antwort</h3><p>${esc(task.model)}</p><p>Andere Formulierungen und begründete Urteile sind möglich. Vergleiche deinen Text anhand dieser Kriterien:</p><div class="rubric">${task.criteria.map((criterion, i) => `<label><input type="checkbox" data-rubric="${i}" ${checks[i] ? "checked" : ""}>${esc(criterion)}</label>`).join("")}</div><div class="self-actions"><button type="button" class="button accent" id="accept-writing" ${canAcceptSelfAssessment(draft, checks) ? "" : "disabled"}>Meine Antwort erfüllt die Kriterien</button><button type="button" class="text-button" id="revise-writing">Ich überarbeite noch</button></div><p class="small">Diese Einschätzung gibst du selbst ab. Sie ist keine automatische Prüfung und verändert keine ZAM-Karten.</p></div>` : ""}</section>`;
 }
 
 function renderLesson(): string {
   const lesson = findLesson(progress.activeLessonId)!;
   const stage = STAGES.find((entry) => entry.lb === lesson.lb)!;
-  const options = shuffle([0, 1, 2], `${lesson.id}:quiz`);
-  const labels = [lesson.quiz.answer, ...lesson.quiz.wrong];
-  const selected = quizSelections.get(lesson.id);
+  const quiz = progress.level === 1 ? lesson.quiz : lesson.transferCheck;
+  const key = quizKey(lesson.id, progress.level);
+  const options = shuffle([0, 1, 2], `${key}:quiz`);
+  const labels = [quiz.answer, ...quiz.wrong];
+  const selected = quizSelections.get(key);
   const visible = LESSONS;
   const index = visible.indexOf(lesson);
   return `<article lang="de" data-lb="${lesson.lb}"><div class="lesson-top"><button type="button" class="text-button" data-view="path">← Zum Lernpfad</button><label class="level-select">Arbeitsweise <select id="level"><option value="1" ${progress.level === 1 ? "selected" : ""}>Level 1 · mit Leitfragen</option><option value="2" ${progress.level === 2 ? "selected" : ""}>Level 2 · Transfer</option></select></label></div>
@@ -204,10 +208,10 @@ function renderLesson(): string {
   <div class="lesson-columns"><div class="lesson-content"><section class="panel reading"><span class="eyebrow">01 · VERSTEHEN</span><p>${esc(lesson.paragraphs[0])}</p>${lesson.figures.map(renderFigure).join("")}${lesson.paragraphs
     .slice(1)
     .map((paragraph) => `<p>${esc(paragraph)}</p>`)
-    .join("")}<p class="takeaway"><strong>Merke</strong>${esc(lesson.takeaway)}</p></section>
+    .join("")}<div class="document worked-example"><h2>Beispiel</h2><p>${esc(lesson.workedExample)}</p></div><p class="takeaway"><strong>Merke</strong>${esc(lesson.takeaway)}</p></section>
   ${lesson.lab ? renderLab(LABS[lesson.lab], labState(lesson), labDone(lesson)) : ""}
-  <section class="panel quiz"><div class="panel-heading"><h2>Schnellcheck</h2><span class="done-mark">${progress.quizDone.includes(lesson.id) ? "✓ Einmal richtig" : ""}</span></div><p>${esc(lesson.quiz.question)}</p><div class="quiz-options">${options.map((i) => `<button type="button" data-choice="${i}" class="quiz-choice ${selected === i ? "selected" : ""}" aria-pressed="${selected === i}">${esc(labels[i])}</button>`).join("")}</div>${renderQuizFeedback(lesson.quiz, selected)}</section>
-  ${renderWorkshop(lesson)}${renderWriting(lesson)}</div><aside class="lesson-aside"><section class="aside-card"><h2>Dein Lernschritt</h2><ul class="checklist"><li>${progress.quizDone.includes(lesson.id) ? "✓" : "○"} Schnellcheck</li><li>${progress.workshopDone.includes(lesson.id) ? "✓" : "○"} Werkstatt gelöst</li><li id="aside-writing">${progress.writingDone.includes(writingKey(lesson.id, 1)) ? "✓" : "○"} Level 1 selbst eingeschätzt</li>${lesson.lab ? `<li id="aside-lab">${labLine(lesson)}</li>` : ""}</ul><p class="small">Level 2 und das Labor vertiefen. Für den Abschluss zählen Schnellcheck, Werkstatt und Level 1.</p></section><section class="aside-card"><h2>Belege & weiterlernen</h2><ul class="source-list">${lesson.sourceIds
+  <section class="panel quiz"><div class="panel-heading"><h2>Schnellcheck · Level ${progress.level}</h2><span class="done-mark">${progress.quizDone.includes(key) ? "✓ Einmal richtig" : ""}</span></div><p>${esc(quiz.question)}</p><div class="quiz-options">${options.map((i) => `<button type="button" data-choice="${i}" class="quiz-choice ${selected === i ? "selected" : ""}" aria-pressed="${selected === i}">${esc(labels[i])}</button>`).join("")}</div>${renderQuizFeedback(quiz, selected)}</section>
+  ${renderWorkshop(lesson)}${renderWriting(lesson)}</div><aside class="lesson-aside"><section class="aside-card"><h2>Dein Lernschritt</h2><ul class="checklist"><li>${progress.quizDone.includes(quizKey(lesson.id, 1)) ? "✓" : "○"} Schnellcheck Level 1</li><li>${progress.quizDone.includes(quizKey(lesson.id, 2)) ? "✓" : "○"} Schnellcheck Level 2</li><li>${progress.workshopDone.includes(lesson.id) ? "✓" : "○"} Werkstatt gelöst</li><li id="aside-writing">${progress.writingDone.includes(writingKey(lesson.id, 1)) ? "✓" : "○"} Level 1 selbst eingeschätzt</li>${lesson.lab ? `<li id="aside-lab">${labLine(lesson)}</li>` : ""}</ul><p class="small">Für den Abschluss zählen beide Schnellchecks und die Werkstatt.</p></section><section class="aside-card"><h2>Belege & weiterlernen</h2><ul class="source-list">${lesson.sourceIds
     .map((id) => SOURCES.find((source) => source.id === id)!)
     .map(
       (source) =>
@@ -232,7 +236,7 @@ function renderReference(): string {
         .join("")}</dl></section>`,
   ).join(
     "",
-  )}<section class="panel"><h2>Quellenbasis</h2><p>Die Lektionen folgen dem LehrplanPLUS für Geographie 7 am bayerischen Gymnasium. Verlinkte Angebote öffnen erst, wenn du darauf klickst. Die App selbst benötigt keine externe Verbindung; alle Karten sind in der App gespeichert (Kartengrundlage: Natural Earth, gemeinfrei).</p><ul class="source-list">${SOURCES.map((source) => `<li><a href="${esc(source.url)}" target="_blank" rel="noopener">${esc(source.label)}</a></li>`).join("")}</ul></section></section>`;
+  )}<section class="panel"><h2>Quellenbasis</h2><p>Die Lektionen folgen dem LehrplanPLUS für Geographie 7 am bayerischen Gymnasium. Verlinkte Angebote öffnen erst, wenn du darauf klickst. Die App selbst benötigt keine externe Verbindung; alle Karten sind in der App gespeichert (Kartengrundlage: Natural Earth, gemeinfrei).</p><ul class="source-list">${SOURCES.map((source) => `<li><a href="${esc(source.url)}" target="_blank" rel="noopener">${esc(source.label)}</a></li>`).join("")}</ul></section><section class="panel"><h2>Für Eltern und Lehrkräfte</h2><p>Lernstand und eigene Texte bleiben im lokalen Browserprofil. Lernende vergleichen ihre Texte selbst mit den Beispielantworten. Wer ein Benutzerkonto mit anderen teilt, kann im Lernpfad über „Lokalen Fortschritt zurücksetzen“ seinen Lernstand und alle Texte dieses Pakets löschen.</p></section></section>`;
 }
 
 function render(): void {
@@ -284,8 +288,8 @@ function bindLesson(lesson: Lesson): void {
     .forEach((button) => {
       button.addEventListener("click", () => {
         const choice = Number(button.dataset.choice);
-        quizSelections.set(lesson.id, choice);
-        if (choice === 0) recordQuizAnswer(progress, lesson.id, true);
+        quizSelections.set(quizKey(lesson.id, progress.level), choice);
+        if (choice === 0) recordQuizAnswer(progress, lesson.id, true, progress.level);
         void persist();
         render();
         main
@@ -410,7 +414,7 @@ function bindLesson(lesson: Lesson): void {
     render();
     showToast(
       isComplete(progress, lesson.id)
-        ? "Lektion abgeschlossen. Du kannst weiterlernen oder Level 2 vertiefen."
+        ? "Lektion abgeschlossen. Du kannst weiterlernen."
         : "Deine Selbsteinschätzung wurde gespeichert.",
       "info",
     );

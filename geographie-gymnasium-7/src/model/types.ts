@@ -50,9 +50,11 @@ export interface Lesson {
   period: string;
   intro: string;
   paragraphs: string[];
+  workedExample: string;
   takeaway: string;
   sourceIds: string[];
   quiz: Check;
+  transferCheck: Check;
   workshop: Workshop;
   tasks: Record<Level, WrittenTask>;
   /** Ids of the drawings and maps in src/figures that the lesson shows. */

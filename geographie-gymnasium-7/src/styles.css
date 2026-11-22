@@ -3100,6 +3100,7 @@ article[data-lb] .panel {
 .figure-svg .geo-route, .figure-svg .geo-inland { fill: none; stroke-width: 3px; }
 .figure-svg .geo-route { stroke: var(--f-river); stroke-dasharray: 5 4; }
 .figure-svg .geo-inland { stroke: #a977ce; }
+.figure-svg .geo-leader { stroke: var(--f-ink); stroke-width: 1.3px; }
 .figure-svg .geo-ridge { fill: none; stroke: var(--f-earth); stroke-width: 5px; stroke-linecap: round; }
 .figure-svg .geo-axis { stroke: var(--f-line); stroke-width: 1px; opacity: .6; }
 .figure-svg .geo-rain { fill: #388bbd; }
@@ -3114,3 +3115,11 @@ article[data-lb] .panel {
 .figure-svg .geo-color-2 { fill: #8e9ee6; }
 .figure-svg .geo-color-3 { fill: #d18fb9; }
 .figure-svg .geo-step { fill-opacity: .65; stroke: var(--f-line); stroke-width: 1px; }
+
+.writing-privacy {
+  margin: .35rem 0 .8rem;
+}
+
+.worked-example {
+  margin-block: 1rem;
+}

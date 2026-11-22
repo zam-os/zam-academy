@@ -81,7 +81,17 @@
     "figures": [
       "wasserbilanz"
     ],
-    "lab": "bewasserung"
+    "lab": "bewasserung",
+    "workedExample": "Ein Betrieb nutzt 10 ha und entnimmt 10 Einheiten pro Hektar. Er verbraucht 10 · 10 = 100 Einheiten. Bei 15 ha und 8 Einheiten pro Hektar wären es 15 · 8 = 120 Einheiten. Das sind trotz sparsamerer Bewässerung 20 Einheiten mehr.",
+    "transferCheck": {
+      "question": "Ein Betrieb senkt die Wassermenge von 10 auf 8 Einheiten je Hektar und erweitert seine Fläche von 10 ha auf 15 ha. Was passiert?",
+      "answer": "Die Gesamtentnahme steigt von 100 auf 120 Einheiten.",
+      "wrong": [
+        "Die Gesamtentnahme sinkt von 100 auf 80 Einheiten.",
+        "Sie steigt auf 150 Einheiten."
+      ],
+      "explanation": "Fläche und Entnahme pro Hektar werden multipliziert. 15 · 8 ergibt 120."
+    }
   },
   {
     "id": "weidewirtschaft",
@@ -164,7 +174,17 @@
     },
     "figures": [
       "laendlicher-raum"
-    ]
+    ],
+    "workedExample": "Zwei Betriebe nutzen jeweils 20 ha Weide. Einer hält 20 Tiere, einer 40. Das sind 1 und 2 Tiere pro Hektar. Bei sonst vergleichbaren Bedingungen nutzt der erste die Weide extensiver.",
+    "transferCheck": {
+      "question": "Eine Molkerei im Nachbarort schließt. Welcher Faktor kann sich für die Weidebetriebe unmittelbar verschlechtern?",
+      "answer": "Der Transport zur Verarbeitung wird länger oder teurer.",
+      "wrong": [
+        "Die Tierdichte steigt in jedem Betrieb sofort.",
+        "Die Niederschläge gehen durch die Schließung zurück."
+      ],
+      "explanation": "Die Entfernung zur Verarbeitung wirkt auf Kosten und Absatz. Das Klima ändert sich dadurch nicht."
+    }
   },
   {
     "id": "lebensmittelwahl",
@@ -247,7 +267,17 @@
     },
     "figures": [
       "lieferkette"
-    ]
+    ],
+    "workedExample": "Zwei gleich große Tomatenangebote unterscheiden sich in Anbau und Transport. Beim nahen Angebot braucht das Gewächshaus Wärme. Beim weiter entfernten spielt der Transport eine größere Rolle. Für ein Urteil vergleichst du Heizenergie und Transportart.",
+    "transferCheck": {
+      "question": "Gemüse A kommt aus der Nähe und braucht viel Heizenergie. Gemüse B kommt von weiter weg. Welche Information hilft beim Umweltvergleich?",
+      "answer": "Daten zur Heizung, Transportart und Strecke beider Angebote.",
+      "wrong": [
+        "Nur der genaue Abstand in Kilometern.",
+        "Nur das Gewicht je Kiste."
+      ],
+      "explanation": "Produktion und Transport tragen beide zur Umweltbilanz bei. Keiner der Einzelwerte reicht für ein Gesamturteil."
+    }
   },
   {
     "id": "periphere-raume",
@@ -267,8 +297,8 @@
       "question": "Welche Beobachtung belegt eine Disparität im Zugang zur Ausbildung am besten?",
       "answer": "Von einem Dorf sind vergleichbare Ausbildungsplätze deutlich schlechter erreichbar.",
       "wrong": [
-        "Ein Dorf hat einen längeren Namen.",
-        "Beide Dörfer nutzen unterschiedliche Kartensymbole."
+        "Die Schule eines Dorfs hat wegen der Busfahrpläne einen früheren Pausenbeginn.",
+        "Ein Dorf liegt weiter weg, beide Dörfer haben aber gleich kurze Fahrzeiten zur Ausbildungsstätte."
       ],
       "explanation": "Unterschiedliche reale Erreichbarkeit kann die Wahl von Ausbildungsplätzen begrenzen."
     },
@@ -330,6 +360,16 @@
     },
     "figures": [
       "laendlicher-raum"
-    ]
+    ],
+    "workedExample": "Aus Dorf A fährt ein Bus morgens zum Bahnhof, aus Dorf B zwei Stunden später. Wer um acht Uhr in der Stadt anfangen muss, kann den ersten Bus eher nutzen. So können ähnliche Entfernungen zu unterschiedlichen Ausbildungswegen führen.",
+    "transferCheck": {
+      "question": "Eine neue Buslinie erreicht den Bahnhof knapper vor der Zugabfahrt als bisher. Wann verbessert sie den Zugang am ehesten?",
+      "answer": "Wenn der Anschluss zuverlässig klappt und der Zug wichtige Zielorte erreicht.",
+      "wrong": [
+        "Sobald die Buslinie länger ist, auch ohne passenden Zuganschluss.",
+        "Nur wenn die Einwohnerzahl beider Orte gleich ist."
+      ],
+      "explanation": "Für Erreichbarkeit zählt die ganze Verbindung bis zu Arbeit, Bildung oder Versorgung."
+    }
   }
 ]

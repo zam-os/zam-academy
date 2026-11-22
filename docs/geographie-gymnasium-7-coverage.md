@@ -4,10 +4,13 @@ The source is the [Bavarian Grade 7 Fachlehrplan](https://www.lehrplanplus.bayer
 which applies across Gymnasium tracks. The page was fetched on 2026-11-21.
 It assigns no separate hour totals to these six learning areas and treats area 1
 as work across the school year. The [coverage matrix](../geographie-gymnasium-7/coverage.json)
-records the source byte hash, the digest of each of its 29 competence statements,
-and English descriptions with lesson evidence. Run
-`node scripts/check-curriculum.mjs <downloaded HTML>` from the package to
-verify the mapping against the checked snapshot.
+lists the 29 official competence statements verbatim with the relevant
+lessons and evidence. Its source byte hash identifies the checked HTML.
+`node scripts/check-curriculum.mjs` checks each statement against the
+[extracted curriculum fixture](../geographie-gymnasium-7/tests/fixtures/curriculum-expectations.json)
+in CI. Pass the downloaded official HTML as an argument to verify the
+extraction and hash. The [ISB terms](https://www.lehrplanplus.bayern.de/seite/nutzungsbedingungen)
+identify the official curriculum text as outside copyright protection.
 
 | Learning area | Lessons | Examples |
 | --- | ---: | --- |
@@ -27,21 +30,38 @@ and quantitative scenarios are labelled as models.
 The package revisits the [Grade 5 map skills](https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/5/geographie)
 before applying them to Europe. The Grade 6 Bavarian Gymnasium timetable
 has no geography lesson, as recorded in the Academy registry. The
-[Grade 8 curriculum](https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/8/geographie)
-moves to other regions. The Grade 8 legacy cell on tropics and deserts is
-outside this package.
+[subject profile](https://www.lehrplanplus.bayern.de/fachprofil/gymnasium/geographie)
+places the next geography course after Grade 7 in Grade 10. The
+[Grade 10 curriculum](https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/10/geographie)
+includes the tropics and arid subtropics. The corresponding old Grade 8
+cell is outside this package.
 
 ## Legacy cards
 
-The [proposal](../geographie-gymnasium-7/replaces-de-by.json) inventories
-four Grade 7 items on Europe and eight items from the legacy Grade 6 Europe
-cell. The neighbouring Grade 6 cell overlaps the current Grade 7 curriculum.
-Two A proposals cover the North Atlantic Current and the Ural Mountains.
-Ten C rows retain the original cards, including broader synthesis prompts,
-the earlier claim that the descending plate melts, and the question that
-conflates Schengen and European Union membership. The initial cell contains no
-history transfers or retirements. The proposed neighbouring-grade match is
-open for Thomas's decision before any history transfer.
+The [approved mapping](../geographie-gymnasium-7/replaces-de-by.json)
+inventories four Grade 7 items on Europe and eight items from the legacy
+Grade 6 Europe cell. The latter overlaps the current Grade 7 curriculum.
+Thomas approved both A transfers on 2026-11-22 in the Codex chat for
+Academy PR #183: “Freigabe für Kartenübernahmen erteilt”. The source Grade 7
+North Atlantic Current card and the source Grade 6 Ural Mountains card have
+one successor each in cell version 2026.11.2. Ten C cards stay active.
+No retirements are part of the approval.
 
-The figures use the [credited Natural Earth data and ESA satellite image](../geographie-gymnasium-7/src/data/NOTICE.md).
-The offline bundle loads both from the built HTML.
+`scripts/validate-migration.mjs` exercises both transfers against the published
+zam-core version pinned in CI. It compares entire card and review rows before
+and after the migration, checks the ten active legacy cards in the review queue,
+and checks that repeated installs and rejected collisions leave the library
+consistent.
+
+## Sources shown to learners
+
+- [LehrplanPLUS – Gymnasium – 7 – Geographie – Fachlehrpläne](https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/7/geographie)
+- [Binnenmarkt und Kapitalmarktunion | Europäische Union](https://european-union.europa.eu/priorities-and-actions/actions-topic/single-market_de)
+- [Natural Earth – Terms of Use](https://www.naturalearthdata.com/about/terms-of-use/)
+- [Oceanic processes – Met Office](https://weather.metoffice.gov.uk/learn-about/weather/oceans)
+- [Earth from Space: Southwest Netherlands – ESA](https://www.esa.int/media/earth-from-space-southwest-netherlands-en-377990)
+- [Welcome to the Wadden Sea World Heritage | Wadden Sea](https://www.waddensea-worldheritage.org/)
+
+The [map and image credits](../geographie-gymnasium-7/src/data/NOTICE.md)
+record the Natural Earth data and ESA satellite image. The built HTML
+contains both for offline use.

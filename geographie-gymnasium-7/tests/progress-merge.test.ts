@@ -5,7 +5,9 @@ import {
   freshProgress,
   invalidateWriting,
   labGoalKey,
+  isComplete,
   loadProgress,
+  quizKey,
   recordLabGoal,
   recordQuizAnswer,
   recordWorkshopAnswer,
@@ -273,5 +275,32 @@ describe("Cross-tab progress preservation", () => {
       "karten-skizzieren:0",
       "klima-vergleichen:2",
     ]);
+  });
+});
+
+describe("Lesson completion", () => {
+  it("requires a correct answer at each level and the workshop", () => {
+    const progress = freshProgress();
+    recordQuizAnswer(progress, first, true, 1);
+    recordWorkshopAnswer(progress, first, true);
+    recordQuizAnswer(progress, first, false, 2);
+    expect(isComplete(progress, first)).toBe(false);
+    recordQuizAnswer(progress, first, true, 2);
+    expect(isComplete(progress, first)).toBe(true);
+    recordWorkshopAnswer(progress, first, false);
+    expect(isComplete(progress, first)).toBe(false);
+  });
+
+  it("retains earlier Level 1 progress and merges a Level 2 success across tabs", async () => {
+    stored.set(STORAGE_KEY, JSON.stringify({ quizDone: [first] }));
+    const a = loadProgress();
+    const b = loadProgress();
+    recordWorkshopAnswer(a, first, true);
+    recordQuizAnswer(b, first, true, 2);
+    expect(await saveProgress(b)).toBe(true);
+    expect(await saveProgress(a)).toBe(true);
+    const result = loadProgress();
+    expect(result.quizDone.sort()).toEqual([quizKey(first, 1), quizKey(first, 2)]);
+    expect(isComplete(result, first)).toBe(true);
   });
 });

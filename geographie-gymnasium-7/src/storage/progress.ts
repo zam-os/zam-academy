@@ -17,6 +17,10 @@ export interface Progress {
 export const writingKey = (id: string, level: Level): string =>
   `${id}:${level}`;
 const lessonIds = new Set(LESSONS.map((lesson) => lesson.id));
+// Preserve the unsuffixed Level 1 keys in existing browser progress.
+export const quizKey = (id: string, level: Level): string =>
+  level === 1 ? id : `${id}:2`;
+const quizKeys = new Set(LESSONS.flatMap(({ id }) => [quizKey(id, 1), quizKey(id, 2)]));
 const writingKeys = new Set(
   LESSONS.flatMap((lesson) => [
     writingKey(lesson.id, 1),
@@ -81,7 +85,7 @@ export function parseProgress(raw: string | null): Progress {
           ? value.activeLessonId
           : base.activeLessonId,
       level: value.level === 2 ? 2 : 1,
-      quizDone: strings(value.quizDone, lessonIds),
+      quizDone: strings(value.quizDone, quizKeys),
       workshopDone: strings(value.workshopDone, lessonIds),
       writingDone,
       drafts,
@@ -235,10 +239,12 @@ export function recordQuizAnswer(
   progress: Progress,
   id: string,
   correct: boolean,
+  level: Level = 1,
 ): void {
-  mark(progress, "quiz", id);
-  progress.quizDone = progress.quizDone.filter((value) => value !== id);
-  if (correct) progress.quizDone.push(id);
+  const key = quizKey(id, level);
+  mark(progress, "quiz", key);
+  progress.quizDone = progress.quizDone.filter((value) => value !== key);
+  if (correct) progress.quizDone.push(key);
 }
 export function recordWorkshopAnswer(
   progress: Progress,
@@ -292,9 +298,9 @@ export function updateDraft(
 }
 export function isComplete(progress: Progress, id: string): boolean {
   return (
-    progress.quizDone.includes(id) &&
-    progress.workshopDone.includes(id) &&
-    progress.writingDone.includes(writingKey(id, 1))
+    progress.quizDone.includes(quizKey(id, 1)) &&
+    progress.quizDone.includes(quizKey(id, 2)) &&
+    progress.workshopDone.includes(id)
   );
 }
 

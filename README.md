@@ -43,8 +43,8 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | Mathematik 5 Gymnasium (LehrplanPLUS Bayern) | [`mathematik-gymnasium-5/`](mathematik-gymnasium-5/) | https://academy.zam-os.org/mathematik-gymnasium-5/ | `zam-academy:mathematik-gymnasium-5` |
 | Mathematik 6 Gymnasium (LehrplanPLUS Bayern) | [`mathematik-gymnasium-6/`](mathematik-gymnasium-6/) | https://academy.zam-os.org/mathematik-gymnasium-6/ | `zam-academy:mathematik-gymnasium-6` |
 | Mathematik 7 Gymnasium (LehrplanPLUS Bayern) | [`mathematik-gymnasium-7/`](mathematik-gymnasium-7/) | https://academy.zam-os.org/mathematik-gymnasium-7/ | `zam-academy:mathematik-gymnasium-7` |
-| Geography 7 Gymnasium (Bavarian LehrplanPLUS) | [`geographie-gymnasium-7/`](geographie-gymnasium-7/) | Built by Pages on merge | `zam-academy:geographie-gymnasium-7` |
 | Geographie 5 Gymnasium (LehrplanPLUS Bayern) | [`geographie-gymnasium-5/`](geographie-gymnasium-5/) | Built by Pages on merge | `zam-academy:geographie-gymnasium-5` |
+| Geographie 7 Gymnasium (LehrplanPLUS Bayern) | [`geographie-gymnasium-7/`](geographie-gymnasium-7/) | Built by Pages on merge | `zam-academy:geographie-gymnasium-7` |
 | Biologie 5 Gymnasium: Natur und Technik 5, Schwerpunkt Biologie (LehrplanPLUS Bayern) | [`biologie-gymnasium-5/`](biologie-gymnasium-5/) | Built by Pages on merge | `zam-academy:biologie-gymnasium-5` |
 | Biologie 6 Gymnasium: Natur und Technik 6, Schwerpunkt Biologie (LehrplanPLUS Bayern) | [`biologie-gymnasium-6/`](biologie-gymnasium-6/) | Built by Pages on merge | `zam-academy:biologie-gymnasium-6` |
 | Mathematik 11 Gymnasium (LehrplanPLUS Bayern) | [`mathematik-gymnasium-11/`](mathematik-gymnasium-11/) | https://academy.zam-os.org/mathematik-gymnasium-11/ | `zam-academy:mathematik-gymnasium-11` |

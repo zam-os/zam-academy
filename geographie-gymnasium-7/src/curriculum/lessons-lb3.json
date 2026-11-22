@@ -81,7 +81,17 @@
     },
     "figures": [
       "naturraume"
-    ]
+    ],
+    "workedExample": "Vergleiche die Alpen und die Osteuropäische Ebene auf der Karte. Die Alpenlinie zieht sich über Staatsgrenzen. Die Ebene liegt weiter östlich und ist ein Tiefland. Eine naturräumliche Gliederung kann deshalb mehrere Staaten umfassen.",
+    "transferCheck": {
+      "question": "Eine Karte soll die Alpen als zusammenhängenden Raum zeigen. Woran soll sich ihre Grenze orientieren?",
+      "answer": "An Verlauf und Relief des Gebirges.",
+      "wrong": [
+        "An den Staatsgrenzen der größten Alpenländer.",
+        "Ausschließlich am Verlauf der Autobahnen."
+      ],
+      "explanation": "Eine Naturraumkarte gliedert nach Merkmalen der Landschaft. Die Alpen reichen über mehrere Staatsgrenzen."
+    }
   },
   {
     "id": "klima-vergleichen",
@@ -142,7 +152,7 @@
           "Trage Monate auf der waagrechten Achse ein.",
           "Lies 5 °C und 16 °C an den Enden der Spanne ab."
         ],
-        "model": "Ich nutze eine Linie für Temperaturen und Säulen für Regen. Der Juli ist im Küstenmodell am wärmsten, der Januar am kältesten. Das Temperaturmittel schwankt um 11 °C zwischen diesen Monaten.",
+        "model": "Ich nutze eine Linie für Temperaturen und Säulen für Regen. Im Küstenmodell sind Juli und August gleich warm und erreichen beide das höchste Monatsmittel. Der Januar ist am kältesten. Die Temperaturspanne beträgt 11 °C.",
         "criteria": [
           "Ich trage Monate und Einheiten ein.",
           "Ich unterscheide Linie und Säulen.",
@@ -166,7 +176,17 @@
     "figures": [
       "klima"
     ],
-    "lab": "klimavergleich"
+    "lab": "klimavergleich",
+    "workedExample": "Die Atlantikküste hat 5 °C im Januar und 16 °C im Juli und August. Die Spanne beträgt 16 − 5 = 11 °C. Im Landesinneren ergibt die Rechnung 21 − (−4) = 25 °C.",
+    "transferCheck": {
+      "question": "A hat 4 °C im Januar und 17 °C im Juli. B hat −5 °C und 21 °C. Welche Station liegt bei ähnlicher Breite eher am Meer?",
+      "answer": "A, weil 13 °C eine kleinere Spanne sind als 26 °C.",
+      "wrong": [
+        "B, weil dort der Juli wärmer ist.",
+        "B, weil die Spanne dort nur 16 °C beträgt."
+      ],
+      "explanation": "17 − 4 = 13 und 21 − (−5) = 26. Der Meereseinfluss dämpft die Schwankungen häufig."
+    }
   },
   {
     "id": "vegetation-und-wasser",
@@ -250,7 +270,17 @@
     },
     "figures": [
       "gebirgsregen"
-    ]
+    ],
+    "workedExample": "Zwei Wiesen liegen auf ähnlich warmen Hängen. Auf der windzugewandten Seite regnet es häufiger, weil feuchte Luft aufsteigt. Ist der Boden dort ebenfalls tief, kann er mehr Wasser speichern und das Wachstum länger unterstützen.",
+    "transferCheck": {
+      "question": "Auf der Windseite und im Lee ist es ähnlich warm. Weshalb kann der Bewuchs im Lee trotzdem spärlicher sein?",
+      "answer": "Beim Absinken erwärmt sich die Luft und ist relativ trockener.",
+      "wrong": [
+        "Im Lee steigen dieselben feuchten Luftmassen weiter auf.",
+        "Ähnliche Temperatur bedeutet dieselbe Wasserversorgung."
+      ],
+      "explanation": "Temperatur und verfügbares Wasser beeinflussen die Vegetation gemeinsam."
+    }
   },
   {
     "id": "plattengrenzen",
@@ -334,7 +364,17 @@
     "figures": [
       "plattenkarte"
     ],
-    "lab": "plattengrenzen"
+    "lab": "plattengrenzen",
+    "workedExample": "Die Pfeile auf der Island-Skizze zeigen auseinander. Magma steigt in der Mitte auf und kann dort neue Kruste bilden. Zwei Pfeile aufeinander zu und eine abtauchende Platte kennzeichnen im Vergleich eine Subduktionszone.",
+    "transferCheck": {
+      "question": "An einer seitlich versetzten Störung gibt es Erdbeben, aber keinen sichtbaren Vulkan. Welcher Vorgang erklärt das?",
+      "answer": "Verhakte Gesteinsblöcke lösen sich ruckartig.",
+      "wrong": [
+        "Die Bewegung kann nur beim Aufstieg von Magma einsetzen.",
+        "Die Störung muss neue Kruste zwischen auseinanderdriftenden Platten bilden."
+      ],
+      "explanation": "Ein Erdbeben kann entstehen, wenn sich Spannung löst. Dafür braucht es kein aufsteigendes Magma."
+    }
   },
   {
     "id": "naturgefahren",
@@ -354,8 +394,8 @@
       "question": "Welche Maßnahme senkt vor allem die Verwundbarkeit bei Erdbeben?",
       "answer": "Erdbebengerechte Bauweise.",
       "wrong": [
-        "Dichtere Bebauung im gefährdeten Gebiet.",
-        "Ein größerer Parkplatz im Ortszentrum."
+        "Mehr Messstationen, ohne Gebäude baulich zu verändern.",
+        "Eine zusätzliche Fluchtroute außerhalb des Ortes."
       ],
       "explanation": "Besser ausgelegte Gebäude können bei Erschütterungen stabiler bleiben."
     },
@@ -417,6 +457,16 @@
     },
     "figures": [
       "risiko"
-    ]
+    ],
+    "workedExample": "Zwei Ortschaften erleben ähnlich starke Erschütterungen. In einer sind viele Gebäude erdbebengerecht gebaut, in der anderen weniger. Die Gefahr ist ähnlich. Die zweite Ortschaft kann wegen ihrer verwundbareren Gebäude größere Schäden erleiden.",
+    "transferCheck": {
+      "question": "Zwei Orte liegen gleich weit vom Vulkan. Ort B hat nur eine Ausfallstraße. Was verbessert seine Evakuierung am ehesten?",
+      "answer": "Einen Ausweichweg für den Fall einer Straßensperre vorbereiten.",
+      "wrong": [
+        "Nur die Entfernung zum Vulkan genauer ausmessen.",
+        "Den vorhandenen Weg kürzer ausschildern, ohne eine Alternative zu kennen."
+      ],
+      "explanation": "Eine blockierte Straße kann die Flucht erschweren. Ein Ausweichweg verringert diese Verwundbarkeit."
+    }
   }
 ]

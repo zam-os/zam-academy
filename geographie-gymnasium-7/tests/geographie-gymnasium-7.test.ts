@@ -14,9 +14,9 @@ import grade7 from "./fixtures/de-by-gymnasium-7-geographie-europa-naturraeume-k
 describe("course contract", () => {
   it("maps all six areas and every lesson to the curriculum", () => {
     expect(STAGES.map((stage) => stage.lb)).toEqual([1, 2, 3, 4, 5, 6]);
-    expect(coverage.competencies).toHaveLength(29);
+    expect(coverage.rows).toHaveLength(29);
     const lessonIds = LESSONS.map((lesson) => lesson.id);
-    expect(new Set(lessonIds)).toEqual(new Set(coverage.competencies.flatMap((row) => row.lessons)));
+    expect(new Set(lessonIds)).toEqual(new Set(coverage.rows.flatMap((row) => row.lessons)));
     const activeLabs = new Set(LESSONS.flatMap((lesson) => lesson.lab ? [lesson.lab] : []));
     expect(activeLabs).toEqual(new Set(Object.keys(LABS)));
   });
@@ -24,11 +24,23 @@ describe("course contract", () => {
   it.each(LESSONS)("$id has a visual, a check, a solvable workshop and two distinct tasks", (lesson) => {
     expect(lesson.sourceIds.every((id) => SOURCES.some((source) => source.id === id))).toBe(true);
     expect(lesson.paragraphs.length).toBeGreaterThanOrEqual(2);
+    expect(lesson.workedExample.length).toBeGreaterThan(50);
     expect(lesson.figures).toHaveLength(1);
     const drawing = renderFigure(lesson.figures[0]);
     expect(drawing).toContain("<svg");
     expect(drawing).not.toMatch(/NaN|undefined/);
-    expect(new Set([lesson.quiz.answer, ...lesson.quiz.wrong]).size).toBe(3);
+    const checks = [lesson.quiz, lesson.transferCheck];
+    expect(checks[0].question).not.toBe(checks[1].question);
+    for (const check of checks) {
+      expect(new Set([check.answer, ...check.wrong]).size).toBe(3);
+      expect(check.explanation).not.toBe("");
+    }
+    const learnerText = JSON.stringify({
+      intro: lesson.intro, paragraphs: lesson.paragraphs,
+      example: lesson.workedExample, takeaway: lesson.takeaway,
+      tasks: lesson.tasks, checks,
+    });
+    expect(learnerText).not.toMatch(/\d\.\d|[ (]-\d|\d\s*×\s*\d/u);
     expect(checkWorkshop(lesson.workshop, lesson.workshop.entries.map(({ target }) => target)).every(Boolean)).toBe(true);
     expect(checkWorkshop(lesson.workshop, lesson.workshop.entries.map(() => -1)).every(Boolean)).toBe(false);
     expect(lesson.tasks[1].prompt).not.toBe(lesson.tasks[2].prompt);
@@ -53,10 +65,23 @@ describe("interactive models", () => {
     }
   });
 
+  it.each(Object.values(LABS).filter(({ id }) => id !== "bewasserung"))(
+    "$id requires a correct observation in every view",
+    (lab) => {
+      for (const scenario of ["0", "1", "2"]) {
+        const key = `answer-${scenario}`;
+        const opened = { scenario };
+        expect(reachedGoals(lab, opened)).toEqual([false, false, false]);
+        expect(reachedGoals(lab, { ...opened, [key]: "1" })).toEqual([false, false, false]);
+        expect(reachedGoals(lab, { ...opened, [key]: "0" })[Number(scenario)]).toBe(true);
+      }
+    },
+  );
+
   it("shows increasing total withdrawal when irrigation efficiency improves but area expands enough", () => {
     expect(LABS.bewasserung.render({ area: 10, water: 8 })).toContain("80 Einheiten");
     const expanded = LABS.bewasserung.render({ area: 15, water: 8 });
-    expect(expanded).toContain("120 Einheiten");
+    expect(expanded).toContain("15 · 8 = 120 Einheiten");
     expect(expanded).toContain("Der Vorrat nimmt im Modell ab.");
   });
 });
@@ -93,19 +118,25 @@ describe("ZAM cell", () => {
     const legacy = [grade6, grade7].flatMap((tile) =>
       tile.atoms.flatMap((atom) => atom.practice_items.map(({ id }) => [tile.tile_id, id])));
     expect(mapping.rows.map(({ de_by_cell, de_by_id }) => [de_by_cell, de_by_id]).sort()).toEqual(legacy.sort());
-    expect(mapping.status).toBe("proposal-only");
-    expect(mapping.approved).toBeNull();
+    expect(mapping.status).toBe("approved");
+    expect(mapping.approved).toBe("2026-11-22");
+    expect(mapping.source).toContain("Freigabe für Kartenübernahmen erteilt");
     expect(cell).not.toHaveProperty("retired_items");
-    const items = cell.atoms.flatMap((atom) => atom.practice_items);
-    for (const item of items) expect(item).not.toHaveProperty("replaces");
+    const items: Array<{ slug: string; replaces?: string[] }> = cell.atoms.flatMap((atom) => atom.practice_items);
+    const expected = mapping.rows.filter((row) => row.action === "replace");
+    expect(expected.map(({ de_by_id }) => de_by_id)).toEqual([
+      "01K4G7P0000000000000000J03",
+      "01K4YG6E000000000000000J01",
+    ]);
+    expect(items.flatMap((item) => (item.replaces ?? []).map((id) => [item.slug, id])).sort()).toEqual(expected.map((row) => [row.academy_slug, row.de_by_id]).sort());
     for (const row of mapping.rows) {
       expect(row.reason).not.toBe("");
-      if (row.category === "A") {
-        expect(items.filter(({ slug }) => slug === row.academy_slug)).toHaveLength(1);
-        expect(row.action).toBe("propose-replace-after-approval");
-      } else {
+      if (row.category === "C") {
         expect(row.academy_slug).toBeNull();
         expect(row.action).toBe("keep-active");
+      } else {
+        expect(row.category).toBe("A");
+        expect(row.action).toBe("replace");
       }
     }
   });

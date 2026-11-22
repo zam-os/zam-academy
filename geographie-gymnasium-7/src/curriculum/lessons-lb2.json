@@ -82,7 +82,17 @@
     "figures": [
       "staaten"
     ],
-    "lab": "teilraeume"
+    "lab": "teilraeume",
+    "workedExample": "Suche Spanien und verfolge die Westküste der Iberischen Halbinsel. Das Land westlich von Spanien ist Portugal. Die offene Wasserfläche an Portugals Westküste ist der Atlantik.",
+    "transferCheck": {
+      "question": "Ein Atlas ordnet Slowenien anders ein als dein Schulatlas. Wie kannst du den Unterschied erklären?",
+      "answer": "Die Einteilungen gewichten etwa den Alpenraum und die Adria unterschiedlich.",
+      "wrong": [
+        "Eine Staatsgrenze muss sich seit dem Druck verschoben haben.",
+        "Die Ländergröße bestimmt den Teilraum eindeutig."
+      ],
+      "explanation": "Teilräume hängen von Kriterien ab. Slowenien hat Bezüge zu Alpen und Adria."
+    }
   },
   {
     "id": "eu-binnenmarkt",
@@ -172,7 +182,17 @@
     },
     "figures": [
       "binnenmarkt"
-    ]
+    ],
+    "workedExample": "Eine Schülerin aus Frankreich nimmt für ihre Ausbildung eine Stelle in Deutschland an. Daran lässt sich der freie Personenverkehr erklären. Ein Händler, der ihr Fahrrad von Frankreich nach Deutschland liefert, nutzt den freien Warenverkehr.",
+    "transferCheck": {
+      "question": "Ein Unternehmen aus Portugal wartet in Spanien eine Maschine. Welche Freiheit zeigt die Tätigkeit am deutlichsten?",
+      "answer": "Freier Dienstleistungsverkehr.",
+      "wrong": [
+        "Freier Warenverkehr.",
+        "Freier Kapitalverkehr."
+      ],
+      "explanation": "Der Auftrag betrifft eine Tätigkeit. Ein Verkauf von Ersatzteilen wäre ein anderes Beispiel."
+    }
   },
   {
     "id": "kultur-migration",
@@ -200,7 +220,7 @@
     "workshop": {
       "kind": "classify",
       "title": "Wer erlebt welche Veränderung?",
-      "instruction": "Ordne die Folge ihrer Perspektive zu.",
+      "instruction": "Ordne jede Folge der passenden Perspektive zu.",
       "categories": [
         "Herkunftsort",
         "Zielort",
@@ -255,6 +275,16 @@
     },
     "figures": [
       "migration"
-    ]
+    ],
+    "workedExample": "In einer zweisprachigen Gemeinde stehen auf einem Ortsschild zwei Namen. Daraus kannst du ablesen, dass die Gemeinde beide Sprachen sichtbar macht. Welche Sprache ein Kind zu Hause spricht, findest du erst mit weiteren Angaben heraus.",
+    "transferCheck": {
+      "question": "Eine Stadt gewinnt zugezogene Pflegekräfte, im Herkunftsort fehlen sie. Welche Aussage fasst die Folgen zusammen?",
+      "answer": "Die Folgen können für Zielort und Herkunftsort unterschiedlich ausfallen.",
+      "wrong": [
+        "Ein Gewinn im Zielort bedeutet denselben Gewinn im Herkunftsort.",
+        "Arbeitsmigration lässt die Versorgung an beiden Orten unverändert."
+      ],
+      "explanation": "Die Beschäftigten arbeiten nun am Zielort. Beide Orte können daher unterschiedliche Veränderungen erleben."
+    }
   }
 ]
