@@ -339,6 +339,10 @@ jobs:
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node deutsch-mittelschule-8/scripts/validate-cell.mjs
       - name: Move approved Biologie 5 histories to Biologie 5 Realschule in temporary libraries
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node biologie-realschule-5/scripts/validate-migration.mjs
+      - name: Check Geographie 7 Gymnasium curriculum statements
+        run: node geographie-gymnasium-7/scripts/check-curriculum.mjs
+      - name: Move approved Geographie 7 Gymnasium histories and refuse automatic merges
+        run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node geographie-gymnasium-7/scripts/validate-migration.mjs
       - name: Move the approved Geographie 5 Gymnasium histories and refuse automatic merges
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node geographie-gymnasium-5/scripts/validate-migration.mjs
       - name: Install and enrol Geschichte/Politik/Geographie 5 Mittelschule idempotently
