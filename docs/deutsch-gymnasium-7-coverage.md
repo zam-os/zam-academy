@@ -31,14 +31,14 @@ Die lokal mit der Computerstimme *Anna* erzeugten Übungsaufnahmen (`debatte.wav
 
 Das Paket startet gemäß `publication.json` mit `"status": "ready"` und `"version": "0.0"` (Lehrkraftprüfung und Erklärvideos noch offen; keine Erklärvideos bei Erstveröffentlichung).
 
-## Bestandsabgleich bestehender ZAM-Karten (`proposal-only`)
+## Bestandsabgleich bestehender ZAM-Karten (`approved`)
 
-Der [Bestandsvorschlag](../deutsch-gymnasium-7/replaces-de-by.json) (`status: "proposal-only"`, `approved: null`) inventarisiert alle acht Karten aus beiden bestehenden Grade-7-Gymnasium-Zellen in `zam-os/zam` (Commit `d83ea3b2f93609b7ed25432c1cb37774dc59c537`):
+Die [freigegebene Zuordnung](../deutsch-gymnasium-7/replaces-de-by.json) (`status: "approved"`, `approved: "2026-11-22"`) inventarisiert alle acht Karten aus beiden bestehenden Grade-7-Gymnasium-Zellen in `zam-os/zam` (Commit `d83ea3b2f93609b7ed25432c1cb37774dc59c537`):
 
 - `de-by:gymnasium-7-deutsch-konjunktiv-indirekte-rede-passiv-syntax` (`01K4D7G0000000000000000J01`–`J04`, SHA-256 `d00483db8b14e221103c95e61fe98ac3a0a96089c16872daa9bf3bd07686fd2b`)
 - `de-by:gymnasium-7-deutsch-texte-inhaltsangabe-ballade-interpretation` (`01K4D7T0000000000000000J01`–`J04`, SHA-256 `92cd2f75ace32acc2b0744d3d2fcb464d055afa8893e6194ad57ca873eac2d07`)
 
-Drei Kategorie-A-Vorschläge (`propose-replace-after-approval`):
+Drei Kategorie-A-Übernahmen (von Thomas am 2026-11-22 freigegeben, mit `replaces` in `cell.json`):
 - `01K4D7G0000000000000000J01` → `d7-indikativ-konjunktiv-rede-check` (Konjunktiv I als Standardmodus für distanzierte indirekte Rede).
 - `01K4D7T0000000000000000J01` → `d7-inhaltsangabe-check` (die vier Pflichtbestandteile des Basissatzes: Titel, Autor, Textsorte, Thema).
 - `01K4D7T0000000000000000J03` → `d7-gattungen-ballade-check` (Ballade als Verbindung aus Epik, Lyrik und Dramatik).
@@ -50,7 +50,7 @@ Fünf Kategorie-C-Einträge (`keep-active`):
 - `01K4D7T0000000000000000J02` (gesamte Aufbaustruktur der Inhaltsangabe samt Modell in einer Frage),
 - `01K4D7T0000000000000000J04` (Sammelabruf aus Gattungstrias, Balladenuntertypen über Goethe/Schiller/Fontane und Interpretationsdreischritt).
 
-**Hinweis zur Überschneidung mit Klasse 6**: `deutsch-gymnasium-6` führt bereits die vier Karten `01K4D7G0000000000000000J01`–`J04` als Kategorie C (`keep-active`), weil Konjunktiv I/II in Klasse 7 liegt. Nach Thomas' Freigabe dieses Vorschlags wechselt ausschließlich `01K4D7G0000000000000000J01` in die Zuständigkeit von `deutsch-gymnasium-7`; bis dahin veröffentlicht `deutsch-gymnasium-7/cell.json` ohne `replaces` und `retired_items`.
+**Hinweis zur Überschneidung mit Klasse 6**: `deutsch-gymnasium-6` führt die vier Karten `01K4D7G0000000000000000J01`–`J04` nur informatorisch als Kategorie C (`keep-active`), weil Konjunktiv I/II in Klasse 7 liegt. Durch die Freigabe übernimmt `deutsch-gymnasium-7` `01K4D7G0000000000000000J01` via `replaces`; `cell.json` deklariert keine `retired_items`.
 
 ## Verifikation
 
@@ -67,4 +67,5 @@ node --test scripts/build-catalog.test.mjs scripts/academy-registry.test.mjs scr
 node scripts/package-version.mjs check origin/main
 ZAM_CORE=file:///pfad/zu/zam-core/dist/index.js node scripts/validate-cells.mjs
 ZAM_CORE=file:///pfad/zu/zam-core/dist/index.js node deutsch-gymnasium-7/scripts/validate-cell.mjs
+ZAM_CORE=file:///pfad/zu/zam-core/dist/index.js node deutsch-gymnasium-7/scripts/validate-migration.mjs
 ```

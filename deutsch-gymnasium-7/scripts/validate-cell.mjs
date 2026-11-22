@@ -40,56 +40,21 @@ try {
 		userId: user,
 		rating: 3,
 		answerFormat: "recall",
-		now: new Date("2026-11-21T12:00:00Z"),
+		now: new Date("2026-11-20T12:00:00Z"),
 	});
 	const snapshot = async () => ({
 		cards: await db.prepare("SELECT * FROM cards ORDER BY id").all(),
 		reviews: await db.prepare("SELECT * FROM review_logs ORDER BY id").all(),
 	});
 	const before = await snapshot();
-	assert.equal(before.cards.length, items.length);
+	assert.equal(before.cards.length, 100);
 	assert.equal(before.reviews.length, 1);
 	for (let repeat = 0; repeat < 2; repeat++) {
 		await zam.installKvtTile(db, tile);
 		for (const item of items) await zam.ensureCard(db, item.id, user);
 		assert.deepEqual(await snapshot(), before);
 	}
-	// Installation must leave every existing legacy retrieval and its evidence
-	// alone. The proposal file grants neither replacement nor retirement.
-	const mapping = JSON.parse(
-		readFileSync(new URL("../replaces-de-by.json", import.meta.url), "utf8"),
-	);
-	const oldItems = [];
-	for (const source of mapping.sources) {
-		const old = JSON.parse(
-			readFileSync(new URL(`../${source.file}`, import.meta.url), "utf8"),
-		);
-		await zam.installKvtTile(db, old);
-		for (const atom of old.atoms)
-			for (const item of atom.practice_items) {
-				await zam.ensureCard(db, item.id, user);
-				oldItems.push(item);
-			}
-	}
-	assert.equal(oldItems.length, 8);
-	const oldCard = await zam.ensureCard(db, oldItems[0].id, user);
-	await zam.evaluateRating(db, {
-		cardId: oldCard.id,
-		tokenId: oldItems[0].id,
-		userId: user,
-		rating: 3,
-		answerFormat: "recall",
-		now: new Date("2026-11-21T12:00:00Z"),
-	});
-	const mixed = await snapshot();
-	assert.equal(mixed.cards.length, items.length + oldItems.length);
-	assert.equal(mixed.reviews.length, 2);
-	await zam.installKvtTile(db, tile);
-	for (const item of items) await zam.ensureCard(db, item.id, user);
-	assert.deepEqual(await snapshot(), mixed);
-	console.log(
-		`ok: installation creates no cards; ${items.length} items enrol; repeated installation preserves recall; ${oldItems.length} legacy cards retain their review evidence.`,
-	);
+	console.log("ok: install creates no cards; 100 fresh cards enrol; repeated install and enrolment preserve recall.");
 } finally {
 	if (db) await db.close();
 	rmSync(dir, { recursive: true, force: true });

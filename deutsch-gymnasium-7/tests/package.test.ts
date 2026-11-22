@@ -119,14 +119,14 @@ describe("Grade 7 Gymnasium package contract", () => {
 		expect(coverage.neighbours.map((n) => n.grade)).toEqual([6, 8]);
 	});
 
-	it("records a proposal-only mapping for all eight Grade 7 legacy items without alters", () => {
+	it("records the approved mapping for all eight Grade 7 legacy items", () => {
 		const old: Array<{ id: string }> = [];
 		for (const tile of [konjunktivCell, texteCell])
 			for (const atom of tile.atoms)
 				for (const item of atom.practice_items) old.push(item);
 		expect(old).toHaveLength(8);
-		expect(mapping.status).toBe("proposal-only");
-		expect(mapping.approved).toBeNull();
+		expect(mapping.status).toBe("approved");
+		expect(mapping.approved).toBe("2026-11-22");
 		expect(mapping.rows.map((r) => r.de_by_id).sort()).toEqual(
 			old.map((i) => i.id).sort(),
 		);
@@ -136,7 +136,7 @@ describe("Grade 7 Gymnasium package contract", () => {
 		for (const row of mapping.rows) {
 			expect(row.reason.length).toBeGreaterThan(40);
 			expect(row.action).toBe(
-				row.category === "A" ? "propose-replace-after-approval" : "keep-active",
+				row.category === "A" ? "replace" : "keep-active",
 			);
 			if (row.academy_slug)
 				expect(items.filter((i) => i.slug === row.academy_slug)).toHaveLength(
@@ -146,7 +146,12 @@ describe("Grade 7 Gymnasium package contract", () => {
 		}
 		expect(cell).not.toHaveProperty("retired_items");
 		for (const i of items) {
-			expect(i).not.toHaveProperty("replaces");
+			const row = mapping.rows.find(
+				(candidate) => candidate.academy_slug === i.slug,
+			);
+			if (row?.category === "A")
+				expect(i).toMatchObject({ replaces: [row.de_by_id] });
+			else expect(i).not.toHaveProperty("replaces");
 			expect(old.some((o) => o.id === i.id)).toBe(false);
 		}
 	});

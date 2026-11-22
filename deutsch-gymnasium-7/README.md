@@ -22,12 +22,13 @@ Die Browserprüfung öffnet die gebaute Einzeldatei in einem temporären Headles
 
 Die [Abdeckungsmatrix](coverage.json) verzeichnet alle 46 Erwartungen des bayerischen Fachlehrplans wortgetreu. `npm run check:curriculum` prüft jeden Wortlaut gegen die gespeicherte Lehrplan-HTML-Seite sowie sämtliche Quellen-, Altbestands- und Audio-Hashes. Zeilen mit `status: "supported"` kennzeichnen Unterrichtsaktivitäten außerhalb der App (echte Diskussionen, Vorträge, Spielszenen, Nutzung von Textverarbeitungsprogrammen, selbstständige Recherche, Schreibkonferenzen sowie die Lektüre mindestens einer altersgemäßen Ganzschrift). Einzelheiten stehen im [Bestands- und Lehrplanabgleich](../docs/deutsch-gymnasium-7-coverage.md).
 
-Die 100 ZAM-Übungskarten liegen ausschließlich in [cell.json](cell.json) (zwei pro Lektion, mit jeweils zwei geprüften Distraktoren und Ankern auf die Lektion). Der [Vorschlag für bestehende Karten](replaces-de-by.json) ist als `proposal-only` (`approved: null`) markiert und inventarisiert alle acht Karten der beiden bestehenden Grade-7-Gymnasium-Zellen: drei Kategorie-A-Vorschläge (`propose-replace-after-approval`) und fünf Kategorie-C-Zeilen (`keep-active`). Bis zu Thomas' ausdrücklicher Freigabe enthält `cell.json` weder `replaces` noch `retired_items`.
+Die 100 ZAM-Übungskarten liegen ausschließlich in [cell.json](cell.json) (zwei pro Lektion, mit jeweils zwei geprüften Distraktoren und Ankern auf die Lektion). Die [freigegebene Zuordnung](replaces-de-by.json) inventarisiert alle acht Karten der beiden bestehenden Grade-7-Gymnasium-Zellen: Thomas hat die drei Kategorie-A-Übernahmen am 22.11.2026 freigegeben (`replaces`), sodass ihre Lernhistorien auf die jeweiligen Nachfolge-Items übergehen; die übrigen fünf Kategorie-C-Karten bleiben aktiv (`keep-active`).
 
-Validierung der Installation, Einschreibung und Bestandsprüfung gegen das im CI gepinnte `zam-core`:
+Validierung der Installation, Einschreibung und Übertragung bestehender Lerngeschichten gegen das im CI gepinnte `zam-core`:
 
 ```sh
 ZAM_CORE=file:///pfad/zu/zam-core/dist/index.js node scripts/validate-cell.mjs
+ZAM_CORE=file:///pfad/zu/zam-core/dist/index.js node scripts/validate-migration.mjs
 ```
 
 Alle Texte und Beispiele sind Eigenentwürfe außer den gemeinfreien Auszügen aus Walther von der Vogelweide und Johann Wolfgang von Goethe (Wikisource). Zwei Hörbeispiele (`debatte.wav` und `rundfunk.wav`) wurden lokal mit der Computerstimme *Anna* erzeugt; [src/media/provenance.json](src/media/provenance.json) protokolliert Audio- und Transkript-Hashes. [source-checks.json](source-checks.json) hält die abgerufenen Seitentitel und SHA-256-Prüfsummen aller sechs verlinkten Fach-, Nachschlage- und Medienseiten fest. Erklärvideos wurden vereinbarungsgemäß noch nicht ergänzt.
