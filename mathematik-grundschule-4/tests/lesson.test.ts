@@ -587,4 +587,12 @@ describe("re-review refinements", () => {
 			"Zahl: 50\u202f144; markierte Ziffer: 1.",
 		);
 	});
+	it("renders all place-value bundles up to 18 and shows the remainder label beyond 18", () => {
+		const rendered = board([0, 0, 18, 15, 4], false, undefined, false, false, 5);
+		expect(rendered.match(/class="block block-2"/g)).toHaveLength(18);
+		expect(rendered.match(/class="block block-3"/g)).toHaveLength(19);
+		const overflowed = board([80, 0, 0, 0, 0], false, undefined, false, false, 5);
+		expect(overflowed.match(/class="block block-0"/g)).toHaveLength(18);
+		expect(overflowed).toContain('<span class="more-pieces">+ 62 weitere</span>');
+	});
 });
