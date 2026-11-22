@@ -296,6 +296,39 @@ test("the atlas omits untaught subjects instead of promising future packages", (
   }
 });
 
+test("Gymnasium biology and economics skip grade 7 without hiding other school offers", () => {
+  const trees = atlasTrees();
+  const world = trees.welt.children.flatMap((node) => node.children);
+  const { nodes } = matrix(registry, "gymnasium");
+  const rows = nodes.matrix.children.find((node) => node.tag === "tbody").children;
+  const gaps = [
+    ["biologie", "https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/7/nt_gym"],
+    ["wirtschaft", "https://www.lehrplanplus.bayern.de/fachprofil/gymnasium/wirtschaft-und-recht"],
+  ];
+
+  for (const [subject, source] of gaps) {
+    const offers = schoolSubject(trees, 7, subject)?.children ?? [];
+    assert.ok(!offers.some((node) => node.school?.id === "gymnasium"));
+    const slot = `slot:gymnasium:7:${subject}`;
+    const worldOffers = world.find((node) => node.id === subject).children;
+    assert.ok(!worldOffers.some((node) =>
+      node.offerKey === slot || node.offerGroup?.includes(slot)));
+
+    const row = rows[registry.faecher.findIndex((entry) => entry.id === subject)];
+    const grade7 = row.children[4].children[0];
+    assert.equal(grade7.attrs.class, "na none");
+    assert.ok(grade7.attrs["aria-label"].includes("kein Fach"));
+    assert.equal(grade7.attrs.href, source);
+  }
+
+  assert.ok(schoolSubject(trees, 7, "biologie").children
+    .some((node) => node.pkg?.app === "biologie-realschule-7"));
+  assert.ok(schoolSubject(trees, 6, "biologie").children
+    .some((node) => node.pkg?.app === "biologie-gymnasium-6"));
+  assert.ok(schoolSubject(trees, 8, "wirtschaft").children
+    .some((node) => node.school?.id === "gymnasium"));
+});
+
 test("Realschule physics starts with Group I in grade 7, not a promised grade-6 package", () => {
   const trees = atlasTrees();
   assert.ok(!schoolSubject(trees, 6, "physik")?.children.some((n) => n.school?.id === "realschule"));
