@@ -1,8 +1,8 @@
 {
   "schema": 1,
-  "status": "proposal-only",
-  "approved": null,
-  "note": "Proposal 4 A / 0 B / 4 C for de-by:realschule-7-geschichte-mittelalter-fruehe-neuzeit. Four tier-1 atomic checks match J01, J03, J05 and J07 and are proposed for replaces after explicit approval by Thomas; four multipart tier-2 items (J02, J04, J06, J08) stay active (no retired_items). cell.json currently declares neither replaces nor retired_items.",
+  "status": "approved",
+  "approved": "2026-11-22",
+  "note": "Approved 4 A / 0 B / 4 C for de-by:realschule-7-geschichte-mittelalter-fruehe-neuzeit. Four tier-1 atomic checks transfer histories from J01, J03, J05 and J07 via replaces; four multipart tier-2 items (J02, J04, J06, J08) stay active (no retired_items).",
   "source_repository": "zam-os/zam",
   "source_commit": "bae34e7dfe7d01838e448a65f15871c3549ae3fc",
   "sources": [
@@ -21,7 +21,7 @@
       "de_by_question": "Welcher Stand umfasste im mittelalterlichen Ständemodell über 90 % der Gesamtbevölkerung und trug durch Frondienste und Abgaben die materielle Last der Gesellschaft?",
       "category": "A",
       "academy_slug": "g7-grundherrschaft-und-staende-check",
-      "action": "propose-replace-after-approval",
+      "action": "replace",
       "reason": "Same atomic retrieval: both the old item and g7-grundherrschaft-und-staende-check ask which estate encompassed over 90 % of the population in the medieval three-estates model and bore the material burden through labour services and dues, expecting the third estate (Nährstand)."
     },
     {
@@ -39,7 +39,7 @@
       "de_by_question": "Was bedeutete der berühmte mittelalterliche Rechtsgrundsatz 'Stadtluft macht frei (nach Jahr und Tag)' für geflohene leibeigene Bauern?",
       "category": "A",
       "academy_slug": "g7-stadt-und-buerger-check",
-      "action": "propose-replace-after-approval",
+      "action": "replace",
       "reason": "Same atomic retrieval: both the old item and g7-stadt-und-buerger-check ask for the meaning of the medieval legal principle 'Stadtluft macht frei (nach Jahr und Tag)' for runaway serfs and expect freedom from manorial dependence after living in the town undisturbed for a year and a day."
     },
     {
@@ -57,7 +57,7 @@
       "de_by_question": "Wie viele Kurfürsten (geistliche und weltliche Reichsfürsten) hatten nach der Goldenen Bulle von 1356 das exklusive Recht, den römisch-deutschen König zu wählen?",
       "category": "A",
       "academy_slug": "g7-koenig-reich-kurfuersten-check",
-      "action": "propose-replace-after-approval",
+      "action": "replace",
       "reason": "Same atomic retrieval: both the old item and g7-koenig-reich-kurfuersten-check ask how many prince-electors (Kurfürsten) held the right to elect the Romano-German king under the Golden Bull of 1356 and expect seven (three ecclesiastical and four secular electors)."
     },
     {
@@ -75,7 +75,7 @@
       "de_by_question": "Womit leitete der Mönch Martin Luther im Jahr 1517 in Wittenberg die Reformation der Kirche ein?",
       "category": "A",
       "academy_slug": "g7-luther-und-1517-check",
-      "action": "propose-replace-after-approval",
+      "action": "replace",
       "reason": "Same atomic retrieval: both the old item and g7-luther-und-1517-check ask how Martin Luther initiated the Reformation in Wittenberg in 1517 and expect his 95 Theses against the trade in indulgences."
     },
     {
@@ -87,5 +87,6 @@
       "action": "keep-active",
       "reason": "The legacy tier-2 synthesis spans Renaissance/Humanism, Gutenberg's printing press, Luther's four Soli, Worms 1521, the Peasants' War 1525 and the 1555 Peace of Augsburg, which the new package teaches across six separate lessons in LB 3 and LB 4. Never split one history across multiple successors; keep the legacy item active."
     }
-  ]
+  ],
+  "source": "Thomas approved all 4 proposed A transfers in Antigravity chat on 2026-11-22 before ZAM 0.68.0 release: „Die 4+4 A-Zeilen für bwr-realschule-7 und geschichte-realschule-7 hiermit freigeben, zuerst in zam-os/zam-academy veröffentlichen und dann alle 6 Pakete in ZAM 0.68.0 aufnehmen“."
 }
