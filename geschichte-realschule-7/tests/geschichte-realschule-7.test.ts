@@ -555,7 +555,7 @@ describe("cell and pinned contract", () => {
     }
   });
 
-  it("pins every published id and slug and declares no replaces or retirements", () => {
+  it("pins every published id and slug and declares only the four approved replaces", () => {
     expect(
       cell.atoms.map((atom) => ({
         id: atom.id,
@@ -564,7 +564,8 @@ describe("cell and pinned contract", () => {
         items: atom.practice_items.map((item) => ({ id: item.id, slug: item.slug })),
       })),
     ).toEqual(publicContract);
-    expect(JSON.stringify(cell)).not.toMatch(/"replaces"|"retired_items"/);
+    expect(JSON.stringify(cell)).not.toMatch(/"retired_items"/);
+    expect(items.filter((item) => (item.replaces?.length ?? 0) > 0)).toHaveLength(4);
   });
 
   it("uses only real lesson anchors and resolves level-specific deep links safely", () => {
@@ -580,7 +581,7 @@ describe("cell and pinned contract", () => {
   });
 });
 
-describe("proposal-only mapping of the legacy ZAM cell", () => {
+describe("approved mapping of the legacy ZAM cell", () => {
   const oldItems = legacy.atoms.flatMap((atom) => atom.practice_items) as Array<{
     id: string;
     question: string;
@@ -601,14 +602,15 @@ describe("proposal-only mapping of the legacy ZAM cell", () => {
     expect(mapping.rows.filter((row) => row.category === "C")).toHaveLength(4);
   });
 
-  it("keeps mapping unapproved as proposal-only and points proposed A rows to existing slugs", () => {
-    expect(mapping.status).toBe("proposal-only");
-    expect(mapping.approved).toBeNull();
-    const slugs = items.map((item) => item.slug);
+  it("records approved A transfers and declares matching replaces on each successor", () => {
+    expect(mapping.status).toBe("approved");
+    expect(mapping.approved).toBe("2026-11-22");
     for (const row of mapping.rows) {
       if (row.category === "A") {
-        expect(slugs.filter((slug) => slug === row.academy_slug)).toHaveLength(1);
-        expect(row.action).toBe("propose-replace-after-approval");
+        const matches = items.filter((item) => item.slug === row.academy_slug);
+        expect(matches).toHaveLength(1);
+        expect(matches[0].replaces).toEqual([row.de_by_id]);
+        expect(row.action).toBe("replace");
       } else {
         expect(row.academy_slug).toBeNull();
         expect(row.action).toBe("keep-active");
