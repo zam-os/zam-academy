@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "status": "proposal-only",
-  "approved": null,
+  "status": "approved",
+  "approved": "2026-11-22",
   "source_repository": "https://github.com/zam-os/zam",
   "source_commit": "7897672c2caa8435c89bf39eac41e1efc75521c2",
-  "source": "Bestandsaufnahme beider BwR-7-Teilzellen in zam-os/zam vom 21.11.2026: 4 A (vorgeschlagene Einzelübernahmen), 0 B, 6 C (2 keep-active für nicht im LehrplanPLUS BwR 7 enthaltene Grundlagen, 4 propose-retire-after-approval für mehrteilige/abweichende Karten). Keine Freigabe erteilt; cell.json deklariert weder replaces noch retired_items.",
+  "source": "Thomas approved all 4 proposed A transfers in Antigravity chat on 2026-11-22 before ZAM 0.68.0 release: „Die 4+4 A-Zeilen für bwr-realschule-7 und geschichte-realschule-7 hiermit freigeben, zuerst in zam-os/zam-academy veröffentlichen und dann alle 6 Pakete in ZAM 0.68.0 aufnehmen“. All 6 C rows remain without retired_items.",
   "policy": "A: same atomic retrieval, one successor proposes replaces. B: whole multi-part prompt retained on one dedicated successor. C: split, off-curriculum or corrected; keep-active or propose-retire-after-approval, never replaces.",
   "neighbouring_grade_review": "de-by:realschule-8-bwr-erfolgskonten-guv-werkstoffe-rabatte (4 Karten: J01/J02 zu Erfolgskonten/GUV, J03/J04 zu Werkstoffeinkauf/Bezugskosten/Rabatten/Skonto) mischt BwR-7-Grundlagen (Werkstoffe, Rabatt, Erfolgskonten) mit klarem BwR-8-Stoff (Löhne, Miete, 6001 BZKR, Skonto; GUV im Zweig IIIa erst in Klasse 8) und bleibt vorerst unberührt bei BwR 8 (Rückfrage an Thomas im PR, ob J01 oder J03 später zu BwR 7 gehören sollen). de-by:realschule-8-wirtschaft-recht-konsum-geld-jugend gehört zu Wirtschaft und Recht 8 II und bleibt unberührt.",
   "sources": [
@@ -47,7 +47,7 @@
       "de_by_id": "01K4W7B0000000000000000J03",
       "de_by_question": "Wie lautet die fundamentale Bilanzgleichung zur Ermittlung des Eigenkapitals (Reinvermögens) eines Unternehmens?",
       "category": "A",
-      "action": "propose-replace-after-approval",
+      "action": "replace",
       "academy_slug": "bwr7-gb-bilanz-check",
       "reason": "Identischer atomarer Einzelabruf: Eigenkapital (Reinvermögen) = Vermögen − Schulden; bwr7-gb-bilanz-check fragt exakt diese Bilanzgleichung mit denselben Antwortoptionen."
     },
@@ -65,7 +65,7 @@
       "de_by_id": "01K4W7B0000000000000000J05",
       "de_by_question": "Welche der 4 Bilanzveränderungen liegt vor, wenn ein Betrieb einen neuen Lieferwagen (Fuhrpark) im Wert von 35.000 € durch sofortige Banküberweisung kauft?",
       "category": "A",
-      "action": "propose-replace-after-approval",
+      "action": "replace",
       "academy_slug": "bwr7-gb-bilanzveraenderungen-check",
       "reason": "Identischer Einzelabruf am selben Lieferwagen-Beispiel über 35.000 Euro gegen Banküberweisung (Aktivtausch, Bilanzsumme bleibt unverändert)."
     },
@@ -83,7 +83,7 @@
       "de_by_id": "01K4W7K0000000000000000J01",
       "de_by_question": "Auf welcher Kontoseite (Soll oder Haben) werden bei einem Aktivkonto (z. B. Fuhrpark, Bank, Kasse) der Anfangsbestand (AB) und sämtliche Zugänge (+) erfasst?",
       "category": "A",
-      "action": "propose-replace-after-approval",
+      "action": "replace",
       "academy_slug": "bwr7-gb-bestandskonten-check",
       "reason": "Identischer Einzelabruf zu Anfangsbestand und Zugängen auf einem Aktivkonto (Soll-Seite links) mit denselben Binäroptionen."
     },
@@ -101,7 +101,7 @@
       "de_by_id": "01K4W7K0000000000000000J03",
       "de_by_question": "Wie lautet die universelle Grundregel zur Formulierung jedes Buchungssatzes im betrieblichen Rechnungswesen?",
       "category": "A",
-      "action": "propose-replace-after-approval",
+      "action": "replace",
       "academy_slug": "bwr7-gb-buchungssatz-check",
       "reason": "Identischer Einzelabruf zur Grundregel jedes Buchungssatzes („Soll an Haben“) mit denselben zwei Antwortoptionen."
     },
