@@ -134,13 +134,13 @@
 		],
 		"tasks": {
 			"1": {
-				"prompt": "Lies den Text von Léa und beantworte auf Französisch: Où habite Léa ? Où va-t-elle le week-end ? Qu’est-ce qu’elle mange ?",
+				"prompt": "Lies den Text von Léa und beantworte auf Französisch: Où est-ce que Léa habite ? Où est-ce qu’elle va le week-end ? Qu’est-ce qu’elle mange ?",
 				"model": "Léa habite à Rennes, en Bretagne. Le week-end, elle va à Saint-Malo. Elle mange des galettes dans une crêperie.",
 				"criteria": ["Ich beantworte alle drei Fragen.", "Ich übernehme die Informationen genau.", "Ich schreibe ganze Sätze mit elle."]
 			},
 			"2": {
 				"prompt": "Vergleiche das Leben von Léa in der Bretagne mit dem Leben in deiner Region: zwei Unterschiede und eine Gemeinsamkeit. Schaue für eine Idee auf die verlinkte Seite über die Bretagne.",
-				"model": "Léa habite au bord de la mer, moi, j’habite près des Alpes. En Bretagne, on mange des galettes, chez moi, on mange des bretzels. Comme Léa, je vais souvent dehors avec ma famille le week-end.",
+				"model": "Léa habite à Rennes et elle va le week-end à Saint-Malo, au bord de la mer ; moi, j’habite près des Alpes. En Bretagne, on mange des galettes, chez moi, on mange des bretzels. Comme Léa, je vais souvent dehors avec ma famille le week-end.",
 				"criteria": ["Ich nenne zwei Unterschiede.", "Ich nenne eine Gemeinsamkeit.", "Ich stütze mich auf Text und Quelle."]
 			}
 		},
@@ -171,9 +171,9 @@
 		"bindings": ["1.1-schreiben", "1.1-sprachmittlung", "2", "3", "5"],
 		"paragraphs": [
 			"Zum Geburtstag sagst du Joyeux anniversaire ! oder Bon anniversaire ! Dazu gehören un gâteau (Kuchen), des bougies (Kerzen), des cadeaux und une fête (Feier). Das Lied heißt ebenfalls Joyeux anniversaire. Nach dem Geburtstag fragst du: C’est quand, ton anniversaire ? – C’est le 12 mai.",
-			"Eine Einladung braucht eine Anrede, die wichtigsten Angaben und einen Schluss. Anrede: Salut Inès ! oder Chère Inès, / Cher Hugo, (cher für Jungen, chère für Mädchen). Angaben: quoi (une fête), quand (samedi 14 mai, à 15 heures), où (chez moi, 12 rue des Lilas). Schluss: Tu viens ? Réponds-moi vite ! À bientôt ! Bisous, Léa. Beispiel: Je fais une fête pour mon anniversaire samedi à 15 heures, chez moi. Tu viens ?"
+			"Eine Einladung braucht eine Anrede, die wichtigsten Angaben und einen Schluss. Anrede: Salut Inès ! oder Chère Inès, / Cher Hugo, (cher für Jungen, chère für Mädchen). Angaben: quoi (une fête), quand (samedi 14 mai, à 15 heures), où (chez moi, 12 rue des Lilas). Schluss: Tu viens ? Réponds vite ! À bientôt ! Bisous, Léa. Beispiel: Je fais une fête pour mon anniversaire samedi à 15 heures, chez moi. Tu viens ?"
 		],
-		"material": "Salut Inès ! Samedi 14 mai, c’est mon anniversaire ! Je fais une fête chez moi, 12 rue des Lilas, de 15 heures à 19 heures. Il y a un gâteau au chocolat, de la musique et des jeux. Tu viens ? Réponds-moi vite ! Bisous, Léa",
+		"material": "Salut Inès ! Samedi 14 mai, c’est mon anniversaire ! Je fais une fête chez moi, 12 rue des Lilas, de 15 heures à 19 heures. Il y a un gâteau au chocolat, de la musique et des jeux. Tu viens ? Réponds vite ! Bisous, Léa",
 		"materialLabel": "Eigenes Übungsmaterial · erfundene Einladung und Adresse",
 		"materialLanguage": "fr",
 		"sourceIds": ["lp-f7"],

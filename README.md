@@ -206,7 +206,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # German 7 Realschule: cd deutsch-realschule-7 (dev server on :5268)
 # Englisch 6 Realschule: cd englisch-realschule-6 (dev server on :5255)
 # Englisch 7 Realschule: cd englisch-realschule-7 (dev server on :5273)
-# Französisch 7 Realschule: cd franzoesisch-realschule-7 (dev server on :5274)
+# Französisch 7 Realschule: cd franzoesisch-realschule-7 (dev server on :5275)
 # Geschichte 6 Realschule: cd geschichte-realschule-6 (dev server on :5258)
 # Geschichte 7 Realschule: cd geschichte-realschule-7 (dev server on :5271)
 # Biologie 5 Gymnasium: cd biologie-gymnasium-5 (dev server on :5246)

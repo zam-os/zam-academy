@@ -142,6 +142,12 @@ describe("Grade 7 Realschule French teaching contract", () => {
 		// Grade 7 lists only me, te, nous, vous as object pronouns; le / la / les / lui / leur follow in grade 8.
 		expect(text).not.toMatch(/\b(?:je|tu|il|elle|on|nous|vous|ils|elles) (?:ne )?(?:l’|la |le |les |lui |leur )(?:[a-zéèêàâîôûç]+(?:e|es|ons|ez|ent|s|t|d))\b(?! (?:de|du|la|le|les))/i);
 		expect(text).not.toMatch(/\b(?:je|tu|il|elle|on|nous) me lève|qui est infirmière|y vais/);
+		// Grade 7 asks with intonation and est-ce que; inversion and postposed
+		// pronouns after an affirmative imperative are not taught yet.
+		const prompts = LESSONS.flatMap((lesson) => [lesson.tasks[1].prompt, lesson.tasks[2].prompt]).join(" ");
+		expect(`${text} ${prompts}`).not.toMatch(/-t-(?:il|elle|on)\b|\best-il\b|Réponds-moi/);
+		expect(findLesson("f7-me-te")!.tasks[2].model).toContain("Après, je t’invite chez moi.");
+		expect(findLesson("f7-bretagne")!.tasks[2].model).toContain("Léa habite à Rennes");
 		expect(findLesson("f7-cer-ger")!.paragraphs.join(" ")).toContain("nous commençons");
 		expect(findLesson("f7-me-te")!.paragraphs.join(" ")).toContain("Il ne m’écoute pas");
 		expect(findLesson("f7-futur")!.paragraphs.join(" ")).toContain("je vais jouer");

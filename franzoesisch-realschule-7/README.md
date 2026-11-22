@@ -36,4 +36,4 @@ ZAM_CORE=file:///path/to/zam-core/dist/index.js node scripts/validate-cell.mjs
 ZAM_CORE=file:///path/to/zam-core/dist/index.js node scripts/validate-migration.mjs
 ```
 
-Browser verification uses installed headless Chrome (`CHROME_BIN` if it is elsewhere, `BROWSER_QA_DIR` for the screenshots). Use zam-core 0.54.0 as pinned in CI. The dev server uses port 5274. Package version 0.0: teacher review is open.
+Browser verification uses installed headless Chrome (`CHROME_BIN` if it is elsewhere, `BROWSER_QA_DIR` for the screenshots). Use zam-core 0.54.0 as pinned in CI. The dev server uses port 5275. Package version 0.0: teacher review is open.
