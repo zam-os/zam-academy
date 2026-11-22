@@ -7,6 +7,9 @@ import legacyBilanz from "./fixtures/de-by-realschule-7-bwr-unternehmen-inventur
 import contract from "./fixtures/public-contract.json";
 import { CORE_LESSONS, findLesson, FORMULAS, LESSONS, lessonsFor, SOURCES, STAGES } from "../src/curriculum";
 import { ACCOUNT_LIST } from "../src/finance";
+import { FIGURES, renderFigure, renderStageArt, stageIcon } from "../src/figures";
+import { LABS, renderResult } from "../src/labs";
+import type { LabKind } from "../src/model/types";
 import { completion, freshProgress, isComplete, keyOf, parseProgress, resetProgress, STORAGE_KEY } from "../src/storage/progress";
 import { canAcceptSelfAssessment, checkWorkshop } from "../src/workshop";
 import { lessonLink, parseTrainingDeepLink } from "../src/zam/zam-link";
@@ -301,5 +304,76 @@ describe("learning evidence, track switching and local recovery", () => {
       if (prevStorage === undefined) delete (globalThis as { localStorage?: unknown }).localStorage;
       else Object.defineProperty(globalThis, "localStorage", { configurable: true, value: prevStorage });
     }
+  });
+});
+
+describe("illustrations and dynamic lab diagrams", () => {
+  it("provides a three-part interactive SVG figure for all 36 lessons and stage banners for LB 1–5", () => {
+    expect(Object.keys(FIGURES).sort()).toEqual(LESSONS.map((l) => l.id).sort());
+    for (const lesson of LESSONS) {
+      const fig = FIGURES[lesson.id];
+      expect(fig.parts).toHaveLength(3);
+      const html = renderFigure(lesson.id);
+      expect(html, lesson.id).toContain('<figure class="concept-figure"');
+      expect(html, lesson.id).toContain('<svg class="concept-svg"');
+      for (const part of [1, 2, 3]) {
+        expect(html, `${lesson.id} part ${part}`).toContain(`data-part="${part}"`);
+        expect(html, `${lesson.id} button ${part}`).toContain(`data-figure-focus="${part}"`);
+      }
+      expect(html, lesson.id).toContain('data-figure-focus="0"');
+      expect(html, lesson.id).not.toMatch(/\bNaN\b|\bundefined\b/);
+    }
+    for (const stage of STAGES) {
+      expect(renderStageArt(stage.lb)).toContain("<svg");
+      expect(stageIcon(stage.lb)).toContain("<svg");
+    }
+
+    const budgetFig = renderFigure("hh-einkommen-budget");
+    expect(budgetFig).toContain("3.400,00 €");
+    expect(budgetFig).toContain("Fest 2.100 €");
+    expect(budgetFig).toContain("Var. 1.050 €");
+    expect(budgetFig).toContain("+ 250,00 €");
+    expect(renderFigure("hh-prozent-grundlagen")).toContain('width="38.4"');
+    const prodFig = renderFigure("un-produktionsfaktoren");
+    expect(prodFig).toContain("1. Ausführende Arbeit");
+    expect(prodFig).toContain("2. Dispositiver Faktor");
+    const locFig = renderFigure("un-standort");
+    expect(locFig).not.toContain("Note");
+    expect(locFig).not.toContain("Gesamtnote");
+    const legalFig = renderFigure("un-rechtsformen");
+    expect(legalFig).toContain("Einzelunternehmung");
+    expect(legalFig).toContain("HRB");
+    expect(legalFig).not.toContain("Abteilung B");
+    const bookFig = renderFigure("gb-buchungssatz");
+    expect(bookFig).toContain("Aktiv: + Soll");
+    expect(bookFig).toContain("Passiv: + Haben");
+    const vatFig = renderFigure("gb-umsatzsteuer-rechnen");
+    expect(vatFig).toContain('height="60"');
+    expect(vatFig).toContain('height="11.4"');
+    const ledgerFig = renderFigure("sg-grund-hauptbuch");
+    expect(ledgerFig).toContain("AWR");
+    expect(ledgerFig).toContain("VORST");
+    expect(ledgerFig).toContain("VE");
+    expect(renderFigure("sg-bilanzvergleich")).toContain("ohne Einlagen");
+  });
+
+  it("renders a live SVG visualization in all 8 interactive labs without NaN or undefined", () => {
+    for (const kind of Object.keys(LABS) as LabKind[]) {
+      const html = renderResult(kind, LABS[kind].defaults);
+      expect(html, kind).toContain("<svg");
+      expect(html, kind).toContain('class="chart lab-svg"');
+      expect(html, kind).not.toMatch(/\bNaN\b|\bundefined\b/);
+    }
+    const vatHtml = renderResult("vat", LABS.vat.defaults);
+    expect(vatHtml).toContain("19 %");
+    expect(vatHtml).not.toContain("19%");
+    const exhaustedEk = renderResult("closingFlow", {
+      ...LABS.closingFlow.defaults,
+      ekStart: 50000,
+      uefe: 0,
+      awr: 100000,
+    });
+    expect(exhaustedEk).toContain("EK aufgezehrt");
+    expect(exhaustedEk).not.toContain("EK neu im Haben:");
   });
 });

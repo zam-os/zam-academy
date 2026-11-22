@@ -17,6 +17,7 @@ import {
   submitAttempt,
 } from "./exercises/attempt";
 import { ACCOUNT_LIST, fmt, fmtInt } from "./finance";
+import { bindFigure, renderFigure, renderStageArt, stageIcon, STEP_ICONS } from "./figures";
 import { bindLab, labHtml } from "./labs";
 import type { InvoiceTemplate, LearnerEntry, Lesson, Track } from "./model/types";
 import {
@@ -34,6 +35,7 @@ const loaded = loadProgress();
 const p = loaded.progress;
 let persistent = loaded.persistent;
 const attempts = new Map<string, Attempt>();
+const figureFocus = new Map<string, number>();
 const $ = <T extends Element = HTMLElement>(selector: string): T => {
   const element = document.querySelector<T>(selector);
   if (!element) throw new Error(`Bedienelement fehlt: ${selector}`);
@@ -88,16 +90,16 @@ function render() {
   document.documentElement.style.setProperty("--stage-hue", String(stage?.hue ?? 162));
 
   app.innerHTML = `<a class="skip-link" href="#lesson">Zum Lerninhalt</a><header class="topbar"><a class="brand" href="../">ZAM <span>ACADEMY</span></a><span class="course-label">Bayern · Realschule · Zweig II &amp; IIIa</span><button id="sources-button" class="quiet">Formeln, Konten &amp; Quellen</button></header>
-    <div class="shell"><aside class="sidebar" aria-label="Lernpfad"><div class="sidebar-heading"><span class="eyebrow">Dein Lernpfad</span><h1>BwR <span>7</span></h1><p>Haushalt. Unternehmen. Buchführung.</p></div><div class="progress-box"><div><strong id="progress-count">${c.done} / ${c.total}</strong><span>Lektionen (Zweig ${esc(p.track)})</span></div><progress id="progress" max="${c.total}" value="${c.done}" aria-label="Abgeschlossene Lektionen"></progress></div><label class="track-switch"><span>Wahlpflichtfächergruppe</span><select id="track"><option value="II" ${p.track === "II" ? "selected" : ""}>Zweig II (36 Lektionen · LB 1–5)</option><option value="IIIa" ${p.track === "IIIa" ? "selected" : ""}>Zweig IIIa (25 Lektionen · LB 1–4)</option></select></label><nav>${STAGES.map(
+    <div class="shell"><aside class="sidebar" aria-label="Lernpfad"><div class="sidebar-heading"><span class="eyebrow">Dein Lernpfad</span><h1>BwR <span>7</span></h1><p>Haushalt. Unternehmen. Buchführung.</p>${renderStageArt(lesson.lb)}</div><div class="progress-box"><div><strong id="progress-count">${c.done} / ${c.total}</strong><span>Lektionen (Zweig ${esc(p.track)})</span></div><progress id="progress" max="${c.total}" value="${c.done}" aria-label="Abgeschlossene Lektionen"></progress></div><label class="track-switch"><span>Wahlpflichtfächergruppe</span><select id="track"><option value="II" ${p.track === "II" ? "selected" : ""}>Zweig II (36 Lektionen · LB 1–5)</option><option value="IIIa" ${p.track === "IIIa" ? "selected" : ""}>Zweig IIIa (25 Lektionen · LB 1–4)</option></select></label><nav>${STAGES.map(
       (s) => {
         const entries = visible.filter((l) => l.lb === s.lb);
         if (!entries.length) return "";
-        return `<details class="stage" style="--stage-hue:${s.hue}" ${s.lb === lesson.lb ? "open" : ""}><summary>0${s.lb} <span>${esc(s.title)}</span></summary>${entries.map((l) => `<button class="lesson-link ${l.id === lesson.id ? "active" : ""}" data-lesson="${l.id}" ${l.id === lesson.id ? 'aria-current="step"' : ""}><span class="lesson-dot" aria-hidden="true">${isComplete(p, l.id) ? "✓" : "·"}</span>${esc(l.title)}</button>`).join("")}</details>`;
+        return `<details class="stage" style="--stage-hue:${s.hue}" ${s.lb === lesson.lb ? "open" : ""}><summary><span class="stage-icon" aria-hidden="true">${stageIcon(s.lb)}</span>0${s.lb} <span>${esc(s.title)}</span></summary>${entries.map((l) => `<button class="lesson-link ${l.id === lesson.id ? "active" : ""}" data-lesson="${l.id}" ${l.id === lesson.id ? 'aria-current="step"' : ""}><span class="lesson-dot" aria-hidden="true">${isComplete(p, l.id) ? "✓" : "·"}</span>${esc(l.title)}</button>`).join("")}</details>`;
       },
     ).join(
       "",
     )}</nav><p class="small">36 Lektionen in Zweig II · 25 in Zweig IIIa.<br>Familie Weber und das Radwerk Brenner sind erfundene Lernbeispiele.<br>Ohne Anmeldung. Lokal gespeichert.</p><button type="button" id="reset-progress" class="quiet reset-button">Fortschritt zurücksetzen</button></aside>
-    <main id="lesson" tabindex="-1"><div id="storage-warning" class="notice" ${persistent ? "hidden" : ""}>Dieser Browser erlaubt das Speichern gerade nicht. Du kannst weiterlernen; dein Fortschritt bleibt nur bis zum Schließen erhalten.</div><div class="lesson-top"><span class="eyebrow">${esc(lesson.lehrplan)}</span><label class="level-switch">Übungsniveau <select id="level"><option value="1" ${p.level === 1 ? "selected" : ""}>1 · Mit Leitfragen</option><option value="2" ${p.level === 2 ? "selected" : ""}>2 · Übertragen</option></select></label></div><h2 class="lesson-title">${esc(lesson.title)}</h2><p class="intro">${esc(lesson.intro)}</p>${!lesson.tracks.includes(p.track) ? '<p class="notice">Diese Lektion gehört im LehrplanPLUS zum Zweig II und wurde über einen direkten Link geöffnet.</p>' : ""}<div class="reading">${lesson.paragraphs.map((x) => `<p>${esc(x)}</p>`).join("")}</div><div class="takeaway"><span>Zum Mitnehmen</span><p>${esc(lesson.takeaway)}</p></div>
+    <main id="lesson" tabindex="-1"><div id="storage-warning" class="notice" ${persistent ? "hidden" : ""}>Dieser Browser erlaubt das Speichern gerade nicht. Du kannst weiterlernen; dein Fortschritt bleibt nur bis zum Schließen erhalten.</div><div class="lesson-top"><span class="eyebrow">${esc(lesson.lehrplan)}</span><label class="level-switch">Übungsniveau <select id="level"><option value="1" ${p.level === 1 ? "selected" : ""}>1 · Mit Leitfragen</option><option value="2" ${p.level === 2 ? "selected" : ""}>2 · Übertragen</option></select></label></div><h2 class="lesson-title">${esc(lesson.title)}</h2><p class="intro">${esc(lesson.intro)}</p>${!lesson.tracks.includes(p.track) ? '<p class="notice">Diese Lektion gehört im LehrplanPLUS zum Zweig II und wurde über einen direkten Link geöffnet.</p>' : ""}<div class="reading"><div class="eyebrow">${STEP_ICONS.understand}<span>Verstehen</span></div>${lesson.paragraphs.map((x) => `<p>${esc(x)}</p>`).join("")}</div>${renderFigure(lesson.id, figureFocus.get(lesson.id) ?? 0)}<div class="takeaway"><span>Zum Mitnehmen</span><p>${esc(lesson.takeaway)}</p></div>
     <div class="evidence" id="evidence"></div>${lesson.lab ? labHtml(lesson.lab) : ""}${quizHtml(lesson)}${workshopHtml(lesson)}${lesson.practice ? practiceHtml(lesson) : ""}${writingHtml(lesson)}<div class="lesson-end"><p id="completion-note"></p><button id="next" class="primary">Nächste Lektion →</button></div><details class="source-details"><summary>Quellen zu dieser Lektion</summary><ul>${lesson.sourceIds
       .map((id) => {
         const s = SOURCES.find((x) => x.id === id);
@@ -156,6 +158,7 @@ function render() {
     const nextLesson = visible[index >= 0 ? (index + 1) % visible.length : 0];
     if (nextLesson) navigate(nextLesson.id);
   });
+  bindFigure(lesson.id, figureFocus);
   bindQuiz(lesson);
   bindWorkshop(lesson);
   bindWriting(lesson);
@@ -208,7 +211,7 @@ function updateEvidence() {
 
 function quizHtml(l: Lesson) {
   const options = shuffle([l.quiz.answer, ...l.quiz.wrong], l.id);
-  return `<section class="panel"><div class="eyebrow">01 · Abrufen</div><h2>Schnellcheck</h2><form id="quiz"><fieldset><legend>${esc(l.quiz.question)}</legend>${options.map((option, i) => `<label class="option"><input type="radio" name="quiz" value="${i}"> <span>${esc(option)}</span></label>`).join("")}</fieldset><button type="submit">Antwort prüfen</button></form><p id="quiz-feedback" class="feedback" role="status"></p></section>`;
+  return `<section class="panel"><div class="eyebrow">${STEP_ICONS.quiz}<span>01 · Abrufen</span></div><h2>Schnellcheck</h2><form id="quiz"><fieldset><legend>${esc(l.quiz.question)}</legend>${options.map((option, i) => `<label class="option"><input type="radio" name="quiz" value="${i}"> <span>${esc(option)}</span></label>`).join("")}</fieldset><button type="submit">Antwort prüfen</button></form><p id="quiz-feedback" class="feedback" role="status"></p></section>`;
 }
 
 function bindQuiz(l: Lesson) {
@@ -232,7 +235,7 @@ function bindQuiz(l: Lesson) {
 }
 
 function workshopHtml(l: Lesson) {
-  return `<section class="panel"><div class="eyebrow">02 · Untersuchen</div><h2>Fallwerkstatt</h2><p>${esc(l.workshop.instruction)}</p><form id="workshop">${shuffle(
+  return `<section class="panel"><div class="eyebrow">${STEP_ICONS.workshop}<span>02 · Untersuchen</span></div><h2>Fallwerkstatt</h2><p>${esc(l.workshop.instruction)}</p><form id="workshop">${shuffle(
     l.workshop.entries.map((entry, i) => ({ entry, i })),
     `${l.id}:cases`,
   )
@@ -301,7 +304,7 @@ function invoiceHtml(inv: InvoiceTemplate, a: Attempt): string {
 function practiceHtml(l: Lesson) {
   const a = attemptFor(l);
   const trackAccounts = ACCOUNT_LIST.filter((acc) => acc.tracks.includes(p.track));
-  return `<section class="panel" id="practice"><div class="eyebrow">03 · Rechnen und buchen · Niveau ${p.level}</div><h2>Deine Rechnung zählt</h2><p>${esc(a.task.prompt)}</p><form id="calculation">${
+  return `<section class="panel" id="practice"><div class="eyebrow">${STEP_ICONS.practice}<span>03 · Rechnen und buchen · Niveau ${p.level}</span></div><h2>Deine Rechnung zählt</h2><p>${esc(a.task.prompt)}</p><form id="calculation">${
     a.task.invoice
       ? invoiceHtml(a.task.invoice, a)
       : `<div class="number-fields">${a.task.fields.map((f, i) => `<label>${esc(f.label)} (${esc(f.unit)})<input name="number-${i}" value="${esc(a.values[i] ?? "")}" inputmode="decimal" autocomplete="off" maxlength="60" required ${a.finished ? "disabled" : ""}></label>`).join("")}</div>`
@@ -367,7 +370,7 @@ function writingHtml(l: Lesson) {
   const task = l.tasks[p.level],
     key = keyOf(l.id, p.level),
     draft = p.drafts[key] ?? "";
-  return `<section class="panel"><div class="eyebrow">${l.practice ? "04" : "03"} · Begründen · Niveau ${p.level}</div><h2>In deinen eigenen Worten</h2><p>${esc(task.prompt)}</p><details><summary>Leitfragen</summary><ul>${task.hints.map((h) => `<li>${esc(h)}</li>`).join("")}</ul></details><label for="draft">Deine Begründung</label><textarea id="draft" maxlength="8000" rows="5" placeholder="Erkläre den Zusammenhang und begründe dein Urteil …">${esc(draft)}</textarea><details class="text-info"><summary><span aria-hidden="true">ⓘ</span> Wo bleibt mein Text?</summary><p class="small">Dein Text bleibt nur in diesem Browser auf diesem Gerät. Die App liest, bewertet oder verschickt ihn nicht. Hast du dein eigenes Benutzerkonto oder teilst du es mit anderen? Falls du es teilst, lösche am Ende den Lernstand und die Texte über „Fortschritt zurücksetzen“ in der Seitenleiste.</p></details><button id="compare-writing" ${draft.trim().length < 20 ? "disabled" : ""}>Mit dem Beispiel vergleichen</button><div id="self-review" ${p.assessed.includes(key) ? "" : "hidden"}><div class="solution"><strong>Ein mögliches Beispiel</strong><p>${esc(task.model)}</p></div><p>Prüfe deinen eigenen Text an diesen Kriterien:</p>${task.criteria.map((criterion, i) => `<label class="criterion"><input type="checkbox" name="criterion" value="${i}" ${p.assessed.includes(key) ? "checked" : ""}> ${esc(criterion)}</label>`).join("")}<button id="accept-writing">Eigene Einschätzung speichern</button><p id="writing-feedback" role="status"></p></div></section>`;
+  return `<section class="panel"><div class="eyebrow">${STEP_ICONS.writing}<span>${l.practice ? "04" : "03"} · Begründen · Niveau ${p.level}</span></div><h2>In deinen eigenen Worten</h2><p>${esc(task.prompt)}</p><details><summary>Leitfragen</summary><ul>${task.hints.map((h) => `<li>${esc(h)}</li>`).join("")}</ul></details><label for="draft">Deine Begründung</label><textarea id="draft" maxlength="8000" rows="5" placeholder="Erkläre den Zusammenhang und begründe dein Urteil …">${esc(draft)}</textarea><details class="text-info"><summary><span aria-hidden="true">ⓘ</span> Wo bleibt mein Text?</summary><p class="small">Dein Text bleibt nur in diesem Browser auf diesem Gerät. Die App liest, bewertet oder verschickt ihn nicht. Hast du dein eigenes Benutzerkonto oder teilst du es mit anderen? Falls du es teilst, lösche am Ende den Lernstand und die Texte über „Fortschritt zurücksetzen“ in der Seitenleiste.</p></details><button id="compare-writing" ${draft.trim().length < 20 ? "disabled" : ""}>Mit dem Beispiel vergleichen</button><div id="self-review" ${p.assessed.includes(key) ? "" : "hidden"}><div class="solution"><strong>Ein mögliches Beispiel</strong><p>${esc(task.model)}</p></div><p>Prüfe deinen eigenen Text an diesen Kriterien:</p>${task.criteria.map((criterion, i) => `<label class="criterion"><input type="checkbox" name="criterion" value="${i}" ${p.assessed.includes(key) ? "checked" : ""}> ${esc(criterion)}</label>`).join("")}<button id="accept-writing">Eigene Einschätzung speichern</button><p id="writing-feedback" role="status"></p></div></section>`;
 }
 
 function bindWriting(l: Lesson) {
