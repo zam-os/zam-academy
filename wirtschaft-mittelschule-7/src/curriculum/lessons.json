@@ -1,0 +1,2564 @@
+[
+  {
+    "id": "pr-vollstaendige-handlung",
+    "lb": 1,
+    "tracks": ["R", "M"],
+    "lehrplan": "WiB 7 · LB 1 · R7 & M7",
+    "title": "Marktprojekt als vollständige Handlung",
+    "intro": "Ein gutes Marktprojekt beginnt nicht mit wildem Einkaufen, sondern durchläuft fünf planvolle Phasen von der ersten Idee bis zur Auswertung.",
+    "paragraphs": [
+      "Im Fach Wirtschaft und Beruf planst du Vorhaben rund um das Thema Markt nach dem Prinzip der vollständigen Handlung: Projektinitiative, Projektplanung, Projektdurchführung, Projektpräsentation und Projektreflexion. Jede Phase baut auf der vorigen auf, damit Material, Geld und Arbeitszeit im Gleichgewicht bleiben. Statt sofort loszubasteln, klärt die Gruppe zuerst das Ziel, die Rollen und das Budget.",
+      "Beispiel Pausenmarkt der Klasse 7a: In der Initiative schlägt die Klasse frische Obstbecher vor. In der Planung kalkuliert sie 60 Becher und 48,00 € Einkaufsbudget mit dem Ziel von 36,00 € Überschuss. In der Durchführung bereitet das Team die Becher zu und verkauft sie. Bei der Präsentation stellt ein Plakat Einnahmen und Kundenfeedback vor. In der Reflexion prüft das Team, warum tatsächlich 42,00 € Überschuss erzielt wurden und was sich beim nächsten Mal noch besser organisieren lässt."
+    ],
+    "takeaway": "Vollständiges Handeln heißt: Erst gemeinsam Ziel und Plan festlegen, dann umsetzen, Ergebnisse sichtbar vorstellen und den Verlauf kritisch auswerten.",
+    "sourceIds": ["lpr", "lpm", "profil"],
+    "quiz": {
+      "question": "Wozu dient die Projektreflexion am Ende einer vollständigen Handlung?",
+      "answer": "Sie vergleicht das geplante Ziel mit dem tatsächlichen Ergebnis und hält Verbesserungen für künftige Projekte fest.",
+      "wrong": [
+        "Sie ersetzt die komplette Projektplanung zu Beginn, damit man schneller mit dem Verkauf starten kann.",
+        "Sie legt erst fest, welches Produkt die Klasse überhaupt anbieten möchte."
+      ],
+      "explanation": "Die Reflexion schließt den Handlungskreislauf: Das Team prüft Zeitplan, Kosten und Zusammenarbeit, um für nächste Vorhaben zu lernen."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Reihenfolge im Marktprojekt",
+      "instruction": "Ordne die fünf Arbeitsschritte der Klasse 7a vom ersten Impuls bis zum Abschluss.",
+      "categories": [
+        "1 · Projektinitiative",
+        "2 · Projektplanung",
+        "3 · Projektdurchführung",
+        "4 · Projektpräsentation",
+        "5 · Projektreflexion"
+      ],
+      "entries": [
+        {
+          "text": "Die Klasse sammelt Ideen für einen gesunden Pausenverkauf und einigt sich auf Obstbecher.",
+          "target": 0,
+          "feedback": "Am Anfang steht die Projektinitiative: Idee finden und gemeinsames Ziel formulieren."
+        },
+        {
+          "text": "Das Team verteilt Aufgaben, erstellt die Einkaufsliste und plant 48,00 € Kosten ein.",
+          "target": 1,
+          "feedback": "In der Projektplanung werden Abläufe, Zuständigkeiten und Geldmittel vorab festgelegt."
+        },
+        {
+          "text": "In der Schulküche werden 60 Becher abgefüllt und in der ersten Pause verkauft.",
+          "target": 2,
+          "feedback": "Jetzt wird der erstellte Plan in der Projektdurchführung praktisch umgesetzt."
+        },
+        {
+          "text": "Zwei Schülerinnen zeigen den anderen Klassen ein Plakat mit Fotos und Kassenübersicht.",
+          "target": 3,
+          "feedback": "Die Projektpräsentation macht Ergebnisse und Erfahrungen für andere nachvollziehbar."
+        },
+        {
+          "text": "Das Team vergleicht den Ist-Überschuss von 42,00 € mit dem Plan und notiert Tipps fürs nächste Mal.",
+          "target": 4,
+          "feedback": "Mit der Projektreflexion schließt die Gruppe den Kreislauf und bewertet ihren Erfolg."
+        }
+      ],
+      "conclusion": "Erst die Abfolge aller fünf Phasen macht ein Vorhaben zu einer vollständigen Handlung."
+    },
+    "practice": "projectTime",
+    "tasks": {
+      "1": {
+        "prompt": "Nenne die fünf Phasen der vollständigen Handlung am Beispiel eines Klassen-Marktstandes und erkläre kurz, was in Phase 2 (Planung) unbedingt geklärt sein muss.",
+        "hints": [
+          "Denke an den Weg von der Idee bis zur Auswertung.",
+          "Welche Rolle spielen Zeit, Aufgabenverteilung und Einkaufsbudget vor dem Start?"
+        ],
+        "model": "Die fünf Phasen heißen Projektinitiative, Projektplanung, Projektdurchführung, Projektpräsentation und Projektreflexion. In der Projektplanung legt das Team vorher fest, wer welche Aufgaben übernimmt, wie viel Zeit jeder Schritt braucht, welche Zutaten oder Waren eingekauft werden und welches Geldlimit gilt.",
+        "criteria": [
+          "Du nennst alle fünf Phasen in sinnvoller Reihenfolge.",
+          "Du erklärst den Nutzen der Projektplanung vor dem Start.",
+          "Du beziehst Aufgaben, Zeit und Kosten auf ein konkretes Beispiel."
+        ]
+      },
+      "2": {
+        "prompt": "Eine Gruppe startet ihren Schulbasar ohne Planung direkt mit dem Einkauf. Begründe anhand von zwei möglichen Folgen, warum dieses unvollständige Handeln Risiken birgt.",
+        "hints": [
+          "Was passiert, wenn Mengen nicht auf die Schülerzahl abgestimmt sind?",
+          "Welche Probleme entstehen bei fehlender Kassen- und Aufgabenabsprache?"
+        ],
+        "model": "Ohne vorherige Planung drohen einerseits zu hohe Einkaufskosten oder unverkäufliche Reste, weil niemand die Nachfrage abgeschätzt hat. Andererseits fehlt oft Wechselgeld, niemand fühlt sich für Hygiene oder Preisauszeichnung zuständig, und am Ende lässt sich kaum nachvollziehen, ob ein Gewinn entstanden ist.",
+        "criteria": [
+          "Du nennst zwei konkrete Folgen fehlender Planung oder Reflexion.",
+          "Du verknüpfst die Folgen mit Kosten, Mengen oder Zuständigkeiten.",
+          "Du formulierst ein klares Urteil zur Bedeutung vollständigen Handelns."
+        ]
+      }
+    }
+  },
+  {
+    "id": "pr-leittextmethode",
+    "lb": 1,
+    "tracks": ["R", "M"],
+    "lehrplan": "WiB 7 · LB 1 · R7 & M7",
+    "title": "Die Leittextmethode Schritt für Schritt",
+    "intro": "Mit Leitfragen und klaren Kontrollpunkten arbeitest du im Team strukturiert, auch wenn die Lehrkraft nicht ständig danebensteht.",
+    "paragraphs": [
+      "Die Leittextmethode gliedert jedes Teilvorhaben in sechs aufeinanderfolgende Arbeitsschritte: Informieren, Planen, Entscheiden, Ausführen, Kontrollieren und Bewerten. Ein schriftlicher Leittext gibt in der Regelklasse unter Anleitung klare Leitfragen, Informationsquellen und Arbeitshinweise vor. So übernimmt dein Team Verantwortung für den eigenen Arbeitsprozess, statt jeden Handgriff nachzufragen.",
+      "Beispiel Marktstand-Planung: 1. Informieren: Mit dem Leittext ermittelt das Team Preise für Becher und Obst. 2. Planen: Ein Arbeitsplan legt Zeiten und Werkzeuge fest. 3. Entscheiden: Die Gruppe wählt das günstigste Einkaufsangebot und setzt den Verkaufspreis auf 1,80 €. 4. Ausführen: Das Team richtet den Stand ein. 5. Kontrollieren: Eine Checkliste prüft Sauberkeit, Preisschilder und 90,00 € Kassenbestand. 6. Bewerten: Team und Lehrkraft besprechen, wie gut die Zusammenarbeit lief."
+    ],
+    "takeaway": "Die sechs Schritte der Leittextmethode — Informieren, Planen, Entscheiden, Ausführen, Kontrollieren, Bewerten — sichern Qualität vor und nach dem Handeln.",
+    "sourceIds": ["lpr", "lpm", "profil"],
+    "quiz": {
+      "question": "Was unterscheidet den Schritt „Kontrollieren“ vom Schritt „Bewerten“ in der Leittextmethode?",
+      "answer": "Kontrollieren prüft das Arbeitsergebnis gegen konkrete Vorgaben; Bewerten zieht daraus Schlüsse für Leistung und künftiges Vorgehen.",
+      "wrong": [
+        "Kontrollieren findet vor dem Informieren statt, Bewerten vor dem Entscheiden.",
+        "Kontrollieren macht nur die Lehrkraft, Bewerten bedeutet allein das Zählen von Wechselgeld."
+      ],
+      "explanation": "Zuerst kontrolliert man Fakten wie Stückzahl, Preisauszeichnung oder Kassenstand anhand der Checkliste; danach bewertet das Team den gesamten Prozess gemeinsam."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Schritte der Leittextmethode zuordnen",
+      "instruction": "Ordne jede Handlung aus dem Marktprojekt dem passenden Schritt der Leittextmethode zu.",
+      "categories": [
+        "Informieren & Planen",
+        "Entscheiden & Ausführen",
+        "Kontrollieren & Bewerten"
+      ],
+      "entries": [
+        {
+          "text": "Das Team schlägt im Leittext nach, welche Hygienevorschriften beim Pausenverkauf gelten.",
+          "target": 0,
+          "feedback": "Zusammentragen von Regeln und Daten gehört zum Informieren und Planen."
+        },
+        {
+          "text": "Die Gruppe einigt sich im Fachgespräch auf 1,80 € Verkaufspreis und gestaltet die Preisschilder.",
+          "target": 1,
+          "feedback": "Festlegen des Preises und Herstellen der Schilder sind Entscheiden und Ausführen."
+        },
+        {
+          "text": "Eine Checkliste prüft vor der Pause, ob 50 Portionen bereitstehen und die Kasse stimmt.",
+          "target": 2,
+          "feedback": "Abhaken von Soll-Werten und Rückblick sind Kontrollieren und Bewerten."
+        },
+        {
+          "text": "Im Abschlussgespräch hält die Gruppe fest, warum die Vorbereitungszeit knapp wurde.",
+          "target": 2,
+          "feedback": "Das gemeinsame Reflektieren über Stärken und Engpässe gehört zum Bewerten."
+        }
+      ],
+      "conclusion": "Wer Informieren, Entscheiden und Kontrollieren sauber trennt, vermeidet hektische Fehler während des Verkaufs."
+    },
+    "practice": "projectTime",
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre, warum bei der Leittextmethode zwischen „Planen“ und „Ausführen“ der Schritt „Entscheiden“ liegt.",
+        "hints": [
+          "Gibt es bei der Planung meist nur einen einzigen Weg?",
+          "Wer muss einem Arbeitsplan vor dem Start zustimmen?"
+        ],
+        "model": "Beim Planen entstehen oft mehrere Varianten, zum Beispiel bei Preisen, Lieferanten oder Aufgabenverteilung. Im Schritt Entscheiden wählt das Team bewusst die beste Variante aus und stimmt sie gegebenenfalls mit der Lehrkraft ab, bevor Material gekauft oder produziert wird.",
+        "criteria": [
+          "Du nennst die Auswahl zwischen verschiedenen Planungsalternativen.",
+          "Du erklärst die Verbindlichkeit vor dem Start der Ausführung.",
+          "Du nutzt ein klares Beispiel aus einem Schulmarktprojekt."
+        ]
+      },
+      "2": {
+        "prompt": "Beurteile, welchen Vorteil ein schriftlicher Leittext gegenüber rein mündlichen Arbeitsanweisungen für ein sechsköpfiges Schülerteam hat.",
+        "hints": [
+          "Denke an Arbeitsteilung und Nachschlagen während der Arbeit.",
+          "Wie hilft ein Leittext bei der eigenen Qualitätskontrolle?"
+        ],
+        "model": "Ein Leittext hält Ziel, Leitfragen, Zeitfenster und Prüfkriterien für alle sichtbar fest. Dadurch vergisst niemand Teilaufgaben, alle Teilgruppen arbeiten auf das gleiche Ziel hin, und jedes Mitglied kann seinen Zwischenstand selbständig kontrollieren, ohne ständig nachfragen zu müssen.",
+        "criteria": [
+          "Du nennst mindestens zwei konkrete Vorteile für Teamarbeit und Selbständigkeit.",
+          "Du gehst auf Nachprüfbarkeit durch Leitfragen oder Checklisten ein.",
+          "Du ziehst ein nachvollziehbares Fazit."
+        ]
+      }
+    }
+  },
+  {
+    "id": "pr-marktprojekt-umsetzen",
+    "lb": 1,
+    "tracks": ["R", "M"],
+    "lehrplan": "WiB 7 · LB 1 · R7 & M7",
+    "title": "Marktprojekt kalkulieren und steuern",
+    "intro": "Wie viele Portionen musst du verkaufen, damit kein Verlust entsteht? Mit einem klaren Projektbudget prüfst du Stückkosten, Fixkosten und Zeitaufwand schon vor dem Start.",
+    "paragraphs": [
+      "Bei jedem praktischen Marktprojekt fallen zweierlei Kosten an: Feste Kosten (Fixkosten) wie Plakate, Servietten oder eine Standgebühr bleiben unabhängig von der verkauften Stückzahl gleich. Veränderliche Stückkosten (wie Obst, Brötchen oder Becher) fallen für jedes einzelne Stück an. Zieht man vom Verkaufspreis die Stückkosten ab, bleibt der Stückbeitrag übrig, mit dem zunächst die Fixkosten bezahlt werden.",
+      "Beispiel Gesunder Pausensnack: Die Klasse plant 24,00 € feste Materialkosten und 0,80 € Einkaufskosten pro Becher ein. Verkauft sie einen Becher für 1,60 €, bleiben pro Becher 0,80 € Beitrag (1,60 € − 0,80 €). Nach 30 Bechern (24,00 € / 0,80 €) sind alle Fixkosten gedeckt. Verkauft das Team 70 Becher, nimmt es 112,00 € ein, hat 80,00 € Gesamtkosten (24,00 € + 56,00 €) und erzielt 32,00 € Überschuss."
+    ],
+    "takeaway": "Erst ab der Mindeststückzahl (Fixkosten / Stückbeitrag) trägt sich ein Marktprojekt selbst — jeder weitere Verkauf bringt echten Überschuss.",
+    "sourceIds": ["lpr", "lpm", "profil"],
+    "quiz": {
+      "question": "Ein Team hat 30,00 € feste Kosten, 1,00 € Stückkosten und verkauft für 2,50 € je Stück. Ab wie vielen Stück sind alle Kosten genau gedeckt?",
+      "answer": "Ab 20 verkauften Stück (30,00 € / 1,50 € Stückbeitrag).",
+      "wrong": [
+        "Ab 12 verkauften Stück (30,00 € / 2,50 € Verkaufspreis).",
+        "Ab 30 verkauften Stück (30,00 € / 1,00 € Stückkosten)."
+      ],
+      "explanation": "Pro verkauftem Stück bleiben 2,50 € − 1,00 € = 1,50 € zur Deckung der 30,00 € Fixkosten übrig: 30,00 € / 1,50 € = 20 Stück."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Projektkosten und Einnahmen einordnen",
+      "instruction": "Ordne die Posten eines Schulfest-Standes danach ein, ob sie fest bleiben, mit der Stückzahl wachsen oder Einnahmen darstellen.",
+      "categories": [
+        "Feste Projektkosten (Fixkosten)",
+        "Veränderliche Kosten (je Stück)",
+        "Projekteinnahmen"
+      ],
+      "entries": [
+        {
+          "text": "Zwei große Werbeplakate und wasserfeste Preisschilder für 14,00 €",
+          "target": 0,
+          "feedback": "Werbeplakate fallen einmalig an, egal ob 20 oder 100 Portionen verkauft werden."
+        },
+        {
+          "text": "Holzspieße und Frischobst für 0,80 € pro verkauftem Fruchtspieß",
+          "target": 1,
+          "feedback": "Je mehr Spieße zubereitet werden, desto höher sind diese Stückkosten."
+        },
+        {
+          "text": "Kassenbestand aus 70 verkauften Bechern zu je 1,60 €",
+          "target": 2,
+          "feedback": "Erlöse aus dem Verkauf bilden die Projekteinnahmen."
+        },
+        {
+          "text": "Ausgeliehene Kühlbox mit einmaliger Reinigungspauschale von 10,00 €",
+          "target": 0,
+          "feedback": "Die Pauschale bleibt von der verkauften Stückzahl unabhängig."
+        }
+      ],
+      "conclusion": "Wer Fixkosten und Stückkosten sauber trennt, erkennt sofort, ob Preis und Absatzmenge zusammenpassen."
+    },
+    "lab": "projectPlan",
+    "practice": "projectBudget",
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre den Unterschied zwischen festen Projektkosten und veränderlichen Stückkosten am Beispiel eines Getränke- oder Snackverkaufs in der Pause.",
+        "hints": [
+          "Was kaufst du genau einmal für den gesamten Stand?",
+          "Was steigt genau im gleichen Schritt wie die Zahl der Portionen?"
+        ],
+        "model": "Feste Kosten wie Plakate, Tischdecke oder Kassenrolle fallen unabhängig davon an, wie viele Gäste kommen. Veränderliche Kosten wie Brötchen, Obst oder Pappbecher steigen mit jeder zusätzlich hergestellten Portion. Beide zusammen ergeben die Gesamtkosten des Projekts.",
+        "criteria": [
+          "Du definierst feste Kosten mit einem passenden Projektbeispiel.",
+          "Du definierst veränderliche Kosten mit einem passenden Projektbeispiel.",
+          "Du erklärst, wie sich die Gesamtkosten zusammensetzen."
+        ]
+      },
+      "2": {
+        "prompt": "Ein Schülermarkt-Team stellt bei der Nachkalkulation fest, dass es zwar 60 Becher verkauft, aber einen Verlust gemacht hat. Nenne und begründe drei konkrete Stellschrauben, mit denen das nächste Projekt einen Überschuss erzielt.",
+        "hints": [
+          "Prüfe Stückkosten, Fixkosten und Verkaufspreis.",
+          "Welche Rolle spielt das Vermeiden unverkaufter Reste?"
+        ],
+        "model": "Erstens kann das Team beim Einkauf günstigere Großpackungen wählen, um die Stückkosten zu senken. Zweitens lassen sich Fixkosten wie Dekoration oder Einmalplakate reduzieren. Drittens prüft das Team, ob ein etwas höherer Verkaufspreis von der Kundschaft akzeptiert wird oder durch Vorbestellungen weniger Reste verderben.",
+        "criteria": [
+          "Du nennst drei konkrete Stellschrauben (Kosten, Preis oder Menge).",
+          "Du begründest bei jeder Maßnahme die Wirkung auf den Überschuss.",
+          "Du achtest auf die Realität eines Schulverkaufs."
+        ]
+      }
+    }
+  },
+  {
+    "id": "pr-leittext-selbstaendig",
+    "lb": 1,
+    "tracks": ["M"],
+    "lehrplan": "WiB 7 · LB 1 · M7",
+    "title": "Leittextmethode weitgehend selbständig steuern",
+    "intro": "In der M-Klasse übernimmst du mehr Eigenverantwortung: Du entwickelst eigene Leitfragen, überprüfst Zwischenziele selbst und korrigierst deinen Plan rechtzeitig.",
+    "paragraphs": [
+      "Während der Leittext in der Einstiegsphase alle Teilfragen vorgibt, wendest du die Leittextmethode in der Mittlere-Reife-Klasse weitgehend selbständig an. Das bedeutet: Dein Team leitet aus dem Projektauftrag eigene Prüffragen ab, legt messbare Qualitätskriterien (wie Zeitlimit, Stückkostenobergrenze und Kundenzufriedenheit) fest und entscheidet ohne ständige Lehrerhilfe, wann nachgesteuert werden muss.",
+      "Beispiel Schulheft-Tauschbörse: Das Team setzt sich als Ziel maximal 180 Min. Vorbereitungszeit und mindestens 40 getauschte Hefte ohne Fehlbestände. Bei der Zwischenkontrolle merkt es, dass das Sortieren schon 140 Min. verschlungen hat. Statt hektisch weiterzumachen, verteilt die Gruppe Aufgaben um, nutzt vorgefertigte Tischschilder und hält das Zeitbudget ein."
+    ],
+    "takeaway": "Selbständiges Arbeiten nach der Leittextmethode heißt, eigene Messgrößen für Zeit, Kosten und Qualität festzulegen und bei Abweichungen früh umzusteuern.",
+    "sourceIds": ["lpm", "profil"],
+    "quiz": {
+      "question": "Woran erkennst du, dass ein Team die Leittextmethode weitgehend selbständig anwendet?",
+      "answer": "Es formuliert eigene Prüfkriterien, kontrolliert Zwischenstände selbst und passt den Arbeitsplan bei Engpässen eigenständig an.",
+      "wrong": [
+        "Es verzichtet komplett auf Zwischenkontrollen und fragt nach jedem Arbeitsschritt die Lehrkraft.",
+        "Es lässt Schritt 2 (Planen) und Schritt 6 (Bewerten) aus Zeitgründen ganz weg."
+      ],
+      "explanation": "Selbständige Projektsteuerung zeigt sich darin, dass das Team messbare Ziele setzt, Abweichungen selbst bemerkt und gezielt nachbessert."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Selbständige Projektsteuerung vs. eng geführtes Arbeiten",
+      "instruction": "Ordne die Aussagen ein: Welche zeigt weitgehend selbständige Steuerung nach Leittext und welche zeigt unselbständiges Vorgehen?",
+      "categories": [
+        "Selbständige Steuerung (M7-Ziel)",
+        "Fehlende Eigensteuerung"
+      ],
+      "entries": [
+        {
+          "text": "Das Team legt vorab fest: Maximal 15,00 € Standkosten und höchstens 5 % Ausschuss.",
+          "target": 0,
+          "feedback": "Eigene messbare Zielgrößen vorab zu definieren gehört zur selbständigen Planung."
+        },
+        {
+          "text": "Bei Lieferverzug prüft die Gruppe selbständig eine Zweitquelle aus dem eigenen Rechercheplan.",
+          "target": 0,
+          "feedback": "Eigenes Nachsteuern auf Basis vorab recherchierter Alternativen ist selbständig."
+        },
+        {
+          "text": "Die Gruppe wartet untätig 25 Minuten, bis die Lehrkraft entscheidet, wer kassiert.",
+          "target": 1,
+          "feedback": "Ohne eigenen Aufgabenplan und Entscheidungskompetenz stockt das Projekt."
+        },
+        {
+          "text": "Erst nach Marktschluss merkt das Team, dass die Kassenabrechnung nicht aufgeht.",
+          "target": 1,
+          "feedback": "Ohne Zwischenkontrollen werden Fehler zu spät entdeckt."
+        }
+      ],
+      "conclusion": "Messbare Zielwerte und festgelegte Zwischenkontrollen machen Teams unabhängig und handlungsfähig."
+    },
+    "practice": "projectBudget",
+    "tasks": {
+      "1": {
+        "prompt": "Formuliere drei konkrete Leitfragen, die sich dein Team beim Aufbau eines schulischen Secondhand-Bücherbasars selbst stellen sollte, bevor es startet.",
+        "hints": [
+          "Frage nach Angebot/Preisen, Ablauf/Kasse und Qualitätsprüfung.",
+          "Wie überprüfst du, ob ein Buch verkaufsfähig ist?"
+        ],
+        "model": "1. Welche Qualitätskriterien muss ein abgegebenes Buch erfüllen (keine fehlenden Seiten, sauberer Einband)? 2. Wie zeichnen wir die Preise und eventuelle Anteile für die Klassenkasse eindeutig aus? 3. Wer übernimmt Annahme, Kasse und Rückgabe nicht verkaufter Bücher nach einem klaren Zeitplan?",
+        "criteria": [
+          "Du formulierst drei sinnvolle, projektbezogene Leitfragen.",
+          "Die Fragen decken Qualität, Organisation/Finanzen und Zuständigkeit ab.",
+          "Jede Frage lässt sich vorab konkret beantworten."
+        ]
+      },
+      "2": {
+        "prompt": "Bei einem Marktprojekt überschreitet eine Untergruppe ihr Zeitbudget um ein Drittel. Entwickle einen begründeten Steuerungsplan nach der Leittextmethode.",
+        "hints": [
+          "Wie vermeidest du Qualitätsverlust bei Zeitdruck?",
+          "Welche Schritte der Leittextmethode helfen beim Nachsteuern?"
+        ],
+        "model": "Zunächst kontrolliert das Team den aktuellen Ist-Stand und benennt die Ursache für den Verzug. Anschließend entscheidet es gemeinsam über Entlastung: Entweder übernehmen bereits fertige Teammitglieder einfache Teilaufgaben oder der Umfang wird ohne Verlust der Kernqualität gestrafft. Abschließend bewertet die Gruppe die neue Zeitplanung.",
+        "criteria": [
+          "Du verbindest Kontrolle, Entscheidung und Anpassung des Plans.",
+          "Du schützt die Qualität statt einfach Schritte zu streichen.",
+          "Deine Lösung bleibt im Schulalltag direkt umsetzbar."
+        ]
+      }
+    }
+  },
+  {
+    "id": "ar-arbeitsplatzmerkmale",
+    "lb": 2,
+    "tracks": ["R", "M"],
+    "lehrplan": "WiB 7 · LB 2 · R7 & M7",
+    "title": "Arbeitsplätze nach sechs Merkmalen untersuchen",
+    "intro": "Wer einen Betrieb erkundet, schaut genauer hin: Sechs feste Arbeitsplatzmerkmale helfen dir, jeden Arbeitsplatz sachlich zu beschreiben und zu beurteilen.",
+    "paragraphs": [
+      "Bei der Zugangserkundung untersuchst du einen betrieblichen Arbeitsplatz nicht nach dem ersten Bauchgefühl, sondern anhand von sechs klaren Merkmalen: Arbeitsaufgabe (Was wird getan?), Arbeitsmittel (Womit wird gearbeitet?), Arbeitsort (Wo befindet sich der Platz?), Arbeitszeit (Wann wird gearbeitet?), Arbeitsdauer (Wie lange und mit welchen Pausen?) und Arbeitsbedingungen (Licht, Lärm, Klima, Ergonomie und Sicherheit).",
+      "Beispiel Zweiradmechatronik-Werkstatt: Arbeitsaufgabe ist das Prüfen und Einstellen von Bremsen. Arbeitsmittel sind Hebebühne, Drehmomentschlüssel und Diagnosegerät. Arbeitsort ist eine helle Werkhalle; Arbeitszeit 7:30 bis 16:00 Uhr bei 8 Std. Dauer plus 45 Min. Pause. Bewertest du auf einer 1-bis-6-Skala Licht/Lärm mit 5 Punkten (25 %), Ergonomie mit 6 (30 %), Arbeitsmittel mit 5 (25 %) und Pausen mit 4 (20 %), ergibt das genau 5,05 Gesamtpunkte."
+    ],
+    "takeaway": "Die sechs Arbeitsplatzmerkmale machen betriebliche Erkundungen vergleichbar: Aufgabe, Mittel, Ort, Zeit, Dauer und Arbeitsbedingungen.",
+    "sourceIds": ["lpr", "lpm", "profil"],
+    "quiz": {
+      "question": "Welcher Unterschied besteht zwischen den Merkmalen „Arbeitszeit“ und „Arbeitsdauer“?",
+      "answer": "Arbeitszeit nennt die zeitliche Lage (z. B. 7:30–16:00 Uhr oder Schichtbetrieb), Arbeitsdauer die reine Länge (z. B. 8 Stunden täglich).",
+      "wrong": [
+        "Arbeitszeit misst die Temperatur in der Werkhalle, Arbeitsdauer das Gewicht der Werkzeuge.",
+        "Beide Begriffe bedeuten dasselbe und beschreiben nur die Urlaubstage pro Jahr."
+      ],
+      "explanation": "Arbeitszeit fragt nach dem ‚Wann?‘ (Tageslage, Wochenenden, Schichten), während Arbeitsdauer nach dem ‚Wie lange?‘ fragt."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Beobachtungen den Arbeitsplatzmerkmalen zuordnen",
+      "instruction": "Ordne jede Notiz aus einer Betriebserkundung dem passenden Arbeitsplatzmerkmal zu.",
+      "categories": [
+        "Arbeitsaufgabe & Arbeitsmittel",
+        "Arbeitsort, Zeit & Dauer",
+        "Arbeitsbedingungen"
+      ],
+      "entries": [
+        {
+          "text": "Die Mitarbeiterin prüft Schweißnähte mit einer digitalen Messlehre.",
+          "target": 0,
+          "feedback": "Tätigkeit (Prüfen) und Werkzeug (Messlehre) sind Aufgabe und Arbeitsmittel."
+        },
+        {
+          "text": "Gearbeitet wird von 6:00 bis 14:30 Uhr in einer beheizten Montagehalle.",
+          "target": 1,
+          "feedback": "Uhrzeit und Einsatzort gehören zu Arbeitszeit, Arbeitsdauer und Arbeitsort."
+        },
+        {
+          "text": "An den Schleifmaschinen sind Gehörschutz und Absauganlage vorgeschrieben.",
+          "target": 2,
+          "feedback": "Lärm, Staubbelastung und Schutzmaßnahmen beschreiben die Arbeitsbedingungen."
+        },
+        {
+          "text": "Ein höhenverstellbarer Montagetisch entlastet den Rücken beim Heben schwerer Motoren.",
+          "target": 2,
+          "feedback": "Körperliche Belastung und Ergonomie zählen zu den Arbeitsbedingungen."
+        }
+      ],
+      "conclusion": "Mit dieser Systematik übersiehst du bei einer Erkundung weder die Technik noch Gesundheit und Arbeitszeiten."
+    },
+    "lab": "workplaceCheck",
+    "practice": "workplaceScore",
+    "tasks": {
+      "1": {
+        "prompt": "Beschreibe einen dir bekannten Arbeitsplatz (z. B. in einer Bäckerei, Arztpraxis oder Kfz-Werkstatt) geordnet nach allen sechs Arbeitsplatzmerkmalen.",
+        "hints": [
+          "Gehe Schritt für Schritt vor: Aufgabe, Mittel, Ort, Zeit, Dauer, Bedingungen.",
+          "Nenne bei den Arbeitsbedingungen zwei konkrete Beobachtungen (z. B. Stehen, Temperatur, Lärm)."
+        ],
+        "model": "Beispiel Backstube: Arbeitsaufgabe ist das Herstellen und Backen von Brot und Brötchen. Arbeitsmittel sind Teigknetmaschine, Ofen und Backbleche. Arbeitsort ist die geschlossene Backstube. Die Arbeitszeit liegt sehr früh von 3:00 bis 11:30 Uhr bei 8 Stunden Arbeitsdauer plus Pause. Zu den Arbeitsbedingungen zählen Wärme am Ofen, Mehlstaub und langes Stehen.",
+        "criteria": [
+          "Du verwendest alle sechs Arbeitsplatzmerkmale korrekt.",
+          "Du trennst Arbeitszeit (Lage) und Arbeitsdauer (Stundenzahl) sauber.",
+          "Du nennst konkrete Arbeitsbedingungen am gewählten Beispiel."
+        ]
+      },
+      "2": {
+        "prompt": "Bei einer Erkundung erhält eine Werkhalle beim Merkmal Ergonomie/Lärmschutz nur 2 von 6 Punkten, obwohl die Arbeitsmittel modern sind (6 Punkte). Beurteile die Gesamtsituation und schlage eine Verbesserung vor.",
+        "hints": [
+          "Kann gute Technik allein gesundheitliche Belastungen ausgleichen?",
+          "Welche Rolle spielen Schutzmittel oder Pausenwechsel?"
+        ],
+        "model": "Moderne Maschinen ersetzen keine guten Arbeitsbedingungen: Dauerhafter Lärm oder eine ungünstige Körperhaltung führen langfristig zu Beschwerden, selbst wenn das Werkzeug präzise arbeitet. Sinnvolle Gegenmaßnahmen sind schalldämmende Hauben, Gehörschutz, höhenverstellbare Werkbänke oder ein regelmäßiger Tätigkeitswechsel im Team.",
+        "criteria": [
+          "Du erkennst den Unterschied zwischen moderner Ausstattung und gesunden Arbeitsbedingungen.",
+          "Du begründest langfristige Folgen schlechter Arbeitsbedingungen.",
+          "Du nennst mindestens eine realistische ergonomische oder schützende Verbesserung."
+        ]
+      }
+    }
+  },
+  {
+    "id": "ar-zugangserkundung-ausbildung",
+    "lb": 2,
+    "tracks": ["R", "M"],
+    "lehrplan": "WiB 7 · LB 2 · R7 & M7",
+    "title": "Zugangserkundung mit Schwerpunkt Berufsausbildung",
+    "intro": "Die Zugangserkundung zeigt dir vor Ort, wie ein Betrieb ausbildet — von den Lernorten Betrieb und Berufsschule bis zu den Erwartungen an Auszubildende.",
+    "paragraphs": [
+      "Im Unterschied zum kurzen Zusehen bereitest du die Zugangserkundung strukturiert vor — in der M-Klasse selbständig anhand der Leittextmethode. Neben den täglichen Abläufen richtest du deinen Schwerpunkt auf die betriebliche Ausbildung: Nach dem Berufsbildungsgesetz (§ 1 BBiG) vermittelt die duale Berufsausbildung praxisnahe Fertigkeiten im Ausbildungsbetrieb und fachliche Theorie sowie Allgemeinbildung in der Berufsschule. Zugleich erhältst du eine monatliche Ausbildungsvergütung.",
+      "Beispiel Schreinerei Holzbau: Während der dreijährigen dualen Ausbildung lernt die Auszubildende etwa drei bis vier Tage pro Woche in der Werkstatt und ein bis zwei Tage pro Woche in der Berufsschule. Die Vergütung steigt oft stufenweise, zum Beispiel von 820,00 € im 1. Lehrjahr über 900,00 € im 2. auf 980,00 € im 3. Lehrjahr. Am Ende prüft die zuständige Kammer (hier HWK), ob alle Ausbildungsziele erreicht wurden."
+    ],
+    "takeaway": "Bei der Zugangserkundung erfährst du durch gezielte Fragen an Ausbilder und Azubis, wie Betrieb, Berufsschule und Ausbildungsalltag zusammenspielen.",
+    "sourceIds": ["lpr", "lpm", "bbig1", "bbig4"],
+    "quiz": {
+      "question": "Was bedeutet der Begriff „duale Berufsausbildung“?",
+      "answer": "Die Ausbildung findet an zwei Lernorten statt: praktische Ausbildung im Betrieb und theoretischer Unterricht in der Berufsschule.",
+      "wrong": [
+        "Man erlernt immer gleichzeitig zwei völlig verschiedene Berufe in zwei unterschiedlichen Betrieben.",
+        "Die Ausbildung dauert höchstens zwei Monate und findet ausschließlich online statt."
+      ],
+      "explanation": "‚Dual‘ steht für die beiden aufeinander abgestimmten Lernorte Ausbildungsbetrieb und Berufsschule (§§ 1, 4 BBiG)."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Ablauf einer Zugangserkundung mit Leittext",
+      "instruction": "Bringe die Schritte einer betrieblichen Zugangserkundung in die sinnvolle Reihenfolge.",
+      "categories": [
+        "1 · Erkundungsfragen & Leittext vorbereiten",
+        "2 · Beobachtung & Interview im Betrieb",
+        "3 · Beobachtungsbogen strukturieren",
+        "4 · Arbeitsplatz & Ausbildung präsentieren"
+      ],
+      "entries": [
+        {
+          "text": "Du formulierst Leitfragen zu Arbeitsplatzmerkmalen, Ausbildungsdauer und Aufgaben im 1. Lehrjahr.",
+          "target": 0,
+          "feedback": "Ohne vorbereiteten Leittext fehlen vor Ort wichtige Fakten zu Ausbildung und Anforderungen."
+        },
+        {
+          "text": "Im Betrieb beobachtest du den Arbeitsplatz und befragst einen Azubi sowie den Ausbilder.",
+          "target": 1,
+          "feedback": "Während der Erkundung vor Ort sammelst du konkrete Antworten und Sicherheitsbeobachtungen."
+        },
+        {
+          "text": "Nach der Rückkehr ordnest du deine Notizen zu Vergütung, Lernorten und Stärken des Betriebs.",
+          "target": 2,
+          "feedback": "Die strukturierte Auswertung fasst Fakten und Ausbildungsdetails übersichtlich zusammen."
+        },
+        {
+          "text": "Du stellst deiner Klasse den Betrieb und dessen Ausbildungsweg anhand deines Plakats vor.",
+          "target": 3,
+          "feedback": "Die Präsentation teilt deine Erkenntnisse aus der Arbeitswelt mit der gesamten Klasse."
+        }
+      ],
+      "conclusion": "Gute Vorbereitung macht aus einem Betriebsbesuch eine echte berufliche Informationsquelle."
+    },
+    "practice": "trainingCompare",
+    "tasks": {
+      "1": {
+        "prompt": "Formuliere drei gezielte Interviewfragen, die du bei einer Zugangserkundung einer Auszubildenden oder einem Ausbilder zum Thema Ausbildung stellen möchtest.",
+        "hints": [
+          "Frage nach Schulabschluss/Voraussetzungen, Aufgaben im 1. Jahr und Berufsschultagen.",
+          "Vermeide reine Ja/Nein-Fragen."
+        ],
+        "model": "1. Welche schulischen Fähigkeiten und persönlichen Eigenschaften sind Ihnen bei Bewerberinnen und Bewerbern besonders wichtig? 2. Welche Aufgaben übernimmt man schon im ersten Ausbildungsjahr eigenständig? 3. Wie sind Betriebstage und Berufsschulunterricht organisiert und welche Aufstiegschancen gibt es nach der Prüfung?",
+        "criteria": [
+          "Du formulierst drei offene Fragen mit klarem Fokus auf Ausbildung.",
+          "Du berücksichtigst Anforderungen, Lernorte oder Arbeitsalltag.",
+          "Die Fragen sind höflich und für ein echtes Gespräch geeignet."
+        ]
+      },
+      "2": {
+        "prompt": "Erkläre, welchen besonderen Vorteil eine duale Berufsausbildung für junge Menschen bietet, die gerne praktisch anpacken.",
+        "hints": [
+          "Verbinde Betriebspraxis, Berufsschule und eigenes Einkommen.",
+          "Warum ist der Übergang in den Beruf nach drei Jahren oft nahtlos?"
+        ],
+        "model": "In der dualen Ausbildung wenden Jugendliche Gelerntes direkt im realen Betrieb an, statt nur Schulbücher zu lesen. Gleichzeitig liefert die Berufsschule das passende Fachwissen. Zudem verdienen Azubis vom ersten Monat an eine eigene Vergütung und kennen nach der Abschlussprüfung bereits die betrieblichen Abläufe.",
+        "criteria": [
+          "Du erklärst das Zusammenspiel beider Lernorte Betrieb und Berufsschule.",
+          "Du nennst Praxisbezug und monatliche Ausbildungsvergütung.",
+          "Du begründest den guten Berufseinstieg nach der Ausbildung."
+        ]
+      }
+    }
+  },
+  {
+    "id": "ar-kategorien-erwerbsarbeit",
+    "lb": 2,
+    "tracks": ["R", "M"],
+    "lehrplan": "WiB 7 · LB 2 · R7 & M7",
+    "title": "Formen und Kategorien von Erwerbsarbeit",
+    "intro": "Erwerbsarbeit sichert das Einkommen, unterscheidet sich aber stark nach körperlichem oder geistigem Einsatz und nach der benötigten Vorbildung.",
+    "paragraphs": [
+      "Erwerbsarbeit bedeutet bezahlte Tätigkeit zur Sicherung des Lebensunterhalts (anders als unbezahlte Haus- oder Ehrenamtsarbeit). Um Berufe zu vergleichen, nutzt man verschiedene Kategorien: Zum einen lässt sich körperliche Arbeit (z. B. Maurerarbeiten, Paketauslieferung) von überwiegend geistiger Arbeit (z. B. Steuerberatung, Buchhaltung) unterscheiden — viele moderne Berufe verbinden jedoch beides. Zum anderen unterscheidet man gelernte Tätigkeiten (mit mehrjähriger Berufsausbildung oder Studium) von angelernten oder ungelernten Tätigkeiten (mit kurzer Einarbeitungszeit).",
+      "Beispiel Krankenhaus-Team: In einem Betrieb arbeiten 40 Beschäftigte. Davon haben 28 eine abgeschlossene Ausbildung als Pflegefachkraft oder Medizinische Fachangestellte (gelernte Arbeit: körperliches Umlagern plus geistiges Dokumentieren, 70 % Anteil). 12 Beschäftigte arbeiten nach einer mehrwöchigen Einweisung im Hol- und Bringedienst oder als Küchenhilfe (angelernte Arbeit, 30 %)."
+    ],
+    "takeaway": "Erwerbsarbeit lässt sich nach Art der Beanspruchung (körperlich oder geistig) und nach Qualifikation (gelernt oder angelernt) sinnvoll unterscheiden.",
+    "sourceIds": ["lpr", "lpm", "profil"],
+    "quiz": {
+      "question": "Wodurch unterscheidet sich eine gelernte Tätigkeit grundsätzlich von einer angelernten Tätigkeit?",
+      "answer": "Eine gelernte Tätigkeit setzt eine geregelte mehrjährige Berufsausbildung mit Abschlussprüfung voraus; angelernt bedeutet eine kürzere betriebliche Einarbeitung.",
+      "wrong": [
+        "Gelernte Tätigkeiten werden immer im Büro ausgeführt, angelernte immer im Freien.",
+        "Angelernte Kräfte dürfen nur mit unbezahlten Praktikumsverträgen arbeiten."
+      ],
+      "explanation": "Entscheidend ist der formale Ausbildungsabschluss (z. B. nach dem BBiG) gegenüber einer betrieblichen Einweisung ohne mehrjährigen Berufsabschluss."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Kategorien von Erwerbsarbeit zuordnen",
+      "instruction": "Ordne die vier beruflichen Tätigkeiten nach Vorbildung und Schwerpunkt ein.",
+      "categories": [
+        "Körperlich · gelernt (Ausbildung)",
+        "Geistig · gelernt (Ausbildung)",
+        "Überwiegend angelernt (kurze Einarbeitung)"
+      ],
+      "entries": [
+        {
+          "text": "Dachdeckerin mit 3-jähriger Ausbildung montiert Dachbalken und Solarziegel.",
+          "target": 0,
+          "feedback": "Hoher körperlicher Einsatz kombiniert mit einem anerkannten Handwerksabschluss."
+        },
+        {
+          "text": "Kaufmann für Büromanagement erstellt nach Ausbildung Kundenrechnungen am PC.",
+          "target": 1,
+          "feedback": "Überwiegend planende, rechnende und verwaltende Tätigkeit nach 3-jähriger Ausbildung."
+        },
+        {
+          "text": "Aushilfe verräumt nach dreitägiger Einweisung Kartons im Getränkemarkt.",
+          "target": 2,
+          "feedback": "Hier genügt eine kurze Einarbeitung ohne abgeschlossene Fachausbildung."
+        },
+        {
+          "text": "Mechatroniker prüft nach 3,5-jähriger Ausbildung sowohl mechanisch als auch am Diagnosecomputer.",
+          "target": 0,
+          "feedback": "Auch wenn geistige Fehlersuche dazukommt, gehört der gewerblich-technische Abschluss zu gelernter Arbeit."
+        }
+      ],
+      "conclusion": "Gelernte Berufe erfordern längere Ausbildung, bieten dafür meist mehr Abwechslung, Sicherheit und höhere Vergütung."
+    },
+    "practice": "workShare",
+    "tasks": {
+      "1": {
+        "prompt": "Nenne zwei typische Merkmale gelernter Arbeit gegenüber angelernter Arbeit und gib jeweils ein Beispiel aus einem Handwerks- oder Handelsbetrieb an.",
+        "hints": [
+          "Denke an Ausbildungsdauer, Abschlussprüfung und Aufstiegschancen.",
+          "Vergleiche etwa Bäckerin mit Verkaufs-Aushilfe oder Kfz-Mechatroniker mit Reinigungshilfe."
+        ],
+        "model": "Gelernte Arbeit verlangt eine meist zwei- bis dreieinhalbjährige Ausbildung mit Kammerprüfung und bietet vielfältige Fachaufgaben sowie bessere Aufstiegsmöglichkeiten, etwa als Kfz-Mechatronikerin. Angelernte Arbeit beginnt nach kurzer Einweisung mit fest begrenzten Routineaufgaben, etwa dem Sortieren und Reinigen von Bauteilen.",
+        "criteria": [
+          "Du nennst zwei klare Unterscheidungsmerkmale (Ausbildung/Prüfung, Aufgabenbreite oder Aufstieg).",
+          "Du bringst je ein passendes Beispiel für gelernte und angelernte Arbeit.",
+          "Du verwendest die Fachbegriffe korrekt."
+        ]
+      },
+      "2": {
+        "prompt": "Eine Schülerin meint: „Als Friseurin oder Pflegekraft arbeitet man nur mit den Händen, geistige Arbeit gibt es dort kaum.“ Nimm begründet Stellung.",
+        "hints": [
+          "Welche Rolle spielen Beratung, Hygienevorschriften, Chemie oder Dokumentation?",
+          "Warum verbinden viele Berufe körperliche und geistige Anteile?"
+        ],
+        "model": "Diese Aussage greift zu kurz. Zwar leisten Friseurinnen und Pflegekräfte viel praktische Hand- und Steharbeit, doch gleichzeitig benötigen sie umfangreiches Fachwissen: Dabei berechnen sie Farb- oder Medikamentendosierungen, beraten Kundinnen einfühlsam, führen Dokumentationen und beachten Sicherheitsregeln. Fast jeder qualifizierte Beruf verbindet heute körperliche und geistige Arbeit.",
+        "criteria": [
+          "Du widerlegst die einseitige Behauptung sachlich.",
+          "Du nennst konkrete geistige Anforderungen im genannten Beruf.",
+          "Du formulierst ein abwägendes Urteil."
+        ]
+      }
+    }
+  },
+  {
+    "id": "ar-ordnungssystematiken-berufe",
+    "lb": 2,
+    "tracks": ["R", "M"],
+    "lehrplan": "WiB 7 · LB 2 · R7 & M7",
+    "title": "Ordnungssystematiken für Berufe entwickeln",
+    "intro": "Tausende Berufe wirken unübersichtlich — mit eigenen Ordnungssystematiken sortierst du Arbeitsplätze nach klaren, selbst gewählten Kriterien.",
+    "paragraphs": [
+      "Eine Ordnungssystematik gliedert eine Vielzahl von Berufen nach eindeutigen Merkmalen in passende Gruppen. Im Lehrplan gehören dazu etwa der Arbeitsort (Berufe im Freien vs. in geschlossenen Räumen), die Arbeitsweise (viel Maschinenarbeit vs. viel Kundenkontakt oder Büroarbeit) oder der Wirtschaftssektor (Urproduktion, Handwerk/Industrie, Dienstleistungen). Wichtig ist, dass jede Systematik klare, nachvollziehbare Abgrenzungsregeln besitzt.",
+      "Beispiel aus sechs erkundeten Berufen: Sortiert man nach Arbeitsort, arbeiten Gärtnerin und Dachdecker überwiegend im Freien (2 Berufe = 33,33 %), während Industriemechaniker, Bürokauffrau, Mechatroniker und Erzieherin überwiegend in geschlossenen Räumen arbeiten (4 Berufe = 66,67 %). Ordnet man dieselben sechs Berufe dagegen nach ‚viel Maschinenarbeit‘ vs. ‚überwiegend Arbeit mit Menschen oder Daten‘, entstehen völlig neue Gruppen."
+    ],
+    "takeaway": "Ordnungssystematiken schaffen Überblick über die Berufswelt — je nachdem, welches Merkmal (Ort, Technik, Kontakt) du wählst, gruppierst du Berufe gezielt neu.",
+    "sourceIds": ["lpr", "lpm", "bibb"],
+    "quiz": {
+      "question": "Was macht eine selbst formulierte Ordnungssystematik für Berufe fachlich brauchbar?",
+      "answer": "Sie legt ein klares Kriterium fest, nach dem jeder untersuchte Beruf eindeutig einer Gruppe zugeordnet werden kann.",
+      "wrong": [
+        "Sie sortiert Berufe nur nach der beliebtesten Farbe der Arbeitskleidung ohne Berufsbezug.",
+        "Sie darf immer nur maximal zwei Berufe enthalten und keine Kriterien benennen."
+      ],
+      "explanation": "Erst ein trennscharfes Kriterium (wie Arbeitsort, Werkstoff, Maschinenanteil oder Kundenkontakt) macht eine Systematik nachvollziehbar."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Berufe nach Arbeitsort und Arbeitsmitteln ordnen",
+      "instruction": "Ordne die vier Berufe in die vorgegebene Systematik aus Arbeitsort und Technikanteil ein.",
+      "categories": [
+        "Im Freien · mit schwerer Technik/Geräten",
+        "Geschlossene Halle · viel Maschinenarbeit",
+        "Geschlossener Raum · Beratung, PC oder Pflege"
+      ],
+      "entries": [
+        {
+          "text": "Straßenbauerin bedient Verdichtungsgeräte und verlegt Pflaster auf Baustellen.",
+          "target": 0,
+          "feedback": "Baustellen liegen im Freien und erfordern Baugeräte."
+        },
+        {
+          "text": "Zerspanungsmechaniker programmiert und überwacht CNC-Fräsmaschinen in der Werkhalle.",
+          "target": 1,
+          "feedback": "Der Arbeitsplatz liegt in der geschlossenen Halle direkt an Produktionsmaschinen."
+        },
+        {
+          "text": "Kauffrau im Einzelhandel berät Kundinnen im Verkaufsraum und bedient die Kasse.",
+          "target": 2,
+          "feedback": "Im Vordergrund stehen geschlossener Verkaufsraum und direkter Kundenkontakt."
+        },
+        {
+          "text": "Landschaftsgärtner gestaltet Außenanlagen mit Minibagger und Heckenschere.",
+          "target": 0,
+          "feedback": "Die Arbeit findet fast vollständig im Freien mit motorisierten Geräten statt."
+        }
+      ],
+      "conclusion": "Mit zwei gekoppelten Kriterien lassen sich Berufe sehr genau von deinen eigenen Wünschen her eingrenzen."
+    },
+    "practice": "workShare",
+    "tasks": {
+      "1": {
+        "prompt": "Entwirf eine eigene einfache Ordnungssystematik mit drei Gruppen für sechs beliebige Berufe deiner Wahl und nenne das Ordnungskriterium.",
+        "hints": [
+          "Wähle ein klares Kriterium (z. B. Arbeitsgegenstand: Werkstoffe/Technik vs. Menschen vs. Zahlen/Texte).",
+          "Ordne jedem der drei Bereiche zwei konkrete Berufe zu."
+        ],
+        "model": "Ordnungskriterium ‚Umgang mit Arbeitsgegenständen‘: 1. Arbeit mit Werkstoffen und Maschinen (Schreinerin, Kfz-Mechatroniker); 2. Arbeit direkt mit Menschen (Pflegefachmann, Erzieherin); 3. Arbeit mit Daten, Texten und Waren (Bürokauffrau, Verkäufer). Jede Gruppe spiegelt eine eigene Arbeitswelt wider.",
+        "criteria": [
+          "Du benennst ein klares, trennscharfes Ordnungskriterium.",
+          "Du bildest drei logische Gruppen mit je zwei passenden Berufen.",
+          "Alle Berufe sind der jeweiligen Gruppe nachvollziehbar zugeordnet."
+        ]
+      },
+      "2": {
+        "prompt": "Begründe, warum eine Jugendliche bei ihrer Berufssuche mehrere Ordnungssystematiken nacheinander nutzen sollte statt nur eine einzige.",
+        "hints": [
+          "Zeigt das Kriterium ‚Drinnen oder draußen‘ schon, ob man gerne am PC oder mit Menschen arbeitet?",
+          "Wie hilft eine zweite Systematik bei der Eingrenzung?"
+        ],
+        "model": "Eine einzelne Systematik beleuchtet immer nur einen Ausschnitt: Wer etwa in geschlossenen Räumen arbeiten möchte, findet dort sowohl laute Werkhallen mit CNC-Maschinen als auch ruhige Büros oder Arztpraxen. Erst eine zweite Systematik (z. B. nach Maschinen- vs. Menschenkontakt) trennt diese sehr unterschiedlichen Arbeitsplätze sauber.",
+        "criteria": [
+          "Du zeigst die Grenze einer einzelnen Systematik auf.",
+          "Du begründest den Gewinn durch Kombination mehrerer Kriterien.",
+          "Du nutzt ein konkretes Beispiel aus der Arbeitswelt."
+        ]
+      }
+    }
+  },
+  {
+    "id": "ar-abhaengig-selbstaendig",
+    "lb": 2,
+    "tracks": ["R", "M"],
+    "lehrplan": "WiB 7 · LB 2 · R7 & M7",
+    "title": "Abhängige Beschäftigung und unternehmerische Selbständigkeit",
+    "intro": "Als Angestellte erhältst du festen Lohn auf Weisung des Arbeitgebers; als Selbständige entscheidest du frei, trägst aber auch das volle Risiko.",
+    "paragraphs": [
+      "Erwerbsarbeit lässt sich rechtlich in abhängige Beschäftigung und unternehmerische Selbständigkeit unterscheiden. Abhängig Beschäftigte schließen einen Arbeitsvertrag (§ 611a BGB): Sie sind an Weisungen zu Arbeitsort, Arbeitszeit und Aufgaben gebunden, erhalten dafür regelmäßig vertraglich vereinbarten Lohn oder Gehalt, genießen bezahlten Urlaub, Lohnfortzahlung im Krankheitsfall und gesetzliche Sozialversicherung.",
+      "Unternehmerisch Selbständige (§ 84 HGB) arbeiten auf eigene Rechnung: Sie gewinnen Aufträge selbst, teilen ihre Arbeitszeit frei ein und tragen die volle Verantwortung für Investitionen und Mitarbeiter. Beispiel Bäckerei: Die angestellte Bäckerin bekommt jeden Monat fest ihr vereinbartes Gehalt, auch wenn wenige Kunden in den Laden kommen. Die selbständige Bäckermeisterin behält zwar hohe Gewinne selbst, trägt bei kaputten Öfen oder ausbleibenden Kunden aber auch jedes Verlustrisiko."
+    ],
+    "takeaway": "Abhängig Beschäftigte tauschen Weisungsgebundenheit gegen planbares Einkommen und sozialen Schutz; Selbständige genießen Gestaltungsfreiheit bei eigenem wirtschaftlichem Risiko.",
+    "sourceIds": ["lpr", "lpm", "bgb611a", "hgb84"],
+    "quiz": {
+      "question": "Welches Merkmal kennzeichnet typischerweise eine abhängige Beschäftigung nach § 611a BGB?",
+      "answer": "Man arbeitet weisungsgebunden für einen Arbeitgeber und erhält regelmäßigen Lohn samt bezahltem Urlaub.",
+      "wrong": [
+        "Man haftet automatisch mit dem gesamten Privatvermögen für unbezahlte Lieferantenrechnungen des Betriebs.",
+        "Man darf seine Preise und Ladenöffnungszeiten ohne jede Absprache selbst festlegen."
+      ],
+      "explanation": "Die Eingliederung in die fremde Arbeitsorganisation mit Weisungsrecht, geregeltem Lohn und sozialer Absicherung kennzeichnet abhängige Arbeit."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Abhängige Arbeit vs. Selbständigkeit unterscheiden",
+      "instruction": "Ordne jedes Merkmal der passenden Form von Erwerbsarbeit zu.",
+      "categories": [
+        "Abhängige Beschäftigung",
+        "Unternehmerische Selbständigkeit"
+      ],
+      "entries": [
+        {
+          "text": "Die Werkstattchefin entscheidet selbst, welche Maschinen angeschafft und welche Preise verlangt werden.",
+          "target": 1,
+          "feedback": "Eigene Investitions- und Preisentscheidungen sind typisch für Selbständige."
+        },
+        {
+          "text": "Bei einer Grippe zahlt der Betrieb das vereinbarte Gehalt sechs Wochen lang weiter.",
+          "target": 0,
+          "feedback": "Entgeltfortzahlung im Krankheitsfall schützt abhängig Beschäftigte."
+        },
+        {
+          "text": "Bleiben Aufträge einen Monat lang aus, sinken die eigenen Einnahmen sofort auf null.",
+          "target": 1,
+          "feedback": "Das Auftrags- und Einkommensrisiko tragen Unternehmerinnen und Unternehmer selbst."
+        },
+        {
+          "text": "Der Dienstplan legt Arbeitsbeginn, Pausen und Aufgabenbereich verbindlich fest.",
+          "target": 0,
+          "feedback": "Weisungen zu Zeit, Ort und Aufgabe zeigen abhängige Beschäftigung."
+        }
+      ],
+      "conclusion": "Keine Form ist pauschal besser — beide unterscheiden sich grundlegend in Risiko, Absicherung und Entscheidungsfreiheit."
+    },
+    "practice": "selfEmployedProfit",
+    "tasks": {
+      "1": {
+        "prompt": "Stelle zwei klare Vorteile und zwei Risiken der unternehmerischen Selbständigkeit gegenüber der abhängigen Beschäftigung dar.",
+        "hints": [
+          "Denke an Freiheit bei Entscheidungen und Gewinnen vs. Auftragsflauten und Krankheit.",
+          "Wie wird der Urlaub finanziert?"
+        ],
+        "model": "Vorteile der Selbständigkeit sind die freie Gestaltung von Arbeitszeit, Angebot und Preisen sowie die Möglichkeit, hohe Gewinne selbst zu behalten. Risiken liegen darin, dass bei Auftragsflauten oder Krankheit kein festes Gehalt fließt und man sich eigenverantwortlich gegen Alter, Krankheit und Haftung absichern muss.",
+        "criteria": [
+          "Du benennst zwei stichhaltige Vorteile der Selbständigkeit.",
+          "Du benennst zwei wirtschaftliche oder soziale Risiken.",
+          "Du stellst den Bezug zur abhängigen Beschäftigung her."
+        ]
+      },
+      "2": {
+        "prompt": "Ein Handwerker behauptet: „Als Selbständiger bekomme ich 60 € je Arbeitsstunde vom Kunden — ich verdiene also dreimal so viel wie ein Geselle mit 20 € Stundenlohn.“ Erkläre den Denkfehler.",
+        "hints": [
+          "Was muss vom Stundenumsatz noch abgezogen werden?",
+          "Welche Arbeitszeit kann der Selbständige gar nicht in Rechnung stellen (Büro, Fahrt, Reinigung)?"
+        ],
+        "model": "Der Vergleich verwechselt Umsatz mit Nettolohn. Von den 60 € pro berechneter Stunde muss der Selbständige zuerst Material, Werkstattmiete, Werkzeug, Versicherungen und Ausfallzeiten zahlen. Außerdem sind nicht alle Arbeitsstunden verrechenbar, weil Angebote, Buchhaltung und Einkauf Zeit kosten.",
+        "criteria": [
+          "Du unterscheidest zwischen Umsatz und Gewinn bzw. Nettoeinkommen.",
+          "Du nennst laufende Kosten (Material, Fixkosten, Absicherung).",
+          "Du erwähnst unbezahlte Büro- oder Leerlaufzeiten."
+        ]
+      }
+    }
+  },
+  {
+    "id": "ar-planspiel-selbstaendigkeit",
+    "lb": 2,
+    "tracks": ["M"],
+    "lehrplan": "WiB 7 · LB 2 · M7",
+    "title": "Planspiel: In der Rolle einer Selbständigen",
+    "intro": "In der M-Klasse schlüpfst du im Planspiel in die Rolle einer Jungunternehmerin und prüfst live, ab wann Stundensatz, Aufträge und Kosten ein stabiles Einkommen ergeben.",
+    "paragraphs": [
+      "Wer selbständig startet, muss wirtschaftlich vorausrechnen. Neben den verrechenbaren Auftragsstunden fallen jeden Monat feste Betriebskosten an — etwa für Werkstattmiete, Transporter, Versicherungen, Telefon und Werbung — ganz gleich, wie viele Kunden anrufen. Dazu kommen veränderliche Material- oder Fremdkosten pro Auftrag. Erst was nach Abzug aller Kosten vom Umsatz übrig bleibt, ist das Betriebsergebnis vor Steuern und privater Vorsorge.",
+      "Beispiel Planspiel Mobile Fahrrad-Wartung: Bei 100 abgerechneten Auftragsstunden zu 60,00 € entsteht ein Monatsumsatz von 6.000,00 €. Davon gehen 25 % für Ersatzteile und Material (1.500,00 €) sowie 1.800,00 € feste Monatskosten ab. Es bleibt ein Ergebnis von 2.700,00 € vor Steuern (45,00 % Marge), aus dem noch Einkommensteuer, Krankenversicherung und Altersvorsorge bezahlt werden müssen."
+    ],
+    "takeaway": "Im Planspiel Selbständigkeit zeigt sich: Hoher Umsatz reicht nicht — erst wenn Umsatz minus Material und Fixkosten trägt, bleibt persönliches Einkommen übrig.",
+    "sourceIds": ["lpm", "hgb84"],
+    "quiz": {
+      "question": "Ein Selbständiger steigert seine abgerechneten Stunden im Monat von 80 auf 110 Stunden bei gleichem Stundensatz. Warum wächst sein Gewinn stärker als seine Gesamtkosten?",
+      "answer": "Weil die monatlichen Fixkosten gleich bleiben und sich auf mehr Auftragsstunden verteilen.",
+      "wrong": [
+        "Weil Selbständige ab der 81. Stunde gar keine Materialkosten und Steuern mehr zahlen müssen.",
+        "Weil Kunden automatisch das Doppelte bezahlen, sobald man mehr arbeitet."
+      ],
+      "explanation": "Bei höherer Auslastung sinken die Fixkosten pro Auftragsstunde, sodass der Deckungsbeitrag zusätzlicher Stunden direkt das Ergebnis erhöht."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Entscheidungen im Unternehmer-Planspiel bewerten",
+      "instruction": "Ordne die Entscheidungen in der Unternehmensrolle danach ein, ob sie die Wirtschaftlichkeit stärken oder ein finanzielles Risiko vergrößern.",
+      "categories": [
+        "Stärkt Betriebsergebnis & Sicherheit",
+        "Gefährdet das Unternehmen"
+      ],
+      "entries": [
+        {
+          "text": "Du bildest jeden Monat aus dem Gewinn eine Rücklage für Werkzeugreparaturen und Steuern.",
+          "target": 0,
+          "feedback": "Rücklagen verhindern Zahlungsengpässe bei unerwarteten Rechnungen oder Steuerbescheiden."
+        },
+        {
+          "text": "Du mietest im ersten Monat eine doppelt so teure Werkstatt ohne passende Auftragszusagen.",
+          "target": 1,
+          "feedback": "Hohe feste Kosten erhöhen sofort die Verlustgefahr bei schwankenden Aufträgen."
+        },
+        {
+          "text": "Du kalkulierst Angebote erst nach genauer Berechnung von Arbeitszeit und Materialanteil.",
+          "target": 0,
+          "feedback": "Eine saubere Vorkalkulation schützt vor Verlustaufträgen."
+        },
+        {
+          "text": "Du setzt deinen Stundensatz halb so hoch wie die Konkurrenz an, um schneller Kunden zu gewinnen.",
+          "target": 1,
+          "feedback": "Zu niedrige Preise decken bei steigendem Material- und Zeitaufwand nicht die Fixkosten."
+        }
+      ],
+      "conclusion": "Erfolgreiche Selbständigkeit beruht auf realistischer Kalkulation statt riskantem Preisdumping."
+    },
+    "lab": "selfEmployedSim",
+    "practice": "selfEmployedProfit",
+    "tasks": {
+      "1": {
+        "prompt": "Beschreibe im Planspiel-Szenario, wie du auf einen unerwarteten Auftragsrückgang um 30 % reagieren kannst, damit dein kleiner Betrieb nicht in die roten Zahlen rutscht.",
+        "hints": [
+          "Unterscheide Maßnahmen bei der Kundengewinnung und bei den Kosten.",
+          "Was lässt sich kurzfristig senken und was erst mittelfristig?"
+        ],
+        "model": "Kurzfristig prüfe ich Stammkundenkontakte, biete Wartungspakete an und senke vermeidbare laufende Ausgaben. Zugleich halte ich für genau solche Monate eine Liquiditätsrücklage bereit. Hält die Flaute an, müssen auch Fixkosten wie Raumgröße oder Leasingverträge überprüft und neu verhandelt werden.",
+        "criteria": [
+          "Du nennst Maßnahmen sowohl auf der Einnahmen- als auch auf der Kostenseite.",
+          "Du unterscheidest kurzfristige Ausgaben von festen Monatskosten.",
+          "Du beziehst Rücklagen gegen Schwankungen ein."
+        ]
+      },
+      "2": {
+        "prompt": "Warum kalkulieren viele erfahrene Selbständige ihre Jahresarbeitszeit realistisch mit nur rund 1.200 bis 1.400 verrechenbaren Stunden statt 2.000 Stunden? Begründe genau.",
+        "hints": [
+          "Welche Tage und Tätigkeiten lassen sich keinem Kunden berechnen?",
+          "Was passiert, wenn die Inhaberin krank wird oder Urlaub macht?"
+        ],
+        "model": "Von rund 250 Arbeitstagen im Jahr gehen zunächst Urlaub, Feiertage und mögliche Krankheitstage ab. Zudem beanspruchen Angebote schreiben, Buchführung, Werkstattpflege, Weiterbildung und Fahrten viel Zeit, die kein Kunde direkt bezahlt. Wer den Stundensatz fälschlich auf 2.000 Stunden verteilt, kalkuliert viel zu billig und erwirtschaftet am Jahresende einen Verlust.",
+        "criteria": [
+          "Du benennst Urlaub, Krankheit sowie unbezahlte Verwaltungs- und Akquisezeiten.",
+          "Du erklärst den Rechenfehler bei zu niedrigem Stundensatz.",
+          "Du formulierst ein klares Urteil zur Kalkulationsdisziplin."
+        ]
+      }
+    }
+  },
+  {
+    "id": "bo-berufswahlportfolio",
+    "lb": 3,
+    "tracks": ["R", "M"],
+    "lehrplan": "WiB 7 · LB 3 · R7 & M7",
+    "title": "Das Berufswahlportfolio systematisch führen",
+    "intro": "Dein Berufswahlprozess erstreckt sich über mehrere Schuljahre — ein gut geordnetes Berufswahlportfolio macht deine Stärken, Erkundungen und Entscheidungen jederzeit abrufbar.",
+    "paragraphs": [
+      "Berufsorientierung gelingt nicht über Nacht vor dem Abschlusszeugnis, sondern Schritt für Schritt ab Klasse 7. Ein Berufswahlportfolio (z. B. ein Berufswahlpass als Ordner oder digitales Verzeichnis) sammelt systematisch alle wichtigen Ergebnisse: Selbsteinschätzungen, Fragebögen der Berufsberatung, Protokolle deiner Zugangserkundungen, Praktikumsnachweise und erste Bewerbungsentwürfe. Wichtig ist, dass du es aktuell hältst und nach Themen sortierst, statt lose Zettel zu stapeln.",
+      "Beispiel Jonas aus Klasse 7b: Sein Portfolio enthält vier Register — 1. Ich über mich, 2. Betriebserkundungen, 3. Berufe & Ausbildungswege, 4. Bewerbung & Zertifikate. Bis zur Jahresmitte hat Jonas 12 von 20 geplanten Nachweisen abgeheftet (60 % Vollständigkeit). Als im Herbst das Gespräch bei der Berufsberatung ansteht, findet er in zwei Minuten seine Erkundungsbögen aus der Schreinerei und seine Stärkentabelle wieder."
+    ],
+    "takeaway": "Ein aktuelles Berufswahlportfolio sichert Ergebnisse über Jahre hinweg und macht Gespräche mit Eltern, Betrieb und Berufsberatung deutlich treffsicherer.",
+    "sourceIds": ["lpr", "lpm", "profil"],
+    "quiz": {
+      "question": "Was gehört dauerhaft und systematisch in ein Berufswahlportfolio?",
+      "answer": "Interessenprofile, Selbst- und Fremdeinschätzungen, Erkundungsberichte sowie Nachweise zu beruflichen Anforderungen.",
+      "wrong": [
+        "Nur fertige Arbeitsverträge nach dem Schulabschluss — frühere Notizen werden sofort weggeworfen.",
+        "Ausschließlich private Urlaubsfotos ohne Zusammenhang mit Stärken oder Berufen."
+      ],
+      "explanation": "Das Portfolio dokumentiert den gesamten Entwicklungsweg von den ersten Interessen in Klasse 7 bis zur Bewerbung in Klasse 9 oder 10."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Dokumente im Berufswahlportfolio ablegen",
+      "instruction": "Sortiere vier typische Unterlagen in das passende Register deines Berufswahlportfolios ein.",
+      "categories": [
+        "Register 1 · Stärken & Einschätzung",
+        "Register 2 · Erkundungen & Praxis",
+        "Register 3 · Berufe & Beratung"
+      ],
+      "entries": [
+        {
+          "text": "Ausgefüllter Bogen zu deinen Interessen und Rückmeldung deiner Lehrkraft nach dem Projekt",
+          "target": 0,
+          "feedback": "Selbst- und Fremdeinschätzungen zeigen dein persönliches Stärkenprofil."
+        },
+        {
+          "text": "Auswertungsbericht über die Arbeitsplatzmerkmale bei deiner Zugangserkundung",
+          "target": 1,
+          "feedback": "Protokolle von Betriebserkundungen und Praktika dokumentieren Praxiserfahrungen."
+        },
+        {
+          "text": "Ausgedruckte Steckbriefe aus dem BERUFENET sowie Notizen vom Gespräch mit der Berufsberatung",
+          "target": 2,
+          "feedback": "Infos zu Ausbildungsberufen und Beratungsgesprächen gehören in das Berufsinformationsregister."
+        },
+        {
+          "text": "Teilnahmebescheinigung für einen freiwilligen Technik-Schnuppertag in den Ferien",
+          "target": 1,
+          "feedback": "Solche Bescheinigungen belegen praktische Einblicke und stärken spätere Bewerbungen."
+        }
+      ],
+      "conclusion": "Wer Unterlagen sofort nach jedem Projekt ablegt, spart in Klasse 8 und 9 bei Bewerbungen viel Suchzeit."
+    },
+    "practice": "portfolioCheck",
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre in eigenen Worten, warum ein Berufswahlportfolio regelmäßig aktualisiert werden muss und nicht erst kurz vor der Bewerbung in Klasse 9 angelegt wird.",
+        "hints": [
+          "Ändern sich Interessen und Fähigkeiten zwischen Klasse 7 und Klasse 9?",
+          "Was geht verloren, wenn Erkundungsberichte nicht zeitnah abgeheftet werden?"
+        ],
+        "model": "Zwischen Klasse 7 und Klasse 9 verändern sich Interessen, schulische Stärken und praktische Erfahrungen stetig. Wer sein Portfolio aktuell hält, erkennt diese Entwicklung über die Zeit, verliert keine Praktikums- oder Erkundungsbescheinigungen und kann bei Beratungsgesprächen sofort auf genaue Beispiele zurückgreifen.",
+        "criteria": [
+          "Du begründest die Entwicklung über mehrere Schuljahre hinweg.",
+          "Du nennst die Sicherung von Praxisergebnissen und Nachweisen.",
+          "Du stellst den Nutzen für Beratung oder Bewerbung dar."
+        ]
+      },
+      "2": {
+        "prompt": "Ein Mitschüler will seinen Ordner ausmisten und alte Erkundungsnotizen aus Klasse 7 wegwerfen, weil ihm der damalige Beruf heute nicht mehr gefällt. Rate ihm begründet zu oder ab.",
+        "hints": [
+          "Was verrät auch ein später verworfener Beruf über die eigenen Vorlieben?",
+          "Warum sind Ausschlusskriterien in der Berufswahl wertvoll?"
+        ],
+        "model": "Ich rate ihm vom Wegwerfen ab. Auch wenn der damalige Beruf heute nicht mehr sein Wunsch ist, zeigen die alten Notizen sehr klar, welche Arbeitsbedingungen oder Aufgaben ihm damals nicht lagen. Solche Ausschlussgründe helfen genauso stark wie positive Treffer, um in Klasse 8 passende Praktikumsplätze zu finden.",
+        "criteria": [
+          "Du gibst eine klare Empfehlung (behalten).",
+          "Du erklärst den Wert von Ausschlusskriterien für die weitere Berufswahl.",
+          "Du beziehst dich auf konkrete Inhalte aus Erkundungsnotizen."
+        ]
+      }
+    }
+  },
+  {
+    "id": "bo-berufsberatung-kammern",
+    "lb": 3,
+    "tracks": ["R", "M"],
+    "lehrplan": "WiB 7 · LB 3 · R7 & M7",
+    "title": "Berufsberatung, Kammern, Innungen und Verbände nutzen",
+    "intro": "Für die Berufswahl gibt es verlässliche, neutrale Anlaufstellen — wenn du weißt, wer für Ausbildung, Beratung und Brancheninformationen zuständig ist.",
+    "paragraphs": [
+      "Bei der Berufswahl triffst du im Internet oft auf Werbung. Verlässliche Auskünfte geben gesetzlich verankerte Stellen: Die Berufsberatung der Agentur für Arbeit (§ 29 SGB III) berät Jugendliche kostenlos und unabhängig und betreibt Portale wie das BERUFENET sowie Berufsinformationszentren (BiZ). Für die betriebliche Ausbildung selbst sind nach § 71 BBiG zuständige Stellen verantwortlich — vor allem die Industrie- und Handelskammern (IHK) für kaufmännische und industrielle Berufe sowie die Handwerkskammern (HWK) für alle Handwerksberufe.",
+      "Ergänzend bündeln Innungen einzelne Handwerke vor Ort (z. B. die Bäcker- oder Elektroinnung) und Wirtschaftsverbände informieren über Berufe ihrer Branche. Beispiel: Wer eine Lehre als Elektronikerin für Energie- und Gebäudetechnik anstrebt, findet betriebliche Ausbildungsordnungen und freie Lehrstellen bei der Handwerkskammer und der Elektroinnung, während die Berufsberatung im BiZ Alternativen und Bewerbungstipps aufzeigt."
+    ],
+    "takeaway": "Agentur für Arbeit (Berufsberatung), Kammern (IHK/HWK), Innungen und Fachverbände liefern geprüfte Infos zu Anforderungen, Vergütung und Ausbildungsplätzen.",
+    "sourceIds": ["lpr", "lpm", "sgb3_29", "sgb3_33", "bbig71", "bibb"],
+    "quiz": {
+      "question": "Welche Einrichtung ist nach § 71 BBiG typischerweise als zuständige Stelle für die Prüfung und Überwachung einer Tischler- oder Bäcker-Ausbildung verantwortlich?",
+      "answer": "Die Handwerkskammer (HWK).",
+      "wrong": [
+        "Das örtliche Einwohnermeldeamt.",
+        "Ein beliebiger privater Werbekanal in sozialen Medien."
+      ],
+      "explanation": "Für Handwerksberufe ist die Handwerkskammer (HWK) zuständige Stelle nach BBiG; für Industrie- und Handelsberufe ist es die IHK."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Richtige Anlaufstelle für die Berufssuche wählen",
+      "instruction": "Ordne jedes Informationsanliegen der passenden Stelle zu.",
+      "categories": [
+        "Berufsberatung (Agentur für Arbeit / BiZ)",
+        "IHK (Industrie- und Handelskammer)",
+        "HWK & Innung (Handwerk)"
+      ],
+      "entries": [
+        {
+          "text": "Du bist noch völlig unentschlossen und möchtest kostenlos über viele verschiedene Berufe beraten werden.",
+          "target": 0,
+          "feedback": "Die Berufsberatung der Agentur für Arbeit (§ 29 SGB III) berät neutral über alle Berufe hinweg."
+        },
+        {
+          "text": "Du suchst Informationen zur Ausbildung als Industriekauffrau oder Fachkraft für Lagerlogistik.",
+          "target": 1,
+          "feedback": "Industrie- und Handelsberufe liegen im Zuständigkeitsbereich der IHK."
+        },
+        {
+          "text": "Du fragst nach Ausbildungsbetrieben für Kfz-Mechatroniker oder Anlagenmechaniker im Handwerk.",
+          "target": 2,
+          "feedback": "Handwerkskammer und örtliche Handwerksinnungen sind hier die richtigen Ansprechpartner."
+        },
+        {
+          "text": "Du möchtest amtliche Steckbriefe zu Ausbildungsinhalten im BERUFENET vergleichen.",
+          "target": 0,
+          "feedback": "BERUFENET und BiZ gehören zum Informationsangebot der Bundesagentur für Arbeit."
+        }
+      ],
+      "conclusion": "Wer neutral nach Berufen sucht, geht zuerst zur Berufsberatung; für konkrete Betriebe und Prüfungen helfen IHK, HWK und Innungen."
+    },
+    "practice": "portfolioCheck",
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre den Unterschied zwischen den Aufgaben der Berufsberatung der Agentur für Arbeit und den Aufgaben einer Kammer (IHK oder HWK).",
+        "hints": [
+          "Wer berät dich unabhängig zu persönlichen Interessen über alle Branchen hinweg?",
+          "Wer betreut Ausbildungsverträge, Ausbildungsbetriebe und Abschlussprüfungen in einem Bereich?"
+        ],
+        "model": "Die Berufsberatung der Agentur für Arbeit unterstützt Jugendliche neutral bei der beruflichen Orientierung, wertet Interessen aus und vermittelt Ausbildungsstellen über alle Branchen hinweg. Kammern wie IHK oder HWK sind nach dem Berufsbildungsgesetz für die Betriebe ihres Bereichs zuständig, tragen Ausbildungsverträge ein und nehmen die Zwischen- und Abschlussprüfungen ab.",
+        "criteria": [
+          "Du beschreibst die neutrale Beratungs- und Orientierungsrolle der Arbeitsagentur.",
+          "Du benennst die Rolle von IHK/HWK für Betriebe, Verträge und Prüfungen.",
+          "Du trennst beide Aufgaben sauber voneinander."
+        ]
+      },
+      "2": {
+        "prompt": "Beurteile, warum Informationen einer Kammer oder des BIBB verlässlicher sind als ein Video eines bezahlten Influencers über einen „Traumberuf“.",
+        "hints": [
+          "Welche Rolle spielen Eigeninteressen oder Werbung beim Influencer?",
+          "Wie entstehen die Angaben zu Inhalten, Dauer und Abschluss bei Kammern und BIBB?"
+        ],
+        "model": "Ein Influencer verfolgt oft Werbe- oder Reichweitenziele und zeigt häufig nur spannende Ausschnitte ohne Arbeitsbelastung oder genaue Anforderungen. Kammern und das Bundesinstitut für Berufsbildung (BIBB) stützen sich auf gesetzliche Ausbildungsordnungen und aktuelle Kammerdaten — so erhältst du vollständige, geprüfte Fakten zu Inhalten, Vergütung und Prüfungen.",
+        "criteria": [
+          "Du erkennst das Werbe- oder Unterhaltungsinteresse privater Kanäle.",
+          "Du begründest die Verlässlichkeit amtlicher und gesetzlich gebundener Stellen.",
+          "Du nennst konkrete Fakten, auf die du beim Quellenvergleich achtest."
+        ]
+      }
+    }
+  },
+  {
+    "id": "bo-taetigkeitsbereiche-anforderungen",
+    "lb": 3,
+    "tracks": ["R", "M"],
+    "lehrplan": "WiB 7 · LB 3 · R7 & M7",
+    "title": "Interessen und Fähigkeiten mit Tätigkeitsbereichen abgleichen",
+    "intro": "Der Traumjob entsteht dort, wo deine Interessen, Fähigkeiten und Erwartungen zu den realen Anforderungen eines Tätigkeitsbereichs passen.",
+    "paragraphs": [
+      "Berufe lassen sich in große berufliche Tätigkeitsbereiche ordnen — zum Beispiel gewerblich-technische Berufe, kaufmännische Berufe, soziale und medizinische Berufe oder Berufe im Gastgewerbe und in der Natur. Jeder Bereich verlangt bestimmte Stärken wie technisches Verständnis, Sorgfalt, Team- und Kommunikationsfähigkeit oder Kreativität. In der Berufsorientierung vergleichst du dein eigenes Profil ehrlich mit diesen Anforderungen.",
+      "Beispiel Profilabgleich im Abgleichlabor: Tim bewertet seine Stärken auf der 1-bis-6-Skala mit Technik 5, Soziales 3, Sorgfalt 5, Kreativität 3. Verglichen mit dem Anforderungsprofil ‚Elektroniker/in‘ (6 / 3 / 5 / 3) beträgt der Gesamtabstand über alle vier Merkmale nur 1 Punkt — die Passung liegt bei 95,00 %. Beim Profil ‚Büromanagement‘ (3 / 4 / 6 / 3) liegt der Abstand bei 4 Punkten (80,00 % Passung), bei ‚Med. Fachangestellte/r‘ (3 / 6 / 5 / 2) bei 6 Punkten (70,00 %)."
+    ],
+    "takeaway": "Begründete Entscheidungen triffst du nicht nach dem Klang eines Berufsnamens, sondern indem du Interessen, Fähigkeiten und reale Anforderungen Punkt für Punkt abgleichst.",
+    "sourceIds": ["lpr", "lpm", "bibb"],
+    "quiz": {
+      "question": "Was solltest du prüfen, wenn dich ein technischer Beruf zwar reizt, dein Stärkenprofil im Bereich ‚Sorgfalt und Messgenauigkeit‘ aber noch schwach ist?",
+      "answer": "Du prüfst, wie wichtig diese Anforderung im Ausbildungsalltag ist und ob du sie bis zum Praktikum gezielt trainieren kannst.",
+      "wrong": [
+        "Du ignorierst die Anforderung komplett, weil im Beruf ohnehin alles ohne Genauigkeit abläuft.",
+        "Du löschst dein eigenes Interessenprofil und wählst per Losverfahren irgendeinen Beruf."
+      ],
+      "explanation": "Ein Abgleich zeigt nicht nur fertige Treffer, sondern auch Entwicklungsfelder, an denen du vor dem Praktikum arbeiten kannst."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Anforderungen passenden Tätigkeitsbereichen zuordnen",
+      "instruction": "Ordne die jeweilige Hauptanforderung dem treffendsten beruflichen Tätigkeitsbereich zu.",
+      "categories": [
+        "Gewerblich-technischer Bereich",
+        "Kaufmännisch-verwaltender Bereich",
+        "Sozial-pflegerischer & medizinischer Bereich"
+      ],
+      "entries": [
+        {
+          "text": "Schaltpläne genau lesen, Bauteile maßhaltig prüfen und Störungen an Anlagen suchen",
+          "target": 0,
+          "feedback": "Technisches Verständnis, räumliches Denken und handwerkliche Genauigkeit stehen hier im Zentrum."
+        },
+        {
+          "text": "Angebote vergleichen, Rechnungen prüfen, Termine koordinieren und Kundenschreiben verfassen",
+          "target": 1,
+          "feedback": "Sorgfalt bei Zahlen, Textverständnis und Organisationsgeschick prägen kaufmännische Arbeit."
+        },
+        {
+          "text": "Auf geduldige Weise Menschen betreuen, Hygiene streng einhalten und im Team beruhigend sprechen",
+          "target": 2,
+          "feedback": "Einfühlungsvermögen, Zuverlässigkeit und körperliche Belastbarkeit sind im Gesundheits- und Sozialbereich zentral."
+        },
+        {
+          "text": "Mit Werkstoffen präzise fertigen, Maschinen sicher rüsten und Arbeitssicherheit einhalten",
+          "target": 0,
+          "feedback": "Werkstoffkunde und sichere Maschinenbedienung prägen den gewerblich-technischen Bereich."
+        }
+      ],
+      "conclusion": "Wer weiß, welche Stärken ein Tätigkeitsbereich täglich verlangt, wählt sein nächstes Praktikum viel treffsicherer aus."
+    },
+    "lab": "careerMatch",
+    "practice": "profileMatch",
+    "tasks": {
+      "1": {
+        "prompt": "Nenne drei persönliche Kriterien (Interessen, Fähigkeiten, Erwartungen) und zeige an einem selbst gewählten Beruf, wie du sie mit dessen Anforderungen vergleichst.",
+        "hints": [
+          "Erwartungen betreffen z. B. Arbeitszeit, Teamarbeit oder Arbeiten im Freien.",
+          "Nenne sowohl eine starke Übereinstimmung als auch eine mögliche Herausforderung."
+        ],
+        "model": "Beispiel Kfz-Mechatroniker: Mein Interesse an Fahrzeugtechnik (stark) und meine handwerkliche Geschicklichkeit passen gut zur Fehlersuche an Bremsen und Elektronik. Bei meiner Erwartung an saubere Bürokleidung gibt es einen Widerspruch, weil Werkstattarbeit Schmutz und Stehen bedeutet. Zudem erfordert der Beruf gute Mathe- und Sorgfaltswerte.",
+        "criteria": [
+          "Du berücksichtigst Interessen, Fähigkeiten und persönliche Erwartungen.",
+          "Du wählst einen realen Beruf und nennst passende Anforderungen.",
+          "Du zeigst Übereinstimmung und mindestens einen kritischen Prüfpunkt."
+        ]
+      },
+      "2": {
+        "prompt": "Zwei Jugendliche interessieren sich für denselben Beruf ‚Kauffrau/-mann im Einzelhandel‘. Warum kann der Beruf trotzdem für eine Person ideal sein und für die andere gar nicht passen?",
+        "hints": [
+          "Denke an Kundenkontakt am Samstag, Stehen im Laden vs. ruhiges Arbeiten am Schreibtisch.",
+          "Unterscheide Interesse am Produkt von Belastbarkeit im Arbeitsalltag."
+        ],
+        "model": "Interesse am Thema (z. B. Sportartikel oder Mode) allein reicht nicht: Während die erste Person gerne auf fremde Kundinnen zugeht, flexibel im Team arbeitet und mit Samstagsdiensten gut zurechtkommt, fühlt sich die zweite Person vielleicht durch ständigen Publikumsverkehr und Stehzeiten überfordert — hier passt ein ruhigerer Verwaltungs- oder Lagerberuf oft besser.",
+        "criteria": [
+          "Du unterscheidest das Interesse am Produkt vom Arbeitsalltag des Berufs.",
+          "Du nennst konkrete Arbeitsbedingungen wie Arbeitszeiten oder Kundenkontakt.",
+          "Du begründest schlüssig die unterschiedliche Eignung."
+        ]
+      }
+    }
+  },
+  {
+    "id": "bo-selbst-fremdeinschaetzung",
+    "lb": 3,
+    "tracks": ["R", "M"],
+    "lehrplan": "WiB 7 · LB 3 · R7 & M7",
+    "title": "Selbst- und Fremdeinschätzung aus der Erkundung nutzen",
+    "intro": "Wie andere dich bei der Arbeit erleben, deckt blinde Flecken auf: Der Vergleich von Selbst- und Fremdeinschätzung macht dein Berufswahlbild realistisch.",
+    "paragraphs": [
+      "Bei der Zugangserkundung und in Gruppenprojekten prüfst du, wie deine persönlichen Voraussetzungen zu den Anforderungen einzelner Berufe passen. Dabei reicht der eigene Blick allein oft nicht aus: Bei der Selbsteinschätzung neigen manche Jugendliche dazu, sich zu streng zu bewerten, andere überschätzen ihr Tempo oder ihre Genauigkeit. Die Fremdeinschätzung durch Mitschülerinnen, Lehrkräfte oder Ausbilder spiegelt zurück, was außen tatsächlich sichtbar war.",
+      "Beispiel Lenas Praxisprojekt: Lena bewertet sich selbst in Teamarbeit nur mit 3 von 6 Punkten, in Sorgfalt/Ordnung jedoch mit 5 Punkten. Ihre Praxislehrkraft erlebt es anders: Teamarbeit 5 Punkte (Lena hilft anderen geduldig), Sorgfalt 3 Punkte (Werkzeug blieb zweimal liegen). Im Vergleich beider Profile erkennt Lena eine echte Stärke im sozialen Bereich und ein klares Übungsfeld bei der Arbeitsplatzordnung — ihr realistischer Gesamtschnitt liegt bei 4,25 Punkten."
+    ],
+    "takeaway": "Wo Selbst- und Fremdeinschätzung auseinanderliegen, liegt der größte Lerngewinn — im Gespräch klärst du Ursachen und schärfst deine Berufswahl.",
+    "sourceIds": ["lpr", "lpm", "profil"],
+    "quiz": {
+      "question": "Was solltest du tun, wenn deine Selbsteinschätzung in ‚Zuverlässigkeit‘ zwei Punkte höher liegt als die Fremdeinschätzung durch die Gruppenleitung?",
+      "answer": "Nach konkreten Beobachtungsbeispielen fragen und prüfen, worauf der unterschiedliche Eindruck beruht.",
+      "wrong": [
+        "Das Feedback ignorieren und die Fremdeinschätzung heimlich abändern.",
+        "Ab sofort jeden Beruf ausschließen, bei dem man mit anderen zusammenarbeitet."
+      ],
+      "explanation": "Konkrete Beispiele (z. B. verspätetes Abgeben oder fehlende Kontrolle) machen Fremdeinschätzung nachvollziehbar und zeigen dir genau, wo du ansetzen kannst."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Selbst- und Fremdeinschätzung richtig auswerten",
+      "instruction": "Ordne die Rückmeldungen und Schlüsse in der Berufsorientierung sinnvoll zu.",
+      "categories": [
+        "Stärke bestätigt (Selbst ≈ Fremd hoch)",
+        "Verborgene Stärke entdeckt (Fremd > Selbst)",
+        "Übungsfeld erkannt (Selbst > Fremd)"
+      ],
+      "entries": [
+        {
+          "text": "Du schätzt dein handwerkliches Geschick auf 5 ein; der Ausbilder vergibt nach der Probeaufgabe ebenfalls 5.",
+          "target": 0,
+          "feedback": "Hohe Übereinstimmung bestätigt dir eine verlässliche Stärke für praktische Berufe."
+        },
+        {
+          "text": "Du hältst dich für schüchtern (2 Punkte), aber im Kundenrollenspiel lobt dich dein Team für klare Auskünfte (5 Punkte).",
+          "target": 1,
+          "feedback": "Andere sehen an dir oft Kommunikationsstärken, die du dir selbst noch nicht zugetraut hast."
+        },
+        {
+          "text": "Du glaubst, sehr pünktlich zu sein (6 Punkte), kommst bei zwei Erkundungs-Treffpunkten aber zu spät (3 Punkte).",
+          "target": 2,
+          "feedback": "Die Abweichung macht ein konkretes Verhalten sichtbar, das du bis zum Praktikum trainieren kannst."
+        },
+        {
+          "text": "Du selbst zweifelst an deinem Ordnungsgefühl (3 Punkte), doch dein Erkundungsbogen ist laut Lehrkraft der übersichtlichste (5 Punkte).",
+          "target": 1,
+          "feedback": "Die Fremdeinschätzung zeigt eine unerkannte Stärke bei sorgfältiger Dokumentation."
+        }
+      ],
+      "conclusion": "Beide Perspektiven zusammen liefern ein ehrliches Bild, auf dem realistische Praktikumswünsche wachsen."
+    },
+    "practice": "profileMatch",
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre den Unterschied zwischen Selbsteinschätzung und Fremdeinschätzung und nenne ein Beispiel, bei dem ein Betrieb nach der Erkundung wichtige Hinweise geben kann.",
+        "hints": [
+          "Wer schätzt jeweils ein?",
+          "Welche Rolle spielen Auftreten, Nachfragen oder Arbeitstempo vor Ort?"
+        ],
+        "model": "Bei der Selbsteinschätzung beurteile ich meine Interessen, Stärken und Schwächen aus eigener Sicht. Bei der Fremdeinschätzung geben andere — etwa Teammitglieder, Lehrkräfte oder Ausbilder bei der Erkundung — ihre Beobachtungen zurück. Ein Ausbilder kann zum Beispiel rückmelden, wie sorgfältig ich Werkzeuge handhabe oder wie sicher ich Rückfragen stelle.",
+        "criteria": [
+          "Du definierst Selbst- und Fremdeinschätzung korrekt.",
+          "Du nennst ein konkretes Beispiel aus einer betrieblichen Erkundung.",
+          "Du zeigst den Nutzen für deinen Berufswahlprozess."
+        ]
+      },
+      "2": {
+        "prompt": "Warum ist es für deine spätere Ausbildung ungünstig, eine Berufswahl nur auf gute Schulnoten oder nur auf ein Bauchgefühl zu stützen? Begründe.",
+        "hints": [
+          "Zeigt eine gute Mathenote allein schon, ob du gerne im Büro sitzt?",
+          "Welche Rolle spielen praktische Erkundung und Fremdrückmeldung?"
+        ],
+        "model": "Schulnoten messen nur Ausschnitte im Unterricht und zeigen noch nicht, ob dir Schichtzeiten, Stehen oder Kundenkontakt im Betrieb Freude machen. Ein reines Bauchgefühl kann umgekehrt wichtige Fachanforderungen übersehen. Erst die Kombination aus Noten, eigenen Erfahrungen bei Erkundungen sowie Selbst- und Fremdeinschätzung trägt verlässlich.",
+        "criteria": [
+          "Du nennst Grenzen einer reinen Noten- oder Bauchentscheidung.",
+          "Du verbindest Schulleistung, Erkundungserfahrung und Einschätzung.",
+          "Du ziehst eine überzeugende Schlussfolgerung."
+        ]
+      }
+    }
+  },
+  {
+    "id": "bo-finanzielle-aspekte-sichtweisen",
+    "lb": 3,
+    "tracks": ["M"],
+    "lehrplan": "WiB 7 · LB 3 · M7",
+    "title": "Sichtweisen auf Arbeit und finanzielle Aspekte prüfen",
+    "intro": "In der M-Klasse beleuchtest du Arbeit bewusst von zwei Seiten — was dich persönlich erfüllt und welche Kosten und Vergütungen in der Ausbildung anfallen.",
+    "paragraphs": [
+      "Berufe haben für jeden Menschen positive und negative Seiten: Positive Aspekte sind etwa eigene Vergütung, Teamzusammenhalt, sichtbare Arbeitsergebnisse, Anerkennung und Aufstiegschancen. Negative oder belastende Seiten können früher Arbeitsbeginn, Wochenenddienste, Zeitdruck oder körperliche Anstrengung sein. Indem du nach deiner Zugangserkundung positive und negative Aussagen klar formulierst, vermeidest du Enttäuschungen beim Berufseinstieg.",
+      "Zugleich prüfst du die finanziellen Aspekte einer Ausbildung realistisch: Von der monatlichen Netto-Ausbildungsvergütung müssen zunächst ausbildungsbezogene Kosten bezahlt werden. Beispiel: Bei 840,00 € Nettovergütung gehen 58,00 € für das Fahrticket zur Berufsschule, 42,00 € anteilig für Arbeitskleidung und Lernmittel sowie 84,00 € Rücklage (10 %) ab. Übrig bleiben genau 656,00 € frei verfügbares Monatsbudget."
+    ],
+    "takeaway": "Klare Sicht auf Belastungen und Chancen sowie ein ehrliches Ausbildungsbudget helfen, einen langfristig passenden Beruf zu wählen.",
+    "sourceIds": ["lpm", "bibb"],
+    "quiz": {
+      "question": "Welche Aussage gehört zu einer differenzierten Betrachtung finanzieller Aspekte bei der Berufswahl?",
+      "answer": "Man vergleicht nicht nur die Brutto-Ausbildungsvergütung im 1. Jahr, sondern auch Fahrtkosten, Abzüge und langfristige Aufstiegsmöglichkeiten.",
+      "wrong": [
+        "Man wählt automatisch den Beruf mit dem höchsten Einstiegsbetrag im 1. Lehrjahr, auch wenn man die Arbeit hasst.",
+        "Ausbildungsvergütungen sind immer rein frei verfügbares Taschengeld ohne Fahrt- oder Materialkosten."
+      ],
+      "explanation": "Ein höherer Startbetrag hilft wenig, wenn lange Fahrtwege oder hohe Abzüge ihn aufzehren oder die tägliche Arbeit langfristig überfordert."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Positive, belastende und finanzielle Berufsaspekte einordnen",
+      "instruction": "Ordne die Beobachtungen aus einer Zugangserkundung ein.",
+      "categories": [
+        "Positive Aussage über Arbeit/Beruf",
+        "Belastender/kritischer Aspekt",
+        "Finanzieller Aspekt"
+      ],
+      "entries": [
+        {
+          "text": "Die Auszubildenden sehen am Ende jedes Tages das fertige Möbelstück und erhalten direktes Kundenlob.",
+          "target": 0,
+          "feedback": "Sinnvolle Tätigkeit, Stolz auf Ergebnisse und Anerkennung motivieren langfristig."
+        },
+        {
+          "text": "Bei Schichtwechsel oder Baustellen im Winter bedeutet der Job sehr frühes Aufstehen und Kälte.",
+          "target": 1,
+          "feedback": "Arbeitszeiten und Witterungseinflüsse gehören ehrlich auf die Belastungsseite."
+        },
+        {
+          "text": "Von 820,00 € netto gehen jeden Monat 58,00 € für den Regionalbus zur Berufsschule ab.",
+          "target": 2,
+          "feedback": "Die Gegenüberstellung von Vergütung und Arbeitswegkosten klärt den finanziellen Spielraum."
+        },
+        {
+          "text": "Nach der Gesellenprüfung lässt sich mit einer Weiterbildung zum Meister oder Techniker das Einkommen deutlich steigern.",
+          "target": 2,
+          "feedback": "Langfristige Einkommensperspektiven sind ein wichtiger finanzieller Maßstab."
+        }
+      ],
+      "conclusion": "Wer Chancen, Belastungen und Geldflüsse gemeinsam abwägt, entscheidet deutlich reifer als beim bloßen Blick auf Wunschbilder."
+    },
+    "practice": "trainingBudget",
+    "tasks": {
+      "1": {
+        "prompt": "Formuliere für einen selbst gewählten Ausbildungsberuf je zwei positive Aussagen und zwei mögliche Belastungen aus Sicht einer Auszubildenden oder eines Auszubildenden.",
+        "hints": [
+          "Beziehe dich auf konkrete Tätigkeiten, Teamarbeit, Kunden und Arbeitszeiten.",
+          "Bleibe fair und sachlich — kein Beruf hat nur Vor- oder nur Nachteile."
+        ],
+        "model": "Beispiel Bäckerei-Fachverkäuferin: Positiv sind der tägliche Kontakt mit vielen Stammkunden sowie ein frühes Arbeitsende am Nachmittag. Belastend können dagegen der sehr frühe Schichtbeginn vor sechs Uhr und regelmäßige Wochenendarbeit sein, wenn Freundinnen und Freunde frei haben.",
+        "criteria": [
+          "Du formulierst zwei nachvollziehbare positive Aussagen.",
+          "Du formulierst zwei reale Belastungen oder Nachteile.",
+          "Beide Seiten passen konkret zum gewählten Beruf."
+        ]
+      },
+      "2": {
+        "prompt": "Zwei Ausbildungsangebote liegen vor: Betrieb A (nah am Wohnort, 760 € netto), Betrieb B (35 km entfernt, 880 € netto, aber 110 € Monatskosten für Ticket plus extra Fahrzeit von 80 Min. täglich). Vergleiche und urteile begründet.",
+        "hints": [
+          "Rechne aus, wie groß der echte Geldunterschied nach Fahrtkosten bleibt.",
+          "Welchen Wert hat die tägliche Freizeit- und Lernzeit?"
+        ],
+        "model": "Nach Abzug der 110 € Fahrtkosten bleiben bei Betrieb B 770 € netto — gerade einmal 10 € mehr als bei Betrieb A. Dafür verliert man bei Betrieb B täglich 80 Minuten Pendelzeit (rund 27 Stunden im Monat) und hat weniger Zeit für Berufsschullernen und Hobbys. Finanziell und zeitlich schneidet Betrieb A meist günstiger ab.",
+        "criteria": [
+          "Du berechnest den echten finanziellen Restunterschied nach Fahrtkosten.",
+          "Du bewertest den zusätzlichen Zeitaufwand pro Tag und Monat.",
+          "Du triffst ein nachvollziehbar begründetes Urteil."
+        ]
+      }
+    }
+  },
+  {
+    "id": "wi-geldwert-arbeitszeit",
+    "lb": 4,
+    "tracks": ["R", "M"],
+    "lehrplan": "WiB 7 · LB 4 · R7 & M7",
+    "title": "Wert des Geldes: Preise in Arbeitszeit umrechnen",
+    "intro": "Ein Preisschild wirkt oft klein oder abstrakt — rechnest du den Eurobetrag in nötige Arbeitsstunden um, spürst du den echten Wert eines Gutes.",
+    "paragraphs": [
+      "Geld fällt nicht vom Himmel, sondern steht in direktem Zusammenhang mit geleisteter Erwerbsarbeit. Indem du den Preis eines Produkts oder einer Dienstleistung durch deinen tatsächlichen Netto-Stundenlohn teilst, erkennst du den zeitlichen Aufwand hinter dem Kauf: Arbeitet jemand hart für jedes Eurostück, überlegt man zweimal, ob ein spontaner Konsumwunsch diesen Zeitaufwand wirklich wert ist.",
+      "Beispiel Sportschuhe und Pausensnack: Bei einem Netto-Stundenlohn von 15,00 € entspricht ein Paar Markenschuhe für 75,00 € genau 5,00 Std. Erwerbsarbeit (75,00 € / 15,00 € = 5,00 Std., also 300 Min.). Ein täglicher Pausensnack für 3,00 € kostet rechnerisch 0,20 Std. oder 12 Min. Arbeit — über 20 Schultage im Monat summiert sich das bereits auf 60,00 € oder volle 4 Arbeitsstunden."
+    ],
+    "takeaway": "Den wahren Preis eines Wunsches erkennst du an der Formel: Benötigte Arbeitszeit = Kaufpreis / Netto-Stundenlohn.",
+    "sourceIds": ["lpr", "lpm", "profil"],
+    "quiz": {
+      "question": "Eine Konsole kostet 360,00 €. Wie lange muss eine Fachkraft mit 18,00 € Netto-Stundenlohn dafür arbeiten?",
+      "answer": "Genau 20 Stunden.",
+      "wrong": [
+        "Genau 2 Stunden.",
+        "Genau 36 Stunden."
+      ],
+      "explanation": "Arbeitszeit = Kaufpreis / Nettostundenlohn = 360,00 € / 18,00 €/Std. = 20,00 Stunden."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Güter nach ihrem Arbeitszeit-Aufwand ordnen",
+      "instruction": "Ordne die vier Ausgaben bei einem Netto-Stundenlohn von 15,00 € vom geringsten bis zum größten Arbeitszeitaufwand.",
+      "categories": [
+        "1 · Kleinster Zeitaufwand",
+        "2 · Zweitkleinster Zeitaufwand",
+        "3 · Mittlerer Zeitaufwand",
+        "4 · Größter Zeitaufwand"
+      ],
+      "entries": [
+        {
+          "text": "Frisches Vollkornbrötchen mit Käse für 3,00 € (0,20 Std. / 12 Min.)",
+          "target": 0,
+          "feedback": "3,00 € entsprechen genau 12 Minuten Arbeit."
+        },
+        {
+          "text": "Kinokarte inklusive Getränk für 18,00 € (1,20 Std. / 72 Min.)",
+          "target": 1,
+          "feedback": "Für 18,00 € arbeitet man bei 15,00 € Stundenlohn rund eine Stunde und zwölf Minuten."
+        },
+        {
+          "text": "Schulrucksack für 60,00 € (4,00 Std.)",
+          "target": 2,
+          "feedback": "60,00 € erfordern genau einen halben Arbeitstag von vier Stunden."
+        },
+        {
+          "text": "Gebrauchtes Jugendfahrrad für 240,00 € (16,00 Std.)",
+          "target": 3,
+          "feedback": "Für 240,00 € sind zwei volle Acht-Stunden-Arbeitstage nötig."
+        }
+      ],
+      "conclusion": "Wer große und kleine Käufe in Arbeitsstunden umrechnet, entdeckt schnell teure Alltagsgewohnheiten."
+    },
+    "practice": "workTimeValue",
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre an einem eigenen Alltagsbeispiel, wie die Umrechnung eines Kaufpreises in Arbeitszeit zu überlegteren Kaufentscheidungen führt.",
+        "hints": [
+          "Wähle einen Wunschartikel (z. B. Headset, Jacke, Game) und einen realistischen Stundenlohn.",
+          "Was ändert sich beim Vergleich zwischen zwei Modellen?"
+        ],
+        "model": "Möchte ich mir eine Jacke für 120 € statt einer schlichten Winterjacke für 60 € kaufen, wirken 60 € Unterschied an der Kasse zunächst überschaubar. Rechne ich jedoch mit 15 € Stundenlohn, kostet der Markenaufpreis genau vier zusätzliche Stunden Arbeit — dadurch prüfe ich genauer, ob die teurere Jacke wirklich länger hält.",
+        "criteria": [
+          "Du rechnest ein klares Zahlenbeispiel in Arbeitsstunden um.",
+          "Du vergleichst den Geldbetrag mit dem Nutzen oder einer Alternative.",
+          "Du zeigst die Auswirkung auf dein eigenes Konsumverhalten."
+        ]
+      },
+      "2": {
+        "prompt": "Warum reicht es beim Vergleich von Aufwand und Ertrag nicht, den Kaufpreis durch den Brutto-Stundenlohn zu teilen? Begründe.",
+        "hints": [
+          "Bekommt eine Arbeitnehmerin ihren Bruttolohn vollständig ausgezahlt?",
+          "Was passiert mit Steuern und Sozialabgaben?"
+        ],
+        "model": "Vom Bruttolohn werden jeden Monat Lohnsteuer und gesetzliche Sozialversicherungsbeiträge abgezogen; an der Ladenkasse kann man jedoch nur das ausgezahlte Nettoeinkommen ausgeben. Wer fälschlich mit dem höheren Bruttolohn rechnet, unterschätzt die tatsächlich nötigen Arbeitsstunden spürbar.",
+        "criteria": [
+          "Du unterscheidest Brutto- und Nettolohn sachlich.",
+          "Du erklärst den Grund der Abzüge.",
+          "Du zeigst die Auswirkung auf die berechnete Arbeitszeit."
+        ]
+      }
+    }
+  },
+  {
+    "id": "wi-einkommen-lebensstandard",
+    "lb": 4,
+    "tracks": ["M"],
+    "lehrplan": "WiB 7 · LB 4 · M7",
+    "title": "Einkommenshöhe und Lebensstandard vergleichen",
+    "intro": "In der M-Klasse untersuchst du, wie Einkommen, unvermeidliche Grundkosten und frei verfügbares Einkommen den tatsächlichen Lebensstandard prägen.",
+    "paragraphs": [
+      "Der Lebensstandard eines Haushalts hängt wesentlich davon ab, wie viel Geld nach den unverzichtbaren Ausgaben für Wohnen, Essen, Strom und Heizung übrig bleibt. Je kleiner das Nettoeinkommen ist, desto größer ist meist die Grundbedarfsquote — also der Anteil des Einkommens, der allein für das Lebensnotwendige draufgeht. Steigt durch bessere berufliche Qualifikation das Einkommen, sinkt bei gleichbleibenden Grundkosten diese Quote, und der Spielraum für Bildung, Reisen, Hobbys und Rücklagen wächst überproportional.",
+      "Beispiel zwei Haushalte: Haushalt A hat 2.000,00 € Nettoeinkommen und 1.200,00 € Grundbedarf (60,00 % Grundbedarfsquote → 800,00 € frei verfügbar). Haushalt B erzielt 3.000,00 € netto bei 1.350,00 € Grundbedarf (45,00 % Grundbedarfsquote → 1.650,00 € frei verfügbar). Obwohl das Einkommen ‚nur‘ um die Hälfte höher liegt, ist der frei verfügbare Spielraum von Haushalt B mehr als doppelt so groß."
+    ],
+    "takeaway": "Qualifikation und Einkommenshöhe wirken doppelt auf den Lebensstandard: Der Anteil fester Grundkosten sinkt und der freie Spielraum wächst stark an.",
+    "sourceIds": ["lpm", "profil"],
+    "quiz": {
+      "question": "Was bedeutet es für den Lebensstandard, wenn die Grundbedarfsquote eines Haushalts bei 75 % liegt?",
+      "answer": "Drei Viertel des Einkommens sind bereits durch Wohnen, Nahrung und Energie gebunden; für Wünsche und Vorsorge bleibt nur ein kleines Viertel.",
+      "wrong": [
+        "Der Haushalt darf 75 % seines gesamten Einkommens frei für Urlaub und Freizeit ausgeben.",
+        "Die Miete sinkt automatisch jedes Jahr um 75 %."
+      ],
+      "explanation": "Eine hohe Grundbedarfsquote lässt kaum Spielraum für Rücklagen, Freizeit oder größere Anschaffungen."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Grundbedarf, Lebensstandard und Qualifikation verknüpfen",
+      "instruction": "Ordne die vier Aussagen den passenden wirtschaftlichen Begriffen zu.",
+      "categories": [
+        "Grundbedarf (Existenz & Wohnen)",
+        "Frei verfügbares Einkommen & Rücklage",
+        "Einfluss auf den Lebensstandard"
+      ],
+      "entries": [
+        {
+          "text": "Kaltmiete, Stromabschlag und wöchentlicher Lebensmitteleinkauf für den Haushalt",
+          "target": 0,
+          "feedback": "Diese Ausgaben sind dauerhaft unverzichtbar und bestimmen den Grundbedarf."
+        },
+        {
+          "text": "Monatliche Sparrate für Notfälle, Vereinsbeiträge und ein Urlaubsbudget",
+          "target": 1,
+          "feedback": "Erst nach Abzug des Grundbedarfs stehen diese Mittel für Wünsche und Sicherheit bereit."
+        },
+        {
+          "text": "Durch eine abgeschlossene Ausbildung und Meisterprüfung steigt der Lohn spürbar.",
+          "target": 2,
+          "feedback": "Höhere Qualifikation erhöht langfristig das Einkommen und den wirtschaftlichen Spielraum."
+        },
+        {
+          "text": "Wird die Mietwohnung am neuen Arbeitsort deutlich teurer, frisst das einen Teil der Lohnerhöhung auf.",
+          "target": 2,
+          "feedback": "Lebensstandard hängt immer vom Verhältnis aus Einkommen und örtlichen Lebenshaltungskosten ab."
+        }
+      ],
+      "conclusion": "Nicht nur das Bruttoeinkommen zählt, sondern was nach Wohnen, Essen und Energie am Monatsende übrig bleibt."
+    },
+    "practice": "livingStandard",
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre den Zusammenhang zwischen beruflicher Qualifikation (z. B. angelernt vs. gelernte Fachkraft), Einkommenshöhe und Lebensstandard.",
+        "hints": [
+          "Wie unterscheidet sich das typische Einkommen von angelernten Kräften und ausgebildeten Fachkräften?",
+          "Was bedeutet das für Rücklagen und Alltagsentscheidungen?"
+        ],
+        "model": "Eine abgeschlossene Berufsausbildung oder Weiterbildung macht Arbeitskräfte auf dem Arbeitsmarkt gefragter und führt meist zu deutlich höheren Löhnen als un- oder angelernte Hilfsarbeiten. Weil Grundkosten wie Brot oder Strom nicht im gleichen Maße steigen, erhöht höheres Einkommen besonders das frei verfügbare Geld für Wohnung, Gesundheit, Freizeit und Vorsorge.",
+        "criteria": [
+          "Du stellst die Kette Qualifikation → Einkommen → Lebensstandard schlüssig dar.",
+          "Du beziehst das Verhältnis aus Grundbedarf und freiem Einkommen ein.",
+          "Du zeigst konkrete Folgen für den Alltag auf."
+        ]
+      },
+      "2": {
+        "prompt": "Haushalt X verdient in einer Großstadt 3.200 € netto und zahlt 1.650 € Miete plus Nebenkosten. Haushalt Y verdient in einer Kleinstadt 2.700 € netto bei 850 € Miete. Beurteile, warum das höhere Einkommen allein nicht automatisch den höheren Lebensstandard garantiert.",
+        "hints": [
+          "Berechne, wie viel Geld jeweils nach Abzug der Wohnkosten übrig bleibt.",
+          "Berücksichtige weitere mögliche Kostenunterschiede."
+        ],
+        "model": "Nach Abzug der Wohnkosten bleiben Haushalt X in der Großstadt 1.550 €, Haushalt Y in der Kleinstadt jedoch 1.850 €. Trotz 500 € weniger Nettoeinkommen verfügt Haushalt Y über 300 € mehr frei nutzbares Geld pro Monat. Ein Lebensstandardvergleich muss deshalb stets die Lebenshaltungskosten vor Ort einrechnen.",
+        "criteria": [
+          "Du rechnest die verbleibenden Mittel beider Haushalte korrekt aus.",
+          "Du erklärst die Bedeutung regionaler Lebenshaltungskosten.",
+          "Du formulierst ein klares, begründetes Urteil."
+        ]
+      }
+    }
+  },
+  {
+    "id": "wi-einnahmen-ausgaben-planen",
+    "lb": 4,
+    "tracks": ["R", "M"],
+    "lehrplan": "WiB 7 · LB 4 · R7 & M7",
+    "title": "Einnahmen und Ausgaben über mehrere Wochen planen",
+    "intro": "Wer vier Wochen lang jede Einnahme und Ausgabe notiert, sieht sofort, wohin kleine Beträge verschwinden — und erreicht eigene Sparziele planmäßig.",
+    "paragraphs": [
+      "Ein einzelner Blick in den Geldbeutel täuscht oft: Viele kleine Ausgaben wie Pausensnacks, In-App-Käufe oder Getränke bleiben unbemerkt. Erst eine strukturierte Gegenüberstellung von Einnahmen und Ausgaben über einen mehrwöchigen Zeitraum (z. B. vier Wochen) macht alle Geldbewegungen sichtbar. Dazu trennst du feste Ausgaben (wie Handytarif oder Vereinsbeitrag) von veränderlichen Ausgaben (wie Freizeit oder Snacks), die du direkt steuern kannst.",
+      "Beispiel 4-Wochen-Plan im Haushaltsbuch: Bei wöchentlich 25,00 € Einnahmen aus Taschengeld und Mithilfe im Familienhaushalt stehen in vier Wochen 100,00 € bereit. Nach 20,00 € festen Ausgaben (5,00 €/Woche) und 48,00 € veränderlichen Ausgaben (12,00 €/Woche) bleibt genau ein Überschuss von 32,00 € (32,00 % Sparquote) — das gesetzte Sparziel von 30,00 € für neue Kopfhörer ist sicher erreicht."
+    ],
+    "takeaway": "Nur wer Einnahmen sowie feste und veränderliche Ausgaben über mehrere Wochen gegenübersetzt, steuert sein Geld statt am Ende des Monats zu staunen.",
+    "sourceIds": ["lpr", "lpm", "profil"],
+    "quiz": {
+      "question": "Warum reicht für ein echtes Ausgabenbild nicht das Aufschreiben an nur einem einzigen Tag?",
+      "answer": "Erst über mehrere Wochen fallen wöchentliche Gewohnheiten, feste Monatsabgaben und unregelmäßige Kleinkäufe vollständig auf.",
+      "wrong": [
+        "Weil Banknoten erst nach genau 28 Tagen ihren gesetzlichen Nennwert erhalten.",
+        "Weil feste Ausgaben wie Handytarife an einem normalen Wochentag gar nicht existieren."
+      ],
+      "explanation": "Ein einzelner Tag erfasst Zufälle — erst mehrere Wochen zeigen das echte Muster aus festen Abbuchungen und laufenden Kleinausgaben."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Geldbewegungen im Mehrwochenplan ordnen",
+      "instruction": "Ordne die vier Einträge eines persönlichen Geldtagebuchs richtig zu.",
+      "categories": [
+        "Einnahmen",
+        "Feste Ausgaben (planbar/vertraglich)",
+        "Veränderliche Ausgaben (direkt steuerbar)"
+      ],
+      "entries": [
+        {
+          "text": "20,00 € monatliche Vergütung für regelmäßige Gartenhilfe bei den Großeltern",
+          "target": 0,
+          "feedback": "Regelmäßige Zuflüsse erhöhen die verfügbaren Geldmittel."
+        },
+        {
+          "text": "Monatliche Abbuchung von 9,99 € für den eigenen Mobilfunk-Prepaid-Tarif",
+          "target": 1,
+          "feedback": "Feste laufende Verträge wiederholen sich periodisch und sind vorab gebunden."
+        },
+        {
+          "text": "Zwei spontane Energy-Drinks und Brezeln auf dem Heimweg für zusammen 6,40 €",
+          "target": 2,
+          "feedback": "Spontane Einkäufe sind veränderlich und lassen sich im Budget sofort anpassen."
+        },
+        {
+          "text": "15,00 € Geburtstagsgeld von der Tante, aufgeteilt aufs Sparziel",
+          "target": 0,
+          "feedback": "Auch unregelmäßige Geldgeschenke zählen zu den Einnahmen im Zeitraum."
+        }
+      ],
+      "conclusion": "Wer feste Verpflichtungen zuerst abzieht, weiß genau, was für Freizeit und Sparen frei bleibt."
+    },
+    "lab": "householdBudget",
+    "practice": "multiWeekBudget",
+    "tasks": {
+      "1": {
+        "prompt": "Beschreibe Schritt für Schritt, wie du ein einfaches Einnahmen-Ausgaben-Heft über vier Wochen anlegst und am Ende auswertest.",
+        "hints": [
+          "Welche Spalten braucht die Tabelle (Datum, Posten, Art, Einnahme, Ausgabe)?",
+          "Wie kontrollierst du den Saldo und dein Sparziel?"
+        ],
+        "model": "Ich lege eine Tabelle mit Datum, Beschreibung, Kategorie (Einnahme, feste oder veränderliche Ausgabe) und Betrag an. Jede Bewegung trage ich sofort oder jeden Abend ein. Nach vier Wochen summiere ich Einnahmen sowie beide Ausgabenarten, ziehe die Ausgaben von den Einnahmen ab und prüfe, ob mein Sparziel erreicht wurde.",
+        "criteria": [
+          "Du beschreibst eine klare Tabellenstruktur für mehrere Wochen.",
+          "Du unterscheidest Einnahmen, feste und veränderliche Ausgaben.",
+          "Du erklärst den abschließenden Soll-Ist-Vergleich."
+        ]
+      },
+      "2": {
+        "prompt": "In Woche 2 und 3 stellt eine Jugendliche fest, dass ihre veränderlichen Ausgaben für Snacks das Sparziel gefährden. Entwickle zwei konkrete Kontrollmaßnahmen für Woche 4.",
+        "hints": [
+          "Welche Rolle spielt ein festes Wochenlimit in bar oder im Umschlag?",
+          "Wie ersetzt man teure Spontankäufe im Schulalltag?"
+        ],
+        "model": "Erstens legt sie zu Beginn von Woche 4 das Sparziel sofort beiseite und teilt nur das verbleibende Wochengeld in bar zu, damit sie nicht unbemerkt darüber hinaus ausgibt. Zweitens bereitet sie Pausenbrote und eine Trinkflasche von zu Hause vor, sodass sie unterwegs deutlich weniger Spontankäufe tätigt.",
+        "criteria": [
+          "Du schlägst eine klare Budgetbegrenzung (z. B. Sparrate vorab zurücklegen) vor.",
+          "Du nennst eine alltagstaugliche Verhaltensänderung bei den variablen Kosten.",
+          "Die Maßnahmen sind direkt auf Woche 4 bezogen."
+        ]
+      }
+    }
+  },
+  {
+    "id": "wi-markterkundung",
+    "lb": 4,
+    "tracks": ["R", "M"],
+    "lehrplan": "WiB 7 · LB 4 · R7 & M7",
+    "title": "Einen Markt nach Kriterien erkunden",
+    "intro": "Supermarktregale sind kein Zufall: Wer Warenplatzierung, Sortiment und Grundpreise mit einem Leittext untersucht, kauft künftig deutlich klüger ein.",
+    "paragraphs": [
+      "Bei der Markterkundung gehst du mit einem klaren Beobachtungsauftrag — in der M-Klasse anhand eines Leittextes — durch ein Geschäft oder über einen Wochenmarkt. Wichtige Erkundungsaspekte sind das Warenangebot (Markenartikel vs. Handelsmarken, Bio- oder Regionalprodukte), die Warenplatzierung in den Regalen (teure Artikel in Sicht- und Greifzone auf Augenhöhe; günstige Eigenmarken oft in der unteren Bückzone oder oberen Streckzone) sowie Preisauszeichnung und Lockangebote an der Kasse.",
+      "Ein entscheidendes Verbraucherwerkzeug ist der Grundpreis nach § 3 der Preisangabenverordnung (PAngV), weil unterschiedliche Packungsgrößen den Stückpreis verschleiern können. Beispiel Müsli-Vergleich: Packung A mit 0,50 kg kostet 1,80 € — das ergibt einen Grundpreis von 3,60 €/kg. Packung B mit 0,75 kg kostet 2,40 €, liegt im Grundpreis aber nur bei 3,20 €/kg und ist damit je Kilogramm 0,40 € günstiger."
+    ],
+    "takeaway": "Sichtzone verführt, Bückzone spart oft Geld — erst der Vergleich des Grundpreises in Euro je Kilogramm oder Liter zeigt den echten Preisunterschied.",
+    "sourceIds": ["lpr", "lpm", "pangv3"],
+    "quiz": {
+      "question": "Wo platzieren viele Supermärkte bevorzugt besonders günstige Eigenmarken, während teurere Markenprodukte in Augenhöhe liegen?",
+      "answer": "In der Bückzone ganz unten oder in der oberen Streckzone.",
+      "wrong": [
+        "Direkt neben der Kasse in der Quengelzone als kostenlose Zugabe.",
+        "Immer auf der genauen Augenhöhe von Kindern unter sechs Jahren."
+      ],
+      "explanation": "Die Sicht- und Greifzone bringt den größten Umsatz; Preisbewusste schauen gezielt in die Bück- und Streckzone und vergleichen den Grundpreis."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Befunde der Markterkundung richtig deuten",
+      "instruction": "Ordne jede Beobachtung im Supermarkt dem passenden Erkundungsaspekt zu.",
+      "categories": [
+        "Warenplatzierung & Verkaufspsychologie",
+        "Warenangebot & Qualität",
+        "Preisvergleich & Verbraucherschutz"
+      ],
+      "entries": [
+        {
+          "text": "Kleine Süßigkeiten und Sammelsticker stehen direkt im schmalen Kassenbereich.",
+          "target": 0,
+          "feedback": "Die Quengelzone an der Kasse nutzt Wartezeiten für ungeplante Spontankäufe."
+        },
+        {
+          "text": "Neben der 400-g-Dose steht im Kleingedruckten des Preisschilds der Preis je 1 kg.",
+          "target": 2,
+          "feedback": "Der Grundpreis macht unterschiedliche Packungsgewichte fair vergleichbar."
+        },
+        {
+          "text": "Das Regal bietet Äpfel aus regionalem Anbau neben eingeflogenen Flugmangos an.",
+          "target": 1,
+          "feedback": "Herkunft, Saisonalität und Sortimentsbreite betreffen das Warenangebot."
+        },
+        {
+          "text": "Frisches Obst und Backwaren stehen gleich hinter dem Eingang, Grundnahrungsmittel ganz hinten.",
+          "target": 0,
+          "feedback": "Durch lange Laufwege kommen Kundinnen an vielen Zusatzangeboten vorbei."
+        }
+      ],
+      "conclusion": "Wer Marktstrategien durchschaut, kauft nach eigenem Einkaufszettel statt nach Regalhöhe."
+    },
+    "practice": "unitPriceCompare",
+    "tasks": {
+      "1": {
+        "prompt": "Nenne die vier Höhenzonen eines Supermarktregals und erkläre anhand eines eigenen Beispiels, wozu dir der Grundpreis bei deiner nächsten Kaufentscheidung hilft.",
+        "hints": [
+          "Denke an Streck-, Sicht-, Greif- und Bückzone.",
+          "Warum täuscht ein kleiner Packungspreis oft bei unterschiedlichen Gewichten?"
+        ],
+        "model": "Ein Regal gliedert sich von oben nach unten in Streckzone, Sichtzone, Greifzone und Bückzone. Teure Artikel stehen meist in Sicht- und Greifzone, günstige oft unten. Der Grundpreis (€/kg oder €/l) hilft mir zum Beispiel bei Schokolade oder Cornflakes: Eine scheinbar günstige 300-g-Packung für 1,80 € (6,00 €/kg) ist je Kilogramm teurer als eine 500-g-Packung für 2,50 € (5,00 €/kg).",
+        "criteria": [
+          "Du benennst alle vier Regalzonen korrekt.",
+          "Du erklärst den Nutzen des Grundpreises bei ungleichen Packungsgrößen.",
+          "Du rechnest ein klares Zahlenbeispiel vor."
+        ]
+      },
+      "2": {
+        "prompt": "Ein Geschäft wirbt mit einem riesigen roten ‚AKTION‘-Schild an einer Stirnseite des Regals, der Artikel ist aber gar nicht reduziert, sondern nur auf Augenhöhe gestapelt. Bewerte diesen Trick aus Verbrauchersicht.",
+        "hints": [
+          "Wodurch lassen sich Käufer ohne Preiskontrolle leiten?",
+          "Wie schützt du dich vor solchen Scheinangeboten?"
+        ],
+        "model": "Rote Schilder und Zweitplatzierungen am Gangende erwecken den Eindruck eines Schnäppchens, obwohl kein Preisnachlass dahintersteht. Wer sich auf diese Signale verlässt, kauft teurer als geplant. Als kluger Verbraucher prüfe ich immer den normalen Grundpreis im Stammregal und lasse mich von der Größe eines Schildes nicht unter Zeitdruck setzen.",
+        "criteria": [
+          "Du erklärst die psychologische Wirkung der Aktionsplatzierung.",
+          "Du erkennst, dass ‚Aktion‘ keinen niedrigeren Preis garantiert.",
+          "Du nennst eine konkrete Gegenstrategie beim Einkauf."
+        ]
+      }
+    }
+  },
+  {
+    "id": "wi-angebot-und-nachfrage",
+    "lb": 4,
+    "tracks": ["R", "M"],
+    "lehrplan": "WiB 7 · LB 4 · R7 & M7",
+    "title": "Angebot und Nachfrage bestimmen den Preis",
+    "intro": "Warum werden Eisbecher im Hochsommer knapp und kosten Erdbeeren kurz vor Ladenschluss oft weniger? Angebot und Nachfrage lenken das Marktgeschehen.",
+    "paragraphs": [
+      "Auf jedem Markt treffen zwei Seiten aufeinander: Die Nachfrage bildet alle Kaufwünsche zahlungswilliger Kundinnen und Kunden ab — je niedriger der Preis, desto mehr Menschen möchten meist kaufen. Das Angebot umfasst alle Waren, die Händler zu einem bestimmten Preis bereitstellen wollen — je höher der erzielbare Preis, desto lohnender wird das Anbieten. Stimmen angebotene und nachgefragte Menge überein, herrscht ein Marktgleichgewicht ohne Reste oder Warteschlangen.",
+      "Beispiel Pausenverkauf-Modell: Bei einem niedrigen Preis von 1,50 € pro Vollkornbrötchen wollen 90 Jugendliche eines kaufen, der Stand hat aber nur 50 Brötchen vorbereitet (Nachfrageüberhang von 40 Stück → Preis kann steigen). Bei 3,50 € sinkt die Nachfrage auf 45 Stück, während 95 angeboten werden (Angebotsüberhang von 50 Stück → Preis muss sinken). Bei rund 2,50 € gleichen sich Angebot und Nachfrage aus (Marktgleichgewicht bei etwa 70 Brötchen)."
+    ],
+    "takeaway": "Nachfrageüberhang zieht Preise nach oben; Angebotsüberhang drückt Preise nach unten, bis Angebot und Nachfrage wieder zusammenfinden.",
+    "sourceIds": ["lpr", "lpm", "profil"],
+    "quiz": {
+      "question": "Was passiert auf einem Markt typischerweise, wenn die Nachfrage nach einem Produkt plötzlich stark steigt, das Angebot aber unverändert klein bleibt?",
+      "answer": "Es entsteht ein Nachfrageüberhang — der Preis steigt tendenziell.",
+      "wrong": [
+        "Der Preis sinkt sofort auf null Euro, damit alle umsonst bedient werden.",
+        "Es bleibt die Hälfte der Ware als unverkäuflicher Angebotsüberhang liegen."
+      ],
+      "explanation": "Wollen mehr Käufer zuschlagen als Ware vorhanden ist, sind einige bereit, mehr zu zahlen, sodass der Preis nach oben wandert."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Marktsituationen analysieren",
+      "instruction": "Ordne jedes Marktbeispiel dem passenden Zustand und der typischen Preisreaktion zu.",
+      "categories": [
+        "Nachfrageüberhang (Preis steigt eher)",
+        "Angebotsüberhang (Preis sinkt eher)",
+        "Ungefähres Marktgleichgewicht"
+      ],
+      "entries": [
+        {
+          "text": "Am ersten heißen Tag wollen 120 Schüler ein Wassereis, der Kiosk hat aber nur 45 Stück vorrätig.",
+          "target": 0,
+          "feedback": "Viel mehr Kaufwünsche als Eisvorrat erzeugen einen starken Nachfrageüberhang."
+        },
+        {
+          "text": "Zehn Minuten vor Schluss liegen noch 35 unverkaufte Croissants im Regal, obwohl kaum noch Kundschaft kommt.",
+          "target": 1,
+          "feedback": "Droht der Vorrat liegenzubleiben, senken Bäckereien gegen Abend oft den Preis."
+        },
+        {
+          "text": "Für 2,20 € pro Muffin kauft fast die ganze Schlange exakt die 60 gebackenen Muffins leer.",
+          "target": 2,
+          "feedback": "Angebotene und gekaufte Menge treffen sich genau — weder Mangel noch Verderb."
+        },
+        {
+          "text": "Nach einer extrem guten Apfelernte bieten fünf Höfe gleichzeitig doppelt so viele Äpfel an wie sonst.",
+          "target": 1,
+          "feedback": "Das stark wachsende Angebot bei gleichbleibender Nachfrage drückt die Apfelpreise."
+        }
+      ],
+      "conclusion": "Preise sind ein Signal für Knappheit oder Überfluss und helfen Käufern und Anbietern beim Abstimmen."
+    },
+    "lab": "marketMechanism",
+    "practice": "marketBalance",
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre den Unterschied zwischen einem Nachfrageüberhang und einem Angebotsüberhang an je einem einfachen Alltagsbeispiel.",
+        "hints": [
+          "Was passiert bei begehrten Konzerttickets oder bei Saisonware nach Weihnachten?",
+          "Welche Preisbewegung folgt jeweils?"
+        ],
+        "model": "Ein Nachfrageüberhang entsteht etwa bei begehrten Konzertkarten, wenn 500 Fans kaufen wollen, aber nur 200 Plätze existieren — die Preise steigen häufig. Ein Angebotsüberhang zeigt sich bei Schoko-Osterhasen nach Ostern: Es stehen noch viele Regale voll, aber kaum jemand sucht welche, weshalb der Handel die Preise stark senkt.",
+        "criteria": [
+          "Du definierst beide Überhänge fachlich richtig.",
+          "Du wählst jeweils ein treffendes Beispiel.",
+          "Du nennst die zugehörige Preisrichtung."
+        ]
+      },
+      "2": {
+        "prompt": "Warum ist das Wissen um Angebot und Nachfrage auch für dich als Käuferin oder Käufer im Alltag nützlich?",
+        "hints": [
+          "Denke an Einkauf kurz vor Ladenschluss, Saisonwechsel oder Hype-Produkte.",
+          "Wie vermeidest du überteuerte Käufe?"
+        ],
+        "model": "Als Verbraucherin durchschaue ich plötzliche Preissprünge bei Trendartikeln oder zu Ferienbeginn und kaufe gezielt dann ein, wenn das Angebot groß und die Nachfrage ruhiger ist — etwa Wintersachen im Schlussverkauf oder saisonales Gemüse statt Importware im Winter.",
+        "criteria": [
+          "Du überträgst den Marktmechanismus auf eigene Kaufentscheidungen.",
+          "Du nennst mindestens ein praktisches Sparbeispiel (Saison, Timing).",
+          "Du formulierst ein klares Verbraucherfazit."
+        ]
+      }
+    }
+  },
+  {
+    "id": "wi-pausenverkauf-handeln",
+    "lb": 4,
+    "tracks": ["R", "M"],
+    "lehrplan": "WiB 7 · LB 4 · R7 & M7",
+    "title": "Im Pausenverkauf auf den Markt reagieren",
+    "intro": "Beim eigenen Pausenverkauf wechselst du die Seite: Jetzt bestimmst du Menge und Preis selbst und reagierst klug, wenn mehr oder weniger gekauft wird als gedacht.",
+    "paragraphs": [
+      "Wer selbst Güter oder Dienstleistungen in der Schule anbietet, erlebt Marktgesetze unmittelbar. Läuft ein Verkauf viel langsamer als geplant (Angebotsüberhang), drohen bei verderblichen Lebensmitteln Verluste — dann hilft marktübliches Vorgehen wie eine rechtzeitige Preissenkung in der zweiten Pause oder ein Kombiangebot (z. B. ‚Getränk + Snack günstiger‘). Ist dagegen eine Sorte schon nach fünf Minuten ausverkauft (Nachfrageüberhang), sollte das Team für den nächsten Verkaufstag mehr einkaufen oder den Preis leicht prüfen.",
+      "Beispiel Pausenverkauf-Simulator: Die Klasse kauft 80 Obstbecher für je 0,80 € ein und zahlt 10,00 € Standkosten (Gesamtausgaben 74,00 €). Zum Startpreis von 2,00 € liegt die volle Nachfrage bei 80 Stück → 160,00 € Einnahmen und 86,00 € Überschuss. Sinkt die Nachfrage wegen Regenwetters auf 70 % (56 Stück), bleiben ohne Preisanpassung 24 Becher liegen: Dann erlöst der Stand nur 112,00 € und erzielt noch 38,00 € Überschuss."
+    ],
+    "takeaway": "Marktübliches Handeln heißt: Beobachte die Nachfrage live und reagiere rechtzeitig mit Mengenplanung, Paketangeboten oder Preisanpassung.",
+    "sourceIds": ["lpr", "lpm", "profil"],
+    "quiz": {
+      "question": "In der ersten Pause wurden nur 35 von 80 frischen Schinkenbrötchen verkauft. Welche Reaktion ist in der zweiten Pause marktüblich und wirtschaftlich klug?",
+      "answer": "Einen moderaten Rabatt oder ein Kombiangebot mit Getränk anbieten, um die restlichen Brötchen noch vor dem Verderb abzusetzen.",
+      "wrong": [
+        "Den Preis pro Brötchen sofort verdoppeln, damit jedes verkaufte Brötchen teurer wird.",
+        "Alle restlichen 45 Brötchen sofort während der ersten Pause ungenutzt entsorgen."
+      ],
+      "explanation": "Da die Einkaufskosten bereits bezahlt sind, hilft jeder Verkauf über null Euro — mindestens oberhalb eventueller Zusatzkosten — Verluste zu verkleinern."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Marktreaktionen beim Pausenverkauf bewerten",
+      "instruction": "Ordne die Marktsignale beim Schulverkauf der jeweils klügsten Reaktion zu.",
+      "categories": [
+        "Einkaufsmenge beim nächsten Termin erhöhen",
+        "Preis senken / Kombiaktion starten",
+        "Angebot im Sortiment künftig kürzen"
+      ],
+      "entries": [
+        {
+          "text": "Die Vollkorn-Pizzabrötchen sind an drei Verkaufstagen hintereinander schon nach 4 Minuten vergriffen.",
+          "target": 0,
+          "feedback": "Dauerhafter Nachfrageüberhang zeigt, dass sich eine größere Bestellmenge lohnt."
+        },
+        {
+          "text": "Heute um 11:30 Uhr liegen noch 18 leicht weiche Waffeln auf dem Blech.",
+          "target": 1,
+          "feedback": "Noch am selben Tag bringt eine Preissenkung für die letzten 15 Minuten zusätzliche Käufer."
+        },
+        {
+          "text": "Bittere Grapefruitschorle wollte drei Wochen lang fast niemand, selbst zum halben Preis.",
+          "target": 2,
+          "feedback": "Dauerhaft fehlende Nachfrage zeigt, dass ein Produkt aus dem Sortiment genommen werden sollte."
+        },
+        {
+          "text": "Kurz vor Unterrichtsschluss bleiben fünf Apfeltaschen übrig, deren Einkauf bereits bezahlt ist.",
+          "target": 1,
+          "feedback": "Eine ‚2 für 1‘- oder Restpreis-Aktion verhindert Lebensmittelverschwendung und verbessert die Kasse."
+        }
+      ],
+      "conclusion": "Gute Händlerinnen beobachten nicht nur den ersten Verkaufstag, sondern steuern Menge, Sortiment und Preis laufend nach."
+    },
+    "lab": "schoolSale",
+    "practice": "schoolSaleCalc",
+    "tasks": {
+      "1": {
+        "prompt": "Nenne drei Ursachen, warum die Nachfrage bei einem schulischen Pausenverkauf von Tag zu Tag stark schwanken kann, und beschreibe eine passende Gegenmaßnahme.",
+        "hints": [
+          "Denke an Wetter, Wandertage anderer Klassen oder Konkurrenz durch besondere Schulaktionen.",
+          "Wie schützt Vorbestellung vor Überbeständen?"
+        ],
+        "model": "Die Nachfrage schwankt etwa durch Ausflüge oder Sporttage (weniger Schülerinnen im Haus), durch warmes oder kaltes Wetter (Getränke vs. Tee) sowie durch neue Snacks im Kiosk. Eine wirksame Maßnahme sind verbindliche Vorbestelllisten in den Klassen einen Tag vorher, damit kaum verderbliche Reste übrig bleiben.",
+        "criteria": [
+          "Du nennst drei nachvollziehbare Ursachen aus dem Schulalltag.",
+          "Du erklärst eine realistische Steuerungsmaßnahme.",
+          "Du beziehst das Vermeiden von Resten ein."
+        ]
+      },
+      "2": {
+        "prompt": "Eine Mitschülerin meint: „Wenn wir Brezeln für 0,60 € eingekauft haben, dürfen wir die Reste am Pausenende auf keinen Fall für 0,50 € abgeben, weil das unter Einkaufspreis liegt.“ Prüfe diese Aussage kritisch.",
+        "hints": [
+          "Können die Brezeln am nächsten Tag noch frisch verkauft werden?",
+          "Was ist besser: 0,50 € je Brezel in der Kasse oder 0,00 € im Müll?"
+        ],
+        "model": "Für zukünftige Einkäufe stimmt es, dass ein dauerhafter Preis unter Einkaufspreis Verluste bringt. Für bereits bezahlte, verderbliche Reste kurz vor Schulschluss gilt jedoch etwas anderes: Das Geld für den Einkauf ist schon ausgegeben. Werden die Brezeln am Ende für 0,50 € verkauft statt weggeworfen, fließen pro Stück immerhin 0,50 € zusätzlich in die Kasse und Lebensmittel werden gerettet.",
+        "criteria": [
+          "Du unterscheidest laufende Kalkulation und einmalige Resteverwertung.",
+          "Du begründest den Kassen- und Nachhaltigkeitsvorteil.",
+          "Du formulierst ein klares Ergebnisurteil."
+        ]
+      }
+    }
+  },
+  {
+    "id": "wi-einnahmen-ausgaben-projekt",
+    "lb": 4,
+    "tracks": ["R", "M"],
+    "lehrplan": "WiB 7 · LB 4 · R7 & M7",
+    "title": "Einfache Übersicht über Einnahmen und Ausgaben erstellen",
+    "intro": "Nach dem Verkauf entscheidet eine übersichtliche Kassenrechnung, ob sich euer Aufwand gelohnt hat — nachvollziehbar mit jedem Beleg.",
+    "paragraphs": [
+      "Am Ende eines Schulverkaufs oder Klassenprojekts fasst das Team alle Geldflüsse in einer einfachen Übersicht über Einnahmen und Ausgaben zusammen. Wichtig sind Vollständigkeit und Belegpflicht: Jede Ausgabenquittung (Einkaufszettel vom Supermarkt, Bäckerrechnung, Materialbon) wird gesammelt und eindeutig benannt. Auf der anderen Seite stehen die gezählten Verkaufserlöse ohne das zu Beginn eingelegte Wechselgeld.",
+      "Beispiel Klassenverkauf 7a: Ausgaben laut Kassenbons: 68,00 € für Brezeln und Apfelschorle plus 10,00 € für Servietten und Plakatkarton = 78,00 € Gesamtausgaben. Einnahmen: 72 verkaufte Brezeln à 1,50 € (108,00 €) plus 24 Schorlen à 1,50 € (36,00 €) = 144,00 € Gesamteinnahmen (abzüglich zuvor gezähltem 30,00 € Start-Wechselgeld). Ergebnis: 144,00 € − 78,00 € = 66,00 € Überschuss für die Klassenkasse."
+    ],
+    "takeaway": "Eine saubere Übersicht trennt Wechselgeld vom echten Erlös, listet alle belegten Ausgaben und zeigt den Überschuss centgenau.",
+    "sourceIds": ["lpr", "lpm", "profil"],
+    "quiz": {
+      "question": "Zu Beginn liegen 40,00 € Wechselgeld in der Kasse, am Ende werden 190,00 € gezählt. Wie hoch sind die echten Verkaufseinnahmen?",
+      "answer": "Genau 150,00 € (Endbestand minus Start-Wechselgeld).",
+      "wrong": [
+        "Genau 230,00 € (Endbestand plus Start-Wechselgeld).",
+        "Genau 190,00 €, weil das Wechselgeld wie ein Gewinn dazugehört."
+      ],
+      "explanation": "Das mitgebrachte Wechselgeld gehört bereits vor dem Verkauf der Klassenkasse und muss beim Kassensturz abgezogen werden."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Posten einer Kassenübersicht richtig zuordnen",
+      "instruction": "Entscheide für jeden Posten am Verkaufsstand, wie er in die Einnahmen-Ausgaben-Übersicht gehört.",
+      "categories": [
+        "Projekteinnahme (+)",
+        "Projektausgabe (−)",
+        "Kein Erfolg (Start-Wechselgeld abziehen)"
+      ],
+      "entries": [
+        {
+          "text": "Kassenbon des Bäckers über 40 Brezeln zu insgesamt 24,00 €",
+          "target": 1,
+          "feedback": "Belegte Wareneinkäufe mindern den Überschuss als Ausgaben."
+        },
+        {
+          "text": "Münzrolle im Wert von 30,00 €, die die Lehrerin als Wechselgeld eingelegt hat",
+          "target": 2,
+          "feedback": "Start-Wechselgeld wird bei der Abrechnung zurückgegeben und ist kein Verkaufserlös."
+        },
+        {
+          "text": "Verkaufserlös aus 24 Flaschen Apfelschorle zu je 1,50 € (36,00 €)",
+          "target": 0,
+          "feedback": "Bezahlte Getränke zählen als echte Projekteinnahmen."
+        },
+        {
+          "text": "Quittung über 8,50 € für Papiertüten und Holzspieße",
+          "target": 1,
+          "feedback": "Verbrauchsmaterial am Stand gehört zu den Projektausgaben."
+        }
+      ],
+      "conclusion": "Nur wer alle Belege ordnet und das Start-Wechselgeld abzieht, ermittelt den wahren Projektgewinn."
+    },
+    "practice": "schoolSaleCalc",
+    "tasks": {
+      "1": {
+        "prompt": "Nenne die Bestandteile einer einfachen, für die ganze Klasse prüfbaren Einnahmen-Ausgaben-Übersicht und erkläre die Rolle der Kassenbons.",
+        "hints": [
+          "Was muss ganz oben bei Einnahmen und Ausgaben stehen?",
+          "Warum darf kein Geld ohne Nachweis aus der Kasse genommen werden?"
+        ],
+        "model": "Eine Übersicht enthält Projektdatum, alle Einnahmeposten (ohne Anfangs-Wechselgeld), alle Ausgabenposten mit Beschreibung und Betrag sowie am Ende den Saldo (Einnahmen minus Ausgaben). Jede Ausgabe braucht einen Kassenbon oder Eigenbeleg mit Unterschrift, damit niemand Beträge vergisst und die Klasse die Abrechnung vertrauensvoll prüfen kann.",
+        "criteria": [
+          "Du nennst alle wichtigen Positionen (Einnahmen, Ausgaben, Saldo, Wechselgeld-Trennung).",
+          "Du begründest die Belegpflicht mit Kassenbons.",
+          "Du beschreibst eine klare, geordnete Darstellung."
+        ]
+      },
+      "2": {
+        "prompt": "Am Ende eines Verkaufs fehlen in der Kasse 7,50 € im Vergleich zu den notierten Strichlisten. Nenne zwei wahrscheinliche Ursachen und wie die Klasse sie beim nächsten Projekt verhindert.",
+        "hints": [
+          "Wo passieren im Pausenstress schnell Rechenfehler oder unbemerkte Entnahmen?",
+          "Hilft das Vier-Augen-Prinzip beim Kassieren und Zählen?"
+        ],
+        "model": "Mögliche Ursachen sind falsches Herausgeben von Wechselgeld im Pausenansturm oder ein vergessener Eigenbeleg beim Nachkauf von Eiswürfeln. Künftig hilft eine klare Trennung: Eine Person kassiert in Ruhe, eine zweite gibt die Ware aus, der Wechselgeldbestand wird vor Beginn gemeinsam gegengezählt, und nichts wird ohne Bon aus der Kasse bezahlt.",
+        "criteria": [
+          "Du nennst zwei plausible Fehlerquellen aus dem Verkauf.",
+          "Du schlägst wirksame Kontrollregeln (Vier-Augen-Prinzip, Belege, Aufgabenteilung) vor.",
+          "Deine Vorschläge sind direkt umsetzbar."
+        ]
+      }
+    }
+  },
+  {
+    "id": "re-kinderarbeit-ferienzweck",
+    "lb": 5,
+    "tracks": ["R", "M"],
+    "lehrplan": "WiB 7 · LB 5 · R7 & M7",
+    "title": "Kinderarbeit, Ferienzweck und Schutz unter 15 Jahren",
+    "intro": "Ferien sind zuerst zur Erholung da — das Jugendarbeitsschutzgesetz schützt Kinder und Jugendliche vor Überforderung und Ausbeutung.",
+    "paragraphs": [
+      "Das Jugendarbeitsschutzgesetz (JArbSchG) zieht eine klare Altersgrenze: Nach § 2 Abs. 1 ist Kind, wer noch nicht 15 Jahre alt ist. Nach § 5 Abs. 1 JArbSchG ist die Beschäftigung von Kindern grundsätzlich verboten. Damit schützt der Staat Gesundheit, schulischen Lernerfolg und Entwicklung junger Menschen. Auch Schulferien haben nach dem Gesetz ausdrücklich den Sinn und Zweck der Erholung vom Schuljahr — nicht den einer dauerhaften Vollzeitarbeit.",
+      "Eine eng begrenzte Ausnahme erlaubt § 5 Abs. 3 JArbSchG erst für Kinder über 13 Jahre (also ab dem 14. Lebensjahr bzw. nach Vollendung des 13. Lebensjahres) mit Einwilligung der Personensorgeberechtigten: Sie dürfen leichte und geeignete Tätigkeiten (z. B. Zeitungen austragen, Nachhilfe oder Botengänge) für höchstens 2 Stunden täglich (in landwirtschaftlichen Familienbetrieben bis zu 3 Stunden) ausführen — niemals vor oder während des Unterrichts und niemals zwischen 18 und 8 Uhr. Beispiel: Ein 14-Jähriger, der samstags von 10 bis 11:30 Uhr (1,5 Std.) mit Einverständnis der Eltern Prospekte austrägt, hält alle Grenzen ein; ein 12-Jähriger oder eine Frühschicht um 6:30 Uhr wäre dagegen verboten."
+    ],
+    "takeaway": "Kinderarbeit unter 15 Jahren ist grundsätzlich verboten (§ 5 Abs. 1 JArbSchG); ab über 13 Jahren sind höchstens 2 Std. täglich leichte Arbeiten zwischen 8 und 18 Uhr erlaubt.",
+    "sourceIds": ["lpr", "lpm", "jarbschg2", "jarbschg5", "jarbschg15"],
+    "quiz": {
+      "question": "Was erlaubt § 5 Abs. 3 JArbSchG für eine 13,5-jährige Schülerin mit Zustimmung der Eltern?",
+      "answer": "Leichte, geeignete Tätigkeiten (z. B. Prospekte austragen) bis höchstens 2 Stunden täglich zwischen 8 und 18 Uhr, nicht vor der Schule.",
+      "wrong": [
+        "Einen regulären 8-Stunden-Ferienjob am Fließband über vier volle Wochen.",
+        "Schwere Lagerarbeit ab 5 Uhr morgens vor dem ersten Schultag."
+      ],
+      "explanation": "Für Kinder über 13 Jahren gilt streng die Grenze von höchstens 2 Stunden täglich zwischen 8 und 18 Uhr sowie die Beschränkung auf leichte Tätigkeiten."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle zur Altersgrenze und Kinderarbeit prüfen",
+      "instruction": "Prüfe nach § 5 JArbSchG, ob die jeweilige Beschäftigung zulässig oder verboten ist.",
+      "categories": [
+        "Verbotene Kinderarbeit (§ 5 JArbSchG)",
+        "Zulässige leichte Tätigkeit (§ 5 Abs. 3 JArbSchG)"
+      ],
+      "entries": [
+        {
+          "text": "Ein 12-jähriger Schüler soll jeden Samstag 3 Stunden im Getränkemarkt Kisten stapeln.",
+          "target": 0,
+          "feedback": "Unter 13 Jahren ist Erwerbsarbeit komplett verboten; zudem ist Kistenstapeln nicht leicht."
+        },
+        {
+          "text": "Eine 14-jährige Schülerin trägt mit Eltern-Einwilligung nachmittags von 15 bis 16:30 Uhr Werbezettel aus.",
+          "target": 1,
+          "feedback": "Über 13 Jahre, mit Eltern-Einwilligung, leichte Tätigkeit, 1,5 Std. zwischen 8 und 18 Uhr: zulässig."
+        },
+        {
+          "text": "Ein 14-Jähriger soll morgens von 6:30 bis 7:30 Uhr vor der Schule Brötchen ausliefern.",
+          "target": 0,
+          "feedback": "Zwischen 18 und 8 Uhr sowie vor dem Schulunterricht ist Arbeit unter 15 Jahren verboten."
+        },
+        {
+          "text": "Eine 13-jährige Schülerin gibt mit Erlaubnis der Eltern zweimal pro Woche je 1 Stunde nachmittags Nachhilfe.",
+          "target": 1,
+          "feedback": "Leichte geistige Tätigkeit ab 13 Jahren innerhalb der 2-Stunden- und 8–18-Uhr-Grenze ist erlaubt."
+        }
+      ],
+      "conclusion": "Das Schutzalter und die engen Zeitfenster verhindern, dass Schule, Gesundheit oder Schlaf leiden."
+    },
+    "practice": "holidayJobLimits",
+    "tasks": {
+      "1": {
+        "prompt": "Begründe in eigenen Worten, warum das Gesetz Schulferien ausdrücklich schützt und für Kinder unter 15 Jahren strenge Grenzen zieht.",
+        "hints": [
+          "Was brauchen Körper und Konzentration nach einem langen Schuljahr?",
+          "Welche Folgen hätte volle Erwerbsarbeit für Kinder im Wachstum?"
+        ],
+        "model": "Kinder und Jugendliche befinden sich noch in der körperlichen und geistigen Entwicklung. Schulferien sind dafür da, sich vom Lernstress zu erholen, Sport zu treiben, Familie und Freunde zu treffen und Kraft für das neue Schuljahr zu sammeln. Ein Verbot schwerer oder langer Kinderarbeit schützt außerdem davor, dass schulische Chancen unter Übermüdung leiden.",
+        "criteria": [
+          "Du erklärst den Erholungszweck der Schulferien.",
+          "Du nennst Gesundheitsschutz und Bildungschancen.",
+          "Du grenzt die Ausnahme für leichte Arbeiten korrekt ab."
+        ]
+      },
+      "2": {
+        "prompt": "Ein Nachbar bietet einem 14-Jährigen einen „gut bezahlten Ferienjob“ über zwei Wochen mit täglich 7 Stunden Rasenmähen und Heckenfahren an. Prüfe und begründe die Rechtslage.",
+        "hints": [
+          "Ab welchem Alter genau ist reguläre Ferienarbeit bis 4 Wochen/Jahr nach § 5 Abs. 4 erlaubt?",
+          "Gelten für 14-Jährige noch die Kinderregeln (§ 2 Abs. 1)?"
+        ],
+        "model": "Dieses Angebot ist rechtlich unzulässig. Mit 14 Jahren gilt der Jugendliche nach § 2 Abs. 1 JArbSchG noch als Kind. Reguläre Ferienjobs von bis zu 8 Stunden täglich und 4 Wochen jährlich erlaubt § 5 Abs. 4 erst ab 15 Jahren. Mit 14 wären mit Einwilligung der Eltern maximal 2 Stunden leichte, ungefährliche Arbeit am Tag zulässig — schwere Gartengeräte und 7 Stunden täglich verstoßen gegen das Gesetz.",
+        "criteria": [
+          "Du ordnest das Alter 14 richtig als ‚Kind‘ nach § 2 Abs. 1 JArbSchG ein.",
+          "Du nennst die Altersgrenze von 15 Jahren für reguläre Ferienjobs.",
+          "Du bewertest die Stundenzahl und Art der Arbeit rechtlich korrekt."
+        ]
+      }
+    }
+  },
+  {
+    "id": "re-ferienarbeit-regeln",
+    "lb": 5,
+    "tracks": ["R", "M"],
+    "lehrplan": "WiB 7 · LB 5 · R7 & M7",
+    "title": "Ferienjob ab 15: Altersgrenze, Umfang und Pausen",
+    "intro": "Ab 15 Jahren darfst du in den Schulferien richtig mitarbeiten — aber nur innerhalb klarer Grenzen zu Wochen, Stunden, Nachtruhe und Pausen.",
+    "paragraphs": [
+      "Nach § 5 Abs. 4 JArbSchG dürfen vollzeitschulpflichtige Jugendliche ab 15 Jahren während der Schulferien höchstens vier Wochen (entspricht 20 Arbeitstagen in der Fünf-Tage-Woche nach § 15) im gesamten Kalenderjahr arbeiten. Dabei gelten strenge Schutzgrenzen für die tägliche Belastung: höchstens 8 Stunden täglich und 40 Stunden wöchentlich (§ 8), Beschäftigung nur in der Zeit von 6 bis 20 Uhr (§ 14) und ein Verbot gefährlicher Arbeiten (§ 22), etwa an ungesicherten Kreissägen oder mit Giftstoffen.",
+      "Ebenso verbindlich sind die Ruhepausen nach § 11 Abs. 1 JArbSchG: Bei mehr als viereinhalb bis zu sechs Stunden Arbeitszeit müssen mindestens 30 Minuten Pause gewährt werden; bei mehr als sechs Stunden stehen Jugendlichen mindestens 60 Minuten Ruhepause zu (als Pause zählt nur eine Arbeitsunterbrechung ab 15 Minuten). Beispiel Gärtnerei: Ein 15-Jähriger arbeitet 10 Tage je 6 Std. zu 13,00 €/Std. → 780,00 € Verdienst bei täglich mindestens 30 Min. Pause."
+    ],
+    "takeaway": "Ferienjob ab 15 Jahren (§ 5 Abs. 4 JArbSchG): max. 4 Wochen/Jahr, max. 8 Std./Tag, 40 Std./Woche, 6–20 Uhr, 5-Tage-Woche und 30 bzw. 60 Min. Pause.",
+    "sourceIds": ["lpr", "lpm", "jarbschg5", "jarbschg8", "jarbschg11", "jarbschg14", "jarbschg15", "jarbschg22"],
+    "quiz": {
+      "question": "Welche Mindestruhepause schreibt § 11 Abs. 1 JArbSchG bei einer täglichen Arbeitszeit von 7 Stunden für Jugendliche vor?",
+      "answer": "Mindestens 60 Minuten (ab mehr als 6 Stunden Arbeitszeit).",
+      "wrong": [
+        "Genau 10 Minuten, weil die Arbeitszeit unter 8 Stunden liegt.",
+        "Gar keine Pause — Pausen beginnen erst ab 9 Stunden Arbeitszeit."
+      ],
+      "explanation": "Bei über 4,5 bis 6 Std. sind mindestens 30 Minuten, bei über 6 Stunden mindestens 60 Minuten Ruhepause gesetzlich vorgeschrieben."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Ferienjob-Angebote nach dem JArbSchG prüfen",
+      "instruction": "Prüfe für vier 15-jährige Jugendliche, ob ihr Ferienjob-Plan dem JArbSchG entspricht oder dagegen verstößt.",
+      "categories": [
+        "Gesetzlich zulässig",
+        "Verstoß gegen das JArbSchG"
+      ],
+      "entries": [
+        {
+          "text": "3 Wochen in den Sommerferien (Mo–Fr) je 7 Std. (9:00–17:00 Uhr inkl. 60 Min. Pause) im Einzelhandel",
+          "target": 0,
+          "feedback": "Alter 15+, unter 4 Wochen/Jahr, 5-Tage-Woche, unter 8 Std./Tag, zwischen 6 und 20 Uhr, volle 60 Min. Pause."
+        },
+        {
+          "text": "2 Wochen in den Osterferien plus 3 Wochen in den Sommerferien im selben Kalenderjahr",
+          "target": 1,
+          "feedback": "Zusammen 5 Wochen überschreiten die Jahresgrenze von höchstens 4 Wochen (§ 5 Abs. 4)."
+        },
+        {
+          "text": "Täglich 6 Stunden Arbeit am Stück mit nur einer 15-Minuten-Frühstückspause",
+          "target": 1,
+          "feedback": "Bei mehr als 4,5 bis 6 Stunden stehen mindestens 30 Minuten Ruhepause zu (§ 11)."
+        },
+        {
+          "text": "Aushilfe beim Abendservice in einem Restaurant regelmäßig von 16:00 bis 22:30 Uhr",
+          "target": 1,
+          "feedback": "Nach § 14 gilt für 15-Jährige grundsätzlich die Nachtruhe ab 20 Uhr."
+        }
+      ],
+      "conclusion": "Wer alle Grenzen — Alter, 4 Wochen/Jahr, 8 Std./Tag, Pausen und 6–20 Uhr — prüft, schützt seine eigene Gesundheit und Rechte."
+    },
+    "lab": "holidayJobCheck",
+    "practice": "holidayJobLimits",
+    "tasks": {
+      "1": {
+        "prompt": "Fasse die fünf wichtigsten gesetzlichen Schutzregeln für einen Ferienjob ab 15 Jahren in einer übersichtlichen Checkliste zusammen.",
+        "hints": [
+          "Denke an Jahresdauer, tägliche/wöchentliche Arbeitszeit, Uhrzeit, Tage pro Woche und Pausen.",
+          "Welche Arbeiten sind grundsätzlich tabu?"
+        ],
+        "model": "1. Jahresumfang: maximal 4 Wochen (20 Arbeitstage) pro Kalenderjahr. 2. Arbeitszeit: höchstens 8 Stunden täglich und 40 Stunden wöchentlich in einer 5-Tage-Woche. 3. Lage: nur zwischen 6 und 20 Uhr. 4. Pausen: 30 Minuten bei > 4,5 bis 6 Stunden, 60 Minuten bei > 6 Stunden. 5. Schutz: keine gefährlichen Arbeiten (§ 22 JArbSchG).",
+        "criteria": [
+          "Du nennst die 4-Wochen-Grenze im Jahr und die 8-/40-Stunden-Grenze.",
+          "Du berücksichtigst Nachtruhe (6–20 Uhr) und Ruhepausen (30 / 60 Min.).",
+          "Du erwähnst den Ausschluss gefährlicher Tätigkeiten."
+        ]
+      },
+      "2": {
+        "prompt": "Ein 15-Jähriger arbeitet in den Pfingstferien 2 Wochen (10 Tage) im Lager und möchte in den Sommerferien beim gleichen Betrieb noch einmal 3 Wochen dranhängen. Begründe, warum der Chef den Vertrag verkürzen muss — und wie er stattdessen planen kann.",
+        "hints": [
+          "Wie viele Wochen sind im gesamten Kalenderjahr zulässig — unabhängig davon, auf welche Ferien verteilt?",
+          "Wie viele Arbeitstage bleiben im Sommer übrig?"
+        ],
+        "model": "Die Höchstgrenze von vier Wochen bzw. 20 Arbeitstagen gilt für das gesamte Kalenderjahr zusammen (§ 5 Abs. 4 JArbSchG), nicht je Ferienabschnitt neu. Da in den Pfingstferien bereits 2 Wochen (10 Tage) verbraucht wurden, darf der Betrieb in den Sommerferien nur noch höchstens 2 Wochen (10 Arbeitstage) beschäftigen, damit mindestens vier Wochen der Jahresferien als echte Erholungszeit frei bleiben.",
+        "criteria": [
+          "Du erklärst, dass die 4 Wochen auf das ganze Kalenderjahr zählen.",
+          "Du berechnest die verbleibenden 2 Wochen (10 Tage) korrekt.",
+          "Du verweist auf den Erholungszweck der übrigen Ferienzeit."
+        ]
+      }
+    }
+  },
+  {
+    "id": "re-praktikum-vs-ferienjob",
+    "lb": 5,
+    "tracks": ["R", "M"],
+    "lehrplan": "WiB 7 · LB 5 · R7 & M7",
+    "title": "Betriebspraktikum und Ferienjob rechtlich unterscheiden",
+    "intro": "Beide finden im Betrieb statt, folgen aber ganz unterschiedlichen Regeln: Warum du beim Betriebspraktikum auch schon vor 15 mitmachen darfst und warum es keinen Lohn gibt.",
+    "paragraphs": [
+      "Auf den ersten Blick wirken Betriebspraktikum und Ferienjob ähnlich, rechtlich trennt das JArbSchG beide jedoch klar: Ein schulisches Betriebspraktikum ist eine verpflichtende Lern- und Orientierungsveranstaltung während der Vollzeitschulpflicht. Deshalb gilt das allgemeine Kinderarbeitsverbot hier nach § 5 Abs. 2 Nr. 2 JArbSchG nicht — auch 13- oder 14-Jährige dürfen teilnehmen. Nach § 5 Abs. 2 Satz 2 in Verbindung mit § 7 Satz 1 Nr. 2 JArbSchG ist für schulpflichtige Kinder dabei eine Arbeitszeit von bis zu 7 Stunden täglich und 35 Stunden wöchentlich vorgesehen, ein Anspruch auf Arbeitslohn besteht nicht, und der Unfallschutz läuft als Schulveranstaltung über die gesetzliche Schülerunfallversicherung.",
+      "Der Ferienjob (§ 5 Abs. 4 JArbSchG) findet dagegen freiwillig außerhalb der Unterrichtszeit in den Schulferien statt, um eigenes Geld zu verdienen. Er ist erst ab 15 Jahren bis höchstens vier Wochen im Kalenderjahr zulässig, erlaubt bis zu 8 Stunden täglich und 40 Stunden wöchentlich, wird regulär bezahlt (wobei erst ab 18 Jahren der allgemeine gesetzliche Mindestlohn zwingend greift) und ist ein echtes Beschäftigungsverhältnis mit Lohnabrede. Beispiel: Eine 14-jährige Siebtklässlerin absolviert im Mai ihr 5-tägiges Betriebspraktikum zu je 7 Std. ohne Lohn im Elektrotechnikbetrieb (erlaubt nach § 5 Abs. 2 Nr. 2), darf aber erst im Sommer nach ihrem 15. Geburtstag einen bezahlten Ferienjob bis 8 Std. täglich übernehmen."
+    ],
+    "takeaway": "Betriebspraktikum (§ 5 Abs. 2 Nr. 2): schulisches Lernen ab Klasse 7/8, bis 7 Std./Tag, ohne Lohnanspruch. Ferienjob (§ 5 Abs. 4): freiwilliger Gelderwerb ab 15, bis 8 Std./Tag und 4 Wochen/Jahr.",
+    "sourceIds": ["lpr", "lpm", "jarbschg5", "jarbschg7", "jarbschg8"],
+    "quiz": {
+      "question": "Warum darf eine 14-jährige Schülerin ein einwöchiges Betriebspraktikum von täglich 7 Stunden absolvieren, aber keinen bezahlten 7-Stunden-Ferienjob annehmen?",
+      "answer": "Weil § 5 Abs. 2 Nr. 2 JArbSchG für das schulische Betriebspraktikum eine eigene Ausnahme vom Kinderarbeitsverbot vorsieht (max. 7 Std./Tag), während Ferienjobs erst ab 15 Jahren erlaubt sind.",
+      "wrong": [
+        "Weil Betriebe im Praktikum grundsätzlich überhaupt keine Pausen gewähren müssen.",
+        "Weil das Jugendarbeitsschutzgesetz nur für Jobs gilt, bei denen weniger als 10 € bezahlt werden."
+      ],
+      "explanation": "Das Praktikum ist Teil des schulischen Bildungsauftrags zur Berufsorientierung und deshalb mit strengem 7-Std./35-Std.-Schutz (§ 7 Nr. 2) ausnahmsweise zulässig."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Betriebspraktikum oder Ferienjob?",
+      "instruction": "Ordne die vier Merkmale eindeutig entweder dem schulischen Betriebspraktikum oder dem Ferienjob zu.",
+      "categories": [
+        "Schulisches Betriebspraktikum",
+        "Ferienjob (§ 5 Abs. 4 JArbSchG)"
+      ],
+      "entries": [
+        {
+          "text": "Teilnahme auch mit 13 oder 14 Jahren während der Schulzeit möglich",
+          "target": 0,
+          "feedback": "§ 5 Abs. 2 Nr. 2 JArbSchG ermöglicht die Berufsorientierung für alle Schülerinnen und Schüler."
+        },
+        {
+          "text": "Maximal 4 Wochen pro Kalenderjahr zur Erzielung von Arbeitsentgelt in den Ferien",
+          "target": 1,
+          "feedback": "Das beschreibt genau den Ferienjob ab 15 Jahren."
+        },
+        {
+          "text": "Ziel ist kein Gelderwerb, sondern das Kennenlernen beruflicher Tätigkeitsbereiche; bis 7 Std./Tag für Kinder",
+          "target": 0,
+          "feedback": "Im Mittelpunkt steht das Lernen im Betrieb ohne Vergütungsanspruch."
+        },
+        {
+          "text": "Bis zu 8 Stunden täglich und 40 Stunden wöchentlich in den Ferien ab 15 Jahren",
+          "target": 1,
+          "feedback": "Für Jugendliche ab 15 Jahren gelten im Ferienjob die Grenzen des § 8 JArbSchG."
+        }
+      ],
+      "conclusion": "Beide Erfahrungen ergänzen sich: Das Praktikum klärt deinen Berufswunsch, der Ferienjob bringt ersten eigenen Verdienst."
+    },
+    "practice": "holidayJobLimits",
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre vier rechtliche Unterschiede zwischen einem schulischen Betriebspraktikum und einem Ferienjob.",
+        "hints": [
+          "Vergleiche Zweck, Mindestalter, maximale tägliche Arbeitszeit (bei unter 15-Jährigen) und Bezahlung.",
+          "Beziehe die zeitliche Lage (Schulzeit vs. Ferien) ein."
+        ],
+        "model": "Erstens dient das Betriebspraktikum der Berufsorientierung als Schulveranstaltung, der Ferienjob dem Verdienst in den Ferien. Zweitens ist das Praktikum auch vor dem 15. Geburtstag zulässig, ein Ferienjob erst ab 15 Jahren. Drittens gelten beim Praktikum für unter 15-Jährige höchstens 7 Stunden täglich (35 Std./Woche), beim Ferienjob bis 8 Stunden (40 Std./Woche). Viertens besteht beim Praktikum kein Lohnanspruch, beim Ferienjob wird Lohn vereinbart.",
+        "criteria": [
+          "Du vergleichst Zweck, Alter, maximale Arbeitszeit und Bezahlung.",
+          "Du nennst die unterschiedlichen Zahlen für das Betriebspraktikum (7 Std./Tag) und Ferienjobs (8 Std./Tag, 4 Wochen).",
+          "Alle Aussagen sind rechtlich zutreffend."
+        ]
+      },
+      "2": {
+        "prompt": "Eine 14-jährige Schülerin möchte freiwillig in den Sommerferien ein „unbezahltes Schnupperpraktikum“ über volle fünf Wochen zu je 8 Stunden täglich machen. Prüfe kritisch.",
+        "hints": [
+          "Handelt es sich bei einem privaten Ferienwunsch ohne schulischen Rahmen um ein schulisches Betriebspraktikum?",
+          "Welche Altersgrenzen gelten auch dann?"
+        ],
+        "model": "Ein rein privates fünfwöchiges Ferienpraktikum zu 8 Stunden täglich ist rechtlich unzulässig. Die Ausnahme nach § 5 Abs. 2 Nr. 2 gilt für das schulisch veranlasste Betriebspraktikum — und selbst dort dürfen unter 15-Jährige höchstens 7 Stunden täglich arbeiten. Auch als Ferienjob wäre die Aktion unzulässig, da Ferienarbeit unter 15 Jahren verboten und ab 15 Jahren auf 4 Wochen im Jahr begrenzt ist.",
+        "criteria": [
+          "Du erkennst, dass man das Kinderarbeitsverbot nicht durch ‚Praktikum‘ umgehen kann.",
+          "Du prüfst Alter (14), Dauer (5 Wochen) und tägliche Stunden (8 Std.).",
+          "Du gibst ein rechtlich sauberes Ergebnis."
+        ]
+      }
+    }
+  },
+  {
+    "id": "te-technikerkundung-haushalt",
+    "lb": 6,
+    "tracks": ["R", "M"],
+    "lehrplan": "WiB 7 · LB 6 · R7 & M7",
+    "title": "Technikerkundung im Privathaushalt planen und protokollieren",
+    "intro": "Wie viele technische Geräte laufen täglich in eurer Wohnung — und wie lange wirklich? Mit klaren Beobachtungsaufgaben und einem Protokoll machst du unsichtbaren Verbrauch sichtbar.",
+    "paragraphs": [
+      "Im privaten Haushalt arbeiten längst Dutzende Geräte in Küche, Bad, Wohnzimmer und Homeoffice — vom Wasserkocher über die Waschmaschine bis zum Router. Um ihren Nutzen und Aufwand objektiv einzuschätzen, führst du selbständig eine mehrwöchige Technikerkundung durch. Dafür formulierst du vorab konkrete Beobachtungsaufgaben: Welche Geräte werden genutzt? Welche Leistung in Watt steht auf dem Typenschild? Wie viele Stunden laufen sie aktiv — und wie viele Stunden ziehen sie im Standby-Modus heimlich Strom?",
+      "Beispiel Haushaltsprotokoll: Eine Familie untersucht unter anderem eine Filterkaffeemaschine (1.200 W, 3 Std. pro Woche aktiv) und einen Fernseher samt Spielkonsole (80 W aktiv, aber 4 W im dauerhaften Standby während 148 Stunden pro Woche). Über 52 Wochen summiert sich die aktive Kaffeemaschine auf 187,20 kWh (bei 35 ct/kWh = 65,52 €), während schon 4 W Standby beim TV/Konsole-Set rund 30,78 kWh oder 10,77 € pro Jahr ohne jeden Nutzen kosten."
+    ],
+    "takeaway": "Eine systematische Technikerkundung beginnt mit gezielten Beobachtungsfragen zu Typenschild-Watt, Laufzeit und Standby und hält Messwerte über Wochen fest.",
+    "sourceIds": ["lpr", "lpm", "uba"],
+    "quiz": {
+      "question": "Welche vier Angaben gehören unbedingt in jedes Erkundungsprotokoll eines Haushaltsgeräts?",
+      "answer": "Gerätebezeichnung, elektrische Leistung (Watt vom Typenschild), aktive Nutzungsdauer pro Woche und eventuelle Standby-Zeit.",
+      "wrong": [
+        "Nur die Farbe des Gehäuses und das genaue Gewicht des Netzkabels.",
+        "Ausschließlich der Name des Postboten, der das Paket damals geliefert hat."
+      ],
+      "explanation": "Ohne Wattzahl, aktive Betriebsstunden und Standby-Dauer lassen sich Stromverbrauch und Kosten eines Geräts nicht berechnen."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Schritte einer Technikerkundung im Haushalt",
+      "instruction": "Ordne die vier Arbeitsschritte einer selbständigen Technikerkundung von der Vorbereitung bis zur Auswertung.",
+      "categories": [
+        "1 · Geräte auswählen & Beobachtungsfragen formulieren",
+        "2 · Typenschilddaten erfassen & Protokollbogen anlegen",
+        "3 · Nutzungs- und Standby-Zeiten über Wochen notieren",
+        "4 · Verbrauch in kWh & Euro berechnen und bewerten"
+      ],
+      "entries": [
+        {
+          "text": "Du überlegst vorab, ob du Küchengeräte oder Unterhaltungselektronik auf Dauerbetrieb und Nutzung prüfst.",
+          "target": 0,
+          "feedback": "Am Anfang stehen klare Fragestellungen, was beobachtet werden soll."
+        },
+        {
+          "text": "Du liest auf den Geräten oder in Anleitungen die Watt-Werte ab und legst eine Wochen-Tabelle an.",
+          "target": 1,
+          "feedback": "Ohne technische Basisdaten (Leistung in W) fehlt die Rechengrundlage."
+        },
+        {
+          "text": "Drei Wochen lang tragen alle Haushaltsmitglieder Nutzung und Standby-Licht am Abend ein.",
+          "target": 2,
+          "feedback": "Erst eine mehrwöchige Beobachtung gleicht Ausreißer einzelner Tage aus."
+        },
+        {
+          "text": "Du rechnest kWh und Jahreskosten aus und schlägst eine schaltbare Steckerleiste vor.",
+          "target": 3,
+          "feedback": "Die Auswertung übersetzt Protokolldaten in konkrete Entscheidungen."
+        }
+      ],
+      "conclusion": "Wer strukturiert fragt und mehrere Wochen misst, entdeckt stille Energiefresser sofort."
+    },
+    "practice": "applianceCost",
+    "tasks": {
+      "1": {
+        "prompt": "Formuliere drei präzise Beobachtungsaufgaben für eine zweiwöchige Technikerkundung im eigenen Kinderzimmer oder in der Küche.",
+        "hints": [
+          "Frage nach Nutzungshäufigkeit, Leistung/Typenschild und Standby- bzw. Ausschaltverhalten.",
+          "Wie überprüfst du Unterschiede zwischen Werktag und Wochenende?"
+        ],
+        "model": "1. Zähle an sieben Werktagen und vier Wochenendtagen, wie lange PC, Monitor und Konsole tatsächlich genutzt werden. 2. Lies auf allen Netzteilen oder Typenschildern die Leistungsaufnahme in Watt ab. 3. Kontrolliere abends um 22 Uhr, welche Geräte im Standby leuchten, obwohl sie niemand mehr nutzt.",
+        "criteria": [
+          "Du formulierst drei klare, überprüfbare Beobachtungsaufgaben.",
+          "Sie decken Gerätenutzung, Leistung (Watt) und Standby/Zeitraum ab.",
+          "Alle Aufgaben sind im Privathaushalt leicht durchführbar."
+        ]
+      },
+      "2": {
+        "prompt": "Warum reicht für eine Technikerkundung die Messung an einem einzigen Samstag nicht aus? Begründe an einem Haushaltsbeispiel.",
+        "hints": [
+          "Laufen Waschmaschine, Trockner oder Gaming-PC jeden Tag genau gleich lang?",
+          "Was passiert an Ferientagen oder Besuchstagen?"
+        ],
+        "model": "An einem Samstag fallen viele Wochenaktivitäten auf einmal an — etwa drei Ladungen Wäsche, Staubsaugen und langes Kochen —, während das Büro-Ladegerät ruht. Unter der Woche verhält sich der Haushalt genau umgekehrt. Erst ein Protokoll über mehrere Wochen bildet den echten Durchschnitt realistisch ab.",
+        "criteria": [
+          "Du erklärst Unterschiede zwischen Werktagen und Wochenenden.",
+          "Du zeigst an einem Gerät, wie ein Einzeltag das Bild verzerrt.",
+          "Du begründest den Sinn längerer Protokollierung."
+        ]
+      }
+    }
+  },
+  {
+    "id": "te-oekonomie-oekologie-haushalt",
+    "lb": 6,
+    "tracks": ["R", "M"],
+    "lehrplan": "WiB 7 · LB 6 · R7 & M7",
+    "title": "Ökonomische und ökologische Folgen im Haushalt bewerten",
+    "intro": "Jedes Gerät verursacht neben dem Kaufpreis laufende Strom-, Wasser- und Wartungskosten — und belastet Rohstoffe sowie Klima.",
+    "paragraphs": [
+      "Um Sinn und Notwendigkeit eines Haushaltsgeräts zu bewerten, reicht der Blick aufs Kassenetikett nicht aus. Ökonomisch betrachtest du neben dem Kaufpreis vor allem die jährlichen Betriebskosten: Den Stromverbrauch berechnest du über die Formel Energie (kWh) = (Leistung in Watt · Laufzeit in Stunden) / 1.000 und multiplizierst ihn mit dem Strompreis (€/kWh). Ökologisch zählen Energieverbrauch, Wasserverbrauch, Rohstoffaufwand bei der Herstellung sowie Reparierbarkeit und Lebensdauer — das gesetzliche EU-Energielabel (§ 4 EnVKG) ordnet Geräte hier von A (sehr sparsam) bis G ein.",
+      "Beispiel Wäschetrockner vs. Wäscheständer: Ein älterer Ablufttrockner mit 2.000 W läuft 4 Std. pro Woche (= 416,00 kWh im Jahr) und verursacht bei 35 ct/kWh allein 145,60 € jährliche Stromkosten — ein einfacher Wäscheständer braucht 0,00 kWh und kostet 0,00 € Strom. Im Geräte-Prüfstand prüfst du zudem, wie viel Prozent des Gesamtverbrauchs auf reinen Standby-Betrieb entfallen."
+    ],
+    "takeaway": "Ökonomisch und ökologisch klug handelt, wer Anschaffungspreis, laufende kWh-Kosten, Standby-Verluste und Lebensdauer gemeinsam bewertet.",
+    "sourceIds": ["lpr", "lpm", "envkg4", "uba"],
+    "quiz": {
+      "question": "Ein Föhn hat 1.800 W (1,8 kW) und läuft genau 30 Minuten (0,5 Std.). Wie viel elektrische Energie verbraucht er?",
+      "answer": "Genau 0,90 kWh (1.800 · 0,5 / 1.000).",
+      "wrong": [
+        "Genau 3.600 kWh.",
+        "Genau 18,00 kWh."
+      ],
+      "explanation": "Umrechnung von Watt in Kilowatt: 1.800 W = 1,8 kW. Multipliziert mit 0,5 Stunden ergibt das 0,90 Kilowattstunden (kWh)."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Ökonomische und ökologische Wirkungen trennen",
+      "instruction": "Ordne die Bewertungsfragen rund um Haushaltsgeräte der passenden Sichtweise zu.",
+      "categories": [
+        "Ökonomische Wirkung (Geld & Budget)",
+        "Ökologische Wirkung (Umwelt & Ressourcen)",
+        "Sinnvoller Alternativ- oder Sparansatz"
+      ],
+      "entries": [
+        {
+          "text": "Die Stromkosten für das Dauerleuchten von zwei Routern und Konsolen kosten 42,00 € im Jahr.",
+          "target": 0,
+          "feedback": "Konkrete Euro-Ausgaben belasten das Haushaltsbudget — das ist ökonomisch."
+        },
+        {
+          "text": "Für die Herstellung eines Akkustaubsaugers werden seltene Metalle abgebaut und Kunststoffe verarbeitet.",
+          "target": 1,
+          "feedback": "Rohstoffabbau, Energieaufwand in der Produktion und Müll betreffen die Ökologie."
+        },
+        {
+          "text": "Statt eines neuen elektrischen Dosenöffners nutzt die Familie weiterhin ein robustes Handgerät.",
+          "target": 2,
+          "feedback": "Das Prüfen einfacher mechanischer Alternativen vermeidet unnötige Technik."
+        },
+        {
+          "text": "Auf dem EU-Energielabel steht eine Effizienzklasse A neben deutlich geringerem Wasserverbrauch.",
+          "target": 1,
+          "feedback": "Energielabel zeigen vor allem Energie- und Ressourceneffizienz für Umwelt und Betrieb."
+        }
+      ],
+      "conclusion": "Sparsame Nutzung schont fast immer beides zugleich: den Geldbeutel und die natürlichen Ressourcen."
+    },
+    "lab": "applianceCheck",
+    "practice": "applianceCost",
+    "tasks": {
+      "1": {
+        "prompt": "Bewerte anhand von je zwei ökonomischen und zwei ökologischen Argumenten, ob ein elektrischer Eierkocher oder elektrischer Laubbläser im Privathaushalt notwendig ist.",
+        "hints": [
+          "Was leisten Topf mit Deckel oder Rechen/Besen als Alternative?",
+          "Denke an Kaufpreis, Strom, Lärm, Akkuherstellung und Platzbedarf."
+        ],
+        "model": "Beispiel elektrischer Laubbläser: Ökonomisch verursacht er hohe Kauf-, Akku- und Stromkosten, obwohl er nur wenige Wochen im Jahr gebraucht wird. Ökologisch verbraucht die Herstellung seltene Rohstoffe, der Lärm belastet Nachbarn und der Luftstrom tötet Kleinstlebewesen am Boden. Mit einem einfachen Rechen und Besen bleibt das Ergebnis meist ebenso sauber, leiser und deutlich günstiger.",
+        "criteria": [
+          "Du nennst zwei ökonomische Kriterien (Kaufpreis, Wartung/Strom, Nutzungshäufigkeit).",
+          "Du nennst zwei ökologische Kriterien (Rohstoffe, Energie, Lärm/Tierwelt).",
+          "Du begründest ein klares Urteil zur Notwendigkeit."
+        ]
+      },
+      "2": {
+        "prompt": "Warum empfiehlt das Umweltbundesamt, alte Geräte wie den funktionierenden Wasserkocher nicht vorschnell gegen ein minimal sparsameres Neugerät auszutauschen?",
+        "hints": [
+          "Wie viel Energie kostet die Produktion eines neuen Geräts?",
+          "Wann lohnt sich der Tausch eher — bei Dauerläufern wie Kühlschränken oder bei Kurzzeitgeräten?"
+        ],
+        "model": "Bereits die Herstellung und der Transport eines Neugeräts verbrauchen viel Energie und Rohstoffe und erzeugen später Elektroschrott. Bei selten oder kurz laufenden Geräten wie einem Wasserkocher spart das neue Modell so wenig Strom pro Jahr, dass diese kleine Ersparnis den Herstellungsaufwand kaum ausgleicht. Lange Nutzung und Reparatur bleiben ökologisch oft überlegen.",
+        "criteria": [
+          "Du berücksichtigst die Herstellungsenergie und Rohstoffe (graue Energie).",
+          "Du unterscheidest Kurzzeitgeräte von Dauerläufern (z. B. Kühlschrank).",
+          "Du bewertest die Nutzungsdauer sachlich."
+        ]
+      }
+    }
+  },
+  {
+    "id": "te-grenzen-chancen-risiken",
+    "lb": 6,
+    "tracks": ["M"],
+    "lehrplan": "WiB 7 · LB 6 · M7",
+    "title": "Grenzen, Chancen und Risiken von Haushaltstechnik abwägen",
+    "intro": "In der M-Klasse diskutierst du kritisch, wo Technik echte Entlastung bringt und ab welchem Punkt neue Geräte eher Geld kosten, Ressourcen verschwenden oder Rebound-Effekte auslösen.",
+    "paragraphs": [
+      "Technik im Haushalt eröffnet große Chancen: Waschmaschine, Kühlschrank oder Herd sparen täglich stundenlange schwere Arbeit und verbessern Hygiene und Haltbarkeit von Lebensmitteln. Gleichzeitig entstehen Risiken und Grenzen sinnvollen Technikeinsatzes: Hohe Anschaffungspreise, schnell veraltende Software, fehlende Ersatzteile bei verklebten Gehäusen, Elektroschrott sowie steigender Strombedarf durch vernetzte Smart-Home-Geräte. Hinzu kommt oft der Rebound-Effekt — wird ein Gerät sparsamer, nutzen Menschen es unbewusst länger oder häufiger und fressen die Ersparnis teilweise wieder auf.",
+      "Beispiel Amortisation und Grenze: Ein neuer Kühlschrank der Klasse B verbraucht nur 100 kWh im Jahr statt 220 kWh beim alten Gerät (Ersparnis 120 kWh = 42,00 € jährlich bei 35 ct/kWh). Kostet das Neugerät 168,00 € mehr als ein einfacher Ersatz, amortisiert sich der Mehrpreis nach genau 4,00 Jahren (168,00 € / 42,00 €). Kauft man dagegen eine App-gesteuerte Kaffeemaschine für 600,00 € statt eines Handfilters, rechnen sich die Kosten oft weder finanziell noch ökologisch."
+    ],
+    "takeaway": "Sinnvolle Haushaltstechnik rechnet sich über Lebensdauer und echte Arbeitsentlastung — vernetzte Spielereien und Rebound-Effekte setzen klare Grenzen.",
+    "sourceIds": ["lpm", "envkg4", "uba"],
+    "quiz": {
+      "question": "Was beschreibt der sogenannte „Rebound-Effekt“ bei energiesparenden Haushaltsgeräten?",
+      "answer": "Ein Teil der rechnerischen Einsparung geht verloren, weil das effizientere Gerät häufiger, länger oder größer genutzt wird.",
+      "wrong": [
+        "Ein Gerät erzeugt nach drei Jahren automatisch genau doppelt so viel Strom zurück wie es verbraucht.",
+        "Der Stromzähler dreht rückwärts, sobald ein Stecker in der Dose bleibt."
+      ],
+      "explanation": "Beispiel: Ein sparsamerer Fernseher wird in einem doppelt so großen Format gekauft oder läuft abends länger, sodass der Gesamtstrombedarf nicht sinkt."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Chancen, Risiken und Grenzen sinnvollen Technikeinsatzes",
+      "instruction": "Ordne die vier Fallbeispiele nach Chance, Risiko oder Grenze sinnvoller Technik ein.",
+      "categories": [
+        "Klare Chance der Haushaltstechnik",
+        "Risiko (Sicherheit, Daten, Reparatur)",
+        "Grenze sinnvollen Technikeinsatzes"
+      ],
+      "entries": [
+        {
+          "text": "Eine moderne Waschmaschine spart gegenüber dem Kochen im Waschkessel viele Stunden Schwerarbeit und schützt Rücken und Hände.",
+          "target": 0,
+          "feedback": "Entlastung von schwerer Routinearbeit und mehr Zeit für Familie und Bildung ist eine zentrale Chance."
+        },
+        {
+          "text": "Ein Saugroboter mit Kamera und WLAN sendet Wohnungspläne über ungeschützte Cloud-Server.",
+          "target": 1,
+          "feedback": "Vernetzte Haushaltsgeräte bringen Datenschutz- und IT-Sicherheitsrisiken mit sich."
+        },
+        {
+          "text": "Ein Elektroroller oder elektrischer Smoothie-Mixer ersetzt den täglichen 500-Meter-Fußweg oder das einfache Schneidebrett.",
+          "target": 2,
+          "feedback": "Hier übersteigt der Material- und Pflegeaufwand den kleinen Alltagsnutzen."
+        },
+        {
+          "text": "Beim Akku-Handstaubsauger ist der Akku fest verklebt, sodass nach drei Jahren das ganze Gerät in den Müll muss.",
+          "target": 1,
+          "feedback": "Mangelnde Reparierbarkeit verkürzt die Lebensdauer und erzeugt unnötigen Elektroschrott."
+        }
+      ],
+      "conclusion": "Technik ist kein Selbstzweck: Entscheidend bleiben Reparierbarkeit, Sicherheit und ein vernünftiges Maß."
+    },
+    "practice": "applianceCost",
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre an einem selbst gewählten Gerät (z. B. Smart-Home-Heizung, Saugroboter oder Spülmaschine) je zwei Chancen und zwei Risiken.",
+        "hints": [
+          "Denke an Zeitersparnis, Präzision oder Komfort als Chance.",
+          "Welche Rolle spielen Reparaturkosten, Abhängigkeit von Strom/Internet oder Datenschutz?"
+        ],
+        "model": "Beispiel Saugroboter: Chancen liegen in der automatischen Zeitersparnis während des Schultags und gleichmäßiger Grundsauberkeit unter Möbeln. Risiken bestehen in den hohen Anschaffungs- und Ersatzteilkosten (Akku, Bürsten) sowie möglichen Datenschutzproblemen, wenn Raumkarten oder Kameradaten ins Internet übertragen werden.",
+        "criteria": [
+          "Du nennst zwei konkrete Chancen am gewählten Gerät.",
+          "Du nennst zwei realistische Risiken (Kosten, Technikabhängigkeit oder Daten).",
+          "Du wägst beide Seiten gegeneinander ab."
+        ]
+      },
+      "2": {
+        "prompt": "Diskutiere kritisch die Aussage: „Je mehr Arbeit im Haushalt von Robotern und Automaten übernommen wird, desto besser ist es immer für die Familie.“",
+        "hints": [
+          "Was passiert mit Reparaturfähigkeiten, Bewegung und Folgekosten?",
+          "Wo liegen sinnvolle Grenzen zwischen Schwerarbeit und kleinen Handgriffen?"
+        ],
+        "model": "Bei harter, zeitraubender Arbeit wie Waschen oder Kühlen bringt Automatisierung unbestreitbar Lebensqualität. Übernimmt Technik jedoch auch kleinste Handgriffe wie Obstschneiden, Lüften oder Spazierengehen, steigen Elektroschrott, Störanfälligkeit und Anschaffungskosten stark, während praktische Alltagskompetenzen verkümmern. Sinnvolle Technik unterstützt den Menschen, statt ihn bei jeder Kleinigkeit abhängig zu machen.",
+        "criteria": [
+          "Du differenzierst zwischen Entlastung von Schwerarbeit und unnötigen Kleingeräten.",
+          "Du nennst ökologische, finanzielle und menschliche Grenzen.",
+          "Du ziehst ein reflektiertes Schlussurteil."
+        ]
+      }
+    }
+  },
+  {
+    "id": "te-arbeit-technik-haushaltsproduktion",
+    "lb": 6,
+    "tracks": ["R", "M"],
+    "lehrplan": "WiB 7 · LB 6 · R7 & M7",
+    "title": "Arbeit und Technik bei der Haushaltsproduktion",
+    "intro": "Auch im Privathaushalt werden täglich Güter und Dienstleistungen produziert — dabei ersetzen und ergänzen sich menschliche Arbeitszeit und technische Hilfsmittel.",
+    "paragraphs": [
+      "Haushalte konsumieren nicht nur, sondern produzieren selbst Güter (gebackenes Brot, selbst gekochtes Essen, reparierte Kleidung) und Dienstleistungen (Kinderbetreuung, Wäschepflege, Reinigung). Dabei stehen menschliche Arbeit und Technik in einem engen Zusammenhang: Je weniger Technik genutzt wird, desto größer ist der eigene Zeit- und Kraftaufwand; umgekehrt kosten moderne Küchen- oder Nähmaschinen Geld für Anschaffung und Energie, verkürzen aber die Herstellungszeit deutlich.",
+      "Beispiel 6 Portionen Pizza selbst machen vs. kaufen: Bei eigener Herstellung kosten Teig und Belag 5,40 € plus 0,48 € Strom für den Backofen (2.000 W für 0,75 Std. à 32 ct/kWh) = 5,88 € Gesamtkosten bei 45 Min. eigener Arbeitszeit. Sechs gekaufte Pizzen vom Lieferdienst oder Bäcker kosten dagegen 19,20 € (6 · 3,20 €). Der Haushalt spart genau 13,32 € Bargeld — umgerechnet spart jede Stunde eigener Arbeit 17,76 €."
+    ],
+    "takeaway": "Bei der Haushaltsproduktion wägst du ab: Gekaufte Fertiglösungen sparen eigene Arbeitszeit, kosten aber deutlich mehr Geld; gezielte Technik hilft beim günstigen Selbstmachen.",
+    "sourceIds": ["lpr", "lpm", "profil"],
+    "quiz": {
+      "question": "Was bedeutet die Aussage ‚Technik ersetzt im Haushalt oft eigene Muskelkraft, erfordert aber Finanz- und Energieaufwand‘?",
+      "answer": "Ein Gerät wie eine Küchenmaschine übernimmt anstrengendes Kneten, muss dafür aber gekauft, mit Strom versorgt und gereinigt werden.",
+      "wrong": [
+        "Mit einer neuen Küchenmaschine entstehen fertige Brote völlig ohne menschliches Zutun und ohne Strom.",
+        "Menschliche Arbeit im Haushalt erzeugt grundsätzlich keine Güter oder Dienstleistungen."
+      ],
+      "explanation": "Technik verlagert Arbeit: Statt langer Knetzeit entstehen Kosten für Anschaffung, Strom und Gerätepflege."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Arbeit und Technik im Haushalt vergleichen",
+      "instruction": "Ordne die vier Produktionswege im Privathaushalt dem passenden Verhältnis aus menschlicher Arbeit, Technik und Fremdkauf zu.",
+      "categories": [
+        "Viel Handarbeit · wenig Technik",
+        "Halbautomatisiert · Arbeit + Technik kombiniert",
+        "Marktkauf (fremde Produktion bezahlt)"
+      ],
+      "entries": [
+        {
+          "text": "Brotteig zehn Minuten von Hand in der Schüssel kneten und im Ofen backen",
+          "target": 0,
+          "feedback": "Hier leistet vor allem eigene Körperkraft die Vorbereitung; die Gerätekosten bleiben klein."
+        },
+        {
+          "text": "Hefeteig mit der Küchenmaschine kneten lassen und selbst belegen",
+          "target": 1,
+          "feedback": "Technik übernimmt die körperlich anstrengende Vorarbeit, der Mensch steuert Zutaten und Backen."
+        },
+        {
+          "text": "Fertige Tiefkühlpizza oder belegte Brötchen komplett beim Lieferdienst bestellen",
+          "target": 2,
+          "feedback": "Die Arbeit verlagert sich komplett aus dem Haushalt auf bezahlte Betriebe — höchster Geldpreis."
+        },
+        {
+          "text": "Gerissene Jeans selbst mit der elektrischen Nähmaschine in zwanzig Minuten flicken",
+          "target": 1,
+          "feedback": "Nähmaschine und eigenes Geschick erhalten Kleidung günstig im Vergleich zum Neukauf."
+        }
+      ],
+      "conclusion": "Wer geschickt eigene Arbeit und vorhandene Technik kombiniert, spart Geld und stärkt Alltagskompetenz."
+    },
+    "practice": "householdProduction",
+    "tasks": {
+      "1": {
+        "prompt": "Vergleiche an einem Beispiel aus dem Haushalt (z. B. Mahlzeit kochen, Kuchen backen oder Hemden bügeln/pflegen) die Produktion mit einfachen Mitteln, mit moderner Technik und den kompletten Zukauf als Dienstleistung.",
+        "hints": [
+          "Vergleiche Zeitaufwand, Geldkosten und Ergebnisqualität.",
+          "Wann ist welche Variante sinnvoll?"
+        ],
+        "model": "Beispiel Kuchen für ein Familienfest: Mit dem Handrührgerät dauert das Rühren länger, das Gerät ist aber billig; eine starke Küchenmaschine spart Kraft bei häufigem Backen; der Konditor liefert sofort ohne eigene Arbeitszeit, kostet dafür jedoch schnell das Drei- bis Vierfache der Zutatenpreise. Für einen Haushalt lohnt sich meist die mittlere Lösung.",
+        "criteria": [
+          "Du vergleichst alle drei Varianten (einfach, technisch unterstützt, Fremdkauf).",
+          "Du gehst auf Zeit, Geld und Qualität ein.",
+          "Du formulierst eine begründete Empfehlung."
+        ]
+      },
+      "2": {
+        "prompt": "Reflektiere kritisch: Warum schätzen manche Menschen Hausarbeit mit vielen technischen Geräten als ‚mühelose Freizeit‘, obwohl sie trotzdem echte Arbeit bleibt?",
+        "hints": [
+          "Was leisten Planen, Einkaufen, Befüllen, Reinigen und Organisieren weiterhin?",
+          "Welche Verantwortung verschwindet auch mit Spülmaschine und Trockner nicht?"
+        ],
+        "model": "Auch wenn Spülmaschine, Waschmaschine und Staubsauger körperliche Schwerarbeit verringern, bleibt die geistige und organisatorische Arbeit bestehen: Vorräte planen, Wäsche sortieren, Flecken vorbehandeln, Geräte warten, einräumen und Zeiten abstimmen kostet täglich Energie und Aufmerksamkeit. Deshalb ist Hausarbeit auch im modernen Haushalt unverzichtbare Arbeitsleistung.",
+        "criteria": [
+          "Du nennst planende, sortierende und reinigende Restarbeiten trotz Technik.",
+          "Du würdigst den Arbeitscharakter von Haushaltsleistungen.",
+          "Du argumentierst nachvollziehbar und kritisch."
+        ]
+      }
+    }
+  },
+  {
+    "id": "te-technischer-wandel-qualifikation",
+    "lb": 6,
+    "tracks": ["R", "M"],
+    "lehrplan": "WiB 7 · LB 6 · R7 & M7",
+    "title": "Technischer Wandel verändert Arbeitsprozesse und Qualifikation",
+    "intro": "Wenn aus dem Waschtrog die sensorische Waschmaschine oder aus der Papierliste der digitale Terminplaner wird, ändern sich nicht nur die Werkzeuge, sondern auch das nötige Können.",
+    "paragraphs": [
+      "Technischer Wandel bedeutet, dass über Jahrzehnte hinweg einfache mechanische Werkzeuge durch elektrische, elektronische und heute zunehmend digitale oder vernetzte Systeme abgelöst werden. Dadurch verändern sich Arbeitsprozesse grundlegend: Körperliche Belastung und monotone Handgriffe sinken häufig, während Planung, Programmierung, Überwachung und Fehleranalyse wichtiger werden. Entsprechend steigen oder verschieben sich die Anforderungen an die Qualifikation der Nutzerinnen und Nutzer im Haushalt wie im Beruf.",
+      "Beispiel Haushalts- und Arbeitswandel: Früher verlangte das Wäschewaschen per Hand vor allem Körperkraft und Erfahrung mit Seifenlauge. Eine heutige sensorgesteuerte Waschmaschine misst Beladung und Verschmutzung selbständig — dafür müssen Nutzerinnen Pflegeetiketten richtig deuten, Öko-Programme sinnvoll wählen, Flusensiebe warten und mögliche Fehlercodes lösen können. Wer neue Technik blind ohne Grundwissen bedient, wäscht oft zu heiß, verschwendet Energie oder ruiniert Textilien."
+    ],
+    "takeaway": "Technischer Wandel verringert oft reine Körperarbeit, verlangt dafür aber mehr Überblick, Bedien-, Wartungs- und Sicherheitskompetenz von den Nutzerinnen.",
+    "sourceIds": ["lpr", "lpm", "uba"],
+    "quiz": {
+      "question": "Wie verändert der Übergang von mechanischen Werkzeugen zu digitalen Geräten meistens die nötige Qualifikation der Nutzer?",
+      "answer": "Statt reiner Körperkraft werden Programmverständnis, sorgfältige Kontrolle, Wartungswissen und Medienkompetenz wichtiger.",
+      "wrong": [
+        "Moderne Technik verlangt überhaupt kein Wissen mehr — Anleitungen braucht niemand zu lesen.",
+        "Qualifikation bedeutet künftig nur noch schnelles Heben schwerer Holzkisten."
+      ],
+      "explanation": "Je komplexer und automatisierter ein Gerät steuert, desto mehr kommt es auf kluge Auswahl, Einstellung, Pflege und Fehlererkennung an."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Wirkungen des technischen Wandels beurteilen",
+      "instruction": "Ordne jede Veränderung durch technischen Wandel dem passenden Bereich zu.",
+      "categories": [
+        "Veränderter Arbeitsprozess (Ablauf & Tempo)",
+        "Neue Qualifikation (Wissen & Können)"
+      ],
+      "entries": [
+        {
+          "text": "Statt vier Stunden Wäsche von Hand zu schrubben, läuft der Hauptwaschgang automatisch nebenher.",
+          "target": 0,
+          "feedback": "Zeitbedarf und Ablaufstruktur der Hausarbeit verändern sich durch Automatisierung stark."
+        },
+        {
+          "text": "Nutzerinnen müssen Pflegekennzeichen, Dosiertabellen und Stromspar-Programme sicher verstehen.",
+          "target": 1,
+          "feedback": "Richtige Bedienung und Ressourceneffizienz erfordern technisches Alltagswissen."
+        },
+        {
+          "text": "Beim Online-Banking oder digitalen Haushaltsbuch prüft man Buchungen sofort statt einmal monatlich am Schalter.",
+          "target": 0,
+          "feedback": "Digitale Werkzeuge beschleunigen Abläufe und ermöglichen laufende Kontrollen."
+        },
+        {
+          "text": "Man muss Phishing-Mails erkennen, sichere Passwörter pflegen und Geräte regelmäßig updaten.",
+          "target": 1,
+          "feedback": "Neue digitale Möglichkeiten bringen zwingend neue Sicherheitsqualifikationen mit."
+        }
+      ],
+      "conclusion": "Technischer Fortschritt spart Muskeln, verlangt dafür aber mitdenkende Köpfe."
+    },
+    "practice": "householdProduction",
+    "tasks": {
+      "1": {
+        "prompt": "Beschreibe an einem konkreten Beispiel (z. B. Einkaufen, Kochen, Wäschepflege oder Geldverwaltung), wie sich Arbeitsablauf und nötige Fähigkeiten in den letzten 40 Jahren durch neue Technik verändert haben.",
+        "hints": [
+          "Vergleiche ‚früher ohne Elektronik/Internet‘ mit ‚heute mit Automatik oder App‘.",
+          "Welche alten Fähigkeiten sind seltener geworden, welche neuen dazugekommen?"
+        ],
+        "model": "Beispiel Haushaltsbuch und Einkauf: Früher führten Familien ein Papierheft mit Kassenbons und hoben Geld bar am Schalter ab. Heute nutzen viele Banking-Apps, Kartenzahlung und Preisvergleichsportale. Der Ablauf ist deutlich schneller und ortsunabhängig, erfordert dafür aber sicheres Erkennen von Abofallen, Datenschutzbewusstsein und die Kontrolle kleiner digitaler Abbuchungen.",
+        "criteria": [
+          "Du vergleichst den früheren und den heutigen Arbeitsprozess konkret.",
+          "Du benennst klar veränderte Qualifikationsanforderungen.",
+          "Dein Beispiel bleibt alltagsnah und schlüssig."
+        ]
+      },
+      "2": {
+        "prompt": "Beurteile: Welche Qualifikation bleibt für Jugendliche in einer stark technisierten Haushalts- und Arbeitswelt besonders wichtig, wenn Geräte viele Routineaufgaben automatisch erledigen?",
+        "hints": [
+          "Wer prüft Ergebnisse auf Plausibilität, wenn eine Software oder Maschine rechnet?",
+          "Welche Rolle spielen kritisches Prüfen, Wartung und lebenslanges Weiterlernen?"
+        ],
+        "model": "Gerade weil Automaten Routineaufgaben verdecken, werden kritisches Prüfen und Grundlagenverständnis unverzichtbar: Nur wer überschlägig rechnen, Anleitungen lesen, Sicherheitsrisiken erkennen und technische Störungen einordnen kann, bleibt souveräner Nutzer statt hilflos bei einem Strom- oder Softwareausfall dazustehen. Bereitschaft zum Umlernen wird zur Schlüsselkompetenz.",
+        "criteria": [
+          "Du erklärst die Gefahr blinden Technikvertrauens.",
+          "Du nennst zentrale Zukunftskompetenzen (Prüfen, Verstehen, Weiterlernen).",
+          "Du formulierst ein starkes, selbständiges Urteil."
+        ]
+      }
+    }
+  }
+]
