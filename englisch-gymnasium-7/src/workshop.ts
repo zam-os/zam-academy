@@ -531,11 +531,10 @@ function renderSchedule(): string {
 			"usa",
 			[
 				[7.08, 7.75, "bus", "b-travel"],
-				[7.75, 8, "", "b-home"],
-				[8, 11.5, "classes", "b-class"],
+				[7.75, 11.5, "homeroom + classes", "b-class"],
 				[11.5, 12, "lunch", "b-lunch"],
 				[12, 15.25, "classes", "b-class"],
-				[15.25, 17, "soccer practice", "b-club"],
+				[15.25, 17, "soccer", "b-club"],
 			],
 		],
 		[
@@ -570,7 +569,7 @@ function renderSchedule(): string {
 					`<g ${item(key, active, "dim")}><text x="4" y="${rowIndex * 48 + 42}" class="lane-name">${key === "usa" ? "USA" : "DE"}</text>${blocks
 						.map(
 							([from, to, label, kind]) =>
-								`<rect x="${x(from)}" y="${rowIndex * 48 + 20}" width="${x(to) - x(from)}" height="34" rx="6" class="${kind}"/>${label ? `<text x="${(x(from) + x(to)) / 2}" y="${rowIndex * 48 + 42}" text-anchor="middle" class="block-label">${label}</text>` : ""}`,
+								`<rect x="${x(from)}" y="${rowIndex * 48 + 20}" width="${x(to) - x(from)}" height="34" rx="6" class="${kind}"/>${label ? `<text x="${(x(from) + x(to)) / 2}" y="${x(to) - x(from) < 40 ? rowIndex * 48 + 16 : rowIndex * 48 + 42}" text-anchor="middle" class="block-label">${label}</text>` : ""}`,
 						)
 						.join("")}</g>`,
 			)

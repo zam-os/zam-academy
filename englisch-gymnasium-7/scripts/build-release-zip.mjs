@@ -83,7 +83,7 @@ The visual workshop and Level 1 tasks count towards core progress.
 Listening uses only an already installed English voice. If none is available,
 a partner can read the accessible transcript. Source links need internet.
 
-The 120 linked ZAM cards are prepared in cell.json.
+The 132 linked ZAM cards are prepared in cell.json.
 Using this offline app does not change a personal ZAM library.
 `;
 writeFileSync(join(bundleDir, "README-START.txt"), readmeTxt, "utf8");

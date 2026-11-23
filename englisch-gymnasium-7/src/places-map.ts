@@ -51,6 +51,9 @@ export const ENGLAND_BORDER = [
 	[318, 90],
 ] as const satisfies readonly MapPoint[];
 
+/** Beaumaris Castle stands on Anglesey, on its south-east shore. */
+export const BEAUMARIS: MapPoint = [136, 40];
+
 export const WALES_PLACES = {
 	cardiff: {
 		name: "Cardiff (capital)",
@@ -261,9 +264,9 @@ export function renderWalesMap(): string {
 		<text class="roman-label" text-anchor="start" x="180" y="142">Eryri National Park</text>
 		<path class="mountain-peaks" d="M178 112 L192 90 L206 112"/>
 	</g>
-	<g data-map-layer="castles">${[WALES_PLACES.conwy.pin, WALES_PLACES.caernarfon.pin, WALES_PLACES.harlech.pin, [140, 40] as MapPoint]
+	<g data-map-layer="castles">${[WALES_PLACES.conwy.pin, WALES_PLACES.caernarfon.pin, WALES_PLACES.harlech.pin]
 		.map((point) => castle([point[0] + 12, point[1] - 8]))
-		.join("")}<text class="roman-label" x="160" y="40">Beaumaris</text></g>
+		.join("")}${castle(BEAUMARIS)}<text class="roman-label" text-anchor="end" x="128" y="46">Beaumaris</text></g>
 	<g data-map-layer="cities" class="map-cities">${pins(WALES_PLACES, ["cardiff", "swansea", "yrWyddfa", "conwy", "caernarfon", "harlech"])}</g>
 	<g class="welsh-sign" transform="translate(346 300)">
 		<rect width="104" height="58" rx="6"/>

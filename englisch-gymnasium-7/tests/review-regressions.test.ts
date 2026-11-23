@@ -1,6 +1,8 @@
 import { describe, expect, it } from "vitest";
 import { findLesson, LESSONS } from "../src/curriculum";
+import { ANGLESEY, BEAUMARIS, type MapPoint } from "../src/places-map";
 import { checkPractice } from "../src/practice";
+import cell from "../cell.json";
 
 const text = (id: string) => JSON.stringify(findLesson(id));
 
@@ -62,5 +64,41 @@ describe("checked Grade 7 facts stay as verified against the linked sources", ()
 		const contrast = findLesson("e7-language-contrast")!;
 		expect(checkPractice(contrast.practice, ["be", "live"])).toEqual([false, false]);
 		expect(checkPractice(contrast.practice, ["is", "have lived"])).toEqual([true, true]);
+	});
+
+	it("keeps the PR 192 review corrections (Grok 4.7, MiMo-V2.6-Pro)", () => {
+		// Catherine of Aragon's son Henry died in 1511 after a few weeks.
+		expect(text("e7-henry-viii")).toContain("keinen überlebenden Sohn");
+		expect(text("e7-henry-viii")).toContain("didn't have a surviving son");
+		expect(text("e7-henry-viii")).not.toMatch(/keinen Sohn geboren|didn't have one/);
+		// Virginia (Raleigh, from 1585) and Roanoke come before 1588; Jamestown 1607.
+		const elizabeth = text("e7-elizabeth-i");
+		expect(elizabeth).toContain("ab 1585");
+		expect(elizabeth).toContain("1607");
+		expect(elizabeth).not.toContain("erste Kolonien (Virginia)");
+		// A simple past after "when" follows the arrival; it is not "er aß sie, als ich kam".
+		expect(text("e7-past-perfect")).not.toContain("er aß sie, als ich kam");
+		// "sich vorstellen" has two meanings.
+		for (const id of ["e7-reflexive", "e7-language-contrast"])
+			expect(text(id)).toContain("introduce yourself");
+		const card = cell.atoms
+			.flatMap((atom) => atom.practice_items)
+			.find((item) => item.slug === "e7-language-contrast-apply")!;
+		expect(card.concept).toContain("sich etwas vorstellen");
+		// Thanksgiving no longer depends on a lesson taught 21 lessons later.
+		expect(cell.atoms.find((atom) => atom.slug === "e7-thanksgiving")!.prerequisites).toEqual([]);
+		expect(findLesson("e7-mayflower")!.workshop.goals[1].before).toContain("practise");
+		// Beaumaris Castle stands on Anglesey.
+		const inside = (point: MapPoint, polygon: readonly MapPoint[]) => {
+			let hit = false;
+			for (let i = 0, j = polygon.length - 1; i < polygon.length; j = i++) {
+				const [xi, yi] = polygon[i];
+				const [xj, yj] = polygon[j];
+				if (yi > point[1] !== yj > point[1] && point[0] < ((xj - xi) * (point[1] - yi)) / (yj - yi) + xi)
+					hit = !hit;
+			}
+			return hit;
+		};
+		expect(inside(BEAUMARIS, ANGLESEY)).toBe(true);
 	});
 });
