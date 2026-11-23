@@ -1142,10 +1142,14 @@
           group.school === school && group.grades.includes(grade) && group.paths.includes(fach));
         if (combination) return { subject: combination.id, combination };
         const subject = D.faecher.find((f) => f.id === fach);
-        if (!subject || grade < subject.from || grade > (subject.to ?? 13) || (D.kein_unterricht ?? []).some((entry) =>
+        // `schools` keeps a path such as "Englisch (2. Fremdsprache)" to the
+        // school types whose Lehrplan has it; without it a subject is taught
+        // at every school from `from` to `to`.
+        if (!subject || !offeredAt(subject, school) || grade < subject.from || grade > (subject.to ?? 13) || (D.kein_unterricht ?? []).some((entry) =>
           entry.fach === fach && entry.grade === grade && entry.school === school)) return null;
         return { subject: fach, combination: null };
       }
+      const offeredAt = (subject, school) => !subject.schools || subject.schools.includes(school);
 
       const packageGrades = (p) => p.grades ?? [p.grade];
       const matchesGrade = (p, grade) => packageGrades(p).includes(grade);
@@ -1349,7 +1353,13 @@
       const wrap = (text, max) => {
         const lines = [];
         let cur = "";
-        for (const w of String(text).split(/\s+/)) {
+        // An ordinal never ends a line: "(2. Fremdsprache)" stays together.
+        const words = String(text).split(/\s+/).reduce((acc, w) => {
+          if (/^\(?\d+\.$/.test(acc.at(-1) ?? "")) acc[acc.length - 1] += " " + w;
+          else acc.push(w);
+          return acc;
+        }, []);
+        for (const w of words) {
           if ((cur + " " + w).trim().length > max && cur) {
             lines.push(cur);
             cur = w;
@@ -1851,7 +1861,9 @@
         const body = h("tbody");
         const live = new Set(), total = new Set();
         for (const f of D.faecher) {
-          const tr = h("tr", {}, h("th", { scope: "row" }, f.name));
+          // A path that this school type does not teach at all gets no row.
+          if (!offeredAt(f, sch.id)) continue;
+          const tr = h("tr", { "data-fach": f.id }, h("th", { scope: "row" }, f.name));
           for (const g of grades) {
             if (!(g >= sch.from && g <= sch.to)) {
               tr.append(h("td", {}, h("span", { class: "na", "aria-label": "nicht vorgesehen" }, "·")));
