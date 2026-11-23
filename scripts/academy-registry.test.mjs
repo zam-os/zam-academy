@@ -296,11 +296,79 @@ test("the atlas omits untaught subjects instead of promising future packages", (
   }
 });
 
+test("a subject's `schools` names known school types that teach some of its grades", () => {
+  const schulen = new Map(registry.schulen.map((s) => [s.id, s]));
+  for (const f of registry.faecher) {
+    if (f.schools === undefined) continue;
+    assert.ok(Array.isArray(f.schools) && f.schools.length > 0, `${f.id}: schools`);
+    assert.equal(new Set(f.schools).size, f.schools.length, `${f.id}: duplicate school`);
+    for (const id of f.schools) {
+      const school = schulen.get(id);
+      assert.ok(school, `${f.id}: unknown school ${id}`);
+      assert.ok(
+        f.from <= school.to && (f.to ?? 13) >= school.from,
+        `${f.id}: no grade ${school.wo}`,
+      );
+    }
+    for (const p of pakete.filter((p) => p.fach === f.id)) {
+      assert.ok(f.schools.includes(p.school), `${p.id}: ${f.id} is not taught ${schulen.get(p.school)?.wo}`);
+    }
+    for (const e of (registry.kein_unterricht ?? []).filter((e) => e.fach === f.id)) {
+      assert.ok(f.schools.includes(e.school), `${f.id} ${e.grade} ${e.school}: gap at a school without this path`);
+    }
+  }
+});
+
+test("second foreign languages are their own Gymnasium paths and leave the first-language cells alone", () => {
+  const trees = atlasTrees();
+  const world = trees.welt.children.flatMap((n) => n.children);
+  const paths = { "englisch-2fs": [6, 9], "franzoesisch-2fs": [6, 9], "latein-2fs": [6, 8], latein: [5, 13] };
+  for (const [fach, [from, to]] of Object.entries(paths)) {
+    const subject = registry.faecher.find((f) => f.id === fach);
+    assert.deepEqual(subject.schools, ["gymnasium"], fach);
+    for (let grade = 4; grade <= 13; grade++) {
+      const offers = schoolSubject(trees, grade, fach)?.children ?? [];
+      if (grade < from || grade > to) {
+        assert.equal(offers.length, 0, `${fach} ${grade}`);
+        continue;
+      }
+      assert.deepEqual(offers.map((n) => n.school?.id), ["gymnasium"], `${fach} ${grade}`);
+      assert.equal(offers[0].offerKey, `slot:gymnasium:${grade}:${fach}`);
+    }
+    // The world lens groups the pending offers per grade: only "Gym" in it.
+    const marks = world.find((n) => n.id === fach).children.filter((n) => n.planned);
+    assert.deepEqual(marks.map((n) => n.grade), Array.from({ length: to - from + 1 }, (_, i) => from + i), fach);
+    assert.ok(marks.every((n) => n.sub === "Gym"), fach);
+  }
+  // Englisch and Französisch keep their own cells in every school type.
+  assert.deepEqual(
+    schoolSubject(trees, 6, "englisch").children.map((n) => n.school.id),
+    ["realschule", "gymnasium", "mittelschule"],
+  );
+  assert.ok(schoolSubject(trees, 7, "franzoesisch").children
+    .some((n) => n.pkg?.app === "franzoesisch-realschule-7"));
+  assert.ok(schoolSubject(trees, 7, "franzoesisch").children
+    .some((n) => n.pkg?.app === "franzoesisch-gymnasium-7"));
+
+  // The coverage matrix shows the paths at the Gymnasium only.
+  const gym = matrix(registry, "gymnasium").nodes;
+  const row = matrixRow(gym, "englisch-2fs");
+  assert.equal(row.children[0].children[0], "Englisch (2. Fremdsprache)");
+  for (let grade = 5; grade <= 13; grade++) {
+    const mark = row.children[grade - 3].children[0];
+    assert.equal(mark.attrs.class, grade >= 6 && grade <= 9 ? "cell" : "na", `grade ${grade}`);
+  }
+  for (const school of ["grundschule", "realschule", "mittelschule", "fosbos"]) {
+    const { nodes } = matrix(registry, school);
+    for (const fach of Object.keys(paths)) assert.equal(matrixRow(nodes, fach), undefined, `${fach} ${school}`);
+    assert.ok(matrixRow(nodes, "englisch"), `englisch ${school}`);
+  }
+});
+
 test("Gymnasium biology and economics skip grade 7 without hiding other school offers", () => {
   const trees = atlasTrees();
   const world = trees.welt.children.flatMap((node) => node.children);
   const { nodes } = matrix(registry, "gymnasium");
-  const rows = nodes.matrix.children.find((node) => node.tag === "tbody").children;
   const gaps = [
     ["biologie", "https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/7/nt_gym"],
     ["wirtschaft", "https://www.lehrplanplus.bayern.de/fachprofil/gymnasium/wirtschaft-und-recht"],
@@ -314,7 +382,7 @@ test("Gymnasium biology and economics skip grade 7 without hiding other school o
     assert.ok(!worldOffers.some((node) =>
       node.offerKey === slot || node.offerGroup?.includes(slot)));
 
-    const row = rows[registry.faecher.findIndex((entry) => entry.id === subject)];
+    const row = matrixRow(nodes, subject);
     const grade7 = row.children[4].children[0];
     assert.equal(grade7.attrs.class, "na none");
     assert.ok(grade7.attrs["aria-label"].includes("kein Fach"));
@@ -340,8 +408,7 @@ test("Realschule physics starts with Group I in grade 7, not a promised grade-6 
   assert.ok(!world.children.some((n) => n.offerKey === "slot:realschule:6:physik" || n.offerGroup?.includes("slot:realschule:6:physik")));
   assert.ok(!world.children.some((n) => n.offerKey === "slot:gymnasium:6:physik" || n.offerGroup?.includes("slot:gymnasium:6:physik")));
   assert.ok(world.children.some((n) => n.pkg?.app === "physik-realschule-7"));
-  const rows = matrix(registry, "realschule").nodes.matrix.children.find((n) => n.tag === "tbody").children;
-  const row = rows[registry.faecher.findIndex((f) => f.id === "physik")];
+  const row = matrixRow(matrix(registry, "realschule").nodes, "physik");
   const grade6 = row.children[3].children[0];
   assert.equal(grade6.attrs.class, "na none");
   assert.equal(grade6.attrs.href, "https://www.isb.bayern.de/schularten/realschule/faecher/physik/");
@@ -459,6 +526,13 @@ function descendants(node) {
     ? [node, ...node.children.flatMap(descendants)]
     : [];
 }
+// The matrix leaves out subjects a school type does not teach, so rows are
+// found by their subject, never by their index in `faecher`.
+function matrixRow(nodes, fach) {
+  return nodes.matrix.children
+    .find((n) => n.tag === "tbody")
+    .children.find((row) => row.attrs["data-fach"] === fach);
+}
 function matrix(data, school = "mittelschule") {
   const nodes = { matrix: element("table"), schulart: element("div") },
     visits = [];
@@ -492,10 +566,14 @@ function matrix(data, school = "mittelschule") {
 test("coverage distinguishes pre-start grades from explicit timetable gaps and exposes their sources", () => {
   for (const school of registry.schulen) {
     const { nodes } = matrix(registry, school.id);
-    const rows = nodes.matrix.children.find((n) => n.tag === "tbody").children;
-    for (const [index, subject] of registry.faecher.entries()) {
+    for (const subject of registry.faecher) {
+      const row = matrixRow(nodes, subject.id);
+      if (subject.schools && !subject.schools.includes(school.id)) {
+        assert.equal(row, undefined, `${subject.id}: no row ${school.wo}`);
+        continue;
+      }
       for (let grade = 4; grade <= 13; grade++) {
-        const mark = rows[index].children[grade - 3].children[0];
+        const mark = row.children[grade - 3].children[0];
         const gap = registry.kein_unterricht.find(
           (entry) =>
             entry.fach === subject.id &&
@@ -560,7 +638,7 @@ test("Realschule Informatics links Grades 6–8 to one canonical package in both
 
 test("the coverage matrix exposes the same Informatics course in all three grades", () => {
   const { nodes, visits } = matrix(registry, "realschule");
-  const row = nodes.matrix.children.find((n) => n.tag === "tbody").children[registry.faecher.findIndex((f) => f.id === "informatik")];
+  const row = matrixRow(nodes, "informatik");
   for (const grade of [6, 7, 8]) {
     const mark = row.children[grade - 3].children[0];
     assert.equal(mark.tag, "button");
