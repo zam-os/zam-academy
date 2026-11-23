@@ -59,10 +59,10 @@ Keine Lehrervideos (`AGENTS.md` Abschnitt 4).
 | B | 0 | — | — |
 | C | 3 | `J02` (Sammelabruf present perfect/simple past, since/for, Übersetzungen), `J03` (`had to`), `J04` (Sammelabruf Ersatzformen + Typ I + Typ II) | `keep-active` |
 
-### Fragen an Thomas
+### Entscheidungen von Thomas (23. November 2026, in der Claude-Code-Sitzung)
 
 1. ~~Freigabe der Zuordnung~~ – am 23. November 2026 erteilt.
-2. **`J03` (`had to`)** gehört nach LehrplanPLUS zu Englisch 6. Den gleichen Abruf hat `e6-substitutes-check` in `englisch-gymnasium-6`. Soll die Historie dorthin wandern? Das wäre ein eigener PR an Englisch 6.
+2. **`J03` (`had to`)** gehört nach LehrplanPLUS zu Englisch 6, wo `e6-substitutes-check` denselben Abruf stellt. Entscheidung: „kein Extra-PR für die 6. Klasse“ – die Karte bleibt aktiv.
 3. **`J01`** ist inhaltlich auch nah an `e6-past-or-perfect-check` (Englisch 6); freigegeben ist der Nachfolger in Englisch 7, der denselben Abruf wörtlich stellt.
-4. **Nachbarzelle `de-by:gymnasium-8-englisch-past-perfect-passive-indirect-speech-usa`** (gleicher Commit) wurde gelesen, aber nicht übernommen: `J01` (indirekte Rede mit Zeitverschiebung), `J03`/`J04` (US-Geschichte bis zur Bürgerrechtsbewegung) gehören zu Jahrgang 8 oder höher, `J02` bündelt past perfect (Jahrgang 7) mit Passiv und indirekter Rede (Jahrgang 8). Sie bleiben einem späteren Paket Englisch 8 überlassen.
-5. **Englisch 7 als 2. Fremdsprache:** Soll ein eigenes Paket folgen?
+4. **Nachbarzelle `de-by:gymnasium-8-englisch-past-perfect-passive-indirect-speech-usa`** (gleicher Commit) wurde gelesen, aber nicht übernommen: `J01` (indirekte Rede mit Zeitverschiebung), `J03`/`J04` (US-Geschichte bis zur Bürgerrechtsbewegung) gehören zu Jahrgang 8 oder höher, `J02` bündelt past perfect (Jahrgang 7) mit Passiv und indirekter Rede (Jahrgang 8). Entscheidung: „8. Klasse Paket - ja das kommt demnächst. Liegen lassen.“
+5. **Englisch 7 als 2. Fremdsprache:** Thomas: „ist ja ein ganz eigener Pfad. Vielleicht ein eigenständiges Modul mit passendem Namen?“ Die Platzhalter im Atlas für die 2. Fremdsprache (auch in anderen Fächern) folgen in einem eigenen PR.
