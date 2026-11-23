@@ -13,6 +13,8 @@ The 68 lessons use German guidance and French examples. Each lesson has a worked
 
 Build and extract the offline ZIP, then open its HTML file or run one of the included launchers. The browser keeps drafts and progress locally. Each path shows its own progress. Seven listening activities support an installed French voice or a partner reading the transcript. Natural speech, regional accents, role-play and pronunciation feedback need additional practice.
 
+For families and teachers, drafts stay in the browser profile on the device. Learners sharing a device account and browser profile can use **Lokalen Fortschritt zurücksetzen** at the end of a session to clear their drafts and progress.
+
 The Academy cell includes 204 cards. Each card links to its lesson. ZAM imports the cell as a single package. The French-sequence codes distinguish its curricula. Package version 0.0 is awaiting teacher review.
 
 ## Verify locally

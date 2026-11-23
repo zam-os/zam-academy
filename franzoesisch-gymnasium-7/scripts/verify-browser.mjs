@@ -386,6 +386,28 @@ try {
 			}
 		}
 	}
+	await route("#lesson=f7-1-chandeleur&level=2");
+	assert.match(
+		await evaluate("document.querySelector('main').innerText"),
+		/fête des mères/,
+	);
+	await screenshot("fetes-level2");
+	await route("#lesson=f7-1-deux-questions&level=1");
+	assert.equal(
+		await evaluate("document.querySelector('[data-goal=\"2\"] .word-piece[lang=fr]').textContent"),
+		"invite Mina ?",
+	);
+	await route("#lesson=f7-2-echange&level=1");
+	assert.ok(await evaluate("document.querySelector('#draft').value.length > 0"));
+	await evaluate("document.querySelector('.draft-storage summary').click()");
+	assert.match(
+		await evaluate("document.querySelector('.draft-storage[open] p').textContent"),
+		/Lokalen Fortschritt zurücksetzen/,
+	);
+	await evaluate("document.querySelector('#reset').click(); document.querySelector('#confirm-reset').click()");
+	await route("#lesson=f7-2-echange&level=1");
+	assert.equal(await evaluate("document.querySelector('#draft').value"), "");
+
 	// The built offline app must not issue any HTTP request.
 	assert.deepEqual(errors, []);
 	assert.deepEqual(
@@ -414,6 +436,8 @@ try {
 					"rubric gate",
 					"reload persistence",
 					"edited-draft invalidation",
+					"festival material and French-only workshop sentence",
+					"shared-profile help and draft reset",
 					"interactive timeline and region map",
 					"map layers",
 					"partner listening",

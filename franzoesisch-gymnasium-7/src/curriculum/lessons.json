@@ -44,7 +44,7 @@
 				"feedback": "M’a plu steht im passé composé."
 			},
 			{
-				"prompt": "« Wir würden gern mitkommen. » Beginne mit On.",
+				"prompt": "« Wir würden gern mit euch mitkommen. » Beginne mit On.",
 				"answers": [
 					"On voudrait venir avec vous."
 				],
@@ -669,16 +669,16 @@
 					"explanation": "Vous wartet. Gesucht ist die Person, auf die ihr wartet."
 				},
 				{
-					"label": "Gesuchte Person handelt",
+					"label": "Wer lädt Mina ein?",
 					"before": "",
-					"after": "invite Mina ? Mina wird eingeladen.",
+					"after": "invite Mina ?",
 					"options": [
 						"Qui est-ce qui",
 						"Qui est-ce que",
 						"Qu’est-ce que"
 					],
 					"answer": "Qui est-ce qui",
-					"explanation": "Mina ist das Objekt; gesucht ist die handelnde Person."
+					"explanation": "Mina wird eingeladen und ist das Objekt. Gesucht ist, wer sie einlädt."
 				}
 			]
 		}
@@ -2241,14 +2241,15 @@
 			"5"
 		],
 		"paragraphs": [
-			"La Chandeleur fällt auf den 2. Februar. Viele Menschen in Frankreich essen an diesem Tag Crêpes. Andere Familien feiern das Datum gar nicht. Am 14. Februar heißt der Valentinstag la Saint-Valentin. Wir vergleichen Gewohnheiten anhand konkreter Erzählungen.",
+			"La Chandeleur fällt auf den 2. Februar. Viele Familien in Frankreich essen an dem Tag Crêpes. Am 14. Februar ist la Saint-Valentin, der Valentinstag. La fête des mères, der Muttertag, findet in Frankreich am letzten Sonntag im Mai statt. Fällt Pfingsten auf diesen Sonntag, wird er am ersten Sonntag im Juni gefeiert.",
 			"Ein Rezept wird übersichtlicher mit d’abord, ensuite und enfin. Lerne Mengen zusammen mit de oder d’: « 250 g de farine », « un demi-litre de lait ». Ein Rezept benutzt häufig den Imperativ: « Ajoutez le lait »."
 		],
-		"material": "Le 2 février, Léa fait des crêpes. D’abord, elle verse la farine dans un bol. Ensuite, elle ajoute les œufs et le lait. Enfin, elle fait cuire la pâte.",
+		"material": "Le 2 février, Léa fait des crêpes. D’abord, elle verse la farine dans un bol. Ensuite, elle ajoute les œufs et le lait. Enfin, elle fait cuire la pâte.\nPour la fête des mères, son frère et elle préparent aussi un gâteau pour leur mère.",
 		"materialLabel": "Beispiel · eigenes Übungsmaterial",
 		"materialLanguage": "fr",
 		"sourceIds": [
-			"lp-f1"
+			"lp-f1",
+			"fete-des-meres"
 		],
 		"quiz": {
 			"optionLanguage": "fr",
@@ -2290,12 +2291,12 @@
 			},
 			"2": {
 				"language": "fr",
-				"prompt": "Schreib einer Freundin auf Französisch über ein erfundenes Beispiel zur Chandeleur und vergleiche es mit einem Fest bei dir.",
-				"model": "Léa fait des crêpes avec son frère le 2 février. Chez nous, on prépare un gâteau pour les anniversaires. Nous aimons aussi cuisiner ensemble.",
+				"prompt": "Léa macht an der Chandeleur und am Muttertag Verschiedenes. Beschreibe auf Französisch, was sie an beiden Tagen macht. Vergleiche eine der Gewohnheiten mit einem eigenen oder erfundenen Beispiel.",
+				"model": "À la Chandeleur, Léa fait des crêpes avec son frère. Pour la fête des mères, ils préparent un gâteau. Chez nous, on prépare aussi un gâteau pour les anniversaires.",
 				"criteria": [
-					"Datum und Crêpes",
-					"Ein konkretes Vergleichsbeispiel",
-					"Persönlicher Bezug"
+					"Crêpes zur Chandeleur",
+					"Kuchen zur fête des mères",
+					"Konkretes eigenes Vergleichsbeispiel"
 				]
 			}
 		},
@@ -2949,7 +2950,7 @@
 				"feedback": "Le refrain kommt mehrfach zwischen Strophen vor."
 			},
 			{
-				"prompt": "Welches Instrument spielen die Freunde? Antworte mit bestimmtem Artikel.",
+				"prompt": "Wie heißt „die Gitarre“ auf Französisch? Nenne den bestimmten Artikel.",
 				"answers": [
 					"la guitare"
 				],
@@ -3293,7 +3294,7 @@
 				"feedback": "M’a plu steht im passé composé."
 			},
 			{
-				"prompt": "« Wir würden gern mitkommen. » Beginne mit On.",
+				"prompt": "« Wir würden gern mit euch mitkommen. » Beginne mit On.",
 				"answers": [
 					"On voudrait venir avec vous."
 				],

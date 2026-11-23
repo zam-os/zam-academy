@@ -207,6 +207,22 @@ describe("answer handling, progress and routes", () => {
 	});
 });
 describe("ZAM content and identifier contracts", () => {
+	it("uses accepted short answers when a card repeats a lesson prompt", () => {
+		let checked = 0;
+		for (const atom of cell.atoms) {
+			const lesson = findLesson(atom.slug)!;
+			for (const item of atom.practice_items) {
+				const practice = lesson.practice.find(({ prompt }) => prompt === item.question);
+				if (!practice) continue;
+				expect(checkPractice([practice], [item.concept]), item.slug).toEqual([true]);
+				expect(item.sample_solution, item.slug).toEqual([
+					{ type: "text", text: item.concept },
+				]);
+				checked++;
+			}
+		}
+		expect(checked).toBe(39);
+	});
 	it("pins identifiers and keeps the proposal free of retirements and replacements", () => {
 		expect(cell.tile_id).toBe(ZAM_CELL_ID);
 		expect(mapping.approved).toBeNull();

@@ -45,6 +45,11 @@
 			"uri": "https://www.education.gouv.fr/le-college-4940",
 			"label": "Ministère de l’Éducation nationale · Le collège",
 			"checked": "2026-11-23"
+		},
+		{
+			"uri": "https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074069/LEGISCTA000006160881/2026-03-28/",
+			"label": "Légifrance · Fête des mères (art. D215-2)",
+			"checked": "2026-11-23"
 		}
 	],
 	"atoms": [
@@ -153,12 +158,12 @@
 					"language": "de",
 					"tier": "tier2_synthesis",
 					"bloom_level": 2,
-					"question": "« Wir würden gern mitkommen. » Beginne mit On.",
-					"concept": "On voudrait leitet den höflich formulierten Wunsch ein.",
+					"question": "« Wir würden gern mit euch mitkommen. » Beginne mit On.",
+					"concept": "On voudrait venir avec vous.",
 					"sample_solution": [
 						{
 							"type": "text",
-							"text": "On voudrait leitet den höflich formulierten Wunsch ein."
+							"text": "On voudrait venir avec vous."
 						}
 					],
 					"id": "01M83HYKH6WFPSVTT32136FY3M",
@@ -379,11 +384,11 @@
 					"tier": "tier2_synthesis",
 					"bloom_level": 2,
 					"question": "Wie heißt « meiner Meinung nach » auf Französisch?",
-					"concept": "Dieser Satzanfang kennzeichnet eine Meinung.",
+					"concept": "à mon avis",
 					"sample_solution": [
 						{
 							"type": "text",
-							"text": "Dieser Satzanfang kennzeichnet eine Meinung."
+							"text": "à mon avis"
 						}
 					],
 					"id": "01M83HYKH6H9V45G0K8Q9XM0XH",
@@ -496,11 +501,11 @@
 					"tier": "tier2_synthesis",
 					"bloom_level": 2,
 					"question": "« Seit heute Morgen » auf Französisch?",
-					"concept": "Depuis leitet einen Zeitpunkt ein, bis zu dem du zurückblickst.",
+					"concept": "depuis ce matin",
 					"sample_solution": [
 						{
 							"type": "text",
-							"text": "Depuis leitet einen Zeitpunkt ein, bis zu dem du zurückblickst."
+							"text": "depuis ce matin"
 						}
 					],
 					"id": "01M83HYKH6181QMJVJC35S2S3Q",
@@ -586,11 +591,11 @@
 					"tier": "tier2_synthesis",
 					"bloom_level": 2,
 					"question": "Wie schreibst du « T’as le billet ? » in Standardsprache mit tu?",
-					"concept": "Tu und as sind zwei Wörter.",
+					"concept": "Tu as le billet ?",
 					"sample_solution": [
 						{
 							"type": "text",
-							"text": "Tu und as sind zwei Wörter."
+							"text": "Tu as le billet ?"
 						}
 					],
 					"id": "01M83HYKH6N6J54ZWAFK907V3A",
@@ -676,11 +681,11 @@
 					"tier": "tier2_synthesis",
 					"bloom_level": 2,
 					"question": "Ergänze « … fait ce bruit ? », wenn eine Sache gemeint ist.",
-					"concept": "Gesucht ist die Sache, die das Geräusch macht.",
+					"concept": "Qu’est-ce qui",
 					"sample_solution": [
 						{
 							"type": "text",
-							"text": "Gesucht ist die Sache, die das Geräusch macht."
+							"text": "Qu’est-ce qui"
 						}
 					],
 					"id": "01M83HYKH60GY87XV1FCCA2M5F",
@@ -757,11 +762,11 @@
 					"tier": "tier2_synthesis",
 					"bloom_level": 2,
 					"question": "« Donne les clés à Mia ! » Ersetze à Mia.",
-					"concept": "Nach dem bejahten Imperativ steht lui mit Bindestrich.",
+					"concept": "Donne-lui les clés !",
 					"sample_solution": [
 						{
 							"type": "text",
-							"text": "Nach dem bejahten Imperativ steht lui mit Bindestrich."
+							"text": "Donne-lui les clés !"
 						}
 					],
 					"id": "01M83HYKH6PHFR5YEZCCKA67CZ",
@@ -838,11 +843,11 @@
 					"tier": "tier2_synthesis",
 					"bloom_level": 2,
 					"question": "Für Nina (« Je reste ici »): « Nina explique qu’… reste ici. »",
-					"concept": "Beim Berichten über Nina wird je zu elle.",
+					"concept": "elle",
 					"sample_solution": [
 						{
 							"type": "text",
-							"text": "Beim Berichten über Nina wird je zu elle."
+							"text": "elle"
 						}
 					],
 					"id": "01M83HYKH6Y0P6VGBAQJ0HKSYQ",
@@ -925,11 +930,11 @@
 					"tier": "tier2_synthesis",
 					"bloom_level": 2,
 					"question": "« Quand est-ce que le film commence ? » Ergänze « Il demande … ».",
-					"concept": "Behalte quand und entferne est-ce que.",
+					"concept": "quand le film commence",
 					"sample_solution": [
 						{
 							"type": "text",
-							"text": "Behalte quand und entferne est-ce que."
+							"text": "quand le film commence"
 						}
 					],
 					"id": "01M83HYKH6MDNA5RJRVD4YHRGQ",
@@ -1006,11 +1011,11 @@
 					"tier": "tier2_synthesis",
 					"bloom_level": 2,
 					"question": "« Il achète deux kilos … oranges. »",
-					"concept": "Nach zwei Kilo steht de, vor oranges verkürzt zu d’.",
+					"concept": "d’",
 					"sample_solution": [
 						{
 							"type": "text",
-							"text": "Nach zwei Kilo steht de, vor oranges verkürzt zu d’."
+							"text": "d’"
 						}
 					],
 					"id": "01M83HYKH6NEZE6G2JZ2EBQB1K",
@@ -1093,11 +1098,11 @@
 					"tier": "tier2_synthesis",
 					"bloom_level": 2,
 					"question": "« J’achète cinq pommes. » Ersetze pommes, behalte die Zahl.",
-					"concept": "En steht vor achète, cinq bleibt nach dem Verb.",
+					"concept": "J’en achète cinq.",
 					"sample_solution": [
 						{
 							"type": "text",
-							"text": "En steht vor achète, cinq bleibt nach dem Verb."
+							"text": "J’en achète cinq."
 						}
 					],
 					"id": "01M83HYKH68R05Q81HHXXAQ78M",
@@ -1183,11 +1188,11 @@
 					"tier": "tier2_synthesis",
 					"bloom_level": 2,
 					"question": "« C’est la place … calme du quartier. » Gesucht ist die ruhigste.",
-					"concept": "Place ist feminin. Der Superlativ lautet la plus calme.",
+					"concept": "la plus",
 					"sample_solution": [
 						{
 							"type": "text",
-							"text": "Place ist feminin. Der Superlativ lautet la plus calme."
+							"text": "la plus"
 						}
 					],
 					"id": "01M83HYKH6QAKRBYYMG1AZSMP8",
@@ -1264,11 +1269,11 @@
 					"tier": "tier2_synthesis",
 					"bloom_level": 2,
 					"question": "« … les billets sont vendus. »",
-					"concept": "Billets ist maskulin im Plural.",
+					"concept": "Tous",
 					"sample_solution": [
 						{
 							"type": "text",
-							"text": "Billets ist maskulin im Plural."
+							"text": "Tous"
 						}
 					],
 					"id": "01M83HYKH68E9Z1QN15VA8E3Z1",
@@ -1354,11 +1359,11 @@
 					"tier": "tier2_synthesis",
 					"bloom_level": 2,
 					"question": "« Ils … rentrer tôt. » Ergänze devoir.",
-					"concept": "Zu ils gehört doivent.",
+					"concept": "doivent",
 					"sample_solution": [
 						{
 							"type": "text",
-							"text": "Zu ils gehört doivent."
+							"text": "doivent"
 						}
 					],
 					"id": "01M83HYKH69G2TX6KYHNFQG4WM",
@@ -1435,11 +1440,11 @@
 					"tier": "tier2_synthesis",
 					"bloom_level": 2,
 					"question": "« Ils … de Lyon. » Ergänze venir.",
-					"concept": "In der ils-Form stehen zwei n.",
+					"concept": "viennent",
 					"sample_solution": [
 						{
 							"type": "text",
-							"text": "In der ils-Form stehen zwei n."
+							"text": "viennent"
 						}
 					],
 					"id": "01M83HYKH66HDJ5RV1D9Z5NSAG",
@@ -1522,11 +1527,11 @@
 					"tier": "tier2_synthesis",
 					"bloom_level": 2,
 					"question": "Fordere eine Person auf, sich vorzubereiten. Verwende préparer und toi.",
-					"concept": "Bei der bejahten Aufforderung folgt toi mit Bindestrich.",
+					"concept": "Prépare-toi !",
 					"sample_solution": [
 						{
 							"type": "text",
-							"text": "Bei der bejahten Aufforderung folgt toi mit Bindestrich."
+							"text": "Prépare-toi !"
 						}
 					],
 					"id": "01M83HYKH6EEDHMF5QRP6DX6WC",
@@ -1690,11 +1695,11 @@
 					"tier": "tier2_synthesis",
 					"bloom_level": 2,
 					"question": "Émile beginnt « Je lisais quand Zoé … » Ergänze appeler mit m’ als einmaliges Ereignis.",
-					"concept": "Der Anruf tritt während des Lesens ein; im Beispielsatz spricht ein Junge.",
+					"concept": "m’a appelé",
 					"sample_solution": [
 						{
 							"type": "text",
-							"text": "Der Anruf tritt während des Lesens ein; im Beispielsatz spricht ein Junge."
+							"text": "m’a appelé"
 						}
 					],
 					"id": "01M83HYKH710DDMAHZ4ATN45Y4",
@@ -1780,11 +1785,11 @@
 					"tier": "tier2_synthesis",
 					"bloom_level": 2,
 					"question": "Wie heißt die erste Stufe am collège mit Artikel?",
-					"concept": "Sie beginnt die Reihenfolge 6e, 5e, 4e, 3e.",
+					"concept": "la sixième",
 					"sample_solution": [
 						{
 							"type": "text",
-							"text": "Sie beginnt die Reihenfolge 6e, 5e, 4e, 3e."
+							"text": "la sixième"
 						}
 					],
 					"id": "01M83HYKH7S67A4H1RF722GA3Q",
@@ -1870,11 +1875,11 @@
 					"tier": "tier2_synthesis",
 					"bloom_level": 2,
 					"question": "« Toulouse est en … »",
-					"concept": "Toulouse liegt in der südlichen Region Occitanie.",
+					"concept": "Occitanie",
 					"sample_solution": [
 						{
 							"type": "text",
-							"text": "Toulouse liegt in der südlichen Region Occitanie."
+							"text": "Occitanie"
 						}
 					],
 					"id": "01M83HYKH7MRJX90ZMNXE2B50J",
@@ -1960,11 +1965,11 @@
 					"tier": "tier2_synthesis",
 					"bloom_level": 2,
 					"question": "« 250 g … farine. »",
-					"concept": "Nach der Mengenangabe folgt de.",
+					"concept": "de",
 					"sample_solution": [
 						{
 							"type": "text",
-							"text": "Nach der Mengenangabe folgt de."
+							"text": "de"
 						}
 					],
 					"id": "01M83HYKH7Q2MX6A8JNFY1WHCQ",
@@ -2041,11 +2046,11 @@
 					"tier": "tier2_synthesis",
 					"bloom_level": 2,
 					"question": "Wie heißt eine einzelne Comicvignette auf Französisch mit Artikel?",
-					"concept": "Eine vignette ist ein Bildfeld auf der Comicseite.",
+					"concept": "une vignette",
 					"sample_solution": [
 						{
 							"type": "text",
-							"text": "Eine vignette ist ein Bildfeld auf der Comicseite."
+							"text": "une vignette"
 						}
 					],
 					"id": "01M83HYKH7X8ES1F1FW71C6RMV",
@@ -2438,11 +2443,11 @@
 					"tier": "tier2_synthesis",
 					"bloom_level": 2,
 					"question": "« Ich war enttäuscht », geschrieben von einer Schülerin.",
-					"concept": "Être bildet j’étais; déçue passt zur Schülerin.",
+					"concept": "J’étais déçue.",
 					"sample_solution": [
 						{
 							"type": "text",
-							"text": "Être bildet j’étais; déçue passt zur Schülerin."
+							"text": "J’étais déçue."
 						}
 					],
 					"id": "01M83HYKH7JMR4D2FPMV886VCJ",
@@ -2554,12 +2559,12 @@
 					"language": "de",
 					"tier": "tier2_synthesis",
 					"bloom_level": 2,
-					"question": "Welches Instrument spielen die Freunde? Antworte mit bestimmtem Artikel.",
-					"concept": "Jouer de la guitare steht in der Strophe.",
+					"question": "Wie heißt „die Gitarre“ auf Französisch? Nenne den bestimmten Artikel.",
+					"concept": "la guitare",
 					"sample_solution": [
 						{
 							"type": "text",
-							"text": "Jouer de la guitare steht in der Strophe."
+							"text": "la guitare"
 						}
 					],
 					"id": "01M83HYKH7BAPE2FHN9MS4P944",
@@ -2867,12 +2872,12 @@
 					"language": "de",
 					"tier": "tier2_synthesis",
 					"bloom_level": 2,
-					"question": "« Wir würden gern mitkommen. » Beginne mit On.",
-					"concept": "On voudrait leitet den höflich formulierten Wunsch ein.",
+					"question": "« Wir würden gern mit euch mitkommen. » Beginne mit On.",
+					"concept": "On voudrait venir avec vous.",
 					"sample_solution": [
 						{
 							"type": "text",
-							"text": "On voudrait leitet den höflich formulierten Wunsch ein."
+							"text": "On voudrait venir avec vous."
 						}
 					],
 					"id": "01M83HYKH7JW3E4FH4AWDEPX41",
@@ -3378,11 +3383,11 @@
 					"tier": "tier2_synthesis",
 					"bloom_level": 2,
 					"question": "Wie schreibst du « T’as le billet ? » in Standardsprache mit tu?",
-					"concept": "Tu und as sind zwei Wörter.",
+					"concept": "Tu as le billet ?",
 					"sample_solution": [
 						{
 							"type": "text",
-							"text": "Tu und as sind zwei Wörter."
+							"text": "Tu as le billet ?"
 						}
 					],
 					"id": "01M83HYKH762HWRRXC4H4GKAYR",
@@ -3477,11 +3482,11 @@
 					"tier": "tier2_synthesis",
 					"bloom_level": 2,
 					"question": "« Donne les clés à Mia ! » Ersetze à Mia.",
-					"concept": "Nach dem bejahten Imperativ steht lui mit Bindestrich.",
+					"concept": "Donne-lui les clés !",
 					"sample_solution": [
 						{
 							"type": "text",
-							"text": "Nach dem bejahten Imperativ steht lui mit Bindestrich."
+							"text": "Donne-lui les clés !"
 						}
 					],
 					"id": "01M83HYKH754BFV9S486SK2KT7",
@@ -3558,11 +3563,11 @@
 					"tier": "tier2_synthesis",
 					"bloom_level": 2,
 					"question": "Für Nina (« Je reste ici »): « Nina explique qu’… reste ici. »",
-					"concept": "Beim Berichten über Nina wird je zu elle.",
+					"concept": "elle",
 					"sample_solution": [
 						{
 							"type": "text",
-							"text": "Beim Berichten über Nina wird je zu elle."
+							"text": "elle"
 						}
 					],
 					"id": "01M83HYKH7HRNDQJWTAFC980KR",
@@ -3645,11 +3650,11 @@
 					"tier": "tier2_synthesis",
 					"bloom_level": 2,
 					"question": "« Quand est-ce que le film commence ? » Ergänze « Il demande … ».",
-					"concept": "Behalte quand und entferne est-ce que.",
+					"concept": "quand le film commence",
 					"sample_solution": [
 						{
 							"type": "text",
-							"text": "Behalte quand und entferne est-ce que."
+							"text": "quand le film commence"
 						}
 					],
 					"id": "01M83HYKH79BYW5Q11QPYD9CSS",
@@ -3735,11 +3740,11 @@
 					"tier": "tier2_synthesis",
 					"bloom_level": 2,
 					"question": "Bilde den Plural von un feu mit des.",
-					"concept": "Feu ist eines der Wörter auf -eu mit -x im Plural.",
+					"concept": "des feux",
 					"sample_solution": [
 						{
 							"type": "text",
-							"text": "Feu ist eines der Wörter auf -eu mit -x im Plural."
+							"text": "des feux"
 						}
 					],
 					"id": "01M83HYKH75N7RNCYK0MY1A999",
@@ -4100,11 +4105,11 @@
 					"tier": "tier2_synthesis",
 					"bloom_level": 2,
 					"question": "« Il achète deux kilos … oranges. »",
-					"concept": "Nach zwei Kilo steht de, vor oranges verkürzt zu d’.",
+					"concept": "d’",
 					"sample_solution": [
 						{
 							"type": "text",
-							"text": "Nach zwei Kilo steht de, vor oranges verkürzt zu d’."
+							"text": "d’"
 						}
 					],
 					"id": "01M83HYKH7E4QFFZ91WS3M05DR",
@@ -4187,11 +4192,11 @@
 					"tier": "tier2_synthesis",
 					"bloom_level": 2,
 					"question": "« J’achète cinq pommes. » Ersetze pommes, behalte die Zahl.",
-					"concept": "En steht vor achète, cinq bleibt nach dem Verb.",
+					"concept": "J’en achète cinq.",
 					"sample_solution": [
 						{
 							"type": "text",
-							"text": "En steht vor achète, cinq bleibt nach dem Verb."
+							"text": "J’en achète cinq."
 						}
 					],
 					"id": "01M83HYKH71EDP071FHA2FC0TP",
@@ -4277,11 +4282,11 @@
 					"tier": "tier2_synthesis",
 					"bloom_level": 2,
 					"question": "« C’est la place … calme du quartier. » Gesucht ist die ruhigste.",
-					"concept": "Place ist feminin. Der Superlativ lautet la plus calme.",
+					"concept": "la plus",
 					"sample_solution": [
 						{
 							"type": "text",
-							"text": "Place ist feminin. Der Superlativ lautet la plus calme."
+							"text": "la plus"
 						}
 					],
 					"id": "01M83HYKH71G2FTM7DHHFMH446",
@@ -4358,11 +4363,11 @@
 					"tier": "tier2_synthesis",
 					"bloom_level": 2,
 					"question": "« … les billets sont vendus. »",
-					"concept": "Billets ist maskulin im Plural.",
+					"concept": "Tous",
 					"sample_solution": [
 						{
 							"type": "text",
-							"text": "Billets ist maskulin im Plural."
+							"text": "Tous"
 						}
 					],
 					"id": "01M83HYKH7N10XT0FHGWA4WQPZ",
@@ -4439,11 +4444,11 @@
 					"tier": "tier2_synthesis",
 					"bloom_level": 2,
 					"question": "« Vous … le dessin. » Ergänze finir.",
-					"concept": "Zu vous gehört hier finiss- plus -ez.",
+					"concept": "finissez",
 					"sample_solution": [
 						{
 							"type": "text",
-							"text": "Zu vous gehört hier finiss- plus -ez."
+							"text": "finissez"
 						}
 					],
 					"id": "01M83HYKH7DFR7AEJF3YD4G8WK",
@@ -4591,11 +4596,11 @@
 					"tier": "tier2_synthesis",
 					"bloom_level": 2,
 					"question": "« Ils … rentrer tôt. » Ergänze devoir.",
-					"concept": "Zu ils gehört doivent.",
+					"concept": "doivent",
 					"sample_solution": [
 						{
 							"type": "text",
-							"text": "Zu ils gehört doivent."
+							"text": "doivent"
 						}
 					],
 					"id": "01M83HYKH7ECCC81QQ9NN671TS",
@@ -4672,11 +4677,11 @@
 					"tier": "tier2_synthesis",
 					"bloom_level": 2,
 					"question": "« Ils … de Lyon. » Ergänze venir.",
-					"concept": "In der ils-Form stehen zwei n.",
+					"concept": "viennent",
 					"sample_solution": [
 						{
 							"type": "text",
-							"text": "In der ils-Form stehen zwei n."
+							"text": "viennent"
 						}
 					],
 					"id": "01M83HYKH7W29E90W8A1KCJEMF",
@@ -5020,11 +5025,11 @@
 					"tier": "tier2_synthesis",
 					"bloom_level": 2,
 					"question": "Fordere eine Person auf, sich vorzubereiten. Verwende préparer und toi.",
-					"concept": "Bei der bejahten Aufforderung folgt toi mit Bindestrich.",
+					"concept": "Prépare-toi !",
 					"sample_solution": [
 						{
 							"type": "text",
-							"text": "Bei der bejahten Aufforderung folgt toi mit Bindestrich."
+							"text": "Prépare-toi !"
 						}
 					],
 					"id": "01M83HYKH7G86XZYDMJQAXPR09",
@@ -5110,11 +5115,11 @@
 					"tier": "tier2_synthesis",
 					"bloom_level": 2,
 					"question": "« Nous … au parc. » Ergänze être im imparfait.",
-					"concept": "Der Stamm ét- bekommt für nous die Endung -ions.",
+					"concept": "étions",
 					"sample_solution": [
 						{
 							"type": "text",
-							"text": "Der Stamm ét- bekommt für nous die Endung -ions."
+							"text": "étions"
 						}
 					],
 					"id": "01M83HYKH7CKWY1C220BSNR4GH",
@@ -5216,11 +5221,11 @@
 					"tier": "tier2_synthesis",
 					"bloom_level": 2,
 					"question": "Émile beginnt « Je lisais quand Zoé … » Ergänze appeler mit m’ als einmaliges Ereignis.",
-					"concept": "Der Anruf tritt während des Lesens ein; im Beispielsatz spricht ein Junge.",
+					"concept": "m’a appelé",
 					"sample_solution": [
 						{
 							"type": "text",
-							"text": "Der Anruf tritt während des Lesens ein; im Beispielsatz spricht ein Junge."
+							"text": "m’a appelé"
 						}
 					],
 					"id": "01M83HYKH7PH43CTZQYFC4HSTW",
@@ -5650,11 +5655,11 @@
 					"tier": "tier2_synthesis",
 					"bloom_level": 2,
 					"question": "Wie heißt eine einzelne Comicvignette auf Französisch mit Artikel?",
-					"concept": "Eine vignette ist ein Bildfeld auf der Comicseite.",
+					"concept": "une vignette",
 					"sample_solution": [
 						{
 							"type": "text",
-							"text": "Eine vignette ist ein Bildfeld auf der Comicseite."
+							"text": "une vignette"
 						}
 					],
 					"id": "01M83HYKH7EAWQE6PND6Q2WX45",
