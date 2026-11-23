@@ -161,6 +161,9 @@ describe("answer handling, progress and routes", () => {
 	it("accepts typography without discarding meaningful accents", () => {
 		expect(normalise(" D’ABORD. ")).toBe("d'abord");
 		expect(normalise("e\u0301cole")).toBe("école");
+		expect(normalise("Tu as le billet ?")).toBe(normalise("Tu as le billet?"));
+		const register = findLesson("f7-1-registre")!;
+		expect(checkPractice([register.practice[1]], ["Tu as le billet"])).toEqual([true]);
 		const l = findLesson("f7-2-accents")!;
 		expect(checkPractice(l.practice, ["a", "à"])).toEqual([true, true]);
 		expect(checkPractice(l.practice, ["à", "a"])).toEqual([false, false]);
@@ -223,9 +226,9 @@ describe("ZAM content and identifier contracts", () => {
 		}
 		expect(checked).toBe(39);
 	});
-	it("pins identifiers and keeps the proposal free of retirements and replacements", () => {
+	it("pins identifiers and keeps the approved mapping free of retirements", () => {
 		expect(cell.tile_id).toBe(ZAM_CELL_ID);
-		expect(mapping.approved).toBeNull();
+		expect(mapping.approved).toBe("2026-11-23");
 		expect(mapping.rows).toHaveLength(8);
 		expect(cell).not.toHaveProperty("retired_items");
 		expect(
@@ -262,7 +265,6 @@ describe("ZAM content and identifier contracts", () => {
 				expect(cell.atoms.some((other) => other.id === d.atom_id)).toBe(true);
 			for (const item of a.practice_items) {
 				expect(item.source_link).toBe(lessonLink(l.id));
-				expect(item).not.toHaveProperty("replaces");
 				expect(item.question.length).toBeGreaterThan(8);
 				expect(item.concept.length).toBeGreaterThan(1);
 				expect(item.question.trim()).toBe(item.question);

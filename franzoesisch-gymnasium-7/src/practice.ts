@@ -20,7 +20,8 @@ export const normalise = (value: string): string =>
 		.trim()
 		.toLocaleLowerCase("fr")
 		.replace(/\s+/g, " ")
-		.replace(/[.!?]+$/, "");
+		.replace(/[.!?]+$/, "")
+		.trimEnd();
 
 export function checkPractice(
 	practice: Practice[],

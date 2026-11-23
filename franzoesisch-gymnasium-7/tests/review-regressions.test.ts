@@ -103,21 +103,26 @@ describe("map meaning survives schematic simplification", () => {
 	});
 });
 
-describe("proposed history transfer", () => {
-	it("accounts for both legacy cells and proposes only one successor", () => {
+describe("approved history transfer", () => {
+	it("accounts for both legacy cells and assigns exactly one successor", () => {
 		expect(mapping.schema).toBe(1);
 		expect(mapping.source_commit).toMatch(/^[0-9a-f]{40}$/);
-		expect(mapping.status).toBe("proposal-only");
-		expect(mapping.approved).toBeNull();
+		expect(mapping.status).toBe("approved");
+		expect(mapping.approved).toBe("2026-11-23");
 		const ids = [...legacy7.atoms, ...legacy8.atoms].flatMap((atom) => atom.practice_items.map((item) => item.id));
 		expect(mapping.rows.map((row) => row.de_by_id).sort()).toEqual(ids.sort());
 		const items = cell.atoms.map((atom) => atom.practice_items).flat();
+		const replacements = items.filter((item) => "replaces" in item);
+		expect(replacements).toHaveLength(1);
 		for (const row of mapping.rows) {
 			expect(row.reason.length).toBeGreaterThan(40);
 			if (row.category === "A") {
-				expect(row.action).toBe("propose-replace-after-approval");
+				expect(row.action).toBe("replace");
+				expect(row.de_by_id).toBe("01K8G8M0000000000000000J01");
+				expect(row.academy_slug).toBe("f7-1-imparfait-check");
 				const successors = items.filter((item) => item.slug === row.academy_slug);
 				expect(successors).toHaveLength(1);
+				expect(successors[0]).toMatchObject({ replaces: [row.de_by_id] });
 				expect(successors[0].concept).toContain("-ais, -ais, -ait, -ions, -iez, -aient");
 			} else {
 				expect(row.action).toBe("keep-active");

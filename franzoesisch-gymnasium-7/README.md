@@ -17,6 +17,8 @@ For families and teachers, drafts stay in the browser profile on the device. Lea
 
 The Academy cell includes 204 cards. Each card links to its lesson. ZAM imports the cell as a single package. The French-sequence codes distinguish its curricula. Package version 0.0 is awaiting teacher review.
 
+The approved migration transfers the existing review history for one Grade 8 imparfait card to its Grade 7 successor.
+
 ## Verify locally
 
 ```sh
@@ -26,6 +28,7 @@ npm test
 npm run package:zip
 node scripts/verify-browser.mjs
 ZAM_CORE=file:///path/to/zam-core/dist/index.js node scripts/validate-cell.mjs
+ZAM_CORE=file:///path/to/zam-core/dist/index.js node scripts/validate-migration.mjs
 ```
 
 Use zam-core 0.54.0 as pinned in CI. Set `CHROME_BIN` if Chrome is outside its default macOS location and `BROWSER_QA_DIR` for the report and screenshots. The dev server uses port 5277.

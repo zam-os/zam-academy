@@ -281,6 +281,8 @@ jobs:
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node franzoesisch-gymnasium-6/scripts/validate-cell.mjs
       - name: Verify franzoesisch-gymnasium-7 cell install and idempotent enrolment
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node franzoesisch-gymnasium-7/scripts/validate-cell.mjs
+      - name: Verify approved franzoesisch-gymnasium-7 history migration
+        run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node franzoesisch-gymnasium-7/scripts/validate-migration.mjs
       - name: Verify approved franzoesisch-gymnasium-6 history migration
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node franzoesisch-gymnasium-6/scripts/validate-migration.mjs
       - name: Verify Grade 7 Realschule French enrolment and recall
