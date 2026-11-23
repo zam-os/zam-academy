@@ -15,6 +15,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | Grade 4 mathematics: 40 Discovery Island lessons with Milo (Bavaria) | [`mathematik-grundschule-4/`](mathematik-grundschule-4/) | https://academy.zam-os.org/mathematik-grundschule-4/ | `zam-academy:mathematik-grundschule-4` |
 | Grade 4 German: Tintos Wörterstadt, 45 lessons on language, spelling, the Grundwortschatz, reading and writing (Bavaria, LehrplanPLUS 2, 3.2/3.3, 4); the app does not rate free texts ([coverage](docs/deutsch-grundschule-4-coverage.md)) | [`deutsch-grundschule-4/`](deutsch-grundschule-4/) | https://academy.zam-os.org/deutsch-grundschule-4/ | `zam-academy:deutsch-grundschule-4` |
 | Grade 4 Heimat- und Sachunterricht: twenty discovery stations with Lotta (Bavaria) | [`hsu-grundschule-4/`](hsu-grundschule-4/) | https://academy.zam-os.org/hsu-grundschule-4/ | `zam-academy:hsu-grundschule-4` |
+| French 7 Gymnasium (Bavaria, first and second foreign language) | [`franzoesisch-gymnasium-7/`](franzoesisch-gymnasium-7/) | Built by Pages on merge | `zam-academy:franzoesisch-gymnasium-7` |
 | French 6 Gymnasium (Bavaria, first and second foreign language) | [`franzoesisch-gymnasium-6/`](franzoesisch-gymnasium-6/) | https://academy.zam-os.org/franzoesisch-gymnasium-6/ | `zam-academy:franzoesisch-gymnasium-6` |
 | French 5 Gymnasium (Bavaria, first foreign language) | [`franzoesisch-gymnasium-5/`](franzoesisch-gymnasium-5/) | https://academy.zam-os.org/franzoesisch-gymnasium-5/ | `zam-academy:franzoesisch-gymnasium-5` |
 | Englisch 5 Mittelschule (LehrplanPLUS Bayern) | [`englisch-mittelschule-5/`](englisch-mittelschule-5/) | https://academy.zam-os.org/englisch-mittelschule-5/ | `zam-academy:englisch-mittelschule-5` |
@@ -198,7 +199,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Natur und Technik 5 Mittelschule: cd nt-mittelschule-5 (dev server on :5243)
 # Natur und Technik 6 Mittelschule: cd nt-mittelschule-6 (dev server on :5250)
 # Grade 7 Natur und Technik: cd nt-mittelschule-7 (dev server on :5264)
-# Wirtschaft und Beruf 7 Mittelschule: cd wirtschaft-mittelschule-7 (dev server on :5277)
+# Wirtschaft und Beruf 7 Mittelschule: cd wirtschaft-mittelschule-7 (dev server on :5278)
 # Mathematik 7 Gymnasium: cd mathematik-gymnasium-7 (dev server on :5242)
 # Geographie 5 Gymnasium: cd geographie-gymnasium-5 (dev server on :5244)
 # English 5 Gymnasium: cd englisch-gymnasium-5 (dev server on :5247)
@@ -215,6 +216,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Geschichte 6 Realschule: cd geschichte-realschule-6 (dev server on :5258)
 # Geschichte 7 Realschule: cd geschichte-realschule-7 (dev server on :5271)
 # Biologie 5 Gymnasium: cd biologie-gymnasium-5 (dev server on :5246)
+# French 7 Gymnasium: cd franzoesisch-gymnasium-7 (dev server on :5277)
 # French 6 Gymnasium: cd franzoesisch-gymnasium-6 (dev server on :5263)
 # French 5 Gymnasium: cd franzoesisch-gymnasium-5 (dev server on :5245)
 # Englisch 5 Mittelschule: cd englisch-mittelschule-5 (dev server on :5248)

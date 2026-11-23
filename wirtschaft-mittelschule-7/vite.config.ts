@@ -7,7 +7,7 @@ export default defineConfig({
   base: "/wirtschaft-mittelschule-7/",
   plugins: [viteSingleFile()],
   server: {
-    port: 5277,
+    port: 5278,
     open: false,
   },
   build: {

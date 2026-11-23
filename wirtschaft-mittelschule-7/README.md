@@ -22,7 +22,7 @@ Die App enthält **30 dreiteilige interaktive SVG-Schaubilder**, **9 live reagie
 
 ```bash
 npm ci
-npm run dev      # http://localhost:5277/wirtschaft-mittelschule-7/
+npm run dev      # http://localhost:5278/wirtschaft-mittelschule-7/
 npm test
 npm run build    # Einzeldatei in dist/index.html
 npm run package:zip
