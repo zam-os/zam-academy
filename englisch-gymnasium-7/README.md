@@ -32,6 +32,7 @@ npm ci
 npm test
 npm run package:zip
 ZAM_CORE=file:///path/to/zam-core/dist/index.js node scripts/validate-cell.mjs
+ZAM_CORE=file:///path/to/zam-core/dist/index.js node scripts/validate-migration.mjs
 node scripts/verify-browser.mjs
 ```
 
@@ -41,4 +42,4 @@ node scripts/verify-browser.mjs
 
 Grade 6 (`englisch-gymnasium-6`) covers the future forms, past progressive, resultative present perfect, adjective comparison, relative clauses, modal substitutes and conditional I; Grade 7 builds on them and repeats them only in contrast. Grade 7 as second foreign language has its own Fachlehrplan and is outside this package. Grade 8 introduces the passive, verbs with two objects, gerund and infinitive, London, the political systems, Canada and the founding of the USA; a test keeps those targets out (Independence Day names the Declaration only as the reason for the holiday).
 
-`replaces-de-by.json` is a **proposal** for `de-by:gymnasium-7-englisch-grammar-present-perfect-modals-conditionals` (`status: "proposal-only"`, `approved: null`): 1 row A (`J01` → `e7-since-for-check`), 0 B and 3 rows C `keep-active` (`J02`, `J03`, `J04`). The cell declares no `replaces` and no `retired_items` until Thomas approves. See [the curriculum and inventory record](../docs/englisch-gymnasium-7-coverage.md).
+`replaces-de-by.json` maps `de-by:gymnasium-7-englisch-grammar-present-perfect-modals-conditionals` (`status: "approved"`, `approved: "2026-11-23"`, Thomas: „Freigabe erteilt“): 1 row A (`J01` replaced by `e7-since-for-check`), 0 B and 3 rows C `keep-active` (`J02`, `J03`, `J04`), with no `retired_items`. `scripts/validate-migration.mjs` checks the transfer in CI. See [the curriculum and inventory record](../docs/englisch-gymnasium-7-coverage.md).

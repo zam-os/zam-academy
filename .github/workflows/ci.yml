@@ -318,6 +318,10 @@ jobs:
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node englisch-gymnasium-6/scripts/validate-cell.mjs
       - name: Check the approved Englisch 6 Gymnasium history migration
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node englisch-gymnasium-6/scripts/validate-migration.mjs
+      - name: Verify Grade 7 Gymnasium English enrolment and recall
+        run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node englisch-gymnasium-7/scripts/validate-cell.mjs
+      - name: Check the approved Englisch 7 Gymnasium history migration
+        run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node englisch-gymnasium-7/scripts/validate-migration.mjs
       - name: Build the catalog (requires explicit mapping approval)
         run: node scripts/build-catalog.mjs "$RUNNER_TEMP/catalog.json"
       - name: Preserve Englisch 10 histories when adding fresh practice cards

@@ -452,12 +452,13 @@ describe("answer handling, progress and routes", () => {
 	});
 });
 
-describe("ZAM content and the proposed history mapping", () => {
-	it("pins identifiers and changes no history without Thomas's approval", () => {
+describe("ZAM content and the approved history mapping", () => {
+	it("pins identifiers and moves only the approved A history", () => {
 		expect(cell.tile_id).toBe(ZAM_CELL_ID);
-		expect(mapping.status).toBe("proposal-only");
-		expect(mapping.approved).toBeNull();
-		expect(JSON.stringify(cell)).not.toMatch(/"retired_items"|"replaces"/);
+		expect(mapping.status).toBe("approved");
+		expect(mapping.approved).toBe("2026-11-23");
+		expect(mapping.source).toContain("Freigabe erteilt");
+		expect(JSON.stringify(cell)).not.toMatch(/"retired_items"/);
 		expect(
 			cell.atoms.map((atom) => ({
 				id: atom.id,
@@ -480,15 +481,20 @@ describe("ZAM content and the proposed history mapping", () => {
 		for (const row of mapping.rows) {
 			expect(legacyItems.some((item) => item.id === row.de_by_id)).toBe(true);
 			expect(row.reason.length).toBeGreaterThan(60);
-			if (row.category === "A" || row.category === "B") {
-				expect(row.action).toBe("propose-replace-after-approval");
-				expect(items.filter((item) => item.slug === row.academy_slug)).toHaveLength(1);
+			if (row.category === "A") {
+				expect(row.action).toBe("replace");
+				const successors = items.filter((item) => item.slug === row.academy_slug);
+				expect(successors).toHaveLength(1);
+				expect((successors[0] as { replaces?: string[] }).replaces).toEqual([
+					row.de_by_id,
+				]);
 			} else {
 				expect(row.category).toBe("C");
-				expect(["keep-active", "propose-retire-after-approval"]).toContain(row.action);
+				expect(row.action).toBe("keep-active");
 				expect(row.academy_slug).toBeNull();
 			}
 		}
+		expect(items.filter((item) => "replaces" in item)).toHaveLength(1);
 		expect(mapping.rows.map((row) => row.category)).toEqual(["A", "C", "C", "C"]);
 	});
 

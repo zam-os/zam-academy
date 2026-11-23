@@ -50,19 +50,19 @@ Keine Lehrervideos (`AGENTS.md` Abschnitt 4).
 ## ZAM-Zelle und Alt-Kartenbestand
 
 - **Zelle:** [`englisch-gymnasium-7/cell.json`](../englisch-gymnasium-7/cell.json), `zam-academy:englisch-gymnasium-7`, Version `2026.11.1`: `44` Atome (eines pro Lektion) und `132` Karten (`44` Tier-1-Karten mit binärem `fast_check`, `88` Tier-2-Karten mit `sample_solution`). Die IDs sind echte ULIDs; Atome und Karten sind in `tests/fixtures/public-contract.json` festgeschrieben.
-- **Vorschlag ohne Freigabe:** [`englisch-gymnasium-7/replaces-de-by.json`](../englisch-gymnasium-7/replaces-de-by.json) hat `"status": "proposal-only"` und `"approved": null`. Die Zelle deklariert weder `replaces` noch `retired_items`; ein `validate-migration.mjs` gibt es deshalb nicht.
+- **Freigegebenes Mapping:** Thomas hat die Zuordnung am 23. November 2026 in der Claude-Code-Sitzung ausdrücklich freigegeben (Wortlaut „Freigabe erteilt“). [`englisch-gymnasium-7/replaces-de-by.json`](../englisch-gymnasium-7/replaces-de-by.json) hat `"status": "approved"` und `"approved": "2026-11-23"`. Der A-Nachfolger `e7-since-for-check` trägt `replaces: ["01K4E7G0000000000000000J01"]`; `retired_items` gibt es nicht. [`validate-migration.mjs`](../englisch-gymnasium-7/scripts/validate-migration.mjs) prüft mit zam-core 0.54.0 in CI, dass der Verlauf unverändert wandert, die drei C-Karten aktiv bleiben, wiederholte Installationen nichts ändern und Karten auf alter und neuer ID die automatische Zusammenführung verweigern.
 - **Inventar:** Quelle `zam-os/zam`, Commit `67e190c2b7e5282851dfdd60ce21b69ed373dfa9`, Schnappschuss [`de-by-gymnasium-7-englisch-grammar-present-perfect-modals-conditionals-kvt.json`](../englisch-gymnasium-7/tests/fixtures/de-by-gymnasium-7-englisch-grammar-present-perfect-modals-conditionals-kvt.json) (SHA-256 der LF-Bytes `2859bd22297ca7c746bc65dcf6344cb3ba3022fd021f611124bf73f694f12bae`, Zellversion `2026.08.1`, `4` Karten `J01`–`J04`).
 
-| Kategorie | Anzahl | Karten | Vorgeschlagene Aktion |
+| Kategorie | Anzahl | Karten | Aktion |
 | --- | --- | --- | --- |
-| A | 1 | `J01` (Wann simple past statt present perfect?) → `e7-since-for-check` | `propose-replace-after-approval` |
+| A | 1 | `J01` (Wann simple past statt present perfect?) → `e7-since-for-check` | `replace` |
 | B | 0 | — | — |
 | C | 3 | `J02` (Sammelabruf present perfect/simple past, since/for, Übersetzungen), `J03` (`had to`), `J04` (Sammelabruf Ersatzformen + Typ I + Typ II) | `keep-active` |
 
 ### Fragen an Thomas
 
-1. **Freigabe der Zuordnung** oben (1 A, 3 C keep-active).
+1. ~~Freigabe der Zuordnung~~ – am 23. November 2026 erteilt.
 2. **`J03` (`had to`)** gehört nach LehrplanPLUS zu Englisch 6. Den gleichen Abruf hat `e6-substitutes-check` in `englisch-gymnasium-6`. Soll die Historie dorthin wandern? Das wäre ein eigener PR an Englisch 6.
-3. **`J01`** ist inhaltlich auch nah an `e6-past-or-perfect-check` (Englisch 6). Vorgeschlagen ist der Nachfolger in Englisch 7, weil die alte Zelle Jahrgang 7 gehört und die neue Karte denselben Abruf wörtlich stellt.
+3. **`J01`** ist inhaltlich auch nah an `e6-past-or-perfect-check` (Englisch 6); freigegeben ist der Nachfolger in Englisch 7, der denselben Abruf wörtlich stellt.
 4. **Nachbarzelle `de-by:gymnasium-8-englisch-past-perfect-passive-indirect-speech-usa`** (gleicher Commit) wurde gelesen, aber nicht übernommen: `J01` (indirekte Rede mit Zeitverschiebung), `J03`/`J04` (US-Geschichte bis zur Bürgerrechtsbewegung) gehören zu Jahrgang 8 oder höher, `J02` bündelt past perfect (Jahrgang 7) mit Passiv und indirekter Rede (Jahrgang 8). Sie bleiben einem späteren Paket Englisch 8 überlassen.
 5. **Englisch 7 als 2. Fremdsprache:** Soll ein eigenes Paket folgen?
