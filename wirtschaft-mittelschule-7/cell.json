@@ -1,0 +1,2317 @@
+{
+  "$schema": "https://zam.app/schemas/v1/kvt-tile.json",
+  "tile_id": "zam-academy:wirtschaft-mittelschule-7",
+  "version": "2026.11.1",
+  "title": "Wirtschaft und Beruf 7 Mittelschule (ZAM Academy)",
+  "description": "Alle sechs Lernbereiche von Wirtschaft und Beruf in Jahrgangsstufe 7 an der bayerischen Mittelschule (Regelklasse R7: 25 Lektionen; M-Zug M7: 30 Lektionen): Marktprojekt und Leittextmethode, Arbeitsplatzmerkmale und Erwerbsarbeit, Berufsorientierung, Geldwert, Haushaltsbuch und Pausenverkauf, Ferienarbeitsrecht (JArbSchG) sowie Haushaltstechnik.",
+  "publisher": "ZAM Academy",
+  "published_at": "2026-11-23T08:00:00Z",
+  "sources": [
+    {
+      "uri": "https://academy.zam-os.org/wirtschaft-mittelschule-7/",
+      "checked": "2026-11-23",
+      "label": "ZAM Academy · Wirtschaft und Beruf 7 Mittelschule"
+    },
+    {
+      "uri": "https://www.lehrplanplus.bayern.de/fachlehrplan/mittelschule/7/wib/regelklasse",
+      "checked": "2026-11-23",
+      "label": "LehrplanPLUS · Wirtschaft und Beruf R7"
+    },
+    {
+      "uri": "https://www.lehrplanplus.bayern.de/fachlehrplan/mittelschule/7/wib/mittlere-reife-klasse",
+      "checked": "2026-11-23",
+      "label": "LehrplanPLUS · Wirtschaft und Beruf M7"
+    },
+    {
+      "uri": "https://www.gesetze-im-internet.de/jarbschg/BJNR009650976.html",
+      "checked": "2026-11-23",
+      "label": "Jugendarbeitsschutzgesetz (JArbSchG)"
+    }
+  ],
+  "atoms": [
+    {
+      "id": "01M83JX3QHG6ZZKZNENTR2TS1P",
+      "atom_uri": "urn:zam:atom:01M83JX3QHG6ZZKZNENTR2TS1P",
+      "namespace": "zam-academy-wirtschaft-mittelschule-7",
+      "slug": "wib7-pr-vollstaendige-handlung",
+      "title": "Marktprojekt als vollständige Handlung",
+      "domain": "wib/projekt",
+      "reduction": "formal",
+      "typical_age_min": 12.5,
+      "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=pr-vollstaendige-handlung",
+      "prerequisites": [],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-mittelschule-7",
+          "topic_code": "lb1",
+          "topic_title": "Projekt"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "track": "R",
+          "subject": "wib",
+          "topic_code": "lb1",
+          "topic_title": "Projekt",
+          "exam_relevant": false
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "track": "M",
+          "subject": "wib",
+          "topic_code": "lb1",
+          "topic_title": "Projekt",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M83JX3RF349E7MSW7GB8Y56N",
+          "slug": "wib7-pr-vollstaendige-handlung-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Welche fünf Phasen bilden im Fach Wirtschaft und Beruf eine vollständige Handlung?",
+          "concept": "Projektinitiative, Projektplanung, Projektdurchführung, Projektpräsentation und Projektreflexion.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=pr-vollstaendige-handlung",
+          "materiality": "material",
+          "sample_solution": "Ein Projekt beginnt mit der Projektinitiative, erstellt vorab eine Projektplanung, setzt diese in der Durchführung um, zeigt Ergebnisse in der Präsentation und wertet sie in der Reflexion aus.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Projektinitiative, Projektplanung, Projektdurchführung, Projektpräsentation und Projektreflexion.",
+              "Sofortiger Einkauf, Auspacken, Verkauf ohne Planung, Feier und schnelles Aufräumen."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M83JX3RG0960TDMZ8FAK253S",
+          "slug": "wib7-pr-vollstaendige-handlung-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Warum braucht ein Schulmarktprojekt am Anfang eine Planung und am Ende eine Reflexion?",
+          "concept": "Die Planung sichert Aufgaben, Zeit und Budget vor dem Start; die Reflexion prüft Plan gegen Ist und hält Verbesserungen fest.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=pr-vollstaendige-handlung",
+          "materiality": "material",
+          "sample_solution": "Ohne vorherige Planung entstehen schnell Fehlkäufe, fehlendes Wechselgeld oder unklare Zuständigkeiten. Die abschließende Reflexion vergleicht geplante Zahlen und Zusammenarbeit mit dem echten Ablauf für das nächste Vorhaben."
+        }
+      ]
+    },
+    {
+      "id": "01M83JX3QJ2PGWQTZYT44GMTWD",
+      "atom_uri": "urn:zam:atom:01M83JX3QJ2PGWQTZYT44GMTWD",
+      "namespace": "zam-academy-wirtschaft-mittelschule-7",
+      "slug": "wib7-pr-leittextmethode",
+      "title": "Die Leittextmethode Schritt für Schritt",
+      "domain": "wib/projekt",
+      "reduction": "formal",
+      "typical_age_min": 12.5,
+      "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=pr-leittextmethode",
+      "prerequisites": [
+        {
+          "atom_id": "01M83JX3QHG6ZZKZNENTR2TS1P",
+          "type": "hard",
+          "rationale": "Die Leittextmethode steuert die praktische Arbeit innerhalb der Projektphasen."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-mittelschule-7",
+          "topic_code": "lb1",
+          "topic_title": "Projekt"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "track": "R",
+          "subject": "wib",
+          "topic_code": "lb1",
+          "topic_title": "Projekt",
+          "exam_relevant": false
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "track": "M",
+          "subject": "wib",
+          "topic_code": "lb1",
+          "topic_title": "Projekt",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M83JX3RH5QZM7STD1VH7KCYQ",
+          "slug": "wib7-pr-leittextmethode-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "In welcher Reihenfolge folgen die sechs Arbeitsschritte der Leittextmethode aufeinander?",
+          "concept": "Informieren, Planen, Entscheiden, Ausführen, Kontrollieren und Bewerten.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=pr-leittextmethode",
+          "materiality": "material",
+          "sample_solution": "Erst Informationen mit Leitfragen beschaffen, dann planen, bewusst entscheiden, ausführen, gegen Vorgaben kontrollieren und das Ergebnis gemeinsam bewerten.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Informieren, Planen, Entscheiden, Ausführen, Kontrollieren und Bewerten.",
+              "Ausführen, Raten, Bewerten, Informieren und zuletzt Planen."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M83JX3RJXY1KGAY6ZWQG7VW4",
+          "slug": "wib7-pr-leittextmethode-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Worin unterscheiden sich der Schritt Kontrollieren und der Schritt Bewerten bei der Leittextmethode?",
+          "concept": "Kontrollieren prüft konkrete Vorgaben und Zahlen per Checkliste; Bewerten reflektiert das Gesamtergebnis und schlägt Verbesserungen vor.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=pr-leittextmethode",
+          "materiality": "material",
+          "sample_solution": "Beim Kontrollieren hakt das Team messbare Soll-Werte wie Preisschilder, Stückzahl oder Kassenstand ab. Beim anschließenden Bewerten besprechen Team und Lehrkraft, warum etwas gut lief oder hakte."
+        }
+      ]
+    },
+    {
+      "id": "01M83JX3QKQP4K23DJ2EXWKP0A",
+      "atom_uri": "urn:zam:atom:01M83JX3QKQP4K23DJ2EXWKP0A",
+      "namespace": "zam-academy-wirtschaft-mittelschule-7",
+      "slug": "wib7-pr-marktprojekt-umsetzen",
+      "title": "Marktprojekt kalkulieren und steuern",
+      "domain": "wib/projekt",
+      "reduction": "formal",
+      "typical_age_min": 12.5,
+      "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=pr-marktprojekt-umsetzen",
+      "prerequisites": [
+        {
+          "atom_id": "01M83JX3QHG6ZZKZNENTR2TS1P",
+          "type": "hard",
+          "rationale": "Die Budgetrechnung gehört zur Projektplanung und Reflexion."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-mittelschule-7",
+          "topic_code": "lb1",
+          "topic_title": "Projekt"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "track": "R",
+          "subject": "wib",
+          "topic_code": "lb1",
+          "topic_title": "Projekt",
+          "exam_relevant": false
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "track": "M",
+          "subject": "wib",
+          "topic_code": "lb1",
+          "topic_title": "Projekt",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M83JX3RKS2ZF4EKP5A6950KX",
+          "slug": "wib7-pr-marktprojekt-umsetzen-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 2,
+          "question": "Ein Pausenmarkt hat 24,00 € Fixkosten, 0,80 € Stückkosten und einen Verkaufspreis von 1,60 €. Ab welcher Menge sind die Fixkosten gedeckt?",
+          "concept": "Ab 30 verkauften Stück, denn 24,00 € geteilt durch 0,80 € Stückbeitrag ergibt 30.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=pr-marktprojekt-umsetzen",
+          "materiality": "material",
+          "sample_solution": "Pro Stück bleiben 1,60 € − 0,80 € = 0,80 € Beitrag für die Fixkosten übrig. 24,00 € / 0,80 € = 30 verkaufte Stück.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Ab 30 verkauften Stück, denn 24,00 € geteilt durch 0,80 € Stückbeitrag ergibt 30.",
+              "Ab 15 verkauften Stück, denn 24,00 € geteilt durch 1,60 € ergibt 15."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M83JX3RMHB95QWYH3V9ZN7GP",
+          "slug": "wib7-pr-marktprojekt-umsetzen-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Wodurch unterscheiden sich feste Projektkosten von veränderlichen Stückkosten bei einem Schulstand?",
+          "concept": "Feste Kosten wie Plakate bleiben unabhängig von der Stückzahl gleich; veränderliche Kosten fallen für jede hergestellte Portion neu an.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=pr-marktprojekt-umsetzen",
+          "materiality": "material",
+          "sample_solution": "Werbeplakate oder eine Standgebühr zahlt man genau einmal (Fixkosten), während Zutaten, Becher oder Servietten mit jedem zusätzlichen verkauften Stück steigen (veränderliche Kosten)."
+        }
+      ]
+    },
+    {
+      "id": "01M83JX3QMCD7D1HBK1S019K6P",
+      "atom_uri": "urn:zam:atom:01M83JX3QMCD7D1HBK1S019K6P",
+      "namespace": "zam-academy-wirtschaft-mittelschule-7",
+      "slug": "wib7-pr-leittext-selbstaendig",
+      "title": "Leittextmethode weitgehend selbständig steuern",
+      "domain": "wib/projekt",
+      "reduction": "formal",
+      "typical_age_min": 12.5,
+      "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=pr-leittext-selbstaendig",
+      "prerequisites": [
+        {
+          "atom_id": "01M83JX3QJ2PGWQTZYT44GMTWD",
+          "type": "hard",
+          "rationale": "Die M7-Vertiefung baut auf den sechs Grundschritten der Leittextmethode auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-mittelschule-7",
+          "topic_code": "lb1",
+          "topic_title": "Projekt"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "track": "M",
+          "subject": "wib",
+          "topic_code": "lb1",
+          "topic_title": "Projekt",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M83JX3RNMB164AZX7TT9QGT5",
+          "slug": "wib7-pr-leittext-selbstaendig-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 2,
+          "question": "Woran zeigt sich weitgehend selbständiges Arbeiten nach der Leittextmethode?",
+          "concept": "Das Team legt eigene Leitfragen und Messkriterien fest, prüft Zwischenstände selbst und steuert bei Verzug frühzeitig um.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=pr-leittext-selbstaendig",
+          "materiality": "material",
+          "sample_solution": "Statt bei jedem Hindernis auf Lehreranweisungen zu warten, erkennt die Gruppe Abweichungen von Zeit- oder Kostenlimits in Zwischenkontrollen selbst und verteilt Aufgaben gezielt neu.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Das Team legt eigene Leitfragen und Messkriterien fest, prüft Zwischenstände selbst und steuert bei Verzug frühzeitig um.",
+              "Das Team arbeitet ohne Zeitplan los und fragt erst nach Ende des Verkaufs, ob die Kasse stimmt."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M83JX3RP2NQPPFDKXVV8PCSE",
+          "slug": "wib7-pr-leittext-selbstaendig-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "question": "Wie reagiert eine eigenständige Projektgruppe sinnvoll, wenn eine Teilaufgabe schon deutlich länger dauert als geplant?",
+          "concept": "Sie ermittelt den Ist-Stand, prüft Ausweichoptionen aus dem Plan, verteilt freie Kräfte um und schützt die Kernqualität.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=pr-leittext-selbstaendig",
+          "materiality": "material",
+          "sample_solution": "Durch eine kurze Zwischenkontrolle wird der Engpass sichtbar. Daraufhin entscheidet das Team gemeinsam, welche fertigen Mitglieder unterstützen oder welche unnötige Dekoration entfällt, damit Termin und Produktqualität gesichert bleiben."
+        }
+      ]
+    },
+    {
+      "id": "01M83JX3QNN4Q5M9NCSSBTM2A4",
+      "atom_uri": "urn:zam:atom:01M83JX3QNN4Q5M9NCSSBTM2A4",
+      "namespace": "zam-academy-wirtschaft-mittelschule-7",
+      "slug": "wib7-ar-arbeitsplatzmerkmale",
+      "title": "Arbeitsplätze nach sechs Merkmalen untersuchen",
+      "domain": "wib/arbeit",
+      "reduction": "formal",
+      "typical_age_min": 12.5,
+      "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=ar-arbeitsplatzmerkmale",
+      "prerequisites": [],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-mittelschule-7",
+          "topic_code": "lb2",
+          "topic_title": "Arbeit"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "track": "R",
+          "subject": "wib",
+          "topic_code": "lb2",
+          "topic_title": "Arbeit",
+          "exam_relevant": false
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "track": "M",
+          "subject": "wib",
+          "topic_code": "lb2",
+          "topic_title": "Arbeit",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M83JX3RQRW2YPVM4RJKFF8HK",
+          "slug": "wib7-ar-arbeitsplatzmerkmale-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Welche sechs Arbeitsplatzmerkmale erschließen jeden betrieblichen Arbeitsplatz vollständig?",
+          "concept": "Arbeitsaufgabe, Arbeitsmittel, Arbeitsort, Arbeitszeit, Arbeitsdauer und Arbeitsbedingungen.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=ar-arbeitsplatzmerkmale",
+          "materiality": "material",
+          "sample_solution": "Die sechs Merkmale beschreiben Was (Aufgabe), Womit (Mittel), Wo (Ort), Wann (Zeit), Wie lange (Dauer) und unter welchen Einflüssen (Ergonomie, Licht, Lärm, Schutz) gearbeitet wird.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Arbeitsaufgabe, Arbeitsmittel, Arbeitsort, Arbeitszeit, Arbeitsdauer und Arbeitsbedingungen.",
+              "Firmenlogo, Wandfarbe, Parkplatzgröße, Pausensnack und Postleitzahl."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M83JX3RRSYEFQDRARGPDEXM5",
+          "slug": "wib7-ar-arbeitsplatzmerkmale-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Worin unterscheiden sich Arbeitszeit und Arbeitsdauer bei der Analyse eines Arbeitsplatzes?",
+          "concept": "Arbeitszeit bezeichnet die zeitliche Lage am Tag oder in Schichten; Arbeitsdauer nennt die reine Länge der täglichen oder wöchentlichen Arbeit.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=ar-arbeitsplatzmerkmale",
+          "materiality": "material",
+          "sample_solution": "Eine Bäckerin und ein Büroangestellter haben oft beide 8 Stunden Arbeitsdauer pro Tag, unterscheiden sich aber stark bei der Arbeitszeit (3:00–11:30 Uhr gegenüber 8:30–17:00 Uhr)."
+        }
+      ]
+    },
+    {
+      "id": "01M83JX3QPCK0PETYXY7XY8H9W",
+      "atom_uri": "urn:zam:atom:01M83JX3QPCK0PETYXY7XY8H9W",
+      "namespace": "zam-academy-wirtschaft-mittelschule-7",
+      "slug": "wib7-ar-zugangserkundung-ausbildung",
+      "title": "Zugangserkundung mit Schwerpunkt Berufsausbildung",
+      "domain": "wib/arbeit",
+      "reduction": "formal",
+      "typical_age_min": 12.5,
+      "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=ar-zugangserkundung-ausbildung",
+      "prerequisites": [
+        {
+          "atom_id": "01M83JX3QNN4Q5M9NCSSBTM2A4",
+          "type": "hard",
+          "rationale": "Bei der Zugangserkundung werden Arbeitsplatzmerkmale direkt auf die Ausbildung im Betrieb bezogen."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-mittelschule-7",
+          "topic_code": "lb2",
+          "topic_title": "Arbeit"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "track": "R",
+          "subject": "wib",
+          "topic_code": "lb2",
+          "topic_title": "Arbeit",
+          "exam_relevant": false
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "track": "M",
+          "subject": "wib",
+          "topic_code": "lb2",
+          "topic_title": "Arbeit",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M83JX3RSP4SAKCQW73C27MJZ",
+          "slug": "wib7-ar-zugangserkundung-ausbildung-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Welche beiden Lernorte prägen eine duale Berufsausbildung nach § 2 BBiG?",
+          "concept": "Ausbildungsbetrieb für die praktische Arbeit und Berufsschule für Fachtheorie sowie Allgemeinbildung.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=ar-zugangserkundung-ausbildung",
+          "materiality": "material",
+          "sample_solution": "In der dualen Ausbildung arbeiten Auszubildende etwa 3 bis 4 Tage pro Woche im Betrieb und besuchen 1 bis 2 Tage (oder im Block) die Berufsschule.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Ausbildungsbetrieb für die praktische Arbeit und Berufsschule für Fachtheorie sowie Allgemeinbildung.",
+              "Nur das heimische Kinderzimmer und eine kostenpflichtige Ferienakademie."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M83JX3RTJWWH8FHM2C9KZPTT",
+          "slug": "wib7-ar-zugangserkundung-ausbildung-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Welche Fragen richtest du bei einer Zugangserkundung gezielt zum Schwerpunkt Berufsausbildung?",
+          "concept": "Fragen nach Voraussetzungen, typischen Aufgaben im 1. Lehrjahr, Berufsschulorganisation, Vergütung und Übernahmechancen.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=ar-zugangserkundung-ausbildung",
+          "materiality": "material",
+          "sample_solution": "Durch Gespräche mit Azubis und Ausbildern vor Ort erfährt man ungeschönt, was von Bewerbern erwartet wird, wie der Wechsel zwischen Betrieb und Berufsschule abläuft und wie sich der Berufsalltag anfühlt."
+        }
+      ]
+    },
+    {
+      "id": "01M83JX3QQGT32BTHPXSSZ113Q",
+      "atom_uri": "urn:zam:atom:01M83JX3QQGT32BTHPXSSZ113Q",
+      "namespace": "zam-academy-wirtschaft-mittelschule-7",
+      "slug": "wib7-ar-kategorien-erwerbsarbeit",
+      "title": "Formen und Kategorien von Erwerbsarbeit",
+      "domain": "wib/arbeit",
+      "reduction": "formal",
+      "typical_age_min": 12.5,
+      "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=ar-kategorien-erwerbsarbeit",
+      "prerequisites": [],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-mittelschule-7",
+          "topic_code": "lb2",
+          "topic_title": "Arbeit"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "track": "R",
+          "subject": "wib",
+          "topic_code": "lb2",
+          "topic_title": "Arbeit",
+          "exam_relevant": false
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "track": "M",
+          "subject": "wib",
+          "topic_code": "lb2",
+          "topic_title": "Arbeit",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M83JX3RVS8H9MX0GV9S8J0R5",
+          "slug": "wib7-ar-kategorien-erwerbsarbeit-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Was unterscheidet eine gelernte Tätigkeit von einer angelernten Tätigkeit?",
+          "concept": "Gelernte Arbeit setzt eine geregelte mehrjährige Berufsausbildung mit Abschlussprüfung voraus; angelernte beginnt nach kurzer Einweisung.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=ar-kategorien-erwerbsarbeit",
+          "materiality": "material",
+          "sample_solution": "Gelernte Fachkräfte durchlaufen meist zwei bis dreieinhalb Jahre Berufsausbildung (z. B. Pflegefachkraft, Mechatroniker), während angelernte Kräfte nach Tagen oder Wochen betrieblicher Einarbeitung Routineaufgaben übernehmen.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Gelernte Arbeit setzt eine geregelte mehrjährige Berufsausbildung mit Abschlussprüfung voraus; angelernte beginnt nach kurzer Einweisung.",
+              "Gelernte Arbeit findet nur am Computer statt, angelernte Arbeit nur nachts."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M83JX3RW181PV8EGBBSG3ZDA",
+          "slug": "wib7-ar-kategorien-erwerbsarbeit-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Warum greift eine strenge Trennung in rein körperliche und rein geistige Berufe im modernen Arbeitsleben oft zu kurz?",
+          "concept": "Fast jeder qualifizierte Beruf verbindet heute körperliches Handeln (z. B. Montage oder Pflege) mit geistigem Planen, Prüfen und Dokumentieren.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=ar-kategorien-erwerbsarbeit",
+          "materiality": "material",
+          "sample_solution": "Auch eine Mechatronikerin oder Friseurin misst, rechnet, liest digitale Pläne, berät Kundinnen und plant Arbeitsschritte — körperliche und geistige Anforderungen ergänzen einander."
+        }
+      ]
+    },
+    {
+      "id": "01M83JX3QRKWQ8WC14XW1JHBQ5",
+      "atom_uri": "urn:zam:atom:01M83JX3QRKWQ8WC14XW1JHBQ5",
+      "namespace": "zam-academy-wirtschaft-mittelschule-7",
+      "slug": "wib7-ar-ordnungssystematiken-berufe",
+      "title": "Ordnungssystematiken für Berufe entwickeln",
+      "domain": "wib/arbeit",
+      "reduction": "formal",
+      "typical_age_min": 12.5,
+      "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=ar-ordnungssystematiken-berufe",
+      "prerequisites": [
+        {
+          "atom_id": "01M83JX3QQGT32BTHPXSSZ113Q",
+          "type": "hard",
+          "rationale": "Ordnungssystematiken verallgemeinern die Einteilung verschiedener Arbeitskategorien."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-mittelschule-7",
+          "topic_code": "lb2",
+          "topic_title": "Arbeit"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "track": "R",
+          "subject": "wib",
+          "topic_code": "lb2",
+          "topic_title": "Arbeit",
+          "exam_relevant": false
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "track": "M",
+          "subject": "wib",
+          "topic_code": "lb2",
+          "topic_title": "Arbeit",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M83JX3RXGTSJEEVEFZMA02Z5",
+          "slug": "wib7-ar-ordnungssystematiken-berufe-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Was macht eine selbst formulierte Ordnungssystematik für Berufe logisch brauchbar?",
+          "concept": "Sie wählt ein eindeutiges Merkmal (z. B. Arbeitsort oder Maschineneinsatz), sodass jeder Beruf klar einer Gruppe zugeordnet werden kann.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=ar-ordnungssystematiken-berufe",
+          "materiality": "material",
+          "sample_solution": "Erst trennscharfe Kriterien wie im Freien vs. geschlossene Räume oder viel Maschinenarbeit vs. viel Menschenkontakt ordnen Berufe übersichtlich.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Sie wählt ein eindeutiges Merkmal (z. B. Arbeitsort oder Maschineneinsatz), sodass jeder Beruf klar einer Gruppe zugeordnet werden kann.",
+              "Sie würfelt Berufe zufällig in beliebig viele unbenannte Gruppen ohne Merkmal."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M83JX3RYC0D9KRH83473Y9DS",
+          "slug": "wib7-ar-ordnungssystematiken-berufe-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Warum hilft es bei der Berufswahl, mehrere Ordnungssystematiken nacheinander anzuwenden?",
+          "concept": "Jede Systematik beleuchtet nur einen Aspekt (z. B. Ort); erst die Kombination (Ort plus Technik- oder Menschenkontakt) grenzt Berufe passend ein.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=ar-ordnungssystematiken-berufe",
+          "materiality": "material",
+          "sample_solution": "Innerhalb der Gruppe ‚geschlossene Räume‘ liegen völlig verschiedene Welten wie CNC-Fertigung, Büro und Krankenhaus. Eine zweite Systematik trennt diese gezielt nach deinen Interessen."
+        }
+      ]
+    },
+    {
+      "id": "01M83JX3QS6FDQX9N5V3H8Q4VW",
+      "atom_uri": "urn:zam:atom:01M83JX3QS6FDQX9N5V3H8Q4VW",
+      "namespace": "zam-academy-wirtschaft-mittelschule-7",
+      "slug": "wib7-ar-abhaengig-selbstaendig",
+      "title": "Abhängige Beschäftigung und unternehmerische Selbständigkeit",
+      "domain": "wib/arbeit",
+      "reduction": "formal",
+      "typical_age_min": 12.5,
+      "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=ar-abhaengig-selbstaendig",
+      "prerequisites": [],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-mittelschule-7",
+          "topic_code": "lb2",
+          "topic_title": "Arbeit"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "track": "R",
+          "subject": "wib",
+          "topic_code": "lb2",
+          "topic_title": "Arbeit",
+          "exam_relevant": false
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "track": "M",
+          "subject": "wib",
+          "topic_code": "lb2",
+          "topic_title": "Arbeit",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M83JX3RZWYVJVSTADSSZHMYQ",
+          "slug": "wib7-ar-abhaengig-selbstaendig-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Welche Rechte und Pflichten kennzeichnen eine abhängige Beschäftigung nach § 611a BGB?",
+          "concept": "Weisungsbindung zu Zeit, Ort und Aufgabe bei regelmäßigem Lohn, bezahltem Urlaub und Lohnfortzahlung im Krankheitsfall.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=ar-abhaengig-selbstaendig",
+          "materiality": "material",
+          "sample_solution": "Angestellte und Facharbeiter schließen einen Arbeitsvertrag, richten sich nach dem Dienstplan und erhalten dafür monatlich ein vereinbartes Einkommen samt sozialem Schutz.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Weisungsbindung zu Zeit, Ort und Aufgabe bei regelmäßigem Lohn, bezahltem Urlaub und Lohnfortzahlung im Krankheitsfall.",
+              "Völlige Freiheit bei Ladenpreisen und Haftung mit dem Privatvermögen für alle Firmenschulden."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M83JX3S0JFTKEWF5GSJQRPHF",
+          "slug": "wib7-ar-abhaengig-selbstaendig-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Warum entspricht der Stundensatz eines selbständigen Handwerkers nicht seinem persönlichen Nettostundenlohn?",
+          "concept": "Vom Umsatz gehen Material, Werkstattmiete, Werkzeug, Versicherungen, Steuern sowie unbezahlte Büro- und Fahrzeiten ab.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=ar-abhaengig-selbstaendig",
+          "materiality": "material",
+          "sample_solution": "Ein Selbständiger (§ 84 HGB) trägt alle laufenden Betriebskosten, Rücklagen für Krankheit und Urlaub sowie das Ausfallrisiko fehlender Aufträge selbst."
+        }
+      ]
+    },
+    {
+      "id": "01M83JX3QTFB5H1JCXV2F3JBBT",
+      "atom_uri": "urn:zam:atom:01M83JX3QTFB5H1JCXV2F3JBBT",
+      "namespace": "zam-academy-wirtschaft-mittelschule-7",
+      "slug": "wib7-ar-planspiel-selbstaendigkeit",
+      "title": "Planspiel: In der Rolle einer Selbständigen",
+      "domain": "wib/arbeit",
+      "reduction": "formal",
+      "typical_age_min": 12.5,
+      "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=ar-planspiel-selbstaendigkeit",
+      "prerequisites": [
+        {
+          "atom_id": "01M83JX3QS6FDQX9N5V3H8Q4VW",
+          "type": "hard",
+          "rationale": "Das Planspiel vertieft die Bedingungen unternehmerischer Selbständigkeit in der M-Klasse."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-mittelschule-7",
+          "topic_code": "lb2",
+          "topic_title": "Arbeit"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "track": "M",
+          "subject": "wib",
+          "topic_code": "lb2",
+          "topic_title": "Arbeit",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M83JX3S1BPKKR65ES358A5DQ",
+          "slug": "wib7-ar-planspiel-selbstaendigkeit-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 2,
+          "question": "Wie berechnet eine Selbständige im Planspiel ihr monatliches Betriebsergebnis vor Steuern?",
+          "concept": "Umsatz minus Materialkosten minus laufende feste Monatskosten.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=ar-planspiel-selbstaendigkeit",
+          "materiality": "material",
+          "sample_solution": "Erst wenn vom Umsatz (Stunden · Stundensatz) der Materialeinsatz und alle Fixkosten wie Miete, Fahrzeug und Versicherung abgezogen sind, bleibt der Gewinn vor Steuern und privater Vorsorge.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Umsatz minus Materialkosten minus laufende feste Monatskosten.",
+              "Verrechnete Auftragsstunden geteilt durch den monatlichen Mietpreis."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M83JX3S24VJGA5KH88ASK962",
+          "slug": "wib7-ar-planspiel-selbstaendigkeit-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "question": "Warum gefährden zu hohe feste Monatskosten zu Beginn einer Selbständigkeit die Existenz des Betriebs?",
+          "concept": "Fixkosten laufen auch in auftragsschwachen Monaten unvermindert weiter und führen ohne Rücklagen schnell zu Verlusten.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=ar-planspiel-selbstaendigkeit",
+          "materiality": "material",
+          "sample_solution": "Bleiben Kundenaufträge im ersten Halbjahr aus, müssen Miete, Leasingraten und Versicherungen trotzdem gezahlt werden — deshalb sichern niedrige Fixkosten und Liquiditätsreserven die Startphase."
+        }
+      ]
+    },
+    {
+      "id": "01M83JX3QVF5JD1P53M8ACR4D7",
+      "atom_uri": "urn:zam:atom:01M83JX3QVF5JD1P53M8ACR4D7",
+      "namespace": "zam-academy-wirtschaft-mittelschule-7",
+      "slug": "wib7-bo-berufswahlportfolio",
+      "title": "Das Berufswahlportfolio systematisch führen",
+      "domain": "wib/berufsorientierung",
+      "reduction": "formal",
+      "typical_age_min": 12.5,
+      "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=bo-berufswahlportfolio",
+      "prerequisites": [],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-mittelschule-7",
+          "topic_code": "lb3",
+          "topic_title": "Berufsorientierung"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "track": "R",
+          "subject": "wib",
+          "topic_code": "lb3",
+          "topic_title": "Berufsorientierung",
+          "exam_relevant": false
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "track": "M",
+          "subject": "wib",
+          "topic_code": "lb3",
+          "topic_title": "Berufsorientierung",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M83JX3S33S2EFNAK4WYR0NBK",
+          "slug": "wib7-bo-berufswahlportfolio-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Wozu dient ein systematisch und aktuell geführtes Berufswahlportfolio ab Klasse 7?",
+          "concept": "Es sammelt geordnet Stärkenprofile, Erkundungsberichte, Beratungsnotizen und Zertifikate für spätere Berufsentscheidungen.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=bo-berufswahlportfolio",
+          "materiality": "material",
+          "sample_solution": "Im Berufswahlportfolio (z. B. Berufswahlpass) bleiben alle eigenen Entwicklungsschritte und Praxiserfahrungen zwischen Klasse 7 und Abschlussprüfung geordnet griffbereit.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Es sammelt geordnet Stärkenprofile, Erkundungsberichte, Beratungsnotizen und Zertifikate für spätere Berufsentscheidungen.",
+              "Es ersetzt vollständig die Teilnahme an Betriebserkundungen und Bewerbungsgesprächen."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M83JX3S4CS3GWD1Q97K68YQC",
+          "slug": "wib7-bo-berufswahlportfolio-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Warum lohnt es sich, auch Berichte über später verworfene Berufe im Berufswahlportfolio aufzubewahren?",
+          "concept": "Sie zeigen verlässliche Ausschlussgründe (z. B. ungünstige Arbeitsbedingungen) und schärfen dadurch die Suche nach passenden Praktika.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=bo-berufswahlportfolio",
+          "materiality": "material",
+          "sample_solution": "Auch wenn ein Beruf von Klasse 7 später nicht mehr Wunschziel ist, belegen die Beobachtungsnotizen genau, welche Tätigkeiten oder Umgebungen dir nicht liegen."
+        }
+      ]
+    },
+    {
+      "id": "01M83JX3QWHK0CCZ3X6EYGNB0M",
+      "atom_uri": "urn:zam:atom:01M83JX3QWHK0CCZ3X6EYGNB0M",
+      "namespace": "zam-academy-wirtschaft-mittelschule-7",
+      "slug": "wib7-bo-berufsberatung-kammern",
+      "title": "Berufsberatung, Kammern, Innungen und Verbände nutzen",
+      "domain": "wib/berufsorientierung",
+      "reduction": "formal",
+      "typical_age_min": 12.5,
+      "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=bo-berufsberatung-kammern",
+      "prerequisites": [],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-mittelschule-7",
+          "topic_code": "lb3",
+          "topic_title": "Berufsorientierung"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "track": "R",
+          "subject": "wib",
+          "topic_code": "lb3",
+          "topic_title": "Berufsorientierung",
+          "exam_relevant": false
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "track": "M",
+          "subject": "wib",
+          "topic_code": "lb3",
+          "topic_title": "Berufsorientierung",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M83JX3S5GHXT2FQ7QREFBBS8",
+          "slug": "wib7-bo-berufsberatung-kammern-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Welche Aufgaben übernehmen IHK und HWK als zuständige Stellen nach § 71 BBiG?",
+          "concept": "Sie beraten Ausbildungsbetriebe und Azubis in ihrem Bereich, tragen Ausbildungsverträge ein und führen die Prüfungen durch.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=bo-berufsberatung-kammern",
+          "materiality": "material",
+          "sample_solution": "Die Industrie- und Handelskammer (IHK) betreut kaufmännische und industrielle Berufe, die Handwerkskammer (HWK) alle Handwerksberufe — inklusive Eintragung von Ausbildungsverträgen und Abnahme der Prüfungen.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Sie beraten Ausbildungsbetriebe und Azubis in ihrem Bereich, tragen Ausbildungsverträge ein und führen die Prüfungen durch.",
+              "Sie ersetzen das schulische Zwischenzeugnis durch unverbindliche Werbeprospekte."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M83JX3S66MNZQW8WKQXB77RW",
+          "slug": "wib7-bo-berufsberatung-kammern-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Wie ergänzen sich Berufsberatung der Agentur für Arbeit (§ 29 SGB III) und Informationen von Innungen oder Kammern?",
+          "concept": "Die Berufsberatung klärt neutral passende Berufe über alle Branchen; Kammern und Innungen liefern genaue Ausbildungsregeln und regionale Betriebskontakte.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=bo-berufsberatung-kammern",
+          "materiality": "material",
+          "sample_solution": "Wer noch Orientierung sucht, erhält bei der Agentur für Arbeit (BiZ, BERUFENET) unabhängige Einzelberatung; für konkrete Betriebe, Ausbildungsordnungen und Prüfungstermine eines Gewerks helfen IHK, HWK und Innungen."
+        }
+      ]
+    },
+    {
+      "id": "01M83JX3QX468ZW6CYYV8EGJVP",
+      "atom_uri": "urn:zam:atom:01M83JX3QX468ZW6CYYV8EGJVP",
+      "namespace": "zam-academy-wirtschaft-mittelschule-7",
+      "slug": "wib7-bo-taetigkeitsbereiche-anforderungen",
+      "title": "Interessen und Fähigkeiten mit Tätigkeitsbereichen abgleichen",
+      "domain": "wib/berufsorientierung",
+      "reduction": "formal",
+      "typical_age_min": 12.5,
+      "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=bo-taetigkeitsbereiche-anforderungen",
+      "prerequisites": [
+        {
+          "atom_id": "01M83JX3QWHK0CCZ3X6EYGNB0M",
+          "type": "hard",
+          "rationale": "Der Profilabgleich nutzt Berufsinformationen von Beratung und Kammern."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-mittelschule-7",
+          "topic_code": "lb3",
+          "topic_title": "Berufsorientierung"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "track": "R",
+          "subject": "wib",
+          "topic_code": "lb3",
+          "topic_title": "Berufsorientierung",
+          "exam_relevant": false
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "track": "M",
+          "subject": "wib",
+          "topic_code": "lb3",
+          "topic_title": "Berufsorientierung",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M83JX3S76B32YESXDFSCENMV",
+          "slug": "wib7-bo-taetigkeitsbereiche-anforderungen-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 2,
+          "question": "Welche drei persönlichen Größen werden bei einer begründeten Berufsentscheidung mit den beruflichen Anforderungen verglichen?",
+          "concept": "Persönliche Interessen, tatsächliche Fähigkeiten sowie eigene Erwartungen an Arbeitsalltag und Arbeitsbedingungen.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=bo-taetigkeitsbereiche-anforderungen",
+          "materiality": "material",
+          "sample_solution": "Erst wenn Interesse am Thema, vorhandene Stärken und Erwartungen (z. B. Arbeitszeit, Teamarbeit) zu den Anforderungen eines Tätigkeitsbereichs passen, trägt die Entscheidung.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Persönliche Interessen, tatsächliche Fähigkeiten sowie eigene Erwartungen an Arbeitsalltag und Arbeitsbedingungen.",
+              "Schuhgröße, Lieblingsfarbe und Dauer des Schulwegs in der Grundschule."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M83JX3S8RHMAY8AQEGR17C3P",
+          "slug": "wib7-bo-taetigkeitsbereiche-anforderungen-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Warum genügt reines Interesse an einem Produkt (z. B. Sportartikel oder Autos) nicht allein für die Berufswahl?",
+          "concept": "Der reale Arbeitsalltag stellt konkrete Anforderungen wie Kundenberatung, Schichtarbeit, Sorgfalt oder körperliches Stehen, die zusätzlich passen müssen.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=bo-taetigkeitsbereiche-anforderungen",
+          "materiality": "material",
+          "sample_solution": "Wer Mode oder Technik mag, muss dennoch prüfen, ob ihm etwa im Einzelhandel Samstagsarbeit und langes Stehen oder in der Werkstatt Öl, Lärm und präzises Messen liegen."
+        }
+      ]
+    },
+    {
+      "id": "01M83JX3QYWQD6Q3KD3MCVGSW0",
+      "atom_uri": "urn:zam:atom:01M83JX3QYWQD6Q3KD3MCVGSW0",
+      "namespace": "zam-academy-wirtschaft-mittelschule-7",
+      "slug": "wib7-bo-selbst-fremdeinschaetzung",
+      "title": "Selbst- und Fremdeinschätzung aus der Erkundung nutzen",
+      "domain": "wib/berufsorientierung",
+      "reduction": "formal",
+      "typical_age_min": 12.5,
+      "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=bo-selbst-fremdeinschaetzung",
+      "prerequisites": [
+        {
+          "atom_id": "01M83JX3QX468ZW6CYYV8EGJVP",
+          "type": "hard",
+          "rationale": "Eine realistische Einschätzung stützt den Abgleich zwischen eigenem Profil und Berufsanforderungen."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-mittelschule-7",
+          "topic_code": "lb3",
+          "topic_title": "Berufsorientierung"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "track": "R",
+          "subject": "wib",
+          "topic_code": "lb3",
+          "topic_title": "Berufsorientierung",
+          "exam_relevant": false
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "track": "M",
+          "subject": "wib",
+          "topic_code": "lb3",
+          "topic_title": "Berufsorientierung",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M83JX3S99SV0B6YKHFVBDKFR",
+          "slug": "wib7-bo-selbst-fremdeinschaetzung-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 2,
+          "question": "Welchen besonderen Wert hat eine Fremdeinschätzung zusätzlich zur eigenen Selbsteinschätzung?",
+          "concept": "Sie deckt blinde Flecken auf — also sowohl unterschätzte Talente als auch überschätzte Gewohnheiten — und macht das Profil realistisch.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=bo-selbst-fremdeinschaetzung",
+          "materiality": "material",
+          "sample_solution": "Lehrkräfte, Teammitglieder oder Ausbilder nehmen oft soziale Stärken oder Schwächen bei Pünktlichkeit und Sorgfalt wahr, die man selbst übersehen hat.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Sie deckt blinde Flecken auf — also sowohl unterschätzte Talente als auch überschätzte Gewohnheiten — und macht das Profil realistisch.",
+              "Sie soll Jugendliche entmutigen und alle eigenen Berufswünsche pauschal verbieten."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M83JX3SASN6PQHYZ0QSDHWZB",
+          "slug": "wib7-bo-selbst-fremdeinschaetzung-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Wie gehst du produktiv mit einer Abweichung um, wenn andere deine Sorgfalt niedriger bewerten als du selbst?",
+          "concept": "Du fragst nach konkreten Beispielen aus der Erkundung oder Gruppenarbeit und leitest ein gezieltes Übungsziel ab.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=bo-selbst-fremdeinschaetzung",
+          "materiality": "material",
+          "sample_solution": "Statt sich zu ärgern, klärt man anhand bestimmter Situationen (z. B. Werkzeug liegen gelassen oder Checkliste vergessen), welches Verhalten den Eindruck verursacht hat, und bessert es vor dem Praktikum."
+        }
+      ]
+    },
+    {
+      "id": "01M83JX3QZT3GXN3K9T6TK2FT0",
+      "atom_uri": "urn:zam:atom:01M83JX3QZT3GXN3K9T6TK2FT0",
+      "namespace": "zam-academy-wirtschaft-mittelschule-7",
+      "slug": "wib7-bo-finanzielle-aspekte-sichtweisen",
+      "title": "Sichtweisen auf Arbeit und finanzielle Aspekte prüfen",
+      "domain": "wib/berufsorientierung",
+      "reduction": "formal",
+      "typical_age_min": 12.5,
+      "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=bo-finanzielle-aspekte-sichtweisen",
+      "prerequisites": [
+        {
+          "atom_id": "01M83JX3QYWQD6Q3KD3MCVGSW0",
+          "type": "hard",
+          "rationale": "Die M7-Lektion verknüpft Erkundungsergebnisse mit positiven/negativen Sichtweisen und Finanzen."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-mittelschule-7",
+          "topic_code": "lb3",
+          "topic_title": "Berufsorientierung"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "track": "M",
+          "subject": "wib",
+          "topic_code": "lb3",
+          "topic_title": "Berufsorientierung",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M83JX3SBNRPP4EG0W75RJDXT",
+          "slug": "wib7-bo-finanzielle-aspekte-sichtweisen-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 2,
+          "question": "Was bleibt von 840,00 € Netto-Ausbildungsvergütung frei verfügbar, wenn 58,00 € Ticket, 42,00 € Arbeitsmittel und 84,00 € Rücklage abgehen?",
+          "concept": "Genau 656,00 € frei verfügbares Monatsbudget.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=bo-finanzielle-aspekte-sichtweisen",
+          "materiality": "material",
+          "sample_solution": "840,00 € − (58,00 € + 42,00 € + 84,00 €) = 840,00 € − 184,00 € = 656,00 €.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Genau 656,00 € frei verfügbares Monatsbudget.",
+              "Genau 840,00 €, weil Fahrtkosten immer vom Busunternehmen bezahlt werden."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M83JX3SCKVE5J0Z1RCMC7GE3",
+          "slug": "wib7-bo-finanzielle-aspekte-sichtweisen-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "question": "Warum reicht der bloße Vergleich zweier Ausbildungsvergütungen im 1. Lehrjahr für eine gute Finanzentscheidung nicht aus?",
+          "concept": "Entscheidend sind Nettobetrag abzüglich Fahrtkosten und Arbeitsmitteln sowie Einkommens- und Aufstiegschancen nach dem Abschluss.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=bo-finanzielle-aspekte-sichtweisen",
+          "materiality": "material",
+          "sample_solution": "Ein etwas höherer Betrag kann durch teure Pendeltickets und lange Wege aufgezehrt werden, während ein Beruf mit Weiterbildungschancen (z. B. Meister/Techniker) langfristig weit mehr einbringt."
+        }
+      ]
+    },
+    {
+      "id": "01M83JX3R0Q64TPDFETJR9DKPP",
+      "atom_uri": "urn:zam:atom:01M83JX3R0Q64TPDFETJR9DKPP",
+      "namespace": "zam-academy-wirtschaft-mittelschule-7",
+      "slug": "wib7-wi-geldwert-arbeitszeit",
+      "title": "Wert des Geldes: Preise in Arbeitszeit umrechnen",
+      "domain": "wib/wirtschaft",
+      "reduction": "formal",
+      "typical_age_min": 12.5,
+      "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=wi-geldwert-arbeitszeit",
+      "prerequisites": [],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-mittelschule-7",
+          "topic_code": "lb4",
+          "topic_title": "Wirtschaft"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "track": "R",
+          "subject": "wib",
+          "topic_code": "lb4",
+          "topic_title": "Wirtschaft",
+          "exam_relevant": false
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "track": "M",
+          "subject": "wib",
+          "topic_code": "lb4",
+          "topic_title": "Wirtschaft",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M83JX3SD412E72NQCN273R1B",
+          "slug": "wib7-wi-geldwert-arbeitszeit-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 2,
+          "question": "Wie viele Arbeitsstunden stecken bei 15,00 € Netto-Stundenlohn hinter einem Paar Schuhe für 75,00 €?",
+          "concept": "Genau 5,00 Stunden (75,00 € geteilt durch 15,00 € je Stunde).",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=wi-geldwert-arbeitszeit",
+          "materiality": "material",
+          "sample_solution": "Benötigte Arbeitszeit = Kaufpreis / Netto-Stundenlohn = 75,00 € / 15,00 €/Std. = 5,00 Stunden (300 Minuten).",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Genau 5,00 Stunden (75,00 € geteilt durch 15,00 € je Stunde).",
+              "Genau 0,20 Stunden (15,00 € geteilt durch 75,00 €)."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M83JX3SE4B1MAMA5VKH2T7JT",
+          "slug": "wib7-wi-geldwert-arbeitszeit-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Warum sollte man den Kaufpreis beim Umrechnen in Arbeitszeit durch den Netto- statt den Brutto-Stundenlohn teilen?",
+          "concept": "Vom Bruttolohn gehen Steuern und Sozialabgaben ab; an der Kasse lässt sich nur das ausgezahlte Nettoeinkommen ausgeben.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=wi-geldwert-arbeitszeit",
+          "materiality": "material",
+          "sample_solution": "Wer mit dem höheren Bruttolohn rechnet, unterschätzt spürbar, wie viele Stunden tatsächlich gearbeitet werden müssen, bis der Kaufpreis wirklich verfügbar ist."
+        }
+      ]
+    },
+    {
+      "id": "01M83JX3R1327SH8861VSR572G",
+      "atom_uri": "urn:zam:atom:01M83JX3R1327SH8861VSR572G",
+      "namespace": "zam-academy-wirtschaft-mittelschule-7",
+      "slug": "wib7-wi-einkommen-lebensstandard",
+      "title": "Einkommenshöhe und Lebensstandard vergleichen",
+      "domain": "wib/wirtschaft",
+      "reduction": "formal",
+      "typical_age_min": 12.5,
+      "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=wi-einkommen-lebensstandard",
+      "prerequisites": [
+        {
+          "atom_id": "01M83JX3R0Q64TPDFETJR9DKPP",
+          "type": "hard",
+          "rationale": "Die M7-Lektion führt vom Arbeitszeit-Wert zum Zusammenhang von Einkommen und Lebensstandard."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-mittelschule-7",
+          "topic_code": "lb4",
+          "topic_title": "Wirtschaft"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "track": "M",
+          "subject": "wib",
+          "topic_code": "lb4",
+          "topic_title": "Wirtschaft",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M83JX3SF998ZANWZJHFFMJV9",
+          "slug": "wib7-wi-einkommen-lebensstandard-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 2,
+          "question": "Wie verändert sich der frei verfügbare Einkommensspielraum meist, wenn ein Haushalt durch Qualifikation mehr verdient, der Grundbedarf aber kaum steigt?",
+          "concept": "Die Grundbedarfsquote sinkt deutlich und das frei verfügbare Einkommen wächst überproportional stark an.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=wi-einkommen-lebensstandard",
+          "materiality": "material",
+          "sample_solution": "Steigt das Nettoeinkommen von 2.000 € (bei 1.200 € Grundbedarf = 800 € frei) auf 3.000 € (bei 1.350 € Grundbedarf), wächst der freie Betrag auf 1.650 € und damit mehr als doppelt so stark.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Die Grundbedarfsquote sinkt deutlich und das frei verfügbare Einkommen wächst überproportional stark an.",
+              "Der Anteil der Miete und Lebensmittel steigt automatisch auf genau 100 % des Einkommens."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M83JX3SGV5J6P31KCSEC4V9Y",
+          "slug": "wib7-wi-einkommen-lebensstandard-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "question": "Warum entscheidet das Nettoeinkommen allein noch nicht vollständig über den Lebensstandard zweier Haushalte an verschiedenen Orten?",
+          "concept": "Regionale Lebenshaltungskosten (vor allem Wohnungsmiete und Energie) bestimmen stark, wie viel Kaufkraft nach dem Grundbedarf bleibt.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=wi-einkommen-lebensstandard",
+          "materiality": "material",
+          "sample_solution": "Wer in einer Großstadt 500 € mehr verdient, dort aber 800 € mehr Miete bezahlt, hat am Monatsende real weniger frei verfügbares Geld als ein Haushalt in einer günstigeren Kleinstadt."
+        }
+      ]
+    },
+    {
+      "id": "01M83JX3R2N5MYG1TKTTS9DC5Z",
+      "atom_uri": "urn:zam:atom:01M83JX3R2N5MYG1TKTTS9DC5Z",
+      "namespace": "zam-academy-wirtschaft-mittelschule-7",
+      "slug": "wib7-wi-einnahmen-ausgaben-planen",
+      "title": "Einnahmen und Ausgaben über mehrere Wochen planen",
+      "domain": "wib/wirtschaft",
+      "reduction": "formal",
+      "typical_age_min": 12.5,
+      "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=wi-einnahmen-ausgaben-planen",
+      "prerequisites": [
+        {
+          "atom_id": "01M83JX3R0Q64TPDFETJR9DKPP",
+          "type": "hard",
+          "rationale": "Die Bewertung von Geld in Arbeitszeit unterstützt die Planung eigener Geldbewegungen."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-mittelschule-7",
+          "topic_code": "lb4",
+          "topic_title": "Wirtschaft"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "track": "R",
+          "subject": "wib",
+          "topic_code": "lb4",
+          "topic_title": "Wirtschaft",
+          "exam_relevant": false
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "track": "M",
+          "subject": "wib",
+          "topic_code": "lb4",
+          "topic_title": "Wirtschaft",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M83JX3SHG40A824CAQCGP20T",
+          "slug": "wib7-wi-einnahmen-ausgaben-planen-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 2,
+          "question": "Warum führt man eine Einnahmen-Ausgaben-Übersicht über mehrere Wochen statt nur für ein Wochenende?",
+          "concept": "Erst über mehrere Wochen werden feste Monatsbeträge und wiederkehrende kleine Alltagsausgaben verlässlich sichtbar.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=wi-einnahmen-ausgaben-planen",
+          "materiality": "material",
+          "sample_solution": "Einzelne Tage verzerrt der Zufall (z. B. ein Geschenk oder Kinobesuch). Über vier Wochen lassen sich feste und veränderliche Geldbewegungen sauber planen und kontrollieren.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Erst über mehrere Wochen werden feste Monatsbeträge und wiederkehrende kleine Alltagsausgaben verlässlich sichtbar.",
+              "Weil man Ausgaben nach dem Gesetz überhaupt erst ab dem 28. Tag notieren darf."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M83JX3SJAXWVFHJ76Q2HBNQF",
+          "slug": "wib7-wi-einnahmen-ausgaben-planen-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Wie hilft die Trennung zwischen festen und veränderlichen Ausgaben beim Erreichen eines 4-Wochen-Sparziels?",
+          "concept": "Feste Ausgaben sind vertraglich gebunden; genau die veränderlichen Ausgaben (Snacks, Freizeit) lassen sich sofort steuern.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=wi-einnahmen-ausgaben-planen",
+          "materiality": "material",
+          "sample_solution": "Zieht man feste Verträge wie Handytarif und das Sparziel zu Wochenbeginn ab, weiß man genau, welches Wochenlimit für veränderliche Konsumwünsche sicher frei bleibt."
+        }
+      ]
+    },
+    {
+      "id": "01M83JX3R31EGC2SJ2Y5AHY5SQ",
+      "atom_uri": "urn:zam:atom:01M83JX3R31EGC2SJ2Y5AHY5SQ",
+      "namespace": "zam-academy-wirtschaft-mittelschule-7",
+      "slug": "wib7-wi-markterkundung",
+      "title": "Einen Markt nach Kriterien erkunden",
+      "domain": "wib/wirtschaft",
+      "reduction": "formal",
+      "typical_age_min": 12.5,
+      "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=wi-markterkundung",
+      "prerequisites": [],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-mittelschule-7",
+          "topic_code": "lb4",
+          "topic_title": "Wirtschaft"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "track": "R",
+          "subject": "wib",
+          "topic_code": "lb4",
+          "topic_title": "Wirtschaft",
+          "exam_relevant": false
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "track": "M",
+          "subject": "wib",
+          "topic_code": "lb4",
+          "topic_title": "Wirtschaft",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M83JX3SK2XJBVXRQ83YNSSFN",
+          "slug": "wib7-wi-markterkundung-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "In welchen Regalzonen verstecken Supermärkte oft günstige Eigenmarken, während teure Artikel in Augenhöhe stehen?",
+          "concept": "In der Bückzone ganz unten und in der oberen Streckzone.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=wi-markterkundung",
+          "materiality": "material",
+          "sample_solution": "Die verkaufsstarke Sicht- und Greifzone auf Augenhöhe trägt meist teurere Markenartikel; wer gezielt nach unten oder oben greift und Grundpreise prüft, spart oft viel.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "In der Bückzone ganz unten und in der oberen Streckzone.",
+              "Ausschließlich direkt in der Quengelzone neben dem Kassenband."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M83JX3SM8PEXKNNYGF9350RG",
+          "slug": "wib7-wi-markterkundung-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Wie schützt der Grundpreis nach § 4 PAngV vor Täuschung bei unterschiedlichen Packungsgrößen?",
+          "concept": "Er rechnet jeden Packungspreis einheitlich auf 1 kg oder 1 Liter um und macht so Produkte direkt vergleichbar.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=wi-markterkundung",
+          "materiality": "material",
+          "sample_solution": "Eine 0,5-kg-Packung für 1,80 € wirkt auf den ersten Blick billiger als eine 0,75-kg-Packung für 2,40 € — der Grundpreis entlarvt jedoch 3,60 €/kg gegenüber günstigeren 3,20 €/kg."
+        }
+      ]
+    },
+    {
+      "id": "01M83JX3R42SDHTCJ33ME15THT",
+      "atom_uri": "urn:zam:atom:01M83JX3R42SDHTCJ33ME15THT",
+      "namespace": "zam-academy-wirtschaft-mittelschule-7",
+      "slug": "wib7-wi-angebot-und-nachfrage",
+      "title": "Angebot und Nachfrage bestimmen den Preis",
+      "domain": "wib/wirtschaft",
+      "reduction": "formal",
+      "typical_age_min": 12.5,
+      "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=wi-angebot-und-nachfrage",
+      "prerequisites": [
+        {
+          "atom_id": "01M83JX3R31EGC2SJ2Y5AHY5SQ",
+          "type": "hard",
+          "rationale": "Die Markterkundung erschließt Angebot, Nachfrage und Preise vor Ort."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-mittelschule-7",
+          "topic_code": "lb4",
+          "topic_title": "Wirtschaft"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "track": "R",
+          "subject": "wib",
+          "topic_code": "lb4",
+          "topic_title": "Wirtschaft",
+          "exam_relevant": false
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "track": "M",
+          "subject": "wib",
+          "topic_code": "lb4",
+          "topic_title": "Wirtschaft",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M83JX3SN9VVP1TSDH2Z9GQMQ",
+          "slug": "wib7-wi-angebot-und-nachfrage-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Wann spricht man auf einem Markt von einem Marktgleichgewicht?",
+          "concept": "Wenn zu einem bestimmten Preis genau so viel Ware nachgefragt wird, wie Anbieter bereitstellen.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=wi-angebot-und-nachfrage",
+          "materiality": "material",
+          "sample_solution": "Im Gleichgewicht gibt es weder einen ungedeckten Nachfrageüberhang (Schlange und Mangel) noch einen unverkäuflichen Angebotsüberhang (volle Restregale).",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Wenn zu einem bestimmten Preis genau so viel Ware nachgefragt wird, wie Anbieter bereitstellen.",
+              "Wenn alle Händler sämtliche Produkte genau für null Euro verschenken."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M83JX3SP127DBS0PDAGQJF1S",
+          "slug": "wib7-wi-angebot-und-nachfrage-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Wie verschiebt sich der Preis typischerweise bei einem deutlichen Angebotsüberhang im Vergleich zu einem Nachfrageüberhang?",
+          "concept": "Bei Angebotsüberhang sinken die Preise tendenziell, um Reste abzusetzen; bei Nachfrageüberhang steigen die Preise eher an.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=wi-angebot-und-nachfrage",
+          "materiality": "material",
+          "sample_solution": "Übersteigt das Angebot die Kaufwünsche (etwa Erdbeeren vor Ladenschluss), geben Händler Rabatte. Übersteigen die Kaufwünsche das knappe Angebot, steigen die erzielbaren Preise."
+        }
+      ]
+    },
+    {
+      "id": "01M83JX3R5P4NGT4JCFMX37BKA",
+      "atom_uri": "urn:zam:atom:01M83JX3R5P4NGT4JCFMX37BKA",
+      "namespace": "zam-academy-wirtschaft-mittelschule-7",
+      "slug": "wib7-wi-pausenverkauf-handeln",
+      "title": "Im Pausenverkauf auf den Markt reagieren",
+      "domain": "wib/wirtschaft",
+      "reduction": "formal",
+      "typical_age_min": 12.5,
+      "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=wi-pausenverkauf-handeln",
+      "prerequisites": [
+        {
+          "atom_id": "01M83JX3R42SDHTCJ33ME15THT",
+          "type": "hard",
+          "rationale": "Das Handeln im Schulverkauf wendet die Marktgesetze von Angebot und Nachfrage direkt an."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-mittelschule-7",
+          "topic_code": "lb4",
+          "topic_title": "Wirtschaft"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "track": "R",
+          "subject": "wib",
+          "topic_code": "lb4",
+          "topic_title": "Wirtschaft",
+          "exam_relevant": false
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "track": "M",
+          "subject": "wib",
+          "topic_code": "lb4",
+          "topic_title": "Wirtschaft",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M83JX3SQWCP99DS4G5ZFN624",
+          "slug": "wib7-wi-pausenverkauf-handeln-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 2,
+          "question": "Welche Reaktion ist beim Pausenverkauf sinnvoll, wenn kurz vor Pausenende noch viele verderbliche Brötchen übrig sind?",
+          "concept": "Rechtzeitig den Preis senken oder ein günstiges Kombiangebot machen, damit die Ware vor dem Verderb verkauft wird.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=wi-pausenverkauf-handeln",
+          "materiality": "material",
+          "sample_solution": "Weil die Einkaufskosten schon gezahlt sind, rettet jeder Verkauf zum reduzierten Restpreis Einnahmen in der Kasse und vermeidet Lebensmittelverschwendung.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Rechtzeitig den Preis senken oder ein günstiges Kombiangebot machen, damit die Ware vor dem Verderb verkauft wird.",
+              "Den Preis kurz vor Schulschluss sofort verdoppeln, damit weniger Schülerinnen kommen."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M83JX3SRM5AAZDR3GHYFH9Y5",
+          "slug": "wib7-wi-pausenverkauf-handeln-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "question": "Wie verhindert ein Klassenteam bereits vor dem nächsten Verkaufstag starke Reste durch Nachfrageschwankungen?",
+          "concept": "Durch verbindliche Vorbestelllisten in den Klassen, Sortimentsanpassung an Wetter und Schulkalender sowie genaue Mengennotizen.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=wi-pausenverkauf-handeln",
+          "materiality": "material",
+          "sample_solution": "Vorbestellungen, Prüfung auf Ausflüge anderer Klassen und das Streichen schlecht gefragter Sorten sichern eine bedarfsgerechte Einkaufsmenge."
+        }
+      ]
+    },
+    {
+      "id": "01M83JX3R6H3JMJ7GD87HFWJJB",
+      "atom_uri": "urn:zam:atom:01M83JX3R6H3JMJ7GD87HFWJJB",
+      "namespace": "zam-academy-wirtschaft-mittelschule-7",
+      "slug": "wib7-wi-einnahmen-ausgaben-projekt",
+      "title": "Einfache Übersicht über Einnahmen und Ausgaben erstellen",
+      "domain": "wib/wirtschaft",
+      "reduction": "formal",
+      "typical_age_min": 12.5,
+      "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=wi-einnahmen-ausgaben-projekt",
+      "prerequisites": [
+        {
+          "atom_id": "01M83JX3R5P4NGT4JCFMX37BKA",
+          "type": "hard",
+          "rationale": "Die Kassenübersicht schließt den schulischen Handel rechnerisch ab."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-mittelschule-7",
+          "topic_code": "lb4",
+          "topic_title": "Wirtschaft"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "track": "R",
+          "subject": "wib",
+          "topic_code": "lb4",
+          "topic_title": "Wirtschaft",
+          "exam_relevant": false
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "track": "M",
+          "subject": "wib",
+          "topic_code": "lb4",
+          "topic_title": "Wirtschaft",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M83JX3SSYMZH1HGC5SJM950H",
+          "slug": "wib7-wi-einnahmen-ausgaben-projekt-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 2,
+          "question": "Wie ermittelt man den echten Verkaufserlös, wenn zu Beginn 30,00 € Start-Wechselgeld eingelegt wurden und am Ende 174,00 € in der Kasse sind?",
+          "concept": "Man zieht das Start-Wechselgeld ab: 174,00 € minus 30,00 € ergibt 144,00 € echte Verkaufseinnahmen.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=wi-einnahmen-ausgaben-projekt",
+          "materiality": "material",
+          "sample_solution": "Das eingelegte Wechselgeld war schon vor dem Projekt in der Kasse und zählt nicht als neuer Erlös — erst nach seinem Abzug stehen die wahren Verkaufseinnahmen fest.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Man zieht das Start-Wechselgeld ab: 174,00 € minus 30,00 € ergibt 144,00 € echte Verkaufseinnahmen.",
+              "Man zählt das Start-Wechselgeld noch zusätzlich dazu und meldet 204,00 € Einnahmen."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M83JX3STSN7AXZKB138M7N9M",
+          "slug": "wib7-wi-einnahmen-ausgaben-projekt-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Welche beiden Regeln verhindern Kassenlücken in einer Klassen-Einnahmen-Ausgaben-Übersicht?",
+          "concept": "Belegpflicht für jede Ausgabe (Kassenbon oder unterschriebener Eigenbeleg) sowie das Vier-Augen-Prinzip beim Kassenzählen.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=wi-einnahmen-ausgaben-projekt",
+          "materiality": "material",
+          "sample_solution": "Wenn jede Zahlung durch einen Bon dokumentiert ist und zwei Personen die Kasse zu Beginn und am Ende gemeinsam zählen, stimmt der Überschuss nachvollziehbar."
+        }
+      ]
+    },
+    {
+      "id": "01M83JX3R7B0GTZ6BRPKV4VF45",
+      "atom_uri": "urn:zam:atom:01M83JX3R7B0GTZ6BRPKV4VF45",
+      "namespace": "zam-academy-wirtschaft-mittelschule-7",
+      "slug": "wib7-re-kinderarbeit-ferienzweck",
+      "title": "Kinderarbeit, Ferienzweck und Schutz unter 15 Jahren",
+      "domain": "wib/recht",
+      "reduction": "formal",
+      "typical_age_min": 12.5,
+      "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=re-kinderarbeit-ferienzweck",
+      "prerequisites": [],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-mittelschule-7",
+          "topic_code": "lb5",
+          "topic_title": "Recht"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "track": "R",
+          "subject": "wib",
+          "topic_code": "lb5",
+          "topic_title": "Recht",
+          "exam_relevant": false
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "track": "M",
+          "subject": "wib",
+          "topic_code": "lb5",
+          "topic_title": "Recht",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M83JX3SVKJ5X6CRAVM101B0C",
+          "slug": "wib7-re-kinderarbeit-ferienzweck-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Ab welchem Alter gilt nach § 2 Abs. 1 JArbSchG das grundsätzliche Beschäftigungsverbot für Kinder, und welche kleine Ausnahme erlaubt § 5 Abs. 3?",
+          "concept": "Unter 15 Jahren ist Beschäftigung verboten; über 13 Jahren sind leichte Arbeiten mit Einwilligung bis 2 Std./Tag zwischen 8 und 18 Uhr erlaubt.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=re-kinderarbeit-ferienzweck",
+          "materiality": "material",
+          "sample_solution": "Kinder unter 15 Jahren schützt § 5 Abs. 1 JArbSchG. Nur über 13-Jährige dürfen mit Eltern-Einwilligung leichte Tätigkeiten (z. B. Austragen) werktags (Mo–Fr, §§ 15–17) max. 2 Std./Tag (in landw. Familienbetrieben 3 Std.) zwischen 8 und 18 Uhr ausüben, nie vor der Schule.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Unter 15 Jahren ist Beschäftigung verboten; über 13 Jahren sind leichte Arbeiten mit Einwilligung bis 2 Std./Tag zwischen 8 und 18 Uhr erlaubt.",
+              "Bereits ab 10 Jahren sind 6 Stunden täglich an Werkbänken ohne Zustimmung der Eltern erlaubt."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M83JX3SWMCD5CWAM7KQZM13T",
+          "slug": "wib7-re-kinderarbeit-ferienzweck-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Warum beschränkt das Gesetz selbst Ferienarbeit streng, indem es den Sinn und Zweck der Schulferien betont?",
+          "concept": "Schulferien dienen vorrangig der gesundheitlichen Erholung und Entwicklung — lange oder frühe Erwerbsarbeit würde Kinder überfordern.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=re-kinderarbeit-ferienzweck",
+          "materiality": "material",
+          "sample_solution": "Jugendliche im Wachstum benötigen freie Erholungszeit vom Schulstress; deshalb schützt das JArbSchG ausreichend Schlaf, freie Nachmittage vor dem Unterricht und erholsame Ferienwochen."
+        }
+      ]
+    },
+    {
+      "id": "01M83JX3R8MXWB1CEQAPS0RVTY",
+      "atom_uri": "urn:zam:atom:01M83JX3R8MXWB1CEQAPS0RVTY",
+      "namespace": "zam-academy-wirtschaft-mittelschule-7",
+      "slug": "wib7-re-ferienarbeit-regeln",
+      "title": "Ferienjob ab 15: Altersgrenze, Umfang und Pausen",
+      "domain": "wib/recht",
+      "reduction": "formal",
+      "typical_age_min": 12.5,
+      "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=re-ferienarbeit-regeln",
+      "prerequisites": [
+        {
+          "atom_id": "01M83JX3R7B0GTZ6BRPKV4VF45",
+          "type": "hard",
+          "rationale": "Die Ferienjob-Ausnahme (§ 5 Abs. 4) baut direkt auf dem Schutzalter von 15 Jahren auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-mittelschule-7",
+          "topic_code": "lb5",
+          "topic_title": "Recht"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "track": "R",
+          "subject": "wib",
+          "topic_code": "lb5",
+          "topic_title": "Recht",
+          "exam_relevant": false
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "track": "M",
+          "subject": "wib",
+          "topic_code": "lb5",
+          "topic_title": "Recht",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M83JX3SXMJJMBD1TM5MPQV0C",
+          "slug": "wib7-re-ferienarbeit-regeln-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Welche Obergrenzen gelten nach § 5 Abs. 4, §§ 8, 14 und 15 JArbSchG für den Ferienjob vollzeitschulpflichtiger Jugendlicher ab 15 Jahren?",
+          "concept": "Höchstens 4 Wochen (20 Arbeitstage) pro Kalenderjahr, max. 8 Std./Tag und 40 Std./Woche (5-Tage-Woche) zwischen 6 und 20 Uhr.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=re-ferienarbeit-regeln",
+          "materiality": "material",
+          "sample_solution": "Die vier Wochen gelten zusammen für das gesamte Kalenderjahr (Oster-, Pfingst-, Sommerferien etc.). Gefährliche Arbeiten bleiben nach § 22 verboten.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Höchstens 4 Wochen (20 Arbeitstage) pro Kalenderjahr, max. 8 Std./Tag und 40 Std./Woche (5-Tage-Woche) zwischen 6 und 20 Uhr.",
+              "Bis zu 10 Wochen pro Kalenderjahr mit 10 Stunden täglich bis Mitternacht."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M83JX3SYG0A60P18GK4M0A8B",
+          "slug": "wib7-re-ferienarbeit-regeln-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Welche Ruhepausen schreibt § 11 Abs. 1 JArbSchG bei Jugend-Ferienjobs zwingend vor?",
+          "concept": "Mindestens 30 Minuten bei mehr als 4,5 bis 6 Stunden Arbeitszeit sowie mindestens 60 Minuten bei über 6 Stunden.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=re-ferienarbeit-regeln",
+          "materiality": "material",
+          "sample_solution": "Zudem muss jede als Pause zählende Unterbrechung mindestens 15 Minuten dauern, und länger als viereinhalb Stunden am Stück dürfen Jugendliche nicht ohne Pause arbeiten."
+        }
+      ]
+    },
+    {
+      "id": "01M83JX3R9SC4Y6EHM27PVGGC3",
+      "atom_uri": "urn:zam:atom:01M83JX3R9SC4Y6EHM27PVGGC3",
+      "namespace": "zam-academy-wirtschaft-mittelschule-7",
+      "slug": "wib7-re-praktikum-vs-ferienjob",
+      "title": "Betriebspraktikum und Ferienjob rechtlich unterscheiden",
+      "domain": "wib/recht",
+      "reduction": "formal",
+      "typical_age_min": 12.5,
+      "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=re-praktikum-vs-ferienjob",
+      "prerequisites": [
+        {
+          "atom_id": "01M83JX3R8MXWB1CEQAPS0RVTY",
+          "type": "hard",
+          "rationale": "Die rechtliche Abgrenzung vergleicht Betriebspraktikum und regulären Ferienjob."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-mittelschule-7",
+          "topic_code": "lb5",
+          "topic_title": "Recht"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "track": "R",
+          "subject": "wib",
+          "topic_code": "lb5",
+          "topic_title": "Recht",
+          "exam_relevant": false
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "track": "M",
+          "subject": "wib",
+          "topic_code": "lb5",
+          "topic_title": "Recht",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M83JX3SZTC36XC5M9D2G7PYS",
+          "slug": "wib7-re-praktikum-vs-ferienjob-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 2,
+          "question": "Worin liegt der rechtliche Kernunterschied zwischen einem schulischen Betriebspraktikum und einem Ferienjob?",
+          "concept": "Das Betriebspraktikum (§ 5 Abs. 2 Nr. 2) dient als Schulveranstaltung ohne Lohn der Berufsorientierung auch unter 15 Jahren; ein Ferienjob dient ab 15 Jahren dem Gelderwerb.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=re-praktikum-vs-ferienjob",
+          "materiality": "material",
+          "sample_solution": "Beim schulischen Betriebspraktikum gelten für Kinder unter 15 Jahren bis zu 7 Stunden täglich (35 Stunden wöchentlich) nach § 7 Nr. 2 JArbSchG samt gesetzlicher Schülerunfallversicherung, ohne Anspruch auf Lohn.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Das Betriebspraktikum (§ 5 Abs. 2 Nr. 2) dient als Schulveranstaltung ohne Lohn der Berufsorientierung auch unter 15 Jahren; ein Ferienjob dient ab 15 Jahren dem Gelderwerb.",
+              "Im Betriebspraktikum arbeiten 13-Jährige gegen vollen Tariflohn 10 Stunden täglich ohne Schule."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M83JX3T0ATFF21WJSDM4PK3N",
+          "slug": "wib7-re-praktikum-vs-ferienjob-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "question": "Warum darf ein Betrieb das Kinderarbeitsverbot nicht dadurch umgehen, dass es einen 14-Jährigen in den Ferien als ‚unbezahlten Praktikanten‘ acht Stunden täglich arbeiten lässt?",
+          "concept": "Die Ausnahme des § 5 Abs. 2 Nr. 2 schützt nur schulisch veranlasste Betriebspraktika (und auch dort gilt max. 7 Std./Tag für Kinder).",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=re-praktikum-vs-ferienjob",
+          "materiality": "material",
+          "sample_solution": "Ohne schulischen Bildungsrahmen greift das allgemeine Beschäftigungsverbot unter 15 Jahren; außerhalb der Schule bleiben über 13-Jährigen nur leichte Tätigkeiten bis 2 Stunden am Tag."
+        }
+      ]
+    },
+    {
+      "id": "01M83JX3RAPFJW7PFSMZ099TK9",
+      "atom_uri": "urn:zam:atom:01M83JX3RAPFJW7PFSMZ099TK9",
+      "namespace": "zam-academy-wirtschaft-mittelschule-7",
+      "slug": "wib7-te-technikerkundung-haushalt",
+      "title": "Technikerkundung im Privathaushalt planen und protokollieren",
+      "domain": "wib/technik",
+      "reduction": "formal",
+      "typical_age_min": 12.5,
+      "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=te-technikerkundung-haushalt",
+      "prerequisites": [],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-mittelschule-7",
+          "topic_code": "lb6",
+          "topic_title": "Technik"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "track": "R",
+          "subject": "wib",
+          "topic_code": "lb6",
+          "topic_title": "Technik",
+          "exam_relevant": false
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "track": "M",
+          "subject": "wib",
+          "topic_code": "lb6",
+          "topic_title": "Technik",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M83JX3T1B6EW5WQJM69MJ71F",
+          "slug": "wib7-te-technikerkundung-haushalt-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Welche Angaben erfasst du bei einer Technikerkundung im Privathaushalt systematisch im Protokoll?",
+          "concept": "Geräteart, elektrische Leistung vom Typenschild (Watt), aktive Nutzungsdauer sowie mögliche Standby-Stunden über mehrere Wochen.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=te-technikerkundung-haushalt",
+          "materiality": "material",
+          "sample_solution": "Erst durch Leistung (W), echte Laufzeiten über mehrere Wochen und kontrollierte Standby-Zeiten wird sichtbar, welches Gerät viel Energie benötigt.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Geräteart, elektrische Leistung vom Typenschild (Watt), aktive Nutzungsdauer sowie mögliche Standby-Stunden über mehrere Wochen.",
+              "Nur das Kaufdatum der Wohnungseinrichtung ohne jede Messung der Laufzeit."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M83JX3T23QCZ1381TRETAZCQ",
+          "slug": "wib7-te-technikerkundung-haushalt-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Warum verzerren Messungen an nur einem einzigen Wochentag den tatsächlichen Technikverbrauch eines Haushalts?",
+          "concept": "Wasch- und Kochspitzen am Wochenende unterscheiden sich stark von ruhigeren Werktagen; erst Wochenprotokolle zeigen realistische Mittelwerte.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=te-technikerkundung-haushalt",
+          "materiality": "material",
+          "sample_solution": "Manche Geräte laufen nur samstags (Waschmaschine, Trockner), andere täglich im Dauer-Standby (Router, Fernseher) — ein längerer Beobachtungszeitraum gleicht diese Unterschiede aus."
+        }
+      ]
+    },
+    {
+      "id": "01M83JX3RB40P91AX8GDTP7GJ3",
+      "atom_uri": "urn:zam:atom:01M83JX3RB40P91AX8GDTP7GJ3",
+      "namespace": "zam-academy-wirtschaft-mittelschule-7",
+      "slug": "wib7-te-oekonomie-oekologie-haushalt",
+      "title": "Ökonomische und ökologische Folgen im Haushalt bewerten",
+      "domain": "wib/technik",
+      "reduction": "formal",
+      "typical_age_min": 12.5,
+      "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=te-oekonomie-oekologie-haushalt",
+      "prerequisites": [
+        {
+          "atom_id": "01M83JX3RAPFJW7PFSMZ099TK9",
+          "type": "hard",
+          "rationale": "Die Bewertung baut auf den protokollierten Nutzungs- und Wattwerten der Technikerkundung auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-mittelschule-7",
+          "topic_code": "lb6",
+          "topic_title": "Technik"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "track": "R",
+          "subject": "wib",
+          "topic_code": "lb6",
+          "topic_title": "Technik",
+          "exam_relevant": false
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "track": "M",
+          "subject": "wib",
+          "topic_code": "lb6",
+          "topic_title": "Technik",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M83JX3T30PZNW0HE9BHV0Z31",
+          "slug": "wib7-te-oekonomie-oekologie-haushalt-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 2,
+          "question": "Wie berechnet man die jährliche elektrische Energie eines Haushaltsgeräts in Kilowattstunden (kWh)?",
+          "concept": "Energie (kWh) gleich Leistung in Watt mal jährliche Betriebsstunden geteilt durch 1.000.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=te-oekonomie-oekologie-haushalt",
+          "materiality": "material",
+          "sample_solution": "Beispiel: 2.000 W bei 4 Std./Woche über 52 Wochen (= 208 Std.) ergeben (2.000 · 208) / 1.000 = 416,00 kWh im Jahr.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Energie (kWh) gleich Leistung in Watt mal jährliche Betriebsstunden geteilt durch 1.000.",
+              "Energie (kWh) gleich Kaufpreis in Euro geteilt durch die Steckerlänge in Zentimetern."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M83JX3T4JG83T3G8Y7R64NCZ",
+          "slug": "wib7-te-oekonomie-oekologie-haushalt-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Welche ökologischen Kriterien helfen neben dem Kaufpreis beim Bewerten eines Haushaltsgeräts?",
+          "concept": "EU-Energielabel (VO (EU) 2017/1369 / §§ 3, 4 EnVKG), jährlicher Strom- und Wasserbedarf, Rohstoffe bei der Herstellung, Reparierbarkeit und erwartete Lebensdauer.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=te-oekonomie-oekologie-haushalt",
+          "materiality": "material",
+          "sample_solution": "Ein funktionierendes Kurzzeitgerät wie den Wasserkocher vorzeitig zu ersetzen, verbraucht durch die Neuherstellung oft mehr Ressourcen als über Jahre am Stromzähler eingespart werden."
+        }
+      ]
+    },
+    {
+      "id": "01M83JX3RCF3RT6GQNEPHDQ3MK",
+      "atom_uri": "urn:zam:atom:01M83JX3RCF3RT6GQNEPHDQ3MK",
+      "namespace": "zam-academy-wirtschaft-mittelschule-7",
+      "slug": "wib7-te-grenzen-chancen-risiken",
+      "title": "Grenzen, Chancen und Risiken von Haushaltstechnik abwägen",
+      "domain": "wib/technik",
+      "reduction": "formal",
+      "typical_age_min": 12.5,
+      "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=te-grenzen-chancen-risiken",
+      "prerequisites": [
+        {
+          "atom_id": "01M83JX3RB40P91AX8GDTP7GJ3",
+          "type": "hard",
+          "rationale": "Die M7-Vertiefung diskutiert Chancen, Risiken und Amortisationsgrenzen von Haushaltsgeräten."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-mittelschule-7",
+          "topic_code": "lb6",
+          "topic_title": "Technik"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "track": "M",
+          "subject": "wib",
+          "topic_code": "lb6",
+          "topic_title": "Technik",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M83JX3T54TB287CE1KPWTVTF",
+          "slug": "wib7-te-grenzen-chancen-risiken-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 2,
+          "question": "Was beschreibt der Rebound-Effekt beim Einsatz sparsamerer Haushaltstechnik?",
+          "concept": "Die rechnerische Ersparnis schmilzt dahin, weil das effizientere Gerät größer gekauft, häufiger oder länger eingeschaltet wird.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=te-grenzen-chancen-risiken",
+          "materiality": "material",
+          "sample_solution": "Ein sparsamerer Fernseher mit doppelt so großer Bildfläche oder längerer Laufzeit pro Abend verbraucht oft genauso viel Strom wie das alte Modell.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Die rechnerische Ersparnis schmilzt dahin, weil das effizientere Gerät größer gekauft, häufiger oder länger eingeschaltet wird.",
+              "Das Gerät lädt über die Steckdose kostenlos Nachbarhäuser mit Strom auf."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M83JX3T6E0PCDY5RWSRT3617",
+          "slug": "wib7-te-grenzen-chancen-risiken-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "question": "Wann rechnet sich der höhere Kaufpreis eines besonders effizienten Neugeräts im Haushalt (Amortisation)?",
+          "concept": "Wenn der Mehrpreis durch die jährliche Stromersparnis deutlich schneller zurückfließt, als das Gerät voraussichtlich hält.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=te-grenzen-chancen-risiken",
+          "materiality": "material",
+          "sample_solution": "Beispiel Kühlschrank: Spart das Neugerät 42,00 € Strom pro Jahr, bezahlt sich ein Mehrpreis von 168,00 € in genau 4,00 Jahren zurück — danach spart der Haushalt dauerhaft."
+        }
+      ]
+    },
+    {
+      "id": "01M83JX3RDGT61BARP03N371VE",
+      "atom_uri": "urn:zam:atom:01M83JX3RDGT61BARP03N371VE",
+      "namespace": "zam-academy-wirtschaft-mittelschule-7",
+      "slug": "wib7-te-arbeit-technik-haushaltsproduktion",
+      "title": "Arbeit und Technik bei der Haushaltsproduktion",
+      "domain": "wib/technik",
+      "reduction": "formal",
+      "typical_age_min": 12.5,
+      "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=te-arbeit-technik-haushaltsproduktion",
+      "prerequisites": [],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-mittelschule-7",
+          "topic_code": "lb6",
+          "topic_title": "Technik"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "track": "R",
+          "subject": "wib",
+          "topic_code": "lb6",
+          "topic_title": "Technik",
+          "exam_relevant": false
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "track": "M",
+          "subject": "wib",
+          "topic_code": "lb6",
+          "topic_title": "Technik",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M83JX3T7HT7B4DAJ1N9E00YK",
+          "slug": "wib7-te-arbeit-technik-haushaltsproduktion-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 2,
+          "question": "Wie verschiebt sich der Aufwand, wenn ein Haushalt Brot selbst mit der Küchenmaschine backt statt fertiges Brot zu kaufen?",
+          "concept": "Die Geldausgaben sinken deutlich gegenüber dem Marktkauf, während eigene Arbeitszeit sowie Geräte- und Energiekosten anfallen.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=te-arbeit-technik-haushaltsproduktion",
+          "materiality": "material",
+          "sample_solution": "Technik entlastet beim Kneten von schwerer Muskelarbeit und senkt den Geldpreis je Portion erheblich, erfordert dafür aber Planung, Backzeit und anschließende Reinigung.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Die Geldausgaben sinken deutlich gegenüber dem Marktkauf, während eigene Arbeitszeit sowie Geräte- und Energiekosten anfallen.",
+              "Beim Selbstbacken entstehen weder Zutatenkosten noch Strombedarf oder Vorbereitungszeit."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M83JX3T8J46560JMW2A0F6MY",
+          "slug": "wib7-te-arbeit-technik-haushaltsproduktion-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Warum bleibt Hausarbeit auch in Haushalten mit Spül-, Wasch- und Küchenmaschine echte Arbeit?",
+          "concept": "Vorratshaltung, Planung, Sortieren, Befüllen, Nachreinigen und Gerätewartung verlangen weiter Zeit, Organisation und Verantwortung.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=te-arbeit-technik-haushaltsproduktion",
+          "materiality": "material",
+          "sample_solution": "Geräte übernehmen zwar körperliche Routinekraft, doch Einkaufen, Sortieren nach Textilart, Programmsteuerung und Instandhaltung bleiben unverzichtbare menschliche Leistung."
+        }
+      ]
+    },
+    {
+      "id": "01M83JX3REPA41TRWJE6AE5J4C",
+      "atom_uri": "urn:zam:atom:01M83JX3REPA41TRWJE6AE5J4C",
+      "namespace": "zam-academy-wirtschaft-mittelschule-7",
+      "slug": "wib7-te-technischer-wandel-qualifikation",
+      "title": "Technischer Wandel verändert Arbeitsprozesse und Qualifikation",
+      "domain": "wib/technik",
+      "reduction": "formal",
+      "typical_age_min": 12.5,
+      "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=te-technischer-wandel-qualifikation",
+      "prerequisites": [
+        {
+          "atom_id": "01M83JX3RDGT61BARP03N371VE",
+          "type": "hard",
+          "rationale": "Die Veränderung von Arbeit und Technik wird hier zeitlich als technischer Wandel untersucht."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-mittelschule-7",
+          "topic_code": "lb6",
+          "topic_title": "Technik"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "track": "R",
+          "subject": "wib",
+          "topic_code": "lb6",
+          "topic_title": "Technik",
+          "exam_relevant": false
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "track": "M",
+          "subject": "wib",
+          "topic_code": "lb6",
+          "topic_title": "Technik",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M83JX3T9NTFQ7E4J5B3R5B8P",
+          "slug": "wib7-te-technischer-wandel-qualifikation-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 2,
+          "question": "Welche Qualifikation gewinnt durch den technischen Wandel vom rein mechanischen Werkzeug zum digitalen Gerät besonders an Bedeutung?",
+          "concept": "Programmverständnis, Energie- und Wartungswissen, Fehlererkennung sowie sicherer Umgang mit Daten und Passwörtern.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=te-technischer-wandel-qualifikation",
+          "materiality": "material",
+          "sample_solution": "Wenn Sensorik und Software Routinearbeit abnehmen, müssen Nutzerinnen Programme sinnvoll wählen, Pflegeetiketten beachten, Warnmeldungen verstehen und Daten schützen.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Programmverständnis, Energie- und Wartungswissen, Fehlererkennung sowie sicherer Umgang mit Daten und Passwörtern.",
+              "Reines Auswendiglernen veralteter Telefonnummern ohne jedes Bedienwissen."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M83JX3TAEKC427696K940T4H",
+          "slug": "wib7-te-technischer-wandel-qualifikation-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "question": "Warum verschwindet menschliche Verantwortung nicht, wenn moderne Technik Arbeitsprozesse im Haushalt automatisiert?",
+          "concept": "Wer Ergebnisse nicht überschlägig prüft und Technik blind vertraut, verschwendet Ressourcen oder erkennt Fehlfunktionen und Sicherheitsrisiken zu spät.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-7/#lesson=te-technischer-wandel-qualifikation",
+          "materiality": "material",
+          "sample_solution": "Automatisierte Wasch-, Heiz- oder Buchungssysteme erleichtern zwar den Ablauf, verlangen aber kontrollierendes Grundwissen, Wartungsdisziplin und Bereitschaft zum Umlernen."
+        }
+      ]
+    }
+  ]
+}

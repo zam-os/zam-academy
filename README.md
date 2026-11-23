@@ -16,6 +16,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | Grade 4 mathematics: 40 Discovery Island lessons with Milo (Bavaria) | [`mathematik-grundschule-4/`](mathematik-grundschule-4/) | https://academy.zam-os.org/mathematik-grundschule-4/ | `zam-academy:mathematik-grundschule-4` |
 | Grade 4 German: Tintos Wörterstadt, 45 lessons on language, spelling, the Grundwortschatz, reading and writing (Bavaria, LehrplanPLUS 2, 3.2/3.3, 4); the app does not rate free texts ([coverage](docs/deutsch-grundschule-4-coverage.md)) | [`deutsch-grundschule-4/`](deutsch-grundschule-4/) | https://academy.zam-os.org/deutsch-grundschule-4/ | `zam-academy:deutsch-grundschule-4` |
 | Grade 4 Heimat- und Sachunterricht: twenty discovery stations with Lotta (Bavaria) | [`hsu-grundschule-4/`](hsu-grundschule-4/) | https://academy.zam-os.org/hsu-grundschule-4/ | `zam-academy:hsu-grundschule-4` |
+| French 7 Gymnasium (Bavaria, first and second foreign language) | [`franzoesisch-gymnasium-7/`](franzoesisch-gymnasium-7/) | Built by Pages on merge | `zam-academy:franzoesisch-gymnasium-7` |
 | French 6 Gymnasium (Bavaria, first and second foreign language) | [`franzoesisch-gymnasium-6/`](franzoesisch-gymnasium-6/) | https://academy.zam-os.org/franzoesisch-gymnasium-6/ | `zam-academy:franzoesisch-gymnasium-6` |
 | French 5 Gymnasium (Bavaria, first foreign language) | [`franzoesisch-gymnasium-5/`](franzoesisch-gymnasium-5/) | https://academy.zam-os.org/franzoesisch-gymnasium-5/ | `zam-academy:franzoesisch-gymnasium-5` |
 | Englisch 5 Mittelschule (LehrplanPLUS Bayern) | [`englisch-mittelschule-5/`](englisch-mittelschule-5/) | https://academy.zam-os.org/englisch-mittelschule-5/ | `zam-academy:englisch-mittelschule-5` |
@@ -103,6 +104,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | Informatik 6 Gymnasium (LehrplanPLUS Bayern, Natur und Technik 6 Schwerpunkt Informatik) | [`informatik-gymnasium-6/`](informatik-gymnasium-6/) | Built by Pages on merge | `zam-academy:informatik-gymnasium-6` |
 | Informatik 6 Mittelschule (LehrplanPLUS Bayern) | [`informatik-mittelschule-6/`](informatik-mittelschule-6/) | Built by Pages on merge | `zam-academy:informatik-mittelschule-6` |
 | Geschichte 6 Gymnasium (LehrplanPLUS Bayern, alle Ausbildungsrichtungen) | [`geschichte-gymnasium-6/`](geschichte-gymnasium-6/) | Built by Pages on merge | `zam-academy:geschichte-gymnasium-6` |
+| Wirtschaft und Beruf 7 Mittelschule (LehrplanPLUS Bayern, Regelklasse R7 und M-Zug M7) | [`wirtschaft-mittelschule-7/`](wirtschaft-mittelschule-7/) | Built by Pages on merge | `zam-academy:wirtschaft-mittelschule-7` |
 
 ## How an app and its ZAM cell fit together
 
@@ -198,6 +200,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Natur und Technik 5 Mittelschule: cd nt-mittelschule-5 (dev server on :5243)
 # Natur und Technik 6 Mittelschule: cd nt-mittelschule-6 (dev server on :5250)
 # Grade 7 Natur und Technik: cd nt-mittelschule-7 (dev server on :5264)
+# Wirtschaft und Beruf 7 Mittelschule: cd wirtschaft-mittelschule-7 (dev server on :5278)
 # Mathematik 7 Gymnasium: cd mathematik-gymnasium-7 (dev server on :5242)
 # Geographie 5 Gymnasium: cd geographie-gymnasium-5 (dev server on :5244)
 # English 5 Gymnasium: cd englisch-gymnasium-5 (dev server on :5247)
@@ -215,6 +218,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Geschichte 6 Realschule: cd geschichte-realschule-6 (dev server on :5258)
 # Geschichte 7 Realschule: cd geschichte-realschule-7 (dev server on :5271)
 # Biologie 5 Gymnasium: cd biologie-gymnasium-5 (dev server on :5246)
+# French 7 Gymnasium: cd franzoesisch-gymnasium-7 (dev server on :5277)
 # French 6 Gymnasium: cd franzoesisch-gymnasium-6 (dev server on :5263)
 # French 5 Gymnasium: cd franzoesisch-gymnasium-5 (dev server on :5245)
 # Englisch 5 Mittelschule: cd englisch-mittelschule-5 (dev server on :5248)
@@ -337,3 +341,5 @@ The [Informatik 6 Mittelschule package](informatik-mittelschule-6/) covers both 
 The [BwR 7 Realschule package](bwr-realschule-7/) covers Betriebswirtschaftslehre/Rechnungswesen in Wahlpflichtfächergruppe II (36 lessons across all five learning areas, 84 curriculum hours) and Wahlpflichtfächergruppe IIIa (25 lessons across four learning areas, 56 curriculum hours), with eight interactive labs, case workshops, fillable sales invoice template, ISB BwR 7 account list, track-filtered formula collection, two-level practice exercises, and 72 linked ZAM cards. Its [coverage matrix](bwr-realschule-7/coverage.json) checks all 28 (II) and 20 (IIIa) verbatim expectations; [bwr-realschule-7/replaces-de-by.json](bwr-realschule-7/replaces-de-by.json) documents a `proposal-only` mapping (`approved: null`) for all ten cards of the two existing `de-by:realschule-7-bwr-*` cells, so `cell.json` ships without `replaces` or `retired_items` until reviewed. Teacher review and teacher videos remain open (package version 0.0). See [Curriculum coverage and legacy inventory](docs/bwr-7-coverage.md).
 
 The [Deutsch 7 Gymnasium package](deutsch-gymnasium-7/) covers all 46 verbatim Bavarian LehrplanPLUS Grade 7 expectations across 50 lessons (10 speaking/listening, 14 reading/media, 10 writing, and 16 language/spelling with interactive language models), two local computer-voice audio passages (*Anna*), case decisions, two-level writing tasks with self-assessment, a local draft privacy note (`ⓘ Wo bleibt mein Entwurf?` under `deutsch_gym7_progress_v1`), and 100 ZAM cards. Its [legacy mapping](deutsch-gymnasium-7/replaces-de-by.json) records Thomas's 2026-11-22 approval for three Category A transfers (`01K4D7G0000000000000000J01`, `01K4D7T0000000000000000J01`, `01K4D7T0000000000000000J03`) and retains five Category C cards as `keep-active` (`deutsch-gymnasium-7/scripts/validate-migration.mjs` checks the migration). Teacher review and teacher videos remain open (`version: "0.0"`). See [Curriculum coverage and legacy inventory](docs/deutsch-gymnasium-7-coverage.md).
+
+The [Wirtschaft und Beruf 7 Mittelschule package](wirtschaft-mittelschule-7/) covers all six LehrplanPLUS Bayern areas (*Projekt*, *Arbeit*, *Berufsorientierung*, *Wirtschaft*, *Recht*, *Technik*) for both Regelklasse (`R7`, 25 lessons) and Mittlere-Reife-Klasse (`M7`, 30 lessons) with 30 three-part interactive SVG figures, nine live SVG labs, 30 case workshops, two-level generated calculation tasks (18 families), 60 two-level writing tasks with a local draft privacy notice (`wib_ms7_academy_progress_v1`), and 60 linked ZAM cards. Its [coverage matrix](wirtschaft-mittelschule-7/coverage.json) checks all 30 verbatim competence rows (`15 R`, `15 M`, `0 not found`); [`replaces-de-by.json`](wirtschaft-mittelschule-7/replaces-de-by.json) records no existing Mittelschule WiB `de-by` cells (`proposal-only`, `approved: null`). Teacher review and teacher videos remain open (`version: "0.0"`). See [Curriculum coverage and legacy inventory](docs/wirtschaft-mittelschule-7-coverage.md).
