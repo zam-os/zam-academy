@@ -147,8 +147,8 @@ export const LB1_2_FIGURES: Record<string, ConceptFigure> = {
   "ar-arbeitsplatzmerkmale": {
     title: "Die sechs Arbeitsplatzmerkmale",
     question: "Nach welchen sechs Kriterien untersuchst du jeden betrieblichen Arbeitsplatz sachlich?",
-    alt: "Drei Bereiche der Arbeitsplatzanalyse am Beispiel Zweiradmechatronik: Was und Womit (Aufgabe & Mittel), Wo und Wann (Ort, Zeit & Dauer), Wie belastend (Bedingungen mit Punktzahl 5,05).",
-    caption: "Werkstatt-Beispiel: Bremsen prüfen mit Drehmomentschlüssel, 7:30–16:00 Uhr, gewichtete Bewertung 5,05 Punkte.",
+    alt: "Drei Bereiche der Arbeitsplatzanalyse am Beispiel Zweiradmechatronik: Was und Womit (Aufgabe & Mittel), Wo und Wann (Ort, Zeit & Dauer), Wie belastend (Bedingungen mit Punktzahl 5,10).",
+    caption: "Werkstatt-Beispiel: Bremsen prüfen mit Drehmomentschlüssel, 7:30–16:15 Uhr (8 Std. + 45 Min. Pause), gewichtete Bewertung 5,10 Punkte.",
     parts: [
       {
         label: "Aufgabe & Mittel",
@@ -156,11 +156,11 @@ export const LB1_2_FIGURES: Record<string, ConceptFigure> = {
       },
       {
         label: "Ort, Zeit & Dauer",
-        note: "3. Arbeitsort (Werkhalle), 4. Arbeitszeit (Lage: 7:30–16:00 Uhr) und 5. Arbeitsdauer (8 Std. + 45 Min. Pause) zeigen den Rahmen.",
+        note: "3. Arbeitsort (Werkhalle), 4. Arbeitszeit (Lage: 7:30–16:15 Uhr) und 5. Arbeitsdauer (8 Std. + 45 Min. Pause) zeigen den Rahmen.",
       },
       {
         label: "Arbeitsbedingungen",
-        note: "6. Licht/Lärm (5 Pkt.), Ergonomie (6 Pkt.), Arbeitsmittel (5 Pkt.) und Pausen (4 Pkt.) ergeben gewichtet 5,05 von 6,00 Punkten.",
+        note: "6. Licht/Lärm (5 Pkt.), Ergonomie (6 Pkt.), Arbeitsmittel (5 Pkt.) und Pausen (4 Pkt.) ergeben gewichtet 5,10 von 6,00 Punkten.",
       },
     ],
     draw: () =>
@@ -169,10 +169,10 @@ export const LB1_2_FIGURES: Record<string, ConceptFigure> = {
         `${card(14, 16, 224, 238)}${badge(36, 38, 1)}${label(56, 43, "Tätigkeit & Gerät", "heading", "start")}${pill(30, 74, 192, 36, "1. Aufgabe: Bremsen prüfen", "v-blue-fill", "micro")}${pill(30, 124, 192, 36, "2. Mittel: Hebebühne & Tool", "v-teal-fill", "micro")}${lines(126, 198, "Was genau wird gemacht\nund womit arbeitet man?", "micro")}`,
       )}${group(
         2,
-        `${card(268, 16, 224, 238)}${badge(290, 38, 2)}${label(310, 43, "Rahmendaten", "heading", "start")}${pill(284, 68, 192, 32, "3. Ort: helle Werkhalle", "v-panel", "micro")}${pill(284, 112, 192, 32, "4. Zeit: 7:30–16:00 Uhr", "v-gold-fill", "micro")}${pill(284, 156, 192, 32, "5. Dauer: 8 Std. + 45 Min.", "v-orange-fill", "micro")}${label(380, 218, "Wann? und Wie lange? trennen", "micro")}`,
+        `${card(268, 16, 224, 238)}${badge(290, 38, 2)}${label(310, 43, "Rahmendaten", "heading", "start")}${pill(284, 68, 192, 32, "3. Ort: helle Werkhalle", "v-panel", "micro")}${pill(284, 112, 192, 32, "4. Zeit: 7:30–16:15 Uhr", "v-gold-fill", "micro")}${pill(284, 156, 192, 32, "5. Dauer: 8 Std. + 45 Min.", "v-orange-fill", "micro")}${label(380, 218, "Wann? und Wie lange? trennen", "micro")}`,
       )}${group(
         3,
-        `${card(522, 16, 224, 238)}${badge(544, 38, 3)}${label(564, 43, "6. Bedingungen", "heading", "start")}${sheetDoc(544, 64, 180, 116, "Gewichtete Bewertung", ["Licht/Lärm (25 %): 5 Pkt.", "Ergonomie (30 %): 6 Pkt.", "Mittel (25 %): 5 Pkt.", "Pausen (20 %): 4 Pkt."])}${pill(538, 194, 192, 36, "Gesamt: 5,05 / 6,00 Punkte", "v-green-fill", "small")}`,
+        `${card(522, 16, 224, 238)}${badge(544, 38, 3)}${label(564, 43, "6. Bedingungen", "heading", "start")}${sheetDoc(544, 64, 180, 116, "Gewichtete Bewertung", ["Licht/Lärm (25 %): 5 Pkt.", "Ergonomie (30 %): 6 Pkt.", "Mittel (25 %): 5 Pkt.", "Pausen (20 %): 4 Pkt."])}${pill(538, 194, 192, 36, "Gesamt: 5,10 / 6,00 Punkte", "v-green-fill", "small")}`,
       )}`,
   },
 
@@ -201,7 +201,7 @@ export const LB1_2_FIGURES: Record<string, ConceptFigure> = {
         `${card(14, 16, 224, 238)}${badge(36, 38, 1)}${label(56, 43, "Lernort Betrieb", "heading", "start")}${factory(126, 98, 0.95)}${pill(30, 148, 192, 34, "3–4 Tage/Woche Praxis", "v-blue-fill", "micro")}${lines(126, 208, "Ausbilderin zeigt Ablauf,\nWerkzeuge und Sicherheit.", "micro")}`,
       )}${group(
         2,
-        `${card(268, 16, 224, 238)}${badge(290, 38, 2)}${label(310, 43, "Berufsschule", "heading", "start")}${sheetDoc(296, 66, 168, 92, "Lernort Schule", ["1–2 Tage/Woche", "Fachtheorie & Zeichnen", "Deutsch, WiB, Sozialkunde"])}${pill(284, 178, 192, 36, "Duale Verzahnung (§ 1 BBiG)", "v-teal-fill", "micro")}`,
+        `${card(268, 16, 224, 238)}${badge(290, 38, 2)}${label(310, 43, "Berufsschule", "heading", "start")}${sheetDoc(296, 66, 168, 92, "Lernort Schule", ["1–2 Tage/Woche", "Fachtheorie & Zeichnen", "Deutsch, WiB, Sozialkunde"])}${pill(284, 178, 192, 36, "Zwei Lernorte (§ 2 BBiG)", "v-teal-fill", "micro")}`,
       )}${group(
         3,
         `${card(522, 16, 224, 238)}${badge(544, 38, 3)}${label(564, 43, "Lohn & Abschluss", "heading", "start")}${label(538, 86, "1. J.", "micro", "start")}<rect x="580" y="72" width="98" height="20" rx="4" class="v-green"/>${label(684, 86, "820 €", "micro", "start")}${label(538, 114, "2. J.", "micro", "start")}<rect x="580" y="100" width="108" height="20" rx="4" class="v-green"/>${label(694, 114, "900 €", "micro", "start")}${label(538, 142, "3. J.", "micro", "start")}<rect x="580" y="128" width="118" height="20" rx="4" class="v-green"/>${label(702, 142, "980 €", "micro", "start")}${pill(538, 178, 192, 36, "Prüfung durch HWK / IHK", "v-gold-fill", "micro")}`,

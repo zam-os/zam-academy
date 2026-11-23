@@ -117,6 +117,16 @@ export const SOURCES = [
     url: "https://www.gesetze-im-internet.de/jarbschg/__15.html",
   },
   {
+    id: "jarbschg16",
+    label: "JArbSchG § 16 · Samstagsruhe",
+    url: "https://www.gesetze-im-internet.de/jarbschg/__16.html",
+  },
+  {
+    id: "jarbschg17",
+    label: "JArbSchG § 17 · Sonntagsruhe",
+    url: "https://www.gesetze-im-internet.de/jarbschg/__17.html",
+  },
+  {
     id: "jarbschg22",
     label: "JArbSchG § 22 · Gefährliche Arbeiten",
     url: "https://www.gesetze-im-internet.de/jarbschg/__22.html",
@@ -125,6 +135,11 @@ export const SOURCES = [
     id: "bbig1",
     label: "BBiG § 1 · Ziele und Begriffe der Berufsbildung",
     url: "https://www.gesetze-im-internet.de/bbig_2005/__1.html",
+  },
+  {
+    id: "bbig2",
+    label: "BBiG § 2 · Lernorte der Berufsbildung (Betrieb und Berufsschule)",
+    url: "https://www.gesetze-im-internet.de/bbig_2005/__2.html",
   },
   {
     id: "bbig4",
@@ -158,13 +173,28 @@ export const SOURCES = [
   },
   {
     id: "pangv3",
-    label: "PAngV § 3 · Gesamtpreis und Grundpreis",
+    label: "PAngV § 3 · Pflicht zur Angabe des Gesamtpreises",
     url: "https://www.gesetze-im-internet.de/pangv_2022/__3.html",
   },
   {
+    id: "pangv4",
+    label: "PAngV § 4 · Pflicht zur Angabe des Grundpreises",
+    url: "https://www.gesetze-im-internet.de/pangv_2022/__4.html",
+  },
+  {
+    id: "envkg3",
+    label: "EnVKG § 3 · Allgemeine Anforderungen an die Verbrauchskennzeichnung",
+    url: "https://www.gesetze-im-internet.de/envkg_2012/__3.html",
+  },
+  {
     id: "envkg4",
-    label: "EnVKG § 4 · Energieverbrauchskennzeichnung",
+    label: "EnVKG § 4 · Verordnungsermächtigung zur Kennzeichnung",
     url: "https://www.gesetze-im-internet.de/envkg_2012/__4.html",
+  },
+  {
+    id: "uba_label",
+    label: "Umweltbundesamt · Energieverbrauchskennzeichnung (EU-Energielabel A–G, VO (EU) 2017/1369)",
+    url: "https://www.umweltbundesamt.de/themen/klima-energie/energiesparen/energieverbrauchskennzeichnung",
   },
   {
     id: "bibb",

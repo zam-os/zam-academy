@@ -135,8 +135,8 @@ export const LABS: Record<LabKind, LabSpec> = {
   },
   holidayJobCheck: {
     description:
-      "Prüfe einen geplanten Ferienjob-Vertrag gegen die Schutzregeln des Jugendarbeitsschutzgesetzes (§§ 2, 5, 8, 11, 15 JArbSchG).",
-    goal: "Stelle den Vertrag so ein, dass er in allen Punkten gesetzlich zulässig ist und Jugendliche ab 15 Jahren genau 8 Stunden täglich und 40 Stunden wöchentlich arbeiten dürfen.",
+      "Prüfe einen geplanten Ferienjob-Vertrag gegen die zahlenmäßigen Schutzgrenzen des Jugendarbeitsschutzgesetzes (§§ 2, 5, 8, 11, 15 JArbSchG).",
+    goal: "Stelle die geprüften Vertragskennzahlen so ein, dass Alter, Tages-/Wochenstunden, Arbeitstage, Jahreswochen und Ruhepausen (§§ 5, 8, 11, 15 JArbSchG) bei genau 8 Stunden täglich und 40 Stunden wöchentlich erfüllt sind.",
     controls: [
       n("age", "Alter (Jahre)", 12, 17, 1),
       n("hoursPerDay", "Arbeitszeit pro Tag (Std.)", 1, 10, 0.5),
@@ -532,7 +532,7 @@ export function renderResult(kind: LabKind, v: Values): string {
           ["Wochen im Kalenderjahr", `${r.weeksPerYear} Wochen`, r.weeksOk ? "ok (<= 4)" : "über 4 Wo."],
           ["Ruhepause täglich", `${r.breakMinutes} Min.`, r.breakOk ? `ok (>= ${r.requiredBreak})` : `zu kurz (< ${r.requiredBreak})`],
         ],
-      )}<p class="result">${r.allowed ? "Alle gesetzlichen Vorgaben des JArbSchG sind eingehalten (Arbeitszeit zwischen 6 und 20 Uhr sowie Verbot gefährlicher Arbeiten zusätzlich beachten)." : `Unzulässig: ${r.violations.join(" · ")}.`}</p>`;
+      )}<p class="result">${r.allowed ? "Die geprüften Zeit-, Alters- und Pausengrenzen (§§ 5, 8, 11, 15 JArbSchG) sind erfüllt. Für die vollständige Zulässigkeit müssen zusätzlich Arbeitszeit nur zwischen 6 und 20 Uhr (§ 14), Samstags- und Sonntagsruhe mit engen Branchen-Ausnahmen (§§ 16, 17) sowie das Verbot gefährlicher Arbeiten (§ 22) beachtet werden." : `Unzulässig: ${r.violations.join(" · ")}.`}</p>`;
     }
 
     case "applianceCheck": {

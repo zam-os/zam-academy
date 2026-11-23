@@ -17,8 +17,8 @@ export const LB5_6_FIGURES: Record<string, ConceptFigure> = {
   "re-kinderarbeit-ferienzweck": {
     title: "Kinderarbeitsverbot, Ferienzweck und kleine Ausnahme",
     question: "Warum sind Ferien zur Erholung geschützt und was gilt unter 15 Jahren nach dem JArbSchG?",
-    alt: "Drei Rechtsregeln: Kinderarbeit unter 15 verboten (§ 5 Abs. 1), Sinn von Ferien ist Erholung und Entwicklung, enge Ausnahme ab über 13 Jahren für leichte Arbeit max. 2 Std./Tag zwischen 8 und 18 Uhr (§ 5 Abs. 3).",
-    caption: "§ 5 Abs. 1 & 3 JArbSchG: Unter 15 gilt grundsätzlich das Verbot; ab 13+ nur leichte Arbeiten bis 2 Std./Tag mit Einwilligung.",
+    alt: "Drei Rechtsregeln: Kinderarbeit unter 15 verboten (§ 5 Abs. 1), Sinn von Ferien ist Erholung und Entwicklung, enge Ausnahme ab über 13 Jahren für leichte Arbeit max. 2 Std./Tag zwischen 8 und 18 Uhr und nicht am Wochenende (§ 5 Abs. 3 i. V. m. §§ 16, 17).",
+    caption: "§ 5 Abs. 1 & 3 JArbSchG: Unter 15 gilt grundsätzlich das Verbot; ab 13+ nur leichte Arbeiten bis 2 Std./Tag (Mo–Fr, 8–18 Uhr) mit Einwilligung.",
     parts: [
       {
         label: "Grundverbot unter 15",
@@ -30,7 +30,7 @@ export const LB5_6_FIGURES: Record<string, ConceptFigure> = {
       },
       {
         label: "Ausnahme ab über 13 J.",
-        note: "Mit Einwilligung der Eltern erlaubt § 5 Abs. 3 leichte Tätigkeiten (z. B. Austragen) max. 2 Std./Tag, 8–18 Uhr, nie vor der Schule.",
+        note: "Mit Einwilligung der Eltern erlaubt § 5 Abs. 3 leichte Tätigkeiten (z. B. Austragen) max. 2 Std./Tag, 8–18 Uhr, nicht vor der Schule und nicht samstags/sonntags (§§ 16, 17).",
       },
     ],
     draw: () =>
@@ -42,7 +42,7 @@ export const LB5_6_FIGURES: Record<string, ConceptFigure> = {
         `${card(268, 16, 224, 238)}${badge(290, 38, 2)}${label(310, 43, "Zweck der Ferien", "heading", "start")}${pill(284, 74, 192, 36, "Erholung & Gesundheit", "v-green-fill", "micro")}${pill(284, 122, 192, 36, "Kraft fürs neue Schuljahr", "v-teal-fill", "micro")}${lines(380, 192, "Schulpflichtige Jugendliche\nsollen sich im Urlaub erholen.", "micro")}`,
       )}${group(
         3,
-        `${card(522, 16, 224, 238)}${badge(544, 38, 3)}${label(564, 43, "Ausnahme 13+", "heading", "start")}${sheetDoc(546, 66, 176, 118, "§ 5 Abs. 3 JArbSchG", ["Alter: über 13 Jahre", "Eltern-Einwilligung nötig", "Max. 2 Std./Tag · 8–18 Uhr", "Leichte, sichere Arbeit"])}${pill(538, 198, 192, 32, "Nie vor/während der Schule!", "v-gold-fill", "micro")}`,
+        `${card(522, 16, 224, 238)}${badge(544, 38, 3)}${label(564, 43, "Ausnahme 13+", "heading", "start")}${sheetDoc(546, 66, 176, 118, "§ 5 Abs. 3 JArbSchG", ["Alter: über 13 Jahre", "Eltern-Einwilligung nötig", "Max. 2 Std./Tag · 8–18 Uhr", "Keine Sa./So. (§§ 16, 17)"])}${pill(538, 198, 192, 32, "Nie vor/während der Schule!", "v-gold-fill", "micro")}`,
       )}`,
   },
 
@@ -57,8 +57,8 @@ export const LB5_6_FIGURES: Record<string, ConceptFigure> = {
         note: "Ab 15 Jahren sind während der Schulferien höchstens 4 Wochen (20 Arbeitstage in der 5-Tage-Woche) im ganzen Kalenderjahr erlaubt.",
       },
       {
-        label: "Tages- & Nachtgrenzen",
-        note: "Maximal 8 Std. täglich und 40 Std. wöchentlich (§ 8), nur zwischen 6 und 20 Uhr (§ 14), keine gefährlichen Arbeiten (§ 22).",
+        label: "Tages-, Nacht- & Wochenendgrenzen",
+        note: "Maximal 8 Std. täglich und 40 Std. wöchentlich (§ 8), nur zwischen 6 und 20 Uhr (§ 14), Fünf-Tage-Woche (§ 15), grundsätzlich keine Samstags-/Sonntagsarbeit (§§ 16, 17) und Verbot gefährlicher Arbeiten (§ 22).",
       },
       {
         label: "Ruhepausen (§ 11)",
@@ -145,7 +145,7 @@ export const LB5_6_FIGURES: Record<string, ConceptFigure> = {
   "te-oekonomie-oekologie-haushalt": {
     title: "Ökonomie und Ökologie technischer Geräte prüfen",
     question: "Wie treffen Kaufpreis, jährliche Stromkosten und Umweltwirkungen zusammen?",
-    alt: "Stromformel kWh = (W · Std.) / 1.000 links, Vergleich Ablufttrockner 2.000 W (416 kWh / 145,60 € Jahr) vs. Wäscheständer (0 kWh / 0 €) in der Mitte, EU-Energielabel (§ 4 EnVKG) und Lebensdauer rechts.",
+    alt: "Stromformel kWh = (W · Std.) / 1.000 links, Vergleich Ablufttrockner 2.000 W (416 kWh / 145,60 € Jahr) vs. Wäscheständer (0 kWh / 0 €) in der Mitte, EU-Energielabel (VO (EU) 2017/1369, §§ 3, 4 EnVKG) und Lebensdauer rechts.",
     caption: "Trockner (2.000 W · 4 Std./Wo. = 416 kWh / 145,60 €/Jahr) vs. Wäscheständer (0 €): sparsamer Einsatz schont Geld und Umwelt.",
     parts: [
       {
@@ -158,7 +158,7 @@ export const LB5_6_FIGURES: Record<string, ConceptFigure> = {
       },
       {
         label: "Label & Lebensdauer",
-        note: "Das EU-Energielabel (§ 4 EnVKG, Klassen A–G) zeigt Verbrauch und Wasserbedarf; lange Nutzungsdauer verhindert unnötigen Elektroschrott.",
+        note: "Das EU-Energielabel (VO (EU) 2017/1369, Klassen A–G; §§ 3, 4 EnVKG) zeigt Verbrauch und Wasserbedarf; lange Nutzungsdauer verhindert unnötigen Elektroschrott.",
       },
     ],
     draw: () =>
@@ -170,7 +170,7 @@ export const LB5_6_FIGURES: Record<string, ConceptFigure> = {
         `${card(268, 16, 224, 238)}${badge(290, 38, 2)}${label(310, 43, "Trockner vs. Leine", "heading", "start")}${label(284, 86, "Trockner", "micro", "start")}<rect x="348" y="72" width="126" height="22" rx="4" class="v-coral"/>${label(411, 87, "416 kWh · 145,60 €", "micro on-fill")}${label(284, 124, "Ständer", "micro", "start")}<rect x="348" y="110" width="6" height="22" rx="2" class="v-green"/>${label(360, 125, "0 kWh · 0,00 €", "micro", "start")}${lines(380, 174, "Ökonomisch und ökologisch\nimmer einfache Alternativen prüfen.", "micro")}`,
       )}${group(
         3,
-        `${card(522, 16, 224, 238)}${badge(544, 38, 3)}${label(564, 43, "Label & Umwelt", "heading", "start")}<rect x="546" y="70" width="84" height="18" rx="3" class="v-green"/><rect x="546" y="92" width="108" height="18" rx="3" class="v-gold"/><rect x="546" y="114" width="136" height="18" rx="3" class="v-coral"/>${label(564, 83, "A", "micro on-fill")}${label(564, 105, "D", "micro")}${label(564, 127, "G", "micro on-fill")}${lines(634, 168, "EU-Energielabel (§ 4 EnVKG)\n+ Reparierbarkeit beachten!", "micro")}`,
+        `${card(522, 16, 224, 238)}${badge(544, 38, 3)}${label(564, 43, "Label & Umwelt", "heading", "start")}<rect x="546" y="70" width="84" height="18" rx="3" class="v-green"/><rect x="546" y="92" width="108" height="18" rx="3" class="v-gold"/><rect x="546" y="114" width="136" height="18" rx="3" class="v-coral"/>${label(564, 83, "A", "micro on-fill")}${label(564, 105, "D", "micro")}${label(564, 127, "G", "micro on-fill")}${lines(634, 168, "EU-Label VO (EU) 2017/1369\n(§§ 3, 4 EnVKG) + reparierbar!", "micro")}`,
       )}`,
   },
 

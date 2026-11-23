@@ -296,6 +296,10 @@ describe("answer checking and generated exercises", () => {
           expect(task.hint, where).not.toMatch(/NaN|undefined|Infinity/);
           expect(task.solution, where).not.toMatch(/NaN|undefined|Infinity/);
           expect(task.prompt, where).not.toMatch(/(^|[\s(„"])-\d/);
+          if (kind === "portfolioCheck" && level === 2)
+            expect(task.prompt, where).toContain("insgesamt");
+          if (kind === "schoolSaleCalc" && level === 2)
+            expect(task.solution, where).not.toContain(",5 Stück");
         }
       }
       expect(differing, kind).toBe(80);

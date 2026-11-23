@@ -202,7 +202,7 @@ export const LB3_4_FIGURES: Record<string, ConceptFigure> = {
         `${card(268, 16, 224, 238)}${badge(290, 38, 2)}${label(310, 43, "Sportschuhe 75 €", "heading", "start")}<rect x="292" y="92" width="176" height="28" rx="5" class="v-orange"/>${label(380, 110, "75,00 € / 15,00 € = 5,00 Std.", "micro on-fill")}${pill(284, 140, 192, 34, "5,00 Std. = 300 Minuten", "v-orange-fill", "micro")}${lines(380, 200, "Vergleich lohnt sich vor\njedem teuren Kauf.", "micro")}`,
       )}${group(
         3,
-        `${card(522, 16, 224, 238)}${badge(544, 38, 3)}${label(564, 43, "Alltagssummen", "heading", "start")}<rect x="546" y="88" width="28" height="22" rx="4" class="v-teal"/>${label(582, 103, "3 € = 12 Min. (1 Tag)", "micro", "start")}<rect x="546" y="126" width="112" height="22" rx="4" class="v-coral"/>${label(602, 141, "60 € = 4 Std.", "micro on-fill")}${label(634, 174, "20 Schultage im Monat", "micro")}${pill(538, 194, 192, 32, "Kleinkäufe prüfen!", "v-gold-fill", "micro")}`,
+        `${card(522, 16, 224, 238)}${badge(544, 38, 3)}${label(564, 43, "Alltagssummen", "heading", "start")}<rect x="546" y="88" width="8" height="22" rx="3" class="v-teal"/>${label(562, 103, "3 € = 12 Min. (1 Tag)", "micro", "start")}<rect x="546" y="126" width="160" height="22" rx="4" class="v-coral"/>${label(626, 141, "60 € = 4 Std. (20 Tg.)", "micro on-fill")}${label(634, 174, "Maßstab 1 : 20 im Monat", "micro")}${pill(538, 194, 192, 32, "Kleinkäufe prüfen!", "v-gold-fill", "micro")}`,
       )}`,
   },
 
@@ -285,7 +285,7 @@ export const LB3_4_FIGURES: Record<string, ConceptFigure> = {
         note: "Beobachte Angebotsbreite (Bio, regional, Eigenmarke), lange Laufwege zu Grundnahrungsmitteln und Kassen-Quengelware.",
       },
       {
-        label: "Grundpreis (§ 3 PAngV)",
+        label: "Grundpreis (§ 4 PAngV)",
         note: "Müsli A (0,50 kg zu 1,80 €) kostet 3,60 €/kg; Müsli B (0,75 kg zu 2,40 €) kostet nur 3,20 €/kg und spart 0,40 €/kg.",
       },
     ],
@@ -369,8 +369,8 @@ export const LB3_4_FIGURES: Record<string, ConceptFigure> = {
   "wi-einnahmen-ausgaben-projekt": {
     title: "Einfache Übersicht über Einnahmen und Ausgaben",
     question: "Wie rechnest du die Kasse nach einem Schulprojekt belegtreu und ohne Wechselgeld-Fehler ab?",
-    alt: "Kassenabrechnung Klasse 7a: Ausgaben 78,00 € (68 € Bons + 10 € Material), Einnahmen 144,00 € (nach Abzug von 30 € Start-Wechselgeld), ergibt 66,00 € Überschuss.",
-    caption: "Beispiel Klassenverkauf 7a: Erst 30,00 € Start-Wechselgeld abziehen, dann 144,00 € − 78,00 € = 66,00 € Überschuss.",
+    alt: "Kassenabrechnung Klasse 7a: Ausgaben 78,00 € (68 € Bons + 10 € Material), Einnahmen 144,00 € (Kasse 174,00 € minus 30,00 € Start-Wechselgeld), ergibt 66,00 € Überschuss.",
+    caption: "Beispiel Klassenverkauf 7a: Kasse 174,00 € − 30,00 € Start-Wechselgeld = 144,00 € Verkaufserlös; 144,00 € − 78,00 € = 66,00 € Überschuss.",
     parts: [
       {
         label: "Alle Ausgabenbelege",

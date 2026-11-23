@@ -308,6 +308,15 @@ describe("illustrations and dynamic lab diagrams", () => {
       expect(renderStageArt(stage.lb)).toContain("<svg");
       expect(stageIcon(stage.lb)).toContain("<svg");
     }
+
+    expect(renderFigure("ar-arbeitsplatzmerkmale")).toContain("5,10 / 6,00 Punkte");
+    expect(renderFigure("ar-arbeitsplatzmerkmale")).not.toContain("5,05");
+    expect(renderFigure("ar-zugangserkundung-ausbildung")).toContain("§ 2 BBiG");
+    expect(renderFigure("wi-markterkundung")).toContain("§ 4 PAngV");
+    expect(renderFigure("wi-geldwert-arbeitszeit")).toContain('width="8"');
+    expect(renderFigure("wi-geldwert-arbeitszeit")).toContain('width="160"');
+    expect(renderFigure("re-kinderarbeit-ferienzweck")).toContain("§§ 16, 17");
+    expect(renderFigure("te-oekonomie-oekologie-haushalt")).toContain("VO (EU) 2017/1369");
   });
 
   it("renders a live SVG visualization in all 9 interactive labs without NaN or undefined", () => {
@@ -317,5 +326,15 @@ describe("illustrations and dynamic lab diagrams", () => {
       expect(html, kind).toContain('class="chart lab-svg"');
       expect(html, kind).not.toMatch(/\bNaN\b|\bundefined\b/);
     }
+    const jobOk = renderResult("holidayJobCheck", {
+      age: 15,
+      hoursPerDay: 8,
+      daysPerWeek: 5,
+      weeksPerYear: 4,
+      breakMinutes: 60,
+    });
+    expect(jobOk).toContain("§ 14");
+    expect(jobOk).toContain("§§ 16, 17");
+    expect(jobOk).toContain("§ 22");
   });
 });

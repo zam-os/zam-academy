@@ -239,13 +239,13 @@ export function makeExercise(kind: PracticeKind, rng: Rng, level: Level): Exerci
       const freePct = 100 - filledPct;
       const offered = (open * 100) / freePct;
       return {
-        prompt: `Für den Ausbildungsmarkt im Landkreis melden IHK und HWK zusammen ${offered} offene Ausbildungsplätze. Davon sind ${filledPct} % bereits vergeben. Wie viele Ausbildungsplätze sind noch frei, und wie viele Plätze kämen durchschnittlich auf jeden von ${extraVisits} erkundeten Betrieben (falls gleichmäßig verteilt)?`,
-        hint: "Freie Plätze = Gesamtplätze · (100 % − vergeben %). Teile die freien Plätze anschließend durch die Zahl der Betriebe.",
+        prompt: `Für den Ausbildungsmarkt im Landkreis melden Betriebe bei IHK und HWK insgesamt ${offered} Ausbildungsplätze. Davon sind ${filledPct} % bereits besetzt. Wie viele Ausbildungsplätze sind noch offen, und wie viele Plätze kämen durchschnittlich auf jeden von ${extraVisits} erkundeten Betrieben (falls gleichmäßig verteilt)?`,
+        hint: "Offene Plätze = Gesamtplätze · (100 % − besetzt %). Teile die noch offenen Plätze anschließend durch die Zahl der Betriebe.",
         fields: [
-          { label: "Noch freie Ausbildungsplätze", answer: open, unit: "Stück" },
-          { label: "Freie Plätze je Betrieb", answer: perCompany, unit: "Stück" },
+          { label: "Noch offene Ausbildungsplätze", answer: open, unit: "Stück" },
+          { label: "Offene Plätze je Betrieb", answer: perCompany, unit: "Stück" },
         ],
-        solution: `Frei = ${offered} · (1 − ${filledPct} / 100) = ${open} Plätze · Je Betrieb = ${open} / ${extraVisits} = ${perCompany} Stück.`,
+        solution: `Offen = ${offered} · (1 − ${filledPct} / 100) = ${open} Plätze · Je Betrieb = ${open} / ${extraVisits} = ${perCompany} Stück.`,
       };
     }
 
@@ -375,7 +375,7 @@ export function makeExercise(kind: PracticeKind, rng: Rng, level: Level): Exerci
         prompt: `Das Haushaltseinkommen von ${fmt(netIncome)} € steigt durch eine neue Qualifikation um ${raisePct} %, gleichzeitig erhöhen sich Miete und Nebenkosten um ${fmt(costUp)} € (bisheriger Grundbedarf: ${fmt(housingFood)} €). Berechne das neue frei verfügbare Einkommen und die neue Grundbedarfsquote.`,
         hint: "Erhöhe zuerst Einkommen um den Prozentsatz und Grundbedarf um den Eurobetrag, berechne dann freien Rest und Quote.",
         fields: [
-          { label: "Neues frei verfügbare Einkommen", answer: newRes.freeIncome, unit: "€" },
+          { label: "Neues frei verfügbares Einkommen", answer: newRes.freeIncome, unit: "€" },
           { label: "Neue Grundbedarfsquote", answer: newRes.basicRatioPct, unit: "%" },
         ],
         solution: `Neues Einkommen = ${fmt(newNet)} € · Neuer Grundbedarf = ${fmt(newBasic)} € · Frei verfügbar = ${fmt(newRes.freeIncome)} € · Quote = ${fmt(newRes.basicRatioPct)} %.`,
@@ -498,7 +498,7 @@ export function makeExercise(kind: PracticeKind, rng: Rng, level: Level): Exerci
           solution: `Ausgaben = ${buyQty} · ${fmt(unitCost)} € + ${fmt(standCost)} € = ${fmt(res.expense)} € · Einnahmen = ${fmt(res.revenue)} € · Überschuss = ${fmt(res.surplus)} €.`,
         };
       }
-      const demandPct = pick(rng, [80, 85, 90]);
+      const demandPct = pick(rng, [70, 80, 90]);
       const res = schoolSaleOutcome(buyQty, unitCost, sellPrice, demandPct, standCost);
       return {
         prompt: `Vom Einkauf von ${buyQty} Stück (Einkaufspreis ${fmt(unitCost)} €, Standkosten ${fmt(standCost)} €) können beim Preis von ${fmt(sellPrice)} € nur ${demandPct} % verkauft werden, der Rest bleibt unverkauft. Berechne die unverkaufte Restmenge und das tatsächliche Ergebnis (Überschuss).`,
