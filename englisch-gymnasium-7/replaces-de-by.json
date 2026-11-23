@@ -1,0 +1,55 @@
+{
+	"schema": 1,
+	"status": "approved",
+	"approved": "2026-11-23",
+	"source": "Thomas am 2026-11-23 in dieser Claude-Code-Sitzung (Desktop-App) auf die Frage „Do you approve the card mapping (1 A, 3 C keep-active)?“ zur Zuordnung von de-by:gymnasium-7-englisch-grammar-present-perfect-modals-conditionals (1 A: J01 -> e7-since-for-check; 3 C keep-active: J02, J03, J04): „Freigabe erteilt“. Offen bleiben die Fragen aus dem PR, ob J03 nach Englisch 6 wandern soll und wie mit der Nachbarzelle der Jahrgangsstufe 8 umzugehen ist.",
+	"source_repository": "https://github.com/zam-os/zam",
+	"source_commit": "67e190c2b7e5282851dfdd60ce21b69ed373dfa9",
+	"neighbouring_grade_review": "de-by:gymnasium-8-englisch-past-perfect-passive-indirect-speech-usa (zam-os/zam, gleicher Commit) wurde geprüft: J01 (indirekte Rede mit Zeitverschiebung), J02 (past perfect, Passiv und indirekte Rede als Sammelabruf), J03 und J04 (US-Geschichte bis zur Bürgerrechtsbewegung) gehören nach LehrplanPLUS zu Jahrgang 8 oder bündeln Jahrgang-7- und -8-Inhalte. Sie bleiben einem späteren Paket Englisch 8 überlassen (Thomas am 2026-11-23 in derselben Claude-Code-Sitzung: „8. Klasse Paket - ja das kommt demnächst. Liegen lassen.“). J03 dieser Zelle (had to) wandert nicht nach Englisch 6 (Thomas am 2026-11-23 in derselben Claude-Code-Sitzung: „kein Extra-PR für die 6. Klasse“).",
+	"sources": [
+		{
+			"file": "tests/fixtures/de-by-gymnasium-7-englisch-grammar-present-perfect-modals-conditionals-kvt.json",
+			"tile_id": "de-by:gymnasium-7-englisch-grammar-present-perfect-modals-conditionals",
+			"version": "2026.08.1",
+			"sha256": "2859bd22297ca7c746bc65dcf6344cb3ba3022fd021f611124bf73f694f12bae"
+		}
+	],
+	"rows": [
+		{
+			"de_by_cell": "de-by:gymnasium-7-englisch-grammar-present-perfect-modals-conditionals",
+			"de_by_id": "01K4E7G0000000000000000J01",
+			"de_by_question": "Wann verwendet man im Englischen die Zeitform 'Past Simple' anstelle des 'Present Perfect'?",
+			"category": "A",
+			"academy_slug": "e7-since-for-check",
+			"action": "replace",
+			"reason": "Gleicher Einzelabruf: Wann steht das simple past statt des present perfect (abgeschlossene Handlung mit vergangenem Zeitpunkt)? e7-since-for-check fragt genau das mit derselben Antwort. Der Kontrast ist im LehrplanPLUS schon in Englisch 6 angelegt (e6-past-or-perfect-check fragt ähnlich, aber umgekehrt nach der Zeitform zu einer Zeitangabe); in Jahrgang 7 wird er mit since/for vertieft. Thomas hat am 2026-11-23 den Nachfolger in Englisch 7 freigegeben."
+		},
+		{
+			"de_by_cell": "de-by:gymnasium-7-englisch-grammar-present-perfect-modals-conditionals",
+			"de_by_id": "01K4E7G0000000000000000J02",
+			"de_by_question": "Vergleiche die beiden englischen Zeiten Present Perfect und Past Simple: 1. Present Perfect Simple (have/has + 3. Verbform / Past Participle): Verbindung zwischen Vergangenheit und Gegenwart (Handlung begann in der Vergangenheit und dauert bis heute an ODER Handlung ist gerade vorbei mit sichtbarem Ergebnis in der Gegenwart; Signalwörter: since [Zeitpunkt], for [Zeitspanne], just, already, yet, never, ever, so far), 2. Past Simple (2. Verbform / -ed): Vollständig abgeschlossene Handlung in der Vergangenheit ohne Gegenwartsbezug; Signalwörter: yesterday, last week, in 1999, two days ago, when I was young, 3. Unterschied since vs. for: since + fester Zeitpunkt (since Monday, since 2015); for + Zeitdauer (for three hours, for five years) und übersetze: a) 'Ich lebe seit 2018 in München [und wohne immer noch dort].' b) 'Gestern kaufte er ein neues Fahrrad.'",
+			"category": "C",
+			"academy_slug": null,
+			"action": "keep-active",
+			"reason": "Mehrteiliger Sammelabruf (Bildung, Funktion und Signalwörter beider Zeiten, since/for und zwei Übersetzungen). Die Teile verteilen sich auf e7-since-for, e7-language-contrast und Englisch 6; kein einzelner Nachfolger bildet den ganzen Abruf mit Musterlösung ab."
+		},
+		{
+			"de_by_cell": "de-by:gymnasium-7-englisch-grammar-present-perfect-modals-conditionals",
+			"de_by_id": "01K4E7G0000000000000000J03",
+			"de_by_question": "Welche Ersatzform muss verwendet werden, um das Modalverb 'must' (müssen) im Past Simple (Vergangenheit) auszudrücken?",
+			"category": "C",
+			"academy_slug": null,
+			"action": "keep-active",
+			"reason": "had to als Ersatzform von must gehört im LehrplanPLUS zu Englisch 6 (1. Fremdsprache). Diese Zelle hat dafür keinen Nachfolger. Gleichen Abruf hat e6-substitutes-check im Paket englisch-gymnasium-6; Thomas hat am 2026-11-23 entschieden, dafür keinen eigenen PR an Englisch 6 zu öffnen („kein Extra-PR für die 6. Klasse“); die Karte bleibt aktiv."
+		},
+		{
+			"de_by_cell": "de-by:gymnasium-7-englisch-grammar-present-perfect-modals-conditionals",
+			"de_by_id": "01K4E7G0000000000000000J04",
+			"de_by_question": "Erkläre die Ersatzformen der Modalverben und die Conditional Clauses Type 1 & 2: 1. Modal Substitutes (Ersatzverben): Da can, must, may defektiv sind (keine Formen im Past, Future oder Present Perfect besitzen), werden sie ersetzt durch:   * can (können/Fähigkeit)  be able to (was/were able to, will be able to).   * must (müssen/Pflicht)  have to (had to, will have to).   * may (dürfen/Erlaubnis)  be allowed to (was/were allowed to, will be allowed to).   * must not (nicht dürfen/Verbot) vs. needn't / don't have to (nicht müssen/Freiwilligkeit), 2. Conditional Sentences:   * Type 1 (Erfüllbare Bedingung der Gegenwart/Zukunft):  ('If it rains, we will stay at home').   * Type 2 (Unwahrscheinliche / hypothetische Bedingung):  ('If I won the lottery, I would buy a house').   * Eiserne Regel: Im if-Satz steht im Englischen **niemals will oder *would*** ('If-Satz-Regel').",
+			"category": "C",
+			"academy_slug": null,
+			"action": "keep-active",
+			"reason": "Mehrteiliger Sammelabruf: Ersatzformen der Modalverben und Konditionalsatz I (Englisch 6) zusammen mit Konditionalsatz II (Englisch 7). Er ließe sich nur auf mehrere Karten aus zwei Paketen verteilen; eine Historie wird nie auf mehrere Karten aufgeteilt."
+		}
+	]
+}
