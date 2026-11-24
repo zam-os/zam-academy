@@ -48,7 +48,4 @@ Keine Lehrervideos (`AGENTS.md` Abschnitt 4).
 ## Entscheidungen
 
 - **Fachname in der Lehrplanbindung: `subject: englisch-2fs`.** Thomas am 2026-11-24 in der Claude-Code-Sitzung zu diesem Paket (PR #195), auf die Frage, ob die Karten an `englisch-2fs` binden sollen: „Yes, englisch-2fs“. ZAM kennt den Fachnamen `englisch-2fs` in seinen Lernpositionen noch nicht; bis ZAM ihn kennt, erscheinen die Karten nicht in einer Englisch-6-Position für die 1. Fremdsprache – was gewollt ist –, aber auch noch nicht in einer eigenen Position für die 2. Fremdsprache. Das ergänzt ZAM, wenn es die Zelle bündelt.
-
-## Offene Fragen an Thomas
-
-1. **Starter-Karten aus Jahrgang 5:** Die Karten von `de-by:gymnasium-5-englisch-starter-grammar-tenses` (to be, have got, simple present, simple past) passen inhaltlich auch zu diesem ersten Lernjahr. Sie sind schon `englisch-gymnasium-5` zugeordnet und bleiben dort.
+- **Starter-Karten aus Jahrgang 5 bleiben bei `englisch-gymnasium-5`.** Die Karten von `de-by:gymnasium-5-englisch-starter-grammar-tenses` (to be, have got, simple present, simple past) passen inhaltlich auch zu diesem ersten Lernjahr, sind aber schon `englisch-gymnasium-5` zugeordnet. Thomas am 2026-11-24 in der Claude-Code-Sitzung zu diesem Paket (PR #195): „Starter-Karten bleiben bei englisch-gymnasium-5“. Dieses Paket übernimmt keine alte Karte.
