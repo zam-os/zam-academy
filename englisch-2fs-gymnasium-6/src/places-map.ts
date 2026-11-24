@@ -166,7 +166,8 @@ export function renderBritishIsles(active = "uk"): string {
 		<text class="region-name" text-anchor="middle" x="270" y="78">Scotland</text>
 		<text class="region-name" text-anchor="middle" x="330" y="262">England</text>
 		<text class="region-name" text-anchor="middle" x="262" y="262">Wales</text>
-		<text class="region-name" text-anchor="middle" x="146" y="134">Northern Ireland</text>
+		<text class="region-name" text-anchor="middle" x="176" y="181">Northern</text>
+		<text class="region-name" text-anchor="middle" x="176" y="191">Ireland</text>
 		<text class="region-name" text-anchor="middle" x="140" y="276">Republic</text>
 		<text class="region-name" text-anchor="middle" x="140" y="290">of Ireland</text>
 	</g>
@@ -239,7 +240,7 @@ export function renderLondonMap(active = "parliament"): string {
 			return `<g class="map-cities sight sight-${key}" ${focusItem(key, active, "dim")}>${icon}${pins(LONDON_SIGHTS, [key])}</g>`;
 		})
 		.join("")}
-	<g class="tube-sign" transform="translate(166 168)"><circle r="9"/><rect x="-12" y="-3" width="24" height="6"/></g><g class="tube-sign" transform="translate(28 266)"><circle r="6"/><rect x="-8" y="-2" width="16" height="4"/></g><text class="small-map-label" x="40" y="270">Tube station (Westminster)</text>
+	<g class="tube-sign" transform="translate(166 168)"><circle r="9"/><rect x="-12" y="-3" width="24" height="6"/></g><text class="small-map-label" x="152" y="162" text-anchor="end">Westminster</text><g class="tube-sign" transform="translate(28 266)"><circle r="6"/><rect x="-8" y="-2" width="16" height="4"/></g><text class="small-map-label" x="40" y="270">= Tube station (U-Bahn)</text>
 	<text class="compass" x="450" y="24">N ↑</text>
 	</svg><figcaption>Lernskizze · Norden oben · nicht maßstäblich.</figcaption></figure>${readout(LONDON_SIGHTS[active as keyof typeof LONDON_SIGHTS].note)}</div>`;
 }
