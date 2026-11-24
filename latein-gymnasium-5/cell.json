@@ -1,0 +1,3752 @@
+{
+	"$schema": "https://zam.app/schemas/v1/kvt-tile.json",
+	"tile_id": "zam-academy:latein-gymnasium-5",
+	"version": "2026.11.1",
+	"title": "Latein 5 Gymnasium (ZAM Academy)",
+	"description": "Latein als 1. Fremdsprache am bayerischen Gymnasium (Jahrgangsstufe 5): 44 Lektionen zu Klang, Wortschatz, Deklinationen, Adjektiven und Pronomina, Numeralia 1–12, Verben und Aktiv-Tempora bis Futur II, Kasusfunktionen, Satzarten, aktivem AcI, Topografie und Alltag Roms, Religion, Mythos, Gründungssage sowie Text- und Lernmethodik mit 132 Lernkarten.",
+	"publisher": "ZAM Academy",
+	"sources": [
+		{
+			"uri": "https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/5/latein/1-fremdsprache",
+			"label": "LehrplanPLUS - Gymnasium - 5 - Latein - Fachlehrpläne",
+			"checked": "2026-11-24"
+		},
+		{
+			"uri": "https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/6/latein/1-fremdsprache",
+			"label": "LehrplanPLUS - Gymnasium - 6 - Latein - Fachlehrpläne",
+			"checked": "2026-11-24"
+		},
+		{
+			"uri": "https://www.lehrplanplus.bayern.de/fachprofil/gymnasium/latein",
+			"label": "LehrplanPLUS - Gymnasium - Latein - Fachprofile",
+			"checked": "2026-11-24"
+		},
+		{
+			"uri": "https://www.antike-am-koenigsplatz.mwn.de/",
+			"label": "Antike am Königsplatz",
+			"checked": "2026-11-24"
+		},
+		{
+			"uri": "https://de.wikipedia.org/wiki/Forum_Romanum",
+			"label": "Forum Romanum – Wikipedia",
+			"checked": "2026-11-24"
+		},
+		{
+			"uri": "https://de.wikipedia.org/wiki/Kolosseum",
+			"label": "Kolosseum – Wikipedia",
+			"checked": "2026-11-24"
+		},
+		{
+			"uri": "https://de.wikipedia.org/wiki/Circus_Maximus",
+			"label": "Circus Maximus – Wikipedia",
+			"checked": "2026-11-24"
+		},
+		{
+			"uri": "https://de.wikipedia.org/wiki/Konstantinsbogen",
+			"label": "Konstantinsbogen – Wikipedia",
+			"checked": "2026-11-24"
+		},
+		{
+			"uri": "https://de.wikipedia.org/wiki/Ostia_Antica",
+			"label": "Ostia Antica – Wikipedia",
+			"checked": "2026-11-24"
+		},
+		{
+			"uri": "https://de.wikipedia.org/wiki/R%C3%B6mischer_Kalender",
+			"label": "Römischer Kalender – Wikipedia",
+			"checked": "2026-11-24"
+		},
+		{
+			"uri": "https://de.wikipedia.org/wiki/R%C3%B6mische_Religion",
+			"label": "Römische Religion – Wikipedia",
+			"checked": "2026-11-24"
+		},
+		{
+			"uri": "https://de.wikipedia.org/wiki/Zw%C3%B6lf_Olympische_G%C3%B6tter",
+			"label": "Zwölf Olympische Götter – Wikipedia",
+			"checked": "2026-11-24"
+		},
+		{
+			"uri": "https://de.wikipedia.org/wiki/Herakles",
+			"label": "Herakles – Wikipedia",
+			"checked": "2026-11-24"
+		},
+		{
+			"uri": "https://de.wikipedia.org/wiki/Aeneas",
+			"label": "Aeneas – Wikipedia",
+			"checked": "2026-11-24"
+		},
+		{
+			"uri": "https://de.wikipedia.org/wiki/Romulus_und_Remus",
+			"label": "Romulus und Remus – Wikipedia",
+			"checked": "2026-11-24"
+		},
+		{
+			"uri": "https://de.wikipedia.org/wiki/Vergil",
+			"label": "Vergil – Wikipedia",
+			"checked": "2026-11-24"
+		},
+		{
+			"uri": "https://de.wikipedia.org/wiki/Titus_Livius",
+			"label": "Titus Livius – Wikipedia",
+			"checked": "2026-11-24"
+		}
+	],
+	"atoms": [
+		{
+			"id": "01M863E3EJ63FGGKSMS90ZNM2E",
+			"atom_uri": "urn:zam:atom:01M863E3EJ63FGGKSMS90ZNM2E",
+			"namespace": "zam-academy-latein-gymnasium-5",
+			"slug": "l5-aussprache-betonung",
+			"title": "Laute, Längen und Betonung",
+			"domain": "latein/klang-wortschatz",
+			"reduction": "formal",
+			"typical_age_min": 10,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-aussprache-betonung",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-5",
+					"topic_code": "klang-wortschatz",
+					"topic_title": "Salve, Roma! Klang, Wortschatz und Europa"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "latein",
+					"topic_code": "lb2.1",
+					"topic_title": "Sprachliche Basis: Wortschatz",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "latein",
+					"topic_code": "lb1",
+					"topic_title": "Texte",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8KS",
+					"slug": "l5-aussprache-betonung-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Auf welcher Silbe wird das lateinische Wort fē-mi-na betont?",
+					"concept": "Auf der drittletzten Silbe (fē-), weil die vorletzte Silbe (-mi-) kurz ist.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-aussprache-betonung",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Auf der drittletzten Silbe (fē-), weil die vorletzte Silbe (-mi-) kurz ist.",
+							"Auf der vorletzten Silbe (-mi-), weil sie vor dem Schluss-a steht."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8KT",
+					"slug": "l5-aussprache-betonung-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Auf welcher Silbe wird das dreisilbige Wort 'amīcus' (mit langem ī) betont?",
+					"concept": "Auf der vorletzten Silbe (-mī-: a-MĪ-cus).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-aussprache-betonung",
+					"sample_solution": "Auf der vorletzten Silbe (-mī-: a-MĪ-cus)."
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8KV",
+					"slug": "l5-aussprache-betonung-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Warum trägt 'magister' trotz kurzem -i- die Betonung auf -gis-?",
+					"concept": "Positionslänge: Auf den Vokal i folgen zwei Konsonanten (s + t).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-aussprache-betonung",
+					"sample_solution": "Positionslänge: Auf den Vokal i folgen zwei Konsonanten (s + t)."
+				}
+			]
+		},
+		{
+			"id": "01M863E3EJ63FGGKSMS90ZNM2F",
+			"atom_uri": "urn:zam:atom:01M863E3EJ63FGGKSMS90ZNM2F",
+			"namespace": "zam-academy-latein-gymnasium-5",
+			"slug": "l5-grundwortschatz-lernen",
+			"title": "Grundwortschatz und Kontextbedeutung",
+			"domain": "latein/klang-wortschatz",
+			"reduction": "formal",
+			"typical_age_min": 10,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-grundwortschatz-lernen",
+			"prerequisites": [
+				{
+					"atom_id": "01M863E3EJ63FGGKSMS90ZNM2E",
+					"type": "hard",
+					"rationale": "Sichere Betonung und Quantitäten erleichtern das richtige Memorieren von Stammformen."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-5",
+					"topic_code": "klang-wortschatz",
+					"topic_title": "Salve, Roma! Klang, Wortschatz und Europa"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "latein",
+					"topic_code": "lb2.1",
+					"topic_title": "Sprachliche Basis: Wortschatz",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "latein",
+					"topic_code": "lb4",
+					"topic_title": "Methodik",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8KW",
+					"slug": "l5-grundwortschatz-lernen-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was bedeutet 'Senātor pācem petit' am treffendsten im Kontext?",
+					"concept": "Der Senator bittet um Frieden (oder strebt nach Frieden).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-grundwortschatz-lernen",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Der Senator bittet um Frieden (oder strebt nach Frieden).",
+							"Der Senator greift den Frieden mit dem Schwert an."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8KX",
+					"slug": "l5-grundwortschatz-lernen-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welche beiden Angaben gehören zu einem Substantiv auf der lateinischen Vokabelkarte?",
+					"concept": "Nominativ Singular, Genitiv Singular und Genus (z. B. rēx, rēgis m.).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-grundwortschatz-lernen",
+					"sample_solution": "Nominativ Singular, Genitiv Singular und Genus (z. B. rēx, rēgis m.)."
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8KY",
+					"slug": "l5-grundwortschatz-lernen-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Was bedeutet 'hostem petere' im Unterschied zu 'pācem petere'?",
+					"concept": "hostem petere = den Feind angreifen; pācem petere = um Frieden bitten.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-grundwortschatz-lernen",
+					"sample_solution": "hostem petere = den Feind angreifen; pācem petere = um Frieden bitten."
+				}
+			]
+		},
+		{
+			"id": "01M863E3EJ63FGGKSMS90ZNM2G",
+			"atom_uri": "urn:zam:atom:01M863E3EJ63FGGKSMS90ZNM2G",
+			"namespace": "zam-academy-latein-gymnasium-5",
+			"slug": "l5-wortarten-wortfelder",
+			"title": "Wortarten, Wortfelder und Wortfamilien",
+			"domain": "latein/klang-wortschatz",
+			"reduction": "formal",
+			"typical_age_min": 10,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-wortarten-wortfelder",
+			"prerequisites": [
+				{
+					"atom_id": "01M863E3EJ63FGGKSMS90ZNM2F",
+					"type": "hard",
+					"rationale": "Vokabeln werden nach Wortarten (Verb/Nomen) und Sachfeldern sortiert."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-5",
+					"topic_code": "klang-wortschatz",
+					"topic_title": "Salve, Roma! Klang, Wortschatz und Europa"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "latein",
+					"topic_code": "lb2.1",
+					"topic_title": "Sprachliche Basis: Wortschatz",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "latein",
+					"topic_code": "lb2.2",
+					"topic_title": "Sprachliche Basis: Formenlehre",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8KZ",
+					"slug": "l5-wortarten-wortfelder-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was unterscheidet eine Wortfamilie von einem Wortfeld?",
+					"concept": "Eine Wortfamilie teilt denselben Wortstamm (amāre – amīcus – amīcitia); ein Wortfeld teilt ein Thema.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-wortarten-wortfelder",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Eine Wortfamilie teilt denselben Wortstamm (amāre – amīcus – amīcitia); ein Wortfeld teilt ein Thema.",
+							"Eine Wortfamilie besteht nur aus Verben; ein Wortfeld nur aus Substantiven."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8M0",
+					"slug": "l5-wortarten-wortfelder-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie grenzt du eine Wortfamilie von einem Wortfeld ab?",
+					"concept": "Wortfamilie = gleicher Wortstamm (amāre, amīcus, amīcitia); Wortfeld = gleiches Thema (Schule: liber, tabula, stilus).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-wortarten-wortfelder",
+					"sample_solution": "Wortfamilie = gleicher Wortstamm (amāre, amīcus, amīcitia); Wortfeld = gleiches Thema (Schule: liber, tabula, stilus)."
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8M1",
+					"slug": "l5-wortarten-wortfelder-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Wie heißt das lateinische Substantiv 'Freundschaft' aus dem Wortstamm am-?",
+					"concept": "amīcitia, -ae f.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-wortarten-wortfelder",
+					"sample_solution": "amīcitia, -ae f."
+				}
+			]
+		},
+		{
+			"id": "01M863E3EJ63FGGKSMS90ZNM2H",
+			"atom_uri": "urn:zam:atom:01M863E3EJ63FGGKSMS90ZNM2H",
+			"namespace": "zam-academy-latein-gymnasium-5",
+			"slug": "l5-wortbildung-kontext",
+			"title": "Wortbildung und unbekannte Wörter erschließen",
+			"domain": "latein/klang-wortschatz",
+			"reduction": "formal",
+			"typical_age_min": 10,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-wortbildung-kontext",
+			"prerequisites": [
+				{
+					"atom_id": "01M863E3EJ63FGGKSMS90ZNM2G",
+					"type": "hard",
+					"rationale": "Wortfamilien zeigen den Kernstamm vor Präfixen und Suffixen."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-5",
+					"topic_code": "klang-wortschatz",
+					"topic_title": "Salve, Roma! Klang, Wortschatz und Europa"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "latein",
+					"topic_code": "lb2.1",
+					"topic_title": "Sprachliche Basis: Wortschatz",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8M2",
+					"slug": "l5-wortbildung-kontext-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was bedeutet das unbekannte Wort 'dēfēnsor', wenn du dēfendere (verteidigen) und das Suffix -sor / -tor kennst?",
+					"concept": "Der Verteidiger (handelnde Person zu dēfendere).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-wortbildung-kontext",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Der Verteidiger (handelnde Person zu dēfendere).",
+							"Die Verteidigung (abstrakter Vorgang)."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8M3",
+					"slug": "l5-wortbildung-kontext-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Was bedeutet 'āmittere', wenn mittere 'schicken' und das Präfix ā-/ab- 'weg' heißt?",
+					"concept": "verlieren (wörtlich: wegschicken / aus der Hand lassen).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-wortbildung-kontext",
+					"sample_solution": "verlieren (wörtlich: wegschicken / aus der Hand lassen)."
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8M4",
+					"slug": "l5-wortbildung-kontext-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Welche Bedeutung hat das Suffix -tor / -sor in Substantiven wie 'dēfēnsor' oder 'imperātor'?",
+					"concept": "Handelnde Person (Berufs- oder Täterbezeichnung: Verteidiger, Feldherr).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-wortbildung-kontext",
+					"sample_solution": "Handelnde Person (Berufs- oder Täterbezeichnung: Verteidiger, Feldherr)."
+				}
+			]
+		},
+		{
+			"id": "01M863E3EJ63FGGKSMS90ZNM2J",
+			"atom_uri": "urn:zam:atom:01M863E3EJ63FGGKSMS90ZNM2J",
+			"namespace": "zam-academy-latein-gymnasium-5",
+			"slug": "l5-wendungen-sentenzen",
+			"title": "Wendungen, Inschriften und geflügelte Worte",
+			"domain": "latein/klang-wortschatz",
+			"reduction": "formal",
+			"typical_age_min": 10,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-wendungen-sentenzen",
+			"prerequisites": [
+				{
+					"atom_id": "01M863E3EJ63FGGKSMS90ZNM2F",
+					"type": "soft",
+					"rationale": "Grundbedeutungen einzelner Vokabeln erklären den Sinn fester Junkturbildungen."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-5",
+					"topic_code": "klang-wortschatz",
+					"topic_title": "Salve, Roma! Klang, Wortschatz und Europa"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "latein",
+					"topic_code": "lb2.1",
+					"topic_title": "Sprachliche Basis: Wortschatz",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "latein",
+					"topic_code": "lb3",
+					"topic_title": "Kultureller Kontext",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8M5",
+					"slug": "l5-wendungen-sentenzen-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wofür steht die berühmte römische Abkürzung S. P. Q. R.?",
+					"concept": "Senātus Populusque Rōmānus (Der Senat und das römische Volk).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-wendungen-sentenzen",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Senātus Populusque Rōmānus (Der Senat und das römische Volk).",
+							"Senātor Pūblius Quīntus Rōmānus (ein Konsulname)."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8M6",
+					"slug": "l5-wendungen-sentenzen-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Was bedeutet das bekannte Postskriptum 'P. S.' am Briefende auf Latein und Deutsch?",
+					"concept": "post scrīptum = nach dem Geschriebenen (Nachtrag).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-wendungen-sentenzen",
+					"sample_solution": "post scrīptum = nach dem Geschriebenen (Nachtrag)."
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8M7",
+					"slug": "l5-wendungen-sentenzen-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Wie übersetzt du die feste Wendung 'cōnsilium capere' in treffendes Deutsch?",
+					"concept": "einen Plan fassen / einen Entschluss fassen.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-wendungen-sentenzen",
+					"sample_solution": "einen Plan fassen / einen Entschluss fassen."
+				}
+			]
+		},
+		{
+			"id": "01M863E3EJ63FGGKSMS90ZNM2K",
+			"atom_uri": "urn:zam:atom:01M863E3EJ63FGGKSMS90ZNM2K",
+			"namespace": "zam-academy-latein-gymnasium-5",
+			"slug": "l5-europa-sprachen",
+			"title": "Latein, Deutsch, Englisch und romanische Sprachen",
+			"domain": "latein/klang-wortschatz",
+			"reduction": "formal",
+			"typical_age_min": 10,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-europa-sprachen",
+			"prerequisites": [
+				{
+					"atom_id": "01M863E3EJ63FGGKSMS90ZNM2H",
+					"type": "soft",
+					"rationale": "Wortstämme machen Lehnwörter und romanische Ableitungen erkennbar."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-5",
+					"topic_code": "klang-wortschatz",
+					"topic_title": "Salve, Roma! Klang, Wortschatz und Europa"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "latein",
+					"topic_code": "lb2.1",
+					"topic_title": "Sprachliche Basis: Wortschatz",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "latein",
+					"topic_code": "lb3",
+					"topic_title": "Kultureller Kontext",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8M8",
+					"slug": "l5-europa-sprachen-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was unterscheidet das Lehnwort 'Mauer' (von lat. mūrus) von einem Fremdwort wie 'Aquarium' (von lat. aqua)?",
+					"concept": "Das Lehnwort 'Mauer' wurde früh in Lautung und Schreibung völlig ans Deutsche angepasst; 'Aquarium' behielt die fremde Endung.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-europa-sprachen",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Das Lehnwort 'Mauer' wurde früh in Lautung und Schreibung völlig ans Deutsche angepasst; 'Aquarium' behielt die fremde Endung.",
+							"Lehnwörter stammen immer aus dem Griechischen, Fremdwörter immer aus dem Lateinischen."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8M9",
+					"slug": "l5-europa-sprachen-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welches deutsche Lehnwort entstand aus lateinisch 'via strāta'?",
+					"concept": "Straße (von strāta, gepflasterte Straße).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-europa-sprachen",
+					"sample_solution": "Straße (von strāta, gepflasterte Straße)."
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8MA",
+					"slug": "l5-europa-sprachen-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Aus welchem lateinischen Verb stammt das englische Fremdwort 'audience'?",
+					"concept": "audīre (hören → Hörerschaft / Publikum).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-europa-sprachen",
+					"sample_solution": "audīre (hören → Hörerschaft / Publikum)."
+				}
+			]
+		},
+		{
+			"id": "01M863E3EJ63FGGKSMS90ZNM2M",
+			"atom_uri": "urn:zam:atom:01M863E3EJ63FGGKSMS90ZNM2M",
+			"namespace": "zam-academy-latein-gymnasium-5",
+			"slug": "l5-a-o-deklination",
+			"title": "Die a- und o-Deklination in allen Kasus",
+			"domain": "latein/nomina-formen",
+			"reduction": "formal",
+			"typical_age_min": 10,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-a-o-deklination",
+			"prerequisites": [
+				{
+					"atom_id": "01M863E3EJ63FGGKSMS90ZNM2G",
+					"type": "hard",
+					"rationale": "Substantive unterscheiden Kasus, Numerus und Genus als Wortart."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-5",
+					"topic_code": "nomina-formen",
+					"topic_title": "Nomina in Form: Deklinationen, Pronomina und Zahlen"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "latein",
+					"topic_code": "lb2.2",
+					"topic_title": "Sprachliche Basis: Formenlehre",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "latein",
+					"topic_code": "lb4",
+					"topic_title": "Methodik",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8MB",
+					"slug": "l5-a-o-deklination-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Woran erkennst du sofort, ob 'templa' Nominativ Plural oder Akkusativ Plural ist?",
+					"concept": "Nur am Satzbau (ob es Subjekt oder Objekt ist) – beim Neutrum sind Nominativ und Akkusativ immer formgleich.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-a-o-deklination",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Nur am Satzbau (ob es Subjekt oder Objekt ist) – beim Neutrum sind Nominativ und Akkusativ immer formgleich.",
+							"Im Akkusativ Plural endet templum auf -ōs, nicht auf -a."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8MC",
+					"slug": "l5-a-o-deklination-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie lautet der Genitiv Plural von 'domina, -ae f.' und der Akkusativ Plural von 'amīcus, -ī m.'?",
+					"concept": "dominārum (Gen. Pl.) und amīcōs (Akk. Pl.).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-a-o-deklination",
+					"sample_solution": "dominārum (Gen. Pl.) und amīcōs (Akk. Pl.)."
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8MD",
+					"slug": "l5-a-o-deklination-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Welche Ausnahme haben Wörter wie 'nauta, poēta, agricola' trotz ihrer a-Endung?",
+					"concept": "Sie haben maskulines Genus (m.) und stehen mit maskulinen Adjektiven (z. B. agricola clārus).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-a-o-deklination",
+					"sample_solution": "Sie haben maskulines Genus (m.) und stehen mit maskulinen Adjektiven (z. B. agricola clārus)."
+				}
+			]
+		},
+		{
+			"id": "01M863E3EJ63FGGKSMS90ZNM2N",
+			"atom_uri": "urn:zam:atom:01M863E3EJ63FGGKSMS90ZNM2N",
+			"namespace": "zam-academy-latein-gymnasium-5",
+			"slug": "l5-dritte-deklination",
+			"title": "Die 3. Deklination (konsonantisch und i-Stämme)",
+			"domain": "latein/nomina-formen",
+			"reduction": "formal",
+			"typical_age_min": 10,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-dritte-deklination",
+			"prerequisites": [
+				{
+					"atom_id": "01M863E3EJ63FGGKSMS90ZNM2M",
+					"type": "hard",
+					"rationale": "Die Kasusfragen aus der a-/o-Deklination gelten auch für konsonantische und i-Stämme."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-5",
+					"topic_code": "nomina-formen",
+					"topic_title": "Nomina in Form: Deklinationen, Pronomina und Zahlen"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "latein",
+					"topic_code": "lb2.2",
+					"topic_title": "Sprachliche Basis: Formenlehre",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8ME",
+					"slug": "l5-dritte-deklination-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wie lautet der Akkusativ Plural des Neutrums 'corpus, corporis n.' (Körper)?",
+					"concept": "corpora",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-dritte-deklination",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"corpora",
+							"corpusēs"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8MF",
+					"slug": "l5-dritte-deklination-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie bildet man den Dativ Singular von 'mīles, mīlitis m.' und den Genitiv Plural von 'urbs, urbis f.'?",
+					"concept": "mīlitī (Dat. Sg.) und urbium (Gen. Pl., i-Stamm).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-dritte-deklination",
+					"sample_solution": "mīlitī (Dat. Sg.) und urbium (Gen. Pl., i-Stamm)."
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8MG",
+					"slug": "l5-dritte-deklination-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Welche drei Besonderheiten hat das Neutrum der i-Stämme (z. B. 'mare, maris n.') gegenüber 'corpus, corporis n.'?",
+					"concept": "Ablativ Singular auf -ī (marī), Nom./Akk. Plural auf -ia (maria) und Genitiv Plural auf -ium (marium).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-dritte-deklination",
+					"sample_solution": "Ablativ Singular auf -ī (marī), Nom./Akk. Plural auf -ia (maria) und Genitiv Plural auf -ium (marium)."
+				}
+			]
+		},
+		{
+			"id": "01M863E3EJ63FGGKSMS90ZNM2P",
+			"atom_uri": "urn:zam:atom:01M863E3EJ63FGGKSMS90ZNM2P",
+			"namespace": "zam-academy-latein-gymnasium-5",
+			"slug": "l5-u-e-deklination",
+			"title": "Die u- und e-Deklination",
+			"domain": "latein/nomina-formen",
+			"reduction": "formal",
+			"typical_age_min": 10,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-u-e-deklination",
+			"prerequisites": [
+				{
+					"atom_id": "01M863E3EJ63FGGKSMS90ZNM2N",
+					"type": "hard",
+					"rationale": "Abgrenzung von der o- und 3. Deklination über den Genitiv Singular."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-5",
+					"topic_code": "nomina-formen",
+					"topic_title": "Nomina in Form: Deklinationen, Pronomina und Zahlen"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "latein",
+					"topic_code": "lb2.2",
+					"topic_title": "Sprachliche Basis: Formenlehre",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8MH",
+					"slug": "l5-u-e-deklination-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche beiden verschiedenen Formen haben in der u-Deklination genau die Endung -ūs (lang)?",
+					"concept": "Genitiv Singular sowie Nominativ und Akkusativ Plural (z. B. senātūs).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-u-e-deklination",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Genitiv Singular sowie Nominativ und Akkusativ Plural (z. B. senātūs).",
+							"Dativ Singular und Genitiv Plural."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8MJ",
+					"slug": "l5-u-e-deklination-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie lautet der Ablativ Singular von 'manus, manūs f.' und der Dativ/Ablativ Plural von 'rēs, reī f.'?",
+					"concept": "manū (Abl. Sg.) und rēbus (Dat./Abl. Pl.).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-u-e-deklination",
+					"sample_solution": "manū (Abl. Sg.) und rēbus (Dat./Abl. Pl.)."
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8MK",
+					"slug": "l5-u-e-deklination-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Warum ist die Genusangabe bei 'manus, -ūs f.' und 'domus, -ūs f.' besonders wichtig?",
+					"concept": "Fast alle Wörter der u-Deklination sind maskulin; manus (Hand) und domus (Haus) sind wichtige feminine Ausnahmen.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-u-e-deklination",
+					"sample_solution": "Fast alle Wörter der u-Deklination sind maskulin; manus (Hand) und domus (Haus) sind wichtige feminine Ausnahmen."
+				}
+			]
+		},
+		{
+			"id": "01M863E3EJ63FGGKSMS90ZNM2Q",
+			"atom_uri": "urn:zam:atom:01M863E3EJ63FGGKSMS90ZNM2Q",
+			"namespace": "zam-academy-latein-gymnasium-5",
+			"slug": "l5-adjektive-kng",
+			"title": "Adjektive und KNG-Kongruenz",
+			"domain": "latein/nomina-formen",
+			"reduction": "formal",
+			"typical_age_min": 10,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-adjektive-kng",
+			"prerequisites": [
+				{
+					"atom_id": "01M863E3EJ63FGGKSMS90ZNM2N",
+					"type": "hard",
+					"rationale": "Adjektive verbinden Endungen der a-/o- und der 3. Deklination nach KNG."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-5",
+					"topic_code": "nomina-formen",
+					"topic_title": "Nomina in Form: Deklinationen, Pronomina und Zahlen"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "latein",
+					"topic_code": "lb2.2",
+					"topic_title": "Sprachliche Basis: Formenlehre",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "latein",
+					"topic_code": "lb2.3",
+					"topic_title": "Sprachliche Basis: Satzlehre",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "latein",
+					"topic_code": "lb4",
+					"topic_title": "Methodik",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8MM",
+					"slug": "l5-adjektive-kng-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche Verbindung ist nach der KNG-Regel für 'dem guten Dichter' (poēta, poētae m. + bonus, -a, -um) richtig?",
+					"concept": "poētae bonō",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-adjektive-kng",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"poētae bonō",
+							"poētae bonae"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8MN",
+					"slug": "l5-adjektive-kng-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Warum gehört zu 'agricola' die Form 'clārus' (und nicht 'clāra')?",
+					"concept": "KNG-Kongruenz richtet sich nach dem grammatischen Genus (agricola ist m.), nicht nach der äußerlich gleichen Endung.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-adjektive-kng",
+					"sample_solution": "KNG-Kongruenz richtet sich nach dem grammatischen Genus (agricola ist m.), nicht nach der äußerlich gleichen Endung."
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8MP",
+					"slug": "l5-adjektive-kng-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Wie lautet 'mit dem tapferen Soldaten' (cum + mīles, mīlitis m. + fortis, forte)?",
+					"concept": "cum mīlite fortī (Abl. Sg. der 3. Deklination auf -ī beim Adjektiv fortis).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-adjektive-kng",
+					"sample_solution": "cum mīlite fortī (Abl. Sg. der 3. Deklination auf -ī beim Adjektiv fortis)."
+				}
+			]
+		},
+		{
+			"id": "01M863E3EJ63FGGKSMS90ZNM2R",
+			"atom_uri": "urn:zam:atom:01M863E3EJ63FGGKSMS90ZNM2R",
+			"namespace": "zam-academy-latein-gymnasium-5",
+			"slug": "l5-pronomina",
+			"title": "Personal-, Possessiv-, Reflexivpronomen, is und qui",
+			"domain": "latein/nomina-formen",
+			"reduction": "formal",
+			"typical_age_min": 10,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-pronomina",
+			"prerequisites": [
+				{
+					"atom_id": "01M863E3EJ63FGGKSMS90ZNM2Q",
+					"type": "hard",
+					"rationale": "KNG-Kongruenz und Genusunterschiede erklären auch Personal-, Reflexiv- und Relativpronomina."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-5",
+					"topic_code": "nomina-formen",
+					"topic_title": "Nomina in Form: Deklinationen, Pronomina und Zahlen"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "latein",
+					"topic_code": "lb2.2",
+					"topic_title": "Sprachliche Basis: Formenlehre",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "latein",
+					"topic_code": "lb4",
+					"topic_title": "Methodik",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8MQ",
+					"slug": "l5-pronomina-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was ist der Unterschied zwischen 'Lūcia amīcam suam salūtat' und 'Lūcia amīcam eius salūtat'?",
+					"concept": "suam meint Lūcias eigene Freundin; eius meint die Freundin einer anderen, zuvor genannten Person.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-pronomina",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"suam meint Lūcias eigene Freundin; eius meint die Freundin einer anderen, zuvor genannten Person.",
+							"suam steht im Singular, eius im Plural."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8MR",
+					"slug": "l5-pronomina-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie lauten die Formen des Personalpronomens 'ego' (ich) im Genitiv, Dativ und Akkusativ Singular?",
+					"concept": "meī (Gen.), mihi (Dat.), mē (Akk.).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-pronomina",
+					"sample_solution": "meī (Gen.), mihi (Dat.), mē (Akk.)."
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8MS",
+					"slug": "l5-pronomina-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Wie prüfst du beim Relativpronomen 'quī, quae, quod', welche Form im Relativsatz steht?",
+					"concept": "Genus und Numerus kommen vom Bezugswort im Hauptsatz; den Kasus bestimmt allein die Funktion im Relativsatz.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-pronomina",
+					"sample_solution": "Genus und Numerus kommen vom Bezugswort im Hauptsatz; den Kasus bestimmt allein die Funktion im Relativsatz."
+				}
+			]
+		},
+		{
+			"id": "01M863E3EJ63FGGKSMS90ZNM2S",
+			"atom_uri": "urn:zam:atom:01M863E3EJ63FGGKSMS90ZNM2S",
+			"namespace": "zam-academy-latein-gymnasium-5",
+			"slug": "l5-numeralia",
+			"title": "Numeralia: Kardinalia und Ordinalia von 1 bis 12",
+			"domain": "latein/nomina-formen",
+			"reduction": "formal",
+			"typical_age_min": 10,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-numeralia",
+			"prerequisites": [
+				{
+					"atom_id": "01M863E3EJ63FGGKSMS90ZNM2Q",
+					"type": "soft",
+					"rationale": "Die Zahlwörter 1–3 und Ordinalzahlen folgen der KNG-Kongruenz."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-5",
+					"topic_code": "nomina-formen",
+					"topic_title": "Nomina in Form: Deklinationen, Pronomina und Zahlen"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "latein",
+					"topic_code": "lb2.2",
+					"topic_title": "Sprachliche Basis: Formenlehre",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8MT",
+					"slug": "l5-numeralia-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche lateinischen Grundzahlen im Bereich 1 bis 12 verändern ihre Endung (sind deklinierbar)?",
+					"concept": "Nur 1 (ūnus, -a, -um), 2 (duo, duae, duo) und 3 (trēs, tria); 4 bis 12 sind unveränderlich.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-numeralia",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Nur 1 (ūnus, -a, -um), 2 (duo, duae, duo) und 3 (trēs, tria); 4 bis 12 sind unveränderlich.",
+							"Alle zwölf Grundzahlen werden wie Adjektive der a-/o-Deklination gebeugt."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8MV",
+					"slug": "l5-numeralia-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie heißt die Kardinalzahl 'zwei' im Femininum und die Ordinalzahl 'der sechste' auf Latein?",
+					"concept": "duae (f.) und sextus, -a, -um.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-numeralia",
+					"sample_solution": "duae (f.) und sextus, -a, -um."
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8MW",
+					"slug": "l5-numeralia-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Welche Regel gilt bei den römischen Zahlzeichen IV und IX?",
+					"concept": "Subtraktionsregel: Steht ein kleineres Zeichen (I) links vor einem größeren (V, X), wird es abgezogen (4 = 5 − 1, 9 = 10 − 1).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-numeralia",
+					"sample_solution": "Subtraktionsregel: Steht ein kleineres Zeichen (I) links vor einem größeren (V, X), wird es abgezogen (4 = 5 − 1, 9 = 10 − 1)."
+				}
+			]
+		},
+		{
+			"id": "01M863E3EJ63FGGKSMS90ZNM2T",
+			"atom_uri": "urn:zam:atom:01M863E3EJ63FGGKSMS90ZNM2T",
+			"namespace": "zam-academy-latein-gymnasium-5",
+			"slug": "l5-praesens-konjugationen",
+			"title": "Konjugationsklassen, Präsens, Infinitiv und Imperativ",
+			"domain": "latein/verben-zeiten",
+			"reduction": "formal",
+			"typical_age_min": 10,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-praesens-konjugationen",
+			"prerequisites": [
+				{
+					"atom_id": "01M863E3EJ63FGGKSMS90ZNM2M",
+					"type": "soft",
+					"rationale": "Unterscheidung von Stamm und Endung am Verb im Vergleich zum Nomen."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-5",
+					"topic_code": "verben-zeiten",
+					"topic_title": "Verben in Aktion: Konjugationen und alle Aktiv-Tempora"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "latein",
+					"topic_code": "lb2.2",
+					"topic_title": "Sprachliche Basis: Formenlehre",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8MX",
+					"slug": "l5-praesens-konjugationen-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wie lautet die 3. Person Plural Präsens Aktiv von mittere (schicken, konsonantische Konjugation)?",
+					"concept": "mittunt",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-praesens-konjugationen",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"mittunt",
+							"mittint"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8MY",
+					"slug": "l5-praesens-konjugationen-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie lautet die 3. Person Plural Präsens Aktiv von 'audīre' und der Imperativ Plural von 'dīcere'?",
+					"concept": "audiunt (mit Bindevokal -u-) und dīcite (Imperativ Pl. von dīcere).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-praesens-konjugationen",
+					"sample_solution": "audiunt (mit Bindevokal -u-) und dīcite (Imperativ Pl. von dīcere)."
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8MZ",
+					"slug": "l5-praesens-konjugationen-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Welche drei häufigen Verben bilden den Imperativ Singular ohne -e-Endung?",
+					"concept": "dīc! (dīcere), dūc! (dūcere) und fac! (facere).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-praesens-konjugationen",
+					"sample_solution": "dīc! (dīcere), dūc! (dūcere) und fac! (facere)."
+				}
+			]
+		},
+		{
+			"id": "01M863E3EJ63FGGKSMS90ZNM2V",
+			"atom_uri": "urn:zam:atom:01M863E3EJ63FGGKSMS90ZNM2V",
+			"namespace": "zam-academy-latein-gymnasium-5",
+			"slug": "l5-esse-posse-velle",
+			"title": "Hilfs- und Modalverben: esse, posse, velle, nōlle, mālle",
+			"domain": "latein/verben-zeiten",
+			"reduction": "formal",
+			"typical_age_min": 10,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-esse-posse-velle",
+			"prerequisites": [
+				{
+					"atom_id": "01M863E3EJ63FGGKSMS90ZNM2T",
+					"type": "hard",
+					"rationale": "Personalendungen und Stammwechsel unregelmäßiger Verben im Präsens."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-5",
+					"topic_code": "verben-zeiten",
+					"topic_title": "Verben in Aktion: Konjugationen und alle Aktiv-Tempora"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "latein",
+					"topic_code": "lb2.2",
+					"topic_title": "Sprachliche Basis: Formenlehre",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8N0",
+					"slug": "l5-esse-posse-velle-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wie übersetzt man den Satz 'Nōlī festīnāre!' genau?",
+					"concept": "Beeile dich nicht! / Habe es nicht eilig! (Verneinung des Imperativs mit nōlī + Infinitiv).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-esse-posse-velle",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Beeile dich nicht! / Habe es nicht eilig! (Verneinung des Imperativs mit nōlī + Infinitiv).",
+							"Du willst dich nicht beeilen."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8N1",
+					"slug": "l5-esse-posse-velle-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie lauten 1. Person Plural Präsens von 'posse' und 2. Person Singular Präsens von 'mālle'?",
+					"concept": "possumus (wir können) und māvīs (du willst lieber).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-esse-posse-velle",
+					"sample_solution": "possumus (wir können) und māvīs (du willst lieber)."
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8N2",
+					"slug": "l5-esse-posse-velle-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Wie verneint man im Lateinischen einen direkten Befehl (Prohibitiv) für eine Person und für mehrere?",
+					"concept": "nōlī + Infinitiv (an eine Person) bzw. nōlīte + Infinitiv (an mehrere), z. B. Nōlī timēre!",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-esse-posse-velle",
+					"sample_solution": "nōlī + Infinitiv (an eine Person) bzw. nōlīte + Infinitiv (an mehrere), z. B. Nōlī timēre!"
+				}
+			]
+		},
+		{
+			"id": "01M863E3EJ63FGGKSMS90ZNM2W",
+			"atom_uri": "urn:zam:atom:01M863E3EJ63FGGKSMS90ZNM2W",
+			"namespace": "zam-academy-latein-gymnasium-5",
+			"slug": "l5-imperfekt-futur1",
+			"title": "Imperfekt und Futur I: Vom Präsensstamm in die Zeit",
+			"domain": "latein/verben-zeiten",
+			"reduction": "formal",
+			"typical_age_min": 10,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-imperfekt-futur1",
+			"prerequisites": [
+				{
+					"atom_id": "01M863E3EJ63FGGKSMS90ZNM2V",
+					"type": "hard",
+					"rationale": "Aufbau von Imperfekt (eram) und Futur I (erō) auf dem Präsensstamm."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-5",
+					"topic_code": "verben-zeiten",
+					"topic_title": "Verben in Aktion: Konjugationen und alle Aktiv-Tempora"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "latein",
+					"topic_code": "lb2.2",
+					"topic_title": "Sprachliche Basis: Formenlehre",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8N3",
+					"slug": "l5-imperfekt-futur1-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was bedeutet die Form 'audiet' (von audīre)?",
+					"concept": "Er/sie wird hören (3. Person Singular Futur I mit -e-).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-imperfekt-futur1",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Er/sie wird hören (3. Person Singular Futur I mit -e-).",
+							"Er/sie hört gerade (Präsens)."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8N4",
+					"slug": "l5-imperfekt-futur1-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie bilden sich Imperfekt (3. Sg. von vidēre) und Futur I (1. Sg. von scrībere)?",
+					"concept": "vidēbat (Imperfekt auf -bā-) und scrībam (Futur I der kons. Konj. auf -a-/-ē-).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-imperfekt-futur1",
+					"sample_solution": "vidēbat (Imperfekt auf -bā-) und scrībam (Futur I der kons. Konj. auf -a-/-ē-)."
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8N5",
+					"slug": "l5-imperfekt-futur1-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Wie unterscheidet man die Futur-I-Zeichen der a-/e-Konjugation von denen der konsonantischen und i-Konjugation?",
+					"concept": "a-/e-Konjugation nutzt -b-/-bi-/-bu- (vocābō, vocābis, vocābunt); kons./i-Konjugation nutzt -a- (1. Sg.) und -ē-/-e- (mit -ēs, -et, -ent).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-imperfekt-futur1",
+					"sample_solution": "a-/e-Konjugation nutzt -b-/-bi-/-bu- (vocābō, vocābis, vocābunt); kons./i-Konjugation nutzt -a- (1. Sg.) und -ē-/-e- (mit -ēs, -et, -ent)."
+				}
+			]
+		},
+		{
+			"id": "01M863E3EJ63FGGKSMS90ZNM2X",
+			"atom_uri": "urn:zam:atom:01M863E3EJ63FGGKSMS90ZNM2X",
+			"namespace": "zam-academy-latein-gymnasium-5",
+			"slug": "l5-perfektbildung",
+			"title": "Der Perfektstamm und alle Perfektarten",
+			"domain": "latein/verben-zeiten",
+			"reduction": "formal",
+			"typical_age_min": 10,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-perfektbildung",
+			"prerequisites": [
+				{
+					"atom_id": "01M863E3EJ63FGGKSMS90ZNM2W",
+					"type": "hard",
+					"rationale": "Unterscheidung des Perfektstamms vom Präsensstamm und den -bā-/-b-/-ē-Zeichen."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-5",
+					"topic_code": "verben-zeiten",
+					"topic_title": "Verben in Aktion: Konjugationen und alle Aktiv-Tempora"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "latein",
+					"topic_code": "lb2.2",
+					"topic_title": "Sprachliche Basis: Formenlehre",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8N6",
+					"slug": "l5-perfektbildung-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Zu welcher Perfektart gehört 'mīsī' (von mittere = schicken)?",
+					"concept": "s-Perfekt (mit Verkürzung von tt + s zu s).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-perfektbildung",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"s-Perfekt (mit Verkürzung von tt + s zu s).",
+							"v-Perfekt (durch ausgefallenes v)."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8N7",
+					"slug": "l5-perfektbildung-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie lauten die Perfektformen von 'venīre' (3. Pl.) und 'dare' (1. Sg.)?",
+					"concept": "vēnērunt (Dehnung: sie sind gekommen) und dedī (Reduplikation: ich habe gegeben).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-perfektbildung",
+					"sample_solution": "vēnērunt (Dehnung: sie sind gekommen) und dedī (Reduplikation: ich habe gegeben)."
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8N8",
+					"slug": "l5-perfektbildung-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Worin unterscheiden sich Stamm und Endung im Perfektstamm von denen des Präsensstamms?",
+					"concept": "Der Perfektstamm nutzt eine eigene Stammform (z. B. vīd-, mīs-, vocāv-) und immer dieselben Perfektendungen -ī, -istī, -it, -imus, -istis, -ērunt.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-perfektbildung",
+					"sample_solution": "Der Perfektstamm nutzt eine eigene Stammform (z. B. vīd-, mīs-, vocāv-) und immer dieselben Perfektendungen -ī, -istī, -it, -imus, -istis, -ērunt."
+				}
+			]
+		},
+		{
+			"id": "01M863E3EJ63FGGKSMS90ZNM2Y",
+			"atom_uri": "urn:zam:atom:01M863E3EJ63FGGKSMS90ZNM2Y",
+			"namespace": "zam-academy-latein-gymnasium-5",
+			"slug": "l5-plusquamperfekt-futur2",
+			"title": "Plusquamperfekt und Futur II am Perfektstamm",
+			"domain": "latein/verben-zeiten",
+			"reduction": "formal",
+			"typical_age_min": 10,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-plusquamperfekt-futur2",
+			"prerequisites": [
+				{
+					"atom_id": "01M863E3EJ63FGGKSMS90ZNM2X",
+					"type": "hard",
+					"rationale": "Plusquamperfekt und Futur II nutzen direkt den gewonnenen Perfektstamm."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-5",
+					"topic_code": "verben-zeiten",
+					"topic_title": "Verben in Aktion: Konjugationen und alle Aktiv-Tempora"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "latein",
+					"topic_code": "lb2.2",
+					"topic_title": "Sprachliche Basis: Formenlehre",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8N9",
+					"slug": "l5-plusquamperfekt-futur2-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was bedeutet die Form 'mīserant' (Perfektstamm mīs- von mittere)?",
+					"concept": "Sie hatten geschickt (3. Person Plural Plusquamperfekt Aktiv).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-plusquamperfekt-futur2",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Sie hatten geschickt (3. Person Plural Plusquamperfekt Aktiv).",
+							"Sie schickten (Imperfekt)."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8NA",
+					"slug": "l5-plusquamperfekt-futur2-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie bildest du das Plusquamperfekt (3. Sg. von 'venīre') und das Futur II (3. Pl. von 'audīre')?",
+					"concept": "vēnerat (Perfektstamm + -erā- + Endung) und audīverint (Perfektstamm + -erō / -eri- + -nt).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-plusquamperfekt-futur2",
+					"sample_solution": "vēnerat (Perfektstamm + -erā- + Endung) und audīverint (Perfektstamm + -erō / -eri- + -nt)."
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8NB",
+					"slug": "l5-plusquamperfekt-futur2-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Wodurch unterscheidet sich die 3. Plural Futur II von der 3. Plural Futur I von 'esse'?",
+					"concept": "Futur II hat als Bindevokal immer -i- (-erint, z. B. vocāverint), anders als erunt bei esse.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-plusquamperfekt-futur2",
+					"sample_solution": "Futur II hat als Bindevokal immer -i- (-erint, z. B. vocāverint), anders als erunt bei esse."
+				}
+			]
+		},
+		{
+			"id": "01M863E3EJ63FGGKSMS90ZNM2Z",
+			"atom_uri": "urn:zam:atom:01M863E3EJ63FGGKSMS90ZNM2Z",
+			"namespace": "zam-academy-latein-gymnasium-5",
+			"slug": "l5-imperfekt-perfekt-gebrauch",
+			"title": "Tempusgebrauch: Imperfekt und Perfekt im Text",
+			"domain": "latein/verben-zeiten",
+			"reduction": "formal",
+			"typical_age_min": 10,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-imperfekt-perfekt-gebrauch",
+			"prerequisites": [
+				{
+					"atom_id": "01M863E3EJ63FGGKSMS90ZNM2X",
+					"type": "hard",
+					"rationale": "Sichere Formenkenntnis in Imperfekt und Perfekt ermöglicht den Aspektvergleich."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-5",
+					"topic_code": "verben-zeiten",
+					"topic_title": "Verben in Aktion: Konjugationen und alle Aktiv-Tempora"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "latein",
+					"topic_code": "lb2.3",
+					"topic_title": "Sprachliche Basis: Satzlehre",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8NC",
+					"slug": "l5-imperfekt-perfekt-gebrauch-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche Rolle übernimmt das lateinische Imperfekt typischerweise in einer historischen Erzählung?",
+					"concept": "Es schildert den Hintergrund, dauernde Zustände oder wiederholte Vorgänge.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-imperfekt-perfekt-gebrauch",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Es schildert den Hintergrund, dauernde Zustände oder wiederholte Vorgänge.",
+							"Es zählt eine schnelle Abfolge von Hauptereignissen auf."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8ND",
+					"slug": "l5-imperfekt-perfekt-gebrauch-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welches Tempus steht in einer Erzählung typischerweise nach 'subitō' (plötzlich) und welches nach 'cotīdiē' (täglich)?",
+					"concept": "Nach subitō das Perfekt (neue Aktion); nach cotīdiē das Imperfekt (Gewohnheit/Hintergrund).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-imperfekt-perfekt-gebrauch",
+					"sample_solution": "Nach subitō das Perfekt (neue Aktion); nach cotīdiē das Imperfekt (Gewohnheit/Hintergrund)."
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8NE",
+					"slug": "l5-imperfekt-perfekt-gebrauch-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Wann übersetzt man das lateinische Perfekt ins deutsche Perfekt statt ins Präteritum?",
+					"concept": "Vor allem in wörtlicher Rede mit Gegenwartsbezug (z. B. Hodiē bene labōrāvistī → Heute hast du gut gearbeitet!).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-imperfekt-perfekt-gebrauch",
+					"sample_solution": "Vor allem in wörtlicher Rede mit Gegenwartsbezug (z. B. Hodiē bene labōrāvistī → Heute hast du gut gearbeitet!)."
+				}
+			]
+		},
+		{
+			"id": "01M863E3EJ63FGGKSMS90ZNM30",
+			"atom_uri": "urn:zam:atom:01M863E3EJ63FGGKSMS90ZNM30",
+			"namespace": "zam-academy-latein-gymnasium-5",
+			"slug": "l5-satzglieder-abfrage",
+			"title": "Satzglieder, Prädikatsnomen, Attribut und Abfrageschema",
+			"domain": "latein/satzbau-kasus",
+			"reduction": "formal",
+			"typical_age_min": 10,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-satzglieder-abfrage",
+			"prerequisites": [
+				{
+					"atom_id": "01M863E3EJ63FGGKSMS90ZNM2M",
+					"type": "hard",
+					"rationale": "Subjekt und Objekte erkennen"
+				},
+				{
+					"atom_id": "01M863E3EJ63FGGKSMS90ZNM2T",
+					"type": "hard",
+					"rationale": "Prädikat nach Person und Numerus bestimmen"
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-5",
+					"topic_code": "satzbau-kasus",
+					"topic_title": "Satzbau und Kasus: Vom Einzelwort zum ganzen Satz"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "latein",
+					"topic_code": "lb2.3",
+					"topic_title": "Sprachliche Basis: Satzlehre",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "latein",
+					"topic_code": "lb4",
+					"topic_title": "Methodik",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8NF",
+					"slug": "l5-satzglieder-abfrage-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Womit beginnt man beim Abfrageschema immer, um einen lateinischen Satz aufzuschließen?",
+					"concept": "Mit dem finiten Prädikat (meist am Satzende) und der Frage nach seinem Subjekt.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-satzglieder-abfrage",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Mit dem finiten Prädikat (meist am Satzende) und der Frage nach seinem Subjekt.",
+							"Mit dem ersten Wort ganz links im Satz, weil das Subjekt immer am Anfang steht."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8NG",
+					"slug": "l5-satzglieder-abfrage-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welche Satzglied-Funktion hat 'amīcus' im Satz 'Mārcus amīcus bonus est'?",
+					"concept": "Prädikatsnomen im Nominativ (nach der Kopula esse).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-satzglieder-abfrage",
+					"sample_solution": "Prädikatsnomen im Nominativ (nach der Kopula esse)."
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8NH",
+					"slug": "l5-satzglieder-abfrage-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Wie unterscheidest du Subjekt und Akkusativobjekt im Satz 'Epistulam puerō pater dat'?",
+					"concept": "pater steht im Nominativ Sg. und passt zum Prädikat dat (3. Sg.) = Subjekt; epistulam (-am) ist Akkusativobjekt.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-satzglieder-abfrage",
+					"sample_solution": "pater steht im Nominativ Sg. und passt zum Prädikat dat (3. Sg.) = Subjekt; epistulam (-am) ist Akkusativobjekt."
+				}
+			]
+		},
+		{
+			"id": "01M863E3EJ63FGGKSMS90ZNM31",
+			"atom_uri": "urn:zam:atom:01M863E3EJ63FGGKSMS90ZNM31",
+			"namespace": "zam-academy-latein-gymnasium-5",
+			"slug": "l5-rektion-wortstellung",
+			"title": "Rektion von Verben und Präpositionen, Wortstellung",
+			"domain": "latein/satzbau-kasus",
+			"reduction": "formal",
+			"typical_age_min": 10,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-rektion-wortstellung",
+			"prerequisites": [
+				{
+					"atom_id": "01M863E3EJ63FGGKSMS90ZNM30",
+					"type": "hard",
+					"rationale": "Das Abfrageschema deckt Abweichungen zwischen deutscher und lateinischer Rektion auf."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-5",
+					"topic_code": "satzbau-kasus",
+					"topic_title": "Satzbau und Kasus: Vom Einzelwort zum ganzen Satz"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "latein",
+					"topic_code": "lb2.3",
+					"topic_title": "Sprachliche Basis: Satzlehre",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8NJ",
+					"slug": "l5-rektion-wortstellung-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welchen Kasus verlangt das lateinische Verb 'adiuvāre / iuvāre' (helfen, unterstützen), anders als im Deutschen?",
+					"concept": "Den Akkusativ (z. B. iuvō amīcum = ich helfe dem Freund).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-rektion-wortstellung",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Den Akkusativ (z. B. iuvō amīcum = ich helfe dem Freund).",
+							"Den Genitiv (iuvō amīcī)."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8NK",
+					"slug": "l5-rektion-wortstellung-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welchen Kasus verlangen 'iuvāre / adiuvāre' (helfen) und 'in' auf die Frage 'wohin?'?",
+					"concept": "Beide verlangen den Akkusativ (z. B. mātrem iuvō; in urbem).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-rektion-wortstellung",
+					"sample_solution": "Beide verlangen den Akkusativ (z. B. mātrem iuvō; in urbem)."
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8NM",
+					"slug": "l5-rektion-wortstellung-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Wann wechselt eine Präposition wie 'in' oder 'sub' zwischen Akkusativ und Ablativ?",
+					"concept": "Auf die Frage 'Wohin?' (Richtung) steht der Akkusativ; auf die Frage 'Wo?' (Ort/Ruhe) steht der Ablativ.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-rektion-wortstellung",
+					"sample_solution": "Auf die Frage 'Wohin?' (Richtung) steht der Akkusativ; auf die Frage 'Wo?' (Ort/Ruhe) steht der Ablativ."
+				}
+			]
+		},
+		{
+			"id": "01M863E3EJ63FGGKSMS90ZNM32",
+			"atom_uri": "urn:zam:atom:01M863E3EJ63FGGKSMS90ZNM32",
+			"namespace": "zam-academy-latein-gymnasium-5",
+			"slug": "l5-kasus-gen-dat-akk",
+			"title": "Kasusfunktionen: Genitiv, Dativ und Akkusativ",
+			"domain": "latein/satzbau-kasus",
+			"reduction": "formal",
+			"typical_age_min": 10,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-kasus-gen-dat-akk",
+			"prerequisites": [
+				{
+					"atom_id": "01M863E3EJ63FGGKSMS90ZNM30",
+					"type": "hard",
+					"rationale": "Kasusfunktionen im Satzgliedrahmen"
+				},
+				{
+					"atom_id": "01M863E3EJ63FGGKSMS90ZNM2N",
+					"type": "soft",
+					"rationale": "Kasuserkennung über alle Deklinationen"
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-5",
+					"topic_code": "satzbau-kasus",
+					"topic_title": "Satzbau und Kasus: Vom Einzelwort zum ganzen Satz"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "latein",
+					"topic_code": "lb2.3",
+					"topic_title": "Sprachliche Basis: Satzlehre",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8NN",
+					"slug": "l5-kasus-gen-dat-akk-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wie übersetzt du den Satz 'Mārcō liber pulcher est' (Dativ des Besitzers) in idiomatisches Deutsch?",
+					"concept": "Marcus hat ein schönes Buch.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-kasus-gen-dat-akk",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Marcus hat ein schönes Buch.",
+							"Ein schönes Buch gibt es für Marcus."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8NP",
+					"slug": "l5-kasus-gen-dat-akk-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie übersetzt du 'Nōbīs multī librī sunt' mithilfe des Dativs des Besitzers?",
+					"concept": "Wir haben viele Bücher (Dativ wird zum Subjekt, esse zu 'haben').",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-kasus-gen-dat-akk",
+					"sample_solution": "Wir haben viele Bücher (Dativ wird zum Subjekt, esse zu 'haben')."
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8NQ",
+					"slug": "l5-kasus-gen-dat-akk-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Welche Zeit- oder Raumangabe drückt ein bloßer Akkusativ wie 'multōs annōs' aus?",
+					"concept": "Eine zeitliche Ausdehnung oder Strecke auf die Frage 'Wie lange?' bzw. 'Wie weit?' (viele Jahre lang).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-kasus-gen-dat-akk",
+					"sample_solution": "Eine zeitliche Ausdehnung oder Strecke auf die Frage 'Wie lange?' bzw. 'Wie weit?' (viele Jahre lang)."
+				}
+			]
+		},
+		{
+			"id": "01M863E3EJ63FGGKSMS90ZNM33",
+			"atom_uri": "urn:zam:atom:01M863E3EJ63FGGKSMS90ZNM33",
+			"namespace": "zam-academy-latein-gymnasium-5",
+			"slug": "l5-ablativ-funktionen",
+			"title": "Funktionen des Ablativs: Mittel, Grund, Trennung und Zeit",
+			"domain": "latein/satzbau-kasus",
+			"reduction": "formal",
+			"typical_age_min": 10,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-ablativ-funktionen",
+			"prerequisites": [
+				{
+					"atom_id": "01M863E3EJ63FGGKSMS90ZNM32",
+					"type": "hard",
+					"rationale": "Abgrenzung der Ablativfunktionen von Akkusativ und Dativ."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-5",
+					"topic_code": "satzbau-kasus",
+					"topic_title": "Satzbau und Kasus: Vom Einzelwort zum ganzen Satz"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "latein",
+					"topic_code": "lb2.3",
+					"topic_title": "Sprachliche Basis: Satzlehre",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8NR",
+					"slug": "l5-ablativ-funktionen-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche Ablativ-Funktion liegt im Satz 'Puella gaudiō rīdet' (zu gaudium = Freude) vor?",
+					"concept": "Ablativ des Grundes (warum / weshalb? → vor Freude).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-ablativ-funktionen",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Ablativ des Grundes (warum / weshalb? → vor Freude).",
+							"Ablativ des Mittels (mit einer Sache als Werkzeug)."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8NS",
+					"slug": "l5-ablativ-funktionen-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welche vier Hauptfunktionen hat ein reiner Ablativ ohne Präposition in Klasse 5?",
+					"concept": "Mittel (Womit?), Grund (Warum?), Trennung (Wovon?) und Zeit (Wann?).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-ablativ-funktionen",
+					"sample_solution": "Mittel (Womit?), Grund (Warum?), Trennung (Wovon?) und Zeit (Wann?)."
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8NT",
+					"slug": "l5-ablativ-funktionen-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Welche Rolle übernimmt der Ablativ in 'Tertiā hōrā vēnimus' und 'urbem perīculō līberāre'?",
+					"concept": "Ablativ der Zeit (in der dritten Stunde) bzw. Ablativ der Trennung (von der Gefahr befreien).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-ablativ-funktionen",
+					"sample_solution": "Ablativ der Zeit (in der dritten Stunde) bzw. Ablativ der Trennung (von der Gefahr befreien)."
+				}
+			]
+		},
+		{
+			"id": "01M863E3EJ63FGGKSMS90ZNM34",
+			"atom_uri": "urn:zam:atom:01M863E3EJ63FGGKSMS90ZNM34",
+			"namespace": "zam-academy-latein-gymnasium-5",
+			"slug": "l5-satzarten-nebensaetze",
+			"title": "Satzarten, Hauptsatz und Nebensätze",
+			"domain": "latein/satzbau-kasus",
+			"reduction": "formal",
+			"typical_age_min": 10,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-satzarten-nebensaetze",
+			"prerequisites": [
+				{
+					"atom_id": "01M863E3EJ63FGGKSMS90ZNM30",
+					"type": "hard",
+					"rationale": "Satzanalyse für Haupt- und Nebensatz"
+				},
+				{
+					"atom_id": "01M863E3EJ63FGGKSMS90ZNM2R",
+					"type": "soft",
+					"rationale": "Relativpronomen im Relativsatz und relativen Satzanschluss"
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-5",
+					"topic_code": "satzbau-kasus",
+					"topic_title": "Satzbau und Kasus: Vom Einzelwort zum ganzen Satz"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "latein",
+					"topic_code": "lb2.3",
+					"topic_title": "Sprachliche Basis: Satzlehre",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8NV",
+					"slug": "l5-satzarten-nebensaetze-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche Sinnrichtung leitet die Subjunktion 'quamquam' ein?",
+					"concept": "Konzessiv (einräumend: obwohl).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-satzarten-nebensaetze",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Konzessiv (einräumend: obwohl).",
+							"Temporal (zeitlich: nachdem)."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8NW",
+					"slug": "l5-satzarten-nebensaetze-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Was kündigen die Fragepartikeln '-ne', 'nōnne' und 'num' am Satzanfang jeweils an?",
+					"concept": "-ne = offene Frage; nōnne = Ja-Antwort erwartet ('etwa nicht?'); num = Nein-Antwort erwartet ('etwa?').",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-satzarten-nebensaetze",
+					"sample_solution": "-ne = offene Frage; nōnne = Ja-Antwort erwartet ('etwa nicht?'); num = Nein-Antwort erwartet ('etwa?')."
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8NX",
+					"slug": "l5-satzarten-nebensaetze-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Wie übersetzt man den relativen Satzanschluss nach starkem Satzzeichen ('... magistrum salūtant. Quī eōs laudat.')?",
+					"concept": "Mit einem deutschen Demonstrativpronomen ('Dieser lobt sie.'), nicht als Relativsatz.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-satzarten-nebensaetze",
+					"sample_solution": "Mit einem deutschen Demonstrativpronomen ('Dieser lobt sie.'), nicht als Relativsatz."
+				}
+			]
+		},
+		{
+			"id": "01M863E3EJ63FGGKSMS90ZNM35",
+			"atom_uri": "urn:zam:atom:01M863E3EJ63FGGKSMS90ZNM35",
+			"namespace": "zam-academy-latein-gymnasium-5",
+			"slug": "l5-aci",
+			"title": "Der AcI (Accusativus cum Infinitivo, aktiv)",
+			"domain": "latein/satzbau-kasus",
+			"reduction": "formal",
+			"typical_age_min": 10,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-aci",
+			"prerequisites": [
+				{
+					"atom_id": "01M863E3EJ63FGGKSMS90ZNM30",
+					"type": "hard",
+					"rationale": "Subjektsakkusativ und Infinitiv als satzwertiges Objekt"
+				},
+				{
+					"atom_id": "01M863E3EJ63FGGKSMS90ZNM2X",
+					"type": "hard",
+					"rationale": "Unterscheidung von Infinitiv Präsens (gleichzeitig) und Perfekt (vorzeitig)"
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-5",
+					"topic_code": "satzbau-kasus",
+					"topic_title": "Satzbau und Kasus: Vom Einzelwort zum ganzen Satz"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "latein",
+					"topic_code": "lb2.3",
+					"topic_title": "Sprachliche Basis: Satzlehre",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "latein",
+					"topic_code": "lb4",
+					"topic_title": "Methodik",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8NY",
+					"slug": "l5-aci-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wie übersetzt du 'Audīvī puerōs clāmāvisse' mit genauem Zeitverhältnis?",
+					"concept": "Ich hörte, dass die Jungen geschrien hatten (Infinitiv Perfekt = Vorzeitigkeit zu audīvī).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-aci",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Ich hörte, dass die Jungen geschrien hatten (Infinitiv Perfekt = Vorzeitigkeit zu audīvī).",
+							"Ich höre, dass die Jungen schreien."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8NZ",
+					"slug": "l5-aci-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie übersetzt du 'Sciō patrem venīre' im richtigen Zeitverhältnis?",
+					"concept": "Ich weiß, dass der Vater kommt (Inf. Präsens = gleichzeitig zu Präs. sciō).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-aci",
+					"sample_solution": "Ich weiß, dass der Vater kommt (Inf. Präsens = gleichzeitig zu Präs. sciō)."
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8P0",
+					"slug": "l5-aci-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Wie übersetzt du 'Putābam amīcam librum lēgisse'?",
+					"concept": "Ich glaubte, dass die Freundin das Buch gelesen hatte (Inf. Perfekt = vorzeitig zu Impf. putābam).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-aci",
+					"sample_solution": "Ich glaubte, dass die Freundin das Buch gelesen hatte (Inf. Perfekt = vorzeitig zu Impf. putābam)."
+				}
+			]
+		},
+		{
+			"id": "01M863E3EJ63FGGKSMS90ZNM36",
+			"atom_uri": "urn:zam:atom:01M863E3EJ63FGGKSMS90ZNM36",
+			"namespace": "zam-academy-latein-gymnasium-5",
+			"slug": "l5-rom-topografie",
+			"title": "Sieben Hügel, Forum Romanum und Kapitol",
+			"domain": "latein/rom-topografie",
+			"reduction": "formal",
+			"typical_age_min": 10,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-rom-topografie",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-5",
+					"topic_code": "rom-topografie",
+					"topic_title": "Urbs Roma: Topografie, Bauten und Caput Mundi"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "latein",
+					"topic_code": "lb1",
+					"topic_title": "Texte",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "latein",
+					"topic_code": "lb3",
+					"topic_title": "Kultureller Kontext",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8P1",
+					"slug": "l5-rom-topografie-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche beiden Aufgaben erfüllten Forum Romanum und Kapitol im alten Rom?",
+					"concept": "Das Forum im Tal war das Zentrum für Politik, Recht und Handel; das Kapitol darüber trug die Burg und den Haupttempel Jupiters.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-rom-topografie",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Das Forum im Tal war das Zentrum für Politik, Recht und Handel; das Kapitol darüber trug die Burg und den Haupttempel Jupiters.",
+							"Auf dem Forum standen die Kaiserpaläste, auf dem Kapitol fanden die Wagenrennen statt."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8P2",
+					"slug": "l5-rom-topografie-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Von welchem römischen Hügel stammt das Wort 'Palast', und wie hieß das Rathaus des Senats?",
+					"concept": "Vom Hügel Palatin (Palātium); das Senatsgebäude am Forum hieß Cūria.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-rom-topografie",
+					"sample_solution": "Vom Hügel Palatin (Palātium); das Senatsgebäude am Forum hieß Cūria."
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8P3",
+					"slug": "l5-rom-topografie-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Welche geografischen Vorteile machten die Stelle an der Tiberinsel zur Geburtsstätte Roms?",
+					"concept": "Die Furt bei der Tiberinsel sicherte Handelswege (Salzhandel), während die sieben Hügel vor Überfällen und Hochwasser schützten.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-rom-topografie",
+					"sample_solution": "Die Furt bei der Tiberinsel sicherte Handelswege (Salzhandel), während die sieben Hügel vor Überfällen und Hochwasser schützten."
+				}
+			]
+		},
+		{
+			"id": "01M863E3EJ63FGGKSMS90ZNM37",
+			"atom_uri": "urn:zam:atom:01M863E3EJ63FGGKSMS90ZNM37",
+			"namespace": "zam-academy-latein-gymnasium-5",
+			"slug": "l5-spiele-bauten",
+			"title": "Kolosseum, Circus Maximus und Konstantinsbogen",
+			"domain": "latein/rom-topografie",
+			"reduction": "formal",
+			"typical_age_min": 10,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-spiele-bauten",
+			"prerequisites": [
+				{
+					"atom_id": "01M863E3EJ63FGGKSMS90ZNM36",
+					"type": "soft",
+					"rationale": "Einordnung von Kolosseum und Circus Maximus im Stadtbild Roms."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-5",
+					"topic_code": "rom-topografie",
+					"topic_title": "Urbs Roma: Topografie, Bauten und Caput Mundi"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "latein",
+					"topic_code": "lb1",
+					"topic_title": "Texte",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "latein",
+					"topic_code": "lb3",
+					"topic_title": "Kultureller Kontext",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8P4",
+					"slug": "l5-spiele-bauten-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Worin unterscheiden sich Amphitheater (Kolosseum) und Circus (Circus Maximus) in Bauform und Nutzung?",
+					"concept": "Das Kolosseum ist ein ovaler Bau für Gladiatoren und Tierkämpfe; der Circus Maximus ist eine langgestreckte Bahn für Wagenrennen.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-spiele-bauten",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Das Kolosseum ist ein ovaler Bau für Gladiatoren und Tierkämpfe; der Circus Maximus ist eine langgestreckte Bahn für Wagenrennen.",
+							"Im Kolosseum fuhren die Wagenrennen, während im Circus Maximus Theaterstücke aufgeführt wurden."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8P5",
+					"slug": "l5-spiele-bauten-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wofür stand das lateinische Wort 'arēna', und welche Wettkämpfe fanden im Circus Maximus statt?",
+					"concept": "arēna = Sand (Kampffläche im Amphitheater); im Circus Maximus fanden vor allem Wagenrennen (mit Viergespannen/Quadrigen) statt.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-spiele-bauten",
+					"sample_solution": "arēna = Sand (Kampffläche im Amphitheater); im Circus Maximus fanden vor allem Wagenrennen (mit Viergespannen/Quadrigen) statt."
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8P6",
+					"slug": "l5-spiele-bauten-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Welcher Typ Bauwerk ist der Konstantinsbogen und wofür wurden solche Bögen errichtet?",
+					"concept": "Ein dreitoriger Triumph- bzw. Ehrenbogen, um militärische Siege oder Leistungen eines Kaisers dauerhaft zu ehren.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-spiele-bauten",
+					"sample_solution": "Ein dreitoriger Triumph- bzw. Ehrenbogen, um militärische Siege oder Leistungen eines Kaisers dauerhaft zu ehren."
+				}
+			]
+		},
+		{
+			"id": "01M863E3EJ63FGGKSMS90ZNM38",
+			"atom_uri": "urn:zam:atom:01M863E3EJ63FGGKSMS90ZNM38",
+			"namespace": "zam-academy-latein-gymnasium-5",
+			"slug": "l5-thermen-aquaedukt-ostia",
+			"title": "Thermen, Aquädukte und die Hafenstadt Ostia",
+			"domain": "latein/rom-topografie",
+			"reduction": "formal",
+			"typical_age_min": 10,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-thermen-aquaedukt-ostia",
+			"prerequisites": [
+				{
+					"atom_id": "01M863E3EJ63FGGKSMS90ZNM36",
+					"type": "soft",
+					"rationale": "Verbindung von Tiberlauf, Stadtgebiet Roms und Hafenstadt Ostia."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-5",
+					"topic_code": "rom-topografie",
+					"topic_title": "Urbs Roma: Topografie, Bauten und Caput Mundi"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "latein",
+					"topic_code": "lb1",
+					"topic_title": "Texte",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "latein",
+					"topic_code": "lb3",
+					"topic_title": "Kultureller Kontext",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8P7",
+					"slug": "l5-thermen-aquaedukt-ostia-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wozu dienten die Aquädukte in der Umgebung und im Stadtgebiet Roms?",
+					"concept": "Sie leiteten sauberes Quellwasser mit leichtem Gefälle aus den Bergen zu Brunnen, Häusern und Thermen.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-thermen-aquaedukt-ostia",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Sie leiteten sauberes Quellwasser mit leichtem Gefälle aus den Bergen zu Brunnen, Häusern und Thermen.",
+							"Auf ihnen fuhren Schiffe vom Hafen Ostia über die Hügel direkt aufs Forum."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8P8",
+					"slug": "l5-thermen-aquaedukt-ostia-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie hieß Roms Seehafen an der Tibermündung, und wozu diente das Caldarium in den Thermen?",
+					"concept": "Ostia (Hafenstadt Roms); das Caldarium war der Heißbaderaum der öffentlichen Thermen.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-thermen-aquaedukt-ostia",
+					"sample_solution": "Ostia (Hafenstadt Roms); das Caldarium war der Heißbaderaum der öffentlichen Thermen."
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8P9",
+					"slug": "l5-thermen-aquaedukt-ostia-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Welche gesellschaftliche Funktion erfüllten römische Thermen über die Körperpflege hinaus?",
+					"concept": "Sie waren günstige, allen Schichten zugängliche Treffpunkte für Sport, Gespräche, Politik und Kultur.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-thermen-aquaedukt-ostia",
+					"sample_solution": "Sie waren günstige, allen Schichten zugängliche Treffpunkte für Sport, Gespräche, Politik und Kultur."
+				}
+			]
+		},
+		{
+			"id": "01M863E3EJ63FGGKSMS90ZNM39",
+			"atom_uri": "urn:zam:atom:01M863E3EJ63FGGKSMS90ZNM39",
+			"namespace": "zam-academy-latein-gymnasium-5",
+			"slug": "l5-caput-mundi-kunst",
+			"title": "Caput mundi: Roms Bedeutung, Architektur und Kunst",
+			"domain": "latein/rom-topografie",
+			"reduction": "formal",
+			"typical_age_min": 10,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-caput-mundi-kunst",
+			"prerequisites": [
+				{
+					"atom_id": "01M863E3EJ63FGGKSMS90ZNM37",
+					"type": "soft",
+					"rationale": "Architekturprinzipien von Rundbogen, Gewölbe und Kuppel an römischen Großbauten."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-5",
+					"topic_code": "rom-topografie",
+					"topic_title": "Urbs Roma: Topografie, Bauten und Caput Mundi"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "latein",
+					"topic_code": "lb3",
+					"topic_title": "Kultureller Kontext",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8PA",
+					"slug": "l5-caput-mundi-kunst-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was bedeutet der lateinische Ehrentitel 'caput mundī' für Rom?",
+					"concept": "Haupt der Welt (politischer, rechtlicher und kultureller Mittelpunkt des Imperiums).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-caput-mundi-kunst",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Haupt der Welt (politischer, rechtlicher und kultureller Mittelpunkt des Imperiums).",
+							"Hafen am Meer (Umschlagplatz für Getreide)."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8PB",
+					"slug": "l5-caput-mundi-kunst-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welche zwei bautechnischen Erfindungen ermöglichten römische Großbauten wie Kolosseum und Pantheon?",
+					"concept": "Der Rundbogen (arcus) mit Gewölbe/Kuppel und der wasserfeste römische Gussbeton (opus caementicium).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-caput-mundi-kunst",
+					"sample_solution": "Der Rundbogen (arcus) mit Gewölbe/Kuppel und der wasserfeste römische Gussbeton (opus caementicium)."
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8PC",
+					"slug": "l5-caput-mundi-kunst-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Worin unterschieden sich realistische römische Porträtbüsten von idealisierten griechischen Statuen?",
+					"concept": "Römische Porträts zeigten individuelle Gesichtszüge, Falten und Alter realistisch als Zeichen von Würde und Erfahrung.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-caput-mundi-kunst",
+					"sample_solution": "Römische Porträts zeigten individuelle Gesichtszüge, Falten und Alter realistisch als Zeichen von Würde und Erfahrung."
+				}
+			]
+		},
+		{
+			"id": "01M863E3EJ63FGGKSMS90ZNM3A",
+			"atom_uri": "urn:zam:atom:01M863E3EJ63FGGKSMS90ZNM3A",
+			"namespace": "zam-academy-latein-gymnasium-5",
+			"slug": "l5-griechenland-rom",
+			"title": "Griechische Kultur in Rom",
+			"domain": "latein/rom-topografie",
+			"reduction": "formal",
+			"typical_age_min": 10,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-griechenland-rom",
+			"prerequisites": [
+				{
+					"atom_id": "01M863E3EJ63FGGKSMS90ZNM39",
+					"type": "soft",
+					"rationale": "Römische Bau- und Kunstformen im Vergleich zu griechischen Vorbildern."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-5",
+					"topic_code": "rom-topografie",
+					"topic_title": "Urbs Roma: Topografie, Bauten und Caput Mundi"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "latein",
+					"topic_code": "lb3",
+					"topic_title": "Kultureller Kontext",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8PD",
+					"slug": "l5-griechenland-rom-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was meint der Dichter Horaz mit 'Das eroberte Griechenland nahm seinen Sieger gefangen'?",
+					"concept": "Rom besiegte Griechenland militärisch, übernahm dann aber griechische Kunst, Bildung, Architektur und Literatur.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-griechenland-rom",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Rom besiegte Griechenland militärisch, übernahm dann aber griechische Kunst, Bildung, Architektur und Literatur.",
+							"Die Griechen besiegten Rom im Krieg und zerstörten das Kapitol."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8PE",
+					"slug": "l5-griechenland-rom-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie heißt Griechenland auf Latein in Horaz' Vers, und woran erkennt man einen römischen Podiumstempel?",
+					"concept": "Graecia; ein römischer Tempel steht auf einem hohen Podium mit Zugangstreppe nur an der Vorderseite.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-griechenland-rom",
+					"sample_solution": "Graecia; ein römischer Tempel steht auf einem hohen Podium mit Zugangstreppe nur an der Vorderseite."
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8PF",
+					"slug": "l5-griechenland-rom-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Auf welchen Kulturgebieten übernahmen und veränderten die Römer griechische Vorbilder?",
+					"concept": "Architektur (Säulenordnungen + Podium), Mythos/Götterwelt, Bildhauerei, Literatur und Theater (Komödie/Tragödie).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-griechenland-rom",
+					"sample_solution": "Architektur (Säulenordnungen + Podium), Mythos/Götterwelt, Bildhauerei, Literatur und Theater (Komödie/Tragödie)."
+				}
+			]
+		},
+		{
+			"id": "01M863E3EJ63FGGKSMS90ZNM3B",
+			"atom_uri": "urn:zam:atom:01M863E3EJ63FGGKSMS90ZNM3B",
+			"namespace": "zam-academy-latein-gymnasium-5",
+			"slug": "l5-senat-werte",
+			"title": "Senat, Senatoren und römische Werte",
+			"domain": "latein/gesellschaft-alltag",
+			"reduction": "formal",
+			"typical_age_min": 10,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-senat-werte",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-5",
+					"topic_code": "gesellschaft-alltag",
+					"topic_title": "Alltag in Rom: Senat, Familie, Schule und Kalender"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "latein",
+					"topic_code": "lb1",
+					"topic_title": "Texte",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "latein",
+					"topic_code": "lb3",
+					"topic_title": "Kultureller Kontext",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8PG",
+					"slug": "l5-senat-werte-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was umfasst der römische Zentralwert 'pietās' im Unterschied zum heutigen Wort 'Pietät'?",
+					"concept": "Das pflichtbewusste Verhalten gegenüber Göttern, Eltern/Familie und dem Staat.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-senat-werte",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Das pflichtbewusste Verhalten gegenüber Göttern, Eltern/Familie und dem Staat.",
+							"Nur das Ausrichten teurer Gladiatorenspiele im Kolosseum."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8PH",
+					"slug": "l5-senat-werte-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Was bedeutet der römische Zentralwert 'virtūs', und von welchem Wort leitet sich 'Senat' ab?",
+					"concept": "virtūs = Tapferkeit / Tüchtigkeit / Charakterstärke (zu vir); senātus leitet sich von senex ('alter Mann', Ältestenrat) ab.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-senat-werte",
+					"sample_solution": "virtūs = Tapferkeit / Tüchtigkeit / Charakterstärke (zu vir); senātus leitet sich von senex ('alter Mann', Ältestenrat) ab."
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8PJ",
+					"slug": "l5-senat-werte-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Welche Bedeutung hatte 'fidēs' im römischen Alltag und in der Politik?",
+					"concept": "Verlässlichkeit, Treue zu Versprechen und Verträgen gegenüber Freunden, Klienten und Bündnispartnern.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-senat-werte",
+					"sample_solution": "Verlässlichkeit, Treue zu Versprechen und Verträgen gegenüber Freunden, Klienten und Bündnispartnern."
+				}
+			]
+		},
+		{
+			"id": "01M863E3EJ63FGGKSMS90ZNM3C",
+			"atom_uri": "urn:zam:atom:01M863E3EJ63FGGKSMS90ZNM3C",
+			"namespace": "zam-academy-latein-gymnasium-5",
+			"slug": "l5-familie-namen",
+			"title": "Römische Familie und Namensgebung (Tria Nomina)",
+			"domain": "latein/gesellschaft-alltag",
+			"reduction": "formal",
+			"typical_age_min": 10,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-familie-namen",
+			"prerequisites": [
+				{
+					"atom_id": "01M863E3EJ63FGGKSMS90ZNM3B",
+					"type": "soft",
+					"rationale": "Gesellschaftliche Werte im öffentlichen und familiären Bereich."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-5",
+					"topic_code": "gesellschaft-alltag",
+					"topic_title": "Alltag in Rom: Senat, Familie, Schule und Kalender"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "latein",
+					"topic_code": "lb1",
+					"topic_title": "Texte",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "latein",
+					"topic_code": "lb3",
+					"topic_title": "Kultureller Kontext",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8PK",
+					"slug": "l5-familie-namen-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was bedeutet 'nōmen gentīle' bei einem römischen Namen wie 'Mārcus Cornēlius Scīpiō'?",
+					"concept": "Es ist der Familien-/Sippenname (Cornēlius) und entspricht am ehesten unserem heutigen Nachnamen.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-familie-namen",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Es ist der Familien-/Sippenname (Cornēlius) und entspricht am ehesten unserem heutigen Nachnamen.",
+							"Es ist der persönliche Spitzname, den nur Freunde kannten."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8PM",
+					"slug": "l5-familie-namen-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie bildete man den Namen der Tochter von Gāius Iūlius Caesar, und wofür steht 'C.' in C. Iūlius Caesar?",
+					"concept": "Iūlia (weibliche Form des Nōmen gentīle); 'C.' ist die traditionelle Abkürzung für das Praenōmen Gāius.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-familie-namen",
+					"sample_solution": "Iūlia (weibliche Form des Nōmen gentīle); 'C.' ist die traditionelle Abkürzung für das Praenōmen Gāius."
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8PN",
+					"slug": "l5-familie-namen-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Welche drei Teile bilden die 'tria nōmina' am Beispiel 'Mārcus Tullius Cicerō'?",
+					"concept": "Mārcus = Praenōmen (Vorname), Tullius = Nōmen gentīle (Familienname), Cicerō = Cognōmen (Beiname).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-familie-namen",
+					"sample_solution": "Mārcus = Praenōmen (Vorname), Tullius = Nōmen gentīle (Familienname), Cicerō = Cognōmen (Beiname)."
+				}
+			]
+		},
+		{
+			"id": "01M863E3EJ63FGGKSMS90ZNM3D",
+			"atom_uri": "urn:zam:atom:01M863E3EJ63FGGKSMS90ZNM3D",
+			"namespace": "zam-academy-latein-gymnasium-5",
+			"slug": "l5-sklaven-gladiatoren",
+			"title": "Sklaven, Freigelassene und Gladiatoren",
+			"domain": "latein/gesellschaft-alltag",
+			"reduction": "formal",
+			"typical_age_min": 10,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-sklaven-gladiatoren",
+			"prerequisites": [
+				{
+					"atom_id": "01M863E3EJ63FGGKSMS90ZNM37",
+					"type": "soft",
+					"rationale": "Gladiatorenkämpfe im Amphitheater"
+				},
+				{
+					"atom_id": "01M863E3EJ63FGGKSMS90ZNM3C",
+					"type": "soft",
+					"rationale": "Stellung unfreier Menschen in der römischen familia"
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-5",
+					"topic_code": "gesellschaft-alltag",
+					"topic_title": "Alltag in Rom: Senat, Familie, Schule und Kalender"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "latein",
+					"topic_code": "lb1",
+					"topic_title": "Texte",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "latein",
+					"topic_code": "lb3",
+					"topic_title": "Kultureller Kontext",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8PP",
+					"slug": "l5-sklaven-gladiatoren-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was bedeutete eine 'manūmissiō' (Freilassung) für einen Sklaven in Rom?",
+					"concept": "Er wurde zum Freigelassenen (lībertus) und erhielt in der Regel sogar das römische Bürgerrecht.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-sklaven-gladiatoren",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Er wurde zum Freigelassenen (lībertus) und erhielt in der Regel sogar das römische Bürgerrecht.",
+							"Er musste sofort gegen andere Sklaven im Kolosseum kämpfen."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8PQ",
+					"slug": "l5-sklaven-gladiatoren-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Von welchem lateinischen Wort stammt 'gladiātor', und wie hieß ein freigelassener Sklave auf Latein?",
+					"concept": "gladius (Schwert) und lībertus (Freigelassener).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-sklaven-gladiatoren",
+					"sample_solution": "gladius (Schwert) und lībertus (Freigelassener)."
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8PR",
+					"slug": "l5-sklaven-gladiatoren-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Worin unterschied sich das alltägliche Los von Haussklaven in Rom oft von dem der Sklaven auf Landgütern oder in Bergwerken?",
+					"concept": "Haussklaven (z. B. Lehrer, Ärzte, Sekretäre) lebten teils in der familia mit Aussicht auf Freilassung; auf Großgütern und in Bergwerken herrschte härteste Zwangsarbeit.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-sklaven-gladiatoren",
+					"sample_solution": "Haussklaven (z. B. Lehrer, Ärzte, Sekretäre) lebten teils in der familia mit Aussicht auf Freilassung; auf Großgütern und in Bergwerken herrschte härteste Zwangsarbeit."
+				}
+			]
+		},
+		{
+			"id": "01M863E3EJ63FGGKSMS90ZNM3E",
+			"atom_uri": "urn:zam:atom:01M863E3EJ63FGGKSMS90ZNM3E",
+			"namespace": "zam-academy-latein-gymnasium-5",
+			"slug": "l5-schule-schreiben-kleidung",
+			"title": "Schule, Schreiben, Bücher und Kleidung im alten Rom",
+			"domain": "latein/gesellschaft-alltag",
+			"reduction": "formal",
+			"typical_age_min": 10,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-schule-schreiben-kleidung",
+			"prerequisites": [
+				{
+					"atom_id": "01M863E3EJ63FGGKSMS90ZNM3C",
+					"type": "soft",
+					"rationale": "Alltag von Kindern und Bürgern in der römischen Familie."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-5",
+					"topic_code": "gesellschaft-alltag",
+					"topic_title": "Alltag in Rom: Senat, Familie, Schule und Kalender"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "latein",
+					"topic_code": "lb1",
+					"topic_title": "Texte",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "latein",
+					"topic_code": "lb3",
+					"topic_title": "Kultureller Kontext",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8PS",
+					"slug": "l5-schule-schreiben-kleidung-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Womit und worauf schrieben römische Schülerinnen und Schüler ihre täglichen Übungen?",
+					"concept": "Mit einem spitzen Metall- oder Beingriffel (stilus) auf einer Wachstafel (tabula cērāta).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-schule-schreiben-kleidung",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Mit einem spitzen Metall- oder Beingriffel (stilus) auf einer Wachstafel (tabula cērāta).",
+							"Mit einem Kugelschreiber auf weißem Holzpapier."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8PT",
+					"slug": "l5-schule-schreiben-kleidung-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie nannte man das weiße Umhanggewand freier römischer Bürger und die Wachstafel für Schulübungen?",
+					"concept": "toga (Gewand freier Bürger) und tabula (cērāta) bzw. stilus (Griffel).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-schule-schreiben-kleidung",
+					"sample_solution": "toga (Gewand freier Bürger) und tabula (cērāta) bzw. stilus (Griffel)."
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8PV",
+					"slug": "l5-schule-schreiben-kleidung-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Welche Fächer unterrichtete der 'grammaticus' im Unterschied zum Elementarlehrer ('lūdī magister')?",
+					"concept": "Beim lūdī magister lernte man Lesen, Schreiben und Rechnen; beim grammaticus folgten Sprachlehre, Literatur und Geschichte auf Latein und Griechisch.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-schule-schreiben-kleidung",
+					"sample_solution": "Beim lūdī magister lernte man Lesen, Schreiben und Rechnen; beim grammaticus folgten Sprachlehre, Literatur und Geschichte auf Latein und Griechisch."
+				}
+			]
+		},
+		{
+			"id": "01M863E3EJ63FGGKSMS90ZNM3F",
+			"atom_uri": "urn:zam:atom:01M863E3EJ63FGGKSMS90ZNM3F",
+			"namespace": "zam-academy-latein-gymnasium-5",
+			"slug": "l5-kalender-zeit",
+			"title": "Zeitrechnung, Stunden und der römische Kalender",
+			"domain": "latein/gesellschaft-alltag",
+			"reduction": "formal",
+			"typical_age_min": 10,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-kalender-zeit",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-5",
+					"topic_code": "gesellschaft-alltag",
+					"topic_title": "Alltag in Rom: Senat, Familie, Schule und Kalender"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "latein",
+					"topic_code": "lb3",
+					"topic_title": "Kultureller Kontext",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8PW",
+					"slug": "l5-kalender-zeit-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Auf welchen Tag fallen die Iden im Monat März (wie bei den bekannten 'Iden des März')?",
+					"concept": "Auf den 15. März (weil der März zu den vier 'Vollmonaten' März, Mai, Juli, Oktober gehört).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-kalender-zeit",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Auf den 15. März (weil der März zu den vier 'Vollmonaten' März, Mai, Juli, Oktober gehört).",
+							"Auf den 1. März (genau wie die Kalenden)."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8PX",
+					"slug": "l5-kalender-zeit-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Nach welchem Staatsmann heißt der Monat Juli, und auf welchen Tag fallen in jedem Monat die Kalenden?",
+					"concept": "Nach Gāius Iūlius Caesar (früher Quīntīlis); die Kalenden fallen stets auf den 1. eines Monats.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-kalender-zeit",
+					"sample_solution": "Nach Gāius Iūlius Caesar (früher Quīntīlis); die Kalenden fallen stets auf den 1. eines Monats."
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8PY",
+					"slug": "l5-kalender-zeit-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Wie funktionierte die Stundeneinteilung des römischen Tages zwischen Sommer und Winter?",
+					"concept": "Der lichte Tag hatte immer genau zwölf Stunden (hōrae); darum waren Tagesstunden im Sommer deutlich länger (~75 Min.) als im Winter (~45 Min.).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-kalender-zeit",
+					"sample_solution": "Der lichte Tag hatte immer genau zwölf Stunden (hōrae); darum waren Tagesstunden im Sommer deutlich länger (~75 Min.) als im Winter (~45 Min.)."
+				}
+			]
+		},
+		{
+			"id": "01M863E3EJ63FGGKSMS90ZNM3G",
+			"atom_uri": "urn:zam:atom:01M863E3EJ63FGGKSMS90ZNM3G",
+			"namespace": "zam-academy-latein-gymnasium-5",
+			"slug": "l5-religion-auspizien",
+			"title": "Römische Religion: Tempel, Orakel und Auspizien",
+			"domain": "latein/religion-mythos",
+			"reduction": "formal",
+			"typical_age_min": 10,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-religion-auspizien",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-5",
+					"topic_code": "religion-mythos",
+					"topic_title": "Götter, Helden und Roms Gründung"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "latein",
+					"topic_code": "lb1",
+					"topic_title": "Texte",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "latein",
+					"topic_code": "lb3",
+					"topic_title": "Kultureller Kontext",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8PZ",
+					"slug": "l5-religion-auspizien-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was bedeutet der berühmte Leitsatz der römischen Religion 'dō ut dēs'?",
+					"concept": "'Ich gebe, damit du gibst' – ein verlässliches Tausch- und Vertragsverhältnis zwischen Mensch und Gottheit.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-religion-auspizien",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"'Ich gebe, damit du gibst' – ein verlässliches Tausch- und Vertragsverhältnis zwischen Mensch und Gottheit.",
+							"'Ich glaube ohne Gegenleistung' – innere Überzeugung reicht völlig aus."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8Q0",
+					"slug": "l5-religion-auspizien-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie hieß der römische Priester für die Vogelschau, und was befand sich in der 'cella' eines Tempels?",
+					"concept": "augur (Priester der auspicia); in der geschlossenen cella stand das Kultbild der Gottheit, während der Opferaltar (āra) draußen stand.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-religion-auspizien",
+					"sample_solution": "augur (Priester der auspicia); in der geschlossenen cella stand das Kultbild der Gottheit, während der Opferaltar (āra) draußen stand."
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8Q1",
+					"slug": "l5-religion-auspizien-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Warum beteten und opferten die Römer nach genau festgelegten Wort- und Ritualformeln?",
+					"concept": "Im Vertragsprinzip dō ut dēs sicherte nur die fehlerlose Durchführung die Gültigkeit der Kulthandlung.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-religion-auspizien",
+					"sample_solution": "Im Vertragsprinzip dō ut dēs sicherte nur die fehlerlose Durchführung die Gültigkeit der Kulthandlung."
+				}
+			]
+		},
+		{
+			"id": "01M863E3EJ63FGGKSMS90ZNM3H",
+			"atom_uri": "urn:zam:atom:01M863E3EJ63FGGKSMS90ZNM3H",
+			"namespace": "zam-academy-latein-gymnasium-5",
+			"slug": "l5-olympier",
+			"title": "Die griechischen und römischen Gottheiten (Olympier)",
+			"domain": "latein/religion-mythos",
+			"reduction": "formal",
+			"typical_age_min": 10,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-olympier",
+			"prerequisites": [
+				{
+					"atom_id": "01M863E3EJ63FGGKSMS90ZNM3G",
+					"type": "hard",
+					"rationale": "Römische Tempel- und Opferpraxis im Zusammenhang mit dem Götterkreis"
+				},
+				{
+					"atom_id": "01M863E3EJ63FGGKSMS90ZNM3A",
+					"type": "soft",
+					"rationale": "Kulturelle Angleichung griechischer und römischer Götter"
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-5",
+					"topic_code": "religion-mythos",
+					"topic_title": "Götter, Helden und Roms Gründung"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "latein",
+					"topic_code": "lb1",
+					"topic_title": "Texte",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "latein",
+					"topic_code": "lb3",
+					"topic_title": "Kultureller Kontext",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8Q2",
+					"slug": "l5-olympier-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche römische Gottheit trägt als Erkennungszeichen die Eule (Weisheit, Handwerk, Städte) und entspricht der griechischen Athene?",
+					"concept": "Minerva",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-olympier",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Minerva",
+							"Diāna"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8Q3",
+					"slug": "l5-olympier-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welche römischen Namen entsprechen der griechischen Göttin Artemis und dem Götterboten Hermes?",
+					"concept": "Diāna (Jagd, Pfeil und Bogen) und Mercurius (Handel, Reisende, Flügelschuhe).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-olympier",
+					"sample_solution": "Diāna (Jagd, Pfeil und Bogen) und Mercurius (Handel, Reisende, Flügelschuhe)."
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8Q4",
+					"slug": "l5-olympier-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Ordne den römischen Gottheiten Iuppiter, Neptūnus und Vulcānus ihre griechischen Pendants und Zeichen zu.",
+					"concept": "Iuppiter = Zeus (Blitz/Adler), Neptūnus = Poseidon (Dreizack), Vulcānus = Hephaistos (Hammer/Amboss).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-olympier",
+					"sample_solution": "Iuppiter = Zeus (Blitz/Adler), Neptūnus = Poseidon (Dreizack), Vulcānus = Hephaistos (Hammer/Amboss)."
+				}
+			]
+		},
+		{
+			"id": "01M863E3EJ63FGGKSMS90ZNM3J",
+			"atom_uri": "urn:zam:atom:01M863E3EJ63FGGKSMS90ZNM3J",
+			"namespace": "zam-academy-latein-gymnasium-5",
+			"slug": "l5-tod-unterwelt",
+			"title": "Römische Vorstellungen von Tod und Unterwelt",
+			"domain": "latein/religion-mythos",
+			"reduction": "formal",
+			"typical_age_min": 10,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-tod-unterwelt",
+			"prerequisites": [
+				{
+					"atom_id": "01M863E3EJ63FGGKSMS90ZNM3H",
+					"type": "soft",
+					"rationale": "Unterweltsgott Pluton/Hades im System der griechisch-römischen Götterwelt."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-5",
+					"topic_code": "religion-mythos",
+					"topic_title": "Götter, Helden und Roms Gründung"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "latein",
+					"topic_code": "lb1",
+					"topic_title": "Texte",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "latein",
+					"topic_code": "lb3",
+					"topic_title": "Kultureller Kontext",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8Q5",
+					"slug": "l5-tod-unterwelt-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wozu legte man einem Verstorbenen nach antikem Brauch oft eine kleine Münze in den Mund?",
+					"concept": "Als Fährlohn (Obolus) für den Fährmann Charon zur Überfahrt über den Unterweltsfluss.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-tod-unterwelt",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Als Fährlohn (Obolus) für den Fährmann Charon zur Überfahrt über den Unterweltsfluss.",
+							"Als Opfergabe für die Priester im Tempel des Jupiter auf dem Kapitol."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8Q6",
+					"slug": "l5-tod-unterwelt-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie hießen der Fährmann und der dreiköpfige Wachhund der antiken Unterwelt?",
+					"concept": "Charōn (Fährmann über Styx/Acheron) und Cerberus (dreiköpfiger Hund am Tor zum Orcus).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-tod-unterwelt",
+					"sample_solution": "Charōn (Fährmann über Styx/Acheron) und Cerberus (dreiköpfiger Hund am Tor zum Orcus)."
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8Q7",
+					"slug": "l5-tod-unterwelt-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Warum lagen antike Gräberstraßen (z. B. Via Appia) stets außerhalb der römischen Stadtmauer?",
+					"concept": "Aus hygienischen Gründen und sakralen Gesetzen durfte innerhalb der heiligen Stadtgrenze (pōmērium) nicht bestattet werden; die Straßen hielten zudem die Erinnerung lebendig.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-tod-unterwelt",
+					"sample_solution": "Aus hygienischen Gründen und sakralen Gesetzen durfte innerhalb der heiligen Stadtgrenze (pōmērium) nicht bestattet werden; die Straßen hielten zudem die Erinnerung lebendig."
+				}
+			]
+		},
+		{
+			"id": "01M863E3EJ63FGGKSMS90ZNM3K",
+			"atom_uri": "urn:zam:atom:01M863E3EJ63FGGKSMS90ZNM3K",
+			"namespace": "zam-academy-latein-gymnasium-5",
+			"slug": "l5-herkules-aeneas",
+			"title": "Helden im Mythos: Herakles/Herkules und Aeneas",
+			"domain": "latein/religion-mythos",
+			"reduction": "formal",
+			"typical_age_min": 10,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-herkules-aeneas",
+			"prerequisites": [
+				{
+					"atom_id": "01M863E3EJ63FGGKSMS90ZNM3H",
+					"type": "soft",
+					"rationale": "Mythen um Herkules und Aeneas setzen die olympischen Götter voraus."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-5",
+					"topic_code": "religion-mythos",
+					"topic_title": "Götter, Helden und Roms Gründung"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "latein",
+					"topic_code": "lb1",
+					"topic_title": "Texte",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "latein",
+					"topic_code": "lb3",
+					"topic_title": "Kultureller Kontext",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8Q8",
+					"slug": "l5-herkules-aeneas-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was rettete Aeneas laut Mythos vor allem aus dem brennenden Troja?",
+					"concept": "Seine Familie (Vater Anchises auf den Schultern, Sohn Iulus an der Hand) und die trojanischen Hausgötter (Penaten).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-herkules-aeneas",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Seine Familie (Vater Anchises auf den Schultern, Sohn Iulus an der Hand) und die trojanischen Hausgötter (Penaten).",
+							"Die zwölf Tafeln vom Forum Romanum und die Schätze Karthagos."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8Q9",
+					"slug": "l5-herkules-aeneas-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie viele kanonische Taten musste Herkules erfüllen, und wie hieß Aeneas' Sohn?",
+					"concept": "Zwölf Aufgaben (duodecim labōrēs); Aeneas' Sohn hieß Ascanius (auch Iūlus).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-herkules-aeneas",
+					"sample_solution": "Zwölf Aufgaben (duodecim labōrēs); Aeneas' Sohn hieß Ascanius (auch Iūlus)."
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8QA",
+					"slug": "l5-herkules-aeneas-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Welche unterschiedlichen römischen Tugenden verkörpern Herkules und Aeneas?",
+					"concept": "Herkules steht für mutige Tatkraft und Ausdauer (virtūs), Aeneas für pflichtbewusste Fürsorge gegenüber Vater, Kind und Göttern (pietās).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-herkules-aeneas",
+					"sample_solution": "Herkules steht für mutige Tatkraft und Ausdauer (virtūs), Aeneas für pflichtbewusste Fürsorge gegenüber Vater, Kind und Göttern (pietās)."
+				}
+			]
+		},
+		{
+			"id": "01M863E3EJ63FGGKSMS90ZNM3M",
+			"atom_uri": "urn:zam:atom:01M863E3EJ63FGGKSMS90ZNM3M",
+			"namespace": "zam-academy-latein-gymnasium-5",
+			"slug": "l5-romulus-koenige-quellen",
+			"title": "Gründungsmythos, Königszeit sowie Vergil und Livius",
+			"domain": "latein/religion-mythos",
+			"reduction": "formal",
+			"typical_age_min": 10,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-romulus-koenige-quellen",
+			"prerequisites": [
+				{
+					"atom_id": "01M863E3EJ63FGGKSMS90ZNM3K",
+					"type": "hard",
+					"rationale": "Aeneas als mythischer Vorfahr von Romulus und Remus"
+				},
+				{
+					"atom_id": "01M863E3EJ63FGGKSMS90ZNM36",
+					"type": "soft",
+					"rationale": "Palatin, Tiber und Forum als Schauplätze der Gründungssage"
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-5",
+					"topic_code": "religion-mythos",
+					"topic_title": "Götter, Helden und Roms Gründung"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "latein",
+					"topic_code": "lb1",
+					"topic_title": "Texte",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "latein",
+					"topic_code": "lb3",
+					"topic_title": "Kultureller Kontext",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8QB",
+					"slug": "l5-romulus-koenige-quellen-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche beiden großen römischen Autoren sind die Hauptquellen für Aeneas und die frühe Geschichte Roms?",
+					"concept": "Der Dichter Vergil ('Aeneis') und der Geschichtsschreiber Titus Livius ('Ab urbe conditā').",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-romulus-koenige-quellen",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Der Dichter Vergil ('Aeneis') und der Geschichtsschreiber Titus Livius ('Ab urbe conditā').",
+							"Der Dichter Homer und der Kaiser Konstantin."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8QC",
+					"slug": "l5-romulus-koenige-quellen-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welcher siebte König Roms wurde 509 v. Chr. vertrieben, und welcher Dichter verfasste die 'Aeneis'?",
+					"concept": "Tarquinius Superbus (Beginn der Republik 509 v. Chr.); das Epos 'Aeneis' schrieb Vergil.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-romulus-koenige-quellen",
+					"sample_solution": "Tarquinius Superbus (Beginn der Republik 509 v. Chr.); das Epos 'Aeneis' schrieb Vergil."
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8QD",
+					"slug": "l5-romulus-koenige-quellen-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Warum sind Vergils 'Aeneis' und Livius' 'Ab urbe conditā' Sagenüberlieferung und keine Zeitzeugenberichte?",
+					"concept": "Beide schrieben im 1. Jh. v. Chr., also rund 700 Jahre nach der mythischen Gründung Roms (753 v. Chr.), und verarbeiteten frühe Erzähltraditionen.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-romulus-koenige-quellen",
+					"sample_solution": "Beide schrieben im 1. Jh. v. Chr., also rund 700 Jahre nach der mythischen Gründung Roms (753 v. Chr.), und verarbeiteten frühe Erzähltraditionen."
+				}
+			]
+		},
+		{
+			"id": "01M863E3EJ63FGGKSMS90ZNM3N",
+			"atom_uri": "urn:zam:atom:01M863E3EJ63FGGKSMS90ZNM3N",
+			"namespace": "zam-academy-latein-gymnasium-5",
+			"slug": "l5-text-erschliessen",
+			"title": "Texterschließung: Überschrift, Sachfelder und Erschließungsfragen",
+			"domain": "latein/text-methodik",
+			"reduction": "formal",
+			"typical_age_min": 10,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-text-erschliessen",
+			"prerequisites": [
+				{
+					"atom_id": "01M863E3EJ63FGGKSMS90ZNM30",
+					"type": "hard",
+					"rationale": "Vorerschließung bereitet die gezielte Satzanalyse vor."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-5",
+					"topic_code": "text-methodik",
+					"topic_title": "Texte knacken: Übersetzen, Prüfen und Klug Lernen"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "latein",
+					"topic_code": "lb1",
+					"topic_title": "Texte",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "latein",
+					"topic_code": "lb2.1",
+					"topic_title": "Sprachliche Basis: Wortschatz",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "latein",
+					"topic_code": "lb4",
+					"topic_title": "Methodik",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8QE",
+					"slug": "l5-text-erschliessen-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was untersucht man bei einer ersten Vorerschließung eines lateinischen Textes noch VOR dem Satz-für-Satz-Übersetzen?",
+					"concept": "Überschrift, Eigennamen, Orts-/Zeitangaben und ein dominierendes Sachfeld (roter Faden).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-text-erschliessen",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Überschrift, Eigennamen, Orts-/Zeitangaben und ein dominierendes Sachfeld (roter Faden).",
+							"Man schlägt sofort jedes einzelne Wort alphabetisch nach, ohne den Sinn zu fragen."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8QF",
+					"slug": "l5-text-erschliessen-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welche vier Hinweise erschließt du vor der eigentlichen Übersetzung eines lateinischen Texts?",
+					"concept": "Überschrift, Eigennamen, Orts-/Zeitangaben und ein dominierendes Sachfeld als roten Faden.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-text-erschliessen",
+					"sample_solution": "Überschrift, Eigennamen, Orts-/Zeitangaben und ein dominierendes Sachfeld als roten Faden."
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8QG",
+					"slug": "l5-text-erschliessen-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Welches zentrale Thema deutet das Sachfeld 'flammae – clāmant – aquam portant – servāre' an?",
+					"concept": "Ein Feuer bzw. ein Brand (z. B. ein Brand auf dem Forum Romanum).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-text-erschliessen",
+					"sample_solution": "Ein Feuer bzw. ein Brand (z. B. ein Brand auf dem Forum Romanum)."
+				}
+			]
+		},
+		{
+			"id": "01M863E3EJ63FGGKSMS90ZNM3P",
+			"atom_uri": "urn:zam:atom:01M863E3EJ63FGGKSMS90ZNM3P",
+			"namespace": "zam-academy-latein-gymnasium-5",
+			"slug": "l5-uebersetzen-pruefen",
+			"title": "Übersetzungsschritte anwenden und Fehler selbst prüfen",
+			"domain": "latein/text-methodik",
+			"reduction": "formal",
+			"typical_age_min": 10,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-uebersetzen-pruefen",
+			"prerequisites": [
+				{
+					"atom_id": "01M863E3EJ63FGGKSMS90ZNM3N",
+					"type": "hard",
+					"rationale": "Prüfung der Übersetzung gegen den erschlossenen roten Faden"
+				},
+				{
+					"atom_id": "01M863E3EJ63FGGKSMS90ZNM2W",
+					"type": "soft",
+					"rationale": "Sichere Tempusprüfung"
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-5",
+					"topic_code": "text-methodik",
+					"topic_title": "Texte knacken: Übersetzen, Prüfen und Klug Lernen"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "latein",
+					"topic_code": "lb1",
+					"topic_title": "Texte",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "latein",
+					"topic_code": "lb2.3",
+					"topic_title": "Sprachliche Basis: Satzlehre",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "latein",
+					"topic_code": "lb4",
+					"topic_title": "Methodik",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8QH",
+					"slug": "l5-uebersetzen-pruefen-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was ist beim Prüfsatz 'Senātōrem cīvēs in forō salūtāvērunt' falsch an der Übersetzung 'Der Senator begrüßte die Bürger auf dem Forum'?",
+					"concept": "Subjekt und Akkusativobjekt sind vertauscht: senātōrem (-em) ist Akkusativ Sg., cīvēs (-ēs) Nominativ Pl. (passend zu salūtāvērunt!).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-uebersetzen-pruefen",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Subjekt und Akkusativobjekt sind vertauscht: senātōrem (-em) ist Akkusativ Sg., cīvēs (-ēs) Nominativ Pl. (passend zu salūtāvērunt!).",
+							"in forō muss mit 'auf das Forum' übersetzt werden."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8QJ",
+					"slug": "l5-uebersetzen-pruefen-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Warum ist bei 'Senātōrem cīvēs in forō salūtāvērunt' die Übersetzung 'Der Senator begrüßte...' falsch?",
+					"concept": "senātōrem (-em) ist Akkusativ Singular (Objekt); cīvēs (-ēs) ist Nominativ Plural und passt zum Prädikat im Plural salūtāvērunt.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-uebersetzen-pruefen",
+					"sample_solution": "senātōrem (-em) ist Akkusativ Singular (Objekt); cīvēs (-ēs) ist Nominativ Plural und passt zum Prädikat im Plural salūtāvērunt."
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8QK",
+					"slug": "l5-uebersetzen-pruefen-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Welcher Tempusfehler steckt in der Übersetzung 'Die Konsuln sprachen...' für 'Cōnsulēs verba clāra dīcent'?",
+					"concept": "dīcent gehört zur konsonantischen Konjugation mit -e- als Futur-I-Zeichen ('werden sprechen'), nicht zur Vergangenheit.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-uebersetzen-pruefen",
+					"sample_solution": "dīcent gehört zur konsonantischen Konjugation mit -e- als Futur-I-Zeichen ('werden sprechen'), nicht zur Vergangenheit."
+				}
+			]
+		},
+		{
+			"id": "01M863E3EJ63FGGKSMS90ZNM3Q",
+			"atom_uri": "urn:zam:atom:01M863E3EJ63FGGKSMS90ZNM3Q",
+			"namespace": "zam-academy-latein-gymnasium-5",
+			"slug": "l5-vortrag-stellungnahme",
+			"title": "Lateinische Texte vortragen und begründet Stellung nehmen",
+			"domain": "latein/text-methodik",
+			"reduction": "formal",
+			"typical_age_min": 10,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-vortrag-stellungnahme",
+			"prerequisites": [
+				{
+					"atom_id": "01M863E3EJ63FGGKSMS90ZNM2E",
+					"type": "hard",
+					"rationale": "Paenultima-Betonung beim lauten Vortrag"
+				},
+				{
+					"atom_id": "01M863E3EJ63FGGKSMS90ZNM3P",
+					"type": "hard",
+					"rationale": "Sinnentsprechende Gliederung setzt Textverständnis voraus"
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-5",
+					"topic_code": "text-methodik",
+					"topic_title": "Texte knacken: Übersetzen, Prüfen und Klug Lernen"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "latein",
+					"topic_code": "lb1",
+					"topic_title": "Texte",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "latein",
+					"topic_code": "lb2.1",
+					"topic_title": "Sprachliche Basis: Wortschatz",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8QM",
+					"slug": "l5-vortrag-stellungnahme-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was unterscheidet einen verständnisgeleiteten Vortrag von bloßem Ablesen einzelner Wörter?",
+					"concept": "Man gliedert Sinnabschnitte durch Pausen (z. B. vor Nebensätzen und AcI), hebt Satzgefüge durch Stimmführung hervor und betont korrekt.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-vortrag-stellungnahme",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Man gliedert Sinnabschnitte durch Pausen (z. B. vor Nebensätzen und AcI), hebt Satzgefüge durch Stimmführung hervor und betont korrekt.",
+							"Man liest so schnell wie möglich ohne jedes Punkt- und Komma-Zeichen."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8QN",
+					"slug": "l5-vortrag-stellungnahme-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie übersetzt man den lateinischen Ausspruch 'Pāx optima rērum est' treffend?",
+					"concept": "Der Frieden ist das Beste von allem (oder: der Güter).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-vortrag-stellungnahme",
+					"sample_solution": "Der Frieden ist das Beste von allem (oder: der Güter)."
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8QP",
+					"slug": "l5-vortrag-stellungnahme-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Wo legst du beim gegliederten Lesevortrag von 'hominibus' die Betonung hin und wo sinnvolle Pausen?",
+					"concept": "hominibus wird auf der drittletzten Silbe -mi- betont (ho-MI-ni-bus); Pausen stehen vor Nebensätzen, AcI und am Satzschluss.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-vortrag-stellungnahme",
+					"sample_solution": "hominibus wird auf der drittletzten Silbe -mi- betont (ho-MI-ni-bus); Pausen stehen vor Nebensätzen, AcI und am Satzschluss."
+				}
+			]
+		},
+		{
+			"id": "01M863E3EJ63FGGKSMS90ZNM3R",
+			"atom_uri": "urn:zam:atom:01M863E3EJ63FGGKSMS90ZNM3R",
+			"namespace": "zam-academy-latein-gymnasium-5",
+			"slug": "l5-lernplan-hilfsmittel",
+			"title": "Lernstrategien, Arbeitsplanung und Hilfsmittel",
+			"domain": "latein/text-methodik",
+			"reduction": "formal",
+			"typical_age_min": 10,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-lernplan-hilfsmittel",
+			"prerequisites": [
+				{
+					"atom_id": "01M863E3EJ63FGGKSMS90ZNM2F",
+					"type": "soft",
+					"rationale": "Systematische Karteiarbeit mit Stammformen und Eselsbrücken."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-5",
+					"topic_code": "text-methodik",
+					"topic_title": "Texte knacken: Übersetzen, Prüfen und Klug Lernen"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "latein",
+					"topic_code": "lb4",
+					"topic_title": "Methodik",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8QQ",
+					"slug": "l5-lernplan-hilfsmittel-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche Lernstrategie bringt beim Wortschatz und bei den Endungen den größten Erfolg vor einer Schulaufgabe?",
+					"concept": "Regelmäßige kleine Einheiten über mehrere Tage mit aktivem Abfragen, Eselsbrücken und eigenen Merkkästen.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-lernplan-hilfsmittel",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Regelmäßige kleine Einheiten über mehrere Tage mit aktivem Abfragen, Eselsbrücken und eigenen Merkkästen.",
+							"Die ganze Grammatik einmal am Abend vor der Arbeit still durchlesen."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8QR",
+					"slug": "l5-lernplan-hilfsmittel-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie funktioniert eine gute Eselsbrücke am Beispiel von 'māter, mātris f.' und 'pater, patris m.'?",
+					"concept": "Man verknüpft das lateinische Wort mit einem verwandten Fremdwort oder Lehnwort (z. B. materiell/Material, Patriot/Pate).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-lernplan-hilfsmittel",
+					"sample_solution": "Man verknüpft das lateinische Wort mit einem verwandten Fremdwort oder Lehnwort (z. B. materiell/Material, Patriot/Pate)."
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8QS",
+					"slug": "l5-lernplan-hilfsmittel-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Welcher Vorteil entsteht beim Verteilen des Lernstoffs auf kleine Tagesportionen im 5-Tage-Plan?",
+					"concept": "Aktives Wiederholen und Schlafen zwischen den Einheiten verankert Formen und Vokabeln sicherer als einmaliges Pauken.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-lernplan-hilfsmittel",
+					"sample_solution": "Aktives Wiederholen und Schlafen zwischen den Einheiten verankert Formen und Vokabeln sicherer als einmaliges Pauken."
+				}
+			]
+		},
+		{
+			"id": "01M863E3EJ63FGGKSMS90ZNM3S",
+			"atom_uri": "urn:zam:atom:01M863E3EJ63FGGKSMS90ZNM3S",
+			"namespace": "zam-academy-latein-gymnasium-5",
+			"slug": "l5-kreativ-gemeinsam",
+			"title": "Kreative Rezeption, offenes Lernen und Teamarbeit",
+			"domain": "latein/text-methodik",
+			"reduction": "formal",
+			"typical_age_min": 10,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-kreativ-gemeinsam",
+			"prerequisites": [
+				{
+					"atom_id": "01M863E3EJ63FGGKSMS90ZNM3N",
+					"type": "soft",
+					"rationale": "Szenische Umsetzung und Stationenarbeit stützen sich auf das Textverständnis."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-5",
+					"topic_code": "text-methodik",
+					"topic_title": "Texte knacken: Übersetzen, Prüfen und Klug Lernen"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 5,
+					"subject": "latein",
+					"topic_code": "lb4",
+					"topic_title": "Methodik",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8QT",
+					"slug": "l5-kreativ-gemeinsam-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was gehört zu einer fairen, konstruktiven Rückmeldung an ein Mitschüler-Team nach einer Spielszene oder einem Plakat?",
+					"concept": "Zuerst benennen, was überzeugend gelungen ist, und dann einen konkreten, wertschätzenden Verbesserungsvorschlag machen.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-kreativ-gemeinsam",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Zuerst benennen, was überzeugend gelungen ist, und dann einen konkreten, wertschätzenden Verbesserungsvorschlag machen.",
+							"Einfach pauschal sagen 'War alles schlecht' ohne Begründung."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8QV",
+					"slug": "l5-kreativ-gemeinsam-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Was stellt man bei einem 'Standbild' zu einem lateinischen Text dar?",
+					"concept": "Eine stumme, eingefrorene Gruppenszene mit Körperhaltung, Blickrichtung und Abständen passend zum Textkonflikt.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-kreativ-gemeinsam",
+					"sample_solution": "Eine stumme, eingefrorene Gruppenszene mit Körperhaltung, Blickrichtung und Abständen passend zum Textkonflikt."
+				},
+				{
+					"id": "01M863E3EK7SHJKEFSXA2EX8QW",
+					"slug": "l5-kreativ-gemeinsam-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Worin liegt der Unterschied zwischen Stationenlernen und fairer Rückmeldung in der Gruppe?",
+					"concept": "Stationen ermöglichen selbstständiges Üben nach individuellem Tempo; faire Kritik benennt zuerst Stärken und gibt dann einen konkreten Tipp.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-5/#lesson=l5-kreativ-gemeinsam",
+					"sample_solution": "Stationen ermöglichen selbstständiges Üben nach individuellem Tempo; faire Kritik benennt zuerst Stärken und gibt dann einen konkreten Tipp."
+				}
+			]
+		}
+	]
+}

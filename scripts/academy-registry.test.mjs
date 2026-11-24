@@ -348,6 +348,7 @@ test("second foreign languages are their own Gymnasium paths and leave the first
     assert.deepEqual(marks.map((n) => n.grade), expectedPlanned, fach);
     assert.ok(marks.every((n) => n.sub === "Gym"), fach);
   }
+  assert.equal(schoolSubject(trees, 5, "latein").children[0].pkg?.app, "latein-gymnasium-5");
   // Englisch and Französisch keep their own cells in every school type.
   assert.deepEqual(
     schoolSubject(trees, 6, "englisch").children.map((n) => n.school.id),
