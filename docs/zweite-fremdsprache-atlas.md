@@ -103,3 +103,9 @@ Lernpfad für die 1. und einen für die 2. Fremdsprache. Sie bleiben in dieser
 „Französisch (2. Fremdsprache)“ Klasse 6 und 7 stehen vorerst als
 „noch nicht verfügbar“ da. Ob die Pakete in beiden Zellen erscheinen sollen,
 entscheidet Thomas (Frage im PR).
+
+## Pakete in den neuen Zellen
+
+| Zelle | Klasse | Paket | Stand |
+| --- | --- | --- | --- |
+| `englisch-2fs` | 6 | [`englisch-2fs-gymnasium-6`](../englisch-2fs-gymnasium-6/) | 43 Lektionen, 129 Karten, Version 0.0 ([Lehrplan und Kartenbestand](englisch-2fs-gymnasium-6-coverage.md)) |
