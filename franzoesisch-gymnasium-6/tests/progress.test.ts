@@ -257,3 +257,54 @@ describe("hand-over of the second-language lessons", () => {
 		for (const raw of [null, "bad json", "[]"]) expect(secondLanguageEntries(raw)).toBeNull();
 	});
 });
+
+describe("review #197: hand-over that cannot be written", () => {
+	it("keeps the second-language entries in this package's state until the hand-over succeeds", () => {
+		const draft = "Bonjour, Madame. Je m’appelle Lina et j’habite à Lyon.";
+		const saved = {
+			quizDone: ["f6-2-bonjour", "f6-1-routine"],
+			drafts: { "f6-2-bonjour:1": draft },
+			listening: { "f6-2-sons": { synthetic: false, partner: true } },
+		};
+		localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
+		const setItem = localStorage.setItem;
+		let full = true;
+		vi.stubGlobal("localStorage", {
+			getItem: localStorage.getItem,
+			setItem: (key: string, value: string) => {
+				if (full && key === SECOND_LANGUAGE_STORAGE_KEY)
+					throw new DOMException("full", "QuotaExceededError");
+				setItem(key, value);
+			},
+		});
+		const tab = openTab();
+		tab.progress.quizDone.push("f6-1-intentions");
+		tab.save();
+		expect(localStorage.getItem(SECOND_LANGUAGE_STORAGE_KEY)).toBeNull();
+		const kept = JSON.parse(localStorage.getItem(STORAGE_KEY)!);
+		expect(kept.drafts["f6-2-bonjour:1"]).toBe(draft);
+		expect(kept.quizDone).toEqual(expect.arrayContaining(["f6-2-bonjour", "f6-1-routine", "f6-1-intentions"]));
+		expect(kept.listening["f6-2-sons"]).toEqual({ synthetic: false, partner: true });
+		full = false;
+		const next = openTab();
+		next.save();
+		const handed = JSON.parse(localStorage.getItem(SECOND_LANGUAGE_STORAGE_KEY)!);
+		expect(handed.drafts["f6-2-bonjour:1"]).toBe(draft);
+		expect(localStorage.getItem(STORAGE_KEY)).not.toContain("f6-2-");
+	});
+	it("deletes pending second-language texts on a confirmed reset", () => {
+		localStorage.setItem(STORAGE_KEY, JSON.stringify({ drafts: { "f6-2-bonjour:1": "Bonjour, Madame. Je m’appelle Lina." } }));
+		const setItem = localStorage.setItem;
+		vi.stubGlobal("localStorage", {
+			getItem: localStorage.getItem,
+			setItem: (key: string, value: string) => {
+				if (key === SECOND_LANGUAGE_STORAGE_KEY) throw new DOMException("full", "QuotaExceededError");
+				setItem(key, value);
+			},
+		});
+		const tab = openTab();
+		const reset = resetProgress(tab.progress);
+		expect(saveProgress(reset, tab.progress)).toBe(true);
+		expect(localStorage.getItem(STORAGE_KEY)).not.toContain("f6-2-");
+	});
+});

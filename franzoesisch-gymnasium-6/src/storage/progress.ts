@@ -47,14 +47,37 @@ export function secondLanguageEntries(raw: string | null): string | null {
 	}
 }
 
-export function handOverSecondLanguage(): void {
+/**
+ * Returns the second-language entries that still wait for the new package:
+ * null once they are handed over (or there are none). A failed write, for
+ * example a full storage quota, leaves them pending; saveProgress then keeps
+ * them in this package's state so that the only copy is never overwritten.
+ */
+export function handOverSecondLanguage(): string | null {
 	try {
-		if (localStorage.getItem(SECOND_LANGUAGE_STORAGE_KEY) !== null) return;
+		if (localStorage.getItem(SECOND_LANGUAGE_STORAGE_KEY) !== null) return null;
 		const entries = secondLanguageEntries(localStorage.getItem(STORAGE_KEY));
-		if (entries !== null) localStorage.setItem(SECOND_LANGUAGE_STORAGE_KEY, entries);
+		if (entries === null) return null;
+		try {
+			localStorage.setItem(SECOND_LANGUAGE_STORAGE_KEY, entries);
+			return null;
+		} catch {
+			return entries;
+		}
 	} catch {
-		/* Storage unavailable: nothing to hand over. */
+		return null;
 	}
+}
+
+/** This package's state plus the second-language entries that are still pending. */
+function withPending(progress: Progress, pending: string): Record<string, unknown> {
+	const extra = JSON.parse(pending) as Record<string, unknown>;
+	const state: Record<string, unknown> = { ...progress };
+	for (const field of ["quizDone", "practiceDone", "workshopDone", "writingDone"] as const)
+		state[field] = [...new Set([...progress[field], ...((extra[field] as string[]) ?? [])])];
+	state.drafts = { ...((extra.drafts as object) ?? {}), ...progress.drafts };
+	state.listening = { ...((extra.listening as object) ?? {}), ...progress.listening };
+	return state;
 }
 export interface ListeningEvidence {
 	synthetic: boolean;
@@ -229,15 +252,15 @@ export function mergeProgress(
 /** Read immediately before writing: navigation in a stale tab must not erase work. */
 export function saveProgress(progress: Progress, baseline: Progress): boolean {
 	try {
-		Object.assign(
-			progress,
-			mergeProgress(
-				parseProgress(localStorage.getItem(STORAGE_KEY)),
-				progress,
-				baseline,
-			),
+		const stored = parseProgress(localStorage.getItem(STORAGE_KEY));
+		// A confirmed reset deletes this package's texts, pending ones included.
+		const pending =
+			progress.resetAt > stored.resetAt ? null : handOverSecondLanguage();
+		Object.assign(progress, mergeProgress(stored, progress, baseline));
+		localStorage.setItem(
+			STORAGE_KEY,
+			JSON.stringify(pending ? withPending(progress, pending) : progress),
 		);
-		localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
 		return true;
 	} catch {
 		return false;
