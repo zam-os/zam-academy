@@ -1,0 +1,3890 @@
+{
+	"$schema": "https://zam.app/schemas/v1/kvt-tile.json",
+	"tile_id": "zam-academy:englisch-2fs-gymnasium-6",
+	"version": "2026.11.1",
+	"title": "Englisch 6 Gymnasium, 2. Fremdsprache (ZAM Academy)",
+	"description": "English as second foreign language at Bavarian Gymnasium grade 6: 43 lessons on greetings, numbers and time, family and home, articles, pronouns and quantities, simple present, present progressive, simple past, going to and modal verbs, questions and question tags, school, food, shopping, clothes and festivals in the UK, the British Isles, London, the USA and Canada, and listening, reading, writing, mediation and pronunciation strategies, with 129 recall cards. Listening, live talk and current events need extra practice.",
+	"publisher": "ZAM Academy",
+	"sources": [
+		{
+			"uri": "https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/6/englisch/2-fremdsprache",
+			"label": "ISB · Englisch 6 (2. Fremdsprache), Gymnasium",
+			"checked": "2026-11-24"
+		},
+		{
+			"uri": "https://en.wikipedia.org/wiki/English_language",
+			"label": "English language - Wikipedia",
+			"checked": "2026-11-24"
+		},
+		{
+			"uri": "https://en.wikipedia.org/wiki/Year_7",
+			"label": "Year 7 - Wikipedia",
+			"checked": "2026-11-24"
+		},
+		{
+			"uri": "https://en.wikipedia.org/wiki/School_uniforms_in_England",
+			"label": "School uniforms in England - Wikipedia",
+			"checked": "2026-11-24"
+		},
+		{
+			"uri": "https://en.wikipedia.org/wiki/Guy_Fawkes_Night",
+			"label": "Guy Fawkes Night - Wikipedia",
+			"checked": "2026-11-24"
+		},
+		{
+			"uri": "https://en.wikipedia.org/wiki/Boxing_Day",
+			"label": "Boxing Day - Wikipedia",
+			"checked": "2026-11-24"
+		},
+		{
+			"uri": "https://en.wikipedia.org/wiki/Saint_David%27s_Day",
+			"label": "Saint David's Day - Wikipedia",
+			"checked": "2026-11-24"
+		},
+		{
+			"uri": "https://en.wikipedia.org/wiki/Saint_Patrick%27s_Day",
+			"label": "Saint Patrick's Day - Wikipedia",
+			"checked": "2026-11-24"
+		},
+		{
+			"uri": "https://en.wikipedia.org/wiki/British_Isles",
+			"label": "British Isles - Wikipedia",
+			"checked": "2026-11-24"
+		},
+		{
+			"uri": "https://en.wikipedia.org/wiki/United_Kingdom",
+			"label": "United Kingdom - Wikipedia",
+			"checked": "2026-11-24"
+		},
+		{
+			"uri": "https://en.wikipedia.org/wiki/Big_Ben",
+			"label": "Big Ben - Wikipedia",
+			"checked": "2026-11-24"
+		},
+		{
+			"uri": "https://en.wikipedia.org/wiki/London_Eye",
+			"label": "London Eye - Wikipedia",
+			"checked": "2026-11-24"
+		},
+		{
+			"uri": "https://en.wikipedia.org/wiki/Tower_of_London",
+			"label": "Tower of London - Wikipedia",
+			"checked": "2026-11-24"
+		},
+		{
+			"uri": "https://en.wikipedia.org/wiki/Tower_Bridge",
+			"label": "Tower Bridge - Wikipedia",
+			"checked": "2026-11-24"
+		},
+		{
+			"uri": "https://en.wikipedia.org/wiki/Buckingham_Palace",
+			"label": "Buckingham Palace - Wikipedia",
+			"checked": "2026-11-24"
+		},
+		{
+			"uri": "https://en.wikipedia.org/wiki/Contiguous_United_States",
+			"label": "Contiguous United States - Wikipedia",
+			"checked": "2026-11-24"
+		},
+		{
+			"uri": "https://en.wikipedia.org/wiki/Alaska",
+			"label": "Alaska - Wikipedia",
+			"checked": "2026-11-24"
+		},
+		{
+			"uri": "https://en.wikipedia.org/wiki/Hawaii",
+			"label": "Hawaii - Wikipedia",
+			"checked": "2026-11-24"
+		},
+		{
+			"uri": "https://en.wikipedia.org/wiki/Canada",
+			"label": "Canada - Wikipedia",
+			"checked": "2026-11-24"
+		},
+		{
+			"uri": "https://en.wikipedia.org/wiki/Washington,_D.C.",
+			"label": "Washington, D.C. - Wikipedia",
+			"checked": "2026-11-24"
+		},
+		{
+			"uri": "https://en.wikipedia.org/wiki/White_House",
+			"label": "White House - Wikipedia",
+			"checked": "2026-11-24"
+		},
+		{
+			"uri": "https://en.wikipedia.org/wiki/National_Mall",
+			"label": "National Mall - Wikipedia",
+			"checked": "2026-11-24"
+		},
+		{
+			"uri": "https://en.wikipedia.org/wiki/Statue_of_Liberty",
+			"label": "Statue of Liberty - Wikipedia",
+			"checked": "2026-11-24"
+		},
+		{
+			"uri": "https://en.wikipedia.org/wiki/Empire_State_Building",
+			"label": "Empire State Building - Wikipedia",
+			"checked": "2026-11-24"
+		},
+		{
+			"uri": "https://en.wikipedia.org/wiki/Central_Park",
+			"label": "Central Park - Wikipedia",
+			"checked": "2026-11-24"
+		},
+		{
+			"uri": "https://en.wikipedia.org/wiki/International_Phonetic_Alphabet",
+			"label": "International Phonetic Alphabet - Wikipedia",
+			"checked": "2026-11-24"
+		},
+		{
+			"uri": "https://en.wikipedia.org/wiki/Twinkle,_Twinkle,_Little_Star",
+			"label": "Twinkle, Twinkle, Little Star - Wikipedia",
+			"checked": "2026-11-24"
+		}
+	],
+	"atoms": [
+		{
+			"id": "01M863S2S2RC8QPCTPF4SN15TB",
+			"atom_uri": "urn:zam:atom:01M863S2S2RC8QPCTPF4SN15TB",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-6",
+			"slug": "e6s-hello",
+			"title": "Hello and welcome",
+			"domain": "englisch/ankommen",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-hello",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-6",
+					"topic_code": "ankommen",
+					"topic_title": "Hello, English!"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb2",
+					"topic_title": "Interkulturelle Kompetenzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb3",
+					"topic_title": "Text- und Medienkompetenzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb5",
+					"topic_title": "Themengebiete",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863S2TDXN5S7NTQWPQPDB0G",
+					"slug": "e6s-hello-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wie antwortest du höflich, wenn dir jemand etwas anbietet und du es möchtest?",
+					"concept": "Yes, please.",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-hello",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Yes, please.",
+							"Please do so."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863S2TEV4B99EPWR3WMGPMH",
+					"slug": "e6s-hello-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie sprichst du eine Lehrerin mit dem Nachnamen Clark höflich an?",
+					"concept": "Ms Clark (Mr, Mrs oder Ms + Nachname, nicht 'Teacher')",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-hello",
+					"sample_solution": "Ms Clark (Mr, Mrs oder Ms + Nachname, nicht 'Teacher')"
+				},
+				{
+					"id": "01M863S2TFGBDH13GSB62HGB67",
+					"slug": "e6s-hello-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Was bedeutet Help yourself – und wann hörst du es?",
+					"concept": "Bedien dich! – wenn dir jemand Essen oder Trinken anbietet.",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-hello",
+					"sample_solution": "Bedien dich! – wenn dir jemand Essen oder Trinken anbietet."
+				}
+			]
+		},
+		{
+			"id": "01M863S2S317YDE7HW73TYMSFW",
+			"atom_uri": "urn:zam:atom:01M863S2S317YDE7HW73TYMSFW",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-6",
+			"slug": "e6s-classroom",
+			"title": "Classroom English",
+			"domain": "englisch/ankommen",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-classroom",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-6",
+					"topic_code": "ankommen",
+					"topic_title": "Hello, English!"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.2",
+					"topic_title": "Verfügen über sprachliche Mittel",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb2",
+					"topic_title": "Interkulturelle Kompetenzen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863S2TG0S4KVZAA3T8YH4AA",
+					"slug": "e6s-classroom-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wie bildest du den verneinten Imperativ im Englischen?",
+					"concept": "Don't + Grundform (Don't talk!)",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-classroom",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Don't + Grundform (Don't talk!)",
+							"Not + Grundform (Not talk!)"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863S2THMY4ZKDJCAK8GN6JW",
+					"slug": "e6s-classroom-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie fragst du auf Englisch, wie man ein Wort buchstabiert?",
+					"concept": "How do you spell that?",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-classroom",
+					"sample_solution": "How do you spell that?"
+				},
+				{
+					"id": "01M863S2TJ50EK3QR9ZDH0PACB",
+					"slug": "e6s-classroom-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Wie heißt 'Radiergummi' im britischen und im amerikanischen Englisch?",
+					"concept": "rubber (BE) – eraser (AE)",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-classroom",
+					"sample_solution": "rubber (BE) – eraser (AE)"
+				}
+			]
+		},
+		{
+			"id": "01M863S2S4JK5G6THAFG185CR8",
+			"atom_uri": "urn:zam:atom:01M863S2S4JK5G6THAFG185CR8",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-6",
+			"slug": "e6s-numbers",
+			"title": "Numbers and birthdays",
+			"domain": "englisch/ankommen",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-numbers",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-6",
+					"topic_code": "ankommen",
+					"topic_title": "Hello, English!"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.2",
+					"topic_title": "Verfügen über sprachliche Mittel",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863S2TK2ZQN6ZPQE7SEKZW6",
+					"slug": "e6s-numbers-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wie schreibst du die Ordnungszahl zu 12 auf Englisch?",
+					"concept": "twelfth (12th)",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-numbers",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"twelfth (12th)",
+							"twelveth (12th)"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863S2TM5NEAWE8E5DQ5W3SD",
+					"slug": "e6s-numbers-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welche Präposition steht vor einem Datum, welche vor einem Monat?",
+					"concept": "on 3rd May – in May",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-numbers",
+					"sample_solution": "on 3rd May – in May"
+				},
+				{
+					"id": "01M863S2TN0MBSVAVFS4PDR8EY",
+					"slug": "e6s-numbers-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Wie sprichst du das Datum 3rd May im britischen Englisch aus?",
+					"concept": "the third of May (on the third of May)",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-numbers",
+					"sample_solution": "the third of May (on the third of May)"
+				}
+			]
+		},
+		{
+			"id": "01M863S2S5A4DRG9ZMC7E69K7K",
+			"atom_uri": "urn:zam:atom:01M863S2S5A4DRG9ZMC7E69K7K",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-6",
+			"slug": "e6s-time",
+			"title": "What time is it?",
+			"domain": "englisch/ankommen",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-time",
+			"prerequisites": [
+				{
+					"atom_id": "01M863S2S4JK5G6THAFG185CR8"
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-6",
+					"topic_code": "ankommen",
+					"topic_title": "Hello, English!"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.2",
+					"topic_title": "Verfügen über sprachliche Mittel",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb3",
+					"topic_title": "Text- und Medienkompetenzen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863S2TP3WS5S8H53H5J86ZT",
+					"slug": "e6s-time-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was bedeutet half past four?",
+					"concept": "4:30 (halb fünf)",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-time",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"4:30 (halb fünf)",
+							"3:30 (halb vier)"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863S2TQDY5D01FCZ88S4SJE",
+					"slug": "e6s-time-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie sagst du 8:45 mit to?",
+					"concept": "quarter to nine",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-time",
+					"sample_solution": "quarter to nine"
+				},
+				{
+					"id": "01M863S2TRVGP6D141T5S53CD7",
+					"slug": "e6s-time-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Wofür stehen a.m. und p.m.?",
+					"concept": "a.m. = vor 12 Uhr mittags, p.m. = nach 12 Uhr mittags (7 p.m. = 19 Uhr)",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-time",
+					"sample_solution": "a.m. = vor 12 Uhr mittags, p.m. = nach 12 Uhr mittags (7 p.m. = 19 Uhr)"
+				}
+			]
+		},
+		{
+			"id": "01M863S2S6BAH3G73XQJEC0E51",
+			"atom_uri": "urn:zam:atom:01M863S2S6BAH3G73XQJEC0E51",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-6",
+			"slug": "e6s-world",
+			"title": "English around the world",
+			"domain": "englisch/ankommen",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-world",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-6",
+					"topic_code": "ankommen",
+					"topic_title": "Hello, English!"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.2",
+					"topic_title": "Verfügen über sprachliche Mittel",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb2",
+					"topic_title": "Interkulturelle Kompetenzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb5",
+					"topic_title": "Themengebiete",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863S2TSA9X3SSQ4X8KTK19Z",
+					"slug": "e6s-world-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wie sagst du 'Ich komme aus Deutschland' auf Englisch?",
+					"concept": "I'm from Germany.",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-world",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"I'm from Germany.",
+							"I'm from German."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863S2TTQQP8FZE3MA6HTN6V",
+					"slug": "e6s-world-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Nenne zwei Wörter, die im britischen und amerikanischen Englisch verschieden sind.",
+					"concept": "flat – apartment; autumn – fall (auch rubber – eraser)",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-world",
+					"sample_solution": "flat – apartment; autumn – fall (auch rubber – eraser)"
+				},
+				{
+					"id": "01M863S2TVFH5JVA5JTKDCWAX3",
+					"slug": "e6s-world-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Was ist der Unterschied zwischen English und British?",
+					"concept": "English = aus England; British = aus dem UK (auch Schotten und Waliser)",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-world",
+					"sample_solution": "English = aus England; British = aus dem UK (auch Schotten und Waliser)"
+				}
+			]
+		},
+		{
+			"id": "01M863S2S73ZCNZB59XJGZDFBS",
+			"atom_uri": "urn:zam:atom:01M863S2S73ZCNZB59XJGZDFBS",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-6",
+			"slug": "e6s-family",
+			"title": "My family",
+			"domain": "englisch/familie",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-family",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-6",
+					"topic_code": "familie",
+					"topic_title": "Family, friends and home"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.2",
+					"topic_title": "Verfügen über sprachliche Mittel",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb5",
+					"topic_title": "Themengebiete",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863S2TWBWV7CEFMN5B72FEE",
+					"slug": "e6s-family-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welcher Possessivbegleiter passt: Anna and … brother?",
+					"concept": "her (Besitzerin ist Anna)",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-family",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"her (Besitzerin ist Anna)",
+							"his (weil brother männlich ist)"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863S2TXBV0TFEX7RQM1M8JR",
+					"slug": "e6s-family-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Was heißt parents – und was heißt relatives?",
+					"concept": "parents = Eltern; relatives = Verwandte",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-family",
+					"sample_solution": "parents = Eltern; relatives = Verwandte"
+				},
+				{
+					"id": "01M863S2TY492RED119G4MK37C",
+					"slug": "e6s-family-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Was ist der Unterschied zwischen its und it's?",
+					"concept": "its = sein/ihr (Besitz bei Tieren und Dingen); it's = it is",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-family",
+					"sample_solution": "its = sein/ihr (Besitz bei Tieren und Dingen); it's = it is"
+				}
+			]
+		},
+		{
+			"id": "01M863S2S8YH4B0DY1M5WJ8HGD",
+			"atom_uri": "urn:zam:atom:01M863S2S8YH4B0DY1M5WJ8HGD",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-6",
+			"slug": "e6s-to-be",
+			"title": "I am, you are",
+			"domain": "englisch/familie",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-to-be",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-6",
+					"topic_code": "familie",
+					"topic_title": "Family, friends and home"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.2",
+					"topic_title": "Verfügen über sprachliche Mittel",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863S2TZ1M8ZJWS5DR3QYCX9",
+					"slug": "e6s-to-be-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wie sagst du 'Ich bin elf Jahre alt' auf Englisch?",
+					"concept": "I'm eleven (years old).",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-to-be",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"I'm eleven (years old).",
+							"I have eleven years."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863S2V0ACWMWSK9Y400FKC1",
+					"slug": "e6s-to-be-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie lautet die bejahte Kurzantwort auf 'Are you ready?'",
+					"concept": "Yes, I am.",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-to-be",
+					"sample_solution": "Yes, I am."
+				},
+				{
+					"id": "01M863S2V1DP3544WFWACG0VEP",
+					"slug": "e6s-to-be-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Wie heißen die verneinten Kurzformen von he is und they are?",
+					"concept": "he isn't (he's not) – they aren't (they're not)",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-to-be",
+					"sample_solution": "he isn't (he's not) – they aren't (they're not)"
+				}
+			]
+		},
+		{
+			"id": "01M863S2S9M7N8RTXEPKABZK6P",
+			"atom_uri": "urn:zam:atom:01M863S2S9M7N8RTXEPKABZK6P",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-6",
+			"slug": "e6s-have-got",
+			"title": "Pets and plurals",
+			"domain": "englisch/familie",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-have-got",
+			"prerequisites": [
+				{
+					"atom_id": "01M863S2S8YH4B0DY1M5WJ8HGD"
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-6",
+					"topic_code": "familie",
+					"topic_title": "Family, friends and home"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.2",
+					"topic_title": "Verfügen über sprachliche Mittel",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb5",
+					"topic_title": "Themengebiete",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863S2V2CM424Q38YZM1E82H",
+					"slug": "e6s-have-got-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wie lautet die Kurzantwort auf 'Have you got a dog?', wenn du einen hast?",
+					"concept": "Yes, I have.",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-have-got",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Yes, I have.",
+							"Yes, I have got."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863S2V3GZ9HF8VCTETPVGTT",
+					"slug": "e6s-have-got-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie heißen die Plurale von child, mouse und foot?",
+					"concept": "children, mice, feet",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-have-got",
+					"sample_solution": "children, mice, feet"
+				},
+				{
+					"id": "01M863S2V4XG199YYHZ4GDK0RC",
+					"slug": "e6s-have-got-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Wann hängst du im Plural -es an, und wann wird aus -y -ies?",
+					"concept": "-es nach s, x, sh, ch (boxes); -ies nach Konsonant + y (puppies), aber boy – boys",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-have-got",
+					"sample_solution": "-es nach s, x, sh, ch (boxes); -ies nach Konsonant + y (puppies), aber boy – boys"
+				}
+			]
+		},
+		{
+			"id": "01M863S2SA0G72BS7VX7YSKHBF",
+			"atom_uri": "urn:zam:atom:01M863S2SA0G72BS7VX7YSKHBF",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-6",
+			"slug": "e6s-home",
+			"title": "My room",
+			"domain": "englisch/familie",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-home",
+			"prerequisites": [
+				{
+					"atom_id": "01M863S2S8YH4B0DY1M5WJ8HGD"
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-6",
+					"topic_code": "familie",
+					"topic_title": "Family, friends and home"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.2",
+					"topic_title": "Verfügen über sprachliche Mittel",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb3",
+					"topic_title": "Text- und Medienkompetenzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb5",
+					"topic_title": "Themengebiete",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863S2V5S39B1WS18QN8NJGT",
+					"slug": "e6s-home-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wie beginnst du eine Bildbeschreibung auf Englisch: 'Auf dem Bild …'?",
+					"concept": "In the picture …",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-home",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"In the picture …",
+							"On the picture …"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863S2V6QCTT6Z69XXSMH3BN",
+					"slug": "e6s-home-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wann sagst du there is, wann there are?",
+					"concept": "there is + Singular (There's a desk); there are + Plural (There are two chairs)",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-home",
+					"sample_solution": "there is + Singular (There's a desk); there are + Plural (There are two chairs)"
+				},
+				{
+					"id": "01M863S2V74DXXD84KT41RBB1Q",
+					"slug": "e6s-home-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Nenne vier englische Präpositionen des Ortes mit Bedeutung.",
+					"concept": "under (unter), next to (neben), behind (hinter), between (zwischen) – auch in front of, opposite",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-home",
+					"sample_solution": "under (unter), next to (neben), behind (hinter), between (zwischen) – auch in front of, opposite"
+				}
+			]
+		},
+		{
+			"id": "01M863S2SBGGKBZ1J4VVHSXKY0",
+			"atom_uri": "urn:zam:atom:01M863S2SBGGKBZ1J4VVHSXKY0",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-6",
+			"slug": "e6s-friends",
+			"title": "My best friend",
+			"domain": "englisch/familie",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-friends",
+			"prerequisites": [
+				{
+					"atom_id": "01M863S2S73ZCNZB59XJGZDFBS"
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-6",
+					"topic_code": "familie",
+					"topic_title": "Family, friends and home"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.2",
+					"topic_title": "Verfügen über sprachliche Mittel",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb5",
+					"topic_title": "Themengebiete",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863S2V8AW1K0ES9DEE2WSBQ",
+					"slug": "e6s-friends-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wie sagst du 'Ich auch nicht' nach 'I don't like rain'?",
+					"concept": "I don't like it either. (Me neither.)",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-friends",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"I don't like it either. (Me neither.)",
+							"I don't like it too."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863S2V9403J2HBECK2PGEB6",
+					"slug": "e6s-friends-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Was ist der Unterschied zwischen I like swimming und I'd like to swim?",
+					"concept": "I like swimming = ich schwimme gern (allgemein); I'd like to swim = ich möchte (jetzt) schwimmen",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-friends",
+					"sample_solution": "I like swimming = ich schwimme gern (allgemein); I'd like to swim = ich möchte (jetzt) schwimmen"
+				},
+				{
+					"id": "01M863S2VAY7D19SHBJJK9E2BH",
+					"slug": "e6s-friends-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Wie sagst du 'Ich will, dass du kommst' auf Englisch?",
+					"concept": "I want you to come.",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-friends",
+					"sample_solution": "I want you to come."
+				}
+			]
+		},
+		{
+			"id": "01M863S2SC62CV2DWXN3SNEZ1X",
+			"atom_uri": "urn:zam:atom:01M863S2SC62CV2DWXN3SNEZ1X",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-6",
+			"slug": "e6s-articles",
+			"title": "A, an and the",
+			"domain": "englisch/woerter",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-articles",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-6",
+					"topic_code": "woerter",
+					"topic_title": "Small words"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.2",
+					"topic_title": "Verfügen über sprachliche Mittel",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863S2VBH2GTMHA92CZGN6CK",
+					"slug": "e6s-articles-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Heißt es a hour oder an hour – und warum?",
+					"concept": "an hour – das h ist stumm, das Wort beginnt mit einem Vokallaut",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-articles",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"an hour – das h ist stumm, das Wort beginnt mit einem Vokallaut",
+							"a hour – h ist ein Konsonant"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863S2VCYV6PSWH1XR9E7BQD",
+					"slug": "e6s-articles-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie sagst du 'Meine Mutter ist Ärztin' auf Englisch?",
+					"concept": "My mum is a doctor. (Beruf mit a oder an)",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-articles",
+					"sample_solution": "My mum is a doctor. (Beruf mit a oder an)"
+				},
+				{
+					"id": "01M863S2VDB32GAN688R3E1G9N",
+					"slug": "e6s-articles-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Nenne drei Ausdrücke, die im Englischen ohne Artikel stehen.",
+					"concept": "at home, at school, by bus (auch: have breakfast, I like music)",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-articles",
+					"sample_solution": "at home, at school, by bus (auch: have breakfast, I like music)"
+				}
+			]
+		},
+		{
+			"id": "01M863S2SDY2C382AW1P83QBVQ",
+			"atom_uri": "urn:zam:atom:01M863S2SDY2C382AW1P83QBVQ",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-6",
+			"slug": "e6s-pronouns",
+			"title": "I, me and my",
+			"domain": "englisch/woerter",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-pronouns",
+			"prerequisites": [
+				{
+					"atom_id": "01M863S2S73ZCNZB59XJGZDFBS"
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-6",
+					"topic_code": "woerter",
+					"topic_title": "Small words"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.2",
+					"topic_title": "Verfügen über sprachliche Mittel",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863S2VEVCQ0JWYRMWE6KWP7",
+					"slug": "e6s-pronouns-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welches Pronomen steht nach einer Präposition: for he oder for him?",
+					"concept": "for him (Objektform)",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-pronouns",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"for him (Objektform)",
+							"for he (Subjektform)"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863S2VFS4AW98098GRE81FM",
+					"slug": "e6s-pronouns-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Nenne die Objektformen zu I, we und they.",
+					"concept": "me, us, them",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-pronouns",
+					"sample_solution": "me, us, them"
+				},
+				{
+					"id": "01M863S2VG825EKVGVG965T8K7",
+					"slug": "e6s-pronouns-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Wie übersetzt du 'Ich mag sie' für ein Mädchen und für mehrere Kinder?",
+					"concept": "I like her. – I like them.",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-pronouns",
+					"sample_solution": "I like her. – I like them."
+				}
+			]
+		},
+		{
+			"id": "01M863S2SE0WKTFEZ8R4DEEAZJ",
+			"atom_uri": "urn:zam:atom:01M863S2SE0WKTFEZ8R4DEEAZJ",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-6",
+			"slug": "e6s-genitive",
+			"title": "Tom's bike",
+			"domain": "englisch/woerter",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-genitive",
+			"prerequisites": [
+				{
+					"atom_id": "01M863S2S73ZCNZB59XJGZDFBS"
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-6",
+					"topic_code": "woerter",
+					"topic_title": "Small words"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.2",
+					"topic_title": "Verfügen über sprachliche Mittel",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863S2VHJCQN86QZAKYW69CH",
+					"slug": "e6s-genitive-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wie sagst du 'das Zimmer meiner Eltern'?",
+					"concept": "my parents' room (Plural auf -s: nur Apostroph)",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-genitive",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"my parents' room (Plural auf -s: nur Apostroph)",
+							"my parent's room"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863S2VJ7K27VJWNV4P5YWTW",
+					"slug": "e6s-genitive-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wann verwendest du statt 's den of-Genitiv?",
+					"concept": "bei Dingen und Orten: the end of the film, the name of the street",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-genitive",
+					"sample_solution": "bei Dingen und Orten: the end of the film, the name of the street"
+				},
+				{
+					"id": "01M863S2VKV9G3B8DKB7KV4X9Q",
+					"slug": "e6s-genitive-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Was ist der Unterschied zwischen whose und who's?",
+					"concept": "whose = wessen; who's = who is (wer ist)",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-genitive",
+					"sample_solution": "whose = wessen; who's = who is (wer ist)"
+				}
+			]
+		},
+		{
+			"id": "01M863S2SFGYT82BWA6R9JNNCP",
+			"atom_uri": "urn:zam:atom:01M863S2SFGYT82BWA6R9JNNCP",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-6",
+			"slug": "e6s-this-that",
+			"title": "This, that, these, those",
+			"domain": "englisch/woerter",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-this-that",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-6",
+					"topic_code": "woerter",
+					"topic_title": "Small words"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.2",
+					"topic_title": "Verfügen über sprachliche Mittel",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863S2VMBJX7AG2939WWXPHY",
+					"slug": "e6s-this-that-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welches Wort nimmst du für mehrere Dinge in deiner Nähe?",
+					"concept": "these (these shoes)",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-this-that",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"these (these shoes)",
+							"those (those shoes)"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863S2VN830DAQA2ATHDXV78",
+					"slug": "e6s-this-that-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie stellst du dich am Telefon auf Englisch vor?",
+					"concept": "Hello, this is … (z. B. Hello, this is Paul.)",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-this-that",
+					"sample_solution": "Hello, this is … (z. B. Hello, this is Paul.)"
+				},
+				{
+					"id": "01M863S2VP9PBH80ZWFSMQC5YZ",
+					"slug": "e6s-this-that-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Ordne this, that, these und those nach nah/fern und eins/mehrere.",
+					"concept": "nah: this (eins), these (mehrere); fern: that (eins), those (mehrere)",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-this-that",
+					"sample_solution": "nah: this (eins), these (mehrere); fern: that (eins), those (mehrere)"
+				}
+			]
+		},
+		{
+			"id": "01M863S2SGBV8GJQESN80DGSWN",
+			"atom_uri": "urn:zam:atom:01M863S2SGBV8GJQESN80DGSWN",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-6",
+			"slug": "e6s-some-any",
+			"title": "Some, any, much, many",
+			"domain": "englisch/woerter",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-some-any",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-6",
+					"topic_code": "woerter",
+					"topic_title": "Small words"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.2",
+					"topic_title": "Verfügen über sprachliche Mittel",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863S2VQK0ZWKB0219Q32M1W",
+					"slug": "e6s-some-any-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Heißt es much oder many homework?",
+					"concept": "much homework (homework ist unzählbar)",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-some-any",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"much homework (homework ist unzählbar)",
+							"many homework"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863S2VR0B0CDH35EG0AVGSD",
+					"slug": "e6s-some-any-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Warum heißt es 'Would you like some cake?' mit some, obwohl es eine Frage ist?",
+					"concept": "Bei Angeboten und Bitten erwartest du ein Ja – dann steht some.",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-some-any",
+					"sample_solution": "Bei Angeboten und Bitten erwartest du ein Ja – dann steht some."
+				},
+				{
+					"id": "01M863S2VSD8GTTTET2JNDDPS2",
+					"slug": "e6s-some-any-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Wie sagst du 'Niemand ist zu Hause' richtig?",
+					"concept": "Nobody is at home. (bejahtes Verb, keine doppelte Verneinung)",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-some-any",
+					"sample_solution": "Nobody is at home. (bejahtes Verb, keine doppelte Verneinung)"
+				}
+			]
+		},
+		{
+			"id": "01M863S2SH699HRXT9YW88QAYB",
+			"atom_uri": "urn:zam:atom:01M863S2SH699HRXT9YW88QAYB",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-6",
+			"slug": "e6s-simple-present",
+			"title": "Every day",
+			"domain": "englisch/zeiten",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-simple-present",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-6",
+					"topic_code": "zeiten",
+					"topic_title": "Every day, now, yesterday, soon"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.2",
+					"topic_title": "Verfügen über sprachliche Mittel",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb5",
+					"topic_title": "Themengebiete",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863S2VTBRGR4WX1RNR09E7M",
+					"slug": "e6s-simple-present-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wie heißt die he/she-Form von go und watch im simple present?",
+					"concept": "goes, watches (-es)",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-simple-present",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"goes, watches (-es)",
+							"gos, watchs"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863S2VVHS4RVYH6HZ2Y1XDC",
+					"slug": "e6s-simple-present-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wofür verwendest du das simple present?",
+					"concept": "für Gewohnheiten, regelmäßige Abläufe und Tatsachen (I get up at seven.)",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-simple-present",
+					"sample_solution": "für Gewohnheiten, regelmäßige Abläufe und Tatsachen (I get up at seven.)"
+				},
+				{
+					"id": "01M863S2VWGW4RTC21DKFHK170",
+					"slug": "e6s-simple-present-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Wie sagst du 'Hausaufgaben machen' auf Englisch?",
+					"concept": "do homework (nicht: make homework)",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-simple-present",
+					"sample_solution": "do homework (nicht: make homework)"
+				}
+			]
+		},
+		{
+			"id": "01M863S2SJ62E7F3VSC1YMG3FK",
+			"atom_uri": "urn:zam:atom:01M863S2SJ62E7F3VSC1YMG3FK",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-6",
+			"slug": "e6s-progressive",
+			"title": "Right now",
+			"domain": "englisch/zeiten",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-progressive",
+			"prerequisites": [
+				{
+					"atom_id": "01M863S2SH699HRXT9YW88QAYB"
+				},
+				{
+					"atom_id": "01M863S2S8YH4B0DY1M5WJ8HGD"
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-6",
+					"topic_code": "zeiten",
+					"topic_title": "Every day, now, yesterday, soon"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.2",
+					"topic_title": "Verfügen über sprachliche Mittel",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb3",
+					"topic_title": "Text- und Medienkompetenzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb5",
+					"topic_title": "Themengebiete",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863S2VXJQ6GMW01S3P76CV9",
+					"slug": "e6s-progressive-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wie bildest du das present progressive?",
+					"concept": "am/is/are + Verb mit -ing (She is reading.)",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-progressive",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"am/is/are + Verb mit -ing (She is reading.)",
+							"do/does + Verb mit -ing"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863S2VY3DFQJVQR0GT2SSP3",
+					"slug": "e6s-progressive-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Was ist der Unterschied zwischen I play the guitar und I'm playing the guitar?",
+					"concept": "I play = gewöhnlich, regelmäßig; I'm playing = gerade jetzt",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-progressive",
+					"sample_solution": "I play = gewöhnlich, regelmäßig; I'm playing = gerade jetzt"
+				},
+				{
+					"id": "01M863S2VZ2NQMFKTFQXXC70VH",
+					"slug": "e6s-progressive-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Wie schreibst du die -ing-Form von swim und write?",
+					"concept": "swimming (Konsonant verdoppelt), writing (stummes e fällt weg)",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-progressive",
+					"sample_solution": "swimming (Konsonant verdoppelt), writing (stummes e fällt weg)"
+				}
+			]
+		},
+		{
+			"id": "01M863S2SKQFB9ESYQS560WVRY",
+			"atom_uri": "urn:zam:atom:01M863S2SKQFB9ESYQS560WVRY",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-6",
+			"slug": "e6s-simple-past",
+			"title": "Yesterday",
+			"domain": "englisch/zeiten",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-simple-past",
+			"prerequisites": [
+				{
+					"atom_id": "01M863S2SH699HRXT9YW88QAYB"
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-6",
+					"topic_code": "zeiten",
+					"topic_title": "Every day, now, yesterday, soon"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.2",
+					"topic_title": "Verfügen über sprachliche Mittel",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863S2W0X0PMY339BQNX74T4",
+					"slug": "e6s-simple-past-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wie verneinst du 'I went to school' im simple past?",
+					"concept": "I didn't go to school. (didn't + Grundform)",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-simple-past",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"I didn't go to school. (didn't + Grundform)",
+							"I didn't went to school."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863S2W13BJCQKF9FASC7HNX",
+					"slug": "e6s-simple-past-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Nenne die simple-past-Formen von go, see und buy.",
+					"concept": "went, saw, bought",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-simple-past",
+					"sample_solution": "went, saw, bought"
+				},
+				{
+					"id": "01M863S2W2GG0B6YP06T23G0DT",
+					"slug": "e6s-simple-past-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Wann verwendest du was, wann were?",
+					"concept": "was bei I, he, she, it; were bei we, you, they",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-simple-past",
+					"sample_solution": "was bei I, he, she, it; were bei we, you, they"
+				}
+			]
+		},
+		{
+			"id": "01M863S2SM9R4SAEK1CM84YW98",
+			"atom_uri": "urn:zam:atom:01M863S2SM9R4SAEK1CM84YW98",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-6",
+			"slug": "e6s-going-to",
+			"title": "Going to",
+			"domain": "englisch/zeiten",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-going-to",
+			"prerequisites": [
+				{
+					"atom_id": "01M863S2S8YH4B0DY1M5WJ8HGD"
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-6",
+					"topic_code": "zeiten",
+					"topic_title": "Every day, now, yesterday, soon"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.2",
+					"topic_title": "Verfügen über sprachliche Mittel",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863S2W37J7QAADCWP5G62EE",
+					"slug": "e6s-going-to-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wie bildest du das going-to-future?",
+					"concept": "am/is/are + going to + Grundform (I'm going to visit Grandma.)",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-going-to",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"am/is/are + going to + Grundform (I'm going to visit Grandma.)",
+							"am/is/are + going to + -ing-Form"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863S2W4FXAXPQ4WCFE9D1FA",
+					"slug": "e6s-going-to-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wofür verwendest du das going-to-future?",
+					"concept": "für Pläne und Absichten und für Vorhersagen mit sichtbaren Anzeichen",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-going-to",
+					"sample_solution": "für Pläne und Absichten und für Vorhersagen mit sichtbaren Anzeichen"
+				},
+				{
+					"id": "01M863S2W51T4HHEG7GEY02H02",
+					"slug": "e6s-going-to-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Was sagst du, wenn du schwarze Wolken siehst?",
+					"concept": "It's going to rain.",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-going-to",
+					"sample_solution": "It's going to rain."
+				}
+			]
+		},
+		{
+			"id": "01M863S2SNZTFM7Q0483EYE4N2",
+			"atom_uri": "urn:zam:atom:01M863S2SNZTFM7Q0483EYE4N2",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-6",
+			"slug": "e6s-modals",
+			"title": "Can, must, needn't, mustn't",
+			"domain": "englisch/zeiten",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-modals",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-6",
+					"topic_code": "zeiten",
+					"topic_title": "Every day, now, yesterday, soon"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.2",
+					"topic_title": "Verfügen über sprachliche Mittel",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863S2W66Y185NP1D03KXWT0",
+					"slug": "e6s-modals-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was bedeutet 'You mustn't run here'?",
+					"concept": "Du darfst hier nicht rennen. (Verbot)",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-modals",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Du darfst hier nicht rennen. (Verbot)",
+							"Du musst hier nicht rennen."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863S2W7DTYCZ8F2KQH2EBN6",
+					"slug": "e6s-modals-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie sagst du 'Du musst nicht kommen' auf Englisch?",
+					"concept": "You needn't come.",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-modals",
+					"sample_solution": "You needn't come."
+				},
+				{
+					"id": "01M863S2W83EHG1H1Y0HSPH0P6",
+					"slug": "e6s-modals-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Was steht nach can und must – und bekommen sie bei he ein -s?",
+					"concept": "die Grundform ohne to; kein -s (She can swim.)",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-modals",
+					"sample_solution": "die Grundform ohne to; kein -s (She can swim.)"
+				}
+			]
+		},
+		{
+			"id": "01M863S2SPJM7D6Z1768471Y5X",
+			"atom_uri": "urn:zam:atom:01M863S2SPJM7D6Z1768471Y5X",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-6",
+			"slug": "e6s-word-order",
+			"title": "Place before time",
+			"domain": "englisch/fragen",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-word-order",
+			"prerequisites": [
+				{
+					"atom_id": "01M863S2SH699HRXT9YW88QAYB"
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-6",
+					"topic_code": "fragen",
+					"topic_title": "Sentences and questions"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.2",
+					"topic_title": "Verfügen über sprachliche Mittel",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863S2W9PBRG4QK4WECFFZNP",
+					"slug": "e6s-word-order-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche Reihenfolge haben Orts- und Zeitangabe im englischen Satz?",
+					"concept": "erst Ort, dann Zeit (place before time): in the park after school",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-word-order",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"erst Ort, dann Zeit (place before time): in the park after school",
+							"erst Zeit, dann Ort: after school in the park"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863S2WAC5WW844TJ3T6ZRPM",
+					"slug": "e6s-word-order-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie verneinst du 'He plays tennis' im simple present?",
+					"concept": "He doesn't play tennis. (doesn't + Grundform)",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-word-order",
+					"sample_solution": "He doesn't play tennis. (doesn't + Grundform)"
+				},
+				{
+					"id": "01M863S2WBRVKBCAXM2J8FYGD6",
+					"slug": "e6s-word-order-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Wo steht often bei einem Vollverb und wo bei to be?",
+					"concept": "vor dem Vollverb (I often play), nach to be (She is often late)",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-word-order",
+					"sample_solution": "vor dem Vollverb (I often play), nach to be (She is often late)"
+				}
+			]
+		},
+		{
+			"id": "01M863S2SQAMYM6ZKB7Q25DKK6",
+			"atom_uri": "urn:zam:atom:01M863S2SQAMYM6ZKB7Q25DKK6",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-6",
+			"slug": "e6s-questions",
+			"title": "Questions with do and does",
+			"domain": "englisch/fragen",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-questions",
+			"prerequisites": [
+				{
+					"atom_id": "01M863S2SH699HRXT9YW88QAYB"
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-6",
+					"topic_code": "fragen",
+					"topic_title": "Sentences and questions"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.2",
+					"topic_title": "Verfügen über sprachliche Mittel",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863S2WC1BGNGAT6MTB7X4F6",
+					"slug": "e6s-questions-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wie lautet die Frage zu 'She lives in Bath' mit where?",
+					"concept": "Where does she live?",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-questions",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Where does she live?",
+							"Where does she lives?"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863S2WDP79F6YEC4V7GQDJ9",
+					"slug": "e6s-questions-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie bildest du eine Frage mit Fragewort im simple present?",
+					"concept": "Fragewort + do/does + Subjekt + Grundform (What do you like?)",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-questions",
+					"sample_solution": "Fragewort + do/does + Subjekt + Grundform (What do you like?)"
+				},
+				{
+					"id": "01M863S2WEBHZTD9S05NV1D5YG",
+					"slug": "e6s-questions-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Wie lautet die Kurzantwort auf 'Do you like pizza?', wenn du keine magst?",
+					"concept": "No, I don't.",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-questions",
+					"sample_solution": "No, I don't."
+				}
+			]
+		},
+		{
+			"id": "01M863S2SRT9M98EF3343PEF60",
+			"atom_uri": "urn:zam:atom:01M863S2SRT9M98EF3343PEF60",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-6",
+			"slug": "e6s-who-whose",
+			"title": "Who knows? Who do you know?",
+			"domain": "englisch/fragen",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-who-whose",
+			"prerequisites": [
+				{
+					"atom_id": "01M863S2SQAMYM6ZKB7Q25DKK6"
+				},
+				{
+					"atom_id": "01M863S2SE0WKTFEZ8R4DEEAZJ"
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-6",
+					"topic_code": "fragen",
+					"topic_title": "Sentences and questions"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.2",
+					"topic_title": "Verfügen über sprachliche Mittel",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863S2WFB7HT1XT8TZD22EX6",
+					"slug": "e6s-who-whose-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wie fragst du 'Wer wohnt hier?' auf Englisch?",
+					"concept": "Who lives here? (Subjektfrage ohne do)",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-who-whose",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Who lives here? (Subjektfrage ohne do)",
+							"Who do lives here?"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863S2WGS1DQWNANXSYT9685",
+					"slug": "e6s-who-whose-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie fragst du 'Wen kennst du hier?' auf Englisch?",
+					"concept": "Who do you know here?",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-who-whose",
+					"sample_solution": "Who do you know here?"
+				},
+				{
+					"id": "01M863S2WHN31FZGSGRJX5F2S1",
+					"slug": "e6s-who-whose-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Wo steht die Präposition in 'Woher kommst du?' auf Englisch?",
+					"concept": "am Ende: Where do you come from?",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-who-whose",
+					"sample_solution": "am Ende: Where do you come from?"
+				}
+			]
+		},
+		{
+			"id": "01M863S2SSPQP90EH0YJMF8NK7",
+			"atom_uri": "urn:zam:atom:01M863S2SSPQP90EH0YJMF8NK7",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-6",
+			"slug": "e6s-question-tags",
+			"title": "It's nice, isn't it?",
+			"domain": "englisch/fragen",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-question-tags",
+			"prerequisites": [
+				{
+					"atom_id": "01M863S2SQAMYM6ZKB7Q25DKK6"
+				},
+				{
+					"atom_id": "01M863S2SKQFB9ESYQS560WVRY"
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-6",
+					"topic_code": "fragen",
+					"topic_title": "Sentences and questions"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.2",
+					"topic_title": "Verfügen über sprachliche Mittel",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863S2WJX89F5S01HFFNEZEG",
+					"slug": "e6s-question-tags-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welches question tag passt zu 'It's cold, …'?",
+					"concept": "isn't it?",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-question-tags",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"isn't it?",
+							"is it?"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863S2WKT2SNH9M60QAFXK2W",
+					"slug": "e6s-question-tags-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welches Anhängsel brauchst du, wenn der Satz kein Hilfsverb hat (You like tea, …)?",
+					"concept": "do, does oder did + Pronomen: don't you?",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-question-tags",
+					"sample_solution": "do, does oder did + Pronomen: don't you?"
+				},
+				{
+					"id": "01M863S2WMTVC19C7579C7K73Z",
+					"slug": "e6s-question-tags-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Wie heißt das question tag zu 'I'm late, …'?",
+					"concept": "aren't I?",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-question-tags",
+					"sample_solution": "aren't I?"
+				}
+			]
+		},
+		{
+			"id": "01M863S2STG10A4C6DXPWK66PS",
+			"atom_uri": "urn:zam:atom:01M863S2STG10A4C6DXPWK66PS",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-6",
+			"slug": "e6s-clauses",
+			"title": "Because, when, that",
+			"domain": "englisch/fragen",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-clauses",
+			"prerequisites": [
+				{
+					"atom_id": "01M863S2SPJM7D6Z1768471Y5X"
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-6",
+					"topic_code": "fragen",
+					"topic_title": "Sentences and questions"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.2",
+					"topic_title": "Verfügen über sprachliche Mittel",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863S2WN6ZG1A8TGK9D7PQZN",
+					"slug": "e6s-clauses-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wo steht das Verb in einem englischen Nebensatz mit because?",
+					"concept": "direkt nach dem Subjekt, wie im Hauptsatz (because it is late)",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-clauses",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"direkt nach dem Subjekt, wie im Hauptsatz (because it is late)",
+							"am Satzende wie im Deutschen (because it late is)"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863S2WP73XXMW4W7KYQN8FY",
+					"slug": "e6s-clauses-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Was ist der Unterschied zwischen because und so?",
+					"concept": "because nennt den Grund (weil), so die Folge (deshalb)",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-clauses",
+					"sample_solution": "because nennt den Grund (weil), so die Folge (deshalb)"
+				},
+				{
+					"id": "01M863S2WQ80GX24KMRTB25BVR",
+					"slug": "e6s-clauses-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Kann man in 'I think that you are right' das that weglassen?",
+					"concept": "Ja: I think you are right.",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-clauses",
+					"sample_solution": "Ja: I think you are right."
+				}
+			]
+		},
+		{
+			"id": "01M863S2SVCNBK94FB2AR5766W",
+			"atom_uri": "urn:zam:atom:01M863S2SVCNBK94FB2AR5766W",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-6",
+			"slug": "e6s-school",
+			"title": "A school day in the UK",
+			"domain": "englisch/alltag",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-school",
+			"prerequisites": [
+				{
+					"atom_id": "01M863S2S5A4DRG9ZMC7E69K7K"
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-6",
+					"topic_code": "alltag",
+					"topic_title": "Everyday life in the UK"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.2",
+					"topic_title": "Verfügen über sprachliche Mittel",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb2",
+					"topic_title": "Interkulturelle Kompetenzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb5",
+					"topic_title": "Themengebiete",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863S2WRZHZ4EDVXW3J2F0HE",
+					"slug": "e6s-school-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was ist assembly an einer britischen Schule?",
+					"concept": "eine Versammlung (oft vieler Klassen) in der Aula",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-school",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"eine Versammlung (oft vieler Klassen) in der Aula",
+							"die große Mittagspause"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863S2WSHX2YQVG16Y79AXR1",
+					"slug": "e6s-school-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Was bedeutet Year 7 in England?",
+					"concept": "das erste Jahr der secondary school (Kinder sind 11 oder 12)",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-school",
+					"sample_solution": "das erste Jahr der secondary school (Kinder sind 11 oder 12)"
+				},
+				{
+					"id": "01M863S2WTV19FDT71J25EZNCZ",
+					"slug": "e6s-school-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Was ist ein packed lunch?",
+					"concept": "ein mitgebrachtes Mittagessen von zu Hause",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-school",
+					"sample_solution": "ein mitgebrachtes Mittagessen von zu Hause"
+				}
+			]
+		},
+		{
+			"id": "01M863S2SWE98Y5K9RAGK67WJX",
+			"atom_uri": "urn:zam:atom:01M863S2SWE98Y5K9RAGK67WJX",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-6",
+			"slug": "e6s-food",
+			"title": "At the table",
+			"domain": "englisch/alltag",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-food",
+			"prerequisites": [
+				{
+					"atom_id": "01M863S2S2RC8QPCTPF4SN15TB"
+				},
+				{
+					"atom_id": "01M863S2SGBV8GJQESN80DGSWN"
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-6",
+					"topic_code": "alltag",
+					"topic_title": "Everyday life in the UK"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.2",
+					"topic_title": "Verfügen über sprachliche Mittel",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb2",
+					"topic_title": "Interkulturelle Kompetenzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb5",
+					"topic_title": "Themengebiete",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863S2WV45VQY8JD6HAX1Q1F",
+					"slug": "e6s-food-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was sind chips in Großbritannien und was in den USA?",
+					"concept": "BE: Pommes frites; AE: Kartoffelchips (BE crisps)",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-food",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"BE: Pommes frites; AE: Kartoffelchips (BE crisps)",
+							"BE: Kartoffelchips; AE: Pommes frites"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863S2WWYY1W1H9K1DD4G5WN",
+					"slug": "e6s-food-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie bietest du jemandem höflich etwas zu trinken an?",
+					"concept": "Would you like some juice (water, tea …)?",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-food",
+					"sample_solution": "Would you like some juice (water, tea …)?"
+				},
+				{
+					"id": "01M863S2WXHPC4Q6F7HJW038ED",
+					"slug": "e6s-food-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Wie bittest du am Tisch darum, dass dir jemand das Salz reicht?",
+					"concept": "Can you pass me the salt, please?",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-food",
+					"sample_solution": "Can you pass me the salt, please?"
+				}
+			]
+		},
+		{
+			"id": "01M863S2SXAWAHZTYW1PHY8S90",
+			"atom_uri": "urn:zam:atom:01M863S2SXAWAHZTYW1PHY8S90",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-6",
+			"slug": "e6s-shopping",
+			"title": "At the shop",
+			"domain": "englisch/alltag",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-shopping",
+			"prerequisites": [
+				{
+					"atom_id": "01M863S2S4JK5G6THAFG185CR8"
+				},
+				{
+					"atom_id": "01M863S2SFGYT82BWA6R9JNNCP"
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-6",
+					"topic_code": "alltag",
+					"topic_title": "Everyday life in the UK"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb5",
+					"topic_title": "Themengebiete",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863S2WYGMNJTAWWF8WQP98D",
+					"slug": "e6s-shopping-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Fragst du How much is oder How much are these jeans?",
+					"concept": "How much are these jeans? (jeans ist Plural)",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-shopping",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"How much are these jeans? (jeans ist Plural)",
+							"How much is these jeans?"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863S2WZZRR2HZ89GPM33TBR",
+					"slug": "e6s-shopping-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie sprichst du den Preis £2.50 aus?",
+					"concept": "two pounds fifty",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-shopping",
+					"sample_solution": "two pounds fifty"
+				},
+				{
+					"id": "01M863S2X0RDJ1QD8W3VQPEFZ9",
+					"slug": "e6s-shopping-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Was bedeutet change beim Bezahlen?",
+					"concept": "Wechselgeld (Here's your change.)",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-shopping",
+					"sample_solution": "Wechselgeld (Here's your change.)"
+				}
+			]
+		},
+		{
+			"id": "01M863S2SY7B3V9YEXKJ5CDYG7",
+			"atom_uri": "urn:zam:atom:01M863S2SY7B3V9YEXKJ5CDYG7",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-6",
+			"slug": "e6s-clothes",
+			"title": "What are you wearing?",
+			"domain": "englisch/alltag",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-clothes",
+			"prerequisites": [
+				{
+					"atom_id": "01M863S2SJ62E7F3VSC1YMG3FK"
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-6",
+					"topic_code": "alltag",
+					"topic_title": "Everyday life in the UK"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.2",
+					"topic_title": "Verfügen über sprachliche Mittel",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb5",
+					"topic_title": "Themengebiete",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863S2X1YW82CE2EMMJ9SQXT",
+					"slug": "e6s-clothes-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wie sagst du 'Zieh sie (die Schuhe) aus!'?",
+					"concept": "Take them off!",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-clothes",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Take them off!",
+							"Take off them!"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863S2X2SSJFKXCT0NAD3KPJ",
+					"slug": "e6s-clothes-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie zählst du Hosen und Jeans auf Englisch?",
+					"concept": "a pair of jeans, two pairs of trousers",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-clothes",
+					"sample_solution": "a pair of jeans, two pairs of trousers"
+				},
+				{
+					"id": "01M863S2X3WSQAFDPXA76D932M",
+					"slug": "e6s-clothes-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Was heißt dress als Nomen – und wie sagst du 'sich anziehen'?",
+					"concept": "dress = Kleid; sich anziehen = get dressed",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-clothes",
+					"sample_solution": "dress = Kleid; sich anziehen = get dressed"
+				}
+			]
+		},
+		{
+			"id": "01M863S2SZACH27RPKZPQDC3W1",
+			"atom_uri": "urn:zam:atom:01M863S2SZACH27RPKZPQDC3W1",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-6",
+			"slug": "e6s-festivals",
+			"title": "Festivals and customs",
+			"domain": "englisch/alltag",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-festivals",
+			"prerequisites": [
+				{
+					"atom_id": "01M863S2S4JK5G6THAFG185CR8"
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-6",
+					"topic_code": "alltag",
+					"topic_title": "Everyday life in the UK"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb2",
+					"topic_title": "Interkulturelle Kompetenzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb5",
+					"topic_title": "Themengebiete",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863S2X42HQDJEEJHYMECC7G",
+					"slug": "e6s-festivals-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wann ist Bonfire Night, und woran erinnert sie?",
+					"concept": "am 5. November; an den verhinderten Anschlag auf das Parlament im Jahr 1605",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-festivals",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"am 5. November; an den verhinderten Anschlag auf das Parlament im Jahr 1605",
+							"am 26. Dezember; an das Ende eines Krieges"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863S2X5B1FCSN0RGXPBN0JC",
+					"slug": "e6s-festivals-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie heißt der 26. Dezember in Großbritannien?",
+					"concept": "Boxing Day",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-festivals",
+					"sample_solution": "Boxing Day"
+				},
+				{
+					"id": "01M863S2X617K9RJ06HH9CGYC0",
+					"slug": "e6s-festivals-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Heißt es on oder at Christmas – und on oder at Christmas Day?",
+					"concept": "at Christmas (Festzeit), on Christmas Day (ein bestimmter Tag)",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-festivals",
+					"sample_solution": "at Christmas (Festzeit), on Christmas Day (ein bestimmter Tag)"
+				}
+			]
+		},
+		{
+			"id": "01M863S2T05707PR90NN773N1V",
+			"atom_uri": "urn:zam:atom:01M863S2T05707PR90NN773N1V",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-6",
+			"slug": "e6s-british-isles",
+			"title": "The UK, Great Britain and Ireland",
+			"domain": "englisch/orte",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-british-isles",
+			"prerequisites": [
+				{
+					"atom_id": "01M863S2S6BAH3G73XQJEC0E51"
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-6",
+					"topic_code": "orte",
+					"topic_title": "Places: Britain and North America"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb2",
+					"topic_title": "Interkulturelle Kompetenzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb5",
+					"topic_title": "Themengebiete",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863S2X7EPHWWMDDQB5RMV80",
+					"slug": "e6s-british-isles-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was ist der Unterschied zwischen Great Britain und dem United Kingdom?",
+					"concept": "Great Britain = Insel mit England, Scotland und Wales; UK = Great Britain + Northern Ireland",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-british-isles",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Great Britain = Insel mit England, Scotland und Wales; UK = Great Britain + Northern Ireland",
+							"Beides bedeutet dasselbe wie England"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863S2X82H1T2XCGGAAW995K",
+					"slug": "e6s-british-isles-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Nenne die Hauptstädte von Scotland, Wales und Northern Ireland.",
+					"concept": "Edinburgh, Cardiff, Belfast",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-british-isles",
+					"sample_solution": "Edinburgh, Cardiff, Belfast"
+				},
+				{
+					"id": "01M863S2X9H96AP97AY7YBJ20Q",
+					"slug": "e6s-british-isles-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Gehört die Republic of Ireland zum UK?",
+					"concept": "Nein, sie ist ein eigener Staat (Hauptstadt Dublin, Währung Euro).",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-british-isles",
+					"sample_solution": "Nein, sie ist ein eigener Staat (Hauptstadt Dublin, Währung Euro)."
+				}
+			]
+		},
+		{
+			"id": "01M863S2T1WTTX4VDTN8BAT5J4",
+			"atom_uri": "urn:zam:atom:01M863S2T1WTTX4VDTN8BAT5J4",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-6",
+			"slug": "e6s-london",
+			"title": "London sights",
+			"domain": "englisch/orte",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-london",
+			"prerequisites": [
+				{
+					"atom_id": "01M863S2T05707PR90NN773N1V"
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-6",
+					"topic_code": "orte",
+					"topic_title": "Places: Britain and North America"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.2",
+					"topic_title": "Verfügen über sprachliche Mittel",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb2",
+					"topic_title": "Interkulturelle Kompetenzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb3",
+					"topic_title": "Text- und Medienkompetenzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb5",
+					"topic_title": "Themengebiete",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863S2XADQ1M54D34WZ9AMDA",
+					"slug": "e6s-london-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was ist Big Ben?",
+					"concept": "die große Glocke im Elizabeth Tower der Houses of Parliament",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-london",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"die große Glocke im Elizabeth Tower der Houses of Parliament",
+							"das Riesenrad an der Themse"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863S2XBWGRME7CB2PPKC2H5",
+					"slug": "e6s-london-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wo kannst du in London die Kronjuwelen sehen?",
+					"concept": "im Tower of London",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-london",
+					"sample_solution": "im Tower of London"
+				},
+				{
+					"id": "01M863S2XC7GYHC2FACXWVK2V7",
+					"slug": "e6s-london-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Wie heißt die Londoner U-Bahn umgangssprachlich?",
+					"concept": "the Tube",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-london",
+					"sample_solution": "the Tube"
+				}
+			]
+		},
+		{
+			"id": "01M863S2T26S0CD2TVS2ADS88A",
+			"atom_uri": "urn:zam:atom:01M863S2T26S0CD2TVS2ADS88A",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-6",
+			"slug": "e6s-north-america",
+			"title": "The USA and Canada",
+			"domain": "englisch/orte",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-north-america",
+			"prerequisites": [
+				{
+					"atom_id": "01M863S2S6BAH3G73XQJEC0E51"
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-6",
+					"topic_code": "orte",
+					"topic_title": "Places: Britain and North America"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb2",
+					"topic_title": "Interkulturelle Kompetenzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb5",
+					"topic_title": "Themengebiete",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863S2XDZPQBVQBDCR0JHP92",
+					"slug": "e6s-north-america-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was sind die Lower 48?",
+					"concept": "die 48 zusammenhängenden US-Bundesstaaten (ohne Alaska und Hawaii)",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-north-america",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"die 48 zusammenhängenden US-Bundesstaaten (ohne Alaska und Hawaii)",
+							"die 48 größten Städte der USA"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863S2XE5XNXGB6KS4X11CRP",
+					"slug": "e6s-north-america-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wo liegen Alaska und Hawaii?",
+					"concept": "Alaska im Nordwesten neben Kanada; Hawaii im Pazifik",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-north-america",
+					"sample_solution": "Alaska im Nordwesten neben Kanada; Hawaii im Pazifik"
+				},
+				{
+					"id": "01M863S2XFVKYVK49G3MEJZPBE",
+					"slug": "e6s-north-america-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Wie heißt die Hauptstadt Kanadas, und welche Amtssprachen hat Kanada?",
+					"concept": "Ottawa; Englisch und Französisch",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-north-america",
+					"sample_solution": "Ottawa; Englisch und Französisch"
+				}
+			]
+		},
+		{
+			"id": "01M863S2T3FW2CHVD4FKRFBMAQ",
+			"atom_uri": "urn:zam:atom:01M863S2T3FW2CHVD4FKRFBMAQ",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-6",
+			"slug": "e6s-washington-new-york",
+			"title": "Washington, D.C. and New York",
+			"domain": "englisch/orte",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-washington-new-york",
+			"prerequisites": [
+				{
+					"atom_id": "01M863S2T26S0CD2TVS2ADS88A"
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-6",
+					"topic_code": "orte",
+					"topic_title": "Places: Britain and North America"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb2",
+					"topic_title": "Interkulturelle Kompetenzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb5",
+					"topic_title": "Themengebiete",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863S2XGRMV54TFZP3BF6QSW",
+					"slug": "e6s-washington-new-york-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wofür steht D.C. in Washington, D.C.?",
+					"concept": "District of Columbia (die Stadt gehört zu keinem Bundesstaat)",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-washington-new-york",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"District of Columbia (die Stadt gehört zu keinem Bundesstaat)",
+							"Democratic Capital"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863S2XH6QE4DWSWB4F3MHRE",
+					"slug": "e6s-washington-new-york-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wer schenkte den USA die Statue of Liberty?",
+					"concept": "Frankreich (eingeweiht 1886)",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-washington-new-york",
+					"sample_solution": "Frankreich (eingeweiht 1886)"
+				},
+				{
+					"id": "01M863S2XJ6KVS98YPFK8ZT7A0",
+					"slug": "e6s-washington-new-york-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Wie heißt die U-Bahn in New York und wie in London?",
+					"concept": "New York: subway; London: the Tube oder the Underground",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-washington-new-york",
+					"sample_solution": "New York: subway; London: the Tube oder the Underground"
+				}
+			]
+		},
+		{
+			"id": "01M863S2T44TTT6DEEWS6Y9YYM",
+			"atom_uri": "urn:zam:atom:01M863S2T44TTT6DEEWS6Y9YYM",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-6",
+			"slug": "e6s-city-country",
+			"title": "City and country",
+			"domain": "englisch/orte",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-city-country",
+			"prerequisites": [
+				{
+					"atom_id": "01M863S2SA0G72BS7VX7YSKHBF"
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-6",
+					"topic_code": "orte",
+					"topic_title": "Places: Britain and North America"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.2",
+					"topic_title": "Verfügen über sprachliche Mittel",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb2",
+					"topic_title": "Interkulturelle Kompetenzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb5",
+					"topic_title": "Themengebiete",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863S2XK0XW66FVQJ6DE1BY7",
+					"slug": "e6s-city-country-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was ist der Unterschied zwischen village, town und city?",
+					"concept": "village = Dorf, town = Kleinstadt, city = Großstadt",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-city-country",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"village = Dorf, town = Kleinstadt, city = Großstadt",
+							"village = Großstadt, city = Dorf"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863S2XMEDNW5ZY5HASD8MMQ",
+					"slug": "e6s-city-country-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie sagst du 'auf dem Land leben' auf Englisch?",
+					"concept": "live in the country oder live in the countryside",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-city-country",
+					"sample_solution": "live in the country oder live in the countryside"
+				},
+				{
+					"id": "01M863S2XNQPCH0KNBTKNRRRSZ",
+					"slug": "e6s-city-country-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Nenne einen Vorteil und einen Nachteil des Stadtlebens auf Englisch.",
+					"concept": "z. B. There are lots of shops, but there's a lot of traffic.",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-city-country",
+					"sample_solution": "z. B. There are lots of shops, but there's a lot of traffic."
+				}
+			]
+		},
+		{
+			"id": "01M863S2T5HA05SMKYVCBQE7FP",
+			"atom_uri": "urn:zam:atom:01M863S2T5HA05SMKYVCBQE7FP",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-6",
+			"slug": "e6s-listening",
+			"title": "Listen first",
+			"domain": "englisch/koennen",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-listening",
+			"prerequisites": [
+				{
+					"atom_id": "01M863S2S5A4DRG9ZMC7E69K7K"
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-6",
+					"topic_code": "koennen",
+					"topic_title": "Tools for learning"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb3",
+					"topic_title": "Text- und Medienkompetenzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb4",
+					"topic_title": "Methodische Kompetenzen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863S2XPRZ6K5TFMH3365MNW",
+					"slug": "e6s-listening-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Worauf achtest du beim ersten Hören eines Textes?",
+					"concept": "auf das Thema: wer, wo, worüber (globales Verstehen)",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-listening",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"auf das Thema: wer, wo, worüber (globales Verstehen)",
+							"auf jedes einzelne Wort"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863S2XQDR227TJ444QYGGTG",
+					"slug": "e6s-listening-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Was machst du mit unbekannten Wörtern beim Hören?",
+					"concept": "überspringen oder aus dem Zusammenhang erschließen",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-listening",
+					"sample_solution": "überspringen oder aus dem Zusammenhang erschließen"
+				},
+				{
+					"id": "01M863S2XR2Q1K87C79HRDVN0M",
+					"slug": "e6s-listening-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Woran erkennst du Gefühle in einem Hörtext?",
+					"concept": "an Stimme, Lautstärke, Tempo und Wörtern wie great, oh no, sorry",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-listening",
+					"sample_solution": "an Stimme, Lautstärke, Tempo und Wörtern wie great, oh no, sorry"
+				}
+			]
+		},
+		{
+			"id": "01M863S2T6JSGP74XSEMSGC1SE",
+			"atom_uri": "urn:zam:atom:01M863S2T6JSGP74XSEMSGC1SE",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-6",
+			"slug": "e6s-reading",
+			"title": "A postcard and an animal story",
+			"domain": "englisch/koennen",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-reading",
+			"prerequisites": [
+				{
+					"atom_id": "01M863S2SKQFB9ESYQS560WVRY"
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-6",
+					"topic_code": "koennen",
+					"topic_title": "Tools for learning"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb3",
+					"topic_title": "Text- und Medienkompetenzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb4",
+					"topic_title": "Methodische Kompetenzen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863S2XSJVSEHPSPH4ZV4J6C",
+					"slug": "e6s-reading-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche Teile hat eine englische Postkarte?",
+					"concept": "Anrede (Dear …), Text (Ort, Wetter, Erlebnisse), Grußformel (Love, Best wishes), Name; Adresse rechts",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-reading",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Anrede (Dear …), Text (Ort, Wetter, Erlebnisse), Grußformel (Love, Best wishes), Name; Adresse rechts",
+							"Betreff, Datum und Unterschrift wie in einem Geschäftsbrief"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863S2XTR7N5HHMGH1PEYQX1",
+					"slug": "e6s-reading-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Was bedeutet become – und was bedeutet es nicht?",
+					"concept": "werden (nicht: bekommen – das heißt get)",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-reading",
+					"sample_solution": "werden (nicht: bekommen – das heißt get)"
+				},
+				{
+					"id": "01M863S2XV56678ZYC71B3SASC",
+					"slug": "e6s-reading-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Welche Wörter zeigen den Aufbau einer Geschichte?",
+					"concept": "one day, suddenly, then, in the end",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-reading",
+					"sample_solution": "one day, suddenly, then, in the end"
+				}
+			]
+		},
+		{
+			"id": "01M863S2T7SSJP27A470KYZKPN",
+			"atom_uri": "urn:zam:atom:01M863S2T7SSJP27A470KYZKPN",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-6",
+			"slug": "e6s-writing",
+			"title": "Write an email",
+			"domain": "englisch/koennen",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-writing",
+			"prerequisites": [
+				{
+					"atom_id": "01M863S2SJ62E7F3VSC1YMG3FK"
+				},
+				{
+					"atom_id": "01M863S2SA0G72BS7VX7YSKHBF"
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-6",
+					"topic_code": "koennen",
+					"topic_title": "Tools for learning"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.2",
+					"topic_title": "Verfügen über sprachliche Mittel",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb3",
+					"topic_title": "Text- und Medienkompetenzen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863S2XWPCBDWSFJYW6SCD0Y",
+					"slug": "e6s-writing-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wie beginnst du eine Bildbeschreibung auf Englisch?",
+					"concept": "The picture shows …",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-writing",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"The picture shows …",
+							"On the picture is …"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863S2XX914WN78KRZZ44NXA",
+					"slug": "e6s-writing-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welche Grußformeln passen in einer E-Mail an Freunde?",
+					"concept": "Love, Best wishes, See you",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-writing",
+					"sample_solution": "Love, Best wishes, See you"
+				},
+				{
+					"id": "01M863S2XYV04RJRP6MK9K4NBT",
+					"slug": "e6s-writing-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Welche Zeitform verwendest du, wenn du beschreibst, was Personen auf einem Bild tun?",
+					"concept": "present progressive (A woman is buying apples.)",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-writing",
+					"sample_solution": "present progressive (A woman is buying apples.)"
+				}
+			]
+		},
+		{
+			"id": "01M863S2T83C873G9NQF7HRVC5",
+			"atom_uri": "urn:zam:atom:01M863S2T83C873G9NQF7HRVC5",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-6",
+			"slug": "e6s-mediation",
+			"title": "Tell it in German, tell it in English",
+			"domain": "englisch/koennen",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-mediation",
+			"prerequisites": [
+				{
+					"atom_id": "01M863S2S5A4DRG9ZMC7E69K7K"
+				},
+				{
+					"atom_id": "01M863S2SXAWAHZTYW1PHY8S90"
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-6",
+					"topic_code": "koennen",
+					"topic_title": "Tools for learning"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb3",
+					"topic_title": "Text- und Medienkompetenzen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863S2XZXFPG1P8DKY4GZA4K",
+					"slug": "e6s-mediation-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was bedeutet Sprachmittlung (mediation)?",
+					"concept": "die wichtigen Informationen sinngemäß in die andere Sprache übertragen, nicht Wort für Wort",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-mediation",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"die wichtigen Informationen sinngemäß in die andere Sprache übertragen, nicht Wort für Wort",
+							"einen Text Wort für Wort übersetzen"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863S2Y064VZHCS5CTVJ2N9S",
+					"slug": "e6s-mediation-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Was ist die Strategie 'Verneinung des Gegenteils'? Gib ein Beispiel.",
+					"concept": "Du verneinst das Gegenteil des fehlenden Worts: günstig → not expensive",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-mediation",
+					"sample_solution": "Du verneinst das Gegenteil des fehlenden Worts: günstig → not expensive"
+				},
+				{
+					"id": "01M863S2Y1TBNBDVZAP9D073W9",
+					"slug": "e6s-mediation-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Wie kannst du ein fehlendes Wort noch umschreiben?",
+					"concept": "mit einem allgemeineren Wort (a kind of …) oder einer Erklärung (a thing for …)",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-mediation",
+					"sample_solution": "mit einem allgemeineren Wort (a kind of …) oder einer Erklärung (a thing for …)"
+				}
+			]
+		},
+		{
+			"id": "01M863S2T9XEABGC2BEPYJRX9A",
+			"atom_uri": "urn:zam:atom:01M863S2T9XEABGC2BEPYJRX9A",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-6",
+			"slug": "e6s-sounds",
+			"title": "Sounds and symbols",
+			"domain": "englisch/koennen",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-sounds",
+			"prerequisites": [
+				{
+					"atom_id": "01M863S2SQAMYM6ZKB7Q25DKK6"
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-6",
+					"topic_code": "koennen",
+					"topic_title": "Tools for learning"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.2",
+					"topic_title": "Verfügen über sprachliche Mittel",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb4",
+					"topic_title": "Methodische Kompetenzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb5",
+					"topic_title": "Themengebiete",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863S2Y237PZY1ZZ9NBEBZVZ",
+					"slug": "e6s-sounds-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was zeigt der Doppelpunkt in der Lautschrift [iː]?",
+					"concept": "einen langen Laut (sheep [ʃiːp])",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-sounds",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"einen langen Laut (sheep [ʃiːp])",
+							"eine Betonung auf der Silbe"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863S2Y3HZA5J3A9KGP4ET2C",
+					"slug": "e6s-sounds-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie bildest du den Laut [θ] wie in think?",
+					"concept": "Zungenspitze leicht zwischen die Zähne legen und Luft ausströmen lassen",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-sounds",
+					"sample_solution": "Zungenspitze leicht zwischen die Zähne legen und Luft ausströmen lassen"
+				},
+				{
+					"id": "01M863S2Y4TM351SSPA4GPQAWN",
+					"slug": "e6s-sounds-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Wie geht die Stimme am Ende einer Entscheidungsfrage wie 'Do you like tea?'",
+					"concept": "nach oben ↗",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-sounds",
+					"sample_solution": "nach oben ↗"
+				}
+			]
+		},
+		{
+			"id": "01M863S2TAAV6HJM8NT0A8N6B5",
+			"atom_uri": "urn:zam:atom:01M863S2TAAV6HJM8NT0A8N6B5",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-6",
+			"slug": "e6s-word-building",
+			"title": "Learning words",
+			"domain": "englisch/koennen",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-word-building",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-6",
+					"topic_code": "koennen",
+					"topic_title": "Tools for learning"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.2",
+					"topic_title": "Verfügen über sprachliche Mittel",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb4",
+					"topic_title": "Methodische Kompetenzen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863S2Y5Q1JHW0049KH2AANP",
+					"slug": "e6s-word-building-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was bedeutet die Vorsilbe re- in rewrite und reuse?",
+					"concept": "wieder (noch einmal schreiben, wiederverwenden)",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-word-building",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"wieder (noch einmal schreiben, wiederverwenden)",
+							"nicht (nicht schreiben, nicht verwenden)"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863S2Y6KDQ59RQX6SVTZZQB",
+					"slug": "e6s-word-building-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Was macht die Endung -er aus einem Verb wie teach oder print?",
+					"concept": "eine Person oder ein Gerät: teacher, printer",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-word-building",
+					"sample_solution": "eine Person oder ein Gerät: teacher, printer"
+				},
+				{
+					"id": "01M863S2Y740SA1NRY42MPQZQH",
+					"slug": "e6s-word-building-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Was sind chunks beim Vokabellernen? Nenne ein Beispiel.",
+					"concept": "feste Wortverbindungen, z. B. have breakfast, take a photo",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-word-building",
+					"sample_solution": "feste Wortverbindungen, z. B. have breakfast, take a photo"
+				}
+			]
+		},
+		{
+			"id": "01M863S2TB6W6N8Z7FEB2QF154",
+			"atom_uri": "urn:zam:atom:01M863S2TB6W6N8Z7FEB2QF154",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-6",
+			"slug": "e6s-language-links",
+			"title": "English, German and your first foreign language",
+			"domain": "englisch/koennen",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-language-links",
+			"prerequisites": [
+				{
+					"atom_id": "01M863S2S8YH4B0DY1M5WJ8HGD"
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-6",
+					"topic_code": "koennen",
+					"topic_title": "Tools for learning"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.2",
+					"topic_title": "Verfügen über sprachliche Mittel",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb4",
+					"topic_title": "Methodische Kompetenzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb5",
+					"topic_title": "Themengebiete",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863S2Y8QAMACKP278B850BM",
+					"slug": "e6s-language-links-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was bedeutet become – und wie heißt 'bekommen'?",
+					"concept": "become = werden; bekommen = get",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-language-links",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"become = werden; bekommen = get",
+							"become = bekommen; werden = get"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863S2Y9FGN1JPTEK62CN6EF",
+					"slug": "e6s-language-links-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Was ist der Unterschied zwischen happy und lucky?",
+					"concept": "happy = froh, glücklich (Gefühl); lucky = Glück haben",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-language-links",
+					"sample_solution": "happy = froh, glücklich (Gefühl); lucky = Glück haben"
+				},
+				{
+					"id": "01M863S2YA0E6JDHPGQRA295FY",
+					"slug": "e6s-language-links-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Wann sagst du drive, go und ride für 'fahren'?",
+					"concept": "drive = ein Auto lenken; go = mit Bus oder Zug fahren; ride = Rad fahren, reiten",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-language-links",
+					"sample_solution": "drive = ein Auto lenken; go = mit Bus oder Zug fahren; ride = Rad fahren, reiten"
+				}
+			]
+		},
+		{
+			"id": "01M863S2TCH1JYK80SJNETVYXJ",
+			"atom_uri": "urn:zam:atom:01M863S2TCH1JYK80SJNETVYXJ",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-6",
+			"slug": "e6s-rhyme",
+			"title": "Rhymes and role plays",
+			"domain": "englisch/koennen",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-rhyme",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-6",
+					"topic_code": "koennen",
+					"topic_title": "Tools for learning"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.2",
+					"topic_title": "Verfügen über sprachliche Mittel",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "englisch-2fs",
+					"topic_code": "lb3",
+					"topic_title": "Text- und Medienkompetenzen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M863S2YBG9RJ6NS4JPY65TCQ",
+					"slug": "e6s-rhyme-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was ist ein freeze frame im Englischunterricht?",
+					"concept": "ein Standbild: Die Gruppe stellt eine Szene still dar, die anderen beschreiben sie",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-rhyme",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"ein Standbild: Die Gruppe stellt eine Szene still dar, die anderen beschreiben sie",
+							"ein kurzer Film mit dem Handy"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M863S2YCP7MXP9P6W963HQRS",
+					"slug": "e6s-rhyme-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welche Wörter reimen sich in der ersten Strophe von 'Twinkle, Twinkle, Little Star'?",
+					"concept": "star – are, high – sky",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-rhyme",
+					"sample_solution": "star – are, high – sky"
+				},
+				{
+					"id": "01M863S2YDBYZ4NHADJZS47AED",
+					"slug": "e6s-rhyme-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Was bedeutet to wonder in 'How I wonder what you are'?",
+					"concept": "sich fragen",
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-6/#lesson=e6s-rhyme",
+					"sample_solution": "sich fragen"
+				}
+			]
+		}
+	]
+}

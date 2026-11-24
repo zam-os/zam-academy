@@ -326,6 +326,7 @@ test("second foreign languages are their own Gymnasium paths and leave the first
   for (const [fach, [from, to]] of Object.entries(paths)) {
     const subject = registry.faecher.find((f) => f.id === fach);
     assert.deepEqual(subject.schools, ["gymnasium"], fach);
+    const liveGrades = new Set();
     for (let grade = 4; grade <= 13; grade++) {
       const offers = schoolSubject(trees, grade, fach)?.children ?? [];
       if (grade < from || grade > to) {
@@ -333,11 +334,18 @@ test("second foreign languages are their own Gymnasium paths and leave the first
         continue;
       }
       assert.deepEqual(offers.map((n) => n.school?.id), ["gymnasium"], `${fach} ${grade}`);
-      assert.equal(offers[0].offerKey, `slot:gymnasium:${grade}:${fach}`);
+      if (offers[0].pkg) {
+        assert.equal(offers[0].offerKey, `package:${offers[0].pkg.app}`);
+        liveGrades.add(grade);
+      } else {
+        assert.equal(offers[0].offerKey, `slot:gymnasium:${grade}:${fach}`);
+      }
     }
-    // The world lens groups the pending offers per grade: only "Gym" in it.
     const marks = world.find((n) => n.id === fach).children.filter((n) => n.planned);
-    assert.deepEqual(marks.map((n) => n.grade), Array.from({ length: to - from + 1 }, (_, i) => from + i), fach);
+    const expectedPlanned = Array.from({ length: to - from + 1 }, (_, i) => from + i).filter(
+      (grade) => !liveGrades.has(grade),
+    );
+    assert.deepEqual(marks.map((n) => n.grade), expectedPlanned, fach);
     assert.ok(marks.every((n) => n.sub === "Gym"), fach);
   }
   // Englisch and Französisch keep their own cells in every school type.
@@ -349,6 +357,9 @@ test("second foreign languages are their own Gymnasium paths and leave the first
     .some((n) => n.pkg?.app === "franzoesisch-realschule-7"));
   assert.ok(schoolSubject(trees, 7, "franzoesisch").children
     .some((n) => n.pkg?.app === "franzoesisch-gymnasium-7"));
+  // Englisch 6 as second foreign language has its own package in its own cell.
+  assert.equal(schoolSubject(trees, 6, "englisch-2fs").children[0].pkg?.app, "englisch-2fs-gymnasium-6");
+  assert.ok(!schoolSubject(trees, 6, "englisch").children.some((n) => n.pkg?.app === "englisch-2fs-gymnasium-6"));
 
   // The coverage matrix shows the paths at the Gymnasium only.
   const gym = matrix(registry, "gymnasium").nodes;
