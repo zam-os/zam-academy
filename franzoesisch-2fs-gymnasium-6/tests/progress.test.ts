@@ -265,3 +265,28 @@ describe("state from the former two-path package", () => {
 		for (const raw of [null, "bad json", "[]"]) expect(withoutTheseLessons(raw)).toBe(raw);
 	});
 });
+
+describe("review #196: opening the new app first", () => {
+	it("keeps a partner-only listening confirmation from the former package through the first save", () => {
+		const id = "f6-2-ecouter-courses";
+		const draft = "Lina achète du pain, du lait et trois pommes au marché.";
+		localStorage.setItem(
+			LEGACY_STORAGE_KEY,
+			JSON.stringify({
+				activeLessonId: id,
+				quizDone: [id],
+				practiceDone: [id],
+				workshopDone: [id],
+				writingDone: [`${id}:1`],
+				drafts: { [`${id}:1`]: draft },
+				listening: { [id]: { synthetic: false, partner: true } },
+			}),
+		);
+		const tab = openTab();
+		expect(isComplete(tab.progress, id)).toBe(true);
+		tab.save();
+		expect(tab.progress.listening[id]).toEqual({ synthetic: false, partner: true });
+		expect(isComplete(loadProgress(), id)).toBe(true);
+		expect(JSON.parse(localStorage.getItem(STORAGE_KEY)!).listening[id]).toEqual({ synthetic: false, partner: true });
+	});
+});

@@ -122,10 +122,21 @@ export function parseProgress(raw: string | null): Progress {
 		return base;
 	}
 }
+/**
+ * Load and save start from the same stored state. While this package has none,
+ * that is the former package's state: a save that merged against an empty
+ * state would treat unchanged inherited evidence, such as a partner
+ * confirmation, as withdrawn.
+ */
+function storedState(): string | null {
+	return (
+		localStorage.getItem(STORAGE_KEY) ??
+		localStorage.getItem(LEGACY_STORAGE_KEY)
+	);
+}
 export function loadProgress(): Progress {
 	try {
-		const own = localStorage.getItem(STORAGE_KEY);
-		return parseProgress(own ?? localStorage.getItem(LEGACY_STORAGE_KEY));
+		return parseProgress(storedState());
 	} catch {
 		return freshProgress();
 	}
@@ -185,11 +196,7 @@ export function saveProgress(progress: Progress, baseline: Progress): boolean {
 	try {
 		Object.assign(
 			progress,
-			mergeProgress(
-				parseProgress(localStorage.getItem(STORAGE_KEY)),
-				progress,
-				baseline,
-			),
+			mergeProgress(parseProgress(storedState()), progress, baseline),
 		);
 		localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
 		return true;
