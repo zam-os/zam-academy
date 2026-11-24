@@ -67,14 +67,15 @@ const linuxShPath = join(bundleDir, "start-linux.sh");
 writeFileSync(linuxShPath, linuxSh, "utf8");
 chmodSync(linuxShPath, 0o755);
 
-const readmeTxt = `ZAM ACADEMY · FRENCH 6 GYMNASIUM · BAVARIA
+const readmeTxt = `ZAM ACADEMY · FRENCH 6 GYMNASIUM (FIRST FOREIGN LANGUAGE) · BAVARIA
 
 1. Extract this ZIP into a folder.
 2. Open "${appFile}" in a modern browser, or use the included
    Windows, macOS or Linux launcher.
 
 No installation, server or internet connection is needed for the lessons.
-Choose the first or second foreign-language path on the home screen.
+The 28 lessons follow the Grade 6 curriculum for French as the first
+foreign language. French as the second foreign language has its own package.
 The teaching language is German, with French practice materials.
 Progress and drafts stay in this browser. Some file:// browsers restrict
 local storage; the app explains when saving is unavailable.
@@ -84,7 +85,7 @@ The visual workshop and Level 1 tasks count towards core progress.
 Listening uses only an already installed French voice. If none is available,
 a partner can read the accessible transcript. Source links need internet.
 
-The package includes 222 linked ZAM cards for the Academy catalog.
+The package includes 84 linked ZAM cards for the Academy catalog.
 No personal library or review history is modified by this offline app.
 `;
 writeFileSync(join(bundleDir, "README-START.txt"), readmeTxt, "utf8");
