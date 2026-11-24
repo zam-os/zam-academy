@@ -71,7 +71,10 @@ Inhalt, Werkstätten und Aufgaben sind unverändert.
 - **Grenze:** zam-core ergänzt Lehrplanbindungen nur und löscht keine. Wer die alte Zelle schon installiert hat, behält an diesen Atomen zusätzlich die alte Bindung `franzoesisch`, Klasse 6, `f2-…`. Für neu Lernende gibt es sie nicht. Ob ZAM die alten Bindungen entfernen soll, ist eine Frage an ZAM, nicht an dieses Paket.
 - **Alt-Karten (`de-by`):** `franzoesisch-gymnasium-6` hat dafür keine `de-by`-Zelle gefunden. Die zwei genehmigten Übernahmen aus Klasse 7 betreffen nur den Pfad der 1. Fremdsprache und bleiben dort. Dieses Paket übernimmt keine `de-by`-Karte.
 
-## Offene Fragen an Thomas
+## Entscheidungen
 
-1. **Fachname `franzoesisch-2fs`** in der Lehrplanbindung, wie bei `englisch-2fs`. ZAM kennt den Namen in seinen Lernpositionen noch nicht.
-2. **Gemeinsamer Merge** mit dem PR, der `franzoesisch-gymnasium-6` auf die 1. Fremdsprache reduziert.
+- **Fachname in der Lehrplanbindung: `subject: franzoesisch-2fs`.** Thomas am 2026-11-24 in der Claude-Code-Sitzung zu diesem Paket (PR #196), auf die Frage, ob dieser Fachname passt: „Ja, franzoesisch-2fs“. ZAM kennt den Fachnamen in seinen Lernpositionen noch nicht; das ergänzt ZAM, wenn es die Zelle bündelt.
+
+## Offen
+
+- **Gemeinsamer Merge** mit PR #197, der `franzoesisch-gymnasium-6` auf die 1. Fremdsprache reduziert.
