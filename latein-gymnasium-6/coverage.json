@@ -1,0 +1,625 @@
+{
+	"curriculum": "https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/6/latein/1-fremdsprache",
+	"checked": "2026-11-24",
+	"curriculum_sha256": "f02af4a0a9bcf2f4ba356bf4359e7ac4420296c64718222b6203d77c0a8692b5",
+	"neighbours": {
+		"grade5": {
+			"url": "https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/5/latein/1-fremdsprache",
+			"sha256": "2dc5b8757ca639b5d85348f367c8e9eed3d7bdf1371eb7661155e20afcf5995b",
+			"note": "Baut direkt auf dem Grundwissen von Latein 5 auf (Deklinationen 1–5, Pronomina is/sē/quī, Aktiv-Tempora bis Futur II, esse/posse/velle, aktiver AcI, Topografie Roms und Königszeit)."
+		},
+		"grade7": {
+			"url": "https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/7/latein/1-fremdsprache",
+			"sha256": "a5a86308de1d59c1f1eb01f2ba791beb9b59ead6e3b9bb2ebfb626e3c63ce869",
+			"boundary": "Jahrgangsstufe 7 (L1) führt u. a. Deponentien (a-/e-Konj.), ferre, Steigerung der Adjektive und Adverbien, aliquis/aliqui, Konjunktiv Präsens und Perfekt (inkl. Hortativ/Jussiv/Optativ/Prohibitiv und indirekte Fragen mit consecutio temporum), PFA und Gerund, Ablativus absolutus, Alexander den Großen/Hellenismus, Caesar/Cicero/Augustus/Horaz, cursus honorum, Delphi/Olympia sowie Ödipus und Antigone ein; diese Inhalte bleiben konsequent aus Latein 6 ausgeschlossen."
+		},
+		"fachprofil": {
+			"url": "https://www.lehrplanplus.bayern.de/fachprofil/gymnasium/latein",
+			"sha256": "d54bc95b0a0f83cd82cd7455847dbe83b598899a0096e273a12f9f61a49bff06",
+			"note": "Das Fachprofil legt die vier Dimensionen, das Kompetenzstrukturmodell und die Spracherwerbsphase Jgst. 5–8 (L1) fest."
+		}
+	},
+	"scope": "Bayern, Gymnasium, Latein als 1. Fremdsprache (L1), Jahrgangsstufe 6 (2. Lernjahr); ein gemeinsamer Fachlehrplan ohne Zweigteilung.",
+	"indexing": "L6-01…L6-52 sind paketinterne Zeilenkennungen in der Reihenfolge des offiziellen Fachlehrplans; Unterpunkte bleiben Teil ihrer übergeordneten Kompetenzerwartung.",
+	"hours": null,
+	"hours_note": "Die offizielle Lehrplanseite weist keine Stundenzahlen pro Lernbereich aus.",
+	"optional_lessons": [],
+	"rows": [
+		{
+			"id": "L6-01",
+			"lb": "1",
+			"competence": "übersetzen altersgemäße Lehrbuchtexte u. a. aus folgenden Themenbereichen in angemessenes Deutsch: Topografie: Italien (u. a. Pompeji, Herkuláneum, Vesuv) mit Magna Graecia und Mittelmeerraum; Geschichte: frühe und mittlere Republik, Rom und Karthago; Politik und Gesellschaft: römische Ständegesellschaft, römische Werte (u. a. fides); Religion und Mythos: u. a. Opfer; Tod und Unterwelt am Beispiel weiterer Mythen; Europa, Theseus, Daedalus und Ikarus, Orpheus und Eurydike, Trojanischer Krieg, Irrfahrten des Odysseus.",
+			"lessons": [
+				"l6-topografie-italien-mittelmeer",
+				"l6-vesuv-pompeji-herkulaneum",
+				"l6-fruehe-republik-staendekaempfe",
+				"l6-gesellschaft-klientel-organe",
+				"l6-hannibal-punische-kriege",
+				"l6-roemische-werte-opfer",
+				"l6-europa-theseus",
+				"l6-daedalus-ikarus",
+				"l6-orpheus-eurydike-unterwelt",
+				"l6-trojanischer-krieg",
+				"l6-irrfahrten-odysseus",
+				"l6-satzanalyse-pc-nebensaetze",
+				"l6-uebersetzungstechniken"
+			],
+			"status": "implemented",
+			"evidence": "Erklärung mit Beispiel und Merksatz, dreiteiliges Entdeckerbild, interaktive Werkstatt mit 3 Zielen, Kurzcheck, gebundene Übungen sowie Eigenübersetzung/Schreibaufgabe auf zwei Niveaus."
+		},
+		{
+			"id": "L6-02",
+			"lb": "1",
+			"competence": "arbeiten Aufbau und inhaltliche Zusammenhänge von Lehrbuchtexten heraus.",
+			"lessons": [
+				"l6-satzanalyse-pc-nebensaetze",
+				"l6-fehleranalyse-textaufbau"
+			],
+			"status": "implemented",
+			"evidence": "Textanalyse-, Strukturierungs- und Übersetzungslektionen behandeln Sinnabschnitte, Handlungsträger, Satzverknüpfung und inhaltliche Bezüge mit interaktiver Werkstatt, Mustervergleich und 3 Kriterien."
+		},
+		{
+			"id": "L6-03",
+			"lb": "1",
+			"competence": "nehmen zu ausgewählten in lateinischer Sprache formulierten Textaussagen Stellung.",
+			"lessons": [
+				"l6-plinius-vesuvbriefe",
+				"l6-roemische-werte-opfer",
+				"l6-ovid-bild-text-vergleich"
+			],
+			"status": "supported",
+			"evidence": "Die App liefert lateinische Textaussagen, Leitfragen, eigene Stellungnahme auf Level 1/2 mit Mustervergleich und Kriterien sowie lokale Sprachausgabe. Das echte mündliche Klassengespräch bleibt als supported beim Unterricht."
+		},
+		{
+			"id": "L6-04",
+			"lb": "1",
+			"competence": "tragen lateinische Texte zu den Themen der Jahrgangsstufe verständnisgeleitet vor.",
+			"lessons": [
+				"l6-kontext-wortschatz",
+				"l6-plinius-vesuvbriefe",
+				"l6-ovid-bild-text-vergleich"
+			],
+			"status": "supported",
+			"evidence": "Für die drei Vortragslektionen bietet die App Vorleseskripte, lokale Sprachausgabe über SpeechSynthesis und Partner-Vorlese-Nachweis; lautes Vortragen vor der Klasse und Lehrkraft-Feedback zu Quantitäten bleiben außerhalb der App."
+		},
+		{
+			"id": "L6-05",
+			"lb": "2.1",
+			"competence": "geben zu insgesamt ca. 900 lateinischen Wörtern des Grundwortschatzes und zu weiteren Wörtern des Kulturwortschatzes die deutschen Bedeutungen an.",
+			"lessons": [
+				"l6-kontext-wortschatz",
+				"l6-wortfelder-familien"
+			],
+			"status": "supported",
+			"evidence": "Die Lektionen vermitteln Wortschatzvernetzung, Kontextprinzip und Kulturbegriffe mit Werkstätten und ZAM-Wiederholungskarten; das fortlaufende Einprägen von ca. 900 Grundwortschatzwörtern durch den Lernenden begleitet den gesamten Unterricht."
+		},
+		{
+			"id": "L6-06",
+			"lb": "2.1",
+			"competence": "erschließen zunehmend selbständig die kontextspezifische Bedeutung von (mehrdeutigen) Wörtern.",
+			"lessons": [
+				"l6-kontext-wortschatz"
+			],
+			"status": "implemented",
+			"evidence": "Kontext-Entdeckerwerkstatt für mehrdeutige Vokabeln (z. B. agere, petere, rēs, signum), Kurzaufgaben, Level-1/2-Kontextentscheidungen und ZAM-Karten."
+		},
+		{
+			"id": "L6-07",
+			"lb": "2.1",
+			"competence": "sprechen lateinische Wörter des bisher erworbenen Vokabulars quantitätsgerecht und in korrekter Betonung aus.",
+			"lessons": [
+				"l6-kontext-wortschatz",
+				"l6-plinius-vesuvbriefe",
+				"l6-ovid-bild-text-vergleich"
+			],
+			"status": "supported",
+			"evidence": "Vortragslektionen unterstützen das Einüben quantitätsgerechten Lesens per Vorlese-Check und lokaler Stimme; verbindliche mündliche Ausspracheprüfung leisten Partner und Lehrkraft."
+		},
+		{
+			"id": "L6-08",
+			"lb": "2.1",
+			"competence": "ordnen das erweiterte Vokabular nach Wortarten, Wort- und Sachfeldern oder Wortfamilien und begründen jeweils ihre Zuordnung.",
+			"lessons": [
+				"l6-wortfelder-familien"
+			],
+			"status": "implemented",
+			"evidence": "Wortfeld-, Sachfeld- und Wortfamilien-Inspektor mit begründeter Zuordnung (z. B. fer-/duc-/vid-, Sachfelder Republik, Krieg, Naturkatastrophe) und zwei Aufgabenstufen."
+		},
+		{
+			"id": "L6-09",
+			"lb": "2.1",
+			"competence": "erläutern weitere lateinische Wendungen in ihrer wörtlichen und übertragenen Bedeutung und übersetzen sie in angemessenes Deutsch.",
+			"lessons": [
+				"l6-wendungen-inschriften"
+			],
+			"status": "implemented",
+			"evidence": "Inschriften- und Phraseologismen-Werkstatt (z. B. S. P. Q. R., H. M. H. N. S., rēs pūblica, bellum gerere, grātiās agere, cōnsilium capere) mit wörtlicher vs. übertragener Wiedergabe."
+		},
+		{
+			"id": "L6-10",
+			"lb": "2.1",
+			"competence": "analysieren Wörter gemäß weiteren Regeln der Wortbildung im Hinblick auf ihre Bestandteile.",
+			"lessons": [
+				"l6-wortbildung-erschliessen"
+			],
+			"status": "implemented",
+			"evidence": "Wortbildungs-Baukasten für weitere Präfixe (con-, dē-, dis-, ob-, trāns-, sub-) und Suffixe (-bilis, -tūdō, -īlis, -mentum) mit interaktiver Segmentierung."
+		},
+		{
+			"id": "L6-11",
+			"lb": "2.1",
+			"competence": "erschließen aufbauend auf ihren Kenntnissen im Wortschatz und in der Wortbildungslehre und unter Berücksichtigung des Kontextes die Bedeutung unbekannter Wörter.",
+			"lessons": [
+				"l6-wortbildung-erschliessen",
+				"l6-kontext-wortschatz"
+			],
+			"status": "implemented",
+			"evidence": "Erschließung unbekannter Vokabeln aus Wortbildung und Satzzusammenhang im dreiteiligen Schaubild, in gebundenen Aufgaben und in Level-2-Sätzen."
+		},
+		{
+			"id": "L6-12",
+			"lb": "2.1",
+			"competence": "erschließen aufgrund ihrer Kenntnis der lateinischen Ursprungswörter die Bedeutung weiterer deutscher Lehn- und Fremdwörter sowie von Wörtern aus modernen Fremdsprachen, v. a. aus dem Englischen als zweiter Fremdsprache.",
+			"lessons": [
+				"l6-englisch-romanisch"
+			],
+			"status": "implemented",
+			"evidence": "Vergleichende Sprachbrücken-Werkstatt (Latein → Englisch als 2. FS und Deutsch, z. B. victory/victōria, defend/dēfendere, liberty/lībertās, memory/memoria, Natur- und Technikwörter)."
+		},
+		{
+			"id": "L6-13",
+			"lb": "2.1",
+			"competence": "erkennen bei weiteren Wörtern deren Verwandtschaft im Lateinischen, Deutschen, Englischen und in den romanischen Sprachen.",
+			"lessons": [
+				"l6-englisch-romanisch"
+			],
+			"status": "implemented",
+			"evidence": "Systematische Gegenüberstellung verwandter Wörter in Latein, Deutsch, Englisch, Französisch, Italienisch und Spanisch mit Etymologie-Werkstatt."
+		},
+		{
+			"id": "L6-14",
+			"lb": "2.1",
+			"competence": "erkennen in ihrer Umwelt die Verwendung römischer Zahlen, lateinischer Inschriften sowie Abkürzungen und geben in einfachen Fällen deren Bedeutung an.",
+			"lessons": [
+				"l6-wendungen-inschriften",
+				"l6-numeralia-1000"
+			],
+			"status": "supported",
+			"evidence": "Die App erklärt römische Zahlzeichen bis M (1000) und lateinische Abkürzungen an Bauwerken/Denkmälern mit Übungen; das Entdecken realer Inschriften in der eigenen Umgebung bleibt supported."
+		},
+		{
+			"id": "L6-15",
+			"lb": "2.2",
+			"competence": "benennen weitere sprachliche Erscheinungen mit grammatikalischen Fachbegriffen (u. a. Genus Verbi, Passiv; Konjunktiv; Partizip), ordnen sie in ein differenzierteres grammatikalisches System ein und begründen ihre Einordnung.",
+			"lessons": [
+				"l6-genus-verbi-passiv-praesens",
+				"l6-konjunktiv-imperfekt",
+				"l6-partizip-praesens-aktiv",
+				"l6-partizip-perfekt-passiv"
+			],
+			"status": "implemented",
+			"evidence": "Fachbegriffe Genus Verbi (Aktiv/Passiv), Konjunktiv (Imperfekt/Plusquamperfekt), Partizip (PPA/PPP) in Erklärungen, dreiteiligen Schaubildern und Werkstätten."
+		},
+		{
+			"id": "L6-16",
+			"lb": "2.2",
+			"competence": "weisen Wortformen v. a. des aktuellen Grammatikstoffs den fortschreitend spezifizierten grammatikalischen Kategorien zu.",
+			"lessons": [
+				"l6-dritte-deklination-adjektive",
+				"l6-passiv-perfektstamm",
+				"l6-konjunktiv-plusquamperfekt"
+			],
+			"status": "implemented",
+			"evidence": "Bestimmungswerkstätten für erweiterte Deklinations-, Tempus-, Modus- und Partizipialkategorien mit eindeutigen Testaufgaben."
+		},
+		{
+			"id": "L6-17",
+			"lb": "2.2",
+			"competence": "analysieren und bestimmen weitere Wortformen aus folgenden Bereichen: Nomina: weitere Substantive v. a. der 3. Deklination, weitere Adjektive (u. a. dives, pauper, vetus); Pronomina: Demonstrativpronomina hic, ille, iste; idem; ipse; Numeralia: Kardinalia im Zahlenraum bis 1000 mit Zahlzeichen; ausgewählte Ordinalia; Verben und ihre Nominalformen: ire; alle Tempora im Passiv, dazu die Infinitive Präsens Passiv und Perfekt Passiv; Konjunktiv Imperfekt und Plusquamperfekt im Aktiv und Passiv; Partizip Präsens und Perfekt; Stammformen weiterer Verben.",
+			"lessons": [
+				"l6-dritte-deklination-adjektive",
+				"l6-demonstrativa-hic-ille-iste",
+				"l6-idem-ipse",
+				"l6-numeralia-1000",
+				"l6-stammformen-ire",
+				"l6-genus-verbi-passiv-praesens",
+				"l6-passiv-perfektstamm",
+				"l6-konjunktiv-imperfekt",
+				"l6-konjunktiv-plusquamperfekt",
+				"l6-partizip-praesens-aktiv",
+				"l6-partizip-perfekt-passiv"
+			],
+			"status": "implemented",
+			"evidence": "Abgedeckt über elf eigenständige Formenlehre-Lektionen inkl. Demonstrativ-Labor, Zahlenrechner bis 1000, īre-Tafel, 6-Tempora-Passiv-Labor, Konjunktiv-Labor und Partizipien."
+		},
+		{
+			"id": "L6-18",
+			"lb": "2.2",
+			"competence": "erfassen die Bedeutung weiterer Wortbestandteile (u. a. Moduszeichen, Passivendungen).",
+			"lessons": [
+				"l6-genus-verbi-passiv-praesens",
+				"l6-konjunktiv-imperfekt",
+				"l6-partizip-praesens-aktiv",
+				"l6-partizip-perfekt-passiv"
+			],
+			"status": "implemented",
+			"evidence": "Zerlegung von Passivpersonalendungen (-r/-tur/-ntur), Moduszeichen (-re- + Endung, -isse- + Endung) und Partizipialsuffixen (-nt- / -t-/-s-) im Schaubild und in Aufgaben."
+		},
+		{
+			"id": "L6-19",
+			"lb": "2.2",
+			"competence": "bilden v. a. entsprechend dem aktuellen Grammatikstoff lateinische Wortformen und Wendungen.",
+			"lessons": [
+				"l6-demonstrativa-hic-ille-iste",
+				"l6-idem-ipse",
+				"l6-stammformen-ire",
+				"l6-genus-verbi-passiv-praesens",
+				"l6-passiv-perfektstamm",
+				"l6-konjunktiv-imperfekt",
+				"l6-konjunktiv-plusquamperfekt"
+			],
+			"status": "implemented",
+			"evidence": "Formenbildung in Kurzaufgaben, Werkstattzielen und Produktionsaufgaben beider Niveaus."
+		},
+		{
+			"id": "L6-20",
+			"lb": "2.3",
+			"competence": "erkennen und unterscheiden weitere Erscheinungen der Satzlehre, benennen sie mit Fachbegriffen und ordnen sie in ein differenzierteres grammatikalisches System ein: Satzglieder und Satzgliedteile: Prädikativum, weitere Füllungsarten (u. a. Partizipialformen); Kasusfunktionen: doppelter Nominativ, Genitiv der Beschaffenheit, genitivus subiectivus, genitivus obiectivus, Dativ des Zwecks, Dativ des Vorteils, doppelter Akkusativ, Ablativ der Beschaffenheit; Modi: Konjunktiv im Hauptsatz (Irrealis), Konjunktiv im Nebensatz (nach Subjunktionen); Nebensätze: Adverbialsätze weiterer Sinnrichtungen (final, konsekutiv); Subjunktionen mit Indikativ und mit Konjunktiv (u. a. cum, ut); satzwertige Konstruktionen: AcI (gleichzeitig, vorzeitig; passiv); Partizip (gleichzeitig, vorzeitig; participium coniunctum als Adverbiale, auch als Attribut).",
+			"lessons": [
+				"l6-praedikativum-doppelter-kasus",
+				"l6-kasusfunktionen-gen-dat-abl",
+				"l6-konjunktiv-irrealis",
+				"l6-final-konsekutiv-ut",
+				"l6-cum-nebensaetze",
+				"l6-passiver-aci",
+				"l6-participium-coniunctum"
+			],
+			"status": "implemented",
+			"evidence": "Sieben spezialisierte Satzlehre-Lektionen mit Live-SVG-Laboren zu Prädikativum/doppelten Kasus, Gen./Dat./Abl.-Funktionen, Irrealis, ut/nē, cum, AcI passiv und Participium Coniunctum."
+		},
+		{
+			"id": "L6-21",
+			"lb": "2.3",
+			"competence": "analysieren den Binnenaufbau syntaktischer Phänomene (u. a. AcI, participium coniunctum) und erfassen deren Funktion im Satzganzen.",
+			"lessons": [
+				"l6-participium-coniunctum",
+				"l6-passiver-aci",
+				"l6-satzanalyse-pc-nebensaetze"
+			],
+			"status": "implemented",
+			"evidence": "Klammer- und Bezugswortanalyse für Participium Coniunctum und passiven AcI im Live-PC-Klammer-Labor und im 2×2-AcI-Labor."
+		},
+		{
+			"id": "L6-22",
+			"lb": "2.3",
+			"competence": "erfassen und beschreiben aufgrund ihrer Kenntnis elementarer Regeln der Formen-, Kasus- und Satzlehre Zusammenhänge auch in etwas komplexeren Sätzen.",
+			"lessons": [
+				"l6-cum-nebensaetze",
+				"l6-satzanalyse-pc-nebensaetze",
+				"l6-fehleranalyse-textaufbau"
+			],
+			"status": "implemented",
+			"evidence": "Satzstrukturanalyse geschachtelter Perioden mit Subjunktionen und satzwertigen Konstruktionen."
+		},
+		{
+			"id": "L6-23",
+			"lb": "2.3",
+			"competence": "erkennen am Beispiel weiterer Phänomene (u. a. participium coniunctum) Gemeinsamkeiten und Unterschiede zwischen lateinischem und deutschem Satzbau.",
+			"lessons": [
+				"l6-participium-coniunctum",
+				"l6-final-konsekutiv-ut",
+				"l6-cum-nebensaetze",
+				"l6-praedikativum-doppelter-kasus"
+			],
+			"status": "implemented",
+			"evidence": "Explizite Kontrastierung (z. B. dt. 'ut/nē'-Satz, PC als Nebensatz/Beiordnung/Präpositionalausdruck, Prädikativum im Deutschen als Adverb oder 'als ...')."
+		},
+		{
+			"id": "L6-24",
+			"lb": "2.3",
+			"competence": "nutzen die Ergebnisse ihrer erweiterten Sprachbetrachtung bei der Wahl des treffenden Ausdrucks und zur Steigerung ihrer sprachlichen Gewandtheit im Deutschen.",
+			"lessons": [
+				"l6-participium-coniunctum",
+				"l6-uebersetzungstechniken",
+				"l6-cum-nebensaetze"
+			],
+			"status": "implemented",
+			"evidence": "Training verschiedener Übersetzungsalternativen und treffender deutscher Formulierungen auf Level 1 und Level 2."
+		},
+		{
+			"id": "L6-25",
+			"lb": "3",
+			"competence": "erkennen und benennen in der Topografie des antiken Italiens bedeutende Stätten (u. a. Pompeji, Herkuláneum, Vesuv) und Regionen (u. a. Magna Graecia) und geben die Lage anderer in der Antike wichtiger Orte des Mittelmeerraumes (u. a. Athen, Karthago) an.",
+			"lessons": [
+				"l6-topografie-italien-mittelmeer"
+			],
+			"status": "implemented",
+			"evidence": "Interaktive SVG-Karte zu Italien und dem Mittelmeerraum (Pompeji, Herkulaneum, Vesuv, Magna Graecia, Karthago, Athen, Rom, Cannae, Syrakus) mit 5 Filterebenen."
+		},
+		{
+			"id": "L6-26",
+			"lb": "3",
+			"competence": "beschreiben die Ereignisse beim Vesuvausbruch des Jahres 79 n. Chr. und erläutern deren Bedeutung für die Erforschung der römischen Kultur.",
+			"lessons": [
+				"l6-vesuv-pompeji-herkulaneum",
+				"l6-plinius-vesuvbriefe"
+			],
+			"status": "implemented",
+			"evidence": "Ablauf des Vesuvausbruchs 79 n. Chr., Konservierung durch Asche/Bimsstein und pyroklastische Ströme sowie kulturhistorischer Erkenntnisgewinn."
+		},
+		{
+			"id": "L6-27",
+			"lb": "3",
+			"competence": "erkennen in Abbildungen von Funden herausragender Ausgrabungsstätten (u. a. Pompeji) und Exponaten in Antikenmuseen (z. B. in Athen) Beispiele für die Ausdrucksformen griechischer und römischer Kunst.",
+			"lessons": [
+				"l6-funde-kunst-museen"
+			],
+			"status": "supported",
+			"evidence": "Die Lektion zeigt Typen pompejanischer Funde (Wandmalerei, Mosaike, Alltagsgegenstände, Bronzen) und antike Kunstwerke; reale Betrachtung in Museen/Ausgrabungen bleibt supported."
+		},
+		{
+			"id": "L6-28",
+			"lb": "3",
+			"competence": "stellen aufbauend auf ihren Kenntnissen der Erzählungen zu Roms Gründung und Königszeit Informationen über wesentliche Ereignisse und Personen der Geschichte der frühen Republik (Ständekämpfe, Ausdehnung der Herrschaft auf Mittel- und Unteritalien) und der mittleren Republik (u. a. die Auseinandersetzung Roms mit Hannibal im 2. Punischen Krieg) zu einem nach Epochen gegliederten historischen Überblick zusammen.",
+			"lessons": [
+				"l6-fruehe-republik-staendekaempfe",
+				"l6-hannibal-punische-kriege"
+			],
+			"status": "implemented",
+			"evidence": "Epochaler Überblick von Königszeit (aus L5) über Ständekämpfe, Ausbreitung in Italien und die Punischen Kriege im interaktiven Republik-Zeitstrahl."
+		},
+		{
+			"id": "L6-29",
+			"lb": "3",
+			"competence": "ordnen insbesondere die Auseinandersetzung Roms mit Hannibal im 2. Punischen Krieg in die römische Geschichte ein.",
+			"lessons": [
+				"l6-hannibal-punische-kriege"
+			],
+			"status": "implemented",
+			"evidence": "Alpenüberquerung, Cannae 216 v. Chr., Zama 202 v. Chr. und Scipio als Wendepunkt des Zweiten Punischen Krieges."
+		},
+		{
+			"id": "L6-30",
+			"lb": "3",
+			"competence": "beschreiben bedeutende Ereignisse der Geschichte Roms in der frühen und mittleren Republik.",
+			"lessons": [
+				"l6-fruehe-republik-staendekaempfe",
+				"l6-gesellschaft-klientel-organe"
+			],
+			"status": "implemented",
+			"evidence": "Ständekämpfe (494 v. Chr. Sēcessiō plēbis, Zwölftafelgesetz ca. 450 v. Chr.) und Ausdehnung auf Mittel-/Unteritalien."
+		},
+		{
+			"id": "L6-31",
+			"lb": "3",
+			"competence": "beschreiben bedeutende Errungenschaften des griechischen Geisteslebens (u. a. Attische Demokratie, Denkleistungen des Archimedes).",
+			"lessons": [
+				"l6-griechisches-geistesleben"
+			],
+			"status": "implemented",
+			"evidence": "Attische Demokratie (Volksversammlung, Isonomie, Begrenzung auf männliche Vollbürger) und Naturwissenschaftler/Techniker Archimedes in Syrakus."
+		},
+		{
+			"id": "L6-32",
+			"lb": "3",
+			"competence": "erfassen grundlegende Merkmale der römischen Gesellschaft (u. a. Ständegesellschaft, Klientelwesen) und geben zentrale Organe der Politik im Rom der frühen und mittleren Republik (u. a. Volksversammlung, Volkstribunat) an.",
+			"lessons": [
+				"l6-gesellschaft-klientel-organe"
+			],
+			"status": "implemented",
+			"evidence": "Patrizier und Plebejer, Patrons-Klienten-Verhältnis (fides), Volksversammlungen, Konsulat und Volkstribunat (Vetorecht, sacrosanctitas)."
+		},
+		{
+			"id": "L6-33",
+			"lb": "3",
+			"competence": "nennen und erklären weitere wichtige römische Wertbegriffe.",
+			"lessons": [
+				"l6-roemische-werte-opfer"
+			],
+			"status": "implemented",
+			"evidence": "Vertiefung römischer Wertbegriffe: fidēs (Vertragstreue/Klientel), cōnstantia (Standhaftigkeit), clēmentia (Milde), concordia (Eintracht)."
+		},
+		{
+			"id": "L6-34",
+			"lb": "3",
+			"competence": "erfassen weitere Charakteristika römischer Religion (u. a. Opfer).",
+			"lessons": [
+				"l6-roemische-werte-opfer"
+			],
+			"status": "implemented",
+			"evidence": "Römischer Opferritus (do ut dēs, Präzision im Gebet, Reinigungsopfer, Tieropfer suovetaurilia, Haruspizien)."
+		},
+		{
+			"id": "L6-35",
+			"lb": "3",
+			"competence": "geben Inhalte weiterer griechischer Mythen (u. a. von Europa, Theseus, Daedalus und Ikarus, Orpheus und Eurydike sowie vom Trojanischen Krieg, und zwar vom Paris-Urteil bis zur Heimkehr des Odysseus) wieder und erfassen den Einfluss der griechischen Kultur in Rom sowie die Bedeutung des Mythos für die Erklärung der Welt und des Verhältnisses Mensch – Gott.",
+			"lessons": [
+				"l6-europa-theseus",
+				"l6-daedalus-ikarus",
+				"l6-trojanischer-krieg",
+				"l6-irrfahrten-odysseus"
+			],
+			"status": "implemented",
+			"evidence": "Vier ausführliche Mythenlektionen inkl. interaktiver Mythenbühne zu Europa, Theseus/Labyrinth, Daedalus/Ikarus, Orpheus, Paris-Urteil bis Odysseus' Heimkehr."
+		},
+		{
+			"id": "L6-36",
+			"lb": "3",
+			"competence": "erfassen aufbauend auf ihren Kenntnissen über römische Unterweltsvorstellungen die Darstellung von Tod und Unterwelt im Mythos.",
+			"lessons": [
+				"l6-orpheus-eurydike-unterwelt"
+			],
+			"status": "implemented",
+			"evidence": "Anknüpfung an L5-Unterweltsbilder und Vertiefung am Orpheus-und-Eurydike-Mythos (Plūtō, Prōserpina, Unterweltsgang, Verlust beim Zurückblicken)."
+		},
+		{
+			"id": "L6-37",
+			"lb": "3",
+			"competence": "erkennen bedeutende Inhalte aus Mythos und Geschichte in bildlichen Darstellungen wieder und vergleichen diese mit den Aussagen von Texten.",
+			"lessons": [
+				"l6-ovid-bild-text-vergleich",
+				"l6-funde-kunst-museen"
+			],
+			"status": "supported",
+			"evidence": "Aufgaben schulen den Bild-Text-Vergleich (z. B. Ikarus-Relief, Orpheus-Mosaike vs. lateinische Texte); Arbeit mit realen Kunstwerken/Originalabbildungen im Museum bleibt supported."
+		},
+		{
+			"id": "L6-38",
+			"lb": "3",
+			"competence": "erkennen in Ovid eine bedeutende literarische Quelle zu antiken Mythenstoffen.",
+			"lessons": [
+				"l6-ovid-bild-text-vergleich",
+				"l6-daedalus-ikarus",
+				"l6-orpheus-eurydike-unterwelt"
+			],
+			"status": "implemented",
+			"evidence": "Ovid und seine Metamorphosen als zentrale literarische Quelle zu antiken Mythen (Daedalus/Ikarus, Orpheus, Europa)."
+		},
+		{
+			"id": "L6-39",
+			"lb": "3",
+			"competence": "erkennen in Plinius d. J. eine bedeutende literarische Quelle zum Vesuvausbruch 79 n. Chr.",
+			"lessons": [
+				"l6-plinius-vesuvbriefe"
+			],
+			"status": "implemented",
+			"evidence": "Plinius der Jüngere (epist. 6,16 und 6,20 an Tacitus) als Augenzeugenquelle zum Vesuvausbruch 79 n. Chr."
+		},
+		{
+			"id": "L6-40",
+			"lb": "3",
+			"competence": "stellen Bezüge zwischen Erscheinungen ihrer Gegenwart (u. a. lateinischen Ausdrücken, Sentenzen, Werbesprüchen, Filmmotiven) und römischer Antike her und weisen an ihnen exemplarisch das römische Fundament europäischer Kultur nach.",
+			"lessons": [
+				"l6-gegenwart-antikenbezuege",
+				"l6-wendungen-inschriften"
+			],
+			"status": "supported",
+			"evidence": "Die Lektion entschlüsselt antike Spuren in Werbung, Filmen, Namen und Sprüchen (Europa, Odyssee, Danaergeschenk, Achillessehne); selbständiges Entdecken im Alltag bleibt supported."
+		},
+		{
+			"id": "L6-41",
+			"lb": "3",
+			"competence": "vergleichen römische Vorstellungen (u. a. Wertbegriffe, Weltdeutungen in Mythen) mit denen ihrer persönlichen Erfahrungswelt und begründen aufgrund einer bewussten Auseinandersetzung eigene Positionen.",
+			"lessons": [
+				"l6-gegenwart-antikenbezuege",
+				"l6-roemische-werte-opfer",
+				"l6-griechisches-geistesleben"
+			],
+			"status": "supported",
+			"evidence": "Kriteriengeleitete Urteilsaufgaben vergleichen z. B. attische Demokratie oder römische Wertvorstellungen mit der Gegenwart; offene Klassendiskussion bleibt im Unterricht."
+		},
+		{
+			"id": "L6-42",
+			"lb": "4",
+			"competence": "analysieren sprachliche Einheiten (u. a. participia coniuncta, Adverbialsätze) v. a. aus dem aktuellen Grammatikstoff und stellen durch folgerichtiges Kombinieren und gedankliches Strukturieren korrekte Bezüge her.",
+			"lessons": [
+				"l6-satzanalyse-pc-nebensaetze"
+			],
+			"status": "implemented",
+			"evidence": "Strukturierungs-Werkstatt zum Erkennen von PC-Blöcken (KNG-Klammer), Adverbialsätzen (ut, cum) und Hauptsatzgerüst."
+		},
+		{
+			"id": "L6-43",
+			"lb": "4",
+			"competence": "wenden unter Anleitung verschiedene Übersetzungstechniken (z. B. Konstruktions-, Wortblock- oder Wort-für-Wort-Methode) an.",
+			"lessons": [
+				"l6-uebersetzungstechniken"
+			],
+			"status": "implemented",
+			"evidence": "Gegenüberstellung von Konstruktions-, Wortblock-/Pendel- und Wort-für-Wort-Methode an lateinischen Beispielsätzen."
+		},
+		{
+			"id": "L6-44",
+			"lb": "4",
+			"competence": "überprüfen ihre Übersetzungsergebnisse und benennen und analysieren ggf. sprachliche Fehler zunehmend selbständig sowie in der Interaktion miteinander.",
+			"lessons": [
+				"l6-fehleranalyse-textaufbau"
+			],
+			"status": "implemented",
+			"evidence": "Fehlerdiagnose-Werkstatt (Passiv vs. Aktiv, falsche Konjunktiv- oder PC-Auflösung, Kasusverwechslung) mit eigenen Prüfstrategien."
+		},
+		{
+			"id": "L6-45",
+			"lb": "4",
+			"competence": "arbeiten u. a. mithilfe von Erschließungsfragen und anhand von Leitbegriffen gedankliche Zusammenhänge und Kernaussagen von Texten heraus.",
+			"lessons": [
+				"l6-fehleranalyse-textaufbau",
+				"l6-satzanalyse-pc-nebensaetze"
+			],
+			"status": "implemented",
+			"evidence": "Erschließungsfragen und Leitbegriffe (Sachfelder, Tempuswechsel, Personen) zur Sinnerfassung längerer Texte."
+		},
+		{
+			"id": "L6-46",
+			"lb": "4",
+			"competence": "wenden bei einer Auseinandersetzung mit Texten altersgemäße Methoden der produktiven oder kreativen Rezeption (z. B. bildliche Darstellungen, Rollenspiele, szenische Gestaltungen, auch unter Nutzung geeigneter digitaler Medien) an.",
+			"lessons": [
+				"l6-kreativ-praesentation-team"
+			],
+			"status": "supported",
+			"evidence": "Bietet strukturierte Gestaltungsanregungen für Standbilder, Plakate, Hörszenen und Erklärbeiträge; reale szenische Umsetzung und digitale Gruppenmedien bleiben außerhalb der App."
+		},
+		{
+			"id": "L6-47",
+			"lb": "4",
+			"competence": "nutzen zunehmend selbständig Hilfsmittel (z. B. Lehrbuch, digitale Medien) zum Lernen, Nachschlagen, Üben, Wiederholen, zum Recherchieren und zum Bewältigen von fachlichen Aufgabenstellungen.",
+			"lessons": [
+				"l6-lernstrategien-pruefung"
+			],
+			"status": "supported",
+			"evidence": "Zeigt den gezielten Einsatz von Grammatiktabellen, Wortschatzverzeichnis und digitalen Karten; das Arbeiten mit dem gedruckten Lehrbuch bleibt supported."
+		},
+		{
+			"id": "L6-48",
+			"lb": "4",
+			"competence": "wenden Techniken des Lernens (z. B. Arbeiten mit einer Vokabelkartei oder einem digitalen Lernprogramm, Vernetzung von Neuem mit Bekanntem, Analogieschlüsse und Transfer anhand von Prinzipien der Wortbildung, Bilden von „Eselsbrücken“) nach den Erfordernissen des aktuellen Lernstoffs sowie gemäß den individuellen Lernbedürfnissen und Lernstilen (z. B. Berücksichtigung verschiedener Sinneskanäle) zielführend an.",
+			"lessons": [
+				"l6-lernstrategien-pruefung",
+				"l6-wortfelder-familien"
+			],
+			"status": "implemented",
+			"evidence": "Strategien für die erweiterte Wortschatzarbeit (Vernetzung mit L5-Wörtern, Wortbildungstransfer, Eselsbrücken für Stammformen und unregelmäßige Formen)."
+		},
+		{
+			"id": "L6-49",
+			"lb": "4",
+			"competence": "ordnen ihre Lernprozesse zunehmend selbständig mithilfe von Strategien der Arbeitsorganisation (z. B. Erstellen von Plänen mit realistischer Einteilung von Zeit, Arbeitsschritten und Arbeitspensen; Strukturierung von Prüfungsvorbereitungen).",
+			"lessons": [
+				"l6-lernstrategien-pruefung"
+			],
+			"status": "supported",
+			"evidence": "Vermittelt Checklisten und Arbeitsschritte zur Klassenarbeits- und Prüfungsvorbereitung (z. B. 5-Schritte-Wiederholungsplan); die reale Terminplanung übernimmt die Schülerin bzw. der Schüler selbst."
+		},
+		{
+			"id": "L6-50",
+			"lb": "4",
+			"competence": "wählen zur Sicherung und Präsentation von Arbeitsergebnissen verschiedene Verfahren (z. B. Visualisierungstechniken unter Nutzung geeigneter digitaler Medien) aus.",
+			"lessons": [
+				"l6-kreativ-praesentation-team"
+			],
+			"status": "supported",
+			"evidence": "Unterstützt die Gliederung kurzer Ergebnispräsentationen; reale Visualisierungen, Plakate oder digitale Folien erstellt der Lernende außerhalb der App."
+		},
+		{
+			"id": "L6-51",
+			"lb": "4",
+			"competence": "wenden Strategien der Lern- und Selbstorganisation an, um offene Formen des Unterrichts (z. B. Freiarbeit, Lernzirkel, Wochenplanarbeit) mit größerer Selbständigkeit und Ausdauer für den eigenen Lernfortschritt zu nutzen.",
+			"lessons": [
+				"l6-kreativ-praesentation-team"
+			],
+			"status": "supported",
+			"evidence": "Strukturiert Stationen- und Wochenplanaufgaben zur Selbstorganisation; offene Unterrichtsformen finden im Klassenraum statt."
+		},
+		{
+			"id": "L6-52",
+			"lb": "4",
+			"competence": "leisten verantwortungsvoll ihren persönlichen Beitrag (z. B. durch konstruktive Kritik, wertschätzende Diskussionshaltung, auch beim Austausch auf digitalen Lernplattformen) zum Gelingen sozial-integrativer Arbeitsformen (z. B. Partnerarbeit, Gruppenarbeit, Projekte).",
+			"lessons": [
+				"l6-kreativ-praesentation-team",
+				"l6-plinius-vesuvbriefe"
+			],
+			"status": "supported",
+			"evidence": "Enthält Partner-Vorlese-Bestätigung und Feedback-Kriterien für Teamarbeiten; echte Gruppendiskussionen und sozial-integratives Lernen finden im Unterricht statt."
+		}
+	]
+}
