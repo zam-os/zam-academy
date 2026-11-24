@@ -54,14 +54,10 @@ export function clockLabel(hour: number, minute: number): string {
 	return `${base}${m ? ` ${m === 15 ? "quinze" : m === 30 ? "trente" : "quarante-cinq"}` : ""}`;
 }
 function illustration(lesson: Lesson): string {
-	if (["f6-1-ville", "f6-2-france", "f6-2-paris", "f6-2-bretagne"].includes(lesson.id))
-		return renderFranceMap(lesson.track === "f1") + renderExplorer(lesson);
-	if (lesson.id === "f6-2-maison")
-		return `<figure class="neighbourhood"><span>← à gauche<br><b>⌂</b><br>la maison</span><span>devant ↓<br>🐈<br>le chat</span><span>à droite →<br><b>♧</b><br>le parc</span></figure>`;
+	if (lesson.id === "f6-1-ville")
+		return renderFranceMap(true) + renderExplorer(lesson);
 	if (lesson.workshop.kind === "clock")
 		return `<div class="clock-explorer"><svg viewBox="0 0 220 220" role="img" aria-label="Uhr zum Einstellen"><circle cx="110" cy="110" r="95" class="clock-face"/>${Array.from({ length: 12 }, (_, i) => `<text x="${110 + 78 * Math.sin((i * Math.PI) / 6)}" y="${115 - 78 * Math.cos((i * Math.PI) / 6)}" text-anchor="middle">${i || 12}</text>`).join("")}<line id="hour-hand" x1="110" y1="110" x2="110" y2="58"/><line id="minute-hand" x1="110" y1="110" x2="110" y2="30"/><circle cx="110" cy="110" r="5"/></svg><div><label for="clock-hour">Stunde (24 Stunden)</label><input id="clock-hour" type="range" min="0" max="23" value="15"><label for="clock-minute">Minuten</label><select id="clock-minute"><option value="0">00</option><option value="15">15</option><option value="30" selected>30</option><option value="45">45</option></select><p id="clock-readout" lang="fr" aria-live="polite"></p></div></div>`;
-	if (lesson.id === "f6-2-nombres")
-		return `<div class="number-explorer"><label for="number-slider">Zahl zerlegen: 0 bis 100</label><input id="number-slider" type="range" min="0" max="100" value="81"><div id="number-parts" aria-live="polite"></div><p class="small">Die Bausteine zeigen die Zahlbildung in Frankreich, etwa 60 + 11 und 20 + 20 + 20 + 20 + 1.</p></div>`;
 	return renderExplorer(lesson);
 }
 export function renderWorkshop(lesson: Lesson): string {

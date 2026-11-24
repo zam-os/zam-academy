@@ -113,7 +113,7 @@ export const STAGE7_8_FIGURES: Record<string, ConceptFigure> = {
 			},
 			{
 				label: "Verbotener Rückblick",
-				note: "'Nōlī respicere!' – dicht vor dem Licht wendet Orpheus den Blick und verliert sie für immer.",
+				note: "Blickverbot (Met. 10,51: ne flectat retro sua lumina) – dicht vor dem Licht wendet Orpheus den Blick und verliert sie.",
 			},
 		],
 		draw: () =>
@@ -131,7 +131,7 @@ export const STAGE7_8_FIGURES: Record<string, ConceptFigure> = {
 						badge: "2",
 						fill: "v-gold-fill",
 						heading: "Gesang vor dem Thron",
-						lines: ["Leier (lyra) + Klage", "Plūtō & Prōserpina gerührt", "Bedingung für Rückkehr:", "'Nōlī respicere!'"],
+						lines: ["Leier (lyra) + Klage", "Plūtō & Prōserpina gerührt", "Bedingung (Met. 10,51):", "Augen nicht zurückwenden"],
 						footer: "Göttergebot prüfen",
 					},
 					{
@@ -156,8 +156,8 @@ export const STAGE7_8_FIGURES: Record<string, ConceptFigure> = {
 				note: "Eris' Apfel entzweit Iūnō, Minerva und Venus; Paris wählt Venus und erhält Helena von Sparta.",
 			},
 			{
-				label: "Zehn Jahre Krieg (Ilias)",
-				note: "Agamemnon belagert Priamus' Troja; Zweikampf Achilles vs. Hektor; Pfeil in die Achillesferse.",
+				label: "Zehn Jahre Krieg (Ilias & Sagenkreis)",
+				note: "Homers Ilias erzählt den Zweikampf Achilles vs. Hektor; spätere Epen berichten den Pfeil in die Achillesferse.",
 			},
 			{
 				label: "Das Trojanische Pferd",
@@ -179,8 +179,8 @@ export const STAGE7_8_FIGURES: Record<string, ConceptFigure> = {
 						badge: "2",
 						fill: "v-coral-fill",
 						heading: "Kampf vor Troja",
-						lines: ["10 Jahre Belagerung", "Hektor fällt vor Achilles", "Verwundung an der Ferse", "('Achillesferse')"],
-						footer: "Homers Ilias",
+						lines: ["10 Jahre Belagerung", "Ilias: Achilles vs. Hektor", "späteres Epos:", "Pfeil in die Ferse"],
+						footer: "Ilias & Sagenkreis",
 					},
 					{
 						badge: "3",

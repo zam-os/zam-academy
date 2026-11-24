@@ -1,12 +1,10 @@
 export type Level = 1 | 2;
-export type Track = "f1" | "f2";
 export interface Source {
 	id: string;
 	label: string;
 	url: string;
 }
 export interface Stage {
-	track: Track;
 	id: string;
 	title: string;
 	subtitle: string;
@@ -51,7 +49,6 @@ export interface Workshop {
 	goals: [WorkshopGoal, WorkshopGoal, WorkshopGoal];
 }
 export interface Lesson {
-	track: Track;
 	id: string;
 	stage: string;
 	title: string;

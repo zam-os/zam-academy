@@ -4,7 +4,6 @@ import coverage from "../coverage.json";
 import mapping from "../replaces-de-by.json";
 import contract from "./fixtures/public-contract.json";
 import {
-	lessonsForTrack,
 	findLesson,
 	LESSONS,
 	SOURCES,
@@ -36,28 +35,22 @@ import {
 import { clockLabel, numberParts, workshopGoals } from "../src/workshop";
 const items = cell.atoms.flatMap((a) => a.practice_items);
 
-describe("Grade 6 first- and second-language French teaching contract", () => {
-	it("provides two complete paths and three goals and cards per lesson", () => {
-		expect(LESSONS).toHaveLength(74);
-		expect(lessonsForTrack("f1")).toHaveLength(28);
-		expect(lessonsForTrack("f2")).toHaveLength(46);
-		for (const track of ["f1", "f2"] as const) {
-			const stages = STAGES.filter((stage) => stage.track === track);
-			expect(stages).toHaveLength(8);
-			for (const stage of stages)
-				expect(lessonsForTrack(track).some((lesson) => lesson.stage === stage.id)).toBe(true);
-		}
-		expect(cell.atoms).toHaveLength(74);
-		expect(items).toHaveLength(222);
+describe("Grade 6 first-language French teaching contract", () => {
+	it("provides one complete path with eight stages and three cards per lesson", () => {
+		expect(LESSONS).toHaveLength(28);
+		expect(STAGES).toHaveLength(8);
+		for (const stage of STAGES)
+			expect(LESSONS.some((lesson) => lesson.stage === stage.id)).toBe(true);
+		expect(cell.atoms).toHaveLength(28);
+		expect(items).toHaveLength(84);
 		expect(LESSONS.filter((lesson) => lesson.listening).map((lesson) => lesson.id)).toEqual([
-			"f6-2-sons", "f6-2-ecouter-moi", "f6-2-ecouter-courses",
 			"f6-1-meteo", "f6-1-trajet", "f6-1-sons",
 		]);
 	});
 	it.each(LESSONS)(
 		"has substantial teaching, feedback and distinct tasks: $id",
 		(l) => {
-			expect(l.id).toMatch(/^f6-[12]-[a-z-]+$/);
+			expect(l.id).toMatch(/^f6-1-[a-z-]+$/);
 			expect(l.paragraphs).toHaveLength(2);
 			expect(l.paragraphs.join(" ").length).toBeGreaterThan(330);
 			expect(l.material.length).toBeGreaterThan(90);
@@ -127,30 +120,22 @@ describe("Grade 6 first- and second-language French teaching contract", () => {
 			});
 		},
 	);
-	it("maps each expectation and lesson to the correct path, with honest limits", () => {
-		expect(coverage.rows).toHaveLength(97);
-		expect(new Set(coverage.rows.map((row) => row.id)).size).toBe(97);
+	it("maps each expectation and lesson, with honest limits", () => {
+		expect(coverage.rows).toHaveLength(50);
+		expect(new Set(coverage.rows.map((row) => row.id)).size).toBe(50);
 		const mapped = new Set(coverage.rows.flatMap((row) => row.lessons));
 		for (const lesson of LESSONS) expect(mapped.has(lesson.id)).toBe(true);
 		for (const row of coverage.rows) {
 			expect(["supported", "implemented"]).toContain(row.status);
 			expect(row.evidence.length).toBeGreaterThan(30);
-			for (const id of row.lessons)
-				expect(findLesson(id)?.track).toBe(row.track.toLowerCase());
+			expect(row.track).toBe("F1");
+			for (const id of row.lessons) expect(findLesson(id)).toBeDefined();
 		}
-		for (const id of ["F1-01", "F1-06", "F1-13", "F1-25", "F1-35", "F1-48", "F2-01", "F2-11", "F2-24", "F2-32", "F2-45"])
+		for (const id of ["F1-01", "F1-06", "F1-13", "F1-25", "F1-35", "F1-48"])
 			expect(coverage.rows.find((row) => row.id === id)?.status).toBe("supported");
 	});
-	it("puts the advanced structures only on the first-language path", () => {
+	it("teaches the first-language Grade 6 structures; the second-language lessons moved out", () => {
 		const text = (id: string) => findLesson(id)!.paragraphs.join(" ");
-		expect(text("f6-2-er-ecriture")).toContain("nous commençons");
-		expect(text("f6-2-er-ecriture")).toContain("vous préférez");
-		expect(text("f6-2-ecole")).toContain("vous dites");
-		expect(text("f6-2-quel")).toContain("Que fait Nathalie");
-		expect(text("f6-2-objets-directs")).toContain("Je vais le prendre");
-		expect(text("f6-2-demonstratifs")).toContain("cet");
-		expect(text("f6-2-accord")).toContain("deux grandes places rouges");
-		expect(text("f6-2-negation-suite")).toContain("ne … rien");
 		expect(text("f6-1-avoir-passe")).toContain("j’ai joué");
 		expect(text("f6-1-etre-passe")).toContain("elles sont arrivées");
 		expect(text("f6-1-objets-indirects")).toContain("Je vais leur parler");
@@ -158,8 +143,7 @@ describe("Grade 6 first- and second-language French teaching contract", () => {
 		expect(text("f6-1-verbes-ir")).toContain("nous finissons");
 		expect(text("f6-1-verbes-utiles")).toContain("nous mettons");
 		expect(text("f6-1-nombres")).toContain("deux millions");
-		const beginnerText = lessonsForTrack("f2").map((lesson) => lesson.paragraphs.join(" ")).join(" ");
-		expect(beginnerText).not.toMatch(/passé composé|imparfait|subjonctif|Relativsatz/);
+		expect(findLesson("f6-2-bonjour")).toBeUndefined();
 	});
 });
 describe("interactive number and time models", () => {
@@ -184,10 +168,10 @@ describe("answer handling, progress and routes", () => {
 	it("accepts typography without discarding meaningful accents", () => {
 		expect(normalise(" D’ABORD. ")).toBe("d'abord");
 		expect(normalise("e\u0301cole")).toBe("école");
-		const l = findLesson("f6-2-accents")!;
-		expect(checkPractice(l.practice, ["a", "à"])).toEqual([true, true]);
-		expect(checkPractice(l.practice, ["à", "a"])).toEqual([false, false]);
-		expect(checkPractice(l.practice, ["a"])).toEqual([false, false]);
+		const where = [findLesson("f6-1-relatifs")!.practice.find((p) => p.answers.includes("où"))!];
+		expect(checkPractice(where, ["où"])).toEqual([true]);
+		expect(checkPractice(where, ["Où."])).toEqual([true]);
+		expect(checkPractice(where, ["ou"])).toEqual([false]);
 	});
 	it("requires workshop, checks and a real self-assessed draft", () => {
 		const p = freshProgress(),
@@ -214,9 +198,9 @@ describe("answer handling, progress and routes", () => {
 			expect(parseProgress(raw)).toEqual(freshProgress());
 		expect(STORAGE_KEY).toBe("franzoesisch_gym6_academy_progress_v1");
 		const p = parseProgress(
-			JSON.stringify({ workshopDone: ["bad", "f6-2-bonjour", "f6-2-bonjour"] }),
+			JSON.stringify({ workshopDone: ["bad", "f6-2-bonjour", "f6-1-routine", "f6-1-routine"] }),
 		);
-		expect(p.workshopDone).toEqual(["f6-2-bonjour"]);
+		expect(p.workshopDone).toEqual(["f6-1-routine"]);
 	});
 	it("keeps both task levels and all lesson deep links valid", () => {
 		for (const l of LESSONS)
@@ -244,7 +228,7 @@ describe("ZAM content and identifier contracts", () => {
 			})),
 		).toEqual(contract);
 		const ids = [...cell.atoms, ...items].map((x) => x.id);
-		expect(new Set(ids).size).toBe(296);
+		expect(new Set(ids).size).toBe(112);
 		for (const id of ids) expect(id).toMatch(/^[0-7][0-9A-HJKMNP-TV-Z]{25}$/);
 	});
 	it.each(cell.atoms)(
@@ -262,7 +246,7 @@ describe("ZAM content and identifier contracts", () => {
 					grade: 6,
 					subject: "franzoesisch",
 				});
-				expect(b.topic_code).toMatch(new RegExp(`^${l.track}-lb`));
+				expect(b.topic_code).toMatch(/^f1-lb/);
 				expect(b).not.toHaveProperty("track");
 			}
 			for (const d of a.prerequisites)

@@ -12,7 +12,7 @@ Das Paket umfasst 44 Lektionen in acht Lernbereichen, 44 interaktive dreiteilige
 | Satzlehre: Neue Kasus, Nebensätze, passiver AcI und PC | Prädikativum & doppelter Nominativ/Akkusativ, neue Genitiv-/Dativ-/Ablativfunktionen (`datīvus fīnālis/commodī`, `quālitātis`, `obiectīvus`), Irrealis, `ut`/`nē`/`ut nōn`, vielseitiges `cum`, passiver AcI (2×2-Zeitmatrix) und *participium coniunctum* (4 Auflösungen live) |
 | Italien, Mittelmeer, Pompeji und Griechenlands Geist | Interaktive 4-Ebenen-Karte von Kampanien, Magna Graecia, Karthago und Griechenland, Vesuvausbruch 79 n. Chr. (Pompeji & Herkulaneum), Plinius d. J. an Tacitus (`6,16` & `6,20` mit Vorleseskript), Fresko/Mosaik/`rotfigurige Vase`, Attische Demokratie & Archimedes |
 | Römische Republik, Hannibal, Gesellschaft und Werte | Frühe Republik (Zeitstrahl `509–202 v. Chr.`, `Sēcessiō plēbis`, Zwölf Tafeln, Pyrrhos), Annuität/Kollegialität/Volkstribunat & Klientelwesen, Hannibal & 2. Punischer Krieg (`sociī`, Scīpiō bei Zama), Werte & Opfer (`cōnstantia`, `concordia`, `dō ut dēs`) und Antikenbezüge |
-| Griechisch-römische Mythen, Unterwelt und Ovid | Europa (Stier) & Theseus (Ariadnefaden), Daedalus & Ikarus (*Inter utrumque volā!*), Orpheus & Eurydike (`Nōlī respicere!`), Trojanischer Krieg, Irrfahrten des Odysseus (*Nēmō*, Sirenen, Penelope) sowie Ovid (*Metamorphosen*) und der Bild-Text-Vergleich (Mythen-Galerie + Vorleseskript) |
+| Griechisch-römische Mythen, Unterwelt und Ovid | Europa (Stier) & Theseus (Ariadnefaden), Daedalus & Ikarus (*Inter utrumque volā!*), Orpheus & Eurydike (Blickverbot, Met. 10,51), Trojanischer Krieg, Irrfahrten des Odysseus (*Nēmō*, Sirenen, Penelope) sowie Ovid (*Metamorphosen*) und der Bild-Text-Vergleich (Mythen-Galerie + Vorleseskript) |
 | Satzanalyse, Übersetzen, Lernplan und Präsentation | PC-Klammern & eingeschobene Nebensätze knacken, Konstruktions- vs. Wortblockmethode, Fehleranalyse (Perfekt Passiv, KNG-Bezug), Stammformen- & Prüfungsplanung sowie Team-Präsentation |
 
 Keine Lehrervideos (`AGENTS.md` Abschnitt 4). Echte Partner- und Klassengespräche, freie Vorträge im Kursraum, eigenständige Medien- und Bibliotheksrecherchen sowie außerschulische Museumsbesuche bleiben als `supported` außerhalb der App; die App liefert Materialtexte, lokale Sprachausgabe (sofern vorhanden), Musterlösungen und Kriterien. Alle 23 Quellenlinks wurden am 24. November 2026 live abgerufen und mit ihrem `<title>` in `source-checks.json` festgehalten.
@@ -37,7 +37,7 @@ ZAM_CORE=file:///pfad/zu/zam-core/dist/index.js node scripts/validate-cell.mjs
 node scripts/verify-browser.mjs
 ```
 
-`npm test` prüft vor Vitest automatisch die SHA-256-Prüfsummen aller vier LehrplanPLUS-Schnappschüsse sowie alle 52 Kompetenzzeilen in `coverage.json`. Als Referenz für `zam-core` dient Version `0.54.0` aus der Repository-CI. `npm run dev` läuft auf Port `5282`.
+`npm test` prüft vor Vitest automatisch die SHA-256-Prüfsummen aller vier LehrplanPLUS-Schnappschüsse sowie alle 52 Kompetenzzeilen in `coverage.json`. Als Referenz für `zam-core` dient Version `0.54.0` aus der Repository-CI. `npm run dev` läuft auf Port `5283`.
 
 ## Lehrplanabgrenzung und Alt-Kartenbestand
 

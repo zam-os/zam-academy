@@ -293,7 +293,7 @@ export const STAGE1_2_FIGURES: Record<string, ConceptFigure> = {
 		title: "Blickwinkel der Demonstrativa: hic, ille, iste",
 		question: "Worauf zeigen hic, ille und iste im Raum und im Urteil des Sprechers?",
 		alt: "Dreiteiliges Schaubild zu hic (beim Sprecher), iste (beim Gegenüber/kritisch) und ille (in der Ferne/berühmt).",
-		caption: "Alle drei zeigen -īus im Genitiv und -ī im Dativ Singular.",
+		caption: "Pronominale Sonderformen im Singular: huius/huic (hic), illīus/illī (ille) und istīus/istī (iste).",
 		parts: [
 			{
 				label: "hic, haec, hoc",

@@ -1,8 +1,8 @@
 import "./styles.css";
 import { bindWorkshop, renderWorkshop } from "./workshop";
 import {
-	lessonsForTrack,
 	findLesson,
+	LESSONS,
 	SOURCES,
 	STAGES,
 } from "./curriculum";
@@ -18,7 +18,6 @@ import {
 } from "./practice";
 import {
 	completion,
-	currentTrack,
 	markSyntheticListening,
 	mergeProgress,
 	resetProgress,
@@ -30,7 +29,7 @@ import {
 	updateDraft,
 	writingKey,
 } from "./storage/progress";
-import type { Lesson, Level, Track } from "./types";
+import type { Lesson, Level } from "./types";
 import {
 	parseTrainingDeepLink,
 	trainingBaseUrl,
@@ -52,14 +51,11 @@ let progress = loadProgress();
 let baseline = structuredClone(progress);
 let view: "path" | "lesson" | "reference" = "path";
 let routeNotice = "";
-const tracks = [
-	{ id: "f2", title: "2. Fremdsprache", detail: "Ich beginne mit Französisch." },
-	{ id: "f1", title: "1. Fremdsprache", detail: "Ich lerne Französisch seit Klasse 5." },
-] as const;
-
-function nextLesson(track: Track): Lesson {
-	const lessons = lessonsForTrack(track);
-	return lessons.find((lesson) => !isComplete(progress, lesson.id)) ?? lessons[0];
+/** The second-language path moved to its own package in 2026-11; its lesson ids stay valid there. */
+const SECOND_LANGUAGE_APP = "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-6/";
+let movedLesson = "";
+function nextLesson(): Lesson {
+	return LESSONS.find((lesson) => !isComplete(progress, lesson.id)) ?? LESSONS[0];
 }
 const practiceAnswers = new Map<string, string[]>();
 let speechSession = 0;
@@ -108,7 +104,7 @@ function syncSavedState(): void {
 function renderStats(): void {
 	const count = completion(progress);
 	element("#progress-strip").innerHTML =
-		`<label for="path-progress">${currentTrack(progress) === "f1" ? "1." : "2."} Fremdsprache · ${count.completed} von ${count.total} Lektionen geübt</label><progress id="path-progress" value="${count.completed}" max="${count.total}">${count.percent}%</progress>`;
+		`<label for="path-progress">1. Fremdsprache · ${count.completed} von ${count.total} Lektionen geübt</label><progress id="path-progress" value="${count.completed}" max="${count.total}">${count.percent}%</progress>`;
 }
 function cancelSpeech(): void {
 	speechSession++;
@@ -120,6 +116,7 @@ function pageUrl(): string {
 }
 function navigate(id?: string): void {
 	routeNotice = "";
+	movedLesson = "";
 	cancelSpeech();
 	if (id && findLesson(id)) {
 		progress.activeLessonId = id;
@@ -160,15 +157,13 @@ function render(): void {
 	else renderPath();
 }
 function renderPath(): void {
-	const track = currentTrack(progress);
-	const lessons = lessonsForTrack(track);
-	const next = nextLesson(track);
-	main.innerHTML = `${routeNotice ? `<p class="notice" role="status">${esc(routeNotice)}</p>` : ""}
-    <section class="hero"><div><div class="eyebrow">Gymnasium Bayern · 6. Klasse</div><h1>Französisch im Alltag</h1><p>Finde dich in einer Stadt zurecht, verabrede dich und erzähle in kurzen Sätzen. Wähle den Weg, der zu deinem Unterricht passt.</p>
-    <div class="track-picker" role="group" aria-label="Französisch-Lernpfad">${tracks.map((entry) => `<button type="button" data-track="${entry.id}" aria-pressed="${entry.id === track}"><strong>${entry.title}</strong><span>${entry.detail}</span></button>`).join("")}</div></div>
+	const lessons = LESSONS;
+	const next = nextLesson();
+	main.innerHTML = `${movedLesson ? `<p class="notice" role="status">Diese Lektion gehört zu Französisch als 2. Fremdsprache und hat jetzt ein eigenes Paket: <a href="${esc(`${SECOND_LANGUAGE_APP}#lesson=${movedLesson}`)}">Französisch 6 (2. Fremdsprache) öffnen</a>.</p>` : ""}${routeNotice ? `<p class="notice" role="status">${esc(routeNotice)}</p>` : ""}
+    <section class="hero"><div><div class="eyebrow">Gymnasium Bayern · 6. Klasse · 1. Fremdsprache</div><h1>Französisch im Alltag</h1><p>Du lernst Französisch seit Klasse 5. Finde dich in einer Stadt zurecht, verabrede dich und erzähle in kurzen Sätzen, auch von Erlebnissen.</p><p class="small">Du hast in Klasse 6 mit Französisch begonnen? Dann übe mit <a href="${SECOND_LANGUAGE_APP}">Französisch 6 (2. Fremdsprache)</a>.</p></div>
     <aside class="hero-note"><div class="eyebrow">Dein nächster Schritt</div><strong lang="fr">${esc(next.title)}</strong><p>${esc(next.skill)}</p><button type="button" class="button accent" id="continue">${completion(progress).completed ? "Weiterüben" : "Mit dieser Lektion starten"} <span aria-hidden="true">↗</span></button></aside></section>
     <div class="path-heading"><div><h2>Dein Lernpfad</h2><p>${lessons.length} Lektionen · Jede kann direkt geöffnet werden.</p></div></div>
-    <div class="stages">${STAGES.filter((stage) => stage.track === track)
+    <div class="stages">${STAGES
 			.map((stage) => {
 				const stageLessons = lessons.filter((lesson) => lesson.stage === stage.id);
 				return `<section class="stage" style="--stage-hue:${stage.hue}"><div class="stage-header"><span class="stage-icon" aria-hidden="true">${esc(stage.icon)}</span><div><h3>${esc(stage.title)}</h3><span class="small">${esc(stage.subtitle)}</span></div><span class="stage-count">${stageLessons.filter((lesson) => isComplete(progress, lesson.id)).length}/${stageLessons.length}</span></div><ol>${stageLessons.map((lesson) => `<li><button type="button" class="lesson-link ${isComplete(progress, lesson.id) ? "complete" : ""}" data-lesson="${lesson.id}"><span class="lesson-dot" aria-hidden="true">${isComplete(progress, lesson.id) ? "✓" : ""}</span><span><strong lang="fr">${esc(lesson.title)}</strong><small>${esc(lesson.skill)}</small></span><span class="lesson-status">${isComplete(progress, lesson.id) ? "Geübt" : "Öffnen →"}</span></button></li>`).join("")}</ol></section>`;
@@ -179,16 +174,6 @@ function renderPath(): void {
 	document
 		.querySelector("#continue")
 		?.addEventListener("click", () => navigate(next.id));
-	main.querySelectorAll<HTMLButtonElement>("[data-track]").forEach((button) => {
-		button.addEventListener("click", () => {
-			const selected = tracks.find((entry) => entry.id === button.dataset.track);
-			if (!selected || selected.id === track) return;
-			progress.activeLessonId = nextLesson(selected.id).id;
-			persist();
-			renderPath();
-			main.querySelector<HTMLButtonElement>(`[data-track="${selected.id}"]`)?.focus();
-		});
-	});
 	main
 		.querySelectorAll<HTMLButtonElement>("[data-lesson]")
 		.forEach(
@@ -223,7 +208,7 @@ function renderLesson(lesson: Lesson): void {
 	const task = lesson.tasks[progress.level];
 	const key = writingKey(lesson.id, progress.level);
 	const stage = required(STAGES.find((entry) => entry.id === lesson.stage));
-	const visible = lessonsForTrack(lesson.track);
+	const visible = LESSONS;
 	const index = visible.findIndex((entry) => entry.id === lesson.id);
 	const material = `<section class="panel" aria-labelledby="material-heading"><h2 id="material-heading">${lesson.listening ? "Zuerst hören" : "Dein Material"}</h2><p class="small">${esc(lesson.materialLabel)}</p>${lesson.listening ? `<p>Höre zuerst ohne mitzulesen. Die lokale Computerstimme spricht ein Übungsskript; natürliche Stimmen und Hörsehtexte übst du zusätzlich.</p><div class="self-actions"><button type="button" class="button accent" id="listen">Skript anhören</button><button type="button" class="button secondary" id="stop-listen">Stoppen</button></div><p class="small" id="voice-status" role="status"></p><details id="transcript"><summary>Transkript / Text zum Vorlesen</summary><p class="material" lang="${lesson.materialLanguage}">${esc(lesson.material)}</p></details><label class="toggle"><input type="checkbox" id="partner-listened" ${progress.listening[lesson.id]?.partner ? "checked" : ""}>Ein Partner hat mir den Text vorgelesen; ich habe zuerst ohne Mitlesen zugehört.</label><p class="small" id="listened-status" role="status"></p>` : `<p class="material" lang="${lesson.materialLanguage}">${esc(lesson.material)}</p>`}</section>`;
 	main.innerHTML = `<div class="lesson-top"><button type="button" class="text-button" id="back">← Zum Lernpfad</button><label class="level-select" for="level">Aufgabenstufe <select id="level"><option value="1" ${progress.level === 1 ? "selected" : ""}>Level 1 · Anwenden</option><option value="2" ${progress.level === 2 ? "selected" : ""}>Level 2 · Transfer</option></select></label></div>
@@ -242,7 +227,7 @@ function renderLesson(lesson: Lesson): void {
 				"",
 			)}</div><div id="quiz-feedback" role="status"></div>${progress.quizDone.includes(lesson.id) ? '<p class="done-mark">Bereits richtig geübt · du kannst es erneut versuchen.</p>' : ""}</section>
     <section class="panel"><h2>2 · Ausprobieren</h2><p class="small">Ergänze die kurzen Antworten. Großschreibung und ein Satzpunkt sind hier nicht entscheidend. Akzente zählen: a und à sind verschieden; eine französische Apostrophe darf gerade oder geschwungen sein. Bei längeren Formulierungen sind weitere gute Antworten möglich; diese Aufgabe prüft die angegebenen Kurzformen.</p><form id="practice-form">${lesson.practice.map((item, itemIndex) => `<label class="practice-label" for="practice-${itemIndex}">${esc(item.prompt)}</label><input class="practice-input" id="practice-${itemIndex}" lang="fr" data-index="${itemIndex}" autocomplete="off" spellcheck="false" value="${esc(practiceAnswers.get(lesson.id)?.[itemIndex] ?? "")}" required>`).join("")}${accentKeys("practice-accents")}<button type="submit" class="button secondary">Antworten prüfen</button></form><div id="practice-feedback" role="status"></div>${progress.practiceDone.includes(lesson.id) ? '<p class="done-mark">Bereits richtig geübt.</p>' : ""}</section>
-    <section class="panel"><h2>3 · ${lesson.speaking ? "Selbst sprechen und notieren" : "Mit eigenen Worten"}</h2><p class="task-prompt">${esc(task.prompt)}</p>${lesson.speaking ? '<p class="small">Sprich laut oder mit einem Partner. Hier speicherst du deine Notizen. Es wird nichts aufgenommen; Aussprache und Flüssigkeit werden nicht automatisch bewertet.</p>' : ""}<label class="answer-label" for="draft">${lesson.speaking ? "Deine Notizen" : "Deine Antwort"}</label><textarea id="draft" rows="7" maxlength="8000">${esc(progress.drafts[key] ?? "")}</textarea><span class="small" id="draft-note">Mindestens 20 Zeichen, bevor du ein Muster vergleichst. Eigene Formulierungen dürfen abweichen.</span>${accentKeys("draft-accents")}<div class="self-actions"><button type="button" class="button secondary" id="compare" ${canReview(progress.drafts[key] ?? "") ? "" : "disabled"}>Mit einem Muster vergleichen</button></div><div id="comparison"></div><p class="done-mark" id="writing-status" role="status">${progress.writingDone.includes(key) ? "Eigener Mustervergleich gespeichert." : ""}</p></section>
+    <section class="panel"><h2>3 · ${lesson.speaking ? "Selbst sprechen und notieren" : "Mit eigenen Worten"}</h2><p class="task-prompt">${esc(task.prompt)}</p>${lesson.speaking ? '<p class="small">Sprich laut oder mit einem Partner. Hier speicherst du deine Notizen. Es wird nichts aufgenommen; Aussprache und Flüssigkeit werden nicht automatisch bewertet.</p>' : ""}<label class="answer-label" for="draft">${lesson.speaking ? "Deine Notizen" : "Deine Antwort"}</label><textarea id="draft" rows="7" maxlength="8000">${esc(progress.drafts[key] ?? "")}</textarea><details class="small account-note"><summary><span aria-hidden="true">ⓘ</span> Wo bleibt mein Text?</summary><p>Dein Text bleibt nur in diesem Browser auf diesem Gerät. Er wird weder verschickt noch automatisch bewertet. Hast du dein eigenes Benutzerkonto oder teilst du es mit anderen? Falls du es teilst, lösche am Ende den Lernstand und die Texte mit „Lokalen Fortschritt zurücksetzen“ unten auf der Seite.</p></details><span class="small" id="draft-note">Mindestens 20 Zeichen, bevor du ein Muster vergleichst. Eigene Formulierungen dürfen abweichen.</span>${accentKeys("draft-accents")}<div class="self-actions"><button type="button" class="button secondary" id="compare" ${canReview(progress.drafts[key] ?? "") ? "" : "disabled"}>Mit einem Muster vergleichen</button></div><div id="comparison"></div><p class="done-mark" id="writing-status" role="status">${progress.writingDone.includes(key) ? "Eigener Mustervergleich gespeichert." : ""}</p></section>
     </div><aside class="lesson-aside"><section class="aside-card"><h2>Deine Schritte</h2><ul class="checklist"><li>Entdeckerwerkstatt · 3 Ziele</li><li>1. Schnellcheck</li><li>2. Kurzaufgaben</li><li>3. Eigene Antwort + Vergleich</li>${lesson.listening ? "<li>Zusätzlich: zuerst zugehört</li>" : ""}</ul><p class="small">Werkstatt und Level 1 zählen zum Kernpfad. Level 2 ist zusätzliche Transferübung. Ein Häkchen bestätigt deine Übung, keine geprüfte Sprachkompetenz.</p></section><section class="aside-card"><h2>Quellen und weiterüben</h2><ul class="source-list">${lesson.sourceIds
 			.map((id) => required(SOURCES.find((source) => source.id === id)))
 			.map(
@@ -443,7 +428,7 @@ function bindListening(lesson: Lesson): void {
 		});
 }
 function renderReference(): void {
-	main.innerHTML = `<div class="reference"><div class="eyebrow">Nachschlagen und weiterüben</div><h1>Sprache im Zusammenhang</h1><p>Öffne die passende Lektion und übe mit einem eigenen Beispiel.</p><section class="panel"><h2>Sprachwerkstatt</h2><ul class="reference-links">${lessonsForTrack(currentTrack(progress)).filter((lesson) =>
+	main.innerHTML = `<div class="reference"><div class="eyebrow">Nachschlagen und weiterüben</div><h1>Sprache im Zusammenhang</h1><p>Öffne die passende Lektion und übe mit einem eigenen Beispiel.</p><section class="panel"><h2>Sprachwerkstatt</h2><ul class="reference-links">${LESSONS.filter((lesson) =>
 		lesson.bindings.some((binding) => binding.startsWith("1.2")))
 		.map(
 			(lesson) =>
@@ -451,7 +436,7 @@ function renderReference(): void {
 		)
 		.join(
 			"",
-		)}</ul></section><section class="panel"><h2>Hören, Sprechen und Recherchieren</h2><p>Die Hör- und Aussprache-Skripte können lokal vorgelesen werden. Echte Varietäten, Hintergrundgeräusche, Körpersprache und natürliche Dialoge werden dadurch nicht vollständig geübt. Nutze zusätzlich echte Aufnahmen und Partnergespräche.</p><p>Das Paket übt einen ausgewählten Wortschatz. Dein Lehrwerk, Unterricht und eigene Wörter ergänzen ihn. Ein eigenes Vokabelheft mit neuen Wendungen, Aussprache und Beispielsätzen gehört dazu. Aktuelle Recherche, zusätzliche Lektüre und Lehrkraftfeedback bleiben weitere Aufgaben.</p></section><section class="panel"><h2>Quellen</h2><ul class="source-list">${SOURCES.map((source) => `<li><a href="${esc(source.url)}" target="_blank" rel="noopener noreferrer">${esc(source.label)}</a></li>`).join("")}</ul></section></div>`;
+		)}</ul></section><section class="panel"><h2>Hören, Sprechen und Recherchieren</h2><p>Die Hör- und Aussprache-Skripte können lokal vorgelesen werden. Echte Varietäten, Hintergrundgeräusche, Körpersprache und natürliche Dialoge werden dadurch nicht vollständig geübt. Nutze zusätzlich echte Aufnahmen und Partnergespräche.</p><p>Das Paket übt einen ausgewählten Wortschatz. Dein Lehrwerk, Unterricht und eigene Wörter ergänzen ihn. Ein eigenes Vokabelheft mit neuen Wendungen, Aussprache und Beispielsätzen gehört dazu. Aktuelle Recherche, zusätzliche Lektüre und Lehrkraftfeedback bleiben weitere Aufgaben.</p></section><section class="panel"><h2>Hinweis für Eltern und Lehrkräfte</h2><p>Antworten, eigene Texte und Häkchen speichert die App nur im Browser dieses Geräts (localStorage). Sie werden nicht verschickt, nicht ausgewertet und nicht mit anderen Geräten abgeglichen. Teilen sich mehrere Kinder ein Benutzerkonto, sollte am Ende „Lokalen Fortschritt zurücksetzen“ gewählt werden; das löscht auch die Texte. Die App ersetzt weder den Unterricht noch eine Rückmeldung durch eine Lehrkraft.</p><p>Französisch als 2. Fremdsprache (Beginn in Klasse 6) hat ein eigenes Paket: <a href="${SECOND_LANGUAGE_APP}">Französisch 6 (2. Fremdsprache)</a>.</p></section><section class="panel"><h2>Quellen</h2><ul class="source-list">${SOURCES.map((source) => `<li><a href="${esc(source.url)}" target="_blank" rel="noopener noreferrer">${esc(source.label)}</a></li>`).join("")}</ul></section></div>`;
 	main
 		.querySelectorAll<HTMLButtonElement>("[data-lesson]")
 		.forEach(
@@ -476,8 +461,18 @@ function applyRoute(): void {
 		rawParams.has("lesson") ||
 		new URLSearchParams(location.search).has("lesson");
 	routeNotice = "";
+	movedLesson = "";
 	if (link.level) progress.level = link.level;
-	if (link.lessonId && findLesson(link.lessonId)) {
+	if (link.lessonId?.startsWith("f6-2-")) {
+		const target = `${SECOND_LANGUAGE_APP}#lesson=${link.lessonId}${link.level ? `&level=${link.level}` : ""}`;
+		// Online the old address forwards; the offline copy shows the link instead.
+		if (location.protocol === "https:" && location.hostname === "academy.zam-os.org") {
+			location.replace(target);
+			return;
+		}
+		movedLesson = link.lessonId;
+		view = "path";
+	} else if (link.lessonId && findLesson(link.lessonId)) {
 		progress.activeLessonId = link.lessonId;
 		view = "lesson";
 	} else if (requestedLesson) {
@@ -522,13 +517,13 @@ document
 	?.addEventListener("click", () =>
 		showDialog(
 			"Mit ZAM behalten",
-			`<p>Für beide Lernpfade sind zusammen 222 Wiederholungsfragen vorbereitet. Jede führt zurück zu ihrer Lektion.</p><p>Wenn die Zelle veröffentlicht und in ZAM verfügbar ist, findest du sie unter „Aus der ZAM Academy“. Die Lektionen der beiden Lernpfade haben eigene Karten. Die Zelle heißt <strong>${esc(ZAM_CELL_ID)}</strong>.</p><p>Du kannst hier auch ohne Konto alle Lektionen offline üben.</p>`,
+			`<p>Für die ${LESSONS.length} Lektionen sind ${LESSONS.length * 3} Wiederholungsfragen vorbereitet. Jede führt zurück zu ihrer Lektion.</p><p>Wenn die Zelle veröffentlicht und in ZAM verfügbar ist, findest du sie unter „Aus der ZAM Academy“. Die Zelle heißt <strong>${esc(ZAM_CELL_ID)}</strong>. Die Karten für Französisch als 2. Fremdsprache gehören jetzt zur Zelle des Pakets „Französisch 6 (2. Fremdsprache)“ und behalten ihren Lernstand.</p><p>Du kannst hier auch ohne Konto alle Lektionen offline üben.</p>`,
 		),
 	);
 document.querySelector("#reset")?.addEventListener("click", () => {
 	showDialog(
 		"Fortschritt zurücksetzen?",
-		'<p>Deine lokalen Antworten und Häkchen dieses Französisch-Pakets werden gelöscht. Das lässt sich nicht rückgängig machen.</p><button type="button" class="button danger" id="confirm-reset">Fortschritt löschen</button>',
+		'<p>Deine lokalen Antworten, eigenen Texte und Häkchen dieses Französisch-Pakets werden gelöscht. Das lässt sich nicht rückgängig machen.</p><button type="button" class="button danger" id="confirm-reset">Fortschritt löschen</button>',
 	);
 	document.querySelector("#confirm-reset")?.addEventListener("click", () => {
 		progress = resetProgress(progress);

@@ -104,8 +104,16 @@ Lernpfad für die 1. und einen für die 2. Fremdsprache. Sie bleiben in dieser
 „noch nicht verfügbar“ da. Ob die Pakete in beiden Zellen erscheinen sollen,
 entscheidet Thomas (Frage im PR).
 
+Für Klasse 6 hat Thomas am 2026-11-24 entschieden: „Pfad herauslösen“. Der
+2.-FS-Pfad zieht als eigenes Paket `franzoesisch-2fs-gymnasium-6` in die Zelle
+`franzoesisch-2fs`, mit unveränderten Lektions-, Atom- und Karten-IDs;
+`franzoesisch-gymnasium-6` wird in einem eigenen PR zur reinen 1. Fremdsprache
+([Lehrplan und Kartenumzug](franzoesisch-2fs-gymnasium-6-coverage.md)).
+`franzoesisch-gymnasium-7` ist davon nicht berührt.
+
 ## Pakete in den neuen Zellen
 
 | Zelle | Klasse | Paket | Stand |
 | --- | --- | --- | --- |
 | `englisch-2fs` | 6 | [`englisch-2fs-gymnasium-6`](../englisch-2fs-gymnasium-6/) | 43 Lektionen, 129 Karten, Version 0.0 ([Lehrplan und Kartenbestand](englisch-2fs-gymnasium-6-coverage.md)) |
+| `franzoesisch-2fs` | 6 | [`franzoesisch-2fs-gymnasium-6`](../franzoesisch-2fs-gymnasium-6/) | 46 Lektionen, 138 Karten, Version 0.0, aus `franzoesisch-gymnasium-6` herausgelöst ([Lehrplan und Kartenumzug](franzoesisch-2fs-gymnasium-6-coverage.md)) |

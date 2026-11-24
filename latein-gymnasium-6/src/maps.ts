@@ -186,8 +186,8 @@ export function renderItalyMap(
 
 			<!-- Layer accents -->
 			<g data-map-layer="italy" style="opacity:${opacityFor("italy")}">
-				<path d="M254 206 C282 182 324 198 318 252" fill="none" stroke="var(--v-orange)" stroke-width="2" stroke-dasharray="5 4"/>
-				<text x="328" y="220" text-anchor="start" font-size="10" font-weight="700" class="rome-label-halo">Magna Graecia</text>
+				<path d="M306 168 L314 198 L308 214" fill="none" stroke="var(--v-orange)" stroke-width="2" stroke-dasharray="4 3"/>
+				<text x="268" y="232" text-anchor="middle" font-size="8" font-weight="700" class="rome-label-halo"><tspan x="268" dy="0">Magna</tspan><tspan x="268" dy="9">Graecia</tspan></text>
 			</g>
 			<g data-map-layer="carthage" style="opacity:${opacityFor("carthage")}">
 				<path d="M214 284 C236 258 258 248 270 236" fill="none" stroke="var(--v-coral)" stroke-width="2" stroke-dasharray="4 4"/>

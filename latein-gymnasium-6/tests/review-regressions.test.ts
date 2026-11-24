@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import cell from "../cell.json";
 import { findLesson, LESSONS } from "../src/curriculum";
 import { FIGURES, renderFigure } from "../src/figures";
+import { renderItalyMap } from "../src/maps";
 import { checkPractice } from "../src/practice";
 import {
 	drawKonjunktivSvg,
@@ -102,5 +103,41 @@ describe("Latein 6 regression guards", () => {
 			false,
 			false,
 		]);
+	});
+
+	it("pins all PR #198 review fixes for Latin accuracy, Ovid sources, history and map placement", () => {
+		const inschriften = text("l6-wendungen-inschriften");
+		expect(inschriften).toContain("fīliīs dīxit");
+		expect(inschriften).not.toContain("fīliōs dīxit");
+		expect(inschriften).not.toContain("treffen dir");
+
+		expect(text("l6-final-konsekutiv-ut")).not.toContain("legō, ut multa discerem");
+		expect(text("l6-final-konsekutiv-ut")).toContain("Librum lēgī, ut multa discerem");
+
+		const orpheus = text("l6-orpheus-eurydike-unterwelt");
+		expect(orpheus).toContain("ne flectat retro sua lumina");
+		expect(orpheus).toContain("Met. 10,51");
+		expect(orpheus).not.toContain("Nōlī respicere");
+
+		expect(text("l6-lernstrategien-pruefung")).not.toContain("Kapitulation");
+		expect(text("l6-englisch-romanisch")).toContain("Lehnübersetzung");
+		expect(text("l6-plinius-vesuvbriefe")).not.toContain("geprägt");
+
+		const hannibal = text("l6-hannibal-punische-kriege");
+		expect(hannibal).toContain("211 'Hannibal ante portās!'");
+		expect(hannibal).not.toContain("218 Hannibal zieht über die Alpen ('Hannibal ante portās!')");
+
+		const cellText = JSON.stringify(cell);
+		expect(cellText).not.toContain("Division' und 'dividieren' geht direkt auf den PPP-Stamm");
+		expect(cellText).not.toContain("Nōlī respicere");
+		expect(cellText).toContain("ne flectat retro sua lumina");
+
+		expect(FIGURES["l6-demonstrativa-hic-ille-iste"].caption).toContain("huius/huic");
+		expect(FIGURES["l6-demonstrativa-hic-ille-iste"].caption).not.toContain("Alle drei zeigen -īus");
+		expect(FIGURES["l6-trojanischer-krieg"].parts[1].note).toContain("spätere Epen");
+
+		const mapHtml = renderItalyMap("italy", "syrakus");
+		expect(mapHtml).toContain("Magna</tspan>");
+		expect(mapHtml).not.toContain('x="328" y="220"');
 	});
 });
