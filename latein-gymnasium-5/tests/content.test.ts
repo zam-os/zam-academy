@@ -134,13 +134,19 @@ describe("Grade 5 Gymnasium Latin teaching contract", () => {
 				/<script|<p>|<div>|\\\\\(|teacherVideo/,
 			);
 			const visible = JSON.stringify({
+				title: lesson.title,
+				skill: lesson.skill,
 				paragraphs: lesson.paragraphs,
 				material: lesson.material,
+				materialLabel: lesson.materialLabel,
 				quiz: lesson.quiz,
-				tasks: lesson.tasks,
+				takeaway: lesson.takeaway,
 				practice: lesson.practice,
+				tasks: lesson.tasks,
+				workshop: lesson.workshop,
 			});
 			expect(visible).not.toMatch(/\d\.\d/);
+			expect(visible).not.toMatch(/\d\s-\s\d/);
 			for (const goal of lesson.workshop.goals)
 				expect(goal.before).not.toContain("→");
 		},
@@ -308,6 +314,9 @@ describe("concept figures and explorer models", () => {
 			if (!specialKinds.has(kind)) {
 				expect(INSPECTORS[kind], lesson.id).toBeDefined();
 				expect(INSPECTORS[kind].items.length).toBeGreaterThanOrEqual(3);
+				expect(JSON.stringify(INSPECTORS[kind]), lesson.id).not.toMatch(
+					/\d\.\d|\d\s-\s\d/,
+				);
 				INSPECTORS[kind].items.forEach((_, i) =>
 					expect(drawGenericSvg(kind, i)).not.toMatch(/NaN|undefined/),
 				);
@@ -481,6 +490,15 @@ describe("ZAM content and proposal-only neighbouring inventory", () => {
 				expect(item.question.length).toBeGreaterThan(15);
 				expect(item.concept.length).toBeGreaterThan(2);
 				expect(item.question).not.toMatch(/\s\?$/);
+				const cardText = JSON.stringify([
+					atom.title,
+					item.question,
+					item.concept,
+					"sample_solution" in item ? item.sample_solution : "",
+					"fast_check" in item && item.fast_check ? item.fast_check.options : [],
+				]);
+				expect(cardText).not.toMatch(/\d\.\d/);
+				expect(cardText).not.toMatch(/\d\s-\s\d/);
 				if ("fast_check" in item && item.fast_check) {
 					expect(item.fast_check.options).toHaveLength(2);
 					expect(item.fast_check.correct_index).toBe(0);

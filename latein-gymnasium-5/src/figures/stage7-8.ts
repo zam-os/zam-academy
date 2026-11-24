@@ -134,7 +134,7 @@ export const STAGE7_8_FIGURES: Record<string, ConceptFigure> = {
 				${pill(30, 56, 146, 26, "1. Grab & D. M.", "v-gold-fill", "micro")}
 				${label(103, 108, "Grabsteine an Via Appia", "micro")}
 				${label(103, 132, "außerhalb der Stadt", "micro")}
-				${label(103, 156, "D. M. = dī mānēs", "micro")}
+				${label(103, 156, "D. M. = Dīs Mānibus", "micro")}
 				${pill(30, 190, 146, 26, "Münze für die Reise", "v-gold-fill", "micro")}`,
 			)}
 			${arrow(192, 136, 206, 136)}

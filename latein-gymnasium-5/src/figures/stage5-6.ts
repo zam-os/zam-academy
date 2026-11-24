@@ -196,7 +196,7 @@ export const STAGE5_6_FIGURES: Record<string, ConceptFigure> = {
 						badge: "2",
 						fill: "v-orange-fill",
 						heading: "Technik-Revolution",
-						lines: ["Rundbogen (arcus)", "Tonnen- & Kreuzgewölbe", "Kuppel (Pantheon)", "Beton (caementum)"],
+						lines: ["Rundbogen (arcus)", "Tonnen- & Kreuzgewölbe", "Kuppel (Pantheon)", "Beton (opus caementicium)"],
 						footer: "trägt große Weiten",
 					},
 					{
@@ -292,7 +292,7 @@ export const STAGE5_6_FIGURES: Record<string, ConceptFigure> = {
 						badge: "2",
 						fill: "v-blue-fill",
 						heading: "pietās (3-fach)",
-						lines: ["1. gegen die Götter", "2. gegen Eltern/Familie", "3. gegen den Staat", "Vorbild: pius Aenēās"],
+						lines: ["1. gegenüber den Göttern", "2. gegenüber den Eltern", "3. gegenüber dem Staat", "Vorbild: pius Aenēās"],
 						footer: "Pflicht & Respekt",
 					},
 					{

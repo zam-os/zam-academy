@@ -227,7 +227,7 @@ export const STAGE1_2_FIGURES: Record<string, ConceptFigure> = {
 						badge: "2",
 						fill: "v-purple-fill",
 						heading: "Abkürzungen",
-						lines: ["etc. = et cētera", "P. S. = post scrīptum", "R. I. P. = in pāce", "e. g. = zum Beispiel"],
+						lines: ["etc. = et cētera", "P. S. = post scrīptum", "R. I. P. = Requiēscat in pāce", "e. g. = zum Beispiel"],
 						footer: "heute noch genutzt",
 					},
 					{
