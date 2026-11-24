@@ -1,0 +1,23 @@
+{
+	"schema": 1,
+	"status": "proposal-only",
+	"approved": null,
+	"source_repository": "https://github.com/zam-os/zam",
+	"source_commit": "67e190c2b7e5282851dfdd60ce21b69ed373dfa9",
+	"source": "Bestandsprüfung am 2026-11-24 in zam-os/zam (tests/fixtures/curriculum/ und src/kernel/library/bundled-cells.ts): Für Latein am Gymnasium existieren keine de-by-Alt-Zellen für Jahrgangsstufe 5 oder 6. Die früheste Latein-Zelle ist de-by:gymnasium-7-latein-aci-partizipialkonstruktionen-deklinationen (Version 2026.08.1, 4 Karten J01–J04). Es wird keine Verlaufsübertragung vorgeschlagen.",
+	"sources": [],
+	"rows": [],
+	"neighbouring_grade_review": {
+		"cell_id": "de-by:gymnasium-7-latein-aci-partizipialkonstruktionen-deklinationen",
+		"source_path": "tests/fixtures/curriculum/de-by-gymnasium-7-latein-aci-partizipialkonstruktionen-deklinationen-kvt.json",
+		"items": [
+			"01K4T7A0000000000000000J01",
+			"01K4T7A0000000000000000J02",
+			"01K4T7A0000000000000000J03",
+			"01K4T7A0000000000000000J04"
+		],
+		"assessment": "J01 und J02 fragen den aktiven AcI ab, der bei Latein als 1. Fremdsprache bereits in Jahrgangsstufe 5 eingeführt wird (L5 2.3), während J03 und J04 das Participium Coniunctum (erst ab Jahrgangsstufe 6) betreffen. Die Altzelle ist ausdrücklich als L1/L2 für Jahrgangsstufe 7 ausgewiesen und bündelt mehrere Phänomene (J02). Eine Übernahme durch Jahrgangsstufe 5 würde Latein-7-Lernenden (insbesondere L2) und dem späteren Latein-7-Paket vorgreifen.",
+		"decision_question": "Soll die Nachbarzelle de-by:gymnasium-7-latein-aci-partizipialkonstruktionen-deklinationen (J01–J04) vollständig beim künftigen Latein-7-Paket verbleiben, oder soll Latein 5 einzelne Zeilen (J01/J02) davon gesondert inventarisieren?",
+		"decision": "pending-thomas-scope-decision"
+	}
+}

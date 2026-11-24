@@ -326,6 +326,7 @@ test("second foreign languages are their own Gymnasium paths and leave the first
   for (const [fach, [from, to]] of Object.entries(paths)) {
     const subject = registry.faecher.find((f) => f.id === fach);
     assert.deepEqual(subject.schools, ["gymnasium"], fach);
+    const liveGrades = new Set();
     for (let grade = 4; grade <= 13; grade++) {
       const offers = schoolSubject(trees, grade, fach)?.children ?? [];
       if (grade < from || grade > to) {
@@ -333,13 +334,21 @@ test("second foreign languages are their own Gymnasium paths and leave the first
         continue;
       }
       assert.deepEqual(offers.map((n) => n.school?.id), ["gymnasium"], `${fach} ${grade}`);
-      assert.equal(offers[0].offerKey, `slot:gymnasium:${grade}:${fach}`);
+      if (offers[0].pkg) {
+        assert.equal(offers[0].offerKey, `package:${offers[0].pkg.app}`);
+        liveGrades.add(grade);
+      } else {
+        assert.equal(offers[0].offerKey, `slot:gymnasium:${grade}:${fach}`);
+      }
     }
-    // The world lens groups the pending offers per grade: only "Gym" in it.
     const marks = world.find((n) => n.id === fach).children.filter((n) => n.planned);
-    assert.deepEqual(marks.map((n) => n.grade), Array.from({ length: to - from + 1 }, (_, i) => from + i), fach);
+    const expectedPlanned = Array.from({ length: to - from + 1 }, (_, i) => from + i).filter(
+      (grade) => !liveGrades.has(grade),
+    );
+    assert.deepEqual(marks.map((n) => n.grade), expectedPlanned, fach);
     assert.ok(marks.every((n) => n.sub === "Gym"), fach);
   }
+  assert.equal(schoolSubject(trees, 5, "latein").children[0].pkg?.app, "latein-gymnasium-5");
   // Englisch and Französisch keep their own cells in every school type.
   assert.deepEqual(
     schoolSubject(trees, 6, "englisch").children.map((n) => n.school.id),
