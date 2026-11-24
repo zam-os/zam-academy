@@ -161,24 +161,23 @@ try {
 	}
 	assert.equal(
 		await evaluate('document.querySelectorAll(".lesson-link").length'),
-		46,
+		28,
 	);
 	let states = 0;
 	for (const theme of ["light", "dark"]) {
 		await selectTheme(theme);
 		await route("");
-		for (const [track, size] of [["f1", 28], ["f2", 46]]) {
-			await evaluate(`document.querySelector('[data-track="${track}"]').click()`);
-			assert.equal(await themeOfPage(), theme, track);
-			assert.equal(await evaluate('document.querySelectorAll(".lesson-link").length'), size);
-			assert.equal(await evaluate(`document.querySelector('[data-track="${track}"]').getAttribute('aria-pressed')`), "true");
-			await screenshot(`path-${track}-${theme}`);
-			await route("#view=reference");
-			assert.ok(await evaluate(`[...document.querySelectorAll('[data-lesson]')].every(link => link.dataset.lesson.startsWith("f6-${track[1]}-"))`));
-			assert.ok(await evaluate("document.querySelectorAll('.reference-links li').length > 4"));
-			await screenshot(`reference-${track}-${theme}`);
-			await route("");
-		}
+		assert.equal(await themeOfPage(), theme);
+		assert.equal(await evaluate('document.querySelectorAll(".lesson-link").length'), 28);
+		assert.equal(await evaluate('document.querySelectorAll("[data-track]").length'), 0);
+		assert.ok(await evaluate('[...document.querySelectorAll("main a")].some((a) => a.href === "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-6/")'));
+		await screenshot(`path-${theme}`);
+		await route("#view=reference");
+		assert.ok(await evaluate(`[...document.querySelectorAll('[data-lesson]')].every(link => link.dataset.lesson.startsWith("f6-1-"))`));
+		assert.ok(await evaluate("document.querySelectorAll('.reference-links li').length > 4"));
+		assert.ok((await evaluate('document.querySelector("main").innerText')).includes("Hinweis für Eltern und Lehrkräfte"));
+		await screenshot(`reference-${theme}`);
+		await route("");
 		for (const lesson of lessons)
 			for (const level of [1, 2]) {
 				await route(`#lesson=${lesson.id}&level=${level}`);
@@ -194,7 +193,8 @@ try {
 				assert.ok(result.initial.startsWith("0 von 3"));
 				assert.equal(result.over, false, lesson.id);
 				assert.ok(!/NaN|undefined/.test(result.body));
-				if (["f6-1-routine", "f6-1-meteo", "f6-1-chemin", "f6-1-etre-passe", "f6-1-photo", "f6-2-bonjour", "f6-2-bd", "f6-2-paris"].includes(lesson.id))
+				assert.ok(result.body.includes("Wo bleibt mein Text?"), lesson.id);
+				if (["f6-1-routine", "f6-1-meteo", "f6-1-chemin", "f6-1-etre-passe", "f6-1-photo", "f6-1-bd"].includes(lesson.id))
 					await screenshot(`${lesson.id}-level${level}-${theme}`);
 				states++;
 			}
@@ -257,7 +257,7 @@ try {
 	assert.ok(
 		(
 			await evaluate('document.querySelector("#progress-strip").innerText')
-		).includes("1 von 46"),
+		).includes("1 von 28"),
 	);
 	await page("Page.reload");
 	for (let i = 0; i < 100; i++) {
@@ -272,7 +272,7 @@ try {
 	assert.ok(
 		(
 			await evaluate('document.querySelector("#progress-strip").innerText')
-		).includes("1 von 46"),
+		).includes("1 von 28"),
 	);
 	await evaluate(
 		`var draft=document.querySelector('#draft');draft.value='Bonjour, Monsieur. Une pomme, s’il vous plaît.';draft.dispatchEvent(new Event('input',{bubbles:true}));`,
@@ -280,7 +280,7 @@ try {
 	assert.ok(
 		(
 			await evaluate('document.querySelector("#progress-strip").innerText')
-		).includes("0 von 46"),
+		).includes("0 von 28"),
 	);
 	await evaluate(`var draft=document.querySelector('#draft');draft.setSelectionRange(draft.value.length,draft.value.length);document.querySelector('#draft-accents [data-char="œ"]').click()`);
 	assert.ok((await evaluate("document.querySelector('#draft').value")).endsWith("œ"));
@@ -288,13 +288,19 @@ try {
 	assert.equal(await evaluate("document.querySelector('#practice-1').value"), "é");
 
 	await route("#lesson=f6-1-routine&level=2");
-	assert.ok((await evaluate("document.querySelector('#progress-strip').innerText")).includes("0 von 28"));
 	assert.equal(await evaluate("document.querySelector('#previous').disabled"), true);
-	await route("");
-	assert.equal(await evaluate("document.querySelector('[data-track=f1]').getAttribute('aria-pressed')"), "true");
 	await route("#lesson=f6-1-revision&level=1");
 	assert.equal(await evaluate("document.querySelector('#next').disabled"), true);
-	await route("#lesson=f6-2-heures&level=2");
+	// A moved second-language lesson link offline shows where the lesson lives now.
+	await page("Page.navigate", { url: `${appUrl}#lesson=f6-2-paris&level=2` });
+	for (let i = 0; i < 100 && !(await evaluate('!!document.querySelector(".hero")')); i++)
+		await new Promise((r) => setTimeout(r, 20));
+	assert.equal(
+		await evaluate('[...document.querySelectorAll(".notice a")].map((a) => a.href).join()'),
+		"https://academy.zam-os.org/franzoesisch-2fs-gymnasium-6/#lesson=f6-2-paris",
+	);
+	await screenshot("moved-lesson-notice");
+	await route("#lesson=f6-1-routine&level=2");
 	for (const [hour, name] of [
 		[0, "minuit"],
 		[12, "midi"],
@@ -323,22 +329,14 @@ try {
 			await evaluate('document.querySelector("#clock-readout").innerText')
 		).includes("vingt et une heures quarante-cinq"),
 	);
-	await route("#lesson=f6-2-nombres&level=1");
-	await evaluate(
-		`var n=document.querySelector('#number-slider');n.value='71';n.dispatchEvent(new Event('input'))`,
-	);
-	assert.equal(
-		await evaluate('document.querySelectorAll(".number-part")[1].textContent'),
-		"11",
-	);
-	await route("#lesson=f6-2-france&level=1");
+	await route("#lesson=f6-1-ville&level=1");
 	assert.equal(
 		await evaluate('document.querySelectorAll("[data-city]").length'),
 		7,
 	);
 	assert.equal(
 		await evaluate('document.querySelectorAll("[data-river]").length'),
-		4,
+		5,
 	);
 	const mountains = await evaluate(`(() => {
 		const land = document.querySelector("svg .land");
@@ -368,15 +366,6 @@ try {
 	await route("#lesson=f6-1-ville&level=1");
 	assert.equal(await evaluate('document.querySelector("[data-river=saone]") !== null'), true);
 	await screenshot("lyon-confluence");
-	await route("#lesson=f6-2-famille&level=1");
-	await evaluate(
-		'Array.from(document.querySelectorAll(".quiz-choice")).find(el=>el.textContent==="ma mère").click()',
-	);
-	assert.ok(
-		(
-			await evaluate('document.querySelector("#quiz-feedback").innerText')
-		).includes("Lina spricht selbst"),
-	);
 	await route("#lesson=f6-1-sons&level=1");
 	assert.equal(await evaluate("document.querySelector('.lesson-content > section:first-child h2').textContent"), "Zuerst hören");
 	// No installed voice is required: partner evidence is a complete accessible fallback.
@@ -412,12 +401,12 @@ try {
 				if (
 					[
 						"",
-						"f6-2-heures",
+						"f6-1-routine",
 						"f6-1-chemin",
 						"f6-1-photo",
-						"f6-2-france",
-						"f6-2-bonjour",
-						"f6-2-nombres",
+						"f6-1-ville",
+						"f6-1-nombres",
+						"f6-1-restaurant",
 						"reference",
 					].includes(id)
 				)
@@ -445,7 +434,9 @@ try {
 				externalRequests: 0,
 				checks: [
 					"all workshop handlers",
-					"both curriculum selectors and split progress",
+					"single path without curriculum selector",
+					"moved second-language lesson links",
+					"shared-account note on every writing field",
 					"all visual selectors",
 					"accent insertion",
 					"quiz feedback",
@@ -454,10 +445,8 @@ try {
 					"reload persistence",
 					"edited-draft invalidation",
 					"clock",
-					"number slider",
 					"map layers",
 					"midnight/noon clock labels",
-					"first-person possessive quiz",
 					"partner listening",
 				],
 			},

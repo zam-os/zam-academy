@@ -361,6 +361,9 @@ test("second foreign languages are their own Gymnasium paths and leave the first
   // Englisch 6 as second foreign language has its own package in its own cell.
   assert.equal(schoolSubject(trees, 6, "englisch-2fs").children[0].pkg?.app, "englisch-2fs-gymnasium-6");
   assert.ok(!schoolSubject(trees, 6, "englisch").children.some((n) => n.pkg?.app === "englisch-2fs-gymnasium-6"));
+  // Französisch 6 as second foreign language likewise.
+  assert.equal(schoolSubject(trees, 6, "franzoesisch-2fs").children[0].pkg?.app, "franzoesisch-2fs-gymnasium-6");
+  assert.ok(!schoolSubject(trees, 6, "franzoesisch").children.some((n) => n.pkg?.app === "franzoesisch-2fs-gymnasium-6"));
 
   // The coverage matrix shows the paths at the Gymnasium only.
   const gym = matrix(registry, "gymnasium").nodes;

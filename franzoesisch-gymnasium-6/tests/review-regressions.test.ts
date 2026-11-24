@@ -2,9 +2,7 @@ import { describe, expect, it } from "vitest";
 import mapping from "../replaces-de-by.json";
 import cell from "../cell.json";
 import legacy from "./fixtures/de-by-gymnasium-7-franzoesisch-passe-compose-relativsaetze-verneinung-kvt.json";
-import { completion, freshProgress, currentTrack } from "../src/storage/progress";
-import { findLesson } from "../src/curriculum";
-import { checkPractice } from "../src/practice";
+import { completion, freshProgress } from "../src/storage/progress";
 import {
 	FRANCE_CITIES,
 	FRANCE_LAND,
@@ -47,20 +45,6 @@ function onLand([x, y]: MapPoint): boolean {
 }
 
 describe("reviewed learner-facing language", () => {
-	it("accepts both common decimal separators in the bakery price", () => {
-		const price = findLesson("f6-2-mediation")!.practice[0];
-		for (const input of ["1,50", "1.50", "1,5", "1.5"])
-			expect(checkPractice([price], [input])).toEqual([true]);
-		expect(checkPractice([price], ["1,05"])).toEqual([false]);
-	});
-
-	it("makes the possessive quiz a first-person utterance completed by the whole answer", () => {
-		const quiz = findLesson("f6-2-famille")!.quiz;
-		expect(quiz.question.replace("…", ` ${quiz.answer}.`)).toBe(
-			"Lina dit : « Voici ma mère. »",
-		);
-		expect(quiz.explanation).toContain("Lina spricht selbst");
-	});
 	it.each([
 		[0, 0, "minuit"],
 		[0, 15, "minuit quinze"],
@@ -161,13 +145,9 @@ describe("approved history transfers from the neighbouring grade", () => {
 	});
 });
 
-describe("selected curriculum path", () => {
-	it("calculates progress from the active path without sharing completion totals", () => {
-		const progress = freshProgress();
-		expect(currentTrack(progress)).toBe("f2");
-		expect(completion(progress)).toEqual({ completed: 0, total: 46, percent: 0 });
-		progress.activeLessonId = "f6-1-routine";
-		expect(currentTrack(progress)).toBe("f1");
-		expect(completion(progress)).toEqual({ completed: 0, total: 28, percent: 0 });
+describe("first-language path only", () => {
+	it("counts progress over the 28 first-language lessons", () => {
+		expect(completion(freshProgress())).toEqual({ completed: 0, total: 28, percent: 0 });
+		expect(freshProgress().activeLessonId).toBe("f6-1-routine");
 	});
 });

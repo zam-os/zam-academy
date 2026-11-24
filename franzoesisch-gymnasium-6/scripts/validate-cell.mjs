@@ -32,7 +32,7 @@ try {
 			item.source_link,
 		);
 	}
-	assert.equal(items.length, 222);
+	assert.equal(items.length, 84);
 	const first = await zam.ensureCard(db, items[0].id, user);
 	await zam.evaluateRating(db, {
 		cardId: first.id,
@@ -47,7 +47,7 @@ try {
 		reviews: await db.prepare("SELECT * FROM review_logs ORDER BY id").all(),
 	});
 	const before = await snapshot();
-	assert.equal(before.cards.length, 222);
+	assert.equal(before.cards.length, 84);
 	assert.equal(before.reviews.length, 1);
 	for (let repeat = 0; repeat < 2; repeat++) {
 		await zam.installKvtTile(db, tile);
@@ -55,7 +55,7 @@ try {
 		assert.deepEqual(await snapshot(), before);
 	}
 	console.log(
-		"ok: install creates no cards; 222 fresh cards enrol. Repeat install and enrolment preserve the review record.",
+		"ok: install creates no cards; 84 fresh cards enrol. Repeat install and enrolment preserve the review record.",
 	);
 } finally {
 	if (db) await db.close();
