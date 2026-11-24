@@ -1289,13 +1289,17 @@ dialog::backdrop {
 	}
 }
 
-.track-picker {
-	display: grid;
-	grid-template-columns: repeat(2, minmax(0, 1fr));
-	gap: 0.75rem;
-	margin-block: 1.25rem 0.25rem;
+.account-note {
+	margin-block: 0.4rem 0.2rem;
 }
-.track-picker button,
+.account-note summary {
+	cursor: pointer;
+	width: fit-content;
+}
+.account-note p {
+	margin-block: 0.35rem 0;
+	max-width: 62ch;
+}
 .step-options button,
 .route-grid button {
 	min-width: 0;
@@ -1306,31 +1310,20 @@ dialog::backdrop {
 	color: var(--ink);
 	cursor: pointer;
 }
-.track-picker button {
-	display: grid;
-	gap: 0.25rem;
-	text-align: left;
-}
-.track-picker strong,
 .step-options strong,
 .route-grid strong {
 	font-size: 0.95rem;
 }
-.track-picker button[aria-pressed="true"],
 .step-options button[aria-pressed="true"],
 .route-grid button[aria-pressed="true"] {
 	border-color: var(--stage-color, var(--accent));
 	outline: 2px solid var(--stage-color, var(--accent));
 	outline-offset: -3px;
 }
-.track-picker button:focus-visible,
 .step-options button:focus-visible,
 .route-grid button:focus-visible {
 	outline: 3px solid var(--ink);
 	outline-offset: 2px;
-}
-.track-picker span {
-	font-size: 0.82rem;
 }
 .step-explorer,
 .schedule {
@@ -1431,7 +1424,6 @@ dialog::backdrop {
 	background: var(--accent-soft);
 }
 @media (max-width: 420px) {
-	.track-picker button,
 	.step-options button,
 	.route-grid button {
 		padding-inline: 0.4rem;

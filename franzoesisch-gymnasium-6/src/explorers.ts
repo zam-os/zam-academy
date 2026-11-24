@@ -56,12 +56,6 @@ const firstStoryboard: Step[] = [
 	{ label: "Lösung", icon: "🎫", example: "Jade : Ah, je l’ai trouvé !", detail: "Jade findet das Ticket in ihrer Kleidertasche." },
 ];
 
-const secondStoryboard: Step[] = [
-	{ label: "Begrüßung", icon: "👋", example: "Léa : Salut, Sam !", detail: "Léa begrüßt Sam." },
-	{ label: "Frage", icon: "❔", example: "Sam : Où est le chat ?", detail: "Sam sucht die Katze." },
-	{ label: "Antwort", icon: "🐈", example: "Léa : Le chat est dans le sac.", detail: "Léa zeigt auf die Katze in der Tasche." },
-];
-
 const paris: Step[] = [
 	{ label: "Tour Eiffel", icon: "🗼", example: "On va à la tour Eiffel.", detail: "Der Eiffelturm steht westlich von Louvre und Notre-Dame." },
 	{ label: "Louvre", icon: "◈", example: "On visite le Louvre.", detail: "Der Louvre ist ein Museum. Seine Glaspyramide markiert einen Eingang." },
@@ -111,7 +105,7 @@ export function renderExplorer(lesson: Lesson): string {
 		case "recipe": return stepExplorer("Rezeptfolge · Wähle einen Schritt", recipe);
 		case "magnitude": return stepExplorer("Stellenwerte · Wähle eine Zahl", magnitudes);
 		case "route": return routeExplorer();
-		case "storyboard": return stepExplorer("Storyboard · Wähle eine Szene", lesson.track === "f1" ? firstStoryboard : secondStoryboard);
+		case "storyboard": return stepExplorer("Storyboard · Wähle eine Szene", firstStoryboard);
 		default: return "";
 	}
 }

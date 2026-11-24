@@ -1,8 +1,84 @@
-import { findLesson, lessonsForTrack, LESSONS } from "../curriculum";
+import { LESSONS } from "../curriculum";
 import { canReview } from "../practice";
 import type { Level } from "../types";
 
 export const STORAGE_KEY = "franzoesisch_gym6_academy_progress_v1";
+/**
+ * Until 2026-11 this package also held the second-language path; its lessons
+ * (`f6-2-…`) moved to `franzoesisch-2fs-gymnasium-6` on the same origin. Before
+ * this package saves (and so drops ids it no longer knows), it hands those
+ * entries over once, while the new package has nothing saved of its own.
+ */
+export const SECOND_LANGUAGE_STORAGE_KEY = "franzoesisch_2fs_gym6_academy_progress_v1";
+const secondLanguage = (key: string) => key.startsWith("f6-2-");
+
+/** Only the second-language entries of a saved state, or null when there are none. */
+export function secondLanguageEntries(raw: string | null): string | null {
+	try {
+		const value: unknown = JSON.parse(raw ?? "null");
+		if (!value || typeof value !== "object" || Array.isArray(value)) return null;
+		const data = value as Record<string, unknown>;
+		const picked: Record<string, unknown> = {};
+		let found = false;
+		for (const field of ["quizDone", "practiceDone", "workshopDone", "writingDone"]) {
+			const list = Array.isArray(data[field])
+				? (data[field] as unknown[]).filter(
+						(entry) => typeof entry === "string" && secondLanguage(entry),
+					)
+				: [];
+			picked[field] = list;
+			found ||= list.length > 0;
+		}
+		for (const field of ["drafts", "listening"]) {
+			const map = data[field];
+			const entries =
+				map && typeof map === "object" && !Array.isArray(map)
+					? Object.entries(map).filter(([key]) => secondLanguage(key))
+					: [];
+			picked[field] = Object.fromEntries(entries);
+			found ||= entries.length > 0;
+		}
+		if (typeof data.activeLessonId === "string" && secondLanguage(data.activeLessonId))
+			picked.activeLessonId = data.activeLessonId;
+		if (data.level === 2) picked.level = 2;
+		return found ? JSON.stringify(picked) : null;
+	} catch {
+		return null;
+	}
+}
+
+/**
+ * Returns the second-language entries that still wait for the new package:
+ * null once they are handed over (or there are none). A failed write, for
+ * example a full storage quota, leaves them pending; saveProgress then keeps
+ * them in this package's state so that the only copy is never overwritten.
+ */
+export function handOverSecondLanguage(): string | null {
+	try {
+		if (localStorage.getItem(SECOND_LANGUAGE_STORAGE_KEY) !== null) return null;
+		const entries = secondLanguageEntries(localStorage.getItem(STORAGE_KEY));
+		if (entries === null) return null;
+		try {
+			localStorage.setItem(SECOND_LANGUAGE_STORAGE_KEY, entries);
+			return null;
+		} catch {
+			return entries;
+		}
+	} catch {
+		return null;
+	}
+}
+
+/** This package's state plus the second-language entries that are still pending. */
+function withPending(progress: Progress, pending: string): Record<string, unknown> {
+	const extra = JSON.parse(pending) as Record<string, unknown>;
+	const state: Record<string, unknown> = { ...progress };
+	for (const field of ["quizDone", "practiceDone", "workshopDone", "writingDone"] as const)
+		state[field] = [...new Set([...progress[field], ...((extra[field] as string[]) ?? [])])];
+	state.drafts = { ...((extra.drafts as object) ?? {}), ...progress.drafts };
+	state.listening = { ...((extra.listening as object) ?? {}), ...progress.listening };
+	return state;
+}
 export interface ListeningEvidence {
 	synthetic: boolean;
 	partner: boolean;
@@ -34,7 +110,7 @@ const listeningIds = new Set(
 export function freshProgress(): Progress {
 	return {
 		resetAt: 0,
-		activeLessonId: lessonsForTrack("f2")[0].id,
+		activeLessonId: LESSONS[0].id,
 		level: 1,
 		quizDone: [],
 		practiceDone: [],
@@ -116,6 +192,7 @@ export function parseProgress(raw: string | null): Progress {
 	}
 }
 export function loadProgress(): Progress {
+	handOverSecondLanguage();
 	try {
 		return parseProgress(localStorage.getItem(STORAGE_KEY));
 	} catch {
@@ -175,15 +252,15 @@ export function mergeProgress(
 /** Read immediately before writing: navigation in a stale tab must not erase work. */
 export function saveProgress(progress: Progress, baseline: Progress): boolean {
 	try {
-		Object.assign(
-			progress,
-			mergeProgress(
-				parseProgress(localStorage.getItem(STORAGE_KEY)),
-				progress,
-				baseline,
-			),
+		const stored = parseProgress(localStorage.getItem(STORAGE_KEY));
+		// A confirmed reset deletes this package's texts, pending ones included.
+		const pending =
+			progress.resetAt > stored.resetAt ? null : handOverSecondLanguage();
+		Object.assign(progress, mergeProgress(stored, progress, baseline));
+		localStorage.setItem(
+			STORAGE_KEY,
+			JSON.stringify(pending ? withPending(progress, pending) : progress),
 		);
-		localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
 		return true;
 	} catch {
 		return false;
@@ -243,20 +320,15 @@ export function isComplete(progress: Progress, id: string): boolean {
 			progress.listening[id]?.partner === true)
 	);
 }
-export function currentTrack(progress: Progress): "f1" | "f2" {
-	return findLesson(progress.activeLessonId)?.track ?? "f2";
-}
-
 export function completion(
 	progress: Progress,
 ): { completed: number; total: number; percent: number } {
-	const visible = lessonsForTrack(currentTrack(progress));
-	const completed = visible.filter((lesson) =>
+	const completed = LESSONS.filter((lesson) =>
 		isComplete(progress, lesson.id),
 	).length;
 	return {
 		completed,
-		total: visible.length,
-		percent: Math.round((100 * completed) / visible.length),
+		total: LESSONS.length,
+		percent: Math.round((100 * completed) / LESSONS.length),
 	};
 }
