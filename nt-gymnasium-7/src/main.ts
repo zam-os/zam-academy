@@ -70,6 +70,7 @@ class InformatikApp {
   private taskTips = 0;
   private taskRevealed = false;
   private taskSolved = false;
+  private remoteResetTimer = 0;
 
   constructor() {
     this.progress = loadLearnerProgress();
@@ -91,7 +92,11 @@ class InformatikApp {
     window.addEventListener("storage", (event) => {
       if (event.key === null) return;
       if (event.newValue === null && LEARNER_STORAGE_KEYS.includes(event.key)) {
-        this.resetPracticeView(loadLearnerProgress());
+        // One removeItem, one event. A reset deletes the wiki and the progress
+        // one after another. Leaving the lesson on the first event lets this
+        // tab open it again before the remaining keys are gone, and a later
+        // event then discards that lesson.
+        this.scheduleRemoteReset();
         return;
       }
       if (event.key !== LEARNER_PROGRESS_KEY) return;
@@ -104,6 +109,15 @@ class InformatikApp {
       this.syncHeader();
       if (this.view === "path" || this.view === "overview") this.render();
     });
+  }
+
+  private scheduleRemoteReset(): void {
+    window.clearTimeout(this.remoteResetTimer);
+    this.remoteResetTimer = window.setTimeout(() => {
+      this.remoteResetTimer = 0;
+      if (LEARNER_STORAGE_KEYS.some((key) => localStorage.getItem(key) !== null)) return;
+      this.resetPracticeView(loadLearnerProgress());
+    }, 0);
   }
 
   private resetPracticeView(progress: LearnerProgress): void {
