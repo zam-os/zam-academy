@@ -13,6 +13,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | Latein 6 Gymnasium (LehrplanPLUS Bayern, 2. Fremdsprache) | [`latein-gymnasium-6-l2/`](latein-gymnasium-6-l2/) | Built by Pages on merge | `zam-academy:latein-gymnasium-6-l2` |
 | Latein 7 Gymnasium (LehrplanPLUS Bayern, 1. Fremdsprache) | [`latein-gymnasium-7-l1/`](latein-gymnasium-7-l1/) | Built by Pages on merge | `zam-academy:latein-gymnasium-7-l1` |
 | English 6 Gymnasium (Bavaria, 2. FS) | [`englisch-2fs-gymnasium-6/`](englisch-2fs-gymnasium-6/) | Built by Pages on merge | `zam-academy:englisch-2fs-gymnasium-6` |
+| English 7 Gymnasium (Bavaria, second foreign language) | [`englisch-2fs-gymnasium-7/`](englisch-2fs-gymnasium-7/) | Built by Pages on merge | `zam-academy:englisch-2fs-gymnasium-7` |
 | French 6 Gymnasium (Bavaria, 2. FS) | [`franzoesisch-2fs-gymnasium-6/`](franzoesisch-2fs-gymnasium-6/) | Built by Pages on merge | `zam-academy:franzoesisch-2fs-gymnasium-6` |
 | Deutsch 5 Gymnasium (LehrplanPLUS Bayern) | [`deutsch-gymnasium-5/`](deutsch-gymnasium-5/) | https://academy.zam-os.org/deutsch-gymnasium-5/ | `zam-academy:deutsch-gymnasium-5` |
 | German 6 Gymnasium (Bavarian LehrplanPLUS) | [`deutsch-gymnasium-6/`](deutsch-gymnasium-6/) | Built by Pages on merge | `zam-academy:deutsch-gymnasium-6` |
@@ -73,6 +74,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | Geschichte 10 Realschule (LehrplanPLUS Bayern, gemeinsamer Lernpfad) | [`geschichte-realschule-10/`](geschichte-realschule-10/) | https://academy.zam-os.org/geschichte-realschule-10/ | `zam-academy:geschichte-realschule-10` |
 | Geography 5 Realschule (Bavaria, all tracks) | [`geographie-realschule-5/`](geographie-realschule-5/) | https://academy.zam-os.org/geographie-realschule-5/ | `zam-academy:geographie-realschule-5` |
 | Geography 6 Realschule (Bavaria, all tracks) | [`geographie-realschule-6/`](geographie-realschule-6/) | https://academy.zam-os.org/geographie-realschule-6/ | `zam-academy:geographie-realschule-6` |
+| Geographie 7 Realschule (LehrplanPLUS Bayern, alle Wahlpflichtfächergruppen) | [`geographie-realschule-7/`](geographie-realschule-7/) | Built by Pages on merge | `zam-academy:geographie-realschule-7` |
 | Geographie 9 Realschule (LehrplanPLUS Bayern, gemeinsamer Lernpfad) | [`geographie-realschule-9/`](geographie-realschule-9/) | https://academy.zam-os.org/geographie-realschule-9/ | `zam-academy:geographie-realschule-9` |
 | Biology 6 Realschule (Bavaria, all tracks) | [`biologie-realschule-6/`](biologie-realschule-6/) | https://academy.zam-os.org/biologie-realschule-6/ | `zam-academy:biologie-realschule-6` |
 | Biologie 10 Realschule (LehrplanPLUS Bayern, gemeinsamer Lernpfad) | [`biologie-realschule-10/`](biologie-realschule-10/) | https://academy.zam-os.org/biologie-realschule-10/ | `zam-academy:biologie-realschule-10` |
@@ -190,6 +192,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Physik 11 Gymnasium: cd physik-gymnasium-11 (dev server on :5226)
 # Geography 5 Realschule: cd geographie-realschule-5 (dev server on :5240)
 # Geography 6 Realschule: cd geographie-realschule-6 (dev server on :5257)
+# Geographie 7 Realschule: cd geographie-realschule-7 (dev server on :5287)
 # German 5 Mittelschule: cd deutsch-mittelschule-5 (dev server on :5230)
 # German 6 Mittelschule: cd deutsch-mittelschule-6 (dev server on :5231)
 # Mathematics 5 Mittelschule: cd mathematik-mittelschule-5 (dev server on :5228)
@@ -216,8 +219,9 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Latein 5 Gymnasium: cd latein-gymnasium-5 (dev server on :5280)
 # Latein 6 Gymnasium: cd latein-gymnasium-6 (dev server on :5283)
 # Latein 6 Gymnasium (2. FS): cd latein-gymnasium-6-l2 (dev server on :5284)
-# Latein 7 Gymnasium (1. FS): cd latein-gymnasium-7-l1 (dev server on :5285)
+# Latein 7 Gymnasium (1. FS): cd latein-gymnasium-7-l1 (dev server on :5287)
 # English 6 Gymnasium (2. FS): cd englisch-2fs-gymnasium-6 (dev server on :5281)
+# English 7 Gymnasium (second foreign language): cd englisch-2fs-gymnasium-7 (dev server on :5286)
 # French 6 Gymnasium (2. FS): cd franzoesisch-2fs-gymnasium-6 (dev server on :5282)
 # German 5 Gymnasium: cd deutsch-gymnasium-5 (dev server on :5249)
 # German 6 Gymnasium: cd deutsch-gymnasium-6 (dev server on :5260)

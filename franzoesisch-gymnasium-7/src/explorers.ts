@@ -52,7 +52,7 @@ const story: Step[] = [
 ];
 
 const alesia: Step[] = [
-	{ label: "Historischer Ort", icon: "◇", example: "Le siège a lieu à Alésia.", detail: "Die Belagerung ereignete sich 52 vor unserer Zeitrechnung." },
+	{ label: "Historischer Ort", icon: "◇", example: "Le siège a eu lieu à Alésia.", detail: "Die Belagerung ereignete sich 52 vor unserer Zeitrechnung." },
 	{ label: "Materielle Spur", icon: "▤", example: "On trouve des traces des camps romains.", detail: "Spuren von Lagern lassen sich archäologisch untersuchen." },
 	{ label: "Erfundene Szene", icon: "…", example: "« Regarde la colline ! »", detail: "Linas Comic erfindet, wer dort spricht und was gesagt wird." },
 ];

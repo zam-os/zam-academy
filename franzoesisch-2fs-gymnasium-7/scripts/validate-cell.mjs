@@ -128,9 +128,11 @@ try {
 		const tokensBefore = await tokenState(db);
 		assert.equal(studied.cards.length, 117);
 		assert.equal(studied.reviews.length, 117);
-		for (const step of order) await zam.installKvtTile(db, step === "new" ? tile : remaining);
-		assert.deepEqual(await snapshot(db), studied, "cards and reviews stay untouched");
-		assert.deepEqual(await tokenState(db), tokensBefore, "no revision, no deprecation, same slugs");
+		for (const step of order) {
+			await zam.installKvtTile(db, step === "new" ? tile : remaining);
+			assert.deepEqual(await snapshot(db), studied, `cards and reviews after installing ${step}`);
+			assert.deepEqual(await tokenState(db), tokensBefore, `content and active tokens after installing ${step}`);
+		}
 		for (const item of items) {
 			assert.equal((await zam.getTokenById(db, item.id)).source_link, item.source_link);
 			await zam.ensureCard(db, item.id, learner);

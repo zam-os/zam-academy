@@ -33,6 +33,7 @@ import {
 	ZAM_CELL_ID,
 	secondLanguageUrl,
 } from "../src/zam/zam-link";
+import { renderExplorer } from "../src/explorers";
 import { workshopGoals } from "../src/workshop";
 const items = cell.atoms.map((a) => a.practice_items).flat();
 
@@ -135,6 +136,16 @@ describe("Grade 7 first-language French teaching contract", () => {
 		}
 		for (const id of ["F1-01", "F1-03", "F1-09", "F1-24", "F1-38", "F1-47"])
 			expect(coverage.rows.find((row) => row.id === id)?.status).toBe("supported");
+	});
+	it("models the viewpoint from the boat and the completed event at Alésia", () => {
+		const boat = findLesson("f7-1-venir-vivre-voir")!;
+		expect(boat.quiz.answer).toBe("Tu vois l’île depuis le bateau.");
+		for (const answer of quizOptions(boat))
+			expect(answer).toContain("depuis le bateau");
+
+		const alesia = findLesson("f7-1-alesia")!;
+		expect(alesia.quiz.answer).toBe("Le siège a eu lieu à Alésia.");
+		expect(renderExplorer(alesia)).toContain(alesia.quiz.answer);
 	});
 	it("keeps grammar aligned to the Grade 7 curriculum", () => {
 		const text = (id: string) => findLesson(id)!.paragraphs.join(" ");

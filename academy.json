@@ -2,232 +2,38 @@
   "schema": 1,
   "goal": "Bis Ende 2026: alle Themen der Klassen 5 bis 13 in Bayern",
   "schulen": [
-    {
-      "id": "grundschule",
-      "name": "Grundschule",
-      "wo": "an der Grundschule",
-      "short": "GS",
-      "from": 4,
-      "to": 4
-    },
-    {
-      "id": "realschule",
-      "name": "Realschule",
-      "wo": "an der Realschule",
-      "short": "Real",
-      "from": 5,
-      "to": 10
-    },
-    {
-      "id": "gymnasium",
-      "name": "Gymnasium",
-      "wo": "am Gymnasium",
-      "short": "Gym",
-      "from": 5,
-      "to": 13
-    },
-    {
-      "id": "mittelschule",
-      "name": "Mittelschule",
-      "wo": "an der Mittelschule",
-      "short": "MS",
-      "from": 5,
-      "to": 10
-    },
-    {
-      "id": "fosbos",
-      "name": "FOS / BOS",
-      "wo": "an der FOS / BOS",
-      "short": "FOS/BOS",
-      "from": 11,
-      "to": 13
-    }
+    { "id": "grundschule", "name": "Grundschule", "wo": "an der Grundschule", "short": "GS", "from": 4, "to": 4 },
+    { "id": "realschule", "name": "Realschule", "wo": "an der Realschule", "short": "Real", "from": 5, "to": 10 },
+    { "id": "gymnasium", "name": "Gymnasium", "wo": "am Gymnasium", "short": "Gym", "from": 5, "to": 13 },
+    { "id": "mittelschule", "name": "Mittelschule", "wo": "an der Mittelschule", "short": "MS", "from": 5, "to": 10 },
+    { "id": "fosbos", "name": "FOS / BOS", "wo": "an der FOS / BOS", "short": "FOS/BOS", "from": 11, "to": 13 }
   ],
   "bereiche": [
-    {
-      "id": "sprachen",
-      "name": "Sprachen",
-      "glyph": "Aa"
-    },
-    {
-      "id": "mathematik",
-      "name": "Mathematik",
-      "glyph": "∑"
-    },
-    {
-      "id": "naturwissenschaften",
-      "name": "Naturwissenschaften",
-      "glyph": "⚛"
-    },
-    {
-      "id": "informatik",
-      "name": "Informatik",
-      "glyph": "</>"
-    },
-    {
-      "id": "gesellschaft",
-      "name": "Gesellschaft",
-      "glyph": "⌛"
-    },
-    {
-      "id": "wirtschaft",
-      "name": "Wirtschaft",
-      "glyph": "€"
-    }
+    { "id": "sprachen", "name": "Sprachen", "glyph": "Aa" },
+    { "id": "mathematik", "name": "Mathematik", "glyph": "∑" },
+    { "id": "naturwissenschaften", "name": "Naturwissenschaften", "glyph": "⚛" },
+    { "id": "informatik", "name": "Informatik", "glyph": "</>" },
+    { "id": "gesellschaft", "name": "Gesellschaft", "glyph": "⌛" },
+    { "id": "wirtschaft", "name": "Wirtschaft", "glyph": "€" }
   ],
   "faecher": [
-    {
-      "id": "deutsch",
-      "name": "Deutsch",
-      "bereich": "sprachen",
-      "glyph": "Aa",
-      "hue": 340,
-      "from": 4
-    },
-    {
-      "id": "englisch",
-      "name": "Englisch",
-      "bereich": "sprachen",
-      "glyph": "EN",
-      "hue": 8,
-      "from": 5
-    },
-    {
-      "id": "englisch-2fs",
-      "name": "Englisch (2. Fremdsprache)",
-      "bereich": "sprachen",
-      "glyph": "EN²",
-      "hue": 20,
-      "from": 6,
-      "to": 9,
-      "schools": [
-        "gymnasium"
-      ]
-    },
-    {
-      "id": "franzoesisch",
-      "name": "Französisch",
-      "bereich": "sprachen",
-      "glyph": "FR",
-      "hue": 322,
-      "from": 5
-    },
-    {
-      "id": "franzoesisch-2fs",
-      "name": "Französisch (2. Fremdsprache)",
-      "bereich": "sprachen",
-      "glyph": "FR²",
-      "hue": 310,
-      "from": 6,
-      "to": 9,
-      "schools": [
-        "gymnasium"
-      ]
-    },
-    {
-      "id": "latein",
-      "name": "Latein",
-      "bereich": "sprachen",
-      "glyph": "LA",
-      "hue": 48,
-      "from": 5,
-      "schools": [
-        "gymnasium"
-      ]
-    },
-    {
-      "id": "latein-2fs",
-      "name": "Latein (2. Fremdsprache)",
-      "bereich": "sprachen",
-      "glyph": "LA²",
-      "hue": 58,
-      "from": 6,
-      "to": 8,
-      "schools": [
-        "gymnasium"
-      ]
-    },
-    {
-      "id": "mathematik",
-      "name": "Mathematik",
-      "bereich": "mathematik",
-      "glyph": "a²+b²=c²",
-      "hue": 215,
-      "from": 4
-    },
-    {
-      "id": "physik",
-      "name": "Physik",
-      "bereich": "naturwissenschaften",
-      "glyph": "F=m·a",
-      "hue": 258,
-      "from": 6
-    },
-    {
-      "id": "chemie",
-      "name": "Chemie",
-      "bereich": "naturwissenschaften",
-      "glyph": "H₂O",
-      "hue": 168,
-      "from": 8
-    },
-    {
-      "id": "biologie",
-      "name": "Biologie",
-      "bereich": "naturwissenschaften",
-      "glyph": "DNA",
-      "hue": 130,
-      "from": 5
-    },
-    {
-      "id": "informatik",
-      "name": "Informatik",
-      "bereich": "informatik",
-      "glyph": "</>",
-      "hue": 190,
-      "from": 6
-    },
-    {
-      "id": "geschichte",
-      "name": "Geschichte",
-      "bereich": "gesellschaft",
-      "glyph": "1918",
-      "hue": 30,
-      "from": 6
-    },
-    {
-      "id": "geographie",
-      "name": "Geographie",
-      "bereich": "gesellschaft",
-      "glyph": "N↑",
-      "hue": 76,
-      "from": 5
-    },
-    {
-      "id": "hsu",
-      "name": "Heimat- und Sachunterricht",
-      "bereich": "gesellschaft",
-      "glyph": "HSU",
-      "hue": 110,
-      "from": 4,
-      "to": 4
-    },
-    {
-      "id": "wirtschaft",
-      "name": "Wirtschaft",
-      "bereich": "wirtschaft",
-      "glyph": "€",
-      "hue": 296,
-      "from": 7
-    },
-    {
-      "id": "pug",
-      "name": "Politik und Gesellschaft",
-      "bereich": "gesellschaft",
-      "glyph": "§",
-      "hue": 205,
-      "from": 8
-    }
+    { "id": "deutsch", "name": "Deutsch", "bereich": "sprachen", "glyph": "Aa", "hue": 340, "from": 4 },
+    { "id": "englisch", "name": "Englisch", "bereich": "sprachen", "glyph": "EN", "hue": 8, "from": 5 },
+    { "id": "englisch-2fs", "name": "Englisch (2. Fremdsprache)", "bereich": "sprachen", "glyph": "EN²", "hue": 20, "from": 6, "to": 9, "schools": ["gymnasium"] },
+    { "id": "franzoesisch", "name": "Französisch", "bereich": "sprachen", "glyph": "FR", "hue": 322, "from": 5 },
+    { "id": "franzoesisch-2fs", "name": "Französisch (2. Fremdsprache)", "bereich": "sprachen", "glyph": "FR²", "hue": 310, "from": 6, "to": 9, "schools": ["gymnasium"] },
+    { "id": "latein", "name": "Latein", "bereich": "sprachen", "glyph": "LA", "hue": 48, "from": 5, "schools": ["gymnasium"] },
+    { "id": "latein-2fs", "name": "Latein (2. Fremdsprache)", "bereich": "sprachen", "glyph": "LA²", "hue": 58, "from": 6, "to": 8, "schools": ["gymnasium"] },
+    { "id": "mathematik", "name": "Mathematik", "bereich": "mathematik", "glyph": "a²+b²=c²", "hue": 215, "from": 4 },
+    { "id": "physik", "name": "Physik", "bereich": "naturwissenschaften", "glyph": "F=m·a", "hue": 258, "from": 6 },
+    { "id": "chemie", "name": "Chemie", "bereich": "naturwissenschaften", "glyph": "H₂O", "hue": 168, "from": 8 },
+    { "id": "biologie", "name": "Biologie", "bereich": "naturwissenschaften", "glyph": "DNA", "hue": 130, "from": 5 },
+    { "id": "informatik", "name": "Informatik", "bereich": "informatik", "glyph": "</>", "hue": 190, "from": 6 },
+    { "id": "geschichte", "name": "Geschichte", "bereich": "gesellschaft", "glyph": "1918", "hue": 30, "from": 6 },
+    { "id": "geographie", "name": "Geographie", "bereich": "gesellschaft", "glyph": "N↑", "hue": 76, "from": 5 },
+    { "id": "hsu", "name": "Heimat- und Sachunterricht", "bereich": "gesellschaft", "glyph": "HSU", "hue": 110, "from": 4, "to": 4 },
+    { "id": "wirtschaft", "name": "Wirtschaft", "bereich": "wirtschaft", "glyph": "€", "hue": 296, "from": 7 },
+    { "id": "pug", "name": "Politik und Gesellschaft", "bereich": "gesellschaft", "glyph": "§", "hue": 205, "from": 8 }
   ],
   "fachverbunde": [
     {
@@ -406,14 +212,8 @@
       "zweige": "I",
       "lessons": 24,
       "cards": 73,
-      "lang": [
-        "de"
-      ],
-      "gebiete": [
-        "Mechanik",
-        "Optik",
-        "Magnetismus und Elektrizitätslehre"
-      ],
+      "lang": ["de"],
+      "gebiete": ["Mechanik", "Optik", "Magnetismus und Elektrizitätslehre"],
       "desc": "24 Lektionen mit beschrifteten Diagrammen, 14 veränderbaren Modellen, Werkstätten und zwei Aufgabenlevels. LehrplanPLUS für Wahlpflichtfächergruppe I; in II/III beginnt Physik erst in Klasse 8."
     },
     {
@@ -516,16 +316,8 @@
       "school": "grundschule",
       "lessons": 40,
       "cards": 159,
-      "lang": [
-        "de"
-      ],
-      "gebiete": [
-        "Zahlenwald",
-        "Messmarkt",
-        "Formenbucht",
-        "Zufallsgarten",
-        "Inselexpeditionen"
-      ],
+      "lang": ["de"],
+      "gebiete": ["Zahlenwald", "Messmarkt", "Formenbucht", "Zufallsgarten", "Inselexpeditionen"],
       "desc": "Entdeckerlektionen mit Milo: Zahlen und Rechnen, Größen, Geometrie, Daten und Zufall, dazu drei gemischte Expeditionen."
     },
     {
@@ -538,18 +330,8 @@
       "school": "grundschule",
       "lessons": 45,
       "cards": 135,
-      "lang": [
-        "de"
-      ],
-      "gebiete": [
-        "Wörterwerkstatt",
-        "Satzbahnhof",
-        "Detektivbüro",
-        "Wörterschatz",
-        "Lesewerkstatt",
-        "Schreibwerkstatt",
-        "Sprachlabor"
-      ],
+      "lang": ["de"],
+      "gebiete": ["Wörterwerkstatt", "Satzbahnhof", "Detektivbüro", "Wörterschatz", "Lesewerkstatt", "Schreibwerkstatt", "Sprachlabor"],
       "desc": "Sprache untersuchen, richtig schreiben, den Grundwortschatz üben, Texte verstehen und eigene Texte planen mit Tinto. Freie Texte bewertet die App nicht."
     },
     {
@@ -562,17 +344,8 @@
       "school": "grundschule",
       "lessons": 20,
       "cards": 61,
-      "lang": [
-        "de"
-      ],
-      "gebiete": [
-        "Demokratie und Gesellschaft",
-        "Körper und Gesundheit",
-        "Natur und Umwelt",
-        "Zeit und Wandel",
-        "Raum und Mobilität",
-        "Technik und Kultur"
-      ],
+      "lang": ["de"],
+      "gebiete": ["Demokratie und Gesellschaft", "Körper und Gesundheit", "Natur und Umwelt", "Zeit und Wandel", "Raum und Mobilität", "Technik und Kultur"],
       "desc": "Entdeckerstationen mit Lotta zu allen sechs Lernbereichen des Heimat- und Sachunterrichts."
     },
     {
@@ -585,17 +358,8 @@
       "school": null,
       "lessons": 24,
       "cards": 26,
-      "lang": [
-        "de",
-        "en"
-      ],
-      "gebiete": [
-        "Use Cases",
-        "Klassendiagramme",
-        "Sequenzdiagramme",
-        "Zustandsdiagramme",
-        "Komponentendiagramme"
-      ],
+      "lang": ["de", "en"],
+      "gebiete": ["Use Cases", "Klassendiagramme", "Sequenzdiagramme", "Zustandsdiagramme", "Komponentendiagramme"],
       "desc": "Von Anwendungsfällen bis zu Komponentendiagrammen: 6 Etappen, jahrgangsübergreifend."
     },
     {
@@ -608,15 +372,8 @@
       "school": "realschule",
       "lessons": 20,
       "cards": 40,
-      "lang": [
-        "de",
-        "en"
-      ],
-      "gebiete": [
-        "Planen",
-        "Programmieren",
-        "Fehler suchen"
-      ],
+      "lang": ["de", "en"],
+      "gebiete": ["Planen", "Programmieren", "Fehler suchen"],
       "desc": "Planen, programmieren und Fehler finden in einer lokalen Werkstatt. LehrplanPLUS IT 2.6.1, jahrgangsübergreifend."
     },
     {
@@ -629,15 +386,8 @@
       "school": "realschule",
       "lessons": 19,
       "cards": 38,
-      "lang": [
-        "de",
-        "en"
-      ],
-      "gebiete": [
-        "Netzwerk konfigurieren",
-        "Webanfrage verfolgen",
-        "HTTPS"
-      ],
+      "lang": ["de", "en"],
+      "gebiete": ["Netzwerk konfigurieren", "Webanfrage verfolgen", "HTTPS"],
       "desc": "Ein Netzwerk einrichten und eine Webanfrage Schritt für Schritt verfolgen. LehrplanPLUS IT 2.5.1, HTTPS als Ergänzung."
     },
     {
@@ -651,16 +401,8 @@
       "zweige": "Zweig I und II/III",
       "lessons": 18,
       "cards": 68,
-      "lang": [
-        "de",
-        "en"
-      ],
-      "gebiete": [
-        "Tabellen und Schlüssel",
-        "Abfragen",
-        "Joins",
-        "Berichte"
-      ],
+      "lang": ["de", "en"],
+      "gebiete": ["Tabellen und Schlüssel", "Abfragen", "Joins", "Berichte"],
       "desc": "Tabellen, Abfragen, Joins und Berichte mit einer SQLite-Sandbox im Browser. LehrplanPLUS IT 2.3.1/2.3.2."
     },
     {
@@ -803,9 +545,7 @@
       "school": "gymnasium",
       "lessons": 23,
       "cards": 46,
-      "lang": [
-        "de"
-      ],
+      "lang": ["de"],
       "gebiete": [
         "Geographische Arbeitstechniken",
         "Einheit und Vielfalt in Europa",
@@ -984,6 +724,30 @@
         "Tools for learning"
       ],
       "desc": "Das erste Englischjahr am Gymnasium (2. Fremdsprache) in 43 Lektionen: Begrüßen, Zahlen und Uhrzeit, Familie und Zuhause, Artikel, Pronomen und Mengen, simple present, Verlaufsform, simple past, going to und Modalverben, Fragen und question tags, Schule, Essen, Einkaufen und Feste im UK, Britische Inseln, London, USA und Kanada. Mit Uhr, Stammbaum, Zimmer, Satzbausteinen, Schildern, Einkaufsrechner, Festkalender und Karten. LehrplanPLUS Bayern."
+    },
+    {
+      "id": "englisch-2fs-gymnasium-7",
+      "app": "englisch-2fs-gymnasium-7",
+      "version": "0.0",
+      "title": "Englisch 7 (2. Fremdsprache)",
+      "fach": "englisch-2fs",
+      "grade": 7,
+      "school": "gymnasium",
+      "lessons": 37,
+      "cards": 74,
+      "lang": [
+        "de",
+        "en"
+      ],
+      "gebiete": [
+        "Englisch unterwegs",
+        "Sprachwerkstatt",
+        "Cornwall und Florida",
+        "Texte und Medien",
+        "Besser lernen",
+        "Britannien im Wandel"
+      ],
+      "desc": "37 Lektionen für Englisch als zweite Fremdsprache am Gymnasium. Übe Hörverstehen, Dialoge, Sprachmittlung, Grammatik und eigene Texte. Entdecke Cornwall, Florida und die Geschichte Britanniens mit Karten, Zeitstrahlen und einem Storyboard. LehrplanPLUS Bayern."
     },
     {
       "id": "franzoesisch-2fs-gymnasium-6",
@@ -1261,18 +1025,8 @@
       "zweige": "Zweig I und II/III",
       "lessons": 41,
       "cards": 141,
-      "lang": [
-        "de"
-      ],
-      "gebiete": [
-        "Dreiecke und Vierecke",
-        "Drehung",
-        "Raumgeometrie",
-        "Terme und Gleichungen",
-        "Bruchterme",
-        "Funktionen",
-        "Daten und Zufall"
-      ],
+      "lang": ["de"],
+      "gebiete": ["Dreiecke und Vierecke", "Drehung", "Raumgeometrie", "Terme und Gleichungen", "Bruchterme", "Funktionen", "Daten und Zufall"],
       "desc": "Dreiecke konstruieren, Figuren drehen, Körper im Raum, Terme und Extremwerte, Bruchgleichungen, Geraden und Häufigkeiten: 41 Lektionen mit Laboren und Aufgaben für Zweig I und II/III nach LehrplanPLUS Bayern."
     },
     {
@@ -1286,16 +1040,8 @@
       "zweige": "Zweig I und II/III",
       "lessons": 29,
       "cards": 108,
-      "lang": [
-        "de"
-      ],
-      "gebiete": [
-        "Rechtwinklige Dreiecke",
-        "Kreis und Körper",
-        "Lineare Gleichungssysteme",
-        "Quadratische Funktionen",
-        "Daten und Zufall"
-      ],
+      "lang": ["de"],
+      "gebiete": ["Rechtwinklige Dreiecke", "Kreis und Körper", "Lineare Gleichungssysteme", "Quadratische Funktionen", "Daten und Zufall"],
       "desc": "Labor zum Ziehen und Aufgaben zu Trigonometrie, Körpern, Gleichungssystemen und Zufall. LehrplanPLUS Bayern."
     },
     {
@@ -1309,18 +1055,8 @@
       "zweige": "Zweig I und II/III",
       "lessons": 45,
       "cards": 148,
-      "lang": [
-        "de"
-      ],
-      "gebiete": [
-        "Trigonometrie",
-        "Vektoren und Abbildungen",
-        "Potenzfunktionen",
-        "Exponential- und Logarithmusfunktionen",
-        "Raumgeometrie",
-        "Quadratische Funktionen",
-        "Daten und Zufall"
-      ],
+      "lang": ["de"],
+      "gebiete": ["Trigonometrie", "Vektoren und Abbildungen", "Potenzfunktionen", "Exponential- und Logarithmusfunktionen", "Raumgeometrie", "Quadratische Funktionen", "Daten und Zufall"],
       "desc": "Labore zum Ziehen, Aufgaben in zwei Stufen und geprüfte Erklärvideos zu allen Lernbereichen beider Zweige. LehrplanPLUS Bayern."
     },
     {
@@ -1333,15 +1069,8 @@
       "school": "gymnasium",
       "lessons": 27,
       "cards": 84,
-      "lang": [
-        "de"
-      ],
-      "gebiete": [
-        "Flächeninhalt und bestimmtes Integral",
-        "Normalverteilung",
-        "Geraden und Ebenen im Raum",
-        "Anwendungen der Differential- und Integralrechnung"
-      ],
+      "lang": ["de"],
+      "gebiete": ["Flächeninhalt und bestimmtes Integral", "Normalverteilung", "Geraden und Ebenen im Raum", "Anwendungen der Differential- und Integralrechnung"],
       "desc": "Die vier Lernbereiche des Fachlehrplans M13 (erhöhtes Anforderungsniveau) in 27 Lektionen: Flächenbilanz und Hauptsatz, Normalverteilung und Sigma-Regeln, analytische Geometrie im Raum, Extremwerte und Anwendungen. Mit Laboren, Aufgaben auf zwei Stufen und ZAM-Karten; Lehrervideos folgen."
     },
     {
@@ -1355,14 +1084,8 @@
       "zweige": "alle Schülerinnen und Schüler (Natur und Technik 7, Schwerpunkt Physik)",
       "lessons": 21,
       "cards": 63,
-      "lang": [
-        "de"
-      ],
-      "gebiete": [
-        "Ein erster Blick auf die physikalischen Spielregeln der Natur",
-        "Optische Phänomene",
-        "Elektrische Stromkreise"
-      ],
+      "lang": ["de"],
+      "gebiete": ["Ein erster Blick auf die physikalischen Spielregeln der Natur", "Optische Phänomene", "Elektrische Stromkreise"],
       "desc": "Natur und Technik 7, Schwerpunkt Physik (NT7 Lernbereich 1) in 21 Lektionen: Magnete, Elementarmagnete und Kompass, Dichte messen und berechnen, Sehvorgang, Farben, Schatten, Mondphasen und Finsternisse, Ladung, Strom und Schaltungen. 20 veränderbare Modelle mit Zeichnung, Rechenaufgaben auf zwei Stufen und ein Versuchsnotizbuch für die sechs Schülerexperimente."
     },
     {
@@ -1398,17 +1121,8 @@
       "zweige": "Zweig I und II/III",
       "lessons": 47,
       "cards": 152,
-      "lang": [
-        "de"
-      ],
-      "gebiete": [
-        "Mechanik",
-        "Optik",
-        "Magnetismus und Elektrizität",
-        "Mechanik und Energie",
-        "Wärmelehre",
-        "Akustik und Astronomie (Wahl)"
-      ],
+      "lang": ["de"],
+      "gebiete": ["Mechanik", "Optik", "Magnetismus und Elektrizität", "Mechanik und Energie", "Wärmelehre", "Akustik und Astronomie (Wahl)"],
       "desc": "7 Etappen mit Labor und Aufgaben nach dem LehrplanPLUS Bayern: Zweig II/III lernt Mechanik, Optik und Magnetismus, Zweig I Energie, Wärme und Elektrizität."
     },
     {
@@ -1422,15 +1136,8 @@
       "zweige": "Zweig I und II/III",
       "lessons": 21,
       "cards": 70,
-      "lang": [
-        "de"
-      ],
-      "gebiete": [
-        "Druck",
-        "Mechanik und Energie",
-        "Wärmelehre",
-        "Elektrizitätslehre"
-      ],
+      "lang": ["de"],
+      "gebiete": ["Druck", "Mechanik und Energie", "Wärmelehre", "Elektrizitätslehre"],
       "desc": "4 Etappen mit Labor und Aufgaben nach dem LehrplanPLUS Bayern."
     },
     {
@@ -1444,15 +1151,8 @@
       "zweige": "Zweig I und II/III",
       "lessons": 36,
       "cards": 72,
-      "lang": [
-        "de"
-      ],
-      "gebiete": [
-        "Mechanik",
-        "Elektrizität",
-        "Atom- und Kernphysik",
-        "Energieversorgung"
-      ],
+      "lang": ["de"],
+      "gebiete": ["Mechanik", "Elektrizität", "Atom- und Kernphysik", "Energieversorgung"],
       "desc": "Zehn veränderbare Modelle, Rechenaufgaben, eigene Begründungen und ein Versuchsnotizbuch."
     },
     {
@@ -1466,16 +1166,8 @@
       "zweige": "Zweig I",
       "lessons": 32,
       "cards": 66,
-      "lang": [
-        "de"
-      ],
-      "gebiete": [
-        "Stoffe und Trennverfahren",
-        "Aufbau der Materie",
-        "Chemische Reaktionen und Energie",
-        "Stoffumsatz und Verbrennung",
-        "Atombau und Periodensystem"
-      ],
+      "lang": ["de"],
+      "gebiete": ["Stoffe und Trennverfahren", "Aufbau der Materie", "Chemische Reaktionen und Energie", "Stoffumsatz und Verbrennung", "Atombau und Periodensystem"],
       "desc": "32 Labormodelle und Aufgaben auf zwei Niveaus zu Stoffen, Teilchenverbänden, Stöchiometrie, Verbrennung und Atombau. LehrplanPLUS Bayern (Zweig I)."
     },
     {
@@ -1489,16 +1181,8 @@
       "zweige": "Zweig I und II/III",
       "lessons": 35,
       "cards": 77,
-      "lang": [
-        "de"
-      ],
-      "gebiete": [
-        "Stoffe und Reaktionen",
-        "Atombau",
-        "Bindungen",
-        "Redoxchemie",
-        "Protonenübergänge"
-      ],
+      "lang": ["de"],
+      "gebiete": ["Stoffe und Reaktionen", "Atombau", "Bindungen", "Redoxchemie", "Protonenübergänge"],
       "desc": "Digitale Modelle und Aufgaben, getrennte Lernpfade für beide Zweige. LehrplanPLUS Bayern."
     },
     {
@@ -1512,17 +1196,8 @@
       "zweige": "Zweig I und II/III",
       "lessons": 40,
       "cards": 100,
-      "lang": [
-        "de"
-      ],
-      "gebiete": [
-        "Säuren, Basen und Neutralisation",
-        "Elektronenübergänge",
-        "Fotosynthese und Rohstoffe",
-        "Organische Reaktionen",
-        "Biomoleküle",
-        "Kunststoffe und Silikone"
-      ],
+      "lang": ["de"],
+      "gebiete": ["Säuren, Basen und Neutralisation", "Elektronenübergänge", "Fotosynthese und Rohstoffe", "Organische Reaktionen", "Biomoleküle", "Kunststoffe und Silikone"],
       "desc": "Getrennte Lernpfade für beide Zweige, 40 Labore (29 Modelle, 11 Modellversuche), Aufgaben auf zwei Niveaus und alle Wahlbereiche."
     },
     {
@@ -1535,17 +1210,8 @@
       "school": "gymnasium",
       "lessons": 28,
       "cards": 84,
-      "lang": [
-        "de"
-      ],
-      "gebiete": [
-        "Erkenntnisgewinnung und Bewertung",
-        "Zellbiologie",
-        "Mensch als Ökosystem",
-        "Stoff- und Energieumwandlung",
-        "Genetik",
-        "Verhalten"
-      ],
+      "lang": ["de"],
+      "gebiete": ["Erkenntnisgewinnung und Bewertung", "Zellbiologie", "Mensch als Ökosystem", "Stoff- und Energieumwandlung", "Genetik", "Verhalten"],
       "desc": "Für die Einführungsklasse am bayerischen Gymnasium, wenn Biologie angeboten wird. Du untersuchst Zellen, Immunabwehr, Stoffwechsel, Genetik und Verhalten mit Werkstätten, zwölf Modellen und Aufgaben auf zwei Stufen."
     },
     {
@@ -1602,16 +1268,8 @@
       "school": "realschule",
       "lessons": 46,
       "cards": 93,
-      "lang": [
-        "de"
-      ],
-      "gebiete": [
-        "Genetik",
-        "Ökosysteme",
-        "Verantwortungsvolle Elternschaft",
-        "Nervensystem",
-        "Evolution"
-      ],
+      "lang": ["de"],
+      "gebiete": ["Genetik", "Ökosysteme", "Verantwortungsvolle Elternschaft", "Nervensystem", "Evolution"],
       "desc": "Interaktive Modelle, Ökosystembogen und begründete Urteile; Auffrischungen zu Nervensystem und Evolution."
     },
     {
@@ -1624,18 +1282,8 @@
       "school": "realschule",
       "lessons": 39,
       "cards": 78,
-      "lang": [
-        "de",
-        "en"
-      ],
-      "gebiete": [
-        "Imperialismus",
-        "Weltkriege",
-        "Weimar",
-        "Nationalsozialismus",
-        "Jugendkultur",
-        "Menschenrechte"
-      ],
+      "lang": ["de", "en"],
+      "gebiete": ["Imperialismus", "Weltkriege", "Weimar", "Nationalsozialismus", "Jugendkultur", "Menschenrechte"],
       "desc": "Quellenwerkstatt, Zeitleisten und begründete Urteile; vier optionale englische Vertiefungen."
     },
     {
@@ -1649,20 +1297,8 @@
       "zweige": "alle Zweige",
       "lessons": 53,
       "cards": 159,
-      "lang": [
-        "de",
-        "en"
-      ],
-      "gebiete": [
-        "Nachkriegszeit",
-        "Deutsche Teilung",
-        "Kalter Krieg",
-        "Deutsche Einheit",
-        "Europa",
-        "Gegenwartskonflikte",
-        "Migration",
-        "Geschichtskultur"
-      ],
+      "lang": ["de", "en"],
+      "gebiete": ["Nachkriegszeit", "Deutsche Teilung", "Kalter Krieg", "Deutsche Einheit", "Europa", "Gegenwartskonflikte", "Migration", "Geschichtskultur"],
       "desc": "Von 1945 bis heute: Quellen, Zeitleisten, echte Daten und begründete Urteile in 49 Kernlektionen, dazu vier englische Vertiefungen."
     },
     {
@@ -1716,6 +1352,30 @@
       "desc": "Entdecke Europa mit interaktiven Karten, Klima- und Verkehrsdiagrammen und einem eigenen Länderporträt. 25 Lektionen mit Aufgaben auf zwei Niveaus nach LehrplanPLUS Bayern."
     },
     {
+      "id": "geographie-realschule-7",
+      "app": "geographie-realschule-7",
+      "version": "0.0",
+      "title": "Geographie 7",
+      "fach": "geographie",
+      "grade": 7,
+      "school": "realschule",
+      "zweige": "alle Wahlpflichtfächergruppen",
+      "lessons": 32,
+      "cards": 64,
+      "lang": [
+        "de"
+      ],
+      "gebiete": [
+        "Planetarische Grundlagen im Zusammenhang mit Klima und Vegetation",
+        "Afrika südlich der Sahara",
+        "Nordafrika und westliches Asien",
+        "Asiatisch-pazifische Inselwelt (ohne Japan)",
+        "Japan und Australien im Vergleich",
+        "Aktuelle geographische Fragestellung"
+      ],
+      "desc": "Beleuchtung der Erde, Zeitzonen, Föhn und Klimadiagramme, Passatkreislauf und Tropen, Oasen und orientalische Stadt, Feuerring und Inselwelt, Japan und Australien: 32 Lektionen mit 17 interaktiven Laboren, Karten, Aufgaben auf zwei Stufen und 64 ZAM-Karten nach LehrplanPLUS Bayern."
+    },
+    {
       "id": "geographie-realschule-9",
       "app": "geographie-realschule-9",
       "version": "0.0",
@@ -1725,18 +1385,8 @@
       "school": "realschule",
       "lessons": 45,
       "cards": 91,
-      "lang": [
-        "de",
-        "en"
-      ],
-      "gebiete": [
-        "Landschaft",
-        "Klima",
-        "Landwirtschaft",
-        "Städte",
-        "Bevölkerung",
-        "Grenzen"
-      ],
+      "lang": ["de", "en"],
+      "gebiete": ["Landschaft", "Klima", "Landwirtschaft", "Städte", "Bevölkerung", "Grenzen"],
       "desc": "Karten, Modelle und ein eigenes Nahraumprojekt; sieben englische Vertiefungen."
     },
     {
@@ -1750,9 +1400,7 @@
       "zweige": "Zweig II und IIIa",
       "lessons": 36,
       "cards": 72,
-      "lang": [
-        "de"
-      ],
+      "lang": ["de"],
       "gebiete": [
         "Privater Haushalt",
         "Unternehmen",
@@ -1773,16 +1421,8 @@
       "zweige": "Zweig II",
       "lessons": 46,
       "cards": 92,
-      "lang": [
-        "de"
-      ],
-      "gebiete": [
-        "Unternehmensführung",
-        "Anlagen",
-        "Finanzierung",
-        "Kapitalanlage",
-        "Forderungsbewertung"
-      ],
+      "lang": ["de"],
+      "gebiete": ["Unternehmensführung", "Anlagen", "Finanzierung", "Kapitalanlage", "Forderungsbewertung"],
       "desc": "Rechen- und Buchungswerkstatt, vier interaktive Modelle und Praxisnotizen. LehrplanPLUS Bayern."
     },
     {
@@ -1796,17 +1436,8 @@
       "zweige": "Zweig I und III",
       "lessons": 50,
       "cards": 150,
-      "lang": [
-        "de",
-        "en"
-      ],
-      "gebiete": [
-        "Berufliche Orientierung",
-        "Soziale Marktwirtschaft",
-        "Verbraucherschutz",
-        "Kaufvertrag",
-        "Strafrecht"
-      ],
+      "lang": ["de", "en"],
+      "gebiete": ["Berufliche Orientierung", "Soziale Marktwirtschaft", "Verbraucherschutz", "Kaufvertrag", "Strafrecht"],
       "desc": "Fälle lösen, Märkte verschieben, Kredite vergleichen und Strafbarkeit prüfen, mit elf interaktiven Modellen. LehrplanPLUS Bayern."
     },
     {
@@ -1908,16 +1539,8 @@
       "zweige": "alle Zweige",
       "lessons": 53,
       "cards": 159,
-      "lang": [
-        "de"
-      ],
-      "gebiete": [
-        "Sprechen und Zuhören",
-        "Lesen und Medien",
-        "Schreiben",
-        "Sprache untersuchen",
-        "Rechtschreibung"
-      ],
+      "lang": ["de"],
+      "gebiete": ["Sprechen und Zuhören", "Lesen und Medien", "Schreiben", "Sprache untersuchen", "Rechtschreibung"],
       "desc": "Zuhören, Texte erschließen, Texte schreiben und überarbeiten, Stilmittel finden und Kommas setzen, mit Textwerkstatt und Übungsrunden. LehrplanPLUS Bayern."
     },
     {
@@ -1930,18 +1553,8 @@
       "school": "realschule",
       "lessons": 43,
       "cards": 86,
-      "lang": [
-        "de",
-        "en"
-      ],
-      "gebiete": [
-        "Englisch als Weltsprache & UK",
-        "Alltagsleben in Großbritannien",
-        "Schule in Großbritannien",
-        "Freizeit, Reisen & Medien",
-        "Sprachwerkstatt",
-        "Geschichten & Gedichte"
-      ],
+      "lang": ["de", "en"],
+      "gebiete": ["Englisch als Weltsprache & UK", "Alltagsleben in Großbritannien", "Schule in Großbritannien", "Freizeit, Reisen & Medien", "Sprachwerkstatt", "Geschichten & Gedichte"],
       "desc": "43 Lektionen mit englischen Materialien zu den Britischen Inseln, Alltags- und Schulleben, Freizeit, Grammatik von to be bis Simple Past, drei lokalen Hörskripten, zwei Grafiken, einem Gartenbild zum Beschreiben, je drei Kurzaufgaben pro Lektion und eigenen Sprachaufgaben auf zwei Stufen. Natürliche Hörtexte, Gespräche und eine Ganzschrift ergänzen die App."
     },
     {
@@ -1955,10 +1568,7 @@
       "zweige": "alle Wahlpflichtfächergruppen",
       "lessons": 42,
       "cards": 126,
-      "lang": [
-        "de",
-        "en"
-      ],
+      "lang": ["de", "en"],
       "gebiete": [
         "First stops in the USA",
         "London: Life in a metropolis",
@@ -1982,10 +1592,7 @@
       "zweige": "alle Wahlpflichtfächergruppen",
       "lessons": 45,
       "cards": 135,
-      "lang": [
-        "de",
-        "en"
-      ],
+      "lang": ["de", "en"],
       "gebiete": [
         "Highlights of British & Irish history",
         "Ireland: Part of Europe",
@@ -2010,19 +1617,8 @@
       "zweige": "alle Wahlpflichtfächergruppen",
       "lessons": 51,
       "cards": 102,
-      "lang": [
-        "de",
-        "en"
-      ],
-      "gebiete": [
-        "Geschichte Nordamerikas",
-        "USA",
-        "New York und Metropolen",
-        "Kanada",
-        "Sprachwerkstatt",
-        "Jugendliteratur",
-        "Eigene Projekte"
-      ],
+      "lang": ["de", "en"],
+      "gebiete": ["Geschichte Nordamerikas", "USA", "New York und Metropolen", "Kanada", "Sprachwerkstatt", "Jugendliteratur", "Eigene Projekte"],
       "desc": "51 Lektionen mit englischen Materialien von Jamestown bis Nunavut: Passiv, if-clauses type 3 und weitere Grammatik, drei lokale Hörskripte, Grafiken, ein Bild zum Beschreiben, 153 Kurzaufgaben und eigene Sprachaufgaben auf zwei Stufen. Natürliche Hörtexte, Gespräche und eine ganze Lektüre ergänzen die App."
     },
     {
@@ -2061,18 +1657,8 @@
       "zweige": "Wahlpflichtfächergruppe IIIa",
       "lessons": 56,
       "cards": 168,
-      "lang": [
-        "de"
-      ],
-      "gebiete": [
-        "Verstehen und sich mitteilen",
-        "Grammatik",
-        "Wortschatz und Aussprache",
-        "Frankreich erleben",
-        "Texte und Medien",
-        "Lernen lernen",
-        "Themengebiete"
-      ],
+      "lang": ["de"],
+      "gebiete": ["Verstehen und sich mitteilen", "Grammatik", "Wortschatz und Aussprache", "Frankreich erleben", "Texte und Medien", "Lernen lernen", "Themengebiete"],
       "desc": "Grammatik von Relativsatz bis Bedingung, Wortschatz, Lesen, Schreiben und Sprachmittlung, Paris, Schule und Praktikum, mit Werkstätten, Übungsrunden und eigenen Texten. LehrplanPLUS Bayern, zweite Fremdsprache."
     },
     {
@@ -2086,18 +1672,8 @@
       "zweige": "Wahlpflichtfächergruppe IIIa",
       "lessons": 57,
       "cards": 171,
-      "lang": [
-        "de"
-      ],
-      "gebiete": [
-        "Verstehen und sich mitteilen",
-        "Grammatik",
-        "Wortschatz und Aussprache",
-        "Frankreich und Europa",
-        "Texte und Medien",
-        "Lernen lernen",
-        "Themengebiete"
-      ],
+      "lang": ["de"],
+      "gebiete": ["Verstehen und sich mitteilen", "Grammatik", "Wortschatz und Aussprache", "Frankreich und Europa", "Texte und Medien", "Lernen lernen", "Themengebiete"],
       "desc": "Conditionnel und irreale Bedingung, Wendungen mit Subjonctif, Sprachmittlung, Beschwerde und Argumentation, deutsch-französische Freundschaft und Frankophonie, mit Werkstätten, Übungsrunden und eigenen Texten. LehrplanPLUS Bayern, zweite Fremdsprache."
     },
     {
@@ -2111,9 +1687,7 @@
       "zweige": "Schulisches Wahlmodulangebot, jahrgangsübergreifend",
       "lessons": 36,
       "cards": 72,
-      "lang": [
-        "de"
-      ],
+      "lang": ["de"],
       "gebiete": [
         "Datennetze II",
         "Objektorientierte Softwareentwicklung",
@@ -2183,15 +1757,8 @@
       "zweige": "Zweig II",
       "lessons": 38,
       "cards": 76,
-      "lang": [
-        "de"
-      ],
-      "gebiete": [
-        "Periodenabgrenzung und Rückstellungen",
-        "Abschluss und Kennzahlen",
-        "Vollkostenrechnung",
-        "Teilkostenrechnung"
-      ],
+      "lang": ["de"],
+      "gebiete": ["Periodenabgrenzung und Rückstellungen", "Abschluss und Kennzahlen", "Vollkostenrechnung", "Teilkostenrechnung"],
       "desc": "Abgrenzen, Bilanz auswerten, kalkulieren und mit Deckungsbeiträgen entscheiden: 36 Kernlektionen und zwei Auffrischungen, 34 Rechen- und Buchungsfamilien auf zwei Niveaus, sieben veränderbare Modelle und eine Formelsammlung."
     },
     {
@@ -2291,11 +1858,7 @@
       "title": "Informatik 6–8",
       "fach": "informatik",
       "grade": 8,
-      "grades": [
-        6,
-        7,
-        8
-      ],
+      "grades": [6, 7, 8],
       "school": "realschule",
       "zweige": "Alle Wahlpflichtfächergruppen",
       "lessons": 40,
@@ -2327,19 +1890,8 @@
       "zweige": "Alle Wahlpflichtfächergruppen",
       "lessons": 42,
       "cards": 126,
-      "lang": [
-        "de"
-      ],
-      "gebiete": [
-        "Methoden",
-        "Steinzeit und Kelten",
-        "Ägypten",
-        "Griechische Antike",
-        "Imperium Romanum",
-        "Frühmittelalter",
-        "Technik im Längsschnitt",
-        "Menschen machen Geschichte"
-      ],
+      "lang": ["de"],
+      "gebiete": ["Methoden", "Steinzeit und Kelten", "Ägypten", "Griechische Antike", "Imperium Romanum", "Frühmittelalter", "Technik im Längsschnitt", "Menschen machen Geschichte"],
       "desc": "42 Lektionen von der Steinzeit bis Karl dem Großen: Werkstätten, 21 Schaubilder, Zeitstreifen und Geschichtsfries, Aufgaben auf zwei Niveaus. LehrplanPLUS Bayern."
     },
     {
@@ -2353,20 +1905,8 @@
       "zweige": "Alle Wahlpflichtfächergruppen",
       "lessons": 41,
       "cards": 123,
-      "lang": [
-        "de",
-        "en"
-      ],
-      "gebiete": [
-        "Methoden",
-        "Mittelalter",
-        "Wandel zur Neuzeit",
-        "Reformation und Konfessionalisierung",
-        "Dreißigjähriger Krieg und Absolutismus",
-        "Bauwerke im Längsschnitt",
-        "Handel und Kulturtransfer",
-        "Bilingual History (optional)"
-      ],
+      "lang": ["de", "en"],
+      "gebiete": ["Methoden", "Mittelalter", "Wandel zur Neuzeit", "Reformation und Konfessionalisierung", "Dreißigjähriger Krieg und Absolutismus", "Bauwerke im Längsschnitt", "Handel und Kulturtransfer", "Bilingual History (optional)"],
       "desc": "38 Kernlektionen und drei optionale englische Vertiefungen vom Mittelalter bis zum Absolutismus: Werkstätten, 23 Schaubilder, Zeitstreifen und Geschichtsfries, Aufgaben auf zwei Niveaus. LehrplanPLUS Bayern."
     },
     {
@@ -2729,15 +2269,8 @@
       "zweige": "alle Ausbildungsrichtungen",
       "lessons": 12,
       "cards": 36,
-      "lang": [
-        "de"
-      ],
-      "gebiete": [
-        "Vernetzte Informationsstrukturen",
-        "Chancen und Risiken digitaler Kommunikation",
-        "Algorithmen",
-        "Projekt"
-      ],
+      "lang": ["de"],
+      "gebiete": ["Vernetzte Informationsstrukturen", "Chancen und Risiken digitaler Kommunikation", "Algorithmen", "Projekt"],
       "desc": "Gemeinsamer Einstieg in Natur und Technik 7 am bayerischen Gymnasium. Informatik bietet 12 Lektionen und 36 ZAM-Lernkarten. Der Schwerpunkt Physik führt zum bestehenden Physikpaket mit 21 Lektionen."
     },
     {
