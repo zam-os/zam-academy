@@ -1,0 +1,500 @@
+[
+	{
+		"id": "l7-textstruktur-lesen",
+		"stage": "methodik",
+		"title": "Verstehendes Lesen & Textstruktur erfassen",
+		"skill": "Texte über Schlüsselwörter, Personen, Konnektoren sowie Tempus- und Modusprofile in Sinnabschnitte gliedern",
+		"bindings": ["L7-02", "L7-42", "L7-43", "L7-48"],
+		"paragraphs": [
+			"Bevor du das erste Wort übersetzt, liest du einen lateinischen Lehrbuchtext zweimal verstehend durch. Achte zuerst auf Überschrift, Einleitung und wiederkehrende Schlüsselwörter (Personen, Orte, Sachfelder wie Krieg oder Gericht). Schon so zeichnen sich Thema und Hauptfiguren ab.",
+			"Danach helfen dir klare Struktursignale beim Gliedern in Sinnabschnitte: Konnektoren (sed, tamen, igitur, postea, deinde, denique) zeigen Wendepunkte, Begründungen oder Folgen; Pronomen und Personenwechsel (is, ille, 3. Sg. vs. 1./2. Pers.) trennen Erzählung und wörtliche Rede; und das Tempus- und Modusprofil trennt Hintergrundbeschreibung (Imperfekt) von Haupthandlung (Perfekt) und Aufforderung oder Wunsch (Konjunktiv/Imperativ)."
+		],
+		"materialLabel": "Kurzer Erzähltext mit deutlichen Struktursignalen",
+		"materialLanguage": "la",
+		"material": "Olim dux Romanus milites ad flumen duxit. Multi timebant, quia hostes prope erant.\nTamen dux clamavit: „Fortes simus neque fugiamus!“\nItaque milites pontem fecerunt et postero die victoriam reportaverunt.",
+		"sourceIds": ["lp", "lp-profil"],
+		"diagram": {
+			"kind": "syntax-tree",
+			"title": "Textstruktur-Scanner in drei Schritten",
+			"caption": "Personen, Konnektoren und Tempus-/Modusprofile erschließen den Textaufbau vor dem Übersetzen.",
+			"parts": [
+				{
+					"id": "ts-pers",
+					"label": "1 · Personen & Rede",
+					"badge": "Wer handelt?",
+					"latin": "dux · multi · milites",
+					"detail": "Verfolge handelnde Personen und Pro-Formen; Anführungszeichen und 1. Person Plural (simus) markieren wörtliche Rede."
+				},
+				{
+					"id": "ts-konn",
+					"label": "2 · Konnektoren",
+					"badge": "Logische Brücken",
+					"latin": "quia · Tamen · Itaque",
+					"detail": "quia begründet die Angst, Tamen dreht die Stimmung in Mut, Itaque zieht die Folge (Brückenbau und Sieg)."
+				},
+				{
+					"id": "ts-temp",
+					"label": "3 · Tempus- & Modusprofil",
+					"badge": "Relief im Text",
+					"latin": "erant · duxit · simus",
+					"detail": "Imperfekt (timebant, erant) malt den Zustand, Perfekt (duxit, fecerunt) treibt die Handlung voran, Konjunktiv (simus) drückt Appell aus."
+				}
+			]
+		},
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Welcher Konnektor im Material leitet am Beginn des dritten Abschnitts die Schlussfolgerung aus dem Appell ein?",
+			"answer": "Itaque („deshalb / daher“)",
+			"wrong": ["quia („weil“)", "tamen („dennoch“)"],
+			"explanation": "Itaque steht am Anfang des letzten Satzes und knüpft das Handeln der Soldaten als Folge an die Ermutigung des Feldherrn."
+		},
+		"takeaway": "Erst verstehend lesen, dann mit Personen, Konnektoren und Tempus-/Modusprofil den Text in Sinnabschnitte gliedern — danach gelingt die Übersetzung viel sicherer.",
+		"practice": [
+			{
+				"prompt": "Welches Tempus beschreibt im ersten Abschnitt den Zustand bzw. Hintergrund („timebant … erant“)?",
+				"answers": ["Imperfekt"],
+				"feedback": "Das Imperfekt (timebant, erant) bildet den Hintergrund für die fortschreitende Perfekt-Handlung."
+			},
+			{
+				"prompt": "Welche Konjunktion im zweiten Satz nennt den Grund für die Angst der Soldaten?",
+				"answers": ["quia"],
+				"feedback": "quia („weil“) leitet die Begründung ein."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "de",
+				"prompt": "Gliedere das Material in drei kurze Sinnabschnitte mit je einer deutschen Überschrift und übersetze anschließend den ganzen Text.",
+				"model": "Gliederung: 1. Ausgangslage und Furcht vor den Feinden (Satz 1–2); 2. Ermutigende Rede des Feldherrn (Satz 3); 3. Brückenbau und Sieg (Satz 4).\nÜbersetzung: Einst führte ein römischer Feldherr die Soldaten an einen Fluss. Viele fürchteten sich, weil die Feinde nahe waren. Dennoch rief der Feldherr: „Lasst uns tapfer sein und nicht fliehen!“ Deshalb bauten die Soldaten eine Brücke und trugen am nächsten Tag den Sieg davon.",
+				"criteria": [
+					"Drei logische Sinnabschnitte mit passenden Überschriften sind formuliert.",
+					"Alle vier Sätze sind vollständig und richtig übersetzt.",
+					"Der Hortativ in der wörtlichen Rede („Lasst uns …“) ist beachtet."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Erkläre an einem selbstgewählten Beispiel, warum das Achten auf Konnektoren (wie tamen, igitur, sed) bereits vor dem Nachschlagen einzelner Wörter verhindert, einen Satz völlig falsch zu verstehen.",
+				"model": "Konnektoren stecken den Gedankengang ab: Wenn ein Satz mit „Tamen“ beginnt, weiß ich schon vor dem ersten Verb, dass nun ein überraschender Gegensatz zum Vorherigen folgt. Ein „Igitur“ oder „Itaque“ zeigt dagegen eine logische Folge an. So sucht man im Satz direkt nach den passenden Gegensätzen oder Konsequenzen und rät nicht ins Blaue.",
+				"criteria": [
+					"Die Steuerungsfunktion von Konnektoren ist klar beschrieben.",
+					"Mindestens zwei konkrete Konnektoren sind korrekt unterschieden.",
+					"Der Nutzen für die Übersetzungssicherheit wird deutlich."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "text-structure",
+			"goals": [
+				{
+					"label": "Hintergrundtempus im Erzähltext erkennen",
+					"before": "Multi timebant, quia hostes prope erant →",
+					"after": "",
+					"options": [
+						"Imperfekt: begleitender Zustand / Hintergrund",
+						"Perfekt: einmaliges Ereignis der Hauptkette",
+						"Konjunktiv: unerfüllbarer Wunsch"
+					],
+					"answer": "Imperfekt: begleitender Zustand / Hintergrund",
+					"explanation": "Das Imperfekt malt Umstände und Stimmungen aus."
+				},
+				{
+					"label": "Signalwort für einen Gegensatz wählen",
+					"before": "Obwohl Gefahr drohte, … → Satzanschluss:",
+					"after": "",
+					"options": ["Tamen (dennoch)", "Itaque (deshalb)", "Nam (denn)"],
+					"answer": "Tamen (dennoch)",
+					"explanation": "tamen markiert einen Gegensatz zur Erwartung."
+				},
+				{
+					"label": "Sinnabschnitt-Wechsel an direkter Rede erkennen",
+					"before": "„Fortes simus!“ →",
+					"after": "",
+					"options": [
+						"Wechsel zu 1. Pers. Pl. Konj. Präs. (Redeappell)",
+						"Fortführung der 3. Pers. Imperfekt",
+						"Ablativus absolutus"
+					],
+					"answer": "Wechsel zu 1. Pers. Pl. Konj. Präs. (Redeappell)",
+					"explanation": "Der Wechsel von der 3. Person Perfekt zur 1. Person Konjunktiv zeigt die direkte Ansprache."
+				}
+			]
+		}
+	},
+	{
+		"id": "l7-uebersetzungstechniken",
+		"stage": "methodik",
+		"title": "Übersetzungstechniken & Ergebniskontrolle",
+		"skill": "Analytische (Konstruktions- und Einrückmethode) sowie intuitive Übersetzungstechniken sicher anwenden und prüfen",
+		"bindings": ["L7-02", "L7-23", "L7-39", "L7-40", "L7-41"],
+		"paragraphs": [
+			"Für komplexe lateinische Sätze mit Ablativus absolutus, PC und Nebensätzen brauchst du verlässliche Werkzeuge. Bei der Konstruktionsmethode suchst du in jedem Teilsatz zuerst das Prädikat (Person und Tempus bestimmen!), fragst dann nach dem Subjekt im Nominativ und klärst anschließend die übrigen Satzglieder (Objekte, Adverbiale wie Abl. abs.). Bei der Einrückmethode schreibst du Haupt- und Nebensätze untereinander und rückst untergeordnete Sätze ein, sodass Verschachtelungen sofort sichtbar werden.",
+			"Ergänzend hilft bei überschaubaren Sätzen das lineare (intuitive) Erschließen in Wortblöcken von links nach rechts (Drei-Schritt-Verfahren: Blöcke abgrenzen, vorläufig deuten, am Prädikat überprüfen). Ganz am Ende steht immer die Ergebniskontrolle: Stimmt jeder Fall, jedes Tempus und jeder Bezug — und klingt das Ergebnis wie echtes, treffendes Deutsch?"
+		],
+		"materialLabel": "Komplexer Satz zum Üben von Einrück- und Konstruktionsmethode",
+		"materialLanguage": "la",
+		"material": "Cum nuntii Romam venissent, senatores, qui de salute patriae timebant, consulem laudaverunt, quod hostibus victis pacem servaverat.",
+		"sourceIds": ["lp", "lp-profil"],
+		"diagram": {
+			"kind": "syntax-tree",
+			"title": "Drei Wege durch den Schachtelsatz",
+			"caption": "Kombiniere Satzanalyse, Einrückung und deutsche Schlusskontrolle.",
+			"parts": [
+				{
+					"id": "ut-konstr",
+					"label": "1 · Konstruktionsmethode",
+					"badge": "Prädikat → Subjekt → Rest",
+					"latin": "senatores … laudaverunt",
+					"detail": "Finde zuerst das Hauptverb (laudaverunt, 3. Pl.) und sein Subjekt (senatores), bevor du in die Nebensätze gehst."
+				},
+				{
+					"id": "ut-einrueck",
+					"label": "2 · Einrückmethode",
+					"badge": "Ebenen trennen",
+					"latin": "Cum … / qui … / quod …",
+					"detail": "Untergeordnete Sätze (cum, qui, quod) und den Abl. abs. (hostibus victis) eine Stufe weiter rechts notieren."
+				},
+				{
+					"id": "ut-check",
+					"label": "3 · Qualitätskontrolle",
+					"badge": "Treffendes Deutsch",
+					"latin": "salus · hostibus victis",
+					"detail": "Prüfe Wortstellung, Zeitenfolge (venissent vorzeitig zu laudaverunt) und natürliches Deutsch."
+				}
+			]
+		},
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Was ist in der Konstruktionsmethode fast immer der erste Suchschritt in einem Satz?",
+			"answer": "das finite Prädikat (konjugiertes Verb) mit Person und Numerus",
+			"wrong": [
+				"das erste Adjektiv am Satzanfang",
+				"die längste Präposition im Satz"
+			],
+			"explanation": "Das Prädikat gibt Person, Numerus und Tempus vor und bestimmt, welche Ergänzungen (Subjekt, Objekte) im Satz erwartet werden."
+		},
+		"takeaway": "Konstruktionsmethode (Prädikat zuerst), Einrückmethode (Nebensätze einrücken) und abschließende Stimmigkeitsprobe schützen sicher vor Verwechslungen im Satzbau.",
+		"practice": [
+			{
+				"prompt": "Welches Verb bildet im Hauptsatz des Materials das übergeordnete Prädikat?",
+				"answers": ["laudaverunt"],
+				"feedback": "laudaverunt steht nicht in einem cum-, qui- oder quod-Nebensatz und trägt den Hauptsatz zu senatores."
+			},
+			{
+				"prompt": "Welcher eingeschobene Ablativus absolutus steht innerhalb des quod-Satzes?",
+				"answers": ["hostibus victis"],
+				"feedback": "hostibus victis steht im Ablativ losgelöst im quod-Satz („nachdem die Feinde besiegt worden waren“)."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "de",
+				"prompt": "Gliedere den Satz des Materials nach der Einrückmethode in seine vier Teilblöcke (mit dem Abl. abs.) und übersetze ihn anschließend flüssig ins Deutsche.",
+				"model": "Ebene 2: Cum nuntii Romam venissent,\nEbene 1 (Hauptsatz): senatores … consulem laudaverunt,\n  Ebene 2 (Relativsatz zu senatores): qui de salute patriae timebant,\n  Ebene 2 (Kausalsatz): quod … pacem servaverat,\n    Ebene 3 (Abl. abs.): hostibus victis.\nÜbersetzung: Nachdem die Boten nach Rom gekommen waren, lobten die Senatoren, die um die Rettung des Vaterlandes fürchteten, den Konsul, weil er nach dem Sieg über die Feinde den Frieden bewahrt hatte.",
+				"criteria": [
+					"Hauptsatz und alle untergeordneten Teile (cum, qui, quod, Abl. abs.) sind sauber getrennt.",
+					"Die Zeitenfolge (venissent → nachdem … gekommen waren) stimmt.",
+					"Die deutsche Übersetzung ist vollständig und gut lesbar."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Vergleiche eine typische Stolperfalle bei wörtlichem Übersetzen (z. B. ein Subjekt-Objekt-Dreher bei Akkusativ vor Nominativ) und zeige, wie dich die Konstruktionsmethode davor bewahrt.",
+				"model": "In „Consulem senatores laudaverunt“ steht das Objekt consulem ganz vorn. Wer einfach von links nach rechts „Der Konsul lobte die Senatoren“ übersetzt, vertauscht Subjekt und Objekt. Die Konstruktionsmethode prüft laudaverunt (3. Plural!) und sucht den Nominativ Plural senatores als Subjekt: „Die Senatoren lobten den Konsul.“",
+				"criteria": [
+					"Die Ursache der Wortstellungs-Falle im Lateinischen ist erklärt.",
+					"Kongruenz von Subjekt und Prädikat (Plural vs. Singular) wird als Prüfwerkzeug genutzt.",
+					"Das Beispiel ist korrekt aufgelöst."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "translation-methods",
+			"goals": [
+				{
+					"label": "Subjekt-Objekt-Falle über das Prädikat lösen",
+					"before": "Ducem milites vident (vident = 3. Pl.) → Subjekt:",
+					"after": "",
+					"options": ["milites", "ducem", "beide zugleich"],
+					"answer": "milites",
+					"explanation": "Das Plural-Prädikat vident verlangt ein Subjekt im Nominativ Plural (milites); ducem ist Akkusativobjekt."
+				},
+				{
+					"label": "Relativsatz-Bezugswort durch Einrücken klären",
+					"before": "senatores, qui timebant → Bezugswort zu qui:",
+					"after": "",
+					"options": ["senatores (Mask. Pl.)", "salute (Fem. Sg.)", "consulem (Mask. Sg.)"],
+					"answer": "senatores (Mask. Pl.)",
+					"explanation": "qui stimmt in Numerus und Genus mit senatores überein und steht direkt dahinter."
+				},
+				{
+					"label": "Schlusskontrolle einer Übersetzung vornehmen",
+					"before": "Was prüft man ganz am Ende?",
+					"after": "",
+					"options": [
+						"Casus-, Tempus-Treue UND natürliches Deutsch",
+						"nur die Länge der Wörter",
+						"ob alle lateinischen Endungen unverändert im Deutschen stehen"
+					],
+					"answer": "Casus-, Tempus-Treue UND natürliches Deutsch",
+					"explanation": "Erst Genauigkeit und gutes Deutsch gemeinsam machen eine Übersetzung gelungen."
+				}
+			]
+		}
+	},
+	{
+		"id": "l7-stellungnahme-rezeption",
+		"stage": "methodik",
+		"title": "Begründet Stellung nehmen & kreativ umsetzen",
+		"skill": "Textaussagen, Meinungen und Argumente zusammenstellen, begründet bewerten und kreative Rezeptionsformen planen",
+		"bindings": ["L7-03", "L7-04", "L7-38", "L7-41", "L7-44", "L7-50"],
+		"paragraphs": [
+			"Übersetzen ist im Lateinunterricht erst der erste Schritt — danach setzt du dich kritisch mit den Inhalten auseinander. Wenn ein Text historische oder moralische Behauptungen aufstellt (wie Roms Anspruch auf gerechte Kriege oder Kreons Strenge gegen Polyneikes), sammelst du zuerst genau die Argumente des Textes („Was behauptet der Sprecher?“) und trennst Befund von eigener Wertung.",
+			"Für deine begründete Stellungnahme formulierst du eine klare These, stützt sie mit mindestens zwei Text- oder Geschichtsargumenten und wägst ein Gegenargument ab. Auch kreative Umsetzungen — etwa ein Rollenspiel, ein Schaukasten, ein kurzer Hörbeitrag oder eine kommentierte Szene — leben davon, dass sie den Kerngedanken des lateinischen Textes genau treffen und anschaulich machen."
+		],
+		"materialLabel": "Römische Selbstdarstellung als Diskussionsgrundlage",
+		"materialLanguage": "la",
+		"material": "Romani saepe dicebant se bella gerere, ut sociis auxilium ferrent et pacem toto orbi terrarum darent.\nAttamen multi populi victi tributa gravia solvere et imperio Romano parere cogebantur.",
+		"sourceIds": ["lp", "lp-profil"],
+		"diagram": {
+			"kind": "syntax-tree",
+			"title": "Dreischritt zur begründeten Stellungnahme",
+			"caption": "Textbefund sichern, Argumente abwägen, eigene Position formulieren oder kreativ umsetzen.",
+			"parts": [
+				{
+					"id": "sr-befund",
+					"label": "1 · Textbefund",
+					"badge": "Beide Seiten sammeln",
+					"latin": "pacem dare vs. tributa solvere",
+					"detail": "Halte zuerst nüchtern fest, welche Aussage und welcher Widerspruch oder Kontrast im Text steckt."
+				},
+				{
+					"id": "sr-arg",
+					"label": "2 · Abwägung",
+					"badge": "These + Pro/Contra",
+					"latin": "dicebant vs. attamen",
+					"detail": "Prüfe die Glaubwürdigkeit der Rechtfertigung (ut auxilium ferrent) an den Folgen für Unterworfene."
+				},
+				{
+					"id": "sr-rez",
+					"label": "3 · Rezeption",
+					"badge": "Szene · Plakat · Vortrag",
+					"latin": "Dialog oder Schaukasten",
+					"detail": "Übersetze den Kernkonflikt in einen Dialog (z. B. römischer Gesandter vs. Provinzbewohner) für Unterricht oder Präsentation."
+				}
+			]
+		},
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Welches Wort im Material markiert den kritischen Gegensatz zwischen Roms Selbstbild und der Wirklichkeit der Besiegten?",
+			"answer": "Attamen („dennoch / aber freilich“)",
+			"wrong": ["saepe („oft“)", "et („und“)"],
+			"explanation": "Attamen setzt der wohlklingenden Rechtfertigung (Hilfe und Frieden) sofort die Belastung durch Steuern und Zwang entgegen."
+		},
+		"takeaway": "Eine überzeugende Stellungnahme trennt Textbefund, Gegenüberstellung der Argumente und begründetes eigenes Urteil.",
+		"practice": [
+			{
+				"prompt": "Nenne das lateinische Prädikat im letzten Satz, das ausdrückt, dass die besiegten Völker zum Gehorsam „gezwungen wurden“:",
+				"answers": ["cogebantur"],
+				"feedback": "cogebantur (3. Pl. Imperfekt Passiv zu cogere) heißt „sie wurden gezwungen“."
+			},
+			{
+				"prompt": "Welcher Nebensatztyp steht im ersten Satz hinter „ut sociis auxilium ferrent“ (Absicht)?",
+				"answers": ["Finalsatz", "finaler Nebensatz"],
+				"feedback": "ut + Konjunktiv Imperfekt drückt nach dicebant das vorgegebene Ziel (Finalsatz: „um … zu“) aus."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "de",
+				"prompt": "Übersetze beide Sätze des Materials und stelle in zwei Spalten oder kurzen Sätzen das römische Selbstbild und die Lage der besiegten Völker gegenüber.",
+				"model": "Die Römer sagten oft, dass sie Kriege führten, um Bundesgenossen Hilfe zu bringen und der ganzen Welt Frieden zu schenken. Dennoch wurden viele besiegte Völker gezwungen, schwere Abgaben zu zahlen und der römischen Herrschaft zu gehorchen.\nGegenüberstellung: Selbstbild = Schutzmacht und Friedensbringer; Erfahrung der Besiegten = militärischer Zwang, Verlust der Unabhängigkeit und hohe Steuerlast.",
+				"criteria": [
+					"Beide Sätze inklusive AcI, Finalsatz und Infinitiven sind sauber übersetzt.",
+					"Selbstbild und Erfahrung der Besiegten sind klar getrennt.",
+					"Der Kontrast durch attamen ist deutlich herausgestellt."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Skizziere eine kurze Dialogszene für zwei Sprecher (einen römischen Gesandten und eine Bürgerin einer neuen Provinz) als kreative Umsetzung des Materials und formuliere am Ende dein eigenes Fazit zur römischen Friedensbehauptung.",
+				"model": "Szene: Gesandter: „Mit unseren Legionen sichern wir eure Straßen vor Räubern und schenken euch die pax Romana.“ — Provinzbewohnerin: „Doch diesen Frieden bezahlen wir mit unseren Steuern und ohne eigenes Mitspracherecht!“\nFazit: Roms Herrschaft schuf zwar langfristige Infrastruktur und äußere Sicherheit, diente aber vor allem eigener Macht und wirtschaftlichem Gewinn — ein einseitiges „Friedensversprechen“ muss daher kritisch geprüft werden.",
+				"criteria": [
+					"Beide Perspektiven sprechen überzeugend auf Basis des Textes.",
+					"Eine kreative Form (Dialog / Szene / Plakatplan) ist erkennbar ausgearbeitet.",
+					"Ein eigenes, begründetes Urteil rundet den Text ab."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "reception",
+			"goals": [
+				{
+					"label": "Textbefund von eigener Meinung sauber trennen",
+					"before": "Erster Schritt vor jeder Bewertung →",
+					"after": "",
+					"options": [
+						"Aussagen und Argumente des Textes genau belegen",
+						"sofort ohne Textlektüre urteilen",
+						"nur ein einzelnes Wort austauschen"
+					],
+					"answer": "Aussagen und Argumente des Textes genau belegen",
+					"explanation": "Jede gute Stellungnahme fußt auf belegten Textaussagen."
+				},
+				{
+					"label": "Funktion von „attamen“ im Argumentationsgang erkennen",
+					"before": "Rechtfertigung … attamen … Folge →",
+					"after": "",
+					"options": [
+						"Einwand / kritische Gegenperspektive",
+						"reine Wiederholung des ersten Satzes",
+						"zeitlicher Rückblick auf die Königszeit"
+					],
+					"answer": "Einwand / kritische Gegenperspektive",
+					"explanation": "attamen leitet den Widerspruch zur vorangehenden Behauptung ein."
+				},
+				{
+					"label": "Merkmal einer gelungenen produktiven Rezeption wählen",
+					"before": "Rollenspiel oder Schaukasten zum Text →",
+					"after": "",
+					"options": [
+						"macht den Kerngedanken der Quelle anschaulich",
+						"verzichtet ganz auf Bezug zum lateinischen Text",
+						"besteht nur aus einer ungeordneten Vokabelliste"
+					],
+					"answer": "macht den Kerngedanken der Quelle anschaulich",
+					"explanation": "Kreative Aufgaben übersetzen Textaussagen in eine anschauliche Form."
+				}
+			]
+		}
+	},
+	{
+		"id": "l7-lernstrategien-arbeit",
+		"stage": "methodik",
+		"title": "Lernstrategien, Arbeitsplanung & Hilfsmittel",
+		"skill": "Vokabel- und Grammatik-Lerntechniken reflektiert auswählen, Prüfungen planen und Arbeitsergebnisse übersichtlich sichern",
+		"bindings": ["L7-45", "L7-46", "L7-47", "L7-48", "L7-49", "L7-50"],
+		"paragraphs": [
+			"In der 7. Klasse wächst der Stoff spürbar: rund 1200 Grundwortschatz-Vokabeln, Konjunktive, consecutio temporum und der Ablativus absolutus greifen ineinander. Bloßes Durchlesen vor einer Schulaufgabe reicht da selten. Wirksamer ist gezieltes Auswählen von Lerntechniken: Vokabelkartei oder digitale Karten (wie die verknüpften ZAM-Karten mit Abständen) für dauerhaftes Behalten, Wortbildungs-Analogien für neue Zusammensetzungen und kurze visuelle Skizzen (z. B. Klammern oder Zeitstrahlen) für die Syntax.",
+			"Ebenso wichtig ist realistische Arbeitsorganisation: Teile Lernpensen auf mehrere Tage vor einer Prüfung auf (z. B. Tag 1 Wortschatz, Tag 2 Formen, Tag 3 Satzbau/Abl. abs., Tag 4 Probeübersetzung mit Selbstkontrolle) und nutze Nachschlagewerk, Grammatikübersicht und Partnerarbeit verantwortungsvoll. Gegenseitiges faires Feedback hilft beiden Seiten, sprachliche Schwächen früh zu entdecken."
+		],
+		"materialLabel": "Lateinische Lernsprüche zur Methode und Beständigkeit",
+		"materialLanguage": "la",
+		"material": "Repetitio est mater studiorum.\nNulla dies sine linea!\nFestina lente — nam qui bene dividit tempus, multa facilius discit.",
+		"sourceIds": ["lp", "lp-profil"],
+		"diagram": {
+			"kind": "syntax-tree",
+			"title": "Der nachhaltige Lernkreislauf in Klasse 7",
+			"caption": "Kombiniere Verstehen, gezieltes Wiederholen und geordnete Prüfungsvorbereitung.",
+			"parts": [
+				{
+					"id": "ls-tech",
+					"label": "1 · Lerntechnik wählen",
+					"badge": "Kartei · Analogie · Bild",
+					"latin": "Repetitio mater studiorum",
+					"detail": "Nutze digitale/analoge Karteikarten (Stammformen + Beispielsatz!) und verbinde Neues mit bekannten Wortfamilien."
+				},
+				{
+					"id": "ls-plan",
+					"label": "2 · Zeit planen",
+					"badge": "Etappen statt Marathon",
+					"latin": "Nulla dies sine linea",
+					"detail": "15 Minuten regelmäßig wirken deutlich besser als eine Nacht vor der Schulaufgabe; plane Wortschatz, Formen und Übersetzung getrennt."
+				},
+				{
+					"id": "ls-sicher",
+					"label": "3 · Sichern & Kooperieren",
+					"badge": "Übersicht & Feedback",
+					"latin": "Festina lente",
+					"detail": "Halte Regeln in klaren Tabellen oder Diagrammen fest und besprich Übersetzungsvarianten respektvoll im Team."
+				}
+			]
+		},
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Was rät die lateinische Wendung „Festina lente!“ für deine Arbeitsweise?",
+			"answer": "Eile mit Weile — zügig, aber sorgfältig und überlegt arbeiten",
+			"wrong": [
+				"Möglichst schnell ohne Kontrolle abgeben",
+				"Auf jede Wiederholung verzichten"
+			],
+			"explanation": "Festina lente („Eile mit Weile!“) verbindet Vorankommen mit Sorgfalt und Gründlichkeit."
+		},
+		"takeaway": "Regelmäßiges Wiederholen mit Karteikarten, kluge Zeitaufteilung vor Prüfungen und klare Visualisierungen sichern dauerhaften Lernerfolg.",
+		"practice": [
+			{
+				"prompt": "Übersetze das Sprichwort „Repetitio est mater studiorum“ sinngemäß ins Deutsche:",
+				"answers": ["Wiederholung ist die Mutter des Lernens", "Die Wiederholung ist die Mutter der Studien", "Wiederholung ist die Mutter des Studiums"],
+				"feedback": "Repetitio est mater studiorum betont den Wert regelmäßigen Wiederholens."
+			},
+			{
+				"prompt": "Welches Wort in „Nulla dies sine linea“ bedeutet „Tag“?",
+				"answers": ["dies"],
+				"feedback": "dies (Gen. diei) bedeutet „der Tag“: Kein Tag ohne eine Zeile (Übung)."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "de",
+				"prompt": "Übersetze alle drei Zeilen des Materials ins Deutsche und erkläre für die erste und dritte Zeile, wie du sie konkret beim Lateinlernen umsetzen kannst.",
+				"model": "Wiederholung ist die Mutter des Lernens (der Studien). Kein Tag ohne eine Zeile! Eile mit Weile — denn wer die Zeit gut einteilt, lernt vieles leichter.\nUmsetzung: „Repetitio“ durch kurze tägliche Wiederholungsrunden mit ZAM-Karten oder Vokabelkartei; „Festina lente“ durch gründliches Prüfen der Endungen vor dem Niederschreiben der Übersetzung.",
+				"criteria": [
+					"Alle drei lateinischen Sätze sind treffend übersetzt.",
+					"Für zwei Sprüche sind konkrete Lernschritte benannt.",
+					"Die Rolle von Zeiteinteilung und Wiederholung ist erkennbar."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Erstelle einen realistischen 4-Tage-Lernplan für deine nächste Latein-Schulaufgabe (Stoff: Ablativus absolutus, Konjunktive mit consecutio temporum, Imperium Romanum und Grundwortschatz) und begründe deine Reihenfolge.",
+				"model": "Tag 1: Wortschatz (20 Minuten Karteikarten, Stammformen von ferre/Deponentien) + Nachschlagen der Konjunktivzeichen.\nTag 2: Consecutio temporum und Nebensätze (10 kurze Satzbeispiele bestimmen und übersetzen).\nTag 3: Ablativus absolutus (PPP, PPA, nominal) + Sachwissen Imperium Romanum wiederholen.\nTag 4: Eine zusammenhängende Probeübersetzung mit Konstruktionsmethode unter Zeitvorgabe schreiben und Fehler gezielt analysieren.\nBegründung: Erst Bausteine (Wörter/Formen) auffrischen, dann Satzbau vernetzen und erst zum Schluss unter Prüfungsbedingungen kombinieren.",
+				"criteria": [
+					"Alle vier Tage haben realistische, konkrete Arbeitspakete.",
+					"Alle geforderten Stoffgebiete (Wortschatz, Konjunktive, Abl. abs., Kultur) sind abgedeckt.",
+					"Die Abfolge (Grundlagen → Anwendung → Probeprüfung) ist begründet."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "study-skills",
+			"goals": [
+				{
+					"label": "Passende Technik für Stammformen und Kasus wählen",
+					"before": "Dauerhaftes Behalten von Vokabeln & Stammformen →",
+					"after": "",
+					"options": [
+						"Karteikarten / Spaced Repetition mit Beispielsatz",
+						"einmaliges Überfliegen am Abend vor der Prüfung",
+						"Abschreiben ohne Bedeutung"
+					],
+					"answer": "Karteikarten / Spaced Repetition mit Beispielsatz",
+					"explanation": "Aktives Abrufen in wachsenden Abständen festigt Wortschatz am zuverlässigsten."
+				},
+				{
+					"label": "Sinnvolle Reihenfolge der Prüfungsvorbereitung bestimmen",
+					"before": "Schulaufgaben-Planung →",
+					"after": "",
+					"options": [
+						"Wörter & Formen → Satzmuster → zusammenhängende Probeübersetzung",
+						"nur Kulturwissen lesen, Grammatik weglassen",
+						"alles auf die letzte Stunde verschieben"
+					],
+					"answer": "Wörter & Formen → Satzmuster → zusammenhängende Probeübersetzung",
+					"explanation": "Vom Einzelbaustein zum ganzen Text aufzubauen entlastet das Arbeitsgedächtnis."
+				},
+				{
+					"label": "Hilfreiches Partner-Feedback im Lernzirkel erkennen",
+					"before": "Kooperative Korrektur →",
+					"after": "",
+					"options": [
+						"Fehlerursache an Endung oder Bezug freundlich erklären",
+						"nur „falsch“ sagen ohne Hinweis",
+						"Kommentarlos die eigene Lösung abschreiben lassen"
+					],
+					"answer": "Fehlerursache an Endung oder Bezug freundlich erklären",
+					"explanation": "Konstruktives Feedback zeigt den nächsten konkreten Prüfschritt."
+				}
+			]
+		}
+	}
+]
