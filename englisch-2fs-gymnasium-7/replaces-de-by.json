@@ -1,0 +1,54 @@
+{
+	"schema": 1,
+	"status": "proposal-only",
+	"approved": null,
+	"source": "Thomas, Codex conversation on 2026-11-25: “Setze bitte die Review-Punkte in PR #202 um und merke J03 für die spätere Übernahme des Lernverlaufs auf die neue „had to“-Karte vor.” This records the proposal request.",
+	"source_repository": "https://github.com/zam-os/zam",
+	"source_commit": "67e190c2b7e5282851dfdd60ce21b69ed373dfa9",
+	"sources": [
+		{
+			"file": "tests/fixtures/de-by-gymnasium-7-englisch-grammar-present-perfect-modals-conditionals-kvt.json",
+			"tile_id": "de-by:gymnasium-7-englisch-grammar-present-perfect-modals-conditionals",
+			"version": "2026.08.1",
+			"sha256": "2859bd22297ca7c746bc65dcf6344cb3ba3022fd021f611124bf73f694f12bae"
+		}
+	],
+	"rows": [
+		{
+			"de_by_cell": "de-by:gymnasium-7-englisch-grammar-present-perfect-modals-conditionals",
+			"de_by_id": "01K4E7G0000000000000000J01",
+			"de_by_question": "Wann verwendet man im Englischen die Zeitform 'Past Simple' anstelle des 'Present Perfect'?",
+			"category": "C",
+			"academy_slug": null,
+			"action": "keep-active",
+			"reason": "Outside this proposal. The approved first-language package already maps J01 to e7-since-for-check."
+		},
+		{
+			"de_by_cell": "de-by:gymnasium-7-englisch-grammar-present-perfect-modals-conditionals",
+			"de_by_id": "01K4E7G0000000000000000J02",
+			"de_by_question": "Vergleiche die beiden englischen Zeiten Present Perfect und Past Simple: 1. Present Perfect Simple (have/has + 3. Verbform / Past Participle): Verbindung zwischen Vergangenheit und Gegenwart (Handlung begann in der Vergangenheit und dauert bis heute an ODER Handlung ist gerade vorbei mit sichtbarem Ergebnis in der Gegenwart; Signalwörter: since [Zeitpunkt], for [Zeitspanne], just, already, yet, never, ever, so far), 2. Past Simple (2. Verbform / -ed): Vollständig abgeschlossene Handlung in der Vergangenheit ohne Gegenwartsbezug; Signalwörter: yesterday, last week, in 1999, two days ago, when I was young, 3. Unterschied since vs. for: since + fester Zeitpunkt (since Monday, since 2015); for + Zeitdauer (for three hours, for five years) und übersetze: a) 'Ich lebe seit 2018 in München [und wohne immer noch dort].' b) 'Gestern kaufte er ein neues Fahrrad.'",
+			"category": "C",
+			"academy_slug": null,
+			"action": "keep-active",
+			"reason": "The legacy item combines several forms, duration and translations. These retrievals have no single equivalent in this package."
+		},
+		{
+			"de_by_cell": "de-by:gymnasium-7-englisch-grammar-present-perfect-modals-conditionals",
+			"de_by_id": "01K4E7G0000000000000000J03",
+			"de_by_question": "Welche Ersatzform muss verwendet werden, um das Modalverb 'must' (müssen) im Past Simple (Vergangenheit) auszudrücken?",
+			"category": "A",
+			"academy_slug": "e7s-modals-check",
+			"action": "propose-replace-after-approval",
+			"reason": "Both cards ask for had to to express a past obligation that uses must in the present. Grade 7 second-language modal substitutes provide the curriculum placement."
+		},
+		{
+			"de_by_cell": "de-by:gymnasium-7-englisch-grammar-present-perfect-modals-conditionals",
+			"de_by_id": "01K4E7G0000000000000000J04",
+			"de_by_question": "Erkläre die Ersatzformen der Modalverben und die Conditional Clauses Type 1 & 2: 1. Modal Substitutes (Ersatzverben): Da can, must, may defektiv sind (keine Formen im Past, Future oder Present Perfect besitzen), werden sie ersetzt durch:   * can (können/Fähigkeit)  be able to (was/were able to, will be able to).   * must (müssen/Pflicht)  have to (had to, will have to).   * may (dürfen/Erlaubnis)  be allowed to (was/were allowed to, will be allowed to).   * must not (nicht dürfen/Verbot) vs. needn't / don't have to (nicht müssen/Freiwilligkeit), 2. Conditional Sentences:   * Type 1 (Erfüllbare Bedingung der Gegenwart/Zukunft):  ('If it rains, we will stay at home').   * Type 2 (Unwahrscheinliche / hypothetische Bedingung):  ('If I won the lottery, I would buy a house').   * Eiserne Regel: Im if-Satz steht im Englischen **niemals will oder *would*** ('If-Satz-Regel').",
+			"category": "C",
+			"academy_slug": null,
+			"action": "keep-active",
+			"reason": "The legacy item combines modal substitutes with conditionals I and II. Conditional II belongs to a later grade on this track."
+		}
+	]
+}
