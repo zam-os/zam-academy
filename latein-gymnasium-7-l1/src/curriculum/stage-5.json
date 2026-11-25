@@ -1,0 +1,407 @@
+[
+	{
+		"id": "l7-abl-abs-aufbau",
+		"stage": "ablativus",
+		"title": "Ablativus absolutus: Aufbau & Abgrenzung zum PC",
+		"skill": "Den ablativus absolutus als vom Hauptsatz unabhängige Wortgruppe im Ablativ erkennen und vom Participium coniunctum unterscheiden",
+		"bindings": ["L7-19", "L7-20", "L7-39"],
+		"paragraphs": [
+			"Der ablativus absolutus (abgekürzt Abl. abs.) ist eine satzwertige Konstruktion, die „losgelöst“ (absolutus) vom Satzbau des Hauptsatzes steht: Sie besteht aus einem Bezugswort (Substantiv oder Pronomen) im Ablativ als gedanklichem Subjekt und einem damit KNG-kongruenten Partizip im Ablativ als gedanklichem Prädikat — beide zusammen bilden eine Klammer und vertreten ein Adverbiale im Satz.",
+			"Im Unterschied zum Participium coniunctum (PC) darf das Bezugswort des Abl. abs. grammatisch weder Subjekt noch Objekt des Hauptsatzes sein! Bei „Urbe capta milites gaudebant“ ist milites das Subjekt des Hauptsatzes, während urbe capta selbständig im Ablativ steht. Steht das Bezugswort dagegen im Nominativ, Dativ oder Akkusativ (z. B. „Milites urbem captam diripuerunt“), liegt kein Abl. abs., sondern ein PC bzw. ein attributives Partizip vor."
+		],
+		"materialLabel": "Ablativus absolutus und PC im direkten Vergleich",
+		"materialLanguage": "la",
+		"material": "1. Bello confecto cives pacem celebraverunt.\n2. Dux hostibus victis triumphum egit.\n3. Hostes victi pacem petiverunt. (Vergleich: PC / Attribut, kein Abl. abs.!)",
+		"sourceIds": ["lp"],
+		"diagram": {
+			"kind": "abl-abs-lab",
+			"title": "Klammer-Labor: Aufbau des Ablativus absolutus",
+			"caption": "Bezugswort im Ablativ + Partizip/Prädikativ im Ablativ bilden eine losgelöste adverbiale Einheit.",
+			"preset": "aufbau"
+		},
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Woran erkennst du, dass „Hostes victi pacem petiverunt“ KEIN Ablativus absolutus ist?",
+			"answer": "Hostes victi steht im Nominativ Plural und ist Subjekt des Hauptsatzes.",
+			"wrong": [
+				"victi ist ein Partizip Futur Aktiv statt PPP",
+				"Im Satz fehlt eine lateinische Konjunktion"
+			],
+			"explanation": "Ein Ablativus absolutus verlangt, dass Bezugswort und Partizip im Ablativ stehen und grammatisch nicht Subjekt oder Objekt des Hauptsatzes sind."
+		},
+		"takeaway": "Der Ablativus absolutus besteht aus Bezugswort + Partizip (oder zweitem Nomen) im Ablativ, steht außerhalb von Subjekt/Objekt des Hauptsatzes und fungiert als Adverbiale.",
+		"practice": [
+			{
+				"prompt": "Nenne die beiden lateinischen Wörter, die in Satz 1 („Bello confecto cives pacem celebraverunt“) den Ablativus absolutus bilden:",
+				"answers": ["Bello confecto", "bello confecto"],
+				"feedback": "Bello (Substantiv im Abl. Sg. n.) + confecto (PPP im Abl. Sg. n.) bilden den Ablativus absolutus."
+			},
+			{
+				"prompt": "Welches Wort ist im zweiten Satz („Dux hostibus victis triumphum egit“) das Subjekt des Hauptsatzes?",
+				"answers": ["Dux", "dux"],
+				"feedback": "Dux steht im Nominativ Singular und ist Subjekt zu egit; hostibus victis ist der abgetrennte Abl. abs."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "de",
+				"prompt": "Übersetze alle drei Sätze des Materials und erkläre kurz, warum Satz 1 und 2 einen Abl. abs. enthalten, Satz 3 aber nicht.",
+				"model": "1. Nachdem der Krieg beendet worden war, feierten die Bürger den Frieden.\n2. Nachdem die Feinde besiegt worden waren, hielt der Feldherr einen Triumphzug ab.\n3. Die besiegten Feinde baten um Frieden.\nBegründung: In 1 und 2 stehen bello confecto und hostibus victis im Ablativ losgelöst vom Subjekt (cives bzw. dux). In 3 steht hostes victi im Nominativ als Subjekt des Satzes.",
+				"criteria": [
+					"Alle drei Sätze sind sprachlich treffend übersetzt.",
+					"Die Abl.-abs.-Gruppen in 1 und 2 sind richtig bestimmt.",
+					"Satz 3 ist klar über den Nominativ abgegrenzt."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Warum nennt man diese Konstruktion im Deutschen häufig „abgetrennten / losgelösten Ablativ“ und welche Satzgliedfunktion erfüllt sie im Gesamtsatz?",
+				"model": "Sie heißt „losgelöst“ (absolutus), weil ihr Subjekt im Ablativ syntaktisch nicht als Subjekt oder Objekt in den Hauptsatz verflochten ist. Im Gesamtsatz übernimmt der gesamte Ablativus absolutus die Funktion einer adverbialen Bestimmung (Adverbiale), z. B. der Zeit, des Grundes oder der Einräumung.",
+				"criteria": [
+					"Der Begriff absolutus („losgelöst“) ist syntaktisch präzise erklärt.",
+					"Die Unabhängigkeit von Subjekt und Objekt des Hauptsatzes ist genannt.",
+					"Die Satzgliedfunktion als Adverbiale ist richtig angegeben."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "abl-abs-structure",
+			"goals": [
+				{
+					"label": "Bezugswort und Partizip im Ablativ paaren",
+					"before": "oppidum (n.) + capere (PPP) → Abl. abs.:",
+					"after": "",
+					"options": ["oppido capto", "oppidum captum", "oppido captus"],
+					"answer": "oppido capto",
+					"explanation": "Beide Teile müssen im Ablativ Singular Neutrum stehen: oppido capto."
+				},
+				{
+					"label": "Echten Abl. abs. vom PC unterscheiden",
+					"before": "Welcher Block ist ein Abl. abs.?",
+					"after": "",
+					"options": [
+						"legibus datis (cives laeti erant)",
+						"legibus datis paremus (wir gehorchen den gegebenen Gesetzen)",
+						"cives laudati (gaudent)"
+					],
+					"answer": "legibus datis (cives laeti erant)",
+					"explanation": "Bei „legibus datis paremus“ ist legibus Dativobjekt zu parere; bei „cives laeti erant“ steht legibus datis losgelöst im Ablativ."
+				},
+				{
+					"label": "Satzgliedrolle des Abl. abs. benennen",
+					"before": "Funktion im Satzganzen →",
+					"after": "",
+					"options": ["Adverbiale (zeitlich, kausal, konzessiv)", "Subjekt des Hauptsatzes", "Genitivattribut"],
+					"answer": "Adverbiale (zeitlich, kausal, konzessiv)",
+					"explanation": "Der Ablativus absolutus füllt im Satz die Stelle eines Adverbiales."
+				}
+			]
+		}
+	},
+	{
+		"id": "l7-abl-abs-ppp-ppa",
+		"stage": "ablativus",
+		"title": "Ablativus absolutus mit PPP & PPA",
+		"skill": "Das Zeitverhältnis (vorzeitig beim PPP, gleichzeitig beim PPA) sowie aktive/passive Übersetzung sicher beherrschen",
+		"bindings": ["L7-19", "L7-20"],
+		"paragraphs": [
+			"Wie beim Participium coniunctum entscheidet das Partizip im Ablativus absolutus über Zeitverhältnis und Handlungsrichtung: Steht im Abl. abs. ein PPP (Endungen -o, -a, -is), ist die Handlung vorzeitig zum Hauptsatz und passivisch: „Urbe capta“ heißt wörtlich „nach der eingenommenen Stadt“ und wird als Nebensatz zu „Nachdem die Stadt eingenommen worden war“ (oder mit dem Subjekt des Hauptsatzes aktiv: „Nachdem er/sie die Stadt eingenommen hatte“, falls sinnvoll).",
+			"Steht dagegen ein PPA (Endung -e im Singular, -ibus im Plural, wie „sole oriente“, „civibus clamantibus“), ist die Handlung gleichzeitig zum Hauptsatz und aktivisch: „Während die Sonne aufging“ bzw. „Während die Bürger riefen“. Achte auf den Ablativ Singular des PPA: Im echten Abl. abs. steht immer die Endung -e (nicht -i wie bei adjektivischem Gebrauch)."
+		],
+		"materialLabel": "Ablativus absolutus mit PPP und mit PPA",
+		"materialLanguage": "la",
+		"material": "1. Sole oriente nautae vela dederunt.\n2. Signo dato milites impetum fecerunt.\n3. Multīs civibus spectantibus triumphus per urbem ductus est.",
+		"sourceIds": ["lp"],
+		"diagram": {
+			"kind": "abl-abs-lab",
+			"title": "Zeitverhältnis im Abl. abs.: PPP vs. PPA",
+			"caption": "Schalte zwischen PPP (vorzeitig) und PPA (gleichzeitig) um und beobachte Partizipendung und Übersetzung.",
+			"preset": "partizip"
+		},
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Welches Zeitverhältnis drückt ein Ablativus absolutus mit PPP (z. B. signo dato) zum Hauptsatz aus?",
+			"answer": "Vorzeitigkeit (nachdem das Zeichen gegeben worden war)",
+			"wrong": [
+				"Gleichzeitigkeit (während das Zeichen gegeben wurde)",
+				"Nachzeitigkeit (bevor das Zeichen gegeben wird)"
+			],
+			"explanation": "Das PPP signalisiert im Abl. abs. genau wie im PC Vorzeitigkeit (und Passiv)."
+		},
+		"takeaway": "Abl. abs. mit PPP (-o, -a, -is) = vorzeitig, passiv („nachdem …“); Abl. abs. mit PPA (-e, -ibus) = gleichzeitig, aktiv („während …“).",
+		"practice": [
+			{
+				"prompt": "Wie übersetzt man den Abl. abs. „Sole oriente“ in Satz 1 mit einem deutschen Nebensatz („… die Sonne aufging“)?",
+				"answers": ["Während die Sonne aufging", "Als die Sonne aufging"],
+				"feedback": "oriente ist PPA (gleichzeitig, aktiv): „Während / Als die Sonne aufging“."
+			},
+			{
+				"prompt": "Auf welchen Buchstaben endet das PPA im Ablativ Singular eines Abl. abs. (wie in „sole oriente“)?",
+				"answers": ["-e", "e"],
+				"feedback": "Im Ablativus absolutus (und verbalen PC) endet der Ablativ Singular des PPA stets auf -e."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "de",
+				"prompt": "Übersetze alle drei Sätze des Materials und bestimme zu jedem Abl. abs. die Partizipform (PPP oder PPA) sowie das Zeitverhältnis zum Hauptsatz.",
+				"model": "1. Während (Als) die Sonne aufging, setzten die Seeleute die Segel. (sole oriente: PPA, gleichzeitig).\n2. Nachdem das Zeichen gegeben worden war, machten die Soldaten einen Angriff. (signo dato: PPP, vorzeitig).\n3. Während viele Bürger zuschauten, wurde der Triumphzug durch die Stadt geführt. (multis civibus spectantibus: PPA, gleichzeitig).",
+				"criteria": [
+					"Alle drei Sätze sind präzise übersetzt.",
+					"PPP und PPA sind bei allen drei Abl.-abs.-Konstruktionen richtig unterschieden.",
+					"Vorzeitigkeit und Gleichzeitigkeit sind sauber umgesetzt."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Vergleiche „Hostibus pugnantibus Romani castra muniverunt“ und „Hostibus victis Romani castra muniverunt“: Wie ändert der Wechsel von PPA zu PPP den Sinn der Handlung?",
+				"model": "Mit dem PPA (hostibus pugnantibus) geschah der Lagerbau gleichzeitig, während die Feinde noch aktiv kämpften („Während die Feinde kämpften, befestigten die Römer das Lager“). Mit dem PPP (hostibus victis) war der Kampf schon vorzeitig abgeschlossen und die Feinde waren besiegt („Nachdem die Feinde besiegt worden waren, befestigten die Römer das Lager“).",
+				"criteria": [
+					"Beide Sätze sind korrekt übersetzt.",
+					"Gleichzeitigkeit + Aktiv (PPA) vs. Vorzeitigkeit + Passiv (PPP) ist genau herausgearbeitet.",
+					"Der inhaltliche Unterschied für das Geschehen ist anschaulich erklärt."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "abl-abs-tense",
+			"goals": [
+				{
+					"label": "Gleichzeitiges PPA im Singular richtig bilden",
+					"before": "duc- + PPA im Abl. abs. (zu rege) →",
+					"after": "",
+					"options": ["rege ducente", "rege ducto", "regi ducenti"],
+					"answer": "rege ducente",
+					"explanation": "Im Ablativus absolutus endet das PPA auf -e: rege ducente."
+				},
+				{
+					"label": "Vorzeitiges PPP im Plural auf die Endung prüfen",
+					"before": "litteris scriptis →",
+					"after": "",
+					"options": [
+						"nachdem der Brief geschrieben worden war",
+						"während der Brief schrieb",
+						"bevor der Brief geschrieben wird"
+					],
+					"answer": "nachdem der Brief geschrieben worden war",
+					"explanation": "litterae (Pl.) = „der Brief“; scriptis (PPP) drückt Vorzeitigkeit aus."
+				},
+				{
+					"label": "Deponens im Abl. abs. erkennen",
+					"before": "duces hortati → als Abl. abs.:",
+					"after": "",
+					"options": ["ducibus hortantibus", "ducibus hortatos", "duces hortantibus"],
+					"answer": "ducibus hortantibus",
+					"explanation": "Deponentien können mit PPA (hortantibus) im Ablativus absolutus stehen."
+				}
+			]
+		}
+	},
+	{
+		"id": "l7-abl-abs-nominal",
+		"stage": "ablativus",
+		"title": "Der nominale Ablativus absolutus",
+		"skill": "Den Ablativus absolutus ohne Partizip (Nomen + Nomen/Adjektiv im Ablativ, z. B. Cicerone consule) erkennen und auflösen",
+		"bindings": ["L7-19", "L7-20"],
+		"paragraphs": [
+			"Weil das lateinische Verb esse kein Partizip Präsens hat, fällt im gleichzeitigen Ablativus absolutus bei Zuständen das Partizip einfach weg: Es stehen zwei Nomina oder ein Nomen und ein Adjektiv gemeinsam im Ablativ. Besonders berühmte Formeln aus Politik und Geschichte lauten: „Cicerone consule“ (als Cicero Konsul war / unter dem Konsulat Ciceros), „Caesare duce“ (unter Führung Caesars), „me invito“ (gegen meinen Willen) oder „patre vivo“ (zu Lebzeiten des Vaters).",
+			"Beim Übersetzen ergänzt du gedanklich die fehlende Form von „sein“ (als … war / während … war) oder greifst zu einem knappen deutschen Präpositionalausdruck („unter der Leitung …“, „bei Lebzeiten …“). Prüfe genau die Endungen im Ablativ: Gerade bei Namen und Titeln wie consul → consule, dux → duce, praetor → praetore zeigen die beiden Ablative sofort die Konstruktion."
+		],
+		"materialLabel": "Nominale Ablativi absoluti aus Politik und Alltag",
+		"materialLanguage": "la",
+		"material": "Cicerone consule coniuratio Catilinae detecta est.\nCaesare duce milites Rhenum transierunt.\nPatre vivo filius domi manebat; me invito hoc iter non facietis.",
+		"sourceIds": ["lp"],
+		"diagram": {
+			"kind": "abl-abs-lab",
+			"title": "Nominaler Ablativus absolutus im Labor",
+			"caption": "Wähle „Nominal (ohne Partizip)“ und teste Adverbialsatz, Präpositionalausdruck und Beiordnung.",
+			"preset": "nominal"
+		},
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Warum enthält „Cicerone consule“ kein Partizip?",
+			"answer": "esse besitzt kein Partizip Präsens, daher stehen Subjekt-Nomen und Prädikatsnomen bloß im Ablativ.",
+			"wrong": [
+				"consule ist ein verkürztes Partizip Futur",
+				"Weil Cicero selbst kein Amt bekleidete"
+			],
+			"explanation": "Im Lateinischen fehlt ein PPA zu esse; beim nominalen Abl. abs. ergänzt man beim Übersetzen „als … war / unter …“."
+		},
+		"takeaway": "Zwei Nomina (oder Nomen + Adjektiv) im Ablativ ohne Partizip bilden einen gleichzeitigen nominalen Ablativus absolutus — beim Übersetzen „sein“ ergänzen.",
+		"practice": [
+			{
+				"prompt": "Übersetze „Caesare duce“ aus Satz 2 als kurzen deutschen Präpositionalausdruck („unter …“):",
+				"answers": ["unter Caesars Führung", "unter der Führung Caesars", "unter Führung Caesars"],
+				"feedback": "Caesare duce heißt als Nebensatz „als Caesar Anführer war“ oder kurz „unter Caesars Führung“."
+			},
+			{
+				"prompt": "Wie übersetzt man die feste Formel „me invito“ (invitus = unwillig/ungern) treffend?",
+				"answers": ["gegen meinen Willen", "ohne meinen Willen"],
+				"feedback": "me invito bedeutet wörtlich „während ich unwillig bin“, im guten Deutsch „gegen meinen Willen“."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "de",
+				"prompt": "Übersetze alle Sätze des Materials ins Deutsche und formuliere zu „Cicerone consule“ sowohl eine Nebensatz- als auch eine Präpositional-Übersetzung.",
+				"model": "1. Als Cicero Konsul war (Unter dem Konsulat Ciceros), wurde die Verschwörung Catilinas aufgedeckt.\n2. Unter Caesars Führung (Als Caesar Feldherr war) überquerten die Soldaten den Rhein.\n3. Zu Lebzeiten des Vaters (Als der Vater noch lebte) blieb der Sohn zu Hause; gegen meinen Willen werdet ihr diese Reise nicht machen.",
+				"criteria": [
+					"Alle vier Teilsätze sind korrekt und natürlich übersetzt.",
+					"Für Cicerone consule sind Nebensatz- und Präpositionalvariante angegeben.",
+					"Patre vivo und me invito sind idiomatisch aufgelöst."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Wie unterscheidet man „Cicerone consule“ (nominaler Abl. abs.) von einem einfachen Ablativ der Zeit wie „tertio anno“? Erkläre an den beiden Gliedern der Wortgruppe.",
+				"model": "Bei „tertio anno“ bildet ein Zahlwort/Adjektiv ein gewöhnliches Attribut zu anno („im dritten Jahr“). Bei „Cicerone consule“ stehen dagegen Subjektsnomen (Cicerone) und Prädikatsnomen (consule) wie Subjekt und Prädikatsnomen eines Satzes nebeneinander („Cicero [war] Konsul“).",
+				"criteria": [
+					"Die doppelte Rolle von Subjekt und Prädikatsnomen im nominalen Abl. abs. ist erklärt.",
+					"Die Abgrenzung zur einfachen Zeitangabe stimmt.",
+					"Beide lateinischen Beispiele sind sinnvoll übersetzt."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "abl-abs-nominal",
+			"goals": [
+				{
+					"label": "Römische Jahresangabe über Konsuln auflösen",
+					"before": "Augusto et Agrippa consulibus →",
+					"after": "",
+					"options": [
+						"als Augustus und Agrippa Konsuln waren",
+						"durch Augustus und Agrippa die Konsuln",
+						"nach den Konsuln Augustus und Agrippa"
+					],
+					"answer": "als Augustus und Agrippa Konsuln waren",
+					"explanation": "Die Römer datierten Jahre oft durch einen nominalen Abl. abs. mit den Namen der beiden Konsuln."
+				},
+				{
+					"label": "Adjektiv im nominalen Abl. abs. richtig deuten",
+					"before": "nobis absentibus →",
+					"after": "",
+					"options": [
+						"während unserer Abwesenheit / als wir abwesend waren",
+						"nachdem wir abgereist waren",
+						"trotz unserer Anwesenheit"
+					],
+					"answer": "während unserer Abwesenheit / als wir abwesend waren",
+					"explanation": "absens, absentis (abwesend) tritt wie ein Adjektiv zu nobis im Ablativ."
+				},
+				{
+					"label": "Götterformel richtig übersetzen",
+					"before": "dis iuvantibus / dis faventibus →",
+					"after": "",
+					"options": [
+						"mit Hilfe / Gunst der Götter",
+						"gegen den Willen der Götter",
+						"von den Göttern besiegt"
+					],
+					"answer": "mit Hilfe / Gunst der Götter",
+					"explanation": "dis (Abl. Pl. zu deus) + Partizip/Adjektiv bildet häufige religiöse Begleitformeln."
+				}
+			]
+		}
+	},
+	{
+		"id": "l7-abl-abs-uebersetzen",
+		"stage": "ablativus",
+		"title": "Sinnrichtungen & Übersetzungsvarianten des Abl. abs.",
+		"skill": "Adverbialsatz (temporal, kausal, konzessiv, konditional), Präpositionalausdruck und Beiordnung stilistisch passend auswählen",
+		"bindings": ["L7-19", "L7-21", "L7-22", "L7-23"],
+		"paragraphs": [
+			"Genau wie ein Participium coniunctum lässt der Ablativus absolutus die genaue logische Beziehung zum Hauptsatz oft offen — der Kontext entscheidet über die treffendste Sinnrichtung: temporal („als / während / nachdem“), kausal („weil / da“), konzessiv („obwohl“, oft durch ein tamen im Hauptsatz angezeigt) oder konditional („wenn / falls“).",
+			"Für gutes Deutsch stehen dir drei Hauptwege offen: Erstens die Unterordnung als Adverbialsatz („Nachdem der Frieden geschlossen worden war, …“), zweitens ein knapper Präpositionalausdruck durch Substantivierung („Nach dem Friedensschluss …“, „Trotz großer Gefahr …“) und drittens die Beiordnung zweier Hauptsätze mit „und“ („Der Frieden wurde geschlossen, und die Bürger freuten sich“). Prüfe stets, was sich am flüssigsten liest!"
+		],
+		"materialLabel": "Kontextabhängige Sinnrichtungen des Ablativus absolutus",
+		"materialLanguage": "la",
+		"material": "1. Pace facta mercatores tuti navigabant.\n2. Multis militibus vulneratis dux tamen proelium non reliquit.\n3. Te adiuvante hoc opus facile perficiemus.",
+		"sourceIds": ["lp"],
+		"diagram": {
+			"kind": "abl-abs-lab",
+			"title": "Übersetzungs-Werkbank für den Abl. abs.",
+			"caption": "Vergleiche Adverbialsatz, Präpositionalausdruck und Beiordnung direkt im Labor.",
+			"preset": "styles"
+		},
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Welches Signalwort im Hauptsatz von Satz 2 weist auf eine konzessive („obwohl …“) Übersetzung des Abl. abs. hin?",
+			"answer": "tamen („dennoch / trotzdem“)",
+			"wrong": ["enim („nämlich“)", "igitur („also“)"],
+			"explanation": "tamen im Hauptsatz markiert den Gegensatz zum vorangehenden Ablativus absolutus („Obwohl viele Soldaten verwundet worden waren, …“)."
+		},
+		"takeaway": "Wähle nach dem Kontext zwischen temporaler, kausaler, konzessiver (Signal: tamen) und konditionaler Sinnrichtung sowie zwischen Nebensatz, Präpositionalausdruck und Beiordnung.",
+		"practice": [
+			{
+				"prompt": "Gib eine kurze präpositionale Übersetzung für „Pace facta“ („… den Friedensschluss“) an:",
+				"answers": ["Nach dem Friedensschluss", "Nach Abschluss des Friedens", "Nach Schließen des Friedens"],
+				"feedback": "Durch Substantivierung entsteht ein knapper, natürlicher Präpositionalausdruck: „Nach dem Friedensschluss“."
+			},
+			{
+				"prompt": "Welche Sinnrichtung passt zu „Te adiuvante hoc opus facile perficiemus“ (Satz 3: „… du hilfst“)?",
+				"answers": ["konditional", "modal", "kausal"],
+				"feedback": "Das Futur perficiemus legt hier eine konditionale („Wenn du hilfst, …“) oder modale/instrumentale („mit deiner Hilfe“) Deutung nahe."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "de",
+				"prompt": "Übersetze alle drei Sätze des Materials und gib zu Satz 1 und Satz 2 jeweils zwei verschiedene deutsche Übersetzungswege (z. B. Adverbialsatz und Präpositionalausdruck) an.",
+				"model": "1. Nachdem der Frieden geschlossen worden war, segelten die Kaufleute sicher. / Nach dem Friedensschluss segelten die Kaufleute sicher.\n2. Obwohl viele Soldaten verwundet worden waren, verließ der Feldherr dennoch die Schlacht nicht. / Trotz vieler verwundeter Soldaten verließ der Feldherr die Schlacht nicht.\n3. Wenn du hilfst (Mit deiner Hilfe), werden wir dieses Werk leicht vollenden.",
+				"criteria": [
+					"Alle drei Sätze sind inhaltlich richtig übersetzt.",
+					"Bei Satz 1 und 2 sind zwei unterschiedliche Übersetzungsarten formuliert.",
+					"tamen ist in Satz 2 konzessiv berücksichtigt."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Warum sollte man „Urbe capta“ im Deutschen niemals mit „Nach der eingenommenen Stadt“ übersetzen? Zeige an zwei stilistisch besseren Lösungen, wie der Satz im Deutschen richtig klingt.",
+				"model": "„Nach der eingenommenen Stadt“ verschiebt die Aussage auf einen Ort („hinter der Stadt“) statt auf die Handlung der Einnahme. Richtig sind der Nebensatz („Nachdem die Stadt eingenommen worden war“) oder die Substantivierung des Verbs („Nach der Einnahme der Stadt“).",
+				"criteria": [
+					"Der Fehler bei „nach der eingenommenen Stadt“ ist klar erklärt.",
+					"Sowohl der Nebensatz als auch die Verbalsubstantivierung („Nach der Einnahme …“) sind korrekt angegeben.",
+					"Die Bedeutung von PPP-Vorzeitigkeit bleibt gewahrt."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "abl-abs-translation",
+			"goals": [
+				{
+					"label": "Konzessive Sinnrichtung am tamen-Signal erkennen",
+					"before": "Tempestate orta tamen navigaverunt →",
+					"after": "",
+					"options": [
+						"Obwohl ein Sturm aufkam, segelten sie dennoch los.",
+						"Weil ein Sturm aufkam, blieben sie im Hafen.",
+						"Nachdem der Sturm vorüber war, segelten sie."
+					],
+					"answer": "Obwohl ein Sturm aufkam, segelten sie dennoch los.",
+					"explanation": "tamen verlangt den konzessiven Gegensatz („Obwohl …“)."
+				},
+				{
+					"label": "Präpositionalausdruck sauber bilden",
+					"before": "Rege mortuo → Präpositionalausdruck:",
+					"after": "",
+					"options": ["Nach dem Tod des Königs", "Nach dem toten König", "Wegen des sterbenden Königs"],
+					"answer": "Nach dem Tod des Königs",
+					"explanation": "Das PPP mortuo wird zum Substantiv „Tod“, das Bezugswort zum Genitiv „des Königs“."
+				},
+				{
+					"label": "Beiordnung bei Vorzeitigkeit richtig verknüpfen",
+					"before": "Litteris lectis legatus risit →",
+					"after": "",
+					"options": [
+						"Der Brief wurde gelesen, und daraufhin lachte der Gesandte.",
+						"Der Gesandte schrieb einen Brief und lachte.",
+						"Der Brief lachte, während er gelesen wurde."
+					],
+					"answer": "Der Brief wurde gelesen, und daraufhin lachte der Gesandte.",
+					"explanation": "Bei der Beiordnung wird die Zeitabfolge durch „und danach / daraufhin“ gewahrt."
+				}
+			]
+		}
+	}
+]

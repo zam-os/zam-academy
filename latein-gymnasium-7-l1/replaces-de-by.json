@@ -1,0 +1,94 @@
+{
+	"schema": 1,
+	"status": "proposal-only",
+	"approved": null,
+	"source_repository": "https://github.com/zam-os/zam",
+	"source_commit": "4aeaa8e3455937f8a53cd57e686ff98d602a0561",
+	"source": "Inventory checked on 2026-11-25 in tests/fixtures/curriculum/ and src/kernel/library/bundled-cells.ts of zam-os/zam. Two legacy Latein cells touch grade 7 (L1): (1) de-by:gymnasium-7-latein-aci-partizipialkonstruktionen-deklinationen holds 4 items on basic AcI and PPP/PPA-PC, which LehrplanPLUS assigns to Grade 6 for L1 and to Grade 7 for L2, so all 4 stay active (category C). (2) de-by:gymnasium-8-latein-ablativus-absolutus-konjunktive-consecutio holds 4 items on Abl. abs., Hauptsatz-Konjunktive and consecutio temporum, which LehrplanPLUS teaches in Grade 7 for L1 (and Grade 8 for L2): 2 single-concept items (J01, J03) are proposed as category A replacements and 2 composite items (J02, J04) remain active (category C). No history transfer ships in cell.json until Thomas decides on the neighbouring-grade ownership and approves.",
+	"sources": [
+		{
+			"id": "de-by:gymnasium-7-latein-aci-partizipialkonstruktionen-deklinationen",
+			"fixture": "tests/fixtures/de-by-gymnasium-7-latein-aci-partizipialkonstruktionen-deklinationen-kvt.json",
+			"sha256": "55eae4d0e1a12849f4bd74a46374391c2b6e7fb544c0f26bbb34018b1b2f365f"
+		},
+		{
+			"id": "de-by:gymnasium-8-latein-ablativus-absolutus-konjunktive-consecutio",
+			"fixture": "tests/fixtures/de-by-gymnasium-8-latein-ablativus-absolutus-konjunktive-consecutio-kvt.json",
+			"sha256": "6874a4d44dfe2bc0f5ad80b53ea2d851c2baad4a44fcba698f70542799eb3684"
+		}
+	],
+	"rows": [
+		{
+			"de_by_id": "01K4T7A0000000000000000J01",
+			"de_by_cell": "de-by:gymnasium-7-latein-aci-partizipialkonstruktionen-deklinationen",
+			"category": "C",
+			"action": "keep-active",
+			"academy_slug": null,
+			"reason": "Basis-AcI (Subjektsakkusativ im dass-Satz) gehört in Latein als 1. Fremdsprache bereits zu Jahrgangsstufe 6 (L6 2.3) bzw. zu Latein als 2. Fremdsprache in Klasse 7. Klasse 7 L1 behandelt nur noch die nachzeitige Erweiterung (-urum esse)."
+		},
+		{
+			"de_by_id": "01K4T7A0000000000000000J02",
+			"de_by_cell": "de-by:gymnasium-7-latein-aci-partizipialkonstruktionen-deklinationen",
+			"category": "C",
+			"action": "keep-active",
+			"academy_slug": null,
+			"reason": "Kompositkarte zu Basis-AcI, Kopfverben und gleichzeitigem/vorzeitigem AcI (L6-L1 bzw. L7-L2 Stoff); kein gleichwertiger Ersatz in diesem L7-L1-Paket."
+		},
+		{
+			"de_by_id": "01K4T7A0000000000000000J03",
+			"de_by_cell": "de-by:gymnasium-7-latein-aci-partizipialkonstruktionen-deklinationen",
+			"category": "C",
+			"action": "keep-active",
+			"academy_slug": null,
+			"reason": "PPP (vorzeitig-passiv) ist Stoff der Klasse 6 (L6 2.2/2.3) bzw. L7-L2; Klasse 7 L1 führt das PFA (nachzeitig-aktiv) ein."
+		},
+		{
+			"de_by_id": "01K4T7A0000000000000000J04",
+			"de_by_cell": "de-by:gymnasium-7-latein-aci-partizipialkonstruktionen-deklinationen",
+			"category": "C",
+			"action": "keep-active",
+			"academy_slug": null,
+			"reason": "Kompositkarte zu PPP/PPA-PC und dessen vier Übersetzungsvarianten (L6-L1 bzw. L7-L2); bleibt für bestehende Lernende aktiv."
+		},
+		{
+			"de_by_id": "01K8G8K0000000000000000J01",
+			"de_by_cell": "de-by:gymnasium-8-latein-ablativus-absolutus-konjunktive-consecutio",
+			"category": "A",
+			"action": "propose-replace-after-approval",
+			"academy_slug": "l7-abl-abs-ppp-ppa-check",
+			"reason": "Identisches Einzelwissen: Zeitverhältnis des Ablativus absolutus mit PPP (Vorzeitigkeit), das laut LehrplanPLUS L7 (L1) bereits in Klasse 7 unterrichtet wird. Vorbehaltlich Thomas' Entscheidung zur Nachbarjahrgangs-Zelle."
+		},
+		{
+			"de_by_id": "01K8G8K0000000000000000J02",
+			"de_by_cell": "de-by:gymnasium-8-latein-ablativus-absolutus-konjunktive-consecutio",
+			"category": "C",
+			"action": "keep-active",
+			"academy_slug": null,
+			"reason": "Mehrteilige Kompositkarte (Aufbau Abl. abs., PPP/PPA/nominal, fünf Übersetzungsmethoden inklusive seltener wörtlicher/Relativsatz-Übertragung sowie Beispielsatz); ein Transfer würde Teilbeherrschung überbewerten."
+		},
+		{
+			"de_by_id": "01K8G8K0000000000000000J03",
+			"de_by_cell": "de-by:gymnasium-8-latein-ablativus-absolutus-konjunktive-consecutio",
+			"category": "A",
+			"action": "propose-replace-after-approval",
+			"academy_slug": "l7-konjunktiv-hauptsatz-check",
+			"reason": "Identisches Einzelwissen: Hauptsatzfunktion der 1. Person Plural Konjunktiv Präsens (Hortativ: Lasst uns …!). Vorbehaltlich Thomas' Entscheidung zur Nachbarjahrgangs-Zelle."
+		},
+		{
+			"de_by_id": "01K8G8K0000000000000000J04",
+			"de_by_cell": "de-by:gymnasium-8-latein-ablativus-absolutus-konjunktive-consecutio",
+			"category": "C",
+			"action": "keep-active",
+			"academy_slug": null,
+			"reason": "Mehrteilige Kompositkarte, die sowohl den Irrealis (in L1 bereits Klasse 6) als auch vier Hauptsatzmodi und alle vier Fälle der consecutio temporum abfragt; nicht auf eine Einzelkarte abbildbar."
+		}
+	],
+	"neighbouring_grade_question": {
+		"cell_id": "de-by:gymnasium-8-latein-ablativus-absolutus-konjunktive-consecutio",
+		"question": "Soll die ältere Jahrgangsstufen-8-Zelle (de-by:gymnasium-8-latein-ablativus-absolutus-konjunktive-consecutio) für die zwei Einzelkarten J01 und J03 diesem L7-L1-Paket zugeordnet werden (2 A, 2 C), oder soll sie geschlossen bei Jahrgangsstufe 8 / Latein L2 verbleiben (dann dort alle 4 C)?",
+		"options": [
+			"Alle 4 Karten der Grade-8-Zelle vorerst bei Klasse 8 (bzw. L2) belassen, damit kein späteres L8/L2-Paket kollidiert (Recommended)",
+			"Die zwei A-Ersetzungen (J01 -> l7-abl-abs-ppp-ppa-check, J03 -> l7-konjunktiv-hauptsatz-check) für L7-L1 freigeben"
+		]
+	}
+}
