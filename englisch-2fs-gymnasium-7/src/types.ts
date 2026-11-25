@@ -30,15 +30,29 @@ export interface Task {
 
 export interface WorkshopGoal {
 	label: string;
-	before: string;
-	options: [string, string, string];
 	answer: string;
 	explanation: string;
 }
 
+export interface WorkshopPiece {
+	id: string;
+	label: string;
+	note: string;
+}
+
+export type WorkshopVisual =
+	| { kind: "map"; id: "cornwall" | "romans" | "florida" }
+	| { kind: "scene"; id: "directions" | "picture" | "storyboard" }
+	| {
+			kind: "board" | "timeline" | "comparison";
+			caption: string;
+			language?: "de" | "en";
+			pieces: WorkshopPiece[];
+	  };
+
 export interface Workshop {
 	goals: [WorkshopGoal, WorkshopGoal, WorkshopGoal];
-	visual?: string[] | "romans" | "cornwall" | "florida" | "picture" | "storyboard" | "directions";
+	visual: WorkshopVisual;
 }
 
 export interface Lesson {

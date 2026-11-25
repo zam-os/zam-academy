@@ -174,7 +174,8 @@ try {
 					prompt: document.querySelector(".task-prompt")?.textContent,
 					quiz: document.querySelectorAll(".quiz-choice").length,
 					practice: document.querySelectorAll(".practice-input").length,
-					goals: document.querySelectorAll("[data-workshop]").length,
+					pieces: document.querySelectorAll(".workshop [data-piece]").length,
+					question: document.querySelector("#workshop-question")?.textContent,
 					initial: document.querySelector("#workshop-status")?.textContent,
 					over: document.documentElement.scrollWidth > innerWidth,
 					body: document.querySelector("main")?.innerText
@@ -183,7 +184,8 @@ try {
 				assert.equal(rendered.prompt, lesson.tasks[level].prompt);
 				assert.equal(rendered.quiz, 3);
 				assert.equal(rendered.practice, 2);
-				assert.equal(rendered.goals, 3);
+				assert.ok(rendered.pieces >= 3);
+				assert.equal(rendered.question, lesson.workshop.goals[0].label);
 				assert.match(rendered.initial, /^0 von 3/);
 				assert.equal(rendered.over, false, `${lesson.id} ${width}`);
 				assert.doesNotMatch(rendered.body, /\bNaN\b|\bundefined\b/);
@@ -200,25 +202,50 @@ try {
 			await evaluate('document.querySelector("main h1")?.textContent'),
 			/Sprache im Zusammenhang/,
 		);
+		assert.equal(await evaluate('document.querySelectorAll(".grammar-overview dt").length'), 9);
 		await screenshot(`reference-${width}-${theme}`);
+		await evaluate('document.querySelector(".grammar-overview [data-lesson=e7s-modals]").click()');
+		assert.equal(await evaluate('location.hash.startsWith("#lesson=e7s-modals")'), true);
 	}
 
-	for (const [lesson, selector, note] of [
-		["cornwall", ".pin", "südwestlichen"],
-		["florida", ".pin", "Midwest"],
-		["romans", ".pin", "Nordengland"],
-		["directions", ".scene-piece", "Norden"],
-		["picture", ".scene-piece", "curtain"],
-		["clip", ".scene-piece", "backstage"],
-	]) {
-		await route(`#lesson=e7s-${lesson}&level=1`);
+	for (const lesson of lessons) {
+		await route(`#lesson=${lesson.id}&level=1`);
 		const result = await evaluate(`(() => {
-			const button = document.querySelector(${JSON.stringify(selector)});
-			button.click();
-			return [button.getAttribute("aria-pressed"), document.querySelector(".visual-note").textContent];
+			const goals = ${JSON.stringify(lesson.workshop.goals)};
+			const question = document.querySelector("#workshop-question");
+			const status = document.querySelector("#workshop-status");
+			const pieces = [...document.querySelectorAll(".workshop [data-piece]")];
+			const wrong = pieces.find((piece) => piece.dataset.piece !== goals[0].answer);
+			wrong.click();
+			const stayed = status.textContent.startsWith("0 von 3") && question.textContent === goals[0].label;
+			const passed = goals.every((goal, index) => {
+				const piece = pieces.find((button) => button.dataset.piece === goal.answer);
+				piece.click();
+				return status.textContent.startsWith((index + 1) + " von 3");
+			});
+			const scene = document.querySelector(".scene.directions");
+			const position = (id) => scene.querySelector('[data-piece="' + id + '"]').getBoundingClientRect();
+			const townLayout = !scene || (
+				position("cinema").left < position("square").left &&
+				position("square").left < position("museum").left &&
+				position("station").top > position("square").top &&
+				position("north").top < position("square").top
+			);
+			const map = document.querySelector("svg.britannia");
+			const mapRegions = map ? [...map.querySelectorAll("[data-country]")].map((area) => area.dataset.country) : [];
+			document.querySelector("#workshop-restart").click();
+			const restarted = status.textContent.startsWith("0 von 3") && question.textContent === goals[0].label;
+			return { stayed, passed, restarted, mapRegions, townLayout };
 		})()`);
-		assert.equal(result[0], "true");
-		assert.ok(result[1].includes(note), lesson);
+		assert.ok(result.stayed && result.passed && result.restarted && result.townLayout, lesson.id);
+		if (["e7s-cornwall", "e7s-romans"].includes(lesson.id))
+			assert.deepEqual(result.mapRegions, [
+				"Ireland",
+				"Northern Ireland",
+				"Scotland",
+				"Wales",
+				"England",
+			]);
 	}
 
 	const lesson = lessons.find(({ id }) => id === "e7s-station");
@@ -227,10 +254,8 @@ try {
 		const lesson = ${JSON.stringify(lesson)};
 		const all = (selector) => [...document.querySelectorAll(selector)];
 		document.querySelector("#partner-listened").click();
-		all("[data-workshop]").forEach((input, i) => {
-			input.value = lesson.workshop.goals[i].answer;
-			input.dispatchEvent(new Event("change"));
-		});
+		for (const goal of lesson.workshop.goals)
+			all(".workshop [data-piece]").find((piece) => piece.dataset.piece === goal.answer).click();
 		all(".quiz-choice").find((button) => button.textContent === lesson.quiz.answer).click();
 		all(".practice-input").forEach((input, i) => { input.value = lesson.practice[i].answers[0]; });
 		document.querySelector("#practice-form").requestSubmit();
@@ -252,7 +277,7 @@ try {
 		[],
 	);
 	console.log(
-		`ok: ${states} lesson states, six interactive visuals, full practice and saved draft; no page errors or HTTP requests.`,
+		`ok: ${states} lesson states, all 37 interactive workshops, grammar reference, full practice and saved draft; no page errors or HTTP requests.`,
 	);
 } finally {
 	chrome.kill();

@@ -11,7 +11,7 @@ This ZAM Academy package follows the [Bavarian LehrplanPLUS for English as a sec
 | Learning methods | 3 | Word formation, contextual dictionary use, source checking and error logs |
 | Cultural and historical topics | 2 | Celtic-speaking communities, Roman Britain and Bath, Hastings in 1066, and loanwords |
 
-Each of the 37 lessons has three workshop goals, a quick check, two short answers and open practice on two levels. Models and criteria support self-assessment. The 74 ZAM cards link back to their lessons. The [curriculum matrix](coverage.json) records 40 official expectations and topic entries. Natural listening, film, live interaction, source research and teacher feedback are supported by practice prompts and belong in the wider course.
+Each of the 37 lessons has an interactive visual workshop with three goals, a quick check, two short answers and open practice on two levels. The grammar reference summarizes key forms with examples and links to the corresponding lessons. Models and criteria support self-assessment. The 74 ZAM cards link back to their lessons. The [curriculum matrix](coverage.json) records 40 official expectations and topic entries. Natural listening, film, live interaction, source research and teacher feedback are supported by practice prompts and belong in the wider course.
 
 ## Use
 
@@ -28,4 +28,4 @@ ZAM_CORE=file:///path/to/zam-core/dist/index.js node scripts/validate-cell.mjs
 node scripts/verify-browser.mjs
 ```
 
-Use the zam-core version pinned in repository CI. On systems without Chrome at the default macOS path, set `CHROME_BIN`. The browser check opens the actual single-file build. It checks every lesson and level at desktop and mobile widths, opens the reference view, exercises the visuals and completes a full lesson. Screenshots go in `BROWSER_QA_DIR` or the system temporary directory.
+Use the zam-core version pinned in repository CI. On systems without Chrome at the default macOS path, set `CHROME_BIN`. The browser check opens the actual single-file build. It checks both levels of every lesson at desktop and mobile widths, reaches all 111 workshop goals, follows a grammar-reference link and completes a full lesson. The Vite development server uses port 5286. Screenshots go in `BROWSER_QA_DIR` or the system temporary directory.

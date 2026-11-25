@@ -7,7 +7,7 @@ export default defineConfig({
 	base: "/englisch-2fs-gymnasium-7/",
 	plugins: [viteSingleFile()],
 	server: {
-		port: 5285,
+		port: 5286,
 		strictPort: true,
 		open: false,
 	},

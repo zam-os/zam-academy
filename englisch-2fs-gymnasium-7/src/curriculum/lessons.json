@@ -33,9 +33,10 @@
 		},
 		"practice": [
 			{
-				"prompt": "Take the ___ train. (Welche Zeit hörst du für den neuen Zug? Schreibe sie mit Doppelpunkt.)",
+				"prompt": "Take the ___ train. (Schreibe die Uhrzeit in Ziffern.)",
 				"answers": [
-					"9:40"
+					"9:40",
+					"9.40"
 				],
 				"feedback": "Der Ersatz fährt um 9:40."
 			},
@@ -68,39 +69,42 @@
 			}
 		},
 		"workshop": {
+			"visual": {
+				"kind": "timeline",
+				"caption": "Höre die Nachricht. Tippe auf die passende Etappe der Reise.",
+				"pieces": [
+					{
+						"id": "cancel",
+						"label": "The first train is cancelled.",
+						"note": "Die Absage erklärt, warum die Nachricht geschickt wurde."
+					},
+					{
+						"id": "transfer",
+						"label": "There’s another train.",
+						"note": "Das Signalwort another kündigt den Ersatzzug an."
+					},
+					{
+						"id": "cafe",
+						"label": "Wait by the café.",
+						"note": "Hier verabreden sich die Reisenden."
+					}
+				]
+			},
 			"goals": [
 				{
-					"label": "Was ist der Anlass der Nachricht?",
-					"before": "Main point",
-					"options": [
-						"a change of train",
-						"a lost phone",
-						"a new café"
-					],
-					"answer": "a change of train",
-					"explanation": "Der erste Zug fällt aus."
+					"label": "Welcher Teil der Nachricht erklärt den Anruf?",
+					"answer": "cancel",
+					"explanation": "Die Absage erklärt, warum die Nachricht geschickt wurde."
 				},
 				{
-					"label": "Welche Zeit hörst du für den neuen Zug? Schreibe sie mit Doppelpunkt.",
-					"before": "Take the … train.",
-					"options": [
-						"9:40",
-						"9:10",
-						"4:40"
-					],
-					"answer": "9:40",
-					"explanation": "Der Ersatz fährt um 9:40."
+					"label": "Wo will die anrufende Person warten?",
+					"answer": "cafe",
+					"explanation": "Hier verabreden sich die Reisenden."
 				},
 				{
-					"label": "Welches Gleis? Schreibe die Ziffer.",
-					"before": "It leaves from platform … .",
-					"options": [
-						"4",
-						"9",
-						"10"
-					],
-					"answer": "4",
-					"explanation": "Platform four ist Gleis vier."
+					"label": "Welcher Teil eröffnet eine Alternative zur abgesagten Fahrt?",
+					"answer": "transfer",
+					"explanation": "Das Signalwort another kündigt den Ersatzzug an."
 				}
 			]
 		},
@@ -177,42 +181,27 @@
 			}
 		},
 		"workshop": {
+			"visual": {
+				"kind": "scene",
+				"id": "directions"
+			},
 			"goals": [
 				{
-					"label": "Du möchtest jemanden höflich nach dem Museum fragen.",
-					"before": "At the station",
-					"options": [
-						"Excuse me, how do I get to the museum?",
-						"The museum needs to get to me.",
-						"Where did you buy the museum?"
-					],
-					"answer": "Excuse me, how do I get to the museum?",
-					"explanation": "Excuse me eröffnet die Frage höflich."
+					"label": "Wo fängt die Wegbeschreibung an?",
+					"answer": "station",
+					"explanation": "Am Bahnhof beginnt die Route."
 				},
 				{
-					"label": "Blick nach Norden. Wohin am Platz für das Kino?",
-					"before": "Turn … at the square.",
-					"options": [
-						"left",
-						"right",
-						"back"
-					],
-					"answer": "left",
-					"explanation": "Das Kino liegt links von der Bildschirmmitte."
+					"label": "Welches Ziel liegt vom Platz aus nach Westen?",
+					"answer": "cinema",
+					"explanation": "Mit Blick nach Norden liegt Westen links."
 				},
 				{
-					"label": "Wie heißt gegenüber? Verwende ein Wort.",
-					"before": "The bus stop is … the café.",
-					"options": [
-						"opposite",
-						"along",
-						"through"
-					],
-					"answer": "opposite",
-					"explanation": "Opposite bedeutet direkt gegenüber."
+					"label": "An welchem Orientierungspunkt trennen sich die Wege zum Kino und zum Museum?",
+					"answer": "square",
+					"explanation": "Am Platz entscheidest du dich zwischen links und rechts."
 				}
-			],
-			"visual": "directions"
+			]
 		},
 		"speaking": true
 	},
@@ -249,9 +238,10 @@
 		},
 		"practice": [
 			{
-				"prompt": "Go to gate ___. (Schreibe das neue Gate mit Leerzeichen.)",
+				"prompt": "Go to gate ___. (Schreibe Buchstabe und Zahl.)",
 				"answers": [
-					"B 16"
+					"B 16",
+					"B16"
 				],
 				"feedback": "Die Person sagt B sixteen."
 			},
@@ -284,39 +274,47 @@
 			}
 		},
 		"workshop": {
+			"visual": {
+				"kind": "timeline",
+				"caption": "Höre den Dialog und ordne dem Gespräch die passenden Sprechabsichten zu.",
+				"pieces": [
+					{
+						"id": "check",
+						"label": "May I see your boarding pass?",
+						"note": "Das Personal prüft die Bordkarte."
+					},
+					{
+						"id": "change",
+						"label": "Your gate has changed.",
+						"note": "Der neue Abflugbereich ist die wichtigste Änderung."
+					},
+					{
+						"id": "reassure",
+						"label": "You have plenty of time.",
+						"note": "Das Personal reagiert auf die Sorge und beruhigt den Reisenden."
+					},
+					{
+						"id": "end",
+						"label": "Go to the gate after security.",
+						"note": "Die Anweisung gibt die Reihenfolge vor. Erst kommt die Sicherheitskontrolle."
+					}
+				]
+			},
 			"goals": [
 				{
-					"label": "Was ändert sich für die reisende Person?",
-					"before": "Airport announcement",
-					"options": [
-						"the gate",
-						"the city",
-						"the bag"
-					],
-					"answer": "the gate",
-					"explanation": "The gate has changed nennt die Änderung."
+					"label": "Welche Frage dient der Kontrolle eines Dokuments?",
+					"answer": "check",
+					"explanation": "Das Personal prüft die Bordkarte."
 				},
 				{
-					"label": "Schreibe das neue Gate mit Leerzeichen.",
-					"before": "Go to gate … .",
-					"options": [
-						"B 16",
-						"B 60",
-						"A 16"
-					],
-					"answer": "B 16",
-					"explanation": "Die Person sagt B sixteen."
+					"label": "Welche Meldung ändert den Reiseplan?",
+					"answer": "change",
+					"explanation": "Der neue Abflugbereich ist die wichtigste Änderung."
 				},
 				{
-					"label": "Schreibe die Uhrzeit mit Doppelpunkt.",
-					"before": "Boarding starts at … .",
-					"options": [
-						"2:15",
-						"2:50",
-						"12:15"
-					],
-					"answer": "2:15",
-					"explanation": "Two fifteen heißt 2:15."
+					"label": "Welche Anweisung sagt, wohin man nach der Sicherheitskontrolle geht?",
+					"answer": "end",
+					"explanation": "Die Anweisung gibt die Reihenfolge vor. Erst kommt die Sicherheitskontrolle."
 				}
 			]
 		},
@@ -393,39 +391,42 @@
 			}
 		},
 		"workshop": {
+			"visual": {
+				"kind": "timeline",
+				"caption": "Erkunde ein neues Gespräch in drei Schritten.",
+				"pieces": [
+					{
+						"id": "problem",
+						"label": "My knee hurts.",
+						"note": "Die Person beschreibt, was ihr wehtut."
+					},
+					{
+						"id": "request",
+						"label": "Could you tell me where the pharmacy is?",
+						"note": "Mit „Could you …?“ bittet die Person höflich um eine Auskunft."
+					},
+					{
+						"id": "route",
+						"label": "It’s at the end of this road.",
+						"note": "Nun erfährt die Person, wie sie den Ort findet."
+					}
+				]
+			},
 			"goals": [
 				{
-					"label": "Welcher Satz beschreibt Halsweh?",
-					"before": "At the pharmacy",
-					"options": [
-						"I’ve got a sore throat.",
-						"My ankle hurts.",
-						"I feel much better."
-					],
-					"answer": "I’ve got a sore throat.",
-					"explanation": "Throat ist der Hals."
+					"label": "Womit eröffnest du das Gespräch, wenn dein Knie wehtut?",
+					"answer": "problem",
+					"explanation": "Die Person beschreibt, was ihr wehtut."
 				},
 				{
-					"label": "Ergänze die höfliche Frage mit Could.",
-					"before": "… you say that again, please?",
-					"options": [
-						"Could",
-						"Are",
-						"Have"
-					],
-					"answer": "Could",
-					"explanation": "Could steht mit der Grundform say."
+					"label": "Mit welchem Satz bittest du höflich um eine Wegbeschreibung?",
+					"answer": "request",
+					"explanation": "Mit „Could you …?“ bittet die Person höflich um eine Auskunft."
 				},
 				{
-					"label": "Wie bietest du Begleitung an? Nutze die Grundform von kommen.",
-					"before": "Would you like me to … with you?",
-					"options": [
-						"come",
-						"comes",
-						"came"
-					],
-					"answer": "come",
-					"explanation": "Nach to steht hier come."
+					"label": "Welche Antwort enthält einen Hinweis zur Lage?",
+					"answer": "route",
+					"explanation": "Nun erfährt die Person, wie sie den Ort findet."
 				}
 			]
 		},
@@ -500,39 +501,42 @@
 			}
 		},
 		"workshop": {
+			"visual": {
+				"kind": "comparison",
+				"caption": "Vergleiche die drei Filme mit Ankunft um 17 Uhr und Busabfahrt um 20 Uhr.",
+				"pieces": [
+					{
+						"id": "beats",
+						"label": "City Beats · 16:20–17:50",
+						"note": "Dieser Film beginnt vor deiner Ankunft."
+					},
+					{
+						"id": "ocean",
+						"label": "Ocean Rescue · 18:10–19:40",
+						"note": "Von 17 Uhr bis 18:10 Uhr kannst du warten. Nach dem Film bleiben 20 Minuten bis zur Busabfahrt."
+					},
+					{
+						"id": "stars",
+						"label": "Star Club · 19:35–20:50",
+						"note": "Dieser Film endet nach der letzten Busabfahrt."
+					}
+				]
+			},
 			"goals": [
 				{
-					"label": "Du kommst um 17 Uhr und brauchst den letzten Bus. Welcher Film passt?",
-					"before": "Film choice",
-					"options": [
-						"Ocean Rescue",
-						"City Beats",
-						"Star Club"
-					],
-					"answer": "Ocean Rescue",
-					"explanation": "Ocean Rescue läuft von 18:10 bis 19:40."
+					"label": "Welchen Film kannst du vollständig sehen und danach noch den Bus erreichen?",
+					"answer": "ocean",
+					"explanation": "Von 17 Uhr bis 18:10 Uhr kannst du warten. Nach dem Film bleiben 20 Minuten bis zur Busabfahrt."
 				},
 				{
-					"label": "In welchem Saal läuft Ocean Rescue? Schreibe die Ziffer.",
-					"before": "Screen …",
-					"options": [
-						"2",
-						"1",
-						"6"
-					],
-					"answer": "2",
-					"explanation": "Ocean Rescue läuft in Screen 2."
+					"label": "Welchen Film verpasst du, obwohl er früh genug endet?",
+					"answer": "beats",
+					"explanation": "Dieser Film beginnt vor deiner Ankunft."
 				},
 				{
-					"label": "Welches Fragewort fragt nach einer Meinung?",
-					"before": "… do you think?",
-					"options": [
-						"What",
-						"When",
-						"How many"
-					],
-					"answer": "What",
-					"explanation": "What do you think fragt nach einer Meinung."
+					"label": "Bei welchem Film ist der Beginn passend, das Ende aber zu spät?",
+					"answer": "stars",
+					"explanation": "Dieser Film endet nach der letzten Busabfahrt."
 				}
 			]
 		},
@@ -608,46 +612,48 @@
 			}
 		},
 		"workshop": {
+			"visual": {
+				"kind": "timeline",
+				"caption": "Baue einen Kurzvortrag über Skateboarding auf.",
+				"pieces": [
+					{
+						"id": "hook",
+						"label": "Have you ever tried skateboarding?",
+						"note": "Eine Frage weckt Interesse und führt ins Thema."
+					},
+					{
+						"id": "routine",
+						"label": "I practise in the park on Saturdays.",
+						"note": "Diese Information beschreibt eine Gewohnheit."
+					},
+					{
+						"id": "event",
+						"label": "Last week I learned how to turn.",
+						"note": "Ein konkretes Erlebnis macht den Vortrag anschaulich."
+					},
+					{
+						"id": "view",
+						"label": "I enjoy it because my friends help me.",
+						"note": "Die Begründung zeigt, was der Sport für dich bedeutet."
+					}
+				]
+			},
 			"goals": [
 				{
-					"label": "Welcher Stichpunkt hilft beim Erzählen über die Vergangenheit?",
-					"before": "Talk plan",
-					"options": [
-						"last week",
-						"next week",
-						"every Tuesday"
-					],
-					"answer": "last week",
-					"explanation": "Last week eröffnet den Rückblick."
+					"label": "Mit welcher Frage steigst du in den Vortrag ein?",
+					"answer": "hook",
+					"explanation": "Eine Frage weckt Interesse und führt ins Thema."
 				},
 				{
-					"label": "Ergänze die Einleitung mit Heute.",
-					"before": "… I’ll tell you about basketball.",
-					"options": [
-						"Today",
-						"Yesterday",
-						"Every"
-					],
-					"answer": "Today",
-					"explanation": "Today führt in den Vortrag ein."
+					"label": "Welcher Abschnitt erzählt ein einzelnes Erlebnis?",
+					"answer": "event",
+					"explanation": "Ein konkretes Erlebnis macht den Vortrag anschaulich."
 				},
 				{
-					"label": "Ergänze die Schlussformel mit der passenden Form von listen.",
-					"before": "Thanks for … .",
-					"options": [
-						"listening",
-						"listen",
-						"listened"
-					],
-					"answer": "listening",
-					"explanation": "Nach for steht hier listening."
+					"label": "Welcher Abschnitt erklärt am Ende deine persönliche Sicht?",
+					"answer": "view",
+					"explanation": "Die Begründung zeigt, was der Sport für dich bedeutet."
 				}
-			],
-			"visual": [
-				"Start · topic",
-				"Detail · when and where",
-				"Example · last match",
-				"End · why I like it"
 			]
 		},
 		"speaking": true
@@ -719,39 +725,48 @@
 			}
 		},
 		"workshop": {
+			"visual": {
+				"kind": "board",
+				"caption": "Wähle passende Ausschnitte für verschiedene Gäste des Museums.",
+				"pieces": [
+					{
+						"id": "entry",
+						"label": "Letzter Einlass 16 Uhr",
+						"note": "Wer die Ausstellung besuchen will, braucht die Einlasszeit."
+					},
+					{
+						"id": "shop",
+						"label": "Laden schließt um 16:30 Uhr",
+						"note": "Für ein Geschenk aus dem Museumsladen ist dessen eigene Schließzeit wichtig."
+					},
+					{
+						"id": "bag",
+						"label": "Große Taschen ins Schließfach",
+						"note": "Dein Gegenüber muss wissen, wohin mit der Tasche."
+					},
+					{
+						"id": "free",
+						"label": "Jugendliche bis 16 Jahre kostenlos",
+						"note": "Diese Angabe hilft einer Person, die nach dem Preis fragt."
+					}
+				],
+				"language": "de"
+			},
 			"goals": [
 				{
-					"label": "Dein Gast ist 13 und möchte um 15 Uhr hinein. Welcher Satz hilft?",
-					"before": "Message to a guest",
-					"options": [
-						"You can get in until four and it’s free for you.",
-						"The shop stays open all night.",
-						"You need an adult ticket at three."
-					],
-					"answer": "You can get in until four and it’s free for you.",
-					"explanation": "Die letzte Einlasszeit und der freie Eintritt helfen direkt."
+					"label": "Welche Angabe hilft einer Person, die erst am späten Nachmittag zur Ausstellung kommen kann?",
+					"answer": "entry",
+					"explanation": "Wer die Ausstellung besuchen will, braucht die Einlasszeit."
 				},
 				{
-					"label": "Ergänze das Wort für kostenlos.",
-					"before": "It’s … for children aged sixteen and under.",
-					"options": [
-						"free",
-						"closed",
-						"full"
-					],
-					"answer": "free",
-					"explanation": "Free bedeutet hier kostenlos."
+					"label": "Welche Angabe braucht ein Gast, der nur ein Geschenk kaufen möchte?",
+					"answer": "shop",
+					"explanation": "Für ein Geschenk aus dem Museumsladen ist dessen eigene Schließzeit wichtig."
 				},
 				{
-					"label": "Ergänze das Verb lassen in der Grundform.",
-					"before": "You can … your big bag in a locker.",
-					"options": [
-						"leave",
-						"take",
-						"buy"
-					],
-					"answer": "leave",
-					"explanation": "Leave your bag bedeutet die Tasche dort lassen."
+					"label": "Welche Regel sollst du einer Person mit großem Rucksack vermitteln?",
+					"answer": "bag",
+					"explanation": "Dein Gegenüber muss wissen, wohin mit der Tasche."
 				}
 			]
 		}
@@ -826,39 +841,42 @@
 			}
 		},
 		"workshop": {
+			"visual": {
+				"kind": "board",
+				"caption": "Entnimm der Meldung Infos für unterschiedliche Personen.",
+				"pieces": [
+					{
+						"id": "rain",
+						"label": "Heavy rain around five",
+						"note": "Ein Hinweis auf Regen ist unterwegs nützlich."
+					},
+					{
+						"id": "hall",
+						"label": "Evening concert · sports hall",
+						"note": "Das Abendkonzert hat einen neuen Ort."
+					},
+					{
+						"id": "library",
+						"label": "Drum workshop · library",
+						"note": "Das Nachmittagsangebot bleibt am bisherigen Ort."
+					}
+				]
+			},
 			"goals": [
 				{
-					"label": "Welcher englische Schlüsselbegriff zeigt an, dass das Konzert drinnen ist?",
-					"before": "Weather update",
-					"options": [
-						"indoors",
-						"outdoors",
-						"entrance"
-					],
-					"answer": "indoors",
-					"explanation": "Indoors heißt drinnen."
+					"label": "Welche Meldung gibst du weiter, wenn jemand um 17 Uhr mit dem Fahrrad losfährt?",
+					"answer": "rain",
+					"explanation": "Ein Hinweis auf Regen ist unterwegs nützlich."
 				},
 				{
-					"label": "Ergänze englisch: Der Regen ist wahrscheinlich.",
-					"before": "Heavy rain is … .",
-					"options": [
-						"likely",
-						"late",
-						"light"
-					],
-					"answer": "likely",
-					"explanation": "Likely bedeutet wahrscheinlich."
+					"label": "Welche Meldung ist für jemanden wichtig, der ausschließlich zum Abendkonzert kommt?",
+					"answer": "hall",
+					"explanation": "Das Abendkonzert hat einen neuen Ort."
 				},
 				{
-					"label": "Welches Wort bezeichnet den Eingang?",
-					"before": "Use the south … .",
-					"options": [
-						"entrance",
-						"exit",
-						"ticket"
-					],
-					"answer": "entrance",
-					"explanation": "Entrance ist der Eingang."
+					"label": "Welche Angabe braucht jemand, der nur zum Trommelkurs kommt?",
+					"answer": "library",
+					"explanation": "Das Nachmittagsangebot bleibt am bisherigen Ort."
 				}
 			]
 		},
@@ -933,44 +951,43 @@
 			}
 		},
 		"workshop": {
+			"visual": {
+				"kind": "timeline",
+				"caption": "Vergleiche ein Ereignis, sein Ergebnis und eine Gewohnheit.",
+				"pieces": [
+					{
+						"id": "past",
+						"label": "Tuesday · We repaired the bike.",
+						"note": "Simple past nennt ein Ereignis zu einem abgeschlossenen Zeitpunkt."
+					},
+					{
+						"id": "result",
+						"label": "Now · We’ve repaired the bike.",
+						"note": "Das Rad ist jetzt wieder einsatzbereit. Das Ergebnis steht im Vordergrund."
+					},
+					{
+						"id": "habit",
+						"label": "Every weekend · We repair bikes.",
+						"note": "Simple present beschreibt hier eine Gewohnheit."
+					}
+				]
+			},
 			"goals": [
 				{
-					"label": "Der Schlüssel ist jetzt weg. Welcher Satz stellt das Ergebnis heraus?",
-					"before": "Now",
-					"options": [
-						"I’ve lost my key.",
-						"I lose my key every week.",
-						"I’m losing my key right now."
-					],
-					"answer": "I’ve lost my key.",
-					"explanation": "Have lost verbindet Ereignis und Ergebnis."
+					"label": "Welcher Satz eignet sich als Nachricht an jemanden, der das Rad jetzt braucht?",
+					"answer": "result",
+					"explanation": "Das Rad ist jetzt wieder einsatzbereit. Das Ergebnis steht im Vordergrund."
 				},
 				{
-					"label": "Ergänze has und das past participle von break.",
-					"before": "My phone … . It doesn’t work now.",
-					"options": [
-						"has broken",
-						"has broke",
-						"have broken"
-					],
-					"answer": "has broken",
-					"explanation": "Nach has steht broken."
+					"label": "Welcher Satz beantwortet „What happened on Tuesday?“",
+					"answer": "past",
+					"explanation": "Simple past nennt ein Ereignis zu einem abgeschlossenen Zeitpunkt."
 				},
 				{
-					"label": "Verwende die zweite Form von lose.",
-					"before": "I … the ticket yesterday.",
-					"options": [
-						"lost",
-						"lose",
-						"losing"
-					],
-					"answer": "lost",
-					"explanation": "Yesterday setzt die Handlung an einen abgeschlossenen Zeitpunkt."
+					"label": "Welcher Satz passt zu einer Vorstellung eures Fahrradclubs?",
+					"answer": "habit",
+					"explanation": "Simple present beschreibt hier eine Gewohnheit."
 				}
-			],
-			"visual": [
-				"Vergangenheit · I lost the key",
-				"Jetzt · I can’t open the door"
 			]
 		}
 	},
@@ -1042,44 +1059,43 @@
 			}
 		},
 		"workshop": {
+			"visual": {
+				"kind": "timeline",
+				"caption": "Beobachte, was während eines Regenschauers geschieht.",
+				"pieces": [
+					{
+						"id": "background",
+						"label": "Before the rain · We were playing.",
+						"note": "Das Spielen läuft bereits, als etwas Neues passiert."
+					},
+					{
+						"id": "event",
+						"label": "Suddenly · It started to rain.",
+						"note": "Der Regen beginnt zu einem bestimmten Zeitpunkt."
+					},
+					{
+						"id": "next",
+						"label": "After that · We went inside.",
+						"note": "Der Abbruch folgt auf den Regen."
+					}
+				]
+			},
 			"goals": [
 				{
-					"label": "Welche Handlung lief bereits, als das Licht ausging?",
-					"before": "Setting",
-					"options": [
-						"I was waiting.",
-						"The lights went out.",
-						"The lights came back."
-					],
-					"answer": "I was waiting.",
-					"explanation": "Waiting liefert den Hintergrund."
+					"label": "Welches Ereignis unterbricht den Spielverlauf?",
+					"answer": "event",
+					"explanation": "Der Regen beginnt zu einem bestimmten Zeitpunkt."
 				},
 				{
-					"label": "Bilde die Verlaufsform von look in der Vergangenheit.",
-					"before": "My friends … for a torch.",
-					"options": [
-						"were looking",
-						"was looking",
-						"looked"
-					],
-					"answer": "were looking",
-					"explanation": "Friends ist Mehrzahl, also were looking."
+					"label": "Welcher Satz zeigt eine Handlung, die bereits im Gang war?",
+					"answer": "background",
+					"explanation": "Das Spielen läuft bereits, als etwas Neues passiert."
 				},
 				{
-					"label": "Ergänze simple past von go.",
-					"before": "Suddenly the lights … out.",
-					"options": [
-						"went",
-						"go",
-						"going"
-					],
-					"answer": "went",
-					"explanation": "Went ist die zweite Verbform von go."
+					"label": "Welcher Teil erzählt, was die Gruppe daraufhin tat?",
+					"answer": "next",
+					"explanation": "Der Abbruch folgt auf den Regen."
 				}
-			],
-			"visual": [
-				"Laufender Hintergrund · we were playing",
-				"Ereignis · the rain started"
 			]
 		}
 	},
@@ -1151,45 +1167,43 @@
 			}
 		},
 		"workshop": {
+			"visual": {
+				"kind": "comparison",
+				"caption": "Wähle die passende Form für Ankündigung, Einschätzung und Zusage.",
+				"pieces": [
+					{
+						"id": "plan",
+						"label": "The shop closes at six.",
+						"note": "Eine feste Öffnungszeit steht im simple present."
+					},
+					{
+						"id": "predict",
+						"label": "It’ll get cold this evening.",
+						"note": "Will drückt hier eine Vorhersage aus."
+					},
+					{
+						"id": "offer",
+						"label": "I’ll get you a blanket.",
+						"note": "Will drückt hier ein spontanes Angebot aus."
+					}
+				]
+			},
 			"goals": [
 				{
-					"label": "Welche Aussage gibt den Fahrplan wieder?",
-					"before": "Timetable",
-					"options": [
-						"The bus leaves at eight.",
-						"I think it will rain.",
-						"I’ll lend you my umbrella."
-					],
-					"answer": "The bus leaves at eight.",
-					"explanation": "Leaves steht im simple present."
+					"label": "Welche Aussage kannst du von einem Öffnungszeiten-Schild ableiten?",
+					"answer": "plan",
+					"explanation": "Eine feste Öffnungszeit steht im simple present."
 				},
 				{
-					"label": "Ergänze will und rain.",
-					"before": "I think it … later.",
-					"options": [
-						"will rain",
-						"will rains",
-						"will raining"
-					],
-					"answer": "will rain",
-					"explanation": "Nach will steht die Grundform."
+					"label": "Welche Aussage ist deine Einschätzung zum Wetter?",
+					"answer": "predict",
+					"explanation": "Will drückt hier eine Vorhersage aus."
 				},
 				{
-					"label": "Ergänze simple present von start.",
-					"before": "The guided tour … at eleven.",
-					"options": [
-						"starts",
-						"start",
-						"starting"
-					],
-					"answer": "starts",
-					"explanation": "The tour ist Einzahl."
+					"label": "Welche Aussage passt, wenn jemand gerade friert und du sofort helfen möchtest?",
+					"answer": "offer",
+					"explanation": "Will drückt hier ein spontanes Angebot aus."
 				}
-			],
-			"visual": [
-				"Fahrplan · leaves",
-				"Vorhersage · will rain",
-				"Angebot · I’ll help"
 			]
 		}
 	},
@@ -1259,46 +1273,48 @@
 			}
 		},
 		"workshop": {
+			"visual": {
+				"kind": "comparison",
+				"caption": "Vergleiche vier Situationen auf einem Schulausflug.",
+				"pieces": [
+					{
+						"id": "ability",
+						"label": "We’ll be able to swim.",
+						"note": "Der Ausflug schafft die Möglichkeit, zu schwimmen."
+					},
+					{
+						"id": "permission",
+						"label": "You may swim here.",
+						"note": "Hier erteilt jemand eine Erlaubnis."
+					},
+					{
+						"id": "advice",
+						"label": "You should bring a towel.",
+						"note": "Ein Handtuch mitzunehmen ist ein Rat."
+					},
+					{
+						"id": "obligation",
+						"label": "We had to stay on the bus.",
+						"note": "Die Gruppe war zu etwas verpflichtet."
+					}
+				]
+			},
 			"goals": [
 				{
-					"label": "Welche Form gibt einen Rat?",
-					"before": "A cold afternoon",
-					"options": [
-						"You should bring a jacket.",
-						"You could swim when you were five.",
-						"It might snow."
-					],
-					"answer": "You should bring a jacket.",
-					"explanation": "Should drückt hier einen Rat aus."
+					"label": "Welche Aussage spricht eine Empfehlung aus?",
+					"answer": "advice",
+					"explanation": "Ein Handtuch mitzunehmen ist ein Rat."
 				},
 				{
-					"label": "Ergänze die Ersatzform für müssen in der Vergangenheit.",
-					"before": "We … wait yesterday.",
-					"options": [
-						"had to",
-						"musted",
-						"has to"
-					],
-					"answer": "had to",
-					"explanation": "Had to drückt frühere Pflicht aus."
+					"label": "Welche Aussage nennt eine Regel, die in der Vergangenheit galt?",
+					"answer": "obligation",
+					"explanation": "Die Gruppe war zu etwas verpflichtet."
 				},
 				{
-					"label": "Ergänze nach will die Ersatzform für dürfen.",
-					"before": "We will … take photos.",
-					"options": [
-						"be allowed to",
-						"may to",
-						"are allowed to"
-					],
-					"answer": "be allowed to",
-					"explanation": "Nach will steht die Grundform be."
+					"label": "Welche Aussage macht deutlich, was ihr künftig tun könnt?",
+					"answer": "ability",
+					"explanation": "Der Ausflug schafft die Möglichkeit, zu schwimmen."
 				}
-			],
-			"visual": [
-				"could · höfliche Bitte",
-				"might · Möglichkeit",
-				"should · Rat",
-				"had to · frühere Pflicht"
 			]
 		}
 	},
@@ -1368,46 +1384,48 @@
 			}
 		},
 		"workshop": {
+			"visual": {
+				"kind": "comparison",
+				"caption": "Vergleiche, was auf eine Bedingung folgen kann.",
+				"pieces": [
+					{
+						"id": "routine",
+						"label": "If ice gets warm, it melts.",
+						"note": "Beide Teile beschreiben eine allgemeine Folge im simple present."
+					},
+					{
+						"id": "instruction",
+						"label": "If you see ice, walk slowly.",
+						"note": "Die Grundform „walk“ gibt eine Anweisung."
+					},
+					{
+						"id": "option",
+						"label": "If the path is icy, you can take the bus.",
+						"note": "„Can“ bietet eine Möglichkeit an."
+					},
+					{
+						"id": "plan",
+						"label": "If it freezes tonight, we’ll stay home.",
+						"note": "„Will“ beschreibt eine mögliche Folge für heute Nacht."
+					}
+				]
+			},
 			"goals": [
 				{
-					"label": "Welcher Satz ist eine Anweisung?",
-					"before": "School sports",
-					"options": [
-						"If it rains, take a jacket.",
-						"If it rains, we’ll stay inside.",
-						"If it rains, the pitch gets wet."
-					],
-					"answer": "If it rains, take a jacket.",
-					"explanation": "Take ist hier Imperativ."
+					"label": "Welcher Satz eignet sich als Sicherheitsanweisung?",
+					"answer": "instruction",
+					"explanation": "Die Grundform „walk“ gibt eine Anweisung."
 				},
 				{
-					"label": "Ergänze die Form von be im if-Teil.",
-					"before": "If the weather … fine, we’ll play outside.",
-					"options": [
-						"is",
-						"will be",
-						"are"
-					],
-					"answer": "is",
-					"explanation": "The weather is steht im simple present."
+					"label": "Welcher Satz beschreibt, was allgemein geschieht?",
+					"answer": "routine",
+					"explanation": "Beide Teile beschreiben eine allgemeine Folge im simple present."
 				},
 				{
-					"label": "Ergänze für eine regelmäßige Folge die Form von get.",
-					"before": "If it rains, the pitch … wet.",
-					"options": [
-						"gets",
-						"getting",
-						"will getting"
-					],
-					"answer": "gets",
-					"explanation": "The pitch gets beschreibt eine regelmäßige Folge."
+					"label": "Welcher Satz stellt Reisenden eine Wahl in Aussicht?",
+					"answer": "option",
+					"explanation": "„Can“ bietet eine Möglichkeit an."
 				}
-			],
-			"visual": [
-				"Bedingung · if + simple present",
-				"Folge · will / can",
-				"Anweisung · Grundform",
-				"Regelmäßig · simple present"
 			]
 		}
 	},
@@ -1477,44 +1495,43 @@
 			}
 		},
 		"workshop": {
+			"visual": {
+				"kind": "comparison",
+				"caption": "Vergleiche, worauf sich calm oder calmly in den drei Beispielen bezieht.",
+				"pieces": [
+					{
+						"id": "noun",
+						"label": "a calm voice",
+						"note": "„Calm“ beschreibt hier das Nomen „voice“."
+					},
+					{
+						"id": "action",
+						"label": "She answered calmly.",
+						"note": "„Calmly“ beschreibt die Art und Weise der Handlung."
+					},
+					{
+						"id": "sense",
+						"label": "She sounded calm.",
+						"note": "Nach „sounded“ beschreibt das Adjektiv, wie die Person wirkte."
+					}
+				]
+			},
 			"goals": [
 				{
-					"label": "Welches Wort beschreibt, wie jemand spricht?",
-					"before": "Lucy speaks",
-					"options": [
-						"quietly",
-						"quiet",
-						"quieter"
-					],
-					"answer": "quietly",
-					"explanation": "Quietly beschreibt die Art und Weise."
+					"label": "Wo steht das Adjektiv direkt beim Nomen?",
+					"answer": "noun",
+					"explanation": "„Calm“ beschreibt hier das Nomen „voice“."
 				},
 				{
-					"label": "Ergänze das Adjektiv quiet.",
-					"before": "Lucy is a … speaker.",
-					"options": [
-						"quiet",
-						"quietly",
-						"quieter"
-					],
-					"answer": "quiet",
-					"explanation": "Vor speaker steht das Adjektiv."
+					"label": "Wo beschreibt ein Adverb, wie jemand antwortet?",
+					"answer": "action",
+					"explanation": "„Calmly“ beschreibt die Art und Weise der Handlung."
 				},
 				{
-					"label": "Ergänze das Adverb von good.",
-					"before": "The team played … .",
-					"options": [
-						"well",
-						"good",
-						"goodly"
-					],
-					"answer": "well",
-					"explanation": "Well ist die unregelmäßige Form."
+					"label": "Wo beschreibt ein Adjektiv einen Eindruck nach „sound“?",
+					"answer": "sense",
+					"explanation": "Nach „sounded“ beschreibt das Adjektiv, wie die Person wirkte."
 				}
-			],
-			"visual": [
-				"Person · quiet speaker",
-				"Handlung · speaks quietly"
 			]
 		}
 	},
@@ -1584,45 +1601,43 @@
 			}
 		},
 		"workshop": {
+			"visual": {
+				"kind": "comparison",
+				"caption": "Vergleiche die Zeiten auf derselben Laufstrecke. Ava 12 s, Bo 12 s, Cleo 14 s.",
+				"pieces": [
+					{
+						"id": "equal",
+						"label": "Ava is as fast as Bo.",
+						"note": "Ava und Bo brauchen gleich lange."
+					},
+					{
+						"id": "faster",
+						"label": "Bo is faster than Cleo.",
+						"note": "Zwölf Sekunden sind weniger als vierzehn."
+					},
+					{
+						"id": "slowest",
+						"label": "Cleo is the slowest of the three.",
+						"note": "Cleo braucht für dieselbe Strecke am längsten."
+					}
+				]
+			},
 			"goals": [
 				{
-					"label": "Welche Beschreibung meint gleiche Geschwindigkeit?",
-					"before": "Same speed",
-					"options": [
-						"as fast as",
-						"faster than",
-						"more fastly than"
-					],
-					"answer": "as fast as",
-					"explanation": "As fast as setzt beide gleich."
+					"label": "Welche Aussage vergleicht eine Person mit der gesamten Gruppe?",
+					"answer": "slowest",
+					"explanation": "Cleo braucht für dieselbe Strecke am längsten."
 				},
 				{
-					"label": "Ergänze den Komparativ von carefully.",
-					"before": "Jo checks the route … than Lee.",
-					"options": [
-						"more carefully",
-						"carefullier",
-						"most carefully"
-					],
-					"answer": "more carefully",
-					"explanation": "Bei carefully steht more."
+					"label": "Welche Aussage beschreibt die beiden gleichen Zeiten?",
+					"answer": "equal",
+					"explanation": "Ava und Bo brauchen gleich lange."
 				},
 				{
-					"label": "Ergänze den Superlativ von good.",
-					"before": "Noor is the … swimmer in our group.",
-					"options": [
-						"best",
-						"better",
-						"goodest"
-					],
-					"answer": "best",
-					"explanation": "Best ist die höchste Stufe."
+					"label": "Welche Aussage stellt Bo und Cleo direkt gegenüber?",
+					"answer": "faster",
+					"explanation": "Zwölf Sekunden sind weniger als vierzehn."
 				}
-			],
-			"visual": [
-				"gleich · as fast as",
-				"mehr · faster than",
-				"am meisten · fastest"
 			]
 		}
 	},
@@ -1692,39 +1707,42 @@
 			}
 		},
 		"workshop": {
+			"visual": {
+				"kind": "board",
+				"caption": "Ordne Meldungen aus dem Fundbüro den passenden Absichten zu.",
+				"pieces": [
+					{
+						"id": "person",
+						"label": "Someone left a scarf.",
+						"note": "„Someone“ steht für eine unbekannte Person."
+					},
+					{
+						"id": "question",
+						"label": "Did you see anything?",
+						"note": "„Anything“ fragt hier nach Gegenständen oder Ereignissen."
+					},
+					{
+						"id": "negative",
+						"label": "There’s nothing in the box.",
+						"note": "„Nothing“ enthält hier die Verneinung bereits."
+					}
+				]
+			},
 			"goals": [
 				{
-					"label": "Welche Form bezeichnet eine unbekannte Person in einer neutralen Frage?",
-					"before": "Question",
-					"options": [
-						"anyone",
-						"anything",
-						"nothing"
-					],
-					"answer": "anyone",
-					"explanation": "Anyone bezeichnet eine Person."
+					"label": "Welche Aussage fragt offen nach einer Beobachtung?",
+					"answer": "question",
+					"explanation": "„Anything“ fragt hier nach Gegenständen oder Ereignissen."
 				},
 				{
-					"label": "Ergänze beide.",
-					"before": "… teams have enough time.",
-					"options": [
-						"Both",
-						"Each",
-						"Nothing"
-					],
-					"answer": "Both",
-					"explanation": "Both passt zu den zwei Gruppen."
+					"label": "Welche Aussage berichtet von jemand Unbekanntem?",
+					"answer": "person",
+					"explanation": "„Someone“ steht für eine unbekannte Person."
 				},
 				{
-					"label": "Ergänze jede einzelne Person mit einem Wort.",
-					"before": "… player has a number.",
-					"options": [
-						"Each",
-						"Both",
-						"Anyone"
-					],
-					"answer": "Each",
-					"explanation": "Nach each steht hier player in der Einzahl."
+					"label": "Welche Aussage erklärt, dass die Schachtel leer ist?",
+					"answer": "negative",
+					"explanation": "„Nothing“ enthält hier die Verneinung bereits."
 				}
 			]
 		}
@@ -1796,44 +1814,43 @@
 			}
 		},
 		"workshop": {
+			"visual": {
+				"kind": "comparison",
+				"caption": "Verfolge, in welche Richtung die Handlung geht.",
+				"pieces": [
+					{
+						"id": "self",
+						"label": "Mia → Mia · Mia photographed herself.",
+						"note": "Die Person fotografiert sich. Die Handlung kommt beim Subjekt an."
+					},
+					{
+						"id": "mutual",
+						"label": "Mia ↔ Sam · They photographed each other.",
+						"note": "Beide fotografieren jeweils die andere Person."
+					},
+					{
+						"id": "object",
+						"label": "Mia → Sam · Mia photographed Sam.",
+						"note": "Hier fotografiert nur Mia und nur Sam ist auf dem Foto."
+					}
+				]
+			},
 			"goals": [
 				{
-					"label": "Zwei Personen geben sich gegenseitig Hilfe. Was passt?",
-					"before": "Teamwork",
-					"options": [
-						"They helped each other.",
-						"They helped themselves.",
-						"They helped herself."
-					],
-					"answer": "They helped each other.",
-					"explanation": "Each other bedeutet einander."
+					"label": "Welche Situation zeigt einen gegenseitigen Vorgang?",
+					"answer": "mutual",
+					"explanation": "Beide fotografieren jeweils die andere Person."
 				},
 				{
-					"label": "Ergänze passend für Jo, die sich selbst verletzt.",
-					"before": "Jo hurt … .",
-					"options": [
-						"herself",
-						"each other",
-						"himself"
-					],
-					"answer": "herself",
-					"explanation": "Herself bezieht sich auf Jo zurück."
+					"label": "Welche Situation läuft nur von Mia zu Sam?",
+					"answer": "object",
+					"explanation": "Hier fotografiert nur Mia und nur Sam ist auf dem Foto."
 				},
 				{
-					"label": "Ergänze selbst, passend zu we.",
-					"before": "We made it … .",
-					"options": [
-						"ourselves",
-						"ours",
-						"each other"
-					],
-					"answer": "ourselves",
-					"explanation": "Ourselves verstärkt hier, wer es gemacht hat."
+					"label": "Welche Situation zeigt ein Selbstporträt?",
+					"answer": "self",
+					"explanation": "Die Person fotografiert sich. Die Handlung kommt beim Subjekt an."
 				}
-			],
-			"visual": [
-				"Jo → Jo · herself",
-				"Jo ↔ Mina · each other"
 			]
 		}
 	},
@@ -1906,45 +1923,43 @@
 			}
 		},
 		"workshop": {
+			"visual": {
+				"kind": "comparison",
+				"caption": "Vergleiche, wie although, while und so that zwei Aussagen verbinden.",
+				"pieces": [
+					{
+						"id": "contrast",
+						"label": "Although it was noisy, we stayed.",
+						"note": "Der Lärm hätte ein Grund zum Gehen sein können."
+					},
+					{
+						"id": "time",
+						"label": "The band played while we waited.",
+						"note": "Spielen und Warten geschahen zugleich."
+					},
+					{
+						"id": "purpose",
+						"label": "We moved closer so that we could hear.",
+						"note": "Das bessere Hören ist das Ziel der Bewegung."
+					}
+				]
+			},
 			"goals": [
 				{
-					"label": "Welche Verbindung nennt einen Zweck?",
-					"before": "Speak clearly … everyone can hear.",
-					"options": [
-						"so that",
-						"although",
-						"while"
-					],
-					"answer": "so that",
-					"explanation": "Jeder soll verstehen können. Das ist der Zweck."
+					"label": "Wo erklärt der Nebensatz, wozu jemand etwas tat?",
+					"answer": "purpose",
+					"explanation": "Das bessere Hören ist das Ziel der Bewegung."
 				},
 				{
-					"label": "Ergänze die Konjunktion für einen überraschenden Gegensatz.",
-					"before": "… it was cold, we went out.",
-					"options": [
-						"Although",
-						"So that",
-						"Until"
-					],
-					"answer": "Although",
-					"explanation": "Obwohl es kalt war, gingen wir hinaus."
+					"label": "Wo geschah etwas trotz eines möglichen Hinderungsgrunds?",
+					"answer": "contrast",
+					"explanation": "Der Lärm hätte ein Grund zum Gehen sein können."
 				},
 				{
-					"label": "Ergänze die Konjunktion für Gleichzeitigkeit.",
-					"before": "I was taking notes … Fin was talking.",
-					"options": [
-						"while",
-						"so that",
-						"although"
-					],
-					"answer": "while",
-					"explanation": "Beide Handlungen liefen gleichzeitig."
+					"label": "Wo finden zwei Handlungen gleichzeitig statt?",
+					"answer": "time",
+					"explanation": "Spielen und Warten geschahen zugleich."
 				}
-			],
-			"visual": [
-				"although · unerwartet",
-				"while · gleichzeitig oder gegenübergestellt",
-				"so that · damit"
 			]
 		}
 	},
@@ -1979,18 +1994,20 @@
 		},
 		"practice": [
 			{
-				"prompt": "The girl ___ plays the drums is my friend. (Ergänze das typische Relativpronomen für Personen in einem Satz mit who.)",
+				"prompt": "The girl ___ plays the drums is my friend. (Ergänze ein Relativpronomen für eine Person.)",
 				"answers": [
-					"who"
+					"who",
+					"that"
 				],
-				"feedback": "Who ist das Subjekt von plays."
+				"feedback": "Who und that können sich in diesem Satz auf the girl beziehen."
 			},
 			{
-				"prompt": "The sign ___ is on the door is new. (Ergänze das typische Relativpronomen für Sachen mit which.)",
+				"prompt": "The sign ___ is on the door is new. (Ergänze ein Relativpronomen für einen Gegenstand.)",
 				"answers": [
-					"which"
+					"which",
+					"that"
 				],
-				"feedback": "Which bezieht sich auf the sign."
+				"feedback": "Which und that können sich in diesem Satz auf the sign beziehen."
 			}
 		],
 		"tasks": {
@@ -2014,44 +2031,43 @@
 			}
 		},
 		"workshop": {
+			"visual": {
+				"kind": "comparison",
+				"caption": "Finde im Relativsatz heraus, wer handelt.",
+				"pieces": [
+					{
+						"id": "subject",
+						"label": "The dog that barked ran away.",
+						"note": "„That“ ist das Subjekt von „barked“. Der Hund bellt."
+					},
+					{
+						"id": "object",
+						"label": "The dog I saw ran away.",
+						"note": "„I“ ist das Subjekt von „saw“. Den Hund habe ich gesehen."
+					},
+					{
+						"id": "place",
+						"label": "The park where we met was quiet.",
+						"note": "„Where“ verweist auf den Ort, an dem wir uns trafen."
+					}
+				]
+			},
 			"goals": [
 				{
-					"label": "Wo ist eine contact clause möglich?",
-					"before": "Choose the clause",
-					"options": [
-						"the poster (that) I saw",
-						"the club that meets here",
-						"the girl who designed it"
-					],
-					"answer": "the poster (that) I saw",
-					"explanation": "I ist das Subjekt von saw."
+					"label": "Welcher Satz verwendet eine contact clause ohne Relativpronomen?",
+					"answer": "object",
+					"explanation": "„I“ ist das Subjekt von „saw“. Den Hund habe ich gesehen."
 				},
 				{
-					"label": "Ergänze das typische Relativpronomen für Personen in einem Satz mit who.",
-					"before": "The girl … plays the drums is my friend.",
-					"options": [
-						"who",
-						"where",
-						"whose"
-					],
-					"answer": "who",
-					"explanation": "Who ist das Subjekt von plays."
+					"label": "Wo muss das Relativpronomen als Subjekt stehen bleiben?",
+					"answer": "subject",
+					"explanation": "„That“ ist das Subjekt von „barked“. Der Hund bellt."
 				},
 				{
-					"label": "Ergänze das typische Relativpronomen für Sachen mit which.",
-					"before": "The sign … is on the door is new.",
-					"options": [
-						"which",
-						"who",
-						"whose"
-					],
-					"answer": "which",
-					"explanation": "Which bezieht sich auf the sign."
+					"label": "Welcher Relativsatz sagt, wo etwas geschah?",
+					"answer": "place",
+					"explanation": "„Where“ verweist auf den Ort, an dem wir uns trafen."
 				}
-			],
-			"visual": [
-				"who plays · who ist Subjekt",
-				"(who) I met · I ist Subjekt"
 			]
 		}
 	},
@@ -2121,44 +2137,43 @@
 			}
 		},
 		"workshop": {
+			"visual": {
+				"kind": "comparison",
+				"caption": "Wähle Ausdrucksweisen für Sachen, mehrere Sachen und Besitz.",
+				"pieces": [
+					{
+						"id": "single",
+						"label": "I’ll take the green one.",
+						"note": "„One“ ersetzt ein einzelnes zählbares Nomen, etwa „cap“."
+					},
+					{
+						"id": "plural",
+						"label": "The red ones look warm.",
+						"note": "„Ones“ ersetzt ein Nomen in der Mehrzahl, etwa „gloves“."
+					},
+					{
+						"id": "owner",
+						"label": "Those are ours.",
+						"note": "„Ours“ zeigt, wem etwas gehört, und steht ohne Nomen."
+					}
+				]
+			},
 			"goals": [
 				{
-					"label": "Was antwortest du auf Whose are these?, wenn sie dir gehören?",
-					"before": "Ownership",
-					"options": [
-						"They’re mine.",
-						"They’re my.",
-						"They’re one."
-					],
-					"answer": "They’re mine.",
-					"explanation": "Mine steht ohne Nomen."
+					"label": "Welche Antwort passt auf die Frage „Whose are those?“",
+					"answer": "owner",
+					"explanation": "„Ours“ zeigt, wem etwas gehört, und steht ohne Nomen."
 				},
 				{
-					"label": "Ergänze den Ersatz für jackets im Plural.",
-					"before": "I like the blue … .",
-					"options": [
-						"ones",
-						"one",
-						"mine"
-					],
-					"answer": "ones",
-					"explanation": "Ones ersetzt hier mehrere Jacken."
+					"label": "Welcher Satz wählt eine einzelne Mütze aus?",
+					"answer": "single",
+					"explanation": "„One“ ersetzt ein einzelnes zählbares Nomen, etwa „cap“."
 				},
 				{
-					"label": "Ergänze die Form für ihre Jacke ohne Nomen.",
-					"before": "It’s Anna’s. It’s … .",
-					"options": [
-						"hers",
-						"her",
-						"theirs"
-					],
-					"answer": "hers",
-					"explanation": "Hers steht allein."
+					"label": "Welcher Satz beurteilt mehrere Handschuhe?",
+					"answer": "plural",
+					"explanation": "„Ones“ ersetzt ein Nomen in der Mehrzahl, etwa „gloves“."
 				}
-			],
-			"visual": [
-				"Welche? · the blue ones",
-				"Wessen? · mine"
 			]
 		}
 	},
@@ -2229,39 +2244,42 @@
 			}
 		},
 		"workshop": {
+			"visual": {
+				"kind": "timeline",
+				"caption": "Erkunde den Ablauf eines Konzertbesuchs.",
+				"pieces": [
+					{
+						"id": "entry",
+						"label": "show a ticket",
+						"note": "Am Einlass zeigst du die Karte vor."
+					},
+					{
+						"id": "before",
+						"label": "warm up",
+						"note": "Die Band bereitet vor dem Auftritt Stimme und Hände vor."
+					},
+					{
+						"id": "during",
+						"label": "turn up the volume",
+						"note": "Das Publikum möchte die Musik lauter hören."
+					}
+				]
+			},
 			"goals": [
 				{
-					"label": "Welche Wortgruppe bedeutet sich aufwärmen?",
-					"before": "Before a match",
-					"options": [
-						"warm up",
-						"look after",
-						"turn off"
-					],
-					"answer": "warm up",
-					"explanation": "Warm up passt vor dem Sport."
+					"label": "Was tun die Musikerinnen und Musiker vor dem ersten Song?",
+					"answer": "before",
+					"explanation": "Die Band bereitet vor dem Auftritt Stimme und Hände vor."
 				},
 				{
-					"label": "Was steht bei photo für machen? Ergänze die Grundform.",
-					"before": "Please … a photo.",
-					"options": [
-						"take",
-						"make",
-						"do"
-					],
-					"answer": "take",
-					"explanation": "Die geläufige Verbindung ist take a photo."
+					"label": "Was passt, wenn die Musik kaum hörbar ist?",
+					"answer": "during",
+					"explanation": "Das Publikum möchte die Musik lauter hören."
 				},
 				{
-					"label": "Ergänze das Wort für Hintergrund.",
-					"before": "In the …, I can see the stage.",
-					"options": [
-						"background",
-						"foreground",
-						"middle"
-					],
-					"answer": "background",
-					"explanation": "Background liegt hinter der Hauptszene."
+					"label": "Was tust du bei der Kontrolle am Eingang?",
+					"answer": "entry",
+					"explanation": "Am Einlass zeigst du die Karte vor."
 				}
 			]
 		}
@@ -2334,45 +2352,43 @@
 			}
 		},
 		"workshop": {
+			"visual": {
+				"kind": "comparison",
+				"caption": "Lies jedes Beispiel mit Schwerpunkt auf dem großgeschriebenen Wort.",
+				"pieces": [
+					{
+						"id": "person",
+						"label": "MAYA borrowed the map on Friday.",
+						"note": "Der Name ist die hervorgehobene Information."
+					},
+					{
+						"id": "object",
+						"label": "Maya borrowed the MAP on Friday.",
+						"note": "Der Schwerpunkt liegt auf dem ausgeliehenen Gegenstand."
+					},
+					{
+						"id": "time",
+						"label": "Maya borrowed the map on FRIDAY.",
+						"note": "Der Wochentag wird hervorgehoben."
+					}
+				]
+			},
 			"goals": [
 				{
-					"label": "Welche Silbe ist in about /əˈbaʊt/ betont?",
-					"before": "Word stress",
-					"options": [
-						"the second syllable",
-						"the first syllable",
-						"both equally"
-					],
-					"answer": "the second syllable",
-					"explanation": "ˈ steht vor der zweiten Silbe."
+					"label": "Welche Betonung berichtigt die Frage „Did she borrow it on Monday?“",
+					"answer": "time",
+					"explanation": "Der Wochentag wird hervorgehoben."
 				},
 				{
-					"label": "Ergänze das Wort, dessen Anfang betont wird.",
-					"before": "The … bus stops outside. (/ˈeəpɔːt/)",
-					"options": [
-						"airport",
-						"about",
-						"again"
-					],
-					"answer": "airport",
-					"explanation": "Airport betont die erste Silbe."
+					"label": "Welche Betonung klärt das Missverständnis „Leo borrowed it“?",
+					"answer": "person",
+					"explanation": "Der Name ist die hervorgehobene Information."
 				},
 				{
-					"label": "Welches Wort betonst du, um neun auf zehn zu korrigieren?",
-					"before": "The tour starts at …, not nine.",
-					"options": [
-						"ten",
-						"tour",
-						"starts"
-					],
-					"answer": "ten",
-					"explanation": "Die Uhrzeit ist die korrigierte Information."
+					"label": "Welche Betonung berichtigt „She borrowed a book“?",
+					"answer": "object",
+					"explanation": "Der Schwerpunkt liegt auf dem ausgeliehenen Gegenstand."
 				}
-			],
-			"visual": [
-				"ˈair-port · erste Silbe",
-				"a-ˈbout · zweite Silbe",
-				"TEN · neue Information"
 			]
 		},
 		"listening": true,
@@ -2400,7 +2416,8 @@
 		"materialLanguage": "en",
 		"sourceIds": [
 			"lp",
-			"cornwall"
+			"cornwall",
+			"map-units"
 		],
 		"quiz": {
 			"question": "Welche Beschreibung zu St Ives hilft Reisenden bei der Orientierung?",
@@ -2449,42 +2466,27 @@
 			}
 		},
 		"workshop": {
+			"visual": {
+				"kind": "map",
+				"id": "cornwall"
+			},
 			"goals": [
 				{
-					"label": "Wo liegt Cornwall?",
-					"before": "Look at the map",
-					"options": [
-						"in the south-west of England",
-						"in the north of Scotland",
-						"in the east of Wales"
-					],
-					"answer": "in the south-west of England",
-					"explanation": "Cornwall bildet den äußersten Südwesten Englands."
+					"label": "Welcher markierte Ort liegt am weitesten südwestlich?",
+					"answer": "cornwall",
+					"explanation": "Cornwall liegt an der südwestlichen Spitze Englands."
 				},
 				{
-					"label": "Ergänze das Wort für Küste.",
-					"before": "St Ives is on the … .",
-					"options": [
-						"coast",
-						"border",
-						"island"
-					],
-					"answer": "coast",
-					"explanation": "Coast ist die Küste."
+					"label": "Welcher markierte Ort in England liegt östlich von Bath?",
+					"answer": "london",
+					"explanation": "London liegt weiter östlich im Süden der Insel."
 				},
 				{
-					"label": "Ergänze das Wort für Klippen.",
-					"before": "The path goes past the … .",
-					"options": [
-						"cliffs",
-						"fields",
-						"stations"
-					],
-					"answer": "cliffs",
-					"explanation": "Cliffs sind steile Felswände."
+					"label": "Welcher markierte Ort liegt westlich von London und nördlich von Cornwall?",
+					"answer": "bath",
+					"explanation": "Bath liegt im Landesinneren im Südwesten Englands."
 				}
-			],
-			"visual": "cornwall"
+			]
 		}
 	},
 	{
@@ -2558,42 +2560,27 @@
 			}
 		},
 		"workshop": {
+			"visual": {
+				"kind": "map",
+				"id": "florida"
+			},
 			"goals": [
 				{
-					"label": "Welche Region liegt im Nordosten der USA?",
-					"before": "U.S. regions",
-					"options": [
-						"New England",
-						"the Midwest",
-						"southern Florida"
-					],
-					"answer": "New England",
-					"explanation": "Massachusetts ist beispielsweise ein Staat in New England."
+					"label": "Wähle den Ort auf der Halbinsel im Südosten.",
+					"answer": "florida",
+					"explanation": "Florida liegt im Südosten der zusammenhängenden USA."
 				},
 				{
-					"label": "Ergänze Bundesstaat.",
-					"before": "Florida is a … .",
-					"options": [
-						"state",
-						"city",
-						"country"
-					],
-					"answer": "state",
-					"explanation": "Florida ist ein Bundesstaat der USA."
+					"label": "Wähle die Region im Nordosten, zu der Massachusetts gehört.",
+					"answer": "new-england",
+					"explanation": "New England umfasst sechs Bundesstaaten."
 				},
 				{
-					"label": "Ergänze den Regionsnamen.",
-					"before": "Illinois is in the … .",
-					"options": [
-						"Midwest",
-						"Florida",
-						"Atlantic"
-					],
-					"answer": "Midwest",
-					"explanation": "Illinois liegt im Midwest."
+					"label": "Wähle den markierten Staat im Landesinneren.",
+					"answer": "illinois",
+					"explanation": "Illinois liegt am Michigansee und gehört zum Midwest."
 				}
-			],
-			"visual": "florida"
+			]
 		}
 	},
 	{
@@ -2667,45 +2654,48 @@
 			}
 		},
 		"workshop": {
+			"visual": {
+				"kind": "comparison",
+				"caption": "Vergleiche die Rolle eines Staatsoberhaupts mit Regierungsleitung und Gesetzgebung.",
+				"pieces": [
+					{
+						"id": "crown",
+						"label": "UK · Monarch",
+						"note": "Der Monarch ist Staatsoberhaupt im UK."
+					},
+					{
+						"id": "cabinet",
+						"label": "UK · Prime Minister",
+						"note": "Der Premierminister leitet die Regierung."
+					},
+					{
+						"id": "president",
+						"label": "USA · President",
+						"note": "Der Präsident ist Staatsoberhaupt und leitet die Exekutive."
+					},
+					{
+						"id": "congress",
+						"label": "USA · Congress",
+						"note": "Der Kongress ist die gesetzgebende Körperschaft auf Bundesebene."
+					}
+				]
+			},
 			"goals": [
 				{
-					"label": "Wer leitet im UK die Regierung?",
-					"before": "UK government",
-					"options": [
-						"the Prime Minister",
-						"the King",
-						"the U.S. President"
-					],
-					"answer": "the Prime Minister",
-					"explanation": "Der Prime Minister leitet die Regierung."
+					"label": "Welches Amt leitet die Regierung im UK?",
+					"answer": "cabinet",
+					"explanation": "Der Premierminister leitet die Regierung."
 				},
 				{
-					"label": "Ergänze den englischen Titel des Staatsoberhaupts in den USA.",
-					"before": "The U.S. … is head of state.",
-					"options": [
-						"President",
-						"King",
-						"Prime Minister"
-					],
-					"answer": "President",
-					"explanation": "Der US President ist das Staatsoberhaupt."
+					"label": "Welche Institution verabschiedet Bundesgesetze?",
+					"answer": "congress",
+					"explanation": "Der Kongress ist die gesetzgebende Körperschaft auf Bundesebene."
 				},
 				{
-					"label": "Ergänze in einem Wort die Bezeichnung für die gesetzgebende Institution in den USA.",
-					"before": "… makes federal laws.",
-					"options": [
-						"Congress",
-						"President",
-						"Cabinet"
-					],
-					"answer": "Congress",
-					"explanation": "Congress ist die US-Bundesvertretung, die Bundesgesetze beschließt."
+					"label": "Welches Amt ist das Staatsoberhaupt in der britischen Monarchie?",
+					"answer": "crown",
+					"explanation": "Der Monarch ist Staatsoberhaupt im UK."
 				}
-			],
-			"visual": [
-				"UK · Staatsoberhaupt: Monarch",
-				"UK · Regierung: Prime Minister",
-				"USA · Staatsoberhaupt und Exekutive: President"
 			]
 		}
 	},
@@ -2779,39 +2769,42 @@
 			}
 		},
 		"workshop": {
+			"visual": {
+				"kind": "comparison",
+				"caption": "Vergleiche einzelne Erfahrungen der Jugendlichen aus dem Text.",
+				"pieces": [
+					{
+						"id": "observe",
+						"label": "Amir · fireworks near home",
+						"note": "Einige Nachbarn besuchen eine Vorführung. Amir schaut meist von zu Hause."
+					},
+					{
+						"id": "share",
+						"label": "Sofia · dinner with her aunt",
+						"note": "Sofia beschreibt, wie ihre eigene Familie feiert."
+					},
+					{
+						"id": "parade",
+						"label": "Lina · a local lantern parade",
+						"note": "Linas Beispiel beschreibt eine Veranstaltung in ihrem Ort."
+					}
+				]
+			},
 			"goals": [
 				{
-					"label": "Welche Antwort reagiert offen auf einen neuen Brauch?",
-					"before": "Reply to an invitation",
-					"options": [
-						"Thanks! What usually happens there?",
-						"Everyone here celebrates exactly the same way.",
-						"That sounds strange. Don’t tell me more."
-					],
-					"answer": "Thanks! What usually happens there?",
-					"explanation": "Eine offene Frage zeigt Interesse."
+					"label": "Welches Beispiel enthält ausdrücklich eine Einladung von Verwandten?",
+					"answer": "share",
+					"explanation": "Sofia beschreibt, wie ihre eigene Familie feiert."
 				},
 				{
-					"label": "Ergänze das Wort für gewöhnlich.",
-					"before": "What … happens at your celebration?",
-					"options": [
-						"usually",
-						"never",
-						"singular"
-					],
-					"answer": "usually",
-					"explanation": "Usually fragt nach dem üblichen Ablauf."
+					"label": "Welches Beispiel beschreibt einen Umzug?",
+					"answer": "parade",
+					"explanation": "Linas Beispiel beschreibt eine Veranstaltung in ihrem Ort."
 				},
 				{
-					"label": "Ergänze die Ordnungszahl für Thanksgiving im November.",
-					"before": "It’s the … Thursday in November.",
-					"options": [
-						"fourth",
-						"first",
-						"last"
-					],
-					"answer": "fourth",
-					"explanation": "Der Zeitpunkt ist der vierte Donnerstag."
+					"label": "Wer schaut ein öffentliches Ereignis meist von zu Hause an?",
+					"answer": "observe",
+					"explanation": "Einige Nachbarn besuchen eine Vorführung. Amir schaut meist von zu Hause."
 				}
 			]
 		},
@@ -2886,39 +2879,42 @@
 			}
 		},
 		"workshop": {
+			"visual": {
+				"kind": "timeline",
+				"caption": "Hilf neuen Gästen, sich beim Schüleraustausch zurechtzufinden.",
+				"pieces": [
+					{
+						"id": "clarify",
+						"label": "A club is a group that meets after school.",
+						"note": "Die Umschreibung erklärt einen Begriff."
+					},
+					{
+						"id": "place",
+						"label": "Let’s meet by the gym at three.",
+						"note": "Eine Orts- und Zeitangabe klärt den Plan."
+					},
+					{
+						"id": "choice",
+						"label": "Which activity would you prefer?",
+						"note": "Eine offene Frage gibt den Gästen eine Stimme."
+					}
+				]
+			},
 			"goals": [
 				{
-					"label": "Wie beziehst du Jules ein?",
-					"before": "Invitation",
-					"options": [
-						"Would you like to join us, Jules?",
-						"Everybody knows the plan.",
-						"You should ask someone else."
-					],
-					"answer": "Would you like to join us, Jules?",
-					"explanation": "Eine direkte freundliche Einladung gibt Jules eine Wahl."
+					"label": "Welche Aussage hilft, wenn jemand das Wort „club“ nicht kennt?",
+					"answer": "clarify",
+					"explanation": "Die Umschreibung erklärt einen Begriff."
 				},
 				{
-					"label": "Ergänze das Fragewort für Was hältst du davon?",
-					"before": "… do you think, Jules?",
-					"options": [
-						"What",
-						"Whose",
-						"When"
-					],
-					"answer": "What",
-					"explanation": "What fragt nach dem Inhalt der Meinung."
+					"label": "Welche Nachricht hilft, wenn eine Person den Treffpunkt verpasst?",
+					"answer": "place",
+					"explanation": "Eine Orts- und Zeitangabe klärt den Plan."
 				},
 				{
-					"label": "Ergänze das Verb teilnehmen oder mitkommen.",
-					"before": "Would you like to … us?",
-					"options": [
-						"join",
-						"leave",
-						"send"
-					],
-					"answer": "join",
-					"explanation": "Join us bedeutet bei uns mitmachen."
+					"label": "Welche Frage gibt den Gästen eine echte Wahl bei der Planung?",
+					"answer": "choice",
+					"explanation": "Eine offene Frage gibt den Gästen eine Stimme."
 				}
 			]
 		},
@@ -2992,45 +2988,48 @@
 			}
 		},
 		"workshop": {
+			"visual": {
+				"kind": "board",
+				"caption": "Wähle im layoutartigen Aushang die passende Stelle.",
+				"pieces": [
+					{
+						"id": "headline",
+						"label": "A repair day at school",
+						"note": "Die Überschrift zeigt das Thema."
+					},
+					{
+						"id": "items",
+						"label": "What to bring · a broken toy or game",
+						"note": "Die Aufzählung beschreibt geeignete Gegenstände."
+					},
+					{
+						"id": "tools",
+						"label": "What we provide · tools and help",
+						"note": "Diese Rubrik sagt, was du ausleihen kannst."
+					},
+					{
+						"id": "sign",
+						"label": "How to join · register at the office",
+						"note": "Dieser Teil erklärt, wo man sich anmeldet."
+					}
+				]
+			},
 			"goals": [
 				{
-					"label": "Wovon handelt der ganze Text?",
-					"before": "Main idea",
-					"options": [
-						"a school repair day",
-						"a café menu",
-						"a sports awards night"
-					],
-					"answer": "a school repair day",
-					"explanation": "Überschrift und erster Absatz nennen das repair café."
+					"label": "Wo erkennst du beim ersten Überfliegen das Thema?",
+					"answer": "headline",
+					"explanation": "Die Überschrift zeigt das Thema."
 				},
 				{
-					"label": "Ergänze den Anmeldetag.",
-					"before": "Register by … .",
-					"options": [
-						"Thursday",
-						"Friday",
-						"Sunday"
-					],
-					"answer": "Thursday",
-					"explanation": "Unter Sign up steht Thursday."
+					"label": "Wo suchst du gezielt nach dem Anmeldeort?",
+					"answer": "sign",
+					"explanation": "Dieser Teil erklärt, wo man sich anmeldet."
 				},
 				{
-					"label": "Ergänze das Wort für Werkzeuge.",
-					"before": "The school will lend you the … .",
-					"options": [
-						"tools",
-						"toys",
-						"tickets"
-					],
-					"answer": "tools",
-					"explanation": "Tools bezeichnet Werkzeuge."
+					"label": "Wo findest du heraus, ob ein kaputtes Spielzeug passt?",
+					"answer": "items",
+					"explanation": "Die Aufzählung beschreibt geeignete Gegenstände."
 				}
-			],
-			"visual": [
-				"Titel · A Repair Day at School",
-				"Tools · the school lends them",
-				"Sign up · by Thursday"
 			]
 		}
 	},
@@ -3101,46 +3100,48 @@
 			}
 		},
 		"workshop": {
+			"visual": {
+				"kind": "timeline",
+				"caption": "Gliedere die Geschichte in ihre Handlungsschritte.",
+				"pieces": [
+					{
+						"id": "setting",
+						"label": "Together on the footbridge",
+						"note": "Die Figuren und der Ort werden vorgestellt."
+					},
+					{
+						"id": "turn",
+						"label": "Suddenly no light",
+						"note": "Der Wendepunkt stellt die Figuren vor ein Problem."
+					},
+					{
+						"id": "decision",
+						"label": "Stop and listen",
+						"note": "Nia reagiert zunächst, indem sie die andere Person anhält."
+					},
+					{
+						"id": "open",
+						"label": "A voice in the dark",
+						"note": "Die unbekannte Stimme hält das Ende offen."
+					}
+				]
+			},
 			"goals": [
 				{
-					"label": "Welches Ereignis verändert die Lage zuerst?",
-					"before": "Turning point",
-					"options": [
-						"The torch went out.",
-						"Someone called my name.",
-						"They crossed a footbridge."
-					],
-					"answer": "The torch went out.",
-					"explanation": "Das Erlöschen der Taschenlampe schafft das Problem."
+					"label": "Welche Stelle liefert den Schauplatz?",
+					"answer": "setting",
+					"explanation": "Die Figuren und der Ort werden vorgestellt."
 				},
 				{
-					"label": "Ergänze das Wort für Taschenlampe.",
-					"before": "Nia had a … .",
-					"options": [
-						"torch",
-						"ticket",
-						"bottle"
-					],
-					"answer": "torch",
-					"explanation": "Torch bedeutet hier Taschenlampe."
+					"label": "Welche Stelle zeigt Nias direkte Reaktion auf die Dunkelheit?",
+					"answer": "decision",
+					"explanation": "Nia reagiert zunächst, indem sie die andere Person anhält."
 				},
 				{
-					"label": "Ergänze laut Material, was unter ihnen zu hören ist.",
-					"before": "I heard … below us.",
-					"options": [
-						"water",
-						"music",
-						"a car"
-					],
-					"answer": "water",
-					"explanation": "Die Erzählerin oder der Erzähler hört Wasser."
+					"label": "Welche Stelle wirft kurz vor dem Ende eine neue Frage auf?",
+					"answer": "open",
+					"explanation": "Die unbekannte Stimme hält das Ende offen."
 				}
-			],
-			"visual": [
-				"Ausgang · crossing a bridge",
-				"Wendung · torch goes out",
-				"Reaktion · Nia says stop",
-				"Offene Frage · who is there?"
 			]
 		}
 	},
@@ -3214,45 +3215,43 @@
 			}
 		},
 		"workshop": {
+			"visual": {
+				"kind": "timeline",
+				"caption": "Baue aus drei Textteilen einen Bericht für die Schülerzeitung.",
+				"pieces": [
+					{
+						"id": "intro",
+						"label": "On Friday, our class visited a recording studio.",
+						"note": "Der Einstieg nennt Zeitpunkt, Personen und Ort."
+					},
+					{
+						"id": "middle",
+						"label": "We recorded a song with two microphones.",
+						"note": "Im Mittelteil beschreibst du ein konkretes Ereignis."
+					},
+					{
+						"id": "reaction",
+						"label": "I was amazed that we sounded like a real band.",
+						"note": "Eine als solche erkennbare Reaktion passt an den Schluss."
+					}
+				]
+			},
 			"goals": [
 				{
-					"label": "Welcher Satz ist ein guter Einstieg in den Bericht?",
-					"before": "Opening",
-					"options": [
-						"On Tuesday our school band played in the town hall.",
-						"And they really liked it.",
-						"Finally, thanks!"
-					],
-					"answer": "On Tuesday our school band played in the town hall.",
-					"explanation": "Der Satz nennt wer, was, wo und wann."
+					"label": "Welcher Satz beantwortet gleich zu Beginn „Wer war wann wo?“",
+					"answer": "intro",
+					"explanation": "Der Einstieg nennt Zeitpunkt, Personen und Ort."
 				},
 				{
-					"label": "Ergänze das Bindewort danach.",
-					"before": "First we listened. … we joined in.",
-					"options": [
-						"Then",
-						"Yesterday",
-						"Never"
-					],
-					"answer": "Then",
-					"explanation": "Then ordnet das nächste Ereignis ein."
+					"label": "Welcher Satz macht die Meinung der berichtenden Person erkennbar?",
+					"answer": "reaction",
+					"explanation": "Eine als solche erkennbare Reaktion passt an den Schluss."
 				},
 				{
-					"label": "Ergänze simple past von play.",
-					"before": "On Tuesday the band … in the town hall.",
-					"options": [
-						"played",
-						"plays",
-						"playing"
-					],
-					"answer": "played",
-					"explanation": "Played passt zum abgeschlossenen Ereignis."
+					"label": "Welcher Satz berichtet, was die Klasse im Studio tatsächlich tat?",
+					"answer": "middle",
+					"explanation": "Im Mittelteil beschreibst du ein konkretes Ereignis."
 				}
-			],
-			"visual": [
-				"Lead · who, what, where, when",
-				"Details · first, then",
-				"End · reaction"
 			]
 		}
 	},
@@ -3324,42 +3323,27 @@
 			}
 		},
 		"workshop": {
+			"visual": {
+				"kind": "scene",
+				"id": "picture"
+			},
 			"goals": [
 				{
-					"label": "Welche Aussage enthält eine Vermutung?",
-					"before": "Picture description",
-					"options": [
-						"It looks like they’re getting ready for a concert.",
-						"There is a blue curtain.",
-						"The student is holding a camera."
-					],
-					"answer": "It looks like they’re getting ready for a concert.",
-					"explanation": "It looks like leitet eine Vermutung ein."
+					"label": "Welches Element gibt dem Bild den Hintergrund?",
+					"answer": "curtain",
+					"explanation": "Der blaue Vorhang liegt hinter der Bühne."
 				},
 				{
-					"label": "Ergänze das passende Wort für Vordergrund.",
-					"before": "In the …, a student is holding a camera.",
-					"options": [
-						"foreground",
-						"background",
-						"distance"
-					],
-					"answer": "foreground",
-					"explanation": "Foreground ist der vordere Bereich."
+					"label": "Wo bereitet sich jemand direkt auf das Musizieren vor?",
+					"answer": "right",
+					"explanation": "Rechts prüft eine Person eine Trommel."
 				},
 				{
-					"label": "Ergänze die passende Verlaufsform.",
-					"before": "The drummer … a drum now.",
-					"options": [
-						"is checking",
-						"checked",
-						"check"
-					],
-					"answer": "is checking",
-					"explanation": "Is checking beschreibt eine laufende Handlung."
+					"label": "Welches Element liegt dem Betrachter am nächsten?",
+					"answer": "camera",
+					"explanation": "Die Person mit der Kamera steht im Vordergrund."
 				}
-			],
-			"visual": "picture"
+			]
 		}
 	},
 	{
@@ -3429,42 +3413,27 @@
 			}
 		},
 		"workshop": {
+			"visual": {
+				"kind": "scene",
+				"id": "storyboard"
+			},
 			"goals": [
 				{
-					"label": "Was ist die Handlung der kleinen Szene?",
-					"before": "Main event",
-					"options": [
-						"Rae finds the missing ticket.",
-						"Leo loses a guitar.",
-						"The band cancels its show."
-					],
-					"answer": "Rae finds the missing ticket.",
-					"explanation": "Die Karte wird wiedergefunden."
+					"label": "Welches Bildfeld eröffnet das Problem?",
+					"answer": "opening",
+					"explanation": "Rae durchsucht die Taschen, bevor das Ticket auftaucht."
 				},
 				{
-					"label": "Ergänze den Gegenstand neben der Karte.",
-					"before": "It’s next to the … .",
-					"options": [
-						"guitar",
-						"stage",
-						"door"
-					],
-					"answer": "guitar",
-					"explanation": "Leo sagt next to your guitar."
+					"label": "Welches Bildfeld zeigt den entscheidenden visuellen Hinweis?",
+					"answer": "clue",
+					"explanation": "Leo zeigt auf das Ticket neben dem Gitarrenkoffer."
 				},
 				{
-					"label": "Ergänze das Wort für Erleichterung.",
-					"before": "That’s a … !",
-					"options": [
-						"relief",
-						"problem",
-						"shame"
-					],
-					"answer": "relief",
-					"explanation": "Mit relief drückt Rae Erleichterung aus."
+					"label": "Wo siehst du, was beide als Nächstes tun wollen?",
+					"answer": "stage",
+					"explanation": "Im Schlussbild gehen beide zur Bühne."
 				}
-			],
-			"visual": "storyboard"
+			]
 		},
 		"listening": true,
 		"accent": "en-US"
@@ -3536,45 +3505,43 @@
 			}
 		},
 		"workshop": {
+			"visual": {
+				"kind": "comparison",
+				"caption": "Zerlege neue Wörter aus einem Aushang.",
+				"pieces": [
+					{
+						"id": "reset",
+						"label": "restart · re + start",
+						"note": "„Re-“ bedeutet hier, dass etwas noch einmal beginnt."
+					},
+					{
+						"id": "usable",
+						"label": "repairable · repair + able",
+						"note": "„-able“ zeigt hier, dass etwas repariert werden kann."
+					},
+					{
+						"id": "quality",
+						"label": "responsibility · responsible + ity",
+						"note": "„-ity“ bildet hier ein Nomen. Bei der Bildung ändert sich die Schreibung."
+					}
+				]
+			},
 			"goals": [
 				{
-					"label": "Was bedeutet readable im Text?",
-					"before": "Word parts",
-					"options": [
-						"easy or possible to read",
-						"person who reads",
-						"time to read"
-					],
-					"answer": "easy or possible to read",
-					"explanation": "Read und able ergeben eine Eigenschaft."
+					"label": "Welches Wort beschreibt eine Sache, die sich wieder in Ordnung bringen lässt?",
+					"answer": "usable",
+					"explanation": "„-able“ zeigt hier, dass etwas repariert werden kann."
 				},
 				{
-					"label": "Bilde aus active mit der Endung -ity das Nomen.",
-					"before": "The first … is a game.",
-					"options": [
-						"activity",
-						"active",
-						"activable"
-					],
-					"answer": "activity",
-					"explanation": "Activity ist das Nomen, active ist das Adjektiv."
+					"label": "Welcher Ausdruck bezeichnet einen erneuten Beginn?",
+					"answer": "reset",
+					"explanation": "„Re-“ bedeutet hier, dass etwas noch einmal beginnt."
 				},
 				{
-					"label": "Welches Wort aus dem Text heißt wiederverwendbar?",
-					"before": "The tickets are … .",
-					"options": [
-						"reusable",
-						"readable",
-						"activity"
-					],
-					"answer": "reusable",
-					"explanation": "Re- bedeutet wieder; use + able ergibt nutzbar."
+					"label": "Welcher Ausdruck benennt mit einer Nachsilbe eine Eigenschaft oder einen Zustand?",
+					"answer": "quality",
+					"explanation": "„-ity“ bildet hier ein Nomen. Bei der Bildung ändert sich die Schreibung."
 				}
-			],
-			"visual": [
-				"read + able → readable",
-				"active → activity",
-				"re + use + able → reusable"
 			]
 		}
 	},
@@ -3647,45 +3614,43 @@
 			}
 		},
 		"workshop": {
+			"visual": {
+				"kind": "board",
+				"caption": "Vergleiche drei Einträge und wähle jeweils den passenden Sinn.",
+				"pieces": [
+					{
+						"id": "bus",
+						"label": "coach · noun · a bus",
+						"note": "„Coach“ bedeutet Reisebus, wenn es um Abfahrten und Haltestellen geht."
+					},
+					{
+						"id": "person",
+						"label": "coach · noun · a trainer",
+						"note": "„Coach“ heißt Trainer oder Trainerin, wenn jemand ein Team betreut."
+					},
+					{
+						"id": "verb",
+						"label": "coach · verb · to train",
+						"note": "„Coach“ kann als Verb eine Tätigkeit ausdrücken."
+					}
+				]
+			},
 			"goals": [
 				{
-					"label": "Was bedeutet coach in einem Fahrplan?",
-					"before": "Coach 16 leaves at ten.",
-					"options": [
-						"long-distance bus",
-						"team trainer",
-						"to train"
-					],
-					"answer": "long-distance bus",
-					"explanation": "Abfahrt, Nummer und Zeit sprechen für den Bus."
+					"label": "Welchen Eintrag brauchst du für „Our coach is very patient“?",
+					"answer": "person",
+					"explanation": "„Coach“ heißt Trainer oder Trainerin, wenn jemand ein Team betreut."
 				},
 				{
-					"label": "Welche englische Wortart steht in coach, noun? Ergänze ein Wort.",
-					"before": "Part of speech: …",
-					"options": [
-						"noun",
-						"verb",
-						"adjective"
-					],
-					"answer": "noun",
-					"explanation": "Noun ist das Nomen."
+					"label": "Welcher Eintrag passt in „Sam coaches the school team“?",
+					"answer": "verb",
+					"explanation": "„Coach“ kann als Verb eine Tätigkeit ausdrücken."
 				},
 				{
-					"label": "Welches englische Wort bezeichnet das Datum auf einer Website?",
-					"before": "Check the … of the timetable.",
-					"options": [
-						"date",
-						"price",
-						"colour"
-					],
-					"answer": "date",
-					"explanation": "Das Datum hilft zu prüfen, wie aktuell die Information ist."
+					"label": "Welchen Eintrag brauchst du, um einen „coach timetable“ zu verstehen?",
+					"answer": "bus",
+					"explanation": "„Coach“ bedeutet Reisebus, wenn es um Abfahrten und Haltestellen geht."
 				}
-			],
-			"visual": [
-				"Satz → Kontext",
-				"Eintrag → Wortart",
-				"Beispiel → Bedeutung"
 			]
 		}
 	},
@@ -3756,46 +3721,49 @@
 			}
 		},
 		"workshop": {
+			"visual": {
+				"kind": "timeline",
+				"caption": "Repariere einen Satz und übertrage die Regel.",
+				"pieces": [
+					{
+						"id": "original",
+						"label": "Ausgangssatz · She speaks quiet.",
+						"note": "Der Satz enthält den konkreten Fehler, den du untersuchst."
+					},
+					{
+						"id": "correction",
+						"label": "Korrektur · She speaks quietly.",
+						"note": "„Quietly“ beschreibt, wie sie spricht."
+					},
+					{
+						"id": "rule",
+						"label": "Regel · Ein Adverb kann ein Verb näher bestimmen.",
+						"note": "Die Regel hilft auch bei anderen Verben."
+					},
+					{
+						"id": "transfer",
+						"label": "Neuer Satz · They worked quietly.",
+						"note": "Hier prüfst du, ob du die Regel unabhängig vom ersten Satz anwenden kannst."
+					}
+				],
+				"language": "de"
+			},
 			"goals": [
 				{
-					"label": "Was macht einen Protokolleintrag zum Lernwerkzeug?",
-					"before": "Error log",
-					"options": [
-						"Add a reason and a new example.",
-						"Copy the wrong form three times.",
-						"Write only the date."
-					],
-					"answer": "Add a reason and a new example.",
-					"explanation": "Regel und neues Beispiel helfen beim Übertragen."
+					"label": "Wo behebst du den Fehler im ursprünglichen Satz?",
+					"answer": "correction",
+					"explanation": "„Quietly“ beschreibt, wie sie spricht."
 				},
 				{
-					"label": "Ergänze die Korrektur von good.",
-					"before": "She plays … .",
-					"options": [
-						"well",
-						"good",
-						"goodly"
-					],
-					"answer": "well",
-					"explanation": "Well beschreibt hier die Art und Weise."
+					"label": "Welcher Teil erklärt, warum du die Form änderst?",
+					"answer": "rule",
+					"explanation": "Die Regel hilft auch bei anderen Verben."
 				},
 				{
-					"label": "Ergänze das Wort für das Aufwärmen vor dem Training.",
-					"before": "We … up before training.",
-					"options": [
-						"warm",
-						"walk",
-						"look"
-					],
-					"answer": "warm",
-					"explanation": "Warm up ist die geläufige Wendung."
+					"label": "Welcher Teil zeigt, dass du die Regel auf ein anderes Verb anwenden kannst?",
+					"answer": "transfer",
+					"explanation": "Hier prüfst du, ob du die Regel unabhängig vom ersten Satz anwenden kannst."
 				}
-			],
-			"visual": [
-				"1 · eigener Satz",
-				"2 · Korrektur",
-				"3 · Regel",
-				"4 · neues Beispiel"
 			]
 		}
 	},
@@ -3821,7 +3789,8 @@
 		"sourceIds": [
 			"lp",
 			"wall",
-			"bath"
+			"bath",
+			"map-units"
 		],
 		"quiz": {
 			"question": "Warum sind römische Straßen ein Hinweis auf die Organisation der Provinz?",
@@ -3870,42 +3839,27 @@
 			}
 		},
 		"workshop": {
+			"visual": {
+				"kind": "map",
+				"id": "romans"
+			},
 			"goals": [
 				{
-					"label": "Wofür stand Hadrian’s Wall in der Römerzeit?",
-					"before": "Roman Britain",
-					"options": [
-						"a frontier",
-						"a bath house",
-						"a road to Florida"
-					],
-					"answer": "a frontier",
-					"explanation": "Frontier meint hier eine Grenze des Römischen Reiches."
+					"label": "Wo siehst du die römische Reichsgrenze im Norden Englands?",
+					"answer": "wall",
+					"explanation": "Die Linie markiert ungefähr den Verlauf von Hadrian’s Wall."
 				},
 				{
-					"label": "Ergänze die Stadt mit römischen Bädern.",
-					"before": "The Romans used the hot springs in … .",
-					"options": [
-						"Bath",
-						"Truro",
-						"Boston"
-					],
-					"answer": "Bath",
-					"explanation": "In Bath wurden die heißen Quellen genutzt."
+					"label": "Wo nutzten die Römer heiße Quellen?",
+					"answer": "bath",
+					"explanation": "Bath hieß zur Römerzeit Aquae Sulis."
 				},
 				{
-					"label": "Ergänze das Wort für Straßen.",
-					"before": "Roman … connected forts and towns.",
-					"options": [
-						"roads",
-						"rules",
-						"boats"
-					],
-					"answer": "roads",
-					"explanation": "Roads sind Straßen."
+					"label": "Welches heutige Land liegt nördlich von Hadrian’s Wall?",
+					"answer": "scotland",
+					"explanation": "Schottland liegt nördlich der Mauer. Die heutigen Grenzen stammen aus späterer Zeit."
 				}
-			],
-			"visual": "romans"
+			]
 		}
 	},
 	{
@@ -3979,45 +3933,43 @@
 			}
 		},
 		"workshop": {
+			"visual": {
+				"kind": "timeline",
+				"caption": "Ordne Ereignis, Sprachkontakt und Veränderung des Wortschatzes.",
+				"pieces": [
+					{
+						"id": "battle",
+						"label": "1066 · Battle of Hastings",
+						"note": "Der Sieg Williams verändert die Herrschaft in England."
+					},
+					{
+						"id": "court",
+						"label": "After 1066 · French at court",
+						"note": "Am Hof und im Recht wird über längere Zeit Französisch verwendet."
+					},
+					{
+						"id": "loan",
+						"label": "Later · English words such as beef and pork",
+						"note": "In der englischen Sprache leben Lehnwörter weiter."
+					}
+				]
+			},
 			"goals": [
 				{
-					"label": "Wer gewann 1066 die Schlacht bei Hastings?",
-					"before": "Battle of Hastings",
-					"options": [
-						"William of Normandy",
-						"King Harold",
-						"Emperor Hadrian"
-					],
-					"answer": "William of Normandy",
-					"explanation": "William siegte 1066 bei Hastings."
+					"label": "Welche Etappe bezeichnet das historische Ereignis selbst?",
+					"answer": "battle",
+					"explanation": "Der Sieg Williams verändert die Herrschaft in England."
 				},
 				{
-					"label": "Ergänze den Schauplatz.",
-					"before": "Harold was defeated at … .",
-					"options": [
-						"Hastings",
-						"Bath",
-						"St Ives"
-					],
-					"answer": "Hastings",
-					"explanation": "Die Schlacht fand bei Hastings statt."
+					"label": "Welche Etappe zeigt eine bis heute hörbare Folge?",
+					"answer": "loan",
+					"explanation": "In der englischen Sprache leben Lehnwörter weiter."
 				},
 				{
-					"label": "Ergänze die Sprache, aus der beef übernommen wurde.",
-					"before": "English borrowed beef from … .",
-					"options": [
-						"French",
-						"German",
-						"modern English"
-					],
-					"answer": "French",
-					"explanation": "Beef wurde aus dem Französischen übernommen."
+					"label": "Welche Etappe erklärt, wie es zum Sprachkontakt kam?",
+					"answer": "court",
+					"explanation": "Am Hof und im Recht wird über längere Zeit Französisch verwendet."
 				}
-			],
-			"visual": [
-				"1066 · Hastings",
-				"Danach · Französisch am Hof und im Recht",
-				"Später · Lehnwörter wie beef und pork"
 			]
 		}
 	}

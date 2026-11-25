@@ -1,5 +1,6 @@
 import "./styles.css";
 import { bindWorkshop, renderWorkshop } from "./workshop";
+import { renderGrammarReference } from "./reference";
 import { CORE_LESSONS, findLesson, LESSONS, SOURCES, STAGES } from "./curriculum";
 import { readLocalScript, waitForLocalEnglishVoice } from "./listening";
 import {
@@ -355,7 +356,7 @@ function bindListening(lesson: Lesson): void {
 		});
 }
 function renderReference(): void {
-	main.innerHTML = `<div class="reference"><div class="eyebrow">Nachschlagen und weiterüben</div><h1>Sprache im Zusammenhang</h1><p>Öffne die passende Lektion und übe mit einem eigenen Beispiel.</p><section class="panel"><h2>Sprachwerkstatt</h2><ul class="reference-links">${LESSONS.filter(
+	main.innerHTML = `<div class="reference"><div class="eyebrow">Nachschlagen und weiterüben</div><h1>Sprache im Zusammenhang</h1>${renderGrammarReference()}<section class="panel"><h2>Sprachwerkstatt</h2><ul class="reference-links">${LESSONS.filter(
 		(lesson) => lesson.bindings.some((b) => b.startsWith("1.2")) || lesson.optional,
 	)
 		.map(

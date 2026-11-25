@@ -29,3 +29,7 @@ assert.deepEqual(
 	[],
 );
 console.log("ok: 40 verbatim curriculum rows found; all three source hashes match.");
+
+const proposal = JSON.parse(read("replaces-de-by.json"));
+for (const { file, sha256 } of proposal.sources) assert.equal(hash(read(file)), sha256, file);
+console.log("ok: the legacy card snapshot matches the recorded SHA-256.");

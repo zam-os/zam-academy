@@ -1056,67 +1056,6 @@ dialog::backdrop {
 	border-top: 5px solid var(--stage-color);
 	background: linear-gradient(135deg, var(--surface), var(--accent-soft));
 }
-.construction {
-	display: grid;
-	gap: 1rem;
-	margin-top: 1.5rem;
-}
-.construction-row {
-	display: grid;
-	grid-template-columns: 2.5rem minmax(0, 1fr);
-	gap: 0.75rem;
-	padding: 1rem;
-	border: 1px solid var(--line);
-	border-radius: 14px;
-	background: var(--surface);
-}
-.goal-number {
-	display: grid;
-	place-items: center;
-	align-self: start;
-	width: 2.3rem;
-	height: 2.3rem;
-	border-radius: 50%;
-	background: var(--accent-soft);
-	font-weight: 800;
-}
-.construction-row[data-reached="true"] {
-	border-color: var(--stage-color);
-}
-.construction-row[data-reached="true"] .goal-number {
-	background: var(--stage-color);
-	color: white;
-}
-.construction-row label {
-	display: block;
-	font-weight: 700;
-	margin-bottom: 0.5rem;
-}
-.word-chain {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 0.5rem;
-	align-items: center;
-}
-.word-piece {
-	border: 1px solid var(--line);
-	border-radius: 8px;
-	padding: 0.45rem 0.65rem;
-	overflow-wrap: anywhere;
-}
-.word-chain select {
-	max-width: 100%;
-	max-width: 100%;
-	min-width: 0;
-	border-radius: 8px;
-	padding: 0.55rem;
-	color: var(--ink);
-	background: var(--bg);
-	border: 1px solid var(--line);
-}
-.goal-feedback {
-	margin-bottom: 0;
-}
 .material {
 	white-space: pre-line;
 }
@@ -1131,46 +1070,12 @@ dialog::backdrop {
 		--stage-color: hsl(var(--stage-hue, var(--lesson-hue, 210)) 65% 72%);
 	}
 }
-.construction-row select {
-	width: 100%;
-	padding: 0.65rem;
-	font: inherit;
-	border: 1px solid var(--line);
-	border-radius: 0.6rem;
-	color: var(--ink);
-	background: var(--surface);
-}
-.construction-row .word-piece {
-	margin-block: 0.2rem 0.55rem;
-}
-.construction-row .assembled {
-	font-weight: 650;
-	border-inline-start: 3px solid var(--stage-color);
-	padding-inline-start: 0.7rem;
-	overflow-wrap: anywhere;
-}
 .explorer {
 	margin: 0.75rem 0 1.25rem;
 	border-radius: 1rem;
 	padding: 0.75rem;
 	background: color-mix(in srgb, var(--stage-color) 12%, var(--surface));
 	border: 1px solid var(--line);
-}
-.sequence {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(min(100%, 8rem), 1fr));
-	gap: 0.45rem;
-}
-.sequence span {
-	border-top: 3px solid var(--stage-color);
-	padding: 0.65rem;
-	border-radius: 0.55rem;
-	background: var(--surface);
-}
-.visual-note {
-	min-height: 1.6em;
-	margin-top: 0.55rem;
-	color: var(--muted);
 }
 .locator {
 	position: relative;
@@ -1186,32 +1091,6 @@ dialog::backdrop {
 	inset: 0;
 	background: color-mix(in srgb, var(--stage-color) 36%, var(--surface));
 	z-index: -1;
-}
-/* Simplified outlines leave room for large, keyboard-accessible map pins. */
-:is(.cornwall, .romans)::before {
-	clip-path: polygon(
-		43% 5%,
-		54% 9%,
-		64% 17%,
-		61% 31%,
-		76% 46%,
-		88% 53%,
-		83% 70%,
-		92% 77%,
-		69% 85%,
-		53% 80%,
-		44% 79%,
-		32% 90%,
-		10% 94%,
-		22% 78%,
-		34% 70%,
-		56% 66%,
-		50% 56%,
-		48% 47%,
-		51% 40%,
-		46% 24%,
-		38% 16%
-	);
 }
 .florida::before {
 	clip-path: polygon(
@@ -1242,70 +1121,206 @@ dialog::backdrop {
 	left: 0.65rem;
 	font-weight: 700;
 }
-.pin,
-.scene-piece {
-	background: var(--surface);
-	color: var(--ink);
-	border: 1px solid var(--line);
-	cursor: pointer;
+.workshop-question {
+	font-size: 1.1rem;
+	font-weight: 700;
+}
+.explorer figcaption {
+	margin-bottom: 0.7rem;
+}
+.explorer-options {
+	display: grid;
+	gap: 0.55rem;
+	grid-template-columns: repeat(auto-fit, minmax(min(100%, 10rem), 1fr));
+}
+.explorer-piece {
+	display: flex;
+	align-items: center;
+	gap: 0.55rem;
+	padding: 0.65rem;
 	min-height: 2.75rem;
-	border-radius: 0.65rem;
 	font: inherit;
 	font-weight: 650;
-	padding: 0.3rem 0.55rem;
+	color: var(--ink);
+	text-align: start;
+	background: var(--surface);
+	border: 1px solid var(--line);
+	border-radius: 0.65rem;
+	cursor: pointer;
+	overflow-wrap: anywhere;
 }
-.pin {
+.explorer-piece:hover {
+	border-color: var(--stage-color);
+}
+.explorer-piece[aria-pressed="true"] {
+	border-color: var(--stage-color);
+	box-shadow: inset 0 0 0 2px var(--stage-color);
+}
+.workshop-comparison .explorer-piece {
+	border-block-start: 4px solid var(--stage-color);
+}
+.workshop-timeline .explorer-options {
+	position: relative;
+	grid-template-columns: 1fr;
+	padding-inline-start: 1.2rem;
+}
+.workshop-timeline .explorer-options::before {
+	content: "";
+	position: absolute;
+	inset-block: 1rem;
+	inset-inline-start: 0.3rem;
+	border-inline-start: 2px solid var(--stage-color);
+}
+.workshop-timeline .explorer-piece {
+	position: relative;
+}
+.workshop-timeline .explorer-piece::before {
+	content: "";
+	position: absolute;
+	inset-inline-start: -1.2rem;
+	width: 0.58rem;
+	height: 0.58rem;
+	border-radius: 50%;
+	background: var(--stage-color);
+}
+.visual-note {
+	margin: 0.5rem 0;
+	min-height: 1.6em;
+}
+.workshop-status {
+	margin: 0.25rem 0 0.5rem;
+	color: var(--muted);
+	font-size: 0.9rem;
+}
+.piece-marker,
+.map-marker {
+	display: inline-grid;
+	place-items: center;
+	min-width: 1.55rem;
+	height: 1.55rem;
+	border-radius: 50%;
+	border: 1px solid var(--stage-color);
+	background: var(--surface);
+	color: var(--ink);
+	font-size: 0.85rem;
+	font-weight: 750;
+}
+.map-marker {
 	position: absolute;
 	left: var(--x);
 	top: var(--y);
 	transform: translate(-50%, -50%);
-	font-size: clamp(0.75rem, 2.3vw, 0.95rem);
-	white-space: nowrap;
 }
-.florida .pin:last-child {
-	top: 83%;
+.map-marker[data-selected="true"] {
+	box-shadow: 0 0 0 3px var(--stage-color);
 }
-.pin[aria-pressed="true"],
-.scene-piece[aria-pressed="true"] {
-	outline: 3px solid var(--stage-color);
+.britannia {
+	display: block;
+	width: min(100%, 27rem);
+	height: auto;
+	margin: 0 auto 0.65rem;
+	border-radius: 0.75rem;
+	background: var(--accent-soft);
+}
+.britannia [data-country] {
+	fill: color-mix(in srgb, var(--stage-color) 34%, var(--surface));
+	stroke: var(--surface);
+	stroke-width: 1.3px;
+}
+.britannia [data-country="Ireland"],
+.britannia [data-country="Northern Ireland"] {
+	fill: var(--soft);
+}
+.britannia [data-country="Scotland"] {
+	fill: color-mix(in srgb, var(--accent) 30%, var(--surface));
+}
+.britannia [data-country="Wales"] {
+	fill: color-mix(in srgb, var(--gold) 34%, var(--surface));
+}
+.britannia .country-label,
+.britain-marker text,
+.compass {
+	fill: var(--ink);
+	font-weight: 700;
+	font-size: 14px;
+}
+.britain-marker circle {
+	fill: var(--surface);
+	stroke: var(--stage-color);
+	stroke-width: 1.5px;
+}
+.britain-marker[data-selected="true"] circle {
+	stroke-width: 4px;
+}
+.roman-wall {
+	fill: none;
+	stroke: var(--danger);
+	stroke-width: 4px;
+}
+.map-options {
+	margin-top: 0.5rem;
+}
+.locator + figcaption {
+	margin-top: 0.5rem;
 }
 .scene-pieces {
-	display: grid;
 	grid-template-columns: repeat(3, minmax(0, 1fr));
-	gap: 0.45rem;
 }
-.scene-piece span {
-	display: block;
+.scene-pieces .explorer-piece {
+	flex-direction: column;
+	text-align: center;
+}
+.scene-icon {
 	color: var(--stage-color);
-	font-size: 1.45rem;
+	font-size: 1.4rem;
 }
-.storyboard .scene-piece {
-	font-size: 0.85rem;
-	line-height: 1.25;
-	padding-block: 0.55rem;
+.directions [data-piece="north"] {
+	grid-area: 1 / 2;
 }
-.directions .scene-piece:first-child,
-.directions .scene-piece:last-child {
-	grid-column: 2;
+.directions [data-piece="cinema"] {
+	grid-area: 2 / 1;
 }
-.picture .scene-piece:first-child,
-.picture .scene-piece:last-child {
+.directions [data-piece="square"] {
+	grid-area: 2 / 2;
+}
+.directions [data-piece="museum"] {
+	grid-area: 2 / 3;
+}
+.directions [data-piece="station"] {
+	grid-area: 3 / 2;
+}
+.picture .explorer-piece:first-child,
+.picture .explorer-piece:last-child {
 	grid-column: 1 / -1;
 }
-.picture .scene-piece:nth-child(3) {
+.picture .explorer-piece:nth-child(3) {
 	grid-column: 3;
 }
-@media (max-width: 540px) {
-	.construction-row {
-		padding: 0.75rem;
-		grid-template-columns: 1.8rem minmax(0, 1fr);
-		gap: 0.5rem;
-	}
-	.goal-number {
-		width: 1.8rem;
-		height: 1.8rem;
-	}
-	.pin {
-		padding-inline: 0.35rem;
-	}
+.grammar-overview {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+	gap: 1rem;
+}
+.grammar-overview section {
+	border-top: 4px solid var(--accent);
+	border-radius: 0.65rem;
+	padding: 0.75rem;
+	background: var(--accent-soft);
+}
+.grammar-overview h3 {
+	margin-top: 0;
+}
+.grammar-overview dl {
+	margin-bottom: 0;
+}
+.grammar-overview dl > div + div {
+	border-top: 1px solid var(--line);
+	padding-top: 0.5rem;
+	margin-top: 0.65rem;
+}
+.grammar-overview dd {
+	margin: 0;
+}
+.grammar-overview em {
+	color: var(--muted);
 }

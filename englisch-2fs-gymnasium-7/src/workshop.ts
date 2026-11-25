@@ -1,153 +1,237 @@
+import { britainOutline, britainPoint, britainViewBox } from "./britain";
 import { esc } from "./practice";
-import type { Lesson, Workshop } from "./types";
+import type { Lesson, WorkshopPiece, WorkshopVisual } from "./types";
 
-export function workshopGoals(workshop: Workshop, answers: string[]): boolean[] {
-	return workshop.goals.map((goal, index) => answers[index] === goal.answer);
-}
+type MapPiece = WorkshopPiece & { point: readonly [number, number] };
 
-const romanTimeline = [
-	"Vor 43 · Gemeinschaften mit keltischen Sprachen",
-	"Ab 43 · römische Eroberung",
-	"2. Jh. · Bau des Hadrianswalls",
-];
+const bath = {
+	id: "bath",
+	label: "Bath",
+	point: britainPoint(-2.359, 51.381),
+	note: "Bath liegt im Südwesten Englands. In Aquae Sulis nutzten die Römer die heißen Quellen.",
+} satisfies MapPiece;
 
 const maps = {
-	romans: {
-		title: "Hadrianswall und Bath in England",
+	cornwall: {
+		title:
+			"Großbritannien, Norden oben. Markierung 1 ist ganz im Südwesten. Markierung 2 liegt weiter nordöstlich im Landesinneren. Markierung 3 liegt weiter östlich in Südengland.",
 		places: [
-			[
-				"Hadrianswall",
-				50,
-				21,
-				"Der Hadrianswall liegt in Nordengland und markierte eine Grenze des Römischen Reiches.",
-			],
-			[
-				"Bath",
-				49,
-				65,
-				"In Bath nutzten die Römer heiße Quellen. Der damalige Name war Aquae Sulis.",
-			],
+			{
+				id: "cornwall",
+				label: "Cornwall",
+				point: britainPoint(-5.052, 50.262),
+				note: "Cornwall liegt an der südwestlichen Spitze Englands. Die Markierung liegt bei Truro.",
+			},
+			bath,
+			{
+				id: "london",
+				label: "London",
+				point: britainPoint(-0.1276, 51.5072),
+				note: "London liegt im Südosten Englands, östlich von Bath.",
+			},
 		],
 	},
-	cornwall: {
-		title: "Cornwall im Südwesten Englands",
+	romans: {
+		title:
+			"Großbritannien mit heutigen Grenzen, Norden oben. Markierung 1 liegt an einer Linie quer durch den Norden Englands. Markierung 2 ist im Südwesten Englands. Markierung 3 liegt nördlich von Markierung 1 in Schottland.",
 		places: [
-			["Cornwall", 23, 79, "Cornwall liegt am südwestlichen Ende von England."],
-			[
-				"Bath",
-				49,
-				65,
-				"Bath liegt nordöstlich von Cornwall. Hier nutzten die Römer heiße Quellen.",
-			],
-			["London", 72, 68, "London liegt östlich von Cornwall, im Südosten Englands."],
+			{
+				id: "wall",
+				label: "Hadrian’s Wall",
+				point: britainPoint(-2.37, 55.13),
+				note: "Hadrian’s Wall verlief zwischen dem Solway Firth im Westen und Wallsend im Osten.",
+			},
+			bath,
+			{
+				id: "scotland",
+				label: "Scotland",
+				point: britainPoint(-4.05, 56.12),
+				note: "Das heutige Schottland liegt nördlich der Mauer. Die Karte zeigt heutige Grenzen.",
+			},
 		],
 	},
 	florida: {
-		title: "Regionen der zusammenhängenden USA",
+		title:
+			"Zusammenhängende USA, Norden oben. Markierung 1 liegt im Landesinneren am Michigansee, Markierung 2 im Nordosten, Markierung 3 auf einer Halbinsel im Südosten.",
 		places: [
-			["Illinois", 61, 38, "Illinois ist ein Bundesstaat im Midwest."],
-			[
-				"New England",
-				88,
-				14,
-				"New England liegt im Nordosten. Massachusetts ist einer seiner sechs Bundesstaaten.",
-			],
-			[
-				"Florida",
-				75,
-				77,
-				"Florida liegt im Südosten. Die Everglades befinden sich im Süden Floridas.",
-			],
+			{
+				id: "illinois",
+				label: "Illinois",
+				point: [61, 38],
+				note: "Illinois ist ein Bundesstaat im Midwest.",
+			},
+			{
+				id: "new-england",
+				label: "New England",
+				point: [87, 16],
+				note: "New England liegt im Nordosten. Massachusetts ist einer seiner sechs Bundesstaaten.",
+			},
+			{
+				id: "florida",
+				label: "Florida",
+				point: [75, 78],
+				note: "Die Everglades liegen im Süden Floridas.",
+			},
 		],
 	},
 } as const;
 
-const scene = {
+type ScenePiece = WorkshopPiece & { icon: string };
+
+const scenes = {
 	picture: [
-		["Vorhang", "▰", "In the background, there’s a blue curtain."],
-		["Links", "▣", "On the left, two people are carrying a box."],
-		["Rechts", "♫", "On the right, a drummer is checking a drum."],
-		["Vorn", "◉", "In the foreground, a student is holding a camera."],
+		{
+			id: "curtain",
+			label: "Vorhang",
+			icon: "▰",
+			note: "In the background, there’s a blue curtain.",
+		},
+		{ id: "left", label: "Links", icon: "▣", note: "On the left, two people are carrying a box." },
+		{
+			id: "right",
+			label: "Rechts",
+			icon: "♫",
+			note: "On the right, a drummer is checking a drum.",
+		},
+		{
+			id: "camera",
+			label: "Vorn",
+			icon: "◉",
+			note: "In the foreground, a student is holding a camera.",
+		},
 	],
 	storyboard: [
-		[
-			"Rae vor dem Auftritt",
-			"♫",
-			"Rae stands backstage with a guitar case and searches her pockets.",
-		],
-		["Leo am Gitarrenkoffer", "▣", "Leo points to a ticket lying next to the guitar case."],
-		["Bühne", "★", "Both head towards the stage. A band is about to start."],
+		{
+			id: "opening",
+			label: "Rae vor dem Auftritt",
+			icon: "♫",
+			note: "Rae stands backstage with a guitar case and searches her pockets.",
+		},
+		{
+			id: "clue",
+			label: "Leo am Gitarrenkoffer",
+			icon: "▣",
+			note: "Leo points to a ticket lying next to the guitar case.",
+		},
+		{
+			id: "stage",
+			label: "Bühne",
+			icon: "★",
+			note: "Both head towards the stage. A band is about to start.",
+		},
 	],
 	directions: [
-		["Norden", "↑", "Du blickst nach Norden."],
-		["Kino", "←", "Das Kino liegt links vom Platz."],
-		["Platz", "◆", "Am Platz kannst du links oder rechts abbiegen."],
-		["Museum", "→", "Das Museum liegt rechts vom Platz, neben der Bibliothek."],
-		["Bahnhof", "↑", "Starte am Bahnhof und gehe geradeaus zum Platz."],
+		{ id: "north", label: "Norden", icon: "↑", note: "Du blickst nach Norden." },
+		{ id: "cinema", label: "Kino", icon: "←", note: "Das Kino liegt westlich vom Platz." },
+		{ id: "square", label: "Platz", icon: "◆", note: "Hier kannst du links oder rechts abbiegen." },
+		{
+			id: "museum",
+			label: "Museum",
+			icon: "→",
+			note: "Das Museum liegt östlich vom Platz, neben der Bibliothek.",
+		},
+		{
+			id: "station",
+			label: "Bahnhof",
+			icon: "↑",
+			note: "Vom Bahnhof führt der Weg geradeaus zum Platz.",
+		},
 	],
 } as const;
 
-type Visual = NonNullable<Workshop["visual"]>;
+export function workshopPieces(visual: WorkshopVisual): readonly WorkshopPiece[] {
+	if (visual.kind === "map") return maps[visual.id].places;
+	if (visual.kind === "scene") return scenes[visual.id];
+	return visual.pieces;
+}
 
-function illustrate(visual?: Visual): string {
-	if (!visual) return "";
-	if (Array.isArray(visual))
-		return `<figure class="explorer sequence">${visual.map((entry) => `<span>${esc(entry)}</span>`).join("")}</figure>`;
+function pieceButton(piece: WorkshopPiece, marker = "", language?: "en" | "de"): string {
+	return `<button type="button" class="explorer-piece" data-piece="${esc(piece.id)}" aria-pressed="false"${language ? ` lang="${language}"` : ""}>${marker}${esc(piece.label)}</button>`;
+}
 
-	if (visual === "cornwall" || visual === "florida" || visual === "romans") {
-		const { title, places } = maps[visual];
-		return `<figure class="explorer" aria-label="${title}"><div class="locator ${visual}"><span class="north" aria-hidden="true">N ↑</span>${places.map(([name, x, y, note]) => `<button type="button" class="pin" style="--x:${x}%;--y:${y}%" data-note="${esc(note)}" aria-pressed="false">${name}</button>`).join("")}</div><figcaption class="visual-note" aria-live="polite">Lernskizze · Wähle einen Ort.</figcaption></figure>${visual === "romans" ? illustrate(romanTimeline) : ""}`;
+const marker = (number: number): string => `<span class="piece-marker">${number}</span>`;
+
+function mapGraphic(visual: Extract<WorkshopVisual, { kind: "map" }>): string {
+	const { title, places } = maps[visual.id];
+	if (visual.id === "florida") {
+		return `<div class="locator florida" role="img" aria-label="${esc(title)}"><span class="north" aria-hidden="true">N ↑</span>${places.map(({ id, point: [x, y] }, index) => `<span class="map-marker" data-map-marker="${id}" style="--x:${x}%;--y:${y}%" aria-hidden="true">${index + 1}</span>`).join("")}</div>`;
 	}
+	const wall = [
+		[-3.214, 54.954],
+		[-2.89, 54.99],
+		[-2.4, 55.004],
+		[-1.532, 54.987],
+	] as const;
+	const wallPoints = wall.map(([lon, lat]) => britainPoint(lon, lat).join(",")).join(" ");
+	return `<svg class="britannia" viewBox="${britainViewBox}" role="img" aria-label="${esc(title)}"><text class="compass" x="325" y="35">N ↑</text>${britainOutline()}${visual.id === "romans" ? `<polyline class="roman-wall" points="${wallPoints}"/>` : ""}${places.map(({ id, point: [x, y] }, index) => `<g class="britain-marker" data-map-marker="${id}" transform="translate(${x} ${y})" aria-hidden="true"><circle r="12"/><text y="5" text-anchor="middle">${index + 1}</text></g>`).join("")}</svg>`;
+}
 
-	return `<figure class="explorer scene ${visual}"><div class="scene-pieces">${scene[visual].map(([name, icon, note]) => `<button type="button" class="scene-piece" data-note="${esc(note)}" aria-pressed="false"><span aria-hidden="true">${icon}</span>${name}</button>`).join("")}</div><figcaption class="visual-note" lang="${visual === "directions" ? "de" : "en"}" aria-live="polite"></figcaption></figure>`;
+function illustrate(visual: WorkshopVisual): string {
+	if (visual.kind === "map") {
+		const places = maps[visual.id].places;
+		return `<figure class="explorer workshop-map" aria-labelledby="workshop-visual-caption">${mapGraphic(visual)}<figcaption id="workshop-visual-caption">Wähle den passenden Ort anhand der Karte und der Nummern.${visual.id === "florida" ? " Die Karte ist eine Skizze." : " Die Karte zeigt heutige Grenzen. Kartengrundlage: Natural Earth."}</figcaption><div class="explorer-options map-options">${places.map((piece, index) => pieceButton(piece, marker(index + 1), "en")).join("")}</div></figure>`;
+	}
+	if (visual.kind === "scene") {
+		const pieces: readonly ScenePiece[] = scenes[visual.id];
+		return `<figure class="explorer scene ${visual.id}" aria-labelledby="workshop-visual-caption"><figcaption id="workshop-visual-caption">Wähle den passenden Ausschnitt.</figcaption><div class="explorer-options scene-pieces">${pieces.map((piece) => pieceButton(piece, `<span class="scene-icon" aria-hidden="true">${piece.icon}</span>`)).join("")}</div></figure>`;
+	}
+	return `<figure class="explorer workshop-${visual.kind}" aria-labelledby="workshop-visual-caption"><figcaption id="workshop-visual-caption">${esc(visual.caption)}</figcaption><div class="explorer-options">${visual.pieces.map((piece) => pieceButton(piece, "", visual.language ?? "en")).join("")}</div></figure>`;
 }
 
 export function renderWorkshop(lesson: Lesson): string {
-	return `<section class="panel workshop" aria-labelledby="workshop-title"><h2 id="workshop-title">Entdeckerwerkstatt</h2>${illustrate(lesson.workshop.visual)}<div class="construction">${lesson.workshop.goals
-		.map((goal, index) => {
-			const offset = (index + 1) % goal.options.length;
-			const options = [...goal.options.slice(offset), ...goal.options.slice(0, offset)];
-			return `<div class="construction-row" data-goal="${index}"><span class="goal-number" aria-hidden="true">${index + 1}</span><div><label for="workshop-${index}">${esc(goal.label)}</label><p class="word-piece" lang="en">${esc(goal.before)}</p><select id="workshop-${index}" data-workshop="${index}"><option value="">Antwort wählen …</option>${options.map((option) => `<option lang="en" value="${esc(option)}">${esc(option)}</option>`).join("")}</select><p class="assembled" lang="en" hidden></p><p class="goal-feedback small" role="status"></p></div></div>`;
-		})
-		.join("")}</div><p id="workshop-status" role="status">0 von 3 Zielen erreicht.</p></section>`;
+	return `<section class="panel workshop" aria-labelledby="workshop-title"><h2 id="workshop-title">Entdeckerwerkstatt</h2><p id="workshop-question" class="workshop-question" aria-live="polite">${esc(lesson.workshop.goals[0].label)}</p>${illustrate(lesson.workshop.visual)}<p id="workshop-feedback" class="visual-note" role="status"></p><p id="workshop-status" class="workshop-status">0 von 3 Zielen erreicht.</p><button type="button" class="button secondary" id="workshop-restart" hidden>Werkstatt erneut starten</button></section>`;
 }
 
 export function bindWorkshop(lesson: Lesson, container: HTMLElement, complete: () => void): void {
-	const inputs = [...container.querySelectorAll<HTMLSelectElement>("[data-workshop]")];
-	const rows = [...container.querySelectorAll<HTMLElement>("[data-goal]")];
-	for (const input of inputs) {
-		input.addEventListener("change", () => {
-			const answers = inputs.map((entry) => entry.value);
-			const reached = workshopGoals(lesson.workshop, answers);
-			rows.forEach((row, index) => {
-				const { before, explanation } = lesson.workshop.goals[index];
-				const answer = answers[index];
-				row.dataset.reached = String(reached[index]);
-				const assembled = row.querySelector<HTMLElement>(".assembled")!;
-				assembled.hidden = !answer || !before.includes("…");
-				assembled.textContent = assembled.hidden
-					? ""
-					: before.replace("…", answer).replace(/ +([.!?])/g, "$1");
-				row.querySelector(".goal-feedback")!.textContent = reached[index]
-					? `✓ ${explanation}`
-					: answer
-						? "Prüfe deine Auswahl am Beispiel oder im Material."
-						: "";
-			});
-			const count = reached.filter(Boolean).length;
-			container.querySelector("#workshop-status")!.textContent =
-				`${count} von 3 Zielen erreicht.${count === 3 ? " Werkstatt gespeichert." : ""}`;
-			if (count === 3) complete();
+	const workshop = lesson.workshop;
+	const buttons = [...container.querySelectorAll<HTMLButtonElement>("[data-piece]")];
+	const pieces = new Map(workshopPieces(workshop.visual).map((piece) => [piece.id, piece]));
+	const question = container.querySelector<HTMLElement>("#workshop-question")!;
+	const status = container.querySelector<HTMLElement>("#workshop-status")!;
+	const feedback = container.querySelector<HTMLElement>("#workshop-feedback")!;
+	const restart = container.querySelector<HTMLButtonElement>("#workshop-restart")!;
+	let reached = 0;
+
+	function select(id?: string): void {
+		for (const button of buttons)
+			button.setAttribute("aria-pressed", String(button.dataset.piece === id));
+		for (const mark of container.querySelectorAll<HTMLElement | SVGElement>("[data-map-marker]"))
+			mark.dataset.selected = String(mark.dataset.mapMarker === id);
+	}
+
+	for (const button of buttons) {
+		button.addEventListener("click", () => {
+			const piece = pieces.get(button.dataset.piece ?? "");
+			if (!piece) return;
+			select(piece.id);
+			const goal = workshop.goals[reached];
+			if (!goal) {
+				feedback.textContent = piece.note;
+				return;
+			}
+			if (piece.id !== goal.answer) {
+				feedback.textContent = `${piece.note} Wähle für dieses Ziel ein anderes Feld.`;
+				return;
+			}
+			reached += 1;
+			feedback.textContent = `✓ ${goal.explanation}`;
+			status.textContent = `${reached} von ${workshop.goals.length} Zielen erreicht.`;
+			const next = workshop.goals[reached];
+			question.textContent = next?.label ?? "Werkstatt abgeschlossen.";
+			if (!next) {
+				restart.hidden = false;
+				complete();
+			}
 		});
 	}
-	const figures = container.querySelectorAll<HTMLElement>(".explorer");
-	for (const figure of figures) {
-		const buttons = figure.querySelectorAll<HTMLButtonElement>("[data-note]");
-		for (const button of buttons) {
-			button.addEventListener("click", () => {
-				for (const other of buttons) other.setAttribute("aria-pressed", String(other === button));
-				figure.querySelector(".visual-note")!.textContent = button.dataset.note ?? "";
-			});
-		}
-	}
+
+	restart.addEventListener("click", () => {
+		reached = 0;
+		select();
+		status.textContent = "0 von 3 Zielen erreicht.";
+		question.textContent = workshop.goals[0].label;
+		feedback.textContent = "";
+		restart.hidden = true;
+		buttons[0]?.focus();
+	});
 }
