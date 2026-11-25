@@ -1,8 +1,15 @@
-import { findLesson, lessonsForTrack, LESSONS } from "../curriculum";
+import { LESSONS } from "../curriculum";
 import { canReview } from "../practice";
 import type { Level } from "../types";
 
-export const STORAGE_KEY = "franzoesisch_gym7_academy_progress_v1";
+export const STORAGE_KEY = "franzoesisch_1fs_gym7_academy_progress_v1";
+/**
+ * These lessons were part of
+ * `franzoesisch-gymnasium-7`, on the same origin. Its saved state is read once,
+ * while this package has none of its own; parseProgress keeps only the ids of
+ * this package, leaving the other path’s entries in place.
+ */
+export const LEGACY_STORAGE_KEY = "franzoesisch_gym7_academy_progress_v1";
 export interface ListeningEvidence {
 	synthetic: boolean;
 	partner: boolean;
@@ -34,7 +41,7 @@ const listeningIds = new Set(
 export function freshProgress(): Progress {
 	return {
 		resetAt: 0,
-		activeLessonId: lessonsForTrack("f2")[0].id,
+		activeLessonId: LESSONS[0].id,
 		level: 1,
 		quizDone: [],
 		practiceDone: [],
@@ -115,9 +122,21 @@ export function parseProgress(raw: string | null): Progress {
 		return base;
 	}
 }
+/**
+ * Load and save start from the same stored state. While this package has none,
+ * that is the former package's state: a save that merged against an empty
+ * state would treat unchanged inherited evidence, such as a partner
+ * confirmation, as withdrawn.
+ */
+function storedState(): string | null {
+	return (
+		localStorage.getItem(STORAGE_KEY) ??
+		localStorage.getItem(LEGACY_STORAGE_KEY)
+	);
+}
 export function loadProgress(): Progress {
 	try {
-		return parseProgress(localStorage.getItem(STORAGE_KEY));
+		return parseProgress(storedState());
 	} catch {
 		return freshProgress();
 	}
@@ -177,16 +196,55 @@ export function saveProgress(progress: Progress, baseline: Progress): boolean {
 	try {
 		Object.assign(
 			progress,
-			mergeProgress(
-				parseProgress(localStorage.getItem(STORAGE_KEY)),
-				progress,
-				baseline,
-			),
+			mergeProgress(parseProgress(storedState()), progress, baseline),
 		);
 		localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
 		return true;
 	} catch {
 		return false;
+	}
+}
+
+/**
+ * A reset must delete this package's texts everywhere they are kept, so it
+ * also removes these lessons' entries from the state the old two-path package
+ * stored. Entries for the other path stay in that state.
+ */
+export function withoutTheseLessons(raw: string | null): string | null {
+	try {
+		const value: unknown = JSON.parse(raw ?? "null");
+		if (!value || typeof value !== "object" || Array.isArray(value))
+			return raw;
+		const data = { ...(value as Record<string, unknown>) };
+		const ours = (key: string) => lessonIds.has(key.split(":")[0]);
+		for (const field of ["quizDone", "practiceDone", "workshopDone", "writingDone"])
+			if (Array.isArray(data[field]))
+				data[field] = (data[field] as unknown[]).filter(
+					(entry) => typeof entry !== "string" || !ours(entry),
+				);
+		for (const field of ["drafts", "listening"]) {
+			const map = data[field];
+			if (map && typeof map === "object" && !Array.isArray(map))
+				data[field] = Object.fromEntries(
+					Object.entries(map).filter(([key]) => !ours(key)),
+				);
+		}
+		if (typeof data.activeLessonId === "string" && ours(data.activeLessonId))
+			delete data.activeLessonId;
+		return JSON.stringify(data);
+	} catch {
+		return raw;
+	}
+}
+
+export function forgetLegacyEntries(): void {
+	try {
+		const raw = localStorage.getItem(LEGACY_STORAGE_KEY);
+		const cleaned = withoutTheseLessons(raw);
+		if (raw !== null && cleaned !== null && cleaned !== raw)
+			localStorage.setItem(LEGACY_STORAGE_KEY, cleaned);
+	} catch {
+		/* Nothing stored there, or storage unavailable. */
 	}
 }
 
@@ -243,20 +301,15 @@ export function isComplete(progress: Progress, id: string): boolean {
 			progress.listening[id]?.partner === true)
 	);
 }
-export function currentTrack(progress: Progress): "f1" | "f2" {
-	return findLesson(progress.activeLessonId)?.track ?? "f2";
-}
-
 export function completion(
 	progress: Progress,
 ): { completed: number; total: number; percent: number } {
-	const visible = lessonsForTrack(currentTrack(progress));
-	const completed = visible.filter((lesson) =>
+	const completed = LESSONS.filter((lesson) =>
 		isComplete(progress, lesson.id),
 	).length;
 	return {
 		completed,
-		total: visible.length,
-		percent: Math.round((100 * completed) / visible.length),
+		total: LESSONS.length,
+		percent: Math.round((100 * completed) / LESSONS.length),
 	};
 }

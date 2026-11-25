@@ -35,7 +35,7 @@ copyFileSync(distHtml, join(bundleDir, appFile));
 
 const winBat = [
 	"@echo off",
-	"title Französisch 7 Gymnasium · ZAM Academy",
+	"title Französisch 7 (1. Fremdsprache) · ZAM Academy",
 	`start "" "%~dp0${appFile}"`,
 	"",
 ].join("\r\n");
@@ -74,7 +74,7 @@ const readmeTxt = `ZAM ACADEMY · FRENCH 7 GYMNASIUM · BAVARIA
    Windows, macOS or Linux launcher.
 
 No installation, server or internet connection is needed for the lessons.
-Choose the first or second foreign-language path on the home screen.
+This course is for French as the first foreign language.
 The teaching language is German, with French practice materials.
 Progress and drafts stay in this browser. Some file:// browsers restrict
 local storage; the app explains when saving is unavailable.
@@ -84,7 +84,7 @@ comparison for core progress. Level 2 adds transfer practice.
 Listening uses only an already installed French voice. If none is available,
 a partner can read the accessible transcript. Source links need internet.
 
-The package includes 204 linked ZAM cards for the Academy catalog.
+The package includes 87 linked ZAM cards for the Academy catalog.
 No personal library or review history is modified by this offline app.
 `;
 writeFileSync(join(bundleDir, "README-START.txt"), readmeTxt, "utf8");
