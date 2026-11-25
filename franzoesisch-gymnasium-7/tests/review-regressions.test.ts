@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import mapping from "../replaces-de-by.json";
 import cell from "../cell.json";
 import legacy7 from "./fixtures/de-by-gymnasium-7-franzoesisch-passe-compose-relativsaetze-verneinung-kvt.json";
-import { completion, freshProgress, currentTrack } from "../src/storage/progress";
+import { completion, freshProgress } from "../src/storage/progress";
 import {
 	FRANCE_CITIES,
 	FRANCE_LAND,
@@ -132,13 +132,9 @@ describe("approved history transfer", () => {
 		expect(mapping.rows.filter((row) => row.category === "A")).toHaveLength(1);
 	});
 });
-describe("selected curriculum path", () => {
-	it("calculates progress from the active path without sharing completion totals", () => {
+describe("course progress", () => {
+	it("counts only lessons in the 1. Fremdsprache package", () => {
 		const progress = freshProgress();
-		expect(currentTrack(progress)).toBe("f2");
-		expect(completion(progress)).toEqual({ completed: 0, total: 39, percent: 0 });
-		progress.activeLessonId = "f7-1-echange";
-		expect(currentTrack(progress)).toBe("f1");
 		expect(completion(progress)).toEqual({ completed: 0, total: 29, percent: 0 });
 	});
 });

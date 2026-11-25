@@ -31,15 +31,15 @@ const pageText = (source) => source
 	.replace(/&([a-z]+);/gi, (m, n) => entities[n] ?? m)
 	.replace(/\s+/g, " ")
 	.trim();
-const expectedCounts = { F1: 49, F2: 54 };
-assert.deepEqual(coverage.curricula.map((entry) => entry.track), ["F1", "F2"]);
-assert.equal(coverage.rows.length, 103);
+const expectedCount = 49;
+assert.deepEqual(coverage.curricula.map((entry) => entry.track), ["F1"]);
+assert.equal(coverage.rows.length, expectedCount);
 for (const curriculum of coverage.curricula) {
 	const source = read(curriculum.file);
 	assert.equal(hash(source), curriculum.curriculum_sha256);
 	const text = pageText(source);
 	const rows = coverage.rows.filter((entry) => entry.track === curriculum.track);
-	assert.equal(rows.length, expectedCounts[curriculum.track]);
+	assert.equal(rows.length, expectedCount);
 	const missing = rows.filter(
 		(row) => !text.includes(row.competence.replace(/\s+/g, " ").trim()),
 	);
@@ -49,4 +49,4 @@ for (const curriculum of coverage.curricula) {
 for (const neighbour of coverage.neighbours) assert.equal(hash(read(neighbour.file)), neighbour.sha256);
 const mapping = JSON.parse(read("replaces-de-by.json"));
 for (const snapshot of mapping.sources) assert.equal(hash(read(snapshot.file)), snapshot.sha256);
-console.log("Both grade 7 source hashes, four neighbouring snapshots and both legacy cell hashes match.");
+console.log("The Grade 7 source hash, two neighbouring snapshots and both legacy cell hashes match.");

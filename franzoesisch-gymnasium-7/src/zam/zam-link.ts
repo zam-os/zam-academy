@@ -33,3 +33,14 @@ export function parseTrainingDeepLink(
 			: {}),
 	};
 }
+
+/** Keep published links to lessons that moved to the second-language app. */
+export function secondLanguageUrl(lessonId?: string, level?: Level): string {
+	const url = new URL("../franzoesisch-2fs-gymnasium-7/", ZAM_ACADEMY_APP_URL);
+	if (lessonId) {
+		const params = new URLSearchParams({ lesson: lessonId });
+		if (level) params.set("level", String(level));
+		url.hash = params.toString();
+	}
+	return url.href;
+}

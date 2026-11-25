@@ -109,7 +109,9 @@ Für Klasse 6 hat Thomas am 2026-11-24 entschieden: „Pfad herauslösen“. Der
 `franzoesisch-2fs`, mit unveränderten Lektions-, Atom- und Karten-IDs;
 `franzoesisch-gymnasium-6` wird in einem eigenen PR zur reinen 1. Fremdsprache
 ([Lehrplan und Kartenumzug](franzoesisch-2fs-gymnasium-6-coverage.md)).
-`franzoesisch-gymnasium-7` ist davon nicht berührt.
+The Grade 7 second-language path now has its own package,
+`franzoesisch-2fs-gymnasium-7`, in the same atlas subject. The two Grade 7 apps
+retain their published lesson and card identifiers.
 
 ## Pakete in den neuen Zellen
 
@@ -117,3 +119,4 @@ Für Klasse 6 hat Thomas am 2026-11-24 entschieden: „Pfad herauslösen“. Der
 | --- | --- | --- | --- |
 | `englisch-2fs` | 6 | [`englisch-2fs-gymnasium-6`](../englisch-2fs-gymnasium-6/) | 43 Lektionen, 129 Karten, Version 0.0 ([Lehrplan und Kartenbestand](englisch-2fs-gymnasium-6-coverage.md)) |
 | `franzoesisch-2fs` | 6 | [`franzoesisch-2fs-gymnasium-6`](../franzoesisch-2fs-gymnasium-6/) | 46 Lektionen, 138 Karten, Version 0.0, aus `franzoesisch-gymnasium-6` herausgelöst ([Lehrplan und Kartenumzug](franzoesisch-2fs-gymnasium-6-coverage.md)) |
+| `franzoesisch-2fs` | 7 | [`franzoesisch-2fs-gymnasium-7`](../franzoesisch-2fs-gymnasium-7/) | 39 lessons, 117 cards, version 0.0 ([curriculum and card continuity](franzoesisch-2fs-gymnasium-7-coverage.md)) |

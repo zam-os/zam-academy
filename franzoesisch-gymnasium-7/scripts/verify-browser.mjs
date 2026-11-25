@@ -11,11 +11,10 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 const root = fileURLToPath(new URL("../", import.meta.url));
-const output = process.env.BROWSER_QA_DIR ?? join(tmpdir(), "zam-f7-browser");
+const output = process.env.BROWSER_QA_DIR ?? join(tmpdir(), "zam-f7-1fs-browser");
 mkdirSync(output, { recursive: true });
 const lessons = JSON.parse(readFileSync(`${root}/src/curriculum/lessons.json`));
 // Each run needs fresh evidence: a saved partner checkbox must not flip to false.
-const pathSizes = { f1: 29, f2: 39 };
 const profile = mkdtempSync(join(tmpdir(), "zam-french7-browser-"));
 const chrome = spawn(
 	process.env.CHROME_BIN ??
@@ -162,24 +161,19 @@ try {
 	}
 	assert.equal(
 		await evaluate('document.querySelectorAll(".lesson-link").length'),
-		pathSizes.f2,
+		lessons.length,
 	);
 	let states = 0;
 	for (const theme of ["light", "dark"]) {
 		await selectTheme(theme);
 		await route("");
-		for (const [track, size] of Object.entries(pathSizes)) {
-			await evaluate(`document.querySelector('[data-track="${track}"]').click()`);
-			assert.equal(await themeOfPage(), theme, track);
-			assert.equal(await evaluate('document.querySelectorAll(".lesson-link").length'), size);
-			assert.equal(await evaluate(`document.querySelector('[data-track="${track}"]').getAttribute('aria-pressed')`), "true");
-			await screenshot(`path-${track}-${theme}`);
-			await route("#view=reference");
-			assert.ok(await evaluate(`[...document.querySelectorAll('[data-lesson]')].every(link => link.dataset.lesson.startsWith("f7-${track[1]}-"))`));
-			assert.ok(await evaluate("document.querySelectorAll('.reference-links li').length > 4"));
-			await screenshot(`reference-${track}-${theme}`);
-			await route("");
-		}
+		assert.equal(await evaluate('document.querySelectorAll(".lesson-link").length'), lessons.length);
+		assert.equal(await evaluate('document.querySelector("[data-track]") === null'), true);
+		await screenshot(`path-${theme}`);
+		await route("#view=reference");
+		assert.ok(await evaluate(`[...document.querySelectorAll('[data-lesson]')].every(link => link.dataset.lesson.startsWith("f7-1-"))`));
+		assert.ok(await evaluate("document.querySelectorAll('.reference-links li').length > 4"));
+		await screenshot(`reference-${theme}`);
 		for (const lesson of lessons)
 			for (const level of [1, 2]) {
 				await route(`#lesson=${lesson.id}&level=${level}`);
@@ -195,7 +189,7 @@ try {
 				assert.ok(result.initial.startsWith("0 von 3"));
 				assert.equal(result.over, false, lesson.id);
 				assert.ok(!/NaN|undefined/.test(result.body));
-				if (["f7-1-echange", "f7-1-appel", "f7-2-chemin", "f7-1-deux-temps", "f7-1-photo", "f7-2-echange", "f7-2-histoire", "f7-1-regions"].includes(lesson.id))
+				if (["f7-1-echange", "f7-1-appel", "f7-1-deux-temps", "f7-1-photo", "f7-1-regions"].includes(lesson.id))
 					await screenshot(`${lesson.id}-level${level}-${theme}`);
 				states++;
 			}
@@ -229,7 +223,7 @@ try {
 		})`);
 		assert.equal(explorers, true, lesson.id);
 	}
-	const first = lessons.find((lesson) => lesson.id === "f7-2-echange");
+	const first = lessons[0];
 	await route(`#lesson=${first.id}&level=1`);
 	await evaluate(
 		`Array.from(document.querySelectorAll('.quiz-choice')).find(el=>el.textContent===${JSON.stringify(first.quiz.wrong[0])}).click()`,
@@ -258,7 +252,7 @@ try {
 	assert.ok(
 		(
 			await evaluate('document.querySelector("#progress-strip").innerText')
-		).includes("1 von 39"),
+		).includes("1 von 29"),
 	);
 	await page("Page.reload");
 	for (let i = 0; i < 100; i++) {
@@ -273,7 +267,7 @@ try {
 	assert.ok(
 		(
 			await evaluate('document.querySelector("#progress-strip").innerText')
-		).includes("1 von 39"),
+		).includes("1 von 29"),
 	);
 	await evaluate(
 		`var draft=document.querySelector('#draft');draft.value='Bonjour, Monsieur. Une pomme, s’il vous plaît.';draft.dispatchEvent(new Event('input',{bubbles:true}));`,
@@ -281,19 +275,16 @@ try {
 	assert.ok(
 		(
 			await evaluate('document.querySelector("#progress-strip").innerText')
-		).includes("0 von 39"),
+		).includes("0 von 29"),
 	);
 	await evaluate(`var draft=document.querySelector('#draft');draft.setSelectionRange(draft.value.length,draft.value.length);document.querySelector('#draft-accents [data-char="œ"]').click()`);
 	assert.ok((await evaluate("document.querySelector('#draft').value")).endsWith("œ"));
 	await evaluate(`var input=document.querySelector('#practice-1');input.focus();input.value='e';input.setSelectionRange(0,1);document.querySelector('#practice-accents [data-char="é"]').click()`);
 	assert.equal(await evaluate("document.querySelector('#practice-1').value"), "é");
 
-	await route("#lesson=f7-1-echange&level=2");
-	assert.ok((await evaluate("document.querySelector('#progress-strip').innerText")).includes("0 von 29"));
+	await route(`#lesson=${first.id}&level=2`);
 	assert.equal(await evaluate("document.querySelector('#previous').disabled"), true);
-	await route("");
-	assert.equal(await evaluate("document.querySelector('[data-track=f1]').getAttribute('aria-pressed')"), "true");
-	await route("#lesson=f7-1-revision&level=1");
+	await route(`#lesson=${lessons.at(-1).id}&level=1`);
 	assert.equal(await evaluate("document.querySelector('#next').disabled"), true);
 	await route("#lesson=f7-1-regions&level=2");
 	await evaluate(`document.querySelector('.region-map [data-step="2"]').click()`);
@@ -304,40 +295,6 @@ try {
 	await evaluate(`document.querySelector('.time-explorer [data-step="1"]').click()`);
 	assert.ok((await evaluate('document.querySelector(".time-explorer [data-step-panel]:not([hidden])").textContent')).includes("a sonné"));
 	await screenshot("timeline-interaction");
-	await route("#lesson=f7-2-ville&level=1");
-	assert.equal(
-		await evaluate('document.querySelectorAll("[data-city]").length'),
-		7,
-	);
-	assert.equal(
-		await evaluate('document.querySelectorAll("[data-river]").length'),
-		4,
-	);
-	const mountains = await evaluate(`(() => {
-		const land = document.querySelector("svg .land");
-		return [...document.querySelectorAll(".map-mountains text")].map((label) => {
-			const { x, y, width, height } = label.getBBox();
-			return {
-				name: label.textContent,
-				onLand: [[x, y], [x + width, y], [x, y + height], [x + width, y + height]]
-					.every(([px, py]) => land.isPointInFill(new DOMPoint(px, py))),
-			};
-		});
-	})()`);
-	assert.deepEqual(mountains, [
-		{ name: "Alpes", onLand: true },
-		{ name: "Pyrénées", onLand: true },
-	]);
-	await evaluate('document.querySelector("[data-map-focus=mountains]").click()');
-	await screenshot("mountain-labels");
-	await evaluate('document.querySelector("[data-map-focus=rivers]").click()');
-	assert.equal(
-		await evaluate(
-			'document.querySelector("[data-map-layer=cities]").style.opacity',
-		),
-		"0.18",
-	);
-	await screenshot("map-interaction");
 	await route("#lesson=f7-1-sons&level=1");
 	assert.equal(await evaluate("document.querySelector('.lesson-content > section:first-child h2').textContent"), "Zuerst hören");
 	// No installed voice is required: partner evidence is a complete accessible fallback.
@@ -374,11 +331,8 @@ try {
 					[
 						"",
 						"f7-1-deux-temps",
-						"f7-2-chemin",
 						"f7-1-photo",
 						"f7-1-regions",
-						"f7-2-echange",
-						"f7-2-nombres",
 						"reference",
 					].includes(id)
 				)
@@ -397,7 +351,7 @@ try {
 		await evaluate("document.querySelector('[data-goal=\"2\"] .word-piece[lang=fr]').textContent"),
 		"invite Mina ?",
 	);
-	await route("#lesson=f7-2-echange&level=1");
+	await route("#lesson=f7-1-echange&level=1");
 	assert.ok(await evaluate("document.querySelector('#draft').value.length > 0"));
 	await evaluate("document.querySelector('.draft-storage summary').click()");
 	assert.match(
@@ -405,8 +359,14 @@ try {
 		/Lokalen Fortschritt zurücksetzen/,
 	);
 	await evaluate("document.querySelector('#reset').click(); document.querySelector('#confirm-reset').click()");
-	await route("#lesson=f7-2-echange&level=1");
+	await route("#lesson=f7-1-echange&level=1");
 	assert.equal(await evaluate("document.querySelector('#draft').value"), "");
+
+	await route("#lesson=f7-2-chemin&level=2");
+	assert.equal(
+		await evaluate("document.querySelector('main .notice a').href"),
+		"https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-chemin&level=2",
+	);
 
 	// The built offline app must not issue any HTTP request.
 	assert.deepEqual(errors, []);
@@ -428,7 +388,7 @@ try {
 				externalRequests: 0,
 				checks: [
 					"all workshop handlers",
-					"both curriculum selectors and split progress",
+					"single course path and progress",
 					"all visual selectors",
 					"accent insertion",
 					"quiz feedback",
@@ -437,9 +397,9 @@ try {
 					"reload persistence",
 					"edited-draft invalidation",
 					"festival material and French-only workshop sentence",
+					"old offline lesson links lead to the moved course",
 					"shared-profile help and draft reset",
 					"interactive timeline and region map",
-					"map layers",
 					"partner listening",
 				],
 			},

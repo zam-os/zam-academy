@@ -1,8 +1,8 @@
 import "./styles.css";
 import { bindWorkshop, renderWorkshop } from "./workshop";
 import {
-	lessonsForTrack,
 	findLesson,
+	LESSONS,
 	SOURCES,
 	STAGES,
 } from "./curriculum";
@@ -18,7 +18,7 @@ import {
 } from "./practice";
 import {
 	completion,
-	currentTrack,
+	forgetLegacyEntries,
 	markSyntheticListening,
 	mergeProgress,
 	resetProgress,
@@ -30,9 +30,10 @@ import {
 	updateDraft,
 	writingKey,
 } from "./storage/progress";
-import type { Lesson, Level, Track } from "./types";
+import type { Lesson, Level } from "./types";
 import {
 	parseTrainingDeepLink,
+	secondLanguageUrl,
 	trainingBaseUrl,
 	ZAM_CELL_ID,
 } from "./zam/zam-link";
@@ -52,25 +53,21 @@ let progress = loadProgress();
 let baseline = structuredClone(progress);
 let view: "path" | "lesson" | "reference" = "path";
 let routeNotice = "";
-const tracks = [
-	{ id: "f2", title: "2. Fremdsprache", detail: "Ich lerne Französisch seit Klasse 6." },
-	{ id: "f1", title: "1. Fremdsprache", detail: "Ich lerne Französisch seit Klasse 5." },
-] as const;
-
-function nextLesson(track: Track): Lesson {
-	const lessons = lessonsForTrack(track);
-	return lessons.find((lesson) => !isComplete(progress, lesson.id)) ?? lessons[0];
+let movedLesson = "";
+function nextLesson(): Lesson {
+	return LESSONS.find((lesson) => !isComplete(progress, lesson.id)) ?? LESSONS[0];
 }
 const practiceAnswers = new Map<string, string[]>();
 let speechSession = 0;
 let voiceRequest: AbortController | undefined;
 
-function persist(): void {
+function persist(): boolean {
 	const saved = saveProgress(progress, baseline);
 	if (saved) baseline = structuredClone(progress);
 	element<HTMLElement>("#storage-warning").hidden = saved;
 	syncSavedState();
 	renderStats();
+	return saved;
 }
 
 /** Update saved evidence without replacing an open form or its focus. */
@@ -108,7 +105,7 @@ function syncSavedState(): void {
 function renderStats(): void {
 	const count = completion(progress);
 	element("#progress-strip").innerHTML =
-		`<label for="path-progress">${currentTrack(progress) === "f1" ? "1." : "2."} Fremdsprache · ${count.completed} von ${count.total} Lektionen geübt</label><progress id="path-progress" value="${count.completed}" max="${count.total}">${count.percent}%</progress>`;
+		`<label for="path-progress">1. Fremdsprache · ${count.completed} von ${count.total} Lektionen geübt</label><progress id="path-progress" value="${count.completed}" max="${count.total}">${count.percent}%</progress>`;
 }
 function cancelSpeech(): void {
 	speechSession++;
@@ -118,8 +115,9 @@ function cancelSpeech(): void {
 function pageUrl(): string {
 	return trainingBaseUrl(location.pathname, location.search);
 }
-function navigate(id?: string): void {
+function navigate(id?: string): boolean {
 	routeNotice = "";
+	movedLesson = "";
 	cancelSpeech();
 	if (id && findLesson(id)) {
 		progress.activeLessonId = id;
@@ -137,10 +135,11 @@ function navigate(id?: string): void {
 			`${pageUrl()}${view === "reference" ? "#view=reference" : ""}`,
 		);
 	}
-	persist();
+	const saved = persist();
 	render();
 	main.focus();
 	window.scrollTo({ top: 0, behavior: "instant" });
+	return saved;
 }
 function render(): void {
 	document
@@ -160,17 +159,14 @@ function render(): void {
 	else renderPath();
 }
 function renderPath(): void {
-	const track = currentTrack(progress);
-	const lessons = lessonsForTrack(track);
-	const next = nextLesson(track);
-	main.innerHTML = `${routeNotice ? `<p class="notice" role="status">${esc(routeNotice)}</p>` : ""}
-    <section class="hero"><div><div class="eyebrow">Gymnasium Bayern · 7. Klasse</div><h1 lang="fr">Parler, raconter, découvrir</h1><p>Erzähle, was passiert ist, vergleiche Orte und verabrede dich auf Französisch. Wähle deinen Lernpfad.</p>
-    <div class="track-picker" role="group" aria-label="Französisch-Lernpfad">${tracks.map((entry) => `<button type="button" data-track="${entry.id}" aria-pressed="${entry.id === track}"><strong>${entry.title}</strong><span>${entry.detail}</span></button>`).join("")}</div></div>
+	const next = nextLesson();
+	main.innerHTML = `${routeNotice ? `<p class="notice" role="status">${esc(routeNotice)}${movedLesson ? ` <a href="${esc(movedLesson)}">Lektion online öffnen</a>` : ""}</p>` : ""}
+    <section class="hero"><div><div class="eyebrow">Gymnasium Bayern · 7. Klasse · 1. Fremdsprache</div><h1 lang="fr">Parler, raconter, découvrir</h1><p>Erzähle, was passiert ist, vergleiche Orte und verabrede dich auf Französisch.</p><p class="small"><a href="${secondLanguageUrl()}">Französisch seit Klasse 6? Zum Paket für die 2. Fremdsprache</a></p></div>
     <aside class="hero-note"><div class="eyebrow">Dein nächster Schritt</div><strong lang="fr">${esc(next.title)}</strong><p>${esc(next.skill)}</p><button type="button" class="button accent" id="continue">${completion(progress).completed ? "Weiterüben" : "Mit dieser Lektion starten"} <span aria-hidden="true">↗</span></button></aside></section>
-    <div class="path-heading"><div><h2>Dein Lernpfad</h2><p>${lessons.length} Lektionen · Jede kann direkt geöffnet werden.</p></div></div>
-    <div class="stages">${STAGES.filter((stage) => stage.track === track)
+    <div class="path-heading"><div><h2>Dein Lernpfad</h2><p>${LESSONS.length} Lektionen · Jede kann direkt geöffnet werden.</p></div></div>
+    <div class="stages">${STAGES
 			.map((stage) => {
-				const stageLessons = lessons.filter((lesson) => lesson.stage === stage.id);
+				const stageLessons = LESSONS.filter((lesson) => lesson.stage === stage.id);
 				return `<section class="stage" style="--stage-hue:${stage.hue}"><div class="stage-header"><span class="stage-icon" aria-hidden="true">${esc(stage.icon)}</span><div><h3 lang="fr">${esc(stage.title)}</h3><span class="small">${esc(stage.subtitle)}</span></div><span class="stage-count">${stageLessons.filter((lesson) => isComplete(progress, lesson.id)).length}/${stageLessons.length}</span></div><ol>${stageLessons.map((lesson) => `<li><button type="button" class="lesson-link ${isComplete(progress, lesson.id) ? "complete" : ""}" data-lesson="${lesson.id}"><span class="lesson-dot" aria-hidden="true">${isComplete(progress, lesson.id) ? "✓" : ""}</span><span><strong lang="fr">${esc(lesson.title)}</strong><small>${esc(lesson.skill)}</small></span><span class="lesson-status">${isComplete(progress, lesson.id) ? "Geübt" : "Öffnen →"}</span></button></li>`).join("")}</ol></section>`;
 			})
 			.join(
@@ -179,16 +175,6 @@ function renderPath(): void {
 	document
 		.querySelector("#continue")
 		?.addEventListener("click", () => navigate(next.id));
-	main.querySelectorAll<HTMLButtonElement>("[data-track]").forEach((button) => {
-		button.addEventListener("click", () => {
-			const selected = tracks.find((entry) => entry.id === button.dataset.track);
-			if (!selected || selected.id === track) return;
-			progress.activeLessonId = nextLesson(selected.id).id;
-			persist();
-			renderPath();
-			main.querySelector<HTMLButtonElement>(`[data-track="${selected.id}"]`)?.focus();
-		});
-	});
 	main
 		.querySelectorAll<HTMLButtonElement>("[data-lesson]")
 		.forEach(
@@ -223,8 +209,7 @@ function renderLesson(lesson: Lesson): void {
 	const task = lesson.tasks[progress.level];
 	const key = writingKey(lesson.id, progress.level);
 	const stage = required(STAGES.find((entry) => entry.id === lesson.stage));
-	const visible = lessonsForTrack(lesson.track);
-	const index = visible.findIndex((entry) => entry.id === lesson.id);
+	const index = LESSONS.findIndex((entry) => entry.id === lesson.id);
 	const material = `<section class="panel" aria-labelledby="material-heading"><h2 id="material-heading">${lesson.listening ? "Zuerst hören" : "Dein Material"}</h2><p class="small">${esc(lesson.materialLabel)}</p>${lesson.listening ? `<p>Höre zuerst ohne mitzulesen. Die lokale Computerstimme spricht ein Übungsskript; natürliche Stimmen und Hörsehtexte übst du zusätzlich.</p><div class="self-actions"><button type="button" class="button accent" id="listen">Skript anhören</button><button type="button" class="button secondary" id="stop-listen">Stoppen</button></div><p class="small" id="voice-status" role="status"></p><details id="transcript"><summary>Transkript / Text zum Vorlesen</summary><p class="material" lang="${lesson.materialLanguage}">${esc(lesson.material)}</p></details><label class="toggle"><input type="checkbox" id="partner-listened" ${progress.listening[lesson.id]?.partner ? "checked" : ""}>Ein Partner hat mir den Text vorgelesen; ich habe zuerst ohne Mitlesen zugehört.</label><p class="small" id="listened-status" role="status"></p>` : `<p class="material" lang="${lesson.materialLanguage}">${esc(lesson.material)}</p>`}</section>`;
 	main.innerHTML = `<div class="lesson-top"><button type="button" class="text-button" id="back">← Zum Lernpfad</button><label class="level-select" for="level">Aufgabenstufe <select id="level"><option value="1" ${progress.level === 1 ? "selected" : ""}>Level 1 · Anwenden</option><option value="2" ${progress.level === 2 ? "selected" : ""}>Level 2 · Transfer</option></select></label></div>
     <div class="lesson-heading" style="--stage-hue:${stage.hue}"><div class="eyebrow" lang="fr">${esc(stage.title)}</div><h1 lang="fr">${esc(lesson.title)}</h1><p class="intro">${esc(lesson.skill)}</p></div>
@@ -254,7 +239,7 @@ function renderLesson(lesson: Lesson): void {
 			.join(
 				"",
 			)}</ul><p class="small">Quellen öffnen erst auf deinen Klick.</p></section></aside></div>
-    <div class="lesson-navigation"><button type="button" class="button secondary" id="previous" ${index === 0 ? "disabled" : ""}>← Vorige Lektion</button><button type="button" class="button accent" id="next" ${index === visible.length - 1 ? "disabled" : ""}>Nächste Lektion →</button></div>`;
+    <div class="lesson-navigation"><button type="button" class="button secondary" id="previous" ${index === 0 ? "disabled" : ""}>← Vorige Lektion</button><button type="button" class="button accent" id="next" ${index === LESSONS.length - 1 ? "disabled" : ""}>Nächste Lektion →</button></div>`;
 	bindWorkshop(lesson, main, () => {
 		if (!progress.workshopDone.includes(lesson.id))
 			progress.workshopDone.push(lesson.id);
@@ -271,10 +256,10 @@ function renderLesson(lesson: Lesson): void {
 		});
 	document
 		.querySelector("#previous")
-		?.addEventListener("click", () => navigate(visible[index - 1]?.id));
+		?.addEventListener("click", () => navigate(LESSONS[index - 1]?.id));
 	document
 		.querySelector("#next")
-		?.addEventListener("click", () => navigate(visible[index + 1]?.id));
+		?.addEventListener("click", () => navigate(LESSONS[index + 1]?.id));
 	main.querySelectorAll<HTMLButtonElement>(".quiz-choice").forEach(
 		(button) =>
 			void button.addEventListener("click", () => {
@@ -445,7 +430,7 @@ function bindListening(lesson: Lesson): void {
 		});
 }
 function renderReference(): void {
-	main.innerHTML = `<div class="reference"><div class="eyebrow">Nachschlagen und weiterüben</div><h1>Sprache im Zusammenhang</h1><p>Öffne die passende Lektion und übe mit einem eigenen Beispiel.</p><section class="panel"><h2>Sprachwerkstatt</h2><ul class="reference-links">${lessonsForTrack(currentTrack(progress)).filter((lesson) =>
+	main.innerHTML = `<div class="reference"><div class="eyebrow">Nachschlagen und weiterüben</div><h1>Sprache im Zusammenhang</h1><p>Öffne die passende Lektion und übe mit einem eigenen Beispiel.</p><section class="panel"><h2>Sprachwerkstatt</h2><ul class="reference-links">${LESSONS.filter((lesson) =>
 		lesson.bindings.some((binding) => binding.startsWith("1.2")))
 		.map(
 			(lesson) =>
@@ -478,6 +463,18 @@ function applyRoute(): void {
 		rawParams.has("lesson") ||
 		new URLSearchParams(location.search).has("lesson");
 	routeNotice = "";
+	movedLesson = "";
+	if (link.lessonId?.startsWith("f7-2-")) {
+		movedLesson = secondLanguageUrl(link.lessonId, link.level);
+		if (location.origin === new URL(movedLesson).origin) {
+			location.replace(movedLesson);
+			return;
+		}
+		view = "path";
+		routeNotice = "Diese Lektion ist ins Paket für die 2. Fremdsprache umgezogen.";
+		render();
+		return;
+	}
 	if (link.level) progress.level = link.level;
 	if (link.lessonId && findLesson(link.lessonId)) {
 		progress.activeLessonId = link.lessonId;
@@ -514,7 +511,7 @@ document.querySelector("#theme")?.addEventListener("click", () => {
 	const theme = current === "dark" ? "light" : "dark";
 	document.documentElement.dataset.theme = theme;
 	try {
-		localStorage.setItem("franzoesisch_gym7_theme", theme);
+		localStorage.setItem("franzoesisch_1fs_gym7_theme", theme);
 	} catch {
 		/* Theme still changes for this visit. */
 	}
@@ -524,7 +521,7 @@ document
 	?.addEventListener("click", () =>
 		showDialog(
 			"Mit ZAM behalten",
-			`<p>Für beide Lernpfade sind zusammen 204 Wiederholungsfragen vorbereitet. Jede führt zurück zu ihrer Lektion.</p><p>In ZAM findest du die veröffentlichte Zelle unter „Aus der ZAM Academy“. Die Lektionen der beiden Lernpfade haben eigene Karten. Die Zelle heißt <strong>${esc(ZAM_CELL_ID)}</strong>.</p><p>Du kannst hier auch ohne Konto alle Lektionen offline üben.</p>`,
+			`<p>Zu den 29 Lektionen gibt es 87 Wiederholungsfragen. Jede führt zurück zu ihrer Lektion.</p><p>In ZAM findest du die veröffentlichte Zelle unter „Aus der ZAM Academy“. Die Zelle heißt <strong>${esc(ZAM_CELL_ID)}</strong>.</p><p>Du kannst hier auch ohne Konto alle Lektionen offline üben.</p>`,
 		),
 	);
 document.querySelector("#reset")?.addEventListener("click", () => {
@@ -536,7 +533,7 @@ document.querySelector("#reset")?.addEventListener("click", () => {
 		progress = resetProgress(progress);
 		practiceAnswers.clear();
 		dialog.close();
-		navigate();
+		if (navigate()) forgetLegacyEntries();
 	});
 });
 window.addEventListener("hashchange", applyRoute);

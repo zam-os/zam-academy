@@ -4,7 +4,6 @@ import coverage from "../coverage.json";
 import mapping from "../replaces-de-by.json";
 import contract from "./fixtures/public-contract.json";
 import {
-	lessonsForTrack,
 	findLesson,
 	LESSONS,
 	SOURCES,
@@ -32,32 +31,27 @@ import {
 	parseTrainingDeepLink,
 	trainingBaseUrl,
 	ZAM_CELL_ID,
+	secondLanguageUrl,
 } from "../src/zam/zam-link";
 import { workshopGoals } from "../src/workshop";
 const items = cell.atoms.map((a) => a.practice_items).flat();
 
-describe("Grade 7 first- and second-language French teaching contract", () => {
-	it("provides two complete paths and three goals and cards per lesson", () => {
-		expect(LESSONS).toHaveLength(68);
-		expect(lessonsForTrack("f1")).toHaveLength(29);
-		expect(lessonsForTrack("f2")).toHaveLength(39);
-		for (const track of ["f1", "f2"] as const) {
-			const stages = STAGES.filter((stage) => stage.track === track);
-			expect(stages).toHaveLength(5);
-			for (const stage of stages)
-				expect(lessonsForTrack(track).some((lesson) => lesson.stage === stage.id)).toBe(true);
-		}
-		expect(cell.atoms).toHaveLength(68);
-		expect(items).toHaveLength(204);
-		expect(LESSONS.filter((lesson) => lesson.listening).map((lesson) => lesson.id)).toEqual([
-			"f7-1-appel", "f7-1-chanson", "f7-1-sons", "f7-2-meteo",
-			"f7-2-hotel", "f7-2-trajet", "f7-2-sons",
-		]);
+describe("Grade 7 first-language French teaching contract", () => {
+	it("provides a complete path and three cards per lesson", () => {
+		expect(LESSONS).toHaveLength(29);
+		expect(STAGES).toHaveLength(5);
+		for (const stage of STAGES)
+			expect(LESSONS.some((lesson) => lesson.stage === stage.id)).toBe(true);
+		expect(cell.atoms).toHaveLength(29);
+		expect(items).toHaveLength(87);
+		expect(LESSONS.filter((lesson) => lesson.listening).map((lesson) => lesson.id)).toEqual(
+			["f7-1-appel", "f7-1-chanson", "f7-1-sons"],
+		);
 	});
 	it.each(LESSONS)(
 		"has substantial teaching, feedback and distinct tasks: $id",
 		(l) => {
-			expect(l.id).toMatch(/^f7-[12]-[a-z-]+$/);
+			expect(l.id).toMatch(/^f7-1-[a-z-]+$/);
 			expect(l.paragraphs.length).toBeGreaterThanOrEqual(2);
 			expect(l.paragraphs.join(" ").length).toBeGreaterThan(250);
 			expect(l.material.length).toBeGreaterThan(65);
@@ -128,33 +122,27 @@ describe("Grade 7 first- and second-language French teaching contract", () => {
 		},
 	);
 	it("maps each expectation and lesson to the correct path, with honest limits", () => {
-		expect(coverage.rows).toHaveLength(103);
-		expect(new Set(coverage.rows.map((row) => row.id)).size).toBe(103);
+		expect(coverage.rows).toHaveLength(49);
+		expect(new Set(coverage.rows.map((row) => row.id)).size).toBe(49);
 		const mapped = new Set(coverage.rows.flatMap((row) => row.lessons));
 		for (const lesson of LESSONS) expect(mapped.has(lesson.id)).toBe(true);
 		for (const row of coverage.rows) {
 			expect(["supported", "implemented"]).toContain(row.status);
 			expect(row.evidence.length).toBeGreaterThan(30);
 			for (const id of row.lessons)
-				expect(findLesson(id)?.track).toBe(row.track.toLowerCase());
+				expect(findLesson(id), row.id).toBeDefined();
+			expect(row.track).toBe("F1");
 		}
-		for (const id of ["F1-01", "F1-03", "F1-09", "F1-24", "F1-38", "F1-47", "F2-01", "F2-05", "F2-38", "F2-52"])
+		for (const id of ["F1-01", "F1-03", "F1-09", "F1-24", "F1-38", "F1-47"])
 			expect(coverage.rows.find((row) => row.id === id)?.status).toBe("supported");
 	});
-	it("places new structures in the right curricula and labels the speaking and hearing supports", () => {
+	it("keeps grammar aligned to the Grade 7 curriculum", () => {
 		const text = (id: string) => findLesson(id)!.paragraphs.join(" ");
-		expect(text("f7-2-relatifs")).toContain("le parc où je joue");
-		expect(text("f7-2-objets-indirects")).toContain("Je vais leur parler");
-		expect(text("f7-2-avoir-passe")).toContain("j’ai joué");
-		expect(text("f7-2-etre-passe")).toContain("elles sont arrivées");
 		expect(text("f7-1-deux-questions")).toContain("Qu’est-ce qui");
-		expect(findLesson("f7-2-deux-questions")).toBeUndefined();
-		expect(findLesson("f7-1-relatifs")).toBeUndefined();
-		for (const track of ["1", "2"]) {
-			expect(text(`f7-${track}-imparfait`)).toContain("nous finissons");
-			expect(text(`f7-${track}-en`)).toContain("J’en prends deux");
-			expect(text(`f7-${track}-pronominaux`)).toContain("Nous allons nous lever");
-		}
+		expect(findLesson("f7-2-relatifs")).toBeUndefined();
+		expect(text("f7-1-imparfait")).toContain("nous finissons");
+		expect(text("f7-1-en")).toContain("J’en prends deux");
+		expect(text("f7-1-pronominaux")).toContain("Nous allons nous lever");
 	});
 });
 describe("answer handling, progress and routes", () => {
@@ -164,10 +152,7 @@ describe("answer handling, progress and routes", () => {
 		expect(normalise("Tu as le billet ?")).toBe(normalise("Tu as le billet?"));
 		const register = findLesson("f7-1-registre")!;
 		expect(checkPractice([register.practice[1]], ["Tu as le billet"])).toEqual([true]);
-		const l = findLesson("f7-2-accents")!;
-		expect(checkPractice(l.practice, ["a", "à"])).toEqual([true, true]);
-		expect(checkPractice(l.practice, ["à", "a"])).toEqual([false, false]);
-		expect(checkPractice(l.practice, ["a"])).toEqual([false, false]);
+		expect(checkPractice([register.practice[1]], [""])).toEqual([false]);
 	});
 	it("requires workshop, checks and a real self-assessed draft", () => {
 		const p = freshProgress(),
@@ -192,11 +177,11 @@ describe("answer handling, progress and routes", () => {
 	it("recovers corrupted state and isolates its storage key", () => {
 		for (const raw of [null, "null", "[]", "42", "bad json"])
 			expect(parseProgress(raw)).toEqual(freshProgress());
-		expect(STORAGE_KEY).toBe("franzoesisch_gym7_academy_progress_v1");
+		expect(STORAGE_KEY).toBe("franzoesisch_1fs_gym7_academy_progress_v1");
 		const p = parseProgress(
-			JSON.stringify({ workshopDone: ["bad", "f7-2-echange", "f7-2-echange"] }),
+			JSON.stringify({ workshopDone: ["bad", "f7-1-echange", "f7-1-echange"] }),
 		);
-		expect(p.workshopDone).toEqual(["f7-2-echange"]);
+		expect(p.workshopDone).toEqual(["f7-1-echange"]);
 	});
 	it("keeps both task levels and all lesson deep links valid", () => {
 		for (const l of LESSONS)
@@ -204,7 +189,10 @@ describe("answer handling, progress and routes", () => {
 				expect(parseTrainingDeepLink(`#lesson=${l.id}&level=${level}`)).toEqual(
 					{ lessonId: l.id, level },
 				);
-		expect(trainingBaseUrl("/app/", "?lesson=f7-2-calendrier&level=1&keep=yes")).toBe(
+		expect(secondLanguageUrl("f7-2-chemin", 2)).toBe(
+			"https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-chemin&level=2",
+		);
+		expect(trainingBaseUrl("/app/", "?lesson=f7-1-chandeleur&level=1&keep=yes")).toBe(
 			"/app/?keep=yes",
 		);
 	});
@@ -224,7 +212,7 @@ describe("ZAM content and identifier contracts", () => {
 				checked++;
 			}
 		}
-		expect(checked).toBe(39);
+		expect(checked).toBe(22);
 	});
 	it("pins identifiers and keeps the approved mapping free of retirements", () => {
 		expect(cell.tile_id).toBe(ZAM_CELL_ID);
@@ -240,7 +228,7 @@ describe("ZAM content and identifier contracts", () => {
 			})),
 		).toEqual(contract);
 		const ids = [...cell.atoms, ...items].map((x) => x.id);
-		expect(new Set(ids).size).toBe(272);
+		expect(new Set(ids).size).toBe(116);
 		for (const id of ids) expect(id).toMatch(/^[0-7][0-9A-HJKMNP-TV-Z]{25}$/);
 	});
 	it.each(cell.atoms)(
@@ -258,7 +246,7 @@ describe("ZAM content and identifier contracts", () => {
 					grade: 7,
 					subject: "franzoesisch",
 				});
-				expect(b.topic_code).toMatch(new RegExp(`^${l.track}-lb`));
+				expect(b.topic_code).toMatch(/^f1-lb/);
 				expect(b).not.toHaveProperty("track");
 			}
 			for (const d of a.prerequisites)
