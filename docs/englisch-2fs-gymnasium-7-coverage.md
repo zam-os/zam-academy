@@ -1,0 +1,9 @@
+# English 7 Gymnasium, second foreign language
+
+The [grade 7 second-language Fachlehrplan](https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/7/englisch/2-fremdsprache) applies across the Bavarian Gymnasium pathways that teach English as the second foreign language. The ISB page specifies no hours per area. The [curriculum matrix](../englisch-2fs-gymnasium-7/coverage.json) binds all 40 top-level competency and topic rows to lessons and records the parts that require practice beyond the app.
+
+The progression starts from the [grade 6 second-language curriculum](https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/6/englisch/2-fremdsprache), including simple past, going to, everyday questions and basic modals. Grade 7 adds the resultative present perfect, past progressive, will and timetable future, and the forms of conditional I specified by the ISB. The [grade 8 second-language curriculum](https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/8/englisch/2-fremdsprache) introduces later structures such as past perfect, present perfect progressive, and conditionals II and III. Cornwall and Florida are the selected regional options. Source titles and check dates are recorded in the package.
+
+## Existing ZAM cards
+
+The historic `de-by:gymnasium-7-englisch-grammar-present-perfect-modals-conditionals` fixture uses a grade-level URL without a language-track selector and combines content from multiple years. The [first-language package's approved mapping](../englisch-gymnasium-7/replaces-de-by.json) already allocates J01. J02 combines present perfect, duration and translation, J03 is an isolated `had to` question with an existing keep-active decision, and J04 combines modal substitutes with conditional II. The grade 8 fixture belongs to the separate grade 8 review. The new second-language cell has independent item identifiers and declares no history transfers or retirements.

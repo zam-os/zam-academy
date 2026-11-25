@@ -12,6 +12,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | Latein 6 Gymnasium (LehrplanPLUS Bayern, 1. Fremdsprache) | [`latein-gymnasium-6/`](latein-gymnasium-6/) | Built by Pages on merge | `zam-academy:latein-gymnasium-6` |
 | Latein 6 Gymnasium (LehrplanPLUS Bayern, 2. Fremdsprache) | [`latein-gymnasium-6-l2/`](latein-gymnasium-6-l2/) | Built by Pages on merge | `zam-academy:latein-gymnasium-6-l2` |
 | English 6 Gymnasium (Bavaria, 2. FS) | [`englisch-2fs-gymnasium-6/`](englisch-2fs-gymnasium-6/) | Built by Pages on merge | `zam-academy:englisch-2fs-gymnasium-6` |
+| English 7 Gymnasium (Bavaria, second foreign language) | [`englisch-2fs-gymnasium-7/`](englisch-2fs-gymnasium-7/) | Built by Pages on merge | `zam-academy:englisch-2fs-gymnasium-7` |
 | French 6 Gymnasium (Bavaria, 2. FS) | [`franzoesisch-2fs-gymnasium-6/`](franzoesisch-2fs-gymnasium-6/) | Built by Pages on merge | `zam-academy:franzoesisch-2fs-gymnasium-6` |
 | Deutsch 5 Gymnasium (LehrplanPLUS Bayern) | [`deutsch-gymnasium-5/`](deutsch-gymnasium-5/) | https://academy.zam-os.org/deutsch-gymnasium-5/ | `zam-academy:deutsch-gymnasium-5` |
 | German 6 Gymnasium (Bavarian LehrplanPLUS) | [`deutsch-gymnasium-6/`](deutsch-gymnasium-6/) | Built by Pages on merge | `zam-academy:deutsch-gymnasium-6` |
@@ -215,6 +216,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Latein 6 Gymnasium: cd latein-gymnasium-6 (dev server on :5283)
 # Latein 6 Gymnasium (2. FS): cd latein-gymnasium-6-l2 (dev server on :5284)
 # English 6 Gymnasium (2. FS): cd englisch-2fs-gymnasium-6 (dev server on :5281)
+# English 7 Gymnasium (second foreign language): cd englisch-2fs-gymnasium-7 (dev server on :5285)
 # French 6 Gymnasium (2. FS): cd franzoesisch-2fs-gymnasium-6 (dev server on :5282)
 # German 5 Gymnasium: cd deutsch-gymnasium-5 (dev server on :5249)
 # German 6 Gymnasium: cd deutsch-gymnasium-6 (dev server on :5260)

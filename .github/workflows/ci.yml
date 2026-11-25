@@ -345,6 +345,8 @@ jobs:
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node englisch-gymnasium-7/scripts/validate-migration.mjs
       - name: Verify Grade 6 Gymnasium English (second foreign language) enrolment and recall
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node englisch-2fs-gymnasium-6/scripts/validate-cell.mjs
+      - name: Verify Grade 7 Gymnasium English (second foreign language) enrolment and recall
+        run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node englisch-2fs-gymnasium-7/scripts/validate-cell.mjs
       - name: Verify Grade 6 Gymnasium French (second foreign language) enrolment and the unchanged move of its cards
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node franzoesisch-2fs-gymnasium-6/scripts/validate-cell.mjs
       - name: Build the catalog (requires explicit mapping approval)

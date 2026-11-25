@@ -1,0 +1,4024 @@
+[
+	{
+		"id": "e7s-station",
+		"stage": "talk",
+		"title": "Platform four",
+		"skill": "Eine britische Sprachnachricht verstehen und eine Zugverbindung erfragen",
+		"bindings": [
+			"1.1",
+			"1.2",
+			"4",
+			"5"
+		],
+		"paragraphs": [
+			"Wiederholung aus Klasse 6. Du kennst Uhrzeiten und Fragen mit does. Höre beim ersten Durchgang auf den Anlass. Suche beim zweiten Durchgang gezielt nach Zeit, Ort und Änderung.",
+			"Beispiel. In “The 8:20 train is cancelled. Take the 8:50 from platform two” führt cancelled zur Änderung. Frage danach “Which platform does the 8:50 leave from?”"
+		],
+		"takeaway": "Höre zuerst auf die Situation, dann auf die Änderung. Nummern und Zeitangaben helfen dir beim zweiten Hören.",
+		"material": "Hi, I’m at the station. The train to Truro at nine ten is cancelled. Don’t worry, there’s another one at nine forty. It leaves from platform four, next to the café. Our tickets are still valid. I’ll wait by the café until you arrive. Call me if you can’t find it.",
+		"materialLabel": "Englisches Übungsmaterial",
+		"materialLanguage": "en",
+		"sourceIds": [
+			"lp"
+		],
+		"quiz": {
+			"question": "Sind die bisherigen Fahrkarten noch gültig?",
+			"answer": "Yes, the tickets are still valid.",
+			"wrong": [
+				"No, they have to buy new tickets.",
+				"The message says nothing about tickets."
+			],
+			"explanation": "Still valid bedeutet, dass die Fahrkarten weiter gelten.",
+			"optionLanguage": "en"
+		},
+		"practice": [
+			{
+				"prompt": "Take the ___ train. (Welche Zeit hörst du für den neuen Zug? Schreibe sie mit Doppelpunkt.)",
+				"answers": [
+					"9:40"
+				],
+				"feedback": "Der Ersatz fährt um 9:40."
+			},
+			{
+				"prompt": "It leaves from platform ___. (Welches Gleis? Schreibe die Ziffer.)",
+				"answers": [
+					"4"
+				],
+				"feedback": "Platform four ist Gleis vier."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Rufe am Schalter an. Frage nach der Verbindung nach Truro, dem Gleis und dem Ticket.",
+				"model": "Hello. When is the next train to Truro? Which platform does it leave from? Can I use my ticket?",
+				"criteria": [
+					"Ich nenne das Ziel.",
+					"Ich frage nach dem Gleis.",
+					"Ich kläre das Ticket."
+				]
+			},
+			"2": {
+				"prompt": "Du stehst selbst am Schalter. Der nächste Zug nach Leeds fährt um 13:20 von Gleis 2 und das Ticket gilt. Erkläre die neue Verbindung in einer Sprachnachricht. Vereinbare einen Treffpunkt.",
+				"model": "Hi, the next train to Leeds leaves at one twenty from platform two. You can still use your ticket. I’ll meet you there.",
+				"criteria": [
+					"Ich nenne Zeit und Gleis.",
+					"Ich erkläre das mit dem Ticket.",
+					"Ich schließe mit einer Verabredung."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Was ist der Anlass der Nachricht?",
+					"before": "Main point",
+					"options": [
+						"a change of train",
+						"a lost phone",
+						"a new café"
+					],
+					"answer": "a change of train",
+					"explanation": "Der erste Zug fällt aus."
+				},
+				{
+					"label": "Welche Zeit hörst du für den neuen Zug? Schreibe sie mit Doppelpunkt.",
+					"before": "Take the … train.",
+					"options": [
+						"9:40",
+						"9:10",
+						"4:40"
+					],
+					"answer": "9:40",
+					"explanation": "Der Ersatz fährt um 9:40."
+				},
+				{
+					"label": "Welches Gleis? Schreibe die Ziffer.",
+					"before": "It leaves from platform … .",
+					"options": [
+						"4",
+						"9",
+						"10"
+					],
+					"answer": "4",
+					"explanation": "Platform four ist Gleis vier."
+				}
+			]
+		},
+		"listening": true,
+		"accent": "en-GB",
+		"speaking": true
+	},
+	{
+		"id": "e7s-directions",
+		"stage": "talk",
+		"title": "Across the square",
+		"skill": "Auf einer Karte nach dem Weg fragen und einen Weg beschreiben",
+		"bindings": [
+			"1.1",
+			"1.2",
+			"2",
+			"5"
+		],
+		"paragraphs": [
+			"Leite jemanden in kurzen Schritten. Go straight on bedeutet geradeaus, turn left heißt links abbiegen, opposite bedeutet gegenüber. Beim Nachfragen sichert “Do you mean the first left?” das Verständnis.",
+			"Beispiel. Vom Bahnhof gehst du bis zum Platz. Das Kino liegt westlich vom Platz, das Museum östlich. Wer nach Norden blickt, biegt zum Museum rechts ab."
+		],
+		"takeaway": "Nenne zuerst die Richtung, dann einen sichtbaren Orientierungspunkt.",
+		"material": "Excuse me, how do I get to the museum? Go straight on to the square. Turn right at the square. The museum is next to the library. Do you mean the first right? Yes, that’s right.",
+		"materialLabel": "Englisches Übungsmaterial",
+		"materialLanguage": "en",
+		"sourceIds": [
+			"lp"
+		],
+		"quiz": {
+			"question": "Du kommst vom Bahnhof zum Platz. Das Museum liegt rechts. Welche Antwort hilft?",
+			"answer": "Turn right at the square.",
+			"wrong": [
+				"Turn left at the square.",
+				"Go past the museum, then turn right."
+			],
+			"explanation": "Der Platz ist der Orientierungspunkt und von dort geht es nach rechts.",
+			"optionLanguage": "en"
+		},
+		"practice": [
+			{
+				"prompt": "Turn ___ at the square. (Blick nach Norden. Wohin am Platz für das Kino?)",
+				"answers": [
+					"left"
+				],
+				"feedback": "Das Kino liegt links von der Bildschirmmitte."
+			},
+			{
+				"prompt": "The bus stop is ___ the café. (Wie heißt gegenüber? Verwende ein Wort.)",
+				"answers": [
+					"opposite"
+				],
+				"feedback": "Opposite bedeutet direkt gegenüber."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Erkläre den Weg vom Bahnhof zum Kino. Nenne den Platz und eine Richtung.",
+				"model": "Go straight on to the square. Turn left at the square. You’ll see the cinema.",
+				"criteria": [
+					"Ich starte am Bahnhof.",
+					"Ich nenne den Platz.",
+					"Ich biege links ab."
+				]
+			},
+			"2": {
+				"prompt": "Spielt vom Bahnhof zum Museum. Eine Person nimmt absichtlich den falschen Abzweig. Klärt das freundlich.",
+				"model": "A: Do I turn left at the square? B: The other way, please. Turn right at the square. The museum is next to the library. A: Right, thanks!",
+				"criteria": [
+					"Ich frage nach.",
+					"Ich korrigiere freundlich.",
+					"Ich gebe einen Orientierungspunkt."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Du möchtest jemanden höflich nach dem Museum fragen.",
+					"before": "At the station",
+					"options": [
+						"Excuse me, how do I get to the museum?",
+						"The museum needs to get to me.",
+						"Where did you buy the museum?"
+					],
+					"answer": "Excuse me, how do I get to the museum?",
+					"explanation": "Excuse me eröffnet die Frage höflich."
+				},
+				{
+					"label": "Blick nach Norden. Wohin am Platz für das Kino?",
+					"before": "Turn … at the square.",
+					"options": [
+						"left",
+						"right",
+						"back"
+					],
+					"answer": "left",
+					"explanation": "Das Kino liegt links von der Bildschirmmitte."
+				},
+				{
+					"label": "Wie heißt gegenüber? Verwende ein Wort.",
+					"before": "The bus stop is … the café.",
+					"options": [
+						"opposite",
+						"along",
+						"through"
+					],
+					"answer": "opposite",
+					"explanation": "Opposite bedeutet direkt gegenüber."
+				}
+			],
+			"visual": "directions"
+		},
+		"speaking": true
+	},
+	{
+		"id": "e7s-airport",
+		"stage": "talk",
+		"title": "At the airport",
+		"skill": "Am Flughafen passende Fragen stellen und Informationen bestätigen",
+		"bindings": [
+			"1.1",
+			"1.2",
+			"5"
+		],
+		"paragraphs": [
+			"Übe check in, boarding pass, gate und hand luggage in Kombinationen. Wenn du eine Nummer nicht sicher verstanden hast, wiederhole sie als Frage.",
+			"Beispiel. “Your gate has changed to C twelve.” Du antwortest “Did you say C twelve?” Achte beim Hören auch darauf, ob die andere Person sich Sorgen macht oder beruhigt."
+		],
+		"takeaway": "Bestätige eine wichtige Nummer oder Zeit, bevor du weitergehst.",
+		"material": "Good afternoon. I’m looking for my flight to Boston. May I see your boarding pass? Thank you. Your gate has changed to B sixteen. Boarding starts at two fifteen. Oh, I hope I’m not late! You have plenty of time. Please go straight to the gate after security.",
+		"materialLabel": "Englisches Übungsmaterial",
+		"materialLanguage": "en",
+		"sourceIds": [
+			"lp"
+		],
+		"quiz": {
+			"question": "Wie fühlt sich die reisende Person, bevor sie beruhigt wird?",
+			"answer": "worried about being late",
+			"wrong": [
+				"excited about a new bag",
+				"upset about missing a bus"
+			],
+			"explanation": "I hope I’m not late drückt Sorge aus. You have plenty of time beruhigt.",
+			"optionLanguage": "en"
+		},
+		"practice": [
+			{
+				"prompt": "Go to gate ___. (Schreibe das neue Gate mit Leerzeichen.)",
+				"answers": [
+					"B 16"
+				],
+				"feedback": "Die Person sagt B sixteen."
+			},
+			{
+				"prompt": "Boarding starts at ___. (Schreibe die Uhrzeit mit Doppelpunkt.)",
+				"answers": [
+					"2:15"
+				],
+				"feedback": "Two fifteen heißt 2:15."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Frage am Schalter höflich nach Gate und Boardingzeit. Wiederhole die Antwort B16 zur Sicherheit.",
+				"model": "Excuse me, which gate do I need? When does boarding start? Did you say B sixteen?",
+				"criteria": [
+					"Ich eröffne höflich.",
+					"Ich stelle zwei Fragen.",
+					"Ich bestätige das Gate."
+				]
+			},
+			"2": {
+				"prompt": "Du hast deine Bordkarte auf dem Handy, der Akku ist leer. Bitte um Hilfe und um Wiederholung der Gate-Nummer.",
+				"model": "Sorry, my phone has run out of battery. Could you help me get a boarding pass? Could you say the gate number again, please?",
+				"criteria": [
+					"Ich erkläre das Problem.",
+					"Ich bitte um Hilfe.",
+					"Ich frage höflich nach Wiederholung."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Was ändert sich für die reisende Person?",
+					"before": "Airport announcement",
+					"options": [
+						"the gate",
+						"the city",
+						"the bag"
+					],
+					"answer": "the gate",
+					"explanation": "The gate has changed nennt die Änderung."
+				},
+				{
+					"label": "Schreibe das neue Gate mit Leerzeichen.",
+					"before": "Go to gate … .",
+					"options": [
+						"B 16",
+						"B 60",
+						"A 16"
+					],
+					"answer": "B 16",
+					"explanation": "Die Person sagt B sixteen."
+				},
+				{
+					"label": "Schreibe die Uhrzeit mit Doppelpunkt.",
+					"before": "Boarding starts at … .",
+					"options": [
+						"2:15",
+						"2:50",
+						"12:15"
+					],
+					"answer": "2:15",
+					"explanation": "Two fifteen heißt 2:15."
+				}
+			]
+		},
+		"listening": true,
+		"accent": "en-US",
+		"speaking": true
+	},
+	{
+		"id": "e7s-pharmacy",
+		"stage": "talk",
+		"title": "I’ve got a sore throat",
+		"skill": "In einem Rollenspiel Beschwerden benennen und höflich Rat erfragen",
+		"bindings": [
+			"1.1",
+			"1.2",
+			"2",
+			"5"
+		],
+		"paragraphs": [
+			"Mit “I’ve got a sore throat” beschreibst du Beschwerden. Kannst du ein Wort nicht, zeige die Stelle oder umschreibe sie. An einer Schule kannst du auch fragen, ob jemand mitkommt.",
+			"Beispiel. “My throat hurts when I talk. Could you tell me where the pharmacy is?” “Of course. It’s next to the station.”"
+		],
+		"takeaway": "Beschreibe knapp, was los ist, und sag, welche Hilfe du brauchst.",
+		"material": "Visitor: Excuse me, I don’t feel well. I’ve got a sore throat. Could you tell me where the pharmacy is? Host: It’s next to the station. Would you like me to come with you? Visitor: Yes, please.",
+		"materialLabel": "Englisches Übungsmaterial",
+		"materialLanguage": "en",
+		"sourceIds": [
+			"lp"
+		],
+		"quiz": {
+			"question": "Du kennst ankle noch nicht. Welche Umschreibung hilft?",
+			"answer": "It hurts just above my foot.",
+			"wrong": [
+				"I can see an ankle but I don’t need help.",
+				"My throat hurts when I talk."
+			],
+			"explanation": "Du zeigst mit einer bekannten Wendung auf die Stelle oberhalb des Fußes.",
+			"optionLanguage": "en"
+		},
+		"practice": [
+			{
+				"prompt": "… you say that again, please? (Ergänze die höfliche Frage mit Could.)",
+				"answers": [
+					"Could"
+				],
+				"feedback": "Could steht mit der Grundform say."
+			},
+			{
+				"prompt": "Would you like me to ___ with you? (Wie bietest du Begleitung an? Nutze die Grundform von kommen.)",
+				"answers": [
+					"come"
+				],
+				"feedback": "Nach to steht hier come."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Bitte eine Austauschpartnerin um Hilfe. Sag, dass dein Hals wehtut, und frage nach der Apotheke. Bitte sie, dich zu begleiten.",
+				"model": "I’ve got a sore throat. Could you tell me where the pharmacy is? Could you come with me?",
+				"criteria": [
+					"Ich beschreibe die Beschwerde.",
+					"Ich frage nach dem Ort.",
+					"Ich bitte höflich um Begleitung."
+				]
+			},
+			"2": {
+				"prompt": "Spielt zu zweit. Jemand kennt das Wort ankle nicht und sagt, wo der Fuß wehtut. Klärt durch eine Rückfrage, was gemeint ist.",
+				"model": "A: It hurts just above my foot. B: Do you mean your ankle? A: Yes, that’s it. Could you tell me where to get help?",
+				"criteria": [
+					"Ich umschreibe ein Wort.",
+					"Ich stelle eine Rückfrage.",
+					"Ich bitte höflich um Hilfe."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Welcher Satz beschreibt Halsweh?",
+					"before": "At the pharmacy",
+					"options": [
+						"I’ve got a sore throat.",
+						"My ankle hurts.",
+						"I feel much better."
+					],
+					"answer": "I’ve got a sore throat.",
+					"explanation": "Throat ist der Hals."
+				},
+				{
+					"label": "Ergänze die höfliche Frage mit Could.",
+					"before": "… you say that again, please?",
+					"options": [
+						"Could",
+						"Are",
+						"Have"
+					],
+					"answer": "Could",
+					"explanation": "Could steht mit der Grundform say."
+				},
+				{
+					"label": "Wie bietest du Begleitung an? Nutze die Grundform von kommen.",
+					"before": "Would you like me to … with you?",
+					"options": [
+						"come",
+						"comes",
+						"came"
+					],
+					"answer": "come",
+					"explanation": "Nach to steht hier come."
+				}
+			]
+		},
+		"speaking": true
+	},
+	{
+		"id": "e7s-cinema",
+		"stage": "talk",
+		"title": "Which film should we see?",
+		"skill": "Ein Kinoprogramm auswerten und gemeinsam entscheiden",
+		"bindings": [
+			"1.1",
+			"1.2",
+			"3",
+			"5"
+		],
+		"paragraphs": [
+			"Lies Überschriften und Zeiten. Vergleiche erst die Filme, die zu eurer Zeit passen. Im Gespräch helfen “How about …?”, “That sounds good” und “What do you think?”",
+			"Beispiel. Wer erst nach 17 Uhr da ist, kann den Film um 16:20 nicht wählen. “How about Ocean Rescue at 6:10? What do you think, Noor?”"
+		],
+		"takeaway": "Prüfe die Eckdaten und hole die Meinung der anderen Person ein.",
+		"material": "Saturday programme\nCity Beats, 4:20 p.m., Screen 1\nOcean Rescue, 6:10 p.m., Screen 2\nStar Club, 7:35 p.m., Screen 1\n\nThe last bus leaves at 8 p.m. City Beats and Ocean Rescue each run for 90 minutes. Star Club runs for 75 minutes.",
+		"materialLabel": "Englisches Übungsmaterial",
+		"materialLanguage": "en",
+		"sourceIds": [
+			"lp"
+		],
+		"quiz": {
+			"question": "Wie holst du nach deinem Vorschlag gezielt Noors Meinung ein?",
+			"answer": "What do you think, Noor?",
+			"wrong": [
+				"What time is it, Noor?",
+				"It’s my favourite, Noor."
+			],
+			"explanation": "Du fragst nach Noors Meinung und sprichst Noor direkt an.",
+			"optionLanguage": "en"
+		},
+		"practice": [
+			{
+				"prompt": "Screen ___ (In welchem Saal läuft Ocean Rescue? Schreibe die Ziffer.)",
+				"answers": [
+					"2"
+				],
+				"feedback": "Ocean Rescue läuft in Screen 2."
+			},
+			{
+				"prompt": "… do you think? (Welches Fragewort fragt nach einer Meinung?)",
+				"answers": [
+					"What"
+				],
+				"feedback": "What do you think fragt nach einer Meinung."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schlage den passenden Film vor, sage warum und frage nach einer Meinung.",
+				"model": "How about Ocean Rescue? It ends at seven forty, so we can catch the bus. What do you think?",
+				"criteria": [
+					"Ich nenne den Film.",
+					"Ich begründe den Vorschlag.",
+					"Ich frage die andere Person."
+				]
+			},
+			"2": {
+				"prompt": "Ihr habt eine Mitfahrgelegenheit und möchtet lieber einen Film nach 19 Uhr. Widersprich einem Vorschlag höflich und mach einen neuen.",
+				"model": "City Beats sounds good, but I can’t get there that early. How about Star Club? It starts at seven thirty-five. My dad can pick us up afterwards.",
+				"criteria": [
+					"Ich widerspreche freundlich.",
+					"Ich nenne die passende Startzeit.",
+					"Ich erkläre den Heimweg."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Du kommst um 17 Uhr und brauchst den letzten Bus. Welcher Film passt?",
+					"before": "Film choice",
+					"options": [
+						"Ocean Rescue",
+						"City Beats",
+						"Star Club"
+					],
+					"answer": "Ocean Rescue",
+					"explanation": "Ocean Rescue läuft von 18:10 bis 19:40."
+				},
+				{
+					"label": "In welchem Saal läuft Ocean Rescue? Schreibe die Ziffer.",
+					"before": "Screen …",
+					"options": [
+						"2",
+						"1",
+						"6"
+					],
+					"answer": "2",
+					"explanation": "Ocean Rescue läuft in Screen 2."
+				},
+				{
+					"label": "Welches Fragewort fragt nach einer Meinung?",
+					"before": "… do you think?",
+					"options": [
+						"What",
+						"When",
+						"How many"
+					],
+					"answer": "What",
+					"explanation": "What do you think fragt nach einer Meinung."
+				}
+			]
+		},
+		"speaking": true
+	},
+	{
+		"id": "e7s-sport",
+		"stage": "talk",
+		"title": "A game after school",
+		"skill": "Ein Hobby oder Sportereignis in einem short talk vorstellen",
+		"bindings": [
+			"1.1",
+			"1.2",
+			"2",
+			"4",
+			"5"
+		],
+		"paragraphs": [
+			"Baue einen short talk aus Einstieg, zwei oder drei Stichpunkten und Schluss. Nutze Redemittel wie “First”, “For example” und “What I like most is …”.",
+			"Beispiel. Stichpunkte für einen talk: basketball, Tuesdays, last match, teamwork. Aus “last match” wird “Last Tuesday we played against a team from another school.”"
+		],
+		"takeaway": "Stichpunkte geben dir Halt. Sprich in vollständigen Sätzen und halte Blickkontakt, wenn du vor anderen sprichst.",
+		"material": "Do you like fast games? Today I’ll tell you about basketball. Our club practises on Tuesdays in the school gym. Last week we played our first match this term. We lost, but the team helped me when I got nervous. Next week we’re going to practise our passes. Thanks for listening.",
+		"materialLabel": "Englisches Übungsmaterial",
+		"materialLanguage": "en",
+		"sourceIds": [
+			"lp"
+		],
+		"quiz": {
+			"question": "Was hilft dir, wenn du bei einem short talk frei sprechen willst?",
+			"answer": "A few keywords in the order I want to speak.",
+			"wrong": [
+				"Every sentence copied in one long block.",
+				"Only the date, with no notes about the topic."
+			],
+			"explanation": "Stichpunkte erinnern an Reihenfolge und Inhalt.",
+			"optionLanguage": "en"
+		},
+		"practice": [
+			{
+				"prompt": "… I’ll tell you about basketball. (Ergänze die Einleitung mit Heute.)",
+				"answers": [
+					"Today"
+				],
+				"feedback": "Today führt in den Vortrag ein."
+			},
+			{
+				"prompt": "Thanks for ___. (Ergänze die Schlussformel mit der passenden Form von listen.)",
+				"answers": [
+					"listening"
+				],
+				"feedback": "Nach for steht hier listening."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Bereite vier Stichpunkte für einen kurzen Vortrag über dein Hobby vor und sprich sie laut aus. Nenne eine Erfahrung.",
+				"model": "I’m going to talk about skateboarding. I practise on Sundays. Last week I learned a new trick. Next time I want to teach it to my cousin.",
+				"criteria": [
+					"Ich stelle das Hobby vor.",
+					"Ich erzähle ein Erlebnis.",
+					"Ich spreche über einen Plan."
+				]
+			},
+			"2": {
+				"prompt": "Halte einen etwa zweiminütigen Vortrag über ein Sport- oder Musikereignis. Notiere die Gliederung und übe frei.",
+				"model": "Have you ever watched a school match? Last Friday we played at West Park. At first I dropped every pass, but my friends told me to keep trying. In the last minute I caught a pass and made my first basket. I liked the match because my team helped me stay calm. Thanks for listening.",
+				"criteria": [
+					"Ich verwende einen Einstieg.",
+					"Ich erzähle mit einem konkreten Beispiel.",
+					"Ich schließe mit einer eigenen Einschätzung."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Welcher Stichpunkt hilft beim Erzählen über die Vergangenheit?",
+					"before": "Talk plan",
+					"options": [
+						"last week",
+						"next week",
+						"every Tuesday"
+					],
+					"answer": "last week",
+					"explanation": "Last week eröffnet den Rückblick."
+				},
+				{
+					"label": "Ergänze die Einleitung mit Heute.",
+					"before": "… I’ll tell you about basketball.",
+					"options": [
+						"Today",
+						"Yesterday",
+						"Every"
+					],
+					"answer": "Today",
+					"explanation": "Today führt in den Vortrag ein."
+				},
+				{
+					"label": "Ergänze die Schlussformel mit der passenden Form von listen.",
+					"before": "Thanks for … .",
+					"options": [
+						"listening",
+						"listen",
+						"listened"
+					],
+					"answer": "listening",
+					"explanation": "Nach for steht hier listening."
+				}
+			],
+			"visual": [
+				"Start · topic",
+				"Detail · when and where",
+				"Example · last match",
+				"End · why I like it"
+			]
+		},
+		"speaking": true
+	},
+	{
+		"id": "e7s-mediation",
+		"stage": "talk",
+		"title": "A museum visit",
+		"skill": "Deutsche Besuchsinformationen knapp und adressatengerecht auf Englisch vermitteln",
+		"bindings": [
+			"1.1",
+			"5"
+		],
+		"paragraphs": [
+			"Wähle aus, was die andere Person wissen muss. Sprachmittlung erhält die Bedeutung. Ein unbekanntes Wort kannst du mit bekannten Wörtern erklären.",
+			"Beispiel. “Garderobenschließfach” lässt sich als “a place to leave your bag” vermitteln, wenn du locker nicht kennst. Für die Planung brauchst du Öffnungszeiten und Regeln."
+		],
+		"takeaway": "Wähle relevante Fakten aus und formuliere sie für dein Gegenüber.",
+		"material": "Stadtmuseum. Samstag geöffnet von 10 bis 17 Uhr. Letzter Einlass um 16 Uhr. Große Taschen bleiben in Schließfächern. Der Museumsladen schließt um 16:30 Uhr. Jugendliche bis 16 Jahre haben freien Eintritt.",
+		"materialLabel": "Deutsches Übungsmaterial · erfundenes Museum",
+		"materialLanguage": "de",
+		"sourceIds": [
+			"lp"
+		],
+		"quiz": {
+			"question": "Eine Person möchte um 16:10 hinein. Welche Antwort hilft?",
+			"answer": "The last entry is at four, so please come earlier.",
+			"wrong": [
+				"The shop closes at half past four, so you can always get in until then.",
+				"You can enter at any time before five."
+			],
+			"explanation": "Für den Einlass zählt 16 Uhr und für die Schließung 17 Uhr.",
+			"optionLanguage": "en"
+		},
+		"practice": [
+			{
+				"prompt": "It’s ___ for children aged sixteen and under. (Ergänze das Wort für kostenlos.)",
+				"answers": [
+					"free"
+				],
+				"feedback": "Free bedeutet hier kostenlos."
+			},
+			{
+				"prompt": "You can ___ your big bag in a locker. (Ergänze das Verb lassen in der Grundform.)",
+				"answers": [
+					"leave"
+				],
+				"feedback": "Leave your bag bedeutet die Tasche dort lassen."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe einer 13-jährigen Besucherin auf Englisch, ob 15 Uhr geht, wie viel es kostet und wohin die große Tasche kommt.",
+				"model": "Yes, three is fine. You can get in until four. It’s free for you, and you can leave your big bag in a locker.",
+				"criteria": [
+					"Ich antworte zur Ankunftszeit.",
+					"Ich nenne den freien Eintritt.",
+					"Ich erkläre die Taschenregel."
+				]
+			},
+			"2": {
+				"prompt": "Ein Gast möchte um 16:15 Uhr kommen und im Shop ein Geschenk kaufen. Erkläre, welche Zeiten auf dem Schild stehen. Schlage vor, früher zu kommen, wenn er auch die Ausstellung sehen möchte.",
+				"model": "The museum closes at five, but the last entry is at four. The shop closes at half past four. If you want to see the exhibition, come before four.",
+				"criteria": [
+					"Ich unterscheide Einlass und Schließzeit.",
+					"Ich nenne die Ladenschließzeit.",
+					"Ich gebe einen klaren Vorschlag."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Dein Gast ist 13 und möchte um 15 Uhr hinein. Welcher Satz hilft?",
+					"before": "Message to a guest",
+					"options": [
+						"You can get in until four and it’s free for you.",
+						"The shop stays open all night.",
+						"You need an adult ticket at three."
+					],
+					"answer": "You can get in until four and it’s free for you.",
+					"explanation": "Die letzte Einlasszeit und der freie Eintritt helfen direkt."
+				},
+				{
+					"label": "Ergänze das Wort für kostenlos.",
+					"before": "It’s … for children aged sixteen and under.",
+					"options": [
+						"free",
+						"closed",
+						"full"
+					],
+					"answer": "free",
+					"explanation": "Free bedeutet hier kostenlos."
+				},
+				{
+					"label": "Ergänze das Verb lassen in der Grundform.",
+					"before": "You can … your big bag in a locker.",
+					"options": [
+						"leave",
+						"take",
+						"buy"
+					],
+					"answer": "leave",
+					"explanation": "Leave your bag bedeutet die Tasche dort lassen."
+				}
+			]
+		}
+	},
+	{
+		"id": "e7s-mediation-de",
+		"stage": "talk",
+		"title": "A weather message",
+		"skill": "Englische Freizeit- und Wetterinfos für eine deutschsprachige Person auswählen",
+		"bindings": [
+			"1.1",
+			"1.2",
+			"5"
+		],
+		"paragraphs": [
+			"Übertrage Angaben sinngemäß ins Deutsche. Kläre zuerst den Wunsch der Person. Für jemanden, der nur abends Zeit hat, ist die Änderung am Abend wichtiger als das Programm insgesamt.",
+			"Beispiel. “The football match will start later because of heavy rain.” Für die Abholung sagst du: Das Spiel beginnt wegen starken Regens später."
+		],
+		"takeaway": "Wähle passende Angaben und beschreibe die Änderung verständlich.",
+		"material": "Music festival update. Heavy rain is likely around five. The six o’clock concert is moving indoors to the sports hall. The afternoon drum workshop stays in the library. Use the south entrance for the concert. You can still use the same ticket.",
+		"materialLabel": "Englisches Übungsmaterial · erfundenes Musikfestival",
+		"materialLanguage": "en",
+		"sourceIds": [
+			"lp"
+		],
+		"quiz": {
+			"question": "Dein Gast hat schon eine Karte fürs Konzert. Was sagst du auf Deutsch?",
+			"answer": "Du kannst deine bisherige Karte verwenden.",
+			"wrong": [
+				"Du musst am Südeingang eine neue Karte kaufen.",
+				"Deine Karte gilt nur für den Trommelkurs."
+			],
+			"explanation": "You can still use the same ticket bedeutet, dass die Karte weiter gilt.",
+			"optionLanguage": "de"
+		},
+		"practice": [
+			{
+				"prompt": "Heavy rain is ___. (Ergänze englisch: Der Regen ist wahrscheinlich.)",
+				"answers": [
+					"likely"
+				],
+				"feedback": "Likely bedeutet wahrscheinlich."
+			},
+			{
+				"prompt": "Use the south ___. (Welches Wort bezeichnet den Eingang?)",
+				"answers": [
+					"entrance"
+				],
+				"feedback": "Entrance ist der Eingang."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Erkläre deiner deutschsprachigen Begleitung in zwei Sätzen, wann und wo das Konzert stattfindet und welchen Eingang ihr nehmt.",
+				"model": "Das Konzert um sechs findet jetzt in der Sporthalle statt. Wir nehmen den Südeingang.",
+				"criteria": [
+					"Ich nenne die richtige Uhrzeit.",
+					"Ich nenne den neuen Ort.",
+					"Ich nenne den Eingang."
+				],
+				"language": "de"
+			},
+			"2": {
+				"prompt": "Deine Mutter hat eine Karte für das Konzert und will dich nach dem Trommelkurs treffen. Erkläre auf Deutsch beide Orte und ob die Karte noch gilt.",
+				"model": "Der Trommelkurs findet weiterhin in der Bibliothek statt. Das Konzert ist wegen des Wetters in der Sporthalle. Die Konzertkarte gilt weiter.",
+				"criteria": [
+					"Ich unterscheide Kurs und Konzert.",
+					"Ich erkläre die Änderung.",
+					"Ich sage, ob die Karte gilt."
+				],
+				"language": "de"
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Welcher englische Schlüsselbegriff zeigt an, dass das Konzert drinnen ist?",
+					"before": "Weather update",
+					"options": [
+						"indoors",
+						"outdoors",
+						"entrance"
+					],
+					"answer": "indoors",
+					"explanation": "Indoors heißt drinnen."
+				},
+				{
+					"label": "Ergänze englisch: Der Regen ist wahrscheinlich.",
+					"before": "Heavy rain is … .",
+					"options": [
+						"likely",
+						"late",
+						"light"
+					],
+					"answer": "likely",
+					"explanation": "Likely bedeutet wahrscheinlich."
+				},
+				{
+					"label": "Welches Wort bezeichnet den Eingang?",
+					"before": "Use the south … .",
+					"options": [
+						"entrance",
+						"exit",
+						"ticket"
+					],
+					"answer": "entrance",
+					"explanation": "Entrance ist der Eingang."
+				}
+			]
+		},
+		"listening": true,
+		"accent": "en-GB",
+		"speaking": true
+	},
+	{
+		"id": "e7s-perfect",
+		"stage": "grammar",
+		"title": "The result now",
+		"skill": "Present perfect simple mit Ergebnis in der Gegenwart verwenden",
+		"bindings": [
+			"1.2",
+			"5"
+		],
+		"paragraphs": [
+			"Mit have oder has und der dritten Verbform bildest du das present perfect simple. Die Handlung liegt zurück und das Ergebnis zählt jetzt. Verneine mit haven’t oder hasn’t. In einer Frage kommt have oder has vor das Subjekt.",
+			"Beispiel. “I have lost my ticket. I can’t get in.” Wer den abgeschlossenen Zeitpunkt nennt, rückt ihn in den Vordergrund: “I lost it yesterday.”"
+		],
+		"takeaway": "Ergebnis jetzt → have oder has + past participle. Abgeschlossener Zeitpunkt → hier simple past.",
+		"material": "Our coach has changed the plan. The sports hall is now closed. We haven’t found a new place yet. Last week we played outside. Have you asked the teacher today?",
+		"materialLabel": "Englisches Übungsmaterial",
+		"materialLanguage": "en",
+		"sourceIds": [
+			"lp"
+		],
+		"quiz": {
+			"question": "Welcher Satz stellt in den Vordergrund, dass das Fenster jetzt offen ist?",
+			"answer": "Someone has opened the window.",
+			"wrong": [
+				"Someone usually opens the window.",
+				"Someone was opening the window at noon."
+			],
+			"explanation": "Has opened stellt eine vergangene Handlung mit aktuellem Ergebnis dar.",
+			"optionLanguage": "en"
+		},
+		"practice": [
+			{
+				"prompt": "My phone ___. It doesn’t work now. (Ergänze has und das past participle von break.)",
+				"answers": [
+					"has broken"
+				],
+				"feedback": "Nach has steht broken."
+			},
+			{
+				"prompt": "I ___ the ticket yesterday. (Verwende die zweite Form von lose.)",
+				"answers": [
+					"lost"
+				],
+				"feedback": "Yesterday setzt die Handlung an einen abgeschlossenen Zeitpunkt."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Das Fenster wurde geöffnet und jetzt ist es kalt. Schreibe den Grund mit present perfect und eine Folge.",
+				"model": "Someone has opened the window. It’s cold in here now.",
+				"criteria": [
+					"Ich verwende has.",
+					"Ich verwende opened.",
+					"Ich erkläre das Ergebnis."
+				]
+			},
+			"2": {
+				"prompt": "Ein Schlüssel war gestern weg, heute hast du ihn wieder verloren. Schreibe eine kurze Nachricht, die yesterday und das jetzige Problem unterscheidet.",
+				"model": "I lost my key yesterday, but I found it in my bag. Now I’ve lost it again. I can’t get through the door.",
+				"criteria": [
+					"Ich nutze simple past mit yesterday.",
+					"Ich verwende present perfect fürs Ergebnis.",
+					"Ich nenne die Folge."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Der Schlüssel ist jetzt weg. Welcher Satz stellt das Ergebnis heraus?",
+					"before": "Now",
+					"options": [
+						"I’ve lost my key.",
+						"I lose my key every week.",
+						"I’m losing my key right now."
+					],
+					"answer": "I’ve lost my key.",
+					"explanation": "Have lost verbindet Ereignis und Ergebnis."
+				},
+				{
+					"label": "Ergänze has und das past participle von break.",
+					"before": "My phone … . It doesn’t work now.",
+					"options": [
+						"has broken",
+						"has broke",
+						"have broken"
+					],
+					"answer": "has broken",
+					"explanation": "Nach has steht broken."
+				},
+				{
+					"label": "Verwende die zweite Form von lose.",
+					"before": "I … the ticket yesterday.",
+					"options": [
+						"lost",
+						"lose",
+						"losing"
+					],
+					"answer": "lost",
+					"explanation": "Yesterday setzt die Handlung an einen abgeschlossenen Zeitpunkt."
+				}
+			],
+			"visual": [
+				"Vergangenheit · I lost the key",
+				"Jetzt · I can’t open the door"
+			]
+		}
+	},
+	{
+		"id": "e7s-past-progressive",
+		"stage": "grammar",
+		"title": "While we were playing",
+		"skill": "Laufende und punktuelle Ereignisse in der Vergangenheit unterscheiden",
+		"bindings": [
+			"1.1",
+			"1.2",
+			"5"
+		],
+		"paragraphs": [
+			"Das past progressive zeigt, was zu einem vergangenen Zeitpunkt gerade im Gange war. Bilde es mit was oder were und der ing-Form. In einer Geschichte kann ein Ereignis im simple past in die laufende Handlung fallen.",
+			"Beispiel. “We were playing outside when the rain started.” Playing ist der Hintergrund. Started ist das Ereignis. “While we were playing, Jo was taking photos” zeigt zwei gleichzeitige Verläufe."
+		],
+		"takeaway": "Was oder were + ing zeigt einen Verlauf in der Vergangenheit.",
+		"material": "I was waiting by the door when the lights went out. While my friends were looking for a torch, I was calling the caretaker. The lights came back a minute later.",
+		"materialLabel": "Englisches Übungsmaterial",
+		"materialLanguage": "en",
+		"sourceIds": [
+			"lp"
+		],
+		"quiz": {
+			"question": "Welche Form zeigt, was Mina gerade tat, als ich anrief?",
+			"answer": "Mina was cooking when I called.",
+			"wrong": [
+				"Mina cooks when I call.",
+				"Mina will cook when I call."
+			],
+			"explanation": "Was cooking zeigt den Verlauf zum Zeitpunkt des Anrufs.",
+			"optionLanguage": "en"
+		},
+		"practice": [
+			{
+				"prompt": "My friends ___ for a torch. (Bilde die Verlaufsform von look in der Vergangenheit.)",
+				"answers": [
+					"were looking"
+				],
+				"feedback": "Friends ist Mehrzahl, also were looking."
+			},
+			{
+				"prompt": "Suddenly the lights ___ out. (Ergänze simple past von go.)",
+				"answers": [
+					"went"
+				],
+				"feedback": "Went ist die zweite Verbform von go."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe, was du gerade getan hast, als ein Freund anrief.",
+				"model": "I was reading when my friend called.",
+				"criteria": [
+					"Ich verwende was und die ing-Form.",
+					"Ich nenne ein Ereignis im simple past.",
+					"Ich verbinde die Teile mit when."
+				]
+			},
+			"2": {
+				"prompt": "Erzähle zwei gleichzeitige Handlungen auf einem Konzert und ein plötzliches Ereignis.",
+				"model": "While I was waiting outside, Mia was buying the tickets. Suddenly the rain started.",
+				"criteria": [
+					"Ich setze zwei Verläufe in die Vergangenheit.",
+					"Ich verbinde sie mit while.",
+					"Ich setze das Ereignis ins simple past."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Welche Handlung lief bereits, als das Licht ausging?",
+					"before": "Setting",
+					"options": [
+						"I was waiting.",
+						"The lights went out.",
+						"The lights came back."
+					],
+					"answer": "I was waiting.",
+					"explanation": "Waiting liefert den Hintergrund."
+				},
+				{
+					"label": "Bilde die Verlaufsform von look in der Vergangenheit.",
+					"before": "My friends … for a torch.",
+					"options": [
+						"were looking",
+						"was looking",
+						"looked"
+					],
+					"answer": "were looking",
+					"explanation": "Friends ist Mehrzahl, also were looking."
+				},
+				{
+					"label": "Ergänze simple past von go.",
+					"before": "Suddenly the lights … out.",
+					"options": [
+						"went",
+						"go",
+						"going"
+					],
+					"answer": "went",
+					"explanation": "Went ist die zweite Verbform von go."
+				}
+			],
+			"visual": [
+				"Laufender Hintergrund · we were playing",
+				"Ereignis · the rain started"
+			]
+		}
+	},
+	{
+		"id": "e7s-future",
+		"stage": "grammar",
+		"title": "The bus leaves at eight",
+		"skill": "Will-future und timetable future verwenden",
+		"bindings": [
+			"1.1",
+			"1.2",
+			"5"
+		],
+		"paragraphs": [
+			"Will + Grundform passt etwa zu einer Vorhersage oder einem spontanen Angebot. Für festgelegte Fahrpläne und Programme steht üblicherweise das simple present.",
+			"Beispiel. “The tour starts at eleven” kommt vom Programm. “I think it’ll rain” ist eine Vorhersage. “I’ll lend you my umbrella” ist ein spontanes Angebot. Going to aus Klasse 6 bleibt für Pläne verfügbar."
+		],
+		"takeaway": "Fahrplan → simple present. Einschätzung oder spontanes Angebot → will + Grundform.",
+		"material": "The bus leaves at eight. I think it will rain this morning. I’ll bring an extra umbrella for you. The museum opens at ten, and the guided tour starts at eleven.",
+		"materialLabel": "Englisches Übungsmaterial",
+		"materialLanguage": "en",
+		"sourceIds": [
+			"lp"
+		],
+		"quiz": {
+			"question": "Du entscheidest dich erst jetzt zu helfen. Welche Antwort passt?",
+			"answer": "I’ll carry that bag for you.",
+			"wrong": [
+				"The bag leaves at six.",
+				"I carried the bag yesterday."
+			],
+			"explanation": "I’ll passt zu einem spontanen Angebot.",
+			"optionLanguage": "en"
+		},
+		"practice": [
+			{
+				"prompt": "I think it ___ later. (Ergänze will und rain.)",
+				"answers": [
+					"will rain"
+				],
+				"feedback": "Nach will steht die Grundform."
+			},
+			{
+				"prompt": "The guided tour ___ at eleven. (Ergänze simple present von start.)",
+				"answers": [
+					"starts"
+				],
+				"feedback": "The tour ist Einzahl."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Erkläre, dass laut Programm eine Führung um 11 Uhr startet. Gib eine Wettervorhersage ab.",
+				"model": "The tour starts at eleven. I think it will be sunny later.",
+				"criteria": [
+					"Ich schreibe starts für das Programm.",
+					"Ich verwende will für die Prognose.",
+					"Ich nenne Zeit und Wetter."
+				]
+			},
+			"2": {
+				"prompt": "Jemand hat den Bus um acht verpasst. Der nächste fährt laut Plan um 8:40. Biete an, mit der Person zu warten, und vermute, dass es regnet.",
+				"model": "The next bus leaves at eight forty. I’ll wait with you. I think it will rain soon.",
+				"criteria": [
+					"Ich nenne die Fahrplanzeit.",
+					"Ich mache ein spontanes Angebot.",
+					"Ich gebe eine Vorhersage."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Welche Aussage gibt den Fahrplan wieder?",
+					"before": "Timetable",
+					"options": [
+						"The bus leaves at eight.",
+						"I think it will rain.",
+						"I’ll lend you my umbrella."
+					],
+					"answer": "The bus leaves at eight.",
+					"explanation": "Leaves steht im simple present."
+				},
+				{
+					"label": "Ergänze will und rain.",
+					"before": "I think it … later.",
+					"options": [
+						"will rain",
+						"will rains",
+						"will raining"
+					],
+					"answer": "will rain",
+					"explanation": "Nach will steht die Grundform."
+				},
+				{
+					"label": "Ergänze simple present von start.",
+					"before": "The guided tour … at eleven.",
+					"options": [
+						"starts",
+						"start",
+						"starting"
+					],
+					"answer": "starts",
+					"explanation": "The tour ist Einzahl."
+				}
+			],
+			"visual": [
+				"Fahrplan · leaves",
+				"Vorhersage · will rain",
+				"Angebot · I’ll help"
+			]
+		}
+	},
+	{
+		"id": "e7s-modals",
+		"stage": "grammar",
+		"title": "Permission, possibility and advice",
+		"skill": "Could, may, might und should sowie modale Ersatzformen verwenden",
+		"bindings": [
+			"1.2"
+		],
+		"paragraphs": [
+			"Could ist unter anderem höfliche Bitte oder frühere Fähigkeit. May kann Erlaubnis oder Möglichkeit ausdrücken, might eine Möglichkeit und should einen Rat. Auf ein Modalverb folgt in diesen Sätzen die Grundform ohne to.",
+			"Beispiel. “Could you help?” “You may leave.” “It might snow.” “You should check.” Für konkrete Formen brauchst du Ersatzformen: “We had to wait”, “We’ll be able to swim”, “We’ll be allowed to go”."
+		],
+		"takeaway": "Wähle nach Bedeutung. Für die benötigte Zeitform helfen have to, be able to und be allowed to.",
+		"material": "We had to wait at the entrance yesterday. Tomorrow we’ll be allowed to go inside. It might rain, so you should bring a jacket. Could you lend me one?",
+		"materialLabel": "Englisches Übungsmaterial",
+		"materialLanguage": "en",
+		"sourceIds": [
+			"lp"
+		],
+		"quiz": {
+			"question": "Was kannst du sagen, wenn jemand morgen im Museum fotografieren darf?",
+			"answer": "You’ll be allowed to take photos tomorrow.",
+			"wrong": [
+				"You’ll be able to take photos tomorrow.",
+				"You’ll have to take photos tomorrow."
+			],
+			"explanation": "Be allowed to drückt Erlaubnis aus. Be able to drückt Fähigkeit aus und have to eine Pflicht.",
+			"optionLanguage": "en"
+		},
+		"practice": [
+			{
+				"prompt": "We ___ wait yesterday. (Ergänze die Ersatzform für müssen in der Vergangenheit.)",
+				"answers": [
+					"had to"
+				],
+				"feedback": "Had to drückt frühere Pflicht aus."
+			},
+			{
+				"prompt": "We will ___ take photos. (Ergänze nach will die Ersatzform für dürfen.)",
+				"answers": [
+					"be allowed to"
+				],
+				"feedback": "Nach will steht die Grundform be."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Bitte höflich um eine Jacke und sage, dass es vielleicht regnet.",
+				"model": "Could you lend me a jacket? It might rain later.",
+				"criteria": [
+					"Ich verwende could für die Bitte.",
+					"Ich verwende might für die Möglichkeit.",
+					"Ich benutze die Grundformen."
+				]
+			},
+			"2": {
+				"prompt": "Erkläre einem Gast drei Dinge: Gestern musste er warten, morgen darf er früher hinein und nächste Woche kann er wieder mitmachen.",
+				"model": "Yesterday you had to wait. Tomorrow you’ll be allowed to go in early. Next week you’ll be able to join us again.",
+				"criteria": [
+					"Ich drücke Pflicht aus.",
+					"Ich drücke Erlaubnis aus.",
+					"Ich drücke Fähigkeit aus."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Welche Form gibt einen Rat?",
+					"before": "A cold afternoon",
+					"options": [
+						"You should bring a jacket.",
+						"You could swim when you were five.",
+						"It might snow."
+					],
+					"answer": "You should bring a jacket.",
+					"explanation": "Should drückt hier einen Rat aus."
+				},
+				{
+					"label": "Ergänze die Ersatzform für müssen in der Vergangenheit.",
+					"before": "We … wait yesterday.",
+					"options": [
+						"had to",
+						"musted",
+						"has to"
+					],
+					"answer": "had to",
+					"explanation": "Had to drückt frühere Pflicht aus."
+				},
+				{
+					"label": "Ergänze nach will die Ersatzform für dürfen.",
+					"before": "We will … take photos.",
+					"options": [
+						"be allowed to",
+						"may to",
+						"are allowed to"
+					],
+					"answer": "be allowed to",
+					"explanation": "Nach will steht die Grundform be."
+				}
+			],
+			"visual": [
+				"could · höfliche Bitte",
+				"might · Möglichkeit",
+				"should · Rat",
+				"had to · frühere Pflicht"
+			]
+		}
+	},
+	{
+		"id": "e7s-conditions",
+		"stage": "grammar",
+		"title": "If the weather changes",
+		"skill": "Bedingungen mit if ausdrücken und Folgen passend formulieren",
+		"bindings": [
+			"1.2"
+		],
+		"paragraphs": [
+			"Der if-Teil nennt die Bedingung und steht hier im simple present. Im Hauptsatz kann will eine Vorhersage, can eine Möglichkeit und der Imperativ eine Anweisung ausdrücken. Für regelmäßige Folgen steht oft in beiden Teilen simple present.",
+			"Beispiel. “If it rains tomorrow, we’ll stay inside.” “If it rains, you can join us inside.” “If it rains, take a jacket.” “If it rains, the pitch gets wet.”"
+		],
+		"takeaway": "Im if-Teil steht in diesen Sätzen simple present. Der Hauptsatz richtet sich nach deiner Absicht.",
+		"material": "If the weather is fine, we’ll play outside. If it rains, you can play in the hall. If the doors are locked, ask the caretaker. If the pitch gets wet, it gets slippery.",
+		"materialLabel": "Englisches Übungsmaterial",
+		"materialLanguage": "en",
+		"sourceIds": [
+			"lp"
+		],
+		"quiz": {
+			"question": "Welche Form passt zu einer möglichen Folge morgen?",
+			"answer": "If the bus is late, we’ll call you.",
+			"wrong": [
+				"If the bus will be late, we call you.",
+				"If the bus is late, we calling you."
+			],
+			"explanation": "Im if-Teil steht hier simple present. Will + Grundform nennt die mögliche Folge.",
+			"optionLanguage": "en"
+		},
+		"practice": [
+			{
+				"prompt": "If the weather ___ fine, we’ll play outside. (Ergänze die Form von be im if-Teil.)",
+				"answers": [
+					"is"
+				],
+				"feedback": "The weather is steht im simple present."
+			},
+			{
+				"prompt": "If it rains, the pitch ___ wet. (Ergänze für eine regelmäßige Folge die Form von get.)",
+				"answers": [
+					"gets"
+				],
+				"feedback": "The pitch gets beschreibt eine regelmäßige Folge."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Formuliere für morgen eine Bedingung mit if und eine Vorhersage mit will.",
+				"model": "If it rains tomorrow, we’ll practise in the hall.",
+				"criteria": [
+					"Ich beginne mit einer Bedingung.",
+					"Ich benutze simple present nach if.",
+					"Ich verwende will im Hauptsatz."
+				]
+			},
+			"2": {
+				"prompt": "Schreibe für das Schulfest drei Wenn-Sätze. Biete eine Möglichkeit an, gib eine Anweisung und nenne eine regelmäßige Folge.",
+				"model": "If you need help, you can ask us. If the hall is full, wait outside. If food gets wet, its packaging often breaks.",
+				"criteria": [
+					"Ich verwende can.",
+					"Ich gebe eine Anweisung.",
+					"Ich verwende simple present für eine regelmäßige Folge."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Welcher Satz ist eine Anweisung?",
+					"before": "School sports",
+					"options": [
+						"If it rains, take a jacket.",
+						"If it rains, we’ll stay inside.",
+						"If it rains, the pitch gets wet."
+					],
+					"answer": "If it rains, take a jacket.",
+					"explanation": "Take ist hier Imperativ."
+				},
+				{
+					"label": "Ergänze die Form von be im if-Teil.",
+					"before": "If the weather … fine, we’ll play outside.",
+					"options": [
+						"is",
+						"will be",
+						"are"
+					],
+					"answer": "is",
+					"explanation": "The weather is steht im simple present."
+				},
+				{
+					"label": "Ergänze für eine regelmäßige Folge die Form von get.",
+					"before": "If it rains, the pitch … wet.",
+					"options": [
+						"gets",
+						"getting",
+						"will getting"
+					],
+					"answer": "gets",
+					"explanation": "The pitch gets beschreibt eine regelmäßige Folge."
+				}
+			],
+			"visual": [
+				"Bedingung · if + simple present",
+				"Folge · will / can",
+				"Anweisung · Grundform",
+				"Regelmäßig · simple present"
+			]
+		}
+	},
+	{
+		"id": "e7s-adverbs",
+		"stage": "grammar",
+		"title": "A careful runner",
+		"skill": "Adjektive und Adverbien bilden und im Satz unterscheiden",
+		"bindings": [
+			"1.2"
+		],
+		"paragraphs": [
+			"Ein Adjektiv beschreibt ein Nomen oder steht beispielsweise nach be oder sound. Ein Adverb der Art und Weise sagt, wie jemand etwas tut. Meist kommt ly ans Adjektiv. Pretty wird zu prettily, good zu well. Fast bleibt fast.",
+			"Beispiel. “Jay is a careful runner. He runs carefully. Maya sounds happy. She finished well.”"
+		],
+		"takeaway": "Beschreibt das Wort eine Person oder Sache? Adjektiv. Beschreibt es, wie etwas geschieht? Oft ein Adverb.",
+		"material": "Lucy is a quiet speaker. She speaks quietly. The hall sounds noisy. Tom runs fast and plays well. A team can play badly even if its players are good.",
+		"materialLabel": "Englisches Übungsmaterial",
+		"materialLanguage": "en",
+		"sourceIds": [
+			"lp"
+		],
+		"quiz": {
+			"question": "Welcher Satz sagt, wie die Lehrerin etwas erklärt?",
+			"answer": "She explains it clearly.",
+			"wrong": [
+				"The explanation is clear.",
+				"She is a clear speaker."
+			],
+			"explanation": "Clearly beschreibt die Art der Handlung.",
+			"optionLanguage": "en"
+		},
+		"practice": [
+			{
+				"prompt": "Lucy is a ___ speaker. (Ergänze das Adjektiv quiet.)",
+				"answers": [
+					"quiet"
+				],
+				"feedback": "Vor speaker steht das Adjektiv."
+			},
+			{
+				"prompt": "The team played ___. (Ergänze das Adverb von good.)",
+				"answers": [
+					"well"
+				],
+				"feedback": "Well ist die unregelmäßige Form."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Bilde aus careful zwei Sätze: eine Beschreibung einer Person und eine Beschreibung ihres Verhaltens.",
+				"model": "Mina is a careful skater. She skates carefully.",
+				"criteria": [
+					"Ich benutze careful vor dem Nomen.",
+					"Ich benutze carefully beim Verb.",
+					"Ich schreibe vollständige Sätze."
+				]
+			},
+			"2": {
+				"prompt": "Bewerte einen Auftritt in drei Sätzen. Gebrauche good, well und ein regelmäßiges Adverb.",
+				"model": "The singers are good. They sing well together. Their leader speaks clearly.",
+				"criteria": [
+					"Ich verwende good als Adjektiv.",
+					"Ich verwende well als Adverb.",
+					"Ich bilde ein weiteres Adverb."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Welches Wort beschreibt, wie jemand spricht?",
+					"before": "Lucy speaks",
+					"options": [
+						"quietly",
+						"quiet",
+						"quieter"
+					],
+					"answer": "quietly",
+					"explanation": "Quietly beschreibt die Art und Weise."
+				},
+				{
+					"label": "Ergänze das Adjektiv quiet.",
+					"before": "Lucy is a … speaker.",
+					"options": [
+						"quiet",
+						"quietly",
+						"quieter"
+					],
+					"answer": "quiet",
+					"explanation": "Vor speaker steht das Adjektiv."
+				},
+				{
+					"label": "Ergänze das Adverb von good.",
+					"before": "The team played … .",
+					"options": [
+						"well",
+						"good",
+						"goodly"
+					],
+					"answer": "well",
+					"explanation": "Well ist die unregelmäßige Form."
+				}
+			],
+			"visual": [
+				"Person · quiet speaker",
+				"Handlung · speaks quietly"
+			]
+		}
+	},
+	{
+		"id": "e7s-compare",
+		"stage": "grammar",
+		"title": "Faster and more carefully",
+		"skill": "Adjektive und Adverbien steigern und vergleichen",
+		"bindings": [
+			"1.2"
+		],
+		"paragraphs": [
+			"Kurze Wörter bilden oft er und est, längere häufig more und most. Beispiele sind fast, faster, fastest und careful, more careful, most careful. Adverbien auf ly bilden meist more und most. Good und well werden beide zu better und best.",
+			"Beispiel. “Lee runs faster than I do. Jo runs more carefully than Lee. I swim as fast as Jo.” Mit than vergleichst du Unterschiede, mit as … as Gleichheit. Bei der höchsten Stufe steht bei Adjektiven meist the."
+		],
+		"takeaway": "Nutze than für Unterschiede und as … as für Gleichheit.",
+		"material": "Lee and Jo run the same distance. Lee’s time is twelve seconds. Jo’s time is thirteen seconds. Lee runs faster than Jo. Jo checks the route more carefully than Lee. In our group, Noor is the best swimmer.",
+		"materialLabel": "Englisches Übungsmaterial",
+		"materialLanguage": "en",
+		"sourceIds": [
+			"lp"
+		],
+		"quiz": {
+			"question": "Welcher Satz sagt, dass Mina beim Schreiben sorgfältiger ist als Jo?",
+			"answer": "Mina writes more carefully than Jo.",
+			"wrong": [
+				"Mina writes as carefully as Jo.",
+				"Jo writes more carefully than Mina."
+			],
+			"explanation": "More carefully than vergleicht Mina direkt mit Jo.",
+			"optionLanguage": "en"
+		},
+		"practice": [
+			{
+				"prompt": "Jo checks the route ___ than Lee. (Ergänze den Komparativ von carefully.)",
+				"answers": [
+					"more carefully"
+				],
+				"feedback": "Bei carefully steht more."
+			},
+			{
+				"prompt": "Noor is the ___ swimmer in our group. (Ergänze den Superlativ von good.)",
+				"answers": [
+					"best"
+				],
+				"feedback": "Best ist die höchste Stufe."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Lee und Jo laufen dieselbe Strecke. Lee braucht 12 Sekunden, Jo 13. Vergleiche ihre Geschwindigkeit und sage, wer auf der Strecke genauer nach dem Weg schaut.",
+				"model": "Lee runs faster than Jo. Jo checks the route more carefully than Lee.",
+				"criteria": [
+					"Ich verwende faster than.",
+					"Ich verwende more carefully than.",
+					"Ich ordne die beiden Personen richtig zu."
+				]
+			},
+			"2": {
+				"prompt": "Vergleiche drei Wege mit short, easy und safe. Zwei Wege sind gleich sicher, einer ist am kürzesten.",
+				"model": "The path by the river is the shortest. The route through town is easier than the hill path. The river path is as safe as the town route.",
+				"criteria": [
+					"Ich verwende einen Superlativ.",
+					"Ich verwende than.",
+					"Ich verwende as … as."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Welche Beschreibung meint gleiche Geschwindigkeit?",
+					"before": "Same speed",
+					"options": [
+						"as fast as",
+						"faster than",
+						"more fastly than"
+					],
+					"answer": "as fast as",
+					"explanation": "As fast as setzt beide gleich."
+				},
+				{
+					"label": "Ergänze den Komparativ von carefully.",
+					"before": "Jo checks the route … than Lee.",
+					"options": [
+						"more carefully",
+						"carefullier",
+						"most carefully"
+					],
+					"answer": "more carefully",
+					"explanation": "Bei carefully steht more."
+				},
+				{
+					"label": "Ergänze den Superlativ von good.",
+					"before": "Noor is the … swimmer in our group.",
+					"options": [
+						"best",
+						"better",
+						"goodest"
+					],
+					"answer": "best",
+					"explanation": "Best ist die höchste Stufe."
+				}
+			],
+			"visual": [
+				"gleich · as fast as",
+				"mehr · faster than",
+				"am meisten · fastest"
+			]
+		}
+	},
+	{
+		"id": "e7s-indefinites",
+		"stage": "grammar",
+		"title": "Someone left a bag",
+		"skill": "Indefinite Begleiter und Pronomen im Zusammenhang verwenden",
+		"bindings": [
+			"1.2"
+		],
+		"paragraphs": [
+			"Someone, anyone und no one stehen für Personen, something, anything und nothing für Sachen. Nach diesen Formen steht gewöhnlich ein Verb in der Einzahl. Each steht vor einem zählbaren Nomen in der Einzahl. Both bezeichnet beide, enough eine ausreichende Menge.",
+			"Beispiel. “Someone is waiting.” “Is anyone there?” “No one is here.” “Each player has a ticket. Both teams have enough time.” In Angeboten ist auch something üblich: “Would you like something to drink?”"
+		],
+		"takeaway": "Frage nach Personen mit anyone und nach Sachen mit anything. No one und nothing tragen die Verneinung bereits in sich.",
+		"material": "Someone left a bag. Is anyone looking for it? There’s nothing inside except a scarf. Both teams have enough time to check their bags. Each player has a number.",
+		"materialLabel": "Englisches Übungsmaterial",
+		"materialLanguage": "en",
+		"sourceIds": [
+			"lp"
+		],
+		"quiz": {
+			"question": "Was passt als freundliches Angebot?",
+			"answer": "Would you like something to drink?",
+			"wrong": [
+				"Is no one drinking?",
+				"Would you like anyone to drink?"
+			],
+			"explanation": "Something bezeichnet hier ein Getränk, das angeboten wird.",
+			"optionLanguage": "en"
+		},
+		"practice": [
+			{
+				"prompt": "… teams have enough time. (Ergänze beide.)",
+				"answers": [
+					"Both"
+				],
+				"feedback": "Both passt zu den zwei Gruppen."
+			},
+			{
+				"prompt": "… player has a number. (Ergänze jede einzelne Person mit einem Wort.)",
+				"answers": [
+					"Each"
+				],
+				"feedback": "Nach each steht hier player in der Einzahl."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Formuliere eine Nachricht zu einem Fund. Verwende someone, anyone und nothing.",
+				"model": "Someone left a box. Does anyone know whose it is? There’s nothing inside.",
+				"criteria": [
+					"Ich nenne eine unbekannte Person.",
+					"Ich frage nach einer Person.",
+					"Ich verwende nothing mit einem bejahten Verb."
+				]
+			},
+			"2": {
+				"prompt": "Verteile zwei Gruppen Aufgaben und stelle sicher, dass jede Person einen Platz hat und genügend Zeit bleibt.",
+				"model": "Both groups have enough time. Each person has a seat. If anyone needs another chair, let me know.",
+				"criteria": [
+					"Ich verwende both.",
+					"Ich verwende each mit Einzahl.",
+					"Ich verwende enough."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Welche Form bezeichnet eine unbekannte Person in einer neutralen Frage?",
+					"before": "Question",
+					"options": [
+						"anyone",
+						"anything",
+						"nothing"
+					],
+					"answer": "anyone",
+					"explanation": "Anyone bezeichnet eine Person."
+				},
+				{
+					"label": "Ergänze beide.",
+					"before": "… teams have enough time.",
+					"options": [
+						"Both",
+						"Each",
+						"Nothing"
+					],
+					"answer": "Both",
+					"explanation": "Both passt zu den zwei Gruppen."
+				},
+				{
+					"label": "Ergänze jede einzelne Person mit einem Wort.",
+					"before": "… player has a number.",
+					"options": [
+						"Each",
+						"Both",
+						"Anyone"
+					],
+					"answer": "Each",
+					"explanation": "Nach each steht hier player in der Einzahl."
+				}
+			]
+		}
+	},
+	{
+		"id": "e7s-reflexives",
+		"stage": "grammar",
+		"title": "Myself or each other?",
+		"skill": "Reflexivpronomen und each other unterscheiden",
+		"bindings": [
+			"1.2",
+			"5"
+		],
+		"paragraphs": [
+			"Myself, yourself, himself, herself, itself, ourselves, yourselves und themselves beziehen die Handlung auf das Subjekt zurück. Each other drückt Gegenseitigkeit aus. Englische und deutsche Verben passen nicht immer wortgleich zusammen.",
+			"Beispiel. “Jo hurt herself” betrifft nur Jo. In “Jo and Mina helped each other” hilft jede der anderen. Für „Ich beeilte mich“ sagst du normalerweise “I hurried”. Enjoy yourself heißt „Viel Spaß“ oder „Amüsier dich“."
+		],
+		"takeaway": "Rückbezug → reflexive pronoun. Gegenseitigkeit → each other.",
+		"material": "We made the costumes ourselves. Jo hurt herself during practice. Later, we helped each other carry the boxes. We hurried to the bus and enjoyed ourselves at the concert.",
+		"materialLabel": "Englisches Übungsmaterial",
+		"materialLanguage": "en",
+		"sourceIds": [
+			"lp"
+		],
+		"quiz": {
+			"question": "Welcher Satz bedeutet, dass die Kinder ohne Hilfe ein Bild malten?",
+			"answer": "The children painted it themselves.",
+			"wrong": [
+				"The children painted each other.",
+				"The children painted it for us."
+			],
+			"explanation": "Themselves betont hier, wer etwas selbst getan hat.",
+			"optionLanguage": "en"
+		},
+		"practice": [
+			{
+				"prompt": "Jo hurt ___. (Ergänze passend für Jo, die sich selbst verletzt.)",
+				"answers": [
+					"herself"
+				],
+				"feedback": "Herself bezieht sich auf Jo zurück."
+			},
+			{
+				"prompt": "We made it ___. (Ergänze selbst, passend zu we.)",
+				"answers": [
+					"ourselves"
+				],
+				"feedback": "Ourselves verstärkt hier, wer es gemacht hat."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Beschreibe eine Gruppenarbeit. Sage, was die Leute selbst gemacht und wie sie einander geholfen haben.",
+				"model": "We made the posters ourselves. We helped each other with the pictures.",
+				"criteria": [
+					"Ich verwende ourselves.",
+					"Ich verwende each other.",
+					"Ich beschreibe zwei verschiedene Handlungen."
+				]
+			},
+			"2": {
+				"prompt": "Übersetze sinngemäß: Ich beeilte mich. Mia verletzte sich. Am Ende hatten wir Spaß.",
+				"model": "I hurried. Mia hurt herself. In the end we enjoyed ourselves.",
+				"criteria": [
+					"Ich verwende hurried ohne reflexive Form.",
+					"Ich verwende herself für Mia.",
+					"Ich verwende enjoyed ourselves."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Zwei Personen geben sich gegenseitig Hilfe. Was passt?",
+					"before": "Teamwork",
+					"options": [
+						"They helped each other.",
+						"They helped themselves.",
+						"They helped herself."
+					],
+					"answer": "They helped each other.",
+					"explanation": "Each other bedeutet einander."
+				},
+				{
+					"label": "Ergänze passend für Jo, die sich selbst verletzt.",
+					"before": "Jo hurt … .",
+					"options": [
+						"herself",
+						"each other",
+						"himself"
+					],
+					"answer": "herself",
+					"explanation": "Herself bezieht sich auf Jo zurück."
+				},
+				{
+					"label": "Ergänze selbst, passend zu we.",
+					"before": "We made it … .",
+					"options": [
+						"ourselves",
+						"ours",
+						"each other"
+					],
+					"answer": "ourselves",
+					"explanation": "Ourselves verstärkt hier, wer es gemacht hat."
+				}
+			],
+			"visual": [
+				"Jo → Jo · herself",
+				"Jo ↔ Mina · each other"
+			]
+		}
+	},
+	{
+		"id": "e7s-linking",
+		"stage": "grammar",
+		"title": "Although, while, so that",
+		"skill": "Nebensätze für Gegensatz, Gleichzeitigkeit und Zweck nutzen",
+		"bindings": [
+			"1.2"
+		],
+		"paragraphs": [
+			"Although führt einen Sachverhalt ein, der im Gegensatz zum Erwarteten steht. While kann gleichzeitig bedeuten oder zwei Fälle gegenüberstellen. So that nennt das Ziel einer Handlung.",
+			"Beispiel. “Although it was cold, we went out.” “I stayed inside while Sam was playing.” “Speak clearly so that everyone can hear.” Steht der Nebensatz zuerst, folgt in diesen Beispielen ein Komma."
+		],
+		"takeaway": "Frage nach der Beziehung der Aussagen: Gegensatz, Gleichzeitigkeit oder Zweck.",
+		"material": "Although the hall was noisy, we heard the music. I was taking notes while Fin was talking. We moved closer so that we could see the stage. Fin likes pop, while I prefer jazz.",
+		"materialLabel": "Englisches Übungsmaterial",
+		"materialLanguage": "en",
+		"sourceIds": [
+			"lp"
+		],
+		"quiz": {
+			"question": "Welcher Satz sagt, dass die Beteiligten gleichzeitig sangen und tanzten?",
+			"answer": "We sang while they were dancing.",
+			"wrong": [
+				"We sang although they were dancing.",
+				"We sang so that they could dance."
+			],
+			"explanation": "While verbindet hier zwei gleichzeitige Handlungen.",
+			"optionLanguage": "en"
+		},
+		"practice": [
+			{
+				"prompt": "… it was cold, we went out. (Ergänze die Konjunktion für einen überraschenden Gegensatz.)",
+				"answers": [
+					"Although"
+				],
+				"feedback": "Obwohl es kalt war, gingen wir hinaus."
+			},
+			{
+				"prompt": "I was taking notes ___ Fin was talking. (Ergänze eine Konjunktion für Gleichzeitigkeit.)",
+				"answers": [
+					"while",
+					"as",
+					"when",
+					"whilst"
+				],
+				"feedback": "Beide Handlungen liefen gleichzeitig."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe einen Gegensatz mit although und erkläre mit so that, wozu jemand näher zur Bühne geht.",
+				"model": "Although it was late, we stayed. We moved closer so that we could see the singers.",
+				"criteria": [
+					"Ich drücke einen Gegensatz aus.",
+					"Ich nenne einen Zweck.",
+					"Ich setze das Komma nach dem ersten Nebensatz."
+				]
+			},
+			"2": {
+				"prompt": "Vergleiche zwei Musikgeschmäcker mit while und beschreibe einen überraschenden gemeinsamen Plan mit although.",
+				"model": "Mia likes jazz, while I prefer rock. Although we like different music, we’re going to the same festival.",
+				"criteria": [
+					"Ich benutze while für die Gegenüberstellung.",
+					"Ich benutze although für den unerwarteten Plan.",
+					"Ich verknüpfe beide Aussagen sinnvoll."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Welche Verbindung nennt einen Zweck?",
+					"before": "Speak clearly … everyone can hear.",
+					"options": [
+						"so that",
+						"although",
+						"while"
+					],
+					"answer": "so that",
+					"explanation": "Jeder soll verstehen können. Das ist der Zweck."
+				},
+				{
+					"label": "Ergänze die Konjunktion für einen überraschenden Gegensatz.",
+					"before": "… it was cold, we went out.",
+					"options": [
+						"Although",
+						"So that",
+						"Until"
+					],
+					"answer": "Although",
+					"explanation": "Obwohl es kalt war, gingen wir hinaus."
+				},
+				{
+					"label": "Ergänze die Konjunktion für Gleichzeitigkeit.",
+					"before": "I was taking notes … Fin was talking.",
+					"options": [
+						"while",
+						"so that",
+						"although"
+					],
+					"answer": "while",
+					"explanation": "Beide Handlungen liefen gleichzeitig."
+				}
+			],
+			"visual": [
+				"although · unerwartet",
+				"while · gleichzeitig oder gegenübergestellt",
+				"so that · damit"
+			]
+		}
+	},
+	{
+		"id": "e7s-relatives",
+		"stage": "grammar",
+		"title": "The friend I met",
+		"skill": "Defining relative clauses und contact clauses bilden",
+		"bindings": [
+			"1.2"
+		],
+		"paragraphs": [
+			"Ein defining relative clause grenzt ein, welche Person oder Sache gemeint ist. Who bezeichnet Personen, which Sachen. That ist hier für beides möglich. Ohne Kommas gehört der Satzteil direkt zur Beschreibung.",
+			"Beispiel. “The girl who plays the drums is my friend.” Who ist Subjekt von plays und bleibt stehen. “The girl (who/that) I met lives here.” I ist Subjekt von met und das Relativpronomen kann wegfallen. Das ergibt eine contact clause."
+		],
+		"takeaway": "Prüfe, wer im Relativsatz handelt. Das Relativpronomen darf hier wegfallen, wenn es Objekt ist.",
+		"material": "The club that meets here is new. The poster I saw was on the door. The girl who designed it plays the drums. The song we heard was written at school.",
+		"materialLabel": "Englisches Übungsmaterial",
+		"materialLanguage": "en",
+		"sourceIds": [
+			"lp"
+		],
+		"quiz": {
+			"question": "Welches Relativpronomen darf hier wegfallen?",
+			"answer": "The music that we heard was loud.",
+			"wrong": [
+				"The musician who plays here is my sister.",
+				"The guitar that is on the stage is red."
+			],
+			"explanation": "We ist das Subjekt von heard. That ist das Objekt und kann wegfallen.",
+			"optionLanguage": "en"
+		},
+		"practice": [
+			{
+				"prompt": "The girl ___ plays the drums is my friend. (Ergänze das typische Relativpronomen für Personen in einem Satz mit who.)",
+				"answers": [
+					"who"
+				],
+				"feedback": "Who ist das Subjekt von plays."
+			},
+			{
+				"prompt": "The sign ___ is on the door is new. (Ergänze das typische Relativpronomen für Sachen mit which.)",
+				"answers": [
+					"which"
+				],
+				"feedback": "Which bezieht sich auf the sign."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Verbinde the poster und I saw the poster zu einer contact clause. Schreibe danach einen Satz über die Person, die es gestaltet hat.",
+				"model": "The poster I saw was blue. The girl who designed it is my friend.",
+				"criteria": [
+					"Ich lasse das Objektpronomen im ersten Relativsatz weg.",
+					"Ich behalte who als Subjekt.",
+					"Ich schreibe vollständige Sätze."
+				]
+			},
+			"2": {
+				"prompt": "Beschreibe eine Band und einen Song so, dass man beide eindeutig erkennt. Verwende einen Relativsatz mit Subjekt und eine contact clause.",
+				"model": "The band that plays in the hall is from Leeds. The song we heard yesterday is their newest one.",
+				"criteria": [
+					"Ich grenze die Band ein.",
+					"Ich behalte that als Subjekt.",
+					"Ich lasse das Objektpronomen im zweiten Satz weg."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Wo ist eine contact clause möglich?",
+					"before": "Choose the clause",
+					"options": [
+						"the poster (that) I saw",
+						"the club that meets here",
+						"the girl who designed it"
+					],
+					"answer": "the poster (that) I saw",
+					"explanation": "I ist das Subjekt von saw."
+				},
+				{
+					"label": "Ergänze das typische Relativpronomen für Personen in einem Satz mit who.",
+					"before": "The girl … plays the drums is my friend.",
+					"options": [
+						"who",
+						"where",
+						"whose"
+					],
+					"answer": "who",
+					"explanation": "Who ist das Subjekt von plays."
+				},
+				{
+					"label": "Ergänze das typische Relativpronomen für Sachen mit which.",
+					"before": "The sign … is on the door is new.",
+					"options": [
+						"which",
+						"who",
+						"whose"
+					],
+					"answer": "which",
+					"explanation": "Which bezieht sich auf the sign."
+				}
+			],
+			"visual": [
+				"who plays · who ist Subjekt",
+				"(who) I met · I ist Subjekt"
+			]
+		}
+	},
+	{
+		"id": "e7s-ones",
+		"stage": "grammar",
+		"title": "The blue ones are mine",
+		"skill": "Mit one(s) und Possessivpronomen Wiederholungen vermeiden",
+		"bindings": [
+			"1.2"
+		],
+		"paragraphs": [
+			"One oder ones ersetzt ein zählbares Nomen in der Einzahl oder Mehrzahl. Mine, yours, his, hers, ours und theirs ersetzen Besitzangabe und Nomen zusammen. My und her stehen dagegen vor einem Nomen.",
+			"Beispiel. “Which shoes? The blue ones.” “Whose shoes are they? They’re mine.” In “my blue shoes” bleibt shoes stehen. Für Wasser als Stoff brauchst du eine Formulierung wie “a glass of water”."
+		],
+		"takeaway": "One oder ones vertritt die Sache. Mine oder yours verrät zusätzlich, wem sie gehört.",
+		"material": "Which jacket would you like? The black one, please. Are those your shoes? The blue ones are mine. The white ones are hers. Is this Leo’s coat? Yes, it’s his.",
+		"materialLabel": "Englisches Übungsmaterial",
+		"materialLanguage": "en",
+		"sourceIds": [
+			"lp"
+		],
+		"quiz": {
+			"question": "Welche Antwort ersetzt die Mehrzahl caps und nennt den Besitzer?",
+			"answer": "The red ones are his.",
+			"wrong": [
+				"The red one is his.",
+				"The red cap is his."
+			],
+			"explanation": "Ones ersetzt caps, his bezeichnet den Besitzer.",
+			"optionLanguage": "en"
+		},
+		"practice": [
+			{
+				"prompt": "I like the blue ___. (Ergänze den Ersatz für jackets im Plural.)",
+				"answers": [
+					"ones"
+				],
+				"feedback": "Ones ersetzt hier mehrere Jacken."
+			},
+			{
+				"prompt": "It’s Anna’s. It’s ___. (Ergänze die Form für ihre Jacke ohne Nomen.)",
+				"answers": [
+					"hers"
+				],
+				"feedback": "Hers steht allein."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Unterscheide beim Packen zwei Taschen, eine blaue und eine grüne. Nenne, welche dir gehört.",
+				"model": "The blue one is mine. The green one is yours.",
+				"criteria": [
+					"Ich nutze one für eine Tasche.",
+					"Ich verwende mine.",
+					"Ich verwende yours."
+				]
+			},
+			"2": {
+				"prompt": "Es sind mehrere Jacken liegen geblieben. Beschreibe die Farben und kläre, wem zwei Gruppen gehören.",
+				"model": "The blue ones are ours. The green ones are theirs. The red jacket is mine.",
+				"criteria": [
+					"Ich verwende ones für mehrere.",
+					"Ich setze ours oder theirs korrekt ein.",
+					"Ich unterscheide Einzahl und Mehrzahl."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Was antwortest du auf Whose are these?, wenn sie dir gehören?",
+					"before": "Ownership",
+					"options": [
+						"They’re mine.",
+						"They’re my.",
+						"They’re one."
+					],
+					"answer": "They’re mine.",
+					"explanation": "Mine steht ohne Nomen."
+				},
+				{
+					"label": "Ergänze den Ersatz für jackets im Plural.",
+					"before": "I like the blue … .",
+					"options": [
+						"ones",
+						"one",
+						"mine"
+					],
+					"answer": "ones",
+					"explanation": "Ones ersetzt hier mehrere Jacken."
+				},
+				{
+					"label": "Ergänze die Form für ihre Jacke ohne Nomen.",
+					"before": "It’s Anna’s. It’s … .",
+					"options": [
+						"hers",
+						"her",
+						"theirs"
+					],
+					"answer": "hers",
+					"explanation": "Hers steht allein."
+				}
+			],
+			"visual": [
+				"Welche? · the blue ones",
+				"Wessen? · mine"
+			]
+		}
+	},
+	{
+		"id": "e7s-vocab",
+		"stage": "grammar",
+		"title": "Words for sport and music",
+		"skill": "Kollokationen, phrasal verbs, Bildbeschreibung und classroom phrases anwenden",
+		"bindings": [
+			"1.2",
+			"5"
+		],
+		"paragraphs": [
+			"Lerne Wörter in Verbindungen. Du sagst “play a match”, “take a photo”, “warm up” und “look after”. In einer Bildbeschreibung helfen “in the foreground”, “in the background” und “on the left”.",
+			"Beispiel. “In the foreground two players are warming up. Could you explain what warm up means?” Actually heißt tatsächlich, aktuell hier oft current. In der Grammatik hilft dir der Fachbegriff adjective für ein Eigenschaftswort."
+		],
+		"takeaway": "Speichere ganze Wortverbindungen und benutze sie in einem eigenen Satz.",
+		"material": "In the foreground two players are warming up. On the left, a girl is taking a photo. In the background, their friends are looking after the equipment. Could you spell equipment, please?",
+		"materialLabel": "Englisches Übungsmaterial",
+		"materialLanguage": "en",
+		"sourceIds": [
+			"lp"
+		],
+		"quiz": {
+			"question": "Welcher Satz sagt, dass ihr euch um die Instrumente kümmert?",
+			"answer": "We look after the instruments.",
+			"wrong": [
+				"We look for the instruments.",
+				"We look at the instruments."
+			],
+			"explanation": "Look after heißt sich kümmern. Look for heißt suchen.",
+			"optionLanguage": "en"
+		},
+		"practice": [
+			{
+				"prompt": "Please ___ a photo. (Was steht bei photo für machen? Ergänze die Grundform.)",
+				"answers": [
+					"take"
+				],
+				"feedback": "Die geläufige Verbindung ist take a photo."
+			},
+			{
+				"prompt": "In the ___, I can see the stage. (Ergänze das Wort für Hintergrund.)",
+				"answers": [
+					"background"
+				],
+				"feedback": "Background liegt hinter der Hauptszene."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Beschreibe eine gedachte Sportfotografie mit zwei Positionsangaben und einem phrasal verb.",
+				"model": "In the foreground the players are warming up. On the left a coach is taking a photo.",
+				"criteria": [
+					"Ich nenne zwei Positionen.",
+					"Ich verwende ein phrasal verb.",
+					"Ich beschreibe sichtbare Handlungen."
+				]
+			},
+			"2": {
+				"prompt": "Du verstehst bei einer Bildbeschreibung ein Wort nicht. Bitte im Unterricht um eine Erklärung und probiere das Wort in einem eigenen Satz über dein Hobby.",
+				"model": "Could you explain what equipment means? I look after the equipment for our band. It includes our microphones and cables.",
+				"criteria": [
+					"Ich benutze eine classroom phrase.",
+					"Ich verwende das Wort in meinem Kontext.",
+					"Ich kläre die Bedeutung mit einem Beispiel."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Welche Wortgruppe bedeutet sich aufwärmen?",
+					"before": "Before a match",
+					"options": [
+						"warm up",
+						"look after",
+						"turn off"
+					],
+					"answer": "warm up",
+					"explanation": "Warm up passt vor dem Sport."
+				},
+				{
+					"label": "Was steht bei photo für machen? Ergänze die Grundform.",
+					"before": "Please … a photo.",
+					"options": [
+						"take",
+						"make",
+						"do"
+					],
+					"answer": "take",
+					"explanation": "Die geläufige Verbindung ist take a photo."
+				},
+				{
+					"label": "Ergänze das Wort für Hintergrund.",
+					"before": "In the …, I can see the stage.",
+					"options": [
+						"background",
+						"foreground",
+						"middle"
+					],
+					"answer": "background",
+					"explanation": "Background liegt hinter der Hauptszene."
+				}
+			]
+		}
+	},
+	{
+		"id": "e7s-pronunciation",
+		"stage": "grammar",
+		"title": "Word stress and clear speech",
+		"skill": "Wortbetonung und Lautschrift beim Sprechen nutzen",
+		"bindings": [
+			"1.1",
+			"1.2",
+			"4"
+		],
+		"paragraphs": [
+			"Ein kleines Zeichen ˈ vor einer Silbe markiert in der Lautschrift die Hauptbetonung. Airport /ˈeəpɔːt/ betont den Anfang, about /əˈbaʊt/ die zweite Silbe. In längeren Aussagen betonst du die Wörter, die neue oder wichtige Informationen tragen.",
+			"Beispiel. Lies “The tour starts at TEN” als Korrektur zu nine. Lies “The TOUR starts at ten” als Korrektur zu the film. Sprich die Beispiele in kleinen Sinnabschnitten."
+		],
+		"takeaway": "Das Zeichen ˈ zeigt die Hauptbetonung an. Betone im Satz gezielt das, was du hervorheben willst.",
+		"material": "Our tour starts at ten, not at nine. The next flight leaves from gate B sixteen, not gate B sixty. The airport bus stops outside. What about the train? We can take the train later.",
+		"materialLabel": "Englisches Übungsmaterial",
+		"materialLanguage": "en",
+		"sourceIds": [
+			"lp"
+		],
+		"quiz": {
+			"question": "Du möchtest das Verkehrsmittel korrigieren. Welches Wort betonst du?",
+			"answer": "We’re taking the BUS tomorrow.",
+			"wrong": [
+				"WE’RE taking the bus tomorrow.",
+				"We’re taking the bus TOMORROW."
+			],
+			"explanation": "BUS hebt die neue und hier korrigierte Information hervor.",
+			"optionLanguage": "en"
+		},
+		"practice": [
+			{
+				"prompt": "The ___ bus stops outside. (/ˈeəpɔːt/) (Ergänze das Wort, dessen Anfang betont wird.)",
+				"answers": [
+					"airport"
+				],
+				"feedback": "Airport betont die erste Silbe."
+			},
+			{
+				"prompt": "The tour starts at ___, not nine. (Welches Wort betonst du, um neun auf zehn zu korrigieren?)",
+				"answers": [
+					"ten"
+				],
+				"feedback": "Die Uhrzeit ist die korrigierte Information."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Lies die Sätze aus dem Skript laut vor. Notiere beide Korrekturen. Markiere jeweils das Wort, das du betonst.",
+				"model": "TEN, not nine. B SIXTEEN, not B SIXTY.",
+				"criteria": [
+					"Ich breche an sinnvollen Stellen ab.",
+					"Ich betone die korrigierten Angaben.",
+					"Ich spreche die beiden Zahlen hörbar unterschiedlich."
+				]
+			},
+			"2": {
+				"prompt": "Jemand versteht today statt tomorrow. Schreibe und sprich zwei Varianten desselben Satzes. Betone einmal die Zeit und einmal das Verkehrsmittel.",
+				"model": "We’re taking the bus TOMORROW. We’re taking the BUS tomorrow.",
+				"criteria": [
+					"Ich setze den Schwerpunkt auf die Zeit.",
+					"Ich setze den Schwerpunkt auf das Verkehrsmittel.",
+					"Ich lese beide Sätze laut."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Welche Silbe ist in about /əˈbaʊt/ betont?",
+					"before": "Word stress",
+					"options": [
+						"the second syllable",
+						"the first syllable",
+						"both equally"
+					],
+					"answer": "the second syllable",
+					"explanation": "ˈ steht vor der zweiten Silbe."
+				},
+				{
+					"label": "Ergänze das Wort, dessen Anfang betont wird.",
+					"before": "The … bus stops outside. (/ˈeəpɔːt/)",
+					"options": [
+						"airport",
+						"about",
+						"again"
+					],
+					"answer": "airport",
+					"explanation": "Airport betont die erste Silbe."
+				},
+				{
+					"label": "Welches Wort betonst du, um neun auf zehn zu korrigieren?",
+					"before": "The tour starts at …, not nine.",
+					"options": [
+						"ten",
+						"tour",
+						"starts"
+					],
+					"answer": "ten",
+					"explanation": "Die Uhrzeit ist die korrigierte Information."
+				}
+			],
+			"visual": [
+				"ˈair-port · erste Silbe",
+				"a-ˈbout · zweite Silbe",
+				"TEN · neue Information"
+			]
+		},
+		"listening": true,
+		"accent": "en-GB",
+		"speaking": true
+	},
+	{
+		"id": "e7s-cornwall",
+		"stage": "culture",
+		"title": "A day in Cornwall",
+		"skill": "Cornwall auf einer Karte einordnen und einen Reisetipp geben",
+		"bindings": [
+			"1.1",
+			"1.2",
+			"2",
+			"5"
+		],
+		"paragraphs": [
+			"Cornwall liegt im Südwesten Englands und ist bekannt für seine Küste. St Ives und Penzance liegen in West Cornwall. Eine Reiseroute enthält eine Richtung und einen Grund für den Halt.",
+			"Beispiel. “Cornwall is in the south-west of England. St Ives is on the coast. If you like the sea, you can go for a walk there.”"
+		],
+		"takeaway": "Sag, wo ein Ort liegt und was man dort tun kann.",
+		"material": "Cornwall is in the south-west of England. St Ives has sandy beaches. From Penzance you can explore the coast. Coastal paths are a good way to see the sea and cliffs. Check the weather before you go.",
+		"materialLabel": "Englisches Übungsmaterial",
+		"materialLanguage": "en",
+		"sourceIds": [
+			"lp",
+			"cornwall"
+		],
+		"quiz": {
+			"question": "Welche Beschreibung zu St Ives hilft Reisenden bei der Orientierung?",
+			"answer": "It’s a town on the coast of Cornwall.",
+			"wrong": [
+				"It’s a town near the Everglades.",
+				"It’s a city in northern Scotland."
+			],
+			"explanation": "St Ives liegt an der Küste in Cornwall.",
+			"optionLanguage": "en"
+		},
+		"practice": [
+			{
+				"prompt": "St Ives is on the ___. (Ergänze das Wort für Küste.)",
+				"answers": [
+					"coast"
+				],
+				"feedback": "Coast ist die Küste."
+			},
+			{
+				"prompt": "The path goes past the ___. (Ergänze das Wort für Klippen.)",
+				"answers": [
+					"cliffs"
+				],
+				"feedback": "Cliffs sind steile Felswände."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Empfiehl einen Halt an der Küste. Nenne Region, Ort und eine Aktivität.",
+				"model": "St Ives is in Cornwall, in the south-west of England. You can walk along the coast near St Ives.",
+				"criteria": [
+					"Ich nenne die Region.",
+					"Ich ordne sie räumlich ein.",
+					"Ich nenne eine Aktivität."
+				]
+			},
+			"2": {
+				"prompt": "Stell eine Alternative für einen windigen Tag vor. Begründe die Entscheidung und vergleiche zwei Arten, die Küste zu erleben.",
+				"model": "Although the cliffs are beautiful, it might be too windy there. We can watch the waves from town. If it’s calmer tomorrow, we’ll walk along the coast.",
+				"criteria": [
+					"Ich berücksichtige das Wetter.",
+					"Ich begründe eine Alternative.",
+					"Ich verwende einen if-Satz."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Wo liegt Cornwall?",
+					"before": "Look at the map",
+					"options": [
+						"in the south-west of England",
+						"in the north of Scotland",
+						"in the east of Wales"
+					],
+					"answer": "in the south-west of England",
+					"explanation": "Cornwall bildet den äußersten Südwesten Englands."
+				},
+				{
+					"label": "Ergänze das Wort für Küste.",
+					"before": "St Ives is on the … .",
+					"options": [
+						"coast",
+						"border",
+						"island"
+					],
+					"answer": "coast",
+					"explanation": "Coast ist die Küste."
+				},
+				{
+					"label": "Ergänze das Wort für Klippen.",
+					"before": "The path goes past the … .",
+					"options": [
+						"cliffs",
+						"fields",
+						"stations"
+					],
+					"answer": "cliffs",
+					"explanation": "Cliffs sind steile Felswände."
+				}
+			],
+			"visual": "cornwall"
+		}
+	},
+	{
+		"id": "e7s-florida",
+		"stage": "culture",
+		"title": "Water and wildlife in Florida",
+		"skill": "Florida, New England und den Midwest räumlich unterscheiden",
+		"bindings": [
+			"1.1",
+			"1.2",
+			"2",
+			"5"
+		],
+		"paragraphs": [
+			"Florida liegt im Südosten der USA. Der Everglades National Park schützt Feuchtgebiete im Süden Floridas. New England liegt im Nordosten der USA. Illinois gehört zum Midwest. Regionen wie New England und Midwest umfassen mehrere Bundesstaaten.",
+			"Beispiel. “Florida and Illinois are states. Florida is in the south-east. Illinois is in the Midwest. The Everglades are in Florida.”"
+		],
+		"takeaway": "Verwende state für einen Bundesstaat und region für ein größeres Gebiet.",
+		"material": "Florida is a state in the south-east of the USA. In southern Florida, the Everglades are home to many birds and other animals. Massachusetts is in New England. Illinois is in the Midwest. These places are all in the USA, but their landscapes are very different.",
+		"materialLabel": "Englisches Übungsmaterial",
+		"materialLanguage": "en",
+		"sourceIds": [
+			"lp",
+			"everglades",
+			"regions"
+		],
+		"quiz": {
+			"question": "Welcher Satz unterscheidet einen Bundesstaat von einer Region?",
+			"answer": "Florida is a state, and New England is a region.",
+			"wrong": [
+				"Florida and New England are both states.",
+				"Florida is a region within the state of New England."
+			],
+			"explanation": "Florida ist ein Staat. New England umfasst mehrere Staaten.",
+			"optionLanguage": "en"
+		},
+		"practice": [
+			{
+				"prompt": "Florida is a ___. (Ergänze Bundesstaat.)",
+				"answers": [
+					"state"
+				],
+				"feedback": "Florida ist ein Bundesstaat der USA."
+			},
+			{
+				"prompt": "Illinois is in the ___. (Ergänze den Regionsnamen.)",
+				"answers": [
+					"Midwest"
+				],
+				"feedback": "Illinois liegt im Midwest."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Beschreibe einer Freundin die Lage Floridas und ein Merkmal der Everglades.",
+				"model": "Florida is in the south-east of the USA. The Everglades are wetlands in southern Florida. Many birds live there.",
+				"criteria": [
+					"Ich gebe eine Himmelsrichtung an.",
+					"Ich lokalisiere die Everglades.",
+					"Ich nenne ein Merkmal der Landschaft."
+				]
+			},
+			"2": {
+				"prompt": "Korrigiere die Aussage Florida and New England are both states. Nenne eines der Beispiele aus New England und erkläre die Lage von Illinois.",
+				"model": "Florida is a state. New England is a region in the north-east, and Massachusetts is one of its states. Illinois is in the Midwest.",
+				"criteria": [
+					"Ich trenne Staat und Region.",
+					"Ich nenne einen Bundesstaat in New England.",
+					"Ich ordne Illinois richtig ein."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Welche Region liegt im Nordosten der USA?",
+					"before": "U.S. regions",
+					"options": [
+						"New England",
+						"the Midwest",
+						"southern Florida"
+					],
+					"answer": "New England",
+					"explanation": "Massachusetts ist beispielsweise ein Staat in New England."
+				},
+				{
+					"label": "Ergänze Bundesstaat.",
+					"before": "Florida is a … .",
+					"options": [
+						"state",
+						"city",
+						"country"
+					],
+					"answer": "state",
+					"explanation": "Florida ist ein Bundesstaat der USA."
+				},
+				{
+					"label": "Ergänze den Regionsnamen.",
+					"before": "Illinois is in the … .",
+					"options": [
+						"Midwest",
+						"Florida",
+						"Atlantic"
+					],
+					"answer": "Midwest",
+					"explanation": "Illinois liegt im Midwest."
+				}
+			],
+			"visual": "florida"
+		}
+	},
+	{
+		"id": "e7s-government",
+		"stage": "culture",
+		"title": "King, Prime Minister, President",
+		"skill": "Staatsoberhaupt und Regierungsleitung im UK und in den USA vergleichen",
+		"bindings": [
+			"1.2",
+			"2",
+			"5"
+		],
+		"paragraphs": [
+			"Im UK ist ein King oder eine Queen das Staatsoberhaupt. Der Prime Minister leitet die Regierung. In den USA ist der President zugleich Staatsoberhaupt und Chef der Exekutive. UK Parliament und US Congress haben Aufgaben in der Gesetzgebung.",
+			"Beispiel. “The UK has a monarch and a prime minister. In the United States, the president is both head of state and head of the executive branch.”"
+		],
+		"takeaway": "Vergleiche die Funktion eines Amtes. Übersetze nicht nur den Titel.",
+		"material": "The United Kingdom is a constitutional monarchy. Its monarch is the head of state. The prime minister heads the government. In the United States, the president is the head of state and leads the executive branch. Congress makes federal laws.",
+		"materialLabel": "Englisches Übungsmaterial",
+		"materialLanguage": "en",
+		"sourceIds": [
+			"lp",
+			"uk-government",
+			"uk-crown",
+			"usa-government"
+		],
+		"quiz": {
+			"question": "Welche Aufgabe erfüllt der US President, die im UK dem Monarchen zukommt?",
+			"answer": "head of state",
+			"wrong": [
+				"head of the UK government",
+				"head of the U.S. Congress"
+			],
+			"explanation": "Der Präsident und der Monarch sind jeweils Staatsoberhaupt. Die britische Regierung leitet der Prime Minister.",
+			"optionLanguage": "en"
+		},
+		"practice": [
+			{
+				"prompt": "The U.S. ___ is head of state. (Ergänze den englischen Titel des Staatsoberhaupts in den USA.)",
+				"answers": [
+					"President"
+				],
+				"feedback": "Der US President ist das Staatsoberhaupt."
+			},
+			{
+				"prompt": "… makes federal laws. (Ergänze in einem Wort die Bezeichnung für die gesetzgebende Institution in den USA.)",
+				"answers": [
+					"Congress"
+				],
+				"feedback": "Congress ist die US-Bundesvertretung, die Bundesgesetze beschließt."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreib zwei kurze Sätze zum Staatsoberhaupt und zur Regierungsleitung im UK.",
+				"model": "The monarch is the head of state in the UK. The prime minister heads the government.",
+				"criteria": [
+					"Ich nenne the monarch.",
+					"Ich nenne the prime minister.",
+					"Ich trenne die Aufgaben."
+				]
+			},
+			"2": {
+				"prompt": "Erkläre einem Gast einen Unterschied zwischen dem US President und dem UK Prime Minister. Erwähne auch Congress.",
+				"model": "Both lead the executive side of government. The U.S. president is also head of state, while the UK prime minister is not. In the U.S., Congress makes federal laws.",
+				"criteria": [
+					"Ich benenne eine Gemeinsamkeit.",
+					"Ich benenne einen Unterschied.",
+					"Ich erkläre, was Congress tut."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Wer leitet im UK die Regierung?",
+					"before": "UK government",
+					"options": [
+						"the Prime Minister",
+						"the King",
+						"the U.S. President"
+					],
+					"answer": "the Prime Minister",
+					"explanation": "Der Prime Minister leitet die Regierung."
+				},
+				{
+					"label": "Ergänze den englischen Titel des Staatsoberhaupts in den USA.",
+					"before": "The U.S. … is head of state.",
+					"options": [
+						"President",
+						"King",
+						"Prime Minister"
+					],
+					"answer": "President",
+					"explanation": "Der US President ist das Staatsoberhaupt."
+				},
+				{
+					"label": "Ergänze in einem Wort die Bezeichnung für die gesetzgebende Institution in den USA.",
+					"before": "… makes federal laws.",
+					"options": [
+						"Congress",
+						"President",
+						"Cabinet"
+					],
+					"answer": "Congress",
+					"explanation": "Congress ist die US-Bundesvertretung, die Bundesgesetze beschließt."
+				}
+			],
+			"visual": [
+				"UK · Staatsoberhaupt: Monarch",
+				"UK · Regierung: Prime Minister",
+				"USA · Staatsoberhaupt und Exekutive: President"
+			]
+		}
+	},
+	{
+		"id": "e7s-customs",
+		"stage": "culture",
+		"title": "Two invitations, different plans",
+		"skill": "Bräuche offen vergleichen und auf Einladungen höflich reagieren",
+		"bindings": [
+			"1.1",
+			"2",
+			"5"
+		],
+		"paragraphs": [
+			"Vergleiche die konkreten Erfahrungen einzelner Jugendlicher. Bonfire Night am 5. November erinnert im UK an den Gunpowder Plot von 1605. Thanksgiving ist in den USA ein Feiertag am vierten Donnerstag im November. Familien und Gruppen gestalten Feiertage verschieden.",
+			"Beispiel. “My family often shares a meal. Do you do anything special?” Bei einem unbekannten Brauch kannst du freundlich fragen: “What usually happens at your celebration?”"
+		],
+		"takeaway": "Beschreibe Beispiele und frage offen nach der Erfahrung der anderen Person.",
+		"material": "Amir in Cornwall: Some neighbours go to a Bonfire Night display. We usually watch from home. Sofia in Florida: My aunt invites us to Thanksgiving dinner. My best friend spends the day with a different group. Lina in Germany: My family visits a local lantern parade in November.",
+		"materialLabel": "Englisches Übungsmaterial",
+		"materialLanguage": "en",
+		"sourceIds": [
+			"lp",
+			"thanksgiving",
+			"bonfire"
+		],
+		"quiz": {
+			"question": "Wie formulierst du einen Vergleich ohne zu verallgemeinern?",
+			"answer": "My family usually goes to a lantern parade.",
+			"wrong": [
+				"Everyone in Germany goes to a lantern parade.",
+				"All British families celebrate in the same way."
+			],
+			"explanation": "My family macht deutlich, über wessen konkrete Erfahrungen du sprichst.",
+			"optionLanguage": "en"
+		},
+		"practice": [
+			{
+				"prompt": "What ___ happens at your celebration? (Ergänze das Wort für gewöhnlich.)",
+				"answers": [
+					"usually"
+				],
+				"feedback": "Usually fragt nach dem üblichen Ablauf."
+			},
+			{
+				"prompt": "It’s the ___ Thursday in November. (Ergänze die Ordnungszahl für Thanksgiving im November.)",
+				"answers": [
+					"fourth"
+				],
+				"feedback": "Der Zeitpunkt ist der vierte Donnerstag."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Antworte auf eine Einladung zum Thanksgiving-Essen und frage höflich nach dem Ablauf.",
+				"model": "Thank you for inviting me. I’d love to come. What usually happens at your Thanksgiving dinner? Can I bring anything?",
+				"criteria": [
+					"Ich bedanke mich.",
+					"Ich antworte auf die Einladung.",
+					"Ich stelle eine offene Frage."
+				]
+			},
+			"2": {
+				"prompt": "Vergleiche zwei Beispiele aus dem Text mit einem Brauch aus deinem Umfeld. Verwende some oder in my family.",
+				"model": "Some people near Amir watch fireworks. Sofia has dinner with her aunt. In my family, we sometimes go to a lantern parade. We all have different ways to spend time together.",
+				"criteria": [
+					"Ich beziehe mich auf konkrete Personen.",
+					"Ich nenne ein Beispiel aus meinem Umfeld.",
+					"Ich formuliere ohne Verallgemeinerung."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Welche Antwort reagiert offen auf einen neuen Brauch?",
+					"before": "Reply to an invitation",
+					"options": [
+						"Thanks! What usually happens there?",
+						"Everyone here celebrates exactly the same way.",
+						"That sounds strange. Don’t tell me more."
+					],
+					"answer": "Thanks! What usually happens there?",
+					"explanation": "Eine offene Frage zeigt Interesse."
+				},
+				{
+					"label": "Ergänze das Wort für gewöhnlich.",
+					"before": "What … happens at your celebration?",
+					"options": [
+						"usually",
+						"never",
+						"singular"
+					],
+					"answer": "usually",
+					"explanation": "Usually fragt nach dem üblichen Ablauf."
+				},
+				{
+					"label": "Ergänze die Ordnungszahl für Thanksgiving im November.",
+					"before": "It’s the … Thursday in November.",
+					"options": [
+						"fourth",
+						"first",
+						"last"
+					],
+					"answer": "fourth",
+					"explanation": "Der Zeitpunkt ist der vierte Donnerstag."
+				}
+			]
+		},
+		"speaking": true
+	},
+	{
+		"id": "e7s-exchange",
+		"stage": "culture",
+		"title": "Making everyone welcome",
+		"skill": "In einer mehrsprachigen Gruppe höflich nachfragen und jemanden einbeziehen",
+		"bindings": [
+			"1.1",
+			"2",
+			"3",
+			"5"
+		],
+		"paragraphs": [
+			"Menschen bringen unterschiedliche Sprachen und Erfahrungen in eine Gruppe. Frag nach statt zu raten. Eine Nachricht an die ganze Gruppe braucht eine kurze Begrüßung, einen klaren Vorschlag und eine Möglichkeit zu antworten.",
+			"Beispiel. “Hi everyone. We’re meeting by the gym. Would anyone like to come with us? Please tell me if you need directions.”"
+		],
+		"takeaway": "Erkläre knapp, frage offen und gib allen Zeit zu antworten.",
+		"material": "At a school exchange, Nia asks what a club is. Oskar says it’s a group that meets after school. Jules has just arrived and doesn’t know the plan. Nia asks Jules to join them and writes the meeting point in the group chat.",
+		"materialLabel": "Englisches Übungsmaterial",
+		"materialLanguage": "en",
+		"sourceIds": [
+			"lp"
+		],
+		"quiz": {
+			"question": "Oskar weiß, dass Jules den Treffpunkt verpasst hat. Welche Nachricht hilft?",
+			"answer": "We’re meeting outside the gym. Would you like to join us?",
+			"wrong": [
+				"Just do what everybody else does.",
+				"You’re late. Everyone has already heard the plan."
+			],
+			"explanation": "Ein Treffpunkt und eine Einladung machen Teilnehmen leichter.",
+			"optionLanguage": "en"
+		},
+		"practice": [
+			{
+				"prompt": "… do you think, Jules? (Ergänze das Fragewort für Was hältst du davon?)",
+				"answers": [
+					"What"
+				],
+				"feedback": "What fragt nach dem Inhalt der Meinung."
+			},
+			{
+				"prompt": "Would you like to ___ us? (Ergänze das Verb teilnehmen oder mitkommen.)",
+				"answers": [
+					"join"
+				],
+				"feedback": "Join us bedeutet bei uns mitmachen."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe eine kurze Nachricht für die Austauschgruppe mit Treffpunkt und Einladung.",
+				"model": "Hi everyone. We’re meeting outside the gym at three. Would you like to join us? Tell me if you need directions.",
+				"criteria": [
+					"Ich begrüße die Gruppe.",
+					"Ich nenne Treffpunkt und Zeit.",
+					"Ich lade freundlich ein."
+				]
+			},
+			"2": {
+				"prompt": "Spiele eine Situation, in der jemand club nicht versteht und jemand anderes noch nicht weiß, was geplant ist. Erkläre club und beziehe beide ein.",
+				"model": "It’s a group that meets after school. We’re meeting outside the gym at three. Jules, would you like to come too? What do you both think?",
+				"criteria": [
+					"Ich verwende eine Umschreibung.",
+					"Ich kläre einen Plan.",
+					"Ich beziehe beide Personen ein."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Wie beziehst du Jules ein?",
+					"before": "Invitation",
+					"options": [
+						"Would you like to join us, Jules?",
+						"Everybody knows the plan.",
+						"You should ask someone else."
+					],
+					"answer": "Would you like to join us, Jules?",
+					"explanation": "Eine direkte freundliche Einladung gibt Jules eine Wahl."
+				},
+				{
+					"label": "Ergänze das Fragewort für Was hältst du davon?",
+					"before": "… do you think, Jules?",
+					"options": [
+						"What",
+						"Whose",
+						"When"
+					],
+					"answer": "What",
+					"explanation": "What fragt nach dem Inhalt der Meinung."
+				},
+				{
+					"label": "Ergänze das Verb teilnehmen oder mitkommen.",
+					"before": "Would you like to … us?",
+					"options": [
+						"join",
+						"leave",
+						"send"
+					],
+					"answer": "join",
+					"explanation": "Join us bedeutet bei uns mitmachen."
+				}
+			]
+		},
+		"speaking": true
+	},
+	{
+		"id": "e7s-reading",
+		"stage": "media",
+		"title": "Read the headline, find the facts",
+		"skill": "Einen Jugendmagazinartikel überfliegen und gezielt Angaben heraussuchen",
+		"bindings": [
+			"1.1",
+			"3",
+			"4"
+		],
+		"paragraphs": [
+			"Beim skimming überfliegst du Überschrift, Einstieg und Absatzanfänge für das Thema. Beim scanning suchst du nach einer bestimmten Information. Unbekannte Wörter überspringst du, wenn die Antwort auch ohne sie klar ist.",
+			"Beispiel. Für Anmeldefrist suchst du register, by oder ein Datum. “Register by Thursday” heißt bis Donnerstag anmelden. Du musst dafür awards ceremony nicht übersetzen."
+		],
+		"takeaway": "Erst Hauptaussage, dann Details. Schlage Wörter gezielt nach, wenn du sie für deine Frage brauchst.",
+		"material": "Young Reporter: A Repair Day at School.\n\nOn Friday our school is turning the art room into a repair café. Bring an old game or a broken toy. Volunteers will show you how to fix it.\n\nTools: The school will lend you everything you need.\n\nSign up: Register by Thursday at the school office. The awards ceremony begins at four.",
+		"materialLabel": "Englisches Übungsmaterial",
+		"materialLanguage": "en",
+		"sourceIds": [
+			"lp"
+		],
+		"quiz": {
+			"question": "Du suchst nur, was du mitbringen darfst. Wie gehst du vor?",
+			"answer": "Scan for bring or words about objects.",
+			"wrong": [
+				"Read the awards section aloud first.",
+				"Translate every word before looking for the answer."
+			],
+			"explanation": "Mit scanning springst du zu Schlüsselwörtern für die gesuchte Angabe.",
+			"optionLanguage": "en"
+		},
+		"practice": [
+			{
+				"prompt": "Register by ___. (Ergänze den Anmeldetag.)",
+				"answers": [
+					"Thursday"
+				],
+				"feedback": "Unter Sign up steht Thursday."
+			},
+			{
+				"prompt": "The school will lend you the ___. (Ergänze das Wort für Werkzeuge.)",
+				"answers": [
+					"tools"
+				],
+				"feedback": "Tools bezeichnet Werkzeuge."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Fasse die Hauptaussage in einem Satz zusammen. Nenne außerdem die Frist und einen Gegenstand, den man mitbringen darf.",
+				"model": "The school is holding a repair day on Friday. Register by Thursday. You can bring a broken toy.",
+				"criteria": [
+					"Ich gebe die Hauptaussage an.",
+					"Ich nenne die Frist.",
+					"Ich nenne ein passendes Detail."
+				]
+			},
+			"2": {
+				"prompt": "Die Schülerzeitung möchte zwei Infokästen; einer soll zur Vorbereitung und einer zur Anmeldung dienen. Schreibe über jedem Inhalt eine hilfreiche Überschrift.",
+				"model": "What to bring: a broken toy or old game. How to join: sign up at the school office by Thursday.",
+				"criteria": [
+					"Ich verwende zwei passende Überschriften.",
+					"Ich übernehme Angaben richtig.",
+					"Ich fasse knapp zusammen."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Wovon handelt der ganze Text?",
+					"before": "Main idea",
+					"options": [
+						"a school repair day",
+						"a café menu",
+						"a sports awards night"
+					],
+					"answer": "a school repair day",
+					"explanation": "Überschrift und erster Absatz nennen das repair café."
+				},
+				{
+					"label": "Ergänze den Anmeldetag.",
+					"before": "Register by … .",
+					"options": [
+						"Thursday",
+						"Friday",
+						"Sunday"
+					],
+					"answer": "Thursday",
+					"explanation": "Unter Sign up steht Thursday."
+				},
+				{
+					"label": "Ergänze das Wort für Werkzeuge.",
+					"before": "The school will lend you the … .",
+					"options": [
+						"tools",
+						"toys",
+						"tickets"
+					],
+					"answer": "tools",
+					"explanation": "Tools bezeichnet Werkzeuge."
+				}
+			],
+			"visual": [
+				"Titel · A Repair Day at School",
+				"Tools · the school lends them",
+				"Sign up · by Thursday"
+			]
+		}
+	},
+	{
+		"id": "e7s-story",
+		"stage": "media",
+		"title": "The lights went out",
+		"skill": "Eine kurze Abenteuergeschichte erschließen, laut lesen und weitererzählen",
+		"bindings": [
+			"1.1",
+			"3"
+		],
+		"paragraphs": [
+			"Ermittle zuerst Schauplatz, Figuren und Problem. Ein plötzlicher Zwischenfall verändert die Handlung. Beim Vorlesen zeigen Pausen und Betonung, wie sich die Geschichte entwickelt.",
+			"Beispiel. “All at once, the bridge moved.” Die Wendung kündigt einen Bruch an. Lies davor etwas langsamer und betone moved. Eine Fortsetzung löst das Problem oder macht es größer."
+		],
+		"takeaway": "Markiere Ausgangslage, Wendepunkt und Reaktion.",
+		"material": "We were crossing a footbridge in the dark. Nia was holding the only torch. All at once, the torch went out. I heard water below us. Nia told me to stop. Then a small light appeared on the other side. Someone called my name. I wasn’t sure whether to answer.",
+		"materialLabel": "Englisches Übungsmaterial",
+		"materialLanguage": "en",
+		"sourceIds": [
+			"lp"
+		],
+		"quiz": {
+			"question": "Wie kannst du die Wirkung der Wendung beim Vorlesen hörbar machen?",
+			"answer": "Pause after All at once and stress went out.",
+			"wrong": [
+				"Read the whole story without any pauses.",
+				"Stress only the word the every time."
+			],
+			"explanation": "Pause und Betonung lenken die Aufmerksamkeit auf den Wendepunkt.",
+			"optionLanguage": "en"
+		},
+		"practice": [
+			{
+				"prompt": "Nia had a ___. (Ergänze das Wort für Taschenlampe.)",
+				"answers": [
+					"torch"
+				],
+				"feedback": "Torch bedeutet hier Taschenlampe."
+			},
+			{
+				"prompt": "I heard ___ below us. (Ergänze laut Material, was unter ihnen zu hören ist.)",
+				"answers": [
+					"water"
+				],
+				"feedback": "Die Erzählerin oder der Erzähler hört Wasser."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Lies den Text laut. Beschreibe anschließend den Schauplatz und nenne die Stelle, an der du eine Pause machst.",
+				"model": "They are on a footbridge at night. I pause after All at once, then I stress went out.",
+				"criteria": [
+					"Ich nenne den Schauplatz.",
+					"Ich markiere eine sinnvolle Pause.",
+					"Ich wähle eine Stelle mit auffälliger Betonung."
+				]
+			},
+			"2": {
+				"prompt": "Schreibe eine kurze Fortsetzung in der Ich-Perspektive. Greife das Licht oder die Stimme wieder auf und zeige eine Reaktion.",
+				"model": "I took Nia’s hand. The light moved towards us. It was my brother with another torch. I felt so relieved that I laughed.",
+				"criteria": [
+					"Ich führe ein vorhandenes Detail fort.",
+					"Ich bleibe in der Ich-Perspektive.",
+					"Ich zeige ein Gefühl."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Welches Ereignis verändert die Lage zuerst?",
+					"before": "Turning point",
+					"options": [
+						"The torch went out.",
+						"Someone called my name.",
+						"They crossed a footbridge."
+					],
+					"answer": "The torch went out.",
+					"explanation": "Das Erlöschen der Taschenlampe schafft das Problem."
+				},
+				{
+					"label": "Ergänze das Wort für Taschenlampe.",
+					"before": "Nia had a … .",
+					"options": [
+						"torch",
+						"ticket",
+						"bottle"
+					],
+					"answer": "torch",
+					"explanation": "Torch bedeutet hier Taschenlampe."
+				},
+				{
+					"label": "Ergänze laut Material, was unter ihnen zu hören ist.",
+					"before": "I heard … below us.",
+					"options": [
+						"water",
+						"music",
+						"a car"
+					],
+					"answer": "water",
+					"explanation": "Die Erzählerin oder der Erzähler hört Wasser."
+				}
+			],
+			"visual": [
+				"Ausgang · crossing a bridge",
+				"Wendung · torch goes out",
+				"Reaktion · Nia says stop",
+				"Offene Frage · who is there?"
+			]
+		}
+	},
+	{
+		"id": "e7s-report",
+		"stage": "media",
+		"title": "A report for the school magazine",
+		"skill": "Einen kurzen Bericht planen, verknüpfen und überarbeiten",
+		"bindings": [
+			"1.1",
+			"1.2",
+			"3",
+			"4",
+			"5"
+		],
+		"paragraphs": [
+			"Ein Bericht beantwortet Fragen wie who, what, where und when. Berichte über vergangene Ereignisse im simple past. Nutze first, then und finally, wenn die Reihenfolge wichtig ist.",
+			"Beispiel. “On Saturday, our class visited a music workshop. First, we met two drummers. Then we tried their instruments.” Eine eigene Reaktion kann am Schluss stehen."
+		],
+		"takeaway": "Beginne mit dem Ereignis. Ordne die Details und prüfe Zeitform und Schreibweise.",
+		"material": "On Tuesday our school band played in the town hall. First, the singers performed two songs. Then the audience joined in. The final song was the loudest. Many visitors clapped, and the band thanked them at the end.",
+		"materialLabel": "Englisches Übungsmaterial",
+		"materialLanguage": "en",
+		"sourceIds": [
+			"lp"
+		],
+		"quiz": {
+			"question": "Welche Ergänzung verbindet die Abschnitte und erklärt die Reaktion?",
+			"answer": "At the end the audience sang along. I was surprised because so many people knew the song.",
+			"wrong": [
+				"First last everyone there good.",
+				"I am happy today and the museum has a shop."
+			],
+			"explanation": "Eine Zeitangabe ordnet das Ende ein und because begründet die Reaktion.",
+			"optionLanguage": "en"
+		},
+		"practice": [
+			{
+				"prompt": "First we listened. ___ we joined in. (Ergänze das Bindewort danach.)",
+				"answers": [
+					"Then"
+				],
+				"feedback": "Then ordnet das nächste Ereignis ein."
+			},
+			{
+				"prompt": "On Tuesday the band ___ in the town hall. (Ergänze simple past von play.)",
+				"answers": [
+					"played"
+				],
+				"feedback": "Played passt zum abgeschlossenen Ereignis."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe drei Sätze für einen Bericht über einen Schulbesuch im Museum.",
+				"model": "On Monday, our class went to the city museum. First we saw old instruments. Then we tried to play a drum.",
+				"criteria": [
+					"Ich gebe Zeit und Ort an.",
+					"Ich verwende simple past.",
+					"Ich ordne die Ereignisse."
+				]
+			},
+			"2": {
+				"prompt": "Mache aus Stichpunkten einen kurzen Magazinbericht: Samstag, Schulkonzert, Regen, Auftritt in der Turnhalle, Publikum singt mit. Ergänze am Schluss eine begründete Reaktion.",
+				"model": "On Saturday our school band gave a concert. Although it rained, the concert went ahead in the gym. The audience sang along at the end. I was surprised by how many people knew the song.",
+				"criteria": [
+					"Ich nenne Ausgang und Änderung.",
+					"Ich verwende eine passende Verknüpfung.",
+					"Ich gebe die eigene Reaktion an."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Welcher Satz ist ein guter Einstieg in den Bericht?",
+					"before": "Opening",
+					"options": [
+						"On Tuesday our school band played in the town hall.",
+						"And they really liked it.",
+						"Finally, thanks!"
+					],
+					"answer": "On Tuesday our school band played in the town hall.",
+					"explanation": "Der Satz nennt wer, was, wo und wann."
+				},
+				{
+					"label": "Ergänze das Bindewort danach.",
+					"before": "First we listened. … we joined in.",
+					"options": [
+						"Then",
+						"Yesterday",
+						"Never"
+					],
+					"answer": "Then",
+					"explanation": "Then ordnet das nächste Ereignis ein."
+				},
+				{
+					"label": "Ergänze simple past von play.",
+					"before": "On Tuesday the band … in the town hall.",
+					"options": [
+						"played",
+						"plays",
+						"playing"
+					],
+					"answer": "played",
+					"explanation": "Played passt zum abgeschlossenen Ereignis."
+				}
+			],
+			"visual": [
+				"Lead · who, what, where, when",
+				"Details · first, then",
+				"End · reaction"
+			]
+		}
+	},
+	{
+		"id": "e7s-picture",
+		"stage": "media",
+		"title": "In the foreground",
+		"skill": "Ein Bild beschreiben und eine begründete Reaktion ausdrücken",
+		"bindings": [
+			"1.1",
+			"1.2",
+			"3"
+		],
+		"paragraphs": [
+			"Beginne mit dem Ort oder dem Thema. Verwende in the foreground, on the left und in the background, damit man die Szene mitverfolgen kann. Laufende sichtbare Handlungen beschreibst du oft mit present progressive.",
+			"Beispiel. “In the foreground two people are carrying a box. On the left I can see a drum. It looks like they’re getting ready for a concert.” Mit “It looks like …” kennzeichnest du eine Vermutung."
+		],
+		"takeaway": "Ordne die Szene räumlich und kennzeichne deine Vermutung.",
+		"material": "Picture plan: Behind the stage there is a blue curtain. On the left two people are carrying a box. On the right a drummer is checking a drum. In the foreground a student is holding a camera.",
+		"materialLabel": "Englisches Übungsmaterial",
+		"materialLanguage": "en",
+		"sourceIds": [
+			"lp"
+		],
+		"quiz": {
+			"question": "Welche Formulierung nennt eine sichtbare Handlung?",
+			"answer": "On the right, a drummer is checking a drum.",
+			"wrong": [
+				"They probably don’t want to perform.",
+				"I think they forgot their instruments."
+			],
+			"explanation": "Der erste Satz beschreibt etwas Beobachtbares und nennt seine Position.",
+			"optionLanguage": "en"
+		},
+		"practice": [
+			{
+				"prompt": "In the ___, a student is holding a camera. (Ergänze das passende Wort für Vordergrund.)",
+				"answers": [
+					"foreground"
+				],
+				"feedback": "Foreground ist der vordere Bereich."
+			},
+			{
+				"prompt": "The drummer ___ a drum now. (Ergänze die passende Verlaufsform.)",
+				"answers": [
+					"is checking"
+				],
+				"feedback": "Is checking beschreibt eine laufende Handlung."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Beschreibe drei Stellen im Szenenplan mit den passenden Ortsangaben.",
+				"model": "In the foreground a student is holding a camera. On the left two people are carrying a box. Behind them there is a curtain.",
+				"criteria": [
+					"Ich nenne drei Positionen.",
+					"Ich verwende mindestens eine Verlaufsform.",
+					"Ich bleibe bei sichtbaren Details."
+				]
+			},
+			"2": {
+				"prompt": "Schreibe für die Schülerzeitung eine Bildunterschrift in zwei oder drei Sätzen. Ergänze eine Vermutung und begründe sie mit einem Detail.",
+				"model": "On the right a drummer is checking a drum. It looks like the band is getting ready, because two people are still carrying equipment.",
+				"criteria": [
+					"Ich nenne ein sichtbares Detail.",
+					"Ich kennzeichne eine Vermutung.",
+					"Ich begründe sie."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Welche Aussage enthält eine Vermutung?",
+					"before": "Picture description",
+					"options": [
+						"It looks like they’re getting ready for a concert.",
+						"There is a blue curtain.",
+						"The student is holding a camera."
+					],
+					"answer": "It looks like they’re getting ready for a concert.",
+					"explanation": "It looks like leitet eine Vermutung ein."
+				},
+				{
+					"label": "Ergänze das passende Wort für Vordergrund.",
+					"before": "In the …, a student is holding a camera.",
+					"options": [
+						"foreground",
+						"background",
+						"distance"
+					],
+					"answer": "foreground",
+					"explanation": "Foreground ist der vordere Bereich."
+				},
+				{
+					"label": "Ergänze die passende Verlaufsform.",
+					"before": "The drummer … a drum now.",
+					"options": [
+						"is checking",
+						"checked",
+						"check"
+					],
+					"answer": "is checking",
+					"explanation": "Is checking beschreibt eine laufende Handlung."
+				}
+			],
+			"visual": "picture"
+		}
+	},
+	{
+		"id": "e7s-clip",
+		"stage": "media",
+		"title": "Three frames, one story",
+		"skill": "Einen Hörsehtext anhand von Figuren, Ort und Handlung erschließen",
+		"bindings": [
+			"1.1",
+			"3"
+		],
+		"paragraphs": [
+			"Bei einem Hörsehtext nutzt du Bilder und Ton zusammen. Du kannst den Schauplatz oft schon beim Ansehen erkennen. Stimmen geben dir Hinweise auf das Gefühl und den Grund für eine Handlung.",
+			"Beispiel. Eine Nahaufnahme von einer kaputten Uhr zeigt eine wichtige Einzelheit. Wenn jemand “Oh no, we’re late!” sagt, klingt die Person besorgt. Vergleiche anschließend mit den Untertiteln oder dem Transkript."
+		],
+		"takeaway": "Achte in dieser Reihenfolge auf Ort, Figuren und die Änderung in der Handlung.",
+		"material": "Rae: Our band is on in five minutes, and I can’t find my ticket! Leo: Is this it, next to your guitar? Rae: Yes! That’s a relief. Come on, let’s get to the stage before they start.",
+		"materialLabel": "Englisches Übungsmaterial",
+		"materialLanguage": "en",
+		"sourceIds": [
+			"lp"
+		],
+		"quiz": {
+			"question": "Welche Reaktion zeigt, wie Rae sich beim Wiederfinden fühlt?",
+			"answer": "That’s a relief!",
+			"wrong": [
+				"I can’t find my ticket!",
+				"Is this it?"
+			],
+			"explanation": "Relief heißt Erleichterung und zeigt hier die veränderte Gefühlslage.",
+			"optionLanguage": "en"
+		},
+		"practice": [
+			{
+				"prompt": "It’s next to the ___. (Ergänze den Gegenstand neben der Karte.)",
+				"answers": [
+					"guitar"
+				],
+				"feedback": "Leo sagt next to your guitar."
+			},
+			{
+				"prompt": "That’s a ___! (Ergänze das Wort für Erleichterung.)",
+				"answers": [
+					"relief"
+				],
+				"feedback": "Mit relief drückt Rae Erleichterung aus."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schau dir die drei Bildfelder an und höre das Skript. Beschreibe auf Englisch die Figuren, das Problem und seine Lösung.",
+				"model": "Rae and Leo are at a music event. Rae has lost a ticket. Leo sees it next to the guitar.",
+				"criteria": [
+					"Ich nenne die Figuren.",
+					"Ich fasse das Problem zusammen.",
+					"Ich erkläre die Lösung."
+				]
+			},
+			"2": {
+				"prompt": "Schreibe einen Dialog für ein viertes Bildfeld. Verändere das Ende, indem die Bühne an einem anderen Ort ist.",
+				"model": "Rae: There’s no one on stage. Leo: Look at this sign. The band is playing in the hall. Rae: Let’s go now!",
+				"criteria": [
+					"Ich knüpfe an die Geschichte an.",
+					"Ich benutze einen visuellen Hinweis.",
+					"Ich schreibe einen verständlichen Dialog."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Was ist die Handlung der kleinen Szene?",
+					"before": "Main event",
+					"options": [
+						"Rae finds the missing ticket.",
+						"Leo loses a guitar.",
+						"The band cancels its show."
+					],
+					"answer": "Rae finds the missing ticket.",
+					"explanation": "Die Karte wird wiedergefunden."
+				},
+				{
+					"label": "Ergänze den Gegenstand neben der Karte.",
+					"before": "It’s next to the … .",
+					"options": [
+						"guitar",
+						"stage",
+						"door"
+					],
+					"answer": "guitar",
+					"explanation": "Leo sagt next to your guitar."
+				},
+				{
+					"label": "Ergänze das Wort für Erleichterung.",
+					"before": "That’s a … !",
+					"options": [
+						"relief",
+						"problem",
+						"shame"
+					],
+					"answer": "relief",
+					"explanation": "Mit relief drückt Rae Erleichterung aus."
+				}
+			],
+			"visual": "storyboard"
+		},
+		"listening": true,
+		"accent": "en-US"
+	},
+	{
+		"id": "e7s-word-building",
+		"stage": "methods",
+		"title": "From read to readable",
+		"skill": "Wörter mit -able, -ity und dem Kontext erschließen",
+		"bindings": [
+			"4",
+			"5"
+		],
+		"paragraphs": [
+			"-able bildet oft ein Adjektiv mit der Bedeutung „kann … werden“. -ity bildet oft ein Nomen für eine Eigenschaft oder einen Zustand. Dabei kann sich die Schreibung des Stamms ändern.",
+			"Beispiel. Readable heißt lesbar. Active wird zu activity. Das englische activity ähnelt Aktivität. Du kannst auch in deiner ersten Fremdsprache nach einer Ähnlichkeit suchen und sie am Satz prüfen."
+		],
+		"takeaway": "Zerlege das Wort, formuliere eine Vermutung und prüfe sie im Satz.",
+		"material": "The notice is readable from the door because the letters are large. The first activity is a game. The tickets are reusable on the same day. Accessibility helps more people take part.",
+		"materialLabel": "Englisches Übungsmaterial",
+		"materialLanguage": "en",
+		"sourceIds": [
+			"lp"
+		],
+		"quiz": {
+			"question": "Wie erschließt du washable auf einem Kleideretikett?",
+			"answer": "Wash plus able suggests that you can wash it.",
+			"wrong": [
+				"It describes the person who washes it.",
+				"Able means that the clothes are already wet."
+			],
+			"explanation": "Der Stamm wash und die Endung able geben eine mögliche Handlung an.",
+			"optionLanguage": "en"
+		},
+		"practice": [
+			{
+				"prompt": "The first ___ is a game. (Bilde aus active mit der Endung -ity das Nomen.)",
+				"answers": [
+					"activity"
+				],
+				"feedback": "Activity ist das Nomen, active ist das Adjektiv."
+			},
+			{
+				"prompt": "The tickets are ___. (Welches Wort aus dem Text heißt wiederverwendbar?)",
+				"answers": [
+					"reusable"
+				],
+				"feedback": "Re- bedeutet wieder; use + able ergibt nutzbar."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Erkläre readable und reusable anhand ihrer Wortteile. Schreibe für jedes einen Beispielsatz.",
+				"model": "Readable means easy to read. The sign is readable. Reusable means you can use it again. This bottle is reusable.",
+				"criteria": [
+					"Ich benenne einen Wortstamm.",
+					"Ich erkläre able.",
+					"Ich prüfe beide Bedeutungen mit Beispielen."
+				]
+			},
+			"2": {
+				"prompt": "Ein Schild sagt These shoes are washable und Safety is our first priority. Erschließe washable und vergleiche priority mit einem verwandten Wort aus einer anderen Sprache.",
+				"model": "Washable means you can wash the shoes. Priority is similar to Priorität in German. Here safety is the most important thing.",
+				"criteria": [
+					"Ich leite washable ab.",
+					"Ich nenne eine überprüfbare Sprachähnlichkeit.",
+					"Ich nutze den Kontext."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Was bedeutet readable im Text?",
+					"before": "Word parts",
+					"options": [
+						"easy or possible to read",
+						"person who reads",
+						"time to read"
+					],
+					"answer": "easy or possible to read",
+					"explanation": "Read und able ergeben eine Eigenschaft."
+				},
+				{
+					"label": "Bilde aus active mit der Endung -ity das Nomen.",
+					"before": "The first … is a game.",
+					"options": [
+						"activity",
+						"active",
+						"activable"
+					],
+					"answer": "activity",
+					"explanation": "Activity ist das Nomen, active ist das Adjektiv."
+				},
+				{
+					"label": "Welches Wort aus dem Text heißt wiederverwendbar?",
+					"before": "The tickets are … .",
+					"options": [
+						"reusable",
+						"readable",
+						"activity"
+					],
+					"answer": "reusable",
+					"explanation": "Re- bedeutet wieder; use + able ergibt nutzbar."
+				}
+			],
+			"visual": [
+				"read + able → readable",
+				"active → activity",
+				"re + use + able → reusable"
+			]
+		}
+	},
+	{
+		"id": "e7s-dictionary",
+		"stage": "methods",
+		"title": "The right word for this sentence",
+		"skill": "Wörterbuchangaben nutzen und Quellen für eine Recherche prüfen",
+		"bindings": [
+			"1.1",
+			"1.2",
+			"4",
+			"5"
+		],
+		"paragraphs": [
+			"Suche die Grundform. Prüfe Wortart, Bedeutungen und Beispielsatz. Ein zweisprachiges Wörterbuch kann mehrere Übersetzungen anbieten. Bei einer Webseite prüfst du zusätzlich Herausgeber, Datum und Zweck.",
+			"Beispiel. “The coach leaves at ten.” Coach kann Reisebus oder Trainerin oder Trainer heißen. Ein Fahrplan mit Haltestellen ist ein Hinweis auf Reisebus."
+		],
+		"takeaway": "Wähle die Bedeutung, die zum Satz passt. Prüfe bei Quellen, wer etwas veröffentlicht hat und wann.",
+		"material": "Practice entries. coach, noun: a long-distance bus; someone who trains a team. coach, verb: to train people. Coach 16 leaves at ten. The coach trains us on Mondays. Imagine two online timetables: one from the station, updated today, and one from an old travel blog with no date.",
+		"materialLabel": "Englisches Übungsmaterial",
+		"materialLanguage": "en",
+		"sourceIds": [
+			"lp"
+		],
+		"quiz": {
+			"question": "Zwei Fahrpläne nennen verschiedene Zeiten. Welche Quelle prüfst du zuerst?",
+			"answer": "The operator’s latest timetable.",
+			"wrong": [
+				"A travel blog without a date.",
+				"A dictionary entry about the word train."
+			],
+			"explanation": "Der Betreiber kann Auskunft über Änderungen seines Fahrplans geben.",
+			"optionLanguage": "en"
+		},
+		"practice": [
+			{
+				"prompt": "Part of speech: ___ (Welche englische Wortart steht in coach, noun? Ergänze ein Wort.)",
+				"answers": [
+					"noun"
+				],
+				"feedback": "Noun ist das Nomen."
+			},
+			{
+				"prompt": "Check the ___ of the timetable. (Welches englische Wort bezeichnet das Datum auf einer Website?)",
+				"answers": [
+					"date"
+				],
+				"feedback": "Das Datum hilft zu prüfen, wie aktuell die Information ist."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Erkläre auf Englisch die Bedeutung von coach in Our coach trains us on Mondays und nenne den Hinweis im Satz.",
+				"model": "Coach means a person who trains a team. The phrase trains us tells me which meaning fits.",
+				"criteria": [
+					"Ich wähle die passende Bedeutung.",
+					"Ich nenne einen Hinweis im Satz.",
+					"Ich schreibe eine verständliche Erklärung."
+				]
+			},
+			"2": {
+				"prompt": "Finde auf der offiziellen Seite eines Veran­stalters ein aktuelles englischsprachiges Musik- oder Sportereignis. Notiere auf Englisch Ort, Termin, Quelle und Prüfdatum. Begründe, warum du der Quelle folgst.",
+				"model": "Example with invented details: A school music festival takes place at the town hall this Saturday at two. I checked the organiser’s official event page today. I used that page because it lists the programme and shows when it was updated.",
+				"criteria": [
+					"Ich nenne Ort und Termin.",
+					"Ich halte Quelle und Prüfdatum fest.",
+					"Ich begründe die Auswahl der Quelle."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Was bedeutet coach in einem Fahrplan?",
+					"before": "Coach 16 leaves at ten.",
+					"options": [
+						"long-distance bus",
+						"team trainer",
+						"to train"
+					],
+					"answer": "long-distance bus",
+					"explanation": "Abfahrt, Nummer und Zeit sprechen für den Bus."
+				},
+				{
+					"label": "Welche englische Wortart steht in coach, noun? Ergänze ein Wort.",
+					"before": "Part of speech: …",
+					"options": [
+						"noun",
+						"verb",
+						"adjective"
+					],
+					"answer": "noun",
+					"explanation": "Noun ist das Nomen."
+				},
+				{
+					"label": "Welches englische Wort bezeichnet das Datum auf einer Website?",
+					"before": "Check the … of the timetable.",
+					"options": [
+						"date",
+						"price",
+						"colour"
+					],
+					"answer": "date",
+					"explanation": "Das Datum hilft zu prüfen, wie aktuell die Information ist."
+				}
+			],
+			"visual": [
+				"Satz → Kontext",
+				"Eintrag → Wortart",
+				"Beispiel → Bedeutung"
+			]
+		}
+	},
+	{
+		"id": "e7s-error-log",
+		"stage": "methods",
+		"title": "Make a useful error log",
+		"skill": "Ein Fehlerprotokoll und Wortnetz zum Wiederholen verwenden",
+		"bindings": [
+			"1.2",
+			"4"
+		],
+		"paragraphs": [
+			"Ein Fehlerprotokoll enthält einen eigenen Satz, die Korrektur und einen Merksatz. Ein Wortnetz sammelt Wörter und Verbindungen zu einem Thema. Nutze beide beim Abrufen aus dem Gedächtnis.",
+			"Beispiel. “She plays good” → “She plays well”. Merksatz: well beschreibt hier, wie sie spielt. Im Wortnetz sport steht daneben play a match und warm up."
+		],
+		"takeaway": "Notiere eine Regel und einen neuen Übungssatz. Rufe ihn später ohne Vorlage ab.",
+		"material": "Error log. Original: She plays good. Revision: She plays well. Reason: well describes how she plays. Transfer: He sings well. Word map: sport → warm up, play a match, train with friends.",
+		"materialLabel": "Englisches Übungsmaterial",
+		"materialLanguage": "en",
+		"sourceIds": [
+			"lp"
+		],
+		"quiz": {
+			"question": "Was hilft dir zu prüfen, ob du eine Korrektur verstanden hast?",
+			"answer": "Write a new sentence with the same rule.",
+			"wrong": [
+				"Read the correction once and close the page.",
+				"Copy the heading into a new notebook."
+			],
+			"explanation": "Beim neuen Satz wendest du die Regel selbst an.",
+			"optionLanguage": "en"
+		},
+		"practice": [
+			{
+				"prompt": "She plays ___. (Ergänze die Korrektur von good.)",
+				"answers": [
+					"well"
+				],
+				"feedback": "Well beschreibt hier die Art und Weise."
+			},
+			{
+				"prompt": "We ___ up before training. (Ergänze das Wort für das Aufwärmen vor dem Training.)",
+				"answers": [
+					"warm"
+				],
+				"feedback": "Warm up ist die geläufige Wendung."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe einen Eintrag für If it will rain, we’ll play indoors. Nenne die Korrektur, ihre Regel und einen neuen Satz.",
+				"model": "If it rains, we’ll play indoors. Use simple present in this if-clause. New sentence: If it’s cold, we’ll close the window.",
+				"criteria": [
+					"Ich korrigiere die Form.",
+					"Ich notiere eine anwendbare Regel.",
+					"Ich schreibe einen neuen Satz."
+				]
+			},
+			"2": {
+				"prompt": "Baue ein Wortnetz mit drei Wortverbindungen zu Musik oder Reisen und einem Satz, den du morgen aus dem Gedächtnis abrufen willst.",
+				"model": "Travel: buy a ticket, miss the train, get off the bus. Tomorrow: If we miss the train, we’ll take the bus.",
+				"criteria": [
+					"Ich arbeite mit Wortverbindungen.",
+					"Ich verknüpfe sie in einem eigenen Satz.",
+					"Ich plane eine Wiederholung."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Was macht einen Protokolleintrag zum Lernwerkzeug?",
+					"before": "Error log",
+					"options": [
+						"Add a reason and a new example.",
+						"Copy the wrong form three times.",
+						"Write only the date."
+					],
+					"answer": "Add a reason and a new example.",
+					"explanation": "Regel und neues Beispiel helfen beim Übertragen."
+				},
+				{
+					"label": "Ergänze die Korrektur von good.",
+					"before": "She plays … .",
+					"options": [
+						"well",
+						"good",
+						"goodly"
+					],
+					"answer": "well",
+					"explanation": "Well beschreibt hier die Art und Weise."
+				},
+				{
+					"label": "Ergänze das Wort für das Aufwärmen vor dem Training.",
+					"before": "We … up before training.",
+					"options": [
+						"warm",
+						"walk",
+						"look"
+					],
+					"answer": "warm",
+					"explanation": "Warm up ist die geläufige Wendung."
+				}
+			],
+			"visual": [
+				"1 · eigener Satz",
+				"2 · Korrektur",
+				"3 · Regel",
+				"4 · neues Beispiel"
+			]
+		}
+	},
+	{
+		"id": "e7s-romans",
+		"stage": "places",
+		"title": "A wall, a road and a bath",
+		"skill": "Kelten und Römer in Britannien auf einer Zeitleiste und Karte einordnen",
+		"bindings": [
+			"1.1",
+			"1.2",
+			"2",
+			"5"
+		],
+		"paragraphs": [
+			"Vor und während der römischen Eroberung lebten in Britannien unterschiedliche Gemeinschaften mit keltischen Sprachen. Ab 43 n. Chr. eroberten die Römer Teile der Insel. Hadrian’s Wall entstand ab dem zweiten Jahrhundert in Nordengland. Die Römer bauten auch Straßen und nutzten die Thermalquellen von Bath.",
+			"Beispiel. “Roman roads connected towns and forts. Hadrian’s Wall marked a frontier. In Bath, people used the hot springs.” Der römische Ortsname von Bath war Aquae Sulis."
+		],
+		"takeaway": "Verbinde Bauwerke und Ortsnamen mit ihrer Lage und ihrer Funktion.",
+		"material": "Before the Roman conquest, different Celtic-speaking peoples lived in Britain. The Romans built roads to link forts and towns. In the north, Hadrian’s Wall marked a frontier. In the south-west, Bath was known as Aquae Sulis, a place with hot springs.",
+		"materialLabel": "Englisches Übungsmaterial",
+		"materialLanguage": "en",
+		"sourceIds": [
+			"lp",
+			"wall",
+			"bath"
+		],
+		"quiz": {
+			"question": "Warum sind römische Straßen ein Hinweis auf die Organisation der Provinz?",
+			"answer": "They linked places such as forts and towns.",
+			"wrong": [
+				"They only led to hot springs in Bath.",
+				"They formed a sea route to France."
+			],
+			"explanation": "Das Straßennetz verband Orte und erleichterte Wege zwischen ihnen.",
+			"optionLanguage": "en"
+		},
+		"practice": [
+			{
+				"prompt": "The Romans used the hot springs in ___. (Ergänze die Stadt mit römischen Bädern.)",
+				"answers": [
+					"Bath"
+				],
+				"feedback": "In Bath wurden die heißen Quellen genutzt."
+			},
+			{
+				"prompt": "Roman ___ connected forts and towns. (Ergänze das Wort für Straßen.)",
+				"answers": [
+					"roads"
+				],
+				"feedback": "Roads sind Straßen."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Beschreibe auf Englisch zwei römische Spuren in Britannien und wozu sie dienten.",
+				"model": "Roman roads linked towns and forts. Hadrian’s Wall marked a frontier in the north.",
+				"criteria": [
+					"Ich nenne zwei Spuren.",
+					"Ich erkläre ihre Aufgaben.",
+					"Ich nenne eine Lage."
+				]
+			},
+			"2": {
+				"prompt": "Schreibe drei Sätze für eine Museumstafel. Nenne die Menschen vor der Eroberung, zwei römische Spuren und den alten Namen von Bath.",
+				"model": "Celtic-speaking peoples lived in Britain before the Roman conquest. The Romans built roads and used the hot springs in Aquae Sulis. Today that city is called Bath.",
+				"criteria": [
+					"Ich unterscheide die Zeiten.",
+					"Ich nenne zwei Spuren.",
+					"Ich erkläre Aquae Sulis."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Wofür stand Hadrian’s Wall in der Römerzeit?",
+					"before": "Roman Britain",
+					"options": [
+						"a frontier",
+						"a bath house",
+						"a road to Florida"
+					],
+					"answer": "a frontier",
+					"explanation": "Frontier meint hier eine Grenze des Römischen Reiches."
+				},
+				{
+					"label": "Ergänze die Stadt mit römischen Bädern.",
+					"before": "The Romans used the hot springs in … .",
+					"options": [
+						"Bath",
+						"Truro",
+						"Boston"
+					],
+					"answer": "Bath",
+					"explanation": "In Bath wurden die heißen Quellen genutzt."
+				},
+				{
+					"label": "Ergänze das Wort für Straßen.",
+					"before": "Roman … connected forts and towns.",
+					"options": [
+						"roads",
+						"rules",
+						"boats"
+					],
+					"answer": "roads",
+					"explanation": "Roads sind Straßen."
+				}
+			],
+			"visual": "romans"
+		}
+	},
+	{
+		"id": "e7s-normans",
+		"stage": "places",
+		"title": "A new ruler, new words",
+		"skill": "1066 zeitlich einordnen und Lehnwörter als Sprachwandel verstehen",
+		"bindings": [
+			"1.1",
+			"1.2",
+			"2",
+			"5"
+		],
+		"paragraphs": [
+			"1066 besiegte William of Normandy bei Hastings das Heer des englischen Königs Harold. Nach der Eroberung wurde Französisch über längere Zeit am Hof und in Verwaltung und Recht gebraucht. Englisch blieb in Gebrauch und nahm viele französische Wörter auf.",
+			"Beispiel. Beef und pork kamen über das Französische ins Englische. Erkläre den Zusammenhang mit “After 1066, French was used in areas such as law. Over time English borrowed words from French.”"
+		],
+		"takeaway": "Sprachkontakt kann Wörter über Generationen verändern oder hinzufügen.",
+		"material": "In 1066 William of Normandy defeated Harold at Hastings. William became king. French was widely used by the new ruling elite. Over time, English borrowed many French words. Beef and pork are two examples that are still used today.",
+		"materialLabel": "Englisches Übungsmaterial",
+		"materialLanguage": "en",
+		"sourceIds": [
+			"lp",
+			"hastings",
+			"language"
+		],
+		"quiz": {
+			"question": "Welche Erklärung verbindet 1066 und englische Wörter wie beef?",
+			"answer": "French and English stayed in contact for a long time.",
+			"wrong": [
+				"People in England stopped speaking English in 1066.",
+				"The Romans introduced beef at Hadrian’s Wall."
+			],
+			"explanation": "Aus längerem Sprachkontakt entstanden Lehnwörter im Englischen.",
+			"optionLanguage": "en"
+		},
+		"practice": [
+			{
+				"prompt": "Harold was defeated at ___. (Ergänze den Schauplatz.)",
+				"answers": [
+					"Hastings"
+				],
+				"feedback": "Die Schlacht fand bei Hastings statt."
+			},
+			{
+				"prompt": "English borrowed beef from ___. (Ergänze die Sprache.)",
+				"answers": [
+					"French"
+				],
+				"feedback": "Beef wurde aus dem Französischen übernommen."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Erkläre in drei Sätzen, wer 1066 siegte und wieso danach französische Wörter ins Englische kamen.",
+				"model": "William of Normandy won at Hastings in 1066. French was used by the new rulers. Over time, English borrowed French words such as beef.",
+				"criteria": [
+					"Ich nenne Person und Jahr.",
+					"Ich erkläre den Sprachkontakt.",
+					"Ich verwende ein Wortbeispiel."
+				]
+			},
+			"2": {
+				"prompt": "Vergleiche einen römischen Ortsnamen und ein französisches Lehnwort. Erkläre, was beide über die Geschichte der Sprachen zeigen.",
+				"model": "Aquae Sulis was the Roman name for Bath. Beef is an English word borrowed from French. Places and everyday words can both show earlier contact with other languages.",
+				"criteria": [
+					"Ich nenne ein römisches Beispiel.",
+					"Ich nenne ein französisches Beispiel.",
+					"Ich erkläre den Zusammenhang mit Sprachkontakt."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Wer gewann 1066 die Schlacht bei Hastings?",
+					"before": "Battle of Hastings",
+					"options": [
+						"William of Normandy",
+						"King Harold",
+						"Emperor Hadrian"
+					],
+					"answer": "William of Normandy",
+					"explanation": "William siegte 1066 bei Hastings."
+				},
+				{
+					"label": "Ergänze den Schauplatz.",
+					"before": "Harold was defeated at … .",
+					"options": [
+						"Hastings",
+						"Bath",
+						"St Ives"
+					],
+					"answer": "Hastings",
+					"explanation": "Die Schlacht fand bei Hastings statt."
+				},
+				{
+					"label": "Ergänze die Sprache, aus der beef übernommen wurde.",
+					"before": "English borrowed beef from … .",
+					"options": [
+						"French",
+						"German",
+						"modern English"
+					],
+					"answer": "French",
+					"explanation": "Beef wurde aus dem Französischen übernommen."
+				}
+			],
+			"visual": [
+				"1066 · Hastings",
+				"Danach · Französisch am Hof und im Recht",
+				"Später · Lehnwörter wie beef und pork"
+			]
+		}
+	}
+]
