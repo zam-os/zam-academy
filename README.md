@@ -80,6 +80,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | Natur und Technik 5 Mittelschule (LehrplanPLUS Bayern) | [`nt-mittelschule-5/`](nt-mittelschule-5/) | Built by Pages on merge | `zam-academy:nt-mittelschule-5` |
 | Natur und Technik 6 Mittelschule (LehrplanPLUS Bayern) | [`nt-mittelschule-6/`](nt-mittelschule-6/) | https://academy.zam-os.org/nt-mittelschule-6/ | `zam-academy:nt-mittelschule-6` |
 | Informatik 6 Gymnasium (LehrplanPLUS Bayern, Natur und Technik 6 Schwerpunkt Informatik) | [`informatik-gymnasium-6/`](informatik-gymnasium-6/) | Built by Pages on merge | `zam-academy:informatik-gymnasium-6` |
+| Latein 6 Gymnasium (LehrplanPLUS Bayern, 2. Fremdsprache) | [`latein-gymnasium-6-l2/`](latein-gymnasium-6-l2/) | Built by Pages on merge | `zam-academy:latein-gymnasium-6-l2` |
 
 ## How an app and its ZAM cell fit together
 
@@ -178,6 +179,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Englisch 5 Mittelschule: cd englisch-mittelschule-5 (dev server on :5248)
 # Informatik 6 Gymnasium: cd informatik-gymnasium-6 (dev server on :5251)
 # Biologie 6 Gymnasium: cd biologie-gymnasium-6 (dev server on :5253)
+# Latein 6 Gymnasium (2. Fremdsprache): cd latein-gymnasium-6-l2 (dev server on :5255)
 # Grade 11 introductory biology: cd biologie-gymnasium-11 (dev server on :5227)
 npm ci
 npm run dev      # http://localhost:5180/uml/
@@ -259,3 +261,5 @@ The [Informatik 6 Gymnasium package](informatik-gymnasium-6/) covers Natur und T
 The [Biologie 6 Gymnasium package](biologie-gymnasium-6/) covers Natur und Technik 6, Schwerpunkt Biologie (`NT6 1.1–1.5`) with 44 lessons in nine stations, 12 interactive models (fair test, microscope, seed dispersal, germination, waterweed, phototropism, body shape, body temperature, frog metamorphosis, echolocation, vertebrate key, pond food web), 59 drawings, two-level writing tasks and 88 linked ZAM cards. Its [coverage matrix](biologie-gymnasium-6/coverage.json) maps all 45 Kompetenzerwartungen of Lernbereich 1 verbatim. The [curriculum and legacy review](docs/biologie-gymnasium-6-coverage.md) proposes a mapping for the 16 cards of the two `de-by:gymnasium-6-biologie-*` cells (4 A, 0 B, 12 C keep-active); the cell declares no `replaces` until Thomas approves.
 
 The [Deutsch 5 Gymnasium package](deutsch-gymnasium-5/) adds 50 lessons across all four LehrplanPLUS Bayern areas (*Sprechen und Zuhören*, *Lesen und Medien*, *Schreiben*, *Sprache und Rechtschreibung*), including local audio passages, dramatic scenes (*Spielszenen*), 22 interactive language and spelling models, two-level writing tasks with self-assessment and 100 ZAM cards (`proposal-only` legacy inventory of all 16 old cards in [deutsch-gymnasium-5/replaces-de-by.json](deutsch-gymnasium-5/replaces-de-by.json)). See [Curriculum coverage and legacy inventory](docs/deutsch-gymnasium-5-coverage.md).
+
+The [Latein 6 (2. Fremdsprache) Gymnasium package](latein-gymnasium-6-l2/) covers all 57 verbatim LehrplanPLUS Bayern expectations across 40 lessons in eight stages, interactive SVG grammar labs (declensions 1–3, active conjugations across all 6 tenses, irregular verbs, numerals 1–12, active AcI, syllable stress), schematic Rome and Italy maps, timeline and Olympier explorers, 80 short exercises, 80 two-level tasks and 120 linked ZAM cards (`proposal-only` neighbouring-grade review in [latein-gymnasium-6-l2/replaces-de-by.json](latein-gymnasium-6-l2/replaces-de-by.json)). See [Curriculum coverage and legacy inventory](docs/latein-gymnasium-6-l2-coverage.md).
