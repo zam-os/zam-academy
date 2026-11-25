@@ -1,0 +1,591 @@
+[
+	{
+		"id": "l7-wortschatz-kontext",
+		"stage": "wortschatz",
+		"title": "Mehrdeutige Wörter im Kontext",
+		"skill": "Wörter wie signum, res, ratio und finis aus dem Satzzusammenhang treffend erschließen",
+		"bindings": ["L7-05", "L7-06", "L7-11"],
+		"paragraphs": [
+			"Im Lateinischen der 7. Klasse wächst dein Grundwortschatz auf rund 1200 Wörter an, doch viele zentrale Vokabeln tragen mehrere Bedeutungen zugleich. Das Substantiv signum bezeichnet je nach Umfeld ein Zeichen am Himmel, eine Statue auf dem Forum oder das Feldzeichen einer Legion; ratio reicht von der Berechnung bis zur Vernunft oder dem Grund.",
+			"Darum schlägst du nicht blind die erste deutsche Bedeutung nach, sondern prüfst zuerst die Nachbarwörter und das Verb im Satz. Ein Verbum des Kampfes oder der Bewegung lenkt signa zu den Feldzeichen, während ein Verbum der Kunst oder Religion auf eine Statue weist."
+		],
+		"materialLabel": "Vier lateinische Kurzsätze mit mehrdeutigen Kernwörtern",
+		"materialLanguage": "la",
+		"material": "1. Milites signa sustulerunt et in hostes processerunt.\n2. In templo pulchrum signum deae stabat.\n3. Imperator fines provinciae legatis ostendit.\n4. Senatores rem publicam magna cum ratione defenderunt.",
+		"sourceIds": ["lp", "lp-profil"],
+		"diagram": {
+			"kind": "morph-lab",
+			"title": "Kontextschlüssel für mehrdeutige Wörter",
+			"caption": "Drei Prüfperspektiven lenken von der Grundbedeutung zur passenden Kontextbedeutung.",
+			"parts": [
+				{
+					"id": "k-verb",
+					"label": "1 · Prädikat prüfen",
+					"badge": "Handlung",
+					"latin": "signa tollere",
+					"detail": "Das Verb bestimmt oft das Sachfeld: signa tollere heißt im Militärwesen „die Feldzeichen erheben / aufbrechen“."
+				},
+				{
+					"id": "k-umfeld",
+					"label": "2 · Umfeld beachten",
+					"badge": "Sachfeld",
+					"latin": "in templo signum",
+					"detail": "Orts- und Personenangaben wie in templo deae verengen signum auf „Standbild / Statue“."
+				},
+				{
+					"id": "k-ausdruck",
+					"label": "3 · Deutsch treffen",
+					"badge": "Kontext",
+					"latin": "finis · ratio · res",
+					"detail": "Finis bedeutet im Singular meist „Grenze / Ende“, im Plural fines „Gebiet“; res wird mit Adjektiv zur festen Größe wie res publica „Staat“."
+				}
+			]
+		},
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Welche Bedeutung passt in „Imperator fines provinciae legatis ostendit“ am besten zu fines?",
+			"answer": "die Grenzen / das Gebiet",
+			"wrong": ["die Endzwecke", "die musikalischen Takte"],
+			"explanation": "Im Plural neben provincia bezeichnet fines räumlich das Gebiet oder die Grenzen einer Provinz."
+		},
+		"takeaway": "Ein mehrdeutiges lateinisches Wort legt seine Bedeutung erst durch Verb, Attribute und Sachfeld fest.",
+		"practice": [
+			{
+				"prompt": "Übersetze signum in „In templo pulchrum signum deae stabat“ mit einem passenden deutschen Substantiv:",
+				"answers": ["Statue", "Standbild", "Bildnis", "Götterbild"],
+				"feedback": "Im Tempel einer Göttin bezeichnet signum eine Statue oder ein Standbild."
+			},
+			{
+				"prompt": "Wie übersetzt man magna cum ratione in Satz 4 treffend („mit großer …“)?",
+				"answers": ["Vernunft", "Überlegung", "Klugheit", "Einsicht"],
+				"feedback": "Bei politischem Handeln im Senat bedeutet ratio hier „Vernunft“ oder „Überlegung“."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "de",
+				"prompt": "Übersetze die Sätze 1 und 3 aus dem Material ins Deutsche und erkläre kurz, welches Signalwort im Satz dir bei signa und fines geholfen hat.",
+				"model": "1. Die Soldaten erhoben die Feldzeichen und rückten gegen die Feinde vor. (Signalwort: milites, hostes → Militär).\n3. Der Feldherr zeigte den Gesandten die Grenzen (das Gebiet) der Provinz. (Signalwort: provinciae → Geografie/Verwaltung).",
+				"criteria": [
+					"Beide Sätze sind grammatisch korrekt ins Deutsche übertragen.",
+					"Für signa und fines ist jeweils die kontextpassende Bedeutung gewählt.",
+					"Das Signalwort aus dem lateinischen Satz ist benannt."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Vergleiche drei verschiedene Kontexte für res (z. B. res gestae, res novae, res adversae) und formuliere jeweils eine treffende deutsche Übersetzung ohne das blasse Wort „Sache“.",
+				"model": "res gestae: die Taten (Leistungen); res novae: der Umsturz (Neuerungen, Revolution); res adversae: das Unglück (schwierige Lagen). Weil res allein sehr allgemein ist, bestimmen erst Partizip oder Adjektiv die genaue Übersetzung.",
+				"criteria": [
+					"Alle drei Wendungen sind ohne das pauschale Wort „Sache“ treffend übersetzt.",
+					"Der Einfluss von Adjektiv oder Partizip auf die Bedeutung ist erklärt.",
+					"Die Formulierungen klingen im Deutschen natürlich."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "context-match",
+			"goals": [
+				{
+					"label": "Kontextbedeutung für signa tollere wählen",
+					"before": "Milites signa sustulerunt →",
+					"after": "(Militärkontext)",
+					"options": [
+						"die Feldzeichen erheben",
+						"die Statuen wegtragen",
+						"die Unterschriften prüfen"
+					],
+					"answer": "die Feldzeichen erheben",
+					"explanation": "Im Heer sind signa die Feldzeichen der Einheiten."
+				},
+				{
+					"label": "Plural von finis in Verbindung mit provincia deuten",
+					"before": "fines provinciae →",
+					"after": "(Topografie)",
+					"options": [
+						"das Gebiet / die Grenzen der Provinz",
+						"die Absichten des Gesandten",
+						"die Strafen der Provinz"
+					],
+					"answer": "das Gebiet / die Grenzen der Provinz",
+					"explanation": "Fines im Plural bezeichnet ein begrenztes Gebiet."
+				},
+				{
+					"label": "Feste Junktur mit res treffend übersetzen",
+					"before": "res publica →",
+					"after": "(Politik)",
+					"options": ["der Staat / das Gemeinwesen", "das private Vermögen", "ein öffentlicher Prozess"],
+					"answer": "der Staat / das Gemeinwesen",
+					"explanation": "Res publica heißt wörtlich „die öffentliche Sache“, also Staat oder Republik."
+				}
+			]
+		}
+	},
+	{
+		"id": "l7-aussprache-paenultima",
+		"stage": "wortschatz",
+		"title": "Quantität & Paenultima-Betonung",
+		"skill": "Lateinische Wörter nach Naturlänge, Positionslänge und Paenultima-Regel richtig betonen",
+		"bindings": ["L7-04", "L7-07"],
+		"paragraphs": [
+			"Gutes Vorlesen zeigt sofort, ob du einen lateinischen Satz verstanden hast. Dafür brauchst du neben Sinngrenzen vor allem die richtige Wortbetonung. Einsilbige Wörter tragen ihren Ton auf der einzigen Silbe, zweisilbige immer auf der ersten Silbe (wie Róma oder páter).",
+			"Bei drei- und mehrsilbigen Wörtern entscheidet die vorletzte Silbe, die Paenultima: Ist sie lang (durch einen langen Vokal von Natur aus, wie in amāre, oder durch mindestens zwei Konsonanten nach dem Vokal als Positionslänge, wie in docéntes), trägt sie den Ton. Ist die Paenultima kurz, springt der Ton auf die drittletzte Silbe (Antepaenultima), etwa bei hómines oder fácere."
+		],
+		"materialLabel": "Betonungsbeispiele (Längenzeichen markieren Naturlänge)",
+		"materialLanguage": "la",
+		"material": "amāre · facĕre · imperātor · res pūblĭca · consĭlium · docēntes · provīncia · homĭnes · legĭo · exēmplum",
+		"sourceIds": ["lp", "lp-profil"],
+		"diagram": {
+			"kind": "morph-lab",
+			"title": "Die Paenultima-Regel in drei Schritten",
+			"caption": "Vom Wortende her zählen: Ultima (1), Paenultima (2), Antepaenultima (3).",
+			"parts": [
+				{
+					"id": "p-kurz",
+					"label": "1 · Zwei Silben",
+					"badge": "Immer erste Silbe",
+					"latin": "Ró-ma · pá-ter",
+					"detail": "Zweisilbige Wörter werden im Lateinischen stets auf der vorletzten (= ersten) Silbe betont."
+				},
+				{
+					"id": "p-lang",
+					"label": "2 · Paenultima lang",
+					"badge": "Ton auf vorletzter",
+					"latin": "a-mā-re · ex-ém-plum",
+					"detail": "Naturlänge (ā, ē, ī, ō, ū, ae, au) oder Positionslänge (zwei Konsonanten wie -mp- in exémplum) hält den Ton auf der vorletzten Silbe."
+				},
+				{
+					"id": "p-dritt",
+					"label": "3 · Paenultima kurz",
+					"badge": "Ton auf drittletzter",
+					"latin": "fá-cĕ-re · hó-mĭ-nes",
+					"detail": "Steht in der vorletzten Silbe ein kurzer Vokal vor nur einem Konsonanten (oder vor Vokal wie con-sí-li-um), wandert der Ton auf die drittletzte Silbe."
+				}
+			]
+		},
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Auf welcher Silbe wird das Wort imperātor (im-pe-rā-tor) betont?",
+			"answer": "auf der vorletzten Silbe (-rā-)",
+			"wrong": ["auf der ersten Silbe (im-)", "auf der letzten Silbe (-tor)"],
+			"explanation": "Die vorletzte Silbe -rā- enthält ein langes ā (Naturlänge) und zieht deshalb den Ton auf sich."
+		},
+		"takeaway": "Bei mehr als zweisilbigen Wörtern gilt: Ist die vorletzte Silbe lang (Natur oder Position), wird sie betont; ist sie kurz, fällt der Ton auf die drittletzte.",
+		"practice": [
+			{
+				"prompt": "Welche Silbe trägt den Ton in „facere“ (fa-ce-re, kurzes e)? Gib die betonte Silbe an:",
+				"answers": ["fa"],
+				"feedback": "Weil -ce- kurz ist und nur ein Konsonant folgt, liegt der Ton auf der drittletzten Silbe: fá-ce-re."
+			},
+			{
+				"prompt": "Welche Silbe trägt den Ton in „exemplum“ (ex-em-plum)? Gib die betonte Silbe an:",
+				"answers": ["em"],
+				"feedback": "Auf das e folgen zwei Konsonanten (-mp-), also ist -em- positionslang und trägt den Ton: ex-ém-plum."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "de",
+				"prompt": "Teile die vier Wörter „provincia“, „homines“, „consilium“ und „legio“ in Silben ein, markiere die betonte Silbe durch Großbuchstaben und begründe kurz deine Entscheidung.",
+				"model": "pro-VÍN-ci-a (Positionslänge -nc- auf der vorletzten Silbe); HÓ-mi-nes (kurzes i auf der vorletzten, daher drittletzte Silbe); con-SÍ-li-um (kurzes i vor Vokal u, daher drittletzte Silbe); LÉ-gi-o (kurzes i vor Vokal o, daher drittletzte Silbe).",
+				"criteria": [
+					"Alle vier Wörter sind sauber in Silben gegliedert.",
+					"Die betonte Silbe stimmt bei allen vier Wörtern.",
+					"Naturlänge, Positionslänge oder Kürze der Paenultima sind richtig benannt."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Lies den Satz „Cives Romani pacem amāre et consĭlia bona capĕre debent“ laut vor und notiere für die mehrsilbigen Verben und Substantive die Betonung mit kurzem Hinweis für einen Mitschüler.",
+				"model": "CÍ-ves Ro-MĀ-ni PĀ-cem a-MĀ-re et con-SÍ-li-a BÓ-na CÁ-pe-re DĒ-bent. Hinweis: Achte auf den Gegensatz zwischen a-MĀ-re (langes ā der a-Konjugation) und CÁ-pe-re (kurzes e der konsonantischen Konjugation mit i-Erweiterung).",
+				"criteria": [
+					"Die Betonung von amāre und capere ist korrekt unterschieden.",
+					"Alle mehrsilbigen Wörter (Romani, consilia, debent) sind richtig markiert.",
+					"Der Lesehinweis erklärt die Regel verständlich."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "stress-rule",
+			"goals": [
+				{
+					"label": "Naturlänge in der a-Konjugation erkennen",
+					"before": "amāre (ā lang) →",
+					"after": "",
+					"options": ["Ton auf -mā- (vorletzte Silbe)", "Ton auf a- (drittletzte Silbe)", "Ton auf -re (letzte Silbe)"],
+					"answer": "Ton auf -mā- (vorletzte Silbe)",
+					"explanation": "Langes ā der a-Konjugation macht die Paenultima lang."
+				},
+				{
+					"label": "Positionslänge vor zwei Konsonanten bestimmen",
+					"before": "docentes (e vor -nt-) →",
+					"after": "",
+					"options": ["Ton auf -cén- (Positionslänge)", "Ton auf dó- (Antepaenultima)", "Ton auf -tes (Ultima)"],
+					"answer": "Ton auf -cén- (Positionslänge)",
+					"explanation": "Zwei Konsonanten (-nt-) machen die vorletzte Silbe positionslang."
+				},
+				{
+					"label": "Vokal vor Vokal in der Paenultima einordnen",
+					"before": "consilium (kurzes i vor u) →",
+					"after": "",
+					"options": ["Ton auf -sí- (drittletzte Silbe)", "Ton auf -li- (vorletzte Silbe)", "Ton auf -um (letzte Silbe)"],
+					"answer": "Ton auf -sí- (drittletzte Silbe)",
+					"explanation": "Vocalis ante vocalem corripitur: ein Vokal vor Vokal ist in der Regel kurz."
+				}
+			]
+		}
+	},
+	{
+		"id": "l7-wortfelder-wendungen",
+		"stage": "wortschatz",
+		"title": "Wortfelder, Wortfamilien & Wendungen",
+		"skill": "Vokabeln nach Sachfeldern ordnen und feste lateinische Junkturen idiomatisch übersetzen",
+		"bindings": ["L7-05", "L7-08", "L7-09"],
+		"paragraphs": [
+			"Einzeln gelernte Wörter entfallen leicht; im Netz aus Wortfamilien und Sachfeldern bleiben sie haften. Zur Wortfamilie von dux (Anführer) gehören ducere (führen), educare (erziehen) und viele Komposita wie reducere oder producere. Nach Sachfeldern sortiert bilden bellum, pax, legio, castra und signa das Feld Krieg und Frieden.",
+			"Ebenso wichtig sind feste Wendungen (Junkturen), deren Sinn über eine bloß wörtliche Übertragung hinausgeht: castra movere heißt wörtlich „das Lager bewegen“, im guten Deutsch „das Lager abbrechen / aufbrechen“; consilium capere bedeutet „einen Entschluss fassen“ und orationem habere „eine Rede halten“."
+		],
+		"materialLabel": "Politische und militärische Wendungen im Zusammenhang",
+		"materialLanguage": "la",
+		"material": "Consul in senatu orationem gravem habuit.\nPostea senatores consilium utile ceperunt.\nMilites prima luce castra moverunt et bellum iustum gesserunt.\nDenique victoribus gratias egerunt.",
+		"sourceIds": ["lp"],
+		"diagram": {
+			"kind": "morph-lab",
+			"title": "Vom Einzelwort zur Junktur",
+			"caption": "Drei Wege, neue Wörter dauerhaft zu vernetzen und treffend wiederzugeben.",
+			"parts": [
+				{
+					"id": "wf-fam",
+					"label": "1 · Wortfamilie",
+					"badge": "Gleicher Stamm",
+					"latin": "dux · ducere · educere",
+					"detail": "Wörter derselben Wurzel teilen einen Grundgedanken und helfen beim Erschließen neuer Ableitungen."
+				},
+				{
+					"id": "wf-feld",
+					"label": "2 · Sachfeld",
+					"badge": "Themennetz",
+					"latin": "senatus · consul · lex",
+					"detail": "Begriffe aus Politik, Militär oder Religion stützen sich beim Übersetzen eines Lehrbuchtextes gegenseitig."
+				},
+				{
+					"id": "wf-junktur",
+					"label": "3 · Feste Wendung",
+					"badge": "Wörtlich vs. Deutsch",
+					"latin": "gratias agere",
+					"detail": "Wörtlich „Dank betreiben“ → treffendes Deutsch: „danken“; ähnlich memoriam tenere („in Erinnerung behalten“)."
+				}
+			]
+		},
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Wie übersetzt man die Wendung „castra movere“ im passenden Deutsch?",
+			"answer": "das Lager abbrechen / aufbrechen",
+			"wrong": ["das Lager befestigen", "im Lager bleiben"],
+			"explanation": "Wörtlich bedeutet castra movere „das Lager bewegen“; gemeint ist der Aufbruch des Heeres vom Lagerplatz."
+		},
+		"takeaway": "Wortfamilien zeigen gemeinsame Wurzeln, Sachfelder ordnen Themen, und feste Wendungen verlangen treffendes Deutsch statt starrer Wort-für-Wort-Übertragung.",
+		"practice": [
+			{
+				"prompt": "Gib die treffende deutsche Übersetzung der Wendung „orationem habere“ an:",
+				"answers": ["eine Rede halten"],
+				"feedback": "Orationem habere bedeutet nicht „eine Rede besitzen“, sondern „eine Rede halten“."
+			},
+			{
+				"prompt": "Wie übersetzt man „bellum gerere“ in angemessenem Deutsch?",
+				"answers": ["Krieg führen", "einen Krieg führen"],
+				"feedback": "Bellum gerere heißt „Krieg führen“."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "de",
+				"prompt": "Übersetze die vier Sätze des Materials und erkläre bei zwei Wendungen den Unterschied zwischen wörtlicher und übertragener Bedeutung.",
+				"model": "Der Konsul hielt im Senat eine gewichtige Rede. Danach fassten die Senatoren einen nützlichen Entschluss. Die Soldaten brachen bei Tagesanbruch das Lager ab und führten einen gerechten Krieg. Schließlich dankten sie den Siegern.\nUnterschied: consilium capere heißt wörtlich „einen Plan ergreifen“, übertragen „einen Entschluss fassen“; gratias agere heißt wörtlich „Dank betreiben“, übertragen „danken“.",
+				"criteria": [
+					"Alle vier Sätze sind vollständig und sinnvoll übersetzt.",
+					"Alle vier Wendungen (orationem habere, consilium capere, castra movere, gratias agere) sind idiomatisch wiedergegeben.",
+					"Bei zwei Wendungen ist wörtliche und übertragene Bedeutung sauber gegenübergestellt."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Ordne diese acht Wörter begründet zwei verschiedenen Sachfeldern zu: legio, templum, oraculum, hostis, sacerdos, castra, votum, imperator.",
+				"model": "Sachfeld Militär: legio, hostis, castra, imperator (alle bezeichnen Truppen, Gegner, Unterkunft und Oberbefehl im Krieg).\nSachfeld Religion: templum, oraculum, sacerdos, votum (alle bezeichnen Kultort, Weissagung, Priesteramt und Gelübde).",
+				"criteria": [
+					"Alle acht Wörter sind den beiden Feldern korrekt zugeordnet.",
+					"Die Zuordnung ist inhaltlich begründet.",
+					"Keine Vokabel fehlt oder steht im falschen Feld."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "idioms",
+			"goals": [
+				{
+					"label": "Politische Junktur übertragen",
+					"before": "consilium capere →",
+					"after": "",
+					"options": ["einen Entschluss fassen", "eine Stadt einnehmen", "einen Rat fragen"],
+					"answer": "einen Entschluss fassen",
+					"explanation": "Consilium capere bedeutet „einen Plan / Entschluss fassen“."
+				},
+				{
+					"label": "Militärische Wendung treffend deuten",
+					"before": "castra ponere vs. castra movere →",
+					"after": "",
+					"options": [
+						"Lager aufschlagen vs. Lager abbrechen",
+						"Lager verlieren vs. Lager erobern",
+						"Lager bewachen vs. Lager zerstören"
+					],
+					"answer": "Lager aufschlagen vs. Lager abbrechen",
+					"explanation": "Ponere steht für das Aufschlagen, movere für den Abbruch/Aufbruch."
+				},
+				{
+					"label": "Dankesformel erkennen",
+					"before": "alicui gratias agere →",
+					"after": "",
+					"options": ["jemandem danken", "jemanden anklagen", "jemanden um Hilfe bitten"],
+					"answer": "jemandem danken",
+					"explanation": "Gratias agere + Dativ heißt „jemandem danken“."
+				}
+			]
+		}
+	},
+	{
+		"id": "l7-wortbildung-erschliessen",
+		"stage": "wortschatz",
+		"title": "Wortbildung: Präfixe & Suffixe",
+		"skill": "Unbekannte Wörter mithilfe von Präfixen, Suffixen und Kontext selbständig erschließen",
+		"bindings": ["L7-10", "L7-11", "L7-46"],
+		"paragraphs": [
+			"Wer Wörter in ihre Bausteine zerlegt, erkennt viele scheinbar neue Vokabeln auf den ersten Blick. Ein Präfix vor dem Verbstamm verändert die Richtung oder Art der Handlung: ad- führt heran (adducere = heranführen), ex-/e- heraus (educere), re- zurück oder wieder (reducere), con- zusammen oder vollständig (conducere).",
+			"Suffixe am Wortende zeigen die Wortart und ein Grundmuster: -tor/-trix benennt die handelnde Person (victor = Sieger, gubernator = Steuermann), -tio/-sio eine Handlung oder deren Ergebnis (oratio = Rede, legio), -tas/-tudo eine Eigenschaft als Abstraktum (libertas = Freiheit, magnitudo = Größe) und -bilis bei Adjektiven „möglich/wert“ (credibilis = glaubwürdig)."
+		],
+		"materialLabel": "Abgeleitete Wörter in lateinischen Sätzen",
+		"materialLanguage": "la",
+		"material": "Imperator milites e castris eduxit et victoriam magnam reportavit.\nMulti cives libertatem civitatis contra hostes defenderunt.\nOrator fidem et fortitudinem militum laudavit, quia res credibilis erat.",
+		"sourceIds": ["lp"],
+		"diagram": {
+			"kind": "morph-lab",
+			"title": "Baukasten der lateinischen Wortbildung",
+			"caption": "Präfix + Stamm + Suffix ergeben zusammen Wortart und Bedeutung.",
+			"parts": [
+				{
+					"id": "wb-pre",
+					"label": "1 · Präfixe (Vorsilben)",
+					"badge": "Richtung & Aspekt",
+					"latin": "e- / ad- / re- / con-",
+					"detail": "e-/ex- („heraus“), ad- („heran“), re- („zurück/wieder“), con- („zusammen“) lenken bekannte Grundverben wie ducere oder ferre."
+				},
+				{
+					"id": "wb-stamm",
+					"label": "2 · Wortstamm",
+					"badge": "Bedeutungskern",
+					"latin": "liber · fortis · credere",
+					"detail": "Der Stamm trägt den Kern: liber („frei“), fortis („tapfer“), credere („glauben“)."
+				},
+				{
+					"id": "wb-suf",
+					"label": "3 · Suffixe (Nachsilben)",
+					"badge": "Wortart & Rolle",
+					"latin": "-tor · -tio · -tas · -bilis",
+					"detail": "-tor (Person), -tio (Vorgang), -tas/-tudo (Eigenschaft, feminin), -bilis (Adjektiv „-bar/-lich“)."
+				}
+			]
+		},
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Was bedeutet das Wort „liberator“ auf Basis von liberare und dem Suffix -tor?",
+			"answer": "der Befreier",
+			"wrong": ["die Befreiung", "freiheitlich"],
+			"explanation": "Das Suffix -tor bezeichnet die handelnde Person zu einem Verb: liberare („befreien“) → liberator („Befreier“)."
+		},
+		"takeaway": "Zerlege unbekannte Wörter in Präfix + Stamm + Suffix und überprüfe das Ergebnis im Satzkontext.",
+		"practice": [
+			{
+				"prompt": "Erschließe das Substantiv „fortitudo“ aus fortis („tapfer“) und dem Suffix -tudo:",
+				"answers": ["Tapferkeit", "die Tapferkeit", "Mut"],
+				"feedback": "-tudo bildet feminine Eigenschaftssubstantive: fortis → fortitudo („Tapferkeit“)."
+			},
+			{
+				"prompt": "Welcher Bestandteil zeigt in „re-portavit“ die Richtung „zurück / heim“ an?",
+				"answers": ["re", "re-"],
+				"feedback": "Das Präfix re- bedeutet „zurück“ oder „wieder“; reportare heißt entsprechend „zurückbringen / davontragen“."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "de",
+				"prompt": "Analysiere „libertas“, „credibilis“ und „educere“ nach Stamm und Vor-/Nachsilbe und gib jeweils die deutsche Bedeutung an.",
+				"model": "libertas = Stamm liber- (frei) + Suffix -tas (Eigenschaft) → die Freiheit.\ncredibilis = Stamm cred- (glauben) + Suffix -bilis (-bar/-würdig) → glaubwürdig.\neducere = Präfix e- (heraus) + ducere (führen) → herausführen.",
+				"criteria": [
+					"Bei allen drei Wörtern sind die Bestandteile korrekt getrennt.",
+					"Die Funktion von -tas, -bilis und e- ist richtig erklärt.",
+					"Alle drei deutschen Bedeutungen sind treffend."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Bilde zu den Wörtern „amare“, „navigare“ und „nobilitas“ jeweils eine sinnvolle Wortanalyse oder neue Ableitung nach den gelernten Regeln und überprüfe, welches Wort im Deutschen weiterlebt.",
+				"model": "amare → amator (Liebhaber/Freund, über -tor), amabilis (liebenswert, über -bilis; engl. amiable); navigare → navigatio (Seefahrt, über -tio; dt. Navigation); nobilitas = nobilis (vornehm/bekannt) + -tas → Adel/Vornehmheit (dt. Noblesse/nobel).",
+				"criteria": [
+					"Mindestens drei Wortbildungsbeziehungen sind korrekt gebildet oder zerlegt.",
+					"Die jeweiligen Suffixbedeutungen sind stimmig verwendet.",
+					"Mindestens ein Zusammenhang zu einem deutschen Fremdwort ist genannt."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "word-formation",
+			"goals": [
+				{
+					"label": "Personenbezeichnung über Suffix -tor erkennen",
+					"before": "orare (reden/bitten) + -tor →",
+					"after": "",
+					"options": ["orator (Redner)", "oratio (Rede)", "orabilis (erbittlich)"],
+					"answer": "orator (Redner)",
+					"explanation": "-tor bildet maskuline Täter-/Rollenbezeichnungen."
+				},
+				{
+					"label": "Präfix ex-/e- mit Bewegungsverb verbinden",
+					"before": "e- + ducere →",
+					"after": "",
+					"options": ["herausführen", "zurückführen", "heranführen"],
+					"answer": "herausführen",
+					"explanation": "e-/ex- gibt die Richtung „aus … heraus“ an."
+				},
+				{
+					"label": "Eigenschaftssubstantiv auf -tas einordnen",
+					"before": "gravis (schwer/gewichtig) + -tas →",
+					"after": "",
+					"options": ["gravitas (Würde / Ernst)", "graviter (schwer)", "gravidus (beladen)"],
+					"answer": "gravitas (Würde / Ernst)",
+					"explanation": "-tas bildet feminine Substantive zu Adjektiven."
+				}
+			]
+		}
+	},
+	{
+		"id": "l7-sprachbruecken-inschriften",
+		"stage": "wortschatz",
+		"title": "Sprachbrücken, Inschriften & Kürzel",
+		"skill": "Bezüge zu Deutsch, Englisch und romanischen Sprachen herstellen sowie Inschriften und Abkürzungen deuten",
+		"bindings": ["L7-12", "L7-13", "L7-37"],
+		"paragraphs": [
+			"Latein wirkt weit über den Unterricht hinaus: Deutsche Fremdwörter (wie Provinz, Diktatur, tolerant), englische Begriffe (liberty, victory, public) und Wörter der romanischen Sprachen (frz. liberté, ital. pace, span. ciudad) gehen unmittelbar auf lateinische Stämme zurück. Wer das lateinische Grundwort kennt, erschließt fremdsprachige Texte deutlich leichter.",
+			"Auch im Alltag und in Museen begegnen dir lateinische Abkürzungen und Inschriften: Im Englischen oder Deutschen liest du etc. (et cetera), e. g. (exempli gratia), i. e. (id est) oder P. S. (post scriptum). Auf römischen Weihesteinen in Bayern wie in Cambodunum oder München stehen knappe Formeln wie I. O. M. (Iovi Optimo Maximo) und V. S. L. M. (votum solvit libens merito)."
+		],
+		"materialLabel": "Antike Weihinschrift und moderne Abkürzungen",
+		"materialLanguage": "la",
+		"material": "I · O · M ·\nL · VALERIVS · FELIX\nV · S · L · M ·\n\nAbkürzungen heute: e. g. (exempli gratia) · i. e. (id est) · etc. (et cetera) · a. Chr. n. (ante Christum natum)",
+		"sourceIds": ["lp", "cambodunum", "antike-muenchen"],
+		"diagram": {
+			"kind": "morph-lab",
+			"title": "Latein als Brücke und Steinschrift",
+			"caption": "Von der antiken Inschrift über moderne Kürzel bis in moderne Fremdsprachen.",
+			"parts": [
+				{
+					"id": "sb-bruecke",
+					"label": "1 · Sprachbrücken",
+					"badge": "DE · EN · Romanisch",
+					"latin": "libertas → liberty / liberté",
+					"detail": "Lateinische Substantive und Verben erklären Bedeutung und Schreibung englischer und romanischer Lehnwörter."
+				},
+				{
+					"id": "sb-kuerzel",
+					"label": "2 · Kürzel heute",
+					"badge": "i. e. · e. g. · etc.",
+					"latin": "exempli gratia = zum Beispiel",
+					"detail": "Englische Sachtexte nutzen oft i. e. (das heißt) und e. g. (zum Beispiel) direkt aus dem Lateinischen."
+				},
+				{
+					"id": "sb-inschrift",
+					"label": "3 · Weihinschrift",
+					"badge": "I. O. M. · V. S. L. M.",
+					"latin": "votum solvit libens merito",
+					"detail": "Weil Steinmetzen Platz sparten, kürzten sie Götternamen (Iovi Optimo Maximo) und Dankformeln ab."
+				}
+			]
+		},
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Wofür steht die häufige römische Inschriftenformel V. S. L. M.?",
+			"answer": "votum solvit libens merito (er/sie hat das Gelübde gern nach Gebühr eingelöst)",
+			"wrong": [
+				"vivat senatus libera militia (es lebe der Senat)",
+				"veni, vidi, vici, triumphavi"
+			],
+			"explanation": "V. S. L. M. schließt viele römische Weihinschriften ab und bestätigt die Erfüllung eines Gelübdes."
+		},
+		"takeaway": "Lateinische Wurzeln vernetzen moderne Sprachen und erschließen sowohl Alltagsabkürzungen als auch antike Steininschriften.",
+		"practice": [
+			{
+				"prompt": "Löse das im Englischen gebräuchliche Kürzel „e. g.“ in seine zwei lateinischen Wörter auf:",
+				"answers": ["exempli gratia"],
+				"feedback": "e. g. steht für exempli gratia („zum Beispiel“)."
+			},
+			{
+				"prompt": "Welcher lateinische Gott wird in „I. O. M.“ als Optimus Maximus angerufen?",
+				"answers": ["Jupiter", "Iuppiter", "Iovis"],
+				"feedback": "I. O. M. steht für Iovi Optimo Maximo — dem besten und größten Jupiter."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "de",
+				"prompt": "Übersetze die Weihinschrift aus dem Material (I. O. M. / L. Valerius Felix / V. S. L. M.) vollständig ins Deutsche und erkläre kurz, warum Römer solche Steine aufstellten.",
+				"model": "Dem besten und größten Jupiter. Lucius Valerius Felix hat sein Gelübde gern und nach Gebühr eingelöst.\nRömer legten in Gefahren oder vor Reisen ein Versprechen (votum) ab und errichteten nach glücklicher Erfüllung einen Weihestein als öffentlichen Dank.",
+				"criteria": [
+					"Alle drei Zeilen der Inschrift sind korrekt aufgelöst und übersetzt.",
+					"Der Name Lucius Valerius Felix ist richtig erkannt.",
+					"Der religiöse Zweck eines Weihesteins (Gelübde und Dank) ist erklärt."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Stelle zu den lateinischen Wörtern „pax“, „imperium“ und „tempus“ jeweils mindestens eine Brücke ins Deutsche, Englische oder eine romanische Sprache her und erkläre i. e. vs. e. g.",
+				"model": "pax → dt. Pazifismus, engl. peace, frz. paix; imperium → dt. Imperium/imperial, engl. empire; tempus → dt. Tempo/Tempus, engl. temporary, frz. temps.\nAbkürzungen: i. e. (id est = „das heißt“) erläutert etwas genauer, e. g. (exempli gratia = „zum Beispiel“) nennt ein konkretes Beispiel.",
+				"criteria": [
+					"Zu allen drei lateinischen Wörtern sind korrekte Sprachbrücken angegeben.",
+					"Der Bedeutungsunterschied zwischen i. e. und e. g. ist klar dargestellt.",
+					"Die lateinischen Vollformen zu i. e. und e. g. sind genannt."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "bridges",
+			"goals": [
+				{
+					"label": "Weihinschrift-Kürzel richtig deuten",
+					"before": "I. O. M. →",
+					"after": "(Götterwidmung)",
+					"options": [
+						"Iovi Optimo Maximo",
+						"Imperatori Omnium Militum",
+						"In Oppido Magno"
+					],
+					"answer": "Iovi Optimo Maximo",
+					"explanation": "I. O. M. widmet den Altar dem höchsten Gott Jupiter."
+				},
+				{
+					"label": "Modernes Kürzel exakt unterscheiden",
+					"before": "id est (i. e.) →",
+					"after": "",
+					"options": ["das heißt", "zum Beispiel", "und so weiter"],
+					"answer": "das heißt",
+					"explanation": "id est heißt „das ist / das heißt“ (im Unterschied zu e. g. „zum Beispiel“)."
+				},
+				{
+					"label": "Englisch-französische Wortverwandtschaft zuordnen",
+					"before": "civis / civitas →",
+					"after": "",
+					"options": ["civil / city / cité", "king / kingdom / roi", "war / warrior / guerre"],
+					"answer": "civil / city / cité",
+					"explanation": "Über das Lateinische hängen civil, city und französisch cité direkt zusammen."
+				}
+			]
+		}
+	}
+]

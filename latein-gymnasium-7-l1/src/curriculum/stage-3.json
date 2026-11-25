@@ -1,0 +1,586 @@
+[
+	{
+		"id": "l7-deponentien-ae",
+		"stage": "verben",
+		"title": "Deponentien der a- & e-Konjugation",
+		"skill": "Deponentien wie hortari, conari und vereri an ihrer passiven Form bei aktiver Bedeutung erkennen und übersetzen",
+		"bindings": ["L7-14", "L7-16", "L7-18"],
+		"paragraphs": [
+			"Deponentien sind Verben, die ihre aktiven Formen „abgelegt“ haben (deponere = ablegen). Sie sehen durchweg passiv aus — im Präsens, Imperfekt, Perfekt und den Infinitiven —, bedeuten aber aktiv! In Klasse 7 lernst du besonders Deponentien der a-Konjugation (hortari „ermahnen“, conari „versuchen“, arbitrari „glauben“, mirari „sich wundern“) und der e-Konjugation (vereri „fürchten“, polliceri „versprechen“, fateri „gestehen“).",
+			"Auch das Perfekt folgt der passiven Hülle mit PPP + esse (z. B. hortatus est = „er hat ermahnt“), und sogar das PPP eines Deponens selbst hat in der Regel aktive Bedeutung: „dux milites hortatus“ heißt vorzeitig aktiv „der Feldherr, der die Soldaten ermahnt hatte“ (oder „nachdem er ermahnt hatte“). Nur wenige Formen der Deponentien wie das Partizip Präsens Aktiv (hortans) und das Partizip Futur Aktiv (hortaturus) behalten auch äußerlich aktive Gestalt. (Deponentien der i- und konsonantischen Konjugation sowie Semideponentien folgen erst in Klasse 8.)"
+		],
+		"materialLabel": "Deponentien der a- und e-Konjugation im Zusammenhang",
+		"materialLanguage": "la",
+		"material": "Imperator milites hortabatur, ne periculum vererentur.\nLegati auxilium polliciti sunt et pacem servare conati sunt.\nHostes urbem oppugnare arbitrabantur, sed cives fortiter resistebant.",
+		"sourceIds": ["lp"],
+		"diagram": {
+			"kind": "morph-lab",
+			"title": "Deponens: Passive Schale, aktiver Kern",
+			"caption": "Formbildung wie ein Passiv, Bedeutung und Satzbau aber aktiv (inklusive Akkusativobjekt!).",
+			"parts": [
+				{
+					"id": "dep-praes",
+					"label": "1 · Infinitiv & Präsens",
+					"badge": "-ari / -eri · -tur",
+					"latin": "hortari · veretur",
+					"detail": "Endungen wie -r, -ris, -tur, -mur, -mini, -ntur und Infinitiv auf -ri zeigen das Deponens; übersetzt wird aktiv: „sie fürchtet“."
+				},
+				{
+					"id": "dep-perf",
+					"label": "2 · Perfekt & PPP",
+					"badge": "Vorzeitig AKTIV",
+					"latin": "polliciti sunt",
+					"detail": "pollicitus, -a, -um + esse bedeutet aktiv „er/sie hat versprochen“; ein alleinstehendes PPP eines Deponens steht ebenfalls aktiv."
+				},
+				{
+					"id": "dep-akk",
+					"label": "3 · Aktive Satzstruktur",
+					"badge": "Mit Akkusativobjekt!",
+					"latin": "auxilium polliceri",
+					"detail": "Anders als echte Passive regieren transitive Deponentien ein Akkusativobjekt: „Hilfe versprechen“, „Gefahr fürchten“."
+				}
+			]
+		},
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Wie übersetzt man „Legati auxilium polliciti sunt“ korrekt?",
+			"answer": "Die Gesandten haben Hilfe versprochen.",
+			"wrong": [
+				"Den Gesandten wurde Hilfe versprochen.",
+				"Die Gesandten werden um Hilfe gebeten."
+			],
+			"explanation": "polliceri ist ein Deponens der e-Konjugation: polliciti sunt hat passive Form (PPP + sunt), aber aktive Bedeutung („haben versprochen“) mit Akkusativobjekt auxilium."
+		},
+		"takeaway": "Deponentien verbinden passive Verbendungen mit aktiver Bedeutung — auch beim Perfekt (hortatus est = „er hat ermahnt“).",
+		"practice": [
+			{
+				"prompt": "Gib die deutsche Übersetzung von „milites hortatus“ (PPP des Deponens hortari) im Nominativ Singular Maskulinum an („nachdem er die Soldaten …“):",
+				"answers": ["ermahnt hatte", "ermutigt hatte", "aufgefordert hatte"],
+				"feedback": "Als Deponens trägt hortatus aktive vorzeitige Bedeutung: „nachdem er die Soldaten ermahnt hatte“."
+			},
+			{
+				"prompt": "Wie lautet der Infinitiv Präsens von „veretur“ (er/sie fürchtet)?",
+				"answers": ["vereri"],
+				"feedback": "vereri gehört zur e-Konjugation und endet im Infinitiv wie ein Passiv auf -eri."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "de",
+				"prompt": "Übersetze die drei Sätze des Materials ins Deutsche und unterstreiche in Gedanken die vier Deponentien mit ihrer Stammform.",
+				"model": "1. Der Feldherr ermahnte die Soldaten, die Gefahr nicht zu fürchten. (hortari, hortor, hortatus sum; vereri, vereor, veritus sum).\n2. Die Gesandten haben Hilfe versprochen und versucht, den Frieden zu bewahren. (polliceri, polliceor, pollicitus sum; conari, conor, conatus sum).\n3. Die Feinde glaubten, die Stadt anzugreifen (sie griffen die Stadt an), aber die Bürger leisteten tapfer Widerstand. (arbitrari, arbitror, arbitratus sum).",
+				"criteria": [
+					"Alle vier Deponentien sind aktivisch übersetzt.",
+					"Die zugehörigen Akkusativobjekte (periculum, auxilium) sind korrekt bezogen.",
+					"Die Zeiten (Imperfekt hortabatur, Perfekt polliciti sunt / conati sunt) sind genau getroffen."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Vergleiche „Hostis captus est“ mit „Imperator conatus est“: Warum wird nur ein Satz passivisch übersetzt, obwohl beide aus PPP + est bestehen?",
+				"model": "capere ist ein normales (aktives) Verb: captus est bedeutet daher passivisch „er ist gefangen worden / wurde gefangen“. conari ist ein Deponens (nur passive Formen): conatus est bedeutet deshalb aktivisch „er hat versucht“. Erst die Stammform im Vokabular (capio vs. conor) entscheidet über die Bedeutung.",
+				"criteria": [
+					"Beide Formen sind korrekt übersetzt.",
+					"Der Unterschied zwischen normalem Verb im Passiv und Deponens ist klar erklärt.",
+					"Auf die Stammform im Vokabelverzeichnis als Erkennungsmerkmal ist hingewiesen."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "deponents",
+			"goals": [
+				{
+					"label": "Deponens der a-Konjugation richtig übersetzen",
+					"before": "Cives mirantur →",
+					"after": "",
+					"options": ["die Bürger wundern sich", "die Bürger werden bewundert", "die Bürger wurden gefragt"],
+					"answer": "die Bürger wundern sich",
+					"explanation": "mirari ist ein Deponens: passive Endung -ntur, aber aktive Bedeutung."
+				},
+				{
+					"label": "Perfekt eines Deponens der e-Konjugation bestimmen",
+					"before": "Senatores veriti sunt →",
+					"after": "",
+					"options": ["die Senatoren haben gefürchtet", "die Senatoren sind gefürchtet worden", "die Senatoren werden fürchten"],
+					"answer": "die Senatoren haben gefürchtet",
+					"explanation": "vereri ist Deponens; veriti sunt heißt aktivisch „haben gefürchtet“."
+				},
+				{
+					"label": "Infinitiv Präsens eines Deponens erkennen",
+					"before": "„wagen/versuchen“ (Infinitiv von conor) →",
+					"after": "",
+					"options": ["conari", "conare", "conatum"],
+					"answer": "conari",
+					"explanation": "Deponentien der a-Konjugation bilden den Infinitiv Präsens auf -ari."
+				}
+			]
+		}
+	},
+	{
+		"id": "l7-ferre-komposita",
+		"stage": "verben",
+		"title": "ferre und seine Komposita",
+		"skill": "Die drei Stämme von ferre (fer-, tul-, lat-) und wichtige Komposita wie afferre, referre, conferre beherrschen",
+		"bindings": ["L7-15", "L7-16", "L7-18"],
+		"paragraphs": [
+			"Das unregelmäßige Verb ferre („tragen, bringen, ertragen“) bildet seine Stammformen aus drei ganz verschiedenen Wurzeln: Präsensstamm fer- (fero, fers, fert, ferimus, fertis, ferunt; Infinitiv ferre; Imperativ fer / ferte; Passiv ferris, fertur, ferri), Perfektstamm tul- (tuli, tulisti, tulit) und PPP-Stamm lat- (latus, lata, latum). Bei manchen Endungen im Präsens fehlt der Bindevokal (fers, fert, fertis, ferre).",
+			"Besonders häufig begegnen dir die Komposita von ferre mit Präfix: afferre (ad + ferre → attuli, allatus = herbeibringen, melden), auferre (ab + ferre → abstuli, ablatus = wegtragen, rauben), conferre (zusammenbringen, vergleichen; se conferre = sich begeben), deferre (herabbringen, übertragen, anzeigen), inferre (hineintragen; bellum inferre = Krieg beginnen gegen), offerre (entgegenbringen, anbieten) und referre (zurückbringen, berichten; gratiam referre = Dank abstatten)."
+		],
+		"materialLabel": "ferre und seine Komposita im Satz",
+		"materialLanguage": "la",
+		"material": "Nuntii tristia verba ad senatum attulerunt.\nHostes finitimis bellum intulerunt et praedam abstulerunt.\nMulti cives in templum se contulerunt; pax enim a consulibus lata est.",
+		"sourceIds": ["lp"],
+		"diagram": {
+			"kind": "morph-lab",
+			"title": "Drei Stämme von ferre + Präfixwandel",
+			"caption": "fer- (Präsens), tul- (Perfekt) und lat- (PPP) kehren in jedem Kompositum wieder.",
+			"parts": [
+				{
+					"id": "fe-praes",
+					"label": "1 · Präsensstamm fer-",
+					"badge": "Bindevokallos",
+					"latin": "fers · fert · fertis · ferre",
+					"detail": "Im Präsens und Imperfekt Indikativ sowie im Infinitiv fällt teilweise der Bindevokal aus; Konjunktiv Präsens: feram, feras, ferat."
+				},
+				{
+					"id": "fe-perf",
+					"label": "2 · Perfektstamm tul-",
+					"badge": "at-tuli · abs-tuli",
+					"latin": "tuli · intuli · contuli",
+					"detail": "Vor dem t- ändert sich oft der Auslaut des Präfixes (ad → at-, ab → abs-, ex → ex-/ef-): attuli, abstuli, extuli."
+				},
+				{
+					"id": "fe-ppp",
+					"label": "3 · PPP-Stamm lat-",
+					"badge": "latus · allatus · ablatus",
+					"latin": "latus, -a, -um",
+					"detail": "Auch im PPP passen sich Präfixe an: allatus (zu afferre), ablatus (zu auferre), relatus (zu referre)."
+				}
+			]
+		},
+		"quiz": {
+			"optionLanguage": "la",
+			"question": "Zu welchem Infinitiv gehört die Perfektform „abstulerunt“?",
+			"answer": "auferre (ab + ferre = wegtragen, rauben)",
+			"wrong": ["afferre (ad + ferre = herbeibringen)", "offerre (ob + ferre = anbieten)"],
+			"explanation": "ab + tuli verschmilzt zu abstuli; der zugehörige Infinitiv lautet auferre."
+		},
+		"takeaway": "Präge dir die drei Stämme fer- / tul- / lat- fest ein — dann erkennst du jedes Kompositum von ferre in allen Zeiten.",
+		"practice": [
+			{
+				"prompt": "Wie lautet der Infinitiv Präsens Aktiv von „attulerunt“ („sie brachten herbei / meldeten“)?",
+				"answers": ["afferre", "adferre"],
+				"feedback": "attuli gehört zu afferre (ad + ferre)."
+			},
+			{
+				"prompt": "Wie übersetzt man die Wendung „se conferre“ (Satz 3: „in templum se contulerunt“)?",
+				"answers": ["sich begeben", "gingen"],
+				"feedback": "se conferre mit Ortsangabe bedeutet „sich irgendwohin begeben“."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "de",
+				"prompt": "Übersetze alle drei Sätze des Materials und bestimme attulerunt, intulerunt, abstulerunt, contulerunt sowie lata est nach Infinitiv und Tempus.",
+				"model": "1. Boten brachten (meldeten) dem Senat traurige Worte. (attulerunt → afferre, 3. Pl. Ind. Perf. Akt.).\n2. Die Feinde überzogen die Nachbarn mit Krieg (begannen Krieg gegen …) und raubten Beute. (intulerunt → inferre, abstulerunt → auferre, je 3. Pl. Ind. Perf. Akt.).\n3. Viele Bürger begaben sich in den Tempel; der Frieden wurde nämlich von den Konsuln gebracht. (contulerunt → se conferre, 3. Pl. Ind. Perf. Akt.; lata est → ferre, 3. Sg. Ind. Perf. Pass.).",
+				"criteria": [
+					"Alle drei Sätze sind sinnvoll übersetzt.",
+					"Alle fünf Formen sind auf ihre Komposita von ferre zurückgeführt.",
+					"Die Sonderbedeutungen (bellum inferre, se conferre) sind getroffen."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Erkläre, wie sich bei „ad + ferre“ und „ab + ferre“ die Präfixe im Präsens, im Perfekt und im PPP verändern, und nenne zu jedem beide Stammformen.",
+				"model": "ad + ferre assimiliert zu afferre (Präsens), attuli (Perfekt: d → t vor t) und allatus (PPP: d → l vor l).\nab + ferre wird im Präsens zu auferre (ab → au vor f), im Perfekt zu abstuli (ab → abs vor t) und im PPP zu ablatus (ab bleibt vor l).",
+				"criteria": [
+					"Alle sechs Formen (afferre, attuli, allatus und auferre, abstuli, ablatus) sind korrekt.",
+					"Die Angleichung (Assimilation) der Präfixe an f, t und l ist erklärt.",
+					"Beide Bedeutungen (herbeibringen vs. wegtragen) sind genannt."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "ferre",
+			"goals": [
+				{
+					"label": "Bindevokallose 3. Person Singular erkennen",
+					"before": "Er/sie trägt →",
+					"after": "",
+					"options": ["fert", "ferit", "feret"],
+					"answer": "fert",
+					"explanation": "Im Präsens Aktiv von ferre fällt zwischen fer- und -t der Bindevokal aus: fert."
+				},
+				{
+					"label": "Perfekt von referre bilden",
+					"before": "referre (zurückbringen / berichten) → 3. Sg. Perf.",
+					"after": "",
+					"options": ["rettulit", "referivit", "relavit"],
+					"answer": "rettulit",
+					"explanation": "re- + tuli ergibt rettuli (mit verdoppeltem t) und PPP relatus."
+				},
+				{
+					"label": "Kompositum im Kontext richtig übersetzen",
+					"before": "bellum alicui inferre →",
+					"after": "",
+					"options": ["jemanden mit Krieg überziehen / angreifen", "jemandem Frieden bringen", "aus dem Krieg fliehen"],
+					"answer": "jemanden mit Krieg überziehen / angreifen",
+					"explanation": "bellum inferre + Dativ heißt „gegen jemanden Krieg beginnen“."
+				}
+			]
+		}
+	},
+	{
+		"id": "l7-pfa-infinitiv-futur",
+		"stage": "verben",
+		"title": "Partizip Futur Aktiv (PFA) & Infinitiv Futur Aktiv",
+		"skill": "Das PFA (-urus, -a, -um) und den Infinitiv Futur Aktiv (-urus esse) bilden und ihre Nachzeitigkeit erfassen",
+		"bindings": ["L7-14", "L7-16", "L7-17", "L7-22"],
+		"paragraphs": [
+			"Zu PPP (vorzeitig, passiv) und PPA (gleichzeitig, aktiv) kommt in der 7. Klasse das Partizip Futur Aktiv (PFA). Du bildest es direkt aus dem PPP-Stamm: Anstelle von -us/-a/-um tritt -ūrus, -ūra, -ūrum an (laudatus → laudaturus, captus → capturus, ventus → venturus; bei esse lautet es futurus). Es ist ein Adjektiv der a-/o-Deklination und drückt aus, dass jemand etwas tun wird, will oder im Begriff ist zu tun.",
+			"Verbindest du das PFA mit esse, erhältst du den Infinitiv Futur Aktiv: laudaturum esse, venturam esse, victuros esse. In einem Satz mit sum/erat steht das PFA auch als prädikative Umschreibung einer bevorstehenden Absicht: „pugnaturus erat“ bedeutet „er war im Begriff / wollte kämpfen“."
+		],
+		"materialLabel": "PFA und Infinitiv Futur Aktiv in Beispielsätzen",
+		"materialLanguage": "la",
+		"material": "Imperator urbem oppugnaturus milites ad se vocavit.\nDux se hostes victurum esse sperabat.\nScripturi sumus de rebus gestis Augusti; multa enim futura sunt.",
+		"sourceIds": ["lp"],
+		"diagram": {
+			"kind": "morph-lab",
+			"title": "Die drei Partizipien im Vergleich (mit Fokus PFA)",
+			"caption": "Das Infix -ur- signalisiert beim Partizip aktivische Nachzeitigkeit / Absicht.",
+			"parts": [
+				{
+					"id": "pfa-bau",
+					"label": "1 · Bildung mit -ur-",
+					"badge": "PPP-Stamm + -urus, -a, -um",
+					"latin": "victus → victurus",
+					"detail": "Man ersetzt die Endung -us des PPP durch -urus, -ura, -urum. Ausnahme esse: futurus, -a, -um."
+				},
+				{
+					"id": "pfa-bed",
+					"label": "2 · Nachzeitig & Aktiv",
+					"badge": "Absicht / Zukunft",
+					"latin": "oppugnaturus = im Begriff anzugreifen",
+					"detail": "Im Unterschied zum passiven PPP ist das PFA immer aktivisch und blickt zeitlich nach vorn."
+				},
+				{
+					"id": "pfa-inf",
+					"label": "3 · Infinitiv Futur Aktiv",
+					"badge": "PFA + esse (KNG!)",
+					"latin": "victurum esse",
+					"detail": "Im AcI passt sich das PFA in Kasus (Akkusativ), Numerus und Genus an den Subjektsakkusativ an: se victurum esse."
+				}
+			]
+		},
+		"quiz": {
+			"optionLanguage": "la",
+			"question": "Wie lautet der Infinitiv Futur Aktiv im Akkusativ Plural Maskulinum zu vincere (PPP: victus)?",
+			"answer": "victuros esse",
+			"wrong": ["victos esse", "vincentes esse"],
+			"explanation": "Aus dem PPP victus wird das PFA victurus; im Akkusativ Plural Maskulinum + esse lautet der Infinitiv Futur Aktiv victuros esse."
+		},
+		"takeaway": "Das Zeichen -ur- macht aus dem PPP-Stamm das aktivische, nachzeitige PFA (-urus, -a, -um); zusammen mit esse bildet es den Infinitiv Futur Aktiv.",
+		"practice": [
+			{
+				"prompt": "Bilde das Partizip Futur Aktiv (Nom. Sg. Mask.) zu „venire“ (PPP-Stamm vent-):",
+				"answers": ["venturus"],
+				"feedback": "Aus vent- + -urus entsteht venturus („einer, der kommen wird / kommen will“)."
+			},
+			{
+				"prompt": "Wie lautet das unregelmäßige Partizip Futur Aktiv (Nom. Sg. Mask.) zu „esse“?",
+				"answers": ["futurus"],
+				"feedback": "Das PFA von esse heißt futurus, futura, futurum („künftig / sein werdend“)."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "de",
+				"prompt": "Übersetze alle drei Sätze des Materials ins Deutsche und erkläre für „oppugnaturus“ und „victurum esse“ jeweils Bildung und Zeitverhältnis.",
+				"model": "1. Der Feldherr rief, weil/als er die Stadt angreifen wollte (im Begriff war anzugreifen), die Soldaten zu sich. (oppugnaturus = PFA Nom. Sg. m., nachzeitig aktiv).\n2. Der Anführer hoffte, dass er die Feinde besiegen werde. (victurum esse = Infinitiv Futur Aktiv zu vincere, nachzeitig zum Imperfekt sperabat).\n3. Wir sind im Begriff (haben vor), über die Taten des Augustus zu schreiben; denn vieles wird künftig geschehen (bevorstehen). (scripturi sumus = PFA + esse).",
+				"criteria": [
+					"Alle drei Sätze sind flüssig und sinngetreu übersetzt.",
+					"Die Nachzeitigkeit von oppugnaturus und victurum esse ist benannt.",
+					"Die Bildung aus PPP-Stamm + -urus (-a, -um) ist erwähnt."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Warum übersetzt man das lateinische PFA im Deutschen meist nicht wörtlich mit einem einzigen Partizip, sondern als Nebensatz oder mit „wollen / im Begriff sein“? Zeige dies an „Nuntius venturus gaudet“.",
+				"model": "Das Deutsche besitzt kein echtes Partizip Futur Aktiv („ein kommen werdender Bote“ klingt unnatürlich). Daher löst man „Nuntius venturus gaudet“ im Deutschen auf als „Der Bote freut sich, weil/dass er bald kommen wird“ oder „Der Bote, der im Begriff ist zu kommen, freut sich“.",
+				"criteria": [
+					"Der Unterschied zwischen lateinischem und deutschem Partizipialsystem ist benannt.",
+					"Der Beispielsatz ist treffend und natürlich aufgelöst.",
+					"Das aktive und nachzeitige Verhältnis ist gewahrt."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "pfa",
+			"goals": [
+				{
+					"label": "PFA-Signalinfix vom PPP unterscheiden",
+					"before": "missus (PPP) → PFA (m.):",
+					"after": "",
+					"options": ["missurus", "mittens", "missus esse"],
+					"answer": "missurus",
+					"explanation": "-urus ersetzt -us und bildet das Partizip Futur Aktiv."
+				},
+				{
+					"label": "Infinitiv Futur Aktiv von esse wählen",
+					"before": "Inf. Fut. Akt. zu esse →",
+					"after": "",
+					"options": ["futurum esse (oder fore)", "fuisse", "esse"],
+					"answer": "futurum esse (oder fore)",
+					"explanation": "futurus + esse (oder Kurzform fore) bildet den Infinitiv Futur zu esse."
+				},
+				{
+					"label": "PFA mit esse als Absicht deuten",
+					"before": "Scripturi sumus →",
+					"after": "",
+					"options": [
+						"wir wollen / sind im Begriff zu schreiben",
+						"wir haben geschrieben",
+						"wir müssen geschrieben werden"
+					],
+					"answer": "wir wollen / sind im Begriff zu schreiben",
+					"explanation": "PFA + esse drückt eine unmittelbar bevorstehende Handlung oder Absicht aus."
+				}
+			]
+		}
+	},
+	{
+		"id": "l7-aci-pc-nachzeitig",
+		"stage": "verben",
+		"title": "Nachzeitigkeit im AcI & im Participium coniunctum",
+		"skill": "Nachzeitigen AcI (mit Infinitiv Futur Aktiv) und nachzeitiges PC (mit PFA) erkennen und übersetzen",
+		"bindings": ["L7-19", "L7-20", "L7-22"],
+		"paragraphs": [
+			"Im AcI kennst du aus Klasse 6 bereits Gleichzeitigkeit (Infinitiv Präsens) und Vorzeitigkeit (Infinitiv Perfekt). Tritt ein Verb des Hoffens, Versprechens oder Erwartens auf (sperare, polliceri, promittere, exspectare), folgt häufig der Infinitiv Futur Aktiv: „Spero amicum venturum esse“ = „Ich hoffe, dass der Freund kommen wird“. Hängt der AcI von einem Vergangenheitstempus ab („Sperabam amicum venturum esse“), weicht das Deutsche auf „kommen werde“ oder „kommen würde“ aus.",
+			"Auch beim Participium coniunctum (PC) tritt in Klasse 7 das PFA als dritte Zeitstufe neben PPA (gleichzeitig) und PPP (vorzeitig): Es steht KNG-kongruent bei einem Bezugswort im Satz und gibt einen Zweck, eine Absicht oder eine bevorstehende Folge an: „Legati pacem petituri Romam venerunt“ = „Die Gesandten kamen nach Rom, um um Frieden zu bitten“ (final) oder „da sie um Frieden bitten wollten“."
+		],
+		"materialLabel": "Nachzeitige AcI- und PC-Sätze im Vergleich",
+		"materialLanguage": "la",
+		"material": "Dux sperabat milites fortiter pugnaturos esse.\nLegati cum hostibus acturi ad castra profecti sunt.\nPater filium litteras scripturum esse putat.",
+		"sourceIds": ["lp"],
+		"diagram": {
+			"kind": "morph-lab",
+			"title": "Nachzeitigkeit in AcI und PC",
+			"caption": "Beide Konstruktionen schauen vom übergeordneten Verb aus in die Zukunft.",
+			"parts": [
+				{
+					"id": "nz-aci",
+					"label": "1 · Nachzeitiger AcI",
+					"badge": "sperare + -urum esse",
+					"latin": "sperat se victurum esse",
+					"detail": "Das Geschehen im AcI folgt zeitlich erst nach dem Kopfverb. Übersetze nach Präsens mit „wird“, nach Vergangenheit mit „werde / würde“."
+				},
+				{
+					"id": "nz-pc",
+					"label": "2 · PC mit PFA",
+					"badge": "Absicht / Zweck (final)",
+					"latin": "acturi profecti sunt",
+					"detail": "Das PFA in KNG-Kongruenz zum Subjekt oder Objekt beschreibt ein Vorhaben: „um zu …“ oder „weil sie … wollten“."
+				},
+				{
+					"id": "nz-kng",
+					"label": "3 · Endungsprobe (KNG)",
+					"badge": "esse vs. ohne esse",
+					"latin": "milites pugnaturos esse",
+					"detail": "Im AcI steht das PFA im Akkusativ bei esse; als PC steht es ohne esse in genau demselben Kasus wie sein Bezugswort."
+				}
+			]
+		},
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Welcher Nebensatz passt am besten zu dem PC mit PFA in „Legati cum hostibus acturi ad castra profecti sunt“?",
+			"answer": "um mit den Feinden zu verhandeln (final / Absicht)",
+			"wrong": [
+				"nachdem sie mit den Feinden verhandelt hatten",
+				"obwohl sie mit den Feinden verhandelt wurden"
+			],
+			"explanation": "Ein PC mit dem Partizip Futur Aktiv (acturi) drückt eine Absicht oder ein bevorstehendes Ziel aus („um zu …“)."
+		},
+		"takeaway": "Im AcI drückt Infinitiv Futur Aktiv (-urum esse) Nachzeitigkeit aus; als PC drückt das PFA ohne esse eine Absicht („um zu …“) aus.",
+		"practice": [
+			{
+				"prompt": "Übersetze den AcI-Teil in „Dux sperabat milites fortiter pugnaturos esse“ („dass die Soldaten tapfer …“):",
+				"answers": ["kämpfen würden", "kämpfen werden"],
+				"feedback": "Nach dem Imperfekt sperabat drückt pugnaturos esse die Nachzeitigkeit aus („kämpfen würden / kämpfen werden“)."
+			},
+			{
+				"prompt": "In welchem Kasus, Numerus und Genus steht „acturi“ in Satz 2 (Bezug: Legati)?",
+				"answers": ["Nominativ Plural Maskulinum", "Nom. Pl. m.", "Nominativ Pl. Mask."],
+				"feedback": "acturi stimmt in KNG mit dem Subjekt legati überein: Nominativ Plural Maskulinum."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "de",
+				"prompt": "Übersetze alle drei Sätze des Materials und markiere bei jedem Satz, ob ein nachzeitiger AcI oder ein nachzeitiges PC vorliegt.",
+				"model": "1. Der Anführer hoffte, dass die Soldaten tapfer kämpfen würden. (nachzeitiger AcI: milites … pugnaturos esse).\n2. Die Gesandten brachen zum Lager auf, um mit den Feinden zu verhandeln. (nachzeitiges PC mit PFA: acturi bezogen auf legati).\n3. Der Vater glaubt, dass der Sohn einen Brief schreiben wird. (nachzeitiger AcI: filium … scripturum esse).",
+				"criteria": [
+					"Alle drei Sätze sind präzise übersetzt.",
+					"AcI und PC sind bei jedem Satz korrekt bestimmt.",
+					"Die jeweilige Nachzeitigkeit ist im Deutschen sauber ausgedrückt."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Vergleiche „Video amicum venisse“ und „Spero amicum venturum esse“: Welche Zeitverhältnisse liegen jeweils vor und warum passt „spero“ besonders zum Infinitiv Futur?",
+				"model": "In „Video amicum venisse“ liegt Vorzeitigkeit vor („Ich sehe, dass der Freund gekommen ist“). In „Spero amicum venturum esse“ liegt Nachzeitigkeit vor („Ich hoffe, dass der Freund kommen wird“). Hoffnung richtet sich auf die Zukunft, daher verbindet sich sperare regelmäßig mit dem Infinitiv Futur Aktiv.",
+				"criteria": [
+					"Vorzeitigkeit (Inf. Perf.) und Nachzeitigkeit (Inf. Fut.) sind korrekt gegenübergestellt.",
+					"Beide Beispielsätze sind richtig übersetzt.",
+					"Der inhaltliche Zusammenhang zu Verben des Hoffens/Versprechens ist erklärt."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "future-clauses",
+			"goals": [
+				{
+					"label": "Passenden Infinitiv nach polliceri wählen",
+					"before": "Dux pollicetur se cives …",
+					"after": "(Nachzeitigkeit)",
+					"options": ["defensurum esse", "defendisse", "defendi"],
+					"answer": "defensurum esse",
+					"explanation": "Nach Versprechensverben wie polliceri steht für das Künftige der Infinitiv Futur Aktiv."
+				},
+				{
+					"label": "KNG-Anpassung im Plural Maskulinum beachten",
+					"before": "Spero pueros libros …",
+					"after": "(legere, PPP lectus)",
+					"options": ["lecturos esse", "lecturum esse", "lecturi esse"],
+					"answer": "lecturos esse",
+					"explanation": "Der Subjektsakkusativ pueros verlangt das PFA im Akkusativ Plural Maskulinum: lecturos esse."
+				},
+				{
+					"label": "PC mit PFA sinnvoll auflösen",
+					"before": "Cives urbem servaturi arma ceperunt →",
+					"after": "",
+					"options": [
+						"um die Stadt zu retten",
+						"nachdem die Stadt gerettet worden war",
+						"obwohl die Stadt gerettet wurde"
+					],
+					"answer": "um die Stadt zu retten",
+					"explanation": "Das PFA als PC bezeichnet ein Ziel bzw. eine Absicht."
+				}
+			]
+		}
+	},
+	{
+		"id": "l7-gerund-nd",
+		"stage": "verben",
+		"title": "Das Gerund (-nd-): Das Verb als Substantiv",
+		"skill": "Das Infix -nd- im Gerund erkennen, seine Kasusfunktionen (bes. Genitiv, ad + Akk., Ablativ) übersetzen und vom PFA abgrenzen",
+		"bindings": ["L7-14", "L7-16", "L7-17"],
+		"paragraphs": [
+			"Möchte das Lateinische eine Tätigkeit wie „das Lesen“, „des Schreibens“ oder „durch Lernen“ in einen Kasus außerhalb des Nominativs setzen, nutzt es das Gerund (Gerundium). Es ist ein deklinierbares Verbalsubstantiv im Neutrum Singular und trägt zwischen Präsensstamm und Kasusendung das unverwechselbare Infix -nd- (Genitiv -ndi, Dativ -ndo, Akkusativ nach Präposition -ndum, Ablativ -ndo). Einen Nominativ bildet das Gerund nicht — dafür steht der Infinitiv („Errare humanum est“).",
+			"Sehr häufig stehen drei Verwendungen: Genitiv nach Substantiven oder causa („ars dicendi“ = die Kunst des Redens; „discendi causa“ = um zu lernen), ad + Akkusativ zum Ausdruck eines Zwecks („ad pugnandum“ = zum Kämpfen / um zu kämpfen) und der bloße Ablativ als Mittel („legendo“ = durch Lesen). Wichtig für die Abgrenzung: Das Gerund hat niemals ein kongruentes Bezugssubstantiv bei sich; das kongruente Gerundiv folgt erst in Klasse 8!"
+		],
+		"materialLabel": "Das Gerund in Genitiv, Akkusativ mit ad und Ablativ",
+		"materialLanguage": "la",
+		"material": "Discendo multas res novas cognoscimus.\nCicero artem dicendi diligenter exercebat.\nMilites ad pugnandum parati erant et vincendi causa fortiter laborabant.",
+		"sourceIds": ["lp"],
+		"diagram": {
+			"kind": "morph-lab",
+			"title": "Signal -nd- im Gerund und seine drei Hauptkasus",
+			"caption": "Immer Neutrum Singular ohne KNG-Partner; im Nominativ springt der Infinitiv ein.",
+			"parts": [
+				{
+					"id": "ge-gen",
+					"label": "1 · Genitiv (-ndi)",
+					"badge": "nach Substantiv / causa",
+					"latin": "ars dicendi · discendi causa",
+					"detail": "Nach Substantiven („die Kunst zu reden / des Redens“) oder vor nachgestelltem causa („um zu lernen“)."
+				},
+				{
+					"id": "ge-akk",
+					"label": "2 · Akkusativ (ad -ndum)",
+					"badge": "Zweck / Ziel",
+					"latin": "ad pugnandum paratus",
+					"detail": "Mit ad gibt das Gerund Ziel oder Zweck an: „bereit zum Kämpfen / um zu kämpfen“."
+				},
+				{
+					"id": "ge-abl",
+					"label": "3 · Ablativ (-ndo)",
+					"badge": "Mittel / Art",
+					"latin": "discendo = durch Lernen",
+					"detail": "Der Ablativus instrumenti ohne Präposition erklärt das Mittel („durch das …“ / „indem man …“)."
+				}
+			]
+		},
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Wie übersetzt man „vincendi causa“ in Satz 3 treffend ins Deutsche?",
+			"answer": "um zu siegen (des Siegens wegen)",
+			"wrong": ["aus Angst vor dem Sieg", "weil sie besiegt worden waren"],
+			"explanation": "Nachgestelltes causa + Genitiv des Gerunds drückt ein Ziel oder eine Absicht aus („um zu …“)."
+		},
+		"takeaway": "Das Infix -nd- ohne KNG-Bezugswort bildet das Gerund (Substantivierung des Verbs im Genitiv, Dativ, ad + Akkusativ oder Ablativ).",
+		"practice": [
+			{
+				"prompt": "Welcher Wortbestandteil kennzeichnet das Gerund in „discendo“ und „dicendi“?",
+				"answers": ["-nd-", "nd"],
+				"feedback": "Das Infix -nd- zwischen Verbstamm und Kasusendung ist das Signal der nd-Formen."
+			},
+			{
+				"prompt": "Welcher Kasus liegt in „ad pugnandum“ vor?",
+				"answers": ["Akkusativ", "Akkusativ Singular"],
+				"feedback": "Die Präposition ad verlangt den Akkusativ Singular Neutrum auf -ndum."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "de",
+				"prompt": "Übersetze alle drei Sätze des Materials und bestimme die genaue Kasusfunktion von „Discendo“, „dicendi“ und „ad pugnandum“.",
+				"model": "1. Durch Lernen erkennen wir viele neue Dinge. (Discendo: Abl. Sg. des Mittels).\n2. Cicero übte die Kunst des Redens (zu reden) sorgfältig. (dicendi: Gen. Sg. als Attribut zu artem).\n3. Die Soldaten waren zum Kämpfen bereit und mühten sich tapfer ab, um zu siegen. (ad pugnandum: ad + Akk. Sg. zum Ausdruck des Zwecks).",
+				"criteria": [
+					"Alle drei Sätze sind korrekt ins Deutsche übertragen.",
+					"Alle drei Kasusfunktionen (Ablativ des Mittels, Genitivattribut, Zweck mit ad) sind richtig benannt.",
+					"vincendi causa ist final übersetzt."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Wie grenzt du „pugnaturus“ (PFA) und „pugnandum“ (Gerund) sowohl an ihrer Form als auch an ihrer Funktion im Satz voneinander ab?",
+				"model": "pugnaturus trägt das Infix -ur- (vom PPP-Stamm), ist ein KNG-kongruentes Partizip (Adjektiv) und drückt eine aktive Absicht einer Person aus („im Begriff zu kämpfen“). pugnandum trägt das Infix -nd- (vom Präsensstamm), ist ein substantiviertes Neutrum Singular und nennt die Tätigkeit selbst („das Kämpfen / zum Kämpfen“).",
+				"criteria": [
+					"Die Infixe -ur- und -nd- sowie die unterschiedlichen Stämme sind genannt.",
+					"Adjektivische KNG-Kongruenz vs. substantivisches Neutrum Singular sind unterschieden.",
+					"Beide Funktionen sind richtig beschrieben."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "gerund",
+			"goals": [
+				{
+					"label": "Mittel durch Ablativ des Gerunds ausdrücken",
+					"before": "Durch Lesen lernt man viel →",
+					"after": "",
+					"options": ["legendo", "lecturus", "legere"],
+					"answer": "legendo",
+					"explanation": "Ablativ Singular auf -ndo ohne Präposition bezeichnet das Mittel."
+				},
+				{
+					"label": "Genitiv nach ars / tempus wählen",
+					"before": "tempus … (Zeit zu schreiben) →",
+					"after": "",
+					"options": ["scribendi", "scribendum", "scribendo"],
+					"answer": "scribendi",
+					"explanation": "Nach Substantiven wie tempus oder ars steht der Genitiv auf -ndi."
+				},
+				{
+					"label": "Zweck mit ad + Gerund bilden",
+					"before": "ad … (zum Helfen) →",
+					"after": "",
+					"options": ["adiuvandum", "adiuvandi", "adiuvaturus"],
+					"answer": "adiuvandum",
+					"explanation": "Die Präposition ad regiert den Akkusativ auf -ndum."
+				}
+			]
+		}
+	}
+]

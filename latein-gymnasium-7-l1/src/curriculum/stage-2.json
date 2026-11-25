@@ -1,0 +1,461 @@
+[
+	{
+		"id": "l7-dritte-deklination",
+		"stage": "nomina",
+		"title": "3. Deklination: Konsonantisch, i- & Mischstämme",
+		"skill": "Weitere Substantive der 3. Deklination sicher nach Genitivstamm, Genus und Endung bestimmen",
+		"bindings": ["L7-15", "L7-16", "L7-18"],
+		"paragraphs": [
+			"In der 3. Deklination verrät erst der Genitiv Singular den echten Wortstamm: aus rex wird reg-is, aus tempus tempor-is, aus iter itiner-is. Darum lernst du jedes Substantiv immer mit Nominativ, Genitiv und Genus.",
+			"Besondere Aufmerksamkeit verdienen die reinen i-Stämme (wie mare, maris n. mit Ablativ Singular -i, Nominativ/Akkusativ Plural -ia und Genitiv Plural -ium) sowie die Mischstämme (wie urbs, urbis f. oder mons, montis m., die im Genitiv Plural -ium bilden, obwohl der Ablativ Singular auf -e endet)."
+		],
+		"materialLabel": "Substantive der 3. Deklination im Satzkontext",
+		"materialLanguage": "la",
+		"material": "Multae naves ex mari alto ad litus accesserunt.\nCives urbium magnarum pacem cum hostibus fecerunt.\nItinera longa per montes altos milites non terruerunt.",
+		"sourceIds": ["lp"],
+		"diagram": {
+			"kind": "morph-lab",
+			"title": "Die drei Gruppen der 3. Deklination",
+			"caption": "Konsonantische Stämme, Mischstämme und i-Stämme unterscheiden sich an genau drei Signalstellen.",
+			"parts": [
+				{
+					"id": "d3-kons",
+					"label": "1 · Konsonantisch",
+					"badge": "rex, regis",
+					"latin": "rege · reges · regum",
+					"detail": "Abl. Sg. -e, Gen. Pl. -um, Neutrum Pl. -a (z. B. tempora). Ungleichsilbigkeit ohne Doppelkonsonant am Stammende."
+				},
+				{
+					"id": "d3-misch",
+					"label": "2 · Mischstämme",
+					"badge": "urbs · mons · navis",
+					"latin": "urbe · urbes · urbium",
+					"detail": "Abl. Sg. meist -e, aber Gen. Pl. auf -ium (z. B. urbium, montium, civium — gleichsilbige auf -is/-es oder Stamm auf zwei Konsonanten)."
+				},
+				{
+					"id": "d3-i",
+					"label": "3 · Neutra auf -e/-al/-ar",
+					"badge": "mare · animal",
+					"latin": "mari · maria · marium",
+					"detail": "Reine i-Stämme im Neutrum bilden Abl. Sg. -i (ex mari), Nom./Akk. Pl. -ia (maria) und Gen. Pl. -ium (marium)."
+				}
+			]
+		},
+		"quiz": {
+			"optionLanguage": "la",
+			"question": "Wie lautet der Genitiv Plural von urbs, urbis f.?",
+			"answer": "urbium",
+			"wrong": ["urbum", "urbiorum"],
+			"explanation": "urbs gehört als Stamm auf zwei Konsonanten (-rb-) zu den Mischstämmen und bildet den Genitiv Plural auf -ium."
+		},
+		"takeaway": "Der Genitiv Singular liefert den Stamm der 3. Deklination; achte bei i- und Mischstämmen besonders auf -ium und bei Neutra auf -e/-al/-ar auf -i und -ia.",
+		"practice": [
+			{
+				"prompt": "Wie lautet der Genitiv Singular von „iter, …“ (der Weg/Marsch)?",
+				"answers": ["itineris"],
+				"feedback": "Der Stamm von iter erweitert sich zu itiner-, also lautet der Genitiv Singular itineris."
+			},
+			{
+				"prompt": "Welcher Kasus und Numerus ist „mari“ in „ex mari alto“?",
+				"answers": ["Ablativ Singular", "Abl. Sg.", "Ablativ Sg."],
+				"feedback": "Die Präposition ex verlangt den Ablativ; mare als i-Stamm bildet den Ablativ Singular auf -i."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "de",
+				"prompt": "Übersetze alle drei Sätze des Materials und bestimme für „mari“, „urbium“ und „itinera“ jeweils Kasus, Numerus und Genus.",
+				"model": "1. Viele Schiffe näherten sich vom hohen Meer dem Ufer.\n2. Die Bürger der großen Städte schlossen Frieden mit den Feinden.\n3. Lange Märsche durch hohe Berge schreckten die Soldaten nicht ab.\nBestimmung: mari (Abl. Sg. n.), urbium (Gen. Pl. f.), itinera (Nom. Pl. n.).",
+				"criteria": [
+					"Alle drei Sätze sind sprachlich richtig übersetzt.",
+					"Alle drei Substantive sind mit Kasus, Numerus und Genus korrekt bestimmt.",
+					"Die -i- bzw. -ium-Endungen sind als Besonderheiten berücksichtigt."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Erkläre an „nox, noctis“, „nomen, nominis“ und „animal, animalis“, woran du den richtigen Genitiv Plural (-um oder -ium) erkennst, und bilde alle drei Formen.",
+				"model": "nox, noctis (Stamm noct- auf zwei Konsonanten → Mischstamm) bildet noctium; nomen, nominis (Stamm nomin- auf einen Konsonanten) bildet nominum; animal, animalis (Neutrum auf -al → reiner i-Stamm) bildet animalium.",
+				"criteria": [
+					"Die drei Genitiv-Plural-Formen noctium, nominum und animalium sind korrekt gebildet.",
+					"Die Unterscheidungsregel (Doppelkonsonant / -al / einzelner Konsonant) ist zutreffend erklärt.",
+					"Die Fachbegriffe Stamm und Endung sind sauber verwendet."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "declension3",
+			"goals": [
+				{
+					"label": "Stamm aus dem Genitiv ablesen",
+					"before": "iter, itineris → Akk. Pl.",
+					"after": "(Neutrum)",
+					"options": ["itinera", "itera", "itineres"],
+					"answer": "itinera",
+					"explanation": "Aus dem Stamm itiner- + Neutrum-Plural-Endung -a entsteht itinera."
+				},
+				{
+					"label": "Mischstamm-Genitiv-Plural wählen",
+					"before": "urbs, urbis → Gen. Pl.",
+					"after": "",
+					"options": ["urbium", "urbum", "urbarum"],
+					"answer": "urbium",
+					"explanation": "Stämme auf zwei Konsonanten vor der Endung bilden den Genitiv Plural auf -ium."
+				},
+				{
+					"label": "Reinen i-Stamm im Ablativ bestimmen",
+					"before": "in + mare, maris →",
+					"after": "",
+					"options": ["in mari", "in mare", "in maro"],
+					"answer": "in mari",
+					"explanation": "Neutra auf -e/-al/-ar haben im Ablativ Singular die Endung -i."
+				}
+			]
+		}
+	},
+	{
+		"id": "l7-steigerung-adjektive",
+		"stage": "nomina",
+		"title": "Steigerung der Adjektive & Ablativ des Vergleichs",
+		"skill": "Komparativ, Superlativ, unregelmäßige Steigerung und den Ablativus comparationis erkennen und übersetzen",
+		"bindings": ["L7-14", "L7-16", "L7-18", "L7-19"],
+		"paragraphs": [
+			"Adjektive steigern ihren Stamm im Komparativ meist mit -ior (m./f.) und -ius (n.), Genitiv -ioris, und werden wie konsonantische Stämme der 3. Deklination flektiert. Der Superlativ hängt meist -issimus, -issima, -issimum an (bei Adjektiven auf -er hingegen -rimus wie pulcherrimus, bei sechs auf -ilis wie facilis folgt -limus: facillimus) und folgt der a-/o-Deklination. Wichtige unregelmäßige Reihen sind bonus – melior – optimus, malus – peior – pessimus, magnus – maior – maximus, parvus – minor – minimus und multi – plures – plurimi.",
+			"Beim Vergleich gibt es neben quam („als“) mit gleichem Kasus den Ablativ des Vergleichs (Ablativus comparationis): „Nihil est patria carius“ heißt „Nichts ist teurer als das Vaterland“. Steht ein Komparativ oder Superlativ ohne Vergleichsglied, übersetzt du ihn oft als Elativ: „ziemlich / allzu …“ bzw. „sehr …“."
+		],
+		"materialLabel": "Vergleichssätze und unregelmäßige Steigerungsformen",
+		"materialLanguage": "la",
+		"material": "Nihil est libertate dulcius, nihil servitute miserius.\nCicero orator optimus, Caesar imperator clarissimus erat.\nIter per Alpes difficillimum, sed brevissimum erat.\nConsilium tuum melius est quam consilium fratris.",
+		"sourceIds": ["lp"],
+		"diagram": {
+			"kind": "morph-lab",
+			"title": "Steigerungsstufen und Vergleichsbau",
+			"caption": "Regelmäßige Suffixe, Sonderformen und der Ablativus comparationis im Überblick.",
+			"parts": [
+				{
+					"id": "st-komp",
+					"label": "1 · Komparativ",
+					"badge": "-ior / -ius",
+					"latin": "clarior, clarius",
+					"detail": "Konsonantische 3. Deklination (Abl. -e, Gen. Pl. -um). Alleinstehend auch „ziemlich / eher / zu …“."
+				},
+				{
+					"id": "st-sup",
+					"label": "2 · Superlativ",
+					"badge": "-issimus / -rimus / -limus",
+					"latin": "pulcherrimus · facillimus",
+					"detail": "Dekliniert wie bonus, -a, -um. Alleinstehend als Elativ: „sehr / äußerst …“."
+				},
+				{
+					"id": "st-abl",
+					"label": "3 · Abl. des Vergleichs",
+					"badge": "ohne quam",
+					"latin": "libertate dulcius",
+					"detail": "Nach einem Komparativ ersetzt der bloße Ablativ „quam + Nominativ/Akkusativ“: „süßer als die Freiheit“."
+				}
+			]
+		},
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Wie übersetzt man den Ablativ „servitute“ in „Nihil est servitute miserius“?",
+			"answer": "als die Sklaverei / Knechtschaft",
+			"wrong": ["durch die Sklaverei", "aus der Sklaverei"],
+			"explanation": "Nach dem Komparativ miserius steht servitute im Ablativus comparationis und ersetzt „quam servitus“."
+		},
+		"takeaway": "Komparative auf -ior/-ius gehören zur konsonantischen 3. Deklination; ein Ablativ direkt beim Komparativ drückt „als …“ aus.",
+		"practice": [
+			{
+				"prompt": "Wie lautet der Superlativ (Mask. Nom. Sg.) zu „magnus“?",
+				"answers": ["maximus"],
+				"feedback": "Die unregelmäßige Reihe lautet magnus – maior – maximus."
+			},
+			{
+				"prompt": "Wie lautet der Komparativ (Neutrum Nom./Akk. Sg.) zu „bonus“?",
+				"answers": ["melius"],
+				"feedback": "Der Komparativ zu bonus lautet melior (m./f.), melius (n.)."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "de",
+				"prompt": "Übersetze alle vier Sätze des Materials ins Deutsche und kennzeichne die beiden unterschiedlichen Vergleichskonstruktionen in Satz 1 und Satz 4.",
+				"model": "1. Nichts ist süßer als die Freiheit, nichts elender als die Sklaverei. (Ablativ des Vergleichs: libertate, servitute).\n2. Cicero war ein sehr guter/der beste Redner, Caesar ein sehr berühmter/der berühmteste Feldherr.\n3. Der Weg über die Alpen war äußerst schwierig, aber sehr kurz.\n4. Dein Rat ist besser als der Rat des Bruders. (Vergleich mit quam + Nominativ).",
+				"criteria": [
+					"Alle vier Sätze sind korrekt übersetzt.",
+					"Ablativ des Vergleichs in Satz 1 und quam-Vergleich in Satz 4 sind klar unterschieden.",
+					"Elativ oder Superlativ in Satz 2 und 3 sind sinnvoll wiedergegeben."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Forme „Roma maior est quam Athenae“ in einen Satz mit Ablativ des Vergleichs um (Athenae, -arum Pl.) und erkläre, warum in Satz 2 der Superlativ auch elativisch übersetzt werden kann.",
+				"model": "Umformung: Roma Athenis maior est. (Athenae steht im Ablativ Plural Athenis).\nErklärung: Fehlt ein ausdrücklicher Vergleichsmaßstab („aller“), drückt der lateinische Superlativ oft einen sehr hohen Grad aus („sehr gut“, „höchst berühmt“).",
+				"criteria": [
+					"Der Ablativ Plural Athenis ist ohne quam richtig eingesetzt.",
+					"Die Wortstellung ist korrekt.",
+					"Die Funktion des Elativs ohne Vergleichsgruppe ist verständlich erklärt."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "comparison",
+			"goals": [
+				{
+					"label": "Unregelmäßige Steigerung von bonus einsetzen",
+					"before": "bonus → melior →",
+					"after": "",
+					"options": ["optimus", "bonissimus", "maximus"],
+					"answer": "optimus",
+					"explanation": "bonus steigert unregelmäßig: bonus – melior – optimus."
+				},
+				{
+					"label": "Superlativ auf -ilis richtig bilden",
+					"before": "difficilis → Superlativ (m.):",
+					"after": "",
+					"options": ["difficillimus", "difficilissimus", "difficilior"],
+					"answer": "difficillimus",
+					"explanation": "Adjektive auf -ilis (wie facilis, difficilis, similis) verdoppeln das l: -limus."
+				},
+				{
+					"label": "Ablativ des Vergleichs auflösen",
+					"before": "patria carius →",
+					"after": "",
+					"options": ["teurer als das Vaterland", "teurer durch das Vaterland", "im teureren Vaterland"],
+					"answer": "teurer als das Vaterland",
+					"explanation": "Der Ablativ nach dem Komparativ entspricht „als …“."
+				}
+			]
+		}
+	},
+	{
+		"id": "l7-adverbien-steigerung",
+		"stage": "nomina",
+		"title": "Adverbbildung & Steigerung der Adverbien",
+		"skill": "Adverbien der a-/o- und 3. Deklination bilden, steigern und im Deutschen stilistisch treffend wiedergeben",
+		"bindings": ["L7-16", "L7-18", "L7-23"],
+		"paragraphs": [
+			"Während Adjektive sich in KNG-Kongruenz auf ein Substantiv beziehen, bestimmen Adverbien ein Verb, ein Adjektiv oder einen ganzen Satz näher und werden nicht dekliniert. Adjektive der a-/o-Deklination bilden ihr Adverb regelmäßig mit -e (pulchre, libere), Adjektive der 3. Deklination meist mit -iter (fortiter, breviter; bei Stämmen auf -nt- nur -er: prudens → prudenter). Einzelformen wie bene (zu bonus) oder facile (zu facilis) lernst du fest dazu.",
+			"Im Komparativ entspricht das Adverb immer dem Akkusativ Singular Neutrum des Komparativ-Adjektivs auf -ius: fortius („tapferer“), melius („besser“), plus („mehr“). Im Superlativ tritt an den Superlativstamm wieder die Adverbendung -e: fortissime („sehr tapfer / am tapfersten“), optime („hervorragend / am besten“), quam celerrime („möglichst schnell“)."
+		],
+		"materialLabel": "Adverbien in verschiedenen Steigerungsstufen",
+		"materialLanguage": "la",
+		"material": "Milites fortiter pugnaverunt, sed duces prudentius consilium ceperunt.\nLegati quam celerrime Romam venerunt.\nCicero optime dixit; cives eum libenter audiverunt.",
+		"sourceIds": ["lp"],
+		"diagram": {
+			"kind": "morph-lab",
+			"title": "Vom Adjektiv zum gesteigerten Adverb",
+			"caption": "Drei einfache Endungsregeln verbinden Positiv, Komparativ und Superlativ der Adverbien.",
+			"parts": [
+				{
+					"id": "adv-pos",
+					"label": "1 · Positiv",
+					"badge": "-e / -(i)ter",
+					"latin": "clare · fortiter · prudenter",
+					"detail": "a-/o-Deklination: -e (clare); 3. Deklination: -iter (fortiter), nach -nt-: -er (prudenter). Sonderformen: bene, male, facile."
+				},
+				{
+					"id": "adv-komp",
+					"label": "2 · Komparativ",
+					"badge": "Endung -ius",
+					"latin": "fortius · melius · plus",
+					"detail": "Identisch mit dem Neutrum Singular des Adjektiv-Komparativs. Bezieht sich hier aber auf das Verb!"
+				},
+				{
+					"id": "adv-sup",
+					"label": "3 · Superlativ",
+					"badge": "Endung -e (auch quam …)",
+					"latin": "optime · quam celerrime",
+					"detail": "Superlativstamm + -e: fortissime („sehr tapfer“). Mit quam + Superlativ-Adverb: „möglichst …“."
+				}
+			]
+		},
+		"quiz": {
+			"optionLanguage": "la",
+			"question": "Wie lautet der Komparativ des Adverbs zu fortis (Adverb Positiv: fortiter)?",
+			"answer": "fortius",
+			"wrong": ["fortiterius", "fortiore"],
+			"explanation": "Der Komparativ des Adverbs endet immer auf -ius (gleich dem Neutrum Singular des Adjektiv-Komparativs)."
+		},
+		"takeaway": "Adverbien enden im Positiv auf -e oder -(i)ter, im Komparativ auf -ius und im Superlativ auf -issime/-rime/-lime.",
+		"practice": [
+			{
+				"prompt": "Bilde das Adverb im Positiv zu „prudens, prudentis“ (klug):",
+				"answers": ["prudenter"],
+				"feedback": "Adjektive der 3. Deklination auf -ns hängen nur -er an den Stamm: prudenter."
+			},
+			{
+				"prompt": "Wie übersetzt man „quam celerrime“ idiomatisch ins Deutsche?",
+				"answers": ["möglichst schnell", "so schnell wie möglich"],
+				"feedback": "quam vor einem Superlativ-Adverb bedeutet „möglichst … / so … wie möglich“."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "de",
+				"prompt": "Übersetze alle drei Sätze des Materials und unterscheide bei „fortiter“, „prudentius“ und „optime“ die jeweilige Steigerungsstufe.",
+				"model": "1. Die Soldaten kämpften tapfer, aber die Anführer fassten ihren Entschluss klüger (ziemlich klug).\n2. Die Gesandten kamen möglichst schnell nach Rom.\n3. Cicero sprach hervorragend (am besten); die Bürger hörten ihm gern zu.\nStufen: fortiter (Positiv), prudentius (Komparativ), optime (Superlativ).",
+				"criteria": [
+					"Alle drei Sätze sind idiomatisch übersetzt.",
+					"Alle drei Adverbien sind ihrer Steigerungsstufe richtig zugeordnet.",
+					"quam celerrime ist als „möglichst schnell“ wiedergegeben."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Warum unterscheidet das Lateinische „Consilium prudens cepit“ und „Prudenter egit“, während das Deutsche beides mit „klug“ übersetzen kann? Erkläre an diesem Beispiel.",
+				"model": "In „Consilium prudens cepit“ steht prudens als Adjektiv in KNG-Kongruenz zu consilium („einen klugen Entschluss“). In „Prudenter egit“ beschreibt prudenter die Art der Handlung egit („er handelte klug“) und bleibt deshalb unveränderliches Adverb.",
+				"criteria": [
+					"Bezugswort (Substantiv vs. Verb) ist genau unterschieden.",
+					"KNG-Kongruenz vs. Unveränderlichkeit ist erklärt.",
+					"Beide deutschen Übersetzungen zeigen den grammatischen Unterschied."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "adverbs",
+			"goals": [
+				{
+					"label": "Adverb der 3. Deklination auf -nt- bilden",
+					"before": "sapiens, sapientis →",
+					"after": "",
+					"options": ["sapienter", "sapientiter", "sapiente"],
+					"answer": "sapienter",
+					"explanation": "Bei Stämmen auf -nt- entfällt -it-: sapienter."
+				},
+				{
+					"label": "Adverb-Komparativ von bonus wählen",
+					"before": "bene → Komparativ:",
+					"after": "",
+					"options": ["melius", "benius", "optimus"],
+					"answer": "melius",
+					"explanation": "Der Komparativ zu bene heißt melius („besser“)."
+				},
+				{
+					"label": "quam + Superlativ-Adverb deuten",
+					"before": "quam optime →",
+					"after": "",
+					"options": ["möglichst gut", "besser als", "nur ein wenig gut"],
+					"answer": "möglichst gut",
+					"explanation": "quam vor einem Superlativ steigert zu „möglichst …“."
+				}
+			]
+		}
+	},
+	{
+		"id": "l7-interrogativ-indefinit",
+		"stage": "nomina",
+		"title": "Interrogativ- & Indefinitpronomina",
+		"skill": "Substantivisches quis?/quid? von adjektivischem qui/quae/quod? sowie aliquis/aliqui unterscheiden",
+		"bindings": ["L7-15", "L7-16"],
+		"paragraphs": [
+			"Bei Fragewörtern unterscheidet Latein genau zwischen Alleinstellung und Begleitung eines Substantivs: Das substantivische Interrogativpronomen fragt ohne Bezugswort nach Personen oder Sachen: quis? („wer?“), quid? („was?“), cuius? („wessen?“), cui? („wem?“), quem?/quid? („wen?/was?“), quo?/qua re? („wodurch?“). Das adjektivische Interrogativpronomen („welcher / welche / welches?“) lautet qui, quae, quod und richtet sich in KNG nach seinem Substantiv — genauso wie das Relativpronomen.",
+			"Auch das Indefinitpronomen für „irgendein / jemand“ kennt diese Zweiteilung: aliquis, aliquid steht allein als Substantiv („jemand / etwas“), aliqui, aliqua, aliquod begleitet ein Substantiv („irgendein …“). Nach den Wörtern si, nisi, ne und num fällt das vorangestellte ali- weg: „si quis“ heißt „wenn jemand“, „ne quid“ bedeutet „damit nicht etwas“."
+		],
+		"materialLabel": "Fragesätze und Indefinitpronomina im Vergleich",
+		"materialLanguage": "la",
+		"material": "Quis hoc consilium cepit? Quod consilium senatores probarunt?\nSi quis patriae prodesse vult, legibus pareat!\nAliquis ad portam stat; aliquod periculum timet.",
+		"sourceIds": ["lp"],
+		"diagram": {
+			"kind": "morph-lab",
+			"title": "Substantivisch vs. adjektivisch bei Frage & Indefinit",
+			"caption": "Allein stehend (quis / aliquis) gegen KNG-Begleiter eines Substantivs (qui / aliqui).",
+			"parts": [
+				{
+					"id": "pr-subst",
+					"label": "1 · Substantivisch",
+					"badge": "quis? · quid? · aliquis",
+					"latin": "Quid vides? · Aliquis venit.",
+					"detail": "Steht allein für eine Person oder Sache. Achte auf das Neutrum auf -d: quid? und aliquid."
+				},
+				{
+					"id": "pr-adj",
+					"label": "2 · Adjektivisch",
+					"badge": "qui? · quod? · aliqui",
+					"latin": "Quod bellum? · Aliqua urbs",
+					"detail": "Begleitet ein Substantiv in KNG-Kongruenz. Neutrum heißt quod? und aliquod."
+				},
+				{
+					"id": "pr-si",
+					"label": "3 · Kurzform nach si/ne",
+					"badge": "Nach si, nisi, ne, num",
+					"latin": "si quis = wenn jemand",
+					"detail": "Nach diesen vier Signalwörtern schrumpft aliquis zu quis / quid / qua: „si quid“ = wenn etwas."
+				}
+			]
+		},
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Woran erkennst du, dass „Quod consilium senatores probarunt?“ ein adjektivisches Fragepronomen enthält?",
+			"answer": "quod steht in KNG-Kongruenz direkt beim Substantiv consilium („Welchen Plan …?“)",
+			"wrong": [
+				"quod leitet hier einen kausalen Nebensatz mit „weil“ ein",
+				"quod fragt allein ohne Bezugswort nach einer Person"
+			],
+			"explanation": "Steht am Satzanfang einer direkten Frage quod neben einem Neutrum-Substantiv (consilium), ist es das adjektivische Interrogativpronomen („welcher?“)."
+		},
+		"takeaway": "quis/quid und aliquis/aliquid stehen allein; qui/quae/quod und aliqui/aliqua/aliquod begleiten ein Substantiv in KNG — nach si, nisi, ne, num fällt ali- weg.",
+		"practice": [
+			{
+				"prompt": "Ergänze das passende Fragepronomen (substantivisch): „… hoc fecit?“ („Wer hat das getan?“)",
+				"answers": ["quis"],
+				"feedback": "Für die Frage nach einer Person ohne Substantiv steht quis."
+			},
+			{
+				"prompt": "Wie übersetzt man „si quis“ in „Si quis patriae prodesse vult“?",
+				"answers": ["wenn jemand", "falls jemand"],
+				"feedback": "Nach si steht quis als verkürztes Indefinitpronomen für aliquis („wenn jemand“)."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "de",
+				"prompt": "Übersetze alle drei Zeilen des Materials und benenne für quis, Quod, si quis, Aliquis und aliquod jeweils die Pronomenart.",
+				"model": "Wer hat diesen Plan gefasst? Welchen Plan haben die Senatoren gebilligt?\nWenn jemand dem Vaterland nützen will, soll er den Gesetzen gehorchen!\nJemand steht am Tor; er fürchtet irgendeine Gefahr.\nBestimmung: quis (substantivisches Interrogativpronomen), Quod (adjektivisches Interrogativpronomen), si quis (verkürztes Indefinitpronomen nach si), Aliquis (substantivisches Indefinitpronomen), aliquod (adjektivisches Indefinitpronomen).",
+				"criteria": [
+					"Alle vier Sätze sind korrekt ins Deutsche übersetzt.",
+					"Substantivische und adjektivische Formen sind genau unterschieden.",
+					"si quis ist als Indefinitpronomen (nicht als Frage) erkannt."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Erkläre den Unterschied zwischen „Quid novi audivisti?“ und „Quod novum consilium audivisti?“ sowie zwischen „ne quid dicat“ und „ne aliquid dicat“.",
+				"model": "In „Quid novi“ steht quid substantivisch („Was an Neuem / Was Neues?“); in „Quod novum consilium“ kongruiert quod adjektivisch mit consilium („Welchen neuen Plan?“).\nNach ne fällt bei aliquis das ali- ab: richtiges Latein setzt „ne quid dicat“ („damit er nichts sagt / nicht etwas sagt“), nicht „ne aliquid“.",
+				"criteria": [
+					"Der Unterschied zwischen quid + Genitiv und quod + KNG-Substantiv ist erklärt.",
+					"Die Merkregel für si, nisi, ne, num ist korrekt angewendet.",
+					"Beide Übersetzungen sind stimmig."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "pronouns",
+			"goals": [
+				{
+					"label": "Adjektivisches Interrogativpronomen zu templum wählen",
+					"before": "… templum spectas? (Welchen Tempel?)",
+					"after": "",
+					"options": ["quod", "quid", "quis"],
+					"answer": "quod",
+					"explanation": "templum ist Neutrum Singular; das adjektivische Fragepronomen lautet quod."
+				},
+				{
+					"label": "Substantivisches Indefinitpronomen im Neutrum einsetzen",
+					"before": "… novi narrabo. (Ich werde etwas Neues erzählen.)",
+					"after": "",
+					"options": ["aliquid", "aliquod", "aliqua"],
+					"answer": "aliquid",
+					"explanation": "Ohne kongruentes Substantiv steht das substantivische aliquid."
+				},
+				{
+					"label": "Verkürzte Form nach nisi erkennen",
+					"before": "nisi … venit →",
+					"after": "",
+					"options": ["nisi quis (wenn nicht jemand)", "nisi quod (wenn nicht welcher)", "nisi cuius (wenn nicht wessen)"],
+					"answer": "nisi quis (wenn nicht jemand)",
+					"explanation": "Nach nisi entfällt ali-, sodass aus aliquis die Form quis wird."
+				}
+			]
+		}
+	}
+]
