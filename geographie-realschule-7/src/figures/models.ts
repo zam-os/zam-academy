@@ -495,18 +495,24 @@ export function processFigure(title: string, names: readonly string[], subtitle:
   return svg(580, 160, title, label(290, 24, title, "lbl strong") + body);
 }
 
-export function plateProfile(motion: "apart" | "under" | "past"): string {
+/**
+ * Plate cross-sections. `eastward` mirrors the subduction drawing so the ocean
+ * plate comes from the right (east), as off Japan; labels stay readable.
+ */
+export function plateProfile(motion: "apart" | "under" | "past", eastward = false): string {
   const titles = { apart: "Platten driften auseinander", under: "Eine Platte taucht ab", past: "Platten gleiten seitlich vorbei" };
+  const mx = (x: number) => (eastward ? 580 - x : x);
   const body = {
     apart: `<path class="geo-plate" d="M20 95H222L265 130L222 146H20Z M560 95H358L315 130L358 146H560Z"/>
       <path class="geo-magma" d="M265 151L290 94L315 151Z"/>${arrow(237, 74, 165, 74)}${arrow(341, 74, 414, 74)}
       ${label(290, 178, "Magma steigt auf", "lbl small")}`,
-    under: `<path class="geo-plate" d="M20 95H241L430 156L397 169L220 124H20Z M255 71H560V115H386Z"/>
-      <path class="geo-magma" d="M367 70L394 40L425 70Z"/>${arrow(130, 77, 209, 77)}${arrow(512, 59, 438, 59)}
-      ${label(130, 60, "ozeanische Platte", "lbl small")}${label(480, 135, "Inselbogen mit Vulkanen", "lbl small")}
-      ${label(237, 156, "Absinkende Platte", "lbl small")}${dot(300, 120, "quake")}${label(300, 104, "Erdbebenherd", "lbl tiny")}`,
+    under: `<g${eastward ? ' transform="matrix(-1 0 0 1 580 0)"' : ""}><path class="geo-plate" d="M20 95H241L430 156L397 169L220 124H20Z M255 71H560V115H386Z"/>
+      <path class="geo-magma" d="M367 70L394 40L425 70Z"/>${arrow(130, 77, 209, 77)}${arrow(512, 59, 438, 59)}${dot(300, 120, "quake")}</g>
+      ${label(mx(130), 60, eastward ? "Pazifische Platte" : "ozeanische Platte", "lbl small")}${label(mx(480), 135, eastward ? "Japan mit Vulkanen" : "Inselbogen mit Vulkanen", "lbl small")}
+      ${label(mx(237), 156, "Absinkende Platte", "lbl small")}${label(mx(300), 104, "Erdbebenherd", "lbl tiny")}${label(mx(241), 88, "Tiefseegraben", "lbl tiny")}
+      ${eastward ? label(18, 186, "Westen", "lbl small strong", "start") + label(562, 186, "Osten", "lbl small strong", "end") : ""}`,
     past: `<path class="geo-plate" d="M35 56H545V103H35Z M35 112H545V160H35Z"/>
       ${arrow(190, 80, 370, 80)}${arrow(372, 135, 182, 135)}${label(286, 179, "Störung in Draufsicht", "lbl small")}`,
   };
-  return svg(580, 196, titles[motion], label(290, 25, titles[motion], "lbl strong") + body[motion]);
+  return svg(580, 196, titles[motion] + (eastward ? " · Schnitt durch Japan von Westen nach Osten" : ""), label(290, 25, titles[motion], "lbl strong") + body[motion]);
 }

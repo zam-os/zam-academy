@@ -36,7 +36,7 @@ assert.match(instructions, /GEOGRAPHIE 7 REALSCHULE/);
 assert.match(instructions, /In einer Lektion.*Arbeitsweise/);
 assert.ok(instructions.includes("Level 1 · mit Leitfragen"));
 assert.ok(instructions.includes("Level 2 · Transfer"));
-assert.doesNotMatch(instructions, /GESCHICHTE|MITTELSCHULE|GYMNASIUM|Oben in der App/);
+assert.doesNotMatch(instructions, /GYMNASIUM|MITTELSCHULE|EUROPA/);
 for (const starter of ["Start-Mac.command", "start-linux.sh"])
   execFileSync("sh", ["-n", join(root, "release", name, starter)]);
 console.log(

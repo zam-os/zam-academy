@@ -8,6 +8,7 @@ import {
   climateFacts, dayLength, fallowYears, floodedZones, fmt, foehn, humidMonths, STATIONS,
   tsunamiMinutes, zoneForHumidMonths, type StationId,
 } from "../src/figures/models";
+import { DRAWN_SPECS, onLand } from "../src/figures/maps";
 import { localTime } from "../src/figures/regional";
 import { LABS, reachedGoals, renderLab } from "../src/labs";
 import { densityPerUnit } from "../src/labs/geo7";
@@ -83,6 +84,32 @@ describe("course contract", () => {
     const used = LESSONS.flatMap((lesson) => lesson.figures);
     expect(new Set(used).size).toBe(used.length);
     expect(new Set(used)).toEqual(new Set(FIGURE_IDS));
+  });
+});
+
+describe("map labels", () => {
+  it("puts every sea name on water and every land name on land", () => {
+    DRAWN_SPECS.length = 0;
+    for (const id of FIGURE_IDS) renderFigure(id);
+    for (const lab of Object.values(LABS)) {
+      lab.render(lab.initial());
+      for (const scenario of ["0", "1", "2"]) lab.render({ ...lab.initial(), scenario });
+    }
+    const checked = new Map<string, boolean>();
+    for (const spec of DRAWN_SPECS)
+      for (const [text, lon, lat, cls, surface] of spec.names ?? []) {
+        const expected = surface ?? (cls === "sea-label" ? "sea" : cls === "desert-label" ? "land" : undefined);
+        if (!expected) continue;
+        checked.set(`${spec.region} · ${text} (${lon}, ${lat}) should be ${expected}`, onLand([lon, lat]) === (expected === "land"));
+      }
+    expect(checked.size).toBeGreaterThan(40);
+    expect([...checked].filter(([, ok]) => !ok).map(([name]) => name)).toEqual([]);
+  });
+
+  it("finds known land and sea points", () => {
+    expect(onLand([11.5, 48.1])).toBe(true); // Munich
+    expect(onLand([-30, 30])).toBe(false); // Atlantic
+    expect(onLand([140, 36])).toBe(true); // Honshu
   });
 });
 
@@ -240,6 +267,12 @@ describe("ZAM cell", () => {
         expect(JSON.stringify(item)).not.toMatch(/\d\.\d/);
       }
     }
+  });
+
+  it("asks other questions than the lesson's quick checks", () => {
+    const lessonQuestions = new Set(LESSONS.flatMap((lesson) => [lesson.quiz.question, lesson.transferCheck.question]));
+    const cardQuestions = cell.atoms.flatMap((atom) => atom.practice_items.map((item) => item.question));
+    expect(cardQuestions.filter((question) => lessonQuestions.has(question))).toEqual([]);
   });
 
   it("proposes no history transfer while the mapping is unapproved", () => {

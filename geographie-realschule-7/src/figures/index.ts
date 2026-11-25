@@ -95,13 +95,13 @@ const scenes: Record<string, () => string> = {
     "Beispiele; Schulen innerhalb eines Landes unterscheiden sich."),
   handel: () => figure("Handel über den Pazifik", pacificMap(true),
     `Vereinfachte Darstellung der wichtigsten Warengruppen, keine Mengen. ${NE}`),
-  "japan-profil": () => figure("Profil durch Japan", plateProfile("under"),
-    "Vor der Ostküste taucht die Pazifische Platte ab. Schema ohne Maßstab."),
+  "japan-profil": () => figure("Profil durch Japan", plateProfile("under", true),
+    "Schnitt von Westen nach Osten: Vor der Ostküste liegt der Tiefseegraben, die Pazifische Platte taucht nach Westen unter Japan ab. Schema ohne Maßstab."),
   bandasee: () => figure("Erdbeben in der Bandasee", bandaMap(),
     `Epizentrum nach GFZ GEOFON (abgerufen am 25. November 2026). ${NE}`),
   quellenvergleich: () => figure("Zwei Quellen, eine Frage",
-    comparisonBars("Herdtiefe des Bebens · km", [["GFZ GEOFON", 116], ["Nachrichtenbericht", 143]], "km", 160),
-    "Werte aus den verlinkten Quellen, abgerufen am 25. November 2026. Der Nachrichtenbericht stützt sich auf einen anderen Erdbebendienst."),
+    comparisonBars("Herdtiefe des Bebens · km", [["GFZ Ereigniszeile", 116], ["GFZ Momententensor", 129], ["Nachrichtenbericht", 143]], "km", 160),
+    "Werte aus den verlinkten Quellen, abgerufen am 25. November 2026. Die GEOFON-Seite nennt zwei Werte aus zwei Berechnungen; der Nachrichtenbericht stützt sich auf einen anderen Erdbebendienst."),
 };
 
 export const FIGURE_IDS = Object.keys(scenes);

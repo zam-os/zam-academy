@@ -22,7 +22,14 @@ and the matrix: 28 rows, 0 not found.
 The optional learning area 7 (Bilingualer Sachfachunterricht) is listed
 verbatim under `optional_curriculum` and not offered, as in Geographie 8.
 
-Rows marked `supported` need work outside the app: drawing a Grundriss from an
+`coverage.json` deliberately keeps the Geographie family form (`areas` with
+hours, rows with `id`, `source_digest` and `optional_curriculum`, as in
+Geographie 7 Gymnasium) instead of the `bwr-realschule-9` form; every row still
+has `lb`, `competence`, `lessons`, `status` and `evidence`, and the family form
+lets `check-curriculum.mjs` verify each row by its digest.
+
+Rows marked `supported` need work outside the app: sketching the
+Passatkreislauf as a Schaubild (2.2), drawing a Grundriss from an
 aerial photo (3.2), researching current indicators of two real states (2.5),
 engaging in a development project (2.6) and giving a presentation (6.1). The app
 provides the method, a worked model and prompts. Model numbers (climate
@@ -66,6 +73,11 @@ All source cells were read at zam-os/zam commit `4aeaa8e3455937f8a53cd57e686ff98
   them.
 - `de-by:realschule-5-geographie-erde-gradnetz-orientierung` holds the axial
   tilt card; it belongs to the approved Geographie 5 mapping.
+- Gymnasium cells overlap in topic but serve another school type and stay with
+  their own packages: `de-by:gymnasium-8-geographie-tropen-passatzirkulation-wuesten`
+  (Passat and deserts; not mapped by any package yet, it belongs to a future
+  Gymnasium package) and `de-by:gymnasium-5-geographie-erde-gradnetz-orientierung`
+  (axial tilt; mapped by Geographie 5 Gymnasium).
 
 The [mapping](../geographie-realschule-7/replaces-de-by.json) is therefore
 `proposal-only` with `approved: null` and no rows, and the cell declares neither

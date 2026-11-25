@@ -88,7 +88,7 @@ export const jahreszeiten = scenarios(
 export const zeitzonen: LabDef = {
   id: "zeitzonen", title: "Wie spät ist es dort?",
   intro: "Stelle die Uhrzeit in München ein (Winterzeit MEZ). Die Karte zeigt die Ortszeiten in sechs weiteren Städten.",
-  note: "Alle Städte mit ihrer Winterzeit: Im Sommer stellen Deutschland und New York die Uhr um eine Stunde vor, Nairobi, Dubai, Jakarta und Tokio nicht.",
+  note: "Alle Städte mit ihrer Winterzeit: Im Sommer stellen Deutschland, Großbritannien und New York die Uhr um eine Stunde vor, Nairobi, Dubai, Jakarta und Tokio nicht. Der Abstand München–London bleibt deshalb auch im Sommer eine Stunde.",
   initial: () => ({ hour: 12 }),
   goals: [
     { text: "Stelle eine Uhrzeit ein, zu der in Tokio schon der nächste Tag begonnen hat.", reached: (s) => localTime(num(s, "hour"), 9).day === 1 },

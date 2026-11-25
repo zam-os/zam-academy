@@ -11,11 +11,16 @@ type Bounds = readonly [west: number, east: number, south: number, north: number
 export type Location = readonly [lon: number, lat: number];
 /** A named point: dot and label. `dx`/`dy` move the label away from the dot. */
 export type Place = readonly [name: string, lon: number, lat: number, dx?: number, dy?: number];
-/** A label without a dot, e.g. a sea or a landscape. */
-export type Name = readonly [text: string, lon: number, lat: number, cls?: string];
+/**
+ * A label without a dot, e.g. a sea or a landscape. `surface` says where the
+ * anchor must lie; a test checks it against the country polygons. Sea and
+ * desert labels default to "sea" and "land".
+ */
+export type Surface = "land" | "sea";
+export type Name = readonly [text: string, lon: number, lat: number, cls?: string, surface?: Surface, anchor?: "start" | "middle" | "end"];
 
 export const REGIONS = {
-  world: [-170, 180, -58, 80],
+  world: [-170, 180, -70, 80],
   africa: [-20, 55, -36, 24],
   orient: [-18, 64, 12, 45],
   islands: [70, 146, -12, 27],
@@ -113,7 +118,12 @@ export interface MapSpec {
   overlay?: (project: (location: Location) => [number, number]) => string;
 }
 
+/** Every spec drawn since the last reset; the tests check label positions with it. */
+export const DRAWN_SPECS: MapSpec[] = [];
+
 export function geoMap(spec: MapSpec): string {
+  DRAWN_SPECS.push(spec);
+  if (DRAWN_SPECS.length > 500) DRAWN_SPECS.shift();
   const { bounds, height, project } = frame(spec.region);
   const [west, east] = bounds;
   const [x0, y0] = project([west, bounds[3]]);
@@ -157,9 +167,9 @@ export function geoMap(spec: MapSpec): string {
     })
     .join("");
   const names = (spec.names ?? [])
-    .map(([text, lon, lat, cls]) => {
+    .map(([text, lon, lat, cls, , anchor]) => {
       const [x, y] = project([lon, lat]);
-      return label(x, y, text, cls ?? "lbl geo-map-label");
+      return label(x, y, text, cls ?? "lbl geo-map-label", anchor ?? "middle");
     })
     .join("");
   const places = (spec.places ?? [])
@@ -187,6 +197,23 @@ export function geoMap(spec: MapSpec): string {
 
 /** Tropics and polar circles in degrees; the axial tilt is about 23.44°. */
 export const TROPIC = 23.44;
+
+/** Ray casting on the country polygons: is the point on land? */
+export function onLand([lon, lat]: Location): boolean {
+  return countries.some((country) => {
+    const polygons = (country.geometry.type === "Polygon" ? [country.geometry.coordinates] : country.geometry.coordinates) as number[][][][];
+    return polygons.some((polygon) => {
+      let inside = false;
+      for (const ring of polygon) {
+        for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+          const [xi, yi] = ring[i], [xj, yj] = ring[j];
+          if (yi > lat !== yj > lat && lon < ((xj - xi) * (lat - yi)) / (yj - yi) + xi) inside = !inside;
+        }
+      }
+      return inside;
+    });
+  });
+}
 export const POLAR = 66.56;
 
 // ---------- Regional base data (approximate teaching coordinates) ----------
