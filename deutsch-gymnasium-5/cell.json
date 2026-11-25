@@ -1,7 +1,7 @@
 {
 	"$schema": "https://zam.app/schemas/v1/kvt-tile.json",
 	"tile_id": "zam-academy:deutsch-gymnasium-5",
-	"version": "2026.11.1",
+	"version": "2026.11.2",
 	"title": "Deutsch 5 Gymnasium (ZAM Academy)",
 	"description": "50 Lektionen und 100 Wiederholungsfragen zu Sprechen, Lesen, Schreiben und Sprache für Deutsch 5 Gymnasium Bayern.",
 	"publisher": "ZAM Academy",
@@ -647,7 +647,10 @@
 					"id": "01M7D0P81288YDQ2M9HR1P2HM9",
 					"slug": "d5-maerchen-check",
 					"language": "de",
-					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-5/#lesson=d5-maerchen"
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-5/#lesson=d5-maerchen",
+					"replaces": [
+						"01K4YD5E000000000000000J01"
+					]
 				},
 				{
 					"tier": "tier2_synthesis",
@@ -867,7 +870,10 @@
 					"concept": "Klack",
 					"fast_check": {
 						"type": "binary_choice",
-						"options": ["Klack", "leise"],
+						"options": [
+							"Klack",
+							"leise"
+						],
 						"correct_index": 0
 					},
 					"id": "01M7D0P8129TSW55RH7WXYS63Y",
@@ -1979,7 +1985,10 @@
 					"concept": "Numerale (Zahlwort).",
 					"fast_check": {
 						"type": "binary_choice",
-						"options": ["Numerale (Zahlwort).", "Adverb."],
+						"options": [
+							"Numerale (Zahlwort).",
+							"Adverb."
+						],
 						"correct_index": 0
 					},
 					"id": "01M7D0P812K3GWA01HAFB1EWEK",
@@ -2041,7 +2050,10 @@
 					"concept": "Wem?",
 					"fast_check": {
 						"type": "binary_choice",
-						"options": ["Wem?", "Wen oder was?"],
+						"options": [
+							"Wem?",
+							"Wen oder was?"
+						],
 						"correct_index": 0
 					},
 					"id": "01M7D0P81236MEMBR93BZR9VTV",
@@ -2176,7 +2188,10 @@
 					"concept": "als",
 					"fast_check": {
 						"type": "binary_choice",
-						"options": ["als", "wie"],
+						"options": [
+							"als",
+							"wie"
+						],
 						"correct_index": 0
 					},
 					"id": "01M7D0P81249K49MWVJ7H52JQB",
@@ -2246,7 +2261,10 @@
 					"concept": "sind",
 					"fast_check": {
 						"type": "binary_choice",
-						"options": ["sind", "gelaufen"],
+						"options": [
+							"sind",
+							"gelaufen"
+						],
 						"correct_index": 0
 					},
 					"id": "01M7D0P813MJN3J00RTKZNDP74",
@@ -2310,7 +2328,10 @@
 					"concept": "Schild",
 					"fast_check": {
 						"type": "binary_choice",
-						"options": ["Schild", "Tür"],
+						"options": [
+							"Schild",
+							"Tür"
+						],
 						"correct_index": 0
 					},
 					"id": "01M7D0P813JNQ7ZDKKNXM0P62G",
@@ -2374,7 +2395,10 @@
 					"concept": "Antonyme.",
 					"fast_check": {
 						"type": "binary_choice",
-						"options": ["Antonyme.", "Synonyme."],
+						"options": [
+							"Antonyme.",
+							"Synonyme."
+						],
 						"correct_index": 0
 					},
 					"id": "01M7D0P81308A3VKYD6J9Q3BX5",
@@ -2436,7 +2460,10 @@
 					"concept": "dem Hund",
 					"fast_check": {
 						"type": "binary_choice",
-						"options": ["dem Hund", "Hund"],
+						"options": [
+							"dem Hund",
+							"Hund"
+						],
 						"correct_index": 0
 					},
 					"id": "01M7D0P813TY5NTSTY4DZTY72D",
@@ -2563,7 +2590,10 @@
 					"concept": "Warum oder aus welchem Grund?",
 					"fast_check": {
 						"type": "binary_choice",
-						"options": ["Warum oder aus welchem Grund?", "Wem oder für wen?"],
+						"options": [
+							"Warum oder aus welchem Grund?",
+							"Wem oder für wen?"
+						],
 						"correct_index": 0
 					},
 					"id": "01M7D0P813TKSRSM9TRSG75VYX",
@@ -2625,7 +2655,10 @@
 					"concept": "Am Ende des Nebensatzes.",
 					"fast_check": {
 						"type": "binary_choice",
-						"options": ["Am Ende des Nebensatzes.", "Direkt nach „weil“."],
+						"options": [
+							"Am Ende des Nebensatzes.",
+							"Direkt nach „weil“."
+						],
 						"correct_index": 0
 					},
 					"id": "01M7D0P813T5NHDHCDVSF6QJV7",
@@ -2681,7 +2714,10 @@
 					"concept": "l, m, n und r",
 					"fast_check": {
 						"type": "binary_choice",
-						"options": ["l, m, n und r", "b, d, g und p"],
+						"options": [
+							"l, m, n und r",
+							"b, d, g und p"
+						],
 						"correct_index": 0
 					},
 					"id": "01M7D0P813TCB1MTNX63DBVKZA",
@@ -2737,7 +2773,10 @@
 					"concept": "ck und tz",
 					"fast_check": {
 						"type": "binary_choice",
-						"options": ["ck und tz", "k und z"],
+						"options": [
+							"ck und tz",
+							"k und z"
+						],
 						"correct_index": 0
 					},
 					"id": "01M7D0P813V9JQP5X61RE6GQMT",
@@ -3061,7 +3100,10 @@
 					"concept": "Ein Doppelpunkt.",
 					"fast_check": {
 						"type": "binary_choice",
-						"options": ["Ein Doppelpunkt.", "Ein Komma."],
+						"options": [
+							"Ein Doppelpunkt.",
+							"Ein Komma."
+						],
 						"correct_index": 0
 					},
 					"id": "01M7D0P813Z8B80G60ARE0YHHQ",
@@ -3123,7 +3165,10 @@
 					"concept": "Direkt nach „Nuri“.",
 					"fast_check": {
 						"type": "binary_choice",
-						"options": ["Direkt nach „Nuri“.", "Direkt nach „bitte“."],
+						"options": [
+							"Direkt nach „Nuri“.",
+							"Direkt nach „bitte“."
+						],
 						"correct_index": 0
 					},
 					"id": "01M7D0P813JP3MN9N2XS56MT61",
@@ -3185,7 +3230,10 @@
 					"concept": "ba-cken",
 					"fast_check": {
 						"type": "binary_choice",
-						"options": ["ba-cken", "bak-ken"],
+						"options": [
+							"ba-cken",
+							"bak-ken"
+						],
 						"correct_index": 0
 					},
 					"id": "01M7D0P8133X8K8NBE08NW1Z6V",
@@ -3257,7 +3305,10 @@
 					"concept": "finden",
 					"fast_check": {
 						"type": "binary_choice",
-						"options": ["finden", "fand"],
+						"options": [
+							"finden",
+							"fand"
+						],
 						"correct_index": 0
 					},
 					"id": "01M7D0P813K6A18KZQA8TF8X37",

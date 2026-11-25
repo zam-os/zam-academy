@@ -1,0 +1,338 @@
+[
+	{
+		"id": "f7-bonjour",
+		"stage": "f7-bonjour",
+		"title": "Bonjour, Madame !",
+		"skill": "Höflich begrüßen, sich bedanken und verabschieden",
+		"bindings": ["1.1-sprechen", "1.2-wortschatz", "2", "5"],
+		"paragraphs": [
+			"Erwachsene begrüßt du mit Bonjour und der Anrede: Bonjour, Madame ! Bonjour, Monsieur ! Freunde begrüßt du mit Salut. Zum Abschied sagst du höflich Au revoir, unter Freunden auch Salut oder À demain (bis morgen). Tu sagst du zu Freunden und in der Familie, vous zu Erwachsenen, die du nicht duzt, und zu mehreren Personen.",
+			"Beispiel in der Bäckerei: Bonjour, Madame. Une baguette, s’il vous plaît. – Voilà. – Merci, Madame. Au revoir ! Auf dem Schulhof: Salut, Hugo ! Ça va ? – Oui, ça va bien. Et toi ? Bitte heißt s’il vous plaît, wenn du vous sagst, und s’il te plaît, wenn du tu sagst. Viele Freunde und Verwandte begrüßen sich in Frankreich mit Wangenküsschen (la bise). Das ist keine Pflicht: Ein Lächeln und ein Bonjour reichen."
+		],
+		"material": "À la boulangerie : – Bonjour, Madame ! – Bonjour ! – Une baguette, s’il vous plaît. – Voilà. Un euro vingt, s’il vous plaît. – Merci, Madame. Au revoir ! Dans la cour : – Salut, Hugo ! Ça va ? – Oui, ça va bien. Et toi ? – Super ! À demain !",
+		"materialLabel": "Eigenes Übungsmaterial · erfundene Personen und Preise",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp-f7"],
+		"quiz": {
+			"optionLanguage": "fr",
+			"question": "Du betrittst eine Bäckerei. Was sagst du zur Verkäuferin?",
+			"answer": "Bonjour, Madame !",
+			"wrong": ["Salut, Hugo !", "Au revoir, Madame !"],
+			"explanation": "Bonjour mit Anrede ist die höfliche Begrüßung für Erwachsene."
+		},
+		"takeaway": "Bonjour, Madame / Monsieur für Erwachsene, Salut für Freunde, Au revoir zum Abschied. Bitte: s’il vous plaît (vous) oder s’il te plaît (tu).",
+		"practice": [
+			{ "prompt": "Du verabschiedest dich höflich im Laden: ___, Madame !", "answers": ["Au revoir"], "feedback": "Au revoir ist der höfliche Abschied." },
+			{ "prompt": "Bitte an eine Freundin: Ton stylo, s’il ___ plaît ?", "answers": ["te"], "feedback": "Zu einer Freundin sagst du tu, also s’il te plaît." }
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe einen kurzen Dialog in der Bäckerei: Begrüße die Verkäuferin, bitte um ein Croissant, bedanke dich und verabschiede dich.",
+				"model": "Bonjour, Madame ! Un croissant, s’il vous plaît. – Voilà. – Merci, Madame. Au revoir !",
+				"criteria": ["Ich begrüße mit Bonjour und Anrede.", "Ich bitte mit s’il vous plaît.", "Ich bedanke und verabschiede mich."]
+			},
+			"2": {
+				"prompt": "Vor der Schule triffst du deine Freundin Chloé und ihre Mutter. Schreibe, was du zu beiden sagst, frage Chloé, wie es ihr geht, und verabschiede dich bis morgen.",
+				"model": "Bonjour, Madame ! Salut, Chloé ! Ça va ? – Oui, ça va bien, et toi ? – Ça va. À demain, Chloé ! Au revoir, Madame !",
+				"criteria": ["Ich unterscheide Erwachsene und Freundin.", "Ich frage mit Ça va ?", "Ich verabschiede mich passend zu jeder Person."]
+			}
+		},
+		"workshop": {
+			"kind": "dialogue",
+			"goals": [
+				{ "label": "Zur Verkäuferin", "before": "🏪 →", "after": "Madame !", "options": ["Bonjour,", "Salut,", "Ça va,"], "answer": "Bonjour,", "explanation": "Bonjour mit Anrede ist höflich." },
+				{ "label": "Zu deinem Freund", "before": "🧑 →", "after": "Hugo ! Ça va ?", "options": ["Salut,", "Merci,", "Pardon,"], "answer": "Salut,", "explanation": "Salut passt unter Freunden." },
+				{ "label": "Abschied im Laden", "before": "Merci, Madame.", "after": "", "options": ["Au revoir !", "Salut, ça va ?", "S’il te plaît !"], "answer": "Au revoir !", "explanation": "Au revoir ist der höfliche Abschied." }
+			]
+		},
+		"explorer": {
+			"caption": "Wen triffst du? Wähle eine Person",
+			"steps": [
+				{ "label": "Lehrerin", "icon": "👩‍🏫", "example": "Bonjour, Madame ! Vous allez bien ?", "detail": "Erwachsene: Bonjour mit Anrede, dazu vous." },
+				{ "label": "Freund", "icon": "🧑", "example": "Salut, Hugo ! Ça va ?", "detail": "Freunde und Familie: Salut und tu." },
+				{ "label": "Abschied", "icon": "👋", "example": "Au revoir ! À demain !", "detail": "Au revoir passt immer, À demain heißt „bis morgen“." }
+			]
+		},
+		"listening": false,
+		"speaking": true
+	},
+	{
+		"id": "f7-moi",
+		"stage": "f7-bonjour",
+		"title": "Je m’appelle Léa",
+		"skill": "Sich und andere in sehr einfachen Sätzen vorstellen",
+		"bindings": ["1.1-sprechen", "1.1-schreiben", "1.2-wortschatz", "5"],
+		"paragraphs": [
+			"Mit Je m’appelle … sagst du deinen Namen, mit J’ai douze ans dein Alter. Achtung: Im Französischen hat man sein Alter (avoir), man ist es nicht. J’habite à … nennt deinen Wohnort, Je suis en cinquième die Klasse; die französische cinquième entspricht ungefähr deiner 7. Klasse. Andere stellst du mit Voici … oder Il s’appelle … / Elle s’appelle … vor.",
+			"Beispiel: Salut ! Je m’appelle Léa. J’ai douze ans. J’habite à Rennes, en Bretagne. Voici mon amie Inès. Elle a treize ans. Nach dem Namen fragst du: Tu t’appelles comment ? Nach dem Alter: Tu as quel âge ? Nach dem Wohnort: Tu habites où ? Kurze Antworten wie Douze ans. oder À Lyon. sind im Gespräch ganz normal."
+		],
+		"material": "Salut ! Je m’appelle Léa Martin. J’ai douze ans et j’habite à Rennes, en Bretagne. Je suis en cinquième au collège Jules Verne. Voici mon amie Inès. Elle a treize ans. Et voici Hugo. Il habite à côté de chez moi. Et toi, tu t’appelles comment ?",
+		"materialLabel": "Eigenes Übungsmaterial · erfundene Personen",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp-f7"],
+		"quiz": {
+			"optionLanguage": "fr",
+			"question": "Wie sagst du auf Französisch: „Ich bin zwölf Jahre alt.“?",
+			"answer": "J’ai douze ans.",
+			"wrong": ["Je suis douze ans.", "J’ai douze."],
+			"explanation": "Das Alter drückst du mit avoir aus: j’ai … ans."
+		},
+		"takeaway": "Je m’appelle … · J’ai … ans · J’habite à … · Voici … Das Alter steht mit avoir: Elle a treize ans.",
+		"practice": [
+			{ "prompt": "Inès a treize ___.", "answers": ["ans"], "feedback": "Zum Alter gehört ans: Elle a treize ans." },
+			{ "prompt": "Voici Hugo. Il ___ à Rennes.", "answers": ["habite"], "feedback": "Il habite à Rennes: Er wohnt in Rennes." }
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Stelle dich in vier Sätzen vor: Name, Alter, Wohnort und Klasse. Sprich die Sätze danach laut.",
+				"model": "Salut ! Je m’appelle Jonas. J’ai douze ans. J’habite à Augsburg. Je vais à la Realschule à Augsburg.",
+				"criteria": ["Ich nenne Name und Alter mit avoir.", "Ich nenne meinen Wohnort mit j’habite à.", "Ich spreche in ganzen, kurzen Sätzen."]
+			},
+			"2": {
+				"prompt": "Eine neue Austauschschülerin kommt in deine Klasse. Stelle ihr einen Freund oder eine Freundin vor (Name, Alter, Wohnort) und stelle ihr zwei Fragen.",
+				"model": "Voici Paul. Il a treize ans et il habite à Augsburg aussi. Et toi, tu t’appelles comment ? Tu as quel âge ?",
+				"criteria": ["Ich stelle eine andere Person mit voici und il / elle vor.", "Ich verwende die richtige Verbform für il / elle.", "Ich stelle zwei passende Fragen."]
+			}
+		},
+		"workshop": {
+			"kind": "dialogue",
+			"goals": [
+				{ "label": "Name", "before": "Je", "after": "Léa.", "options": ["m’appelle", "suis appelle", "ai"], "answer": "m’appelle", "explanation": "Je m’appelle … nennt deinen Namen." },
+				{ "label": "Alter", "before": "J’", "after": "douze ans.", "options": ["ai", "suis", "habite"], "answer": "ai", "explanation": "Das Alter steht mit avoir: j’ai douze ans." },
+				{ "label": "Andere Person", "before": "Voici Inès. Elle", "after": "treize ans.", "options": ["a", "est", "ai"], "answer": "a", "explanation": "Elle a treize ans: avoir in der 3. Person." }
+			]
+		},
+		"explorer": {
+			"caption": "Steckbrief · Wähle eine Angabe",
+			"steps": [
+				{ "label": "Name", "icon": "🪪", "example": "Je m’appelle Léa.", "detail": "Frage: Tu t’appelles comment ?" },
+				{ "label": "Alter", "icon": "🎂", "example": "J’ai douze ans.", "detail": "Frage: Tu as quel âge ? Antwort mit avoir." },
+				{ "label": "Wohnort", "icon": "🏙", "example": "J’habite à Rennes.", "detail": "Frage: Tu habites où ? Vor Städten steht à." }
+			]
+		},
+		"listening": false,
+		"speaking": true
+	},
+	{
+		"id": "f7-sons",
+		"stage": "f7-bonjour",
+		"title": "Écoute les sons",
+		"skill": "Nasale, Bindung und Akzente hören und erkennen",
+		"bindings": ["1.1-hoeren", "1.2-aussprache", "4"],
+		"paragraphs": [
+			"Französisch hat Nasale: Der Laut klingt durch die Nase, ein n oder m hörst du danach nicht. Die Lautschrift zeigt sie mit einer Tilde: [ɑ̃] in blanc und enfant, [ɔ̃] in bon und garçon, [ɛ̃] in pain und cinq. Bei der Bindung (la liaison) sprichst du einen sonst stummen Endkonsonanten, wenn das nächste Wort mit Vokal beginnt: les‿amis klingt wie [lezami]. Ein einzelnes s zwischen zwei Vokalen ist stimmhaft [z] wie in poison (Gift), ss ist stimmlos [s] wie in poisson (Fisch).",
+			"Akzente und Zeichen ändern Laut oder Bedeutung: é (accent aigu) klingt geschlossen wie in élève, è (accent grave) und ê (accent circonflexe) offen wie in mère und tête. Die Cédille macht aus c vor a, o, u ein [s]: ça, garçon. Das Trema trennt zwei Vokale: Noël spricht man No‑ël. Beispiel: Le garçon a cinq poissons. Hier hörst du [ɔ̃] in garçon und poissons, [ɛ̃] in cinq und ein stimmloses [s] in poissons."
+		],
+		"material": "Écoute bien. Un, une. Bon, blanc, bain. Le garçon a cinq poissons. Les amis, les enfants, les élèves. Un poisson, un poison. Ça va ? Noël, c’est en décembre. La mère de Léa est à la fête.",
+		"materialLabel": "Eigenes Hörskript · lokal vorlesen lassen oder von einem Partner vorlesen lassen",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp-f7"],
+		"quiz": {
+			"optionLanguage": "fr",
+			"question": "In welchem Wortpaar hörst du eine Bindung (liaison)?",
+			"answer": "les amis",
+			"wrong": ["les livres", "le garçon"],
+			"explanation": "Amis beginnt mit Vokal, deshalb wird das s von les als [z] gebunden."
+		},
+		"takeaway": "Nasale [ɑ̃], [ɔ̃], [ɛ̃] klingen durch die Nase. Liaison vor Vokal: les‿amis [lezami]. s zwischen Vokalen = [z], ss = [s]. ç = [s], ë/ï = getrennt sprechen.",
+		"practice": [
+			{ "prompt": "Ergänze das Zeichen: un gar_on (Junge)", "answers": ["ç"], "feedback": "Die Cédille macht c vor o zu [s]: garçon." },
+			{ "prompt": "Fisch heißt un ___ (mit ss).", "answers": ["poisson"], "feedback": "Poisson hat ss und ein stimmloses [s]." }
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Lies das Hörskript zuerst nur zuhörend. Schreibe dann drei Wörter mit einem Nasal und zwei Wortgruppen mit liaison heraus.",
+				"model": "Nasale: bon, blanc, cinq. Liaison: les amis [lezami], les enfants [lezɑ̃fɑ̃].",
+				"criteria": ["Ich finde drei Wörter mit Nasal.", "Ich finde zwei Bindungen vor Vokal.", "Ich höre zuerst ohne Mitlesen."]
+			},
+			"2": {
+				"prompt": "Erkläre einem Mitschüler auf Deutsch den Unterschied zwischen poisson und poison und warum man ç in garçon braucht.",
+				"model": "Poisson (Fisch) hat ss und klingt mit stimmlosem [s]; poison (Gift) hat ein s zwischen Vokalen und klingt mit stimmhaftem [z]. Ohne Cédille würde c vor o wie [k] klingen, mit ç klingt es wie [s].",
+				"criteria": ["Ich erkläre s und ss mit Beispielen.", "Ich erkläre die Cédille.", "Ich verwende die Lautzeichen richtig."],
+				"language": "de"
+			}
+		},
+		"workshop": {
+			"kind": "sound",
+			"goals": [
+				{ "label": "Nasal [ɔ̃]", "before": "[ɔ̃] →", "after": "", "options": ["bon", "bonne", "beau"], "answer": "bon", "explanation": "In bon wird on nasal gesprochen." },
+				{ "label": "Stimmhaftes [z]", "before": "[z] →", "after": "", "options": ["poison", "poisson", "garçon"], "answer": "poison", "explanation": "Ein s zwischen Vokalen klingt stimmhaft." },
+				{ "label": "Trema", "before": "Zwei Vokale getrennt →", "after": "", "options": ["Noël", "élève", "fête"], "answer": "Noël", "explanation": "Das Trema auf ë trennt o und e." }
+			]
+		},
+		"explorer": {
+			"caption": "Lautschrift · Wähle ein Zeichen",
+			"steps": [
+				{ "label": "[ɑ̃]", "icon": "an · en", "example": "blanc, enfant, France", "detail": "Nasal: Mund offen, Luft auch durch die Nase." },
+				{ "label": "[ɔ̃]", "icon": "on", "example": "bon, garçon, poisson", "detail": "Nasal mit runden Lippen." },
+				{ "label": "[ɛ̃]", "icon": "in · ain", "example": "cinq, pain, copain", "detail": "Nasal mit breitem Mund." }
+			]
+		},
+		"listening": true,
+		"speaking": true
+	},
+	{
+		"id": "f7-classe",
+		"stage": "f7-bonjour",
+		"title": "Ouvrez vos livres !",
+		"skill": "Sätze im Unterricht verstehen und Schulsachen benennen",
+		"bindings": ["1.1-sprechen", "1.2-wortschatz", "5"],
+		"paragraphs": [
+			"Im Französischunterricht hörst du oft Aufforderungen an die ganze Klasse: Ouvrez vos livres ! (Öffnet eure Bücher!), Fermez la porte ! (Schließt die Tür!), Écoutez ! (Hört zu!), Regardez le tableau ! (Schaut an die Tafel!). Selbst brauchst du Sätze wie Je ne comprends pas. (Ich verstehe nicht.), Répétez, s’il vous plaît. (Wiederholen Sie bitte.) und Comment dit-on „Heft“ en français ? (Wie sagt man …?).",
+			"Deine Schulsachen: le livre (das Buch), le cahier (das Heft), le stylo (der Füller oder Kuli), le crayon (der Bleistift), la trousse (das Mäppchen), la gomme (der Radiergummi), la règle (das Lineal), le sac à dos (der Rucksack) und an der Wand le tableau (die Tafel). Beispiel: Pardon, Madame, je n’ai pas mon cahier. – Ce n’est pas grave. Prends une feuille. Lerne jedes Nomen mit Artikel; le und la zeigen dir das Geschlecht."
+		],
+		"material": "Madame Dubois : Bonjour, la classe ! Ouvrez vos livres à la page douze. Écoutez bien. Théo, ferme la porte, s’il te plaît. Léa : Pardon, Madame, je ne comprends pas. Répétez, s’il vous plaît. Madame Dubois : Page douze. Regardez le tableau. Hugo : Comment dit-on „Mäppchen“ en français ? Madame Dubois : La trousse.",
+		"materialLabel": "Eigenes Übungsmaterial · erfundene Klasse",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp-f7"],
+		"quiz": {
+			"optionLanguage": "fr",
+			"question": "Du hast etwas nicht verstanden. Was sagst du zu deiner Lehrerin?",
+			"answer": "Répétez, s’il vous plaît.",
+			"wrong": ["Ouvrez vos livres !", "Fermez la porte !"],
+			"explanation": "Mit Répétez, s’il vous plaît bittest du höflich um eine Wiederholung."
+		},
+		"takeaway": "Ouvrez / Fermez / Écoutez / Regardez sind Aufforderungen an die Klasse. Je ne comprends pas. · Répétez, s’il vous plaît. · Comment dit-on … en français ?",
+		"practice": [
+			{ "prompt": "Das Heft heißt le ___.", "answers": ["cahier"], "feedback": "Le cahier ist das Heft." },
+			{ "prompt": "„Ich verstehe nicht“: Je ne ___ pas.", "answers": ["comprends"], "feedback": "Je ne comprends pas." }
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe drei Sätze, die du im Unterricht brauchst: Du hast etwas nicht verstanden, du suchst ein Wort und du hast dein Heft vergessen.",
+				"model": "Je ne comprends pas. Comment dit-on „Lineal“ en français ? Pardon, Madame, je n’ai pas mon cahier.",
+				"criteria": ["Ich sage, dass ich etwas nicht verstehe.", "Ich frage nach einem Wort.", "Ich entschuldige mich höflich."]
+			},
+			"2": {
+				"prompt": "Du hilfst einer neuen Schülerin aus Frankreich. Erkläre ihr auf Französisch, was in deinem Mäppchen ist (mindestens vier Dinge mit Artikel).",
+				"model": "Dans ma trousse, il y a un stylo, un crayon, une gomme et une règle. Le cahier et le livre sont dans mon sac à dos.",
+				"criteria": ["Ich nenne mindestens vier Schulsachen.", "Ich verwende den richtigen Artikel.", "Ich schreibe ganze Sätze."]
+			}
+		},
+		"workshop": {
+			"kind": "sequence",
+			"goals": [
+				{ "label": "Bücher", "before": "", "after": "vos livres !", "options": ["Ouvrez", "Écoutez", "Répétez"], "answer": "Ouvrez", "explanation": "Ouvrez vos livres: Öffnet eure Bücher." },
+				{ "label": "Mäppchen", "before": "Dans ma", "after": ", il y a un stylo.", "options": ["trousse", "tableau", "porte"], "answer": "trousse", "explanation": "La trousse ist das Mäppchen." },
+				{ "label": "Wort suchen", "before": "Comment", "after": "„Heft“ en français ?", "options": ["dit-on", "ça va", "tu t’appelles"], "answer": "dit-on", "explanation": "Comment dit-on … ? fragt nach einem Wort." }
+			]
+		},
+		"explorer": {
+			"caption": "Klassenzimmer · Wähle einen Gegenstand",
+			"steps": [
+				{ "label": "Tafel", "icon": "🟩", "example": "Regardez le tableau !", "detail": "le tableau: maskulin", "tone": "m" },
+				{ "label": "Mäppchen", "icon": "✏️", "example": "Ma trousse est dans mon sac à dos.", "detail": "la trousse: feminin", "tone": "f" },
+				{ "label": "Bücher", "icon": "📚", "example": "Ouvrez vos livres !", "detail": "les livres: Plural", "tone": "pl" }
+			]
+		},
+		"listening": false,
+		"speaking": true
+	},
+	{
+		"id": "f7-consignes",
+		"stage": "f7-bonjour",
+		"title": "Complétez, cochez !",
+		"skill": "Arbeitsanweisungen und Grammatikbegriffe verstehen",
+		"bindings": ["1.2-wortschatz", "4"],
+		"paragraphs": [
+			"Im Buch stehen die Aufgaben auf Französisch. Die wichtigsten Arbeitsanweisungen: Complétez (ergänzt), Cochez (kreuzt an), Reliez (verbindet), Soulignez (unterstreicht), Lisez (lest), Écoutez (hört), Écrivez (schreibt), Répondez (antwortet). Sie enden auf ‑ez, weil sie die ganze Klasse ansprechen. Oft steht dabei, womit du arbeitest: Complétez les phrases (Ergänzt die Sätze), Cochez la bonne réponse (Kreuzt die richtige Antwort an).",
+			"Auch Grammatikbegriffe tauchen auf: le nom (das Nomen), le verbe (das Verb), l’article (der Artikel), la phrase (der Satz), le singulier und le pluriel, masculin und féminin, le présent (die Gegenwart) und le futur composé (die nahe Zukunft mit aller). Beispiel: Soulignez les verbes au présent. bedeutet: Unterstreicht die Verben im Präsens. Viele Begriffe ähneln dem Deutschen oder Englischen, das hilft beim Erschließen."
+		],
+		"material": "Exercice 3 : Lisez le texte. Soulignez les verbes au présent. Exercice 4 : Complétez les phrases avec le bon article : le, la ou les. Exercice 5 : Écoutez le dialogue et cochez la bonne réponse. Exercice 6 : Reliez les noms et les images.",
+		"materialLabel": "Eigenes Übungsmaterial · Aufgabenstellungen wie im Lehrwerk",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp-f7"],
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Was sollst du bei „Cochez la bonne réponse.“ tun?",
+			"answer": "Die richtige Antwort ankreuzen.",
+			"wrong": ["Die Antwort unterstreichen.", "Die Sätze ergänzen."],
+			"explanation": "Cochez heißt „kreuzt an“, la bonne réponse ist die richtige Antwort."
+		},
+		"takeaway": "Complétez = ergänzt · Cochez = kreuzt an · Reliez = verbindet · Soulignez = unterstreicht. Le nom, le verbe, le présent, le futur composé sind Grammatikbegriffe.",
+		"practice": [
+			{ "prompt": "„Ergänzt die Sätze“: ___ les phrases.", "answers": ["Complétez"], "feedback": "Complétez les phrases: Ergänzt die Sätze." },
+			{ "prompt": "Das Nomen heißt auf Französisch le ___.", "answers": ["nom"], "feedback": "Le nom ist das Nomen." }
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Übersetze die vier Aufgabenstellungen aus dem Material ins Deutsche.",
+				"model": "Lest den Text. Unterstreicht die Verben im Präsens. Ergänzt die Sätze mit dem richtigen Artikel. Hört den Dialog und kreuzt die richtige Antwort an. Verbindet die Nomen und die Bilder.",
+				"criteria": ["Ich übersetze jede Arbeitsanweisung.", "Ich verstehe die Grammatikbegriffe.", "Ich schreibe verständliches Deutsch."],
+				"language": "de"
+			},
+			"2": {
+				"prompt": "Schreibe für deine Klasse zwei eigene Übungsaufgaben auf Französisch, zum Beispiel zu Artikeln oder Verben. Verwende zwei verschiedene Arbeitsanweisungen.",
+				"model": "Complétez avec le, la ou les : ___ cahier, ___ trousse, ___ livres. Soulignez les verbes : Léa parle français. Hugo joue au foot.",
+				"criteria": ["Ich verwende zwei verschiedene Arbeitsanweisungen.", "Meine Aufgaben passen zu den Anweisungen.", "Ich verwende Grammatikbegriffe richtig."]
+			}
+		},
+		"workshop": {
+			"kind": "sequence",
+			"goals": [
+				{ "label": "Ankreuzen", "before": "", "after": "la bonne réponse.", "options": ["Cochez", "Soulignez", "Reliez"], "answer": "Cochez", "explanation": "Cochez heißt ankreuzen." },
+				{ "label": "Verbinden", "before": "", "after": "les noms et les images.", "options": ["Reliez", "Complétez", "Écoutez"], "answer": "Reliez", "explanation": "Reliez heißt verbinden." },
+				{ "label": "Grammatik", "before": "Soulignez les", "after": "au présent.", "options": ["verbes", "pages", "images"], "answer": "verbes", "explanation": "Les verbes sind die Verben." }
+			]
+		},
+		"explorer": {
+			"caption": "Aufgabe lesen · Wähle eine Anweisung",
+			"steps": [
+				{ "label": "Complétez", "icon": "✍️", "example": "Complétez : Je ___ français. → parle", "detail": "Ergänze die Lücke.", "tone": "v" },
+				{ "label": "Cochez", "icon": "☑️", "example": "Cochez : ☐ vrai ☑ faux", "detail": "Kreuze die richtige Antwort an." },
+				{ "label": "Soulignez", "icon": "〰", "example": "Soulignez le verbe : Léa joue au foot.", "detail": "Unterstreiche: hier joue.", "tone": "v" }
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "f7-nombres",
+		"stage": "f7-bonjour",
+		"title": "De zéro à cent",
+		"skill": "Zahlen bis 100 verstehen, sagen und schreiben",
+		"bindings": ["1.1-hoeren", "1.2-wortschatz"],
+		"paragraphs": [
+			"Bis 69 zählst du fast wie im Deutschen, nur mit dem Zehner zuerst: vingt-deux (22), trente-cinq (35), soixante-huit (68). Bei 21, 31, 41, 51 und 61 steht et: vingt et un, trente et un. Ab 70 rechnet das Französische anders: 70 heißt soixante-dix (60 + 10), 71 soixante et onze (60 + 11), 80 quatre-vingts (4 · 20), 81 quatre-vingt-un (ohne et und ohne s), 90 quatre-vingt-dix (4 · 20 + 10) und 100 cent.",
+			"Beispiel: Ma grand-mère a soixante-dix-sept ans. Das ist 60 + 17 = 77. Le bus quatre-vingt-quinze: 80 + 15 = 95. Sprich die Bausteine nacheinander und rechne mit. Zahlen brauchst du für Alter, Preise, Telefonnummern, Seiten im Buch und Hausnummern. Französische Telefonnummern liest man in Zweiergruppen: 06 45 72 91 18 klingt wie zéro six, quarante-cinq, soixante-douze, quatre-vingt-onze, dix-huit."
+		],
+		"material": "Mon numéro, c’est le zéro six, quarante-cinq, soixante-douze, quatre-vingt-onze, dix-huit. J’habite au soixante et onze, rue Victor Hugo. Ma grand-mère a quatre-vingts ans. Le livre coûte quinze euros. Ouvrez vos livres à la page quatre-vingt-dix-neuf.",
+		"materialLabel": "Eigenes Übungsmaterial · erfundene Nummern und Adressen",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp-f7"],
+		"quiz": {
+			"optionLanguage": "fr",
+			"question": "Wie heißt 71 auf Französisch?",
+			"answer": "soixante et onze",
+			"wrong": ["sept-dix-un", "quatre-vingt-onze"],
+			"explanation": "71 = 60 + 11: soixante et onze. Quatre-vingt-onze ist 91."
+		},
+		"takeaway": "70 = soixante-dix (60 + 10) · 80 = quatre-vingts (4 · 20) · 90 = quatre-vingt-dix (4 · 20 + 10) · 21, 31 … 71 mit et, 81 und 91 ohne et.",
+		"practice": [
+			{ "prompt": "Schreibe 80 als Wort.", "answers": ["quatre-vingts"], "feedback": "80 = quatre-vingts, mit s, weil keine Zahl folgt." },
+			{ "prompt": "Schreibe 21 als Wort.", "answers": ["vingt et un", "vingt-et-un"], "feedback": "21 = vingt et un." }
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe diese Zahlen als Wörter und zerlege sie in Bausteine: 17, 44, 76, 83, 99.",
+				"model": "dix-sept (10 + 7), quarante-quatre (40 + 4), soixante-seize (60 + 16), quatre-vingt-trois (4 · 20 + 3), quatre-vingt-dix-neuf (4 · 20 + 19).",
+				"criteria": ["Ich schreibe jede Zahl richtig.", "Ich zerlege 76, 83 und 99 in Bausteine.", "Ich setze die Bindestriche."]
+			},
+			"2": {
+				"prompt": "Deine französische Brieffreundin fragt nach deiner Telefonnummer und deiner Hausnummer. Erfinde beides und schreibe die Antwort in Zweiergruppen aus.",
+				"model": "Mon numéro, c’est le zéro six, trente-trois, soixante-dix-huit, quatre-vingt-deux, quinze. J’habite au cinquante et un, rue de la Gare.",
+				"criteria": ["Ich lese die Nummer in Zweiergruppen.", "Ich schreibe Zahlen über 69 richtig.", "Ich verwende erfundene Angaben."]
+			}
+		},
+		"workshop": {
+			"kind": "number",
+			"goals": [
+				{ "label": "70", "before": "70 =", "after": "", "options": ["soixante-dix", "septante", "sept-dix"], "answer": "soixante-dix", "explanation": "In Frankreich heißt 70 soixante-dix." },
+				{ "label": "80", "before": "80 =", "after": "", "options": ["quatre-vingts", "huitante", "quatre-vingt-dix"], "answer": "quatre-vingts", "explanation": "80 = 4 · 20 = quatre-vingts." },
+				{ "label": "91", "before": "91 =", "after": "", "options": ["quatre-vingt-onze", "quatre-vingt et onze", "soixante et onze"], "answer": "quatre-vingt-onze", "explanation": "91 = 80 + 11, ohne et." }
+			]
+		},
+		"listening": false,
+		"speaking": false
+	}
+]

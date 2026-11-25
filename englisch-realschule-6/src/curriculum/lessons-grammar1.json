@@ -1,0 +1,454 @@
+[
+	{
+		"id": "e6-some-any",
+		"stage": "grammar1",
+		"title": "Indefinite pronouns: some, any, something, anybody",
+		"skill": "some und any sowie Zusammensetzungen wie something und anybody sicher unterscheiden",
+		"bindings": [
+			"1.2",
+			"5"
+		],
+		"paragraphs": [
+			"Mit unbestimmten Begleitern und Pronomen (indefinite pronouns) sprichst du über eine unbestimmte Menge oder Person („etwas“, „einige“, „jemand“). Als Grundregel gilt: some (und something, somebody/someone, somewhere) steht in bejahten Aussagesätzen („We have got some apples“). any (und anything, anybody/anyone, anywhere) steht in verneinten Sätzen („I haven't got any money“) und in normalen Fragen („Have you got any questions?“).",
+			"Wichtige Ausnahme in höflichen Bitten und Angeboten: Wenn du ein „Ja“ erwartest, etwas anbietest oder um etwas bittest, steht auch in der Frage some: „Would you like some tea?“ oder „Can I have something to drink, please?“. Bei Zusammensetzungen gilt genau dieselbe Verteilung: someone / somebody und something für Aussagen und höfliche Angebote; anyone / anybody und anything für normale Fragen und Verneinungen."
+		],
+		"material": "Packing list dialogue before the trip to Scotland:\nEmma: “Have we got any warm socks in the blue bag?”\nNoah: “Yes, I packed some wool socks yesterday, and I put some snacks in the side pocket too.”\nEmma: “Great! Is there anything else we forgot? Did anybody see my waterproof jacket?”\nNoah: “I didn't see anything in the hall, wait — somebody left a blue jacket on the chair! Would you like some tea before we leave?”",
+		"materialLabel": "Eigenes englisches Übungsmaterial · Packdialog mit some/any-Formen",
+		"materialLanguage": "en",
+		"sourceIds": [
+			"lp",
+			"bbc-le"
+		],
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "You want to offer your guest a sandwich politely. Which question is right?",
+			"answer": "Would you like some sandwiches?",
+			"wrong": [
+				"Would you like any nobody?",
+				"You haven't got some sandwiches?"
+			],
+			"explanation": "Bei einem höflichen Angebot (Would you like …?) verwendet man some statt any."
+		},
+		"takeaway": "some / something / somebody in Aussagen sowie in höflichen Bitten und Angeboten. any / anything / anybody in Verneinungen und normalen Informationsfragen.",
+		"practice": [
+			{
+				"prompt": "Noah didn't see ___ in the hall. (etwas/nichts nach Verneinung didn't)",
+				"answers": [
+					"anything"
+				],
+				"feedback": "In verneinten Sätzen (didn't) steht anything."
+			},
+			{
+				"prompt": "Have we got ___ warm socks in the bag? (normaler Fragesatz)",
+				"answers": [
+					"any"
+				],
+				"feedback": "In einer normalen Informationsfrage steht any."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Write four English sentences about a picnic: one positive sentence with 'some' or 'something', one negative sentence with 'any' or 'anything', one normal question with 'any/anybody' and one polite offer with 'some'.",
+				"model": "We brought some strawberries and something sweet for our picnic. Sorry, we haven't got any lemonade left. Did anybody bring a picnic blanket? Would you like some water instead?",
+				"criteria": [
+					"Ich bilde Aussage und Verneinung mit some bzw. any korrekt.",
+					"Ich stelle eine normale Informationsfrage mit any/anybody.",
+					"Ich formuliere ein höfliches Angebot oder eine Bitte mit some."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Ein Freund fragt: „Warum heißt es 'Would you like some juice?' mit some, aber 'Have we got any juice?' mit any?“ Erkläre den Unterschied verständlich auf Deutsch.",
+				"model": "In 'Have we got any juice?' erkundigt man sich neutral nach einer Information und weiß noch nicht, ob Saft da ist — deshalb steht in normalen Fragen any. Bei 'Would you like some juice?' bietet man einem Gast höflich etwas an und erwartet eher ein Ja; deshalb benutzt man in Angeboten und Bitten some.",
+				"criteria": [
+					"Ich erkläre die normale Informationsfrage mit any.",
+					"Ich erkläre das höfliche Angebot mit some.",
+					"Meine Begründung ist für Sechstklässler klar nachvollziehbar."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "sentence",
+			"goals": [
+				{
+					"label": "Bejahte Aussage",
+					"before": "There is",
+					"after": "interesting in this museum.",
+					"options": [
+						"something",
+						"anything",
+						"any"
+					],
+					"answer": "something",
+					"explanation": "Im bejahten Aussagesatz steht something."
+				},
+				{
+					"label": "Verneinung",
+					"before": "I cannot find",
+					"after": "tickets in my pocket.",
+					"options": [
+						"any",
+						"some",
+						"something"
+					],
+					"answer": "any",
+					"explanation": "Nach cannot (Verneinung) folgt any."
+				},
+				{
+					"label": "Höfliches Angebot",
+					"before": "Would you like",
+					"after": "hot chocolate?",
+					"options": [
+						"some",
+						"any",
+						"anything"
+					],
+					"answer": "some",
+					"explanation": "Für höfliche Angebote steht some."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "e6-possessives",
+		"stage": "grammar1",
+		"title": "Possessive pronouns: mine, yours, his, hers, ours, theirs",
+		"skill": "Possessivbegleiter vor einem Nomen (my/your) und selbstständige Possessivpronomen ohne Nomen (mine/yours) richtig verwenden",
+		"bindings": [
+			"1.2",
+			"5"
+		],
+		"paragraphs": [
+			"Aus Klasse 5 kennst du bereits die Possessivbegleiter (possessive adjectives): my, your, his, her, its, our, their. Sie stehen immer vor einem Nomen („This is my book“, „Is that your bag?“). In Klasse 6 lernst du die selbstständigen Possessivpronomen (possessive pronouns): mine, yours, his, hers, ours, theirs. Sie ersetzen das Nomen und stehen ganz allein ohne Nomen dahinter!",
+			"Beispiel aus dem Klassenzimmer: „Is this your pencil case? — No, mine is green. Maybe it is hers!“ Achte genau auf die Rechtschreibung: mine ist unregelmäßig (nicht *mys), his bleibt gleich, und hers, ours, yours, theirs enden auf -s — und bekommen niemals einen Apostroph (*her's oder *our's ist falsch!)."
+		],
+		"material": "Lost-and-found table after sports:\nCoach: “Whose water bottle is this blue one? Mia, is it yours?”\nMia: “No, mine has a red lid. Look, maybe it is Leo's — wait, his is already in his backpack. What about Maya? Yes, it is hers!”\nNoah & Sam: “And those black football boots are ours — please don't swap them with theirs!”",
+		"materialLabel": "Eigenes englisches Übungsmaterial · Fundtisch nach dem Sport",
+		"materialLanguage": "en",
+		"sourceIds": [
+			"lp",
+			"bbc-le"
+		],
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "Which sentence uses the independent possessive pronoun correctly without a noun after it?",
+			"answer": "That green notebook is hers, and this blue one is mine.",
+			"wrong": [
+				"That green notebook is her's, and this blue one is my.",
+				"That green notebook is my, and this blue one is your's."
+			],
+			"explanation": "Ohne Nomen dahinter stehen hers und mine — und ohne Apostroph vor dem -s."
+		},
+		"takeaway": "Vor einem Nomen: my, your, his, her, our, their (my bag). Allein ohne Nomen: mine, yours, his, hers, ours, theirs (The bag is mine. — Kein Apostroph bei hers/ours/yours/theirs!).",
+		"practice": [
+			{
+				"prompt": "This book belongs to me. It is ___. (alleinstehendes Possessivpronomen: meins)",
+				"answers": [
+					"mine"
+				],
+				"feedback": "Ohne Nomen dahinter heißt meins/meiner im Englischen mine."
+			},
+			{
+				"prompt": "That jacket belongs to Maya. It is ___. (alleinstehendes Possessivpronomen: ihrs)",
+				"answers": [
+					"hers"
+				],
+				"feedback": "Das selbstständige Possessivpronomen für sie (Singular) ist hers (ohne Apostroph)."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Write four sentences sorting lost items at school using at least four different independent possessive pronouns (from mine, yours, his, hers, ours, theirs).",
+				"model": "This blue backpack is mine, not yours! The red scarf belongs to Anna, so it is hers. The football by the door is ours because Class 6b bought it. The two green jackets on the bench are theirs.",
+				"criteria": [
+					"Ich verwende mindestens vier selbstständige Possessivpronomen richtig.",
+					"Hinter mine, yours, hers, ours, theirs steht kein Nomen.",
+					"Ich schreibe hers, yours, ours, theirs ohne Apostroph."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Erkläre auf Deutsch einem Mitschüler die zwei häufigsten Fehler bei Possessivpronomen anhand der Beispiele 'Is that your/yours bag?' und 'It is her's/hers.'",
+				"model": "Erstens steht vor dem Nomen bag immer der Begleiter your ('Is that your bag?'), während yours allein ohne Nomen benutzt wird ('Is that yours?'). Zweitens bekommen selbstständige Possessivpronomen wie hers, ours, yours und theirs niemals einen Apostroph vor dem -s; deshalb ist 'It is hers.' richtig und 'her's' falsch.",
+				"criteria": [
+					"Ich erkläre den Unterschied Begleiter mit Nomen vs. Pronomen ohne Nomen.",
+					"Ich korrigiere beide Beispielsätze richtig.",
+					"Ich warne klar vor dem Apostroph bei hers/yours/ours/theirs."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "sentence",
+			"goals": [
+				{
+					"label": "1. Person Einzahl allein",
+					"before": "No, your bottle is on the bench —",
+					"after": "has a red lid.",
+					"options": [
+						"mine",
+						"my",
+						"me"
+					],
+					"answer": "mine",
+					"explanation": "Ohne Nomen dahinter steht mine."
+				},
+				{
+					"label": "3. Person Einzahl weiblich",
+					"before": "Give the keys back to Maya; they are",
+					"after": ".",
+					"options": [
+						"hers",
+						"her's",
+						"her"
+					],
+					"answer": "hers",
+					"explanation": "Das selbstständige Pronomen heißt hers (ohne Apostroph)."
+				},
+				{
+					"label": "Begleiter vor Nomen",
+					"before": "Is that",
+					"after": "jacket on the chair?",
+					"options": [
+						"your",
+						"yours",
+						"you's"
+					],
+					"answer": "your",
+					"explanation": "Direkt vor dem Nomen jacket steht der Possessivbegleiter your."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "e6-comparatives",
+		"stage": "grammar1",
+		"title": "Comparing things: -er/-est, more/most & as … as",
+		"skill": "Adjektive regelmäßig und unregelmäßig steigern und Vergleiche mit than sowie as … as bilden",
+		"bindings": [
+			"1.2",
+			"5"
+		],
+		"paragraphs": [
+			"Wenn du Orte, Städte oder Dinge vergleichst, steigerst du Adjektive im Englischen auf zwei Arten: Kurze (meist einsilbige) Adjektive hängen -er und -est an (tall – taller – the tallest; big – bigger – the biggest mit Verdopplung nach kurzem betontem Vokal; happy – happier – the happiest mit y → i). Lange Adjektive (mit zwei oder mehr Silben, die nicht auf -y enden) stehen mit more und the most (interesting – more interesting – the most interesting).",
+			"Wichtige unregelmäßige Formen sind: good – better – the best, bad – worse – the worst und much/many – more – the most. Für Vergleiche nutzt du Komparativ + than („London is larger than Edinburgh“) und bei Gleichheit as + Grundform + as („Tower A is as tall as Tower B“) beziehungsweise not as … as bei Ungleichheit. Teste den Höhen-Explorer direkt darunter!"
+		],
+		"material": "Comparing UK and US facts:\n• The Mississippi River is longer than the River Thames, and it is one of the longest rivers in North America.\n• New York City is more crowded than Denver, and in summer Miami is hotter than Seattle.\n• Scottish train rides can be as exciting as city tours, though a ferry trip is not as fast as a plane.\n• Our guide book says the Highland railway is the best route for mountain views!",
+		"materialLabel": "Eigenes englisches Übungsmaterial · Städte- und Landschaftsvergleich",
+		"materialLanguage": "en",
+		"sourceIds": [
+			"lp",
+			"bbc-le"
+		],
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "How do you form the comparative and superlative of 'good'?",
+			"answer": "good – better – the best",
+			"wrong": [
+				"good – gooder – the goodest",
+				"good – more good – the most good"
+			],
+			"explanation": "good steigert man unregelmäßig: better (Komparativ) und (the) best (Superlativ)."
+		},
+		"takeaway": "Kurze Adjektive: -er / -est (big → bigger, happy → happier). Lange Adjektive: more / the most. Unregelmäßig: good – better – best, bad – worse – worst. Gleichheit: as + Grundform + as.",
+		"practice": [
+			{
+				"prompt": "New York is much ___ than Edinburgh. (Komparativ von big: Verdopplung beachten!)",
+				"answers": [
+					"bigger"
+				],
+				"feedback": "big hat einen kurzen Vokal vor g, daher wird g verdoppelt: bigger."
+			},
+			{
+				"prompt": "A bus trip is not ___ fast as the Tube in central London. (Vergleich der Gleichheit)",
+				"answers": [
+					"as"
+				],
+				"feedback": "Beim Vergleich mit not … as steht vorn und hinten as: not as fast as."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Write four English comparison sentences about cities or school subjects: use one -er + than, one more ... + than, one superlative (the ...est or the most ...) and one (not) as ... as.",
+				"model": "London is bigger than Edinburgh, and its streets are busier too. For me, New York is more exciting than a small village. Scotland has some of the most beautiful hills in Britain. Today the weather in Munich is not as warm as in Miami.",
+				"criteria": [
+					"Ich wende -er + than und more ... + than richtig an.",
+					"Ich bilde einen passenden Superlativ mit the.",
+					"Ich baue einen korrekten Vergleich mit (not) as ... as."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Finde und erkläre auf Deutsch die drei Fehler in diesen Sätzen: 'My bag is heavyer then yours. This film is more better than the book. London is as bigger as New York.'",
+				"model": "1. Bei heavy wird das -y nach Konsonant zu -i ('heavier'), und beim Vergleich heißt es 'than' (als), nicht 'then' (dann). 2. 'better' ist bereits der unregelmäßige Komparativ von good — 'more better' ist doppelt und falsch; richtig ist einfach 'better than'. 3. Bei 'as … as' steht immer die Grundform ohne Steigerung: 'not as big as' (und faktisch ist London nicht größer als New York).",
+				"criteria": [
+					"Ich korrigiere heavyer → heavier und then → than.",
+					"Ich streiche die doppelte Steigerung bei more better.",
+					"Ich erkläre, dass bei as … as die Grundform steht."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "compare-scale",
+			"goals": [
+				{
+					"label": "Kurzes Adjektiv + Verdopplung",
+					"before": "London is much",
+					"after": "than Cardiff.",
+					"options": [
+						"bigger",
+						"more big",
+						"biger"
+					],
+					"answer": "bigger",
+					"explanation": "big ist einsilbig mit kurzem Vokal → bigger."
+				},
+				{
+					"label": "Mehrsilbiges Adjektiv",
+					"before": "That science exhibition was the",
+					"after": "part of our trip.",
+					"options": [
+						"most interesting",
+						"interestingest",
+						"more interesting"
+					],
+					"answer": "most interesting",
+					"explanation": "interesting ist mehrsilbig → the most interesting."
+				},
+				{
+					"label": "Unregelmäßige Steigerung",
+					"before": "This seat by the window gives the",
+					"after": "view of the Thames.",
+					"options": [
+						"best",
+						"goodest",
+						"more good"
+					],
+					"answer": "best",
+					"explanation": "Der Superlativ von good lautet (the) best."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "e6-quantifiers",
+		"stage": "grammar1",
+		"title": "How much or how many? Quantifiers",
+		"skill": "Mengenwörter (much, many, a lot of, lots of) bei zählbaren und unzählbaren Nomen richtig einsetzen",
+		"bindings": [
+			"1.2",
+			"5"
+		],
+		"paragraphs": [
+			"Aus Klasse 5 kennst du bereits den Unterschied zwischen zählbaren Nomen im Plural (books, apples, minutes) und unzählbaren Nomen (water, money, time, information, homework — im Englischen ohne Plural-s!). In Klasse 6 verbindest du das sicher mit Mengenwörtern (quantifiers): many steht bei zählbaren Nomen im Plural, much bei unzählbaren Nomen im Singular — und beide nutzt man im modernen Englisch vor allem in Fragen („How much time…?”, „How many states…?”) und Verneinungen („not much water”, „not many shops”).",
+			"Beispiel für bejahte Aussagesätze: In normalen positiven Sätzen klingen a lot of und lots of viel natürlicher als much oder many — und sie passen sowohl zu zählbaren als auch zu unzählbaren Nomen! „London has a lot of museums.“ „There is lots of rain in the Scottish Highlands.“ Achte besonders auf Wörter, die im Deutschen zählbar sind, im Englischen aber unzählbar bleiben: information, homework, luggage (Gepäck), money."
+		],
+		"material": "Travel Checklist · Packing for Britain\n• We don't have much time before the bus leaves — please check your bag now!\n• How many T-shirts did you pack? Four? That's fine.\n• Do you carry much luggage? Try to pack light because there aren't many big racks on the coach.\n• Don't worry, there are a lot of small shops in Edinburgh, and Scotland gets lots of fresh rain, so bring a waterproof coat!",
+		"materialLabel": "Eigenes englisches Übungsmaterial · Reisecheckliste mit Mengenwörtern",
+		"materialLanguage": "en",
+		"sourceIds": [
+			"lp",
+			"bbc-le"
+		],
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "Which quantifier sentence is grammatically correct for an uncountable noun?",
+			"answer": "We haven't got much time left, so hurry up!",
+			"wrong": [
+				"We haven't got many times left, so hurry up!",
+				"The guide gave us many informations about London."
+			],
+			"explanation": "time (Zeit) und information sind hier unzählbar: not much time / a lot of information (ohne Plural-s!)."
+		},
+		"takeaway": "many + zählbarer Plural (Frage/Verneinung), much + unzählbarer Singular (Frage/Verneinung). In bejahten Sätzen passen a lot of / lots of für beides. Merke: information, homework, luggage, money sind unzählbar.",
+		"practice": [
+			{
+				"prompt": "How ___ museums did you visit in London? (zählbarer Plural: museums)",
+				"answers": [
+					"many"
+				],
+				"feedback": "museums ist zählbar im Plural → How many museums?"
+			},
+			{
+				"prompt": "We don't have ___ luggage for a three-day trip. (unzählbares Nomen: luggage)",
+				"answers": [
+					"much"
+				],
+				"feedback": "luggage ist im Englischen unzählbar → not much luggage."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Write four English sentences about your school week or a trip using 'How many ...?', 'not much ...', 'a lot of ...' and 'lots of ...'. Include one uncountable noun like homework, time or information.",
+				"model": "How many English lessons do we have this week? Today we don't have much homework, so I can play football. On our school website there is a lot of helpful information about the trip. We also took lots of photos in the park!",
+				"criteria": [
+					"Ich wende How many mit zählbarem Plural an.",
+					"Ich nutze much mit einem unzählbaren Nomen.",
+					"Ich setze a lot of / lots of richtig ein."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Erkläre auf Deutsch, warum die Sätze 'We got many informations on the website' und 'How many money do we need?' im Englischen falsch sind, und verbessere beide.",
+				"model": "Sowohl information als auch money sind im Englischen unzählbare Nomen (sie haben keinen Plural mit -s und stehen nicht mit many). Richtig heißen die Sätze: 'We got a lot of (oder lots of) information on the website.' und 'How much money do we need?'",
+				"criteria": [
+					"Ich erkenne beide Nomen als im Englischen unzählbar.",
+					"Ich entferne das falsche Plural-s bei information.",
+					"Ich verbessere beide Sätze mit a lot of / lots of bzw. much."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "sentence",
+			"goals": [
+				{
+					"label": "Zählbarer Plural in Frage",
+					"before": "How",
+					"after": "states are in the USA?",
+					"options": [
+						"many",
+						"much",
+						"lots"
+					],
+					"answer": "many",
+					"explanation": "states steht im zählbaren Plural → How many states?"
+				},
+				{
+					"label": "Unzählbares Nomen in Verneinung",
+					"before": "I haven't got",
+					"after": "homework today.",
+					"options": [
+						"much",
+						"many",
+						"a lot"
+					],
+					"answer": "much",
+					"explanation": "homework ist im Englischen unzählbar → haven't got much homework."
+				},
+				{
+					"label": "Natürliche Bejahung",
+					"before": "London offers",
+					"after": "free parks and museums.",
+					"options": [
+						"a lot of",
+						"much",
+						"how many"
+					],
+					"answer": "a lot of",
+					"explanation": "In positiven Aussagesätzen passt a lot of (ebenso lots of)."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": false
+	}
+]

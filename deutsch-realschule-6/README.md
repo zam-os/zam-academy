@@ -18,8 +18,7 @@ check the listening route against the described directions and destination.
 The package is published at version 0.0 (`publication.json`; `0.n` means not
 yet accepted by a teacher of the grade): on Pages, in the public catalog and in
 the Academy atlas, so its lesson ids, item ids and slugs are a contract.
-Teacher review and teacher videos remain open. Its review-history mapping is a
-proposal, not an approval.
+Teacher review and teacher videos remain open. Thomas approved the review-history mapping on 2026-11-19.
 
 Open [dist/index.html](dist/index.html) after building, or extract
 [release/ZAM-Academy-Deutsch-Realschule-6-offline.zip](release/ZAM-Academy-Deutsch-Realschule-6-offline.zip)
@@ -60,9 +59,7 @@ A plan or an app checkmark does not certify that reading. See the
 
 100 ZAM practice items live only in [cell.json](cell.json), two per lesson.
 Their source links use the public lesson anchors. The
-[legacy proposal](replaces-de-by.json) inventories twelve old items: four A
-candidates need Thomas's explicit approval; eight C items remain active. The
-cell declares neither `replaces` nor `retired_items`.
+[Approved mapping](replaces-de-by.json) records all twelve source items. 4 review histories move to the corresponding Academy cards and 8 stay on their existing IDs.
 
 Validate installation, enrolment and preservation of old evidence with the
 published zam-core version pinned in repository CI:
@@ -73,7 +70,7 @@ ZAM_CORE=file:///path/to/zam-core/dist/index.js node scripts/validate-cell.mjs
 
 This uses disposable libraries and never opens a configured learner library.
 It checks 100 new cards, repeated installation and enrolment, and preservation
-of all twelve legacy cards and their review evidence.
+of the approved history transfers and the retained legacy evidence.
 
 The shell derives from `deutsch-gymnasium-5`, which in turn builds on
 `deutsch-realschule-5`. All Grade 6 passages and model examples are newly

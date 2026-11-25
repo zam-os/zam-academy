@@ -1,0 +1,375 @@
+[
+  {
+    "id": "bewasserung",
+    "lb": 4,
+    "title": "Bewässerung und intensive Landwirtschaft",
+    "period": "Geo7 4 · Fallbeispiel Südostspanien",
+    "intro": "In trockenen Regionen Südostspaniens können Gewächshäuser Gemüse für weit entfernte Märkte liefern. Das Wasser dafür ist begrenzt.",
+    "paragraphs": [
+      "Viel Sonne, milde Winter, Bewässerung und Absatzmöglichkeiten begünstigen den Anbau. Intensive Landwirtschaft setzt vergleichsweise viele Betriebsmittel pro Fläche ein. Pflanzen können im Gewächshaus vor Wind geschützt und über Leitungen bewässert werden.",
+      "Entnimmt eine Region länger mehr Grundwasser, als sich neu bildet, kann der Grundwasserspiegel sinken. An Küsten kann Salzwasser eindringen. Tröpfchenbewässerung kann Verluste senken. Die Gesamtentnahme hängt zusätzlich von der Fläche und der Wahl der Kulturen ab."
+    ],
+    "takeaway": "Unterscheide die Wassermenge pro Fläche von der Entnahme der ganzen Region. Beurteile ökologische, wirtschaftliche und soziale Folgen.",
+    "sourceIds": [
+      "lehrplan"
+    ],
+    "quiz": {
+      "question": "Was kann trotz sparsamerer Bewässerung die Gesamtentnahme erhöhen?",
+      "answer": "Eine starke Ausweitung der bewässerten Fläche.",
+      "wrong": [
+        "Weniger Fläche bei gleicher Entnahme pro Fläche.",
+        "Mehr Grundwasserneubildung ohne geänderte Entnahme."
+      ],
+      "explanation": "Wenn die Fläche stark zunimmt, kann der geringere Verbrauch je Fläche übertroffen werden."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Wirkungen des Gemüseanbaus",
+      "instruction": "Ordne den jeweils angesprochenen Aspekt zu.",
+      "categories": [
+        "Wirtschaftlich",
+        "Ökologisch",
+        "Sozial"
+      ],
+      "entries": [
+        {
+          "text": "Ein Betrieb verkauft Gemüse an entfernte Märkte",
+          "target": 0,
+          "feedback": "Hier geht es um Absatz und Einkommen."
+        },
+        {
+          "text": "Der Grundwasserspiegel fällt",
+          "target": 1,
+          "feedback": "Das verändert eine Umweltressource."
+        },
+        {
+          "text": "Saisonarbeitskräfte brauchen sicheren Wohnraum",
+          "target": 2,
+          "feedback": "Das betrifft Arbeits- und Lebensbedingungen."
+        }
+      ],
+      "conclusion": "Unterscheide die Wassermenge pro Fläche von der Entnahme der ganzen Region. Beurteile ökologische, wirtschaftliche und soziale Folgen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre, warum Sonnenschein und Bewässerung zusammen den Gemüseanbau in einem trockenen Raum begünstigen.",
+        "hints": [
+          "Pflanzen brauchen unter anderem Licht und Wasser.",
+          "Welche menschliche Maßnahme gleicht die Trockenheit teilweise aus?"
+        ],
+        "model": "Sonnenlicht und milde Temperaturen verlängern die Anbauzeit. Bewässerung stellt Wasser bereit, wenn Regen fehlt. Die Wasserquelle begrenzt, wie viel Anbau möglich ist.",
+        "criteria": [
+          "Ich nenne einen natürlichen Vorteil.",
+          "Ich erkläre Bewässerung als Maßnahme.",
+          "Ich nenne eine Grenze der Nutzung."
+        ]
+      },
+      "2": {
+        "prompt": "Ein Betrieb braucht mit Tropfbewässerung 20 Prozent weniger Wasser pro Hektar und vergrößert die Fläche um die Hälfte. Vergleiche die gesamte Entnahme.",
+        "hints": [
+          "Rechne mit 100 Einheiten Wasser und einer Fläche von 1.",
+          "Multipliziere 0,8 mit 1,5."
+        ],
+        "model": "Der Verbrauch je Fläche sinkt auf 80 Prozent. Die Fläche steigt auf 150 Prozent. In diesem vereinfachten Fall beträgt die Entnahme 120 Prozent des alten Werts und steigt somit um 20 Prozent.",
+        "criteria": [
+          "Ich unterscheide Menge pro Fläche und Gesamtmenge.",
+          "Ich rechne beide Änderungen zusammen.",
+          "Ich erkläre die Steigerung um 20 Prozent."
+        ]
+      }
+    },
+    "figures": [
+      "wasserbilanz"
+    ],
+    "lab": "bewasserung",
+    "workedExample": "Ein Betrieb nutzt 10 ha und entnimmt 10 Einheiten pro Hektar. Er verbraucht 10 · 10 = 100 Einheiten. Bei 15 ha und 8 Einheiten pro Hektar wären es 15 · 8 = 120 Einheiten. Das sind trotz sparsamerer Bewässerung 20 Einheiten mehr.",
+    "transferCheck": {
+      "question": "Ein Betrieb senkt die Wassermenge von 10 auf 8 Einheiten je Hektar und erweitert seine Fläche von 10 ha auf 15 ha. Was passiert?",
+      "answer": "Die Gesamtentnahme steigt von 100 auf 120 Einheiten.",
+      "wrong": [
+        "Die Gesamtentnahme sinkt von 100 auf 80 Einheiten.",
+        "Sie steigt auf 150 Einheiten."
+      ],
+      "explanation": "Fläche und Entnahme pro Hektar werden multipliziert. 15 · 8 ergibt 120."
+    }
+  },
+  {
+    "id": "weidewirtschaft",
+    "lb": 4,
+    "title": "Weidewirtschaft in ländlichen Räumen",
+    "period": "Geo7 4 · Fallbeispiel Irland · Extensive Nutzung",
+    "intro": "Auf grünen Weiden im Westen Irlands unterscheiden sich Hanglage, Boden und Niederschlag von Gewächshausgebieten am Mittelmeer.",
+    "paragraphs": [
+      "Viel Niederschlag und milde Temperaturen fördern auf geeigneten Flächen das Graswachstum. Weidewirtschaft nutzt Gras als Futter. Extensive Nutzung beansprucht vergleichsweise wenig Betriebsmittel oder hat eine geringe Tierdichte je Fläche. Auch Weiden können intensiv genutzt werden.",
+      "Die Nutzung hängt außerdem von Verarbeitung, Transport und Preisen ab. Eine geeignete Weide kann bei fehlender Molkerei oder langen Transportwegen für Milch weniger geeignet sein. Angepasste Beweidung kann manche Offenlandlebensräume erhalten. Zu hoher Tierbesatz kann Boden und Vegetation belasten."
+    ],
+    "takeaway": "Naturfaktoren und wirtschaftliche Bedingungen wirken zusammen. Bei intensiver oder extensiver Nutzung kommt es auf den Einsatz pro Fläche an.",
+    "sourceIds": [
+      "lehrplan"
+    ],
+    "quiz": {
+      "question": "Was spricht in einem Vergleich für eine extensivere Weide?",
+      "answer": "Weniger Tiere pro Hektar und geringerer Betriebsmittelseinsatz.",
+      "wrong": [
+        "Mehr Tiere pro Hektar und mehr gekauftes Futter.",
+        "Die bloße Lage in Irland."
+      ],
+      "explanation": "Extensivität beschreibt die Nutzungsintensität, nicht das Land."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Was beeinflusst die Weidenutzung?",
+      "instruction": "Ordne jeden Faktor der passenden Gruppe zu.",
+      "categories": [
+        "Naturfaktor",
+        "Markt und Infrastruktur",
+        "Betriebliche Entscheidung"
+      ],
+      "entries": [
+        {
+          "text": "Ausreichend Regen für Gras",
+          "target": 0,
+          "feedback": "Niederschlag ist ein natürlicher Standortfaktor."
+        },
+        {
+          "text": "Fahrzeit zur Molkerei",
+          "target": 1,
+          "feedback": "Verarbeitung und Transport beeinflussen die Wirtschaftlichkeit."
+        },
+        {
+          "text": "Anzahl der Tiere pro Flächeneinheit",
+          "target": 2,
+          "feedback": "Der Betrieb entscheidet über den Besatz im Rahmen seiner Möglichkeiten."
+        }
+      ],
+      "conclusion": "Naturfaktoren und wirtschaftliche Bedingungen wirken zusammen. Bei intensiver oder extensiver Nutzung kommt es auf den Einsatz pro Fläche an."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Vergleiche eine feuchte Weideregion mit einem trockenen Gewächshausgebiet. Erkläre je einen dafür wichtigen Faktor.",
+        "hints": [
+          "Beginne mit Graswachstum bei ausreichend Regen.",
+          "Denke an Bewässerung bei trockenem Sommer."
+        ],
+        "model": "In der feuchten Region kann Gras mit natürlichem Niederschlag wachsen. Im trockenen Gewächshausgebiet hilft Bewässerung, Gemüse trotz fehlenden Regens anzubauen.",
+        "criteria": [
+          "Ich nenne zwei unterschiedliche Nutzungen.",
+          "Ich erkläre Regen als Voraussetzung.",
+          "Ich erkläre Bewässerung als Maßnahme."
+        ]
+      },
+      "2": {
+        "prompt": "Die Molkerei nahe einer Weideregion schließt. Beurteile, wie sich das auf Betriebe auswirken könnte, obwohl das Klima gleich bleibt.",
+        "hints": [
+          "Welche Kosten ändern sich?",
+          "Welche Alternativen sind denkbar?"
+        ],
+        "model": "Eine weiter entfernte Molkerei verlängert den Transport. Damit können Kosten steigen. Betriebe könnten gemeinsam sammeln, direkt vermarkten oder auf eine andere Nutzung umstellen. Ob das gelingt, hängt vom Absatz und den Investitionen ab.",
+        "criteria": [
+          "Ich unterscheide Klima und Absatz.",
+          "Ich erkläre eine wirtschaftliche Folge.",
+          "Ich nenne eine begründete Alternative."
+        ]
+      }
+    },
+    "figures": [
+      "laendlicher-raum"
+    ],
+    "workedExample": "Zwei Betriebe nutzen jeweils 20 ha Weide. Einer hält 20 Tiere, einer 40. Das sind 1 und 2 Tiere pro Hektar. Bei sonst vergleichbaren Bedingungen nutzt der erste die Weide extensiver.",
+    "transferCheck": {
+      "question": "Eine Molkerei im Nachbarort schließt. Welcher Faktor kann sich für die Weidebetriebe unmittelbar verschlechtern?",
+      "answer": "Der Transport zur Verarbeitung wird länger oder teurer.",
+      "wrong": [
+        "Die Tierdichte steigt in jedem Betrieb sofort.",
+        "Die Niederschläge gehen durch die Schließung zurück."
+      ],
+      "explanation": "Die Entfernung zur Verarbeitung wirkt auf Kosten und Absatz. Das Klima ändert sich dadurch nicht."
+    }
+  },
+  {
+    "id": "lebensmittelwahl",
+    "lb": 4,
+    "title": "Regional oder importiert?",
+    "period": "Geo7 4 · Produktion, Transport und Konsum",
+    "intro": "Eine nahe Tomate kann aus einem beheizten Gewächshaus stammen. Eine weiter entfernte Tomate kann im Freien wachsen. Die Strecke ist ein Teil des Vergleichs.",
+    "paragraphs": [
+      "Vergleiche Saison, Anbau, Wasserbedarf, Energiebedarf, Transport und Lagerung. Für manche Fragen sind auch Arbeitsbedingungen, Preis und Verderb wichtig. Suche für jedes Kriterium eine passende Angabe.",
+      "Ein Apfel aus regionaler Ernte kann im Herbst kurze Wege haben. Monate später ist auch der Energiebedarf der Lagerung relevant. Aus dem Herkunftsland allein lässt sich keine sichere Gesamtbilanz ableiten."
+    ],
+    "takeaway": "Begründe eine Kaufentscheidung mit mehreren Angaben zu Produktion, Transport und Konsum.",
+    "sourceIds": [
+      "lehrplan"
+    ],
+    "quiz": {
+      "question": "Was fehlt, wenn du nur die Entfernung zweier Lebensmittel vergleichst?",
+      "answer": "Information über Anbau, Transportart und Lagerung.",
+      "wrong": [
+        "Nur die Anzahl der Buchstaben auf dem Etikett.",
+        "Nichts, Entfernung bestimmt die gesamte Bilanz."
+      ],
+      "explanation": "Die Erzeugung und Lagerung können die Bilanz ebenso beeinflussen wie der Transport."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Lebensweg eines Produkts",
+      "instruction": "Ordne die Angaben dem beschriebenen Schritt zu.",
+      "categories": [
+        "Produktion",
+        "Transport",
+        "Konsum"
+      ],
+      "entries": [
+        {
+          "text": "Ein Gewächshaus wird beheizt",
+          "target": 0,
+          "feedback": "Heizenergie fällt beim Anbau an."
+        },
+        {
+          "text": "Das Produkt fährt im Kühlwagen zum Markt",
+          "target": 1,
+          "feedback": "Die Kühlung auf dem Weg gehört zum Transport."
+        },
+        {
+          "text": "Ein gekauftes Produkt wird vollständig gegessen",
+          "target": 2,
+          "feedback": "Der Haushalt beeinflusst den Abfallanteil."
+        }
+      ],
+      "conclusion": "Begründe eine Kaufentscheidung mit mehreren Angaben zu Produktion, Transport und Konsum."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Vergleiche einen regionalen Lagerapfel mit einem importierten frischen Apfel. Welche Angaben brauchst du für ein begründetes Urteil?",
+        "hints": [
+          "Denke an Lagerdauer und Transportmittel.",
+          "Berücksichtige auch den Anbau."
+        ],
+        "model": "Ich brauche Hinweise zu Transportart und Strecke, zur Kühl- oder Lagerdauer und zur Produktion. Erst damit kann ich beurteilen, welche Variante zu meinem gewählten Kriterium besser passt.",
+        "criteria": [
+          "Ich frage nach Produktion.",
+          "Ich frage nach Transport und Lagerung.",
+          "Ich nenne das Kriterium meines Urteils."
+        ]
+      },
+      "2": {
+        "prompt": "Ein Laden bietet günstiges Importgemüse und teureres Saisongemüse aus der Region an. Begründe eine Wahl, wenn dir sowohl Preis als auch Wassersparen wichtig sind.",
+        "hints": [
+          "Wähle eine faire Vergleichsmenge.",
+          "Frage nach Herkunft und Bewässerung, bevor du entscheidest."
+        ],
+        "model": "Ich vergleiche Preis je Kilogramm und Hinweise zur Wasserknappheit im jeweils genutzten Anbaugebiet. Regionales Gemüse wäre vorzuziehen, wenn es wesentlich weniger knappes Wasser braucht und mein Budget ausreicht. Ohne diese Angaben bleibt mein Urteil vorläufig.",
+        "criteria": [
+          "Ich vergleiche gleiche Mengen.",
+          "Ich begründe die Relevanz von Wasserknappheit.",
+          "Ich mache meine Entscheidung von Angaben abhängig."
+        ]
+      }
+    },
+    "figures": [
+      "lieferkette"
+    ],
+    "workedExample": "Zwei gleich große Tomatenangebote unterscheiden sich in Anbau und Transport. Beim nahen Angebot braucht das Gewächshaus Wärme. Beim weiter entfernten spielt der Transport eine größere Rolle. Für ein Urteil vergleichst du Heizenergie und Transportart.",
+    "transferCheck": {
+      "question": "Gemüse A kommt aus der Nähe und braucht viel Heizenergie. Gemüse B kommt von weiter weg. Welche Information hilft beim Umweltvergleich?",
+      "answer": "Daten zur Heizung, Transportart und Strecke beider Angebote.",
+      "wrong": [
+        "Nur der genaue Abstand in Kilometern.",
+        "Nur das Gewicht je Kiste."
+      ],
+      "explanation": "Produktion und Transport tragen beide zur Umweltbilanz bei. Keiner der Einzelwerte reicht für ein Gesamturteil."
+    }
+  },
+  {
+    "id": "periphere-raume",
+    "lb": 4,
+    "title": "Periphere Räume, Arbeit und Wandel",
+    "period": "Geo7 4 · Erreichbarkeit · Disparitäten · Migration",
+    "intro": "Zwei Dörfer können ähnlich groß sein und trotzdem ganz unterschiedliche Zugänge zu Arbeit, Schulen und Versorgung haben.",
+    "paragraphs": [
+      "Eine periphere Lage bedeutet schwache Anbindung an wichtige Zentren. Regionale Disparitäten sind Unterschiede etwa bei Einkommen, Verkehr oder Versorgung. Entfernung, Arbeitsangebot und Fahrpläne wirken zusammen. Zunehmende Abwanderung kann Dienstleistungen ausdünnen und weitere Wegzüge begünstigen.",
+      "Eine neue Buslinie kann ein Tal näher an Ausbildungsplätze bringen. Digitale Angebote können manche Wege sparen. Beide helfen nur, wenn sie zuverlässig genutzt werden können. Abwanderung kann zugleich Einkommen an Herkunftsfamilien zurückbringen und dem Zielort Arbeitskräfte zuführen."
+    ],
+    "takeaway": "Erkläre Unterschiede über Erreichbarkeit und wirtschaftliche Möglichkeiten. Prüfe, wer durch eine Maßnahme tatsächlich Zugang gewinnt.",
+    "sourceIds": [
+      "lehrplan"
+    ],
+    "quiz": {
+      "question": "Welche Beobachtung belegt eine Disparität im Zugang zur Ausbildung am besten?",
+      "answer": "Von einem Dorf sind vergleichbare Ausbildungsplätze deutlich schlechter erreichbar.",
+      "wrong": [
+        "Die Schule eines Dorfs hat wegen der Busfahrpläne einen früheren Pausenbeginn.",
+        "Ein Dorf liegt weiter weg, beide Dörfer haben aber gleich kurze Fahrzeiten zur Ausbildungsstätte."
+      ],
+      "explanation": "Unterschiedliche reale Erreichbarkeit kann die Wahl von Ausbildungsplätzen begrenzen."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Ursache, Folge oder Maßnahme?",
+      "instruction": "Ordne aus Sicht eines schlecht angebundenen Ortes zu.",
+      "categories": [
+        "Ursache",
+        "Folge",
+        "Maßnahme"
+      ],
+      "entries": [
+        {
+          "text": "Die einzige Buslinie fährt selten",
+          "target": 0,
+          "feedback": "Ein dünner Takt erschwert Fahrten."
+        },
+        {
+          "text": "Jugendliche ziehen wegen Ausbildung weg",
+          "target": 1,
+          "feedback": "Der Wegzug kann aus fehlenden Zugängen folgen."
+        },
+        {
+          "text": "Die Region stimmt den Bus auf Zuganschlüsse ab",
+          "target": 2,
+          "feedback": "Bessere Anschlüsse erweitern den erreichbaren Raum."
+        }
+      ],
+      "conclusion": "Erkläre Unterschiede über Erreichbarkeit und wirtschaftliche Möglichkeiten. Prüfe, wer durch eine Maßnahme tatsächlich Zugang gewinnt."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre, wie ein schlechter Anschluss Arbeitsmigration begünstigen kann.",
+        "hints": [
+          "Stelle einen Zusammenhang zwischen Fahrt und Arbeitsstelle her.",
+          "Denke an Pendeln als Alternative."
+        ],
+        "model": "Wenn eine Arbeitsstelle nur mit sehr langer Fahrt erreichbar ist, kann tägliches Pendeln schwierig sein. Manche Personen ziehen näher zur Arbeit. Ein besserer Anschluss kann in bestimmten Fällen den Umzug entbehrlich machen.",
+        "criteria": [
+          "Ich erkläre die schlechte Erreichbarkeit.",
+          "Ich verbinde sie mit dem Wegzug.",
+          "Ich nenne eine mögliche Alternative."
+        ]
+      },
+      "2": {
+        "prompt": "Ein Dorf plant entweder bessere Busanschlüsse oder einen digitalen Behördenservice. Vergleiche, wem beide Vorhaben helfen.",
+        "hints": [
+          "Welche Wege müssen Menschen tatsächlich zurücklegen?",
+          "Welche Voraussetzung braucht ein digitaler Dienst?"
+        ],
+        "model": "Busanschlüsse helfen Menschen, die persönlich zu Schule, Arbeit oder Arzt fahren. Der digitale Dienst spart bestimmte Verwaltungswege, wenn Internetzugang und verständliche Bedienung vorhanden sind. Ich würde den Bedarf beider Gruppen vor der Entscheidung vergleichen.",
+        "criteria": [
+          "Ich nenne eine Zielgruppe für den Bus.",
+          "Ich erkläre Nutzen und Voraussetzung des digitalen Dienstes.",
+          "Ich begründe eine Vergleichsfrage."
+        ]
+      }
+    },
+    "figures": [
+      "laendlicher-raum"
+    ],
+    "workedExample": "Aus Dorf A fährt ein Bus morgens zum Bahnhof, aus Dorf B zwei Stunden später. Wer um acht Uhr in der Stadt anfangen muss, kann den ersten Bus eher nutzen. So können ähnliche Entfernungen zu unterschiedlichen Ausbildungswegen führen.",
+    "transferCheck": {
+      "question": "Eine neue Buslinie erreicht den Bahnhof knapper vor der Zugabfahrt als bisher. Wann verbessert sie den Zugang am ehesten?",
+      "answer": "Wenn der Anschluss zuverlässig klappt und der Zug wichtige Zielorte erreicht.",
+      "wrong": [
+        "Sobald die Buslinie länger ist, auch ohne passenden Zuganschluss.",
+        "Nur wenn die Einwohnerzahl beider Orte gleich ist."
+      ],
+      "explanation": "Für Erreichbarkeit zählt die ganze Verbindung bis zu Arbeit, Bildung oder Versorgung."
+    }
+  }
+]

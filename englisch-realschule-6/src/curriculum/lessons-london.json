@@ -1,0 +1,349 @@
+[
+	{
+		"id": "e6-london-city",
+		"stage": "london",
+		"title": "London: A diverse metropolis",
+		"skill": "Die Metropole London in kultureller, sozialer und wirtschaftlicher Hinsicht kennenlernen",
+		"bindings": [
+			"1.1",
+			"2",
+			"5"
+		],
+		"paragraphs": [
+			"London an der Themse ist weit mehr als Sehenswürdigkeiten wie Big Ben oder Buckingham Palace. Als Weltmetropole ist die Stadt stark von ethnischer und kultureller Vielfalt geprägt: Menschen aus vielen Teilen der Welt leben und arbeiten hier, auf Märkten wie Camden Market oder in Straßen wie der Brick Lane im East End mischen sich Musik, Sprachen und Küchen aus aller Welt.",
+			"Beispiel zu den Lebensbedingungen: Wirtschaftliche Gegensätze liegen in London oft nah beieinander. Im Finanzzentrum der City of London und in den modernen Bürotürmen von Canary Wharf entstehen internationale Arbeitsplätze, während viele Familien in anderen Vierteln auf bezahlbare Wohnungen, gute Bus- und U-Bahn-Verbindungen (London Underground / The Tube) und öffentliche Parks achten. Auf der Karte siehst du, wie die Themse den Norden und den Süden der Stadt teilt."
+		],
+		"material": "City Portrait · Living in London\nLondon is a city of contrasts. In the West End you find theatres, museums and Buckingham Palace. A few miles east, the historic City of London and Canary Wharf form major centres for banking and international companies.\nAt the same time, London is famous for its cultural diversity: families from hundreds of backgrounds live across the city, and over 300 languages are spoken in London schools. On Saturdays, visitors enjoy street food at Camden Market in North London or explore South Asian shops in Brick Lane. Because housing can be very expensive, many commuters travel every day by bus or on the Underground ('the Tube').",
+		"materialLabel": "Eigenes englisches Übungsmaterial · nach den verlinkten Quellen zu London und Transport for London",
+		"materialLanguage": "en",
+		"sourceIds": [
+			"lp",
+			"wiki-london",
+			"london-gov",
+			"wiki-tfl"
+		],
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Was zeigt das Stadtporträt über Wirtschaft und Alltag in London?",
+			"answer": "London verbindet kulturelle Vielfalt und wichtige Finanzviertel mit hohen Wohnkosten und langen Pendlerwegen.",
+			"wrong": [
+				"Alle Londonerinnen und Londoner arbeiten im Tourismus im West End.",
+				"In London gibt es keine großen Unterschiede zwischen einzelnen Stadtteilen."
+			],
+			"explanation": "Im Text stehen Vielfalt (über 300 Sprachen in Schulen), Finanzzentren (City, Canary Wharf), hohe Wohnkosten und Pendlerverkehr nebeneinander."
+		},
+		"takeaway": "London ist eine vielfältige Metropole mit starken wirtschaftlichen und sozialen Kontrasten zwischen Finanzvierteln, bunten Wohn- und Marktvierteln und teurem Wohnraum.",
+		"practice": [
+			{
+				"prompt": "What do Londoners often call the London Underground? The ___ (Spitzname der U-Bahn)",
+				"answers": [
+					"Tube",
+					"the Tube"
+				],
+				"feedback": "Die Londoner U-Bahn wird im Alltag meist the Tube genannt."
+			},
+			{
+				"prompt": "Which river flows through London from west to east? The River ___ (Fluss durch London)",
+				"answers": [
+					"Thames"
+				],
+				"feedback": "Die Themse heißt auf Englisch River Thames."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Write four English sentences about London: mention the River Thames, one example of cultural diversity and one challenge of living in a big city.",
+				"model": "London lies on the River Thames in the south-east of England. It is a very diverse metropolis where people speak many languages and visit places like Camden Market or Brick Lane. On the one hand, there are big business centres like Canary Wharf. On the other hand, housing is expensive and many people travel far to work by Tube.",
+				"criteria": [
+					"Ich ordne London mit der Themse auf der Karte ein.",
+					"Ich nenne ein konkretes Beispiel für kulturelle Vielfalt.",
+					"Ich beschreibe eine soziale oder wirtschaftliche Bedingung."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Erkläre auf Deutsch einem Mitschüler, warum London im Lehrplan nicht nur als Touristenstadt, sondern auch als Lebensraum mit Vor- und Nachteilen betrachtet wird.",
+				"model": "London bietet zwar bekannte Sehenswürdigkeiten wie den Tower oder Big Ben, aber der Alltag der Menschen ist viel breiter: Die Stadt ist kulturell sehr vielfältig, was man an den vielen Sprachen an Schulen und an Vierteln wie Brick Lane sieht. Wirtschaftlich gibt es viele Arbeitsplätze in der City und in Canary Wharf, gleichzeitig sind die Mieten hoch und viele Menschen müssen lange mit Bus oder Tube pendeln.",
+				"criteria": [
+					"Ich gehe über reine Sehenswürdigkeiten hinaus.",
+					"Ich nenne Chancen (Arbeitsplätze, Kultur, Vielfalt).",
+					"Ich benenne Herausforderungen (Wohnkosten, Pendeln)."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "london-map",
+			"goals": [
+				{
+					"label": "Fluss durch London",
+					"before": "Boats and bridges cross the",
+					"after": "from west to east.",
+					"options": [
+						"River Thames",
+						"Mississippi",
+						"English Channel"
+					],
+					"answer": "River Thames",
+					"explanation": "Die Themse (River Thames) fließt mitten durch London."
+				},
+				{
+					"label": "Kulturelle Vielfalt im East End",
+					"before": "Famous markets and South Asian shops are in",
+					"after": "in East London.",
+					"options": [
+						"Brick Lane",
+						"Buckingham Palace",
+						"Greenwich Observatory"
+					],
+					"answer": "Brick Lane",
+					"explanation": "Brick Lane im East End steht für Vielfalt, Geschäfte und Essen."
+				},
+				{
+					"label": "Modernes Wirtschaftszentrum",
+					"before": "Tall office buildings stand in",
+					"after": "in the Docklands.",
+					"options": [
+						"Canary Wharf",
+						"Camden Market",
+						"Hyde Park"
+					],
+					"answer": "Canary Wharf",
+					"explanation": "Canary Wharf ist ein großes modernes Finanz- und Büroviertel in den Docklands."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "e6-london-directions",
+		"stage": "london",
+		"title": "Finding your way in London",
+		"skill": "Wege höflich erfragen, beschreiben und Präpositionen wie along, across, through, by und above anwenden",
+		"bindings": [
+			"1.1",
+			"1.2",
+			"2",
+			"5"
+		],
+		"paragraphs": [
+			"Wenn du dich in London zurechtfindest, brauchst du höfliche Gesprächseinstiege und genaue Präpositionen der Richtung. Mit „Excuse me, how do I get to the Science Museum?“ oder „Could you tell me the way to the station, please?“ beginnst du das Gespräch freundlich. Wenn du etwas nicht verstehst, hilft „Sorry, could you say that again, please?“",
+			"Beispiel auf der Wegeskizze: „Walk through Green Park, go across the bridge, turn right and walk along the river.“ Achte auf fünf wichtige Präpositionen aus Klasse 6: along (entlang), across (über / auf die andere Seite), through (durch etwas hindurch), by (neben / an … vorbei, auch Verkehrsmittel by bus) und above (über, ohne Berührung, z. B. above the shop). Übe die Wegbeschreibung laut mit der Skizze."
+		],
+		"material": "Dialogue near Green Park:\nVisitor: “Excuse me, how do I get to the museum?”\nLocal: “Sure! Walk through Green Park first. Then go across the bridge over the River Thames. Turn left at the corner and walk along the river. The museum is right by the bus stop, below the big clock — no, look up, the blue sign is above the entrance!”\nVisitor: “Thank you very much!”",
+		"materialLabel": "Eigenes englisches Übungsmaterial · Rollenspiel zur Wegbeschreibung",
+		"materialLanguage": "en",
+		"sourceIds": [
+			"lp",
+			"wiki-tfl"
+		],
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "You want to cross a bridge from one side of the river to the other. Which preposition fits best?",
+			"answer": "across the bridge",
+			"wrong": [
+				"through the bridge",
+				"above the park"
+			],
+			"explanation": "across bedeutet über etwas hinüber auf die andere Seite (across the bridge / street), through bedeutet durch einen Raum oder Park hindurch."
+		},
+		"takeaway": "Präpositionen des Wegs: through (durch einen Park/Tunnel), across (über eine Straße/Brücke), along (eine Straße/einen Fluss entlang), by (neben/bei), above (höher als / über).",
+		"practice": [
+			{
+				"prompt": "Walk ___ Green Park to reach the bridge. (durch den Park hindurch)",
+				"answers": [
+					"through"
+				],
+				"feedback": "through beschreibt die Bewegung durch einen Raum oder Park."
+			},
+			{
+				"prompt": "Go ___ the bridge to the other side of the river. (über die Brücke hinüber)",
+				"answers": [
+					"across"
+				],
+				"feedback": "across führt von einer Seite auf die andere."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Look at the street map and write directions from the Tube Station to the Bookshop or the Museum. Use at least three of these words: through, across, along, turn right/left.",
+				"model": "Excuse me, how do I get to the museum? First, walk straight past the Tube Station and go through Green Park. Then turn right and go across the bridge. Walk along the road on the other side, and the museum is on your left.",
+				"criteria": [
+					"Ich eröffne oder formuliere eine klare Wegbeschreibung.",
+					"Ich setze mindestens drei Wege-Präpositionen richtig ein.",
+					"Der beschriebene Weg passt zur Kartenskizze."
+				]
+			},
+			"2": {
+				"language": "en",
+				"prompt": "Write a short spoken dialogue (6 lines) in London: a tourist asks for the way to the Tube station, asks once because she did not understand, and thanks the Londoner politely.",
+				"model": "Tourist: Excuse me, how do I get to the Tube station?\nLocal: Go across the street and walk along High Street past the bookshop.\nTourist: Sorry, I didn't catch that. Could you repeat it slowly, please?\nLocal: Of course! Cross the street and go past the bookshop.\nTourist: Ah, I see! Thanks a lot for your help.\nLocal: You're welcome. Have a great day!",
+				"criteria": [
+					"Ich frage höflich nach dem Weg.",
+					"Ich baue eine verständliche Rückfrage bei Nichtverstehen ein.",
+					"Ich reagiere und bedanke mich höflich."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "street-map",
+			"goals": [
+				{
+					"label": "Durch den Park",
+					"before": "From the station, walk",
+					"after": "Green Park.",
+					"options": [
+						"through",
+						"above",
+						"between"
+					],
+					"answer": "through",
+					"explanation": "Durch einen Park geht man hindurch: through Green Park."
+				},
+				{
+					"label": "Über die Brücke",
+					"before": "Go",
+					"after": "the bridge over the River Thames.",
+					"options": [
+						"across",
+						"into",
+						"under"
+					],
+					"answer": "across",
+					"explanation": "Von Ufer zu Ufer überquert man die Brücke: across the bridge."
+				},
+				{
+					"label": "Den Fluss entlang",
+					"before": "Before the museum, walk",
+					"after": "the river path.",
+					"options": [
+						"along",
+						"above",
+						"through"
+					],
+					"answer": "along",
+					"explanation": "Entlang eines Wegs oder Flusses heißt along."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": true
+	},
+	{
+		"id": "e6-london-tickets",
+		"stage": "london",
+		"title": "Buying tickets and polite requests",
+		"skill": "Am Fahrkartenschalter Informationen einholen, Wünsche äußern und Nachfragen stellen",
+		"bindings": [
+			"1.1",
+			"2",
+			"5"
+		],
+		"paragraphs": [
+			"Beim Fahrkartenkauf (buying a ticket) am Bahnhof oder in der U-Bahn brauchst du klare, höfliche Fragen. Wichtige Begriffe sind single ticket (einfache Fahrt), return ticket (Hin- und Rückfahrt), platform (Gleis) und timetable (Fahrplan). Mit „I'd like a return ticket to Greenwich, please“ drückst du deinen Wunsch höflich aus.",
+			"Beispiel aus einem Gespräch am Schalter: „What time does the next train leave? — At 10:15 from Platform 4. — Sorry, could you say that again? Did you say Platform 4?“ Wenn du nicht sicher bist, wiederholst du die Zahl als Kontrollfrage oder fragst höflich nach. Höre zuerst das Übungsskript an und sprich danach die Rolle des Fahrgasts laut."
+		],
+		"material": "At London Bridge Station:\nClerk: “Good morning! How can I help you?”\nLiam: “Hello! I'd like two child return tickets to Greenwich, please.”\nClerk: “Certainly. That's six pounds altogether. The next train leaves at 10:15 from Platform 4.”\nLiam: “Sorry, I didn't catch the platform number. Could you repeat that, please?”\nClerk: “Platform 4, just on your left.”\nLiam: “Platform 4 at 10:15. Thank you very much!”",
+		"materialLabel": "Eigenes englisches Hör- und Sprechskript · Fahrkartenkauf am Bahnhof",
+		"materialLanguage": "en",
+		"sourceIds": [
+			"lp",
+			"wiki-tfl"
+		],
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "You want to travel to Greenwich and come back by train later today. What do you ask for?",
+			"answer": "I'd like a return ticket to Greenwich, please.",
+			"wrong": [
+				"Give me a single ticket, no thank you.",
+				"I want to buy a platform four."
+			],
+			"explanation": "Hin- und Rückfahrt heißt return ticket; eine einfache Fahrt wäre ein single ticket. I'd like … please ist höflich."
+		},
+		"takeaway": "Am Schalter: single ticket (einfache Fahrt), return ticket (Hin- und Rückfahrt), platform (Gleis). Höfliche Wünsche mit I'd like … please; Nachfragen mit Could you repeat that, please?",
+		"practice": [
+			{
+				"prompt": "A ticket there and back is a ___ ticket. (Hin- und Rückfahrt)",
+				"answers": [
+					"return"
+				],
+				"feedback": "return ticket bezeichnet die Hin- und Rückfahrkarte."
+			},
+			{
+				"prompt": "The train leaves from ___ 4. (Gleis auf Englisch)",
+				"answers": [
+					"Platform",
+					"platform"
+				],
+				"feedback": "platform bedeutet Bahnsteig bzw. Gleis."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Write the customer's lines for buying one adult and one child return ticket to Camden, asking for the departure time and thanking the clerk.",
+				"model": "Hello! I'd like one adult and one child return ticket to Camden, please. What time does the next train leave, and which platform is it? Thank you very much!",
+				"criteria": [
+					"Ich bestelle die richtigen Fahrkarten höflich mit please.",
+					"Ich frage nach Abfahrtszeit oder Gleis.",
+					"Ich bedanke mich am Schluss."
+				]
+			},
+			"2": {
+				"language": "en",
+				"prompt": "Write a 6-line dialogue at a station: the clerk suggests taking the 11:30 fast train, you disagree politely because you want a cheaper slower train, and you make a new suggestion.",
+				"model": "Clerk: Would you like to take the 11:30 express train?\nTraveller: No, thank you, that is too expensive for us. How about the 11:45 train?\nClerk: Yes, that one is cheaper and leaves from Platform 2.\nTraveller: That sounds great! Two return tickets, please.\nClerk: Here you are. Have a nice trip!\nTraveller: Thank you, goodbye!",
+				"criteria": [
+					"Ich lehne einen Vorschlag höflich ab und begründe kurz.",
+					"Ich mache selbst einen Vorschlag (z. B. How about ...?).",
+					"Das Gespräch bleibt durchgehend höflich und realistisch."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "dialogue",
+			"goals": [
+				{
+					"label": "Fahrkartenwunsch",
+					"before": "I'd like two",
+					"after": "to Greenwich, please.",
+					"options": [
+						"return tickets",
+						"platforms",
+						"timetables"
+					],
+					"answer": "return tickets",
+					"explanation": "Für Hin- und Rückfahrt bestellt man return tickets."
+				},
+				{
+					"label": "Nachfrage bei Nichtverstehen",
+					"before": "Sorry, I didn't catch that.",
+					"after": "the platform number, please?",
+					"options": [
+						"Could you repeat",
+						"You must write",
+						"I don't buy"
+					],
+					"answer": "Could you repeat",
+					"explanation": "Could you repeat … please? bittet freundlich um Wiederholung."
+				},
+				{
+					"label": "Abfahrtszeit erfragen",
+					"before": "What time",
+					"after": "leave?",
+					"options": [
+						"does the next train",
+						"is the next train",
+						"do the next train"
+					],
+					"answer": "does the next train",
+					"explanation": "Im Simple Present für feste Fahrpläne lautet die Frage: What time does the next train leave?"
+				}
+			]
+		},
+		"listening": true,
+		"speaking": true
+	}
+]

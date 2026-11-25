@@ -1,0 +1,393 @@
+[
+	{
+		"id": "f7-heure",
+		"stage": "f7-journee",
+		"title": "Il est quelle heure ?",
+		"skill": "Die Uhrzeit offiziell und umgangssprachlich angeben",
+		"bindings": ["1.2-wortschatz", "1.1-hoeren", "1.1-sprechen"],
+		"paragraphs": [
+			"Nach der Uhrzeit fragst du: Il est quelle heure ? Die offizielle Uhrzeit (Bahnhof, Kino, Fahrplan) zählt 24 Stunden und nennt die Minuten: Il est quinze heures trente (15:30). Il est vingt heures quarante-cinq (20:45). Geschrieben siehst du oft 15 h 30. Bei einer Stunde heißt es une heure, sonst heures; 12 Uhr ist midi, 0 Uhr minuit.",
+			"Im Alltag sagst du die Uhrzeit oft mit 12 Stunden: et quart (Viertel nach), et demie (halb, also 30 Minuten nach der Stunde), moins le quart (Viertel vor). 15:30 → trois heures et demie, 7:15 → sept heures et quart, 8:45 → neuf heures moins le quart. Achtung: Et demie zählt von der vollen Stunde weiter, im Deutschen sagst du „halb vier“ für 3:30. Beispiel: Le film commence à quelle heure ? – À vingt heures. / À huit heures du soir."
+		],
+		"material": "– Pardon, Monsieur, il est quelle heure ? – Il est sept heures et quart. – Merci ! Le bus part à sept heures et demie. Au cinéma : Le film commence à vingt heures quarante-cinq. À la gare : Le train pour Paris part à quinze heures trente, voie trois.",
+		"materialLabel": "Eigenes Übungsmaterial · erfundene Zeiten",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp-f7"],
+		"quiz": {
+			"optionLanguage": "fr",
+			"question": "Es ist 15:30 Uhr. Wie sagst du es im Alltag?",
+			"answer": "Il est trois heures et demie.",
+			"wrong": ["Il est quatre heures et demie.", "Il est trois heures moins le quart."],
+			"explanation": "Et demie zählt 30 Minuten nach drei Uhr; deutsch: halb vier."
+		},
+		"takeaway": "Offiziell: quinze heures trente. Alltag: trois heures et demie. et quart = Viertel nach, et demie = 30 Minuten nach, moins le quart = Viertel vor. midi = 12 Uhr, minuit = 0 Uhr.",
+		"practice": [
+			{ "prompt": "7:15 = sept heures et ___", "answers": ["quart"], "feedback": "Et quart: Viertel nach." },
+			{ "prompt": "12:00 = ___", "answers": ["midi"], "feedback": "Midi ist 12 Uhr mittags." }
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe diese Uhrzeiten offiziell und umgangssprachlich: 8:15, 13:30, 18:45.",
+				"model": "8:15 – huit heures quinze / huit heures et quart; 13:30 – treize heures trente / une heure et demie; 18:45 – dix-huit heures quarante-cinq / sept heures moins le quart.",
+				"criteria": ["Ich schreibe die offizielle Zeit mit 24 Stunden.", "Ich verwende et quart, et demie und moins le quart.", "Bei moins le quart nenne ich die nächste Stunde."]
+			},
+			"2": {
+				"prompt": "Deine Austauschfamilie fragt nach deinem Schultag. Schreibe vier Sätze: Wann fährt dein Bus, wann beginnt und endet der Unterricht, wann isst du zu Mittag?",
+				"model": "Mon bus part à sept heures et quart. Les cours commencent à huit heures. À midi, je mange à la maison. À une heure moins le quart, c’est la fin des cours.",
+				"criteria": ["Ich nenne vier verschiedene Uhrzeiten.", "Ich verwende à vor der Uhrzeit.", "Meine Zeiten sind richtig ausgedrückt."]
+			}
+		},
+		"workshop": {
+			"kind": "clock",
+			"goals": [
+				{ "label": "15:30 offiziell", "before": "Il est", "after": "", "options": ["quinze heures trente", "cinq heures trente", "quinze heures et demie"], "answer": "quinze heures trente", "explanation": "Offiziell: Stunden und Minuten." },
+				{ "label": "7:15 im Alltag", "before": "Il est sept heures", "after": "", "options": ["et quart", "et demie", "moins le quart"], "answer": "et quart", "explanation": "Et quart: Viertel nach." },
+				{ "label": "8:45 im Alltag", "before": "Il est", "after": "", "options": ["neuf heures moins le quart", "huit heures moins le quart", "huit heures et demie"], "answer": "neuf heures moins le quart", "explanation": "Moins le quart: Viertel vor der nächsten Stunde." }
+			]
+		},
+		"listening": false,
+		"speaking": true
+	},
+	{
+		"id": "f7-date",
+		"stage": "f7-journee",
+		"title": "Le premier juin",
+		"skill": "Wochentage, Monate, Daten und Ordnungszahlen bis zehn verwenden",
+		"bindings": ["1.2-wortschatz", "1.1-sprechen"],
+		"paragraphs": [
+			"Wochentage und Monate schreibst du klein: lundi, mardi, mercredi, jeudi, vendredi, samedi, dimanche; janvier, février, mars, avril, mai, juin, juillet, août, septembre, octobre, novembre, décembre. Das Datum nennt le + Zahl + Monat: le 14 juillet (quatorze juillet), le 3 mai. Nur der Erste ist eine Ordnungszahl: le premier juin (1er juin). Nach dem Datum fragst du: On est le combien ? – On est le 12 mars.",
+			"Ordnungszahlen bildest du meist mit ‑ième: deuxième, troisième, quatrième, cinquième (mit u), sixième, septième, huitième, neuvième (f wird v), dixième; nur premier / première ist anders. Samedi ohne Artikel heißt „an diesem Samstag“, le samedi heißt „samstags, jeden Samstag“: Samedi, je vais au cinéma. Le samedi, je joue au foot. Beispiel: Mon anniversaire, c’est le premier avril. Je suis la troisième de la famille."
+		],
+		"material": "Mon anniversaire, c’est le premier avril, et je ne plaisante pas ! L’anniversaire de mon frère, c’est le vingt-trois août. Le samedi, nous allons au marché. Mais samedi prochain, le cinq octobre, nous allons à Paris. C’est mon deuxième voyage à Paris.",
+		"materialLabel": "Eigenes Übungsmaterial · erfundene Daten",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp-f7"],
+		"quiz": {
+			"optionLanguage": "fr",
+			"question": "Wie sagst du „am 1. Mai“?",
+			"answer": "le premier mai",
+			"wrong": ["le un mai", "le premier Mai"],
+			"explanation": "Der Erste ist premier; Monate schreibst du klein."
+		},
+		"takeaway": "Datum: le + Zahl + Monat (le 14 juillet), aber le premier mai. Tage und Monate klein. samedi = an diesem Samstag, le samedi = jeden Samstag. Ordnungszahlen auf ‑ième.",
+		"practice": [
+			{ "prompt": "Ordnungszahl zu neuf: ___", "answers": ["neuvième"], "feedback": "Aus f wird v: neuvième." },
+			{ "prompt": "Jeden Samstag: ___ samedi, je joue au foot.", "answers": ["Le"], "feedback": "Le samedi heißt samstags." }
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe die Geburtstage von drei Personen aus deiner Familie oder erfundenen Personen als Satz, zum Beispiel: L’anniversaire de ma sœur, c’est le … Ein Datum soll der 1. eines Monats sein.",
+				"model": "L’anniversaire de ma sœur, c’est le premier mars. L’anniversaire de mon père, c’est le dix-sept juillet. Mon anniversaire, c’est le vingt-huit novembre.",
+				"criteria": ["Ich schreibe le + Zahl + Monat.", "Ich verwende le premier für den Ersten.", "Ich schreibe die Monate klein."]
+			},
+			"2": {
+				"prompt": "Beschreibe deine Woche: Was machst du regelmäßig (le lundi …) und was machst du an diesem Samstag? Schreibe vier Sätze und erkläre den Unterschied kurz auf Deutsch.",
+				"model": "Le lundi, j’ai sport. Le mercredi, je vais à la musique. Le samedi, je joue au foot. Mais samedi, je vais chez ma tante. Le samedi bedeutet jeden Samstag, samedi ohne Artikel meint diesen Samstag.",
+				"criteria": ["Ich verwende le + Wochentag für Regelmäßiges.", "Ich verwende den Wochentag ohne Artikel für einen bestimmten Tag.", "Ich erkläre den Unterschied."]
+			}
+		},
+		"workshop": {
+			"kind": "sequence",
+			"goals": [
+				{ "label": "1. Juni", "before": "le", "after": "juin", "options": ["premier", "un", "première"], "answer": "premier", "explanation": "Le premier juin." },
+				{ "label": "jeden Samstag", "before": "", "after": "samedi, je joue au foot.", "options": ["Le", "À", "En"], "answer": "Le", "explanation": "Le samedi: samstags." },
+				{ "label": "der Fünfte", "before": "C’est mon", "after": "voyage.", "options": ["cinquième", "cinqième", "cinquème"], "answer": "cinquième", "explanation": "Cinquième mit u." }
+			]
+		},
+		"explorer": {
+			"caption": "Kalender · Wähle einen Eintrag",
+			"steps": [
+				{ "label": "1er avril", "icon": "🗓 1", "example": "le premier avril", "detail": "Nur der Erste ist eine Ordnungszahl." },
+				{ "label": "14 juillet", "icon": "🗓 14", "example": "le quatorze juillet", "detail": "Sonst: le + Grundzahl + Monat." },
+				{ "label": "samedi / le samedi", "icon": "🔁", "example": "Le samedi, je joue au foot. Samedi, je vais à Paris.", "detail": "Mit le: jeden Samstag. Ohne: diesen Samstag." }
+			]
+		},
+		"listening": false,
+		"speaking": true
+	},
+	{
+		"id": "f7-college",
+		"stage": "f7-journee",
+		"title": "Au collège",
+		"skill": "Schulalltag, Stundenplan und Räume beschreiben und vergleichen",
+		"bindings": ["1.2-wortschatz", "1.1-sprechen", "2", "5"],
+		"paragraphs": [
+			"In Frankreich besuchen fast alle Elf- bis Fünfzehnjährigen le collège. Die Klassen zählen rückwärts: sixième, cinquième, quatrième, troisième. Eine Schülerin in deinem Alter ist in der cinquième. Fächer: le français, les maths, l’anglais, l’allemand, l’histoire-géo, les SVT (Biologie), la musique, le sport (EPS). Räume: la salle de classe, la cantine, le CDI (die Schulbibliothek), la cour (der Schulhof), le gymnase (die Sporthalle).",
+			"Vieles ist anders als bei dir: Der Unterricht dauert oft bis 16 oder 17 Uhr, mittags essen viele in der cantine. Am Mittwochnachmittag haben viele collèges keinen Unterricht. Noten gibt es oft von 0 bis 20, 20 ist am besten. Beispiel: Le lundi, j’ai maths à huit heures, puis anglais. À midi, je mange à la cantine. Ma matière préférée, c’est le sport. Vergleiche ruhig: Chez moi, il n’y a pas cours l’après-midi."
+		],
+		"material": "Mon emploi du temps, le lundi : 8 h maths, 9 h français, 10 h récréation dans la cour, 10 h 15 anglais, 11 h 15 histoire-géo, 12 h cantine, 13 h 30 SVT, 14 h 30 sport au gymnase, 16 h 30 fin des cours. Le mercredi après-midi, je n’ai pas cours. Ma matière préférée, c’est l’anglais.",
+		"materialLabel": "Eigenes Übungsmaterial · erfundener Stundenplan eines collège",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp-f7"],
+		"quiz": {
+			"optionLanguage": "fr",
+			"question": "In welcher Klasse des collège ist eine Zwölfjährige meistens?",
+			"answer": "en cinquième",
+			"wrong": ["en septième", "en troisième"],
+			"explanation": "Das collège zählt rückwärts: Mit zwölf ist man meist in der cinquième."
+		},
+		"takeaway": "Collège: sixième → cinquième → quatrième → troisième. Cantine, CDI, cour, gymnase. Oft Unterricht bis nachmittags, Mittwochnachmittag oft frei, Noten oft von 0 bis 20.",
+		"practice": [
+			{ "prompt": "Die Schulbibliothek heißt le ___.", "answers": ["CDI"], "feedback": "Le CDI ist die Schulbibliothek." },
+			{ "prompt": "Mittags essen viele in der ___.", "answers": ["cantine"], "feedback": "La cantine ist die Schulkantine." }
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Beschreibe deinen Montag in vier Sätzen auf Französisch: Fächer mit Uhrzeit und dein Lieblingsfach.",
+				"model": "Le lundi, j’ai maths à huit heures. À neuf heures, j’ai anglais. Après, j’ai sport au gymnase. Ma matière préférée, c’est la musique.",
+				"criteria": ["Ich nenne Fächer mit Uhrzeit.", "Ich nenne mein Lieblingsfach.", "Ich verwende le lundi für den Wochentag."]
+			},
+			"2": {
+				"prompt": "Vergleiche den Stundenplan aus dem Material mit deinem eigenen Schultag. Schreibe drei Unterschiede und eine Gemeinsamkeit auf Französisch oder Deutsch.",
+				"model": "En France, la fin des cours, c’est à seize heures trente. Chez moi, c’est à treize heures. Au collège, on mange à la cantine, moi, je mange à la maison. Le mercredi après-midi, les élèves français n’ont pas cours. Comme en France, nous avons maths et anglais.",
+				"criteria": ["Ich nenne drei Unterschiede.", "Ich nenne eine Gemeinsamkeit.", "Ich stütze mich auf das Material."]
+			}
+		},
+		"workshop": {
+			"kind": "poster",
+			"goals": [
+				{ "label": "Klasse", "before": "Léa a douze ans. Elle est en", "after": ".", "options": ["cinquième", "septième", "troisième"], "answer": "cinquième", "explanation": "Mit zwölf ist man meist in der cinquième." },
+				{ "label": "Mittagessen", "before": "À midi, je mange à la", "after": ".", "options": ["cantine", "cour", "CDI"], "answer": "cantine", "explanation": "In der cantine wird gegessen." },
+				{ "label": "Sport", "before": "Le sport, c’est au", "after": ".", "options": ["gymnase", "CDI", "tableau"], "answer": "gymnase", "explanation": "Le gymnase ist die Sporthalle." }
+			]
+		},
+		"explorer": {
+			"caption": "Schulgebäude · Wähle einen Raum",
+			"steps": [
+				{ "label": "la cantine", "icon": "🍽", "example": "À midi, je mange à la cantine.", "detail": "Viele essen mittags in der Schule.", "tone": "f" },
+				{ "label": "le CDI", "icon": "📚", "example": "Au CDI, je lis des BD.", "detail": "Schulbibliothek mit Büchern und Computern.", "tone": "m" },
+				{ "label": "la cour", "icon": "⚽", "example": "Pendant la récré, on joue dans la cour.", "detail": "Schulhof in der Pause (la récréation).", "tone": "f" }
+			]
+		},
+		"listening": false,
+		"speaking": true
+	},
+	{
+		"id": "f7-journee",
+		"stage": "f7-journee",
+		"title": "D’abord, ensuite, après",
+		"skill": "Tagesablauf mit einfachen Verbindungswörtern erzählen",
+		"bindings": ["1.2-wortschatz", "1.1-sprechen", "1.1-schreiben", "5"],
+		"paragraphs": [
+			"Mit kleinen Wörtern verbindest du Sätze: et (und), ou (oder), mais (aber), alors (also, dann), parce que (weil). Für die Reihenfolge brauchst du d’abord (zuerst), ensuite oder après (danach), enfin (schließlich). Zeitangaben: aujourd’hui (heute), maintenant (jetzt), demain (morgen), bientôt (bald), le matin (morgens), le soir (abends).",
+			"Beispiel für einen Tagesablauf: Le matin, d’abord, je prends le petit-déjeuner. Ensuite, je vais au collège à vélo. À midi, je mange à la cantine, mais je n’aime pas le poisson. Après les cours, je fais mes devoirs ou je joue au foot. Le soir, je suis fatigué, alors je regarde un film. Nach parce que folgt ein ganzer Satz: Je reste à la maison parce que je suis malade."
+		],
+		"material": "Une journée de Hugo : Le matin, d’abord, il prend le petit-déjeuner avec sa sœur. Ensuite, il va au collège à vélo. À midi, il mange à la cantine, mais il n’aime pas les épinards. Après les cours, il fait ses devoirs ou il joue au basket. Le soir, il est fatigué, alors il regarde la télé. Demain, c’est samedi !",
+		"materialLabel": "Eigenes Übungsmaterial · erfundene Person",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp-f7"],
+		"quiz": {
+			"optionLanguage": "fr",
+			"question": "Il est fatigué, ___ il regarde la télé.",
+			"answer": "alors",
+			"wrong": ["mais", "ou"],
+			"explanation": "Alors zeigt die Folge: Er ist müde, also schaut er fern."
+		},
+		"takeaway": "et, ou, mais, alors, parce que verbinden Sätze. d’abord – ensuite / après – enfin ordnen. aujourd’hui, maintenant, demain, bientôt geben die Zeit an.",
+		"practice": [
+			{ "prompt": "Je reste à la maison ___ je suis malade. (weil)", "answers": ["parce que"], "feedback": "Parce que nennt den Grund." },
+			{ "prompt": "„zuerst“: ___, je prends le petit-déjeuner.", "answers": ["D’abord", "D'abord"], "feedback": "D’abord: zuerst." }
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Beschreibe deinen Morgen in vier Sätzen mit d’abord, ensuite, après und enfin.",
+				"model": "D’abord, je prends le petit-déjeuner. Ensuite, je prends mon sac. Après, je vais au collège en bus. Enfin, j’arrive à sept heures cinquante.",
+				"criteria": ["Ich verwende alle vier Ordnungswörter.", "Mein Ablauf ist logisch.", "Die Verben sind richtig konjugiert."]
+			},
+			"2": {
+				"prompt": "Schreibe für deine Brieffreundin einen kurzen Text über einen normalen Schultag (6 Sätze). Verwende et, ou, mais, alors und parce que.",
+				"model": "Le matin, je vais au collège en bus et j’arrive à huit heures. J’adore l’anglais, mais je n’aime pas les maths. À midi, je mange à la maison parce que je n’ai pas cours l’après-midi. L’après-midi, je fais mes devoirs ou je joue avec mon chien. Le soir, je suis fatigué, alors je lis.",
+				"criteria": ["Ich verwende fünf Verbindungswörter.", "Mein Text erzählt in sinnvoller Reihenfolge.", "Nach parce que folgt ein ganzer Satz."]
+			}
+		},
+		"workshop": {
+			"kind": "sequence",
+			"goals": [
+				{ "label": "Gegensatz", "before": "Il mange à la cantine,", "after": "il n’aime pas les épinards.", "options": ["mais", "alors", "et"], "answer": "mais", "explanation": "Mais drückt einen Gegensatz aus." },
+				{ "label": "Auswahl", "before": "Il fait ses devoirs", "after": "il joue au basket.", "options": ["ou", "parce que", "mais"], "answer": "ou", "explanation": "Ou: oder." },
+				{ "label": "Reihenfolge", "before": "D’abord, il mange.", "after": ", il va au collège.", "options": ["Ensuite", "Parce que", "Ou"], "answer": "Ensuite", "explanation": "Ensuite: danach." }
+			]
+		},
+		"explorer": {
+			"caption": "Zeitstrahl · Wähle eine Tageszeit",
+			"steps": [
+				{ "label": "le matin", "icon": "🌅", "example": "D’abord, je prends le petit-déjeuner.", "detail": "Zuerst: d’abord" },
+				{ "label": "à midi", "icon": "🍽", "example": "Ensuite, je mange à la cantine, mais je n’aime pas le poisson.", "detail": "Danach: ensuite · Gegensatz: mais" },
+				{ "label": "le soir", "icon": "🌙", "example": "Je suis fatigué, alors je regarde un film.", "detail": "Folge: alors" }
+			]
+		},
+		"listening": false,
+		"speaking": true
+	},
+	{
+		"id": "f7-j-aime",
+		"stage": "f7-journee",
+		"title": "J’adore le foot !",
+		"skill": "Vorlieben und Abneigungen mit Nomen und Infinitiv ausdrücken",
+		"bindings": ["1.2-wortschatz", "1.1-sprechen", "1.1-schreiben"],
+		"paragraphs": [
+			"Vorlieben drückst du in vier Stufen aus: J’adore (ich liebe), J’aime (ich mag), Je n’aime pas (ich mag nicht), Je déteste (ich hasse). Nach diesen Verben folgt ein Nomen mit bestimmtem Artikel: J’aime le chocolat. J’adore la musique. Je déteste les épinards. Der Artikel ist wichtig: J’aime chocolat ist falsch.",
+			"Du kannst auch einen Infinitiv anschließen: J’aime danser. Je déteste ranger ma chambre. J’adore jouer au foot. Fragen: Tu aimes le sport ? Qu’est-ce que tu aimes ? Antworten wie Moi aussi ! oder Moi, non. zeigen, ob du zustimmst. Beispiel: Moi, j’adore la musique et j’aime chanter, mais je déteste les maths. Et toi ?"
+		],
+		"material": "Inès : Moi, j’adore la musique. J’aime chanter et danser. Hugo : Moi, je n’aime pas danser, mais j’adore le foot. Léa : Et moi, j’aime les animaux et je déteste les épinards ! Inès : Moi aussi, je déteste les épinards. Tu aimes les jeux vidéo, Léa ? Léa : Oui, un peu.",
+		"materialLabel": "Eigenes Übungsmaterial · erfundene Personen",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp-f7"],
+		"quiz": {
+			"optionLanguage": "fr",
+			"question": "„Ich liebe Schokolade.“",
+			"answer": "J’adore le chocolat.",
+			"wrong": ["J’adore chocolat.", "J’adore du chocolat."],
+			"explanation": "Nach aimer, adorer und détester steht das Nomen mit bestimmtem Artikel."
+		},
+		"takeaway": "J’adore > J’aime > Je n’aime pas > Je déteste + le / la / les + Nomen oder + Infinitiv: J’aime le sport. J’aime danser.",
+		"practice": [
+			{ "prompt": "Je déteste ___ épinards. (die)", "answers": ["les"], "feedback": "Nach détester steht der bestimmte Artikel: les épinards." },
+			{ "prompt": "„Ich tanze nicht gern“: Je n’aime pas ___.", "answers": ["danser"], "feedback": "Nach aimer kann ein Infinitiv folgen." }
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe vier Sätze über dich mit j’adore, j’aime, je n’aime pas und je déteste. Zwei Sätze enden mit einem Nomen, zwei mit einem Infinitiv.",
+				"model": "J’adore les chats. J’aime lire. Je n’aime pas le poisson. Je déteste ranger ma chambre.",
+				"criteria": ["Ich verwende alle vier Stufen.", "Nomen stehen mit bestimmtem Artikel.", "Zwei Sätze haben einen Infinitiv."]
+			},
+			"2": {
+				"prompt": "Mache eine kleine Umfrage in deiner Familie oder Klasse (drei Personen) und schreibe das Ergebnis auf Französisch: Was mögen sie, was nicht?",
+				"model": "Ma mère adore le jardin, mais elle déteste la neige. Mon frère aime les jeux vidéo et il n’aime pas lire. Mon amie Mia aime nager, mais elle n’aime pas le foot.",
+				"criteria": ["Ich beschreibe drei Personen.", "Ich verwende die 3. Person richtig.", "Ich setze Artikel und Infinitive richtig."]
+			}
+		},
+		"workshop": {
+			"kind": "sentence",
+			"goals": [
+				{ "label": "Artikel", "before": "J’adore", "after": "musique.", "options": ["la", "de la", "—"], "answer": "la", "explanation": "Nach adorer: bestimmter Artikel." },
+				{ "label": "Infinitiv", "before": "J’aime", "after": "le samedi.", "options": ["danser", "danse", "dansez"], "answer": "danser", "explanation": "Nach aimer folgt der Infinitiv." },
+				{ "label": "Abneigung", "before": "Je", "after": "les épinards !", "options": ["déteste", "adore", "aime bien"], "answer": "déteste", "explanation": "Je déteste: ich hasse." }
+			]
+		},
+		"explorer": {
+			"caption": "Gefühlsskala · Wähle eine Stufe",
+			"steps": [
+				{ "label": "J’adore", "icon": "😍", "example": "J’adore le foot.", "detail": "stärkste Vorliebe" },
+				{ "label": "J’aime / Je n’aime pas", "icon": "🙂 🙁", "example": "J’aime lire. Je n’aime pas danser.", "detail": "mögen oder nicht mögen" },
+				{ "label": "Je déteste", "icon": "😖", "example": "Je déteste les épinards.", "detail": "stärkste Abneigung" }
+			]
+		},
+		"listening": false,
+		"speaking": true
+	},
+	{
+		"id": "f7-loisirs",
+		"stage": "f7-journee",
+		"title": "Je joue au foot",
+		"skill": "Über Hobbys, Sport und Computer sprechen",
+		"bindings": ["1.2-wortschatz", "1.2-grammatik", "1.1-sprechen", "2", "5"],
+		"paragraphs": [
+			"Bei Spielen und Mannschaftssport sagst du jouer à: jouer au foot (à + le = au), jouer au basket, jouer aux jeux vidéo (à + les = aux), jouer à la console. Bei Instrumenten sagst du jouer de: jouer de la guitare, jouer du piano. Für viele Sportarten gibt es faire: faire du vélo, faire du judo, faire de la natation, faire de la danse.",
+			"Lerne zu deinen eigenen Hobbys die Wörter, die du brauchst, und schreibe sie mit Artikel ins Vokabelheft: le skate, l’équitation (Reiten), le dessin (Zeichnen). Am Computer: surfer sur Internet, regarder des vidéos, envoyer des messages. In Frankreich nutzen viele Jugendliche den freien Mittwochnachmittag für Vereine, Musik oder Sport. Beispiel: Le mercredi après-midi, je fais du judo et le soir, je joue aux jeux vidéo avec mon frère."
+		],
+		"material": "Mes loisirs : Le mercredi après-midi, je fais du judo au club. Le samedi, je joue au basket avec mes copains. Ma sœur joue de la guitare et elle fait de la danse. Le soir, je regarde des vidéos ou je joue aux jeux vidéo, mais pas plus d’une heure !",
+		"materialLabel": "Eigenes Übungsmaterial · erfundene Person",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp-f7"],
+		"quiz": {
+			"optionLanguage": "fr",
+			"question": "„Ich spiele Basketball.“",
+			"answer": "Je joue au basket.",
+			"wrong": ["Je joue le basket.", "Je fais au basket."],
+			"explanation": "Bei Ballspielen: jouer à; à + le wird zu au."
+		},
+		"takeaway": "jouer à (au foot, aux jeux vidéo) für Spiele · jouer de (de la guitare, du piano) für Instrumente · faire du / de la für viele Sportarten. Eigene Hobbywörter mit Artikel lernen.",
+		"practice": [
+			{ "prompt": "Elle joue ___ la guitare.", "answers": ["de"], "feedback": "Instrument: jouer de." },
+			{ "prompt": "Je joue ___ jeux vidéo. (à + les)", "answers": ["aux"], "feedback": "À + les = aux." }
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe vier Sätze über deine Hobbys. Verwende jouer à, jouer de und faire je mindestens einmal.",
+				"model": "Je joue au foot le samedi. Je joue du piano. Le mercredi, je fais de la natation. Le soir, je joue aux jeux vidéo.",
+				"criteria": ["Ich verwende jouer à, jouer de und faire.", "Ich setze au, aux, du, de la richtig.", "Ich nenne meine eigenen Hobbys."]
+			},
+			"2": {
+				"prompt": "Deine Austauschpartnerin aus Rennes fragt: Qu’est-ce que tu fais le mercredi après-midi ? Antworte mit fünf Sätzen und vergleiche mit ihrer Woche, in der der Mittwochnachmittag frei ist.",
+				"model": "Le mercredi après-midi, j’ai cours jusqu’à une heure. Après, je fais mes devoirs. À quatre heures, je fais du judo. Toi, tu n’as pas cours le mercredi après-midi, alors tu peux faire du sport. Le samedi, je joue au basket comme toi.",
+				"criteria": ["Ich beschreibe meinen Mittwoch.", "Ich vergleiche mit dem französischen Schulalltag.", "Ich verwende Hobbyausdrücke richtig."]
+			}
+		},
+		"workshop": {
+			"kind": "sentence",
+			"goals": [
+				{ "label": "Ballspiel", "before": "Je joue", "after": "foot.", "options": ["au", "du", "le"], "answer": "au", "explanation": "Jouer à + le = au." },
+				{ "label": "Instrument", "before": "Ma sœur joue", "after": "guitare.", "options": ["de la", "à la", "la"], "answer": "de la", "explanation": "Instrument: jouer de la." },
+				{ "label": "Sportart", "before": "Le mercredi, je", "after": "du judo.", "options": ["fais", "joue", "vais"], "answer": "fais", "explanation": "Faire du judo." }
+			]
+		},
+		"explorer": {
+			"caption": "Hobby-Karte · Wähle eine Gruppe",
+			"steps": [
+				{ "label": "jouer à", "icon": "⚽🎮", "example": "jouer au foot, jouer aux jeux vidéo", "detail": "Spiele und Ballsport: à + le = au, à + les = aux." },
+				{ "label": "jouer de", "icon": "🎸🎹", "example": "jouer de la guitare, jouer du piano", "detail": "Instrumente: de + le = du." },
+				{ "label": "faire de", "icon": "🚲🥋", "example": "faire du vélo, faire de la danse", "detail": "Viele andere Sportarten." }
+			]
+		},
+		"listening": false,
+		"speaking": true
+	},
+	{
+		"id": "f7-futur",
+		"stage": "f7-journee",
+		"title": "Demain, je vais jouer",
+		"skill": "Pläne mit dem futur composé ausdrücken",
+		"bindings": ["1.2-grammatik", "1.1-sprechen", "1.1-schreiben"],
+		"paragraphs": [
+			"Das futur composé (die nahe Zukunft) bildest du mit aller im Präsens und einem Infinitiv: je vais jouer, tu vas jouer, il va jouer, nous allons jouer, vous allez jouer, ils vont jouer. Es drückt Pläne und Dinge aus, die bald passieren: Demain, je vais jouer au foot. Ce soir, nous allons regarder un film.",
+			"Verneint umklammern ne … pas die Form von aller: Je ne vais pas jouer. Typische Zeitangaben: demain (morgen), ce soir (heute Abend), samedi (an diesem Samstag), bientôt (bald), la semaine prochaine (nächste Woche), pendant les vacances (in den Ferien). Beispiel: Pendant les vacances, nous allons aller en Bretagne. Je vais faire du surf, mais ma sœur ne va pas nager."
+		],
+		"material": "Ce week-end, Léa va être très occupée. Samedi matin, elle va faire les courses avec sa mère. L’après-midi, elle va jouer au tennis avec Inès. Dimanche, toute la famille va manger chez les grands-parents. Hugo ne va pas venir : il va faire ses devoirs !",
+		"materialLabel": "Eigenes Übungsmaterial · erfundene Personen",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp-f7"],
+		"quiz": {
+			"optionLanguage": "fr",
+			"question": "„Wir werden morgen schwimmen.“ (nahe Zukunft)",
+			"answer": "Demain, nous allons nager.",
+			"wrong": ["Demain, nous allons nageons.", "Demain, nous vont nager."],
+			"explanation": "Aller im Präsens (nous allons) + Infinitiv (nager)."
+		},
+		"takeaway": "futur composé = aller im Präsens + Infinitiv: je vais jouer. Verneint: je ne vais pas jouer. Zeitangaben: demain, ce soir, bientôt, la semaine prochaine.",
+		"practice": [
+			{ "prompt": "Ce soir, ils ___ regarder un film.", "answers": ["vont"], "feedback": "Ils vont + Infinitiv." },
+			{ "prompt": "Je ne vais pas ___ (venir).", "answers": ["venir"], "feedback": "Nach aller bleibt der Infinitiv." }
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe vier Pläne für das Wochenende im futur composé mit je, nous, ma sœur / mon frère und einer Verneinung.",
+				"model": "Samedi, je vais jouer au foot. Nous allons manger chez ma tante. Ma sœur va faire du vélo. Dimanche, je ne vais pas faire mes devoirs.",
+				"criteria": ["Ich bilde aller + Infinitiv.", "Ich verwende drei Personen.", "Ein Satz ist richtig verneint."]
+			},
+			"2": {
+				"prompt": "Schreibe eine Postkarte an deine Brieffreundin über deine Pläne für die Sommerferien: wohin, mit wem, was du machen und was du nicht machen wirst (fünf Sätze).",
+				"model": "Chère Chloé, pendant les vacances, nous allons aller en Italie. Je vais nager dans la mer et mon père va faire du vélo. Ma sœur va lire beaucoup. Moi, je ne vais pas faire de devoirs ! À bientôt, Lena",
+				"criteria": ["Ich verwende das futur composé fünfmal.", "Ich nenne Ziel, Personen und Aktivitäten.", "Die Karte hat Anrede und Gruß."]
+			}
+		},
+		"workshop": {
+			"kind": "sequence",
+			"goals": [
+				{ "label": "aller", "before": "Demain, je", "after": "jouer au tennis.", "options": ["vais", "vas", "suis"], "answer": "vais", "explanation": "Je vais + Infinitiv." },
+				{ "label": "Infinitiv", "before": "Nous allons", "after": "un film.", "options": ["regarder", "regardons", "regardé"], "answer": "regarder", "explanation": "Nach aller steht der Infinitiv." },
+				{ "label": "Verneinung", "before": "Hugo ne", "after": "pas venir.", "options": ["va", "vient", "vais"], "answer": "va", "explanation": "Ne va pas umklammert aller." }
+			]
+		},
+		"explorer": {
+			"caption": "Zeitstrahl · Wähle einen Zeitpunkt",
+			"steps": [
+				{ "label": "maintenant", "icon": "●", "example": "Maintenant, je fais mes devoirs.", "detail": "Präsens: jetzt." },
+				{ "label": "ce soir", "icon": "→", "example": "Ce soir, je vais regarder un film.", "detail": "aller + Infinitiv: bald.", "tone": "v" },
+				{ "label": "la semaine prochaine", "icon": "→→", "example": "La semaine prochaine, nous allons aller à Paris.", "detail": "Ein Plan für später.", "tone": "v" }
+			]
+		},
+		"listening": false,
+		"speaking": true
+	}
+]

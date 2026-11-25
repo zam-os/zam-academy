@@ -12,7 +12,7 @@ Progress, texts and notes stay in this browser's `localStorage`. When storage is
 
 `cell.json` is the sole card list: 24 atoms and 73 practice items, each citing its stable lesson anchor. New atom and item identifiers were generated once with `ulid()`. Three formula answers use structured math segments and German speech. Every official curriculum binding names Grade 7 and track I.
 
-`replaces-de-by.json` is an unapproved proposal: two A candidates and fourteen C keep-active rows for all sixteen items in the two old Grade 7 physics cells. There are no `replaces` or `retired_items`, and no learner history is transferred. The neighbouring grade-8 optics cells remain outside this proposal; their scope and shared identifiers need a separate ownership decision. See the [coverage and legacy analysis](../docs/physik-realschule-7-coverage.md).
+The [approved mapping](replaces-de-by.json) transfers 2 matching mechanics histories. The other 14 cards remain active for existing learners, including the thermal-physics cards. The separate Grade 8 optics cells remain outside this package. See the [coverage and legacy analysis](../docs/physik-realschule-7-coverage.md).
 
 ```bash
 npm ci

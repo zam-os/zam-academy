@@ -1,0 +1,3765 @@
+{
+	"$schema": "https://zam.app/schemas/v1/kvt-tile.json",
+	"tile_id": "zam-academy:latein-gymnasium-6",
+	"version": "2026.11.1",
+	"title": "Latein 6 Gymnasium (ZAM Academy)",
+	"description": "Latein als 1. Fremdsprache am bayerischen Gymnasium (Jahrgangsstufe 6, 2. Lernjahr): 44 Lektionen zu Kontextwortschatz und Wortbildung, 3. Deklination (dīves/pauper/vetus), hic/ille/iste und īdem/ipse, Zahlen bis M/mīlia, īre, Passiv in allen sechs Tempora, Konjunktiv Imperfekt und Plusquamperfekt, PPA und PPP, Prädikativum und neuen Kasusfunktionen, Irrealis, ut/nē/cum, passivem AcI, Participium Coniunctum, Italien- und Mittelmeerkarte, Vesuvausbruch mit Plinius, Republik und Punischen Kriegen sowie Ovids Mythen und Texterschließung mit 132 Lernkarten.",
+	"publisher": "ZAM Academy",
+	"sources": [
+		{
+			"uri": "https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/6/latein/1-fremdsprache",
+			"label": "LehrplanPLUS - Gymnasium - 6 - Latein - Fachlehrpläne",
+			"checked": "2026-11-24"
+		},
+		{
+			"uri": "https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/5/latein/1-fremdsprache",
+			"label": "LehrplanPLUS - Gymnasium - 5 - Latein - Fachlehrpläne",
+			"checked": "2026-11-24"
+		},
+		{
+			"uri": "https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/7/latein/1-fremdsprache",
+			"label": "LehrplanPLUS - Gymnasium - 7 - Latein - Fachlehrpläne",
+			"checked": "2026-11-24"
+		},
+		{
+			"uri": "https://www.lehrplanplus.bayern.de/fachprofil/gymnasium/latein",
+			"label": "LehrplanPLUS - Gymnasium - Latein - Fachprofile",
+			"checked": "2026-11-24"
+		},
+		{
+			"uri": "https://www.antike-am-koenigsplatz.mwn.de/",
+			"label": "Antike am Königsplatz",
+			"checked": "2026-11-24"
+		},
+		{
+			"uri": "https://de.wikipedia.org/wiki/Pompeji",
+			"label": "Pompeji – Wikipedia",
+			"checked": "2026-11-24"
+		},
+		{
+			"uri": "https://de.wikipedia.org/wiki/Herculaneum",
+			"label": "Herculaneum – Wikipedia",
+			"checked": "2026-11-24"
+		},
+		{
+			"uri": "https://de.wikipedia.org/wiki/Vesuv",
+			"label": "Vesuv – Wikipedia",
+			"checked": "2026-11-24"
+		},
+		{
+			"uri": "https://de.wikipedia.org/wiki/Magna_Graecia",
+			"label": "Magna Graecia – Wikipedia",
+			"checked": "2026-11-24"
+		},
+		{
+			"uri": "https://de.wikipedia.org/wiki/Plinius_der_J%C3%BCngere",
+			"label": "Plinius der Jüngere – Wikipedia",
+			"checked": "2026-11-24"
+		},
+		{
+			"uri": "https://de.wikipedia.org/wiki/R%C3%B6mische_Republik",
+			"label": "Römische Republik – Wikipedia",
+			"checked": "2026-11-24"
+		},
+		{
+			"uri": "https://de.wikipedia.org/wiki/St%C3%A4ndek%C3%A4mpfe",
+			"label": "Ständekämpfe – Wikipedia",
+			"checked": "2026-11-24"
+		},
+		{
+			"uri": "https://de.wikipedia.org/wiki/Zweiter_Punischer_Krieg",
+			"label": "Zweiter Punischer Krieg – Wikipedia",
+			"checked": "2026-11-24"
+		},
+		{
+			"uri": "https://de.wikipedia.org/wiki/Hannibal",
+			"label": "Hannibal – Wikipedia",
+			"checked": "2026-11-24"
+		},
+		{
+			"uri": "https://de.wikipedia.org/wiki/Attische_Demokratie",
+			"label": "Attische Demokratie – Wikipedia",
+			"checked": "2026-11-24"
+		},
+		{
+			"uri": "https://de.wikipedia.org/wiki/Archimedes",
+			"label": "Archimedes – Wikipedia",
+			"checked": "2026-11-24"
+		},
+		{
+			"uri": "https://de.wikipedia.org/wiki/Ovid",
+			"label": "Ovid – Wikipedia",
+			"checked": "2026-11-24"
+		},
+		{
+			"uri": "https://de.wikipedia.org/wiki/Europa_(Mythologie)",
+			"label": "Europa (Tochter des Agenor) – Wikipedia",
+			"checked": "2026-11-24"
+		},
+		{
+			"uri": "https://de.wikipedia.org/wiki/Theseus",
+			"label": "Theseus – Wikipedia",
+			"checked": "2026-11-24"
+		},
+		{
+			"uri": "https://de.wikipedia.org/wiki/Daidalos",
+			"label": "Daidalos – Wikipedia",
+			"checked": "2026-11-24"
+		},
+		{
+			"uri": "https://de.wikipedia.org/wiki/Orpheus",
+			"label": "Orpheus – Wikipedia",
+			"checked": "2026-11-24"
+		},
+		{
+			"uri": "https://de.wikipedia.org/wiki/Trojanischer_Krieg",
+			"label": "Trojanischer Krieg – Wikipedia",
+			"checked": "2026-11-24"
+		},
+		{
+			"uri": "https://de.wikipedia.org/wiki/Odyssee",
+			"label": "Odyssee – Wikipedia",
+			"checked": "2026-11-24"
+		}
+	],
+	"atoms": [
+		{
+			"id": "01M87RE91SPA0E60NDXFK2M7JM",
+			"atom_uri": "urn:zam:atom:01M87RE91SPA0E60NDXFK2M7JM",
+			"namespace": "zam-academy-latein-gymnasium-6",
+			"slug": "l6-kontext-wortschatz",
+			"title": "Mehrdeutige Wörter im Kontext erschließen",
+			"domain": "latein/wortschatz-bruecken",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-kontext-wortschatz",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6",
+					"topic_code": "wortschatz-bruecken",
+					"topic_title": "Wortschatz im Kontext, Wortbildung und Sprachbrücken"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb1",
+					"topic_title": "Texte",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb2.1",
+					"topic_title": "Sprachliche Basis: Wortschatz",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M87RE9699DNZMFJRNBBFE1ME",
+					"slug": "l6-kontext-wortschatz-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was bedeutet 'agere' in der Wendung 'cum cīvibus dē pāce agere'?",
+					"concept": "mit den Bürgern über Frieden verhandeln.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-kontext-wortschatz",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"mit den Bürgern über Frieden verhandeln.",
+							"die Bürger aus der Stadt vertreiben."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M87RE96AJ3Z9PRZXGPTWASJM",
+					"slug": "l6-kontext-wortschatz-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie unterscheidest du 'pācem petere' von 'Italiam petere'?",
+					"concept": "'pācem petere' heißt ‚um Frieden bitten‘, 'Italiam petere' heißt ‚Italien ansteuern / aufsuchen‘.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-kontext-wortschatz",
+					"sample_solution": "'pācem petere' heißt ‚um Frieden bitten‘, 'Italiam petere' heißt ‚Italien ansteuern / aufsuchen‘."
+				},
+				{
+					"id": "01M87RE96BA8CG2FV24F502XN0",
+					"slug": "l6-kontext-wortschatz-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Nenne zwei feste Bedeutungen von 'rēs' mit Begleitwort aus dem römischen Alltag.",
+					"concept": "rēs pūblica = Staat / Gemeinwesen; rēs gestae = Taten / Geschichte (oder rēs novae = Umsturz).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-kontext-wortschatz",
+					"sample_solution": "rēs pūblica = Staat / Gemeinwesen; rēs gestae = Taten / Geschichte (oder rēs novae = Umsturz)."
+				}
+			]
+		},
+		{
+			"id": "01M87RE91TXG32HVG5STCTTCVA",
+			"atom_uri": "urn:zam:atom:01M87RE91TXG32HVG5STCTTCVA",
+			"namespace": "zam-academy-latein-gymnasium-6",
+			"slug": "l6-wortfelder-familien",
+			"title": "Wortfamilien und Sachfelder erweitern",
+			"domain": "latein/wortschatz-bruecken",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-wortfelder-familien",
+			"prerequisites": [
+				{
+					"atom_id": "01M87RE91SPA0E60NDXFK2M7JM",
+					"type": "hard",
+					"rationale": "Mehrdeutige Verben und Nomen im Kontext helfen beim Verknüpfen von Wortfamilien."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6",
+					"topic_code": "wortschatz-bruecken",
+					"topic_title": "Wortschatz im Kontext, Wortbildung und Sprachbrücken"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb2.1",
+					"topic_title": "Sprachliche Basis: Wortschatz",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb4",
+					"topic_title": "Methoden",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M87RE96CCHD3FSVBYVCQPK05",
+					"slug": "l6-wortfelder-familien-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welches Substantiv gehört zur Wortfamilie von 'scrībere' (schreiben)?",
+					"concept": "scrīptor (Schriftsteller / Verfasser).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-wortfelder-familien",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"scrīptor (Schriftsteller / Verfasser).",
+							"cōnsul (höchster Staatsbeamter)."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M87RE96DDP6XC4PC7N46B33A",
+					"slug": "l6-wortfelder-familien-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welche drei lateinischen Wörter bilden das Sachfeld ‚Vesuvausbruch‘ bei Plinius?",
+					"concept": "fūmus (Rauch), ignis (Feuer) und cinis (Asche).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-wortfelder-familien",
+					"sample_solution": "fūmus (Rauch), ignis (Feuer) und cinis (Asche)."
+				},
+				{
+					"id": "01M87RE96E50FX2Q2XJ3E13GA2",
+					"slug": "l6-wortfelder-familien-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Erkläre den Zusammenhang zwischen 'dūcere' und 'dux, ducis m.'.",
+					"concept": "Vom Stamm dūc-/duc- (führen) stammt dux = der Anführer / Feldherr.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-wortfelder-familien",
+					"sample_solution": "Vom Stamm dūc-/duc- (führen) stammt dux = der Anführer / Feldherr."
+				}
+			]
+		},
+		{
+			"id": "01M87RE91V1YEWYHT6BACRA5SN",
+			"atom_uri": "urn:zam:atom:01M87RE91V1YEWYHT6BACRA5SN",
+			"namespace": "zam-academy-latein-gymnasium-6",
+			"slug": "l6-wortbildung-erschliessen",
+			"title": "Erweiterte Wortbildung und Erschließung",
+			"domain": "latein/wortschatz-bruecken",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-wortbildung-erschliessen",
+			"prerequisites": [
+				{
+					"atom_id": "01M87RE91TXG32HVG5STCTTCVA",
+					"type": "hard",
+					"rationale": "Stammkenntnisse aus Wortfamilien ermöglichen das Zerlegen neuer Komposita."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6",
+					"topic_code": "wortschatz-bruecken",
+					"topic_title": "Wortschatz im Kontext, Wortbildung und Sprachbrücken"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb2.1",
+					"topic_title": "Sprachliche Basis: Wortschatz",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M87RE96F8M6G1CMR72THQGJY",
+					"slug": "l6-wortbildung-erschliessen-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche Richtung drückt die Vorsilbe 'trāns-' in 'Alpēs trānsīre' aus?",
+					"concept": "hinüber / darüber hinweg (die Alpen überqueren).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-wortbildung-erschliessen",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"hinüber / darüber hinweg (die Alpen überqueren).",
+							"herab / nach unten (herabsteigen)."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M87RE96G1SA826H2A70AJ8S7",
+					"slug": "l6-wortbildung-erschliessen-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Was zeigt das Adjektivsuffix '-bilis / -ibilis' wie in 'incrēdibilis' an?",
+					"concept": "Eine Möglichkeit oder Eignung im Sinn von ‚-bar / -lich‘ (incrēdibilis = unglaublich).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-wortbildung-erschliessen",
+					"sample_solution": "Eine Möglichkeit oder Eignung im Sinn von ‚-bar / -lich‘ (incrēdibilis = unglaublich)."
+				},
+				{
+					"id": "01M87RE96H7X7BR2BQTF02J30Z",
+					"slug": "l6-wortbildung-erschliessen-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Erschließe das Verb 'obsistere' mithilfe seiner Vorsilbe 'ob-' und des Verbs 'sistere'.",
+					"concept": "ob- (entgegen) + sistere (sich stellen) → jemandem entgegentreten / widerstehen (+ Dativ).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-wortbildung-erschliessen",
+					"sample_solution": "ob- (entgegen) + sistere (sich stellen) → jemandem entgegentreten / widerstehen (+ Dativ)."
+				}
+			]
+		},
+		{
+			"id": "01M87RE91WRGNPZQTJEXC3SBP9",
+			"atom_uri": "urn:zam:atom:01M87RE91WRGNPZQTJEXC3SBP9",
+			"namespace": "zam-academy-latein-gymnasium-6",
+			"slug": "l6-wendungen-inschriften",
+			"title": "Neue Wendungen, Inschriften und Zahlzeichen",
+			"domain": "latein/wortschatz-bruecken",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-wendungen-inschriften",
+			"prerequisites": [
+				{
+					"atom_id": "01M87RE91SPA0E60NDXFK2M7JM",
+					"type": "hard",
+					"rationale": "Kontextbedeutungen erschließen feste Wendungen und Inschriftenkürzel."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6",
+					"topic_code": "wortschatz-bruecken",
+					"topic_title": "Wortschatz im Kontext, Wortbildung und Sprachbrücken"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb2.1",
+					"topic_title": "Sprachliche Basis: Wortschatz",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb3",
+					"topic_title": "Antike Kultur und Weltverständnis",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M87RE96JE1QMKDEJKV78FM9D",
+					"slug": "l6-wendungen-inschriften-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wie heißt die feste lateinische Wendung für ‚ein Lager aufschlagen‘?",
+					"concept": "castra pōnere (mit dem Pluralwort castra).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-wendungen-inschriften",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"castra pōnere (mit dem Pluralwort castra).",
+							"bellum gerere (Krieg führen)."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M87RE96KJ03EP6EASXEZASG7",
+					"slug": "l6-wendungen-inschriften-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Löse die Altarinschrift ‚D. D.‘ vollständig auf und übersetze sie.",
+					"concept": "Dōnō dedit – ‚hat (dies) als Geschenk gestiftet / geweiht‘.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-wendungen-inschriften",
+					"sample_solution": "Dōnō dedit – ‚hat (dies) als Geschenk gestiftet / geweiht‘."
+				},
+				{
+					"id": "01M87RE96M39Y2QK2DR57E6AQP",
+					"slug": "l6-wendungen-inschriften-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Was bedeuten 'fidem servāre' und 'fidem fallere / violāre' im Gegensatz zueinander?",
+					"concept": "'fidem servāre' = sein Wort / die Treue halten; 'fidem fallere / violāre' = das Versprechen brechen.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-wendungen-inschriften",
+					"sample_solution": "'fidem servāre' = sein Wort / die Treue halten; 'fidem fallere / violāre' = das Versprechen brechen."
+				}
+			]
+		},
+		{
+			"id": "01M87RE91X80H841FTH3D3JMN9",
+			"atom_uri": "urn:zam:atom:01M87RE91X80H841FTH3D3JMN9",
+			"namespace": "zam-academy-latein-gymnasium-6",
+			"slug": "l6-englisch-romanisch",
+			"title": "Sprachbrücken zu Englisch (2. FS), Deutsch und Romanisch",
+			"domain": "latein/wortschatz-bruecken",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-englisch-romanisch",
+			"prerequisites": [
+				{
+					"atom_id": "01M87RE91V1YEWYHT6BACRA5SN",
+					"type": "hard",
+					"rationale": "Präfix- und Suffixmuster übertragen sich direkt auf englische und romanische Wörter."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6",
+					"topic_code": "wortschatz-bruecken",
+					"topic_title": "Wortschatz im Kontext, Wortbildung und Sprachbrücken"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb2.1",
+					"topic_title": "Sprachliche Basis: Wortschatz",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M87RE96N57W54W5YFRZ77GT1",
+					"slug": "l6-englisch-romanisch-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welches englische Wort entspricht lateinisch 'memoria' nach dem Endungsmuster -ia → -y?",
+					"concept": "memory (ebenso glōria → glory, historia → history).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-englisch-romanisch",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"memory (ebenso glōria → glory, historia → history).",
+							"mountain (von mōns, montis)."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M87RE96P11WFFK5533HR6K3X",
+					"slug": "l6-englisch-romanisch-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Verbinde lateinisch 'lībertās', französisch 'liberté' und das passende englische Substantiv.",
+					"concept": "liberty (die Endung -tās / -tātem wird über franz. -té im Englischen zu -ty).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-englisch-romanisch",
+					"sample_solution": "liberty (die Endung -tās / -tātem wird über franz. -té im Englischen zu -ty)."
+				},
+				{
+					"id": "01M87RE96Q1METN1W8DKBB5DRN",
+					"slug": "l6-englisch-romanisch-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Wie erklärt der PPP-Stamm von 'dīvidere, dīvīsum' die Schreibweise von 'Division'?",
+					"concept": "Das -s- in 'Division' (lat. dīvīsiō) geht direkt auf den PPP-Stamm dīvīs- zurück; 'dividieren' dagegen folgt dem Präsensstamm dīvid- von dīvidere.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-englisch-romanisch",
+					"sample_solution": "Das -s- in 'Division' (lat. dīvīsiō) geht direkt auf den PPP-Stamm dīvīs- zurück; 'dividieren' dagegen folgt dem Präsensstamm dīvid- von dīvidere."
+				}
+			]
+		},
+		{
+			"id": "01M87RE91YX9J3VHFN98Q70RB7",
+			"atom_uri": "urn:zam:atom:01M87RE91YX9J3VHFN98Q70RB7",
+			"namespace": "zam-academy-latein-gymnasium-6",
+			"slug": "l6-dritte-deklination-adjektive",
+			"title": "Erweiterte 3. Deklination: dīves, pauper und vetus",
+			"domain": "latein/nomina-pronomina-zahlen",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-dritte-deklination-adjektive",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6",
+					"topic_code": "nomina-pronomina-zahlen",
+					"topic_title": "Nomina, Demonstrativa, Zahlen bis 1000 und īre"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb2.2",
+					"topic_title": "Sprachliche Basis: Morphologie",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M87RE96RZ2MMKPBR20ZPAY13",
+					"slug": "l6-dritte-deklination-adjektive-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche Endung hat 'pauper' (arm) im Ablativ Singular mit 'cum amīcō ...'?",
+					"concept": "-e: cum amīcō paupere (konsonantische Deklination).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-dritte-deklination-adjektive",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"-e: cum amīcō paupere (konsonantische Deklination).",
+							"-ī: cum amīcō pauperī (i-Stamm)."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M87RE96SQX0FEJNP2Q41S0CX",
+					"slug": "l6-dritte-deklination-adjektive-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Nenne die drei konsonantischen Ausnahme-Adjektive der 3. Deklination.",
+					"concept": "dīves (dīvitis), pauper (pauperis) und vetus (veteris).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-dritte-deklination-adjektive",
+					"sample_solution": "dīves (dīvitis), pauper (pauperis) und vetus (veteris)."
+				},
+				{
+					"id": "01M87RE96TY0R2CFT44ZRDYXV3",
+					"slug": "l6-dritte-deklination-adjektive-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Vergleiche 'exempla veterum' (vetus) mit dem i-Stamm 'in bellō gravī' (gravis) im Gen. Pl. und Neutr. Pl.",
+					"concept": "vetus bildet konsonantisch Gen. Pl. veterum und Neutr. Pl. vetera; gravis als i-Stamm gravium und gravia.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-dritte-deklination-adjektive",
+					"sample_solution": "vetus bildet konsonantisch Gen. Pl. veterum und Neutr. Pl. vetera; gravis als i-Stamm gravium und gravia."
+				}
+			]
+		},
+		{
+			"id": "01M87RE91ZZ2XKWGYG5NYHKYAN",
+			"atom_uri": "urn:zam:atom:01M87RE91ZZ2XKWGYG5NYHKYAN",
+			"namespace": "zam-academy-latein-gymnasium-6",
+			"slug": "l6-demonstrativa-hic-ille-iste",
+			"title": "Demonstrativpronomina: hic, ille und iste",
+			"domain": "latein/nomina-pronomina-zahlen",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-demonstrativa-hic-ille-iste",
+			"prerequisites": [
+				{
+					"atom_id": "01M87RE91YX9J3VHFN98Q70RB7",
+					"type": "hard",
+					"rationale": "Sichere Adjektiv-Kongruenz stützt die pronominale Zuordnung im Satz."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6",
+					"topic_code": "nomina-pronomina-zahlen",
+					"topic_title": "Nomina, Demonstrativa, Zahlen bis 1000 und īre"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb2.2",
+					"topic_title": "Sprachliche Basis: Morphologie",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M87RE96VZ23JK0754ARFAXSQ",
+					"slug": "l6-demonstrativa-hic-ille-iste-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welches Demonstrativpronomen drückt unmittelbare Nähe zum Sprecher aus (‚dieser hier‘)?",
+					"concept": "hic, haec, hoc (z. B. in hāc terrā).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-demonstrativa-hic-ille-iste",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"hic, haec, hoc (z. B. in hāc terrā).",
+							"ille, illa, illud (jener dort)."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M87RE96W64Y7RR95B0MEPM88",
+					"slug": "l6-demonstrativa-hic-ille-iste-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wann verwendet man 'ille' oft anerkennend, und welche Haltung drückt meist 'iste' aus?",
+					"concept": "'ille' weist auf Bekanntes/Berühmtes hin (ille Homērus); 'iste' bezeichnet das Gegenüber oft spöttisch oder abwertend.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-demonstrativa-hic-ille-iste",
+					"sample_solution": "'ille' weist auf Bekanntes/Berühmtes hin (ille Homērus); 'iste' bezeichnet das Gegenüber oft spöttisch oder abwertend."
+				},
+				{
+					"id": "01M87RE96XM323M809D1FT3HRC",
+					"slug": "l6-demonstrativa-hic-ille-iste-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Wie lauten Genitiv und Dativ Singular (alle Genera) von 'hic', 'ille' und 'iste'?",
+					"concept": "Genitiv: huius, illīus, istīus; Dativ: huic, illī, istī.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-demonstrativa-hic-ille-iste",
+					"sample_solution": "Genitiv: huius, illīus, istīus; Dativ: huic, illī, istī."
+				}
+			]
+		},
+		{
+			"id": "01M87RE920SG3430JHDGE0DRXX",
+			"atom_uri": "urn:zam:atom:01M87RE920SG3430JHDGE0DRXX",
+			"namespace": "zam-academy-latein-gymnasium-6",
+			"slug": "l6-idem-ipse",
+			"title": "Identitäts- und Hervorhebungspronomen: īdem und ipse",
+			"domain": "latein/nomina-pronomina-zahlen",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-idem-ipse",
+			"prerequisites": [
+				{
+					"atom_id": "01M87RE91ZZ2XKWGYG5NYHKYAN",
+					"type": "hard",
+					"rationale": "Bekanntes pronominales Kasussystem (Gen. eiusdem/ipsīus, Dat. eīdem/ipsī) gilt auch bei īdem und ipse."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6",
+					"topic_code": "nomina-pronomina-zahlen",
+					"topic_title": "Nomina, Demonstrativa, Zahlen bis 1000 und īre"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb2.2",
+					"topic_title": "Sprachliche Basis: Morphologie",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M87RE96YV9CM9Z6T8CS1C22G",
+					"slug": "l6-idem-ipse-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was unterscheidet 'īdem, eadem, idem' von 'ipse, ipsa, ipsum'?",
+					"concept": "īdem = derselbe (Identität); ipse = selbst (persönliche Hervorhebung).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-idem-ipse",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"īdem = derselbe (Identität); ipse = selbst (persönliche Hervorhebung).",
+							"īdem = selbst; ipse = ein anderer."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M87RE96ZQ4RAJMMQJBVDZ19Y",
+					"slug": "l6-idem-ipse-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie verhalten sich -m und -d vor '-dem' bei der Bildung von 'īdem' im Akkusativ Singular?",
+					"concept": "Auslautendes -m wird zu -n- (eundem, eandem); im Neutrum fällt -d weg → Akk. Sg. n. idem (kurz!).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-idem-ipse",
+					"sample_solution": "Auslautendes -m wird zu -n- (eundem, eandem); im Neutrum fällt -d weg → Akk. Sg. n. idem (kurz!)."
+				},
+				{
+					"id": "01M87RE970K018ZKV1DE23GXRT",
+					"slug": "l6-idem-ipse-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Übersetze ‚Zur selben Stunde betrat die Göttin selbst den Tempel‘ ins Lateinische.",
+					"concept": "Eādem hōrā dea ipsa templum intrāvit.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-idem-ipse",
+					"sample_solution": "Eādem hōrā dea ipsa templum intrāvit."
+				}
+			]
+		},
+		{
+			"id": "01M87RE921NH3FG8ZMR7NF16R5",
+			"atom_uri": "urn:zam:atom:01M87RE921NH3FG8ZMR7NF16R5",
+			"namespace": "zam-academy-latein-gymnasium-6",
+			"slug": "l6-numeralia-1000",
+			"title": "Römische Zahlen bis 1000 und ausgewählte Ordinalia",
+			"domain": "latein/nomina-pronomina-zahlen",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-numeralia-1000",
+			"prerequisites": [
+				{
+					"atom_id": "01M87RE91WRGNPZQTJEXC3SBP9",
+					"type": "hard",
+					"rationale": "Zahlzeichen begegnen regelmäßig zusammen mit römischen Inschriften."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6",
+					"topic_code": "nomina-pronomina-zahlen",
+					"topic_title": "Nomina, Demonstrativa, Zahlen bis 1000 und īre"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb2.1",
+					"topic_title": "Sprachliche Basis: Wortschatz",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb2.2",
+					"topic_title": "Sprachliche Basis: Morphologie",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M87RE9717P7NXR02PTVGQN8B",
+					"slug": "l6-numeralia-1000-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wie schreibt man die Jahreszahl 490 richtig in römischen Ziffern nach Subtraktionsregel?",
+					"concept": "CDXC (500 − 100 = 400; 100 − 10 = 90).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-numeralia-1000",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"CDXC (500 − 100 = 400; 100 − 10 = 90).",
+							"DCCCC (fünffache Addition statt Subtraktion)."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M87RE972EEGEBC7M99JDB09C",
+					"slug": "l6-numeralia-1000-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Gib die römischen Ziffern für 79 (Vesuvausbruch), 218 (Alpenzug) und 509 (Republik) an.",
+					"concept": "79 = LXXIX; 218 = CCXVIII; 509 = DIX.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-numeralia-1000",
+					"sample_solution": "79 = LXXIX; 218 = CCXVIII; 509 = DIX."
+				},
+				{
+					"id": "01M87RE973GPGEKF2N5CHZ2D4T",
+					"slug": "l6-numeralia-1000-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Worin unterscheidet sich ‚eintausend Soldaten‘ von ‚zweitausend Soldaten‘ grammatisch?",
+					"concept": "mīlle mīlitēs (mīlle unveränderlich + gleicher Kasus), aber duo mīlia mīlitum (mīlia deklinierbar + Genitiv Plural!).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-numeralia-1000",
+					"sample_solution": "mīlle mīlitēs (mīlle unveränderlich + gleicher Kasus), aber duo mīlia mīlitum (mīlia deklinierbar + Genitiv Plural!)."
+				}
+			]
+		},
+		{
+			"id": "01M87RE922HDM2Y81D4M8TAJ75",
+			"atom_uri": "urn:zam:atom:01M87RE922HDM2Y81D4M8TAJ75",
+			"namespace": "zam-academy-latein-gymnasium-6",
+			"slug": "l6-stammformen-ire",
+			"title": "Das unregelmäßige Verb īre (gehen) und Stammformen",
+			"domain": "latein/nomina-pronomina-zahlen",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-stammformen-ire",
+			"prerequisites": [
+				{
+					"atom_id": "01M87RE91V1YEWYHT6BACRA5SN",
+					"type": "hard",
+					"rationale": "Präfixe wie ad-, ex- und trāns- verbinden sich produktiv mit īre."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6",
+					"topic_code": "nomina-pronomina-zahlen",
+					"topic_title": "Nomina, Demonstrativa, Zahlen bis 1000 und īre"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb2.2",
+					"topic_title": "Sprachliche Basis: Morphologie",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M87RE974HQR1SRFEH9DMRTQ8",
+					"slug": "l6-stammformen-ire-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wann wechselt der Stamm von 'īre' (gehen) im Präsens zu e-?",
+					"concept": "Vor den dunklen Vokalen a, o, u (z. B. eō, eunt, exeunt, euntēs).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-stammformen-ire",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Vor den dunklen Vokalen a, o, u (z. B. eō, eunt, exeunt, euntēs).",
+							"Nur im Imperfekt vor dem Tempuszeichen -bā-."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M87RE9755XS1EXEWXRN3C7QS",
+					"slug": "l6-stammformen-ire-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Bilde von 'adīre' (hingehen) die 3. Sg. Imperfekt und die 3. Sg. Perfekt Aktiv.",
+					"concept": "Imperfekt: adībat; Perfekt: adiit.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-stammformen-ire",
+					"sample_solution": "Imperfekt: adībat; Perfekt: adiit."
+				},
+				{
+					"id": "01M87RE976V1RK7SAM8TENZFNS",
+					"slug": "l6-stammformen-ire-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Nenne alle vier Stammformen von 'scrībere' (Inf., 1. Sg. Präs., 1. Sg. Perf., PPP) und ihre Rolle.",
+					"concept": "scrībere, scrībō, scrīpsī, scrīptum (Präsensstamm · Perfektstamm · Partizipialstamm).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-stammformen-ire",
+					"sample_solution": "scrībere, scrībō, scrīpsī, scrīptum (Präsensstamm · Perfektstamm · Partizipialstamm)."
+				}
+			]
+		},
+		{
+			"id": "01M87RE923CVGDTGFSY2BW5B2T",
+			"atom_uri": "urn:zam:atom:01M87RE923CVGDTGFSY2BW5B2T",
+			"namespace": "zam-academy-latein-gymnasium-6",
+			"slug": "l6-genus-verbi-passiv-praesens",
+			"title": "Genus Verbi Passiv: Präsens, Imperfekt und Futur I",
+			"domain": "latein/verben-passiv-konjunktiv",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-genus-verbi-passiv-praesens",
+			"prerequisites": [
+				{
+					"atom_id": "01M87RE922HDM2Y81D4M8TAJ75",
+					"type": "hard",
+					"rationale": "Stammkenntnisse sichern den Umbau zwischen Aktiv- und Passivformen."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6",
+					"topic_code": "verben-passiv-konjunktiv",
+					"topic_title": "Verben: Passiv, Konjunktiv Präteritum und Partizipien"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb2.2",
+					"topic_title": "Sprachliche Basis: Morphologie",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M87RE977WG2Y52AXMM4GRJRC",
+					"slug": "l6-genus-verbi-passiv-praesens-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wie heißt die 3. Plural Präsens Passiv von 'dēfendere' (‚sie werden verteidigt‘)?",
+					"concept": "dēfenduntur (mit Passivendung -ntur).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-genus-verbi-passiv-praesens",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"dēfenduntur (mit Passivendung -ntur).",
+							"dēfendunt (Aktiv: sie verteidigen)."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M87RE97805XJ49Y0RMYMZ76M",
+					"slug": "l6-genus-verbi-passiv-praesens-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie unterscheidest du im Passivsatz eine handelnde Person von einer Sache?",
+					"concept": "Person mit ā/ab + Ablativ (ā mīlitibus), Sache im bloßen Ablātīvus īnstrūmentī (gladiō / ignī).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-genus-verbi-passiv-praesens",
+					"sample_solution": "Person mit ā/ab + Ablativ (ā mīlitibus), Sache im bloßen Ablātīvus īnstrūmentī (gladiō / ignī)."
+				},
+				{
+					"id": "01M87RE979ACGD40QRJ970891H",
+					"slug": "l6-genus-verbi-passiv-praesens-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Wie endet der Infinitiv Präsens Passiv bei konsonantischen Verben wie 'mittere' im Unterschied zu 'vocāre'?",
+					"concept": "konsonantisch nur -ī: mittī (dagegen a-/e-/i-Konjugation -rī: vocārī, habērī, audīrī).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-genus-verbi-passiv-praesens",
+					"sample_solution": "konsonantisch nur -ī: mittī (dagegen a-/e-/i-Konjugation -rī: vocārī, habērī, audīrī)."
+				}
+			]
+		},
+		{
+			"id": "01M87RE924X24Q30CB77MEY284",
+			"atom_uri": "urn:zam:atom:01M87RE924X24Q30CB77MEY284",
+			"namespace": "zam-academy-latein-gymnasium-6",
+			"slug": "l6-passiv-perfektstamm",
+			"title": "Passiv am Perfektstamm: PPP + esse",
+			"domain": "latein/verben-passiv-konjunktiv",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-passiv-perfektstamm",
+			"prerequisites": [
+				{
+					"atom_id": "01M87RE923CVGDTGFSY2BW5B2T",
+					"type": "hard",
+					"rationale": "Grundverständnis des Genus Verbi trägt den Übergang zum zusammengesetzten Passiv."
+				},
+				{
+					"atom_id": "01M87RE922HDM2Y81D4M8TAJ75",
+					"type": "hard",
+					"rationale": "Der vierte Stamm liefert das PPP für Perfekt, Plusquamperfekt und Futur II Passiv."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6",
+					"topic_code": "verben-passiv-konjunktiv",
+					"topic_title": "Verben: Passiv, Konjunktiv Präteritum und Partizipien"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb2.2",
+					"topic_title": "Sprachliche Basis: Morphologie",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M87RE97ANZNR6HT6ZGQRC6QJ",
+					"slug": "l6-passiv-perfektstamm-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Mit welchem Partizip und Hilfsverb bildet Latein das Passiv am Perfektstamm?",
+					"concept": "PPP (in KNG am Subjekt!) + Formen von esse (Präsens/Imperfekt/Futur I).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-passiv-perfektstamm",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"PPP (in KNG am Subjekt!) + Formen von esse (Präsens/Imperfekt/Futur I).",
+							"PPA + Formen von posse."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M87RE97BPVHMTYN7EFWB0SAA",
+					"slug": "l6-passiv-perfektstamm-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie unterscheidest du zeitlich 'Epistula missa est' und 'Epistula missa erat'?",
+					"concept": "'missa est' = Perfekt Passiv (wurde / ist geschickt worden); 'missa erat' = Plusquamperfekt Passiv (war geschickt worden).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-passiv-perfektstamm",
+					"sample_solution": "'missa est' = Perfekt Passiv (wurde / ist geschickt worden); 'missa erat' = Plusquamperfekt Passiv (war geschickt worden)."
+				},
+				{
+					"id": "01M87RE97C2HR5GJPFXK1T0AC1",
+					"slug": "l6-passiv-perfektstamm-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Ergänze KNG-gerecht und übersetze: ‚Lēgēs ā senātū ... (dare, Perf. Pass.).‘",
+					"concept": "Lēgēs ā senātū datae sunt. – ‚Die Gesetze wurden vom Senat gegeben / sind gegeben worden.‘",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-passiv-perfektstamm",
+					"sample_solution": "Lēgēs ā senātū datae sunt. – ‚Die Gesetze wurden vom Senat gegeben / sind gegeben worden.‘"
+				}
+			]
+		},
+		{
+			"id": "01M87RE925FRFDM5ZVSGH423AR",
+			"atom_uri": "urn:zam:atom:01M87RE925FRFDM5ZVSGH423AR",
+			"namespace": "zam-academy-latein-gymnasium-6",
+			"slug": "l6-konjunktiv-imperfekt",
+			"title": "Der Modus Konjunktiv: Konjunktiv Imperfekt Aktiv und Passiv",
+			"domain": "latein/verben-passiv-konjunktiv",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-konjunktiv-imperfekt",
+			"prerequisites": [
+				{
+					"atom_id": "01M87RE923CVGDTGFSY2BW5B2T",
+					"type": "hard",
+					"rationale": "Aktiv- und Passivendungen werden direkt an den Infinitiv Präsens gehängt."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6",
+					"topic_code": "verben-passiv-konjunktiv",
+					"topic_title": "Verben: Passiv, Konjunktiv Präteritum und Partizipien"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb2.2",
+					"topic_title": "Sprachliche Basis: Morphologie",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M87RE97DZ7PJKE7M6C77CCZK",
+					"slug": "l6-konjunktiv-imperfekt-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Nach welcher einfachen Grundformel bildest du den Konjunktiv Imperfekt?",
+					"concept": "Infinitiv Präsens + Personalendung (-m/-r ...): z. B. vocāre + -t = vocāret.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-konjunktiv-imperfekt",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Infinitiv Präsens + Personalendung (-m/-r ...): z. B. vocāre + -t = vocāret.",
+							"Perfektstamm + -erā- + Endung."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M87RE97EFTH8DZV5BSAJYTVW",
+					"slug": "l6-konjunktiv-imperfekt-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Bilde die 3. Plural Konjunktiv Imperfekt Aktiv von 'capere' und die 3. Singular von 'posse'.",
+					"concept": "capere → caperent (kurzes -e- vor r!); posse → posset.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-konjunktiv-imperfekt",
+					"sample_solution": "capere → caperent (kurzes -e- vor r!); posse → posset."
+				},
+				{
+					"id": "01M87RE97F83A4Y9HD8WAY78QB",
+					"slug": "l6-konjunktiv-imperfekt-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Übersetze: ‚Sī tū ab amīcō vocārēris, quid responderēs?‘",
+					"concept": "Wenn du von dem Freund gerufen würdest, was würdest du antworten?",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-konjunktiv-imperfekt",
+					"sample_solution": "Wenn du von dem Freund gerufen würdest, was würdest du antworten?"
+				}
+			]
+		},
+		{
+			"id": "01M87RE926YNFTNTY016GNC5WR",
+			"atom_uri": "urn:zam:atom:01M87RE926YNFTNTY016GNC5WR",
+			"namespace": "zam-academy-latein-gymnasium-6",
+			"slug": "l6-konjunktiv-plusquamperfekt",
+			"title": "Konjunktiv Plusquamperfekt Aktiv und Passiv",
+			"domain": "latein/verben-passiv-konjunktiv",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-konjunktiv-plusquamperfekt",
+			"prerequisites": [
+				{
+					"atom_id": "01M87RE925FRFDM5ZVSGH423AR",
+					"type": "hard",
+					"rationale": "Die Mechanik des Konjunktivs Imperfekt (inkl. essem) bildet das Passiv des Plusquamperfekts."
+				},
+				{
+					"atom_id": "01M87RE924X24Q30CB77MEY284",
+					"type": "hard",
+					"rationale": "KNG-Kongruenz des PPP überträgt sich unmittelbar auf konjunktivische Passivformen."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6",
+					"topic_code": "verben-passiv-konjunktiv",
+					"topic_title": "Verben: Passiv, Konjunktiv Präteritum und Partizipien"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb2.2",
+					"topic_title": "Sprachliche Basis: Morphologie",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M87RE97GGX1QBMGVPAV1ADNN",
+					"slug": "l6-konjunktiv-plusquamperfekt-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wie bildest du den Konjunktiv Plusquamperfekt Aktiv (z. B. von 'venīre')?",
+					"concept": "Infinitiv Perfekt Aktiv (vēnisse) + Personalendung (-m, -s, -t ... → vēnisset).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-konjunktiv-plusquamperfekt",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Infinitiv Perfekt Aktiv (vēnisse) + Personalendung (-m, -s, -t ... → vēnisset).",
+							"PPP + essem, essēs, esset."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M87RE97HYSXFDPAD5WVDTHFN",
+					"slug": "l6-konjunktiv-plusquamperfekt-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie bildest du den Konjunktiv Plusquamperfekt Passiv und was musst du beim Partizip beachten?",
+					"concept": "PPP (mit KNG-Kongruenz zum Subjekt!) + Konjunktiv Imperfekt von esse (essem, essēs, esset, essēmus, essētis, essent).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-konjunktiv-plusquamperfekt",
+					"sample_solution": "PPP (mit KNG-Kongruenz zum Subjekt!) + Konjunktiv Imperfekt von esse (essem, essēs, esset, essēmus, essētis, essent)."
+				},
+				{
+					"id": "01M87RE97J7KVM84YQ7M9RBCM5",
+					"slug": "l6-konjunktiv-plusquamperfekt-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Übersetze: ‚Cum templa servāta essent‘ und ‚Sī iuvāre potuissēmus‘.",
+					"concept": "‚Als / Nachdem die Tempel gerettet worden waren‘; ‚Wenn wir hätten helfen können‘.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-konjunktiv-plusquamperfekt",
+					"sample_solution": "‚Als / Nachdem die Tempel gerettet worden waren‘; ‚Wenn wir hätten helfen können‘."
+				}
+			]
+		},
+		{
+			"id": "01M87RE927QYHY8AQYE0V983HQ",
+			"atom_uri": "urn:zam:atom:01M87RE927QYHY8AQYE0V983HQ",
+			"namespace": "zam-academy-latein-gymnasium-6",
+			"slug": "l6-partizip-praesens-aktiv",
+			"title": "Das Partizip Präsens Aktiv (PPA): Bildung und Funktion",
+			"domain": "latein/verben-passiv-konjunktiv",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-partizip-praesens-aktiv",
+			"prerequisites": [
+				{
+					"atom_id": "01M87RE91YX9J3VHFN98Q70RB7",
+					"type": "hard",
+					"rationale": "Das PPA folgt der 3. Deklination (i-Stamm) bei gleichzeitiger KNG-Übereinstimmung."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6",
+					"topic_code": "verben-passiv-konjunktiv",
+					"topic_title": "Verben: Passiv, Konjunktiv Präteritum und Partizipien"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb2.2",
+					"topic_title": "Sprachliche Basis: Morphologie",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M87RE97K2EFGV9V7QS4SFGH8",
+					"slug": "l6-partizip-praesens-aktiv-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wie lautet das PPA von 'flēre' passend im KNG zu 'fīliam' (Akk. Sg. f.)?",
+					"concept": "flentem (Māter fīliam flentem vīdit = die weinende Tochter).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-partizip-praesens-aktiv",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"flentem (Māter fīliam flentem vīdit = die weinende Tochter).",
+							"flēns (Nominativ Singular)."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M87RE97MP620FRKE31SB7H2H",
+					"slug": "l6-partizip-praesens-aktiv-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welches Zeit- und Handlungsverhältnis drückt das Partizip Präsens Aktiv (PPA) immer aus?",
+					"concept": "Gleichzeitigkeit und Aktiv (das Bezugswort führt die Handlung gerade selbst aus).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-partizip-praesens-aktiv",
+					"sample_solution": "Gleichzeitigkeit und Aktiv (das Bezugswort führt die Handlung gerade selbst aus)."
+				},
+				{
+					"id": "01M87RE97NEC7007D4FFWE2ZZ7",
+					"slug": "l6-partizip-praesens-aktiv-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Welche Stammbesonderheiten zeigen i-Verben (z. B. fugere) und 'īre' im PPA?",
+					"concept": "i-Verben haben -iēns, -ientēs (fugientēs); 'īre' wechselt von Nom. iēns zu eunt- (Dat. Pl. euntibus).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-partizip-praesens-aktiv",
+					"sample_solution": "i-Verben haben -iēns, -ientēs (fugientēs); 'īre' wechselt von Nom. iēns zu eunt- (Dat. Pl. euntibus)."
+				}
+			]
+		},
+		{
+			"id": "01M87RE928J9B85T93VB7Z6Z1C",
+			"atom_uri": "urn:zam:atom:01M87RE928J9B85T93VB7Z6Z1C",
+			"namespace": "zam-academy-latein-gymnasium-6",
+			"slug": "l6-partizip-perfekt-passiv",
+			"title": "Das Partizip Perfekt Passiv (PPP): Stammform und Verwendung",
+			"domain": "latein/verben-passiv-konjunktiv",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-partizip-perfekt-passiv",
+			"prerequisites": [
+				{
+					"atom_id": "01M87RE922HDM2Y81D4M8TAJ75",
+					"type": "hard",
+					"rationale": "Die vierte Stammform bildet den Grundbaustein jedes PPP."
+				},
+				{
+					"atom_id": "01M87RE927QYHY8AQYE0V983HQ",
+					"type": "hard",
+					"rationale": "Kontrast zu gleichzeitigem PPA schärft den vorzeitig-passiven Charakter des PPP."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6",
+					"topic_code": "verben-passiv-konjunktiv",
+					"topic_title": "Verben: Passiv, Konjunktiv Präteritum und Partizipien"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb2.2",
+					"topic_title": "Sprachliche Basis: Morphologie",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M87RE97PVSDXD8FDBVVZSHTD",
+					"slug": "l6-partizip-perfekt-passiv-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche beiden Informationen trägt das Partizip Perfekt Passiv (PPP) immer?",
+					"concept": "Vorzeitigkeit und Passiv (das Bezugswort hat die Handlung bereits erlitten).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-partizip-perfekt-passiv",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Vorzeitigkeit und Passiv (das Bezugswort hat die Handlung bereits erlitten).",
+							"Gleichzeitigkeit und Aktiv."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M87RE97Q2ZJBNKNTJVJN6ZP4",
+					"slug": "l6-partizip-perfekt-passiv-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Nach welcher Deklination richtet sich das PPP (z. B. lēctus, -a, -um)?",
+					"concept": "Wie Adjektive der a- und o-Deklination in KNG nach seinem Bezugswort (z. B. epistula lēcta, verba dicta).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-partizip-perfekt-passiv",
+					"sample_solution": "Wie Adjektive der a- und o-Deklination in KNG nach seinem Bezugswort (z. B. epistula lēcta, verba dicta)."
+				},
+				{
+					"id": "01M87RE97RDY2X99Y4GGCQ913J",
+					"slug": "l6-partizip-perfekt-passiv-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Erkläre den Bedeutungsunterschied zwischen 'rēx vincēns' (PPA) und 'rēx victus' (PPP).",
+					"concept": "'rēx vincēns' = der siegende König (aktiv); 'rēx victus' = der besiegte König (passiv).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-partizip-perfekt-passiv",
+					"sample_solution": "'rēx vincēns' = der siegende König (aktiv); 'rēx victus' = der besiegte König (passiv)."
+				}
+			]
+		},
+		{
+			"id": "01M87RE929CV2YM26KS16EVN3T",
+			"atom_uri": "urn:zam:atom:01M87RE929CV2YM26KS16EVN3T",
+			"namespace": "zam-academy-latein-gymnasium-6",
+			"slug": "l6-praedikativum-doppelter-kasus",
+			"title": "Prädikativum, doppelter Nominativ und doppelter Akkusativ",
+			"domain": "latein/satzlehre-konstruktionen",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-praedikativum-doppelter-kasus",
+			"prerequisites": [
+				{
+					"atom_id": "01M87RE91YX9J3VHFN98Q70RB7",
+					"type": "hard",
+					"rationale": "KNG-Kongruenz erkennt prädikative Nomen und Adjektive zuverlässig."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6",
+					"topic_code": "satzlehre-konstruktionen",
+					"topic_title": "Satzlehre: Neue Kasus, Nebensätze, passiver AcI und PC"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb2.3",
+					"topic_title": "Sprachliche Basis: Syntax",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M87RE97SRJCQY2XJSWQ4S2J9",
+					"slug": "l6-praedikativum-doppelter-kasus-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welcher Kasus steht doppelt im Satz ‚Populus eum tribūnum creāvit‘?",
+					"concept": "Zwei Akkusative (Objekt eum + Gleichsetzung tribūnum → ‚wählte ihn zum Tribunen‘).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-praedikativum-doppelter-kasus",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Zwei Akkusative (Objekt eum + Gleichsetzung tribūnum → ‚wählte ihn zum Tribunen‘).",
+							"Zwei Nominative."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M87RE97TS972PGDNY928KH2M",
+					"slug": "l6-praedikativum-doppelter-kasus-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Was ändert sich bei den Verben des Nennens und Wählens, wenn man den Satz ins Passiv setzt?",
+					"concept": "Aus dem doppelten Akkusativ wird ein doppelter Nominativ (z. B. Hannibal hostis appellābātur).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-praedikativum-doppelter-kasus",
+					"sample_solution": "Aus dem doppelten Akkusativ wird ein doppelter Nominativ (z. B. Hannibal hostis appellābātur)."
+				},
+				{
+					"id": "01M87RE97VKXKEBY7F69J9S08P",
+					"slug": "l6-praedikativum-doppelter-kasus-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Bestimme die Funktion von 'puella' in ‚Eurōpa puella flōrēs lēgit‘ und übersetze.",
+					"concept": "Prädikativum zum Subjekt Eurōpa: ‚Als (junges) Mädchen pflückte Europa Blumen.‘",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-praedikativum-doppelter-kasus",
+					"sample_solution": "Prädikativum zum Subjekt Eurōpa: ‚Als (junges) Mädchen pflückte Europa Blumen.‘"
+				}
+			]
+		},
+		{
+			"id": "01M87RE92A2HJJEPE2NMZ1FWC6",
+			"atom_uri": "urn:zam:atom:01M87RE92A2HJJEPE2NMZ1FWC6",
+			"namespace": "zam-academy-latein-gymnasium-6",
+			"slug": "l6-kasusfunktionen-gen-dat-abl",
+			"title": "Neue Kasusfunktionen: Genitiv, Dativ und Ablativ im Überblick",
+			"domain": "latein/satzlehre-konstruktionen",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-kasusfunktionen-gen-dat-abl",
+			"prerequisites": [
+				{
+					"atom_id": "01M87RE929CV2YM26KS16EVN3T",
+					"type": "hard",
+					"rationale": "Präzise Satzglied- und Kasusanalyse erweitert den Blick auf Genitiv-, Dativ- und Ablativrollen."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6",
+					"topic_code": "satzlehre-konstruktionen",
+					"topic_title": "Satzlehre: Neue Kasus, Nebensätze, passiver AcI und PC"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb2.3",
+					"topic_title": "Sprachliche Basis: Syntax",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M87RE97W555CSAK8A0PXVNCV",
+					"slug": "l6-kasusfunktionen-gen-dat-abl-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welchen Zweck drückt der Dativ in ‚Cōnsul legiōnem sociīs auxiliō mīsit‘ aus?",
+					"concept": "Datīvus fīnālis (Zweck: ‚zur Hilfe‘) neben dem Datīvus commodī (sociīs = ‚für wen?‘).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-kasusfunktionen-gen-dat-abl",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Datīvus fīnālis (Zweck: ‚zur Hilfe‘) neben dem Datīvus commodī (sociīs = ‚für wen?‘).",
+							"Datīvus possessīvus (Besitz)."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M87RE97XWV1H39ABP8KKF1M5",
+					"slug": "l6-kasusfunktionen-gen-dat-abl-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Woran erkennst du 'Genitīvus / Ablātīvus quālitātis' wie in 'vir summī ingeniī'?",
+					"concept": "Ein Substantiv mit Adjektivattribut beschreibt eine Eigenschaft (‚ein Mann von höchstem Verstand‘).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-kasusfunktionen-gen-dat-abl",
+					"sample_solution": "Ein Substantiv mit Adjektivattribut beschreibt eine Eigenschaft (‚ein Mann von höchstem Verstand‘)."
+				},
+				{
+					"id": "01M87RE97YJB577K0QJR2DXHPF",
+					"slug": "l6-kasusfunktionen-gen-dat-abl-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Unterscheide 'timor hostium' als Genitīvus subiectīvus und obiectīvus (vgl. 'dēsīderium patriae').",
+					"concept": "Subiectīvus = die Furcht, die die Feinde empfinden; obiectīvus = die Furcht vor den Feinden (vgl. Sehnsucht nach der Heimat).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-kasusfunktionen-gen-dat-abl",
+					"sample_solution": "Subiectīvus = die Furcht, die die Feinde empfinden; obiectīvus = die Furcht vor den Feinden (vgl. Sehnsucht nach der Heimat)."
+				}
+			]
+		},
+		{
+			"id": "01M87RE92BZRPBW11QGVASE68Y",
+			"atom_uri": "urn:zam:atom:01M87RE92BZRPBW11QGVASE68Y",
+			"namespace": "zam-academy-latein-gymnasium-6",
+			"slug": "l6-konjunktiv-irrealis",
+			"title": "Der Irrealis im Hauptsatz (Konjunktiv Imperfekt & Plusquamperfekt)",
+			"domain": "latein/satzlehre-konstruktionen",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-konjunktiv-irrealis",
+			"prerequisites": [
+				{
+					"atom_id": "01M87RE925FRFDM5ZVSGH423AR",
+					"type": "hard",
+					"rationale": "Konjunktiv Imperfekt bildet den Irrealis der Gegenwart."
+				},
+				{
+					"atom_id": "01M87RE926YNFTNTY016GNC5WR",
+					"type": "hard",
+					"rationale": "Konjunktiv Plusquamperfekt bildet den Irrealis der Vergangenheit."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6",
+					"topic_code": "satzlehre-konstruktionen",
+					"topic_title": "Satzlehre: Neue Kasus, Nebensätze, passiver AcI und PC"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb2.3",
+					"topic_title": "Sprachliche Basis: Syntax",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M87RE97ZN62616PR59XWZZ6Y",
+					"slug": "l6-konjunktiv-irrealis-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welches Tempus im Konjunktiv drückt die Nichtwirklichkeit (Irrealis) der Gegenwart aus?",
+					"concept": "Konjunktiv Imperfekt (z. B. Sī Rōma portum nōn habēret = Wenn Rom keinen Hafen hätte).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-konjunktiv-irrealis",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Konjunktiv Imperfekt (z. B. Sī Rōma portum nōn habēret = Wenn Rom keinen Hafen hätte).",
+							"Konjunktiv Plusquamperfekt."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M87RE9803365R092PA9B4MSF",
+					"slug": "l6-konjunktiv-irrealis-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie drückt das Lateinische den Irrealis der Vergangenheit aus (‚wäre nicht besiegt worden‘)?",
+					"concept": "Mit dem Konjunktiv Plusquamperfekt (z. B. Hannibal nōn victus esset).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-konjunktiv-irrealis",
+					"sample_solution": "Mit dem Konjunktiv Plusquamperfekt (z. B. Hannibal nōn victus esset)."
+				},
+				{
+					"id": "01M87RE9813GQ1F3YSMAY5EWJ2",
+					"slug": "l6-konjunktiv-irrealis-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Erkenne den Irrealis ohne 'sī'-Satz und übersetze: ‚Sine vōbīs ego periissem.‘",
+					"concept": "‚Ohne euch wäre ich zugrunde gegangen‘ (Bedingung steckt in 'sine vōbīs').",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-konjunktiv-irrealis",
+					"sample_solution": "‚Ohne euch wäre ich zugrunde gegangen‘ (Bedingung steckt in 'sine vōbīs')."
+				}
+			]
+		},
+		{
+			"id": "01M87RE92CB58TH5W6EF17XVCG",
+			"atom_uri": "urn:zam:atom:01M87RE92CB58TH5W6EF17XVCG",
+			"namespace": "zam-academy-latein-gymnasium-6",
+			"slug": "l6-final-konsekutiv-ut",
+			"title": "Finalsätze und Konsekutivsätze mit ut, nē und ut nōn",
+			"domain": "latein/satzlehre-konstruktionen",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-final-konsekutiv-ut",
+			"prerequisites": [
+				{
+					"atom_id": "01M87RE925FRFDM5ZVSGH423AR",
+					"type": "hard",
+					"rationale": "Eingeschobene ut-/nē-Sätze stehen in der Erzählung im Konjunktiv Imperfekt."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6",
+					"topic_code": "satzlehre-konstruktionen",
+					"topic_title": "Satzlehre: Neue Kasus, Nebensätze, passiver AcI und PC"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb2.3",
+					"topic_title": "Sprachliche Basis: Syntax",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M87RE982XHBVDWBYWHNKEXE6",
+					"slug": "l6-final-konsekutiv-ut-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Mit welcher Konjunktion wird ein verneinter Finalsatz (‚damit nicht‘) immer eingeleitet?",
+					"concept": "Mit nē (niemals mit ut nōn).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-final-konsekutiv-ut",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Mit nē (niemals mit ut nōn).",
+							"Mit ut nōn."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M87RE983SF6VHC24A3B64Z05",
+					"slug": "l6-final-konsekutiv-ut-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welche Signalwörter im Hauptsatz kündigen meist einen Konsekutivsatz (‚so dass ... nicht‘ = ut nōn) an?",
+					"concept": "tam, tantus, ita, sīc, adeō (im verneinten Folgesatz folgt immer ut nōn).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-final-konsekutiv-ut",
+					"sample_solution": "tam, tantus, ita, sīc, adeō (im verneinten Folgesatz folgt immer ut nōn)."
+				},
+				{
+					"id": "01M87RE984ZYKSVXCK4Q7BZQ0Z",
+					"slug": "l6-final-konsekutiv-ut-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Vergleiche den Modusgebrauch beim 'ut'-Satz im Lateinischen und bei der deutschen Übersetzung.",
+					"concept": "Latein verlangt bei ut (final/konsekutiv) stets den Konjunktiv; im Deutschen übersetzen wir meist im Indikativ.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-final-konsekutiv-ut",
+					"sample_solution": "Latein verlangt bei ut (final/konsekutiv) stets den Konjunktiv; im Deutschen übersetzen wir meist im Indikativ."
+				}
+			]
+		},
+		{
+			"id": "01M87RE92DPAHSBGF9512R7WGZ",
+			"atom_uri": "urn:zam:atom:01M87RE92DPAHSBGF9512R7WGZ",
+			"namespace": "zam-academy-latein-gymnasium-6",
+			"slug": "l6-cum-nebensaetze",
+			"title": "Das vielseitige 'cum': Präposition, Indikativ- und Konjunktivsatz",
+			"domain": "latein/satzlehre-konstruktionen",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-cum-nebensaetze",
+			"prerequisites": [
+				{
+					"atom_id": "01M87RE92CB58TH5W6EF17XVCG",
+					"type": "hard",
+					"rationale": "Unterscheiden von Konjunktiv-Nebensätzen baut auf sicheren ut-/nē-Sätzen auf."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6",
+					"topic_code": "satzlehre-konstruktionen",
+					"topic_title": "Satzlehre: Neue Kasus, Nebensätze, passiver AcI und PC"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb2.3",
+					"topic_title": "Sprachliche Basis: Syntax",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M87RE9855EGRFNHAR4M7EDED",
+					"slug": "l6-cum-nebensaetze-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welches Signalwort im Hauptsatz weist bei einem Konjunktiv-cum-Satz eindeutig auf ‚obwohl‘ hin?",
+					"concept": "tamen (dennoch) im Hauptsatz (cum concessīvum).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-cum-nebensaetze",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"tamen (dennoch) im Hauptsatz (cum concessīvum).",
+							"ergō (also) im Hauptsatz."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M87RE9863MPFTRRFEE2K17F6",
+					"slug": "l6-cum-nebensaetze-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Woran unterscheidest du blitzschnell die Präposition 'cum' vom Nebensatzeinleiter 'cum'?",
+					"concept": "Der Präposition 'cum' (+ Ablativ, ‚mit‘) folgt kein finites Verb; bei der Subjunktion schließt ein konjugiertes Verb den Nebensatz.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-cum-nebensaetze",
+					"sample_solution": "Der Präposition 'cum' (+ Ablativ, ‚mit‘) folgt kein finites Verb; bei der Subjunktion schließt ein konjugiertes Verb den Nebensatz."
+				},
+				{
+					"id": "01M87RE987RBQVS16V1FYFQ7MB",
+					"slug": "l6-cum-nebensaetze-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Nenne die Zeit- und Sinnmöglichkeiten von 'cum nārrātīvum / causāle' mit Konjunktiv Imperfekt und Plusquamperfekt.",
+					"concept": "Konj. Impf. = gleichzeitig (‚als / weil‘); Konj. Plusq. = vorzeitig (‚als / nachdem / weil‘).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-cum-nebensaetze",
+					"sample_solution": "Konj. Impf. = gleichzeitig (‚als / weil‘); Konj. Plusq. = vorzeitig (‚als / nachdem / weil‘)."
+				}
+			]
+		},
+		{
+			"id": "01M87RE92ER5A6157A83BN9DXF",
+			"atom_uri": "urn:zam:atom:01M87RE92ER5A6157A83BN9DXF",
+			"namespace": "zam-academy-latein-gymnasium-6",
+			"slug": "l6-passiver-aci",
+			"title": "Der passive AcI (gleichzeitig und vorzeitig)",
+			"domain": "latein/satzlehre-konstruktionen",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-passiver-aci",
+			"prerequisites": [
+				{
+					"atom_id": "01M87RE924X24Q30CB77MEY284",
+					"type": "hard",
+					"rationale": "Infinitiv Präsens Passiv und KNG-kongruentes PPP + esse tragen den passiven AcI."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6",
+					"topic_code": "satzlehre-konstruktionen",
+					"topic_title": "Satzlehre: Neue Kasus, Nebensätze, passiver AcI und PC"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb2.3",
+					"topic_title": "Sprachliche Basis: Syntax",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M87RE988N3WS10VXREYVSZ85",
+					"slug": "l6-passiver-aci-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche Form von 'servāre' steht im gleichzeitigen passiven AcI ‚Custōs videt portam ...‘?",
+					"concept": "claudī / servārī (Infinitiv Präsens Passiv).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-passiver-aci",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"claudī / servārī (Infinitiv Präsens Passiv).",
+							"servātam esse (Vorzeitigkeit)."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M87RE9893SJPYZXENVCZKSQQ",
+					"slug": "l6-passiver-aci-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Worauf musst du beim vorzeitigen passiven AcI (PPP + esse) besonders achten?",
+					"concept": "Das PPP kongruiert in KNG mit dem Akkusativsubjekt des AcI (z. B. fēminās servātās esse).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-passiver-aci",
+					"sample_solution": "Das PPP kongruiert in KNG mit dem Akkusativsubjekt des AcI (z. B. fēminās servātās esse)."
+				},
+				{
+					"id": "01M87RE98A6K09C7Z0C8DFD0M1",
+					"slug": "l6-passiver-aci-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Übersetze bei Vergangenheit des Kopfverbs: ‚Scīvī Rōmam incendiō dēlētam esse.‘",
+					"concept": "Ich wusste, dass Rom durch ein Feuer zerstört worden war (Vorvergangenheit Passiv).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-passiver-aci",
+					"sample_solution": "Ich wusste, dass Rom durch ein Feuer zerstört worden war (Vorvergangenheit Passiv)."
+				}
+			]
+		},
+		{
+			"id": "01M87RE92FHYKDFMQPJ9B262HE",
+			"atom_uri": "urn:zam:atom:01M87RE92FHYKDFMQPJ9B262HE",
+			"namespace": "zam-academy-latein-gymnasium-6",
+			"slug": "l6-participium-coniunctum",
+			"title": "Das Participium Coniunctum (PC): Klammer, Sinn und Auflösung",
+			"domain": "latein/satzlehre-konstruktionen",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-participium-coniunctum",
+			"prerequisites": [
+				{
+					"atom_id": "01M87RE927QYHY8AQYE0V983HQ",
+					"type": "hard",
+					"rationale": "PPA liefert das gleichzeitig-aktive Partizip im PC-Block."
+				},
+				{
+					"atom_id": "01M87RE928J9B85T93VB7Z6Z1C",
+					"type": "hard",
+					"rationale": "PPP liefert das vorzeitig-passive Partizip im PC-Block."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6",
+					"topic_code": "satzlehre-konstruktionen",
+					"topic_title": "Satzlehre: Neue Kasus, Nebensätze, passiver AcI und PC"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb2.3",
+					"topic_title": "Sprachliche Basis: Syntax",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M87RE98BKPE3T96V5PG3GBXR",
+					"slug": "l6-participium-coniunctum-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wodurch bildet ein Partizip im Participium Coniunctum (PC) eine Satzklammer?",
+					"concept": "KNG-Übereinstimmung mit einem Nomen/Pronomen im Satz; alle Wörter dazwischen gehören zur Partizipialgruppe.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-participium-coniunctum",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"KNG-Übereinstimmung mit einem Nomen/Pronomen im Satz; alle Wörter dazwischen gehören zur Partizipialgruppe.",
+							"Durch die Konjunktion 'ut' am Anfang."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M87RE98CMJNHTG8Y7P25JZ50",
+					"slug": "l6-participium-coniunctum-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Nenne die vier Standardmöglichkeiten, ein Participium Coniunctum ins Deutsche zu übersetzen.",
+					"concept": "1. Attribut/Relativsatz, 2. Adverbialsatz (als/nachdem/während/weil/obwohl), 3. Beiordnung mit ‚und‘, 4. Präpositionalausdruck.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-participium-coniunctum",
+					"sample_solution": "1. Attribut/Relativsatz, 2. Adverbialsatz (als/nachdem/während/weil/obwohl), 3. Beiordnung mit ‚und‘, 4. Präpositionalausdruck."
+				},
+				{
+					"id": "01M87RE98D6CGANAXYK87HV3MN",
+					"slug": "l6-participium-coniunctum-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Übersetze mit Sinnrichtung ‚tamen‘: ‚Cōnsul vulnerātus tamen diū pugnāvit.‘",
+					"concept": "Obwohl der Konsul verwundet worden war, kämpfte er dennoch lange (oder: Der verwundete Konsul kämpfte dennoch lange).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-participium-coniunctum",
+					"sample_solution": "Obwohl der Konsul verwundet worden war, kämpfte er dennoch lange (oder: Der verwundete Konsul kämpfte dennoch lange)."
+				}
+			]
+		},
+		{
+			"id": "01M87RE92GWEBFF6QEQ27VENQZ",
+			"atom_uri": "urn:zam:atom:01M87RE92GWEBFF6QEQ27VENQZ",
+			"namespace": "zam-academy-latein-gymnasium-6",
+			"slug": "l6-topografie-italien-mittelmeer",
+			"title": "Antikes Italien, Magna Graecia und Mittelmeerraum",
+			"domain": "latein/italien-vesuv-pompeji",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-topografie-italien-mittelmeer",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6",
+					"topic_code": "italien-vesuv-pompeji",
+					"topic_title": "Italien, Mittelmeer, Pompeji und Griechenlands Geist"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb1",
+					"topic_title": "Texte",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb3",
+					"topic_title": "Antike Kultur und Weltverständnis",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M87RE98E6Y7JFESJ3Y59YRET",
+					"slug": "l6-topografie-italien-mittelmeer-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche verschüttete Küstenstadt liegt direkt westlich des Vesuvs neben Pompeji?",
+					"concept": "Herkulaneum (Herculāneum).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-topografie-italien-mittelmeer",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Herkulaneum (Herculāneum).",
+							"Cannae in Apulien."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M87RE98FPJHNT8FWFTMP2VJT",
+					"slug": "l6-topografie-italien-mittelmeer-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welche bedeutende griechische Stadt in Magna Graecia auf Sizilien war die Heimat des Archimedes?",
+					"concept": "Syrakus (212 v. Chr. von Rom erobert).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-topografie-italien-mittelmeer",
+					"sample_solution": "Syrakus (212 v. Chr. von Rom erobert)."
+				},
+				{
+					"id": "01M87RE98GRQDP46XS92SEJKHA",
+					"slug": "l6-topografie-italien-mittelmeer-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Nenne drei Hauptschauplätze im westlichen und östlichen Mittelmeerraum aus Klasse 6 und ihre Bedeutung.",
+					"concept": "Golf von Neapel (Vesuv/Misenum/Pompeji), Nordafrika (Karthago/Zama) und Griechenland/Ägäis (Athen, Kreta, Troja).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-topografie-italien-mittelmeer",
+					"sample_solution": "Golf von Neapel (Vesuv/Misenum/Pompeji), Nordafrika (Karthago/Zama) und Griechenland/Ägäis (Athen, Kreta, Troja)."
+				}
+			]
+		},
+		{
+			"id": "01M87RE92H4KMG41TWWM1J85MZ",
+			"atom_uri": "urn:zam:atom:01M87RE92H4KMG41TWWM1J85MZ",
+			"namespace": "zam-academy-latein-gymnasium-6",
+			"slug": "l6-vesuv-pompeji-herkulaneum",
+			"title": "Der Vesuvausbruch 79 n. Chr.: Pompeji und Herkulaneum",
+			"domain": "latein/italien-vesuv-pompeji",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-vesuv-pompeji-herkulaneum",
+			"prerequisites": [
+				{
+					"atom_id": "01M87RE92GWEBFF6QEQ27VENQZ",
+					"type": "hard",
+					"rationale": "Verortung am Golf von Neapel ordnet Pompeji, Herkulaneum und Misenum ein."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6",
+					"topic_code": "italien-vesuv-pompeji",
+					"topic_title": "Italien, Mittelmeer, Pompeji und Griechenlands Geist"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb1",
+					"topic_title": "Texte",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb3",
+					"topic_title": "Antike Kultur und Weltverständnis",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M87RE98H7HHED5EV2NZFW2KE",
+					"slug": "l6-vesuv-pompeji-herkulaneum-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "In welchem Jahr ereignete sich der berühmte Vesuvausbruch, der Pompeji und Herkulaneum begrub?",
+					"concept": "79 n. Chr. (nach einem Vorbeben im Jahr 62 n. Chr.).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-vesuv-pompeji-herkulaneum",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"79 n. Chr. (nach einem Vorbeben im Jahr 62 n. Chr.).",
+							"45 v. Chr."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M87RE98JV5TZ0CRPHVDG8HZC",
+					"slug": "l6-vesuv-pompeji-herkulaneum-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Worin unterscheidet sich die Erhaltung von Funden in Herkulaneum von der in Pompeji?",
+					"concept": "Unter bis zu 20 m pyroklastischer Glutmasse blieben in Herkulaneum sogar Holz und verkohlte Papyri erhalten.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-vesuv-pompeji-herkulaneum",
+					"sample_solution": "Unter bis zu 20 m pyroklastischer Glutmasse blieben in Herkulaneum sogar Holz und verkohlte Papyri erhalten."
+				},
+				{
+					"id": "01M87RE98K6TY3F5KB4VCBHTK0",
+					"slug": "l6-vesuv-pompeji-herkulaneum-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Was ist ein 'thermopōlium' an den Straßen Pompejis?",
+					"concept": "Ein römischer Schnellimbiss mit eingelassenen Tongefäßen für warme Speisen und Getränke.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-vesuv-pompeji-herkulaneum",
+					"sample_solution": "Ein römischer Schnellimbiss mit eingelassenen Tongefäßen für warme Speisen und Getränke."
+				}
+			]
+		},
+		{
+			"id": "01M87RE92JHMCCEB931KWC4C3F",
+			"atom_uri": "urn:zam:atom:01M87RE92JHMCCEB931KWC4C3F",
+			"namespace": "zam-academy-latein-gymnasium-6",
+			"slug": "l6-plinius-vesuvbriefe",
+			"title": "Plinius der Jüngere als Augenzeuge des Vesuvausbruchs",
+			"domain": "latein/italien-vesuv-pompeji",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-plinius-vesuvbriefe",
+			"prerequisites": [
+				{
+					"atom_id": "01M87RE92H4KMG41TWWM1J85MZ",
+					"type": "hard",
+					"rationale": "Archäologischer Befund des Vesuvausbruchs verbindet sich mit dem Augenzeugenbericht des Plinius."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6",
+					"topic_code": "italien-vesuv-pompeji",
+					"topic_title": "Italien, Mittelmeer, Pompeji und Griechenlands Geist"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb1",
+					"topic_title": "Texte",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb2.1",
+					"topic_title": "Sprachliche Basis: Wortschatz",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb3",
+					"topic_title": "Antike Kultur und Weltverständnis",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb4",
+					"topic_title": "Methoden",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M87RE98M76SCAWDJGQYP510W",
+					"slug": "l6-plinius-vesuvbriefe-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "An welchen römischen Historiker schrieb Plinius der Jüngere seine zwei Vesuvbriefe (6,16 und 6,20)?",
+					"concept": "An Tacitus (Cornēlius Tacitus).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-plinius-vesuvbriefe",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"An Tacitus (Cornēlius Tacitus).",
+							"An Titus Līvius."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M87RE98N69NVMJR94ACCDHXV",
+					"slug": "l6-plinius-vesuvbriefe-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Von welchem Flottenhafen brach Plinius der Ältere zur Rettung auf, und welches Motiv leitete ihn?",
+					"concept": "Von Misenum auf der anderen Seite des Golfs; sein Ausspruch war ‚Fortēs fortūna iuvat!‘ (6,16,11).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-plinius-vesuvbriefe",
+					"sample_solution": "Von Misenum auf der anderen Seite des Golfs; sein Ausspruch war ‚Fortēs fortūna iuvat!‘ (6,16,11)."
+				},
+				{
+					"id": "01M87RE98PYC82353Y805PBDNQ",
+					"slug": "l6-plinius-vesuvbriefe-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Mit welchem Baum vergleicht Plinius d. J. in Brief 6,16 die aufsteigende Eruptionswolke?",
+					"concept": "Mit einer Pinie (fōrma pīnus): hoher Stamm, der sich oben zu breiten Ästen ausdehnt (‚plinianische Eruption‘).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-plinius-vesuvbriefe",
+					"sample_solution": "Mit einer Pinie (fōrma pīnus): hoher Stamm, der sich oben zu breiten Ästen ausdehnt (‚plinianische Eruption‘)."
+				}
+			]
+		},
+		{
+			"id": "01M87RE92KXQPR981MRT7551R0",
+			"atom_uri": "urn:zam:atom:01M87RE92KXQPR981MRT7551R0",
+			"namespace": "zam-academy-latein-gymnasium-6",
+			"slug": "l6-funde-kunst-museen",
+			"title": "Funde aus Pompeji und Schätze in Antikenmuseen",
+			"domain": "latein/italien-vesuv-pompeji",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-funde-kunst-museen",
+			"prerequisites": [
+				{
+					"atom_id": "01M87RE92H4KMG41TWWM1J85MZ",
+					"type": "hard",
+					"rationale": "Alltag in Pompeji erklärt Mosaike und Wandfresken in situ und im Museum."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6",
+					"topic_code": "italien-vesuv-pompeji",
+					"topic_title": "Italien, Mittelmeer, Pompeji und Griechenlands Geist"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb3",
+					"topic_title": "Antike Kultur und Weltverständnis",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M87RE98Q670RXR0K5A2H4GTW",
+					"slug": "l6-funde-kunst-museen-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was bedeutet die pompejanische Mosaikinschrift ‚CAVĒ CANEM‘ am Hauseingang?",
+					"concept": "Vorsicht vor dem Hund!",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-funde-kunst-museen",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Vorsicht vor dem Hund!",
+							"Herzlich willkommen im Haus!"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M87RE98RNP8D66PXPPZB3S14",
+					"slug": "l6-funde-kunst-museen-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Warum haben pompejanische Wandbilder (Fresken) über die Jahrhunderte ihre Leuchtkraft behalten?",
+					"concept": "Al-fresco-Technik: Die Farben wurden direkt in feuchten Kalkputz gemalt und verbanden sich chemisch mit ihm.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-funde-kunst-museen",
+					"sample_solution": "Al-fresco-Technik: Die Farben wurden direkt in feuchten Kalkputz gemalt und verbanden sich chemisch mit ihm."
+				},
+				{
+					"id": "01M87RE98SQDP175X1T01521B6",
+					"slug": "l6-funde-kunst-museen-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Wie unterscheidet sich die um 530 v. Chr. in Athen entwickelte rotfigurige Vasenmalerei von der älteren schwarzfigurigen?",
+					"concept": "Die Figuren bleiben im roten Ton auf dunklem Glanzton-Grund stehen und erlauben feine Pinselzeichnung.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-funde-kunst-museen",
+					"sample_solution": "Die Figuren bleiben im roten Ton auf dunklem Glanzton-Grund stehen und erlauben feine Pinselzeichnung."
+				}
+			]
+		},
+		{
+			"id": "01M87RE92M45ZPVZDCY2AZ6D8F",
+			"atom_uri": "urn:zam:atom:01M87RE92M45ZPVZDCY2AZ6D8F",
+			"namespace": "zam-academy-latein-gymnasium-6",
+			"slug": "l6-griechisches-geistesleben",
+			"title": "Griechisches Geistesleben: Attische Demokratie und Archimedes",
+			"domain": "latein/italien-vesuv-pompeji",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-griechisches-geistesleben",
+			"prerequisites": [
+				{
+					"atom_id": "01M87RE92GWEBFF6QEQ27VENQZ",
+					"type": "hard",
+					"rationale": "Magna Graecia (Syrakus) und Athen verorten Demokratie und Forschung des Archimedes."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6",
+					"topic_code": "italien-vesuv-pompeji",
+					"topic_title": "Italien, Mittelmeer, Pompeji und Griechenlands Geist"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb3",
+					"topic_title": "Antike Kultur und Weltverständnis",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M87RE98T14NZ0WNEH9EKCS80",
+					"slug": "l6-griechisches-geistesleben-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche Bevölkerungsgruppen hatten in der Attischen Demokratie kein Stimmrecht in der Ekklēsia?",
+					"concept": "Frauen, Sklaven und Metöken (Zugezogene ohne Bürgerrecht).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-griechisches-geistesleben",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Frauen, Sklaven und Metöken (Zugezogene ohne Bürgerrecht).",
+							"Handwerker und Bauern mit athenischem Bürgerrecht."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M87RE98VW92KSBB06Y17511N",
+					"slug": "l6-griechisches-geistesleben-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welches physikalische Prinzip wird mit dem Bad-Erlebnis und ‚Heureka!‘ des Archimedes verbunden?",
+					"concept": "Das Auftriebsprinzip (die Auftriebskraft entspricht der Gewichtskraft des verdrängten Wassers).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-griechisches-geistesleben",
+					"sample_solution": "Das Auftriebsprinzip (die Auftriebskraft entspricht der Gewichtskraft des verdrängten Wassers)."
+				},
+				{
+					"id": "01M87RE98WF7XBZ66WX65GF2ST",
+					"slug": "l6-griechisches-geistesleben-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Welche Rolle spielte Archimedes über seine Forschung hinaus bei der Belagerung seiner Heimatstadt Syrakus?",
+					"concept": "Er konstruierte Verteidigungs- und Wurfmaschinen, mit denen Syrakus den römischen Schiffen bis 212 v. Chr. widerstand.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-griechisches-geistesleben",
+					"sample_solution": "Er konstruierte Verteidigungs- und Wurfmaschinen, mit denen Syrakus den römischen Schiffen bis 212 v. Chr. widerstand."
+				}
+			]
+		},
+		{
+			"id": "01M87RE92NMGZFV6WYXSR4ATJ3",
+			"atom_uri": "urn:zam:atom:01M87RE92NMGZFV6WYXSR4ATJ3",
+			"namespace": "zam-academy-latein-gymnasium-6",
+			"slug": "l6-fruehe-republik-staendekaempfe",
+			"title": "Frühe Republik: Ständekämpfe und Aufstieg in Italien",
+			"domain": "latein/republik-hannibal-gesellschaft",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-fruehe-republik-staendekaempfe",
+			"prerequisites": [
+				{
+					"atom_id": "01M87RE92GWEBFF6QEQ27VENQZ",
+					"type": "hard",
+					"rationale": "Ausbreitung über Italien erklärt die Auseinandersetzungen mit Nachbarn und Pyrrhos."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6",
+					"topic_code": "republik-hannibal-gesellschaft",
+					"topic_title": "Römische Republik, Hannibal, Gesellschaft und Werte"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb1",
+					"topic_title": "Texte",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb3",
+					"topic_title": "Antike Kultur und Weltverständnis",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M87RE98XH86H8AX4VHXP75X7",
+					"slug": "l6-fruehe-republik-staendekaempfe-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was geschah 494 v. Chr. bei der ersten 'Sēcessiō plēbis'?",
+					"concept": "Die Plebejer zogen aus Rom auf den Heiligen Berg aus und erkämpften Volkstribunen.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-fruehe-republik-staendekaempfe",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Die Plebejer zogen aus Rom auf den Heiligen Berg aus und erkämpften Volkstribunen.",
+							"Hannibal überquerte mit Elefanten die Alpen."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M87RE98Y0CPZYJM2Z6SB9SZM",
+					"slug": "l6-fruehe-republik-staendekaempfe-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Warum war das Zwölftafelgesetz um ca. 450 v. Chr. ein entscheidender Fortschritt für die Plebejer?",
+					"concept": "Erstmals stand das Recht öffentlich aufgeschrieben auf dem Forum und schützte vor Willkür.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-fruehe-republik-staendekaempfe",
+					"sample_solution": "Erstmals stand das Recht öffentlich aufgeschrieben auf dem Forum und schützte vor Willkür."
+				},
+				{
+					"id": "01M87RE98ZNYS03WKMFP6QRWD1",
+					"slug": "l6-fruehe-republik-staendekaempfe-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Erkläre den historischen Ursprung des Wortes ‚Pyrrhussieg‘ (280–275 v. Chr.).",
+					"concept": "König Pyrrhos von Epirus siegte zwar in Schlachten gegen Rom, verlor aber so viele Truppen, dass er den Krieg letztlich verlor.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-fruehe-republik-staendekaempfe",
+					"sample_solution": "König Pyrrhos von Epirus siegte zwar in Schlachten gegen Rom, verlor aber so viele Truppen, dass er den Krieg letztlich verlor."
+				}
+			]
+		},
+		{
+			"id": "01M87RE92PAB4J4EYRAAETZ91S",
+			"atom_uri": "urn:zam:atom:01M87RE92PAB4J4EYRAAETZ91S",
+			"namespace": "zam-academy-latein-gymnasium-6",
+			"slug": "l6-gesellschaft-klientel-organe",
+			"title": "Ständegesellschaft, Klientelwesen und Verfassungsorgane",
+			"domain": "latein/republik-hannibal-gesellschaft",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-gesellschaft-klientel-organe",
+			"prerequisites": [
+				{
+					"atom_id": "01M87RE92NMGZFV6WYXSR4ATJ3",
+					"type": "hard",
+					"rationale": "Die Ständekämpfe begründen Volkstribunat, Vetō und kontrollierte Ämter."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6",
+					"topic_code": "republik-hannibal-gesellschaft",
+					"topic_title": "Römische Republik, Hannibal, Gesellschaft und Werte"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb1",
+					"topic_title": "Texte",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb3",
+					"topic_title": "Antike Kultur und Weltverständnis",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M87RE990WYR7H3QQ5SJQ0WVM",
+					"slug": "l6-gesellschaft-klientel-organe-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was bedeutet das römische Verfassungsprinzip ‚Annuität‘ bei hohen Ämtern?",
+					"concept": "Begrenzung der Amtszeit auf genau ein Jahr (neben der Kollegialität durch Doppelbesetzung).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-gesellschaft-klientel-organe",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Begrenzung der Amtszeit auf genau ein Jahr (neben der Kollegialität durch Doppelbesetzung).",
+							"Lebenslange Alleinherrschaft des Konsuls."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M87RE991JDHGB55G3Y26WE9Z",
+					"slug": "l6-gesellschaft-klientel-organe-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie funktionierte das Schutzrecht ‚Vetō‘ der Volkstribunen (tribūnī plēbis)?",
+					"concept": "Mit dem Ruf ‚Vetō!‘ (Ich verbiete!) konnten unverletzliche Volkstribunen Beschlüsse gegen Plebejer stoppen.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-gesellschaft-klientel-organe",
+					"sample_solution": "Mit dem Ruf ‚Vetō!‘ (Ich verbiete!) konnten unverletzliche Volkstribunen Beschlüsse gegen Plebejer stoppen."
+				},
+				{
+					"id": "01M87RE992R0AH046J9YDPG634",
+					"slug": "l6-gesellschaft-klientel-organe-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Beschreibe das Klientelwesen zwischen 'patrōnus' und 'cliēns'.",
+					"concept": "Gegenseitiges Treueverhältnis (fidēs): Der patrōnus schützte den cliēns vor Gericht und wirtschaftlich; der cliēns unterstützte ihn bei Wahlen.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-gesellschaft-klientel-organe",
+					"sample_solution": "Gegenseitiges Treueverhältnis (fidēs): Der patrōnus schützte den cliēns vor Gericht und wirtschaftlich; der cliēns unterstützte ihn bei Wahlen."
+				}
+			]
+		},
+		{
+			"id": "01M87RE92Q46Z5BQFXVS86P5H3",
+			"atom_uri": "urn:zam:atom:01M87RE92Q46Z5BQFXVS86P5H3",
+			"namespace": "zam-academy-latein-gymnasium-6",
+			"slug": "l6-hannibal-punische-kriege",
+			"title": "Rom und Karthago: Hannibal und die Punischen Kriege",
+			"domain": "latein/republik-hannibal-gesellschaft",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-hannibal-punische-kriege",
+			"prerequisites": [
+				{
+					"atom_id": "01M87RE92GWEBFF6QEQ27VENQZ",
+					"type": "hard",
+					"rationale": "Karthago, Alpen, Cannae und Zama verankern den Krieg im Mittelmeerraum."
+				},
+				{
+					"atom_id": "01M87RE92PAB4J4EYRAAETZ91S",
+					"type": "hard",
+					"rationale": "Die innere Stabilität der Republik und der sociī trug Rom durch die Krise."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6",
+					"topic_code": "republik-hannibal-gesellschaft",
+					"topic_title": "Römische Republik, Hannibal, Gesellschaft und Werte"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb1",
+					"topic_title": "Texte",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb3",
+					"topic_title": "Antike Kultur und Weltverständnis",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M87RE993HX7F98DZN66AR9Y4",
+					"slug": "l6-hannibal-punische-kriege-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "In welchem Jahr überquerte Hannibal zu Beginn des 2. Punischen Krieges die Alpen?",
+					"concept": "218 v. Chr. (Schlacht bei Cannae folgte 216 v. Chr.).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-hannibal-punische-kriege",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"218 v. Chr. (Schlacht bei Cannae folgte 216 v. Chr.).",
+							"146 v. Chr."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M87RE9949AA71FF2EJV7W4Q6",
+					"slug": "l6-hannibal-punische-kriege-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie gelang es P. Cornēlius Scīpiō (Africānus) 202 v. Chr., den Krieg zu entscheiden?",
+					"concept": "Er landete mit einem Heer in Nordafrika, zwang Hannibal aus Italien abzurücken und besiegte ihn bei Zama.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-hannibal-punische-kriege",
+					"sample_solution": "Er landete mit einem Heer in Nordafrika, zwang Hannibal aus Italien abzurücken und besiegte ihn bei Zama."
+				},
+				{
+					"id": "01M87RE995866QVE1R9NYS3V13",
+					"slug": "l6-hannibal-punische-kriege-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Warum brach Rom nach den verheerenden Niederlagen gegen Hannibal bis hin zu Cannae nicht zusammen?",
+					"concept": "Die große Mehrheit der italischen Bundesgenossen (sociī) hielt Rom die Treue und stellte weiter Soldaten.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-hannibal-punische-kriege",
+					"sample_solution": "Die große Mehrheit der italischen Bundesgenossen (sociī) hielt Rom die Treue und stellte weiter Soldaten."
+				}
+			]
+		},
+		{
+			"id": "01M87RE92RQ7RZP7G2392J0BQC",
+			"atom_uri": "urn:zam:atom:01M87RE92RQ7RZP7G2392J0BQC",
+			"namespace": "zam-academy-latein-gymnasium-6",
+			"slug": "l6-roemische-werte-opfer",
+			"title": "Weitere römische Werte und Opfer in der Religion",
+			"domain": "latein/republik-hannibal-gesellschaft",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-roemische-werte-opfer",
+			"prerequisites": [
+				{
+					"atom_id": "01M87RE92Q46Z5BQFXVS86P5H3",
+					"type": "hard",
+					"rationale": "Die Krise nach Cannae verdeutlicht cōnstantia und den Zusammenhalt durch concordia."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6",
+					"topic_code": "republik-hannibal-gesellschaft",
+					"topic_title": "Römische Republik, Hannibal, Gesellschaft und Werte"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb1",
+					"topic_title": "Texte",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb3",
+					"topic_title": "Antike Kultur und Weltverständnis",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M87RE9968Q16YJB0878BVDH8",
+					"slug": "l6-roemische-werte-opfer-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welcher römische Wert beschreibt Roms Standhaftigkeit und Besonnenheit nach Cannae?",
+					"concept": "cōnstantia (Standhaftigkeit).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-roemische-werte-opfer",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"cōnstantia (Standhaftigkeit).",
+							"clēmentia (Milde gegen Besiegte)."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M87RE997BHZNW1Z9R66HRZ2F",
+					"slug": "l6-roemische-werte-opfer-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Was besagt das römische Opferprinzip ‚dō ut dēs‘?",
+					"concept": "‚Ich gebe, damit du gibst‘ – eine Vertragsbeziehung zu den Göttern durch ein exakt ausgeführtes Ritual.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-roemische-werte-opfer",
+					"sample_solution": "‚Ich gebe, damit du gibst‘ – eine Vertragsbeziehung zu den Göttern durch ein exakt ausgeführtes Ritual."
+				},
+				{
+					"id": "01M87RE998C5M59KDAA9CVR5EJ",
+					"slug": "l6-roemische-werte-opfer-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Welche Bedeutung hat 'concordia' im Staat nach dem Ende der Ständekämpfe?",
+					"concept": "Innere Eintracht und Versöhnung zwischen den gesellschaftlichen Gruppen (‚Herz zu Herz‘).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-roemische-werte-opfer",
+					"sample_solution": "Innere Eintracht und Versöhnung zwischen den gesellschaftlichen Gruppen (‚Herz zu Herz‘)."
+				}
+			]
+		},
+		{
+			"id": "01M87RE92S7HDTY3HQ1TPZS9TH",
+			"atom_uri": "urn:zam:atom:01M87RE92S7HDTY3HQ1TPZS9TH",
+			"namespace": "zam-academy-latein-gymnasium-6",
+			"slug": "l6-gegenwart-antikenbezuege",
+			"title": "Römisches Erbe und Antikenbezüge in unserer Gegenwart",
+			"domain": "latein/republik-hannibal-gesellschaft",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-gegenwart-antikenbezuege",
+			"prerequisites": [
+				{
+					"atom_id": "01M87RE92NMGZFV6WYXSR4ATJ3",
+					"type": "hard",
+					"rationale": "Pyrrhos' teure Siege begründen das bis heute lebendige Wort ‚Pyrrhussieg‘."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6",
+					"topic_code": "republik-hannibal-gesellschaft",
+					"topic_title": "Römische Republik, Hannibal, Gesellschaft und Werte"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb3",
+					"topic_title": "Antike Kultur und Weltverständnis",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M87RE999BVGQZ716X3TF7ZFM",
+					"slug": "l6-gegenwart-antikenbezuege-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche moderne Bedeutung hat ein ‚Pyrrhussieg‘?",
+					"concept": "Ein Sieg oder Erfolg, der so hohe Kosten fordert, dass er fast einer Niederlage gleicht.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-gegenwart-antikenbezuege",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Ein Sieg oder Erfolg, der so hohe Kosten fordert, dass er fast einer Niederlage gleicht.",
+							"Ein völlig müheloser Sieg ohne Opfer."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M87RE99A54E8C630ST2YJZQ0",
+					"slug": "l6-gegenwart-antikenbezuege-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Warum heißen bestimmte versteckte Computer-Schadprogramme heute ‚Trojaner‘?",
+					"concept": "Wie das hölzerne Pferd von Troja tarnen sie sich als nützliches oder harmloses Programm.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-gegenwart-antikenbezuege",
+					"sample_solution": "Wie das hölzerne Pferd von Troja tarnen sie sich als nützliches oder harmloses Programm."
+				},
+				{
+					"id": "01M87RE99BKCZ64ZJDNQW9RF5R",
+					"slug": "l6-gegenwart-antikenbezuege-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Wo begegnet uns heute der Name der mythologischen Figur ‚Europa‘?",
+					"concept": "Als Name unseres Erdteils (und Motiv z. B. auf der 2-Euro-Münze sowie den Euro-Banknoten).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-gegenwart-antikenbezuege",
+					"sample_solution": "Als Name unseres Erdteils (und Motiv z. B. auf der 2-Euro-Münze sowie den Euro-Banknoten)."
+				}
+			]
+		},
+		{
+			"id": "01M87RE92TF9VYZX4YRXTJ22TA",
+			"atom_uri": "urn:zam:atom:01M87RE92TF9VYZX4YRXTJ22TA",
+			"namespace": "zam-academy-latein-gymnasium-6",
+			"slug": "l6-europa-theseus",
+			"title": "Europa und Theseus im Labyrinth auf Kreta",
+			"domain": "latein/mythen-ovid-unterwelt",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-europa-theseus",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6",
+					"topic_code": "mythen-ovid-unterwelt",
+					"topic_title": "Griechisch-römische Mythen, Unterwelt und Ovid"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb1",
+					"topic_title": "Texte",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb3",
+					"topic_title": "Antike Kultur und Weltverständnis",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M87RE99C8DQXMC4GBF09BYCB",
+					"slug": "l6-europa-theseus-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "In welcher Gestalt trug Iuppiter die Prinzessin Europa übers Meer nach Kreta?",
+					"concept": "Als sanfter weißer Stier.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-europa-theseus",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Als sanfter weißer Stier.",
+							"Als goldener Adler."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M87RE99DYDZYSHQGN8KRZZSY",
+					"slug": "l6-europa-theseus-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie half Ariadne dem Athener Theseus nach dem Sieg über den Minotaurus aus dem Labyrinth?",
+					"concept": "Mit einem Wollknäuel (‚Ariadnefaden‘), mit dem er den Rückweg zum Ausgang wiederfand.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-europa-theseus",
+					"sample_solution": "Mit einem Wollknäuel (‚Ariadnefaden‘), mit dem er den Rückweg zum Ausgang wiederfand."
+				},
+				{
+					"id": "01M87RE99EM2802KGP1XZ1742S",
+					"slug": "l6-europa-theseus-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Wie erklärt der Mythos um Theseus' Vater Ägeus den Namen des Ägäischen Meeres?",
+					"concept": "Theseus vergaß, das weiße Siegessegel zu hissen; aus Verzweiflung stürzte sich König Ägeus ins Meer.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-europa-theseus",
+					"sample_solution": "Theseus vergaß, das weiße Siegessegel zu hissen; aus Verzweiflung stürzte sich König Ägeus ins Meer."
+				}
+			]
+		},
+		{
+			"id": "01M87RE92VCRPD5KCB4XKW2B67",
+			"atom_uri": "urn:zam:atom:01M87RE92VCRPD5KCB4XKW2B67",
+			"namespace": "zam-academy-latein-gymnasium-6",
+			"slug": "l6-daedalus-ikarus",
+			"title": "Daedalus und Ikarus: Erfindergeist und Hybris",
+			"domain": "latein/mythen-ovid-unterwelt",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-daedalus-ikarus",
+			"prerequisites": [
+				{
+					"atom_id": "01M87RE92TF9VYZX4YRXTJ22TA",
+					"type": "hard",
+					"rationale": "Der kretische Sagenkreis verbindet das Labyrinth des Minotaurus mit Daedalus' Flucht."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6",
+					"topic_code": "mythen-ovid-unterwelt",
+					"topic_title": "Griechisch-römische Mythen, Unterwelt und Ovid"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb1",
+					"topic_title": "Texte",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb3",
+					"topic_title": "Antike Kultur und Weltverständnis",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M87RE99FG0SYAQF1W06KNAEC",
+					"slug": "l6-daedalus-ikarus-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Aus welchen drei Materialien baute Daedalus nach Ovid die Flügel für die Flucht aus Kreta?",
+					"concept": "Aus Federn (pennae), Leinenfäden (līnum) und Wachs (cēra).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-daedalus-ikarus",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Aus Federn (pennae), Leinenfäden (līnum) und Wachs (cēra).",
+							"Aus Bronze, Eisen und Marmor."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M87RE99G5PB4JQGZW1CK8W1H",
+					"slug": "l6-daedalus-ikarus-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie lautet Daedalus' berühmter Rat des rechten Maßes vor dem Flug (Ovid, Met. 8,206)?",
+					"concept": "‚Inter utrumque volā!‘ – Flieg genau in der Mitte (nicht zu tief ans Wasser, nicht zu hoch zur Sonne)!",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-daedalus-ikarus",
+					"sample_solution": "‚Inter utrumque volā!‘ – Flieg genau in der Mitte (nicht zu tief ans Wasser, nicht zu hoch zur Sonne)!"
+				},
+				{
+					"id": "01M87RE99HWAESH5PDV71ARR47",
+					"slug": "l6-daedalus-ikarus-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Welcher griechische Begriff bezeichnet Ikarus' Selbstüberschätzung, die zum Absturz führt?",
+					"concept": "Hybris (Übermut / Überschreiten menschlicher Grenzen).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-daedalus-ikarus",
+					"sample_solution": "Hybris (Übermut / Überschreiten menschlicher Grenzen)."
+				}
+			]
+		},
+		{
+			"id": "01M87RE92W7DQDAH5GFYAEHRFG",
+			"atom_uri": "urn:zam:atom:01M87RE92W7DQDAH5GFYAEHRFG",
+			"namespace": "zam-academy-latein-gymnasium-6",
+			"slug": "l6-orpheus-eurydike-unterwelt",
+			"title": "Orpheus und Eurydike: Unterweltsmythos bei Ovid",
+			"domain": "latein/mythen-ovid-unterwelt",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-orpheus-eurydike-unterwelt",
+			"prerequisites": [
+				{
+					"atom_id": "01M87RE92VCRPD5KCB4XKW2B67",
+					"type": "hard",
+					"rationale": "Menschliche Grenzen und Verwandlungskunst schließen unmittelbar an Ovid-Stoffe an."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6",
+					"topic_code": "mythen-ovid-unterwelt",
+					"topic_title": "Griechisch-römische Mythen, Unterwelt und Ovid"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb1",
+					"topic_title": "Texte",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb3",
+					"topic_title": "Antike Kultur und Weltverständnis",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M87RE99JZPRPCZDFSVR2RTHH",
+					"slug": "l6-orpheus-eurydike-unterwelt-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Vor welchem unterirdischen Herrscherpaar sang Orpheus um die Rückkehr Eurydikes?",
+					"concept": "Vor Plūtō und Prōserpina.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-orpheus-eurydike-unterwelt",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Vor Plūtō und Prōserpina.",
+							"Vor Minos und Ikarus."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M87RE99KBSQQMW74ZBT80144",
+					"slug": "l6-orpheus-eurydike-unterwelt-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Unter welcher einzigen Bedingung durfte Orpheus Eurydike wieder ins Licht führen?",
+					"concept": "Er durfte auf dem Weg nach oben seine Augen kein einziges Mal zurückwenden (Ovid, Met. 10,51: ne flectat retro sua lumina).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-orpheus-eurydike-unterwelt",
+					"sample_solution": "Er durfte auf dem Weg nach oben seine Augen kein einziges Mal zurückwenden (Ovid, Met. 10,51: ne flectat retro sua lumina)."
+				},
+				{
+					"id": "01M87RE99M29JK27M641DE8M1Q",
+					"slug": "l6-orpheus-eurydike-unterwelt-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Was symbolisiert die bewegende Wirkung von Orpheus' Gesang und Leier (lyra) auf die Schatten und Steine?",
+					"concept": "Die überwältigende Macht der Kunst über Schmerz und selbst die unerbittliche Natur.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-orpheus-eurydike-unterwelt",
+					"sample_solution": "Die überwältigende Macht der Kunst über Schmerz und selbst die unerbittliche Natur."
+				}
+			]
+		},
+		{
+			"id": "01M87RE92XXVJ21RC83M9FP4S2",
+			"atom_uri": "urn:zam:atom:01M87RE92XXVJ21RC83M9FP4S2",
+			"namespace": "zam-academy-latein-gymnasium-6",
+			"slug": "l6-trojanischer-krieg",
+			"title": "Der Trojanische Krieg: Vom Paris-Urteil bis zum Holzpferd",
+			"domain": "latein/mythen-ovid-unterwelt",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-trojanischer-krieg",
+			"prerequisites": [
+				{
+					"atom_id": "01M87RE92GWEBFF6QEQ27VENQZ",
+					"type": "hard",
+					"rationale": "Kleinasien und die Ägäis verorten das Geschehen um Troja."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6",
+					"topic_code": "mythen-ovid-unterwelt",
+					"topic_title": "Griechisch-römische Mythen, Unterwelt und Ovid"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb1",
+					"topic_title": "Texte",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb3",
+					"topic_title": "Antike Kultur und Weltverständnis",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M87RE99N0AK70MMXMDA186VS",
+					"slug": "l6-trojanischer-krieg-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welcher Wettstreit stand am mythologischen Auslöser des Trojanischen Krieges?",
+					"concept": "Das Paris-Urteil um den goldenen Apfel der Zwietracht (zwischen Iūnō, Minerva und Venus).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-trojanischer-krieg",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Das Paris-Urteil um den goldenen Apfel der Zwietracht (zwischen Iūnō, Minerva und Venus).",
+							"Der Streit um die Zwölftafelgesetze."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M87RE99PHW4TEKDBKYVYSN75",
+					"slug": "l6-trojanischer-krieg-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wer standen sich im großen Zweikampf vor Troja als Vorkämpfer beider Seiten gegenüber?",
+					"concept": "Hektor als Verteidiger Trojas und Achilles als stärkster Kämpfer der Griechen.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-trojanischer-krieg",
+					"sample_solution": "Hektor als Verteidiger Trojas und Achilles als stärkster Kämpfer der Griechen."
+				},
+				{
+					"id": "01M87RE99QWMF4FXMQ3T43HFT7",
+					"slug": "l6-trojanischer-krieg-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Mit welcher List gelang den Griechen nach zehn Jahren Belagerung die Einnahme Trojas?",
+					"concept": "Mit dem hölzernen ‚Trojanischen Pferd‘ nach dem Plan des Odysseus.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-trojanischer-krieg",
+					"sample_solution": "Mit dem hölzernen ‚Trojanischen Pferd‘ nach dem Plan des Odysseus."
+				}
+			]
+		},
+		{
+			"id": "01M87RE92YGZV31KD25TYDWVXY",
+			"atom_uri": "urn:zam:atom:01M87RE92YGZV31KD25TYDWVXY",
+			"namespace": "zam-academy-latein-gymnasium-6",
+			"slug": "l6-irrfahrten-odysseus",
+			"title": "Irrfahrten und Heimkehr des Odysseus (Ulixēs)",
+			"domain": "latein/mythen-ovid-unterwelt",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-irrfahrten-odysseus",
+			"prerequisites": [
+				{
+					"atom_id": "01M87RE92XXVJ21RC83M9FP4S2",
+					"type": "hard",
+					"rationale": "Auf den Fall Trojas folgt die zehn Jahre dauernde Heimfahrt des Odysseus."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6",
+					"topic_code": "mythen-ovid-unterwelt",
+					"topic_title": "Griechisch-römische Mythen, Unterwelt und Ovid"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb1",
+					"topic_title": "Texte",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb3",
+					"topic_title": "Antike Kultur und Weltverständnis",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M87RE99RSP1G3DESJ51FMRN2",
+					"slug": "l6-irrfahrten-odysseus-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Mit welcher Sprachlist entkam Odysseus dem einäugigen Kyklopen Polyphem?",
+					"concept": "Er nannte sich ‚Niemand‘ (Nēmō / griech. Outis), sodass die anderen Kyklopen nicht halfen.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-irrfahrten-odysseus",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Er nannte sich ‚Niemand‘ (Nēmō / griech. Outis), sodass die anderen Kyklopen nicht halfen.",
+							"Er nannte sich Cōnsul Rōmae."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M87RE99STDCXACNCQ0AR428B",
+					"slug": "l6-irrfahrten-odysseus-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie schützte Odysseus seine Mannschaft und sich selbst vor dem tödlichen Gesang der Sirenen?",
+					"concept": "Er verklebte den Ruderern die Ohren mit Wachs und ließ sich selbst fest an den Schiffsmast binden.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-irrfahrten-odysseus",
+					"sample_solution": "Er verklebte den Ruderern die Ohren mit Wachs und ließ sich selbst fest an den Schiffsmast binden."
+				},
+				{
+					"id": "01M87RE99TFPRNMP40PYVKED06",
+					"slug": "l6-irrfahrten-odysseus-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Welche Eigenschaften kennzeichnen Odysseus und seine Frau Penelope auf Ithaka nach 20 Jahren?",
+					"concept": "Klugheit, Voraussicht, Geduld und gegenseitige Treue (zusammen mit Sohn Telemachos).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-irrfahrten-odysseus",
+					"sample_solution": "Klugheit, Voraussicht, Geduld und gegenseitige Treue (zusammen mit Sohn Telemachos)."
+				}
+			]
+		},
+		{
+			"id": "01M87RE92ZDJB0A258A98N6KRG",
+			"atom_uri": "urn:zam:atom:01M87RE92ZDJB0A258A98N6KRG",
+			"namespace": "zam-academy-latein-gymnasium-6",
+			"slug": "l6-ovid-bild-text-vergleich",
+			"title": "Ovid als Dichter der Mythen und der Bild-Text-Vergleich",
+			"domain": "latein/mythen-ovid-unterwelt",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-ovid-bild-text-vergleich",
+			"prerequisites": [
+				{
+					"atom_id": "01M87RE92TF9VYZX4YRXTJ22TA",
+					"type": "hard",
+					"rationale": "Europa bei Ovid zeigt den Vergleich von Attributen im Bild und Erzählverlauf im Text."
+				},
+				{
+					"atom_id": "01M87RE92VCRPD5KCB4XKW2B67",
+					"type": "hard",
+					"rationale": "Ovids Ikarus-Stelle dient als Kernbeispiel für Text- und Bildvergleich."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6",
+					"topic_code": "mythen-ovid-unterwelt",
+					"topic_title": "Griechisch-römische Mythen, Unterwelt und Ovid"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb1",
+					"topic_title": "Texte",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb2.1",
+					"topic_title": "Sprachliche Basis: Wortschatz",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb3",
+					"topic_title": "Antike Kultur und Weltverständnis",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M87RE99VDSMFAGY0ZC5H685H",
+					"slug": "l6-ovid-bild-text-vergleich-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wie heißt Ovids großes Mythenwerk mit über zweihundert Verwandlungserzählungen?",
+					"concept": "Die Metamorphosen.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-ovid-bild-text-vergleich",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Die Metamorphosen.",
+							"Die Annalen."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M87RE99W9840G5F7KCPNYRA2",
+					"slug": "l6-ovid-bild-text-vergleich-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Woran erkennt man mythologische Figuren auf antiken Vasen, Fresken oder Mosaiken zuerst?",
+					"concept": "An festen Attributen (typischen Gegenständen wie Stier, Leier, Flügel oder Fadenknäuel).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-ovid-bild-text-vergleich",
+					"sample_solution": "An festen Attributen (typischen Gegenständen wie Stier, Leier, Flügel oder Fadenknäuel)."
+				},
+				{
+					"id": "01M87RE99XAQZ3XDMG300TEBS4",
+					"slug": "l6-ovid-bild-text-vergleich-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Worin liegt beim Bild-Text-Vergleich typischerweise die Stärke des erzählenden Textes?",
+					"concept": "Er entfaltet innere Gefühle, direkte Reden und ein zeitliches Nacheinander, während das Bild einen Augenblick zeigt.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-ovid-bild-text-vergleich",
+					"sample_solution": "Er entfaltet innere Gefühle, direkte Reden und ein zeitliches Nacheinander, während das Bild einen Augenblick zeigt."
+				}
+			]
+		},
+		{
+			"id": "01M87RE930919MYKECV3WC88HM",
+			"atom_uri": "urn:zam:atom:01M87RE930919MYKECV3WC88HM",
+			"namespace": "zam-academy-latein-gymnasium-6",
+			"slug": "l6-satzanalyse-pc-nebensaetze",
+			"title": "Komplexe Sätze knacken: PC-Klammern und Nebensätze markieren",
+			"domain": "latein/methodik-uebersetzen",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-satzanalyse-pc-nebensaetze",
+			"prerequisites": [
+				{
+					"atom_id": "01M87RE92FHYKDFMQPJ9B262HE",
+					"type": "hard",
+					"rationale": "Sicheres Abgrenzen von PC-Klammern strukturiert längere Satzperioden."
+				},
+				{
+					"atom_id": "01M87RE92DPAHSBGF9512R7WGZ",
+					"type": "hard",
+					"rationale": "Konjunktivische Nebensätze markieren eigene Sinnblöcke bis zum finiten Verb."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6",
+					"topic_code": "methodik-uebersetzen",
+					"topic_title": "Satzanalyse, Übersetzen, Lernplan und Präsentation"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb1",
+					"topic_title": "Texte",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb2.3",
+					"topic_title": "Sprachliche Basis: Syntax",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb4",
+					"topic_title": "Methoden",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M87RE99YH1ZR1WQ16MV9Q4QZ",
+					"slug": "l6-satzanalyse-pc-nebensaetze-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Auf welches Bezugswort verweist 'dēfēnsās' in ‚Hostēs urbēs ā cīvibus fortiter dēfēnsās oppugnant‘?",
+					"concept": "Auf 'urbēs' (Akkusativ Plural femininum) – ‚ā cīvibus fortiter‘ steht in der PC-Klammer dazwischen.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-satzanalyse-pc-nebensaetze",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Auf 'urbēs' (Akkusativ Plural femininum) – ‚ā cīvibus fortiter‘ steht in der PC-Klammer dazwischen.",
+							"Auf 'hostēs' (Nominativ Plural maskulinum)."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M87RE99ZDR42D5J7CW9C020S",
+					"slug": "l6-satzanalyse-pc-nebensaetze-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wo endet ein in den Hauptsatz eingeschobener 'ut'- oder 'cum'-Nebensatz fast immer?",
+					"concept": "Genau bei seinem eigenen konjugierten Verb.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-satzanalyse-pc-nebensaetze",
+					"sample_solution": "Genau bei seinem eigenen konjugierten Verb."
+				},
+				{
+					"id": "01M87RE9A0CHCW0BT4X98WVE9E",
+					"slug": "l6-satzanalyse-pc-nebensaetze-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Grenze in ‚Plīnius scrīpsit Pompēiōs cinere opertōs‘ den AcI-Inhalt sauber ab.",
+					"concept": "[Pompēiōs cinere opertōs (esse)] – Pompēiōs (Akk. Pl. m.) passt in KNG zu opertōs.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-satzanalyse-pc-nebensaetze",
+					"sample_solution": "[Pompēiōs cinere opertōs (esse)] – Pompēiōs (Akk. Pl. m.) passt in KNG zu opertōs."
+				}
+			]
+		},
+		{
+			"id": "01M87RE931J5WPYB07KQ2ZC0ED",
+			"atom_uri": "urn:zam:atom:01M87RE931J5WPYB07KQ2ZC0ED",
+			"namespace": "zam-academy-latein-gymnasium-6",
+			"slug": "l6-uebersetzungstechniken",
+			"title": "Übersetzungstechniken: Konstruktion, Wortblock und Wort-für-Wort",
+			"domain": "latein/methodik-uebersetzen",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-uebersetzungstechniken",
+			"prerequisites": [
+				{
+					"atom_id": "01M87RE930919MYKECV3WC88HM",
+					"type": "hard",
+					"rationale": "Erst sauber abgegrenzte Blöcke ermöglichen Konstruktions- und Wortblockmethode."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6",
+					"topic_code": "methodik-uebersetzen",
+					"topic_title": "Satzanalyse, Übersetzen, Lernplan und Präsentation"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb1",
+					"topic_title": "Texte",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb2.3",
+					"topic_title": "Sprachliche Basis: Syntax",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb4",
+					"topic_title": "Methoden",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M87RE9A1ABC72SB7DMY5D2F3",
+					"slug": "l6-uebersetzungstechniken-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Womit beginnt die klassische Konstruktionsmethode bei verschachtelten lateinischen Sätzen?",
+					"concept": "Zuerst das Hauptprädikat bestimmen und von dort nach Subjekt und Objekten fragen.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-uebersetzungstechniken",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Zuerst das Hauptprädikat bestimmen und von dort nach Subjekt und Objekten fragen.",
+							"Sofort beim ersten Wort links mit der deutschen Übersetzung beginnen."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M87RE9A27MYQZ2M25K8MK7JX",
+					"slug": "l6-uebersetzungstechniken-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie arbeitet die Wortblockmethode beim ersten Lesen eines Satzes?",
+					"concept": "Sie fasst KNG-Gruppen und Präpositionalausdrücke von links nach rechts zu Sinnblöcken zusammen.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-uebersetzungstechniken",
+					"sample_solution": "Sie fasst KNG-Gruppen und Präpositionalausdrücke von links nach rechts zu Sinnblöcken zusammen."
+				},
+				{
+					"id": "01M87RE9A3642X12TAT6PETB1V",
+					"slug": "l6-uebersetzungstechniken-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Warum scheitert eine unverbesserte Wort-für-Wort-Übertragung meist an lateinischen Texten?",
+					"concept": "Wegen der Endstellung des Verbs, der KNG-Sperrung und deutscher Klammerregeln verliert man sonst Bezüge und Sinn.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-uebersetzungstechniken",
+					"sample_solution": "Wegen der Endstellung des Verbs, der KNG-Sperrung und deutscher Klammerregeln verliert man sonst Bezüge und Sinn."
+				}
+			]
+		},
+		{
+			"id": "01M87RE932PBTTK5WA1WJZANEK",
+			"atom_uri": "urn:zam:atom:01M87RE932PBTTK5WA1WJZANEK",
+			"namespace": "zam-academy-latein-gymnasium-6",
+			"slug": "l6-fehleranalyse-textaufbau",
+			"title": "Fehleranalyse am Entwurf und Textaufbau erfassen",
+			"domain": "latein/methodik-uebersetzen",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-fehleranalyse-textaufbau",
+			"prerequisites": [
+				{
+					"atom_id": "01M87RE931J5WPYB07KQ2ZC0ED",
+					"type": "hard",
+					"rationale": "Strukturierte Übersetzungsmethodik bereitet die gezielte Eigenkorrektur am Entwurf vor."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6",
+					"topic_code": "methodik-uebersetzen",
+					"topic_title": "Satzanalyse, Übersetzen, Lernplan und Präsentation"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb1",
+					"topic_title": "Texte",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb2.3",
+					"topic_title": "Sprachliche Basis: Syntax",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb4",
+					"topic_title": "Methoden",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M87RE9A48SSKDQTRF16TT3EP",
+					"slug": "l6-fehleranalyse-textaufbau-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welcher typische Tempusfehler droht beim Übersetzen von ‚Templum captum est‘?",
+					"concept": "Verwechslung mit dem Präsens (‚wird‘) wegen 'est'; richtig heißt Perfekt Passiv ‚wurde / ist eingenommen worden‘.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-fehleranalyse-textaufbau",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Verwechslung mit dem Präsens (‚wird‘) wegen 'est'; richtig heißt Perfekt Passiv ‚wurde / ist eingenommen worden‘.",
+							"Es heißt immer Futur (‚wird eingenommen werden‘)."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M87RE9A55KR5DGMB68S5HTVQ",
+					"slug": "l6-fehleranalyse-textaufbau-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wer lacht in ‚Puer fīliam rīdentem vīdit‘ – und wie beweist du es sicher?",
+					"concept": "Die Tochter (fīliam, Akk. Sg. f.) lacht, denn rīdentem steht im Akkusativ und nicht im Nominativ wie puer.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-fehleranalyse-textaufbau",
+					"sample_solution": "Die Tochter (fīliam, Akk. Sg. f.) lacht, denn rīdentem steht im Akkusativ und nicht im Nominativ wie puer."
+				},
+				{
+					"id": "01M87RE9A6VFE1RM8F1PBRCJJJ",
+					"slug": "l6-fehleranalyse-textaufbau-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Worauf prüfst du jede Stelle mit 'tam ... ut nōn' bei der Korrektur des eigenen Entwurfs?",
+					"concept": "Konsekutivsinn ‚so ..., dass ... nicht‘ statt finalem ‚damit ... nicht‘.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-fehleranalyse-textaufbau",
+					"sample_solution": "Konsekutivsinn ‚so ..., dass ... nicht‘ statt finalem ‚damit ... nicht‘."
+				}
+			]
+		},
+		{
+			"id": "01M87RE9338B1K9Z5338SKHEB2",
+			"atom_uri": "urn:zam:atom:01M87RE9338B1K9Z5338SKHEB2",
+			"namespace": "zam-academy-latein-gymnasium-6",
+			"slug": "l6-lernstrategien-pruefung",
+			"title": "Stammformen lernen, Hilfsmittel nutzen und Prüfungen planen",
+			"domain": "latein/methodik-uebersetzen",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-lernstrategien-pruefung",
+			"prerequisites": [
+				{
+					"atom_id": "01M87RE932PBTTK5WA1WJZANEK",
+					"type": "hard",
+					"rationale": "Typische eigene Fehlerquellen steuern das planvolle Stammformen- und Klausurtraining."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6",
+					"topic_code": "methodik-uebersetzen",
+					"topic_title": "Satzanalyse, Übersetzen, Lernplan und Präsentation"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb4",
+					"topic_title": "Methoden",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M87RE9A76YV1C1S0BQF5QZ5T",
+					"slug": "l6-lernstrategien-pruefung-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welches englische Lehnwort hilft beim Einprägen der Stammformen ‚capiō, cēpī, captum‘?",
+					"concept": "capture / captive (sie verraten den PPP-Stamm capt-).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-lernstrategien-pruefung",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"capture / captive (sie verraten den PPP-Stamm capt-).",
+							"escape (anderes Wort)."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M87RE9A8S9EV83JTTJYYD5R4",
+					"slug": "l6-lernstrategien-pruefung-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Unter welchem Stichwort schlägst du eine deklinierte Form wie ‚veterum‘ (Gen. Pl.) im Wörterbuch nach?",
+					"concept": "Unter der Grundform im Nominativ Singular: vetus, veteris.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-lernstrategien-pruefung",
+					"sample_solution": "Unter der Grundform im Nominativ Singular: vetus, veteris."
+				},
+				{
+					"id": "01M87RE9A94XVQFHPVSJN16Z87",
+					"slug": "l6-lernstrategien-pruefung-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Welche Arbeitsschritte gehören in eine wirksame Vorbereitung vor einer Schulaufgabe?",
+					"concept": "Regelmäßig kurze Stammformen-Etappen mit englischen Brücken und gezielte Fehlerdiagnose (Passivzeit, KNG, Nebensatz).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-lernstrategien-pruefung",
+					"sample_solution": "Regelmäßig kurze Stammformen-Etappen mit englischen Brücken und gezielte Fehlerdiagnose (Passivzeit, KNG, Nebensatz)."
+				}
+			]
+		},
+		{
+			"id": "01M87RE934N7AD0YKG0F0ZDDQC",
+			"atom_uri": "urn:zam:atom:01M87RE934N7AD0YKG0F0ZDDQC",
+			"namespace": "zam-academy-latein-gymnasium-6",
+			"slug": "l6-kreativ-praesentation-team",
+			"title": "Kreativ umsetzen, visualisieren und im Team präsentieren",
+			"domain": "latein/methodik-uebersetzen",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-kreativ-praesentation-team",
+			"prerequisites": [
+				{
+					"atom_id": "01M87RE92JHMCCEB931KWC4C3F",
+					"type": "hard",
+					"rationale": "Ausgangstexte zu Pompeji und Mythen liefern Impulse für lateinische Bildunterschriften."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6",
+					"topic_code": "methodik-uebersetzen",
+					"topic_title": "Satzanalyse, Übersetzen, Lernplan und Präsentation"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb4",
+					"topic_title": "Methoden",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M87RE9AAVHXQRRFRXS9CJ01J",
+					"slug": "l6-kreativ-praesentation-team-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wie lautet die grammatisch richtige lateinische Unterschrift für ein Pompeji-Plakat (Pompēiī = m. Pl.)?",
+					"concept": "Pompēiī annō LXXIX cinere opertī (oder dēlētī).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-kreativ-praesentation-team",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Pompēiī annō LXXIX cinere opertī (oder dēlētī).",
+							"Pompēiī annō LXXIX cinere opertae."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M87RE9AB6ND97G81WW3S67YE",
+					"slug": "l6-kreativ-praesentation-team-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Was macht ein Lernplakat im Fach Latein übersichtlich und wirksam?",
+					"concept": "Klare Leitbegriffe, ein passendes Schaubild oder Zeitstrahl und kurze, prägnante Beispielsätze.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-kreativ-praesentation-team",
+					"sample_solution": "Klare Leitbegriffe, ein passendes Schaubild oder Zeitstrahl und kurze, prägnante Beispielsätze."
+				},
+				{
+					"id": "01M87RE9AC6F58V4B4PKZ4ZNJ5",
+					"slug": "l6-kreativ-praesentation-team-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Worauf achtet man beim Stationenlernen und bei Partner-Feedback im Team?",
+					"concept": "Selbständig im Lernpfad oder Wörterbuch nachschlagen und Fehler gemeinsam begründen, statt Lösungen bloß abzuschreiben.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6/#lesson=l6-kreativ-praesentation-team",
+					"sample_solution": "Selbständig im Lernpfad oder Wörterbuch nachschlagen und Fehler gemeinsam begründen, statt Lösungen bloß abzuschreiben."
+				}
+			]
+		}
+	]
+}

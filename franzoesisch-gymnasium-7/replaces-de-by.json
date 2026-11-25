@@ -1,0 +1,71 @@
+{
+	"schema": 1,
+	"status": "approved",
+	"approved": "2026-11-23",
+	"source_repository": "https://github.com/zam-os/zam",
+	"source_commit": "67e190c2b7e5282851dfdd60ce21b69ed373dfa9",
+	"source": "Thomas approved the single proposed Grade 8 imparfait history transfer in the Codex chat for PR #190 on 2026-11-23 with “Freigabe erteilt. Du darfst als Admin mergen”.",
+	"sources": [
+		{
+			"file": "tests/fixtures/de-by-gymnasium-7-franzoesisch-passe-compose-relativsaetze-verneinung-kvt.json",
+			"tile_id": "de-by:gymnasium-7-franzoesisch-passe-compose-relativsaetze-verneinung",
+			"sha256": "2ff6c4b05b4326a06690e4185b3a60abf7936e20701d81306828cc4d7e4c3415"
+		},
+		{
+			"file": "tests/fixtures/de-by-gymnasium-8-franzoesisch-imparfait-passe-compose-objektpronomen-kvt.json",
+			"tile_id": "de-by:gymnasium-8-franzoesisch-imparfait-passe-compose-objektpronomen",
+			"sha256": "3869a6487c2714f7839d46536eea39115c58779ff8607e063fd4f5eb3972c84c"
+		}
+	],
+	"rows": [
+		{
+			"de_by_id": "01K4F7Y0000000000000000J01",
+			"category": "C",
+			"action": "keep-active",
+			"reason": "Grade 6 first foreign language already owns the approved transfer to f6-1-etre-passe-check. This package claims no successor."
+		},
+		{
+			"de_by_id": "01K4F7Y0000000000000000J02",
+			"category": "C",
+			"action": "keep-active",
+			"reason": "The old composite expects a broad account of auxiliary choice and agreement, including reflexives. Grade 7 teaches narrower examples and splits those retrievals."
+		},
+		{
+			"de_by_id": "01K4F7Y0000000000000000J03",
+			"category": "C",
+			"action": "keep-active",
+			"reason": "Grade 6 first foreign language already owns the approved transfer to f6-1-negation-check. This package claims no successor."
+		},
+		{
+			"de_by_id": "01K4F7Y0000000000000000J04",
+			"category": "C",
+			"action": "keep-active",
+			"reason": "Relative clauses and partitives are taught separately, and the composite also asks for negation, which is prior learning."
+		},
+		{
+			"de_by_id": "01K8G8M0000000000000000J01",
+			"category": "A",
+			"action": "replace",
+			"academy_slug": "f7-1-imparfait-check",
+			"reason": "Same retrieval of the nous-stem, all imparfait endings and être as the stem exception. Both Grade 7 curricula teach it. The approved successor is in the first-language path."
+		},
+		{
+			"de_by_id": "01K8G8M0000000000000000J02",
+			"category": "C",
+			"action": "keep-active",
+			"reason": "The full multi-part account also retrieves the formation rules and a particular translation. Grade 7 teaches those competencies through multiple lessons and exercises."
+		},
+		{
+			"de_by_id": "01K8G8M0000000000000000J03",
+			"category": "C",
+			"action": "keep-active",
+			"reason": "Adverbial y for location or à plus a thing is outside the Grade 7 requirement for partitive en."
+		},
+		{
+			"de_by_id": "01K8G8M0000000000000000J04",
+			"category": "C",
+			"action": "keep-active",
+			"reason": "The composite includes the futur simple and y as well as broad en and pronoun placement; it is not equivalent to Grade 7 retrieval."
+		}
+	]
+}

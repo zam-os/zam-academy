@@ -238,7 +238,8 @@ class InformatikApp {
       <div class="path">
         <section class="hero">
           <div class="hero-copy">
-            <h2>Informatik 8 für die Realschule</h2>
+            <h2>Informatik 6–8 für die Realschule</h2>
+            <p><strong>Ein gemeinsames Paket für die Klassen 6, 7 und 8:</strong> Alle drei Zugänge öffnen dieselben 40 Lektionen und 87 ZAM-Karten. Dein Fortschritt bleibt derselbe. Deine Schule legt fest, wann sie die einzelnen Module unterrichtet; du kannst jede Lektion direkt öffnen.</p>
             <p>Der IT-Anfangsunterricht nach dem bayerischen LehrplanPLUS: neun Module, die für ${esc(AUDIENCE_LABEL)} verbindlich sind und spätestens am Ende der Jahrgangsstufe 8 abgeschlossen werden. Vom Zehnfingersystem über erste Programme, Textverarbeitung, Dualzahlen und Bildbearbeitung bis zu Tabellenkalkulation, Präsentation, Computeraufbau und sicherem Umgang mit digitalen Medien. Was du hier verstehst, hält ZAM mit Karten fest, die auf die Lektion zurückverlinken.</p>
             <div class="hero-row">
               <span class="track-pill">🧭 Lernpfad: <strong>IT-Anfangsunterricht 1.1–1.9 (Kompetenzniveau I)</strong></span>
@@ -848,7 +849,7 @@ class InformatikApp {
       <div class="formulas">
         <section class="hero hero-compact">
           <div class="hero-copy">
-            <h2>Merksätze und Fachbegriffe · Informatik 8</h2>
+            <h2>Merksätze und Fachbegriffe · Informatik 6–8</h2>
             <p>Die Merksätze und Fachbegriffe aller ${ALL_LESSONS.length} Lektionen des IT-Anfangsunterrichts. Jede Zeile führt direkt zur Lektion mit Werkstatt und Aufgaben.</p>
           </div>
         </section>

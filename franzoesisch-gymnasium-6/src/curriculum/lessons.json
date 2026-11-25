@@ -1,0 +1,3131 @@
+[
+	{
+		"id": "f6-1-routine",
+		"stage": "f1-journee",
+		"title": "Ma journée",
+		"skill": "Einen Tagesablauf schildern und Uhrzeiten einordnen",
+		"bindings": [
+			"1.1-sprechen",
+			"1.2-wortschatz",
+			"4",
+			"5"
+		],
+		"paragraphs": [
+			"Beginne mit der Zeit und setze die Handlung danach: À sept heures, je prends le petit déjeuner. Für Gewohnheiten passt tous les jours oder le lundi. Wenn du zwei Schritte aneinanderhängst, zeigt puis, welcher später passiert.",
+			"Im Französischen steht der Satzkern häufig in derselben Reihenfolge wie im Englischen: je (I) + prends (have) + mon petit déjeuner (breakfast). Vergleiche Je rentre à seize heures und À seize heures, je rentre. Beide sagen dasselbe. Die Uhr stellt Stunden bis 23 dar, wie ein Fahrplan."
+		],
+		"material": "Le lundi, je prends le petit déjeuner à sept heures. Je vais au collège à huit heures. À midi, je mange à la cantine. Je rentre à seize heures, puis je joue avec mon frère.",
+		"materialLabel": "Übungstext",
+		"materialLanguage": "fr",
+		"sourceIds": [
+			"lp-f1"
+		],
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Was tut die Person nach dem Heimkommen?",
+			"answer": "Sie spielt mit ihrem Bruder.",
+			"wrong": [
+				"Sie frühstückt.",
+				"Sie isst in der Kantine."
+			],
+			"explanation": "Puis ordnet das Spielen hinter dem Heimkommen ein."
+		},
+		"takeaway": "Zeitangabe + Handlung. Puis verbindet den nächsten Schritt.",
+		"practice": [
+			{
+				"prompt": "Je rentre à ___ heures. (Text: 16)",
+				"answers": [
+					"seize"
+				],
+				"feedback": "Seize ist 16. Midi steht für 12 Uhr."
+			},
+			{
+				"prompt": "Je rentre, ___ je joue. (danach)",
+				"answers": [
+					"puis",
+					"ensuite"
+				],
+				"feedback": "Beide Wörter verbinden aufeinanderfolgende Schritte."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "fr",
+				"prompt": "Beschreibe laut einen Schultag mit zwei Uhrzeiten und einem puis. Notiere deine Sätze.",
+				"model": "À sept heures, je mange. À huit heures, je vais au collège, puis je retrouve mes amis.",
+				"criteria": [
+					"Zwei Uhrzeiten",
+					"Zwei Tätigkeiten",
+					"Ein nächster Schritt mit puis"
+				]
+			},
+			"2": {
+				"language": "fr",
+				"prompt": "Ein Freund aus Frankreich möchte wissen, was am Wochenende anders läuft. Vergleiche einen Schultag und einen Samstag mit zwei Uhrzeiten.",
+				"model": "Le lundi, je vais au collège à huit heures. Le samedi, je prends le petit déjeuner à neuf heures, puis je fais du vélo.",
+				"criteria": [
+					"Beide Tage genannt",
+					"Zwei passende Uhrzeiten",
+					"Verständlicher Unterschied"
+				]
+			}
+		},
+		"workshop": {
+			"kind": "clock",
+			"goals": [
+				{
+					"label": "Um sieben Uhr",
+					"before": "À ___ heures",
+					"after": "",
+					"options": [
+						"sept",
+						"seize",
+						"huit"
+					],
+					"answer": "sept",
+					"explanation": "Sept bezeichnet 7 Uhr."
+				},
+				{
+					"label": "Ein Wochentag, der sich wiederholt",
+					"before": "___, je vais au collège.",
+					"after": "",
+					"options": [
+						"Le lundi",
+						"Demain",
+						"Hier"
+					],
+					"answer": "Le lundi",
+					"explanation": "Le lundi bedeutet hier montags."
+				},
+				{
+					"label": "Um 12 Uhr mittags",
+					"before": "Je mange à ___.",
+					"after": "",
+					"options": [
+						"midi",
+						"minuit",
+						"une heure"
+					],
+					"answer": "midi",
+					"explanation": "Midi bezeichnet 12 Uhr mittags."
+				}
+			]
+		},
+		"speaking": true
+	},
+	{
+		"id": "f6-1-intentions",
+		"stage": "f1-journee",
+		"title": "On pourrait aller au cinéma",
+		"skill": "Vorschläge machen und Vorlieben begründen",
+		"bindings": [
+			"1.1-sprechen",
+			"1.2-wortschatz",
+			"3",
+			"5"
+		],
+		"paragraphs": [
+			"Mit J’aimerais + Infinitiv sagst du, was du gern tun würdest. On pourrait + Infinitiv macht einen Vorschlag an die Gruppe. Pour + Infinitiv beantwortet die Frage „wozu?“: On va au parc pour jouer. Parce que + Satz nennt einen Grund: parce que j’aime le basket.",
+			"Ça me plaît passt zu etwas, das dir gefällt. Ça m’a plu bewertet ein vergangenes Erlebnis. Je n’aime pas … drückt Abneigung aus. Bei einer Verabredung kannst du auf einen Vorschlag reagieren, einen Alternativvorschlag machen und deine Wahl kurz erklären."
+		],
+		"material": "— On pourrait aller au cinéma vendredi. — Ça me plaît ! Mais samedi, j’aimerais aller au parc pour jouer au basket. Le film de jeudi, ça m’a plu. — D’accord, on fait les deux ?",
+		"materialLabel": "Übungstext",
+		"materialLanguage": "fr",
+		"sourceIds": [
+			"lp-f1"
+		],
+		"quiz": {
+			"optionLanguage": "fr",
+			"question": "Wozu möchte der Sprecher am Samstag in den Park?",
+			"answer": "um Basketball zu spielen",
+			"wrong": [
+				"um einen Film zu sehen",
+				"um sich auszuruhen"
+			],
+			"explanation": "Pour jouer au basket nennt den Zweck."
+		},
+		"takeaway": "J’aimerais … für Wünsche, on pourrait … für Vorschläge, pour + Infinitiv für den Zweck.",
+		"practice": [
+			{
+				"prompt": "On va au parc ___ jouer. (um zu)",
+				"answers": [
+					"pour"
+				],
+				"feedback": "Pour + Infinitiv drückt einen Zweck aus."
+			},
+			{
+				"prompt": "___ aller au cinéma. (Wir könnten)",
+				"answers": [
+					"on pourrait"
+				],
+				"feedback": "On pourrait leitet den Vorschlag ein."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "fr",
+				"prompt": "Verabrede dich laut für Samstag. Mache einen Vorschlag und sage mit pour, wozu ihr an den Ort geht.",
+				"model": "On pourrait aller au stade pour jouer au foot. Ça te plaît ?",
+				"criteria": [
+					"Vorschlag",
+					"Zweck mit pour",
+					"Antwortmöglichkeit für Partner"
+				]
+			},
+			"2": {
+				"language": "fr",
+				"prompt": "Ihr seid euch uneinig über einen Ausflug. Formuliere einen Gegenvorschlag und beziehe dich auf ein vergangenes Erlebnis.",
+				"model": "J’aimerais visiter Nantes, parce que j’adore la ville. Notre visite à Lyon, ça m’a plu aussi.",
+				"criteria": [
+					"Gegenvorschlag",
+					"Begründung",
+					"Vergangenes Erlebnis bewertet"
+				]
+			}
+		},
+		"workshop": {
+			"kind": "dialogue",
+			"goals": [
+				{
+					"label": "Ein Wunsch",
+					"before": "___ faire du vélo.",
+					"after": "",
+					"options": [
+						"J’aimerais",
+						"Ça me plaît",
+						"Pour"
+					],
+					"answer": "J’aimerais",
+					"explanation": "J’aimerais steht hier vor einem Infinitiv."
+				},
+				{
+					"label": "Rückblick auf gestern",
+					"before": "Le film d’hier, ___.",
+					"after": "",
+					"options": [
+						"ça m’a plu",
+						"ça me plaît",
+						"on pourrait"
+					],
+					"answer": "ça m’a plu",
+					"explanation": "Ça m’a plu bezieht sich auf das vergangene Erlebnis."
+				},
+				{
+					"label": "Eine Begründung",
+					"before": "Je viens ___ j’aime le sport.",
+					"after": "",
+					"options": [
+						"parce que",
+						"pour",
+						"puis"
+					],
+					"answer": "parce que",
+					"explanation": "Auf parce que folgt der Satz mit j’aime."
+				}
+			]
+		},
+		"speaking": true
+	},
+	{
+		"id": "f6-1-nombres",
+		"stage": "f1-journee",
+		"title": "De cent à un million",
+		"skill": "Große Zahlen und Ordnungszahlen verstehen",
+		"bindings": [
+			"1.2-wortschatz",
+			"1.2-grammatik"
+		],
+		"paragraphs": [
+			"Für Mengen liest du Stellenblöcke: 2 345 → deux mille trois cent quarante-cinq. Mille bleibt unverändert. Million ist ein Nomen: un million, deux millions. Cent bekommt bei einer glatten Mehrzahl ein s: deux cents, aber deux cent un.",
+			"Mit premier/première und -ième gibst du die Reihenfolge an. La première rue ist die erste Straße, la deuxième rue die zweite. Beispiele für größere Ordnungszahlen sind le centième jour, le millième visiteur und le millionième ticket. Prüfe, ob du eine Anzahl oder eine Position brauchst."
+		],
+		"material": "Concours de lecture : le premier lecteur reçoit un livre. Le centième reçoit une BD. La bibliothèque a trois mille livres et plus d’un million de pages au total dans cette histoire.",
+		"materialLabel": "Übungstext",
+		"materialLanguage": "fr",
+		"sourceIds": [
+			"lp-f1"
+		],
+		"quiz": {
+			"optionLanguage": "fr",
+			"question": "Wer bekommt in der Geschichte eine BD?",
+			"answer": "die hundertste Person",
+			"wrong": [
+				"die erste Person",
+				"die tausendste Person"
+			],
+			"explanation": "Le centième heißt der Hundertste."
+		},
+		"takeaway": "Deux mille ist eine Anzahl. Le deux-millième bezeichnet eine Position.",
+		"practice": [
+			{
+				"prompt": "Schreibe 3 000 auf Französisch.",
+				"answers": [
+					"trois mille"
+				],
+				"feedback": "Mille bleibt ohne s."
+			},
+			{
+				"prompt": "La ___ rue. (die erste)",
+				"answers": [
+					"première"
+				],
+				"feedback": "Rue ist weiblich, deshalb première."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "fr",
+				"prompt": "Erfinde einen Wettbewerb. Nenne eine Anzahl über 100 und die ersten zwei Plätze auf Französisch.",
+				"model": "Nous avons deux cent cinquante participants. Lina est première. Malik est deuxième.",
+				"criteria": [
+					"Große Anzahl",
+					"Erste Position",
+					"Zweite Position"
+				]
+			},
+			"2": {
+				"language": "fr",
+				"prompt": "Formuliere drei Angaben für ein fiktives Stadion: seine 2 140 Plätze, den tausendsten Gast und ein Ziel von einer Million Besuchern.",
+				"model": "Le stade a deux mille cent quarante places. Voilà le millième visiteur. Notre objectif : un million de visiteurs.",
+				"criteria": [
+					"Anzahl bis zur Tausend",
+					"Ordnungszahl",
+					"Million + de"
+				]
+			}
+		},
+		"workshop": {
+			"kind": "magnitude",
+			"goals": [
+				{
+					"label": "Die Zahl 200 am Satzende",
+					"before": "Le club a ___ membres.",
+					"after": "",
+					"options": [
+						"deux cents",
+						"deux cent un",
+						"deux mille"
+					],
+					"answer": "deux cents",
+					"explanation": "Glatte 200 heißt deux cents."
+				},
+				{
+					"label": "Die Zahl 201",
+					"before": "Voici ___ billets.",
+					"after": "",
+					"options": [
+						"deux cent un",
+						"deux cents un",
+						"deux mille un"
+					],
+					"answer": "deux cent un",
+					"explanation": "Nach cent folgt un, deshalb ohne s."
+				},
+				{
+					"label": "Das millionste Ticket",
+					"before": "le ___ ticket",
+					"after": "",
+					"options": [
+						"millionième",
+						"million",
+						"millième"
+					],
+					"answer": "millionième",
+					"explanation": "Million bezeichnet die Anzahl; millionième die Position."
+				}
+			]
+		}
+	},
+	{
+		"id": "f6-1-quotidien",
+		"stage": "f1-journee",
+		"title": "Après les cours",
+		"skill": "Über Stundenplan, Freizeit und Kleidung sprechen",
+		"bindings": [
+			"1.2-wortschatz",
+			"5"
+		],
+		"paragraphs": [
+			"Im Stundenplan findest du Tage, Zeiten und Fächer: lundi à huit heures, maths; à dix heures, français. Lies erst den Tag, dann die Zeile. Nach dem Unterricht kannst du sagen Je fais du vélo, Je joue au basket oder J’écoute de la musique. Für Kleidung sind un pull, une veste und des baskets häufige Wörter.",
+			"Wenn dir ein Wort fehlt, beschreibe es. Eine médiathèque kannst du hier als un endroit où on peut lire et écouter de la musique umschreiben. Manche Wörter haben einfache Gegenteile: chaud und froid. Die Arbeitsaufträge reliez, soulignez und complétez bedeuten verbindet, unterstreicht und ergänzt. Im Satz heißt das Subjekt sujet und die gebeugte Form verbe conjugué."
+		],
+		"material": "Mardi à huit heures : maths. À dix heures : français. Après les cours, Lina joue au basket avec Jade. Il fait froid. Jade met une veste bleue et Lina porte un pull rouge.",
+		"materialLabel": "Übungstext",
+		"materialLanguage": "fr",
+		"sourceIds": [
+			"lp-f1"
+		],
+		"quiz": {
+			"optionLanguage": "fr",
+			"question": "Welches Fach hat Lina um zehn Uhr?",
+			"answer": "français",
+			"wrong": [
+				"maths",
+				"sport"
+			],
+			"explanation": "Die zweite Uhrzeit ist im Stundenplan mit français verbunden."
+		},
+		"takeaway": "Bei unbekannten Wörtern helfen Ort, Funktion, Beispiel oder Gegenteil.",
+		"practice": [
+			{
+				"prompt": "Jade met une ___ bleue.",
+				"answers": [
+					"veste"
+				],
+				"feedback": "Une veste ist eine Jacke."
+			},
+			{
+				"prompt": "Le contraire de chaud : ___.",
+				"answers": [
+					"froid"
+				],
+				"feedback": "Froid ist das Gegenteil von chaud."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "fr",
+				"prompt": "Beschreibe deinen fiktiven Dienstag. Nenne ein Fach, ein Hobby und ein Kleidungsstück.",
+				"model": "Mardi à huit heures, j’ai maths. Après les cours, je fais du vélo. Je porte une veste bleue.",
+				"criteria": [
+					"Fach mit Zeit",
+					"Persönliche Freizeitidee",
+					"Kleidungsstück erkannt"
+				]
+			},
+			"2": {
+				"language": "fr",
+				"prompt": "Eine Austauschpartnerin kennt das Wort patinoire nicht. Umschreibe es auf Französisch und schlage eine passende Aktivität vor.",
+				"model": "C’est un endroit où on fait du patin à glace. On pourrait y aller samedi.",
+				"criteria": [
+					"Ort umschrieben",
+					"Funktion genannt",
+					"Verständlicher Vorschlag"
+				]
+			}
+		},
+		"workshop": {
+			"kind": "dialogue",
+			"goals": [
+				{
+					"label": "Arbeitsanweisung: verbindet",
+					"before": "___ les mots et les images.",
+					"after": "",
+					"options": [
+						"Reliez",
+						"Soulignez",
+						"Fermez"
+					],
+					"answer": "Reliez",
+					"explanation": "Reliez fordert auf, zwei passende Dinge zu verbinden."
+				},
+				{
+					"label": "Kleidungsstück für kühles Wetter",
+					"before": "Elle met un ___.",
+					"after": "",
+					"options": [
+						"pull",
+						"bus",
+						"stylo"
+					],
+					"answer": "pull",
+					"explanation": "Ein pull ist ein Pullover."
+				},
+				{
+					"label": "Medien ausleihen und lesen",
+					"before": "On va à la ___.",
+					"after": "",
+					"options": [
+						"médiathèque",
+						"piscine",
+						"boulangerie"
+					],
+					"answer": "médiathèque",
+					"explanation": "Der Zweck gibt einen Hinweis auf den Ort."
+				}
+			]
+		},
+		"speaking": true
+	},
+	{
+		"id": "f6-1-accord",
+		"stage": "f1-grammaire",
+		"title": "Une grande place",
+		"skill": "Adjektive anpassen und richtig platzieren",
+		"bindings": [
+			"1.2-grammatik"
+		],
+		"paragraphs": [
+			"Ein Adjektiv beschreibt ein Nomen. Prüfe sein grammatisches Geschlecht und seine Zahl. Bei vielen Adjektiven kommt im Femininum ein e und im Plural ein s hinzu: un vélo vert, une veste verte, des vestes vertes. Manche Formen ändern sich stärker: beau, belle, beaux, belles.",
+			"Viele Adjektive stehen hinter dem Nomen, etwa Farben. Häufige kurze Adjektive wie petit, grand und beau stehen oft davor: une petite rue, un grand parc, une belle place. In deux grandes places rouges steht grandes vorn und rouges hinten. Beide Formen gehören zum weiblichen Plural places."
+		],
+		"material": "Sur la photo, il y a une grande place. À droite, deux petites maisons blanches bordent la rue. Au fond, un beau parc et des vélos verts attirent le regard.",
+		"materialLabel": "Übungstext",
+		"materialLanguage": "fr",
+		"sourceIds": [
+			"lp-f1"
+		],
+		"quiz": {
+			"optionLanguage": "fr",
+			"question": "Welche Wortgruppe beschreibt zwei kleine weiße Häuser?",
+			"answer": "deux petites maisons blanches",
+			"wrong": [
+				"deux petits maisons blancs",
+				"deux maisons petites blanche"
+			],
+			"explanation": "Maisons ist weiblich und steht hier im Plural. Petite steht vor dem Nomen, blanche dahinter."
+		},
+		"takeaway": "Farbe meist dahinter, petit und grand oft davor. Die Form richtet sich nach dem Nomen.",
+		"practice": [
+			{
+				"prompt": "Des vélos ___ (vert).",
+				"answers": [
+					"verts"
+				],
+				"feedback": "Vélos ist männlicher Plural."
+			},
+			{
+				"prompt": "Une ___ rue (petit).",
+				"answers": [
+					"petite"
+				],
+				"feedback": "Rue ist weiblich; petit bekommt hier ein e."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "fr",
+				"prompt": "Beschreibe einen Platz mit einem kleinen Park und zwei weißen Häusern. Verwende die Adjektive an passenden Stellen.",
+				"model": "Sur la place, il y a un petit parc et deux maisons blanches.",
+				"criteria": [
+					"petit vor parc",
+					"blanches nach maisons",
+					"Vollständiger Satz"
+				]
+			},
+			"2": {
+				"language": "fr",
+				"prompt": "Zeichne einen Fantasieplatz und beschreibe ihn für jemanden, der das Bild nicht sieht. Verwende drei Adjektive, darunter zwei im Plural.",
+				"model": "Sur ma grande place, il y a deux petites maisons bleues. Au fond, on voit un beau parc.",
+				"criteria": [
+					"Drei passende Adjektive",
+					"Zwei Pluralformen",
+					"Ortsangabe hilft beim Vorstellen"
+				]
+			}
+		},
+		"workshop": {
+			"kind": "sentence",
+			"goals": [
+				{
+					"label": "Ein großer Park",
+					"before": "un ___ parc",
+					"after": "",
+					"options": [
+						"grand",
+						"grande",
+						"grands"
+					],
+					"answer": "grand",
+					"explanation": "Parc ist männlich Singular."
+				},
+				{
+					"label": "Eine schöne Straße",
+					"before": "une ___ rue",
+					"after": "",
+					"options": [
+						"belle",
+						"beau",
+						"beaux"
+					],
+					"answer": "belle",
+					"explanation": "Belle ist die feminine Form von beau."
+				},
+				{
+					"label": "Zwei weiße Häuser",
+					"before": "deux maisons ___",
+					"after": "",
+					"options": [
+						"blanches",
+						"blancs",
+						"blanche"
+					],
+					"answer": "blanches",
+					"explanation": "Weiblicher Plural verlangt blanches."
+				}
+			]
+		}
+	},
+	{
+		"id": "f6-1-demonstratifs",
+		"stage": "f1-grammaire",
+		"title": "Ce lieu, cette rue",
+		"skill": "Auf Personen, Dinge und Orte zeigen",
+		"bindings": [
+			"1.2-grammatik"
+		],
+		"paragraphs": [
+			"Mit ce, cet, cette und ces zeigst du, von wem oder wovon du sprichst. Ce vélo ist dieses Fahrrad. Cet hôtel steht mit cet, weil hôtel männlich ist und das h hier stumm beginnt. Vor einem weiblichen Nomen bleibt es bei cette: cette adresse.",
+			"Im Plural benutzt du ces für beide Geschlechter: ces vélos, ces rues. Vergleiche ce sac, cet arbre und cette place. Ce steht beim Nomen. Tu veux ce sac ? zeigt auf eine bestimmte Tasche und ist beim Einkaufen deutlicher als Tu veux un sac ?"
+		],
+		"material": "Au marché, Nina montre un sac et une veste. « Ce sac est joli. Mais cette veste, elle est trop grande. Et ces chaussures, tu les aimes ? » Après le marché, on visite cet hôtel près de la gare.",
+		"materialLabel": "Übungstext",
+		"materialLanguage": "fr",
+		"sourceIds": [
+			"lp-f1"
+		],
+		"quiz": {
+			"optionLanguage": "fr",
+			"question": "Was passt vor hôtel in der Szene?",
+			"answer": "cet",
+			"wrong": [
+				"cette",
+				"ces"
+			],
+			"explanation": "Hôtel ist männlich Singular und beginnt mit stummem h."
+		},
+		"takeaway": "Bei männlichen Nomen: ce vor Konsonant und cet vor Vokal oder stummem h. Bei weiblichen Nomen: cette. Im Plural: ces.",
+		"practice": [
+			{
+				"prompt": "___ arbre est grand.",
+				"answers": [
+					"cet"
+				],
+				"feedback": "Arbre ist männlich und beginnt gesprochen mit einem Vokal."
+			},
+			{
+				"prompt": "Tu prends ___ chaussures ?",
+				"answers": [
+					"ces"
+				],
+				"feedback": "Chaussures steht im Plural."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "fr",
+				"prompt": "Wähle an einem Stand einen Pullover und eine Jacke aus und frage nach dem Preis. Verwende ce und cette.",
+				"model": "Ce pull coûte combien ? Et cette veste, elle coûte combien ?",
+				"criteria": [
+					"Männliche Form",
+					"Weibliche Form",
+					"Verständliche Preisfrage"
+				]
+			},
+			"2": {
+				"language": "fr",
+				"prompt": "Schreib zwei Sätze für Besuch in deiner Straße. Zeige auf ein Hotel, eine Bäckerei und mehrere Häuser.",
+				"model": "Cet hôtel est près de la gare. Cette boulangerie est devant ces maisons.",
+				"criteria": [
+					"cet vor hôtel",
+					"cette vor boulangerie",
+					"ces vor maisons"
+				]
+			}
+		},
+		"workshop": {
+			"kind": "sentence",
+			"goals": [
+				{
+					"label": "Auf eine Tasche zeigen",
+					"before": "___ sac",
+					"after": "",
+					"options": [
+						"ce",
+						"cet",
+						"cette"
+					],
+					"answer": "ce",
+					"explanation": "Sac ist männlich und beginnt mit s."
+				},
+				{
+					"label": "Auf eine Adresse zeigen",
+					"before": "___ adresse",
+					"after": "",
+					"options": [
+						"cette",
+						"cet",
+						"ces"
+					],
+					"answer": "cette",
+					"explanation": "Adresse ist weiblich."
+				},
+				{
+					"label": "Auf mehrere Häuser zeigen",
+					"before": "___ maisons",
+					"after": "",
+					"options": [
+						"ces",
+						"cette",
+						"ce"
+					],
+					"answer": "ces",
+					"explanation": "Der Plural hat eine gemeinsame Form."
+				}
+			]
+		}
+	},
+	{
+		"id": "f6-1-negation",
+		"stage": "f1-grammaire",
+		"title": "Plus, jamais, rien",
+		"skill": "Nicht mehr, nie und nichts unterscheiden",
+		"bindings": [
+			"1.2-grammatik",
+			"5"
+		],
+		"paragraphs": [
+			"Ordne zuerst die Bedeutung: ne … plus heißt nicht mehr, ne … jamais heißt nie und ne … rien heißt nichts. Die beiden Teile umrahmen im einfachen Satz das konjugierte Verb: Je ne mange plus ici. Vor Vokal wird ne zu n’.",
+			"Vergleiche Je lis un livre mit Je ne lis rien. Rien übernimmt die Rolle dessen, was gelesen wird. Bei einer zusammengesetzten Form umrahmen ne und der zweite Teil hier das Hilfsverb: Je n’ai jamais visité Nantes. In Gesprächen kann ne fehlen. In deinen schriftlichen Übungen schreibst du es."
+		],
+		"material": "Avant, cinéma tous les mardis pour Léa. Maintenant, elle ne va plus au cinéma le mardi. Elle ne joue jamais seule au tennis. Aujourd’hui, elle ne trouve rien dans son sac.",
+		"materialLabel": "Übungstext",
+		"materialLanguage": "fr",
+		"sourceIds": [
+			"lp-f1"
+		],
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Was ist heute mit der Tasche?",
+			"answer": "Léa findet nichts.",
+			"wrong": [
+				"Léa findet nie ihre Tasche.",
+				"Léa hat keine Tasche mehr."
+			],
+			"explanation": "Ne trouve rien bezieht sich auf das, was sie findet."
+		},
+		"takeaway": "Plus = nicht mehr. Jamais = nie. Rien = nichts.",
+		"practice": [
+			{
+				"prompt": "Je ne voyage ___ seul. (nie)",
+				"answers": [
+					"jamais"
+				],
+				"feedback": "Jamais gibt an, dass etwas nie passiert."
+			},
+			{
+				"prompt": "Je n’entends ___. (nichts)",
+				"answers": [
+					"rien"
+				],
+				"feedback": "Rien steht hier für das fehlende Hörbare."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "fr",
+				"prompt": "Schreibe drei Sätze über eine erfundene Person: Was macht sie nicht mehr, was nie und was hört sie nicht?",
+				"model": "Lina ne joue plus au tennis. Elle ne voyage jamais seule. Elle n’entend rien.",
+				"criteria": [
+					"plus drückt Veränderung aus",
+					"jamais drückt nie aus",
+					"rien steht für nichts"
+				]
+			},
+			"2": {
+				"language": "fr",
+				"prompt": "Dein Cousin sucht dich in einer lauten Halle. Schreibe eine Nachricht mit einer veränderten Gewohnheit, einer Ausnahmefreiheit und einem fehlenden Geräusch oder Gegenstand.",
+				"model": "Je ne vais plus à la piscine le lundi. Je ne prends jamais le bus ici. Je n’entends rien dans cette salle.",
+				"criteria": [
+					"Drei Bedeutungen unterscheidbar",
+					"ne oder n’ an passender Stelle",
+					"Verständliche Nachricht"
+				]
+			}
+		},
+		"workshop": {
+			"kind": "sentence",
+			"goals": [
+				{
+					"label": "Nicht mehr im Park spielen",
+					"before": "Je ne joue ___ au parc.",
+					"after": "",
+					"options": [
+						"plus",
+						"rien",
+						"jamais"
+					],
+					"answer": "plus",
+					"explanation": "Plus zeigt, dass sich eine Gewohnheit geändert hat."
+				},
+				{
+					"label": "Nie den Zug nehmen",
+					"before": "Je ne prends ___ le train.",
+					"after": "",
+					"options": [
+						"jamais",
+						"plus",
+						"rien"
+					],
+					"answer": "jamais",
+					"explanation": "Jamais heißt nie."
+				},
+				{
+					"label": "Keine Sache finden",
+					"before": "Je ne trouve ___.",
+					"after": "",
+					"options": [
+						"rien",
+						"jamais",
+						"plus"
+					],
+					"answer": "rien",
+					"explanation": "Rien bedeutet nichts."
+				}
+			]
+		}
+	},
+	{
+		"id": "f6-1-relatifs",
+		"stage": "f1-grammaire",
+		"title": "Le parc où je joue",
+		"skill": "Zwei Aussagen mit qui, que oder où verbinden",
+		"bindings": [
+			"1.2-grammatik"
+		],
+		"paragraphs": [
+			"Ein Relativsatz erklärt ein Nomen näher. Qui übernimmt die Rolle des Subjekts: La fille qui parle est Zoé. Die fille spricht selbst. Que ist das direkte Objekt: Le livre que Zoé lit est drôle. Zoé ist hier das Subjekt. Vor Vokal wird que in diesen Beispielen zu qu’ wie in le film qu’elle regarde.",
+			"Où verknüpft mit einem Ort: Voilà le parc où je joue. Entscheide nicht nach Person oder Sache. Auch ein Gegenstand kann Subjekt sein: Le train qui arrive. Frage stattdessen, welche Rolle das Bezugswort im zweiten Satz hat."
+		],
+		"material": "Je te présente la fille qui fait du skate. Elle me montre le casque que son frère porte. Près de chez elle, il y a un parc où les jeunes font du sport.",
+		"materialLabel": "Übungstext",
+		"materialLanguage": "fr",
+		"sourceIds": [
+			"lp-f1"
+		],
+		"quiz": {
+			"optionLanguage": "fr",
+			"question": "Wer trägt in « le casque que son frère porte » den Helm? Finde das Subjekt von porte.",
+			"answer": "son frère",
+			"wrong": [
+				"le casque",
+				"que"
+			],
+			"explanation": "Son frère trägt den Helm. Que steht für den Helm als Objekt."
+		},
+		"takeaway": "Qui handelt. Que ist direktes Objekt. Où bezeichnet hier den Ort.",
+		"practice": [
+			{
+				"prompt": "Le bus ___ arrive est plein.",
+				"answers": [
+					"qui"
+				],
+				"feedback": "Der Bus kommt an und ist damit Subjekt."
+			},
+			{
+				"prompt": "La rue ___ j’habite est calme.",
+				"answers": [
+					"où"
+				],
+				"feedback": "Der Relativsatz nennt den Ort des Wohnens."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "fr",
+				"prompt": "Verbinde drei Satzpaare. Le bus arrive. Je prends le bus. Voici le parc. Je joue dans le parc. Voici Zoé. Zoé parle.",
+				"model": "Je prends le bus qui arrive. Voici le parc où je joue. Voici Zoé qui parle.",
+				"criteria": [
+					"qui als Subjekt",
+					"où für den Ort",
+					"Bezugswort jeweils klar"
+				]
+			},
+			"2": {
+				"language": "fr",
+				"prompt": "Beschreibe einen Ort, ein Buch und eine Person in einem kurzen Beitrag. Verwende qui, que und où je genau einmal.",
+				"model": "Le café où je lis est calme. Le livre que je lis parle de Nantes. La dame qui travaille ici est sympa.",
+				"criteria": [
+					"qui mit Subjektfunktion",
+					"que mit Objektfunktion",
+					"où mit Ortsfunktion"
+				]
+			}
+		},
+		"workshop": {
+			"kind": "sentence",
+			"goals": [
+				{
+					"label": "Die Freundin spricht",
+					"before": "une amie ___ parle",
+					"after": "",
+					"options": [
+						"qui",
+						"que",
+						"où"
+					],
+					"answer": "qui",
+					"explanation": "Die Freundin ist Subjekt von parle."
+				},
+				{
+					"label": "Ich lese das Buch",
+					"before": "le livre ___ je lis",
+					"after": "",
+					"options": [
+						"que",
+						"qui",
+						"où"
+					],
+					"answer": "que",
+					"explanation": "Je ist Subjekt und que ersetzt le livre."
+				},
+				{
+					"label": "Wir spielen dort",
+					"before": "le parc ___ nous jouons",
+					"after": "",
+					"options": [
+						"où",
+						"que",
+						"qui"
+					],
+					"answer": "où",
+					"explanation": "Où verbindet den Satz mit dem Ort."
+				}
+			]
+		}
+	},
+	{
+		"id": "f6-1-verbes-ir",
+		"stage": "f1-grammaire",
+		"title": "Nous finissons, nous sortons",
+		"skill": "Die Verbmuster von finir und sortir vergleichen",
+		"bindings": [
+			"1.2-grammatik"
+		],
+		"paragraphs": [
+			"Nicht alle Verben auf -ir haben im Präsens dieselben Endungen. Bei finir lauten die Formen je finis, tu finis, il finit, nous finissons, vous finissez, ils finissent. Die Pluralformen fallen durch -iss- auf.",
+			"Bei sortir lauten die Formen je sors, tu sors, il sort, nous sortons, vous sortez, ils sortent. Hier gibt es kein -iss-. Vergleiche Nous finissons les devoirs und Nous sortons du collège. Sortir sieht im Infinitiv ähnlich aus, folgt aber einem anderen Muster. Lerne ein Verb deshalb mit einem Beispiel im Singular und im Plural."
+		],
+		"material": "À seize heures, nous finissons les cours. Léa finit son exercice. Nous sortons du collège ensemble. Deux élèves sortent plus tard parce qu’ils finissent un projet.",
+		"materialLabel": "Übungstext",
+		"materialLanguage": "fr",
+		"sourceIds": [
+			"lp-f1"
+		],
+		"quiz": {
+			"optionLanguage": "fr",
+			"question": "Wer beendet den Unterricht?",
+			"answer": "nous",
+			"wrong": [
+				"Léa seule",
+				"deux élèves"
+			],
+			"explanation": "Nous finissons les cours nennt die Gruppe."
+		},
+		"takeaway": "Finir → nous finissons. Sortir → nous sortons.",
+		"practice": [
+			{
+				"prompt": "Vous ___ le dessin. (finir)",
+				"answers": [
+					"finissez"
+				],
+				"feedback": "Bei finir steht -iss- in der Pluralform."
+			},
+			{
+				"prompt": "Je ___ de la maison. (sortir)",
+				"answers": [
+					"sors"
+				],
+				"feedback": "Je sors gehört zum Muster sortir."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "fr",
+				"prompt": "Sag, wann du mit einer Aufgabe fertig wirst und wann ihr zusammen das Haus verlasst.",
+				"model": "Je finis mon travail à quinze heures. Nous sortons de la maison à seize heures.",
+				"criteria": [
+					"finis bei je",
+					"sortons bei nous",
+					"Zwei passende Zeitangaben"
+				]
+			},
+			"2": {
+				"language": "fr",
+				"prompt": "Berichte einer französischen Mitschülerin, was zwei Gruppen nach Schulschluss tun. Verwende finir und sortir je einmal im Plural.",
+				"model": "Nous finissons le projet au collège. Les autres sortent à seize heures et jouent dehors.",
+				"criteria": [
+					"finir richtig konjugiert",
+					"sortir richtig konjugiert",
+					"Gruppen klar unterschieden"
+				]
+			}
+		},
+		"workshop": {
+			"kind": "sentence",
+			"goals": [
+				{
+					"label": "Wir werden fertig",
+					"before": "Nous ___ les devoirs.",
+					"after": "",
+					"options": [
+						"finissons",
+						"finons",
+						"finit"
+					],
+					"answer": "finissons",
+					"explanation": "Nous braucht -issons bei finir."
+				},
+				{
+					"label": "Wir gehen hinaus",
+					"before": "Nous ___ du collège.",
+					"after": "",
+					"options": [
+						"sortons",
+						"sortissons",
+						"sors"
+					],
+					"answer": "sortons",
+					"explanation": "Sortir hat kein -iss-."
+				},
+				{
+					"label": "Sie werden fertig",
+					"before": "Elles ___ le projet.",
+					"after": "",
+					"options": [
+						"finissent",
+						"finit",
+						"finis"
+					],
+					"answer": "finissent",
+					"explanation": "Elles verlangt -issent."
+				}
+			]
+		}
+	},
+	{
+		"id": "f6-1-verbes-utiles",
+		"stage": "f1-grammaire",
+		"title": "Savoir, mettre et ouvrir",
+		"skill": "Drei häufige Verbmuster im Präsens nutzen",
+		"bindings": [
+			"1.2-grammatik"
+		],
+		"paragraphs": [
+			"Mit savoir drückst du Wissen oder Können aus: je sais, tu sais, elle sait, nous savons, vous savez, elles savent. In Je sais nager folgt ein Infinitiv. Mettre heißt hier stellen, legen oder anziehen: je mets, tu mets, il met, nous mettons, vous mettez, ils mettent.",
+			"Ouvrir endet auf -ir, hat hier aber Endungen wie parler: j’ouvre, tu ouvres, elle ouvre, nous ouvrons, vous ouvrez, elles ouvrent. Beispiel im Rezept: Nous ouvrons le placard et nous mettons la farine dans un bol. Die drei Pluralformen helfen dir, die Muster auseinanderzuhalten."
+		],
+		"material": "Au club de cuisine, Jade sait faire des crêpes. Nous ouvrons le placard. Les élèves mettent la farine et les œufs dans un bol. « Vous savez où sont les assiettes ? »",
+		"materialLabel": "Übungstext",
+		"materialLanguage": "fr",
+		"sourceIds": [
+			"lp-f1"
+		],
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Was bedeutet Jade sait faire des crêpes?",
+			"answer": "Jade kann Crêpes machen.",
+			"wrong": [
+				"Jade öffnet die Pfanne.",
+				"Jade legt Crêpes in den Schrank."
+			],
+			"explanation": "Savoir + Infinitiv drückt Können aus."
+		},
+		"takeaway": "Lerne die drei Muster über nous savons, nous mettons und nous ouvrons.",
+		"practice": [
+			{
+				"prompt": "Nous ___ le lait au frigo. (mettre)",
+				"answers": [
+					"mettons"
+				],
+				"feedback": "Bei nous lautet die Form mettons."
+			},
+			{
+				"prompt": "Tu ___ la fenêtre. (ouvrir)",
+				"answers": [
+					"ouvres"
+				],
+				"feedback": "Ouvrir bekommt bei tu die Endung -es."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "fr",
+				"prompt": "Beschreibe zwei Schritte in einer Küche im Präsens und sag, was ihr könnt.",
+				"model": "Nous savons faire des crêpes. Nous ouvrons le placard et nous mettons la farine dans un bol.",
+				"criteria": [
+					"savoir passend",
+					"ouvrir passend",
+					"mettre passend"
+				]
+			},
+			"2": {
+				"language": "fr",
+				"prompt": "Erkläre in einer Nachricht, was du für einen Ausflug weißt, wer die Tür öffnet und wer die Flaschen einpackt. Verwende drei verschiedene Subjekte.",
+				"model": "Je sais où est le bus. Lina ouvre la porte. Nous mettons les bouteilles dans le sac.",
+				"criteria": [
+					"Drei Subjekte",
+					"Drei richtige Verbformen",
+					"Sinnvolle Handlung"
+				]
+			}
+		},
+		"workshop": {
+			"kind": "sentence",
+			"goals": [
+				{
+					"label": "Ich weiß es",
+					"before": "Je ___ où sont les assiettes.",
+					"after": "",
+					"options": [
+						"sais",
+						"sait",
+						"savons"
+					],
+					"answer": "sais",
+					"explanation": "Je verlangt sais."
+				},
+				{
+					"label": "Sie öffnen",
+					"before": "Elles ___ le placard.",
+					"after": "",
+					"options": [
+						"ouvrent",
+						"ouvrissent",
+						"ouvre"
+					],
+					"answer": "ouvrent",
+					"explanation": "Ouvrir hat hier die Endung -ent."
+				},
+				{
+					"label": "Du legst",
+					"before": "Tu ___ le sac ici.",
+					"after": "",
+					"options": [
+						"mets",
+						"met",
+						"mettez"
+					],
+					"answer": "mets",
+					"explanation": "Bei tu steht mets."
+				}
+			]
+		}
+	},
+	{
+		"id": "f6-1-objets-directs",
+		"stage": "f1-pronoms",
+		"title": "Je le prends",
+		"skill": "Das direkte Objekt durch le, la, l’ oder les ersetzen",
+		"bindings": [
+			"1.2-grammatik"
+		],
+		"paragraphs": [
+			"Das direkte Objekt folgt ohne à: Je prends le bus. Wenn der Bus schon bekannt ist, ersetzt du le bus durch le und setzt es vor das Verb: Je le prends. La ersetzt ein weibliches Nomen, les ein Nomen im Plural. Vor Vokal oder stummem h werden le und la zu l’ wie in J’écoute la radio → Je l’écoute. Für „mich“, „dich“, „uns“ und „euch/Sie“ gibt es me, te, nous und vous: Tu me vois ? Je te vois. Vor Vokal werden me und te zu m’ und t’.",
+			"Bei zwei Verben steht das Pronomen vor dem Infinitiv, wenn es zu diesem gehört: Je vais prendre le bus → Je vais le prendre. In Je ne le prends pas hält die Verneinung Pronomen und Verb zusammen. Prüfe, zu welcher Handlung der Gegenstand gehört."
+		],
+		"material": "Lina cherche son vélo. Elle le trouve devant la gare. Elle regarde les horaires, puis elle les montre à Jade. Jade veut prendre la ligne 2. Elle va la prendre avec Lina.",
+		"materialLabel": "Übungstext",
+		"materialLanguage": "fr",
+		"sourceIds": [
+			"lp-f1"
+		],
+		"quiz": {
+			"optionLanguage": "fr",
+			"question": "Welches Wort ersetzt les horaires?",
+			"answer": "les",
+			"wrong": [
+				"la",
+				"le"
+			],
+			"explanation": "Horaires steht im Plural. Das direkte Pronomen heißt les."
+		},
+		"takeaway": "Das direkte Objektpronomen steht vor dem Verb, zu dem es gehört.",
+		"practice": [
+			{
+				"prompt": "Je prends la carte. → Je ___ prends.",
+				"answers": [
+					"la"
+				],
+				"feedback": "Carte ist weiblich und prends beginnt mit einem Konsonanten."
+			},
+			{
+				"prompt": "Je vais ouvrir le livre. → Je vais ___ ouvrir.",
+				"answers": [
+					"l’"
+				],
+				"feedback": "Ouvrir beginnt mit einem Vokal; le wird zu l’."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "fr",
+				"prompt": "Antworte ohne Wiederholung: Tu prends le bus ? Tu regardes les photos ? Verwende auch einen Satz mit je vais.",
+				"model": "Oui, je le prends. Oui, je vais les regarder.",
+				"criteria": [
+					"le für le bus",
+					"les für les photos",
+					"les vor dem Infinitiv"
+				]
+			},
+			"2": {
+				"language": "fr",
+				"prompt": "Schreibe einen Gepäckdialog mit drei Dingen. Ersetze nach der ersten Nennung ein weibliches und ein Pluralobjekt. Baue danach eine Frage mit tu und einem Objekt der ersten Person ein.",
+				"model": "La valise ? Je vais la prendre. Les billets ? Je les ai. Tu m’entends ?",
+				"criteria": [
+					"Zwei passende Ersatzformen",
+					"Position beim Infinitiv korrekt",
+					"me oder m’ richtig verwendet"
+				]
+			}
+		},
+		"workshop": {
+			"kind": "sentence",
+			"goals": [
+				{
+					"label": "Maskulines Objekt",
+					"before": "Je prends le train. → Je ___ prends.",
+					"after": "",
+					"options": [
+						"le",
+						"la",
+						"lui"
+					],
+					"answer": "le",
+					"explanation": "Le train ist direktes Objekt im männlichen Singular."
+				},
+				{
+					"label": "Die Person, mit der du sprichst",
+					"before": "Je ___ entends. (dich)",
+					"after": "",
+					"options": [
+						"t’",
+						"tu",
+						"la"
+					],
+					"answer": "t’",
+					"explanation": "Vor entends wird te zu t’."
+				},
+				{
+					"label": "Pronomen am Infinitiv",
+					"before": "Je vais lire les messages. → Je vais ___ lire.",
+					"after": "",
+					"options": [
+						"les",
+						"leur",
+						"le"
+					],
+					"answer": "les",
+					"explanation": "Les messages gehört als Objekt zu lire."
+				}
+			]
+		}
+	},
+	{
+		"id": "f6-1-objets-indirects",
+		"stage": "f1-pronoms",
+		"title": "Je lui parle",
+		"skill": "Direkte und indirekte Objektpronomen unterscheiden",
+		"bindings": [
+			"1.2-grammatik",
+			"4"
+		],
+		"paragraphs": [
+			"Frag bei jedem Verb, wie es sein Objekt verbindet. Voir quelqu’un hat ein direktes Objekt: Je vois Amine → Je le vois. Parler à quelqu’un verbindet eine Person mit à: Je parle à Amine → Je lui parle. Lui gilt hier für eine Person, egal ob männlich oder weiblich. Für mehrere Personen nimmst du leur. Me, te, nous und vous haben auch eine indirekte Verwendung: Elle me téléphone. Nous vous parlons. In Elle m’écrit wird me vor Vokal zu m’.",
+			"Das Pronomen steht vor dem Verb, zu dem es gehört: Je vais parler à mes amis → Je vais leur parler. Verwechsle leur als Pronomen nicht mit dem Begleiter in leur vélo. Gegenprobe: Kannst du nach dem Verb à qui fragen? Dann passt bei parler, téléphoner oder donner das indirekte Pronomen für die Person."
+		],
+		"material": "Jade téléphone à Lina avant le départ. Elle lui demande l’heure du train. Ensuite, elle rencontre ses cousins. Elle les voit à la gare et elle leur donne les billets.",
+		"materialLabel": "Übungstext",
+		"materialLanguage": "fr",
+		"sourceIds": [
+			"lp-f1"
+		],
+		"quiz": {
+			"optionLanguage": "fr",
+			"question": "Wer bekommt die Tickets?",
+			"answer": "les cousins",
+			"wrong": [
+				"Lina",
+				"le train"
+			],
+			"explanation": "Leur ersetzt à ses cousins und nennt die Empfänger."
+		},
+		"takeaway": "Voir quelqu’un → le/la/les. Parler à quelqu’un → lui/leur.",
+		"practice": [
+			{
+				"prompt": "Je téléphone à Léa. → Je ___ téléphone.",
+				"answers": [
+					"lui"
+				],
+				"feedback": "Téléphoner à verbindet eine Person indirekt."
+			},
+			{
+				"prompt": "Je vais parler à mes cousins. Je vais ___ parler.",
+				"answers": [
+					"leur"
+				],
+				"feedback": "Leur steht für mehrere Personen und vor parler."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "fr",
+				"prompt": "Schreibe zwei Sätze über Lina. Zuerst siehst du sie, dann rufst du sie an. Nenne sie einmal und benutze la und lui.",
+				"model": "Je vois Lina au collège. Je la vois souvent. Après les cours, je lui téléphone.",
+				"criteria": [
+					"Bezug klar",
+					"la bei voir",
+					"lui bei téléphoner"
+				]
+			},
+			"2": {
+				"language": "fr",
+				"prompt": "Du planst einen Ausflug mit zwei Freunden. Schreib, wann du sie siehst und dass du ihnen später die Tickets geben wirst. Wiederhole leurs noms nicht.",
+				"model": "Je vois mes amis à huit heures. Je les vois devant la gare. Je vais leur donner les billets.",
+				"criteria": [
+					"Personengruppe genannt",
+					"les bei voir",
+					"leur vor donner"
+				]
+			}
+		},
+		"workshop": {
+			"kind": "sentence",
+			"goals": [
+				{
+					"label": "Jade sehen",
+					"before": "Je ___ vois.",
+					"after": "",
+					"options": [
+						"la",
+						"lui",
+						"leur"
+					],
+					"answer": "la",
+					"explanation": "Voir hat hier ein direktes Objekt."
+				},
+				{
+					"label": "Jade etwas sagen",
+					"before": "Je ___ dis bonjour.",
+					"after": "",
+					"options": [
+						"lui",
+						"la",
+						"le"
+					],
+					"answer": "lui",
+					"explanation": "Dire bonjour à Jade hat eine indirekte Empfängerin."
+				},
+				{
+					"label": "Eltern anrufen",
+					"before": "Je vais ___ téléphoner.",
+					"after": "",
+					"options": [
+						"leur",
+						"les",
+						"lui"
+					],
+					"answer": "leur",
+					"explanation": "Mehrere Empfänger und der Infinitiv téléphoner verlangen leur davor."
+				}
+			]
+		}
+	},
+	{
+		"id": "f6-1-disjoints",
+		"stage": "f1-pronoms",
+		"title": "Et toi ? Avec elle !",
+		"skill": "Betonte Personalpronomen verwenden",
+		"bindings": [
+			"1.1-sprechen",
+			"1.2-grammatik"
+		],
+		"paragraphs": [
+			"Für eine kurze Antwort oder nach avec benutzt du betonte Pronomen: moi, toi, lui, elle, nous, vous, eux, elles. Beispielsweise: Qui veut venir ? Moi ! Je joue avec toi. Hier können je und tu nicht allein an ihrer Stelle stehen.",
+			"Lui kann eine andere Aufgabe haben. In Je lui parle steht es vor dem Verb als indirektes Objekt. In Je vais avec lui steht es nach avec und meint einen Jungen oder Mann. Für mehrere Jungen oder eine gemischte Gruppe passt eux, für mehrere Mädchen oder Frauen elles. Vergleiche auch Moi, j’aime le tennis und Et toi ?"
+		],
+		"material": "— Qui va au cinéma ? — Moi ! Je vais avec Malik et Tom. Tu viens avec nous ? — Non, je vais avec Zoé. Avec elle, je regarde une comédie. Et toi, Zoé, tu veux du pop-corn ?",
+		"materialLabel": "Übungstext",
+		"materialLanguage": "fr",
+		"sourceIds": [
+			"lp-f1"
+		],
+		"quiz": {
+			"optionLanguage": "fr",
+			"question": "Was passt für Zoé nach avec?",
+			"answer": "elle",
+			"wrong": [
+				"la",
+				"lui"
+			],
+			"explanation": "Nach avec steht das betonte elle."
+		},
+		"takeaway": "Nach avec und als Kurzantwort hörst du moi, toi, lui, elle, nous, vous, eux, elles.",
+		"practice": [
+			{
+				"prompt": "Je joue avec ___, Tom. (mit dir)",
+				"answers": [
+					"toi"
+				],
+				"feedback": "Nach avec steht toi statt tu."
+			},
+			{
+				"prompt": "Les garçons jouent. Je joue avec ___.",
+				"answers": [
+					"eux"
+				],
+				"feedback": "Eux ist hier die betonte maskuline Pluralform."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "fr",
+				"prompt": "Spiel einen Zweizeiler. Frage, wer kommt. Antworte in der Ich-Form und sage, du kommst mit Zoé.",
+				"model": "Qui vient ? Moi, je viens avec Zoé. Je viens avec elle.",
+				"criteria": [
+					"Frage verständlich",
+					"moi zur Betonung",
+					"elle nach avec"
+				]
+			},
+			"2": {
+				"language": "fr",
+				"prompt": "Sprich mit zwei Freunden über Kino und Sport. Verteile je eine Antwort mit moi, toi und einer Pluralform.",
+				"model": "Moi, je vais au cinéma. Et toi ? Les filles font du sport. Tu joues avec elles ?",
+				"criteria": [
+					"Zwei kurze Sprecherwechsel",
+					"moi und toi richtig",
+					"elles oder eux mit eindeutigem Bezug"
+				]
+			}
+		},
+		"workshop": {
+			"kind": "dialogue",
+			"goals": [
+				{
+					"label": "Auf Qui vient ? antworten",
+					"before": "___ !",
+					"after": "",
+					"options": [
+						"Moi",
+						"Me",
+						"Je"
+					],
+					"answer": "Moi",
+					"explanation": "Moi kann allein stehen."
+				},
+				{
+					"label": "Mit zwei Mädchen",
+					"before": "avec ___",
+					"after": "",
+					"options": [
+						"elles",
+						"leur",
+						"eux"
+					],
+					"answer": "elles",
+					"explanation": "Elles passt zur weiblichen Gruppe."
+				},
+				{
+					"label": "Mit Paul",
+					"before": "avec ___",
+					"after": "",
+					"options": [
+						"lui",
+						"il",
+						"le"
+					],
+					"answer": "lui",
+					"explanation": "Lui ist hier die betonte Form."
+				}
+			]
+		},
+		"speaking": true
+	},
+	{
+		"id": "f6-1-avoir-passe",
+		"stage": "f1-passe",
+		"title": "Hier, j’ai joué",
+		"skill": "Das passé composé mit avoir bilden",
+		"bindings": [
+			"1.2-grammatik"
+		],
+		"paragraphs": [
+			"Wenn du eine abgeschlossene Handlung erzählst, hilft das passé composé: Hier, j’ai joué. Es besteht aus einem Hilfsverb im Präsens und einem Partizip. Bei vielen Verben ist das Hilfsverb avoir. Für jouer lernst du joué, für finir fini und für vendre vendu. Bei manchen häufigen Verben lernst du die Form einzeln: mis, pris, fait, lu, ouvert.",
+			"Vergleiche Aujourd’hui, je joue und Hier, j’ai joué. Je wird vor ai zu j’. Das Hilfsverb zeigt, wer handelt. Elle a fini und Ils ont fini haben in diesen Beispielen dasselbe Partizip. Bei avoir gleichen wir in diesen Sätzen das Partizip nicht an das Subjekt an."
+		],
+		"material": "Hier, j’ai joué au tennis. Ensuite, Lina a mis le ballon dans son sac. Nous avons fini les devoirs ensemble. Le soir, mes parents ont ouvert les fenêtres et ma sœur a lu un livre.",
+		"materialLabel": "Übungstext",
+		"materialLanguage": "fr",
+		"sourceIds": [
+			"lp-f1"
+		],
+		"quiz": {
+			"optionLanguage": "fr",
+			"question": "Welche Form steht für eine abgeschlossene Handlung?",
+			"answer": "Nous avons fini.",
+			"wrong": [
+				"Nous finissons.",
+				"Nous allons finir."
+			],
+			"explanation": "Avons im Präsens und fini ergeben das passé composé."
+		},
+		"takeaway": "Avoir im Präsens + Partizip: j’ai joué, nous avons fini, elles ont ouvert.",
+		"practice": [
+			{
+				"prompt": "Tu ___ joué. (avoir)",
+				"answers": [
+					"as"
+				],
+				"feedback": "Bei tu steht avoir als as."
+			},
+			{
+				"prompt": "Elle a ___ la porte. (ouvrir)",
+				"answers": [
+					"ouvert"
+				],
+				"feedback": "Das Partizip von ouvrir ist ouvert."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "fr",
+				"prompt": "Berichte in drei Sätzen über gestern. Verwende jouer, finir und lire im passé composé.",
+				"model": "Hier, j’ai joué au tennis. J’ai fini mes devoirs. Le soir, j’ai lu une BD.",
+				"criteria": [
+					"Drei abgeschlossene Handlungen",
+					"avoir im Präsens",
+					"Drei Partizipien"
+				]
+			},
+			"2": {
+				"language": "fr",
+				"prompt": "Schreibe eine Nachricht über den Nachmittag eurer Gruppe. Nutze nous und elles und erzähle mindestens drei Schritte in einer verständlichen Reihenfolge.",
+				"model": "Nous avons ouvert la salle. Ensuite, nous avons joué. Après, Lina et Zoé ont fini le dessin.",
+				"criteria": [
+					"Mehrere Subjekte",
+					"Passende Formen von avoir",
+					"Mindestens ein Zeit- oder Reihenfolgewort"
+				]
+			}
+		},
+		"workshop": {
+			"kind": "sequence",
+			"goals": [
+				{
+					"label": "Er hat gelesen",
+					"before": "Il a ___.",
+					"after": "",
+					"options": [
+						"lu",
+						"lire",
+						"lis"
+					],
+					"answer": "lu",
+					"explanation": "Lu ist das Partizip von lire."
+				},
+				{
+					"label": "Wir haben gespielt",
+					"before": "Nous ___ joué.",
+					"after": "",
+					"options": [
+						"avons",
+						"sommes",
+						"vont"
+					],
+					"answer": "avons",
+					"explanation": "Jouer wird hier mit avoir gebildet."
+				},
+				{
+					"label": "Sie haben fertiggemacht",
+					"before": "Elles ont ___ le travail.",
+					"after": "",
+					"options": [
+						"fini",
+						"finies",
+						"finir"
+					],
+					"answer": "fini",
+					"explanation": "Das Partizip gleicht sich hier nicht an elles an."
+				}
+			]
+		}
+	},
+	{
+		"id": "f6-1-etre-passe",
+		"stage": "f1-passe",
+		"title": "Elles sont arrivées",
+		"skill": "Das passé composé mit être bilden und angleichen",
+		"bindings": [
+			"1.2-grammatik",
+			"5"
+		],
+		"paragraphs": [
+			"Einige häufige Verben haben in diesen Bedeutungen être als Hilfsverb, etwa aller, arriver, partir und sortir im Sinn von hinausgehen. Sage Je suis allé oder Je suis allée und Elle est arrivée. Das Hilfsverb steht im Präsens, das Partizip folgt. Für sortir kann die Konstruktion mit einem direkten Objekt anders aussehen: Elle a sorti son livre.",
+			"Bei unseren Sätzen mit être passt sich das Partizip an das Subjekt an. Il est arrivé, elle est arrivée, ils sont arrivés, elles sont arrivées. In der gesprochenen Sprache hörst du die Endungen bei arrivé oft nicht. Achte beim Schreiben deshalb auf das Subjekt."
+		],
+		"material": "Samedi, Lina et Zoé sont arrivées à la gare tôt. Malik est arrivé à neuf heures. Ils sont partis ensemble. À midi, Lina est allée au musée avec Zoé. Plus tard, elles sont sorties du musée.",
+		"materialLabel": "Übungstext",
+		"materialLanguage": "fr",
+		"sourceIds": [
+			"lp-f1"
+		],
+		"quiz": {
+			"optionLanguage": "fr",
+			"question": "Welche Form passt zu Lina und Zoé?",
+			"answer": "Elles sont arrivées.",
+			"wrong": [
+				"Elles sont arrivé.",
+				"Elles ont arrivées."
+			],
+			"explanation": "Arriver steht hier mit être; elles verlangt feminin Plural."
+		},
+		"takeaway": "Bei être in diesen Beispielen: feminin + e, Plural + s, feminin Plural + es.",
+		"practice": [
+			{
+				"prompt": "Lina et Zoé sont ___. (arriver)",
+				"answers": [
+					"arrivées"
+				],
+				"feedback": "Deux filles verlangen das Partizip auf -ées."
+			},
+			{
+				"prompt": "Malik est ___ à huit heures. (partir)",
+				"answers": [
+					"parti"
+				],
+				"feedback": "Malik ist männlich Singular."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "fr",
+				"prompt": "Schreibe für Lina und Malik je einen Satz über die Ankunft und für beide zusammen einen Satz über die Abfahrt.",
+				"model": "Lina est arrivée à huit heures. Malik est arrivé à neuf heures. Ils sont partis à dix heures.",
+				"criteria": [
+					"Féminin korrekt",
+					"Masculin korrekt",
+					"Gemischter Plural korrekt"
+				]
+			},
+			"2": {
+				"language": "fr",
+				"prompt": "Eine Freundin erzählt von gestern mit ihrer Schwester. Berichte in der dritten Person: im Bahnhof ankommen, ins Museum gehen, wieder hinausgehen.",
+				"model": "Elles sont arrivées à la gare. Ensuite, elles sont allées au musée. À midi, elles sont sorties du musée.",
+				"criteria": [
+					"être in jedem Satz",
+					"Weiblicher Plural in jedem Partizip",
+					"Verständliche Reihenfolge"
+				]
+			}
+		},
+		"workshop": {
+			"kind": "sequence",
+			"goals": [
+				{
+					"label": "Ein Mädchen ist angekommen",
+					"before": "Elle est ___.",
+					"after": "",
+					"options": [
+						"arrivée",
+						"arrivés",
+						"arrivé"
+					],
+					"answer": "arrivée",
+					"explanation": "Das feminine Singular erhält ein e."
+				},
+				{
+					"label": "Zwei Jungen sind aufgebrochen",
+					"before": "Ils sont ___.",
+					"after": "",
+					"options": [
+						"partis",
+						"parti",
+						"parties"
+					],
+					"answer": "partis",
+					"explanation": "Das maskuline Plural erhält ein s."
+				},
+				{
+					"label": "Eine Gruppe Mädchen ist hinausgegangen",
+					"before": "Elles ___ sorties.",
+					"after": "",
+					"options": [
+						"sont",
+						"ont",
+						"êtes"
+					],
+					"answer": "sont",
+					"explanation": "Sortir ohne direktes Objekt in dieser Bedeutung steht mit être."
+				}
+			]
+		}
+	},
+	{
+		"id": "f6-1-weekend",
+		"stage": "f1-passe",
+		"title": "Un week-end en trois images",
+		"skill": "Ein Wochenende in der richtigen Reihenfolge erzählen",
+		"bindings": [
+			"1.1-sprechen",
+			"1.1-schreiben",
+			"1.2-grammatik",
+			"3",
+			"4"
+		],
+		"paragraphs": [
+			"Mit d’abord, puis, ensuite und enfin führst du durch eine kurze Geschichte. Lege zuerst drei Bildkarten in eine Reihenfolge. Notiere darunter Zeit, Person und Handlung. Schreibe dann Sätze: D’abord, nous sommes allés au marché. Puis, nous avons acheté des pommes.",
+			"Hilfsverben und Reihenfolge lösen unterschiedliche Fragen. Aus puis erfährst du, wann etwas relativ zur ersten Handlung kam. Durch avons acheté erkennst du Subjekt und abgeschlossene Handlung. Für eine E-Mail kannst du mit Salut beginnen und mit À bientôt abschließen."
+		],
+		"material": "Salut, Emma ! Samedi, je suis allée au marché avec ma sœur. Puis, nous avons acheté des pommes. Ensuite, nous avons préparé une tarte. La tarte ? Délicieuse ! À bientôt, Jade.",
+		"materialLabel": "Übungstext",
+		"materialLanguage": "fr",
+		"sourceIds": [
+			"lp-f1"
+		],
+		"quiz": {
+			"optionLanguage": "fr",
+			"question": "Was tat Jade unmittelbar nach dem Marktbesuch?",
+			"answer": "Sie kaufte Äpfel.",
+			"wrong": [
+				"Sie bereitete den Kuchen vor.",
+				"Sie schrieb an Emma."
+			],
+			"explanation": "Puis leitet den Kauf nach dem Marktbesuch ein."
+		},
+		"takeaway": "Ordne die Bilder, wähle das Hilfsverb zum Verb und verbinde die Schritte.",
+		"practice": [
+			{
+				"prompt": "___, nous avons acheté des pommes. (danach)",
+				"answers": [
+					"puis",
+					"ensuite"
+				],
+				"feedback": "Beide Wörter verbinden aufeinanderfolgende Handlungen."
+			},
+			{
+				"prompt": "Nous ___ préparé une tarte.",
+				"answers": [
+					"avons"
+				],
+				"feedback": "Préparer verwendet hier avoir."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "fr",
+				"prompt": "Schreibe eine kurze E-Mail über einen Montag mit drei abgeschlossenen Handlungen. Verwende d’abord und puis.",
+				"model": "Salut, Emma ! Lundi, je suis arrivée au collège. D’abord, j’ai lu une BD. Puis, j’ai joué au basket. À bientôt, Nina",
+				"criteria": [
+					"Kurze Anrede",
+					"Drei abgeschlossene Handlungen",
+					"Reihenfolge erkennbar"
+				]
+			},
+			"2": {
+				"language": "fr",
+				"prompt": "Ein Freund ist bei eurem Ausflug nicht dabei. Erzähle ihm laut oder in einer Nachricht vier Schritte und nenne am Schluss deine Meinung.",
+				"model": "Salut ! D’abord, nous sommes partis à neuf heures. Puis, nous avons pris le train. Ensuite, nous avons visité le musée. Enfin, nous sommes rentrés. Ça m’a plu !",
+				"criteria": [
+					"Vier Schritte",
+					"Avoir und être passend",
+					"Ein persönlicher Kommentar"
+				]
+			}
+		},
+		"workshop": {
+			"kind": "sequence",
+			"goals": [
+				{
+					"label": "Erster Schritt",
+					"before": "___, nous sommes allés au marché.",
+					"after": "",
+					"options": [
+						"D’abord",
+						"Ensuite",
+						"Enfin"
+					],
+					"answer": "D’abord",
+					"explanation": "D’abord markiert den Anfang."
+				},
+				{
+					"label": "Ein Handlungsschritt danach",
+					"before": "___, nous avons acheté des pommes.",
+					"after": "",
+					"options": [
+						"Puis",
+						"Avant le départ",
+						"En premier"
+					],
+					"answer": "Puis",
+					"explanation": "Puis zeigt, dass der Kauf folgt."
+				},
+				{
+					"label": "Die Nachricht beenden",
+					"before": "___, Jade",
+					"after": "",
+					"options": [
+						"À bientôt",
+						"D’abord",
+						"Bonjour"
+					],
+					"answer": "À bientôt",
+					"explanation": "À bientôt passt als Abschluss."
+				}
+			]
+		},
+		"speaking": true
+	},
+	{
+		"id": "f6-1-photo",
+		"stage": "f1-voyage",
+		"title": "Au premier plan",
+		"skill": "Ein Bild räumlich geordnet beschreiben",
+		"bindings": [
+			"1.1-sprechen",
+			"1.2-wortschatz",
+			"3",
+			"4",
+			"5"
+		],
+		"paragraphs": [
+			"Gib zuerst einen Überblick: Sur l’image, il y a une place. Nenne dann die Positionen. Au premier plan bedeutet im Vordergrund. À l’arrière-plan liegt etwas weiter hinten. À gauche und à droite beziehen sich auf die Bildseiten, nicht darauf, in welche Richtung eine Figur schaut.",
+			"Nimm Verben, die zu dem passen, was du sehen kannst: Au premier plan, une fille tient un sac. À l’arrière-plan, on voit un bus. Eine Vermutung markierst du mit peut-être. Das Englische there is/are entspricht oft il y a. Die französische Wendung bleibt vor Einzahl und Mehrzahl gleich."
+		],
+		"material": "Au premier plan, une fille tient un sac rouge. À gauche, deux vélos sont devant un café. À droite, un homme attend. À l’arrière-plan, on voit un bus devant la gare.",
+		"materialLabel": "Übungstext",
+		"materialLanguage": "fr",
+		"sourceIds": [
+			"lp-f1"
+		],
+		"quiz": {
+			"optionLanguage": "fr",
+			"question": "Was sieht man im Hintergrund?",
+			"answer": "un bus",
+			"wrong": [
+				"un sac",
+				"deux vélos"
+			],
+			"explanation": "À l’arrière-plan leitet die Beschreibung des Busses ein."
+		},
+		"takeaway": "Erst das ganze Bild, dann Vordergrund, Seiten und Hintergrund.",
+		"practice": [
+			{
+				"prompt": "___ premier plan, une fille tient un sac.",
+				"answers": [
+					"au"
+				],
+				"feedback": "Die feste Wendung lautet au premier plan."
+			},
+			{
+				"prompt": "À l’___, on voit un bus. (Hintergrund)",
+				"answers": [
+					"arrière-plan"
+				],
+				"feedback": "Der Ausdruck benennt die weiter entfernte Bildebene."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "fr",
+				"prompt": "Beschreibe die Bildskizze laut. Nenne ein Detail vorne, eines links und eines hinten.",
+				"model": "Au premier plan, je vois une fille. À gauche, il y a deux vélos. À l’arrière-plan, il y a un bus.",
+				"criteria": [
+					"Drei Positionen",
+					"Details passen zur Skizze",
+					"Ganze Sätze"
+				]
+			},
+			"2": {
+				"language": "fr",
+				"prompt": "Zeichne einen Schulhof mit drei Bildebenen. Beschreibe ihn für eine Person, die ihn nicht sieht. Markiere eine Vermutung mit peut-être.",
+				"model": "Au premier plan, il y a un ballon. Au milieu, deux élèves courent. À l’arrière-plan, on voit une grande porte. C’est peut-être l’entrée du gymnase.",
+				"criteria": [
+					"Drei Ebenen unterscheidbar",
+					"Klare Ortsangaben",
+					"Vermutung als solche markiert"
+				]
+			}
+		},
+		"workshop": {
+			"kind": "scene",
+			"goals": [
+				{
+					"label": "Links",
+					"before": "À ___, il y a deux vélos.",
+					"after": "",
+					"options": [
+						"gauche",
+						"droite",
+						"midi"
+					],
+					"answer": "gauche",
+					"explanation": "À gauche bezieht sich auf die linke Bildseite."
+				},
+				{
+					"label": "Hintere Bildebene",
+					"before": "À l’___, il y a une gare.",
+					"after": "",
+					"options": [
+						"arrière-plan",
+						"heure",
+						"école"
+					],
+					"answer": "arrière-plan",
+					"explanation": "Arrière-plan heißt Hintergrund."
+				},
+				{
+					"label": "Mehrere Dinge nennen",
+					"before": "Il ___ deux vélos.",
+					"after": "",
+					"options": [
+						"y a",
+						"a y",
+						"sont"
+					],
+					"answer": "y a",
+					"explanation": "Il y a bleibt vor Singular und Plural gleich."
+				}
+			]
+		},
+		"speaking": true
+	},
+	{
+		"id": "f6-1-ville",
+		"stage": "f1-voyage",
+		"title": "Paris, Lyon, Nantes et la Bretagne",
+		"skill": "Stadt und Land in Frankreich vergleichen",
+		"bindings": [
+			"2",
+			"5"
+		],
+		"paragraphs": [
+			"Suche auf der Karte Paris an der Seine, Lyon an Rhône und Saône und Nantes an der Loire. Paris ist die Hauptstadt Frankreichs. Lyon und Nantes sind ebenfalls große Städte. Die Bretagne liegt im Nordwesten am Atlantik und am Ärmelkanal. Rennes ist ihre Hauptstadt. Nantes gehört heute administrativ zu Pays de la Loire und ist historisch mit der Bretagne verbunden.",
+			"Stadt und Land unterscheiden sich je nach Ort. Vergleiche die beiden erfundenen Tagesabläufe im Material. Frage, womit die Kinder fahren, was sie nachmittags tun und welche Möglichkeiten es gibt. Formuliere über einen konkreten Ort, etwa Dans ce village …, damit ein Beispiel nicht für alle Dörfer steht."
+		],
+		"material": "À Nantes, Zoé va au collège en tram. Mercredi, elle visite une médiathèque. Dans un village de Bretagne, Max va au collège en car et retrouve ses amis près du port. À Paris, Jade prend le métro.",
+		"materialLabel": "Übungstext",
+		"materialLanguage": "fr",
+		"sourceIds": [
+			"lp-f1",
+			"bretagne",
+			"nantes",
+			"lyon"
+		],
+		"quiz": {
+			"optionLanguage": "fr",
+			"question": "Womit fährt Max zur Schule?",
+			"answer": "en car",
+			"wrong": [
+				"en tram",
+				"en métro"
+			],
+			"explanation": "En car bezeichnet hier den Bus über Land."
+		},
+		"takeaway": "Verschiedene Orte auf der Karte finden und konkrete Alltage miteinander vergleichen.",
+		"practice": [
+			{
+				"prompt": "Nantes est sur la ___.",
+				"answers": [
+					"Loire"
+				],
+				"feedback": "Nantes liegt an der Loire."
+			},
+			{
+				"prompt": "La capitale de la France est ___.",
+				"answers": [
+					"Paris"
+				],
+				"feedback": "Paris ist die Hauptstadt Frankreichs."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "fr",
+				"prompt": "Vergleiche Max und Zoé. Sage auf Französisch, wo sie wohnen und wie sie zur Schule kommen.",
+				"model": "Zoé habite à Nantes et prend le tram. Max habite dans un village de Bretagne et prend le car.",
+				"criteria": [
+					"Beide Orte",
+					"Beide Verkehrsmittel",
+					"Unterschied klar"
+				]
+			},
+			"2": {
+				"language": "fr",
+				"prompt": "Erfinde für einen Austausch zwei kurze Tagespläne in Lyon und in einem Ort in der Bretagne. Nenne je eine konkrete Aktivität und einen Kartenhinweis.",
+				"model": "À Lyon, je marche près du Rhône et je visite une bibliothèque. En Bretagne, je vais au marché dans un village près de l’Atlantique.",
+				"criteria": [
+					"Zwei Orte",
+					"Je eine Aktivität",
+					"Je ein stimmiger Kartenhinweis"
+				]
+			}
+		},
+		"workshop": {
+			"kind": "map",
+			"goals": [
+				{
+					"label": "Region im Nordwesten",
+					"before": "La ___ est près de l’Atlantique.",
+					"after": "",
+					"options": [
+						"Bretagne",
+						"Provence",
+						"Bourgogne"
+					],
+					"answer": "Bretagne",
+					"explanation": "Die Karte zeigt die Bretagne im Nordwesten."
+				},
+				{
+					"label": "Paris am Fluss",
+					"before": "Paris est sur la ___.",
+					"after": "",
+					"options": [
+						"Seine",
+						"Loire",
+						"Garonne"
+					],
+					"answer": "Seine",
+					"explanation": "Die Seine fließt durch Paris."
+				},
+				{
+					"label": "Lyon an zwei Flüssen",
+					"before": "Lyon est sur le ___ et la Saône.",
+					"after": "",
+					"options": [
+						"Rhône",
+						"Rhin",
+						"Doubs"
+					],
+					"answer": "Rhône",
+					"explanation": "In Lyon mündet die Saône in den Fluss Rhône."
+				}
+			]
+		}
+	},
+	{
+		"id": "f6-1-chemin",
+		"stage": "f1-voyage",
+		"title": "Excusez-moi, pour aller… ?",
+		"skill": "Einen Weg höflich erfragen und erklären",
+		"bindings": [
+			"1.1-sprechen",
+			"1.1-sprachmittlung",
+			"1.2-wortschatz",
+			"2",
+			"5"
+		],
+		"paragraphs": [
+			"Beginne mit Excusez-moi und frage Pour aller à la gare, s’il vous plaît ? Für die Antwort hilft Tout droit für geradeaus, tournez à gauche für links und tournez à droite für rechts. Eine markante Stelle wie le café macht den Weg leichter zu finden.",
+			"In der Skizze gehst du vom Start nach oben. Erst erreichst du die Kreuzung am Café. Danach biegst du links zur Bibliothek oder rechts zum Museum ab. Achte beim Weitergeben auf die Reihenfolge. Für jemanden, der nur zur Bibliothek möchte, brauchst du die Information über das Museum nicht."
+		],
+		"material": "— Excusez-moi, pour aller à la bibliothèque ? — Allez tout droit jusqu’au café, puis tournez à gauche. La bibliothèque est juste après. — Merci ! — Je vous en prie.",
+		"materialLabel": "Übungstext",
+		"materialLanguage": "fr",
+		"sourceIds": [
+			"lp-f1"
+		],
+		"quiz": {
+			"optionLanguage": "fr",
+			"question": "Wohin biegst du am Café ab?",
+			"answer": "à gauche",
+			"wrong": [
+				"à droite",
+				"tout droit"
+			],
+			"explanation": "Die Bibliothek liegt nach der Abbiegung links."
+		},
+		"takeaway": "Ziel erfragen, bis zum Orientierungspunkt gehen, dann abbiegen.",
+		"practice": [
+			{
+				"prompt": "Allez tout ___. (geradeaus)",
+				"answers": [
+					"droit"
+				],
+				"feedback": "Tout droit ist die feste Wendung."
+			},
+			{
+				"prompt": "___-moi, pour aller à la gare ?",
+				"answers": [
+					"excusez"
+				],
+				"feedback": "Excusez-moi ist eine höfliche Gesprächseröffnung."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "fr",
+				"prompt": "Spielt den Dialog zum Museum. Beginne höflich und nutze das Café als Orientierungspunkt.",
+				"model": "Excusez-moi, pour aller au musée ? Allez tout droit jusqu’au café, puis tournez à droite. Merci !",
+				"criteria": [
+					"Höfliche Frage",
+					"Café genannt",
+					"Richtige Abbiegung"
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Deine Freundin versteht die französische Wegauskunft nicht. Gib ihr auf Deutsch den Weg zur Bibliothek und nenne einen Hinweis für die Rückfrage auf Französisch.",
+				"model": "Geh geradeaus bis zum Café und bieg dort links ab. Wenn du dich verläufst: Excusez-moi, où est le café ?",
+				"criteria": [
+					"Richtung stimmt",
+					"Passender Orientierungspunkt",
+					"Verständliche Rückfrage"
+				]
+			}
+		},
+		"workshop": {
+			"kind": "route",
+			"goals": [
+				{
+					"label": "Geradeaus bis zum Café",
+					"before": "Allez tout droit ___ café.",
+					"after": "",
+					"options": [
+						"jusqu’au",
+						"chez le",
+						"devant du"
+					],
+					"answer": "jusqu’au",
+					"explanation": "Jusqu’à + le wird zu jusqu’au."
+				},
+				{
+					"label": "Zur Bibliothek nach links",
+					"before": "Tournez à ___.",
+					"after": "",
+					"options": [
+						"gauche",
+						"droite",
+						"pied"
+					],
+					"answer": "gauche",
+					"explanation": "Die Skizze zeigt links die Bibliothek."
+				},
+				{
+					"label": "Am Ende danken",
+					"before": "___ !",
+					"after": "",
+					"options": [
+						"Merci",
+						"Tout droit",
+						"À gauche"
+					],
+					"answer": "Merci",
+					"explanation": "Merci ist der passende Dank."
+				}
+			]
+		},
+		"speaking": true
+	},
+	{
+		"id": "f6-1-meteo",
+		"stage": "f1-voyage",
+		"title": "Écouter la météo",
+		"skill": "Wetter in einer Hörmeldung und einer Rückfrage verstehen",
+		"bindings": [
+			"1.1-hoeren",
+			"4",
+			"5"
+		],
+		"paragraphs": [
+			"Höre beim ersten Durchgang auf das Thema: Sprechen die Personen über Wetter, Verkehr oder Essen? Höre beim zweiten Durchgang gezielt auf Orte, Zeiten und Wetterwörter. À midi kann einen neuen Teil ankündigen. Schreibe Stichwörter, damit du nicht jedes Wort im Kopf behalten musst.",
+			"Il pleut heißt es regnet; il fait beau heißt es ist schön. Il y a du vent bezeichnet Wind. Vergleiche Le matin à Nantes, il pleut und À midi, il fait beau. Diese zwei Meldungen können beide stimmen, weil die Zeit verschieden ist. Prüfe deshalb immer Ort und Zeitpunkt zusammen."
+		],
+		"material": "Voici la météo de samedi. À Nantes, il pleut le matin. À midi, il fait beau. À Brest, il y a du vent toute la journée. À Lyon, il fait froid le matin, mais il fait beau l’après-midi.",
+		"materialLabel": "Übungstext",
+		"materialLanguage": "fr",
+		"sourceIds": [
+			"lp-f1"
+		],
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Wie ist das Wetter Samstagmittag in Nantes?",
+			"answer": "Schön.",
+			"wrong": [
+				"Regnerisch.",
+				"Windig."
+			],
+			"explanation": "À midi, il fait beau bezieht sich in der Meldung noch auf Nantes."
+		},
+		"takeaway": "Erster Durchgang: Thema. Zweiter Durchgang: Ort, Zeit und Wetter.",
+		"practice": [
+			{
+				"prompt": "À Brest, il y a du ___.",
+				"answers": [
+					"vent"
+				],
+				"feedback": "Il y a du vent bedeutet es ist windig."
+			},
+			{
+				"prompt": "À Nantes, il ___ le matin.",
+				"answers": [
+					"pleut"
+				],
+				"feedback": "Il pleut bedeutet es regnet."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "fr",
+				"prompt": "Gib zwei Wetterinformationen aus der Meldung mit Ort und Uhrzeit weiter. Notiere sie auf Französisch.",
+				"model": "À Nantes, il pleut le matin. À Lyon, il fait beau l’après-midi.",
+				"criteria": [
+					"Zwei Orte",
+					"Je eine passende Zeit",
+					"Wetter korrekt"
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Du planst in Nantes eine Radtour mit Gästen. Empfiehl einen Zeitpunkt und erkläre auf Deutsch kurz, was du gehört hast. Formuliere eine französische Rückfrage.",
+				"model": "Wir sollten mittags starten. Morgens regnet es in Nantes, mittags wird es schön. À midi, il fait beau à Nantes ?",
+				"criteria": [
+					"Sinnvolle Empfehlung",
+					"Meldung korrekt weitergegeben",
+					"Passende Rückfrage"
+				]
+			}
+		},
+		"workshop": {
+			"kind": "sequence",
+			"goals": [
+				{
+					"label": "Das allgemeine Thema",
+					"before": "Voici la ___ de samedi.",
+					"after": "",
+					"options": [
+						"météo",
+						"recette",
+						"gare"
+					],
+					"answer": "météo",
+					"explanation": "Météo ist die Wettervorhersage."
+				},
+				{
+					"label": "Der Zeitpunkt mittags",
+					"before": "À ___, il fait beau.",
+					"after": "",
+					"options": [
+						"midi",
+						"minuit",
+						"lundi"
+					],
+					"answer": "midi",
+					"explanation": "Midi bezeichnet zwölf Uhr mittags."
+				},
+				{
+					"label": "Kälte beschreiben",
+					"before": "Il fait ___.",
+					"after": "",
+					"options": [
+						"froid",
+						"pluie",
+						"vents"
+					],
+					"answer": "froid",
+					"explanation": "Für Kälte heißt es il fait froid."
+				}
+			]
+		},
+		"listening": true
+	},
+	{
+		"id": "f6-1-formulaire",
+		"stage": "f1-voyager",
+		"title": "L’inscription à un échange",
+		"skill": "Ein Formular mit fiktiven Angaben ausfüllen",
+		"bindings": [
+			"1.1-schreiben",
+			"1.2-wortschatz",
+			"3",
+			"5"
+		],
+		"paragraphs": [
+			"Achte zuerst auf den Feldnamen: nom ist der Nachname, prénom der Vorname. Date de naissance fragt nach dem Geburtstag, adresse nach Straße und Ort. Code postal und ville gehören zusammen. Für eine Austausch-Anmeldung kann es ein Feld für Interessen oder eine Kontaktmöglichkeit geben.",
+			"Lies die Vorlage wie eine Checkliste. In Prénom : Jade und Nom : Legrand stehen Vor- und Nachname getrennt. Schreibe lesbar, kontrolliere Ziffern und halte die verlangte Reihenfolge ein. Übe hier mit erfundenen Daten."
+		],
+		"material": "Fiche d’échange : Prénom : Jade. Nom : Legrand. Date de naissance : 8 mai. Adresse : 7, rue des Écoles. Ville : Nantes. Loisirs : le vélo et la musique.",
+		"materialLabel": "Übungstext",
+		"materialLanguage": "fr",
+		"sourceIds": [
+			"lp-f1"
+		],
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Wo steht der Nachname?",
+			"answer": "nom",
+			"wrong": [
+				"prénom",
+				"loisirs"
+			],
+			"explanation": "Nom benennt in diesem Formular den Familiennamen."
+		},
+		"takeaway": "Lies die Feldnamen, fülle sie einzeln aus und kontrolliere Zahlen und Akzente.",
+		"practice": [
+			{
+				"prompt": "Prénom de Jade Legrand : ___",
+				"answers": [
+					"Jade"
+				],
+				"feedback": "Prénom fragt nach dem Vornamen."
+			},
+			{
+				"prompt": "Ville de Jade : ___",
+				"answers": [
+					"Nantes"
+				],
+				"feedback": "Ville ist der Wohnort."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "fr",
+				"prompt": "Fülle Vorname, Nachname, Geburtstag und Ort für eine erfundene Austauschperson aus.",
+				"model": "Prénom : Sami. Nom : Petit. Date de naissance : 12 avril. Ville : Lyon.",
+				"criteria": [
+					"Felder unterscheidbar",
+					"Geburtsdatum verständlich",
+					"Fiktiver Ort zugeordnet"
+				]
+			},
+			"2": {
+				"language": "fr",
+				"prompt": "Eine Austauschpartnerin sucht jemanden mit denselben Hobbys. Ergänze ein Kurzprofil mit fiktiver Adresse und zwei Hobbys. Schreibe einen Satz, was ihr zusammen tun könntet.",
+				"model": "Adresse : 3, rue des Lilas, Rennes. Loisirs : le vélo et la lecture. On pourrait faire du vélo ensemble.",
+				"criteria": [
+					"Fiktive Adresse",
+					"Zwei Interessen",
+					"Passender gemeinsamer Vorschlag"
+				]
+			}
+		},
+		"workshop": {
+			"kind": "sequence",
+			"goals": [
+				{
+					"label": "Feld für Tag und Monat",
+					"before": "___ : 8 mai.",
+					"after": "",
+					"options": [
+						"Date de naissance",
+						"Prénom",
+						"Ville"
+					],
+					"answer": "Date de naissance",
+					"explanation": "Date de naissance bezeichnet das Geburtsdatum."
+				},
+				{
+					"label": "Feld für die Straße",
+					"before": "___ : 7, rue des Écoles.",
+					"after": "",
+					"options": [
+						"Adresse",
+						"Loisirs",
+						"Nom"
+					],
+					"answer": "Adresse",
+					"explanation": "Adresse enthält hier Straße und Hausnummer."
+				},
+				{
+					"label": "Feld für Interessen",
+					"before": "___ : le vélo.",
+					"after": "",
+					"options": [
+						"Loisirs",
+						"Nom",
+						"Adresse"
+					],
+					"answer": "Loisirs",
+					"explanation": "Loisirs sind Freizeitbeschäftigungen."
+				}
+			]
+		}
+	},
+	{
+		"id": "f6-1-trajet",
+		"stage": "f1-voyager",
+		"title": "Un message avant le départ",
+		"skill": "Verkehrshinweise lesen, hören und gezielt weitergeben",
+		"bindings": [
+			"1.1-hoeren",
+			"1.1-lesen",
+			"1.1-sprachmittlung",
+			"4",
+			"5"
+		],
+		"paragraphs": [
+			"Lies oder höre zuerst, ob es um Abfahrt, Ankunft oder eine Änderung geht. Départ ist die Abfahrt, arrivée die Ankunft, voie das Gleis. En retard bedeutet verspätet. Bei einer Änderung entscheidet die neue Uhrzeit oder das neue Gleis, auch wenn beide Versionen genannt werden.",
+			"Wenn du für jemanden vermittelst, übernimm die Angaben, die diese Person braucht. Ein Beispiel: Le train pour Lyon part à neuf heures, voie quatre wird zu „Der Zug nach Lyon fährt um neun Uhr von Gleis vier ab.“ Bei einem unbekannten Wort helfen der Zusammenhang und ein einfaches Ersatzwort, wenn die Information klar bleibt."
+		],
+		"material": "Annonce : le train pour Lyon part à neuf heures, voie quatre. Le train pour Nantes part à onze heures au lieu de dix heures trente. Nouveau départ du train pour Nantes : onze heures, voie six.",
+		"materialLabel": "Übungstext",
+		"materialLanguage": "fr",
+		"sourceIds": [
+			"lp-f1"
+		],
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Wann fährt der Zug nach Nantes jetzt?",
+			"answer": "um 11 Uhr",
+			"wrong": [
+				"um 10:30 Uhr",
+				"um 9 Uhr"
+			],
+			"explanation": "Au lieu de markiert 10:30 Uhr als ersetzten Zeitpunkt."
+		},
+		"takeaway": "Ziel, aktuelle Uhrzeit und aktuelles Gleis heraushören, dann passend weitergeben.",
+		"practice": [
+			{
+				"prompt": "Le train pour Lyon part voie ___.",
+				"answers": [
+					"quatre",
+					"4"
+				],
+				"feedback": "Gleis vier ist dem Zug nach Lyon zugeordnet."
+			},
+			{
+				"prompt": "Le train pour Nantes part voie ___.",
+				"answers": [
+					"six",
+					"6"
+				],
+				"feedback": "Die neue Ansage nennt Gleis sechs."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "fr",
+				"prompt": "Schreibe für einen deutschsprachigen Gast nur die neuen Abfahrtsdaten für Nantes.",
+				"model": "Der Zug nach Nantes fährt jetzt um elf Uhr von Gleis sechs ab.",
+				"criteria": [
+					"Ziel genannt",
+					"Neue Uhrzeit",
+					"Richtiges Gleis"
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Spiele eine Bahnhofsauskunft. Ein Gast hat nur die frühere Uhrzeit im Kopf. Frage auf Französisch nach und gib die neue Auskunft für Nantes anschließend auf Deutsch weiter.",
+				"model": "Excusez-moi, le train pour Nantes part à quelle heure ? Er fährt jetzt um elf Uhr von Gleis sechs ab.",
+				"criteria": [
+					"Nachfrage höflich",
+					"Änderung erkennbar",
+					"Richtige Abfahrt und Gleis"
+				]
+			}
+		},
+		"workshop": {
+			"kind": "route",
+			"goals": [
+				{
+					"label": "Abfahrt und Ankunft unterscheiden",
+					"before": "L’heure du ___ du train. (Abfahrt)",
+					"after": "",
+					"options": [
+						"départ",
+						"arrivée",
+						"billet"
+					],
+					"answer": "départ",
+					"explanation": "Départ ist die Abfahrt."
+				},
+				{
+					"label": "Neue Angabe einführen",
+					"before": "___ départ : onze heures.",
+					"after": "",
+					"options": [
+						"Nouveau",
+						"Ancien",
+						"Dernier"
+					],
+					"answer": "Nouveau",
+					"explanation": "Nouveau leitet die neue Abfahrtszeit ein."
+				},
+				{
+					"label": "Verbindung identifizieren",
+					"before": "Le train de neuf heures va à ___.",
+					"after": "",
+					"options": [
+						"Lyon",
+						"Nantes",
+						"Rennes"
+					],
+					"answer": "Lyon",
+					"explanation": "Die Ansage ordnet neun Uhr Lyon zu."
+				}
+			]
+		},
+		"listening": true
+	},
+	{
+		"id": "f6-1-restaurant",
+		"stage": "f1-voyager",
+		"title": "À table !",
+		"skill": "Eine Karte erklären und ein Rezept ordnen",
+		"bindings": [
+			"1.1-sprechen",
+			"1.1-sprachmittlung",
+			"1.2-wortschatz",
+			"2",
+			"3",
+			"5"
+		],
+		"paragraphs": [
+			"Auf einer Karte sind entrée, plat und dessert verschiedene Gänge. Eine crêpe kann süß oder herzhaft belegt werden. Wenn jemand nach einer Zutat fragt, suche zuerst die Zutatenliste. Dans cette crêpe, il y a des œufs ist hilfreicher als eine vollständige Übersetzung der Karte.",
+			"Im Rezept helfen Verben und Reihenfolgewörter. D’abord, mettez la farine dans un bol. Ensuite, ajoutez les œufs et le lait. Enfin, faites cuire une petite portion de pâte. Für Mengen helfen deux œufs und un peu de lait, also zwei Eier und etwas Milch. Die Anweisungen mit -ez richten sich hier höflich an eine Person oder an mehrere Personen."
+		],
+		"material": "Menu du jour : soupe de légumes, crêpe au fromage, salade de fruits. Recette de la pâte : farine, deux œufs, un peu de lait. D’abord, mettez la farine dans un bol. Ensuite, ajoutez les œufs et le lait. Enfin, faites cuire la pâte par petites portions.",
+		"materialLabel": "Übungstext",
+		"materialLanguage": "fr",
+		"sourceIds": [
+			"lp-f1"
+		],
+		"quiz": {
+			"optionLanguage": "fr",
+			"question": "Welches Gericht gibt es als Dessert?",
+			"answer": "salade de fruits",
+			"wrong": [
+				"soupe de légumes",
+				"crêpe au fromage"
+			],
+			"explanation": "Der Obstsalat steht am Ende der Menüfolge."
+		},
+		"takeaway": "Karte: Gang und Zutaten finden. Rezept: Handlung und Reihenfolge prüfen.",
+		"practice": [
+			{
+				"prompt": "Mettez la farine dans un ___.",
+				"answers": [
+					"bol"
+				],
+				"feedback": "Bol bedeutet Schüssel."
+			},
+			{
+				"prompt": "___, ajoutez les œufs. (danach)",
+				"answers": [
+					"ensuite",
+					"puis"
+				],
+				"feedback": "Das Wort verbindet die beiden Arbeitsschritte."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "de",
+				"prompt": "Erkläre auf Deutsch, ob der Teig im Beispiel Milch enthält, und nenne zwei Zutaten.",
+				"model": "Ja, der Teig enthält Milch. Außerdem stehen Mehl und Eier auf der Liste.",
+				"criteria": [
+					"Konkrete Frage beantwortet",
+					"Richtige Zutaten",
+					"Kurze verständliche Erklärung"
+				]
+			},
+			"2": {
+				"language": "fr",
+				"prompt": "Spiele im Restaurant. Bestelle höflich das Gericht und das Dessert aus der Karte. Erkläre einer zweiten Person, was sie bestellt.",
+				"model": "Bonjour, je voudrais une crêpe au fromage et une salade de fruits, s’il vous plaît. Das sind eine Käse-Crêpe und ein Obstsalat.",
+				"criteria": [
+					"Höfliche Bestellung",
+					"Zwei Speisen passend",
+					"Sinngemäße Auskunft"
+				]
+			}
+		},
+		"workshop": {
+			"kind": "recipe",
+			"goals": [
+				{
+					"label": "Erster Schritt",
+					"before": "___, mettez la farine dans un bol.",
+					"after": "",
+					"options": [
+						"D’abord",
+						"Enfin",
+						"À demain"
+					],
+					"answer": "D’abord",
+					"explanation": "D’abord beginnt die Rezeptfolge."
+				},
+				{
+					"label": "Höflich auffordern",
+					"before": "___ les œufs et le lait.",
+					"after": "",
+					"options": [
+						"Ajoutez",
+						"Ajoutons",
+						"Ajoutent"
+					],
+					"answer": "Ajoutez",
+					"explanation": "Ajoutez ist der Imperativ zu vous."
+				},
+				{
+					"label": "Letzter Schritt",
+					"before": "Enfin, faites ___ la pâte.",
+					"after": "",
+					"options": [
+						"cuire",
+						"lire",
+						"sortir"
+					],
+					"answer": "cuire",
+					"explanation": "Faire cuire heißt hier garen."
+				}
+			]
+		},
+		"speaking": true
+	},
+	{
+		"id": "f6-1-calendrier",
+		"stage": "f1-culture",
+		"title": "La rentrée, Pâques et la galette",
+		"skill": "Feste und Schultage vergleichen, ohne zu verallgemeinern",
+		"bindings": [
+			"2",
+			"5"
+		],
+		"paragraphs": [
+			"La rentrée ist hier der Schulbeginn nach den Sommerferien. Pâques heißt Ostern. Bei manchen Familien werden an Ostern Schokoladeneier gesucht. Die galette des rois mit einer fève gehört vor allem zur Zeit um das Dreikönigsfest im Januar. Wenn du eine Tradition erklärst, nenne Zeitpunkt, Handlung und Gegenstand.",
+			"Vergleiche zwei konkrete Tagespläne statt ganzer Länder. Der Mittwoch ist je nach Schule und Stundenplan verschieden. Im Material haben Jade und Ben unterschiedlich lange Schultage; beide machen am Nachmittag etwas mit anderen. Gemeinsamkeiten sind für einen Vergleich genauso wichtig wie Unterschiede."
+		],
+		"material": "En janvier, Jade partage une galette. Sa sœur trouve la fève. À Pâques, Ben cherche des œufs en chocolat. Dans l’emploi du temps de Jade, les cours du mercredi finissent à midi. Ben a cours jusqu’à quinze heures et joue après.",
+		"materialLabel": "Übungstext",
+		"materialLanguage": "fr",
+		"sourceIds": [
+			"lp-f1"
+		],
+		"quiz": {
+			"optionLanguage": "fr",
+			"question": "Welcher Anlass gehört zur Fève?",
+			"answer": "la galette des rois",
+			"wrong": [
+				"la rentrée",
+				"Pâques"
+			],
+			"explanation": "Die fève ist die kleine Figur in der galette."
+		},
+		"takeaway": "Nenne den konkreten Anlass und sage, welche Personen oder Schulen du vergleichst.",
+		"practice": [
+			{
+				"prompt": "Schulbeginn nach den Sommerferien: la ___.",
+				"answers": [
+					"rentrée"
+				],
+				"feedback": "La rentrée désigne ici le retour à l’école."
+			},
+			{
+				"prompt": "À ___, Ben cherche des œufs.",
+				"answers": [
+					"Pâques"
+				],
+				"feedback": "Pâques ist Ostern."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "fr",
+				"prompt": "Vergleiche die Mittwoche von Jade und Ben auf Französisch. Nenne auch eine Gemeinsamkeit.",
+				"model": "Jade finit à midi. Ben finit à quinze heures. Tous les deux ont cours mercredi.",
+				"criteria": [
+					"Unterschiede korrekt",
+					"Eine Gemeinsamkeit",
+					"Vergleich bezieht sich auf die Personen"
+				]
+			},
+			"2": {
+				"language": "fr",
+				"prompt": "Erkläre Gästen kurz eine der Traditionen aus dem Material und vergleiche sie mit einer Tradition, die du tatsächlich kennst. Nutze On peut oder Dans ma famille.",
+				"model": "En janvier, certaines familles partagent une galette. Dans ma famille, on ne mange pas de galette. À Pâques, on cherche des œufs en chocolat.",
+				"criteria": [
+					"Zeitpunkt stimmt",
+					"Vorsichtige Formulierung",
+					"Konkreter Vergleich"
+				]
+			}
+		},
+		"workshop": {
+			"kind": "poster",
+			"goals": [
+				{
+					"label": "Galette im Januar",
+					"before": "En ___, Jade partage une galette.",
+					"after": "",
+					"options": [
+						"janvier",
+						"août",
+						"juillet"
+					],
+					"answer": "janvier",
+					"explanation": "Die galette des rois gehört zur Zeit um den 6. Januar."
+				},
+				{
+					"label": "Zeitpunkt von Jades Schulschluss im Text",
+					"before": "Mercredi, elle finit à ___.",
+					"after": "",
+					"options": [
+						"midi",
+						"quinze heures",
+						"minuit"
+					],
+					"answer": "midi",
+					"explanation": "Jades Beispiel endet um zwölf."
+				},
+				{
+					"label": "Gemeinsamkeit ausdrücken",
+					"before": "Tous les ___ ont cours mercredi.",
+					"after": "",
+					"options": [
+						"deux",
+						"jamais",
+						"rien"
+					],
+					"answer": "deux",
+					"explanation": "Tous les deux heißt beide."
+				}
+			]
+		}
+	},
+	{
+		"id": "f6-1-affiche",
+		"stage": "f1-culture",
+		"title": "Une affiche au collège",
+		"skill": "Auf einem Plakat Thema und Details finden",
+		"bindings": [
+			"1.1-lesen",
+			"1.1-sprachmittlung",
+			"1.2-wortschatz",
+			"3",
+			"4",
+			"5"
+		],
+		"paragraphs": [
+			"Lies zuerst Titel, Absätze und die auffälligen Symbole. Bei einer Veranstaltung beantworten sie meist „Was? Wann? Wo?“. Lies danach gezielt nach Regeln und Bedingungen. Gratuit heißt kostenlos; inscription obligatoire bedeutet, dass eine Anmeldung Pflicht ist.",
+			"Nutze Englisch oder Zeichnungen als erste Spur. Festival ist in beiden Sprachen ähnlich. Ein Musiksymbol kann helfen, ersetzt aber die Zeitangabe nicht. Wenn du dich auf aktuelle Angebote vorbereitest, prüfe Datum und Veranstalter direkt bei der Quelle. Das Übungsplakat hier ist erfunden."
+		],
+		"material": "FESTIVAL DU COLLÈGE · Samedi 18 mai · 14 h, cour du collège. Atelier de BD à 15 h. Concert à 16 h. Entrée gratuite. Inscription obligatoire pour l’atelier. Les vélos restent à l’entrée.",
+		"materialLabel": "Übungstext",
+		"materialLanguage": "fr",
+		"sourceIds": [
+			"lp-f1"
+		],
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Was ist für den Comic-Workshop verpflichtend?",
+			"answer": "Anmeldung",
+			"wrong": [
+				"Eintritt bezahlen",
+				"Fahrrad mitbringen"
+			],
+			"explanation": "Inscription obligatoire steht ausdrücklich beim atelier."
+		},
+		"takeaway": "Titel für das Thema, Absätze für die Details und Pflichtwörter für die Bedingungen.",
+		"practice": [
+			{
+				"prompt": "À ___ heures, il y a un concert.",
+				"answers": [
+					"seize",
+					"16"
+				],
+				"feedback": "Das Konzert beginnt um 16 Uhr."
+			},
+			{
+				"prompt": "L’entrée est ___. (kostenlos)",
+				"answers": [
+					"gratuite"
+				],
+				"feedback": "Entrée ist weiblich, deshalb gratuite."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "fr",
+				"prompt": "Schreibe einem Freund eine französische Kurznachricht mit Ort, Zeit und einer Bedingung für den Workshop.",
+				"model": "Salut ! Atelier de BD dans la cour du collège à quinze heures. L’inscription est obligatoire.",
+				"criteria": [
+					"Ort",
+					"Zeit",
+					"Anmeldepflicht"
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Ein Gast kommt erst um 15:30 Uhr. Erkläre auf Deutsch, welches Angebot er noch sicher sehen kann. Nenne außerdem, welche Angaben du bei einer echten Veranstaltung prüfen würdest.",
+				"model": "Das Konzert beginnt um 16 Uhr. Der Comic-Workshop startet schon um 15 Uhr. Auf dem aktuellen Plakat würde ich das Datum und den Ort prüfen.",
+				"criteria": [
+					"Konzert richtig gewählt",
+					"Zeitvergleich",
+					"Zwei Angaben zur Prüfung"
+				]
+			}
+		},
+		"workshop": {
+			"kind": "poster",
+			"goals": [
+				{
+					"label": "Welcher Ort?",
+					"before": "Le festival est dans la ___ du collège.",
+					"after": "",
+					"options": [
+						"cour",
+						"cuisine",
+						"classe"
+					],
+					"answer": "cour",
+					"explanation": "Cour désigne ici la cour de récréation."
+				},
+				{
+					"label": "Angebot um 15 Uhr",
+					"before": "Atelier de ___.",
+					"after": "",
+					"options": [
+						"BD",
+						"météo",
+						"cuisine"
+					],
+					"answer": "BD",
+					"explanation": "BD ist die Kurzform von bande dessinée."
+				},
+				{
+					"label": "Anmeldung nötig",
+					"before": "Inscription ___.",
+					"after": "",
+					"options": [
+						"obligatoire",
+						"gratuite",
+						"ancienne"
+					],
+					"answer": "obligatoire",
+					"explanation": "Obligatoire bedeutet verpflichtend."
+				}
+			]
+		}
+	},
+	{
+		"id": "f6-1-bd",
+		"stage": "f1-culture",
+		"title": "Une BD en trois cases",
+		"skill": "Einen kurzen Text als Comic planen und szenisch spielen",
+		"bindings": [
+			"1.1-lesen",
+			"1.1-sprechen",
+			"1.2-aussprache",
+			"3",
+			"5"
+		],
+		"paragraphs": [
+			"Teile eine Geschichte in Einstellungen auf. In Case 1 sieht man das Problem. Case 2 zeigt die Suche. Case 3 löst es. Eine Sprechblase enthält das, was die Figur sagt. Eine kleine Bildunterschrift kann Ort, Zeit oder einen Übergang nennen, etwa Plus tard… .",
+			"Für eine einfache Reaktion kannst du schreiben Ça me plaît, C’est drôle oder Je préfère la dernière case parce que … . Lies die Sprechblasen mit verteilten Rollen. Lautstärke und Pausen machen hörbar, wer überrascht ist. Zeichne die Bilder auf Papier oder halte die Szene mit einem Partner als Standbild."
+		],
+		"material": "Case 1 : Jade cherche son ticket. « Où est mon billet ? » Case 2 : Malik regarde dans le sac. « Il n’est pas ici. » Case 3 : Jade montre sa poche. « Ah, je l’ai trouvé ! »",
+		"materialLabel": "Übungstext",
+		"materialLanguage": "fr",
+		"sourceIds": [
+			"lp-f1"
+		],
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Wo ist die Fahrkarte am Ende?",
+			"answer": "in Jades Tasche",
+			"wrong": [
+				"in Maliks Rucksack",
+				"am Schalter"
+			],
+			"explanation": "Sa poche heißt ihre Kleidertasche; Jade zeigt sie in Case 3."
+		},
+		"takeaway": "Eine Handlung pro Bild. Kurze Sprechblasen. Ein klarer Schluss.",
+		"practice": [
+			{
+				"prompt": "Der Schluss: Je l’ai ___ !",
+				"answers": [
+					"trouvé"
+				],
+				"feedback": "Trouvé ist das Partizip von trouver."
+			},
+			{
+				"prompt": "Malik regarde dans le ___.",
+				"answers": [
+					"sac"
+				],
+				"feedback": "Sac heißt hier Tasche oder Rucksack."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "fr",
+				"prompt": "Zeichne drei Kästchen oder beschreibe sie. Schreibe je eine kurze französische Sprechblase.",
+				"model": "Case 1 : Où est mon sac ? Case 2 : Regarde sous la table ! Case 3 : Merci, je l’ai trouvé !",
+				"criteria": [
+					"Problem",
+					"Suchschritt",
+					"Lösung"
+				]
+			},
+			"2": {
+				"language": "fr",
+				"prompt": "Ändere das Ende. Lies die neue Szene mit einem Partner und schreibe einen Satz dazu, welche Version dir besser gefällt und warum.",
+				"model": "Jade : Ce billet est à toi ! Malik : Ah, merci ! Le mien est dans ma veste. Je préfère cette fin parce qu’elle est drôle.",
+				"criteria": [
+					"Zwei Rollen",
+					"Neues verständliches Ende",
+					"Meinung begründet"
+				]
+			}
+		},
+		"workshop": {
+			"kind": "storyboard",
+			"goals": [
+				{
+					"label": "Problem im ersten Bild",
+					"before": "Jade cherche son ___.",
+					"after": "",
+					"options": [
+						"ticket",
+						"dessert",
+						"manteau"
+					],
+					"answer": "ticket",
+					"explanation": "Die erste Szene handelt vom Ticket."
+				},
+				{
+					"label": "Suche im zweiten Bild",
+					"before": "Malik ___ dans le sac.",
+					"after": "",
+					"options": [
+						"regarde",
+						"achète",
+						"mange"
+					],
+					"answer": "regarde",
+					"explanation": "Regarder beschreibt, wie Malik nachsieht."
+				},
+				{
+					"label": "Schluss im dritten Bild",
+					"before": "Jade montre sa ___.",
+					"after": "",
+					"options": [
+						"poche",
+						"classe",
+						"gare"
+					],
+					"answer": "poche",
+					"explanation": "Poche ist die Kleidertasche."
+				}
+			]
+		},
+		"speaking": true
+	},
+	{
+		"id": "f6-1-sons",
+		"stage": "f1-outils",
+		"title": "Des sons aux accents",
+		"skill": "Lautschrift, Hörbeispiel und Schreibung abgleichen",
+		"bindings": [
+			"1.1-hoeren",
+			"1.1-schreiben",
+			"1.2-aussprache",
+			"4",
+			"5"
+		],
+		"paragraphs": [
+			"Vergleiche rue /ʁy/ und roue /ʁu/. Für /y/ sind die Lippen rund wie bei /u/, die Zunge bleibt weiter vorne wie bei /i/. In bon /bɔ̃/ und vin /vɛ̃/ hörst du Nasalvokale. Die Buchstaben n oder m sprechen wir in diesen Beispielen nicht als eigenen Laut am Ende.",
+			"Höre die Übung, sprich nach und vergleiche mit der Lautschrift. Beim Schreiben helfen Akzente: é in été gibt einen Hinweis auf den e-Laut. In où zeigt der Accent grave hier eine andere Bedeutung als bei ou. Das Schluss-s in tu lis siehst du beim Schreiben; in normaler Aussprache als Einzelwort hörst du es nicht."
+		],
+		"material": "Écoute : rue, roue. Dans la rue, il y a un vélo. Écoute : bon, vin. Puis écoute : été, école, où, ou. Où est le vélo ? Dans la rue ou devant l’école ?",
+		"materialLabel": "Übungstext",
+		"materialLanguage": "fr",
+		"sourceIds": [
+			"lp-f1"
+		],
+		"quiz": {
+			"optionLanguage": "fr",
+			"question": "Welches Wort enthält hier den Laut /y/?",
+			"answer": "rue",
+			"wrong": [
+				"roue",
+				"vin"
+			],
+			"explanation": "Rue enthält /y/. Roue hat /u/."
+		},
+		"takeaway": "Ein Wort hören, mit der Lautschrift vergleichen, nachsprechen und mit Akzent schreiben.",
+		"practice": [
+			{
+				"prompt": "Complète : O___ est le vélo ?",
+				"answers": [
+					"ù"
+				],
+				"feedback": "Das Fragewort où braucht den Accent grave."
+			},
+			{
+				"prompt": "Complète : l’___cole.",
+				"answers": [
+					"é"
+				],
+				"feedback": "École beginnt mit é, auch nach l’."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "fr",
+				"prompt": "Sprich rue und roue, dann lies die Frage aus dem Hörtext laut. Notiere zwei Wörter mit ihren Akzenten.",
+				"model": "Où est le vélo ? Il est dans la rue, devant l’école. Akzente: où und école.",
+				"criteria": [
+					"Zwei Wörter gesprochen",
+					"Akzente korrekt",
+					"Frage verständlich betont"
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Eine Lernpartnerin verwechselt ou und où. Formuliere ein passendes Beispielsatzpaar und erkläre auf Deutsch die Schreibregel.",
+				"model": "Où est ton sac ? Sur la chaise ou sous la table ? Où fragt wo, ou verbindet zwei Möglichkeiten.",
+				"criteria": [
+					"Echte Ortsfrage",
+					"Zwei Alternativen",
+					"Akzent erklärt"
+				]
+			}
+		},
+		"workshop": {
+			"kind": "sound",
+			"goals": [
+				{
+					"label": "Laut /u/",
+					"before": "Une ___ de vélo.",
+					"after": "",
+					"options": [
+						"roue",
+						"rue",
+						"roi"
+					],
+					"answer": "roue",
+					"explanation": "Roue hat den Laut /u/."
+				},
+				{
+					"label": "Rund und Zunge vorn",
+					"before": "Laut in rue",
+					"after": "",
+					"options": [
+						"/y/",
+						"/u/",
+						"/ɔ̃/"
+					],
+					"answer": "/y/",
+					"explanation": "Die Lippen sind rund, die Zunge bleibt vorn."
+				},
+				{
+					"label": "Auswahl mit oder",
+					"before": "Dans la rue ___ devant l’école ?",
+					"after": "",
+					"options": [
+						"ou",
+						"où",
+						"ô"
+					],
+					"answer": "ou",
+					"explanation": "Das Bindewort ou hat keinen Accent grave."
+				}
+			]
+		},
+		"speaking": true,
+		"listening": true
+	},
+	{
+		"id": "f6-1-revision",
+		"stage": "f1-outils",
+		"title": "Mon carnet et ma relecture",
+		"skill": "Wörter abrufen, Fehler finden und Quellen nutzen",
+		"bindings": [
+			"1.2-wortschatz",
+			"1.2-aussprache",
+			"4"
+		],
+		"paragraphs": [
+			"Übe eine kleine Wortgruppe statt nur einer Übersetzung: une gare, à la gare, Je vais à la gare. Decke die französische Seite ab und rufe sie aus dem Gedächtnis ab. Überprüfe deine Antwort und markiere, was du später noch einmal übst.",
+			"Beim Überarbeiten liest du denselben Satz zweimal mit verschiedenen Zielen. Prüfe zuerst den Sinn und die Reihenfolge. Prüfe danach eine Sprachregel, etwa ils sont arrivés. Wenn du unsicher bist, schlage im Vokabelanhang oder in der Verbübersicht nach und vergleiche mit deinem Heft."
+		],
+		"material": "Carnet de Lina : la gare, à la gare ; arriver, elles sont arrivées ; la Bretagne, en Bretagne. Note de relecture : « Elles sont arrivé » → « Elles sont arrivées ». À vérifier demain : l’accord.",
+		"materialLabel": "Übungstext",
+		"materialLanguage": "fr",
+		"sourceIds": [
+			"lp-f1"
+		],
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Was überprüft Lina morgen?",
+			"answer": "die Partizipangleichung",
+			"wrong": [
+				"ihre Abfahrtszeit",
+				"die Schreibweise von Bretagne"
+			],
+			"explanation": "L’accord bezeichnet hier die Angleichung des Partizips."
+		},
+		"takeaway": "Abrufen, prüfen, verbessern, später wiederholen. Beim Überarbeiten pro Durchgang ein Ziel.",
+		"practice": [
+			{
+				"prompt": "Ils sont ___. (arriver)",
+				"answers": [
+					"arrivés"
+				],
+				"feedback": "In der Korrekturrunde braucht der männliche Plural ein s."
+			},
+			{
+				"prompt": "Elles sont ___. (arriver)",
+				"answers": [
+					"arrivées"
+				],
+				"feedback": "Im weiblichen Plural lautet die Form arrivées."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "de",
+				"prompt": "Lege zwei Karten für Reise-Wendungen an und plane einen Zeitpunkt, an dem du sie aus dem Gedächtnis abrufst.",
+				"model": "Karte 1: die Abfahrt → le départ. Karte 2: am Bahnhof → à la gare. Morgen decke ich die rechte Seite ab.",
+				"criteria": [
+					"Zwei passende Wendungen",
+					"Konkreter Abrufplan",
+					"Selbstprüfung vorgesehen"
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Überarbeite diesen Entwurf: « Elles sont arrivé à Lyon. Ensuite, elles a lu une BD. » Nenne eine Stärke und einen persönlichen Kontrollpunkt.",
+				"model": "Elles sont arrivées à Lyon. Ensuite, elles ont lu une BD. Ensuite verbindet die Sätze. Ich prüfe künftig Hilfsverb und Endung getrennt.",
+				"criteria": [
+					"Zwei Fehler verbessert",
+					"Stärke benannt",
+					"Konkreter Kontrollpunkt"
+				]
+			}
+		},
+		"workshop": {
+			"kind": "sequence",
+			"goals": [
+				{
+					"label": "Ein Wort mit Wendung lernen",
+					"before": "la gare → à la ___",
+					"after": "",
+					"options": [
+						"gare",
+						"ville",
+						"maison"
+					],
+					"answer": "gare",
+					"explanation": "Die Wendung bindet das konkrete Wort an einen Satzkontext."
+				},
+				{
+					"label": "Beim Überarbeiten erst den Sinn prüfen",
+					"before": "Je vérifie d’abord le ___.",
+					"after": "",
+					"options": [
+						"sens",
+						"billet",
+						"crayon"
+					],
+					"answer": "sens",
+					"explanation": "Sens bezeichnet in diesem Kontext den Sinn."
+				},
+				{
+					"label": "Hilfsmittel wählen",
+					"before": "Pour une forme de verbe, je consulte la ___ des verbes.",
+					"after": "",
+					"options": [
+						"liste",
+						"valise",
+						"fenêtre"
+					],
+					"answer": "liste",
+					"explanation": "Eine Verbübersicht liefert die passende Form."
+				}
+			]
+		}
+	}
+]
