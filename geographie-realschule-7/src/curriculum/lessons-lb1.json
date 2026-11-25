@@ -1,0 +1,286 @@
+[
+  {
+    "id": "erde-beleuchtung",
+    "lb": 1,
+    "title": "Tag, Nacht und Jahreszeiten",
+    "period": "Geo7 LB 1 · Erdrotation und Erdrevolution",
+    "intro": "Warum ist es im Juni in Bayern um 21 Uhr noch hell, im Dezember aber schon um 17 Uhr dunkel?",
+    "review": "Wiederholung aus Geo5: Gradnetz, Äquator und Erdachse",
+    "paragraphs": [
+      "Die Erde ist annähernd eine Kugel. Ihr Umfang am Äquator beträgt rund 40 000 km. Sie dreht sich in etwa 24 Stunden einmal von West nach Ost um ihre Achse. Diese Erdrotation erzeugt Tag und Nacht: Die der Sonne zugewandte Hälfte ist hell, die andere dunkel. Weil sich die Erde nach Osten dreht, geht die Sonne im Osten auf.",
+      "In etwa 365 Tagen umläuft die Erde die Sonne. Bei dieser Erdrevolution ist die Erdachse um etwa 23,5° gegen die Senkrechte auf der Umlaufbahn geneigt und zeigt immer in dieselbe Richtung. Um den 21. Juni ist die Nordhalbkugel der Sonne zugeneigt: Die Sonne steht mittags über dem nördlichen Wendekreis im Zenit, also senkrecht. Die Tage im Norden sind lang, die Sonnenstrahlen treffen steiler auf und erwärmen stärker. Um den 21. Dezember ist es umgekehrt. Um den 21. März und den 23. September steht die Sonne über dem Äquator im Zenit; Tag und Nacht sind überall etwa gleich lang.",
+      "Nördlich des nördlichen Polarkreises (66,5° N) geht die Sonne um den 21. Juni einen ganzen Tag lang nicht unter: Polartag. Um den 21. Dezember geht sie dort gar nicht auf: Polarnacht. Die Jahreszeiten entstehen also durch die Neigung der Erdachse und nicht durch die Entfernung zur Sonne. Im Januar ist die Erde der Sonne sogar etwas näher als im Juli."
+    ],
+    "workedExample": "München liegt bei etwa 48° N. Um den 21. Juni ist es dort etwa 16 Stunden hell, um den 21. Dezember nur etwa 8 Stunden. Am Äquator bleibt der Tag das ganze Jahr bei etwa 12 Stunden. Je weiter ein Ort vom Äquator entfernt ist, desto stärker schwankt die Tageslänge im Jahreslauf.",
+    "takeaway": "Die Erdrotation bewirkt Tag und Nacht, die Erdrevolution mit geneigter Erdachse bewirkt Jahreszeiten, unterschiedliche Tageslängen sowie Polartag und Polarnacht.",
+    "sourceIds": ["lehrplan"],
+    "quiz": {
+      "question": "Wodurch entstehen die Jahreszeiten?",
+      "answer": "Durch die geneigte Erdachse beim Umlauf um die Sonne.",
+      "wrong": ["Durch die wechselnde Entfernung der Erde zur Sonne.", "Durch die Drehung der Erde um ihre eigene Achse."],
+      "explanation": "Die geneigte Achse lässt im Jahreslauf einmal die Nord- und einmal die Südhalbkugel steiler beleuchten. Die Drehung um die eigene Achse erklärt nur Tag und Nacht."
+    },
+    "transferCheck": {
+      "question": "In Australien ist es um den 21. Dezember Sommer. Was folgt daraus für Polartag und Polarnacht?",
+      "answer": "Südlich des südlichen Polarkreises herrscht Polartag, nördlich des nördlichen Polarkreises Polarnacht.",
+      "wrong": ["An beiden Polen herrscht gleichzeitig Polartag.", "Am Äquator herrscht Polarnacht."],
+      "explanation": "Im Dezember ist die Südhalbkugel der Sonne zugeneigt. Deshalb geht die Sonne im Süden jenseits des Polarkreises nicht unter, im Norden nicht auf."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Rotation oder Revolution?",
+      "instruction": "Ordne jede Beobachtung der Erdbewegung zu, die sie erklärt.",
+      "categories": ["Erdrotation", "Erdrevolution mit geneigter Achse"],
+      "entries": [
+        { "text": "Die Sonne geht im Osten auf.", "target": 0, "feedback": "Die Erde dreht sich nach Osten; Orte im Osten erreichen das Sonnenlicht zuerst." },
+        { "text": "Im Juni sind die Tage in Bayern länger als im Dezember.", "target": 1, "feedback": "Im Juni ist die Nordhalbkugel zur Sonne geneigt." },
+        { "text": "Nach etwa 24 Stunden folgt wieder ein Sonnenaufgang.", "target": 0, "feedback": "Eine Drehung um die Achse dauert etwa einen Tag." },
+        { "text": "In Nordnorwegen geht die Sonne im Juni nicht unter.", "target": 1, "feedback": "Nördlich des Polarkreises herrscht um den 21. Juni Polartag." }
+      ],
+      "conclusion": "Tag und Nacht wechseln durch die Drehung, Jahreszeiten und Tageslängen durch den Umlauf mit schräger Achse."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre mithilfe der Zeichnung, warum es um den 21. Juni in Bayern länger hell ist als um den 21. Dezember.",
+        "hints": ["Welche Halbkugel ist im Juni zur Sonne geneigt?", "Wie lang ist der Weg eines Ortes durch die helle Hälfte?"],
+        "model": "Um den 21. Juni ist die Nordhalbkugel zur Sonne geneigt. Bayern liegt deshalb bei einer Erddrehung länger auf der beleuchteten Seite, und die Sonne steht höher. Im Dezember ist die Nordhalbkugel von der Sonne weggeneigt, der Tag ist kurz.",
+        "criteria": ["Ich nenne die Neigung der Erdachse.", "Ich verbinde Juni mit der Nordhalbkugel.", "Ich erkläre die Tageslänge über die beleuchtete Hälfte."]
+      },
+      "2": {
+        "prompt": "Eine Mitschülerin sagt: „Im Sommer ist es warm, weil die Erde dann näher an der Sonne ist.“ Widerlege die Aussage mit zwei Argumenten.",
+        "hints": ["Denke an die Jahreszeiten auf der Südhalbkugel.", "Wann ist die Erde der Sonne am nächsten?"],
+        "model": "Wenn die Entfernung entscheiden würde, müsste überall gleichzeitig Sommer sein. Es ist aber auf der Südhalbkugel Sommer, wenn bei uns Winter ist. Außerdem ist die Erde im Januar der Sonne etwas näher als im Juli. Entscheidend ist die geneigte Erdachse.",
+        "criteria": ["Ich nutze die Gegensätze zwischen Nord- und Südhalbkugel.", "Ich nenne die Sonnennähe im Januar.", "Ich nenne die geneigte Achse als Ursache."]
+      }
+    },
+    "figures": ["beleuchtung"],
+    "lab": "jahreszeiten"
+  },
+  {
+    "id": "zeitzonen",
+    "lb": 1,
+    "title": "Zeitzonen: Wie spät ist es in Tokio?",
+    "period": "Geo7 LB 1 · Erdrotation und Zeitzonen",
+    "intro": "Wenn du in München zu Mittag isst, gehen Kinder in Tokio schon schlafen.",
+    "paragraphs": [
+      "Die Erde dreht sich in 24 Stunden um 360°. In einer Stunde sind das 15°. Deshalb wurde die Erde in 24 Zeitzonen von je etwa 15° Breite eingeteilt. Innerhalb einer Zone gilt dieselbe Uhrzeit. Die Grenzen folgen oft Staats- oder Landesgrenzen, damit ein Land nicht unnötig geteilt wird.",
+      "Bezugspunkt ist die Weltzeit UTC am Nullmeridian durch Greenwich bei London. Orte östlich davon haben eine spätere Uhrzeit, Orte westlich davon eine frühere. In Deutschland gilt im Winter die Mitteleuropäische Zeit MEZ, also UTC plus 1 Stunde, im Sommer die Sommerzeit MESZ mit UTC plus 2 Stunden. Tokio rechnet mit UTC plus 9 Stunden, New York im Winter mit UTC minus 5 Stunden.",
+      "Etwa am 180. Längengrad im Pazifik verläuft die Datumsgrenze. Wer sie nach Westen überquert, zählt einen Tag weiter; wer sie nach Osten überquert, zählt einen Tag zurück."
+    ],
+    "workedExample": "In München ist es im Winter 14 Uhr MEZ. Das ist 13 Uhr UTC. In Tokio (UTC plus 9) ist es dann 22 Uhr, in New York (UTC minus 5) 8 Uhr morgens. Rechne immer zuerst auf UTC zurück und dann zur Zielzone.",
+    "takeaway": "Pro 15° Längenunterschied ändert sich die Ortszeit um etwa eine Stunde: nach Osten später, nach Westen früher.",
+    "sourceIds": ["lehrplan", "ptb-zeit"],
+    "quiz": {
+      "question": "Warum sind Zeitzonen etwa 15° breit?",
+      "answer": "Weil sich die Erde in einer Stunde um 15° dreht.",
+      "wrong": ["Weil jedes Land genau 15° breit ist.", "Weil die Sonne alle 15 Minuten einen Längengrad überquert."],
+      "explanation": "360° geteilt durch 24 Stunden ergibt 15° pro Stunde."
+    },
+    "transferCheck": {
+      "question": "In Nairobi gilt UTC plus 3 Stunden. Wie spät ist es dort, wenn es in München im Winter 9 Uhr ist?",
+      "answer": "11 Uhr.",
+      "wrong": ["7 Uhr.", "12 Uhr."],
+      "explanation": "9 Uhr MEZ sind 8 Uhr UTC. Plus 3 Stunden ergibt 11 Uhr in Nairobi."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Früher oder später als München?",
+      "instruction": "München hat im Winter MEZ (UTC plus 1). Ordne jeden Ort zu.",
+      "categories": ["später als in München", "früher als in München"],
+      "entries": [
+        { "text": "Tokio (UTC plus 9)", "target": 0, "feedback": "Tokio liegt weit östlich; dort ist es 8 Stunden später." },
+        { "text": "New York (UTC minus 5)", "target": 1, "feedback": "New York liegt westlich; dort ist es 6 Stunden früher." },
+        { "text": "Dubai (UTC plus 4)", "target": 0, "feedback": "Dubai liegt östlich; dort ist es 3 Stunden später." },
+        { "text": "London (UTC)", "target": 1, "feedback": "London liegt am Nullmeridian; dort ist es 1 Stunde früher." }
+      ],
+      "conclusion": "Je weiter östlich eine Zeitzone liegt, desto später ist es dort."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Du willst um 18 Uhr MEZ mit einer Freundin in Jakarta (UTC plus 7) telefonieren. Wie spät ist es bei ihr? Ist der Zeitpunkt günstig?",
+        "hints": ["Rechne zuerst auf UTC um.", "Überlege, ob sie dann wach ist."],
+        "model": "18 Uhr MEZ sind 17 Uhr UTC. Plus 7 Stunden ergibt 24 Uhr, also Mitternacht in Jakarta. Der Zeitpunkt ist ungünstig. Besser wäre zum Beispiel 10 Uhr MEZ, dann ist es dort 16 Uhr.",
+        "criteria": ["Ich rechne über UTC.", "Ich nenne die richtige Uhrzeit in Jakarta.", "Ich schlage einen sinnvolleren Zeitpunkt vor."]
+      },
+      "2": {
+        "prompt": "Ein Flug startet in Tokio am Montag um 10 Uhr Ortszeit und landet nach 12 Stunden Flugzeit in München. Welcher Tag und welche Uhrzeit (MEZ) ist es bei der Landung?",
+        "hints": ["Rechne die Abflugzeit in MEZ um.", "Addiere dann die Flugzeit."],
+        "model": "10 Uhr in Tokio sind 1 Uhr UTC, also 2 Uhr MEZ am Montag. Nach 12 Stunden Flug ist es in München Montag 14 Uhr. Die Uhr scheint kaum vorzurücken, weil der Flug nach Westen in frühere Zeitzonen führt.",
+        "criteria": ["Ich rechne die Abflugzeit in MEZ um.", "Ich addiere die Flugzeit richtig.", "Ich erkläre den Zeitunterschied mit der Flugrichtung."]
+      }
+    },
+    "figures": ["zeitzonen"],
+    "lab": "zeitzonen"
+  },
+  {
+    "id": "wetter-foehn",
+    "lb": 1,
+    "title": "Wolken, Wind und Föhn",
+    "period": "Geo7 LB 1 · Vorgänge in der Atmosphäre",
+    "intro": "Bei Föhn wirken die Alpen von München aus zum Greifen nah, und im Winter steigen die Temperaturen plötzlich stark an.",
+    "review": "Wiederholung aus Geo6: Wetterelemente messen",
+    "paragraphs": [
+      "Wasser verdunstet aus Meeren, Seen, Böden und Pflanzen und wird zu unsichtbarem Wasserdampf. Warme Luft kann mehr Wasserdampf aufnehmen als kalte. Kühlt feuchte Luft ab, wird der Taupunkt erreicht: Der Wasserdampf kondensiert zu winzigen Tröpfchen, und es entstehen Wolken. Wachsen die Tröpfchen oder Eiskristalle weiter, fällt Niederschlag.",
+      "Die Luft drückt mit ihrem Gewicht auf die Erdoberfläche: Das ist der Luftdruck. Wo Luft aufsteigt, sinkt der Druck am Boden, und es entsteht ein Tief. Wo Luft absinkt, steigt der Druck, und ein Hoch entsteht. Wind ist die Ausgleichsströmung vom Hoch zum Tief.",
+      "Steigt Luft an einem Gebirge auf, kühlt sie sich ab. Solange sich keine Wolke bildet, sind es etwa 1 °C pro 100 m. Ab der Wolkenuntergrenze kondensiert Wasserdampf; dabei wird Wärme frei, und die Luft kühlt nur noch um etwa 0,5 °C pro 100 m ab. Auf der Luvseite regnet es sich aus. Auf der Leeseite sinkt die trockene Luft ab und erwärmt sich um etwa 1 °C pro 100 m. So kommt sie wärmer und trockener im Tal an, als sie gestartet ist. Diesen warmen Fallwind nennt man Föhn."
+    ],
+    "workedExample": "Luft startet südlich der Alpen in 500 m Höhe mit 15 °C. Bis zur Wolkenuntergrenze in 1500 m kühlt sie um 10 °C auf 5 °C ab. Bis zum Kamm in 3000 m sind es noch 1500 m in der Wolke, also 7,5 °C weniger: −2,5 °C. Beim Abstieg auf 500 m erwärmt sie sich um 25 °C auf 22,5 °C. Im Lee ist es damit 7,5 °C wärmer als im Luv.",
+    "takeaway": "Föhn ist ein warmer, trockener Fallwind im Lee eines Gebirges. Er entsteht, weil die Luft im Luv in der Wolke langsamer abkühlt, als sie sich im Lee wieder erwärmt.",
+    "sourceIds": ["lehrplan", "dwd-foehn"],
+    "quiz": {
+      "question": "Was passiert, wenn feuchte Luft bis zum Taupunkt abkühlt?",
+      "answer": "Wasserdampf kondensiert, und es bilden sich Wolken.",
+      "wrong": ["Die Luft wird schwerer und es entsteht ein Hoch.", "Das Wasser verdunstet schneller."],
+      "explanation": "Am Taupunkt kann die Luft den Wasserdampf nicht mehr halten. Er wird zu Tröpfchen."
+    },
+    "transferCheck": {
+      "question": "Warum ist die Luft im Lee wärmer als am Startpunkt im Luv?",
+      "answer": "In der Wolke kühlt sie langsamer ab, beim Absinken erwärmt sie sich schneller.",
+      "wrong": ["Weil die Sonne im Lee immer stärker scheint.", "Weil die Luft im Lee höher liegt als im Luv."],
+      "explanation": "Bei der Kondensation wird Wärme frei. Deshalb verliert die Luft beim Aufstieg weniger Wärme, als sie beim trockenen Abstieg gewinnt."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Der Weg der Föhnluft",
+      "instruction": "Bringe die Schritte in die richtige Reihenfolge, von Süden über die Alpen nach Bayern.",
+      "categories": [],
+      "entries": [
+        { "text": "Feuchte Luft strömt von Süden gegen die Alpen.", "target": 0, "feedback": "Am Anfang steht feuchte Luft auf der Luvseite." },
+        { "text": "Die Luft steigt auf und kühlt etwa 1 °C pro 100 m ab.", "target": 1, "feedback": "Ohne Wolke kühlt aufsteigende Luft schnell ab." },
+        { "text": "Wolken bilden sich, im Luv regnet es.", "target": 2, "feedback": "Ab dem Taupunkt kondensiert Wasserdampf." },
+        { "text": "Trockene Luft sinkt nach Norden ab und erwärmt sich.", "target": 3, "feedback": "Im Lee erwärmt sich die Luft um etwa 1 °C pro 100 m." },
+        { "text": "In Bayern weht warmer, trockener Wind bei klarer Sicht.", "target": 4, "feedback": "Das ist der Föhn mit seiner guten Fernsicht." }
+      ],
+      "conclusion": "Steigungsregen im Luv und Erwärmung im Lee gehören zum selben Vorgang."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre mithilfe der Zeichnung, warum es bei Föhn in Bayern warm und trocken ist, während es in Südtirol regnet.",
+        "hints": ["Auf welcher Seite steigt die Luft auf?", "Was passiert beim Absinken?"],
+        "model": "Bei Südföhn steigt feuchte Luft in Südtirol an den Alpen auf, kühlt ab, und es bilden sich Wolken mit Steigungsregen. Die ausgeregnete Luft sinkt nach Norden ab und erwärmt sich dabei stark. In Bayern kommt deshalb warme, trockene Luft an.",
+        "criteria": ["Ich unterscheide Luv und Lee.", "Ich erkläre Wolkenbildung und Regen im Luv.", "Ich erkläre die Erwärmung beim Absinken."]
+      },
+      "2": {
+        "prompt": "Berechne mit dem Modell: Die Wolkenuntergrenze liegt bei 1000 m. Wie warm ist die Luft nach dem Abstieg auf 500 m? Vergleiche mit dem Beispiel.",
+        "hints": ["Rechne Abschnitt für Abschnitt: ohne Wolke, in der Wolke, Abstieg.", "Start: 500 m und 15 °C, Kamm: 3000 m."],
+        "model": "Bis 1000 m kühlt die Luft um 5 °C auf 10 °C ab. In der Wolke bis 3000 m sind es 2000 m, also 10 °C weniger: 0 °C am Kamm. Beim Abstieg um 2500 m erwärmt sie sich um 25 °C auf 25 °C. Je tiefer die Wolke beginnt, desto stärker ist der Föhneffekt.",
+        "criteria": ["Ich rechne alle drei Abschnitte.", "Ich komme auf 25 °C im Lee.", "Ich vergleiche mit dem Beispiel mit 22,5 °C."]
+      }
+    },
+    "figures": ["foehn"],
+    "lab": "foehn"
+  },
+  {
+    "id": "geozonen",
+    "lb": 1,
+    "title": "Klimazonen und Geozonen der Erde",
+    "period": "Geo7 LB 1 · Gradnetz, Klima- und Vegetationszonen",
+    "intro": "Von der Eiswüste bis zum Regenwald: Klima und Pflanzen ordnen sich auf der Erde in breiten Gürteln.",
+    "review": "Wiederholung aus Geo5: Breitenkreise und Längenhalbkreise",
+    "paragraphs": [
+      "Im Gradnetz zählen die Breitenkreise vom Äquator (0°) bis zu den Polen (90° N und 90° S). Je weiter ein Ort vom Äquator entfernt ist, desto schräger treffen die Sonnenstrahlen im Jahresmittel auf. Daraus ergeben sich die mathematischen Klimazonen: Die Tropen liegen zwischen den Wendekreisen (23,5° N und S), dort steht die Sonne mindestens einmal im Jahr im Zenit. Zwischen Wendekreis und Polarkreis liegen die gemäßigten Zonen, jenseits der Polarkreise (66,5°) die Polarzonen mit Polartag und Polarnacht.",
+      "Das tatsächliche Klima hängt zusätzlich von Meer, Gebirgen, Meeresströmungen und Luftdruckgürteln ab. Vereinfacht unterscheidet man Tropen, Subtropen, gemäßigte Zone und kalte Zone. Pflanzen brauchen Wärme und Wasser. Wo es ganzjährig warm und feucht ist, wächst immergrüner Regenwald. Wo Wasser fehlt, gibt es Savannen oder Wüsten. Wo der Winter lang und kalt ist, wachsen Nadelwald oder nur Tundra.",
+      "Klima und Vegetation beeinflussen sich gegenseitig: Das Klima bestimmt, wie lange Pflanzen im Jahr wachsen können. Pflanzen geben über ihre Blätter Wasser an die Luft ab, beschatten den Boden und bilden Humus. Räume mit ähnlichem Klima, ähnlichen Böden, ähnlicher Vegetation und Nutzung fasst man zu Geozonen zusammen, zum Beispiel die immerfeuchten Tropen oder die Wüsten der Wendekreise."
+    ],
+    "workedExample": "Bayern liegt bei etwa 48° N in der gemäßigten Zone. Hier wächst ohne Eingriff des Menschen vor allem sommergrüner Laub- und Mischwald. Das Kongobecken am Äquator liegt in den Tropen und ist ganzjährig warm und feucht: Dort wächst tropischer Regenwald. Die Sahara am nördlichen Wendekreis gehört zu den Subtropen und ist sehr trocken.",
+    "takeaway": "Die Beleuchtung der Erde gliedert sie in mathematische Klimazonen. Klima, Böden und Vegetation zusammen bilden Geozonen.",
+    "sourceIds": ["lehrplan", "natural-earth"],
+    "quiz": {
+      "question": "Wo liegen die Tropen im Gradnetz?",
+      "answer": "Zwischen dem nördlichen und dem südlichen Wendekreis.",
+      "wrong": ["Zwischen den beiden Polarkreisen.", "Nördlich des Polarkreises."],
+      "explanation": "Nur zwischen den Wendekreisen kann die Sonne mittags senkrecht stehen."
+    },
+    "transferCheck": {
+      "question": "Zwei Orte liegen auf derselben Breite, einer an der Küste, einer im Inneren eines Kontinents. Warum kann ihr Klima trotzdem verschieden sein?",
+      "answer": "Weil das Meer die Temperaturen ausgleicht und Feuchtigkeit liefert.",
+      "wrong": ["Weil sie verschiedene Längengrade haben.", "Weil die Sonne an der Küste länger scheint."],
+      "explanation": "Die Breite bestimmt die Beleuchtung, aber Meer, Gebirge und Meeresströmungen verändern das Klima zusätzlich."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Vegetation und Zone",
+      "instruction": "Ordne die Vegetation der passenden Klimazone zu.",
+      "categories": ["Tropen", "Subtropen", "Gemäßigte Zone", "Kalte Zone"],
+      "entries": [
+        { "text": "Immergrüner Regenwald am Äquator", "target": 0, "feedback": "Ganzjährig warm und feucht: Tropen." },
+        { "text": "Wüste mit großer Hitze am Wendekreis", "target": 1, "feedback": "Die großen Wüsten liegen in den Subtropen." },
+        { "text": "Laub- und Mischwald mit Laubfall im Herbst", "target": 2, "feedback": "Typisch für die gemäßigte Zone, etwa in Bayern." },
+        { "text": "Tundra mit Moosen und Zwergsträuchern", "target": 3, "feedback": "Kurze, kühle Sommer lassen nur niedrige Pflanzen wachsen." }
+      ],
+      "conclusion": "Wärme und Wasser bestimmen, welche Pflanzen in einer Zone wachsen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Beschreibe mithilfe der Karte, wie sich die Klimazonen vom Äquator bis zum Nordpol folgen. Nenne zu jeder Zone eine typische Vegetation.",
+        "hints": ["Starte am Äquator und gehe nach Norden.", "Nutze die Wendekreise und den Polarkreis."],
+        "model": "Vom Äquator bis etwa zum Wendekreis liegen die Tropen mit Regenwald und Savanne. Daran schließen die Subtropen mit Wüsten an. Es folgt die gemäßigte Zone mit Laub-, Misch- und Nadelwald. Jenseits davon liegt die kalte Zone mit Tundra und Eis.",
+        "criteria": ["Ich nenne die Zonen in der richtigen Reihenfolge.", "Ich nutze Wendekreis und Polarkreis.", "Ich ordne jeder Zone eine Vegetation zu."]
+      },
+      "2": {
+        "prompt": "Erkläre an einem Beispiel, wie sich Klima und Vegetation gegenseitig beeinflussen.",
+        "hints": ["Wie wirkt das Klima auf die Pflanzen?", "Wie wirken die Pflanzen auf Luft und Boden?"],
+        "model": "Im Regenwald ermöglichen Wärme und Regen das ganze Jahr Wachstum. Die vielen Pflanzen geben über die Blätter viel Wasser an die Luft ab; daraus bildet sich ein Teil der Wolken und des Regens. Wird der Wald gerodet, kann es in der Region trockener werden.",
+        "criteria": ["Ich beschreibe die Wirkung des Klimas auf die Pflanzen.", "Ich beschreibe die Wirkung der Pflanzen auf das Klima.", "Ich nenne ein konkretes Beispiel."]
+      }
+    },
+    "figures": ["klimazonen"]
+  },
+  {
+    "id": "klimadiagramme",
+    "lb": 1,
+    "title": "Klimadiagramme lesen und zuordnen",
+    "period": "Geo7 LB 1 · Klimadiagramme analysieren",
+    "intro": "Ein Klimadiagramm verrät, ob ein Ort am Äquator, in der Wüste oder auf der Südhalbkugel liegt.",
+    "review": "Wiederholung aus Geo6: Temperaturkurve und Niederschlagssäulen",
+    "paragraphs": [
+      "Ein Klimadiagramm zeigt langjährige Mittelwerte: Die rote Kurve gibt die Monatsmitteltemperatur an, die blauen Säulen den Monatsniederschlag. Bei Diagrammen nach Walter und Lieth entsprechen 10 °C auf der linken Achse 20 mm auf der rechten. Reicht die Niederschlagssäule über die Temperaturkurve, ist der Monat humid: Es fällt mehr Niederschlag, als verdunsten kann. Liegt sie darunter, ist der Monat arid, also trocken. Ab 100 mm wird die Niederschlagsachse gestaucht.",
+      "Gehe beim Auswerten in Schritten vor: Lies Ort und Lage ab, beschreibe den Temperaturverlauf mit wärmstem und kältestem Monat und der Spanne, beschreibe die Niederschlagsverteilung und zähle humide und aride Monate. Erst dann ordnest du den Ort einer Klimazone zu.",
+      "Typische Hinweise: Bleibt die Temperatur das ganze Jahr fast gleich hoch, liegt der Ort nahe am Äquator. Ist der Januar der wärmste Monat, liegt er auf der Südhalbkugel. Sind fast alle Monate arid, handelt es sich um eine Wüste oder Halbwüste."
+    ],
+    "workedExample": "Station B hat im April 70 mm Niederschlag bei 30 °C. Nach dem Maßstab entsprechen 30 °C 60 mm; die Säule reicht darüber, der April ist humid. Im März fallen nur 25 mm bei 29 °C; das ist weniger als 58 mm, also arid. Insgesamt sind 7 Monate humid, von April bis Oktober. Das passt zur Feuchtsavanne nördlich des Äquators.",
+    "takeaway": "Ein Monat ist humid, wenn die Niederschlagssäule über die Temperaturkurve reicht (10 °C ≙ 20 mm). Temperaturverlauf und Zahl der humiden Monate verraten die Klimazone.",
+    "sourceIds": ["lehrplan"],
+    "quiz": {
+      "question": "Wann ist ein Monat im Klimadiagramm humid?",
+      "answer": "Wenn die Niederschlagssäule über die Temperaturkurve reicht.",
+      "wrong": ["Wenn die Temperatur über 20 °C liegt.", "Wenn es mehr als 10 mm regnet."],
+      "explanation": "Beim Maßstab 10 °C ≙ 20 mm zeigt der Vergleich von Säule und Kurve, ob mehr Niederschlag fällt als verdunsten kann."
+    },
+    "transferCheck": {
+      "question": "In einem Diagramm sind Dezember und Januar die wärmsten Monate. Was schließt du daraus?",
+      "answer": "Der Ort liegt auf der Südhalbkugel.",
+      "wrong": ["Der Ort liegt genau am Äquator.", "Der Ort liegt in einer Wüste der Nordhalbkugel."],
+      "explanation": "Auf der Südhalbkugel ist von Dezember bis Februar Sommer."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Humid oder arid?",
+      "instruction": "Prüfe mit dem Maßstab 10 °C ≙ 20 mm. Ordne jeden Monat zu.",
+      "categories": ["humid", "arid"],
+      "entries": [
+        { "text": "25 °C und 120 mm", "target": 0, "feedback": "25 °C entsprechen 50 mm; 120 mm liegen darüber." },
+        { "text": "30 °C und 40 mm", "target": 1, "feedback": "30 °C entsprechen 60 mm; 40 mm liegen darunter." },
+        { "text": "10 °C und 30 mm", "target": 0, "feedback": "10 °C entsprechen 20 mm; 30 mm liegen darüber." },
+        { "text": "20 °C und 35 mm", "target": 1, "feedback": "20 °C entsprechen 40 mm; 35 mm liegen knapp darunter." }
+      ],
+      "conclusion": "Verdopple die Temperatur und vergleiche mit dem Niederschlag."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Werte das Klimadiagramm von Station B in drei Schritten aus: Temperatur, Niederschlag, Zuordnung.",
+        "hints": ["Nenne wärmsten und kältesten Monat.", "Zähle die humiden Monate."],
+        "model": "Die Temperaturen liegen ganzjährig zwischen 25 °C und 30 °C, die Spanne ist mit 5 °C klein. Von April bis Oktober fällt viel Regen, die übrigen Monate sind sehr trocken; 7 Monate sind humid. Die Station liegt in den Tropen mit einer Regen- und einer Trockenzeit, also in der Feuchtsavanne.",
+        "criteria": ["Ich beschreibe den Temperaturverlauf mit Werten.", "Ich zähle die humiden Monate richtig.", "Ich ordne begründet einer Zone zu."]
+      },
+      "2": {
+        "prompt": "Station G hat ganzjährig aride Monate, den Januar als wärmsten Monat und eine Spanne von 17 °C. Wo könnte sie liegen? Begründe.",
+        "hints": ["Was verrät der wärmste Monat?", "Was verraten nur aride Monate?"],
+        "model": "Der Januar als wärmster Monat zeigt die Südhalbkugel. Da alle Monate arid sind, ist es eine Wüste oder Halbwüste. Die große Spanne spricht für eine Lage im Inneren eines Kontinents, etwa im Inneren Australiens.",
+        "criteria": ["Ich nutze den wärmsten Monat.", "Ich nutze die Zahl der humiden Monate.", "Ich nenne einen passenden Raum."]
+      }
+    },
+    "figures": ["klimadiagramm"],
+    "lab": "klimadiagramme"
+  }
+]

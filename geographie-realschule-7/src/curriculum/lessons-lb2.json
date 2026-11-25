@@ -1,0 +1,448 @@
+[
+  {
+    "id": "afrika-orientierung",
+    "lb": 2,
+    "title": "Afrika südlich der Sahara auf der Karte",
+    "period": "Geo7 LB 2 · Physische und politische Grundstruktur",
+    "intro": "Vom Sahel bis zum Kap, vom Kongobecken bis zum Kilimandscharo: Verschaffe dir einen Überblick.",
+    "paragraphs": [
+      "Südlich der Sahara schließt der Sahel an, ein trockener Übergangsraum. Am Äquator liegt das Kongobecken, das der Kongo durchfließt; er quert den Äquator zweimal. Im Westen fließt der Niger in einem großen Bogen zum Golf von Guinea. Im Süden mündet der Sambesi mit den Victoriafällen in den Indischen Ozean. Aus dem Gebiet des Viktoriasees, des größten Sees Afrikas, fließt der Weiße Nil nach Norden.",
+      "Der Osten ist höher gelegen: Das Äthiopische Hochland und der Ostafrikanische Graben mit langen Seen wie dem Tanganjikasee prägen ihn. In Tansania steht der Kilimandscharo, der höchste Berg Afrikas. Im Süden liegen die Kalahari im Landesinneren und die Namib an der Atlantikküste; im Südosten erheben sich die Drakensberge.",
+      "Politisch besteht der Raum aus vielen Staaten. Bevölkerungsreiche Staaten sind zum Beispiel Nigeria, Äthiopien und die Demokratische Republik Kongo. Große Städte sind Lagos, Kinshasa, Nairobi, Addis Abeba und Johannesburg. Viele Grenzen wurden in der Kolonialzeit von europäischen Mächten gezogen, oft ohne Rücksicht auf Völker und Landschaften."
+    ],
+    "workedExample": "Lagebeschreibung von Nairobi: Nairobi ist die Hauptstadt Kenias. Die Stadt liegt in Ostafrika knapp südlich des Äquators, im Hochland östlich des Viktoriasees und nördlich des Kilimandscharo. Bis zum Indischen Ozean sind es nach Südosten mehrere Hundert Kilometer.",
+    "takeaway": "Beschreibe Lagebeziehungen mit Himmelsrichtung und markanten Bezugspunkten wie Äquator, Flüssen, Seen, Gebirgen und Küsten.",
+    "sourceIds": ["lehrplan", "natural-earth", "aa-laender"],
+    "quiz": {
+      "question": "Welcher Fluss quert den Äquator zweimal?",
+      "answer": "Der Kongo.",
+      "wrong": ["Der Niger.", "Der Sambesi."],
+      "explanation": "Der Kongo fließt erst nach Norden über den Äquator und im Bogen wieder nach Süden zum Atlantik."
+    },
+    "transferCheck": {
+      "question": "Ein Ort liegt im Ostafrikanischen Graben zwischen zwei großen Seen. Welche Beschreibung passt am besten?",
+      "answer": "Ein Ort im Hochland Ostafrikas in einer lang gestreckten Senke.",
+      "wrong": ["Ein Ort an der Atlantikküste im Westen.", "Ein Ort im Tiefland des Kongobeckens."],
+      "explanation": "Der Graben ist eine lange Senke im Hochland Ostafrikas, in der sich Seen gebildet haben."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Was liegt wo?",
+      "instruction": "Ordne jedes Element dem Teilraum zu, in dem es liegt.",
+      "categories": ["Westafrika", "Zentralafrika", "Ostafrika", "Südliches Afrika"],
+      "entries": [
+        { "text": "Unterlauf des Niger und Lagos", "target": 0, "feedback": "Der Niger mündet in Nigeria in den Golf von Guinea." },
+        { "text": "Kongobecken und Kinshasa", "target": 1, "feedback": "Das Kongobecken liegt beiderseits des Äquators in Zentralafrika." },
+        { "text": "Kilimandscharo und Nairobi", "target": 2, "feedback": "Beide liegen im Hochland Ostafrikas." },
+        { "text": "Kalahari und Johannesburg", "target": 3, "feedback": "Beide liegen im südlichen Afrika." }
+      ],
+      "conclusion": "Teilräume helfen, die vielen Staaten und Landschaften zu ordnen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Beschreibe die Lage des Viktoriasees mit mindestens drei Bezugspunkten.",
+        "hints": ["Nutze den Äquator und Himmelsrichtungen.", "Nenne angrenzende Staaten oder Flüsse."],
+        "model": "Der Viktoriasee liegt in Ostafrika direkt am Äquator. Er grenzt an Uganda, Kenia und Tansania. Er liegt zwischen den beiden Armen des Ostafrikanischen Grabens, und aus seinem Gebiet fließt der Weiße Nil nach Norden.",
+        "criteria": ["Ich nutze den Äquator.", "Ich nenne angrenzende Staaten.", "Ich nenne einen Fluss oder ein Gebirge."]
+      },
+      "2": {
+        "prompt": "Erkläre, warum ein Schiff von Lagos nach Daressalam weder den Kongo noch den Nil nutzen kann. Beschreibe einen möglichen Seeweg.",
+        "hints": ["Wo liegen beide Städte?", "Wohin fließen die Flüsse?"],
+        "model": "Lagos liegt am Golf von Guinea im Westen, Daressalam am Indischen Ozean im Osten. Keiner der Flüsse verbindet die beiden Küsten: Der Kongo mündet in den Atlantik, der Nil ins Mittelmeer. Ein Schiff fährt deshalb um das Kap der Guten Hoffnung im Süden herum.",
+        "criteria": ["Ich verorte beide Städte richtig.", "Ich nenne die Mündungen der Flüsse.", "Ich beschreibe einen Seeweg um den Süden Afrikas."]
+      }
+    },
+    "figures": ["afrika"],
+    "lab": "afrika"
+  },
+  {
+    "id": "passatkreislauf",
+    "lb": 2,
+    "title": "Der Passatkreislauf",
+    "period": "Geo7 LB 2 · Tageszeitenklima und Passatkreislauf",
+    "intro": "Warum regnet es im Kongobecken fast jeden Nachmittag, während in der Sahara monatelang kein Tropfen fällt?",
+    "paragraphs": [
+      "Am Äquator ist es das ganze Jahr heiß. Die Temperaturunterschiede zwischen Tag und Nacht sind dort größer als zwischen den Monaten; man spricht vom Tageszeitenklima. Wo die Sonne im Zenit steht, erwärmen sich Boden und Luft stark. Die feuchte Luft steigt auf, kühlt ab, und es bilden sich hohe Wolken. Am Nachmittag fallen heftige Zenitalregen. Am Boden entsteht eine Tiefdruckrinne, die Innertropische Konvergenzzone, kurz ITC.",
+      "In großer Höhe strömt die Luft zu den Wendekreisen. Dort sinkt sie ab, erwärmt sich und wird trockener; Wolken lösen sich auf. So entsteht der subtropische Hochdruckgürtel mit den großen Wüsten. Am Boden strömt die Luft als Passat zurück zur ITC. Durch die Erddrehung wird sie abgelenkt: Auf der Nordhalbkugel weht der Nordost-Passat, auf der Südhalbkugel der Südost-Passat. Dieser Kreislauf heißt Passatkreislauf.",
+      "Die ITC wandert mit dem Zenitstand der Sonne, aber etwas verspätet: im Nordsommer nach Norden, im Südsommer nach Süden. Wo sie gerade liegt, ist Regenzeit. Orte nahe dem Äquator erleben sie zweimal im Jahr, Orte zu den Wendekreisen hin nur einmal und kürzer. Dort weht die übrige Zeit der trockene Passat."
+    ],
+    "workedExample": "Ein Ort bei 12° N im Sahel: Im Juli liegt die ITC über ihm, es ist Regenzeit. Im Januar liegt die ITC südlich des Äquators. Dann weht der trockene Nordost-Passat aus der Sahara, es ist Trockenzeit. Deshalb fällt fast der ganze Jahresniederschlag in wenigen Sommermonaten.",
+    "takeaway": "Aufsteigende Luft an der ITC bringt Regen, absinkende Luft an den Wendekreisen bringt Trockenheit. Mit der wandernden ITC wechseln Regen- und Trockenzeiten.",
+    "sourceIds": ["lehrplan"],
+    "quiz": {
+      "question": "Warum ist es im subtropischen Hochdruckgürtel trocken?",
+      "answer": "Weil dort Luft absinkt, sich erwärmt und Wolken sich auflösen.",
+      "wrong": ["Weil dort die Sonne nie im Zenit steht.", "Weil dort feuchte Luft aufsteigt."],
+      "explanation": "Absinkende Luft erwärmt sich und kann mehr Wasserdampf aufnehmen, daher bilden sich kaum Wolken."
+    },
+    "transferCheck": {
+      "question": "Wohin verlagert sich die Regenzeit im Januar über Afrika?",
+      "answer": "Nach Süden, mit der ITC südlich des Äquators.",
+      "wrong": ["Nach Norden in die Sahara.", "Sie bleibt das ganze Jahr am Äquator stehen."],
+      "explanation": "Im Januar steht die Sonne über der Südhalbkugel im Zenit; die ITC folgt ihr nach Süden."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Ein Kreislauf in fünf Schritten",
+      "instruction": "Bringe die Schritte des Passatkreislaufs in die richtige Reihenfolge, beginnend am Äquator.",
+      "categories": [],
+      "entries": [
+        { "text": "Die Sonne steht im Zenit und erwärmt Boden und Luft.", "target": 0, "feedback": "Am Anfang steht die starke Einstrahlung." },
+        { "text": "Feuchte Luft steigt auf, Wolken und Zenitalregen entstehen.", "target": 1, "feedback": "Aufsteigende Luft kühlt ab, Wasserdampf kondensiert." },
+        { "text": "In der Höhe strömt die Luft zu den Wendekreisen.", "target": 2, "feedback": "Die Luft weicht nach Norden und Süden aus." },
+        { "text": "Die Luft sinkt ab und erwärmt sich: Hoch und Wüste.", "target": 3, "feedback": "Absinkende Luft löst Wolken auf." },
+        { "text": "Am Boden strömt der Passat zurück zur ITC.", "target": 4, "feedback": "Damit schließt sich der Kreislauf." }
+      ],
+      "conclusion": "Der Passatkreislauf verbindet Regenwald und Wüste in einem System."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Skizziere den Passatkreislauf als Schaubild auf Papier und beschrifte ITC, Hoch, Passat und Zenitalregen. Erkläre ihn in drei Sätzen.",
+        "hints": ["Nutze das Schaubild der Lektion als Vorlage.", "Pfeile zeigen die Bewegung der Luft."],
+        "model": "Am Äquator steigt erwärmte, feuchte Luft auf, es bildet sich die ITC mit Zenitalregen. In der Höhe strömt die Luft zu den Wendekreisen und sinkt dort ab, wodurch Hochdruck und Trockenheit entstehen. Am Boden weht der Passat zurück zur ITC.",
+        "criteria": ["Ich beschrifte Aufstieg, Absinken und Rückströmung.", "Ich verbinde die ITC mit Regen.", "Ich verbinde das Hoch mit Trockenheit."]
+      },
+      "2": {
+        "prompt": "Ein Ort liegt bei 5° N, ein anderer bei 15° N. Vergleiche ihre Regenzeiten und erkläre den Unterschied mit der wandernden ITC.",
+        "hints": ["Wie oft überquert die ITC jeden Ort?", "Wie lange bleibt sie in der Nähe?"],
+        "model": "Bei 5° N zieht die ITC im Frühjahr nach Norden und im Herbst wieder nach Süden vorbei. Der Ort hat zwei Regenzeiten und viele humide Monate. Bei 15° N erreicht sie den Ort nur im Hochsommer kurz. Er hat eine kurze Regenzeit und eine lange Trockenzeit mit Passatwind.",
+        "criteria": ["Ich nenne zwei Regenzeiten nahe dem Äquator.", "Ich nenne eine kurze Regenzeit weiter nördlich.", "Ich begründe mit der Wanderung der ITC."]
+      }
+    },
+    "figures": ["passat"],
+    "lab": "passat"
+  },
+  {
+    "id": "tropen-vegetation",
+    "lb": 2,
+    "title": "Regenwald, Savanne und Wüste",
+    "period": "Geo7 LB 2 · Vegetationszonen der Tropen",
+    "intro": "Je weiter du vom Äquator Richtung Sahara reist, desto lichter wird der Wald und desto trockener das Gras.",
+    "paragraphs": [
+      "Die Zahl der humiden Monate nimmt vom Äquator zu den Wendekreisen ab, weil die ITC die äußeren Gebiete nur kurz erreicht. Mit ihr ändert sich die Vegetation. Wo 10 bis 12 Monate humid sind, wächst immergrüner tropischer Regenwald. Bei 7 bis 9 humiden Monaten folgt die Feuchtsavanne mit hohem Gras und Wäldern entlang der Flüsse.",
+      "Bei 5 bis 6 humiden Monaten wächst die Trockensavanne mit Gräsern und einzelnen Bäumen wie Schirmakazien und Affenbrotbäumen. Viele Bäume werfen in der Trockenzeit ihr Laub ab. Bei 2 bis 4 humiden Monaten bleibt die Dornsavanne mit dornigen Sträuchern und niedrigem Gras. Darunter beginnen Halbwüste und Wüste. Die Grenzen der Zonen sind fließend, die Zahlen sind Richtwerte.",
+      "In Afrika lassen sich die Zonen gut verfolgen: Vom Kongobecken mit Regenwald geht es nach Norden über Feucht- und Trockensavanne zur Dornsavanne im Sahel und zur Sahara. Südlich des Äquators wiederholt sich die Abfolge bis zur Kalahari, wird aber durch Hochländer verändert."
+    ],
+    "workedExample": "Station C hat 5 humide Monate von Mai bis September, sonst ist es trocken. Damit gehört sie zur Trockensavanne. Station D hat nur 3 humide Monate von Juli bis September; sie liegt in der Dornsavanne. Station E hat keinen einzigen humiden Monat: Wüste.",
+    "takeaway": "Vom Äquator zu den Wendekreisen folgen Regenwald, Feucht-, Trocken- und Dornsavanne sowie Halbwüste und Wüste, weil die Zahl der humiden Monate abnimmt.",
+    "sourceIds": ["lehrplan", "natural-earth"],
+    "quiz": {
+      "question": "Welche Vegetationszone passt zu etwa 8 humiden Monaten?",
+      "answer": "Feuchtsavanne.",
+      "wrong": ["Dornsavanne.", "Tropischer Regenwald."],
+      "explanation": "Die Feuchtsavanne hat etwa 7 bis 9 humide Monate."
+    },
+    "transferCheck": {
+      "question": "Warum werfen viele Bäume der Trockensavanne in der Trockenzeit ihr Laub ab?",
+      "answer": "So verdunsten sie weniger Wasser, wenn kaum Regen fällt.",
+      "wrong": ["Weil es in der Trockenzeit friert.", "Weil sie in der Trockenzeit mehr Licht brauchen."],
+      "explanation": "Über die Blätter verdunstet Wasser. Ohne Laub sparen die Bäume in der Trockenzeit Wasser."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Welche Zone ist das?",
+      "instruction": "Ordne jede Beschreibung der passenden Vegetationszone zu.",
+      "categories": ["Regenwald", "Feuchtsavanne", "Trockensavanne", "Dornsavanne"],
+      "entries": [
+        { "text": "Immergrüne Bäume, mehrere Stockwerke, fast täglich Regen", "target": 0, "feedback": "Das ganze Jahr feucht: Regenwald." },
+        { "text": "Hohes Gras, Wälder entlang der Flüsse, kurze Trockenzeit", "target": 1, "feedback": "Feuchtsavanne mit langer Regenzeit." },
+        { "text": "Gras mit einzelnen Schirmakazien, Regenzeit etwa ein halbes Jahr", "target": 2, "feedback": "Trockensavanne mit fünf bis sechs humiden Monaten." },
+        { "text": "Dornige Sträucher, nur wenige Regenmonate", "target": 3, "feedback": "Dornsavanne am Rand zur Wüste." }
+      ],
+      "conclusion": "Die Länge der Regenzeit bestimmt, wie dicht die Vegetation ist."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Beschreibe die Abfolge der Vegetationszonen vom Kongobecken bis zur Sahara und begründe sie.",
+        "hints": ["Nenne die Zonen in der richtigen Reihenfolge.", "Nutze die Zahl der humiden Monate."],
+        "model": "Vom Kongobecken nach Norden folgen Regenwald, Feuchtsavanne, Trockensavanne, Dornsavanne und schließlich die Wüste. Die Zahl der humiden Monate nimmt ab, weil die ITC die Gebiete weiter nördlich nur kürzer erreicht. Deshalb wird die Vegetation immer lichter und niedriger.",
+        "criteria": ["Ich nenne alle Zonen in der richtigen Reihenfolge.", "Ich nenne die abnehmende Zahl humider Monate.", "Ich begründe mit der ITC."]
+      },
+      "2": {
+        "prompt": "In einer Region verkürzt sich die Regenzeit über viele Jahre von sechs auf vier humide Monate. Welche Folgen erwartest du für Vegetation und Landwirtschaft?",
+        "hints": ["Welche Zone passt vorher, welche nachher?", "Was bedeutet das für Weide und Ackerbau?"],
+        "model": "Die Region würde sich von der Trockensavanne zur Dornsavanne verändern. Gras und Bäume wachsen schlechter, das Futter für Tiere wird knapp. Ackerbau ohne Bewässerung wird riskanter, weil die Regenzeit für viele Pflanzen zu kurz ist.",
+        "criteria": ["Ich ordne vorher und nachher Zonen zu.", "Ich nenne Folgen für die Vegetation.", "Ich nenne Folgen für die Landwirtschaft."]
+      }
+    },
+    "figures": ["vegetationszonen"],
+    "lab": "feuchtmonate"
+  },
+  {
+    "id": "regenwald-mischwald",
+    "lb": 2,
+    "title": "Regenwald und Mischwald im Vergleich",
+    "period": "Geo7 LB 2 · Aufbau, Artenvielfalt, Nährstoffe",
+    "intro": "Der Regenwald wirkt fruchtbar wie kein anderer Wald. Trotzdem sind seine Böden oft arm. Wie passt das zusammen?",
+    "paragraphs": [
+      "Aufbau: Der tropische Regenwald hat mehrere Stockwerke. Einzelne Urwaldriesen ragen bis etwa 60 m auf, darunter liegt ein geschlossenes Kronendach, dann weitere Baum-, Strauch- und Krautschichten. Am Boden ist es dunkel. Der europäische Mischwald ist niedriger und lichter: Auf die Baumschicht folgen Strauch-, Kraut- und Moosschicht. Er wirft im Herbst sein Laub ab, der Regenwald ist immergrün.",
+      "Artenvielfalt: Im Regenwald leben auf kleiner Fläche sehr viele verschiedene Pflanzen- und Tierarten. Gleichmäßige Wärme und Feuchte erlauben ganzjähriges Wachstum. Im Mischwald gibt es deutlich weniger Arten, weil Winterkälte und Jahreszeiten das Wachstum begrenzen.",
+      "Nährstoffversorgung: Im Regenwald zersetzen Pilze und Kleinstlebewesen herabfallendes Laub in kurzer Zeit. Wurzeln und Wurzelpilze nehmen die Nährstoffe sofort wieder auf. Man spricht von einem kurzgeschlossenen Nährstoffkreislauf. Die meisten Nährstoffe stecken in den lebenden Pflanzen; die alten, vom Regen ausgewaschenen Böden sind arm. Im Mischwald wird das Laub langsamer zersetzt. Es entsteht eine dicke Humusschicht, die Nährstoffe im Boden speichert."
+    ],
+    "workedExample": "Wird ein Stück Regenwald gerodet und verbrannt, düngt die Asche den Boden nur kurz. Der Regen wäscht die Nährstoffe in wenigen Jahren aus, weil kaum Humus sie hält. Wird dagegen ein Stück Mischwald in Bayern gerodet, bleiben im humusreichen Boden mehr Nährstoffe erhalten.",
+    "takeaway": "Im Regenwald stecken die Nährstoffe vor allem in den Pflanzen und werden rasch wiederverwertet. Im Mischwald speichert der Humus im Boden einen großen Teil der Nährstoffe.",
+    "sourceIds": ["lehrplan"],
+    "quiz": {
+      "question": "Wo sind im tropischen Regenwald die meisten Nährstoffe gespeichert?",
+      "answer": "In den lebenden Pflanzen.",
+      "wrong": ["In einer dicken Humusschicht.", "Im Grundwasser unter dem Wald."],
+      "explanation": "Laub wird schnell zersetzt, die Nährstoffe gehen sofort wieder in die Pflanzen; der Boden selbst ist arm."
+    },
+    "transferCheck": {
+      "question": "Warum entsteht im Regenwald kaum Humus, obwohl viel Laub fällt?",
+      "answer": "Wärme und Feuchte lassen das Laub sehr schnell zersetzen.",
+      "wrong": ["Weil die Bäume ihr Laub nie abwerfen.", "Weil im Regenwald kaum Tiere im Boden leben."],
+      "explanation": "Bei ganzjähriger Wärme und Feuchte arbeiten Zersetzer ohne Pause; die Nährstoffe werden sofort aufgenommen."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Regenwald oder Mischwald?",
+      "instruction": "Ordne jedes Merkmal dem passenden Wald zu.",
+      "categories": ["Tropischer Regenwald", "Europäischer Mischwald"],
+      "entries": [
+        { "text": "Urwaldriesen ragen über ein geschlossenes Kronendach.", "target": 0, "feedback": "Der Regenwald hat mehrere Stockwerke bis etwa 60 m Höhe." },
+        { "text": "Im Herbst fällt das Laub, im Winter ruht das Wachstum.", "target": 1, "feedback": "Jahreszeiten prägen den Mischwald." },
+        { "text": "Dicke Humusschicht speichert Nährstoffe.", "target": 1, "feedback": "Langsame Zersetzung lässt Humus entstehen." },
+        { "text": "Sehr viele Arten auf kleiner Fläche", "target": 0, "feedback": "Ganzjährige Wärme und Feuchte fördern die Artenvielfalt." },
+        { "text": "Kurzgeschlossener Nährstoffkreislauf", "target": 0, "feedback": "Nährstoffe gehen fast direkt von Laub zu Wurzel." }
+      ],
+      "conclusion": "Gleiches Wort Wald, aber sehr verschiedene Ökosysteme."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Vergleiche Regenwald und Mischwald in einer Tabelle mit den Kriterien Aufbau, Artenvielfalt und Nährstoffversorgung. Fasse das wichtigste Ergebnis in einem Satz zusammen.",
+        "hints": ["Nutze die Zeichnung.", "Formuliere pro Kriterium einen Gegensatz."],
+        "model": "Aufbau: Regenwald mit mehreren Stockwerken und Urwaldriesen, Mischwald niedriger mit vier Schichten. Artenvielfalt: Regenwald sehr hoch, Mischwald geringer. Nährstoffe: Regenwald in den Pflanzen mit schnellem Kreislauf, Mischwald zu einem großen Teil im Humus. Fazit: Der Regenwald ist reich an Leben, aber sein Boden ist arm.",
+        "criteria": ["Ich vergleiche alle drei Kriterien.", "Ich formuliere Gegensätze.", "Ich ziehe ein Fazit."]
+      },
+      "2": {
+        "prompt": "Ein Unternehmen will gerodeten Regenwald dauerhaft als Ackerland nutzen. Beurteile das Vorhaben mit deinem Wissen über die Nährstoffe.",
+        "hints": ["Was passiert mit den Nährstoffen nach der Rodung?", "Was müsste der Betrieb dauerhaft tun?"],
+        "model": "Nach der Rodung fehlen die Pflanzen, in denen die Nährstoffe gespeichert waren. Die Asche düngt nur kurz, dann wäscht der Regen den Boden aus. Dauerhafter Ackerbau gelingt nur mit viel Dünger, der teuer ist und Gewässer belasten kann. Das Vorhaben ist ökologisch und auf Dauer auch wirtschaftlich fragwürdig.",
+        "criteria": ["Ich erkläre den Nährstoffverlust.", "Ich nenne eine Folge für den Betrieb.", "Ich beurteile begründet."]
+      }
+    },
+    "figures": ["stockwerkbau"]
+  },
+  {
+    "id": "wanderfeldbau-plantage",
+    "lb": 2,
+    "title": "Wanderfeldbau oder Plantage?",
+    "period": "Geo7 LB 2 · Nachhaltige Landnutzung",
+    "intro": "Eine Familie im Regenwald und ein Exportbetrieb nutzen denselben Boden auf ganz verschiedene Weise.",
+    "paragraphs": [
+      "Beim Wanderfeldbau roden Familien eine kleine Waldfläche, verbrennen die Pflanzenreste und bauen auf der Asche mit der Hacke zum Beispiel Maniok, Mais oder Yams an. Nach wenigen Jahren lässt der Ertrag nach. Die Fläche bleibt dann als Brache liegen, und der Wald wächst nach, während ein neues Feld angelegt wird. Diese Form des Hackbaus dient vor allem der Selbstversorgung.",
+      "Wanderfeldbau ist nachhaltig, solange wenige Menschen viel Fläche haben und die Brache lange genug dauert. Wächst die Bevölkerung, wird die Brache kürzer. Der Boden kann sich nicht erholen, die Erträge sinken, und es werden immer neue Waldflächen gerodet.",
+      "Plantagen sind große Betriebe, die meist nur eine Pflanze in Monokultur anbauen, etwa Ölpalmen, Kautschuk, Bananen oder Tee. Sie produzieren für den Weltmarkt, beschäftigen Lohnarbeitskräfte und setzen Maschinen, Dünger und Pflanzenschutzmittel ein. Sie bringen Exporteinnahmen und Arbeitsplätze, verdrängen aber Wald und kleinbäuerliche Nutzung. Mischformen wie Agroforstwirtschaft kombinieren Nutzpflanzen mit Bäumen und schonen den Boden."
+    ],
+    "workedExample": "Ein Dorf bewirtschaftet 6 Felder im Wechsel. Jedes Feld wird 2 Jahre bebaut. Bis es wieder dran ist, vergehen 5 mal 2, also 10 Jahre Brache. Hat das Dorf wegen neuer Familien nur noch 4 Felder, bleiben nur 6 Jahre Brache. Im Modell reicht das nicht, damit der Wald nachwächst und der Boden sich erholt.",
+    "takeaway": "Wanderfeldbau ist bei langer Brache nachhaltig; Bevölkerungsdruck verkürzt die Brache. Plantagen bringen Exporteinnahmen, aber Monokultur und Rodung belasten Boden und Wald.",
+    "sourceIds": ["lehrplan", "bmz-kongo"],
+    "quiz": {
+      "question": "Wann wird Wanderfeldbau zum Problem?",
+      "answer": "Wenn die Brache wegen mehr Menschen zu kurz wird.",
+      "wrong": ["Wenn die Familien Maniok statt Mais anbauen.", "Wenn die Felder nur zwei Jahre bebaut werden."],
+      "explanation": "Nur eine lange Brache lässt Wald und Nährstoffe zurückkehren."
+    },
+    "transferCheck": {
+      "question": "Welcher Nachteil einer Plantage betrifft vor allem die Abhängigkeit vom Weltmarkt?",
+      "answer": "Fällt der Preis des einen Produkts, sinken alle Einnahmen.",
+      "wrong": ["Die Hacke ist zu langsam für große Flächen.", "Die Familien bauen zu viele verschiedene Pflanzen an."],
+      "explanation": "Eine Monokultur für den Export hängt von einem einzigen Preis ab."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Zwei Formen der Landnutzung",
+      "instruction": "Ordne jedes Merkmal der passenden Landnutzung zu.",
+      "categories": ["Wanderfeldbau", "Plantage"],
+      "entries": [
+        { "text": "Selbstversorgung der Familie", "target": 0, "feedback": "Wanderfeldbau dient vor allem der Ernährung der Familie." },
+        { "text": "Monokultur für den Export", "target": 1, "feedback": "Plantagen verkaufen ihre Ernte auf dem Weltmarkt." },
+        { "text": "Lange Brache, Wald wächst nach", "target": 0, "feedback": "Die Brache gehört fest zum Wanderfeldbau." },
+        { "text": "Lohnarbeit, Maschinen und Dünger", "target": 1, "feedback": "Plantagen brauchen Kapital und Arbeitskräfte." }
+      ],
+      "conclusion": "Beide Formen haben Vor- und Nachteile für Menschen und Natur."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre den Kreislauf des Wanderfeldbaus in vier Schritten und nenne die Bedingung, unter der er nachhaltig ist.",
+        "hints": ["Roden, brennen, anbauen, …", "Wie lang muss die Brache sein?"],
+        "model": "Eine Familie rodet eine kleine Fläche, verbrennt die Reste und düngt so mit Asche. Einige Jahre baut sie Nahrungspflanzen an. Wenn der Ertrag sinkt, bleibt das Feld als Brache liegen, und der Wald wächst nach. Nachhaltig ist das nur, wenn die Brache lange genug dauert, also wenige Menschen viel Fläche haben.",
+        "criteria": ["Ich nenne vier Schritte.", "Ich nenne die Brache.", "Ich nenne die Bedingung für Nachhaltigkeit."]
+      },
+      "2": {
+        "prompt": "Eine Regierung will Kleinbauern Land wegnehmen und dort eine Ölpalmenplantage anlegen lassen. Bewerte den Plan aus Sicht der Regierung, der Kleinbauern und der Umwelt.",
+        "hints": ["Was gewinnt der Staat?", "Was verlieren Familien und Wald?"],
+        "model": "Die Regierung erhofft sich Exporteinnahmen, Steuern und Arbeitsplätze. Die Kleinbauern verlieren ihr Land für die Selbstversorgung und werden abhängig von Löhnen. Für die Umwelt bedeuten Rodung und Monokultur Verlust an Wald und Artenvielfalt. Ich halte den Plan nur mit Entschädigung, Mitsprache und Schutzflächen für vertretbar.",
+        "criteria": ["Ich nenne Vorteile für den Staat.", "Ich nenne Folgen für Familien und Umwelt.", "Ich bilde ein begründetes Urteil."]
+      }
+    },
+    "figures": ["wanderfeldbau"],
+    "lab": "wanderfeldbau"
+  },
+  {
+    "id": "rohstoffe-handy",
+    "lb": 2,
+    "title": "Rohstoffe für das Handy",
+    "period": "Geo7 LB 2 · Armut trotz Rohstoffreichtum",
+    "intro": "In deinem Handy stecken Metalle, die zum Teil aus dem Kongo stammen. Warum bleibt dort so wenig vom Gewinn?",
+    "paragraphs": [
+      "Die Demokratische Republik Kongo besitzt große Vorkommen an Rohstoffen, darunter Kobalt für Akkus und Coltan, aus dem Tantal für elektronische Bauteile gewonnen wird. Dennoch leben viele Menschen dort in Armut. Man spricht von Armut trotz Rohstoffreichtum.",
+      "Dafür gibt es mehrere Gründe: Die Rohstoffe werden meist unverarbeitet exportiert. Die Verarbeitung zu Bauteilen und Geräten, bei der viel Geld verdient wird, findet in anderen Ländern statt. Gewinne gehen oft an ausländische Unternehmen oder an wenige Menschen im Land. Im Kleinbergbau arbeiten viele Menschen von Hand unter gefährlichen Bedingungen, teils auch Kinder. Im Osten des Landes finanzieren sich bewaffnete Gruppen zum Teil über den Handel mit Rohstoffen, was Konflikte verlängert.",
+      "Was können Käuferinnen und Käufer tun? Wer ein Handy länger nutzt, repariert und alte Geräte zum Recycling gibt, verringert den Bedarf an neuen Rohstoffen. Hersteller und Händler können Lieferketten offenlegen und Rohstoffe aus geprüften Quellen beziehen."
+    ],
+    "workedExample": "Weg eines Akkurohstoffs: Kobalterz wird im Süden des Kongo abgebaut und exportiert. In einem anderen Land wird es zu Akkus verarbeitet, die in ein Handy eingebaut werden. Das Handy wird weltweit verkauft. Der größte Teil des Verkaufspreises entsteht bei Verarbeitung, Marke und Handel, nicht beim Abbau.",
+    "takeaway": "Rohstoffreichtum führt nicht automatisch zu Wohlstand: Entscheidend ist, wo die Wertschöpfung stattfindet und wer die Gewinne erhält.",
+    "sourceIds": ["lehrplan", "bmz-kongo", "uba-elektro"],
+    "quiz": {
+      "question": "Warum bleibt im Kongo wenig vom Wert eines Handys?",
+      "answer": "Weil die Rohstoffe meist unverarbeitet exportiert werden.",
+      "wrong": ["Weil im Kongo keine Rohstoffe vorkommen.", "Weil Handys im Kongo nicht verkauft werden dürfen."],
+      "explanation": "Verarbeitung, Bau und Verkauf bringen den größten Teil des Gewinns, und diese Schritte finden meist anderswo statt."
+    },
+    "transferCheck": {
+      "question": "Welche Maßnahme würde dem Kongo am ehesten mehr Einnahmen aus seinen Rohstoffen bringen?",
+      "answer": "Einen Teil der Rohstoffe im Land weiterzuverarbeiten.",
+      "wrong": ["Mehr Rohstoffe unverarbeitet zu exportieren.", "Den Kleinbergbau ohne Regeln auszuweiten."],
+      "explanation": "Weiterverarbeitung schafft Arbeitsplätze und einen höheren Anteil an der Wertschöpfung."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Ursache oder Handlungsmöglichkeit?",
+      "instruction": "Ordne jede Aussage zu.",
+      "categories": ["Ursache der Armut", "Handlungsmöglichkeit"],
+      "entries": [
+        { "text": "Gewinne gehen an wenige Menschen oder ins Ausland.", "target": 0, "feedback": "Ungleich verteilte Gewinne erklären einen Teil der Armut." },
+        { "text": "Alte Handys zum Recycling bringen", "target": 1, "feedback": "Recycling verringert den Bedarf an neuem Abbau." },
+        { "text": "Rohstoffe verlassen das Land unverarbeitet.", "target": 0, "feedback": "Ohne Verarbeitung bleibt wenig Wertschöpfung im Land." },
+        { "text": "Lieferketten von Herstellern offenlegen lassen", "target": 1, "feedback": "Transparenz hilft, Rohstoffe aus Konfliktgebieten zu meiden." }
+      ],
+      "conclusion": "Wer Ursachen kennt, kann wirksame Handlungsmöglichkeiten auswählen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre mit dem Schaubild, warum der Kongo trotz seiner Rohstoffe zu den ärmeren Staaten zählt. Nenne zwei Gründe.",
+        "hints": ["Wo entsteht der meiste Wert?", "Wer bekommt die Gewinne?"],
+        "model": "Die Rohstoffe werden meist unverarbeitet exportiert, und die gewinnbringende Verarbeitung findet in anderen Ländern statt. Zudem gehen viele Gewinne an ausländische Firmen oder wenige Menschen, während die Arbeit im Kleinbergbau schlecht bezahlt und gefährlich ist.",
+        "criteria": ["Ich nenne die fehlende Verarbeitung.", "Ich nenne die Verteilung der Gewinne.", "Ich nutze das Schaubild."]
+      },
+      "2": {
+        "prompt": "Deine Klasse plant eine Aktion zum Thema Handy. Entwirf einen Vorschlag und begründe, warum er etwas bewirken kann.",
+        "hints": ["Denke an Sammeln, Reparieren oder Informieren.", "Wie wirkt die Aktion auf den Rohstoffbedarf?"],
+        "model": "Wir stellen eine Sammelbox für alte Handys auf und informieren mit Plakaten über Kobalt und Coltan. Gesammelte Geräte gehen an einen zertifizierten Recyclingbetrieb. So werden Metalle zurückgewonnen, und Mitschülerinnen und Mitschüler überlegen eher, ob sie wirklich ein neues Gerät brauchen.",
+        "criteria": ["Ich beschreibe eine konkrete Aktion.", "Ich verbinde sie mit dem Rohstoffbedarf.", "Ich begründe die Wirkung."]
+      }
+    },
+    "figures": ["handy"]
+  },
+  {
+    "id": "entwicklung-messen",
+    "lb": 2,
+    "title": "Entwicklung messen und vergleichen",
+    "period": "Geo7 LB 2 · Indikatoren und Lebensqualität",
+    "intro": "Woran erkennt man, ob es den Menschen in einem Land gut geht? Eine Zahl allein reicht dafür nicht.",
+    "paragraphs": [
+      "Indikatoren sind Messgrößen, die einen Zustand anzeigen. Das Bruttoinlandsprodukt pro Kopf zeigt die durchschnittliche Wirtschaftskraft, sagt aber nichts darüber, wie Einkommen verteilt sind. Weitere Indikatoren sind die Lebenserwartung, die Kindersterblichkeit, der Schulbesuch, der Anteil der Menschen, die lesen und schreiben können, und der Zugang zu sauberem Trinkwasser.",
+      "Der Index der menschlichen Entwicklung (HDI) der Vereinten Nationen fasst Lebenserwartung, Bildung und Einkommen zu einem Wert zwischen 0 und 1 zusammen. Je näher der Wert an 1 liegt, desto höher ist der Entwicklungsstand. Auch der HDI ist ein Durchschnitt: Zwischen Stadt und Land, Arm und Reich können die Lebensbedingungen in einem Staat sehr verschieden sein.",
+      "Auch Krankheiten beeinflussen die Entwicklung. HIV schwächt das Immunsystem; ohne Behandlung kommt es zu AIDS. Fallen Eltern oder Arbeitskräfte durch Krankheit aus, fehlen Einkommen und Pflege, und Kinder müssen früh mitarbeiten. Medikamente können das Fortschreiten heute aufhalten, sind aber nicht überall für alle erreichbar."
+    ],
+    "workedExample": "Modellvergleich mit erfundenen Werten: Staat A hat ein höheres Einkommen pro Kopf als Staat B. Die Lebenserwartung ist in Staat B aber höher, und mehr Kinder gehen dort zur Schule. Wer nur das Einkommen betrachtet, hält A für weiter entwickelt. Mit mehreren Indikatoren zeigt sich ein vielschichtigeres Bild. Für echte Staaten liest du die aktuellen Werte im Bericht der Vereinten Nationen nach.",
+    "takeaway": "Entwicklungsstand und Lebensqualität vergleichst du mit mehreren Indikatoren aus Wirtschaft, Gesundheit und Bildung, die du aus aktuellen Quellen erhebst.",
+    "sourceIds": ["lehrplan", "hdr", "who-hiv", "destatis-int"],
+    "quiz": {
+      "question": "Welche drei Bereiche fasst der HDI zusammen?",
+      "answer": "Lebenserwartung, Bildung und Einkommen.",
+      "wrong": ["Fläche, Einwohnerzahl und Klima.", "Rohstoffe, Exporte und Importe."],
+      "explanation": "Der HDI misst menschliche Entwicklung mit Gesundheit, Bildung und Lebensstandard."
+    },
+    "transferCheck": {
+      "question": "Warum kann ein Staat mit hohem Einkommen pro Kopf trotzdem vielen armen Menschen Heimat sein?",
+      "answer": "Weil der Durchschnitt nichts über die Verteilung der Einkommen sagt.",
+      "wrong": ["Weil das Einkommen pro Kopf nur Kinder zählt.", "Weil hohe Einkommen immer gleich verteilt sind."],
+      "explanation": "Wenige sehr Reiche heben den Durchschnitt, auch wenn viele wenig haben."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Indikatoren sortieren",
+      "instruction": "Ordne jeden Indikator dem Bereich zu, den er vor allem misst.",
+      "categories": ["Wirtschaft", "Gesundheit", "Bildung"],
+      "entries": [
+        { "text": "Bruttoinlandsprodukt pro Kopf", "target": 0, "feedback": "Es misst die durchschnittliche Wirtschaftskraft." },
+        { "text": "Lebenserwartung bei Geburt", "target": 1, "feedback": "Sie spiegelt Ernährung, Medizin und Lebensbedingungen." },
+        { "text": "Anteil der Erwachsenen, die lesen und schreiben können", "target": 2, "feedback": "Er zeigt den Bildungsstand." },
+        { "text": "Kindersterblichkeit", "target": 1, "feedback": "Sie zeigt die Gesundheitsversorgung besonders deutlich." }
+      ],
+      "conclusion": "Nur mehrere Indikatoren zusammen zeigen den Entwicklungsstand."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Vergleiche die Modellstaaten A und B im Schaubild mit drei Indikatoren. Welcher Staat ist weiter entwickelt? Begründe vorsichtig.",
+        "hints": ["Wo liegt welcher Staat vorn?", "Warum ist ein eindeutiges Urteil schwierig?"],
+        "model": "Staat A hat das höhere Einkommen pro Kopf, Staat B die höhere Lebenserwartung und mehr Schulbesuch. Gesundheit und Bildung sprechen für B, die Wirtschaftskraft für A. Ein eindeutiges Urteil ist schwierig; nach dem Gedanken des HDI liegt B eher vorn, weil zwei von drei Bereichen besser sind.",
+        "criteria": ["Ich vergleiche drei Indikatoren.", "Ich nenne die Grenzen eines einzelnen Indikators.", "Ich formuliere ein vorsichtiges Urteil."]
+      },
+      "2": {
+        "prompt": "Wähle zwei Staaten südlich der Sahara. Recherchiere im aktuellen Bericht der Vereinten Nationen HDI, Lebenserwartung und Schuljahre und vergleiche ihre Entwicklung. Nenne Quelle und Jahr der Daten.",
+        "hints": ["Nutze die verlinkte Quelle.", "Schreibe zu jedem Wert das Jahr dazu."],
+        "model": "Beispielstruktur: Staat X hat einen höheren HDI als Staat Y. Die Lebenserwartung liegt in X um mehrere Jahre höher, und Kinder besuchen länger die Schule. Mögliche Gründe sind eine stabilere Lage und bessere Gesundheitsversorgung. Quelle: Bericht über die menschliche Entwicklung mit Angabe des Datenjahres.",
+        "criteria": ["Ich nenne für beide Staaten drei Werte mit Jahr.", "Ich vergleiche die Werte.", "Ich nenne mögliche Gründe und meine Quelle."]
+      }
+    },
+    "figures": ["indikatoren"]
+  },
+  {
+    "id": "entwicklungszusammenarbeit",
+    "lb": 2,
+    "title": "Gemeinsam etwas bewegen",
+    "period": "Geo7 LB 2 · Entwicklungszusammenarbeit",
+    "intro": "Spenden sammeln ist gut gemeint. Aber wann hilft ein Projekt wirklich und dauerhaft?",
+    "paragraphs": [
+      "Entwicklungszusammenarbeit will Lebensbedingungen in Partnerländern dauerhaft verbessern. Staaten arbeiten dabei über Ministerien und Organisationen zusammen, in Deutschland etwa über das Bundesministerium für wirtschaftliche Zusammenarbeit und Entwicklung. Daneben engagieren sich Hilfsorganisationen, Kirchen, Vereine und Schulen.",
+      "Nothilfe nach einer Katastrophe rettet kurzfristig Leben. Entwicklungszusammenarbeit setzt langfristig an, zum Beispiel bei Schulen, Brunnen, Gesundheitsstationen oder Ausbildung. Gute Projekte folgen dem Grundsatz der Hilfe zur Selbsthilfe: Die Menschen vor Ort entscheiden mit, übernehmen Verantwortung und können das Projekt später selbst weiterführen.",
+      "Auch du kannst dich beteiligen, etwa über eine Schulpartnerschaft, einen Spendenlauf für ein geprüftes Projekt, fair gehandelte Produkte im Schulkiosk oder eine Sammelaktion für alte Handys. Prüfe vorher, wer das Projekt trägt, wofür das Geld verwendet wird und wie die Partner vor Ort beteiligt sind."
+    ],
+    "workedExample": "Eine Klasse unterstützt eine Partnerschule in Tansania. Statt selbst gekaufte Schulbücher zu schicken, fragt sie die Partner nach ihrem Bedarf. Diese wünschen sich einen Wassertank. Die Klasse sammelt mit einem Spendenlauf Geld, die Partnerschule organisiert den Bau mit Handwerkern vor Ort und berichtet mit Fotos.",
+    "takeaway": "Wirksame Entwicklungszusammenarbeit ist langfristig, partnerschaftlich und hilft den Menschen, sich selbst zu helfen.",
+    "sourceIds": ["lehrplan", "engagement", "handy-sammeln"],
+    "quiz": {
+      "question": "Was bedeutet Hilfe zur Selbsthilfe?",
+      "answer": "Die Menschen vor Ort können das Projekt später selbst weiterführen.",
+      "wrong": ["Die Helfer kommen jedes Jahr und erledigen alles selbst.", "Das Projekt wird ohne Beteiligung der Menschen geplant."],
+      "explanation": "Projekte sollen Fähigkeiten und Strukturen aufbauen, damit sie ohne dauerhafte Hilfe von außen funktionieren."
+    },
+    "transferCheck": {
+      "question": "Welche Frage solltest du vor einer Spendenaktion als Erstes klären?",
+      "answer": "Wer trägt das Projekt vor Ort, und wie werden die Partner beteiligt?",
+      "wrong": ["Welche Farbe die Plakate haben sollen.", "Wie viele Fotos wir in sozialen Netzwerken posten können."],
+      "explanation": "Ein vertrauenswürdiger Träger und echte Beteiligung entscheiden über die Wirksamkeit."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Nothilfe oder langfristige Zusammenarbeit?",
+      "instruction": "Ordne jedes Beispiel zu.",
+      "categories": ["Nothilfe", "Langfristige Entwicklungszusammenarbeit"],
+      "entries": [
+        { "text": "Zelte und Trinkwasser nach einem Wirbelsturm", "target": 0, "feedback": "Schnelle Hilfe sichert das Überleben." },
+        { "text": "Ausbildung von Lehrkräften für eine Dorfschule", "target": 1, "feedback": "Bildung wirkt über viele Jahre." },
+        { "text": "Brunnenbau mit einem Wasserkomitee im Dorf", "target": 1, "feedback": "Das Komitee pflegt den Brunnen künftig selbst." },
+        { "text": "Medikamente für Verletzte nach einem Erdbeben", "target": 0, "feedback": "Akute Versorgung gehört zur Nothilfe." }
+      ],
+      "conclusion": "Nothilfe und Entwicklungszusammenarbeit ergänzen sich."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Plane mit drei Leitfragen ein kleines Schulprojekt zur Entwicklungszusammenarbeit: Was wollt ihr tun, mit wem, und wie prüft ihr die Wirkung?",
+        "hints": ["Wer ist euer Partner?", "Woran erkennt ihr Erfolg?"],
+        "model": "Wir verkaufen fair gehandelte Snacks im Schulkiosk und unterstützen mit dem Erlös die Partnerschule unserer Pfarrei in Uganda. Die Partner sagen uns, wofür das Geld gebraucht wird. Einmal im Jahr berichten sie, was umgesetzt wurde, und wir stellen das in der Schule vor.",
+        "criteria": ["Ich beschreibe eine konkrete Aktion.", "Ich nenne einen Partner und seine Beteiligung.", "Ich beschreibe, wie wir die Wirkung prüfen."]
+      },
+      "2": {
+        "prompt": "Ein Verein will gebrauchte Kleidung in ein afrikanisches Land schicken. Bewerte das Vorhaben mit dem Grundsatz der Hilfe zur Selbsthilfe.",
+        "hints": ["Wer verkauft vor Ort Kleidung?", "Was wünschen sich die Menschen selbst?"],
+        "model": "Kleiderspenden können nach einer Katastrophe helfen. Dauerhaft können sie aber örtliche Schneiderinnen und Händler verdrängen. Besser wäre es, die Menschen vor Ort nach ihrem Bedarf zu fragen und zum Beispiel eine Nähwerkstatt oder Ausbildung zu unterstützen.",
+        "criteria": ["Ich nenne einen möglichen Nutzen.", "Ich nenne eine Gefahr für die Wirtschaft vor Ort.", "Ich schlage eine Alternative im Sinne der Selbsthilfe vor."]
+      }
+    },
+    "figures": ["projektkreislauf"]
+  }
+]

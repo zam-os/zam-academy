@@ -1,0 +1,112 @@
+[
+  {
+    "id": "ereignis-bandasee",
+    "lb": 6,
+    "title": "Ein aktuelles Ereignis: Erdbeben in der Bandasee",
+    "period": "Geo7 LB 6 · Ein Ereignis verorten, erklären, bewerten",
+    "intro": "Am 21. November 2026 bebte in Indonesien die Erde. Wie untersuchst du so ein Ereignis geographisch?",
+    "paragraphs": [
+      "Ein aktuelles Ereignis untersuchst du in vier Schritten: Du verortest es, erklärst seine Ursachen, stellst es anderen vor und bewertest es. Als Beispiel dient ein Erdbeben am 21. November 2026 um 09:42 Uhr Weltzeit. Das Deutsche GeoForschungsZentrum gibt seine Stärke mit 6,8 an, das Epizentrum bei 7,62° S und 127,39° O in der Bandasee und die Herdtiefe mit 116 km.",
+      "Verorten: Die Bandasee liegt im Osten Indonesiens zwischen den Molukken, Sulawesi und Timor. Das Epizentrum lag im Meer nordöstlich von Osttimor. Erklären: In diesem Raum stoßen mehrere Erdplatten zusammen; eine Platte taucht unter die andere ab. Weil der Herd mehr als hundert Kilometer tief lag, schwächten sich die Erschütterungen bis zur Oberfläche ab. Solche tiefen Beben heben den Meeresboden meist wenig an. Ob eine Tsunamiwarnung nötig ist, entscheiden die zuständigen Behörden.",
+      "Präsentieren und bewerten: Eine Karte, ein Profil und wenige geprüfte Zahlen genügen für einen Kurzvortrag. Bewerte dann: Wie stark waren die Folgen für die Menschen, und warum? Ein Nachrichtenbericht meldete leichte Schäden an mehreren Gebäuden. Wenn dieses Ereignis nicht mehr aktuell ist, wählst du nach denselben Schritten ein neues aus einer Region dieses Schuljahres."
+    ],
+    "workedExample": "Kurzvortrag in vier Sätzen: Am 21. November 2026 ereignete sich in der Bandasee im Osten Indonesiens ein Erdbeben der Stärke 6,8. Das Epizentrum lag im Meer nordöstlich von Osttimor in einer Zone, in der Erdplatten zusammenstoßen. Weil der Herd über hundert Kilometer tief lag, blieben die Schäden laut Berichten leicht. Das Beispiel zeigt, dass nicht nur die Stärke, sondern auch die Tiefe die Folgen bestimmt.",
+    "takeaway": "Ein aktuelles Ereignis untersuchst du geographisch in vier Schritten: verorten, erklären, präsentieren, bewerten. Jede Zahl braucht eine Quelle mit Datum.",
+    "sourceIds": ["lehrplan", "geofon-banda", "erdbebennews-banda"],
+    "quiz": {
+      "question": "Wo lag das Epizentrum des Bebens vom 21. November 2026?",
+      "answer": "In der Bandasee nordöstlich von Osttimor.",
+      "wrong": ["Vor der Ostküste Japans.", "Im Südchinesischen Meer vor Manila."],
+      "explanation": "Die Koordinaten 7,62° S und 127,39° O liegen in der Bandasee im Osten Indonesiens."
+    },
+    "transferCheck": {
+      "question": "Zwei Beben haben dieselbe Stärke, eines in 15 km, eines in 115 km Tiefe. Welches richtet an der Oberfläche meist mehr Schaden an?",
+      "answer": "Das flache Beben in 15 km Tiefe.",
+      "wrong": ["Das tiefe Beben in 115 km Tiefe.", "Beide gleich viel, nur die Stärke zählt."],
+      "explanation": "Bei einem tiefen Herd schwächen sich die Wellen auf dem langen Weg nach oben ab."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Vier Schritte der Untersuchung",
+      "instruction": "Bringe die Arbeitsschritte in eine sinnvolle Reihenfolge.",
+      "categories": [],
+      "entries": [
+        { "text": "Koordinaten und Region auf einer Karte verorten", "target": 0, "feedback": "Zuerst klärst du, wo das Ereignis stattfand." },
+        { "text": "Ursache mit der Plattentektonik erklären", "target": 1, "feedback": "Dann erklärst du, warum es dort geschah." },
+        { "text": "Karte, Profil und geprüfte Zahlen für einen Kurzvortrag ordnen", "target": 2, "feedback": "Danach bereitest du die Präsentation vor." },
+        { "text": "Folgen für die Menschen begründet bewerten", "target": 3, "feedback": "Zum Schluss bildest du ein Urteil." }
+      ],
+      "conclusion": "Die vier Schritte lassen sich auf jedes geographische Ereignis übertragen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Verorte das Erdbeben auf der Karte und erkläre seine Ursache in zwei bis drei Sätzen.",
+        "hints": ["Nenne Meer, Staat und einen Nachbarstaat.", "Nutze deine Kenntnisse aus der Lektion zum Feuerring."],
+        "model": "Das Epizentrum lag in der Bandasee im Osten Indonesiens, nordöstlich von Osttimor. In diesem Raum stoßen Erdplatten zusammen, eine taucht unter die andere ab. Dabei bauen sich Spannungen auf, die sich ruckartig lösen; der Herd lag hier in über hundert Kilometern Tiefe.",
+        "criteria": ["Ich verorte mit Meer und Staaten.", "Ich nenne die Plattenbewegung.", "Ich nenne die große Herdtiefe."]
+      },
+      "2": {
+        "prompt": "Wähle ein aktuelles Ereignis aus einer Region dieses Schuljahres. Bereite einen Kurzvortrag mit den vier Schritten vor und nenne zu jeder Zahl die Quelle mit Datum.",
+        "hints": ["Nutze eine Fachquelle und einen Nachrichtenbericht.", "Halte die Reihenfolge der vier Schritte ein."],
+        "model": "Beispielaufbau: Ort und Karte; Ursache; zwei bis drei geprüfte Zahlen mit Quelle und Abrufdatum; Folgen für die Menschen; mein begründetes Urteil. Für ein Erdbeben nutze ich etwa den Erdbebendienst des GeoForschungsZentrums, für einen Taifun den Wetterdienst des betroffenen Landes, ergänzt durch einen Nachrichtenbericht.",
+        "criteria": ["Ich wähle ein passendes aktuelles Ereignis.", "Ich gehe alle vier Schritte durch.", "Ich nenne Quellen mit Datum."]
+      }
+    },
+    "figures": ["bandasee"]
+  },
+  {
+    "id": "medien-pruefen",
+    "lb": 6,
+    "title": "Informationen aus Medien prüfen",
+    "period": "Geo7 LB 6 · Fachspezifische Medien und Massenmedien",
+    "intro": "Zwei Quellen, zwei verschiedene Tiefenangaben für dasselbe Beben. Welcher kannst du trauen?",
+    "paragraphs": [
+      "Fachspezifische Medien sind zum Beispiel Erdbebendienste, Wetterdienste, Atlanten, Statistikämter und Berichte von Forschungseinrichtungen. Sie messen oder sammeln Daten und nennen Methode und Zeitpunkt. Massenmedien wie Zeitungen, Nachrichtensendungen und Nachrichtenseiten berichten schnell und verständlich, beziehen ihre Zahlen aber oft aus solchen Fachquellen.",
+      "Beim Erdbeben in der Bandasee nannte das GeoForschungsZentrum eine Herdtiefe von 116 km. Ein Nachrichtenbericht nannte, gestützt auf Daten eines anderen Erdbebendienstes, etwa 143 km. Solche Unterschiede sind normal: Verschiedene Institute rechnen mit anderen Messstationen und Verfahren, und erste Werte werden später oft korrigiert. Wichtig ist, dass du angibst, welche Quelle du verwendest und wann du sie abgerufen hast.",
+      "Prüfe jede Quelle mit Leitfragen: Wer hat sie veröffentlicht? Woher stammen die Zahlen? Wann wurde sie erstellt oder aktualisiert? Stimmen die Kernaussagen mit einer zweiten Quelle überein? Will die Quelle informieren, unterhalten oder etwas verkaufen? Vorsicht ist bei Beiträgen ohne Absender, mit reißerischen Überschriften oder mit Bildern ohne Herkunftsangabe geboten."
+    ],
+    "workedExample": "Quellenvergleich: Beide Quellen nennen übereinstimmend Datum, Region und eine Stärke von 6,8. Bei der Tiefe weichen sie voneinander ab. Für den Vortrag übernehme ich die Fachquelle, nenne aber, dass ein anderer Dienst einen größeren Wert angibt. Die Schadensmeldung stammt nur aus dem Nachrichtenbericht; ich kennzeichne sie deshalb als „laut Bericht“.",
+    "takeaway": "Nutze Fachquellen für Messwerte und Massenmedien für Folgen und Hintergründe. Vergleiche mindestens zwei Quellen und nenne Herausgeber und Abrufdatum.",
+    "sourceIds": ["lehrplan", "geofon-banda", "erdbebennews-banda", "klicksafe", "tagesschau"],
+    "quiz": {
+      "question": "Warum nennen zwei Quellen für dasselbe Beben verschiedene Tiefen?",
+      "answer": "Weil verschiedene Institute mit anderen Stationen und Verfahren rechnen.",
+      "wrong": ["Weil eine der beiden Quellen immer erfunden ist.", "Weil die Erde nach dem Beben tiefer geworden ist."],
+      "explanation": "Messwerte sind Berechnungen; verschiedene Dienste kommen zu leicht verschiedenen Ergebnissen."
+    },
+    "transferCheck": {
+      "question": "Ein Video über einen Taifun hat keinen Absender und kein Datum. Was tust du?",
+      "answer": "Ich verwende es nicht als Beleg, bevor ich Herkunft und Datum geprüft habe.",
+      "wrong": ["Ich teile es sofort, weil Bilder nicht lügen.", "Ich übernehme die Zahlen, weil das Video viele Aufrufe hat."],
+      "explanation": "Ohne Herkunft und Datum kann das Video auch von einem anderen Ereignis stammen."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fachquelle oder Massenmedium?",
+      "instruction": "Ordne jede Quelle zu.",
+      "categories": ["Fachspezifisches Medium", "Massenmedium"],
+      "entries": [
+        { "text": "Ereignisseite eines Erdbebendienstes mit Koordinaten und Tiefe", "target": 0, "feedback": "Ein Erdbebendienst misst und veröffentlicht Daten." },
+        { "text": "Bericht in einer Nachrichtensendung am Abend", "target": 1, "feedback": "Nachrichten verbreiten Informationen an ein breites Publikum." },
+        { "text": "Klimadiagramm aus dem Schulatlas", "target": 0, "feedback": "Atlanten sind Fachmedien der Geographie." },
+        { "text": "Artikel einer Online-Zeitung mit Fotos von Schäden", "target": 1, "feedback": "Zeitungen sind Massenmedien." }
+      ],
+      "conclusion": "Gute Recherche verbindet beide Arten von Quellen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Vergleiche die beiden Quellen zum Erdbeben in der Bandasee. Nenne eine Übereinstimmung, einen Unterschied und erkläre den Unterschied.",
+        "hints": ["Vergleiche Stärke und Tiefe.", "Woher stammen die Zahlen des Nachrichtenberichts?"],
+        "model": "Beide Quellen nennen eine Stärke von 6,8 in der Bandasee am 21. November 2026. Die Tiefe unterscheidet sich: 116 km beim GeoForschungsZentrum, etwa 143 km im Nachrichtenbericht. Der Bericht stützt sich auf einen anderen Erdbebendienst, der mit anderen Stationen und Verfahren rechnet.",
+        "criteria": ["Ich nenne eine Übereinstimmung.", "Ich nenne den Unterschied mit Zahlen.", "Ich erkläre den Unterschied."]
+      },
+      "2": {
+        "prompt": "Prüfe einen aktuellen Nachrichtenbeitrag zu einem geographischen Ereignis mit den fünf Leitfragen und vergleiche ihn mit einer Fachquelle. Formuliere ein Urteil über seine Verlässlichkeit.",
+        "hints": ["Wer, woher, wann, übereinstimmend, mit welchem Ziel?", "Notiere Herausgeber und Abrufdatum."],
+        "model": "Der Beitrag stammt von einer bekannten Nachrichtenredaktion, nennt Datum und Uhrzeit und gibt einen Wetterdienst als Quelle an. Die Windgeschwindigkeit stimmt mit dem Wetterdienst überein, die Zahl der Betroffenen ist eine vorläufige Schätzung. Ich halte den Beitrag für verlässlich, übernehme vorläufige Zahlen aber nur mit diesem Hinweis.",
+        "criteria": ["Ich beantworte alle fünf Leitfragen.", "Ich vergleiche mit einer Fachquelle.", "Ich formuliere ein begründetes Urteil."]
+      }
+    },
+    "figures": ["quellenvergleich"]
+  }
+]

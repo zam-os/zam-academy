@@ -1,0 +1,280 @@
+[
+  {
+    "id": "japan-australien-lage",
+    "lb": 5,
+    "title": "Japan und Australien auf der Karte",
+    "period": "Geo7 LB 5 · Lage und naturgeographische Besonderheiten",
+    "intro": "Ein enger Inselbogen voller Vulkane und ein weiter, trockener Kontinent: Beide liegen am Pazifik und könnten kaum verschiedener sein.",
+    "paragraphs": [
+      "Japan ist ein Inselstaat vor der Ostküste Asiens. Seine vier Hauptinseln sind von Norden nach Süden Hokkaido, Honshu, Shikoku und Kyushu. Im Westen liegt das Japanische Meer, im Osten der Pazifische Ozean. Japan ist überwiegend gebirgig. Ebenen gibt es vor allem an den Küsten, die größte ist die Kanto-Ebene um Tokio. Das Land liegt dort, wo mehrere Erdplatten aufeinandertreffen. Der Fuji, der höchste Berg Japans, ist ein Vulkan.",
+      "Australien ist Staat und Kontinent zugleich und liegt auf der Südhalbkugel zwischen Indischem und Pazifischem Ozean. Der südliche Wendekreis quert die Mitte des Landes. Im Osten zieht sich die Große Wasserscheide als Gebirge entlang der Küste. Das weite Landesinnere, das Outback, ist flach und trocken; große Teile sind Wüste oder Halbwüste. Bekannt ist der Uluru, ein Inselberg im Zentrum. Vor der Nordostküste erstreckt sich das Great Barrier Reef, das größte Korallenriffsystem der Erde.",
+      "Wichtige Städte Japans sind Tokio, Osaka, Nagoya und Sapporo. In Australien liegen die großen Städte an der Küste: Sydney, Melbourne, Brisbane, Perth und Adelaide. Die Hauptstadt ist Canberra."
+    ],
+    "workedExample": "Lagevergleich: Tokio liegt bei etwa 36° N an der Pazifikküste von Honshu, Sydney bei etwa 34° S an der Pazifikküste Australiens. Beide Städte sind also etwa gleich weit vom Äquator entfernt, aber auf verschiedenen Halbkugeln. Wenn in Tokio Sommer ist, ist in Sydney Winter.",
+    "takeaway": "Japan ist ein gebirgiger, vulkanischer Inselbogen an Plattengrenzen; Australien ist ein flacher, überwiegend trockener Kontinent auf der Südhalbkugel mit Gebirge im Osten und Riff im Nordosten.",
+    "sourceIds": ["lehrplan", "natural-earth", "aa-laender"],
+    "quiz": {
+      "question": "Welche ist die größte der vier Hauptinseln Japans?",
+      "answer": "Honshu.",
+      "wrong": ["Hokkaido.", "Kyushu."],
+      "explanation": "Auf Honshu liegen auch Tokio, Osaka und Nagoya."
+    },
+    "transferCheck": {
+      "question": "Warum haben Tokio und Sydney zur selben Zeit entgegengesetzte Jahreszeiten?",
+      "answer": "Weil Tokio auf der Nord- und Sydney auf der Südhalbkugel liegt.",
+      "wrong": ["Weil Sydney näher am Äquator liegt.", "Weil Tokio westlich von Sydney liegt."],
+      "explanation": "Die Neigung der Erdachse beleuchtet die beiden Halbkugeln im Jahreslauf abwechselnd stärker."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Japan oder Australien?",
+      "instruction": "Ordne jede Besonderheit dem richtigen Staat zu.",
+      "categories": ["Japan", "Australien"],
+      "entries": [
+        { "text": "Vier Hauptinseln mit vielen Vulkanen", "target": 0, "feedback": "Japan ist ein vulkanischer Inselbogen." },
+        { "text": "Großes, flaches und trockenes Landesinneres", "target": 1, "feedback": "Das Outback prägt Australien." },
+        { "text": "Größtes Korallenriffsystem der Erde vor der Küste", "target": 1, "feedback": "Das Great Barrier Reef liegt vor Queensland." },
+        { "text": "Wenige Ebenen, meist an der Küste", "target": 0, "feedback": "Japans Ebenen sind klein und küstennah." }
+      ],
+      "conclusion": "Gegensätzliche Naturräume prägen das Leben in beiden Staaten."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Verorte Japan und Australien mit Halbkugel, Ozeanen und Nachbarräumen.",
+        "hints": ["Auf welcher Halbkugel liegt jeder Staat?", "Welche Meere grenzen an?"],
+        "model": "Japan liegt auf der Nordhalbkugel vor der Ostküste Asiens zwischen Japanischem Meer und Pazifik. Australien liegt auf der Südhalbkugel zwischen Indischem und Pazifischem Ozean; nördlich liegen Indonesien und Neuguinea.",
+        "criteria": ["Ich nenne die Halbkugeln.", "Ich nenne die Ozeane.", "Ich nenne Nachbarräume."]
+      },
+      "2": {
+        "prompt": "Erkläre zwei naturgeographische Gegensätze zwischen Japan und Australien und eine Folge für die Menschen.",
+        "hints": ["Vergleiche Relief und Klima.", "Denke an Gefahren oder an Wasser."],
+        "model": "Japan ist gebirgig und vulkanisch, Australien überwiegend flach. Japan erhält reichlich Niederschlag, das Innere Australiens ist sehr trocken. Folge: In Japan müssen die Menschen mit Erdbeben und Vulkanen leben, in Australien ist Wasser im Landesinneren knapp, und dort leben nur wenige Menschen.",
+        "criteria": ["Ich nenne einen Gegensatz im Relief.", "Ich nenne einen Gegensatz im Klima.", "Ich nenne eine Folge für die Menschen."]
+      }
+    },
+    "figures": ["japan-australien"],
+    "lab": "japan-australien"
+  },
+  {
+    "id": "raumenge-weite",
+    "lb": 5,
+    "title": "Raumenge in Japan, Weite in Australien",
+    "period": "Geo7 LB 5 · Bevölkerungsverteilung, Gunst- und Ungunsträume",
+    "intro": "In Japan drängen sich die Menschen an der Küste, in Australien sind es bis zum nächsten Nachbarn manchmal Hunderte Kilometer.",
+    "paragraphs": [
+      "Gunsträume bieten günstige Bedingungen für Wohnen, Landwirtschaft und Wirtschaft, Ungunsträume ungünstige. In Japan sind die Gebirge Ungunsträume: steil, erdrutschgefährdet und schwer zu bebauen. Die Menschen leben deshalb dicht gedrängt in den schmalen Küstenebenen. Zwischen Tokio, Nagoya und Osaka reiht sich Stadt an Stadt. Um Platz zu gewinnen, wurden Flächen im Meer aufgeschüttet; der Flughafen Kansai bei Osaka steht auf einer künstlichen Insel.",
+      "Die Raumenge hat Folgen: Wohnungen sind klein und teuer, Grundstücke knapp, Pendler fahren in vollen Zügen. Japan hat dafür ein sehr dichtes Bahnnetz. Gleichzeitig verlieren manche Bergdörfer Einwohner, weil junge Menschen in die Städte ziehen.",
+      "Australien ist dagegen ein Land der Weite. Das trockene Outback ist ein Ungunstraum. Die meisten Menschen leben im feuchteren Südosten und Osten sowie um Perth im Südwesten, vor allem in den großen Küstenstädten. Im Landesinneren liegen Farmen und Orte oft weit auseinander. Ärzte kommen mit dem Flugzeug, und Kinder auf entlegenen Farmen lernen im Fernunterricht."
+    ],
+    "workedExample": "Modellrechnung: Ein Land hat 100 Millionen Einwohner und 100 Flächeneinheiten. Sind 70 Einheiten Gebirge und nur 30 nutzbar, drängen sich rechnerisch gut 3,3 Millionen Menschen auf jede nutzbare Einheit. Werden durch Aufschüttung 10 Einheiten gewonnen, sind es 2,5 Millionen. Landgewinnung entlastet also, löst die Enge aber nicht.",
+    "takeaway": "Naturräumliche Gunst und Ungunst erklären die ungleiche Bevölkerungsverteilung: In Japan Ballung in den Küstenebenen, in Australien Konzentration an den feuchteren Küsten und ein fast leeres Inneres.",
+    "sourceIds": ["lehrplan", "stat-japan", "abs"],
+    "quiz": {
+      "question": "Warum leben in Japan so viele Menschen dicht gedrängt?",
+      "answer": "Weil das Land überwiegend gebirgig ist und nur die Küstenebenen gut nutzbar sind.",
+      "wrong": ["Weil das Klima im Inland zu trocken ist.", "Weil es in Japan keine Gebirge gibt."],
+      "explanation": "Der knappe flache Raum muss Wohnen, Verkehr, Industrie und Landwirtschaft aufnehmen."
+    },
+    "transferCheck": {
+      "question": "Warum leben im Inneren Australiens nur wenige Menschen?",
+      "answer": "Weil es dort sehr trocken ist und Wasser fehlt.",
+      "wrong": ["Weil das Innere ein Hochgebirge ist.", "Weil es dort zu viel regnet."],
+      "explanation": "Das Outback ist ein trockener Ungunstraum mit wenig Wasser für Landwirtschaft und Siedlungen."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Gunstraum oder Ungunstraum?",
+      "instruction": "Ordne jeden Raum zu.",
+      "categories": ["Gunstraum", "Ungunstraum"],
+      "entries": [
+        { "text": "Kanto-Ebene mit Tokio", "target": 0, "feedback": "Flaches Land an der Küste: gut bebaubar." },
+        { "text": "Steile Gebirge im Inneren Honshus", "target": 1, "feedback": "Steil und erdrutschgefährdet." },
+        { "text": "Feuchter Küstenstreifen um Sydney", "target": 0, "feedback": "Ausreichend Regen und Zugang zum Meer." },
+        { "text": "Trockenes Outback um Alice Springs", "target": 1, "feedback": "Wassermangel begrenzt die Nutzung." }
+      ],
+      "conclusion": "Gunst und Ungunst können Gebirge oder Trockenheit bedeuten."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Begründe mit der Karte die ungleiche Bevölkerungsverteilung in Japan und in Australien.",
+        "hints": ["Wo liegen die großen Städte?", "Was macht das Landesinnere ungünstig?"],
+        "model": "In Japan liegen die großen Städte in den Küstenebenen, weil das Innere gebirgig ist. In Australien liegen sie an den Küsten im Osten, Südosten und Südwesten, weil es dort genug Regen gibt. Das trockene Landesinnere ist fast leer.",
+        "criteria": ["Ich begründe für Japan mit dem Relief.", "Ich begründe für Australien mit dem Klima.", "Ich nutze die Lage der Städte."]
+      },
+      "2": {
+        "prompt": "Erläutere je zwei Auswirkungen der Raumenge in Japan und der Weite in Australien auf das Alltagsleben.",
+        "hints": ["Denke an Wohnen und Verkehr.", "Denke an Schule und Gesundheit im Outback."],
+        "model": "In Japan sind Wohnungen klein und teuer, und viele Menschen pendeln in vollen Zügen. In Australien müssen Familien im Outback weite Strecken zum Einkaufen fahren, und Kinder lernen per Fernunterricht. Ärztliche Hilfe kommt dort oft mit dem Flugzeug.",
+        "criteria": ["Ich nenne zwei Auswirkungen für Japan.", "Ich nenne zwei Auswirkungen für Australien.", "Ich verbinde sie mit Enge und Weite."]
+      }
+    },
+    "figures": ["raumenge"],
+    "lab": "raumenge"
+  },
+  {
+    "id": "gesellschaft-vergleich",
+    "lb": 5,
+    "title": "Schulalltag in Japan und Australien",
+    "period": "Geo7 LB 5 · Gesellschaftliche Besonderheiten",
+    "intro": "Putzdienst nach dem Unterricht, Sonnenhut in der Pause: Schulen spiegeln, wie eine Gesellschaft lebt.",
+    "paragraphs": [
+      "In Japan beginnt das Schuljahr im April, wenn die Kirschbäume blühen. Viele Schülerinnen und Schüler tragen Uniform. Nach dem Unterricht putzen sie gemeinsam Klassenzimmer und Flure; das soll Verantwortung und Gemeinschaft stärken. Nachmittags treffen sich viele in Schulclubs für Sport oder Musik, manche besuchen zusätzlich private Nachhilfeschulen. Japans Gesellschaft altert stark: Es gibt immer mehr ältere und weniger junge Menschen.",
+      "In Australien beginnt das Schuljahr Ende Januar oder Anfang Februar, nach den Sommerferien der Südhalbkugel. Auch dort sind Schuluniformen verbreitet, oft mit Sonnenhut, weil die Sonne sehr stark ist. Kinder auf abgelegenen Farmen im Outback lernen im Fernunterricht, früher per Funk, heute über das Internet.",
+      "Australien ist eine Einwanderungsgesellschaft: Viele Familien stammen aus Europa und Asien. Die ersten Bewohner des Kontinents sind die Aborigines und die Torres-Strait-Insulaner, deren Kultur Zehntausende Jahre zurückreicht. Japan hat dagegen nur wenige Zuwanderer, sucht aber wegen der Alterung zunehmend ausländische Arbeitskräfte."
+    ],
+    "workedExample": "Vergleichstabelle mit drei Kriterien: Schuljahresbeginn (Japan April, Australien Ende Januar), Besonderheit im Schultag (Japan gemeinsames Putzen, Australien Sonnenschutz und Fernunterricht im Outback), Bevölkerung (Japan stark alternd mit wenig Zuwanderung, Australien Einwanderungsgesellschaft mit indigener Bevölkerung).",
+    "takeaway": "Schulalltag und Gesellschaft unterscheiden sich in Japan und Australien durch Halbkugel und Klima, Siedlungsweise, Traditionen und Zuwanderung.",
+    "sourceIds": ["lehrplan", "stat-japan", "abs"],
+    "quiz": {
+      "question": "Warum beginnt das Schuljahr in Australien Ende Januar oder Anfang Februar?",
+      "answer": "Weil dann die Sommerferien der Südhalbkugel enden.",
+      "wrong": ["Weil dann in Australien Winter beginnt.", "Weil die Kirschblüte Anfang Februar ist."],
+      "explanation": "Auf der Südhalbkugel sind Dezember und Januar Sommermonate."
+    },
+    "transferCheck": {
+      "question": "Welche Herausforderung entsteht in Japan durch die starke Alterung der Gesellschaft?",
+      "answer": "Es fehlen junge Arbeitskräfte, während mehr Menschen Pflege brauchen.",
+      "wrong": ["Es gibt zu viele Schulen für zu viele Kinder.", "Die Einwohnerzahl wächst sehr schnell."],
+      "explanation": "Weniger junge Menschen müssen mehr ältere versorgen."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Wo ist das typisch?",
+      "instruction": "Ordne jede Besonderheit Japan oder Australien zu.",
+      "categories": ["Japan", "Australien"],
+      "entries": [
+        { "text": "Schülerinnen und Schüler putzen ihre Klassenzimmer selbst.", "target": 0, "feedback": "Gemeinsames Putzen gehört in Japan zum Schultag." },
+        { "text": "Unterricht über das Internet auf einer abgelegenen Farm", "target": 1, "feedback": "Fernunterricht überbrückt die Weite des Outbacks." },
+        { "text": "Schuljahr beginnt zur Kirschblüte im April", "target": 0, "feedback": "In Japan startet das Schuljahr im Frühling." },
+        { "text": "Indigene Kultur der Aborigines", "target": 1, "feedback": "Sie leben seit Zehntausenden Jahren auf dem Kontinent." }
+      ],
+      "conclusion": "Gesellschaftliche Besonderheiten haben oft natur- und kulturgeographische Gründe."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Vergleiche den Schulalltag in Japan und Australien mit drei Kriterien in einer Tabelle.",
+        "hints": ["Schuljahresbeginn, Besonderheit, Schulweg", "Nutze das Schaubild."],
+        "model": "Schuljahresbeginn: Japan im April, Australien Ende Januar. Besonderheit: In Japan putzen die Kinder die Schule, in Australien gehört der Sonnenhut zur Uniform. Schulweg: In Japan oft mit Zug oder Fahrrad durch dichte Städte, im Outback Australiens per Fernunterricht ohne Schulweg.",
+        "criteria": ["Ich vergleiche drei Kriterien.", "Ich nenne für beide Staaten Beispiele.", "Meine Tabelle ist übersichtlich."]
+      },
+      "2": {
+        "prompt": "Vergleiche einen der beiden Schulalltage mit deinem eigenen und erkläre einen Unterschied mit einer geographischen Ursache.",
+        "hints": ["Halbkugel, Klima oder Siedlungsdichte?", "Was wäre bei dir anders?"],
+        "model": "Bei mir beginnt das Schuljahr im September, in Australien Ende Januar. Ursache ist die Lage auf der Südhalbkugel: Die großen Sommerferien fallen dort in Dezember und Januar. Gemeinsam ist, dass es auch bei uns Schulsport und Arbeitsgemeinschaften am Nachmittag gibt.",
+        "criteria": ["Ich nenne einen Unterschied.", "Ich erkläre ihn geographisch.", "Ich nenne auch eine Gemeinsamkeit."]
+      }
+    },
+    "figures": ["schulalltag"]
+  },
+  {
+    "id": "handel-japan-australien",
+    "lb": 5,
+    "title": "Japan kauft Rohstoffe, Australien verkauft sie",
+    "period": "Geo7 LB 5 · Import- und Exportabhängigkeit",
+    "intro": "Kohle und Eisenerz reisen von Australien nach Japan, Autos und Maschinen den umgekehrten Weg.",
+    "paragraphs": [
+      "Japan besitzt kaum eigene Rohstoffe. Erdöl, Erdgas, Kohle und Eisenerz muss es fast vollständig einführen. Daraus stellt die Industrie Stahl, Fahrzeuge, Maschinen und Elektronik her, die in alle Welt exportiert werden. Japan ist damit von Rohstoffimporten abhängig: Steigen die Preise oder werden Seewege unterbrochen, gerät die Wirtschaft unter Druck.",
+      "Australien verfügt über reiche Lagerstätten. Es exportiert vor allem Eisenerz, Kohle, Flüssigerdgas und Gold sowie Agrarprodukte wie Fleisch und Weizen. Ein großer Teil geht nach Asien, auch nach Japan. Industriegüter wie Fahrzeuge und Maschinen führt Australien dagegen überwiegend ein. Australien ist von seinen Rohstoffexporten abhängig: Fallen die Weltmarktpreise oder sinkt die Nachfrage, gehen die Einnahmen zurück.",
+      "Beide Staaten ergänzen sich also. Langfristig verändert der Klimaschutz diesen Handel: Wird weniger Kohle und Gas verbrannt, braucht Japan neue Energiequellen, und Australien muss andere Exporte entwickeln, zum Beispiel Rohstoffe für Batterien oder Wasserstoff aus erneuerbarem Strom."
+    ],
+    "workedExample": "Weg eines Autos: Australisches Eisenerz und Kohle werden per Schiff nach Japan gebracht. Dort entsteht daraus Stahl für ein Auto. Das fertige Auto wird nach Australien exportiert. Am Ende des Kreislaufs steht ein wertvolleres Produkt, als der Rohstoff allein war.",
+    "takeaway": "Japan ist von Rohstoffimporten abhängig und exportiert Industriegüter; Australien ist von Rohstoffexporten abhängig und importiert Industriegüter.",
+    "sourceIds": ["lehrplan", "stat-japan", "abs"],
+    "quiz": {
+      "question": "Welche Güter exportiert Japan vor allem?",
+      "answer": "Industriegüter wie Fahrzeuge, Maschinen und Elektronik.",
+      "wrong": ["Eisenerz und Kohle.", "Weizen und Fleisch."],
+      "explanation": "Japan veredelt importierte Rohstoffe zu Industriegütern."
+    },
+    "transferCheck": {
+      "question": "Wie wirkt ein starker Rückgang der Kohlepreise auf beide Staaten?",
+      "answer": "Australien nimmt weniger ein, Japan zahlt weniger für Energie.",
+      "wrong": ["Beide Staaten nehmen mehr ein.", "Japan verliert Exporteinnahmen, Australien spart."],
+      "explanation": "Der Exporteur verliert Einnahmen, der Importeur spart Kosten."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Import oder Export?",
+      "instruction": "Ordne jede Aussage zu.",
+      "categories": ["Japan importiert", "Japan exportiert", "Australien exportiert"],
+      "entries": [
+        { "text": "Erdöl aus dem Nahen Osten", "target": 0, "feedback": "Japan hat kaum eigene Ölvorkommen." },
+        { "text": "Autos nach Europa und Australien", "target": 1, "feedback": "Fahrzeuge zählen zu Japans wichtigsten Exportgütern." },
+        { "text": "Eisenerz aus dem Westen des Landes", "target": 2, "feedback": "Australien ist ein großer Eisenerzlieferant." },
+        { "text": "Flüssigerdgas per Tankschiff", "target": 2, "feedback": "Australien liefert Gas unter anderem nach Japan." }
+      ],
+      "conclusion": "Die Handelsströme zeigen, wie sich beide Volkswirtschaften ergänzen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Stelle die Abhängigkeit beider Staaten in einer Gegenüberstellung dar: Was wird importiert, was exportiert, wovon hängt jeder Staat ab?",
+        "hints": ["Nutze die Pfeile auf der Karte.", "Unterscheide Rohstoffe und Industriegüter."],
+        "model": "Japan importiert Rohstoffe wie Erdöl, Gas, Kohle und Eisenerz und exportiert Fahrzeuge, Maschinen und Elektronik; es hängt von sicheren Rohstofflieferungen ab. Australien exportiert Eisenerz, Kohle, Gas und Agrargüter und importiert Industriegüter; es hängt von den Rohstoffpreisen ab.",
+        "criteria": ["Ich nenne Importe und Exporte beider Staaten.", "Ich unterscheide Rohstoffe und Industriegüter.", "Ich nenne die jeweilige Abhängigkeit."]
+      },
+      "2": {
+        "prompt": "Beurteile, wie der weltweite Klimaschutz den Handel zwischen Japan und Australien verändern könnte.",
+        "hints": ["Was passiert mit Kohle und Gas?", "Welche neuen Güter könnten gehandelt werden?"],
+        "model": "Wenn weniger Kohle und Gas verbrannt werden, sinkt Australiens Einnahmequelle, und Japan muss andere Energie beschaffen. Chancen bestehen, wenn Australien mit Sonne und Wind Wasserstoff herstellt und nach Japan liefert oder Rohstoffe für Batterien exportiert. Der Handel kann also bleiben, aber mit anderen Gütern.",
+        "criteria": ["Ich nenne Folgen für beide Staaten.", "Ich nenne neue Handelsgüter.", "Ich formuliere ein begründetes Urteil."]
+      }
+    },
+    "figures": ["handel"]
+  },
+  {
+    "id": "verwundbarkeit",
+    "lb": 5,
+    "title": "Verwundbar: Japans Küsten und das Great Barrier Reef",
+    "period": "Geo7 LB 5 · Naturkatastrophen, menschlicher Einfluss, Schutz",
+    "intro": "In Japan bedrohen Kräfte aus dem Erdinneren die Menschen, in Australien bedroht der Mensch ein Naturwunder.",
+    "paragraphs": [
+      "Vor Japans Ostküste taucht die Pazifische Platte unter Japan ab. Daraus entstehen endogene Gefahren, also Kräfte aus dem Erdinneren: Erdbeben, Tsunamis und Vulkanausbrüche. Am 11. März 2011 löste ein sehr starkes Seebeben vor der Nordostküste einen Tsunami aus, der viele Küstenorte zerstörte und im Kernkraftwerk Fukushima Daiichi einen schweren Unfall verursachte. Hinzu kommen exogene Gefahren von außen: Taifune, Starkregen und Hangrutschungen an den steilen Gebirgen.",
+      "Japan schützt sich mit strengen Bauvorschriften für erdbebensichere Gebäude, einem Frühwarnsystem, das Handys und Züge Sekunden vor starken Erschütterungen alarmiert, hohen Schutzmauern an Küsten, Evakuierungstürmen und regelmäßigen Übungen in Schulen.",
+      "Das Great Barrier Reef ist vor allem durch menschlichen Einfluss verwundbar. Wird das Meer durch den Klimawandel zu warm, stoßen Korallen die Algen ab, mit denen sie zusammenleben, und bleichen aus; dauert die Hitze an, sterben sie. Dünger und Bodenteilchen aus der Landwirtschaft gelangen über Flüsse ins Meer und schwächen das Riff, Dornenkronenseesterne fressen Korallen, Wirbelstürme zerbrechen sie. Schutz bieten ein Meeresschutzgebiet mit Zonen, in denen Fischen oder Tourismus eingeschränkt sind, weniger Düngereintrag und weltweiter Klimaschutz."
+    ],
+    "workedExample": "Profil durch Japan von Westen nach Osten: Im Osten liegt im Pazifik ein Tiefseegraben, dort taucht die Pazifische Platte ab. Darüber verhaken sich die Platten, ein Seebeben kann einen Tsunami auslösen, der die nahe Ostküste in wenigen Minuten erreicht. Weiter westlich liegt die Vulkankette auf Honshu. Das Profil zeigt, warum Ostküste und Gebirge unterschiedlich gefährdet sind.",
+    "takeaway": "Verwundbarkeit hängt von Naturgefahr und menschlichem Handeln ab. Japan begegnet endogenen Gefahren mit Vorsorge, das Great Barrier Reef braucht Schutz vor menschlichen Einflüssen.",
+    "sourceIds": ["lehrplan", "jma-tsunami", "geofon"],
+    "quiz": {
+      "question": "Was löst eine Korallenbleiche aus?",
+      "answer": "Zu warmes Meerwasser über längere Zeit.",
+      "wrong": ["Zu viel Sonnenschutzcreme an einem einzelnen Tag.", "Ein Erdbeben vor der Küste."],
+      "explanation": "Bei anhaltender Hitze stoßen die Korallen ihre Algen ab und verlieren ihre Farbe."
+    },
+    "transferCheck": {
+      "question": "Welche Gefahr in Japan ist exogen, also von außen verursacht?",
+      "answer": "Ein Taifun mit Starkregen.",
+      "wrong": ["Ein Erdbeben an der Plattengrenze.", "Ein Vulkanausbruch des Fuji."],
+      "explanation": "Taifune entstehen in der Atmosphäre, Erdbeben und Vulkane im Erdinneren."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Ursache der Gefährdung",
+      "instruction": "Ordne jede Gefährdung zu.",
+      "categories": ["Endogene Naturgefahr", "Exogene Naturgefahr", "Menschlicher Einfluss"],
+      "entries": [
+        { "text": "Seebeben vor der Küste Honshus", "target": 0, "feedback": "Kräfte aus dem Erdinneren an der Plattengrenze." },
+        { "text": "Hangrutschung nach tagelangem Starkregen", "target": 1, "feedback": "Wasser und Schwerkraft wirken von außen." },
+        { "text": "Düngereintrag aus Zuckerrohrfeldern ins Riff", "target": 2, "feedback": "Landwirtschaft belastet das Meer." },
+        { "text": "Ausbruch eines Vulkans auf Kyushu", "target": 0, "feedback": "Aufsteigendes Magma ist eine endogene Kraft." },
+        { "text": "Meereserwärmung durch den Klimawandel", "target": 2, "feedback": "Treibhausgase des Menschen erwärmen das Meer." }
+      ],
+      "conclusion": "Schutzmaßnahmen müssen zur Ursache der Gefährdung passen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre mit dem Profil, warum Japans Ostküste besonders durch Tsunamis gefährdet ist, und nenne zwei Schutzmaßnahmen.",
+        "hints": ["Wo liegt der Tiefseegraben?", "Wie viel Zeit bleibt bis zur Ankunft?"],
+        "model": "Vor der Ostküste liegt der Tiefseegraben, an dem die Pazifische Platte abtaucht. Seebeben dort heben den Meeresboden an und lösen Tsunamis aus, die die nahe Küste schnell erreichen. Schutz bieten ein Frühwarnsystem mit sofortiger Alarmierung und Evakuierungstürme oder hohe Schutzmauern.",
+        "criteria": ["Ich nenne die Plattengrenze vor der Ostküste.", "Ich erkläre die kurze Vorwarnzeit.", "Ich nenne zwei Schutzmaßnahmen."]
+      },
+      "2": {
+        "prompt": "Bewerte, welche Schutzmaßnahme für das Great Barrier Reef am wichtigsten ist. Begründe mit der Ursache der Gefährdung.",
+        "hints": ["Welche Ursache wirkt großräumig?", "Was kann Australien allein tun, was nicht?"],
+        "model": "Die Meereserwärmung schädigt das ganze Riff zugleich und ist deshalb die größte Gefahr. Australien allein kann sie nicht stoppen; dafür ist weltweiter Klimaschutz nötig. Weniger Dünger und Schutzzonen kann Australien selbst umsetzen; sie stärken das Riff, damit es sich nach Hitzewellen besser erholt. Am wichtigsten bleibt der Klimaschutz.",
+        "criteria": ["Ich nenne die wichtigste Ursache.", "Ich unterscheide örtliche und weltweite Maßnahmen.", "Ich formuliere ein begründetes Urteil."]
+      }
+    },
+    "figures": ["japan-profil"]
+  }
+]
