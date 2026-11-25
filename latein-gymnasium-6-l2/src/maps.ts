@@ -98,43 +98,50 @@ export const ITALY_PLACES = {
 		name: "Rom",
 		layer: "staedte",
 		pin: [204, 178] as MapPoint,
-		labelAt: [112, 174] as MapPoint,
+		labelAt: [214, 176] as MapPoint,
+		anchor: "start",
 	},
 	ostia: {
 		name: "Ostia",
 		layer: "staedte",
 		pin: [182, 196] as MapPoint,
-		labelAt: [114, 214] as MapPoint,
+		labelAt: [172, 202] as MapPoint,
+		anchor: "end",
 	},
 	neapolis: {
 		name: "Neapolis",
 		layer: "staedte",
 		pin: [274, 232] as MapPoint,
-		labelAt: [176, 238] as MapPoint,
+		labelAt: [274, 218] as MapPoint,
+		anchor: "middle",
 	},
 	vesuv: {
 		name: "Vesuv",
 		layer: "vesuv",
 		pin: [306, 242] as MapPoint,
-		labelAt: [324, 232] as MapPoint,
+		labelAt: [322, 242] as MapPoint,
+		anchor: "start",
 	},
 	herkulaneum: {
 		name: "Herkuláneum",
 		layer: "vesuv",
 		pin: [292, 254] as MapPoint,
-		labelAt: [168, 276] as MapPoint,
+		labelAt: [284, 268] as MapPoint,
+		anchor: "end",
 	},
 	pompeji: {
 		name: "Pompeji",
 		layer: "vesuv",
 		pin: [322, 258] as MapPoint,
-		labelAt: [338, 272] as MapPoint,
+		labelAt: [334, 268] as MapPoint,
+		anchor: "start",
 	},
 	syrakus: {
 		name: "Syrakus",
 		layer: "regionen",
 		pin: [352, 372] as MapPoint,
-		labelAt: [370, 376] as MapPoint,
+		labelAt: [368, 376] as MapPoint,
+		anchor: "start",
 	},
 } as const;
 
@@ -195,11 +202,11 @@ export function renderItalyMap(): string {
 	<path class="land" d="${path(SICILY_LAND)} Z"/>
 	<g class="water-labels"><text x="64" y="308">Mare Tyrrhenum</text><text x="364" y="120">Mare Hadriaticum</text><text x="536" y="36">N ↑</text></g>
 	<g data-map-layer="regionen" class="map-regionen">
-		<text x="410" y="316" class="region-label">Magna Graecia</text>
+		<text x="384" y="298" text-anchor="middle" class="region-label">Magna<tspan x="384" dy="14">Graecia</tspan></text>
 		${byLayer("regionen")
 			.map(
 				([id, item]) =>
-					`<circle data-place="${id}" cx="${item.pin[0]}" cy="${item.pin[1]}" r="6"/><text data-place-label="${id}" x="${item.labelAt[0]}" y="${item.labelAt[1]}">${item.name}</text>`,
+					`<circle data-place="${id}" cx="${item.pin[0]}" cy="${item.pin[1]}" r="6"/><text data-place-label="${id}" x="${item.labelAt[0]}" y="${item.labelAt[1]}" text-anchor="${item.anchor}">${item.name}</text>`,
 			)
 			.join("")}
 	</g>
@@ -207,18 +214,18 @@ export function renderItalyMap(): string {
 		${byLayer("staedte")
 			.map(
 				([id, item]) =>
-					`<circle data-place="${id}" cx="${item.pin[0]}" cy="${item.pin[1]}" r="6"/><text data-place-label="${id}" x="${item.labelAt[0]}" y="${item.labelAt[1]}">${item.name}</text>`,
+					`<circle data-place="${id}" cx="${item.pin[0]}" cy="${item.pin[1]}" r="6"/><text data-place-label="${id}" x="${item.labelAt[0]}" y="${item.labelAt[1]}" text-anchor="${item.anchor}">${item.name}</text>`,
 			)
 			.join("")}
 	</g>
 	<g data-map-layer="vesuv" class="map-vesuv">
 		<polygon points="${ITALY_PLACES.vesuv.pin[0]},${ITALY_PLACES.vesuv.pin[1] - 10} ${ITALY_PLACES.vesuv.pin[0] - 9},${ITALY_PLACES.vesuv.pin[1] + 6} ${ITALY_PLACES.vesuv.pin[0] + 9},${ITALY_PLACES.vesuv.pin[1] + 6}" class="volcano" data-place="vesuv"/>
-		<text data-place-label="vesuv" x="${ITALY_PLACES.vesuv.labelAt[0]}" y="${ITALY_PLACES.vesuv.labelAt[1]}">${ITALY_PLACES.vesuv.name}</text>
+		<text data-place-label="vesuv" x="${ITALY_PLACES.vesuv.labelAt[0]}" y="${ITALY_PLACES.vesuv.labelAt[1]}" text-anchor="${ITALY_PLACES.vesuv.anchor}">${ITALY_PLACES.vesuv.name}</text>
 		${byLayer("vesuv")
 			.filter(([id]) => id !== "vesuv")
 			.map(
 				([id, item]) =>
-					`<circle data-place="${id}" cx="${item.pin[0]}" cy="${item.pin[1]}" r="5.5"/><text data-place-label="${id}" x="${item.labelAt[0]}" y="${item.labelAt[1]}">${item.name}</text>`,
+					`<circle data-place="${id}" cx="${item.pin[0]}" cy="${item.pin[1]}" r="5.5"/><text data-place-label="${id}" x="${item.labelAt[0]}" y="${item.labelAt[1]}" text-anchor="${item.anchor}">${item.name}</text>`,
 			)
 			.join("")}
 	</g>

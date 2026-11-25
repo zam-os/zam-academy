@@ -350,66 +350,18 @@ export function renderTimelineSvg(): string {
 	</figure>`;
 }
 
-export function renderOlympierSvg(): string {
-	const groups = [
-		{
-			label: "Himmel, Meer & Unterwelt",
-			cards: [
-				{ gr: "Zeus", la: "Iuppiter", domain: "Blitz & Göttervater" },
-				{ gr: "Hera", la: "Iūnō", domain: "Ehe & Familie" },
-				{ gr: "Poseidon", la: "Neptūnus", domain: "Meer & Erdbeben" },
-				{ gr: "Hades", la: "Plūtō", domain: "Unterwelt" },
-			],
-		},
-		{
-			label: "Weisheit, Licht & Jagd",
-			cards: [
-				{ gr: "Athene", la: "Minerva", domain: "Weisheit & Handwerk" },
-				{ gr: "Apollon", la: "Apollō", domain: "Musik, Licht & Orakel" },
-				{ gr: "Artemis", la: "Diāna", domain: "Jagd & Mond" },
-				{ gr: "Demeter", la: "Cerēs", domain: "Fruchtbarkeit & Acker" },
-			],
-		},
-		{
-			label: "Krieg, Liebe, Bote & Herd",
-			cards: [
-				{ gr: "Ares", la: "Mārs", domain: "Krieg" },
-				{ gr: "Aphrodite", la: "Venus", domain: "Liebe & Schönheit" },
-				{ gr: "Hermes", la: "Mercurius", domain: "Götterbote & Handel" },
-				{ gr: "Hephaistos", la: "Vulcānus", domain: "Feuer & Schmiede" },
-			],
-		},
-	];
-	return `<figure class="svg-lab" data-olympier-lab>
-		<svg viewBox="0 0 600 185" role="img" aria-label="Griechische und römische Gottheiten im Überblick">
-			${groups[0].cards
-				.map((c, i) => {
-					const x = 14 + i * 146;
-					return `<rect x="${x}" y="20" width="134" height="142" rx="12" class="node-box"/>
-						<text x="${x + 67}" y="54" text-anchor="middle" class="node-title">${c.gr}</text>
-						<text x="${x + 67}" y="82" text-anchor="middle" class="node-detail">${c.la}</text>
-						<text x="${x + 67}" y="122" text-anchor="middle" class="node-hint">${c.domain}</text>`;
-				})
-				.join("")}
-		</svg>
-		<div class="diagram-controls">
-			${groups
-				.map(
-					(g, i) =>
-						`<button type="button" class="button secondary" data-olympier-btn="${i}" aria-pressed="${i === 0 ? "true" : "false"}">${g.label}</button>`,
-				)
-				.join("")}
-		</div>
-		<p class="lab-readout" data-olympier-readout aria-live="polite">Griechische und römische Namen entsprechen sich paarweise (z. B. Zeus = Iuppiter, Athene = Minerva).</p>
-	</figure>`;
-}
+const OLYMPIER_GROUP_LABELS = [
+	"Himmel, Meer & Herd",
+	"Weisheit, Licht & Jagd",
+	"Krieg, Liebe, Bote & Feuer",
+] as const;
 
 export const OLYMPIER_GROUPS = [
 	[
 		{ gr: "Zeus", la: "Iuppiter", domain: "Blitz & Göttervater" },
 		{ gr: "Hera", la: "Iūnō", domain: "Ehe & Familie" },
 		{ gr: "Poseidon", la: "Neptūnus", domain: "Meer & Erdbeben" },
-		{ gr: "Hades", la: "Plūtō", domain: "Unterwelt" },
+		{ gr: "Hestia", la: "Vesta", domain: "Herd & Hausfeuer" },
 	],
 	[
 		{ gr: "Athene", la: "Minerva", domain: "Weisheit & Handwerk" },
@@ -424,6 +376,31 @@ export const OLYMPIER_GROUPS = [
 		{ gr: "Hephaistos", la: "Vulcānus", domain: "Feuer & Schmiede" },
 	],
 ];
+
+export function renderOlympierSvg(): string {
+	return `<figure class="svg-lab" data-olympier-lab>
+		<svg viewBox="0 0 600 185" role="img" aria-label="Griechische und römische Gottheiten im Überblick">
+			${OLYMPIER_GROUPS[0]
+				.map((c, i) => {
+					const x = 14 + i * 146;
+					return `<rect x="${x}" y="20" width="134" height="142" rx="12" class="node-box"/>
+						<text x="${x + 67}" y="54" text-anchor="middle" class="node-title">${c.gr}</text>
+						<text x="${x + 67}" y="82" text-anchor="middle" class="node-detail">${c.la}</text>
+						<text x="${x + 67}" y="122" text-anchor="middle" class="node-hint">${c.domain}</text>`;
+				})
+				.join("")}
+		</svg>
+		<div class="diagram-controls">
+			${OLYMPIER_GROUP_LABELS
+				.map(
+					(label, i) =>
+						`<button type="button" class="button secondary" data-olympier-btn="${i}" aria-pressed="${i === 0 ? "true" : "false"}">${label}</button>`,
+				)
+				.join("")}
+		</div>
+		<p class="lab-readout" data-olympier-readout aria-live="polite">Griechische und römische Namen entsprechen sich paarweise (z. B. Zeus = Iuppiter, Athene = Minerva). Hades/Plūtō herrscht über die Unterwelt und zählt nicht zu den zwölf Olympiern.</p>
+	</figure>`;
+}
 
 export const TIMELINE_EPOCHS = [
 	{ year: "Mythos", title: "Aeneas & Troja", text: "Aeneas flieht aus Troja nach Latium; Vergil erzählt diesen Ursprungsmythos in der Aeneis." },

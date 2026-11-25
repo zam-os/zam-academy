@@ -154,6 +154,16 @@ describe("Rome and Italy map topology and label separation", () => {
 		expect(ITALY_PLACES.pompeji.pin[0]).toBeGreaterThan(ITALY_PLACES.vesuv.pin[0]);
 		expect(ITALY_PLACES.pompeji.pin[1]).toBeGreaterThan(ITALY_PLACES.vesuv.pin[1]);
 		expect(ITALY_PLACES.herkulaneum.pin[0]).toBeLessThan(ITALY_PLACES.vesuv.pin[0]);
+		for (const id of ["roma", "neapolis", "vesuv", "pompeji"] as const) {
+			expect(onPolygon(ITALY_PLACES[id].labelAt, ITALY_LAND), `${id} label`).toBe(true);
+		}
+		for (const id of ["ostia", "herkulaneum"] as const) {
+			const dist = Math.hypot(
+				ITALY_PLACES[id].labelAt[0] - ITALY_PLACES[id].pin[0],
+				ITALY_PLACES[id].labelAt[1] - ITALY_PLACES[id].pin[1],
+			);
+			expect(dist, `${id} coastal label distance`).toBeLessThanOrEqual(18);
+		}
 		const labels = Object.values(ITALY_PLACES).map((p) => p.labelAt);
 		for (let i = 0; i < labels.length; i++) {
 			for (let j = i + 1; j < labels.length; j++) {
