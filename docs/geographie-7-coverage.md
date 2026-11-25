@@ -81,10 +81,11 @@ All source cells were read at zam-os/zam commit `4aeaa8e3455937f8a53cd57e686ff98
 
 The [mapping](../geographie-realschule-7/replaces-de-by.json) is therefore
 `proposal-only` with `approved: null` and no rows, and the cell declares neither
-`replaces` nor `retired_items`. Open question for Thomas: should the Grade 8
-legacy items on the Wendekreiswüsten (`01K4G8T0000000000000000J03`) and on
-rainforest nutrients (`01K4G8T0000000000000000J01`) move from the Geographie 8
-mapping to this package? Their nearest successors here are
-`geo7rs-wuesten-erklaeren` and `geo7rs-regenwald-mischwald-check`; both would
-still be C under the current rules (the old prompts state fixed percentages or
-latitudes the new cards do not ask).
+`replaces` nor `retired_items`.
+
+Decision: Thomas decided on 25 November 2026 in the Claude Code chat for
+Academy PR #200 to leave the Grade 8 legacy items on the Wendekreiswüsten
+(`01K4G8T0000000000000000J03`) and on rainforest nutrients
+(`01K4G8T0000000000000000J01`) in the Geographie 8 mapping ("Leave them in
+Geo 8"). This package therefore maps no legacy item. The decision concerns
+which package inventories the items; it approves no history transfer.
