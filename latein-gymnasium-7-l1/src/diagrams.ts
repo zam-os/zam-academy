@@ -252,12 +252,17 @@ export const HAUPTSATZ_MOODS: Record<
 	},
 };
 
+export type ImperiumLayer = "provinzen" | "heiligtuemer" | "weltwunder";
+
 export interface ImperiumPlace {
 	id: string;
 	name: string;
-	layer: "provinzen" | "heiligtuemer" | "weltwunder";
+	layers: ImperiumLayer[];
 	x: number;
 	y: number;
+	labelAnchor?: "start" | "end" | "middle";
+	labelDx?: number;
+	labelDy?: number;
 	info: string;
 }
 
@@ -265,74 +270,134 @@ export const IMPERIUM_PLACES: ImperiumPlace[] = [
 	{
 		id: "roma",
 		name: "Roma",
-		layer: "provinzen",
-		x: 248,
-		y: 138,
+		layers: ["provinzen"],
+		x: 246,
+		y: 140,
+		labelAnchor: "start",
+		labelDx: 10,
+		labelDy: 4,
 		info: "Hauptstadt des Imperium Romanum, Ausgangspunkt der Verwaltung und Triumphzüge.",
 	},
 	{
 		id: "cambodunum",
 		name: "Cambodunum",
-		layer: "provinzen",
-		x: 222,
-		y: 62,
+		layers: ["provinzen"],
+		x: 218,
+		y: 60,
+		labelAnchor: "start",
+		labelDx: 10,
+		labelDy: 4,
 		info: "Römische Stadt in der Provinz Raetia (heute Kempten im Allgäu), ein wichtiges heimisches Zeugnis römischer Provinzialkultur.",
 	},
 	{
 		id: "sicilia",
 		name: "Sicilia",
-		layer: "provinzen",
-		x: 266,
-		y: 204,
+		layers: ["provinzen"],
+		x: 258,
+		y: 206,
+		labelAnchor: "end",
+		labelDx: -10,
+		labelDy: 4,
 		info: "Erste römische Provinz (241 v. Chr.), strategische Brücke zwischen Italien und Nordafrika.",
 	},
 	{
 		id: "cumae",
 		name: "Cumae",
-		layer: "heiligtuemer",
-		x: 274,
-		y: 164,
+		layers: ["heiligtuemer"],
+		x: 266,
+		y: 166,
+		labelAnchor: "start",
+		labelDx: 10,
+		labelDy: 4,
 		info: "Älteste griechische Kolonie auf dem italienischen Festland, berühmt für die Weissagungen der Sibylle von Cumae.",
 	},
 	{
 		id: "olympia",
 		name: "Olympia",
-		layer: "heiligtuemer",
-		x: 344,
+		layers: ["heiligtuemer", "weltwunder"],
+		x: 340,
 		y: 194,
-		info: "Zeus-Heiligtum auf der Peloponnes und Austragungsort der antiken Olympischen Spiele (Gottesfrieden ekecheiria); dort stand die Zeusstatue des Phidias.",
+		labelAnchor: "end",
+		labelDx: -10,
+		labelDy: 5,
+		info: "Zeus-Heiligtum auf der Peloponnes und Austragungsort der antiken Olympischen Spiele (Gottesfrieden ekecheiria); im Tempel stand die Zeusstatue des Phidias (eines der sieben Weltwunder).",
 	},
 	{
 		id: "delphi",
 		name: "Delphi",
-		layer: "heiligtuemer",
-		x: 364,
-		y: 170,
+		layers: ["heiligtuemer"],
+		x: 352,
+		y: 166,
+		labelAnchor: "start",
+		labelDx: 10,
+		labelDy: 3,
 		info: "Apollon-Heiligtum am Parnass: Die Priesterin Pythia verkündete dort vieldeutige Orakelsprüche.",
 	},
 	{
 		id: "ephesos",
-		name: "Ephesos / Halikarnassos",
-		layer: "weltwunder",
-		x: 432,
-		y: 184,
-		info: "In Kleinasien lagen der Artemistempel von Ephesos, das Mausoleum von Halikarnassos sowie der Koloss von Rhodos.",
+		name: "Ephesos",
+		layers: ["weltwunder"],
+		x: 422,
+		y: 168,
+		labelAnchor: "start",
+		labelDx: 10,
+		labelDy: -2,
+		info: "An der Westküste Kleinasiens stand der gewaltige Artemistempel von Ephesos, eines der sieben Weltwunder der Antike.",
+	},
+	{
+		id: "halikarnassos",
+		name: "Halikarnassos",
+		layers: ["weltwunder"],
+		x: 430,
+		y: 192,
+		labelAnchor: "start",
+		labelDx: 10,
+		labelDy: 4,
+		info: "An der Südwestküste Kleinasiens errichtete man für König Maussolos das monumentale Mausoleum von Halikarnassos.",
+	},
+	{
+		id: "rhodos",
+		name: "Rhodos",
+		layers: ["weltwunder"],
+		x: 420,
+		y: 216,
+		labelAnchor: "end",
+		labelDx: -10,
+		labelDy: 5,
+		info: "Auf der Ägäisinsel Rhodos erhob sich die bronzene Sonnengottstatue (Koloss von Rhodos) nahe dem Hafen.",
 	},
 	{
 		id: "alexandria",
-		name: "Alexandria & Gizeh",
-		layer: "weltwunder",
-		x: 472,
-		y: 256,
-		info: "Hellenistische Metropole Ägyptens mit dem Leuchtturm von Pharos; nahebei die Pyramiden von Gizeh.",
+		name: "Alexandria",
+		layers: ["weltwunder"],
+		x: 468,
+		y: 252,
+		labelAnchor: "end",
+		labelDx: -10,
+		labelDy: 3,
+		info: "Hellenistische Hafenmetropole Ägyptens am westlichen Nildelta: Auf der vorgelagerten Insel Pharos wies der berühmte Leuchtturm den Schiffen den Weg.",
+	},
+	{
+		id: "gizeh",
+		name: "Gizeh",
+		layers: ["weltwunder"],
+		x: 486,
+		y: 286,
+		labelAnchor: "start",
+		labelDx: 10,
+		labelDy: 4,
+		info: "Auf dem Plateau von Gizeh am Nil (nahe dem heutigen Kairo) stehen die Pyramiden — das älteste und einzig erhaltene der sieben Weltwunder.",
 	},
 	{
 		id: "babylon",
 		name: "Babylon",
-		layer: "weltwunder",
-		x: 562,
-		y: 206,
-		info: "Bekannt für die überlieferten Hängenden Gärten und zugleich Sterbeort Alexanders des Großen (323 v. Chr.).",
+		layers: ["weltwunder"],
+		x: 576,
+		y: 214,
+		labelAnchor: "middle",
+		labelDx: 0,
+		labelDy: -12,
+		info: "In Mesopotamien gelegen: bekannt für die in antiken Quellen überlieferten Hängenden Gärten und zugleich Sterbeort Alexanders des Großen (323 v. Chr.).",
 	},
 ];
 
@@ -506,24 +571,27 @@ function renderImperiumMap(lesson: Lesson): string {
 		<button type="button" class="button secondary" data-map-layer="heiligtuemer" aria-pressed="false">Religiöse Zentren</button>
 		<button type="button" class="button secondary" data-map-layer="weltwunder" aria-pressed="false">Weltwunder</button>
 	</div>
-	<svg class="diagram-svg" viewBox="0 0 640 300" role="img" aria-label="${esc(lesson.diagram.title)}">
-		<rect x="0" y="0" width="640" height="300" class="sea"/>
-		<path class="land" d="M40 20 H610 V140 L565 170 L520 178 L468 188 L430 198 L398 182 L365 212 L338 205 L320 170 L288 188 L266 196 L248 164 L224 134 L182 128 L142 150 L94 146 L52 174 L40 155 Z"/>
-		<path class="land" d="M250 196 L278 196 L274 218 L248 214 Z"/>
-		<path class="land" d="M40 220 L215 224 L270 238 L370 242 L485 246 L610 240 V300 H40 Z"/>
+	<svg class="diagram-svg" viewBox="0 0 640 320" role="img" aria-label="${esc(lesson.diagram.title)}">
+		<rect x="0" y="0" width="640" height="320" class="sea"/>
+		<path class="land" d="M35 18 H615 V255 L522 252 L516 205 L495 190 L446 192 L426 198 L412 182 L416 158 L392 154 L374 176 L360 204 L334 198 L316 164 L286 184 L264 192 L244 158 L220 130 L178 124 L138 148 L92 144 L50 172 L35 152 Z"/>
+		<path class="land" d="M244 196 L272 196 L268 216 L242 212 Z"/>
+		<path class="land" d="M412 214 L426 208 L430 218 L416 224 Z"/>
+		<path class="land" d="M35 232 L215 236 L275 248 L380 252 L470 250 L522 252 L615 255 V310 H35 Z"/>
 		<ellipse cx="320" cy="145" rx="225" ry="95" class="province-zone"/>
-		<text x="148" y="186" text-anchor="middle" font-size="12" font-style="italic" class="svg-muted">Mare Nostrum (Mittelmeer)</text>
-		<text x="115" y="96" font-size="12" class="svg-muted">Gallia</text>
-		<text x="82" y="138" font-size="12" class="svg-muted">Hispania</text>
-		<text x="218" y="88" font-size="12" class="svg-muted">Raetia</text>
-		<text x="415" y="142" font-size="12" class="svg-muted">Asia Minor</text>
+		<text x="122" y="208" text-anchor="middle" font-size="12" font-style="italic" class="svg-muted">Mare Nostrum (Mittelmeer)</text>
+		<text x="112" y="94" font-size="12" class="svg-muted">Gallia</text>
+		<text x="76" y="136" font-size="12" class="svg-muted">Hispania</text>
+		<text x="214" y="86" font-size="12" class="svg-muted">Raetia</text>
+		<text x="456" y="132" font-size="12" class="svg-muted">Asia Minor</text>
+		<text x="402" y="288" font-size="12" class="svg-muted">Aegyptus</text>
 		${IMPERIUM_PLACES.map((p, i) => {
-			const alignLeft = p.id === "babylon" || p.id === "sicilia";
-			const labelX = alignLeft ? p.x - 11 : p.x + 11;
-			const anchor = alignLeft ? "end" : "start";
-			return `<g class="svg-node" data-place-id="${p.id}" data-place-layer="${p.layer}" tabindex="0" role="button" aria-pressed="${i === 0}">
-				<circle cx="${p.x}" cy="${p.y}" r="8" class="svg-accent" stroke="var(--surface)" stroke-width="2"/>
-				<text x="${labelX}" y="${p.y + 4}" text-anchor="${anchor}" font-size="12" font-weight="700">${esc(p.name)}</text>
+			const anchor = p.labelAnchor ?? "start";
+			const labelX = p.x + (p.labelDx ?? 10);
+			const labelY = p.y + (p.labelDy ?? 4);
+			return `<g class="svg-node" data-place-id="${p.id}" data-place-layers="${p.layers.join(",")}" tabindex="0" role="button" aria-pressed="${i === 0}">
+				<circle cx="${p.x}" cy="${p.y}" r="12" fill="transparent"/>
+				<circle cx="${p.x}" cy="${p.y}" r="6.5" class="svg-accent" stroke="var(--surface)" stroke-width="2"/>
+				<text x="${labelX}" y="${labelY}" text-anchor="${anchor}" font-size="11.5" font-weight="700">${esc(p.name)}</text>
 			</g>`;
 		}).join("")}
 	</svg>
@@ -760,7 +828,8 @@ export function bindDiagram(lesson: Lesson, container: HTMLElement): void {
 					b.setAttribute("aria-pressed", String(b === btn)),
 				);
 				placeNodes.forEach((node) => {
-					const show = layer === "all" || node.dataset.placeLayer === layer;
+					const layers = (node.dataset.placeLayers ?? "").split(",");
+					const show = layer === "all" || (layer ? layers.includes(layer) : false);
 					node.style.opacity = show ? "1" : "0.22";
 				});
 			}),

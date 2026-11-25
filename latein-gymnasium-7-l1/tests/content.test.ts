@@ -280,4 +280,26 @@ describe("ZAM content and identifier contracts", () => {
 			}
 		},
 	);
+
+	it("preserves PR #201 linguistic and historical accuracy fixes", () => {
+		const stress = findLesson("l7-aussprache-paenultima")!;
+		expect(stress.material).toContain("prōvincia");
+		expect(stress.material).not.toContain("provīncia");
+		expect(stress.tasks[1].model).toContain("prō-VÍN-ci-a");
+		expect(stress.tasks[1].model).toContain("vorletzte Silbe -ci-");
+
+		const perfKonj = findLesson("l7-konjunktiv-perfekt")!;
+		expect(perfKonj.material).toContain("Ne dubitaveris, amice,");
+		expect(perfKonj.material).not.toContain("dubitaveris, amici");
+		expect(perfKonj.tasks[1].model).toContain("Zweifle nicht, Freund,");
+
+		const clauses = findLesson("l7-indirekte-fragen-begehr")!;
+		expect(clauses.paragraphs[0]).toContain("verneint ne");
+		expect(clauses.paragraphs[0]).toContain("verneint ut non");
+
+		const wonders = findLesson("l7-weltwunder-staetten")!;
+		expect(wonders.paragraphs[0]).toContain("mesopotamische Tradition");
+		expect(wonders.paragraphs[0]).toContain("Nebukadnezar II.");
+		expect(wonders.paragraphs[0]).toContain("archäologisch bis heute nicht gesichert");
+	});
 });

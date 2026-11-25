@@ -69,15 +69,32 @@ describe("interactive SVG models stay finite and accurate across all settings", 
 	});
 
 	it("keeps map places, cursus stages, epoch stages and stage icons complete", () => {
-		expect(IMPERIUM_PLACES.length).toBeGreaterThanOrEqual(9);
+		expect(IMPERIUM_PLACES).toHaveLength(12);
 		for (const place of IMPERIUM_PLACES) {
 			expect(Number.isFinite(place.x)).toBe(true);
 			expect(Number.isFinite(place.y)).toBe(true);
 			expect(place.x).toBeGreaterThan(20);
 			expect(place.x).toBeLessThan(610);
 			expect(place.y).toBeGreaterThan(20);
-			expect(place.y).toBeLessThan(280);
+			expect(place.y).toBeLessThan(305);
+			expect(place.layers.length).toBeGreaterThan(0);
 		}
+		const wonders = IMPERIUM_PLACES.filter((p) =>
+			p.layers.includes("weltwunder"),
+		).map((p) => p.id);
+		expect(wonders).toEqual([
+			"olympia",
+			"ephesos",
+			"halikarnassos",
+			"rhodos",
+			"alexandria",
+			"gizeh",
+			"babylon",
+		]);
+		const olympia = IMPERIUM_PLACES.find((p) => p.id === "olympia");
+		expect(olympia?.layers).toEqual(["heiligtuemer", "weltwunder"]);
+		expect(IMPERIUM_PLACES.some((p) => p.id === "rhodos")).toBe(true);
+		expect(IMPERIUM_PLACES.some((p) => p.id === "gizeh")).toBe(true);
 		expect(CURSUS_STAGES).toHaveLength(4);
 		expect(EPOCHEN_STAGES).toHaveLength(4);
 		expect(Object.keys(HAUPTSATZ_MOODS)).toEqual([

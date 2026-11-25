@@ -169,6 +169,7 @@ try {
 		"l7-consecutio-temporum",
 		"l7-abl-abs-aufbau",
 		"l7-imperium-provinzen",
+		"l7-weltwunder-staetten",
 		"l7-cursus-honorum",
 		"l7-spaete-republik",
 		"l7-oedipus-antigone",
@@ -310,18 +311,56 @@ try {
 
 	await route("#lesson=l7-imperium-provinzen&level=1");
 	await evaluate('document.querySelector("[data-map-layer=heiligtuemer]").click()');
-	assert.equal(
+	for (const id of ["olympia", "delphi", "cumae"]) {
+		assert.equal(
+			await evaluate(
+				`document.querySelector('[data-place-id=${id}]').style.opacity`,
+			),
+			"1",
+		);
+	}
+	for (const id of ["roma", "rhodos"]) {
+		assert.equal(
+			await evaluate(
+				`document.querySelector('[data-place-id=${id}]').style.opacity`,
+			),
+			"0.22",
+		);
+	}
+
+	await route("#lesson=l7-weltwunder-staetten&level=1");
+	await evaluate('document.querySelector("[data-map-layer=weltwunder]").click()');
+	for (const id of [
+		"olympia",
+		"ephesos",
+		"halikarnassos",
+		"rhodos",
+		"alexandria",
+		"gizeh",
+		"babylon",
+	]) {
+		assert.equal(
+			await evaluate(
+				`document.querySelector('[data-place-id=${id}]').style.opacity`,
+			),
+			"1",
+		);
+	}
+	for (const id of ["roma", "delphi"]) {
+		assert.equal(
+			await evaluate(
+				`document.querySelector('[data-place-id=${id}]').style.opacity`,
+			),
+			"0.22",
+		);
+	}
+	for (const theme of ["light", "dark"]) {
 		await evaluate(
-			'document.querySelector("[data-place-id=roma]").style.opacity',
-		),
-		"0.22",
-	);
-	assert.equal(
-		await evaluate(
-			'document.querySelector("[data-place-id=delphi]").style.opacity',
-		),
-		"1",
-	);
+			`document.documentElement.dataset.theme=${JSON.stringify(theme)}`,
+		);
+		await frame();
+		await screenshot(`l7-weltwunder-layer-${theme}`);
+	}
 
 	// Responsive widths check
 	for (const width of [390, 720]) {
