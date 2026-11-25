@@ -1,0 +1,571 @@
+{
+	"curriculum": "https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/7/englisch/1-fremdsprache",
+	"checked": "2026-11-23",
+	"curriculum_sha256": "a11d68521059288f18a2edb3059aa78de16d18e26c26bee06505615c619d3ca3",
+	"neighbours": {
+		"grade6": {
+			"url": "https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/6/englisch/1-fremdsprache",
+			"sha256": "35684fbe52bba27222d0f8de828afa6ec3078356d6284e0b8914c6bcd985e0ca",
+			"note": "Grade 6 (first foreign language) introduces the going-to, will and timetable future, past progressive, resultative present perfect simple, adjective comparison, relative and contact clauses, modal substitutes (be able to, have to, be allowed to) and conditional I. Grade 7 builds on them (e.g. present perfect with since/for, conditional II after conditional I) and repeats them only in contrast."
+		},
+		"grade7_second_language": {
+			"url": "https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/7/englisch/2-fremdsprache",
+			"sha256": "e66b2c2d4a923fd266a05e26aae2aad7932d65487ec1e8601b89682567592df7",
+			"note": "English 7 as second foreign language (second year) has its own Fachlehrplan (adjectives and adverbs, reflexive pronouns, relative clauses, although/so that/while) and is outside this first-foreign-language package, as for englisch-gymnasium-6."
+		},
+		"grade8": {
+			"url": "https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/8/englisch/1-fremdsprache",
+			"sha256": "8cd6b4d9288c4850da390823734e80ae19ce56cf583df8ad832dfaf3290d022c",
+			"boundary": "Grade 8 introduces the passive in different tenses, verbs with two objects, gerund and infinitive constructions, further article use, London, the political systems of the UK and the USA, Canada and the founding of the USA (Boston Tea Party, Declaration of Independence). Those targets are outside this package; Independence Day names the Declaration only as the reason for the holiday."
+		}
+	},
+	"scope": "Bavaria, Gymnasium, English (1st foreign language, 3rd year of learning); one common Fachlehrplan for Jahrgangsstufe 7 across Ausbildungsrichtungen.",
+	"indexing": "E7-01…E7-43 are package-local row identifiers matching the 43 top-level expectations and topic blocks in source order. Grammar sublists remain inside their parent expectation.",
+	"hours": null,
+	"hours_note": "The official page specifies no hours per learning area.",
+	"optional_lessons": [],
+	"rows": [
+		{
+			"id": "E7-01",
+			"lb": "1.1",
+			"competence": "verstehen auch längere, leicht verständliche, deutlich und in zunehmend natürlichem Tempo in britischer bzw. amerikanischer Standardsprache vorgetragene Sprachäußerungen und Gespräche sowie medial dargebotene Hör- und Hörsehtexte zu altersgemäßen Themen (z. B. Interviews mit amerikanischen Jugendlichen, audio tours, Videoclips, Vlogs), die größtenteils bekanntes bzw. erschließbares Sprachmaterial beinhalten.",
+			"lessons": [
+				"e7-vlog-listening",
+				"e7-pronunciation"
+			],
+			"status": "supported",
+			"evidence": "The vlog and pronunciation lessons prepare global and detail listening with local scripts, optional local speech synthesis and a partner-reading fallback. Natural interviews, audio tours, video clips and real vlogs at natural speed stay outside the app."
+		},
+		{
+			"id": "E7-02",
+			"lb": "1.1",
+			"competence": "entnehmen Texten Global- und bestimmte Detailinformationen, ggf. auch unter Zuhilfenahme der visuellen Elemente, und erkennen ggf. die Gefühlslagen der Sprecherinnen und Sprecher.",
+			"lessons": [
+				"e7-vlog-listening",
+				"e7-film-scene"
+			],
+			"status": "supported",
+			"evidence": "Ellie's vlog trains gist, detail (place, temperature, animal) and a change of feeling (nervous to proud); the film-scene lesson links visual elements to atmosphere. Real audio-visual media remain extra practice."
+		},
+		{
+			"id": "E7-03",
+			"lb": "1.1",
+			"competence": "verstehen eine Vielfalt längerer, auch einfacher authentischer Texte (z. B. Darstellungen von historischen Ereignissen auf englischsprachigen Internetseiten für Kinder und Jugendliche, Artikel aus Jugendzeitschriften, Abenteuergeschichten) zu altersgemäßen, auch über das Alltagsleben hinausreichenden Themen und mit überwiegend bekanntem Sprachmaterial.",
+			"lessons": [
+				"e7-reading-strategies",
+				"e7-1066",
+				"e7-check-sources",
+				"e7-us-school",
+				"e7-thanksgiving"
+			],
+			"status": "implemented",
+			"evidence": "Longer adapted texts (adventure story, history website for kids, website check, vlog transcript, blog post) with explanations, quick checks, short answers and two task levels. Authentic magazines and readers add further reading."
+		},
+		{
+			"id": "E7-04",
+			"lb": "1.1",
+			"competence": "erschließen nicht zu schwierige Texte mithilfe geeigneter Lesetechniken (scanning, skimming) zunehmend selbständig, ggf. auch mithilfe des zweisprachigen Wörterbuchs, und übergehen dabei einzelne unbekannte, für das Verstehen nicht notwendige Vokabeln.",
+			"lessons": [
+				"e7-reading-strategies",
+				"e7-southwest-mediation",
+				"e7-word-building"
+			],
+			"status": "implemented",
+			"evidence": "Skimming and scanning are taught and practised on a story and a park website; the word-building lesson shows how to use the bilingual dictionary and word parts to skip or infer unknown words."
+		},
+		{
+			"id": "E7-05",
+			"lb": "1.1",
+			"competence": "lesen kürzere und längere Texte, auch mit einer begrenzten Anzahl unbekannter, aber in ihrer Aussprache leicht erschließbarer Wörter, in angemessenem Tempo und mit korrekter Aussprache und Intonation flüssig und sinndarstellend vor.",
+			"lessons": [
+				"e7-pronunciation",
+				"e7-short-talk"
+			],
+			"status": "supported",
+			"evidence": "The app gives a marked reading script, stress rules and local speech for comparison. Reading aloud itself, tempo and intonation are judged by the learner, a partner or the teacher; nothing is recorded."
+		},
+		{
+			"id": "E7-06",
+			"lb": "1.1",
+			"competence": "beschreiben Personen, Orte, Gegenstände und Ereignisse mit etwas vielfältigeren sprachlichen Mitteln, stellen Erlebnisse und Sachverhalte (auch im historischen Kontext) berichtend und erzählend dar, äußern Gefühle, Gedanken und Meinungen zu Themen aus dem persönlichen Interessens- und Erfahrungsbereich, z. B. Freizeitgestaltung, Schulalltag, beliebte Sportarten oder aktuelle Themen.",
+			"lessons": [
+				"e7-film-scene",
+				"e7-wales",
+				"e7-us-sports",
+				"e7-media-use",
+				"e7-1066"
+			],
+			"status": "supported",
+			"evidence": "Lessons provide phrases, models and speaking notes for describing places, people and events, reporting history and giving opinions. Free spoken production happens with partners or in class; the app stores only notes."
+		},
+		{
+			"id": "E7-07",
+			"lb": "1.1",
+			"competence": "verständigen sich in typischen Alltagssituationen, reagieren weitgehend situationsgerecht auf Gesprächspartner und halten ein Gespräch in Gang, indem sie verständnissichernde Fragen stellen, Zustimmung und Ablehnung signalisieren und andere mit einbeziehen.",
+			"lessons": [
+				"e7-conversation",
+				"e7-food-free-time",
+				"e7-hotel-complaint"
+			],
+			"status": "supported",
+			"evidence": "Dialogue workshops and speaking notes cover clarifying questions, agreeing, disagreeing politely and including others. Spontaneous conversation needs a real partner."
+		},
+		{
+			"id": "E7-08",
+			"lb": "1.1",
+			"competence": "präsentieren Arbeitsergebnisse zusammenhängend und weitgehend frei und sprechen im Rahmen eines short talk, ggf. mithilfe von Notizen, über ein vertrautes bzw. ein die Zielkulturen betreffendes Thema, z. B. kurze Vorstellung einer Region oder einer historischen Persönlichkeit.",
+			"lessons": [
+				"e7-short-talk",
+				"e7-henry-viii"
+			],
+			"status": "supported",
+			"evidence": "The short-talk lesson teaches structure, cue cards, picture phrases and paraphrasing; the Henry VIII lesson prepares notes for a historical person. Giving the talk happens in front of a partner or the class."
+		},
+		{
+			"id": "E7-09",
+			"lb": "1.1",
+			"competence": "verfassen auch längere Texte (z. B. Artikel über die Mediennutzung Jugendlicher oder einen amerikanischen Brauch für die Schülerzeitung bzw. Schulhomepage, Interview mit einem Sportler) zu einem etwas breiteren Spektrum bekannter Themen und Textarten.",
+			"lessons": [
+				"e7-media-use",
+				"e7-thanksgiving",
+				"e7-us-sports",
+				"e7-current-events"
+			],
+			"status": "implemented",
+			"evidence": "Writing tasks on two levels: a school-newspaper article on media use, an article about Thanksgiving, an interview with an athlete and a news report, each with a model and a three-point self-check."
+		},
+		{
+			"id": "E7-10",
+			"lb": "1.1",
+			"competence": "achten neben der sprachlichen (auch orthographischen) Korrektheit auf klare Gedankenführung, eine Verknüpfung der Aussagen und Themenbezug, ggf. auch auf Adressaten- und Situationsbezug; sie verwenden ggf. kreative Elemente und drücken Gedanken und Gefühle auf einfache Weise aus.",
+			"lessons": [
+				"e7-linking-paraphrase",
+				"e7-blog-perspective",
+				"e7-media-use"
+			],
+			"status": "implemented",
+			"evidence": "Linking words (however, therefore, in addition, although), text structure and creative perspective writing are explained and checked with criteria for coherence, addressee and feelings."
+		},
+		{
+			"id": "E7-11",
+			"lb": "1.1",
+			"competence": "übertragen mündlich in typischen Alltagssituationen Informationen überwiegend spontan in die jeweils andere Sprache, z. B. kurzes Interview oder Videoclip zu einer Sportart, Reklamation im Hotel, Hausordnung einer Schule.",
+			"lessons": [
+				"e7-hotel-complaint",
+				"e7-southwest-mediation"
+			],
+			"status": "supported",
+			"evidence": "A hotel complaint in Cardiff and a campsite sign are prepared as oral mediation with model sentences. Spontaneous interpreting between two real speakers stays a partner or classroom activity."
+		},
+		{
+			"id": "E7-12",
+			"lb": "1.1",
+			"competence": "übertragen in schriftlicher und mündlicher Form adressaten- und situationsbezogen Informationen aus etwas längeren, situativ eingebetteten Texten zu im Unterricht behandelten Themen (z. B. Infotafel in einem Museum, Internetseite zu Touristenattraktionen einer Region) sinngemäß bzw. zusammenfassend in die jeweils andere Sprache, wobei sie sprachliche Defizite ggf. auf einfache Weise (z. B. Synonyme, Antonyme, Paraphrasen) kompensieren.",
+			"lessons": [
+				"e7-wales-castle-mediation",
+				"e7-southwest-mediation",
+				"e7-vlog-listening"
+			],
+			"status": "implemented",
+			"evidence": "Written mediation of a museum information board at Conwy Castle and of a Grand Canyon visitor page, plus a German summary of a vlog, with selection, paraphrase and compensation strategies."
+		},
+		{
+			"id": "E7-13",
+			"lb": "1.2",
+			"competence": "beherrschen im Rahmen der unter 7.5 aufgeführten Themen einen begrenzten Wortschatz im Zusammenhang mit landeskundlichen Aspekten (weitere grundlegende Begriffe aus den Bereichen Geographie und Geschichte), konkreten Alltagsbedürfnissen und vertrauten Situationen (u. a. Schule, Freizeitgestaltung, Bräuche und Feste, Sport, Mediennutzung), achten auch auf situations- und adressatengerechte Verwendung und nutzen vermehrt idiomatische Wendungen, Kollokationen und phrasal verbs.",
+			"lessons": [
+				"e7-thanksgiving",
+				"e7-independence-day",
+				"e7-us-school",
+				"e7-us-sports",
+				"e7-food-free-time",
+				"e7-media-use",
+				"e7-online-risks",
+				"e7-wales",
+				"e7-desert-southwest",
+				"e7-1066",
+				"e7-mayflower"
+			],
+			"status": "implemented",
+			"evidence": "Topic vocabulary for North American customs, school, sport, food, media, Wales, the Desert South-West and history, with American and British variants and collocations such as score a touchdown, set off, take place."
+		},
+		{
+			"id": "E7-14",
+			"lb": "1.2",
+			"competence": "verwenden in angemessenem Umfang einen individuellen Wortschatz aus ihrem eigenen Interessensbereich.",
+			"lessons": [
+				"e7-word-building",
+				"e7-wishes"
+			],
+			"status": "supported",
+			"evidence": "Tasks ask learners to write about their own hobbies, likes and wishes. Collecting and keeping a personal vocabulary list is the learner's own work outside the app."
+		},
+		{
+			"id": "E7-15",
+			"lb": "1.2",
+			"competence": "beherrschen grundlegenden Funktionswortschatz zur Verständigung über Bilder bzw. zur Präsentation von eigenen Beiträgen und kennen weitere grammatikalische Fachbegriffe.",
+			"lessons": [
+				"e7-film-scene",
+				"e7-short-talk",
+				"e7-language-contrast"
+			],
+			"status": "implemented",
+			"evidence": "Picture and film-scene phrases (in the foreground, it looks as if), presentation phrases (As you can see, To sum up) and grammatical terms (noun, verb, adverb, tense, subject) are taught and practised."
+		},
+		{
+			"id": "E7-16",
+			"lb": "1.2",
+			"competence": "äußern Wünsche, Vorlieben und Abneigungen (v. a. I wish I knew; if only he had).",
+			"lessons": [
+				"e7-wishes"
+			],
+			"status": "implemented",
+			"evidence": "The wishes lesson covers I wish / If only with simple past and past perfect and phrases for likes and dislikes, with practice and two task levels."
+		},
+		{
+			"id": "E7-17",
+			"lb": "1.2",
+			"competence": "sind in der Lage, ihre Gedanken mit einfachen Mitteln logisch zu verknüpfen (v. a. however, therefore) und fehlendes Vokabular mithilfe von Kompensationsstrategien (z. B. Paraphrasen, Synonyme und Antonyme) zu umgehen.",
+			"lessons": [
+				"e7-linking-paraphrase",
+				"e7-wales-castle-mediation",
+				"e7-henry-viii"
+			],
+			"status": "implemented",
+			"evidence": "however and therefore, cause and result (so, as a result) and paraphrase, synonym and antonym as compensation strategies, with a workshop, short answers and tasks."
+		},
+		{
+			"id": "E7-18",
+			"lb": "1.2",
+			"competence": "beschreiben Personen, Gegenstände, Orte und Sachverhalte genauer und setzen sie zueinander in Beziehung: Adverbien: Bildung; Steigerung, Vergleich; Stellung im Satz Adjektive und Adverbien: Kontrastierung; Adjektive nach Verben der Sinneswahrnehmung Reflexivpronomen, reciprocal pronouns (each other), reflexive Verben",
+			"lessons": [
+				"e7-adverbs-manner",
+				"e7-adverbs-compare",
+				"e7-adjective-adverb",
+				"e7-reflexive"
+			],
+			"status": "implemented",
+			"evidence": "Every sub-point is a lesson: adverb formation (word-machine explorer), comparison and position (race explorer), adjective versus adverb and verbs of perception (senses explorer), reflexive pronouns, each other and reflexive verbs (mirror scene)."
+		},
+		{
+			"id": "E7-19",
+			"lb": "1.2",
+			"competence": "sprechen über bereits Genanntes und vermeiden Wiederholungen: Pro-Form one(s) Possessivpronomen",
+			"lessons": [
+				"e7-one-possessive"
+			],
+			"status": "implemented",
+			"evidence": "The prop-word one(s) and possessive pronouns (mine, yours, hers, a friend of mine) in a lost-property dialogue with workshop, quick check and tasks."
+		},
+		{
+			"id": "E7-20",
+			"lb": "1.2",
+			"competence": "stellen auch komplexere zeitliche und logische Bezüge her, äußern Wünsche, geben Ratschläge und drücken reale und hypothetische Sachverhalte aus: present perfect simple / present perfect progressive past perfect simple Temporalsätze: Zeitenfolge conditional / conditional perfect Konditionalsatz II und III; Mischformen",
+			"lessons": [
+				"e7-since-for",
+				"e7-perfect-progressive",
+				"e7-simple-or-progressive",
+				"e7-past-perfect",
+				"e7-tense-sequence",
+				"e7-conditional-2",
+				"e7-advice",
+				"e7-conditional-3",
+				"e7-mixed-conditionals",
+				"e7-wishes"
+			],
+			"status": "implemented",
+			"evidence": "Every sub-point is covered: present perfect simple and progressive (since/for, result versus activity), past perfect simple, tense sequence in time clauses, conditional and conditional perfect in type II and III and mixed forms, with interactive timelines and a condition scale."
+		},
+		{
+			"id": "E7-21",
+			"lb": "1.2",
+			"competence": "sprechen zunehmend flüssig und betonen zunehmend sinndarstellend.",
+			"lessons": [
+				"e7-pronunciation",
+				"e7-short-talk"
+			],
+			"status": "supported",
+			"evidence": "Word and sentence stress are explained with a stress explorer and a reading script. Fluency and meaningful stress need speaking practice with a partner or teacher."
+		},
+		{
+			"id": "E7-22",
+			"lb": "1.2",
+			"competence": "nutzen zunehmend selbständig ihre Kenntnisse der Lautschrift sowie Hörbeispiele, um auch unbekannte Wörter korrekt auszusprechen.",
+			"lessons": [
+				"e7-pronunciation",
+				"e7-word-building"
+			],
+			"status": "supported",
+			"evidence": "The stress mark in phonetic script and stress shifts (-ity, -ic, record) are taught; local speech synthesis can read the script. Listening to dictionary audio stays outside the app."
+		},
+		{
+			"id": "E7-23",
+			"lb": "2",
+			"competence": "verfügen über ausgewählte geographische und historische Grundkenntnisse zum UK und den USA sowie zu den Lebenswelten von Gleichaltrigen in diesen Ländern.",
+			"lessons": [
+				"e7-wales",
+				"e7-desert-southwest",
+				"e7-1066",
+				"e7-henry-viii",
+				"e7-elizabeth-i",
+				"e7-mayflower",
+				"e7-us-school",
+				"e7-thanksgiving"
+			],
+			"status": "implemented",
+			"evidence": "Schematic UK and US maps (Wales, the Desert South-West, New England), a history frieze from 1066 to 1620 and lessons on the lives of teenagers in North America, with checked Wikipedia sources."
+		},
+		{
+			"id": "E7-24",
+			"lb": "2",
+			"competence": "zeigen aufgrund ihres Wissens um grundlegende kulturelle Gemeinsamkeiten und Unterschiede Verständnis für andere Lebensweisen und setzen sich zunehmend auch mit ihren eigenen Einstellungen auseinander.",
+			"lessons": [
+				"e7-thanksgiving",
+				"e7-independence-day",
+				"e7-us-school",
+				"e7-food-free-time",
+				"e7-mayflower"
+			],
+			"status": "supported",
+			"evidence": "Tasks ask for comparisons with life in Germany and for Native American perspectives on Thanksgiving, Columbus Day and colonisation. Changing one's own attitudes cannot be checked by an app."
+		},
+		{
+			"id": "E7-25",
+			"lb": "2",
+			"competence": "verhalten sich in simulierten und ggf. realen interkulturellen Alltagssituationen, auch bei der Nutzung unterschiedlicher Kommunikationsmedien, kulturell angemessen und achten auf höflichen Umgang mit ihren Gesprächspartnern.",
+			"lessons": [
+				"e7-hotel-complaint",
+				"e7-conversation",
+				"e7-advice",
+				"e7-online-risks"
+			],
+			"status": "implemented",
+			"evidence": "Polite complaints, advice that first shows understanding, polite disagreement and respectful behaviour in chats and video calls are taught and practised in simulated situations."
+		},
+		{
+			"id": "E7-26",
+			"lb": "3",
+			"competence": "erfassen im Rahmen des Hör-/Hörsehverstehens und des Leseverstehens den Inhalt von Sachtexten sowie erzählenden, beschreibenden und berichtenden Texten (vermehrt auch zu landeskundlichen Themen), z. B. Kinoprogramme, Anzeigen, Reiseprospekte, Internetseiten, Vlogs, einfache Artikel aus Zeitschriften, Jugendmagazinen und Zeitungen, Interviews, didaktisch aufbereitete Lektüren auch aus dem Bereich englischer Kinder- und Jugendliteratur.",
+			"lessons": [
+				"e7-check-sources",
+				"e7-reading-strategies",
+				"e7-1066",
+				"e7-us-school",
+				"e7-vlog-listening"
+			],
+			"status": "supported",
+			"evidence": "Websites, a vlog, a school-newspaper article, an adventure story and a history page are worked on. Cinema programmes, real magazines and didactic readers of children's literature are further reading outside the app."
+		},
+		{
+			"id": "E7-27",
+			"lb": "3",
+			"competence": "beantworten auch differenziertere Fragen zum Inhalt, erkennen grundlegende charakteristische Merkmale der Textgestaltung und deren Wirkung, z. B. Mittel zur Textgliederung, Gestaltung des Handlungsverlaufs, Verwendung von Schlüsselwörtern, Einsatz visueller und auditiver Elemente auf Internetseiten.",
+			"lessons": [
+				"e7-reading-strategies",
+				"e7-check-sources",
+				"e7-media-use"
+			],
+			"status": "implemented",
+			"evidence": "Story structure (exposition, climax), key words, suspense devices, subheadings, captions and visual and audio elements on websites are explained; a layout explorer highlights them."
+		},
+		{
+			"id": "E7-28",
+			"lb": "3",
+			"competence": "äußern sich auch spontan zu Eindrücken, die Texte bei ihnen auslösen, wobei sie ihre Meinung, Gedanken und Gefühle ausdrücken.",
+			"lessons": [
+				"e7-film-scene",
+				"e7-vlog-listening",
+				"e7-reading-strategies"
+			],
+			"status": "supported",
+			"evidence": "Tasks ask for impressions and opinions on a film scene, a vlog and a story. Spontaneous oral reactions happen in class."
+		},
+		{
+			"id": "E7-29",
+			"lb": "3",
+			"competence": "verfassen erzählende, berichtende und einfache beschreibende Texte (z. B. Bildbeschreibungen, Artikel für Schülerzeitung, Interviews, Kurzfilm für einen Austausch) sowie persönliche Mitteilungen, wobei sie die bei der Texterschließung gewonnenen Erkenntnisse umsetzen, z. B. bei der Beschreibung von Personen und Orten.",
+			"lessons": [
+				"e7-film-scene",
+				"e7-media-use",
+				"e7-us-sports",
+				"e7-1066",
+				"e7-independence-day"
+			],
+			"status": "implemented",
+			"evidence": "Picture and film-scene description, a school-newspaper article, an interview, a historical narrative and a personal message, each with a model and criteria."
+		},
+		{
+			"id": "E7-30",
+			"lb": "3",
+			"competence": "nutzen Texte als Ausgangspunkt für eigene kreative Schreibversuche (z. B. Darstellung von Ereignissen aus subjektiver Sicht und aus veränderter Perspektive, Verfassen von Tagebucheinträgen bzw. Beiträgen zu einem Blog); sie gestalten vertraute Kommunikationssituationen szenisch.",
+			"lessons": [
+				"e7-blog-perspective",
+				"e7-1066",
+				"e7-mayflower",
+				"e7-elizabeth-i"
+			],
+			"status": "supported",
+			"evidence": "Diary and blog entries from another perspective (the bus driver, an English soldier in 1066, a Wampanoag child, a child in 1588) are implemented; acting out scenes stays a classroom activity."
+		},
+		{
+			"id": "E7-31",
+			"lb": "3",
+			"competence": "erfassen wichtige Informationen zu Figuren, Handlungsverlauf und Schauplatz einfacher authentischer, ggf. auch didaktisierter Filmsequenzen (z. B. Animationsfilme, Serien, landeskundliches Filmmaterial), ggf. unter Nutzung von Untertiteln.",
+			"lessons": [
+				"e7-film-scene"
+			],
+			"status": "supported",
+			"evidence": "A film still with foreground, middle and background prepares the analysis of characters, setting and plot. Watching real film sequences with subtitles stays outside the app."
+		},
+		{
+			"id": "E7-32",
+			"lb": "3",
+			"competence": "zeigen durch die Beschäftigung mit Texten ein erstes Bewusstsein für die Notwendigkeit eines kritischen Umgangs mit Medien.",
+			"lessons": [
+				"e7-check-sources",
+				"e7-online-risks",
+				"e7-media-use"
+			],
+			"status": "implemented",
+			"evidence": "Four source questions (who, when, why, elsewhere), biased versus reliable websites, ads and sponsored content, privacy and cyberbullying are taught with a website explorer, quick checks and tasks."
+		},
+		{
+			"id": "E7-33",
+			"lb": "4",
+			"competence": "gestalten ihren Lernprozess teilweise selbständig, indem sie wesentliche Strategien zur Vernetzung, Strukturierung und Speicherung von Wortschatz (z. B. in Assoziationsfeldern und Vokabelnetzen) und Grammatik zunehmend selbständig anwenden und sich dabei zunehmend an ihrem individuellen Wissensstand und an für sie geeigneten Lernstrategien orientieren; sie erkennen ihre grundlegenden Stärken, aber auch Schwächen und individuelle Fehlerquellen (z. B. mithilfe von Fehlerprotokollen) und lernen so, Fehler zu vermeiden.",
+			"lessons": [
+				"e7-language-contrast",
+				"e7-word-building",
+				"e7-short-talk"
+			],
+			"status": "supported",
+			"evidence": "A list of typical interference mistakes, feedback notes and word families model error logs and vocabulary networks; keeping them is the learner's own work."
+		},
+		{
+			"id": "E7-34",
+			"lb": "4",
+			"competence": "wenden wesentliche Strategien des Lese- und Hör‑/Hörsehverstehens (v. a. scanning, skimming) sowie der mündlichen und schriftlichen Sprachproduktion teilweise bereits selbständig an; sie erschließen dabei die Bedeutung unbekannter Wörter und Strukturen mithilfe von grundlegenden Kenntnissen der Wortbildung (v. a. ‑able, ‑ity), des Deutschen und ggf. weiterer Erstsprachen sowie der zweiten Fremdsprache und des Kontextes zunehmend selbständig.",
+			"lessons": [
+				"e7-reading-strategies",
+				"e7-word-building",
+				"e7-vlog-listening"
+			],
+			"status": "implemented",
+			"evidence": "Skimming, scanning and step-by-step listening are taught; the suffixes -able and -ity, German, French and Latin cognates and context help to infer meaning."
+		},
+		{
+			"id": "E7-35",
+			"lb": "4",
+			"competence": "nutzen das Lehrwerk (auch grammatisches Beiheft) zum zunehmend selbständigen Nachschlagen und Lernen sowie zur Erstellung und Überarbeitung von Texten; sie entnehmen Nachschlagewerken (v. a. zweisprachiges Wörterbuch) und digitalen Medien (v. a. ausgewählte Online-Wörterbücher, ‑Enzyklopädien, didaktisierte englischsprachige Internetseiten) weitgehend sicher und gezielt Informationen auch für eigene, klar umrissene Recherchen und überprüfen einzelne Quellen kritisch unter Anleitung.",
+			"lessons": [
+				"e7-check-sources",
+				"e7-word-building",
+				"e7-current-events"
+			],
+			"status": "supported",
+			"evidence": "The app shows how to use dictionary entries, online encyclopaedias and news sites for children and how to check sources. Using the textbook and doing real research is the learner's own work."
+		},
+		{
+			"id": "E7-36",
+			"lb": "5",
+			"competence": "bewältigen Kommunikationssituationen innerhalb der angegebenen Themengebiete mithilfe der in den Lernbereichen 1 – 4 ausgewiesenen Kompetenzen.",
+			"lessons": [
+				"e7-hotel-complaint",
+				"e7-food-free-time",
+				"e7-conversation",
+				"e7-advice"
+			],
+			"status": "implemented",
+			"evidence": "Everyday situations in Wales and North America (hotel, diner, advice, discussion) combine skills from learning areas 1 to 4 with dialogue workshops and tasks."
+		},
+		{
+			"id": "E7-37",
+			"lb": "5",
+			"competence": "setzen sich auf der Grundlage ihrer Kenntnisse bewusst mit der englischen Sprache und den mit ihr verbundenen Kulturräumen auseinander.",
+			"lessons": [
+				"e7-norman-words",
+				"e7-language-contrast",
+				"e7-wales"
+			],
+			"status": "implemented",
+			"evidence": "Lessons on French loanwords after 1066, German-English contrasts and bilingual Wales make learners reflect on the English language and its cultures."
+		},
+		{
+			"id": "E7-38",
+			"lb": "5",
+			"competence": "Lebenswelt von Jugendlichen in Nordamerika: v. a. Essgewohnheiten, Bräuche und Feste (Thanksgiving, Independence Day; ggf. weitere, z. B. Columbus Day), Freizeitgestaltung, Schulalltag, beliebte Sportarten",
+			"lessons": [
+				"e7-thanksgiving",
+				"e7-independence-day",
+				"e7-us-school",
+				"e7-us-sports",
+				"e7-food-free-time"
+			],
+			"status": "implemented",
+			"evidence": "Five lessons: Thanksgiving, Independence Day and Columbus Day, high school, popular sports and eating habits and free time, with a holiday calendar and a school-day schedule."
+		},
+		{
+			"id": "E7-39",
+			"lb": "5",
+			"competence": "Mediennutzung Jugendlicher: Möglichkeiten und Gefahren",
+			"lessons": [
+				"e7-media-use",
+				"e7-online-risks",
+				"e7-check-sources"
+			],
+			"status": "implemented",
+			"evidence": "Advantages and risks of media use, online safety (privacy, cyberbullying) and checking websites critically."
+		},
+		{
+			"id": "E7-40",
+			"lb": "5",
+			"competence": "weitere touristisch bedeutsame Regionen: Wales und Desert South-West",
+			"lessons": [
+				"e7-wales",
+				"e7-wales-castle-mediation",
+				"e7-hotel-complaint",
+				"e7-desert-southwest",
+				"e7-southwest-mediation"
+			],
+			"status": "implemented",
+			"evidence": "Wales (Cardiff, Eryri, Yr Wyddfa, Welsh, Conwy Castle) and the Desert South-West (Grand Canyon, Monument Valley, climate) on schematic maps with mediation tasks."
+		},
+		{
+			"id": "E7-41",
+			"lb": "5",
+			"competence": "Einblick in einige wichtige Ereignisse der englischen und amerikanischen Geschichte: 1066 (Normans and Saxons; Einfluss auf Sprache), Henry VIII (Gründung der anglikanischen Kirche), Elizabeth I (England als Großmacht, Seefahrernation), Kolonialisierung Nordamerikas (Pilgerväter/Mayflower; Neuenglandstaaten)",
+			"lessons": [
+				"e7-1066",
+				"e7-norman-words",
+				"e7-henry-viii",
+				"e7-elizabeth-i",
+				"e7-mayflower"
+			],
+			"status": "implemented",
+			"evidence": "1066 and its influence on English, Henry VIII and the Church of England, Elizabeth I and the Armada, the Mayflower and New England, on a history frieze and a US map."
+		},
+		{
+			"id": "E7-42",
+			"lb": "5",
+			"competence": "altersgemäßes Aufgreifen von aktuellen Anlässen und Entwicklungen, z. B. Sportereignisse, kulturelle Veranstaltungen, Wahlen",
+			"lessons": [
+				"e7-current-events"
+			],
+			"status": "supported",
+			"evidence": "The lesson teaches news vocabulary and report structure and links CBBC Newsround. It names no current results; the research is the learner's own work."
+		},
+		{
+			"id": "E7-43",
+			"lb": "5",
+			"competence": "Sprachreflexion: grundlegende Unterschiede zwischen dem Deutschen und Englischen, v. a. kontrastive Betrachtung der Verwendung einzelner Tempora und Modi (auch erste Einblicke in indirekte Aussagesätze) und der Reflexivität von Verben (to change, to complain, to imagine, to meet); erste grundlegende Zusammenhänge zwischen historischen Ereignissen und Sprachwandel, v. a. einige typische Lehnwörter, nicht-statischer Charakter von Sprache",
+			"lessons": [
+				"e7-language-contrast",
+				"e7-reflexive",
+				"e7-norman-words",
+				"e7-since-for"
+			],
+			"status": "implemented",
+			"evidence": "Tenses and moods compared with German (present perfect for duration, conditional for Konjunktiv II), first insight into indirect statements, non-reflexive English verbs (change, complain, imagine, meet), loanwords and language change."
+		}
+	]
+}

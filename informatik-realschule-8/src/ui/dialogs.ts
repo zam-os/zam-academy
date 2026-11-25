@@ -40,7 +40,7 @@ export function showZamDialog(): void {
       <div class="dialog-header">
         <div>
           <span class="dialog-kicker">🧠 HIER ÜBEN → IN ZAM BEHALTEN</span>
-          <h2 class="dialog-title">Informatik 8 mit ZAM behalten</h2>
+          <h2 class="dialog-title">Informatik 6–8 mit ZAM behalten</h2>
         </div>
         <button type="button" class="icon-btn" data-close aria-label="Schließen">✕</button>
       </div>
@@ -56,6 +56,7 @@ export function showZamDialog(): void {
         </div>
       </div>
       <div class="action-card">
+        <p>Die Klassen 6, 7 und 8 nutzen dieselbe Zelle mit denselben Lernkarten. In ZAM heißt sie weiterhin „Informatik 8 Realschule (ZAM Academy)“.</p>
         <h3>So kommt die Zelle in dein ZAM</h3>
         <ol class="dialog-steps">
           <li>Öffne ZAM Studio → <strong>Lern-Karten</strong> → Importieren → <strong>„Aus der ZAM Academy“</strong>.</li>

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <script>
+      try {
+        const theme = localStorage.getItem("politik_ms7_theme");
+        if (theme === "light" || theme === "dark") document.documentElement.dataset.theme = theme;
+      } catch {}
+    </script>
+    <title>Politik und Gesellschaft 7 Mittelschule · ZAM Academy</title>
+    <meta name="description" content="Politik und Gesellschaft 7 Mittelschule Bayern (GPG, Lernbereich 3): Soziale Frage, Industriestadt, Ursachen des Ersten Weltkriegs, Kriegsschuldfrage und Versailler Vertrag. 15 Lektionen für Regelklasse und M-Zug." />
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="header">
+        <a href="#" id="home" class="brand"><span class="brand-mark" aria-hidden="true">§</span><span>Politik und Gesellschaft 7 <small>ZAM Academy · Mittelschule Bayern · GPG</small></span></a>
+        <nav aria-label="Hauptnavigation"><button type="button" data-view="path">Lernpfad</button><button type="button" data-view="lesson">Lektion</button><button type="button" data-view="reference">Nachschlagen</button></nav>
+        <div class="header-actions"><button type="button" id="zam" class="button accent">In ZAM festigen</button><button type="button" id="theme" class="icon-button" aria-label="Farbschema umschalten">◐</button></div>
+      </header>
+      <div class="progress-strip"><span id="progress-label"></span><progress id="progress" max="100" value="0" aria-label="Fortschritt der Kernlektionen"></progress></div>
+      <main id="main" tabindex="-1"></main>
+      <footer><span>Nach <a href="https://www.lehrplanplus.bayern.de/fachlehrplan/mittelschule/7/gpg/regelklasse" target="_blank" rel="noopener">LehrplanPLUS Bayern</a> · GPG 7, Lernbereich 3 · Regelklasse und M-Zug</span><span>Keine Konten und kein Tracking. Fortschritt und eigene Texte bleiben in diesem Browser. <a href="https://github.com/zam-os/zam-academy" target="_blank" rel="noopener">Quelltext</a></span><span id="storage-note" role="status"></span></footer>
+    </div>
+    <div id="toast-stack" aria-live="polite"></div>
+    <script type="module" src="/src/main.ts"></script>
+    <a href="https://academy.zam-os.org/" class="zam-home-link">← ZAM Academy <span class="zam-version" title="Noch nicht von einer Lehrkraft geprüft">· Version&nbsp;0.0 · Lehrkraftprüfung&nbsp;offen</span></a>
+  </body>
+</html>

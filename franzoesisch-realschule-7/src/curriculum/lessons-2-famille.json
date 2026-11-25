@@ -1,0 +1,342 @@
+[
+	{
+		"id": "f7-articles",
+		"stage": "f7-famille",
+		"title": "Un chat, le chat",
+		"skill": "Bestimmte und unbestimmte Artikel richtig verwenden",
+		"bindings": ["1.2-grammatik", "1.2-wortschatz"],
+		"paragraphs": [
+			"Jedes französische Nomen ist maskulin oder feminin. Der unbestimmte Artikel heißt un (maskulin), une (feminin) und im Plural des: un chat, une maison, des amis. Der bestimmte Artikel heißt le (maskulin), la (feminin) und im Plural les: le chat, la maison, les amis. Vor Vokal oder stummem h werden le und la zu l’: l’ami, l’école, l’hôtel.",
+			"Beispiel: Dans la rue, il y a une boulangerie. La boulangerie est à côté de l’école. Mit un oder une nennst du etwas zum ersten Mal, mit le oder la meinst du etwas Bekanntes. Das Geschlecht ist nicht immer wie im Deutschen: la table (der Tisch), le livre (das Buch), la voiture (das Auto). Lerne deshalb jedes neue Nomen mit Artikel; eine Farbe für maskulin und eine für feminin im Vokabelheft hilft."
+		],
+		"material": "Voici ma rue. Il y a une boulangerie, un parc et des maisons. La boulangerie est à côté de l’école. Le parc est grand. Dans le parc, il y a un chien et des enfants. Les enfants jouent au foot. L’école de Léa est au bout de la rue.",
+		"materialLabel": "Eigenes Übungsmaterial · erfundene Straße",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp-f7"],
+		"quiz": {
+			"optionLanguage": "fr",
+			"question": "Welcher Artikel passt? ___ école de Léa est grande.",
+			"answer": "L’",
+			"wrong": ["La", "Le"],
+			"explanation": "Vor Vokal wird la zu l’: l’école."
+		},
+		"takeaway": "Unbestimmt: un (m), une (f), des (Plural). Bestimmt: le (m), la (f), l’ (vor Vokal), les (Plural). Nomen immer mit Artikel lernen.",
+		"practice": [
+			{ "prompt": "Il y a ___ parc (unbestimmt).", "answers": ["un"], "feedback": "Le parc ist maskulin, also un parc." },
+			{ "prompt": "___ enfants jouent (bestimmt, Plural).", "answers": ["Les"], "feedback": "Im Plural heißt der bestimmte Artikel les." }
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Beschreibe deine Straße in drei Sätzen. Nenne zuerst Dinge mit un / une / des und sage dann etwas über eines davon mit le / la / l’.",
+				"model": "Dans ma rue, il y a une école, un parc et des maisons. L’école est grande. Le parc est à côté de l’école.",
+				"criteria": ["Ich verwende un, une und des.", "Ich verwende le, la oder l’ für Bekanntes.", "Ich achte auf l’ vor Vokal."]
+			},
+			"2": {
+				"prompt": "Erkläre einem Mitschüler auf Deutsch, warum es une table, aber l’école heißt, und gib zu jeder Regel ein eigenes Beispiel.",
+				"model": "Table ist feminin, deshalb une table und la table. Vor einem Vokal wird la zu l’, deshalb l’école. Weitere Beispiele: une trousse, la trousse; l’ami, l’hôtel.",
+				"criteria": ["Ich erkläre das Geschlecht des Nomens.", "Ich erkläre die Verkürzung zu l’.", "Ich gebe eigene Beispiele."],
+				"language": "de"
+			}
+		},
+		"workshop": {
+			"kind": "sentence",
+			"goals": [
+				{ "label": "Unbestimmt, feminin", "before": "Il y a", "after": "boulangerie.", "options": ["une", "un", "le"], "answer": "une", "explanation": "Boulangerie ist feminin: une boulangerie." },
+				{ "label": "Vor Vokal", "before": "", "after": "école est grande.", "options": ["L’", "La", "Les"], "answer": "L’", "explanation": "Vor Vokal steht l’." },
+				{ "label": "Plural", "before": "", "after": "enfants jouent.", "options": ["Les", "Le", "Un"], "answer": "Les", "explanation": "Les ist der bestimmte Artikel im Plural." }
+			]
+		},
+		"explorer": {
+			"caption": "Farbcode · Wähle ein Geschlecht",
+			"steps": [
+				{ "label": "maskulin", "icon": "🐈", "example": "un chat → le chat", "detail": "Blau: un und le", "tone": "m" },
+				{ "label": "feminin", "icon": "🏠", "example": "une maison → la maison", "detail": "Rot: une und la", "tone": "f" },
+				{ "label": "Plural", "icon": "👫", "example": "des amis → les amis", "detail": "Grün: des und les", "tone": "pl" }
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "f7-pluriel",
+		"stage": "f7-famille",
+		"title": "Un cadeau, des cadeaux",
+		"skill": "Den Plural von Nomen bilden, auch unregelmäßig",
+		"bindings": ["1.2-grammatik", "1.2-wortschatz"],
+		"paragraphs": [
+			"Meist bildest du den Plural mit ‑s: un livre, des livres; une amie, des amies. Das s am Ende hörst du nicht. Den Plural erkennst du beim Hören am Artikel: le livre klingt [lə], les livres [le]. Nomen auf ‑s oder ‑x bleiben gleich: un bus, des bus; un prix, des prix.",
+			"Einige häufige Nomen sind unregelmäßig. Auf ‑eau endet der Plural auf ‑eaux: un cadeau, des cadeaux; un gâteau, des gâteaux; un oiseau, des oiseaux. Auf ‑al endet er meist auf ‑aux: un animal, des animaux; un cheval, des chevaux; un journal, des journaux. Beispiel: Pour mon anniversaire, il y a deux gâteaux et beaucoup de cadeaux. Bei ‑aux hörst du den Plural auch: animal [animal], animaux [animo]."
+		],
+		"material": "C’est l’anniversaire de Hugo. Sur la table, il y a deux gâteaux et beaucoup de cadeaux. Hugo adore les animaux. Il a un chat et deux oiseaux. Sa sœur a des livres sur les chevaux. Ses amis arrivent en bus.",
+		"materialLabel": "Eigenes Übungsmaterial · erfundene Personen",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp-f7"],
+		"quiz": {
+			"optionLanguage": "fr",
+			"question": "Wie heißt der Plural von un animal?",
+			"answer": "des animaux",
+			"wrong": ["des animals", "des animauxs"],
+			"explanation": "Nomen auf ‑al bilden den Plural meist auf ‑aux."
+		},
+		"takeaway": "Plural meist mit stummem ‑s. ‑eau → ‑eaux (cadeaux, gâteaux), ‑al → ‑aux (animaux, chevaux). ‑s und ‑x bleiben: des bus, des prix.",
+		"practice": [
+			{ "prompt": "un gâteau → deux ___", "answers": ["gâteaux"], "feedback": "‑eau wird zu ‑eaux: gâteaux." },
+			{ "prompt": "un cheval → des ___", "answers": ["chevaux"], "feedback": "‑al wird zu ‑aux: chevaux." }
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Setze diese Nomen in den Plural und schreibe sie mit des: un cadeau, un livre, un animal, un bus, un oiseau.",
+				"model": "des cadeaux, des livres, des animaux, des bus, des oiseaux",
+				"criteria": ["Ich verwende ‑eaux bei Nomen auf ‑eau.", "Ich verwende ‑aux bei animal.", "Ich lasse bus unverändert."]
+			},
+			"2": {
+				"prompt": "Beschreibe den Geburtstagstisch auf einem Bild in deiner Vorstellung: Was liegt dort, und wie viele? Verwende mindestens drei Pluralformen, davon zwei unregelmäßige.",
+				"model": "Sur la table, il y a trois gâteaux, cinq cadeaux et des bougies. À côté, il y a deux chats. Ce sont mes animaux.",
+				"criteria": ["Ich verwende mindestens drei Pluralformen.", "Zwei davon sind unregelmäßig.", "Ich schreibe ganze Sätze mit il y a."]
+			}
+		},
+		"workshop": {
+			"kind": "sentence",
+			"goals": [
+				{ "label": "‑eau", "before": "Hugo a beaucoup de", "after": ".", "options": ["cadeaux", "cadeaus", "cadeau"], "answer": "cadeaux", "explanation": "Cadeau bildet den Plural auf ‑eaux." },
+				{ "label": "‑al", "before": "Hugo adore les", "after": ".", "options": ["animaux", "animals", "animales"], "answer": "animaux", "explanation": "Animal bildet den Plural auf ‑aux." },
+				{ "label": "‑s bleibt", "before": "Ses amis arrivent en deux", "after": ".", "options": ["bus", "buss", "buses"], "answer": "bus", "explanation": "Nomen auf ‑s bleiben im Plural gleich." }
+			]
+		},
+		"explorer": {
+			"caption": "Einzahl und Mehrzahl · Wähle eine Regel",
+			"steps": [
+				{ "label": "+ s", "icon": "📗 → 📗📗", "example": "un livre → des livres", "detail": "Das s ist stumm; der Artikel zeigt den Plural.", "tone": "pl" },
+				{ "label": "‑eau → ‑eaux", "icon": "🎁 → 🎁🎁", "example": "un cadeau → des cadeaux", "detail": "Ebenso: gâteaux, oiseaux.", "tone": "pl" },
+				{ "label": "‑al → ‑aux", "icon": "🐴 → 🐴🐴", "example": "un cheval → des chevaux", "detail": "Ebenso: animaux, journaux. Hier hörst du den Plural.", "tone": "pl" }
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "f7-etre-avoir",
+		"stage": "f7-famille",
+		"title": "Je suis, j’ai",
+		"skill": "Die Verben être und avoir im Präsens sicher verwenden",
+		"bindings": ["1.2-grammatik"],
+		"paragraphs": [
+			"Être (sein) und avoir (haben) sind die wichtigsten unregelmäßigen Verben. Être: je suis, tu es, il / elle / on est, nous sommes, vous êtes, ils / elles sont. Avoir: j’ai, tu as, il / elle / on a, nous avons, vous avez, ils / elles ont. Vor Vokal wird je zu j’: j’ai.",
+			"Achte auf ils sont und ils ont: Bei ils ont sprichst du eine Bindung mit [z], also [ilzɔ̃]; bei ils sont hörst du ein stimmloses [s], also [ilsɔ̃]. Beispiel: Léa et Inès sont en cinquième. Elles ont un chat. Nous sommes à Rennes et nous avons un chien. Auch das Alter steht mit avoir: Vous avez quel âge ? – Nous avons douze ans."
+		],
+		"material": "Léa et Inès sont copines. Elles sont en cinquième. Elles ont un chat, Minou. Hugo est le voisin de Léa. Il a douze ans. Il a un vélo rouge. Nous sommes contents : nous avons un nouveau prof de sport.",
+		"materialLabel": "Eigenes Übungsmaterial · erfundene Personen",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp-f7"],
+		"quiz": {
+			"optionLanguage": "fr",
+			"question": "„Sie haben einen Hund.“ (Léa und Inès)",
+			"answer": "Elles ont un chien.",
+			"wrong": ["Elles sont un chien.", "Elles a un chien."],
+			"explanation": "Haben heißt avoir; die 3. Person Plural ist ont."
+		},
+		"takeaway": "être: suis, es, est, sommes, êtes, sont · avoir: ai, as, a, avons, avez, ont. Ils ont [ilzɔ̃] mit Bindung, ils sont [ilsɔ̃] ohne.",
+		"practice": [
+			{ "prompt": "Nous ___ à Rennes. (être)", "answers": ["sommes"], "feedback": "Nous sommes: wir sind." },
+			{ "prompt": "Vous ___ un chien ? (avoir)", "answers": ["avez"], "feedback": "Vous avez: ihr habt / Sie haben." }
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Ergänze und schreibe die Sätze ab: Je ___ en cinquième. Tu ___ un vélo ? Ils ___ à Paris. Elles ___ deux chats.",
+				"model": "Je suis en cinquième. Tu as un vélo ? Ils sont à Paris. Elles ont deux chats.",
+				"criteria": ["Ich unterscheide être und avoir nach der Bedeutung.", "Ich verwende die richtige Person.", "Ich schreibe ont und sont richtig."]
+			},
+			"2": {
+				"prompt": "Stelle deine Familie in vier Sätzen vor. Verwende être und avoir je zweimal, darunter einmal nous und einmal ils oder elles.",
+				"model": "Nous sommes quatre. Nous avons un chien. Mes grands-parents sont à Munich. Ils ont un grand jardin.",
+				"criteria": ["Ich verwende être und avoir je zweimal.", "Ich verwende nous und ils / elles.", "Die Formen passen zur Person."]
+			}
+		},
+		"workshop": {
+			"kind": "sentence",
+			"goals": [
+				{ "label": "être, nous", "before": "Nous", "after": "à Rennes.", "options": ["sommes", "avons", "sont"], "answer": "sommes", "explanation": "Nous sommes: wir sind." },
+				{ "label": "avoir, elles", "before": "Elles", "after": "un chat.", "options": ["ont", "sont", "a"], "answer": "ont", "explanation": "Elles ont: sie haben." },
+				{ "label": "Alter", "before": "Hugo", "after": "douze ans.", "options": ["a", "est", "as"], "answer": "a", "explanation": "Das Alter steht mit avoir: il a." }
+			]
+		},
+		"conjugation": [
+			{ "verb": "être", "meaning": "sein", "rows": [["je", "suis", ""], ["tu", "es", ""], ["il / elle / on", "est", ""], ["nous", "sommes", ""], ["vous", "êtes", ""], ["ils / elles", "sont", ""]], "note": "Unregelmäßig: Lerne alle sechs Formen auswendig." },
+			{ "verb": "avoir", "meaning": "haben", "rows": [["j’", "ai", ""], ["tu", "as", ""], ["il / elle / on", "a", ""], ["nous", "avons", ""], ["vous", "avez", ""], ["ils / elles", "ont", ""]], "note": "Vor Vokal: j’ai. Ils‿ont mit Bindung." }
+		],
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "f7-famille",
+		"stage": "f7-famille",
+		"title": "Voici ma famille",
+		"skill": "Familienmitglieder benennen und Besitz mit mon, ma, mes ausdrücken",
+		"bindings": ["1.1-sprechen", "1.2-grammatik", "1.2-wortschatz", "5"],
+		"paragraphs": [
+			"Die Familie: le père, la mère, les parents, le frère, la sœur, le grand-père, la grand-mère, l’oncle, la tante, le cousin, la cousine. Wem etwas gehört, zeigt der Possessivbegleiter. Er richtet sich nach dem Nomen, nicht nach dem Besitzer: mon père, ma mère, mes parents (mein, meine). Ebenso: ton / ta / tes (dein), son / sa / ses (sein oder ihr), notre / nos (unser), votre / vos (euer oder Ihr), leur / leurs (ihr, mehrere Besitzer).",
+			"Beispiel: Voici ma famille. Mon père s’appelle Marc, ma mère s’appelle Sophie. Mes grands-parents habitent à Lyon. Léa et sa sœur: sa sœur heißt hier „ihre Schwester“. Hugo et sa sœur: „seine Schwester“. Son und sa unterscheiden also nicht zwischen sein und ihr. Vor Vokal steht mon auch bei femininen Nomen: mon amie, ton école."
+		],
+		"material": "Voici ma famille. Mon père s’appelle Marc et ma mère s’appelle Sophie. J’ai un frère, Tom, et une sœur, Zoé. Mes grands-parents habitent à Lyon. Ma tante a deux enfants : mes cousins Malik et Sarah. Et voici mon amie Inès avec sa sœur.",
+		"materialLabel": "Eigenes Übungsmaterial · erfundene Familie",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp-f7"],
+		"quiz": {
+			"optionLanguage": "fr",
+			"question": "Léa zeigt ein Foto: „Das ist meine Mutter.“",
+			"answer": "Voici ma mère.",
+			"wrong": ["Voici mon mère.", "Voici mes mère."],
+			"explanation": "Mère ist feminin Singular, deshalb ma mère."
+		},
+		"takeaway": "mon (m) · ma (f) · mes (Plural); ebenso ton/ta/tes, son/sa/ses, notre/nos, votre/vos, leur/leurs. Der Begleiter richtet sich nach dem Nomen. Vor Vokal: mon amie.",
+		"practice": [
+			{ "prompt": "___ parents habitent à Lyon. (meine)", "answers": ["Mes"], "feedback": "Parents ist Plural: mes parents." },
+			{ "prompt": "Hugo et ___ sœur (seine)", "answers": ["sa"], "feedback": "Sœur ist feminin: sa sœur, egal ob sein oder ihr." }
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Stelle deine Familie oder eine erfundene Familie in vier Sätzen vor. Verwende mon, ma und mes.",
+				"model": "Voici ma famille. Mon père s’appelle Jan, ma mère s’appelle Aylin. Mes grands-parents habitent à Nuremberg. J’ai aussi un frère.",
+				"criteria": ["Ich verwende mon, ma und mes richtig.", "Ich nenne mindestens vier Familienmitglieder.", "Ich verwende s’appeler oder habiter."]
+			},
+			"2": {
+				"prompt": "Beschreibe die Familie einer Freundin oder eines Freundes. Verwende son, sa und ses und erkläre auf Deutsch, warum sa sœur je nach Satz „seine“ oder „ihre Schwester“ bedeutet.",
+				"model": "Voici Hugo. Sa mère est prof et son père est médecin. Ses cousins habitent à Paris. Sa richtet sich nach sœur (feminin), nicht nach Hugo oder Léa; deshalb heißt sa sœur seine oder ihre Schwester.",
+				"criteria": ["Ich verwende son, sa und ses.", "Ich erkläre die Regel auf Deutsch.", "Meine Begleiter passen zum Nomen."]
+			}
+		},
+		"workshop": {
+			"kind": "family",
+			"goals": [
+				{ "label": "Vater", "before": "", "after": "père s’appelle Marc.", "options": ["Mon", "Ma", "Mes"], "answer": "Mon", "explanation": "Père ist maskulin: mon père." },
+				{ "label": "Großeltern", "before": "", "after": "grands-parents habitent à Lyon.", "options": ["Mes", "Mon", "Ma"], "answer": "Mes", "explanation": "Grands-parents ist Plural: mes." },
+				{ "label": "Freundin", "before": "Voici", "after": "amie Inès.", "options": ["mon", "ma", "mes"], "answer": "mon", "explanation": "Vor Vokal steht mon, auch bei amie." }
+			]
+		},
+		"explorer": {
+			"caption": "Familienbaum · Wähle eine Person",
+			"steps": [
+				{ "label": "Vater", "icon": "👨", "example": "mon père, ton père, son père", "detail": "maskulin Singular", "tone": "m" },
+				{ "label": "Schwester", "icon": "👧", "example": "ma sœur, ta sœur, sa sœur", "detail": "feminin Singular", "tone": "f" },
+				{ "label": "Großeltern", "icon": "👵👴", "example": "mes grands-parents, nos grands-parents", "detail": "Plural", "tone": "pl" }
+			]
+		},
+		"listening": false,
+		"speaking": true
+	},
+	{
+		"id": "f7-animaux",
+		"stage": "f7-famille",
+		"title": "Il y a un chat",
+		"skill": "Mit il y a sagen, was es gibt, und Haustiere nennen",
+		"bindings": ["1.2-wortschatz", "4", "5"],
+		"paragraphs": [
+			"Il y a heißt „es gibt“ oder „da ist / da sind“. Die Form bleibt gleich, egal ob danach ein oder mehrere Dinge folgen: Il y a un chat. Il y a deux chats. Im Englischen unterscheidest du there is und there are, im Französischen nicht. Verneint heißt es il n’y a pas de: Il n’y a pas de chien. Fragen kannst du mit Est-ce qu’il y a … ?",
+			"Haustiere: un chien (Hund), un chat (Katze), un lapin (Kaninchen), un hamster, un oiseau (Vogel), un poisson rouge (Goldfisch), un cheval (Pferd). Beispiel: Chez Léa, il y a un chat et deux poissons rouges. Il n’y a pas de chien, parce que sa mère est allergique. Bei Tieren sagst du oft il oder elle: Minou est gris. Il adore le lit de Léa."
+		],
+		"material": "Chez nous, il y a beaucoup d’animaux ! Il y a un chien, Filou, et deux lapins. Dans ma chambre, il y a un poisson rouge. Chez Inès, il y a un chat, Minou. Chez Hugo, il n’y a pas d’animal, mais il y a un cheval chez son grand-père.",
+		"materialLabel": "Eigenes Übungsmaterial · erfundene Personen und Tiere",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp-f7"],
+		"quiz": {
+			"optionLanguage": "fr",
+			"question": "„Es gibt zwei Kaninchen.“",
+			"answer": "Il y a deux lapins.",
+			"wrong": ["Ils sont deux lapins.", "Il y ont deux lapins."],
+			"explanation": "Il y a bleibt auch im Plural gleich."
+		},
+		"takeaway": "Il y a = es gibt (Singular und Plural). Verneint: il n’y a pas de … Englisch: there is / there are, Französisch nur il y a.",
+		"practice": [
+			{ "prompt": "Il ___ a deux chats chez Léa.", "answers": ["y"], "feedback": "Il y a: es gibt." },
+			{ "prompt": "Il n’y a pas ___ chien.", "answers": ["de"], "feedback": "Nach der Verneinung steht de: pas de chien." }
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe drei Sätze mit il y a über Tiere bei dir, bei Freunden oder bei Verwandten. Ein Satz ist verneint.",
+				"model": "Chez moi, il y a un chat. Chez ma tante, il y a deux chevaux. Chez Paul, il n’y a pas de chien.",
+				"criteria": ["Ich verwende il y a im Singular und Plural.", "Ich verneine mit il n’y a pas de.", "Ich nenne Tiere mit Artikel."]
+			},
+			"2": {
+				"prompt": "Vergleiche auf Deutsch: Wie sagt man „Es gibt zwei Katzen“ auf Englisch und Französisch? Was ist im Französischen einfacher? Gib zwei eigene Beispiele.",
+				"model": "Englisch: There are two cats. Französisch: Il y a deux chats. Im Französischen bleibt il y a gleich, im Englischen wechselt there is zu there are. Beispiele: Il y a un chien. Il y a trois lapins.",
+				"criteria": ["Ich vergleiche Englisch und Französisch.", "Ich nenne die einfachere Regel.", "Ich gebe zwei richtige Beispiele."],
+				"language": "de"
+			}
+		},
+		"workshop": {
+			"kind": "family",
+			"goals": [
+				{ "label": "Plural", "before": "", "after": "deux lapins.", "options": ["Il y a", "Ils sont", "Il y ont"], "answer": "Il y a", "explanation": "Il y a bleibt auch im Plural." },
+				{ "label": "Verneinung", "before": "Il n’y a pas", "after": "chien.", "options": ["de", "un", "le"], "answer": "de", "explanation": "Nach pas steht de." },
+				{ "label": "Tier", "before": "Dans l’eau, il y a un", "after": "rouge.", "options": ["poisson", "lapin", "oiseau"], "answer": "poisson", "explanation": "Un poisson rouge ist ein Goldfisch." }
+			]
+		},
+		"explorer": {
+			"caption": "Wer wohnt wo? Wähle ein Zuhause",
+			"steps": [
+				{ "label": "Chez nous", "icon": "🐕🐇🐇", "example": "Il y a un chien et deux lapins.", "detail": "Il y a passt zu einem und zu mehreren Tieren." },
+				{ "label": "Chez Inès", "icon": "🐈", "example": "Il y a un chat.", "detail": "Minou ist die Katze von Inès." },
+				{ "label": "Chez Hugo", "icon": "🚫", "example": "Il n’y a pas d’animal.", "detail": "Verneint: il n’y a pas de, vor Vokal d’." }
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "f7-pronoms",
+		"stage": "f7-famille",
+		"title": "Il, elle, on",
+		"skill": "Personen und Dinge mit Subjektpronomen ersetzen",
+		"bindings": ["1.2-grammatik", "1.1-sprechen"],
+		"paragraphs": [
+			"Die Subjektpronomen heißen je, tu, il, elle, on, nous, vous, ils, elles. Mit ihnen vermeidest du Wiederholungen: Léa habite à Rennes. Elle a douze ans. Il ersetzt ein maskulines Nomen, elle ein feminines, auch bei Dingen: Le vélo est neuf. Il est rouge. La trousse ? Elle est dans le sac.",
+			"Im Plural steht ils für eine Gruppe nur aus Männern, Jungen oder maskulinen Dingen und auch für gemischte Gruppen: Léa et Hugo? Ils sont en cinquième. Elles steht nur für rein feminine Gruppen: Léa et Inès? Elles jouent au basket. On bedeutet „man“, im Alltag meistens „wir“; das Verb steht dann in der 3. Person Singular: On va au parc ? – Oui, d’accord !"
+		],
+		"material": "Voici Léa et Hugo. Ils sont voisins. Léa a un chat. Il s’appelle Minou. Hugo a un vélo. Il est rouge. Léa et Inès jouent au basket. Elles adorent le sport. Le samedi, on va au parc ensemble.",
+		"materialLabel": "Eigenes Übungsmaterial · erfundene Personen",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp-f7"],
+		"quiz": {
+			"optionLanguage": "fr",
+			"question": "Léa et Hugo ? ___ sont en cinquième.",
+			"answer": "Ils",
+			"wrong": ["Elles", "On"],
+			"explanation": "Für eine gemischte Gruppe steht ils."
+		},
+		"takeaway": "il / elle ersetzen maskuline / feminine Nomen, auch Dinge. Ils für Männer oder gemischte Gruppen, elles nur für Frauen oder feminine Dinge. On (wir) + Verb in der 3. Person Singular.",
+		"practice": [
+			{ "prompt": "La trousse ? ___ est dans le sac.", "answers": ["Elle"], "feedback": "Trousse ist feminin, deshalb elle." },
+			{ "prompt": "Inès et Léa ? ___ adorent le sport.", "answers": ["Elles"], "feedback": "Zwei Mädchen: elles." }
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Ersetze in jedem zweiten Satz das Subjekt durch ein Pronomen: Hugo a un vélo. Hugo est content. La maison est grande. La maison a un jardin. Léa et Hugo jouent. Léa et Hugo chantent.",
+				"model": "Hugo a un vélo. Il est content. La maison est grande. Elle a un jardin. Léa et Hugo jouent. Ils chantent.",
+				"criteria": ["Ich ersetze Personen und Dinge mit dem passenden Pronomen.", "Ich wähle ils für die gemischte Gruppe.", "Mein Text klingt ohne Wiederholungen."]
+			},
+			"2": {
+				"prompt": "Schreibe fünf Sätze über deine Freunde und dich. Verwende il, elle, ils, elles und on je mindestens einmal.",
+				"model": "Mon ami Max a treize ans. Il habite à Ulm. Ma copine Mia joue au foot. Elle est super. Max et Mia sont dans ma classe. Ils sont sympas. Mia et sa sœur ? Elles ont un chien. Le samedi, on va au parc.",
+				"criteria": ["Ich verwende alle fünf Pronomen.", "Das Verb nach on steht in der 3. Person Singular.", "Ich wähle ils und elles richtig."]
+			}
+		},
+		"workshop": {
+			"kind": "sentence",
+			"goals": [
+				{ "label": "Ding, maskulin", "before": "Le vélo est neuf.", "after": "est rouge.", "options": ["Il", "Elle", "On"], "answer": "Il", "explanation": "Vélo ist maskulin: il." },
+				{ "label": "Zwei Mädchen", "before": "Léa et Inès ?", "after": "jouent au basket.", "options": ["Elles", "Ils", "Il"], "answer": "Elles", "explanation": "Nur Mädchen: elles." },
+				{ "label": "„wir“", "before": "Le samedi,", "after": "va au parc.", "options": ["on", "nous", "ils"], "answer": "on", "explanation": "On va: wir gehen, Verb im Singular." }
+			]
+		},
+		"explorer": {
+			"caption": "Wer ist gemeint? Wähle eine Gruppe",
+			"steps": [
+				{ "label": "Léa", "icon": "👧", "example": "Léa a un chat. → Elle a un chat.", "detail": "Eine feminine Person: elle.", "tone": "f" },
+				{ "label": "Léa + Hugo", "icon": "👧👦", "example": "Léa et Hugo jouent. → Ils jouent.", "detail": "Gemischte Gruppe: ils.", "tone": "m" },
+				{ "label": "Léa + Inès", "icon": "👧👧", "example": "Léa et Inès jouent. → Elles jouent.", "detail": "Nur feminin: elles.", "tone": "f" }
+			]
+		},
+		"listening": false,
+		"speaking": false
+	}
+]

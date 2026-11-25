@@ -1,0 +1,891 @@
+{
+	"schema": 1,
+	"checked": "2026-11-21",
+	"curriculum": "https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/7/franzoesisch",
+	"curriculum_file": "tests/fixtures/lehrplanplus-f7.html",
+	"curriculum_sha256": "8d03ab146e4333f6b7acace8f06f4d5d887edb6e60bc2bdba1e3c712abd3f962",
+	"curriculum_text": "Original auf lehrplanplus.bayern.de, live abgerufen am 21. November 2026. Französisch ist an der Realschule zweite Fremdsprache der Wahlpflichtfächergruppe IIIa (Klasse 7 bis 10); Klasse 7 ist das erste Lernjahr.",
+	"school_type": "realschule",
+	"grade": 7,
+	"subject": "franzoesisch",
+	"track": "IIIa",
+	"hours": "Themengebiete: je 20 Stunden für Familie, Leben und Wohnen, schulischer Alltag, Freizeit sowie Geographie, Paris und eine Region; 12 Stunden für Feste und Traditionen. Die übrigen Lernbereiche nennen keine Stunden.",
+	"neighbours": [
+		{
+			"url": "https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/8/franzoesisch",
+			"file": "tests/fixtures/lehrplanplus-f8.html",
+			"sha256": "3ad8b8bd38c1b553096ac3b120624ec689136038f40d5cee699603cadde3f657"
+		}
+	],
+	"core_lessons": 54,
+	"optional_lessons": [],
+	"outside_app": [
+		"Natürliche Hör- und Hörsehtexte: Die App liest eigene Skripte mit einer lokal installierten Stimme oder ein Partner liest vor.",
+		"Sprechen und Aussprache: Die App nimmt nichts auf und bewertet keine Aussprache; Gespräche, Rollenspiele und Vortrag üben Lernende mit anderen.",
+		"Eigene Texte werden mit einem Muster verglichen und selbst eingeschätzt, nicht automatisch bewertet.",
+		"Das Wortschatzprogramm von etwa 450 Wörtern und Wendungen bringt das Lehrwerk; das Paket übt eine Auswahl.",
+		"Aktuelle Themen und Recherche: Zwei Aufgaben verweisen auf offizielle Seiten, die Recherche selbst leisten die Lernenden."
+	],
+	"rows": [
+		{
+			"id": "F7-01",
+			"lb": "1.1",
+			"section": "1 Kommunikative Kompetenzen / 1.1 Kommunikative Fertigkeiten / Hör- und Hörsehverstehen",
+			"competence": "erfassen sehr kurze, einfachste, langsam und sehr deutlich gesprochene Hör- und Hörsehtexte in französischer Standardsprache zu im Unterricht intensiv behandelten Themen mit überwiegend bekanntem Wortschatz, z. B. kurze Alltagsdialoge, Unterhaltungen innerhalb der Familie und im Freundeskreis. Dabei verstehen sie den Gesamtzusammenhang und entnehmen den Dokumenten einzelne Schlüsselbegriffe.",
+			"lessons": [
+				"f7-ecouter",
+				"f7-sons",
+				"f7-courses"
+			],
+			"evidence": "Three scripts read by an installed local French voice or a partner, with tasks on overall gist and key words. Natural recordings and audiovisual texts remain classroom work.",
+			"status": "supported"
+		},
+		{
+			"id": "F7-02",
+			"lb": "1.1",
+			"section": "1 Kommunikative Kompetenzen / 1.1 Kommunikative Fertigkeiten / Leseverstehen",
+			"competence": "verstehen sehr kurze, einfachste, auch bildgestützte, erzählende und dialogische Texte (z. B. kurze Geschichten, Bilder- und Fotogeschichten, Dialoge zwischen Freunden) sowie Gedichte und einfachste Gebrauchstexte (z. B. einfache Hinweisschilder, Plakate), die vertraute Themen aus dem unmittelbaren persönlichen Umfeld behandeln, eine klare Struktur aufweisen und überwiegend bekanntes Sprachmaterial enthalten. Sie erfassen den Gesamtzusammenhang der Texte und entnehmen diesen gezielt Einzelinformationen.",
+			"lessons": [
+				"f7-histoire",
+				"f7-affiche",
+				"f7-bretagne",
+				"f7-paris"
+			],
+			"evidence": "Worked explanation with example, a three-goal visual workshop, quick check, short answers and two production tasks (guided and transfer).",
+			"status": "implemented"
+		},
+		{
+			"id": "F7-03",
+			"lb": "1.1",
+			"section": "1 Kommunikative Kompetenzen / 1.1 Kommunikative Fertigkeiten / Sprechen",
+			"competence": "agieren und reagieren auf sehr einfache Art in unmittelbar vertrauten Alltagssituationen angemessen, sofern langsam und in sehr deutlich artikulierter Standardsprache gesprochen wird. Sie wenden dabei vertraute sprachliche Wendungen an (u. a. einfache Höflichkeitsformeln, expressions utiles en classe) und drücken elementare Sprechabsichten aus, u. a. sehr einfache Wünsche und Vorschläge, Vorlieben und Abneigungen.",
+			"lessons": [
+				"f7-bonjour",
+				"f7-classe",
+				"f7-vouloir-pouvoir",
+				"f7-j-aime",
+				"f7-courses"
+			],
+			"evidence": "Dialogue models, role-play prompts and self-assessed notes prepare everyday exchanges; spontaneous interaction needs a partner and the teacher.",
+			"status": "supported"
+		},
+		{
+			"id": "F7-04",
+			"lb": "1.1",
+			"section": "1 Kommunikative Kompetenzen / 1.1 Kommunikative Fertigkeiten / Sprechen",
+			"competence": "stellen sich und andere in sehr einfachen Sätzen vor, formulieren mithilfe sprachlicher Vorgaben sehr einfache Aussagen zu Themen aus dem unmittelbaren persönlichen Erfahrungsbereich, z. B. Schule, Familie.",
+			"lessons": [
+				"f7-moi",
+				"f7-famille",
+				"f7-pronoms",
+				"f7-college"
+			],
+			"evidence": "Models and prompts for presenting oneself and others; speaking is practised aloud or with a partner, not assessed by the app.",
+			"status": "supported"
+		},
+		{
+			"id": "F7-05",
+			"lb": "1.1",
+			"section": "1 Kommunikative Kompetenzen / 1.1 Kommunikative Fertigkeiten / Sprechen",
+			"competence": "berichten in sehr einfacher Form über gegenwärtige und zukünftige Aktivitäten.",
+			"lessons": [
+				"f7-journee",
+				"f7-loisirs",
+				"f7-futur"
+			],
+			"evidence": "Present-tense and futur composé tasks prepare short reports; oral fluency needs practice with others.",
+			"status": "supported"
+		},
+		{
+			"id": "F7-06",
+			"lb": "1.1",
+			"section": "1 Kommunikative Kompetenzen / 1.1 Kommunikative Fertigkeiten / Schreiben",
+			"competence": "achten auf grundlegende sprachliche Richtigkeit und berücksichtigen elementare formale Regeln, u. a. Anrede- und Schlussformeln in Einladungen, persönlichen E-Mails.",
+			"lessons": [
+				"f7-anniversaire",
+				"f7-carte-postale",
+				"f7-accents"
+			],
+			"evidence": "Worked explanation with example, a three-goal visual workshop, quick check, short answers and two production tasks (guided and transfer).",
+			"status": "implemented"
+		},
+		{
+			"id": "F7-07",
+			"lb": "1.1",
+			"section": "1 Kommunikative Kompetenzen / 1.1 Kommunikative Fertigkeiten / Schreiben",
+			"competence": "tragen grundlegende Informationen zur eigenen Person in alltagstypische einfache Formulare ein, z. B. Anmeldeformulare.",
+			"lessons": [
+				"f7-formulaire"
+			],
+			"evidence": "Worked explanation with example, a three-goal visual workshop, quick check, short answers and two production tasks (guided and transfer).",
+			"status": "implemented"
+		},
+		{
+			"id": "F7-08",
+			"lb": "1.1",
+			"section": "1 Kommunikative Kompetenzen / 1.1 Kommunikative Fertigkeiten / Schreiben",
+			"competence": "verfassen mithilfe detaillierter inhaltlicher und sprachlicher Vorgaben sehr kurze, einfachste Texte zu Themen aus ihrem Alltag und ihrem unmittelbaren persönlichen Umfeld (z. B. Steckbriefe, Postkarten) über gegenwärtige und zukünftige Tätigkeiten. Dabei verwenden sie sehr einfache Konnektoren, u. a. et, ou, mais.",
+			"lessons": [
+				"f7-carte-postale",
+				"f7-moi",
+				"f7-futur",
+				"f7-journee"
+			],
+			"evidence": "Worked explanation with example, a three-goal visual workshop, quick check, short answers and two production tasks (guided and transfer).",
+			"status": "implemented"
+		},
+		{
+			"id": "F7-09",
+			"lb": "1.1",
+			"section": "1 Kommunikative Kompetenzen / 1.1 Kommunikative Fertigkeiten / Sprachmittlung",
+			"competence": "geben gezielt konkrete, sehr einfache Einzelinformationen (z. B. Veranstaltungsdaten, Öffnungszeiten, Preise) aus kurzen, einfachsten, auch bildgestützten Texten mit bekanntem Sprachmaterial sinngemäß auf Deutsch wieder, wenn diese sich auf Themengebiete aus dem unmittelbaren persönlichen Umfeld beziehen, z. B. Plakate, Hinweisschilder, Geburtstagseinladungen.",
+			"lessons": [
+				"f7-affiche",
+				"f7-anniversaire",
+				"f7-courses"
+			],
+			"evidence": "Worked explanation with example, a three-goal visual workshop, quick check, short answers and two production tasks (guided and transfer).",
+			"status": "implemented"
+		},
+		{
+			"id": "F7-10",
+			"lb": "1.1",
+			"section": "1 Kommunikative Kompetenzen / 1.1 Kommunikative Fertigkeiten / Sprachmittlung",
+			"competence": "übersetzen einfachste französische Textvorgaben mit vertrautem Sprachmaterial ins Deutsche, wobei sie ihr elementares Wissen über die Problematik von Wortgleichungen und Wort-für-Wort-Übersetzungen anwenden.",
+			"lessons": [
+				"f7-traduire"
+			],
+			"evidence": "Worked explanation with example, a three-goal visual workshop, quick check, short answers and two production tasks (guided and transfer).",
+			"status": "implemented"
+		},
+		{
+			"id": "F7-11",
+			"lb": "1.1",
+			"section": "1 Kommunikative Kompetenzen / 1.1 Kommunikative Fertigkeiten / Sprachmittlung",
+			"competence": "agieren als Sprachmittler situationsgerecht und adressatenbezogen in sehr einfachen, alltäglichen, altersgemäßen Kommunikationssituationen (z. B. bei Einkäufen, sehr einfachen Fragen nach dem Weg) zu Themen aus ihrem unmittelbaren persönlichen Umfeld, die im Unterricht intensiv behandelt wurden. Bei Verständnisproblemen setzen sie einfachste Kompensationsstrategien (z. B. Gestik und Mimik) ein.",
+			"lessons": [
+				"f7-courses",
+				"f7-chemin"
+			],
+			"evidence": "Written mediation dialogues for shopping and asking the way, including gestures as compensation; live mediation needs a partner.",
+			"status": "supported"
+		},
+		{
+			"id": "F7-12",
+			"lb": "1.2",
+			"section": "1 Kommunikative Kompetenzen / 1.2 Verfügen über sprachliche Mittel / Wortschatz",
+			"competence": "verwenden einen sehr begrenzten themenbezogenen Wortschatz und wenden ihn in konkreten alltäglichen Situationen aus dem unmittelbaren persönlichen Umfeld weitgehend situations- und adressatengerecht an, z. B. häusliche und familiäre Situationen.",
+			"lessons": [
+				"f7-famille",
+				"f7-animaux",
+				"f7-maison",
+				"f7-college",
+				"f7-quantites"
+			],
+			"evidence": "Worked explanation with example, a three-goal visual workshop, quick check, short answers and two production tasks (guided and transfer).",
+			"status": "implemented"
+		},
+		{
+			"id": "F7-13",
+			"lb": "1.2",
+			"section": "1 Kommunikative Kompetenzen / 1.2 Verfügen über sprachliche Mittel / Wortschatz",
+			"competence": "verwenden in sehr geringem Umfang individuellen Wortschatz, um sich zu ihren persönlichen Interessen (z. B. Hobbys) zu äußern.",
+			"lessons": [
+				"f7-loisirs",
+				"f7-vocabulaire"
+			],
+			"evidence": "The lessons ask learners to add and look up their own hobby words; the app cannot check personal vocabulary.",
+			"status": "supported"
+		},
+		{
+			"id": "F7-14",
+			"lb": "1.2",
+			"section": "1 Kommunikative Kompetenzen / 1.2 Verfügen über sprachliche Mittel / Wortschatz",
+			"competence": "verstehen einfachste Arbeitsanweisungen (u. a. complétez, cochez) und elementare grammatikalische Fachbegriffe und erkennen diese bei der Bearbeitung von Übungen und Aufgaben sowie bei der Verwendung von Nachschlagewerken, u. a. nom, verbe, présent, futur composé.",
+			"lessons": [
+				"f7-consignes"
+			],
+			"evidence": "Worked explanation with example, a three-goal visual workshop, quick check, short answers and two production tasks (guided and transfer).",
+			"status": "implemented"
+		},
+		{
+			"id": "F7-15",
+			"lb": "1.2",
+			"section": "1 Kommunikative Kompetenzen / 1.2 Verfügen über sprachliche Mittel / Wortschatz",
+			"competence": "verstehen sehr einfache expressions utiles en classe (u. a. Ouvrez vos livres!) und verwenden ein einfaches vocabulaire de classe (u. a. le tableau, le cahier, le livre, le stylo, le sac à dos).",
+			"lessons": [
+				"f7-classe"
+			],
+			"evidence": "Worked explanation with example, a three-goal visual workshop, quick check, short answers and two production tasks (guided and transfer).",
+			"status": "implemented"
+		},
+		{
+			"id": "F7-16",
+			"lb": "1.2",
+			"section": "1 Kommunikative Kompetenzen / 1.2 Verfügen über sprachliche Mittel / Wortschatz",
+			"competence": "wenden die Struktur il y a sicher an.",
+			"lessons": [
+				"f7-animaux"
+			],
+			"evidence": "Worked explanation with example, a three-goal visual workshop, quick check, short answers and two production tasks (guided and transfer).",
+			"status": "implemented"
+		},
+		{
+			"id": "F7-17",
+			"lb": "1.2",
+			"section": "1 Kommunikative Kompetenzen / 1.2 Verfügen über sprachliche Mittel / Wortschatz",
+			"competence": "verwenden die pronoms toniques, um mit Gesprächspartnern in Beziehung zu treten (z. B. avec moi / chez toi / sans nous / pour vous).",
+			"lessons": [
+				"f7-toniques"
+			],
+			"evidence": "Worked explanation with example, a three-goal visual workshop, quick check, short answers and two production tasks (guided and transfer).",
+			"status": "implemented"
+		},
+		{
+			"id": "F7-18",
+			"lb": "1.2",
+			"section": "1 Kommunikative Kompetenzen / 1.2 Verfügen über sprachliche Mittel / Wortschatz",
+			"competence": "verstehen und verwenden Zahlen bis 100, einfache Ordinalzahlen bis zehn, Datumsangaben und umgangssprachliche sowie offizielle Angaben der Uhrzeit.",
+			"lessons": [
+				"f7-nombres",
+				"f7-heure",
+				"f7-date"
+			],
+			"evidence": "Worked explanation with example, a three-goal visual workshop, quick check, short answers and two production tasks (guided and transfer).",
+			"status": "implemented"
+		},
+		{
+			"id": "F7-19",
+			"lb": "1.2",
+			"section": "1 Kommunikative Kompetenzen / 1.2 Verfügen über sprachliche Mittel / Wortschatz",
+			"competence": "äußern sehr einfache Vorschläge bzw. Wünsche (u. a. on peut, je voudrais).",
+			"lessons": [
+				"f7-vouloir-pouvoir"
+			],
+			"evidence": "Worked explanation with example, a three-goal visual workshop, quick check, short answers and two production tasks (guided and transfer).",
+			"status": "implemented"
+		},
+		{
+			"id": "F7-20",
+			"lb": "1.2",
+			"section": "1 Kommunikative Kompetenzen / 1.2 Verfügen über sprachliche Mittel / Wortschatz",
+			"competence": "drücken in einfachster Weise ihre Vorlieben bzw. Abneigungen aus (j’aime, j’adore, je déteste, je n’aime pas + nom/infinitif).",
+			"lessons": [
+				"f7-j-aime"
+			],
+			"evidence": "Worked explanation with example, a three-goal visual workshop, quick check, short answers and two production tasks (guided and transfer).",
+			"status": "implemented"
+		},
+		{
+			"id": "F7-21",
+			"lb": "1.2",
+			"section": "1 Kommunikative Kompetenzen / 1.2 Verfügen über sprachliche Mittel / Wortschatz",
+			"competence": "wenden grundlegende Orts- und Richtungsangaben an (u. a. à, dans, sur, sous, chez, devant, derrière).",
+			"lessons": [
+				"f7-maison",
+				"f7-transports",
+				"f7-chemin"
+			],
+			"evidence": "Worked explanation with example, a three-goal visual workshop, quick check, short answers and two production tasks (guided and transfer).",
+			"status": "implemented"
+		},
+		{
+			"id": "F7-22",
+			"lb": "1.2",
+			"section": "1 Kommunikative Kompetenzen / 1.2 Verfügen über sprachliche Mittel / Wortschatz",
+			"competence": "geben sehr einfache logische und zeitliche Zusammenhänge wieder (u. a. et, ou, alors, parce que, mais, aujourd'hui, maintenant, demain, bientôt, samedi – le samedi).",
+			"lessons": [
+				"f7-journee",
+				"f7-date"
+			],
+			"evidence": "Worked explanation with example, a three-goal visual workshop, quick check, short answers and two production tasks (guided and transfer).",
+			"status": "implemented"
+		},
+		{
+			"id": "F7-23",
+			"lb": "1.2",
+			"section": "1 Kommunikative Kompetenzen / 1.2 Verfügen über sprachliche Mittel / Wortschatz",
+			"competence": "verwenden einzelne sehr gängige Nomina mit unregelmäßigen Pluralformen (z. B. cadeau – cadeaux / animal – animaux).",
+			"lessons": [
+				"f7-pluriel"
+			],
+			"evidence": "Worked explanation with example, a three-goal visual workshop, quick check, short answers and two production tasks (guided and transfer).",
+			"status": "implemented"
+		},
+		{
+			"id": "F7-24",
+			"lb": "1.2",
+			"section": "1 Kommunikative Kompetenzen / 1.2 Verfügen über sprachliche Mittel / Wortschatz",
+			"competence": "erschließen in sehr begrenztem Umfang Sprachmaterial aus dem situativen oder textuellen Kontext oder mithilfe von sprachlichen Vorkenntnissen.",
+			"lessons": [
+				"f7-deviner"
+			],
+			"evidence": "Worked explanation with example, a three-goal visual workshop, quick check, short answers and two production tasks (guided and transfer).",
+			"status": "implemented"
+		},
+		{
+			"id": "F7-25",
+			"lb": "1.2",
+			"section": "1 Kommunikative Kompetenzen / 1.2 Verfügen über sprachliche Mittel / Grammatik",
+			"competence": "benennen Personen, Gegenstände, Orte und vertraute Sachverhalte, beschreiben sie sehr einfach und geben Besitzverhältnisse sowie Mengen an:",
+			"lessons": [
+				"f7-articles",
+				"f7-famille",
+				"f7-quantites",
+				"f7-cod",
+				"f7-negation"
+			],
+			"evidence": "Worked explanation with example, a three-goal visual workshop, quick check, short answers and two production tasks (guided and transfer).",
+			"status": "implemented"
+		},
+		{
+			"id": "F7-26",
+			"lb": "1.2",
+			"section": "1 Kommunikative Kompetenzen / 1.2 Verfügen über sprachliche Mittel / Grammatik",
+			"competence": "le singulier et le pluriel du substantif",
+			"lessons": [
+				"f7-pluriel",
+				"f7-articles"
+			],
+			"evidence": "Worked explanation with example, a three-goal visual workshop, quick check, short answers and two production tasks (guided and transfer).",
+			"status": "implemented"
+		},
+		{
+			"id": "F7-27",
+			"lb": "1.2",
+			"section": "1 Kommunikative Kompetenzen / 1.2 Verfügen über sprachliche Mittel / Grammatik",
+			"competence": "l‘article défini, indéfini et contracté",
+			"lessons": [
+				"f7-articles",
+				"f7-au-du",
+				"f7-loisirs"
+			],
+			"evidence": "Worked explanation with example, a three-goal visual workshop, quick check, short answers and two production tasks (guided and transfer).",
+			"status": "implemented"
+		},
+		{
+			"id": "F7-28",
+			"lb": "1.2",
+			"section": "1 Kommunikative Kompetenzen / 1.2 Verfügen über sprachliche Mittel / Grammatik",
+			"competence": "les déterminants possessifs",
+			"lessons": [
+				"f7-famille"
+			],
+			"evidence": "Worked explanation with example, a three-goal visual workshop, quick check, short answers and two production tasks (guided and transfer).",
+			"status": "implemented"
+		},
+		{
+			"id": "F7-29",
+			"lb": "1.2",
+			"section": "1 Kommunikative Kompetenzen / 1.2 Verfügen über sprachliche Mittel / Grammatik",
+			"competence": "l’expression de la quantité + de (u. a. beaucoup de, un kilo de, pas de)",
+			"lessons": [
+				"f7-quantites",
+				"f7-negation"
+			],
+			"evidence": "Worked explanation with example, a three-goal visual workshop, quick check, short answers and two production tasks (guided and transfer).",
+			"status": "implemented"
+		},
+		{
+			"id": "F7-30",
+			"lb": "1.2",
+			"section": "1 Kommunikative Kompetenzen / 1.2 Verfügen über sprachliche Mittel / Grammatik",
+			"competence": "le complément d’objet direct",
+			"lessons": [
+				"f7-cod"
+			],
+			"evidence": "Worked explanation with example, a three-goal visual workshop, quick check, short answers and two production tasks (guided and transfer).",
+			"status": "implemented"
+		},
+		{
+			"id": "F7-31",
+			"lb": "1.2",
+			"section": "1 Kommunikative Kompetenzen / 1.2 Verfügen über sprachliche Mittel / Grammatik",
+			"competence": "les phrases affirmatives et négatives (ne ... pas)",
+			"lessons": [
+				"f7-negation"
+			],
+			"evidence": "Worked explanation with example, a three-goal visual workshop, quick check, short answers and two production tasks (guided and transfer).",
+			"status": "implemented"
+		},
+		{
+			"id": "F7-32",
+			"lb": "1.2",
+			"section": "1 Kommunikative Kompetenzen / 1.2 Verfügen über sprachliche Mittel / Grammatik",
+			"competence": "sprechen über in einem Gespräch oder in einem Text bereits Genanntes und vermeiden Wiederholungen:",
+			"lessons": [
+				"f7-pronoms",
+				"f7-me-te"
+			],
+			"evidence": "Worked explanation with example, a three-goal visual workshop, quick check, short answers and two production tasks (guided and transfer).",
+			"status": "implemented"
+		},
+		{
+			"id": "F7-33",
+			"lb": "1.2",
+			"section": "1 Kommunikative Kompetenzen / 1.2 Verfügen über sprachliche Mittel / Grammatik",
+			"competence": "le pronom personnel sujet",
+			"lessons": [
+				"f7-pronoms"
+			],
+			"evidence": "Worked explanation with example, a three-goal visual workshop, quick check, short answers and two production tasks (guided and transfer).",
+			"status": "implemented"
+		},
+		{
+			"id": "F7-34",
+			"lb": "1.2",
+			"section": "1 Kommunikative Kompetenzen / 1.2 Verfügen über sprachliche Mittel / Grammatik",
+			"competence": "les pronoms objets directs dans la phrase affirmative et négative (me, te, nous, vous)",
+			"lessons": [
+				"f7-me-te"
+			],
+			"evidence": "Worked explanation with example, a three-goal visual workshop, quick check, short answers and two production tasks (guided and transfer).",
+			"status": "implemented"
+		},
+		{
+			"id": "F7-35",
+			"lb": "1.2",
+			"section": "1 Kommunikative Kompetenzen / 1.2 Verfügen über sprachliche Mittel / Grammatik",
+			"competence": "treten mit anderen Menschen in Beziehung, stellen und beantworten dabei sehr einfache Fragen, äußern Bitten, Aufforderungen und Erstaunen und reagieren auf entsprechende Äußerungen:",
+			"lessons": [
+				"f7-intonation",
+				"f7-est-ce-que",
+				"f7-questions",
+				"f7-avec-qui",
+				"f7-imperatif"
+			],
+			"evidence": "Worked explanation with example, a three-goal visual workshop, quick check, short answers and two production tasks (guided and transfer).",
+			"status": "implemented"
+		},
+		{
+			"id": "F7-36",
+			"lb": "1.2",
+			"section": "1 Kommunikative Kompetenzen / 1.2 Verfügen über sprachliche Mittel / Grammatik",
+			"competence": "l’impératif régulier affirmatif et négatif",
+			"lessons": [
+				"f7-imperatif"
+			],
+			"evidence": "Worked explanation with example, a three-goal visual workshop, quick check, short answers and two production tasks (guided and transfer).",
+			"status": "implemented"
+		},
+		{
+			"id": "F7-37",
+			"lb": "1.2",
+			"section": "1 Kommunikative Kompetenzen / 1.2 Verfügen über sprachliche Mittel / Grammatik",
+			"competence": "l’interrogation par intonation, avec et sans pronom interrogatif postposé (u. a. C’est qui ? Tu as quel âge ?)",
+			"lessons": [
+				"f7-intonation"
+			],
+			"evidence": "Worked explanation with example, a three-goal visual workshop, quick check, short answers and two production tasks (guided and transfer).",
+			"status": "implemented"
+		},
+		{
+			"id": "F7-38",
+			"lb": "1.2",
+			"section": "1 Kommunikative Kompetenzen / 1.2 Verfügen über sprachliche Mittel / Grammatik",
+			"competence": "l’interrogation avec est-ce que et avec un pronom interrogatif (qu’est-ce que, où est-ce que, d’où est-ce que, quand est-ce que, comment est-ce que, pourquoi est-ce que, à quelle heure est-ce que)",
+			"lessons": [
+				"f7-est-ce-que",
+				"f7-questions"
+			],
+			"evidence": "Worked explanation with example, a three-goal visual workshop, quick check, short answers and two production tasks (guided and transfer).",
+			"status": "implemented"
+		},
+		{
+			"id": "F7-39",
+			"lb": "1.2",
+			"section": "1 Kommunikative Kompetenzen / 1.2 Verfügen über sprachliche Mittel / Grammatik",
+			"competence": "l’interrogation avec préposition (u. a. à, avec, de) + qui/quoi",
+			"lessons": [
+				"f7-avec-qui"
+			],
+			"evidence": "Worked explanation with example, a three-goal visual workshop, quick check, short answers and two production tasks (guided and transfer).",
+			"status": "implemented"
+		},
+		{
+			"id": "F7-40",
+			"lb": "1.2",
+			"section": "1 Kommunikative Kompetenzen / 1.2 Verfügen über sprachliche Mittel / Grammatik",
+			"competence": "beschreiben Handlungen und Abläufe in der Gegenwart und drücken Zukunftspläne aus:",
+			"lessons": [
+				"f7-verbes-er",
+				"f7-futur",
+				"f7-journee"
+			],
+			"evidence": "Worked explanation with example, a three-goal visual workshop, quick check, short answers and two production tasks (guided and transfer).",
+			"status": "implemented"
+		},
+		{
+			"id": "F7-41",
+			"lb": "1.2",
+			"section": "1 Kommunikative Kompetenzen / 1.2 Verfügen über sprachliche Mittel / Grammatik",
+			"competence": "le présent",
+			"lessons": [
+				"f7-verbes-er",
+				"f7-etre-avoir",
+				"f7-aller-faire"
+			],
+			"evidence": "Worked explanation with example, a three-goal visual workshop, quick check, short answers and two production tasks (guided and transfer).",
+			"status": "implemented"
+		},
+		{
+			"id": "F7-42",
+			"lb": "1.2",
+			"section": "1 Kommunikative Kompetenzen / 1.2 Verfügen über sprachliche Mittel / Grammatik",
+			"competence": "le futur composé",
+			"lessons": [
+				"f7-futur"
+			],
+			"evidence": "Worked explanation with example, a three-goal visual workshop, quick check, short answers and two production tasks (guided and transfer).",
+			"status": "implemented"
+		},
+		{
+			"id": "F7-43",
+			"lb": "1.2",
+			"section": "1 Kommunikative Kompetenzen / 1.2 Verfügen über sprachliche Mittel / Grammatik",
+			"competence": "les verbes réguliers: les verbes en -er, les verbes fréquents en -cer et -ger",
+			"lessons": [
+				"f7-verbes-er",
+				"f7-cer-ger"
+			],
+			"evidence": "Worked explanation with example, a three-goal visual workshop, quick check, short answers and two production tasks (guided and transfer).",
+			"status": "implemented"
+		},
+		{
+			"id": "F7-44",
+			"lb": "1.2",
+			"section": "1 Kommunikative Kompetenzen / 1.2 Verfügen über sprachliche Mittel / Grammatik",
+			"competence": "les verbes irréguliers fréquents (u. a. être, avoir, aller, faire, prendre, vouloir, pouvoir)",
+			"lessons": [
+				"f7-etre-avoir",
+				"f7-aller-faire",
+				"f7-prendre",
+				"f7-vouloir-pouvoir"
+			],
+			"evidence": "Worked explanation with example, a three-goal visual workshop, quick check, short answers and two production tasks (guided and transfer).",
+			"status": "implemented"
+		},
+		{
+			"id": "F7-45",
+			"lb": "1.2",
+			"section": "1 Kommunikative Kompetenzen / 1.2 Verfügen über sprachliche Mittel / Aussprache und Intonation",
+			"competence": "nutzen ein sehr begrenztes, intensiv geübtes Repertoire von Wörtern, Redewendungen und sehr einfachen Sätzen mit verständlicher Aussprache in typischen Intonationsmustern (Intonationsfrage, est-ce que-Frage) und bewältigen dabei sehr einfache Alltagssituationen.",
+			"lessons": [
+				"f7-intonation",
+				"f7-est-ce-que",
+				"f7-sketch"
+			],
+			"evidence": "Intonation patterns are explained and modelled; the app plays local synthetic speech only and does not assess pronunciation.",
+			"status": "supported"
+		},
+		{
+			"id": "F7-46",
+			"lb": "1.2",
+			"section": "1 Kommunikative Kompetenzen / 1.2 Verfügen über sprachliche Mittel / Aussprache und Intonation",
+			"competence": "lesen überschaubare, besprochene Texte verständlich vor.",
+			"lessons": [
+				"f7-sketch"
+			],
+			"evidence": "Marking liaisons and pauses prepares reading aloud; the reading itself happens with partners or the teacher.",
+			"status": "supported"
+		},
+		{
+			"id": "F7-47",
+			"lb": "1.2",
+			"section": "1 Kommunikative Kompetenzen / 1.2 Verfügen über sprachliche Mittel / Aussprache und Intonation",
+			"competence": "ordnen ausgewählte Symbole der internationalen Lautschrift den entsprechenden Lauten zu, um Unterschiede zum Deutschen oder anderen Muttersprachen zu erkennen (u. a. liaison, Nasale, Unterscheidung von stimmhaften und stimmlosen Lauten) und achten auf grafische Signale, u. a. accent, tréma, cédille.",
+			"lessons": [
+				"f7-sons",
+				"f7-accents"
+			],
+			"evidence": "Worked explanation with example, a three-goal visual workshop, quick check, short answers and two production tasks (guided and transfer).",
+			"status": "implemented"
+		},
+		{
+			"id": "F7-48",
+			"lb": "2",
+			"section": "2 Interkulturelle Kompetenzen",
+			"competence": "nutzen einige elementare Kenntnisse über die Geographie Frankreichs zur Orientierung im Zielsprachenland.",
+			"lessons": [
+				"f7-carte"
+			],
+			"evidence": "Worked explanation with example, a three-goal visual workshop, quick check, short answers and two production tasks (guided and transfer).",
+			"status": "implemented"
+		},
+		{
+			"id": "F7-49",
+			"lb": "2",
+			"section": "2 Interkulturelle Kompetenzen",
+			"competence": "lernen eine französische Stadt/Region und ihre Einwohner im Alltag (z. B. Leben und Wohnen) kennen und nehmen dabei erste soziokulturelle Unterschiede und Gemeinsamkeiten von deutschen und französischen Jugendlichen (z. B. schulischer Alltag, Formen der Freizeitgestaltung) bewusst wahr.",
+			"lessons": [
+				"f7-bretagne",
+				"f7-paris",
+				"f7-college",
+				"f7-loisirs"
+			],
+			"evidence": "Worked explanation with example, a three-goal visual workshop, quick check, short answers and two production tasks (guided and transfer).",
+			"status": "implemented"
+		},
+		{
+			"id": "F7-50",
+			"lb": "2",
+			"section": "2 Interkulturelle Kompetenzen",
+			"competence": "verwenden in einfachen Gesprächen und Situationen des alltäglichen Lebens höfliche und sozial angemessene Formulierungen, u. a. Begrüßung und Verabschiedung.",
+			"lessons": [
+				"f7-bonjour",
+				"f7-courses"
+			],
+			"evidence": "Worked explanation with example, a three-goal visual workshop, quick check, short answers and two production tasks (guided and transfer).",
+			"status": "implemented"
+		},
+		{
+			"id": "F7-51",
+			"lb": "3",
+			"section": "3 Text- und Medienkompetenzen",
+			"competence": "nutzen zur Erschließung von sehr kurzen, einfachsten Texten sprachliche und außersprachliche Entschlüsselungshilfen, z. B. ableitbare Wörter aus dem Englischen sowie Fotos und Zeichnungen.",
+			"lessons": [
+				"f7-deviner",
+				"f7-histoire"
+			],
+			"evidence": "Worked explanation with example, a three-goal visual workshop, quick check, short answers and two production tasks (guided and transfer).",
+			"status": "implemented"
+		},
+		{
+			"id": "F7-52",
+			"lb": "3",
+			"section": "3 Text- und Medienkompetenzen",
+			"competence": "erfassen den wesentlichen Inhalt (z. B. Schlüsselwörter, Informationen zu Personen, Handlung, Ort und Zeit) von sehr kurzen, einfachsten Texten (z. B. Dialoge, kurze Geschichten) und beantworten einfache Fragen dazu.",
+			"lessons": [
+				"f7-histoire",
+				"f7-ecouter"
+			],
+			"evidence": "Worked explanation with example, a three-goal visual workshop, quick check, short answers and two production tasks (guided and transfer).",
+			"status": "implemented"
+		},
+		{
+			"id": "F7-53",
+			"lb": "3",
+			"section": "3 Text- und Medienkompetenzen",
+			"competence": "finden Gefallen am Umgang mit fremdsprachlichen Texten, indem sie z. B. auswendig gelernte oder selbst verfasste Minidialoge gestaltend vortragen (ggf. mit gezieltem Einsatz der Körpersprache oder mithilfe von Realien) oder sehr kurze, einfachste Texte (z. B. Postkarten oder Einladungen) mithilfe von detaillierten inhaltlichen und sprachlichen Vorgaben formal korrekt schreiben und kreativ gestalten.",
+			"lessons": [
+				"f7-sketch",
+				"f7-anniversaire",
+				"f7-carte-postale"
+			],
+			"evidence": "Written postcards and invitations are produced in the app; performing mini-dialogues with body language and props happens in class.",
+			"status": "supported"
+		},
+		{
+			"id": "F7-54",
+			"lb": "4",
+			"section": "4 Methodische Kompetenzen",
+			"competence": "verwenden ein sehr begrenztes Inventar an Sprachlerntechniken und wenden einige einfache Verfahren der Wortschatzarbeit an, (z. B. Anhören und Nachsprechen von Audiodateien, Erstellen einer Vokabel- und Verbkartei, Memorier- und Vernetzungstechniken) um ihren Wortschatz zu festigen und zu vernetzen.",
+			"lessons": [
+				"f7-vocabulaire"
+			],
+			"evidence": "Card, verb-card and mind-map techniques are modelled; building and reviewing a personal card box is the learner’s own work, supported by the linked ZAM cards.",
+			"status": "supported"
+		},
+		{
+			"id": "F7-55",
+			"lb": "4",
+			"section": "4 Methodische Kompetenzen",
+			"competence": "wenden unter Anleitung Vorkenntnisse aus anderen Sprachen an (z. B. jeweilige Muttersprache, Englisch), um sprachliche Zusammenhänge und Gesetzmäßigkeiten (z. B. S-P-O, there is/are – il y a) zu verstehen.",
+			"lessons": [
+				"f7-cod",
+				"f7-animaux",
+				"f7-deviner"
+			],
+			"evidence": "Worked explanation with example, a three-goal visual workshop, quick check, short answers and two production tasks (guided and transfer).",
+			"status": "implemented"
+		},
+		{
+			"id": "F7-56",
+			"lb": "4",
+			"section": "4 Methodische Kompetenzen",
+			"competence": "setzen unter Anleitung sehr einfache Strategien zum Hör-, Hörseh- und Leseverstehen sowie zur mündlichen und schriftlichen Sprachproduktion (z. B. Markieren und Unterstreichen von Wörtern und Textstellen, Anfertigen kurzer Notizen) ein.",
+			"lessons": [
+				"f7-ecouter",
+				"f7-histoire"
+			],
+			"evidence": "Worked explanation with example, a three-goal visual workshop, quick check, short answers and two production tasks (guided and transfer).",
+			"status": "implemented"
+		},
+		{
+			"id": "F7-57",
+			"lb": "4",
+			"section": "4 Methodische Kompetenzen",
+			"competence": "nutzen das Lehrwerk (z. B. Vokabelanhänge, grammatikalische Übersichten) und unter Anleitung Hilfsmittel (z. B. Online-Wörterbücher, Computersprachprogramme) zum Lernen und Nachschlagen.",
+			"lessons": [
+				"f7-vocabulaire"
+			],
+			"evidence": "The lesson explains textbook appendices and links one online dictionary; using the class textbook stays outside the app.",
+			"status": "supported"
+		},
+		{
+			"id": "F7-58",
+			"lb": "4",
+			"section": "4 Methodische Kompetenzen",
+			"competence": "nutzen einzelne gängige Quellen zur Informationsbeschaffung, z. B. vorgegebene Internetseiten.",
+			"lessons": [
+				"f7-paris",
+				"f7-bretagne"
+			],
+			"evidence": "Two transfer tasks send learners to a linked official tourism page; the research itself is the learner’s.",
+			"status": "supported"
+		},
+		{
+			"id": "F7-59",
+			"lb": "4",
+			"section": "4 Methodische Kompetenzen",
+			"competence": "schreiben französische Texte unter Verwendung diakritischer Zeichen, auch in digitaler Form, richtig.",
+			"lessons": [
+				"f7-accents",
+				"f7-consignes"
+			],
+			"evidence": "Worked explanation with example, a three-goal visual workshop, quick check, short answers and two production tasks (guided and transfer).",
+			"status": "implemented"
+		},
+		{
+			"id": "F7-60",
+			"lb": "4",
+			"section": "4 Methodische Kompetenzen",
+			"competence": "erkennen und reflektieren unter Anleitung ihre Stärken und Schwächen und erkennen mögliche Fehlerquellen, z. B. durch Arbeiten mit Fehlerlisten, Portfolio.",
+			"lessons": [
+				"f7-accents"
+			],
+			"evidence": "A personal error list is modelled; teacher feedback and a portfolio remain classroom work.",
+			"status": "supported"
+		},
+		{
+			"id": "F7-61",
+			"lb": "5",
+			"section": "5 Themengebiete",
+			"competence": "bewältigen Kommunikationssituationen innerhalb der angegebenen Themengebiete mithilfe der in den Lernbereichen 1 - 4 ausgewiesenen Kompetenzen.",
+			"lessons": [
+				"f7-bonjour",
+				"f7-courses",
+				"f7-chemin",
+				"f7-anniversaire"
+			],
+			"evidence": "Worked explanation with example, a three-goal visual workshop, quick check, short answers and two production tasks (guided and transfer).",
+			"status": "implemented"
+		},
+		{
+			"id": "F7-62",
+			"lb": "5",
+			"section": "5 Themengebiete",
+			"competence": "setzen sich auf der Grundlage ihrer Kenntnisse bewusst mit der französischen Sprache und Kultur auseinander.",
+			"lessons": [
+				"f7-college",
+				"f7-fetes",
+				"f7-traduire"
+			],
+			"evidence": "Worked explanation with example, a three-goal visual workshop, quick check, short answers and two production tasks (guided and transfer).",
+			"status": "implemented"
+		},
+		{
+			"id": "F7-63",
+			"lb": "5",
+			"section": "5 Themengebiete",
+			"competence": "häusliche und familiäre Situationen (u. a. Familie, Haustiere, Freunde) (20 Stunden)",
+			"lessons": [
+				"f7-famille",
+				"f7-animaux",
+				"f7-pronoms",
+				"f7-etre-avoir"
+			],
+			"evidence": "Worked explanation with example, a three-goal visual workshop, quick check, short answers and two production tasks (guided and transfer).",
+			"status": "implemented"
+		},
+		{
+			"id": "F7-64",
+			"lb": "5",
+			"section": "5 Themengebiete",
+			"competence": "Leben und Wohnen (u. a. tägliche Abläufe, Lebensmittel, Wohnort, Verkehrsmittel) (20 Stunden)",
+			"lessons": [
+				"f7-journee",
+				"f7-maison",
+				"f7-quantites",
+				"f7-transports",
+				"f7-au-du"
+			],
+			"evidence": "Worked explanation with example, a three-goal visual workshop, quick check, short answers and two production tasks (guided and transfer).",
+			"status": "implemented"
+		},
+		{
+			"id": "F7-65",
+			"lb": "5",
+			"section": "5 Themengebiete",
+			"competence": "schulischer Alltag (u. a. Schulmaterialien, Klasse, Stundenplan, Räume) (20 Stunden)",
+			"lessons": [
+				"f7-classe",
+				"f7-college",
+				"f7-cer-ger",
+				"f7-heure"
+			],
+			"evidence": "Worked explanation with example, a three-goal visual workshop, quick check, short answers and two production tasks (guided and transfer).",
+			"status": "implemented"
+		},
+		{
+			"id": "F7-66",
+			"lb": "5",
+			"section": "5 Themengebiete",
+			"competence": "Freizeitgestaltung (u. a. Hobbys, Sportarten, Computer) (20 Stunden)",
+			"lessons": [
+				"f7-loisirs",
+				"f7-j-aime",
+				"f7-futur"
+			],
+			"evidence": "Worked explanation with example, a three-goal visual workshop, quick check, short answers and two production tasks (guided and transfer).",
+			"status": "implemented"
+		},
+		{
+			"id": "F7-67",
+			"lb": "5",
+			"section": "5 Themengebiete",
+			"competence": "elementare geographische Kenntnisse Frankreichs",
+			"lessons": [
+				"f7-carte"
+			],
+			"evidence": "Worked explanation with example, a three-goal visual workshop, quick check, short answers and two production tasks (guided and transfer).",
+			"status": "implemented"
+		},
+		{
+			"id": "F7-68",
+			"lb": "5",
+			"section": "5 Themengebiete",
+			"competence": "erste Begegnung mit Paris und einer Region Frankreichs (z. B. Bretagne, Côte d’Azur) (20 Stunden)",
+			"lessons": [
+				"f7-paris",
+				"f7-bretagne"
+			],
+			"evidence": "Worked explanation with example, a three-goal visual workshop, quick check, short answers and two production tasks (guided and transfer).",
+			"status": "implemented"
+		},
+		{
+			"id": "F7-69",
+			"lb": "5",
+			"section": "5 Themengebiete",
+			"competence": "wichtige Feste und Traditionen (u. a. Geburtstag, Weihnachten) (12 Stunden)",
+			"lessons": [
+				"f7-anniversaire",
+				"f7-fetes"
+			],
+			"evidence": "Worked explanation with example, a three-goal visual workshop, quick check, short answers and two production tasks (guided and transfer).",
+			"status": "implemented"
+		},
+		{
+			"id": "F7-70",
+			"lb": "5",
+			"section": "5 Themengebiete",
+			"competence": "aktuelle Themen",
+			"lessons": [
+				"f7-paris",
+				"f7-bretagne"
+			],
+			"evidence": "Current topics change; two tasks ask learners to research a linked official page. The app gives no current figures.",
+			"status": "supported"
+		}
+	]
+}

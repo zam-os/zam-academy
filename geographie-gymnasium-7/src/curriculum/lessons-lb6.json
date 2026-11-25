@@ -1,0 +1,378 @@
+[
+  {
+    "id": "meere-kuestenformen",
+    "lb": 6,
+    "title": "Europas Meere und Küstenformen",
+    "period": "Geo7 6 · Nordsee · Ostsee · Atlantik · Mittelmeer",
+    "intro": "Eine flache Wattküste, eine Steilküste und ein norwegischer Fjord zeigen verschiedene Wege, wie Küsten entstehen.",
+    "paragraphs": [
+      "Die Nordsee ist als Randmeer mit dem Atlantik verbunden. Die Ostsee tauscht Wasser durch enge Meerengen aus und enthält in großen Bereichen Brackwasser. Das Mittelmeer liegt zwischen Europa, Afrika und Asien und ist über die Straße von Gibraltar mit dem Atlantik verbunden.",
+      "Wellen können eine Steilküste unterspülen und Material abtragen. Wo Wasser langsamer wird, kann sich Sand oder Schlick ablagern. Norwegische Fjorde sind vom Meer überflutete Täler, die zuvor von Gletschern geformt wurden. Dämme, Buhnen und Hafenbauten verändern den Küstenraum zusätzlich."
+    ],
+    "takeaway": "Küsten entstehen durch Abtragung, Ablagerung und weitere Prozesse. Die Form ist ein Hinweis, den du mit Lage und Entstehungsgeschichte prüfst.",
+    "sourceIds": [
+      "lehrplan",
+      "natural-earth"
+    ],
+    "quiz": {
+      "question": "Wie entstanden norwegische Fjorde im Grundsatz?",
+      "answer": "Das Meer überflutete von Gletschern geformte Täler.",
+      "wrong": [
+        "Vulkanausbrüche stauten die Flüsse an.",
+        "Warme Meeresströmungen schnitten die Täler allein aus."
+      ],
+      "explanation": "Talgletscher formten tiefe Täler, in die später Meerwasser eindrang."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Was formt die Küste?",
+      "instruction": "Ordne nach dem beschriebenen Prozess.",
+      "categories": [
+        "Abtragung",
+        "Ablagerung",
+        "Menschlicher Eingriff"
+      ],
+      "entries": [
+        {
+          "text": "Wellen lösen Gestein an einem Kliff",
+          "target": 0,
+          "feedback": "Das Gestein wird abgetragen."
+        },
+        {
+          "text": "Schlick sammelt sich in ruhigem Wasser",
+          "target": 1,
+          "feedback": "Feines Material wird abgelagert."
+        },
+        {
+          "text": "Ein Deich trennt Teile des Hinterlands vom Tidewasser",
+          "target": 2,
+          "feedback": "Ein Bauwerk verändert den Wasserzutritt."
+        }
+      ],
+      "conclusion": "Küsten entstehen durch Abtragung, Ablagerung und weitere Prozesse. Die Form ist ein Hinweis, den du mit Lage und Entstehungsgeschichte prüfst."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Verorte Nordsee und Ostsee und beschreibe einen Unterschied der Verbindung zum Atlantik.",
+        "hints": [
+          "Suche beide Meere an Deutschland.",
+          "Welche Verbindung ist enger?"
+        ],
+        "model": "Die Nordsee liegt westlich von Dänemark und ist breit mit dem Atlantik verbunden. Die Ostsee liegt östlich und ist über engere Meerengen mit der Nordsee verbunden.",
+        "criteria": [
+          "Ich verorte die Nordsee.",
+          "Ich verorte die Ostsee.",
+          "Ich erkläre den Unterschied der Verbindung."
+        ]
+      },
+      "2": {
+        "prompt": "Hinter einer neu gebauten Hafenmole bildet sich eine Sandfläche. Erkläre einen möglichen Zusammenhang und nenne eine Beobachtung, die ihn prüft.",
+        "hints": [
+          "Hinter einem Hindernis strömt das Wasser möglicherweise langsamer.",
+          "Vergleiche Karten vor und nach dem Bau."
+        ],
+        "model": "Die Mole kann Wellen abschirmen. Im ruhigeren Wasser kann sich Sand absetzen. Ich würde Karten oder Messungen vor und nach dem Bau vergleichen und prüfen, ob sich die Fläche im geschützten Bereich vergrößert.",
+        "criteria": [
+          "Ich beschreibe eine mögliche Ursache.",
+          "Ich erkläre Ablagerung.",
+          "Ich nenne eine passende Prüfung."
+        ]
+      }
+    },
+    "figures": [
+      "meere"
+    ],
+    "workedExample": "Wellen treffen zuerst auf den Fuß eines Kliffs. Löst sich dort Gestein, kann Material von oben nachbrechen. Der abgetragene Sand kann sich an einer ruhigeren Stelle ablagern und dort die Küste aufbauen.",
+    "transferCheck": {
+      "question": "Hinter einer Hafenmole wächst eine Sandfläche. Was passt zur Beobachtung?",
+      "answer": "Schwächere Strömung im Schutz der Mole begünstigt Ablagerung.",
+      "wrong": [
+        "Stärkere Wellen im Schutz der Mole tragen den ganzen Sand ab.",
+        "Die Mole beschleunigt das Wasser und verhindert jede Ablagerung."
+      ],
+      "explanation": "Beruhigtes Wasser transportiert weniger Material. Ein Teil des Sands kann sich absetzen."
+    }
+  },
+  {
+    "id": "hafen-hinterland",
+    "lb": 6,
+    "title": "Häfen als Knoten des Handels",
+    "period": "Geo7 6 · Fallbeispiel Rotterdam",
+    "intro": "Ein Container, der Rotterdam erreicht, fährt oft weiter ins Binnenland. Der Hafen verbindet unterschiedliche Verkehrsmittel.",
+    "paragraphs": [
+      "Im Hafen werden Güter zwischen Schiff, Bahn, Lkw oder Binnenschiff umgeladen. Das Hinterland umfasst die Orte, die vergleichsweise gut vom Hafen bedient werden. Rotterdam liegt an der Nordsee und ist über Flüsse und Landwege mit Binnenregionen verbunden.",
+      "Ein Containerschiff kann viele Güter zusammen befördern. Ab dem Hafen entscheidet die Zieladresse mit über den Weitertransport. Bahn und Binnenschiff können viele Container auf einmal bewegen. Lkw erreichen viele Orte ohne weitere Umladung, brauchen aber Straßenkapazität."
+    ],
+    "takeaway": "Ein Hafen verbindet Seewege und Hinterland. Die Wahl des Verkehrsmittels hängt von Strecke, Menge, Anschlüssen und Folgen ab.",
+    "sourceIds": [
+      "lehrplan",
+      "natural-earth"
+    ],
+    "quiz": {
+      "question": "Was meint das Hinterland eines Hafens?",
+      "answer": "Die Gebiete, die über den Hafen beliefert werden oder Güter dorthin senden.",
+      "wrong": [
+        "Nur die Wasserfläche direkt am Kai.",
+        "Alle Länder am selben Meer."
+      ],
+      "explanation": "Das Hinterland wird durch die tatsächlichen Verkehrsverbindungen und Transportbeziehungen bestimmt."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Vom Meer zum Ziel",
+      "instruction": "Ordne die Schritte der Transportkette zu.",
+      "categories": [
+        "Seeweg",
+        "Umschlag",
+        "Hinterland"
+      ],
+      "entries": [
+        {
+          "text": "Ein Seeschiff erreicht Rotterdam",
+          "target": 0,
+          "feedback": "Bis zum Hafen verläuft der Transport über See."
+        },
+        {
+          "text": "Ein Kran lädt den Container auf einen Zug",
+          "target": 1,
+          "feedback": "Die Güter wechseln ihr Verkehrsmittel."
+        },
+        {
+          "text": "Der Zug erreicht ein Terminal im Landesinneren",
+          "target": 2,
+          "feedback": "Das Terminal liegt im Einzugsgebiet des Hafens."
+        }
+      ],
+      "conclusion": "Ein Hafen verbindet Seewege und Hinterland. Die Wahl des Verkehrsmittels hängt von Strecke, Menge, Anschlüssen und Folgen ab."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Beschreibe einen Transportweg vom Seeschiff über Rotterdam zu einem Betrieb im Binnenland.",
+        "hints": [
+          "Beginne mit dem Wechsel des Verkehrsmittels.",
+          "Gib an, wovon der letzte Abschnitt abhängt."
+        ],
+        "model": "Im Hafen wird der Container von einem Kran auf einen Zug verladen. Der Zug bringt ihn zu einem Terminal. Gibt es am Betrieb keinen Gleisanschluss, kann für den letzten Abschnitt ein Lkw nötig sein.",
+        "criteria": [
+          "Ich nenne den Umschlag.",
+          "Ich beschreibe den Weg ins Hinterland.",
+          "Ich begründe den letzten Abschnitt."
+        ]
+      },
+      "2": {
+        "prompt": "Durch Niedrigwasser können Binnenschiffe weniger laden. Vergleiche zwei mögliche Reaktionen eines Hafens.",
+        "hints": [
+          "Ein leichter beladenes Schiff benötigt weniger Tiefe.",
+          "Ein Wechsel auf die Schiene braucht freie Kapazität."
+        ],
+        "model": "Schiffe können leichter beladen werden, dann sind mehr Fahrten nötig. Ein Teil der Ladung kann auf die Bahn wechseln, sofern Züge und Terminals Kapazität haben. Beide Optionen verändern Kosten und Aufwand.",
+        "criteria": [
+          "Ich erkläre die Folge des Niedrigwassers.",
+          "Ich vergleiche zwei Maßnahmen.",
+          "Ich nenne eine Hürde oder Nebenwirkung."
+        ]
+      }
+    },
+    "figures": [
+      "haefen"
+    ],
+    "workedExample": "Ein Container kommt per Schiff in Rotterdam an. Ein Kran hebt ihn auf ein Binnenschiff nach Duisburg. Von dort bringt ein Lkw die Ladung zum Betrieb. Rotterdam verbindet hier den Seeweg mit dem Transport ins Hinterland.",
+    "transferCheck": {
+      "question": "Wegen Niedrigwasser können Binnenschiffe weniger laden. Wann kann die Bahn einen Teil der Fracht übernehmen?",
+      "answer": "Wenn Schienen, Züge und Umschlaganlagen dafür freie Kapazität haben.",
+      "wrong": [
+        "Wenn die Wasserstraße schmaler wird, unabhängig von den Zugverbindungen.",
+        "Sobald im Seehafen ein zusätzliches Schiff ankommt."
+      ],
+      "explanation": "Der Wechsel braucht Wagen, Strecken und Terminals. Der Hafen muss den Umschlag organisieren können."
+    }
+  },
+  {
+    "id": "meer-nutzen",
+    "lb": 6,
+    "title": "Fischerei, Rohstoffe und Küstentourismus",
+    "period": "Geo7 6 · Nutzungen und Konflikte",
+    "intro": "Ein Küstenraum kann Fischerei, Energiegewinnung und Erholung tragen. Die Nutzungen beanspruchen Wasser, Fläche und Infrastruktur.",
+    "paragraphs": [
+      "Fischerei entnimmt wild lebende Tiere. In Aquakulturen werden Wasserorganismen gezüchtet. Beide können Nahrung liefern. Fangdruck, Beifang, Abfälle oder Nährstoffeinträge können je nach Verfahren Lebensräume beeinträchtigen. Zertifikate weisen auf geprüfte Regeln hin. Prüfe, was ein einzelnes Zeichen tatsächlich abdeckt.",
+      "Erdöl und Erdgas werden unter anderem in Teilen der Nordsee gefördert. Strandtourismus kann Einkommen und Arbeitsplätze schaffen, zugleich aber Wasserbedarf und Verkehr erhöhen. Interessen lassen sich etwa mit Schutzgebieten, räumlicher Planung und saisonalen Regeln abwägen."
+    ],
+    "takeaway": "Ordne einer Nutzung ihren wirtschaftlichen Nutzen, ihre Belastungen und eine passende Begrenzung zu.",
+    "sourceIds": [
+      "lehrplan"
+    ],
+    "quiz": {
+      "question": "Worin unterscheidet sich Aquakultur von Fischerei?",
+      "answer": "Aquakultur züchtet Organismen, Fischerei fängt wild lebende Tiere.",
+      "wrong": [
+        "Aquakultur gibt es nur an Stränden.",
+        "Fischerei züchtet Fische in Becken."
+      ],
+      "explanation": "Der Unterschied betrifft Herkunft und Art der Nutzung."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Wer braucht welchen Raum?",
+      "instruction": "Ordne das jeweilige Vorhaben zu.",
+      "categories": [
+        "Fischerei",
+        "Rohstoffnutzung",
+        "Tourismus"
+      ],
+      "entries": [
+        {
+          "text": "Ein Betrieb sucht ein Fanggebiet für Plattfische",
+          "target": 0,
+          "feedback": "Die Entnahme wild lebender Tiere gehört zur Fischerei."
+        },
+        {
+          "text": "Eine Plattform erschließt Erdgas",
+          "target": 1,
+          "feedback": "Hier geht es um einen Rohstoff unter dem Meeresboden."
+        },
+        {
+          "text": "Ein Ort plant Wege zu einem Badestrand",
+          "target": 2,
+          "feedback": "Die Wege unterstützen Erholungsnutzung."
+        }
+      ],
+      "conclusion": "Ordne einer Nutzung ihren wirtschaftlichen Nutzen, ihre Belastungen und eine passende Begrenzung zu."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre für einen Küstenort einen Nutzen und einen möglichen Konflikt des Tourismus.",
+        "hints": [
+          "Denke an Arbeit und Einkommen.",
+          "Welche Ressource kann zur Hauptsaison knapper werden?"
+        ],
+        "model": "Gäste bringen Einnahmen für Betriebe. Im Sommer können Besucherandrang und Wasserverbrauch steigen. Der Ort könnte Wassersparmaßnahmen und eine gelenkte Nutzung empfindlicher Flächen vereinbaren.",
+        "criteria": [
+          "Ich nenne einen wirtschaftlichen Vorteil.",
+          "Ich erkläre eine räumliche oder ökologische Folge.",
+          "Ich begründe eine passende Maßnahme."
+        ]
+      },
+      "2": {
+        "prompt": "Ein neuer Aquakulturbetrieb soll neben einem beliebten Strand entstehen. Entwickle ein Kriterium für die Standortwahl und erläutere einen möglichen Zielkonflikt.",
+        "hints": [
+          "Denke an Wasserströmung und Abstand.",
+          "Wer nutzt das Wasser noch?"
+        ],
+        "model": "Ich würde prüfen, wohin die Strömung Nährstoffe trägt. Der Betrieb schafft Nahrung und Arbeit. Wenn belastetes Wasser zur Badebucht gelangt, geraten Wasserqualität und Tourismus in Konflikt. Ein anderer Standort kann helfen.",
+        "criteria": [
+          "Ich formuliere ein überprüfbares Kriterium.",
+          "Ich nenne zwei Nutzungsinteressen.",
+          "Ich erkläre ihren möglichen Konflikt."
+        ]
+      }
+    },
+    "figures": [
+      "kuestennutzung"
+    ],
+    "workedExample": "Ein Küstenort richtet im Sommer einen weiteren Strandzugang ein. Das kann Verkäufe und Arbeitsplätze fördern. Führt der Weg durch empfindliche Dünen, kann sich die Vegetation verschlechtern. Ein Steg über den Sand kann den Zugang ermöglichen und Trittschäden begrenzen.",
+    "transferCheck": {
+      "question": "Eine Aquakultur und ein Badestrand teilen eine Bucht. Welche Beobachtung hilft bei der Standortwahl?",
+      "answer": "Die Strömungsrichtung zwischen Anlage und Strand.",
+      "wrong": [
+        "Die Zahl der Betten im nächsten Hotel allein.",
+        "Die Menge der an einem anderen Meer gefangenen Fische."
+      ],
+      "explanation": "Strömungen zeigen, wohin Nährstoffe aus der Anlage gelangen können."
+    }
+  },
+  {
+    "id": "watt-schuetzen",
+    "lb": 6,
+    "title": "Das Wattenmeer beobachten und schützen",
+    "period": "Geo7 6 · Gezeiten · UNESCO · Küstenmonitoring",
+    "intro": "Im Wattenmeer fallen bei Ebbe große Flächen trocken und werden bei Flut wieder überspült. Deutschland, die Niederlande und Dänemark teilen dieses Gebiet.",
+    "paragraphs": [
+      "Wattflächen, Rinnen und Salzwiesen bieten vielen Arten Lebensraum. Zugvögel finden auf trockenfallenden Flächen Nahrung. In Salzwiesen wachsen Pflanzen, die zeitweise Überflutung und Salz vertragen. Ein Teil des Wattenmeeres ist als grenzüberschreitendes Weltnaturerbe anerkannt.",
+      "Plastik, Schiffsverkehr oder Störungen durch Menschen können Lebensräume beeinträchtigen. Sensoren und Satellitenbilder helfen, Wasserstand, Trübung oder Veränderungen der Flächen zu beobachten. Schutzmaßnahmen brauchen klare Ziele und Daten, an denen ihr Erfolg erkennbar wird."
+    ],
+    "takeaway": "Begründe für jedes Schutzproblem eine Maßnahme und eine Beobachtung, mit der sich ihre Wirkung prüfen lässt.",
+    "sourceIds": [
+      "lehrplan",
+      "watt"
+    ],
+    "quiz": {
+      "question": "Welcher Vergleich hilft zu beurteilen, ob eine Schutzzone Zugvögel vor Störungen schützt?",
+      "answer": "Störungen vor und nach der Einführung unter vergleichbaren Bedingungen zählen.",
+      "wrong": [
+        "Nur die Zahl der Karten zur Zone zählen.",
+        "Einmal die Wasserfarbe mit bloßem Auge beurteilen."
+      ],
+      "explanation": "Vergleichbare Beobachtungen zeigen, ob sich die Zahl der Störungen ändert."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Vom Problem zur Messung",
+      "instruction": "Ordne die Beobachtung dem passenden Schutzthema zu.",
+      "categories": [
+        "Plastikmüll",
+        "Vogelruhe",
+        "Wasser und Sediment"
+      ],
+      "entries": [
+        {
+          "text": "Abfälle werden an festen Strandabschnitten gezählt",
+          "target": 0,
+          "feedback": "Wiederholte Zählungen können einen Trend im Müllaufkommen zeigen."
+        },
+        {
+          "text": "Beobachtende protokollieren aufgeschreckte Vogelgruppen",
+          "target": 1,
+          "feedback": "Das liefert Hinweise auf Störungen."
+        },
+        {
+          "text": "Ein Satellitenbild zeigt die Lage sichtbarer Trübungszonen",
+          "target": 2,
+          "feedback": "Trübungszonen können bewegtes Sediment anzeigen."
+        }
+      ],
+      "conclusion": "Begründe für jedes Schutzproblem eine Maßnahme und eine Beobachtung, mit der sich ihre Wirkung prüfen lässt."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre, weshalb eine Wattfläche für Arten wichtig ist und warum Besucher auf ausgewiesenen Wegen bleiben sollen.",
+        "hints": [
+          "Beobachte, wann Flächen trockenfallen.",
+          "Warum können wiederholte Störungen Folgen für Vögel haben?"
+        ],
+        "model": "Bei Niedrigwasser können Vögel auf Wattflächen nach Nahrung suchen. Ausgewiesene Wege können störungsarme Bereiche sichern. So werden die Tiere beim Fressen seltener aufgescheucht.",
+        "criteria": [
+          "Ich verknüpfe Niedrigwasser und Nahrungssuche.",
+          "Ich benenne eine Störung.",
+          "Ich erkläre, wie Wege sie mindern können."
+        ]
+      },
+      "2": {
+        "prompt": "Erstelle für eine Küstengemeinde einen kleinen Maßnahmenkatalog gegen Müll und Vogelstörungen. Wie könnte sie die Wirkung prüfen?",
+        "hints": [
+          "Wähle für jedes Problem eine eigene Maßnahme.",
+          "Plane wiederholte Beobachtungen an festen Orten."
+        ],
+        "model": "Die Gemeinde kann Abfallangebote verbessern und Müll an festen Abschnitten regelmäßig zählen. Zeitweise Ruhezonen können Vögel schützen. Sie kann dort Störungen vor und nach der Ausweisung bei ähnlicher Tide und Jahreszeit vergleichen.",
+        "criteria": [
+          "Ich nenne zwei passende Maßnahmen.",
+          "Ich schlage für beide eine Beobachtung vor.",
+          "Ich halte den Vergleich möglichst fair."
+        ]
+      }
+    },
+    "figures": [
+      "watt"
+    ],
+    "lab": "watt",
+    "workedExample": "Ein Schutzgebiet beobachtet im Frühling Zugvögel. Es zählt Störungen vor und nach Einführung eines abgesperrten Weges bei ähnlichem Wasserstand. Weniger Störungen unter vergleichbaren Bedingungen sprechen dafür, dass die Sperrung hilft.",
+    "transferCheck": {
+      "question": "Eine Gemeinde will prüfen, ob eine Ruhezone wirkt. Welcher Vergleich ist am besten?",
+      "answer": "Störungen bei ähnlicher Tide und Jahreszeit vor und nach der Einrichtung zählen.",
+      "wrong": [
+        "Die Gästezahl im Winter vor der Einrichtung mit dem Sommer danach vergleichen.",
+        "Nur nach dem Aufbau der Schilder die Vogelarten auflisten."
+      ],
+      "explanation": "Vergleichbare Beobachtungsbedingungen helfen, eine Änderung von Wetter, Tide oder Jahreszeit zu unterscheiden."
+    }
+  }
+]

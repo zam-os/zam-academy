@@ -1,0 +1,281 @@
+[
+	{
+		"id": "f7-carte",
+		"stage": "f7-france",
+		"title": "La France sur la carte",
+		"skill": "Sich mit Grundwissen zur Geographie Frankreichs orientieren",
+		"bindings": ["2", "5"],
+		"paragraphs": [
+			"Das europäische Festland Frankreichs hat ungefähr die Form eines Sechsecks; die Franzosen nennen ihr Land deshalb oft l’Hexagone. Im Norden liegt la Manche (der Ärmelkanal), im Westen l’océan Atlantique, im Süden la mer Méditerranée. Gebirge: les Alpes im Osten an der Grenze zu Italien und der Schweiz, les Pyrénées im Süden an der Grenze zu Spanien. Nachbarländer sind unter anderem l’Allemagne, la Belgique, la Suisse, l’Italie und l’Espagne.",
+			"Die Hauptstadt ist Paris an der Seine. Weitere große Städte: Lyon an der Rhône, Marseille am Mittelmeer, Toulouse und Bordeaux an der Garonne, Nantes an der Loire, Rennes in der Bretagne. La Loire ist der längste Fluss Frankreichs. Beispiel: Marseille est dans le sud, au bord de la Méditerranée. Rennes est dans l’ouest, en Bretagne. Himmelsrichtungen: le nord, le sud, l’est, l’ouest."
+		],
+		"material": "La France, c’est l’Hexagone. Paris, la capitale, est dans le nord, sur la Seine. Lyon est dans le centre-est, sur le Rhône. Marseille est dans le sud, au bord de la Méditerranée. Bordeaux est dans le sud-ouest, sur la Garonne. Rennes est dans l’ouest, en Bretagne. Au sud, il y a les Pyrénées et à l’est, les Alpes.",
+		"materialLabel": "Eigenes Übungsmaterial · Lernskizze, nicht maßstäblich",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp-f7", "eu-fr"],
+		"quiz": {
+			"optionLanguage": "fr",
+			"question": "An welchem Fluss liegt Paris?",
+			"answer": "la Seine",
+			"wrong": ["la Loire", "le Rhône"],
+			"explanation": "Paris liegt an der Seine; die Loire fließt durch Nantes, die Rhône durch Lyon."
+		},
+		"takeaway": "l’Hexagone · la Manche (N), l’Atlantique (W), la Méditerranée (S) · les Alpes (O), les Pyrénées (S) · Paris – Seine, Lyon – Rhône, Nantes – Loire, Bordeaux und Toulouse – Garonne.",
+		"practice": [
+			{ "prompt": "Das Gebirge an der Grenze zu Spanien: les ___", "answers": ["Pyrénées"], "feedback": "Les Pyrénées trennen Frankreich und Spanien." },
+			{ "prompt": "Marseille liegt am Meer: la ___", "answers": ["Méditerranée"], "feedback": "Marseille liegt an der Méditerranée." }
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Beschreibe mit Hilfe der Karte die Lage von drei Städten auf Französisch (Himmelsrichtung und Fluss oder Meer).",
+				"model": "Paris est dans le nord, sur la Seine. Lyon est dans le centre-est, sur le Rhône. Marseille est dans le sud, au bord de la Méditerranée.",
+				"criteria": ["Ich nenne drei Städte richtig.", "Ich verwende Himmelsrichtungen.", "Ich nenne Fluss oder Meer."]
+			},
+			"2": {
+				"prompt": "Plane eine Reise von Rennes nach Marseille. Beschreibe auf Französisch, in welche Richtung du fährst und an welchen Städten, Flüssen oder Gebirgen du vorbeikommen könntest. Prüfe deine Angaben auf der Karte.",
+				"model": "Je pars de Rennes, dans l’ouest. Je vais à Nantes, sur la Loire. Ensuite, je vais vers le sud-est, à Lyon, sur le Rhône. Enfin, j’arrive à Marseille, au bord de la Méditerranée. Les Alpes sont à l’est.",
+				"criteria": ["Ich beschreibe eine sinnvolle Route.", "Ich nenne Himmelsrichtungen und Orte.", "Meine Angaben passen zur Karte."]
+			}
+		},
+		"workshop": {
+			"kind": "map",
+			"goals": [
+				{ "label": "Hauptstadt", "before": "Paris est sur", "after": ".", "options": ["la Seine", "la Garonne", "le Rhône"], "answer": "la Seine", "explanation": "Paris liegt an der Seine." },
+				{ "label": "Süden", "before": "Marseille est au bord de", "after": ".", "options": ["la Méditerranée", "la Manche", "l’Atlantique"], "answer": "la Méditerranée", "explanation": "Marseille liegt am Mittelmeer." },
+				{ "label": "Osten", "before": "À l’est, il y a", "after": ".", "options": ["les Alpes", "les Pyrénées", "la Bretagne"], "answer": "les Alpes", "explanation": "Die Alpen liegen im Osten." }
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "f7-paris",
+		"stage": "f7-france",
+		"title": "Une journée à Paris",
+		"skill": "Paris und seine bekanntesten Orte kennenlernen",
+		"bindings": ["2", "5", "1.1-lesen"],
+		"paragraphs": [
+			"Paris ist die Hauptstadt Frankreichs und liegt an der Seine. Bekannte Orte: la tour Eiffel (der Eiffelturm) im Westen der Innenstadt, le Louvre, ein großes Kunstmuseum mit einer Glaspyramide, la cathédrale Notre-Dame auf der Île de la Cité, einer Insel in der Seine, l’Arc de Triomphe am Ende der Avenue des Champs-Élysées und le Sacré-Cœur auf dem Hügel von Montmartre.",
+			"In Paris fährt man oft mit dem métro. Eine Tagestour könnte so aussehen: Le matin, on visite le Louvre. À midi, on mange un sandwich au bord de la Seine. L’après-midi, on monte sur la tour Eiffel. Le soir, on fait une promenade en bateau sur la Seine. Wer Paris von oben sehen will, steigt auf den Eiffelturm oder auf den Hügel von Montmartre."
+		],
+		"material": "Bonjour de Paris ! Aujourd’hui, nous visitons la ville. D’abord, nous prenons le métro jusqu’au Louvre. La pyramide est super ! À midi, nous mangeons un sandwich au bord de la Seine. Ensuite, nous allons à Notre-Dame, sur l’île de la Cité. Le soir, nous montons sur la tour Eiffel. Quelle vue !",
+		"materialLabel": "Eigenes Übungsmaterial · erfundene Reise",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp-f7", "paris"],
+		"quiz": {
+			"optionLanguage": "fr",
+			"question": "Welcher Ort ist ein großes Kunstmuseum mit einer Glaspyramide?",
+			"answer": "le Louvre",
+			"wrong": ["la tour Eiffel", "l’Arc de Triomphe"],
+			"explanation": "Der Louvre ist ein Museum; die Glaspyramide markiert einen Eingang."
+		},
+		"takeaway": "Paris: Hauptstadt an der Seine · la tour Eiffel · le Louvre (Museum) · Notre-Dame (auf der Île de la Cité) · l’Arc de Triomphe · le Sacré-Cœur · le métro.",
+		"practice": [
+			{ "prompt": "Die Kathedrale auf der Insel: ___-Dame", "answers": ["Notre"], "feedback": "Notre-Dame steht auf der Île de la Cité." },
+			{ "prompt": "Die U-Bahn in Paris: le ___", "answers": ["métro"], "feedback": "Le métro mit accent aigu." }
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Lies die Postkarte im Material. Schreibe auf Deutsch die Reihenfolge der besuchten Orte und das Verkehrsmittel.",
+				"model": "Mit der Metro zum Louvre, mittags an die Seine, dann zu Notre-Dame auf der Île de la Cité, abends auf den Eiffelturm.",
+				"criteria": ["Ich nenne alle Orte in der richtigen Reihenfolge.", "Ich nenne das Verkehrsmittel.", "Ich fasse auf Deutsch zusammen."],
+				"language": "de"
+			},
+			"2": {
+				"prompt": "Plane einen Tag in Paris für deine Familie. Wähle drei Orte, begründe eine Wahl mit parce que und schreibe den Plan im futur composé. Nutze die verlinkte Seite „Visiter Paris“ von France.fr für eine Idee.",
+				"model": "Le matin, nous allons visiter le Louvre parce que ma mère adore l’art. À midi, nous allons manger au bord de la Seine. L’après-midi, nous allons prendre le métro jusqu’à Montmartre. Le soir, nous allons monter sur la tour Eiffel.",
+				"criteria": ["Ich plane drei Orte im futur composé.", "Ich begründe mit parce que.", "Ich habe eine Idee selbst recherchiert."]
+			}
+		},
+		"workshop": {
+			"kind": "map",
+			"goals": [
+				{ "label": "Museum", "before": "Au", "after": ", il y a une pyramide.", "options": ["Louvre", "Sacré-Cœur", "métro"], "answer": "Louvre", "explanation": "Die Glaspyramide steht am Louvre." },
+				{ "label": "Fluss", "before": "Paris est sur", "after": ".", "options": ["la Seine", "la Loire", "le Rhône"], "answer": "la Seine", "explanation": "Paris liegt an der Seine." },
+				{ "label": "Verkehrsmittel", "before": "Nous prenons le", "after": ".", "options": ["métro", "piscine", "Louvre"], "answer": "métro", "explanation": "In Paris fährt man oft mit dem métro." }
+			]
+		},
+		"explorer": {
+			"caption": "Drei Orte an der Seine · Wähle einen Ort",
+			"steps": [
+				{ "label": "Tour Eiffel", "icon": "🗼", "example": "On monte sur la tour Eiffel.", "detail": "Westlich von Louvre und Notre-Dame." },
+				{ "label": "Louvre", "icon": "🔺", "example": "On visite le Louvre.", "detail": "Kunstmuseum; die Glaspyramide ist ein Eingang." },
+				{ "label": "Notre-Dame", "icon": "⛪", "example": "Notre-Dame est sur l’île de la Cité.", "detail": "Kathedrale auf einer Insel in der Seine." }
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "f7-bretagne",
+		"stage": "f7-france",
+		"title": "Bienvenue en Bretagne",
+		"skill": "Eine Region und das Leben ihrer Bewohner kennenlernen",
+		"bindings": ["2", "5", "1.1-lesen"],
+		"paragraphs": [
+			"Die Bretagne liegt im Westen Frankreichs auf einer Halbinsel zwischen der Manche und dem Atlantik. Die größte Stadt der Region ist Rennes. Typisch sind die lange Küste mit Felsen, Stränden und Leuchttürmen (les phares), kleine Häfen und das oft wechselnde Wetter. An der Küste liegt Saint-Malo, eine Stadt mit Mauern am Meer.",
+			"Die Bretagne hat eine eigene Sprache, le breton; auf manchen Ortsschildern stehen die Namen zweisprachig. Bekannt sind les crêpes (süß) und les galettes (salzig, aus Buchweizen). Die Flagge ist schwarz-weiß und heißt Gwenn-ha-du. Beispiel: Léa habite à Rennes. Le dimanche, elle va à la mer avec sa famille et ils mangent des galettes dans une crêperie."
+		],
+		"material": "Léa raconte : J’habite à Rennes, en Bretagne. Le week-end, nous allons souvent à Saint-Malo. Il y a la mer, des rochers et un phare. Il fait parfois froid et il pleut, mais j’adore la plage ! À midi, nous mangeons des galettes dans une crêperie. Mon grand-père parle breton.",
+		"materialLabel": "Eigenes Übungsmaterial · erfundene Person",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp-f7", "bretagne"],
+		"quiz": {
+			"optionLanguage": "fr",
+			"question": "Was ist eine galette in der Bretagne?",
+			"answer": "une crêpe salée",
+			"wrong": ["un gâteau au chocolat", "un phare"],
+			"explanation": "Die galette ist ein herzhafter Pfannkuchen, meist aus Buchweizen."
+		},
+		"takeaway": "Bretagne: im Westen, zwischen Manche und Atlantik · Rennes, Saint-Malo · Küste, Leuchttürme · le breton · crêpes (süß) und galettes (salzig).",
+		"practice": [
+			{ "prompt": "Leuchtturm: un ___", "answers": ["phare"], "feedback": "Un phare ist ein Leuchtturm." },
+			{ "prompt": "Die Sprache der Bretagne: le ___", "answers": ["breton"], "feedback": "Le breton ist eine eigene Sprache." }
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Lies den Text von Léa und beantworte auf Französisch: Où est-ce que Léa habite ? Où est-ce qu’elle va le week-end ? Qu’est-ce qu’elle mange ?",
+				"model": "Léa habite à Rennes, en Bretagne. Le week-end, elle va à Saint-Malo. Elle mange des galettes dans une crêperie.",
+				"criteria": ["Ich beantworte alle drei Fragen.", "Ich übernehme die Informationen genau.", "Ich schreibe ganze Sätze mit elle."]
+			},
+			"2": {
+				"prompt": "Vergleiche das Leben von Léa in der Bretagne mit dem Leben in deiner Region: zwei Unterschiede und eine Gemeinsamkeit. Schaue für eine Idee auf die verlinkte Seite über die Bretagne.",
+				"model": "Léa habite à Rennes et elle va le week-end à Saint-Malo, au bord de la mer ; moi, j’habite près des Alpes. En Bretagne, on mange des galettes, chez moi, on mange des bretzels. Comme Léa, je vais souvent dehors avec ma famille le week-end.",
+				"criteria": ["Ich nenne zwei Unterschiede.", "Ich nenne eine Gemeinsamkeit.", "Ich stütze mich auf Text und Quelle."]
+			}
+		},
+		"workshop": {
+			"kind": "map",
+			"goals": [
+				{ "label": "Lage", "before": "La Bretagne est dans", "after": "de la France.", "options": ["l’ouest", "l’est", "le sud"], "answer": "l’ouest", "explanation": "Die Bretagne liegt im Westen." },
+				{ "label": "Essen", "before": "On mange des", "after": "dans une crêperie.", "options": ["galettes", "phares", "rochers"], "answer": "galettes", "explanation": "In der crêperie gibt es galettes und crêpes." },
+				{ "label": "Sprache", "before": "Mon grand-père parle", "after": ".", "options": ["breton", "bretagne", "bretonne la"], "answer": "breton", "explanation": "Die Sprache heißt le breton." }
+			]
+		},
+		"explorer": {
+			"caption": "Bretagne entdecken · Wähle ein Motiv",
+			"steps": [
+				{ "label": "Küste", "icon": "🌊", "example": "Il y a la mer, des rochers et un phare.", "detail": "Lange Küste an Manche und Atlantik." },
+				{ "label": "Crêperie", "icon": "🥞", "example": "Nous mangeons des galettes et des crêpes.", "detail": "Galette salzig, crêpe süß." },
+				{ "label": "Breton", "icon": "🏴🏳", "example": "Rennes – Roazhon", "detail": "Zweisprachige Schilder: französisch und bretonisch." }
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "f7-anniversaire",
+		"stage": "f7-france",
+		"title": "Joyeux anniversaire !",
+		"skill": "Zum Geburtstag gratulieren und eine Einladung schreiben",
+		"bindings": ["1.1-schreiben", "1.1-sprachmittlung", "2", "3", "5"],
+		"paragraphs": [
+			"Zum Geburtstag sagst du Joyeux anniversaire ! oder Bon anniversaire ! Dazu gehören un gâteau (Kuchen), des bougies (Kerzen), des cadeaux und une fête (Feier). Das Lied heißt ebenfalls Joyeux anniversaire. Nach dem Geburtstag fragst du: C’est quand, ton anniversaire ? – C’est le 12 mai.",
+			"Eine Einladung braucht eine Anrede, die wichtigsten Angaben und einen Schluss. Anrede: Salut Inès ! oder Chère Inès, / Cher Hugo, (cher für Jungen, chère für Mädchen). Angaben: quoi (une fête), quand (samedi 14 mai, à 15 heures), où (chez moi, 12 rue des Lilas). Schluss: Tu viens ? Réponds vite ! À bientôt ! Bisous, Léa. Beispiel: Je fais une fête pour mon anniversaire samedi à 15 heures, chez moi. Tu viens ?"
+		],
+		"material": "Salut Inès ! Samedi 14 mai, c’est mon anniversaire ! Je fais une fête chez moi, 12 rue des Lilas, de 15 heures à 19 heures. Il y a un gâteau au chocolat, de la musique et des jeux. Tu viens ? Réponds vite ! Bisous, Léa",
+		"materialLabel": "Eigenes Übungsmaterial · erfundene Einladung und Adresse",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp-f7"],
+		"quiz": {
+			"optionLanguage": "fr",
+			"question": "Welche Anrede passt in einer Einladung an deinen Freund Hugo?",
+			"answer": "Cher Hugo,",
+			"wrong": ["Chère Hugo,", "Joyeux Hugo,"],
+			"explanation": "Cher für Jungen, chère für Mädchen."
+		},
+		"takeaway": "Joyeux / Bon anniversaire ! Einladung: Anrede (Salut … ! / Cher … , / Chère … ,) – was, wann, wo – Tu viens ? – Schluss (À bientôt ! Bisous).",
+		"practice": [
+			{ "prompt": "Anrede für Inès: ___ Inès,", "answers": ["Chère"], "feedback": "Für Mädchen: chère." },
+			{ "prompt": "„Kommst du?“: Tu ___ ?", "answers": ["viens"], "feedback": "Tu viens ? – Kommst du?" }
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe eine Einladung zu deiner Geburtstagsfeier mit Anrede, Datum, Uhrzeit, Ort, einer Frage und einem Schluss. Verwende erfundene Angaben.",
+				"model": "Chère Mia, samedi 3 juin, c’est mon anniversaire ! Je fais une fête chez moi, 8 rue du Parc, de 14 heures à 18 heures. Il y a des crêpes et de la musique. Tu viens ? À bientôt ! Lena",
+				"criteria": ["Meine Einladung hat Anrede und Schluss.", "Ich nenne was, wann und wo.", "Ich frage, ob die Person kommt."]
+			},
+			"2": {
+				"prompt": "Deine kleine Schwester hat Léas Einladung aus dem Material bekommen, versteht aber kein Französisch. Erkläre ihr auf Deutsch alle wichtigen Angaben.",
+				"model": "Léa hat am Samstag, dem 14. Mai, Geburtstag und feiert bei sich zu Hause in der Rue des Lilas 12, von 15 bis 19 Uhr. Es gibt Schokoladenkuchen, Musik und Spiele. Sie fragt, ob du kommst, und möchte schnell eine Antwort.",
+				"criteria": ["Ich nenne Anlass, Datum, Uhrzeit und Ort.", "Ich nenne das Programm.", "Ich gebe die Bitte um Antwort weiter."],
+				"language": "de"
+			}
+		},
+		"workshop": {
+			"kind": "poster",
+			"goals": [
+				{ "label": "Anrede", "before": "", "after": "Inès,", "options": ["Chère", "Cher", "Joyeuse"], "answer": "Chère", "explanation": "Inès ist ein Mädchen: chère." },
+				{ "label": "Glückwunsch", "before": "", "after": "anniversaire !", "options": ["Joyeux", "Bonne", "Chère"], "answer": "Joyeux", "explanation": "Joyeux anniversaire !" },
+				{ "label": "Frage", "before": "Je fais une fête samedi.", "after": "?", "options": ["Tu viens", "Tu vas", "Tu as"], "answer": "Tu viens", "explanation": "Tu viens ? – Kommst du?" }
+			]
+		},
+		"explorer": {
+			"caption": "Einladung bauen · Wähle einen Teil",
+			"steps": [
+				{ "label": "Anrede", "icon": "✉️", "example": "Salut Inès ! / Chère Inès, / Cher Hugo,", "detail": "Locker oder etwas förmlicher." },
+				{ "label": "Angaben", "icon": "🎂", "example": "samedi 14 mai, à 15 heures, chez moi", "detail": "Quoi ? Quand ? Où ?" },
+				{ "label": "Schluss", "icon": "😘", "example": "Tu viens ? À bientôt ! Bisous, Léa", "detail": "Frage, Gruß, Name." }
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "f7-fetes",
+		"stage": "f7-france",
+		"title": "Noël et le 14 juillet",
+		"skill": "Wichtige Feste und Traditionen in Frankreich kennenlernen",
+		"bindings": ["2", "5", "1.2-wortschatz"],
+		"paragraphs": [
+			"An Weihnachten (Noël) feiern viele Familien am Abend des 24. Dezember le réveillon mit einem großen Essen. Die Geschenke bringt le Père Noël, oft liegen sie am Morgen des 25. Dezember unter dem Baum (le sapin). Zum Nachtisch gibt es häufig la bûche de Noël, einen Kuchen in Form eines Holzscheits. Man wünscht sich Joyeux Noël !",
+			"Am 6. Januar oder an einem Sonntag in dieser Zeit essen viele Familien la galette des rois, einen Blätterteigkuchen. Darin steckt eine kleine Figur, la fève; wer sie findet, ist König oder Königin und trägt eine Papierkrone. Der Nationalfeiertag ist le 14 juillet mit einer Parade in Paris, Festen und Feuerwerk (le feu d’artifice). Vergleiche mit deinen eigenen Festen: Bei uns kommt oft das Christkind am 24. Dezember."
+		],
+		"material": "Chez Léa, on fête Noël le 24 décembre au soir. Toute la famille mange ensemble. Le 25 au matin, les cadeaux sont sous le sapin. Le 6 janvier, on mange la galette des rois. Cette année, Hugo trouve la fève : il est le roi ! Et le 14 juillet, il y a un feu d’artifice au bord de la mer.",
+		"materialLabel": "Eigenes Übungsmaterial · erfundene Familie",
+		"materialLanguage": "fr",
+		"sourceIds": ["lp-f7"],
+		"quiz": {
+			"optionLanguage": "fr",
+			"question": "Wer die fève in der galette des rois findet, …",
+			"answer": "est le roi ou la reine.",
+			"wrong": ["fait un feu d’artifice.", "apporte les cadeaux."],
+			"explanation": "Wer die kleine Figur findet, wird König oder Königin."
+		},
+		"takeaway": "Noël: réveillon am 24. abends, Père Noël, sapin, bûche · Joyeux Noël ! · Galette des rois mit fève am 6. Januar · 14 juillet: Nationalfeiertag mit Parade und feu d’artifice.",
+		"practice": [
+			{ "prompt": "Der französische Nationalfeiertag: le 14 ___", "answers": ["juillet"], "feedback": "Le 14 juillet." },
+			{ "prompt": "Der Weihnachtsbaum: le ___", "answers": ["sapin"], "feedback": "Le sapin de Noël." }
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Lies den Text und notiere auf Französisch drei Traditionen der Familie von Léa mit Datum.",
+				"model": "Le 24 décembre au soir, la famille mange ensemble. Le 25 au matin, il y a les cadeaux sous le sapin. Le 6 janvier, on mange la galette des rois.",
+				"criteria": ["Ich nenne drei Traditionen.", "Ich nenne die richtigen Daten.", "Ich schreibe ganze Sätze."]
+			},
+			"2": {
+				"prompt": "Schreibe deiner französischen Brieffreundin, wie deine Familie Weihnachten oder ein anderes wichtiges Fest feiert, und vergleiche mit Frankreich (fünf Sätze).",
+				"model": "Chez nous, on fête Noël le 24 décembre. Le soir, il y a les cadeaux sous le sapin. Chez toi, les cadeaux sont là le 25 au matin. Nous mangeons des Plätzchen, toi, tu manges une bûche. Et toi, tu aimes la galette des rois ?",
+				"criteria": ["Ich beschreibe ein eigenes Fest.", "Ich vergleiche mit Frankreich.", "Ich stelle eine Frage an die Brieffreundin."]
+			}
+		},
+		"workshop": {
+			"kind": "poster",
+			"goals": [
+				{ "label": "Weihnachten", "before": "", "after": "Noël !", "options": ["Joyeux", "Bon anniversaire,", "Bonne"], "answer": "Joyeux", "explanation": "Joyeux Noël !" },
+				{ "label": "6. Januar", "before": "On mange la galette des", "after": ".", "options": ["rois", "sapins", "fêtes"], "answer": "rois", "explanation": "La galette des rois." },
+				{ "label": "14. Juli", "before": "Le 14 juillet, il y a un feu d’", "after": ".", "options": ["artifice", "anniversaire", "arbre"], "answer": "artifice", "explanation": "Le feu d’artifice: Feuerwerk." }
+			]
+		},
+		"explorer": {
+			"caption": "Festkalender · Wähle ein Fest",
+			"steps": [
+				{ "label": "Noël", "icon": "🎄", "example": "Le 25 au matin, les cadeaux sont sous le sapin.", "detail": "Réveillon am 24. abends, bûche als Nachtisch." },
+				{ "label": "Galette des rois", "icon": "👑", "example": "Hugo trouve la fève : il est le roi !", "detail": "Anfang Januar, mit Papierkrone." },
+				{ "label": "14 juillet", "icon": "🎆", "example": "Il y a un feu d’artifice.", "detail": "Nationalfeiertag mit Parade in Paris." }
+			]
+		},
+		"listening": false,
+		"speaking": false
+	}
+]

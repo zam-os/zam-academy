@@ -1,0 +1,527 @@
+[
+  {
+    "id": "gg6-zeit-und-geschichte",
+    "lb": 1,
+    "title": "Zeit als Kompass: Vergangenheit, Gegenwart und Zukunft",
+    "period": "LB 1 · Der Mensch und seine Geschichte",
+    "intro": "Warum erzählen dir Großeltern von früher, warum gibt es Geschichtsbücher – und wie rechnet man über die Zeitenwende hinweg?",
+    "grundwissen": [
+      "Vergangenheit, Gegenwart, Zukunft",
+      "v. Chr. / n. Chr. (ohne Jahr 0)",
+      "Jahrhunderte einordnen"
+    ],
+    "paragraphs": [
+      "Jeder Mensch bewegt sich in drei Zeitdimensionen. Die Vergangenheit ist schon geschehen, aber ihre Spuren – alte Fotos, Denkmäler oder Gesetze – prägen unsere Gegenwart. Aus der Gegenwart heraus stellen wir Fragen an das Vergangene, um unsere eigene Lebenswelt besser zu verstehen und kluge Entscheidungen für die Zukunft zu treffen. Ohne Erinnerung könnten wir weder Erfahrungen weitergeben noch erkennen, warum unsere Städte, Straßen oder Rechte so aussehen, wie wir sie heute erleben.",
+      "Um Ereignisse genau zu ordnen, nutzt man in Europa meist die christliche Zeitrechnung: Sie zählt Jahre vor Christi Geburt (v. Chr.) rückwärts und Jahre nach Christi Geburt (n. Chr.) vorwärts. Wichtig beim Rechnen ist ein Detail: Zwischen dem Jahr 1 v. Chr. und dem Jahr 1 n. Chr. gibt es kein Jahr null! Wer also die Zeitspanne von 753 v. Chr. bis 800 n. Chr. bestimmt, rechnet 753 + 800 − 1 = 1552 Jahre. Außerdem fängt jedes Jahrhundert mit dem Jahr 1 an: Das 5. Jahrhundert v. Chr. dauert von 500 bis 401 v. Chr., das 1. Jahrhundert n. Chr. von 1 bis 100 n. Chr."
+    ],
+    "takeaway": "Geschichte verbindet Vergangenheit, Gegenwart und Zukunft; bei Zeitspannen über die Zeitenwende hinweg ziehst du 1 ab, weil es kein Jahr null gibt.",
+    "sourceIds": [
+      "lehrplan",
+      "klexikon-geschichte",
+      "wiki-geschichte",
+      "wiki-zeitrechnung"
+    ],
+    "figures": [
+      "zeitdimensionen"
+    ],
+    "lab": "timelineExplorer",
+    "quiz": {
+      "question": "Wie viele Jahre liegen zwischen 10 v. Chr. und 10 n. Chr.?",
+      "answer": "19 Jahre, weil auf das Jahr 1 v. Chr. direkt das Jahr 1 n. Chr. ohne ein Jahr null folgt.",
+      "wrong": [
+        "20 Jahre, weil zwischen beiden Jahreszahlen ein Jahr null liegt.",
+        "21 Jahre, weil beide Jahreszahlen zweimal mitgezählt werden."
+      ],
+      "explanation": "10 + 10 − 1 = 19 Jahre. Auf den 31. Dezember 1 v. Chr. folgte nach unserer Zählung direkt der 1. Januar 1 n. Chr."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Vom Ältesten zum Jüngsten ordnen",
+      "instruction": "Bringe fünf historische Stationen in die richtige zeitliche Reihenfolge (von der ältesten oben bis zur jüngsten unten).",
+      "categories": [],
+      "entries": [
+        {
+          "text": "Übergang zur Jungsteinzeit (ca. 10 000 v. Chr.)",
+          "target": 0,
+          "feedback": "ca. 10 000 v. Chr.: Je größer die Zahl vor Chr., desto früher liegt das Ereignis."
+        },
+        {
+          "text": "Frühe Hochkultur in Ägypten (ab 3000 v. Chr.)",
+          "target": 1,
+          "feedback": "ab 3000 v. Chr.: rund siebentausend Jahre später als der Beginn des Ackerbaus."
+        },
+        {
+          "text": "Blütezeit Athens unter Perikles (5. Jh. v. Chr.)",
+          "target": 2,
+          "feedback": "5. Jh. v. Chr. (499–400 v. Chr.): knapp vor unserer Zeitenwende."
+        },
+        {
+          "text": "Zeitalter des Augustus (um Christi Geburt)",
+          "target": 3,
+          "feedback": "um Christi Geburt: genau am Übergang von v. Chr. zu n. Chr."
+        },
+        {
+          "text": "Kaiserkrönung Karls des Großen (800 n. Chr.)",
+          "target": 4,
+          "feedback": "800 n. Chr.: im 9. Jahrhundert nicht, sondern Ende des 8. Jahrhunderts (701–800)!"
+        }
+      ],
+      "conclusion": "Mit v. Chr. (rückwärts) und n. Chr. (vorwärts) behältst du Jahrtausende sicher im Blick."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre an einem Beispiel aus deinem Alltag oder deiner Stadt, wie Vergangenheit, Gegenwart und Zukunft zusammenhängen.",
+        "hints": [
+          "Denke etwa an ein altes Rathaus, eine Schule oder eine Tradition in deiner Familie.",
+          "Beschreibe, was früher gebaut oder entschieden wurde, wie du es heute nutzt und was später bleiben soll."
+        ],
+        "model": "Unsere Stadtbibliothek steht in einem alten Bürgerhaus von 1780 (Vergangenheit). Heute leihe ich mir dort in der Gegenwart Bücher und lerne mit anderen Kindern. Wenn die Stadt das Haus heute pflegt und moderne Technik einbaut, bleibt dieser Lernort auch für zukünftige Kinder erhalten.",
+        "criteria": [
+          "Ein konkretes Beispiel aus deiner Lebenswelt ist genannt.",
+          "Alle drei Dimensionen (Vergangenheit, Gegenwart, Zukunft) sind sinnvoll verknüpft.",
+          "Die Erklärung zeigt, warum das Frühere heute nachwirkt."
+        ]
+      },
+      "2": {
+        "prompt": "Ein Mitschüler behauptet: „Die Zeitspanne von 753 v. Chr. bis 800 n. Chr. beträgt genau 1553 Jahre, und 800 gehört ins neunte Jahrhundert.“ Prüfe beide Aussagen.",
+        "hints": [
+          "Denke an die fehlende Null zwischen 1 v. Chr. und 1 n. Chr.",
+          "Zähle nach, mit welchem Jahr das 1. Jahrhundert n. Chr. endete."
+        ],
+        "model": "Beide Aussagen sind nicht ganz richtig. Zwischen 753 v. Chr. und 800 n. Chr. liegen 753 + 800 − 1 = 1552 Jahre, weil auf 1 v. Chr. unmittelbar 1 n. Chr. ohne Jahr null folgt. Außerdem endet das 1. Jahrhundert n. Chr. im Jahr 100; daher reicht das 8. Jahrhundert von 701 bis 800. Das Jahr 800 ist also das letzte Jahr des 8. Jahrhunderts.",
+        "criteria": [
+          "Der Rechenfehler über das fehlende Jahr null ist korrigiert (1552 Jahre).",
+          "Die Jahrhundertzuordnung (8. Jh.: 701–800) ist begründet.",
+          "Beide Behauptungen sind sachlich und verständlich beurteilt."
+        ]
+      }
+    }
+  },
+  {
+    "id": "gg6-quellen-und-darstellung",
+    "lb": 1,
+    "title": "Geschichtsbuch lesen: Quelle oder Darstellung?",
+    "period": "LB 1 · Der Mensch und seine Geschichte",
+    "intro": "Auf einer Seite im Geschichtsbuch stehen alte Texte neben modernen Erklärungen, Karten und Fotos. Wie erkennst du, was eine Quelle ist?",
+    "grundwissen": [
+      "Quelle (Grundbegriff)",
+      "Darstellungstext",
+      "Vier Quellenarten"
+    ],
+    "paragraphs": [
+      "Wenn Historikerinnen und Historiker forschen, brauchen sie Zeugnisse aus der untersuchten Zeit selbst. Alles, was aus einer vergangenen Zeit stammt und uns über das Leben damals Auskunft gibt, heißt Quelle. Man unterscheidet vier Formen: schriftliche Quellen (Inschriften, Briefe, Urkunden), gegenständliche Quellen (Werkzeuge, Scherben, Gräber, Gebäude), bildliche Quellen (Höhlenmalereien, Vasenbilder, Statuen) sowie mündliche Quellen (überlieferte Erzählungen oder Zeitzeugenberichte).",
+      "Im Schulgeschichtsbuch stehen Quellen meist farbig abgesetzt und mit genauer Herkunft: Wer hat den Text wann geschrieben, oder wo wurde der Gegenstand gefunden? Daneben steht der Darstellungstext. Ihn haben Autorinnen und Autoren heute aus der Rückschau verfasst, um Zusammenhänge zu erklären und viele Quellen miteinander zu vergleichen. Genau zu trennen, was damals entstand (Quelle) und was heute erklärt wird (Darstellung), schützt vor vorschnellen Urteilen – besonders auch bei Videos oder Texten im Netz."
+    ],
+    "takeaway": "Quellen stammen aus der untersuchten Zeit selbst; Darstellungstexte werden erst später rückblickend von Autorinnen und Autoren verfasst.",
+    "sourceIds": [
+      "lehrplan",
+      "klexikon-quelle",
+      "wiki-quelle"
+    ],
+    "figures": [
+      "geschichtsbuchAufbau",
+      "quellenartenGrid"
+    ],
+    "quiz": {
+      "question": "Woran erkennst du im Geschichtsbuch den Unterschied zwischen einer Quelle und einem Darstellungstext?",
+      "answer": "Die Quelle entstand in der historischen Zeit selbst (mit Urheber oder Fundort); der Darstellungstext erklärt sie erst aus heutiger Sicht.",
+      "wrong": [
+        "Quellen sind immer länger als eine Buchseite und haben keine Überschrift.",
+        "Darstellungstexte stammen immer von Augenzeugen aus dem Altertum."
+      ],
+      "explanation": "Eine Quelle liefert Material aus der damaligen Zeit (oft mit Perspektive des Urhebers); eine Darstellung ordnet es später ein."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Materialien im Geschichtsbuch unterscheiden",
+      "instruction": "Ordne die sechs Beispiele richtig zu: Quelle aus der untersuchten Zeit oder heutige Darstellung.",
+      "material": "Im Kapitel über das Alte Ägypten findest du: (1) ein Stück Papyrus mit einer Steuerliste von 1400 v. Chr., (2) ein Infokästchen deiner Schulbuchautorin über den Nil, (3) ein im Museum fotografiertes Goldarmband aus Theben, (4) einen Artikel aus einem Lexikon von 2024 über Pyramiden, (5) eine griechische Siegesinschrift auf Stein und (6) eine Übersichtskarte, die ein Verlag heute gezeichnet hat.",
+      "materialLabel": "Darstellungstext für diese Übung",
+      "categories": [
+        "Quelle (aus jener Zeit)",
+        "Darstellung (aus späterer Zeit)"
+      ],
+      "entries": [
+        {
+          "text": "Papyrus mit ägyptischer Steuerliste (um 1400 v. Chr.)",
+          "target": 0,
+          "feedback": "Zeitgenössische schriftliche Quelle aus der ägyptischen Verwaltung."
+        },
+        {
+          "text": "Infotext der Schulbuchautorin über den Nil",
+          "target": 1,
+          "feedback": "Rückblickender Erklärungstext aus unserer Gegenwart."
+        },
+        {
+          "text": "Goldarmband aus einem Grab in Theben",
+          "target": 0,
+          "feedback": "Gegenständliche Quelle aus dem Alten Ägypten."
+        },
+        {
+          "text": "Lexikonartikel über Pyramiden aus dem Jahr 2024",
+          "target": 1,
+          "feedback": "Moderne Zusammenfassung heutiger Forschung – eine Darstellung."
+        },
+        {
+          "text": "Antike Siegesinschrift auf einer Steintafel",
+          "target": 0,
+          "feedback": "Schriftliche Quelle aus der untersuchten Zeit (muss kritisch geprüft werden!)."
+        },
+        {
+          "text": "Heutige Geschichtskarte eines Schulbuchverlags",
+          "target": 1,
+          "feedback": "Eine heutige Darstellung historischer Räume anhand früherer Befunde."
+        }
+      ],
+      "conclusion": "Erst das Zusammenspiel aus geprüften Quellen und klaren Darstellungen ergibt verlässliches historisches Wissen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Nenne alle vier Arten geschichtlicher Quellen mit je einem konkreten Beispiel.",
+        "hints": [
+          "Denke daran, womit Menschen nicht nur schrieben, sondern auch bauten, malten oder erzählten.",
+          "Nenne zu jeder Art einen konkreten Gegenstand oder Text."
+        ],
+        "model": "Es gibt vier Quellenarten: schriftliche Quellen wie eine Papyrusrolle oder Inschrift, gegenständliche Quellen wie ein Faustkeil oder eine Tonscherbe, bildliche Quellen wie eine Höhlenmalerei oder ein Vasenbild sowie mündliche Quellen wie ein Interview mit Zeitzeugen oder überlieferte Lieder.",
+        "criteria": [
+          "Alle vier Quellenarten (schriftlich, gegenständlich, bildlich, mündlich) sind genannt.",
+          "Zu jeder Art gibt es ein passendes Beispiel.",
+          "Die Begriffe sind fachsprachlich sauber getrennt."
+        ]
+      },
+      "2": {
+        "prompt": "Ein Internetvideo behauptet über Ägypten Dinge, ohne eine Quelle zu nennen. Erkläre, warum du ein Schulbuch-Darstellungstext kritischer nach seinen Quellen beurteilen kannst.",
+        "hints": [
+          "Überlege, woran man erkennt, worauf sich eine Darstellung stützt.",
+          "Denke an die vier Quellenarten und an die Zeit vor Erfindung der Schrift."
+        ],
+        "model": "Ein gutes Schulbuch trennt seine eigenen Darstellungstexte deutlich von abgedruckten Quellen und nennt Verfasser, Entstehungszeit oder Fundort. So kann ich nachprüfen, worauf eine Aussage beruht. Ein Video ohne Quellenangabe lässt offen, ob Fakten auf echten Funden beruhen oder frei erfunden sind.",
+        "criteria": [
+          "Der Unterschied zwischen belegter Darstellung und unbelegter Behauptung ist erklärt.",
+          "Es wird genannt, welche Angaben eine Quelle überprüfbar machen (z. B. Zeit, Ort, Urheber).",
+          "Ein eigenes begründetes Urteil zur Medienkritik ist formuliert."
+        ]
+      }
+    }
+  },
+  {
+    "id": "gg6-archaeologie-ausgrabung",
+    "lb": 1,
+    "title": "Überrest, Überlieferung und Arbeit der Archäologie",
+    "period": "LB 1 · Der Mensch und seine Geschichte",
+    "intro": "Aus der ältesten Zeit der Menschheit gibt es keine Bücher und keine Briefe. Wie erschließen Archäologinnen und Archäologen das Leben ohne Schrift?",
+    "grundwissen": [
+      "Überrest vs. Überlieferung",
+      "Archäologie",
+      "Bodenschichten (Stratigraphie)"
+    ],
+    "paragraphs": [
+      "Geschichtsforscher unterscheiden Quellen danach, mit welcher Absicht sie entstanden. Ein Überrest ist zufällig erhalten geblieben, ohne dass jemand an die Nachwelt dachte: eine zerbrochene Schale, Speisereste in einer Abfallgrube, Pfostenlöcher eines Hauses oder ein Werkzeug. Eine Überlieferung (Tradition) wurde dagegen bewusst für spätere Menschen geschaffen – etwa eine Siegesinschrift auf Stein oder eine Chronik. Überreste sind nicht geschönt, bleiben aber oft nur als Bruchstücke erhalten.",
+      "Für die ganze Urgeschichte vor Erfindung der Schrift gibt es fast nur gegenständliche und bildliche Überreste. Deshalb spielt die Archäologie eine Schlüsselrolle. Bei einer Ausgrabung graben Fachleute Schicht für Schicht behutsam ab und messen jeden Fund exakt ein. Ungestörte tiefere Schichten sind älter als höhere darüber – diese Abfolge nennt man Stratigraphie. Im trockenen Boden überdauern Stein, Ton und Knochen; Holz, Leder oder Getreidekörner bleiben oft nur im feuchten Moor oder verbrannt als Holzkohle erhalten."
+    ],
+    "takeaway": "Überreste wurden nicht für die Nachwelt gemacht; die Archäologie liest sie über Bodenschichten (unten älter, oben jünger) genau ein.",
+    "sourceIds": [
+      "lehrplan",
+      "klexikon-archaeologie",
+      "wiki-archaeologie",
+      "wiki-ueberlieferung",
+      "wiki-stratigraphie"
+    ],
+    "figures": [
+      "ueberrestTradition"
+    ],
+    "lab": "excavationStratigraphy",
+    "quiz": {
+      "question": "Was gilt bei einer ungestörten archäologischen Ausgrabung für die Bodenschichten?",
+      "answer": "Tiefer liegende Schichten und ihre Funde sind älter als die Schichten direkt darüber.",
+      "wrong": [
+        "Schwere Gegenstände aus Metall sinken immer in die älteste Schicht hinab.",
+        "Die oberste Schicht ist stets die älteste, weil Regen alles hinunterwäscht."
+      ],
+      "explanation": "Neue Siedlungsreste lagern sich im Lauf der Jahrhunderte auf alten ab: Unten liegt das Ältere, oben das Jüngere."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Überrest oder Überlieferung (Tradition)?",
+      "instruction": "Sortiere die sechs Funde danach, ob sie absichtslos als Überrest oder bewusst für die Nachwelt als Überlieferung entstanden.",
+      "categories": [
+        "Überrest (unabsichtlich)",
+        "Überlieferung / Tradition (absichtlich)"
+      ],
+      "entries": [
+        {
+          "text": "Verkohlte Getreidekörner in einer Lehmgrube",
+          "target": 0,
+          "feedback": "Alltagsabfall – ein unverfälschter Überrest der Ernährung."
+        },
+        {
+          "text": "Gemeißelter Tatenbericht eines Herrschers an einer Tempelwand",
+          "target": 1,
+          "feedback": "Bewusst für spätere Leser verfasst – oft einseitig zu seinen Gunsten!"
+        },
+        {
+          "text": "Dunkle Verfärbungen von alten Holzpfosten im Erdboden",
+          "target": 0,
+          "feedback": "Zeigen Archäologen noch nach Jahrtausenden den Grundriss eines Hauses."
+        },
+        {
+          "text": "Denkmal mit Inschrift für einen siegreichen Feldherrn",
+          "target": 1,
+          "feedback": "Tradition: sollte das Andenken gezielt steuern."
+        },
+        {
+          "text": "Abgenutzter Feuerstein-Schaber neben einer Feuerstelle",
+          "target": 0,
+          "feedback": "Ein typischer Alltagsüberrest der Steinzeit."
+        },
+        {
+          "text": "Aufgeschriebene Gründungssage einer Stadt",
+          "target": 1,
+          "feedback": "Bewusste Überlieferung, die ein stolzes Bild der Herkunft zeichnet."
+        }
+      ],
+      "conclusion": "Überreste zeigen den Alltag direkt; Überlieferungen verraten, wie Menschen in Erinnerung bleiben wollten."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre an zwei Beispielen, warum ein Überrest und eine Überlieferung der Geschichtsforschung jeweils ganz andere Einblicke geben.",
+        "hints": [
+          "Denke daran, ob der Urheber uns etwas vormachen oder mitteilen wollte.",
+          "Nenne jeweils ein konkretes Beispiel (z. B. Abfallgrube vs. Siegesinschrift)."
+        ],
+        "model": "Eine Abfallgrube mit Tierknochen und Tonscherben ist ein Überrest: Niemand wollte damit angeben, sie verrät ungeschminkt, was die Menschen damals wirklich aßen. Eine Siegesinschrift eines Königs ist dagegen eine Überlieferung: Sie zeigt, welche Taten er betonen wollte – vielleicht verschweigt er darin Niederlagen.",
+        "criteria": [
+          "Beide Begriffe (Überrest und Überlieferung/Tradition) sind richtig erklärt.",
+          "Es gibt für beide je ein passendes Beispiel.",
+          "Die Aussagekraft beider Arten ist nachvollziehbar verglichen."
+        ]
+      },
+      "2": {
+        "prompt": "Ein Schatzsucher gräbt auf einem Acker heimlich einen alten Dolch aus und nimmt ihn einfach mit nach Hause. Beurteile, welchen Schaden er der Forschung zufügt.",
+        "hints": [
+          "Nutze dein Wissen über Bodenschichten (Stratigraphie) aus dem Ausgrabungsmodell.",
+          "Überlege, was man nur vor Ort neben dem Dolch hätte ablesen können."
+        ],
+        "model": "Durch das Herausreißen verliert der Dolch seinen gesamten Fundzusammenhang. Archäologen könnten jetzt nicht mehr feststellen, in welcher Bodenschicht er lag, ob daneben Keramik, Knochen oder Pfostenlöcher eines Grabes waren und aus welcher Zeit er genau stammt. Ein einzelner Gegenstand ohne Schichtdokumentation ist historisch fast stumm.",
+        "criteria": [
+          "Der Verlust der Bodenschicht (Stratigraphie) und Begleitfunde ist benannt.",
+          "Die Bedeutung einer genauen Dokumentation vor Ort wird erklärt.",
+          "Das Verhalten ist begründet beurteilt."
+        ]
+      }
+    }
+  },
+  {
+    "id": "gg6-altsteinzeit",
+    "lb": 1,
+    "title": "Jäger und Sammler: Überleben in der Altsteinzeit",
+    "period": "LB 1 · Der Mensch und seine Geschichte",
+    "intro": "Wie konnten Menschen während der eiszeitlichen Kälte ohne Supermarkt, Heizung und feste Steinhäuser überleben?",
+    "grundwissen": [
+      "Altsteinzeit (Grundbegriff)",
+      "Feuer & Werkzeugtechnik",
+      "Nomadische Lebensweise"
+    ],
+    "paragraphs": [
+      "Über den größten Teil der Menschheitsgeschichte lebten die Menschen in der Altsteinzeit als Jäger und Sammler. Während langer Kaltzeiten wanderten große Herden von Mammuts, Rentieren und Wildpferden durch weite Steppen. Kleine Gruppen von zwanzig bis dreißig Verwandten zogen den Tieren nach – sie waren Nomaden. Schutz boten Felshöhlen oder schnell auf- und abbaubare Zelte aus Holzstangen, Knochen und Fellen.",
+      "Für das Überleben waren drei Techniken entscheidend. Erstens die Beherrschung des Feuers: Es spendete Wärme, hielt Raubtiere fern, verlängerte den Tag und machte Fleisch sowie Pflanzen durch Braten besser verdaulich. Zweitens die Werkzeug- und Waffentechnik: Aus hartem Feuerstein schlugen die Menschen scharfe Faustkeile, Schaber und Speerspitzen; aus Knochen schnitzten sie Nadeln für warme Fellkleidung. Drittens zeugen prachtvolle Höhlenmalereien davon, dass schon die Menschen der Altsteinzeit sich gemeinsam über Jagd, Natur und Weltbilder verständigten."
+    ],
+    "takeaway": "Die Beherrschung des Feuers, geschlagene Feuersteinwerkzeuge und bewegliche Zelte ermöglichten das Leben als wandernde Jäger und Sammler.",
+    "sourceIds": [
+      "lehrplan",
+      "wiki-altsteinzeit",
+      "klexikon-steinzeit",
+      "wiki-feuer",
+      "wiki-faustkeil"
+    ],
+    "figures": [
+      "altsteinzeitLager",
+      "feuerTechnikWirkung"
+    ],
+    "quiz": {
+      "question": "Warum bauten die Menschen der Altsteinzeit meist einfache Zelte oder nutzten Höhlen statt fester Dörfer?",
+      "answer": "Sie zogen als Nomaden den wandernden Tierherden nach und brauchten schnell aufbaubare Unterkünfte.",
+      "wrong": [
+        "Sie besaßen noch keine Werkzeuge, um Holz oder Steine überhaupt zu bearbeiten.",
+        "Sie lebten allein ohne feste Familien oder größere Gruppen."
+      ],
+      "explanation": "Ihre aneignende Wirtschaft (Jagen und Sammeln) verlangte Beweglichkeit je nach Jahreszeit und Wildbestand."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Technik und ihre Wirkung auf die Kultur",
+      "instruction": "Ordne jede vorgeschichtliche Erfindung ihrer wichtigsten Auswirkung auf das Leben der Menschen zu.",
+      "categories": [
+        "Ernährung & Energie",
+        "Schutz & Beweglichkeit",
+        "Gemeinschaft & Kultur"
+      ],
+      "entries": [
+        {
+          "text": "Fleisch über dem Feuer braten",
+          "target": 0,
+          "feedback": "Gegarte Nahrung ist leichter kaubar, haltbarer und liefert mehr verwertbare Energie."
+        },
+        {
+          "text": "Speer mit Feuersteinspitze und Speerschleuder",
+          "target": 0,
+          "feedback": "Erlaubt die Jagd auf Großwild aus sicherer Entfernung."
+        },
+        {
+          "text": "Zelt aus Stangen und Tierfellen",
+          "target": 1,
+          "feedback": "Schützt vor Wind und Kälte und lässt sich beim Weiterzug leicht mitnehmen."
+        },
+        {
+          "text": "Knochennadel zum Zusammennähen von Fellen",
+          "target": 1,
+          "feedback": "Eng anliegende Kleidung half, kalte Eiszeitwinter zu überstehen."
+        },
+        {
+          "text": "Gemeinsame Feuerstelle am Abend",
+          "target": 2,
+          "feedback": "Am Herd tauschte die Gruppe Wissen, Geschichten und Werkzeuge aus."
+        },
+        {
+          "text": "Farbige Tierbilder tief in Höhlen",
+          "target": 2,
+          "feedback": "Zeigen religiöse Vorstellungen, Erinnerungen und künstlerisches Können."
+        }
+      ],
+      "conclusion": "Jede neue Überlebenstechnik veränderte nicht nur das Handwerk, sondern auch das Zusammenleben der Menschen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre an zwei Beispielen (Feuer sowie Werkzeug- oder Wohnungsbau), wie technische Neuerungen das Leben der Altsteinzeit-Menschen veränderten.",
+        "hints": [
+          "Überlege zu jedem Beispiel, was vorher unmöglich oder gefährlich war und was danach gelang.",
+          "Beziehe dabei Wärme, Ernährung oder Sicherheit vor Tieren ein."
+        ],
+        "model": "Durch die Beherrschung des Feuers konnten die Menschen sich in kalten Nächten wärmen, Raubtiere fernhalten und Fleisch braten, wodurch es länger haltbar und leichter verdaulich wurde. Mithilfe geschlagener Feuersteinwerkzeuge wie dem Faustkeil und Speerspitzen gelang es ihnen, Felle zu bearbeiten, Knochen zu schnitzen und gemeinsam auch große Tiere sicherer zu jagen.",
+        "criteria": [
+          "Das Beispiel Feuer ist mit konkreten Folgen erklärt.",
+          "Ein zweites Beispiel (Werkzeug, Waffe oder Behausung) wird sachlich erläutert.",
+          "Die Veränderung der Lebensform ist deutlich herausgearbeitet."
+        ]
+      },
+      "2": {
+        "prompt": "Beurteile die häufige Vorstellung, Menschen der Altsteinzeit hätten bloß „primitiv und hilflos“ gelebt.",
+        "hints": [
+          "Denke an das exakte Wissen über Tiere, Giftpflanzen und Werkzeuge aus Feuerstein.",
+          "Erinnere dich an Höhlenmalereien und das Teilen in der Gruppe."
+        ],
+        "model": "Dieses Urteil ist einseitig und wird den Menschen der Altsteinzeit nicht gerecht. Ohne moderne Technik überlebten sie extreme Eiszeiten, fertigten präzise Klingen aus Feuerstein, nähten warme Kleidung und arbeiteten bei der Großwildjagd eng zusammen. Ihre kunstvollen Höhlenmalereien zeigen zudem eine reiche Kultur und Beobachtungsgabe.",
+        "criteria": [
+          "Das Vorurteil wird ausdrücklich hinterfragt.",
+          "Konkrete Leistungen (Werkzeug, Anpassung an Eiszeit, Kunst, Kooperation) dienen als Beleg.",
+          "Das Urteil unterscheidet zwischen heutiger Technik und menschlicher Intelligenz."
+        ]
+      }
+    }
+  },
+  {
+    "id": "gg6-jungsteinzeit-wandel",
+    "lb": 1,
+    "title": "Bauern der Jungsteinzeit: Sesshaft durch Ackerbau und Viehzucht",
+    "period": "LB 1 · Der Mensch und seine Geschichte",
+    "intro": "Ab etwa 10 000 v. Chr. begannen Menschen im Nahen Osten, Getreide selbst anzubauen und Tiere zu züchten – ein Wandel, der alles veränderte.",
+    "grundwissen": [
+      "Jungsteinzeit (Grundbegriff)",
+      "Ackerbau & Viehzucht",
+      "Sesshaftigkeit & Arbeitsteilung"
+    ],
+    "paragraphs": [
+      "Als die letzte Kaltzeit vor rund zwölftausend Jahren endete, breitete sich in vielen Regionen milderes Klima aus. Im sogenannten Fruchtbaren Halbmond im Nahen Osten entdeckten Menschen nach und nach, dass aus gesammelten Wildgräsern wie Einkorn, Emmer und Gerste neue Pflanzen wuchsen, wenn man Körner in gelockerten Boden säte. Zugleich zähmten sie wilde Ziegen, Schafe, Schweine und Rinder als Haustiere. Aus der aneignenden Lebensweise der Jäger und Sammler wurde eine produzierende Lebensweise – man spricht vom Wandel zur Jungsteinzeit.",
+      "Da Felder gejätet und bewacht werden mussten, blieben die Menschen das ganze Jahr an einem Ort: Sie wurden sesshaft und bauten stabile Langhäuser aus Holz und Lehm. Neue Werkzeuge erleichterten die Arbeit: geschliffene Steinbeile zum Roden, Sicheln für die Ernte und gebrannte Tongefäße zur sicheren Vorratshaltung. Dadurch wuchs die Bevölkerung stark an. Weil nicht mehr alle auf dem Feld arbeiten mussten, entstanden spezialisierte Berufe wie Töpfer, Weber oder Händler – die Grundlagen für spätere Städte."
+    ],
+    "takeaway": "In der Jungsteinzeit machten Ackerbau, Viehzucht und Vorratshaltung die Menschen sesshaft, ließen Dörfer wachsen und förderten Arbeitsteilung.",
+    "sourceIds": [
+      "lehrplan",
+      "wiki-jungsteinzeit",
+      "wiki-neolithische-rev",
+      "klexikon-steinzeit"
+    ],
+    "figures": [
+      "steinzeitWandel"
+    ],
+    "quiz": {
+      "question": "Was versteht man in der Geschichtswissenschaft unter dem Epochenbegriff der „Neolithischen Revolution“ (Übergang zur Jungsteinzeit vor ca. 10 000 v. Chr.)?",
+      "answer": "Den tiefgreifenden Wandel vom nomadischen Jäger- und Sammlerdasein zu Sesshaftigkeit, Ackerbau, Viehzucht und Vorratshaltung.",
+      "wrong": [
+        "Den schnellen Bau der ersten Dampfmaschinen und großen Eisenbahnen.",
+        "Einen einzelnen Aufstand von Bauern gegen ägyptische Pharaonen."
+      ],
+      "explanation": "Dieser Umbruch dauerte viele Generationen, veränderte aber Wirtschaft, Wohnform und Gesellschaft so grundlegend wie selten ein Ereignis."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Altsteinzeit oder Jungsteinzeit?",
+      "instruction": "Ordne die sechs Merkmale jeweils der passenden Epoche zu.",
+      "categories": [
+        "Altsteinzeit (Jäger & Sammler)",
+        "Jungsteinzeit (Bauern & Viehzüchter)"
+      ],
+      "entries": [
+        {
+          "text": "Getreide wie Emmer und Einkorn aussäen",
+          "target": 1,
+          "feedback": "Produzierender Ackerbau beginnt in der Jungsteinzeit."
+        },
+        {
+          "text": "Im Sommer und Winter den Rentierherden folgen",
+          "target": 0,
+          "feedback": "Typisches Wanderleben (Nomadismus) der Altsteinzeit."
+        },
+        {
+          "text": "Vorräte in gebrannten Tongefäßen über den Winter lagern",
+          "target": 1,
+          "feedback": "Keramik brauchten erst sesshafte Bauern für Korn, Wasser und Kochen."
+        },
+        {
+          "text": "Geschlagene Faustkeile aus Feuerstein herstellen",
+          "target": 0,
+          "feedback": "Das vielseitige Universalwerkzeug der Altsteinzeit."
+        },
+        {
+          "text": "Geschliffene Steinbeile zum Fällen von Bäumen nutzen",
+          "target": 1,
+          "feedback": "Durch Schleifen waren Beile stabil genug zum Roden für Felder und Häuser."
+        },
+        {
+          "text": "Wurzeln, Beeren und Nüsse im Wald einsammeln",
+          "target": 0,
+          "feedback": "Aneignende Wirtschaft der Altsteinzeit."
+        }
+      ],
+      "conclusion": "Der Übergang von der Alt- zur Jungsteinzeit veränderte Wirtschaft, Werkzeuge, Wohnen und Vorratswirtschaft zugleich."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Vergleiche das Leben in der Altsteinzeit und in der Jungsteinzeit anhand von drei Kriterien: Nahrungsbeschaffung, Wohnform und Werkzeuge.",
+        "hints": [
+          "Stelle jedes Kriterium für beide Zeiten direkt gegenüber.",
+          "Nutze Fachbegriffe wie Nomaden, sesshaft, Ackerbau oder Keramik."
+        ],
+        "model": "In der Altsteinzeit beschafften sich die Menschen ihre Nahrung durch Jagen und Sammeln, in der Jungsteinzeit erzeugten sie sie selbst durch Ackerbau und Viehzucht. Während Altsteinzeitmenschen als Nomaden in Zelten und Höhlen lebten, wohnten Jungsteinzeitbauern sesshaft in festen Langhäusern. Statt geschlagener Faustkeile nutzte man nun geschliffene Steinbeile, Sicheln und gebrannte Tongefäße.",
+        "criteria": [
+          "Alle drei Vergleichskriterien (Nahrung, Wohnen, Werkzeug) sind bearbeitet.",
+          "Die Unterschiede zwischen beiden Zeiten stehen klar gegenüber.",
+          "Mindestens zwei Fachbegriffe (z. B. sesshaft, Ackerbau, Nomaden) sind korrekt eingesetzt."
+        ]
+      },
+      "2": {
+        "prompt": "Der Begriff „Neolithische Revolution“ klingt nach einem plötzlichen Ereignis. Begründe, warum er zugleich passt und in die Irre führen kann – und ob das Bauernleben nur Vorteile brachte.",
+        "hints": [
+          "Überlege, wie lange sich der Übergang hinzog und wie revolutionär das Ergebnis trotzdem war.",
+          "Denke bei den Schattenseiten an schwere Feldarbeit, Missernten oder ansteckende Krankheiten im engen Dorf."
+        ],
+        "model": "Der Begriff passt wegen der gewaltigen Folgen: Sesshaftigkeit, Bevölkerungswachstum, neue Berufe und Eigentum veränderten die Welt von Grund auf. Irreführend ist das Wort „Revolution“ nur, weil der Wandel nicht über Nacht geschah, sondern Jahrtausende dauerte. Zudem brachte das Bauernleben neben sicheren Vorräten auch Schattenseiten: harte tägliche Feldarbeit, Abhängigkeit vom Wetter, Streit um Land und Krankheiten durch das enge Zusammenleben mit Vieh.",
+        "criteria": [
+          "Zeigt, warum die Folgen revolutionär waren, der Ablauf aber langsam erfolgte.",
+          "Nennt neben Vorteilen (Vorräte, Wachstum) konkrete Nachteile der Bauernzeit.",
+          "Bezieht klar und begründet Stellung zum Epochenbegriff."
+        ]
+      }
+    }
+  }
+]

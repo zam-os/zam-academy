@@ -1,0 +1,503 @@
+{
+	"curriculum": "https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/6/englisch/1-fremdsprache",
+	"checked": "2026-11-18",
+	"curriculum_sha256": "35684fbe52bba27222d0f8de828afa6ec3078356d6284e0b8914c6bcd985e0ca",
+	"neighbours": {
+		"grade5": {
+			"url": "https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/5/englisch",
+			"sha256": "84765a9f386addc392d6910d9426d58e50fed80f7e0b7248b70c3a0e9f9ba6e6",
+			"note": "Grade 5 introduces to be, have got, simple present, present progressive, simple past, can/must/needn't/mustn't, articles, pronouns, some/any, much/many and UK/London/North America foundations."
+		},
+		"grade6_second_language": {
+			"url": "https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/6/englisch/2-fremdsprache",
+			"sha256": "e89029c6804747de18c4198122bba40149902bfdd80346c253c189b4f5e56024",
+			"note": "English 6 as 2nd foreign language starts in Grade 6 with Grade 5 foundations plus going-to-future and question tags and is outside this first-foreign-language package."
+		},
+		"grade7": {
+			"url": "https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/7/englisch/1-fremdsprache",
+			"sha256": "a11d68521059288f18a2edb3059aa78de16d18e26c26bee06505615c619d3ca3",
+			"boundary": "Grade 7 first foreign language introduces adverbs (formation, comparison, position, adjective vs adverb), reflexive and reciprocal pronouns, possessive pronouns, one(s), present perfect progressive, past perfect simple, tense sequence in temporal clauses, conditional II/III, 1066, Henry VIII, Elizabeth I, Mayflower, Wales and Desert South-West. Those targets are outside this package."
+		}
+	},
+	"scope": "Bavaria, Gymnasium, English (1st foreign language, 2. Lernjahr); one common Fachlehrplan for Jahrgangsstufe 6 across Ausbildungsrichtungen.",
+	"indexing": "E6-01…E6-40 are package-local row identifiers matching the 40 top-level expectations and topic blocks in source order. Grammar sublists remain inside their parent expectation.",
+	"hours": null,
+	"hours_note": "The official page specifies no hours per learning area.",
+	"optional_lessons": [],
+	"rows": [
+		{
+			"id": "E6-01",
+			"lb": "1.1",
+			"competence": "verstehen etwas längere, relativ einfache, deutlich und nicht zu rasch in britischer bzw. amerikanischer Standardsprache vorgetragene Sprachäußerungen und Gespräche sowie medial dargebotene Hör- und Hörsehtexte, die sich mit altersgemäßen Themen beschäftigen (z. B. Gespräche bzw. Videoclips über Freizeit oder Urlaub, Telefonate, Sprachnachrichten) und größtenteils bekanntes bzw. leicht erschließbares Sprachmaterial beinhalten.",
+			"lessons": [
+				"e6-listening"
+			],
+			"status": "supported",
+			"evidence": "The lesson prepares global and detail listening with a local script and partner reading fallback. Natural recordings, regional accents and video clips stay outside the app."
+		},
+		{
+			"id": "E6-02",
+			"lb": "1.1",
+			"competence": "entnehmen Texten globale Informationen und leicht erschließbare Detailinformationen, ggf. auch unter Zuhilfenahme der visuellen Elemente, und erkennen Gefühlslagen der Sprecherinnen und Sprecher, wenn sie deutlich hervortreten.",
+			"lessons": [
+				"e6-listening"
+			],
+			"status": "supported",
+			"evidence": "The lesson trains gist, detail and speaker feelings (worried then relieved) on a local voice-message script. Natural recordings and visual media remain extra practice."
+		},
+		{
+			"id": "E6-03",
+			"lb": "1.1",
+			"competence": "verstehen etwas längere, nicht zu schwierige Texte (z. B. Berichte über Ferienerlebnisse, Infobroschüren, Geschichten über historische Figuren, Internetseiten zu Sehenswürdigkeiten) zu bekannten Themen und mit bekanntem Sprachmaterial in ihren wesentlichen Aussagen und/oder im Detail und erfassen den Inhalt kurzer Texte zu vertrauten Themen, auch wenn diese eine gewisse Anzahl unbekannter Vokabeln enthalten.",
+			"lessons": [
+				"e6-flyer-website",
+				"e6-menu-recipe",
+				"e6-romans-wall",
+				"e6-bath-names"
+			],
+			"status": "implemented",
+			"evidence": "Worked explanations, a three-goal visual workshop, a quick check, constrained practice and distinct guided and transfer tasks. Longer texts include websites, recipes and historical guides."
+		},
+		{
+			"id": "E6-04",
+			"lb": "1.1",
+			"competence": "lesen bekannte Texte in angemessenem Tempo mit korrekter Aussprache und Intonation sinndarstellend vor.",
+			"lessons": [
+				"e6-poem",
+				"e6-intonation"
+			],
+			"status": "supported",
+			"evidence": "The lessons prepare rhythm, -ed endings and question melody for reading aloud. Actual pronunciation and intonation when reading aloud require a partner or teacher."
+		},
+		{
+			"id": "E6-05",
+			"lb": "1.1",
+			"competence": "äußern sich mit grundlegenden sprachlichen Mitteln zu Personen, Orten und Gegenständen, sprechen auch über Vergangenes (z. B. Reiseerlebnisse, Sport- und Musikveranstaltungen, einfache historische Ereignisse) und Zukünftiges (z. B. Urlaubs- und Freizeitplanung, Wettervorhersagen) und bringen Bitten, Wünsche, Vorschläge, Meinungen und Gefühle in einfachen Worten zum Ausdruck.",
+			"lessons": [
+				"e6-station",
+				"e6-weather",
+				"e6-past-or-perfect",
+				"e6-modals",
+				"e6-daily-comparison"
+			],
+			"status": "supported",
+			"evidence": "Past, future, requests, advice and opinions are prepared and noted in writing. Free spoken expression requires real conversation with partners."
+		},
+		{
+			"id": "E6-06",
+			"lb": "1.1",
+			"competence": "führen mit einfachen Redemitteln Gespräche in vertrauten Alltagssituationen (v. a. Wegbeschreibung und beim Einkaufen), geben Auskunft über sich selbst, andere und die Zielkulturen und nutzen dabei grundlegende Gesprächsstrategien (v. a. einfache Nachfragen und Umschreibungen, Bitten um Wiederholung).",
+			"lessons": [
+				"e6-directions",
+				"e6-station",
+				"e6-doctor",
+				"e6-short-talk"
+			],
+			"status": "supported",
+			"evidence": "Directions, ticket desks, pharmacy dialogues and clarification phrases are rehearsed in writing and aloud. Live spontaneous interaction requires a partner."
+		},
+		{
+			"id": "E6-07",
+			"lb": "1.1",
+			"competence": "sprechen im Rahmen eines einfachen short talk (z. B. two-minute talk) weitgehend frei, ggf. mithilfe eines Stichwortzettels, über vertraute Themen, die ihre Person bzw. eine Zielkultur betreffen (z. B. einfache Präsentation eines Hobbys, historischen Ereignisses, einer Sportart, Musikgruppe, Sehenswürdigkeit).",
+			"lessons": [
+				"e6-short-talk"
+			],
+			"status": "supported",
+			"evidence": "The short-talk lesson teaches cue-card planning, signposting and opening/closing phrases. Delivering a two-minute talk aloud stays with a class or partner."
+		},
+		{
+			"id": "E6-08",
+			"lb": "1.1",
+			"competence": "verfassen etwas längere, einfache Texte (z. B. E‑Mail über ein Erlebnis bei einem Ausflug, Bildergeschichte) zu vertrauten Themen zunehmend selbständig.",
+			"lessons": [
+				"e6-story-writing",
+				"e6-daily-comparison"
+			],
+			"status": "implemented",
+			"evidence": "Worked explanations, a three-goal visual workshop, a quick check, constrained practice and distinct guided and transfer tasks for emails and picture continuations."
+		},
+		{
+			"id": "E6-09",
+			"lb": "1.1",
+			"competence": "achten auf einen klaren Aufbau, eine einfache Verknüpfung der Aussagen sowie auf sprachliche (auch orthographische) Korrektheit und Angemessenheit; sie beachten erste Merkmale von Textsorten, nutzen ggf. einfache kreative Gestaltungsmöglichkeiten und drücken erste Gedanken und Gefühle auf einfache Weise aus.",
+			"lessons": [
+				"e6-story-writing",
+				"e6-connectors"
+			],
+			"status": "implemented",
+			"evidence": "Worked explanations, a three-goal visual workshop, a quick check, constrained practice and distinct guided and transfer tasks covering text structure, linking, genre features and feelings."
+		},
+		{
+			"id": "E6-10",
+			"lb": "1.1",
+			"competence": "übertragen mündlich in einfachen, alltäglichen und bekannten Kommunikationssituationen konkrete Informationen überwiegend spontan in die jeweils andere Sprache (z. B. Urlaubssituationen im englischsprachigen Ausland: Flyer oder Internetseiten von Hotels oder Verkehrsmitteln, Durchsagen für Touristen, einfache Wegbeschreibungen, leicht verständliche Videoclips zu Bräuchen).",
+			"lessons": [
+				"e6-mediation-oral"
+			],
+			"status": "supported",
+			"evidence": "Oral mediation situations and paraphrasing strategies are prepared in writing and spoken aloud. Spontaneous live interpreting requires another person."
+		},
+		{
+			"id": "E6-11",
+			"lb": "1.1",
+			"competence": "übertragen in schriftlicher und mündlicher Form adressaten- und situationsbezogen Informationen aus etwas längeren, situativ eingebetteten Texten zu bekannten Themen (z. B. Internetseite eines Ferienlagers, Kinoprogramm, Informationen zu Festen) in einfacher Ausdrucksweise und unter Verwendung sehr einfacher Kompensationsstrategien (z. B. Umschreibung, Verneinung des Gegenteils) sinngemäß bzw. zusammenfassend in die jeweils andere Sprache.",
+			"lessons": [
+				"e6-mediation-written",
+				"e6-mediation-oral"
+			],
+			"status": "implemented",
+			"evidence": "Worked explanations, a three-goal visual workshop, a quick check, constrained practice and distinct guided and transfer tasks covering addressee-oriented written mediation and compensation strategies."
+		},
+		{
+			"id": "E6-12",
+			"lb": "1.2",
+			"competence": "beherrschen im Rahmen der unter 6.5 aufgeführten Themen einen begrenzten Wortschatz und wenden ihn zur Bewältigung überschaubarer Alltagssituationen an (v. a. Freizeitgestaltung, Sport, Musik, Reisen, Wetter, Wegbeschreibung, Gesundheit), auch im Zusammenhang mit landeskundlichen Themen (einfache Begriffe zu geographischer Beschreibung, regionaler Gliederung und historischen Aspekten sowie zur Differenzierung von Stadt und Land), wobei sie auch einfache idiomatische Wendungen, Kollokationen und phrasal verbs einsetzen und typische false friends vermeiden.",
+			"lessons": [
+				"e6-station",
+				"e6-weather",
+				"e6-directions",
+				"e6-doctor",
+				"e6-sport-music",
+				"e6-city-country",
+				"e6-cornwall",
+				"e6-bath-names"
+			],
+			"status": "implemented",
+			"evidence": "Worked explanations, workshops, quick checks, practice and two-level tasks across travel, directions, weather, health, sport, music, city/country, regions and false friends. Textbook work expands total vocabulary."
+		},
+		{
+			"id": "E6-13",
+			"lb": "1.2",
+			"competence": "verwenden in begrenztem Umfang einen an ihrem eigenen Lebens- und Interessensbereich orientierten individuellen Wortschatz.",
+			"lessons": [
+				"e6-word-building",
+				"e6-short-talk"
+			],
+			"status": "supported",
+			"evidence": "Learners collect five personal hobby words outside the app and build a topic cue card; sustained individual vocabulary notebooks stay outside the app."
+		},
+		{
+			"id": "E6-14",
+			"lb": "1.2",
+			"competence": "beherrschen weitere classroom phrases sowie notwendige grammatikalische Fachbegriffe und elementaren Funktionswortschatz zur Bildbeschreibung.",
+			"lessons": [
+				"e6-picture-talk",
+				"e6-short-talk",
+				"e6-word-building"
+			],
+			"status": "supported",
+			"evidence": "Implemented parts: e6-picture-talk trains picture-description functional vocabulary and e6-word-building plus grammar lessons teach key grammatical terminology. Spoken classroom phrases during live lessons stay in classroom interaction."
+		},
+		{
+			"id": "E6-15",
+			"lb": "1.2",
+			"competence": "drücken grundlegende Folgen bzw. Widersprüche aus (v. a. so that, while, although).",
+			"lessons": [
+				"e6-connectors"
+			],
+			"status": "implemented",
+			"evidence": "Worked explanations, a three-goal visual workshop, a quick check, constrained practice and distinct guided and transfer tasks for so that, while and although."
+		},
+		{
+			"id": "E6-16",
+			"lb": "1.2",
+			"competence": "beschreiben Personen, Gegenstände, Orte und bekannte Sachverhalte etwas genauer und setzen sie zueinander in Beziehung: weitere indefinite Begleiter und Pronomen Adjektive: Steigerung, Vergleich Relativpronomen und Relativsätze: defining; contact clauses weitere Nebensätze und Konjunktionen, v. a. although, so that, while",
+			"lessons": [
+				"e6-indefinites",
+				"e6-adjectives",
+				"e6-relatives",
+				"e6-contact-clauses",
+				"e6-connectors"
+			],
+			"status": "implemented",
+			"evidence": "Worked explanations, interactive comparison explorer, workshops, quick checks, practice and two-level tasks covering every grammar point in this sublist."
+		},
+		{
+			"id": "E6-17",
+			"lb": "1.2",
+			"competence": "sprechen über Zukünftiges und Vergangenes, stellen zeitliche Bezüge her und drücken einfache Bedingungen, Wünsche, Vorschläge, Pläne und Empfehlungen aus: present perfect simple: resultativer Gebrauch past tense progressive Futur: going-to-future, will-future, timetable-future Modalverben: could, may, might, should; Ersatzformen Konditionalsatz I: present tense – will-future/can/imperative; present tense – present tense",
+			"lessons": [
+				"e6-present-perfect",
+				"e6-past-or-perfect",
+				"e6-past-progressive",
+				"e6-station",
+				"e6-weather",
+				"e6-modals",
+				"e6-substitutes",
+				"e6-conditional-1"
+			],
+			"status": "implemented",
+			"evidence": "Worked explanations, interactive timeline explorer, workshops, quick checks, practice and two-level tasks covering present perfect (resultative, with experiential ever/never in e6-past-or-perfect marked as a small Grade 7 outlook beyond E6), past progressive, all three futures, modals/substitutes and conditional I."
+		},
+		{
+			"id": "E6-18",
+			"lb": "1.2",
+			"competence": "stellen einfache, idiomatische Fragen, beantworten diese und halten ein einfaches Gespräch in Gang: question tags Fragen mit Präpositionen",
+			"lessons": [
+				"e6-question-tags",
+				"e6-prep-questions"
+			],
+			"status": "implemented",
+			"evidence": "Worked explanations, workshops, quick checks, practice and two-level tasks covering question tags and questions with prepositions at the end."
+		},
+		{
+			"id": "E6-19",
+			"lb": "1.2",
+			"competence": "sprechen bekanntes Sprachmaterial korrekt und zunehmend flüssig aus und achten dabei auf korrekte Intonation, besonders bei Fragen.",
+			"lessons": [
+				"e6-intonation",
+				"e6-question-tags"
+			],
+			"status": "supported",
+			"evidence": "Rising and falling intonation on questions and tags plus -ed endings are explained and read by local computer speech if available. The app does not evaluate the learner's own voice."
+		},
+		{
+			"id": "E6-20",
+			"lb": "1.2",
+			"competence": "nutzen die Lautschrift und Hörbeispiele auch schon selbständig zur Klärung von Ausspracheproblemen.",
+			"lessons": [
+				"e6-intonation"
+			],
+			"status": "supported",
+			"evidence": "Key IPA symbols and phonetic examples are practised with local speech fallback; full audio dictionaries remain external study tools."
+		},
+		{
+			"id": "E6-21",
+			"lb": "2",
+			"competence": "verfügen über Orientierungswissen zu einigen wichtigen geographischen und historischen Gegebenheiten im UK und in den USA sowie zur Alltagskultur in diesen beiden Ländern.",
+			"lessons": [
+				"e6-cornwall",
+				"e6-lake-district",
+				"e6-romans-wall",
+				"e6-bath-names",
+				"e6-florida",
+				"e6-rockies",
+				"e6-us-regions"
+			],
+			"status": "implemented",
+			"evidence": "Worked explanations, interactive UK and US maps, quick checks, practice and two-level tasks grounded in verified Wikipedia reference pages."
+		},
+		{
+			"id": "E6-22",
+			"lb": "2",
+			"competence": "erkennen weitere grundlegende kulturelle Gemeinsamkeiten und Unterschiede im Alltagsleben und in der Lebenswelt Gleichaltriger im UK, in den USA und in Deutschland und begegnen anderen Lebensweisen aufgeschlossen und interessiert.",
+			"lessons": [
+				"e6-city-country",
+				"e6-daily-comparison"
+			],
+			"status": "supported",
+			"evidence": "Everyday city, country and school comparisons use cautious language without stereotypes. Genuine intercultural curiosity grows through real exchange and class reflection."
+		},
+		{
+			"id": "E6-23",
+			"lb": "2",
+			"competence": "verhalten sich in einfachen simulierten und ggf. realen interkulturellen Alltagssituationen (einfache Gespräche, erster privater Schriftverkehr) sozial angemessen und zeigen ein Bewusstsein für die Notwendigkeit höflicher Kommunikation.",
+			"lessons": [
+				"e6-station",
+				"e6-modals",
+				"e6-daily-comparison"
+			],
+			"status": "implemented",
+			"evidence": "Worked explanations, workshops, quick checks, practice and two-level tasks for polite requests, open penpal questions and courteous everyday dialogues."
+		},
+		{
+			"id": "E6-24",
+			"lb": "3",
+			"competence": "erfassen im Rahmen des Hör‑/Hörsehverstehens und des Leseverstehens den Inhalt von Sachtexten sowie von dialogischen, erzählenden, berichtenden und beschreibenden Texten, z. B. Speisekarten, Rezepte, Inserate, Info-Flyer, Internetseiten zu Sehenswürdigkeiten, Dialoge, Erzählungen, didaktisch aufbereitete Lektüren.",
+			"lessons": [
+				"e6-flyer-website",
+				"e6-menu-recipe",
+				"e6-romans-wall"
+			],
+			"status": "supported",
+			"evidence": "Menus, recipes, ads, info flyers, attraction websites and short factual/historical texts are practised directly. Full adapted readers (Lektüren) remain class and home reading."
+		},
+		{
+			"id": "E6-25",
+			"lb": "3",
+			"competence": "entnehmen Texten neben globalen Informationen auch gezielt Detailinformationen, ggf. mithilfe ergänzender bildlicher bzw. auditiver Elemente; sie beantworten Fragen zum Inhalt etwas ausführlicher, erfassen bestimmte, leicht zugängliche Merkmale der Textstruktur und machen erste Aussagen zu gestalterischen Mitteln, wie Aufbau, Form und Wirkung (z. B. Internetseiten von Sehenswürdigkeiten, auch im Vergleich).",
+			"lessons": [
+				"e6-flyer-website",
+				"e6-menu-recipe"
+			],
+			"status": "implemented",
+			"evidence": "Worked explanations, workshops, quick checks, practice and two-level tasks comparing website layout, imperatives, headings and info boxes."
+		},
+		{
+			"id": "E6-26",
+			"lb": "3",
+			"competence": "beschreiben eigene Reaktionen auf Texte und begründen sie in einfachen Worten.",
+			"lessons": [
+				"e6-menu-recipe",
+				"e6-poem"
+			],
+			"status": "implemented",
+			"evidence": "Worked explanations, workshops, quick checks, practice and two-level tasks asking learners to state and justify personal reactions to recipes and poetry."
+		},
+		{
+			"id": "E6-27",
+			"lb": "3",
+			"competence": "verfassen erzählende und berichtende Texte (auch zu Bildvorlagen) und persönliche Briefe.",
+			"lessons": [
+				"e6-story-writing",
+				"e6-picture-talk",
+				"e6-daily-comparison"
+			],
+			"status": "implemented",
+			"evidence": "Worked explanations, interactive picture scene, workshops, quick checks, practice and two-level tasks for stories, picture-based continuation and personal letters."
+		},
+		{
+			"id": "E6-28",
+			"lb": "3",
+			"competence": "beschäftigen sich (auch kreativ) mit verschiedenartigen Texten (auch Auszüge aus englischsprachiger Kinder- und Jugendliteratur, Reime, Lieder und einfache Gedichte), gestalten kurze Situationen szenisch (z. B. Standbild, Rollenspiel) und entwickeln dabei Aufgeschlossenheit und Freude am Lesen und am kreativen Umgang mit Sprache (z. B. kreatives Schreiben: Fortsetzen einfacher Geschichten).",
+			"lessons": [
+				"e6-poem",
+				"e6-story-writing"
+			],
+			"status": "supported",
+			"evidence": "Wordsworth's public-domain Lake District stanza and creative writing prompts are covered directly. Role play, freeze frames and extended children's books remain classroom practice."
+		},
+		{
+			"id": "E6-29",
+			"lb": "3",
+			"competence": "entnehmen einfachen, ggf. didaktisierten Filmsequenzen (z. B. Trickfilme, Kinderserien, Märchenverfilmungen, Videoclips zu vertrauten Lebensbereichen wie Familie oder Schule) wesentliche Informationen, v. a. zu Handlungsablauf, Figuren und Schauplatz, ggf. unter Nutzung von Untertiteln.",
+			"lessons": [
+				"e6-listening",
+				"e6-flyer-website"
+			],
+			"status": "supported",
+			"evidence": "The app ships no video or film clips. Listening and media lessons state explicitly that film sequences with subtitles stay in classroom work."
+		},
+		{
+			"id": "E6-30",
+			"lb": "4",
+			"competence": "gestalten ihren Lernprozess mit, indem sie grundlegende Strategien zur Vernetzung, Strukturierung und Speicherung von Sprachmaterial (z. B. mind maps, grammatikalische Übersichten) zunehmend selbständig anwenden und dabei zu ersten Einsichten bezüglich ihres persönlichen Wissensstandes und für sie geeigneter Lernstrategien gelangen; sie erkennen einige ihrer Stärken und Schwächen und lernen, für sie typische Fehler zu vermeiden.",
+			"lessons": [
+				"e6-word-building"
+			],
+			"status": "supported",
+			"evidence": "Mind maps, grammar reference navigation and error checks are taught; sustained personal error logs and study habits stay outside the app."
+		},
+		{
+			"id": "E6-31",
+			"lb": "4",
+			"competence": "wenden in begrenztem Umfang und ggf. mit Hilfestellung wesentliche Strategien des Lese- und Hör‑/Hörsehverstehens sowie der mündlichen und schriftlichen Sprachproduktion an; sie erschließen dabei, ggf. unter Anleitung, die Bedeutung unbekannter Wörter und Strukturen mithilfe von ersten Kenntnissen der Wortbildung (v. a. un-, re-, ‑er), des Deutschen und ggf. weiterer Muttersprachen sowie der zweiten Fremdsprache und des situativen Kontextes.",
+			"lessons": [
+				"e6-word-building",
+				"e6-language-links"
+			],
+			"status": "supported",
+			"evidence": "Word-building patterns (un-, re-, -er) and cognates from German/Latin/French are practised directly; broad independent reading with context guessing stays ongoing."
+		},
+		{
+			"id": "E6-32",
+			"lb": "4",
+			"competence": "nutzen das Lehrwerk zur gezielten Informationsentnahme (v. a. von Bedeutung, Aussprache und Orthographie einzelner englischer Wörter und von grammatikalischen Formen) und zum Lernen sowie zur Erstellung und Überarbeitung von Texten, ggf. mit Hilfestellung; sie entnehmen Nachschlagewerken (v. a. grammatisches Beiheft, zweisprachiges Wörterbuch) und digitalen Medien (v. a. Online-Wörterbücher, didaktisierte englischsprachige Internetseiten) erste wesentliche Informationen; sie nutzen moderne Kommunikationstechnologien in grundlegender Form, z. B. für das Verfassen von englischen Texten oder bei Aufgaben zum Hör‑/Hörsehverstehen.",
+			"lessons": [
+				"e6-word-building",
+				"e6-current-events"
+			],
+			"status": "supported",
+			"evidence": "Dictionary fields, reference views and source checking are taught; the school textbook, external bilingual/online dictionaries and word processors remain outside the app."
+		},
+		{
+			"id": "E6-33",
+			"lb": "5",
+			"competence": "bewältigen Kommunikationssituationen innerhalb der angegebenen Themengebiete mithilfe der in den Lernbereichen 1 – 4 ausgewiesenen Kompetenzen.",
+			"lessons": [
+				"e6-station",
+				"e6-directions",
+				"e6-doctor",
+				"e6-mediation-oral"
+			],
+			"status": "implemented",
+			"evidence": "Worked explanations, workshops, quick checks, practice and two-level tasks integrating skills from LB 1–4 in everyday scenarios."
+		},
+		{
+			"id": "E6-34",
+			"lb": "5",
+			"competence": "setzen sich auf der Grundlage ihrer Kenntnisse bewusst mit der englischen Sprache und den mit ihr verbundenen Kulturräumen auseinander.",
+			"lessons": [
+				"e6-language-links",
+				"e6-city-country",
+				"e6-us-regions"
+			],
+			"status": "implemented",
+			"evidence": "Worked explanations, workshops, quick checks, practice and two-level tasks reflecting deliberately on language patterns and cultural regions."
+		},
+		{
+			"id": "E6-35",
+			"lb": "5",
+			"competence": "Alltagsleben und Freizeitaktivitäten in den Bereichen Sport, Musik und Reisen (v. a. Bahnhof, Flughafen, Ticketschalter, Arzt/Apotheke, Museum, Kino, Wegbeschreibungen, Wetter); weitere Feste und Bräuche",
+			"lessons": [
+				"e6-station",
+				"e6-weather",
+				"e6-directions",
+				"e6-doctor",
+				"e6-sport-music",
+				"e6-city-country"
+			],
+			"status": "implemented",
+			"evidence": "Worked explanations, town-map workshop, quick checks, practice and two-level tasks covering sport, music, station/tickets, doctor/pharmacy, cinema/museum, weather, directions and customs."
+		},
+		{
+			"id": "E6-36",
+			"lb": "5",
+			"competence": "Leben in der Stadt und auf dem Land im UK bzw. in den USA und Vergleich mit der eigenen Lebenswelt; Leben in multikultureller Umgebung",
+			"lessons": [
+				"e6-city-country",
+				"e6-daily-comparison"
+			],
+			"status": "implemented",
+			"evidence": "Worked explanations, workshops, quick checks, practice and two-level tasks comparing city/country and multicultural life including Notting Hill Carnival."
+		},
+		{
+			"id": "E6-37",
+			"lb": "5",
+			"competence": "weitere Einblicke in wichtige geographische und politische Gegebenheiten des UK und der USA: je eine touristisch bedeutsame Region im UK (Cornwall oder Lake District) und in den USA (Florida oder Rocky Mountains); Regionen (New England States, Midwest etc.) und Vielfalt der Staaten der USA",
+			"lessons": [
+				"e6-cornwall",
+				"e6-lake-district",
+				"e6-florida",
+				"e6-rockies",
+				"e6-us-regions"
+			],
+			"status": "implemented",
+			"evidence": "Worked explanations, interactive UK and US maps, quick checks, practice and two-level tasks covering Cornwall, Lake District, Florida, Rocky Mountains, New England, Midwest and US diversity."
+		},
+		{
+			"id": "E6-38",
+			"lb": "5",
+			"competence": "Kelten und Römer in Britannien: Hadrian’s Wall, Bath, Ortsnamen, Straßen",
+			"lessons": [
+				"e6-romans-wall",
+				"e6-bath-names"
+			],
+			"status": "implemented",
+			"evidence": "Worked explanations, interactive UK map, quick checks, practice and two-level tasks covering Celts and Romans in Britain: Hadrian's Wall, Bath, -chester/-caster place names and Roman roads."
+		},
+		{
+			"id": "E6-39",
+			"lb": "5",
+			"competence": "altersgemäßes Aufgreifen von aktuellen Anlässen (z. B. Sportereignisse, kulturelle Veranstaltungen, Wahlen)",
+			"lessons": [
+				"e6-current-events"
+			],
+			"status": "supported",
+			"evidence": "The current-events lesson provides a structured checklist and source rule; learners look up a real recent event externally and invent no live statistics."
+		},
+		{
+			"id": "E6-40",
+			"lb": "5",
+			"competence": "Sprachreflexion: weitere grundlegende Gemeinsamkeiten und Unterschiede zwischen Englisch, Deutsch und der zweiten Fremdsprache sowie ggf. anderen Muttersprachen; Vermeidung elementarer Interferenzfehler; weitere Einblicke in aspect",
+			"lessons": [
+				"e6-language-links",
+				"e6-story-writing",
+				"e6-past-progressive"
+			],
+			"status": "implemented",
+			"evidence": "Worked explanations, timeline explorer, quick checks, practice and two-level tasks comparing English, German and 2nd foreign language, avoiding interference and deepening aspect."
+		}
+	]
+}

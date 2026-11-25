@@ -1,0 +1,580 @@
+[
+	{
+		"id": "e6-usa-map",
+		"stage": "usa",
+		"title": "From coast to coast: States and cities",
+		"skill": "Die Gliederung der USA in 50 Bundesstaaten, Großstädte und Regionen auf der Karte einordnen",
+		"bindings": [
+			"1.1",
+			"2",
+			"5"
+		],
+		"paragraphs": [
+			"Aus Klasse 5 weißt du bereits, dass die USA ein englischsprachiges Land in Nordamerika sind und Washington, D.C. ihre Hauptstadt ist. In Klasse 6 lernst du die Gliederung genauer kennen: Die USA bestehen aus 50 Bundesstaaten (states). 48 Bundesstaaten liegen zusammenhängend zwischen Atlantik und Pazifik. Zwei weitere Bundesstaaten liegen außerhalb davon: Alaska im Nordwesten des Kontinents und die Inselgruppe Hawaii im Pazifik.",
+			"Beispiel beim Kartenlesen: Washington, D.C. liegt an der Ostküste zwischen Maryland und Virginia und gehört zu keinem Bundesstaat („District of Columbia“). New York City im Nordosten, Chicago im Mittleren Westen, Houston und Miami im Süden sowie Seattle und Los Angeles im Westen zeigen die Weite des Landes. Beschreibe auf der Lernskizze Lage und Himmelsrichtung: „Seattle is in the north-west, on the Pacific coast.“"
+		],
+		"material": "Welcome to our 6b USA pinboard!\n• Washington, D.C. is the capital of the United States. It lies on the east coast, not inside one of the 50 states.\n• New York City in the Northeast is the largest city in the USA.\n• Chicago sits on Lake Michigan in the Midwest.\n• Los Angeles and Seattle are cities near the Pacific Ocean in the West.\n• Alaska is the largest state in the far north-west, and Hawaii is a group of islands in the Pacific.",
+		"materialLabel": "Eigenes englisches Übungsmaterial · nach der verlinkten Quelle zu den USA und US-Bundesstaaten",
+		"materialLanguage": "en",
+		"sourceIds": [
+			"lp",
+			"wiki-us",
+			"wiki-us-state"
+		],
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Welche Aussage über Washington, D.C., Alaska und Hawaii stimmt?",
+			"answer": "Die USA haben 50 Bundesstaaten; Alaska und Hawaii liegen außerhalb der 48 zusammenhängenden Staaten, und Washington, D.C. ist kein Bundesstaat.",
+			"wrong": [
+				"Die USA haben 48 Bundesstaaten; Alaska und Hawaii gehören zu Kanada.",
+				"New York City ist die politische Hauptstadt, Washington, D.C. ist der größte Bundesstaat."
+			],
+			"explanation": "48 zusammenhängende Staaten plus Alaska und Hawaii ergeben 50 Bundesstaaten. Washington, D.C. ist ein eigener Bundesdistrikt."
+		},
+		"takeaway": "Die USA umfassen 50 Bundesstaaten (48 zusammenhängend plus Alaska und Hawaii). Die Hauptstadt Washington, D.C. liegt in keinem Bundesstaat.",
+		"practice": [
+			{
+				"prompt": "How many states are there in the USA altogether? There are ___ states. (Zahl in Ziffern oder als englisches Wort)",
+				"answers": [
+					"50",
+					"fifty"
+				],
+				"feedback": "Die USA bestehen aus insgesamt 50 Bundesstaaten."
+			},
+			{
+				"prompt": "Which city is the capital of the United States? ___ (Hauptstadt der USA)",
+				"answers": [
+					"Washington, D.C.",
+					"Washington D.C.",
+					"Washington DC",
+					"Washington"
+				],
+				"feedback": "Washington, D.C. ist die Hauptstadt der Vereinigten Staaten."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Write three sentences about the USA map: name the capital, one city in the West and one state outside the 48 contiguous states.",
+				"model": "Washington, D.C. is the capital of the USA. Los Angeles is a big city in the West near the Pacific Ocean. Hawaii is a state made of islands in the Pacific.",
+				"criteria": [
+					"Ich nenne Washington, D.C. als Hauptstadt.",
+					"Ich ordne eine Stadt im Westen richtig ein.",
+					"Ich beschreibe Alaska oder Hawaii korrekt."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Ein Mitschüler behauptet: „Die USA haben 48 Bundesstaaten, und New York ist die Hauptstadt.“ Schreibe eine kurze Richtigstellung auf Deutsch mit drei konkreten Fakten.",
+				"model": "Das stimmt nicht ganz: Die USA haben insgesamt 50 Bundesstaaten, weil außer den 48 zusammenhängenden Staaten auch Alaska und Hawaii dazugehören. Außerdem ist New York zwar die größte Stadt, aber die Hauptstadt heißt Washington, D.C. Sie gehört zu keinem Bundesstaat.",
+				"criteria": [
+					"Ich korrigiere die Zahl der Bundesstaaten auf 50 und begründe sie mit Alaska und Hawaii.",
+					"Ich unterscheide New York (größte Stadt) und Washington, D.C. (Hauptstadt).",
+					"Ich erkläre, dass Washington, D.C. kein Bundesstaat ist."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "usa-map",
+			"goals": [
+				{
+					"label": "Hauptstadt",
+					"before": "The capital of the USA is",
+					"after": "on the east coast.",
+					"options": [
+						"Washington, D.C.",
+						"Chicago",
+						"Seattle"
+					],
+					"answer": "Washington, D.C.",
+					"explanation": "Washington, D.C. liegt an der mittleren Ostküste (Mid-Atlantic) zwischen Maryland und Virginia und ist die Hauptstadt."
+				},
+				{
+					"label": "Inselstaat im Pazifik",
+					"before": "Far out in the Pacific Ocean lies",
+					"after": "as the 50th state.",
+					"options": [
+						"Hawaii",
+						"Florida",
+						"Texas"
+					],
+					"answer": "Hawaii",
+					"explanation": "Hawaii liegt als Inselgruppe im Pazifik außerhalb der 48 zusammenhängenden Staaten."
+				},
+				{
+					"label": "Größter Bundesstaat",
+					"before": "In the far north-west of North America is",
+					"after": ", the biggest US state.",
+					"options": [
+						"Alaska",
+						"New York",
+						"California"
+					],
+					"answer": "Alaska",
+					"explanation": "Alaska liegt im Nordwesten des Kontinents und ist flächenmäßig der größte Bundesstaat."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "e6-usa-weather",
+		"stage": "usa",
+		"title": "Weather and climate across the USA",
+		"skill": "Einen amerikanischen Wetterbericht hören, Klimazonen unterscheiden und Fahrenheit grob in Celsius einordnen",
+		"bindings": [
+			"1.1",
+			"2",
+			"4",
+			"5"
+		],
+		"paragraphs": [
+			"Weil die USA riesig sind, herrschen am selben Tag ganz unterschiedliche Wetterbedingungen und Klimazonen. In einem amerikanischen Wetterbericht hörst du Temperaturen in Grad Fahrenheit (°F) statt in Grad Celsius (°C). Hilfreiche Ankerwerte zum Rechnen im Kopf sind: 32 °F entsprechen 0,0 °C (Gefrierpunkt), 68 °F entsprechen angenehmen 20,0 °C und 86 °F entsprechen heißen 30,0 °C.",
+			"Beispiel aus dem Wetterbericht: „In Seattle it is cool and rainy at 50 degrees Fahrenheit.“ 50 °F liegen bei genau 10,0 °C — eine Regenjacke passt also gut. In Miami im feuchtwarmen Süden stehen 86 °F (30,0 °C) auf dem Plan, während Phoenix im trockenen Südwesten im Sommer oft noch heißer ist und in Chicago im Winter Schnee fällt. Höre zuerst auf die Ortsnamen und Wetterwörter, bevor du einzelne Temperaturen notierst."
+		],
+		"material": "Good morning! Here is today's US weather report for Saturday.\nIn the Pacific Northwest, Seattle starts the day cloudy and rainy at 50 degrees Fahrenheit, so take a raincoat.\nAcross the Midwest, Chicago is windy and cool at 41 degrees Fahrenheit with a chance of snow tomorrow morning.\nDown in the South, Miami is sunny and warm at 86 degrees Fahrenheit — great weather for swimming, though a short afternoon thunderstorm is possible.\nFinally, in New York City, the sky is clear and mild at 68 degrees Fahrenheit.",
+		"materialLabel": "Eigenes englisches Hörskript · erfundener Wetterbericht passend zur Klimavielfalt der USA",
+		"materialLanguage": "en",
+		"sourceIds": [
+			"lp",
+			"wiki-us-climate"
+		],
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "Listen to or read the weather report: What is the weather like in Miami today?",
+			"answer": "It is sunny and warm at 86 °F, with a possible afternoon thunderstorm.",
+			"wrong": [
+				"It is windy and cool at 41 °F with snow.",
+				"It is cloudy and rainy at 50 °F all day."
+			],
+			"explanation": "Im Bericht heißt es für Miami: sunny and warm at 86 °F, mit einem möglichen Nachmittagsgewitter."
+		},
+		"takeaway": "Die USA umfassen sehr verschiedene Klimazonen. Temperaturen stehen dort in °F: 32 °F = 0,0 °C, 68 °F = 20,0 °C, 86 °F = 30,0 °C.",
+		"practice": [
+			{
+				"prompt": "In Chicago it is windy and ___ at 41 °F. (Wetteradjektiv aus dem Text)",
+				"answers": [
+					"cool"
+				],
+				"feedback": "Im Wetterbericht ist Chicago windy and cool."
+			},
+			{
+				"prompt": "In Seattle you should take a ___ because it is rainy. (Kleidungsstück aus dem Bericht)",
+				"answers": [
+					"raincoat"
+				],
+				"feedback": "Für das regnerische Wetter in Seattle empfiehlt der Bericht einen raincoat."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Choose two cities from the weather report (for example Seattle and New York). Write three sentences about the weather and what clothes you need there.",
+				"model": "In Seattle it is cloudy and rainy at 50 °F, so I need a raincoat. In New York City the weather is clear and mild at 68 °F. There I only need a light sweater or a T-shirt.",
+				"criteria": [
+					"Ich nenne zwei US-Städte und ihr Wetter.",
+					"Ich gebe passende Temperaturen aus dem Material an.",
+					"Ich empfehle passende Kleidung."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Deine Familie reist im Herbst nach Seattle und danach nach Miami. Erkläre auf Deutsch mithilfe des Wetter-Explorers, welche Temperaturen dort jeweils vorkommen können und wie sich die Klimazonen unterscheiden.",
+				"model": "Im Nordwesten rund um Seattle liegt die Temperatur im Bericht bei 50 °F, das sind 10,0 °C, und es ist oft feucht und kühl. Im subtropischen Süden um Miami sind 86 °F schon 30,0 °C, also sehr warm und sonnig, mit kurzen Gewittern. Deshalb packt man für beide Stationen ganz unterschiedliche Kleidung ein.",
+				"criteria": [
+					"Ich rechne zwei Fahrenheit-Werte richtig in Celsius ein.",
+					"Ich beschreibe den Unterschied zwischen Nordwesten und Süden.",
+					"Ich ziehe eine passende Schlussfolgerung für die Reise."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "weather",
+			"goals": [
+				{
+					"label": "Gefrierpunkt",
+					"before": "Water freezes at",
+					"after": "(0,0 °C).",
+					"options": [
+						"32 °F",
+						"68 °F",
+						"86 °F"
+					],
+					"answer": "32 °F",
+					"explanation": "Prüfe am Regler: 32 °F entsprechen genau 0,0 °C."
+				},
+				{
+					"label": "Seattle",
+					"before": "In Seattle it is cloudy and rainy, so it is",
+					"after": "today.",
+					"options": [
+						"cool",
+						"boiling hot",
+						"snowy"
+					],
+					"answer": "cool",
+					"explanation": "Bei 50 °F (10,0 °C) und Regen passt cool."
+				},
+				{
+					"label": "Wetterbericht zuordnen",
+					"before": "Chicago is windy and",
+					"after": "tomorrow morning.",
+					"options": [
+						"might have snow",
+						"has a heatwave",
+						"is tropical"
+					],
+					"answer": "might have snow",
+					"explanation": "Bei 41 °F (5,0 °C) erwähnt der Bericht a chance of snow."
+				}
+			]
+		},
+		"listening": true,
+		"speaking": false
+	},
+	{
+		"id": "e6-usa-teens",
+		"stage": "usa",
+		"title": "City life and country life in the USA",
+		"skill": "Das Alltagsleben amerikanischer Jugendlicher in Großstadt und ländlicher Region vergleichen",
+		"bindings": [
+			"1.1",
+			"2",
+			"5"
+		],
+		"paragraphs": [
+			"Der Alltag amerikanischer Jugendlicher hängt stark davon ab, ob sie in einer Großstadt oder auf dem Land wohnen. In Städten wie New York oder Chicago leben viele Familien in Wohnungen (apartments), gehen zu Fuß zur U-Bahn (subway) und haben Läden, Parks und Bibliotheken ganz in der Nähe. Auf dem Land, zum Beispiel auf einer Farm im Mittleren Westen oder in einer Kleinstadt in Montana, sind die Wege viel länger.",
+			"Beispiel im Vergleich: Noah aus Brooklyn fährt 15 Minuten mit der subway zur middle school und trifft Freunde auf dem Basketballplatz im Viertel. Hannah aus einer Kleinstadt in Iowa wohnt in einem Haus mit großem Garten, fährt 35 Minuten mit dem gelben school bus und braucht für das Training oft das Auto der Eltern. Beide gehen auf öffentliche Schulen und haben nachmittags Schulklubs."
+		],
+		"material": "Two teens, two daily lives:\nNoah (12, Brooklyn, New York): “I live in a fourth-floor apartment. Every morning I walk five minutes to the subway and ride three stops to school. After school I play handball in the city park or visit the local library.”\nHannah (12, a small town in Iowa): “Our house has a big yard, and our nearest neighbour lives two miles away. A yellow school bus picks me up at 7:15 a.m. After school I take part in the drama club, and my dad drives me to soccer practice in the next town.”",
+		"materialLabel": "Eigenes englisches Übungsmaterial · erfundene Alltagsberichte",
+		"materialLanguage": "en",
+		"sourceIds": [
+			"lp",
+			"wiki-us"
+		],
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Was unterscheidet Hannahs Schulweg in Iowa am deutlichsten von Noahs Weg in Brooklyn?",
+			"answer": "Hannah fährt lange mit dem gelben Schulbus über Land, während Noah kurz zur U-Bahn geht.",
+			"wrong": [
+				"Hannah geht fünf Minuten zu Fuß, während Noah eine Stunde Zug fährt.",
+				"In New York fahren alle Schülerinnen und Schüler mit dem eigenen Auto."
+			],
+			"explanation": "Auf dem Land sind die Entfernungen groß (school bus, Auto der Eltern), in der Großstadt liegen Haltestellen und Ziele nahe beieinander."
+		},
+		"takeaway": "In US-Großstädten prägen kurze Wege, Wohnungen und der öffentliche Nahverkehr den Alltag; auf dem Land spielen große Entfernungen, Schulbus und Auto eine größere Rolle.",
+		"practice": [
+			{
+				"prompt": "Noah takes the ___ to get to his school in Brooklyn. (Verkehrsmittel)",
+				"answers": [
+					"subway"
+				],
+				"feedback": "In New York nutzt Noah die subway (U-Bahn)."
+			},
+			{
+				"prompt": "A yellow school ___ picks Hannah up at 7:15 a.m. (Verkehrsmittel auf dem Land)",
+				"answers": [
+					"bus"
+				],
+				"feedback": "Hannah fährt morgens mit dem yellow school bus zur Schule."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Compare Noah and Hannah in four English sentences: say where they live, how they get to school and what they do after school.",
+				"model": "Noah lives in an apartment in Brooklyn, New York, and takes the subway to school. After school he plays handball or goes to the library. Hannah lives in a house in a small town in Iowa and rides a yellow school bus. After school she joins the drama club and plays soccer.",
+				"criteria": [
+					"Ich nenne Wohnort und Wohnform beider Jugendlichen.",
+					"Ich beschreibe beide Schulwege korrekt.",
+					"Ich erwähne eine Freizeitaktivität je Person."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Vergleiche deinen eigenen Schulweg und Alltag in Bayern mit Noahs oder Hannahs Alltag in drei bis vier englischen Sätzen und nenne eine Gemeinsamkeit.",
+				"model": "I live in a Bavarian town, so my daily life is a bit like Hannah's, but I can ride my bike to school in ten minutes. Like Noah, I often walk to a park to meet my friends. After school I also have homework and a sports club, just like teens in the USA.",
+				"criteria": [
+					"Ich vergleiche meinen eigenen Schulweg auf Englisch mit den USA.",
+					"Ich nenne mindestens einen Unterschied und eine Gemeinsamkeit.",
+					"Ich schreibe verständliche, vollständige Sätze."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "sentence",
+			"goals": [
+				{
+					"label": "Wohnen in der Großstadt",
+					"before": "Many city families live in",
+					"after": "near the subway.",
+					"options": [
+						"an apartment",
+						"a huge farm",
+						"a mountain cabin"
+					],
+					"answer": "an apartment",
+					"explanation": "In dicht bebauten Städten wie New York wohnen viele Familien in einem apartment."
+				},
+				{
+					"label": "Schulweg auf dem Land",
+					"before": "Because distances are long, country pupils ride",
+					"after": "every morning.",
+					"options": [
+						"the school bus",
+						"the Underground",
+						"a ferry boat"
+					],
+					"answer": "the school bus",
+					"explanation": "Auf dem Land holt der yellow school bus die Schülerinnen und Schüler ab."
+				},
+				{
+					"label": "Gemeinsamkeit",
+					"before": "Both teens",
+					"after": "in the afternoon.",
+					"options": [
+						"join school or sports clubs",
+						"fly to another state",
+						"live in a skyscraper"
+					],
+					"answer": "join school or sports clubs",
+					"explanation": "Schul- und Sportklubs prägen sowohl in der Stadt als auch auf dem Land den Nachmittag."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "e6-usa-green",
+		"stage": "usa",
+		"title": "Going green: Everyday environmental choices",
+		"skill": "Einen englischen Flyer zu Umweltbewusstsein verstehen und eigene Vorsätze formulieren",
+		"bindings": [
+			"1.1",
+			"1.2",
+			"2",
+			"5"
+		],
+		"paragraphs": [
+			"Umweltbewusstsein spielt auch an Schulen in den USA und in Deutschland eine große Rolle. In englischen Flyern zu „Go Green“-Aktionen begegnen dir Wörter wie recycle (wiederverwerten), reusable bottle (Mehrwegflasche), save energy (Energie sparen) und litter (Abfall). Oft stehen dabei klare Handlungsaufforderungen und Vorsätze für den Alltag.",
+			"Beispiel aus einem amerikanischen Schulprojekt: „Our eco-club has decided to bring reusable water bottles and avoid using plastic bags.“ Achte auf die praktischen Wortverbindungen (chunks): Nach decide steht meist to + Grundform (decide to save water), nach avoid steht meist die -ing-Form (avoid wasting paper). So kannst du selbst ausdrücken, was du im Alltag tust und vermeidest."
+		],
+		"material": "FLYER · OAKWOOD MIDDLE SCHOOL ECO-CLUB\nJoin our Green Week from Monday to Friday!\n1. Bring a reusable bottle instead of buying single-use plastic.\n2. Turn off classroom lights and screens when nobody is in the room.\n3. Put paper, glass and cans in the right recycling bins.\n4. Walk, cycle or share a carpool to avoid extra traffic.\nMeeting: Wednesday, 3:15 p.m. in Room 14. Everyone is welcome!",
+		"materialLabel": "Eigenes englisches Übungsmaterial · Schulflyer zum Thema Umweltbewusstsein",
+		"materialLanguage": "en",
+		"sourceIds": [
+			"lp",
+			"nps"
+		],
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "According to the flyer, what should students do before they leave an empty classroom?",
+			"answer": "They should turn off lights and screens.",
+			"wrong": [
+				"They should throw cans into the paper bin.",
+				"They should buy single-use plastic bottles."
+			],
+			"explanation": "Punkt 2 des Flyers verlangt: Turn off classroom lights and screens when nobody is in the room."
+		},
+		"takeaway": "Umweltflyer arbeiten mit knappen Handlungsregeln (recycle, reusable, save energy). Mit decide to … und avoid …-ing formulierst du eigene Vorsätze.",
+		"practice": [
+			{
+				"prompt": "Bring a ___ bottle instead of single-use plastic. (Adjektiv: wiederverwendbar)",
+				"answers": [
+					"reusable"
+				],
+				"feedback": "reusable bedeutet wiederverwendbar (von use + re- + -able)."
+			},
+			{
+				"prompt": "We try to ___ wasting electricity at school. (Verb: vermeiden)",
+				"answers": [
+					"avoid"
+				],
+				"feedback": "avoid + -ing drückt aus, was man bewusst vermeidet."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Write three green tips for your own class in English. Use at least one sentence with 'decide to ...' and one with 'avoid ...-ing'.",
+				"model": "Our class has decided to collect paper and bottles in separate bins. We always turn off the lights after the last lesson. Also, we avoid leaving windows open when the heating is on.",
+				"criteria": [
+					"Ich formuliere drei verständliche Umwelttipps für die Klasse.",
+					"Ich verwende decide to + Grundform korrekt.",
+					"Ich verwende avoid + -ing korrekt."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Fasse den Schul-Flyer der Oakwood Middle School auf Deutsch für deine Klasse zusammen und schlage eine der Ideen für eure Realschule vor.",
+				"model": "Die Umwelt-AG der Oakwood Middle School veranstaltet von Montag bis Freitag eine Green Week. Die Schülerinnen und Schüler sollen Mehrwegflaschen mitbringen, Licht und Bildschirme in leeren Räumen ausschalten, Müll richtig nach Papier, Glas und Dosen trennen und möglichst zu Fuß gehen, radeln oder Fahrgemeinschaften bilden. Für unsere Klasse fände ich besonders die Aktion gegen Einwegflaschen sinnvoll.",
+				"criteria": [
+					"Ich gebe die vier Tipps des Flyers vollständig und richtig auf Deutsch wieder.",
+					"Ich nenne Tag oder Anlass der Aktion.",
+					"Ich wähle begründet eine Idee für meine eigene Schule aus."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "sentence",
+			"goals": [
+				{
+					"label": "Müll vermeiden",
+					"before": "Bring a reusable bottle to",
+					"after": "single-use plastic.",
+					"options": [
+						"avoid buying",
+						"decide buying",
+						"avoid to buy"
+					],
+					"answer": "avoid buying",
+					"explanation": "Nach avoid steht die -ing-Form: avoid buying."
+				},
+				{
+					"label": "Vorsatz fassen",
+					"before": "Our eco-club has",
+					"after": "two more recycling bins.",
+					"options": [
+						"decided to place",
+						"decided placing",
+						"avoided to place"
+					],
+					"answer": "decided to place",
+					"explanation": "Nach decide steht to + Grundform: decided to place."
+				},
+				{
+					"label": "Energie sparen",
+					"before": "When nobody is in the room, please",
+					"after": "the lights.",
+					"options": [
+						"turn off",
+						"throw away",
+						"look after"
+					],
+					"answer": "turn off",
+					"explanation": "turn off the lights bedeutet das Licht ausschalten."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "e6-us-traditions",
+		"stage": "usa",
+		"title": "Traditions and everyday culture: UK, USA & us",
+		"skill": "Bräuche und Alltagsunterschiede in den USA, Großbritannien und Deutschland respektvoll vergleichen",
+		"bindings": [
+			"1.1",
+			"2",
+			"5"
+		],
+		"paragraphs": [
+			"Wer Englisch lernt, entdeckt schnell Unterschiede zwischen Großbritannien, den USA und Deutschland — auch bei Festen und im Alltag. In den USA feiern Familien am vierten Donnerstag im November Thanksgiving mit einem gemeinsamen Essen und Dankbarkeit. Am 4. Juli (Fourth of July) feiert das Land den Unabhängigkeitstag. In Großbritannien erinnern am 5. November Feuer und Feuerwerk an die Bonfire Night (Guy Fawkes Night).",
+			"Beispiel aus dem Alltag: Ein amerikanischer Freund sagt oft „Excuse me!“ oder „Have a great day!“, bestellt im Diner Pancakes mit Sirup und unterscheidet bei manchen Wörtern vom britischen Englisch (AE soccer / elevator / fall vs. BE football / lift / autumn). Wichtig ist eine offene Haltung: Ungewohnte Sitten sind weder besser noch schlechter, sondern erzählen etwas über Geschichte und Alltag der Menschen."
+		],
+		"material": "Cultural postcard exchange:\n“Dear Leon, tomorrow is the fourth Thursday in November, so our whole family is meeting for Thanksgiving! We always bake pumpkin pie and say what we are thankful for. Last month my British cousin visited us and laughed when I said 'elevator' instead of 'lift' and 'fall' instead of 'autumn'. Do you have a harvest festival in Bavaria too? Best, Chloe (Ohio)”",
+		"materialLabel": "Eigenes englisches Übungsmaterial · Kulturvergleich USA–UK–Deutschland",
+		"materialLanguage": "en",
+		"sourceIds": [
+			"lp",
+			"wiki-thanksgiving",
+			"wiki-us"
+		],
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Wann und wie wird Thanksgiving in den USA traditionell gefeiert?",
+			"answer": "Am vierten Donnerstag im November mit einem großen Familienessen, bei dem man Dankbarkeit zeigt.",
+			"wrong": [
+				"Am 5. November mit einem großen Feuer in London.",
+				"Am 4. Juli als Erntedankfest in Großbritannien."
+			],
+			"explanation": "In den USA fällt Thanksgiving auf den vierten Donnerstag im November; Bonfire Night (5. November) ist britisch und der 4. Juli der US-Nationalfeiertag."
+		},
+		"takeaway": "Thanksgiving (4. Donnerstag im November) und Fourth of July prägen die USA, Bonfire Night (5. November) Großbritannien. Britisches und amerikanisches Englisch unterscheiden sich auch in Alltagswörtern wie lift / elevator.",
+		"practice": [
+			{
+				"prompt": "In British English it is 'autumn'; in American English it is '___'. (Jahreszeit im AE)",
+				"answers": [
+					"fall"
+				],
+				"feedback": "Im amerikanischen Englisch heißt der Herbst meist fall."
+			},
+			{
+				"prompt": "In British English you take the 'lift'; in American English you take the '___'. (Aufzug im AE)",
+				"answers": [
+					"elevator"
+				],
+				"feedback": "Im amerikanischen Englisch sagt man elevator für den Aufzug."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Write a short reply to Chloe (4 sentences): answer her question about a harvest festival or tradition in Bavaria and react nicely to her Thanksgiving story.",
+				"model": "Hi Chloe! Thank you for telling me about Thanksgiving. In Bavaria many people celebrate Erntedank in October with decorated churches and fresh bread. I also like learning American words like elevator and fall. Have a wonderful Thanksgiving with your family!",
+				"criteria": [
+					"Ich gehe freundlich auf Chloes Nachricht zu Thanksgiving ein.",
+					"Ich beschreibe ein Fest oder einen Brauch aus meiner Lebenswelt auf Englisch.",
+					"Ich beende die Nachricht höflich."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Vergleiche auf Deutsch zwei Gemeinsamkeiten und zwei Unterschiede zwischen Festen oder Alltagswörtern in den USA, Großbritannien und Deutschland.",
+				"model": "Gemeinsam ist in allen drei Ländern, dass Feste wie Erntedank oder Thanksgiving mit der Familie und besonderen Speisen gefeiert werden und höfliche Umgangsformen wichtig sind. Ein Unterschied liegt im Datum und Anlass: Die USA feiern Thanksgiving am vierten Donnerstag im November, während in Großbritannien am 5. November Bonfire Night begangen wird. Außerdem unterscheiden sich Alltagswörter wie lift (BE) und elevator (AE).",
+				"criteria": [
+					"Ich nenne zwei echte Gemeinsamkeiten.",
+					"Ich nenne zwei konkrete Unterschiede mit korrekten Beispielen.",
+					"Ich formuliere wertschätzend und sachlich."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "dialogue",
+			"goals": [
+				{
+					"label": "US-Familienfest",
+					"before": "On the fourth Thursday in November, Americans celebrate",
+					"after": "together.",
+					"options": [
+						"Thanksgiving",
+						"Bonfire Night",
+						"Boxing Day"
+					],
+					"answer": "Thanksgiving",
+					"explanation": "Thanksgiving wird in den USA am vierten Donnerstag im November gefeiert."
+				},
+				{
+					"label": "Britisches vs. amerikanisches Wort",
+					"before": "In the UK you say 'lift', and in the USA you say",
+					"after": ".",
+					"options": [
+						"elevator",
+						"subway",
+						"autumn"
+					],
+					"answer": "elevator",
+					"explanation": "Das amerikanische Gegenstück zu lift ist elevator."
+				},
+				{
+					"label": "Unterschiedliche Herbstwörter",
+					"before": "Chloe says 'fall' when her British cousin says",
+					"after": ".",
+					"options": [
+						"autumn",
+						"spring",
+						"holiday"
+					],
+					"answer": "autumn",
+					"explanation": "Herbst heißt im britischen Englisch autumn und im amerikanischen Englisch fall."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": false
+	}
+]

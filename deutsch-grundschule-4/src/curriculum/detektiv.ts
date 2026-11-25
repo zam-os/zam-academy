@@ -806,6 +806,7 @@ const gross: Lesson = {
 			title: "Die Kronen-Jagd",
 			intro:
 				"In Tintos Tagebuch ist alles klein geschrieben. Setze jedem Wort eine Krone auf, das großgeschrieben werden muss.",
+			capitals: "crown",
 			pens: [{ value: "G", label: "Krone: groß", colour: "orange" }],
 			puzzles: [
 				marks("reise", "tinto|G schreibt seiner freundin|G einen langen brief|G über seine reise|G nach italien|G ."),

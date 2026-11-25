@@ -1,0 +1,419 @@
+[
+  {
+    "id": "beobachten",
+    "lb": 1,
+    "title": "Beobachten, beschreiben, deuten",
+    "period": "NT7 1.1 · Spielregeln der Natur",
+    "intro": "Ein Modellversuch holt ein Naturphänomen auf den Tisch, und dein Protokoll hält fest, was du siehst.",
+    "paragraphs": [
+      "Physik beginnt mit genauem Hinschauen. In einem Modellversuch ahmst du ein Phänomen aus der Natur im Kleinen nach: Eine Taschenlampe steht für die Sonne, ein Blatt Papier für ein Stück Erdboden. Du veränderst nur eine Größe, hier den Winkel, unter dem das Licht auf das Papier fällt, und hältst alles andere gleich: dieselbe Lampe, derselbe Abstand, ein abgedunkelter Raum.",
+      "Im Protokoll trennst du drei Dinge. Die Beobachtung beschreibt nur, was du siehst oder misst: „Der Lichtfleck wird bei flachem Einfall länger und dunkler.“ Die Deutung erklärt, warum das so ist: „Dasselbe Licht verteilt sich auf eine größere Fläche.“ Eine Vermutung sagt vorher, was passieren könnte, und wird erst durch den Versuch geprüft. Eine Skizze mit Lampe, Lichtbündel, Papier und eingezeichnetem Winkel ergänzt den Text; zeichne sie sauber mit Bleistift und Lineal und beschrifte sie.",
+      "Beispiel: Fällt das Lichtbündel senkrecht auf das Papier, ist der Fleck am kleinsten und am hellsten. Bei 30° ist er doppelt so lang, denn jeder Quadratzentimeter bekommt nur noch die Hälfte des Lichts. So erklärt der Modellversuch, warum es in Bayern im Sommer wärmer ist: Mittags steht die Sonne in München im Sommer etwa 65° hoch, im Winter nur etwa 18°. Im Winter verteilt sich dieselbe Sonnenstrahlung auf rund dreimal so viel Boden. Den Grund für die unterschiedliche Sonnenhöhe kennst du aus der Geographie: die geneigte Erdachse."
+    ],
+    "takeaway": "Die Beobachtung beschreibt, die Deutung erklärt. Je flacher Licht auf eine Fläche fällt, desto größer und dunkler wird der Lichtfleck.",
+    "formulas": [
+      "Beobachtung: was du siehst oder misst",
+      "Deutung: physikalische Erklärung der Beobachtung",
+      "Vermutung: Vorhersage, die der Versuch prüft",
+      "Modellversuch: Phänomen im Kleinen, nur eine Größe verändert"
+    ],
+    "sourceIds": ["lp", "jahreszeit"],
+    "quiz": {
+      "question": "Welcher Satz aus einem Versuchsprotokoll ist eine Beobachtung?",
+      "answer": "Bei flachem Lichteinfall ist der Lichtfleck größer und dunkler.",
+      "wrong": [
+        "Bei flachem Lichteinfall verteilt sich das Licht auf eine größere Fläche.",
+        "Im Winter ist es kälter, weil die Sonne flacher steht."
+      ],
+      "explanation": "Eine Beobachtung beschreibt nur, was du siehst. Die beiden anderen Sätze erklären das Ergebnis oder übertragen es auf die Natur; das sind Deutungen."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Beobachtung, Deutung oder Vermutung?",
+      "instruction": "Ordne jeden Satz aus Protokollen zum Taschenlampenversuch ein.",
+      "categories": ["Beobachtung", "Deutung", "Vermutung"],
+      "entries": [
+        { "text": "Bei 20° ist der Lichtfleck etwa dreimal so lang wie bei 90°.", "target": 0, "feedback": "Das hast du gesehen und gemessen, ohne etwas zu erklären." },
+        { "text": "Bei steilem Einfall trifft mehr Licht auf jeden Quadratzentimeter.", "target": 1, "feedback": "Der Satz erklärt, warum der Fleck heller ist." },
+        { "text": "Wenn ich die Lampe weiter weg stelle, wird der Fleck wohl noch dunkler.", "target": 2, "feedback": "Eine Vorhersage, die erst ein Versuch prüft." },
+        { "text": "Das Papier unter dem steilen Bündel fühlt sich nach einigen Minuten wärmer an.", "target": 0, "feedback": "Eine Wahrnehmung mit der Hand ist ebenfalls eine Beobachtung." },
+        { "text": "Im Winter erwärmt sich der Boden weniger, weil sich die Strahlung auf mehr Fläche verteilt.", "target": 1, "feedback": "Die Ursache wird genannt: Das ist eine Deutung." },
+        { "text": "Mit einer stärkeren Lampe ändert sich die Form des Flecks vermutlich nicht.", "target": 2, "feedback": "„Vermutlich“ zeigt: Das ist noch nicht geprüft." }
+      ],
+      "conclusion": "Wer Beobachtung, Deutung und Vermutung trennt, kann Ergebnisse überprüfen und Fehler im eigenen Denken finden."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Du hältst eine Taschenlampe zuerst senkrecht und dann schräg über ein kariertes Blatt. Beschreibe, was du beobachtest, deute die Beobachtung und nenne, welche Bedingungen gleich bleiben müssen.",
+        "hints": ["Zähle die beleuchteten Kästchen.", "Trenne „ich sehe“ von „weil“."],
+        "model": "Beobachtung: Bei schrägem Einfall ist der Lichtfleck länger und bedeckt mehr Kästchen, er ist aber dunkler. Deutung: Dasselbe Lichtbündel verteilt sich auf eine größere Fläche, deshalb fällt auf jedes Kästchen weniger Licht. Gleich bleiben müssen die Lampe, ihr Abstand zum Blatt und die Raumbeleuchtung; verändert wird nur der Winkel.",
+        "criteria": ["Beobachtung ohne Erklärung formuliert", "Deutung mit der Verteilung des Lichts begründet", "gleich bleibende Bedingungen genannt"]
+      },
+      "2": {
+        "prompt": "Am Nordpol steht die Sonne im Sommer den ganzen Tag über dem Horizont, aber nie höher als etwa 23°. Erkläre mit dem Modellversuch, warum es dort trotzdem kalt bleibt, und beschreibe, wie du das im Versuch zeigen würdest.",
+        "hints": ["Wie lang wird der Fleck bei 23° im Vergleich zu 90°?", "Was veränderst du im Versuch, was bleibt gleich?"],
+        "model": "Bei 23° fällt das Sonnenlicht sehr flach ein. Im Modellversuch stellst du die Lampe so, dass das Bündel unter etwa 23° auf das Papier fällt: Der Fleck ist dann mehr als doppelt so lang wie bei senkrechtem Einfall und entsprechend dunkler. Jede Fläche am Boden erhält also nur einen kleinen Teil der Strahlung, obwohl die Sonne lange scheint. In der Skizze zeichnest du Lampe, Lichtbündel, Papier und den Winkel; Lampe und Abstand bleiben gleich.",
+        "criteria": ["flachen Einfall als Ursache genannt", "Verteilung auf eine größere Fläche erklärt", "Versuch mit gleichbleibenden Bedingungen beschrieben"]
+      }
+    },
+    "model": "einstrahlung"
+  },
+  {
+    "id": "magnete",
+    "lb": 1,
+    "title": "Eigenschaften von Dauermagneten",
+    "period": "NT7 1.1 · Spielregeln der Natur",
+    "intro": "Jeder Magnet hat zwei Pole, und Pole wirken aufeinander, auch ohne Berührung.",
+    "paragraphs": [
+      "Ein Dauermagnet (Permanentmagnet) behält seine magnetische Wirkung lange. Am stärksten wirkt er an seinen Enden; diese Stellen heißen Pole. Hängt man einen Stabmagneten drehbar auf, zeigt immer dasselbe Ende ungefähr nach Norden. Dieses Ende heißt Nordpol, das andere Südpol. Auf Schulmagneten ist der Nordpol meist rot und der Südpol grün gefärbt. Einen Magneten mit nur einem Pol gibt es nicht.",
+      "Bringst du zwei Magnete zusammen, gilt: Ungleichnamige Pole ziehen sich an, gleichnamige Pole stoßen sich ab. Die Kraft wirkt ohne Berührung und wird mit zunehmendem Abstand schnell schwächer. Magnete ziehen nur Gegenstände aus bestimmten Stoffen an: Eisen, Nickel, Kobalt und die meisten Stahlsorten. Kupfer, Aluminium, Holz, Glas und Kunststoff werden nicht angezogen. Achtung: Ein-, Zwei- und Fünf-Cent-Münzen bestehen innen aus Stahl und haften am Magneten, obwohl sie wie Kupfer aussehen.",
+      "Beispiel: Ein Blatt Papier oder ein Holzbrett zwischen Magnet und Büroklammer hält die Wirkung kaum auf; die Kraft wirkt durch diese Stoffe hindurch. Ein Eisenblech dagegen schirmt ab: Das Eisen wird selbst angezogen und nimmt die magnetische Wirkung auf, sodass auf der anderen Seite kaum noch etwas ankommt. So verstehst du auch, warum ein Magnet an der Kühlschranktür hält, an einer Holztür aber nicht: Die Kühlschranktür besteht aus Stahlblech."
+    ],
+    "takeaway": "Ungleichnamige Pole ziehen sich an, gleichnamige stoßen sich ab. Magnete ziehen Eisen, Nickel und Kobalt an, und ihre Wirkung geht durch viele Stoffe hindurch.",
+    "formulas": [
+      "Nordpol (meist rot), Südpol (meist grün)",
+      "ungleichnamige Pole: Anziehung",
+      "gleichnamige Pole: Abstoßung",
+      "magnetische Stoffe: Eisen, Nickel, Kobalt"
+    ],
+    "sourceIds": ["lp", "magnet-kinder", "dauermagnet"],
+    "quiz": {
+      "question": "Du näherst den Nordpol eines Magneten dem Nordpol eines zweiten Magneten. Was passiert?",
+      "answer": "Die Magnete stoßen sich ab.",
+      "wrong": [
+        "Die Magnete ziehen sich an.",
+        "Nichts, weil sich zwei gleich starke Pole aufheben."
+      ],
+      "explanation": "Gleichnamige Pole stoßen sich ab. Erst wenn du einen Magneten umdrehst, stehen sich ungleichnamige Pole gegenüber und ziehen sich an."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Was hält am Magneten?",
+      "instruction": "Sage voraus, welche Gegenstände ein Magnet anzieht.",
+      "categories": ["wird angezogen", "wird nicht angezogen"],
+      "entries": [
+        { "text": "Büroklammer aus Stahl", "target": 0, "feedback": "Stahl besteht vor allem aus Eisen." },
+        { "text": "Zwei-Cent-Münze", "target": 0, "feedback": "Innen Stahl, außen nur eine dünne Kupferschicht." },
+        { "text": "Zwanzig-Cent-Münze", "target": 1, "feedback": "Sie besteht aus einer Kupferlegierung ohne Eisen." },
+        { "text": "Aluminiumfolie", "target": 1, "feedback": "Aluminium ist ein Metall, aber nicht magnetisch." },
+        { "text": "Nickelblech", "target": 0, "feedback": "Nickel gehört zu den magnetischen Stoffen." },
+        { "text": "Kupferdraht", "target": 1, "feedback": "Kupfer wird nicht angezogen." }
+      ],
+      "conclusion": "Nicht jedes Metall ist magnetisch. Entscheidend ist der Stoff, nicht der Glanz."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Du hast einen Stabmagneten ohne Farbmarkierung und einen Kompass. Beschreibe, wie du herausfindest, welches Ende der Nordpol ist, und begründe dein Vorgehen.",
+        "hints": ["Die Kompassnadel ist selbst ein kleiner Magnet.", "Welcher Pol der Nadel zeigt nach Norden?"],
+        "model": "Ich nähere ein Ende des Magneten der Kompassnadel. Das Ende der Nadel, das sonst nach Norden zeigt, ist ihr Nordpol. Wird dieser Nordpol vom Ende des Magneten abgestoßen, ist dieses Ende ebenfalls ein Nordpol, denn gleichnamige Pole stoßen sich ab. Wird er angezogen, ist es der Südpol. Zur Kontrolle prüfe ich das andere Ende: Es muss die Nadel umgekehrt beeinflussen.",
+        "criteria": ["Kompassnadel als Magnet genutzt", "Abstoßung gleichnamiger Pole als Begründung", "Kontrolle am zweiten Ende"]
+      },
+      "2": {
+        "prompt": "Lisa behauptet: „Magnete ziehen alle Metalle an.“ Plane mit Gegenständen vom Schreibtisch und aus dem Geldbeutel einen kurzen Versuch, der die Behauptung prüft, und formuliere das zu erwartende Ergebnis.",
+        "hints": ["Wähle Metalle aus verschiedenen Stoffen.", "Ein Gegenbeispiel genügt, um eine Behauptung zu widerlegen."],
+        "model": "Ich halte denselben Magneten nacheinander an eine Büroklammer, eine Ein-Cent-Münze, ein Stück Aluminiumfolie und eine Zwanzig-Cent-Münze. Zu erwarten ist: Büroklammer und Ein-Cent-Münze werden angezogen, weil sie Stahl enthalten. Alufolie und Zwanzig-Cent-Münze werden nicht angezogen, obwohl sie aus Metall sind. Damit ist Lisas Behauptung widerlegt: Nur Eisen, Nickel, Kobalt und Stoffe, die sie enthalten, werden angezogen.",
+        "criteria": ["mehrere verschiedene Metalle geplant", "Ergebnis vorhergesagt und begründet", "Behauptung mit Gegenbeispiel widerlegt"]
+      }
+    },
+    "model": "pole"
+  },
+  {
+    "id": "elementarmagnete",
+    "lb": 1,
+    "title": "Das Modell der Elementarmagnete",
+    "period": "NT7 1.1 · Spielregeln der Natur",
+    "intro": "Ein einfaches Modell erklärt, warum sich Stahl magnetisieren lässt und Kupfer nicht.",
+    "paragraphs": [
+      "In der Physik erklärt man den Magnetismus mit einem Modell: Ein Stoff wie Eisen oder Stahl besteht aus sehr vielen winzigen Elementarmagneten, jeder mit Nord- und Südpol. In einer unmagnetisierten Stahlnadel zeigen sie ungeordnet in alle Richtungen; ihre Wirkungen heben sich gegenseitig auf. Stoffe wie Kupfer oder Aluminium besitzen in diesem Modell keine Elementarmagnete und lassen sich deshalb nicht magnetisieren.",
+      "Streichst du mit einem Pol eines Magneten mehrmals in dieselbe Richtung über die Nadel, drehen sich immer mehr Elementarmagnete in eine gemeinsame Richtung. Ihre Wirkungen addieren sich, und die Nadel wird selbst zum Magneten. Wo jeder Strich endet, entsteht der Pol, der dem streichenden Pol ungleichnamig ist: Streichst du mit dem Nordpol, wird dieses Ende ein Südpol, das andere ein Nordpol. Kräftige Schläge oder starkes Erhitzen bringen die Ordnung wieder durcheinander, und die Nadel verliert ihre Magnetwirkung. Weicheisen lässt sich leicht ordnen, verliert die Ordnung aber auch schnell; Stahl behält sie lange.",
+      "Beispiel: Brichst du eine magnetisierte Nadel in der Mitte durch, erhältst du nicht einen einzelnen Nordpol und einen einzelnen Südpol, sondern zwei vollständige Magnete. Im Modell ist das klar: Auch an der Bruchstelle sind die Elementarmagnete geordnet, ihre Enden bilden dort neue Pole. Das Modell erklärt also Beobachtungen, die sonst rätselhaft wären. Es bleibt aber ein Denkmodell: Elementarmagnete sind keine winzigen Stabmagnete, die man unter dem Mikroskop sehen könnte."
+    ],
+    "takeaway": "Magnetisieren heißt Ordnen: Zeigen die Elementarmagnete in dieselbe Richtung, wirkt der Körper als Magnet. Schläge und Hitze zerstören die Ordnung.",
+    "formulas": [
+      "Elementarmagnete ungeordnet: keine Magnetwirkung",
+      "Elementarmagnete geordnet: Magnet mit Nord- und Südpol",
+      "magnetisierbar: Eisen, Nickel, Kobalt, Stahl",
+      "Entmagnetisieren: kräftig schlagen, stark erhitzen"
+    ],
+    "sourceIds": ["lp", "elementarmagnet", "dauermagnet"],
+    "quiz": {
+      "question": "Ein Stabmagnet wird in der Mitte durchgesägt. Was erhältst du?",
+      "answer": "Zwei Magnete mit je einem Nord- und einem Südpol.",
+      "wrong": [
+        "Einen einzelnen Nordpol und einen einzelnen Südpol.",
+        "Zwei unmagnetische Stücke, weil die Pole getrennt wurden."
+      ],
+      "explanation": "Im Modell bleiben die Elementarmagnete auch an der Schnittstelle geordnet. Jedes Stück hat deshalb wieder zwei Pole."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Eine Stahlnadel magnetisieren und entmagnetisieren",
+      "instruction": "Bringe Versuchsschritte und Modellerklärungen in die richtige Reihenfolge.",
+      "categories": [],
+      "entries": [
+        { "text": "Die Nadel zieht keine Büroklammer an: Ihre Elementarmagnete sind ungeordnet.", "target": 0, "feedback": "Der Ausgangszustand vor dem Versuch." },
+        { "text": "Du streichst zehnmal mit dem Nordpol eines Magneten in derselben Richtung über die Nadel.", "target": 1, "feedback": "Immer in dieselbe Richtung, sonst entsteht keine Ordnung." },
+        { "text": "Die meisten Elementarmagnete zeigen nun in dieselbe Richtung.", "target": 2, "feedback": "Das ist die Erklärung im Modell." },
+        { "text": "Die Nadel hält eine Büroklammer und richtet sich wie eine Kompassnadel aus.", "target": 3, "feedback": "Die Beobachtung bestätigt die Ordnung." },
+        { "text": "Die Lehrkraft erhitzt die Nadel in der Brennerflamme, bis sie glüht.", "target": 4, "feedback": "Starkes Erhitzen nur unter Aufsicht." },
+        { "text": "Die Ordnung ist zerstört; die Nadel zieht keine Büroklammer mehr an.", "target": 5, "feedback": "Wärme bringt die Elementarmagnete durcheinander." }
+      ],
+      "conclusion": "Das Modell erklärt beide Richtungen: Ordnen macht magnetisch, Unordnung macht die Wirkung zunichte."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre mit dem Modell der Elementarmagnete, warum eine Büroklammer aus Stahl, die an einem Magneten hängt, selbst eine zweite Büroklammer anziehen kann.",
+        "hints": ["Was macht der Magnet mit den Elementarmagneten in der ersten Klammer?", "Was passiert, wenn der Magnet entfernt wird?"],
+        "model": "Der Magnet richtet die Elementarmagnete in der ersten Büroklammer aus. Solange sie am Magneten hängt, sind diese weitgehend geordnet, und die Klammer ist selbst ein Magnet mit Nord- und Südpol. Deshalb zieht sie eine zweite Klammer an und ordnet auch deren Elementarmagnete. Nimmt man den Magneten weg, geht ein Teil der Ordnung verloren, und die Kette fällt oft auseinander.",
+        "criteria": ["Ordnung der Elementarmagnete beschrieben", "Klammer als eigener Magnet erkannt", "Verhalten nach dem Entfernen erklärt"]
+      },
+      "2": {
+        "prompt": "Im Zeltlager soll ein Kompass aus Nähnadel, Korken und Wasserschale gebaut werden. Beschreibe, wie die Nadel zum Kompass wird, warum ein Kupferdraht nicht funktionieren würde und warum die Nadel nicht ins Lagerfeuer fallen sollte.",
+        "hints": ["Wie magnetisierst du die Nadel?", "Was passiert im Modell bei Hitze?"],
+        "model": "Ich streiche die Stahlnadel mehrmals in dieselbe Richtung mit einem Pol eines Magneten. Dadurch ordnen sich ihre Elementarmagnete, und die Nadel wird zum Magneten. Auf dem schwimmenden Korken kann sie sich frei drehen und richtet sich im Erdmagnetfeld nach Norden aus. Kupfer besitzt im Modell keine Elementarmagnete und lässt sich nicht magnetisieren. Im Feuer würde die Hitze die Ordnung zerstören; die Nadel wäre danach kein Magnet mehr.",
+        "criteria": ["Magnetisieren durch Bestreichen beschrieben", "Kupfer mit fehlenden Elementarmagneten begründet", "Wirkung der Hitze erklärt"]
+      }
+    },
+    "model": "elementar"
+  },
+  {
+    "id": "erdmagnetfeld",
+    "lb": 1,
+    "title": "Orientierung mit dem Erdmagnetfeld",
+    "period": "NT7 1.1 · Spielregeln der Natur",
+    "intro": "Die Erde verhält sich wie ein riesiger Magnet, und eine Kompassnadel zeigt dir, wo Norden ist.",
+    "paragraphs": [
+      "Die Erde ist von einem Magnetfeld umgeben. Vereinfacht wirkt sie so, als stecke in ihrem Inneren ein großer Stabmagnet. Eine Kompassnadel ist ein kleiner, drehbar gelagerter Magnet. Sie richtet sich in diesem Erdmagnetfeld aus: Ihr Nordpol zeigt ungefähr zum geographischen Nordpol der Erde. Weil sich ungleichnamige Pole anziehen, liegt im geographischen Norden physikalisch gesehen ein magnetischer Südpol.",
+      "Die magnetischen Pole liegen nicht genau an den geographischen Polen und wandern langsam. In Bayern beträgt die Abweichung zwischen magnetischem und geographischem Norden aber nur wenige Grad; auf einer Wanderung kannst du sie vernachlässigen. Eisenteile, Magnete oder Lautsprecher in der Nähe lenken die Nadel ab. Halte den Kompass deshalb waagrecht und fern von Taschenmessern, Handys und Stahlgeländern.",
+      "Beispiel: Auf einer Wanderkarte ist Norden oben. Du legst den Kompass auf die Karte und drehst beides, bis der obere Kartenrand in dieselbe Richtung zeigt wie der Nordpol der Nadel. Jetzt ist die Karte eingenordet: Jede Richtung auf der Karte stimmt mit der Richtung im Gelände überein. Liegt die Hütte auf der Karte schräg rechts oberhalb deines Standorts, gehst du nach Nordosten, also 45° rechts von der Richtung, in die der Nordpol der Nadel zeigt."
+    ],
+    "takeaway": "Die Kompassnadel ist ein Magnet, dessen Nordpol nach Norden zeigt. Im geographischen Norden liegt deshalb ein magnetischer Südpol der Erde.",
+    "formulas": [
+      "Nordpol der Kompassnadel zeigt nach Norden",
+      "geographischer Norden: magnetischer Südpol",
+      "Karte einnorden: Kartennorden in Nadelrichtung drehen"
+    ],
+    "sourceIds": ["lp", "erdmagnetfeld", "kompass"],
+    "quiz": {
+      "question": "Warum zeigt der Nordpol einer Kompassnadel nach Norden?",
+      "answer": "Weil im geographischen Norden ein magnetischer Südpol der Erde liegt, der ihn anzieht.",
+      "wrong": [
+        "Weil im geographischen Norden ein magnetischer Nordpol der Erde liegt, der ihn anzieht.",
+        "Weil die Drehung der Erde die Nadel nach Norden schiebt."
+      ],
+      "explanation": "Ungleichnamige Pole ziehen sich an. Der Nordpol der Nadel wird also von einem magnetischen Südpol angezogen, der in der Nähe des geographischen Nordpols liegt."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Unterwegs mit dem Kompass",
+      "instruction": "Was hilft beim Orientieren, was führt dich in die Irre?",
+      "categories": ["hilft bei der Orientierung", "lenkt die Nadel ab"],
+      "entries": [
+        { "text": "Die Karte drehen, bis ihr Norden in Nadelrichtung zeigt", "target": 0, "feedback": "So wird die Karte eingenordet." },
+        { "text": "Den Kompass waagrecht halten", "target": 0, "feedback": "Dann kann sich die Nadel frei drehen." },
+        { "text": "Das Handy direkt neben den Kompass legen", "target": 1, "feedback": "Im Handy stecken kleine Magnete, etwa im Lautsprecher." },
+        { "text": "Ein Taschenmesser auf das Kompassgehäuse legen", "target": 1, "feedback": "Stahl wird vom Nadelmagneten angezogen und lenkt sie ab." },
+        { "text": "Die Richtung zum Ziel auf der eingenordeten Karte ablesen", "target": 0, "feedback": "Auf der eingenordeten Karte stimmen die Richtungen mit dem Gelände überein." },
+        { "text": "Direkt neben dem Stahlgeländer einer Brücke messen", "target": 1, "feedback": "Große Eisenteile verfälschen die Anzeige." }
+      ],
+      "conclusion": "Ein Kompass zeigt nur dann zuverlässig nach Norden, wenn keine anderen Magnete oder Eisenteile in der Nähe sind."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Du stehst an einer Wegkreuzung. Auf der Karte liegt der See genau unterhalb deines Standorts. Beschreibe Schritt für Schritt, wie du mit Kompass und Karte die richtige Richtung findest.",
+        "hints": ["Zuerst die Karte einnorden.", "„Unten“ auf der Karte ist welche Himmelsrichtung?"],
+        "model": "Ich lege den Kompass auf die Karte und drehe die Karte, bis ihr oberer Rand in die Richtung zeigt, in die der Nordpol der Nadel zeigt. Dann ist die Karte eingenordet. Der See liegt auf der Karte unterhalb meines Standorts, also im Süden. Ich gehe daher genau entgegengesetzt zu der Richtung, in die der Nordpol der Nadel zeigt. Unterwegs prüfe ich die Richtung, ohne Handy oder Messer direkt neben dem Kompass.",
+        "criteria": ["Karte eingenordet", "Himmelsrichtung des Ziels bestimmt", "Gehrichtung aus der Nadelrichtung abgeleitet"]
+      },
+      "2": {
+        "prompt": "Zugvögel und Meeresschildkröten orientieren sich vermutlich auch am Erdmagnetfeld. Erkläre, welche Information das Erdmagnetfeld überall auf der Erde liefert, und warum ein Kompass neben einem Lautsprecher unzuverlässig ist.",
+        "hints": ["Wie richtet sich ein frei drehbarer Magnet aus?", "Was steckt in einem Lautsprecher?"],
+        "model": "Das Erdmagnetfeld legt überall eine Richtung fest: Ein frei drehbarer Magnet richtet sich ungefähr in Nord-Süd-Richtung aus. Wer diese Richtung spürt oder misst, kennt Norden und kann daraus jede andere Himmelsrichtung ableiten. Ein Lautsprecher enthält einen Dauermagneten. In seiner Nähe wirkt dieser viel stärker auf die Nadel als das Erdmagnetfeld, deshalb richtet sie sich nach dem Lautsprecher aus und zeigt nicht mehr nach Norden.",
+        "criteria": ["Nord-Süd-Richtung als Information genannt", "Ableitung weiterer Richtungen erwähnt", "Störung durch den stärkeren Magneten erklärt"]
+      }
+    },
+    "model": "kompass"
+  },
+  {
+    "id": "dichte",
+    "lb": 1,
+    "title": "Dichte: eine Eigenschaft des Stoffes",
+    "period": "NT7 1.1 · Spielregeln der Natur",
+    "intro": "Gleich große Würfel aus verschiedenen Stoffen sind verschieden schwer.",
+    "paragraphs": [
+      "Ein Würfel aus Aluminium und ein gleich großer Würfel aus Eisen haben dasselbe Volumen, aber verschiedene Massen. Die Masse gibt an, wie viel Stoff ein Körper enthält; du misst sie mit der Waage in Gramm oder Kilogramm. Das Volumen gibt an, wie viel Raum er einnimmt, in Kubikzentimetern oder Millilitern; 1 cm³ entspricht 1 ml. Aus Natur und Technik 5 kennst du die Dichte schon als Stoffeigenschaft, mit der man Stoffe unterscheiden kann.",
+      "Die Dichte ρ (gesprochen „rho“) gibt an, welche Masse ein Kubikzentimeter eines Stoffes hat: ρ = m / V. Ihre Einheit ist g/cm³; in Tabellen steht oft auch kg/m³. Weil ein Kubikmeter eine Million Kubikzentimeter enthält und ein Kilogramm tausend Gramm, gilt 1 g/cm³ = 1000 kg/m³. Die Dichte hängt nur vom Stoff ab, nicht von der Größe des Körpers: Ein doppelt so großer Aluminiumwürfel hat die doppelte Masse, der Quotient m / V bleibt gleich. Wasser hat die Dichte 1 g/cm³.",
+      "Beispiel: Ein Würfel hat die Masse 54 g und das Volumen 20 cm³. Seine Dichte ist ρ = 54 g : 20 cm³ = 2,7 g/cm³; in der Tabelle hat Aluminium diesen Wert. Umgekehrt berechnest du mit m = ρ · V die Masse: 10 cm³ Gold haben 19,3 g/cm³ · 10 cm³ = 193 g, 10 cm³ Eis nur 9,2 g. Rechne immer mit Einheiten und gib das Ergebnis nicht genauer an, als deine Messwerte es erlauben: Aus Werten mit zwei gültigen Ziffern folgt kein Ergebnis mit fünf."
+    ],
+    "takeaway": "Dichte ist Masse durch Volumen, ρ = m / V. Sie ist für jeden Stoff typisch und hängt nicht von der Größe des Körpers ab.",
+    "formulas": [
+      "ρ = m / V",
+      "m = ρ · V",
+      "V = m / ρ",
+      "1 g/cm³ = 1000 kg/m³",
+      "1 cm³ = 1 ml"
+    ],
+    "sourceIds": ["lp", "dichte", "dichtetabelle"],
+    "quiz": {
+      "question": "Ein Eisenwürfel wird in zwei gleich große Hälften gesägt. Was gilt für die Dichte einer Hälfte?",
+      "answer": "Sie ist genauso groß wie die des ganzen Würfels.",
+      "wrong": [
+        "Sie ist halb so groß, weil die Masse halbiert ist.",
+        "Sie ist doppelt so groß, weil das Volumen halbiert ist."
+      ],
+      "explanation": "Masse und Volumen halbieren sich beide, der Quotient m / V bleibt gleich. Die Dichte gehört zum Stoff Eisen, nicht zum einzelnen Stück."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Größen und Einheiten",
+      "instruction": "Ordne jede Angabe der Größe zu, die sie beschreibt.",
+      "categories": ["Masse", "Volumen", "Dichte"],
+      "entries": [
+        { "text": "54 g", "target": 0, "feedback": "Gramm ist eine Einheit der Masse." },
+        { "text": "20 cm³", "target": 1, "feedback": "Kubikzentimeter messen den Raum." },
+        { "text": "2,7 g/cm³", "target": 2, "feedback": "Masse pro Volumen: eine Dichte." },
+        { "text": "0,5 kg", "target": 0, "feedback": "Kilogramm ist die Grundeinheit der Masse." },
+        { "text": "250 ml", "target": 1, "feedback": "Milliliter sind Kubikzentimeter." },
+        { "text": "1000 kg/m³", "target": 2, "feedback": "Die Dichte des Wassers in einer anderen Einheit." }
+      ],
+      "conclusion": "Die Einheit verrät die Größe: Steht ein Bruchstrich aus Masse und Volumen in der Einheit, ist es eine Dichte."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Ein Quader aus unbekanntem Metall ist 2 cm lang, 2 cm breit und 5 cm hoch und hat die Masse 176 g. Berechne seine Dichte und bestimme mit den Werten im Modelllabor, aus welchem Metall er bestehen könnte.",
+        "hints": ["Volumen des Quaders: Länge · Breite · Höhe", "ρ = m / V, dann mit der Tabelle vergleichen"],
+        "model": "Das Volumen ist V = 2 cm · 2 cm · 5 cm = 20 cm³. Die Dichte ist ρ = 176 g : 20 cm³ = 8,8 g/cm³. Diesen Wert hat Kupfer. Ganz sicher ist das nicht, denn andere Stoffe wie manche Legierungen haben ähnliche Dichten; Farbe und weitere Eigenschaften helfen bei der Entscheidung.",
+        "criteria": ["Volumen mit Einheit berechnet", "Dichte richtig berechnet", "Stoff mit der Tabelle bestimmt und Unsicherheit genannt"]
+      },
+      "2": {
+        "prompt": "Ein Goldbarren aus einem Film hat die Maße 25 cm · 7 cm · 4 cm. Berechne seine Masse (Gold: 19,3 g/cm³) und vergleiche mit einer gleich großen Wasserflasche. Begründe, warum Goldbarren viel schwerer sind, als sie aussehen.",
+        "hints": ["Erst das Volumen, dann m = ρ · V", "Wasser hat 1 g/cm³."],
+        "model": "Das Volumen ist V = 25 cm · 7 cm · 4 cm = 700 cm³. Die Masse ist m = 19,3 g/cm³ · 700 cm³ = 13 510 g, also etwa 13,5 kg. Gleich viel Wasser hätte nur 700 g. Der Barren ist so groß wie ein Buch, aber fast zwanzigmal so schwer wie Wasser desselben Volumens, weil Gold eine sehr große Dichte hat.",
+        "criteria": ["Volumen berechnet", "Masse mit m = ρ · V und Einheit", "Vergleich mit Wasser über die Dichte begründet"]
+      }
+    },
+    "model": "dichte",
+    "calculation": "dichte"
+  },
+  {
+    "id": "dichte-messen",
+    "lb": 1,
+    "title": "Die Dichte eines unregelmäßigen Körpers bestimmen",
+    "period": "NT7 1.1 · Spielregeln der Natur",
+    "intro": "Mit Waage und Messzylinder findest du heraus, woraus ein Körper bestehen könnte.",
+    "paragraphs": [
+      "Bei einem Quader berechnest du das Volumen aus Länge, Breite und Höhe. Ein Stein oder eine Schraube hat keine einfache Form. Ihr Volumen bestimmst du mit der Differenzmethode: Du füllst Wasser in einen Messzylinder und liest den Wasserstand V₁ ab. Dann lässt du den Körper an einem Faden vorsichtig hineingleiten, bis er ganz untertaucht, und liest V₂ ab. Der Körper verdrängt so viel Wasser, wie er selbst Raum einnimmt: V = V₂ − V₁. Die Masse bestimmst du vorher mit der Waage, solange der Körper trocken ist.",
+      "Jede Messung ist nur begrenzt genau. Am Messzylinder liest du auf Augenhöhe am tiefsten Punkt der gewölbten Wasseroberfläche ab, und zwar auf den nächsten Teilstrich genau. Bei einer 5-ml-Teilung kann ein abgelesener Wert deshalb um bis zu 2,5 ml danebenliegen, bei einer 1-ml-Teilung nur um 0,5 ml. Füllst du das Wasser vorher genau bis zu einem Teilstrich, ist V₁ exakt, und nur V₂ ist unsicher; liest du beide Stände frei ab, addieren sich die Unsicherheiten. Rechne mit dem kleinsten und dem größten möglichen Volumen und gib einen Bereich für die Dichte an. Mit diesem Bereich suchst du in einer Dichtetabelle, etwa im Internet, nach passenden Stoffen.",
+      "Beispiel: Eine Schraube hat die Masse 62,4 g. Das Wasser steht vorher genau auf der 50-ml-Marke und steigt auf 58 ml, also ist V = 8 ml = 8 cm³ und ρ = 62,4 g : 8 cm³ = 7,8 g/cm³. Mit der 1-ml-Teilung liegt V zwischen 7,5 cm³ und 8,5 cm³, die Dichte also zwischen etwa 7,3 g/cm³ und 8,3 g/cm³. In diesem Bereich liegt in der Tabelle nur Eisen. Passen zwei Stoffe, etwa Aluminium und Granit, die beide etwa 2,7 g/cm³ haben, brauchst du weitere Eigenschaften wie Aussehen, Magnetismus oder elektrische Leitfähigkeit."
+    ],
+    "takeaway": "Volumen unregelmäßiger Körper: V = V₂ − V₁. Weil jede Ablesung ungenau ist, gibst du die Dichte als Bereich an und vergleichst sie mit einer Tabelle.",
+    "formulas": [
+      "V = V₂ − V₁ (Differenzmethode)",
+      "ρ = m / (V₂ − V₁)",
+      "Ablesegenauigkeit: etwa ein halber Teilstrich",
+      "Dichtebereich: m durch größtes bis m durch kleinstes Volumen"
+    ],
+    "sourceIds": ["lp", "messzylinder", "dichtetabelle"],
+    "quiz": {
+      "question": "Warum bestimmst du die Masse eines Steins, bevor du ihn in den Messzylinder legst?",
+      "answer": "Weil der nasse Stein sonst das anhaftende Wasser mitwiegt.",
+      "wrong": [
+        "Weil der Stein im Wasser seine Masse verliert.",
+        "Weil sich das Volumen nur messen lässt, wenn die Masse schon bekannt ist."
+      ],
+      "explanation": "Am nassen Stein hängen Wassertropfen, die die Waage mitwiegt. Die Masse des Steins selbst ändert sich im Wasser nicht."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Protokoll einer Dichtebestimmung",
+      "instruction": "Bringe die Abschnitte des Protokolls in die richtige Reihenfolge.",
+      "categories": [],
+      "entries": [
+        { "text": "Frage: Aus welchem Stoff besteht der Anhänger?", "target": 0, "feedback": "Am Anfang steht die Frage." },
+        { "text": "Masse des trockenen Anhängers mit der Waage bestimmen.", "target": 1, "feedback": "Trocken wiegen, bevor er nass wird." },
+        { "text": "Wasser in den Messzylinder füllen und V₁ auf Augenhöhe ablesen.", "target": 2, "feedback": "Der Ausgangswasserstand." },
+        { "text": "Anhänger am Faden ganz eintauchen und V₂ ablesen.", "target": 3, "feedback": "Nur vollständig untergetaucht verdrängt er sein ganzes Volumen." },
+        { "text": "V = V₂ − V₁ und ρ = m / V berechnen, mit Bereich.", "target": 4, "feedback": "Auswertung mit Messunsicherheit." },
+        { "text": "Mit einer Dichtetabelle vergleichen und das Ergebnis begründen.", "target": 5, "feedback": "Erst jetzt beantwortest du die Frage." }
+      ],
+      "conclusion": "Ein Protokoll folgt dem Weg des Versuchs: Frage, Messung, Auswertung, Antwort."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Ein Anhänger hat die Masse 52,8 g. Im Messzylinder mit 1-ml-Teilung steht das Wasser vorher genau auf der 50-ml-Marke und steigt auf 56 ml. Berechne die Dichte und ihren Bereich und entscheide mit der Tabelle (Messing 8,4 g/cm³, Kupfer 8,8 g/cm³), ob du den Stoff sicher bestimmen kannst.",
+        "hints": ["V = V₂ − V₁; nur V₂ ist unsicher, um höchstens 0,5 ml.", "Teile die Masse durch das größte und das kleinste Volumen."],
+        "model": "Das Volumen ist V = 56 ml − 50 ml = 6 ml = 6 cm³, die Dichte ρ = 52,8 g : 6 cm³ = 8,8 g/cm³. Weil V₁ exakt ist und nur V₂ um 0,5 ml danebenliegen kann, liegt V zwischen 5,5 cm³ und 6,5 cm³, und die Dichte zwischen etwa 8,1 g/cm³ und 9,6 g/cm³. Messing und Kupfer liegen beide in diesem Bereich. Der Stoff lässt sich so nicht sicher bestimmen; ein feinerer Messzylinder oder die Farbe helfen weiter.",
+        "criteria": ["Volumen und Dichte richtig berechnet", "Bereich aus der Ablesegenauigkeit bestimmt", "begründet, dass zwei Stoffe passen"]
+      },
+      "2": {
+        "prompt": "Für einen grauen Stein (m = 40,5 g) steigt der Wasserstand von 50 ml auf 65 ml. Laut Tabelle haben Aluminium und Granit beide etwa 2,7 g/cm³. Berechne die Dichte, erkläre, warum sie hier nicht für eine Entscheidung reicht, und schlage eine weitere Prüfung vor.",
+        "hints": ["Rechne wie im Beispiel.", "Welche Eigenschaft unterscheidet ein Metall von einem Gestein?"],
+        "model": "V = 65 ml − 50 ml = 15 cm³ und ρ = 40,5 g : 15 cm³ = 2,7 g/cm³. Weil Aluminium und Granit dieselbe Dichte haben, kann die Dichte allein nicht zwischen ihnen entscheiden. Eine weitere Prüfung wäre die elektrische Leitfähigkeit: Aluminium leitet den Strom, Granit nicht. Auch eine frische Bruchfläche oder das Gefüge des Steins zeigen, ob es ein Gestein ist.",
+        "criteria": ["Dichte richtig berechnet", "Grenze der Methode erklärt", "sinnvolle weitere Prüfung vorgeschlagen"]
+      }
+    },
+    "model": "messzylinder",
+    "calculation": "differenz"
+  },
+  {
+    "id": "dichte-bewerten",
+    "lb": 1,
+    "title": "Werkstoffe nach ihrer Dichte bewerten",
+    "period": "NT7 1.1 · Spielregeln der Natur",
+    "intro": "Leicht ist in der Technik oft gut, aber die Dichte ist nur eines von vielen Kriterien.",
+    "paragraphs": [
+      "Wer ein Fahrrad, ein Flugzeug oder ein Handy baut, wählt Werkstoffe nach Kriterien aus. Physikalische Kriterien beschreiben Eigenschaften, die man messen kann: die Dichte, die Festigkeit, ob ein Stoff den Strom leitet oder magnetisch ist. Außerfachliche Kriterien betreffen anderes: den Preis, das Aussehen, die Verfügbarkeit, die Umweltbelastung bei der Herstellung oder ob sich ein Stoff wiederverwerten lässt. In einem Sachtext solltest du beide Arten erkennen und auseinanderhalten.",
+      "Die Dichte entscheidet, wie schwer ein Bauteil bei gegebenem Volumen wird: m = ρ · V. Ein Fahrradrahmen aus Aluminium (2,7 g/cm³) ist bei gleichem Materialvolumen nur etwa ein Drittel so schwer wie einer aus Stahl (7,8 g/cm³). Kohlenstofffaserverstärkter Kunststoff, kurz CFK oder „Carbon“, hat sogar nur etwa 1,5 g/cm³. Ein leichter Werkstoff muss aber auch fest genug sein. Bauteile aus Aluminium oder CFK werden deshalb oft dicker gebaut als aus Stahl, und ein Teil des Gewichtsvorteils geht wieder verloren.",
+      "Beispiel: Ein Fahrradrahmen aus Stahl enthält 300 cm³ Material und hat damit die Masse m = 7,8 g/cm³ · 300 cm³ = 2340 g. Ein Rahmen mit demselben Materialvolumen aus Aluminium hätte 2,7 g/cm³ · 300 cm³ = 810 g, also 1530 g weniger. Ob sich der Wechsel lohnt, entscheidet die Dichte allein aber nicht: Hält der Aluminiumrahmen dieselben Kräfte aus? Was kostet er? Die erste Frage betrifft die Festigkeit, ein physikalisches Kriterium, die zweite den Preis, ein außerfachliches."
+    ],
+    "takeaway": "Die Dichte ist ein physikalisches Bewertungskriterium: Bei gleichem Volumen ist ein Bauteil umso leichter, je kleiner die Dichte seines Werkstoffs ist. Preis, Aussehen und Umweltfragen sind außerfachliche Kriterien.",
+    "formulas": [
+      "m = ρ · V",
+      "physikalische Kriterien: Dichte, Festigkeit, Leitfähigkeit, Magnetismus",
+      "außerfachliche Kriterien: Preis, Aussehen, Umwelt, Verfügbarkeit"
+    ],
+    "sourceIds": ["lp", "cfk", "fahrradrahmen", "dichtetabelle"],
+    "quiz": {
+      "question": "Welches Argument aus einem Werbetext ist ein physikalisches Bewertungskriterium?",
+      "answer": "Der Werkstoff hat eine kleine Dichte.",
+      "wrong": [
+        "Der Werkstoff glänzt besonders edel.",
+        "Der Werkstoff ist günstig im Einkauf."
+      ],
+      "explanation": "Die Dichte ist eine messbare Stoffeigenschaft. Glanz als Schönheitsurteil und der Preis sind außerfachliche Kriterien."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Kriterien in einem Sachtext erkennen",
+      "instruction": "Lies den Text und ordne die Argumente ein.",
+      "materialLabel": "Pressetext eines Fahrradherstellers (eigens verfasst)",
+      "material": "Unser neues Stadtrad „Feder“ wiegt nur 14 kg. Möglich macht das ein Rahmen aus Aluminium: Bei gleichem Materialvolumen wäre ein Stahlrahmen fast dreimal so schwer. Damit der leichte Rahmen hält, sind die Rohre dicker und die Schweißnähte besonders fest. Den Rahmen gibt es in drei Trendfarben, der Preis liegt unter 3000 Euro, und das Aluminium lässt sich später gut wiederverwerten.",
+      "categories": ["physikalisches Kriterium", "außerfachliches Kriterium"],
+      "entries": [
+        { "text": "Aluminium hat eine kleinere Dichte als Stahl.", "target": 0, "feedback": "Die Dichte ist eine messbare Stoffeigenschaft." },
+        { "text": "Die Schweißnähte halten große Kräfte aus.", "target": 0, "feedback": "Festigkeit lässt sich messen." },
+        { "text": "Der Rahmen ist in drei Trendfarben erhältlich.", "target": 1, "feedback": "Aussehen und Geschmack sind keine physikalischen Größen." },
+        { "text": "Der Preis liegt unter 3000 Euro.", "target": 1, "feedback": "Ein wirtschaftliches Kriterium." },
+        { "text": "Das Aluminium lässt sich gut wiederverwerten.", "target": 1, "feedback": "Ein Umweltkriterium, wichtig, aber außerfachlich." },
+        { "text": "Bei gleichem Volumen wäre ein Stahlrahmen fast dreimal so schwer.", "target": 0, "feedback": "Das folgt direkt aus den Dichten." }
+      ],
+      "conclusion": "Ein guter Sachtext mischt beide Arten von Argumenten. Wer sie trennt, erkennt, was gemessen und was bewertet wird."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Lies den Pressetext in der Werkstatt noch einmal. Schreibe zwei Sätze: einen, der nur die physikalischen Kriterien zusammenfasst, und einen mit den außerfachlichen.",
+        "hints": ["Physikalisch: Was kann man messen?", "Außerfachlich: Geld, Aussehen, Umwelt"],
+        "model": "Physikalisch spricht für den Rahmen, dass Aluminium eine viel kleinere Dichte als Stahl hat und der Rahmen trotz dickerer Rohre leicht und durch feste Schweißnähte stabil ist. Außerfachlich wirbt der Hersteller mit drei Trendfarben, einem Preis unter 3000 Euro und der guten Wiederverwertbarkeit des Aluminiums.",
+        "criteria": ["Dichte und Festigkeit als physikalisch erkannt", "Preis, Farbe und Recycling als außerfachlich erkannt", "in eigenen Worten zusammengefasst"]
+      },
+      "2": {
+        "prompt": "Eine Firma will die vier Arme einer Drohne statt aus Aluminium (2,7 g/cm³) aus CFK (1,5 g/cm³) bauen. Jeder Arm enthält 40 cm³ Material. Berechne die Massenersparnis und nenne je ein weiteres physikalisches und außerfachliches Kriterium, das vor der Entscheidung geprüft werden sollte.",
+        "hints": ["Gesamtvolumen der vier Arme", "Massen mit m = ρ · V vergleichen"],
+        "model": "Die vier Arme enthalten 160 cm³ Material. Aus Aluminium wiegen sie 2,7 g/cm³ · 160 cm³ = 432 g, aus CFK 1,5 g/cm³ · 160 cm³ = 240 g. Die Ersparnis beträgt 192 g. Physikalisch muss geprüft werden, ob die CFK-Arme bei einem Absturz oder Stoß fest genug sind. Außerfachlich sind etwa die höheren Kosten oder die schwierigere Wiederverwertung von CFK zu bedenken.",
+        "criteria": ["Massen beider Werkstoffe berechnet", "Ersparnis mit Einheit angegeben", "je ein physikalisches und ein außerfachliches Kriterium genannt"]
+      }
+    },
+    "model": "werkstoff",
+    "calculation": "bauteil"
+  }
+]

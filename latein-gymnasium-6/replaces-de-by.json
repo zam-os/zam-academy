@@ -1,0 +1,24 @@
+{
+	"schema": 1,
+	"status": "proposal-only",
+	"approved": null,
+	"source_repository": "https://github.com/zam-os/zam",
+	"source_commit": "67e190c2b7e5282851dfdd60ce21b69ed373dfa9",
+	"source": "Bestandsprüfung am 2026-11-24 in zam-os/zam (tests/fixtures/curriculum/ und src/kernel/library/bundled-cells.ts): Für Latein am Gymnasium existieren keine de-by-Alt-Zellen für Jahrgangsstufe 5 oder 6. Die früheste Latein-Zelle ist de-by:gymnasium-7-latein-aci-partizipialkonstruktionen-deklinationen (Version 2026.08.1, 4 Karten J01–J04). Es wird keine Verlaufsübertragung vorgeschlagen.",
+	"sources": [],
+	"rows": [],
+	"neighbouring_grade_review": {
+		"cell_id": "de-by:gymnasium-7-latein-aci-partizipialkonstruktionen-deklinationen",
+		"source_path": "tests/fixtures/curriculum/de-by-gymnasium-7-latein-aci-partizipialkonstruktionen-deklinationen-kvt.json",
+		"items": [
+			"01K4T7A0000000000000000J01",
+			"01K4T7A0000000000000000J02",
+			"01K4T7A0000000000000000J03",
+			"01K4T7A0000000000000000J04"
+		],
+		"assessment": "J01 und J02 fragen den aktiven AcI ab (L1 Jgst. 5, L2 Jgst. 6/7); J03 und J04 betreffen das Participium Coniunctum mit PPP und PPA (in L1 ab Jgst. 6, L6 2.2/2.3, in L2 ab Jgst. 7). Die Altzelle ist ausdrücklich als Jgst. 7 (L1/L2) ausgewiesen. Gemäß Thomas' Entscheidung vom 24.11.2026 verbleibt die gesamte Altzelle beim künftigen Latein-7-Paket, damit spätere Einsteiger (L2 ab Klasse 6) und Klasse-7-Lernende dort alle Wiederholungsfragen behalten (zur Bestätigung im PR vermerkt).",
+		"decision": "keep-with-latein-7",
+		"decision_date": "2026-11-24",
+		"decision_source": "Thomas am 2026-11-24 in der Antigravity-Sitzung (zu latein-gymnasium-5 / PR #194): „Für mich ist es in Ordnung, wenn die Karten im Latein-7-Paket verbleiben. Es wird dort ja wahrscheinlich wiederholt. Falls jemand also nicht bei Klasse 5 anfängt, fehlen ihm sonst ein paar Fragen, oder?“"
+	}
+}

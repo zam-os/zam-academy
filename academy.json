@@ -19,7 +19,11 @@
   "faecher": [
     { "id": "deutsch", "name": "Deutsch", "bereich": "sprachen", "glyph": "Aa", "hue": 340, "from": 4 },
     { "id": "englisch", "name": "Englisch", "bereich": "sprachen", "glyph": "EN", "hue": 8, "from": 5 },
+    { "id": "englisch-2fs", "name": "Englisch (2. Fremdsprache)", "bereich": "sprachen", "glyph": "EN²", "hue": 20, "from": 6, "to": 9, "schools": ["gymnasium"] },
     { "id": "franzoesisch", "name": "Französisch", "bereich": "sprachen", "glyph": "FR", "hue": 322, "from": 5 },
+    { "id": "franzoesisch-2fs", "name": "Französisch (2. Fremdsprache)", "bereich": "sprachen", "glyph": "FR²", "hue": 310, "from": 6, "to": 9, "schools": ["gymnasium"] },
+    { "id": "latein", "name": "Latein", "bereich": "sprachen", "glyph": "LA", "hue": 48, "from": 5, "schools": ["gymnasium"] },
+    { "id": "latein-2fs", "name": "Latein (2. Fremdsprache)", "bereich": "sprachen", "glyph": "LA²", "hue": 58, "from": 6, "to": 8, "schools": ["gymnasium"] },
     { "id": "mathematik", "name": "Mathematik", "bereich": "mathematik", "glyph": "a²+b²=c²", "hue": 215, "from": 4 },
     { "id": "physik", "name": "Physik", "bereich": "naturwissenschaften", "glyph": "F=m·a", "hue": 258, "from": 6 },
     { "id": "chemie", "name": "Chemie", "bereich": "naturwissenschaften", "glyph": "H₂O", "hue": 168, "from": 8 },
@@ -76,6 +80,20 @@
     }
   ],
   "kein_unterricht": [
+    {
+      "fach": "wirtschaft",
+      "grade": 7,
+      "school": "gymnasium",
+      "note": "Wirtschaft und Recht beginnt am bayerischen Gymnasium frühestens in Jahrgangsstufe 8, am wirtschaftswissenschaftlichen Gymnasium.",
+      "source": "https://www.lehrplanplus.bayern.de/fachprofil/gymnasium/wirtschaft-und-recht"
+    },
+    {
+      "fach": "biologie",
+      "grade": 7,
+      "school": "gymnasium",
+      "note": "In Jahrgangsstufe 7 umfasst Natur und Technik am bayerischen Gymnasium Physik und Informatik. Biologie wird in dieser Jahrgangsstufe nicht unterrichtet.",
+      "source": "https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/7/nt_gym"
+    },
     {
       "fach": "physik",
       "grade": 6,
@@ -173,13 +191,20 @@
       "school": "mittelschule",
       "note": "Die Mittelschule hat in ihrer Stundentafel kein Fach Französisch.",
       "source": "https://www.gesetze-bayern.de/Content/Document/BayMSO-ANL_1"
+    },
+    {
+      "fach": "geographie",
+      "grade": 6,
+      "school": "gymnasium",
+      "note": "In der Stundentafel des bayerischen Gymnasiums (G9) wird Geographie in den Jahrgangsstufen 5, 7, 10 und 11 unterrichtet; in Jahrgangsstufe 6 ist kein Unterricht im Fach Geographie vorgesehen.",
+      "source": "https://www.gesetze-bayern.de/Content/Document/BayGSO-ANL_1"
     }
   ],
   "pakete": [
     {
       "id": "physik-realschule-7",
       "app": "physik-realschule-7",
-      "version": "0.0",
+      "version": "0.1",
       "title": "Physik 7 · Zweig I",
       "fach": "physik",
       "grade": 7,
@@ -284,7 +309,7 @@
     {
       "id": "mathematik-grundschule-4",
       "app": "mathematik-grundschule-4",
-      "version": "0.0",
+      "version": "0.2",
       "title": "Mathematik 4: Milos Entdeckerinsel",
       "fach": "mathematik",
       "grade": 4,
@@ -298,7 +323,7 @@
     {
       "id": "deutsch-grundschule-4",
       "app": "deutsch-grundschule-4",
-      "version": "0.0",
+      "version": "0.2",
       "title": "Deutsch 4: Tintos Wörterstadt",
       "fach": "deutsch",
       "grade": 4,
@@ -312,7 +337,7 @@
     {
       "id": "hsu-grundschule-4",
       "app": "hsu-grundschule-4",
-      "version": "0.0",
+      "version": "0.1",
       "title": "HSU 4: Lottas Bayern-Forscherbuch",
       "fach": "hsu",
       "grade": 4,
@@ -491,7 +516,7 @@
     {
       "id": "biologie-gymnasium-6",
       "app": "biologie-gymnasium-6",
-      "version": "0.0",
+      "version": "0.1",
       "title": "Biologie 6",
       "fach": "biologie",
       "grade": 6,
@@ -509,6 +534,27 @@
         "Ökosystem Gewässer"
       ],
       "desc": "Natur und Technik 6, Schwerpunkt Biologie, in 44 Lektionen: Erkenntnisweg, Variable und Kontrollversuch, Mikroskop und Präparate, Samen, Ausbreitung, Keimung, Photosynthese und Pflanzenbewegung, Bewegung, Stoffwechsel, Fortpflanzung und Sinne der Wirbeltiere, Evolution und Züchtung sowie Ökosystem Gewässer, mit 12 interaktiven Modellen und Aufgaben auf zwei Stufen. LehrplanPLUS Bayern."
+    },
+    {
+      "id": "geographie-gymnasium-7",
+      "app": "geographie-gymnasium-7",
+      "version": "0.0",
+      "title": "Geographie 7",
+      "fach": "geographie",
+      "grade": 7,
+      "school": "gymnasium",
+      "lessons": 23,
+      "cards": 46,
+      "lang": ["de"],
+      "gebiete": [
+        "Geographische Arbeitstechniken",
+        "Einheit und Vielfalt in Europa",
+        "Naturgeographie Europas im Überblick",
+        "Ländliche Räume Europas",
+        "Metropolen und Verdichtungsräume in Europa",
+        "Meere und Küsten Europas"
+      ],
+      "desc": "Europa in Karten, einem Satellitenbild und interaktiven Modellen erkunden: Klima, Plattengrenzen, Landwirtschaft, Städte, Handel und Küsten. Mit Aufgaben auf zwei Stufen und 46 ZAM-Karten nach LehrplanPLUS Bayern."
     },
     {
       "id": "geographie-gymnasium-5",
@@ -535,7 +581,7 @@
     {
       "id": "deutsch-gymnasium-5",
       "app": "deutsch-gymnasium-5",
-      "version": "0.0",
+      "version": "0.1",
       "title": "Deutsch 5",
       "fach": "deutsch",
       "grade": 5,
@@ -552,6 +598,28 @@
         "Sprache und Rechtschreibung"
       ],
       "desc": "Alle vier Lernbereiche in 50 Lektionen mit zwei Hörtexten, Spielszenen, 22 veränderbaren Sprach- und Rechtschreibmodellen, Fallentscheidungen und Aufgaben auf zwei Stufen. LehrplanPLUS Bayern."
+    },
+    {
+      "id": "deutsch-gymnasium-6",
+      "app": "deutsch-gymnasium-6",
+      "version": "0.0",
+      "title": "Deutsch 6",
+      "fach": "deutsch",
+      "grade": 6,
+      "school": "gymnasium",
+      "zweige": "alle Ausbildungsrichtungen",
+      "lessons": 49,
+      "cards": 98,
+      "lang": [
+        "de"
+      ],
+      "gebiete": [
+        "Sprechen und Zuhören",
+        "Lesen und Medien",
+        "Schreiben",
+        "Sprache und Rechtschreibung"
+      ],
+      "desc": "49 Lektionen mit Hörbeispielen, Ariadnes Labyrinth, einer Kamerawerkstatt und farbigen Satzbausteinen. Zwei Aufgabenstufen und 98 ZAM-Karten nach LehrplanPLUS Bayern."
     },
     {
       "id": "englisch-gymnasium-5",
@@ -578,6 +646,159 @@
         "Use what you know"
       ],
       "desc": "Alle acht Etappen in 40 Lektionen: Begrüßung, Uhrzeit und Weltsprache, Familie und Wohnen, Artikel und Pronomen, Satzbau und Fragen, simple present, Verlaufsform und simple past, Schulalltag im UK sowie Karten zu den Britischen Inseln und Nordamerika. LehrplanPLUS Bayern."
+    },
+    {
+      "id": "englisch-gymnasium-6",
+      "app": "englisch-gymnasium-6",
+      "version": "0.0",
+      "title": "Englisch 6",
+      "fach": "englisch",
+      "grade": 6,
+      "school": "gymnasium",
+      "lessons": 40,
+      "cards": 120,
+      "lang": [
+        "de",
+        "en"
+      ],
+      "gebiete": [
+        "On the move",
+        "Stories in the past",
+        "Saying it more clearly",
+        "Questions and conditions",
+        "Britain: coasts, lakes and Romans",
+        "Across the USA",
+        "Texts, sights and poetry",
+        "Tools for learning"
+      ],
+      "desc": "Alle acht Etappen in 40 Lektionen (1. Fremdsprache): Reisen und Zukunftsformen, past progressive und present perfect, Steigerung und Relativsätze, Modalverben und Conditional I, Cornwall, Lake District, Kelten und Römer in Britannien, US-Regionen sowie Bildbeschreibung und Sprachmittlung. LehrplanPLUS Bayern."
+    },
+    {
+      "id": "englisch-gymnasium-7",
+      "app": "englisch-gymnasium-7",
+      "version": "0.0",
+      "title": "Englisch 7",
+      "fach": "englisch",
+      "grade": 7,
+      "school": "gymnasium",
+      "lessons": 44,
+      "cards": 132,
+      "lang": [
+        "de",
+        "en"
+      ],
+      "gebiete": [
+        "Saying it precisely",
+        "Linking times",
+        "What if …?",
+        "Growing up in North America",
+        "Media: chances and risks",
+        "Wales and the Desert South-West",
+        "From 1066 to the Mayflower",
+        "Tools for learning"
+      ],
+      "desc": "Alle acht Etappen in 44 Lektionen (1. Fremdsprache): Adverbien, Reflexiv- und Possessivpronomen, present perfect progressive, past perfect, Bedingungssätze II und III mit Mischformen, Wünsche, Feste und Schule in Nordamerika, Medien, Wales und Desert South-West sowie Geschichte von 1066 bis zur Mayflower. Mit Zeitstrahlen, Bedingungsskala, Karten, Geschichtsfries und Feiertagskalender. LehrplanPLUS Bayern."
+    },
+    {
+      "id": "englisch-2fs-gymnasium-6",
+      "app": "englisch-2fs-gymnasium-6",
+      "version": "0.0",
+      "title": "Englisch 6 (2. Fremdsprache)",
+      "fach": "englisch-2fs",
+      "grade": 6,
+      "school": "gymnasium",
+      "lessons": 43,
+      "cards": 129,
+      "lang": [
+        "de",
+        "en"
+      ],
+      "gebiete": [
+        "Hello, English!",
+        "Family, friends and home",
+        "Small words",
+        "Every day, now, yesterday, soon",
+        "Sentences and questions",
+        "Everyday life in the UK",
+        "Places: Britain and North America",
+        "Tools for learning"
+      ],
+      "desc": "Das erste Englischjahr am Gymnasium (2. Fremdsprache) in 43 Lektionen: Begrüßen, Zahlen und Uhrzeit, Familie und Zuhause, Artikel, Pronomen und Mengen, simple present, Verlaufsform, simple past, going to und Modalverben, Fragen und question tags, Schule, Essen, Einkaufen und Feste im UK, Britische Inseln, London, USA und Kanada. Mit Uhr, Stammbaum, Zimmer, Satzbausteinen, Schildern, Einkaufsrechner, Festkalender und Karten. LehrplanPLUS Bayern."
+    },
+    {
+      "id": "franzoesisch-2fs-gymnasium-6",
+      "app": "franzoesisch-2fs-gymnasium-6",
+      "version": "0.0",
+      "title": "Français 6 (2. Fremdsprache)",
+      "fach": "franzoesisch-2fs",
+      "grade": 6,
+      "school": "gymnasium",
+      "lessons": 46,
+      "cards": 138,
+      "lang": [
+        "de",
+        "fr"
+      ],
+      "gebiete": [
+        "Bonjour, les amis !",
+        "Ma petite vie",
+        "Les verbes en action",
+        "On parle ensemble",
+        "Une journée et demain",
+        "En route en France",
+        "Je comprends !",
+        "À toi de créer"
+      ],
+      "desc": "Das erste Französischjahr am Gymnasium (2. Fremdsprache) in 46 Lektionen: Begrüßen und Vorstellen, Laute und Lautschrift, Zahlen bis 100, Artikel, Possessiv- und Demonstrativbegleiter, Adjektive, Präsens und futur proche, Fragen, Verneinung mit ne … pas, plus, jamais, rien, direkte Objektpronomen, Uhrzeit, Einkaufen, Paris, Bretagne und der Weg durch die Stadt. Mit Frankreichkarte, Uhr, Zahlbausteinen, Satzbau, Hörskripten und Comic. LehrplanPLUS Bayern."
+    },
+    {
+      "id": "franzoesisch-gymnasium-7",
+      "app": "franzoesisch-gymnasium-7",
+      "version": "0.0",
+      "title": "Français 7",
+      "fach": "franzoesisch",
+      "grade": 7,
+      "school": "gymnasium",
+      "lessons": 68,
+      "cards": 204,
+      "lang": [
+        "de",
+        "fr"
+      ],
+      "gebiete": [
+        "Gespräche, Hören und Sprachmittlung",
+        "Mengen, Vergleiche und Satzbau",
+        "Imparfait und passé composé",
+        "Regionen, Austausch und Alltag",
+        "BD, Feste und Lernstrategien"
+      ],
+      "desc": "Zwei Lernpfade nach LehrplanPLUS Bayern: 29 Lektionen für Französisch als erste und 39 für Französisch als zweite Fremdsprache. Mit Zeitstrahl, Regionenkarte, Satzbausteinen, Hörtexten und 204 ZAM-Karten."
+    },
+    {
+      "id": "franzoesisch-gymnasium-6",
+      "app": "franzoesisch-gymnasium-6",
+      "version": "0.2",
+      "title": "Français 6",
+      "fach": "franzoesisch",
+      "grade": 6,
+      "school": "gymnasium",
+      "lessons": 28,
+      "cards": 84,
+      "lang": [
+        "de",
+        "fr"
+      ],
+      "gebiete": [
+        "Une journée et des projets",
+        "Des phrases plus précises",
+        "On évite les répétitions",
+        "Raconter au passé",
+        "En ville et en Bretagne",
+        "Un échange en France",
+        "Culture et histoires",
+        "Écouter, écrire, réviser"
+      ],
+      "desc": "Das zweite Französischjahr am Gymnasium (1. Fremdsprache) in 28 Lektionen: Tagesablauf und Vorschläge, große Zahlen, Adjektive und Begleiter, Verneinung, Relativsätze mit qui, que und où, direkte, indirekte und betonte Pronomen, passé composé mit avoir und être, Paris, Lyon, Nantes und Bretagne, Austausch, Bahnhof und Restaurant, Feste, Plakat und Comic. Mit Zeitstrahl, Uhr, Regionenkarte, Satzbausteinen und Hörtexten. LehrplanPLUS Bayern."
     },
     {
       "id": "franzoesisch-gymnasium-5",
@@ -628,6 +849,30 @@
         "Sprachwerkstatt II: Zeiten, Fragen und Satzbau"
       ],
       "desc": "Alle fünf Lernbereiche der 5. Klasse Mittelschule in 36 Lektionen: Großbritannien und Weltsprache Englisch, Familie und Einkaufen, Schulleben, Freizeit und Feste sowie Nomen, Artikel, Pronomen, to be, have got, simple present, Fragen, Befehlsform, SVO und simple past mit UK-Karte, Zahlenschieber, Uhr, Übungsbild, Grafik und Hörtexten. LehrplanPLUS Bayern."
+    },
+    {
+      "id": "englisch-mittelschule-6",
+      "app": "englisch-mittelschule-6",
+      "version": "0.0",
+      "title": "Englisch 6",
+      "fach": "englisch",
+      "grade": 6,
+      "school": "mittelschule",
+      "lessons": 36,
+      "cards": 109,
+      "lang": [
+        "de",
+        "en"
+      ],
+      "gebiete": [
+        "UK, USA und Begegnungen",
+        "Alltagsleben, Zimmer und Heimatort",
+        "Schulleben, Klassenfahrt und Methoden",
+        "Freizeit, Reisen, Medien und Texte",
+        "Sprachwerkstatt I: Zahlen, Pronomen und Wortschatz",
+        "Sprachwerkstatt II: Steigerung, Modalverben, Zeiten und Satzbau"
+      ],
+      "desc": "Alle fünf Lernbereiche der 6. Klasse Mittelschule in 36 Lektionen: UK-Städte und 50 US-Staaten, Jugendherberge, Einkaufen, Wegerklärungen, Alltag und Zimmer, Schulleben, Sport und Feste sowie Zahlen bis 1000, Ordnungszahlen bis 31, feet/teeth/clothes, of-Genitiv, Objektpronomen, germanische Adjektivsteigerung, Modalverben, present progressive, will-future und SVO mit interaktiven Karten, Raum-Szene, Explorern und fünf britisch-amerikanischen Hörskripten. LehrplanPLUS Bayern."
     },
     {
       "id": "mathematik-gymnasium-11",
@@ -782,6 +1027,21 @@
       "desc": "Die vier Lernbereiche des Fachlehrplans M13 (erhöhtes Anforderungsniveau) in 27 Lektionen: Flächenbilanz und Hauptsatz, Normalverteilung und Sigma-Regeln, analytische Geometrie im Raum, Extremwerte und Anwendungen. Mit Laboren, Aufgaben auf zwei Stufen und ZAM-Karten; Lehrervideos folgen."
     },
     {
+      "id": "physik-gymnasium-7",
+      "app": "physik-gymnasium-7",
+      "version": "0.0",
+      "title": "Physik 7",
+      "fach": "physik",
+      "grade": 7,
+      "school": "gymnasium",
+      "zweige": "alle Schülerinnen und Schüler (Natur und Technik 7, Schwerpunkt Physik)",
+      "lessons": 21,
+      "cards": 63,
+      "lang": ["de"],
+      "gebiete": ["Ein erster Blick auf die physikalischen Spielregeln der Natur", "Optische Phänomene", "Elektrische Stromkreise"],
+      "desc": "Natur und Technik 7, Schwerpunkt Physik (NT7 Lernbereich 1) in 21 Lektionen: Magnete, Elementarmagnete und Kompass, Dichte messen und berechnen, Sehvorgang, Farben, Schatten, Mondphasen und Finsternisse, Ladung, Strom und Schaltungen. 20 veränderbare Modelle mit Zeichnung, Rechenaufgaben auf zwei Stufen und ein Versuchsnotizbuch für die sechs Schülerexperimente."
+    },
+    {
       "id": "physik-gymnasium-11",
       "app": "physik-gymnasium-11",
       "version": "0.0",
@@ -930,6 +1190,28 @@
       "desc": "30 Lektionen mit vier qualitativen Modellen, Werkstätten, eigenen Antworten auf zwei Niveaus und einem Feldbogen. LehrplanPLUS Bayern; Lehrkraftprüfung und Lehrvideos stehen noch aus."
     },
     {
+      "id": "biologie-realschule-7",
+      "app": "biologie-realschule-7",
+      "version": "0.1",
+      "title": "Biologie 7",
+      "fach": "biologie",
+      "grade": 7,
+      "school": "realschule",
+      "zweige": "alle Wahlpflichtfächergruppen",
+      "lessons": 27,
+      "cards": 54,
+      "lang": [
+        "de"
+      ],
+      "gebiete": [
+        "Biologisch arbeiten",
+        "Die Zelle – Grundbaustein aller Lebewesen",
+        "Stoffwechselvorgänge bei Pflanzen",
+        "Organsysteme des Menschen"
+      ],
+      "desc": "27 Lektionen zu Zelle und Einzellern, Stoffwechsel der Pflanzen und Organsystemen des Menschen, mit sechs interaktiven Modellen, Werkstätten und eigenen Antworten auf zwei Niveaus. LehrplanPLUS Bayern; Lehrkraftprüfung und Lehrvideos stehen noch aus."
+    },
+    {
       "id": "biologie-realschule-10",
       "app": "biologie-realschule-10",
       "version": "0.0",
@@ -998,6 +1280,31 @@
       "desc": "31 Lektionen mit beschrifteten Grafiken, Kartenmodellen, Werkstätten und eigenen Antworten auf zwei Niveaus. LehrplanPLUS Bayern; Lehrkraftprüfung und Lehrvideos stehen noch aus."
     },
     {
+      "id": "geographie-realschule-6",
+      "app": "geographie-realschule-6",
+      "version": "0.0",
+      "title": "Geographie 6",
+      "fach": "geographie",
+      "grade": 6,
+      "school": "realschule",
+      "zweige": "alle Wahlpflichtfächergruppen",
+      "lessons": 25,
+      "cards": 50,
+      "lang": [
+        "de"
+      ],
+      "gebiete": [
+        "Europa",
+        "Wetter und Klima",
+        "Landwirtschaft und Nahrungsmittel",
+        "Verkehr und Industrie",
+        "Energie",
+        "Tourismus",
+        "Aktuelle geographische Fragestellung"
+      ],
+      "desc": "Entdecke Europa mit interaktiven Karten, Klima- und Verkehrsdiagrammen und einem eigenen Länderporträt. 25 Lektionen mit Aufgaben auf zwei Niveaus nach LehrplanPLUS Bayern."
+    },
+    {
       "id": "geographie-realschule-9",
       "app": "geographie-realschule-9",
       "version": "0.0",
@@ -1010,6 +1317,27 @@
       "lang": ["de", "en"],
       "gebiete": ["Landschaft", "Klima", "Landwirtschaft", "Städte", "Bevölkerung", "Grenzen"],
       "desc": "Karten, Modelle und ein eigenes Nahraumprojekt; sieben englische Vertiefungen."
+    },
+    {
+      "id": "bwr-realschule-7",
+      "app": "bwr-realschule-7",
+      "version": "0.2",
+      "title": "BwR 7",
+      "fach": "wirtschaft",
+      "grade": 7,
+      "school": "realschule",
+      "zweige": "Zweig II und IIIa",
+      "lessons": 36,
+      "cards": 72,
+      "lang": ["de"],
+      "gebiete": [
+        "Privater Haushalt",
+        "Unternehmen",
+        "Geschäftsbuchführung",
+        "Produktionsprozess",
+        "Strukturierung der Buchführung"
+      ],
+      "desc": "36 Lektionen für Zweig II (5 Lernbereiche) und 25 Lektionen für Zweig IIIa (4 Lernbereiche) mit acht interaktiven Modellen, Rechen-, Beleg- und Buchungswerkstatt, Formelsammlung, ISB-Kontenliste für BwR 7 und 72 ZAM-Karten. LehrplanPLUS Bayern; in Zweig I und IIIb beginnt Wirtschaft und Recht erst in Klasse 9."
     },
     {
       "id": "bwr-realschule-9",
@@ -1066,7 +1394,7 @@
     {
       "id": "deutsch-realschule-6",
       "app": "deutsch-realschule-6",
-      "version": "0.0",
+      "version": "0.1",
       "title": "Deutsch 6",
       "fach": "deutsch",
       "grade": 6,
@@ -1084,6 +1412,28 @@
         "Sprachgebrauch und Sprache"
       ],
       "desc": "50 Lektionen mit veränderbaren Sprachmodellen, Fallentscheidungen und eigenen Texten auf zwei Niveaus: Zuhören, Sagen und Schwänke, Bericht und Vorgangsbeschreibung, Grammatik und Rechtschreibung. LehrplanPLUS Bayern."
+    },
+    {
+      "id": "deutsch-realschule-7",
+      "app": "deutsch-realschule-7",
+      "version": "0.1",
+      "title": "Deutsch 7",
+      "fach": "deutsch",
+      "grade": 7,
+      "school": "realschule",
+      "zweige": "alle Wahlpflichtfächergruppen",
+      "lessons": 50,
+      "cards": 100,
+      "lang": [
+        "de"
+      ],
+      "gebiete": [
+        "Sprechen und Zuhören",
+        "Lesen, Literatur und Medien",
+        "Schreiben",
+        "Sprachgebrauch und Sprache"
+      ],
+      "desc": "50 Lektionen mit zwei Hörtexten, veränderbaren Sprachmodellen, Fallentscheidungen und eigenen Texten auf zwei Niveaus: Debatte, Ballade und Kurzgeschichte, Inhaltsangabe und Schilderung, Indikativ/Konjunktiv, Adverbialsätze und Rechtschreibung. LehrplanPLUS Bayern."
     },
     {
       "id": "deutsch-realschule-8",
@@ -1135,6 +1485,55 @@
       "lang": ["de", "en"],
       "gebiete": ["Englisch als Weltsprache & UK", "Alltagsleben in Großbritannien", "Schule in Großbritannien", "Freizeit, Reisen & Medien", "Sprachwerkstatt", "Geschichten & Gedichte"],
       "desc": "43 Lektionen mit englischen Materialien zu den Britischen Inseln, Alltags- und Schulleben, Freizeit, Grammatik von to be bis Simple Past, drei lokalen Hörskripten, zwei Grafiken, einem Gartenbild zum Beschreiben, je drei Kurzaufgaben pro Lektion und eigenen Sprachaufgaben auf zwei Stufen. Natürliche Hörtexte, Gespräche und eine Ganzschrift ergänzen die App."
+    },
+    {
+      "id": "englisch-realschule-6",
+      "app": "englisch-realschule-6",
+      "version": "0.1",
+      "title": "Englisch 6",
+      "fach": "englisch",
+      "grade": 6,
+      "school": "realschule",
+      "zweige": "alle Wahlpflichtfächergruppen",
+      "lessons": 42,
+      "cards": 126,
+      "lang": ["de", "en"],
+      "gebiete": [
+        "First stops in the USA",
+        "London: Life in a metropolis",
+        "Regions of Britain: Scotland & beyond",
+        "Music, sports, travel & charity",
+        "Media & digital communication",
+        "Grammar I: Pronouns & comparisons",
+        "Grammar II: Past, present perfect & future",
+        "Words, texts & strategies"
+      ],
+      "desc": "42 Lektionen in acht Etappen nach LehrplanPLUS Bayern: USA, London, Schottland und weitere Regionen Großbritanniens, Alltag, Musik, US-Sport, Charity, Medien, Sprachmittlung, Grammatik bis Present Perfect und will/going-to sowie Lesetechniken und Wortbildung mit 126 Entdeckerzielen und 126 ZAM-Karten. Natürliches Hören, Live-Sprechen und Ganzschrift ergänzen die App."
+    },
+    {
+      "id": "englisch-realschule-7",
+      "app": "englisch-realschule-7",
+      "version": "0.0",
+      "title": "Englisch 7",
+      "fach": "englisch",
+      "grade": 7,
+      "school": "realschule",
+      "zweige": "alle Wahlpflichtfächergruppen",
+      "lessons": 45,
+      "cards": 135,
+      "lang": ["de", "en"],
+      "gebiete": [
+        "Highlights of British & Irish history",
+        "Ireland: Part of Europe",
+        "Youth culture",
+        "School life",
+        "Life in the USA",
+        "Teen literature",
+        "Grammar I: Describing more exactly",
+        "Grammar II: Time, duty & conditions",
+        "Words, sounds & strategies"
+      ],
+      "desc": "45 Lektionen in neun Etappen nach LehrplanPLUS Bayern: Kelten, Römer, Angelsachsen, Normannen und irische Auswanderung, Irland mit Dublin, Jugendkultur, Schule, Leben in den USA, Stevenson, Conan Doyle, Dahl und Rowling, Relativsätze, question tags, Zeiten, Modalverben und if-clauses mit Karten, Zeitstrahlen, Reglern, 135 Entdeckerzielen und 135 ZAM-Karten. Natürliches Hören, Live-Sprechen und Ganzschrift ergänzen die App."
     },
     {
       "id": "englisch-realschule-8",
@@ -1328,7 +1727,7 @@
         "de"
       ],
       "gebiete": [
-        "Prozessbezogene Kompetenzen",
+        "Biologisch arbeiten",
         "Biologie, die Wissenschaft von den Lebewesen",
         "Bau und Funktion des menschlichen Körpers",
         "Tiere und Pflanzen in der Umgebung des Menschen"
@@ -1384,10 +1783,11 @@
     {
       "id": "informatik-realschule-8",
       "app": "informatik-realschule-8",
-      "version": "0.0",
-      "title": "Informatik 8",
+      "version": "0.1",
+      "title": "Informatik 6–8",
       "fach": "informatik",
       "grade": 8,
+      "grades": [6, 7, 8],
       "school": "realschule",
       "zweige": "Alle Wahlpflichtfächergruppen",
       "lessons": 40,
@@ -1406,7 +1806,37 @@
         "Datenverarbeitung",
         "Digitale Medien"
       ],
-      "desc": "IT-Anfangsunterricht 1.1–1.9 in 40 Lektionen: Werkstätten zu Griffwegen, Roboterprogrammen, Dualzahlen, Bildern, Formeln, Datenschutz und Präsentation, zwei Aufgabenstufen und 87 verknüpften ZAM-Karten."
+      "desc": "Ein gemeinsames Paket für die Klassen 6–8: Alle drei Zugänge öffnen dieselben 40 Lektionen und 87 ZAM-Karten; dein Fortschritt bleibt derselbe. Die Schule legt fest, wann sie die IT-Module 1.1–1.9 unterrichtet. Mit Werkstätten und Aufgaben auf zwei Niveaus."
+    },
+    {
+      "id": "geschichte-realschule-6",
+      "app": "geschichte-realschule-6",
+      "version": "0.0",
+      "title": "Geschichte 6",
+      "fach": "geschichte",
+      "grade": 6,
+      "school": "realschule",
+      "zweige": "Alle Wahlpflichtfächergruppen",
+      "lessons": 42,
+      "cards": 126,
+      "lang": ["de"],
+      "gebiete": ["Methoden", "Steinzeit und Kelten", "Ägypten", "Griechische Antike", "Imperium Romanum", "Frühmittelalter", "Technik im Längsschnitt", "Menschen machen Geschichte"],
+      "desc": "42 Lektionen von der Steinzeit bis Karl dem Großen: Werkstätten, 21 Schaubilder, Zeitstreifen und Geschichtsfries, Aufgaben auf zwei Niveaus. LehrplanPLUS Bayern."
+    },
+    {
+      "id": "geschichte-realschule-7",
+      "app": "geschichte-realschule-7",
+      "version": "0.1",
+      "title": "Geschichte 7",
+      "fach": "geschichte",
+      "grade": 7,
+      "school": "realschule",
+      "zweige": "Alle Wahlpflichtfächergruppen",
+      "lessons": 41,
+      "cards": 123,
+      "lang": ["de", "en"],
+      "gebiete": ["Methoden", "Mittelalter", "Wandel zur Neuzeit", "Reformation und Konfessionalisierung", "Dreißigjähriger Krieg und Absolutismus", "Bauwerke im Längsschnitt", "Handel und Kulturtransfer", "Bilingual History (optional)"],
+      "desc": "38 Kernlektionen und drei optionale englische Vertiefungen vom Mittelalter bis zum Absolutismus: Werkstätten, 23 Schaubilder, Zeitstreifen und Geschichtsfries, Aufgaben auf zwei Niveaus. LehrplanPLUS Bayern."
     },
     {
       "id": "geschichte-realschule-8",
@@ -1432,6 +1862,33 @@
         "Protest und Krieg im Längsschnitt"
       ],
       "desc": "35 Kernlektionen und drei optionale englische Vertiefungen mit Quellenwerkstatt, Zeitleisten und Schreibaufgaben auf zwei Niveaus. LehrplanPLUS Bayern."
+    },
+    {
+      "id": "franzoesisch-realschule-7",
+      "app": "franzoesisch-realschule-7",
+      "version": "0.0",
+      "title": "Français 7",
+      "fach": "franzoesisch",
+      "grade": 7,
+      "school": "realschule",
+      "zweige": "Wahlpflichtfächergruppe IIIa",
+      "lessons": 54,
+      "cards": 162,
+      "lang": [
+        "de",
+        "fr"
+      ],
+      "gebiete": [
+        "Bonjour, la classe !",
+        "Ma famille, mes amis",
+        "Les verbes en action",
+        "On parle ensemble",
+        "Ma journée, mon collège",
+        "Chez moi, en ville",
+        "Bienvenue en France",
+        "Lire, écouter, écrire"
+      ],
+      "desc": "Erstes Lernjahr in 54 Lektionen und acht Etappen nach LehrplanPLUS Bayern: begrüßen und vorstellen, Zahlen bis 100, Artikel und Plural, être, avoir und Präsens, Fragen, Imperativ und Pronomen, Uhrzeit und Datum, Schule und Freizeit, futur composé, Wohnen und Einkaufen, Paris, Bretagne und Feste. Mit Konjugationstabellen, Szene, Uhr, Frankreichkarte, 162 Entdeckerzielen und 162 ZAM-Karten. Natürliches Hören und Live-Sprechen ergänzen die App."
     },
     {
       "id": "franzoesisch-realschule-8",
@@ -1629,6 +2086,65 @@
       "desc": "34 Lektionen von den Planeten über Steinzeit, Nil, Athen und Limes bis zu Klassensprecherwahl und Familie: Offline-Karten, gezeichnete Szenen, Zeitleisten, Werkstätten und Aufgaben auf zwei Stufen. LehrplanPLUS Bayern."
     },
     {
+      "id": "politik-mittelschule-6",
+      "app": "politik-mittelschule-6",
+      "version": "0.0",
+      "title": "Politik und Gesellschaft 6 (GPG-Lernbereich 3)",
+      "fach": "gpg",
+      "grade": 6,
+      "school": "mittelschule",
+      "lessons": 7,
+      "cards": 14,
+      "lang": [
+        "de"
+      ],
+      "gebiete": [
+        "Politik und Gesellschaft"
+      ],
+      "desc": "GPG-Lernbereich 3: Burg, Kloster, Ständegesellschaft und heutige Freiheiten. Sieben Lektionen mit Schaubildern, Zuordnungswerkstätten und Aufgaben auf zwei Niveaus."
+    },
+    {
+      "id": "politik-mittelschule-7",
+      "app": "politik-mittelschule-7",
+      "version": "0.0",
+      "title": "Politik und Gesellschaft 7 (GPG-Lernbereich 3)",
+      "fach": "gpg",
+      "grade": 7,
+      "school": "mittelschule",
+      "zweige": "Regelklasse und Mittlere-Reife-Klasse",
+      "lessons": 15,
+      "cards": 45,
+      "lang": [
+        "de"
+      ],
+      "gebiete": [
+        "Politik und Gesellschaft"
+      ],
+      "desc": "GPG-Lernbereich 3: Soziale Frage, Industriestadt, Ursachen des Ersten Weltkriegs, Kriegsschuldfrage und Versailler Vertrag. 13 Lektionen für die Regelklasse, 15 für den M-Zug, mit Schaubildern, einer Modellstadt mit Zeitregler und Aufgaben auf zwei Niveaus."
+    },
+    {
+      "id": "nt-mittelschule-7",
+      "app": "nt-mittelschule-7",
+      "version": "0.0",
+      "title": "Natur und Technik 7",
+      "fach": "nt",
+      "grade": 7,
+      "school": "mittelschule",
+      "zweige": "Regelklasse und Mittlere-Reife-Klasse",
+      "lessons": 36,
+      "cards": 108,
+      "lang": [
+        "de"
+      ],
+      "gebiete": [
+        "Naturwissenschaftliches Arbeiten",
+        "Lebensgrundlage Luft",
+        "Mensch und Gesundheit",
+        "Materie, Stoffe und Technik"
+      ],
+      "desc": "Natur und Technik nach LehrplanPLUS Bayern: 30 Lektionen für die Regelklasse, 36 für den M-Zug. Untersuche Luft, Wind und Atome, vergleiche Wirbeltiere, verfolge Atmung und Kreislauf und baue elektrische Schaltungen im Modell."
+    },
+    {
       "id": "nt-mittelschule-6",
       "app": "nt-mittelschule-6",
       "version": "0.0",
@@ -1672,6 +2188,21 @@
       "desc": "32 Lektionen vom Forscherweg und der Sicherheit im Fachraum über Sonne, Wärme, Haut und Sehen sowie Verdauung und Bewegung bis zu Teilchenmodell und Trennverfahren: sechs interaktive Modelle, gezeichnete Skizzen, Werkstätten und Aufgaben auf zwei Stufen. LehrplanPLUS Bayern."
     },
     {
+      "id": "nt-gymnasium-7",
+      "app": "nt-gymnasium-7",
+      "version": "0.2",
+      "title": "Natur und Technik 7 Gymnasium",
+      "fach": "informatik",
+      "grade": 7,
+      "school": "gymnasium",
+      "zweige": "alle Ausbildungsrichtungen",
+      "lessons": 12,
+      "cards": 36,
+      "lang": ["de"],
+      "gebiete": ["Vernetzte Informationsstrukturen", "Chancen und Risiken digitaler Kommunikation", "Algorithmen", "Projekt"],
+      "desc": "Gemeinsamer Einstieg in Natur und Technik 7 am bayerischen Gymnasium. Informatik bietet 12 Lektionen und 36 ZAM-Lernkarten. Der Schwerpunkt Physik führt zum bestehenden Physikpaket mit 21 Lektionen."
+    },
+    {
       "id": "informatik-gymnasium-6",
       "app": "informatik-gymnasium-6",
       "version": "0.0",
@@ -1691,6 +2222,176 @@
         "Hierarchische Informationsstrukturen – Dateisystem"
       ],
       "desc": "Natur und Technik – Schwerpunkt Informatik 6 (NT6 2) in 12 Lektionen: von Objekt, Klasse, Punktnotation, Klassen- und Objektdiagrammen über Vektor-/Pixelgrafik, Text- und Multimediadokumente, Präsentationsregeln und Urheberrecht bis zu Baumstrukturen, rekursivem Dateisystem und Dateipfaden. Interaktive Labore, zwei Aufgabenstufen und 36 ZAM-Karten nach LehrplanPLUS Bayern."
+    },
+    {
+      "id": "geschichte-gymnasium-6",
+      "app": "geschichte-gymnasium-6",
+      "version": "0.0",
+      "title": "Geschichte 6",
+      "fach": "geschichte",
+      "grade": 6,
+      "school": "gymnasium",
+      "zweige": "alle Ausbildungsrichtungen",
+      "lessons": 36,
+      "cards": 72,
+      "lang": [
+        "de"
+      ],
+      "gebiete": [
+        "Der Mensch und seine Geschichte",
+        "Ägypten – eine frühe Hochkultur",
+        "Die griechische Antike",
+        "Menschen machen Geschichte (Längsschnitt)",
+        "Das Imperium Romanum",
+        "Von der Antike zum Mittelalter",
+        "Gesellschaftsordnung im Kleinen: Leben in der Familie (Längsschnitt)"
+      ],
+      "desc": "36 Lektionen von der Urgeschichte über Ägypten, Griechenland und Rom bis zum Frankenreich und zur Familie im Längsschnitt: 47 SVG-Abbildungen und Natural-Earth-Karten, 15 interaktive Modelle, vier Kriterienkataloge, zwei Aufgabenstufen und 72 ZAM-Karten. LehrplanPLUS Bayern."
+    },
+    {
+      "id": "informatik-mittelschule-6",
+      "app": "informatik-mittelschule-6",
+      "version": "0.0",
+      "title": "Informatik 6",
+      "fach": "informatik",
+      "grade": 6,
+      "school": "mittelschule",
+      "lessons": 12,
+      "cards": 36,
+      "lang": [
+        "de"
+      ],
+      "gebiete": [
+        "Digitaler Informationsaustausch",
+        "Programmieren"
+      ],
+      "desc": "12 Lektionen zu beiden Lernbereichen der 6. Klasse Mittelschule: verfeinerte Suchstrategien, Qualitätskriterien und Medienwirkung, Urheberrecht und Creative Commons, Datenschutz, sichere Passwörter und Datensicherung sowie Abläufe, Struktogramme, Bedingungen, Alternativen, bedingte Wiederholung, Schachtelung und Programmtesten. Interaktive Werkstätten, zwei Aufgabenstufen und 36 ZAM-Karten nach LehrplanPLUS Bayern."
+    },
+    {
+      "id": "deutsch-gymnasium-7",
+      "app": "deutsch-gymnasium-7",
+      "version": "0.0",
+      "title": "Deutsch 7",
+      "fach": "deutsch",
+      "grade": 7,
+      "school": "gymnasium",
+      "zweige": "alle Ausbildungsrichtungen",
+      "lessons": 50,
+      "cards": 100,
+      "lang": [
+        "de"
+      ],
+      "gebiete": [
+        "Sprechen und Zuhören",
+        "Lesen und Medien",
+        "Schreiben",
+        "Sprache und Rechtschreibung"
+      ],
+      "desc": "50 Lektionen mit zwei Hörtexten, 16 veränderbaren Sprachmodellen, Fallentscheidungen und zwei Aufgabenstufen nach LehrplanPLUS Bayern: Debatte, Ballade und Mittelalterlyrik, lineare Argumentation und sachlicher Brief, Konjunktiv I/II, Satzgefüge mit Konzessiv-/Konditionalsätzen sowie Infinitiv- und Partizipialkommas."
+    },
+    {
+      "id": "wirtschaft-mittelschule-7",
+      "app": "wirtschaft-mittelschule-7",
+      "version": "0.0",
+      "title": "Wirtschaft und Beruf 7",
+      "fach": "wirtschaft",
+      "grade": 7,
+      "school": "mittelschule",
+      "zweige": "Regelklasse und M-Zug",
+      "lessons": 30,
+      "cards": 60,
+      "lang": [
+        "de"
+      ],
+      "gebiete": [
+        "Projekt: Markt und Leittextmethode",
+        "Arbeit und Berufswelt",
+        "Berufsorientierung",
+        "Wirtschaft und Haushaltsbudget",
+        "Recht: Kinderarbeit und Ferienjob",
+        "Technik im Haushalt"
+      ],
+      "desc": "30 Lektionen (25 Regelklasse R7, 30 M-Zug M7) mit neun interaktiven Laboren, 30 dreiteiligen Entdeckerbildern, Fallwerkstätten, Rechenaufgaben auf zwei Niveaus und 60 verknüpften ZAM-Karten nach LehrplanPLUS Bayern."
+    },
+    {
+      "id": "latein-gymnasium-5",
+      "app": "latein-gymnasium-5",
+      "version": "0.0",
+      "title": "Latein 5",
+      "fach": "latein",
+      "grade": 5,
+      "school": "gymnasium",
+      "zweige": "1. Fremdsprache",
+      "lessons": 44,
+      "cards": 132,
+      "lang": [
+        "de",
+        "la"
+      ],
+      "gebiete": [
+        "Salve, Roma! Klang, Wortschatz und Europa",
+        "Nomina in Form: Deklinationen, Pronomina und Zahlen",
+        "Verben in Aktion: Konjugationen und alle Aktiv-Tempora",
+        "Satzbau und Kasus: Vom Einzelwort zum ganzen Satz",
+        "Urbs Roma: Topografie, Bauten und Caput Mundi",
+        "Alltag in Rom: Senat, Familie, Schule und Kalender",
+        "Götter, Helden und Roms Gründung",
+        "Texte knacken: Übersetzen, Prüfen und Klug Lernen"
+      ],
+      "desc": "Alle acht Lernbereiche in 44 Lektionen (1. Fremdsprache): Paenultima-Betonung mit Silbenwaage, Grundwortschatz und Wortbildung, fünf Deklinationen, Adjektive mit KNG, Pronomina, Numeralia I–XII, Konjugationen und alle Aktiv-Tempora bis Futur II, Kasusfunktionen, Nebensätze, aktiver AcI, interaktive Topografie-Karte von Altrom und Ostia, Senat, tria nōmina, Kalender, Religion, Mythos, Romulus und Quellen (Vergil, Livius) sowie Texterschließung – mit 44 dreiteiligen SVG-Schaubildern, 132 Werkstattzielen und 132 verknüpften ZAM-Karten. LehrplanPLUS Bayern."
+    },
+    {
+      "id": "latein-gymnasium-6",
+      "app": "latein-gymnasium-6",
+      "version": "0.0",
+      "title": "Latein 6",
+      "fach": "latein",
+      "grade": 6,
+      "school": "gymnasium",
+      "zweige": "1. Fremdsprache",
+      "lessons": 44,
+      "cards": 132,
+      "lang": [
+        "de",
+        "la"
+      ],
+      "gebiete": [
+        "Wortschatz im Kontext, Wortbildung und Sprachbrücken",
+        "Nomina, Demonstrativa, Zahlen bis 1000 und īre",
+        "Verben: Passiv, Konjunktiv Präteritum und Partizipien",
+        "Satzlehre: Neue Kasus, Nebensätze, passiver AcI und PC",
+        "Italien, Mittelmeer, Pompeji und Griechenlands Geist",
+        "Römische Republik, Hannibal, Gesellschaft und Werte",
+        "Griechisch-römische Mythen, Unterwelt und Ovid",
+        "Satzanalyse, Übersetzen, Lernplan und Präsentation"
+      ],
+      "desc": "Alle acht Lernbereiche in 44 Lektionen (1. Fremdsprache, 2. Lernjahr): Kontextwortschatz, Wortfamilien, Wortbildung und Englisch-Brücken, dīves/pauper/vetus, hic/ille/iste und īdem/ipse, Zahlen bis M/mīlia mit Subtraktionsschieber, īre, Passiv in allen sechs Tempora mit Live-Satzumbau, Konjunktiv Imperfekt und Plusquamperfekt, PPA/PPP und participium coniunctum (vier Auflösungen), Prädikativum, neue Kasusfunktionen, Irrealis, ut/nē/ut nōn, cum, passiver AcI, 4-Ebenen-Karte Kampanien/Magna Graecia/Mittelmeer, Vesuvausbruch 79 n. Chr., Plinius d. J., Pompeji-Kunst und Archimedes, frühe Republik (Zeitstrahl), Ständekämpfe, Hannibal & Zama, Opfer (dō ut dēs), Europa, Theseus, Daedalus/Ikarus, Orpheus, Troja, Odysseus und Ovid – mit 44 dreiteiligen SVG-Schaubildern, 132 Werkstattzielen und 132 verknüpften ZAM-Karten. LehrplanPLUS Bayern."
+    },
+    {
+      "id": "latein-gymnasium-6-l2",
+      "app": "latein-gymnasium-6-l2",
+      "version": "0.0",
+      "title": "Latein 6 (2. Fremdsprache)",
+      "fach": "latein-2fs",
+      "grade": 6,
+      "school": "gymnasium",
+      "lessons": 40,
+      "cards": 120,
+      "lang": [
+        "de",
+        "la"
+      ],
+      "gebiete": [
+        "Salve! Lautung, Wortschatz & Brücken",
+        "Nomina, Kasus & Zahlen",
+        "Verben & alle 6 Aktiv-Tempora",
+        "Satzbau, Kasusfunktionen & Nebensätze",
+        "AcI & Übersetzungsmethodik",
+        "Rom, Italien & Pompeji",
+        "Geschichte, Politik & Alltag in Rom",
+        "Religion, Götter & Antike Mythen"
+      ],
+      "desc": "Latein als 2. Fremdsprache in 40 Lektionen: Aussprache und Wortbildung, Deklinationen 1–3, Pronomina und Numeralia 1–12, alle sechs Aktiv-Tempora samt Sonderverben, Kasusfunktionen, Adverbial- und Relativsätze, aktiver AcI sowie Topografie Roms, Pompeji, frühe Republik, Alltag und Mythos mit interaktiven SVG-Laboren, Karten und 120 ZAM-Karten. LehrplanPLUS Bayern."
     }
   ]
 }
