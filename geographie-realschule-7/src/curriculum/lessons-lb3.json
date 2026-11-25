@@ -1,0 +1,337 @@
+[
+  {
+    "id": "orient-orientierung",
+    "lb": 3,
+    "title": "Nordafrika und Westasien auf der Karte",
+    "period": "Geo7 LB 3 · Physische und politische Grundstruktur",
+    "intro": "Wüsten, Flussoasen und Meeresengen: Zwischen Atlantik und Persischem Golf liegen Räume mit großer Geschichte.",
+    "paragraphs": [
+      "Nordafrika wird im Norden vom Mittelmeer begrenzt. Den größten Teil nimmt die Sahara ein, die größte Trockenwüste der Erde. Im Nordwesten erhebt sich der Atlas. Der Nil durchfließt die Wüste von Süden nach Norden und mündet mit einem Delta ins Mittelmeer. Das Rote Meer trennt Afrika von der Arabischen Halbinsel; der Suezkanal verbindet es mit dem Mittelmeer.",
+      "Die Arabische Halbinsel ist überwiegend Wüste. Zwischen ihr und dem Iran liegt der Persische Golf. Im Norden entspringen Euphrat und Tigris in der Türkei. Der Euphrat fließt durch Syrien und den Irak, der Tigris vor allem durch den Irak; gemeinsam münden sie in den Golf; das Land zwischen ihnen heißt Mesopotamien. Hohe Gebirge sind der Zagros im Iran und der Taurus in der Türkei.",
+      "Wichtige Staaten sind Marokko, Algerien, Ägypten, Saudi-Arabien, die Vereinigten Arabischen Emirate, der Irak, der Iran und die Türkei. Große Städte sind Kairo am Nil, Istanbul am Bosporus, Teheran, Bagdad am Tigris, Riad und Dubai am Persischen Golf."
+    ],
+    "workedExample": "Lagebeschreibung von Kairo: Kairo ist die Hauptstadt Ägyptens. Die Stadt liegt im Nordosten Afrikas am Nil, kurz bevor sich der Fluss zum Delta auffächert. Das Mittelmeer liegt nördlich, der Suezkanal und das Rote Meer östlich. Ringsum erstreckt sich Wüste.",
+    "takeaway": "Nordafrika und Westasien gliedern sich in Wüstenräume, Gebirge und wasserreiche Flusslandschaften an Nil, Euphrat und Tigris, umgeben von Mittelmeer, Rotem Meer und Persischem Golf.",
+    "sourceIds": ["lehrplan", "natural-earth", "aa-laender"],
+    "quiz": {
+      "question": "Welches Meer liegt zwischen Afrika und der Arabischen Halbinsel?",
+      "answer": "Das Rote Meer.",
+      "wrong": ["Der Persische Golf.", "Das Kaspische Meer."],
+      "explanation": "Das Rote Meer trennt Ägypten und den Sudan von der Arabischen Halbinsel."
+    },
+    "transferCheck": {
+      "question": "Ein Schiff fährt von Hamburg nach Dubai. Welchen kürzesten Weg nimmt es?",
+      "answer": "Durch das Mittelmeer, den Suezkanal und das Rote Meer.",
+      "wrong": ["Um das Kap der Guten Hoffnung.", "Über den Nil bis zum Persischen Golf."],
+      "explanation": "Der Suezkanal verbindet Mittelmeer und Rotes Meer und verkürzt den Weg nach Asien stark."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Welche Kategorie?",
+      "instruction": "Ordne jedes topografische Element zu.",
+      "categories": ["Gewässer", "Gebirge", "Landschaft", "Stadt"],
+      "entries": [
+        { "text": "Persischer Golf", "target": 0, "feedback": "Ein Nebenmeer zwischen Arabischer Halbinsel und Iran." },
+        { "text": "Zagros", "target": 1, "feedback": "Ein Faltengebirge im Westen des Iran." },
+        { "text": "Mesopotamien", "target": 2, "feedback": "Das Land zwischen Euphrat und Tigris." },
+        { "text": "Riad", "target": 3, "feedback": "Die Hauptstadt Saudi-Arabiens im Inneren der Halbinsel." },
+        { "text": "Atlas", "target": 1, "feedback": "Das Gebirge im Nordwesten Afrikas." }
+      ],
+      "conclusion": "Gewässer, Gebirge und Landschaften sind die Bezugspunkte jeder Lagebeschreibung."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Beschreibe die Lage von Bagdad mit mindestens drei Bezugspunkten.",
+        "hints": ["An welchem Fluss liegt die Stadt?", "Welche Staaten und Meere liegen in der Nähe?"],
+        "model": "Bagdad ist die Hauptstadt des Irak und liegt am Tigris in Mesopotamien. Westlich fließt der Euphrat. Der Persische Golf liegt südöstlich, das Zagrosgebirge im Iran nordöstlich der Stadt.",
+        "criteria": ["Ich nenne Fluss und Staat.", "Ich nutze Himmelsrichtungen.", "Ich nenne mindestens drei Bezugspunkte."]
+      },
+      "2": {
+        "prompt": "Erkläre mit der Karte, warum sich in Ägypten fast alle Menschen auf einen schmalen Streifen konzentrieren.",
+        "hints": ["Wo gibt es Wasser?", "Wie sieht das Land links und rechts aus?"],
+        "model": "Ägypten liegt fast vollständig in der Sahara. Nur entlang des Nils und im Nildelta gibt es genug Wasser für Landwirtschaft und Städte. Deshalb leben die meisten Menschen in einem schmalen Band am Fluss, während die Wüste kaum bewohnt ist.",
+        "criteria": ["Ich nenne die Wüste.", "Ich nenne den Nil als Wasserquelle.", "Ich beschreibe die Verteilung der Menschen."]
+      }
+    },
+    "figures": ["orient"],
+    "lab": "orient"
+  },
+  {
+    "id": "orientalische-stadt",
+    "lb": 3,
+    "title": "Die orientalische Stadt",
+    "period": "Geo7 LB 3 · Aufbau, Merkmale und Entwicklung",
+    "intro": "Im Gassengewirr einer Medina verirrt man sich leicht. Dahinter steckt aber eine klare Ordnung.",
+    "paragraphs": [
+      "Die Altstadt, die Medina, ist von einer Stadtmauer mit Toren umgeben. In ihrer Mitte steht die Große Moschee, die Freitagsmoschee. Um sie herum und entlang der Hauptgassen zwischen den Toren liegt der Suq, der Markt. Er ist nach Waren geordnet: Gewürzhändler, Schmiede oder Lederwerkstätten haben jeweils eigene Gassen. Wertvolle Waren werden nahe der Moschee angeboten, lärmende oder riechende Handwerke weiter außen.",
+      "Abseits der Hauptgassen liegen ruhige Wohnviertel mit engen, verwinkelten Sackgassen. Die Häuser sind nach außen fast fensterlos und öffnen sich zu einem schattigen Innenhof. Das schützt die Privatsphäre der Familie und hält die Hitze ab. Eine befestigte Burg, die Kasbah, liegt oft am Rand der Altstadt.",
+      "Außerhalb der Mauer entstanden vor allem seit der Kolonialzeit Neustädte mit breiten, geraden Straßen, Wohnblöcken, Verwaltungsgebäuden und heute Einkaufszentren. Viele wohlhabende Familien zogen dorthin; in die Altstadt zogen oft ärmere Zuwanderer vom Land. Manche Medinas verfielen, andere wurden als Welterbe geschützt und vom Tourismus belebt."
+    ],
+    "workedExample": "Vergleich mit einer mitteleuropäischen Altstadt wie Regensburg: Dort bilden Marktplatz, Rathaus und Kirche die Mitte. Die Häuser haben Fenster zur Straße, Geschäfte liegen in den Erdgeschossen. In der orientalischen Stadt liegt der Handel im Suq getrennt von den ruhigen Wohnvierteln, und das Familienleben spielt sich im Innenhof ab.",
+    "takeaway": "Merkmale der orientalischen Stadt sind Große Moschee im Zentrum, Suq an den Hauptgassen, Sackgassenwohnviertel mit Innenhofhäusern, Stadtmauer und Kasbah. Außerhalb liegt die Neustadt mit geradem Straßennetz.",
+    "sourceIds": ["lehrplan"],
+    "quiz": {
+      "question": "Was liegt im Zentrum einer traditionellen orientalischen Altstadt?",
+      "answer": "Die Große Moschee mit dem Suq ringsum.",
+      "wrong": ["Ein großer Marktplatz mit Rathaus.", "Ein Wohnviertel mit Sackgassen."],
+      "explanation": "Religiöses und wirtschaftliches Zentrum liegen in der Medina zusammen."
+    },
+    "transferCheck": {
+      "question": "Warum haben viele Häuser der Medina kaum Fenster zur Gasse?",
+      "answer": "Sie schützen Privatsphäre und halten Hitze ab; das Leben spielt im Innenhof.",
+      "wrong": ["Weil Glas in der Wüste verboten war.", "Weil die Gassen zu breit für Fenster sind."],
+      "explanation": "Der schattige Innenhof ist Licht- und Luftquelle und schützt das Familienleben vor Blicken."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Altstadt oder Neustadt?",
+      "instruction": "Ordne jedes Merkmal dem Stadtteil zu.",
+      "categories": ["Medina (Altstadt)", "Neustadt"],
+      "entries": [
+        { "text": "Verwinkelte Sackgassen und Innenhofhäuser", "target": 0, "feedback": "Typisch für die Wohnviertel der Medina." },
+        { "text": "Breite, gerade Straßen im Gitternetz", "target": 1, "feedback": "Die Neustadt wurde planmäßig angelegt." },
+        { "text": "Suq nach Warengruppen geordnet", "target": 0, "feedback": "Der Markt liegt an den Hauptgassen der Altstadt." },
+        { "text": "Einkaufszentrum mit Parkplatz", "target": 1, "feedback": "Moderner Handel siedelt sich in der Neustadt an." }
+      ],
+      "conclusion": "Alt- und Neustadt zeigen zwei Epochen der Stadtentwicklung nebeneinander."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Zeichne auf Papier eine Grundrissskizze einer orientalischen Altstadt nach dem Schaubild. Beschrifte fünf Merkmale und erkläre zwei davon.",
+        "hints": ["Beginne mit Mauer, Toren und Hauptgassen.", "Setze Moschee, Suq, Wohnviertel und Kasbah ein."],
+        "model": "Meine Skizze zeigt Stadtmauer mit Toren, Hauptgassen mit dem Suq, die Große Moschee in der Mitte, Wohnviertel mit Sackgassen und die Kasbah am Rand. Die Sackgassen halten Fremde aus den Wohnvierteln fern. Der Suq liegt an den Hauptgassen, weil dort die meisten Menschen vorbeikommen.",
+        "criteria": ["Ich beschrifte fünf Merkmale.", "Ich erkläre zwei Merkmale.", "Meine Skizze trennt Handel und Wohnen."]
+      },
+      "2": {
+        "prompt": "Viele junge Familien ziehen aus der Medina in die Neustadt. Erkläre Gründe und beurteile die Folgen für die Altstadt.",
+        "hints": ["Was bietet die Neustadt?", "Was passiert mit leeren Häusern?"],
+        "model": "Die Neustadt bietet größere Wohnungen, Autozufahrt und moderne Leitungen. Bleiben in der Medina vor allem ärmere Menschen zurück, fehlt Geld für Reparaturen, Häuser verfallen. Wird die Altstadt aber als Welterbe geschützt und saniert, kann der Tourismus Arbeit bringen; zugleich steigen dann Mieten und Bewohner werden verdrängt.",
+        "criteria": ["Ich nenne Gründe für den Umzug.", "Ich nenne mindestens eine Folge.", "Ich wäge Chancen und Gefahren ab."]
+      }
+    },
+    "figures": ["medina"],
+    "lab": "medina"
+  },
+  {
+    "id": "wuesten",
+    "lb": 3,
+    "title": "Wie Wüsten entstehen",
+    "period": "Geo7 LB 3 · Entstehung und Merkmale von Wüsten",
+    "intro": "Nicht jede Wüste besteht aus Sanddünen, und nicht jede liegt am Wendekreis.",
+    "paragraphs": [
+      "Wüsten sind Räume, in denen so wenig Niederschlag fällt, dass kaum Pflanzen wachsen; meist sind es weniger als 250 mm im Jahr. Die Verdunstung wäre viel größer als der Niederschlag. Zwischen Tag und Nacht schwankt die Temperatur stark, weil trockene, wolkenlose Luft die Wärme nachts schnell abgibt.",
+      "Nach ihrer Entstehung unterscheidet man: Wendekreiswüsten wie die Sahara oder die Rub al-Chali entstehen im subtropischen Hochdruckgürtel, wo absinkende Luft Wolken auflöst. Küstenwüsten wie die Namib liegen an kalten Meeresströmungen: Das kalte Wasser kühlt die Luft von unten, sie kann nicht aufsteigen, es bildet sich höchstens Nebel. Binnen- und Regenschattenwüsten liegen weit vom Meer entfernt oder hinter hohen Gebirgen, an denen sich die Luft schon ausgeregnet hat.",
+      "Nach ihrer Oberfläche unterscheidet man Felswüste (Hamada) mit nacktem Gestein, Kies- und Geröllwüste (Serir) und Sandwüste (Erg) mit Dünen. In der Sahara machen Sanddünen nur einen kleineren Teil aus. Starke Temperaturwechsel lassen Gestein zerspringen; der Wind trägt feines Material fort. Seltene Starkregen füllen trockene Flusstäler, die Wadis, für kurze Zeit."
+    ],
+    "workedExample": "Die Namib liegt am Atlantik im Südwesten Afrikas. Vor ihrer Küste fließt der kalte Benguelastrom. Die Luft über dem kalten Wasser ist kühl und schwer und steigt nicht auf. Es bilden sich Nebelbänke, aber kaum Regenwolken. So entsteht direkt am Meer eine der trockensten Wüsten der Erde.",
+    "takeaway": "Wüsten entstehen durch absinkende Luft am Wendekreis, durch kalte Meeresströmungen an Küsten oder durch große Entfernung vom Meer und Regenschatten.",
+    "sourceIds": ["lehrplan"],
+    "quiz": {
+      "question": "Warum ist die Sahara eine Wüste?",
+      "answer": "Weil im subtropischen Hochdruckgürtel trockene Luft absinkt.",
+      "wrong": ["Weil vor ihrer Küste ein warmer Meeresstrom fließt.", "Weil sie überwiegend aus Sanddünen besteht."],
+      "explanation": "Absinkende Luft erwärmt sich, Wolken lösen sich auf. Dünen sind eine Folge, keine Ursache."
+    },
+    "transferCheck": {
+      "question": "Eine Wüste liegt direkt an der Westküste eines Kontinents und hat oft Nebel. Welcher Wüstentyp ist das?",
+      "answer": "Eine Küstenwüste an einer kalten Meeresströmung.",
+      "wrong": ["Eine Regenschattenwüste hinter einem Gebirge.", "Eine Binnenwüste weit vom Meer."],
+      "explanation": "Kaltes Wasser kühlt die Luft von unten, es bildet sich Nebel, aber kein Regen."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Ursache und Wüstentyp",
+      "instruction": "Ordne jedes Beispiel dem Wüstentyp zu.",
+      "categories": ["Wendekreiswüste", "Küstenwüste", "Binnen- oder Regenschattenwüste"],
+      "entries": [
+        { "text": "Absinkende Luft im Hoch bei etwa 25° N", "target": 0, "feedback": "Typisch für Sahara und Rub al-Chali." },
+        { "text": "Kalter Meeresstrom vor der Küste, häufig Nebel", "target": 1, "feedback": "So entsteht zum Beispiel die Namib." },
+        { "text": "Wüste im Hochland hinter einem hohen Gebirge", "target": 2, "feedback": "Die Luft hat sich an der Luvseite ausgeregnet." },
+        { "text": "Mitten in einem Kontinent, Tausende Kilometer vom Meer", "target": 2, "feedback": "Feuchte Meeresluft erreicht das Innere kaum." }
+      ],
+      "conclusion": "Gleiche Trockenheit, aber verschiedene Ursachen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Beschreibe drei Merkmale von Wüsten und erkläre, warum die Temperaturen zwischen Tag und Nacht so stark schwanken.",
+        "hints": ["Denke an Niederschlag, Vegetation und Oberfläche.", "Was fehlt nachts am Himmel?"],
+        "model": "Wüsten erhalten sehr wenig Niederschlag, haben kaum Pflanzen und zeigen Fels, Kies oder Sand. Am Tag heizt die Sonne den unbedeckten Boden stark auf. Nachts fehlen Wolken und Wasserdampf, die Wärme strahlt ungehindert ab, und es wird kalt.",
+        "criteria": ["Ich nenne drei Merkmale.", "Ich erkläre die Erwärmung am Tag.", "Ich erkläre die Abkühlung in der Nacht."]
+      },
+      "2": {
+        "prompt": "Die Atacama liegt an der Westküste Südamerikas zwischen Pazifik und Anden. Erkläre mit zwei Ursachen, warum sie so trocken ist.",
+        "hints": ["Was fließt vor der Küste?", "Welche Rolle spielen die Anden?"],
+        "model": "Vor der Küste fließt ein kalter Meeresstrom, der die Luft abkühlt und Aufsteigen und Regen verhindert. Zugleich schirmen die hohen Anden feuchte Luft aus dem Osten ab; sie regnet sich auf der anderen Seite aus. Beide Ursachen zusammen machen die Atacama extrem trocken.",
+        "criteria": ["Ich nenne den kalten Meeresstrom.", "Ich nenne den Regenschatten der Anden.", "Ich verbinde beide Ursachen."]
+      }
+    },
+    "figures": ["wuestentypen"]
+  },
+  {
+    "id": "oasen-wasser",
+    "lb": 3,
+    "title": "Oasen, Nil und Wasserkonflikte",
+    "period": "Geo7 LB 3 · Wasser in ariden Räumen",
+    "intro": "In der Wüste entscheidet Wasser über Leben, Landwirtschaft und manchmal über Streit zwischen Staaten.",
+    "paragraphs": [
+      "Oasen sind Inseln der Landwirtschaft in der Wüste. In Grundwasseroasen wird Wasser aus Brunnen gefördert, in Quelloasen tritt es selbst zutage, in Flussoasen wie am Nil kommt es von einem Fluss. Traditionell sind Oasengärten in Stockwerken angelegt: Dattelpalmen spenden Schatten für Obstbäume, darunter wachsen Gemüse und Getreide. Kanäle verteilen das Wasser nach festen Regeln auf die Felder.",
+      "Moderne Motorpumpen fördern heute viel mehr Wasser aus großer Tiefe. Oft ist es fossiles Grundwasser, das vor Jahrtausenden gebildet wurde und sich kaum erneuert. Wird mehr entnommen als nachfließt, sinkt der Grundwasserspiegel, Brunnen fallen trocken. Bei starker Verdunstung bleibt Salz im Boden zurück und kann ihn unfruchtbar machen.",
+      "Der Nil ist die Lebensader Ägyptens. Seit um 1970 der Assuan-Hochdamm fertig war, können die Bauern ganzjährig bewässern, und der Damm liefert Strom und schützt vor Hochwasser. Der fruchtbare Nilschlamm bleibt aber im Stausee zurück, deshalb wird Kunstdünger nötig. Wo Flüsse mehrere Staaten durchfließen, entstehen Konflikte: Staudämme in der Türkei verringern den Abfluss von Euphrat und Tigris nach Syrien und in den Irak, und am Jordan streiten Israel, Jordanien, Syrien und die Palästinenser um das knappe Wasser."
+    ],
+    "workedExample": "Modell einer Oase: Das Grundwasser erneuert sich um 100 Einheiten pro Jahr. Bewässern die Bauern 10 Hektar mit je 10 Einheiten, entnehmen sie genau 100 Einheiten. Mit sparsamer Tröpfchenbewässerung brauchen sie nur noch 8 Einheiten je Hektar. Erweitern sie die Fläche aber auf 15 Hektar, entnehmen sie 120 Einheiten, mehr als nachfließt.",
+    "takeaway": "In ariden Räumen ist Wasser die knappste Ressource. Nachhaltig wird nur so viel entnommen, wie sich erneuert; grenzüberschreitende Flüsse erfordern Absprachen zwischen Staaten.",
+    "sourceIds": ["lehrplan", "fao-aquastat"],
+    "quiz": {
+      "question": "Warum ist fossiles Grundwasser eine knappe Ressource?",
+      "answer": "Grundwasser, das vor sehr langer Zeit entstand und sich kaum erneuert.",
+      "wrong": ["Grundwasser, das jedes Jahr vom Regen aufgefüllt wird.", "Wasser, das aus Erdöl gewonnen wird."],
+      "explanation": "Es stammt aus feuchteren Zeiten der Erdgeschichte; was heute entnommen wird, fehlt auf Dauer."
+    },
+    "transferCheck": {
+      "question": "Ein Staat am Oberlauf eines Flusses baut einen großen Staudamm. Warum kann das zu Streit führen?",
+      "answer": "Weil die Staaten am Unterlauf weniger Wasser erhalten.",
+      "wrong": ["Weil der Fluss danach rückwärts fließt.", "Weil der Staudamm den Niederschlag im Gebirge erhöht."],
+      "explanation": "Wasser, das oben gestaut und entnommen wird, fehlt flussabwärts."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Folgen des Assuan-Hochdamms",
+      "instruction": "Ordne jede Folge zu.",
+      "categories": ["Vorteil", "Nachteil"],
+      "entries": [
+        { "text": "Ganzjährige Bewässerung, mehrere Ernten", "target": 0, "feedback": "Der Stausee speichert Wasser für das ganze Jahr." },
+        { "text": "Nilschlamm lagert sich im Stausee ab.", "target": 1, "feedback": "Der natürliche Dünger erreicht die Felder nicht mehr." },
+        { "text": "Strom aus Wasserkraft", "target": 0, "feedback": "Das Kraftwerk am Damm erzeugt Strom." },
+        { "text": "Böden versalzen bei falscher Bewässerung.", "target": 1, "feedback": "Bei starker Verdunstung bleibt Salz zurück." }
+      ],
+      "conclusion": "Große Wasserbauten bringen Nutzen, aber auch neue Probleme."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre den Stockwerkbau einer Oase und warum er unter Wüstenbedingungen sinnvoll ist.",
+        "hints": ["Welche Pflanzen wachsen auf welcher Höhe?", "Welche Rolle spielt der Schatten?"],
+        "model": "Oben stehen Dattelpalmen, darunter Obstbäume und am Boden Gemüse und Getreide. Die Palmen spenden Schatten, sodass weniger Wasser verdunstet und empfindlichere Pflanzen gedeihen. So wird die knappe bewässerte Fläche mehrfach genutzt.",
+        "criteria": ["Ich nenne die drei Stockwerke.", "Ich erkläre den Schatten.", "Ich nenne die bessere Nutzung von Wasser und Fläche."]
+      },
+      "2": {
+        "prompt": "Probiere das Labor aus: Eine Oase führt sparsame Bewässerung ein und vergrößert zugleich die Felder. Beurteile, ob das Wasserproblem damit gelöst ist.",
+        "hints": ["Rechne Fläche mal Wasser je Hektar.", "Vergleiche mit der Neubildung."],
+        "model": "Sparsame Bewässerung senkt den Bedarf je Hektar von 10 auf 8 Einheiten. Wachsen die Felder aber auf 15 Hektar, steigt die Gesamtentnahme auf 120 Einheiten und liegt über der Neubildung von 100. Das Problem ist nur gelöst, wenn die Fläche begrenzt bleibt.",
+        "criteria": ["Ich rechne die Gesamtentnahme.", "Ich vergleiche mit der Neubildung.", "Ich formuliere ein begründetes Urteil."]
+      }
+    },
+    "figures": ["oase"],
+    "lab": "oase"
+  },
+  {
+    "id": "erdoel-wandel",
+    "lb": 3,
+    "title": "Vom Erdöl zur Zukunft?",
+    "period": "Geo7 LB 3 · Rohstoffabhängigkeit und Wandel",
+    "intro": "Erdöl machte die Golfstaaten reich. Doch was passiert, wenn der Preis fällt oder die Welt weniger Öl braucht?",
+    "paragraphs": [
+      "Unter der Arabischen Halbinsel und dem Persischen Golf liegen große Erdöl- und Erdgasvorkommen. Seit dem 20. Jahrhundert brachte ihr Export Staaten wie Saudi-Arabien, Kuwait, Katar und den Vereinigten Arabischen Emiraten großen Reichtum. Mit dem Geld wurden Städte, Straßen, Flughäfen, Meerwasserentsalzungsanlagen und Schulen gebaut.",
+      "Viele dieser Staaten sind einseitig vom Öl abhängig: Ein großer Teil der Staatseinnahmen stammt aus dem Ölverkauf. Fällt der Ölpreis, fehlt Geld im Staatshaushalt. Außerdem sind die Vorräte endlich, und wenn die Welt aus Klimaschutzgründen weniger Öl verbrennt, sinkt die Nachfrage langfristig.",
+      "Deshalb versuchen die Staaten ihre Wirtschaft breiter aufzustellen. Dubai hatte nur wenig eigenes Öl und setzte früh auf Handel mit einem großen Hafen, einen Drehkreuzflughafen, Tourismus und Finanzdienstleistungen. Saudi-Arabien verfolgt mit seiner Vision 2030 ähnliche Ziele. Ob das zukunftsfähig ist, hängt auch von Wasser, Hitze, Energieverbrauch und der Abhängigkeit von ausländischen Arbeitskräften ab."
+    ],
+    "workedExample": "Modellhaushalt: Ein Staat braucht 100 Geldeinheiten im Jahr. Bei einem Ölpreis von 120 nimmt er 120 ein und hat Überschuss. Fällt der Preis auf 70, fehlen 30 Einheiten. Hat der Staat zusätzlich Handel und Tourismus aufgebaut, die 60 Einheiten bringen, reicht selbst ein Ölpreis von 40.",
+    "takeaway": "Einseitige Abhängigkeit vom Erdöl macht Staaten verwundbar. Diversifizierung durch Handel, Tourismus und neue Branchen soll ihre Zukunft sichern.",
+    "sourceIds": ["lehrplan", "aa-laender"],
+    "quiz": {
+      "question": "Was bedeutet einseitige Rohstoffabhängigkeit?",
+      "answer": "Ein Staat bezieht einen großen Teil seiner Einnahmen aus einem einzigen Rohstoff.",
+      "wrong": ["Ein Staat muss alle Rohstoffe einführen.", "Ein Staat verkauft viele verschiedene Waren."],
+      "explanation": "Hängt der Haushalt an einem Rohstoff, schlägt jede Preisänderung voll durch."
+    },
+    "transferCheck": {
+      "question": "Welche Maßnahme verringert die Ölabhängigkeit eines Golfstaats am wirksamsten?",
+      "answer": "Neue Wirtschaftszweige wie Handel und Tourismus aufbauen.",
+      "wrong": ["Mehr Öl fördern, solange der Preis hoch ist.", "Alle Einnahmen in neue Ölfelder stecken."],
+      "explanation": "Nur zusätzliche Einnahmequellen machen den Haushalt unabhängiger vom Ölpreis."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Abhängigkeit oder Wandel?",
+      "instruction": "Ordne jede Aussage zu.",
+      "categories": ["Zeichen der Abhängigkeit", "Zeichen des Wandels"],
+      "entries": [
+        { "text": "Der Staatshaushalt schrumpft, wenn der Ölpreis fällt.", "target": 0, "feedback": "Die Einnahmen hängen am Öl." },
+        { "text": "Ein Hafen und ein Flughafen machen die Stadt zum Handelsknoten.", "target": 1, "feedback": "Handel bringt Einnahmen unabhängig vom Öl." },
+        { "text": "Fast alle Exporte sind Erdöl und Erdgas.", "target": 0, "feedback": "Ein einziges Exportgut zeigt Abhängigkeit." },
+        { "text": "Hotels und Messen ziehen Gäste aus aller Welt an.", "target": 1, "feedback": "Tourismus ist ein neuer Wirtschaftszweig." }
+      ],
+      "conclusion": "Wandel zeigt sich an neuen, vom Öl unabhängigen Einnahmen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre mit dem Labor, warum ein fallender Ölpreis für einen Staat ohne andere Einnahmen gefährlich ist.",
+        "hints": ["Vergleiche Einnahmen und Bedarf.", "Was ändert sich mit Handel und Tourismus?"],
+        "model": "Ohne andere Einnahmen hängt der Haushalt allein am Ölpreis. Sinkt der Preis unter 100, fehlt Geld für Schulen, Straßen oder Löhne. Mit 60 Einheiten aus Handel und Tourismus genügt schon ein Ölpreis von 40, der Staat ist weniger verwundbar.",
+        "criteria": ["Ich vergleiche Einnahmen mit dem Bedarf.", "Ich nenne eine Folge eines Fehlbetrags.", "Ich erkläre die Wirkung zusätzlicher Branchen."]
+      },
+      "2": {
+        "prompt": "Beurteile die Zukunftsfähigkeit Dubais. Nenne zwei Stärken und zwei Risiken.",
+        "hints": ["Wovon lebt Dubai heute?", "Welche natürlichen Grenzen gibt es?"],
+        "model": "Stärken: Dubai verdient mit Handel, Flughafen und Tourismus Geld unabhängig vom Öl, und seine Lage zwischen Europa, Afrika und Asien ist günstig. Risiken: Wasser kommt fast nur aus energieintensiver Meerwasserentsalzung, und Hitze sowie Klimawandel belasten die Stadt. Ich halte Dubai für teilweise zukunftsfähig, wenn es Energie und Wasser nachhaltiger gewinnt.",
+        "criteria": ["Ich nenne zwei Stärken.", "Ich nenne zwei Risiken.", "Ich formuliere ein begründetes Urteil."]
+      }
+    },
+    "figures": ["staatshaushalt"],
+    "lab": "staatshaushalt"
+  },
+  {
+    "id": "masdar-city",
+    "lb": 3,
+    "title": "Masdar City: Stadt der Zukunft?",
+    "period": "Geo7 LB 3 · Städtebauliche Großmaßnahme",
+    "intro": "Mitten in der Wüste bei Abu Dhabi soll eine Stadt entstehen, die mit wenig Energie und Wasser auskommt.",
+    "paragraphs": [
+      "Masdar City ist ein Stadtviertel, das seit 2008 nahe dem Flughafen von Abu Dhabi gebaut wird. Es sollte zeigen, dass auch in einem Ölstaat und bei großer Hitze eine Stadt mit sehr geringem Ausstoß an Kohlenstoffdioxid möglich ist. Heute haben dort Unternehmen, eine Hochschule und Forschungseinrichtungen ihren Sitz.",
+      "Die Planung greift Ideen der orientalischen Stadt auf: Die Gebäude stehen dicht, die Gassen sind schmal und schattig und so ausgerichtet, dass der Wind sie durchlüftet. Ein Windturm leitet kühlere Luft in einen Platz. Fassaden schützen vor der Sonne, auf Dächern und Flächen am Stadtrand erzeugen Solaranlagen Strom. Ursprünglich sollte die Stadt autofrei sein; kleine elektrische Kabinen fuhren aber nur auf einer kurzen Teststrecke.",
+      "Viele ursprüngliche Ziele wurden verschoben oder verkleinert, und die Stadt wächst langsamer als geplant. Nach eigenen Angaben verbrauchen die Gebäude deutlich weniger Energie und Wasser als vergleichbare Bauten. Kritiker sehen in Masdar City ein Vorzeigeprojekt, während der Energieverbrauch im übrigen Land hoch bleibt. Befürworter sehen darin ein Labor, dessen Ideen andere Städte übernehmen können."
+    ],
+    "workedExample": "Eine schmale, schattige Gasse in Nord-Süd-Richtung erhält mittags kaum direkte Sonne. Die Mauern bleiben kühler, die Luft darin ebenfalls. Klimaanlagen müssen weniger leisten, der Stromverbrauch sinkt. So nutzt Masdar City ein Prinzip, das in Medinas seit Jahrhunderten wirkt.",
+    "takeaway": "Masdar City verbindet traditionelle Bauweise gegen Hitze mit Solarenergie und moderner Technik. Ob das Projekt Vorbild ist, hängt davon ab, ob seine Ideen breit übernommen werden.",
+    "sourceIds": ["lehrplan", "masdar"],
+    "quiz": {
+      "question": "Welche Idee übernimmt Masdar City von der orientalischen Stadt?",
+      "answer": "Dichte Bebauung mit schmalen, schattigen Gassen.",
+      "wrong": ["Breite Autobahnen durch das Zentrum.", "Einzelne Hochhäuser mit großem Abstand."],
+      "explanation": "Enge Gassen spenden Schatten und senken die Temperatur auf natürliche Weise."
+    },
+    "transferCheck": {
+      "question": "Welches Argument spricht gegen Masdar City als Lösung für das ganze Land?",
+      "answer": "Ein kleines Vorzeigeviertel ändert den hohen Energieverbrauch des übrigen Landes kaum.",
+      "wrong": ["Solaranlagen funktionieren in der Wüste nicht.", "Schattige Gassen erhöhen den Stromverbrauch."],
+      "explanation": "Die Wirkung hängt davon ab, ob die Ideen auch in anderen Stadtteilen und Städten umgesetzt werden."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Wogegen hilft die Maßnahme?",
+      "instruction": "Ordne jede Maßnahme ihrem Hauptziel zu.",
+      "categories": ["Weniger Hitze", "Saubere Energie", "Weniger Verkehr"],
+      "entries": [
+        { "text": "Schmale Gassen zwischen hohen Mauern", "target": 0, "feedback": "Schatten hält die Gassen kühler." },
+        { "text": "Solaranlagen auf Dächern und am Stadtrand", "target": 1, "feedback": "Sonnenstrom ersetzt Strom aus Öl und Gas." },
+        { "text": "Kurze Wege zwischen Wohnung, Arbeit und Hochschule", "target": 2, "feedback": "Wer nah wohnt, braucht kein Auto." },
+        { "text": "Windturm, der kühlere Luft auf einen Platz lenkt", "target": 0, "feedback": "Luftbewegung senkt die gefühlte Temperatur." }
+      ],
+      "conclusion": "Masdar City kombiniert mehrere Ansätze gleichzeitig."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erläutere drei Merkmale von Masdar City und erkläre, wie sie Energie sparen.",
+        "hints": ["Denke an Gassen, Wind und Sonne.", "Verbinde jedes Merkmal mit einer Wirkung."],
+        "model": "Die schmalen, schattigen Gassen halten die Stadt kühler, Klimaanlagen brauchen weniger Strom. Ein Windturm lenkt kühlere Luft auf einen Platz. Solaranlagen erzeugen Strom aus Sonnenenergie statt aus Öl und Gas.",
+        "criteria": ["Ich nenne drei Merkmale.", "Ich erkläre jeweils die Wirkung.", "Ich verwende Fachbegriffe."]
+      },
+      "2": {
+        "prompt": "Bewerte, ob Masdar City ein Vorbild für Städte in heißen Ländern sein kann. Wäge zwei Argumente dafür und zwei dagegen ab.",
+        "hints": ["Was funktioniert, was wurde nicht umgesetzt?", "Wer kann sich so ein Projekt leisten?"],
+        "model": "Dafür spricht, dass traditionelle Schattenbauweise und Solarenergie wirklich Energie sparen und sich übertragen lassen. Außerdem testet die Stadt Technik, von der andere lernen. Dagegen spricht, dass viele Ziele verkleinert wurden und das Projekt sehr teuer war. Für ärmere Städte ist eher die einfache Bauweise ein Vorbild als die teure Technik.",
+        "criteria": ["Ich nenne zwei Argumente dafür.", "Ich nenne zwei Argumente dagegen.", "Ich ziehe ein begründetes Fazit."]
+      }
+    },
+    "figures": ["masdar"]
+  }
+]
