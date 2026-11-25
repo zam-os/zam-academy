@@ -110,6 +110,10 @@ Für Klasse 6 hat Thomas am 2026-11-24 entschieden: „Pfad herauslösen“. Der
 `franzoesisch-gymnasium-6` wird in einem eigenen PR zur reinen 1. Fremdsprache
 ([Lehrplan und Kartenumzug](franzoesisch-2fs-gymnasium-6-coverage.md)).
 
+> Ja, ich bestätige den Split. Die 39 Lektionen sollen ins eigene Paket umziehen.
+>
+> Thomas · 2026-11-25 · Codex chat for [PR #203](https://github.com/zam-os/zam-academy/pull/203)
+
 ## Pakete in den neuen Zellen
 
 | Zelle | Klasse | Paket | Stand |

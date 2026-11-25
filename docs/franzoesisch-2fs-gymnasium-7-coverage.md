@@ -2,6 +2,8 @@
 
 The package builds on the second-language path first published with [Grade 7 Gymnasium French](franzoesisch-gymnasium-7-coverage.md). Its atlas slot is `franzoesisch-2fs`, Grade 7. The first-language course keeps the existing app address and the second-language course has its own address.
 
+Thomas confirmed on 25 November 2026 that the 39 second-language lessons should move into the standalone package. [Atlas decision record](zweite-fremdsprache-atlas.md#bestehende-pakete-mit-beiden-pfaden)
+
 ## Curriculum
 
 The [Bavarian LehrplanPLUS Fachlehrplan](https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/7/franzoesisch/2-fremdsprache) was checked in the original package on 23 November 2026. It specifies a single curriculum across Gymnasium programmes and gives no hours per learning area. The [coverage matrix](../franzoesisch-2fs-gymnasium-7/coverage.json) retains 54 expectations and topic entries across its five learning areas. Nineteen are marked `supported` with the activity still required outside the app. The curriculum check compares the entries against the hashed HTML snapshot and verifies the neighbouring Grade 6 and 8 snapshot hashes.
