@@ -1,0 +1,709 @@
+[
+  {
+    "id": "pg8-gesundheit-dimensionen",
+    "lb": 9,
+    "title": "Physische, psychische und soziale Gesundheit und Lebensweise",
+    "period": "Profil 6.4/6.5 · Bewusst leben, sich gesund ernähren",
+    "intro": "Gesundheit ist mehr als „nicht krank sein“: Wie Körper, Psyche und soziale Beziehungen zusammenwirken und wie du Kriterien für einen gesunden Alltag entwickelst.",
+    "grundwissen": [
+      "Physische Gesundheit",
+      "Psychische Gesundheit",
+      "Soziale Gesundheit",
+      "Gesundheitsgefährdungen"
+    ],
+    "paragraphs": [
+      "Wer sich erkältet oder das Bein bricht, merkt sofort, dass der Körper Unterstützung braucht. Doch Gesundheit bedeutet nach dem umfassenden Verständnis der Weltgesundheitsorganisation (WHO) nicht nur das Fehlen von Krankheit, sondern ein Zusammenspiel von physischer, psychischer und sozialer Gesundheit.",
+      "Die physische (körperliche) Gesundheit umfasst Leistungsfähigkeit, ausreichende Bewegung, Schlaf, ausgewogene Ernährung und den Verzicht auf schädliche Stoffe wie Tabak oder Alkohol. Die psychische (seelische) Gesundheit zeigt sich in Ausgeglichenheit, Selbstwertgefühl und der Fähigkeit, Stress und Rückschläge zu bewältigen. Die soziale Gesundheit beschreibt tragfähige Beziehungen zu Familie und Freundinnen sowie das Gefühl von Zugehörigkeit und Respekt.",
+      "Alle drei Bereiche beeinflussen sich gegenseitig: Dauerhafter Stress oder Ausgrenzung (psychisch/sozial) führen häufig zu Schlafstörungen und Bauchschmerzen (physisch); umgekehrt stärken gemeinsame Bewegung im Verein oder gute Erholung Körper und Stimmung gleichzeitig.",
+      "Um die eigene Lebensweise zu überprüfen, helfen klare Kriterien für gesundheitsförderndes Verhalten – etwa ausreichender Schlaf (8 bis 9 Stunden im Jugendalter), tägliche Bewegung, bewusste Pausen von Bildschirmen und verlässliche Ansprechpersonen bei Sorgen."
+    ],
+    "takeaway": "Gesundheit besteht aus physischer, psychischer und sozialer Ebene, die einander wechselseitig stützen oder gefährden; eigene Kriterien helfen, Lebensgewohnheiten bewusst anzupassen.",
+    "sourceIds": [
+      "lehrplan",
+      "wiki-gesundheit",
+      "wiki-gesundheitsfoerderung"
+    ],
+    "figures": [
+      "gesundheitsDimensionen"
+    ],
+    "lab": "gesundheitsDreieck",
+    "quiz": {
+      "question": "Warum greift die Definition „Gesundheit heißt bloß, kein Fieber und keine Schmerzen zu haben“ zu kurz?",
+      "answer": "Weil Gesundheit auch seelisches Wohlbefinden (psychisch) und tragfähige Beziehungen (sozial) umfasst, die den Körper direkt beeinflussen.",
+      "wrong": [
+        "Weil nur soziale Kontakte für Gesundheit zählen und Ernährung sowie Bewegung völlig egal sind.",
+        "Weil psychische Belastungen im Jugendalter grundsätzlich keine körperlichen Folgen haben können."
+      ],
+      "explanation": "Das bio-psycho-soziale Verständnis betrachtet Körper, Seele und soziales Umfeld gemeinsam."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Gesundheitsdimensionen und Gefährdungen unterscheiden",
+      "instruction": "Ordne die vier Alltagsbeispiele der jeweils am stärksten betroffenen Dimension von Gesundheit zu.",
+      "categories": [
+        "Physische Gesundheit",
+        "Psychische Gesundheit",
+        "Soziale Gesundheit"
+      ],
+      "entries": [
+        {
+          "text": "Tägliches Radfahren zur Schule, acht Stunden Schlaf und frisches Obst in der Pause.",
+          "target": 0,
+          "feedback": "Bewegung, Schlaf und Nährstoffe stärken unmittelbar die körperliche Leistungsfähigkeit."
+        },
+        {
+          "text": "Dauerhafter Leistungsdruck führt vor Proben zu Angst, Grübeln und innerer Erschöpfung.",
+          "target": 1,
+          "feedback": "Emotionale Überlastung und Ängste betreffen vor allem die psychische Gesundheit."
+        },
+        {
+          "text": "Regelmäßige Treffen mit dem Freundeskreis und gegenseitige Hilfe in der Klasse geben Rückhalt.",
+          "target": 2,
+          "feedback": "Stabile Beziehungen und Zugehörigkeit tragen die soziale Gesundheit."
+        },
+        {
+          "text": "Ein Jugendlicher verbringt jedes Wochenende isoliert allein vor dem Bildschirm und verliert den Kontakt zu Freunden.",
+          "target": 2,
+          "feedback": "Sozialer Rückzug schwächt Zugehörigkeit und soziale Gesundheit."
+        }
+      ],
+      "conclusion": "Wer auf alle drei Seiten achtet – Bewegung und Schlaf, Stressausgleich und echte Kontakte –, schützt seine Gesundheit am wirksamsten."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erprobe im Gesundheits-Dreieck einen niedrigen Wert in einem der drei Bereiche und erkläre die Wechselwirkung mit den anderen beiden Bereichen.",
+        "hints": [
+          "Senke im Labor zum Beispiel Schlaf/Bewegung (physisch) oder Erholung (psychisch).",
+          "Beobachte, wie sich das gesamte Gleichgewicht im Dreieck verschiebt."
+        ],
+        "model": "Wenn etwa die psychische Gesundheit durch dauerhaften Stress und zu wenig Pausen absinkt, schläft man schlechter (physische Belastung) und zieht sich gereizt von Freunden zurück (soziale Belastung). Umgekehrt stabilisieren feste Schlafzeiten, gemeinsame Bewegung und vertraute Gespräche alle drei Ecken des Dreiecks gleichzeitig.",
+        "criteria": [
+          "Alle drei Gesundheitsdimensionen richtig unterschieden",
+          "Wechselwirkung aus dem Modell konkret erklärt",
+          "Eigene Maßnahme zur Stärkung des Gleichgewichts benannt"
+        ]
+      },
+      "2": {
+        "prompt": "Entwirf für eine kurze Klassenbroschüre vier konkrete Kriterien, mit denen Achtklässler ihren Alltag gesundheitsfördernd überprüfen können.",
+        "hints": [
+          "Decke Schlaf/Bewegung, Medienpausen, Ernährung/Trinken und soziale Unterstützung ab.",
+          "Formuliere konkrete, prüfbare Fragen oder Regeln."
+        ],
+        "model": "1. Schlaf und Bewegung: Schaffe ich mindestens acht Stunden Schlaf und 60 Minuten Alltagsbewegung pro Tag? 2. Ernährung und Trinken: Trinke ich überwiegend Wasser und esse regelmäßig Gemüse, Obst und Vollkorn? 3. Psychische Entlastung: Habe ich jeden Tag echte bildschirmfreie Pausen zum Abschalten? 4. Soziales Netz: Habe ich jemanden in Familie, Freundeskreis oder Beratung, mit dem ich Sorgen offen besprechen kann?",
+        "criteria": [
+          "Vier alltagstaugliche, überprüfbare Prüfkriterien formuliert",
+          "Physische, psychische und soziale Aspekte abgedeckt",
+          "Adressatengerechte Sprache für eine Jugendbroschüre gewählt"
+        ]
+      }
+    }
+  },
+  {
+    "id": "pg8-ernaehrungsphysiologie",
+    "lb": 9,
+    "title": "Grundlagen der Ernährungsphysiologie und bewusste Auswahl",
+    "period": "Profil 6.4/6.5 · Bewusst leben, sich gesund ernähren",
+    "intro": "Kohlenhydrate, Eiweiße, Fette, Vitamine und Wasser: Was braucht der Körper täglich – und wie sieht ein ausgewogenes Pausenbrot konkret aus?",
+    "grundwissen": [
+      "Ernährungsphysiologie",
+      "Makro- und Mikronährstoffe",
+      "Ballaststoffe",
+      "DGE-Empfehlungen"
+    ],
+    "paragraphs": [
+      "Essen liefert nicht einfach nur „Kalorien gegen den Hunger“, sondern sehr verschiedene Baustoffe und Schutzstoffe. Die Ernährungsphysiologie untersucht, wie unser Körper Nährstoffe aufnimmt, verarbeitet und für Wachstum, Gehirnleistung und Abwehrkräfte nutzt.",
+      "Unterschieden werden Makronährstoffe (Energielieferanten und Baustoffe) und Mikronährstoffe (Schutz- und Steuerstoffe). Komplexe Kohlenhydrate und Ballaststoffe aus Vollkornbrot, Haferflocken oder Hülsenfrüchten lassen den Blutzucker langsam steigen und halten im Unterricht lange konzentriert – anders als Weißmehl und Limonade, die den Blutzucker schnell hochjagen und rasch wieder abfallen lassen. Eiweiße (Proteine) aus Milchprodukten, Hülsenfrüchten, Fisch, Eiern oder Nüssen bauen Muskeln und Zellen auf; ungesättigte Fette (etwa aus Rapsöl, Walnüssen oder Oliven) liefern Energie und ermöglichen die Aufnahme fettlöslicher Vitamine.",
+      "Mikronährstoffe wie Vitamine, Mineralstoffe (z. B. Calcium, Eisen) sowie mindestens 1,5 Liter Flüssigkeit täglich – am besten Wasser oder ungesüßter Tee – sichern Stoffwechsel und Kreislauf. Der Ernährungskreis der Deutschen Gesellschaft für Ernährung (DGE) zeigt diese Anteile anschaulich: viel pflanzliche Kost und Getränke, mäßig tierische Lebensmittel und sparsam Zucker sowie stark verarbeitete Snacks.",
+      "Im Alltag lässt sich dieses Wissen sofort umsetzen: Ein Vollkornbrot mit Frischkäse oder Hummus, Paprikastreifen, ein Apfel und eine Flasche Leitungswasser schlagen jedes Schokohörnchen beim Durchhalten bis zum Nachmittag."
+    ],
+    "takeaway": "Ausgewogene Ernährung kombiniert komplexe Kohlenhydrate, Ballaststoffe, Eiweiß, günstige Fette, Vitamine, Mineralstoffe und reichlich Wasser – wie beim gut zusammengestellten Pausenbrot.",
+    "sourceIds": [
+      "lehrplan",
+      "dge-kreis",
+      "dge-empfehlungen",
+      "wiki-ernaehrungsphysiologie",
+      "wiki-naehrstoff"
+    ],
+    "figures": [
+      "naehrstoffBausteine"
+    ],
+    "lab": "pausenbrotTeller",
+    "quiz": {
+      "question": "Warum hält ein Vollkornbrot mit Gemüse in der Schule länger satt und konzentriert als ein süßes Weißmehl-Gebäck?",
+      "answer": "Komplexe Kohlenhydrate und Ballaststoffe werden langsamer verdaut und halten den Blutzuckerspiegel gleichmäßiger stabil.",
+      "wrong": [
+        "Vollkornbrot enthält ausschließlich reines Fett und überhaupt keine Kohlenhydrate.",
+        "Weißmehl-Gebäck enthält grundsätzlich mehr Ballaststoffe und Vitamine als Vollkornprodukte."
+      ],
+      "explanation": "Einfacher Zucker und Weißmehl führen zu einem raschen Blutzuckeranstieg und einem baldigen Tief, während Vollkorn und Ballaststoffe gleichmäßige Energie liefern."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Nährstoffgruppen und Lebensmittel richtig zuordnen",
+      "instruction": "Ordne die vier Bausteine einer Mahlzeit ihrer Hauptaufgabe bzw. Nährstoffgruppe zu.",
+      "categories": [
+        "Komplexe Kohlenhydrate & Ballaststoffe",
+        "Eiweiße (Proteine)",
+        "Ungesättigte Fette",
+        "Vitamine, Mineralstoffe & Wasser"
+      ],
+      "entries": [
+        {
+          "text": "Vollkornbrötchen und Haferflocken für gleichmäßige Energie am Schulvormittag.",
+          "target": 0,
+          "feedback": "Vollkorn liefert langkettige Kohlenhydrate und wertvolle Ballaststoffe."
+        },
+        {
+          "text": "Kichererbsen-Aufstrich, Quark oder Käse zum Aufbau von Muskeln und Körperzellen.",
+          "target": 1,
+          "feedback": "Hülsenfrüchte und Milchprodukte sind wichtige Eiweißquellen."
+        },
+        {
+          "text": "Eine Handvoll Walnüsse oder etwas Rapsöl im Salatdressing.",
+          "target": 2,
+          "feedback": "Pflanzliche Öle und Nüsse liefern günstige ungesättigte Fettsäuren."
+        },
+        {
+          "text": "Frische Paprika, Apfel und eine Flasche Mineralwasser in der Pause.",
+          "target": 3,
+          "feedback": "Gemüse, Obst und Wasser versorgen den Körper mit Vitaminen, Mineralstoffen und Flüssigkeit."
+        }
+      ],
+      "conclusion": "Wer alle vier Gruppen kombiniert, erreicht ohne Verzicht auf Genuss eine leistungsfähige und ausgewogene Versorgung."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Stelle im Pausenbrot-Labor ein ausgewogenes Pausenpaket mit mindestens 75 Punkten Gesamtqualität zusammen und begründe die Auswahl anhand von drei Nährstoffgruppen.",
+        "hints": [
+          "Kombiniere eine Vollkorn-Basis, einen eiweißreichen Belag, frisches Gemüse/Obst und Wasser statt Zuckergetränk.",
+          "Lies die maßstäblichen Nährstoffbalken im Labor ab."
+        ],
+        "model": "Mit Vollkornbrot, Hummus oder Frischkäse, Paprika und Apfel sowie Wasser erreicht das Pausenbrot über 80 Punkte. Das Vollkornbrot liefert komplexe Kohlenhydrate und Ballaststoffe für langanhaltende Konzentration, der Aufstrich versorgt den Körper mit Eiweiß für Zellen und Sättigung, und Rohkost plus Wasser liefern Vitamine und Flüssigkeit ohne leeren Zucker.",
+        "criteria": [
+          "Ausgewogene Kombination aus dem Labor beschrieben",
+          "Drei Nährstoffgruppen samt körperlicher Funktion richtig erklärt",
+          "Verzicht auf übermäßigen Zucker begründet"
+        ]
+      },
+      "2": {
+        "prompt": "Viele Mitschüler kaufen in der Pause gesüßte Energy-Drinks oder süße Teilchen wegen „schneller Energie“. Bewerte diese Gewohnheit aus Sicht der Ernährungsphysiologie.",
+        "hints": [
+          "Erkläre die Blutzucker-Kurve nach schnellem Zucker.",
+          "Berücksichtige auch fehlende Ballaststoffe, Vitamine und Koffein-Belastung."
+        ],
+        "model": "Zuckerreiche Getränke und Gebäck liefern zwar für wenige Minuten einen schnellen Energieschub, lassen den Blutzucker aber rasch wieder abfallen – in der nächsten Stunde folgen oft Müdigkeit und Konzentrationsabfall. Zudem fehlen Ballaststoffe, Vitamine und Mineralstoffe, und stark koffeinhaltige Energy-Drinks können bei Jugendlichen Herzrasen und Schlafstörungen fördern. Ein Vollkorn-Snack mit Wasser wirkt dagegen nachhaltig.",
+        "criteria": [
+          "Blutzuckerschwankung und baldigen Leistungsabfall physiologisch erklärt",
+          "Nährstoffmangel und Nebenwirkungen von Energy-Drinks benannt",
+          "Sinnvolle Alternative abgeleitet"
+        ]
+      }
+    }
+  },
+  {
+    "id": "pg8-ernaehrungsstoerungen",
+    "lb": 9,
+    "title": "Ernährungsstörungen, ernährungsbedingte Krankheiten und Prophylaxe",
+    "period": "Profil 6.4/6.5 · Bewusst leben, sich gesund ernähren",
+    "intro": "Von Karies und Adipositas bis zu Magersucht und Bulimie: Wie Krankheiten und Essstörungen entstehen – und warum frühe Vorbeugung und Hilfe so wichtig sind.",
+    "grundwissen": [
+      "Ernährungsstörung",
+      "Ernährungsbedingte Krankheiten",
+      "Prophylaxe",
+      "Therapie und Beratung"
+    ],
+    "paragraphs": [
+      "Ungünstige Ernährung oder stark gestörtes Essverhalten wirken sich oft schleichend aus. Dabei muss man zwei Dinge klar unterscheiden: ernährungsbedingte körperliche Erkrankungen einerseits und psychisch geprägte Essstörungen andererseits.",
+      "Zu den ernährungsbedingten Krankheiten zählen beispielsweise Karies durch häufigen Zuckerkonsum, starkes Übergewicht (Adipositas) samt erhöhtem Risiko für Herz-Kreislauf-Probleme und Typ-2-Diabetes oder Bluthochdruck durch dauerhaft zu viel Salz und Bewegungsmangel. Eine ausgewogene Alltagskost und gemeinsames Zubereiten frischer Speisen wirken hier vorbeugend (Prophylaxe).",
+      "Essstörungen wie Magersucht (Anorexie), Ess-Brech-Sucht (Bulimie) oder Binge-Eating-Störung (wiederholte unkontrollierte Essanfälle) sind dagegen ernsthafte psychosomatische Erkrankungen. Betroffene richten ihren gesamten Alltag zwanghaft auf Gewicht, Kalorien und Körperkontrolle aus – oft ausgelöst durch inneren Druck, geringen Selbstwert oder unrealistische Schönheitsideale in Medien.",
+      "Wichtig für dich und dein Umfeld: Essstörungen sind keine „Eitelkeit“ und lassen sich allein durch Appelle wie „Iss doch einfach!“ nicht heilen. Entscheidend sind frühzeitige Prophylaxe (kritisches Hinterfragen bearbeiteter Bilder, Stärkung des Selbstwerts) sowie professionelle Therapie über Ärztinnen, Psychotherapeuten und vertrauliche Beratungsstellen."
+    ],
+    "takeaway": "Ernährungsbedingte Krankheiten entstehen vor allem durch langfristige Fehlernährung; Essstörungen sind seelische Erkrankungen, die statt Schuldzuweisungen frühe Prophylaxe und fachliche Therapie brauchen.",
+    "sourceIds": [
+      "lehrplan",
+      "wiki-essstoerung",
+      "wiki-gesundheit"
+    ],
+    "figures": [
+      "prophylaxeTherapie"
+    ],
+    "quiz": {
+      "question": "Was unterscheidet eine Essstörung wie Magersucht oder Bulimie grundsätzlich von einer einfachen Vorliebe für bestimmte Speisen?",
+      "answer": "Sie ist eine ernsthafte psychische Erkrankung mit zwanghafter Fixierung auf Essen und Körpergewicht und erfordert fachliche Therapie.",
+      "wrong": [
+        "Sie verschwindet immer von selbst nach drei Tagen bewusstem Wassertrinken.",
+        "Sie betrifft ausschließlich Menschen, die überhaupt keine Medien nutzen."
+      ],
+      "explanation": "Essstörungen haben tiefere seelische und soziale Ursachen und bedürfen professioneller medizinischer und psychotherapeutischer Begleitung."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Ernährungsbedingte Risiken, Essstörungen und Prophylaxe trennen",
+      "instruction": "Ordne die vier Aussagen der passenden fachlichen Kategorie zu.",
+      "categories": [
+        "Ernährungsbedingte Krankheit",
+        "Essstörung (psychosomatisch)",
+        "Prophylaxe",
+        "Therapie & Hilfe"
+      ],
+      "entries": [
+        {
+          "text": "Jahrelanger Überkonsum von stark gezuckerten Getränken und Bewegungsmangel fördern Adipositas und Typ-2-Diabetes.",
+          "target": 0,
+          "feedback": "Stoffwechsel- und Zahnerkrankungen infolge dauerhafter Fehlernährung sind ernährungsbedingte Krankheiten."
+        },
+        {
+          "text": "Eine Jugendliche hungert trotz Untergewicht aus panischer Angst vor Gewichtszunahme weiter.",
+          "target": 1,
+          "feedback": "Anorexie (Magersucht) ist eine ernsthafte psychische Essstörung."
+        },
+        {
+          "text": "Eine Schulklasse analysiert bearbeitete Körperbilder in Werbeanzeigen und kocht gemeinsam frische Gerichte.",
+          "target": 2,
+          "feedback": "Aufklärung, Medienkritik und positive Esserfahrungen wirken vorbeugend."
+        },
+        {
+          "text": "Betroffene holen sich vertraulich Unterstützung bei einer Jugendberatungsstelle, Ärztin und Psychotherapeutin.",
+          "target": 3,
+          "feedback": "Professionelle Therapie begleitet den Weg zur Genesung."
+        }
+      ],
+      "conclusion": "Frühe Aufklärung (Prophylaxe) stärkt Körperakzeptanz und Alltagswissen; bei Anzeichen einer Essstörung hilft nur verständnisvolle, fachliche Unterstützung."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre den Unterschied zwischen ernährungsbedingten Krankheiten und Essstörungen und zeige, warum sowohl Prophylaxe als auch Therapie wichtig sind.",
+        "hints": [
+          "Nenne je ein konkretes Beispiel für beide Bereiche.",
+          "Erkläre, was vor Entstehung schützt (Prophylaxe) und was bei Erkrankung hilft (Therapie)."
+        ],
+        "model": "Ernährungsbedingte Krankheiten wie Karies oder Typ-2-Diabetes entstehen oft über Jahre durch zu viel Zucker, Fett und Bewegungsmangel. Essstörungen wie Magersucht oder Bulimie sind dagegen seelische Erkrankungen, bei denen Gewichtskontrolle zum Zwang wird. Prophylaxe durch Medienkritik und gesundes Kochen beugt beidem vor; ist jedoch bereits eine Essstörung entstanden, braucht es medizinische und psychotherapeutische Therapie.",
+        "criteria": [
+          "Saubere Abgrenzung zwischen ernährungsbedingter Krankheit und Essstörung",
+          "Je ein konkretes Beispiel genannt",
+          "Rolle von Prophylaxe und Therapie jeweils erklärt"
+        ]
+      },
+      "2": {
+        "prompt": "Eine Mitschülerin isst in den Pausen gar nichts mehr, wiegt sich täglich mehrfach und zieht sich zurück. Wie kannst du als Freundin oder Mitschüler verantwortungsvoll handeln?",
+        "hints": [
+          "Vermeide verletzende Kommentare über ihr Gewicht oder Vorwürfe.",
+          "Biete ein ruhiges Gespräch an und verweise auf vertrauliche erwachsene Hilfe (Eltern, Beratungslehrkraft, Fachstelle)."
+        ],
+        "model": "Wichtig ist, sie nicht vor anderen bloßzustellen oder unter Druck zu setzen („Iss doch endlich!“), weil das den Rückzug verstärkt. Stattdessen kann ich unter vier Augen ruhig meine Sorge aussprechen („Mir fällt auf, dass es dir nicht gut geht, ich mache mir Sorgen“) und anbieten, sie zu einer Vertrauenslehrkraft, den Eltern oder einer Beratungsstelle zu begleiten. Als Jugendlicher darf und soll ich mir bei ernsten Warnsignalen selbst Rat bei Erwachsenen holen.",
+        "criteria": [
+          "Einfühlsames Gespräch unter vier Augen ohne Vorwürfe gewählt",
+          "Einbeziehung fachlicher bzw. erwachsener Unterstützung vorgesehen",
+          "Eigene Grenzen als Mitschülerin realistisch berücksichtigt"
+        ]
+      }
+    }
+  },
+  {
+    "id": "pg8-verbraucherschutz-lebensmittel",
+    "lb": 9,
+    "title": "Lebensmittelrecht, Qualitätssicherung und Verbraucherschutz",
+    "period": "Profil 6.4/6.5 · Bewusst leben, sich gesund ernähren",
+    "intro": "Mindesthaltbarkeitsdatum vs. Verbrauchsdatum, Zutatenliste und Siegel: Wie Staat und Verbraucherorganisationen vor Täuschung und verdorbenen Waren schützen.",
+    "grundwissen": [
+      "Verbraucherschutz",
+      "Lebensmittelrecht",
+      "Kennzeichnungspflicht",
+      "Qualitätssicherung"
+    ],
+    "paragraphs": [
+      "Im Supermarkt stehen Tausende verpackte Produkte. Niemand kann beim Einkauf selbst im Labor prüfen, ob Joghurt sauber gekühlt wurde oder wie viel Zucker wirklich in einem Getränk steckt. Deshalb sichern das Lebensmittelrecht sowie staatliche Kontrollen (z. B. Lebensmittelüberwachung) und Verbraucherzentralen gemeinsam Gesundheit und faire Information.",
+      "Ein Kernbereich des Verbraucherschutzes ist die Auszeichnungspflicht: Auf verpackten Lebensmitteln müssen Zutaten in absteigender Reihenfolge ihres Gewichtsanteils, Allergene deutlich hervorgehoben, eine Nährwerttabelle je 100 g oder 100 ml sowie die Anschrift des Herstellers stehen. Freiwillige Angaben wie der Nutri-Score oder staatliche Bio-Siegel helfen beim schnellen Vergleich, sind aber nicht überall Pflicht.",
+      "Lebensmittelqualität zeigt sich auch bei der Haltbarkeit: Das Mindesthaltbarkeitsdatum (MHD, „mindestens haltbar bis …“) garantiert bis zu diesem Tag Geschmack und Konsistenz – danach sind viele Lebensmittel bei guter Lagerung noch einwandfrei genießbar („Schauen, Riechen, Probieren“). Das Verbrauchsdatum („zu verbrauchen bis …“) auf empfindlichem Hackfleisch oder frischem Fisch ist dagegen eine strenge Sicherheitsgrenze, nach der das Produkt nicht mehr gegessen werden darf.",
+      "Damit Kontrollen akzeptiert und wirksam bleiben, müssen Regeln verständlich und Kontrollen unabhängig sein – gleichzeitig bleibt die kritische Prüfung der Zutatenliste beim Einkauf deine stärkste eigene Schutzmaßnahme."
+    ],
+    "kriterien": {
+      "title": "Einkaufscheck für verpackte Lebensmittel",
+      "steps": [
+        "Zutatenliste: Was steht ganz vorn (größter Gewichtsanteil), und wie viele Zuckerarten verstecken sich?",
+        "Nährwerttabelle: Wie viel Zucker, Fett und Salz steckt pro 100 g (nicht nur pro winziger „Portion“)?",
+        "Haltbarkeit: Gilt ein Mindesthaltbarkeitsdatum (prüfen) oder ein Verbrauchsdatum (entsorgen nach Ablauf)?",
+        "Siegel & Werbeversprechen: Ist das Siegel staatlich geprüft (z. B. EU-Bio) oder nur ein Werbespruch der Firma?"
+      ]
+    },
+    "takeaway": "Lebensmittelrecht, Auszeichnungspflicht, amtliche Kontrollen und Verbraucherzentralen schützen Gesundheit und Transparenz; Kennzahlen pro 100 g und der Unterschied zwischen MHD und Verbrauchsdatum helfen beim klugen Einkauf.",
+    "sourceIds": [
+      "lehrplan",
+      "vz-lebensmittel",
+      "wiki-verbraucherschutz",
+      "wiki-lebensmittelrecht",
+      "wiki-lebensmittelsicherheit"
+    ],
+    "figures": [
+      "etikettPruefen"
+    ],
+    "quiz": {
+      "question": "Was ist der Unterschied zwischen „Mindesthaltbarkeitsdatum“ (MHD) und „Verbrauchsdatum“?",
+      "answer": "Nach Ablauf des MHD sind viele Waren bei normalem Geruch und Aussehen noch genießbar; nach Ablauf des Verbrauchsdatums droht Gesundheitsgefahr.",
+      "wrong": [
+        "Das MHD gilt nur für Fleisch und Fisch, das Verbrauchsdatum ausschließlich für Nudeln und Reis.",
+        "Beide Daten bedeuten exakt dasselbe: Jedes Lebensmittel muss ab Mitternacht sofort weggeworfen werden."
+      ],
+      "explanation": "Diese Unterscheidung schützt sowohl vor Lebensmittelvergiftung bei empfindlichen Frischwaren als auch vor unnötiger Lebensmittelverschwendung."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Verbraucherschutz und Etikettenangaben sicher anwenden",
+      "instruction": "Ordne die vier Prüfergebnisse aus dem Supermarkt dem passenden Begriff oder Urteil zu.",
+      "categories": [
+        "Zutaten- & Nährwerttrick erkennen",
+        "Staatliche / amtliche Vorgabe",
+        "Haltbarkeit & Qualitätserhalt"
+      ],
+      "entries": [
+        {
+          "text": "Auf der Vorderseite steht „Mit Honig“, doch auf der Zutatenliste steht Zucker an erster Stelle und Honig nur bei 1 %.",
+          "target": 0,
+          "feedback": "Die gesetzliche Zutatenreihenfolge entlarvt schöngeredete Frontwerbung."
+        },
+        {
+          "text": "Auf einer Packung Erdnusskekse ist das Allergen „Erdnüsse“ fett hervorgehoben und ein amtliches Bio-Siegel aufgedruckt.",
+          "target": 1,
+          "feedback": "Allergenkennzeichnung und kontrollierte Bio-Siegel beruhen auf klaren Rechtsregeln."
+        },
+        {
+          "text": "Ein Joghurt ist zwei Tage über dem Mindesthaltbarkeitsdatum, riecht frisch und schmeckt einwandfrei.",
+          "target": 2,
+          "feedback": "Das MHD ist kein Wegwerfdatum – Sinnesprüfung vermeidet Verschwendung."
+        },
+        {
+          "text": "Auf der Müsliverpackung bezieht sich die freundliche Kalorienzahl auf nur 30 g, obwohl eine normale Schale 60 g wiegt.",
+          "target": 0,
+          "feedback": "Kleine Portionsangaben lassen Werte harmloser wirken; der Vergleich pro 100 g bleibt ehrlich."
+        }
+      ],
+      "conclusion": "Amtliche Kennzeichnungspflichten wirken am besten, wenn Verbraucherinnen genau hinschauen und Tricks bei Portionsgrößen oder Eigenwerbung erkennen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre anhand des Einkaufschecks, woran du bei einem beworbenen „Fitness-Riegel“ erkennst, ob er wirklich gesundheitsfördernd ist oder hauptsächlich Zucker enthält.",
+        "hints": [
+          "Nutze Zutatenliste (Reihenfolge) und Nährwerttabelle je 100 g.",
+          "Achte auch auf das Kleingedruckte hinter Werbesprüchen."
+        ],
+        "model": "Ich prüfe zuerst die Zutatenliste: Stehen Zucker, Glukosesirup oder Honig unter den ersten drei Zutaten, überwiegt die Süße deutlich. Danach lese ich in der Nährwerttabelle die Zeile „Kohlenhydrate, davon Zucker“ je 100 g statt pro kleinem Riegel. Ein hoher Zucker- und geringer Ballaststoffanteil zeigt, dass der Begriff „Fitness“ nur Werbung ist.",
+        "criteria": [
+          "Zutatenreihenfolge als Prüfmittel eingesetzt",
+          "Vergleich pro 100 g statt bloßer Portionsangabe erklärt",
+          "Unterschied zwischen Werbebegriff und Nährwertbeleg gezeigt"
+        ]
+      },
+      "2": {
+        "prompt": "Manche Hersteller lehnen eine verpflichtende Nährwert-Ampel auf der Vorderseite ab, während Verbraucherschützer sie fordern. Wäge Wirksamkeit und Akzeptanz solcher Maßnahmen ab.",
+        "hints": [
+          "Warum wünschen sich Verbraucher schnelle Orientierung auf einen Blick?",
+          "Welche Einwände (z. B. Vereinfachung von Lebensmitteln, Kosten, Freiwilligkeit) werden diskutiert?"
+        ],
+        "model": "Eine farbige Kennzeichnung auf der Vorderseite erhöht die Alltagswirksamkeit von Verbraucherschutz erheblich, weil Käufer Produkte derselben Gruppe (etwa verschiedene Müslis) in Sekunden vergleichen können, statt lange Tabellen zu lesen. Kritiker wenden ein, eine Note vereinfache komplexe Lebensmittel zu stark oder setze Betriebe unter Druck. Gerade deshalb sorgt ein verbindlicher, einheitlich geregelter Standard statt freiwilliger Einzelsiegel für hohe Glaubwürdigkeit und fairen Vergleich.",
+        "criteria": [
+          "Nutzen für schnelle Orientierung der Verbraucher erklärt",
+          "Gegenargument (Vereinfachung/Umstellungsaufwand) fair dargestellt",
+          "Abgewogenes Urteil zu Verbindlichkeit vs. Freiwilligkeit gefällt"
+        ]
+      }
+    }
+  },
+  {
+    "id": "pg8-gesundheit-gesellschaft",
+    "lb": 9,
+    "title": "Gesundheit, soziale Herkunft und staatliche Vorsorge",
+    "period": "Profil 6.4/6.5 · Bewusst leben, sich gesund ernähren",
+    "intro": "Hängen Gesundheit und Geldbeutel zusammen? Was Statistiken zeigen und wie weit staatliche Gesundheitsvorsorge reichen kann und soll.",
+    "grundwissen": [
+      "Soziale Herkunft und Gesundheit",
+      "Gesundheitsvorsorge",
+      "Prävention",
+      "Eigenverantwortung und Staat"
+    ],
+    "paragraphs": [
+      "Gesundheit wirkt oft wie eine rein private Entscheidung: Wer sich mehr bewegt und besser isst, bleibt eben fitter. Einfache Gesundheitsstatistiken zeichnen jedoch ein differenzierteres Bild: Sie zeigen deutliche Zusammenhänge zwischen sozialer Lage – also Einkommen, Bildungsabschluss und Wohnverhältnissen – und der Gesundheit.",
+      "Warum ist das so? Familien mit geringem Einkommen oder Schichtarbeit haben oft weniger Zeit für gemeinsames Kochen, weniger Geld für teure frische Lebensmittel oder kostenpflichtige Sportvereine und wohnen häufiger an lauten Hauptstraßen mit wenigen Grünflächen. Auch das Wissen über Ernährung, Vorsorgeuntersuchungen und Hilfsangebote ist ungleich verteilt.",
+      "Hier setzt staatliche Gesundheitsvorsorge an: In Deutschland sichern gesetzliche Krankenkassen Schutzimpfungen, Vorsorgeuntersuchungen (wie die U- und J-Untersuchungen für Kinder und Jugendliche), Aufklärungskampagnen, Rauchverbote in öffentlichen Gebäuden und Standards für das Schulessen.",
+      "Gleichzeitig wird politisch über Grenzen gestritten: Wo endet sinnvolle staatliche Fürsorge (z. B. kostenlose Wasserspender, Sportanlagen, Aufklärung) und wo beginnt Bevormundung, wenn der Staat einzelne Lebensmittel durch hohe Steuern oder Verbote stark einschränken will?"
+    ],
+    "takeaway": "Gesundheitsstatistiken zeigen Zusammenhänge zwischen sozialer Herkunft und Gesundheitschancen; staatliche Vorsorge gleicht Nachteile teilweise aus, muss aber zwischen Schutz und persönlicher Freiheit abwägen.",
+    "sourceIds": [
+      "lehrplan",
+      "bpb-sozial",
+      "destatis-gesundheit",
+      "wiki-gesundheitsvorsorge"
+    ],
+    "figures": [
+      "gesundheitSozialStaat"
+    ],
+    "quiz": {
+      "question": "Was erklären Gesundheitsstatistiken über den Zusammenhang von sozialer Herkunft und Gesundheit?",
+      "answer": "Geringeres Einkommen, beengtes Wohnen und belastende Arbeitsbedingungen gehen im Durchschnitt häufiger mit gesundheitlichen Risiken einher.",
+      "wrong": [
+        "Die soziale Lebenslage hat statistisch überhaupt keinen Einfluss auf Ernährung, Bewegung oder Vorsorge.",
+        "Nur Menschen mit hohem Einkommen nehmen jemals kostenlose Schutzimpfungen in Anspruch."
+      ],
+      "explanation": "Zeitdruck, Wohnort, Geld für frische Kost und Zugang zu Sportangeboten beeinflussen alltägliche Gesundheitschancen messbar."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Staatliche Vorsorge und soziale Faktoren einordnen",
+      "instruction": "Ordne die vier Befunde und Maßnahmen rund um Gesundheit im gesellschaftlichen Zusammenhang zu.",
+      "categories": [
+        "Einfluss sozialer Lebenslage",
+        "Staatliche / gesellschaftliche Vorsorge",
+        "Grenze staatlicher Eingriffe"
+      ],
+      "entries": [
+        {
+          "text": "In einem Stadtteil mit viel Verkehr und wenig Parks bewegen sich Kinder im Schnitt weniger als in ruhigen Wohnlagen.",
+          "target": 0,
+          "feedback": "Wohnumfeld und Infrastruktur prägen alltägliche Bewegungsräume."
+        },
+        {
+          "text": "Die Krankenkasse übernimmt kostenlose Vorsorgeuntersuchungen und die Gemeinde stellt Trinkwasserbrunnen an Schulen auf.",
+          "target": 1,
+          "feedback": "Niedrigschwellige Angebote machen Prävention für alle zugänglich."
+        },
+        {
+          "text": "Bürgerinnen kritisieren die Idee, Erwachsenen jede einzelne Süßigkeit per Gesetz streng zu rationieren.",
+          "target": 2,
+          "feedback": "Persönliche Freiheitsrechte setzen direktem staatlichem Konsumzwang Grenzen."
+        },
+        {
+          "text": "Finanzschwache Familien erhalten über das Bildungs- und Teilhabepaket Zuschüsse für Sportvereine und Schulessen.",
+          "target": 1,
+          "feedback": "Gezielte Förderung baut soziale Hürden beim Zugang zu Gesundheit ab."
+        }
+      ],
+      "conclusion": "Wirksame Gesundheitspolitik verbessert Lebensverhältnisse und Information für alle, statt allein Menschen die Schuld zu geben oder Freiheit zu ersticken."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Nenne zwei Gründe, warum die soziale Herkunft Gesundheitschancen beeinflussen kann, und ein Beispiel, wie Schule oder Staat dem gegensteuern.",
+        "hints": [
+          "Denke an Zeit/Schichtarbeit, Einkommen/Wohnumfeld oder Zugang zu Informationen.",
+          "Nenne eine konkrete Maßnahme (z. B. kostenlose Schulangebote, Trinkwasser, Vereinszuschuss)."
+        ],
+        "model": "Erstens erschweren knappes Geld und beengtes Wohnen ohne Grünflächen oft gesunde Einkäufe und Bewegung; zweitens lassen Schichtarbeit oder geringer Zugang zu Beratung weniger Raum für Gesundheitsvorsorge. Staat und Schule können gegensteuern, indem sie etwa kostenloses Trinkwasser, bezuschusstes gesundes Schulessen, offene Sportangebote und gute Aufklärung für alle anbieten.",
+        "criteria": [
+          "Zwei nachvollziehbare soziale Einflussfaktoren auf Gesundheit benannt",
+          "Konkretes staatliches oder schulisches Gegenmittel erklärt",
+          "Zusammenhang zwischen Lebenslage und Gesundheitschancen getroffen"
+        ]
+      },
+      "2": {
+        "prompt": "Sollte der Staat stark gezuckerte Softdrinks deutlich höher besteuern, um Krankheiten vorzubeugen, oder bleibt das allein Sache jedes Einzelnen? Diskutiere beide Seiten.",
+        "hints": [
+          "Pro: Schutz vor Folgekosten für Krankenkassen und Anreiz für Hersteller, weniger Zucker einzusetzen.",
+          "Contra: Soziale Belastung ärmerer Käufer und Eingriff in persönliche Kaufentscheidungen."
+        ],
+        "model": "Für eine Zuckersteuer spricht, dass übermäßiger Zuckerkonsum enorme Folgekosten für das Gesundheitssystem verursacht und Hersteller in anderen Ländern nachweislich die Rezepturen gesenkt haben, um Steuern zu sparen. Dagegen spricht, dass eine Verbrauchssteuer Menschen mit niedrigem Einkommen prozentual stärker trifft und als staatliche Bevormundung empfunden werden kann. Ein Mittelweg kombiniert klare Kennzeichnung, gesunde Schulangebote und gezielte Anreize statt pauschaler Verbote.",
+        "criteria": [
+          "Überzeugendes Argument für staatliches Eingreifen (Gesundheitsschutz/Lenkung) genannt",
+          "Gegenargument (Freiheit/soziale Verteilungswirkung) fair berücksichtigt",
+          "Eigenständiges, abgewogenes Urteil formuliert"
+        ]
+      }
+    }
+  },
+  {
+    "id": "pg8-ernaehrungstrends-produktion",
+    "lb": 9,
+    "title": "Ernährungstrends sowie regionale und globale Lebensmittelproduktion",
+    "period": "Profil 6.4/6.5 · Bewusst leben, sich gesund ernähren",
+    "intro": "Fast Food, Slow Food, vegan oder regional vom Hof nebenan: Welche Folgen haben unsere Essgewohnheiten für Körper, Klima und Landwirtschaft?",
+    "grundwissen": [
+      "Ernährungstrends",
+      "Fast Food vs. Slow Food",
+      "Regionale Produktion",
+      "Globale Lieferketten"
+    ],
+    "paragraphs": [
+      "Wie Menschen essen, unterliegt sichtbaren Trends. Fast Food spart Zeit und bietet sofortigen Geschmack, enthält aber oft viel Fett, Salz, Zucker und Verpackungsmüll. Als Gegenbewegung entstand Slow Food: bewusstes, langsames Genießen mit saisonalen Zutaten und handwerklicher Herstellung.",
+      "Auch pflanzenbasierte Trends wie vegetarische (kein Fleisch/Fisch) oder vegane Ernährung (Verzicht auf alle tierischen Produkte) gewinnen bei Jugendlichen an Beliebtheit – meist aus Tierschutz-, Klima- oder Gesundheitsgründen. Eine rein vegane Ernährung kann den Körper gut versorgen, erfordert aber fundiertes Wissen und die gezielte Ergänzung kritischer Nährstoffe wie Vitamin B12.",
+      "Gleichzeitig stehen Verbraucher täglich im Spannungsfeld zwischen regionaler und globaler Lebensmittelproduktion. Erdbeeren im Januar aus Übersee verursachen lange Transportwege, hohen Wasserverbrauch in Trockengebieten und oft schlechte Arbeitsbedingungen – ermöglichen aber ganzjährige Vielfalt und Einkommen für Erzeuger im Ausland. Regionale Saisonprodukte wie bayerische Äpfel oder Kartoffeln aus dem Umland sparen Transportwege und stärken heimische Höfe, stehen aber nicht das ganze Jahr frisch zur Verfügung.",
+      "Bewusster Konsum bedeutet deshalb keine dogmatische Verbotsliste, sondern informiertes Abwägen nach Saison, Herkunft, Nährwert und eigenem Budget."
+    ],
+    "takeaway": "Ernährungstrends wie Fast Food, Slow Food und vegane Kost haben je eigene Stärken und Risiken; der Blick auf Saison und Herkunft hilft im Spannungsfeld von regionaler und globaler Produktion.",
+    "sourceIds": [
+      "lehrplan",
+      "wiki-veganismus",
+      "wiki-regional",
+      "dge-empfehlungen"
+    ],
+    "figures": [
+      "regionalGlobalTrends"
+    ],
+    "quiz": {
+      "question": "Was ist das Hauptkennzeichen von „Slow Food“ im Vergleich zu klassischem „Fast Food“?",
+      "answer": "Bewusstes Zubereiten und Genießen meist regionaler und saisonaler Zutaten unter Achtung fairer Erzeugerbedingungen.",
+      "wrong": [
+        "Das Verbot, jemals warmes Essen oder Gemüse zu verzehren.",
+        "Die Pflicht, alle Speisen über mindestens drei Kontinente hinweg einzukaufen."
+      ],
+      "explanation": "Slow Food entstand als bewusster Gegenentwurf zu standardisierter Schnellkost und betont Qualität, Regionalität und Zeit fürs Essen."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Trends und Produktionswege sachlich abwägen",
+      "instruction": "Ordne die vier Aussagen den passenden Vor- oder Nachteilen von Ernährungstrends und Produktionswegen zu.",
+      "categories": [
+        "Fast Food / hochverarbeitet",
+        "Pflanzenbasiert / vegan",
+        "Regional & saisonal",
+        "Globaler Handel"
+      ],
+      "entries": [
+        {
+          "text": "Schnell verfügbar und billig unterwegs, aber oft reich an Salz, gesättigten Fetten und Einwegverpackung.",
+          "target": 0,
+          "feedback": "Zeitersparnis steht hier oft geringerer Nährstoffdichte und viel Müll gegenüber."
+        },
+        {
+          "text": "Deutlich geringerer Flächen- und Treibhausgas-Fußabdruck; Vitamin B12 muss gezielt ergänzt werden.",
+          "target": 1,
+          "feedback": "Ökologische Vorteile erfordern bei rein veganer Kost gute Nährstoffplanung."
+        },
+        {
+          "text": "Kurze Lieferwege vom benachbarten Bauernhof im Herbst, aber im Winter nur Lagerware wie Äpfel oder Kohl.",
+          "target": 2,
+          "feedback": "Saisonalität spart Transportenergie, schränkt die ganzjährige Auswahl aber ein."
+        },
+        {
+          "text": "Produkte wie Kaffee, Kakao oder Bananen schaffen Arbeitsplätze in Herkunftsländern, brauchen aber faire Lieferketten.",
+          "target": 3,
+          "feedback": "Weltweiter Handel erweitert Vielfalt und Einkommen, verlangt aber faire Standards."
+        }
+      ],
+      "conclusion": "Jeder Weg hat eigene Vorzüge und Kosten; eine saisonale, überwiegend pflanzliche und fair gehandelte Mischung vereint Gesundheit und Verantwortung."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Vergleiche zwei aktuelle Ernährungstrends (z. B. Fast Food und vegane Ernährung oder Slow Food) jeweils anhand eines Vorteils und eines möglichen Risikos.",
+        "hints": [
+          "Denke bei jedem Trend sowohl an Alltagstauglichkeit/Gesundheit als auch an Umwelt oder Nährstoffe.",
+          "Bleibe sachlich und abwägend."
+        ],
+        "model": "Fast Food bietet im vollen Schulalltag schnelle Verfügbarkeit, birgt aber bei häufigem Verzehr das Risiko von Übergewicht und Nährstoffmangel durch viel Fett, Salz und Zucker. Eine vegane Ernährung schützt Tiere und Klima deutlich stärker, kann aber ohne gute Planung und Supplementierung zu einem Mangel an Vitamin B12, Eisen oder Eiweiß führen.",
+        "criteria": [
+          "Zwei Trends klar gegenübergestellt",
+          "Je mindestens einen Vorteil nachvollziehbar benannt",
+          "Je mindestens ein Risiko oder eine Grenze erklärt"
+        ]
+      },
+      "2": {
+        "prompt": "Ist „regional“ automatisch immer umweltfreundlicher als „global“? Prüfe das Beispiel: Ein heimischer Apfel aus mehrmonatiger Kühlhauslagerung im Mai gegen einen Apfel per Schiff aus der Ernte der Südhalbkugel.",
+        "hints": [
+          "Vergleiche Transportenergie (Schiff vs. Lkw/Flugzeug) mit wochenlangem Stromverbrauch von Kühlhäusern.",
+          "Schau auf die Saisonalität als zusätzlichen Faktor."
+        ],
+        "model": "Regional ist in den meisten Fällen sehr günstig, aber nicht automatisch zu jeder Jahreszeit unschlagbar. Während Erdbeeren per Flugzeug extrem klimaschädlich sind, verbraucht auch das monatelange Kühlen heimischer Äpfel bis ins späte Frühjahr viel Strom, sodass ein per Schiff transportierter frischer Apfel manchmal ähnliche Emissionswerte erreicht. Entscheidend ist vor allem, Obst und Gemüse möglichst in ihrer jeweiligen Saison einzukaufen und Flugware zu meiden.",
+        "criteria": [
+          "Energieverbrauch von Lagerung versus Transport differenziert betrachtet",
+          "Rolle des Transportmittels (Flugzeug vs. Schiff) und der Saison berücksichtigt",
+          "Reflektierte Antwort jenseits pauschaler Schlagworte gegeben"
+        ]
+      }
+    }
+  },
+  {
+    "id": "pg8-esskultur-berufe",
+    "lb": 9,
+    "title": "Esskultur im Wandel und Berufsfelder rund um Gesundheit und Ernährung",
+    "period": "Profil 6.4/6.5 · Bewusst leben, sich gesund ernähren",
+    "intro": "Warum isst man nicht überall und zu jeder Zeit gleich – und welche spannenden Berufe beraten, erforschen oder gestalten rund um Ernährung und Gesundheit?",
+    "grundwissen": [
+      "Esskultur",
+      "Historische & kulturelle Prägung",
+      "Gemeinsame Mahlzeit",
+      "Berufsfeld Gesundheit & Ernährung"
+    ],
+    "paragraphs": [
+      "Essen stillt nicht nur Hunger, sondern stiftet Gemeinschaft, Zugehörigkeit und Kultur. Wie, wann, was und mit wem gegessen wird, nennt man Esskultur – und sie ist stark von Geschichte, Religion, Klima und Arbeitswelt geprägt.",
+      "Ein Blick in die Geschichte verdeutlicht das: Noch vor hundert Jahren bestimmten Jahreszeiten, regionale Ernten und religiöse Fastenzeiten den Speiseplan bayerischer Familien; Fleisch war ein seltenes Sonntagsessen, und eine gemeinsame warme Mittagsmahlzeit aller Familienmitglieder galt als Regel. Heute verlagern Ganztagsschule, Berufstätigkeit und globale Migration das Essen oft in Kantinen, abendliche Familienrunden und vielfältige Küchen aus aller Welt.",
+      "Ebenso unterscheiden sich Esskulturen weltweit: Gemeinsame Schalen in manchen Regionen, Stäbchen in Ostasien oder Speisevorschriften im Judentum und Islam zeigen, dass Tischsitten erlernt sind und Respekt verdienen. Eine selbst geplante gemeinsame Klassenmahlzeit macht genau diese Vielfalt schmeckbar.",
+      "Rund um Gesundheit und Ernährung entsteht zudem ein breites Berufsfeld: Ernährungsberaterinnen und Diätassistenten helfen Patienten und Sportlern, Lebensmitteltechnologen und Kontrolleurinnen sichern Qualität in Betrieben und Behörden, Ökotrophologen forschen und beraten bei Krankenkassen oder Verbänden – Berufe zwischen Naturwissenschaft, Sozialem und Kommunikation."
+    ],
+    "takeaway": "Esskultur wandelt sich mit Geschichte, Technik und Kulturvielfalt; das Berufsfeld Gesundheit und Ernährung verbindet naturwissenschaftliches Fachwissen mit Beratung und Verbraucherschutz.",
+    "sourceIds": [
+      "lehrplan",
+      "wiki-esskultur",
+      "wiki-ernaehrungsberatung",
+      "wiki-lebensmittelsicherheit"
+    ],
+    "figures": [
+      "esskulturBerufe"
+    ],
+    "quiz": {
+      "question": "Was zeigt der historische und kulturelle Vergleich von Esskultur am deutlichsten?",
+      "answer": "Was als „normales“ Essen und gute Tischsitte gilt, hängt stark von Epoche, Umweltbedingungen, Arbeitsalltag und kulturellen Traditionen ab.",
+      "wrong": [
+        "Alle Kulturen der Welt haben zu jeder historischen Zeit genau dieselben drei Speisen zur selben Uhrzeit gegessen.",
+        "Berufstätigkeit und Schulzeiten haben keinerlei Einfluss darauf, wann und wie Familien essen."
+      ],
+      "explanation": "Verfügbarkeit von Lebensmitteln, Religionen, Technik (wie Kühlung) und Arbeitszeiten formen Essgewohnheiten ständig neu."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Esskultur und Berufsfelder rund um Gesundheit und Ernährung zuordnen",
+      "instruction": "Ordne die vier Aussagen den passenden Aspekten von Esskultur und Berufsorientierung zu.",
+      "categories": [
+        "Historische / kulturelle Esskultur",
+        "Wandel der Essgewohnheiten",
+        "Beratendes / sicherndes Berufsfeld"
+      ],
+      "entries": [
+        {
+          "text": "Früher bestimmte die eigene Ernte mit langen Wintermonaten aus Kartoffeln und Sauerkraut die tägliche Küche.",
+          "target": 0,
+          "feedback": "Klima, Vorratstechnik und Geschichte prägten frühere Speisepläne stark."
+        },
+        {
+          "text": "In vielen Familien verlagert sich das gemeinsame warme Essen durch Beruf und Ganztagsschule vom Mittag auf den Abend.",
+          "target": 1,
+          "feedback": "Veränderte Arbeits- und Schulrhythmen verändern Mahlzeitenstrukturen."
+        },
+        {
+          "text": "Eine Ökotrophologin berät bei einer Krankenkasse Jugendliche und Schulen über ausgewogene Ernährung.",
+          "target": 2,
+          "feedback": "Haushalts- und Ernährungswissenschaft verbindet Beratung und Gesundheitsförderung."
+        },
+        {
+          "text": "Ein Lebensmittelkontrolleur prüft Hygiene, Kühlketten und Kennzeichnungen in Bäckereien und Supermärkten.",
+          "target": 2,
+          "feedback": "Staatliche Kontrolle sichert Lebensmittelsicherheit im Alltag."
+        }
+      ],
+      "conclusion": "Wer Esskultur als wandelbares Kulturgut versteht, begegnet anderen Essgewohnheiten offen und erkennt vielfältige berufliche Chancen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Nenne zwei Ursachen, warum sich Esskultur historisch gewandelt hat, und beschreibe zwei unterschiedliche Berufe aus dem Bereich Gesundheit und Ernährung.",
+        "hints": [
+          "Denke bei den Ursachen an Vorratstechnik/Welthandel sowie an veränderte Arbeits- und Schulzeiten.",
+          "Wähle bei den Berufen ein beratendes und ein prüfendes oder forschendes Feld."
+        ],
+        "model": "Die Esskultur hat sich erstens durch Kühltechnik und globalen Handel gewandelt, sodass Lebensmittel ganzjährig verfügbar sind, und zweitens durch Berufstätigkeit und Ganztagsschulen, wodurch Kantinen und gemeinsame Abendessen wichtiger wurden. Im Berufsfeld beraten Diätassistentinnen Patientinnen bei Unverträglichkeiten oder Essstörungen, während Lebensmittelkontrolleure beim Gesundheits- oder Veterinäramt Hygiene und Kennzeichnung in Betrieben überprüfen.",
+        "criteria": [
+          "Zwei historische bzw. gesellschaftliche Ursachen des Wandels benannt",
+          "Zwei konkrete Berufe im Feld Gesundheit/Ernährung beschrieben",
+          "Unterschiedliche Tätigkeitsprofile erkennbar gemacht"
+        ]
+      },
+      "2": {
+        "prompt": "Für welche Mitschülerin oder welchen Mitschüler eignet sich ein beratender Beruf im Bereich Gesundheit und Ernährung – und welche Fähigkeiten sollte man dafür mitbringen?",
+        "hints": [
+          "Verbinde naturwissenschaftliches Interesse (Biologie/Chemie) mit sozialen Fähigkeiten (Zuhören, Erklären ohne Verurteilung).",
+          "Prüfe, warum reine Fachkenntnis ohne Kommunikationsfähigkeit bei Beratung nicht reicht."
+        ],
+        "model": "Ein beratender Beruf wie Ernährungsberatung oder Gesundheitsförderung passt besonders zu Jugendlichen, die sowohl Interesse an Biologie und Stoffwechsel mitbringen als auch gern mit Menschen sprechen. Fachwissen allein reicht nicht: Wer andere beim Ändern von Essgewohnheiten unterstützt, muss gut zuhören, kulturelle Unterschiede respektieren und realistische Schritte ohne Moralisieren vorschlagen können.",
+        "criteria": [
+          "Fachliche Voraussetzungen (Biologie/Ernährungslehre) genannt",
+          "Kommunikative und soziale Stärken (Empathie, Zuhören, Respekt) begründet",
+          "Realistische Berufseinschätzung abgeleitet"
+        ]
+      }
+    }
+  }
+]

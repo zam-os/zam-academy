@@ -1,0 +1,307 @@
+[
+  {
+    "id": "pg8-medien-beobachten",
+    "lb": 7,
+    "title": "Ein politisches Thema in verschiedenen Medien verfolgen",
+    "period": "Profil 6.2 · Politisches Geschehen mitverfolgen",
+    "intro": "Lokalzeitung, öffentlich-rechtliche Nachrichten, Boulevard oder Kurzvideo: Wie unterscheidet sich, was und wie sie über dasselbe Ereignis berichten?",
+    "grundwissen": [
+      "Medienbeobachtung",
+      "Multiperspektivität",
+      "Nachrichtenwert",
+      "Darstellungsformen"
+    ],
+    "paragraphs": [
+      "Wer sich nur über eine einzige Quelle – etwa eine App auf dem Smartphone – informiert, sieht Politik meist aus einem einzigen Blickwinkel. Um ein aktuelles Thema wirklich zu verstehen, hilft es, ein Ereignis über ein oder zwei Wochen in unterschiedlichen Medien parallel zu verfolgen und zu dokumentieren.",
+      "Ein Vergleich zeigt rasch Unterschiede in Fokus und Position: Eine Regionalzeitung fragt nach Folgen für den eigenen Landkreis und interviewt den Bürgermeister oder betroffene Eltern. Überregionale Qualitätsmedien und öffentlich-rechtliche Sender ordnen Gesetzgebung, Kosten und Gegenargumente ein. Boulevardmedien suchen oft zugespitzte Überschriften und starke Emotionen, während Kurzvideos in sozialen Netzwerken komplexe Streitfragen häufig auf einen 30-Sekunden-Spruch reduzieren.",
+      "Auch die journalistischen Darstellungsformen unterscheiden sich bewusst: Eine Nachricht oder Meldung berichtet knapp die W-Fragen ohne eigene Wertung. Ein Bericht oder eine Reportage liefert Hintergründe und Eindrücke vor Ort. Kommentar oder Glosse hingegen geben erkennbar die persönliche Meinung der Autorin wieder.",
+      "Wer über mehrere Tage ein kleines Medientagebuch oder einen Wochenbericht führt, erkennt sofort, welche Argumente sich wiederholen, welche Perspektiven fehlen und wie sich ein Konflikt weiterentwickelt."
+    ],
+    "takeaway": "Ein politisches Thema über mehrere Tage in verschiedenen Medien zu dokumentieren deckt unterschiedliche Perspektiven, Nachrichtenwerte und Textsorten auf.",
+    "sourceIds": [
+      "lehrplan",
+      "wiki-darstellungsform",
+      "wiki-nachricht",
+      "wiki-nachrichtenwert"
+    ],
+    "figures": [
+      "medienLandschaftVergleich"
+    ],
+    "lab": "medienVergleich",
+    "quiz": {
+      "question": "Warum ist es sinnvoll, ein politisches Thema über einen Zeitraum hinweg in mehreren verschiedenen Medien zu beobachten?",
+      "answer": "Weil erst der Vergleich zeigt, welche Fakten gesichert sind, welche Standpunkte vorkommen und welche Perspektiven ein einzelnes Medium weglässt.",
+      "wrong": [
+        "Weil jedes Medium in Deutschland am Ende der Woche ohnehin exakt denselben Wortlaut abdruckt.",
+        "Weil man nur durch tägliches Zählen von Likes erkennt, welches Gesetz rechtmäßig ist."
+      ],
+      "explanation": "Verschiedene Redaktionen setzen unterschiedliche Schwerpunkte und vertreten verschiedene Blickwinkel; Langzeitbeobachtung verhindert vorschnelle Urteile."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Journalistische Darstellungsformen sicher unterscheiden",
+      "instruction": "Ordne die vier kurzen Textausschnitte zu einer Schulbus-Debatte der passenden Darstellungsform zu.",
+      "categories": [
+        "Nachricht / Meldung",
+        "Bericht / Reportage",
+        "Kommentar (Meinung)",
+        "Zugespitzter Social-Post"
+      ],
+      "entries": [
+        {
+          "text": "„Der Kreistag hat gestern mit 34 zu 18 Stimmen einen zusätzlichen Morgenbus ab 1. September beschlossen.“",
+          "target": 0,
+          "feedback": "Knappe, sachliche Information über Wer, Was, Wann und Ergebnis ist eine Nachricht."
+        },
+        {
+          "text": "„Um 7:15 Uhr drängen 65 Schülerinnen auf den Steig – wir haben die Linie drei Tage lang mit Fahrgästen begleitet.“",
+          "target": 1,
+          "feedback": "Szenische Beobachtung vor Ort mit Hintergründen kennzeichnet eine Reportage/Bericht."
+        },
+        {
+          "text": "„Meiner Meinung nach kommt die Entscheidung viel zu spät und vernachlässigt kleinere Dörfer weiterhin.“",
+          "target": 2,
+          "feedback": "Persönliche Bewertung und begründetes Urteil machen einen Kommentar aus."
+        },
+        {
+          "text": "„UNGELÖSTES BUS-CHAOS! Schüler im Stich gelassen – teil dieses Video!“",
+          "target": 3,
+          "feedback": "Großbuchstaben, Empörung und Aufruf zum Teilen zielen auf Reichweite statt Einordnung."
+        }
+      ],
+      "conclusion": "Wer Information (Nachricht/Bericht) und Meinung (Kommentar) auseinanderhält, lässt sich von lauten Überschriften nicht steuern."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Vergleiche im Medien-Labor mindestens drei Medienformate zum selben Thema und erkläre, welchen Mehrwert der Vergleich gegenüber einem einzelnen Kanal bietet.",
+        "hints": [
+          "Achte auf Unterschiede zwischen Regionalbezug, Fakten-Anteil und Zuspitzung.",
+          "Begründe, welche zwei Formate sich für ein ausgewogenes Bild gut ergänzen."
+        ],
+        "model": "Während ein kurzer Social-Media-Clip ein Thema emotional zuspitzt, liefert die Lokalzeitung konkrete Auswirkungen vor Ort und Betroffenenstimmen. Eine überregionale Nachrichtensendung ergänzt den rechtlichen und finanziellen Rahmen sowie Gegenpositionen. Erst die Kombination mehrerer Medien zeigt sowohl die Faktenlage als auch die Bandbreite der Argumente.",
+        "criteria": [
+          "Drei Medienformate aus dem Labor zutreffend verglichen",
+          "Unterschiede bei Fakten, Perspektive oder Tonfall benannt",
+          "Mehrwert der Medienvielfalt begründet"
+        ]
+      },
+      "2": {
+        "prompt": "Entwirf ein klares Raster für einen eigenen Wochenbericht, mit dem eure Klasse ein aktuelles Thema sieben Tage lang verfolgen kann.",
+        "hints": [
+          "Welche Spalten braucht die Dokumentation (Datum, Medium, Textsorte, Kernaussage, offene Fragen)?",
+          "Wie stellt ihr sicher, dass mindestens zwei gegensätzliche Positionen erfasst werden?"
+        ],
+        "model": "Ein gutes Wochenraster enthält sechs Spalten: 1. Datum und Ereignisstand, 2. Quelle und Medienart (z. B. Lokalzeitung, ÖRR, Fachportal), 3. Textsorte (Nachricht vs. Kommentar), 4. Zentrales Argument oder neue Fakten, 5. Vertretene Interessengruppe und 6. Offene Fragen/Gegenposition. So sieht man am Ende der Woche sowohl den zeitlichen Verlauf als auch die Konfliktlinien auf einen Blick.",
+        "criteria": [
+          "Sinnvolle Dokumentationskriterien (Quelle, Textsorte, Position, Verlauf) festgelegt",
+          "Trennung von Fakten und Meinungen eingebaut",
+          "Berücksichtigung mehrerer Positionen sichergestellt"
+        ]
+      }
+    }
+  },
+  {
+    "id": "pg8-berichterstattung-pruefen",
+    "lb": 7,
+    "title": "Qualität, Seriosität und Tendenzen in der Berichterstattung prüfen",
+    "period": "Profil 6.2 · Politisches Geschehen mitverfolgen",
+    "intro": "Fake News, einseitige Darstellung oder sauberer Journalismus? Mit klaren Prüffragen aus Deutsch und Politik erkennst du verlässliche Berichte.",
+    "grundwissen": [
+      "Seriosität",
+      "Journalistische Sorgfalt",
+      "Tendenz",
+      "Quellenprüfung"
+    ],
+    "paragraphs": [
+      "Im Deutschunterricht hast du bereits gelernt, pragmatische Texte nach Aufbau, Sprache und Absicht zu untersuchen. Genau dieses Handwerkszeug brauchst du in Politik und Gesellschaft, um die Qualität und Seriosität politischer Berichterstattung zu prüfen.",
+      "Seriöser Journalismus orientiert sich an Regeln wie dem deutschen Pressekodex: Fakten werden vor der Veröffentlichung an mindestens zwei unabhängigen Quellen geprüft, Meinungen klar von Berichten getrennt, Zitate nicht aus dem Zusammenhang gerissen und Fehler offen berichtigt. Außerdem kommen in Streitfragen verschiedene Seiten zu Wort.",
+      "Eine „Tendenz“ bedeutet noch keine Lüge: Jede Zeitung oder Sendung darf eine erkennbare Grundhaltung haben und Kommentare veröffentlichen. Unseriös wird ein Beitrag erst dann, wenn Belege erfunden oder verschwiegen werden, wenn Zahlen ohne Bezugsgröße dramatisiert werden („um 100 % gestiegen“, wenn es von 1 auf 2 Fälle ging) oder wenn ein eindeutiges Impressum samt Autorinnen fehlt.",
+      "Mit einem vierstufigen Prüfcheck entlarvst du Schwächen schnell: Wer steckt dahinter? Welche Belege werden genannt? Wie wertend ist die Sprache? Und welche Gegenseite fehlt?"
+    ],
+    "kriterien": {
+      "title": "Qualitätscheck für politische Berichterstattung",
+      "steps": [
+        "Urheber & Impressum: Ist klar erkennbar, welche Redaktion oder Person verantwortlich zeichnet?",
+        "Belege & Quellen: Werden konkrete Studien, Dokumente oder benannte Zeugen nachprüfbar zitiert?",
+        "Sprache & Trennung: Bleibt der Bericht sachlich, oder vermischt er reißerische Wertungen mit Fakten?",
+        "Ausgewogenheit: Werden Gegenargumente und betroffene Perspektiven fair dargestellt?"
+      ]
+    },
+    "takeaway": "Seriöse Berichterstattung belegt Aussagen überprüfbar, trennt Information von Meinung, legt Redaktion und Fehler offen und lässt unterschiedliche Positionen zu Wort kommen.",
+    "sourceIds": [
+      "lehrplan",
+      "wiki-pressekodex",
+      "gg-art5"
+    ],
+    "figures": [
+      "seriositaetCheck"
+    ],
+    "quiz": {
+      "question": "Woran erkennst du einen Verstoß gegen journalistische Sorgfaltspflichten am ehesten?",
+      "answer": "Aussagen stützen sich auf anonyme Gerüchte ohne Beleg, Gegenstimmen fehlen völlig und Meinungsurteile werden als reine Tatsachen verkauft.",
+      "wrong": [
+        "Der Artikel trennt den sachlichen Nachrichtenbericht räumlich deutlich von einem danebenstehenden Kommentar.",
+        "Die Redaktion veröffentlicht eine Richtigstellung, weil ihr beim ersten Text ein Zahlenfehler unterlaufen ist."
+      ],
+      "explanation": "Trennung von Bericht und Kommentar sowie transparente Korrekturen sind gerade Zeichen von Qualitätsjournalismus."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Qualitätsmerkmale und Warnsignale prüfen",
+      "instruction": "Beurteile die vier Fundstücke aus verschiedenen Artikeln und Online-Beiträgen.",
+      "categories": [
+        "Merkmal seriöser Berichterstattung",
+        "Warnsignal für mangelnde Seriosität"
+      ],
+      "entries": [
+        {
+          "text": "Am Ende des Berichts sind die konkrete Statistikbehörde mit Erhebungsjahr und beide Sprecher der Streitparteien verlinkt.",
+          "target": 0,
+          "feedback": "Nachprüfbare Primärquellen und Zweiseitigkeit sprechen für hohe Qualität."
+        },
+        {
+          "text": "Eine unbekannte Seite ohne Impressum behauptet: „Alle Experten sind sich einig – die geheime Wahrheit wird verschwiegen!“",
+          "target": 1,
+          "feedback": "Fehlendes Impressum, Pauschalbehauptungen und Verschwörungston sind klassische Warnsignale."
+        },
+        {
+          "text": "Die Zeitung kennzeichnet einen meinungsstarken Text deutlich mit Foto der Autorin und der Rubrik „Kommentar“.",
+          "target": 0,
+          "feedback": "Transparenz über Meinungstexte respektiert die Leserinnen."
+        },
+        {
+          "text": "Ein Beitrag zeigt ein dramatisches Foto aus einem anderen Land von 2016 und behauptet, es stamme vom gestrigen Vorfall vor Ort.",
+          "target": 1,
+          "feedback": "Aus dem Kontext gerissene Bilder verfälschen die Faktenlage."
+        }
+      ],
+      "conclusion": "Mit Impressumsprüfung, Quellencheck, Sprachanalyse und Perspektiven-Check beurteilst du politische Meldungen eigenständig und sicher."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Wende mindestens drei Schritte des Qualitätschecks auf folgende kurze Meldung an: „Skandal im Rathaus: Wie ein Insider verrät, werden Jugendgelder heimlich gestrichen – teilen, bevor es gelöscht wird!“",
+        "hints": [
+          "Prüfe Urheber/Belege, Sprache/Trennung und Ausgewogenheit.",
+          "Benenne konkret, welche Informationen für eine seriöse Prüfung fehlen."
+        ],
+        "model": "Erstens fehlen bei „ein Insider“ nachprüfbare Belege und ein konkretes Ratsdokument. Zweitens nutzt die Meldung reißerische Sprache („Skandal“, „heimlich“) und drängt mit Angst vor Löschung zum ungeprüften Teilen statt zur Sachprüfung. Drittens fehlt jede Stellungnahme der Gemeinde oder des Jugendbeirats. Ohne Haushaltsbeschluss und Gegenperspektive ist die Meldung unseriös.",
+        "criteria": [
+          "Mindestens drei Prüfschritte des Kriterienkatalogs angewendet",
+          "Fehlende Belege und Manipulation durch Alarmismus erkannt",
+          "Konkrete fehlende Gegeninformationen benannt"
+        ]
+      },
+      "2": {
+        "prompt": "Warum schützt die Presse- und Meinungsfreiheit (Art. 5 GG) auch scharfe oder unbequeme Meinungen – und warum bleibt sorgfältige Recherche trotzdem unverzichtbar?",
+        "hints": [
+          "Erkläre, wovor Art. 5 GG Bürger und Medien bewahrt (keine Zensur, freie Kontrolle der Macht).",
+          "Unterscheide zwischen geschützter Meinung und bewusst falschen Tatsachenbehauptungen."
+        ],
+        "model": "Artikel 5 des Grundgesetzes schützt freie Meinungsäußerung und unabhängige Presse ohne staatliche Zensur, weil eine Demokratie Kritik an Regierenden und Kontroversen braucht. Gerade deshalb tragen Medien Verantwortung: Meinungen dürfen scharf sein, aber behauptete Tatsachen müssen sorgfältig recherchiert sein und dürfen nicht erfunden oder verleumderisch werden, damit sich Bürger verlässlich informieren können.",
+        "criteria": [
+          "Schutzzweck von Art. 5 GG für die Demokratie erklärt",
+          "Unterschied zwischen freier Meinung und sorgfältiger Tatsachenrecherche benannt",
+          "Verantwortung seriöser Medien nachvollziehbar begründet"
+        ]
+      }
+    }
+  },
+  {
+    "id": "pg8-umfrage-diskussion",
+    "lb": 7,
+    "title": "Informationen erheben, Standpunkt präsentieren und fair diskutieren",
+    "period": "Profil 6.2 · Politisches Geschehen mitverfolgen",
+    "intro": "Von der eigenen kleinen Umfrage bis zur freien Rede und fairen Diskussion: Wie du eigene Argumente mit Daten stützt und im Gespräch überprüfst.",
+    "grundwissen": [
+      "Umfrageauswertung",
+      "Stichprobe",
+      "Präsentationstechnik",
+      "Diskussionsregeln"
+    ],
+    "paragraphs": [
+      "Wer in einer Diskussion ernst genommen werden will, braucht mehr als ein Bauchgefühl: Eigene kleine Erhebungen – etwa eine Umfrage auf dem Schulhof oder ein kurzes Experteninterview – liefern konkrete Hinweise für einen begründeten Standpunkt.",
+      "Bei der Auswertung einer Umfrage zählen Sorgfalt und Ehrlichkeit: Eine kleine Stichprobe von 20 Personen erlaubt keine Aussage über „alle Jugendlichen in Bayern“, zeigt aber Stimmungen in einer Jahrgangsstufe. Achte auf verständliche Prozentanteile neben absoluten Zahlen (z. B. 12 von 20 = 60 %) und vermeide suggestive Fragen, die eine bestimmte Antwort nahelegen.",
+      "Für die freie Rede und Präsentation gilt die Dreischritt-Struktur: Klare Ausgangsfrage nennen, zentrale Ergebnisse mit einem sauberen Diagramm oder einer Schautafel belegen und daraus einen begründeten eigenen Standpunkt samt möglichem Gegeneinwand ableiten.",
+      "In der anschließenden Klassendiskussion helfen feste Kommunikationsregeln – ausreden lassen, auf das Argument des Vorredners eingehen, Ich-Perspektive wahren und neue Gesichtspunkte zulassen –, um im Austausch die eigene Position zu schärfen oder bei guten Gegengründen weiterzuentwickeln."
+    ],
+    "takeaway": "Sorgfältig erhobene Informationen und klare Präsentation untermauern den eigenen Standpunkt; faire Kommunikationsregeln machen Diskussionen zum gemeinsamen Erkenntnisgewinn.",
+    "sourceIds": [
+      "lehrplan",
+      "wiki-meinungsforschung",
+      "wiki-gfk"
+    ],
+    "figures": [
+      "umfragePraesentation"
+    ],
+    "lab": "umfrageAuswerter",
+    "quiz": {
+      "question": "Was ist beim Auswerten einer kleinen Schülerumfrage (z. B. n = 25) besonders wichtig?",
+      "answer": "Die Größe und Zusammensetzung der befragten Gruppe offen zu nennen und keine pauschalen Aussagen für ganze Bundesländer daraus abzuleiten.",
+      "wrong": [
+        "Nur die Antworten zu zählen, die zur eigenen Lieblingsmeinung passen, und den Rest zu streichen.",
+        "Bei 20 Befragten ausschließlich mit Prozentzahlen zu werben, damit die kleine Zahl nicht auffällt."
+      ],
+      "explanation": "Transparenz über Stichprobe, absolute Zahlen und Prozentwerte macht eine kleine Schulumfrage seriös und überprüfbar."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Gute Erhebung & faire Diskussion von Fehlern trennen",
+      "instruction": "Ordne die vier Vorgehensweisen beim Erheben und Diskutieren politischer Fragen ein.",
+      "categories": [
+        "Methodisch sauber / fair",
+        "Verzerrend / unfair"
+      ],
+      "entries": [
+        {
+          "text": "Du fragst 40 Schülerinnen aus zwei Jahrgängen neutral nach Wunschzeiten für die Schulbibliothek und nennst 40 als Stichprobe.",
+          "target": 0,
+          "feedback": "Neutrale Frage und offene Angabe der Stichprobengröße sichern Verlässlichkeit."
+        },
+        {
+          "text": "Deine Umfragefrage lautet: „Findest du auch, dass die völlig überteuerte Mensa endlich billiger werden muss?“",
+          "target": 1,
+          "feedback": "Eine Suggestivfrage drängt Befragte in eine Richtung und verfälscht das Ergebnis."
+        },
+        {
+          "text": "In der Debatte greifst du das stärkste Gegenargument deiner Vorrednerin direkt auf, bevor du deinen Vorschlag erklärst.",
+          "target": 0,
+          "feedback": "Bezugnahme auf andere zeigt aktives Zuhören und stärkt das eigene Argument."
+        },
+        {
+          "text": "Du unterbrichst einen ruhigeren Mitschüler ständig mit Zwischenrufen und lachst über seine Notizen.",
+          "target": 1,
+          "feedback": "Verletzung von Kommunikationsregeln verhindert offenen Meinungsaustausch."
+        }
+      ],
+      "conclusion": "Saubere Datenerhebung und respektvolle Diskussionskultur gehören zusammen: Sie machen Argumente stark, ohne andere kleinzureden."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Prüfe im Umfrage-Auswerter eine kleine und eine größere Stichprobe samt Suggestivfrage-Schalter und erkläre, warum Prozentangaben ohne Stichprobengröße in die Irre führen können.",
+        "hints": [
+          "Beobachte im Labor, wie unterschiedlich sich bereits zwei einzelne Personen bei einer Stichprobe von 10 gegenüber 40 auf den Prozentbalken auswirken.",
+          "Nenne den Nutzen sauberer Achsbeschriftung und Transparenz."
+        ],
+        "model": "Bei nur 10 Befragten verschiebt schon eine einzelne Person den Balken um ganze 10 Prozentpunkte – Ergebnisse schwanken stark zufällig. Wenn eine Präsentation nur „70 % sind dafür!“ zeigt, verschweigt sie, wie unsicher eine winzige Gruppe ist. Zusammen mit einer Suggestivfrage entsteht ein stark verzerrtes Bild. Seriöse Auswertung nennt stets sowohl die absolute Zahl als auch die Prozentanteile.",
+        "criteria": [
+          "Effekt der Stichprobengröße anhand des Modells erklärt",
+          "Verzerrung durch Suggestivfragen benannt",
+          "Forderung nach Angabe absoluter und prozentualer Zahlen begründet"
+        ]
+      },
+      "2": {
+        "prompt": "Nach einer Klassendiskussion sagt jemand: „Reden bringt doch nichts, wenn am Ende nicht alle derselben Meinung sind.“ Nimm begründet Stellung.",
+        "hints": [
+          "Was gewinnt man in einer fairen Debatte auch dann, wenn Positionen verschieden bleiben?",
+          "Denke an Verständnis für Gegengründe und Überprüfung der eigenen Haltung."
+        ],
+        "model": "Eine Diskussion ist kein Misserfolg, wenn am Ende unterschiedliche Meinungen bestehen bleiben. Im Austausch prüfst du, ob deine eigenen Argumente tragen, entdeckst blinde Flecken und lernst nachvollziehen, warum andere Menschen anders gewichten. Selbst wenn kein sofortiger Konsens entsteht, bereitet respektvolles Debattieren tragfähige Kompromisse für spätere Entscheidungen vor.",
+        "criteria": [
+          "Sinn von Diskussionen jenseits sofortiger Einigkeit erklärt",
+          "Erkenntnisgewinn (Selbstprüfung, Perspektivenwechsel) herausgearbeitet",
+          "Zusammenhang zu demokratischer Kompromissfindung hergestellt"
+        ]
+      }
+    }
+  }
+]

@@ -1,0 +1,3816 @@
+{
+  "$schema": "https://zam.app/schemas/v1/kvt-tile.json",
+  "tile_id": "zam-academy:politik-gymnasium-8",
+  "version": "2026.11.0",
+  "title": "Politik und Gesellschaft 8 Gymnasium (ZAM Academy)",
+  "description": "Politik und Gesellschaft 8 Gymnasium Bayern (SWG, LehrplanPLUS): Jugendphase, Werte und Normen, Vorbilder und Influencer, Politik vor Ort, grenzüberschreitende Zusammenarbeit und Profilbereiche 6.1–6.5. 44 Lektionen und 88 Karten.",
+  "publisher": "ZAM Academy",
+  "sources": [
+    {
+      "uri": "https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/8/pug",
+      "label": "ISB Bayern · LehrplanPLUS Politik und Gesellschaft 8 (SWG)",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://www.lehrplanplus.bayern.de/fachprofil/gymnasium/pug",
+      "label": "ISB Bayern · Fachprofil Politik und Gesellschaft Gymnasium",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://www.bpb.de/kurz-knapp/lexika/politiklexikon/",
+      "label": "bpb · Das Politiklexikon",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://www.bpb.de/kurz-knapp/zahlen-und-fakten/soziale-situation-in-deutschland/",
+      "label": "bpb · Die soziale Situation in Deutschland",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://www.shell.de/ueber-uns/initiativen/shell-jugendstudie.html",
+      "label": "Shell · Shell Jugendstudie 2024",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://www.gesetze-im-internet.de/gg/art_1.html",
+      "label": "Grundgesetz · Art. 1 (Menschenwürde, Grundrechte)",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://www.gesetze-im-internet.de/gg/art_5.html",
+      "label": "Grundgesetz · Art. 5 (Meinungs- und Pressefreiheit)",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://www.gesetze-im-internet.de/gg/art_28.html",
+      "label": "Grundgesetz · Art. 28 (Kommunale Selbstverwaltung)",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://www.gesetze-bayern.de/Content/Document/BayVerf",
+      "label": "Bayerische Verfassung · amtlicher Text",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://www.gesetze-bayern.de/Content/Document/BayGO",
+      "label": "Bayerische Gemeindeordnung (GO) · amtlicher Text",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://www.dge.de/gesunde-ernaehrung/gut-essen-und-trinken/dge-ernaehrungskreis/",
+      "label": "DGE · DGE-Ernährungskreis",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://www.dge.de/gesunde-ernaehrung/gut-essen-und-trinken/dge-empfehlungen/",
+      "label": "DGE · Gut essen und trinken – die DGE-Empfehlungen",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://www.verbraucherzentrale.de/wissen/lebensmittel",
+      "label": "Verbraucherzentrale · Lebensmittel",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Gesundheit/_inhalt.html",
+      "label": "Statistisches Bundesamt · Gesundheit",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://klexikon.zum.de/wiki/Demokratie",
+      "label": "Klexikon · Demokratie",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://klexikon.zum.de/wiki/Europ%C3%A4ische_Union",
+      "label": "Klexikon · Europäische Union",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Jugend",
+      "label": "Wikipedia · Jugend",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Jugendforschung",
+      "label": "Wikipedia · Jugendforschung",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Lebensphase",
+      "label": "Wikipedia · Lebensphase",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Identit%C3%A4t",
+      "label": "Wikipedia · Identität",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Peergroup",
+      "label": "Wikipedia · Peergroup",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Jugendkultur",
+      "label": "Wikipedia · Jugendkultur",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Soziale_Medien",
+      "label": "Wikipedia · Soziale Medien",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Sozialisation",
+      "label": "Wikipedia · Sozialisation",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Prim%C3%A4rgruppe",
+      "label": "Wikipedia · Primärgruppe",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Sekund%C3%A4rgruppe",
+      "label": "Wikipedia · Sekundärgruppe",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Soziale_Norm",
+      "label": "Wikipedia · Soziale Norm",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Sanktion",
+      "label": "Wikipedia · Sanktion",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Konflikt",
+      "label": "Wikipedia · Konflikt",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Gewaltfreie_Kommunikation",
+      "label": "Wikipedia · Gewaltfreie Kommunikation",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Fairness",
+      "label": "Wikipedia · Fairness",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Toleranz",
+      "label": "Wikipedia · Toleranz",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Personenkult",
+      "label": "Wikipedia · Personenkult",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Vorbild",
+      "label": "Wikipedia · Vorbild",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Idol",
+      "label": "Wikipedia · Idol",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Influencer",
+      "label": "Wikipedia · Influencer",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Parasoziale_Interaktion",
+      "label": "Wikipedia · Parasoziale Interaktion",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Staat",
+      "label": "Wikipedia · Staat",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Gewaltmonopol_des_Staates",
+      "label": "Wikipedia · Gewaltmonopol des Staates",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Verfassung",
+      "label": "Wikipedia · Verfassung",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Politik",
+      "label": "Wikipedia · Politik",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Politikzyklus",
+      "label": "Wikipedia · Politikzyklus",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Kompromiss",
+      "label": "Wikipedia · Kompromiss",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Minderheitenschutz",
+      "label": "Wikipedia · Minderheitenschutz",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Gemeinde_(Deutschland)",
+      "label": "Wikipedia · Gemeinde (Deutschland)",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Kommunalpolitik",
+      "label": "Wikipedia · Kommunalpolitik",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/B%C3%BCrgerbeteiligung",
+      "label": "Wikipedia · Bürgerbeteiligung",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Ehrenamt",
+      "label": "Wikipedia · Ehrenamt",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Verband_(Recht)",
+      "label": "Wikipedia · Verband (Recht)",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/St%C3%A4dtepartnerschaft",
+      "label": "Wikipedia · Gemeindepartnerschaft",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Sch%C3%BCleraustausch",
+      "label": "Wikipedia · Schüleraustausch",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Europ%C3%A4ische_Union",
+      "label": "Wikipedia · Europäische Union",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Grenz%C3%BCberschreitende_Zusammenarbeit",
+      "label": "Wikipedia · Grenzüberschreitende Zusammenarbeit",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Euregio",
+      "label": "Wikipedia · Euregio",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Heimat",
+      "label": "Wikipedia · Heimat",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Brauchtum",
+      "label": "Wikipedia · Brauch",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Sozialer_Wandel",
+      "label": "Wikipedia · Sozialer Wandel",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Demografie",
+      "label": "Wikipedia · Demografie",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Journalistische_Darstellungsform",
+      "label": "Wikipedia · Journalistische Darstellungsform",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Nachricht",
+      "label": "Wikipedia · Nachricht",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Pressekodex",
+      "label": "Wikipedia · Pressekodex",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Nachrichtenwert",
+      "label": "Wikipedia · Nachrichtenwert",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Meinungsforschung",
+      "label": "Wikipedia · Meinungsforschung",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Soziogramm",
+      "label": "Wikipedia · Soziogramm",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Sozialer_Status",
+      "label": "Wikipedia · Sozialer Status",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/F%C3%BChrungsstil",
+      "label": "Wikipedia · Führungsstil",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Rollenkonflikt",
+      "label": "Wikipedia · Rollenkonflikt",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Teamarbeit",
+      "label": "Wikipedia · Teamwork",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Vorurteil",
+      "label": "Wikipedia · Vorurteil",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Diskriminierung",
+      "label": "Wikipedia · Diskriminierung",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Stanford-Prison-Experiment",
+      "label": "Wikipedia · Stanford-Prison-Experiment",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Menschenw%C3%BCrde",
+      "label": "Wikipedia · Menschenwürde",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Mobbing",
+      "label": "Wikipedia · Mobbing",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Massenpsychologie",
+      "label": "Wikipedia · Massenpsychologie",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Gesundheit",
+      "label": "Wikipedia · Gesundheit",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Gesundheitsf%C3%B6rderung",
+      "label": "Wikipedia · Gesundheitsförderung",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Gesundheitsvorsorge",
+      "label": "Wikipedia · Gesundheitsvorsorge",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Ern%C3%A4hrungsphysiologie",
+      "label": "Wikipedia · Ernährungsphysiologie",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/N%C3%A4hrstoff",
+      "label": "Wikipedia · Nährstoff",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Essst%C3%B6rung",
+      "label": "Wikipedia · Essstörung",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Verbraucherschutz",
+      "label": "Wikipedia · Verbraucherschutz",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Lebensmittelrecht",
+      "label": "Wikipedia · Lebensmittelrecht",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Lebensmittelsicherheit",
+      "label": "Wikipedia · Lebensmittelsicherheit",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Veganismus",
+      "label": "Wikipedia · Veganismus",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Regionale_Lebensmittel",
+      "label": "Wikipedia · Regionale Lebensmittel",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Esskultur",
+      "label": "Wikipedia · Esskultur",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Ern%C3%A4hrungsberatung",
+      "label": "Wikipedia · Ernährungsberatung",
+      "checked": "2026-11-26"
+    }
+  ],
+  "atoms": [
+    {
+      "id": "01M8CWSMH5GKKEFGHKEMCEFWD1",
+      "atom_uri": "urn:zam:atom:01M8CWSMH5GKKEFGHKEMCEFWD1",
+      "namespace": "zam-academy-politik-gymnasium-8",
+      "slug": "pg8-jugend-werte",
+      "title": "Jugend heute: Einstellungen, Werte und Zukunftserwartungen",
+      "domain": "pug/lb1",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-jugend-werte",
+      "prerequisites": [],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "politik-gymnasium-8",
+          "topic_code": "lb1",
+          "topic_title": "Die Jugendphase bewusst erleben und gestalten"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "pug",
+          "track": "SWG",
+          "topic_code": "lb1",
+          "topic_title": "Die Jugendphase bewusst erleben und gestalten",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8CWSMH6Z43580KB9A8X35TS",
+          "slug": "pg8-jugend-werte-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Was unterscheidet Werte von konkreten Einstellungen?",
+          "concept": "Werte sind grundlegende Leitvorstellungen; Einstellungen bewerten konkrete Fragen.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-jugend-werte",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Werte sind grundlegende Leitvorstellungen; Einstellungen bewerten konkrete Fragen.",
+              "Einstellungen sind dauerhafte Gesetze; Werte sind spontane Stimmungen."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Werte gelten nur für Erwachsene; Einstellungen nur für Jugendliche.",
+              "reason": "Verwechselt Lebensphasen mit der begrifflichen Ebene von Wert und Haltung."
+            },
+            {
+              "text": "Beide Begriffe meinen stets das genaue Einkommen einer Altersgruppe.",
+              "reason": "Verwechselt wirtschaftliche Kennzahlen mit sozialwissenschaftlichen Haltungen."
+            }
+          ]
+        },
+        {
+          "id": "01M8CWSMH7SR5Y22FBV8H4V6V4",
+          "slug": "pg8-jugend-werte-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Warum widersprechen repräsentative Jugendstudien oft pauschalen Klischees aus sozialen Netzwerken?",
+          "concept": "Repräsentative Studien befragen systematisch viele unterschiedliche Jugendliche, während Algorithmen laute Einzelfälle hervorheben und Werte wie Freundschaft oder Familie verdecken.",
+          "sample_solution": "Repräsentative Studien befragen systematisch viele unterschiedliche Jugendliche, während Algorithmen laute Einzelfälle hervorheben und Werte wie Freundschaft oder Familie verdecken.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-jugend-werte"
+        }
+      ]
+    },
+    {
+      "id": "01M8CWSMH8XTSN19S9YWM2SNDC",
+      "atom_uri": "urn:zam:atom:01M8CWSMH8XTSN19S9YWM2SNDC",
+      "namespace": "zam-academy-politik-gymnasium-8",
+      "slug": "pg8-lebensphase-jugend",
+      "title": "Jugend als Lebensphase im Generationenvergleich",
+      "domain": "pug/lb1",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-lebensphase-jugend",
+      "prerequisites": [],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "politik-gymnasium-8",
+          "topic_code": "lb1",
+          "topic_title": "Die Jugendphase bewusst erleben und gestalten"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "pug",
+          "track": "SWG",
+          "topic_code": "lb1",
+          "topic_title": "Die Jugendphase bewusst erleben und gestalten",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8CWSMH9E2K5J3AAR3NVNCS8",
+          "slug": "pg8-lebensphase-jugend-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Warum wird Jugend in der Soziologie als Übergangsphase bezeichnet?",
+          "concept": "Sie verbindet den Abschied von kindlicher Abhängigkeit mit schrittweiser Selbstständigkeit.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-lebensphase-jugend",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Sie verbindet den Abschied von kindlicher Abhängigkeit mit schrittweiser Selbstständigkeit.",
+              "Sie dauert bei allen Menschen exakt vom vierzehnten bis zum achtzehnten Geburtstag."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Sie beschreibt allein den Zeitraum zwischen Einschulung und erster Klassenfahrt.",
+              "reason": "Verengt Jugend auf einen kurzen Grundschul- und Unterstufenabschnitt."
+            },
+            {
+              "text": "Sie bezeichnet ausschließlich den Beginn der gesetzlichen Rentenversicherung.",
+              "reason": "Verwechselt Jugend mit dem späten Erwerbsleben."
+            }
+          ]
+        },
+        {
+          "id": "01M8CWSMHAZXC2AMAQH1NWP2C3",
+          "slug": "pg8-lebensphase-jugend-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Wie hat sich die Dauer der Jugendphase im Vergleich zur Großelterngeneration verändert und warum?",
+          "concept": "Sie hat sich deutlich verlängert, weil längere Schul-, Ausbildungs- und Studienzeiten den Eintritt in Beruf und eigenen Haushalt nach hinten verschieben.",
+          "sample_solution": "Sie hat sich deutlich verlängert, weil längere Schul-, Ausbildungs- und Studienzeiten den Eintritt in Beruf und eigenen Haushalt nach hinten verschieben.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-lebensphase-jugend"
+        }
+      ]
+    },
+    {
+      "id": "01M8CWSMHBGSEFT94P1TKM9FWH",
+      "atom_uri": "urn:zam:atom:01M8CWSMHBGSEFT94P1TKM9FWH",
+      "namespace": "zam-academy-politik-gymnasium-8",
+      "slug": "pg8-identitaet-peergroups",
+      "title": "Identitätsfindung und die Rolle der Peergroups",
+      "domain": "pug/lb1",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-identitaet-peergroups",
+      "prerequisites": [
+        {
+          "atom_id": "01M8CWSMH5GKKEFGHKEMCEFWD1",
+          "type": "soft",
+          "rationale": "Baut auf Grundlagen aus „Jugend heute: Einstellungen, Werte und Zukunftserwartungen“ auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "politik-gymnasium-8",
+          "topic_code": "lb1",
+          "topic_title": "Die Jugendphase bewusst erleben und gestalten"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "pug",
+          "track": "SWG",
+          "topic_code": "lb1",
+          "topic_title": "Die Jugendphase bewusst erleben und gestalten",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8CWSMHCEZ4DK5MQ2Z7GK01J",
+          "slug": "pg8-identitaet-peergroups-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Welche Rolle spielt eine Peergroup bei der Identitätsfindung?",
+          "concept": "Gleichaltrige ermöglichen Ausprobieren auf Augenhöhe, können aber auch Anpassungsdruck ausüben.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-identitaet-peergroups",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Gleichaltrige ermöglichen Ausprobieren auf Augenhöhe, können aber auch Anpassungsdruck ausüben.",
+              "Gleichaltrige übernehmen ab dreizehn Jahren jede rechtliche Entscheidung der Eltern."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Eine Peergroup besteht ausschließlich aus Lehrkräften und Vereinstutorinnen.",
+              "reason": "Verwechselt Gleichaltrige mit erwachsenen Bezugspersonen."
+            },
+            {
+              "text": "In einer Peergroup gibt es grundsätzlich niemals ungeschriebene Gruppennormen.",
+              "reason": "Übersieht den sozialen Erwartungsdruck innerhalb von Cliquen."
+            }
+          ]
+        },
+        {
+          "id": "01M8CWSMHDM5W051ZDMH5HPT21",
+          "slug": "pg8-identitaet-peergroups-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Wie erkennst du, wann der Einfluss einer Peergroup von hilfreichem Rückhalt in problematischen Anpassungsdruck kippt?",
+          "concept": "Rückhalt lässt Widerspruch und eigene Interessen zu; Anpassungsdruck droht bei Abweichung mit Spott, Gerüchten oder Ausschluss aus der Gruppe.",
+          "sample_solution": "Rückhalt lässt Widerspruch und eigene Interessen zu; Anpassungsdruck droht bei Abweichung mit Spott, Gerüchten oder Ausschluss aus der Gruppe.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-identitaet-peergroups"
+        }
+      ]
+    },
+    {
+      "id": "01M8CWSMHEG1MNY3HCESNCF6G3",
+      "atom_uri": "urn:zam:atom:01M8CWSMHEG1MNY3HCESNCF6G3",
+      "namespace": "zam-academy-politik-gymnasium-8",
+      "slug": "pg8-jugendkulturen",
+      "title": "Jugendkulturen früher und heute vergleichen",
+      "domain": "pug/lb1",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-jugendkulturen",
+      "prerequisites": [
+        {
+          "atom_id": "01M8CWSMHBGSEFT94P1TKM9FWH",
+          "type": "soft",
+          "rationale": "Baut auf Grundlagen aus „Identitätsfindung und die Rolle der Peergroups“ auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "politik-gymnasium-8",
+          "topic_code": "lb1",
+          "topic_title": "Die Jugendphase bewusst erleben und gestalten"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "pug",
+          "track": "SWG",
+          "topic_code": "lb1",
+          "topic_title": "Die Jugendphase bewusst erleben und gestalten",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8CWSMHFVT7VK77BDG3F23RR",
+          "slug": "pg8-jugendkulturen-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Wozu dienen Musik, Kleidung und Sprache in einer Jugendkultur?",
+          "concept": "Sie schaffen Zugehörigkeit nach innen und Abgrenzung gegenüber anderen Gruppen.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-jugendkulturen",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Sie schaffen Zugehörigkeit nach innen und Abgrenzung gegenüber anderen Gruppen.",
+              "Sie werden vom Kultusministerium für alle Schularten verbindlich vorgeschrieben."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Sie verhindern bei allen Beteiligten jegliche persönliche Weiterentwicklung.",
+              "reason": "Verkennt die identitätsstiftende Funktion jugendkultureller Ausdrucksmittel."
+            },
+            {
+              "text": "Sie existieren erst seit der Erfindung des Smartphones im einundzwanzigsten Jahrhundert.",
+              "reason": "Übersieht historische Jugendkulturen wie Halbstarke oder Punk."
+            }
+          ]
+        },
+        {
+          "id": "01M8CWSMHGRZ9KTQ35TV65633E",
+          "slug": "pg8-jugendkulturen-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Nach welchen vier Kriterien lassen sich historische und digitale Jugendkulturen sachlich vergleichen?",
+          "concept": "Man vergleicht erstens Ausdrucksmittel und Stil, zweitens Haltung und Werte, drittens Verbreitungswege (lokal vs. digital) sowie viertens Offenheit und Kommerzialisierung.",
+          "sample_solution": "Man vergleicht erstens Ausdrucksmittel und Stil, zweitens Haltung und Werte, drittens Verbreitungswege (lokal vs. digital) sowie viertens Offenheit und Kommerzialisierung.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-jugendkulturen"
+        }
+      ]
+    },
+    {
+      "id": "01M8CWSMHHC96P1H2FPMDQ6MHN",
+      "atom_uri": "urn:zam:atom:01M8CWSMHHC96P1H2FPMDQ6MHN",
+      "namespace": "zam-academy-politik-gymnasium-8",
+      "slug": "pg8-jugend-medien",
+      "title": "Jugend, Internet und soziale Netzwerke",
+      "domain": "pug/lb1",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-jugend-medien",
+      "prerequisites": [
+        {
+          "atom_id": "01M8CWSMH5GKKEFGHKEMCEFWD1",
+          "type": "soft",
+          "rationale": "Baut auf Grundlagen aus „Jugend heute: Einstellungen, Werte und Zukunftserwartungen“ auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "politik-gymnasium-8",
+          "topic_code": "lb1",
+          "topic_title": "Die Jugendphase bewusst erleben und gestalten"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "pug",
+          "track": "SWG",
+          "topic_code": "lb1",
+          "topic_title": "Die Jugendphase bewusst erleben und gestalten",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8CWSMHJ3FV64B4GPP78AKMR",
+          "slug": "pg8-jugend-medien-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Nach welchem Ziel wählen Algorithmen Inhalte in sozialen Netzwerken meist aus?",
+          "concept": "Sie maximieren Verweildauer und Reaktionen der Nutzenden für Werbeerlöse.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-jugend-medien",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Sie maximieren Verweildauer und Reaktionen der Nutzenden für Werbeerlöse.",
+              "Sie prüfen jeden Beitrag vorab auf schulische Ausgewogenheit und Neutralität."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Sie zeigen ausschließlich ruhige Beiträge ohne Emotionen oder Zuspitzung.",
+              "reason": "Verkennt die Aufmerksamkeitslogik kommerzieller Plattformen."
+            },
+            {
+              "text": "Sie sortieren Meldungen streng nach der Länge der verwendeten Quellenliste.",
+              "reason": "Unterstellt Plattformen ein rein wissenschaftliches Qualitätsfilter."
+            }
+          ]
+        },
+        {
+          "id": "01M8CWSMHKZEHZK4EJQEFR2CZ2",
+          "slug": "pg8-jugend-medien-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Welche drei Kriterien helfen Jugendlichen, ihr eigenes Nutzungsverhalten in sozialen Medien kritisch zu prüfen?",
+          "concept": "Man prüft die tägliche Nutzungsdauer, den Nutzungszweck (aktives Lernen/Austausch vs. passives Scrollen) sowie die Wirkung auf Schlaf, Konzentration und Stimmung.",
+          "sample_solution": "Man prüft die tägliche Nutzungsdauer, den Nutzungszweck (aktives Lernen/Austausch vs. passives Scrollen) sowie die Wirkung auf Schlaf, Konzentration und Stimmung.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-jugend-medien"
+        }
+      ]
+    },
+    {
+      "id": "01M8CWSMHM48BT670D1RYKA7QV",
+      "atom_uri": "urn:zam:atom:01M8CWSMHM48BT670D1RYKA7QV",
+      "namespace": "zam-academy-politik-gymnasium-8",
+      "slug": "pg8-sozialisation",
+      "title": "Bezugspersonen, Gruppen und Sozialisationsinstanzen",
+      "domain": "pug/lb2",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-sozialisation",
+      "prerequisites": [],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "politik-gymnasium-8",
+          "topic_code": "lb2",
+          "topic_title": "Gesellschaftliche Grundwerte und soziale Normen reflektieren"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "pug",
+          "track": "SWG",
+          "topic_code": "lb2",
+          "topic_title": "Gesellschaftliche Grundwerte und soziale Normen reflektieren",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8CWSMHN1885DJ88M8B8551W",
+          "slug": "pg8-sozialisation-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Was bezeichnet der Begriff „Sozialisationsinstanz“?",
+          "concept": "Personen und Einrichtungen wie Familie, Schule oder Peergroup, die das Hineinwachsen prägen.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-sozialisation",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Personen und Einrichtungen wie Familie, Schule oder Peergroup, die das Hineinwachsen prägen.",
+              "Ausschließlich eine Abteilung des Amtsgerichts für Verkehrsordnungswidrigkeiten."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Eine einmalige ärztliche Untersuchung vor der Einschulung in die Grundschule.",
+              "reason": "Verwechselt soziale Prägung mit einer medizinischen Einzeluntersuchung."
+            },
+            {
+              "text": "Ein technisches Gerät zum Messen von Bildschirmzeiten am Smartphone.",
+              "reason": "Verwechselt soziologische Akteure mit technischer Software."
+            }
+          ]
+        },
+        {
+          "id": "01M8CWSMHP2YVCTBNZP3BPR2TE",
+          "slug": "pg8-sozialisation-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Warum gilt Sozialisation nicht als bloßes passives Geformtwerden durch die Umwelt?",
+          "concept": "Menschen nehmen Impulse aus Familie, Schule, Peergroup und Medien auf, setzen sich aber zunehmend kritisch damit auseinander und gestalten ihr Umfeld aktiv mit.",
+          "sample_solution": "Menschen nehmen Impulse aus Familie, Schule, Peergroup und Medien auf, setzen sich aber zunehmend kritisch damit auseinander und gestalten ihr Umfeld aktiv mit.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-sozialisation"
+        }
+      ]
+    },
+    {
+      "id": "01M8CWSMHQ6JAW33ZY6KYT1TKG",
+      "atom_uri": "urn:zam:atom:01M8CWSMHQ6JAW33ZY6KYT1TKG",
+      "namespace": "zam-academy-politik-gymnasium-8",
+      "slug": "pg8-primaergruppen",
+      "title": "Primäre soziale Gruppen: Normen, Strukturen und Sanktionen",
+      "domain": "pug/lb2",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-primaergruppen",
+      "prerequisites": [
+        {
+          "atom_id": "01M8CWSMHM48BT670D1RYKA7QV",
+          "type": "soft",
+          "rationale": "Baut auf Grundlagen aus „Bezugspersonen, Gruppen und Sozialisationsinstanzen“ auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "politik-gymnasium-8",
+          "topic_code": "lb2",
+          "topic_title": "Gesellschaftliche Grundwerte und soziale Normen reflektieren"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "pug",
+          "track": "SWG",
+          "topic_code": "lb2",
+          "topic_title": "Gesellschaftliche Grundwerte und soziale Normen reflektieren",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8CWSMHRATX7V5RC1AHRTMRT",
+          "slug": "pg8-primaergruppen-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Wodurch kennzeichnet sich eine primäre soziale Gruppe wie die Familie?",
+          "concept": "Durch überschaubare Größe sowie enge, persönliche und dauerhafte Beziehungen.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-primaergruppen",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Durch überschaubare Größe sowie enge, persönliche und dauerhafte Beziehungen.",
+              "Durch rein geschäftliche Verträge ohne jede persönliche Kenntnis der Mitglieder."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Durch schriftliche Wahlprogramme und feste Mitgliedsbeiträge für jeden.",
+              "reason": "Verwechselt Primärgruppen mit großen zweckgerichteten Verbänden oder Parteien."
+            },
+            {
+              "text": "Durch völlige Abwesenheit von Normen, Erwartungen oder Reaktionen auf Fehler.",
+              "reason": "Übersieht informelle Normen und Sanktionen in engen Gruppen."
+            }
+          ]
+        },
+        {
+          "id": "01M8CWSMHSCMQP86X9VFNVETPW",
+          "slug": "pg8-primaergruppen-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Wie arbeiten Normen, innere Strukturen sowie positive und negative Sanktionen in einer Primärgruppe zusammen?",
+          "concept": "Normen legen erwartetes Verhalten fest, Strukturen verteilen Einflussrollen, und positive Sanktionen (Lob) bzw. negative Sanktionen (Tadel, Ausschluss) sichern die Einhaltung.",
+          "sample_solution": "Normen legen erwartetes Verhalten fest, Strukturen verteilen Einflussrollen, und positive Sanktionen (Lob) bzw. negative Sanktionen (Tadel, Ausschluss) sichern die Einhaltung.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-primaergruppen"
+        }
+      ]
+    },
+    {
+      "id": "01M8CWSMHTAE6F75RJSK08C9FT",
+      "atom_uri": "urn:zam:atom:01M8CWSMHTAE6F75RJSK08C9FT",
+      "namespace": "zam-academy-politik-gymnasium-8",
+      "slug": "pg8-gruppenverhalten",
+      "title": "Gruppenförderliches und gruppenschädliches Verhalten",
+      "domain": "pug/lb2",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-gruppenverhalten",
+      "prerequisites": [
+        {
+          "atom_id": "01M8CWSMHQ6JAW33ZY6KYT1TKG",
+          "type": "soft",
+          "rationale": "Baut auf Grundlagen aus „Primäre soziale Gruppen: Normen, Strukturen und Sanktionen“ auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "politik-gymnasium-8",
+          "topic_code": "lb2",
+          "topic_title": "Gesellschaftliche Grundwerte und soziale Normen reflektieren"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "pug",
+          "track": "SWG",
+          "topic_code": "lb2",
+          "topic_title": "Gesellschaftliche Grundwerte und soziale Normen reflektieren",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8CWSMHVRAV20XAKSADSHFZW",
+          "slug": "pg8-gruppenverhalten-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Woran erkennt man sachliche Kritik als gruppenförderliches Verhalten?",
+          "concept": "Sie benennt konkrete Sachfehler und Vorschläge, ohne die Person abzuwerten.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-gruppenverhalten",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Sie benennt konkrete Sachfehler und Vorschläge, ohne die Person abzuwerten.",
+              "Sie verschweigt jedes Problem aus Angst vor unangenehmen Gesprächen."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Sie macht Fehler vor allen anderen im Gruppenchat verächtlich.",
+              "reason": "Verwechselt sachliche Rückmeldung mit persönlicher Bloßstellung."
+            },
+            {
+              "text": "Sie überträgt die gesamte Arbeit schweigend auf ein einzelnes Mitglied.",
+              "reason": "Verwechselt Kritikfähigkeit mit unfairem Trittbrettfahren."
+            }
+          ]
+        },
+        {
+          "id": "01M8CWSMHWF40FC799Q1CQSR2N",
+          "slug": "pg8-gruppenverhalten-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Nenne drei Kriterien für gruppenförderliches Verhalten und erkläre, warum sie eine Klasse stärken.",
+          "concept": "Verlässlichkeit bei Absprachen, aktives Zuhören sowie sachliche statt persönliche Kritik schaffen Vertrauen und ermöglichen faire Zusammenarbeit aller Mitglieder.",
+          "sample_solution": "Verlässlichkeit bei Absprachen, aktives Zuhören sowie sachliche statt persönliche Kritik schaffen Vertrauen und ermöglichen faire Zusammenarbeit aller Mitglieder.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-gruppenverhalten"
+        }
+      ]
+    },
+    {
+      "id": "01M8CWSMHX5FYZV94GD79ST5HT",
+      "atom_uri": "urn:zam:atom:01M8CWSMHX5FYZV94GD79ST5HT",
+      "namespace": "zam-academy-politik-gymnasium-8",
+      "slug": "pg8-konflikte",
+      "title": "Konflikte analysieren und gewaltfrei regeln",
+      "domain": "pug/lb2",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-konflikte",
+      "prerequisites": [
+        {
+          "atom_id": "01M8CWSMHTAE6F75RJSK08C9FT",
+          "type": "soft",
+          "rationale": "Baut auf Grundlagen aus „Gruppenförderliches und gruppenschädliches Verhalten“ auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "politik-gymnasium-8",
+          "topic_code": "lb2",
+          "topic_title": "Gesellschaftliche Grundwerte und soziale Normen reflektieren"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "pug",
+          "track": "SWG",
+          "topic_code": "lb2",
+          "topic_title": "Gesellschaftliche Grundwerte und soziale Normen reflektieren",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8CWSMHY0BBYEGZVEC79C4HD",
+          "slug": "pg8-konflikte-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Warum trennt die Konfliktanalyse zwischen geäußerter Position und Interesse?",
+          "concept": "Weil hinter scheinbar unvereinbaren Forderungen oft verhandelbare Bedürfnisse liegen.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-konflikte",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Weil hinter scheinbar unvereinbaren Forderungen oft verhandelbare Bedürfnisse liegen.",
+              "Weil persönliche Bedürfnisse in Gesprächen grundsätzlich verschwiegen werden müssen."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Weil allein die körperliche Stärke bestimmt, wessen Position gültig ist.",
+              "reason": "Verwechselt Rechts- und Interessenklärung mit dem Recht des Stärkeren."
+            },
+            {
+              "text": "Weil Konflikte immer erst durch ein gerichtliches Urteil enden können.",
+              "reason": "Übersieht außergerichtliche Einigung, Kompromiss und Mediation."
+            }
+          ]
+        },
+        {
+          "id": "01M8CWSMHZ8SEAS2S7J9587PY2",
+          "slug": "pg8-konflikte-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Mit welchen vier Prüfschritten analysierst du einen Konflikt, um ihn gewaltfrei zu regeln?",
+          "concept": "Man klärt erstens Entstehung und Auslöser, zweitens Interessen der Beteiligten, drittens Rechts- und Machtpositionen und wählt viertens Ich-Botschaften, Kompromiss oder Mediation.",
+          "sample_solution": "Man klärt erstens Entstehung und Auslöser, zweitens Interessen der Beteiligten, drittens Rechts- und Machtpositionen und wählt viertens Ich-Botschaften, Kompromiss oder Mediation.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-konflikte"
+        }
+      ]
+    },
+    {
+      "id": "01M8CWSMJ01GXCRFKTT0G7NTQN",
+      "atom_uri": "urn:zam:atom:01M8CWSMJ01GXCRFKTT0G7NTQN",
+      "namespace": "zam-academy-politik-gymnasium-8",
+      "slug": "pg8-fairness-schule",
+      "title": "Fairness, Teamfähigkeit, Toleranz und Regeln in der Schule",
+      "domain": "pug/lb2",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-fairness-schule",
+      "prerequisites": [
+        {
+          "atom_id": "01M8CWSMHX5FYZV94GD79ST5HT",
+          "type": "soft",
+          "rationale": "Baut auf Grundlagen aus „Konflikte analysieren und gewaltfrei regeln“ auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "politik-gymnasium-8",
+          "topic_code": "lb2",
+          "topic_title": "Gesellschaftliche Grundwerte und soziale Normen reflektieren"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "pug",
+          "track": "SWG",
+          "topic_code": "lb2",
+          "topic_title": "Gesellschaftliche Grundwerte und soziale Normen reflektieren",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8CWSMJ1QZXX6HT5NXNCEFT2",
+          "slug": "pg8-fairness-schule-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Wo liegt die demokratische Grenze von Toleranz im Schulalltag?",
+          "concept": "Dort, wo Handlungen die Würde, Sicherheit oder Rechte anderer Menschen verletzen.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-fairness-schule",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Dort, wo Handlungen die Würde, Sicherheit oder Rechte anderer Menschen verletzen.",
+              "Schon dort, wo jemand eine andere Musikrichtung oder Sportart bevorzugt."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Toleranz verlangt, auch systematisches Mobbing widerspruchslos zu dulden.",
+              "reason": "Verwechselt Toleranz mit Gleichgültigkeit gegenüber Übergriffen."
+            },
+            {
+              "text": "Toleranz gilt ausschließlich gegenüber Personen mit identischen Meinungen.",
+              "reason": "Verkehrt den Sinn von Toleranz gegenüber Vielfalt ins Gegenteil."
+            }
+          ]
+        },
+        {
+          "id": "01M8CWSMJ242YGKRG485TRBPPY",
+          "slug": "pg8-fairness-schule-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Wie tragen Fairness, Teamfähigkeit und Toleranz konkret zu einer lernfähigen Klassengemeinschaft bei?",
+          "concept": "Fairness sichert gleiche Chancen und Regeltreue, Teamfähigkeit verbindet Stärken bei gemeinsamer Arbeit, und Toleranz schützt Vielfalt innerhalb klarer Würdegrenzen.",
+          "sample_solution": "Fairness sichert gleiche Chancen und Regeltreue, Teamfähigkeit verbindet Stärken bei gemeinsamer Arbeit, und Toleranz schützt Vielfalt innerhalb klarer Würdegrenzen.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-fairness-schule"
+        }
+      ]
+    },
+    {
+      "id": "01M8CWSMJ38Y7KKVWAA6HW81SV",
+      "atom_uri": "urn:zam:atom:01M8CWSMJ38Y7KKVWAA6HW81SV",
+      "namespace": "zam-academy-politik-gymnasium-8",
+      "slug": "pg8-popularitaet-personenkult",
+      "title": "Popularität verstehen: Wertschätzung vs. Personenkult",
+      "domain": "pug/lb3",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-popularitaet-personenkult",
+      "prerequisites": [],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "politik-gymnasium-8",
+          "topic_code": "lb3",
+          "topic_title": "Vorbilder, Idole und Influencer hinterfragen"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "pug",
+          "track": "SWG",
+          "topic_code": "lb3",
+          "topic_title": "Vorbilder, Idole und Influencer hinterfragen",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8CWSMJ4Q4GKAE2CX4R8KH5V",
+          "slug": "pg8-popularitaet-personenkult-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Was trennt sachliche Wertschätzung klar vom Personenkult?",
+          "concept": "Wertschätzung anerkennt konkrete Leistungen, lässt aber Kritik und Widerspruch zu.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-popularitaet-personenkult",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Wertschätzung anerkennt konkrete Leistungen, lässt aber Kritik und Widerspruch zu.",
+              "Wertschätzung lehnt jede öffentliche Anerkennung von Talenten grundsätzlich ab."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Personenkult entsteht nur, wenn ein Konzert mehr als tausend Gäste hat.",
+              "reason": "Verwechselt Publikumsgröße mit blinder Unfehlbarkeitsverehrung."
+            },
+            {
+              "text": "Beim Personenkult diskutieren Anhänger besonders kritisch über Fehler des Idols.",
+              "reason": "Beschreibt genau das Gegenteil von kritiklosem Personenkult."
+            }
+          ]
+        },
+        {
+          "id": "01M8CWSMJ5B1TQRJYQYXV000XT",
+          "slug": "pg8-popularitaet-personenkult-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Warum gefährdet Personenkult in der Politik das Funktionieren einer Demokratie?",
+          "concept": "Personenkult erklärt eine Führungsperson für unfehlbar, brandmarkt Kritik als Illoyalität und untergräbt Kontrolle durch Medien, Opposition und freie Wahlen.",
+          "sample_solution": "Personenkult erklärt eine Führungsperson für unfehlbar, brandmarkt Kritik als Illoyalität und untergräbt Kontrolle durch Medien, Opposition und freie Wahlen.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-popularitaet-personenkult"
+        }
+      ]
+    },
+    {
+      "id": "01M8CWSMJ688WBR9XXDCMMZK52",
+      "atom_uri": "urn:zam:atom:01M8CWSMJ688WBR9XXDCMMZK52",
+      "namespace": "zam-academy-politik-gymnasium-8",
+      "slug": "pg8-vorbilder-influencer",
+      "title": "Funktionen von Vorbildern, Idolen und Influencern",
+      "domain": "pug/lb3",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-vorbilder-influencer",
+      "prerequisites": [
+        {
+          "atom_id": "01M8CWSMJ38Y7KKVWAA6HW81SV",
+          "type": "soft",
+          "rationale": "Baut auf Grundlagen aus „Popularität verstehen: Wertschätzung vs. Personenkult“ auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "politik-gymnasium-8",
+          "topic_code": "lb3",
+          "topic_title": "Vorbilder, Idole und Influencer hinterfragen"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "pug",
+          "track": "SWG",
+          "topic_code": "lb3",
+          "topic_title": "Vorbilder, Idole und Influencer hinterfragen",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8CWSMJ7VQ86Z7YEJHBRDA6C",
+          "slug": "pg8-vorbilder-influencer-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Was unterscheidet Influencer typischerweise von persönlichen Vorbildern?",
+          "concept": "Influencer nutzen Plattformreichweite oft für Werbung und eigene Geschäftsmodelle.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-vorbilder-influencer",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Influencer nutzen Plattformreichweite oft für Werbung und eigene Geschäftsmodelle.",
+              "Influencer dürfen in sozialen Netzwerken niemals persönliche Tipps weitergeben."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Persönliche Vorbilder sind immer Schauspielerinnen aus großen Kinofilmen.",
+              "reason": "Verwechselt erreichbare Alltagsvorbilder mit medialen Idolen."
+            },
+            {
+              "text": "Influencer verzichten grundsätzlich auf jede Form von Produktkooperation.",
+              "reason": "Übersieht das wirtschaftliche Geschäftsmodell vieler Kanäle."
+            }
+          ]
+        },
+        {
+          "id": "01M8CWSMJ8K7FW25DS2Q5M0D25",
+          "slug": "pg8-vorbilder-influencer-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Inwiefern können Vorbilder Orientierung bieten, und wo sollte man Idole und Influencer kritisch abwägen?",
+          "concept": "Vorbilder zeigen erreichbares Handeln im Alltag; bei Idolen und Influencern muss man Überhöhung sowie kommerzielle Interessen hinter scheinbarer Nähe mitdenken.",
+          "sample_solution": "Vorbilder zeigen erreichbares Handeln im Alltag; bei Idolen und Influencern muss man Überhöhung sowie kommerzielle Interessen hinter scheinbarer Nähe mitdenken.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-vorbilder-influencer"
+        }
+      ]
+    },
+    {
+      "id": "01M8CWSMJ9GSDW47P0CFTKDY7W",
+      "atom_uri": "urn:zam:atom:01M8CWSMJ9GSDW47P0CFTKDY7W",
+      "namespace": "zam-academy-politik-gymnasium-8",
+      "slug": "pg8-medien-inszenierung",
+      "title": "Wie Medien Identifikationsfiguren produzieren und vermarkten",
+      "domain": "pug/lb3",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-medien-inszenierung",
+      "prerequisites": [
+        {
+          "atom_id": "01M8CWSMJ688WBR9XXDCMMZK52",
+          "type": "soft",
+          "rationale": "Baut auf Grundlagen aus „Funktionen von Vorbildern, Idolen und Influencern“ auf."
+        },
+        {
+          "atom_id": "01M8CWSMHHC96P1H2FPMDQ6MHN",
+          "type": "soft",
+          "rationale": "Baut auf Grundlagen aus „Jugend, Internet und soziale Netzwerke“ auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "politik-gymnasium-8",
+          "topic_code": "lb3",
+          "topic_title": "Vorbilder, Idole und Influencer hinterfragen"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "pug",
+          "track": "SWG",
+          "topic_code": "lb3",
+          "topic_title": "Vorbilder, Idole und Influencer hinterfragen",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8CWSMJAMKW9GZ7HQ9H3NCYF",
+          "slug": "pg8-medien-inszenierung-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Was bedeutet „parasoziale Interaktion“ in Medien und sozialen Netzwerken?",
+          "concept": "Das einseitige Gefühl persönlicher Nähe zu einer Medienfigur ohne echte Gegenseitigkeit.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-medien-inszenierung",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Das einseitige Gefühl persönlicher Nähe zu einer Medienfigur ohne echte Gegenseitigkeit.",
+              "Ein regelmäßiges Vereinsgespräch zweier befreundeter Nachbarn vor Ort."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Eine gesetzliche Pflicht zur Kennzeichnung politischer Wahlplakate.",
+              "reason": "Verwechselt Beziehungspsychologie mit Wahlwerberecht."
+            },
+            {
+              "text": "Ein technisches Verfahren zum automatischen Schneiden von Kinofilmen.",
+              "reason": "Verwechselt psychologische Zuschauerbindung mit Videoschnitt."
+            }
+          ]
+        },
+        {
+          "id": "01M8CWSMJB0PCQRZT4KJQNMKAA",
+          "slug": "pg8-medien-inszenierung-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Mit welchen vier Kriterien lassen sich Inszenierungsstrategien hinter Identifikationsfiguren durchschauen?",
+          "concept": "Man prüft Machart (Licht, Schnitt, Musik), Beziehungssignale (parasoziale Ansprache), verdeckte kommerzielle oder politische Interessen sowie bewusst Ausgeblendetes.",
+          "sample_solution": "Man prüft Machart (Licht, Schnitt, Musik), Beziehungssignale (parasoziale Ansprache), verdeckte kommerzielle oder politische Interessen sowie bewusst Ausgeblendetes.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-medien-inszenierung"
+        }
+      ]
+    },
+    {
+      "id": "01M8CWSMJCDA0BP0C1F8NH7842",
+      "atom_uri": "urn:zam:atom:01M8CWSMJCDA0BP0C1F8NH7842",
+      "namespace": "zam-academy-politik-gymnasium-8",
+      "slug": "pg8-folgen-popularitaet",
+      "title": "Folgen von Popularität: Öffentlichkeit, Privatheit und Mythisierung",
+      "domain": "pug/lb3",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-folgen-popularitaet",
+      "prerequisites": [
+        {
+          "atom_id": "01M8CWSMJ38Y7KKVWAA6HW81SV",
+          "type": "soft",
+          "rationale": "Baut auf Grundlagen aus „Popularität verstehen: Wertschätzung vs. Personenkult“ auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "politik-gymnasium-8",
+          "topic_code": "lb3",
+          "topic_title": "Vorbilder, Idole und Influencer hinterfragen"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "pug",
+          "track": "SWG",
+          "topic_code": "lb3",
+          "topic_title": "Vorbilder, Idole und Influencer hinterfragen",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8CWSMJDC8YW2ZGHK4YCKVDR",
+          "slug": "pg8-folgen-popularitaet-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Was meint „Mythisierung“ in Berichten über berühmte Personen?",
+          "concept": "Die glättende Überhöhung zur Heldenfigur unter Ausblendung von Krisen und Teamhilfe.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-folgen-popularitaet",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Die glättende Überhöhung zur Heldenfigur unter Ausblendung von Krisen und Teamhilfe.",
+              "Die sachliche Überprüfung von Leistungsdaten in einem amtlichen Archiv."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Den vollständigen Verzicht von Zeitungen auf biografische Porträts.",
+              "reason": "Beschreibt Schweigen statt überhöhender Stilisierung."
+            },
+            {
+              "text": "Die Pflicht prominenter Sportlerinnen, jede Trainingspause live zu streamen.",
+              "reason": "Verwechselt Medienüberhöhung mit Dauer-Streaming."
+            }
+          ]
+        },
+        {
+          "id": "01M8CWSMJEMNXT5R1DZR38QB23",
+          "slug": "pg8-folgen-popularitaet-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Welche zwiespältigen Folgen hat große Popularität für Einzelne und für junge Zuschauer?",
+          "concept": "Bekanntheit verschafft Reichweite und Einfluss, bedroht aber Privatheit durch Dauerbeobachtung und setzt Zuschauer über stilisierte Erfolgsbilder unter unrealistischen Druck.",
+          "sample_solution": "Bekanntheit verschafft Reichweite und Einfluss, bedroht aber Privatheit durch Dauerbeobachtung und setzt Zuschauer über stilisierte Erfolgsbilder unter unrealistischen Druck.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-folgen-popularitaet"
+        }
+      ]
+    },
+    {
+      "id": "01M8CWSMJF46FXP936FJPN14H8",
+      "atom_uri": "urn:zam:atom:01M8CWSMJF46FXP936FJPN14H8",
+      "namespace": "zam-academy-politik-gymnasium-8",
+      "slug": "pg8-gefahren-orientierung",
+      "title": "Gefahren übertriebener Bindung erkennen und Abstand gewinnen",
+      "domain": "pug/lb3",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-gefahren-orientierung",
+      "prerequisites": [
+        {
+          "atom_id": "01M8CWSMJ9GSDW47P0CFTKDY7W",
+          "type": "soft",
+          "rationale": "Baut auf Grundlagen aus „Wie Medien Identifikationsfiguren produzieren und vermarkten“ auf."
+        },
+        {
+          "atom_id": "01M8CWSMJCDA0BP0C1F8NH7842",
+          "type": "soft",
+          "rationale": "Baut auf Grundlagen aus „Folgen von Popularität: Öffentlichkeit, Privatheit und Mythisierung“ auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "politik-gymnasium-8",
+          "topic_code": "lb3",
+          "topic_title": "Vorbilder, Idole und Influencer hinterfragen"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "pug",
+          "track": "SWG",
+          "topic_code": "lb3",
+          "topic_title": "Vorbilder, Idole und Influencer hinterfragen",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8CWSMJGRZ4ENRAC50QY5KQ8",
+          "slug": "pg8-gefahren-orientierung-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Welche Gefahr droht bei übertriebener Bindung an ein einziges Idol oder einen Influencer?",
+          "concept": "Verlust an eigener Individualität, Abhängigkeit und mögliche Feindseligkeit gegen Kritik.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-gefahren-orientierung",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Verlust an eigener Individualität, Abhängigkeit und mögliche Feindseligkeit gegen Kritik.",
+              "Sofortige Verbesserung aller schulischen Leistungen ohne eigene Lernanstrengung."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Automatischer Schutz vor jedem Werbetrick und jedem Fehlkauf.",
+              "reason": "Übersieht gerade die erhöhte Manipulierbarkeit durch unkritische Nähe."
+            },
+            {
+              "text": "Vollständige Unabhängigkeit von Meinungen anderer Menschen im Alltag.",
+              "reason": "Verkennt die wachsende Fremdsteuerung durch das Idol."
+            }
+          ]
+        },
+        {
+          "id": "01M8CWSMJHX4ZPQB1NRZW3XZBM",
+          "slug": "pg8-gefahren-orientierung-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Welche drei Schutzstrategien helfen Jugendlichen, Gefahren übertriebener Vorbild-Bindung zu vermeiden?",
+          "concept": "Man nutzt mehrere unabhängige Quellen, pflegt reale Gespräche im eigenen Umfeld und legt vor spontanen Käufen oder Übernahmen eine bewusste Bedenkzeit ein.",
+          "sample_solution": "Man nutzt mehrere unabhängige Quellen, pflegt reale Gespräche im eigenen Umfeld und legt vor spontanen Käufen oder Übernahmen eine bewusste Bedenkzeit ein.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-gefahren-orientierung"
+        }
+      ]
+    },
+    {
+      "id": "01M8CWSMJJQJ24WAA6K0E55878",
+      "atom_uri": "urn:zam:atom:01M8CWSMJJQJ24WAA6K0E55878",
+      "namespace": "zam-academy-politik-gymnasium-8",
+      "slug": "pg8-grundbegriffe-staat",
+      "title": "Grundbegriffe der Politik: Staat, Gewaltmonopol und Verfassung",
+      "domain": "pug/lb4",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-grundbegriffe-staat",
+      "prerequisites": [],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "politik-gymnasium-8",
+          "topic_code": "lb4",
+          "topic_title": "Politik als Gestaltungsmittel für das Zusammenleben"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "pug",
+          "track": "SWG",
+          "topic_code": "lb4",
+          "topic_title": "Politik als Gestaltungsmittel für das Zusammenleben",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8CWSMJKWA5RB1AYB8ZEN1ZZ",
+          "slug": "pg8-grundbegriffe-staat-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Was sichert das staatliche Gewaltmonopol in einer Demokratie?",
+          "concept": "Nur staatliche Organe wie Polizei und Gerichte dürfen rechtlich geregelt Zwang anwenden.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-grundbegriffe-staat",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Nur staatliche Organe wie Polizei und Gerichte dürfen rechtlich geregelt Zwang anwenden.",
+              "Privatpersonen dürfen eigene Forderungen gegen Nachbarn selbst gewaltsam eintreiben."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Der Staat verzichtet auf jede Verfassungsregel und auf unabhängige Gerichte.",
+              "reason": "Verwechselt den Rechtsstaat mit unbegrenzter Willkürherrschaft."
+            },
+            {
+              "text": "Jeder Sportverein verfügt über eigene Gerichte für Strafverfahren.",
+              "reason": "Verwechselt Vereinsregeln mit staatlicher Rechtsprechung."
+            }
+          ]
+        },
+        {
+          "id": "01M8CWSMJMZZQDACQJ022W3SB9",
+          "slug": "pg8-grundbegriffe-staat-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Aus welchen drei Elementen besteht ein Staat, und warum braucht demokratisches Zusammenleben Regeln plus Bürgerbeteiligung?",
+          "concept": "Ein Staat umfasst Staatsgebiet, Staatsvolk und Staatsgewalt; Verfassung und Gewaltmonopol sichern Frieden, bleiben aber ohne aktive Mitwirkung der Bürger leblos.",
+          "sample_solution": "Ein Staat umfasst Staatsgebiet, Staatsvolk und Staatsgewalt; Verfassung und Gewaltmonopol sichern Frieden, bleiben aber ohne aktive Mitwirkung der Bürger leblos.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-grundbegriffe-staat"
+        }
+      ]
+    },
+    {
+      "id": "01M8CWSMJNW5J185HS0FEQ1F3G",
+      "atom_uri": "urn:zam:atom:01M8CWSMJNW5J185HS0FEQ1F3G",
+      "namespace": "zam-academy-politik-gymnasium-8",
+      "slug": "pg8-politikkreislauf",
+      "title": "Aktuelle politische Probleme und der Politikkreislauf",
+      "domain": "pug/lb4",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-politikkreislauf",
+      "prerequisites": [
+        {
+          "atom_id": "01M8CWSMJJQJ24WAA6K0E55878",
+          "type": "soft",
+          "rationale": "Baut auf Grundlagen aus „Grundbegriffe der Politik: Staat, Gewaltmonopol und Verfassung“ auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "politik-gymnasium-8",
+          "topic_code": "lb4",
+          "topic_title": "Politik als Gestaltungsmittel für das Zusammenleben"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "pug",
+          "track": "SWG",
+          "topic_code": "lb4",
+          "topic_title": "Politik als Gestaltungsmittel für das Zusammenleben",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8CWSMJP1VN4E1DX9GC6BJ37",
+          "slug": "pg8-politikkreislauf-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Welche vier Phasen beschreibt der einfache Politikkreislauf?",
+          "concept": "Problemwahrnehmung, Auseinandersetzung, verbindliche Entscheidung sowie Umsetzung mit Rückwirkung.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-politikkreislauf",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Problemwahrnehmung, Auseinandersetzung, verbindliche Entscheidung sowie Umsetzung mit Rückwirkung.",
+              "Ausschließlich Wahltag, Vereidigung, Urlaubspause und vollständige Gesetzessperre."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Einmaliges Verbot, gerichtliche Strafe, sofortige Neuwahl und Schweigepflicht.",
+              "reason": "Verkennt Debatte und Rückkopplung im politischen Prozess."
+            },
+            {
+              "text": "Nur Problemnennung durch Medien ohne Beteiligung gewählter Gremien.",
+              "reason": "Lässt Beratung, Entscheidung und Verwaltungsumsetzung aus."
+            }
+          ]
+        },
+        {
+          "id": "01M8CWSMJQH43BX1KE40JCC02R",
+          "slug": "pg8-politikkreislauf-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Warum endet der Politikkreislauf nicht mit dem Mehrheitsbeschluss eines Parlaments oder Gemeinderats?",
+          "concept": "Erst in der Umsetzung durch die Verwaltung zeigt sich die Alltagswirkung; neue Probleme oder Kritik aus der Praxis lösen den nächsten Kreislauf aus.",
+          "sample_solution": "Erst in der Umsetzung durch die Verwaltung zeigt sich die Alltagswirkung; neue Probleme oder Kritik aus der Praxis lösen den nächsten Kreislauf aus.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-politikkreislauf"
+        }
+      ]
+    },
+    {
+      "id": "01M8CWSMJRTCNNPR0YRXY10ZC7",
+      "atom_uri": "urn:zam:atom:01M8CWSMJRTCNNPR0YRXY10ZC7",
+      "namespace": "zam-academy-politik-gymnasium-8",
+      "slug": "pg8-kompromiss-minderheit",
+      "title": "Mehrheit, Kompromiss und Minderheitenschutz in der Demokratie",
+      "domain": "pug/lb4",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-kompromiss-minderheit",
+      "prerequisites": [
+        {
+          "atom_id": "01M8CWSMJJQJ24WAA6K0E55878",
+          "type": "soft",
+          "rationale": "Baut auf Grundlagen aus „Grundbegriffe der Politik: Staat, Gewaltmonopol und Verfassung“ auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "politik-gymnasium-8",
+          "topic_code": "lb4",
+          "topic_title": "Politik als Gestaltungsmittel für das Zusammenleben"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "pug",
+          "track": "SWG",
+          "topic_code": "lb4",
+          "topic_title": "Politik als Gestaltungsmittel für das Zusammenleben",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8CWSMJS3C2F1JXND07QEWPP",
+          "slug": "pg8-kompromiss-minderheit-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Welche Grenze setzt der Minderheitenschutz dem demokratischen Mehrheitsprinzip?",
+          "concept": "Auch eine Mehrheit darf Grundrechte, Menschenwürde und Mitsprache von Minderheiten nicht aufheben.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-kompromiss-minderheit",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Auch eine Mehrheit darf Grundrechte, Menschenwürde und Mitsprache von Minderheiten nicht aufheben.",
+              "Eine Mehrheit darf überhaupt keine Haushaltsbeschlüsse gegen eine kleinere Fraktion fassen."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Minderheiten besitzen in jedem Rat automatisch mehr Stimmen als die Mehrheit.",
+              "reason": "Verwechselt Grundrechtsschutz mit einer Stimmenumkehrung."
+            },
+            {
+              "text": "Ein Kompromiss ist nur gültig, wenn alle 100 % der Sitze exakt dasselbe fordern.",
+              "reason": "Verwechselt Kompromiss mit erzwungener Einstimmigkeit."
+            }
+          ]
+        },
+        {
+          "id": "01M8CWSMJTQBBYJSZJG4C0Z6ZW",
+          "slug": "pg8-kompromiss-minderheit-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Warum sind faire Kompromisse in einer Demokratie trotz längerer Verhandlungen oft stabiler als knappe Kampfabstimmungen?",
+          "concept": "Im fairen Kompromiss findet jede Seite Kernanliegen wieder und wahrt das Gesicht, sodass der Beschluss breiter mitgetragen wird statt dauerhafte Blockaden zu erzeugen.",
+          "sample_solution": "Im fairen Kompromiss findet jede Seite Kernanliegen wieder und wahrt das Gesicht, sodass der Beschluss breiter mitgetragen wird statt dauerhafte Blockaden zu erzeugen.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-kompromiss-minderheit"
+        }
+      ]
+    },
+    {
+      "id": "01M8CWSMJVG1A8MPPBBV9TEJ9V",
+      "atom_uri": "urn:zam:atom:01M8CWSMJVG1A8MPPBBV9TEJ9V",
+      "namespace": "zam-academy-politik-gymnasium-8",
+      "slug": "pg8-kommunale-mitwirkung",
+      "title": "Mitwirkung Jugendlicher in Gemeinde und Stadt",
+      "domain": "pug/lb4",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-kommunale-mitwirkung",
+      "prerequisites": [
+        {
+          "atom_id": "01M8CWSMJNW5J185HS0FEQ1F3G",
+          "type": "soft",
+          "rationale": "Baut auf Grundlagen aus „Aktuelle politische Probleme und der Politikkreislauf“ auf."
+        },
+        {
+          "atom_id": "01M8CWSMJRTCNNPR0YRXY10ZC7",
+          "type": "soft",
+          "rationale": "Baut auf Grundlagen aus „Mehrheit, Kompromiss und Minderheitenschutz in der Demokratie“ auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "politik-gymnasium-8",
+          "topic_code": "lb4",
+          "topic_title": "Politik als Gestaltungsmittel für das Zusammenleben"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "pug",
+          "track": "SWG",
+          "topic_code": "lb4",
+          "topic_title": "Politik als Gestaltungsmittel für das Zusammenleben",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8CWSMJW135FZX22VHE4JDFR",
+          "slug": "pg8-kommunale-mitwirkung-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Worin liegt eine typische Grenze kommunaler Jugendparlamente oder Jugendbeiräte?",
+          "concept": "Sie beraten und stellen Anträge, während der gewählte Gemeinderat über Geld und Satzungen entscheidet.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-kommunale-mitwirkung",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Sie beraten und stellen Anträge, während der gewählte Gemeinderat über Geld und Satzungen entscheidet.",
+              "Sie dürfen sich in Bayern zu keinem einzigen Thema ihrer Gemeinde äußern."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Sie besitzen ein verbindliches Vetorecht gegen jedes Bundesgesetz und jeden Beschluss des Landtags.",
+              "reason": "Überschätzt die Zuständigkeit kommunaler Jugendgremien."
+            },
+            {
+              "text": "Sie beschließen eigenständig Gewerbesteuersätze sowie den gesamten Haushaltsplan aller Ämter der Stadt.",
+              "reason": "Verwechselt beratende Jugendbeteiligung mit Ratskompetenz."
+            }
+          ]
+        },
+        {
+          "id": "01M8CWSMJXGE529YER7NSJRE3R",
+          "slug": "pg8-kommunale-mitwirkung-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Welche Chancen und Grenzen hat Jugendpartizipation auf kommunaler Ebene nach der bayerischen Praxis?",
+          "concept": "Jugendliche kennen Schulwege und Treffpunkte genau und verbessern Planungen durch Anträge oder Sprechstunden, bleiben aber bei Budgets und Mehrheitsentscheiden auf den Rat angewiesen.",
+          "sample_solution": "Jugendliche kennen Schulwege und Treffpunkte genau und verbessern Planungen durch Anträge oder Sprechstunden, bleiben aber bei Budgets und Mehrheitsentscheiden auf den Rat angewiesen.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-kommunale-mitwirkung"
+        }
+      ]
+    },
+    {
+      "id": "01M8CWSMJYTA1YWP38DMZSAN6M",
+      "atom_uri": "urn:zam:atom:01M8CWSMJYTA1YWP38DMZSAN6M",
+      "namespace": "zam-academy-politik-gymnasium-8",
+      "slug": "pg8-engagement-vor-ort",
+      "title": "Politisches Engagement auf lokaler Ebene",
+      "domain": "pug/lb4",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-engagement-vor-ort",
+      "prerequisites": [
+        {
+          "atom_id": "01M8CWSMJVG1A8MPPBBV9TEJ9V",
+          "type": "soft",
+          "rationale": "Baut auf Grundlagen aus „Mitwirkung Jugendlicher in Gemeinde und Stadt“ auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "politik-gymnasium-8",
+          "topic_code": "lb4",
+          "topic_title": "Politik als Gestaltungsmittel für das Zusammenleben"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "pug",
+          "track": "SWG",
+          "topic_code": "lb4",
+          "topic_title": "Politik als Gestaltungsmittel für das Zusammenleben",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8CWSMJZB5PPBVW2EKERRMAJ",
+          "slug": "pg8-engagement-vor-ort-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Wie unterscheidet sich eine Bürgerinitiative von einer politischen Partei vor Ort?",
+          "concept": "Eine Bürgerinitiative zielt meist auf ein konkretes Projekt; Parteien treten dauerhaft umfassend an.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-engagement-vor-ort",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Eine Bürgerinitiative zielt meist auf ein konkretes Projekt; Parteien treten dauerhaft umfassend an.",
+              "Bürgerinitiativen übernehmen als Gerichte die Überprüfung aller Gemeinderatsbeschlüsse."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Politische Parteien dürfen in Gemeinden keine eigenen Wahlprogramme aufstellen.",
+              "reason": "Verkennt die Aufgabe von Parteien in der Kommunalpolitik."
+            },
+            {
+              "text": "Ehrenamtliche Vereine sind in Bayern gesetzlich von jeder Jugendarbeit ausgeschlossen.",
+              "reason": "Ignoriert die tragende Rolle von Vereinen und Ehrenamt."
+            }
+          ]
+        },
+        {
+          "id": "01M8CWSMK0CGY8EQYRX239QT87",
+          "slug": "pg8-engagement-vor-ort-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Wie ergänzen sich praktisches Ehrenamt und gezieltes politisches Engagement auf lokaler Ebene?",
+          "concept": "Ehrenamt stärkt Vertrauen und täglichen Zusammenhalt in Vereinen oder Feuerwehr, während Initiativen, Leserbriefe und Parteien Rahmenbedingungen und Ratsbeschlüsse verändern.",
+          "sample_solution": "Ehrenamt stärkt Vertrauen und täglichen Zusammenhalt in Vereinen oder Feuerwehr, während Initiativen, Leserbriefe und Parteien Rahmenbedingungen und Ratsbeschlüsse verändern.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-engagement-vor-ort"
+        }
+      ]
+    },
+    {
+      "id": "01M8CWSMK101560K0XEM46NNKB",
+      "atom_uri": "urn:zam:atom:01M8CWSMK101560K0XEM46NNKB",
+      "namespace": "zam-academy-politik-gymnasium-8",
+      "slug": "pg8-akteure-gesellschaft",
+      "title": "Wie Akteure in Gesellschaft und Staat zusammenwirken",
+      "domain": "pug/lb4",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-akteure-gesellschaft",
+      "prerequisites": [
+        {
+          "atom_id": "01M8CWSMJNW5J185HS0FEQ1F3G",
+          "type": "soft",
+          "rationale": "Baut auf Grundlagen aus „Aktuelle politische Probleme und der Politikkreislauf“ auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "politik-gymnasium-8",
+          "topic_code": "lb4",
+          "topic_title": "Politik als Gestaltungsmittel für das Zusammenleben"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "pug",
+          "track": "SWG",
+          "topic_code": "lb4",
+          "topic_title": "Politik als Gestaltungsmittel für das Zusammenleben",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8CWSMK26ESZGEP74NF8MTPR",
+          "slug": "pg8-akteure-gesellschaft-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Welche Brückenfunktion übernehmen politische Parteien zwischen Gesellschaft und Staat?",
+          "concept": "Sie bündeln gesellschaftliche Anliegen zu Programmen und schlagen Wahlkandidaturen vor.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-akteure-gesellschaft",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Sie bündeln gesellschaftliche Anliegen zu Programmen und schlagen Wahlkandidaturen vor.",
+              "Sie ersetzen unabhängige Gerichte bei Streitigkeiten über Bebauungspläne."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Sie verbieten Interessenverbänden und Zeitungen jede Stellungnahme.",
+              "reason": "Verwechselt demokratischen Pluralismus mit staatlicher Zensur."
+            },
+            {
+              "text": "Sie führen als Behörde direkt die laufenden Kontrollen der Lebensmittelämter aus.",
+              "reason": "Verwechselt Parteien mit ausführender Verwaltung."
+            }
+          ]
+        },
+        {
+          "id": "01M8CWSMK3D9X052C6T4ZTQ977",
+          "slug": "pg8-akteure-gesellschaft-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Wie wirken Bürger, Verbände, Medien, Parteien, Rat und Gerichte bei einer lokalen Streitfrage zusammen?",
+          "concept": "Bürger und Verbände formulieren Forderungen, Medien schaffen Öffentlichkeit, Parteien tragen Alternativen in den Rat, die Verwaltung setzt um und Gerichte prüfen die Rechtmäßigkeit.",
+          "sample_solution": "Bürger und Verbände formulieren Forderungen, Medien schaffen Öffentlichkeit, Parteien tragen Alternativen in den Rat, die Verwaltung setzt um und Gerichte prüfen die Rechtmäßigkeit.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-akteure-gesellschaft"
+        }
+      ]
+    },
+    {
+      "id": "01M8CWSMK4Z6FWWWNAVCZZX3QM",
+      "atom_uri": "urn:zam:atom:01M8CWSMK4Z6FWWWNAVCZZX3QM",
+      "namespace": "zam-academy-politik-gymnasium-8",
+      "slug": "pg8-internationale-kontakte",
+      "title": "Internationale Kontakte vor Ort: Städtepartnerschaften bis Austausch",
+      "domain": "pug/lb5",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-internationale-kontakte",
+      "prerequisites": [],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "politik-gymnasium-8",
+          "topic_code": "lb5",
+          "topic_title": "Grenzüberschreitende Zusammenarbeit vor Ort"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "pug",
+          "track": "SWG",
+          "topic_code": "lb5",
+          "topic_title": "Grenzüberschreitende Zusammenarbeit vor Ort",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8CWSMK5KJS1EDTZ4B9431BR",
+          "slug": "pg8-internationale-kontakte-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Welches Ziel verfolgten viele Städtepartnerschaften nach dem Zweiten Weltkrieg zuerst?",
+          "concept": "Aussöhnung und Vertrauensaufbau zwischen ehemaligen Kriegsgegnern durch direkte Begegnungen.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-internationale-kontakte",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Aussöhnung und Vertrauensaufbau zwischen ehemaligen Kriegsgegnern durch direkte Begegnungen.",
+              "Die Abschaffung aller kommunalen Vereine zugunsten zentraler Staatsbehörden."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Ein vollständiges Reiseverbot für Jugendliche zwischen Nachbarländern.",
+              "reason": "Verkehrt die Öffnung durch Begegnungen ins Gegenteil."
+            },
+            {
+              "text": "Die Verlagerung aller bayerischen Schulen auf einen anderen Kontinent.",
+              "reason": "Verfehlt die kommunale Bedeutung von Partnerschaften."
+            }
+          ]
+        },
+        {
+          "id": "01M8CWSMK6PB2H1AANN5MJVB1Q",
+          "slug": "pg8-internationale-kontakte-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Welche Bereiche decken internationale Kontakte einer bayerischen Stadt oder Schule typischerweise ab?",
+          "concept": "Sie reichen von kommunalen Städtepartnerschaften und Schüleraustausch über Kulturfeste und Exportbeziehungen heimischer Betriebe bis zu globalen Hilfsprojekten in Afrika oder Asien.",
+          "sample_solution": "Sie reichen von kommunalen Städtepartnerschaften und Schüleraustausch über Kulturfeste und Exportbeziehungen heimischer Betriebe bis zu globalen Hilfsprojekten in Afrika oder Asien.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-internationale-kontakte"
+        }
+      ]
+    },
+    {
+      "id": "01M8CWSMK7EMM21V3CFVZ7F7F0",
+      "atom_uri": "urn:zam:atom:01M8CWSMK7EMM21V3CFVZ7F7F0",
+      "namespace": "zam-academy-politik-gymnasium-8",
+      "slug": "pg8-kooperation-vor-ort",
+      "title": "Ein Projekt internationaler Zusammenarbeit untersuchen und mitgestalten",
+      "domain": "pug/lb5",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-kooperation-vor-ort",
+      "prerequisites": [
+        {
+          "atom_id": "01M8CWSMK4Z6FWWWNAVCZZX3QM",
+          "type": "soft",
+          "rationale": "Baut auf Grundlagen aus „Internationale Kontakte vor Ort: Städtepartnerschaften bis Austausch“ auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "politik-gymnasium-8",
+          "topic_code": "lb5",
+          "topic_title": "Grenzüberschreitende Zusammenarbeit vor Ort"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "pug",
+          "track": "SWG",
+          "topic_code": "lb5",
+          "topic_title": "Grenzüberschreitende Zusammenarbeit vor Ort",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8CWSMK8VN891APV7818MC8N",
+          "slug": "pg8-kooperation-vor-ort-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Woran erkennt man Kooperation auf Augenhöhe bei internationalen Projekten vor Ort?",
+          "concept": "Beide Partner planen Ziele gemeinsam und tauschen Wissen wie Kultur wechselseitig aus.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-kooperation-vor-ort",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Beide Partner planen Ziele gemeinsam und tauschen Wissen wie Kultur wechselseitig aus.",
+              "Eine Seite bestimmt allein über alle Abläufe und behandelt Partner als bloße Empfänger."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Unabgestimmte Sachspenden werden ohne Bedarfsprüfung ins Ausland verschickt.",
+              "reason": "Verwechselt gut gemeinte Einbahnstraße mit nachhaltiger Partnerschaft."
+            },
+            {
+              "text": "Sprachliche und kulturelle Unterschiede werden im Gespräch komplett verschwiegen.",
+              "reason": "Verkennt die Bedeutung gegenseitigen Verstehens."
+            }
+          ]
+        },
+        {
+          "id": "01M8CWSMK9RV6P66MP29HS0VDN",
+          "slug": "pg8-kooperation-vor-ort-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Wie können Schülerinnen und Schüler ein internationales Projekt an ihrer Schule konkret mitgestalten?",
+          "concept": "Sie können digitale Kennenlernrunden vorbereiten, zweisprachige Wortlisten erstellen, Gäste vor Ort begleiten und Ergebnisse beim Schulfest präsentieren.",
+          "sample_solution": "Sie können digitale Kennenlernrunden vorbereiten, zweisprachige Wortlisten erstellen, Gäste vor Ort begleiten und Ergebnisse beim Schulfest präsentieren.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-kooperation-vor-ort"
+        }
+      ]
+    },
+    {
+      "id": "01M8CWSMKA6CAPEWJ0BH3QSX1H",
+      "atom_uri": "urn:zam:atom:01M8CWSMKA6CAPEWJ0BH3QSX1H",
+      "namespace": "zam-academy-politik-gymnasium-8",
+      "slug": "pg8-grenzkonflikte-europa",
+      "title": "Grenzüberschreitende Konflikte in Europa und Lösungsansätze",
+      "domain": "pug/lb5",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-grenzkonflikte-europa",
+      "prerequisites": [
+        {
+          "atom_id": "01M8CWSMK4Z6FWWWNAVCZZX3QM",
+          "type": "soft",
+          "rationale": "Baut auf Grundlagen aus „Internationale Kontakte vor Ort: Städtepartnerschaften bis Austausch“ auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "politik-gymnasium-8",
+          "topic_code": "lb5",
+          "topic_title": "Grenzüberschreitende Zusammenarbeit vor Ort"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "pug",
+          "track": "SWG",
+          "topic_code": "lb5",
+          "topic_title": "Grenzüberschreitende Zusammenarbeit vor Ort",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8CWSMKBH8MJNMFAV9JQ7N54",
+          "slug": "pg8-grenzkonflikte-europa-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Warum scheitern nationale Alleingänge bei Umwelt- oder Verkehrsproblemen in Europa oft?",
+          "concept": "Flüsse, Luft und Transitverkehr überschreiten Grenzen und lösen Gegenmaßnahmen beim Nachbarn aus.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-grenzkonflikte-europa",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Flüsse, Luft und Transitverkehr überschreiten Grenzen und lösen Gegenmaßnahmen beim Nachbarn aus.",
+              "Europäische Flüsse und Autobahnen enden technisch stets exakt an jeder Landesgrenze."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Nachbarstaaten dürfen untereinander rechtlich niemals Abkommen schließen.",
+              "reason": "Ignoriert bilaterale Verträge und europäische Zusammenarbeit."
+            },
+            {
+              "text": "Ein Alleingang benötigt grundsätzlich mindestens zwanzig Jahre länger als ein EU-Gesetz.",
+              "reason": "Verwechselt schnelle einseitige Anordnung mit langfristiger Verhandlung."
+            }
+          ]
+        },
+        {
+          "id": "01M8CWSMKCBQNMDNJQJEN7BKY6",
+          "slug": "pg8-grenzkonflikte-europa-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Vergleiche bilaterale Abkommen und den EU-Rahmen anhand ihrer Stärken bei grenzüberschreitenden Konflikten.",
+          "concept": "Bilaterale Abkommen lösen konkrete regionale Probleme zweier Nachbarn zügig, während ein EU-Rahmen einheitliche Standards für alle Mitgliedstaaten setzt und Ausweichen verhindert.",
+          "sample_solution": "Bilaterale Abkommen lösen konkrete regionale Probleme zweier Nachbarn zügig, während ein EU-Rahmen einheitliche Standards für alle Mitgliedstaaten setzt und Ausweichen verhindert.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-grenzkonflikte-europa"
+        }
+      ]
+    },
+    {
+      "id": "01M8CWSMKD8CFAB2TJZ98PM25N",
+      "atom_uri": "urn:zam:atom:01M8CWSMKD8CFAB2TJZ98PM25N",
+      "namespace": "zam-academy-politik-gymnasium-8",
+      "slug": "pg8-europa-region",
+      "title": "Europäische Kooperation in der Region verstehen und präsentieren",
+      "domain": "pug/lb5",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-europa-region",
+      "prerequisites": [
+        {
+          "atom_id": "01M8CWSMK7EMM21V3CFVZ7F7F0",
+          "type": "soft",
+          "rationale": "Baut auf Grundlagen aus „Ein Projekt internationaler Zusammenarbeit untersuchen und mitgestalten“ auf."
+        },
+        {
+          "atom_id": "01M8CWSMKA6CAPEWJ0BH3QSX1H",
+          "type": "soft",
+          "rationale": "Baut auf Grundlagen aus „Grenzüberschreitende Konflikte in Europa und Lösungsansätze“ auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "politik-gymnasium-8",
+          "topic_code": "lb5",
+          "topic_title": "Grenzüberschreitende Zusammenarbeit vor Ort"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "pug",
+          "track": "SWG",
+          "topic_code": "lb5",
+          "topic_title": "Grenzüberschreitende Zusammenarbeit vor Ort",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8CWSMKERGC9SZMM2ERBTM2X",
+          "slug": "pg8-europa-region-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Was ist eine „Euregio“ im europäischen Grenzraum?",
+          "concept": "Ein freiwilliger Verbund benachbarter Regionen über Staatsgrenzen hinweg für gemeinsame Aufgaben.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-europa-region",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Ein freiwilliger Verbund benachbarter Regionen über Staatsgrenzen hinweg für gemeinsame Aufgaben.",
+              "Eine rein kommerzielle Fluglinie ausschließlich für Fernreisen nach Übersee."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Ein geheimes Gremium, das Gemeinden und Landkreise rechtlich abschafft.",
+              "reason": "Verkennt die kommunal verankerte Struktur von Euregios."
+            },
+            {
+              "text": "Ein einmaliger Schulwettbewerb ohne Bezug zu Verkehr, Umwelt oder Wirtschaft.",
+              "reason": "Unterschätzt die dauerhaften Alltagsprojekte einer Euregio."
+            }
+          ]
+        },
+        {
+          "id": "01M8CWSMKF0CS489QQRASYBXPH",
+          "slug": "pg8-europa-region-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Welche Ergebnisse leisten Euregios vor Ort und welche Hürden bleiben dabei im Alltag sichtbar?",
+          "concept": "Sie verbessern Nahverkehr, Hochwasserschutz, Rettungsdienste und Jugendbegegnungen, stoßen aber oft auf Sprachbarrieren und verschiedene Behördenzuständigkeiten beiderseits der Grenze.",
+          "sample_solution": "Sie verbessern Nahverkehr, Hochwasserschutz, Rettungsdienste und Jugendbegegnungen, stoßen aber oft auf Sprachbarrieren und verschiedene Behördenzuständigkeiten beiderseits der Grenze.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-europa-region"
+        }
+      ]
+    },
+    {
+      "id": "01M8CWSMKG76TKAQKK8JMWYRZX",
+      "atom_uri": "urn:zam:atom:01M8CWSMKG76TKAQKK8JMWYRZX",
+      "namespace": "zam-academy-politik-gymnasium-8",
+      "slug": "pg8-heimat-dimensionen",
+      "title": "Was bedeutet Heimat? Dimensionen und politischer Gebrauch",
+      "domain": "pug/lb6-1",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-heimat-dimensionen",
+      "prerequisites": [],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "politik-gymnasium-8",
+          "topic_code": "lb6-1",
+          "topic_title": "Heimat(en) verstehen und gestalten"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "pug",
+          "track": "SWG",
+          "topic_code": "lb6-1",
+          "topic_title": "Heimat(en) verstehen und gestalten",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8CWSMKHACHZEGRZ6148YCM5",
+          "slug": "pg8-heimat-dimensionen-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Welche sechs Dimensionen umfasst ein differenzierter Begriff von Heimat?",
+          "concept": "Räumlich, emotional, sozial, kulturell, biografisch und politisch.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-heimat-dimensionen",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Räumlich, emotional, sozial, kulturell, biografisch und politisch.",
+              "Ausschließlich geografische Koordinaten sowie die eigene Postleitzahl."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Allein die Länge des familiären Stammbaums über fünf Jahrhunderte.",
+              "reason": "Verengt Heimat auf Herkunft statt gelebter Bindungen."
+            },
+            {
+              "text": "Nur das Lieblingsgericht aus der jeweiligen Landesküche.",
+              "reason": "Reduziert ein mehrdimensionales Konzept auf einen Einzelaspekt."
+            }
+          ]
+        },
+        {
+          "id": "01M8CWSMKJDWZKPYJSFS4FTVCM",
+          "slug": "pg8-heimat-dimensionen-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Worin zeigt sich der Unterschied zwischen integrativem und ausgrenzendem Gebrauch von Heimat in der Politik?",
+          "concept": "Integrative Heimatpolitik lädt Alteingesessene wie Zugezogene zu Mitsprache und Begegnung ein, während ausgrenzende Nutzung Minderheiten pauschal das Zugehörigkeitsrecht abspricht.",
+          "sample_solution": "Integrative Heimatpolitik lädt Alteingesessene wie Zugezogene zu Mitsprache und Begegnung ein, während ausgrenzende Nutzung Minderheiten pauschal das Zugehörigkeitsrecht abspricht.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-heimat-dimensionen"
+        }
+      ]
+    },
+    {
+      "id": "01M8CWSMKKB8MQZHHBB7XCY99F",
+      "atom_uri": "urn:zam:atom:01M8CWSMKKB8MQZHHBB7XCY99F",
+      "namespace": "zam-academy-politik-gymnasium-8",
+      "slug": "pg8-heimat-fremdbilder",
+      "title": "Fremdbilder, Tourismus-Klischees und eigenes Erleben",
+      "domain": "pug/lb6-1",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-heimat-fremdbilder",
+      "prerequisites": [
+        {
+          "atom_id": "01M8CWSMKG76TKAQKK8JMWYRZX",
+          "type": "soft",
+          "rationale": "Baut auf Grundlagen aus „Was bedeutet Heimat? Dimensionen und politischer Gebrauch“ auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "politik-gymnasium-8",
+          "topic_code": "lb6-1",
+          "topic_title": "Heimat(en) verstehen und gestalten"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "pug",
+          "track": "SWG",
+          "topic_code": "lb6-1",
+          "topic_title": "Heimat(en) verstehen und gestalten",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8CWSMKMR30M9H0VA23RSGCB",
+          "slug": "pg8-heimat-fremdbilder-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Warum weicht ein touristisches Fremdbild oft vom Alltagserleben der Bewohner ab?",
+          "concept": "Werbung wählt verkaufsfördernde Idyllen aus und blendet Wirtschaft, Verkehr und Vielfalt aus.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-heimat-fremdbilder",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Werbung wählt verkaufsfördernde Idyllen aus und blendet Wirtschaft, Verkehr und Vielfalt aus.",
+              "Reiseprospekte berichten grundsätzlich nur über überfüllte Pendlerzüge und Baustellen."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Einwohner kennen die Landschaft ihrer eigenen Heimatregion überhaupt nicht.",
+              "reason": "Verwechselt Eigenbild mit Unkenntnis."
+            },
+            {
+              "text": "Fremdbilder entstehen ausschließlich durch statistische Berichte des Statistischen Bundesamts.",
+              "reason": "Verwechselt Tourismusmarketing mit amtlicher Statistik."
+            }
+          ]
+        },
+        {
+          "id": "01M8CWSMKNX1R1080KEB65SYQY",
+          "slug": "pg8-heimat-fremdbilder-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Wie lässt sich mithilfe eines Vergleichs von Fremd- und Eigenbild ein Klischee über eine Region auflösen?",
+          "concept": "Man stellt werbewirksame Postkartenmotive konkreten Alltagsbeobachtungen aus Wirtschaft, Infrastruktur und sozialer Vielfalt gegenüber und vermeidet pauschale Verallgemeinerungen.",
+          "sample_solution": "Man stellt werbewirksame Postkartenmotive konkreten Alltagsbeobachtungen aus Wirtschaft, Infrastruktur und sozialer Vielfalt gegenüber und vermeidet pauschale Verallgemeinerungen.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-heimat-fremdbilder"
+        }
+      ]
+    },
+    {
+      "id": "01M8CWSMKPNADSTEVT8XAEGA3N",
+      "atom_uri": "urn:zam:atom:01M8CWSMKPNADSTEVT8XAEGA3N",
+      "namespace": "zam-academy-politik-gymnasium-8",
+      "slug": "pg8-heimat-wandel",
+      "title": "Brauchtum, Traditionen, Dialekt und Vereinsleben im Wandel",
+      "domain": "pug/lb6-1",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-heimat-wandel",
+      "prerequisites": [
+        {
+          "atom_id": "01M8CWSMKG76TKAQKK8JMWYRZX",
+          "type": "soft",
+          "rationale": "Baut auf Grundlagen aus „Was bedeutet Heimat? Dimensionen und politischer Gebrauch“ auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "politik-gymnasium-8",
+          "topic_code": "lb6-1",
+          "topic_title": "Heimat(en) verstehen und gestalten"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "pug",
+          "track": "SWG",
+          "topic_code": "lb6-1",
+          "topic_title": "Heimat(en) verstehen und gestalten",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8CWSMKQJMNZ0WRAEXHZJK2C",
+          "slug": "pg8-heimat-wandel-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Warum befinden sich Vereine, Brauchtum und Dialekte im ständigen gesellschaftlichen Wandel?",
+          "concept": "Veränderte Arbeitszeiten, Mobilität, Medien und offene Freizeitwünsche prägen jede Generation neu.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-heimat-wandel",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Veränderte Arbeitszeiten, Mobilität, Medien und offene Freizeitwünsche prägen jede Generation neu.",
+              "Ein bayerisches Landesgesetz verbietet alle zwanzig Jahre traditionelle Vereinsfeste."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Frühere Generationen hatten keinerlei örtliche Vereine oder Feste.",
+              "reason": "Verkennt die lange Geschichte des Vereinswesens."
+            },
+            {
+              "text": "Dialekte verschwinden ausschließlich wegen körperlicher Veränderungen der Stimmbänder.",
+              "reason": "Verwechselt Sprachwandel durch Mobilität/Medien mit Biologie."
+            }
+          ]
+        },
+        {
+          "id": "01M8CWSMKRBQWN06WECY8V153E",
+          "slug": "pg8-heimat-wandel-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Wie können Traditionen und Vereine heute lebendig bleiben, ohne ihre Wurzeln zu verlieren?",
+          "concept": "Sie verbinden gewachsene Bräuche mit flexiblen Projektangeboten für Berufstätige und laden neu zugezogene Familien aktiv zum Mitfeiern und Mitgestalten ein.",
+          "sample_solution": "Sie verbinden gewachsene Bräuche mit flexiblen Projektangeboten für Berufstätige und laden neu zugezogene Familien aktiv zum Mitfeiern und Mitgestalten ein.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-heimat-wandel"
+        }
+      ]
+    },
+    {
+      "id": "01M8CWSMKS944Z4MV8088G2C56",
+      "atom_uri": "urn:zam:atom:01M8CWSMKS944Z4MV8088G2C56",
+      "namespace": "zam-academy-politik-gymnasium-8",
+      "slug": "pg8-region-zukunft",
+      "title": "Zukunft der Region und Beteiligung in der Kommune",
+      "domain": "pug/lb6-1",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-region-zukunft",
+      "prerequisites": [
+        {
+          "atom_id": "01M8CWSMKPNADSTEVT8XAEGA3N",
+          "type": "soft",
+          "rationale": "Baut auf Grundlagen aus „Brauchtum, Traditionen, Dialekt und Vereinsleben im Wandel“ auf."
+        },
+        {
+          "atom_id": "01M8CWSMJVG1A8MPPBBV9TEJ9V",
+          "type": "soft",
+          "rationale": "Baut auf Grundlagen aus „Mitwirkung Jugendlicher in Gemeinde und Stadt“ auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "politik-gymnasium-8",
+          "topic_code": "lb6-1",
+          "topic_title": "Heimat(en) verstehen und gestalten"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "pug",
+          "track": "SWG",
+          "topic_code": "lb6-1",
+          "topic_title": "Heimat(en) verstehen und gestalten",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8CWSMKTPA318NV77DWX6G2T",
+          "slug": "pg8-region-zukunft-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Was untersucht die „demografische Entwicklung“ einer Kommune?",
+          "concept": "Veränderungen von Einwohnerzahl und Altersaufbau durch Geburten, Sterbefälle sowie Zu- und Abwanderung.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-region-zukunft",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Veränderungen von Einwohnerzahl und Altersaufbau durch Geburten, Sterbefälle sowie Zu- und Abwanderung.",
+              "Ausschließlich die Bauqualität von Radwegen zwischen zwei Nachbarstädten."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Die jährliche Anpassung sämtlicher Eintrittspreise und Öffnungszeiten für kommunale Schwimmbäder im Sommer.",
+              "reason": "Verwechselt Bevölkerungsentwicklung mit Gebührenpolitik."
+            },
+            {
+              "text": "Die reine Zählung sämtlicher Bäume, Parks und Straßenlaternen innerhalb eines historischen Marktplatzes.",
+              "reason": "Verwechselt Demografie mit Stadtbegrünung."
+            }
+          ]
+        },
+        {
+          "id": "01M8CWSMKVN97HVDNCZZ93WWJ8",
+          "slug": "pg8-region-zukunft-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Welche unterschiedlichen Zukunftsfragen prägen schrumpfende ländliche Orte im Vergleich zu wachsenden Umlandgemeinden?",
+          "concept": "Alternde Abwanderungsorte sichern Buslinien, Versorgung und Jugendperspektiven; wachsende Umlandkommunen lösen Engpässe bei bezahlbarem Wohnraum, Schulen und Flächenschutz.",
+          "sample_solution": "Alternde Abwanderungsorte sichern Buslinien, Versorgung und Jugendperspektiven; wachsende Umlandkommunen lösen Engpässe bei bezahlbarem Wohnraum, Schulen und Flächenschutz.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-region-zukunft"
+        }
+      ]
+    },
+    {
+      "id": "01M8CWSMKWXPK4ANMGTG97KESJ",
+      "atom_uri": "urn:zam:atom:01M8CWSMKWXPK4ANMGTG97KESJ",
+      "namespace": "zam-academy-politik-gymnasium-8",
+      "slug": "pg8-medien-beobachten",
+      "title": "Ein politisches Thema in verschiedenen Medien verfolgen",
+      "domain": "pug/lb6-2",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-medien-beobachten",
+      "prerequisites": [],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "politik-gymnasium-8",
+          "topic_code": "lb6-2",
+          "topic_title": "Politisches Geschehen mitverfolgen und diskutieren"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "pug",
+          "track": "SWG",
+          "topic_code": "lb6-2",
+          "topic_title": "Politisches Geschehen mitverfolgen und diskutieren",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8CWSMKX6P5K4TPESK05BX6H",
+          "slug": "pg8-medien-beobachten-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Warum lohnt sich ein Medientagebuch über verschiedene Angebote hinweg?",
+          "concept": "Es zeigt, wie Fakten, Textsorten und Perspektiven je nach Redaktion und Format auseinandergehen.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-medien-beobachten",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Es zeigt, wie Fakten, Textsorten und Perspektiven je nach Redaktion und Format auseinandergehen.",
+              "Es beweist, dass alle Zeitungen und Social-Clips exakt dieselbe Position vertreten."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Es ersetzt jede Überprüfung von Zahlen oder Primärquellen im Original.",
+              "reason": "Verkennt den Zweck vergleichender Dokumentation."
+            },
+            {
+              "text": "Es misst allein die Schriftgröße der gedruckten Tageszeitung.",
+              "reason": "Bleibt an unwichtigen Äußerlichkeiten hängen."
+            }
+          ]
+        },
+        {
+          "id": "01M8CWSMKY7NXERSDX6JEA3MKD",
+          "slug": "pg8-medien-beobachten-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Wie unterscheiden sich Nachricht, Reportage und Kommentar in ihrer Aufgabe bei der Berichterstattung?",
+          "concept": "Die Nachricht liefert knappe Fakten ohne Wertung, die Reportage schildert Hintergründe und Eindrücke vor Ort, und der Kommentar formuliert erkennbar eine persönliche Meinung.",
+          "sample_solution": "Die Nachricht liefert knappe Fakten ohne Wertung, die Reportage schildert Hintergründe und Eindrücke vor Ort, und der Kommentar formuliert erkennbar eine persönliche Meinung.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-medien-beobachten"
+        }
+      ]
+    },
+    {
+      "id": "01M8CWSMKZV5B55MTYJ3XE4M3Q",
+      "atom_uri": "urn:zam:atom:01M8CWSMKZV5B55MTYJ3XE4M3Q",
+      "namespace": "zam-academy-politik-gymnasium-8",
+      "slug": "pg8-berichterstattung-pruefen",
+      "title": "Qualität, Seriosität und Tendenzen in der Berichterstattung prüfen",
+      "domain": "pug/lb6-2",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-berichterstattung-pruefen",
+      "prerequisites": [
+        {
+          "atom_id": "01M8CWSMKWXPK4ANMGTG97KESJ",
+          "type": "soft",
+          "rationale": "Baut auf Grundlagen aus „Ein politisches Thema in verschiedenen Medien verfolgen“ auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "politik-gymnasium-8",
+          "topic_code": "lb6-2",
+          "topic_title": "Politisches Geschehen mitverfolgen und diskutieren"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "pug",
+          "track": "SWG",
+          "topic_code": "lb6-2",
+          "topic_title": "Politisches Geschehen mitverfolgen und diskutieren",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8CWSMM0QNC29SZ7XP7YC2ZV",
+          "slug": "pg8-berichterstattung-pruefen-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Was zeichnet seriösen Journalismus nach Regeln wie dem Pressekodex aus?",
+          "concept": "Sorgfältige Quellenprüfung, Trennung von Bericht und Meinung sowie offene Fehlerkorrektur.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-berichterstattung-pruefen",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Sorgfältige Quellenprüfung, Trennung von Bericht und Meinung sowie offene Fehlerkorrektur.",
+              "Reißerische Überschriften ohne Impressum und ohne Stellungnahme der Gegenseite."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Verschweigen von Gegenargumenten, damit die eigene Meinung klarer wirkt.",
+              "reason": "Verstößt gegen journalistische Fairness und Ausgewogenheit."
+            },
+            {
+              "text": "Ungeprüftes Übernehmen alter Fotos für aktuelle Vorfälle im Netz.",
+              "reason": "Verfälscht Kontext und Faktenlage."
+            }
+          ]
+        },
+        {
+          "id": "01M8CWSMM15R8GGY3JV0QYWN27",
+          "slug": "pg8-berichterstattung-pruefen-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Welche vier Prüfschritte decken Mängel und Tendenzen in einem politischen Bericht zuverlässig auf?",
+          "concept": "Man prüft erstens Urheber und Impressum, zweitens überprüfbare Quellen und Zahlen, drittens sachliche Sprache vs. Wertung sowie viertens faire Darstellung von Gegenpositionen.",
+          "sample_solution": "Man prüft erstens Urheber und Impressum, zweitens überprüfbare Quellen und Zahlen, drittens sachliche Sprache vs. Wertung sowie viertens faire Darstellung von Gegenpositionen.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-berichterstattung-pruefen"
+        }
+      ]
+    },
+    {
+      "id": "01M8CWSMM22ZRCG926KR04HS6H",
+      "atom_uri": "urn:zam:atom:01M8CWSMM22ZRCG926KR04HS6H",
+      "namespace": "zam-academy-politik-gymnasium-8",
+      "slug": "pg8-umfrage-diskussion",
+      "title": "Informationen erheben, Standpunkt präsentieren und fair diskutieren",
+      "domain": "pug/lb6-2",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-umfrage-diskussion",
+      "prerequisites": [
+        {
+          "atom_id": "01M8CWSMKZV5B55MTYJ3XE4M3Q",
+          "type": "soft",
+          "rationale": "Baut auf Grundlagen aus „Qualität, Seriosität und Tendenzen in der Berichterstattung prüfen“ auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "politik-gymnasium-8",
+          "topic_code": "lb6-2",
+          "topic_title": "Politisches Geschehen mitverfolgen und diskutieren"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "pug",
+          "track": "SWG",
+          "topic_code": "lb6-2",
+          "topic_title": "Politisches Geschehen mitverfolgen und diskutieren",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8CWSMM3MN4B5DBM43ZR5PVV",
+          "slug": "pg8-umfrage-diskussion-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Worauf musst du bei der Auswertung einer kleinen Schülerumfrage besonders achten?",
+          "concept": "Stichprobengröße offen nennen, absolute plus Prozentzahlen zeigen und Suggestivfragen meiden.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-umfrage-diskussion",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Stichprobengröße offen nennen, absolute plus Prozentzahlen zeigen und Suggestivfragen meiden.",
+              "Nur passende Antworten zählen und eine 15-Personen-Umfrage auf ganz Bayern hochrechnen."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Ausschließlich Prozentzahlen zeigen, damit eine sehr kleine Gruppe größer wirkt.",
+              "reason": "Täuscht über die geringe Aussagekraft kleiner Stichproben hinweg."
+            },
+            {
+              "text": "Fragen so wertend formulieren, dass alle Befragten zustimmen müssen.",
+              "reason": "Produziert durch Suggestivfragen verzerrte Scheinergebnisse."
+            }
+          ]
+        },
+        {
+          "id": "01M8CWSMM417HSJMJR6X1V1P7F",
+          "slug": "pg8-umfrage-diskussion-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Warum sind faire Kommunikationsregeln in einer Klassendiskussion auch dann wertvoll, wenn am Ende kein Konsens entsteht?",
+          "concept": "Aktives Zuhören und Eingehen auf Gegengründe machen eigene Schwachstellen sichtbar, stärken Perspektivenwechsel und bereiten künftige Kompromisse vor.",
+          "sample_solution": "Aktives Zuhören und Eingehen auf Gegengründe machen eigene Schwachstellen sichtbar, stärken Perspektivenwechsel und bereiten künftige Kompromisse vor.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-umfrage-diskussion"
+        }
+      ]
+    },
+    {
+      "id": "01M8CWSMM5B46PF1GJM8QSHC91",
+      "atom_uri": "urn:zam:atom:01M8CWSMM5B46PF1GJM8QSHC91",
+      "namespace": "zam-academy-politik-gymnasium-8",
+      "slug": "pg8-sekundaergruppen-soziogramm",
+      "title": "Sekundäre soziale Gruppen: Position, Status und Soziogramm",
+      "domain": "pug/lb6-3",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-sekundaergruppen-soziogramm",
+      "prerequisites": [
+        {
+          "atom_id": "01M8CWSMHQ6JAW33ZY6KYT1TKG",
+          "type": "soft",
+          "rationale": "Baut auf Grundlagen aus „Primäre soziale Gruppen: Normen, Strukturen und Sanktionen“ auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "politik-gymnasium-8",
+          "topic_code": "lb6-3",
+          "topic_title": "Die anderen und ich – Zusammenleben in der Gruppe"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "pug",
+          "track": "SWG",
+          "topic_code": "lb6-3",
+          "topic_title": "Die anderen und ich – Zusammenleben in der Gruppe",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8CWSMM66CN0WVQRZNXJVB4K",
+          "slug": "pg8-sekundaergruppen-soziogramm-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Welche Aufgabe hat eine „Brückenperson“ im Soziogramm einer Gruppe?",
+          "concept": "Sie verbindet zwei sonst getrennte Teilgruppen und ermöglicht Austausch zwischen ihnen.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-sekundaergruppen-soziogramm",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Sie verbindet zwei sonst getrennte Teilgruppen und ermöglicht Austausch zwischen ihnen.",
+              "Sie erhält grundsätzlich keine einzige Wahl von irgendeinem Gruppenmitglied."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Sie verbietet jedem Mitglied der Gruppe, außerhalb des Treffens zu sprechen.",
+              "reason": "Verkennt die verbindende Rolle einer Brücke."
+            },
+            {
+              "text": "Sie bewertet als amtliche Prüferin die Schulnoten der ganzen Klasse.",
+              "reason": "Verwechselt soziale Gruppenstruktur mit Notengebung."
+            }
+          ]
+        },
+        {
+          "id": "01M8CWSMM7J4ADGK8VQ0ZY7BQC",
+          "slug": "pg8-sekundaergruppen-soziogramm-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Warum ist ein Soziogramm hilfreich für Gruppenleitungen, darf aber niemals öffentlich ausgehängt werden?",
+          "concept": "Es zeigt vertraulich Randpositionen und Teilgruppen für gezielte Teammischung; ein öffentlicher Aushang würde dagegen Einzelne bloßstellen und Rollen verfestigen.",
+          "sample_solution": "Es zeigt vertraulich Randpositionen und Teilgruppen für gezielte Teammischung; ein öffentlicher Aushang würde dagegen Einzelne bloßstellen und Rollen verfestigen.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-sekundaergruppen-soziogramm"
+        }
+      ]
+    },
+    {
+      "id": "01M8CWSMM8Q0P5JBMZQRFSMG5N",
+      "atom_uri": "urn:zam:atom:01M8CWSMM8Q0P5JBMZQRFSMG5N",
+      "namespace": "zam-academy-politik-gymnasium-8",
+      "slug": "pg8-fuehrungsstile-normierung",
+      "title": "Führungsstile, Normierung, Sanktionen und Anpassungsdruck",
+      "domain": "pug/lb6-3",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-fuehrungsstile-normierung",
+      "prerequisites": [
+        {
+          "atom_id": "01M8CWSMM5B46PF1GJM8QSHC91",
+          "type": "soft",
+          "rationale": "Baut auf Grundlagen aus „Sekundäre soziale Gruppen: Position, Status und Soziogramm“ auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "politik-gymnasium-8",
+          "topic_code": "lb6-3",
+          "topic_title": "Die anderen und ich – Zusammenleben in der Gruppe"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "pug",
+          "track": "SWG",
+          "topic_code": "lb6-3",
+          "topic_title": "Die anderen und ich – Zusammenleben in der Gruppe",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8CWSMM96J0ZYD046FV4EDFD",
+          "slug": "pg8-fuehrungsstile-normierung-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Wie wirkt der demokratische Führungsstil typischerweise auf eine Projektgruppe?",
+          "concept": "Er verbindet klare Struktur mit Mitsprache und fördert Motivation sowie Selbstbestimmung.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-fuehrungsstile-normierung",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Er verbindet klare Struktur mit Mitsprache und fördert Motivation sowie Selbstbestimmung.",
+              "Er verbietet jede Rückfrage und setzt auf Angst vor sofortigen Strafen."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Er verzichtet auf jede Zielabsprache und überlässt die Gruppe komplett dem Chaos.",
+              "reason": "Verwechselt demokratische Führung mit Laissez-faire."
+            },
+            {
+              "text": "Er ersetzt alle Gruppenregeln durch zufällige Einzelentscheidungen ohne Plan.",
+              "reason": "Verkennt die Verbindlichkeit demokratischer Absprachen."
+            }
+          ]
+        },
+        {
+          "id": "01M8CWSMMAH23GZD79K4KC98FF",
+          "slug": "pg8-fuehrungsstile-normierung-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Wann geraten Führung und Gruppennormen in das Spannungsfeld zwischen Selbst- und Fremdbestimmung?",
+          "concept": "Sinnvolle Absprachen sichern gemeinsames Arbeiten; überzogene Kontrolle, starre Sanktionen oder Anpassungsdruck verdrängen jedoch Eigenständigkeit in Fremdbestimmung.",
+          "sample_solution": "Sinnvolle Absprachen sichern gemeinsames Arbeiten; überzogene Kontrolle, starre Sanktionen oder Anpassungsdruck verdrängen jedoch Eigenständigkeit in Fremdbestimmung.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-fuehrungsstile-normierung"
+        }
+      ]
+    },
+    {
+      "id": "01M8CWSMMBDM8841J2D4RC3MAC",
+      "atom_uri": "urn:zam:atom:01M8CWSMMBDM8841J2D4RC3MAC",
+      "namespace": "zam-academy-politik-gymnasium-8",
+      "slug": "pg8-rollen-teamarbeit",
+      "title": "Rollenkonflikte, Perspektivwechsel und Teamarbeit",
+      "domain": "pug/lb6-3",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-rollen-teamarbeit",
+      "prerequisites": [
+        {
+          "atom_id": "01M8CWSMM8Q0P5JBMZQRFSMG5N",
+          "type": "soft",
+          "rationale": "Baut auf Grundlagen aus „Führungsstile, Normierung, Sanktionen und Anpassungsdruck“ auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "politik-gymnasium-8",
+          "topic_code": "lb6-3",
+          "topic_title": "Die anderen und ich – Zusammenleben in der Gruppe"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "pug",
+          "track": "SWG",
+          "topic_code": "lb6-3",
+          "topic_title": "Die anderen und ich – Zusammenleben in der Gruppe",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8CWSMMCT8VC3MR4RV7342TB",
+          "slug": "pg8-rollen-teamarbeit-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Was unterscheidet einen Intra-Rollenkonflikt von einem Inter-Rollenkonflikt?",
+          "concept": "Intra betrifft widersprüchliche Erwartungen an eine Rolle; Inter prallt zwischen zwei Rollen auf.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-rollen-teamarbeit",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Intra betrifft widersprüchliche Erwartungen an eine Rolle; Inter prallt zwischen zwei Rollen auf.",
+              "Inter-Rollenkonflikte treten ausschließlich bei bezahlter Arbeit in Fabriken auf."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Beim Intra-Rollenkonflikt hat niemand irgendeine Erwartung an die Person.",
+              "reason": "Verkehrt den Begriff widersprüchlicher Rollenerwartungen ins Gegenteil."
+            },
+            {
+              "text": "Beide Konfliktformen lassen sich nur durch sofortigen Austritt aus allen Gruppen lösen.",
+              "reason": "Übersieht offene Gespräche und Perspektivwechsel."
+            }
+          ]
+        },
+        {
+          "id": "01M8CWSMMDP78BGPXJ6A0NENHF",
+          "slug": "pg8-rollen-teamarbeit-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Worin liegen die wichtigsten Stärken und Grenzen von Gruppen- und Teamarbeit?",
+          "concept": "Teams meistern komplexe Vorhaben durch Arbeitsteilung (Arbeitsökonomie) und Wissensaustausch, verlieren aber Zeit bei zu hohem Abstimmungsaufwand oder Trittbrettfahren.",
+          "sample_solution": "Teams meistern komplexe Vorhaben durch Arbeitsteilung (Arbeitsökonomie) und Wissensaustausch, verlieren aber Zeit bei zu hohem Abstimmungsaufwand oder Trittbrettfahren.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-rollen-teamarbeit"
+        }
+      ]
+    },
+    {
+      "id": "01M8CWSMMERGSAZXYPB49AN4Y0",
+      "atom_uri": "urn:zam:atom:01M8CWSMMERGSAZXYPB49AN4Y0",
+      "namespace": "zam-academy-politik-gymnasium-8",
+      "slug": "pg8-vorurteile-abbau",
+      "title": "Wie Vorurteile entstehen und wie man sie abbaut",
+      "domain": "pug/lb6-3",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-vorurteile-abbau",
+      "prerequisites": [
+        {
+          "atom_id": "01M8CWSMHTAE6F75RJSK08C9FT",
+          "type": "soft",
+          "rationale": "Baut auf Grundlagen aus „Gruppenförderliches und gruppenschädliches Verhalten“ auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "politik-gymnasium-8",
+          "topic_code": "lb6-3",
+          "topic_title": "Die anderen und ich – Zusammenleben in der Gruppe"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "pug",
+          "track": "SWG",
+          "topic_code": "lb6-3",
+          "topic_title": "Die anderen und ich – Zusammenleben in der Gruppe",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8CWSMMFEGFRMT9XTMQ9H7QV",
+          "slug": "pg8-vorurteile-abbau-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Was zeigten sozialpsychologische Gruppenexperimente zur Entstehung von Vorurteilen?",
+          "concept": "Schon künstliche Gruppengrenzen und unkontrollierte Macht begünstigen Favorisierung und Diskriminierung.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-vorurteile-abbau",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Schon künstliche Gruppengrenzen und unkontrollierte Macht begünstigen Favorisierung und Diskriminierung.",
+              "Vorurteile entstehen ausschließlich durch ausführliches Studieren statistischer Jahrbücher."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Wettbewerbe zwischen getrennten Gruppen beseitigen jedes Misstrauen sofort.",
+              "reason": "Übersieht die verschärfende Wirkung reiner Konkurrenz."
+            },
+            {
+              "text": "Persönliche Kontakte bei gemeinsamen Projekten verstärken Vorurteile stets.",
+              "reason": "Verkehrt die Ergebnisse zur Kontakt- und Kooperationswirkung ins Gegenteil."
+            }
+          ]
+        },
+        {
+          "id": "01M8CWSMMG44S8CT2WRTP686CN",
+          "slug": "pg8-vorurteile-abbau-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Welche drei Wege bauen Vorurteile gegen andere Gruppen nachweislich ab?",
+          "concept": "Sachliche Informationen gegen Gerüchte, persönliche Kontakte mit gemeinsamen Zielen auf Augenhöhe sowie selbstkritisches Prüfen eigener Schnellurteile.",
+          "sample_solution": "Sachliche Informationen gegen Gerüchte, persönliche Kontakte mit gemeinsamen Zielen auf Augenhöhe sowie selbstkritisches Prüfen eigener Schnellurteile.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-vorurteile-abbau"
+        }
+      ]
+    },
+    {
+      "id": "01M8CWSMMH443AFCRMJAXMXE53",
+      "atom_uri": "urn:zam:atom:01M8CWSMMH443AFCRMJAXMXE53",
+      "namespace": "zam-academy-politik-gymnasium-8",
+      "slug": "pg8-wuerde-massenpsychologie",
+      "title": "Schutz der Menschenwürde, Mobbing und Massenpsychologie",
+      "domain": "pug/lb6-3",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-wuerde-massenpsychologie",
+      "prerequisites": [
+        {
+          "atom_id": "01M8CWSMMERGSAZXYPB49AN4Y0",
+          "type": "soft",
+          "rationale": "Baut auf Grundlagen aus „Wie Vorurteile entstehen und wie man sie abbaut“ auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "politik-gymnasium-8",
+          "topic_code": "lb6-3",
+          "topic_title": "Die anderen und ich – Zusammenleben in der Gruppe"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "pug",
+          "track": "SWG",
+          "topic_code": "lb6-3",
+          "topic_title": "Die anderen und ich – Zusammenleben in der Gruppe",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8CWSMMJKD7C6FSN9V5MHN7Y",
+          "slug": "pg8-wuerde-massenpsychologie-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Was bezeichnet „Verantwortungsdiffusion“ in großen Mengen oder Online-Wellen?",
+          "concept": "Einzelne fühlen sich weniger zuständig, weil viele andere zugleich zuschauen oder mitmachen.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-wuerde-massenpsychologie",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Einzelne fühlen sich weniger zuständig, weil viele andere zugleich zuschauen oder mitmachen.",
+              "In Großgruppen trägt jedes Mitglied automatisch doppelt so viel persönliche Schuld."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Verantwortungsdiffusion schützt Betroffene zuverlässig vor jeder Ausgrenzung.",
+              "reason": "Verkennt die enthemmende Wirkung auf Mitläufer."
+            },
+            {
+              "text": "Sie beschreibt den gesetzlichen Schutz der Menschenwürde in Artikel eins.",
+              "reason": "Verwechselt einen psychologischen Gruppeneffekt mit einem Verfassungsgrundsatz."
+            }
+          ]
+        },
+        {
+          "id": "01M8CWSMMK3TE8SYKJPBR5MT9R",
+          "slug": "pg8-wuerde-massenpsychologie-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Woran erkennt man Mobbing als Angriff auf die Menschenwürde, und was durchbricht massenpsychologischen Konformitätsdruck?",
+          "concept": "Mobbing schikaniert gezielt und dauerhaft eine unterlegene Person; mutiger Widerspruch Einzelner, Hilfe für Betroffene und Verzicht aufs Mitlachen brechen den Gruppensog.",
+          "sample_solution": "Mobbing schikaniert gezielt und dauerhaft eine unterlegene Person; mutiger Widerspruch Einzelner, Hilfe für Betroffene und Verzicht aufs Mitlachen brechen den Gruppensog.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-wuerde-massenpsychologie"
+        }
+      ]
+    },
+    {
+      "id": "01M8CWSMMMG5S41CYD4Z3CPFYA",
+      "atom_uri": "urn:zam:atom:01M8CWSMMMG5S41CYD4Z3CPFYA",
+      "namespace": "zam-academy-politik-gymnasium-8",
+      "slug": "pg8-gesundheit-dimensionen",
+      "title": "Physische, psychische und soziale Gesundheit und Lebensweise",
+      "domain": "pug/lb6-4-5",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-gesundheit-dimensionen",
+      "prerequisites": [],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "politik-gymnasium-8",
+          "topic_code": "lb6-4-5",
+          "topic_title": "Bewusst leben, sich gesund ernähren"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "pug",
+          "track": "SWG",
+          "topic_code": "lb6-4-5",
+          "topic_title": "Bewusst leben, sich gesund ernähren",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8CWSMMN5Y82F8Y2DHTQ5ZY6",
+          "slug": "pg8-gesundheit-dimensionen-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Welche drei Dimensionen umfasst Gesundheit nach dem modernen Verständnis?",
+          "concept": "Physische, psychische und soziale Gesundheit im Zusammenspiel.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-gesundheit-dimensionen",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Physische, psychische und soziale Gesundheit im Zusammenspiel.",
+              "Ausschließlich körperliche Muskelkraft ohne Schlaf oder Freundschaften."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Nur der Besitz einer privaten Zusatzversicherung beim Zahnarzt.",
+              "reason": "Verwechselt Gesundheit mit Versicherungsverträgen."
+            },
+            {
+              "text": "Allein das kurzfristige Fehlen von Schnupfen an einem einzelnen Schultag.",
+              "reason": "Verkürzt das umfassende Gesundheitsbild auf Symptomfreiheit."
+            }
+          ]
+        },
+        {
+          "id": "01M8CWSMMP756ZGC633N4NSJ16",
+          "slug": "pg8-gesundheit-dimensionen-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Warum beeinflussen sich physische, psychische und soziale Gesundheit im Jugendalltag gegenseitig?",
+          "concept": "Dauerstress oder Ausgrenzung lösen oft Schlafmangel und körperliche Beschwerden aus; umgekehrt stärken Bewegung, Erholung und verlässliche Freundschaften alle drei Ebenen.",
+          "sample_solution": "Dauerstress oder Ausgrenzung lösen oft Schlafmangel und körperliche Beschwerden aus; umgekehrt stärken Bewegung, Erholung und verlässliche Freundschaften alle drei Ebenen.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-gesundheit-dimensionen"
+        }
+      ]
+    },
+    {
+      "id": "01M8CWSMMQBCNTB1YVWQS1FF1R",
+      "atom_uri": "urn:zam:atom:01M8CWSMMQBCNTB1YVWQS1FF1R",
+      "namespace": "zam-academy-politik-gymnasium-8",
+      "slug": "pg8-ernaehrungsphysiologie",
+      "title": "Grundlagen der Ernährungsphysiologie und bewusste Auswahl",
+      "domain": "pug/lb6-4-5",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-ernaehrungsphysiologie",
+      "prerequisites": [
+        {
+          "atom_id": "01M8CWSMMMG5S41CYD4Z3CPFYA",
+          "type": "soft",
+          "rationale": "Baut auf Grundlagen aus „Physische, psychische und soziale Gesundheit und Lebensweise“ auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "politik-gymnasium-8",
+          "topic_code": "lb6-4-5",
+          "topic_title": "Bewusst leben, sich gesund ernähren"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "pug",
+          "track": "SWG",
+          "topic_code": "lb6-4-5",
+          "topic_title": "Bewusst leben, sich gesund ernähren",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8CWSMMRPBFFB0AD4QYK4TE8",
+          "slug": "pg8-ernaehrungsphysiologie-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Warum halten Vollkornprodukte und Gemüse länger konzentriert als Weißmehl und Limonade?",
+          "concept": "Komplexe Kohlenhydrate und Ballaststoffe lassen den Blutzucker langsam und gleichmäßig steigen.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-ernaehrungsphysiologie",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Komplexe Kohlenhydrate und Ballaststoffe lassen den Blutzucker langsam und gleichmäßig steigen.",
+              "Limonade enthält ausschließlich Ballaststoffe und keinerlei Zucker."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Vollkornbrot besteht zu hundert Prozent aus reinem Speiseöl.",
+              "reason": "Verwechselt komplexe Kohlenhydrate mit reinen Fetten."
+            },
+            {
+              "text": "Gehirn und Muskeln benötigen täglich höchstens ein halbes Glas Wasser.",
+              "reason": "Unterschätzt den täglichen Flüssigkeitsbedarf von mindestens 1,5 Litern."
+            }
+          ]
+        },
+        {
+          "id": "01M8CWSMMSAPFGJWDB0DDSRBR9",
+          "slug": "pg8-ernaehrungsphysiologie-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Wie setzt man ernährungsphysiologische Grundkenntnisse in einem gesunden Pausenbrot praktisch um?",
+          "concept": "Man kombiniert Vollkornbrot (komplexe Kohlenhydrate/Ballaststoffe), einen eiweißreichen Belag wie Hummus oder Käse, frische Rohkost (Vitamine) und Wasser statt Zuckergetränk.",
+          "sample_solution": "Man kombiniert Vollkornbrot (komplexe Kohlenhydrate/Ballaststoffe), einen eiweißreichen Belag wie Hummus oder Käse, frische Rohkost (Vitamine) und Wasser statt Zuckergetränk.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-ernaehrungsphysiologie"
+        }
+      ]
+    },
+    {
+      "id": "01M8CWSMMT0SEZ07ZT36NDYMDV",
+      "atom_uri": "urn:zam:atom:01M8CWSMMT0SEZ07ZT36NDYMDV",
+      "namespace": "zam-academy-politik-gymnasium-8",
+      "slug": "pg8-ernaehrungsstoerungen",
+      "title": "Ernährungsstörungen, ernährungsbedingte Krankheiten und Prophylaxe",
+      "domain": "pug/lb6-4-5",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-ernaehrungsstoerungen",
+      "prerequisites": [
+        {
+          "atom_id": "01M8CWSMMMG5S41CYD4Z3CPFYA",
+          "type": "soft",
+          "rationale": "Baut auf Grundlagen aus „Physische, psychische und soziale Gesundheit und Lebensweise“ auf."
+        },
+        {
+          "atom_id": "01M8CWSMMQBCNTB1YVWQS1FF1R",
+          "type": "soft",
+          "rationale": "Baut auf Grundlagen aus „Grundlagen der Ernährungsphysiologie und bewusste Auswahl“ auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "politik-gymnasium-8",
+          "topic_code": "lb6-4-5",
+          "topic_title": "Bewusst leben, sich gesund ernähren"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "pug",
+          "track": "SWG",
+          "topic_code": "lb6-4-5",
+          "topic_title": "Bewusst leben, sich gesund ernähren",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8CWSMMVH1172D8J2MY5TZ0G",
+          "slug": "pg8-ernaehrungsstoerungen-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Was kennzeichnet Essstörungen wie Anorexie oder Bulimie im Unterschied zu normalem Appetitwandel?",
+          "concept": "Sie sind ernsthafte psychische Erkrankungen mit zwanghafter Fixierung auf Gewicht und Essen.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-ernaehrungsstoerungen",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Sie sind ernsthafte psychische Erkrankungen mit zwanghafter Fixierung auf Gewicht und Essen.",
+              "Sie heilen stets von allein, wenn Freunde sagen „Iss doch einfach mehr“."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Sie betreffen ausschließlich körperliche Zahnschäden durch gelegentliches Naschen.",
+              "reason": "Verwechselt Karies mit einer psychosomatischen Essstörung."
+            },
+            {
+              "text": "Sie entstehen niemals unter Einfluss medialer Schönheitsideale und Leistungsdrucks.",
+              "reason": "Ignoriert wichtige psychosoziale Auslöser."
+            }
+          ]
+        },
+        {
+          "id": "01M8CWSMMW97HCQC86DRETPH54",
+          "slug": "pg8-ernaehrungsstoerungen-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Wie unterscheiden sich ernährungsbedingte Krankheiten und Essstörungen hinsichtlich Prophylaxe und Hilfe?",
+          "concept": "Ernährungsbedingte Krankheiten (z. B. Karies, Typ-2-Diabetes) beugt man durch ausgewogene Kost und Bewegung vor; Essstörungen brauchen neben Medienkritik und Selbstwertstärkung ärztliche und psychotherapeutische Therapie.",
+          "sample_solution": "Ernährungsbedingte Krankheiten (z. B. Karies, Typ-2-Diabetes) beugt man durch ausgewogene Kost und Bewegung vor; Essstörungen brauchen neben Medienkritik und Selbstwertstärkung ärztliche und psychotherapeutische Therapie.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-ernaehrungsstoerungen"
+        }
+      ]
+    },
+    {
+      "id": "01M8CWSMMXR1HYZWJ1GH2H20BA",
+      "atom_uri": "urn:zam:atom:01M8CWSMMXR1HYZWJ1GH2H20BA",
+      "namespace": "zam-academy-politik-gymnasium-8",
+      "slug": "pg8-verbraucherschutz-lebensmittel",
+      "title": "Lebensmittelrecht, Qualitätssicherung und Verbraucherschutz",
+      "domain": "pug/lb6-4-5",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-verbraucherschutz-lebensmittel",
+      "prerequisites": [
+        {
+          "atom_id": "01M8CWSMMQBCNTB1YVWQS1FF1R",
+          "type": "soft",
+          "rationale": "Baut auf Grundlagen aus „Grundlagen der Ernährungsphysiologie und bewusste Auswahl“ auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "politik-gymnasium-8",
+          "topic_code": "lb6-4-5",
+          "topic_title": "Bewusst leben, sich gesund ernähren"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "pug",
+          "track": "SWG",
+          "topic_code": "lb6-4-5",
+          "topic_title": "Bewusst leben, sich gesund ernähren",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8CWSMMYKNR42M7QASXYPXKA",
+          "slug": "pg8-verbraucherschutz-lebensmittel-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Wann ist ein Lebensmittel nach Ablauf seines Datums noch genießbar?",
+          "concept": "Beim Mindesthaltbarkeitsdatum nach erfolgreicher Prüfung von Aussehen, Geruch und Geschmack.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-verbraucherschutz-lebensmittel",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Beim Mindesthaltbarkeitsdatum nach erfolgreicher Prüfung von Aussehen, Geruch und Geschmack.",
+              "Beim Verbrauchsdatum auf frischem Hackfleisch auch noch eine Woche nach Ablauf."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Grundsätzlich niemals – jedes Produkt wird ab Mitternacht sofort giftig.",
+              "reason": "Verursacht unnötige Lebensmittelverschwendung durch Gleichsetzung von MHD und Verbrauchsdatum."
+            },
+            {
+              "text": "Immer dann, wenn die bunte Werbefront „Fit“ oder „Natur“ aufdruckt.",
+              "reason": "Verlässt sich auf ungeschützte Werbesprüche statt Kennzeichnung."
+            }
+          ]
+        },
+        {
+          "id": "01M8CWSMMZPQBG8G4ZV2MMYJWZ",
+          "slug": "pg8-verbraucherschutz-lebensmittel-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Wie schützen gesetzliche Auszeichnungspflichten und eigene Etikettenprüfung beim Einkauf vor Täuschung?",
+          "concept": "Zutatenreihenfolge, fett markierte Allergene und Nährwerte je 100 g legen versteckten Zucker offen und ermöglichen faire Vergleiche jenseits geschönter Portionsangaben.",
+          "sample_solution": "Zutatenreihenfolge, fett markierte Allergene und Nährwerte je 100 g legen versteckten Zucker offen und ermöglichen faire Vergleiche jenseits geschönter Portionsangaben.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-verbraucherschutz-lebensmittel"
+        }
+      ]
+    },
+    {
+      "id": "01M8CWSMN0RY96DC2ZTQ5MW90B",
+      "atom_uri": "urn:zam:atom:01M8CWSMN0RY96DC2ZTQ5MW90B",
+      "namespace": "zam-academy-politik-gymnasium-8",
+      "slug": "pg8-gesundheit-gesellschaft",
+      "title": "Gesundheit, soziale Herkunft und staatliche Vorsorge",
+      "domain": "pug/lb6-4-5",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-gesundheit-gesellschaft",
+      "prerequisites": [
+        {
+          "atom_id": "01M8CWSMMMG5S41CYD4Z3CPFYA",
+          "type": "soft",
+          "rationale": "Baut auf Grundlagen aus „Physische, psychische und soziale Gesundheit und Lebensweise“ auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "politik-gymnasium-8",
+          "topic_code": "lb6-4-5",
+          "topic_title": "Bewusst leben, sich gesund ernähren"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "pug",
+          "track": "SWG",
+          "topic_code": "lb6-4-5",
+          "topic_title": "Bewusst leben, sich gesund ernähren",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8CWSMN1HQGH8KSFC39Y3X3G",
+          "slug": "pg8-gesundheit-gesellschaft-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Was zeigen Statistiken über den Zusammenhang von sozialer Herkunft und Gesundheit?",
+          "concept": "Geringeres Einkommen, Wohnbelastungen und Zeitdruck gehen im Schnitt mit höheren Risiken einher.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-gesundheit-gesellschaft",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Geringeres Einkommen, Wohnbelastungen und Zeitdruck gehen im Schnitt mit höheren Risiken einher.",
+              "Soziale Lebensbedingungen stehen in keinerlei statistischem Zusammenhang zur Gesundheit."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Nur wohlhabende Viertel leiden unter Lärmbelastung und mangelnden Grünflächen.",
+              "reason": "Kehrt die empirische Verteilung von Umweltbelastungen um."
+            },
+            {
+              "text": "Staatliche Schutzimpfungen sind in Deutschland für Kinder gesetzlich verboten.",
+              "reason": "Ignoriert kostenlose Vorsorgeangebote der Kassen."
+            }
+          ]
+        },
+        {
+          "id": "01M8CWSMN2P65RZR3R81212V8H",
+          "slug": "pg8-gesundheit-gesellschaft-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Wo leistet staatliche Gesundheitsvorsorge Sinnvolles, und wo liegen ihre politischen Grenzen?",
+          "concept": "Vorsorgeuntersuchungen, Impfungen, Trinkbrunnen und Schulessens-Standards verbessern Chancengleichheit; Verbote oder Konsumlenkung stoßen jedoch an Grenzen persönlicher Freiheit.",
+          "sample_solution": "Vorsorgeuntersuchungen, Impfungen, Trinkbrunnen und Schulessens-Standards verbessern Chancengleichheit; Verbote oder Konsumlenkung stoßen jedoch an Grenzen persönlicher Freiheit.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-gesundheit-gesellschaft"
+        }
+      ]
+    },
+    {
+      "id": "01M8CWSMN3SECPXYJJ1SKKGCTQ",
+      "atom_uri": "urn:zam:atom:01M8CWSMN3SECPXYJJ1SKKGCTQ",
+      "namespace": "zam-academy-politik-gymnasium-8",
+      "slug": "pg8-ernaehrungstrends-produktion",
+      "title": "Ernährungstrends sowie regionale und globale Lebensmittelproduktion",
+      "domain": "pug/lb6-4-5",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-ernaehrungstrends-produktion",
+      "prerequisites": [
+        {
+          "atom_id": "01M8CWSMMQBCNTB1YVWQS1FF1R",
+          "type": "soft",
+          "rationale": "Baut auf Grundlagen aus „Grundlagen der Ernährungsphysiologie und bewusste Auswahl“ auf."
+        },
+        {
+          "atom_id": "01M8CWSMMXR1HYZWJ1GH2H20BA",
+          "type": "soft",
+          "rationale": "Baut auf Grundlagen aus „Lebensmittelrecht, Qualitätssicherung und Verbraucherschutz“ auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "politik-gymnasium-8",
+          "topic_code": "lb6-4-5",
+          "topic_title": "Bewusst leben, sich gesund ernähren"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "pug",
+          "track": "SWG",
+          "topic_code": "lb6-4-5",
+          "topic_title": "Bewusst leben, sich gesund ernähren",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8CWSMN4BSZD537WASE60X0B",
+          "slug": "pg8-ernaehrungstrends-produktion-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Worin liegt ein Hauptunterschied zwischen Fast Food und Slow Food?",
+          "concept": "Fast Food optimiert Tempo und Preis; Slow Food betont saisonale Qualität und Erzeugerfairness.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-ernaehrungstrends-produktion",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Fast Food optimiert Tempo und Preis; Slow Food betont saisonale Qualität und Erzeugerfairness.",
+              "Slow Food verbietet grundsätzlich jede Verwendung regionaler Feldfrüchte."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Fast Food enthält im Durchschnitt gar kein Salz, Fett oder Verpackungsmüll.",
+              "reason": "Verkennt typische Nachteile hochverarbeiteter Schnellkost."
+            },
+            {
+              "text": "Vegane Ernährung erfordert keinerlei Beachtung kritischer Nährstoffe wie Vitamin B12.",
+              "reason": "Übersieht die nötige Nährstoffplanung bei rein veganer Kost."
+            }
+          ]
+        },
+        {
+          "id": "01M8CWSMN5BQMTDWQME3SJFKEQ",
+          "slug": "pg8-ernaehrungstrends-produktion-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Warum ist „regional“ beim Einkauf oft, aber nicht automatisch immer klimafreundlicher als überregionale Ware?",
+          "concept": "Kurze Wege aus der Region sparen meist Transportemissionen; außerhalb der Saison können aber monatelang gekühlte heimische Äpfel ähnliche Werte erreichen wie frische Schiffsware – entscheidend ist Saisonalität und der Verzicht auf Flugware.",
+          "sample_solution": "Kurze Wege aus der Region sparen meist Transportemissionen; außerhalb der Saison können aber monatelang gekühlte heimische Äpfel ähnliche Werte erreichen wie frische Schiffsware – entscheidend ist Saisonalität und der Verzicht auf Flugware.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-ernaehrungstrends-produktion"
+        }
+      ]
+    },
+    {
+      "id": "01M8CWSMN624DP2WTSC87VSK3E",
+      "atom_uri": "urn:zam:atom:01M8CWSMN624DP2WTSC87VSK3E",
+      "namespace": "zam-academy-politik-gymnasium-8",
+      "slug": "pg8-esskultur-berufe",
+      "title": "Esskultur im Wandel und Berufsfelder rund um Gesundheit und Ernährung",
+      "domain": "pug/lb6-4-5",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-esskultur-berufe",
+      "prerequisites": [
+        {
+          "atom_id": "01M8CWSMN3SECPXYJJ1SKKGCTQ",
+          "type": "soft",
+          "rationale": "Baut auf Grundlagen aus „Ernährungstrends sowie regionale und globale Lebensmittelproduktion“ auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "politik-gymnasium-8",
+          "topic_code": "lb6-4-5",
+          "topic_title": "Bewusst leben, sich gesund ernähren"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "pug",
+          "track": "SWG",
+          "topic_code": "lb6-4-5",
+          "topic_title": "Bewusst leben, sich gesund ernähren",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8CWSMN7G37WV8BZ5D8DEN0D",
+          "slug": "pg8-esskultur-berufe-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Welche Einflüsse formen die Esskultur einer Gesellschaft im Laufe der Zeit?",
+          "concept": "Geschichte, Klima, Ernten, Religion sowie moderne Arbeits- und Schulrhythmen.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-esskultur-berufe",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Geschichte, Klima, Ernten, Religion sowie moderne Arbeits- und Schulrhythmen.",
+              "Ausschließlich individuelle Zufälle ohne jeden historischen oder kulturellen Bezug."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Tischsitten sind bei allen Kulturen und Epochen der Menschheit völlig identisch.",
+              "reason": "Ignoriert kulturelle und historische Vielfalt beim Essen."
+            },
+            {
+              "text": "Berufsfelder um Ernährung haben nichts mit Naturwissenschaften oder Beratung zu tun.",
+              "reason": "Verkennt das Profil von Ökotrophologie, Diätassistenz und Lebensmittelkontrolle."
+            }
+          ]
+        },
+        {
+          "id": "01M8CWSMN8ZNM9PCK5X42DEG54",
+          "slug": "pg8-esskultur-berufe-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Welche Aufgaben verbinden Berufe rund um Gesundheit und Ernährung, und welche Stärken passen dazu?",
+          "concept": "Ernährungsberatung, Diätassistenz, Ökotrophologie und Lebensmittelkontrolle verbinden naturwissenschaftliches Wissen mit Kommunikation, Empathie und Verbraucherschutz.",
+          "sample_solution": "Ernährungsberatung, Diätassistenz, Ökotrophologie und Lebensmittelkontrolle verbinden naturwissenschaftliches Wissen mit Kommunikation, Empathie und Verbraucherschutz.",
+          "source_link": "https://academy.zam-os.org/politik-gymnasium-8/#lesson=pg8-esskultur-berufe"
+        }
+      ]
+    }
+  ]
+}
