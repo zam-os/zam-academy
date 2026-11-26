@@ -1,0 +1,1136 @@
+{
+  "$schema": "https://zam.app/schemas/v1/kvt-tile.json",
+  "tile_id": "zam-academy:informatik-mittelschule-7",
+  "version": "2026.11.1",
+  "title": "Informatik 7 Mittelschule (ZAM Academy)",
+  "description": "LehrplanPLUS Bayern, Informatik R7 und M7: 12 Lektionen mit interaktiven Werkstätten, zwei Aufgabenniveaus und 36 Abrufkarten.",
+  "publisher": "ZAM Academy",
+  "sources": [
+    {
+      "uri": "https://www.lehrplanplus.bayern.de/fachlehrplan/mittelschule/7/informatik/regelklasse",
+      "label": "ISB · Informatik R7, Mittelschule",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://www.lehrplanplus.bayern.de/fachlehrplan/mittelschule/7/informatik/mittlere-reife-klasse",
+      "label": "ISB · Informatik M7, Mittelschule",
+      "checked": "2026-11-26"
+    }
+  ],
+  "atoms": [
+    {
+      "id": "01M8CKKH6SSHGGD1WQ6CRZ01NP",
+      "atom_uri": "urn:zam:atom:01M8CKKH6SSHGGD1WQ6CRZ01NP",
+      "namespace": "zam-academy-informatik-mittelschule-7",
+      "slug": "ms7-nachrichtenwege",
+      "title": "Welcher Dienst für welche Nachricht?",
+      "domain": "informatik/kommunikation",
+      "reduction": "formal",
+      "typical_age_min": 12,
+      "source_link": "https://academy.zam-os.org/informatik-mittelschule-7/#lesson=ms7-nachrichtenwege",
+      "prerequisites": [],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "informatik-mittelschule-7",
+          "topic_code": "stage-1-informationsaustausch",
+          "topic_title": "Digitaler Informationsaustausch"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "subject": "informatik",
+          "track": "R",
+          "topic_code": "lb1",
+          "topic_title": "Digitaler Informationsaustausch",
+          "exam_relevant": false
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "subject": "informatik",
+          "track": "M",
+          "topic_code": "lb1",
+          "topic_title": "Digitaler Informationsaustausch",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8CKKH6SQYKY9SG4GM9E07Z9",
+          "slug": "ms7-nachrichtenwege-postfach",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Wo kann eine E-Mail warten, solange das Empfängergerät offline ist?",
+          "concept": "Im Postfach auf dem Mailserver",
+          "source_link": "https://academy.zam-os.org/informatik-mittelschule-7/#lesson=ms7-nachrichtenwege",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Im Postfach auf dem Mailserver",
+              "Im Router des Empfängers"
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8CKKH6S3M9B024TX45M1291",
+          "slug": "ms7-nachrichtenwege-freigabe",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Womit legst du fest, wer ein gemeinsames Dokument bearbeiten darf?",
+          "concept": "Mit den Bearbeitungsrechten",
+          "source_link": "https://academy.zam-os.org/informatik-mittelschule-7/#lesson=ms7-nachrichtenwege",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Mit den Bearbeitungsrechten",
+              "Mit dem Dateinamen des Dokuments"
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8CKKH6SHZ4AQ8XDQ10N740P",
+          "slug": "ms7-nachrichtenwege-dienstwahl",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Eure AG will eine Datei gezielt verschicken und anschließend gemeinsam an einem Plan arbeiten. Welche Dienste und Rechte passen?",
+          "concept": "E-Mail fürs gezielte Senden, geteiltes Dokument fürs gemeinsame Bearbeiten.",
+          "source_link": "https://academy.zam-os.org/informatik-mittelschule-7/#lesson=ms7-nachrichtenwege",
+          "sample_solution": "Schicke die Datei ans Postfach der gewünschten Person. Gib den Mitgliedern für den gemeinsamen Plan Bearbeitungsrechte am selben Dokument."
+        }
+      ]
+    },
+    {
+      "id": "01M8CKKH6SKBWBMJZAG1JB3KM2",
+      "atom_uri": "urn:zam:atom:01M8CKKH6SKBWBMJZAG1JB3KM2",
+      "namespace": "zam-academy-informatik-mittelschule-7",
+      "slug": "ms7-phishing-quellen",
+      "title": "Verdächtige Nachrichten und Quellen prüfen",
+      "domain": "informatik/sicherheit",
+      "reduction": "formal",
+      "typical_age_min": 12,
+      "source_link": "https://academy.zam-os.org/informatik-mittelschule-7/#lesson=ms7-phishing-quellen",
+      "prerequisites": [
+        {
+          "atom_id": "01M8CKKH6SSHGGD1WQ6CRZ01NP"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "informatik-mittelschule-7",
+          "topic_code": "stage-1-informationsaustausch",
+          "topic_title": "Digitaler Informationsaustausch"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "subject": "informatik",
+          "track": "R",
+          "topic_code": "lb1",
+          "topic_title": "Digitaler Informationsaustausch",
+          "exam_relevant": false
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "subject": "informatik",
+          "track": "M",
+          "topic_code": "lb1",
+          "topic_title": "Digitaler Informationsaustausch",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8CKKH6SBDQV8SD8M9HGCS1X",
+          "slug": "ms7-phishing-quellen-code",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Was machst du bei einer überraschenden Nachricht, die deinen Anmeldecode verlangt?",
+          "concept": "Code geheim halten und unabhängig prüfen",
+          "source_link": "https://academy.zam-os.org/informatik-mittelschule-7/#lesson=ms7-phishing-quellen",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Code geheim halten und unabhängig prüfen",
+              "Code senden und danach im gleichen Chat nachfragen"
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8CKKH6SZZ3W0JQ9VXXVHVA3",
+          "slug": "ms7-phishing-quellen-kopien",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Sind zwei Accounts, die denselben Screenshot weiterleiten, zwei unabhängige Belege?",
+          "concept": "Nein, beide können dieselbe Kopie nutzen.",
+          "source_link": "https://academy.zam-os.org/informatik-mittelschule-7/#lesson=ms7-phishing-quellen",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Nein, beide können dieselbe Kopie nutzen.",
+              "Ja, verschiedene Accounts belegen die Aussage unabhängig."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8CKKH6S1JXZHK9ZS88V8VEK",
+          "slug": "ms7-phishing-quellen-original",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Ein Ausschnitt im Klassenchat meldet den Ausfall des Schulausflugs. Wie prüfst du die Behauptung?",
+          "concept": "Die vollständige aktuelle Originalmeldung unabhängig prüfen.",
+          "source_link": "https://academy.zam-os.org/informatik-mittelschule-7/#lesson=ms7-phishing-quellen",
+          "sample_solution": "Öffne das Schulportal über deinen bekannten Zugang. Vergleiche die vollständige Meldung, ihr Datum und die genannte Klasse mit dem Ausschnitt."
+        }
+      ]
+    },
+    {
+      "id": "01M8CKKH6S6F718XGR8YED7EFK",
+      "atom_uri": "urn:zam:atom:01M8CKKH6S6F718XGR8YED7EFK",
+      "namespace": "zam-academy-informatik-mittelschule-7",
+      "slug": "ms7-bildrechte",
+      "title": "Bilder mit Erlaubnis teilen",
+      "domain": "informatik/medienrecht",
+      "reduction": "formal",
+      "typical_age_min": 12,
+      "source_link": "https://academy.zam-os.org/informatik-mittelschule-7/#lesson=ms7-bildrechte",
+      "prerequisites": [
+        {
+          "atom_id": "01M8CKKH6SSHGGD1WQ6CRZ01NP"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "informatik-mittelschule-7",
+          "topic_code": "stage-1-informationsaustausch",
+          "topic_title": "Digitaler Informationsaustausch"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "subject": "informatik",
+          "track": "R",
+          "topic_code": "lb1",
+          "topic_title": "Digitaler Informationsaustausch",
+          "exam_relevant": false
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "subject": "informatik",
+          "track": "M",
+          "topic_code": "lb1",
+          "topic_title": "Digitaler Informationsaustausch",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8CKKH6S2F04FNKCFCB5XAXX",
+          "slug": "ms7-bildrechte-bildsuche",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Warum reicht ein Treffer in der Bildersuche als Freigabe zum Veröffentlichen nicht aus?",
+          "concept": "Sichtbarkeit im Netz ist keine Nutzungserlaubnis.",
+          "source_link": "https://academy.zam-os.org/informatik-mittelschule-7/#lesson=ms7-bildrechte",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Sichtbarkeit im Netz ist keine Nutzungserlaubnis.",
+              "Die Bildersuche erteilt für Treffer eine Nutzungserlaubnis."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8CKKH6SB50RJVCYGARTPH46",
+          "slug": "ms7-bildrechte-eigenes-foto",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Was klärst du vor einem öffentlichen Beitrag mit einem eigenen Foto erkennbarer Personen?",
+          "concept": "Ob die erkennbaren Personen veröffentlicht werden dürfen",
+          "source_link": "https://academy.zam-os.org/informatik-mittelschule-7/#lesson=ms7-bildrechte",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Ob die erkennbaren Personen veröffentlicht werden dürfen",
+              "Ob der eigene Name im Dateinamen der Aufnahme steht"
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8CKKH6SDVFW35RCZ2ZNAXR7",
+          "slug": "ms7-bildrechte-beitraege",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Du willst ein fremdes Gruppenfoto auf dem Schulblog verwenden. Welche zwei Fragen klärst du?",
+          "concept": "Deine Nutzungserlaubnis für das Foto und die Rechte erkennbarer Personen.",
+          "source_link": "https://academy.zam-os.org/informatik-mittelschule-7/#lesson=ms7-bildrechte",
+          "sample_solution": "Prüfe die Erlaubnis oder Lizenz für deine geplante Nutzung. Kläre bei den erkennbaren Personen und nach den Regeln der Schule, ob das Foto so veröffentlicht werden darf."
+        }
+      ]
+    },
+    {
+      "id": "01M8CKKH6SYJ9X6QKC5CEQHA55",
+      "atom_uri": "urn:zam:atom:01M8CKKH6SYJ9X6QKC5CEQHA55",
+      "namespace": "zam-academy-informatik-mittelschule-7",
+      "slug": "ms7-medienwirkung",
+      "title": "Was Plattformen mit unserem Alltag machen",
+      "domain": "informatik/medienwirkung",
+      "reduction": "formal",
+      "typical_age_min": 12,
+      "source_link": "https://academy.zam-os.org/informatik-mittelschule-7/#lesson=ms7-medienwirkung",
+      "prerequisites": [
+        {
+          "atom_id": "01M8CKKH6SSHGGD1WQ6CRZ01NP"
+        },
+        {
+          "atom_id": "01M8CKKH6SKBWBMJZAG1JB3KM2"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "informatik-mittelschule-7",
+          "topic_code": "stage-1-informationsaustausch",
+          "topic_title": "Digitaler Informationsaustausch"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "subject": "informatik",
+          "track": "R",
+          "topic_code": "lb1",
+          "topic_title": "Digitaler Informationsaustausch",
+          "exam_relevant": false
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "subject": "informatik",
+          "track": "M",
+          "topic_code": "lb1",
+          "topic_title": "Digitaler Informationsaustausch",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8CKKH6SJEXHSAGHV0K0YZ0W",
+          "slug": "ms7-medienwirkung-feed",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Welche Art Blick auf andere Menschen gibt dir ein Feed?",
+          "concept": "Eine Auswahl angezeigter Beiträge",
+          "source_link": "https://academy.zam-os.org/informatik-mittelschule-7/#lesson=ms7-medienwirkung",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Eine Auswahl angezeigter Beiträge",
+              "Einen vollständigen Blick auf ihren Alltag"
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8CKKH6SQ3Q5B5PCYHR1KBV3",
+          "slug": "ms7-medienwirkung-standort",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Ein Gruppenchat für Basteltipps fragt nach Dauerzugriff auf deinen Standort. Was ist datensparsam?",
+          "concept": "Den Standortzugriff deaktivieren",
+          "source_link": "https://academy.zam-os.org/informatik-mittelschule-7/#lesson=ms7-medienwirkung",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Den Standortzugriff deaktivieren",
+              "Den Standort ins Profil schreiben"
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8CKKH6S6MBP732C8NNR1RHM",
+          "slug": "ms7-medienwirkung-chatregel",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Ein Klassenchat hilft bei Aufgaben, sorgt aber für viele Störungen beim Lernen. Wie können beide Anliegen berücksichtigt werden?",
+          "concept": "Antwortzeiten vereinbaren und Mitteilungen beim Lernen stummschalten.",
+          "source_link": "https://academy.zam-os.org/informatik-mittelschule-7/#lesson=ms7-medienwirkung",
+          "sample_solution": "Die Klasse einigt sich auf ein Zeitfenster für Fragen und Antworten. Beim Lernen kannst du die Signale stummschalten und die Nachrichten später gesammelt lesen."
+        }
+      ]
+    },
+    {
+      "id": "01M8CKKH6SKDPAE0X56E5VM85K",
+      "atom_uri": "urn:zam:atom:01M8CKKH6SKDPAE0X56E5VM85K",
+      "namespace": "zam-academy-informatik-mittelschule-7",
+      "slug": "ms7-pixel-formate",
+      "title": "Vom Foto zur Bilddatei",
+      "domain": "informatik/rastergrafik",
+      "reduction": "formal",
+      "typical_age_min": 12,
+      "source_link": "https://academy.zam-os.org/informatik-mittelschule-7/#lesson=ms7-pixel-formate",
+      "prerequisites": [],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "informatik-mittelschule-7",
+          "topic_code": "stage-2-datenverarbeitung",
+          "topic_title": "Datenverarbeitung"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "subject": "informatik",
+          "track": "R",
+          "topic_code": "lb2",
+          "topic_title": "Datenverarbeitung",
+          "exam_relevant": false
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "subject": "informatik",
+          "track": "M",
+          "topic_code": "lb2",
+          "topic_title": "Datenverarbeitung",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8CKKH6SZJZ5WRYAAFPG951N",
+          "slug": "ms7-pixel-formate-pixelzahl",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Wie ermittelst du die Pixelzahl eines rechteckigen Bilds aus Breite und Höhe?",
+          "concept": "Breite in Pixeln mal Höhe in Pixeln",
+          "source_link": "https://academy.zam-os.org/informatik-mittelschule-7/#lesson=ms7-pixel-formate",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Breite in Pixeln mal Höhe in Pixeln",
+              "Breite in Pixeln plus Höhe in Pixeln"
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8CKKH6SEJJY6MGTQMMF4719",
+          "slug": "ms7-pixel-formate-transparenz",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Welches Format unterstützt einen transparenten Hintergrund, PNG oder JPG?",
+          "concept": "PNG",
+          "source_link": "https://academy.zam-os.org/informatik-mittelschule-7/#lesson=ms7-pixel-formate",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "PNG",
+              "JPG"
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8CKKH6SQ8T6BHGFQP3S6JKW",
+          "slug": "ms7-pixel-formate-scan",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Ein Scan hat 600 mal 400 Pixel. Wie verändert sich die Pixelzahl, wenn beide Rastermaße beim erneuten Scan verdoppelt werden?",
+          "concept": "Viermal so viele Bildpunkte.",
+          "source_link": "https://academy.zam-os.org/informatik-mittelschule-7/#lesson=ms7-pixel-formate",
+          "sample_solution": "Der alte Scan enthält 240 000 Pixel, der neue hat 1 200 mal 800 Pixel, also 960 000. Die Pixelzahl ist viermal so groß."
+        }
+      ]
+    },
+    {
+      "id": "01M8CKKH6SFRHZ3NGYV7GPN8W8",
+      "atom_uri": "urn:zam:atom:01M8CKKH6SFRHZ3NGYV7GPN8W8",
+      "namespace": "zam-academy-informatik-mittelschule-7",
+      "slug": "ms7-raster-bearbeiten",
+      "title": "Rasterbilder bearbeiten",
+      "domain": "informatik/rastergrafik",
+      "reduction": "formal",
+      "typical_age_min": 12,
+      "source_link": "https://academy.zam-os.org/informatik-mittelschule-7/#lesson=ms7-raster-bearbeiten",
+      "prerequisites": [
+        {
+          "atom_id": "01M8CKKH6SKDPAE0X56E5VM85K"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "informatik-mittelschule-7",
+          "topic_code": "stage-2-datenverarbeitung",
+          "topic_title": "Datenverarbeitung"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "subject": "informatik",
+          "track": "R",
+          "topic_code": "lb2",
+          "topic_title": "Datenverarbeitung",
+          "exam_relevant": false
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "subject": "informatik",
+          "track": "M",
+          "topic_code": "lb2",
+          "topic_title": "Datenverarbeitung",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8CKKH6S2YQJXD4XAEQZYMFD",
+          "slug": "ms7-raster-bearbeiten-zuschnitt",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Was passiert mit den Pixeln außerhalb des Rechtecks beim Zuschneiden?",
+          "concept": "Sie gehören nicht mehr zum Ergebnis.",
+          "source_link": "https://academy.zam-os.org/informatik-mittelschule-7/#lesson=ms7-raster-bearbeiten",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Sie gehören nicht mehr zum Ergebnis.",
+              "Sie bleiben als unveränderte Randpixel im Ergebnis."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8CKKH6ST2VHZGK6CC039CKP",
+          "slug": "ms7-raster-bearbeiten-retusche",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Welche Bearbeitung ersetzt den kleinen Staubfleck durch eine passende Nachbarfarbe?",
+          "concept": "Retuschieren",
+          "source_link": "https://academy.zam-os.org/informatik-mittelschule-7/#lesson=ms7-raster-bearbeiten",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Retuschieren",
+              "Zuschneiden"
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8CKKH6SA01H2T0813G551KS",
+          "slug": "ms7-raster-bearbeiten-freistellen",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Ein Symbol soll auf verschiedenfarbigem Papier stehen. Welche Bearbeitung und welches Format passen?",
+          "concept": "Das Symbol freistellen und transparent als PNG speichern.",
+          "source_link": "https://academy.zam-os.org/informatik-mittelschule-7/#lesson=ms7-raster-bearbeiten",
+          "sample_solution": "Wähle das Symbol aus, entferne den Hintergrund und exportiere das Ergebnis als PNG mit Transparenz. Die Farbe darunter bleibt dadurch sichtbar."
+        }
+      ]
+    },
+    {
+      "id": "01M8CKKH6SJASHVB41ST0XR4B2",
+      "atom_uri": "urn:zam:atom:01M8CKKH6SJASHVB41ST0XR4B2",
+      "namespace": "zam-academy-informatik-mittelschule-7",
+      "slug": "ms7-raster-vektor",
+      "title": "Raster oder Vektor?",
+      "domain": "informatik/vektorgrafik",
+      "reduction": "formal",
+      "typical_age_min": 12,
+      "source_link": "https://academy.zam-os.org/informatik-mittelschule-7/#lesson=ms7-raster-vektor",
+      "prerequisites": [
+        {
+          "atom_id": "01M8CKKH6SKDPAE0X56E5VM85K"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "informatik-mittelschule-7",
+          "topic_code": "stage-2-datenverarbeitung",
+          "topic_title": "Datenverarbeitung"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "subject": "informatik",
+          "track": "R",
+          "topic_code": "lb2",
+          "topic_title": "Datenverarbeitung",
+          "exam_relevant": false
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "subject": "informatik",
+          "track": "M",
+          "topic_code": "lb2",
+          "topic_title": "Datenverarbeitung",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8CKKH6S2WWQXP26RAFVZTPS",
+          "slug": "ms7-raster-vektor-raster",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Was speichert eine Rastergrafik?",
+          "concept": "Farbwerte in einem festen Pixelraster",
+          "source_link": "https://academy.zam-os.org/informatik-mittelschule-7/#lesson=ms7-raster-vektor",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Farbwerte in einem festen Pixelraster",
+              "Geometrische Formen mit Attributwerten"
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8CKKH6SH7NR84XYMM91J39S",
+          "slug": "ms7-raster-vektor-skalieren",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Warum bleiben die Kanten eines Vektorlogos beim Vergrößern klar?",
+          "concept": "Die Formen werden in der Zielgröße neu berechnet.",
+          "source_link": "https://academy.zam-os.org/informatik-mittelschule-7/#lesson=ms7-raster-vektor",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Die Formen werden in der Zielgröße neu berechnet.",
+              "Vorhandene Bildpunkte werden unverändert vergrößert."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8CKKH6SRAS2WPE4KKJV8PMV",
+          "slug": "ms7-raster-vektor-einsatz",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Ein Stadtplan enthält gezeichnete Wege und ein Luftbild. Welche Darstellung wählst du für die beiden Ebenen?",
+          "concept": "Vektor für die Wege, Raster für das Luftbild.",
+          "source_link": "https://academy.zam-os.org/informatik-mittelschule-7/#lesson=ms7-raster-vektor",
+          "sample_solution": "Die Wege lassen sich als Linien beschreiben und skalieren. Das Luftbild enthält viele feine Farb- und Helligkeitswerte, die ein Pixelraster speichert."
+        }
+      ]
+    },
+    {
+      "id": "01M8CKKH6STWSD1FXRPNHZS6G5",
+      "atom_uri": "urn:zam:atom:01M8CKKH6STWSD1FXRPNHZS6G5",
+      "namespace": "zam-academy-informatik-mittelschule-7",
+      "slug": "ms7-vektor-objekte",
+      "title": "Formen als Objekte gestalten",
+      "domain": "informatik/vektorgrafik",
+      "reduction": "formal",
+      "typical_age_min": 12,
+      "source_link": "https://academy.zam-os.org/informatik-mittelschule-7/#lesson=ms7-vektor-objekte",
+      "prerequisites": [
+        {
+          "atom_id": "01M8CKKH6SJASHVB41ST0XR4B2"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "informatik-mittelschule-7",
+          "topic_code": "stage-2-datenverarbeitung",
+          "topic_title": "Datenverarbeitung"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "subject": "informatik",
+          "track": "R",
+          "topic_code": "lb2",
+          "topic_title": "Datenverarbeitung",
+          "exam_relevant": false
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "subject": "informatik",
+          "track": "M",
+          "topic_code": "lb2",
+          "topic_title": "Datenverarbeitung",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8CKKH6SMGKK4MNGTQYSB65Z",
+          "slug": "ms7-vektor-objekte-breite",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Beim Rechteck steht Breite 60. Was ist hier der Attributwert?",
+          "concept": "60",
+          "source_link": "https://academy.zam-os.org/informatik-mittelschule-7/#lesson=ms7-vektor-objekte",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "60",
+              "Breite"
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8CKKH6SND7GAMNCK8KGWZ8R",
+          "slug": "ms7-vektor-objekte-farbe",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Welches Attribut ändert sich, wenn du ein Rechteck von Türkis auf Gelb umfärbst?",
+          "concept": "Füllfarbe",
+          "source_link": "https://academy.zam-os.org/informatik-mittelschule-7/#lesson=ms7-vektor-objekte",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Füllfarbe",
+              "Breite"
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8CKKH6S334X7DY3RZ8X38XC",
+          "slug": "ms7-vektor-objekte-endpunkt",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Eine horizontale Linie reicht von Punkt 2,3 bis Punkt 8,3. Nur das rechte Ende soll auf Punkt 8,5 steigen. Was änderst du?",
+          "concept": "Die y-Koordinate des rechten Endpunkts.",
+          "source_link": "https://academy.zam-os.org/informatik-mittelschule-7/#lesson=ms7-vektor-objekte",
+          "sample_solution": "Setze nur die y-Koordinate des rechten Endpunkts von 3 auf 5. Seine x-Koordinate und beide Koordinaten des linken Endpunkts bleiben unverändert."
+        }
+      ]
+    },
+    {
+      "id": "01M8CKKH6S74RA4VRG4RCCG92B",
+      "atom_uri": "urn:zam:atom:01M8CKKH6S74RA4VRG4RCCG92B",
+      "namespace": "zam-academy-informatik-mittelschule-7",
+      "slug": "ms7-objekte-methoden",
+      "title": "Ein Rover lernt Befehle",
+      "domain": "informatik/programmieren",
+      "reduction": "formal",
+      "typical_age_min": 12,
+      "source_link": "https://academy.zam-os.org/informatik-mittelschule-7/#lesson=ms7-objekte-methoden",
+      "prerequisites": [
+        {
+          "atom_id": "01M8CKKH6STWSD1FXRPNHZS6G5"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "informatik-mittelschule-7",
+          "topic_code": "stage-3-programmieren",
+          "topic_title": "Programmieren"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "subject": "informatik",
+          "track": "R",
+          "topic_code": "lb3",
+          "topic_title": "Programmieren",
+          "exam_relevant": false
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "subject": "informatik",
+          "track": "M",
+          "topic_code": "lb3",
+          "topic_title": "Programmieren",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8CKKH6S56XP3RZR9BKDEHRA",
+          "slug": "ms7-objekte-methoden-methode",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Wie heißt eine aufrufbare Aktion eines Objekts, zum Beispiel das Fahren des Rovers?",
+          "concept": "Methode",
+          "source_link": "https://academy.zam-os.org/informatik-mittelschule-7/#lesson=ms7-objekte-methoden",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Methode",
+              "Attribut"
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8CKKH6SYD8AW1Q8GZYV0KAV",
+          "slug": "ms7-objekte-methoden-folge",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Welche Reihenfolge leuchtet vor der Fahrt: Licht an und dann fahren oder fahren und dann Licht an?",
+          "concept": "Licht an, dann fahren",
+          "source_link": "https://academy.zam-os.org/informatik-mittelschule-7/#lesson=ms7-objekte-methoden",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Licht an, dann fahren",
+              "Fahren, dann Licht an"
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8CKKH6S4RZM1TTKRNA417Z4",
+          "slug": "ms7-objekte-methoden-schritte",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Zwei Programme enden auf Feld 1 mit Licht an. Wie erkennst du, welches das Licht vor der Fahrt einschaltet?",
+          "concept": "Den Zustand direkt nach der ersten Methode vergleichen.",
+          "source_link": "https://academy.zam-os.org/informatik-mittelschule-7/#lesson=ms7-objekte-methoden",
+          "sample_solution": "Führe beide Programme schrittweise aus. Wenn nach dem ersten Aufruf das Licht an ist und der Rover noch auf Feld 0 steht, wurde vor der Fahrt eingeschaltet."
+        }
+      ]
+    },
+    {
+      "id": "01M8CKKH6S5QJHCJ3CA5JAY1WH",
+      "atom_uri": "urn:zam:atom:01M8CKKH6S5QJHCJ3CA5JAY1WH",
+      "namespace": "zam-academy-informatik-mittelschule-7",
+      "slug": "ms7-bedingung-alternative",
+      "title": "Wenn der Weg versperrt ist",
+      "domain": "informatik/programmieren",
+      "reduction": "formal",
+      "typical_age_min": 12,
+      "source_link": "https://academy.zam-os.org/informatik-mittelschule-7/#lesson=ms7-bedingung-alternative",
+      "prerequisites": [
+        {
+          "atom_id": "01M8CKKH6S74RA4VRG4RCCG92B"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "informatik-mittelschule-7",
+          "topic_code": "stage-3-programmieren",
+          "topic_title": "Programmieren"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "subject": "informatik",
+          "track": "R",
+          "topic_code": "lb3",
+          "topic_title": "Programmieren",
+          "exam_relevant": false
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "subject": "informatik",
+          "track": "M",
+          "topic_code": "lb3",
+          "topic_title": "Programmieren",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8CKKH6SPVGPS15QAF1MAC46",
+          "slug": "ms7-bedingung-alternative-zweig",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Welcher Teil einer zweiseitigen Alternative läuft bei einer falschen Bedingung?",
+          "concept": "Der Sonst-Zweig",
+          "source_link": "https://academy.zam-os.org/informatik-mittelschule-7/#lesson=ms7-bedingung-alternative",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Der Sonst-Zweig",
+              "Der Dann-Zweig"
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8CKKH6S2XTWN5PNHRF6MCCT",
+          "slug": "ms7-bedingung-alternative-einseitig",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Was tut eine einseitige Alternative, wenn ihre Bedingung falsch ist?",
+          "concept": "Sie überspringt ihren Anweisungsblock.",
+          "source_link": "https://academy.zam-os.org/informatik-mittelschule-7/#lesson=ms7-bedingung-alternative",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Sie überspringt ihren Anweisungsblock.",
+              "Sie führt ihren Anweisungsblock trotzdem aus."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8CKKH6S9A5FTMB4Z64SHXKF",
+          "slug": "ms7-bedingung-alternative-testfaelle",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Der Rover soll bei einem Hindernis warten und sonst fahren. Welche zwei Tests prüfst du und was erwartest du?",
+          "concept": "Mit Hindernis wartet er, ohne Hindernis fährt er.",
+          "source_link": "https://academy.zam-os.org/informatik-mittelschule-7/#lesson=ms7-bedingung-alternative",
+          "sample_solution": "Teste zuerst mit Hindernis und prüfe, ob der Rover stehen bleibt. Teste dann ohne Hindernis und prüfe, ob er genau ein Feld weiterfährt."
+        }
+      ]
+    },
+    {
+      "id": "01M8CKKH6SEPMAZ8J5QKM83A31",
+      "atom_uri": "urn:zam:atom:01M8CKKH6SEPMAZ8J5QKM83A31",
+      "namespace": "zam-academy-informatik-mittelschule-7",
+      "slug": "ms7-wiederholung-schachtelung",
+      "title": "Mit Schleifen Marken sammeln",
+      "domain": "informatik/programmieren",
+      "reduction": "formal",
+      "typical_age_min": 12,
+      "source_link": "https://academy.zam-os.org/informatik-mittelschule-7/#lesson=ms7-wiederholung-schachtelung",
+      "prerequisites": [
+        {
+          "atom_id": "01M8CKKH6S5QJHCJ3CA5JAY1WH"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "informatik-mittelschule-7",
+          "topic_code": "stage-3-programmieren",
+          "topic_title": "Programmieren"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "subject": "informatik",
+          "track": "R",
+          "topic_code": "lb3",
+          "topic_title": "Programmieren",
+          "exam_relevant": false
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "subject": "informatik",
+          "track": "M",
+          "topic_code": "lb3",
+          "topic_title": "Programmieren",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8CKKH6S643YH3D478EPVRJ7",
+          "slug": "ms7-wiederholung-schachtelung-durchlaeufe",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Eine Schleife wiederholt einen Block viermal. Im Block steht eine Prüfung. Wie oft wird geprüft?",
+          "concept": "Viermal, einmal pro Durchlauf",
+          "source_link": "https://academy.zam-os.org/informatik-mittelschule-7/#lesson=ms7-wiederholung-schachtelung",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Viermal, einmal pro Durchlauf",
+              "Einmal am Ende aller Durchläufe"
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8CKKH6S6S7PWH5Q078DNTHY",
+          "slug": "ms7-wiederholung-schachtelung-kopftest",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Wann prüft eine kopfgesteuerte Schleife ihre Bedingung?",
+          "concept": "Vor jedem möglichen Durchlauf",
+          "source_link": "https://academy.zam-os.org/informatik-mittelschule-7/#lesson=ms7-wiederholung-schachtelung",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Vor jedem möglichen Durchlauf",
+              "Erst nachdem ihr erster Durchlauf beendet ist"
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8CKKH6TY6KVABRFG55T7AYV",
+          "slug": "ms7-wiederholung-schachtelung-marken",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Ein Rover fährt dreimal von Feld 0 aus. Er prüft nach jeder Fahrt auf eine Marke. Marken liegen auf Feld 1 und 3. Was sammelt er?",
+          "concept": "Zwei Marken auf Feld 1 und Feld 3.",
+          "source_link": "https://academy.zam-os.org/informatik-mittelschule-7/#lesson=ms7-wiederholung-schachtelung",
+          "sample_solution": "Er fährt auf Feld 1, prüft und sammelt. Auf Feld 2 findet er keine Marke. Auf Feld 3 sammelt er die zweite Marke."
+        }
+      ]
+    },
+    {
+      "id": "01M8CKKH6TBMMDP3BD3YZATES1",
+      "atom_uri": "urn:zam:atom:01M8CKKH6TBMMDP3BD3YZATES1",
+      "namespace": "zam-academy-informatik-mittelschule-7",
+      "slug": "ms7-variablen-grenztest",
+      "title": "Variablen und der Test an der Grenze",
+      "domain": "informatik/programmieren",
+      "reduction": "formal",
+      "typical_age_min": 12,
+      "source_link": "https://academy.zam-os.org/informatik-mittelschule-7/#lesson=ms7-variablen-grenztest",
+      "prerequisites": [
+        {
+          "atom_id": "01M8CKKH6S5QJHCJ3CA5JAY1WH"
+        },
+        {
+          "atom_id": "01M8CKKH6SEPMAZ8J5QKM83A31"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "informatik-mittelschule-7",
+          "topic_code": "stage-3-programmieren",
+          "topic_title": "Programmieren"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "subject": "informatik",
+          "track": "R",
+          "topic_code": "lb3",
+          "topic_title": "Programmieren",
+          "exam_relevant": false
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 7,
+          "subject": "informatik",
+          "track": "M",
+          "topic_code": "lb3",
+          "topic_title": "Programmieren",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8CKKH6T1718SW14H762EHXS",
+          "slug": "ms7-variablen-grenztest-bezeichner",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Was ist der Bezeichner einer Variable?",
+          "concept": "Ihr Name",
+          "source_link": "https://academy.zam-os.org/informatik-mittelschule-7/#lesson=ms7-variablen-grenztest",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Ihr Name",
+              "Ihr aktueller Wert"
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8CKKH6TDWZ85SJ51X6G4GB0",
+          "slug": "ms7-variablen-grenztest-typ",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Welcher Datentyp passt zu einem Punktestand, der nur ganze Zahlen enthält?",
+          "concept": "Ganzzahl",
+          "source_link": "https://academy.zam-os.org/informatik-mittelschule-7/#lesson=ms7-variablen-grenztest",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Ganzzahl",
+              "Wahrheitswert"
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8CKKH6TSX6VEK33XP4FM9WV",
+          "slug": "ms7-variablen-grenztest-grenze",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Das Programm meldet Erfolg erst über 3 Punkten. Erfolg soll aber schon bei 3 beginnen. Wie änderst und prüfst du es?",
+          "concept": "Auf mindestens 3 prüfen und mit 2, 3 und 4 testen.",
+          "source_link": "https://academy.zam-os.org/informatik-mittelschule-7/#lesson=ms7-variablen-grenztest",
+          "sample_solution": "Verwende eine Bedingung, die auch Gleichheit zulässt. Erwartung: 2 Punkte melden keinen Erfolg, 3 und 4 melden Erfolg. Führe alle drei Läufe nach der Änderung erneut aus."
+        }
+      ]
+    }
+  ]
+}
