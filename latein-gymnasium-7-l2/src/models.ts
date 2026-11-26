@@ -433,44 +433,45 @@ export function renderMediterraneanMap(): string {
 		<svg viewBox="0 0 720 380" role="img" aria-label="Schematische Karte des Mittelmeerraums und des Imperium Romanum mit Provinzen, Städten, Cambodunum und den sieben Weltwundern">
 			<rect x="0" y="0" width="720" height="380" rx="14" class="sea"/>
 			<!-- Stylized land masses: Europe/North, Italy, Greece, Asia Minor, North Africa -->
-			<path class="land" d="M12,18 L698,18 L698,210 L620,210 L580,235 L520,215 L470,222 L442,190 L416,245 L392,235 L380,175 L340,145 L302,152 L322,226 L296,242 L268,180 L236,158 L195,180 L132,196 L88,242 L18,225 Z"/>
-			<path class="land" d="M18,288 L198,274 L268,266 L328,312 L462,318 L556,310 L698,325 L698,368 L18,368 Z"/>
-			<!-- Sicily & Crete -->
-			<polygon class="land" points="282,248 314,244 304,264"/>
-			<rect class="land" x="414" y="274" width="66" height="14" rx="5"/>
+			<path class="land" d="M12,18 L698,18 L698,214 L634,218 L602,246 L482,246 L472,202 L448,188 L426,244 L396,236 L388,176 L342,146 L302,152 L322,226 L296,240 L268,180 L236,158 L195,180 L132,196 L88,242 L18,225 Z"/>
+			<path class="land" d="M18,288 L198,278 L248,274 L326,314 L462,318 L538,308 L620,318 L698,322 L698,368 L18,368 Z"/>
+			<!-- Sicily, Crete & Rhodes -->
+			<polygon class="land" points="246,247 316,243 302,277"/>
+			<rect class="land" x="410" y="274" width="66" height="15" rx="6"/>
+			<ellipse class="land" cx="496" cy="262" rx="11" ry="6" transform="rotate(-25 496 262)"/>
 
-			<text x="128" y="254" class="sea-label">MARE NOSTRUM</text>
+			<text x="110" y="252" class="sea-label">MARE NOSTRUM</text>
 
 			<g data-map-layer="provinces" class="map-provinces">
 				<text x="148" y="96" data-province>GALLIA</text>
 				<text x="268" y="74" data-province>RAETIA</text>
 				<text x="72" y="182" data-province>HISPANIA</text>
 				<text x="278" y="138" data-province>ITALIA</text>
-				<text x="294" y="284" data-province>SICILIA</text>
-				<text x="424" y="285" data-province>CRETA</text>
+				<text x="255" y="258" data-province>SICILIA</text>
+				<text x="422" y="285" data-province>CRETA</text>
 				<text x="195" y="334" data-province>AFRICA</text>
-				<text x="536" y="176" data-province>ASIA</text>
-				<text x="546" y="362" data-province>AEGYPTUS</text>
+				<text x="530" y="198" data-province>ASIA</text>
+				<text x="536" y="362" data-province>AEGYPTUS</text>
 			</g>
 
 			<g data-map-layer="places" class="map-places">
 				<circle cx="272" cy="90" r="5" data-place/><text x="282" y="94">Cambodunum</text>
 				<circle cx="276" cy="176" r="6.5" data-place/><text x="286" y="180" class="place-main">Rom</text>
-				<circle cx="242" cy="276" r="5.5" data-place/><text x="172" y="294">Karthago</text>
-				<circle cx="312" cy="256" r="4.5" data-place/><text x="322" y="261">Syrakus</text>
-				<circle cx="404" cy="204" r="4.5" data-place/><text x="415" y="198">Theben</text>
-				<circle cx="412" cy="222" r="5" data-place/><text x="423" y="226">Athen</text>
-				<circle cx="536" cy="316" r="5" data-place/><text x="548" y="317">Alexandria</text>
+				<circle cx="220" cy="280" r="5.5" data-place/><text x="150" y="298">Karthago</text>
+				<circle cx="305" cy="266" r="4.5" data-place/><text x="314" y="271">Syrakus</text>
+				<circle cx="408" cy="198" r="4.5" data-place/><text x="417" y="195">Theben</text>
+				<circle cx="418" cy="216" r="5" data-place/><text x="428" y="220">Athen</text>
+				<circle cx="542" cy="313" r="5" data-place/><text x="552" y="317">Alexandria</text>
 			</g>
 
 			<g data-map-layer="wonders" class="map-wonders">
-				<polygon points="390,224 395,234 385,234" data-wonder/><text x="316" y="229" class="wonder-txt">1 Olympia</text>
-				<polygon points="482,212 487,222 477,222" data-wonder/><text x="492" y="208" class="wonder-txt">2 Ephesos</text>
-				<polygon points="492,232 497,242 487,242" data-wonder/><text x="502" y="241" class="wonder-txt">3 Halikarnassos</text>
-				<polygon points="494,258 499,268 489,268" data-wonder/><text x="504" y="268" class="wonder-txt">4 Rhodos</text>
-				<polygon points="528,302 533,312 523,312" data-wonder/><text x="448" y="315" class="wonder-txt">5 Pharos</text>
-				<polygon points="548,330 553,340 543,340" data-wonder/><text x="560" y="341" class="wonder-txt">6 Gizeh</text>
-				<polygon points="658,248 663,258 653,258" data-wonder/><text x="614" y="274" class="wonder-txt">7 Babylon →</text>
+				<polygon points="554,329 559,339 549,339" data-wonder/><text x="564" y="338" class="wonder-txt">1 Gizeh</text>
+				<polygon points="682,256 687,266 677,266" data-wonder/><text x="673" y="265" text-anchor="end" class="wonder-txt">2 Babylon →</text>
+				<polygon points="398,223 403,233 393,233" data-wonder/><text x="389" y="233" text-anchor="end" class="wonder-txt">3 Olympia</text>
+				<polygon points="482,211 487,221 477,221" data-wonder/><text x="491" y="219" class="wonder-txt">4 Ephesos</text>
+				<polygon points="486,233 491,243 481,243" data-wonder/><text x="496" y="241" class="wonder-txt">5 Halikarnassos</text>
+				<polygon points="496,257 501,267 491,267" data-wonder/><text x="510" y="266" class="wonder-txt">6 Rhodos</text>
+				<polygon points="536,296 541,306 531,306" data-wonder/><text x="527" y="305" text-anchor="end" class="wonder-txt">7 Pharos</text>
 			</g>
 		</svg>
 		<figcaption class="small">Schematische Offline-Karte des Mittelmeerraums (nicht maßstabsgetreu; Babylon liegt weiter östlich in Mesopotamien). Nutze die Schaltflächen, um Provinzen, Städte oder die sieben Weltwunder hervorzuheben.</figcaption>

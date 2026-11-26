@@ -503,7 +503,7 @@ export const LESSONS_NOMINA: Lesson[] = [
 			],
 		},
 		material:
-			"Quis dux contrā Rōmam prōcēdit? Quod iter per Alpēs ēligit? Historī nārrant Hannibalem cum multīs mīlibus mīlitum vēnisse: nōn modo CC (ducentī), sed plūs quam D (quīngentī) equitēs in prīmō agmine ībant. Anno CCXVIII (ducentēsimō duodēvīcēsimō) ante Chrīstum nātum bellum coepit.",
+			"Quis contrā Rōmam prōcēdit? Quod iter per Alpēs ēligit? Historicī nārrant Hannibalem cum multīs mīlibus mīlitum vēnisse: nōn modo CC (ducentī), sed plūs quam D (quīngentī) equitēs in prīmō agmine ībant. Annō CCXVIII (ducentēsimō duodēvīcēsimō) ante Chrīstum nātum bellum coepit.",
 		materialLabel: "Übungstext · Fragen und Zahlen zum 2. Punischen Krieg",
 		materialLanguage: "la",
 		sourceIds: ["lp"],
@@ -535,7 +535,7 @@ export const LESSONS_NOMINA: Lesson[] = [
 			1: {
 				language: "de",
 				prompt: "Übersetze die ersten drei Sätze des Übungstextes ins Deutsche und löse die römischen Zahlen CC, D und CCXVIII in arabische Zahlen auf.",
-				model: "Welcher Feldherr rückt gegen Rom vor? Welchen Weg über die Alpen wählt er? Die Geschichtsschreiber berichten, dass Hannibal mit vielen Tausend Soldaten gekommen ist: Nicht nur 200, sondern mehr als 500 Reiter gingen im ersten Heereszug. CC = 200, D = 500, CCXVIII = 218.",
+				model: "Wer rückt gegen Rom vor? Welchen Weg über die Alpen wählt er? Die Geschichtsschreiber berichten, dass Hannibal mit vielen Tausend Soldaten gekommen ist: Nicht nur 200, sondern mehr als 500 Reiter gingen im ersten Heereszug. CC = 200, D = 500, CCXVIII = 218.",
 				criteria: [
 					"Ich übersetze die Fragen mit quis/quod und die Zahlenangaben richtig.",
 					"Ich löse CC (200), D (500) und CCXVIII (218) fehlerfrei auf.",

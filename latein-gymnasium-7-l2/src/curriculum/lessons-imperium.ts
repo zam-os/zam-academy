@@ -61,7 +61,7 @@ export const LESSONS_IMPERIUM: Lesson[] = [
 				feedback: "Mare Nostrum = ‚unser Meer‘.",
 			},
 			{
-				prompt: "Wie hieß die römische Provinz im heutigen bayerischen Alpenvorland (mit dem Hauptort Cambodunum)? ___",
+				prompt: "Wie hieß die römische Provinz im heutigen bayerischen Alpenvorland (u. a. mit dem frühen Verwaltungssitz Cambodunum und dem späteren Vorort Augusta Vindelicum)? ___",
 				answers: ["Raetia", "Raetien", "Rätien"],
 				feedback: "Raetia umfasste große Teile Südbayerns südlich der Donau.",
 			},
@@ -245,7 +245,7 @@ export const LESSONS_IMPERIUM: Lesson[] = [
 		bindings: ["3-architektur", "3-bild-text"],
 		paragraphs: [
 			"Um antike Architektur und Kunst zu erleben, musst du nicht nur nach Rom fahren. Schon auf Sizilien (etwa im Tal der Tempel von Agrigent oder im griechisch-römischen Theater von Syrakus und Taormina) siehst du hautnah, wie griechische Baukunst (Säulenordnungen: dorisch, ionisch, korinthisch) und römische Bautechnik (Rundbogen, Gewölbe, Ziegel- und Betonbau) ineinandergriffen.",
-			"Und die Antike liegt direkt vor unserer Haustür in Bayern! Cambodunum — das heutige Kempten im Allgäu — gilt als eine der ältesten schriftlich erwähnten Städte Deutschlands und war im 1. Jahrhundert n. Chr. ein bedeutender Verwaltungssitz der römischen Provinz Raetia mit Forum, Basilika, Thermen und Gallo-Römischem Tempelbezirk (heute im Archäologischen Park Cambodunum erlebbar). Wer originale griechische Vasen, römische Porträtbüsten, Marmorstatuen oder Funde aus bayerischen Römerlagern sehen will, findet sie in München in der Glyptothek und den Staatlichen Antikensammlungen am Königsplatz sowie in der Archäologischen Staatssammlung.",
+			"Und die Antike liegt direkt vor unserer Haustür in Bayern! Cambodunum — das heutige Kempten im Allgäu — gilt als eine der ältesten schriftlich erwähnten Städte Deutschlands und war im 1. Jahrhundert n. Chr. ein früher, bedeutender Verwaltungssitz der römischen Provinz Raetia (späterer Provinzhauptort wurde Augusta Vindelicum, das heutige Augsburg) mit Forum, Basilika, Thermen und Gallo-Römischem Tempelbezirk (heute im Archäologischen Park Cambodunum erlebbar). Wer originale griechische Vasen, römische Porträtbüsten, Marmorstatuen oder Funde aus bayerischen Römerlagern sehen will, findet sie in München in der Glyptothek und den Staatlichen Antikensammlungen am Königsplatz sowie in der Archäologischen Staatssammlung.",
 		],
 		diagram: {
 			title: "Drei Fenster in die antike Baukunst",

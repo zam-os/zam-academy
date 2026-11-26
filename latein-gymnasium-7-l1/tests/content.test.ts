@@ -1,7 +1,6 @@
 import { describe, expect, it } from "vitest";
 import cell from "../cell.json";
 import coverage from "../coverage.json";
-import mapping from "../replaces-de-by.json";
 import contract from "./fixtures/public-contract.json";
 import {
 	CORE_LESSONS,
@@ -229,11 +228,9 @@ describe("answer handling, progress and routes", () => {
 });
 
 describe("ZAM content and identifier contracts", () => {
-	it("pins identifiers and ships no replaces or retired_items", () => {
+	it("pins identifiers and ships no retirements", () => {
 		expect(cell.tile_id).toBe(ZAM_CELL_ID);
-		expect(mapping.approved).toBeNull();
-		expect(mapping.status).toBe("proposal-only");
-		expect(JSON.stringify(cell)).not.toMatch(/"replaces"|"retired_items"/);
+		expect(cell).not.toHaveProperty("retired_items");
 		expect(
 			cell.atoms.map((a) => ({
 				id: a.id,

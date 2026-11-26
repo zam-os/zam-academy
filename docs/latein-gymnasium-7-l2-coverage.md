@@ -53,11 +53,11 @@ Geprüft in `zam-os/zam` (`main`, Commit `4aeaa8e3455937f8a53cd57e686ff98d602a05
 | `01K4T7A0000000000000000J03` | Tier 1 | Bedeutung des PPP (vorzeitig und Passiv) | **A** (`propose-replace-after-approval`) | `l7-ppp-formen-check` | Gleiche atomare Abrufleistung |
 | `01K4T7A0000000000000000J04` | Tier 2 | Mehrteilige PC-Synthese (PPP, PPA, KNG, 4 Übersetzungsmethoden) | **C** (`keep-active`) | — | Auf vier spezialisierte Lektionen/atomare Karten aufgeteilt; keine Verlaufsübertragung |
 
-### B. Nachbarzelle aus Klasse 8 (offene Abgrenzungsfrage an Thomas)
+### B. Nachbarzelle aus Klasse 8 (bereits durch `latein-gymnasium-7-l1` zugeordnet)
 
 - **Zelle:** `de-by:gymnasium-8-latein-ablativus-absolutus-konjunktive-consecutio` (4 Items: `01K8G8K0000000000000000J01`–`J04`, SHA-256: `6874a4d44dfe2bc0f5ad80b53ea2d851c2baad4a44fcba698f70542799eb3684`)
 - **Befund:** Nach dem LehrplanPLUS Bayern für Latein als 2. Fremdsprache (L2) liegen der **Ablativus absolutus** (`J01`, `J02`) sowie **Irrealis und Consecutio temporum** (Teil von `J04`) bereits in **Klasse 7** (`L7 2.3`), während **Hortativ, Jussiv und Optativ** (`J03`, Teil von `J04`) erst in **Klasse 8** (`L8 2.3`) folgen.
-- **Handhabung:** Diese Nachbarzelle wurde bewusst **nicht** in das Mapping von Klasse 7 aufgenommen, damit keine Karte doppelt zugeordnet wird. Frage an Thomas: Soll `de-by:gymnasium-8-latein-ablativus-absolutus-konjunktive-consecutio` vollständig bei einem künftigen Klasse-8-Paket verbleiben, oder sollen die Ablativus-absolutus-Karten (`J01`/`J02`) in ein späteres freigegebenes Mapping von Klasse 7 aufgenommen werden?
+- **Handhabung:** Am `2026-11-26` (PR #206, Commit `e410fa2`) wurde die Verlaufsübertragung für `J01` und `J03` aus dieser Zelle bereits für `latein-gymnasium-7-l1` freigegeben und veröffentlicht (`J02` und `J04` bleiben aktiv). `latein-gymnasium-7-l2` beansprucht daher **keine** Karte aus dieser Zelle, sodass keine Doppelzuordnung entsteht. Umgekehrt hat `latein-gymnasium-7-l1` alle 4 Karten der Klasse-7-Altzelle (`de-by:gymnasium-7-latein-aci-partizipialkonstruktionen-deklinationen`) bewusst aktiv belassen, sodass der obige L7-L2-Vorschlag konfliktfrei ist.
 
 ## 4. Verifizierte Quellen (`source-checks.json`)
 

@@ -453,11 +453,11 @@ export const LESSONS_PARTIZIP: Lesson[] = [
 				},
 				{
 					label: "Beiordnung korrekt bilden",
-					before: "Cōnsul mīlitēs cohortātus signum dedit →",
+					before: "Cōnsul ā senātū monitus signum dedit →",
 					after: "",
-					options: ["Der Konsul ermutigte die Soldaten und gab dann das Zeichen.", "Der Konsul wurde ermutigt und gab das Zeichen.", "Während der Konsul das Zeichen gab, ermutigte er."],
-					answer: "Der Konsul ermutigte die Soldaten und gab dann das Zeichen.",
-					explanation: "Beiordnung wandelt das vorzeitige Partizip in einen ersten Hauptsatz mit ‚und dann‘ um.",
+					options: ["Der Konsul wurde vom Senat ermahnt und gab dann das Zeichen.", "Der Konsul ermahnte den Senat und gab das Zeichen.", "Während der Konsul das Zeichen gab, wurde er ermahnt."],
+					answer: "Der Konsul wurde vom Senat ermahnt und gab dann das Zeichen.",
+					explanation: "monitus ist PPP (vorzeitig-passivisch): Beiordnung wandelt das Partizip in einen ersten Hauptsatz mit ‚und dann‘ um.",
 				},
 				{
 					label: "Gleichzeitigkeit im PPA sichern",

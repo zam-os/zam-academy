@@ -10,7 +10,7 @@ export const LESSONS_MYTHOS: Lesson[] = [
 		bindings: ["1-mythos", "3-mythen", "3-ovid", "3-bild-text"],
 		paragraphs: [
 			"Rund um die Mittelmeerinsel Kreta rankt sich eine ganze Kette berühmter griechischer Mythen, die den Römern besonders durch die ‚Metamorphosen‘ (Verwandlungssagen) des Dichters Publius Ovidius Naso (Ovid, 43 v. Chr.–ca. 17 n. Chr.) vertraut waren: Die phönizische Königstochter Europa wird von Jupiter (Zeus) in Gestalt eines sanften weißen Stiers über das Meer nach Kreta entführt — und gibt unserem Kontinent bis heute seinen Namen! Auf Kreta herrscht später ihr Sohn Minos, der im unterirdischen Labyrinth das Ungeheuer Minotaurus (halb Mensch, halb Stier) gefangen hält. Der athenische Held Theseus besiegt den Minotaurus und findet nur dank des Wollfadens der Königstochter Ariadne (‚Ariadnefaden‘) aus dem Labyrinth zurück.",
-			"Der geniale Erfinder des Labyrinths war Daedalus. Als Minos ihn und seinen Sohn Ikarus auf Kreta festhielt, baute Daedalus Flügel aus Federn und Wachs. Seine eindringliche Warnung an den Sohn lautete: ‚Halte die Mitte ein!‘ (medio tūtissimus ībis) — nicht zu tief über die Wellen, sonst werden die Federn schwer; nicht zu hoch zur Sonne, sonst schmilzt das Wachs. Doch Ikarus vergaß im Rausch des Fliegens das Maß, stieg zu hoch und stürzte ins Meer (Hybris = menschliche Selbstüberschätzung). Maler von Pieter Bruegel bis heute haben diese Szene in Bildern gedeutet — im Vergleich von Text und Bild erkennst du sofort, welchen Moment ein Künstler besonders betont.",
+			"Der geniale Erfinder des Labyrinths war Daedalus. Als Minos ihn und seinen Sohn Ikarus auf Kreta festhielt, baute Daedalus Flügel aus Federn und Wachs. Seine eindringliche Warnung an den Sohn lautete bei Ovid (Metamorphosen 8,203–206): ‚Fliege zwischen beidem!‘ (inter utrumque volā) — nicht zu tief über die Wellen, sonst werden die Federn schwer; nicht zu hoch zur Sonne, sonst schmilzt das Wachs. (Die oft damit verwechselte Mahnung ‚mediō tūtissimus ībis‘ — in der Mitte wirst du am sichersten gehen — steht ebenfalls in Ovids ‚Metamorphosen‘ [2,137], dort jedoch als Rat des Sonnengottes Sol an seinen Sohn Phaethon.) Doch Ikarus vergaß im Rausch des Fliegens das Maß, stieg zu hoch und stürzte ins Meer (Hybris = menschliche Selbstüberschätzung). Maler von Pieter Bruegel bis heute haben diese Szene in Bildern gedeutet — im Vergleich von Text und Bild erkennst du sofort, welchen Moment ein Künstler besonders betont.",
 		],
 		diagram: {
 			title: "Der kretische Sagenkreis bei Ovid",
@@ -32,7 +32,7 @@ export const LESSONS_MYTHOS: Lesson[] = [
 				{
 					tag: "Daedalus & Ikarus",
 					title: "Erfindergeist vs. Hybris",
-					formula: "‚Halte die Mitte ein!‘ (Ovid, Metamorphosen)",
+					formula: "‚Inter utrumque volā!‘ (Ovid, Met. 8,206)",
 					note: "Spiegel menschlichen Handelns: Technik eröffnet Freiheit, verlangt aber Verantwortung und das Einhalten von Grenzen.",
 				},
 			],
@@ -143,8 +143,8 @@ export const LESSONS_MYTHOS: Lesson[] = [
 				{
 					tag: "Bedingung",
 					title: "Plutos Gebot beim Aufstieg",
-					formula: "‚Nē respexeris!‘ — Blicke nicht zurück!",
-					note: "Vertrauen wird auf die Probe gestellt: Eurydike folgt hinter ihm als leiser Schatten.",
+					formula: "lēgem dedērunt, nē respiceret",
+					note: "Verneinter Begehrsatz (nē + Konj. Impf.): Orpheus darf sich auf dem Weg ans Licht nicht nach Eurydike umdrehen.",
 				},
 				{
 					tag: "Wendepunkt",
@@ -230,7 +230,7 @@ export const LESSONS_MYTHOS: Lesson[] = [
 					after: "",
 					options: ["Cerberus", "Minotaurus", "Pegasus"],
 					answer: "Cerberus",
-					explanation: "Cerberus ließ zwar alle Toten hinein, aber niemanden wieder hinaus — außer Orpheus bezauberte ihn.",
+					explanation: "Cerberus ließ zwar alle Toten hinein, aber niemanden wieder hinaus — nur Orpheus bezauberte ihn so, dass er ihn wieder hinausließ.",
 				},
 			],
 		},
@@ -389,7 +389,7 @@ export const LESSONS_MYTHOS: Lesson[] = [
 			],
 		},
 		material:
-			"Prīmum hostēs urbem magnā vī oppugnābant. Cīvēs autem, quamquam numerō īnferiōrēs erant, fortiter resistēbant. Deinde auxiliō sociōrum adventō hostēs fūgērunt. Itaque senātus lēgātīs grātiās ēgit.",
+			"Prīmum hostēs urbem magnā vī oppugnābant. Cīvēs autem, quamquam numerō īnferiōrēs erant, fortiter resistēbant. Deinde auxiliō sociōrum allātō hostēs fūgērunt. Itaque senātus lēgātīs grātiās ēgit.",
 		materialLabel: "Übungstext · Klar gegliederter Bericht mit Konnektoren und Tempusprofil",
 		materialLanguage: "la",
 		sourceIds: ["lp", "lp-profil"],
@@ -421,10 +421,10 @@ export const LESSONS_MYTHOS: Lesson[] = [
 			1: {
 				language: "de",
 				prompt: "Gliedere den Übungstext anhand der Konnektoren (Prīmum, autem, Deinde, Itaque) in Sinnabschnitte und übersetze alle vier Sätze in flüssiges Deutsch.",
-				model: "Gliederung: 1. Ausgangslage/Belagerung (Prīmum … autem), 2. Wendepunkt (Deinde), 3. Folge/Dank (Itaque). Übersetzung: Zuerst griffen die Feinde die Stadt mit großer Gewalt an. Die Bürger aber leisteten tapfer Widerstand, obwohl sie an Zahl unterlegen waren. Dann flohen die Feinde, nachdem die Hilfe der Bundesgenossen eingetroffen war (nach dem Eintreffen der Hilfe). Deshalb dankte der Senat den Gesandten.",
+				model: "Gliederung: 1. Ausgangslage/Belagerung (Prīmum … autem), 2. Wendepunkt (Deinde), 3. Folge/Dank (Itaque). Übersetzung: Zuerst griffen die Feinde die Stadt mit großer Gewalt an. Die Bürger aber leisteten tapfer Widerstand, obwohl sie an Zahl unterlegen waren. Dann flohen die Feinde, nachdem die Hilfe der Bundesgenossen herbeigebracht worden war (nach dem Eintreffen der Hilfe). Deshalb dankte der Senat den Gesandten.",
 				criteria: [
 					"Ich arbeite die Sinnabschnitte über die Konnektoren heraus.",
-					"Ich übersetze den Abl. abs. ‚auxiliō sociōrum adventō‘ und alle Tempora treffend.",
+					"Ich übersetze den Abl. abs. ‚auxiliō sociōrum allātō‘ und alle Tempora treffend.",
 					"Ich wähle natürliche deutsche Formulierungen (z. B. ‚an Zahl unterlegen‘).",
 				],
 			},
@@ -506,7 +506,7 @@ export const LESSONS_MYTHOS: Lesson[] = [
 			],
 		},
 		material:
-			"Antike Sentenzen & Rezeption:\n1. ‚Errāre hūmānum est.‘ (Irren ist menschlich — Seneca/Hieronymus)\n2. ‚Repetitio est māter studiōrum.‘ (Wiederholung ist die Mutter des Lernens.)\n3. ‚Nōn scholae, sed vītae discimus.‘ (Nicht für die Schule, sondern für das Leben lernen wir — nach Seneca)\n4. Produkt- und Kulturbeispiele: Audi (Höre!), Nivea (schneeweiß), Nike (Siegesgöttin), Ikarus- und Antigone-Motive in Theater und Film.",
+			"Antike Sentenzen & Rezeption:\n1. ‚Errāre hūmānum est.‘ (Irren ist menschlich — Seneca/Hieronymus)\n2. ‚Repetitio est māter studiōrum.‘ (Wiederholung ist die Mutter des Lernens.)\n3. ‚Nōn vītae, sed scholae discimus.‘ (Seneca, epistulae morales 106,12: ‚Nicht für das Leben, sondern für die Schule lernen wir‘ — seine Kritik am weltfremden Unterricht; erst später wurde der Satz zum berühmten Schulspruch ‚Nōn scholae, sed vītae discimus‘ umgekehrt.)\n4. Produkt- und Kulturbeispiele: Audi (Höre!), Nivea (schneeweiß), Nike (Siegesgöttin), Ikarus- und Antigone-Motive in Theater und Film.",
 		materialLabel: "Übungsmaterial · Sentenzen, Lernprinzip und antikes Erbe",
 		materialLanguage: "de",
 		sourceIds: ["lp", "lp-profil"],

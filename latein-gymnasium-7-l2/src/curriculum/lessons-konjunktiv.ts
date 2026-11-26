@@ -38,7 +38,7 @@ export const LESSONS_KONJUNKTIV: Lesson[] = [
 			],
 		},
 		material:
-			"Cōnsul mīlitēs hortātur, ut patriam fortiter dēfendant et ab hostibus nē vincantur. Senātōrēs rogābant, cūr lēgātus tam sērō venīret et quōmodo urbs servārētur.",
+			"Cōnsul mīlitēs monet, ut patriam fortiter dēfendant nēve ab hostibus vincantur. Senātōrēs rogābant, cūr lēgātus tam sērō venīret et quōmodo urbs servārētur.",
 		materialLabel: "Übungstext · Konjunktiv Präsens und Imperfekt im Nebensatz",
 		materialLanguage: "la",
 		sourceIds: ["lp"],
@@ -67,7 +67,7 @@ export const LESSONS_KONJUNKTIV: Lesson[] = [
 			1: {
 				language: "de",
 				prompt: "Übersetze den Übungstext ins Deutsche und bestimme Tempus, Modus und Genus Verbi von dēfendant, vincantur, venīret und servārētur.",
-				model: "Der Konsul ermutigt die Soldaten, dass sie die Heimat tapfer verteidigen und von den Feinden nicht besiegt werden. Die Senatoren fragten, warum der Gesandte so spät komme/kam und wie die Stadt gerettet werde/wurde. dēfendant: 3. Pl. Konj. Präs. Akt.; vincantur: 3. Pl. Konj. Präs. Pass.; venīret: 3. Sg. Konj. Impf. Akt.; servārētur: 3. Sg. Konj. Impf. Pass.",
+				model: "Der Konsul ermahnt die Soldaten, dass sie die Heimat tapfer verteidigen und nicht von den Feinden besiegt werden. Die Senatoren fragten, warum der Gesandte so spät komme/kam und wie die Stadt gerettet werde/wurde. dēfendant: 3. Pl. Konj. Präs. Akt.; vincantur: 3. Pl. Konj. Präs. Pass.; venīret: 3. Sg. Konj. Impf. Akt.; servārētur: 3. Sg. Konj. Impf. Pass.",
 				criteria: [
 					"Ich übersetze beide Sätze sinnvoll ins Deutsche.",
 					"Ich bestimme Tempus, Modus und Aktiv/Passiv aller vier Konjunktivformen.",
@@ -307,8 +307,8 @@ export const LESSONS_KONJUNKTIV: Lesson[] = [
 			},
 			2: {
 				language: "de",
-				prompt: "Vergleiche ‚Sī pācem habēmus, gaudēmus‘ (Realis), ‚Sī pācem habērēmus, gaudērēmus‘ und ‚Sī pācem habuissēmus, gāvīsī essēmus‘ (bzw. ‚laetī fuissēmus‘). Übersetze alle drei und erkläre den Unterschied in Modus und Aussage.",
-				model: "1. Wenn wir Frieden haben, freuen wir uns (Indikativ Präsens: Realis, wirklicher Fall). 2. Wenn wir Frieden hätten, würden wir uns freuen (Konjunktiv Imperfekt: Irrealis der Gegenwart, wir haben ihn gerade nicht). 3. Wenn wir Frieden gehabt hätten, wären wir froh gewesen (Konjunktiv Plusquamperfekt: Irrealis der Vergangenheit, es war damals nicht so).",
+				prompt: "Vergleiche ‚Sī pācem habēmus, laetī sumus‘ (Realis), ‚Sī pācem habērēmus, laetī essēmus‘ und ‚Sī pācem habuissēmus, laetī fuissēmus‘. Übersetze alle drei und erkläre den Unterschied in Modus und Aussage.",
+				model: "1. Wenn wir Frieden haben, sind wir froh (Indikativ Präsens: Realis, wirklicher Fall). 2. Wenn wir Frieden hätten, wären wir froh (Konjunktiv Imperfekt: Irrealis der Gegenwart, wir haben ihn gerade nicht). 3. Wenn wir Frieden gehabt hätten, wären wir froh gewesen (Konjunktiv Plusquamperfekt: Irrealis der Vergangenheit, es war damals nicht so).",
 				criteria: [
 					"Ich übersetze alle drei Bedingungsgefüge präzise.",
 					"Ich benenne Indikativ, Konj. Imperfekt und Konj. Plusquamperfekt.",
@@ -383,7 +383,7 @@ export const LESSONS_KONJUNKTIV: Lesson[] = [
 			],
 		},
 		material:
-			"Cōnsul mīlitēs hortātus est, ut fortiter pugnārent nē hostēs castra caperent. Impetus Rōmānōrum tam ācer erat, ut inimīcī statim fugerent. Cum nox adesset, dux tamen vigiliās posuit; ut enim semper dīcēbat, cūra salūtem affert.",
+			"Cōnsul mīlitēs monuit, ut fortiter pugnārent, nē hostēs castra caperent. Impetus Rōmānōrum tam ācer erat, ut inimīcī statim fugerent. Cum nox adesset, dux tamen vigiliās posuit; ut enim semper dīcēbat, cūra salūtem affert.",
 		materialLabel: "Übungstext · Finales ut/nē, konsekutives ut, konzessives cum und ut + Indikativ",
 		materialLanguage: "la",
 		sourceIds: ["lp"],
@@ -415,7 +415,7 @@ export const LESSONS_KONJUNKTIV: Lesson[] = [
 			1: {
 				language: "de",
 				prompt: "Übersetze den gesamten Übungstext ins Deutsche und bestimme alle vier Nebensätze (ut … pugnārent, nē … caperent, ut … fugerent, Cum … adesset, ut … dīcēbat).",
-				model: "Der Konsul ermutigte die Soldaten, tapfer zu kämpfen (damit sie tapfer kämpften), damit die Feinde das Lager nicht einnähmen. Der Angriff der Römer war so heftig, dass die Gegner sofort flohen. Obwohl die Nacht da war, stellte der Anführer dennoch Wachen auf; denn wie er immer sagte, bringt Sorgfalt Rettung. 1. ut/nē: final; 2. tam … ut: konsekutiv; 3. cum … tamen: konzessiv; 4. ut + Ind. dīcēbat: vergleichend (wie).",
+				model: "Der Konsul ermahnte die Soldaten, tapfer zu kämpfen (damit sie tapfer kämpften), damit die Feinde das Lager nicht einnähmen. Der Angriff der Römer war so heftig, dass die Gegner sofort flohen. Obwohl die Nacht da war, stellte der Anführer dennoch Wachen auf; denn wie er immer sagte, bringt Sorgfalt Rettung. 1. ut/nē: final; 2. tam … ut: konsekutiv; 3. cum … tamen: konzessiv; 4. ut + Ind. dīcēbat: vergleichend (wie).",
 				criteria: [
 					"Ich übersetze alle fünf Nebensätze sinn- und modusgerecht ins Deutsche.",
 					"Ich unterscheide finales ut/nē, konsekutives tam … ut und ut + Indikativ sauber.",

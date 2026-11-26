@@ -214,8 +214,13 @@ describe("interactive SVG models", () => {
 			"SICILIA",
 			"CRETA",
 			"RAETIA",
-			"Olympia",
-			"Gizeh",
+			"1 Gizeh",
+			"2 Babylon",
+			"3 Olympia",
+			"4 Ephesos",
+			"5 Halikarnassos",
+			"6 Rhodos",
+			"7 Pharos",
 		]) {
 			expect(map).toContain(token);
 		}

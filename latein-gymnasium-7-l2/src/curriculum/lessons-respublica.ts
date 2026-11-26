@@ -10,7 +10,7 @@ export const LESSONS_RESPUBLICA: Lesson[] = [
 		bindings: ["1-geschichte", "3-geschichte", "3-epochen"],
 		paragraphs: [
 			"In der 6. Klasse hast du Königszeit (753–509 v. Chr.) und frühe Republik kennengelernt. In der mittleren Republik (ca. 264–133 v. Chr.) prallten zwei Großmächte im westlichen Mittelmeer aufeinander: die Landmacht Rom und die reiche phönizische Handels- und Seemacht Karthago (im heutigen Tunesien). Nachdem Rom im 1. Punischen Krieg Sizilien gewonnen hatte, führte im 2. Punischen Krieg (218–201 v. Chr.) der geniale karthagische Feldherr Hannibal sein Heer samt Kriegselefanten überraschend über die Alpen nach Italien.",
-			"Hannibal fügte den Römern vernichtende Niederlagen zu, besonders 216 v. Chr. bei Cannae — doch Rom gab nicht auf, sondern hielt mit äußerster Standhaftigkeit (cōnstantia) durch. Schließlich trug der römische Feldherr Publius Cornelius Scipio (später ‚Africanus‘ genannt) den Krieg nach Afrika und besiegte Hannibal 202 v. Chr. in der Entscheidungsschlacht bei Zama. Karthago verlor seine Flotte und seine Macht; im 3. Punischen Krieg (146 v. Chr.) zerstörten die Römer die Stadt vollständig und richteten die Provinz Africa ein. Rom war nun unangefochtene Vormacht des Mittelmeers.",
+			"Hannibal fügte den Römern vernichtende Niederlagen zu, besonders 216 v. Chr. bei Cannae — doch Rom gab nicht auf, sondern hielt mit äußerster Standhaftigkeit (cōnstantia) durch. Selbst als Hannibal 211 v. Chr. während der Belagerung Capuas vor die Mauern Roms zog (was später den Schreckensruf ‚Hannibal ad portās!‘ prägte), blieb die Stadt uneingenommen. Schließlich trug der römische Feldherr Publius Cornelius Scipio (später ‚Africanus‘ genannt) den Krieg nach Afrika und besiegte Hannibal 202 v. Chr. in der Entscheidungsschlacht bei Zama. Karthago verlor seine Flotte und seine Macht; im 3. Punischen Krieg (146 v. Chr.) zerstörten die Römer die Stadt vollständig und richteten die Provinz Africa ein. Rom war nun unangefochtene Vormacht des Mittelmeers.",
 		],
 		diagram: {
 			title: "Der 2. Punische Krieg in drei Wendepunkten",
@@ -24,10 +24,10 @@ export const LESSONS_RESPUBLICA: Lesson[] = [
 					note: "Mit einem kühnen Marsch über die Alpen überraschte Hannibal die Römer von Norden her.",
 				},
 				{
-					tag: "216 v. Chr.",
-					title: "Schlacht bei Cannae",
-					formula: "Schwerste Niederlage · ‚Hannibal ad portās!‘",
-					note: "Trotz gigantischer Verluste verhandelte der Senat nicht über Kapitulation und stellte neue Legionen auf.",
+					tag: "216 / 211 v. Chr.",
+					title: "Cannae & Marsch vor Rom",
+					formula: "216: Cannae · 211: ‚Hannibal ad portās!‘",
+					note: "216 erlitt Rom bei Cannae seine schwerste Niederlage, verhandelte aber nicht; 211 v. Chr. (während der Belagerung Capuas) zog Hannibal kurz vor die Mauern Roms.",
 				},
 				{
 					tag: "202 / 146 v. Chr.",
@@ -38,7 +38,7 @@ export const LESSONS_RESPUBLICA: Lesson[] = [
 			],
 		},
 		material:
-			"Hannibal exercitū per Alpēs trāductō Rōmānōs ad Cannās graviter vīcit. Cīvēs perterritī clāmābant: ‚Hannibal ad portās!‘ Sed senātus cōnstantiā suā rem pūblicam servāvit; tandem Scīpiō Hannibale ad Zamam victō bellum fīnīvit.",
+			"Hannibal exercitū per Alpēs trāductō Rōmānōs ad Cannās graviter vīcit. Paucīs annīs post, cum dux Poenōrum ante moenia urbis appāruisset, cīvēs perterritī clāmābant: ‚Hannibal ad portās!‘ Sed senātus cōnstantiā suā rem pūblicam servāvit; tandem Scīpiō Hannibale ad Zamam victō bellum fīnīvit.",
 		materialLabel: "Übungstext · Vom Alpenübergang bis zur Schlacht bei Zama",
 		materialLanguage: "la",
 		sourceIds: ["lp"],
@@ -70,7 +70,7 @@ export const LESSONS_RESPUBLICA: Lesson[] = [
 			1: {
 				language: "de",
 				prompt: "Übersetze den Übungstext ins Deutsche und markiere beide Ablativi absoluti im Text.",
-				model: "Nachdem Hannibal sein Heer über die Alpen geführt hatte (exercitū per Alpēs trāductō), besiegte er die Römer bei Cannae schwer. Die verängstigten Bürger riefen: ‚Hannibal steht vor den Toren!‘ Aber der Senat rettete durch seine Standhaftigkeit den Staat; schließlich beendete Scipio den Krieg, nachdem er Hannibal bei Zama besiegt hatte (Hannibale ad Zamam victō).",
+				model: "Nachdem Hannibal sein Heer über die Alpen geführt hatte (exercitū per Alpēs trāductō), besiegte er die Römer bei Cannae (216 v. Chr.) schwer. Wenige Jahre später (211 v. Chr.), als der Feldherr der Punier vor den Mauern der Stadt erschienen war, riefen die verängstigten Bürger: ‚Hannibal steht vor den Toren!‘ Aber der Senat rettete durch seine Standhaftigkeit den Staat; schließlich beendete Scipio den Krieg, nachdem er Hannibal bei Zama (202 v. Chr.) besiegt hatte (Hannibale ad Zamam victō).",
 				criteria: [
 					"Ich übersetze beide Ablativi absoluti (exercitū trāductō, Hannibale victō) vorzeitig und flüssig.",
 					"Ich gebe den historischen Ausruf ‚Hannibal ad portās!‘ treffend wieder.",
@@ -114,7 +114,7 @@ export const LESSONS_RESPUBLICA: Lesson[] = [
 					after: "",
 					options: ["Eine große Gefahr steht unmittelbar bevor.", "Ein Friedensvertrag wurde unterzeichnet.", "Ein Triumphzug beginnt."],
 					answer: "Eine große Gefahr steht unmittelbar bevor.",
-					explanation: "Das geflügelte Wort geht auf die Angst der Römer nach Hannibals Siegen in Italien zurück.",
+					explanation: "Das geflügelte Wort geht auf den Schrecken der Römer im Jahr 211 v. Chr. zurück, als Hannibal während der Belagerung Capuas vor die Mauern Roms zog.",
 				},
 			],
 		},
