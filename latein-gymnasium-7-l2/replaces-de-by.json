@@ -1,0 +1,62 @@
+{
+	"schema": 1,
+	"status": "proposal-only",
+	"approved": null,
+	"source_repository": "https://github.com/zam-os/zam",
+	"source_commit": "4aeaa8e3455937f8a53cd57e686ff98d602a0561",
+	"source": "Inventory checked on 2026-11-26 in tests/fixtures/curriculum/ of zam-os/zam. Proposal-only mapping for de-by:gymnasium-7-latein-aci-partizipialkonstruktionen-deklinationen (4 items: 2 A proposed, 0 B, 2 C keep-active). Until Thomas approves, cell.json ships without replaces or retired_items. Neighbouring grade-8 cell de-by:gymnasium-8-latein-ablativus-absolutus-konjunktive-consecutio is already owned by latein-gymnasium-7-l1 (PR #206, approved 2026-11-26) and is therefore excluded here.",
+	"sources": [
+		{
+			"cell_id": "de-by:gymnasium-7-latein-aci-partizipialkonstruktionen-deklinationen",
+			"path": "tests/fixtures/de-by-gymnasium-7-latein-aci-partizipialkonstruktionen-deklinationen-kvt.json",
+			"source_path": "tests/fixtures/curriculum/de-by-gymnasium-7-latein-aci-partizipialkonstruktionen-deklinationen-kvt.json",
+			"sha256": "55eae4d0e1a12849f4bd74a46374391c2b6e7fb544c0f26bbb34018b1b2f365f"
+		}
+	],
+	"rows": [
+		{
+			"legacy_cell_id": "de-by:gymnasium-7-latein-aci-partizipialkonstruktionen-deklinationen",
+			"legacy_item_id": "01K4T7A0000000000000000J01",
+			"category": "A",
+			"action": "propose-replace-after-approval",
+			"academy_slug": "l7-aci-passiv-check",
+			"reason": "Identical atomic tier-1 retrieval: rendering the Latin AcI subject accusative as a German nominative subject in a 'dass'-clause."
+		},
+		{
+			"legacy_cell_id": "de-by:gymnasium-7-latein-aci-partizipialkonstruktionen-deklinationen",
+			"legacy_item_id": "01K4T7A0000000000000000J02",
+			"category": "C",
+			"action": "keep-active",
+			"academy_slug": null,
+			"reason": "Composite multi-part synthesis card covering active AcI trigger verbs, three translation steps and active relative tenses (introduced in L2 grade 6 and split into atomic cards in this package); do not transfer history across split cards."
+		},
+		{
+			"legacy_cell_id": "de-by:gymnasium-7-latein-aci-partizipialkonstruktionen-deklinationen",
+			"legacy_item_id": "01K4T7A0000000000000000J03",
+			"category": "A",
+			"action": "propose-replace-after-approval",
+			"academy_slug": "l7-ppp-formen-check",
+			"reason": "Identical atomic tier-1 retrieval: time relation and voice of the Latin PPP (vorzeitig und Passiv)."
+		},
+		{
+			"legacy_cell_id": "de-by:gymnasium-7-latein-aci-partizipialkonstruktionen-deklinationen",
+			"legacy_item_id": "01K4T7A0000000000000000J04",
+			"category": "C",
+			"action": "keep-active",
+			"academy_slug": null,
+			"reason": "Composite multi-part synthesis card combining PPP formation, PPA formation, KNG congruence and four PC translation methods; split across dedicated atomic cards in l7-ppp-formen, l7-ppa-formen, l7-pc-attribut and l7-pc-adverbiale, so keep active without transferring history."
+		}
+	],
+	"neighbouring_grade_review": {
+		"cell_id": "de-by:gymnasium-8-latein-ablativus-absolutus-konjunktive-consecutio",
+		"source_path": "tests/fixtures/curriculum/de-by-gymnasium-8-latein-ablativus-absolutus-konjunktive-consecutio-kvt.json",
+		"sha256": "6874a4d44dfe2bc0f5ad80b53ea2d851c2baad4a44fcba698f70542799eb3684",
+		"items": [
+			"01K8G8K0000000000000000J01",
+			"01K8G8K0000000000000000J02",
+			"01K8G8K0000000000000000J03",
+			"01K8G8K0000000000000000J04"
+		],
+		"assessment": "Under LehrplanPLUS Bayern for Latein 2. Fremdsprache (L2), Ablativus absolutus (J01, J02) and Consecutio temporum / Irrealis (part of J04) are taught in grade 7 (L7 2.3), while Hortativ/Jussiv/Optativ (J03 and part of J04) belong to grade 8 (L8 2.3). On 2026-11-26 (PR #206, commit e410fa2), Thomas approved and published the history transfer for J01 and J03 in latein-gymnasium-7-l1 (leaving J02 and J04 active). Therefore latein-gymnasium-7-l2 claims no items from this cell to prevent any double mapping."
+	}
+}
