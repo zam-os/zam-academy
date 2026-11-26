@@ -72,7 +72,6 @@ describe("curriculum and lesson contracts", () => {
 			).toEqual(lesson.bindings.map(() => "englisch-2fs"));
 			for (const item of atom.practice_items) {
 				expect(item.source_link).toBe(atom.source_link);
-				expect(item).not.toHaveProperty("replaces");
 				if (item.tier === "tier1_fast") {
 					expect(item.fast_check?.options).toHaveLength(2);
 					expect(item.fast_check?.options[item.fast_check.correct_index]).toBe(item.concept);
@@ -137,24 +136,30 @@ describe("curriculum and lesson contracts", () => {
 		expect(bathY).toBeGreaterThan(wallY);
 	});
 
-	it("records J03 as the sole future proposal against every id in the legacy snapshot", () => {
+	it("publishes J03 as the only approved history transfer", () => {
 		const itemIds = legacy.atoms.flatMap(({ practice_items }) =>
 			practice_items.map(({ id }) => id),
 		);
 		expect(proposal.rows.map(({ de_by_id }) => de_by_id).sort()).toEqual(itemIds.sort());
-		expect(proposal.status).toBe("proposal-only");
-		expect(proposal.approved).toBeNull();
-		const pending = proposal.rows.filter((row) => row.action === "propose-replace-after-approval");
-		expect(pending).toHaveLength(1);
-		expect(pending[0]).toMatchObject({
+		expect(proposal.status).toBe("approved");
+		expect(proposal.approved).toBe("2026-11-26");
+		const approved = proposal.rows.filter((row) => row.action === "replace");
+		expect(approved).toHaveLength(1);
+		expect(approved[0]).toMatchObject({
 			category: "A",
 			de_by_id: "01K4E7G0000000000000000J03",
 			academy_slug: "e7s-modals-check",
 		});
 		const successors = cell.atoms
 			.flatMap(({ practice_items }) => practice_items)
-			.filter((item) => item.slug === pending[0].academy_slug);
+			.filter((item) => item.slug === approved[0].academy_slug);
 		expect(successors).toHaveLength(1);
 		expect(successors[0].concept).toMatch(/^Had to/i);
+		expect(
+			cell.atoms
+				.flatMap(({ practice_items }) => practice_items)
+				.filter((item) => "replaces" in item)
+				.map((item) => ({ slug: item.slug, replaces: item.replaces })),
+		).toEqual([{ slug: "e7s-modals-check", replaces: [approved[0].de_by_id] }]);
 	});
 });
