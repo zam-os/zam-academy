@@ -16,7 +16,7 @@ export function heroPanorama(): string {
      <rect x="40" y="62" width="90" height="44" fill="var(--f-stone)" stroke="var(--f-ink)" stroke-width="1.2"/>
      <path d="M58 106V86A10 10 0 0 1 78 86V106Z" fill="var(--f-sky)"/><path d="M92 106V86A10 10 0 0 1 112 86V106Z" fill="var(--f-sky)"/>
      ${crown(85, 56, 0.9)}
-     ${label(85, 126, "Königtum (962)", "lbl tiny strong")}
+     ${label(85, 126, "Kaiserkrönung (962)", "lbl tiny strong")}
      <path d="M190 106V60L210 26L230 60V106Z" fill="var(--f-stone)" stroke="var(--f-ink)" stroke-width="1.2"/>
      <path d="M230 106V74L260 52L290 74V106Z" fill="var(--f-stone)" stroke="var(--f-ink)" stroke-width="1.2"/>
      <path d="M253 106V84L260 74L267 84V106Z" fill="#2f7fd0"/>

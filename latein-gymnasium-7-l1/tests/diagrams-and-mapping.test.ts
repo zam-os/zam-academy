@@ -109,11 +109,11 @@ describe("interactive SVG models stay finite and accurate across all settings", 
 	});
 });
 
-describe("legacy inventory proposal is complete and transfers no mastery", () => {
-	it("inventories all 8 legacy items exactly once and verifies proposed slugs", () => {
+describe("approved legacy history transfers", () => {
+	it("inventories all 8 legacy items and transfers the two approved histories", () => {
 		expect(mapping.schema).toBe(1);
-		expect(mapping.status).toBe("proposal-only");
-		expect(mapping.approved).toBeNull();
+		expect(mapping.status).toBe("approved");
+		expect(mapping.approved).toBe("2026-11-26");
 		expect(mapping.source_commit).toMatch(/^[0-9a-f]{40}$/);
 
 		const legacyIds = [
@@ -125,15 +125,18 @@ describe("legacy inventory proposal is complete and transfers no mastery", () =>
 			legacyIds.sort(),
 		);
 
-		const cellSlugs = cell.atoms.flatMap((a) =>
-			a.practice_items.map((i) => i.slug),
-		);
+		const transfers = cell.atoms
+			.flatMap((atom) => atom.practice_items)
+			.filter((item) => "replaces" in item)
+			.map((item) => ({ slug: item.slug, replaces: item.replaces }));
+		expect(transfers).toHaveLength(2);
 		for (const row of mapping.rows) {
 			if (row.category === "A" || row.category === "B") {
-				expect(row.action).toBe("propose-replace-after-approval");
-				expect(
-					cellSlugs.filter((s) => s === row.academy_slug),
-				).toHaveLength(1);
+				expect(row.action).toBe("replace");
+				expect(transfers).toContainEqual({
+					slug: row.academy_slug,
+					replaces: [row.de_by_id],
+				});
 			} else {
 				expect(row.action).toBe("keep-active");
 				expect(row.academy_slug).toBeNull();

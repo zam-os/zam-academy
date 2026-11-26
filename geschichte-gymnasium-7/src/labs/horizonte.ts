@@ -336,16 +336,21 @@ export const hanseKarte: LabDef = {
     const f = HANSE_FRAME;
     const k = str(s, "kontor");
     const [lx, ly] = atCrop(f, 10.69, 53.87);
-    const clampY = (y: number) => Math.max(14, y);
+    // Places just above the frame (Nowgorod) sit on the edge; places far
+    // beyond it (Bergen) get an arrow instead of a marker on the open sea.
+    const clampY = (y: number) => Math.max(8, y);
     const kontor = (key: string) => {
       const c = KONTORE[key];
       const [x, y0] = atCrop(f, c.lon, c.lat);
-      const y = clampY(y0);
       const on = k === key;
       const side = c.lon > 20 || key === "london" ? "end" : "start";
-      const dy = key === "bruegge" ? 18 : 4;
-      const off = y0 < 14 ? label(x + (side === "end" ? -12 : 12), y + 18, "↑ weiter nördlich", "lbl tiny muted", side) : "";
-      return `${on ? `<line x1="${f1(lx)}" y1="${f1(ly)}" x2="${f1(x)}" y2="${f1(y)}" stroke="${C.blue}" stroke-width="4"/>` : ""}<rect x="${f1(x - 8)}" y="${f1(y - 8)}" width="16" height="16" fill="${on ? C.blue : "var(--f-halo)"}" stroke="${C.blue}" stroke-width="2.5"/>${label(x + (side === "end" ? -12 : 12), y + dy, c.name, "lbl tiny strong", side)}${off}`;
+      if (y0 < -20) {
+        const route = on ? `<line x1="${f1(lx)}" y1="${f1(ly)}" x2="${f1(x)}" y2="20" stroke="${C.blue}" stroke-width="4"/>` : "";
+        return `${route}${arrow(x, 34, x, 6, "arrow power")}${label(x + 10, 22, `${c.name} (außerhalb der Karte, weiter nördlich)`, "lbl tiny strong", "start")}`;
+      }
+      const y = clampY(y0);
+      const dy = key === "bruegge" ? 18 : y0 < 8 ? 18 : 4;
+      return `${on ? `<line x1="${f1(lx)}" y1="${f1(ly)}" x2="${f1(x)}" y2="${f1(y)}" stroke="${C.blue}" stroke-width="4"/>` : ""}<rect x="${f1(x - 8)}" y="${f1(y - 8)}" width="16" height="16" fill="${on ? C.blue : "var(--f-halo)"}" stroke="${C.blue}" stroke-width="2.5"/>${label(x + (side === "end" ? -12 : 12), y + dy, c.name, "lbl tiny strong", side)}`;
     };
     const [ox, oy] = atCrop(f, 28, 57.4);
     const [wx, wy] = atCrop(f, 4, 51.4);

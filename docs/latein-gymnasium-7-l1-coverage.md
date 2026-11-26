@@ -33,23 +33,24 @@ Dreizehn Zeilen der Abdeckungsmatrix sind ehrlich als `supported` markiert:
 
 Geprüft am `zam-os/zam`-Stand `4aeaa8e3455937f8a53cd57e686ff98d602a0561` (`tests/fixtures/curriculum/` und `src/kernel/library/bundled-cells.ts`):
 
-| Altzelle | Alte ID | Kategorie | Vorschlag / Ziel-Slug | Begründung |
+| Altzelle | Alte ID | Kategorie | Action and successor slug | Begründung |
 | --- | --- | --- | --- | --- |
 | `de-by:gymnasium-7-latein-aci-partizipialkonstruktionen-deklinationen` | `01K4T7A0000000000000000J01` | C | `keep-active` | Basis-AcI (Subjektsakkusativ) gehört in L1 zu Klasse 6 bzw. zu Latein L2 in Klasse 7. |
 | `de-by:gymnasium-7-latein-aci-partizipialkonstruktionen-deklinationen` | `01K4T7A0000000000000000J02` | C | `keep-active` | Kompositkarte zu Basis-AcI (L6-L1 / L7-L2). |
 | `de-by:gymnasium-7-latein-aci-partizipialkonstruktionen-deklinationen` | `01K4T7A0000000000000000J03` | C | `keep-active` | PPP (vorzeitig-passiv) ist Stoff der Klasse 6 (L1) bzw. Klasse 7 (L2). |
 | `de-by:gymnasium-7-latein-aci-partizipialkonstruktionen-deklinationen` | `01K4T7A0000000000000000J04` | C | `keep-active` | Kompositkarte zu PPP/PPA-PC und dessen vier Übersetzungsvarianten (L6-L1 / L7-L2). |
-| `de-by:gymnasium-8-latein-ablativus-absolutus-konjunktive-consecutio` | `01K8G8K0000000000000000J01` | A | `propose-replace-after-approval` → `l7-abl-abs-ppp-ppa-check` | Identisches Einzelwissen (Zeitverhältnis des Abl. abs. mit PPP = Vorzeitigkeit), im L1-Lehrplan Klasse 7. |
+| `de-by:gymnasium-8-latein-ablativus-absolutus-konjunktive-consecutio` | `01K8G8K0000000000000000J01` | A | `replace` → `l7-abl-abs-ppp-ppa-check` | Identisches Einzelwissen (Zeitverhältnis des Abl. abs. mit PPP = Vorzeitigkeit), im L1-Lehrplan Klasse 7. |
 | `de-by:gymnasium-8-latein-ablativus-absolutus-konjunktive-consecutio` | `01K8G8K0000000000000000J02` | C | `keep-active` | Kompositkarte über gesamten Abl. abs., fünf Übersetzungswege und Beispielsatz. |
-| `de-by:gymnasium-8-latein-ablativus-absolutus-konjunktive-consecutio` | `01K8G8K0000000000000000J03` | A | `propose-replace-after-approval` → `l7-konjunktiv-hauptsatz-check` | Identisches Einzelwissen (1. Pl. Konj. Präs. im Hauptsatz = Hortativ). |
+| `de-by:gymnasium-8-latein-ablativus-absolutus-konjunktive-consecutio` | `01K8G8K0000000000000000J03` | A | `replace` → `l7-konjunktiv-hauptsatz-check` | Identisches Einzelwissen (1. Pl. Konj. Präs. im Hauptsatz = Hortativ). |
 | `de-by:gymnasium-8-latein-ablativus-absolutus-konjunktive-consecutio` | `01K8G8K0000000000000000J04` | C | `keep-active` | Kompositkarte inklusive Irrealis (L1 Klasse 6) und gesamter *consecutio temporum*. |
 
 (`de-by:gymnasium-9-latein-gerundium-gerundivum-caesar-originallektuere` liegt inhaltlich vollständig in Klasse 8/9 und wurde nicht einbezogen.)
 
-### Offene Frage an Thomas (Nachbarjahrgangs-Zelle)
+### Approved history transfers
 
-`replaces-de-by.json` steht auf `"status": "proposal-only"` mit `"approved": null`; `cell.json` enthält keinerlei `replaces` oder `retired_items`. Zu entscheiden bleibt:
-> Soll die ältere Klasse-8-Zelle (`de-by:gymnasium-8-latein-ablativus-absolutus-konjunktive-consecutio`) für die zwei A-Karten (`J01`, `J03`) diesem L7-L1-Paket zugeordnet werden, oder soll sie geschlossen bei Klasse 8 (bzw. Latein L2) verbleiben?
+Thomas approved the Grade 8 J01 and J03 matches on 26 November 2026. Cell
+version `2026.11.2` declares both transfers, and the other six rows keep
+their existing learning histories.
 
 ## Geprüfte Quellen (`source-checks.json`)
 
