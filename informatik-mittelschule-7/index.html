@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <script>
+      try {
+        const theme = localStorage.getItem("informatik_ms7_theme");
+        if (theme === "light" || theme === "dark") {
+          document.documentElement.dataset.theme = theme;
+          document.querySelector('meta[name="color-scheme"]').content = theme;
+        }
+      } catch {}
+    </script>
+    <title>Informatik 7 Mittelschule · ZAM Academy</title>
+    <meta
+      name="description"
+      content="Informatik 7 für Regelklasse und Mittlere-Reife-Klasse in Bayern: Nachrichten sicher austauschen, Bilder bearbeiten und Programme entwerfen."
+    />
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <div id="app" class="app-shell">
+      <header class="app-header">
+        <div class="brand">
+          <span class="brand-emblem" aria-hidden="true">>_</span>
+          <div>
+            <h1 class="brand-title">Informatik 7 · Mittelschule</h1>
+            <p class="brand-subtitle">ZAM Academy</p>
+          </div>
+        </div>
+
+        <nav class="main-nav" aria-label="Navigation">
+          <button type="button" class="nav-tab is-active" data-view="path">🗺️ Lernpfad</button>
+          <button type="button" class="nav-tab" data-view="lesson">🎓 Lektion</button>
+          <button type="button" class="nav-tab" data-view="formulas">📖 Fachbegriffe</button>
+        </nav>
+
+        <div class="header-controls">
+          <div class="segmented" role="group" aria-label="Schwierigkeit">
+            <button type="button" class="seg-btn is-active" data-level="1" title="Hinweise und Zwischenschritte helfen">🌱 Level 1: geführt</button>
+            <button type="button" class="seg-btn" data-level="2" title="Aufgaben ohne Hilfe, im Stil von Leistungsnachweisen">🦅 Level 2: Transfer</button>
+          </div>
+          <div class="progress-pill" id="header-progress">
+            <div class="progress-track"><div class="progress-fill" id="header-progress-bar"></div></div>
+            <span id="header-progress-text">0 / 12 Lektionen</span>
+          </div>
+          <button type="button" class="btn btn-zam" id="zam-btn" title="Wissen in ZAM festigen">🧠 In ZAM festigen</button>
+          <button type="button" class="icon-btn" id="theme-toggle-btn" title="Hell / Dunkel umschalten" aria-label="Farbschema umschalten">◐</button>
+        </div>
+      </header>
+
+      <main id="main-view-host" class="main-view-host"></main>
+
+      <footer class="app-footer">
+        <span>LehrplanPLUS Bayern · <a href="https://www.lehrplanplus.bayern.de/fachlehrplan/mittelschule/7/informatik/regelklasse" rel="noopener" target="_blank">Regelklasse (R7)</a> · <a href="https://www.lehrplanplus.bayern.de/fachlehrplan/mittelschule/7/informatik/mittlere-reife-klasse" rel="noopener" target="_blank">Mittlere-Reife-Klasse (M7)</a></span>
+        <span>Keine Konten, keine Cookies, kein Tracking. Dein Fortschritt bleibt in diesem Browser. Quelltext: <a href="https://github.com/zam-os/zam-academy" rel="noopener" target="_blank">zam-os/zam-academy</a></span>
+        <a href="https://academy.zam-os.org/" class="zam-home-link">← ZAM Academy <span class="zam-version" title="Noch nicht von einer Lehrkraft geprüft">· Version&nbsp;0.0 · Lehrkraftprüfung&nbsp;offen</span></a>
+      </footer>
+    </div>
+
+    <div id="toast-stack" class="toast-stack" aria-live="polite"></div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
