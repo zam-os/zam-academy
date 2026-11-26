@@ -503,7 +503,7 @@ export function naehrstoffBausteine(active = 0): ExplorerFigureOutput {
       name: "Wasser & ungesüßter Tee",
       pct: 100,
       colour: P.teal,
-      detail: "Mindestens 1,5 Liter pro Tag: Basis für Konzentration, Kreislauf und Stoffwechsel ohne leeren Zucker.",
+      detail: "Rund 1,3 bis 1,5 Liter pro Tag (DGE-Richtwert: etwa 1,3 l für 13- bis 15-Jährige, rund 1,5 l für Erwachsene) sichern Konzentration und Stoffwechsel.",
     },
     {
       name: "Gemüse, Obst & Vollkorn",

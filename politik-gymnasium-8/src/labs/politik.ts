@@ -161,8 +161,8 @@ export const kompromissRat: LabDef = {
         met: r.majority && r.groups[0].agrees && r.groups[2].agrees && bool(s, "minderheit"),
       },
       {
-        text: "Prüfe, warum ohne Minderheitenschutz selbst 60+ Stimmen demokratisch unzulässig wären.",
-        met: !bool(s, "minderheit"),
+        text: "Prüfe mit einer Mehrheit über 50 Sitze, warum ein Beschluss ohne Minderheitenschutz demokratisch unzulässig bleibt.",
+        met: r.majority && !bool(s, "minderheit"),
       },
     ];
   },
@@ -193,7 +193,7 @@ export const kompromissRat: LabDef = {
              ${label(x + 89, 144, g.agrees ? "stimmt zu" : "Mindestwert fehlt", g.agrees ? "lbl tiny on-dark" : "lbl tiny muted")}`;
          })
          .join("")}
-       ${label(310, 184, !r.affordable ? "Budget über 100: nicht finanzierbar!" : !bool(s, "minderheit") ? "Warnung: Minderheitenschutz verletzt!" : r.majority ? `Mehrheit erreicht: ${fmtDe(r.votes)} / 100 Sitze` : `Noch keine Mehrheit: ${fmtDe(r.votes)} / 100 Sitze`, "lbl tiny strong")}`,
+       ${label(310, 184, !r.affordable ? "Budget über 100: nicht finanzierbar!" : !bool(s, "minderheit") ? "Ungültig: Mehrheit darf Grundrechte/Anhörung nicht aufheben!" : r.majority ? `Mehrheit erreicht: ${fmtDe(r.votes)} / 100 Sitze` : `Noch keine Mehrheit: ${fmtDe(r.votes)} / 100 Sitze`, "lbl tiny strong")}`,
     );
   },
   readout: (s) => {
@@ -201,7 +201,7 @@ export const kompromissRat: LabDef = {
     if (!r.affordable)
       return `Budget überschritten (${fmtDe(r.total)} von 100 Punkten). Kürze einen Posten, bis maximal 100 Punkte vergeben sind.`;
     if (!bool(s, "minderheit"))
-      return `${fmtDe(r.votes)} Ja-Stimmen, aber Minderheitenschutz missachtet: Grundrechte und Anhörung aller Gruppen bleiben Pflicht.`;
+      return `${fmtDe(r.votes)} Ja-Stimmen, aber demokratisch unzulässig: Auch eine Mehrheit darf Grundrechte und faire Anhörung von Minderheiten nicht aufheben.`;
     return `${fmtDe(r.votes)} von 100 Sitzen stimmen zu (${r.majority ? "Mehrheit erreicht" : "noch keine Mehrheit"}). Verbleibende Punkte: ${fmtDe(r.remaining)}.`;
   },
 };

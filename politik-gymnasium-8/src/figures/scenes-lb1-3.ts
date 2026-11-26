@@ -75,18 +75,18 @@ export function generationenVergleich(active = 0): ExplorerFigureOutput {
     "Jugendphase im Generationenvergleich: Großeltern-, Eltern- und heutige Generation",
     [
       {
-        head: "Großeltern (um 1960)",
-        body: "Oft Volksschule bis 14/15\nFrüher Einstieg in Lehre/Beruf\nKurze Übergangsphase",
+        head: "Großeltern (1960er/70er)",
+        body: "Oft Haupt-/Volksschule bis 15/16\nFrüher Einstieg in Lehre/Beruf\nKurze Übergangsphase",
         colour: P.amber,
         detail:
-          "Wirtschaftliche Eigenständigkeit, Heirat und eigener Haushalt begannen oft schon mit Ende Teenageralter.",
+          "Wirtschaftliche Eigenständigkeit, Heirat und eigener Haushalt begannen oft schon um das 20. Lebensjahr.",
       },
       {
-        head: "Eltern (1980er/1990er)",
+        head: "Eltern (1990er/2000er)",
         body: "Längere Schulwege\nEigene Jugend- & Musikszene\nMehr Wahl bei Beruf & Freizeit",
         colour: P.blue,
         detail:
-          "Die Jugendphase dehnte sich in die frühen Zwanziger aus; Freizeitkultur und Bildung gewannen Gewicht.",
+          "Die Jugendphase dehnte sich in die frühen Zwanziger aus; Freizeitkultur, frühe Medien und Bildung gewannen Gewicht.",
       },
       {
         head: "Heute (Gegenwart)",

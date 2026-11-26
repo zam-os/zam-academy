@@ -26,7 +26,7 @@ Lernstand und eigene Textentwürfe bleiben ausschließlich lokal im Browser (`po
 
 ```sh
 npm ci
-npm run dev          # http://localhost:5292/politik-gymnasium-8/
+npm run dev          # http://localhost:5293/politik-gymnasium-8/
 npm run typecheck
 npm test
 npm run build

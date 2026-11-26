@@ -113,9 +113,11 @@ h3 {
 h1 {
   font-family: ui-serif, Georgia, serif;
   letter-spacing: -0.035em;
-  font-size: clamp(2rem, 4vw, 3.6rem);
+  font-size: clamp(1.55rem, 4vw, 3.6rem);
   font-weight: 600;
   margin: 0.6rem 0 1rem;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 h2 {
   font-size: 1.3rem;
@@ -455,7 +457,9 @@ select {
   padding: 2.5rem 0 1rem;
 }
 .lesson-heading h1 {
-  font-size: clamp(2rem, 4vw, 3.1rem);
+  font-size: clamp(1.5rem, 4vw, 3.1rem);
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 .period {
   color: var(--gold);
@@ -905,7 +909,7 @@ dialog::backdrop {
     padding: 0.7rem 1rem;
   }
   .hero {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     padding-top: 0.5rem;
     gap: 1.5rem;
   }
@@ -921,13 +925,13 @@ dialog::backdrop {
     flex-direction: column;
   }
   .stages {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
   .lesson-columns {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
   .lesson-aside {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
   .panel {
     padding: 1.2rem;

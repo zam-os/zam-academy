@@ -141,7 +141,7 @@ export const regionZukunft: LabDef = {
     const zuzug = str(s, "trend") === "zuzug";
     const oepnv = num(s, "oepnv");
     const bet = num(s, "beteiligung");
-    const lebensqualitaet = Math.min(100, Math.round(35 + oepnv * 0.35 + bet * 0.3));
+    const lebensqualitaet = Math.min(100, Math.round((zuzug ? 45 : 25) + oepnv * 0.35 + bet * 0.25));
     const umweltdruck = Math.max(15, Math.min(100, (zuzug ? 80 : 40) - Math.round(oepnv * 0.35)));
     return svg(
       620,
@@ -437,13 +437,19 @@ export const fuehrungsStile: LabDef = {
       laissezfaire: { klima: 45, teilhabe: 40, druck: 30 },
     };
     const cur = base[str(s, "stil")] ?? base.autoritaer;
+    const stilNames: Record<string, string> = {
+      autoritaer: "Autoritär",
+      demokratisch: "Demokratisch",
+      laissezfaire: "Laissez-faire",
+    };
+    const stilLabel = stilNames[str(s, "stil")] ?? str(s, "stil");
     const tempo = bool(s, "notfall") && str(s, "stil") === "autoritaer" ? 95 : str(s, "stil") === "demokratisch" ? 70 : 30;
     return svg(
       620,
       192,
       "Wirkung von Führungsstilen auf Arbeitsklima, Beteiligung, Anpassungsdruck und Handlungsfähigkeit",
       `${panel(6, 6, 608, 180, "panel-bg")}
-       ${label(22, 28, `Stil: ${str(s, "stil")}${bool(s, "notfall") ? " (akuter Notfall)" : " (Projektalltag)"}`, "lbl small strong", "start")}
+       ${label(22, 28, `Stil: ${stilLabel}${bool(s, "notfall") ? " (akuter Notfall)" : " (Projektalltag)"}`, "lbl small strong", "start")}
        ${[
          { t: "Arbeitsklima", v: cur.klima, c: P.green },
          { t: "Selbstbestimmung & Teilhabe", v: cur.teilhabe, c: P.blue },

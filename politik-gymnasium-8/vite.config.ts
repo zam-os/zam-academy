@@ -7,7 +7,7 @@ export default defineConfig({
   base: "/politik-gymnasium-8/",
   plugins: [viteSingleFile()],
   server: {
-    port: 5292,
+    port: 5293,
     open: false,
   },
   build: {

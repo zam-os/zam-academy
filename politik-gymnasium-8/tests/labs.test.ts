@@ -51,7 +51,7 @@ const WITNESSES: Record<LabKind, [string, LabValue][][]> = {
   kompromissRat: [
     [["radweg", 40], ["gruen", 40], ["kultur", 20], ["minderheit", true]],
     [["radweg", 40], ["gruen", 20], ["kultur", 40], ["minderheit", true]],
-    [["minderheit", false]],
+    [["radweg", 40], ["gruen", 40], ["kultur", 20], ["minderheit", false]],
   ],
   kooperationsEbenen: [
     [["ebene", "schule"]],
