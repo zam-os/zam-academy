@@ -425,5 +425,7 @@ jobs:
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node latein-gymnasium-6/scripts/validate-cell.mjs
       - name: Verify Grade 6 Gymnasium Latin (2. Fremdsprache) enrolment and recall
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node latein-gymnasium-6-l2/scripts/validate-cell.mjs
-      - name: Verify Grade 7 Gymnasium Latin (1. Fremdsprache) enrolment and preserve legacy cards
+      - name: Verify Grade 7 Gymnasium Latin (1. Fremdsprache) fresh enrolment
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node latein-gymnasium-7-l1/scripts/validate-cell.mjs
+      - name: Verify the approved Grade 7 Gymnasium Latin history migration
+        run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node latein-gymnasium-7-l1/scripts/validate-migration.mjs

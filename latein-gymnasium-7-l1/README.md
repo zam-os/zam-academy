@@ -22,4 +22,6 @@ npm run package:zip  # Offline-Paket in release/
 
 ## Lehrplan- und Bestandsabgleich
 
-Alle 50 Kompetenzerwartungen des Fachlehrplans sind in [`coverage.json`](coverage.json) wortgetreu gegen das gesicherte HTML geprüft (`node scripts/check-curriculum.mjs`). Die Abgrenzung zu Klasse 6 und Klasse 8 sowie der vollständige Bestandsabgleich der älteren `de-by`-Zellen in [`replaces-de-by.json`](replaces-de-by.json) (`proposal-only`, `approved: null`) sind in [`docs/latein-gymnasium-7-l1-coverage.md`](../docs/latein-gymnasium-7-l1-coverage.md) dokumentiert.
+Alle 50 Kompetenzerwartungen des Fachlehrplans sind in [`coverage.json`](coverage.json) wortgetreu gegen das gesicherte HTML geprüft (`node scripts/check-curriculum.mjs`). Die Abgrenzung zu Klasse 6 und Klasse 8 sowie der vollständige Bestandsabgleich der älteren `de-by`-Zellen in [`replaces-de-by.json`](replaces-de-by.json) sind in [`docs/latein-gymnasium-7-l1-coverage.md`](../docs/latein-gymnasium-7-l1-coverage.md) dokumentiert.
+
+Cell version `2026.11.2` carries the two approved history transfers from the Grade 8 legacy cell.
