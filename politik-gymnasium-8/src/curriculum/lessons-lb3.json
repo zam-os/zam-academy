@@ -1,0 +1,505 @@
+[
+  {
+    "id": "pg8-popularitaet-personenkult",
+    "lb": 3,
+    "title": "Popularität verstehen: Wertschätzung vs. Personenkult",
+    "period": "LB 3 · Vorbilder, Idole und Influencer hinterfragen",
+    "intro": "Warum werden manche Menschen von Millionen bewundert? Und wann kippt berechtigte Anerkennung in unkritischen Personenkult?",
+    "grundwissen": [
+      "Popularität",
+      "Wertschätzung",
+      "Personenkult",
+      "Kritische Distanz"
+    ],
+    "paragraphs": [
+      "Popularität bedeutet schlicht Bekanntheit und Beliebtheit bei vielen Menschen. Gründe dafür sind vielfältig: herausragende sportliche oder musikalische Leistungen, Humor, sichtbares Engagement für eine gute Sache, starke Medienpräsenz oder gezieltes Marketing.",
+      "Entscheidend ist jedoch, wie Fans, Follower oder Bürgerinnen auf diese Popularität reagieren. Wertschätzung erkennt eine konkrete Leistung, Haltung oder Kunstform an – bleibt aber sachlich und nüchtern. Man darf ein Vorbild bewundern und trotzdem einzelne Aussagen, Fehler oder Handlungen offen kritisieren.",
+      "Personenkult beginnt dort, wo eine Person überhöht und gegen jede Kritik abgeschottet wird. Typische Kennzeichen sind blinde Gefolgschaft, das Verklären jeder Entscheidung als fehlerlos, ständige Inszenierung der eigenen Überlegenheit und die Abwertung aller, die widersprechen. In der Geschichte nutzten Diktaturen Personenkult gezielt als Machtinstrument; abgeschwächte Formen begegnen heute aber auch in extremer Starverehrung.",
+      "Wer zwischen Leistung und Person unterscheidet, schützt die eigene Urteilskraft: Anerkennung gilt einer Tat oder Fähigkeit, niemals der Abschaffung eigenen Denkens."
+    ],
+    "takeaway": "Wertschätzung anerkennt konkrete Leistungen bei bleibender Kritikfähigkeit; Personenkult überhöht eine Person zum unfehlbaren Vorbild und unterdrückt Widerspruch.",
+    "sourceIds": [
+      "lehrplan",
+      "wiki-personenkult",
+      "wiki-vorbild"
+    ],
+    "figures": [
+      "wertschaetzungPersonenkult"
+    ],
+    "lab": "popularitaetSpektrum",
+    "quiz": {
+      "question": "Woran erkennt man den Übergang von Wertschätzung zu Personenkult am deutlichsten?",
+      "answer": "Daran, dass jede Kritik an der Person als Verrat gilt und Fehler grundsätzlich geleugnet oder umgedeutet werden.",
+      "wrong": [
+        "Daran, dass eine Künstlerin oder ein Sportler über soziale Medien ein sehr großes Publikum erreicht.",
+        "Daran, dass Fans einer Person für außergewöhnliche Leistungen langfristig Respekt und Dank zeigen."
+      ],
+      "explanation": "Applaus und Interesse an der Arbeit sind Formen von Wertschätzung. Personenkult entsteht erst durch Unfehlbarkeitsanspruch und Kritikverbot."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Wertschätzung oder Personenkult?",
+      "instruction": "Ordne die vier Aussagen von Fans oder Anhängern auf dem Spektrum zwischen Wertschätzung und Personenkult ein.",
+      "categories": [
+        "Sachliche Wertschätzung",
+        "Merkmal von Personenkult"
+      ],
+      "entries": [
+        {
+          "text": "„Ihre neue Platte ist musikalisch stark, auch wenn ich die hohen Ticketpreise übertrieben finde.“",
+          "target": 0,
+          "feedback": "Begeisterung für die Leistung verbindet sich hier mit eigener Kritikfähigkeit."
+        },
+        {
+          "text": "„Wer an unserem Star auch nur ein einziges Wort kritisiert, gehört nicht mehr in unsere Community.“",
+          "target": 1,
+          "feedback": "Kritikverbot und Ausschluss Andersdenkender sind klare Kennzeichen von Personenkult."
+        },
+        {
+          "text": "„Mich beeindruckt, wie konsequent der Sportler nach seiner Verletzung wieder trainiert hat.“",
+          "target": 0,
+          "feedback": "Hier wird eine konkrete Anstrengung nachvollziehbar gewürdigt."
+        },
+        {
+          "text": "„Er hat immer recht – selbst wenn Fakten dagegen sprechen, verfolgt er sicher einen genialen Plan.“",
+          "target": 1,
+          "feedback": "Blinde Unfehlbarkeit statt Faktenprüfung kennzeichnet Personenkult."
+        }
+      ],
+      "conclusion": "Anerkennung braucht keinen blinden Gehorsam: Wer Fehler benennen darf, schützt sich vor Manipulation."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Stelle im Popularitäts-Spektrum zwei gegensätzliche Fälle ein und erkläre an drei Merkmalen den Unterschied zwischen Wertschätzung und Personenkult.",
+        "hints": [
+          "Achte im Modell auf Fokus (Leistung vs. Person), Offenheit für Kritik und Umgang mit Fehlern.",
+          "Nenne Beispiele aus Sport, Musik oder Politik."
+        ],
+        "model": "Wertschätzung richtet sich erstens auf konkrete Leistungen, lässt zweitens Widerspruch zu und bewahrt drittens Respekt vor eigenen Grenzen. Personenkult dagegen überhöht die gesamte Person, duldet keine Kritik und erwartet blinde Nachahmung. So kann ich die Spielweise einer Fußballerin bewundern, aber ihre Werbung für ungesunde Produkte trotzdem ablehnen.",
+        "criteria": [
+          "Beobachtung aus dem Modell zutreffend wiedergegeben",
+          "Drei klare Unterscheidungsmerkmale genannt",
+          "Passendes Alltagsbeispiel angeführt"
+        ]
+      },
+      "2": {
+        "prompt": "Warum ist Personenkult gerade in der Politik gefährlich für eine Demokratie?",
+        "hints": [
+          "Denke an die Rolle von Kontrolle, Kritik und freien Entscheidungen der Bürgerinnen.",
+          "Überlege, was passiert, wenn eine Führungsperson als unfehlbar gilt."
+        ],
+        "model": "Demokratie lebt von offener Debatte, Kontrolle durch Medien und Parlament sowie der Möglichkeit, Macht wieder abzuwählen. Personenkult zerstört diese Kontrolle, weil Widerspruch als Illoyalität abgestempelt wird und politische Sachfragen hinter der Verehrung einer Person verschwinden. Dadurch werden Machtmissbrauch und Fehlentscheidungen wahrscheinlicher.",
+        "criteria": [
+          "Demokratische Prinzipien (Debatte, Kontrolle, Abwählbarkeit) genannt",
+          "Widerspruch zwischen Demokratie und Unfehlbarkeitsanspruch erklärt",
+          "Folge (Gefahr von Machtmissbrauch) benannt"
+        ]
+      }
+    }
+  },
+  {
+    "id": "pg8-vorbilder-influencer",
+    "lb": 3,
+    "title": "Funktionen von Vorbildern, Idolen und Influencern",
+    "period": "LB 3 · Vorbilder, Idole und Influencer hinterfragen",
+    "intro": "Ob Eltern, Sportlerinnen, historische Persönlichkeiten oder Online-Creator: Welche Orientierung können sie geben – und wo unterscheiden sie sich?",
+    "grundwissen": [
+      "Vorbild",
+      "Idol",
+      "Influencer",
+      "Sinn und Orientierung"
+    ],
+    "paragraphs": [
+      "Auf der Suche nach dem eigenen Weg schauen Jugendliche auf Menschen, die ihnen etwas voraus haben oder Werte vorleben. Dabei hilft es, drei Begriffe sauber zu trennen: Vorbilder, Idole und Influencer erfüllen unterschiedliche Rollen.",
+      "Ein Vorbild ist ein Mensch, dessen Verhalten oder Fähigkeiten man schätzt und sich in bestimmten Punkten zum Maßstab nimmt – etwa eine engagierte Trainerin, ein couragierter Mensch aus der Geschichte oder eine Wissenschaftlerin. Vorbilder stehen für überprüfbare Handlungen und bleiben erreichbare Orientierungspunkte.",
+      "Ein Idol wird dagegen stark idealisiert und oft aus der Ferne verehrt, zum Beispiel Popstars oder Filmhelden. Idole verkörpern häufig Wünsche nach Erfolg, Glamour oder Perfektion – ihr wirkliches Alltagsleben bleibt hinter der Bühne meist unsichtbar.",
+      "Influencer wiederum sind reichweitenstarke Personen in sozialen Netzwerken, die Alltag, Meinungen und Lebensstil teilen und dadurch gezielt Kaufentscheidungen oder Einstellungen ihrer Follower beeinflussen. Sie können nützliche Tipps und kreative Impulse geben, verbinden Nähe aber fast immer mit einem eigenen Geschäftsmodell."
+    ],
+    "takeaway": "Vorbilder geben bodenständige Orientierung im Handeln, Idole werden stark idealisiert, und Influencer verbinden persönliche Alltagsnähe meist mit Reichweite und Vermarktung.",
+    "sourceIds": [
+      "lehrplan",
+      "wiki-vorbild",
+      "wiki-idol",
+      "wiki-influencer"
+    ],
+    "figures": [
+      "vorbildIdolInfluencer"
+    ],
+    "quiz": {
+      "question": "Was unterscheidet einen Influencer grundlegend von einem klassischen Vorbild aus dem persönlichen Umfeld?",
+      "answer": "Influencer erreichen ein Massenpublikum über Plattformen und verbinden persönliche Nähe meist mit Reichweiten- und Werbeinteressen.",
+      "wrong": [
+        "Influencer orientieren sich ausschließlich an persönlichen Begegnungen im eigenen Wohnort oder Sportverein.",
+        "Klassische Vorbilder verfolgen im Alltag regelmäßig kommerzielle Werbeverträge mit großen Marken."
+      ],
+      "explanation": "Persönliche Vorbilder kennt man meist durch konkretes Handeln vor Ort oder historische Taten; Influencer arbeiten dagegen in einer öffentlichen Plattformökonomie."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Vorbild, Idol oder Influencer?",
+      "instruction": "Ordne die vier Beispiele der jeweils passendsten Kategorie zu.",
+      "categories": [
+        "Vorbild",
+        "Idol",
+        "Influencer"
+      ],
+      "entries": [
+        {
+          "text": "Deine ältere Schwester engagiert sich ehrenamtlich bei der Jugendfeuerwehr und hilft dir bei schwierigen Aufgaben.",
+          "target": 0,
+          "feedback": "Konkretes, erreichbares Handeln im eigenen Umfeld macht sie zu einem Vorbild."
+        },
+        {
+          "text": "Ein weltweit gefeierter Rockstar, dessen Poster im Zimmer hängt, dessen Alltag aber völlig fern bleibt.",
+          "target": 1,
+          "feedback": "Starke Idealisierung aus großer Distanz ist typisch für ein Idol."
+        },
+        {
+          "text": "Ein Gaming-Creator streamt täglich für 400 000 Follower und bewirbt dabei Energy-Drinks mit Rabattcode.",
+          "target": 2,
+          "feedback": "Plattform-Reichweite, Alltags-Einblick und Produktvermarktung kennzeichnen Influencer."
+        },
+        {
+          "text": "Eine Ärztin berichtet sachlich über ihre Einsätze in Krisengebieten und inspiriert damit zur Berufswahl.",
+          "target": 0,
+          "feedback": "Überprüfbare Leistungen und Werte bieten Orientierung als Vorbild."
+        }
+      ],
+      "conclusion": "Jede dieser Rollen kann inspirieren – aber nur wer sie unterscheidet, merkt, wann persönliche Orientierung mit Verkaufs- oder Bühneninteressen vermischt wird."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Nenne zwei Funktionen, die Vorbilder oder Idole für Jugendliche bei der Orientierung erfüllen können, und zeige jeweils eine Grenze auf.",
+        "hints": [
+          "Funktionen sind zum Beispiel Motivation, Wertevermittlung oder Gemeinschaftsgefühl.",
+          "Grenzen entstehen, wenn Ansprüche unerreichbar scheinen oder kommerzielle Ziele dahinterstehen."
+        ],
+        "model": "Vorbilder können erstens Mut machen und Motivation geben, ein eigenes Ziel wie ein Musikinstrument oder ein Ehrenamt auszuprobieren – ihre Grenze liegt dort, wo man blind kopiert statt eigene Stärken zu entdecken. Idole können zweitens Zugehörigkeit zu einer Community stiften, doch ihr oft geglättetes Bühnenbild täuscht leicht darüber hinweg, dass niemand makellos ist.",
+        "criteria": [
+          "Zwei Orientierungsfunktionen von Vorbildern oder Idolen benannt",
+          "Zu beiden Funktionen eine realistische Grenze erklärt",
+          "Sachlich und abwägend formuliert"
+        ]
+      },
+      "2": {
+        "prompt": "Ein bekannter Sport-Influencer empfiehlt täglich teure Nahrungsergänzungsmittel und sagt: „Nur damit schafft ihr meine Form.“ Prüfe kritisch, inwieweit er als Orientierung taugt.",
+        "hints": [
+          "Trenne zwischen seinem sportlichen Wissen/Training und seinen wirtschaftlichen Interessen.",
+          "Prüfe, ob ein einzelnes Produkt sportliche Leistung erklären kann."
+        ],
+        "model": "Als Impuls für regelmäßiges Training oder Technikübungen kann der Influencer durchaus motivieren. Sobald er jedoch Erfolge an teure Produkte knüpft, überwiegt das kommerzielle Interesse gegenüber seriöser Orientierung: Sportliche Fitness hängt vor allem von Training, Schlaf und ausgewogener Ernährung ab, nicht von beworbenen Pulvern. Jugendliche sollten hier Trainingsideen und Produktwerbung streng trennen.",
+        "criteria": [
+          "Zwischen sportlicher Leistung und Werbeinteresse unterschieden",
+          "Irreführende Vereinfachung („nur damit“) fachlich widerlegt",
+          "Abgewogene Einschätzung zur Orientierungshilfe gegeben"
+        ]
+      }
+    }
+  },
+  {
+    "id": "pg8-medien-inszenierung",
+    "lb": 3,
+    "title": "Wie Medien Identifikationsfiguren produzieren und vermarkten",
+    "period": "LB 3 · Vorbilder, Idole und Influencer hinterfragen",
+    "intro": "Authentisch oder genau geplant? Welche Strategien hinter erfolgreichen Kanälen, Casting-Shows und politischen Image-Kampagnen stecken.",
+    "grundwissen": [
+      "Medieninszenierung",
+      "Parasoziale Beziehung",
+      "Kommerzielle und politische Interessen",
+      "Werbekennzeichnung"
+    ],
+    "paragraphs": [
+      "Was auf dem Bildschirm spontan, nahbar und „genau wie du und ich“ wirkt, ist oft Ergebnis professioneller Planung. Medienunternehmen, Management-Agenturen und auch politische Kampagnen setzen gezielte Strategien ein, um Identifikationsfiguren aufzubauen.",
+      "Ein wichtiges Mittel ist die parasoziale Interaktion: Creator sprechen direkt in die Kamera, nutzen „ihr“ und „wir“, zeigen scheinbar private Alltagsmomente und beantworten ausgewählte Kommentare. Dadurch entsteht bei Zuschauerinnen und Zuschauern das einseitige Gefühl einer persönlichen Freundschaft – obwohl der Star das Publikum gar nicht kennt.",
+      "Hinter solchen Inszenierungen stehen handfeste Interessen: Kommerziell geht es um Klickzahlen, Plattformvergütung, eigene Produktlinien oder bezahlte Werbung, die nach deutschem Recht klar als „Anzeige“ oder „Werbung“ gekennzeichnet sein muss. Politisch nutzen Parteien oder einzelne Akteure sympathische Alltagsclips, um Kritik auszuweichen oder Vertrauen für politische Ziele zu gewinnen.",
+      "Mit einem festen Analyseraster durchschaust du diese Mechanismen schnell, ohne jeden Kanal gleich abzulehnen: Du erkennst, wer sendet, wie Nähe hergestellt wird und welches Interesse mitschwingt."
+    ],
+    "kriterien": {
+      "title": "Kriterien zum Durchschauen medialer Inszenierung",
+      "steps": [
+        "Machart & Technik: Wie erzeugen Schnitt, Musik, Kamera und Filter eine bestimmte Stimmung?",
+        "Beziehungssignale: Wird durch direkte Ansprache oder „private“ Einblicke künstliche Nähe geschaffen?",
+        "Interessen & Geld: Gibt es Werbung, Affiliate-Links, eigene Marken oder politische Botschaften?",
+        "Fehlende Perspektiven: Was wird bewusst ausgeblendet (z. B. Risiken, Gegenstimmen, Arbeit im Hintergrund)?"
+      ]
+    },
+    "takeaway": "Medien produzieren Identifikationsfiguren über gezielte Inszenierung und parasoziale Nähe; dahinter stehen oft kommerzielle oder politische Interessen, die eine kritische Analyse sichtbar macht.",
+    "sourceIds": [
+      "lehrplan",
+      "wiki-parasozial",
+      "wiki-influencer",
+      "bpb-politiklexikon"
+    ],
+    "figures": [
+      "medienProduktionSchema"
+    ],
+    "lab": "influencerStrategie",
+    "quiz": {
+      "question": "Was beschreibt der Begriff „parasoziale Beziehung“ bei Fans und Influencern?",
+      "answer": "Ein einseitiges Gefühl persönlicher Verbundenheit des Publikums mit einer Medienfigur, die den einzelnen Fan gar nicht kennt.",
+      "wrong": [
+        "Eine wechselseitige persönliche Freundschaft, bei der Star und Zuschauerin regelmäßig privat in Kontakt stehen.",
+        "Eine sachliche Nachrichtensendung, die bewusst auf direkte Ansprache und emotionale Musik verzichtet."
+      ],
+      "explanation": "Direkte Ansprache, Alltagsgeschichten und scheinbare Offenheit wecken beim Publikum Vertrauen, bleiben aber einseitige Medienkommunikation."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Strategien in einem Video-Post erkennen",
+      "instruction": "Ordne die vier Bausteine eines kurzen Online-Beitrags der jeweils eingesetzten Inszenierungsstrategie zu.",
+      "categories": [
+        "Parasoziale Nähe",
+        "Kommerzielles Interesse",
+        "Ästhetische Inszenierung",
+        "Ausblendung"
+      ],
+      "entries": [
+        {
+          "text": "„Hey ihr Lieben, heute nehme ich euch mal ganz ehrlich in meinen Morgen mit!“",
+          "target": 0,
+          "feedback": "Persönliche Anrede und scheinbar intimer Einblick schaffen einseitige Nähe."
+        },
+        {
+          "text": "Im Kleingedruckten steht „Anzeige“; in der Videobeschreibung führt ein Code direkt zum Online-Shop.",
+          "target": 1,
+          "feedback": "Der Beitrag verfolgt ein klares Verkaufs- und Einnahmeziel."
+        },
+        {
+          "text": "Perfektes Ringlicht, schnelle Schnitte und ruhige Hintergrundmusik lassen den Alltag mühelos wirken.",
+          "target": 2,
+          "feedback": "Licht, Schnitt und Ton formen gezielt eine attraktive Wirkung."
+        },
+        {
+          "text": "Die drei fehlgeschlagenen Aufnahmen und das große Team hinter der Kamera tauchen im Clip nicht auf.",
+          "target": 3,
+          "feedback": "Der Aufwand bleibt unsichtbar, damit das Ergebnis spontan wirkt."
+        }
+      ],
+      "conclusion": "Wer Machart, Beziehungssignale, Geldflüsse und Ausblendungen getrennt prüft, lässt sich von gekonnter Inszenierung nicht täuschen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Schalte im Feed-Modell oben einen Beitrag mit verstecktem Interesse zusammen und erkläre, warum parasoziale Nähe das kritische Urteil schwächen kann.",
+        "hints": [
+          "Achte darauf, wie Vertrauensaufbau und Werbe- bzw. Meinungsbotschaft im Modell zusammenwirken.",
+          "Vergleiche mit einem transparent gekennzeichneten Beitrag."
+        ],
+        "model": "Wenn ein Kanal zuerst durch persönliche Alltagsgeschichten das Gefühl einer Freundschaft aufbaut, prüfen Zuschauer nachfolgende Empfehlungen oft weniger streng als bei klassischer Fernsehwerbung. Fehlt dann noch eine deutliche Kennzeichnung, verschwimmen ehrliche Meinung und bezahlte Verkaufsbotschaft. Transparenz und eigener Abstand stellen die Urteilsfähigkeit wieder her.",
+        "criteria": [
+          "Mechanismus der parasozialen Nähe richtig erklärt",
+          "Wirkung fehlender oder schwacher Kennzeichnung benannt",
+          "Zusammenhang zwischen Vertrauen und Urteilskraft aufgezeigt"
+        ]
+      },
+      "2": {
+        "prompt": "Eine Politikerin postet nur kurze Videos von ihrem Hund und ihren Lieblingsrezepten, beantwortet aber keine kritischen Nachfragen zu ihren Beschlüssen. Analysiere diese Strategie.",
+        "hints": [
+          "Nutze die vier Schritte des Kriterienkatalogs (Machart, Nähe, Interesse, Ausblendung).",
+          "Überlege, was Wählerinnen eigentlich über politische Arbeit wissen müssten."
+        ],
+        "model": "Die Strategie setzt auf Personalisierung und parasoziale Sympathie: Durch private Einblicke wirkt die Politikerin nahbar und sympathisch, wodurch emotionale Zustimmung entsteht. Gleichzeitig blendet sie politische Streitfragen, Argumente und Kontrolle völlig aus. Für eine fundierte politische Beurteilung reichen solche Image-Clips nicht aus – entscheidend bleiben Programme, Abstimmungen und sachliche Begründungen.",
+        "criteria": [
+          "Emotionale Sympathie-Strategie durch private Themen erkannt",
+          "Ausblendung politischer Inhalte und Kritik benannt",
+          "Maßstab für politische Beurteilung (Programme, Handeln) entgegengestellt"
+        ]
+      }
+    }
+  },
+  {
+    "id": "pg8-folgen-popularitaet",
+    "lb": 3,
+    "title": "Folgen von Popularität: Öffentlichkeit, Privatheit und Mythisierung",
+    "period": "LB 3 · Vorbilder, Idole und Influencer hinterfragen",
+    "intro": "Ruhm bringt Aufmerksamkeit und Einfluss – hat aber auch Schattenseiten für Betroffene und Gesellschaft. Ein differenzierter Blick anhand von Biografien.",
+    "grundwissen": [
+      "Öffentlichkeit und Privatheit",
+      "Mythisierung",
+      "Stilisierung",
+      "Erfolgsdruck"
+    ],
+    "paragraphs": [
+      "Wer durch Sport, Musik, Netz oder Politik bekannt wird, erlebt zunächst viele Vorteile: Reichweite, Anerkennung, finanzielle Chancen und die Möglichkeit, Themen für viele Menschen sichtbar zu machen. Doch Biografien prominenter Menschen zeigen fast immer auch die Kehrseite großer Bekanntheit.",
+      "Eine zentrale Herausforderung ist die Balance zwischen Öffentlichkeit und Privatheit. Jede unbedachte Äußerung, ein privates Foto oder ein schwacher Tag kann innerhalb von Minuten tausendfach kommentiert und bewertet werden. Manche Stars ziehen sich deshalb zurück oder trennen ihre öffentliche Kunstfigur streng von ihrem Privatleben; andere geben aus wirtschaftlichem Druck immer mehr Privates preis.",
+      "Zudem neigen Medien und Publikum zur Stilisierung und Mythisierung: Erfolge werden zu glatten Heldengeschichten verdichtet, Niederlagen oder Zweifel verschwiegen oder im Gegenteil gnadenlos ausgeschlachtet. Für die Gesellschaft entsteht dadurch ein verzerrtes Bild von Leistung – als sei Erfolg ohne Krisen, Teamhilfe und Zufall allein durch Willenskraft planbar.",
+      "Ein differenziertes Bild erkennt beides an: die reale Leistung hinter dem Erfolg und die Verletzlichkeit sowie Verantwortung, die mit Öffentlichkeit verbunden sind."
+    ],
+    "takeaway": "Popularität eröffnet Reichweite und Einfluss, gefährdet aber Privatheit durch Dauerbeobachtung und verzerrt Wirklichkeit durch mediale Stilisierung und Mythisierung.",
+    "sourceIds": [
+      "lehrplan",
+      "wiki-idol",
+      "wiki-soziale-medien"
+    ],
+    "figures": [
+      "oeffentlichkeitPrivatheit"
+    ],
+    "quiz": {
+      "question": "Was bedeutet „Mythisierung“ im Zusammenhang mit berühmten Vorbildern und Stars?",
+      "answer": "Die überhöhte, märchenhafte Ausschmückung einer Lebensgeschichte, bei der Brüche, Hilfen und Alltag ausgeblendet werden.",
+      "wrong": [
+        "Die vollständige Überprüfung einer Biografie auf Brüche, Zweifel und Unterstützung durch andere Menschen.",
+        "Der sachliche Vergleich verschiedener beruflicher Erfolge und Misserfolge über mehrere Jahre hinweg."
+      ],
+      "explanation": "Mythisierung macht aus realen Menschen übermenschliche Heldenfiguren – das verzerrt sowohl das Bild des Stars als auch die Maßstäbe für andere."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Folgen von Popularität für Einzelne und Gesellschaft prüfen",
+      "instruction": "Ordne jede biografische Beobachtung der passenden Folge von Popularität zu.",
+      "categories": [
+        "Chance durch Reichweite",
+        "Verlust an Privatheit & Druck",
+        "Stilisierung & Mythisierung"
+      ],
+      "entries": [
+        {
+          "text": "Eine bekannte Tennisspielerin nutzt ihre Pressekonferenzen, um auf Jugendförderung in Vereinen aufmerksam zu machen.",
+          "target": 0,
+          "feedback": "Hier wirkt Bekanntheit als Verstärker für ein gesellschaftliches Anliegen."
+        },
+        {
+          "text": "Vor dem Haus eines jungen Schauspielers warten täglich Fotografen und filmen selbst Einkäufe.",
+          "target": 1,
+          "feedback": "Der Rückzugsraum des Privatlebens geht unter Dauerbeobachtung verloren."
+        },
+        {
+          "text": "Ein Magazin verschweigt jahrelanges Scheitern und Teamarbeit und feiert einen Gründer als „einsames Wunderkind“.",
+          "target": 2,
+          "feedback": "Komplexe Realität wird zu einem eingängigen Mythos verkürzt."
+        },
+        {
+          "text": "Nach einer Niederlage erhält eine Athletin tausende abwertende Nachrichten im Netz und erleidet Schlafstörungen.",
+          "target": 1,
+          "feedback": "Öffentlicher Leistungsdruck und digitale Angriffe belasten die psychische Gesundheit."
+        }
+      ],
+      "conclusion": "Biografien zeigen, dass Bekanntheit nicht nur Glanz bedeutet, sondern bewussten Schutz von Privatheit und einen ehrlichen Blick auf echte Lebenswege erfordert."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre an einem Beispiel, wie sich Verlust von Privatheit und Stilisierung bei einer populären Person auf deren Umfeld und auf Jugendliche auswirken können.",
+        "hints": [
+          "Beschreibe erst die Belastung für die berühmte Person selbst.",
+          "Erkläre danach, welchen falschen Eindruck ein geschöntes Erfolgsbild bei Jugendlichen hinterlässt."
+        ],
+        "model": "Wenn eine bekannte Person ständig beobachtet wird, verliert sie freie Rückzugsräume und steht unter Druck, keine Schwäche zu zeigen. Gleichzeitig vermittelt die mediale Stilisierung Jugendlicher oft das Bild eines makellosen „Über-Nacht-Erfolgs“. Wer sich daran misst, unterschätzt normale Rückschläge und fühlt sich unnötig minderwertig.",
+        "criteria": [
+          "Belastung für die betroffene Person (Privatheit, Druck) benannt",
+          "Verzerrung für junge Zuschauer (unrealistische Maßstäbe) erklärt",
+          "Beide Ebenen logisch verknüpft"
+        ]
+      },
+      "2": {
+        "prompt": "Eine bekannte Musikerin zieht eine klare Grenze: Konzerte und Interviews ja, Fotos ihrer Familie und Wohnung nein. Bewerte diese Entscheidung.",
+        "hints": [
+          "Berücksichtige ihr Recht auf Privatheit und den Schutz ihrer Angehörigen.",
+          "Prüfe, ob das Publikum ein Anrecht auf private Einblicke hat."
+        ],
+        "model": "Die Entscheidung ist nachvollziehbar und schützenswert. Öffentlichkeit berechtigt Fans und Medien dazu, künstlerische Arbeit und öffentliche Aussagen zu bewerten, begründet aber keinen Anspruch auf das Privatleben oder die Familie. Indem die Musikerin diese Grenze zieht, bewahrt sie Eigenständigkeit und schützt unbeteiligte Angehörige vor öffentlicher Bloßstellung.",
+        "criteria": [
+          "Recht auf Privatheit und Schutz Angehöriger begründet",
+          "Trennung zwischen öffentlicher Rolle und privatem Raum vollzogen",
+          "Klares, begründetes Urteil formuliert"
+        ]
+      }
+    }
+  },
+  {
+    "id": "pg8-gefahren-orientierung",
+    "lb": 3,
+    "title": "Gefahren übertriebener Bindung erkennen und Abstand gewinnen",
+    "period": "LB 3 · Vorbilder, Idole und Influencer hinterfragen",
+    "intro": "Wann wird Orientierung ungesund? Wie du Verlust an Individualität, Fanatismus und Manipulation erkennst – und eigene Schutzstrategien entwickelst.",
+    "grundwissen": [
+      "Verlust an Individualität",
+      "Übertriebene Bindung",
+      "Fanatismus",
+      "Schutzstrategien"
+    ],
+    "paragraphs": [
+      "Vorbilder und Idole können Orientierung bieten – aber nur solange sie Impulse geben, statt eigenes Denken zu ersetzen. Übertriebene Orientierung birgt Gefahren sowohl für einzelne Jugendliche als auch für die Gesellschaft.",
+      "Für den Einzelnen droht ein Verlust an Individualität: Wer Aussehen, Sprache, Konsum und Lebenspläne komplett an einem Idol oder Influencer ausrichtet, verliert den Kontakt zu eigenen Talenten, Grenzen und dem Geldbeutel. Übertriebene emotionale Bindung führt dazu, dass man sich bei Kritik am Idol persönlich verletzt fühlt oder reale Freundschaften vernachlässigt.",
+      "Gesellschaftlich gefährlich wird Bindung dort, wo sie in Fanatismus umschlägt: Kritik wird feindselig bekämpft, Andersdenkende werden bedroht oder abgewehrt, und politische oder kommerzielle Akteure nutzen blinde Gefolgschaft für Hass, Betrug oder Extremismus aus.",
+      "Um solchen Gefahren zu entgehen, helfen konkrete Gegenstrategien: mehrere unabhängige Informationsquellen nutzen, Vorbilder nach einzelnen Handlungen statt pauschal beurteilen, Kauf- oder Meinungsdruck eine Bedenkzeit entgegensetzen und reale Gespräche mit Freundinnen, Familie und Lehrkräften pflegen."
+    ],
+    "takeaway": "Übertriebene Orientierung an Vorbildern führt zu Identitätsverlust, emotionaler Abhängigkeit und im Extremfall Fanatismus; bewusste Prüfung, Vielfalt an Bezugspersonen und zeitlicher Abstand schützen davor.",
+    "sourceIds": [
+      "lehrplan",
+      "wiki-personenkult",
+      "wiki-vorbild"
+    ],
+    "figures": [
+      "schutzStrategienVorbilder"
+    ],
+    "quiz": {
+      "question": "Welche Maßnahme schützt Jugendliche am wirksamsten vor einer ungesunden Abhängigkeit von einem einzelnen Idol oder Influencer?",
+      "answer": "Verschiedene Sichtweisen im echten Umfeld einholen, Handlungen einzeln prüfen und vor spontanen Käufen oder Übernahmen Abstand halten.",
+      "wrong": [
+        "Ausschließlich den beliebtesten Kanälen zu folgen, damit man immer die schnellsten Ratschläge aus einer Hand bekommt.",
+        "Kritik von Freundinnen und Freunden am eigenen Idol auszublenden, um die Vorbildfunktion nicht zu stören."
+      ],
+      "explanation": "Vielfalt an Kontakten, eigenständiges Hinterfragen und Bedenkzeit brechen Einseitigkeit auf."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Warnsignale übertriebener Bindung erkennen",
+      "instruction": "Ordne die vier Situationen danach ein, welche konkrete Gefahr jeweils vorliegt.",
+      "categories": [
+        "Verlust an Individualität",
+        "Übertriebene Bindung",
+        "Fanatismus & Abwertung"
+      ],
+      "entries": [
+        {
+          "text": "Noah gibt sein geliebtes Klarinettenspiel auf und kauft nur noch teure Klamotten, weil sein Idol das trägt.",
+          "target": 0,
+          "feedback": "Eigene Begabungen werden aufgegeben, um jemand anderen nachzuahmen."
+        },
+        {
+          "text": "Sobald jemand im Chat einen Fehler seines Lieblings-Streamers nennt, fühlt sich Lukas persönlich angegriffen und schläft schlecht.",
+          "target": 1,
+          "feedback": "Eine einseitige Medienfigur bestimmt das eigene Wohlbefinden übermäßig."
+        },
+        {
+          "text": "Anhänger eines politischen Internetstars bedrohen eine Journalistin mit Beleidigungen, weil sie kritisch berichtet hat.",
+          "target": 2,
+          "feedback": "Feindseligkeit gegen Kritik und Einschüchterung zeigen Fanatismus."
+        },
+        {
+          "text": "Lea schlägt Treffen mit ihren besten Freundinnen aus, um keinen einzigen Livestream zu verpassen.",
+          "target": 1,
+          "feedback": "Reale Beziehungen werden zugunsten einer einseitigen Bindung vernachlässigt."
+        }
+      ],
+      "conclusion": "Wer erste Warnsignale benennen kann, gewinnt rechtzeitig Abstand und bleibt selbst der Maßstab für das eigene Leben."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Entwickle drei konkrete Regeln für deinen persönlichen Umgang mit Vorbildern und Influencern, um Verlust an Individualität und Manipulation zu vermeiden.",
+        "hints": [
+          "Denke an Geld und Werbung, an eigene Stärken und an den Abgleich mit dem realen Umfeld.",
+          "Formuliere kurze, alltagstaugliche Leitfragen oder Regeln."
+        ],
+        "model": "Erstens: Ich prüfe bei jeder Empfehlung zuerst, ob bezahlte Werbung oder ein eigenes Verkaufsinteresse dahintersteckt, und warte 48 Stunden vor jedem Kauf. Zweitens: Ich orientiere mich an mehreren verschiedenen Menschen für unterschiedliche Stärken, statt eine Figur in allem nachzuahmen. Drittens: Wenn ein Kanal Kritik oder andere Meinungen verächtlich macht, suche ich gezielt Gegenstimmen und bespreche den Eindruck mit Freunden oder Eltern.",
+        "criteria": [
+          "Drei konkrete und umsetzbare Schutzregeln formuliert",
+          "Kommerzieller Druck, Individualität und Kritikfähigkeit abgedeckt",
+          "Realitätsnah für den Jugendalltag begründet"
+        ]
+      },
+      "2": {
+        "prompt": "Ein Mitschüler verteidigt einen Online-Redner bedingungslos, obwohl dessen Behauptungen nachweislich falsch sind, und nennt alle Kritiker „Neider“. Wie sollte man ihm begegnen?",
+        "hints": [
+          "Warum bringen persönliche Angriffe gegen den Mitschüler meist nichts?",
+          "Wie hilft ruhiges Nachfragen und das Prüfen konkreter Belege?"
+        ],
+        "model": "Pauschale Abwertungen würden beim Mitschüler nur Trotz und noch stärkere Abwehr auslösen. Wirksamer ist ein respektvolles Gespräch auf Augenhöhe: Man kann anerkennen, was ihn an dem Redner anspricht, und dann gemeinsam an einer einzelnen, konkreten Behauptung prüfen, welche Belege vorliegen und was unabhängige Quellen dazu sagen. So bleibt er im Gespräch und lernt, selbst nachzuprüfen.",
+        "criteria": [
+          "Vermeidung von Beschämung und Konfrontation begründet",
+          "Sachliche Prüfung anhand einzelner Belege und Gegenquellen vorgeschlagen",
+          "Respektvolle Gesprächsführung zum Erhalt des Dialogs betont"
+        ]
+      }
+    }
+  }
+]

@@ -705,6 +705,9 @@ test("the coverage matrix links all three paths to one future package and counts
 
 test("search returns one shared package result even when it has three atlas paths", () => {
   const { data, p } = withGpgPackage();
+  // Keep only the synthetic Grade 10 GPG package so live Grade 5–8 PuG
+  // packages do not fill the 8-result UI cap before Grade 10 is reached.
+  const isolated = { ...data, pakete: [p] };
   const code = html.slice(
     html.indexOf("function search(q)"),
     html.indexOf("/* ---------- coverage matrix"),
@@ -724,8 +727,8 @@ test("search returns one shared package result even when it has three atlas path
       "query",
       `${code}; search(query);`,
     )(
-      data,
-      { lens: "schule", trees: atlasTrees(data) },
+      isolated,
+      { lens: "schule", trees: atlasTrees(isolated) },
       () => results,
       element,
       (n) => n.live > 0,
