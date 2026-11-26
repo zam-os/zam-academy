@@ -75,10 +75,35 @@ describe("Grade 7 English curriculum and practice", () => {
 		expect(isReferenceLanguageLesson(byId("e7-hobby-talk"))).toBe(false);
 	});
 
+	it("uses German decimal and minus typography and package-specific lesson identifiers", () => {
+		for (const lesson of LESSONS) {
+			const tasks = Object.values(lesson.tasks);
+			const germanText = [
+				...lesson.paragraphs,
+				lesson.takeaway,
+				lesson.materialLabel,
+				...(lesson.materialLanguage === "de" ? [lesson.material] : []),
+				lesson.quiz.explanation,
+				...(lesson.quiz.optionLanguage === "de"
+					? [lesson.quiz.question, lesson.quiz.answer, ...lesson.quiz.wrong]
+					: []),
+				...lesson.practice.map(({ feedback }) => feedback),
+				...tasks.flatMap(({ prompt, criteria, language, model }) =>
+					[prompt, ...criteria, ...(language === "de" ? [model] : [])]),
+				...lesson.workshop.goals.flatMap(({ label, explanation }) => [label, explanation]),
+			].join("\n");
+
+			expect(germanText, lesson.id).not.toMatch(/\d\.\d|(?<![A-Za-z0-9])-\d/);
+			expect(JSON.stringify(lesson), lesson.id).not.toMatch(/\be6m-|englisch-mittelschule-6|\bms6\b/);
+		}
+	});
+
 	it("labels the map and timeline and accepts common input variants", () => {
 		const map = renderWorkshop(byId("e7-island-ireland"));
-		expect(map).toContain("● Belfast");
-		expect(map).toContain("● Dublin");
+		expect(map).toContain('class="map-pin map-belfast"');
+		expect(map).toContain('class="map-pin map-dublin"');
+		expect(map).toContain('class="map-label map-city-name">Belfast<');
+		expect(map).toContain('class="map-label map-city-name">Dublin<');
 		expect(map).toContain("Irische See");
 		expect(map).toContain('data-map-focus="uk"');
 		const timeline = renderWorkshop(byId("e7-perfect-form"));

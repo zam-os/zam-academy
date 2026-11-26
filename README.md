@@ -30,7 +30,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | French 5 Gymnasium (Bavaria, first foreign language) | [`franzoesisch-gymnasium-5/`](franzoesisch-gymnasium-5/) | https://academy.zam-os.org/franzoesisch-gymnasium-5/ | `zam-academy:franzoesisch-gymnasium-5` |
 | Englisch 5 Mittelschule (LehrplanPLUS Bayern) | [`englisch-mittelschule-5/`](englisch-mittelschule-5/) | https://academy.zam-os.org/englisch-mittelschule-5/ | `zam-academy:englisch-mittelschule-5` |
 | Englisch 6 Mittelschule (LehrplanPLUS Bayern) | [`englisch-mittelschule-6/`](englisch-mittelschule-6/) | Built by Pages on merge | `zam-academy:englisch-mittelschule-6` |
-| Grade 7 English, Bavarian Mittelschule (R7 and M7) | [Learning package](englisch-mittelschule-7/) | Built by Pages on merge | `zam-academy:englisch-mittelschule-7` |
+| Englisch 7 Mittelschule (LehrplanPLUS Bayern) | [`englisch-mittelschule-7/`](englisch-mittelschule-7/) | Built by Pages on merge | `zam-academy:englisch-mittelschule-7` |
 | Mathematics 5 Mittelschule (Bavaria) | [`mathematik-mittelschule-5/`](mathematik-mittelschule-5/) | Built by Pages on merge | `zam-academy:mathematik-mittelschule-5` |
 | Mathematics 6 Mittelschule (Bavaria) | [`mathematik-mittelschule-6/`](mathematik-mittelschule-6/) | Built by Pages on merge | `zam-academy:mathematik-mittelschule-6` |
 | Mathematik 7 Mittelschule (LehrplanPLUS Bayern, Regelklasse und M-Zug) | [`mathematik-mittelschule-7/`](mathematik-mittelschule-7/) | https://academy.zam-os.org/mathematik-mittelschule-7/ | `zam-academy:mathematik-mittelschule-7` |

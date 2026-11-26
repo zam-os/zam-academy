@@ -16,8 +16,8 @@ function renderIreland(): string {
 			<div class="land-shape ireland-shape"></div>
 			<div class="land-shape britain-shape"></div>
 			<span class="map-north" aria-hidden="true">↑ N</span>
-			<span class="map-label map-belfast" aria-hidden="true">● Belfast</span>
-			<span class="map-label map-dublin" aria-hidden="true">● Dublin</span>
+			<span class="map-pin map-belfast" aria-hidden="true"><span class="map-label map-city-name">Belfast</span></span>
+			<span class="map-pin map-dublin" aria-hidden="true"><span class="map-label map-city-name">Dublin</span></span>
 			<span class="map-label map-sea" aria-hidden="true">Irische See</span>
 			<span class="map-label map-britain" aria-hidden="true">Großbritannien</span>
 		</div>
