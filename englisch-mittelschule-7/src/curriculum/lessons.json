@@ -1,0 +1,4484 @@
+[
+	{
+		"id": "e7-weather",
+		"stage": "communication",
+		"title": "Tomorrow’s weather",
+		"skill": "Einen Wetterbericht erst grob, dann genau verstehen",
+		"tracks": [
+			"R",
+			"M"
+		],
+		"paragraphs": [
+			"Beim ersten Hören brauchst du nur Ort, Thema und groben Verlauf. Beim zweiten Hören sammelst du Stichwörter zu Tageszeiten und Planänderungen. „Later in the day“ zeigt zum Beispiel an, dass sich etwas ändert."
+		],
+		"sourceIds": [
+			"r7",
+			"m7"
+		],
+		"practice": [
+			{
+				"prompt": "Where may the sun come out at lunchtime? (in …)",
+				"answers": [
+					"in town",
+					"town"
+				],
+				"feedback": "Die Ortsangabe „in town“ folgt auf „sunshine“."
+			},
+			{
+				"prompt": "Which path should walkers use? (the … path)",
+				"answers": [
+					"the lower path",
+					"lower path"
+				],
+				"feedback": "Höre auf die Empfehlung „stay on“."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Notiere auf Englisch Stichwörter für See, Hügel und den Weg am Turm.",
+				"model": "Lake: light rain until ten. Hills: strong winds in the afternoon. Tower path: closed after two.",
+				"criteria": [
+					"Ordne nach Ort.",
+					"Notiere je eine Zeit.",
+					"Schreibe Stichwörter."
+				]
+			},
+			"2": {
+				"language": "en",
+				"prompt": "Gib deiner Wandergruppe auf Englisch eine kurze Empfehlung für den Nachmittag. Begründe mit zwei Informationen.",
+				"model": "Let's walk on the lower path. It will be windy in the hills, and the path past the tower will close after two.",
+				"criteria": [
+					"Nenne einen gangbaren Weg.",
+					"Erkläre das Wetterproblem.",
+					"Erwähne die Sperrung."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Lake, before ten",
+					"before": "",
+					"after": "",
+					"options": [
+						"light rain",
+						"strong winds",
+						"dry and cool"
+					],
+					"answer": "light rain",
+					"explanation": "Der Regen am See dauert bis zehn."
+				},
+				{
+					"label": "Hills, afternoon",
+					"before": "",
+					"after": "",
+					"options": [
+						"strong winds",
+						"sunshine",
+						"light rain"
+					],
+					"answer": "strong winds",
+					"explanation": "Am Nachmittag zieht starker Wind in die Hügel."
+				},
+				{
+					"label": "After two, old tower path",
+					"before": "",
+					"after": "",
+					"options": [
+						"closed",
+						"dry",
+						"best route"
+					],
+					"answer": "closed",
+					"explanation": "Der Weg am Turm wird nach zwei gesperrt."
+				}
+			]
+		},
+		"listening": true,
+		"listeningAccent": "en-GB",
+		"takeaway": "Erst die Hauptaussage, dann gezielt Uhrzeit, Ort und Warnung.",
+		"materialLabel": "Wetterbericht für eine fiktive Schulwanderung",
+		"material": "Good morning, Hilltown. There will be light rain near the lake until ten. You may see some sunshine in town around lunchtime, but strong winds will reach the hills in the afternoon. If you are planning a walk, stay on the lower path. The path past the old tower will be closed after two. We expect a dry evening, but it will still be cool.",
+		"materialLanguage": "en",
+		"diagram": {
+			"title": "Zweimal hören",
+			"tiles": [
+				{
+					"label": "1. Durchgang",
+					"detail": "Ort und Thema"
+				},
+				{
+					"label": "2. Durchgang",
+					"detail": "Zeit und Veränderung"
+				},
+				{
+					"label": "Notizen",
+					"detail": "Nur Schlüsselwörter"
+				}
+			]
+		},
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "Which sentence sums up the forecast?",
+			"answer": "The weather changes, and walkers should stay low.",
+			"wrong": [
+				"It will rain everywhere all day.",
+				"It will be hot and dry from the morning."
+			],
+			"explanation": "Die Vorhersage ist wechselhaft und nennt eine sichere Ausweichroute."
+		},
+		"bindings": [
+			"E7 1.1",
+			"E7 4"
+		]
+	},
+	{
+		"id": "e7-film-voice",
+		"stage": "communication",
+		"title": "A young film-maker",
+		"skill": "Einem Interview folgen und ein unbekanntes Wort erschließen",
+		"tracks": [
+			"R",
+			"M"
+		],
+		"paragraphs": [
+			"Überlege vor dem Hören, was zu einem Filmgespräch gehört. Wenn ein Wort fehlt, sammle Hinweise davor und danach: „She used her phone because she had no camera.“ Das Gerät zum Filmen ergibt sich aus dem Zusammenhang."
+		],
+		"sourceIds": [
+			"r7",
+			"m7"
+		],
+		"practice": [
+			{
+				"prompt": "Who made the soundtrack? (first name only)",
+				"answers": [
+					"Leo"
+				],
+				"feedback": "Maya nennt den Freund unmittelbar vor „made the soundtrack“."
+			},
+			{
+				"prompt": "Who laughed? (the …)",
+				"answers": [
+					"the audience",
+					"audience"
+				],
+				"feedback": "Gesucht ist die Gruppe im Publikum."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Stell Maya auf Englisch vor. Nenne ihr Hobby, ihr Aufnahmegerät und eine Rolle im Team.",
+				"model": "Maya makes short films. Her team used a phone. Leo recorded the sounds and played the guitar.",
+				"criteria": [
+					"Beginne mit Mayas Hobby.",
+					"Nenne das Gerät.",
+					"Ergänze Leos Beitrag."
+				]
+			},
+			"2": {
+				"language": "en",
+				"prompt": "Schreibe auf Englisch für den Schulblog, wie das Interview erklärt, was ein soundtrack ist. Nenne zwei Hörhinweise.",
+				"model": "A soundtrack is the sound that goes with the pictures. Leo recorded footsteps on dry leaves and played his guitar. The team added both sounds to the film.",
+				"criteria": [
+					"Erkläre den Begriff.",
+					"Nenne zwei konkrete Belege.",
+					"Verknüpfe Ton und Bild."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "What Maya makes",
+					"before": "",
+					"after": "",
+					"options": [
+						"short films",
+						"school books",
+						"guitars"
+					],
+					"answer": "short films",
+					"explanation": "Maya stellt am Anfang ihre Arbeit vor."
+				},
+				{
+					"label": "What a soundtrack includes here",
+					"before": "",
+					"after": "",
+					"options": [
+						"sound effects and music",
+						"tickets and seats",
+						"pictures and costumes"
+					],
+					"answer": "sound effects and music",
+					"explanation": "Die Schritte und die Gitarrentöne liegen unter den Bildern."
+				},
+				{
+					"label": "Where the film was shown",
+					"before": "",
+					"after": "",
+					"options": [
+						"at school",
+						"in a city theatre",
+						"in a park"
+					],
+					"answer": "at school",
+					"explanation": "Beim Zeitmarker „last month“ folgt der Ort."
+				}
+			]
+		},
+		"listening": true,
+		"listeningAccent": "en-US",
+		"takeaway": "Ein unbekanntes Wort lässt sich oft aus Handlung und Kontext erschließen.",
+		"materialLabel": "Interviewausschnitt mit einer fiktiven Jungfilmerin",
+		"material": "My name is Maya Lewis, and I make short films with my friends. In our first film, we used a phone because we didn't have a camera. My friend Leo made the soundtrack. He recorded someone walking on dry leaves and played a few notes on his guitar. We put these sounds under the pictures. Last month we showed the film at our school. The audience laughed at our last scene, just as we had hoped.",
+		"materialLanguage": "en",
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "Why did the group use a phone?",
+			"answer": "They had no camera.",
+			"wrong": [
+				"They forgot to write the ending.",
+				"They needed to call Leo."
+			],
+			"explanation": "Mit „because we didn't have a camera“ nennt Maya einen Grund."
+		},
+		"bindings": [
+			"E7 1.1",
+			"E7 5"
+		]
+	},
+	{
+		"id": "e7-museum-audio",
+		"stage": "communication",
+		"title": "At the museum today",
+		"skill": "Aus einer Durchsage Treffpunkte, Zeiten und Änderungen heraushören",
+		"tracks": [
+			"R",
+			"M"
+		],
+		"paragraphs": [
+			"Bei Durchsagen können sich gewohnte Orte oder Zeiten ändern. Höre auf Signale wie „instead“, „moved“ und „no longer“. Schreibe erst das Stichwort und danach den neuen Wert: „Tour: eleven, north door“."
+		],
+		"sourceIds": [
+			"r7",
+			"m7"
+		],
+		"practice": [
+			{
+				"prompt": "Which room shows the film? (Room + word or digit)",
+				"answers": [
+					"Room Three",
+					"Room 3"
+				],
+				"feedback": "Die Raumnummer gehört zum Film."
+			},
+			{
+				"prompt": "Where do you get workshop tickets? (at the …)",
+				"answers": [
+					"at the desk",
+					"the desk",
+					"desk"
+				],
+				"feedback": "Achte auf „available at the desk“."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Fülle drei englische Stichpunkte: Tour meeting place, film room, workshop tickets deadline.",
+				"model": "Tour: north door. Film: Room Three. Tickets: until twelve.",
+				"criteria": [
+					"Ordne die Details dem richtigen Programmpunkt zu.",
+					"Nenne den neuen Treffpunkt.",
+					"Schreibe kurz."
+				]
+			},
+			"2": {
+				"language": "en",
+				"prompt": "Ein neuer Schüler will Film und Werkstatt besuchen. Erkläre ihm auf Englisch Uhrzeit, Raum und Kartenfrist und erwähne, was sich bei der Führung geändert hat.",
+				"model": "The river film starts at half past eleven in Room Three. Get your workshop ticket at the desk by twelve. The tour meets at the north door now.",
+				"criteria": [
+					"Nenne Filmzeit und Raum.",
+					"Erkläre Frist und Ort des Kartenverkaufs.",
+					"Unterscheide Führung und Film."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Tour meeting point",
+					"before": "",
+					"after": "",
+					"options": [
+						"north door",
+						"shop",
+						"Room Three"
+					],
+					"answer": "north door",
+					"explanation": "„Instead of“ trennt den neuen Treffpunkt vom alten."
+				},
+				{
+					"label": "Where to eat",
+					"before": "",
+					"after": "",
+					"options": [
+						"garden",
+						"gallery",
+						"shop"
+					],
+					"answer": "garden",
+					"explanation": "Die Durchsage erlaubt Mittagessen im Garten."
+				},
+				{
+					"label": "Workshop ticket deadline",
+					"before": "",
+					"after": "",
+					"options": [
+						"twelve",
+						"half past eleven",
+						"eleven"
+					],
+					"answer": "twelve",
+					"explanation": "„Until twelve“ bezieht sich auf die Tickets."
+				}
+			]
+		},
+		"listening": true,
+		"listeningAccent": "en-GB",
+		"takeaway": "Bei einer Änderung zählen der neue Treffpunkt und die neue Uhrzeit.",
+		"materialLabel": "Eine fiktive Durchsage im Stadtmuseum",
+		"material": "Welcome to the City Museum. Today's eleven o'clock tour meets at the north door instead of the shop. Please stay with your group there. The film about the river will still start at half past eleven in Room Three. If you want to eat, bring your lunch to the garden, not to the gallery. Tickets for the workshop are available at the desk until twelve.",
+		"materialLanguage": "en",
+		"diagram": {
+			"title": "Veranstaltungsplan",
+			"tiles": [
+				{
+					"label": "11:00",
+					"detail": "Führung"
+				},
+				{
+					"label": "11:30",
+					"detail": "Film"
+				},
+				{
+					"label": "12:00",
+					"detail": "Ende des Kartenverkaufs"
+				}
+			]
+		},
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "Which event does the announcement explicitly say will still start at the planned time?",
+			"answer": "The river film",
+			"wrong": [
+				"The workshop ticket sale",
+				"The meeting at the shop"
+			],
+			"explanation": "„Still start“ zeigt, dass die Filmzeit gleich bleibt."
+		},
+		"bindings": [
+			"E7 1.1",
+			"E7 4"
+		]
+	},
+	{
+		"id": "e7-reading-blog",
+		"stage": "communication",
+		"title": "A mystery at film club",
+		"skill": "Einen Blog überfliegen, Details finden und Hinweise verknüpfen",
+		"tracks": [
+			"R",
+			"M"
+		],
+		"paragraphs": [
+			"Überfliege Titel und Absatzanfänge, um das Thema zu finden. Vergleiche dann die Hinweise: Es regnete, das Fenster war offen und der Deckel der Ticketbox war nass. Das spricht dafür, dass die Lehrkraft die Box wegstellte, damit die Eintrittskarten trocken blieben."
+		],
+		"sourceIds": [
+			"r7",
+			"m7"
+		],
+		"practice": [
+			{
+				"prompt": "At what time were the first guests in their seats?",
+				"answers": [
+					"six o'clock",
+					"6 o'clock",
+					"by six o'clock",
+					"6",
+					"six"
+				],
+				"feedback": "„By six o’clock“ markiert die Zeit."
+			},
+			{
+				"prompt": "What was wet: the lid or the tickets?",
+				"answers": [
+					"the lid",
+					"lid"
+				],
+				"feedback": "Der letzte Absatz unterscheidet Deckel und Inhalt."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Schreib eine englische Überschrift und zwei Sätze zum Problem und seiner Lösung.",
+				"model": "The missing tickets. The film club couldn't find its ticket box. They found it on the librarian's desk.",
+				"criteria": [
+					"Nenne das Thema.",
+					"Beschreibe das Problem.",
+					"Nenne den Fundort."
+				]
+			},
+			"2": {
+				"language": "en",
+				"prompt": "Erkläre auf Englisch, warum die Lehrkraft die Box wahrscheinlich bewegt hat. Belege deine Vermutung mit zwei Einzelheiten.",
+				"model": "The teacher probably wanted to keep the box dry. It started to rain, and the window was open. The teacher moved things to the librarian's desk.",
+				"criteria": [
+					"Kennzeichne die Vermutung.",
+					"Verbinde Regen und Fenster.",
+					"Nenne den neuen Ort."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Best headline",
+					"before": "",
+					"after": "",
+					"options": [
+						"The missing tickets",
+						"A trip to the cinema",
+						"A new school library"
+					],
+					"answer": "The missing tickets",
+					"explanation": "Die verschwundene Schachtel verbindet alle Absätze."
+				},
+				{
+					"label": "Place where the box was found",
+					"before": "",
+					"after": "",
+					"options": [
+						"on the librarian's desk",
+						"under the window",
+						"beside the seats"
+					],
+					"answer": "on the librarian's desk",
+					"explanation": "Der letzte Absatz nennt den genauen Fundort."
+				},
+				{
+					"label": "Most likely reason for the move",
+					"before": "",
+					"after": "",
+					"options": [
+						"to keep the box dry",
+						"to sell more tickets",
+						"to hide the plant"
+					],
+					"answer": "to keep the box dry",
+					"explanation": "Regen und offenes Fenster erklären das Umräumen."
+				}
+			]
+		},
+		"takeaway": "Skimming findet das Thema. Scanning sucht gezielt ein Detail. Beim Schlussfolgern verknüpfst du Hinweise.",
+		"materialLabel": "Drei Absätze aus einem fiktiven Filmclub-Blog",
+		"material": "Friday: Our film club was preparing a show in the library. Just before the show, we noticed that the box of tickets was missing. Earlier, Mia left it next to the window.\nDuring the afternoon it started to rain. Our teacher put several things from the windowsill on the librarian's desk because the window was open.\nWe found the ticket box next to a plant on the librarian's desk. The lid was wet, but the tickets inside were dry. By six o'clock the first guests were in their seats.",
+		"materialLanguage": "en",
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "Which two clues best explain why the teacher moved things?",
+			"answer": "Rain and an open window",
+			"wrong": [
+				"Dry tickets and the first guests",
+				"A plant and six o'clock"
+			],
+			"explanation": "Beide Hinweise stehen im mittleren Absatz."
+		},
+		"bindings": [
+			"E7 1.1",
+			"E7 3",
+			"E7 4"
+		]
+	},
+	{
+		"id": "e7-tickets-directions",
+		"stage": "communication",
+		"title": "Tickets and directions",
+		"skill": "Höflich nach Karten fragen, um Wiederholung bitten und einen Weg beschreiben",
+		"tracks": [
+			"R",
+			"M"
+		],
+		"paragraphs": [
+			"Beginne beim Kartenkauf mit „Could I have …, please?“ und bestätige Preis oder Startzeit. „Could you say that again, please?“ hilft bei einer Unsicherheit. Bei einer Wegbeschreibung ordnest du die Schritte vom Startpunkt aus."
+		],
+		"sourceIds": [
+			"r7",
+			"m7"
+		],
+		"practice": [
+			{
+				"prompt": "Complete: Go ___ along Park Street. (one word)",
+				"answers": [
+					"straight"
+				],
+				"feedback": "„Go straight“ bedeutet „geh geradeaus“."
+			},
+			{
+				"prompt": "Complete: Turn ___ at the library. (one word)",
+				"answers": [
+					"left"
+				],
+				"feedback": "Die Richtung steht direkt nach „turn“."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Spielt zu zweit einen Kartenkauf. Bitte um zwei Karten für sechs Uhr und frage einmal nach, wenn du die Zeit nicht verstehst.",
+				"model": "Could I have two tickets for the six o'clock film, please? — Of course. — Could you say the time again, please? — At six.",
+				"criteria": [
+					"Grüße oder bitte höflich.",
+					"Nenne Anzahl und Zeit.",
+					"Baue eine Rückfrage ein."
+				]
+			},
+			"2": {
+				"language": "en",
+				"prompt": "Erkläre einer Besucherin vom Schalter aus den Weg zum Kino. Sie hat die Erklärung für die Bibliothek nicht verstanden. Reagiere und erkläre die Stelle noch einmal.",
+				"model": "Go straight along Park Street. At the library, turn left. — Sorry, where do I turn? — At the library. The cinema is opposite the café.",
+				"criteria": [
+					"Gib einen Startschritt.",
+					"Nenne einen klaren Orientierungspunkt.",
+					"Reagiere höflich auf die Rückfrage."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Buy two tickets politely",
+					"before": "",
+					"after": "",
+					"options": [
+						"Could I have two tickets, please?",
+						"Two tickets now.",
+						"Do you have two cinemas?"
+					],
+					"answer": "Could I have two tickets, please?",
+					"explanation": "„Could I have …, please?“ ist eine höfliche Bitte."
+				},
+				{
+					"label": "Ask for the time again",
+					"before": "",
+					"after": "",
+					"options": [
+						"Could you say that again, please?",
+						"I'm interested in films.",
+						"I was there at six."
+					],
+					"answer": "Could you say that again, please?",
+					"explanation": "Mit „say that again“ bittest du um Wiederholung."
+				},
+				{
+					"label": "Turn at the library",
+					"before": "",
+					"after": "",
+					"options": [
+						"turn left",
+						"turn right",
+						"go back"
+					],
+					"answer": "turn left",
+					"explanation": "Die Bibliothek markiert den Linksabbieger."
+				}
+			]
+		},
+		"speaking": true,
+		"takeaway": "Nenne beim Weg die Reihenfolge und einen sichtbaren Orientierungspunkt.",
+		"materialLabel": "Dialog und schematischer Stadtplan",
+		"material": "Visitor: Could I have two tickets for the film, please? Clerk: Yes, the film starts at six. Visitor: Could you say that again, please? Clerk: Six o'clock. From here, go straight along Park Street. Turn left at the library. The cinema is opposite the café.",
+		"materialLanguage": "en",
+		"diagram": {
+			"title": "Vom Ticketschalter zum Kino",
+			"tiles": [
+				{
+					"label": "Ticketschalter",
+					"detail": "Park Street geradeaus"
+				},
+				{
+					"label": "Bibliothek",
+					"detail": "Links abbiegen"
+				},
+				{
+					"label": "Kino",
+					"detail": "Gegenüber vom Café"
+				}
+			]
+		},
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "Where is the cinema?",
+			"answer": "Opposite the café",
+			"wrong": [
+				"Behind the library",
+				"Inside the station"
+			],
+			"explanation": "„Opposite“ bedeutet „gegenüber“."
+		},
+		"bindings": [
+			"E7 1.1",
+			"E7 1.2",
+			"E7 2",
+			"E7 5"
+		]
+	},
+	{
+		"id": "e7-hobby-talk",
+		"stage": "communication",
+		"title": "Show and tell",
+		"skill": "Von einem Erlebnis berichten und eine Sehenswürdigkeit vorstellen",
+		"tracks": [
+			"R",
+			"M"
+		],
+		"paragraphs": [
+			"Eine Mini-Präsentation hat einen Einstieg, zwei oder drei Punkte in klarer Reihenfolge und einen Schluss. Notiere Stichwörter statt eines ganzen Textes. Wenn du ein Erlebnis einbaust, hilft „first … then … finally …“."
+		],
+		"sourceIds": [
+			"r7",
+			"m7"
+		],
+		"practice": [
+			{
+				"prompt": "Complete: First we walked, ___ we took photos. (one word)",
+				"answers": [
+					"then"
+				],
+				"feedback": "„Then“ knüpft den nächsten Handlungsschritt an."
+			},
+			{
+				"prompt": "What can you see from the top? (the …)",
+				"answers": [
+					"the river",
+					"river"
+				],
+				"feedback": "Die Infokarte nennt die Aussicht."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Stell den Turm in etwa 30 Sekunden vor. Zeige auf die drei Notizkarten, statt ganze Sätze abzulesen.",
+				"model": "Today I'll tell you about Hilltown Tower. It was built in 1890. You can see the river from the top. You can walk there from the park in ten minutes.",
+				"criteria": [
+					"Nenne deinen Ort.",
+					"Baue zwei passende Details ein.",
+					"Sprich mit Stichworten."
+				]
+			},
+			"2": {
+				"language": "en",
+				"prompt": "Ergänze den Kurzvortrag durch einen persönlichen Erlebnisbericht. Wähle eine Skizze oder ein Bild aus den Notizkarten, und erzähle die Erlebnisse in Reihenfolge.",
+				"model": "This drawing shows the river. Last Saturday my cousin and I walked through the park. Then we took photos from the tower. Finally we had a picnic. Thank you for listening.",
+				"criteria": [
+					"Verknüpfe Bild und Text.",
+					"Ordne drei Schritte.",
+					"Schließe den Vortrag ab."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Useful introduction",
+					"before": "",
+					"after": "",
+					"options": [
+						"Today I'll tell you about Hilltown Tower.",
+						"That's all. Thank you.",
+						"I need the answer key."
+					],
+					"answer": "Today I'll tell you about Hilltown Tower.",
+					"explanation": "Die Einleitung nennt zuerst das Thema."
+				},
+				{
+					"label": "What did they do next, after walking through the park?",
+					"before": "",
+					"after": "",
+					"options": [
+						"They took photos.",
+						"They had a picnic.",
+						"They built the tower."
+					],
+					"answer": "They took photos.",
+					"explanation": "„Then“ leitet den zweiten Handlungsschritt ein."
+				},
+				{
+					"label": "Useful cue card",
+					"before": "",
+					"after": "",
+					"options": [
+						"river view · Saturday visit",
+						"an unread full page",
+						"three unrelated names"
+					],
+					"answer": "river view · Saturday visit",
+					"explanation": "Kurze Stichwörter erleichtern freien Vortrag."
+				}
+			]
+		},
+		"speaking": true,
+		"takeaway": "Nutze pro Punkt ein Stichwort und eine Bildmarke. Sprich mit Blick auf dein Publikum.",
+		"materialLabel": "Drei Karten zu einer fiktiven Sehenswürdigkeit",
+		"material": "Hilltown Tower: built in 1890 · view of the river · path from the park takes ten minutes. On Saturday my cousin and I climbed the tower. First we walked through the park. Then we took photos of the river from the top. Finally we had a picnic with our friends.",
+		"materialLanguage": "en",
+		"diagram": {
+			"title": "Sprechplan für eine Minute",
+			"tiles": [
+				{
+					"label": "Where?",
+					"detail": "Hilltown Tower"
+				},
+				{
+					"label": "What’s special?",
+					"detail": "View of the river"
+				},
+				{
+					"label": "My visit",
+					"detail": "Walk → photos → picnic"
+				}
+			]
+		},
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "What helps the audience follow the story?",
+			"answer": "Sequencing with first, then and finally",
+			"wrong": [
+				"Changing the topic at every sentence",
+				"Starting with the thank-you"
+			],
+			"explanation": "Zeitliche Signalwörter machen die Abfolge hörbar."
+		},
+		"bindings": [
+			"E7 1.1",
+			"E7 5"
+		]
+	},
+	{
+		"id": "e7-form-project",
+		"stage": "communication",
+		"title": "Join a school project",
+		"skill": "Ein Formular ausfüllen und eine Projektplanung in Stichpunkten festhalten",
+		"tracks": [
+			"R",
+			"M"
+		],
+		"paragraphs": [
+			"Formulare trennen Informationen nach Feldern: „first name“ ist der Vorname, „surname“ der Nachname. Beim Planen sammelst du Stichwörter unter who, what, where und when. Benutze hier erfundene Daten."
+		],
+		"sourceIds": [
+			"r7",
+			"m7"
+		],
+		"practice": [
+			{
+				"prompt": "What does Priya bring? (one word)",
+				"answers": [
+					"ingredients"
+				],
+				"feedback": "„Brings ingredients“ steht im Plan."
+			},
+			{
+				"prompt": "What is Jamie's project? (two words)",
+				"answers": [
+					"food stand"
+				],
+				"feedback": "„Project“ ist das Projektfeld."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Fülle für die erfundene Alex Brown eine englische Anmeldung aus. Alex mag Musik, hilft am food stand und hat Donnerstag Zeit.",
+				"model": "First name: Alex. Surname: Brown. Interests: music. Project: food stand. Availability: Thursday.",
+				"criteria": [
+					"Verwende passende Feldnamen.",
+					"Trenne Vor- und Nachnamen.",
+					"Notiere Tag und Projekt."
+				]
+			},
+			"2": {
+				"language": "en",
+				"prompt": "Die Absprache ändert sich: Jamie und Alex treffen sich am Donnerstag um vier im Musikraum. Alex bringt Papier, Jamie gestaltet das Plakat. Schreibe eine übersichtliche englische Aufgabenliste.",
+				"model": "Thursday, four o'clock — music room. Alex: bring paper. Jamie: make the poster.",
+				"criteria": [
+					"Halte den neuen Ort und Zeitpunkt fest.",
+					"Nenne beide Personen.",
+					"Ordne Verantwortlichkeiten zu."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Entry under “surname”",
+					"before": "",
+					"after": "",
+					"options": [
+						"Clark",
+						"Jamie",
+						"cooking"
+					],
+					"answer": "Clark",
+					"explanation": "Surname steht für Familienname."
+				},
+				{
+					"label": "Jamie is responsible for…",
+					"before": "",
+					"after": "",
+					"options": [
+						"the poster",
+						"the ingredients",
+						"the sports hall"
+					],
+					"answer": "the poster",
+					"explanation": "Jamie gestaltet laut Absprache das Plakat."
+				},
+				{
+					"label": "Shared meeting place",
+					"before": "",
+					"after": "",
+					"options": [
+						"art room",
+						"food stand",
+						"library"
+					],
+					"answer": "art room",
+					"explanation": "Ort und Zeit stehen in der letzten Zeile."
+				}
+			]
+		},
+		"takeaway": "Formular: ein Wert pro Feld. Planung: Zuständigkeit, Aufgabe, Ort und Zeit für andere verständlich machen.",
+		"materialLabel": "Fiktives Formular und Projektabsprachen",
+		"material": "First name: Jamie · Surname: Clark · Interests: cooking and drawing · Project: food stand · Availability: Wednesday after school. Plan: Priya brings ingredients. Jamie makes a poster. Both meet in the art room at three.",
+		"materialLanguage": "en",
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "Which note belongs under “When”?",
+			"answer": "Wednesday at three.",
+			"wrong": [
+				"Jamie and Priya.",
+				"In the art room."
+			],
+			"explanation": "Hier ist die Zeit gefragt, keine Person und kein Ort."
+		},
+		"bindings": [
+			"E7 1.1",
+			"E7 1.2",
+			"E7 5"
+		]
+	},
+	{
+		"id": "e7-email-story",
+		"stage": "communication",
+		"title": "A message to a friend",
+		"skill": "Eine persönliche E-Mail und eine kurze Geschichte mit Verknüpfungen schreiben",
+		"tracks": [
+			"R",
+			"M"
+		],
+		"paragraphs": [
+			"Eine Nachricht an Freunde hat Anrede, Anlass, Details oder eine Frage und einen Gruß. Eine Geschichte braucht eine verständliche Reihenfolge. „When“ verbindet mit einem Zeitpunkt, „so“ mit einer Folge. Prüfe Schreibweisen in einer Vorlage oder im Wörterbuch."
+		],
+		"sourceIds": [
+			"r7",
+			"m7"
+		],
+		"practice": [
+			{
+				"prompt": "Complete: ___ I got to the cinema, the film was full. (one word)",
+				"answers": [
+					"When"
+				],
+				"feedback": "Der Nebensatz nennt den Zeitpunkt."
+			},
+			{
+				"prompt": "Which day do they plan to try again?",
+				"answers": [
+					"Saturday",
+					"on Saturday"
+				],
+				"feedback": "Lies die Einladung am Ende."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Schreibe Ella eine E-Mail und schlage eine Zeit vor. Nutze eine Anrede, einen Satz mit „so“ und eine Frage.",
+				"model": "Hi Ella, the morning show is full, so let's try the four o'clock show. Can you meet me at three thirty? See you, Ben",
+				"criteria": [
+					"Setze eine passende Anrede.",
+					"Verbinde Grund und Folge.",
+					"Stelle eine klare Frage."
+				]
+			},
+			"2": {
+				"language": "en",
+				"prompt": "Erzähle aus Ellas Sicht, was bei der zweiten Verabredung überraschend passiert. Nutze „when“, „so“ und „then“.",
+				"model": "When I arrived, Ben was waiting outside. The film was full again, so we asked about the next show. Then Ben found two spare tickets in his pocket!",
+				"criteria": [
+					"Bleibe bei Ellas Sicht.",
+					"Schreibe eine nachvollziehbare Reihenfolge.",
+					"Nutze drei Verknüpfungen."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Friendly greeting to Ella",
+					"before": "",
+					"after": "",
+					"options": [
+						"Hi Ella,",
+						"Dear Sir or Madam,",
+						"No entry"
+					],
+					"answer": "Hi Ella,",
+					"explanation": "Die lockere Anrede passt zur Freundin."
+				},
+				{
+					"label": "Connect a reason to its result",
+					"before": "",
+					"after": "",
+					"options": [
+						"so",
+						"when",
+						"or"
+					],
+					"answer": "so",
+					"explanation": "„So“ leitet die Folge ein."
+				},
+				{
+					"label": "Correct spelling",
+					"before": "",
+					"after": "",
+					"options": [
+						"Saturday",
+						"Saterday",
+						"Saterdey"
+					],
+					"answer": "Saturday",
+					"explanation": "„Saturday“ hat nach dem t ein u."
+				}
+			]
+		},
+		"takeaway": "Nutze erkennbare Bausteine und verbinde passende Sätze mit when, so oder then.",
+		"materialLabel": "Persönliche E-Mail als Muster",
+		"material": "Hi Ella,\nWhen I got to the cinema, our film was already full. It was too late for the next show, so we went to the café. Then we made plans to try again on Saturday. Would you like to come with us?\nSee you,\nBen",
+		"materialLanguage": "en",
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "Why did the group go to the café?",
+			"answer": "Their film was full and the next show was too late.",
+			"wrong": [
+				"Ella bought tickets at the café.",
+				"They wanted to watch the next show that evening."
+			],
+			"explanation": "Die E-Mail nennt die Gründe vor „so“."
+		},
+		"bindings": [
+			"E7 1.1",
+			"E7 1.2"
+		]
+	},
+	{
+		"id": "e7-mediation-de",
+		"stage": "communication",
+		"title": "What does the ticket say?",
+		"skill": "Englische Infos und Bedingungen passend auf Deutsch wiedergeben",
+		"tracks": [
+			"R",
+			"M"
+		],
+		"paragraphs": [
+			"Bei Sprachmittlung überträgst du die Information, die jemand braucht, sinngemäß. Prüfe besonders Zahlen, Einschränkungen und Zielgruppe. „Under 16“ bedeutet unter 16 Jahren. Eine Person mit 16 erfüllt diese Bedingung nicht."
+		],
+		"sourceIds": [
+			"r7",
+			"m7"
+		],
+		"practice": [
+			{
+				"prompt": "How much is regular entry? (number only)",
+				"answers": [
+					"8",
+					"eight"
+				],
+				"feedback": "Der reguläre Eintritt steht im ersten Satz."
+			},
+			{
+				"prompt": "Which exhibition is free? (one word)",
+				"answers": [
+					"garden"
+				],
+				"feedback": "„The garden exhibition is free.“"
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "de",
+				"prompt": "Ein 15-jähriger Freund mit Schülerausweis fragt auf Deutsch nur nach dem Eintritt. Antworte in einem Satz.",
+				"model": "Mit deinem Schülerausweis zahlst du vier Pfund, weil du unter 16 bist.",
+				"criteria": [
+					"Richte die Antwort an den Freund.",
+					"Nenne den Preis.",
+					"Nenne beide Bedingungen."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Eine Familie will nur kostenlose Kunst ansehen und danach töpfern. Gib die relevanten Angaben auf Deutsch wieder.",
+				"model": "Die Ausstellung im Garten ist kostenlos. Für den Töpferkurs um 14 Uhr müsst ihr euch vor 13 Uhr am Schalter anmelden.",
+				"criteria": [
+					"Filtere nach den Interessen.",
+					"Nenne Kurszeit und Anmeldefrist.",
+					"Schreibe natürliches Deutsch."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Welche Altersgrenze gilt?",
+					"before": "",
+					"after": "",
+					"options": [
+						"unter 16 Jahren",
+						"bis einschließlich 16 Jahre",
+						"ab 16 Jahren"
+					],
+					"answer": "unter 16 Jahren",
+					"explanation": "„Under“ schließt 16 aus."
+				},
+				{
+					"label": "Zusätzliche Voraussetzung",
+					"before": "",
+					"after": "",
+					"options": [
+						"Schülerausweis",
+						"Bibliotheksausweis",
+						"Online-Kauf"
+					],
+					"answer": "Schülerausweis",
+					"explanation": "„With a student card“ nennt die Bedingung."
+				},
+				{
+					"label": "Voranmeldung für den Workshop",
+					"before": "",
+					"after": "",
+					"options": [
+						"vor 13 Uhr",
+						"ab 14 Uhr",
+						"nach 13 Uhr"
+					],
+					"answer": "vor 13 Uhr",
+					"explanation": "„Before 1 p.m.“ ist vor 13 Uhr."
+				}
+			]
+		},
+		"takeaway": "Übertrage passende Angaben und ihre Bedingungen in verständliches Deutsch.",
+		"materialLabel": "Fiktives Programm eines Kunstmuseums",
+		"material": "Saturday at the Art Museum\nTickets: Entry to the main building costs £8. Visitors under 16 pay £4 with a student card. The museum café is inside the main building.\nGarden: The garden exhibition is free. You can see paintings by local artists. Use the gate next to the ticket desk.\nMake your own bowl: The pottery workshop starts at 2 p.m. Please book a place at the desk before 1 p.m. The museum provides the clay and tools.",
+		"materialLanguage": "en",
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Was sagst du einer 14-jährigen Schülerin mit Schülerausweis über den Eintritt?",
+			"answer": "Mit Schülerausweis zahlst du vier Pfund.",
+			"wrong": [
+				"Du zahlst sechs Pfund mit Schülerausweis.",
+				"Alle zahlen acht Pfund, auch mit Ausweis."
+			],
+			"explanation": "Die Information muss Preis und Bedingung zusammen nennen."
+		},
+		"bindings": [
+			"E7 1.1",
+			"E7 5"
+		]
+	},
+	{
+		"id": "e7-mediation-en",
+		"stage": "communication",
+		"title": "Help an English-speaking guest",
+		"skill": "Deutsche Hinweise sinngemäß ins Englische übertragen",
+		"tracks": [
+			"M"
+		],
+		"paragraphs": [
+			"Ermittle zuerst, was der Gast wissen möchte. Sag dann kurz, was gilt. „Samstags geschlossen“ wird zu „It's closed on Saturdays.“ Wenn dir ein Wort fehlt, beschreibe es oder zeige im Gespräch auf ein Schild."
+		],
+		"sourceIds": [
+			"m7"
+		],
+		"practice": [
+			{
+				"prompt": "Complete: Children ___ twelve pay four euros. (one word)",
+				"answers": [
+					"under"
+				],
+				"feedback": "„Under“ beschreibt die Altersgrenze."
+			},
+			{
+				"prompt": "Complete: The entrance is next ___ the café. (one word)",
+				"answers": [
+					"to"
+				],
+				"feedback": "„Next to“ bedeutet „neben“."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Der Gast fragt nach Karten für die 18-Uhr-Vorstellung. Erkläre auf Englisch, wo und ab wann er sie kaufen kann.",
+				"model": "You can buy tickets for the six o'clock film at ticket desk two. It opens at five.",
+				"criteria": [
+					"Nenne Vorführung und Kasse.",
+					"Gib die Öffnungszeit an.",
+					"Sprich direkt zum Gast."
+				]
+			},
+			"2": {
+				"language": "en",
+				"prompt": "Hilf einem Elternteil mit einem elfjährigen Kind. Erkläre die beiden Preise und weise auf den Eingang hin. Zeige im Rollenspiel in die passende Richtung.",
+				"model": "Your child is under twelve, so their ticket is four euros. Your ticket costs seven euros. The main entrance is next to the café, over there.",
+				"criteria": [
+					"Wende die Altersbedingung an.",
+					"Nenne beide Preise.",
+					"Erkläre Eingang und Richtung."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Where to buy the tickets",
+					"before": "",
+					"after": "",
+					"options": [
+						"at ticket desk two",
+						"at the café",
+						"at ticket desk seven"
+					],
+					"answer": "at ticket desk two",
+					"explanation": "„Kasse 2“ ist hier der Ort des Kaufs."
+				},
+				{
+					"label": "Price for a twelve-year-old",
+					"before": "",
+					"after": "",
+					"options": [
+						"seven euros",
+						"four euros",
+						"two euros"
+					],
+					"answer": "seven euros",
+					"explanation": "Eine zwölfjährige Person ist nicht unter zwölf."
+				},
+				{
+					"label": "Help with “Haupteingang”",
+					"before": "",
+					"after": "",
+					"options": [
+						"the main door next to the café",
+						"your favourite film",
+						"the ticket price"
+					],
+					"answer": "the main door next to the café",
+					"explanation": "„Main door“ erklärt, welcher Eingang gemeint ist."
+				}
+			]
+		},
+		"speaking": true,
+		"takeaway": "Eine klare Umschreibung, ein einfacher Satz und bei Bedarf eine Geste helfen im Gespräch.",
+		"materialLabel": "Fiktiver deutscher Aushang an einer Kinokasse",
+		"material": "Heute: Karten für die Vorführung um 18 Uhr gibt es nur an Kasse 2. Kinder unter 12 zahlen 4 Euro. Für alle anderen kostet eine Karte 7 Euro. Die Kasse öffnet um 17 Uhr. Der Haupteingang ist neben dem Café.",
+		"materialLanguage": "de",
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "When does the ticket desk open?",
+			"answer": "At five in the afternoon.",
+			"wrong": [
+				"At six in the evening.",
+				"Saturday morning."
+			],
+			"explanation": "17 Uhr ist 5 p.m. Die Vorführung beginnt später."
+		},
+		"bindings": [
+			"E7 1.1"
+		]
+	},
+	{
+		"id": "e7-notes-listening",
+		"stage": "communication",
+		"title": "From notes to a team message",
+		"skill": "Beim Hören Stichpunkte festhalten und das Team schriftlich informieren",
+		"tracks": [
+			"M"
+		],
+		"paragraphs": [
+			"Bei note-taking hältst du Informationen aus einer Quelle fest. Bei note-making ordnest du eigene Punkte für ein Vorhaben. Für eine Teamnachricht übernimmst du nur die wichtigen Hörnotizen und formulierst klare Sätze."
+		],
+		"sourceIds": [
+			"m7"
+		],
+		"practice": [
+			{
+				"prompt": "On which day is the meeting? (one word)",
+				"answers": [
+					"Thursday"
+				],
+				"feedback": "Am Donnerstag findet das Treffen statt."
+			},
+			{
+				"prompt": "Who brings the laptop? (first name)",
+				"answers": [
+					"Sophia"
+				],
+				"feedback": "Achte auf den ersten Auftrag."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Notiere nach zweimaligem Hören englische Stichpunkte zu neuem Treffpunkt, Zeitpunkt und Aufgaben.",
+				"model": "Music room — Thursday, 3:30. Sophia: laptop. Leo: speakers. Recordings to Sophia by Wednesday evening.",
+				"criteria": [
+					"Notiere den neuen Ort.",
+					"Schreib die Zeit vollständig.",
+					"Trenne Aufgaben und Frist."
+				]
+			},
+			"2": {
+				"language": "en",
+				"prompt": "Schreibe danach eine kurze Nachricht an ein abwesendes Mitglied. Erkläre Ziel, Treffpunkt und was vor dem Treffen zu tun ist.",
+				"model": "Hi Jo, we're meeting in the music room on Thursday at half past three to finish the soundtrack. Please send your recording to Sophia by Wednesday evening. Leo will bring the speakers.",
+				"criteria": [
+					"Nenne Ziel und Termin.",
+					"Erkläre die Frist für Aufnahmen.",
+					"Nutze einfache vollständige Sätze."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "New meeting place",
+					"before": "",
+					"after": "",
+					"options": [
+						"music room",
+						"library",
+						"school garden"
+					],
+					"answer": "music room",
+					"explanation": "„From … to …“ nennt zuerst den alten und dann den neuen Ort."
+				},
+				{
+					"label": "Who brings the speakers?",
+					"before": "",
+					"after": "",
+					"options": [
+						"Leo",
+						"Sophia",
+						"the teacher"
+					],
+					"answer": "Leo",
+					"explanation": "Der zweite Name bezieht sich auf die Lautsprecher."
+				},
+				{
+					"label": "Deadline for recordings",
+					"before": "",
+					"after": "",
+					"options": [
+						"Wednesday evening",
+						"Thursday evening",
+						"Friday morning"
+					],
+					"answer": "Wednesday evening",
+					"explanation": "Unterscheide den Termin für Aufnahmen vom Ziel für den fertigen Ton."
+				}
+			]
+		},
+		"listening": true,
+		"listeningAccent": "en-GB",
+		"takeaway": "Aus „who / what / where / when“ wird eine kurze, eindeutige Nachricht.",
+		"materialLabel": "Fiktive Sprachnachricht einer Schul-AG",
+		"material": "Hi team, the film club is moving our next meeting from the library to the music room. We'll meet on Thursday at half past three. Sophia will bring the laptop, and Leo will bring the speakers. Our goal is to finish the soundtrack before Friday. Please send your short recordings to Sophia by Wednesday evening.",
+		"materialLanguage": "en",
+		"diagram": {
+			"title": "Notizraster für die AG",
+			"tiles": [
+				{
+					"label": "What?",
+					"detail": "Anlass"
+				},
+				{
+					"label": "Where / when?",
+					"detail": "Ort und Zeit"
+				},
+				{
+					"label": "Who?",
+					"detail": "Aufgaben"
+				}
+			]
+		},
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "Which is the main goal of the meeting?",
+			"answer": "To finish the soundtrack",
+			"wrong": [
+				"To borrow books",
+				"To plan a sports event"
+			],
+			"explanation": "„Our goal is to …“ nennt das Ziel direkt."
+		},
+		"bindings": [
+			"E7 1.1",
+			"E7 4"
+		]
+	},
+	{
+		"id": "e7-perfect-form",
+		"stage": "language",
+		"title": "We’ve finished the poster",
+		"skill": "Das present perfect simple mit have oder has und dritter Verbform bilden",
+		"tracks": [
+			"R",
+			"M"
+		],
+		"paragraphs": [
+			"Das present perfect simple verbindet ein vergangenes Ereignis mit der Gegenwart. „We have finished the poster“ heißt: Das Plakat ist jetzt fertig. Du brauchst have oder has und das past participle (dritte Verbform). Regelmäßige Verben bilden es mit -ed. Unregelmäßige Formen lernst du mit: write → wrote → written."
+		],
+		"sourceIds": [
+			"r7",
+			"m7"
+		],
+		"practice": [
+			{
+				"prompt": "Complete: Ella has ___ the tickets. (print, third form)",
+				"answers": [
+					"printed"
+				],
+				"feedback": "Bei print verwendest du -ed."
+			},
+			{
+				"prompt": "Complete: We ___ cleaned the room. (one word)",
+				"answers": [
+					"have"
+				],
+				"feedback": "'We' braucht have."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Melde auf Englisch, was fertig ist: We / finish the poster; Sam / write the title; the team / put out the chairs.",
+				"model": "We have finished the poster. Sam has written the title. The team has put out the chairs.",
+				"criteria": [
+					"Achte auf die Person.",
+					"Setze have oder has ein.",
+					"Wähle die dritte Verbform."
+				]
+			},
+			"2": {
+				"language": "en",
+				"prompt": "Schreibe deinem Team zwei Updates und eine Frage. Die Karten wurden noch nicht gedruckt, aber der Titel steht. Frage, ob die Liste geprüft wurde.",
+				"model": "We haven't printed the tickets. Sam has written the title. Have you checked the list?",
+				"criteria": [
+					"Schreibe eine Verneinung.",
+					"Verwende „written“ beim Titel.",
+					"Stelle die Frage mit have zuerst."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Choose the helper",
+					"before": "Mia",
+					"after": "finished the invitation.",
+					"options": [
+						"has",
+						"have",
+						"does"
+					],
+					"answer": "has",
+					"explanation": "Mia steht für she; daher „has“."
+				},
+				{
+					"label": "Choose the third form",
+					"before": "They have",
+					"after": "the email.",
+					"options": [
+						"written",
+						"wrote",
+						"write"
+					],
+					"answer": "written",
+					"explanation": "Die dritte Form von write ist written."
+				},
+				{
+					"label": "Make a question",
+					"before": "",
+					"after": "you checked the list?",
+					"options": [
+						"Have",
+						"Has",
+						"Did"
+					],
+					"answer": "Have",
+					"explanation": "Im present perfect steht have vor „you“."
+				}
+			]
+		},
+		"takeaway": "I/you/we/they + have, he/she/it + has. Danach kommt die dritte Verbform.",
+		"materialLabel": "Eine Projektgruppe prüft, was schon fertig ist",
+		"material": "We have finished the poster. Sam has written the title. I have put the chairs out. Ella hasn't printed the tickets. Have you checked the list?",
+		"materialLanguage": "en",
+		"diagram": {
+			"title": "Was ist jetzt fertig?",
+			"tiles": [
+				{
+					"label": "Vor einiger Zeit",
+					"detail": "Sam wrote the title."
+				},
+				{
+					"label": "Verbindung",
+					"detail": "Sam has written the title."
+				},
+				{
+					"label": "Jetzt",
+					"detail": "The title is ready."
+				}
+			]
+		},
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "Which sentence shows that the team can tick off “Send the invitations”?",
+			"answer": "We have sent the invitations.",
+			"wrong": [
+				"We will send the invitations tomorrow.",
+				"We are going to send them later."
+			],
+			"explanation": "Der Versand ist erledigt. Have + sent drückt das aus."
+		},
+		"bindings": [
+			"E7 1.2"
+		]
+	},
+	{
+		"id": "e7-perfect-signals",
+		"stage": "language",
+		"title": "Ever, never, already",
+		"skill": "Erfahrungen und bereits eingetretene Ergebnisse ausdrücken",
+		"tracks": [
+			"R",
+			"M"
+		],
+		"paragraphs": [
+			"„Have you ever played in a band?“ fragt nach irgendeinem Zeitpunkt bis heute. „I've never played in a band“ verneint die Erfahrung. „I've already rehearsed“ sagt, dass die Probe jetzt erledigt ist. Bei einer abgeschlossenen Zeitangabe wie „yesterday“ nimmst du das simple past."
+		],
+		"sourceIds": [
+			"r7",
+			"m7"
+		],
+		"practice": [
+			{
+				"prompt": "Complete: Have you ___ visited Dublin? (experience question)",
+				"answers": [
+					"ever"
+				],
+				"feedback": "Ever fragt „jemals“."
+			},
+			{
+				"prompt": "Complete: I have ___ played tennis. (noch nie)",
+				"answers": [
+					"never"
+				],
+				"feedback": "Never reicht; im Satz steht kein zusätzliches not."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Schreib ein kurzes Interview über einen Auftritt. Frage nach Erfahrung und antworte mit „never“ und einem Satz mit „already“.",
+				"model": "Have you ever played on stage? I've never played on stage, but I've already practised the song.",
+				"criteria": [
+					"Beginne mit Have you ever.",
+					"Verwende never ohne zusätzliches not.",
+					"Nenne ein Ergebnis."
+				]
+			},
+			"2": {
+				"language": "en",
+				"prompt": "Schreib ein Update zur Projektprobe. Nenne eine abgeschlossene Handlung vom Montag und ein Ergebnis, das jetzt zählt.",
+				"model": "We practised on Monday. We've already chosen the first song, so everyone knows what to rehearse.",
+				"criteria": [
+					"Setze bei Montag simple past.",
+					"Verwende already im present perfect.",
+					"Zeige, warum das Ergebnis jetzt wichtig ist."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Ask about experience",
+					"before": "Have you",
+					"after": "sung on stage?",
+					"options": [
+						"ever",
+						"never",
+						"yesterday"
+					],
+					"answer": "ever",
+					"explanation": "Ever passt in die neutrale Frage nach Erfahrung."
+				},
+				{
+					"label": "Say the rehearsal is done",
+					"before": "I have",
+					"after": "practised the song.",
+					"options": [
+						"already",
+						"never",
+						"yesterday"
+					],
+					"answer": "already",
+					"explanation": "Already betont das erreichte Ergebnis."
+				},
+				{
+					"label": "Name a finished time",
+					"before": "",
+					"after": "",
+					"options": [
+						"I practised yesterday.",
+						"I have practised yesterday.",
+						"I have practise yesterday."
+					],
+					"answer": "I practised yesterday.",
+					"explanation": "Bei „yesterday“ liegt die Handlung in einer abgeschlossenen Zeit: simple past."
+				}
+			]
+		},
+		"takeaway": "Ever fragt nach Erfahrung, never schließt sie aus, already markiert ein erreichtes Ergebnis.",
+		"materialLabel": "Zwei Jugendliche bereiten einen Auftritt vor",
+		"material": "Have you ever played on a stage? — No, I've never played on a stage. But I've already practised the song. I practised it yesterday.",
+		"materialLanguage": "en",
+		"diagram": {
+			"title": "Was willst du sagen?",
+			"tiles": [
+				{
+					"label": "Erfahrung erfragen",
+					"detail": "Have you ever …?"
+				},
+				{
+					"label": "Erfahrung fehlt",
+					"detail": "I've never …"
+				},
+				{
+					"label": "Ergebnis liegt vor",
+					"detail": "I've already …"
+				}
+			]
+		},
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "Which sentence says the speaker has no experience on stage?",
+			"answer": "I've never played on stage.",
+			"wrong": [
+				"I've already played on stage.",
+				"I played on stage yesterday."
+			],
+			"explanation": "Never bedeutet „noch nie“ und verneint bereits."
+		},
+		"bindings": [
+			"E7 1.2"
+		]
+	},
+	{
+		"id": "e7-plans",
+		"stage": "language",
+		"title": "What are they going to do?",
+		"skill": "Going-to-future beim Hören und Lesen als Plan erkennen",
+		"tracks": [
+			"R",
+			"M"
+		],
+		"paragraphs": [
+			"„We're going to make a poster“ kündigt eine Absicht an. Nach am/is/are going to folgt ein Verb in der Grundform. Vergleiche „We're going to the cinema“: Hinter to steht ein Ort, daher geht es hier ums Hingehen."
+		],
+		"sourceIds": [
+			"r7",
+			"m7"
+		],
+		"practice": [
+			{
+				"prompt": "What is Ella going to play? (the …)",
+				"answers": [
+					"the guitar",
+					"guitar"
+				],
+				"feedback": "Das Ende des Satzes nennt das Instrument."
+			},
+			{
+				"prompt": "What are they going to make for the entrance? (one noun)",
+				"answers": [
+					"poster",
+					"a poster"
+				],
+				"feedback": "„Make a poster“ bedeutet „ein Plakat machen“."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "de",
+				"prompt": "Schreibe auf Deutsch drei Vorhaben aus der Nachricht auf. Nenne auch, was Ella nicht vorhat.",
+				"model": "Ben will die Schilder bemalen. Die Gruppe will ein Plakat machen. Ella will Gitarre spielen. Sie hat nicht vor zu singen.",
+				"criteria": [
+					"Trenne Ben, Gruppe und Ella.",
+					"Deute „isn't“ richtig.",
+					"Nenne die Tätigkeiten."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Lies „We're going to the café. Tom is going to buy sandwiches. He isn't going to bring drinks.“ Erkläre auf Deutsch den Unterschied zwischen den ersten beiden Sätzen und nenne Toms Plan vollständig.",
+				"model": "Der erste Satz nennt das Café als Ziel. Der zweite nennt Toms Vorhaben: Er will Sandwiches kaufen. Er hat nicht vor, Getränke mitzubringen.",
+				"criteria": [
+					"Achte auf Ort und Verb.",
+					"Nenne Toms Absicht.",
+					"Erfasse die Verneinung."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "What will Ben prepare?",
+					"before": "",
+					"after": "",
+					"options": [
+						"signs",
+						"tickets",
+						"a song"
+					],
+					"answer": "signs",
+					"explanation": "„Ben is going to paint the signs“ nennt die Aufgabe."
+				},
+				{
+					"label": "Ella's plan",
+					"before": "",
+					"after": "",
+					"options": [
+						"play the guitar",
+						"sing",
+						"paint the signs"
+					],
+					"answer": "play the guitar",
+					"explanation": "Die Stimme sagt erst, was sie nicht vorhat, dann was sie vorhat."
+				},
+				{
+					"label": "Which part names a destination?",
+					"before": "",
+					"after": "",
+					"options": [
+						"to the hall",
+						"to play",
+						"to paint"
+					],
+					"answer": "to the hall",
+					"explanation": "„The hall“ ist ein Ort."
+				}
+			]
+		},
+		"listening": true,
+		"listeningAccent": "en-GB",
+		"takeaway": "Bei am/is/are + going to + Grundform erkennst du eine Absicht. Frage: Was haben sie vor?",
+		"materialLabel": "Sprachnachricht zum Schulfest",
+		"material": "Hi everyone. Ben is going to paint the signs. We're going to make a poster for the entrance. Ella isn't going to sing, but she's going to play the guitar. After school we're going to the hall to check the lights.",
+		"materialLanguage": "en",
+		"diagram": {
+			"title": "Auf das Wort nach „to“ achten",
+			"tiles": [
+				{
+					"label": "to make",
+					"detail": "Verb → Vorhaben"
+				},
+				{
+					"label": "to the hall",
+					"detail": "Ort → wohin?"
+				},
+				{
+					"label": "isn't going to sing",
+					"detail": "verneinter Plan"
+				}
+			]
+		},
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "What do “We're going to make a poster” and “We're going to the hall” show?",
+			"answer": "The first contains a planned action. The second names a destination.",
+			"wrong": [
+				"Both refer to the same destination.",
+				"The first says the poster is ready."
+			],
+			"explanation": "In der ersten Aussage folgt das Verb make auf to."
+		},
+		"bindings": [
+			"E7 1.2"
+		]
+	},
+	{
+		"id": "e7-comparison",
+		"stage": "language",
+		"title": "More exciting, the most exciting",
+		"skill": "Lange Adjektive mit more und most steigern und little bei Mengen vergleichen",
+		"tracks": [
+			"R",
+			"M"
+		],
+		"paragraphs": [
+			"Viele längere Adjektive steigerst du mit more + Adjektiv + than. In einer Gruppe nutzt du the most + Adjektiv. „This tour is more exciting than the bus ride.“ Für Mengen gilt: little → less → the least, etwa „less time“."
+		],
+		"sourceIds": [
+			"r7",
+			"m7"
+		],
+		"practice": [
+			{
+				"prompt": "Complete: The film tour is the ___ expensive. (one word)",
+				"answers": [
+					"most"
+				],
+				"feedback": "Der Superlativ mit einem längeren Adjektiv benutzt the most."
+			},
+			{
+				"prompt": "Complete: The walk costs ___ than the film tour. (weniger)",
+				"answers": [
+					"less"
+				],
+				"feedback": "Less bedeutet hier „weniger“."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Vergleiche auf Englisch den Preis der Bootsfahrt mit dem Spaziergang und nenne das teuerste Angebot.",
+				"model": "The boat trip is more expensive than the walk. The film tour is the most expensive.",
+				"criteria": [
+					"Vergleiche dieselbe Eigenschaft.",
+					"Verwende more … than.",
+					"Setze the vor most."
+				]
+			},
+			"2": {
+				"language": "en",
+				"prompt": "Ein Museum kostet £7, ein Foto-Workshop £9 und die geführte Tour £13. Empfiehl ein Angebot für ein knappes Budget. Vergleiche zwei Preise und nenne das teuerste.",
+				"model": "Choose the museum. It costs less than the photo workshop. The guided tour is the most expensive of the three.",
+				"criteria": [
+					"Empfiehl einen passenden Besuch.",
+					"Vergleiche einen Betrag mit less.",
+					"Bilde einen Superlativ mit most."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Compare two trips",
+					"before": "The boat trip is",
+					"after": "the walk.",
+					"options": [
+						"more expensive than",
+						"the most expensive",
+						"expensiver than"
+					],
+					"answer": "more expensive than",
+					"explanation": "Zwei Dinge werden mit more … than verglichen."
+				},
+				{
+					"label": "Pick the highest price",
+					"before": "The film tour is",
+					"after": "of the three.",
+					"options": [
+						"the most expensive",
+						"more expensive than",
+						"the expensivest"
+					],
+					"answer": "the most expensive",
+					"explanation": "Für den höchsten Grad steht the most."
+				},
+				{
+					"label": "Compare an amount",
+					"before": "The walk takes",
+					"after": "time than the tour.",
+					"options": [
+						"less",
+						"least",
+						"fewer"
+					],
+					"answer": "less",
+					"explanation": "Time ist hier eine nicht zählbare Menge: less."
+				}
+			]
+		},
+		"takeaway": "Vergleich: more … than. Höchster Grad: the most …. Kleine Menge: less / the least.",
+		"materialLabel": "Drei Angebote für eine Klassenfahrt, mit Beispielpreisen",
+		"material": "Walk: £4 · boat trip: £12 · film tour: £16. The boat trip is more expensive than the walk. The film tour is the most expensive. The walk takes the least time.",
+		"materialLanguage": "en",
+		"diagram": {
+			"title": "Ein Vergleich, eine Gruppe",
+			"tiles": [
+				{
+					"label": "A gegen B",
+					"detail": "more expensive than"
+				},
+				{
+					"label": "Platz 1 in der Gruppe",
+					"detail": "the most expensive"
+				},
+				{
+					"label": "Kleinste Menge",
+					"detail": "the least time"
+				}
+			]
+		},
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "Which sentence compares two amounts of time?",
+			"answer": "The boat trip takes less time than the film tour.",
+			"wrong": [
+				"The walk is the most colourful.",
+				"The film tour takes fewer time."
+			],
+			"explanation": "Less passt bei nicht zählbarem time."
+		},
+		"bindings": [
+			"E7 1.2",
+			"E7 4"
+		]
+	},
+	{
+		"id": "e7-quantities",
+		"stage": "language",
+		"title": "How much? How many?",
+		"skill": "Zählbare Dinge von nicht zählbaren Mengen unterscheiden",
+		"tracks": [
+			"R",
+			"M"
+		],
+		"paragraphs": [
+			"Manches lässt sich einzeln zählen: one ticket, two tickets. Dann passt „how many tickets?“. Stoffe und Mengen wie water oder time benutzt du hier ohne Plural. Dann passt „how much water?“. Auch „information“ und „news“ stehen im Englischen normalerweise mit einem Verb im Singular."
+		],
+		"sourceIds": [
+			"r7",
+			"m7"
+		],
+		"practice": [
+			{
+				"prompt": "Complete: How ___ bottles do we need? (one word)",
+				"answers": [
+					"many"
+				],
+				"feedback": "Bottles sind zählbar."
+			},
+			{
+				"prompt": "Complete: How ___ juice is in the bottle? (one word)",
+				"answers": [
+					"much"
+				],
+				"feedback": "Juice ist eine Stoffmenge."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Frage auf Englisch nach der Zahl der Becher und der Menge Wasser für eine Gruppe. Antworte mit zwölf Bechern und zwei Litern.",
+				"model": "How many cups do we need? Twelve. How much water do we need? Two litres.",
+				"criteria": [
+					"Unterscheide Dinge und Mengen.",
+					"Setze many und much passend ein.",
+					"Nenne die Einheiten."
+				]
+			},
+			"2": {
+				"language": "en",
+				"prompt": "Schreibe einem anderen Team, dass zwei Dinge noch offen sind: die benötigte Zahl der Karten und die verbleibende Zeit. Ergänze eine neue nützliche Information zum Saal.",
+				"model": "How many tickets do we need? How much time is left? Here's a useful piece of information: the hall is open until five.",
+				"criteria": [
+					"Frage nach Zahl und Zeit.",
+					"Verwende beide Fragewörter.",
+					"Schreibe „a piece of information“."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Ask about cups",
+					"before": "How",
+					"after": "cups do we need?",
+					"options": [
+						"many",
+						"much",
+						"a little"
+					],
+					"answer": "many",
+					"explanation": "Cups bezeichnet einzelne Becher im Plural."
+				},
+				{
+					"label": "Ask about water",
+					"before": "How",
+					"after": "water is left?",
+					"options": [
+						"much",
+						"many",
+						"a few"
+					],
+					"answer": "much",
+					"explanation": "Water ist hier eine Stoffmenge."
+				},
+				{
+					"label": "Choose the verb",
+					"before": "The news",
+					"after": "good.",
+					"options": [
+						"is",
+						"are",
+						"have"
+					],
+					"answer": "is",
+					"explanation": "News endet auf s, wird hier aber wie Singular behandelt."
+				}
+			]
+		},
+		"takeaway": "Many steht vor zählbarem Plural, much vor nicht zählbaren Mengen. Ein einzelner Tipp ist „a piece of information“.",
+		"materialLabel": "Materialliste für einen Schultag",
+		"material": "How many cups do we need? — Twelve. How much water do we need? — Two litres. The news is good: the sports hall is open. We found some useful information about it.",
+		"materialLanguage": "en",
+		"diagram": {
+			"title": "Zählen oder messen?",
+			"tiles": [
+				{
+					"label": "Zählbar",
+					"detail": "one cup / twelve cups → many"
+				},
+				{
+					"label": "Menge",
+					"detail": "water / two litres of water → much"
+				},
+				{
+					"label": "Information",
+					"detail": "one piece of information"
+				}
+			]
+		},
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "How do you refer to a single useful detail in English?",
+			"answer": "a piece of information",
+			"wrong": [
+				"an information",
+				"one informations"
+			],
+			"explanation": "Piece macht die nicht zählbare Information zählbar."
+		},
+		"bindings": [
+			"E7 1.2",
+			"E7 5"
+		]
+	},
+	{
+		"id": "e7-indefinites",
+		"stage": "language",
+		"title": "Something, anything, nothing",
+		"skill": "Unbestimmte Begleiter und Pronomen in Aussagen, Verneinungen und Fragen einsetzen",
+		"tracks": [
+			"R",
+			"M"
+		],
+		"paragraphs": [
+			"Some passt oft in positive Aussagen und in Angebote. Any steht meist in neutralen Fragen und Verneinungen mit not. No verneint ohne zusätzliches not: „There are no seats“. Bei Personen passen somebody/someone, anybody oder nobody. Dinge kannst du als something, anything oder nothing bezeichnen."
+		],
+		"sourceIds": [
+			"r7",
+			"m7"
+		],
+		"practice": [
+			{
+				"prompt": "Complete the offer: Would you like ___ popcorn? (one word)",
+				"answers": [
+					"some"
+				],
+				"feedback": "Bei Angeboten passt some."
+			},
+			{
+				"prompt": "Complete: I don't have ___ tickets. (one word)",
+				"answers": [
+					"any"
+				],
+				"feedback": "Don't verneint, any steht danach."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Schreibe drei Zeilen über Fundstücke: Du hast einige Stifte, willst wissen, ob jemand ein Heft hat, und es gibt kein Papier.",
+				"model": "I have some pens. Does anybody have a notebook? There is no paper.",
+				"criteria": [
+					"Schreibe eine Aussage.",
+					"Frage nach einer Person.",
+					"Verneine mit no."
+				]
+			},
+			"2": {
+				"language": "en",
+				"prompt": "Ein Freund bietet Essen an. Lehne freundlich ab, frage neutral nach Getränken und sage, dass niemand Saft hat.",
+				"model": "No, thanks. Is there anything to drink? Nobody has any juice.",
+				"criteria": [
+					"Frage nach einer Sache.",
+					"Verwende nobody für Personen.",
+					"Denk an any in der verneinten Aussage."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "State a positive fact",
+					"before": "We have",
+					"after": "tickets.",
+					"options": [
+						"some",
+						"any",
+						"nothing"
+					],
+					"answer": "some",
+					"explanation": "Some passt in die bejahte Aussage."
+				},
+				{
+					"label": "Ask an open question",
+					"before": "Is",
+					"after": "coming with you?",
+					"options": [
+						"anybody",
+						"something",
+						"no"
+					],
+					"answer": "anybody",
+					"explanation": "Bei der neutralen Frage nach einer Person passt anybody."
+				},
+				{
+					"label": "No food is left",
+					"before": "There's",
+					"after": "to eat.",
+					"options": [
+						"nothing",
+						"anybody",
+						"somebody"
+					],
+					"answer": "nothing",
+					"explanation": "Nothing steht für „nichts“."
+				}
+			]
+		},
+		"takeaway": "„We have no seats“ hat schon eine Verneinung. „We don't have any seats“ sagt dasselbe.",
+		"materialLabel": "Ein Gespräch über einen Kinoabend",
+		"material": "We have some tickets. Is anybody coming with you? Would you like some popcorn? I haven't had anything to eat. There's nothing in my bag.",
+		"materialLanguage": "en",
+		"diagram": {
+			"title": "Situationen sortieren",
+			"tiles": [
+				{
+					"label": "Aussage",
+					"detail": "some tickets / somebody"
+				},
+				{
+					"label": "Neutrale Frage",
+					"detail": "any tickets / anybody?"
+				},
+				{
+					"label": "Verneinung",
+					"detail": "not … any oder no"
+				}
+			]
+		},
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "Which sentence says there are zero seats?",
+			"answer": "There are no seats.",
+			"wrong": [
+				"There are some seats.",
+				"Are there any seats?"
+			],
+			"explanation": "No verneint die Verfügbarkeit."
+		},
+		"bindings": [
+			"E7 1.2"
+		]
+	},
+	{
+		"id": "e7-possessive-one",
+		"stage": "language",
+		"title": "Mine, yours or the blue one?",
+		"skill": "Besitz und einen gemeinten Gegenstand ohne Wiederholung ausdrücken",
+		"tracks": [
+			"R",
+			"M"
+		],
+		"paragraphs": [
+			"„My bag“ braucht ein Nomen. „The bag is mine“ endet mit einem Possessivpronomen. Je nach Person nutzt du mine, yours, his, hers, ours oder theirs. Um ein zählbares Nomen im Singular zu ersetzen, kannst du one verwenden: „the blue one“."
+		],
+		"sourceIds": [
+			"r7",
+			"m7"
+		],
+		"practice": [
+			{
+				"prompt": "Complete: This is our poster. It is ___. (one word)",
+				"answers": [
+					"ours"
+				],
+				"feedback": "Ours steht selbstständig ohne Nomen."
+			},
+			{
+				"prompt": "Complete: The tall glass or the short ___? (one word)",
+				"answers": [
+					"one"
+				],
+				"feedback": "One ersetzt „glass“."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Schreib zwei Sätze zu einem schwarzen und einem roten Rucksack. Der schwarze gehört dir, der rote deiner Freundin.",
+				"model": "The black one is mine. The red one is hers.",
+				"criteria": [
+					"Nutze one für den Gegenstand.",
+					"Drücke deinen Besitz aus.",
+					"Verwende hers für deine Freundin."
+				]
+			},
+			"2": {
+				"language": "en",
+				"prompt": "Zwei Personen streiten sich um gleich aussehende Becher. Schreibe einen Dialog, der Größe oder Farbe nennt und Besitz klärt.",
+				"model": "Is the small blue one yours? No, mine is bigger. The small one is Ben's. It's his.",
+				"criteria": [
+					"Wähle ein erkennbares Merkmal.",
+					"Frage mit yours.",
+					"Erkläre mit mine oder his, wem etwas gehört."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Say who owns it",
+					"before": "It's",
+					"after": ". Ella left it here.",
+					"options": [
+						"hers",
+						"her",
+						"one"
+					],
+					"answer": "hers",
+					"explanation": "Hers steht ohne Nomen und verweist auf Ella."
+				},
+				{
+					"label": "Replace the repeated noun",
+					"before": "I want the blue",
+					"after": ", please.",
+					"options": [
+						"one",
+						"mine",
+						"hers"
+					],
+					"answer": "one",
+					"explanation": "One ersetzt bottle."
+				},
+				{
+					"label": "Ask about ownership",
+					"before": "Is this bag",
+					"after": "?",
+					"options": [
+						"yours",
+						"your",
+						"one"
+					],
+					"answer": "yours",
+					"explanation": "Nach „is this bag“ steht das selbstständige Pronomen yours."
+				}
+			]
+		},
+		"takeaway": "Mine ersetzt „my + Nomen“. One ersetzt das wiederholte zählbare Nomen, z. B. „the blue one“.",
+		"materialLabel": "Fundtisch am Schulfest",
+		"material": "My bottle is blue. The red bottle is Ella's. The red one is hers, and the blue one is mine. Is this black bag yours? No, it belongs to Ben. It's his.",
+		"materialLanguage": "en",
+		"diagram": {
+			"title": "Was ersetzt das Wort?",
+			"tiles": [
+				{
+					"label": "my bottle",
+					"detail": "mine → Besitz"
+				},
+				{
+					"label": "the blue bottle",
+					"detail": "the blue one → Gegenstand"
+				},
+				{
+					"label": "your bag",
+					"detail": "yours → Besitz"
+				}
+			]
+		},
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "Which sentence means that the bottle belongs to the speaker?",
+			"answer": "It's mine.",
+			"wrong": [
+				"It's the blue one.",
+				"It's hers."
+			],
+			"explanation": "Mine steht für „gehört mir“."
+		},
+		"bindings": [
+			"E7 1.2"
+		]
+	},
+	{
+		"id": "e7-relative-reflexive",
+		"stage": "language",
+		"title": "Who, which and myself",
+		"skill": "Personen, Dinge und Handlungen mit passenden Pronomen genauer bezeichnen",
+		"tracks": [
+			"R",
+			"M"
+		],
+		"paragraphs": [
+			"Mit einem einfachen Relativsatz sagst du, welche Person oder Sache gemeint ist: „the girl who called“ und „the book which won“. In solchen bestimmenden Relativsätzen ist that für Personen oder Dinge möglich. Ein Reflexivpronomen verweist auf dieselbe Person wie das Subjekt: „He cut himself.“ „I made it myself“ betont, wer es getan hat."
+		],
+		"sourceIds": [
+			"r7",
+			"m7"
+		],
+		"practice": [
+			{
+				"prompt": "Complete with who or which: The boy ___ drew the map is Amir.",
+				"answers": [
+					"who"
+				],
+				"feedback": "Boy ist eine Person."
+			},
+			{
+				"prompt": "Complete: I made it ___. (selbst)",
+				"answers": [
+					"myself"
+				],
+				"feedback": "Myself passt zu I."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Verbinde „The pupil is Mia“ und „She made the sign“ mit who. Ergänze „Ich habe die Karte selbst gemacht.“",
+				"model": "The pupil who made the sign is Mia. I made the map myself.",
+				"criteria": [
+					"Beschreibe die Person genauer.",
+					"Verwende who.",
+					"Setze das passende Reflexivpronomen ein."
+				]
+			},
+			"2": {
+				"language": "en",
+				"prompt": "Schreibe zwei Rätselhinweise für den Werkraum: einen zu einer Person, einen zu einer Sache. Ergänze einen Satz über etwas, das du selbst gemacht hast.",
+				"model": "Find the person who made the poster. Look for the sign that has a blue circle. I drew the circle myself.",
+				"criteria": [
+					"Unterscheide Person und Sache.",
+					"Nutze mindestens einen Relativsatz mit that oder which.",
+					"Setze myself bei deiner Handlung ein."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Identify a person",
+					"before": "the girl",
+					"after": "made the sign",
+					"options": [
+						"who",
+						"which",
+						"herself"
+					],
+					"answer": "who",
+					"explanation": "Who leitet die nähere Angabe für eine Person ein."
+				},
+				{
+					"label": "Identify a thing",
+					"before": "the sign",
+					"after": "won the prize",
+					"options": [
+						"which",
+						"who",
+						"itself"
+					],
+					"answer": "which",
+					"explanation": "Which leitet die nähere Angabe für eine Sache ein."
+				},
+				{
+					"label": "Refer back to “Leo”",
+					"before": "Leo looked at",
+					"after": "in the mirror.",
+					"options": [
+						"himself",
+						"myself",
+						"herself"
+					],
+					"answer": "himself",
+					"explanation": "Leo und „himself“ bezeichnen hier dieselbe Person."
+				}
+			]
+		},
+		"takeaway": "Who für Personen, which für Dinge, that ist hier für beide möglich. Myself, yourself, himself, herself, itself, ourselves, yourselves und themselves zeigen zurück.",
+		"materialLabel": "Ein Projektbericht aus dem Werkraum",
+		"material": "The girl who made the sign is Noor. The sign which won the prize is blue. I painted the letters myself. Leo looked at himself in the mirror.",
+		"materialLanguage": "en",
+		"diagram": {
+			"title": "Worauf zeigt das Pronomen?",
+			"tiles": [
+				{
+					"label": "girl",
+					"detail": "who → Person"
+				},
+				{
+					"label": "sign",
+					"detail": "which → Sache"
+				},
+				{
+					"label": "I",
+					"detail": "myself → dieselbe Person"
+				}
+			]
+		},
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "Which sentence means I did the work on my own?",
+			"answer": "I painted the sign myself.",
+			"wrong": [
+				"The girl who painted it won.",
+				"It is the sign which won."
+			],
+			"explanation": "Myself betont, dass ich es selbst gemacht habe."
+		},
+		"bindings": [
+			"E7 1.2"
+		]
+	},
+	{
+		"id": "e7-big-numbers",
+		"stage": "language",
+		"title": "Thousands and beyond",
+		"skill": "Große Zahlen gruppieren und Ordnungszahlen ab 31 lesen",
+		"tracks": [
+			"R",
+			"M"
+		],
+		"paragraphs": [
+			"Lies große Zahlen in Gruppen aus drei Stellen: 12,450 bedeutet twelve thousand four hundred and fifty im britischen Englisch. Nach einer genauen Zahl bleiben thousand und million ohne -s. Bei Ordnungszahlen ab 31 wird nur der letzte Zahlenteil zur Ordnungszahl: thirty-second. Zahlen, die auf 11, 12 oder 13 enden, schreiben sich mit -th."
+		],
+		"sourceIds": [
+			"r7",
+			"m7"
+		],
+		"practice": [
+			{
+				"prompt": "Write 31st in words.",
+				"answers": [
+					"thirty-first",
+					"thirty first"
+				],
+				"feedback": "Die Endung von one wird zu first."
+			},
+			{
+				"prompt": "Write 5,000 in words.",
+				"answers": [
+					"five thousand"
+				],
+				"feedback": "Nach five bleibt thousand unverändert."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Schreibe 8,000 Besucher und den 42. Platz auf Englisch in Wörtern.",
+				"model": "eight thousand visitors; forty-second place",
+				"criteria": [
+					"Lies die Tausendergruppe.",
+					"Verwende thousand im Singular.",
+					"Schreibe die Endung als Ordnungszahl."
+				]
+			},
+			"2": {
+				"language": "en",
+				"prompt": "Für eine englische Durchsage: Das Festival hatte 12,450 Gäste. Euer Film kam auf Platz 113. Schreibe beide Angaben in Wörtern.",
+				"model": "The festival had twelve thousand four hundred and fifty visitors. Our film came in one hundred and thirteenth place.",
+				"criteria": [
+					"Gliedere die Besucherzahl.",
+					"Verwende die passende Endung.",
+					"Schreibe verständliche Sätze."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Read 12,450",
+					"before": "",
+					"after": "",
+					"options": [
+						"twelve thousand four hundred and fifty",
+						"one thousand two hundred and forty-five",
+						"twelve million four hundred and fifty"
+					],
+					"answer": "twelve thousand four hundred and fifty",
+					"explanation": "Die erste Gruppe steht für 12 Tausender."
+				},
+				{
+					"label": "Read 42nd",
+					"before": "",
+					"after": "",
+					"options": [
+						"forty-second",
+						"forty-two",
+						"fourteenth"
+					],
+					"answer": "forty-second",
+					"explanation": "Nur „two“ wird zu „second“."
+				},
+				{
+					"label": "Write 113th as words (UK)",
+					"before": "",
+					"after": "",
+					"options": [
+						"one hundred and thirteenth",
+						"one hundred and thirty-third",
+						"one hundred and thirteen"
+					],
+					"answer": "one hundred and thirteenth",
+					"explanation": "Die Endung von 13 ist „thirteenth“."
+				}
+			]
+		},
+		"takeaway": "Gruppiere von rechts: Millionen, Tausender, Einergruppe. Für die Reihenfolge zählt der letzte Zahlenteil.",
+		"materialLabel": "Fiktive Besucherzahlen und Rangplätze",
+		"material": "12,450 visitors · 2,000 people · 1,200,000 downloads · 31st place · 42nd place · 113th place",
+		"materialLanguage": "en",
+		"diagram": {
+			"title": "Die Zahl 1,245,310 in Gruppen",
+			"tiles": [
+				{
+					"label": "1",
+					"detail": "million"
+				},
+				{
+					"label": "245",
+					"detail": "thousand"
+				},
+				{
+					"label": "310",
+					"detail": "three hundred and ten"
+				}
+			]
+		},
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "Which is 2,000 in words?",
+			"answer": "two thousand",
+			"wrong": [
+				"two thousands",
+				"twenty thousand"
+			],
+			"explanation": "Nach „two“ steht thousand ohne -s."
+		},
+		"bindings": [
+			"E7 1.2"
+		]
+	},
+	{
+		"id": "e7-pasts-svo",
+		"stage": "language",
+		"title": "At the club on Friday",
+		"skill": "Aussagen, Fragen und Verneinungen mit Ort, Zeit und Adverbien formulieren",
+		"tracks": [
+			"R",
+			"M"
+		],
+		"paragraphs": [
+			"Eine einfache Aussage folgt häufig Subjekt → Verb → Objekt. Danach kommt oft Ort vor Zeit: „Nora met her friends at the club on Friday.“ Bei Fragen im simple past steht did vor dem Subjekt. Danach folgt die Grundform. „Occasionally“ und „rarely“ stehen oft vor dem Vollverb, nach be. „Nearby“ bezeichnet einen Ort. „Later“ bezeichnet eine Zeit."
+		],
+		"sourceIds": [
+			"r7",
+			"m7"
+		],
+		"practice": [
+			{
+				"prompt": "Complete: Did they ___ football yesterday? (play / played)",
+				"answers": [
+					"play"
+				],
+				"feedback": "Nach did steht die Grundform."
+			},
+			{
+				"prompt": "Complete: There is a café ___. (in der Nähe, one word)",
+				"answers": [
+					"nearby"
+				],
+				"feedback": "Nearby ist eine Ortsangabe."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Ordne die Wörter zu einer Frage: did / Ella / meet / her friends / at the cinema / on Saturday? Antworte bejahend.",
+				"model": "Did Ella meet her friends at the cinema on Saturday? Yes, she did.",
+				"criteria": [
+					"Beginne mit did.",
+					"Verwende die Grundform.",
+					"Ordne Ort vor Zeit."
+				]
+			},
+			"2": {
+				"language": "en",
+				"prompt": "Berichtige einen Aushang. Das Team traf sich am Freitag im Musikraum und nicht am Donnerstag in der Bibliothek. Schreibe Aussage, Verneinung und eine Rückfrage.",
+				"model": "The team met in the music room on Friday. It didn't meet in the library on Thursday. Did they meet at three?",
+				"criteria": [
+					"Ordne Ort und Zeit.",
+					"Benutze didn't + Grundform.",
+					"Formuliere eine kurze Frage."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Add the usual order",
+					"before": "I read my book",
+					"after": ".",
+					"options": [
+						"in the café after school",
+						"after the café in school",
+						"book after at the school"
+					],
+					"answer": "in the café after school",
+					"explanation": "Ort und Zeit können am Satzende in dieser Reihenfolge stehen."
+				},
+				{
+					"label": "Use a verb after did",
+					"before": "Did Nora",
+					"after": "them at the club?",
+					"options": [
+						"meet",
+						"met",
+						"meets"
+					],
+					"answer": "meet",
+					"explanation": "Did trägt die Vergangenheit, meet bleibt in der Grundform."
+				},
+				{
+					"label": "Place an adverb of frequency",
+					"before": "She",
+					"after": "arrives late.",
+					"options": [
+						"rarely",
+						"nearby",
+						"tomorrow's"
+					],
+					"answer": "rarely",
+					"explanation": "Rarely bedeutet „selten“ und kann vor dem Vollverb stehen."
+				}
+			]
+		},
+		"takeaway": "Aussage: Wer? Tut was? Wo? Wann? Nach did oder didn't steht beim Vollverb die Grundform.",
+		"materialLabel": "Ein Wochenplan für einen Filmclub",
+		"material": "Nora met her friends at the club on Friday. Did Nora meet them at the club on Friday? She didn't meet them on Thursday. She rarely comes late. There's a café nearby. We'll talk about the film later.",
+		"materialLanguage": "en",
+		"diagram": {
+			"title": "Satzbausteine",
+			"tiles": [
+				{
+					"label": "Subjekt",
+					"detail": "Nora"
+				},
+				{
+					"label": "Verb + Objekt",
+					"detail": "met her friends"
+				},
+				{
+					"label": "Ort + Zeit",
+					"detail": "at the club on Friday"
+				}
+			]
+		},
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "Which is a correct negative past statement?",
+			"answer": "Nora didn't meet them on Thursday.",
+			"wrong": [
+				"Nora didn't met them on Thursday.",
+				"Nora not meet them on Thursday."
+			],
+			"explanation": "Nach didn't steht meet in der Grundform."
+		},
+		"bindings": [
+			"E7 1.2"
+		]
+	},
+	{
+		"id": "e7-chunks",
+		"stage": "language",
+		"title": "Catch a bus, look up a word",
+		"skill": "Wortverbindungen, phrasal verbs und das Gerund im Kontext verwenden",
+		"tracks": [
+			"R",
+			"M"
+		],
+		"paragraphs": [
+			"Lerne häufige Wortpaare zusammen: „catch a bus“ und „make a poster“. Bei phrasal verbs verändert ein Zusatz die Bedeutung: „look up a word“ heißt „ein Wort nachschlagen“. Nach „I'm interested in“ und „I can't stand“ kann eine -ing-Form stehen."
+		],
+		"sourceIds": [
+			"r7",
+			"m7"
+		],
+		"practice": [
+			{
+				"prompt": "Complete: We'll ___ a poster for the show. (make / do)",
+				"answers": [
+					"make"
+				],
+				"feedback": "Make a poster ist die übliche Verbindung."
+			},
+			{
+				"prompt": "Complete: She's interested in ___. (draw, -ing form)",
+				"answers": [
+					"drawing"
+				],
+				"feedback": "Nach „interested in“ steht drawing."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Schreibe drei Sätze: Du magst Zeichnen, schlägst die Fahrzeit nach und nimmst den Bus.",
+				"model": "I'm interested in drawing. I'll look up the bus times. Then I'll catch a bus.",
+				"criteria": [
+					"Setze eine -ing-Form ein.",
+					"Verwende look up mit einem Objekt.",
+					"Erinnere dich an „catch a bus“."
+				]
+			},
+			"2": {
+				"language": "en",
+				"prompt": "Schreibe einer Freundin eine Nachricht für einen Museumsbesuch. Sag, was du nicht ausstehen kannst, und schlage vor, online nach Ideen zu suchen und ein Plakat zu gestalten.",
+				"model": "I can't stand waiting in long queues. Let's surf the internet for ideas before we go. Afterwards we can make a poster about the museum.",
+				"criteria": [
+					"Nutze can't stand mit -ing.",
+					"Schlage die Recherche vor.",
+					"Verwende „make a poster“."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Find a bus connection",
+					"before": "Let's",
+					"after": "the bus times.",
+					"options": [
+						"look up",
+						"look at after",
+						"take off"
+					],
+					"answer": "look up",
+					"explanation": "Look up bedeutet nachschlagen."
+				},
+				{
+					"label": "Use a frequent word pair",
+					"before": "We can",
+					"after": "a bus to town.",
+					"options": [
+						"catch",
+						"do",
+						"make"
+					],
+					"answer": "catch",
+					"explanation": "Catch a bus heißt, den Bus zu erwischen oder zu nehmen."
+				},
+				{
+					"label": "Use the expression",
+					"before": "I'm interested in",
+					"after": "music.",
+					"options": [
+						"making",
+						"make",
+						"to making"
+					],
+					"answer": "making",
+					"explanation": "Nach „interested in“ folgt hier die -ing-Form."
+				}
+			]
+		},
+		"takeaway": "Lerne Ausdrücke als ganze Bausteine: catch a bus, look up a word, be interested in drawing.",
+		"materialLabel": "Ein Chat über ein Projekt und einen Konzertbesuch",
+		"material": "I'm interested in making music. I can't stand waiting in long queues. Let's look up the bus times and catch a bus to town. We can surf the internet for ideas and make a poster tomorrow.",
+		"materialLanguage": "en",
+		"diagram": {
+			"title": "Wörter, die zusammengehören",
+			"tiles": [
+				{
+					"label": "catch",
+					"detail": "a bus"
+				},
+				{
+					"label": "look up",
+					"detail": "a word"
+				},
+				{
+					"label": "interested in",
+					"detail": "making music"
+				}
+			]
+		},
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "Which choice follows “I can't stand” correctly?",
+			"answer": "I can't stand waiting.",
+			"wrong": [
+				"I can't stand wait.",
+				"I can't stand to waiting."
+			],
+			"explanation": "Eine passende Form ist „can't stand“ + -ing."
+		},
+		"bindings": [
+			"E7 1.2"
+		]
+	},
+	{
+		"id": "e7-advice",
+		"stage": "language",
+		"title": "You should talk to a friend",
+		"skill": "Mit should und shouldn't Rat geben und einen Grund nennen",
+		"tracks": [
+			"R",
+			"M"
+		],
+		"paragraphs": [
+			"Mit should gibst du einen Rat. „You should talk to Sam“ lässt der Person eine Entscheidung. Mit shouldn't rätst du ab. Nach beiden folgt das Vollverb in der Grundform ohne to. Ein Satz mit because kann den Rat freundlich begründen."
+		],
+		"sourceIds": [
+			"r7",
+			"m7"
+		],
+		"practice": [
+			{
+				"prompt": "Complete: You should ___ to her. (talk / to talk)",
+				"answers": [
+					"talk"
+				],
+				"feedback": "Hinter should kommt kein to."
+			},
+			{
+				"prompt": "Complete: You ___ share her private message. (solltest nicht)",
+				"answers": [
+					"shouldn't",
+					"should not"
+				],
+				"feedback": "Beide Formen drücken Abraten aus."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Dein Freund hat einen Streit. Gib einen Rat und rate von einer Handlung ab.",
+				"model": "You should talk to your friend. You shouldn't send an angry message.",
+				"criteria": [
+					"Gib einen umsetzbaren Rat.",
+					"Baue shouldn't ein.",
+					"Nutze die Grundform."
+				]
+			},
+			"2": {
+				"language": "en",
+				"prompt": "Eine Mitschülerin ist wegen eines Auftritts nervös. Gib zwei passende Ratschläge und begründe einen mit because.",
+				"model": "You should practise with a friend because it's easier with someone you trust. You shouldn't try to learn every word by heart.",
+				"criteria": [
+					"Beziehe dich auf die Lage.",
+					"Nutze should und shouldn't.",
+					"Schreibe einen Grund mit because."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Offer advice",
+					"before": "You",
+					"after": "talk to Leo.",
+					"options": [
+						"should",
+						"are",
+						"should to"
+					],
+					"answer": "should",
+					"explanation": "Should steht direkt vor der Grundform."
+				},
+				{
+					"label": "Advise against posting",
+					"before": "You",
+					"after": "post it in the group chat.",
+					"options": [
+						"shouldn't",
+						"should",
+						"did"
+					],
+					"answer": "shouldn't",
+					"explanation": "Shouldn't bedeutet „du solltest … nicht“."
+				},
+				{
+					"label": "Give a reason for a private message",
+					"before": "",
+					"after": "",
+					"options": [
+						"It gives him time to reply.",
+						"The group must know everything.",
+						"He already answered everyone."
+					],
+					"answer": "It gives him time to reply.",
+					"explanation": "Die Nachricht lässt Leo Zeit, in Ruhe zu antworten."
+				}
+			]
+		},
+		"takeaway": "Should + Grundform (Rat). Shouldn't + Grundform (abraten).",
+		"materialLabel": "Fiktiver Chat zwischen Freunden",
+		"material": "Mia: I forgot to invite Leo. Now he seems upset. Joy: You should talk to him. You shouldn't post about it in the group chat. A private message is kinder because he can reply in his own time.",
+		"materialLanguage": "en",
+		"diagram": {
+			"title": "Der Ton verändert sich",
+			"tiles": [
+				{
+					"label": "Rat",
+					"detail": "You should talk to him."
+				},
+				{
+					"label": "Abraten",
+					"detail": "You shouldn't post it."
+				},
+				{
+					"label": "Grund",
+					"detail": "because he can reply when he's ready"
+				}
+			]
+		},
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "Which sentence is a friendly suggestion?",
+			"answer": "You should ask her how she feels.",
+			"wrong": [
+				"You forgot her name.",
+				"You're going to ask her tomorrow."
+			],
+			"explanation": "Should formuliert einen Rat."
+		},
+		"bindings": [
+			"E7 1.1",
+			"E7 1.2",
+			"E7 5"
+		]
+	},
+	{
+		"id": "e7-pronunciation",
+		"stage": "language",
+		"title": "Three chunks, one question",
+		"skill": "Sprechtakte erkennen und Lautschrift beim Nachschlagen nutzen",
+		"tracks": [
+			"R",
+			"M"
+		],
+		"paragraphs": [
+			"Teile lange Sätze in Sprechtakte. In „Could you tell me / the way to the station / please?“ erhalten wichtige Wörter mehr Gewicht. Englisch verknüpft Wörter innerhalb eines Takts. Ein Lautschriftzeichen steht für einen Laut: /ʃ/ wie in „shop“, /tʃ/ wie in „chip“, /θ/ wie in „thin“. Hör hin und sprich nach."
+		],
+		"sourceIds": [
+			"r7",
+			"m7"
+		],
+		"practice": [
+			{
+				"prompt": "Word spelled with the sounds /ʃɒp/? (one word)",
+				"answers": [
+					"shop"
+				],
+				"feedback": "Das /ɒ/ ist ein typischer britischer Vokal in diesem Wort."
+			},
+			{
+				"prompt": "Word spelled with the sounds /tʃɪp/? (one word)",
+				"answers": [
+					"chip"
+				],
+				"feedback": "Am Anfang steht /tʃ/."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Markiere zwei Pausen und ein betontes Wort in „Could you tell me the way to the station, please?“ Sprich dann die Frage.",
+				"model": "Could you tell me / the way to the STATION / please?",
+				"criteria": [
+					"Halte Sinnabschnitte zusammen.",
+					"Betone „station“ deutlich.",
+					"Sprich die Phrase flüssig."
+				]
+			},
+			"2": {
+				"language": "en",
+				"prompt": "Übertrage die Technik auf „Can you meet me outside the shop after school?“ Markiere Sinnabschnitte und sprich den Satz. Nutze /ʃ/ für „shop“.",
+				"model": "Can you meet me / outside the SHOP / after SCHOOL? In shop: /ʃ/.",
+				"criteria": [
+					"Markiere sinnvolle Takte.",
+					"Betone Ort und Zeit.",
+					"Sprich den ersten Laut in shop."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Find the sound in “shop”",
+					"before": "",
+					"after": "",
+					"options": [
+						"/ʃ/",
+						"/tʃ/",
+						"/θ/"
+					],
+					"answer": "/ʃ/",
+					"explanation": "Shop beginnt mit dem Laut /ʃ/."
+				},
+				{
+					"label": "Find the sound in “chip”",
+					"before": "",
+					"after": "",
+					"options": [
+						"/tʃ/",
+						"/ʃ/",
+						"/θ/"
+					],
+					"answer": "/tʃ/",
+					"explanation": "Chip beginnt mit /tʃ/."
+				},
+				{
+					"label": "Where is a sensible break?",
+					"before": "",
+					"after": "",
+					"options": [
+						"Could you tell me / the way to the station?",
+						"Could you tell / me the way to the / station?",
+						"Could / you tell me the / way to the station?"
+					],
+					"answer": "Could you tell me / the way to the station?",
+					"explanation": "Der zweite Takt hält „the way to the station“ zusammen."
+				}
+			]
+		},
+		"speaking": true,
+		"listening": true,
+		"listeningAccent": "en-GB",
+		"takeaway": "Lerne Wörter mit Lautschrift. Sprich Sinnabschnitte zusammen und betone das Schlüsselwort.",
+		"materialLabel": "Kurze Wegfragen und Kontrastwörter zum Nachsprechen",
+		"material": "Could you tell me the way to the station, please? Can you turn left at the shop? Shop, chip, thin. The shop is next to the station. Can you meet me outside the shop after school?",
+		"materialLanguage": "en",
+		"diagram": {
+			"title": "Ein Satz in Sprechtakten",
+			"tiles": [
+				{
+					"label": "Takt 1",
+					"detail": "Could you tell me"
+				},
+				{
+					"label": "Takt 2",
+					"detail": "the way to the STATION"
+				},
+				{
+					"label": "Takt 3",
+					"detail": "please?"
+				}
+			]
+		},
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "Which word begins with /θ/?",
+			"answer": "thin",
+			"wrong": [
+				"chip",
+				"shop"
+			],
+			"explanation": "Thin beginnt mit dem stimmlosen th-Laut."
+		},
+		"bindings": [
+			"E7 1.2",
+			"E7 4"
+		]
+	},
+	{
+		"id": "e7-island-ireland",
+		"stage": "culture",
+		"title": "Belfast and Dublin",
+		"skill": "Irland und Nordirland auf einer Karte unterscheiden",
+		"tracks": [
+			"R",
+			"M"
+		],
+		"paragraphs": [
+			"Die Insel Irland liegt westlich von Großbritannien. Die Republik Irland mit der Hauptstadt Dublin ist ein eigener Staat. Nordirland mit Belfast liegt im Nordosten der Insel und gehört zum Vereinigten Königreich. Das UK umfasst England, Schottland, Wales und Nordirland."
+		],
+		"sourceIds": [
+			"r7",
+			"m7",
+			"ireland"
+		],
+		"practice": [
+			{
+				"prompt": "Which city is the capital of Ireland? (one name)",
+				"answers": [
+					"Dublin"
+				],
+				"feedback": "Dublin ist die Hauptstadt des Staates Irland."
+			},
+			{
+				"prompt": "Which part of the island of Ireland is in the UK? (two words)",
+				"answers": [
+					"Northern Ireland"
+				],
+				"feedback": "Nordirland gehört zum UK."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Erkläre auf Englisch mit zwei Sätzen, wo Belfast und Dublin liegen.",
+				"model": "Belfast is in Northern Ireland. Dublin is the capital of the Republic of Ireland.",
+				"criteria": [
+					"Nenne beide Städte.",
+					"Ordne sie richtig zu.",
+					"Nutze „is in“ oder „is the capital of“."
+				]
+			},
+			"2": {
+				"language": "en",
+				"prompt": "Eine Freundin denkt, die gesamte Insel Irland sei Teil des UK. Erkläre die Unterscheidung mit drei kurzen englischen Sätzen.",
+				"model": "Dublin and Belfast are both on the island of Ireland. Belfast is in Northern Ireland, which is part of the UK. Dublin is in the Republic of Ireland, an independent country.",
+				"criteria": [
+					"Beginne mit der gemeinsamen Insel.",
+					"Ordne Belfast dem UK zu.",
+					"Erkläre Dublins Staat."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Find the city in Northern Ireland",
+					"before": "",
+					"after": "",
+					"options": [
+						"Belfast",
+						"Dublin",
+						"London"
+					],
+					"answer": "Belfast",
+					"explanation": "Belfast liegt im Nordosten der Insel."
+				},
+				{
+					"label": "Name the capital of the Republic of Ireland",
+					"before": "",
+					"after": "",
+					"options": [
+						"Dublin",
+						"Belfast",
+						"Edinburgh"
+					],
+					"answer": "Dublin",
+					"explanation": "Dublin ist die Hauptstadt des eigenständigen Staates."
+				},
+				{
+					"label": "Water between Ireland and Great Britain",
+					"before": "",
+					"after": "",
+					"options": [
+						"Irish Sea",
+						"North Sea",
+						"English Channel"
+					],
+					"answer": "Irish Sea",
+					"explanation": "Die Irische See liegt zwischen den beiden Inseln."
+				}
+			]
+		},
+		"takeaway": "Ireland kann die Insel oder den Staat meinen. Belfast liegt in Nordirland, Dublin in der Republik Irland.",
+		"materialLabel": "Kurztext zur schematischen Karte",
+		"material": "Belfast and Dublin are on the island of Ireland. Belfast is in Northern Ireland, part of the United Kingdom. Dublin is the capital of Ireland, an independent country. The Irish Sea separates the island of Ireland from Great Britain.",
+		"materialLanguage": "en",
+		"diagram": {
+			"title": "Drei Begriffe",
+			"tiles": [
+				{
+					"label": "Island of Ireland",
+					"detail": "Die ganze Insel"
+				},
+				{
+					"label": "Northern Ireland",
+					"detail": "Nordosten der Insel · Teil des UK"
+				},
+				{
+					"label": "Republic of Ireland",
+					"detail": "Eigenständiger Staat · Dublin"
+				}
+			]
+		},
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "Which statement is correct?",
+			"answer": "Belfast is on the island of Ireland and in the UK.",
+			"wrong": [
+				"Dublin is in Northern Ireland.",
+				"The whole island of Ireland belongs to the UK."
+			],
+			"explanation": "Insel und Staat sind unterschiedliche Begriffe."
+		},
+		"bindings": [
+			"E7 2",
+			"E7 5"
+		]
+	},
+	{
+		"id": "e7-parks",
+		"stage": "culture",
+		"title": "Two parks, different landscapes",
+		"skill": "Natur und Umweltschutz im UK und in den USA vergleichen",
+		"tracks": [
+			"R",
+			"M"
+		],
+		"paragraphs": [
+			"Landschaften prägen Besucherregeln. Der Lake District in England hat Seen, Hügel und Wege. Im Yellowstone National Park in den USA gibt es heiße Quellen. Dort schützen markierte Wege und Holzstege Besucherinnen und Besucher. In beiden Schutzgebieten solltest du deinen Müll wieder mitnehmen."
+		],
+		"sourceIds": [
+			"r7",
+			"m7",
+			"lake",
+			"yellowstone"
+		],
+		"practice": [
+			{
+				"prompt": "Which US national park is in the text? (one word)",
+				"answers": [
+					"Yellowstone"
+				],
+				"feedback": "Der US-Park heißt Yellowstone National Park."
+			},
+			{
+				"prompt": "Complete the rule: Take your ___ home. (one word)",
+				"answers": [
+					"litter"
+				],
+				"feedback": "Litter ist herumliegender Müll."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Vergleiche die beiden Orte auf Englisch. Nenne pro Park ein Naturmerkmal und eine gemeinsame Regel.",
+				"model": "The Lake District has lakes and hills. Yellowstone has hot springs. In both parks, you should take your litter home.",
+				"criteria": [
+					"Nenne pro Park ein Merkmal.",
+					"Formuliere die gemeinsame Regel.",
+					"Nutze „in both parks“."
+				]
+			},
+			"2": {
+				"language": "en",
+				"prompt": "Erstelle einen kurzen englischen Hinweis für einen Ort in deiner Region: ein Naturmerkmal, eine Regel und ihr Grund. Vergleiche die Regel mit Yellowstone.",
+				"model": "Our local lake has birds near the shore. Please stay on the path so the birds can rest. Yellowstone also has marked trails, and they keep people away from hot springs.",
+				"criteria": [
+					"Nenne einen lokalen Ort.",
+					"Begründe die Regel.",
+					"Vergleiche ihren Zweck."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Link the landscape to the park",
+					"before": "hot springs",
+					"after": "",
+					"options": [
+						"Yellowstone",
+						"Lake District",
+						"the school garden"
+					],
+					"answer": "Yellowstone",
+					"explanation": "Heiße Quellen sind ein bekanntes Merkmal von Yellowstone."
+				},
+				{
+					"label": "Explain the Yellowstone rule",
+					"before": "",
+					"after": "",
+					"options": [
+						"The springs are very hot.",
+						"The lake has no water.",
+						"The park has no visitors."
+					],
+					"answer": "The springs are very hot.",
+					"explanation": "Stege helfen, Besucher von heißen Quellen und empfindlichem Untergrund fernzuhalten."
+				},
+				{
+					"label": "Find a shared action",
+					"before": "",
+					"after": "",
+					"options": [
+						"Take your litter home.",
+						"Always walk on a boardwalk.",
+						"Bring a guitar."
+					],
+					"answer": "Take your litter home.",
+					"explanation": "Müll mitnehmen gilt in beiden Übungstexten."
+				}
+			]
+		},
+		"takeaway": "Verbinde eine Naturräumeigenschaft mit einem konkreten Grund für eine Regel.",
+		"materialLabel": "Zwei kurze Infotexte für eine Klassenpräsentation",
+		"material": "Lake District, England: Walk by a lake or along a hillside path. Follow signs and take your litter home. Yellowstone, USA: Hot springs can be dangerous. Stay on boardwalks and follow marked trails near the springs. Take your litter home.",
+		"materialLanguage": "en",
+		"diagram": {
+			"title": "Landschaft → Verhalten",
+			"tiles": [
+				{
+					"label": "Lake District 🇬🇧",
+					"detail": "Seen und Hügel → Schilder beachten"
+				},
+				{
+					"label": "Yellowstone 🇺🇸",
+					"detail": "Heiße Quellen → auf dem Holzsteg bleiben"
+				},
+				{
+					"label": "Beide",
+					"detail": "Müll mitnehmen"
+				}
+			]
+		},
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "Which country is the Lake District in?",
+			"answer": "England",
+			"wrong": [
+				"the USA",
+				"the Republic of Ireland"
+			],
+			"explanation": "Der Lake District liegt in Nordwestengland."
+		},
+		"bindings": [
+			"E7 1.1",
+			"E7 2",
+			"E7 5"
+		]
+	},
+	{
+		"id": "e7-celebrations",
+		"stage": "culture",
+		"title": "Different ways to celebrate",
+		"skill": "St Patrick’s Day und ein Fest zu Hause vergleichen, ohne zu verallgemeinern",
+		"tracks": [
+			"R",
+			"M"
+		],
+		"paragraphs": [
+			"St Patrick’s Day ist am 17. März. Paraden und Musik sind verbreitete Formen des Feierns in Irland und anderswo. Familien und Jugendliche können unterschiedlich feiern. Beim Vergleichen helfen „both“, „but“ und vorsichtige Formulierungen wie „some people“."
+		],
+		"sourceIds": [
+			"r7",
+			"m7",
+			"patrick"
+		],
+		"practice": [
+			{
+				"prompt": "Complete: ___ examples include music. (both / neither)",
+				"answers": [
+					"Both"
+				],
+				"feedback": "Musik kommt in beiden Aussagen vor."
+			},
+			{
+				"prompt": "Complete the contrast: Aoife sees a parade, ___ Sami doesn't. (one word)",
+				"answers": [
+					"but"
+				],
+				"feedback": "But leitet einen Gegensatz ein."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Schreibe auf Englisch eine Gemeinsamkeit und einen Unterschied der beiden Feste.",
+				"model": "Both festivals have music. Aoife watches a parade, but Sami's town festival has no parade.",
+				"criteria": [
+					"Nutze both für die Gemeinsamkeit.",
+					"Nutze but für den Unterschied.",
+					"Beziehe dich auf die zwei Beispiele."
+				]
+			},
+			"2": {
+				"language": "en",
+				"prompt": "Ein Austauschpartner glaubt, bei dir feiern alle genau gleich. Beschreibe eine Feier aus deinem Umfeld vorsichtig und vergleiche mit Aoifes Beispiel.",
+				"model": "In my town, some people visit the summer festival. We have live music, like Aoife's festival. My family goes there for food, but not everyone celebrates that way.",
+				"criteria": [
+					"Beschreibe ein konkretes Beispiel.",
+					"Vergleiche eine Aktivität.",
+					"Vermeide Aussagen über alle."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Find a shared activity",
+					"before": "",
+					"after": "",
+					"options": [
+						"listening to music",
+						"watching a parade",
+						"selling tickets"
+					],
+					"answer": "listening to music",
+					"explanation": "In beiden persönlichen Beispielen gibt es Musik."
+				},
+				{
+					"label": "Find one contrast",
+					"before": "",
+					"after": "",
+					"options": [
+						"Aoife watches a parade, but Sami's festival has no parade.",
+						"Both families wear green every day.",
+						"Both towns have the same festival."
+					],
+					"answer": "Aoife watches a parade, but Sami's festival has no parade.",
+					"explanation": "Die Gegenüberstellung bezieht sich auf genau diese Beispiele."
+				},
+				{
+					"label": "Use careful language",
+					"before": "",
+					"after": "",
+					"options": [
+						"Some people wear green on St Patrick's Day.",
+						"Everyone in Ireland wears green every day.",
+						"Nobody ever listens to music."
+					],
+					"answer": "Some people wear green on St Patrick's Day.",
+					"explanation": "Some people kennzeichnet, dass nicht alle gemeint sind."
+				}
+			]
+		},
+		"takeaway": "Vergleiche konkrete Beispiele. Sage „some people“ oder „in this town“, wenn du nur ein Beispiel kennst.",
+		"materialLabel": "Zwei erfundene persönliche Stimmen",
+		"material": "Aoife, Dublin: I like watching the St Patrick's Day parade on March 17. Sometimes my family listens to live music afterwards. Sami, Bavaria: At our town festival, I help at a food stand. There is music in the afternoon, but we don't have a parade.",
+		"materialLanguage": "en",
+		"diagram": {
+			"title": "Gemeinsamkeit und Unterschied",
+			"tiles": [
+				{
+					"label": "Dublin",
+					"detail": "Aoife schaut beim Umzug zu."
+				},
+				{
+					"label": "Beide Beispiele",
+					"detail": "Musik spielt eine Rolle."
+				},
+				{
+					"label": "Bayern",
+					"detail": "Sami hilft am Essensstand."
+				}
+			]
+		},
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "When is St Patrick's Day?",
+			"answer": "March 17",
+			"wrong": [
+				"July 4",
+				"October 31"
+			],
+			"explanation": "St Patrick’s Day wird am 17. März gefeiert."
+		},
+		"bindings": [
+			"E7 1.2",
+			"E7 2",
+			"E7 5"
+		]
+	},
+	{
+		"id": "e7-units",
+		"stage": "culture",
+		"title": "Miles and pounds",
+		"skill": "In englischen Alltagstexten Maße und Gewichte einordnen",
+		"tracks": [
+			"M"
+		],
+		"paragraphs": [
+			"Auf vielen US-amerikanischen Schildern findest du miles, auf manchen Verpackungen pounds. In Deutschland sind Kilometer und Kilogramm üblich. „mi“ bezeichnet eine Strecke, „lb“ ein Gewicht. Eine Meile entspricht rund 1,6 km, ein Pfund in diesem System rund 0,45 kg. „£“ bezeichnet dagegen britisches Geld."
+		],
+		"sourceIds": [
+			"m7",
+			"units"
+		],
+		"practice": [
+			{
+				"prompt": "Which abbreviation on the package means pounds of weight? (two letters)",
+				"answers": [
+					"lb"
+				],
+				"feedback": "Lb steht hier für das Gewichtsmaß pound."
+			},
+			{
+				"prompt": "Which abbreviation means miles? (two letters)",
+				"answers": [
+					"mi"
+				],
+				"feedback": "Mi ist die Abkürzung für mile."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "de",
+				"prompt": "Erkläre auf Deutsch, was „2 mi to the lake“ und „Apples: 1 lb“ bedeuten. Gib grobe metrische Werte an.",
+				"model": "Der See ist rund 3,2 km entfernt. Die Äpfel wiegen ungefähr 450 g.",
+				"criteria": [
+					"Lies beide Einheiten.",
+					"Rechne ungefähr um.",
+					"Unterscheide Strecke und Gewicht."
+				]
+			},
+			"2": {
+				"language": "en",
+				"prompt": "Der Wanderplan erlaubt höchstens 4 km. Eine Route ist 3 mi lang und die andere 2 mi. Empfiehl auf Englisch die passende Route und erkläre kurz, wie du die Einheiten verglichen hast.",
+				"model": "Take the two-mile route. It is about 3.2 kilometres. Three miles is about 4.8 kilometres, which is too far.",
+				"criteria": [
+					"Nenne beide ungefähren Längen.",
+					"Wähle die kürzere Route.",
+					"Begründe mit der Grenze von 4 km."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Find a distance",
+					"before": "",
+					"after": "",
+					"options": [
+						"2 mi",
+						"1 lb",
+						"£6"
+					],
+					"answer": "2 mi",
+					"explanation": "Meilen geben eine Strecke an."
+				},
+				{
+					"label": "Find a weight",
+					"before": "",
+					"after": "",
+					"options": [
+						"1 lb",
+						"£6",
+						"3 km"
+					],
+					"answer": "1 lb",
+					"explanation": "Lb kennzeichnet hier das Gewicht der Äpfel."
+				},
+				{
+					"label": "Find a price",
+					"before": "",
+					"after": "",
+					"options": [
+						"£6",
+						"2 mi",
+						"1 lb"
+					],
+					"answer": "£6",
+					"explanation": "Das £-Zeichen steht in diesem Kontext für Geld."
+				}
+			]
+		},
+		"takeaway": "Lies zuerst die Einheit. Das Wort „pound“ kann je nach Text Gewicht oder Geld bedeuten.",
+		"materialLabel": "Beispielschilder und Verpackung",
+		"material": "Visitor trail: 2 mi to the lake · Apples: 1 lb · Ticket: £6 · Your map from home: 3 km to the tower",
+		"materialLanguage": "en",
+		"diagram": {
+			"title": "Einheit → Bedeutung",
+			"tiles": [
+				{
+					"label": "mi",
+					"detail": "Strecke ⋅ 1 mi ≈ 1,6 km"
+				},
+				{
+					"label": "lb",
+					"detail": "Gewicht ⋅ 1 lb ≈ 0,45 kg"
+				},
+				{
+					"label": "£",
+					"detail": "Preis in britischen Pfund"
+				}
+			]
+		},
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "Which is the better estimate for 2 mi?",
+			"answer": "about 3.2 km",
+			"wrong": [
+				"about 0.9 kg",
+				"about 1 km"
+			],
+			"explanation": "Zwei Meilen sind rund 2 · 1,6 km."
+		},
+		"bindings": [
+			"E7 2"
+		]
+	},
+	{
+		"id": "e7-film-poster",
+		"stage": "media",
+		"title": "Read the poster",
+		"skill": "Layout, Symbole und Angaben eines Filmplakats nutzen",
+		"tracks": [
+			"R",
+			"M"
+		],
+		"paragraphs": [
+			"Ein Veranstaltungsplakat hilft beim Entscheiden. Der Titel sagt, was stattfindet. Zeit, Ort und Preis sind oft getrennt angeordnet. Ein Symbol kann einen Hinweis geben, etwa eine Uhr für die Startzeit. In einem eigenen Plakat müssen diese Angaben schnell auffindbar sein."
+		],
+		"sourceIds": [
+			"r7",
+			"m7"
+		],
+		"practice": [
+			{
+				"prompt": "Where is the film showing? (two words)",
+				"answers": [
+					"school hall"
+				],
+				"feedback": "Dies steht im Feld „where“."
+			},
+			{
+				"prompt": "How much does a regular ticket cost? (number only)",
+				"answers": [
+					"3",
+					"three"
+				],
+				"feedback": "Für Nichtmitglieder gilt £3."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Schreibe drei englische Zeilen für ein neues Filmplakat mit Titel, Startzeit und Ort.",
+				"model": "FILM NIGHT: The Secret River. WHEN: Saturday at 5 p.m. WHERE: Room Two.",
+				"criteria": [
+					"Mach den Titel sichtbar.",
+					"Nenne Tag und Zeit.",
+					"Gib einen eindeutigen Ort an."
+				]
+			},
+			"2": {
+				"language": "en",
+				"prompt": "Entwirf ein vollständiges Plakat für den Secret River: Beginn um 17 Uhr, Einlass 15 Minuten früher, Eintritt £2, für Helfende frei. Gib zusätzlich einen Hinweis zu Getränken.",
+				"model": "THE SECRET RIVER — Saturday in Room Two. FILM STARTS: 5 p.m. DOORS OPEN: 4:45 p.m. TICKETS: £2; volunteers get in free. Bring water only.",
+				"criteria": [
+					"Trenne Einlass und Beginn.",
+					"Nenne den Preis mit Ausnahme.",
+					"Gib einen verständlichen Hinweis."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Find the film title",
+					"before": "",
+					"after": "",
+					"options": [
+						"The Missing Map",
+						"School hall",
+						"Friday"
+					],
+					"answer": "The Missing Map",
+					"explanation": "Das ist der Name des Films unter „Film Night“."
+				},
+				{
+					"label": "Find the start time",
+					"before": "",
+					"after": "",
+					"options": [
+						"6:30 p.m.",
+						"6:00 p.m.",
+						"3:00 p.m."
+					],
+					"answer": "6:30 p.m.",
+					"explanation": "Der Einlass ist früher als der Filmbeginn."
+				},
+				{
+					"label": "Find the audience for free tickets",
+					"before": "",
+					"after": "",
+					"options": [
+						"school film club members",
+						"all pupils",
+						"everyone with food"
+					],
+					"answer": "school film club members",
+					"explanation": "Die Preiszeile erklärt, für wen der Eintritt kostenlos ist."
+				}
+			]
+		},
+		"takeaway": "Nutze Überschrift und Symbole als Wegweiser. Prüfe den genauen Wortlaut bei Ausnahmen.",
+		"materialLabel": "Fiktives Filmplakat für die Schule",
+		"material": "FILM NIGHT · The Missing Map\nWHEN: Friday, 6:30 p.m. (doors open at 6:00)\nWHERE: School hall\nPRICE: £3 · Free for school film club members\nBring your ticket. No food in the hall.",
+		"materialLanguage": "en",
+		"diagram": {
+			"title": "FILM NIGHT · The Missing Map",
+			"tiles": [
+				{
+					"label": "🕡 When",
+					"detail": "Friday · 6:30 p.m."
+				},
+				{
+					"label": "📍 Where",
+					"detail": "School hall"
+				},
+				{
+					"label": "🎟 Price",
+					"detail": "£3 · Club members free"
+				}
+			]
+		},
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "What is the main purpose of this poster?",
+			"answer": "To tell people where and when they can watch a film",
+			"wrong": [
+				"To teach people how to make a film",
+				"To review the film's ending"
+			],
+			"explanation": "Der Aushang informiert über eine Veranstaltung."
+		},
+		"bindings": [
+			"E7 1.1",
+			"E7 1.2",
+			"E7 3",
+			"E7 5"
+		]
+	},
+	{
+		"id": "e7-notice-ads",
+		"stage": "media",
+		"title": "Lost or for sale?",
+		"skill": "Verlustanzeige und Kleinanzeige lesen, unterscheiden und umarbeiten",
+		"tracks": [
+			"R",
+			"M"
+		],
+		"paragraphs": [
+			"Eine Verlustanzeige beschreibt, was fehlt, wann und wo es zuletzt gesehen wurde und wie man sich melden kann. Eine Verkaufsanzeige braucht eher Zustand, Preis und Kontakt. Verwende für die Übung nur erfundene Kontaktdaten oder eine gedachte Anlaufstelle."
+		],
+		"sourceIds": [
+			"r7",
+			"m7"
+		],
+		"practice": [
+			{
+				"prompt": "Which room were the lost headphones in? (two words)",
+				"answers": [
+					"music room"
+				],
+				"feedback": "Die Anzeige nennt den Musikraum."
+			},
+			{
+				"prompt": "Which colour are the headphones for sale? (one word)",
+				"answers": [
+					"green"
+				],
+				"feedback": "Die zweite Anzeige bietet grüne Kopfhörer an."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Schreibe eine Verlustanzeige über einen gelben Turnbeutel. Er lag Montag in der Sporthalle. Gib eine Kontaktstelle an.",
+				"model": "LOST: Yellow sports bag. Last seen in the sports hall on Monday. Please leave it at the school office.",
+				"criteria": [
+					"Nutze LOST.",
+					"Ergänze Merkmal, Ort und Zeit.",
+					"Nenne die Anlaufstelle."
+				]
+			},
+			"2": {
+				"language": "en",
+				"prompt": "Verwandle die Verlustanzeige in eine Verkaufsanzeige für einen ähnlichen Turnbeutel. Ersetze mindestens zwei Angaben und ergänze Preis und Zustand.",
+				"model": "FOR SALE: Red sports bag with a black zip, used but in good condition, £4. Ask Jamie at the school office.",
+				"criteria": [
+					"Ändere die Absicht.",
+					"Ersetze mindestens zwei Details.",
+					"Nenne Zustand, Preis und Kontakt."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Find a clue for a lost item",
+					"before": "",
+					"after": "",
+					"options": [
+						"a white star",
+						"good condition",
+						"£5"
+					],
+					"answer": "a white star",
+					"explanation": "Der Stern hilft, die vermissten Kopfhörer zu erkennen."
+				},
+				{
+					"label": "Find a detail for the buyer",
+					"before": "",
+					"after": "",
+					"options": [
+						"£5",
+						"last seen Tuesday",
+						"please leave them at the office"
+					],
+					"answer": "£5",
+					"explanation": "Der Preis passt zur Verkaufsanzeige."
+				},
+				{
+					"label": "Name a safe contact point",
+					"before": "",
+					"after": "",
+					"options": [
+						"the school office",
+						"a private password",
+						"a bank card number"
+					],
+					"answer": "the school office",
+					"explanation": "Das Sekretariat ist in der Übung die Anlaufstelle."
+				}
+			]
+		},
+		"takeaway": "Übernimm den Aufbau. Ersetze und ergänze die Details passend zur neuen Absicht.",
+		"materialLabel": "Zwei kurze Aushänge am Schulbrett",
+		"material": "LOST: Blue headphones with a white star. Last seen in the music room on Tuesday. Please leave them at the school office.\nFOR SALE: Green headphones, good condition, £5. Ask Alex at the school office.",
+		"materialLanguage": "en",
+		"diagram": {
+			"title": "Zwei Absichten",
+			"tiles": [
+				{
+					"label": "Lost",
+					"detail": "Gegenstand · letztes Mal gesehen · Fundstelle"
+				},
+				{
+					"label": "For sale",
+					"detail": "Gegenstand · Zustand · Preis"
+				},
+				{
+					"label": "Beide",
+					"detail": "Erkennbare Merkmale · Kontakt"
+				}
+			]
+		},
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "What does “last seen” mean in a lost notice?",
+			"answer": "Where or when someone last saw the item",
+			"wrong": [
+				"The latest price of the item",
+				"The name of the buyer"
+			],
+			"explanation": "„Last seen“ markiert den letzten bekannten Ort oder Zeitpunkt."
+		},
+		"bindings": [
+			"E7 3",
+			"E7 5"
+		]
+	},
+	{
+		"id": "e7-photo-story",
+		"stage": "media",
+		"title": "Tell it in three pictures",
+		"skill": "Eine englische Anleitung ausführen und eine Bildergeschichte planen",
+		"tracks": [
+			"R",
+			"M"
+		],
+		"paragraphs": [
+			"In Anleitungen zeigen Verben und Wörter wie „first“, „next“ und „finally“ die Reihenfolge. Eine Bildgeschichte braucht pro Bild einen klaren Schritt. Eine kurze Bildunterschrift ergänzt, was im Bild schwer zu sehen ist."
+		],
+		"sourceIds": [
+			"r7",
+			"m7"
+		],
+		"practice": [
+			{
+				"prompt": "Write the word for a short line of text under a picture. (one word)",
+				"answers": [
+					"caption"
+				],
+				"feedback": "Eine caption steht unter dem Bild."
+			},
+			{
+				"prompt": "Which linking word starts the final step? (one word)",
+				"answers": [
+					"finally"
+				],
+				"feedback": "Finally leitet den Schluss ein."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Plane drei Bilder und schreibe je eine englische Bildunterschrift. Dein Problem: Eine Person findet ihre Eintrittskarte nicht.",
+				"model": "First, Mia can't find her ticket. Next, she checks the pocket in her coat. Finally, she finds her ticket and goes inside.",
+				"criteria": [
+					"Beginne mit dem Problem.",
+					"Zeige einen Versuch.",
+					"Gib der Geschichte einen Schluss."
+				]
+			},
+			"2": {
+				"language": "en",
+				"prompt": "Erstelle eine neue Bildergeschichte zum Thema „Missed the match“. Lass im zweiten Bild einen Hinweis auftauchen, der die Lösung im dritten Bild verständlich macht.",
+				"model": "The gate is closed when Amir arrives. He reads a sign: today's match is on the school field. Amir finds his team at the school field just in time.",
+				"criteria": [
+					"Plane drei sichtbare Schritte.",
+					"Baue einen verständlichen Hinweis ein.",
+					"Erkläre in der Schlusszeile das Ergebnis."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "What should the first picture show?",
+					"before": "",
+					"after": "",
+					"options": [
+						"a problem",
+						"the final result",
+						"only the title"
+					],
+					"answer": "a problem",
+					"explanation": "„First“ führt das Problem ein."
+				},
+				{
+					"label": "What does a caption add?",
+					"before": "",
+					"after": "",
+					"options": [
+						"a short explanation under the picture",
+						"another unrelated story",
+						"the price of the camera"
+					],
+					"answer": "a short explanation under the picture",
+					"explanation": "Eine Bildunterschrift erklärt das Bild kurz."
+				},
+				{
+					"label": "What should you do before photographing another person?",
+					"before": "",
+					"after": "",
+					"options": [
+						"ask first",
+						"post the photo immediately",
+						"hide their name only afterwards"
+					],
+					"answer": "ask first",
+					"explanation": "Die Anleitung verlangt, vorher zu fragen."
+				}
+			]
+		},
+		"takeaway": "Ordne die Bilder nach Handlung und nutze Bildunterschriften für den Zusammenhang.",
+		"materialLabel": "Anleitung für ein Filmclub-Projekt",
+		"material": "First, choose a simple problem. Draw or take a picture that shows it. Next, show what the main character tries. Add a clue that helps the reader. Finally, show the result. Write one short caption under each picture. Use drawings or ask before you take a photo of another person.",
+		"materialLanguage": "en",
+		"diagram": {
+			"title": "Ein Problem in drei Bildern",
+			"tiles": [
+				{
+					"label": "① Problem",
+					"detail": "Noor’s bus is gone."
+				},
+				{
+					"label": "② Versuch",
+					"detail": "She checks the timetable."
+				},
+				{
+					"label": "③ Ergebnis",
+					"detail": "The next bus comes soon."
+				}
+			]
+		},
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "Which caption best explains picture two?",
+			"answer": "Noor checks the timetable for the next bus.",
+			"wrong": [
+				"The End.",
+				"This project is about photography."
+			],
+			"explanation": "Bild zwei zeigt, wie Noor versucht, ihr Problem zu lösen."
+		},
+		"bindings": [
+			"E7 1.1",
+			"E7 3",
+			"E7 5"
+		]
+	},
+	{
+		"id": "e7-dictionary",
+		"stage": "methods",
+		"title": "What does fine mean here?",
+		"skill": "Wörterbuchbelege, Lautschrift und Grammatikübersichten nutzen",
+		"tracks": [
+			"R",
+			"M"
+		],
+		"paragraphs": [
+			"Ein Wort hat oft mehrere Bedeutungen. Lies im zweisprachigen Wörterbuch zuerst den Eintrag und dann ein Beispiel, das zu deinem Satz passt. „Fine sand“ bedeutet „feiner Sand“, „I'm fine“ bedeutet „mir geht es gut“. In einer Grammatikübersicht kannst du Formen wie have/has + past participle getrennt nachschlagen."
+		],
+		"sourceIds": [
+			"r7",
+			"m7"
+		],
+		"practice": [
+			{
+				"prompt": "What is “fine” in “a fine day” in German? (one word)",
+				"answers": [
+					"schön",
+					"schoen"
+				],
+				"feedback": "Hier meint „fine“ schönes Wetter oder einen schönen Tag."
+			},
+			{
+				"prompt": "Write the word with the IPA entry /laɪt/.",
+				"answers": [
+					"light"
+				],
+				"feedback": "Der Laut /aɪ/ steht im Eintrag von light."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "de",
+				"prompt": "Übersetze „a fine day“ und „a light room“ ins Deutsche. Notiere je einen Hinweis aus dem Übungseintrag.",
+				"model": "a fine day = ein schöner Tag, Beispiel 2. a light room = ein heller Raum, Adjektiv beim Raum.",
+				"criteria": [
+					"Kontrolliere das Beispiel.",
+					"Wähle die passende Bedeutung.",
+					"Notiere deinen Nachschlagehinweis."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Entscheide für „The bag is light“ und „Turn on the light“, welche deutsche Bedeutung und Wortart jeweils passt. Begründe kurz anhand der Sätze.",
+				"model": "Im ersten Satz beschreibt light die Tasche: Adjektiv, leicht. Im zweiten Satz ist the light das, was jemand anschaltet: Nomen, Licht.",
+				"criteria": [
+					"Vergleiche die Wortarten.",
+					"Beziehe dich auf den Kontext.",
+					"Übersetze beide Fälle."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Choose the meaning in “fine sand”",
+					"before": "",
+					"after": "",
+					"options": [
+						"fein",
+						"in Ordnung",
+						"schnell"
+					],
+					"answer": "fein",
+					"explanation": "Im Beispiel bezeichnet fine die Körnung."
+				},
+				{
+					"label": "Choose the meaning in “a light bag”",
+					"before": "",
+					"after": "",
+					"options": [
+						"leicht",
+						"hell",
+						"Licht"
+					],
+					"answer": "leicht",
+					"explanation": "Das Beispiel nennt das geringe Gewicht."
+				},
+				{
+					"label": "Choose the third verb form of “write”",
+					"before": "",
+					"after": "",
+					"options": [
+						"written",
+						"wrote",
+						"write"
+					],
+					"answer": "written",
+					"explanation": "Eine Grammatikbox fordert die dritte Form: written."
+				}
+			]
+		},
+		"takeaway": "Passende Bedeutung und Aussprache findest du mithilfe von Kontext, Beispielsatz und Lautschrift.",
+		"materialLabel": "Kleiner zweisprachiger Übungseintrag und Grammatikbox",
+		"material": "fine /faɪn/ Adjektiv: 1 fein (fine sand); 2 schön (a fine day); 3 in Ordnung, gut (I'm fine).\nlight /laɪt/: Nomen Licht; Adjektiv hell (a light room) oder leicht (a light bag).\nPresent perfect simple: have / has + past participle (third verb form).",
+		"materialLanguage": "en",
+		"diagram": {
+			"title": "Vom Satz zum Eintrag",
+			"tiles": [
+				{
+					"label": "Kontext",
+					"detail": "a light bag"
+				},
+				{
+					"label": "Wortart",
+					"detail": "Adjektiv"
+				},
+				{
+					"label": "Beispiel",
+					"detail": "light = leicht"
+				}
+			]
+		},
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "What is the most useful guide when a word has several meanings?",
+			"answer": "The example that fits the sentence",
+			"wrong": [
+				"The first meaning every time",
+				"The length of each definition"
+			],
+			"explanation": "Der Kontext entscheidet, welche Bedeutung passt."
+		},
+		"bindings": [
+			"E7 1.1",
+			"E7 1.2",
+			"E7 4"
+		]
+	},
+	{
+		"id": "e7-word-map",
+		"stage": "methods",
+		"title": "Build a word map",
+		"skill": "Wörter nach Thema und Wortart ordnen und um neue Zweige erweitern",
+		"tracks": [
+			"R",
+			"M"
+		],
+		"paragraphs": [
+			"Eine Mindmap verbindet ein Hauptthema mit kleineren Gruppen. Bei „film project“ passen people, places und actions. Ergänze Wortarten: „director“ ist ein Nomen, „record“ ein Verb im Satz „We record the sound“. Übe, indem du zu jedem Zweig aus dem Kopf ein Beispiel sagst."
+		],
+		"sourceIds": [
+			"r7",
+			"m7"
+		],
+		"practice": [
+			{
+				"prompt": "In “We record the sound”, what is the verb? (one word)",
+				"answers": [
+					"record"
+				],
+				"feedback": "Das Verb bezeichnet hier das Aufnehmen."
+			},
+			{
+				"prompt": "Which word names the ingredients list and instructions for cooking? (one word)",
+				"answers": [
+					"recipe"
+				],
+				"feedback": "Ein Rezept heißt „recipe“."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Ergänze die Film-Mindmap um je ein englisches Wort für eine Person, einen Ort und eine Tätigkeit.",
+				"model": "People: actor. Places: studio. Actions: write a script.",
+				"criteria": [
+					"Nutze drei verschiedene Gruppen.",
+					"Wähle englische Einträge.",
+					"Schreibe eine Tätigkeit als Wortverbindung."
+				]
+			},
+			"2": {
+				"language": "en",
+				"prompt": "Entwirf einen neuen Zweig „museum visit“. Nenne zwei Nomen, zwei Tätigkeiten und einen Satz, in dem du eine Tätigkeit verwendest.",
+				"model": "Nouns: visitor, exhibition. Actions: buy a ticket, look at a painting. We buy a ticket before we look at the paintings.",
+				"criteria": [
+					"Ergänze ein neues Themenfeld.",
+					"Trenne Nomen und Tätigkeiten.",
+					"Benutze einen Baustein in einem Satz."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Choose a person for the film branch",
+					"before": "",
+					"after": "",
+					"options": [
+						"director",
+						"camera",
+						"ingredients"
+					],
+					"answer": "director",
+					"explanation": "Director bezeichnet die Regieperson."
+				},
+				{
+					"label": "Choose an action for the food branch",
+					"before": "",
+					"after": "",
+					"options": [
+						"cook",
+						"recipe",
+						"team"
+					],
+					"answer": "cook",
+					"explanation": "Cook ist hier das Verb für „kochen“."
+				},
+				{
+					"label": "Choose a sports noun",
+					"before": "",
+					"after": "",
+					"options": [
+						"tournament",
+						"compete",
+						"record a scene"
+					],
+					"answer": "tournament",
+					"explanation": "Tournament bezeichnet ein Turnier."
+				}
+			]
+		},
+		"takeaway": "Ordne erst nach Thema, dann nach Funktion. Überprüfe jeden Eintrag mit einem Beispielsatz.",
+		"materialLabel": "Wortliste für das Schulfest",
+		"material": "Film project: director · camera · record a scene · edit a clip · music room. Food stand: recipe · cook · ingredients. Sports event: team · compete · tournament.",
+		"materialLanguage": "en",
+		"diagram": {
+			"title": "Mindmap · School project",
+			"tiles": [
+				{
+					"label": "Film",
+					"detail": "director / record a scene"
+				},
+				{
+					"label": "Food",
+					"detail": "recipe / cook"
+				},
+				{
+					"label": "Sport",
+					"detail": "team / compete"
+				}
+			]
+		},
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "Which branch could include “edit a clip”?",
+			"answer": "Film project → actions",
+			"wrong": [
+				"Sports event → places",
+				"Food stand → people"
+			],
+			"explanation": "Edit a clip ist eine Tätigkeit bei der Filmproduktion."
+		},
+		"bindings": [
+			"E7 1.2",
+			"E7 4",
+			"E7 5"
+		]
+	},
+	{
+		"id": "e7-learn-plan",
+		"stage": "methods",
+		"title": "Choose, practise, check",
+		"skill": "Eine passende Lernstrategie wählen und Fortschritt prüfen",
+		"tracks": [
+			"R",
+			"M"
+		],
+		"paragraphs": [
+			"Setze dir ein kleines Ziel: „Ich verstehe drei Details einer Durchsage.“ Wähle danach die Übung: Hörtext zweimal hören und Schlüsselwörter notieren. Für Wortschatz deckst du die Übersetzung ab und bildest einen eigenen Satz. Vergleiche bei Grammatik Formen, etwa „interessanter als“ und „more interesting than“."
+		],
+		"sourceIds": [
+			"r7",
+			"m7"
+		],
+		"practice": [
+			{
+				"prompt": "Complete: more interesting ___ the film. (one word)",
+				"answers": [
+					"than"
+				],
+				"feedback": "„Als“ in diesem Vergleich heißt than."
+			},
+			{
+				"prompt": "What do you listen for first: topic or every detail? (one word)",
+				"answers": [
+					"topic"
+				],
+				"feedback": "Beim ersten Hören geht es um das Thema."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "de",
+				"prompt": "Wähle eine Fertigkeit und plane zehn Minuten. Notiere auf Deutsch Ziel, Vorgehen und einen kurzen Selbsttest.",
+				"model": "Hören: Ich will den Treffpunkt verstehen. Ich höre zweimal. Dann notiere ich den Ort ohne Transkript und prüfe ihn danach.",
+				"criteria": [
+					"Wähle ein kleines Ziel.",
+					"Plane eine passende Übung.",
+					"Beschreibe einen Selbsttest."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Du verwechselst „much“ und „many“ und überhörst oft Uhrzeiten. Plane zwei unterschiedliche kurze Übungen. Formuliere je ein Kriterium für deinen Fortschritt.",
+				"model": "Grammatik: Ich sortiere fünf Beispiele in zählbar und nicht zählbar und ergänze in mindestens vier Fällen die passende Form. Hören: Ich notiere nach zweimaligem Hören drei richtige Uhrzeiten.",
+				"criteria": [
+					"Plane pro Problem eine Übung.",
+					"Setze überprüfbare Kriterien.",
+					"Nutze unterschiedliche Strategien."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Train understanding announcements",
+					"before": "",
+					"after": "",
+					"options": [
+						"listen for times and write them down",
+						"copy a list silently only",
+						"read the answer before listening every time"
+					],
+					"answer": "listen for times and write them down",
+					"explanation": "Hördetails übst du mit einem Hörtext und einem konkreten Auftrag."
+				},
+				{
+					"label": "Check if you can recall a word",
+					"before": "",
+					"after": "",
+					"options": [
+						"cover the answer and try to say it",
+						"read both sides at the same time",
+						"copy the word without checking later"
+					],
+					"answer": "cover the answer and try to say it",
+					"explanation": "Du prüfst deinen Abruf, indem du die Lösung abdeckst."
+				},
+				{
+					"label": "Contrast languages",
+					"before": "",
+					"after": "",
+					"options": [
+						"interessanter als → more interesting than",
+						"interessanter als → interestinger as",
+						"interessanter als → the interest"
+					],
+					"answer": "interessanter als → more interesting than",
+					"explanation": "Im Englischen bildet interesting die Steigerung mit more."
+				}
+			]
+		},
+		"takeaway": "Wähle die Übung passend zur Fertigkeit. Prüfe am Ende, was du selbst abrufen oder anwenden kannst.",
+		"materialLabel": "Drei Wege für eine kurze Lernwoche",
+		"material": "Listening: listen for the topic, then for the times. Words: cover the translation and make a sentence. Grammar: compare “interessanter als” with “more interesting than”, then write a new example.",
+		"materialLanguage": "en",
+		"diagram": {
+			"title": "Ein kleiner Lernkreislauf",
+			"tiles": [
+				{
+					"label": "Ziel wählen",
+					"detail": "Was will ich können?"
+				},
+				{
+					"label": "Passend üben",
+					"detail": "Hören · Abrufen · Vergleichen"
+				},
+				{
+					"label": "Selbst prüfen",
+					"detail": "Was klappt in einem neuen Beispiel?"
+				}
+			]
+		},
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "Which is a checkable learning goal?",
+			"answer": "I can note three times from an announcement.",
+			"wrong": [
+				"I'll do some English.",
+				"I'll look at the whole book."
+			],
+			"explanation": "Ein konkretes Ziel lässt sich durch Handeln überprüfen."
+		},
+		"bindings": [
+			"E7 4",
+			"E7 5"
+		]
+	},
+	{
+		"id": "e7-word-parts",
+		"stage": "methods",
+		"title": "Re-, un- and -er",
+		"skill": "Präfixe und Suffixe zur Worterschließung und Ordnung nutzen",
+		"tracks": [
+			"M"
+		],
+		"paragraphs": [
+			"Ein Präfix steht vor dem Wortstamm, ein Suffix danach. Re- kann „wieder“ bedeuten, wie in rewrite. Un- kann ein Adjektiv verneinen, wie in unhappy. Das Suffix -er kann eine Person bezeichnen, etwa writer. Prüfe im Satz, welche Deutung passt: „corner“ ist zum Beispiel keine Person."
+		],
+		"sourceIds": [
+			"m7"
+		],
+		"practice": [
+			{
+				"prompt": "Which prefix in “replay” means “again”? (two letters)",
+				"answers": [
+					"re",
+					"re-"
+				],
+				"feedback": "Re- steht vor dem Stamm play."
+			},
+			{
+				"prompt": "Write the negative adjective made from happy. (one word)",
+				"answers": [
+					"unhappy"
+				],
+				"feedback": "Un- steht vor happy."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "de",
+				"prompt": "Ordne rewrite, writer und unhappy in Präfix + Stamm oder Stamm + Suffix. Gib deutsche Bedeutungen an.",
+				"model": "re + write: umschreiben. write + -er: Autor oder Autorin, das stumme e wird nicht zusätzlich geschrieben. un + happy: unglücklich.",
+				"criteria": [
+					"Markiere die Bausteine.",
+					"Nenne die Wortart oder Funktion.",
+					"Gib eine passende Bedeutung an."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Erschließe „reread“ im Satz „We reread the text before filming.“ Erkläre danach „reader“ im Satz „The reader checks the script“ mit der Wortfamilie.",
+				"model": "Reread heißt noch einmal lesen. Re- bedeutet wieder. Reader ist hier die Person, die das Skript liest; -er steht nach read.",
+				"criteria": [
+					"Zerlege beide Wörter.",
+					"Nutze den Satz als Hinweis.",
+					"Unterscheide Tätigkeit und Person."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Find the word meaning “write again”",
+					"before": "",
+					"after": "",
+					"options": [
+						"rewrite",
+						"writer",
+						"unhappy"
+					],
+					"answer": "rewrite",
+					"explanation": "Re- bedeutet hier „noch einmal“."
+				},
+				{
+					"label": "Find a person",
+					"before": "",
+					"after": "",
+					"options": [
+						"player",
+						"replay",
+						"unhappy"
+					],
+					"answer": "player",
+					"explanation": "Player ist in dieser Wortfamilie die Person."
+				},
+				{
+					"label": "Find a negative adjective",
+					"before": "",
+					"after": "",
+					"options": [
+						"unhappy",
+						"writer",
+						"replay"
+					],
+					"answer": "unhappy",
+					"explanation": "Un- verändert happy zum Gegenteil."
+				}
+			]
+		},
+		"takeaway": "Zerlege das Wort. Prüfe die vermutete Bedeutung an Wortart und Kontext.",
+		"materialLabel": "Wortfamilien im Filmclub",
+		"material": "write → rewrite → writer. happy → unhappy. play → replay → player. The writer will rewrite the last scene. The audience can replay the clip.",
+		"materialLanguage": "en",
+		"diagram": {
+			"title": "Wortbausteine",
+			"tiles": [
+				{
+					"label": "Präfix",
+					"detail": "re + write → noch einmal schreiben"
+				},
+				{
+					"label": "Stamm",
+					"detail": "write → schreiben"
+				},
+				{
+					"label": "Suffix",
+					"detail": "write + -er → writer: schreibende Person"
+				}
+			]
+		},
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "Why is the sentence useful when you split up a word?",
+			"answer": "It helps check whether the guessed meaning fits.",
+			"wrong": [
+				"It makes all words mean the same thing.",
+				"It proves every word ending in -er names a person."
+			],
+			"explanation": "Wortbausteine liefern Hinweise, die du im Satz prüfst."
+		},
+		"bindings": [
+			"E7 4"
+		]
+	}
+]
