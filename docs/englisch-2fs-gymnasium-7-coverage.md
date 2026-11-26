@@ -35,7 +35,7 @@ The [proposal](../englisch-2fs-gymnasium-7/replaces-de-by.json) uses the grade 7
 | --- | --- |
 | J01 | The [approved first-language mapping](../englisch-gymnasium-7/replaces-de-by.json) already allocates J01 to `e7-since-for-check`. |
 | J02 | Keep active. The original combines several tense uses, duration, and two translations. |
-| J03 | Proposal A for a later transfer to `e7s-modals-check` (`01M8997DG01Y7Q9HETYYXD52DA`). Both cards ask for `had to` to express a past obligation. Thomas requested the proposal in Codex on 25 November 2026. |
+| J03 | Approved on 26 November 2026 for transfer to `e7s-modals-check` (`01M8997DG01Y7Q9HETYYXD52DA`). Both cards recall `had to` for a past obligation. |
 | J04 | Keep active. The original combines modal substitutes with conditionals I and II. Conditional II belongs to grade 8 on this track. |
 
-The entry for J03 remains `proposal-only` with `approved: null`. A future migration needs explicit approval and a test for learners who already hold both cards. The grade 8 legacy fixture remains part of the separate grade 8 review.
+Cell version `2026.11.2` declares the approved J03 transfer. The Grade 8 legacy fixture stays in the separate Grade 8 scope.
