@@ -61,8 +61,8 @@ The ZAM inventory at
 [`6ecf3bcae70f46914bacabad25e5cff992a106bb`](https://github.com/zam-os/zam/tree/6ecf3bcae70f46914bacabad25e5cff992a106bb)
 contains no `de-by` Mittelschule Informatik cell for grades 6, 7 or 8. The
 [migration inventory](../informatik-mittelschule-7/replaces-de-by.json) has
-zero sources and zero history transfers. The following cells have related
-topics and await a scope decision by Thomas.
+zero sources and zero history transfers. On 2026-11-26, Thomas confirmed
+that the following three cells stay with their respective school types.
 
 | Legacy cell | Overlap in this package |
 | --- | --- |
