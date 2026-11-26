@@ -54,13 +54,18 @@ describe("LehrplanPLUS Informatik R7 and M7", () => {
       }
       for (const row of [...rows, ...contents]) {
         expect(row.lessons.length).toBeGreaterThan(0);
-        const modules = row.lessons.map((id) => findLessonById(id)?.lesson.module);
-        expect(modules).toContain(row.lb);
-        expect(modules.every((module, i) => module === row.lb ||
-          (row.lb === "2" && row.lessons[i] === "ms7-bildrechte"))).toBe(true);
+        const lessons = row.lessons.map((id) => findLessonById(id)?.lesson);
+        expect(lessons.map((lesson) => lesson?.module)).toContain(row.lb);
+        for (const lesson of lessons) expect(lesson?.curriculumModules, lesson?.id).toContain(row.lb);
       }
       expect(new Set(rows.flatMap((row) => row.lessons))).toEqual(new Set(LESSON_IDS));
     }
+  });
+
+  it("names both Lernbereiche on the image-rights lesson", () => {
+    const lesson = findLessonById("ms7-bildrechte")!.lesson;
+    expect(lesson.curriculumModules).toEqual(["1", "2"]);
+    expect(lesson.lehrplan).toBe("R7 und M7 · LB 1 · Digitaler Informationsaustausch / LB 2 · Datenverarbeitung");
   });
 
   it("resolves each Academy link to a lesson and handles navigation at both ends", () => {

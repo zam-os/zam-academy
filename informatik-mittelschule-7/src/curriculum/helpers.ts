@@ -64,6 +64,7 @@ export function cases(id: string, guided: ChoiceCase[], transfer: ChoiceCase[]):
 
 interface LessonInput {
   id: string;
+  additionalModules?: ModuleCode[];
   title: string;
   subtitle: string;
   why: string;
@@ -91,6 +92,8 @@ export function lesson(
   stepNumber: number,
   input: LessonInput,
 ): Lesson {
+  const curriculumModules = [module, ...(input.additionalModules ?? [])];
+  const moduleLabels = curriculumModules.map((code) => `LB ${code} · ${MODULE_TITLES[code]}`);
   return {
     id: input.id,
     tracks: ["R", "M"],
@@ -99,7 +102,8 @@ export function lesson(
     title: input.title,
     subtitle: input.subtitle,
     module,
-    lehrplan: `R7 und M7 · LB ${module} · ${MODULE_TITLES[module]}`,
+    curriculumModules,
+    lehrplan: `R7 und M7 · ${moduleLabels.join(" / ")}`,
     whyItMatters: input.why,
     explanationHtml: input.html,
     formulas: [

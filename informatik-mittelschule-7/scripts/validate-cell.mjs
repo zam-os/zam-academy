@@ -1,5 +1,5 @@
-// Uses a disposable library only. Verify new cards, exact lesson links and
-// an idempotent reinstall without changing any saved card state.
+// Uses a disposable library only. Verify new cards and exact lesson links,
+// then check that reinstalling preserves tokens, card state and a review.
 import assert from "node:assert/strict";
 import { mkdtempSync, readFileSync, rmSync } from "node:fs";
 import { tmpdir } from "node:os";
@@ -36,18 +36,31 @@ try {
 	const ids = tile.atoms.flatMap((atom) =>
 		atom.practice_items.map((item) => item.id),
 	);
-	for (const id of ids) await zam.ensureCard(db, id, user);
-	const cardsBefore = await db.prepare("SELECT * FROM cards ORDER BY id").all();
-	assert.equal(cardsBefore.length, ids.length);
+	const cards = [];
+	for (const id of ids) cards.push(await zam.ensureCard(db, id, user));
+	await zam.evaluateRating(db, {
+		cardId: cards[0].id,
+		tokenId: ids[0],
+		userId: user,
+		rating: 3,
+		answerFormat: "recall",
+	});
+	const snapshot = async () => ({
+		tokens: await db.prepare("SELECT * FROM tokens ORDER BY id").all(),
+		cards: await db.prepare("SELECT * FROM cards ORDER BY id").all(),
+		reviews: await db.prepare("SELECT * FROM review_logs ORDER BY id").all(),
+	});
+	const before = await snapshot();
+	assert.equal(before.cards.length, ids.length);
+	assert.equal(before.reviews.length, 1);
 	await zam.installKvtTile(db, tile);
-	const cardsAfter = await db.prepare("SELECT * FROM cards ORDER BY id").all();
-	assert.deepEqual(cardsAfter, cardsBefore);
+	assert.deepEqual(await snapshot(), before);
 	for (const item of tile.atoms.flatMap((atom) => atom.practice_items)) {
 		const token = await zam.getTokenById(db, item.id);
 		assert.equal(token.source_link, item.source_link);
 	}
 	console.log(
-		`ok: ${tile.atoms.length} atoms / ${ids.length} cards installed and verified idempotently.`,
+		`ok: ${tile.atoms.length} atoms / ${ids.length} cards installed; reinstall preserved tokens, scheduling and review history.`,
 	);
 } finally {
 	if (db) await db.close();

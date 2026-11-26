@@ -62,6 +62,7 @@ const lessons = [
   }),
   lesson(id, "1", 3, {
     id: "ms7-bildrechte",
+    additionalModules: ["2"],
     title: "Bilder mit Erlaubnis teilen",
     subtitle: "Urheberrecht, Lizenzen und Rechte am eigenen Bild",
     why: "Bei einem Foto kann sowohl die Person hinter der Kamera als auch die Person vor der Kamera Rechte haben.",

@@ -212,9 +212,11 @@ export interface Lesson {
   stepNumber: number;
   title: string;
   subtitle: string;
-  /** The Lernbereich of Informatik 7 Mittelschule, e.g. "1", "2" or "3". */
+  /** The Lernbereich that gives this lesson its stage in the learning path. */
   module: ModuleCode;
-  /** Where LehrplanPLUS places it, e.g. "Inf7 LB 1 Digitaler Informationsaustausch". */
+  /** Every Lernbereich this lesson contributes to. */
+  curriculumModules: readonly ModuleCode[];
+  /** Learner-facing LehrplanPLUS label. */
   lehrplan: string;
   whyItMatters: string;
   explanationHtml: string;

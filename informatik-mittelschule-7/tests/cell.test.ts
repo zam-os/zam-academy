@@ -24,6 +24,7 @@ type CellItem = {
   source_link: string;
   replaces?: string[];
   fast_check?: { options: string[]; correct_index: number };
+  choice_distractors?: Array<{ text: string; reason: string }>;
 };
 
 const atoms = cell.atoms;
@@ -55,6 +56,8 @@ describe("ZAM cell zam-academy:informatik-mittelschule-7", () => {
       const lessonId = must(parseTrainingDeepLink(new URL(atom.source_link).hash).lessonId);
       const { lesson, stage } = must(findLessonById(lessonId));
       expect(atom.slug).toBe(lesson.id);
+      expect(atom.atom_uri).toBe(`urn:zam:atom:${atom.id}`);
+      expect(atom.namespace).toBe("zam-academy-informatik-mittelschule-7");
       expect(atom.title).toBe(lesson.title);
       expect(atom.practice_items).toHaveLength(3);
       expect(atom.practice_items.some((item) => item.tier === "tier1_fast"), atom.slug).toBe(true);
@@ -68,18 +71,18 @@ describe("ZAM cell zam-academy:informatik-mittelschule-7", () => {
         "3": "Programmieren",
       };
       const official = atom.curricula.filter((entry) => entry.provider === "lehrplanplus-bayern");
-      expect(official).toEqual(["R", "M"].map((track) => (
-        {
+      expect(official).toEqual(lesson.curriculumModules.flatMap((module) =>
+        lesson.tracks.map((track) => ({
           provider: "lehrplanplus-bayern",
           school_type: "mittelschule",
           grade: 7,
           track,
           subject: "informatik",
-          topic_code: `lb${lesson.module}`,
-          topic_title: topicTitles[lesson.module],
+          topic_code: `lb${module}`,
+          topic_title: topicTitles[module],
           exam_relevant: false,
-        }
-      )));
+        })),
+      ));
       for (const prerequisite of atom.prerequisites) expect(atomIds.has(prerequisite.atom_id)).toBe(true);
       for (const item of atom.practice_items as unknown as CellItem[]) {
         expect(item.source_link).toBe(lessonLink(lesson.id));
@@ -96,6 +99,13 @@ describe("ZAM cell zam-academy:informatik-mittelschule-7", () => {
           item[`${field}_segments`] !== undefined,
         );
       }
+      if (item.choice_distractors !== undefined) {
+        expect(item.choice_distractors, item.slug).toHaveLength(2);
+        for (const { text, reason } of item.choice_distractors) {
+          expect(text.trim(), item.slug).not.toBe("");
+          expect(reason.trim(), item.slug).not.toBe("");
+        }
+      }
       if (item.tier === "tier1_fast") {
         expect(item.fast_check?.options).toHaveLength(2);
         expect(item.fast_check?.correct_index).toBe(0);
@@ -106,6 +116,14 @@ describe("ZAM cell zam-academy:informatik-mittelschule-7", () => {
         expect(item.tier).toBe("tier2_synthesis");
         expect(must(item.sample_solution).length, item.slug).toBeGreaterThan(95);
       }
+    }
+  });
+
+  it("writes endpoint coordinates as unambiguous pairs", () => {
+    const item = must(items.find(({ slug }) => slug === "ms7-vektor-objekte-endpunkt"));
+    for (const point of ["(2 | 3)", "(8 | 3)", "(8 | 5)"]) {
+      expect(item.question).toContain(point);
+      expect(item.sample_solution).toContain(point);
     }
   });
 
