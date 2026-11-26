@@ -147,6 +147,17 @@ describe("Antworten prüfen", () => {
 		expect(checkAnswer(t, "Hunt")).toEqual({ correct: false, hint: "Verlängere!" });
 		expect(normaliseAnswer("a  b")).toBe("a b");
 	});
+	it("treats imperative direct speech with exclamation mark and accepts ASCII quotes", () => {
+		const speechTasks = tasks("woertliche-rede", 2).filter((x) =>
+			x.key.startsWith("umschreiben:") && x.material?.includes("Packt eure Hefte ein"),
+		);
+		expect(speechTasks.length).toBeGreaterThan(0);
+		for (const speechTask of speechTasks) {
+			expect(speechTask.material).toBe("„Packt eure Hefte ein!“, sagt der Lehrer.");
+			expect(checkAnswer(speechTask, 'Der Lehrer sagt: "Packt eure Hefte ein!"').correct).toBe(true);
+			expect(checkAnswer(speechTask, 'Der Lehrer sagt: "Packt eure Hefte ein."').correct).toBe(false);
+		}
+	});
 	it("underlines marked parts and escapes the rest", () => {
 		expect(markup("Ich sehe [[den <Hund>]].", esc)).toBe('Ich sehe <u class="mark">den &lt;Hund&gt;</u>.');
 	});
