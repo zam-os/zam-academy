@@ -1,0 +1,3936 @@
+{
+	"$schema": "https://zam.app/schemas/v1/kvt-tile.json",
+	"tile_id": "zam-academy:latein-gymnasium-7-l2",
+	"version": "2026.11.1",
+	"title": "Latein 7 (2. Fremdsprache) Gymnasium (ZAM Academy)",
+	"description": "Latein als 2. Fremdsprache (L2) am Gymnasium Bayern: 40 Lektionen mit interaktiven Schaubildern und 8 Sprach-/Kulturmodellen, 120 Entdeckerzielen, 80 zweistufigen Aufgaben und 120 verknüpften ZAM-Lernkarten nach LehrplanPLUS Bayern.",
+	"publisher": "ZAM Academy",
+	"sources": [
+		{
+			"uri": "https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/7/latein/2-fremdsprache",
+			"label": "ISB · LehrplanPLUS Bayern: Latein 7 (2. Fremdsprache), Gymnasium",
+			"checked": "2026-11-26"
+		},
+		{
+			"uri": "https://www.lehrplanplus.bayern.de/fachprofil/gymnasium/latein",
+			"label": "ISB · LehrplanPLUS Bayern: Fachprofil Latein, Gymnasium",
+			"checked": "2026-11-26"
+		},
+		{
+			"uri": "https://www.antike-am-koenigsplatz.mwn.de/",
+			"label": "Staatliche Antikensammlungen und Glyptothek München · Antike am Königsplatz",
+			"checked": "2026-11-26"
+		},
+		{
+			"uri": "https://www.archaeologie.bayern/",
+			"label": "Archäologische Staatssammlung München · Römer in Bayern",
+			"checked": "2026-11-26"
+		},
+		{
+			"uri": "https://www.apc-kempten.de/",
+			"label": "Archäologischer Park Cambodunum (APC) Kempten",
+			"checked": "2026-11-26"
+		}
+	],
+	"atoms": [
+		{
+			"id": "01M8B73BPRDNR4TZ22J4DJ3WKS",
+			"atom_uri": "urn:zam:atom:01M8B73BPRDNR4TZ22J4DJ3WKS",
+			"namespace": "zam-academy-latein-gymnasium-7-l2",
+			"slug": "l7-u-deklination",
+			"title": "Die u-Deklination (4. Deklination)",
+			"domain": "latein/nomina",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-u-deklination",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-7-l2",
+					"topic_code": "nomina",
+					"topic_title": "Deklinationen, Pronomina & Zahlen"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb2.2-nomina",
+					"topic_title": "Substantive auf -us und -ū in allen Kasus sicher bestimmen und von der o-Deklination trennen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb2.2-kategorien",
+					"topic_title": "Substantive auf -us und -ū in allen Kasus sicher bestimmen und von der o-Deklination trennen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb2.2-bilden",
+					"topic_title": "Substantive auf -us und -ū in allen Kasus sicher bestimmen und von der o-Deklination trennen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8B73BPSQNRJRAP43HRG6YP5",
+					"slug": "l7-u-deklination-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Woran erkennst du im Vokabelverzeichnis eindeutig ein Substantiv der u-Deklination (4. Deklination)?",
+					"concept": "Am Genitiv Singular auf -ūs (z. B. exercitus, -ūs).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-u-deklination",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Am Genitiv Singular auf -ūs (z. B. exercitus, -ūs).",
+							"An der Nominativendung -us (wie bei amīcus)."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8B73BPSNWRPY492C9CM7ZQX",
+					"slug": "l7-u-deklination-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welches Genus haben die beiden wichtigen Substantive ‚manus, -ūs‘ und ‚domus, -ūs‘ der u-Deklination?",
+					"concept": "Femininum (weiblich).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-u-deklination",
+					"sample_solution": "Femininum (weiblich)."
+				},
+				{
+					"id": "01M8B73BPS2CDX0V4D24M5RB6G",
+					"slug": "l7-u-deklination-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie lauten Nominativ/Akkusativ Plural und Genitiv Plural eines Neutrums der u-Deklination wie ‚cornū, -ūs‘?",
+					"concept": "Nom./Akk. Pl.: cornua; Gen. Pl.: cornuum.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-u-deklination",
+					"sample_solution": "Nom./Akk. Pl.: cornua; Gen. Pl.: cornuum."
+				}
+			]
+		},
+		{
+			"id": "01M8B73BPRQPWZJYJZM6Z44JKW",
+			"atom_uri": "urn:zam:atom:01M8B73BPRQPWZJYJZM6Z44JKW",
+			"namespace": "zam-academy-latein-gymnasium-7-l2",
+			"slug": "l7-e-deklination",
+			"title": "Die e-Deklination (5. Deklination) & 3. Deklination",
+			"domain": "latein/nomina",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-e-deklination",
+			"prerequisites": [
+				{
+					"atom_id": "01M8B73BPRDNR4TZ22J4DJ3WKS",
+					"type": "hard",
+					"rationale": "Baut in Latein 7 (L2) auf l7-u-deklination auf."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-7-l2",
+					"topic_code": "nomina",
+					"topic_title": "Deklinationen, Pronomina & Zahlen"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb2.2-nomina",
+					"topic_title": "Substantive auf -ēs (rēs, diēs, fidēs, spēs) und wichtige Sonderfälle der 3. Deklination bestimmen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb2.2-kategorien",
+					"topic_title": "Substantive auf -ēs (rēs, diēs, fidēs, spēs) und wichtige Sonderfälle der 3. Deklination bestimmen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb2.2-bilden",
+					"topic_title": "Substantive auf -ēs (rēs, diēs, fidēs, spēs) und wichtige Sonderfälle der 3. Deklination bestimmen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8B73BPSZ9KTQ243Q54B5VXB",
+					"slug": "l7-e-deklination-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welches Genus haben fast alle Substantive der e-Deklination (5. Deklination) wie rēs, fidēs und spēs?",
+					"concept": "Femininum (nur diēs ist im Grundsinn ‚Tag‘ maskulin).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-e-deklination",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Femininum (nur diēs ist im Grundsinn ‚Tag‘ maskulin).",
+							"Maskulinum (nur rēs ist feminin)."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8B73BPS89E71TJKWJ8CVYVC",
+					"slug": "l7-e-deklination-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie lauten Genitiv Plural und Dativ/Ablativ Plural von ‚rēs, reī‘ (5. Deklination)?",
+					"concept": "Gen. Pl.: rērum; Dat./Abl. Pl.: rēbus.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-e-deklination",
+					"sample_solution": "Gen. Pl.: rērum; Dat./Abl. Pl.: rēbus."
+				},
+				{
+					"id": "01M8B73BPSVSS096MNF3E7CHY3",
+					"slug": "l7-e-deklination-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wodurch unterscheiden sich ‚vīs / vim / vī‘ (Sg.) und ‚vīrēs, vīrium‘ (Pl.) von ‚vir, virī‘?",
+					"concept": "vīs (f.) bedeutet ‚Kraft/Gewalt‘, Plural vīrēs ‚Kräfte/Streitkräfte‘; vir (m.) bedeutet ‚Mann‘ (Pl. virī).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-e-deklination",
+					"sample_solution": "vīs (f.) bedeutet ‚Kraft/Gewalt‘, Plural vīrēs ‚Kräfte/Streitkräfte‘; vir (m.) bedeutet ‚Mann‘ (Pl. virī)."
+				}
+			]
+		},
+		{
+			"id": "01M8B73BPSNTCY28SQS2AQAJB6",
+			"atom_uri": "urn:zam:atom:01M8B73BPSNTCY28SQS2AQAJB6",
+			"namespace": "zam-academy-latein-gymnasium-7-l2",
+			"slug": "l7-adjektive-sonder",
+			"title": "Besondere Adjektive: dīves, pauper, vetus",
+			"domain": "latein/nomina",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-adjektive-sonder",
+			"prerequisites": [
+				{
+					"atom_id": "01M8B73BPRQPWZJYJZM6Z44JKW",
+					"type": "hard",
+					"rationale": "Baut in Latein 7 (L2) auf l7-e-deklination auf."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-7-l2",
+					"topic_code": "nomina",
+					"topic_title": "Deklinationen, Pronomina & Zahlen"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb2.2-nomina",
+					"topic_title": "Konsonantische Adjektive der 3. Deklination (dīves, pauper, vetus) sicher erkennen und kongruent verbinden",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb2.2-kategorien",
+					"topic_title": "Konsonantische Adjektive der 3. Deklination (dīves, pauper, vetus) sicher erkennen und kongruent verbinden",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb2.2-bilden",
+					"topic_title": "Konsonantische Adjektive der 3. Deklination (dīves, pauper, vetus) sicher erkennen und kongruent verbinden",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8B73BPSBSV7R1CS4MWB9NYM",
+					"slug": "l7-adjektive-sonder-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche Endungen haben die konsonantischen Adjektive dīves, pauper und vetus im Ablativ Singular und Genitiv Plural?",
+					"concept": "Abl. Sg. auf -e (dīvite, paupere, vetere) und Gen. Pl. auf -um (dīvitum, pauperum, veterum).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-adjektive-sonder",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Abl. Sg. auf -e (dīvite, paupere, vetere) und Gen. Pl. auf -um (dīvitum, pauperum, veterum).",
+							"Abl. Sg. auf -ī und Gen. Pl. auf -ium wie bei fortis."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8B73BPS158RZJQMEX93FA2T",
+					"slug": "l7-adjektive-sonder-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie lautet der Nominativ/Akkusativ Plural Neutrum von ‚vetus, veteris‘ (alt), z. B. zu ‚templa‘?",
+					"concept": "vetera (vetera templa).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-adjektive-sonder",
+					"sample_solution": "vetera (vetera templa)."
+				},
+				{
+					"id": "01M8B73BPSS5FC8RGHQJBES4BM",
+					"slug": "l7-adjektive-sonder-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie übersetzt man substantiviertes ‚dīvitēs‘ und ‚pauperum‘ im Deutschen?",
+					"concept": "dīvitēs = die Reichen; pauperum = der Armen.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-adjektive-sonder",
+					"sample_solution": "dīvitēs = die Reichen; pauperum = der Armen."
+				}
+			]
+		},
+		{
+			"id": "01M8B73BPS0252AKPXMRN315TQ",
+			"atom_uri": "urn:zam:atom:01M8B73BPS0252AKPXMRN315TQ",
+			"namespace": "zam-academy-latein-gymnasium-7-l2",
+			"slug": "l7-demonstrativa",
+			"title": "Demonstrativpronomina: hic, ille, iste · īdem, ipse",
+			"domain": "latein/nomina",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-demonstrativa",
+			"prerequisites": [
+				{
+					"atom_id": "01M8B73BPSNTCY28SQS2AQAJB6",
+					"type": "hard",
+					"rationale": "Baut in Latein 7 (L2) auf l7-adjektive-sonder auf."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-7-l2",
+					"topic_code": "nomina",
+					"topic_title": "Deklinationen, Pronomina & Zahlen"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb2.2-pronomina",
+					"topic_title": "Nähe, Ferne, Abwertung, Identität und Hervorhebung bei Demonstrativpronomina unterscheiden",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb2.2-kategorien",
+					"topic_title": "Nähe, Ferne, Abwertung, Identität und Hervorhebung bei Demonstrativpronomina unterscheiden",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb2.2-bilden",
+					"topic_title": "Nähe, Ferne, Abwertung, Identität und Hervorhebung bei Demonstrativpronomina unterscheiden",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8B73BPSYX8DF4HJDBE8QMBZ",
+					"slug": "l7-demonstrativa-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welchen Unterschied drücken die drei Demonstrativpronomina hic, iste und ille aus?",
+					"concept": "hic = dieser hier (Nähe), iste = dieser da (beim Gegenüber, oft abwertend), ille = jener dort (Ferne/berühmt).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-demonstrativa",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"hic = dieser hier (Nähe), iste = dieser da (beim Gegenüber, oft abwertend), ille = jener dort (Ferne/berühmt).",
+							"Alle drei bedeuten ohne Unterschied ‚derselbe‘."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8B73BPS1NGTKQT93NWBW38D",
+					"slug": "l7-demonstrativa-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie unterscheiden sich ‚īdem, eadem, idem‘ und ‚ipse, ipsa, ipsum‘ in ihrer Bedeutung?",
+					"concept": "īdem bedeutet ‚derselbe / der gleiche‘ (Identität), ipse bedeutet ‚selbst / persönlich‘ (Hervorhebung).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-demonstrativa",
+					"sample_solution": "īdem bedeutet ‚derselbe / der gleiche‘ (Identität), ipse bedeutet ‚selbst / persönlich‘ (Hervorhebung)."
+				},
+				{
+					"id": "01M8B73BPS9Q9SE218Y8AXT63X",
+					"slug": "l7-demonstrativa-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie lauten Genitiv und Dativ Singular von ‚hic, haec, hoc‘ in allen drei Genera?",
+					"concept": "Genitiv Singular: huius; Dativ Singular: huic.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-demonstrativa",
+					"sample_solution": "Genitiv Singular: huius; Dativ Singular: huic."
+				}
+			]
+		},
+		{
+			"id": "01M8B73BPSJKDQEFB8K60T8D94",
+			"atom_uri": "urn:zam:atom:01M8B73BPSJKDQEFB8K60T8D94",
+			"namespace": "zam-academy-latein-gymnasium-7-l2",
+			"slug": "l7-interrogativa-zahlen",
+			"title": "Fragepronomina & römische Zahlen bis 1000",
+			"domain": "latein/nomina",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-interrogativa-zahlen",
+			"prerequisites": [
+				{
+					"atom_id": "01M8B73BPS0252AKPXMRN315TQ",
+					"type": "hard",
+					"rationale": "Baut in Latein 7 (L2) auf l7-demonstrativa auf."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-7-l2",
+					"topic_code": "nomina",
+					"topic_title": "Deklinationen, Pronomina & Zahlen"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb2.2-pronomina",
+					"topic_title": "Substantivische und adjektivische Fragepronomina unterscheiden sowie Kardinalia bis 1000 und Ordinalia anwenden",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb2.2-numeralia",
+					"topic_title": "Substantivische und adjektivische Fragepronomina unterscheiden sowie Kardinalia bis 1000 und Ordinalia anwenden",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb2.2-bilden",
+					"topic_title": "Substantivische und adjektivische Fragepronomina unterscheiden sowie Kardinalia bis 1000 und Ordinalia anwenden",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8B73BPSEF4YHVG2CMVNMYKR",
+					"slug": "l7-interrogativa-zahlen-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wann verwendet man im Lateinischen ‚quis? / quid?‘ und wann ‚quī / quae / quod?‘ als Fragepronomen?",
+					"concept": "quis?/quid? steht substantivisch (allein: wer?/was?); quī/quae/quod? steht adjektivisch bei einem Substantiv (welcher?).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-interrogativa-zahlen",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"quis?/quid? steht substantivisch (allein: wer?/was?); quī/quae/quod? steht adjektivisch bei einem Substantiv (welcher?).",
+							"quis?/quid? steht nur im Plural, quī/quae/quod? nur im Singular."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8B73BPSPBQR03GSAJSHNS5F",
+					"slug": "l7-interrogativa-zahlen-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welche Werte haben die sieben römischen Zahlzeichen I, V, X, L, C, D und M?",
+					"concept": "I = 1, V = 5, X = 10, L = 50, C = 100, D = 500, M = 1000.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-interrogativa-zahlen",
+					"sample_solution": "I = 1, V = 5, X = 10, L = 50, C = 100, D = 500, M = 1000."
+				},
+				{
+					"id": "01M8B73BPSEBHJTGBBFD9MMJA2",
+					"slug": "l7-interrogativa-zahlen-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie schreibt man 490 und 940 in römischen Zahlzeichen nach der Subtraktionsregel?",
+					"concept": "490 = CDXC; 940 = CMXL.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-interrogativa-zahlen",
+					"sample_solution": "490 = CDXC; 940 = CMXL."
+				}
+			]
+		},
+		{
+			"id": "01M8B73BPSMVWVD0R17W8V8V3Q",
+			"atom_uri": "urn:zam:atom:01M8B73BPSMVWVD0R17W8V8V3Q",
+			"namespace": "zam-academy-latein-gymnasium-7-l2",
+			"slug": "l7-passiv-praesens",
+			"title": "Passiv im Präsensstamm (Präsens, Imperfekt, Futur I)",
+			"domain": "latein/passiv",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-passiv-praesens",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-7-l2",
+					"topic_code": "passiv",
+					"topic_title": "Passiv, ferre & Satzfunktionen"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb2.2-verben",
+					"topic_title": "Passivformen im Präsensstamm an den Endungen erkennen, bilden und Urheber von Mittel unterscheiden",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb2.2-bestandteile",
+					"topic_title": "Passivformen im Präsensstamm an den Endungen erkennen, bilden und Urheber von Mittel unterscheiden",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb2.2-bilden",
+					"topic_title": "Passivformen im Präsensstamm an den Endungen erkennen, bilden und Urheber von Mittel unterscheiden",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8B73BPSAR458ZF7D4YHN24W",
+					"slug": "l7-passiv-praesens-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wie lautet die vollständige Reihe der Personalendungen im Passiv des Präsensstamms (Präsens, Imperfekt, Futur I)?",
+					"concept": "-r, -ris, -tur, -mur, -minī, -ntur.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-passiv-praesens",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"-r, -ris, -tur, -mur, -minī, -ntur.",
+							"-ō, -s, -t, -mus, -tis, -nt."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8B73BPSXW32VDAET12RGNCZ",
+					"slug": "l7-passiv-praesens-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie werden beim lateinischen Passiv Personen als Urheber und Sachen als Mittel ausgedrückt?",
+					"concept": "Personen stehen mit ā/ab + Ablativ (ā magistrō), Sachen im bloßen Ablativ (verbīs).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-passiv-praesens",
+					"sample_solution": "Personen stehen mit ā/ab + Ablativ (ā magistrō), Sachen im bloßen Ablativ (verbīs)."
+				},
+				{
+					"id": "01M8B73BPSTWB544P2GJGDJ5BT",
+					"slug": "l7-passiv-praesens-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie unterscheidet sich ‚mittentur‘ von ‚mittuntur‘ bei konsonantischen Verben wie mittere?",
+					"concept": "mittentur ist 3. Pl. Futur I Passiv (sie werden geschickt werden), mittuntur ist 3. Pl. Präsens Passiv (sie werden geschickt).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-passiv-praesens",
+					"sample_solution": "mittentur ist 3. Pl. Futur I Passiv (sie werden geschickt werden), mittuntur ist 3. Pl. Präsens Passiv (sie werden geschickt)."
+				}
+			]
+		},
+		{
+			"id": "01M8B73BPSZB3SW2FA3544YXW3",
+			"atom_uri": "urn:zam:atom:01M8B73BPSZB3SW2FA3544YXW3",
+			"namespace": "zam-academy-latein-gymnasium-7-l2",
+			"slug": "l7-passiv-perfekt",
+			"title": "Passiv im Perfektstamm (Perfekt, Plusquamperfekt, Futur II)",
+			"domain": "latein/passiv",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-passiv-perfekt",
+			"prerequisites": [
+				{
+					"atom_id": "01M8B73BPSMVWVD0R17W8V8V3Q",
+					"type": "hard",
+					"rationale": "Baut in Latein 7 (L2) auf l7-passiv-praesens auf."
+				},
+				{
+					"atom_id": "01M8B73BPS17GWXJDMN42F585C",
+					"type": "hard",
+					"rationale": "Baut in Latein 7 (L2) auf l7-ppp-formen auf."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-7-l2",
+					"topic_code": "passiv",
+					"topic_title": "Passiv, ferre & Satzfunktionen"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb2.2-verben",
+					"topic_title": "Zusammengesetzte Passivformen aus PPP und esse sicher bestimmen und in KNG-Kongruenz bilden",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb2.2-bestandteile",
+					"topic_title": "Zusammengesetzte Passivformen aus PPP und esse sicher bestimmen und in KNG-Kongruenz bilden",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb2.2-bilden",
+					"topic_title": "Zusammengesetzte Passivformen aus PPP und esse sicher bestimmen und in KNG-Kongruenz bilden",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8B73BPSGMHAQCYTEP6NBDFP",
+					"slug": "l7-passiv-perfekt-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wie wird ‚Urbs capta est‘ (Perfekt Passiv: PPP + est) richtig ins Deutsche übersetzt?",
+					"concept": "Die Stadt wurde eingenommen / ist eingenommen worden (Vergangenheit).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-passiv-perfekt",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Die Stadt wurde eingenommen / ist eingenommen worden (Vergangenheit).",
+							"Die Stadt wird eingenommen (Gegenwart)."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8B73BPSC05YZ2S9K099TKS6",
+					"slug": "l7-passiv-perfekt-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Aus welchen Bausteinen bestehen Perfekt, Plusquamperfekt und Futur II Passiv im Lateinischen?",
+					"concept": "Aus dem PPP in KNG-Kongruenz zum Subjekt + Präsens (sum), Imperfekt (eram) oder Futur I (erō) von esse.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-passiv-perfekt",
+					"sample_solution": "Aus dem PPP in KNG-Kongruenz zum Subjekt + Präsens (sum), Imperfekt (eram) oder Futur I (erō) von esse."
+				},
+				{
+					"id": "01M8B73BPSCWNJJJGTPK09013E",
+					"slug": "l7-passiv-perfekt-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Warum heißt es ‚templa dēlēta sunt‘ und ‚mīlitēs missī erant‘?",
+					"concept": "Das PPP richtet sich in Kasus (Nom.), Numerus und Genus nach dem Subjekt: templa (n. Pl.) → dēlēta; mīlitēs (m. Pl.) → missī.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-passiv-perfekt",
+					"sample_solution": "Das PPP richtet sich in Kasus (Nom.), Numerus und Genus nach dem Subjekt: templa (n. Pl.) → dēlēta; mīlitēs (m. Pl.) → missī."
+				}
+			]
+		},
+		{
+			"id": "01M8B73BPSHF1R83V02C05SDTD",
+			"atom_uri": "urn:zam:atom:01M8B73BPSHF1R83V02C05SDTD",
+			"namespace": "zam-academy-latein-gymnasium-7-l2",
+			"slug": "l7-ferre-infinitive",
+			"title": "Das Verb ferre & Infinitive im Passiv",
+			"domain": "latein/passiv",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-ferre-infinitive",
+			"prerequisites": [
+				{
+					"atom_id": "01M8B73BPSMVWVD0R17W8V8V3Q",
+					"type": "hard",
+					"rationale": "Baut in Latein 7 (L2) auf l7-passiv-praesens auf."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-7-l2",
+					"topic_code": "passiv",
+					"topic_title": "Passiv, ferre & Satzfunktionen"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb2.2-verben",
+					"topic_title": "Unregelmäßige Formen von ferre (und Komposita) sowie Infinitiv Präsens und Perfekt Passiv bilden",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb2.2-bestandteile",
+					"topic_title": "Unregelmäßige Formen von ferre (und Komposita) sowie Infinitiv Präsens und Perfekt Passiv bilden",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb2.2-bilden",
+					"topic_title": "Unregelmäßige Formen von ferre (und Komposita) sowie Infinitiv Präsens und Perfekt Passiv bilden",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8B73BPSXCMPEVDFNJVMF8JC",
+					"slug": "l7-ferre-infinitive-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wie lauten die vier Stammformen des unregelmäßigen Verbs ‚ferre‘ (tragen, bringen, ertragen)?",
+					"concept": "ferre, ferō, tulī, lātum.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-ferre-infinitive",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"ferre, ferō, tulī, lātum.",
+							"ferre, ferō, ferāvī, ferātum."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8B73BPS35PSZBSNM0H1YVT6",
+					"slug": "l7-ferre-infinitive-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie bildet man den Infinitiv Präsens Passiv in der a-/e-/i-Konjugation und in der konsonantischen Konjugation (inkl. ferre)?",
+					"concept": "a-/e-/i-Konjugation auf -rī (laudārī, monērī, audīrī), konsonantische Konjugation auf -ī (dūcī, capī) und ferre → ferrī.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-ferre-infinitive",
+					"sample_solution": "a-/e-/i-Konjugation auf -rī (laudārī, monērī, audīrī), konsonantische Konjugation auf -ī (dūcī, capī) und ferre → ferrī."
+				},
+				{
+					"id": "01M8B73BPSFZ28DYZJ9EQ71NFM",
+					"slug": "l7-ferre-infinitive-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie wird der Infinitiv Perfekt Passiv gebildet, und was bedeutet ‚lātus esse‘?",
+					"concept": "PPP + esse; ‚lātus esse‘ bedeutet ‚getragen / gebracht worden sein‘.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-ferre-infinitive",
+					"sample_solution": "PPP + esse; ‚lātus esse‘ bedeutet ‚getragen / gebracht worden sein‘."
+				}
+			]
+		},
+		{
+			"id": "01M8B73BPS9AY2AKAG8WVS9QWV",
+			"atom_uri": "urn:zam:atom:01M8B73BPS9AY2AKAG8WVS9QWV",
+			"namespace": "zam-academy-latein-gymnasium-7-l2",
+			"slug": "l7-aci-passiv",
+			"title": "AcI mit Passiv-Infinitiv & Zeitverhältnisse",
+			"domain": "latein/passiv",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-aci-passiv",
+			"prerequisites": [
+				{
+					"atom_id": "01M8B73BPSHF1R83V02C05SDTD",
+					"type": "hard",
+					"rationale": "Baut in Latein 7 (L2) auf l7-ferre-infinitive auf."
+				},
+				{
+					"atom_id": "01M8B73BPSZB3SW2FA3544YXW3",
+					"type": "hard",
+					"rationale": "Baut in Latein 7 (L2) auf l7-passiv-perfekt auf."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-7-l2",
+					"topic_code": "passiv",
+					"topic_title": "Passiv, ferre & Satzfunktionen"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb2.3-konstruktionen",
+					"topic_title": "Den AcI (Wiederholung aus L6) sicher auf passive Infinitive und relative Zeitverhältnisse erweitern",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb2.3-strukturen",
+					"topic_title": "Den AcI (Wiederholung aus L6) sicher auf passive Infinitive und relative Zeitverhältnisse erweitern",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb2.3-sprachvergleich",
+					"topic_title": "Den AcI (Wiederholung aus L6) sicher auf passive Infinitive und relative Zeitverhältnisse erweitern",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8B73BPSM81ZR8CZ8B0Q6Q89",
+					"slug": "l7-aci-passiv-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wie wird der Subjektsakkusativ eines lateinischen AcI im deutschen Übersetzungssatz (‚dass‘-Satz) wiedergegeben?",
+					"concept": "Als Subjekt im Nominativ (z. B. ‚Scīmus urbem dēfendī‘ → ‚Wir wissen, dass die Stadt verteidigt wird‘).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-aci-passiv",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Als Subjekt im Nominativ (z. B. ‚Scīmus urbem dēfendī‘ → ‚Wir wissen, dass die Stadt verteidigt wird‘).",
+							"Als Akkusativobjekt im deutschen Nebensatz."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8B73BPSV7JEA0S7H95P7RQC",
+					"slug": "l7-aci-passiv-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welches Zeitverhältnis drücken Infinitiv Präsens Passiv (-rī/-ī) und Infinitiv Perfekt Passiv (PPP + esse) im AcI aus?",
+					"concept": "Infinitiv Präsens Passiv = Gleichzeitigkeit; Infinitiv Perfekt Passiv = Vorzeitigkeit zum übergeordneten Verb.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-aci-passiv",
+					"sample_solution": "Infinitiv Präsens Passiv = Gleichzeitigkeit; Infinitiv Perfekt Passiv = Vorzeitigkeit zum übergeordneten Verb."
+				},
+				{
+					"id": "01M8B73BPSHYJ3RB5YGZGG18NJ",
+					"slug": "l7-aci-passiv-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Übersetze ‚Scīvimus urbem ā mīlitibus dēfēnsam esse‘ zeitlich exakt ins Deutsche.",
+					"concept": "Wir wussten, dass die Stadt von den Soldaten verteidigt worden war.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-aci-passiv",
+					"sample_solution": "Wir wussten, dass die Stadt von den Soldaten verteidigt worden war."
+				}
+			]
+		},
+		{
+			"id": "01M8B73BPSK2HC8V5TNR3KPYXJ",
+			"atom_uri": "urn:zam:atom:01M8B73BPSK2HC8V5TNR3KPYXJ",
+			"namespace": "zam-academy-latein-gymnasium-7-l2",
+			"slug": "l7-kasus-praedikativum",
+			"title": "Prädikativum & neue Kasusfunktionen",
+			"domain": "latein/passiv",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-kasus-praedikativum",
+			"prerequisites": [
+				{
+					"atom_id": "01M8B73BPSMVWVD0R17W8V8V3Q",
+					"type": "hard",
+					"rationale": "Baut in Latein 7 (L2) auf l7-passiv-praesens auf."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-7-l2",
+					"topic_code": "passiv",
+					"topic_title": "Passiv, ferre & Satzfunktionen"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb2.3-satzglieder",
+					"topic_title": "Prädikativum, doppelten Nominativ/Akkusativ, genitivus subiectivus/obiectivus sowie Dativ des Zwecks und Vorteils übersetzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb2.3-kasus",
+					"topic_title": "Prädikativum, doppelten Nominativ/Akkusativ, genitivus subiectivus/obiectivus sowie Dativ des Zwecks und Vorteils übersetzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb2.3-stil",
+					"topic_title": "Prädikativum, doppelten Nominativ/Akkusativ, genitivus subiectivus/obiectivus sowie Dativ des Zwecks und Vorteils übersetzen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8B73BPS0XDR9C301GYYVQVD",
+					"slug": "l7-kasus-praedikativum-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wodurch unterscheidet sich der genitivus subiectivus (amor patris) vom genitivus obiectivus (amor patriae)?",
+					"concept": "Beim subiectivus führt das Genitivwort die Handlung aus (der Vater liebt), beim obiectivus ist es ihr Ziel (Liebe zur Heimat).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-kasus-praedikativum",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Beim subiectivus führt das Genitivwort die Handlung aus (der Vater liebt), beim obiectivus ist es ihr Ziel (Liebe zur Heimat).",
+							"Der genitivus obiectivus steht im Lateinischen immer im Akkusativ."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8B73BPSWV0Y3BZG7TNHERG2",
+					"slug": "l7-kasus-praedikativum-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie übersetzt man ein Prädikativum wie ‚laetī‘ in ‚Mīlitēs laetī rediērunt‘ oder ‚cōnsul‘ in ‚Cicerō cōnsul dīxit‘?",
+					"concept": "Oft als deutsches Adverb (froh) oder mit ‚als‘ (als Konsul): Die Soldaten kehrten froh zurück; Cicero sprach als Konsul.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-kasus-praedikativum",
+					"sample_solution": "Oft als deutsches Adverb (froh) oder mit ‚als‘ (als Konsul): Die Soldaten kehrten froh zurück; Cicero sprach als Konsul."
+				},
+				{
+					"id": "01M8B73BPS4ETE9CWR6B6FYAK6",
+					"slug": "l7-kasus-praedikativum-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welche beiden Dativfunktionen stecken im doppelten Dativ ‚Rōmānīs auxiliō venīre‘?",
+					"concept": "Rōmānīs = Dativ des Vorteils (für die Römer); auxiliō = Dativ des Zwecks (zu Hilfe).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-kasus-praedikativum",
+					"sample_solution": "Rōmānīs = Dativ des Vorteils (für die Römer); auxiliō = Dativ des Zwecks (zu Hilfe)."
+				}
+			]
+		},
+		{
+			"id": "01M8B73BPS17GWXJDMN42F585C",
+			"atom_uri": "urn:zam:atom:01M8B73BPS17GWXJDMN42F585C",
+			"namespace": "zam-academy-latein-gymnasium-7-l2",
+			"slug": "l7-ppp-formen",
+			"title": "Partizip Perfekt Passiv (PPP) – Bildung & Bedeutung",
+			"domain": "latein/partizip",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-ppp-formen",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-7-l2",
+					"topic_code": "partizip",
+					"topic_title": "Partizipien: PC & Ablativus absolutus"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb2.2-verben",
+					"topic_title": "Das PPP aus der 4. Stammform erkennen, nach der a-/o-Deklination beugen und vorzeitig-passivisch verstehen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb2.2-kategorien",
+					"topic_title": "Das PPP aus der 4. Stammform erkennen, nach der a-/o-Deklination beugen und vorzeitig-passivisch verstehen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb2.2-bilden",
+					"topic_title": "Das PPP aus der 4. Stammform erkennen, nach der a-/o-Deklination beugen und vorzeitig-passivisch verstehen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8B73BPS0QJQKHF23C5BK0TW",
+					"slug": "l7-ppp-formen-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche zeitliche und diathese-bezogene Bedeutung hat das lateinische PPP (Partizip Perfekt Passiv, z. B. ‚vocātus, -a, -um‘)?",
+					"concept": "Vorzeitig und Passiv (ein gerufener / nachdem er gerufen worden war).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-ppp-formen",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Vorzeitig und Passiv (ein gerufener / nachdem er gerufen worden war).",
+							"Gleichzeitig und Aktiv (ein rufender / während er ruft)."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8B73BPSVCDFW4ZV2NJ2XT75",
+					"slug": "l7-ppp-formen-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Aus welcher Stammform entsteht das PPP, und nach welcher Deklinationsklasse wird es gebeugt?",
+					"concept": "Aus der 4. Stammform (auf -tus/-sus); es wird wie bonus, -a, -um nach der a- und o-Deklination gebeugt.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-ppp-formen",
+					"sample_solution": "Aus der 4. Stammform (auf -tus/-sus); es wird wie bonus, -a, -um nach der a- und o-Deklination gebeugt."
+				},
+				{
+					"id": "01M8B73BPSJPQH85GSFZP2ZX3T",
+					"slug": "l7-ppp-formen-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie lauten die PPP-Formen (Nom. Sg. m.) von mittere, capere und vincere?",
+					"concept": "missus (geschickt), captus (gefangen/eingenommen), victus (besiegt).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-ppp-formen",
+					"sample_solution": "missus (geschickt), captus (gefangen/eingenommen), victus (besiegt)."
+				}
+			]
+		},
+		{
+			"id": "01M8B73BPSK0XJBV8PKRTNTCKR",
+			"atom_uri": "urn:zam:atom:01M8B73BPSK0XJBV8PKRTNTCKR",
+			"namespace": "zam-academy-latein-gymnasium-7-l2",
+			"slug": "l7-ppa-formen",
+			"title": "Partizip Präsens Aktiv (PPA) – Bildung & Bedeutung",
+			"domain": "latein/partizip",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-ppa-formen",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-7-l2",
+					"topic_code": "partizip",
+					"topic_title": "Partizipien: PC & Ablativus absolutus"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb2.2-verben",
+					"topic_title": "Das PPA auf -ns/-ntis nach der 3. Deklination bestimmen und gleichzeitig-aktivisch übersetzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb2.2-kategorien",
+					"topic_title": "Das PPA auf -ns/-ntis nach der 3. Deklination bestimmen und gleichzeitig-aktivisch übersetzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb2.2-bilden",
+					"topic_title": "Das PPA auf -ns/-ntis nach der 3. Deklination bestimmen und gleichzeitig-aktivisch übersetzen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8B73BPS6H7J6E30YMPPXJPD",
+					"slug": "l7-ppa-formen-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche zeitliche und diathese-bezogene Bedeutung hat das lateinische PPA (Partizip Präsens Aktiv, z. B. ‚clāmāns, -ntis‘)?",
+					"concept": "Gleichzeitig und Aktiv (rufend / während er ruft).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-ppa-formen",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Gleichzeitig und Aktiv (rufend / während er ruft).",
+							"Vorzeitig und Passiv (gerufen worden seiend)."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8B73BPSJYCB1C8JJ8YX8NVE",
+					"slug": "l7-ppa-formen-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie wird das PPA gebildet (auch bei capere und audīre), und nach welcher Deklination wird es gebeugt?",
+					"concept": "Präsensstamm + -ns/-nt- (bei i-Konj. und i-Erweiterung -iēns/-ient-: capiēns, audiēns); Deklination nach der 3. Deklination.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-ppa-formen",
+					"sample_solution": "Präsensstamm + -ns/-nt- (bei i-Konj. und i-Erweiterung -iēns/-ient-: capiēns, audiēns); Deklination nach der 3. Deklination."
+				},
+				{
+					"id": "01M8B73BPSP8RC8YK0ZQ29MEWM",
+					"slug": "l7-ppa-formen-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Auf welche Endung geht der Ablativ Singular des PPA im Ablativus absolutus oder bei erweitertem Partizip aus?",
+					"concept": "Auf -e (z. B. cōnsule dīcente = während der Konsul spricht).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-ppa-formen",
+					"sample_solution": "Auf -e (z. B. cōnsule dīcente = während der Konsul spricht)."
+				}
+			]
+		},
+		{
+			"id": "01M8B73BPSJ756P21R7DFYV2J8",
+			"atom_uri": "urn:zam:atom:01M8B73BPSJ756P21R7DFYV2J8",
+			"namespace": "zam-academy-latein-gymnasium-7-l2",
+			"slug": "l7-pc-attribut",
+			"title": "Participium coniunctum (PC) als Attribut & Relativsatz",
+			"domain": "latein/partizip",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-pc-attribut",
+			"prerequisites": [
+				{
+					"atom_id": "01M8B73BPS17GWXJDMN42F585C",
+					"type": "hard",
+					"rationale": "Baut in Latein 7 (L2) auf l7-ppp-formen auf."
+				},
+				{
+					"atom_id": "01M8B73BPSK0XJBV8PKRTNTCKR",
+					"type": "hard",
+					"rationale": "Baut in Latein 7 (L2) auf l7-ppa-formen auf."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-7-l2",
+					"topic_code": "partizip",
+					"topic_title": "Partizipien: PC & Ablativus absolutus"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb2.3-konstruktionen",
+					"topic_title": "Die Partizipialklammer durch KNG-Kongruenz abgrenzen und das PC als Attribut oder Relativsatz übersetzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb2.3-binnenaufbau",
+					"topic_title": "Die Partizipialklammer durch KNG-Kongruenz abgrenzen und das PC als Attribut oder Relativsatz übersetzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb4-analyse",
+					"topic_title": "Die Partizipialklammer durch KNG-Kongruenz abgrenzen und das PC als Attribut oder Relativsatz übersetzen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8B73BPSAZ998FV8RRRKDBNZ",
+					"slug": "l7-pc-attribut-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Woran erkennst du im lateinischen Satz, welches Substantiv das Bezugswort eines Participium coniunctum (PC) ist?",
+					"concept": "An der KNG-Kongruenz (gleicher Kasus, Numerus und Genus) zwischen Bezugswort und Partizip.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-pc-attribut",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"An der KNG-Kongruenz (gleicher Kasus, Numerus und Genus) zwischen Bezugswort und Partizip.",
+							"Daran, dass das Bezugswort immer direkt hinter dem Prädikat steht."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8B73BPSH1B9Q3Q942H5BNNE",
+					"slug": "l7-pc-attribut-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welche beiden Übersetzungsmöglichkeiten eignen sich besonders für ein attributives Participium coniunctum?",
+					"concept": "Wörtlich als Partizipialattribut (bei kurzen Blöcken) oder flüssig als Relativsatz (bei längeren PC-Klammern).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-pc-attribut",
+					"sample_solution": "Wörtlich als Partizipialattribut (bei kurzen Blöcken) oder flüssig als Relativsatz (bei längeren PC-Klammern)."
+				},
+				{
+					"id": "01M8B73BPSTBRE4GVMNRFEW7J7",
+					"slug": "l7-pc-attribut-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Übersetze ‚Cōnsul epistulam ā senātū missam recitāvit‘ als Relativsatz.",
+					"concept": "Der Konsul verlas den Brief, der vom Senat geschickt worden war.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-pc-attribut",
+					"sample_solution": "Der Konsul verlas den Brief, der vom Senat geschickt worden war."
+				}
+			]
+		},
+		{
+			"id": "01M8B73BPSNSDJQ5PAHCKW62S2",
+			"atom_uri": "urn:zam:atom:01M8B73BPSNSDJQ5PAHCKW62S2",
+			"namespace": "zam-academy-latein-gymnasium-7-l2",
+			"slug": "l7-pc-adverbiale",
+			"title": "Participium coniunctum (PC) als Adverbiale",
+			"domain": "latein/partizip",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-pc-adverbiale",
+			"prerequisites": [
+				{
+					"atom_id": "01M8B73BPSJ756P21R7DFYV2J8",
+					"type": "hard",
+					"rationale": "Baut in Latein 7 (L2) auf l7-pc-attribut auf."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-7-l2",
+					"topic_code": "partizip",
+					"topic_title": "Partizipien: PC & Ablativus absolutus"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb2.3-konstruktionen",
+					"topic_title": "Ein PC nach dem Sinnzusammenhang als Adverbialsatz (temporal, kausal, konzessiv, konditional, modal) oder Beiordnung übersetzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb2.3-binnenaufbau",
+					"topic_title": "Ein PC nach dem Sinnzusammenhang als Adverbialsatz (temporal, kausal, konzessiv, konditional, modal) oder Beiordnung übersetzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb2.3-sprachvergleich",
+					"topic_title": "Ein PC nach dem Sinnzusammenhang als Adverbialsatz (temporal, kausal, konzessiv, konditional, modal) oder Beiordnung übersetzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb2.3-stil",
+					"topic_title": "Ein PC nach dem Sinnzusammenhang als Adverbialsatz (temporal, kausal, konzessiv, konditional, modal) oder Beiordnung übersetzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb4-analyse",
+					"topic_title": "Ein PC nach dem Sinnzusammenhang als Adverbialsatz (temporal, kausal, konzessiv, konditional, modal) oder Beiordnung übersetzen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8B73BPS91K8MJQ2BQJWSWPJ",
+					"slug": "l7-pc-adverbiale-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche fünf Sinnrichtungen kann ein adverbiales Participium coniunctum als deutscher Nebensatz ausdrücken?",
+					"concept": "Temporal (nachdem/während), kausal (weil), konzessiv (obwohl), konditional (wenn) und modal (indem).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-pc-adverbiale",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Temporal (nachdem/während), kausal (weil), konzessiv (obwohl), konditional (wenn) und modal (indem).",
+							"Ausschließlich final (damit) und indirekte Frage (ob)."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8B73BPS4N86W0VC1JX9KBAA",
+					"slug": "l7-pc-adverbiale-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welche Sinnrichtung passt zu ‚Mīlitēs perīculō territī nōn fūgērunt‘, und wie lautet die Übersetzung?",
+					"concept": "Konzessiv: Obwohl die Soldaten von der Gefahr erschreckt worden waren, flohen sie nicht.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-pc-adverbiale",
+					"sample_solution": "Konzessiv: Obwohl die Soldaten von der Gefahr erschreckt worden waren, flohen sie nicht."
+				},
+				{
+					"id": "01M8B73BPSGGW2YB3TWW5D7DHR",
+					"slug": "l7-pc-adverbiale-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Was bedeutet ‚Beiordnung‘ als Übersetzungsmethode für ein Participium coniunctum?",
+					"concept": "Das Partizip wird als eigener Hauptsatz übersetzt und mit ‚und (dann)‘ oder ‚aber‘ mit dem Hauptsatz verbunden.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-pc-adverbiale",
+					"sample_solution": "Das Partizip wird als eigener Hauptsatz übersetzt und mit ‚und (dann)‘ oder ‚aber‘ mit dem Hauptsatz verbunden."
+				}
+			]
+		},
+		{
+			"id": "01M8B73BPSR2QT38DVTZ1K97XD",
+			"atom_uri": "urn:zam:atom:01M8B73BPSR2QT38DVTZ1K97XD",
+			"namespace": "zam-academy-latein-gymnasium-7-l2",
+			"slug": "l7-ablativus-absolutus",
+			"title": "Der Ablativus absolutus (Abl. abs.)",
+			"domain": "latein/partizip",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-ablativus-absolutus",
+			"prerequisites": [
+				{
+					"atom_id": "01M8B73BPSNSDJQ5PAHCKW62S2",
+					"type": "hard",
+					"rationale": "Baut in Latein 7 (L2) auf l7-pc-adverbiale auf."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-7-l2",
+					"topic_code": "partizip",
+					"topic_title": "Partizipien: PC & Ablativus absolutus"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb2.3-konstruktionen",
+					"topic_title": "Den losgelösten Ablativ mit PPP, PPA oder nominalem Prädikat sicher vom PC trennen und stilgerecht übersetzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb2.3-binnenaufbau",
+					"topic_title": "Den losgelösten Ablativ mit PPP, PPA oder nominalem Prädikat sicher vom PC trennen und stilgerecht übersetzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb2.3-sprachvergleich",
+					"topic_title": "Den losgelösten Ablativ mit PPP, PPA oder nominalem Prädikat sicher vom PC trennen und stilgerecht übersetzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb2.3-stil",
+					"topic_title": "Den losgelösten Ablativ mit PPP, PPA oder nominalem Prädikat sicher vom PC trennen und stilgerecht übersetzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb4-analyse",
+					"topic_title": "Den losgelösten Ablativ mit PPP, PPA oder nominalem Prädikat sicher vom PC trennen und stilgerecht übersetzen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8B73BPSB5BW2KAVXV48CV19",
+					"slug": "l7-ablativus-absolutus-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wodurch unterscheidet sich ein Ablativus absolutus grammatikalisch von einem Participium coniunctum (PC)?",
+					"concept": "Bezugswort und Partizip stehen losgelöst im Ablativ; das Bezugswort ist kein Satzglied des Hauptsatzes.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-ablativus-absolutus",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Bezugswort und Partizip stehen losgelöst im Ablativ; das Bezugswort ist kein Satzglied des Hauptsatzes.",
+							"Der Ablativus absolutus enthält niemals ein Partizip."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8B73BPSJ8EQ7X5562TRCRRF",
+					"slug": "l7-ablativus-absolutus-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welches Zeitverhältnis drückt ein Ablativus absolutus mit PPP (z. B. ‚urbe captā‘) vs. PPA (‚cōnsule dīcente‘) aus?",
+					"concept": "PPP = vorzeitig und passiv (nachdem die Stadt eingenommen worden war); PPA = gleichzeitig und aktiv (während der Konsul sprach).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-ablativus-absolutus",
+					"sample_solution": "PPP = vorzeitig und passiv (nachdem die Stadt eingenommen worden war); PPA = gleichzeitig und aktiv (während der Konsul sprach)."
+				},
+				{
+					"id": "01M8B73BPSXMVN6J4XFTSADNSW",
+					"slug": "l7-ablativus-absolutus-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Was ist ein nominaler Ablativus absolutus (z. B. ‚Cicerōne cōnsule‘ oder ‚Hannibale vīvō‘), und wie übersetzt man ihn?",
+					"concept": "Zwei Nomina/Adjektive im Ablativ ohne Partizip (da esse kein PPA hat): ‚als Cicero Konsul war‘ / ‚zu Lebzeiten Hannibals‘.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-ablativus-absolutus",
+					"sample_solution": "Zwei Nomina/Adjektive im Ablativ ohne Partizip (da esse kein PPA hat): ‚als Cicero Konsul war‘ / ‚zu Lebzeiten Hannibals‘."
+				}
+			]
+		},
+		{
+			"id": "01M8B73BPS52K5DT1TG41CWVW2",
+			"atom_uri": "urn:zam:atom:01M8B73BPS52K5DT1TG41CWVW2",
+			"namespace": "zam-academy-latein-gymnasium-7-l2",
+			"slug": "l7-konjunktiv-bildung",
+			"title": "Konjunktiv Präsens & Imperfekt (Aktiv & Passiv)",
+			"domain": "latein/konjunktiv",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-konjunktiv-bildung",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-7-l2",
+					"topic_code": "konjunktiv",
+					"topic_title": "Konjunktiv, Nebensätze & Zeitenfolge"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb2.2-verben",
+					"topic_title": "Die Moduszeichen des Konjunktivs Präsens und Imperfekt im Aktiv und Passiv sicher erkennen und bilden",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb2.2-bestandteile",
+					"topic_title": "Die Moduszeichen des Konjunktivs Präsens und Imperfekt im Aktiv und Passiv sicher erkennen und bilden",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb2.2-bilden",
+					"topic_title": "Die Moduszeichen des Konjunktivs Präsens und Imperfekt im Aktiv und Passiv sicher erkennen und bilden",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8B73BPS2DDFZ1ZFEKD9K6W7",
+					"slug": "l7-konjunktiv-bildung-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welches Moduszeichen kennzeichnet den Konjunktiv Präsens in der a-Konjugation und in den übrigen Konjugationen?",
+					"concept": "a-Konjugation: -e- (laudet, laudētur); e-, kons. und i-Konjugation: -a- (moneat, dūcat, audiat).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-konjunktiv-bildung",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"a-Konjugation: -e- (laudet, laudētur); e-, kons. und i-Konjugation: -a- (moneat, dūcat, audiat).",
+							"Alle Konjugationen erhalten im Konjunktiv Präsens die Silbe -bā-."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8B73BPS6PVGT0KG1WWBRQ67",
+					"slug": "l7-konjunktiv-bildung-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Nach welcher ausnahmslosen Regel wird der Konjunktiv Imperfekt (Aktiv und Passiv) aller Verben gebildet?",
+					"concept": "Vollständiger Infinitiv Präsens Aktiv + Personalendung Aktiv (-m, -s, -t …) oder Passiv (-r, -ris, -tur …), z. B. laudāret / laudārētur, esset, ferret.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-konjunktiv-bildung",
+					"sample_solution": "Vollständiger Infinitiv Präsens Aktiv + Personalendung Aktiv (-m, -s, -t …) oder Passiv (-r, -ris, -tur …), z. B. laudāret / laudārētur, esset, ferret."
+				},
+				{
+					"id": "01M8B73BPSFJFVZCP7S3MB5VEA",
+					"slug": "l7-konjunktiv-bildung-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie lauten die sechs Formen des Konjunktivs Präsens von ‚esse‘?",
+					"concept": "sim, sīs, sit, sīmus, sītis, sint.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-konjunktiv-bildung",
+					"sample_solution": "sim, sīs, sit, sīmus, sītis, sint."
+				}
+			]
+		},
+		{
+			"id": "01M8B73BPSHXR8Y9YNJ6VXMSVS",
+			"atom_uri": "urn:zam:atom:01M8B73BPSHXR8Y9YNJ6VXMSVS",
+			"namespace": "zam-academy-latein-gymnasium-7-l2",
+			"slug": "l7-konjunktiv-perfekt",
+			"title": "Konjunktiv Perfekt & Plusquamperfekt (Aktiv & Passiv)",
+			"domain": "latein/konjunktiv",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-konjunktiv-perfekt",
+			"prerequisites": [
+				{
+					"atom_id": "01M8B73BPS52K5DT1TG41CWVW2",
+					"type": "hard",
+					"rationale": "Baut in Latein 7 (L2) auf l7-konjunktiv-bildung auf."
+				},
+				{
+					"atom_id": "01M8B73BPS17GWXJDMN42F585C",
+					"type": "hard",
+					"rationale": "Baut in Latein 7 (L2) auf l7-ppp-formen auf."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-7-l2",
+					"topic_code": "konjunktiv",
+					"topic_title": "Konjunktiv, Nebensätze & Zeitenfolge"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb2.2-verben",
+					"topic_title": "Die beiden Vergangenheitskonjunktive im Aktiv und Passiv bilden und sicher von Futur II trennen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb2.2-bestandteile",
+					"topic_title": "Die beiden Vergangenheitskonjunktive im Aktiv und Passiv bilden und sicher von Futur II trennen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb2.2-bilden",
+					"topic_title": "Die beiden Vergangenheitskonjunktive im Aktiv und Passiv bilden und sicher von Futur II trennen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8B73BPS21KBVWT4PFKV519C",
+					"slug": "l7-konjunktiv-perfekt-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Woran erkennst du den Konjunktiv Plusquamperfekt Aktiv (z. B. ‚cēpisset‘) auf einen Blick?",
+					"concept": "Am Infinitiv Perfekt Aktiv auf -isse- + Personalendung (-issem, -issēs, -isset …).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-konjunktiv-perfekt",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Am Infinitiv Perfekt Aktiv auf -isse- + Personalendung (-issem, -issēs, -isset …).",
+							"Am Moduszeichen -bā- am Präsensstamm."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8B73BPS0BFFDQZVQRE71KMC",
+					"slug": "l7-konjunktiv-perfekt-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie werden Konjunktiv Perfekt Passiv und Konjunktiv Plusquamperfekt Passiv gebildet?",
+					"concept": "Konj. Perf. Pass.: PPP + sim, sīs, sit … (capta sit); Konj. Plusq. Pass.: PPP + essem, essēs, esset … (capta esset).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-konjunktiv-perfekt",
+					"sample_solution": "Konj. Perf. Pass.: PPP + sim, sīs, sit … (capta sit); Konj. Plusq. Pass.: PPP + essem, essēs, esset … (capta esset)."
+				},
+				{
+					"id": "01M8B73BPS92JZXP46AT8QVKQV",
+					"slug": "l7-konjunktiv-perfekt-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie lautet das Moduszeichen des Konjunktivs Perfekt Aktiv am Perfektstamm (z. B. laudāre, 1. und 3. Sg.)?",
+					"concept": "Perfektstamm + -eri- + Endung: laudāverim, laudāverit.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-konjunktiv-perfekt",
+					"sample_solution": "Perfektstamm + -eri- + Endung: laudāverim, laudāverit."
+				}
+			]
+		},
+		{
+			"id": "01M8B73BPSRDQDEWFB2KHG0WFN",
+			"atom_uri": "urn:zam:atom:01M8B73BPSRDQDEWFB2KHG0WFN",
+			"namespace": "zam-academy-latein-gymnasium-7-l2",
+			"slug": "l7-irrealis",
+			"title": "Konjunktiv im Hauptsatz: Der Irrealis",
+			"domain": "latein/konjunktiv",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-irrealis",
+			"prerequisites": [
+				{
+					"atom_id": "01M8B73BPSHXR8Y9YNJ6VXMSVS",
+					"type": "hard",
+					"rationale": "Baut in Latein 7 (L2) auf l7-konjunktiv-perfekt auf."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-7-l2",
+					"topic_code": "konjunktiv",
+					"topic_title": "Konjunktiv, Nebensätze & Zeitenfolge"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb2.3-modi",
+					"topic_title": "Irrealis der Gegenwart und der Vergangenheit im Hauptsatz und in Bedingungsgefügen mit sī/nisi sicher übersetzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb2.3-sprachvergleich",
+					"topic_title": "Irrealis der Gegenwart und der Vergangenheit im Hauptsatz und in Bedingungsgefügen mit sī/nisi sicher übersetzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb2.3-stil",
+					"topic_title": "Irrealis der Gegenwart und der Vergangenheit im Hauptsatz und in Bedingungsgefügen mit sī/nisi sicher übersetzen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8B73BPSMQ121W9M09KAD4M8",
+					"slug": "l7-irrealis-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welches Konjunktivtempus drückt im Hauptsatz den Irrealis der Gegenwart und welches den Irrealis der Vergangenheit aus?",
+					"concept": "Konjunktiv Imperfekt = Irrealis der Gegenwart; Konjunktiv Plusquamperfekt = Irrealis der Vergangenheit.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-irrealis",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Konjunktiv Imperfekt = Irrealis der Gegenwart; Konjunktiv Plusquamperfekt = Irrealis der Vergangenheit.",
+							"Konjunktiv Präsens = Irrealis der Gegenwart; Konjunktiv Imperfekt = Irrealis der Vergangenheit."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8B73BPSP45RYBHACGE3AWJS",
+					"slug": "l7-irrealis-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Mit welchem Wort wird der lateinische Irrealis verneint, und was bedeutet ‚nisi‘?",
+					"concept": "Verneinung immer mit ‚nōn‘ (niemals nē); ‚nisi‘ bedeutet ‚wenn nicht‘.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-irrealis",
+					"sample_solution": "Verneinung immer mit ‚nōn‘ (niemals nē); ‚nisi‘ bedeutet ‚wenn nicht‘."
+				},
+				{
+					"id": "01M8B73BPSH4AKP7NNEV6M64P4",
+					"slug": "l7-irrealis-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Übersetze ‚Sī mīlitēs celerius vēnissent, urbs servāta esset‘ korrekt ins Deutsche.",
+					"concept": "Wenn die Soldaten schneller gekommen wären, wäre die Stadt gerettet worden.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-irrealis",
+					"sample_solution": "Wenn die Soldaten schneller gekommen wären, wäre die Stadt gerettet worden."
+				}
+			]
+		},
+		{
+			"id": "01M8B73BPSJJBF6X6BSRB9DJ3R",
+			"atom_uri": "urn:zam:atom:01M8B73BPSJJBF6X6BSRB9DJ3R",
+			"namespace": "zam-academy-latein-gymnasium-7-l2",
+			"slug": "l7-ut-ne-cum",
+			"title": "Subjunktionen mit Indikativ & Konjunktiv: ut, nē, cum",
+			"domain": "latein/konjunktiv",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-ut-ne-cum",
+			"prerequisites": [
+				{
+					"atom_id": "01M8B73BPS52K5DT1TG41CWVW2",
+					"type": "hard",
+					"rationale": "Baut in Latein 7 (L2) auf l7-konjunktiv-bildung auf."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-7-l2",
+					"topic_code": "konjunktiv",
+					"topic_title": "Konjunktiv, Nebensätze & Zeitenfolge"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb2.3-nebensaetze",
+					"topic_title": "Finale und konsekutive Nebensätze sowie cum mit Indikativ und Konjunktiv anhand von Signalwörtern treffend übersetzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb2.3-modi",
+					"topic_title": "Finale und konsekutive Nebensätze sowie cum mit Indikativ und Konjunktiv anhand von Signalwörtern treffend übersetzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb2.3-strukturen",
+					"topic_title": "Finale und konsekutive Nebensätze sowie cum mit Indikativ und Konjunktiv anhand von Signalwörtern treffend übersetzen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8B73BPSNV8BZDRYBYCTZYTY",
+					"slug": "l7-ut-ne-cum-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Woran unterscheidest du einen finalen ut-Satz von einem konsekutiven ut-Satz (beide mit Konjunktiv)?",
+					"concept": "Final (damit) verneint mit ‚nē‘; konsekutiv (so dass) folgt meist auf Signalwörter wie tam/tantus/ita und verneint mit ‚ut nōn‘.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-ut-ne-cum",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Final (damit) verneint mit ‚nē‘; konsekutiv (so dass) folgt meist auf Signalwörter wie tam/tantus/ita und verneint mit ‚ut nōn‘.",
+							"Ein konsekutiver ut-Satz steht im Lateinischen immer im Indikativ."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8B73BPSXH9YCQBVQY9RD07P",
+					"slug": "l7-ut-ne-cum-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welche drei Sinnrichtungen kann ‚cum + Konjunktiv‘ im Nebensatz haben?",
+					"concept": "Erzählend-temporal (als/nachdem), kausal (weil/da) und konzessiv (obwohl — oft mit ‚tamen‘ im Hauptsatz).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-ut-ne-cum",
+					"sample_solution": "Erzählend-temporal (als/nachdem), kausal (weil/da) und konzessiv (obwohl — oft mit ‚tamen‘ im Hauptsatz)."
+				},
+				{
+					"id": "01M8B73BPSCNBQJ7TPREC49VM2",
+					"slug": "l7-ut-ne-cum-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Was bedeuten ‚ut‘ und ‚cum‘, wenn im Nebensatz der Indikativ steht?",
+					"concept": "ut + Indikativ = ‚wie‘ oder ‚sobald‘; cum + Indikativ = rein zeitlich ‚wenn / als / sooft‘.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-ut-ne-cum",
+					"sample_solution": "ut + Indikativ = ‚wie‘ oder ‚sobald‘; cum + Indikativ = rein zeitlich ‚wenn / als / sooft‘."
+				}
+			]
+		},
+		{
+			"id": "01M8B73BPS0CG1FPMBG9MVKQJ9",
+			"atom_uri": "urn:zam:atom:01M8B73BPS0CG1FPMBG9MVKQJ9",
+			"namespace": "zam-academy-latein-gymnasium-7-l2",
+			"slug": "l7-indirekte-fragen",
+			"title": "Indirekte Fragesätze & Consecutio temporum",
+			"domain": "latein/konjunktiv",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-indirekte-fragen",
+			"prerequisites": [
+				{
+					"atom_id": "01M8B73BPSHXR8Y9YNJ6VXMSVS",
+					"type": "hard",
+					"rationale": "Baut in Latein 7 (L2) auf l7-konjunktiv-perfekt auf."
+				},
+				{
+					"atom_id": "01M8B73BPSJKDQEFB8K60T8D94",
+					"type": "hard",
+					"rationale": "Baut in Latein 7 (L2) auf l7-interrogativa-zahlen auf."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-7-l2",
+					"topic_code": "konjunktiv",
+					"topic_title": "Konjunktiv, Nebensätze & Zeitenfolge"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb2.3-modi",
+					"topic_title": "Indirekte Fragesätze am Fragewort und Konjunktiv erkennen und die Zeitenfolge (consecutio temporum) sicher anwenden",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb2.3-nebensaetze",
+					"topic_title": "Indirekte Fragesätze am Fragewort und Konjunktiv erkennen und die Zeitenfolge (consecutio temporum) sicher anwenden",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb2.3-strukturen",
+					"topic_title": "Indirekte Fragesätze am Fragewort und Konjunktiv erkennen und die Zeitenfolge (consecutio temporum) sicher anwenden",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb2.3-sprachvergleich",
+					"topic_title": "Indirekte Fragesätze am Fragewort und Konjunktiv erkennen und die Zeitenfolge (consecutio temporum) sicher anwenden",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8B73BPSYZPGE7D7P8NCGBNA",
+					"slug": "l7-indirekte-fragen-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "In welchem Modus steht ein indirekter Fragesatz im Lateinischen, und was bedeuten die Partikeln ‚-ne‘ und ‚num‘ dort?",
+					"concept": "Immer im Konjunktiv; ‚-ne‘ und ‚num‘ bedeuten im indirekten Fragesatz neutral ‚ob‘.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-indirekte-fragen",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Immer im Konjunktiv; ‚-ne‘ und ‚num‘ bedeuten im indirekten Fragesatz neutral ‚ob‘.",
+							"Immer im Indikativ; ‚num‘ bedeutet dort ‚warum‘."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8B73BPSCF04FTDGJ8CW19H4",
+					"slug": "l7-indirekte-fragen-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welche beiden Konjunktive stehen nach der Consecutio temporum nach einem Haupttempus (Präsens/Futur)?",
+					"concept": "Gleichzeitigkeit: Konjunktiv Präsens (Rogō, quid faciās); Vorzeitigkeit: Konjunktiv Perfekt (Rogō, quid fēcerīs).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-indirekte-fragen",
+					"sample_solution": "Gleichzeitigkeit: Konjunktiv Präsens (Rogō, quid faciās); Vorzeitigkeit: Konjunktiv Perfekt (Rogō, quid fēcerīs)."
+				},
+				{
+					"id": "01M8B73BPSX8WMBJFGXA7WB36D",
+					"slug": "l7-indirekte-fragen-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welche beiden Konjunktive stehen nach der Consecutio temporum nach einem Nebentempus (Imperfekt/Perfekt/Plusq.)?",
+					"concept": "Gleichzeitigkeit: Konjunktiv Imperfekt (Rogāvī, quid facerēs); Vorzeitigkeit: Konjunktiv Plusquamperfekt (Rogāvī, quid fēcissēs).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-indirekte-fragen",
+					"sample_solution": "Gleichzeitigkeit: Konjunktiv Imperfekt (Rogāvī, quid facerēs); Vorzeitigkeit: Konjunktiv Plusquamperfekt (Rogāvī, quid fēcissēs)."
+				}
+			]
+		},
+		{
+			"id": "01M8B73BPSDMBQ717C5S1YQNKZ",
+			"atom_uri": "urn:zam:atom:01M8B73BPSDMBQ717C5S1YQNKZ",
+			"namespace": "zam-academy-latein-gymnasium-7-l2",
+			"slug": "l7-kontext-polysemie",
+			"title": "Mehrdeutige Wörter & Kontext erschließen",
+			"domain": "latein/wortschatz",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-kontext-polysemie",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-7-l2",
+					"topic_code": "wortschatz",
+					"topic_title": "Wortschatz, Wortbildung & Sprachbrücken"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb2.1-grundwortschatz",
+					"topic_title": "Kontextspezifische Bedeutungen mehrdeutiger Wörter wählen und feste Wendungen wörtlich wie übertragen übersetzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb2.1-polysemie",
+					"topic_title": "Kontextspezifische Bedeutungen mehrdeutiger Wörter wählen und feste Wendungen wörtlich wie übertragen übersetzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb2.1-wendungen",
+					"topic_title": "Kontextspezifische Bedeutungen mehrdeutiger Wörter wählen und feste Wendungen wörtlich wie übertragen übersetzen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8B73BPS0VPZ6YNE7NQS6WHF",
+					"slug": "l7-kontext-polysemie-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wie übersetzt man die festen lateinischen Wendungen ‚grātiās agere‘ und ‚castra pōnere‘ in angemessenem Deutsch?",
+					"concept": "grātiās agere = danken; castra pōnere = ein Lager aufschlagen.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-kontext-polysemie",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"grātiās agere = danken; castra pōnere = ein Lager aufschlagen.",
+							"grātiās agere = Geschenke tragen; castra pōnere = Burgen zerstören."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8B73BPSCX3RT3TE5CCF02ZK",
+					"slug": "l7-kontext-polysemie-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Nenne mindestens drei verschiedene Kontextbedeutungen des mehrdeutigen Substantivs ‚signum, -ī‘.",
+					"concept": "Zeichen/Signal (signum dare), Feldzeichen der Legion, Statue/Standbild (signum deae).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-kontext-polysemie",
+					"sample_solution": "Zeichen/Signal (signum dare), Feldzeichen der Legion, Statue/Standbild (signum deae)."
+				},
+				{
+					"id": "01M8B73BPS39ZSG85SH1G5YNV4",
+					"slug": "l7-kontext-polysemie-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Was bedeuten ‚cōnsilium capere‘, ‚fidem servāre‘ und ‚operam dare‘ im guten Deutsch?",
+					"concept": "einen Entschluss fassen; Wort halten / Treue bewahren; sich Mühe geben.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-kontext-polysemie",
+					"sample_solution": "einen Entschluss fassen; Wort halten / Treue bewahren; sich Mühe geben."
+				}
+			]
+		},
+		{
+			"id": "01M8B73BPSZ3VN7AEFWZY6XH0H",
+			"atom_uri": "urn:zam:atom:01M8B73BPSZ3VN7AEFWZY6XH0H",
+			"namespace": "zam-academy-latein-gymnasium-7-l2",
+			"slug": "l7-wortbildung",
+			"title": "Wortbildung: Präfixe, Suffixe & Wortfamilien",
+			"domain": "latein/wortschatz",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-wortbildung",
+			"prerequisites": [
+				{
+					"atom_id": "01M8B73BPSDMBQ717C5S1YQNKZ",
+					"type": "hard",
+					"rationale": "Baut in Latein 7 (L2) auf l7-kontext-polysemie auf."
+				},
+				{
+					"atom_id": "01M8B73BPSHF1R83V02C05SDTD",
+					"type": "hard",
+					"rationale": "Baut in Latein 7 (L2) auf l7-ferre-infinitive auf."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-7-l2",
+					"topic_code": "wortschatz",
+					"topic_title": "Wortschatz, Wortbildung & Sprachbrücken"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb2.1-ordnung",
+					"topic_title": "Unbekannte Wörter über Präfixe, Suffixe, Wortfamilien und Sachfelder systematisch erschließen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb2.1-wortbildung",
+					"topic_title": "Unbekannte Wörter über Präfixe, Suffixe, Wortfamilien und Sachfelder systematisch erschließen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb2.1-erschliessen",
+					"topic_title": "Unbekannte Wörter über Präfixe, Suffixe, Wortfamilien und Sachfelder systematisch erschließen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8B73BPSY326YA40YZ8NKQGG",
+					"slug": "l7-wortbildung-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was bedeuten die drei Komposita von ferre: afferre, auferre und referre?",
+					"concept": "afferre (ad+) = herbeibringen; auferre (ab+) = wegtragen; referre (re+) = zurückbringen / berichten.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-wortbildung",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"afferre (ad+) = herbeibringen; auferre (ab+) = wegtragen; referre (re+) = zurückbringen / berichten.",
+							"Alle drei bedeuten ohne Unterschied ‚ertragen‘."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8B73BPSF0WPVG8DHX2ZEFDA",
+					"slug": "l7-wortbildung-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welche Bedeutung tragen die Wortbildungssuffixe ‚-tor/-sor‘, ‚-tās‘ und ‚-bilis‘?",
+					"concept": "-tor/-sor = handelnde Person (victor, dēfēnsor); -tās = abstrakte Eigenschaft (lībertās); -bilis = Möglichkeit (laudābilis).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-wortbildung",
+					"sample_solution": "-tor/-sor = handelnde Person (victor, dēfēnsor); -tās = abstrakte Eigenschaft (lībertās); -bilis = Möglichkeit (laudābilis)."
+				},
+				{
+					"id": "01M8B73BPSS7XSCYWRJ2T1VBZ3",
+					"slug": "l7-wortbildung-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wodurch unterscheidet sich eine Wortfamilie von einem Sachfeld?",
+					"concept": "Eine Wortfamilie teilt denselben Wortstamm (cīvis, cīvitās, cīvīlis); ein Sachfeld verbindet Wörter eines Themas mit verschiedenen Stämmen (exercitus, castra, proelium).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-wortbildung",
+					"sample_solution": "Eine Wortfamilie teilt denselben Wortstamm (cīvis, cīvitās, cīvīlis); ein Sachfeld verbindet Wörter eines Themas mit verschiedenen Stämmen (exercitus, castra, proelium)."
+				}
+			]
+		},
+		{
+			"id": "01M8B73BPS83BBP8YEE8CBHQ0T",
+			"atom_uri": "urn:zam:atom:01M8B73BPS83BBP8YEE8CBHQ0T",
+			"namespace": "zam-academy-latein-gymnasium-7-l2",
+			"slug": "l7-aussprache-betonung",
+			"title": "Quantitäten, Betonung & verständnisgeleitetes Vortragen",
+			"domain": "latein/wortschatz",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-aussprache-betonung",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-7-l2",
+					"topic_code": "wortschatz",
+					"topic_title": "Wortschatz, Wortbildung & Sprachbrücken"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb2.1-aussprache",
+					"topic_title": "Vokallängen (Naturlänge und Positionslänge) beachten, das Pänultimagesetz anwenden und Texte sinngestaltend vortragen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb1-vortragen",
+					"topic_title": "Vokallängen (Naturlänge und Positionslänge) beachten, das Pänultimagesetz anwenden und Texte sinngestaltend vortragen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8B73BPS5KHV0DVE123M8ADK",
+					"slug": "l7-aussprache-betonung-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wie lautet das Pänultimagesetz für die Betonung lateinischer Wörter ab drei Silben?",
+					"concept": "Ist die vorletzte Silbe (Paenultima) lang, wird sie betont; ist sie kurz, trägt die drittletzte Silbe (Antepaenultima) den Ton.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-aussprache-betonung",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Ist die vorletzte Silbe (Paenultima) lang, wird sie betont; ist sie kurz, trägt die drittletzte Silbe (Antepaenultima) den Ton.",
+							"Lateinische Wörter werden immer auf der letzten Silbe betont."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8B73BPSTPM0C3RB5E94KKYQ",
+					"slug": "l7-aussprache-betonung-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welche zwei Ursachen machen eine lateinische Silbe lang (Beispiele: imperātor vs. magister)?",
+					"concept": "Naturlänge (langer Vokal oder Diphthong wie im-pe-RĀ-tor) und Positionslänge (zwei oder mehr Konsonanten nach dem Vokal wie ma-GIS-ter).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-aussprache-betonung",
+					"sample_solution": "Naturlänge (langer Vokal oder Diphthong wie im-pe-RĀ-tor) und Positionslänge (zwei oder mehr Konsonanten nach dem Vokal wie ma-GIS-ter)."
+				},
+				{
+					"id": "01M8B73BPS4M1X9HVTSG3FC3RG",
+					"slug": "l7-aussprache-betonung-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welchen Bedeutungsunterschied bewirkt die Vokallänge zwischen ‚venit‘ (kurzes e) und ‚vēnit‘ (langes ē)?",
+					"concept": "venit = er/sie kommt (Präsens); vēnit = er/sie kam (Perfekt).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-aussprache-betonung",
+					"sample_solution": "venit = er/sie kommt (Präsens); vēnit = er/sie kam (Perfekt)."
+				}
+			]
+		},
+		{
+			"id": "01M8B73BPSJM3343Y0N9PBVP2X",
+			"atom_uri": "urn:zam:atom:01M8B73BPSJM3343Y0N9PBVP2X",
+			"namespace": "zam-academy-latein-gymnasium-7-l2",
+			"slug": "l7-sprachbruecken",
+			"title": "Latein als Brücke: Deutsch, Englisch & Romanisch",
+			"domain": "latein/wortschatz",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-sprachbruecken",
+			"prerequisites": [
+				{
+					"atom_id": "01M8B73BPSZ3VN7AEFWZY6XH0H",
+					"type": "hard",
+					"rationale": "Baut in Latein 7 (L2) auf l7-wortbildung auf."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-7-l2",
+					"topic_code": "wortschatz",
+					"topic_title": "Wortschatz, Wortbildung & Sprachbrücken"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb2.1-sprachbruecken",
+					"topic_title": "Bezüge zwischen dem Lateinischen, deutschen Lehn- und Fremdwörtern, dem Englischen und romanischen Sprachen herstellen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb2.1-erschliessen",
+					"topic_title": "Bezüge zwischen dem Lateinischen, deutschen Lehn- und Fremdwörtern, dem Englischen und romanischen Sprachen herstellen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8B73BPSYRHP84GAS5G2YMWF",
+					"slug": "l7-sprachbruecken-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wodurch unterscheidet sich ein deutsches Lehnwort (z. B. Mauer ← mūrus) von einem Fremdwort (z. B. Provinz ← prōvincia)?",
+					"concept": "Ein Lehnwort ist in Lautung und Schreibung völlig eingedeutscht; ein Fremdwort lässt seine fremde Herkunft noch deutlich erkennen.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-sprachbruecken",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Ein Lehnwort ist in Lautung und Schreibung völlig eingedeutscht; ein Fremdwort lässt seine fremde Herkunft noch deutlich erkennen.",
+							"Lehnwörter stammen nur aus dem Englischen, Fremdwörter aus dem Lateinischen."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8B73BPSZTBKDFGDPYVCA5D2",
+					"slug": "l7-sprachbruecken-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welche romanischen und englischen Wörter gehen auf lateinisch ‚pāx‘ (Frieden) und ‚manus‘ (Hand) zurück?",
+					"concept": "pāx → frz. paix, span. paz, ital. pace, engl. peace/pacifist; manus → frz. main, span./ital. mano, engl. manual.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-sprachbruecken",
+					"sample_solution": "pāx → frz. paix, span. paz, ital. pace, engl. peace/pacifist; manus → frz. main, span./ital. mano, engl. manual."
+				},
+				{
+					"id": "01M8B73BPSBFENAHQM390949EG",
+					"slug": "l7-sprachbruecken-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Warum ist lateinisch ‚familia‘ ein ‚falscher Freund‘ zum deutschen Wort ‚Familie‘?",
+					"concept": "Lat. familia umfasste die gesamte Hausgemeinschaft unter dem pater familiās einschließlich der Sklaven, nicht nur Eltern und Kinder.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-sprachbruecken",
+					"sample_solution": "Lat. familia umfasste die gesamte Hausgemeinschaft unter dem pater familiās einschließlich der Sklaven, nicht nur Eltern und Kinder."
+				}
+			]
+		},
+		{
+			"id": "01M8B73BPSN4QGDJ7MBKZYVGSS",
+			"atom_uri": "urn:zam:atom:01M8B73BPSN4QGDJ7MBKZYVGSS",
+			"namespace": "zam-academy-latein-gymnasium-7-l2",
+			"slug": "l7-inschriften-abkuerzungen",
+			"title": "Latein in unserer Umwelt: Inschriften & Abkürzungen",
+			"domain": "latein/wortschatz",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-inschriften-abkuerzungen",
+			"prerequisites": [
+				{
+					"atom_id": "01M8B73BPSJKDQEFB8K60T8D94",
+					"type": "hard",
+					"rationale": "Baut in Latein 7 (L2) auf l7-interrogativa-zahlen auf."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-7-l2",
+					"topic_code": "wortschatz",
+					"topic_title": "Wortschatz, Wortbildung & Sprachbrücken"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb2.1-inschriften",
+					"topic_title": "Lateinische Inschriften, Bau- und Grabformeln sowie alltägliche Abkürzungen sicher auflösen und deuten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb3-kulturdokumente",
+					"topic_title": "Lateinische Inschriften, Bau- und Grabformeln sowie alltägliche Abkürzungen sicher auflösen und deuten",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8B73BPS6R8X15HB86FFPMAC",
+					"slug": "l7-inschriften-abkuerzungen-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wofür steht die römische Staatsformel ‚S. P. Q. R.‘?",
+					"concept": "Senātus Populusque Rōmānus (Der Senat und das römische Volk).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-inschriften-abkuerzungen",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Senātus Populusque Rōmānus (Der Senat und das römische Volk).",
+							"Sub Potestāte Quīntī Rēgis."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8B73BPS8265NYMJHTYN54K9",
+					"slug": "l7-inschriften-abkuerzungen-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie löst man die beiden im Englischen oft verwechselten Kürzel ‚e. g.‘ und ‚i. e.‘ lateinisch und deutsch auf?",
+					"concept": "e. g. = exemplī grātiā (zum Beispiel); i. e. = id est (das heißt).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-inschriften-abkuerzungen",
+					"sample_solution": "e. g. = exemplī grātiā (zum Beispiel); i. e. = id est (das heißt)."
+				},
+				{
+					"id": "01M8B73BPSTEM4Z0RRMJY49WYE",
+					"slug": "l7-inschriften-abkuerzungen-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Was bedeuten die Inschriften- und Briefkürzel ‚D. M.‘, ‚H. S. E.‘, ‚P. S.‘ und ‚etc.‘?",
+					"concept": "D. M. = Dīs Mānibus (Den Totengöttern); H. S. E. = Hīc situs/sita est (Hier liegt begraben); P. S. = post scrīptum (Nachschrift); etc. = et cētera (und so weiter).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-inschriften-abkuerzungen",
+					"sample_solution": "D. M. = Dīs Mānibus (Den Totengöttern); H. S. E. = Hīc situs/sita est (Hier liegt begraben); P. S. = post scrīptum (Nachschrift); etc. = et cētera (und so weiter)."
+				}
+			]
+		},
+		{
+			"id": "01M8B73BPSJ2V8T369Y9C8EAPP",
+			"atom_uri": "urn:zam:atom:01M8B73BPSJ2V8T369Y9C8EAPP",
+			"namespace": "zam-academy-latein-gymnasium-7-l2",
+			"slug": "l7-mittelmeerraum",
+			"title": "Das Imperium Romanum & seine Provinzen",
+			"domain": "latein/imperium",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-mittelmeerraum",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-7-l2",
+					"topic_code": "imperium",
+					"topic_title": "Mittelmeerraum, Provinzen & Antike Welt"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb1-topografie",
+					"topic_title": "Die Topografie des Mittelmeerraums, die Ausdehnung des Imperium Romanum und die Provinzverwaltung erklären",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb3-topografie",
+					"topic_title": "Die Topografie des Mittelmeerraums, die Ausdehnung des Imperium Romanum und die Provinzverwaltung erklären",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb3-ausdehnung",
+					"topic_title": "Die Topografie des Mittelmeerraums, die Ausdehnung des Imperium Romanum und die Provinzverwaltung erklären",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb3-provinz",
+					"topic_title": "Die Topografie des Mittelmeerraums, die Ausdehnung des Imperium Romanum und die Provinzverwaltung erklären",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8B73BPSEVBYTR99EZK99R7P",
+					"slug": "l7-mittelmeerraum-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche Insel wurde 241 v. Chr. zur allerersten römischen Provinz (prōvincia)?",
+					"concept": "Sizilien (Sicilia).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-mittelmeerraum",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Sizilien (Sicilia).",
+							"Gallien (Gallia)."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8B73BPSHW024D9YE8EMZPBD",
+					"slug": "l7-mittelmeerraum-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Was bezeichnet der Begriff ‚prōvincia‘, und welche Aufgaben hatte dort der römische Statthalter?",
+					"concept": "Ein unterworfenes Verwaltungsgebiet außerhalb Italiens; der Statthalter verantwortete Rechtsprechung, militärische Sicherheit und Steuereintreibung.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-mittelmeerraum",
+					"sample_solution": "Ein unterworfenes Verwaltungsgebiet außerhalb Italiens; der Statthalter verantwortete Rechtsprechung, militärische Sicherheit und Steuereintreibung."
+				},
+				{
+					"id": "01M8B73BPSW2MQEGPQRCJ2X98G",
+					"slug": "l7-mittelmeerraum-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie nannten die Römer das Mittelmeer, und wie hieß die römische Provinz im heutigen bayerischen Alpenvorland?",
+					"concept": "Mittelmeer: Mare Nostrum (unser Meer); Provinz in Südbayern: Raetia (Raetien).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-mittelmeerraum",
+					"sample_solution": "Mittelmeer: Mare Nostrum (unser Meer); Provinz in Südbayern: Raetia (Raetien)."
+				}
+			]
+		},
+		{
+			"id": "01M8B73BPSBS7EYB9PB9RS5Q9Q",
+			"atom_uri": "urn:zam:atom:01M8B73BPSBS7EYB9PB9RS5Q9Q",
+			"namespace": "zam-academy-latein-gymnasium-7-l2",
+			"slug": "l7-weltwunder",
+			"title": "Die sieben Weltwunder der Antike",
+			"domain": "latein/imperium",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-weltwunder",
+			"prerequisites": [
+				{
+					"atom_id": "01M8B73BPSJ2V8T369Y9C8EAPP",
+					"type": "hard",
+					"rationale": "Baut in Latein 7 (L2) auf l7-mittelmeerraum auf."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-7-l2",
+					"topic_code": "imperium",
+					"topic_title": "Mittelmeerraum, Provinzen & Antike Welt"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb1-topografie",
+					"topic_title": "Die sieben Weltwunder im Mittelmeerraum verorten und ihre architektonische sowie kulturelle Bedeutung erläutern",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb3-topografie",
+					"topic_title": "Die sieben Weltwunder im Mittelmeerraum verorten und ihre architektonische sowie kulturelle Bedeutung erläutern",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb3-architektur",
+					"topic_title": "Die sieben Weltwunder im Mittelmeerraum verorten und ihre architektonische sowie kulturelle Bedeutung erläutern",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8B73BPS5D7C1EJ0XSXGJJJA",
+					"slug": "l7-weltwunder-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welches der sieben antiken Weltwunder steht bis heute nahezu vollständig erhalten?",
+					"concept": "Die Pyramiden von Gizeh in Ägypten.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-weltwunder",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Die Pyramiden von Gizeh in Ägypten.",
+							"Der Pharos (Leuchtturm) von Alexandria."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8B73BPSREMVJBC8WJK791S9",
+					"slug": "l7-weltwunder-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Nenne alle sieben Weltwunder der Antike mit ihren Orten.",
+					"concept": "Pyramiden (Gizeh), Hängende Gärten (Babylon), Zeusstatue (Olympia), Artemistempel (Ephesos), Mausoleum (Halikarnassos), Koloss (Rhodos), Pharos (Alexandria).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-weltwunder",
+					"sample_solution": "Pyramiden (Gizeh), Hängende Gärten (Babylon), Zeusstatue (Olympia), Artemistempel (Ephesos), Mausoleum (Halikarnassos), Koloss (Rhodos), Pharos (Alexandria)."
+				},
+				{
+					"id": "01M8B73BPSV36QBDT6XKJESPMQ",
+					"slug": "l7-weltwunder-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welche beiden deutschen Wörter gehen direkt auf antike Weltwunder zurück?",
+					"concept": "‚Mausoleum‘ (Grabmal des Maussolos in Halikarnassos) und ‚kolossal‘ (Koloss von Rhodos).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-weltwunder",
+					"sample_solution": "‚Mausoleum‘ (Grabmal des Maussolos in Halikarnassos) und ‚kolossal‘ (Koloss von Rhodos)."
+				}
+			]
+		},
+		{
+			"id": "01M8B73BPS7WR6C3M472HA9G8R",
+			"atom_uri": "urn:zam:atom:01M8B73BPS7WR6C3M472HA9G8R",
+			"namespace": "zam-academy-latein-gymnasium-7-l2",
+			"slug": "l7-archaeologie-bayern",
+			"title": "Antike Spuren: Sizilien, Cambodunum & München",
+			"domain": "latein/imperium",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-archaeologie-bayern",
+			"prerequisites": [
+				{
+					"atom_id": "01M8B73BPSJ2V8T369Y9C8EAPP",
+					"type": "hard",
+					"rationale": "Baut in Latein 7 (L2) auf l7-mittelmeerraum auf."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-7-l2",
+					"topic_code": "imperium",
+					"topic_title": "Mittelmeerraum, Provinzen & Antike Welt"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb3-architektur",
+					"topic_title": "Ausgrabungsstätten auf Sizilien, Cambodunum in Bayern und die Münchner Antikenmuseen als Zeugen antiker Kultur erschließen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb3-bild-text",
+					"topic_title": "Ausgrabungsstätten auf Sizilien, Cambodunum in Bayern und die Münchner Antikenmuseen als Zeugen antiker Kultur erschließen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8B73BPSMZQ1KGAYK9BEGFJC",
+					"slug": "l7-archaeologie-bayern-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche heutige bayerische Stadt geht auf die römische Provinzhauptstadt ‚Cambodunum‘ in Raetien zurück?",
+					"concept": "Kempten im Allgäu.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-archaeologie-bayern",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Kempten im Allgäu.",
+							"Regensburg an der Oberpfalz-Grenze."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8B73BPSVT5T4A019WK2FZHJ",
+					"slug": "l7-archaeologie-bayern-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welche beiden bedeutenden Antikenmuseen am Münchner Königsplatz zeigen griechische Vasen und antike Marmorstatuen?",
+					"concept": "Die Glyptothek (Skulpturen) und die Staatlichen Antikensammlungen (Vasen und Kleinkunst).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-archaeologie-bayern",
+					"sample_solution": "Die Glyptothek (Skulpturen) und die Staatlichen Antikensammlungen (Vasen und Kleinkunst)."
+				},
+				{
+					"id": "01M8B73BPS7785G71AMPPYHZTM",
+					"slug": "l7-archaeologie-bayern-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welche technischen Neuerungen prägten römische Bauten (auch in Cambodunum), z. B. bei Thermen?",
+					"concept": "Rundbogen, Gewölbe, römischer Beton (opus caementicium) und Fußbodenheizung (Hypokausten).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-archaeologie-bayern",
+					"sample_solution": "Rundbogen, Gewölbe, römischer Beton (opus caementicium) und Fußbodenheizung (Hypokausten)."
+				}
+			]
+		},
+		{
+			"id": "01M8B73BPSZX198S0N9E5AZYT3",
+			"atom_uri": "urn:zam:atom:01M8B73BPSZX198S0N9E5AZYT3",
+			"namespace": "zam-academy-latein-gymnasium-7-l2",
+			"slug": "l7-alexander-hellenismus",
+			"title": "Alexander der Große & der Hellenismus",
+			"domain": "latein/imperium",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-alexander-hellenismus",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-7-l2",
+					"topic_code": "imperium",
+					"topic_title": "Mittelmeerraum, Provinzen & Antike Welt"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb1-geschichte",
+					"topic_title": "Alexanders Feldzug, die Epoche des Hellenismus und ihren kulturellen Einfluss auf Rom erläutern",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb3-griechenland",
+					"topic_title": "Alexanders Feldzug, die Epoche des Hellenismus und ihren kulturellen Einfluss auf Rom erläutern",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb3-epochen",
+					"topic_title": "Alexanders Feldzug, die Epoche des Hellenismus und ihren kulturellen Einfluss auf Rom erläutern",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8B73BPSB0B9GMN164GDQCGW",
+					"slug": "l7-alexander-hellenismus-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was bezeichnet die historische Epoche des ‚Hellenismus‘ (ab 323 v. Chr.)?",
+					"concept": "Die kulturelle Verschmelzung griechischer Sprache, Wissenschaft und Kunst mit den Kulturen Ägyptens und des Orients nach Alexander dem Großen.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-alexander-hellenismus",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Die kulturelle Verschmelzung griechischer Sprache, Wissenschaft und Kunst mit den Kulturen Ägyptens und des Orients nach Alexander dem Großen.",
+							"Die frühe römische Königszeit unter Romulus und Remus."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8B73BPSZA51A93YA55YS13N",
+					"slug": "l7-alexander-hellenismus-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welche berühmte Hafen- und Wissenschaftsstadt gründete Alexander der Große in Ägypten, und wer war sein berühmter Lehrer?",
+					"concept": "Stadt: Alexandria (mit berühmter Bibliothek); Lehrer: der griechische Philosoph Aristoteles.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-alexander-hellenismus",
+					"sample_solution": "Stadt: Alexandria (mit berühmter Bibliothek); Lehrer: der griechische Philosoph Aristoteles."
+				},
+				{
+					"id": "01M8B73BPSMR5XRYHWPSBNYAKB",
+					"slug": "l7-alexander-hellenismus-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Was meint Horaz mit dem Satz ‚Graecia capta ferum victōrem cēpit‘?",
+					"concept": "Obwohl Rom Griechenland militärisch unterwarf, prägte die griechische Kultur (Kunst, Literatur, Philosophie) die römischen Sieger tief.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-alexander-hellenismus",
+					"sample_solution": "Obwohl Rom Griechenland militärisch unterwarf, prägte die griechische Kultur (Kunst, Literatur, Philosophie) die römischen Sieger tief."
+				}
+			]
+		},
+		{
+			"id": "01M8B73BPSN6HCPGV5DHABYR43",
+			"atom_uri": "urn:zam:atom:01M8B73BPSN6HCPGV5DHABYR43",
+			"namespace": "zam-academy-latein-gymnasium-7-l2",
+			"slug": "l7-griechisches-geistesleben",
+			"title": "Athen, Archimedes & Diogenes",
+			"domain": "latein/imperium",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-griechisches-geistesleben",
+			"prerequisites": [
+				{
+					"atom_id": "01M8B73BPSZX198S0N9E5AZYT3",
+					"type": "hard",
+					"rationale": "Baut in Latein 7 (L2) auf l7-alexander-hellenismus auf."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-7-l2",
+					"topic_code": "imperium",
+					"topic_title": "Mittelmeerraum, Provinzen & Antike Welt"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb3-griechenland",
+					"topic_title": "Attische Demokratie, naturwissenschaftliche Leistungen des Archimedes und die Philosophie des Diogenes deuten und vergleichen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb3-wertevergleich",
+					"topic_title": "Attische Demokratie, naturwissenschaftliche Leistungen des Archimedes und die Philosophie des Diogenes deuten und vergleichen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8B73BPSKTADNX4GDQWFCGK9",
+					"slug": "l7-griechisches-geistesleben-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Für welche Lebenshaltung steht der Kyniker Diogenes von Sinope in seiner berühmten Antwort an Alexander den Großen?",
+					"concept": "Für innere Freiheit durch Bedürfnislosigkeit und Unabhängigkeit von Macht und Besitz (‚Geh mir ein wenig aus der Sonne!‘).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-griechisches-geistesleben",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Für innere Freiheit durch Bedürfnislosigkeit und Unabhängigkeit von Macht und Besitz (‚Geh mir ein wenig aus der Sonne!‘).",
+							"Für den Erwerb möglichst vieler Ländereien und politischer Ehrenämter."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8B73BPST6WC81EGTNEDS0F6",
+					"slug": "l7-griechisches-geistesleben-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welche Leistungen verbinden sich mit Archimedes von Syrakus (ca. 287–212 v. Chr.)?",
+					"concept": "Hebelgesetze, Auftriebsgesetz im Wasser (‚Heureka!‘), Mathematik und technische Verteidigungsmaschinen für Syrakus.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-griechisches-geistesleben",
+					"sample_solution": "Hebelgesetze, Auftriebsgesetz im Wasser (‚Heureka!‘), Mathematik und technische Verteidigungsmaschinen für Syrakus."
+				},
+				{
+					"id": "01M8B73BPS6WWG9YSNGRG74492",
+					"slug": "l7-griechisches-geistesleben-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wer war in der attischen Demokratie vom Stimmrecht in der Volksversammlung ausgeschlossen?",
+					"concept": "Frauen, Sklaven und Fremde (Metöken); stimmberechtigt waren nur männliche athenische Vollbürger.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-griechisches-geistesleben",
+					"sample_solution": "Frauen, Sklaven und Fremde (Metöken); stimmberechtigt waren nur männliche athenische Vollbürger."
+				}
+			]
+		},
+		{
+			"id": "01M8B73BPSSF91G4KVNJ17AXAS",
+			"atom_uri": "urn:zam:atom:01M8B73BPSSF91G4KVNJ17AXAS",
+			"namespace": "zam-academy-latein-gymnasium-7-l2",
+			"slug": "l7-rom-karthago",
+			"title": "Rom und Karthago: Hannibal im 2. Punischen Krieg",
+			"domain": "latein/respublica",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-rom-karthago",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-7-l2",
+					"topic_code": "respublica",
+					"topic_title": "Republik, Augustus, Politik & Werte"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb1-geschichte",
+					"topic_title": "Die mittlere Republik, den Konflikt mit Karthago (Hannibal, Scipio) und den historischen Epochenüberblick darstellen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb3-geschichte",
+					"topic_title": "Die mittlere Republik, den Konflikt mit Karthago (Hannibal, Scipio) und den historischen Epochenüberblick darstellen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb3-epochen",
+					"topic_title": "Die mittlere Republik, den Konflikt mit Karthago (Hannibal, Scipio) und den historischen Epochenüberblick darstellen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8B73BPSGHH9GWGPPGYH6PTF",
+					"slug": "l7-rom-karthago-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "In welcher Schlacht (202 v. Chr.) besiegte Scipio Africanus Hannibal und entschied damit den 2. Punischen Krieg für Rom?",
+					"concept": "In der Schlacht bei Zama.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-rom-karthago",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"In der Schlacht bei Zama.",
+							"In der Schlacht bei Cannae (216 v. Chr.)."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8B73BPS24Q5MQ1WR6EHCKTA",
+					"slug": "l7-rom-karthago-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Was geschah 218 v. Chr., 216 v. Chr. und 146 v. Chr. im Konflikt zwischen Rom und Karthago?",
+					"concept": "218: Hannibals Alpenübergang; 216: Roms schwere Niederlage bei Cannae; 146: endgültige Zerstörung Karthagos und Einrichtung der Provinz Africa.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-rom-karthago",
+					"sample_solution": "218: Hannibals Alpenübergang; 216: Roms schwere Niederlage bei Cannae; 146: endgültige Zerstörung Karthagos und Einrichtung der Provinz Africa."
+				},
+				{
+					"id": "01M8B73BPSGQMT801QG9XSJBZB",
+					"slug": "l7-rom-karthago-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie gliedert sich der historische Überblick Roms bis 14 n. Chr. in Epochen?",
+					"concept": "Königszeit (753–509 v. Chr.) → frühe Republik (509–264) → mittlere und späte Republik (264–27) → Augusteische Zeit (27 v.–14 n. Chr.).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-rom-karthago",
+					"sample_solution": "Königszeit (753–509 v. Chr.) → frühe Republik (509–264) → mittlere und späte Republik (264–27) → Augusteische Zeit (27 v.–14 n. Chr.)."
+				}
+			]
+		},
+		{
+			"id": "01M8B73BPSXVF575A9RPZ97ZD3",
+			"atom_uri": "urn:zam:atom:01M8B73BPSXVF575A9RPZ97ZD3",
+			"namespace": "zam-academy-latein-gymnasium-7-l2",
+			"slug": "l7-spaete-republik",
+			"title": "Späte Republik, Bürgerkriege & Caesar · Cicero",
+			"domain": "latein/respublica",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-spaete-republik",
+			"prerequisites": [
+				{
+					"atom_id": "01M8B73BPSSF91G4KVNJ17AXAS",
+					"type": "hard",
+					"rationale": "Baut in Latein 7 (L2) auf l7-rom-karthago auf."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-7-l2",
+					"topic_code": "respublica",
+					"topic_title": "Republik, Augustus, Politik & Werte"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb1-geschichte",
+					"topic_title": "Die Krise der späten Republik und die Doppelrolle von Caesar und Cicero als Politiker und Autoren erläutern",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb3-geschichte",
+					"topic_title": "Die Krise der späten Republik und die Doppelrolle von Caesar und Cicero als Politiker und Autoren erläutern",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb3-persoenlichkeiten",
+					"topic_title": "Die Krise der späten Republik und die Doppelrolle von Caesar und Cicero als Politiker und Autoren erläutern",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8B73BPSZHRYN3NTPVN2FD1V",
+					"slug": "l7-spaete-republik-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welches historische Ereignis verband sich 49 v. Chr. mit Caesars Ausspruch ‚Ālea iacta est‘ (Der Würfel ist gefallen)?",
+					"concept": "Das Überschreiten des Grenzflusses Rubikon und der Beginn des Bürgerkriegs gegen Senat und Pompeius.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-spaete-republik",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Das Überschreiten des Grenzflusses Rubikon und der Beginn des Bürgerkriegs gegen Senat und Pompeius.",
+							"Die Entdeckung der Catilinarischen Verschwörung im Senat."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8B73BPSFC7GAXRQDZSXHRYD",
+					"slug": "l7-spaete-republik-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welche Doppelrolle spielten Marcus Tullius Cicero und Gaius Iulius Caesar in der späten Republik?",
+					"concept": "Beide waren Politiker und bedeutende Autoren: Cicero als Konsul, Redner und Verteidiger der Republik; Caesar als Feldherr, Diktator und Verfasser des ‚Bellum Gallicum‘.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-spaete-republik",
+					"sample_solution": "Beide waren Politiker und bedeutende Autoren: Cicero als Konsul, Redner und Verteidiger der Republik; Caesar als Feldherr, Diktator und Verfasser des ‚Bellum Gallicum‘."
+				},
+				{
+					"id": "01M8B73BPS12G6J08YMX1H6JEX",
+					"slug": "l7-spaete-republik-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wann wurde Caesar ermordet, und warum scheiterte dennoch die Rückkehr zur alten Republik?",
+					"concept": "An den Iden des März (15. März 44 v. Chr.); die tiefen sozialen und militärischen Krisen (Heeresklientel) führten zu neuen Bürgerkriegen bis zu Augustus.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-spaete-republik",
+					"sample_solution": "An den Iden des März (15. März 44 v. Chr.); die tiefen sozialen und militärischen Krisen (Heeresklientel) führten zu neuen Bürgerkriegen bis zu Augustus."
+				}
+			]
+		},
+		{
+			"id": "01M8B73BPSEND8Y0YKBC5JDAQ9",
+			"atom_uri": "urn:zam:atom:01M8B73BPSEND8Y0YKBC5JDAQ9",
+			"namespace": "zam-academy-latein-gymnasium-7-l2",
+			"slug": "l7-augustus",
+			"title": "Die Augusteische Zeit: pax Augusta & aurea aetas",
+			"domain": "latein/respublica",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-augustus",
+			"prerequisites": [
+				{
+					"atom_id": "01M8B73BPSXVF575A9RPZ97ZD3",
+					"type": "hard",
+					"rationale": "Baut in Latein 7 (L2) auf l7-spaete-republik auf."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-7-l2",
+					"topic_code": "respublica",
+					"topic_title": "Republik, Augustus, Politik & Werte"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb1-geschichte",
+					"topic_title": "Augustus’ Prinzipat, Restaurationspolitik, Horaz sowie das Verhältnis von Römern und Germanen erläutern",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb3-geschichte",
+					"topic_title": "Augustus’ Prinzipat, Restaurationspolitik, Horaz sowie das Verhältnis von Römern und Germanen erläutern",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb3-persoenlichkeiten",
+					"topic_title": "Augustus’ Prinzipat, Restaurationspolitik, Horaz sowie das Verhältnis von Römern und Germanen erläutern",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb3-werte",
+					"topic_title": "Augustus’ Prinzipat, Restaurationspolitik, Horaz sowie das Verhältnis von Römern und Germanen erläutern",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8B73BPSND0FR3G7E5R4V6D7",
+					"slug": "l7-augustus-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wie hieß die von Augustus begründete Staatsform, in der republikanische Ämter äußerlich bestehen blieben, die Macht aber beim ‚prīnceps‘ lag?",
+					"concept": "Prinzipat (prīnceps = erster Bürger).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-augustus",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Prinzipat (prīnceps = erster Bürger).",
+							"Attische Demokratie."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8B73BPSWG3WQ04KC4J03111",
+					"slug": "l7-augustus-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Was bedeuten die Schlagwörter ‚pāx Augusta‘ und ‚aurea aetās‘ in der Augusteischen Restaurationspolitik?",
+					"concept": "pāx Augusta = der Augusteische Friede nach den Bürgerkriegen; aurea aetās = das gepriesene Goldene Zeitalter von Frieden, Sittenerneuerung und Kulturblüte.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-augustus",
+					"sample_solution": "pāx Augusta = der Augusteische Friede nach den Bürgerkriegen; aurea aetās = das gepriesene Goldene Zeitalter von Frieden, Sittenerneuerung und Kulturblüte."
+				},
+				{
+					"id": "01M8B73BPSZPGQC4BBKHM76A55",
+					"slug": "l7-augustus-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welches Ereignis beendete 9 n. Chr. die römische Eroberung Germaniens, und welcher Dichter prägte unter Augustus ‚Carpe diem‘?",
+					"concept": "Die Varusschlacht (Arminius gegen Varus) sicherte die Rhein-Donau-Grenze; ‚Carpe diem‘ stammt von Horaz.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-augustus",
+					"sample_solution": "Die Varusschlacht (Arminius gegen Varus) sicherte die Rhein-Donau-Grenze; ‚Carpe diem‘ stammt von Horaz."
+				}
+			]
+		},
+		{
+			"id": "01M8B73BPSY4GQDFRC1AQ51J2C",
+			"atom_uri": "urn:zam:atom:01M8B73BPSY4GQDFRC1AQ51J2C",
+			"namespace": "zam-academy-latein-gymnasium-7-l2",
+			"slug": "l7-politik-gesellschaft",
+			"title": "Politische Karriere (cursus honōrum) & Mischverfassung",
+			"domain": "latein/respublica",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-politik-gesellschaft",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-7-l2",
+					"topic_code": "respublica",
+					"topic_title": "Republik, Augustus, Politik & Werte"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb1-politik",
+					"topic_title": "Ämterlaufbahn (cursus honōrum), Klientelwesen und die römische ‚Mischverfassung‘ anschaulich erklären",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb3-politik",
+					"topic_title": "Ämterlaufbahn (cursus honōrum), Klientelwesen und die römische ‚Mischverfassung‘ anschaulich erklären",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8B73BPSNMPPKEFZYMTY4G46",
+					"slug": "l7-politik-gesellschaft-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "In welcher Reihenfolge von unten nach oben verlief der römische ‚cursus honōrum‘?",
+					"concept": "Quästor → (Ädil) → Prätor → Konsul.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-politik-gesellschaft",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Quästor → (Ädil) → Prätor → Konsul.",
+							"Konsul → Prätor → Quästor → Ädil."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8B73BPS5CWFBFQTV0TV35EE",
+					"slug": "l7-politik-gesellschaft-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Was bedeuten die beiden Schutzprinzipien Annuität und Kollegialität in der römischen Republik?",
+					"concept": "Annuität = einjährige Amtszeit; Kollegialität = jedes Amt ist mindestens doppelt besetzt mit gegenseitigem Vetorecht.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-politik-gesellschaft",
+					"sample_solution": "Annuität = einjährige Amtszeit; Kollegialität = jedes Amt ist mindestens doppelt besetzt mit gegenseitigem Vetorecht."
+				},
+				{
+					"id": "01M8B73BPS17X2F48VC78GXYF1",
+					"slug": "l7-politik-gesellschaft-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welche drei Organe bildeten die römische ‚Mischverfassung‘, und wie funktionierte das Klientelwesen?",
+					"concept": "Konsuln, Senat und Volksversammlung; im Klientelwesen gewährte der patrōnus Schutz und Hilfe, die clientēs leisteten Gefolgschaft und Wahlunterstützung (fidēs).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-politik-gesellschaft",
+					"sample_solution": "Konsuln, Senat und Volksversammlung; im Klientelwesen gewährte der patrōnus Schutz und Hilfe, die clientēs leisteten Gefolgschaft und Wahlunterstützung (fidēs)."
+				}
+			]
+		},
+		{
+			"id": "01M8B73BPSK2EVTBNN000W72R9",
+			"atom_uri": "urn:zam:atom:01M8B73BPSK2EVTBNN000W72R9",
+			"namespace": "zam-academy-latein-gymnasium-7-l2",
+			"slug": "l7-militaer-werte",
+			"title": "Römisches Militär, Triumphzug & römische Werte",
+			"domain": "latein/respublica",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-militaer-werte",
+			"prerequisites": [
+				{
+					"atom_id": "01M8B73BPSY4GQDFRC1AQ51J2C",
+					"type": "hard",
+					"rationale": "Baut in Latein 7 (L2) auf l7-politik-gesellschaft auf."
+				},
+				{
+					"atom_id": "01M8B73BPSEND8Y0YKBC5JDAQ9",
+					"type": "hard",
+					"rationale": "Baut in Latein 7 (L2) auf l7-augustus auf."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-7-l2",
+					"topic_code": "respublica",
+					"topic_title": "Republik, Augustus, Politik & Werte"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb1-politik",
+					"topic_title": "Grundzüge des römischen Militärwesens, die Bedeutung von Triumphzügen und zentrale Wertbegriffe (fides, virtus) erläutern",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb3-politik",
+					"topic_title": "Grundzüge des römischen Militärwesens, die Bedeutung von Triumphzügen und zentrale Wertbegriffe (fides, virtus) erläutern",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb3-werte",
+					"topic_title": "Grundzüge des römischen Militärwesens, die Bedeutung von Triumphzügen und zentrale Wertbegriffe (fides, virtus) erläutern",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb3-wertevergleich",
+					"topic_title": "Grundzüge des römischen Militärwesens, die Bedeutung von Triumphzügen und zentrale Wertbegriffe (fides, virtus) erläutern",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8B73BPSVEMPADFYNB5AAJ43",
+					"slug": "l7-militaer-werte-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche Bedeutung haben die beiden zentralen römischen Wertbegriffe ‚fidēs‘ und ‚virtūs‘?",
+					"concept": "fidēs = Treue, Verlässlichkeit, Wort halten; virtūs = Tapferkeit, Tüchtigkeit, moralische Stärke.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-militaer-werte",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"fidēs = Treue, Verlässlichkeit, Wort halten; virtūs = Tapferkeit, Tüchtigkeit, moralische Stärke.",
+							"fidēs = Reichtum; virtūs = Sparsamkeit beim Steuerzahlen."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8B73BPSH85HYKK3Q9MJRJ9W",
+					"slug": "l7-militaer-werte-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Was war ein römischer Triumphzug (triumphus), und welche Mahnung begleitete den Sieger auf dem Wagen?",
+					"concept": "Die höchste militärische Ehrung durch den Senat mit Zug aufs Kapitol; ein Sklave mahnte den Sieger an seine Sterblichkeit (‚Hominem tē esse mementō!‘).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-militaer-werte",
+					"sample_solution": "Die höchste militärische Ehrung durch den Senat mit Zug aufs Kapitol; ein Sklave mahnte den Sieger an seine Sterblichkeit (‚Hominem tē esse mementō!‘)."
+				},
+				{
+					"id": "01M8B73BPS36PZCH0YVSWVD49A",
+					"slug": "l7-militaer-werte-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie hießen die drei Hauptwaffen eines römischen Legionärs, und warum griff Augustus alte Werte (mōs maiōrum) wieder auf?",
+					"concept": "scūtum (Schild), pīlum (Wurfspeer), gladius (Kurzschwert); Augustus nutzte alte Werte (pietās, fidēs, clēmentia), um seine neue Ordnung moralisch zu festigen.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-militaer-werte",
+					"sample_solution": "scūtum (Schild), pīlum (Wurfspeer), gladius (Kurzschwert); Augustus nutzte alte Werte (pietās, fidēs, clēmentia), um seine neue Ordnung moralisch zu festigen."
+				}
+			]
+		},
+		{
+			"id": "01M8B73BPSGWV7AYHR8BCVMG4A",
+			"atom_uri": "urn:zam:atom:01M8B73BPSGWV7AYHR8BCVMG4A",
+			"namespace": "zam-academy-latein-gymnasium-7-l2",
+			"slug": "l7-europa-kreta",
+			"title": "Europa, Theseus, Daedalus und Ikarus",
+			"domain": "latein/mythos",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-europa-kreta",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-7-l2",
+					"topic_code": "mythos",
+					"topic_title": "Mythen, Unterwelt & Textmethodik"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb1-mythos",
+					"topic_title": "Die Kreta-Mythen wiedergeben, Ovid als literarische Quelle einordnen und Text mit Bilddarstellungen vergleichen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb3-mythen",
+					"topic_title": "Die Kreta-Mythen wiedergeben, Ovid als literarische Quelle einordnen und Text mit Bilddarstellungen vergleichen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb3-ovid",
+					"topic_title": "Die Kreta-Mythen wiedergeben, Ovid als literarische Quelle einordnen und Text mit Bilddarstellungen vergleichen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb3-bild-text",
+					"topic_title": "Die Kreta-Mythen wiedergeben, Ovid als literarische Quelle einordnen und Text mit Bilddarstellungen vergleichen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8B73BPSS76TA3792ZAH2N96",
+					"slug": "l7-europa-kreta-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welcher römische Dichter überlieferte die Mythen von Europa, Daedalus und Ikarus sowie Orpheus besonders berühmt in seinen ‚Metamorphosen‘?",
+					"concept": "Ovid (Publius Ovidius Naso).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-europa-kreta",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Ovid (Publius Ovidius Naso).",
+							"Gaius Iulius Caesar."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8B73BPSEPSZ8PHQ4GQE9VJ2",
+					"slug": "l7-europa-kreta-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wofür stehen der ‚Ariadnefaden‘ (Theseus) und der Sturz des Ikarus (Hybris) bis heute als Bilder menschlichen Handelns?",
+					"concept": "Ariadnefaden = kluger Leitfaden zur Lösung eines Problems; Ikarus’ Sturz = Warnung vor Hybris (Selbstüberschätzung) und Verlust des rechten Maßes.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-europa-kreta",
+					"sample_solution": "Ariadnefaden = kluger Leitfaden zur Lösung eines Problems; Ikarus’ Sturz = Warnung vor Hybris (Selbstüberschätzung) und Verlust des rechten Maßes."
+				},
+				{
+					"id": "01M8B73BPSD31Q4B7RBRDVTAVW",
+					"slug": "l7-europa-kreta-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welcher Mythos erklärt die Herkunft des Namens unseres Kontinents Europa?",
+					"concept": "Jupiter (Zeus) entführte die phönizische Königstochter Europa in Gestalt eines weißen Stiers übers Meer nach Kreta.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-europa-kreta",
+					"sample_solution": "Jupiter (Zeus) entführte die phönizische Königstochter Europa in Gestalt eines weißen Stiers übers Meer nach Kreta."
+				}
+			]
+		},
+		{
+			"id": "01M8B73BPSEKD43H1JK6B887ZR",
+			"atom_uri": "urn:zam:atom:01M8B73BPSEKD43H1JK6B887ZR",
+			"namespace": "zam-academy-latein-gymnasium-7-l2",
+			"slug": "l7-orpheus-unterwelt",
+			"title": "Orpheus, Eurydike, Tod und Unterwelt",
+			"domain": "latein/mythos",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-orpheus-unterwelt",
+			"prerequisites": [
+				{
+					"atom_id": "01M8B73BPSGWV7AYHR8BCVMG4A",
+					"type": "hard",
+					"rationale": "Baut in Latein 7 (L2) auf l7-europa-kreta auf."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-7-l2",
+					"topic_code": "mythos",
+					"topic_title": "Mythen, Unterwelt & Textmethodik"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb1-mythos",
+					"topic_title": "Antike Unterweltsvorstellungen (aufbauend auf L6) am Mythos von Orpheus und Eurydike deuten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb3-mythen",
+					"topic_title": "Antike Unterweltsvorstellungen (aufbauend auf L6) am Mythos von Orpheus und Eurydike deuten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb3-unterwelt",
+					"topic_title": "Antike Unterweltsvorstellungen (aufbauend auf L6) am Mythos von Orpheus und Eurydike deuten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb3-ovid",
+					"topic_title": "Antike Unterweltsvorstellungen (aufbauend auf L6) am Mythos von Orpheus und Eurydike deuten",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8B73BPS7K8DQ19FSNPYY90G",
+					"slug": "l7-orpheus-unterwelt-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Unter welcher Bedingung erlaubten Pluto und Proserpina dem Sänger Orpheus, Eurydike aus der Unterwelt zurückzuführen?",
+					"concept": "Orpheus durfte sich auf dem gesamten Weg ans Tageslicht nicht nach Eurydike umdrehen.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-orpheus-unterwelt",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Orpheus durfte sich auf dem gesamten Weg ans Tageslicht nicht nach Eurydike umdrehen.",
+							"Orpheus musste seine Leier für immer bei Charon lassen."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8B73BPSJGM5M3ZQ5NAH113G",
+					"slug": "l7-orpheus-unterwelt-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welche vier Gestalten und Orte prägen die antike Unterweltsvorstellung im Orpheus-Mythos?",
+					"concept": "Der Fluss Styx, der Fährmann Charon, der dreiköpfige Wachhund Cerberus und das Herrscherpaar Pluto (Hades) und Proserpina (Persephone).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-orpheus-unterwelt",
+					"sample_solution": "Der Fluss Styx, der Fährmann Charon, der dreiköpfige Wachhund Cerberus und das Herrscherpaar Pluto (Hades) und Proserpina (Persephone)."
+				},
+				{
+					"id": "01M8B73BPS4VJF92NXPSYEMNNX",
+					"slug": "l7-orpheus-unterwelt-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welche beiden Grundgedanken verbindet der Orpheus-Mythos miteinander?",
+					"concept": "Die überwältigende Macht von Musik und Liebe einerseits und die Unausweichlichkeit des Todes als Grenze des Menschen andererseits.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-orpheus-unterwelt",
+					"sample_solution": "Die überwältigende Macht von Musik und Liebe einerseits und die Unausweichlichkeit des Todes als Grenze des Menschen andererseits."
+				}
+			]
+		},
+		{
+			"id": "01M8B73BPSSSYZ6PTG2FR16QXY",
+			"atom_uri": "urn:zam:atom:01M8B73BPSSSYZ6PTG2FR16QXY",
+			"namespace": "zam-academy-latein-gymnasium-7-l2",
+			"slug": "l7-theben-antigone",
+			"title": "Ödipus und Antigone – der thebanische Sagenkreis",
+			"domain": "latein/mythos",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-theben-antigone",
+			"prerequisites": [
+				{
+					"atom_id": "01M8B73BPSGWV7AYHR8BCVMG4A",
+					"type": "hard",
+					"rationale": "Baut in Latein 7 (L2) auf l7-europa-kreta auf."
+				},
+				{
+					"atom_id": "01M8B73BPSN6HCPGV5DHABYR43",
+					"type": "hard",
+					"rationale": "Baut in Latein 7 (L2) auf l7-griechisches-geistesleben auf."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-7-l2",
+					"topic_code": "mythos",
+					"topic_title": "Mythen, Unterwelt & Textmethodik"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb1-mythos",
+					"topic_title": "Den thebanischen Sagenkreis (Ödipus, Antigone) wiedergeben und antike Wertvorstellungen begründet vergleichen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb1-stellungnahme",
+					"topic_title": "Den thebanischen Sagenkreis (Ödipus, Antigone) wiedergeben und antike Wertvorstellungen begründet vergleichen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb3-mythen",
+					"topic_title": "Den thebanischen Sagenkreis (Ödipus, Antigone) wiedergeben und antike Wertvorstellungen begründet vergleichen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb3-wertevergleich",
+					"topic_title": "Den thebanischen Sagenkreis (Ödipus, Antigone) wiedergeben und antike Wertvorstellungen begründet vergleichen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8B73BPS2853WWR1JEXR5D4J",
+					"slug": "l7-theben-antigone-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche beiden Prinzipien prallen im Konflikt zwischen König Kreon und Antigone aufeinander?",
+					"concept": "Staatlicher Befehl und Ordnung (Kreon) gegen ungeschriebenes göttliches Recht, Geschwisterliebe und Gewissen (Antigone).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-theben-antigone",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Staatlicher Befehl und Ordnung (Kreon) gegen ungeschriebenes göttliches Recht, Geschwisterliebe und Gewissen (Antigone).",
+							"Wissenschaftliche Forschung gegen künstlerische Freiheit."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8B73BPS3B9DZMX3YE9VZNNM",
+					"slug": "l7-theben-antigone-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welches Rätsel löste Ödipus vor Theben, und welche tiefere Einsicht vermittelt sein tragisches Schicksal?",
+					"concept": "Das Rätsel der Sphinx (Lösung: der Mensch); sein Schicksal zeigt die Grenzen menschlicher Klugheit gegenüber Orakel und Verstrickung.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-theben-antigone",
+					"sample_solution": "Das Rätsel der Sphinx (Lösung: der Mensch); sein Schicksal zeigt die Grenzen menschlicher Klugheit gegenüber Orakel und Verstrickung."
+				},
+				{
+					"id": "01M8B73BPS276293F6AVPFSQ8X",
+					"slug": "l7-theben-antigone-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wofür stehen Antigone, Diogenes, Cicero und Augustus im antiken Wertevergleich?",
+					"concept": "Antigone: Gewissen/Menschenwürde; Diogenes: Unabhängigkeit/Bedürfnislosigkeit; Cicero: Rechtsstaat/Republik; Augustus: Friedensordnung/Tradition.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-theben-antigone",
+					"sample_solution": "Antigone: Gewissen/Menschenwürde; Diogenes: Unabhängigkeit/Bedürfnislosigkeit; Cicero: Rechtsstaat/Republik; Augustus: Friedensordnung/Tradition."
+				}
+			]
+		},
+		{
+			"id": "01M8B73BPS62VKNY9AGPHHK4K4",
+			"atom_uri": "urn:zam:atom:01M8B73BPS62VKNY9AGPHHK4K4",
+			"namespace": "zam-academy-latein-gymnasium-7-l2",
+			"slug": "l7-textanalyse-methoden",
+			"title": "Lateinische Texte erschließen & übersetzen",
+			"domain": "latein/mythos",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-textanalyse-methoden",
+			"prerequisites": [
+				{
+					"atom_id": "01M8B73BPSR2QT38DVTZ1K97XD",
+					"type": "hard",
+					"rationale": "Baut in Latein 7 (L2) auf l7-ablativus-absolutus auf."
+				},
+				{
+					"atom_id": "01M8B73BPS0CG1FPMBG9MVKQJ9",
+					"type": "hard",
+					"rationale": "Baut in Latein 7 (L2) auf l7-indirekte-fragen auf."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-7-l2",
+					"topic_code": "mythos",
+					"topic_title": "Mythen, Unterwelt & Textmethodik"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb1-strukturen",
+					"topic_title": "Textstrukturen (Leitbegriffe, Konnektoren, Tempus-/Modusprofile) herausarbeiten, Übersetzungsmethoden nutzen und Fehler prüfen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb1-stellungnahme",
+					"topic_title": "Textstrukturen (Leitbegriffe, Konnektoren, Tempus-/Modusprofile) herausarbeiten, Übersetzungsmethoden nutzen und Fehler prüfen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb4-analyse",
+					"topic_title": "Textstrukturen (Leitbegriffe, Konnektoren, Tempus-/Modusprofile) herausarbeiten, Übersetzungsmethoden nutzen und Fehler prüfen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb4-uebersetzen",
+					"topic_title": "Textstrukturen (Leitbegriffe, Konnektoren, Tempus-/Modusprofile) herausarbeiten, Übersetzungsmethoden nutzen und Fehler prüfen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb4-pruefen",
+					"topic_title": "Textstrukturen (Leitbegriffe, Konnektoren, Tempus-/Modusprofile) herausarbeiten, Übersetzungsmethoden nutzen und Fehler prüfen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb4-textstruktur",
+					"topic_title": "Textstrukturen (Leitbegriffe, Konnektoren, Tempus-/Modusprofile) herausarbeiten, Übersetzungsmethoden nutzen und Fehler prüfen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb4-verstehend",
+					"topic_title": "Textstrukturen (Leitbegriffe, Konnektoren, Tempus-/Modusprofile) herausarbeiten, Übersetzungsmethoden nutzen und Fehler prüfen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8B73BPS5FNY6VJ0YGN4DXEF",
+					"slug": "l7-textanalyse-methoden-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was signalisiert der Wechsel von Imperfekt zu Perfekt im Tempusprofil eines lateinischen Erzähltextes?",
+					"concept": "Imperfekt schildert Hintergrund und Dauer; Perfekt markiert die vorantreibenden Hauptereignisse und Wendepunkte.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-textanalyse-methoden",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Imperfekt schildert Hintergrund und Dauer; Perfekt markiert die vorantreibenden Hauptereignisse und Wendepunkte.",
+							"Imperfekt steht immer für Fragen, Perfekt immer für Befehle."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8B73BPSHPCH9FRME5CF1BST",
+					"slug": "l7-textanalyse-methoden-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welche Kriterien helfen vor dem Übersetzen bei der Textgliederung (Vorerschließung)?",
+					"concept": "Personen/Subjekte, Leitbegriffe (Sachfelder), Konnektoren (prīmum, autem, itaque, tamen) sowie Tempus- und Modusprofile.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-textanalyse-methoden",
+					"sample_solution": "Personen/Subjekte, Leitbegriffe (Sachfelder), Konnektoren (prīmum, autem, itaque, tamen) sowie Tempus- und Modusprofile."
+				},
+				{
+					"id": "01M8B73BPS5XR93RPKFN40E40R",
+					"slug": "l7-textanalyse-methoden-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wodurch unterscheiden sich analytische Konstruktionsmethode und intuitives (pendelndes) Übersetzen?",
+					"concept": "Die Konstruktionsmethode klärt vom Prädikat aus systematisch Satzglieder und Klammern; die pendelnde Methode liest schrittweise in Sinneinheiten und prüft Erwartungen sofort am Text.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-textanalyse-methoden",
+					"sample_solution": "Die Konstruktionsmethode klärt vom Prädikat aus systematisch Satzglieder und Klammern; die pendelnde Methode liest schrittweise in Sinneinheiten und prüft Erwartungen sofort am Text."
+				}
+			]
+		},
+		{
+			"id": "01M8B73BPSKW7AS0A6PM4W8MF9",
+			"atom_uri": "urn:zam:atom:01M8B73BPSKW7AS0A6PM4W8MF9",
+			"namespace": "zam-academy-latein-gymnasium-7-l2",
+			"slug": "l7-lernen-rezeption",
+			"title": "Lernstrategien, Rezeption & kreative Textarbeit",
+			"domain": "latein/mythos",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-lernen-rezeption",
+			"prerequisites": [
+				{
+					"atom_id": "01M8B73BPS62VKNY9AGPHHK4K4",
+					"type": "hard",
+					"rationale": "Baut in Latein 7 (L2) auf l7-textanalyse-methoden auf."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-7-l2",
+					"topic_code": "mythos",
+					"topic_title": "Mythen, Unterwelt & Textmethodik"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb3-kulturdokumente",
+					"topic_title": "Effektive Lerntechniken und Hilfsmittel wählen, Arbeitspläne gestalten und antike Motive in der Gegenwart erkennen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb4-kreativ",
+					"topic_title": "Effektive Lerntechniken und Hilfsmittel wählen, Arbeitspläne gestalten und antike Motive in der Gegenwart erkennen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb4-hilfsmittel",
+					"topic_title": "Effektive Lerntechniken und Hilfsmittel wählen, Arbeitspläne gestalten und antike Motive in der Gegenwart erkennen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb4-lerntechniken",
+					"topic_title": "Effektive Lerntechniken und Hilfsmittel wählen, Arbeitspläne gestalten und antike Motive in der Gegenwart erkennen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb4-organisation",
+					"topic_title": "Effektive Lerntechniken und Hilfsmittel wählen, Arbeitspläne gestalten und antike Motive in der Gegenwart erkennen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb4-sicherung",
+					"topic_title": "Effektive Lerntechniken und Hilfsmittel wählen, Arbeitspläne gestalten und antike Motive in der Gegenwart erkennen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb4-offen",
+					"topic_title": "Effektive Lerntechniken und Hilfsmittel wählen, Arbeitspläne gestalten und antike Motive in der Gegenwart erkennen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "latein",
+					"topic_code": "lb4-kooperativ",
+					"topic_title": "Effektive Lerntechniken und Hilfsmittel wählen, Arbeitspläne gestalten und antike Motive in der Gegenwart erkennen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8B73BPSTWGXJFRSBXCF26F1",
+					"slug": "l7-lernen-rezeption-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was bedeuten die beiden bekannten lateinischen Sentenzen ‚Errāre hūmānum est‘ und ‚Repetītiō est māter studiōrum‘?",
+					"concept": "‚Irren ist menschlich‘ und ‚Wiederholung ist die Mutter des Lernens‘.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-lernen-rezeption",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"‚Irren ist menschlich‘ und ‚Wiederholung ist die Mutter des Lernens‘.",
+							"‚Reisen bildet‘ und ‚Stille ist das Ziel der Schule‘."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8B73BPSGFXVW7GDA71027RH",
+					"slug": "l7-lernen-rezeption-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welche Kombination von Lerntechniken macht den Aufbau eines 900-Wörter-Grundwortschatzes nachhaltig?",
+					"concept": "Kurze tägliche Wiederholungen per aktivem Abruf (Kartei/ZAM) plus Stammformen, Wortfamilien, Fremdwortbrücken und Eselsbrücken.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-lernen-rezeption",
+					"sample_solution": "Kurze tägliche Wiederholungen per aktivem Abruf (Kartei/ZAM) plus Stammformen, Wortfamilien, Fremdwortbrücken und Eselsbrücken."
+				},
+				{
+					"id": "01M8B73BPSEHRCXWD1JFA2A7BC",
+					"slug": "l7-lernen-rezeption-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Nenne zwei Beispiele dafür, wie Latein und antike Mythologie in heutigen Markennamen oder Kulturdokumenten fortleben.",
+					"concept": "z. B. ‚Audi‘ (Imperativ ‚Höre!‘), ‚Nivea‘ (niveus = schneeweiß), ‚Nike‘ (griechische Siegesgöttin) oder Ikarus-/Antigone-Motive in Theater und Film.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-7-l2/#lesson=l7-lernen-rezeption",
+					"sample_solution": "z. B. ‚Audi‘ (Imperativ ‚Höre!‘), ‚Nivea‘ (niveus = schneeweiß), ‚Nike‘ (griechische Siegesgöttin) oder Ikarus-/Antigone-Motive in Theater und Film."
+				}
+			]
+		}
+	]
+}
