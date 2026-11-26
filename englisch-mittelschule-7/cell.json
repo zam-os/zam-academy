@@ -1,0 +1,3655 @@
+{
+	"$schema": "https://zam.app/schemas/v1/kvt-tile.json",
+	"tile_id": "zam-academy:englisch-mittelschule-7",
+	"version": "2026.11.1",
+	"title": "Englisch 7 Mittelschule (ZAM Academy)",
+	"description": "Grade 7 English for the Bavarian Mittelschule standard and M tracks, with 35 lessons and 105 recall cards.",
+	"publisher": "ZAM Academy",
+	"sources": [
+		{
+			"uri": "https://www.lehrplanplus.bayern.de/fachlehrplan/mittelschule/7/englisch/regelklasse",
+			"label": "LehrplanPLUS · Englisch R7",
+			"checked": "2026-11-26"
+		},
+		{
+			"uri": "https://www.lehrplanplus.bayern.de/fachlehrplan/mittelschule/7/englisch/mittlere-reife-klasse",
+			"label": "LehrplanPLUS · Englisch M7",
+			"checked": "2026-11-26"
+		},
+		{
+			"uri": "https://www.ireland.com/en/help-and-advice/practical-information/ireland-faqs/",
+			"label": "Tourism Ireland · The island of Ireland",
+			"checked": "2026-11-26"
+		},
+		{
+			"uri": "https://lakedistrict.gov.uk/explore/things-to-do/countryside-code/",
+			"label": "Lake District National Park · Countryside Code",
+			"checked": "2026-11-26"
+		},
+		{
+			"uri": "https://www.nps.gov/yell/planyourvisit/safety.htm",
+			"label": "National Park Service · Yellowstone safety",
+			"checked": "2026-11-26"
+		},
+		{
+			"uri": "https://api.ireland.ie/en/st-patricks-day-2026/everything-you-need-to-know-about-st-patricks-day/",
+			"label": "Ireland.ie · What is St Patrick’s Day?",
+			"checked": "2026-11-26"
+		},
+		{
+			"uri": "https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b9",
+			"label": "NIST · Conversion factors for length and mass",
+			"checked": "2026-11-26"
+		}
+	],
+	"atoms": [
+		{
+			"id": "01M8CT1WYG7878332TFQVRXX9V",
+			"atom_uri": "urn:zam:atom:01M8CT1WYG7878332TFQVRXX9V",
+			"namespace": "zam-academy-englisch-mittelschule-7",
+			"slug": "e7-weather",
+			"title": "Tomorrow’s weather",
+			"domain": "englisch/communication",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-weather",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-mittelschule-7",
+					"topic_code": "communication",
+					"topic_title": "Kommunikation"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "M",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "M",
+					"topic_code": "lb4",
+					"topic_title": "Methodische Kompetenzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "R",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "R",
+					"topic_code": "lb4",
+					"topic_title": "Methodische Kompetenzen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8CT1WYGCVEQEQXYRXVDNP7T",
+					"slug": "e7-weather-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was suchst du beim ersten Hören eines Wetterberichts?",
+					"concept": "Thema und groben Verlauf",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-weather",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Thema und groben Verlauf",
+							"Jede Zahl und jedes Wetterwort"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8CT1WYG33V4FNKWDX4180PN",
+					"slug": "e7-weather-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wozu dient der zweite Hördurchgang nach dem groben Verstehen?",
+					"concept": "Ich höre gezielt auf Details, die ich für meine Aufgabe brauche.",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-weather",
+					"sample_solution": "Ich höre gezielt auf Details, die ich für meine Aufgabe brauche."
+				},
+				{
+					"id": "01M8CT1WYG626PE0ATRQFHKFW3",
+					"slug": "e7-weather-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Eine Wetteransage sagt „strong winds in the hills after two“. Notiere einen englischen Stichpunkt mit Ort, Zeit und Wetter.",
+					"concept": "hills — strong winds after two",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-weather",
+					"sample_solution": "hills — strong winds after two"
+				}
+			]
+		},
+		{
+			"id": "01M8CT1WYGRTDRARBBHDJ1R10V",
+			"atom_uri": "urn:zam:atom:01M8CT1WYGRTDRARBBHDJ1R10V",
+			"namespace": "zam-academy-englisch-mittelschule-7",
+			"slug": "e7-film-voice",
+			"title": "A young film-maker",
+			"domain": "englisch/communication",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-film-voice",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-mittelschule-7",
+					"topic_code": "communication",
+					"topic_title": "Kommunikation"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "M",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "M",
+					"topic_code": "lb5",
+					"topic_title": "Themengebiete",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "R",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "R",
+					"topic_code": "lb5",
+					"topic_title": "Themengebiete",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8CT1WYGWTJZKBEZJFT6JJE5",
+					"slug": "e7-film-voice-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Womit erschließt du „soundtrack“, wenn danach Schritte und Gitarrenspiel genannt werden?",
+					"concept": "Mit den beschriebenen Geräuschen und der Musik zum Film",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-film-voice",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Mit den beschriebenen Geräuschen und der Musik zum Film",
+							"Mit dem Ort der Vorführung"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8CT1WYG8W8WEW11HGPC7M0E",
+					"slug": "e7-film-voice-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Was bedeutet „audience“ bei einer Filmvorführung?",
+					"concept": "Das Publikum.",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-film-voice",
+					"sample_solution": "Das Publikum."
+				},
+				{
+					"id": "01M8CT1WYGADMEM5QV6NZQEAZA",
+					"slug": "e7-film-voice-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Was kannst du tun, wenn du im Interview einen Namen nicht verstanden hast? Formuliere eine höfliche Rückfrage.",
+					"concept": "Could you say the name again, please?",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-film-voice",
+					"sample_solution": "Could you say the name again, please?"
+				}
+			]
+		},
+		{
+			"id": "01M8CT1WYGY31VF7FNGYE7Q4RF",
+			"atom_uri": "urn:zam:atom:01M8CT1WYGY31VF7FNGYE7Q4RF",
+			"namespace": "zam-academy-englisch-mittelschule-7",
+			"slug": "e7-museum-audio",
+			"title": "At the museum today",
+			"domain": "englisch/communication",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-museum-audio",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-mittelschule-7",
+					"topic_code": "communication",
+					"topic_title": "Kommunikation"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "M",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "R",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "R",
+					"topic_code": "lb4",
+					"topic_title": "Methodische Kompetenzen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8CT1WYGFXYAVS9XKEM5NZ21",
+					"slug": "e7-museum-audio-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welches englische Signal bedeutet bei einem Treffpunkt „statt beim Laden“?",
+					"concept": "instead of the shop",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-museum-audio",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"instead of the shop",
+							"next to the shop"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8CT1WYGZQMMYZENB8YWY8DQ",
+					"slug": "e7-museum-audio-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie spät ist „half past eleven“?",
+					"concept": "11:30 Uhr.",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-museum-audio",
+					"sample_solution": "11:30 Uhr."
+				},
+				{
+					"id": "01M8CT1WYGD8RBHYNPRZEWMZ0V",
+					"slug": "e7-museum-audio-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Die Durchsage sagt „Meet at the north door instead of the shop“. Wo erklärst du einem Freund, dass ihr euch trefft?",
+					"concept": "Meet at the north door.",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-museum-audio",
+					"sample_solution": "Meet at the north door."
+				}
+			]
+		},
+		{
+			"id": "01M8CT1WYGVQ9AGNA2P4JNEEKV",
+			"atom_uri": "urn:zam:atom:01M8CT1WYGVQ9AGNA2P4JNEEKV",
+			"namespace": "zam-academy-englisch-mittelschule-7",
+			"slug": "e7-reading-blog",
+			"title": "A mystery at film club",
+			"domain": "englisch/communication",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-reading-blog",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-mittelschule-7",
+					"topic_code": "communication",
+					"topic_title": "Kommunikation"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "M",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "M",
+					"topic_code": "lb3",
+					"topic_title": "Text- und Medienkompetenzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "M",
+					"topic_code": "lb4",
+					"topic_title": "Methodische Kompetenzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "R",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "R",
+					"topic_code": "lb3",
+					"topic_title": "Text- und Medienkompetenzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "R",
+					"topic_code": "lb4",
+					"topic_title": "Methodische Kompetenzen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8CT1WYGG7B4J1FXV2J3HH2B",
+					"slug": "e7-reading-blog-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche Lesestrategie hilft, die Hauptaussage eines Blogs schnell zu erfassen?",
+					"concept": "skimming",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-reading-blog",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"skimming",
+							"scanning for a date"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8CT1WYGH0A8B842SV9ETVF9",
+					"slug": "e7-reading-blog-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Was machst du beim „scanning“?",
+					"concept": "Ich suche gezielt nach einer Angabe, etwa einer Uhrzeit oder einem Namen.",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-reading-blog",
+					"sample_solution": "Ich suche gezielt nach einer Angabe, etwa einer Uhrzeit oder einem Namen."
+				},
+				{
+					"id": "01M8CT1WYG9DQCHEA8NVBXE3AF",
+					"slug": "e7-reading-blog-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Der Text nennt nasse Schuhe und kurz zuvor Regen. Wie begründest du eine vorsichtige Vermutung auf Englisch?",
+					"concept": "She may have been outside because her shoes were wet and it was raining.",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-reading-blog",
+					"sample_solution": "She may have been outside because her shoes were wet and it was raining."
+				}
+			]
+		},
+		{
+			"id": "01M8CT1WYG0MVP70A1GG577EPA",
+			"atom_uri": "urn:zam:atom:01M8CT1WYG0MVP70A1GG577EPA",
+			"namespace": "zam-academy-englisch-mittelschule-7",
+			"slug": "e7-tickets-directions",
+			"title": "Tickets and directions",
+			"domain": "englisch/communication",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-tickets-directions",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-mittelschule-7",
+					"topic_code": "communication",
+					"topic_title": "Kommunikation"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "M",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "M",
+					"topic_code": "lb1.2",
+					"topic_title": "Sprachliche Mittel",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "M",
+					"topic_code": "lb2",
+					"topic_title": "Interkulturelle Kompetenzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "M",
+					"topic_code": "lb5",
+					"topic_title": "Themengebiete",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "R",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "R",
+					"topic_code": "lb1.2",
+					"topic_title": "Sprachliche Mittel",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "R",
+					"topic_code": "lb2",
+					"topic_title": "Interkulturelle Kompetenzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "R",
+					"topic_code": "lb5",
+					"topic_title": "Themengebiete",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8CT1WYGYYD883R82G4QZ0JM",
+					"slug": "e7-tickets-directions-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was heißt „gegenüber vom Café“ in einer Wegbeschreibung?",
+					"concept": "opposite the café",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-tickets-directions",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"opposite the café",
+							"behind the café"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8CT1WYGQPHXKM0M9B0WSYTV",
+					"slug": "e7-tickets-directions-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie bittest du beim Kartenkauf höflich um zwei Karten?",
+					"concept": "Could I have two tickets, please?",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-tickets-directions",
+					"sample_solution": "Could I have two tickets, please?"
+				},
+				{
+					"id": "01M8CT1WYGJGRQHBDE2ZPXNR65",
+					"slug": "e7-tickets-directions-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Vom Start erst geradeaus, an der Bibliothek links. Gib den Weg auf Englisch an.",
+					"concept": "Go straight. Turn left at the library.",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-tickets-directions",
+					"sample_solution": "Go straight. Turn left at the library."
+				}
+			]
+		},
+		{
+			"id": "01M8CT1WYGTQWBN3C78MP1DTEE",
+			"atom_uri": "urn:zam:atom:01M8CT1WYGTQWBN3C78MP1DTEE",
+			"namespace": "zam-academy-englisch-mittelschule-7",
+			"slug": "e7-hobby-talk",
+			"title": "Show and tell",
+			"domain": "englisch/communication",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-hobby-talk",
+			"prerequisites": [
+				{
+					"atom_id": "01M8CT1WYGVQ9AGNA2P4JNEEKV",
+					"type": "soft",
+					"rationale": "Builds on A mystery at film club."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-mittelschule-7",
+					"topic_code": "communication",
+					"topic_title": "Kommunikation"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "M",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "M",
+					"topic_code": "lb5",
+					"topic_title": "Themengebiete",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "R",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "R",
+					"topic_code": "lb5",
+					"topic_title": "Themengebiete",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8CT1WYG7MDQYSZ18VR5PQCB",
+					"slug": "e7-hobby-talk-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche drei englischen Signalwörter helfen bei Anfang, Mitte und Ende einer Erzählung?",
+					"concept": "first, then, finally",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-hobby-talk",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"first, then, finally",
+							"where, why, who"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8CT1WYG2JE5GGT7KBTVJRWZ",
+					"slug": "e7-hobby-talk-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Was gehört auf eine Notizkarte für einen kurzen Vortrag?",
+					"concept": "Stichwörter, die mich an einen Punkt erinnern.",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-hobby-talk",
+					"sample_solution": "Stichwörter, die mich an einen Punkt erinnern."
+				},
+				{
+					"id": "01M8CT1WYG8TGK7A8TNWQZPQQ7",
+					"slug": "e7-hobby-talk-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Leite einen Vortrag über Hilltown Tower ein und nenne ein Detail zur Aussicht.",
+					"concept": "Today I'll tell you about Hilltown Tower. From the top you can see the river.",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-hobby-talk",
+					"sample_solution": "Today I'll tell you about Hilltown Tower. From the top you can see the river."
+				}
+			]
+		},
+		{
+			"id": "01M8CT1WYG1QC10YS40VN6A9QC",
+			"atom_uri": "urn:zam:atom:01M8CT1WYG1QC10YS40VN6A9QC",
+			"namespace": "zam-academy-englisch-mittelschule-7",
+			"slug": "e7-form-project",
+			"title": "Join a school project",
+			"domain": "englisch/communication",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-form-project",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-mittelschule-7",
+					"topic_code": "communication",
+					"topic_title": "Kommunikation"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "M",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "M",
+					"topic_code": "lb1.2",
+					"topic_title": "Sprachliche Mittel",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "M",
+					"topic_code": "lb5",
+					"topic_title": "Themengebiete",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "R",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "R",
+					"topic_code": "lb1.2",
+					"topic_title": "Sprachliche Mittel",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "R",
+					"topic_code": "lb5",
+					"topic_title": "Themengebiete",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8CT1WYG70AWDQW7SNZHXY66",
+					"slug": "e7-form-project-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welches Feld ist für den Nachnamen?",
+					"concept": "Surname",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-form-project",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Surname",
+							"First name"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8CT1WYG1QK950HMP8QVCME0",
+					"slug": "e7-form-project-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Was bedeutet „availability“ auf einer Projektanmeldung?",
+					"concept": "Wann die Person Zeit hat.",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-form-project",
+					"sample_solution": "Wann die Person Zeit hat."
+				},
+				{
+					"id": "01M8CT1WYGFHHRJ25E3QGANSXW",
+					"slug": "e7-form-project-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Jamie bringt Mittwoch um drei Papier. Schreibe einen knappen Projektstichpunkt auf Englisch.",
+					"concept": "Wednesday, three — Jamie brings paper.",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-form-project",
+					"sample_solution": "Wednesday, three — Jamie brings paper."
+				}
+			]
+		},
+		{
+			"id": "01M8CT1WYG0NEJVXC68XNSRTGN",
+			"atom_uri": "urn:zam:atom:01M8CT1WYG0NEJVXC68XNSRTGN",
+			"namespace": "zam-academy-englisch-mittelschule-7",
+			"slug": "e7-email-story",
+			"title": "A message to a friend",
+			"domain": "englisch/communication",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-email-story",
+			"prerequisites": [
+				{
+					"atom_id": "01M8CT1WYG1QC10YS40VN6A9QC",
+					"type": "soft",
+					"rationale": "Builds on Join a school project."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-mittelschule-7",
+					"topic_code": "communication",
+					"topic_title": "Kommunikation"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "M",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "M",
+					"topic_code": "lb1.2",
+					"topic_title": "Sprachliche Mittel",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "R",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "R",
+					"topic_code": "lb1.2",
+					"topic_title": "Sprachliche Mittel",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8CT1WYGDXJ30G63EQ3D3BMR",
+					"slug": "e7-email-story-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welches Bindewort leitet in „The show was full, ___ we left“ eine Folge ein?",
+					"concept": "so",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-email-story",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"so",
+							"when"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8CT1WYGY5KYKT85S2NM27WA",
+					"slug": "e7-email-story-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie schreibt man den englischen Wochentag Samstag?",
+					"concept": "Saturday.",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-email-story",
+					"sample_solution": "Saturday."
+				},
+				{
+					"id": "01M8CT1WYGHFFMRMJXP6AFVN8G",
+					"slug": "e7-email-story-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Verbinde „I arrived“ und „the film started“ mit „when“.",
+					"concept": "When I arrived, the film started.",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-email-story",
+					"sample_solution": "When I arrived, the film started."
+				}
+			]
+		},
+		{
+			"id": "01M8CT1WYG937AM8A0G4TA4Q3X",
+			"atom_uri": "urn:zam:atom:01M8CT1WYG937AM8A0G4TA4Q3X",
+			"namespace": "zam-academy-englisch-mittelschule-7",
+			"slug": "e7-mediation-de",
+			"title": "What does the ticket say?",
+			"domain": "englisch/communication",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-mediation-de",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-mittelschule-7",
+					"topic_code": "communication",
+					"topic_title": "Kommunikation"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "M",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "M",
+					"topic_code": "lb5",
+					"topic_title": "Themengebiete",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "R",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "R",
+					"topic_code": "lb5",
+					"topic_title": "Themengebiete",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8CT1WYGST7ZPB2CDEGGB2C2",
+					"slug": "e7-mediation-de-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was bedeutet „under 16“ auf einem Ticket?",
+					"concept": "jünger als 16 Jahre",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-mediation-de",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"jünger als 16 Jahre",
+							"höchstens 16 Jahre"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8CT1WYG5G0329017RQCH8K4",
+					"slug": "e7-mediation-de-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Woran erkennst du bei „£4 with a student card“, ob der Preis gilt?",
+					"concept": "Vier Pfund gelten mit Schülerausweis.",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-mediation-de",
+					"sample_solution": "Vier Pfund gelten mit Schülerausweis."
+				},
+				{
+					"id": "01M8CT1WYG5QWS1FA43ZPKJ4TQ",
+					"slug": "e7-mediation-de-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "„Book at the desk before 1 p.m.“ Was sagst du einem deutschsprachigen Gast?",
+					"concept": "Melde dich vor 13 Uhr am Schalter an.",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-mediation-de",
+					"sample_solution": "Melde dich vor 13 Uhr am Schalter an."
+				}
+			]
+		},
+		{
+			"id": "01M8CT1WYG5HEBQ853EYQGPDG4",
+			"atom_uri": "urn:zam:atom:01M8CT1WYG5HEBQ853EYQGPDG4",
+			"namespace": "zam-academy-englisch-mittelschule-7",
+			"slug": "e7-mediation-en",
+			"title": "Help an English-speaking guest",
+			"domain": "englisch/communication",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-mediation-en",
+			"prerequisites": [
+				{
+					"atom_id": "01M8CT1WYG0MVP70A1GG577EPA",
+					"type": "soft",
+					"rationale": "Builds on Tickets and directions."
+				},
+				{
+					"atom_id": "01M8CT1WYG937AM8A0G4TA4Q3X",
+					"type": "soft",
+					"rationale": "Builds on What does the ticket say?."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-mittelschule-7",
+					"topic_code": "communication",
+					"topic_title": "Kommunikation"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "M",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8CT1WYGYXD600V3TT52R9GN",
+					"slug": "e7-mediation-en-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche Umschreibung hilft für „Haupteingang“?",
+					"concept": "the main door",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-mediation-en",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"the main door",
+							"the last price"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8CT1WYG47D9K1GFJ9DHBGRK",
+					"slug": "e7-mediation-en-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie sagst du „Die Kasse öffnet um 17 Uhr“ auf Englisch?",
+					"concept": "The ticket desk opens at five p.m.",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-mediation-en",
+					"sample_solution": "The ticket desk opens at five p.m."
+				},
+				{
+					"id": "01M8CT1WYG6B3T3SAD0P2RZ66B",
+					"slug": "e7-mediation-en-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Ein Gast fragt, wo der Eingang ist. Auf dem Aushang steht „neben dem Café“. Antworte auf Englisch.",
+					"concept": "It's next to the café.",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-mediation-en",
+					"sample_solution": "It's next to the café."
+				}
+			]
+		},
+		{
+			"id": "01M8CT1WYGVPANJ8Y2J2R28CKK",
+			"atom_uri": "urn:zam:atom:01M8CT1WYGVPANJ8Y2J2R28CKK",
+			"namespace": "zam-academy-englisch-mittelschule-7",
+			"slug": "e7-notes-listening",
+			"title": "From notes to a team message",
+			"domain": "englisch/communication",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-notes-listening",
+			"prerequisites": [
+				{
+					"atom_id": "01M8CT1WYGY31VF7FNGYE7Q4RF",
+					"type": "soft",
+					"rationale": "Builds on At the museum today."
+				},
+				{
+					"atom_id": "01M8CT1WYG1QC10YS40VN6A9QC",
+					"type": "soft",
+					"rationale": "Builds on Join a school project."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-mittelschule-7",
+					"topic_code": "communication",
+					"topic_title": "Kommunikation"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "M",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "M",
+					"topic_code": "lb4",
+					"topic_title": "Methodische Kompetenzen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8CT1WYGCZPSBDJM33QPW7X1",
+					"slug": "e7-notes-listening-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wie heißt das Mitschreiben von Informationen aus einem Hörtext?",
+					"concept": "note-taking",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-notes-listening",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"note-taking",
+							"note-making"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8CT1WYGA1CQG8Y4AGR1DGXX",
+					"slug": "e7-notes-listening-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Was unterscheidet note-making von note-taking?",
+					"concept": "Beim note-making sammle und ordne ich eigene Punkte für ein Vorhaben. Beim note-taking halte ich Informationen aus einer Quelle fest.",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-notes-listening",
+					"sample_solution": "Beim note-making sammle und ordne ich eigene Punkte für ein Vorhaben. Beim note-taking halte ich Informationen aus einer Quelle fest."
+				},
+				{
+					"id": "01M8CT1WYGS5JNA11NBXRBG3GS",
+					"slug": "e7-notes-listening-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Aus „Thursday / 3:30 / music room“: Formuliere einen englischen Mitteilungssatz.",
+					"concept": "We'll meet in the music room on Thursday at half past three.",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-notes-listening",
+					"sample_solution": "We'll meet in the music room on Thursday at half past three."
+				}
+			]
+		},
+		{
+			"id": "01M8CT1WYG1D8897H67AMRS9SR",
+			"atom_uri": "urn:zam:atom:01M8CT1WYG1D8897H67AMRS9SR",
+			"namespace": "zam-academy-englisch-mittelschule-7",
+			"slug": "e7-perfect-form",
+			"title": "We’ve finished the poster",
+			"domain": "englisch/language",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-perfect-form",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-mittelschule-7",
+					"topic_code": "language",
+					"topic_title": "Sprachwerkstatt"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "M",
+					"topic_code": "lb1.2",
+					"topic_title": "Sprachliche Mittel",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "R",
+					"topic_code": "lb1.2",
+					"topic_title": "Sprachliche Mittel",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8CT1WYG7BQDEMHX183ZV4FX",
+					"slug": "e7-perfect-form-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche Formel bildet das present perfect simple?",
+					"concept": "have/has + dritte Verbform",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-perfect-form",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"have/has + dritte Verbform",
+							"have/has + einfache Vergangenheit"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8CT1WYGCW2N4E7SPX77XW1M",
+					"slug": "e7-perfect-form-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie lautet die dritte Form von „write“?",
+					"concept": "written",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-perfect-form",
+					"sample_solution": "written"
+				},
+				{
+					"id": "01M8CT1WYGS7P0RC5GF9GJ5KBJ",
+					"slug": "e7-perfect-form-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Bilde einen Satz im present perfect: „Sam / write / the title“.",
+					"concept": "Sam has written the title.",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-perfect-form",
+					"sample_solution": "Sam has written the title."
+				}
+			]
+		},
+		{
+			"id": "01M8CT1WYG1BEQFGGEEM2N2APN",
+			"atom_uri": "urn:zam:atom:01M8CT1WYG1BEQFGGEEM2N2APN",
+			"namespace": "zam-academy-englisch-mittelschule-7",
+			"slug": "e7-perfect-signals",
+			"title": "Ever, never, already",
+			"domain": "englisch/language",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-perfect-signals",
+			"prerequisites": [
+				{
+					"atom_id": "01M8CT1WYG1D8897H67AMRS9SR",
+					"type": "soft",
+					"rationale": "Builds on We’ve finished the poster."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-mittelschule-7",
+					"topic_code": "language",
+					"topic_title": "Sprachwerkstatt"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "M",
+					"topic_code": "lb1.2",
+					"topic_title": "Sprachliche Mittel",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "R",
+					"topic_code": "lb1.2",
+					"topic_title": "Sprachliche Mittel",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8CT1WYG3NAH7FZ7SJ8QWADH",
+					"slug": "e7-perfect-signals-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welches Wort gehört in die Frage „Have you ___ climbed a tower?“ (jemals)?",
+					"concept": "ever",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-perfect-signals",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"ever",
+							"yesterday"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8CT1WYG2MWPMJJHQCCP1AM6",
+					"slug": "e7-perfect-signals-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welches englische Wort bedeutet „schon“ in „I have ___ finished“?",
+					"concept": "already",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-perfect-signals",
+					"sample_solution": "already"
+				},
+				{
+					"id": "01M8CT1WYGQ86142RH775TYNQX",
+					"slug": "e7-perfect-signals-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Schreib auf Englisch: „Ich habe noch nie in einer Band gespielt.“",
+					"concept": "I've never played in a band.",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-perfect-signals",
+					"sample_solution": "I've never played in a band."
+				}
+			]
+		},
+		{
+			"id": "01M8CT1WYGYG40KBY2MSGDE782",
+			"atom_uri": "urn:zam:atom:01M8CT1WYGYG40KBY2MSGDE782",
+			"namespace": "zam-academy-englisch-mittelschule-7",
+			"slug": "e7-plans",
+			"title": "What are they going to do?",
+			"domain": "englisch/language",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-plans",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-mittelschule-7",
+					"topic_code": "language",
+					"topic_title": "Sprachwerkstatt"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "M",
+					"topic_code": "lb1.2",
+					"topic_title": "Sprachliche Mittel",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "R",
+					"topic_code": "lb1.2",
+					"topic_title": "Sprachliche Mittel",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8CT1WYGP2KMJAGT71B9T851",
+					"slug": "e7-plans-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welchen Satz erkennst du an „going to + Grundform“ als geplante Handlung?",
+					"concept": "We are going to make a poster.",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-plans",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"We are going to make a poster.",
+							"We are going to the hall."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8CT1WYGH18XDBXTSDJ8R787",
+					"slug": "e7-plans-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Was bedeutet „Ella isn't going to sing“?",
+					"concept": "Ella hat nicht vor zu singen.",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-plans",
+					"sample_solution": "Ella hat nicht vor zu singen."
+				},
+				{
+					"id": "01M8CT1WYGAK5Y08AZJD3JVHT4",
+					"slug": "e7-plans-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Erkläre auf Deutsch, was „Ben is going to paint the signs“ zu Bens Vorhaben sagt.",
+					"concept": "Ben hat vor, die Schilder zu bemalen.",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-plans",
+					"sample_solution": "Ben hat vor, die Schilder zu bemalen."
+				}
+			]
+		},
+		{
+			"id": "01M8CT1WYG748VZ83C3V1YP3KE",
+			"atom_uri": "urn:zam:atom:01M8CT1WYG748VZ83C3V1YP3KE",
+			"namespace": "zam-academy-englisch-mittelschule-7",
+			"slug": "e7-comparison",
+			"title": "More exciting, the most exciting",
+			"domain": "englisch/language",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-comparison",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-mittelschule-7",
+					"topic_code": "language",
+					"topic_title": "Sprachwerkstatt"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "M",
+					"topic_code": "lb1.2",
+					"topic_title": "Sprachliche Mittel",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "M",
+					"topic_code": "lb4",
+					"topic_title": "Methodische Kompetenzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "R",
+					"topic_code": "lb1.2",
+					"topic_title": "Sprachliche Mittel",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "R",
+					"topic_code": "lb4",
+					"topic_title": "Methodische Kompetenzen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8CT1WYGZZZYCBEVYC18TQTM",
+					"slug": "e7-comparison-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wie steigerst du „expensive“ für den Vergleich mit einem anderen Angebot?",
+					"concept": "more expensive than …",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-comparison",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"more expensive than …",
+							"expensiver than …"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8CT1WYG387YT55FN90442S2",
+					"slug": "e7-comparison-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie lautet die Steigerung von „little“ bei nicht zählbaren Mengen?",
+					"concept": "little → less → the least",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-comparison",
+					"sample_solution": "little → less → the least"
+				},
+				{
+					"id": "01M8CT1WYGX5Q1KB6VP8Q4A61M",
+					"slug": "e7-comparison-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Vergleiche auf Englisch „this museum / interesting / that museum“.",
+					"concept": "This museum is more interesting than that museum.",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-comparison",
+					"sample_solution": "This museum is more interesting than that museum."
+				}
+			]
+		},
+		{
+			"id": "01M8CT1WYGNZM0ACWSP6A05HWE",
+			"atom_uri": "urn:zam:atom:01M8CT1WYGNZM0ACWSP6A05HWE",
+			"namespace": "zam-academy-englisch-mittelschule-7",
+			"slug": "e7-quantities",
+			"title": "How much? How many?",
+			"domain": "englisch/language",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-quantities",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-mittelschule-7",
+					"topic_code": "language",
+					"topic_title": "Sprachwerkstatt"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "M",
+					"topic_code": "lb1.2",
+					"topic_title": "Sprachliche Mittel",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "M",
+					"topic_code": "lb5",
+					"topic_title": "Themengebiete",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "R",
+					"topic_code": "lb1.2",
+					"topic_title": "Sprachliche Mittel",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "R",
+					"topic_code": "lb5",
+					"topic_title": "Themengebiete",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8CT1WYGGP0TQG85N9F2MQ8W",
+					"slug": "e7-quantities-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was steht in „How ___ chairs do we need?“?",
+					"concept": "many",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-quantities",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"many",
+							"much"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8CT1WYGMNRH9XZ50DPKYZ3V",
+					"slug": "e7-quantities-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Was steht in „How ___ time is left?“?",
+					"concept": "much",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-quantities",
+					"sample_solution": "much"
+				},
+				{
+					"id": "01M8CT1WYGJ946379H639TTSX3",
+					"slug": "e7-quantities-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Formuliere „eine einzelne Information“ auf idiomatischem Englisch.",
+					"concept": "a piece of information",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-quantities",
+					"sample_solution": "a piece of information"
+				}
+			]
+		},
+		{
+			"id": "01M8CT1WYG73P3YM7RMDEG7VZR",
+			"atom_uri": "urn:zam:atom:01M8CT1WYG73P3YM7RMDEG7VZR",
+			"namespace": "zam-academy-englisch-mittelschule-7",
+			"slug": "e7-indefinites",
+			"title": "Something, anything, nothing",
+			"domain": "englisch/language",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-indefinites",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-mittelschule-7",
+					"topic_code": "language",
+					"topic_title": "Sprachwerkstatt"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "M",
+					"topic_code": "lb1.2",
+					"topic_title": "Sprachliche Mittel",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "R",
+					"topic_code": "lb1.2",
+					"topic_title": "Sprachliche Mittel",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8CT1WYGEX5935SNJ9YNHTQR",
+					"slug": "e7-indefinites-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was passt in „I don't have ___ tickets“?",
+					"concept": "any",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-indefinites",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"any",
+							"some"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8CT1WYGW9R94KZBYDZS4WQA",
+					"slug": "e7-indefinites-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welches englische Wort bedeutet in „There is ___ in the box“ eindeutig „nichts“?",
+					"concept": "nothing",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-indefinites",
+					"sample_solution": "nothing"
+				},
+				{
+					"id": "01M8CT1WYG3Y7B024E8MTQ2X2N",
+					"slug": "e7-indefinites-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Schreibe „Wir haben keine Eintrittskarten“ mit „no“ auf Englisch.",
+					"concept": "We have no tickets.",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-indefinites",
+					"sample_solution": "We have no tickets."
+				}
+			]
+		},
+		{
+			"id": "01M8CT1WYGSDS7C288D0M7GJHV",
+			"atom_uri": "urn:zam:atom:01M8CT1WYGSDS7C288D0M7GJHV",
+			"namespace": "zam-academy-englisch-mittelschule-7",
+			"slug": "e7-possessive-one",
+			"title": "Mine, yours or the blue one?",
+			"domain": "englisch/language",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-possessive-one",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-mittelschule-7",
+					"topic_code": "language",
+					"topic_title": "Sprachwerkstatt"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "M",
+					"topic_code": "lb1.2",
+					"topic_title": "Sprachliche Mittel",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "R",
+					"topic_code": "lb1.2",
+					"topic_title": "Sprachliche Mittel",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8CT1WYGY0F6XZQFE0B5VG9N",
+					"slug": "e7-possessive-one-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was ergänzt „This is my book. It's ___.“?",
+					"concept": "mine",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-possessive-one",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"mine",
+							"my"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8CT1WYG153RYYXRNPWFPS56",
+					"slug": "e7-possessive-one-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wofür steht „one“ in „the blue one“, wenn vorher eine Trinkflasche gemeint war?",
+					"concept": "Für „bottle“.",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-possessive-one",
+					"sample_solution": "Für „bottle“."
+				},
+				{
+					"id": "01M8CT1WYGM6CVCWV38ZCVXAGD",
+					"slug": "e7-possessive-one-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Schreibe „Der rote Becher gehört ihr“ mit „the red one“ und einem Possessivpronomen.",
+					"concept": "The red one is hers.",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-possessive-one",
+					"sample_solution": "The red one is hers."
+				}
+			]
+		},
+		{
+			"id": "01M8CT1WYGP28V55YQSTYQ242E",
+			"atom_uri": "urn:zam:atom:01M8CT1WYGP28V55YQSTYQ242E",
+			"namespace": "zam-academy-englisch-mittelschule-7",
+			"slug": "e7-relative-reflexive",
+			"title": "Who, which and myself",
+			"domain": "englisch/language",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-relative-reflexive",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-mittelschule-7",
+					"topic_code": "language",
+					"topic_title": "Sprachwerkstatt"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "M",
+					"topic_code": "lb1.2",
+					"topic_title": "Sprachliche Mittel",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "R",
+					"topic_code": "lb1.2",
+					"topic_title": "Sprachliche Mittel",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8CT1WYG3WH1R9DD2VSEXJ6F",
+					"slug": "e7-relative-reflexive-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welches Relativpronomen passt zu einer Person in „the girl ___ called“?",
+					"concept": "who",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-relative-reflexive",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"who",
+							"which"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8CT1WYGT6P2KC1AZ2H8WYMP",
+					"slug": "e7-relative-reflexive-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie lautet das Reflexivpronomen zu „I“?",
+					"concept": "myself",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-relative-reflexive",
+					"sample_solution": "myself"
+				},
+				{
+					"id": "01M8CT1WYGDXXMSSYZXFTC4TCT",
+					"slug": "e7-relative-reflexive-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Verbinde „the book“ und „it won the prize“ mit „which“.",
+					"concept": "the book which won the prize",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-relative-reflexive",
+					"sample_solution": "the book which won the prize"
+				}
+			]
+		},
+		{
+			"id": "01M8CT1WYGQT0NGNBGSTX90FGJ",
+			"atom_uri": "urn:zam:atom:01M8CT1WYGQT0NGNBGSTX90FGJ",
+			"namespace": "zam-academy-englisch-mittelschule-7",
+			"slug": "e7-big-numbers",
+			"title": "Thousands and beyond",
+			"domain": "englisch/language",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-big-numbers",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-mittelschule-7",
+					"topic_code": "language",
+					"topic_title": "Sprachwerkstatt"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "M",
+					"topic_code": "lb1.2",
+					"topic_title": "Sprachliche Mittel",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "R",
+					"topic_code": "lb1.2",
+					"topic_title": "Sprachliche Mittel",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8CT1WYGAMNTHMSBKP5EA5W9",
+					"slug": "e7-big-numbers-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was ist die korrekte Schreibweise von 42. als englische Ziffernform?",
+					"concept": "42nd",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-big-numbers",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"42nd",
+							"42th"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8CT1WYGNCXQHNB7WTQFTTSP",
+					"slug": "e7-big-numbers-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie liest du „5,000“ auf Englisch?",
+					"concept": "five thousand",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-big-numbers",
+					"sample_solution": "five thousand"
+				},
+				{
+					"id": "01M8CT1WYG7EJSXVH28ZES7XV7",
+					"slug": "e7-big-numbers-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Schreibe „12,450 visitors“ für eine britische Durchsage in Wörtern.",
+					"concept": "twelve thousand four hundred and fifty visitors",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-big-numbers",
+					"sample_solution": "twelve thousand four hundred and fifty visitors"
+				}
+			]
+		},
+		{
+			"id": "01M8CT1WYG92GC5X2DVEC7QV5F",
+			"atom_uri": "urn:zam:atom:01M8CT1WYG92GC5X2DVEC7QV5F",
+			"namespace": "zam-academy-englisch-mittelschule-7",
+			"slug": "e7-pasts-svo",
+			"title": "At the club on Friday",
+			"domain": "englisch/language",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-pasts-svo",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-mittelschule-7",
+					"topic_code": "language",
+					"topic_title": "Sprachwerkstatt"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "M",
+					"topic_code": "lb1.2",
+					"topic_title": "Sprachliche Mittel",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "R",
+					"topic_code": "lb1.2",
+					"topic_title": "Sprachliche Mittel",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8CT1WYGS2DW62FNJYPSNH01",
+					"slug": "e7-pasts-svo-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche Form kommt in „Did she ___ him?“?",
+					"concept": "meet",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-pasts-svo",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"meet",
+							"met"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8CT1WYGRDSH710ZQHGZJW4K",
+					"slug": "e7-pasts-svo-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Was bedeutet „occasionally“ auf Deutsch?",
+					"concept": "gelegentlich",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-pasts-svo",
+					"sample_solution": "gelegentlich"
+				},
+				{
+					"id": "01M8CT1WYGK5S8H77T0ZCP9NR7",
+					"slug": "e7-pasts-svo-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Ordne eine typische einfache Aussage: „at the gym / the team / met / on Tuesday“.",
+					"concept": "The team met at the gym on Tuesday.",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-pasts-svo",
+					"sample_solution": "The team met at the gym on Tuesday."
+				}
+			]
+		},
+		{
+			"id": "01M8CT1WYGK2PAM0ZYB891J9CJ",
+			"atom_uri": "urn:zam:atom:01M8CT1WYGK2PAM0ZYB891J9CJ",
+			"namespace": "zam-academy-englisch-mittelschule-7",
+			"slug": "e7-chunks",
+			"title": "Catch a bus, look up a word",
+			"domain": "englisch/language",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-chunks",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-mittelschule-7",
+					"topic_code": "language",
+					"topic_title": "Sprachwerkstatt"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "M",
+					"topic_code": "lb1.2",
+					"topic_title": "Sprachliche Mittel",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "R",
+					"topic_code": "lb1.2",
+					"topic_title": "Sprachliche Mittel",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8CT1WYGGJ0EY7RC19YYS5C9",
+					"slug": "e7-chunks-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche Wortverbindung passt für „einen Bus erwischen“?",
+					"concept": "catch a bus",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-chunks",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"catch a bus",
+							"make a bus"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8CT1WYGA5TKGAF6ARC1107P",
+					"slug": "e7-chunks-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Was bedeutet „look up a word“ im Zusammenhang mit einem Wörterbuch?",
+					"concept": "ein Wort nachschlagen",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-chunks",
+					"sample_solution": "ein Wort nachschlagen"
+				},
+				{
+					"id": "01M8CT1WYG1D2R43G4RZD7DKZ4",
+					"slug": "e7-chunks-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Schreibe „Ich interessiere mich für das Fotografieren“ mit „interested in“.",
+					"concept": "I'm interested in taking photos.",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-chunks",
+					"sample_solution": "I'm interested in taking photos."
+				}
+			]
+		},
+		{
+			"id": "01M8CT1WYGN4SYZJF2XMEDP2GY",
+			"atom_uri": "urn:zam:atom:01M8CT1WYGN4SYZJF2XMEDP2GY",
+			"namespace": "zam-academy-englisch-mittelschule-7",
+			"slug": "e7-advice",
+			"title": "You should talk to a friend",
+			"domain": "englisch/language",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-advice",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-mittelschule-7",
+					"topic_code": "language",
+					"topic_title": "Sprachwerkstatt"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "M",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "M",
+					"topic_code": "lb1.2",
+					"topic_title": "Sprachliche Mittel",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "M",
+					"topic_code": "lb5",
+					"topic_title": "Themengebiete",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "R",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "R",
+					"topic_code": "lb1.2",
+					"topic_title": "Sprachliche Mittel",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "R",
+					"topic_code": "lb5",
+					"topic_title": "Themengebiete",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8CT1WYG7MSQDCDJJ9QN9TM7",
+					"slug": "e7-advice-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche Aussage drückt einen Rat aus?",
+					"concept": "You should talk to your friend.",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-advice",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"You should talk to your friend.",
+							"You will talk to your friend."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8CT1WYGHEP1B3PZKMPE4EKA",
+					"slug": "e7-advice-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welche Verbform steht direkt nach „should“?",
+					"concept": "Die Grundform ohne to.",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-advice",
+					"sample_solution": "Die Grundform ohne to."
+				},
+				{
+					"id": "01M8CT1WYGR1Q5BFGNW3WPXV0V",
+					"slug": "e7-advice-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Formuliere auf Englisch einen Rat gegen das Teilen einer privaten Nachricht.",
+					"concept": "You shouldn't share a private message.",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-advice",
+					"sample_solution": "You shouldn't share a private message."
+				}
+			]
+		},
+		{
+			"id": "01M8CT1WYGXMMT60QYER4F0YYT",
+			"atom_uri": "urn:zam:atom:01M8CT1WYGXMMT60QYER4F0YYT",
+			"namespace": "zam-academy-englisch-mittelschule-7",
+			"slug": "e7-pronunciation",
+			"title": "Three chunks, one question",
+			"domain": "englisch/language",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-pronunciation",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-mittelschule-7",
+					"topic_code": "language",
+					"topic_title": "Sprachwerkstatt"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "M",
+					"topic_code": "lb1.2",
+					"topic_title": "Sprachliche Mittel",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "M",
+					"topic_code": "lb4",
+					"topic_title": "Methodische Kompetenzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "R",
+					"topic_code": "lb1.2",
+					"topic_title": "Sprachliche Mittel",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "R",
+					"topic_code": "lb4",
+					"topic_title": "Methodische Kompetenzen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8CT1WYG0W83K865N71HJGZT",
+					"slug": "e7-pronunciation-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welches Lautschriftzeichen steht für den Anfangslaut von „shop“?",
+					"concept": "/ʃ/",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-pronunciation",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"/ʃ/",
+							"/tʃ/"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8CT1WYGWYV7RWC1C50ECE58",
+					"slug": "e7-pronunciation-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welcher Laut eröffnet „chip“?",
+					"concept": "/tʃ/",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-pronunciation",
+					"sample_solution": "/tʃ/"
+				},
+				{
+					"id": "01M8CT1WYGVEP2Y3SNCD48BAFB",
+					"slug": "e7-pronunciation-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Gliedere „Can you meet me outside the shop after school?“ in drei Sprechtakte.",
+					"concept": "Can you meet me / outside the shop / after school?",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-pronunciation",
+					"sample_solution": "Can you meet me / outside the shop / after school?"
+				}
+			]
+		},
+		{
+			"id": "01M8CT1WYGKQ89K1G9ZBZA4B9C",
+			"atom_uri": "urn:zam:atom:01M8CT1WYGKQ89K1G9ZBZA4B9C",
+			"namespace": "zam-academy-englisch-mittelschule-7",
+			"slug": "e7-island-ireland",
+			"title": "Belfast and Dublin",
+			"domain": "englisch/culture",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-island-ireland",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-mittelschule-7",
+					"topic_code": "culture",
+					"topic_title": "Landeskunde"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "M",
+					"topic_code": "lb2",
+					"topic_title": "Interkulturelle Kompetenzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "M",
+					"topic_code": "lb5",
+					"topic_title": "Themengebiete",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "R",
+					"topic_code": "lb2",
+					"topic_title": "Interkulturelle Kompetenzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "R",
+					"topic_code": "lb5",
+					"topic_title": "Themengebiete",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8CT1WYG1JHWAAVXXP120CZN",
+					"slug": "e7-island-ireland-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche Stadt auf der Insel Irland gehört zum Vereinigten Königreich?",
+					"concept": "Belfast",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-island-ireland",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Belfast",
+							"Dublin"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8CT1WYGAZRD0WPEEWA5RNS7",
+					"slug": "e7-island-ireland-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welches Meer liegt zwischen Irland und Großbritannien?",
+					"concept": "Die Irische See (Irish Sea).",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-island-ireland",
+					"sample_solution": "Die Irische See (Irish Sea)."
+				},
+				{
+					"id": "01M8CT1WYG84FPJKCDVD0B0Q27",
+					"slug": "e7-island-ireland-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Erkläre in zwei englischen Sätzen, warum Dublin und Belfast auf derselben Insel, aber in unterschiedlichen Staaten liegen.",
+					"concept": "Dublin is in the Republic of Ireland. Belfast is in Northern Ireland, part of the UK.",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-island-ireland",
+					"sample_solution": "Dublin is in the Republic of Ireland. Belfast is in Northern Ireland, part of the UK."
+				}
+			]
+		},
+		{
+			"id": "01M8CT1WYGPGDDREAP0FSSRAFS",
+			"atom_uri": "urn:zam:atom:01M8CT1WYGPGDDREAP0FSSRAFS",
+			"namespace": "zam-academy-englisch-mittelschule-7",
+			"slug": "e7-parks",
+			"title": "Two parks, different landscapes",
+			"domain": "englisch/culture",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-parks",
+			"prerequisites": [
+				{
+					"atom_id": "01M8CT1WYGKQ89K1G9ZBZA4B9C",
+					"type": "soft",
+					"rationale": "Builds on Belfast and Dublin."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-mittelschule-7",
+					"topic_code": "culture",
+					"topic_title": "Landeskunde"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "M",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "M",
+					"topic_code": "lb2",
+					"topic_title": "Interkulturelle Kompetenzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "M",
+					"topic_code": "lb5",
+					"topic_title": "Themengebiete",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "R",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "R",
+					"topic_code": "lb2",
+					"topic_title": "Interkulturelle Kompetenzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "R",
+					"topic_code": "lb5",
+					"topic_title": "Themengebiete",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8CT1WYGX5KD2N9QA2C608F8",
+					"slug": "e7-parks-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welcher Park aus der Einheit liegt in den USA?",
+					"concept": "Yellowstone National Park",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-parks",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Yellowstone National Park",
+							"Lake District National Park"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8CT1WYGA591T7CMK2RY6TNW",
+					"slug": "e7-parks-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Was ist ein „boardwalk“ in einem Park?",
+					"concept": "Ein befestigter Holzsteg oder Bohlenweg.",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-parks",
+					"sample_solution": "Ein befestigter Holzsteg oder Bohlenweg."
+				},
+				{
+					"id": "01M8CT1WYG7WXV684C01ZNAWQD",
+					"slug": "e7-parks-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Nutze „because“, um zu erklären, warum man an heißen Quellen auf dem Steg bleiben soll.",
+					"concept": "Stay on the boardwalk because the hot springs can be dangerous.",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-parks",
+					"sample_solution": "Stay on the boardwalk because the hot springs can be dangerous."
+				}
+			]
+		},
+		{
+			"id": "01M8CT1WYGTA1FEFWMD2N073FZ",
+			"atom_uri": "urn:zam:atom:01M8CT1WYGTA1FEFWMD2N073FZ",
+			"namespace": "zam-academy-englisch-mittelschule-7",
+			"slug": "e7-celebrations",
+			"title": "Different ways to celebrate",
+			"domain": "englisch/culture",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-celebrations",
+			"prerequisites": [
+				{
+					"atom_id": "01M8CT1WYGKQ89K1G9ZBZA4B9C",
+					"type": "soft",
+					"rationale": "Builds on Belfast and Dublin."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-mittelschule-7",
+					"topic_code": "culture",
+					"topic_title": "Landeskunde"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "M",
+					"topic_code": "lb1.2",
+					"topic_title": "Sprachliche Mittel",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "M",
+					"topic_code": "lb2",
+					"topic_title": "Interkulturelle Kompetenzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "M",
+					"topic_code": "lb5",
+					"topic_title": "Themengebiete",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "R",
+					"topic_code": "lb1.2",
+					"topic_title": "Sprachliche Mittel",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "R",
+					"topic_code": "lb2",
+					"topic_title": "Interkulturelle Kompetenzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "R",
+					"topic_code": "lb5",
+					"topic_title": "Themengebiete",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8CT1WYGHD4F8XHR9HDVJET9",
+					"slug": "e7-celebrations-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "An welchem Datum ist St Patrick’s Day?",
+					"concept": "17. März",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-celebrations",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"17. März",
+							"4. Juli"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8CT1WYG0NC5RWT620GQE28X",
+					"slug": "e7-celebrations-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie sagst du „beide Feste“ auf Englisch?",
+					"concept": "both festivals",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-celebrations",
+					"sample_solution": "both festivals"
+				},
+				{
+					"id": "01M8CT1WYGP810Q66W23M7HMAM",
+					"slug": "e7-celebrations-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Formuliere eine vorsichtige englische Aussage über das Tragen grüner Kleidung am St Patrick’s Day.",
+					"concept": "Some people wear green on St Patrick's Day.",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-celebrations",
+					"sample_solution": "Some people wear green on St Patrick's Day."
+				}
+			]
+		},
+		{
+			"id": "01M8CT1WYGAQEJRXX9CPMDCGDV",
+			"atom_uri": "urn:zam:atom:01M8CT1WYGAQEJRXX9CPMDCGDV",
+			"namespace": "zam-academy-englisch-mittelschule-7",
+			"slug": "e7-units",
+			"title": "Miles and pounds",
+			"domain": "englisch/culture",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-units",
+			"prerequisites": [
+				{
+					"atom_id": "01M8CT1WYGQT0NGNBGSTX90FGJ",
+					"type": "soft",
+					"rationale": "Builds on Thousands and beyond."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-mittelschule-7",
+					"topic_code": "culture",
+					"topic_title": "Landeskunde"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "M",
+					"topic_code": "lb2",
+					"topic_title": "Interkulturelle Kompetenzen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8CT1WYG5B6N3MND4P1MJ09X",
+					"slug": "e7-units-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was bedeutet „mi“ auf einem Wegweiser?",
+					"concept": "miles, also Meilen",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-units",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"miles, also Meilen",
+							"minutes, also Minuten"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8CT1WYGP7RNJJZ70Q0HYCJV",
+					"slug": "e7-units-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Was bedeutet „1 lb“ auf einer Packung Äpfel ungefähr in Gramm?",
+					"concept": "Ungefähr 450 g.",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-units",
+					"sample_solution": "Ungefähr 450 g."
+				},
+				{
+					"id": "01M8CT1WYGP7V1A69D2YWRWQKV",
+					"slug": "e7-units-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Ein Weg ist 2 mi lang. Erkläre auf Deutsch ungefähr, wie viele Kilometer das sind.",
+					"concept": "Etwa 3,2 km, denn eine Meile entspricht rund 1,6 km.",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-units",
+					"sample_solution": "Etwa 3,2 km, denn eine Meile entspricht rund 1,6 km."
+				}
+			]
+		},
+		{
+			"id": "01M8CT1WYGAFY0R4REFCBM77WW",
+			"atom_uri": "urn:zam:atom:01M8CT1WYGAFY0R4REFCBM77WW",
+			"namespace": "zam-academy-englisch-mittelschule-7",
+			"slug": "e7-film-poster",
+			"title": "Read the poster",
+			"domain": "englisch/media",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-film-poster",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-mittelschule-7",
+					"topic_code": "media",
+					"topic_title": "Texte und Medien"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "M",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "M",
+					"topic_code": "lb1.2",
+					"topic_title": "Sprachliche Mittel",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "M",
+					"topic_code": "lb3",
+					"topic_title": "Text- und Medienkompetenzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "M",
+					"topic_code": "lb5",
+					"topic_title": "Themengebiete",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "R",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "R",
+					"topic_code": "lb1.2",
+					"topic_title": "Sprachliche Mittel",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "R",
+					"topic_code": "lb3",
+					"topic_title": "Text- und Medienkompetenzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "R",
+					"topic_code": "lb5",
+					"topic_title": "Themengebiete",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8CT1WYGN1HDWZKPYS71T3VB",
+					"slug": "e7-film-poster-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche Plakatangabe nennt den Veranstaltungsbeginn: „doors open“ oder „film starts“?",
+					"concept": "film starts",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-film-poster",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"film starts",
+							"doors open"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8CT1WYGH7EC46QDJ4WGP5XN",
+					"slug": "e7-film-poster-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Was bedeutet „free for film club members“?",
+					"concept": "Für Mitglieder des Filmclubs ist der Eintritt kostenlos.",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-film-poster",
+					"sample_solution": "Für Mitglieder des Filmclubs ist der Eintritt kostenlos."
+				},
+				{
+					"id": "01M8CT1WYGX4GX2J5NTXH6A40Z",
+					"slug": "e7-film-poster-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Schreibe zwei englische Plakatzeilen für einen Film, der um 18 Uhr im Schulsaal beginnt.",
+					"concept": "WHEN: 6 p.m. WHERE: school hall.",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-film-poster",
+					"sample_solution": "WHEN: 6 p.m. WHERE: school hall."
+				}
+			]
+		},
+		{
+			"id": "01M8CT1WYG9BB2S97PK9VNS4D0",
+			"atom_uri": "urn:zam:atom:01M8CT1WYG9BB2S97PK9VNS4D0",
+			"namespace": "zam-academy-englisch-mittelschule-7",
+			"slug": "e7-notice-ads",
+			"title": "Lost or for sale?",
+			"domain": "englisch/media",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-notice-ads",
+			"prerequisites": [
+				{
+					"atom_id": "01M8CT1WYGAFY0R4REFCBM77WW",
+					"type": "soft",
+					"rationale": "Builds on Read the poster."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-mittelschule-7",
+					"topic_code": "media",
+					"topic_title": "Texte und Medien"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "M",
+					"topic_code": "lb3",
+					"topic_title": "Text- und Medienkompetenzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "M",
+					"topic_code": "lb5",
+					"topic_title": "Themengebiete",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "R",
+					"topic_code": "lb3",
+					"topic_title": "Text- und Medienkompetenzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "R",
+					"topic_code": "lb5",
+					"topic_title": "Themengebiete",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8CT1WYG1VP7SX9QZXE5DNPJ",
+					"slug": "e7-notice-ads-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche Angabe gehört in eine Verlustanzeige?",
+					"concept": "last seen in the music room",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-notice-ads",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"last seen in the music room",
+							"price: £5"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8CT1WYG0NR6XJM64DM1ERWX",
+					"slug": "e7-notice-ads-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie kann man „in gutem Zustand“ auf Englisch in einer Anzeige ausdrücken?",
+					"concept": "in good condition",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-notice-ads",
+					"sample_solution": "in good condition"
+				},
+				{
+					"id": "01M8CT1WYG6C0W89B2Y3PSKTTJ",
+					"slug": "e7-notice-ads-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Schreib die erste Zeile einer englischen Verlustanzeige für blaue Kopfhörer mit weißem Stern.",
+					"concept": "LOST: Blue headphones with a white star.",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-notice-ads",
+					"sample_solution": "LOST: Blue headphones with a white star."
+				}
+			]
+		},
+		{
+			"id": "01M8CT1WYGFCY2Q9AZ2RDDJJ9D",
+			"atom_uri": "urn:zam:atom:01M8CT1WYGFCY2Q9AZ2RDDJJ9D",
+			"namespace": "zam-academy-englisch-mittelschule-7",
+			"slug": "e7-photo-story",
+			"title": "Tell it in three pictures",
+			"domain": "englisch/media",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-photo-story",
+			"prerequisites": [
+				{
+					"atom_id": "01M8CT1WYGVQ9AGNA2P4JNEEKV",
+					"type": "soft",
+					"rationale": "Builds on A mystery at film club."
+				},
+				{
+					"atom_id": "01M8CT1WYG0NEJVXC68XNSRTGN",
+					"type": "soft",
+					"rationale": "Builds on A message to a friend."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-mittelschule-7",
+					"topic_code": "media",
+					"topic_title": "Texte und Medien"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "M",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "M",
+					"topic_code": "lb3",
+					"topic_title": "Text- und Medienkompetenzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "M",
+					"topic_code": "lb5",
+					"topic_title": "Themengebiete",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "R",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "R",
+					"topic_code": "lb3",
+					"topic_title": "Text- und Medienkompetenzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "R",
+					"topic_code": "lb5",
+					"topic_title": "Themengebiete",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8CT1WYGRKJA1JZ5PHFXY9VN",
+					"slug": "e7-photo-story-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was ist eine „caption“ in einer Bildergeschichte?",
+					"concept": "eine kurze Bildunterschrift",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-photo-story",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"eine kurze Bildunterschrift",
+							"ein Fotoapparat"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8CT1WYGNNBD2HQ6P3QKPQ26",
+					"slug": "e7-photo-story-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welches englische Wort leitet den letzten Schritt einer Anleitung ein?",
+					"concept": "finally",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-photo-story",
+					"sample_solution": "finally"
+				},
+				{
+					"id": "01M8CT1WYGQJMTT7SQSZAJV31R",
+					"slug": "e7-photo-story-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Schreib für ein Bild, auf dem Noor den Busfahrplan überprüft, eine kurze englische Bildunterschrift.",
+					"concept": "Noor checks the timetable for the next bus.",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-photo-story",
+					"sample_solution": "Noor checks the timetable for the next bus."
+				}
+			]
+		},
+		{
+			"id": "01M8CT1WYGPGP6JH5DGYXYSB2V",
+			"atom_uri": "urn:zam:atom:01M8CT1WYGPGP6JH5DGYXYSB2V",
+			"namespace": "zam-academy-englisch-mittelschule-7",
+			"slug": "e7-dictionary",
+			"title": "What does fine mean here?",
+			"domain": "englisch/methods",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-dictionary",
+			"prerequisites": [
+				{
+					"atom_id": "01M8CT1WYGXMMT60QYER4F0YYT",
+					"type": "soft",
+					"rationale": "Builds on Three chunks, one question."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-mittelschule-7",
+					"topic_code": "methods",
+					"topic_title": "Lernmethoden"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "M",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "M",
+					"topic_code": "lb1.2",
+					"topic_title": "Sprachliche Mittel",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "M",
+					"topic_code": "lb4",
+					"topic_title": "Methodische Kompetenzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "R",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "R",
+					"topic_code": "lb1.2",
+					"topic_title": "Sprachliche Mittel",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "R",
+					"topic_code": "lb4",
+					"topic_title": "Methodische Kompetenzen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8CT1WYGJHW45J6BWSDZQ0B9",
+					"slug": "e7-dictionary-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wie übersetzt du „fine“ in „fine sand“?",
+					"concept": "fein",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-dictionary",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"fein",
+							"in Ordnung"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8CT1WYGF8EMG0JTQSB92WS3",
+					"slug": "e7-dictionary-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welche zwei Angaben neben der Übersetzung helfen, einen Wörterbucheintrag zu verstehen?",
+					"concept": "Ein Beispielsatz für den Kontext und die Lautschrift für die Aussprache.",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-dictionary",
+					"sample_solution": "Ein Beispielsatz für den Kontext und die Lautschrift für die Aussprache."
+				},
+				{
+					"id": "01M8CT1WYG3Y8WY8WZV69X17MX",
+					"slug": "e7-dictionary-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Erkläre „light“ in „a light bag“ und in „Turn on the light“.",
+					"concept": "In „a light bag“ ist light ein Adjektiv und bedeutet leicht. In „Turn on the light“ ist es ein Nomen und bedeutet Licht.",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-dictionary",
+					"sample_solution": "In „a light bag“ ist light ein Adjektiv und bedeutet leicht. In „Turn on the light“ ist es ein Nomen und bedeutet Licht."
+				}
+			]
+		},
+		{
+			"id": "01M8CT1WYGCQ91Y5HRVH7QDMMP",
+			"atom_uri": "urn:zam:atom:01M8CT1WYGCQ91Y5HRVH7QDMMP",
+			"namespace": "zam-academy-englisch-mittelschule-7",
+			"slug": "e7-word-map",
+			"title": "Build a word map",
+			"domain": "englisch/methods",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-word-map",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-mittelschule-7",
+					"topic_code": "methods",
+					"topic_title": "Lernmethoden"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "M",
+					"topic_code": "lb1.2",
+					"topic_title": "Sprachliche Mittel",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "M",
+					"topic_code": "lb4",
+					"topic_title": "Methodische Kompetenzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "M",
+					"topic_code": "lb5",
+					"topic_title": "Themengebiete",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "R",
+					"topic_code": "lb1.2",
+					"topic_title": "Sprachliche Mittel",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "R",
+					"topic_code": "lb4",
+					"topic_title": "Methodische Kompetenzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "R",
+					"topic_code": "lb5",
+					"topic_title": "Themengebiete",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8CT1WYGYDNDTV3QC68KDKP6",
+					"slug": "e7-word-map-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche Wortgruppe passt unter „film project → actions“?",
+					"concept": "record a scene",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-word-map",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"record a scene",
+							"a camera"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8CT1WYGHWZMWRWPQF2HXJYJ",
+					"slug": "e7-word-map-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welche Wortart hat „record“ in „We record a scene“?",
+					"concept": "Verb.",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-word-map",
+					"sample_solution": "Verb."
+				},
+				{
+					"id": "01M8CT1WYG5VPHFP5851VV9V9T",
+					"slug": "e7-word-map-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Ergänze die Mindmap „museum visit“ mit einem Nomen und einer Verbgruppe.",
+					"concept": "Nomen: exhibition. Verbgruppe: buy a ticket.",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-word-map",
+					"sample_solution": "Nomen: exhibition. Verbgruppe: buy a ticket."
+				}
+			]
+		},
+		{
+			"id": "01M8CT1WYGHB63A8FMDJSP5F9Z",
+			"atom_uri": "urn:zam:atom:01M8CT1WYGHB63A8FMDJSP5F9Z",
+			"namespace": "zam-academy-englisch-mittelschule-7",
+			"slug": "e7-learn-plan",
+			"title": "Choose, practise, check",
+			"domain": "englisch/methods",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-learn-plan",
+			"prerequisites": [
+				{
+					"atom_id": "01M8CT1WYG748VZ83C3V1YP3KE",
+					"type": "soft",
+					"rationale": "Builds on More exciting, the most exciting."
+				},
+				{
+					"atom_id": "01M8CT1WYG7878332TFQVRXX9V",
+					"type": "soft",
+					"rationale": "Builds on Tomorrow’s weather."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-mittelschule-7",
+					"topic_code": "methods",
+					"topic_title": "Lernmethoden"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "M",
+					"topic_code": "lb4",
+					"topic_title": "Methodische Kompetenzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "M",
+					"topic_code": "lb5",
+					"topic_title": "Themengebiete",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "R",
+					"topic_code": "lb4",
+					"topic_title": "Methodische Kompetenzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "R",
+					"topic_code": "lb5",
+					"topic_title": "Themengebiete",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8CT1WYGGBGHW6E7M3S4KHVX",
+					"slug": "e7-learn-plan-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was ist ein überprüfbares Hörziel?",
+					"concept": "Drei Uhrzeiten aus einer Durchsage notieren.",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-learn-plan",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Drei Uhrzeiten aus einer Durchsage notieren.",
+							"Ein bisschen Englisch machen."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8CT1WYG894YJNXR4SGAN9V4",
+					"slug": "e7-learn-plan-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie kannst du prüfen, ob du eine Vokabel aus dem Gedächtnis abrufen kannst?",
+					"concept": "Die Lösung abdecken und ohne Vorlage sagen oder aufschreiben.",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-learn-plan",
+					"sample_solution": "Die Lösung abdecken und ohne Vorlage sagen oder aufschreiben."
+				},
+				{
+					"id": "01M8CT1WYGRQEES5FYARHTSZ3Q",
+					"slug": "e7-learn-plan-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Übersetze „interessanter als das Buch“ und nenne den Unterschied zur deutschen Steigerung.",
+					"concept": "more interesting than the book. Englisch setzt hier more vor das Adjektiv.",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-learn-plan",
+					"sample_solution": "more interesting than the book. Englisch setzt hier more vor das Adjektiv."
+				}
+			]
+		},
+		{
+			"id": "01M8CT1WYGH7FHR4FQFNZ212M2",
+			"atom_uri": "urn:zam:atom:01M8CT1WYGH7FHR4FQFNZ212M2",
+			"namespace": "zam-academy-englisch-mittelschule-7",
+			"slug": "e7-word-parts",
+			"title": "Re-, un- and -er",
+			"domain": "englisch/methods",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-word-parts",
+			"prerequisites": [
+				{
+					"atom_id": "01M8CT1WYGCQ91Y5HRVH7QDMMP",
+					"type": "soft",
+					"rationale": "Builds on Build a word map."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-mittelschule-7",
+					"topic_code": "methods",
+					"topic_title": "Lernmethoden"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "mittelschule",
+					"grade": 7,
+					"subject": "englisch",
+					"track": "M",
+					"topic_code": "lb4",
+					"topic_title": "Methodische Kompetenzen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8CT1WYGQCW6CSGPREWX3W0C",
+					"slug": "e7-word-parts-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was bedeutet das Präfix „re-“ in „rewrite“?",
+					"concept": "noch einmal",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-word-parts",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"noch einmal",
+							"ohne"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8CT1WYG4BG3H7TBD82TVWK2",
+					"slug": "e7-word-parts-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welche Funktion hat „-er“ in „player“?",
+					"concept": "Es kennzeichnet hier die Person, die spielt.",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-word-parts",
+					"sample_solution": "Es kennzeichnet hier die Person, die spielt."
+				},
+				{
+					"id": "01M8CT1WYGS4GEN8A580E8NDPK",
+					"slug": "e7-word-parts-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Erkläre „reread“ und „reader“ aus der Wortfamilie von „read“.",
+					"concept": "Reread bedeutet noch einmal lesen. Reader bezeichnet eine Person, die liest.",
+					"source_link": "https://academy.zam-os.org/englisch-mittelschule-7/#lesson=e7-word-parts",
+					"sample_solution": "Reread bedeutet noch einmal lesen. Reader bezeichnet eine Person, die liest."
+				}
+			]
+		}
+	]
+}
