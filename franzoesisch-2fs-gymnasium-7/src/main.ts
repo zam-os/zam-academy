@@ -527,13 +527,16 @@ window.addEventListener("storage", (event) => {
 	if (event.key !== STORAGE_KEY) return;
 	// Read the current value: an older queued event must not undo a newer save.
 	const stored = loadProgress();
-	if (stored.resetAt > progress.resetAt) {
+	const resetElsewhere = stored.resetAt > progress.resetAt;
+	if (resetElsewhere) {
 		cancelSpeech();
 		practiceAnswers.clear();
 	}
 	progress = mergeProgress(stored, progress, baseline);
 	baseline = structuredClone(stored);
-	if (view === "path") renderPath();
+	// A reset in another tab clears typed answers, marks and drafts here too,
+	// so the open view is drawn again; otherwise keep the form and its focus.
+	if (resetElsewhere || view === "path") render();
 	else syncSavedState();
 	renderStats();
 });
