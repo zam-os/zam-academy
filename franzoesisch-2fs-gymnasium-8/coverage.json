@@ -1,0 +1,707 @@
+{
+	"curriculum": [
+		"https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/8/franzoesisch/2fs"
+	],
+	"checked": "2026-11-27",
+	"curricula": [
+		{
+			"track": "F2",
+			"url": "https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/8/franzoesisch/2fs",
+			"file": "tests/fixtures/lehrplanplus-f8-2.html",
+			"curriculum_sha256": "1641567df72d0da2f432b57331cb495eef2c347a04769c475233a50df241d1a9"
+		}
+	],
+	"neighbours": [
+		{
+			"track": "F2",
+			"url": "https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/7/franzoesisch/2-fremdsprache",
+			"file": "tests/fixtures/lehrplanplus-f7-2.html",
+			"grade": 7,
+			"sha256": "e3d186005a74be416741d545cdfc619e631a7ea2263bb302f7c33ba852747dd4"
+		},
+		{
+			"track": "F2",
+			"url": "https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/9/franzoesisch/2-fremdsprache",
+			"file": "tests/fixtures/lehrplanplus-f9-2.html",
+			"grade": 9,
+			"sha256": "8d89c7bcab532f77294ad1c2e6e835b78a9ce7a689130054ce8779bd68be0a91"
+		}
+	],
+	"rows": [
+		{
+			"id": "F2-01",
+			"track": "F2",
+			"lb": "F8 1.1 · Hör- und Hörsehverstehen",
+			"competence": "verstehen relativ einfache, deutlich und in zunehmend natürlichem Tempo gesprochene und realistische Bedingungen (z. B. Hintergrundgeräusche) widerspiegelnde Hör- und Hörsehtexte zu im Unterricht behandelten Themen mit weitgehend bekanntem bzw. erschließbarem Wortschatz global und entnehmen gezielt Detailinformationen, z. B. kurze Radiointerviews/Podcasts, Ansagen in öffentlichen Gebäuden, Filmausschnitte, ggf. mit frz. Untertiteln.",
+			"lessons": [
+				"f8-2-annonce",
+				"f8-2-podcast",
+				"f8-2-accents"
+			],
+			"status": "supported",
+			"evidence": "Original scripts for a station announcement and a school podcast train gist and detail; an installed voice or a partner reads them. Natural recordings with background noise and film clips stay in class."
+		},
+		{
+			"id": "F2-02",
+			"track": "F2",
+			"lb": "F8 1.1 · Leseverstehen",
+			"competence": "verstehen einfache, ggf. didaktisierte Texte mit überwiegend bekanntem Sprachmaterial zu altersgemäßen Themen, die über das Alltagsleben hinausreichen (z. B. Reisen, Schüleraustausch, faits divers), global bzw. im Detail.",
+			"lessons": [
+				"f8-2-echange",
+				"f8-2-fait-divers",
+				"f8-2-marseille-lille",
+				"f8-2-quebec",
+				"f8-2-ecole"
+			],
+			"status": "implemented",
+			"evidence": "Read an exchange message, a fait divers, an interview, a message from Montréal and a timetable for gist and detail."
+		},
+		{
+			"id": "F2-03",
+			"track": "F2",
+			"lb": "F8 1.1 · Sprechen",
+			"competence": "beschreiben in kurzen Sätzen und mit einfachen grammatikalischen Strukturen und Worten Gegenstände, Orte, Personen und Vorgänge des Alltags und äußern sich zu Vergangenem sowie zu Vorlieben und Abneigungen, z. B. Musik, Sport, Spiel, Freundeskreis.",
+			"lessons": [
+				"f8-2-ecrans",
+				"f8-2-medecin",
+				"f8-2-chateau",
+				"f8-2-plus-vite",
+				"f8-2-pronominaux-passe"
+			],
+			"status": "supported",
+			"evidence": "Prepare descriptions, likes and dislikes and past events as notes; speaking with a partner and teacher feedback stay in class."
+		},
+		{
+			"id": "F2-04",
+			"track": "F2",
+			"lb": "F8 1.1 · Sprechen",
+			"competence": "äußern sich in sehr kurzen Vorträgen zu alltäglichen Ereignissen und vertrauten Themen mithilfe von Notizen und ggf. unter Verwendung von digitalen Präsentationsformen.",
+			"lessons": [
+				"f8-2-expose",
+				"f8-2-statistiques",
+				"f8-2-fetes"
+			],
+			"status": "supported",
+			"evidence": "Plan a mini-talk with notes and a slide structure and phrase it; the talk itself is given in class."
+		},
+		{
+			"id": "F2-05",
+			"track": "F2",
+			"lb": "F8 1.1 · Sprechen",
+			"competence": "stellen einfache Fragen und geben in mehreren zusammenhängenden Sätzen Antworten zur eigenen Person und zu ihrem unmittelbaren Lebensumfeld.",
+			"lessons": [
+				"f8-2-inversion",
+				"f8-2-lequel",
+				"f8-2-qui-quoi",
+				"f8-2-podcast"
+			],
+			"status": "supported",
+			"evidence": "Form questions with inversion, lequel and est-ce qui/que and prepare answers; real conversation needs a partner."
+		},
+		{
+			"id": "F2-06",
+			"track": "F2",
+			"lb": "F8 1.1 · Schreiben",
+			"competence": "nutzen ihre Kenntnisse der Phonem-Graphem-Beziehungen, um Wörter, die im Unterricht besprochen wurden, korrekt zu schreiben.",
+			"lessons": [
+				"f8-2-sons",
+				"f8-2-emment"
+			],
+			"status": "implemented",
+			"evidence": "Spell sounds such as [o], [ɛj] and [amɑ̃] from their regular spellings and check typed answers with accents."
+		},
+		{
+			"id": "F2-07",
+			"track": "F2",
+			"lb": "F8 1.1 · Schreiben",
+			"competence": "verfassen etwas längere Texte (z. B. Briefe, E-Mails, Chatbeiträge, Posts) zu altersgemäßen und vertrauten Themen und erzählen mithilfe von Vorgaben einfache, logisch strukturierte Geschichten.",
+			"lessons": [
+				"f8-2-post",
+				"f8-2-recit",
+				"f8-2-avant-apres"
+			],
+			"status": "implemented",
+			"evidence": "Write a blog post, a formal e-mail, a news item and a story from prompts, then compare with a model and self-check three criteria."
+		},
+		{
+			"id": "F2-08",
+			"track": "F2",
+			"lb": "F8 1.1 · Schreiben",
+			"competence": "achten beim Erstellen ihrer Texte auf klare Gedankenführung sowie der jeweiligen Kommunikationssituation angemessene Gestaltungskriterien.",
+			"lessons": [
+				"f8-2-post",
+				"f8-2-recit"
+			],
+			"status": "implemented",
+			"evidence": "Structure greeting, paragraphs and closing by register and build a story with beginning, turn and ending."
+		},
+		{
+			"id": "F2-09",
+			"track": "F2",
+			"lb": "F8 1.1 · Sprachmittlung",
+			"competence": "dolmetschen etwas längere, einfache Gespräche über die Interessensgebiete Jugendlicher bzw. geben deren Inhalte zusammenfassend wieder, z. B. auch im Rahmen internationaler Austauschbegegnungen.",
+			"lessons": [
+				"f8-2-echange",
+				"f8-2-programme"
+			],
+			"status": "supported",
+			"evidence": "Relay a host family's message and questions with que and si; spoken interpreting with real speakers stays in class."
+		},
+		{
+			"id": "F2-10",
+			"track": "F2",
+			"lb": "F8 1.1 · Sprachmittlung",
+			"competence": "übertragen, hauptsächlich vom Deutschen ins Französische, mündlich bzw. schriftlich sinngemäß sowie situations- und adressatengerecht auch etwas längere Textpassagen (z. B. einfache Artikel aus Jugendzeitschriften und Beiträge in Internetforen), wenn diese sich auf vertraute Sachverhalte und altersgemäße Themen beziehen, z. B. Freizeitangebote einer Region, ein Programm für einen Urlaub in einer anderen Stadt.",
+			"lessons": [
+				"f8-2-programme",
+				"f8-2-echange"
+			],
+			"status": "implemented",
+			"evidence": "Transfer a German weekend programme into a French message and a polite e-mail."
+		},
+		{
+			"id": "F2-11",
+			"track": "F2",
+			"lb": "F8 1.1 · Sprachmittlung",
+			"competence": "kompensieren ggf. sprachliche Defizite auf einfache Weise, z. B. durch einfache Umschreibungen sowie Synonyme und Antonyme.",
+			"lessons": [
+				"f8-2-synonymes",
+				"f8-2-programme"
+			],
+			"status": "implemented",
+			"evidence": "Paraphrase missing words with qui, que and où patterns, synonyms and antonyms."
+		},
+		{
+			"id": "F2-12",
+			"track": "F2",
+			"lb": "F8 1.2 · Wortschatz",
+			"competence": "wenden im Rahmen der erarbeiteten Kommunikationssituationen und Themen einen etwas umfangreicheren Wortschatz im Zusammenhang mit konkreten Alltagsbedürfnissen, routinemäßigen Angelegenheiten und vertrauten Situationen weitgehend situations- und adressatengerecht an.",
+			"lessons": [
+				"f8-2-medecin",
+				"f8-2-ecrans",
+				"f8-2-chateau",
+				"f8-2-accents",
+				"f8-2-invitation"
+			],
+			"status": "implemented",
+			"evidence": "Topic vocabulary for the doctor's visit, media, castles, regional French and invitations in context."
+		},
+		{
+			"id": "F2-13",
+			"track": "F2",
+			"lb": "F8 1.2 · Wortschatz",
+			"competence": "wenden in begrenztem Umfang einen an ihren Interessen orientierten individuellen Wortschatz (z. B. Musik, Freunde) an.",
+			"lessons": [
+				"f8-2-ecrans",
+				"f8-2-expose"
+			],
+			"status": "supported",
+			"evidence": "Tasks ask for one's own media habits, role models and hobby; building an individual word list remains the learner's work."
+		},
+		{
+			"id": "F2-14",
+			"track": "F2",
+			"lb": "F8 1.2 · Wortschatz",
+			"competence": "verwenden einfache Umschreibungen, gängige Synonyme und Antonyme.",
+			"lessons": [
+				"f8-2-synonymes"
+			],
+			"status": "implemented",
+			"evidence": "Practise paraphrase patterns, synonyms and antonyms."
+		},
+		{
+			"id": "F2-15",
+			"track": "F2",
+			"lb": "F8 1.2 · Wortschatz",
+			"competence": "führen gängige Arbeitsanweisungen aus und beherrschen die Begriffe des Lernbereiches Grammatik, um sich im Unterricht zu verständigen.",
+			"lessons": [
+				"f8-2-dictionnaire",
+				"f8-2-valences",
+				"f8-2-qui-quoi"
+			],
+			"status": "supported",
+			"evidence": "Lessons use grammar terms such as subject, object, nom masculin and complement; following French classroom instructions is practised in class."
+		},
+		{
+			"id": "F2-16",
+			"track": "F2",
+			"lb": "F8 1.2 · Wortschatz",
+			"competence": "formulieren auf einfache Weise die eigene Meinung, u. a. à mon avis, je crois que, c’est dommage, c’est parfait, je pense que, je trouve que.",
+			"lessons": [
+				"f8-2-avis"
+			],
+			"status": "implemented",
+			"evidence": "Use à mon avis, je pense, crois and trouve que, c'est parfait and c'est dommage with reasons."
+		},
+		{
+			"id": "F2-17",
+			"track": "F2",
+			"lb": "F8 1.2 · Wortschatz",
+			"competence": "formulieren zeitliche Bezüge verbal (venir de faire qc / être en train de faire qc).",
+			"lessons": [
+				"f8-2-venir-de"
+			],
+			"status": "implemented",
+			"evidence": "Place venir de, être en train de and aller on a timeline and use them."
+		},
+		{
+			"id": "F2-18",
+			"track": "F2",
+			"lb": "F8 1.2 · Wortschatz",
+			"competence": "geben Zahlen und Mengen etwas differenzierter an, auch in Form von einfachen Brüchen (un/e demi/e, un tiers, un quart, fractions en -ième).",
+			"lessons": [
+				"f8-2-statistiques"
+			],
+			"status": "implemented",
+			"evidence": "Name halves, thirds, quarters and -ième fractions on a pie chart and in a survey."
+		},
+		{
+			"id": "F2-19",
+			"track": "F2",
+			"lb": "F8 1.2 · Wortschatz",
+			"competence": "verfügen über erste Einsichten in die Wortbildung (préfixes, suffixes, noms composés).",
+			"lessons": [
+				"f8-2-mots"
+			],
+			"status": "implemented",
+			"evidence": "Build and decode words with re-, dé-, in-/im-, -eur, -tion and compounds."
+		},
+		{
+			"id": "F2-20",
+			"track": "F2",
+			"lb": "F8 1.2 · Wortschatz",
+			"competence": "nutzen den erforderlichen Funktionswortschatz, um diskontinuierliche Texte (z. B. Schaubilder, Statistiken) und Abbildungen etwas genauer zu beschreiben.",
+			"lessons": [
+				"f8-2-statistiques"
+			],
+			"status": "implemented",
+			"evidence": "Describe a survey chart with le graphique montre, la moitié and pour cent."
+		},
+		{
+			"id": "F2-21",
+			"track": "F2",
+			"lb": "F8 1.2 · Wortschatz",
+			"competence": "erschließen Sprachmaterial aus dem situativen Kontext sowie aufgrund ihres Weltwissens bzw. ihrer Vorkenntnisse aus anderen Sprachen, sofern der Umfang des neuen Wortmaterials begrenzt ist.",
+			"lessons": [
+				"f8-2-fait-divers",
+				"f8-2-mots"
+			],
+			"status": "implemented",
+			"evidence": "Infer new words from context, word families and English in a news item and an advert."
+		},
+		{
+			"id": "F2-22",
+			"track": "F2",
+			"lb": "F8 1.2 · Grammatik",
+			"competence": "beschreiben Personen, Gegenstände, Orte und Sachverhalte etwas differenzierter und setzen sie zueinander in Beziehung: prépositions + noms de pays les adverbes en « -ment » et les adverbes fréquents en « -emment », « -amment », « -ément » + comparatif/superlatif emplois fréquents des adverbes « personne ne », « rien ne », « ne ... rien », « ne ... personne » mise en relief",
+			"lessons": [
+				"f8-2-pays",
+				"f8-2-adverbes",
+				"f8-2-emment",
+				"f8-2-plus-vite",
+				"f8-2-personne-rien",
+				"f8-2-mise-en-relief"
+			],
+			"status": "implemented",
+			"evidence": "Country prepositions, adverbs in -ment, -emment, -amment and -ément with comparison, adverb position, personne ne and rien ne, and c'est … qui/que."
+		},
+		{
+			"id": "F2-23",
+			"track": "F2",
+			"lb": "F8 1.2 · Grammatik",
+			"competence": "treten mit anderen Menschen in Beziehung, stellen Fragen und beantworten diese: interrogation par inversion avec pronom sujet pronom interrogatif « lequel » interrogation avec « Qu’est-ce qui ? » et « Qui est-ce que ? »",
+			"lessons": [
+				"f8-2-inversion",
+				"f8-2-lequel",
+				"f8-2-qui-quoi"
+			],
+			"status": "implemented",
+			"evidence": "Inversion questions with pronoun subjects and -t-, lequel forms and the est-ce qui/que grid."
+		},
+		{
+			"id": "F2-24",
+			"track": "F2",
+			"lb": "F8 1.2 · Grammatik",
+			"competence": "stellen zeitliche und logische Bezüge zwischen Handlungen her, erkennen sie und drücken sie aus: plus-que-parfait + révision des temps du passé verbes pronominaux (temps du passé) réceptif : accord du participe passé avec avoir verbes irréguliers : « courir », « croire », « mourir », « rire »",
+			"lessons": [
+				"f8-2-plus-que-parfait",
+				"f8-2-avant-apres",
+				"f8-2-pronominaux-passe",
+				"f8-2-accord-avoir",
+				"f8-2-courir-rire",
+				"f8-2-croire-mourir"
+			],
+			"status": "implemented",
+			"evidence": "Form and use the plus-que-parfait with the other past tenses, reflexive verbs in the past, receptive agreement after avoir, and courir, croire, mourir and rire."
+		},
+		{
+			"id": "F2-25",
+			"track": "F2",
+			"lb": "F8 1.2 · Aussprache und Intonation",
+			"competence": "nutzen die Regelmäßigkeit der Graphem-Phonem-Beziehungen, um einfache fremde Wörter, die bekannten Aussprachemustern folgen, korrekt auszusprechen.",
+			"lessons": [
+				"f8-2-sons"
+			],
+			"status": "supported",
+			"evidence": "Rules for -tion, -eil(le), gn, eau and silent final consonants; pronunciation is not assessed by the app."
+		},
+		{
+			"id": "F2-26",
+			"track": "F2",
+			"lb": "F8 1.2 · Aussprache und Intonation",
+			"competence": "sprechen Sinneinheiten weitgehend flüssig, artikulieren und betonen auch in Äußerungen, die mehrere Sätze umfassen, verständlich.",
+			"lessons": [
+				"f8-2-sons",
+				"f8-2-expose"
+			],
+			"status": "supported",
+			"evidence": "Mark groupes rythmiques and practise aloud; fluency needs a listener."
+		},
+		{
+			"id": "F2-27",
+			"track": "F2",
+			"lb": "F8 1.2 · Aussprache und Intonation",
+			"competence": "nutzen zunehmend selbständig ihre Kenntnisse der internationalen Lautschrift sowie Hörbeispiele, um auch unbekannte Wörter korrekt auszusprechen.",
+			"lessons": [
+				"f8-2-dictionnaire",
+				"f8-2-sons"
+			],
+			"status": "supported",
+			"evidence": "Read IPA in a dictionary entry and check words against it; listening examples come from dictionaries and class."
+		},
+		{
+			"id": "F2-28",
+			"track": "F2",
+			"lb": "F8 2 · Interkulturelle Kompetenzen",
+			"competence": "sind mit der Gliederung Frankreichs so vertraut, dass sie einige Regionen einordnen können.",
+			"lessons": [
+				"f8-2-regions",
+				"f8-2-marseille-lille"
+			],
+			"status": "implemented",
+			"evidence": "Locate Normandie, Occitanie and Provence-Alpes-Côte d'Azur and two cities on a learning sketch."
+		},
+		{
+			"id": "F2-29",
+			"track": "F2",
+			"lb": "F8 2 · Interkulturelle Kompetenzen",
+			"competence": "nutzen ihre Kenntnisse über französische Großstädte, um sich der Vielfalt des Lebens in städtischen Ballungsräumen (u. a. immigration, intégration) bewusst zu werden.",
+			"lessons": [
+				"f8-2-marseille-lille"
+			],
+			"status": "implemented",
+			"evidence": "Marseille and Lille as cities shaped by immigration; define immigration and intégration and describe people precisely."
+		},
+		{
+			"id": "F2-30",
+			"track": "F2",
+			"lb": "F8 2 · Interkulturelle Kompetenzen",
+			"competence": "nutzen ihre Kenntnisse über französische Regionen und die bayerische Partnerprovinz Québec, um soziale, politische und kulturelle Gegebenheiten in verschiedenen Lebensbereichen zu vergleichen.",
+			"lessons": [
+				"f8-2-regions",
+				"f8-2-quebec",
+				"f8-2-accents"
+			],
+			"status": "implemented",
+			"evidence": "Compare French regions with the Länder and Québec with Bavaria (size, language, capital, leisure)."
+		},
+		{
+			"id": "F2-31",
+			"track": "F2",
+			"lb": "F8 2 · Interkulturelle Kompetenzen",
+			"competence": "ordnen auf der Grundlage ihres Wissens über kulturspezifische Verhaltensweisen im Alltag neue Erfahrungen richtig ein, begegnen in privaten oder schulischen Kontakten, auch virtuell, frankophonen Gesprächspartnerinnen und -partnern offen, nehmen interkulturelle Unterschiede bewusst wahr, gehen damit verständnisvoll um und vermeiden so Missverständnisse, z. B. Ankunftszeit bei Einladungen.",
+			"lessons": [
+				"f8-2-invitation",
+				"f8-2-echange"
+			],
+			"status": "implemented",
+			"evidence": "Arrival time at private invitations, mealtimes and polite questions to avoid misunderstandings."
+		},
+		{
+			"id": "F2-32",
+			"track": "F2",
+			"lb": "F8 2 · Interkulturelle Kompetenzen",
+			"competence": "zeigen in Austauschsituationen (ggf. im Rollenspiel) Verständnis, Empathie und Toleranz gegenüber frankophonen Jugendlichen und Erwachsenen.",
+			"lessons": [
+				"f8-2-echange",
+				"f8-2-invitation",
+				"f8-2-medecin"
+			],
+			"status": "supported",
+			"evidence": "Tasks model caring and polite reactions in exchange situations; empathy is shown in real encounters and role play."
+		},
+		{
+			"id": "F2-33",
+			"track": "F2",
+			"lb": "F8 2 · Interkulturelle Kompetenzen",
+			"competence": "nehmen bei der Verwendung von Jugendjargon und Umgangssprache Rücksicht auf die Gesprächssituation.",
+			"lessons": [
+				"f8-2-registre"
+			],
+			"status": "implemented",
+			"evidence": "Choose familier, standard or polite forms for friends, teachers and host families."
+		},
+		{
+			"id": "F2-34",
+			"track": "F2",
+			"lb": "F8 3 · Text- und Medienkompetenzen",
+			"competence": "nutzen zur Erschließung von Texten sprachliche und außersprachliche Entschlüsselungshilfen, z. B. einfache Wortbildungsregeln, Wortfamilien, Bilder, Diagramme und unter Anleitung das zweisprachige Wörterbuch.",
+			"lessons": [
+				"f8-2-fait-divers",
+				"f8-2-mots",
+				"f8-2-dictionnaire",
+				"f8-2-statistiques"
+			],
+			"status": "implemented",
+			"evidence": "Decode with word formation, word families, a chart and a bilingual dictionary entry."
+		},
+		{
+			"id": "F2-35",
+			"track": "F2",
+			"lb": "F8 3 · Text- und Medienkompetenzen",
+			"competence": "erfassen die innere Struktur von Texten und beantworten Fragen zum Inhalt etwas ausführlicher.",
+			"lessons": [
+				"f8-2-fait-divers",
+				"f8-2-recit"
+			],
+			"status": "implemented",
+			"evidence": "Identify headline, opening and details of a news item and the beginning, turn and end of a story; answer in full sentences."
+		},
+		{
+			"id": "F2-36",
+			"track": "F2",
+			"lb": "F8 3 · Text- und Medienkompetenzen",
+			"competence": "erfassen in fiktionalen Texten Personen in ihren wesentlichen Charakterzügen.",
+			"lessons": [
+				"f8-2-bd"
+			],
+			"status": "implemented",
+			"evidence": "Describe a comic character with adjectives and evidence from what they say and do."
+		},
+		{
+			"id": "F2-37",
+			"track": "F2",
+			"lb": "F8 3 · Text- und Medienkompetenzen",
+			"competence": "arbeiten Texte unter bestimmten Vorgaben aus (z. B. Fortführung von Erzählungen, Beiträge zu Internetchats, kurze Hördokumente oder Videosequenzen) und setzen dabei ein begrenztes Repertoire an gestalterischen Mitteln ein (z. B. Fotos, Bilder), wobei sie korrektes Verhalten im Umgang mit diversen Medien (u. a. Netiquette, Datenschutz) beachten.",
+			"lessons": [
+				"f8-2-post",
+				"f8-2-bd",
+				"f8-2-recit"
+			],
+			"status": "implemented",
+			"evidence": "Continue a story, add a comic panel and write a blog post with a consented photo, without private data."
+		},
+		{
+			"id": "F2-38",
+			"track": "F2",
+			"lb": "F8 3 · Text- und Medienkompetenzen",
+			"competence": "stellen im Rollenspiel vertraute Kommunikationssituationen, ggf. in Anlehnung an Textvorlagen, nach.",
+			"lessons": [
+				"f8-2-invitation",
+				"f8-2-medecin"
+			],
+			"status": "supported",
+			"evidence": "Model dialogues prepare the invitation and doctor role plays; acting them out happens with partners."
+		},
+		{
+			"id": "F2-39",
+			"track": "F2",
+			"lb": "F8 4 · Methodische Kompetenzen",
+			"competence": "wenden ein differenziertes Inventar verschiedener Sprachlerntechniken und insbesondere Verfahren der Wortschatzarbeit selbständig an, z. B. Erarbeiten und Wiederholen von Wortschatz und Grammatik auch mit lehrbuchunabhängigem Material, Strukturierung in Wortfelder und Wortfamilien.",
+			"lessons": [
+				"f8-2-mots",
+				"f8-2-chateau",
+				"f8-2-synonymes"
+			],
+			"status": "supported",
+			"evidence": "Word families, a castle word field and paraphrase support vocabulary work; independent study with other material stays with the learner."
+		},
+		{
+			"id": "F2-40",
+			"track": "F2",
+			"lb": "F8 4 · Methodische Kompetenzen",
+			"competence": "setzen individuelle Strategien im eigenen Lernprozess gezielt zum Erkennen und Evaluieren von Stärken sowie Schwächen ein, z. B. Reflexion und selbständige Dokumentation von Lernfortschritten und Schwächen (Portfolio), Fehlervermeidungs- und Selbstkorrekturstrategien mithilfe von fiches d’écriture und Fehlerprotokollen.",
+			"lessons": [
+				"f8-2-recit",
+				"f8-2-post"
+			],
+			"status": "supported",
+			"evidence": "Introduce fiches d'écriture and error logs and self-check criteria after each model comparison; a portfolio is kept outside the app."
+		},
+		{
+			"id": "F2-41",
+			"track": "F2",
+			"lb": "F8 4 · Methodische Kompetenzen",
+			"competence": "nutzen Hilfsmittel zum Nachschlagen, Lernen und Wiederholen (z. B. zweisprachige Wörterbücher, auch digitale Medien wie Online-Wörterbücher oder Internet-Enzyklopädien) und gehen mit den verschiedenen Medien bereits recht bewusst um.",
+			"lessons": [
+				"f8-2-dictionnaire"
+			],
+			"status": "implemented",
+			"evidence": "Read a bilingual dictionary entry: part of speech, IPA and choosing the meaning that fits."
+		},
+		{
+			"id": "F2-42",
+			"track": "F2",
+			"lb": "F8 4 · Methodische Kompetenzen",
+			"competence": "nutzen bei der Erstellung von französischen Texten in digitaler Form Möglichkeiten der Rechtschreib- und Grammatikprüfung mithilfe von Textverarbeitungsprogrammen.",
+			"lessons": [
+				"f8-2-recit",
+				"f8-2-post"
+			],
+			"status": "supported",
+			"evidence": "The lessons explain what a spell checker finds and misses; using one happens in a word processor."
+		},
+		{
+			"id": "F2-43",
+			"track": "F2",
+			"lb": "F8 4 · Methodische Kompetenzen",
+			"competence": "erschließen sprachliche Zusammenhänge und Gesetzmäßigkeiten recht selbständig und verschaffen sich auf der Grundlage der Erstsprache, des Englischen und ggf. weiterer Fremdsprachen einen Einblick in den Systemcharakter von Sprache (z. B. Adverbbildung, Plusquamperfekt / plus-que-parfait / past perfect, Inversionsfrage) und nutzen diesen für das Erlernen des Französischen.",
+			"lessons": [
+				"f8-2-adverbes",
+				"f8-2-plus-que-parfait",
+				"f8-2-inversion",
+				"f8-2-valences"
+			],
+			"status": "implemented",
+			"evidence": "Compare adverb formation, the plus-que-parfait and inversion with German and English, and verb valency with German."
+		},
+		{
+			"id": "F2-44",
+			"track": "F2",
+			"lb": "F8 4 · Methodische Kompetenzen",
+			"competence": "setzen Strategien zum Hör-/Hörseh- und Leseverstehen (z. B. orientierend, selektiv, kombinierend) sowie zur mündlichen und schriftlichen Sprachproduktion je nach Informationsbedürfnis ein.",
+			"lessons": [
+				"f8-2-annonce",
+				"f8-2-podcast",
+				"f8-2-fait-divers"
+			],
+			"status": "implemented",
+			"evidence": "Listen for gist first and then for details, and read orientating and selectively."
+		},
+		{
+			"id": "F2-45",
+			"track": "F2",
+			"lb": "F8 5 · Themengebiete",
+			"competence": "bewältigen Kommunikationssituationen innerhalb der angegebenen Themengebiete mithilfe der in den Lernbereichen 1 – 4 ausgewiesenen Kompetenzen.",
+			"lessons": [
+				"f8-2-echange",
+				"f8-2-medecin",
+				"f8-2-invitation",
+				"f8-2-programme"
+			],
+			"status": "implemented",
+			"evidence": "Apply the language resources to an exchange, a doctor's visit, an invitation and a visitor's programme."
+		},
+		{
+			"id": "F2-46",
+			"track": "F2",
+			"lb": "F8 5 · Themengebiete",
+			"competence": "setzen sich auf der Grundlage ihrer Kenntnisse bewusst mit der französischen Sprache und Kultur auseinander.",
+			"lessons": [
+				"f8-2-accents",
+				"f8-2-registre",
+				"f8-2-marseille-lille",
+				"f8-2-quebec"
+			],
+			"status": "supported",
+			"evidence": "Case studies on regional French, registers, cities and Québec support discussion in class."
+		},
+		{
+			"id": "F2-47",
+			"track": "F2",
+			"lb": "F8 5 · Themengebiete",
+			"competence": "weitere Feste und Traditionen, z. B. la Chandeleur, la Saint-Valentin, la fête des mères",
+			"lessons": [
+				"f8-2-fetes"
+			],
+			"status": "implemented",
+			"evidence": "Dates and customs of la Chandeleur, la Saint-Valentin and la fête des mères, compared with Germany."
+		},
+		{
+			"id": "F2-48",
+			"track": "F2",
+			"lb": "F8 5 · Themengebiete",
+			"competence": "Alltag und persönliches Umfeld: Alltag Jugendlicher, z. B. Stars aus den Bereichen Film/Musik/Sport, Mediennutzung, Spiel, Freundeskreis körperliches und seelisches Befinden, u. a. Arztbesuch das französische Schulsystem, auch im Vergleich zu Deutschland",
+			"lessons": [
+				"f8-2-ecrans",
+				"f8-2-medecin",
+				"f8-2-ecole"
+			],
+			"status": "implemented",
+			"evidence": "Media use and role models, the doctor's visit, and the French school system compared with Bavaria."
+		},
+		{
+			"id": "F2-49",
+			"track": "F2",
+			"lb": "F8 5 · Themengebiete",
+			"competence": "internationaler Austausch, z. B. Brigitte-Sauzay-Programm, Voltaire-Programm",
+			"lessons": [
+				"f8-2-echange"
+			],
+			"status": "implemented",
+			"evidence": "The DFJW's Brigitte-Sauzay and Voltaire programmes with their duration and grades, checked against the DFJW pages."
+		},
+		{
+			"id": "F2-50",
+			"track": "F2",
+			"lb": "F8 5 · Themengebiete",
+			"competence": "Geographie: erste Einblicke in die administrative und politische Gliederung Frankreichs in régions, u. a. anhand der Regionen Normandie, Occitanie und Provence-Alpes-Côte d’Azur, sowie Vergleich mit der föderalen Struktur Deutschlands Begegnung mit der bayerischen Partnerprovinz Québec, u. a. Montréal, Québec Vielfalt des Lebens in Großstädten am Beispiel von u. a. Marseille und Lille (immigration, intégration)",
+			"lessons": [
+				"f8-2-regions",
+				"f8-2-quebec",
+				"f8-2-marseille-lille"
+			],
+			"status": "implemented",
+			"evidence": "Regions with the federal comparison, Québec with Montréal and Québec City, Marseille and Lille."
+		},
+		{
+			"id": "F2-51",
+			"track": "F2",
+			"lb": "F8 5 · Themengebiete",
+			"competence": "Geschichte: kurze Einblicke in das Leben im Mittelalter am Beispiel Rittertum, Burg",
+			"lessons": [
+				"f8-2-chateau"
+			],
+			"status": "implemented",
+			"evidence": "Parts of a castle and a knight's training on a labelled sketch."
+		},
+		{
+			"id": "F2-52",
+			"track": "F2",
+			"lb": "F8 5 · Themengebiete",
+			"competence": "altersgemäßes Aufgreifen von aktuellen Anlässen, z. B. kulturelle Veranstaltungen, Sportereignisse, Wahlen",
+			"lessons": [
+				"f8-2-expose",
+				"f8-2-ecrans"
+			],
+			"status": "supported",
+			"evidence": "The app gives no current events or statistics from memory; learners choose a current occasion for a mini-talk in class."
+		},
+		{
+			"id": "F2-53",
+			"track": "F2",
+			"lb": "F8 5 · Themengebiete",
+			"competence": "Kunst, Kultur und Literatur: Begegnung mit aktueller Unterhaltungsmusik sowie BD",
+			"lessons": [
+				"f8-2-bd",
+				"f8-2-ecrans"
+			],
+			"status": "supported",
+			"evidence": "An original comic page covers BD; current popular music is met through recordings in class, with no lyrics reproduced here."
+		},
+		{
+			"id": "F2-54",
+			"track": "F2",
+			"lb": "F8 5 · Themengebiete",
+			"competence": "Sprachreflexion: Unterschiede zwischen français standard und français familier Zurückhaltung in der Verwendung des Jugendjargons Begegnung mit dem kanadischen Französisch und mit dem Südfranzösischen als einer Abweichung vom Standardfranzösischen Verbvalenzen des Französischen",
+			"lessons": [
+				"f8-2-registre",
+				"f8-2-accents",
+				"f8-2-valences"
+			],
+			"status": "implemented",
+			"evidence": "Standard and familier, restraint with slang, Québec and southern French, and verb valency compared with German."
+		}
+	],
+	"optional_lessons": []
+}

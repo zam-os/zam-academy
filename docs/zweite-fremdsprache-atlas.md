@@ -121,3 +121,4 @@ Für Klasse 6 hat Thomas am 2026-11-24 entschieden: „Pfad herauslösen“. Der
 | `englisch-2fs` | 6 | [`englisch-2fs-gymnasium-6`](../englisch-2fs-gymnasium-6/) | 43 Lektionen, 129 Karten, Version 0.0 ([Lehrplan und Kartenbestand](englisch-2fs-gymnasium-6-coverage.md)) |
 | `franzoesisch-2fs` | 6 | [`franzoesisch-2fs-gymnasium-6`](../franzoesisch-2fs-gymnasium-6/) | 46 Lektionen, 138 Karten, Version 0.0, aus `franzoesisch-gymnasium-6` herausgelöst ([Lehrplan und Kartenumzug](franzoesisch-2fs-gymnasium-6-coverage.md)) |
 | `franzoesisch-2fs` | 7 | [`franzoesisch-2fs-gymnasium-7`](../franzoesisch-2fs-gymnasium-7/) | [39 / 117 · 0.0](franzoesisch-2fs-gymnasium-7-coverage.md) |
+| `franzoesisch-2fs` | 8 | [`franzoesisch-2fs-gymnasium-8`](../franzoesisch-2fs-gymnasium-8/) | [43 / 129 · 0.0](franzoesisch-2fs-gymnasium-8-coverage.md) |
