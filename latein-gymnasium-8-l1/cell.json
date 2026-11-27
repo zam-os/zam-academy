@@ -1,0 +1,3394 @@
+{
+	"$schema": "https://zam.app/schemas/v1/kvt-tile.json",
+	"tile_id": "zam-academy:latein-gymnasium-8-l1",
+	"version": "2026.11.1",
+	"title": "Latein 8 Gymnasium · 1. Fremdsprache (ZAM Academy)",
+	"description": "Latein als 1. Fremdsprache am bayerischen Gymnasium, Klasse 8: 40 Lektionen, 120 Entdeckerziele, interaktive Schaubilder und 120 verknüpfte ZAM-Karten zu allen Lernbereichen des LehrplanPLUS.",
+	"publisher": "ZAM Academy",
+	"sources": [
+		{
+			"uri": "https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/8/latein/1-fremdsprache",
+			"label": "ISB · Latein 8 (1. Fremdsprache), Gymnasium Bayern",
+			"checked": "2026-11-27"
+		},
+		{
+			"uri": "https://www.lehrplanplus.bayern.de/fachprofil/gymnasium/latein",
+			"label": "ISB · Fachprofil Latein am Gymnasium",
+			"checked": "2026-11-27"
+		},
+		{
+			"uri": "https://www.limesmuseum.de/",
+			"label": "Limesmuseum Aalen · UNESCO-Welterbe Limes",
+			"checked": "2026-11-27"
+		},
+		{
+			"uri": "https://www.museum-quintana.de/",
+			"label": "Museum Quintana Künzing · Römermuseum am Donaulimes",
+			"checked": "2026-11-27"
+		},
+		{
+			"uri": "https://www.saalburgmuseum.de/",
+			"label": "Römerkastell Saalburg · Archäologischer Park am Limes",
+			"checked": "2026-11-27"
+		},
+		{
+			"uri": "https://www.bpb.de/kurz-knapp/lexika/recht-a-z/",
+			"label": "Bundeszentrale für politische Bildung · Das Rechtslexikon",
+			"checked": "2026-11-27"
+		}
+	],
+	"atoms": [
+		{
+			"id": "01M8DSPBYHCXQWRWVBZXTW5NRB",
+			"atom_uri": "urn:zam:atom:01M8DSPBYHCXQWRWVBZXTW5NRB",
+			"namespace": "zam-academy-latein-gymnasium-8-l1",
+			"slug": "l8-wortschatz-kontext",
+			"title": "Aufbauwortschatz, Kontext & Pänultima",
+			"domain": "latein/wortschatz",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-wortschatz-kontext",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-8-l1",
+					"topic_code": "wortschatz",
+					"topic_title": "Wortschatz, Wortbildung & Inschriften"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb1",
+					"topic_title": "Lernbereich 1: Texte – Aufbauwortschatz, Kontext & Pänultima",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb2.1",
+					"topic_title": "Lernbereich 2.1: Wortschatz – Aufbauwortschatz, Kontext & Pänultima",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8DSPBZSJC2HFR2HF9V04GAY",
+					"slug": "l8-wortschatz-kontext-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wie unterscheiden sich die Bedeutungen von „consulere“ mit Dativ und mit Akkusativ?",
+					"concept": "Mit Dativ „für jemanden sorgen“, mit Akkusativ „jemanden um Rat fragen“",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-wortschatz-kontext",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Mit Dativ „für jemanden sorgen“, mit Akkusativ „jemanden um Rat fragen“",
+							"Mit Dativ „besiegen“, mit Akkusativ „verurteilen“"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8DSPBZTCADVC007NJAR57QG",
+					"slug": "l8-wortschatz-kontext-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wovon hängt die Bedeutung von „petere“ (erbitten, erstreben oder angreifen) im Satz ab?",
+					"concept": "Vom Sachfeld des Objekts (z. B. pacem petere = erbitten; urbem petere = angreifen).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-wortschatz-kontext",
+					"sample_solution": "Vom Sachfeld des Objekts (z. B. pacem petere = erbitten; urbem petere = angreifen)."
+				},
+				{
+					"id": "01M8DSPBZV2V32FT3N8VRJHK1X",
+					"slug": "l8-wortschatz-kontext-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Auf welcher Silbe wird das Wort „iūstĭtĭa“ nach der Pänultima-Regel betont und warum?",
+					"concept": "Auf der drittletzten Silbe (-tí-), weil -tĭ- vor Vokal -a kurz ist.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-wortschatz-kontext",
+					"sample_solution": "Auf der drittletzten Silbe (-tí-), weil -tĭ- vor Vokal -a kurz ist."
+				}
+			]
+		},
+		{
+			"id": "01M8DSPBYJDPBS90DWBRDTWYCR",
+			"atom_uri": "urn:zam:atom:01M8DSPBYJDPBS90DWBRDTWYCR",
+			"namespace": "zam-academy-latein-gymnasium-8-l1",
+			"slug": "l8-wortfelder-wendungen",
+			"title": "Wortfelder, Wortfamilien & Wendungen",
+			"domain": "latein/wortschatz",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-wortfelder-wendungen",
+			"prerequisites": [
+				{
+					"atom_id": "01M8DSPBYHCXQWRWVBZXTW5NRB",
+					"type": "soft",
+					"rationale": "Baut in der Etappe auf Aufbauwortschatz, Kontext & Pänultima auf."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-8-l1",
+					"topic_code": "wortschatz",
+					"topic_title": "Wortschatz, Wortbildung & Inschriften"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb2.1",
+					"topic_title": "Lernbereich 2.1: Wortschatz – Wortfelder, Wortfamilien & Wendungen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8DSPBZWD3ZXY3DBNR25A96T",
+					"slug": "l8-wortfelder-wendungen-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was bedeutet die feste lateinische Wendung „poenas dare“ im guten Deutsch?",
+					"concept": "Strafe erleiden / bestraft werden",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-wortfelder-wendungen",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Strafe erleiden / bestraft werden",
+							"eine Strafe verschenken oder erlassen"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8DSPBZXN75GY4GYSJXDE8XB",
+					"slug": "l8-wortfelder-wendungen-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie übersetzt man die Junktur „operam dare“ idiomatisch ins Deutsche?",
+					"concept": "sich Mühe geben / sich bemühen.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-wortfelder-wendungen",
+					"sample_solution": "sich Mühe geben / sich bemühen."
+				},
+				{
+					"id": "01M8DSPBZYJMSVPX5W14HZZBQJ",
+					"slug": "l8-wortfelder-wendungen-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Auf welchen gemeinsamen Wortstamm gehen „iustitia“, „iniuria“ und „iudex“ zurück?",
+					"concept": "Auf den Stamm iūs / iūr- (Recht; iudex = ius + dicere, iniuria = in- + ius).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-wortfelder-wendungen",
+					"sample_solution": "Auf den Stamm iūs / iūr- (Recht; iudex = ius + dicere, iniuria = in- + ius)."
+				}
+			]
+		},
+		{
+			"id": "01M8DSPBYKYJXQ8956H3Z3ZT8W",
+			"atom_uri": "urn:zam:atom:01M8DSPBYKYJXQ8956H3Z3ZT8W",
+			"namespace": "zam-academy-latein-gymnasium-8-l1",
+			"slug": "l8-wortbildung-erschliessen",
+			"title": "Wortbildung: Komposita & Abstrakta",
+			"domain": "latein/wortschatz",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-wortbildung-erschliessen",
+			"prerequisites": [
+				{
+					"atom_id": "01M8DSPBYJDPBS90DWBRDTWYCR",
+					"type": "soft",
+					"rationale": "Baut in der Etappe auf Wortfelder, Wortfamilien & Wendungen auf."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-8-l1",
+					"topic_code": "wortschatz",
+					"topic_title": "Wortschatz, Wortbildung & Inschriften"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb2.1",
+					"topic_title": "Lernbereich 2.1: Wortschatz – Wortbildung: Komposita & Abstrakta",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8DSPBZZVJYV69PVWYPH9R7M",
+					"slug": "l8-wortbildung-erschliessen-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Auf welches Grundverb geht das Kompositum „accipere“ (mit Stammabschwächung a zu i) zurück?",
+					"concept": "capere (mit Präfix ad- zu ac-)",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-wortbildung-erschliessen",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"capere (mit Präfix ad- zu ac-)",
+							"cupere (wünschen)"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8DSPC00JC8NAS1QC2N26DJR",
+					"slug": "l8-wortbildung-erschliessen-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welche Wortart und Grundbedeutung bildet das Suffix „-ōsus“ (wie in periculosus)?",
+					"concept": "Ein Adjektiv mit der Bedeutung „voll von / reich an“ (gefahrvoll).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-wortbildung-erschliessen",
+					"sample_solution": "Ein Adjektiv mit der Bedeutung „voll von / reich an“ (gefahrvoll)."
+				},
+				{
+					"id": "01M8DSPC01F0QQ89CQZTSZ3R06",
+					"slug": "l8-wortbildung-erschliessen-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Was bezeichnet das Substantivsuffix „-mentum“ (wie in argumentum oder monumentum)?",
+					"concept": "Ein Mittel, Werkzeug oder greifbares Ergebnis der Verbhandlung (Neutrum).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-wortbildung-erschliessen",
+					"sample_solution": "Ein Mittel, Werkzeug oder greifbares Ergebnis der Verbhandlung (Neutrum)."
+				}
+			]
+		},
+		{
+			"id": "01M8DSPBYMZXWFM45YRTCVM8CX",
+			"atom_uri": "urn:zam:atom:01M8DSPBYMZXWFM45YRTCVM8CX",
+			"namespace": "zam-academy-latein-gymnasium-8-l1",
+			"slug": "l8-sprachbruecken-europa",
+			"title": "Sprachbrücken: Deutsch, Griechisch & Europa",
+			"domain": "latein/wortschatz",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-sprachbruecken-europa",
+			"prerequisites": [
+				{
+					"atom_id": "01M8DSPBYKYJXQ8956H3Z3ZT8W",
+					"type": "soft",
+					"rationale": "Baut in der Etappe auf Wortbildung: Komposita & Abstrakta auf."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-8-l1",
+					"topic_code": "wortschatz",
+					"topic_title": "Wortschatz, Wortbildung & Inschriften"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb2.1",
+					"topic_title": "Lernbereich 2.1: Wortschatz – Sprachbrücken: Deutsch, Griechisch & Europa",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb3",
+					"topic_title": "Lernbereich 3: Kultureller Kontext – Sprachbrücken: Deutsch, Griechisch & Europa",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8DSPC02K9JPSD9VB2N0TZ58",
+					"slug": "l8-sprachbruecken-europa-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Woran erkennt man im Lateinischen bei Wörtern wie „philosophia“ oder „theatrum“ häufig ihre griechische Herkunft?",
+					"concept": "An Buchstabenverbindungen wie ph, th, rh oder y",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-sprachbruecken-europa",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"An Buchstabenverbindungen wie ph, th, rh oder y",
+							"An der Endung -orum im Genitiv Plural"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8DSPC03ABYF8JA978KT75MC",
+					"slug": "l8-sprachbruecken-europa-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welches lateinische Substantiv liegt den Wörtern „Justiz“, „justice“, „giustizia“ und „justicia“ zugrunde?",
+					"concept": "iūstitia (Gerechtigkeit).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-sprachbruecken-europa",
+					"sample_solution": "iūstitia (Gerechtigkeit)."
+				},
+				{
+					"id": "01M8DSPC04DJBYMSKVT3NNFEXH",
+					"slug": "l8-sprachbruecken-europa-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welche Rolle spielte das Lateinische beim Weiterleben griechischer Fachbegriffe in Europa?",
+					"concept": "Es übernahm griechische Wörter und gab sie an Deutsch, Englisch und romanische Sprachen weiter.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-sprachbruecken-europa",
+					"sample_solution": "Es übernahm griechische Wörter und gab sie an Deutsch, Englisch und romanische Sprachen weiter."
+				}
+			]
+		},
+		{
+			"id": "01M8DSPBYNWVHMHARFHXGQH9MW",
+			"atom_uri": "urn:zam:atom:01M8DSPBYNWVHMHARFHXGQH9MW",
+			"namespace": "zam-academy-latein-gymnasium-8-l1",
+			"slug": "l8-inschriften-kuerzel",
+			"title": "Kaiserzeitliche Inschriften & Kürzel",
+			"domain": "latein/wortschatz",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-inschriften-kuerzel",
+			"prerequisites": [
+				{
+					"atom_id": "01M8DSPBYMZXWFM45YRTCVM8CX",
+					"type": "soft",
+					"rationale": "Baut in der Etappe auf Sprachbrücken: Deutsch, Griechisch & Europa auf."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-8-l1",
+					"topic_code": "wortschatz",
+					"topic_title": "Wortschatz, Wortbildung & Inschriften"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb2.1",
+					"topic_title": "Lernbereich 2.1: Wortschatz – Kaiserzeitliche Inschriften & Kürzel",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb3",
+					"topic_title": "Lernbereich 3: Kultureller Kontext – Kaiserzeitliche Inschriften & Kürzel",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8DSPC0560D54R2ZWJ7FDRTA",
+					"slug": "l8-inschriften-kuerzel-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wofür steht die häufige Eingangsformel „D. M.“ auf römischen Grabsteinen?",
+					"concept": "Dis Manibus (den Totengöttern / Geistern der Verstorbenen)",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-inschriften-kuerzel",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Dis Manibus (den Totengöttern / Geistern der Verstorbenen)",
+							"Domino Magno (dem großen Herrn)"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8DSPC06N0QZEP4B01CVTHBP",
+					"slug": "l8-inschriften-kuerzel-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie lautet die lateinische Auflösung und Bedeutung der Grabformel „H. S. E.“?",
+					"concept": "hic situs est (oder sita est) = hier liegt begraben.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-inschriften-kuerzel",
+					"sample_solution": "hic situs est (oder sita est) = hier liegt begraben."
+				},
+				{
+					"id": "01M8DSPC07V30SNGQFT67VACRY",
+					"slug": "l8-inschriften-kuerzel-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Was bedeutet die in Fachbüchern geläufige Abkürzung „cf.“ (confer)?",
+					"concept": "vergleiche (vgl.).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-inschriften-kuerzel",
+					"sample_solution": "vergleiche (vgl.)."
+				}
+			]
+		},
+		{
+			"id": "01M8DSPBYP06TFH1WVBKEGT3PT",
+			"atom_uri": "urn:zam:atom:01M8DSPBYP06TFH1WVBKEGT3PT",
+			"namespace": "zam-academy-latein-gymnasium-8-l1",
+			"slug": "l8-indefinit-quidam-quisque",
+			"title": "Indefinitpronomina: quīdam und quisque",
+			"domain": "latein/formenlehre",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-indefinit-quidam-quisque",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-8-l1",
+					"topic_code": "pronomina-verben",
+					"topic_title": "Pronomina & besondere Verben"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb2.2",
+					"topic_title": "Lernbereich 2.2: Formenlehre – Indefinitpronomina: quīdam und quisque",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8DSPC08G9Q6QRZVFQV97E0W",
+					"slug": "l8-indefinit-quidam-quisque-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wie lautet der korrekte Akkusativ Singular maskulin von „quidam“?",
+					"concept": "quendam (Assimilation von m zu n vor -dam)",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-indefinit-quidam-quisque",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"quendam (Assimilation von m zu n vor -dam)",
+							"quemdam ohne Lautangleichung"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8DSPC09FZ8GARZ05B97KNY8",
+					"slug": "l8-indefinit-quidam-quisque-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Worin unterscheiden sich „aliquis“ und „quidam“ in ihrer Aussage?",
+					"concept": "aliquis meint jemand Unbekanntes („irgendeiner“), quidam jemand Bestimmten, aber ungenannt („ein gewisser“).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-indefinit-quidam-quisque",
+					"sample_solution": "aliquis meint jemand Unbekanntes („irgendeiner“), quidam jemand Bestimmten, aber ungenannt („ein gewisser“)."
+				},
+				{
+					"id": "01M8DSPC0AYWDDZFXCD00B36EC",
+					"slug": "l8-indefinit-quidam-quisque-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie übersetzt man einen Superlativ in Verbindung mit „quisque“ (z. B. optimus quisque)?",
+					"concept": "Als Hervorhebung der ganzen Gruppe: „gerade die Besten“ (wörtlich „jeder Beste“).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-indefinit-quidam-quisque",
+					"sample_solution": "Als Hervorhebung der ganzen Gruppe: „gerade die Besten“ (wörtlich „jeder Beste“)."
+				}
+			]
+		},
+		{
+			"id": "01M8DSPBYQWM0WK1RMZFDJ8W5X",
+			"atom_uri": "urn:zam:atom:01M8DSPBYQWM0WK1RMZFDJ8W5X",
+			"namespace": "zam-academy-latein-gymnasium-8-l1",
+			"slug": "l8-verallgemeinernd-korrelativa",
+			"title": "Verallgemeinernde Relativa & Korrelativa",
+			"domain": "latein/formenlehre",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-verallgemeinernd-korrelativa",
+			"prerequisites": [
+				{
+					"atom_id": "01M8DSPBYP06TFH1WVBKEGT3PT",
+					"type": "soft",
+					"rationale": "Baut in der Etappe auf Indefinitpronomina: quīdam und quisque auf."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-8-l1",
+					"topic_code": "pronomina-verben",
+					"topic_title": "Pronomina & besondere Verben"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb2.2",
+					"topic_title": "Lernbereich 2.2: Formenlehre – Verallgemeinernde Relativa & Korrelativa",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8DSPC0BBXKR0YAACNWGVQC0",
+					"slug": "l8-verallgemeinernd-korrelativa-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welcher Verbmodus steht im Lateinischen nach verallgemeinernden Relativpronomina wie „quisquis“ und „quicumque“?",
+					"concept": "Der Indikativ (im Unterschied zu deutschem „möge / sei“)",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-verallgemeinernd-korrelativa",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Der Indikativ (im Unterschied zu deutschem „möge / sei“)",
+							"Zwingend der Konjunktiv Imperfekt"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8DSPC0CYKZ5FW7KS6ECVQC4",
+					"slug": "l8-verallgemeinernd-korrelativa-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welches Korrelativpaar entspricht dem deutschen „so viele … wie viele“?",
+					"concept": "tot … quot (beide indeklinabel).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-verallgemeinernd-korrelativa",
+					"sample_solution": "tot … quot (beide indeklinabel)."
+				},
+				{
+					"id": "01M8DSPC0DFSKE8FKBC3ACND0W",
+					"slug": "l8-verallgemeinernd-korrelativa-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welches qu-Korrelativ antwortet im Nebensatz auf „tantus“ (so groß) oder „talis“ (so beschaffen)?",
+					"concept": "quantus (wie groß) bei tantus; qualis (wie beschaffen) bei talis.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-verallgemeinernd-korrelativa",
+					"sample_solution": "quantus (wie groß) bei tantus; qualis (wie beschaffen) bei talis."
+				}
+			]
+		},
+		{
+			"id": "01M8DSPBYR78807ES15RV6A60A",
+			"atom_uri": "urn:zam:atom:01M8DSPBYR78807ES15RV6A60A",
+			"namespace": "zam-academy-latein-gymnasium-8-l1",
+			"slug": "l8-deponentien-i-kons",
+			"title": "Deponentien der i- & kons. Konjugation",
+			"domain": "latein/formenlehre",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-deponentien-i-kons",
+			"prerequisites": [
+				{
+					"atom_id": "01M8DSPBYQWM0WK1RMZFDJ8W5X",
+					"type": "soft",
+					"rationale": "Baut in der Etappe auf Verallgemeinernde Relativa & Korrelativa auf."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-8-l1",
+					"topic_code": "pronomina-verben",
+					"topic_title": "Pronomina & besondere Verben"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb2.2",
+					"topic_title": "Lernbereich 2.2: Formenlehre – Deponentien der i- & kons. Konjugation",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8DSPC0ECECW5BBV7NZVA98G",
+					"slug": "l8-deponentien-i-kons-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "In welchem Kasus steht das Objekt der Deponentien „uti“, „frui“ und „potiri“?",
+					"concept": "Im Ablativ",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-deponentien-i-kons",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Im Ablativ",
+							"Immer im Akkusativ"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8DSPC0FJ7YPM1YEFT33SZ8Y",
+					"slug": "l8-deponentien-i-kons-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie lautet der Infinitiv Präsens von Deponentien der konsonantischen Konjugation (z. B. loqui, pati)?",
+					"concept": "Auf -i (wie loqui, sequi, pati; in der i-Konjugation auf -iri wie mentiri).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-deponentien-i-kons",
+					"sample_solution": "Auf -i (wie loqui, sequi, pati; in der i-Konjugation auf -iri wie mentiri)."
+				},
+				{
+					"id": "01M8DSPC0GE4WGPYVABH4TSC26",
+					"slug": "l8-deponentien-i-kons-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welche Diathese (aktiv oder passiv) besitzt das Partizip Perfekt eines Deponens (z. B. locutus)?",
+					"concept": "Aktive und vorzeitige Bedeutung: „einer, der gesprochen hat / nachdem er gesprochen hatte“.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-deponentien-i-kons",
+					"sample_solution": "Aktive und vorzeitige Bedeutung: „einer, der gesprochen hat / nachdem er gesprochen hatte“."
+				}
+			]
+		},
+		{
+			"id": "01M8DSPBYSWQ0WJE42BRB5ZD9R",
+			"atom_uri": "urn:zam:atom:01M8DSPBYSWQ0WJE42BRB5ZD9R",
+			"namespace": "zam-academy-latein-gymnasium-8-l1",
+			"slug": "l8-semideponentien-perfektopraesentien",
+			"title": "Semideponentien & Perfektopräsentien",
+			"domain": "latein/formenlehre",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-semideponentien-perfektopraesentien",
+			"prerequisites": [
+				{
+					"atom_id": "01M8DSPBYR78807ES15RV6A60A",
+					"type": "soft",
+					"rationale": "Baut in der Etappe auf Deponentien der i- & kons. Konjugation auf."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-8-l1",
+					"topic_code": "pronomina-verben",
+					"topic_title": "Pronomina & besondere Verben"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb2.2",
+					"topic_title": "Lernbereich 2.2: Formenlehre – Semideponentien & Perfektopräsentien",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8DSPC0H2NRF5KEFH0XTR7EH",
+					"slug": "l8-semideponentien-perfektopraesentien-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wie verhalten sich Formenbestand und Bedeutung bei einem Semideponens wie „audere, ausus sum“?",
+					"concept": "Präsensstamm aktivische Form, Perfektstamm passivische Form – Bedeutung immer aktiv",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-semideponentien-perfektopraesentien",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Präsensstamm aktivische Form, Perfektstamm passivische Form – Bedeutung immer aktiv",
+							"Präsensstamm passivisch und Perfektstamm aktivisch"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8DSPC0JH8D11KSX35QMWBNG",
+					"slug": "l8-semideponentien-perfektopraesentien-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Nenne drei der vier wichtigen Semideponentien der 8. Klasse mit ihrem Perfekt.",
+					"concept": "audere (ausus sum), gaudere (gavisus sum), solere (solitus sum), fidere (fisus sum).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-semideponentien-perfektopraesentien",
+					"sample_solution": "audere (ausus sum), gaudere (gavisus sum), solere (solitus sum), fidere (fisus sum)."
+				},
+				{
+					"id": "01M8DSPC0K4AM1N3TKDJKWS3W0",
+					"slug": "l8-semideponentien-perfektopraesentien-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welche Zeitstufe bezeichnen Perfekt- und Plusquamperfektform bei einem Perfektopräsens wie „odisse“ oder „meminisse“?",
+					"concept": "Perfektform (odit) bedeutet Gegenwart („er hasst“); Plusquamperfektform (oderat) Vergangenheit („er hasste“).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-semideponentien-perfektopraesentien",
+					"sample_solution": "Perfektform (odit) bedeutet Gegenwart („er hasst“); Plusquamperfektform (oderat) Vergangenheit („er hasste“)."
+				}
+			]
+		},
+		{
+			"id": "01M8DSPBYT6AKNN92HWJRR5MR7",
+			"atom_uri": "urn:zam:atom:01M8DSPBYT6AKNN92HWJRR5MR7",
+			"namespace": "zam-academy-latein-gymnasium-8-l1",
+			"slug": "l8-fieri-stammformen",
+			"title": "fieri & wichtige unregelmäßige Verben",
+			"domain": "latein/formenlehre",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-fieri-stammformen",
+			"prerequisites": [
+				{
+					"atom_id": "01M8DSPBYSWQ0WJE42BRB5ZD9R",
+					"type": "soft",
+					"rationale": "Baut in der Etappe auf Semideponentien & Perfektopräsentien auf."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-8-l1",
+					"topic_code": "pronomina-verben",
+					"topic_title": "Pronomina & besondere Verben"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb2.2",
+					"topic_title": "Lernbereich 2.2: Formenlehre – fieri & wichtige unregelmäßige Verben",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8DSPC0MNH8BQQW4T4ZHJCNA",
+					"slug": "l8-fieri-stammformen-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welcher Kasus steht bei „fieri“ („werden / zu etwas gemacht werden“) für das Prädikatsnomen?",
+					"concept": "Der Nominativ (Gleichsetzungsnominativ wie bei esse)",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-fieri-stammformen",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Der Nominativ (Gleichsetzungsnominativ wie bei esse)",
+							"Der Akkusativ als direktes Objekt"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8DSPC0N3G128J69M21293SP",
+					"slug": "l8-fieri-stammformen-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welches fehlende Genus Verbi eines anderen Verbs ersetzt der Präsensstamm von „fieri“?",
+					"concept": "Das Passiv zu facere („gemacht werden“; Perfekt lautet regelmäßig factus sum).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-fieri-stammformen",
+					"sample_solution": "Das Passiv zu facere („gemacht werden“; Perfekt lautet regelmäßig factus sum)."
+				},
+				{
+					"id": "01M8DSPC0PRB0SVQN40GGFEY3G",
+					"slug": "l8-fieri-stammformen-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie lautet die 3. Person Plural Indikativ Präsens und der Konjunktiv Imperfekt (1. Sg.) von „fieri“?",
+					"concept": "3. Pl. Präs.: fiunt; Konj. Impf.: fierem.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-fieri-stammformen",
+					"sample_solution": "3. Pl. Präs.: fiunt; Konj. Impf.: fierem."
+				}
+			]
+		},
+		{
+			"id": "01M8DSPBYVHJVPJTTD7TH7CQF5",
+			"atom_uri": "urn:zam:atom:01M8DSPBYVHJVPJTTD7TH7CQF5",
+			"namespace": "zam-academy-latein-gymnasium-8-l1",
+			"slug": "l8-gerund-vs-gerundiv",
+			"title": "Gerund vs. Gerundiv sicher unterscheiden",
+			"domain": "latein/satzlehre",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-gerund-vs-gerundiv",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-8-l1",
+					"topic_code": "gerundiv",
+					"topic_title": "Gerundiv & Dativ des Urhebers"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb2.2",
+					"topic_title": "Lernbereich 2.2: Formenlehre – Gerund vs. Gerundiv sicher unterscheiden",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb2.3",
+					"topic_title": "Lernbereich 2.3: Satzlehre – Gerund vs. Gerundiv sicher unterscheiden",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8DSPC0Q5YK75ZJVFNWN1C9P",
+					"slug": "l8-gerund-vs-gerundiv-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Woran unterscheidet man ein Gerundiv eindeutig von einem bloßen Gerund auf -nd-?",
+					"concept": "Das Gerundiv stimmt als Adjektiv in KNG (Kasus, Numerus, Genus) mit einem Substantiv überein",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-gerund-vs-gerundiv",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Das Gerundiv stimmt als Adjektiv in KNG (Kasus, Numerus, Genus) mit einem Substantiv überein",
+							"Das Gerundiv steht immer im Neutrum Singular ohne Bezugswort"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8DSPC0R75GGRXR9N2YHWY1P",
+					"slug": "l8-gerund-vs-gerundiv-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welche Diathese und Wortart hat das Gerund im Vergleich zum Gerundiv?",
+					"concept": "Das Gerund ist ein aktivisches Verbalsubstantiv (Neutr. Sg.); das Gerundiv ein passivisches Verbaladjektiv.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-gerund-vs-gerundiv",
+					"sample_solution": "Das Gerund ist ein aktivisches Verbalsubstantiv (Neutr. Sg.); das Gerundiv ein passivisches Verbaladjektiv."
+				},
+				{
+					"id": "01M8DSPC0SZDQEV31QVEZH15G9",
+					"slug": "l8-gerund-vs-gerundiv-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Bestimme „cupiditas pacis servandae“ vs. „cupiditas pacem servandi“ grammatisch.",
+					"concept": "pacis servandae ist Gerundiv (KNG zu pacis); pacem servandi ist Gerund mit Akkusativobjekt pacem.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-gerund-vs-gerundiv",
+					"sample_solution": "pacis servandae ist Gerundiv (KNG zu pacis); pacem servandi ist Gerund mit Akkusativobjekt pacem."
+				}
+			]
+		},
+		{
+			"id": "01M8DSPBYW7E0C1P4VRZ0KAY8Y",
+			"atom_uri": "urn:zam:atom:01M8DSPBYW7E0C1P4VRZ0KAY8Y",
+			"namespace": "zam-academy-latein-gymnasium-8-l1",
+			"slug": "l8-gerundiv-attributiv",
+			"title": "Attributives Gerundiv im Satz",
+			"domain": "latein/satzlehre",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-gerundiv-attributiv",
+			"prerequisites": [
+				{
+					"atom_id": "01M8DSPBYVHJVPJTTD7TH7CQF5",
+					"type": "soft",
+					"rationale": "Baut auf der Unterscheidung zwischen Gerund und Gerundiv auf."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-8-l1",
+					"topic_code": "gerundiv",
+					"topic_title": "Gerundiv & Dativ des Urhebers"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb2.2",
+					"topic_title": "Lernbereich 2.2: Formenlehre – Attributives Gerundiv im Satz",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb2.3",
+					"topic_title": "Lernbereich 2.3: Satzlehre – Attributives Gerundiv im Satz",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb5",
+					"topic_title": "Lernbereich 5: Methodik – Attributives Gerundiv im Satz",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8DSPC0TK2C3QK6G6DG8FHEK",
+					"slug": "l8-gerundiv-attributiv-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wie übersetzt man die Verbindung „ad + Substantiv + attributives Gerundiv“ (z. B. ad pacem faciendam) idiomatisch?",
+					"concept": "Final mit „um … zu“ oder substantiviert („zum Friedensschluss“)",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-gerundiv-attributiv",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Final mit „um … zu“ oder substantiviert („zum Friedensschluss“)",
+							"Temporal mit „nachdem der Frieden geschlossen worden war“"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8DSPC0VTMZFCE6XJSRRS67X",
+					"slug": "l8-gerundiv-attributiv-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie gibt man „in + Ablativ mit Gerundiv“ (z. B. in legibus servandis) im Deutschen wieder?",
+					"concept": "Mit „bei / beim + Substantivierung“ (z. B. „bei der Beachtung der Gesetze“).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-gerundiv-attributiv",
+					"sample_solution": "Mit „bei / beim + Substantivierung“ (z. B. „bei der Beachtung der Gesetze“)."
+				},
+				{
+					"id": "01M8DSPC0WXA28SGVJK96D6FSE",
+					"slug": "l8-gerundiv-attributiv-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welche KNG-Prüfung verlangt die attributive Wendung „spes urbis defendendae“?",
+					"concept": "urbis und defendendae stehen beide im Genitiv Singular femininum.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-gerundiv-attributiv",
+					"sample_solution": "urbis und defendendae stehen beide im Genitiv Singular femininum."
+				}
+			]
+		},
+		{
+			"id": "01M8DSPBYXXJQP1F54M49WNPMB",
+			"atom_uri": "urn:zam:atom:01M8DSPBYXXJQP1F54M49WNPMB",
+			"namespace": "zam-academy-latein-gymnasium-8-l1",
+			"slug": "l8-gerundiv-praedikativ",
+			"title": "Prädikatives Gerundiv mit esse",
+			"domain": "latein/satzlehre",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-gerundiv-praedikativ",
+			"prerequisites": [
+				{
+					"atom_id": "01M8DSPBYVHJVPJTTD7TH7CQF5",
+					"type": "soft",
+					"rationale": "Nutzt das KNG-Verbaladjektiv auf -ndus prädikativ mit esse."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-8-l1",
+					"topic_code": "gerundiv",
+					"topic_title": "Gerundiv & Dativ des Urhebers"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb2.2",
+					"topic_title": "Lernbereich 2.2: Formenlehre – Prädikatives Gerundiv mit esse",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb2.3",
+					"topic_title": "Lernbereich 2.3: Satzlehre – Prädikatives Gerundiv mit esse",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb5",
+					"topic_title": "Lernbereich 5: Methodik – Prädikatives Gerundiv mit esse",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8DSPC0X11RNM0VA8CWZHGZ8",
+					"slug": "l8-gerundiv-praedikativ-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wie wird das berühmte Gerundiv mit esse „Carthago delenda est“ (Cato der Ältere) korrekt ins Deutsche übersetzt?",
+					"concept": "Karthago muss zerstört werden (Gerundiv + esse drückt Notwendigkeit / Pflicht im Passiv aus)",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-gerundiv-praedikativ",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Karthago muss zerstört werden (Gerundiv + esse drückt Notwendigkeit / Pflicht im Passiv aus)",
+							"Karthago ist bereits zerstört worden"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8DSPC0YK0NJDFXDXGE11S8T",
+					"slug": "l8-gerundiv-praedikativ-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Was bedeutet ein mit „non“ verneintes prädikatives Gerundiv (z. B. Leges non violandae sunt)?",
+					"concept": "Ein Verbot („nicht dürfen“: Die Gesetze dürfen nicht verletzt werden).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-gerundiv-praedikativ",
+					"sample_solution": "Ein Verbot („nicht dürfen“: Die Gesetze dürfen nicht verletzt werden)."
+				},
+				{
+					"id": "01M8DSPC0ZX31FXYYYC64X7GF4",
+					"slug": "l8-gerundiv-praedikativ-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie bildet ein intransitives Verb (ohne Akkusativobjekt, z. B. pugnare) das prädikative Gerundiv mit esse?",
+					"concept": "Unpersönlich im Neutrum Singular auf -ndum est (Nunc pugnandum est = Jetzt muss gekämpft werden).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-gerundiv-praedikativ",
+					"sample_solution": "Unpersönlich im Neutrum Singular auf -ndum est (Nunc pugnandum est = Jetzt muss gekämpft werden)."
+				}
+			]
+		},
+		{
+			"id": "01M8DSPBYYA7SEEP8P3WXP9708",
+			"atom_uri": "urn:zam:atom:01M8DSPBYYA7SEEP8P3WXP9708",
+			"namespace": "zam-academy-latein-gymnasium-8-l1",
+			"slug": "l8-dativus-auctoris-genitiv",
+			"title": "Dativus auctoris & Genitivus partitivus",
+			"domain": "latein/satzlehre",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-dativus-auctoris-genitiv",
+			"prerequisites": [
+				{
+					"atom_id": "01M8DSPBYXXJQP1F54M49WNPMB",
+					"type": "soft",
+					"rationale": "Ergänzt das prädikative Gerundiv mit esse um den Dativ des Urhebers."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-8-l1",
+					"topic_code": "gerundiv",
+					"topic_title": "Gerundiv & Dativ des Urhebers"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb2.3",
+					"topic_title": "Lernbereich 2.3: Satzlehre – Dativus auctoris & Genitivus partitivus",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8DSPC1030B6FTNM29BJJW11",
+					"slug": "l8-dativus-auctoris-genitiv-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche Rolle übernimmt der „Dativus auctoris“ beim Gerundiv + esse (z. B. tibi in „Hic liber tibi legendus est“) in einer aktiven Übersetzung?",
+					"concept": "Er wird zum handelnden Subjekt („Du musst dieses Buch lesen“)",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-dativus-auctoris-genitiv",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Er wird zum handelnden Subjekt („Du musst dieses Buch lesen“)",
+							"Er benennt stets den Empfänger eines Geschenks"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8DSPC11KWG58CZ97ZJ8YS24",
+					"slug": "l8-dativus-auctoris-genitiv-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Nach welchen Wörtern steht der „Genitivus partitivus“ (Genitiv des geteilten Ganzen)?",
+					"concept": "Nach Mengen-, Maß- und Teilwörtern wie multi, pars, nemo, quis, satis, nihil.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-dativus-auctoris-genitiv",
+					"sample_solution": "Nach Mengen-, Maß- und Teilwörtern wie multi, pars, nemo, quis, satis, nihil."
+				},
+				{
+					"id": "01M8DSPC120YPEKE70MESHW3E3",
+					"slug": "l8-dativus-auctoris-genitiv-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Übersetze die feste partitive Wendung „quid novi?“ und erkläre den Genitiv.",
+					"concept": "„Was gibt es Neues?“ (novi ist substantivierter Genitiv Singular Neutrum nach quid).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-dativus-auctoris-genitiv",
+					"sample_solution": "„Was gibt es Neues?“ (novi ist substantivierter Genitiv Singular Neutrum nach quid)."
+				}
+			]
+		},
+		{
+			"id": "01M8DSPBYZY25YWVASKQ8BJXBX",
+			"atom_uri": "urn:zam:atom:01M8DSPBYZY25YWVASKQ8BJXBX",
+			"namespace": "zam-academy-latein-gymnasium-8-l1",
+			"slug": "l8-gerundiv-uebersetzen",
+			"title": "Gerundivkonstruktionen im Textganzen",
+			"domain": "latein/satzlehre",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-gerundiv-uebersetzen",
+			"prerequisites": [
+				{
+					"atom_id": "01M8DSPBYW7E0C1P4VRZ0KAY8Y",
+					"type": "soft",
+					"rationale": "Führt attributive und prädikative Gerundive im Satzganzen zusammen."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-8-l1",
+					"topic_code": "gerundiv",
+					"topic_title": "Gerundiv & Dativ des Urhebers"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb2.3",
+					"topic_title": "Lernbereich 2.3: Satzlehre – Gerundivkonstruktionen im Textganzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb5",
+					"topic_title": "Lernbereich 5: Methodik – Gerundivkonstruktionen im Textganzen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8DSPC1372N29X4675HR3PYT",
+					"slug": "l8-gerundiv-uebersetzen-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Woran trennst du im komplexen Satz ein attributives Gerundiv sofort von einem prädikativen?",
+					"concept": "Das prädikative Gerundiv verbindet sich mit einer Form von esse (oder AcI mit esse) zur Aussage „müssen“",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-gerundiv-uebersetzen",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Das prädikative Gerundiv verbindet sich mit einer Form von esse (oder AcI mit esse) zur Aussage „müssen“",
+							"Das attributive Gerundiv endet immer auf -ndum est"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8DSPC144X3TSP3WN67K2ZJC",
+					"slug": "l8-gerundiv-uebersetzen-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "In welcher Reihenfolge analysiert man einen längeren Satz mit mehreren -nd-Formen?",
+					"concept": "Erst finite Prädikate/AcI suchen, dann jede -nd-Klammer mit KNG-Partner prüfen, zuletzt Dativus auctoris aktivisch wenden.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-gerundiv-uebersetzen",
+					"sample_solution": "Erst finite Prädikate/AcI suchen, dann jede -nd-Klammer mit KNG-Partner prüfen, zuletzt Dativus auctoris aktivisch wenden."
+				},
+				{
+					"id": "01M8DSPC15DM84SAHHMQSPRF5H",
+					"slug": "l8-gerundiv-uebersetzen-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Übersetze „Populus intellexit iustitiam colendam esse“ (Gerundiv im AcI).",
+					"concept": "Das Volk erkannte, dass die Gerechtigkeit gepflegt werden müsse.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-gerundiv-uebersetzen",
+					"sample_solution": "Das Volk erkannte, dass die Gerechtigkeit gepflegt werden müsse."
+				}
+			]
+		},
+		{
+			"id": "01M8DSPBZ0HD9TRVV34ZVDSJHQ",
+			"atom_uri": "urn:zam:atom:01M8DSPBZ0HD9TRVV34ZVDSJHQ",
+			"namespace": "zam-academy-latein-gymnasium-8-l1",
+			"slug": "l8-nci-aufbau",
+			"title": "Der NcI (3. Person): Bau & Auslöser",
+			"domain": "latein/satzlehre",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-nci-aufbau",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-8-l1",
+					"topic_code": "syntax",
+					"topic_title": "NcI, Konjunktiv & Relativsätze"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb2.2",
+					"topic_title": "Lernbereich 2.2: Formenlehre – Der NcI (3. Person): Bau & Auslöser",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb2.3",
+					"topic_title": "Lernbereich 2.3: Satzlehre – Der NcI (3. Person): Bau & Auslöser",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb5",
+					"topic_title": "Lernbereich 5: Methodik – Der NcI (3. Person): Bau & Auslöser",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8DSPC16DMYYZ5T93ET6AXNE",
+					"slug": "l8-nci-aufbau-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "In welchem Kasus stehen Subjekt und Prädikatsnomen in einem persönlichen lateinischen NcI (z. B. Socrates sapiens fuisse dicitur)?",
+					"concept": "Beide stehen im Nominativ",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-nci-aufbau",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Beide stehen im Nominativ",
+							"Das Subjekt im Akkusativ, das Prädikatsnomen im Ablativ"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8DSPC17DXRZ4DAAF9140H0D",
+					"slug": "l8-nci-aufbau-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welche Verbgruppen lösen in der 3. Person Passiv regelmäßig einen NcI aus?",
+					"concept": "Passivformen von Sagen/Überliefern (dicitur, traditur), Meinen/Scheinen (putatur, videtur) und Anordnen/Verbieten (iubetur, vetatur).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-nci-aufbau",
+					"sample_solution": "Passivformen von Sagen/Überliefern (dicitur, traditur), Meinen/Scheinen (putatur, videtur) und Anordnen/Verbieten (iubetur, vetatur)."
+				},
+				{
+					"id": "01M8DSPC18XV4S3D6TD1G6Q886",
+					"slug": "l8-nci-aufbau-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Was bedeutet „videtur / videntur“ als Auslöser eines NcI im Deutschen?",
+					"concept": "„es scheint / scheinen“ (nicht „gesehen werden“).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-nci-aufbau",
+					"sample_solution": "„es scheint / scheinen“ (nicht „gesehen werden“)."
+				}
+			]
+		},
+		{
+			"id": "01M8DSPBZ16TDP770J63MRF9BG",
+			"atom_uri": "urn:zam:atom:01M8DSPBZ16TDP770J63MRF9BG",
+			"namespace": "zam-academy-latein-gymnasium-8-l1",
+			"slug": "l8-nci-uebersetzen",
+			"title": "NcI elegant ins Deutsche übersetzen",
+			"domain": "latein/satzlehre",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-nci-uebersetzen",
+			"prerequisites": [
+				{
+					"atom_id": "01M8DSPBZ0HD9TRVV34ZVDSJHQ",
+					"type": "soft",
+					"rationale": "Überträgt die NcI-Struktur in idiomatisches Deutsch."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-8-l1",
+					"topic_code": "syntax",
+					"topic_title": "NcI, Konjunktiv & Relativsätze"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb2.3",
+					"topic_title": "Lernbereich 2.3: Satzlehre – NcI elegant ins Deutsche übersetzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb5",
+					"topic_title": "Lernbereich 5: Methodik – NcI elegant ins Deutsche übersetzen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8DSPC19GAMSXZPC0HAJY8NR",
+					"slug": "l8-nci-uebersetzen-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche beiden natürlichen deutschen Übersetzungswege ersetzen den persönlichen NcI „Socrates sapiens fuisse dicitur“?",
+					"concept": "Unpersönlicher dass-Satz („Man sagt, dass …“) oder Modalverb („Sokrates soll …“)",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-nci-uebersetzen",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Unpersönlicher dass-Satz („Man sagt, dass …“) oder Modalverb („Sokrates soll …“)",
+							"Wörtliches Passiv („Sokrates wird gesagt zu sein“)"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8DSPC1ARCAF47GHP8SQ6P9C",
+					"slug": "l8-nci-uebersetzen-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie übersetzt man die NcI-Auslöser „iubetur“ und „vetatur“ im Deutschen idiomatisch?",
+					"concept": "Mit „sollen / befohlen werden zu“ (iubetur) bzw. „nicht dürfen / verboten werden“ (vetatur).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-nci-uebersetzen",
+					"sample_solution": "Mit „sollen / befohlen werden zu“ (iubetur) bzw. „nicht dürfen / verboten werden“ (vetatur)."
+				},
+				{
+					"id": "01M8DSPC1B2K4FF81MDDF9C8QX",
+					"slug": "l8-nci-uebersetzen-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Übersetze „Germani fortes fuisse traduntur“ einmal unpersönlich und einmal mit Modalverb.",
+					"concept": "„Man überliefert, dass die Germanen tapfer gewesen seien“ bzw. „Die Germanen sollen tapfer gewesen sein.“",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-nci-uebersetzen",
+					"sample_solution": "„Man überliefert, dass die Germanen tapfer gewesen seien“ bzw. „Die Germanen sollen tapfer gewesen sein.“"
+				}
+			]
+		},
+		{
+			"id": "01M8DSPBZ2FS64FE54NNB0PJGD",
+			"atom_uri": "urn:zam:atom:01M8DSPBZ2FS64FE54NNB0PJGD",
+			"namespace": "zam-academy-latein-gymnasium-8-l1",
+			"slug": "l8-deliberativ-potentialis",
+			"title": "Konjunktiv im Hauptsatz: Deliberativ & Potentialis",
+			"domain": "latein/satzlehre",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-deliberativ-potentialis",
+			"prerequisites": [
+				{
+					"atom_id": "01M8DSPBZ16TDP770J63MRF9BG",
+					"type": "soft",
+					"rationale": "Baut in der Etappe auf NcI elegant ins Deutsche übersetzen auf."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-8-l1",
+					"topic_code": "syntax",
+					"topic_title": "NcI, Konjunktiv & Relativsätze"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb2.3",
+					"topic_title": "Lernbereich 2.3: Satzlehre – Konjunktiv im Hauptsatz: Deliberativ & Potentialis",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8DSPC1CG27Z6M33XT1H2D3G",
+					"slug": "l8-deliberativ-potentialis-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Mit welchem Wort werden Deliberativ und Potentialis im Hauptsatz verneint?",
+					"concept": "Mit non (im Gegensatz zu Hortativ/Jussiv/Optativ mit ne)",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-deliberativ-potentialis",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Mit non (im Gegensatz zu Hortativ/Jussiv/Optativ mit ne)",
+							"Immer mit ne"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8DSPC1D0R5DV5YY0N19E4H4",
+					"slug": "l8-deliberativ-potentialis-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Was drückt der Deliberativ im Präsens und im Imperfekt in einer Frage aus?",
+					"concept": "Zweifelnde Überlegung: Präsens „Was soll ich tun?“ (Quid faciam?); Imperfekt „Was hätte ich tun sollen?“ (Quid facerem?).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-deliberativ-potentialis",
+					"sample_solution": "Zweifelnde Überlegung: Präsens „Was soll ich tun?“ (Quid faciam?); Imperfekt „Was hätte ich tun sollen?“ (Quid facerem?)."
+				},
+				{
+					"id": "01M8DSPC1E0FHK5F23T9009SGS",
+					"slug": "l8-deliberativ-potentialis-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie übersetzt man den Potentialis der Gegenwart (z. B. Aliquis dicat / Hoc non dixerim)?",
+					"concept": "Als denkbare Möglichkeit / vorsichtiges Urteil: „Jemand könnte sagen / Das möchte ich nicht behaupten.“",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-deliberativ-potentialis",
+					"sample_solution": "Als denkbare Möglichkeit / vorsichtiges Urteil: „Jemand könnte sagen / Das möchte ich nicht behaupten.“"
+				}
+			]
+		},
+		{
+			"id": "01M8DSPBZ3KQ4DHRNMP6FKH621",
+			"atom_uri": "urn:zam:atom:01M8DSPBZ3KQ4DHRNMP6FKH621",
+			"namespace": "zam-academy-latein-gymnasium-8-l1",
+			"slug": "l8-konjunktiv-relativsatz",
+			"title": "Konjunktiv im Relativsatz (Sinnrichtungen)",
+			"domain": "latein/satzlehre",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-konjunktiv-relativsatz",
+			"prerequisites": [
+				{
+					"atom_id": "01M8DSPBZ2FS64FE54NNB0PJGD",
+					"type": "soft",
+					"rationale": "Baut in der Etappe auf Konjunktiv im Hauptsatz: Deliberativ & Potentialis auf."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-8-l1",
+					"topic_code": "syntax",
+					"topic_title": "NcI, Konjunktiv & Relativsätze"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb2.3",
+					"topic_title": "Lernbereich 2.3: Satzlehre – Konjunktiv im Relativsatz (Sinnrichtungen)",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8DSPC1F8V87381KKET587P5",
+					"slug": "l8-konjunktiv-relativsatz-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche Sinnrichtung zeigt ein Relativsatz mit Konjunktiv nach Verben des Sendens oder Wählens (z. B. legatos misit, qui pacem peterent)?",
+					"concept": "Final (Zweck/Absicht: „um Frieden zu erbitten / damit sie …“)",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-konjunktiv-relativsatz",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Final (Zweck/Absicht: „um Frieden zu erbitten / damit sie …“)",
+							"Immer temporal („nachdem sie …“)"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8DSPC1GEZ013HT1A08K6DNF",
+					"slug": "l8-konjunktiv-relativsatz-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welche typischen Signalausdrücke im Hauptsatz kündigen einen konsekutiven Relativsatz im Konjunktiv an?",
+					"concept": "Allgemeine Wendungen wie sunt qui („es gibt Leute, die …“), nemo est qui oder dignus/idoneus est qui.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-konjunktiv-relativsatz",
+					"sample_solution": "Allgemeine Wendungen wie sunt qui („es gibt Leute, die …“), nemo est qui oder dignus/idoneus est qui."
+				},
+				{
+					"id": "01M8DSPC1HMHG1EKH4KB1MMYD1",
+					"slug": "l8-konjunktiv-relativsatz-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie erkennt man einen konzessiven Relativsatz im Konjunktiv im Textzusammenhang?",
+					"concept": "Am inhaltlichen Gegensatz zum Hauptsatz, oft durch tamen („dennoch“) verstärkt → „obwohl“.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-konjunktiv-relativsatz",
+					"sample_solution": "Am inhaltlichen Gegensatz zum Hauptsatz, oft durch tamen („dennoch“) verstärkt → „obwohl“."
+				}
+			]
+		},
+		{
+			"id": "01M8DSPBZ4MDK1A8NHT1H06R02",
+			"atom_uri": "urn:zam:atom:01M8DSPBZ4MDK1A8NHT1H06R02",
+			"namespace": "zam-academy-latein-gymnasium-8-l1",
+			"slug": "l8-verschraenkte-relativsaetze",
+			"title": "Verschränkte Relativsätze & Satzgefüge",
+			"domain": "latein/satzlehre",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-verschraenkte-relativsaetze",
+			"prerequisites": [
+				{
+					"atom_id": "01M8DSPBZ3KQ4DHRNMP6FKH621",
+					"type": "soft",
+					"rationale": "Erweitert Relativsätze auf eingebettete AcI- und Konjunktivgefüge."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-8-l1",
+					"topic_code": "syntax",
+					"topic_title": "NcI, Konjunktiv & Relativsätze"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb2.3",
+					"topic_title": "Lernbereich 2.3: Satzlehre – Verschränkte Relativsätze & Satzgefüge",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb5",
+					"topic_title": "Lernbereich 5: Methodik – Verschränkte Relativsätze & Satzgefüge",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8DSPC1J7S0P3NJGKMY5QJ7Q",
+					"slug": "l8-verschraenkte-relativsaetze-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wie löst man einen mit einem AcI verschränkten Relativsatz (wie „Socrates, quem scio sapientem fuisse“) elegant im Deutschen auf?",
+					"concept": "Mit „von dem / über den ich weiß, dass er …“",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-verschraenkte-relativsaetze",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Mit „von dem / über den ich weiß, dass er …“",
+							"Indem man das Relativpronomen weglässt und zwei Fragen bildet"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8DSPC1KD8GQ5M4FX1V3KBR9",
+					"slug": "l8-verschraenkte-relativsaetze-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie übersetzt man einen relativischen Satzanschluss vor einem Nebensatz (z. B. Quae cum ita sint)?",
+					"concept": "Man verwandelt das Relativpronomen in ein Demonstrativpronomen im Nebensatz: „Da sich dies so verhält …“.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-verschraenkte-relativsaetze",
+					"sample_solution": "Man verwandelt das Relativpronomen in ein Demonstrativpronomen im Nebensatz: „Da sich dies so verhält …“."
+				},
+				{
+					"id": "01M8DSPC1MR4242NJ0E3BDPHZ9",
+					"slug": "l8-verschraenkte-relativsaetze-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Bestimme die Rolle von „quem“ in „Liber, quem scio te legere“.",
+					"concept": "quem ist Akkusativobjekt zu legere innerhalb des von scio abhängigen AcI.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-verschraenkte-relativsaetze",
+					"sample_solution": "quem ist Akkusativobjekt zu legere innerhalb des von scio abhängigen AcI."
+				}
+			]
+		},
+		{
+			"id": "01M8DSPBZ5424A0AQ6F9MC3P02",
+			"atom_uri": "urn:zam:atom:01M8DSPBZ5424A0AQ6F9MC3P02",
+			"namespace": "zam-academy-latein-gymnasium-8-l1",
+			"slug": "l8-kaiserzeit-epochen",
+			"title": "Frühe, mittlere & späte Kaiserzeit",
+			"domain": "latein/kultur",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-kaiserzeit-epochen",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-8-l1",
+					"topic_code": "kaiserzeit",
+					"topic_title": "Kaiserzeit, Limes, Christentum & Europa"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb1",
+					"topic_title": "Lernbereich 1: Texte – Frühe, mittlere & späte Kaiserzeit",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb3",
+					"topic_title": "Lernbereich 3: Kultureller Kontext – Frühe, mittlere & späte Kaiserzeit",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8DSPC1NT2PHNV0XHBW48WFA",
+					"slug": "l8-kaiserzeit-epochen-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wodurch zeichnete sich die Epoche der Adoptivkaiser (96–192 n. Chr.) gegenüber willkürlicher Alleinherrschaft aus?",
+					"concept": "Auswahl eines fähigen Nachfolgers durch Adoption und hohe Stabilität (z. B. Trajan, Hadrian, Mark Aurel)",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-kaiserzeit-epochen",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Auswahl eines fähigen Nachfolgers durch Adoption und hohe Stabilität (z. B. Trajan, Hadrian, Mark Aurel)",
+							"Jährliche Neuwahl von zwei Konsuln ohne Kaiseramt"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8DSPC1P8DCD7AQVRAW8AJF0",
+					"slug": "l8-kaiserzeit-epochen-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Was bezeichnen Geschichtsschreiber der frühen Kaiserzeit bei Herrschern wie Caligula oder Nero als „Caesarenwahn“?",
+					"concept": "Den schrankenlosen Machtmissbrauch, Willkürherrschaft und Anspruch auf göttliche Verehrung.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-kaiserzeit-epochen",
+					"sample_solution": "Den schrankenlosen Machtmissbrauch, Willkürherrschaft und Anspruch auf göttliche Verehrung."
+				},
+				{
+					"id": "01M8DSPC1QENZMPJH5H3VM9BPM",
+					"slug": "l8-kaiserzeit-epochen-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welche drei Hauptabschnitte gliedern die römische Kaiserzeit zwischen 14 und 476 n. Chr.?",
+					"concept": "Frühe Kaiserzeit (Julisch-Claudier, Flavier, Adoptivkaiser), mittlere (Soldatenkaiser/Reichskrise ab 235) und Spätantike (ab Diokletian/Konstantin bis 476).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-kaiserzeit-epochen",
+					"sample_solution": "Frühe Kaiserzeit (Julisch-Claudier, Flavier, Adoptivkaiser), mittlere (Soldatenkaiser/Reichskrise ab 235) und Spätantike (ab Diokletian/Konstantin bis 476)."
+				}
+			]
+		},
+		{
+			"id": "01M8DSPBZ64J2FE5KXC98TTZNM",
+			"atom_uri": "urn:zam:atom:01M8DSPBZ64J2FE5KXC98TTZNM",
+			"namespace": "zam-academy-latein-gymnasium-8-l1",
+			"slug": "l8-limes-germanen",
+			"title": "Der Limes: Römer & Germanen im Austausch",
+			"domain": "latein/kultur",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-limes-germanen",
+			"prerequisites": [
+				{
+					"atom_id": "01M8DSPBZ5424A0AQ6F9MC3P02",
+					"type": "soft",
+					"rationale": "Baut in der Etappe auf Frühe, mittlere & späte Kaiserzeit auf."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-8-l1",
+					"topic_code": "kaiserzeit",
+					"topic_title": "Kaiserzeit, Limes, Christentum & Europa"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb1",
+					"topic_title": "Lernbereich 1: Texte – Der Limes: Römer & Germanen im Austausch",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb3",
+					"topic_title": "Lernbereich 3: Kultureller Kontext – Der Limes: Römer & Germanen im Austausch",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8DSPC1RB2TGNR933WEJNEJ3",
+					"slug": "l8-limes-germanen-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche Funktion hatte der Obergermanisch-Raetische Limes vor allem im Verhältnis zu den Germanen?",
+					"concept": "Grenzmarkierung, Verkehrsüberwachung, Zollstelle und Kontrolle des Handelsaustauschs",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-limes-germanen",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Grenzmarkierung, Verkehrsüberwachung, Zollstelle und Kontrolle des Handelsaustauschs",
+							"Undurchdringliche Mauer ohne jedes Tor und völliges Handelsverbot"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8DSPC1SAZSVFB4E5563N8FJ",
+					"slug": "l8-limes-germanen-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welche Güter tauschten Römer und Germanen entlang des Limes miteinander aus?",
+					"concept": "Römer lieferten Wein, Keramik, Glas und Münzen; Germanen tauschten Felle, Bernstein und Vieh (sowie Soldaten im Heer).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-limes-germanen",
+					"sample_solution": "Römer lieferten Wein, Keramik, Glas und Münzen; Germanen tauschten Felle, Bernstein und Vieh (sowie Soldaten im Heer)."
+				},
+				{
+					"id": "01M8DSPC1TVMKW7C14T5HBTM9Y",
+					"slug": "l8-limes-germanen-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Nenne zwei römische Kastellstandorte am bayerischen Limes oder Donaulimes mit lateinischem Namen.",
+					"concept": "Zum Beispiel Castra Regina (Regensburg), Biriciana (Weißenburg), Quintana (Künzing) oder Batavis (Passau).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-limes-germanen",
+					"sample_solution": "Zum Beispiel Castra Regina (Regensburg), Biriciana (Weißenburg), Quintana (Künzing) oder Batavis (Passau)."
+				}
+			]
+		},
+		{
+			"id": "01M8DSPBZ7JKNYXRSA4KCZ2P9H",
+			"atom_uri": "urn:zam:atom:01M8DSPBZ7JKNYXRSA4KCZ2P9H",
+			"namespace": "zam-academy-latein-gymnasium-8-l1",
+			"slug": "l8-rom-christentum",
+			"title": "Rom & das Christentum",
+			"domain": "latein/kultur",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-rom-christentum",
+			"prerequisites": [
+				{
+					"atom_id": "01M8DSPBZ64J2FE5KXC98TTZNM",
+					"type": "soft",
+					"rationale": "Baut in der Etappe auf Der Limes: Römer & Germanen im Austausch auf."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-8-l1",
+					"topic_code": "kaiserzeit",
+					"topic_title": "Kaiserzeit, Limes, Christentum & Europa"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb1",
+					"topic_title": "Lernbereich 1: Texte – Rom & das Christentum",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb3",
+					"topic_title": "Lernbereich 3: Kultureller Kontext – Rom & das Christentum",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8DSPC1VBV67H91DR5KB0P6M",
+					"slug": "l8-rom-christentum-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was gewährte die Mailänder Vereinbarung von 313 n. Chr. unter Konstantin und Licinius?",
+					"concept": "Religionsfreiheit und rechtliche Duldung für Christen im Römischen Reich",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-rom-christentum",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Religionsfreiheit und rechtliche Duldung für Christen im Römischen Reich",
+							"Die sofortige Abschaffung aller Kirchen und Bibeltexte"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8DSPC1W16AEAFZVP4BDFKKN",
+					"slug": "l8-rom-christentum-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Warum gerieten frühe Christen oft in Konflikt mit dem römischen Staat?",
+					"concept": "Weil sie das Opfer im Staats- und Kaiserkult aus Glaubensgründen ablehnten, was als Illoyalität gewertet wurde.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-rom-christentum",
+					"sample_solution": "Weil sie das Opfer im Staats- und Kaiserkult aus Glaubensgründen ablehnten, was als Illoyalität gewertet wurde."
+				},
+				{
+					"id": "01M8DSPC1X2FGNAH48EHBNCG7D",
+					"slug": "l8-rom-christentum-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wann wurde das Christentum unter Kaiser Theodosius I. Staatsreligion, und wie übernahm es antike Kultur?",
+					"concept": "380/391 n. Chr.; christliche Gelehrte und Gemeinden nutzten klassisches Latein, Philosophie und die Bauform der Basilika weiter.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-rom-christentum",
+					"sample_solution": "380/391 n. Chr.; christliche Gelehrte und Gemeinden nutzten klassisches Latein, Philosophie und die Bauform der Basilika weiter."
+				}
+			]
+		},
+		{
+			"id": "01M8DSPBZ8BGNHMY70BMK97P7X",
+			"atom_uri": "urn:zam:atom:01M8DSPBZ8BGNHMY70BMK97P7X",
+			"namespace": "zam-academy-latein-gymnasium-8-l1",
+			"slug": "l8-religion-interpretatio",
+			"title": "Römische Religion & interpretatio Romana",
+			"domain": "latein/kultur",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-religion-interpretatio",
+			"prerequisites": [
+				{
+					"atom_id": "01M8DSPBZ7JKNYXRSA4KCZ2P9H",
+					"type": "soft",
+					"rationale": "Baut in der Etappe auf Rom & das Christentum auf."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-8-l1",
+					"topic_code": "kaiserzeit",
+					"topic_title": "Kaiserzeit, Limes, Christentum & Europa"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb1",
+					"topic_title": "Lernbereich 1: Texte – Römische Religion & interpretatio Romana",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb3",
+					"topic_title": "Lernbereich 3: Kultureller Kontext – Römische Religion & interpretatio Romana",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8DSPC1Y7A29SAM452GDEWAM",
+					"slug": "l8-religion-interpretatio-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was bezeichnet der Fachbegriff „interpretatio Romana“ in den Provinzen des Imperiums?",
+					"concept": "Die Gleichsetzung fremder einheimischer Gottheiten mit passenden römischen Götternamen",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-religion-interpretatio",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Die Gleichsetzung fremder einheimischer Gottheiten mit passenden römischen Götternamen",
+							"Die Übersetzung christlicher Schriften ins Altgriechische"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8DSPC1Z8DZNFZPDQRMW8EJP",
+					"slug": "l8-religion-interpretatio-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Nenne ein Beispiel für eine solche Gleichsetzung bei Germanen oder Kelten in Raetien.",
+					"concept": "Tacitus nennt Mercurius für den germanischen Hauptgott; in Faimingen an der Donau verehrte man Apollo Grannus.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-religion-interpretatio",
+					"sample_solution": "Tacitus nennt Mercurius für den germanischen Hauptgott; in Faimingen an der Donau verehrte man Apollo Grannus."
+				},
+				{
+					"id": "01M8DSPC2049J5E9D2BFHPS42P",
+					"slug": "l8-religion-interpretatio-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wo lag die Grenze der ansonsten pragmatischen römischen Duldung fremder Kulte?",
+					"concept": "Bei Kulten, die den öffentlichen Frieden (pax publica) oder die Loyalität zum Reich gefährdeten.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-religion-interpretatio",
+					"sample_solution": "Bei Kulten, die den öffentlichen Frieden (pax publica) oder die Loyalität zum Reich gefährdeten."
+				}
+			]
+		},
+		{
+			"id": "01M8DSPBZ9P5EZ8H0RPEZD9XHE",
+			"atom_uri": "urn:zam:atom:01M8DSPBZ9P5EZ8H0RPEZD9XHE",
+			"namespace": "zam-academy-latein-gymnasium-8-l1",
+			"slug": "l8-latein-europa",
+			"title": "Latein als Sprache Europas bis heute",
+			"domain": "latein/kultur",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-latein-europa",
+			"prerequisites": [
+				{
+					"atom_id": "01M8DSPBZ8BGNHMY70BMK97P7X",
+					"type": "soft",
+					"rationale": "Baut in der Etappe auf Römische Religion & interpretatio Romana auf."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-8-l1",
+					"topic_code": "kaiserzeit",
+					"topic_title": "Kaiserzeit, Limes, Christentum & Europa"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb3",
+					"topic_title": "Lernbereich 3: Kultureller Kontext – Latein als Sprache Europas bis heute",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8DSPC21WW7858M8QHVZHHZX",
+					"slug": "l8-latein-europa-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche Bedeutung hatte die Karolingische Renaissance um 800 n. Chr. für das Fortleben des Lateinischen?",
+					"concept": "Sorgfältige Abschriften antiker Bücher in Klöstern und Verbreitung der gut lesbaren karolingischen Minuskel",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-latein-europa",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Sorgfältige Abschriften antiker Bücher in Klöstern und Verbreitung der gut lesbaren karolingischen Minuskel",
+							"Abschaffung der lateinischen Sprache in Klöstern zugunsten moderner Nationalsprachen"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8DSPC22RMQ7YFVGRN8CGQEA",
+					"slug": "l8-latein-europa-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Warum schrieben noch Forscher der frühen Neuzeit wie Kopernikus oder Kepler ihre Werke auf Latein?",
+					"concept": "Damit Gelehrte über Landesgrenzen hinweg in ganz Europa direkt miteinander forschen konnten.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-latein-europa",
+					"sample_solution": "Damit Gelehrte über Landesgrenzen hinweg in ganz Europa direkt miteinander forschen konnten."
+				},
+				{
+					"id": "01M8DSPC23S7AXZB4SKWDFXJPA",
+					"slug": "l8-latein-europa-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Nenne drei Bereiche, in denen Latein vom Humanismus und der Reformation bis heute fortwirkt.",
+					"concept": "In Literatur und Universitäten, als Wissenschaftssprache (Medizin/Biologie/Recht) sowie als offizielle Sprache des Vatikans.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-latein-europa",
+					"sample_solution": "In Literatur und Universitäten, als Wissenschaftssprache (Medizin/Biologie/Recht) sowie als offizielle Sprache des Vatikans."
+				}
+			]
+		},
+		{
+			"id": "01M8DSPBZAX4EPVPER4MVWEVZA",
+			"atom_uri": "urn:zam:atom:01M8DSPBZAX4EPVPER4MVWEVZA",
+			"namespace": "zam-academy-latein-gymnasium-8-l1",
+			"slug": "l8-roemisches-recht-grundzuege",
+			"title": "Grundzüge des römischen Rechtswesens",
+			"domain": "latein/kultur",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-roemisches-recht-grundzuege",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-8-l1",
+					"topic_code": "recht-werte",
+					"topic_title": "Römisches Recht & Werte"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb1",
+					"topic_title": "Lernbereich 1: Texte – Grundzüge des römischen Rechtswesens",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb3",
+					"topic_title": "Lernbereich 3: Kultureller Kontext – Grundzüge des römischen Rechtswesens",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8DSPC2467W8M0937Y7XSD93",
+					"slug": "l8-roemisches-recht-grundzuege-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Warum war das Zwölftafelgesetz um 450 v. Chr. für die römischen Bürger so bedeutsam?",
+					"concept": "Es fixierte das Recht schriftlich und öffentlich nachprüfbar statt geheimer Adelswillkür",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-roemisches-recht-grundzuege",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Es fixierte das Recht schriftlich und öffentlich nachprüfbar statt geheimer Adelswillkür",
+							"Es schaffte jedes schriftliche Gesetz zugunsten mündlicher Bräuche ab"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8DSPC258K03F6A1Z8ZEMQBJ",
+					"slug": "l8-roemisches-recht-grundzuege-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welche Aufgaben teilten sich Prätor und iudex im klassischen römischen Zivilprozess?",
+					"concept": "Der Prätor prüfte das Verfahren und legte die Streitformel fest; der Einzelrichter (iudex) erhob Beweise und urteilte.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-roemisches-recht-grundzuege",
+					"sample_solution": "Der Prätor prüfte das Verfahren und legte die Streitformel fest; der Einzelrichter (iudex) erhob Beweise und urteilte."
+				},
+				{
+					"id": "01M8DSPC2649D4CVBFHMJGXWN7",
+					"slug": "l8-roemisches-recht-grundzuege-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie heißt die große spätantike Sammlung des römischen Rechts unter Kaiser Justinian (534 n. Chr.)?",
+					"concept": "Corpus Iuris Civilis.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-roemisches-recht-grundzuege",
+					"sample_solution": "Corpus Iuris Civilis."
+				}
+			]
+		},
+		{
+			"id": "01M8DSPBZBBQC6VP125B30QQZ4",
+			"atom_uri": "urn:zam:atom:01M8DSPBZBBQC6VP125B30QQZ4",
+			"namespace": "zam-academy-latein-gymnasium-8-l1",
+			"slug": "l8-rechtssprueche-gegenwart",
+			"title": "Rechtssprüche & ihr Fortwirken heute",
+			"domain": "latein/kultur",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-rechtssprueche-gegenwart",
+			"prerequisites": [
+				{
+					"atom_id": "01M8DSPBZAX4EPVPER4MVWEVZA",
+					"type": "soft",
+					"rationale": "Baut in der Etappe auf Grundzüge des römischen Rechtswesens auf."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-8-l1",
+					"topic_code": "recht-werte",
+					"topic_title": "Römisches Recht & Werte"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb1",
+					"topic_title": "Lernbereich 1: Texte – Rechtssprüche & ihr Fortwirken heute",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb2.1",
+					"topic_title": "Lernbereich 2.1: Wortschatz – Rechtssprüche & ihr Fortwirken heute",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb3",
+					"topic_title": "Lernbereich 3: Kultureller Kontext – Rechtssprüche & ihr Fortwirken heute",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8DSPC27Y2GB4RH73QSDJC0W",
+					"slug": "l8-rechtssprueche-gegenwart-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was besagt der bis heute gebräuchliche Grundsatz „Audiatur et altera pars“?",
+					"concept": "Man höre auch die andere Seite (Anspruch auf rechtliches Gehör vor Gericht)",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-rechtssprueche-gegenwart",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Man höre auch die andere Seite (Anspruch auf rechtliches Gehör vor Gericht)",
+							"Nur der Kläger darf Zeugen benennen"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8DSPC28B8JGB9DX9Y69FK8M",
+					"slug": "l8-rechtssprueche-gegenwart-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Erkläre die Bedeutung und heutige Geltung von „In dubio pro reo“.",
+					"concept": "„Im Zweifel für den Angeklagten“ (Unschuldsvermutung: ohne sicheren Beweis erfolgt Freispruch).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-rechtssprueche-gegenwart",
+					"sample_solution": "„Im Zweifel für den Angeklagten“ (Unschuldsvermutung: ohne sicheren Beweis erfolgt Freispruch)."
+				},
+				{
+					"id": "01M8DSPC29TSY1Z5QX0ZS7E0BF",
+					"slug": "l8-rechtssprueche-gegenwart-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Was bedeutet „Pacta sunt servanda“ und worin unterscheidet sich das antike vom modernen Verfassungsrecht?",
+					"concept": "„Verträge sind einzuhalten“; während Grundprinzipien fortwirken, kennt erst das moderne Recht Gleichheit ohne Sklaverei.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-rechtssprueche-gegenwart",
+					"sample_solution": "„Verträge sind einzuhalten“; während Grundprinzipien fortwirken, kennt erst das moderne Recht Gleichheit ohne Sklaverei."
+				}
+			]
+		},
+		{
+			"id": "01M8DSPBZCJK26KKV3NAFBJX8W",
+			"atom_uri": "urn:zam:atom:01M8DSPBZCJK26KKV3NAFBJX8W",
+			"namespace": "zam-academy-latein-gymnasium-8-l1",
+			"slug": "l8-werte-iustitia-humanitas",
+			"title": "Römische Werte: iustitia, aequitas & humanitas",
+			"domain": "latein/kultur",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-werte-iustitia-humanitas",
+			"prerequisites": [
+				{
+					"atom_id": "01M8DSPBZBBQC6VP125B30QQZ4",
+					"type": "soft",
+					"rationale": "Baut in der Etappe auf Rechtssprüche & ihr Fortwirken heute auf."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-8-l1",
+					"topic_code": "recht-werte",
+					"topic_title": "Römisches Recht & Werte"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb1",
+					"topic_title": "Lernbereich 1: Texte – Römische Werte: iustitia, aequitas & humanitas",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb3",
+					"topic_title": "Lernbereich 3: Kultureller Kontext – Römische Werte: iustitia, aequitas & humanitas",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8DSPC2AP2MD2VS41KJ1YEGY",
+					"slug": "l8-werte-iustitia-humanitas-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was warnt Ciceros Ausspruch „Summum ius, summa iniuria“?",
+					"concept": "Allzu starres, ohne Billigkeit (aequitas) angewandtes Recht kann zu größtem Unrecht werden",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-werte-iustitia-humanitas",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Allzu starres, ohne Billigkeit (aequitas) angewandtes Recht kann zu größtem Unrecht werden",
+							"Dass Gesetze grundsätzlich immer geändert werden müssen"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8DSPC2BEMVTRJBZSVJK03ZV",
+					"slug": "l8-werte-iustitia-humanitas-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie definiert der römische Jurist Ulpian den Grundwert „iustitia“?",
+					"concept": "Als den beständigen und dauerhaften Willen, jedem sein Recht zuzuteilen (suum cuique).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-werte-iustitia-humanitas",
+					"sample_solution": "Als den beständigen und dauerhaften Willen, jedem sein Recht zuzuteilen (suum cuique)."
+				},
+				{
+					"id": "01M8DSPC2CVYWM7W6DZNT9BAMD",
+					"slug": "l8-werte-iustitia-humanitas-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Was bedeutet „humanitas“ insbesondere bei Cicero und Seneca?",
+					"concept": "Menschlichkeit, Bildung und Achtung vor der Würde jedes Menschen – selbst der Sklaven (Homo homini res sacra).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-werte-iustitia-humanitas",
+					"sample_solution": "Menschlichkeit, Bildung und Achtung vor der Würde jedes Menschen – selbst der Sklaven (Homo homini res sacra)."
+				}
+			]
+		},
+		{
+			"id": "01M8DSPBZDS4MFEQGCAE1MZN35",
+			"atom_uri": "urn:zam:atom:01M8DSPBZDS4MFEQGCAE1MZN35",
+			"namespace": "zam-academy-latein-gymnasium-8-l1",
+			"slug": "l8-recht-fallstudie",
+			"title": "Fallstudie: Ein antiker & moderner Rechtsfall",
+			"domain": "latein/kultur",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-recht-fallstudie",
+			"prerequisites": [
+				{
+					"atom_id": "01M8DSPBZAX4EPVPER4MVWEVZA",
+					"type": "soft",
+					"rationale": "Wendet Prozess- und Rechtsgrundsätze auf einen konkreten Fall an."
+				},
+				{
+					"atom_id": "01M8DSPBZBBQC6VP125B30QQZ4",
+					"type": "soft",
+					"rationale": "Nutzt zentrale Rechtssprichwörter in der Fallabwägung."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-8-l1",
+					"topic_code": "recht-werte",
+					"topic_title": "Römisches Recht & Werte"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb1",
+					"topic_title": "Lernbereich 1: Texte – Fallstudie: Ein antiker & moderner Rechtsfall",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb3",
+					"topic_title": "Lernbereich 3: Kultureller Kontext – Fallstudie: Ein antiker & moderner Rechtsfall",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8DSPC2DVZKFSRMYAGFSMYEE",
+					"slug": "l8-recht-fallstudie-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Warum scheitert im römischen Kaufrecht die Berufung auf „Pacta sunt servanda“, wenn ein Verkäufer einen Mangel verschwiegen hat?",
+					"concept": "Weil arglistige Täuschung (dolus malus) gegen Treu und Glauben (bona fides) verstößt",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-recht-fallstudie",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Weil arglistige Täuschung (dolus malus) gegen Treu und Glauben (bona fides) verstößt",
+							"Weil Pferdekäufe auf dem Forum grundsätzlich ungültig waren"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8DSPC2E8DCECAZ7TSRFP9JR",
+					"slug": "l8-recht-fallstudie-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "In welcher Schrittfolge prüft man sowohl in der Antike als auch heute einen konkreten Rechtsfall?",
+					"concept": "1. Wirksamer Vertrag/Sachverhalt? 2. Verstoß gegen Treu und Glauben/Arglist? 3. Beweislast und gerechter Ausgleich?",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-recht-fallstudie",
+					"sample_solution": "1. Wirksamer Vertrag/Sachverhalt? 2. Verstoß gegen Treu und Glauben/Arglist? 3. Beweislast und gerechter Ausgleich?"
+				},
+				{
+					"id": "01M8DSPC2F4BMWW07ZFX90KXJN",
+					"slug": "l8-recht-fallstudie-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welche heutige Schutzregel entspricht dem römischen Vorgehen gegen ein verschwiegenes „vitium occultum“?",
+					"concept": "Die Sachmängelhaftung (Gewährleistung) und Anfechtung wegen arglistiger Täuschung im BGB.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-recht-fallstudie",
+					"sample_solution": "Die Sachmängelhaftung (Gewährleistung) und Anfechtung wegen arglistiger Täuschung im BGB."
+				}
+			]
+		},
+		{
+			"id": "01M8DSPBZEWRV794K98AAM880N",
+			"atom_uri": "urn:zam:atom:01M8DSPBZEWRV794K98AAM880N",
+			"namespace": "zam-academy-latein-gymnasium-8-l1",
+			"slug": "l8-antike-tradition-europa",
+			"title": "Antike Tradition & europäische Identität",
+			"domain": "latein/kultur",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-antike-tradition-europa",
+			"prerequisites": [
+				{
+					"atom_id": "01M8DSPBZDS4MFEQGCAE1MZN35",
+					"type": "soft",
+					"rationale": "Baut in der Etappe auf Fallstudie: Ein antiker & moderner Rechtsfall auf."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-8-l1",
+					"topic_code": "recht-werte",
+					"topic_title": "Römisches Recht & Werte"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb3",
+					"topic_title": "Lernbereich 3: Kultureller Kontext – Antike Tradition & europäische Identität",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8DSPC2GEDHQCB7C7XBD60WK",
+					"slug": "l8-antike-tradition-europa-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche beiden antiken Kulturströme bilden gemeinsam die Grundlage des europäischen Bildungs- und Rechtsraums?",
+					"concept": "Griechische Philosophie/Wissenschaft und römisches Recht/lateinische Sprache",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-antike-tradition-europa",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Griechische Philosophie/Wissenschaft und römisches Recht/lateinische Sprache",
+							"Ausschließlich militärische Triumphzüge und Gladiatorenspiele"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8DSPC2HAE42GC3JK92PFFGC",
+					"slug": "l8-antike-tradition-europa-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie erreichten viele verlorene griechische Natur- und Philosophieschriften im Mittelalter Westeuropa?",
+					"concept": "Über Klosterbibliotheken sowie über arabisch-spanische Übersetzungen rund um das Mittelmeer.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-antike-tradition-europa",
+					"sample_solution": "Über Klosterbibliotheken sowie über arabisch-spanische Übersetzungen rund um das Mittelmeer."
+				},
+				{
+					"id": "01M8DSPC2JFHZ4Q8A6812V435N",
+					"slug": "l8-antike-tradition-europa-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welche Gemeinsamkeit und welchen Wert zeigt ein vorurteilsfreier Vergleich mit anderen Kulturkreisen?",
+					"concept": "Grundideen wie Gastfreundschaft, Gerechtigkeit und gegenseitiges Lernen durch kulturellen Austausch über Grenzen hinweg.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-antike-tradition-europa",
+					"sample_solution": "Grundideen wie Gastfreundschaft, Gerechtigkeit und gegenseitiges Lernen durch kulturellen Austausch über Grenzen hinweg."
+				}
+			]
+		},
+		{
+			"id": "01M8DSPBZF8AHG7QEMN3614QJ7",
+			"atom_uri": "urn:zam:atom:01M8DSPBZF8AHG7QEMN3614QJ7",
+			"namespace": "zam-academy-latein-gymnasium-8-l1",
+			"slug": "l8-vorsokratiker-weltbilder",
+			"title": "Vorsokratiker & antike Weltbilder",
+			"domain": "latein/kultur",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-vorsokratiker-weltbilder",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-8-l1",
+					"topic_code": "philosophie-fabel",
+					"topic_title": "Philosophie, Weltbilder & Phaedrus"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb1",
+					"topic_title": "Lernbereich 1: Texte – Vorsokratiker & antike Weltbilder",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb3",
+					"topic_title": "Lernbereich 3: Kultureller Kontext – Vorsokratiker & antike Weltbilder",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8DSPC2KAFMMFWA5ZGJPENDZ",
+					"slug": "l8-vorsokratiker-weltbilder-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was beschreibt das geistesgeschichtliche Schlagwort „Vom Mythos zum Logos“ bei den Vorsokratikern?",
+					"concept": "Den Übergang von Göttersagen zu vernünftigen Naturerklärungen durch Nachdenken und Beobachten",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-vorsokratiker-weltbilder",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Den Übergang von Göttersagen zu vernünftigen Naturerklärungen durch Nachdenken und Beobachten",
+							"Das vollständige Verbot von Theateraufführungen in Athen"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8DSPC2M9643Y54ZE7WTCCQT",
+					"slug": "l8-vorsokratiker-weltbilder-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Worin sahen Thales und Demokrit jeweils das Grundprinzip (archē) der Natur?",
+					"concept": "Thales im Wasser (aqua); Demokrit in kleinsten unteilbaren Teilchen, den Atomen (a-tomos).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-vorsokratiker-weltbilder",
+					"sample_solution": "Thales im Wasser (aqua); Demokrit in kleinsten unteilbaren Teilchen, den Atomen (a-tomos)."
+				},
+				{
+					"id": "01M8DSPC2N79G397MRHTW6KH7A",
+					"slug": "l8-vorsokratiker-weltbilder-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Worin unterscheidet sich Demokrits antike Atomlehre vom heutigen naturwissenschaftlichen Atommodell?",
+					"concept": "Demokrit erschloss Atome rein durch Logik als unteilbar; moderne Physik erforscht experimentell den inneren Aufbau der Atome.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-vorsokratiker-weltbilder",
+					"sample_solution": "Demokrit erschloss Atome rein durch Logik als unteilbar; moderne Physik erforscht experimentell den inneren Aufbau der Atome."
+				}
+			]
+		},
+		{
+			"id": "01M8DSPBZGG32NM0H6XNFVS3RJ",
+			"atom_uri": "urn:zam:atom:01M8DSPBZGG32NM0H6XNFVS3RJ",
+			"namespace": "zam-academy-latein-gymnasium-8-l1",
+			"slug": "l8-sokrates-fragen",
+			"title": "Sokrates: Fragen, Wissen & Gewissen",
+			"domain": "latein/kultur",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-sokrates-fragen",
+			"prerequisites": [
+				{
+					"atom_id": "01M8DSPBZF8AHG7QEMN3614QJ7",
+					"type": "soft",
+					"rationale": "Baut in der Etappe auf Vorsokratiker & antike Weltbilder auf."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-8-l1",
+					"topic_code": "philosophie-fabel",
+					"topic_title": "Philosophie, Weltbilder & Phaedrus"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb1",
+					"topic_title": "Lernbereich 1: Texte – Sokrates: Fragen, Wissen & Gewissen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb3",
+					"topic_title": "Lernbereich 3: Kultureller Kontext – Sokrates: Fragen, Wissen & Gewissen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8DSPC2PG152SW4PN47WA2WH",
+					"slug": "l8-sokrates-fragen-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welches Ziel verfolgte Sokrates mit seiner Gesprächsmethode der „Mäeutik“ (Hebammenkunst)?",
+					"concept": "Partner sollten durch gezielte Fragen Widersprüche im Scheinwissen selbst erkennen und Einsicht gewinnen",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-sokrates-fragen",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Partner sollten durch gezielte Fragen Widersprüche im Scheinwissen selbst erkennen und Einsicht gewinnen",
+							"Er wollte Schülern teure Reden zum Auswendiglernen verkaufen"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8DSPC2QFS83FXFWMA9Q3YDC",
+					"slug": "l8-sokrates-fragen-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Was meinte Sokrates mit dem berühmten Satz „Ich weiß, dass ich nichts weiß“?",
+					"concept": "Ehrliche Erkenntnis eigener Wissensgrenzen als Schutz vor Dünkel und als Ansporn zum Weiterfragen.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-sokrates-fragen",
+					"sample_solution": "Ehrliche Erkenntnis eigener Wissensgrenzen als Schutz vor Dünkel und als Ansporn zum Weiterfragen."
+				},
+				{
+					"id": "01M8DSPC2REJXSYZ6S8DZXEY2G",
+					"slug": "l8-sokrates-fragen-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welche moralische Entscheidung traf Sokrates bei der Frage nach Unrecht tun vs. Unrecht erleiden?",
+					"concept": "Lieber Unrecht erleiden als selbst Unrecht tun (iniuriam pati quam facere), weil Unrecht der eigenen Seele schadet.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-sokrates-fragen",
+					"sample_solution": "Lieber Unrecht erleiden als selbst Unrecht tun (iniuriam pati quam facere), weil Unrecht der eigenen Seele schadet."
+				}
+			]
+		},
+		{
+			"id": "01M8DSPBZHD0N2WTDY3NZK2GPZ",
+			"atom_uri": "urn:zam:atom:01M8DSPBZHD0N2WTDY3NZK2GPZ",
+			"namespace": "zam-academy-latein-gymnasium-8-l1",
+			"slug": "l8-epikur-stoa",
+			"title": "Epikur & Stoa: Wege zum guten Leben",
+			"domain": "latein/kultur",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-epikur-stoa",
+			"prerequisites": [
+				{
+					"atom_id": "01M8DSPBZGG32NM0H6XNFVS3RJ",
+					"type": "soft",
+					"rationale": "Baut in der Etappe auf Sokrates: Fragen, Wissen & Gewissen auf."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-8-l1",
+					"topic_code": "philosophie-fabel",
+					"topic_title": "Philosophie, Weltbilder & Phaedrus"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb1",
+					"topic_title": "Lernbereich 1: Texte – Epikur & Stoa: Wege zum guten Leben",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb3",
+					"topic_title": "Lernbereich 3: Kultureller Kontext – Epikur & Stoa: Wege zum guten Leben",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8DSPC2SK69R79FYFSFM4YT1",
+					"slug": "l8-epikur-stoa-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was verstand Epikur wirklich unter dem höchsten Ziel der „Ataraxia“?",
+					"concept": "Innere Seelenruhe und Freiheit von Furcht und Schmerz durch Maßhalten und Freundschaft",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-epikur-stoa",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Innere Seelenruhe und Freiheit von Furcht und Schmerz durch Maßhalten und Freundschaft",
+							"Täglichen Luxus und unkontrolliertes Ausleben jeder Begierde"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8DSPC2TP1YPZTQXPCAC74QM",
+					"slug": "l8-epikur-stoa-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Worin unterscheiden sich Stoiker und Epikureer in ihrer Haltung zu Politik und Gemeinwesen?",
+					"concept": "Epikureer empfehlen den Rückzug ins Private („Lebe im Verborgenen“); Stoiker fordern aktiven Einsatz im Dienst der Gemeinschaft.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-epikur-stoa",
+					"sample_solution": "Epikureer empfehlen den Rückzug ins Private („Lebe im Verborgenen“); Stoiker fordern aktiven Einsatz im Dienst der Gemeinschaft."
+				},
+				{
+					"id": "01M8DSPC2VV6C177ZYJ5ZXFJS5",
+					"slug": "l8-epikur-stoa-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Was liegt laut stoischer Lehre auch in schweren Krisen in unserer eigenen Macht?",
+					"concept": "Unsere eigene vernünftige Bewertung, Haltung und moralische Handlungsweise (Unterscheidung von Verfügbarem und Unverfügbarem).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-epikur-stoa",
+					"sample_solution": "Unsere eigene vernünftige Bewertung, Haltung und moralische Handlungsweise (Unterscheidung von Verfügbarem und Unverfügbarem)."
+				}
+			]
+		},
+		{
+			"id": "01M8DSPBZJ921057G22QTZYRWA",
+			"atom_uri": "urn:zam:atom:01M8DSPBZJ921057G22QTZYRWA",
+			"namespace": "zam-academy-latein-gymnasium-8-l1",
+			"slug": "l8-cicero-seneca",
+			"title": "Cicero & Seneca: Vermittler in Rom",
+			"domain": "latein/kultur",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-cicero-seneca",
+			"prerequisites": [
+				{
+					"atom_id": "01M8DSPBZHD0N2WTDY3NZK2GPZ",
+					"type": "soft",
+					"rationale": "Zeigt, wie Cicero und Seneca griechische Lehren wie Stoa und Epikur in Rom vermitteln."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-8-l1",
+					"topic_code": "philosophie-fabel",
+					"topic_title": "Philosophie, Weltbilder & Phaedrus"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb1",
+					"topic_title": "Lernbereich 1: Texte – Cicero & Seneca: Vermittler in Rom",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb3",
+					"topic_title": "Lernbereich 3: Kultureller Kontext – Cicero & Seneca: Vermittler in Rom",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8DSPC2WAANN5TPM8AKGX749",
+					"slug": "l8-cicero-seneca-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Worin liegt Ciceros bleibende Leistung für die Philosophie und die europäischen Sprachen?",
+					"concept": "Er übertrug griechische Philosophie nach Rom und prägte Wörter wie humanitas, moralis und qualitas",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-cicero-seneca",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Er übertrug griechische Philosophie nach Rom und prägte Wörter wie humanitas, moralis und qualitas",
+							"Er erfand in Athen die Atomlehre vor Demokrit"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8DSPC2X0MW7SRP22E3XF75B",
+					"slug": "l8-cicero-seneca-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wozu mahnt Seneca seinen Freund Lucilius am Beginn des ersten Briefes („vindica te tibi“)?",
+					"concept": "Die eigene Lebenszeit bewusst zu sammeln und nicht unachtsam stehlen oder verrinnen zu lassen.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-cicero-seneca",
+					"sample_solution": "Die eigene Lebenszeit bewusst zu sammeln und nicht unachtsam stehlen oder verrinnen zu lassen."
+				},
+				{
+					"id": "01M8DSPC2Y6H07B8Y57HQCXDN5",
+					"slug": "l8-cicero-seneca-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie begründet Seneca im 47. Brief die menschenwürdige Behandlung von Sklaven?",
+					"concept": "Sie stammen aus denselben Ursprüngen und atmen denselben Himmel (ex isdem seminibus orti, eodem caelo fruentes).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-cicero-seneca",
+					"sample_solution": "Sie stammen aus denselben Ursprüngen und atmen denselben Himmel (ex isdem seminibus orti, eodem caelo fruentes)."
+				}
+			]
+		},
+		{
+			"id": "01M8DSPBZKSTR9QJKARNH6NE89",
+			"atom_uri": "urn:zam:atom:01M8DSPBZKSTR9QJKARNH6NE89",
+			"namespace": "zam-academy-latein-gymnasium-8-l1",
+			"slug": "l8-phaedrus-fabeln",
+			"title": "Phaedrus’ Fabeln: Tiergeschichten als Spiegel",
+			"domain": "latein/kultur",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-phaedrus-fabeln",
+			"prerequisites": [
+				{
+					"atom_id": "01M8DSPBZJ921057G22QTZYRWA",
+					"type": "soft",
+					"rationale": "Baut in der Etappe auf Cicero & Seneca: Vermittler in Rom auf."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-8-l1",
+					"topic_code": "philosophie-fabel",
+					"topic_title": "Philosophie, Weltbilder & Phaedrus"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb1",
+					"topic_title": "Lernbereich 1: Texte – Phaedrus’ Fabeln: Tiergeschichten als Spiegel",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb3",
+					"topic_title": "Lernbereich 3: Kultureller Kontext – Phaedrus’ Fabeln: Tiergeschichten als Spiegel",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8DSPC2ZTM02Y2QVEBB2Z96G",
+					"slug": "l8-phaedrus-fabeln-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Auf welches griechische Vorbild stützte sich der römische Fabeldichter Phaedrus ausdrücklich?",
+					"concept": "Auf die griechischen Prosa-Tierfabeln Äsops (6. Jh. v. Chr.)",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-phaedrus-fabeln",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Auf die griechischen Prosa-Tierfabeln Äsops (6. Jh. v. Chr.)",
+							"Auf die Gesetzestafeln des Prätors"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8DSPC30PSBJAX33SR32AACR",
+					"slug": "l8-phaedrus-fabeln-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie bezeichnet man die knappe Lehre einer Fabel am Anfang bzw. am Ende des Textes?",
+					"concept": "Am Anfang Promythion, am Schluss (wie bei Wolf und Lamm) Epimythion.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-phaedrus-fabeln",
+					"sample_solution": "Am Anfang Promythion, am Schluss (wie bei Wolf und Lamm) Epimythion."
+				},
+				{
+					"id": "01M8DSPC316C03T5R9EWS8V9V2",
+					"slug": "l8-phaedrus-fabeln-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Warum eigneten sich Tierfabeln unter Kaisern wie Tiberius besonders für Gesellschaftskritik?",
+					"concept": "Sie halten Mächtigen über Typenfiguren (Wolf = Willkür, Lamm = Unschuld) verschlüsselt einen kritischen Spiegel vor.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-phaedrus-fabeln",
+					"sample_solution": "Sie halten Mächtigen über Typenfiguren (Wolf = Willkür, Lamm = Unschuld) verschlüsselt einen kritischen Spiegel vor."
+				}
+			]
+		},
+		{
+			"id": "01M8DSPBZM1SF94GTW65QKAV2H",
+			"atom_uri": "urn:zam:atom:01M8DSPBZM1SF94GTW65QKAV2H",
+			"namespace": "zam-academy-latein-gymnasium-8-l1",
+			"slug": "l8-satzanalyse-methoden",
+			"title": "Satzanalyse: Einrücken, Klammern & Struktur",
+			"domain": "latein/methodik",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-satzanalyse-methoden",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-8-l1",
+					"topic_code": "digital-methodik",
+					"topic_title": "Latein aktuell, digital, kreativ & Methodik"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb1",
+					"topic_title": "Lernbereich 1: Texte – Satzanalyse: Einrücken, Klammern & Struktur",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb2.3",
+					"topic_title": "Lernbereich 2.3: Satzlehre – Satzanalyse: Einrücken, Klammern & Struktur",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb5",
+					"topic_title": "Lernbereich 5: Methodik – Satzanalyse: Einrücken, Klammern & Struktur",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8DSPC32QEJG7T977231QV8K",
+					"slug": "l8-satzanalyse-methoden-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wie ordnet die Einrückmethode ein längeres lateinisches Satzgefüge sichtbar?",
+					"concept": "Hauptsatz links auf Ebene 0, untergeordnete Nebensätze und Konstruktionen je nach Abhängigkeit weiter rechts",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-satzanalyse-methoden",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Hauptsatz links auf Ebene 0, untergeordnete Nebensätze und Konstruktionen je nach Abhängigkeit weiter rechts",
+							"Alle Wörter werden alphabetisch nach Endungen sortiert"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8DSPC33B4SQ1QX6BHGJBAZM",
+					"slug": "l8-satzanalyse-methoden-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welche zwei Klasse-8-Prüfungen ergänzt man bei der Satzanalyse zu AcI und Ablativus absolutus?",
+					"concept": "Prüfung von -nd-Formen (Gerund vs. Gerundiv mit KNG/esse) und Suche nach NcI (Nom. + 3. Pers. Passiv + Infinitiv).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-satzanalyse-methoden",
+					"sample_solution": "Prüfung von -nd-Formen (Gerund vs. Gerundiv mit KNG/esse) und Suche nach NcI (Nom. + 3. Pers. Passiv + Infinitiv)."
+				},
+				{
+					"id": "01M8DSPC34070M0RTP7AAY9YEZ",
+					"slug": "l8-satzanalyse-methoden-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Warum markiert man vor dem Übersetzen zuerst Konnektoren und finite Prädikate?",
+					"concept": "So trennt man Haupt- und Nebensätze sauber und verhindert, dass Bezüge zwischen Satzteilen verrutschen.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-satzanalyse-methoden",
+					"sample_solution": "So trennt man Haupt- und Nebensätze sauber und verhindert, dass Bezüge zwischen Satzteilen verrutschen."
+				}
+			]
+		},
+		{
+			"id": "01M8DSPBZN2MD3XPN6P4W0MBEV",
+			"atom_uri": "urn:zam:atom:01M8DSPBZN2MD3XPN6P4W0MBEV",
+			"namespace": "zam-academy-latein-gymnasium-8-l1",
+			"slug": "l8-uebersetzen-pruefen",
+			"title": "Übersetzungstechniken & Übersetzungen prüfen",
+			"domain": "latein/methodik",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-uebersetzen-pruefen",
+			"prerequisites": [
+				{
+					"atom_id": "01M8DSPBZM1SF94GTW65QKAV2H",
+					"type": "soft",
+					"rationale": "Prüft auf Basis der Satzanalyse Übersetzungsentwürfe kritisch."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-8-l1",
+					"topic_code": "digital-methodik",
+					"topic_title": "Latein aktuell, digital, kreativ & Methodik"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb1",
+					"topic_title": "Lernbereich 1: Texte – Übersetzungstechniken & Übersetzungen prüfen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb2.3",
+					"topic_title": "Lernbereich 2.3: Satzlehre – Übersetzungstechniken & Übersetzungen prüfen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb5",
+					"topic_title": "Lernbereich 5: Methodik – Übersetzungstechniken & Übersetzungen prüfen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8DSPC35VMYMJB3HQGKNT7N6",
+					"slug": "l8-uebersetzen-pruefen-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Worauf prüfst du eine eigene oder fremde Übersetzung in den drei Kontrollen nach dem ersten Entwurf?",
+					"concept": "Formen/Tempora/Genus Verbi, syntaktische Konstruktionen und idiomatisches Deutsch im Kontext",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-uebersetzen-pruefen",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Formen/Tempora/Genus Verbi, syntaktische Konstruktionen und idiomatisches Deutsch im Kontext",
+							"Allein auf die Anzahl der deutschen Satzzeichen"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8DSPC36QJG4WA67NSDZFCD2",
+					"slug": "l8-uebersetzen-pruefen-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wann empfiehlt sich die Konstruktionsmethode gegenüber der reinen Drei-Schritt-Methode?",
+					"concept": "Bei langen, verschachtelten Perioden, indem man vom finiten Prädikat und Subjekt her die Satzglieder systematisch erschließt.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-uebersetzen-pruefen",
+					"sample_solution": "Bei langen, verschachtelten Perioden, indem man vom finiten Prädikat und Subjekt her die Satzglieder systematisch erschließt."
+				},
+				{
+					"id": "01M8DSPC374TJR57KERVHH3MA1",
+					"slug": "l8-uebersetzen-pruefen-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie verbessert man einen holprigen ne-Finalsatz („dass nicht … entstehe“) in gutes Deutsch?",
+					"concept": "Durch klare finale Fügungen wie „damit keine … entsteht“.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-uebersetzen-pruefen",
+					"sample_solution": "Durch klare finale Fügungen wie „damit keine … entsteht“."
+				}
+			]
+		},
+		{
+			"id": "01M8DSPBZP9GJZ0XKAHABCAVC3",
+			"atom_uri": "urn:zam:atom:01M8DSPBZP9GJZ0XKAHABCAVC3",
+			"namespace": "zam-academy-latein-gymnasium-8-l1",
+			"slug": "l8-digital-recherche",
+			"title": "Digital recherchieren & Quellen prüfen",
+			"domain": "latein/methodik",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-digital-recherche",
+			"prerequisites": [
+				{
+					"atom_id": "01M8DSPBZN2MD3XPN6P4W0MBEV",
+					"type": "soft",
+					"rationale": "Baut in der Etappe auf Übersetzungstechniken & Übersetzungen prüfen auf."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-8-l1",
+					"topic_code": "digital-methodik",
+					"topic_title": "Latein aktuell, digital, kreativ & Methodik"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb4",
+					"topic_title": "Lernbereich 4: Latein 7.5.3 – aktuell, digital, kreativ – Digital recherchieren & Quellen prüfen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb5",
+					"topic_title": "Lernbereich 5: Methodik – Digital recherchieren & Quellen prüfen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8DSPC38G5HZXRM586XYW6Q8",
+					"slug": "l8-digital-recherche-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Woran prüfst du, ob eine digitale Informationsquelle zur Antike verlässlich ist?",
+					"concept": "Trägerschaft/Impressum (z. B. Fachmuseum, Universität), konkrete archäologische oder Textbelege und Abgleich von Daten",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-digital-recherche",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Trägerschaft/Impressum (z. B. Fachmuseum, Universität), konkrete archäologische oder Textbelege und Abgleich von Daten",
+							"Allein daran, ob die Seite auf Platz 1 einer Suchmaschine erscheint"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8DSPC39GXVAZ04T91E2DMBZ",
+					"slug": "l8-digital-recherche-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Warum scheitern automatische Übersetzungsprogramme oft an lateinischen Sätzen wie „Viri fortes consuluntur“?",
+					"concept": "Sie verwechseln ähnliche Wörter (consulere vs. consolari) oder ignorieren Passivendungen, KNG und Satzkonstruktionen.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-digital-recherche",
+					"sample_solution": "Sie verwechseln ähnliche Wörter (consulere vs. consolari) oder ignorieren Passivendungen, KNG und Satzkonstruktionen."
+				},
+				{
+					"id": "01M8DSPC3ARTBTTD3V8P1XBXBH",
+					"slug": "l8-digital-recherche-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Was leistet die Dendrochronologie bei der Erforschung des Limes?",
+					"concept": "Sie datiert erhaltene Eichenholzpfähle anhand von Jahresringen aufs Jahr genau.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-digital-recherche",
+					"sample_solution": "Sie datiert erhaltene Eichenholzpfähle anhand von Jahresringen aufs Jahr genau."
+				}
+			]
+		},
+		{
+			"id": "01M8DSPBZQVNHZDW0QEKPZBN1R",
+			"atom_uri": "urn:zam:atom:01M8DSPBZQVNHZDW0QEKPZBN1R",
+			"namespace": "zam-academy-latein-gymnasium-8-l1",
+			"slug": "l8-digital-kreativ",
+			"title": "Kreative & digitale Rezeption lateinischer Texte",
+			"domain": "latein/methodik",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-digital-kreativ",
+			"prerequisites": [
+				{
+					"atom_id": "01M8DSPBZP9GJZ0XKAHABCAVC3",
+					"type": "soft",
+					"rationale": "Baut in der Etappe auf Digital recherchieren & Quellen prüfen auf."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-8-l1",
+					"topic_code": "digital-methodik",
+					"topic_title": "Latein aktuell, digital, kreativ & Methodik"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb1",
+					"topic_title": "Lernbereich 1: Texte – Kreative & digitale Rezeption lateinischer Texte",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb4",
+					"topic_title": "Lernbereich 4: Latein 7.5.3 – aktuell, digital, kreativ – Kreative & digitale Rezeption lateinischer Texte",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb5",
+					"topic_title": "Lernbereich 5: Methodik – Kreative & digitale Rezeption lateinischer Texte",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8DSPC3BGVPXTWCYK5JH2W1P",
+					"slug": "l8-digital-kreativ-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Worauf beruht eine überzeugende kreative oder digitale Umsetzung (Szene, Plakat, Storyboard) eines lateinischen Textes?",
+					"concept": "Auf genauer Texterschließung, klaren Kernmotiven und belegten lateinischen Schlüsselbegriffen",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-digital-kreativ",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Auf genauer Texterschließung, klaren Kernmotiven und belegten lateinischen Schlüsselbegriffen",
+							"Auf dem freien Erfinden einer Geschichte ohne jeden Textbezug"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8DSPC3CD7B3MF6BVAJHQ8ER",
+					"slug": "l8-digital-kreativ-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Für welche Themen eignet sich ein Zeitstrahl bzw. eine szenische Dialogszene besonders gut?",
+					"concept": "Der Zeitstrahl für historische Entwicklungen (Kaiserzeit, Christentum); die Szene für Rededuelle und Fabeln (Phaedrus).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-digital-kreativ",
+					"sample_solution": "Der Zeitstrahl für historische Entwicklungen (Kaiserzeit, Christentum); die Szene für Rededuelle und Fabeln (Phaedrus)."
+				},
+				{
+					"id": "01M8DSPC3DZ6ZPV587JNRFKWX3",
+					"slug": "l8-digital-kreativ-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie verbindet man eine Fabel wie „Fuchs und Rabe“ in einer Präsentation mit der Gegenwart?",
+					"concept": "Man zeigt die Grundstruktur (Schmeichelei schaltet Vernunft aus) an aktuellen Beispielen wie Werbung oder Online-Fallen.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-digital-kreativ",
+					"sample_solution": "Man zeigt die Grundstruktur (Schmeichelei schaltet Vernunft aus) an aktuellen Beispielen wie Werbung oder Online-Fallen."
+				}
+			]
+		},
+		{
+			"id": "01M8DSPBZR5KYY0YGQZNF49GW1",
+			"atom_uri": "urn:zam:atom:01M8DSPBZR5KYY0YGQZNF49GW1",
+			"namespace": "zam-academy-latein-gymnasium-8-l1",
+			"slug": "l8-selbstorganisation-team",
+			"title": "Lernstrategien, Zeitplan & Teamarbeit",
+			"domain": "latein/methodik",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-selbstorganisation-team",
+			"prerequisites": [
+				{
+					"atom_id": "01M8DSPBZQVNHZDW0QEKPZBN1R",
+					"type": "soft",
+					"rationale": "Baut in der Etappe auf Kreative & digitale Rezeption lateinischer Texte auf."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-8-l1",
+					"topic_code": "digital-methodik",
+					"topic_title": "Latein aktuell, digital, kreativ & Methodik"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb4",
+					"topic_title": "Lernbereich 4: Latein 7.5.3 – aktuell, digital, kreativ – Lernstrategien, Zeitplan & Teamarbeit",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "latein",
+					"topic_code": "lb5",
+					"topic_title": "Lernbereich 5: Methodik – Lernstrategien, Zeitplan & Teamarbeit",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8DSPC3EENGYHPDNYXETPSXK",
+					"slug": "l8-selbstorganisation-team-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wie gestaltet man einen realistischen Zeitplan für eine Schulaufgabe über vielfältigen Grammatik- und Kulturstoff?",
+					"concept": "Früh mit Selbstcheck beginnen, kleine regelmäßige Übungspensen (Vokabeln, Formen, Texte) und einen Puffertag einplanen",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-selbstorganisation-team",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Früh mit Selbstcheck beginnen, kleine regelmäßige Übungspensen (Vokabeln, Formen, Texte) und einen Puffertag einplanen",
+							"Alle Lektionen und Vokabeln erst am Abend vor der Arbeit auf einmal durchgehen"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8DSPC3FDSTMPE6DM38ZAAKW",
+					"slug": "l8-selbstorganisation-team-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Was zeichnet konstruktives Feedback in Partner- und Gruppenarbeit oder auf digitalen Lernplattformen aus?",
+					"concept": "Erst Gelungenes wertschätzend benennen, dann eine konkrete Fehlerstelle sachlich mit Regelhinweis erklären.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-selbstorganisation-team",
+					"sample_solution": "Erst Gelungenes wertschätzend benennen, dann eine konkrete Fehlerstelle sachlich mit Regelhinweis erklären."
+				},
+				{
+					"id": "01M8DSPC3G9T3EJNDTXKBFDCT7",
+					"slug": "l8-selbstorganisation-team-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Warum hilft „Spaced Repetition“ (verteiltes Wiederholen wie mit ZAM-Karten) gerade bei Wortschatz und Deklination?",
+					"concept": "Regelmäßige Abstände verankern Formen und Bedeutungen dauerhaft im Langzeitgedächtnis statt für wenige Stunden.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-8-l1/#lesson=l8-selbstorganisation-team",
+					"sample_solution": "Regelmäßige Abstände verankern Formen und Bedeutungen dauerhaft im Langzeitgedächtnis statt für wenige Stunden."
+				}
+			]
+		}
+	]
+}

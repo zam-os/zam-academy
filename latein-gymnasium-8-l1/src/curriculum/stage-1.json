@@ -1,0 +1,583 @@
+[
+	{
+		"id": "l8-wortschatz-kontext",
+		"stage": "wortschatz",
+		"title": "Aufbauwortschatz, Kontext & Pänultima",
+		"skill": "Mehrdeutige Verben und Substantive aus dem Kontext erschließen und neue Wörter sicher betonen",
+		"bindings": ["L8-04", "L8-05", "L8-06", "L8-07"],
+		"paragraphs": [
+			"In der achten Klasse wächst dein Grundwortschatz auf rund 1500 Wörter an, ergänzt um den ersten Aufbauwortschatz und den Kulturwortschatz. Viele zentrale Wörter tragen mehrere Bedeutungen: consulere heißt mit Dativ „für jemanden sorgen“, mit Akkusativ dagegen „jemanden um Rat fragen“; petere bedeutet je nach Objekt „bitten“, „streben nach“ oder „angreifen“.",
+			"Ebenso gehört zum sicheren Textverständnis das quantitätsgerechte Sprechen nach der Pänultima-Regel: Ist die vorletzte Silbe von Natur aus lang (wie in gerundīvum oder imperātor) oder durch zwei Konsonanten positionslang, trägt sie den Ton; ist sie kurz (wie das i vor Vokal in iūstĭtĭa oder phĭlŏsŏphĭa), springt der Ton auf die drittletzte Silbe."
+		],
+		"materialLabel": "Kontextbeispiele mit consulere, petere und ius",
+		"materialLanguage": "la",
+		"material": "1. Imperator saluti civium consulit, deinde senatum consulit.\n2. Legati pacem petunt; hostes urbem petunt.\n3. Iustitia cuique suum ius tribuit.",
+		"sourceIds": ["lp", "lp-profil"],
+		"diagram": {
+			"kind": "paenultima-lab",
+			"title": "Pänultima-Silbenwaage für den Aufbauwortschatz",
+			"caption": "Klicke ein Lernwort aus Klasse 8 an, um Silbentrennung, Pänultima-Quantität und Betonungsstelle zu prüfen."
+		},
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Wie unterscheiden sich „saluti civium consulit“ und „senatum consulit“?",
+			"answer": "mit Dativ „sorgen für“, mit Akkusativ „um Rat fragen“",
+			"wrong": [
+				"mit Dativ „anklagen“, mit Akkusativ „besiegen“",
+				"beide Formen bedeuten identisch „beraten“"
+			],
+			"explanation": "Bei consulere steuert der Kasus des Objekts die Bedeutung: alicui consulere = für jemanden sorgen; aliquem consulere = jemanden um Rat fragen."
+		},
+		"takeaway": "Prüfe bei mehrdeutigen Wörtern immer Kasusrektion und Sachfeld im Satz; bei der Betonung entscheidet die Länge der vorletzten Silbe.",
+		"practice": [
+			{
+				"prompt": "Wie übersetzt man „senatum consulit“ (mit Akkusativobjekt) treffend?",
+				"answers": ["er fragt den senat um rat", "den senat um rat fragen", "fragt den senat um rat"],
+				"feedback": "consulere + Akkusativ bedeutet „jemanden um Rat fragen / befragen“."
+			},
+			{
+				"prompt": "Auf welcher Silbe wird „philosophia“ (phi-lo-so-phi-a) betont?",
+				"answers": ["so", "-so-"],
+				"feedback": "Weil -phi- vor -a kurz ist (vocalis ante vocalem), rückt der Ton auf die drittletzte Silbe: phi-lo-SÓ-phi-a."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "de",
+				"prompt": "Übersetze die Sätze 1 und 2 aus dem Material ins Deutsche und benenne das grammatische Signal, an dem du die jeweilige Bedeutung von consulit und petunt erkennst.",
+				"model": "1. Der Feldherr sorgt für das Wohl der Bürger, dann fragt er den Senat um Rat (saluti im Dativ → sorgen für; senatum im Akkusativ → um Rat fragen).\n2. Die Gesandten bitten um Frieden; die Feinde greifen die Stadt an (pacem = Abstraktum → erbitten; urbem = Ort/Ziel im Krieg → angreifen).",
+				"criteria": [
+					"Beide Bedeutungen von consulere sind durch Dativ bzw. Akkusativ unterschieden.",
+					"pacem petunt und urbem petunt sind kontextgerecht übersetzt.",
+					"Die jeweiligen Signalwörter im Satz sind benannt."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Untersuche die Wörter „iūstĭtĭa“, „gĕrundīvum“ und „sēmĭdēpōnēns“ hinsichtlich ihrer Silbenstruktur und formuliere eine kurze Vortragsanweisung für einen Textabschnitt.",
+				"model": "iūs-TÍ-ti-a (vorletzte Silbe -tĭ- vor Vokal kurz → 3.-letzte Silbe), ge-run-DĪ-vum (-ī- naturlang → vorletzte Silbe), se-mi-de-PŌ-nens (-ō- naturlang → vorletzte Silbe). Vortragsanweisung: Langsame Zäsur vor Hauptverben und Nebensatzgrenzen setzen und Quantitäten deutlich dehnen.",
+				"criteria": [
+					"Alle drei Wörter sind korrekt in Silben zerlegt und betont.",
+					"Naturlänge und Kürze vor Vokal sind richtig begründet.",
+					"Der Vortragshinweis verknüpft Betonung mit Sinngliederung."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "context-paenultima",
+			"goals": [
+				{
+					"label": "Kasusrektion von consulere richtig deuten",
+					"before": "saluti civium consulit (Dativ) →",
+					"after": "",
+					"options": [
+						"für das Wohl der Bürger sorgen",
+						"das Wohl um Rat fragen",
+						"gegen die Bürger beschließen"
+					],
+					"answer": "für das Wohl der Bürger sorgen",
+					"explanation": "Mit Dativ heißt consulere „sorgen für“."
+				},
+				{
+					"label": "Sachfeld bei petere anwenden",
+					"before": "hostes urbem petunt →",
+					"after": "(Militärkontext)",
+					"options": ["die Feinde greifen die Stadt an", "die Feinde erbitten die Stadt", "die Feinde bauen die Stadt"],
+					"answer": "die Feinde greifen die Stadt an",
+					"explanation": "Im militärischen Kontext bedeutet aliquem/aliquid petere „angreifen“."
+				},
+				{
+					"label": "Betonung von gerundīvum bestimmen",
+					"before": "gĕrundīvum (langes ī in -dī-) →",
+					"after": "",
+					"options": [
+						"Ton auf der vorletzten Silbe (-dī-)",
+						"Ton auf der drittletzten Silbe (-run-)",
+						"Ton auf der ersten Silbe (gĕ-)"
+					],
+					"answer": "Ton auf der vorletzten Silbe (-dī-)",
+					"explanation": "Langes ī zieht den Wortakzent auf die Paenultima."
+				}
+			]
+		}
+	},
+	{
+		"id": "l8-wortfelder-wendungen",
+		"stage": "wortschatz",
+		"title": "Wortfelder, Wortfamilien & Wendungen",
+		"skill": "Erweiterten Wortschatz nach Sachfeldern gliedern und Rechtssowie Alltags-Junkturen idiomatisch übersetzen",
+		"bindings": ["L8-05", "L8-08", "L8-09"],
+		"paragraphs": [
+			"Je größer dein Wortschatz wird, desto mehr helfen dir feste Netze aus Wortfamilien und Sachfeldern. In der achten Klasse treten zu Militär und Staat neue Sachfelder hinzu: römisches Rechtswesen (lex, ius, iudex, testis, reus, poena) sowie Philosophie und Religion (sapientia, ratio, virtus, animus, fides).",
+			"Ebenso verlangt das Übersetzen idiomatischer Wendungen Augenmaß: poenas dare heißt nicht „Strafen schenken“, sondern „Strafe erleiden / bestraft werden“; operam dare bedeutet „sich Mühe geben“; ius dicere meint „Recht sprechen“. Wer zunächst die wörtliche Grundstruktur erkennt, findet danach leicht die passende deutsche Formulierung."
+		],
+		"materialLabel": "Wortfamilien und feste Wendungen aus Recht und Philosophie",
+		"materialLanguage": "la",
+		"material": "1. Malus civis poenas dat, quia legem violavit.\n2. Iudex in foro ius dicit et operam dat, ut veritas appareat.\n3. Wortfamilie ius: iustus, iustitia, iniuria, iudex, iudicare, iurare.",
+		"sourceIds": ["lp", "bpb-recht"],
+		"diagram": {
+			"kind": "morph-lab",
+			"title": "Wortfamilie ius und feste Wendungen",
+			"caption": "Vom Kernwort über abgeleitete Familienmitglieder bis zur idiomatischen Wendung.",
+			"parts": [
+				{
+					"id": "wf8-fam",
+					"label": "1 · Wortfamilie",
+					"badge": "Stamm iūr- / iūs-",
+					"latin": "ius · iustitia · iniuria · iudex",
+					"detail": "Alle Wörter teilen die Wurzel „Recht“: iniuria ist das Unrecht (in- + ius), iudex der Rechtsprecher (ius + dicere)."
+				},
+				{
+					"id": "wf8-feld",
+					"label": "2 · Sachfeld ordnen",
+					"badge": "Recht & Philosophie",
+					"latin": "reus · testis · poena · sapientia",
+					"detail": "Sachfelder bündeln Begriffe eines Themas (z. B. Prozesswesen) und sichern Vorwissen vor dem Lesen eines Textes."
+				},
+				{
+					"id": "wf8-idiom",
+					"label": "3 · Wendung deuten",
+					"badge": "Wörtlich → Idiom",
+					"latin": "poenas dare · operam dare",
+					"detail": "Wörtlich „Strafe geben / Mühe geben“ → treffendes Deutsch: „bestraft werden“ bzw. „sich bemühen“."
+				}
+			]
+		},
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Was bedeutet die lateinische Wendung „poenas dare“ im guten Deutsch?",
+			"answer": "Strafe erleiden / bestraft werden",
+			"wrong": ["jemanden begnadigen", "eine Belohnung auszahlen"],
+			"explanation": "Im Römischen „zahlt“ der Schuldige die Buße (poenas dare/solvere) – er wird also bestraft."
+		},
+		"takeaway": "Wortfamilien bündeln gemeinsame Stämme wie ius/iudex; feste Wendungen übersetzt du nach ihrem Sinn, nicht mechanisch Wort für Wort.",
+		"practice": [
+			{
+				"prompt": "Übersetze die feste Wendung „operam dare“ ins Deutsche:",
+				"answers": ["sich mühe geben", "sich bemühen"],
+				"feedback": "operam dare heißt „sich Mühe geben / sich bemühen“."
+			},
+			{
+				"prompt": "Welches Substantiv der Wortfamilie ius verbindet ius (Recht) mit dicere (sprechen)? Gib das lateinische Wort an:",
+				"answers": ["iudex", "iudex, iudicis"],
+				"feedback": "iudex (Gen. iudicis) ist der Richter – wörtlich der „Rechtsprecher“."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "de",
+				"prompt": "Übersetze die Sätze 1 und 2 aus dem Material und erkläre bei poenas dat sowie ius dicit jeweils kurz den Weg von der wörtlichen zur treffenden deutschen Wiedergabe.",
+				"model": "1. Der schlechte Bürger erleidet Strafe (wird bestraft), weil er das Gesetz verletzt hat (poenas dare = wörtlich „Buße zahlen“, übertragen „bestraft werden“).\n2. Der Richter spricht auf dem Forum Recht und gibt sich Mühe, dass die Wahrheit ans Licht kommt (ius dicere = wörtlich „Recht sagen“, übertragen „Recht sprechen“).",
+				"criteria": [
+					"Beide Sätze sind vollständig und korrekt übersetzt.",
+					"poenas dare und ius dicere sind idiomatisch übertragen.",
+					"Wörtliche Ausgangsbedeutung und idiomatisches Deutsch sind erklärt."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Ordne diese acht Wörter begründet zwei Sachfeldern zu und bilde aus dem Stamm fac-/fic- drei verwandte Wörter mit kurzer Bedeutungsangabe: testis, sapientia, reus, ratio, iudex, animus, poena, virtus.",
+				"model": "Sachfeld Rechtswesen: testis (Zeuge), reus (Angeklagter), iudex (Richter), poena (Strafe) – Personen und Bestandteile eines Gerichtsprozesses.\nSachfeld Philosophie: sapientia (Weisheit), ratio (Vernunft), animus (Geist/Seele), virtus (Tugend) – Grundbegriffe ethischer Reflexion.\nWortfamilie facere: officium (Pflicht), beneficium (Wohltat), efficere (bewirken).",
+				"criteria": [
+					"Alle acht Wörter sind korrekt den beiden Sachfeldern zugeordnet.",
+					"Die Zuordnung ist nachvollziehbar begründet.",
+					"Drei echte Ableitungen der Wortfamilie facere sind korrekt erläutert."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "idioms-8",
+			"goals": [
+				{
+					"label": "Prozesswendung poenas dare übertragen",
+					"before": "Reus poenas dat →",
+					"after": "",
+					"options": [
+						"Der Angeklagte wird bestraft",
+						"Der Angeklagte erlässt eine Strafe",
+						"Der Angeklagte flieht vor dem Richter"
+					],
+					"answer": "Der Angeklagte wird bestraft",
+					"explanation": "poenas dare bedeutet aus Sicht des Täters „Strafe büßen / bestraft werden“."
+				},
+				{
+					"label": "Bedeutung von iniuria aus den Wortteilen ableiten",
+					"before": "in- (Verneinung) + ius →",
+					"after": "",
+					"options": ["iniuria (Unrecht)", "iustitia (Gerechtigkeit)", "iudicium (Gericht)"],
+					"answer": "iniuria (Unrecht)",
+					"explanation": "Das Präfix in- kehrt ius („Recht“) zu iniuria („Unrecht“) um."
+				},
+				{
+					"label": "Alltagswendung operam dare erkennen",
+					"before": "Discipuli operam dant →",
+					"after": "",
+					"options": [
+						"Die Schüler geben sich Mühe",
+						"Die Schüler tragen ein Werk",
+						"Die Schüler beenden die Arbeit"
+					],
+					"answer": "Die Schüler geben sich Mühe",
+					"explanation": "opera heißt hier „Mühe, Sorgfalt“."
+				}
+			]
+		}
+	},
+	{
+		"id": "l8-wortbildung-erschliessen",
+		"stage": "wortschatz",
+		"title": "Wortbildung: Komposita & Abstrakta",
+		"skill": "Unbekannte Wörter durch Analyse von Präfixen, Suffixen und Stammveränderungen selbständig erschließen",
+		"bindings": ["L8-10", "L8-11"],
+		"paragraphs": [
+			"In längeren Texten begegnen dir immer wieder Wörter, die du noch nicht als einzelne Vokabel gelernt hast. Die Wortbildungslehre hilft dir, sie aus bekannten Bausteinen sicher zu erschließen. Dabei musst du neben Präfix und Suffix auch auf den Ablaut im Stamm achten: Aus facere wird in Komposita oft -ficere (perficio, efficio), aus capere -cipere (accipio, incipio) und aus tenere -tinere (contineo).",
+			"Auch typische Suffixe erschließen dir sofort die Wortart: -mentum bezeichnet ein Mittel oder Ergebnis (argumentum = Beweismittel, monumentum = Denkmal), -tura/-sura eine Handlung oder Tätigkeit (natura, cultura, scriptura) und -osus „reich an etwas“ (periculosus = gefahrvoll, studiosis verwandt: studiosus = eifrig)."
+		],
+		"materialLabel": "Wortbildungsreihen mit Stammablaut und Suffixen",
+		"materialLanguage": "la",
+		"material": "1. Multi homines periculosa itinera faciunt, ut novas terras cognoscant.\n2. Orator claris argumentis sententiam suam confirmat.\n3. Nemo sine labore ad perfectam scientiam pervenit.",
+		"sourceIds": ["lp"],
+		"diagram": {
+			"kind": "morph-lab",
+			"title": "Wortbildungsschmiede mit Ablaut und Suffixen",
+			"caption": "Präfixwechsel (mit Ablaut) und Suffixe bestimmen Bedeutung und Wortart neuer Wörter.",
+			"parts": [
+				{
+					"id": "wb8-ablaut",
+					"label": "1 · Präfix + Ablaut",
+					"badge": "a → i / e",
+					"latin": "facere → per-ficere · capere → ac-cipere",
+					"detail": "In zusammengesetzten Verben schwächt sich ein kurzes -a- im Stamm häufig zu -i- (im PPP zu -e-: perfectus, acceptus) ab."
+				},
+				{
+					"id": "wb8-suff",
+					"label": "2 · Neue Suffixe",
+					"badge": "-mentum · -osus",
+					"latin": "periculum + -osus → periculosus",
+					"detail": "-osus bedeutet „voll von / reich an“ (Adjektiv); -mentum bezeichnet ein Mittel oder Ergebnis (Neutrum)."
+				},
+				{
+					"id": "wb8-kontext",
+					"label": "3 · Kontextprobe",
+					"badge": "Sinn prüfen",
+					"latin": "claris argumentis confirmare",
+					"detail": "Jede Erschließung über Wortbausteine muss anschließend zum Verb und Gesamtsinn des Satzes passen."
+				}
+			]
+		},
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Auf welches Grundverb geht das Kompositum „accipere“ (annehmen/erhalten) zurück?",
+			"answer": "capere (mit Präfix ad- und Ablaut a → i)",
+			"wrong": ["cupere (wünschen)", "canere (singen)"],
+			"explanation": "ad- + capere assimiliert sich zu ac- und schwächt das Stamm-a zu i: accipere, PPP acceptus."
+		},
+		"takeaway": "Erkenne Stammveränderungen wie a → i in Komposita sowie Suffixe wie -osus („voll von“) und -mentum („Mittel“), und prüfe die Übersetzung am Kontext.",
+		"practice": [
+			{
+				"prompt": "Erschließe das Adjektiv „periculosus“ aus periculum (Gefahr) und -osus:",
+				"answers": ["gefährlich", "gefahrvoll", "voller gefahr"],
+				"feedback": "-osus drückt Fülle aus: periculum + -osus = „gefahrvoll / gefährlich“."
+			},
+			{
+				"prompt": "Auf welches Grundverb geht „continere“ (zusammenhalten/enthalten) zurück?",
+				"answers": ["tenere"],
+				"feedback": "con- + tenere wird durch Stammabschwächung zu continere."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "de",
+				"prompt": "Zerlege „periculosus“, „argumentum“, „perfectus“ und „accipere“ in ihre Bestandteile und übersetze alle drei Sätze aus dem Material.",
+				"model": "periculosus = periculum (Gefahr) + -osus (voll von) → gefährlich; argumentum = arguere (beweisen) + -mentum (Mittel) → Beweismittel/Argument; perfectus = per- (vollständig) + facere (machen) → vollendet; accipere = ad- (heran) + capere (nehmen) → annehmen.\n1. Viele Menschen unternehmen gefährliche Reisen, um neue Länder kennenzulernen. 2. Der Redner bekräftigt seine Meinung mit klaren Argumenten. 3. Niemand gelangt ohne Mühe zu vollkommenem Wissen.",
+				"criteria": [
+					"Alle vier Wörter sind nach Präfix, Stamm und Suffix bzw. Ablaut zerlegt.",
+					"Die Funktion von -osus und -mentum ist erkannt.",
+					"Die drei Materialsätze sind sinngerecht übersetzt."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Erschließe die dir eventuell unbekannten Wörter „fructuosus“, „monumentum“ und „prohibere“ aus bekannten Stämmen (fructus, monere, habere) und prüfe sie in je einem kurzen deutschen Satz.",
+				"model": "fructuosus (fructus + -osus) = fruchtbar / ertragreich („Ein Gespräch mit Freunden kann sehr fruchtbar sein.“); monumentum (monere + -mentum) = Erinnerungszeichen / Denkmal („Das Denkmal erinnert an den Frieden.“); prohibere (pro- + habere) = fernhalten / verhindern („Die Mauer soll Eindringlinge fernhalten.“).",
+				"criteria": [
+					"Alle drei Wörter sind logisch aus Stamm und Affix erschlossen.",
+					"Der Ablaut habere → -hibere ist richtig erkannt.",
+					"Die deutschen Beispielsätze zeigen die richtige Verwendung."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "word-formation-8",
+			"goals": [
+				{
+					"label": "Adjektivsuffix -osus auflösen",
+					"before": "gloria (Ruhm) + -osus →",
+					"after": "",
+					"options": ["gloriosus (ruhmreich)", "gloriatio (das Rühmen)", "inglorius (ruhmlos)"],
+					"answer": "gloriosus (ruhmreich)",
+					"explanation": "-osus bedeutet „voll von …“."
+				},
+				{
+					"label": "Kompositum mit Ablaut auf das Grundverb zurückführen",
+					"before": "pro- + habere →",
+					"after": "",
+					"options": ["prohibere (abhalten)", "proferre (vorbringen)", "probare (billigen)"],
+					"answer": "prohibere (abhalten)",
+					"explanation": "habere wird nach Präfixen zu -hibere (z. B. prohibere, exhibere)."
+				},
+				{
+					"label": "Suffix -mentum einordnen",
+					"before": "ornare (schmücken) + -mentum →",
+					"after": "",
+					"options": ["ornamentum (Schmuckmittel)", "ornator (Schmücker)", "ornatus (geschmückt)"],
+					"answer": "ornamentum (Schmuckmittel)",
+					"explanation": "-mentum bezeichnet das Mittel oder Ergebnis einer Handlung."
+				}
+			]
+		}
+	},
+	{
+		"id": "l8-sprachbruecken-europa",
+		"stage": "wortschatz",
+		"title": "Sprachbrücken: Deutsch, Griechisch & Europa",
+		"skill": "Bezüge zwischen Latein, griechischen Lehnwörtern, deutschen Fremdwörtern, Englisch und romanischen Sprachen herstellen",
+		"bindings": ["L8-12", "L8-33"],
+		"paragraphs": [
+			"Rom übernahm zahlreiche Fachwörter direkt aus dem Griechischen – besonders in Philosophie, Wissenschaft und Dichtung. Daran erkennst du heute auf einen Blick griechische Wurzeln in lateinischem Gewand: philosophia, theatrum, poesis, historia, musica oder atomus (vom griechischen a-tomos, „unteilbar“).",
+			"Über das Lateinische wanderten sowohl echt lateinische Wörter als auch gräko-lateinische Fachbegriffe ins Deutsche, Englische und die romanischen Sprachen (Französisch, Italienisch, Spanisch). Wer hinter „Justiz“, „justice“, „giustizia“ und „justicia“ das lateinische iustitia erkennt, versteht ganze europäische Wortfelder auf Anhieb."
+		],
+		"materialLabel": "Sprachfamilien vom Griechisch-Lateinischen in moderne Sprachen",
+		"materialLanguage": "de",
+		"material": "philosophia (gr. philein + sophia) → dt. Philosophie · engl. philosophy · frz. philosophie\niustitia → dt. Justiz · engl. justice · ital. giustizia · span. justicia\nnatura → dt. Natur · engl. nature · frz. nature\nlegere (lesen/wählen) → dt. Lektüre / Legende · engl. lecture · frz. lire",
+		"sourceIds": ["lp", "lp-profil"],
+		"diagram": {
+			"kind": "morph-lab",
+			"title": "Dreieck der europäischen Sprachbrücken",
+			"caption": "Griechische Impulse, lateinische Weitergabe und moderne Tochtersprachen.",
+			"parts": [
+				{
+					"id": "sb8-gr",
+					"label": "1 · Griechisches Erbe",
+					"badge": "ph · th · rh · y",
+					"latin": "philosophia · theatrum · rhetorica",
+					"detail": "Buchstaben wie ph, th, rh und y verraten oft den griechischen Ursprung eines lateinischen Fachworts."
+				},
+				{
+					"id": "sb8-en",
+					"label": "2 · Englisch & Fremdwort",
+					"badge": "Wissenschaft & Recht",
+					"latin": "lex → legal · ratio → rational",
+					"detail": "Im Englischen stammen viele abstrakte Begriffe der Politik, des Rechts und der Wissenschaft aus dem Lateinischen."
+				},
+				{
+					"id": "sb8-rom",
+					"label": "3 · Romanische Sprachen",
+					"badge": "FR · IT · ES",
+					"latin": "veritas → vérité · verità · verdad",
+					"detail": "Französisch, Italienisch und Spanisch sind direkt aus dem gesprochenen Latein (Vulgärlatein) hervorgegangen."
+				}
+			]
+		},
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Woran erkennst du bei lateinischen Wörtern wie „philosophia“ oder „theatrum“ häufig ihre griechische Herkunft?",
+			"answer": "an Schreibungen wie ph, th, rh oder y",
+			"wrong": [
+				"an der Endung -orum im Genitiv Plural",
+				"daran, dass sie nur im Singular vorkommen"
+			],
+			"explanation": "Die Römer übernahmen griechische Aspiranten und Laute mit den Schreibungen ph, th, ch, rh und y."
+		},
+		"takeaway": "Griechisch-lateinische Lehnwörter (mit ph, th, rh, y) und lateinische Rechts- und Bildungswörter bilden den gemeinsamen Kern vieler europäischer Sprachen.",
+		"practice": [
+			{
+				"prompt": "Welches englische Nomen entspricht direkt dem lateinischen „libertas“ (Freiheit)?",
+				"answers": ["liberty"],
+				"feedback": "libertas lebt im Englischen als liberty (und im Französischen als liberté) fort."
+			},
+			{
+				"prompt": "Nenne ein deutsches Fremdwort, das auf lateinisch „lex, legis“ (Gesetz) zurückgeht:",
+				"answers": ["legal", "illegal", "legitim", "legislativ", "legislative", "legalität"],
+				"feedback": "Aus dem Stamm leg- stammen z. B. legal, legitim, Legislative oder illegal."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "de",
+				"prompt": "Erkläre anhand von drei Beispielen aus dem Material den Zusammenhang zwischen Latein, Griechisch, Deutsch, Englisch und einer romanischen Sprache.",
+				"model": "1. philosophia (gr. Liebe zur Weisheit) → dt. Philosophie, engl. philosophy, frz. philosophie.\n2. iustitia → dt. Justiz, engl. justice, ital. giustizia / span. justicia.\n3. legere (lesen/auswählen) → dt. Lektüre, engl. lecture, frz. lire.",
+				"criteria": [
+					"Mindestens drei Wortketten aus dem Material sind vollständig erläutert.",
+					"Sowohl der griechische Impuls als auch romanische/englische Brücken sind genannt.",
+					"Bedeutungsverwandtschaft und Lautwandel sind knapp erklärt."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Erschließe über deine Lateinkenntnisse die Bedeutung der englischen und romanischen Wörter „evident“, „veracity“, „pacifist“ und „amitié / amicizia“ und nenne jeweils das lateinische Ursprungswort.",
+				"model": "evident ← videre / evidens (offensichtlich, klar sichtbar); veracity ← verax / verus (Wahrhaftigkeit); pacifist ← pax + facere (Friedensfreund/Pazifist); amitié (frz.) / amicizia (ital.) ← amicitia / amicus (Freundschaft).",
+				"criteria": [
+					"Alle vier Begriffe sind treffend erklärt.",
+					"Zu jedem Begriff ist das passende lateinische Grundwort angegeben.",
+					"Der Transfer auf unbekannte fremdsprachige Wörter ist schlüssig."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "language-bridges-8",
+			"goals": [
+				{
+					"label": "Griechische Lautschreibung im Lateinischen erkennen",
+					"before": "philosophia · theatrum · rhetor →",
+					"after": "",
+					"options": [
+						"Schreibung ph / th / rh weist auf Griechisch",
+						"Typische Endungen der u-Deklination",
+						"Rein germanische Lehnwörter der Kaiserzeit"
+					],
+					"answer": "Schreibung ph / th / rh weist auf Griechisch",
+					"explanation": "Die Römer gaben griechische Laute mit ph, th, rh und y wieder."
+				},
+				{
+					"label": "Englisches Rechtswort auf Latein zurückführen",
+					"before": "english „legal“ ←",
+					"after": "",
+					"options": ["lex, legis (Gesetz)", "legere (pflücken)", "locus (Ort)"],
+					"answer": "lex, legis (Gesetz)",
+					"explanation": "lex, legis + -alis ergibt legalis („gesetzlich“)."
+				},
+				{
+					"label": "Romanische Lautentwicklung nachvollziehen",
+					"before": "lat. veritas → frz. / ital. →",
+					"after": "",
+					"options": ["vérité / verità", "liberté / libertà", "cité / città"],
+					"answer": "vérité / verità",
+					"explanation": "Aus veritas („Wahrheit“) werden französisch vérité und italienisch verità."
+				}
+			]
+		}
+	},
+	{
+		"id": "l8-inschriften-kuerzel",
+		"stage": "wortschatz",
+		"title": "Kaiserzeitliche Inschriften & Kürzel",
+		"skill": "Lateinische Inschriften in unserer Umwelt sowie geläufige Abkürzungen selbständig entziffern und deuten",
+		"bindings": ["L8-13", "L8-28", "L8-40"],
+		"paragraphs": [
+			"In Kirchen, Rathäusern, Museen am Limes und sogar in modernen Texten begegnen dir lateinische Inschriften und Abkürzungen. Römische Bau-, Ehren- und Grabinschriften sparten auf Stein Platz, indem sie feste Titel, Götternamen und Formeln stark abkürzten: IMP. CAES. steht für Imperator Caesar, D. M. auf Grabsteinen für Dis Manibus („den Totengöttern“) und H. S. E. für hic situs est („hier liegt begraben“).",
+			"Auch in Bayern finden sich solche Steine an Kastellen wie Regensburg oder Weißenburg, etwa Bauinschriften der dritten italischen Legion (LEG. III ITAL.). Im Alltag begegnen dir weiterhin Kürzel wie S. P. Q. R. (Senatus Populusque Romanus), N. B. (nota bene = merke wohl), INRI, a. D. (anno Domini) oder cf. (confer = vergleiche) in englischen und wissenschaftlichen Werken."
+		],
+		"materialLabel": "Römischer Grab- und Bauinschriften-Text sowie moderne Kürzel",
+		"materialLanguage": "la",
+		"material": "D · M ·\nM · AVRELIO · VERO · MILITI · LEG · III · ITAL ·\nVIXIT · ANNOS · XXXII · H · S · E ·\n\nModerne Abkürzungen: N. B. (nota bene) · a. D. (anno Domini) · cf. (confer) · v. v. (vice versa)",
+		"sourceIds": ["lp", "museum-quintana", "limesmuseum"],
+		"diagram": {
+			"kind": "morph-lab",
+			"title": "Steinschrift, Limes-Legionen und Kürzel heute",
+			"caption": "Abkürzungen sparen auf Stein Platz und transportieren feste Wissensformeln bis heute.",
+			"parts": [
+				{
+					"id": "in8-grab",
+					"label": "1 · Grabinschriften",
+					"badge": "D. M. · H. S. E.",
+					"latin": "Dis Manibus · hic situs est",
+					"detail": "Fast jeder kaiserzeitliche Grabstein beginnt mit der Widmung an die Totengötter (D. M.) und endet mit H. S. E."
+				},
+				{
+					"id": "in8-limes",
+					"label": "2 · Bau- & Limessteine",
+					"badge": "IMP. CAES. · LEG.",
+					"latin": "LEG · III · ITAL · (Raetia)",
+					"detail": "Soldaten der Legio III Italica errichteten Kastelle wie Castra Regina (Regensburg) und signierten sie in Stein."
+				},
+				{
+					"id": "in8-heute",
+					"label": "3 · Kürzel heute",
+					"badge": "N. B. · cf. · a. D.",
+					"latin": "nota bene · confer · anno Domini",
+					"detail": "In Büchern, Urkunden und auf Gebäuden sind lateinische Abkürzungen im gesamten europäischen Alltag geblieben."
+				}
+			]
+		},
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Wofür steht die Formel „D. M.“ am Kopf eines römischen Grabsteins?",
+			"answer": "Dis Manibus (den Totengöttern / Geistern der Verstorbenen)",
+			"wrong": ["Deo Magno (dem großen Gott)", "Dominus Militum (Herr der Soldaten)"],
+			"explanation": "D. M. (Dis Manibus) weiht das Grab den Manen, den Schutzgeistern der Verstorbenen."
+		},
+		"takeaway": "Inschriften folgen festen Abkürzungsformeln (D. M., H. S. E., IMP. CAES.); in Texten heute stehen Kürzel wie N. B., cf. oder a. D. für kurze Regie- und Zeitangaben.",
+		"practice": [
+			{
+				"prompt": "Löse die Schlussformel „H. S. E.“ eines Grabsteins in ihre drei lateinischen Wörter auf:",
+				"answers": ["hic situs est", "hic sita est"],
+				"feedback": "H. S. E. heißt „hic situs est“ (oder bei Frauen „hic sita est“) = „hier liegt begraben“."
+			},
+			{
+				"prompt": "Was bedeutet das in Fachbüchern häufige englische/lateinische Kürzel „cf.“ (confer) auf Deutsch?",
+				"answers": ["vergleiche", "vgl", "vgl."],
+				"feedback": "confer ist der Imperativ von conferre und entspricht unserem „vergleiche (vgl.)“."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "de",
+				"prompt": "Löse die kaiserzeitliche Inschrift aus dem Material vollständig auf (beachte den Namen, die Legion und die römische Zahl XXXII) und übersetze sie ins Deutsche.",
+				"model": "Dis Manibus. Marco Aurelio Vero, militi legionis tertiae Italicae. Vixit annos triginta duos. Hic situs est.\nÜbersetzung: Den Totengöttern. Für Marcus Aurelius Verus, Soldat der dritten italischen Legion. Er lebte 32 Jahre. Hier liegt er begraben.",
+				"criteria": [
+					"D. M., LEG. III ITAL. und H. S. E. sind korrekt aufgelöst.",
+					"Die Zahl XXXII ist als 32 Jahre richtig erkannt.",
+					"Dativwidmung und vollständige Übersetzung stimmen."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Erkläre vier lateinische Abkürzungen aus dem Alltag oder öffentlichen Gebäuden (z. B. S. P. Q. R., INRI, N. B., a. D. oder v. v.) mit Vollform und heutigem Gebrauch.",
+				"model": "S. P. Q. R. = Senatus Populusque Romanus („Senat und römisches Volk“, heute noch Wappen Roms); INRI = Iesus Nazarenus Rex Iudaeorum (Inschrift an Kreuzen); N. B. = nota bene („merke wohl“, als Zusatzhinweis); a. D. = anno Domini („im Jahr des Herrn“, auf alten Hausinschriften).",
+				"criteria": [
+					"Vier Abkürzungen sind korrekt ausgeschrieben.",
+					"Die deutsche Bedeutung jeder Vollform stimmt.",
+					"Jeweils ein heutiger Fundort oder Verwendungszweck ist genannt."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "inscriptions-8",
+			"goals": [
+				{
+					"label": "Titel auf kaiserzeitlichen Ehrensteinen auflösen",
+					"before": "IMP. CAES. →",
+					"after": "",
+					"options": [
+						"Imperator Caesar",
+						"Imperium Caesari",
+						"Impius Censor"
+					],
+					"answer": "Imperator Caesar",
+					"explanation": "Die Kaiser führten in Inschriften den offiziellen Titel IMP. CAES."
+				},
+				{
+					"label": "Wissenschaftliches Kürzel cf. übersetzen",
+					"before": "cf. (confer) →",
+					"after": "",
+					"options": ["vergleiche (vgl.)", "zum Beispiel (z. B.)", "und so weiter (usw.)"],
+					"answer": "vergleiche (vgl.)",
+					"explanation": "confer fordert zum Textvergleich auf."
+				},
+				{
+					"label": "Limes-Truppenbezeichnung in Raetien lesen",
+					"before": "LEG. III ITAL. →",
+					"after": "",
+					"options": [
+						"Legio tertia Italica (3. italische Legion)",
+						"Lex trium iudicum",
+						"Legatus tertius Italiae"
+					],
+					"answer": "Legio tertia Italica (3. italische Legion)",
+					"explanation": "Die 3. italische Legion war ab Mark Aurel in Regensburg stationiert."
+				}
+			]
+		}
+	}
+]
