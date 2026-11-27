@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <script>
+      try {
+        const theme = localStorage.getItem("gpg_ms8_theme");
+        if (theme === "light" || theme === "dark") document.documentElement.dataset.theme = theme;
+      } catch {}
+    </script>
+    <title>Geschichte/Politik/Geographie 8 Mittelschule · ZAM Academy</title>
+    <meta name="description" content="GPG 8 Mittelschule Bayern (Regelklasse und M-Zug): 32 Lektionen zu Nordamerika, Energie, Weimarer Republik, Nationalsozialismus, Nachkriegszeit, Verfassungsorganen, politischer Teilhabe, Sozialstaat und Ökolandbau." />
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="header">
+        <a href="#" id="home" class="brand"><span class="brand-mark" aria-hidden="true">GPG</span><span>Geschichte/Politik/Geographie 8 <small>ZAM Academy · Mittelschule Bayern</small></span></a>
+        <nav aria-label="Hauptnavigation"><button type="button" data-view="path">Lernpfad</button><button type="button" data-view="lesson">Lektion</button><button type="button" data-view="reference">Nachschlagen</button></nav>
+        <div class="header-actions"><button type="button" id="zam" class="button accent">In ZAM festigen</button><button type="button" id="theme" class="icon-button" aria-label="Farbschema umschalten">◐</button></div>
+      </header>
+      <div class="progress-strip"><span id="progress-label"></span><progress id="progress" max="100" value="0" aria-label="Fortschritt im gewählten Klassenzug"></progress></div>
+      <main id="main" tabindex="-1"></main>
+      <footer><span>Nach <a href="https://www.lehrplanplus.bayern.de/fachlehrplan/mittelschule/8/gpg/regelklasse" target="_blank" rel="noopener">LehrplanPLUS Bayern · Regelklasse</a> und <a href="https://www.lehrplanplus.bayern.de/fachlehrplan/mittelschule/8/gpg/mittlere-reife-klasse" target="_blank" rel="noopener">M-Zug</a> · Jahrgangsstufe 8</span><span>Keine Konten und kein Tracking. Fortschritt und eigene Texte bleiben in diesem Browser. <a href="https://github.com/zam-os/zam-academy" target="_blank" rel="noopener">Quelltext</a></span><span id="storage-note" role="status"></span></footer>
+    </div>
+    <div id="toast-stack" aria-live="polite"></div>
+    <script type="module" src="/src/main.ts"></script>
+    <a href="https://academy.zam-os.org/" class="zam-home-link">← ZAM Academy <span class="zam-version" title="Noch nicht von einer Lehrkraft geprüft">· Version&nbsp;0.0 · Lehrkraftprüfung&nbsp;offen</span></a>
+  </body>
+</html>

@@ -1,0 +1,3346 @@
+{
+  "$schema": "https://zam.app/schemas/v1/kvt-tile.json",
+  "tile_id": "zam-academy:gpg-mittelschule-8",
+  "version": "2026.11.1",
+  "title": "Geschichte/Politik/Geographie 8 Mittelschule (ZAM Academy)",
+  "description": "32 Lektionen zu GPG 8 Mittelschule Bayern (Regelklasse und M-Zug): Nordamerika, Energie, Weimarer Republik, Nationalsozialismus, Zweiter Weltkrieg, Nachkriegszeit, Grundrechte, Gesetzgebung, politische Teilhabe, Sozialstaat und Ökolandbau. 64 Wiederholungsfragen; eigene Recherchen, Erkundungen und Diskussionen ergänzen die App. Keine Lernstandsübertragung; Veröffentlichung über die ZAM Academy.",
+  "publisher": "ZAM Academy",
+  "sources": [
+    {
+      "uri": "https://www.lehrplanplus.bayern.de/fachlehrplan/mittelschule/8/gpg/regelklasse",
+      "label": "LehrplanPLUS Bayern · GPG 8 Mittelschule (Regelklasse)",
+      "checked": "2026-11-27"
+    },
+    {
+      "uri": "https://www.lehrplanplus.bayern.de/fachlehrplan/mittelschule/8/gpg/mittlere-reife-klasse",
+      "label": "LehrplanPLUS Bayern · GPG 8 Mittelschule (M-Zug)",
+      "checked": "2026-11-27"
+    },
+    {
+      "uri": "https://klexikon.zum.de/wiki/Nordamerika",
+      "label": "Klexikon · Nordamerika",
+      "checked": "2026-11-27"
+    },
+    {
+      "uri": "https://klexikon.zum.de/wiki/Vereinigte_Staaten",
+      "label": "Klexikon · Vereinigte Staaten von Amerika",
+      "checked": "2026-11-27"
+    },
+    {
+      "uri": "https://www.bpb.de/themen/nordamerika/usa/",
+      "label": "bpb · Dossier USA",
+      "checked": "2026-11-27"
+    },
+    {
+      "uri": "https://klexikon.zum.de/wiki/Energie",
+      "label": "Klexikon · Energie",
+      "checked": "2026-11-27"
+    },
+    {
+      "uri": "https://www.umweltbundesamt.de/themen/klima-energie/erneuerbare-energien",
+      "label": "Umweltbundesamt · Erneuerbare Energien",
+      "checked": "2026-11-27"
+    },
+    {
+      "uri": "https://www.umweltbundesamt.de/uba-umwelttipps",
+      "label": "Umweltbundesamt · UBA-Umwelttipps",
+      "checked": "2026-11-27"
+    },
+    {
+      "uri": "https://www.hanisauland.de/wissen/lexikon/grosses-lexikon/n/nachhaltigkeit.html",
+      "label": "HanisauLand (bpb) · Nachhaltigkeit",
+      "checked": "2026-11-27"
+    },
+    {
+      "uri": "https://www.bpb.de/themen/zeit-kulturgeschichte/weimarer-republik/",
+      "label": "bpb · Weimarer Republik",
+      "checked": "2026-11-27"
+    },
+    {
+      "uri": "https://klexikon.zum.de/wiki/Weimarer_Republik",
+      "label": "Klexikon · Weimarer Republik",
+      "checked": "2026-11-27"
+    },
+    {
+      "uri": "https://www.bpb.de/themen/nationalsozialismus-zweiter-weltkrieg/",
+      "label": "bpb · Nationalsozialismus und Zweiter Weltkrieg",
+      "checked": "2026-11-27"
+    },
+    {
+      "uri": "https://klexikon.zum.de/wiki/Nationalsozialismus",
+      "label": "Klexikon · Nationalsozialismus",
+      "checked": "2026-11-27"
+    },
+    {
+      "uri": "https://klexikon.zum.de/wiki/Zweiter_Weltkrieg",
+      "label": "Klexikon · Zweiter Weltkrieg",
+      "checked": "2026-11-27"
+    },
+    {
+      "uri": "https://klexikon.zum.de/wiki/Holocaust",
+      "label": "Klexikon · Holocaust",
+      "checked": "2026-11-27"
+    },
+    {
+      "uri": "https://klexikon.zum.de/wiki/Flucht",
+      "label": "Klexikon · Flüchtling",
+      "checked": "2026-11-27"
+    },
+    {
+      "uri": "https://www.bpb.de/themen/nachkriegszeit/",
+      "label": "bpb · Nachkriegszeit",
+      "checked": "2026-11-27"
+    },
+    {
+      "uri": "https://www.hdg.de/lemo/kapitel/nachkriegsjahre.html",
+      "label": "LeMO (Haus der Geschichte) · Nachkriegsjahre",
+      "checked": "2026-11-27"
+    },
+    {
+      "uri": "https://museen.nuernberg.de/memorium-nuernberger-prozesse",
+      "label": "Memorium Nürnberger Prozesse",
+      "checked": "2026-11-27"
+    },
+    {
+      "uri": "https://klexikon.zum.de/wiki/Grundgesetz",
+      "label": "Klexikon · Grundgesetz",
+      "checked": "2026-11-27"
+    },
+    {
+      "uri": "https://www.gesetze-im-internet.de/gg/art_1.html",
+      "label": "Grundgesetz · Art. 1 (Menschenwürde)",
+      "checked": "2026-11-27"
+    },
+    {
+      "uri": "https://www.gesetze-im-internet.de/gg/art_5.html",
+      "label": "Grundgesetz · Art. 5 (Meinungs- und Pressefreiheit)",
+      "checked": "2026-11-27"
+    },
+    {
+      "uri": "https://www.gesetze-im-internet.de/gg/art_20.html",
+      "label": "Grundgesetz · Art. 20 (Staatsstrukturprinzipien)",
+      "checked": "2026-11-27"
+    },
+    {
+      "uri": "https://www.gesetze-im-internet.de/gg/art_77.html",
+      "label": "Grundgesetz · Art. 77 (Gesetzgebungsverfahren)",
+      "checked": "2026-11-27"
+    },
+    {
+      "uri": "https://www.hanisauland.de/wissen/lexikon/grosses-lexikon/g/grundgesetz.html",
+      "label": "HanisauLand (bpb) · Grundgesetz",
+      "checked": "2026-11-27"
+    },
+    {
+      "uri": "https://www.hanisauland.de/wissen/lexikon/grosses-lexikon/m/menschenrechte.html",
+      "label": "HanisauLand (bpb) · Menschenrechte",
+      "checked": "2026-11-27"
+    },
+    {
+      "uri": "https://klexikon.zum.de/wiki/Menschenrechte",
+      "label": "Klexikon · Menschenrechte",
+      "checked": "2026-11-27"
+    },
+    {
+      "uri": "https://www.hanisauland.de/wissen/lexikon/grosses-lexikon/p/propaganda.html",
+      "label": "HanisauLand (bpb) · Propaganda",
+      "checked": "2026-11-27"
+    },
+    {
+      "uri": "https://www.hanisauland.de/wissen/lexikon/grosses-lexikon/m/meinungsfreiheit.html",
+      "label": "HanisauLand (bpb) · Meinungsfreiheit",
+      "checked": "2026-11-27"
+    },
+    {
+      "uri": "https://www.gdw-berlin.de/",
+      "label": "Gedenkstätte Deutscher Widerstand Berlin",
+      "checked": "2026-11-27"
+    },
+    {
+      "uri": "https://www.bpb.de/themen/nationalsozialismus-zweiter-weltkrieg/weisse-rose/",
+      "label": "bpb · Sophie Scholl und die Weiße Rose",
+      "checked": "2026-11-27"
+    },
+    {
+      "uri": "https://www.hanisauland.de/wissen/lexikon/grosses-lexikon/z/zivilcourage.html",
+      "label": "HanisauLand (bpb) · Zivilcourage",
+      "checked": "2026-11-27"
+    },
+    {
+      "uri": "https://www.hanisauland.de/wissen/lexikon/grosses-lexikon/g/gewaltenteilung.html",
+      "label": "HanisauLand (bpb) · Gewaltenteilung",
+      "checked": "2026-11-27"
+    },
+    {
+      "uri": "https://klexikon.zum.de/wiki/Bundestag",
+      "label": "Klexikon · Bundestag",
+      "checked": "2026-11-27"
+    },
+    {
+      "uri": "https://www.bundestag.de/parlament/aufgaben/gesetzgebung_neu/gesetzgebung/weg-255468",
+      "label": "Deutscher Bundestag · Weg der Gesetzgebung",
+      "checked": "2026-11-27"
+    },
+    {
+      "uri": "https://www.hanisauland.de/wissen/lexikon/grosses-lexikon/b/bundesrat.html",
+      "label": "HanisauLand (bpb) · Bundesrat",
+      "checked": "2026-11-27"
+    },
+    {
+      "uri": "https://www.hanisauland.de/wissen/lexikon/grosses-lexikon/w/wahlen.html",
+      "label": "HanisauLand (bpb) · Wahlen",
+      "checked": "2026-11-27"
+    },
+    {
+      "uri": "https://www.hanisauland.de/wissen/lexikon/grosses-lexikon/p/parteien.html",
+      "label": "HanisauLand (bpb) · Parteien",
+      "checked": "2026-11-27"
+    },
+    {
+      "uri": "https://www.hanisauland.de/wissen/lexikon/grosses-lexikon/b/buergerinitiative.html",
+      "label": "HanisauLand (bpb) · Bürgerinitiative",
+      "checked": "2026-11-27"
+    },
+    {
+      "uri": "https://www.bundeswahlleiterin.de/bundestagswahlen/2025/ergebnisse.html",
+      "label": "Die Bundeswahlleiterin · Wahlergebnisse",
+      "checked": "2026-11-27"
+    },
+    {
+      "uri": "https://www.statistik.bayern.de/wahlen/",
+      "label": "Bayerisches Landesamt für Statistik · Wahlen",
+      "checked": "2026-11-27"
+    },
+    {
+      "uri": "https://www.hanisauland.de/wissen/lexikon/grosses-lexikon/s/sozialstaat.html",
+      "label": "HanisauLand (bpb) · Sozialstaat",
+      "checked": "2026-11-27"
+    },
+    {
+      "uri": "https://www.hanisauland.de/wissen/lexikon/grosses-lexikon/a/armut.html",
+      "label": "HanisauLand (bpb) · Armut",
+      "checked": "2026-11-27"
+    },
+    {
+      "uri": "https://www.bpb.de/kurz-knapp/zahlen-und-fakten/soziale-situation-in-deutschland/",
+      "label": "bpb · Die soziale Situation in Deutschland",
+      "checked": "2026-11-27"
+    },
+    {
+      "uri": "https://www.tafel.de/",
+      "label": "Die Tafeln · Lebensmittel retten. Menschen helfen.",
+      "checked": "2026-11-27"
+    },
+    {
+      "uri": "https://www.deutsche-rentenversicherung.de/DRV/DE/Rente/Allgemeine-Informationen/allgemeine-informationen_node.html",
+      "label": "Deutsche Rentenversicherung · Allgemeine Informationen",
+      "checked": "2026-11-27"
+    },
+    {
+      "uri": "https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/Bevoelkerungsvorausberechnung/_inhalt.html",
+      "label": "Statistisches Bundesamt · Künftige Bevölkerungsentwicklung",
+      "checked": "2026-11-27"
+    },
+    {
+      "uri": "https://www.hanisauland.de/wissen/lexikon/grosses-lexikon/r/rente.html",
+      "label": "HanisauLand (bpb) · Rente / Ruhegehalt",
+      "checked": "2026-11-27"
+    },
+    {
+      "uri": "https://klexikon.zum.de/wiki/Rente",
+      "label": "Klexikon · Altersvorsorge",
+      "checked": "2026-11-27"
+    },
+    {
+      "uri": "https://www.oekolandbau.de/",
+      "label": "oekolandbau.de · Informationsportal Öko-Landwirtschaft",
+      "checked": "2026-11-27"
+    },
+    {
+      "uri": "https://www.lfl.bayern.de/oekolandbau/index.php",
+      "label": "LfL Bayern · Ökologischer Landbau",
+      "checked": "2026-11-27"
+    },
+    {
+      "uri": "https://www.bpb.de/themen/umwelt/landwirtschaft/",
+      "label": "bpb · Landwirtschaft",
+      "checked": "2026-11-27"
+    },
+    {
+      "uri": "https://www.landwirtschaft.de/",
+      "label": "Bundesinformationszentrum Landwirtschaft (BZL)",
+      "checked": "2026-11-27"
+    },
+    {
+      "uri": "https://github.com/nvkelso/natural-earth-vector",
+      "label": "Natural Earth · gemeinfreie Kartendaten (Kartengrundlage dieser App)",
+      "checked": "2026-11-27"
+    }
+  ],
+  "atoms": [
+    {
+      "id": "01M8F4YMFR6SQZZEC1Q308TH5G",
+      "atom_uri": "urn:zam:atom:01M8F4YMFR6SQZZEC1Q308TH5G",
+      "namespace": "zam-academy-gpg-mittelschule-8",
+      "slug": "gpg8-nordamerika-orientierung",
+      "title": "Nordamerika: Topographie und Großlandschaften",
+      "domain": "gpg/mittelschule-8/lb1",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-nordamerika-orientierung",
+      "prerequisites": [],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "gpg-mittelschule-8",
+          "topic_code": "lb1",
+          "topic_title": "Lebensraum Erde"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "subject": "gpg",
+          "track": "R",
+          "topic_code": "lb1",
+          "topic_title": "Lebensraum Erde",
+          "exam_relevant": true
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "subject": "gpg",
+          "track": "M",
+          "topic_code": "lb1",
+          "topic_title": "Lebensraum Erde",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8F4YMGRVW2G2M1QY8YS0PMH",
+          "slug": "gpg8-nordamerika-orientierung-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Welches Gebirge erstreckt sich entlang des Westens von Nordamerika von Nord nach Süd?",
+          "concept": "die Rocky Mountains",
+          "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-nordamerika-orientierung",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "die Rocky Mountains",
+              "die Appalachen"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "die Appalachen",
+              "reason": "Verwechselt Westen und Osten: Die älteren, niedrigeren Appalachen verlaufen im Osten Nordamerikas."
+            },
+            {
+              "text": "das Alpengebirge",
+              "reason": "Verwechselt Kontinente: Die Alpen verlaufen von West nach Ost in Europa, nicht in Nordamerika."
+            }
+          ]
+        },
+        {
+          "id": "01M8F4YMGS4QVN8Q1FAMZYPVPA",
+          "slug": "gpg8-nordamerika-orientierung-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Wie verlaufen die großen Gebirge Nordamerikas im Vergleich zu den Alpen in Europa?",
+          "concept": "Rocky Mountains und Appalachen ziehen von Nord nach Süd, während die Alpen in Europa von West nach Ost verlaufen.",
+          "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-nordamerika-orientierung",
+          "sample_solution": "Rocky Mountains und Appalachen ziehen von Nord nach Süd, während die Alpen in Europa von West nach Ost verlaufen.",
+          "choice_distractors": [
+            {
+              "text": "Rocky Mountains und Appalachen verlaufen genau wie die Alpen von West nach Ost quer über beide Erdteile hinweg.",
+              "reason": "Die Richtung ist verwechselt: Nordamerikas Gebirge bilden Nord-Süd-Ketten."
+            },
+            {
+              "text": "Nordamerika besitzt überhaupt keine Hochgebirge, sondern ausschließlich flache Küstenebenen entlang des Atlantiks.",
+              "reason": "Die Rocky Mountains prägen den gesamten Westen als hohes Faltengebirge."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8F4YMFSBYER79760BHQW695",
+      "atom_uri": "urn:zam:atom:01M8F4YMFSBYER79760BHQW695",
+      "namespace": "zam-academy-gpg-mittelschule-8",
+      "slug": "gpg8-nordamerika-klima-gefahren",
+      "title": "Klimazonen und Naturgefahren in Nordamerika",
+      "domain": "gpg/mittelschule-8/lb1",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-nordamerika-klima-gefahren",
+      "prerequisites": [
+        {
+          "atom_id": "01M8F4YMFR6SQZZEC1Q308TH5G",
+          "type": "soft",
+          "rationale": "Die Klimazonen und Luftmassen bauen auf der topographischen Nord-Süd-Lage der Gebirge Nordamerikas auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "gpg-mittelschule-8",
+          "topic_code": "lb1",
+          "topic_title": "Lebensraum Erde"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "subject": "gpg",
+          "track": "R",
+          "topic_code": "lb1",
+          "topic_title": "Lebensraum Erde",
+          "exam_relevant": true
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "subject": "gpg",
+          "track": "M",
+          "topic_code": "lb1",
+          "topic_title": "Lebensraum Erde",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8F4YMGT7K1RXHYTMPGWKR6M",
+          "slug": "gpg8-nordamerika-klima-gefahren-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Warum entstehen in den Great Plains der USA besonders häufig Tornados?",
+          "concept": "Weil trockene kalte Luft aus dem Norden ohne Gebirgshindernis auf feuchtwarme Luft vom Golf von Mexiko trifft.",
+          "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-nordamerika-klima-gefahren",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Weil trockene kalte Luft aus dem Norden ohne Gebirgshindernis auf feuchtwarme Luft vom Golf von Mexiko trifft.",
+              "Weil der Atlantik dort deutlich wärmer ist als die tropischen Meere rund um Afrika und Südostasien."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Weil der Atlantik dort deutlich wärmer ist als die tropischen Meere rund um Afrika und Südostasien.",
+              "reason": "Wetterextreme in den Great Plains entstehen durch Luftmassen-Kollisionen im Landesinneren, nicht durch höhere Atlantik-Temperaturen."
+            },
+            {
+              "text": "Weil die hohen Rocky Mountains und Appalachen von West nach Ost genau quer durch den Kontinent verlaufen.",
+              "reason": "Kehrt die Relief-Richtung um: Rocky Mountains und Appalachen verlaufen von Nord nach Süd und bilden genau deshalb keinen Schutzriegel."
+            }
+          ]
+        },
+        {
+          "id": "01M8F4YMGV0AG588QNFS0A0M2D",
+          "slug": "gpg8-nordamerika-klima-gefahren-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Warum begünstigt die Nord-Süd-Ausrichtung nordamerikanischer Gebirge Tornados und Blizzards?",
+          "concept": "Kalte Polarluft aus Kanada und feuchtwarme Golf-Luft prallen in den zentralen Ebenen ohne Querschranke aufeinander.",
+          "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-nordamerika-klima-gefahren",
+          "sample_solution": "Kalte Polarluft aus Kanada und feuchtwarme Golf-Luft prallen in den zentralen Ebenen ohne Querschranke aufeinander.",
+          "choice_distractors": [
+            {
+              "text": "Die Gebirge schirmen die Great Plains völlig gegen jede Polarluft aus dem Norden ab.",
+              "reason": "Gerade das Fehlen einer West-Ost-Barriere lässt Polarluft weit nach Süden vordringen."
+            },
+            {
+              "text": "Hurrikans entstehen im Inneren der Great Plains und ziehen dann aufs Meer hinaus.",
+              "reason": "Hurrikans laden sich über warmem Meerwasser auf, Tornados über den Ebenen."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8F4YMFTKPPPD6C1RWKCQZ31",
+      "atom_uri": "urn:zam:atom:01M8F4YMFTKPPPD6C1RWKCQZ31",
+      "namespace": "zam-academy-gpg-mittelschule-8",
+      "slug": "gpg8-usa-entwicklungsstand",
+      "title": "Die USA als Industriestaat im Vergleich",
+      "domain": "gpg/mittelschule-8/lb1",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-usa-entwicklungsstand",
+      "prerequisites": [
+        {
+          "atom_id": "01M8F4YMFR6SQZZEC1Q308TH5G",
+          "type": "soft",
+          "rationale": "Die Lage und Größe der USA erklären wirtschaftliche Schwerpunkte und regionale Unterschiede."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "gpg-mittelschule-8",
+          "topic_code": "lb1",
+          "topic_title": "Lebensraum Erde"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "subject": "gpg",
+          "track": "R",
+          "topic_code": "lb1",
+          "topic_title": "Lebensraum Erde",
+          "exam_relevant": true
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "subject": "gpg",
+          "track": "M",
+          "topic_code": "lb1",
+          "topic_title": "Lebensraum Erde",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8F4YMGWBJTW4GJ1H1Z3239M",
+          "slug": "gpg8-usa-entwicklungsstand-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Welcher Unterschied zeigt sich beim Vergleich gesellschaftlicher Kriterien zwischen den USA und Deutschland besonders deutlich?",
+          "concept": "Deutschland sichert Risiken wie Krankheit stärker über gesetzliche Pflichtversicherungen ab als die USA.",
+          "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-usa-entwicklungsstand",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Deutschland sichert Risiken wie Krankheit stärker über gesetzliche Pflichtversicherungen ab als die USA.",
+              "In den USA gibt es überhaupt keine privaten Versicherungen oder eigenen Wirtschaftsunternehmen."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "In den USA gibt es überhaupt keine privaten Versicherungen oder eigenen Wirtschaftsunternehmen.",
+              "reason": "Übertreibt die Marktrolle: Auch in den USA existiert eine Vielzahl privater Versicherer sowie großer Wirtschaftsunternehmen."
+            },
+            {
+              "text": "In Deutschland sind alle Einkommen und Löhne gesetzlich exakt auf dieselbe Höhe festgelegt.",
+              "reason": "Verwechselt soziale Sicherung mit Einheitslöhnen: Einkommen unterscheiden sich in Deutschland deutlich nach Beruf und Tarif."
+            }
+          ]
+        },
+        {
+          "id": "01M8F4YMGXS7BJP4R9YZT3BZ4W",
+          "slug": "gpg8-usa-entwicklungsstand-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Warum reichen reine Wirtschaftszahlen beim Vergleich von USA und Deutschland nicht aus?",
+          "concept": "Erst gesellschaftliche Kriterien wie Krankenversicherung, Bildung und Einkommensverteilung zeigen, wie sicher Menschen leben.",
+          "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-usa-entwicklungsstand",
+          "sample_solution": "Erst gesellschaftliche Kriterien wie Krankenversicherung, Bildung und Einkommensverteilung zeigen, wie sicher Menschen leben.",
+          "choice_distractors": [
+            {
+              "text": "Weil gesellschaftliche Faktoren wie Krankenversicherung gesetzlich für jedes Land identisch sind.",
+              "reason": "Die soziale Sicherung unterscheidet sich zwischen den USA und Deutschland erheblich."
+            },
+            {
+              "text": "Weil das Bruttoinlandsprodukt bereits exakt misst, wie viele Bürger krankenversichert sind.",
+              "reason": "Wirtschaftsleistung bildet die Verteilung von Wohlstand und Absicherung nicht direkt ab."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8F4YMFVKB6B61GJDMKH3F5R",
+      "atom_uri": "urn:zam:atom:01M8F4YMFVKB6B61GJDMKH3F5R",
+      "namespace": "zam-academy-gpg-mittelschule-8",
+      "slug": "gpg8-alltag-stadt-land",
+      "title": "Alltag Gleichaltriger: Großstadt und Land",
+      "domain": "gpg/mittelschule-8/lb1",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-alltag-stadt-land",
+      "prerequisites": [
+        {
+          "atom_id": "01M8F4YMFTKPPPD6C1RWKCQZ31",
+          "type": "soft",
+          "rationale": "Der Ländervergleich liefert den wirtschaftlichen und sozialen Rahmen für den Alltag von Jugendlichen."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "gpg-mittelschule-8",
+          "topic_code": "lb1",
+          "topic_title": "Lebensraum Erde"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "subject": "gpg",
+          "track": "R",
+          "topic_code": "lb1",
+          "topic_title": "Lebensraum Erde",
+          "exam_relevant": true
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "subject": "gpg",
+          "track": "M",
+          "topic_code": "lb1",
+          "topic_title": "Lebensraum Erde",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8F4YMGYJY76TRSNC2QB867C",
+          "slug": "gpg8-alltag-stadt-land-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Welcher typische Nachteil tritt für Jugendliche im ländlichen Raum verschiedener Industriestaaten häufiger auf als in der Großstadt?",
+          "concept": "Seltener fahrende öffentliche Verkehrsmittel machen längere Wege zur Schule oder zum Verein oft vom Auto abhängig.",
+          "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-alltag-stadt-land",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Seltener fahrende öffentliche Verkehrsmittel machen längere Wege zur Schule oder zum Verein oft vom Auto abhängig.",
+              "Auf dem Land gibt es überhaupt keine Vereine oder Sportmöglichkeiten."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Auf dem Land gibt es überhaupt keine Vereine oder Sportmöglichkeiten.",
+              "reason": "Fehleinschätzung ländlicher Gemeinschaften: Sport- und Musikvereine prägen oft stark den Dorf- und Vereinsalltag auf dem Land."
+            },
+            {
+              "text": "In Großstädten müssen alle Jugendlichen mehr als zwei Stunden mit dem Schulbus fahren.",
+              "reason": "Verdreht die Wegezeiten: Gerade in Großstädten sind Schulen und Freizeitziele meist kurz mit U-Bahn, S-Bahn oder Rad erreichbar."
+            }
+          ]
+        },
+        {
+          "id": "01M8F4YMGZ1BWMM5GAXN00NT4V",
+          "slug": "gpg8-alltag-stadt-land-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Welcher Zielkonflikt zeigt sich oft beim Vergleich von Jugendalltag in der Großstadt und auf dem Land?",
+          "concept": "Die Großstadt bietet dichten Nahverkehr und kurze Wege, das Land dagegen mehr Wohnraum und Natur bei größeren Entfernungen.",
+          "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-alltag-stadt-land",
+          "sample_solution": "Die Großstadt bietet dichten Nahverkehr und kurze Wege, das Land dagegen mehr Wohnraum und Natur bei größeren Entfernungen.",
+          "choice_distractors": [
+            {
+              "text": "In der Großstadt sind Wohnungen billig, während auf dem Land der Nahverkehr im Minutentakt fährt.",
+              "reason": "Hohe Mieten kennzeichnen eher die Großstadt, seltene Busse eher den ländlichen Raum."
+            },
+            {
+              "text": "Auf dem Land gibt es für Jugendliche überhaupt keine Vereine oder Treffpunkte.",
+              "reason": "Sportvereine und Jugendgruppen prägen vielerorts gerade das Dorfleben."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8F4YMFW64GYK0JCFN9R9AG3",
+      "atom_uri": "urn:zam:atom:01M8F4YMFW64GYK0JCFN9R9AG3",
+      "namespace": "zam-academy-gpg-mittelschule-8",
+      "slug": "gpg8-energietraeger",
+      "title": "Fossile und erneuerbare Energieträger",
+      "domain": "gpg/mittelschule-8/lb1",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-energietraeger",
+      "prerequisites": [],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "gpg-mittelschule-8",
+          "topic_code": "lb1",
+          "topic_title": "Lebensraum Erde"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "subject": "gpg",
+          "track": "R",
+          "topic_code": "lb1",
+          "topic_title": "Lebensraum Erde",
+          "exam_relevant": true
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "subject": "gpg",
+          "track": "M",
+          "topic_code": "lb1",
+          "topic_title": "Lebensraum Erde",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8F4YMH0Y3ESF90E3R5K3WX8",
+          "slug": "gpg8-energietraeger-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Was bedeutet ein niedriger Wirkungsgrad von rund 40 Prozent bei einem klassischen Kohlekraftwerk?",
+          "concept": "Nur rund 40 Prozent der eingesetzten Energie werden zu nutzbarem Strom; der Rest entweicht meist als ungenutzte Wärme.",
+          "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-energietraeger",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Nur rund 40 Prozent der eingesetzten Energie werden zu nutzbarem Strom; der Rest entweicht meist als ungenutzte Wärme.",
+              "Das Kraftwerk schaltet sich an rund sechzig Prozent aller Tage des Jahres vollständig vom Stromnetz."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Das Kraftwerk schaltet sich an rund sechzig Prozent aller Tage des Jahres vollständig vom Stromnetz.",
+              "reason": "Verwechselt den energetischen Wirkungsgrad mit Betriebszeiten: Das Kraftwerk läuft durch, verliert aber rund 60 % der Wärme ungenutzt."
+            },
+            {
+              "text": "Nur vierzig Prozent des erzeugten elektrischen Stroms dürfen überhaupt an Privathaushalte verkauft werden.",
+              "reason": "Verwechselt Stromnutzungsregeln mit Energieumwandlung: Gemeint ist der Anteil der Brennstoffenergie, der zu nutzbarem Strom wird."
+            }
+          ]
+        },
+        {
+          "id": "01M8F4YMH1T7X446XKBJFK9FS8",
+          "slug": "gpg8-energietraeger-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Welche zwei Aufgaben bleiben bei einem hohen Anteil von Wind- und Sonnenstrom besonders wichtig?",
+          "concept": "Stromnetze und Energiespeicher müssen wetterbedingte Schwankungen ausgleichen, damit jederzeit genug Strom verfügbar ist.",
+          "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-energietraeger",
+          "sample_solution": "Stromnetze und Energiespeicher müssen wetterbedingte Schwankungen ausgleichen, damit jederzeit genug Strom verfügbar ist.",
+          "choice_distractors": [
+            {
+              "text": "Solaranlagen müssen nachts mit Steinkohle befeuert werden, damit die Module weiterleuchten.",
+              "reason": "Bei Dunkelheit übernehmen Speicher oder Reservekraftwerke statt Solarmodulen."
+            },
+            {
+              "text": "Man muss alle Stromleitungen zwischen Regionen kappen, weil Strom sich in Batterien von selbst verteilt.",
+              "reason": "Gerade starke überregionale Leitungen verteilen Wind- und Sonnenstrom bedarfsgerecht."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8F4YMFXGD8489518Y6RZH5T",
+      "atom_uri": "urn:zam:atom:01M8F4YMFXGD8489518Y6RZH5T",
+      "namespace": "zam-academy-gpg-mittelschule-8",
+      "slug": "gpg8-energie-grenzueberschreitend",
+      "title": "Staatenübergreifende Energieversorgung",
+      "domain": "gpg/mittelschule-8/lb1",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-energie-grenzueberschreitend",
+      "prerequisites": [
+        {
+          "atom_id": "01M8F4YMFW64GYK0JCFN9R9AG3",
+          "type": "soft",
+          "rationale": "Um das Verbundnetz zu verstehen, müssen die Schwankungen von Wind- und Solarstrom bekannt sein."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "gpg-mittelschule-8",
+          "topic_code": "lb1",
+          "topic_title": "Lebensraum Erde"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "subject": "gpg",
+          "track": "R",
+          "topic_code": "lb1",
+          "topic_title": "Lebensraum Erde",
+          "exam_relevant": true
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "subject": "gpg",
+          "track": "M",
+          "topic_code": "lb1",
+          "topic_title": "Lebensraum Erde",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8F4YMH2CWMQR8XZCR8MK6J8",
+          "slug": "gpg8-energie-grenzueberschreitend-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Wie hilft ein Pumpspeicherkraftwerk in Österreich oder der Schweiz beim Ausgleich von Nordsee-Windstrom?",
+          "concept": "Es nutzt überschüssigen Windstrom zum Hochpumpen von Wasser und erzeugt bei Flaute daraus wieder Strom.",
+          "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-energie-grenzueberschreitend",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Es nutzt überschüssigen Windstrom zum Hochpumpen von Wasser und erzeugt bei Flaute daraus wieder Strom.",
+              "Es verwandelt überschüssige Windkraft unter dem Gebirge unmittelbar in fossiles Erdgas für den Winter."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Es verwandelt überschüssige Windkraft unter dem Gebirge unmittelbar in fossiles Erdgas für den Winter.",
+              "reason": "Verwechselt mechanische Wasserspeicherung mit fossiler Rohstoffbildung: Pumpspeicher nutzen Lageenergie von Wasser, kein Erdgas."
+            },
+            {
+              "text": "Es schaltet sämtliche Stromleitungen über die deutschen Staatsgrenzen hinweg dauerhaft komplett ab.",
+              "reason": "Kehrt den Verbundgedanken ins Gegenteil: Pumpspeicher benötigen gerade internationale Leitungen für Transport und Ausgleich."
+            }
+          ]
+        },
+        {
+          "id": "01M8F4YMH3S21VQEQ04BFQEYDV",
+          "slug": "gpg8-energie-grenzueberschreitend-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Worin liegt der Vorteil des europäischen Stromverbunds zwischen Nordsee-Windparks und Alpen-Pumpspeichern?",
+          "concept": "Überschüssiger Windstrom wird in Bergstauseen gespeichert und bei Flaute über Grenzen zurückgeliefert.",
+          "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-energie-grenzueberschreitend",
+          "sample_solution": "Überschüssiger Windstrom wird in Bergstauseen gespeichert und bei Flaute über Grenzen zurückgeliefert.",
+          "choice_distractors": [
+            {
+              "text": "Nordsee-Windräder werden abgeschaltet, sobald sie mehr Strom als eine deutsche Stadt erzeugen.",
+              "reason": "Das Verbundnetz ermöglicht das Speichern von Überschüssen in Alpen-Pumpspeichern."
+            },
+            {
+              "text": "Pumpspeicherwerke produzieren im Gebirge aus Meerwasser unmittelbar Steinkohle für Norddeutschland.",
+              "reason": "Pumpspeicher nutzen Lageenergie von Süßwasser und keine fossilen Brennstoffe."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8F4YMFYNXG3PNG6HKW7FVWD",
+      "atom_uri": "urn:zam:atom:01M8F4YMFYNXG3PNG6HKW7FVWD",
+      "namespace": "zam-academy-gpg-mittelschule-8",
+      "slug": "gpg8-energie-alltag",
+      "title": "Privater Energieverbrauch und Ressourcenschutz",
+      "domain": "gpg/mittelschule-8/lb1",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-energie-alltag",
+      "prerequisites": [
+        {
+          "atom_id": "01M8F4YMFW64GYK0JCFN9R9AG3",
+          "type": "soft",
+          "rationale": "Das Haushaltswissen verknüpft Strommix, Wirkungsgrade und persönlichen Verbrauch."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "gpg-mittelschule-8",
+          "topic_code": "lb1",
+          "topic_title": "Lebensraum Erde"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "subject": "gpg",
+          "track": "R",
+          "topic_code": "lb1",
+          "topic_title": "Lebensraum Erde",
+          "exam_relevant": true
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "subject": "gpg",
+          "track": "M",
+          "topic_code": "lb1",
+          "topic_title": "Lebensraum Erde",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8F4YMH4HNQ7ZJ4SF15VN61C",
+          "slug": "gpg8-energie-alltag-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Welcher Bereich verursacht in einem typischen Privathaushalt den größten Teil des Energieverbrauchs?",
+          "concept": "die Raumwärme zum Heizen der Zimmer",
+          "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-energie-alltag",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "die Raumwärme zum Heizen der Zimmer",
+              "das abendliche Laden von Smartphones"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "das abendliche Laden von Smartphones",
+              "reason": "Unterschätzt Größenordnungen: Ein Handy-Ladegerät verbraucht winzige Strommengen gegenüber der Beheizung ganzer Räume."
+            },
+            {
+              "text": "die Zimmerbeleuchtung mit modernen LED",
+              "reason": "Verkennt den Anteil der Beleuchtung: Gerade moderne LED-Lampen benötigen nur einen sehr kleinen Bruchteil der Haushaltsenergie."
+            }
+          ]
+        },
+        {
+          "id": "01M8F4YMH53Z4RFAK6YHSF7EPC",
+          "slug": "gpg8-energie-alltag-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Warum erzielt das Absenken der Raumtemperatur im Haushalt meist größere Einsparungen als ein neues Handy-Ladegerät?",
+          "concept": "Raumwärme macht rund zwei Drittel bis siebzig Prozent des Haushaltsenergiebedarfs aus.",
+          "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-energie-alltag",
+          "sample_solution": "Raumwärme macht rund zwei Drittel bis siebzig Prozent des Haushaltsenergiebedarfs aus.",
+          "choice_distractors": [
+            {
+              "text": "Weil Smartphone-Ladegeräte das gesamte Stromnetz eines Hauses überlasten.",
+              "reason": "Kleine Elektronikgeräte brauchen deutlich weniger Energie als die Raumheizung."
+            },
+            {
+              "text": "Weil die Heizung im Winter bei dauerhaft gekippten Fenstern am sparsamsten läuft.",
+              "reason": "Dauerhaftes Kippen kühlt Wände aus; kurzes Stoßlüften spart Heizenergie."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8F4YMFZY40XTVCFY908RVWF",
+      "atom_uri": "urn:zam:atom:01M8F4YMFZY40XTVCFY908RVWF",
+      "namespace": "zam-academy-gpg-mittelschule-8",
+      "slug": "gpg8-weimar-verfassung",
+      "title": "Die Weimarer Republik und ihre Verfassung",
+      "domain": "gpg/mittelschule-8/lb2",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-weimar-verfassung",
+      "prerequisites": [],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "gpg-mittelschule-8",
+          "topic_code": "lb2",
+          "topic_title": "Zeit und Wandel"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "subject": "gpg",
+          "track": "R",
+          "topic_code": "lb2",
+          "topic_title": "Zeit und Wandel",
+          "exam_relevant": true
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "subject": "gpg",
+          "track": "M",
+          "topic_code": "lb2",
+          "topic_title": "Zeit und Wandel",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8F4YMH6WB5YDEQPNT97A4ZZ",
+          "slug": "gpg8-weimar-verfassung-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Welche Gefahr steckte in Artikel 48 der Weimarer Reichsverfassung?",
+          "concept": "Der Reichspräsident konnte in Krisenzeiten per Notverordnung am Parlament vorbei regieren.",
+          "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-weimar-verfassung",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Der Reichspräsident konnte in Krisenzeiten per Notverordnung am Parlament vorbei regieren.",
+              "Frauen durften nur bei Gemeindewahlen, aber nicht zum Reichstag abstimmen."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Frauen durften nur bei Gemeindewahlen, aber nicht zum Reichstag abstimmen.",
+              "reason": "Verkennt die demokratische Errungenschaft von 1919: Die Weimarer Verfassung führte das gleiche Reichstagswahlrecht auch für Frauen ein."
+            },
+            {
+              "text": "Der Reichstag konnte ohne Volksentscheid den Kaiser sofort wieder einsetzen.",
+              "reason": "Ignoriert den Staatsformenwechsel: Nach der Novemberrevolution 1918 war Deutschland eine demokratische Republik ohne Monarch."
+            }
+          ]
+        },
+        {
+          "id": "01M8F4YMH76SRXFBB2HDW6QPSH",
+          "slug": "gpg8-weimar-verfassung-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Welche beiden Verfassungsregeln machten die Weimarer Republik gegenüber Krisen besonders verwundbar?",
+          "concept": "Das Fehlen einer Fünf-Prozent-Hürde zersplitterte den Reichstag, und Artikel 48 gab dem Reichspräsidenten Notverordnungsmacht.",
+          "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-weimar-verfassung",
+          "sample_solution": "Das Fehlen einer Fünf-Prozent-Hürde zersplitterte den Reichstag, und Artikel 48 gab dem Reichspräsidenten Notverordnungsmacht.",
+          "choice_distractors": [
+            {
+              "text": "Das Frauenwahlrecht und das Grundrecht auf Meinungsfreiheit lösten die Regierungskrisen direkt aus.",
+              "reason": "Allgemeine Grundrechte und Frauenwahlrecht stärkten die Demokratie, nicht die Krisen."
+            },
+            {
+              "text": "Der Reichstag durfte den Reichskanzler niemals stürzen und wählte überhaupt keine Regierung.",
+              "reason": "Gerade häufige Misstrauensvoten und Splitterparteien machten Regierungen instabil."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8F4YMG0D7DM54AM6PKQT81F",
+      "atom_uri": "urn:zam:atom:01M8F4YMG0D7DM54AM6PKQT81F",
+      "namespace": "zam-academy-gpg-mittelschule-8",
+      "slug": "gpg8-weimar-krise-nsdap",
+      "title": "Weltwirtschaftskrise und Aufstieg der NSDAP",
+      "domain": "gpg/mittelschule-8/lb2",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-weimar-krise-nsdap",
+      "prerequisites": [
+        {
+          "atom_id": "01M8F4YMFZY40XTVCFY908RVWF",
+          "type": "soft",
+          "rationale": "Die Anfälligkeit durch Art. 48 und Splitterparteien erklärt, warum die Wirtschaftskrise zur Staatskrise wurde."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "gpg-mittelschule-8",
+          "topic_code": "lb2",
+          "topic_title": "Zeit und Wandel"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "subject": "gpg",
+          "track": "R",
+          "topic_code": "lb2",
+          "topic_title": "Zeit und Wandel",
+          "exam_relevant": true
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "subject": "gpg",
+          "track": "M",
+          "topic_code": "lb2",
+          "topic_title": "Zeit und Wandel",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8F4YMH8ZZ6NJN0HWM7B5Y1A",
+          "slug": "gpg8-weimar-krise-nsdap-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Was war ein Hauptauslöser dafür, dass die NSDAP zwischen 1929 und 1932 von einer Splitterpartei zur stärksten Kraft wurde?",
+          "concept": "Die Weltwirtschaftskrise löste Massenarbeitslosigkeit und tiefe Unzufriedenheit mit den demokratischen Parteien aus.",
+          "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-weimar-krise-nsdap",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Die Weltwirtschaftskrise löste Massenarbeitslosigkeit und tiefe Unzufriedenheit mit den demokratischen Parteien aus.",
+              "In ganz Deutschland herrschten um das Jahr 1930 bereits Vollbeschäftigung und stark steigende Löhne."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "In ganz Deutschland herrschten um das Jahr 1930 bereits Vollbeschäftigung und stark steigende Löhne.",
+              "reason": "Widerspricht der wirtschaftlichen Lage ab 1929: Nach dem New Yorker Börsencrash gab es über sechs Millionen Arbeitslose, keine Vollbeschäftigung."
+            },
+            {
+              "text": "Die NSDAP versprach den Wählerinnen und Wählern, die Rechte des Reichstags noch weiter auszubauen.",
+              "reason": "Verdreht die Haltung zur Demokratie: Die NSDAP bekämpfte Parlamentarismus und Parteienstaat offen und strebte eine Diktatur an."
+            }
+          ]
+        },
+        {
+          "id": "01M8F4YMH9KA4WZVWAFFNEDJ0J",
+          "slug": "gpg8-weimar-krise-nsdap-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Wie verschärfte die Weltwirtschaftskrise ab 1929 die politische Radikalisierung in Weimar?",
+          "concept": "Massenarbeitslosigkeit und harte Spar-Notverordnungen trieben viele Enttäuschte zu extremen Parteien wie NSDAP und KPD.",
+          "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-weimar-krise-nsdap",
+          "sample_solution": "Massenarbeitslosigkeit und harte Spar-Notverordnungen trieben viele Enttäuschte zu extremen Parteien wie NSDAP und KPD.",
+          "choice_distractors": [
+            {
+              "text": "Die Wirtschaftskrise führte zu Vollbeschäftigung und stärkte die Parteien der demokratischen Mitte.",
+              "reason": "Über sechs Millionen Arbeitslose schwächten das Vertrauen in die demokratische Mitte."
+            },
+            {
+              "text": "KPD und NSDAP bildeten ab 1930 gemeinsam eine loyale Schutzkoalition für die Verfassung.",
+              "reason": "Beide extremistischen Parteien bekämpften sowohl einander als auch die Weimarer Demokratie."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8F4YMG1HKVP5CQRN7Y1KZV2",
+      "atom_uri": "urn:zam:atom:01M8F4YMG1HKVP5CQRN7Y1KZV2",
+      "namespace": "zam-academy-gpg-mittelschule-8",
+      "slug": "gpg8-machtuebertragung-1933",
+      "title": "Machtübertragung und Weg in die Diktatur",
+      "domain": "gpg/mittelschule-8/lb2",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-machtuebertragung-1933",
+      "prerequisites": [
+        {
+          "atom_id": "01M8F4YMG0D7DM54AM6PKQT81F",
+          "type": "soft",
+          "rationale": "Die Ernennung Hitlers baut direkt auf dem Wahlerfolg der NSDAP und der Staatskrise bis 1932 auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "gpg-mittelschule-8",
+          "topic_code": "lb2",
+          "topic_title": "Zeit und Wandel"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "subject": "gpg",
+          "track": "R",
+          "topic_code": "lb2",
+          "topic_title": "Zeit und Wandel",
+          "exam_relevant": true
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "subject": "gpg",
+          "track": "M",
+          "topic_code": "lb2",
+          "topic_title": "Zeit und Wandel",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8F4YMHA0DT1SB6DVTTDKGXS",
+          "slug": "gpg8-machtuebertragung-1933-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Welche Bedeutung hatte das „Ermächtigungsgesetz“ vom 24. März 1933?",
+          "concept": "Die Reichsregierung durfte ab sofort Gesetze auch gegen die Verfassung und ohne Zustimmung des Reichstags erlassen.",
+          "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-machtuebertragung-1933",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Die Reichsregierung durfte ab sofort Gesetze auch gegen die Verfassung und ohne Zustimmung des Reichstags erlassen.",
+              "Das Gesetz garantierte allen Gewerkschaften ein dauerhaftes Streikrecht gegenüber der Reichsregierung."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Das Gesetz garantierte allen Gewerkschaften ein dauerhaftes Streikrecht gegenüber der Reichsregierung.",
+              "reason": "Verwechselt Ausbau von Arbeitnehmerrechten mit deren Zerschlagung: Schon im Mai 1933 zerschlug das Regime die freien Gewerkschaften."
+            },
+            {
+              "text": "Das Gesetz führte erstmals eine Fünf-Prozent-Hürde zum sicheren Schutz der Weimarer Demokratie ein.",
+              "reason": "Verwechselt Weimarer Realität mit der Nachkriegs-Wahlordnung: Das Ermächtigungsgesetz schaffte die Gesetzgebungsmacht des Parlaments ab."
+            }
+          ]
+        },
+        {
+          "id": "01M8F4YMHBVZ021HJDRD5YJMYZ",
+          "slug": "gpg8-machtuebertragung-1933-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Wie hebten die Nationalsozialisten nach dem 30. Januar 1933 innerhalb weniger Monate den Rechtsstaat aus?",
+          "concept": "Nach dem Reichstagsbrand wurden Grundrechte ausgesetzt und mit dem Ermächtigungsgesetz das Parlament ausgeschaltet.",
+          "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-machtuebertragung-1933",
+          "sample_solution": "Nach dem Reichstagsbrand wurden Grundrechte ausgesetzt und mit dem Ermächtigungsgesetz das Parlament ausgeschaltet.",
+          "choice_distractors": [
+            {
+              "text": "Erst nach einem freien Volksentscheid im Jahr 1938 schaffte Hitler die übrigen Parteien ab.",
+              "reason": "Bereits bis Juli 1933 waren Gewerkschaften zerschlagen und alle anderen Parteien verboten."
+            },
+            {
+              "text": "Die SPD-Abgeordneten stimmten dem Ermächtigungsgesetz geschlossen zu, um ein Amt zu erhalten.",
+              "reason": "Alle anwesenden SPD-Abgeordneten stimmten mutig gegen das Ermächtigungsgesetz."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8F4YMG2EWWJTZPY05PXQ8JA",
+      "atom_uri": "urn:zam:atom:01M8F4YMG2EWWJTZPY05PXQ8JA",
+      "namespace": "zam-academy-gpg-mittelschule-8",
+      "slug": "gpg8-kriegsbeginn-verlauf",
+      "title": "Beginn und Verlauf des Zweiten Weltkrieges",
+      "domain": "gpg/mittelschule-8/lb2",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-kriegsbeginn-verlauf",
+      "prerequisites": [
+        {
+          "atom_id": "01M8F4YMG1HKVP5CQRN7Y1KZV2",
+          "type": "soft",
+          "rationale": "Die errichtete NS-Diktatur ermöglichte unkontrollierte Aufrüstung und den Angriffskrieg ab 1939."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "gpg-mittelschule-8",
+          "topic_code": "lb2",
+          "topic_title": "Zeit und Wandel"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "subject": "gpg",
+          "track": "R",
+          "topic_code": "lb2",
+          "topic_title": "Zeit und Wandel",
+          "exam_relevant": true
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "subject": "gpg",
+          "track": "M",
+          "topic_code": "lb2",
+          "topic_title": "Zeit und Wandel",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8F4YMHC893JVKAR81TNS7E7",
+          "slug": "gpg8-kriegsbeginn-verlauf-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Welches Ereignis markiert den Beginn des Zweiten Weltkrieges in Europa?",
+          "concept": "der deutsche Überfall auf Polen am 1. September 1939",
+          "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-kriegsbeginn-verlauf",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "der deutsche Überfall auf Polen am 1. September 1939",
+              "der Ausbruch der Weltwirtschaftskrise 1929"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "der Ausbruch der Weltwirtschaftskrise 1929",
+              "reason": "Verwechselt das wirtschaftliche Krisenjahr 1929 mit dem militärischen Kriegsbeginn zehn Jahre später."
+            },
+            {
+              "text": "die Unterzeichnung der Weimarer Reichsverfassung 1919",
+              "reason": "Vermischt den demokratischen Neubeginn nach dem Ersten Weltkrieg (1919) mit dem Beginn des Zweiten Weltkrieges (1939)."
+            }
+          ]
+        },
+        {
+          "id": "01M8F4YMHDA1KWFVCJYZ6DKSD5",
+          "slug": "gpg8-kriegsbeginn-verlauf-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Was unterschied den deutschen Krieg gegen die Sowjetunion ab Juni 1941 von den vorherigen Westfeldzügen?",
+          "concept": "Im Osten führte die NS-Führung einen rassistischen Vernichtungskrieg gegen Bevölkerung und Gefangene jenseits jedes Völkerrechts.",
+          "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-kriegsbeginn-verlauf",
+          "sample_solution": "Im Osten führte die NS-Führung einen rassistischen Vernichtungskrieg gegen Bevölkerung und Gefangene jenseits jedes Völkerrechts.",
+          "choice_distractors": [
+            {
+              "text": "Im Osten hielt sich die Wehrmacht besonders streng an das Kriegsrecht und verschonte Gefangene.",
+              "reason": "Millionen sowjetische Kriegsgefangene und Zivilisten wurden bewusst ermordet oder ausgehungert."
+            },
+            {
+              "text": "Der Krieg gegen die Sowjetunion begann bereits im September 1939 gleichzeitig mit Frankreich.",
+              "reason": "Der Überfall auf die Sowjetunion erfolgte am 22. Juni 1941 unter Bruch des Nichtangriffspakts."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8F4YMG319N9CFA58EBM9A3F",
+      "atom_uri": "urn:zam:atom:01M8F4YMG319N9CFA58EBM9A3F",
+      "namespace": "zam-academy-gpg-mittelschule-8",
+      "slug": "gpg8-wendepunkte-kapitulation",
+      "title": "Wendepunkte, „totaler Krieg“ und Kapitulation",
+      "domain": "gpg/mittelschule-8/lb2",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-wendepunkte-kapitulation",
+      "prerequisites": [
+        {
+          "atom_id": "01M8F4YMG2EWWJTZPY05PXQ8JA",
+          "type": "soft",
+          "rationale": "Die Kriegswende ab Stalingrad setzt die vorausgegangene Expansion bis Ende 1942 voraus."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "gpg-mittelschule-8",
+          "topic_code": "lb2",
+          "topic_title": "Zeit und Wandel"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "subject": "gpg",
+          "track": "R",
+          "topic_code": "lb2",
+          "topic_title": "Zeit und Wandel",
+          "exam_relevant": true
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "subject": "gpg",
+          "track": "M",
+          "topic_code": "lb2",
+          "topic_title": "Zeit und Wandel",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8F4YMHERDH2DD60QSP2NJHW",
+          "slug": "gpg8-wendepunkte-kapitulation-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Was geschah am 8. Mai 1945?",
+          "concept": "Die deutsche Wehrmacht kapitulierte bedingungslos – der Zweite Weltkrieg in Europa war zu Ende.",
+          "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-wendepunkte-kapitulation",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Die deutsche Wehrmacht kapitulierte bedingungslos – der Zweite Weltkrieg in Europa war zu Ende.",
+              "Die Wehrmacht begann den Westfeldzug gegen Frankreich."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Die Wehrmacht begann den Westfeldzug gegen Frankreich.",
+              "reason": "Verwechselt Anfang und Ende des Krieges: Die Westfeldzüge fanden im Frühjahr 1940 statt, nicht am 8. Mai 1945."
+            },
+            {
+              "text": "Die Weimarer Nationalversammlung beschloss die erste deutsche Verfassung.",
+              "reason": "Verwechselt die Verfassungsgebung von August 1919 mit dem militärischen Kriegsende im Mai 1945."
+            }
+          ]
+        },
+        {
+          "id": "01M8F4YMHFRXF1VV9KCCS9DBW9",
+          "slug": "gpg8-wendepunkte-kapitulation-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Welche militärischen Ereignisse zwischen 1942 und Juni 1944 besiegelten den Niedergang des NS-Regimes?",
+          "concept": "Die Niederlage bei Stalingrad sowie die Landung der Westalliierten in der Normandie drängten Deutschland im Zweifrontenkrieg zurück.",
+          "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-wendepunkte-kapitulation",
+          "sample_solution": "Die Niederlage bei Stalingrad sowie die Landung der Westalliierten in der Normandie drängten Deutschland im Zweifrontenkrieg zurück.",
+          "choice_distractors": [
+            {
+              "text": "Nach der Schlacht von Stalingrad gewann die Wehrmacht bis zum Jahr 1945 sämtliche verlorenen Gebiete im Osten zurück.",
+              "reason": "Mit Stalingrad verlor Deutschland die strategische Initiative und musste sich zurückziehen."
+            },
+            {
+              "text": "Durch Goebbels' Aufruf zum „totalen Krieg“ schieden die Vereinigten Staaten 1943 sofort aus dem Zweiten Weltkrieg aus.",
+              "reason": "Die Anti-Hitler-Koalition hielt trotz enormer Verluste bis zur Kapitulation zusammen."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8F4YMG4MAQ341Z9BVKP3MP3",
+      "atom_uri": "urn:zam:atom:01M8F4YMG4MAQ341Z9BVKP3MP3",
+      "namespace": "zam-academy-gpg-mittelschule-8",
+      "slug": "gpg8-verfolgung-holocaust",
+      "title": "Verfolgung und Vernichtung im Nationalsozialismus",
+      "domain": "gpg/mittelschule-8/lb2",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-verfolgung-holocaust",
+      "prerequisites": [
+        {
+          "atom_id": "01M8F4YMG1HKVP5CQRN7Y1KZV2",
+          "type": "soft",
+          "rationale": "Die systematische Entrechtung begann mit den Gesetzen und Lagern der Diktatur ab 1933."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "gpg-mittelschule-8",
+          "topic_code": "lb2",
+          "topic_title": "Zeit und Wandel"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "subject": "gpg",
+          "track": "R",
+          "topic_code": "lb2",
+          "topic_title": "Zeit und Wandel",
+          "exam_relevant": true
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "subject": "gpg",
+          "track": "M",
+          "topic_code": "lb2",
+          "topic_title": "Zeit und Wandel",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8F4YMHG0NTD547A17JS0Q7X",
+          "slug": "gpg8-verfolgung-holocaust-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Worin liegt der Unterschied zwischen rassistischer und politischer Verfolgung im Nationalsozialismus?",
+          "concept": "Rassistische Verfolgung traf Menschen wegen ihrer Abstammung wie Jüdinnen, Juden sowie Sinti und Roma; politische wegen ihrer Haltung.",
+          "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-verfolgung-holocaust",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Rassistische Verfolgung traf Menschen wegen ihrer Abstammung wie Jüdinnen, Juden sowie Sinti und Roma; politische wegen ihrer Haltung.",
+              "Politische Gefangene kamen erst nach dem Jahr 1945 ins Lager, während Jüdinnen und Juden weiterhin im Reichstag frei mitstimmen durften."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Politische Gefangene kamen erst nach dem Jahr 1945 ins Lager, während Jüdinnen und Juden weiterhin im Reichstag frei mitstimmen durften.",
+              "reason": "Kehrt die Realität um: Schon 1933 kamen politische Gegner in KZs, während Juden systematisch entrechtet und ermordet wurden."
+            },
+            {
+              "text": "Rassistische Verfolgung betraf ausschließlich gegnerische Soldaten an der Ostfront und niemals Zivilisten in den deutschen Städten.",
+              "reason": "Unterschätzt das Ausmaß des Vernichtungswahns: Der rassistischen Verfolgung fielen Millionen Zivilistinnen und Zivilisten zum Opfer."
+            }
+          ]
+        },
+        {
+          "id": "01M8F4YMHH4Y2DKD76DB54799R",
+          "slug": "gpg8-verfolgung-holocaust-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Woran lässt sich im Nationalsozialismus ein rassistisches von einem politischen Verfolgungsmotiv unterscheiden?",
+          "concept": "Rassistische Verfolgung traf Menschen wegen ihrer Abstammung wie Jüdinnen, Juden sowie Sinti und Roma; politische wegen ihrer Haltung.",
+          "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-verfolgung-holocaust",
+          "sample_solution": "Rassistische Verfolgung traf Menschen wegen ihrer Abstammung wie Jüdinnen, Juden sowie Sinti und Roma; politische wegen ihrer Haltung.",
+          "choice_distractors": [
+            {
+              "text": "Politische Gefangene kamen wegen ihrer Abstammung ins Konzentrationslager, während jüdische Familien wegen Parteiarbeit verfolgt wurden.",
+              "reason": "Die Kategorien sind vertauscht: die NS-Ideologie definierte Jüdinnen und Juden rassistisch."
+            },
+            {
+              "text": "Menschen mit geistigen oder körperlichen Behinderungen blieben unter der Herrschaft des Nationalsozialismus völlig verschont.",
+              "reason": "Auch Menschen mit Behinderungen wurden in Mordaktionen wie der „Aktion T4“ getötet."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8F4YMG5J2EJTPXP6SAC4E9J",
+      "atom_uri": "urn:zam:atom:01M8F4YMG5J2EJTPXP6SAC4E9J",
+      "namespace": "zam-academy-gpg-mittelschule-8",
+      "slug": "gpg8-flucht-vertreibung",
+      "title": "Flucht, Vertreibung und Migration ab 1944/45",
+      "domain": "gpg/mittelschule-8/lb2",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-flucht-vertreibung",
+      "prerequisites": [
+        {
+          "atom_id": "01M8F4YMG319N9CFA58EBM9A3F",
+          "type": "soft",
+          "rationale": "Flucht vor der Front und Vertreibungen waren unmittelbare Folgen des von Deutschland entfesselten Krieges."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "gpg-mittelschule-8",
+          "topic_code": "lb2",
+          "topic_title": "Zeit und Wandel"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "subject": "gpg",
+          "track": "R",
+          "topic_code": "lb2",
+          "topic_title": "Zeit und Wandel",
+          "exam_relevant": true
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "subject": "gpg",
+          "track": "M",
+          "topic_code": "lb2",
+          "topic_title": "Zeit und Wandel",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8F4YMHJ5TEFY3FH5P4S2PWA",
+          "slug": "gpg8-flucht-vertreibung-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Was geschah infolge der Potsdamer Beschlüsse 1945 mit Millionen Deutschen in den ehemaligen Ostgebieten und im Sudetenland?",
+          "concept": "Sie mussten ihre Heimat verlassen und wurden in die vier Besatzungszonen vertrieben.",
+          "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-flucht-vertreibung",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Sie mussten ihre Heimat verlassen und wurden in die vier Besatzungszonen vertrieben.",
+              "Sie blieben alle als eigenständiger Bundesstaat im Osten wohnen."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Sie blieben alle als eigenständiger Bundesstaat im Osten wohnen.",
+              "reason": "Verkennt den Verlust der Heimatgebiete: Die deutschen Ostgebiete und das Sudetenland wurden nicht als Bundesstaat weitergeführt."
+            },
+            {
+              "text": "Sie zogen geschlossen bereits 1945 nach Nordamerika um.",
+              "reason": "Fehlannahme zum Ziel der Vertreibung: Rund zwölf bis vierzehn Millionen Menschen mussten in den vier deutschen Besatzungszonen unterkommen."
+            }
+          ]
+        },
+        {
+          "id": "01M8F4YMHKC1P55Q0EWFV9XSAW",
+          "slug": "gpg8-flucht-vertreibung-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Wie veränderte der Zuzug von rund zwei Millionen Heimatvertriebenen ab 1945 Bayern?",
+          "concept": "Nach schwerer Not und Einquartierung wuchsen viele Dörfer durch neue Betriebe und neue Siedlungen der Vertriebenen langfristig zusammen.",
+          "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-flucht-vertreibung",
+          "sample_solution": "Nach schwerer Not und Einquartierung wuchsen viele Dörfer durch neue Betriebe und neue Siedlungen der Vertriebenen langfristig zusammen.",
+          "choice_distractors": [
+            {
+              "text": "Alle Heimatvertriebenen zogen binnen eines Monats vollständig aus Bayern wieder zurück nach Schlesien.",
+              "reason": "Die Integration geschah dauerhaft vor Ort und prägte Bayerns Nachkriegswirtschaft."
+            },
+            {
+              "text": "Bayern nahm ab 1945 überhaupt keine Flüchtlinge oder Heimatvertriebenen auf.",
+              "reason": "Neben Niedersachsen und Schleswig-Holstein nahm Bayern besonders viele Vertriebene auf."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8F4YMG6REYMWB61CA24HT4E",
+      "atom_uri": "urn:zam:atom:01M8F4YMG6REYMWB61CA24HT4E",
+      "namespace": "zam-academy-gpg-mittelschule-8",
+      "slug": "gpg8-nachkriegsalltag",
+      "title": "Alltag in den Nachkriegsjahren und Wiederaufbau",
+      "domain": "gpg/mittelschule-8/lb2",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-nachkriegsalltag",
+      "prerequisites": [
+        {
+          "atom_id": "01M8F4YMG5J2EJTPXP6SAC4E9J",
+          "type": "soft",
+          "rationale": "Wohnungsnot und knappe Rationen in Bayern hängen unmittelbar mit Zerstörung und Millionen Vertriebenen zusammen."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "gpg-mittelschule-8",
+          "topic_code": "lb2",
+          "topic_title": "Zeit und Wandel"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "subject": "gpg",
+          "track": "R",
+          "topic_code": "lb2",
+          "topic_title": "Zeit und Wandel",
+          "exam_relevant": true
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "subject": "gpg",
+          "track": "M",
+          "topic_code": "lb2",
+          "topic_title": "Zeit und Wandel",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8F4YMHMCKX89V4NKPC2ABM9",
+          "slug": "gpg8-nachkriegsalltag-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Was waren sogenannte „Hamsterfahrten“ in den Jahren 1945 bis 1948?",
+          "concept": "Fahrten von Stadtbewohnern aufs Land, um Wertgegenstände bei Bauern gegen Lebensmittel einzutauschen.",
+          "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-nachkriegsalltag",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Fahrten von Stadtbewohnern aufs Land, um Wertgegenstände bei Bauern gegen Lebensmittel einzutauschen.",
+              "Wahlkampfreisen der neu gegründeten politischen Parteien durch den Bayerischen Landtag"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Wahlkampfreisen der neu gegründeten politischen Parteien durch den Bayerischen Landtag",
+              "reason": "Fehlinterpretation des Begriffs: Es ging beim „Hamstern“ ums Überleben durch Nahrungstausch, nicht um Parteipolitik."
+            },
+            {
+              "text": "Gemeinsame Schulausflüge für Jugendliche in das wirtschaftlich starke Nachkriegsland USA",
+              "reason": "Verkennt den akuten Mangel nach 1945: In der zerbombten Nachkriegszeit ging es um Grundnahrungsmittel vom Land, nicht um Fernreisen."
+            }
+          ]
+        },
+        {
+          "id": "01M8F4YMHNGDAJHCTK711GW4ZH",
+          "slug": "gpg8-nachkriegsalltag-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Warum tauschten viele Stadtbewohner zwischen 1945 und 1948 Wertsachen bei Bauern gegen Kartoffeln ein?",
+          "concept": "Die alte Reichsmark war fast wertlos und Rationen auf Lebensmittelkarten reichten kaum zum Überleben.",
+          "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-nachkriegsalltag",
+          "sample_solution": "Die alte Reichsmark war fast wertlos und Rationen auf Lebensmittelkarten reichten kaum zum Überleben.",
+          "choice_distractors": [
+            {
+              "text": "Weil die Bauern in Bayern gesetzlich überhaupt kein Papiergeld mehr annehmen durften.",
+              "reason": "Das Geld hatte durch kriegsbedingten Mangel und Schwarzmarkt kaum noch reale Kaufkraft."
+            },
+            {
+              "text": "Weil bereits ab Sommer 1945 überall Überfluss an Brot, Fett und Wohnraum herrschte.",
+              "reason": "Gerade der Hungerwinter 1946/47 brachte extreme Not bei Nahrung und Heizkohle."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8F4YMG71R61XAFRKG27Z5JD",
+      "atom_uri": "urn:zam:atom:01M8F4YMG71R61XAFRKG27Z5JD",
+      "namespace": "zam-academy-gpg-mittelschule-8",
+      "slug": "gpg8-nuernberger-prozesse",
+      "title": "Die Nürnberger Prozesse und Kriegsverbrechen",
+      "domain": "gpg/mittelschule-8/lb2",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-nuernberger-prozesse",
+      "prerequisites": [
+        {
+          "atom_id": "01M8F4YMG4MAQ341Z9BVKP3MP3",
+          "type": "soft",
+          "rationale": "Das neue Völkerstrafrecht in Nürnberg reagierte unmittelbar auf NS-Kriegsverbrechen und Massenmord."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "gpg-mittelschule-8",
+          "topic_code": "lb2",
+          "topic_title": "Zeit und Wandel"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "subject": "gpg",
+          "track": "R",
+          "topic_code": "lb2",
+          "topic_title": "Zeit und Wandel",
+          "exam_relevant": true
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "subject": "gpg",
+          "track": "M",
+          "topic_code": "lb2",
+          "topic_title": "Zeit und Wandel",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8F4YMHPTW4YRANG2T7CM51Y",
+          "slug": "gpg8-nuernberger-prozesse-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Welcher Rechtsgrundsatz wurde in den Nürnberger Prozessen 1945/46 weltweit neu durchgesetzt?",
+          "concept": "Einzelpersonen tragen auch als Staatsdiener oder Soldaten volle persönliche Verantwortung für begangene Kriegsverbrechen.",
+          "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-nuernberger-prozesse",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Einzelpersonen tragen auch als Staatsdiener oder Soldaten volle persönliche Verantwortung für begangene Kriegsverbrechen.",
+              "Kriegsverbrechen dürfen vor Gericht nur verfolgt werden, wenn der Täter gleichzeitig auch das Staatsoberhaupt des Landes war."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Kriegsverbrechen dürfen vor Gericht nur verfolgt werden, wenn der Täter gleichzeitig auch das Staatsoberhaupt des Landes war.",
+              "reason": "Verkennt die persönliche Strafbarkeit: Vor Gericht standen gezielt führende Funktionäre aus Politik, Militär, SS und Wirtschaft."
+            },
+            {
+              "text": "Ein schriftlich erteilter militärischer Befehl entschuldigt grundsätzlich jede Beteiligung an einem Verbrechen gegen Zivilisten.",
+              "reason": "Behauptet das genaue Gegenteil der Nürnberger Prinzipien: Ein rechtswidriger Befehl befreite Täter ausdrücklich nicht von Schuld."
+            }
+          ]
+        },
+        {
+          "id": "01M8F4YMHQS34A7EBSC7D9CJ87",
+          "slug": "gpg8-nuernberger-prozesse-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Warum sind die Urteile des Nürnberger Prozesses 1945/46 bis heute ein Vorbild für das Völkerrecht?",
+          "concept": "Sie verfolgten Verbrechen gegen die Menschlichkeit rechtsstaatlich und machten Einzelpersonen statt bloßer Befehle haftbar.",
+          "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-nuernberger-prozesse",
+          "sample_solution": "Sie verfolgten Verbrechen gegen die Menschlichkeit rechtsstaatlich und machten Einzelpersonen statt bloßer Befehle haftbar.",
+          "choice_distractors": [
+            {
+              "text": "Sie verboten jede Verteidigung durch Anwälte, damit Prozesse schneller enden.",
+              "reason": "Die Angeklagten erhielten Verteidiger und wurden anhand gesicherter Beweise verurteilt."
+            },
+            {
+              "text": "Sie erklärten, dass nur Staatsoberhäupter und niemals untergeordnete Täter schuldig sein können.",
+              "reason": "Gerade die persönliche Verantwortung jedes Einzelnen ist das zentrale Nürnberger Prinzip."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8F4YMG8QXGE10TXEN4QP6JW",
+      "atom_uri": "urn:zam:atom:01M8F4YMG8QXGE10TXEN4QP6JW",
+      "namespace": "zam-academy-gpg-mittelschule-8",
+      "slug": "gpg8-kriegsfolgen-heute",
+      "title": "Langfristige Folgen von Krieg bis heute",
+      "domain": "gpg/mittelschule-8/lb2",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-kriegsfolgen-heute",
+      "prerequisites": [
+        {
+          "atom_id": "01M8F4YMG71R61XAFRKG27Z5JD",
+          "type": "soft",
+          "rationale": "Die Nürnberger Prinzipien begründen bis heute den internationalen Schutz vor Kriegsverbrechen."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "gpg-mittelschule-8",
+          "topic_code": "lb2",
+          "topic_title": "Zeit und Wandel"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "subject": "gpg",
+          "track": "R",
+          "topic_code": "lb2",
+          "topic_title": "Zeit und Wandel",
+          "exam_relevant": true
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "subject": "gpg",
+          "track": "M",
+          "topic_code": "lb2",
+          "topic_title": "Zeit und Wandel",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8F4YMHRNF4XZWY3Q4W7KSTE",
+          "slug": "gpg8-kriegsfolgen-heute-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Welche Aussage beschreibt eine bis heute spürbare Langzeitfolge von Kriegen für betroffene Menschen?",
+          "concept": "Psychische Traumata, der Verlust von Angehörigen oder der Heimat belasten oft auch Kinder und Enkelkinder über Generationen hinweg.",
+          "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-kriegsfolgen-heute",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Psychische Traumata, der Verlust von Angehörigen oder der Heimat belasten oft auch Kinder und Enkelkinder über Generationen hinweg.",
+              "Mit der Unterzeichnung eines Friedensvertrags verschwinden alle seelischen Folgen innerhalb einer Woche."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Mit der Unterzeichnung eines Friedensvertrags verschwinden alle seelischen Folgen innerhalb einer Woche.",
+              "reason": "Unterschätzt psychische Traumata: Kriegserfahrungen prägen Betroffene und Familien oft über mehrere Generationen hinweg weiter."
+            },
+            {
+              "text": "In deutschen Städten finden Bauarbeiter heute grundsätzlich keine Überreste des Zweiten Weltkriegs mehr.",
+              "reason": "Ignoriert sichtbare Nachwirkungen bis heute: Kampfmittelfunde wie Blindgänger und Baulücken erinnern nach wie vor an den Krieg."
+            }
+          ]
+        },
+        {
+          "id": "01M8F4YMHSEPWQMM2NQWR0E3XD",
+          "slug": "gpg8-kriegsfolgen-heute-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Inwiefern wirken die Schrecken eines Krieges oft noch über die unmittelbar betroffene Generation hinaus?",
+          "concept": "Traumata und Verluste belasten Familien über Jahrzehnte; zerstörte Infrastruktur und Blindgänger bleiben langfristige Gefahren.",
+          "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-kriegsfolgen-heute",
+          "sample_solution": "Traumata und Verluste belasten Familien über Jahrzehnte; zerstörte Infrastruktur und Blindgänger bleiben langfristige Gefahren.",
+          "choice_distractors": [
+            {
+              "text": "Sobald ein Waffenstillstand unterschrieben ist, verschwinden alle seelischen Verletzungen sofort.",
+              "reason": "Seelische Kriegsfolgen wirken oft unbewusst noch auf Kinder und Enkelkinder weiter."
+            },
+            {
+              "text": "Internationale Organisationen wie die Vereinten Nationen wurden bereits 1919 in Nürnberg gegründet.",
+              "reason": "Die UN entstand 1945 als Antwort auf die Zerstörungen des Zweiten Weltkriegs."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8F4YMG9PHYWM4G1JNVD9A5F",
+      "atom_uri": "urn:zam:atom:01M8F4YMG9PHYWM4G1JNVD9A5F",
+      "namespace": "zam-academy-gpg-mittelschule-8",
+      "slug": "gpg8-menschenrechte-minderheiten",
+      "title": "Grundrechte, Menschenrechte und Minderheitenschutz",
+      "domain": "gpg/mittelschule-8/lb3",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-menschenrechte-minderheiten",
+      "prerequisites": [
+        {
+          "atom_id": "01M8F4YMG4MAQ341Z9BVKP3MP3",
+          "type": "soft",
+          "rationale": "Menschenwürde und Minderheitenschutz im Grundgesetz antworten direkt auf die NS-Verfolgung."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "gpg-mittelschule-8",
+          "topic_code": "lb3",
+          "topic_title": "Politik und Gesellschaft"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "subject": "gpg",
+          "track": "R",
+          "topic_code": "lb3",
+          "topic_title": "Politik und Gesellschaft",
+          "exam_relevant": true
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "subject": "gpg",
+          "track": "M",
+          "topic_code": "lb3",
+          "topic_title": "Politik und Gesellschaft",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8F4YMHT6Y2N37ZZXBFQ9DGF",
+          "slug": "gpg8-menschenrechte-minderheiten-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Was bedeutet der Minderheitenschutz in einer Demokratie?",
+          "concept": "Auch eine politische Mehrheit darf Grund- und Menschenrechte kleinerer Gruppen nicht abschaffen.",
+          "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-menschenrechte-minderheiten",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Auch eine politische Mehrheit darf Grund- und Menschenrechte kleinerer Gruppen nicht abschaffen.",
+              "Nur Minderheiten dürfen an Bundestagswahlen teilnehmen."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Nur Minderheiten dürfen an Bundestagswahlen teilnehmen.",
+              "reason": "Verdreht Gleichheit der Wahl und Minderheitenschutz: Selbstverständlich besitzen alle volljährigen Staatsbürger das Wahlrecht."
+            },
+            {
+              "text": "Eine Mehrheit von 51 Prozent darf einer Minderheit alle Bürgerrechte entziehen.",
+              "reason": "Verwechselt Mehrheitsprinzip mit schrankenloser Macht: Menschen- und Grundrechte bleiben auch vor einfachen Mehrheiten geschützt."
+            }
+          ]
+        },
+        {
+          "id": "01M8F4YMHV2WKHG98D1H7DTNPE",
+          "slug": "gpg8-menschenrechte-minderheiten-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Warum schützt Artikel 1 Grundgesetz zusammen mit dem Minderheitenschutz vor einer „Diktatur der Mehrheit“?",
+          "concept": "Selbst eine Parlamentsmehrheit darf Grundrechte und Menschenwürde einzelner Gruppen niemals außer Kraft setzen.",
+          "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-menschenrechte-minderheiten",
+          "sample_solution": "Selbst eine Parlamentsmehrheit darf Grundrechte und Menschenwürde einzelner Gruppen niemals außer Kraft setzen.",
+          "choice_distractors": [
+            {
+              "text": "Weil Artikel 1 festlegt, dass Minderheiten doppelt so viele Stimmen bei Wahlen haben.",
+              "reason": "Alle Stimmen zählen gleich; der Schutz greift über einklagbare Grundrechte."
+            },
+            {
+              "text": "Weil Gesetze in Deutschland überhaupt keine Mehrheit im Bundestag benötigen.",
+              "reason": "Parlamentsmehrheiten bleiben nötig, finden aber an den Grundrechten ihre Schranke."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8F4YMGACKPBB66JK6T5RNKZ",
+      "atom_uri": "urn:zam:atom:01M8F4YMGACKPBB66JK6T5RNKZ",
+      "namespace": "zam-academy-gpg-mittelschule-8",
+      "slug": "gpg8-ns-propaganda-medien",
+      "title": "NS-Propaganda und Medien in Demokratie und Diktatur",
+      "domain": "gpg/mittelschule-8/lb3",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-ns-propaganda-medien",
+      "prerequisites": [
+        {
+          "atom_id": "01M8F4YMG1HKVP5CQRN7Y1KZV2",
+          "type": "soft",
+          "rationale": "Die Gleichschaltung von Presse und Rundfunk begleitete unmittelbar den Aufbau der Diktatur 1933."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "gpg-mittelschule-8",
+          "topic_code": "lb3",
+          "topic_title": "Politik und Gesellschaft"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "subject": "gpg",
+          "track": "R",
+          "topic_code": "lb3",
+          "topic_title": "Politik und Gesellschaft",
+          "exam_relevant": true
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "subject": "gpg",
+          "track": "M",
+          "topic_code": "lb3",
+          "topic_title": "Politik und Gesellschaft",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8F4YMHW4344GBDPXCPGQEHB",
+          "slug": "gpg8-ns-propaganda-medien-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Woran erkennst du seriöse, objektive Berichterstattung im Unterschied zu Propaganda?",
+          "concept": "Sie trennt geprüfte Fakten und Quellen sauber von eigener Meinung und lässt verschiedene Sichtweisen zu.",
+          "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-ns-propaganda-medien",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Sie trennt geprüfte Fakten und Quellen sauber von eigener Meinung und lässt verschiedene Sichtweisen zu.",
+              "Sie wiederholt ein einziges Schlagwort ohne Belege und greift Andersdenkende persönlich an."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Sie wiederholt ein einziges Schlagwort ohne Belege und greift Andersdenkende persönlich an.",
+              "reason": "Beschreibt gerade ein Merkmal einseitiger Propaganda: Seriöse Redaktionen arbeiten faktenbasiert statt mit Parolen und Angriffen."
+            },
+            {
+              "text": "Sie wird vor dem Druck von einem staatlichen Ministerium komplett vorgegeben.",
+              "reason": "Schildert staatliche Zensur wie im Propagandaministerium, nicht freie Berichterstattung unter dem Schutz des Art. 5 GG."
+            }
+          ]
+        },
+        {
+          "id": "01M8F4YMHX89HMR0RDNZVNWZWJ",
+          "slug": "gpg8-ns-propaganda-medien-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Welche Schutzfunktion erfüllt Artikel 5 Grundgesetz für die Bürgerinnen und Bürger einer Demokratie?",
+          "concept": "Unabhängige Medien dürfen ohne Zensur berichten, Macht kontrollieren und freie Meinungsbildung ermöglichen.",
+          "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-ns-propaganda-medien",
+          "sample_solution": "Unabhängige Medien dürfen ohne Zensur berichten, Macht kontrollieren und freie Meinungsbildung ermöglichen.",
+          "choice_distractors": [
+            {
+              "text": "Artikel 5 schreibt vor, dass alle Zeitungen täglich denselben Regierungstext abdrucken müssen.",
+              "reason": "Das Verbot der Zensur schützt Vielfalt statt staatlicher Gleichschaltung."
+            },
+            {
+              "text": "Artikel 5 erlaubt es der Regierung, kritische Journalistinnen und Journalisten sofort zu verhaften.",
+              "reason": "Meinungs- und Pressefreiheit schützen ausdrücklich vor staatlichen Eingriffen."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8F4YMGBRH4JTTB78376CT0E",
+      "atom_uri": "urn:zam:atom:01M8F4YMGBRH4JTTB78376CT0E",
+      "namespace": "zam-academy-gpg-mittelschule-8",
+      "slug": "gpg8-widerstand-ns",
+      "title": "Widerstand gegen den Nationalsozialismus",
+      "domain": "gpg/mittelschule-8/lb3",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-widerstand-ns",
+      "prerequisites": [
+        {
+          "atom_id": "01M8F4YMG9PHYWM4G1JNVD9A5F",
+          "type": "soft",
+          "rationale": "Widerstand leisteten Menschen, die Menschenrechte und Gewissen gegen das Unrecht verteidigten."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "gpg-mittelschule-8",
+          "topic_code": "lb3",
+          "topic_title": "Politik und Gesellschaft"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "subject": "gpg",
+          "track": "R",
+          "topic_code": "lb3",
+          "topic_title": "Politik und Gesellschaft",
+          "exam_relevant": true
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "subject": "gpg",
+          "track": "M",
+          "topic_code": "lb3",
+          "topic_title": "Politik und Gesellschaft",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8F4YMHY3WCS6PGXFNG0WTH9",
+          "slug": "gpg8-widerstand-ns-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Welche Form des Widerstands wählte die Münchner Gruppe „Weiße Rose“?",
+          "concept": "Sie verfasste und verteilte geheime Flugblätter gegen das NS-Regime und den Krieg.",
+          "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-widerstand-ns",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Sie verfasste und verteilte geheime Flugblätter gegen das NS-Regime und den Krieg.",
+              "Sie gründete eine offizielle Oppositionspartei im Reichstag."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Sie gründete eine offizielle Oppositionspartei im Reichstag.",
+              "reason": "Verkennt die Diktaturbedingungen: Alle Oppositionsparteien waren seit Sommer 1933 verboten; legaler Parteienwettstreit war unmöglich."
+            },
+            {
+              "text": "Sie rief die Bevölkerung zur Wahl der NSDAP auf.",
+              "reason": "Kehrt Ziel und Mut der Weißen Rose um: Die studentische Gruppe prangerte NS-Verbrechen an und rief zum Widerstand gegen Hitler auf."
+            }
+          ]
+        },
+        {
+          "id": "01M8F4YMHZADFM4EZ420MG32HB",
+          "slug": "gpg8-widerstand-ns-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Was verband so unterschiedliche Widerstandsbeispiele wie die Weiße Rose, Graf Stauffenberg, Bonhoeffer und Pater Rupert Mayer?",
+          "concept": "Trotz Lebensgefahr stellten sie Menschlichkeit und Gewissen gegen Unrecht, Krieg und Diktatur.",
+          "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-widerstand-ns",
+          "sample_solution": "Trotz Lebensgefahr stellten sie Menschlichkeit und Gewissen gegen Unrecht, Krieg und Diktatur.",
+          "choice_distractors": [
+            {
+              "text": "Sie alle versuchten, durch Wahlen im Reichstag eine neue Regierung zu bilden.",
+              "reason": "Nach 1933 gab es in Deutschland keine freien Wahlen mit Oppositionsparteien mehr."
+            },
+            {
+              "text": "Sie arbeiteten allesamt als geheime Offiziere im Oberkommando der Wehrmacht.",
+              "reason": "Nur der Kreis um den 20. Juli bestand vorwiegend aus Militärs; andere leisteten zivilen Widerstand."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8F4YMGCR305YE8F5QHF9DD9",
+      "atom_uri": "urn:zam:atom:01M8F4YMGCR305YE8F5QHF9DD9",
+      "namespace": "zam-academy-gpg-mittelschule-8",
+      "slug": "gpg8-zivilcourage-demokratie",
+      "title": "Zivilcourage und Einsatz für Menschenrechte heute",
+      "domain": "gpg/mittelschule-8/lb3",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-zivilcourage-demokratie",
+      "prerequisites": [
+        {
+          "atom_id": "01M8F4YMGBRH4JTTB78376CT0E",
+          "type": "soft",
+          "rationale": "Der historische Mut bildet den Kontrast zu heutigen rechtsstaatlichen Wegen der Zivilcourage."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "gpg-mittelschule-8",
+          "topic_code": "lb3",
+          "topic_title": "Politik und Gesellschaft"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "subject": "gpg",
+          "track": "R",
+          "topic_code": "lb3",
+          "topic_title": "Politik und Gesellschaft",
+          "exam_relevant": true
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "subject": "gpg",
+          "track": "M",
+          "topic_code": "lb3",
+          "topic_title": "Politik und Gesellschaft",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8F4YMJ0PR1Q48YT16N0Z7BX",
+          "slug": "gpg8-zivilcourage-demokratie-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Welche Regel gehört zu sinnvoller Zivilcourage in einer Gefahrensituation auf der Straße oder im Bus?",
+          "concept": "Auf Abstand achten, Umstehende konkret mit direkter Ansprache um Hilfe bitten, 110 wählen und das Opfer unterstützen.",
+          "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-zivilcourage-demokratie",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Auf Abstand achten, Umstehende konkret mit direkter Ansprache um Hilfe bitten, 110 wählen und das Opfer unterstützen.",
+              "Ohne jede Hilfe zu rufen sofort allein mit den Fäusten eingreifen und den Angreifer eigenmächtig körperlich bestrafen."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Ohne jede Hilfe zu rufen sofort allein mit den Fäusten eingreifen und den Angreifer eigenmächtig körperlich bestrafen.",
+              "reason": "Verwechselt Zivilcourage mit Selbstjustiz und Leichtsinn: Sinnvolles Handeln holt Verstärkung und vermeidet eigene Gefährdung."
+            },
+            {
+              "text": "Die gesamte bedrohliche Situation stillschweigend mit dem Smartphone filmen und danach ohne ein Wort weitergehen.",
+              "reason": "Beschreibt tatenloses Zuschauen statt Zivilcourage: Filmen ohne Hilferuf lässt Betroffene schutzlos und schädigt Persönlichkeitsrechte."
+            }
+          ]
+        },
+        {
+          "id": "01M8F4YMJ1PR6E299A7BPZNFFR",
+          "slug": "gpg8-zivilcourage-demokratie-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Wo liegt die klare Grenze beim Einfordern von Menschenrechten mit Zivilcourage im Rechtsstaat?",
+          "concept": "Zivilcourage handelt entschlossen und gewaltfrei auf rechtsstaatlichem Weg – Selbstjustiz und Gewalt bleiben verboten.",
+          "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-zivilcourage-demokratie",
+          "sample_solution": "Zivilcourage handelt entschlossen und gewaltfrei auf rechtsstaatlichem Weg – Selbstjustiz und Gewalt bleiben verboten.",
+          "choice_distractors": [
+            {
+              "text": "In einer Demokratie darf man bei jedem Streit zunächst zu körperlicher Vergeltung greifen.",
+              "reason": "Das Gewaltmonopol liegt beim Staat; Zivilcourage schützt ohne eigene Gewalt."
+            },
+            {
+              "text": "Jugendliche unter 18 Jahren dürfen weder widersprechen noch Petitionen unterschreiben.",
+              "reason": "Auch Kinder und Jugendliche haben Grundrechte auf Meinungsäußerung und Petitionen."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8F4YMGD0YH5W6VZ7X1M1HW2",
+      "atom_uri": "urn:zam:atom:01M8F4YMGD0YH5W6VZ7X1M1HW2",
+      "namespace": "zam-academy-gpg-mittelschule-8",
+      "slug": "gpg8-potsdam-teilung",
+      "title": "Potsdamer Konferenz und Besatzungszonen",
+      "domain": "gpg/mittelschule-8/lb3",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-potsdam-teilung",
+      "prerequisites": [
+        {
+          "atom_id": "01M8F4YMG6REYMWB61CA24HT4E",
+          "type": "soft",
+          "rationale": "Die Potsdamer Aufteilung in vier Zonen schuf den Rahmen für das Leben in den Besatzungszonen."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "gpg-mittelschule-8",
+          "topic_code": "lb3",
+          "topic_title": "Politik und Gesellschaft"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "subject": "gpg",
+          "track": "R",
+          "topic_code": "lb3",
+          "topic_title": "Politik und Gesellschaft",
+          "exam_relevant": true
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "subject": "gpg",
+          "track": "M",
+          "topic_code": "lb3",
+          "topic_title": "Politik und Gesellschaft",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8F4YMJ2D77MYGH90P6ZJAVX",
+          "slug": "gpg8-potsdam-teilung-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Was beschlossen die Siegermächte auf der Potsdamer Konferenz im Sommer 1945 für das besiegte Deutschland?",
+          "concept": "Die Aufteilung in vier Besatzungszonen sowie Berlins in vier Sektoren samt Zielen wie Entnazifizierung und Entmilitarisierung.",
+          "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-potsdam-teilung",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Die Aufteilung in vier Besatzungszonen sowie Berlins in vier Sektoren samt Zielen wie Entnazifizierung und Entmilitarisierung.",
+              "Die sofortige militärische Wiederbewaffnung Deutschlands noch im Herbst desselben Jahres unter gemeinsamer Aufsicht."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Die sofortige militärische Wiederbewaffnung Deutschlands noch im Herbst desselben Jahres unter gemeinsamer Aufsicht.",
+              "reason": "Verdreht eines der „Vier Ds“ von Potsdam: Beschlossen wurden ausdrücklich Entmilitarisierung und Abrüstung, nicht Wiederbewaffnung."
+            },
+            {
+              "text": "Die dauerhafte Übergabe des gesamten süddeutschen Gebiets rund um Bayern als Teilrepublik an die Sowjetunion.",
+              "reason": "Verwechselt die Zonenaufteilung: Süddeutschland einschließlich Bayern lag in der US-Zone, nicht in der sowjetischen Zone."
+            }
+          ]
+        },
+        {
+          "id": "01M8F4YMJ3KNMW8S9K817F8HE4",
+          "slug": "gpg8-potsdam-teilung-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Warum entstanden bis 1949 zwei deutsche Staaten, obwohl die Siegermächte 1945 in Potsdam gemeinsam verhandelt hatten?",
+          "concept": "Westmächte und Sowjetunion verfolgten in ihren Zonen gegensätzliche Ziele von Demokratie/Marktwirtschaft versus sozialistischem Einparteienstaat.",
+          "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-potsdam-teilung",
+          "sample_solution": "Westmächte und Sowjetunion verfolgten in ihren Zonen gegensätzliche Ziele von Demokratie/Marktwirtschaft versus sozialistischem Einparteienstaat.",
+          "choice_distractors": [
+            {
+              "text": "Alle vier Siegermächte beschlossen bereits auf der Potsdamer Konferenz ausdrücklich die Gründung von Bundesrepublik und DDR.",
+              "reason": "In Potsdam wollte man Deutschland formal noch als wirtschaftliche Einheit behandeln."
+            },
+            {
+              "text": "Die drei Westzonen übernahmen nach der Währungsreform vollständig die sozialistischen Wirtschaftspläne der Sowjetunion.",
+              "reason": "Im Westen entstanden Marktwirtschaft und Parlamentarismus, im Osten Planwirtschaft und SED-Herrschaft."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8F4YMGEHR9MBSQ9346M30H1",
+      "atom_uri": "urn:zam:atom:01M8F4YMGEHR9MBSQ9346M30H1",
+      "namespace": "zam-academy-gpg-mittelschule-8",
+      "slug": "gpg8-verfassungsorgane",
+      "title": "Verfassungsorgane und freiheitliche demokratische Grundordnung",
+      "domain": "gpg/mittelschule-8/lb3",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-verfassungsorgane",
+      "prerequisites": [
+        {
+          "atom_id": "01M8F4YMFZY40XTVCFY908RVWF",
+          "type": "soft",
+          "rationale": "Die Gewaltenteilung im Grundgesetz vermeidet gezielt frühere Fehler der Weimarer Verfassung."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "gpg-mittelschule-8",
+          "topic_code": "lb3",
+          "topic_title": "Politik und Gesellschaft"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "subject": "gpg",
+          "track": "R",
+          "topic_code": "lb3",
+          "topic_title": "Politik und Gesellschaft",
+          "exam_relevant": true
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "subject": "gpg",
+          "track": "M",
+          "topic_code": "lb3",
+          "topic_title": "Politik und Gesellschaft",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8F4YMJ4P9Y3Y88RAKWEEM82",
+          "slug": "gpg8-verfassungsorgane-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Welches Verfassungsorgan wird in Deutschland direkt von den wahlberechtigten Bürgerinnen und Bürgern auf Bundesebene gewählt?",
+          "concept": "der Deutsche Bundestag",
+          "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-verfassungsorgane",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "der Deutsche Bundestag",
+              "der Bundesrat"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "der Bundesrat",
+              "reason": "Fehleinschätzung der Bundesratswahl: Im Bundesrat sitzen Vertreter der 16 Landesregierungen, keine direkt vom Volk gewählten Abgeordneten."
+            },
+            {
+              "text": "das Bundesverfassungsgericht",
+              "reason": "Verwechselt Richterwahl und Volkswahl: Verfassungsrichterinnen und -richter werden je zur Hälfte von Bundestag und Bundesrat gewählt."
+            }
+          ]
+        },
+        {
+          "id": "01M8F4YMJ57W6KFHZREFEGK16N",
+          "slug": "gpg8-verfassungsorgane-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Wie verhindert die Gewaltenteilung im Grundgesetz, dass ein einzelnes Staatsorgan unkontrolliert regiert?",
+          "concept": "Bundestag, Bundesrat, Regierung, Präsident und Verfassungsgericht teilen Gesetzgebung, Ausführung und Kontrolle unter sich auf.",
+          "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-verfassungsorgane",
+          "sample_solution": "Bundestag, Bundesrat, Regierung, Präsident und Verfassungsgericht teilen Gesetzgebung, Ausführung und Kontrolle unter sich auf.",
+          "choice_distractors": [
+            {
+              "text": "Der Bundeskanzler ernennt persönlich alle Verfassungsrichter und schreibt gleichzeitig sämtliche Gesetze im Alleingang.",
+              "reason": "Gesetze beschließt der Bundestag, und Gerichte urteilen unabhängig vom Kanzler."
+            },
+            {
+              "text": "Der Bundespräsident allein darf jederzeit ohne Anlass den Deutschen Bundestag auflösen und Gesetze erlassen.",
+              "reason": "Das Grundgesetz hat diese weite Auflösungs- und Notverordnungsmacht von Weimar bewusst beendet."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8F4YMGFC106HXRFF1ZJWEMA",
+      "atom_uri": "urn:zam:atom:01M8F4YMGFC106HXRFF1ZJWEMA",
+      "namespace": "zam-academy-gpg-mittelschule-8",
+      "slug": "gpg8-gesetzgebung",
+      "title": "Wie ein Gesetz entsteht: Fallbeispiel und Sinn der Regeln",
+      "domain": "gpg/mittelschule-8/lb3",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-gesetzgebung",
+      "prerequisites": [
+        {
+          "atom_id": "01M8F4YMGEHR9MBSQ9346M30H1",
+          "type": "soft",
+          "rationale": "Der Gesetzgebungsweg verknüpft die Aufgaben von Bundestag, Bundesrat, Regierung und Präsident."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "gpg-mittelschule-8",
+          "topic_code": "lb3",
+          "topic_title": "Politik und Gesellschaft"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "subject": "gpg",
+          "track": "R",
+          "topic_code": "lb3",
+          "topic_title": "Politik und Gesellschaft",
+          "exam_relevant": true
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "subject": "gpg",
+          "track": "M",
+          "topic_code": "lb3",
+          "topic_title": "Politik und Gesellschaft",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8F4YMJ6YCS3F1B9N1KCC6Y1",
+          "slug": "gpg8-gesetzgebung-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Was unterscheidet ein Zustimmungsgesetz von einem Einspruchsgesetz?",
+          "concept": "Ohne Ja des Bundesrats kann der Bundestag ein Zustimmungsgesetz nicht überstimmen; nur ein Kompromiss im Vermittlungsausschuss bleibt möglich.",
+          "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-gesetzgebung",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Ohne Ja des Bundesrats kann der Bundestag ein Zustimmungsgesetz nicht überstimmen; nur ein Kompromiss im Vermittlungsausschuss bleibt möglich.",
+              "Über ein Zustimmungsgesetz darf verfassungsrechtlich ausschließlich der Bundespräsident allein ohne Parlament abstimmen."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Über ein Zustimmungsgesetz darf verfassungsrechtlich ausschließlich der Bundespräsident allein ohne Parlament abstimmen.",
+              "reason": "Verkennt die Rolle von Parlament und Staatsoberhaupt: Der Bundespräsident prüft und fertigt Gesetze aus, beschließt sie aber nicht selbst."
+            },
+            {
+              "text": "Ein Einspruchsgesetz tritt bereits dann gültig in Kraft, bevor der Deutsche Bundestag überhaupt darüber abgestimmt hat.",
+              "reason": "Kehrt den Gesetzgebungsweg um: Ohne vorherigen Mehrheitsbeschluss des Bundestages gelangt kein Bundesgesetz weiter."
+            }
+          ]
+        },
+        {
+          "id": "01M8F4YMJ7D6T9Y1E3TQYZPPGY",
+          "slug": "gpg8-gesetzgebung-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Wozu dienen drei Lesungen, Ausschüsse und der Bundesrat bei einem deutschen Bundesgesetz?",
+          "concept": "Sie sichern demokratische Legitimität durch gewählte Organe, sorgfältige Prüfung und den Ausgleich für das Allgemeinwohl.",
+          "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-gesetzgebung",
+          "sample_solution": "Sie sichern demokratische Legitimität durch gewählte Organe, sorgfältige Prüfung und den Ausgleich für das Allgemeinwohl.",
+          "choice_distractors": [
+            {
+              "text": "Sie sollen grundsätzlich verhindern, dass jemals neue Gesetze im Bundesgesetzblatt in Kraft treten.",
+              "reason": "Das Verfahren sorgt für gründliche Beratung statt vorschneller Beschlüsse."
+            },
+            {
+              "text": "Allein das Bundesverfassungsgericht in Karlsruhe verfasst in drei Lesungen jeden neuen Gesetzestext.",
+              "reason": "Bundestagsabgeordnete und Ausschüsse beraten die Entwürfe; Karlsruhe prüft erst auf Klage."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8F4YMGG5F7GX255J8PYGB7Q",
+      "atom_uri": "urn:zam:atom:01M8F4YMGG5F7GX255J8PYGB7Q",
+      "namespace": "zam-academy-gpg-mittelschule-8",
+      "slug": "gpg8-politische-teilhabe",
+      "title": "Politische Teilhabe: Wahlen, Parteien, Bürgerinitiativen",
+      "domain": "gpg/mittelschule-8/lb4",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-politische-teilhabe",
+      "prerequisites": [
+        {
+          "atom_id": "01M8F4YMGEHR9MBSQ9346M30H1",
+          "type": "soft",
+          "rationale": "Wer politisch mitwirken will, muss wissen, welche Parlamente und Institutionen wofür zuständig sind."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "gpg-mittelschule-8",
+          "topic_code": "lb4",
+          "topic_title": "Lebenswelt"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "subject": "gpg",
+          "track": "R",
+          "topic_code": "lb4",
+          "topic_title": "Lebenswelt",
+          "exam_relevant": true
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "subject": "gpg",
+          "track": "M",
+          "topic_code": "lb4",
+          "topic_title": "Lebenswelt",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8F4YMJ8PJ9REWQY5DN05AC9",
+          "slug": "gpg8-politische-teilhabe-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Wodurch unterscheidet sich eine Bürgerinitiative meist von einer politischen Partei?",
+          "concept": "Eine Bürgerinitiative verfolgt meist zeitlich begrenzt ein konkretes Anliegen vor Ort, während Parteien dauerhaft zu Wahlen antreten.",
+          "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-politische-teilhabe",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Eine Bürgerinitiative verfolgt meist zeitlich begrenzt ein konkretes Anliegen vor Ort, während Parteien dauerhaft zu Wahlen antreten.",
+              "Bürgerinitiativen sind laut Grundgesetz grundsätzlich verboten und werden von den deutschen Gerichten niemals anerkannt."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Bürgerinitiativen sind laut Grundgesetz grundsätzlich verboten und werden von den deutschen Gerichten niemals anerkannt.",
+              "reason": "Widerspricht Art. 8 und 9 GG: Bürgerinnen und Bürger dürfen sich jederzeit frei zu friedlichen Initiativen zusammenschließen."
+            },
+            {
+              "text": "Ausschließlich gewählte Bundesministerinnen und Bundesminister dürfen in einer Stadt oder Gemeinde eine Bürgerinitiative gründen.",
+              "reason": "Verkennt Teilhabe von unten: Gerade engagierte Einwohnerinnen und Einwohner vor Ort gründen Bürgerinitiativen."
+            }
+          ]
+        },
+        {
+          "id": "01M8F4YMJ9RJ7DNKQ0EJ1ZE46H",
+          "slug": "gpg8-politische-teilhabe-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Wie können auch Jugendliche unter 18 Jahren bereits heute politisch mitwirken?",
+          "concept": "Über SMV, Jugendparlamente, Petitionen, Bürgerinitiativen und Beteiligung in Jugendorganisationen oder Bürgerversammlungen.",
+          "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-politische-teilhabe",
+          "sample_solution": "Über SMV, Jugendparlamente, Petitionen, Bürgerinitiativen und Beteiligung in Jugendorganisationen oder Bürgerversammlungen.",
+          "choice_distractors": [
+            {
+              "text": "Vor dem 18. Geburtstag ist jede Form politischer Meinungsäußerung in Deutschland gesetzlich verboten.",
+              "reason": "Meinungs-, Versammlungs- und Petitionsrecht gelten unabhängig vom Wahlalter."
+            },
+            {
+              "text": "Jugendliche dürfen ausschließlich über teure Zeitungsanzeigen Kontakt mit gewählten Abgeordneten aufnehmen.",
+              "reason": "Petitionen, Jugendräte und öffentliche Sprechstunden stehen kostenlos offen."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8F4YMGH8TBGFBCPBP3ZWR6A",
+      "atom_uri": "urn:zam:atom:01M8F4YMGH8TBGFBCPBP3ZWR6A",
+      "namespace": "zam-academy-gpg-mittelschule-8",
+      "slug": "gpg8-wahlbeteiligung",
+      "title": "Wahlbeteiligung und Erstwählerinnen und Erstwähler",
+      "domain": "gpg/mittelschule-8/lb4",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-wahlbeteiligung",
+      "prerequisites": [
+        {
+          "atom_id": "01M8F4YMGG5F7GX255J8PYGB7Q",
+          "type": "soft",
+          "rationale": "Die Analyse der Wahlbeteiligung vertieft Wahlen als zentrale Form demokratischer Mitwirkung."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "gpg-mittelschule-8",
+          "topic_code": "lb4",
+          "topic_title": "Lebenswelt"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "subject": "gpg",
+          "track": "R",
+          "topic_code": "lb4",
+          "topic_title": "Lebenswelt",
+          "exam_relevant": true
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "subject": "gpg",
+          "track": "M",
+          "topic_code": "lb4",
+          "topic_title": "Lebenswelt",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8F4YMJAH46MW0F70R7R5PXZ",
+          "slug": "gpg8-wahlbeteiligung-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Welche Auswirkung hat eine deutlich niedrigere Wahlbeteiligung junger Erwachsener auf das Gesamtergebnis einer Wahl?",
+          "concept": "Die abgegebenen Stimmen älterer Altersgruppen erhalten ein noch größeres Gewicht bei der Sitzverteilung.",
+          "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-wahlbeteiligung",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Die abgegebenen Stimmen älterer Altersgruppen erhalten ein noch größeres Gewicht bei der Sitzverteilung.",
+              "Alle nicht abgegebenen Stimmen werden automatisch den jüngsten Kandidaten zugerechnet."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Alle nicht abgegebenen Stimmen werden automatisch den jüngsten Kandidaten zugerechnet.",
+              "reason": "Irrtum zur Stimmenzählung: Nicht abgegebene Stimmen fließen in die Sitzverteilung schlicht gar nicht ein."
+            },
+            {
+              "text": "Die Wahl wird wegen fehlender Jugendbeteiligung automatisch für ungültig erklärt.",
+              "reason": "Fehlannahme zum Wahlrecht: Wahlen werden bei niedriger Beteiligung bestimmter Altersgruppen nicht automatisch annulliert."
+            }
+          ]
+        },
+        {
+          "id": "01M8F4YMJBVPNPT90WF07G6TND",
+          "slug": "gpg8-wahlbeteiligung-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Warum schwächt eine geringe Wahlbeteiligung von Erstwählenden die Durchsetzung junger Themen?",
+          "concept": "Nicht abgegebene Stimmen zählen nicht mit, sodass ältere Wählergruppen ein überproportionales Gewicht gewinnen.",
+          "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-wahlbeteiligung",
+          "sample_solution": "Nicht abgegebene Stimmen zählen nicht mit, sodass ältere Wählergruppen ein überproportionales Gewicht gewinnen.",
+          "choice_distractors": [
+            {
+              "text": "Weil jede leere Wahlurne nach Schließung der Wahllokale von den Jugendämtern ausgeglichen wird.",
+              "reason": "Es zählen nur gültig abgegebene Stimmen am Wahltag oder per Briefwahl."
+            },
+            {
+              "text": "Weil Erstwählende in Deutschland erst ab ihrem dritten Wahlgang vollständig bei der Auszählung mitzählen.",
+              "reason": "Jede Stimme ab dem gesetzlichen Wahlalter hat bei der ersten Wahl volles Gewicht."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8F4YMGJSBHD158Y5C5TDHR1",
+      "atom_uri": "urn:zam:atom:01M8F4YMGJSBHD158Y5C5TDHR1",
+      "namespace": "zam-academy-gpg-mittelschule-8",
+      "slug": "gpg8-sozialstaat-armut",
+      "title": "Sozialstaat, soziale Sicherung und neue Armut",
+      "domain": "gpg/mittelschule-8/lb4",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-sozialstaat-armut",
+      "prerequisites": [],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "gpg-mittelschule-8",
+          "topic_code": "lb4",
+          "topic_title": "Lebenswelt"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "subject": "gpg",
+          "track": "R",
+          "topic_code": "lb4",
+          "topic_title": "Lebenswelt",
+          "exam_relevant": true
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "subject": "gpg",
+          "track": "M",
+          "topic_code": "lb4",
+          "topic_title": "Lebenswelt",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8F4YMJC69GPKEWWDA858AJ8",
+          "slug": "gpg8-sozialstaat-armut-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Was bedeutet der Begriff „relative Armut“ (oder neue Armut) in Deutschland?",
+          "concept": "Ein Haushalt hat deutlich weniger Geld als der Durchschnitt und kann sich normale gesellschaftliche Teilhabe kaum noch leisten.",
+          "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-sozialstaat-armut",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Ein Haushalt hat deutlich weniger Geld als der Durchschnitt und kann sich normale gesellschaftliche Teilhabe kaum noch leisten.",
+              "Der deutsche Staat hat sämtliche gesetzlichen Sozialversicherungen für Krankheit, Pflege und Rente vollständig abgeschafft."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Der deutsche Staat hat sämtliche gesetzlichen Sozialversicherungen für Krankheit, Pflege und Rente vollständig abgeschafft.",
+              "reason": "Widerspricht der Verfassungswirklichkeit: Deutschland ist ein Sozialstaat nach Art. 20 GG mit fünf gesetzlichen Sozialversicherungen."
+            },
+            {
+              "text": "Ausschließlich Menschen ohne einen abgeschlossenen Schulabschluss gelten in Deutschland gesetzlich als hilfebedürftig.",
+              "reason": "Verkürzt die Ursachen von Armut unzulässig: Auch Erwerbstätige mit Niedriglohn, Alleinerziehende oder Rentner können betroffen sein."
+            }
+          ]
+        },
+        {
+          "id": "01M8F4YMJD9NQQGJHEM3QGTEN6",
+          "slug": "gpg8-sozialstaat-armut-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Warum schützt der deutsche Sozialstaat manche Vollzeit- oder Teilzeitbeschäftigte nicht automatisch vor „neuer Armut“?",
+          "concept": "Wenn niedrige Löhne oder kleine Renten auf stark steigende Mieten und Lebenshaltungskosten treffen, sinkt der Spielraum für Teilhabe.",
+          "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-sozialstaat-armut",
+          "sample_solution": "Wenn niedrige Löhne oder kleine Renten auf stark steigende Mieten und Lebenshaltungskosten treffen, sinkt der Spielraum für Teilhabe.",
+          "choice_distractors": [
+            {
+              "text": "Weil Beschäftigte in Vollzeit oder Teilzeit in Deutschland grundsätzlich keinen Zugang zu den gesetzlichen Sozialversicherungen erhalten.",
+              "reason": "Beschäftigte sind in der Regel pflichtversichert, dennoch können niedrige Löhne knapp sein."
+            },
+            {
+              "text": "Weil relative Armut in Deutschland statistisch erst dann gezählt wird, wenn ein Haushalt überhaupt keinen Zugang zu Trinkwasser mehr besitzt.",
+              "reason": "Relative Armut orientiert sich am mittleren Einkommen und an Teilhabechancen im Alltag."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8F4YMGKSMGKFRGDCM7YGVM8",
+      "atom_uri": "urn:zam:atom:01M8F4YMGKSMGKFRGDCM7YGVM8",
+      "namespace": "zam-academy-gpg-mittelschule-8",
+      "slug": "gpg8-gemeinnuetzige-einrichtungen",
+      "title": "Gemeinnützige Einrichtungen: Beispiel Tafeln",
+      "domain": "gpg/mittelschule-8/lb4",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-gemeinnuetzige-einrichtungen",
+      "prerequisites": [
+        {
+          "atom_id": "01M8F4YMGJSBHD158Y5C5TDHR1",
+          "type": "soft",
+          "rationale": "Die Einordnung von Tafeln baut auf dem Sozialstaatsprinzip und dem Wissen über neue Armut auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "gpg-mittelschule-8",
+          "topic_code": "lb4",
+          "topic_title": "Lebenswelt"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "subject": "gpg",
+          "track": "R",
+          "topic_code": "lb4",
+          "topic_title": "Lebenswelt",
+          "exam_relevant": true
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "subject": "gpg",
+          "track": "M",
+          "topic_code": "lb4",
+          "topic_title": "Lebenswelt",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8F4YMJE16ZDVYMCVPMXSGMZ",
+          "slug": "gpg8-gemeinnuetzige-einrichtungen-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Was bedeutet es, wenn eine Einrichtung wie eine lokale Tafel „gemeinnützig“ ist?",
+          "concept": "Sie erzielt keinen privaten Gewinn, sondern setzt Spenden und Ehrenamt für die Unterstützung bedürftiger Menschen oder das Gemeinwohl ein.",
+          "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-gemeinnuetzige-einrichtungen",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Sie erzielt keinen privaten Gewinn, sondern setzt Spenden und Ehrenamt für die Unterstützung bedürftiger Menschen oder das Gemeinwohl ein.",
+              "Sie gehört einem großen Supermarktkonzern und muss jedes Jahr möglichst viel privaten Unternehmensgewinn erzielen."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Sie gehört einem großen Supermarktkonzern und muss jedes Jahr möglichst viel privaten Unternehmensgewinn erzielen.",
+              "reason": "Verwechselt gemeinnütziges Engagement mit privater Gewinnorientierung: Tafeln arbeiten ehrenamtlich ohne Gewinnausschüttung."
+            },
+            {
+              "text": "Sie wird ausschließlich von hauptamtlichen Bundesbeamten direkt aus einem Berliner Ministerium heraus geleitet.",
+              "reason": "Verwechselt ehrenamtliche Zivilgesellschaft mit staatlicher Verwaltung: Tafeln entstehen als gemeinnützige Vereine vor Ort."
+            }
+          ]
+        },
+        {
+          "id": "01M8F4YMJFQRRADQM24C87JQ5E",
+          "slug": "gpg8-gemeinnuetzige-einrichtungen-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Warum sehen viele Fachleute gemeinnützige Tafeln als unverzichtbare Hilfe, aber zugleich als unzureichenden Ersatz für Sozialpolitik?",
+          "concept": "Tafeln retten Lebensmittel und helfen akut im Ehrenamt, bieten aber keinen einklagbaren Rechtsanspruch wie Lohn oder Grundsicherung.",
+          "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-gemeinnuetzige-einrichtungen",
+          "sample_solution": "Tafeln retten Lebensmittel und helfen akut im Ehrenamt, bieten aber keinen einklagbaren Rechtsanspruch wie Lohn oder Grundsicherung.",
+          "choice_distractors": [
+            {
+              "text": "Weil lokale Tafeln in Deutschland gesetzlich dazu verpflichtet sind, jedem Haushalt eine eigene Mietwohnung zu finanzieren.",
+              "reason": "Tafeln verteilen gespendete Lebensmittel und ersetzen keine staatlichen Geldleistungen."
+            },
+            {
+              "text": "Weil gemeinnützige Tafeln ausschließlich abgelaufene Waren gegen besonders hohe Marktpreise an Kunden weiterverkaufen.",
+              "reason": "Ehrenamtliche geben einwandfreie gespendete Lebensmittel gegen einen Mini-Betrag aus."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8F4YMGMSE4S120X84TXV72H",
+      "atom_uri": "urn:zam:atom:01M8F4YMGMSE4S120X84TXV72H",
+      "namespace": "zam-academy-gpg-mittelschule-8",
+      "slug": "gpg8-generationenvertrag",
+      "title": "Generationenvertrag und demographischer Wandel",
+      "domain": "gpg/mittelschule-8/lb4",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-generationenvertrag",
+      "prerequisites": [
+        {
+          "atom_id": "01M8F4YMGJSBHD158Y5C5TDHR1",
+          "type": "soft",
+          "rationale": "Die gesetzliche Rentenversicherung ist die größte Säule des beitragsfinanzierten Sozialstaats."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "gpg-mittelschule-8",
+          "topic_code": "lb4",
+          "topic_title": "Lebenswelt"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "subject": "gpg",
+          "track": "R",
+          "topic_code": "lb4",
+          "topic_title": "Lebenswelt",
+          "exam_relevant": true
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "subject": "gpg",
+          "track": "M",
+          "topic_code": "lb4",
+          "topic_title": "Lebenswelt",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8F4YMJG0M5AP2A1CSQ49H2A",
+          "slug": "gpg8-generationenvertrag-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Wie funktioniert das Umlageverfahren beim Generationenvertrag?",
+          "concept": "Die laufenden Rentenbeiträge der heute Erwerbstätigen werden direkt an die heute im Ruhestand lebenden Menschen ausgezahlt.",
+          "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-generationenvertrag",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Die laufenden Rentenbeiträge der heute Erwerbstätigen werden direkt an die heute im Ruhestand lebenden Menschen ausgezahlt.",
+              "Jeder Berufstätige spart seine gesetzliche Rente getrennt auf einem privaten Goldkonto an."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Jeder Berufstätige spart seine gesetzliche Rente getrennt auf einem privaten Goldkonto an.",
+              "reason": "Beschreibt Kapitaldeckung statt Umlageverfahren: Im Generationenvertrag fließen Beiträge sofort als heutige Renten wieder ab."
+            },
+            {
+              "text": "Nur der Staat allein zahlt alle Renten, ohne dass Arbeitnehmer Beiträge leisten.",
+              "reason": "Unterschätzt die Finanzierungsbasis: Den Hauptteil der Rentenkasse speisen die monatlichen Beiträge von Beschäftigten und Arbeitgebern."
+            }
+          ]
+        },
+        {
+          "id": "01M8F4YMJH7M7T8DQZE9BRVD7Y",
+          "slug": "gpg8-generationenvertrag-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Welches Hauptproblem entsteht für den Generationenvertrag durch den demographischen Wandel?",
+          "concept": "Auf eine Rentenbezieherin oder einen Rentenbezieher kommen immer weniger Beitragszahlende, während die Rentenbezugsdauer steigt.",
+          "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-generationenvertrag",
+          "sample_solution": "Auf eine Rentenbezieherin oder einen Rentenbezieher kommen immer weniger Beitragszahlende, während die Rentenbezugsdauer steigt.",
+          "choice_distractors": [
+            {
+              "text": "Die gesetzliche Rentenkasse legt sämtliche monatlichen Beiträge für den Kauf großer Agrarflächen im Ausland zurück.",
+              "reason": "Beim Umlageverfahren werden Beiträge ohne großes Ansparen direkt weitergeleitet."
+            },
+            {
+              "text": "Es werden durch den demographischen Wandel künftig deutlich mehr Kinder als ältere Menschen in Deutschland leben.",
+              "reason": "Steigende Lebenserwartung und geringere Geburtenzahlen lassen den Älterenanteil wachsen."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8F4YMGN7998E2PJTYC23909",
+      "atom_uri": "urn:zam:atom:01M8F4YMGN7998E2PJTYC23909",
+      "namespace": "zam-academy-gpg-mittelschule-8",
+      "slug": "gpg8-altersvorsorge",
+      "title": "Gesetzliche, betriebliche und private Altersvorsorge",
+      "domain": "gpg/mittelschule-8/lb4",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-altersvorsorge",
+      "prerequisites": [
+        {
+          "atom_id": "01M8F4YMGMSE4S120X84TXV72H",
+          "type": "soft",
+          "rationale": "Erst die demographische Lücke im Generationenvertrag begründet betriebliche und private Altersvorsorge."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "gpg-mittelschule-8",
+          "topic_code": "lb4",
+          "topic_title": "Lebenswelt"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "subject": "gpg",
+          "track": "R",
+          "topic_code": "lb4",
+          "topic_title": "Lebenswelt",
+          "exam_relevant": true
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "subject": "gpg",
+          "track": "M",
+          "topic_code": "lb4",
+          "topic_title": "Lebenswelt",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8F4YMJJBVGD44AQQGNWFBBG",
+          "slug": "gpg8-altersvorsorge-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Warum lohnt sich ergänzende Altersvorsorge besonders dann, wenn man bereits in jungen Berufsjahren mit kleinen Beträgen beginnt?",
+          "concept": "Durch die lange Laufzeit von dreißig bis vierzig Jahren wächst selbst eine kleine monatliche Sparrate deutlich stärker an.",
+          "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-altersvorsorge",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Durch die lange Laufzeit von dreißig bis vierzig Jahren wächst selbst eine kleine monatliche Sparrate deutlich stärker an.",
+              "Weil junge Auszubildende erst ab dem fünfzigsten Lebensjahr gesetzliche Rentenbeiträge einzahlen dürfen."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Weil junge Auszubildende erst ab dem fünfzigsten Lebensjahr gesetzliche Rentenbeiträge einzahlen dürfen.",
+              "reason": "Fehlannahme zur Versicherungspflicht: Auszubildende zahlen bereits ab dem ersten Lehrjahr gesetzliche Rentenbeiträge."
+            },
+            {
+              "text": "Weil Verträge mit besonders hohen Abschlussgebühren das angesparte Kapital automatisch am schnellsten erhöhen.",
+              "reason": "Kehrt Finanzwissen ins Gegenteil: Hohe Gebühren schmälern langfristig die Rendite statt das Guthaben zu steigern."
+            }
+          ]
+        },
+        {
+          "id": "01M8F4YMJK8XRHHJ14XQHACXFR",
+          "slug": "gpg8-altersvorsorge-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Warum ergänzt das Drei-Säulen-Modell die gesetzliche Rente besonders wirkungsvoll bei frühem Einstieg?",
+          "concept": "Neben der gesetzlichen und betrieblichen Säule können kleine, über Jahrzehnte kostengünstig angelegte private Beträge Lücken abfedern.",
+          "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-altersvorsorge",
+          "sample_solution": "Neben der gesetzlichen und betrieblichen Säule können kleine, über Jahrzehnte kostengünstig angelegte private Beträge Lücken abfedern.",
+          "choice_distractors": [
+            {
+              "text": "Weil private Verträge mit möglichst hohen Abschlussgebühren angespartes Geld automatisch am zuverlässigsten vor Versorgungslücken bewahren.",
+              "reason": "Hohe Gebühren schmälern das angesparte Kapital erheblich."
+            },
+            {
+              "text": "Weil die gesetzliche Rentenversicherung für Auszubildende während der ersten zwanzig Berufsjahre komplett freiwillig bleibt.",
+              "reason": "Rentenversicherungspflicht beginnt bei Ausbildungsstart automatisch als erste Säule."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8F4YMGPRCVFG7VCYTF6RKEP",
+      "atom_uri": "urn:zam:atom:01M8F4YMGPRCVFG7VCYTF6RKEP",
+      "namespace": "zam-academy-gpg-mittelschule-8",
+      "slug": "gpg8-landwirtschaft-vergleich",
+      "title": "Ökologischer und konventioneller Landbau",
+      "domain": "gpg/mittelschule-8/lb4",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-landwirtschaft-vergleich",
+      "prerequisites": [],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "gpg-mittelschule-8",
+          "topic_code": "lb4",
+          "topic_title": "Lebenswelt"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "subject": "gpg",
+          "track": "R",
+          "topic_code": "lb4",
+          "topic_title": "Lebenswelt",
+          "exam_relevant": true
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "subject": "gpg",
+          "track": "M",
+          "topic_code": "lb4",
+          "topic_title": "Lebenswelt",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8F4YMJMPCTYSEKJC1Z7QB7N",
+          "slug": "gpg8-landwirtschaft-vergleich-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Welcher Grundsatz unterscheidet den zertifizierten ökologischen Landbau zwingend vom konventionellen Anbau?",
+          "concept": "Der Verzicht auf chemisch-synthetische Pflanzenschutzmittel und leichtlöslichen Mineraldünger zugunsten von Fruchtfolge und mechanischer Pflege.",
+          "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-landwirtschaft-vergleich",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Der Verzicht auf chemisch-synthetische Pflanzenschutzmittel und leichtlöslichen Mineraldünger zugunsten von Fruchtfolge und mechanischer Pflege.",
+              "Zertifizierte Bio-Betriebe dürfen auf ihren Feldern überhaupt keine landwirtschaftlichen Maschinen wie Traktoren nutzen."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Zertifizierte Bio-Betriebe dürfen auf ihren Feldern überhaupt keine landwirtschaftlichen Maschinen wie Traktoren nutzen.",
+              "reason": "Fehlvorstellung vom Ökolandbau: Moderne Traktoren und Hackgeräte ersetzen auf Bio-Höfen gerade die fehlenden chemischen Herbizide."
+            },
+            {
+              "text": "Im ökologischen Anbau wachsen Äpfel und Getreide allein durch das Bio-Siegel doppelt so schnell wie im konventionellen Anbau.",
+              "reason": "Verkennt Ertragsverhältnisse: Ohne Mineraldünger sind die Erträge je Hektar im Bio-Anbau meist niedriger als konventionell."
+            }
+          ]
+        },
+        {
+          "id": "01M8F4YMJNCWH2CQ96X7S6Q6H1",
+          "slug": "gpg8-landwirtschaft-vergleich-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Worin liegt der zentrale Zielkonflikt zwischen konventionellem und ökologischem Landbau?",
+          "concept": "Konventioneller Anbau erzielt höhere Hektarerträge und günstigere Preise; ökologischer Anbau schützt Böden, Grundwasser und Artenvielfalt stärker.",
+          "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-landwirtschaft-vergleich",
+          "sample_solution": "Konventioneller Anbau erzielt höhere Hektarerträge und günstigere Preise; ökologischer Anbau schützt Böden, Grundwasser und Artenvielfalt stärker.",
+          "choice_distractors": [
+            {
+              "text": "Ökolandbau benötigt weder Arbeitszeit noch landwirtschaftliche Fläche und liefert doppelt so hohe Erträge wie konventionelle Betriebe.",
+              "reason": "Ohne Kunstdünger und chemischen Schutz sind Erträge pro Hektar meist niedriger."
+            },
+            {
+              "text": "Im konventionellen Anbau ist der Einsatz von Traktoren und moderner Agrartechnik in ganz Deutschland gesetzlich verboten.",
+              "reason": "Beide Anbauformen nutzen moderne Traktoren und Technik auf dem Feld."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8F4YMGQ516WGGK5E4ZS96C5",
+      "atom_uri": "urn:zam:atom:01M8F4YMGQ516WGGK5E4ZS96C5",
+      "namespace": "zam-academy-gpg-mittelschule-8",
+      "slug": "gpg8-oekolandbau-kosten",
+      "title": "Kosten eines nachhaltigen regionalen Produkts",
+      "domain": "gpg/mittelschule-8/lb4",
+      "reduction": "formal",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-oekolandbau-kosten",
+      "prerequisites": [
+        {
+          "atom_id": "01M8F4YMGPRCVFG7VCYTF6RKEP",
+          "type": "soft",
+          "rationale": "Die Produktionskosten-Rechnung erklärt die Preisunterschiede aus dem ökologischen Landbau-Vergleich."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "gpg-mittelschule-8",
+          "topic_code": "lb4",
+          "topic_title": "Lebenswelt"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "subject": "gpg",
+          "track": "M",
+          "topic_code": "lb4",
+          "topic_title": "Lebenswelt",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8F4YMJPY49CS2EBRP547233",
+          "slug": "gpg8-oekolandbau-kosten-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Warum steigen die Produktionskosten pro Kilogramm im Ökolandbau besonders deutlich, wenn der Hektarertrag wetterbedingt sinkt?",
+          "concept": "Weil feste Kosten für Fläche, Arbeit und Maschinen auf weniger geerntete Kilogramm verteilt werden müssen.",
+          "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-oekolandbau-kosten",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Weil feste Kosten für Fläche, Arbeit und Maschinen auf weniger geerntete Kilogramm verteilt werden müssen.",
+              "Weil Bio-Betriebe bei schlechtem Wetter gesetzlich doppelte Mehrwertsteuer zahlen müssen."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Weil Bio-Betriebe bei schlechtem Wetter gesetzlich doppelte Mehrwertsteuer zahlen müssen.",
+              "reason": "Erfindet eine nicht existierende Strafsteuer: Wetterbedingte Ernteausfälle erhöhen nicht den Mehrwertsteuersatz."
+            },
+            {
+              "text": "Weil bei geringerem Ertrag automatisch mehr Kunstdünger zugekauft wird.",
+              "reason": "Widerspricht den Bio-Richtlinien: Leichtlösliche Mineraldünger (Kunstdünger) sind im ökologischen Landbau grundsätzlich verboten."
+            }
+          ]
+        },
+        {
+          "id": "01M8F4YMJQ7F9E40MYBPKE0T6Q",
+          "slug": "gpg8-oekolandbau-kosten-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Warum sind regionale Bio-Produkte im Einkauf meist teurer als konventionelle Vergleichsware?",
+          "concept": "Mehr Arbeitsstunden, geringerer Flächenertrag, Bio-Futter und Öko-Kontrollen erhöhen die Stückkosten pro Kilogramm.",
+          "source_link": "https://academy.zam-os.org/gpg-mittelschule-8/#lesson=gpg8-oekolandbau-kosten",
+          "sample_solution": "Mehr Arbeitsstunden, geringerer Flächenertrag, Bio-Futter und Öko-Kontrollen erhöhen die Stückkosten pro Kilogramm.",
+          "choice_distractors": [
+            {
+              "text": "Weil bayerische Bio-Betriebe ihre frische Ernte grundsätzlich einzeln per Flugzeug bis an den Nachbarort ausliefern.",
+              "reason": "Regionale Bio-Ware spart gerade weite Transportwege ein."
+            },
+            {
+              "text": "Weil ökologische Betriebe den größten Teil ihrer Anbauflächen mit leichtlöslichem Kunstdünger intensiv behandeln.",
+              "reason": "Verzicht auf leichtlöslichen Mineraldünger senkt den Ertrag pro Hektar."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
