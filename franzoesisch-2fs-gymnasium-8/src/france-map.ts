@@ -28,7 +28,7 @@ export const FRANCE_LAND = [
 export const FRANCE_CITIES = {
 	paris: { name: "Paris", pin: [270, 120], labelAt: [280, 124] },
 	lyon: { name: "Lyon", pin: [365, 230], labelAt: [378, 228] },
-	marseille: { name: "Marseille", pin: [370, 344], labelAt: [378, 337] },
+	marseille: { name: "Marseille", pin: [370, 344], labelAt: [388, 336] },
 	toulouse: { name: "Toulouse", pin: [271, 326], labelAt: [286, 329] },
 	bordeaux: { name: "Bordeaux", pin: [229, 276], labelAt: [239, 270] },
 	rennes: { name: "Rennes", pin: [150, 127], labelAt: [158, 132] },
@@ -176,8 +176,8 @@ export const QUEBEC_RIVER = [
 	[540, 92],
 ] as const satisfies readonly MapPoint[];
 export const QUEBEC_CITIES = {
-	montreal: { name: "Montréal", pin: [190, 268], labelAt: [150, 296] },
-	quebec: { name: "Québec", pin: [318, 196], labelAt: [290, 226] },
+	montreal: { name: "Montréal", pin: [190, 268], labelAt: [206, 308] },
+	quebec: { name: "Québec", pin: [318, 196], labelAt: [248, 188] },
 	ottawa: { name: "Ottawa", pin: [110, 262], labelAt: [40, 254] },
 } as const satisfies Record<string, { name: string; pin: MapPoint; labelAt: MapPoint }>;
 

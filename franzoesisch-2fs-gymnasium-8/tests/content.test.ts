@@ -29,7 +29,7 @@ import {
 	ZAM_CELL_ID,
 } from "../src/zam/zam-link";
 import { renderExplorer } from "../src/explorers";
-import { workshopGoals } from "../src/workshop";
+import { workshopGoals, workshopOptions } from "../src/workshop";
 
 const items = cell.atoms.map((a) => a.practice_items).flat();
 const visible = (html: string) =>
@@ -116,6 +116,30 @@ describe("Grade 8 second-language French teaching contract", () => {
 		expect(sourceChecks.map((s) => [s.id, s.url])).toEqual(SOURCES.map((s) => [s.id, s.url]));
 		for (const check of sourceChecks) expect(check.title.length).toBeGreaterThan(10);
 		expect(cell.sources.map((s) => s.uri)).toEqual(SOURCES.map((s) => s.url));
+	});
+	it("places the correct workshop option at varying positions", () => {
+		const positions = LESSONS.map((l) =>
+			l.workshop.goals.map((g, i) => {
+				const shown = workshopOptions(l, i);
+				expect([...shown].sort()).toEqual([...g.options].sort());
+				return shown.indexOf(g.answer);
+			}),
+		);
+		for (const goal of [0, 1, 2]) {
+			const counts = [0, 1, 2].map((p) => positions.filter((row) => row[goal] === p).length);
+			for (const count of counts) expect(count).toBeGreaterThanOrEqual(5);
+		}
+		expect(new Set(positions.map((row) => row.join(""))).size).toBeGreaterThanOrEqual(10);
+	});
+	it("keeps agreement after avoir receptive: short answers name the noun, not the participle", () => {
+		for (const p of findLesson("f8-2-accord-avoir")!.practice)
+			for (const answer of p.answers) expect(answer).toMatch(/^(la|le|les) /);
+	});
+	it("scopes participle agreement of reflexive verbs to sentences without a direct object", () => {
+		for (const id of ["f8-2-plus-que-parfait", "f8-2-pronominaux-passe"]) {
+			expect(lessonText(id)).toContain("lavé les mains");
+			expect(findLesson(id)!.takeaway).toContain("lavé les mains");
+		}
 	});
 	it("gives every timeline three different points in time", () => {
 		const timelines = LESSONS.map(renderExplorer).filter((html) => html.includes("timeline-figure"));

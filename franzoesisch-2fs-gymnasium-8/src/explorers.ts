@@ -100,10 +100,10 @@ const lequel: TileStep[] = [
 	{ label: "les baskets", icon: "♀♀", tiles: [["les", "x"], ["+", ""], ["quelles", "x"], ["→", ""], ["Lesquelles", "p"], ["veux-tu ?", "v"]], detail: "Feminin Plural: lesquelles; maskulin Plural wäre lesquels." },
 ];
 const quiQue: Step[] = [
-	{ label: "Person · Subjekt", icon: "👤 S", example: "Qui est-ce qui a gagné ?", detail: "Wer? Nach est-ce folgt direkt das Verb." },
-	{ label: "Person · Objekt", icon: "👤 O", example: "Qui est-ce que tu invites ?", detail: "Wen? Nach est-ce folgt ein Subjekt." },
-	{ label: "Sache · Subjekt", icon: "▢ S", example: "Qu’est-ce qui se passe ?", detail: "Was? Die Sache ist Subjekt, danach folgt direkt das Verb." },
-	{ label: "Sache · Objekt", icon: "▢ O", example: "Qu’est-ce que tu cherches ?", detail: "Was? Die Sache ist Objekt, danach folgt ein Subjekt." },
+	{ label: "Person · Subjekt", icon: "👤 S", example: "Qui est-ce qui a gagné ?", detail: "Wer? Die gesuchte Person ist Subjekt; nach der Fragewendung folgt direkt das Verb." },
+	{ label: "Person · Objekt", icon: "👤 O", example: "Qui est-ce que tu invites ?", detail: "Wen? Die gesuchte Person ist Objekt; der Satz hat ein eigenes Subjekt: tu." },
+	{ label: "Sache · Subjekt", icon: "▢ S", example: "Qu’est-ce qui se passe ?", detail: "Was? Die gesuchte Sache ist Subjekt; nach der Fragewendung folgt direkt das Verb." },
+	{ label: "Sache · Objekt", icon: "▢ O", example: "Qu’est-ce que tu cherches ?", detail: "Was? Die gesuchte Sache ist Objekt; der Satz hat ein eigenes Subjekt: tu." },
 ];
 const doctor: Step[] = [
 	{ label: "la tête", icon: "🤕", example: "J’ai mal à la tête.", detail: "Feminin: à la." },
@@ -190,8 +190,8 @@ const nearTime: Step[] = [
 ];
 const pqp: TileStep[] = [
 	{ label: "avoir", icon: "a", tiles: [["j’", "p"], ["avais", "x"], ["mangé", "v"]], detail: "Imparfait von avoir + Partizip." },
-	{ label: "être", icon: "ê", tiles: [["elle", "p"], ["était", "x"], ["partie", "v"]], detail: "Imparfait von être + angeglichenes Partizip." },
-	{ label: "reflexiv", icon: "se", tiles: [["je", "p"], ["m’", ""], ["étais", "x"], ["levé(e)", "v"]], detail: "Reflexive Verben immer mit être." },
+	{ label: "être", icon: "ê", tiles: [["elle", "p"], ["était", "x"], ["partie", "v"]], detail: "Imparfait von être; bei partir wird das Partizip an elle angeglichen." },
+	{ label: "reflexiv", icon: "se", tiles: [["elle", "p"], ["s’", ""], ["était", "x"], ["lavé", "v"], ["les mains", "x"]], detail: "Reflexiv immer mit être; folgt ein direktes Objekt wie les mains, bleibt lavé unverändert (sonst: elle s’était lavée)." },
 ];
 const before: Step[] = [
 	{ label: "plus-que-parfait", icon: "", example: "Le train était déjà parti.", detail: "Zuerst: Der Zug fährt ab." },
@@ -199,7 +199,7 @@ const before: Step[] = [
 	{ label: "présent", icon: "", example: "Maintenant, je raconte l’histoire.", detail: "Der Moment, in dem du erzählst." },
 ];
 const reflexive: TileStep[] = [
-	{ label: "Bejaht", icon: "+", tiles: [["Elle", "p"], ["s’", ""], ["est", "x"], ["levée", "v"]], detail: "Pronomen + être + angeglichenes Partizip." },
+	{ label: "Bejaht", icon: "+", tiles: [["Elle", "p"], ["s’", ""], ["est", "x"], ["levée", "v"]], detail: "Pronomen + être + Partizip, angeglichen, weil kein direktes Objekt folgt." },
 	{ label: "Verneint", icon: "−", tiles: [["Je", "p"], ["ne", "x"], ["me", ""], ["suis", "x"], ["pas", "x"], ["réveillé", "v"]], detail: "Ne … pas umschließen Pronomen und Hilfsverb." },
 	{ label: "Plural", icon: "●●", tiles: [["Les filles", "p"], ["se", ""], ["sont", "x"], ["amusées", "v"]], detail: "Feminin Plural: -ées." },
 ];

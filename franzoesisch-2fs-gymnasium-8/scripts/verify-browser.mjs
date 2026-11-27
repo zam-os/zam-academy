@@ -362,7 +362,25 @@ try {
 			}
 		}
 	}
+	// Reset in a second tab: the first tab must drop typed answers, marks and drafts.
 	await route(`#lesson=${first.id}&level=1`);
+	await evaluate(`var input=document.querySelector('#practice-0');input.value='réponse en cours';input.dispatchEvent(new Event('input',{bubbles:true}));`);
+	assert.ok(await evaluate("document.querySelector('#draft').value.length > 0"));
+	const { targetId: secondTarget } = await send("Target.createTarget", { url: "about:blank" });
+	const second = (await send("Target.attachToTarget", { targetId: secondTarget, flatten: true })).sessionId;
+	const evaluateSecond = async (expression) => (await send("Runtime.evaluate", { expression, returnByValue: true, awaitPromise: true }, second)).result.value;
+	await send("Page.enable", {}, second);
+	await send("Page.navigate", { url: appUrl }, second);
+	for (let i = 0; i < 100 && !(await evaluateSecond('!!document.querySelector("#reset")')); i++)
+		await new Promise((resolve) => setTimeout(resolve, 20));
+	await evaluateSecond("document.querySelector('#reset').click(); document.querySelector('#confirm-reset').click()");
+	await waitForPage(
+		"document.querySelector('#practice-0')?.value === '' && document.querySelector('#draft')?.value === '' && !document.querySelector('.done-mark:not(#writing-status)')",
+		"A reset in another tab left typed answers, drafts or marks visible.",
+	);
+	await send("Target.closeTarget", { targetId: secondTarget });
+	await route(`#lesson=${first.id}&level=1`);
+	await evaluate(`var draft=document.querySelector('#draft');draft.value=${JSON.stringify(first.tasks[1].model)};draft.dispatchEvent(new Event('input',{bubbles:true}));`);
 	assert.ok(await evaluate("document.querySelector('#draft').value.length > 0"));
 	await evaluate("document.querySelector('.draft-storage summary').click()");
 	assert.match(
@@ -416,6 +434,7 @@ try {
 					"Québec map highlights",
 					"partner listening",
 					"hosted deep link",
+					"reset from a second tab clears the open lesson",
 				],
 			},
 			null,
