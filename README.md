@@ -88,6 +88,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | Datennetze und Internet (DE/EN, LehrplanPLUS IT 2.5.1, HTTPS als Ergänzung) | [`datennetze/`](datennetze/) | https://academy.zam-os.org/datennetze/ | `zam-academy:datennetze` |
 | BwR 7 Realschule (LehrplanPLUS Bayern, Zweig II und IIIa) | [`bwr-realschule-7/`](bwr-realschule-7/) | Built by Pages on merge | `zam-academy:bwr-realschule-7` |
 | BwR 9 Realschule (LehrplanPLUS Bayern, Zweig II) | [`bwr-realschule-9/`](bwr-realschule-9/) | https://academy.zam-os.org/bwr-realschule-9/ | `zam-academy:bwr-realschule-9` |
+| Wirtschaft und Recht 8 Realschule (Bavaria, LehrplanPLUS, track II) | [`wirtschaft-recht-realschule-8/`](wirtschaft-recht-realschule-8/) | https://academy.zam-os.org/wirtschaft-recht-realschule-8/ | `zam-academy:wirtschaft-recht-realschule-8` |
 | Wirtschaft und Recht 9 Realschule (LehrplanPLUS Bayern, WPFG I und III) | [`wirtschaft-recht-realschule-9/`](wirtschaft-recht-realschule-9/) | https://academy.zam-os.org/wirtschaft-recht-realschule-9/ | `zam-academy:wirtschaft-recht-realschule-9` |
 | Französisch 9 Realschule (LehrplanPLUS Bayern, Wahlpflichtfächergruppe IIIa, zweite Fremdsprache) | [`franzoesisch-realschule-9/`](franzoesisch-realschule-9/) | https://academy.zam-os.org/franzoesisch-realschule-9/ | `zam-academy:franzoesisch-realschule-9` |
 | Französisch 10 Realschule (LehrplanPLUS Bayern, Wahlpflichtfächergruppe IIIa, zweite Fremdsprache) | [`franzoesisch-realschule-10/`](franzoesisch-realschule-10/) | https://academy.zam-os.org/franzoesisch-realschule-10/ | `zam-academy:franzoesisch-realschule-10` |
@@ -160,6 +161,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Datennetze: cd datennetze (dev server on :5190)
 # BwR 7: cd bwr-realschule-7 (dev server on :5272)
 # BwR 9: cd bwr-realschule-9 (dev server on :5191)
+# Wirtschaft und Recht 8: cd wirtschaft-recht-realschule-8 (dev server on :5294)
 # Wirtschaft und Recht 9: cd wirtschaft-recht-realschule-9 (dev server on :5192)
 # Deutsch 9: cd deutsch-realschule-9 (dev server on :5193)
 # Mathematik 10: cd mathematik-realschule-10 (dev server on :5194)
