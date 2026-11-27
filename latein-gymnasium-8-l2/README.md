@@ -22,7 +22,7 @@ npm run package:zip
 node scripts/verify-browser.mjs
 ```
 
-Vite serves the app on port 5296. The build writes a self-contained
+Vite serves the app on port 5297. The build writes a self-contained
 `dist/index.html`. The ZIP goes to `release/`.
 
 The [curriculum and legacy review](../docs/latein-gymnasium-8-l2-coverage.md)

@@ -14,7 +14,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | Latein 7 Gymnasium (LehrplanPLUS Bayern, 1. Fremdsprache) | [`latein-gymnasium-7-l1/`](latein-gymnasium-7-l1/) | Built by Pages on merge | `zam-academy:latein-gymnasium-7-l1` |
 | Latein 7 Gymnasium (LehrplanPLUS Bayern, 2. Fremdsprache) | [`latein-gymnasium-7-l2/`](latein-gymnasium-7-l2/) | Built by Pages on merge | `zam-academy:latein-gymnasium-7-l2` |
 | Latein 8 Gymnasium (LehrplanPLUS Bayern, 1. Fremdsprache) | [`latein-gymnasium-8-l1/`](latein-gymnasium-8-l1/) | Built by Pages on merge | `zam-academy:latein-gymnasium-8-l1` |
-| Grade 8 Latin, second foreign language (Bavarian Gymnasium) | [`latein-gymnasium-8-l2/`](latein-gymnasium-8-l2/) | Built by Pages on merge | `zam-academy:latein-gymnasium-8-l2` |
+| Latein 8 Gymnasium (LehrplanPLUS Bayern, 2. Fremdsprache) | [`latein-gymnasium-8-l2/`](latein-gymnasium-8-l2/) | Built by Pages on merge | `zam-academy:latein-gymnasium-8-l2` |
 | English 6 Gymnasium (Bavaria, 2. FS) | [`englisch-2fs-gymnasium-6/`](englisch-2fs-gymnasium-6/) | Built by Pages on merge | `zam-academy:englisch-2fs-gymnasium-6` |
 | English 7 Gymnasium (Bavaria, second foreign language) | [`englisch-2fs-gymnasium-7/`](englisch-2fs-gymnasium-7/) | Built by Pages on merge | `zam-academy:englisch-2fs-gymnasium-7` |
 | French 6 Gymnasium (Bavaria, 2. FS) | [`franzoesisch-2fs-gymnasium-6/`](franzoesisch-2fs-gymnasium-6/) | Built by Pages on merge | `zam-academy:franzoesisch-2fs-gymnasium-6` |
@@ -232,7 +232,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Latein 7 Gymnasium (1. FS): cd latein-gymnasium-7-l1 (dev server on :5287)
 # Latein 7 Gymnasium (2. FS): cd latein-gymnasium-7-l2 (dev server on :5289)
 # Latein 8 Gymnasium (1. FS): cd latein-gymnasium-8-l1 (dev server on :5295)
-# Grade 8 Latin, second foreign language: cd latein-gymnasium-8-l2 (dev server on :5296)
+# Latein 8 Gymnasium (2. Fremdsprache): cd latein-gymnasium-8-l2 (dev server on :5297)
 # English 6 Gymnasium (2. FS): cd englisch-2fs-gymnasium-6 (dev server on :5281)
 # English 7 Gymnasium (second foreign language): cd englisch-2fs-gymnasium-7 (dev server on :5286)
 # French 6 Gymnasium (2. FS): cd franzoesisch-2fs-gymnasium-6 (dev server on :5282)

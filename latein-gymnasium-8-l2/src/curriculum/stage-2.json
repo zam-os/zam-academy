@@ -353,7 +353,6 @@
 				"prompt": "Wie übersetzt du „optimus quisque“ im treffenden Deutsch?",
 				"answers": [
 					"gerade die besten",
-					"alle guten",
 					"jeder beste"
 				],
 				"feedback": "Superlativ + quisque hebt die ganze Spitzengruppe hervor: optimus quisque = „gerade die Besten“."
@@ -435,12 +434,12 @@
 			"L8-19"
 		],
 		"paragraphs": [
-			"Verallgemeinernde Relativpronomina drücken aus, dass eine Aussage für jede beliebige Person oder Sache gilt: quisquis (substantivisch; im Neutrum quidquid = „was auch immer“) und quicumque, quaecumque, quodcumque („wer/welcher auch immer“). Wichtig für die Übersetzung: Während im Deutschen manchmal „mag“ steht, verwendet das Lateinische nach quisquis und quicumque in aller Regel den Indikativ!",
+			"Verallgemeinernde Relativpronomina drücken aus, dass eine Aussage für jede beliebige Person oder Sache gilt: quisquis (substantivisch; im Neutrum quidquid = „was auch immer“) und quicumque, quaecumque, quodcumque („wer/welcher auch immer“). Wichtig für die Übersetzung: Während im Deutschen manchmal „mag“ steht, steht im lateinischen Relativsatz meist der Indikativ. Im mittelalterlichen Sprichwort aus den Gesta Romanorum steht agas dagegen im Konjunktiv.",
 			"Noch übersichtlicher werden komplexe Perioden durch Korrelativa – also aufeinander verweisende Pronomina oder Adverbien zwischen Haupt- und Nebensatz: is – qui (derjenige, welcher), talis – qualis (so beschaffen, wie), tantus – quantus (so groß, wie groß), tot – quot (so viele, wie viele) und ita/sic – ut (so, wie)."
 		],
 		"materialLabel": "Verallgemeinerung und Korrelation in Lehrsätzen",
 		"materialLanguage": "la",
-		"material": "1. Quidquid agis, prudenter age et respice finem!\n2. Quicumque leges servat, libertatem civitatis defendit.\n3. Tanta erat auctoritas senatus, quantam nemo antea viderat.\n4. Tot sententiae sunt, quot homines.",
+		"material": "1. Quicquid agas, prudenter agas et respice finem. (Gesta Romanorum 103)\n2. Quicumque leges servat, libertatem civitatis defendit.\n3. Tanta erat auctoritas senatus, quantam nemo antea viderat.\n4. Tot sententiae sunt, quot homines.",
 		"sourceIds": [
 			"lp"
 		],
@@ -452,9 +451,9 @@
 				{
 					"id": "ko-quisquis",
 					"label": "1 · quisquis / quicumque",
-					"badge": "Immer Indikativ!",
-					"latin": "Quidquid agis · Quicumque dicit",
-					"detail": "quisquis (vor allem Nom. quisquis, Neutr. quidquid) und voll durchdeklinierbares quicumque bedeuten „wer/was auch immer“."
+					"badge": "Meist Indikativ",
+					"latin": "Quidquid vides, nota.",
+					"detail": "Quidquid vides heißt „Was auch immer du siehst“. Vides steht hier im Indikativ. Quicumque ist in allen Kasus deklinierbar."
 				},
 				{
 					"id": "ko-menge",
@@ -482,7 +481,7 @@
 			],
 			"explanation": "Im Unterschied zu deutschen Wendungen („wer auch immer es sei“) steht nach quisquis/quicumque im Lateinischen regelmäßig der Indikativ."
 		},
-		"takeaway": "Verallgemeinernde Relativa (quisquis, quicumque) stehen im Indikativ; Korrelativa verknüpfen t-Wörter im Hauptsatz mit qu-Wörtern im Nebensatz.",
+		"takeaway": "Verallgemeinernde Relativa (quisquis, quicumque) stehen meist mit Indikativ; Korrelativa verknüpfen t-Wörter im Hauptsatz mit qu-Wörtern im Nebensatz.",
 		"practice": [
 			{
 				"prompt": "Welches Korrelativpaar ergänzt im Deutschen „so viele Meinungen …, … Menschen“ (aus Satz 4)? Nenne beide lateinischen Wörter:",
@@ -500,17 +499,17 @@
 					"quidquid",
 					"quicquid"
 				],
-				"feedback": "Das berühmte Sprichwort lautet: Quidquid agis, prudenter age! („Was auch immer du tust, handle klug!“)."
+				"feedback": "Quidquid und quicquid sind zwei Schreibweisen zu quisquis. Dazu passt der Spruch „Quicquid agas, prudenter agas et respice finem“ (Gesta Romanorum 103)."
 			}
 		],
 		"tasks": {
 			"1": {
 				"language": "de",
 				"prompt": "Übersetze alle vier Sätze des Materials und markiere die verallgemeinernden Relativpronomina sowie die beiden Korrelativpaare.",
-				"model": "1. Was auch immer du tust, handle klug und bedenke das Ende! (verallg. Relativpronomen: quidquid).\n2. Wer auch immer die Gesetze achtet, verteidigt die Freiheit des Staates (verallg. Relativpronomen: quicumque).\n3. So groß war das Ansehen des Senats, wie es zuvor niemand gesehen hatte (Korrelativpaar: tanta – quantam).\n4. So viele Meinungen gibt es, wie es Menschen gibt (Korrelativpaar: tot – quot).",
+				"model": "1. Was auch immer du tust, handle klug und bedenke das Ende! (verallg. Relativpronomen: quicquid).\n2. Wer auch immer die Gesetze achtet, verteidigt die Freiheit des Staates (verallg. Relativpronomen: quicumque).\n3. So groß war das Ansehen des Senats, wie es zuvor niemand gesehen hatte (Korrelativpaar: tanta – quantam).\n4. So viele Meinungen gibt es, wie es Menschen gibt (Korrelativpaar: tot – quot).",
 				"criteria": [
 					"Alle vier Sätze sind treffend übersetzt.",
-					"quidquid und quicumque sind korrekt als verallgemeinernd eingeordnet.",
+					"Quicquid und quicumque sind korrekt als verallgemeinernd eingeordnet.",
 					"tanta–quantam und tot–quot sind als Korrelativpaare identifiziert."
 				]
 			},

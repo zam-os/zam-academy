@@ -14,9 +14,9 @@
 			"Je länger die lateinischen Satzperioden in der achten Klasse werden, desto weniger hilft bloßes Wörter-Raten von links nach rechts. Stattdessen zerlegst du jedes Satzgefüge mit einer klaren Analyse-Technik: Markiere zuerst alle Konnektoren und Subjunktionen (wie qui, cum, ut, quod), trenne Haupt- und Nebensätze grafisch durch das Einrückmodell (jeder abhängige Satz eine Ebene weiter rechts) und prüfe dann die satzwertigen Bausteine im Inneren.",
 			"Besonders wichtig in diesem Schuljahr sind zwei Klammer-Prüfungen: Bei einer -nd-Form prüfst du sofort KNG-Bindung und esse; bei einem passiven Kopfverb in der dritten Person (dicitur, videtur, traduntur) markierst du Subjektsnominativ plus Infinitiv als NcI-Einheit. So wird selbst ein dreizeiliger Satz in wenigen Sekunden übersichtlich."
 		],
-		"materialLabel": "Dreistufiges Satzgefüge zur Satzanalyse",
+		"materialLabel": "Frei formulierter Übungstext zur Satzanalyse",
 		"materialLanguage": "la",
-		"material": "Seneca, qui sapientiam ad vitam regendam utilem esse putabat, discipulis scripsit:\n„Omnia, quae fiunt, ratione ferenda sunt, neque quisquam miser fieri dicitur, nisi qui sibi ipse nocet.“",
+		"material": "Philosophus, qui sapientiam ad vitam regendam utilem esse putabat, de patientia docebat.\nOmnia, quae fiunt, ratione ferenda sunt, neque quisquam miser fieri dicitur, nisi qui sibi ipse nocet.",
 		"sourceIds": [
 			"lp",
 			"lp-profil"
@@ -30,8 +30,8 @@
 					"id": "sa-ebene1",
 					"label": "1 · Hauptsatz-Gerüst",
 					"badge": "Subjekt + Prädikat",
-					"latin": "Seneca … discipulis scripsit",
-					"detail": "Der Hauptsatz steht ganz links ohne Einrückung und gibt den Rahmen der Mitteilung vor."
+					"latin": "Philosophus de patientia docebat",
+					"detail": "Der Hauptsatz steht links ohne Einrückung. Der Relativsatz qui … putabat ist darin eingeschoben."
 				},
 				{
 					"id": "sa-ebene2",
@@ -62,14 +62,14 @@
 		"takeaway": "Analysiere komplexe Sätze schrittweise: zuerst Konnektoren und Einrückebenen für Haupt- und Nebensätze markieren, dann Gerundiv-, AcI- und NcI-Klammern ausgrenzen.",
 		"practice": [
 			{
-				"prompt": "Welches übergeordnete Hauptprädikat leitet das wörtliche Zitat im ersten Teil des Materials ein?",
+				"prompt": "Welches finite Verb ist im ersten Satz das Hauptprädikat?",
 				"answers": [
-					"scripsit"
+					"docebat"
 				],
-				"feedback": "Seneca … discipulis scripsit ist der übergeordnete Hauptsatz; der Relativsatz qui … putabat ist eingeschoben."
+				"feedback": "Philosophus de patientia docebat ist der Hauptsatz. Putabat gehört zum eingeschobenen Relativsatz."
 			},
 			{
-				"prompt": "Welche Konstruktion verbindet im Zitat „miser fieri dicitur“?",
+				"prompt": "Welche Konstruktion enthält „miser fieri dicitur“ im zweiten Satz?",
 				"answers": [
 					"nci",
 					"nominativus cum infinitivo",
@@ -81,8 +81,8 @@
 		"tasks": {
 			"1": {
 				"language": "de",
-				"prompt": "Stelle die Einrückstruktur für das gesamte Material auf (Ebene 0 = Hauptsatz, Ebene 1 = Relativsätze/Zitathauptsätze, Ebene 2 = AcI/Bedingungssatz) und übersetze den ganzen Abschnitt.",
-				"model": "Ebene 0: Seneca discipulis scripsit\n  Ebene 1: qui putabat\n    Ebene 2: sapientiam [ad vitam regendam] utilem esse\nEbene 0 (Zitat): Omnia ratione ferenda sunt, neque quisquam miser fieri dicitur\n  Ebene 1: quae fiunt / nisi qui sibi ipse nocet.\nÜbersetzung: Seneca, der meinte, dass die Weisheit zur Lenkung des Lebens nützlich sei, schrieb seinen Schülern: „Alles, was geschieht, muss mit Vernunft ertragen werden, und man sagt nicht, dass irgendjemand unglücklich werde, außer wer sich selbst schadet.“",
+				"prompt": "Rücke in beiden Sätzen die Nebensätze ein und klammere den AcI und den NcI ein. Übersetze dann den ganzen Übungstext.",
+				"model": "Ebene 0: Philosophus de patientia docebat.\n  Ebene 1: qui putabat\n    AcI: [sapientiam ad vitam regendam utilem esse]\nEbene 0: Omnia ratione ferenda sunt, neque quisquam [miser fieri] dicitur.\n  Ebene 1: quae fiunt / nisi qui sibi ipse nocet.\nÜbersetzung: Ein Philosoph, der meinte, dass Weisheit für die Lebensführung nützlich sei, lehrte über Geduld. Alles, was geschieht, muss mit Vernunft ertragen werden. Nur von dem, der sich selbst schadet, heißt es, er werde unglücklich.",
 				"criteria": [
 					"Haupt- und Nebensätze sowie der eingebettete AcI sind hierarchisch sauber getrennt.",
 					"Gerundiv (ad vitam regendam und ferenda sunt), fieri und NcI (miser fieri dicitur) sind richtig aufgelöst.",
@@ -104,14 +104,14 @@
 			"goals": [
 				{
 					"label": "Hauptsatzgerüst aus eingeschobener Periode herausschälen",
-					"before": "Seneca, qui … putabat, discipulis scripsit → Hauptsatz:",
+					"before": "Philosophus, qui … putabat, de patientia docebat.",
 					"after": "",
 					"options": [
-						"Seneca discipulis scripsit",
+						"Philosophus de patientia docebat",
 						"qui sapientiam putabat",
 						"ad vitam regendam"
 					],
-					"answer": "Seneca discipulis scripsit",
+					"answer": "Philosophus de patientia docebat",
 					"explanation": "Zwischen die beiden Kommas fällt der eingeschobene Relativsatz."
 				},
 				{
@@ -127,15 +127,15 @@
 					"explanation": "Nach ad im Akkusativ liefert es als Attribut eine Zweckangabe."
 				},
 				{
-					"label": "NcI-Kombination im Zitat sicher deuten",
+					"label": "NcI-Konstruktion im zweiten Satz deuten",
 					"before": "neque quisquam miser fieri dicitur →",
 					"after": "",
 					"options": [
-						"und niemand soll unglücklich werden (man sagt nicht, dass …)",
-						"und irgendjemand wurde unglücklich gemacht von Seneca",
+						"und es heißt von niemandem, er werde unglücklich",
+						"und irgendjemand wurde unglücklich gemacht",
 						"und niemand darf das Glück erwähnen"
 					],
-					"answer": "und niemand soll unglücklich werden (man sagt nicht, dass …)",
+					"answer": "und es heißt von niemandem, er werde unglücklich",
 					"explanation": "neque quisquam + dicitur + fieri bildet einen verneinten NcI."
 				}
 			]

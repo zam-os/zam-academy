@@ -343,7 +343,7 @@ function renderReference(): void {
 	<tr><td>Dativus auctoris</td><td>Handelnde Person beim Gerundiv mit <em>esse</em> steht im Dativ (nicht <em>a/ab</em>)</td><td lang="la">Lex civibus servanda est → Die Bürger müssen das Gesetz achten</td></tr>
 	</tbody></table></div></section>
 	<section class="panel"><h2>Pronomina, Deponentien, Perfektopräsentien &amp; fieri</h2><div class="ref-table-wrap"><table class="ref-table"><thead><tr><th>Bereich</th><th>Kennzeichen &amp; Besonderheit</th><th>Beispiel</th></tr></thead><tbody>
-	<tr><td>Indefinit- &amp; verallg. Pronomina</td><td><em>quidam</em> (Assimil. <em>quendam</em>), <em>quisque</em>; <em>quisquis / quicumque</em> (+ Indikativ)</td><td lang="la">suum cuique · quicumque hoc dicit</td></tr>
+	<tr><td>Indefinit- &amp; verallg. Pronomina</td><td><em>quidam</em> (Assimil. <em>quendam</em>), <em>quisque</em>; <em>quisquis / quicumque</em> (meist mit Indikativ)</td><td lang="la">suum cuique · quicumque hoc dicit</td></tr>
 	<tr><td>Deponentien</td><td>Viele Formen mit Passivendungen, normalerweise aktive Bedeutung</td><td lang="la">mentiri (lügen), loqui (sprechen), pati (erleiden)</td></tr>
 	<tr><td>Semideponentien &amp; Perfektopräsentien</td><td>Semideponens: Präsensstamm aktiv, Perfektstamm passiv; Perfektopräsens: Perfektform = Gegenwart</td><td lang="la">audere, ausus sum (wagen) · odisse (hassen), meminisse (sich erinnern)</td></tr>
 	<tr><td><em>fieri</em></td><td>Präsensstamm unregelmäßig (<em>fio, fis, fit, fimus, fitis, fiunt</em>), Perfekt <em>factus sum</em></td><td lang="la">Consul fit → Er wird Konsul / wird zum Konsul gemacht</td></tr>

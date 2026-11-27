@@ -297,6 +297,7 @@ describe("ZAM content and identifier contracts", () => {
 				expect(item.concept.length).toBeGreaterThan(3);
 				expect(item.question).not.toMatch(/\s\?$/);
 				if (item.fast_check) {
+					expect(item.fast_check.type).toBe("binary_choice");
 					expect(item.fast_check.options).toHaveLength(2);
 					expect(item.fast_check.correct_index).toBe(0);
 					expect(item.fast_check.options[0]).toBe(item.concept);
@@ -333,6 +334,15 @@ describe("ZAM content and identifier contracts", () => {
 		const seneca = findLesson("l8-cicero-seneca")!;
 		expect(seneca.paragraphs.join(" ")).toContain("Non vitae, sed scholae discimus");
 		expect(seneca.paragraphs.join(" ")).toContain("spätere Nachwelt");
+	});
+
+	it("preserves the superlative and keeps the source proverb distinct from the indicative example", () => {
+		const exercise = [findLesson("l8-indefinit-quidam-quisque")!.practice[1]];
+		expect(checkPractice(exercise, ["alle guten"])).toEqual([false]);
+		expect(checkPractice(exercise, ["gerade die Besten"])).toEqual([true]);
+		const relatives = findLesson("l8-verallgemeinernd-korrelativa")!;
+		expect(relatives.material).toContain("Quicquid agas, prudenter agas");
+		expect(relatives.diagram.parts?.[0].latin).toBe("Quidquid vides, nota.");
 	});
 
 	it("connects L2-only syllabus topics to their lessons and matching curriculum bindings", () => {

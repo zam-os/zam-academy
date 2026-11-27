@@ -7,7 +7,7 @@ export default defineConfig({
 	base: "/latein-gymnasium-8-l2/",
 	plugins: [viteSingleFile()],
 	server: {
-		port: 5296,
+		port: 5297,
 		strictPort: true,
 		open: false,
 	},
