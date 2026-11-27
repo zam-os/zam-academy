@@ -1,0 +1,22 @@
+{
+	"schema": 1,
+	"status": "proposal-only",
+	"approved": null,
+	"source_repository": "https://github.com/zam-os/zam",
+	"source_commit": "c92f4e383385ee487cd8b30f73b3bf3cb27b0860",
+	"source": "Existing Latin packages have already inventoried the overlapping legacy cells. This package assigns fresh item IDs and adds no transfer proposals.",
+	"sources": [],
+	"rows": [],
+	"related_inventories": [
+		{
+			"cell_id": "de-by:gymnasium-8-latein-ablativus-absolutus-konjunktive-consecutio",
+			"inventory": "latein-gymnasium-7-l1/replaces-de-by.json",
+			"assessment": "Existing approved inventory in PR #206. Hortativ belongs to Grade 8 in L2; this package adds an L2 card with a fresh identity."
+		},
+		{
+			"cell_id": "de-by:gymnasium-9-latein-gerundium-gerundivum-caesar-originallektuere",
+			"inventory": "latein-gymnasium-8-l1/replaces-de-by.json",
+			"assessment": "Existing proposal in PR #213. Both sequences teach the gerundive in Grade 8; the L1 package retains the existing proposal."
+		}
+	]
+}
