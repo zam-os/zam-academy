@@ -1,0 +1,548 @@
+[
+	{
+		"id": "e7-ireland-map",
+		"stage": "ireland",
+		"title": "One island, two states: The geography of Ireland",
+		"skill": "Die Insel Irland mit Republik, Nordirland, Städten und Landschaften auf Englisch beschreiben",
+		"bindings": ["1.1", "2", "5"],
+		"paragraphs": [
+			"Auf der Insel Irland liegen zwei Staaten. Die Republik Irland (Republic of Ireland) umfasst 26 Grafschaften (counties); ihre Hauptstadt ist Dublin. Nordirland (Northern Ireland) im Nordosten besteht aus sechs Grafschaften, gehört zum Vereinigten Königreich (United Kingdom) und hat Belfast als Hauptstadt. Weitere wichtige Städte der Republik sind Cork im Süden, Galway im Westen und Limerick am Shannon. Der Shannon ist der längste Fluss der Insel. Im Westen liegt der Atlantik, im Osten die Irische See (Irish Sea), die Irland von Großbritannien trennt.",
+			"Das Klima ist mild und feucht, weil der Atlantik die Insel im Winter wärmt und oft Regen bringt. Deshalb ist das Land so grün; Irland heißt auch the Emerald Isle (die Smaragdinsel). Beispiel für eine Lagebeschreibung: „Galway is a city on the west coast of Ireland. It is about 200 kilometres west of Dublin.“ Achte auf on the coast (an der Küste), in the west of (im Westen von, innerhalb) und west of (westlich von, außerhalb)."
+		],
+		"material": "Travel blog · Ireland in seven days\nDay 1: We landed in Dublin, the capital of the Republic of Ireland, on the east coast. Day 3: We took the train to Galway on the west coast. The wind from the Atlantic was strong, but the colourful houses were lovely. Day 5: In Limerick we walked along the River Shannon, the longest river on the island. Day 7: Finally we travelled north to Belfast. It is the capital of Northern Ireland, which is part of the United Kingdom. There was no passport control at the border, but the prices were suddenly in pounds, not in euros!",
+		"materialLabel": "Eigenes englisches Übungsmaterial · Reiseblog",
+		"materialLanguage": "en",
+		"sourceIds": ["lp", "wiki-ireland", "wiki-shannon", "wiki-ni"],
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "Warum zahlt die Bloggerin in Belfast plötzlich mit Pfund?",
+			"answer": "Because Northern Ireland is part of the United Kingdom.",
+			"wrong": [
+				"Because Belfast is the capital of the Republic of Ireland.",
+				"Because Belfast is on the west coast of Ireland."
+			],
+			"explanation": "Nordirland gehört zum Vereinigten Königreich; dort zahlt man mit Pfund (pound sterling). In der Republik Irland ist der Euro die Währung."
+		},
+		"takeaway": "Insel Irland = Republic of Ireland (26 counties, Dublin, euro) + Northern Ireland (6 counties, Belfast, UK, pound). Längster Fluss: Shannon. Lage: on the west coast, in the north of, west of.",
+		"practice": [
+			{
+				"prompt": "Belfast is the capital of ___ Ireland. (Himmelsrichtung als Adjektiv)",
+				"answers": ["Northern"],
+				"feedback": "Northern Ireland gehört zum Vereinigten Königreich; Belfast ist die Hauptstadt."
+			},
+			{
+				"prompt": "Galway is a city ___ the west coast of Ireland. (Präposition)",
+				"answers": ["on"],
+				"feedback": "on the coast: an der Küste."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Look at the map in the workshop. Describe Ireland in five sentences: the two states, their capitals, one city in the west or south, the longest river and the weather.",
+				"model": "There are two states on the island of Ireland: the Republic of Ireland and Northern Ireland. Dublin is the capital of the Republic, and Belfast is the capital of Northern Ireland. Cork is a city in the south, and Galway is on the west coast. The River Shannon is the longest river on the island. The weather is mild and wet, so the country is very green.",
+				"criteria": [
+					"Ich nenne beide Staaten und ihre Hauptstädte.",
+					"Ich beschreibe Lagen mit in the south, on the west coast o. Ä.",
+					"Ich nenne den Shannon und das Klima."
+				]
+			},
+			"2": {
+				"language": "en",
+				"prompt": "Plan a four-day trip across the island for your family. Write a short plan (60 to 80 words) with places, directions (north, west …) and one reason for each stop.",
+				"model": "Day 1: We start in Dublin on the east coast and visit Trinity College. Day 2: We take the train west to Galway because we want to see the colourful houses and the Atlantic. Day 3: We go south to Limerick and walk along the River Shannon. Day 4: Finally we travel north to Belfast, the capital of Northern Ireland, because my brother wants to see the Titanic museum. Remember: in Belfast we need pounds!",
+				"criteria": [
+					"Ich ordne mindestens vier Orte richtig ein.",
+					"Ich verwende Himmelsrichtungen und Lagewörter.",
+					"Ich begründe jede Station mit because."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "ireland-map",
+			"goals": [
+				{
+					"label": "Hauptstadt der Republik",
+					"before": "The capital of the Republic of Ireland is",
+					"after": ".",
+					"options": ["Dublin", "Belfast", "Cork"],
+					"answer": "Dublin",
+					"explanation": "Dublin liegt an der Ostküste und ist Hauptstadt der Republik; Belfast ist Hauptstadt Nordirlands."
+				},
+				{
+					"label": "Nordirland",
+					"before": "Northern Ireland is part of the",
+					"after": ".",
+					"options": ["United Kingdom", "Republic of Ireland", "United States"],
+					"answer": "United Kingdom",
+					"explanation": "Nordirland gehört zum Vereinigten Königreich und zahlt mit Pfund."
+				},
+				{
+					"label": "Längster Fluss",
+					"before": "The longest river on the island is the",
+					"after": ".",
+					"options": ["Shannon", "Thames", "Liffey"],
+					"answer": "Shannon",
+					"explanation": "Der Shannon ist der längste Fluss Irlands; die Liffey fließt durch Dublin, die Themse durch London."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "e7-ireland-culture",
+		"stage": "ireland",
+		"title": "Irish culture: Language, games and music",
+		"skill": "Irische Sprache, Sportarten, Musik und Feste beschreiben und mit der eigenen Kultur vergleichen",
+		"bindings": ["1.1", "2", "5"],
+		"paragraphs": [
+			"In der Republik Irland ist Irisch (Irish, auf Irisch Gaeilge) laut Verfassung die erste Amtssprache, Englisch die zweite. Im Alltag sprechen die meisten Menschen Englisch, doch Ortsschilder sind zweisprachig und alle Kinder lernen Irisch in der Schule. In Irland sagt man Irish, nicht Gaelic. Besonders beliebt sind die gälischen Sportarten Hurling und Gaelic football. Sie werden vom Verband GAA (Gaelic Athletic Association, gegründet 1884) organisiert; die Spieler sind Amateure, die für ihren Ort oder ihre Grafschaft spielen. Das größte Stadion ist Croke Park in Dublin.",
+			"Traditionelle irische Musik spielt man mit Geige (fiddle), Blechflöte (tin whistle) und der Rahmentrommel bodhrán, oft gemeinsam in einem Pub (a session). Am 17. März feiern Iren auf der ganzen Welt den St Patrick's Day mit Paraden, grüner Kleidung und dem Kleeblatt (shamrock). Das Staatswappen zeigt eine Harfe. Beispiel für einen Kulturvergleich: „In Ireland many teenagers play hurling, but in Germany football is more popular. In both countries people enjoy music festivals.“ Mit but, while und in both countries vergleichst du."
+		],
+		"material": "Youth magazine · Meet Niamh (14) from Kilkenny\n“My first language is English, but at school we have Irish every day. Sometimes I use Irish words with my friends, like ‘Dia duit’ – that means hello. My big passion is camogie, the women's version of hurling. We play with a wooden stick called a hurley and a small hard ball called a sliotar. On Saturdays I play the tin whistle in a music session with my uncle. My favourite day of the year is St Patrick's Day on 17 March. The whole town wears green, and our camogie team walks in the parade!”",
+		"materialLabel": "Eigenes englisches Übungsmaterial · Porträt aus einem Jugendmagazin",
+		"materialLanguage": "en",
+		"sourceIds": ["lp", "wiki-irish-language", "wiki-gaa", "wiki-st-patrick"],
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "Welche Aussage über Niamh stimmt?",
+			"answer": "She plays camogie and the tin whistle.",
+			"wrong": [
+				"She speaks only Irish at home and at school.",
+				"She plays professional football for Dublin."
+			],
+			"explanation": "Niamhs Erstsprache ist Englisch; Irisch lernt sie in der Schule. Sie spielt Camogie (Hurling für Frauen und Mädchen) und Blechflöte."
+		},
+		"takeaway": "Irish (Gaeilge) ist erste Amtssprache der Republik, Englisch die Alltagssprache. Gaelic games: hurling, camogie, Gaelic football (GAA, Croke Park). Musik: fiddle, tin whistle, bodhrán. St Patrick's Day: 17 March.",
+		"practice": [
+			{
+				"prompt": "In Ireland people call their old language ___, not Gaelic. (Name der Sprache auf Englisch)",
+				"answers": ["Irish"],
+				"feedback": "Irish (Gaeilge) ist der übliche Name; Gaelic sagt man eher für Schottisch-Gälisch."
+			},
+			{
+				"prompt": "St Patrick's Day is on 17 ___. (Monat)",
+				"answers": ["March"],
+				"feedback": "Der Nationalfeiertag ist der 17. März."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Write a short profile of Irish culture for your class website: language, one sport, music and one festival. Write four or five sentences.",
+				"model": "In the Republic of Ireland, Irish is the first official language, but most people speak English every day. Many young people play hurling or camogie with a wooden stick called a hurley. Musicians play traditional music with the fiddle, the tin whistle and a drum, the bodhrán. On 17 March people celebrate St Patrick's Day with parades and green clothes.",
+				"criteria": [
+					"Ich beschreibe die Sprachsituation korrekt.",
+					"Ich erkläre eine gälische Sportart mit einem Detail.",
+					"Ich nenne Instrumente und ein Fest mit Datum."
+				]
+			},
+			"2": {
+				"language": "en",
+				"prompt": "Answer Niamh. Compare her life with yours: languages, sports and festivals. Write 70 to 90 words and use but, while and in both countries.",
+				"model": "Hi Niamh,\nThanks for your interesting text! In Germany we speak German at home, while at school I learn English and French. Hurling sounds exciting, but here most of my friends play football or handball. I play the guitar, not the tin whistle. In both countries people love music festivals. Our biggest festival is the carnival in February, when everybody wears costumes. What do people in Kilkenny eat on St Patrick's Day?\nBest wishes, Jonas",
+				"criteria": [
+					"Ich vergleiche Sprache, Sport und Feste.",
+					"Ich verwende but, while und in both countries.",
+					"Ich stelle eine passende Rückfrage."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "dialogue",
+			"goals": [
+				{
+					"label": "Sportgerät",
+					"before": "In hurling you hit the ball with a wooden stick called a",
+					"after": ".",
+					"options": ["hurley", "racket", "bat"],
+					"answer": "hurley",
+					"explanation": "Der Schläger beim Hurling heißt hurley, der Ball sliotar."
+				},
+				{
+					"label": "Instrument",
+					"before": "A small metal flute in Irish music is the",
+					"after": ".",
+					"options": ["tin whistle", "bagpipe", "trumpet"],
+					"answer": "tin whistle",
+					"explanation": "Die tin whistle (Blechflöte) ist typisch für irische sessions."
+				},
+				{
+					"label": "Nationalsymbol",
+					"before": "On St Patrick's Day many people wear a",
+					"after": ", a small green plant.",
+					"options": ["shamrock", "rose", "thistle"],
+					"answer": "shamrock",
+					"explanation": "Das Kleeblatt (shamrock) steht für Irland; die Rose für England, die Distel für Schottland."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "e7-ireland-economy",
+		"stage": "ireland",
+		"title": "From farms to tech: Working in Ireland",
+		"skill": "Wirtschaftliche Aspekte Irlands in Europa beschreiben und eine Grafik mit vorgegebenen Redemitteln deuten",
+		"bindings": ["1.1", "2", "3", "4", "5"],
+		"paragraphs": [
+			"Lange lebten die meisten Menschen in Irland von der Landwirtschaft, und viele junge Leute wanderten aus, weil es zu wenig Arbeit gab. Heute ist die Wirtschaft viel breiter aufgestellt. Weiterhin wichtig sind Milch- und Rindfleischerzeugung sowie der Tourismus. Dazu kommen Dienstleistungen, Medizin- und Pharmaprodukte und Software. Viele internationale Technologiefirmen haben ihren Europasitz in Dublin, auch weil dort Englisch gesprochen wird und Irland seit 1973 zur Europäischen Gemeinschaft, der heutigen EU, gehört. In der Republik zahlt man mit dem Euro.",
+			"Aktuelle Zahlen zur Wirtschaft ändern sich jedes Jahr; such sie deshalb bei einer offiziellen Stelle (z. B. EU- oder Regierungsseite) und nenne die Quelle. Für die Beschreibung einer einfachen Grafik helfen feste Redemittel: „The chart shows …“, „Most people …“, „Only a few …“, „In contrast, …“. Beispiel zur Grafik in der Werkstatt: „The chart shows the jobs of the parents in an invented class in Cork. Most parents work in services. Only a few work on farms.“"
+		],
+		"material": "Radio feature · Two generations in County Cork\nGrandad Seán: “When I was young, almost everybody in our village worked on a farm. We had cows and a few fields. Many of my friends emigrated to England or America because there were no jobs here.”\nGranddaughter Aisling: “Today my mum works for an international software company in Cork, and my dad is a nurse. My uncle still has the farm – he sells milk to a big dairy. And in summer I work in a café for tourists who want to see the coast. Most of my friends want to stay in Ireland after school.”",
+		"materialLabel": "Eigenes englisches Übungsmaterial · Radiobeitrag mit zwei Generationen",
+		"materialLanguage": "en",
+		"sourceIds": ["lp", "eu-ireland", "wiki-roi", "gov-ie"],
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "Was hat sich laut Radiobeitrag zwischen Seáns und Aislings Jugend verändert?",
+			"answer": "Today there are more different jobs, so many young people can stay.",
+			"wrong": [
+				"Today nobody works on farms any more.",
+				"Today most young people emigrate to America."
+			],
+			"explanation": "Früher arbeiteten fast alle auf Höfen und viele wanderten aus. Heute gibt es Software, Pflege, Tourismus und weiterhin Landwirtschaft, und die meisten Freunde Aislings wollen bleiben."
+		},
+		"takeaway": "Irlands Wirtschaft: Landwirtschaft (Milch, Rindfleisch), Tourismus, Dienstleistungen, Pharma und Software; EU-Mitglied seit 1973, Euro. Grafik: The chart shows …, Most …, Only a few …, In contrast …",
+		"practice": [
+			{
+				"prompt": "Ireland joined the European Community, today's EU, in ___. (Jahreszahl)",
+				"answers": ["1973"],
+				"feedback": "1973 traten Irland, das Vereinigte Königreich und Dänemark bei."
+			},
+			{
+				"prompt": "In the Republic of Ireland people pay with the ___. (Währung)",
+				"answers": ["euro"],
+				"feedback": "Die Republik Irland gehört zur Eurozone; Nordirland zahlt mit Pfund."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Describe the chart in the workshop in four sentences. Use: The chart shows …, Most …, Only a few …, In contrast, ….",
+				"model": "The chart shows the jobs of the parents in an invented class in Cork. Most parents work in services, for example in shops, hospitals or offices. Some parents work in technology and pharmaceutical companies. Only a few parents work on farms; in contrast, in Grandad Seán's time almost everybody was a farmer.",
+				"criteria": [
+					"Ich nenne Thema und Art der Grafik.",
+					"Ich verwende die vier Redemittel passend.",
+					"Ich kennzeichne die Daten als erfundenes Beispiel."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Deine Eltern fragen, warum so viele internationale Firmen nach Irland gehen. Erkläre es auf Deutsch mit zwei Gründen aus der Lektion und sage, wo du aktuelle Zahlen nachschlagen würdest.",
+				"model": "Viele internationale Firmen haben ihren Europasitz in Irland, weil dort Englisch gesprochen wird und Irland seit 1973 zur EU gehört. Von Dublin aus erreichen sie also den europäischen Markt, und Mitarbeitende aus aller Welt können sich auf Englisch verständigen. Aktuelle Zahlen würde ich auf der Länderseite der EU oder auf gov.ie nachschlagen und die Quelle angeben, weil sich Wirtschaftsdaten jedes Jahr ändern.",
+				"criteria": [
+					"Ich nenne Englisch als Sprache als einen Grund.",
+					"Ich nenne die EU-Mitgliedschaft als zweiten Grund.",
+					"Ich nenne eine offizielle Quelle für aktuelle Zahlen."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "jobs-chart",
+			"goals": [
+				{
+					"label": "Früher",
+					"before": "Seán's friends emigrated because there were no",
+					"after": "in the village.",
+					"options": ["jobs", "schools", "churches"],
+					"answer": "jobs",
+					"explanation": "Arbeitslosigkeit war lange ein Hauptgrund für die Auswanderung."
+				},
+				{
+					"label": "Heute",
+					"before": "Aisling's mum works for an international",
+					"after": "company.",
+					"options": ["software", "potato", "coal"],
+					"answer": "software",
+					"explanation": "Software- und Technologiefirmen sind heute wichtige Arbeitgeber."
+				},
+				{
+					"label": "Grafik beschreiben",
+					"before": "",
+					"after": "parents work in services.",
+					"options": ["Most", "Only a few", "No"],
+					"answer": "Most",
+					"explanation": "Der längste Balken gehört zu den Dienstleistungen, also Most parents …"
+				}
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "e7-ireland-politics",
+		"stage": "ireland",
+		"title": "Politics on the island: The Republic, Northern Ireland and peace",
+		"skill": "Politische Grundlagen der Republik Irland und Nordirlands sowie das Karfreitagsabkommen erklären",
+		"bindings": ["1.1", "2", "5"],
+		"paragraphs": [
+			"Die Republik Irland ist eine parlamentarische Demokratie. Staatsoberhaupt ist der Präsident oder die Präsidentin (President), die Regierung führt der Taoiseach (gesprochen etwa „Tieschach“, der Premierminister). Das Parlament heißt Oireachtas; seine wichtigste Kammer ist der Dáil. Nordirland gehört zum Vereinigten Königreich, hat aber ein eigenes Regionalparlament (Northern Ireland Assembly) in Stormont bei Belfast. Seit 1973 ist die Republik Mitglied der Europäischen Gemeinschaft, heute EU; das Vereinigte Königreich und damit Nordirland haben die EU 2020 verlassen.",
+			"In Nordirland gab es ab Ende der 1960er-Jahre einen gewaltsamen Konflikt, die Troubles. Vereinfacht wollten viele Katholiken (nationalists) eine Vereinigung mit der Republik, viele Protestanten (unionists) wollten beim Vereinigten Königreich bleiben. Am Karfreitag, dem 10. April 1998, wurde das Good Friday Agreement unterzeichnet: Beide Seiten teilen sich seitdem die Regierung Nordirlands, und über die Zukunft der Region sollen die Menschen dort friedlich abstimmen können. Die Grenze zwischen beiden Teilen der Insel ist heute offen; es gibt keine Kontrollposten. Beispiel: „The agreement ended most of the violence and brought peace to Northern Ireland.“"
+		],
+		"material": "Interview for a school project · Peace walls in Belfast\nStudent: “Mrs Kelly, you grew up in Belfast in the 1980s. What was it like?”\nMrs Kelly: “It was a difficult time. There were soldiers in the streets, and we were often afraid. Catholic and Protestant children went to different schools and rarely met.”\nStudent: “What changed after 1998?”\nMrs Kelly: “The Good Friday Agreement changed a lot. The violence stopped, and today both communities share the government. Some walls between the areas are still there, but many young people now meet at sports clubs and youth projects. I'm hopeful for the future.”",
+		"materialLabel": "Eigenes englisches Übungsmaterial · Interview für ein Schulprojekt",
+		"materialLanguage": "en",
+		"sourceIds": ["lp", "wiki-roi", "wiki-ni", "wiki-gfa"],
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "Was hat sich laut Mrs Kelly nach 1998 verändert?",
+			"answer": "The violence stopped and both communities share the government.",
+			"wrong": [
+				"Northern Ireland became part of the Republic of Ireland.",
+				"People took down all walls between the areas immediately."
+			],
+			"explanation": "Nach dem Good Friday Agreement endete der größte Teil der Gewalt und beide Gemeinschaften regieren gemeinsam. Nordirland blieb Teil des Vereinigten Königreichs, und manche Mauern stehen noch."
+		},
+		"takeaway": "Republik: President (Staatsoberhaupt), Taoiseach (Regierungschef), Parlament Oireachtas mit Dáil, EU seit 1973. Nordirland: Teil des UK, Assembly in Stormont. The Troubles (ab Ende der 1960er), Good Friday Agreement am 10. April 1998, offene Grenze.",
+		"practice": [
+			{
+				"prompt": "The head of government in the Republic of Ireland has an Irish title: the ___. (irisches Wort)",
+				"answers": ["Taoiseach"],
+				"feedback": "Der Taoiseach führt die Regierung; der President ist Staatsoberhaupt."
+			},
+			{
+				"prompt": "The name of the peace agreement of 1998 is the Good ___ Agreement. (Feiertag)",
+				"answers": ["Friday"],
+				"feedback": "Es wurde am Karfreitag, dem 10. April 1998, geschlossen."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Write a short fact box (five sentences) about politics on the island of Ireland: the two states, who leads the Republic, the EU and the Good Friday Agreement.",
+				"model": "There are two states on the island: the Republic of Ireland and Northern Ireland. The head of state of the Republic is the President, and the head of government is the Taoiseach. The Republic has been a member of the EU since 1973. Northern Ireland is part of the United Kingdom and left the EU with the UK in 2020. The Good Friday Agreement of 1998 brought peace to Northern Ireland.",
+				"criteria": [
+					"Ich unterscheide die beiden Staaten richtig.",
+					"Ich nenne President und Taoiseach mit ihrer Rolle.",
+					"Ich nenne EU-Beitritt und Good Friday Agreement mit Jahr."
+				]
+			},
+			"2": {
+				"language": "en",
+				"prompt": "Imagine you meet a teenager from Belfast at a youth camp. Write five polite questions you could ask about life in Belfast today, and explain in one sentence why you ask them carefully.",
+				"model": "1. What is it like to grow up in Belfast today? 2. Do you have friends from both communities? 3. Have you ever visited the peace walls? 4. Which youth clubs or sports do you like? 5. How do you feel about the future of Northern Ireland? I ask carefully because the Troubles were painful for many families, and people may have different opinions.",
+				"criteria": [
+					"Ich formuliere fünf höfliche, offene Fragen.",
+					"Ich verwende verschiedene Fragewörter und Zeitformen korrekt.",
+					"Ich begründe meine Rücksicht mit der Geschichte."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "ireland-map",
+			"goals": [
+				{
+					"label": "Staatsoberhaupt",
+					"before": "The head of state of the Republic of Ireland is the",
+					"after": ".",
+					"options": ["President", "Queen", "Taoiseach"],
+					"answer": "President",
+					"explanation": "Der President ist Staatsoberhaupt; der Taoiseach führt die Regierung."
+				},
+				{
+					"label": "Friedensabkommen",
+					"before": "The two sides signed the Good Friday Agreement in",
+					"after": ".",
+					"options": ["1998", "1973", "1066"],
+					"answer": "1998",
+					"explanation": "Am 10. April 1998 wurde das Abkommen in Belfast geschlossen."
+				},
+				{
+					"label": "Grenze heute",
+					"before": "Today the border between the two parts of the island is",
+					"after": ".",
+					"options": ["open", "closed", "guarded by soldiers"],
+					"answer": "open",
+					"explanation": "Es gibt keine Kontrollposten; Menschen und Waren passieren die Grenze frei."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "e7-dublin-directions",
+		"stage": "ireland",
+		"title": "At the tourist information centre in Dublin",
+		"skill": "Im Touristeninformationszentrum Auskünfte einholen, Wege genau beschreiben und höflich nachfragen",
+		"bindings": ["1.1", "2", "4", "5"],
+		"paragraphs": [
+			"In einer Touristeninformation brauchst du höfliche Fragen und genaue Wegbeschreibungen. Höflich fragst du mit „Excuse me, could you tell me how to get to …?“ oder „Is there a … near here?“. Für genaue Wege verwendest du: go straight on (geradeaus), turn left/right into … (links/rechts abbiegen in …), cross the bridge (die Brücke überqueren), walk along/down the street (die Straße entlang/hinunter), go past (an … vorbei), it's on your left/right (links/rechts) und at the end of the street (am Ende der Straße).",
+			"Wenn du etwas nicht verstehst, bittest du um Wiederholung oder Klärung: „Sorry, could you say that again, please?“, „Could you speak a bit more slowly, please?“, „Did you say left or right?“. Am Schluss bedankst du dich: „Thank you very much for your help.“ Beispiel auf der Karte: „Walk down O'Connell Street and cross O'Connell Bridge. Go straight on and pass Trinity College on your left. Then walk down Grafton Street. St Stephen's Green is at the end of the street.“"
+		],
+		"material": "Dialogue · At the tourist information desk\nTourist: “Excuse me, could you tell me how to get to St Stephen's Green, please?”\nAssistant: “Of course. We're on O'Connell Street now. Walk down to the river and cross O'Connell Bridge. Then go straight on along Westmoreland Street. You'll pass Trinity College on your left.”\nTourist: “Sorry, did you say on my left or on my right?”\nAssistant: “On your left. Then walk down Grafton Street – it's a busy shopping street with street musicians. St Stephen's Green is at the end of Grafton Street. It takes about fifteen minutes.”\nTourist: “Could you say the name of the shopping street again, please?”\nAssistant: “Grafton Street. G-R-A-F-T-O-N.”\nTourist: “Thank you very much for your help!”",
+		"materialLabel": "Eigenes englisches Hörskript · Dialog in einer Touristeninformation",
+		"materialLanguage": "en",
+		"sourceIds": ["lp", "wiki-dublin", "ireland-com"],
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "Wie bittet die Touristin um Klärung?",
+			"answer": "Sorry, did you say on my left or on my right?",
+			"wrong": [
+				"Go straight on along Westmoreland Street.",
+				"It takes about fifteen minutes."
+			],
+			"explanation": "Mit „Sorry, did you say … or …?“ fragt man gezielt nach einer Einzelheit, die man nicht sicher verstanden hat. Die anderen Sätze sagt die Mitarbeiterin."
+		},
+		"takeaway": "Höflich fragen: Excuse me, could you tell me how to get to …? Wege: go straight on, turn left into, cross, walk along/down, go past, it's on your left. Nachfragen: Sorry, could you say that again? Did you say … or …?",
+		"practice": [
+			{
+				"prompt": "___ the bridge and go straight on. (über die Brücke gehen: ein Verb)",
+				"answers": ["Cross"],
+				"feedback": "cross the bridge: die Brücke überqueren."
+			},
+			{
+				"prompt": "Sorry, could you say that ___, please? (noch einmal)",
+				"answers": ["again"],
+				"feedback": "Could you say that again, please? bittet höflich um Wiederholung."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Look at the Dublin map. Write the directions from St Stephen's Green back to the Spire on O'Connell Street. Use at least five expressions for directions.",
+				"model": "Leave St Stephen's Green and walk up Grafton Street. At the end of Grafton Street, go straight on and pass Trinity College on your right. Walk along Westmoreland Street to the river. Cross O'Connell Bridge and go straight on into O'Connell Street. The Spire stands in the middle of O'Connell Street – you can't miss it!",
+				"criteria": [
+					"Die Route stimmt mit der Karte überein (umgekehrte Richtung).",
+					"Ich verwende mindestens fünf Ausdrücke für Wegbeschreibungen.",
+					"Ich beachte, dass links und rechts sich auf dem Rückweg tauschen."
+				]
+			},
+			"2": {
+				"language": "en",
+				"prompt": "Write a role play (eight to ten lines) at a tourist information centre. A tourist asks for the way to Dublin Castle, does not understand one detail and asks for clarification twice in different ways.",
+				"model": "Tourist: Excuse me, is Dublin Castle near here?\nAssistant: Yes, it's about ten minutes on foot. Cross O'Connell Bridge and turn right along the river.\nTourist: Sorry, could you speak a bit more slowly, please?\nAssistant: Of course. Cross the bridge, then turn right and walk along the river.\nTourist: Thank you. And then?\nAssistant: Go past Temple Bar. Then turn left into Parliament Street. The castle is at the end of the street.\nTourist: Did you say Parliament Street or Palace Street?\nAssistant: Parliament Street.\nTourist: Great, thanks a lot for your help!",
+				"criteria": [
+					"Ich verwende höfliche Fragen und eine Dankesformel.",
+					"Die Touristin fragt zweimal auf verschiedene Weise nach.",
+					"Die Wegbeschreibung ist genau und folgerichtig."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "dublin-map",
+			"goals": [
+				{
+					"label": "Über den Fluss",
+					"before": "",
+					"after": "O'Connell Bridge and go straight on.",
+					"options": ["Cross", "Turn", "Pass"],
+					"answer": "Cross",
+					"explanation": "Eine Brücke überquert man: cross the bridge."
+				},
+				{
+					"label": "Seite",
+					"before": "Going south, you pass Trinity College on your",
+					"after": ".",
+					"options": ["left", "right", "back"],
+					"answer": "left",
+					"explanation": "Trinity College liegt auf dem Weg nach Süden links (östlich) der Route."
+				},
+				{
+					"label": "Höflich nachfragen",
+					"before": "Sorry, could you",
+					"after": "a bit more slowly, please?",
+					"options": ["speak", "tell", "say me"],
+					"answer": "speak",
+					"explanation": "Could you speak a bit more slowly, please? ist eine höfliche Bitte um langsameres Sprechen."
+				}
+			]
+		},
+		"listening": true,
+		"speaking": true
+	},
+	{
+		"id": "e7-ireland-brochure",
+		"stage": "ireland",
+		"title": "Mediation: A brochure about the Cliffs of Moher",
+		"skill": "Global- und Detailinformationen einer englischen Broschüre sinngemäß auf Deutsch wiedergeben",
+		"bindings": ["1.1", "1.2", "4", "5"],
+		"paragraphs": [
+			"Bei der Sprachmittlung gibst du einen englischen Text sinngemäß auf Deutsch wieder, nicht Wort für Wort. Zuerst klärst du, wer die Information braucht und wofür, zum Beispiel deine Eltern, die einen Ausflug planen. Dann markierst du nur die dafür wichtigen Stellen: Ort, Sehenswertes, Sicherheit, Anreise. Unbekannte Wörter erschließt du über Wortbildung: visitor = visit + -or (Besucher), unforgettable = un- + forget + -able (unvergesslich), cliff-top = cliff + top (Klippenrand).",
+			"Beispiel: Im Text steht „Please stay behind the safety wall – the edge can be slippery and dangerous.“ Auf Deutsch schreibst du nicht „Bitte bleiben Sie hinter der Sicherheitsmauer …“ als Übersetzung jedes Wortes, sondern: „Man soll hinter der Schutzmauer bleiben, weil der Rand rutschig und gefährlich sein kann.“ Zahlen und Namen übernimmst du genau, unwichtige Details wie Werbesprüche lässt du weg."
+		],
+		"material": "Brochure · The Cliffs of Moher, County Clare\nOn Ireland's wild west coast, the Cliffs of Moher rise straight out of the Atlantic Ocean. They are about 214 metres high at their highest point, near O'Brien's Tower. On a clear day you can see the Aran Islands and the mountains of Connemara. In spring and early summer, thousands of seabirds nest on the cliffs, including puffins. Please stay behind the safety wall – the cliff edge can be slippery and dangerous, especially in strong wind. Visitors who want to walk on the cliff-top path should wear good shoes and check the weather first. An unforgettable experience for the whole family!",
+		"materialLabel": "Eigenes englisches Übungsmaterial · Reisebroschüre nach Angaben von Wikipedia",
+		"materialLanguage": "en",
+		"sourceIds": ["lp", "wiki-moher", "discover-ireland"],
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Welche Wiedergabe für deine Eltern ist eine gute Sprachmittlung?",
+			"answer": "Die Klippen sind bis zu 214 m hoch; man soll hinter der Schutzmauer bleiben und gute Schuhe tragen.",
+			"wrong": [
+				"Auf Irlands wilder Westküste die Klippen von Moher steigen gerade aus dem Atlantischen Ozean.",
+				"Die Klippen sind schön, und es gibt dort Vögel."
+			],
+			"explanation": "Eine gute Sprachmittlung gibt die wichtigen Informationen sinngemäß und genau wieder. Die erste falsche Antwort übersetzt Wort für Wort, die zweite lässt alle wichtigen Details weg."
+		},
+		"takeaway": "Sprachmittlung: Adressat und Zweck klären, nur Wichtiges sinngemäß auf Deutsch wiedergeben, Zahlen und Namen genau übernehmen. Wörter über Wortbildung erschließen: visit-or, un-forget-able, cliff-top.",
+		"practice": [
+			{
+				"prompt": "unforgettable = un- + forget + -able. Auf Deutsch heißt das ___. (ein Adjektiv)",
+				"answers": ["unvergesslich"],
+				"feedback": "un- verneint, -able bedeutet „kann man“: man kann es nicht vergessen."
+			},
+			{
+				"prompt": "In spring you can see seabirds called ___ on the cliffs. (Vogelart aus dem Text)",
+				"answers": ["puffins"],
+				"feedback": "puffins: Papageitaucher."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "de",
+				"prompt": "Deine Eltern planen einen Tagesausflug zu den Cliffs of Moher. Gib ihnen auf Deutsch in vier bis fünf Sätzen die wichtigsten Informationen aus der Broschüre wieder.",
+				"model": "Die Cliffs of Moher liegen an der Westküste Irlands in der Grafschaft Clare und sind an der höchsten Stelle, beim O'Brien's Tower, etwa 214 Meter hoch. Bei klarem Wetter sieht man die Aran-Inseln und die Berge von Connemara. Im Frühling und Frühsommer brüten dort viele Seevögel, auch Papageitaucher. Wir sollen hinter der Schutzmauer bleiben, weil der Rand rutschig und gefährlich ist. Für den Weg am Klippenrand brauchen wir gute Schuhe und sollten vorher das Wetter prüfen.",
+				"criteria": [
+					"Ich gebe Lage, Höhe und Sehenswertes richtig wieder.",
+					"Ich nenne die Sicherheitshinweise sinngemäß.",
+					"Ich übersetze nicht Wort für Wort und lasse Werbesprüche weg."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Deine kleine Schwester will wissen, warum man an den Klippen nicht bis an den Rand gehen darf und ob sich der Ausflug für sie lohnt. Beantworte beide Fragen kindgerecht auf Deutsch mit Informationen aus der Broschüre.",
+				"model": "Am Rand ist es oft rutschig, und bei starkem Wind kann man leicht ausrutschen. Die Klippen sind bis zu 214 Meter hoch, deshalb gibt es eine Schutzmauer, hinter der wir bleiben müssen. Der Ausflug lohnt sich aber für dich: Im Frühling sitzen auf den Felsen ganz viele Seevögel, sogar Papageitaucher mit bunten Schnäbeln, und bei gutem Wetter sieht man weit aufs Meer hinaus bis zu Inseln.",
+				"criteria": [
+					"Ich erkläre die Gefahr mit Informationen aus dem Text.",
+					"Ich nenne einen Grund, warum sich der Ausflug lohnt.",
+					"Ich passe die Sprache an ein jüngeres Kind an."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "word-builder",
+			"goals": [
+				{
+					"label": "Wortbildung: Person",
+					"before": "visit + -or =",
+					"after": "(a person who visits)",
+					"options": ["visitor", "visiting", "visitable"],
+					"answer": "visitor",
+					"explanation": "Die Endung -or (wie -er) bildet eine Person: visitor = Besucher."
+				},
+				{
+					"label": "Sinngemäß statt wörtlich",
+					"before": "„the edge can be slippery“ means: der Rand kann",
+					"after": "sein.",
+					"options": ["rutschig", "schlüpfrig im Sinne von unanständig", "seifig"],
+					"answer": "rutschig",
+					"explanation": "slippery bedeutet hier rutschig; aus dem Zusammenhang wählst du die passende Bedeutung."
+				},
+				{
+					"label": "Wichtige Zahl",
+					"before": "The cliffs are about",
+					"after": "metres high at their highest point.",
+					"options": ["214", "2,140", "21"],
+					"answer": "214",
+					"explanation": "Zahlen übernimmst du bei der Sprachmittlung genau: etwa 214 Meter."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": false
+	}
+]

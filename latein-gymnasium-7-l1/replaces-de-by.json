@@ -1,0 +1,86 @@
+{
+	"schema": 1,
+	"status": "approved",
+	"approved": "2026-11-26",
+	"source_repository": "https://github.com/zam-os/zam",
+	"source_commit": "4aeaa8e3455937f8a53cd57e686ff98d602a0561",
+	"source": "Thomas, Codex Desktop conversation on 2026-11-26: “Beide Übernahmen freigeben” for J01 (Ablativus absolutus with PPP) and J03 (hortative subjunctive) from the Grade 8 legacy cell. The other six legacy items stay active.",
+	"sources": [
+		{
+			"id": "de-by:gymnasium-7-latein-aci-partizipialkonstruktionen-deklinationen",
+			"fixture": "tests/fixtures/de-by-gymnasium-7-latein-aci-partizipialkonstruktionen-deklinationen-kvt.json",
+			"sha256": "55eae4d0e1a12849f4bd74a46374391c2b6e7fb544c0f26bbb34018b1b2f365f"
+		},
+		{
+			"id": "de-by:gymnasium-8-latein-ablativus-absolutus-konjunktive-consecutio",
+			"fixture": "tests/fixtures/de-by-gymnasium-8-latein-ablativus-absolutus-konjunktive-consecutio-kvt.json",
+			"sha256": "6874a4d44dfe2bc0f5ad80b53ea2d851c2baad4a44fcba698f70542799eb3684"
+		}
+	],
+	"rows": [
+		{
+			"de_by_id": "01K4T7A0000000000000000J01",
+			"de_by_cell": "de-by:gymnasium-7-latein-aci-partizipialkonstruktionen-deklinationen",
+			"category": "C",
+			"action": "keep-active",
+			"academy_slug": null,
+			"reason": "Basis-AcI (Subjektsakkusativ im dass-Satz) gehört in Latein als 1. Fremdsprache bereits zu Jahrgangsstufe 6 (L6 2.3) bzw. zu Latein als 2. Fremdsprache in Klasse 7. Klasse 7 L1 behandelt nur noch die nachzeitige Erweiterung (-urum esse)."
+		},
+		{
+			"de_by_id": "01K4T7A0000000000000000J02",
+			"de_by_cell": "de-by:gymnasium-7-latein-aci-partizipialkonstruktionen-deklinationen",
+			"category": "C",
+			"action": "keep-active",
+			"academy_slug": null,
+			"reason": "Kompositkarte zu Basis-AcI, Kopfverben und gleichzeitigem/vorzeitigem AcI (L6-L1 bzw. L7-L2 Stoff); kein gleichwertiger Ersatz in diesem L7-L1-Paket."
+		},
+		{
+			"de_by_id": "01K4T7A0000000000000000J03",
+			"de_by_cell": "de-by:gymnasium-7-latein-aci-partizipialkonstruktionen-deklinationen",
+			"category": "C",
+			"action": "keep-active",
+			"academy_slug": null,
+			"reason": "PPP (vorzeitig-passiv) ist Stoff der Klasse 6 (L6 2.2/2.3) bzw. L7-L2; Klasse 7 L1 führt das PFA (nachzeitig-aktiv) ein."
+		},
+		{
+			"de_by_id": "01K4T7A0000000000000000J04",
+			"de_by_cell": "de-by:gymnasium-7-latein-aci-partizipialkonstruktionen-deklinationen",
+			"category": "C",
+			"action": "keep-active",
+			"academy_slug": null,
+			"reason": "Kompositkarte zu PPP/PPA-PC und dessen vier Übersetzungsvarianten (L6-L1 bzw. L7-L2); bleibt für bestehende Lernende aktiv."
+		},
+		{
+			"de_by_id": "01K8G8K0000000000000000J01",
+			"de_by_cell": "de-by:gymnasium-8-latein-ablativus-absolutus-konjunktive-consecutio",
+			"category": "A",
+			"action": "replace",
+			"academy_slug": "l7-abl-abs-ppp-ppa-check",
+			"reason": "Identisches Einzelwissen: Zeitverhältnis des Ablativus absolutus mit PPP (Vorzeitigkeit), das laut LehrplanPLUS L7 (L1) bereits in Klasse 7 unterrichtet wird."
+		},
+		{
+			"de_by_id": "01K8G8K0000000000000000J02",
+			"de_by_cell": "de-by:gymnasium-8-latein-ablativus-absolutus-konjunktive-consecutio",
+			"category": "C",
+			"action": "keep-active",
+			"academy_slug": null,
+			"reason": "Mehrteilige Kompositkarte (Aufbau Abl. abs., PPP/PPA/nominal, fünf Übersetzungsmethoden inklusive seltener wörtlicher/Relativsatz-Übertragung sowie Beispielsatz); ein Transfer würde Teilbeherrschung überbewerten."
+		},
+		{
+			"de_by_id": "01K8G8K0000000000000000J03",
+			"de_by_cell": "de-by:gymnasium-8-latein-ablativus-absolutus-konjunktive-consecutio",
+			"category": "A",
+			"action": "replace",
+			"academy_slug": "l7-konjunktiv-hauptsatz-check",
+			"reason": "Identisches Einzelwissen: Hauptsatzfunktion der 1. Person Plural Konjunktiv Präsens (Hortativ: Lasst uns …!)."
+		},
+		{
+			"de_by_id": "01K8G8K0000000000000000J04",
+			"de_by_cell": "de-by:gymnasium-8-latein-ablativus-absolutus-konjunktive-consecutio",
+			"category": "C",
+			"action": "keep-active",
+			"academy_slug": null,
+			"reason": "Mehrteilige Kompositkarte, die sowohl den Irrealis (in L1 bereits Klasse 6) als auch vier Hauptsatzmodi und alle vier Fälle der consecutio temporum abfragt; nicht auf eine Einzelkarte abbildbar."
+		}
+	]
+}

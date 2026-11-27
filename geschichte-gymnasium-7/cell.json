@@ -1,0 +1,3691 @@
+{
+  "$schema": "https://zam.app/schemas/v1/kvt-tile.json",
+  "tile_id": "zam-academy:geschichte-gymnasium-7",
+  "version": "2026.11.1",
+  "title": "Geschichte 7 Gymnasium (ZAM Academy)",
+  "description": "Geschichte 7 Gymnasium Bayern (LehrplanPLUS): König und Reich im Mittelalter, Leben und Kultur im Mittelalter, Kreuzzüge, Renaissance und Entdeckungen, Wirtschaft und Handel im Längsschnitt, das konfessionelle Zeitalter, Absolutismus und Barock sowie Bauwerke als Ausdruck politischen Denkens.",
+  "publisher": "ZAM Academy",
+  "sources": [
+    {
+      "uri": "https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/7/geschichte",
+      "label": "LehrplanPLUS Bayern · Geschichte 7 Gymnasium",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Ostfrankenreich",
+      "label": "Wikipedia · Ostfrankenreich",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Ottonen",
+      "label": "Wikipedia · Liudolfinger",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Heinrich_I._(Ostfrankenreich)",
+      "label": "Wikipedia · Heinrich I. (Ostfrankenreich)",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Schlacht_auf_dem_Lechfeld",
+      "label": "Wikipedia · Schlacht auf dem Lechfeld",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Vertrag_von_Verdun",
+      "label": "Wikipedia · Vertrag von Verdun",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Otto_I._(HRR)",
+      "label": "Wikipedia · Otto I. (HRR)",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://klexikon.zum.de/wiki/Otto_der_Gro%C3%9Fe",
+      "label": "Klexikon · Otto der Große",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Widukind_von_Corvey",
+      "label": "Wikipedia · Widukind von Corvey",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Salbung",
+      "label": "Wikipedia · Salbung",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Investiturstreit",
+      "label": "Wikipedia · Investiturstreit",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Reichskirche",
+      "label": "Wikipedia · Reichskirche",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Gang_nach_Canossa",
+      "label": "Wikipedia · Gang nach Canossa",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Wormser_Konkordat",
+      "label": "Wikipedia · Wormser Konkordat",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Heinrich_IV._(HRR)",
+      "label": "Wikipedia · Heinrich IV. (HRR)",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Lehnswesen",
+      "label": "Wikipedia · Lehnswesen",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://klexikon.zum.de/wiki/Lehnswesen",
+      "label": "Klexikon · Feudalismus",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Reisek%C3%B6nigtum",
+      "label": "Wikipedia · Reisekönigtum",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/K%C3%B6nigspfalz",
+      "label": "Wikipedia · Königspfalz",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Kaiserpfalz_Goslar",
+      "label": "Wikipedia · Kaiserpfalz Goslar",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Kurf%C3%BCrst",
+      "label": "Wikipedia · Kurfürst",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Goldene_Bulle",
+      "label": "Wikipedia · Goldene Bulle",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Heiliges_R%C3%B6misches_Reich",
+      "label": "Wikipedia · Heiliges Römisches Reich",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://klexikon.zum.de/wiki/Heiliges_R%C3%B6misches_Reich",
+      "label": "Klexikon · Heiliges Römisches Reich",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Landesherrschaft",
+      "label": "Wikipedia · Landesherr",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Grundherrschaft",
+      "label": "Wikipedia · Grundherrschaft",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/St%C3%A4ndeordnung",
+      "label": "Wikipedia · Stand (Gesellschaft)",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Dreifelderwirtschaft",
+      "label": "Wikipedia · Dreifelderwirtschaft",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://klexikon.zum.de/wiki/Mittelalter",
+      "label": "Klexikon · Mittelalter",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Kloster",
+      "label": "Wikipedia · Kloster",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://klexikon.zum.de/wiki/Kloster",
+      "label": "Klexikon · Kloster",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Regula_Benedicti",
+      "label": "Wikipedia · Regula Benedicti",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/St._Galler_Klosterplan",
+      "label": "Wikipedia · St. Galler Klosterplan",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Hildegard_von_Bingen",
+      "label": "Wikipedia · Hildegard von Bingen",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Staufer",
+      "label": "Wikipedia · Staufer",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Friedrich_I._(HRR)",
+      "label": "Wikipedia · Friedrich I. (HRR)",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Codex_Manesse",
+      "label": "Wikipedia · Codex Manesse",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://digi.ub.uni-heidelberg.de/diglit/cpg848",
+      "label": "Universitätsbibliothek Heidelberg · Codex Manesse (Cod. Pal. germ. 848)",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://klexikon.zum.de/wiki/Ritter",
+      "label": "Klexikon · Ritter",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Minnesang",
+      "label": "Wikipedia · Minnesang",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Romanik",
+      "label": "Wikipedia · Romanik",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Gotik",
+      "label": "Wikipedia · Gotik",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://klexikon.zum.de/wiki/Gotik",
+      "label": "Klexikon · Gotik",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Speyerer_Dom",
+      "label": "Wikipedia · Speyerer Dom",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/K%C3%B6lner_Dom",
+      "label": "Wikipedia · Kölner Dom",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Stadt",
+      "label": "Wikipedia · Stadt",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://klexikon.zum.de/wiki/Stadt",
+      "label": "Klexikon · Stadt",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Stadtrecht",
+      "label": "Wikipedia · Stadtrecht",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Reichsstadt",
+      "label": "Wikipedia · Freie und Reichsstädte",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Zunft",
+      "label": "Wikipedia · Zunft",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/SchUM-St%C3%A4dte",
+      "label": "Wikipedia · SchUM-Städte",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Ghetto",
+      "label": "Wikipedia · Ghetto",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Frankfurter_Judengasse",
+      "label": "Wikipedia · Frankfurter Judengasse",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://klexikon.zum.de/wiki/Judentum",
+      "label": "Klexikon · Judentum",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Pestpogrome",
+      "label": "Wikipedia · Judenverfolgungen zur Zeit des Schwarzen Todes",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Schwarzer_Tod",
+      "label": "Wikipedia · Schwarzer Tod",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://klexikon.zum.de/wiki/Pest",
+      "label": "Klexikon · Pest",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Flagellanten",
+      "label": "Wikipedia · Flagellanten",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Quarant%C3%A4ne",
+      "label": "Wikipedia · Quarantäne",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Kreuzzug",
+      "label": "Wikipedia · Kreuzzug",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://klexikon.zum.de/wiki/Kreuzzug",
+      "label": "Klexikon · Kreuzzug",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Erster_Kreuzzug",
+      "label": "Wikipedia · Erster Kreuzzug",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Urban_II.",
+      "label": "Wikipedia · Urban II.",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Saladin",
+      "label": "Wikipedia · Saladin",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Eroberung_von_Jerusalem_(1099)",
+      "label": "Wikipedia · Belagerung von Jerusalem (1099)",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Fulcher_von_Chartres",
+      "label": "Wikipedia · Fulcher von Chartres",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Ibn_al-Athir",
+      "label": "Wikipedia · Ibn al-Athīr",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Usama_ibn_Munqidh",
+      "label": "Wikipedia · Usama ibn Munqidh",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/%C3%9Cbersetzerschule_von_Toledo",
+      "label": "Wikipedia · Übersetzerschule von Toledo",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Avicenna",
+      "label": "Wikipedia · Avicenna",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Leonardo_Fibonacci",
+      "label": "Wikipedia · Leonardo Fibonacci",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Marco_Polo",
+      "label": "Wikipedia · Marco Polo",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://klexikon.zum.de/wiki/Marco_Polo",
+      "label": "Klexikon · Marco Polo",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Eroberung_von_Konstantinopel_(1453)",
+      "label": "Wikipedia · Eroberung von Konstantinopel (1453)",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Mehmed_II.",
+      "label": "Wikipedia · Mehmed II.",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Hagia_Sophia",
+      "label": "Wikipedia · Hagia Sophia",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Byzantinisches_Reich",
+      "label": "Wikipedia · Byzantinisches Reich",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Renaissance",
+      "label": "Wikipedia · Renaissance",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://klexikon.zum.de/wiki/Renaissance",
+      "label": "Klexikon · Renaissance",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Humanismus",
+      "label": "Wikipedia · Humanismus",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Perspektive",
+      "label": "Wikipedia · Perspektive",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Leonardo_da_Vinci",
+      "label": "Wikipedia · Leonardo da Vinci",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Behaim-Globus",
+      "label": "Wikipedia · Behaim-Globus",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Buchdruck",
+      "label": "Wikipedia · Buchdruck",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://klexikon.zum.de/wiki/Buchdruck",
+      "label": "Klexikon · Buchdruck",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Johannes_Gutenberg",
+      "label": "Wikipedia · Johannes Gutenberg",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Gutenberg-Bibel",
+      "label": "Wikipedia · Gutenberg-Bibel",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://www.gutenberg-museum.de/",
+      "label": "Gutenberg-Museum Mainz",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Zeitalter_der_Entdeckungen",
+      "label": "Wikipedia · Zeitalter der Entdeckungen",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://klexikon.zum.de/wiki/Christoph_Kolumbus",
+      "label": "Klexikon · Christoph Kolumbus",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Christoph_Kolumbus",
+      "label": "Wikipedia · Christoph Kolumbus",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Vasco_da_Gama",
+      "label": "Wikipedia · Vasco da Gama",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Ferdinand_Magellan",
+      "label": "Wikipedia · Ferdinand Magellan",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Karavelle",
+      "label": "Wikipedia · Karavelle",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Kolonialismus",
+      "label": "Wikipedia · Kolonialismus",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Kolumbianischer_Austausch",
+      "label": "Wikipedia · Columbian Exchange",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Hern%C3%A1n_Cort%C3%A9s",
+      "label": "Wikipedia · Hernán Cortés",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Bartolom%C3%A9_de_las_Casas",
+      "label": "Wikipedia · Bartolomé de Las Casas",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Atlantischer_Sklavenhandel",
+      "label": "Wikipedia · Atlantischer Sklavenhandel",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://klexikon.zum.de/wiki/Kolonie",
+      "label": "Klexikon · Kolonie",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Obergermanisch-Raetischer_Limes",
+      "label": "Wikipedia · Obergermanisch-Raetischer Limes",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://klexikon.zum.de/wiki/Limes",
+      "label": "Klexikon · Limes",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Limestor_Dalkingen",
+      "label": "Wikipedia · Limestor Dalkingen",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Romanisierung",
+      "label": "Wikipedia · Romanisierung",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Lehnwort",
+      "label": "Wikipedia · Lehnwort",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Song-Dynastie",
+      "label": "Wikipedia · Song-Dynastie",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Zheng_He",
+      "label": "Wikipedia · Zheng He",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Bi_Sheng",
+      "label": "Wikipedia · Bi Sheng",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://klexikon.zum.de/wiki/China",
+      "label": "Klexikon · China",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Hangzhou",
+      "label": "Wikipedia · Hangzhou",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Hanse",
+      "label": "Wikipedia · Hanse",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://klexikon.zum.de/wiki/Hanse",
+      "label": "Klexikon · Hanse",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Kogge",
+      "label": "Wikipedia · Kogge",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Stalhof",
+      "label": "Wikipedia · Stalhof",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://www.hansemuseum.eu/",
+      "label": "Europäisches Hansemuseum Lübeck",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Fugger",
+      "label": "Wikipedia · Fugger",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Jakob_Fugger",
+      "label": "Wikipedia · Jakob Fugger",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Fuggerei",
+      "label": "Wikipedia · Fuggerei",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Fr%C3%BChkapitalismus",
+      "label": "Wikipedia · Frühkapitalismus",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://www.fugger.de/",
+      "label": "Offizielle Website der Fugger",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://www.destatis.de/DE/Themen/Wirtschaft/Aussenhandel/_inhalt.html",
+      "label": "Statistisches Bundesamt · Aktuelle Daten zum deutschen Außenhandel",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Globalisierung",
+      "label": "Wikipedia · Globalisierung",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://klexikon.zum.de/wiki/Globalisierung",
+      "label": "Klexikon · Globalisierung",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Fairer_Handel",
+      "label": "Wikipedia · Fairer Handel",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Containerschiff",
+      "label": "Wikipedia · Containerschiff",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Hexenverfolgung",
+      "label": "Wikipedia · Hexenverfolgung",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://klexikon.zum.de/wiki/Hexe",
+      "label": "Klexikon · Hexe",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Kleine_Eiszeit",
+      "label": "Wikipedia · Kleine Eiszeit",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Friedrich_Spee",
+      "label": "Wikipedia · Friedrich Spee",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Reformation",
+      "label": "Wikipedia · Reformation",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://klexikon.zum.de/wiki/Reformation",
+      "label": "Klexikon · Reformation",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Martin_Luther",
+      "label": "Wikipedia · Martin Luther",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://klexikon.zum.de/wiki/Martin_Luther",
+      "label": "Klexikon · Martin Luther",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/95_Thesen",
+      "label": "Wikipedia · 95 Thesen",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Reichstag_zu_Worms_(1521)",
+      "label": "Wikipedia · Reichstag zu Worms (1521)",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Flugblatt",
+      "label": "Wikipedia · Flugblatt",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Flugschrift",
+      "label": "Wikipedia · Flugschrift",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Lucas_Cranach_der_%C3%84ltere",
+      "label": "Wikipedia · Lucas Cranach der Ältere",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Relation_aller_F%C3%BCrnemmen_und_gedenckw%C3%BCrdigen_Historien",
+      "label": "Wikipedia · Relation aller Fürnemmen und gedenckwürdigen Historien",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://klexikon.zum.de/wiki/Zeitung",
+      "label": "Klexikon · Zeitung",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Deutscher_Bauernkrieg",
+      "label": "Wikipedia · Deutscher Bauernkrieg",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://klexikon.zum.de/wiki/Bauernkrieg",
+      "label": "Klexikon · Bauernkriege",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Zw%C3%B6lf_Artikel",
+      "label": "Wikipedia · Zwölf Artikel",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Thomas_M%C3%BCntzer",
+      "label": "Wikipedia · Thomas Müntzer",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Schlacht_bei_Frankenhausen",
+      "label": "Wikipedia · Schlacht bei Frankenhausen",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Karl_V._(HRR)",
+      "label": "Wikipedia · Karl V. (HRR)",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://klexikon.zum.de/wiki/Karl_der_F%C3%BCnfte",
+      "label": "Klexikon · Karl der Fünfte",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Augsburger_Reichs-_und_Religionsfrieden",
+      "label": "Wikipedia · Augsburger Reichs- und Religionsfrieden",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Schmalkaldischer_Krieg",
+      "label": "Wikipedia · Schmalkaldischer Krieg",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Drei%C3%9Figj%C3%A4hriger_Krieg",
+      "label": "Wikipedia · Dreißigjähriger Krieg",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://klexikon.zum.de/wiki/Drei%C3%9Figj%C3%A4hriger_Krieg",
+      "label": "Klexikon · Dreißigjähriger Krieg",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Prager_Fenstersturz",
+      "label": "Wikipedia · Prager Fenstersturz",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Albrecht_von_Wallenstein",
+      "label": "Wikipedia · Albrecht von Wallenstein",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Gustav_II._Adolf",
+      "label": "Wikipedia · Gustav II. Adolf",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Maximilian_I._(Bayern)",
+      "label": "Wikipedia · Maximilian I. (Bayern)",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Westf%C3%A4lischer_Friede",
+      "label": "Wikipedia · Westfälischer Friede",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Historisches_Rathaus_M%C3%BCnster",
+      "label": "Wikipedia · Rathaus Münster",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Der_abenteuerliche_Simplicissimus",
+      "label": "Wikipedia · Der abenteuerliche Simplicissimus",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Magdeburger_Hochzeit",
+      "label": "Wikipedia · Magdeburger Hochzeit",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Absolutismus",
+      "label": "Wikipedia · Absolutismus",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://klexikon.zum.de/wiki/Absolutismus",
+      "label": "Klexikon · Absolutismus",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Ludwig_XIV.",
+      "label": "Wikipedia · Ludwig XIV.",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Merkantilismus",
+      "label": "Wikipedia · Merkantilismus",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Jean-Baptiste_Colbert",
+      "label": "Wikipedia · Jean-Baptiste Colbert",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Stehendes_Heer",
+      "label": "Wikipedia · Stehendes Heer",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Schloss_Versailles",
+      "label": "Wikipedia · Schloss Versailles",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://klexikon.zum.de/wiki/Schloss_Versailles",
+      "label": "Klexikon · Schloss Versailles",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Spiegelsaal_von_Versailles",
+      "label": "Wikipedia · Spiegelsaal von Versailles",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Andr%C3%A9_Le_N%C3%B4tre",
+      "label": "Wikipedia · André Le Nôtre",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Barock",
+      "label": "Wikipedia · Barock",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Gottesgnadentum",
+      "label": "Wikipedia · Gottesgnadentum",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Edikt_von_Fontainebleau",
+      "label": "Wikipedia · Edikt von Fontainebleau",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Hugenotten",
+      "label": "Wikipedia · Hugenotten",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Generalst%C3%A4nde",
+      "label": "Wikipedia · Generalstände",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Monarchie",
+      "label": "Wikipedia · Monarchie",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Neues_Schloss_Schlei%C3%9Fheim",
+      "label": "Wikipedia · Schlossanlage Schleißheim",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://www.schloesser-schleissheim.de/",
+      "label": "Bayerische Schlösserverwaltung · Schlossanlage Schleißheim",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Maximilian_II._Emanuel_(Bayern)",
+      "label": "Wikipedia · Maximilian II. Emanuel (Bayern)",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Residenz_Kempten",
+      "label": "Wikipedia · Fürstäbtliche Residenz",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Schloss_Nymphenburg",
+      "label": "Wikipedia · Schloss Nymphenburg",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Hegemonie",
+      "label": "Wikipedia · Hegemonie",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Gleichgewicht_der_Kr%C3%A4fte",
+      "label": "Wikipedia · Mächtegleichgewicht",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Spanischer_Erbfolgekrieg",
+      "label": "Wikipedia · Spanischer Erbfolgekrieg",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Pf%C3%A4lzischer_Erbfolgekrieg",
+      "label": "Wikipedia · Pfälzischer Erbfolgekrieg",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Frieden_von_Utrecht",
+      "label": "Wikipedia · Friede von Utrecht",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Dionysostheater",
+      "label": "Wikipedia · Dionysostheater",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Theater_der_griechischen_Antike",
+      "label": "Wikipedia · Theater der griechischen Antike",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Dionysien",
+      "label": "Wikipedia · Dionysien",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Attische_Demokratie",
+      "label": "Wikipedia · Attische Demokratie",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Aachener_Dom",
+      "label": "Wikipedia · Aachener Dom",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Aachener_Rathaus",
+      "label": "Wikipedia · Aachener Rathaus",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Karlsthron",
+      "label": "Wikipedia · Aachener Königsthron",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://www.aachenerdom.de/",
+      "label": "Aachener Dom · UNESCO-Welterbe",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://klexikon.zum.de/wiki/Karl_der_Gro%C3%9Fe",
+      "label": "Klexikon · Karl der Große",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/W%C3%BCrzburger_Residenz",
+      "label": "Wikipedia · Würzburger Residenz",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://www.residenz-wuerzburg.de/",
+      "label": "Bayerische Schlösserverwaltung · Residenz Würzburg",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Giovanni_Battista_Tiepolo",
+      "label": "Wikipedia · Giovanni Battista Tiepolo",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Balthasar_Neumann",
+      "label": "Wikipedia · Balthasar Neumann",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Aristokratie",
+      "label": "Wikipedia · Aristokratie",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://www.bundestag.de/besuche/architektur/reichstag/kuppel",
+      "label": "Deutscher Bundestag · Die Kuppel",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Reichstagsgeb%C3%A4ude",
+      "label": "Wikipedia · Reichstagsgebäude",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://de.wikipedia.org/wiki/Bundeskanzleramt_(Berlin)",
+      "label": "Wikipedia · Bundeskanzleramt (Berlin)",
+      "checked": "2026-11-26"
+    },
+    {
+      "uri": "https://klexikon.zum.de/wiki/Bundestag",
+      "label": "Klexikon · Bundestag",
+      "checked": "2026-11-26"
+    }
+  ],
+  "atoms": [
+    {
+      "id": "01M8B8FZB3F08DSWP5V5TKP0T9",
+      "atom_uri": "urn:zam:atom:01M8B8FZB3F08DSWP5V5TKP0T9",
+      "namespace": "zam-academy-geschichte-gymnasium-7",
+      "slug": "gg7-ostfranken-ottonen",
+      "title": "Vom Ostfrankenreich zum Reich der Ottonen",
+      "domain": "geschichte/lb1",
+      "reduction": "formal",
+      "typical_age_min": 12,
+      "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-ostfranken-ottonen",
+      "prerequisites": [],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "geschichte-gymnasium-7",
+          "topic_code": "lb1",
+          "topic_title": "König und Reich: Herrschaft im Mittelalter"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 7,
+          "subject": "geschichte",
+          "topic_code": "lb1",
+          "topic_title": "König und Reich: Herrschaft im Mittelalter",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8B8FZB33X3J41BH71ZHA01T",
+          "slug": "gg7-ostfranken-ottonen-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Wer wählte 919 den Sachsenherzog Heinrich I. zum König im Ostfrankenreich?",
+          "concept": "Die Großen (der Adel) aus Franken und Sachsen.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-ostfranken-ottonen",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Die Großen (der Adel) aus Franken und Sachsen.",
+              "Der Papst in Rom."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8B8FZB36TX27FCKVFY9HKD3",
+          "slug": "gg7-ostfranken-ottonen-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Wie wurde aus dem Ostfrankenreich das Reich der Ottonen? Nenne die Stationen 919, 936, 955 und 962.",
+          "concept": "919 Wahl Heinrichs I. durch die Großen; 936 Krönung Ottos I. in Aachen; 955 Sieg über die Ungarn auf dem Lechfeld; 962 Kaiserkrönung in Rom.",
+          "sample_solution": "919 Wahl Heinrichs I. durch die Großen; 936 Krönung Ottos I. in Aachen; 955 Sieg über die Ungarn auf dem Lechfeld; 962 Kaiserkrönung in Rom.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-ostfranken-ottonen"
+        }
+      ]
+    },
+    {
+      "id": "01M8B8FZB3T8F7SQZXF9ZW0G0P",
+      "atom_uri": "urn:zam:atom:01M8B8FZB3T8F7SQZXF9ZW0G0P",
+      "namespace": "zam-academy-geschichte-gymnasium-7",
+      "slug": "gg7-otto-962-rechtfertigung",
+      "title": "962: Wie Otto der Große seine Herrschaft rechtfertigte",
+      "domain": "geschichte/lb1",
+      "reduction": "formal",
+      "typical_age_min": 12,
+      "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-otto-962-rechtfertigung",
+      "prerequisites": [
+        {
+          "atom_id": "01M8B8FZB3F08DSWP5V5TKP0T9",
+          "type": "soft",
+          "rationale": "Baut auf „Vom Ostfrankenreich zum Reich der Ottonen“ im selben Lernbereich auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "geschichte-gymnasium-7",
+          "topic_code": "lb1",
+          "topic_title": "König und Reich: Herrschaft im Mittelalter"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 7,
+          "subject": "geschichte",
+          "topic_code": "lb1",
+          "topic_title": "König und Reich: Herrschaft im Mittelalter",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8B8FZB3DHGFWCTADBX3JT91",
+          "slug": "gg7-otto-962-rechtfertigung-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Was geschah 962?",
+          "concept": "Otto der Große wurde in Rom vom Papst zum Kaiser gekrönt.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-otto-962-rechtfertigung",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Otto der Große wurde in Rom vom Papst zum Kaiser gekrönt.",
+              "Otto der Große wurde in Aachen zum ersten Mal zum König gewählt."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8B8FZB30YXTNTRMBH3PESPT",
+          "slug": "gg7-otto-962-rechtfertigung-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Mit welchen Gründen rechtfertigte Otto I. seine Herrschaft?",
+          "concept": "Gottes Erwählung, Designation durch den Vater, Wahl durch die Fürsten, Salbung, Sieg auf dem Lechfeld 955 und Kaiserkrönung 962.",
+          "sample_solution": "Gottes Erwählung, Designation durch den Vater, Wahl durch die Fürsten, Salbung, Sieg auf dem Lechfeld 955 und Kaiserkrönung 962.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-otto-962-rechtfertigung"
+        }
+      ]
+    },
+    {
+      "id": "01M8B8FZB3Z43Q0HSZNSVMAGNE",
+      "atom_uri": "urn:zam:atom:01M8B8FZB3Z43Q0HSZNSVMAGNE",
+      "namespace": "zam-academy-geschichte-gymnasium-7",
+      "slug": "gg7-reichskirche-investiturstreit",
+      "title": "Reichskirche und Investiturstreit: Wer setzt die Bischöfe ein?",
+      "domain": "geschichte/lb1",
+      "reduction": "formal",
+      "typical_age_min": 12,
+      "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-reichskirche-investiturstreit",
+      "prerequisites": [
+        {
+          "atom_id": "01M8B8FZB3T8F7SQZXF9ZW0G0P",
+          "type": "soft",
+          "rationale": "Baut auf „962: Wie Otto der Große seine Herrschaft rechtfertigte“ im selben Lernbereich auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "geschichte-gymnasium-7",
+          "topic_code": "lb1",
+          "topic_title": "König und Reich: Herrschaft im Mittelalter"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 7,
+          "subject": "geschichte",
+          "topic_code": "lb1",
+          "topic_title": "König und Reich: Herrschaft im Mittelalter",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8B8FZB36WM5636B96P3RXCW",
+          "slug": "gg7-reichskirche-investiturstreit-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Worum ging es im Investiturstreit (1075–1122)?",
+          "concept": "Darum, ob der König oder der Papst die Bischöfe einsetzen darf.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-reichskirche-investiturstreit",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Darum, ob der König oder der Papst die Bischöfe einsetzen darf.",
+              "Darum, ob die Bauern ihre Abgaben senken dürfen."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8B8FZB3AWBXHNRX0C5BSY3K",
+          "slug": "gg7-reichskirche-investiturstreit-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Wie wurde der Investiturstreit im Wormser Konkordat 1122 gelöst?",
+          "concept": "Die Kirche verleiht mit Ring und Stab das geistliche Amt, der König mit dem Zepter die weltlichen Rechte.",
+          "sample_solution": "Die Kirche verleiht mit Ring und Stab das geistliche Amt, der König mit dem Zepter die weltlichen Rechte.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-reichskirche-investiturstreit"
+        }
+      ]
+    },
+    {
+      "id": "01M8B8FZB3M7WZ166XEA1XN6HE",
+      "atom_uri": "urn:zam:atom:01M8B8FZB3M7WZ166XEA1XN6HE",
+      "namespace": "zam-academy-geschichte-gymnasium-7",
+      "slug": "gg7-reisekoenigtum-lehnswesen",
+      "title": "Reisekönigtum und Lehnswesen: Herrschen ohne Hauptstadt",
+      "domain": "geschichte/lb1",
+      "reduction": "formal",
+      "typical_age_min": 12,
+      "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-reisekoenigtum-lehnswesen",
+      "prerequisites": [
+        {
+          "atom_id": "01M8B8FZB3Z43Q0HSZNSVMAGNE",
+          "type": "soft",
+          "rationale": "Baut auf „Reichskirche und Investiturstreit: Wer setzt die Bischöfe ein?“ im selben Lernbereich auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "geschichte-gymnasium-7",
+          "topic_code": "lb1",
+          "topic_title": "König und Reich: Herrschaft im Mittelalter"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 7,
+          "subject": "geschichte",
+          "topic_code": "lb1",
+          "topic_title": "König und Reich: Herrschaft im Mittelalter",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8B8FZB3YRBZXDTE2CF59VDB",
+          "slug": "gg7-reisekoenigtum-lehnswesen-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Was schuldete ein Vasall im Lehnswesen seinem Lehnsherrn?",
+          "concept": "Treue sowie Rat und Hilfe, vor allem Kriegsdienst.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-reisekoenigtum-lehnswesen",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Treue sowie Rat und Hilfe, vor allem Kriegsdienst.",
+              "Eine feste jährliche Miete in Silbermünzen."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8B8FZB3GTDN8FJ80ZCWC7SC",
+          "slug": "gg7-reisekoenigtum-lehnswesen-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Warum regierten mittelalterliche Könige als Reisekönige?",
+          "concept": "Ohne Hauptstadt und Beamte mussten sie persönlich Recht sprechen und Treue einfordern; der Hof zog zu den Vorräten in Pfalzen.",
+          "sample_solution": "Ohne Hauptstadt und Beamte mussten sie persönlich Recht sprechen und Treue einfordern; der Hof zog zu den Vorräten in Pfalzen.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-reisekoenigtum-lehnswesen"
+        }
+      ]
+    },
+    {
+      "id": "01M8B8FZB3FJD68GV4B22DD98H",
+      "atom_uri": "urn:zam:atom:01M8B8FZB3FJD68GV4B22DD98H",
+      "namespace": "zam-academy-geschichte-gymnasium-7",
+      "slug": "gg7-wahlkoenigtum-kurfuersten",
+      "title": "Wahlkönigtum, Kurfürsten und Territorien",
+      "domain": "geschichte/lb1",
+      "reduction": "formal",
+      "typical_age_min": 12,
+      "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-wahlkoenigtum-kurfuersten",
+      "prerequisites": [
+        {
+          "atom_id": "01M8B8FZB3M7WZ166XEA1XN6HE",
+          "type": "soft",
+          "rationale": "Baut auf „Reisekönigtum und Lehnswesen: Herrschen ohne Hauptstadt“ im selben Lernbereich auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "geschichte-gymnasium-7",
+          "topic_code": "lb1",
+          "topic_title": "König und Reich: Herrschaft im Mittelalter"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 7,
+          "subject": "geschichte",
+          "topic_code": "lb1",
+          "topic_title": "König und Reich: Herrschaft im Mittelalter",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8B8FZB3X0B2XHPJRQKR5T7C",
+          "slug": "gg7-wahlkoenigtum-kurfuersten-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Wie viele Kurfürsten wählten nach der Goldenen Bulle von 1356 den König?",
+          "concept": "Sieben – gewählt war, wer die Mehrheit erhielt.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-wahlkoenigtum-kurfuersten",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Sieben – gewählt war, wer die Mehrheit erhielt.",
+              "Zwölf – die Wahl musste einstimmig sein."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8B8FZB31C7GVFHCF740B0BD",
+          "slug": "gg7-wahlkoenigtum-kurfuersten-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Was bedeutet Territorialisierung im Heiligen Römischen Reich?",
+          "concept": "Fürsten sammelten Gerichtsrechte, Zölle, Burgen und Städte und wurden zu Landesherren eigener Territorien.",
+          "sample_solution": "Fürsten sammelten Gerichtsrechte, Zölle, Burgen und Städte und wurden zu Landesherren eigener Territorien.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-wahlkoenigtum-kurfuersten"
+        }
+      ]
+    },
+    {
+      "id": "01M8B8FZB36YG2WXV252HP0H0H",
+      "atom_uri": "urn:zam:atom:01M8B8FZB36YG2WXV252HP0H0H",
+      "namespace": "zam-academy-geschichte-gymnasium-7",
+      "slug": "gg7-staende-grundherrschaft",
+      "title": "Stände und Grundherrschaft: Wer betet, wer kämpft, wer arbeitet?",
+      "domain": "geschichte/lb2",
+      "reduction": "formal",
+      "typical_age_min": 12,
+      "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-staende-grundherrschaft",
+      "prerequisites": [],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "geschichte-gymnasium-7",
+          "topic_code": "lb2",
+          "topic_title": "Leben und Kultur im Mittelalter"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 7,
+          "subject": "geschichte",
+          "topic_code": "lb2",
+          "topic_title": "Leben und Kultur im Mittelalter",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8B8FZB3RE8P4XJMB2DZF227",
+          "slug": "gg7-staende-grundherrschaft-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Welche drei Stände unterschied die mittelalterliche Ständelehre?",
+          "concept": "Betende (Geistliche), Kämpfende (Adel) und Arbeitende (Bauern).",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-staende-grundherrschaft",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Betende (Geistliche), Kämpfende (Adel) und Arbeitende (Bauern).",
+              "Bürger, Händler und Handwerker."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8B8FZB3TNHXBM07SS8PZN0S",
+          "slug": "gg7-staende-grundherrschaft-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Was bedeutet Grundherrschaft?",
+          "concept": "Ein Grundherr besitzt Land; abhängige Bauern bewirtschaften es und leisten Abgaben und Frondienste, der Grundherr gibt Schutz und Gericht.",
+          "sample_solution": "Ein Grundherr besitzt Land; abhängige Bauern bewirtschaften es und leisten Abgaben und Frondienste, der Grundherr gibt Schutz und Gericht.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-staende-grundherrschaft"
+        }
+      ]
+    },
+    {
+      "id": "01M8B8FZB372K155JBR2YQH55V",
+      "atom_uri": "urn:zam:atom:01M8B8FZB372K155JBR2YQH55V",
+      "namespace": "zam-academy-geschichte-gymnasium-7",
+      "slug": "gg7-kloster",
+      "title": "Klöster: Gebet, Arbeit und Wissen",
+      "domain": "geschichte/lb2",
+      "reduction": "formal",
+      "typical_age_min": 12,
+      "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-kloster",
+      "prerequisites": [
+        {
+          "atom_id": "01M8B8FZB36YG2WXV252HP0H0H",
+          "type": "soft",
+          "rationale": "Baut auf „Stände und Grundherrschaft: Wer betet, wer kämpft, wer arbeitet?“ im selben Lernbereich auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "geschichte-gymnasium-7",
+          "topic_code": "lb2",
+          "topic_title": "Leben und Kultur im Mittelalter"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 7,
+          "subject": "geschichte",
+          "topic_code": "lb2",
+          "topic_title": "Leben und Kultur im Mittelalter",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8B8FZB3TQZD78X37N3CDYP5",
+          "slug": "gg7-kloster-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Wofür steht die Kurzformel „ora et labora“ der Benediktsregel?",
+          "concept": "Bete und arbeite.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-kloster",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Bete und arbeite.",
+              "Kämpfe und herrsche."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8B8FZB328AR8WN04AJV9B55",
+          "slug": "gg7-kloster-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Warum waren Klöster im Mittelalter so bedeutend?",
+          "concept": "Sie waren Orte des Gebets, Grundherren und Wirtschaftsbetriebe und bewahrten Wissen durch Schreibstuben und Schulen.",
+          "sample_solution": "Sie waren Orte des Gebets, Grundherren und Wirtschaftsbetriebe und bewahrten Wissen durch Schreibstuben und Schulen.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-kloster"
+        }
+      ]
+    },
+    {
+      "id": "01M8B8FZB33ERP0KH21YAF2XNZ",
+      "atom_uri": "urn:zam:atom:01M8B8FZB33ERP0KH21YAF2XNZ",
+      "namespace": "zam-academy-geschichte-gymnasium-7",
+      "slug": "gg7-staufer-hoefische-kultur",
+      "title": "Um 1200: Staufer, Ritter und höfische Kultur",
+      "domain": "geschichte/lb2",
+      "reduction": "formal",
+      "typical_age_min": 12,
+      "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-staufer-hoefische-kultur",
+      "prerequisites": [
+        {
+          "atom_id": "01M8B8FZB372K155JBR2YQH55V",
+          "type": "soft",
+          "rationale": "Baut auf „Klöster: Gebet, Arbeit und Wissen“ im selben Lernbereich auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "geschichte-gymnasium-7",
+          "topic_code": "lb2",
+          "topic_title": "Leben und Kultur im Mittelalter"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 7,
+          "subject": "geschichte",
+          "topic_code": "lb2",
+          "topic_title": "Leben und Kultur im Mittelalter",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8B8FZB334VR0FMWVFSXSW7A",
+          "slug": "gg7-staufer-hoefische-kultur-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Welche Herrscherfamilie regierte um 1200, zur Zeit einer kulturellen Blüte im Reich?",
+          "concept": "Die Staufer.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-staufer-hoefische-kultur",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Die Staufer.",
+              "Die Ottonen."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8B8FZB35KND1PA2RAS5MCKG",
+          "slug": "gg7-staufer-hoefische-kultur-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Woran zeigt sich die kulturelle Blüte um 1200 zur Zeit der Staufer?",
+          "concept": "Minnesang (Walther von der Vogelweide), höfische Epen wie Nibelungenlied und Parzival, Hoffeste und Ritterideal mit höfischen Tugenden.",
+          "sample_solution": "Minnesang (Walther von der Vogelweide), höfische Epen wie Nibelungenlied und Parzival, Hoffeste und Ritterideal mit höfischen Tugenden.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-staufer-hoefische-kultur"
+        }
+      ]
+    },
+    {
+      "id": "01M8B8FZB3H1Y92R41TV8JWD9N",
+      "atom_uri": "urn:zam:atom:01M8B8FZB3H1Y92R41TV8JWD9N",
+      "namespace": "zam-academy-geschichte-gymnasium-7",
+      "slug": "gg7-romanik-gotik",
+      "title": "Romanik und Gotik: Kirchen als steinerne Botschaft",
+      "domain": "geschichte/lb2",
+      "reduction": "formal",
+      "typical_age_min": 12,
+      "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-romanik-gotik",
+      "prerequisites": [
+        {
+          "atom_id": "01M8B8FZB33ERP0KH21YAF2XNZ",
+          "type": "soft",
+          "rationale": "Baut auf „Um 1200: Staufer, Ritter und höfische Kultur“ im selben Lernbereich auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "geschichte-gymnasium-7",
+          "topic_code": "lb2",
+          "topic_title": "Leben und Kultur im Mittelalter"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 7,
+          "subject": "geschichte",
+          "topic_code": "lb2",
+          "topic_title": "Leben und Kultur im Mittelalter",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8B8FZB3YSV6PRP9RQGQABDS",
+          "slug": "gg7-romanik-gotik-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Welche Bogenform kennzeichnet die Gotik?",
+          "concept": "Den Spitzbogen.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-romanik-gotik",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Den Spitzbogen.",
+              "Den Rundbogen."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8B8FZB3AW9G81XR3NMHQWMB",
+          "slug": "gg7-romanik-gotik-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Warum konnten gotische Kirchen große Fenster haben?",
+          "concept": "Kreuzrippengewölbe, Pfeiler und Strebewerk leiten die Last nach außen ab, sodass die Wände nicht mehr alles tragen müssen.",
+          "sample_solution": "Kreuzrippengewölbe, Pfeiler und Strebewerk leiten die Last nach außen ab, sodass die Wände nicht mehr alles tragen müssen.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-romanik-gotik"
+        }
+      ]
+    },
+    {
+      "id": "01M8B8FZB33YY6M20B18SP5W7M",
+      "atom_uri": "urn:zam:atom:01M8B8FZB33YY6M20B18SP5W7M",
+      "namespace": "zam-academy-geschichte-gymnasium-7",
+      "slug": "gg7-stadt-mittelalter",
+      "title": "Die Stadt im Mittelalter: Markt, Rat und Bürger",
+      "domain": "geschichte/lb2",
+      "reduction": "formal",
+      "typical_age_min": 12,
+      "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-stadt-mittelalter",
+      "prerequisites": [
+        {
+          "atom_id": "01M8B8FZB3H1Y92R41TV8JWD9N",
+          "type": "soft",
+          "rationale": "Baut auf „Romanik und Gotik: Kirchen als steinerne Botschaft“ im selben Lernbereich auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "geschichte-gymnasium-7",
+          "topic_code": "lb2",
+          "topic_title": "Leben und Kultur im Mittelalter"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 7,
+          "subject": "geschichte",
+          "topic_code": "lb2",
+          "topic_title": "Leben und Kultur im Mittelalter",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8B8FZB3YYHHK9KFPANFGHVM",
+          "slug": "gg7-stadt-mittelalter-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Was erlaubte das Stadtrecht einer mittelalterlichen Stadt?",
+          "concept": "Markt, Stadtmauer und ein eigenes Gericht.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-stadt-mittelalter",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Markt, Stadtmauer und ein eigenes Gericht.",
+              "Die Wahl des Kaisers."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8B8FZB3XS1MCHMTE2PZHMN9",
+          "slug": "gg7-stadt-mittelalter-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Was ist eine Reichsstadt?",
+          "concept": "Eine Stadt, die nur dem König unterstand, zum Beispiel Nürnberg, Regensburg oder Augsburg.",
+          "sample_solution": "Eine Stadt, die nur dem König unterstand, zum Beispiel Nürnberg, Regensburg oder Augsburg.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-stadt-mittelalter"
+        }
+      ]
+    },
+    {
+      "id": "01M8B8FZB3RH0ET142037Q5FNC",
+      "atom_uri": "urn:zam:atom:01M8B8FZB3RH0ET142037Q5FNC",
+      "namespace": "zam-academy-geschichte-gymnasium-7",
+      "slug": "gg7-juedisches-leben",
+      "title": "Jüdisches Leben in der mittelalterlichen Stadt",
+      "domain": "geschichte/lb2",
+      "reduction": "formal",
+      "typical_age_min": 12,
+      "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-juedisches-leben",
+      "prerequisites": [
+        {
+          "atom_id": "01M8B8FZB33YY6M20B18SP5W7M",
+          "type": "soft",
+          "rationale": "Baut auf „Die Stadt im Mittelalter: Markt, Rat und Bürger“ im selben Lernbereich auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "geschichte-gymnasium-7",
+          "topic_code": "lb2",
+          "topic_title": "Leben und Kultur im Mittelalter"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 7,
+          "subject": "geschichte",
+          "topic_code": "lb2",
+          "topic_title": "Leben und Kultur im Mittelalter",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8B8FZB3TB6EJ8WY64E1AAQ8",
+          "slug": "gg7-juedisches-leben-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Was bezeichnet der Begriff Ghetto?",
+          "concept": "Ein abgeschlossenes Stadtviertel, in dem Juden zwangsweise wohnen mussten.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-juedisches-leben",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Ein abgeschlossenes Stadtviertel, in dem Juden zwangsweise wohnen mussten.",
+              "Ein Kloster für jüdische Gelehrte."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8B8FZB3JQ8ZCV17JAKDZSAP",
+          "slug": "gg7-juedisches-leben-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Warum war die Lage der Juden in mittelalterlichen Städten unsicher?",
+          "concept": "Ihr Schutz war teuer bezahlt und widerrufbar; Ausgrenzung, Vorurteile und Lügen führten zu Pogromen wie 1096 und 1349.",
+          "sample_solution": "Ihr Schutz war teuer bezahlt und widerrufbar; Ausgrenzung, Vorurteile und Lügen führten zu Pogromen wie 1096 und 1349.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-juedisches-leben"
+        }
+      ]
+    },
+    {
+      "id": "01M8B8FZB3ZV94BBXJN0YM7QS4",
+      "atom_uri": "urn:zam:atom:01M8B8FZB3ZV94BBXJN0YM7QS4",
+      "namespace": "zam-academy-geschichte-gymnasium-7",
+      "slug": "gg7-pest-bedrohungen",
+      "title": "Der Schwarze Tod: Wie die Menschen der Pest begegneten",
+      "domain": "geschichte/lb2",
+      "reduction": "formal",
+      "typical_age_min": 12,
+      "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-pest-bedrohungen",
+      "prerequisites": [
+        {
+          "atom_id": "01M8B8FZB3RH0ET142037Q5FNC",
+          "type": "soft",
+          "rationale": "Baut auf „Jüdisches Leben in der mittelalterlichen Stadt“ im selben Lernbereich auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "geschichte-gymnasium-7",
+          "topic_code": "lb2",
+          "topic_title": "Leben und Kultur im Mittelalter"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 7,
+          "subject": "geschichte",
+          "topic_code": "lb2",
+          "topic_title": "Leben und Kultur im Mittelalter",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8B8FZB316N3W1RHMCX6S8G7",
+          "slug": "gg7-pest-bedrohungen-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Welcher Anteil der Menschen in Europa starb nach Schätzungen an der Pest 1347–1351?",
+          "concept": "Etwa ein Drittel.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-pest-bedrohungen",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Etwa ein Drittel.",
+              "Etwa jeder Hundertste."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8B8FZB3B941WDAXQD9XQRKH",
+          "slug": "gg7-pest-bedrohungen-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Wie deuteten Menschen im 14. Jahrhundert die Pest, und wie reagierten sie?",
+          "concept": "Als Strafe Gottes oder verdorbene Luft; Buße, Geißlerzüge, Flucht, erste Quarantäne, aber auch Pogrome gegen Juden.",
+          "sample_solution": "Als Strafe Gottes oder verdorbene Luft; Buße, Geißlerzüge, Flucht, erste Quarantäne, aber auch Pogrome gegen Juden.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-pest-bedrohungen"
+        }
+      ]
+    },
+    {
+      "id": "01M8B8FZB3M4J428G8GBKWMM91",
+      "atom_uri": "urn:zam:atom:01M8B8FZB3M4J428G8GBKWMM91",
+      "namespace": "zam-academy-geschichte-gymnasium-7",
+      "slug": "gg7-kreuzzuege",
+      "title": "Die Kreuzzüge: Aufbruch nach Jerusalem",
+      "domain": "geschichte/lb3",
+      "reduction": "formal",
+      "typical_age_min": 12,
+      "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-kreuzzuege",
+      "prerequisites": [],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "geschichte-gymnasium-7",
+          "topic_code": "lb3",
+          "topic_title": "Neue räumliche und geistige Horizonte"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 7,
+          "subject": "geschichte",
+          "topic_code": "lb3",
+          "topic_title": "Neue räumliche und geistige Horizonte",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8B8FZB3K6YXEFRBE2CAXM1Z",
+          "slug": "gg7-kreuzzuege-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Wer rief 1095 zum ersten Kreuzzug auf?",
+          "concept": "Papst Urban II.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-kreuzzuege",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Papst Urban II.",
+              "Kaiser Karl der Große."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8B8FZB3SZZZP4SHW98FSFYW",
+          "slug": "gg7-kreuzzuege-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Welche Motive hatten die Kreuzfahrer?",
+          "concept": "Religiöse (Sündenvergebung, heilige Stätten), wirtschaftliche (Land, Beute, Handel) und politische (Hilferuf aus Byzanz, Führungsanspruch des Papstes).",
+          "sample_solution": "Religiöse (Sündenvergebung, heilige Stätten), wirtschaftliche (Land, Beute, Handel) und politische (Hilferuf aus Byzanz, Führungsanspruch des Papstes).",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-kreuzzuege"
+        }
+      ]
+    },
+    {
+      "id": "01M8B8FZB3DSWGMDJTNX5GA69T",
+      "atom_uri": "urn:zam:atom:01M8B8FZB3DSWGMDJTNX5GA69T",
+      "namespace": "zam-academy-geschichte-gymnasium-7",
+      "slug": "gg7-kreuzzuege-quellen",
+      "title": "Zwei Seiten eines Krieges: christliche und muslimische Quellen",
+      "domain": "geschichte/lb3",
+      "reduction": "formal",
+      "typical_age_min": 12,
+      "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-kreuzzuege-quellen",
+      "prerequisites": [
+        {
+          "atom_id": "01M8B8FZB3M4J428G8GBKWMM91",
+          "type": "soft",
+          "rationale": "Baut auf „Die Kreuzzüge: Aufbruch nach Jerusalem“ im selben Lernbereich auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "geschichte-gymnasium-7",
+          "topic_code": "lb3",
+          "topic_title": "Neue räumliche und geistige Horizonte"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 7,
+          "subject": "geschichte",
+          "topic_code": "lb3",
+          "topic_title": "Neue räumliche und geistige Horizonte",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8B8FZB3XQN4SPMS3TNJE0XZ",
+          "slug": "gg7-kreuzzuege-quellen-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Warum beschreiben christliche und muslimische Quellen die Eroberung Jerusalems 1099 so unterschiedlich?",
+          "concept": "Sie schreiben aus der Perspektive der Sieger bzw. der Besiegten.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-kreuzzuege-quellen",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Sie schreiben aus der Perspektive der Sieger bzw. der Besiegten.",
+              "Sie beschreiben zwei verschiedene Städte."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8B8FZB3CXT9W2P03F5QYJ6Y",
+          "slug": "gg7-kreuzzuege-quellen-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Wie weitete sich das Weltbild der Europäer infolge der Kreuzzüge?",
+          "concept": "Geographisch (fremde Länder), wissenschaftlich (Wissen aus der islamischen Welt) und wirtschaftlich (Fernhandel mit Gewürzen, Zucker, Seide).",
+          "sample_solution": "Geographisch (fremde Länder), wissenschaftlich (Wissen aus der islamischen Welt) und wirtschaftlich (Fernhandel mit Gewürzen, Zucker, Seide).",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-kreuzzuege-quellen"
+        }
+      ]
+    },
+    {
+      "id": "01M8B8FZB3E2CG0QZEMFRM4ZMM",
+      "atom_uri": "urn:zam:atom:01M8B8FZB3E2CG0QZEMFRM4ZMM",
+      "namespace": "zam-academy-geschichte-gymnasium-7",
+      "slug": "gg7-kulturkontakt-weltbild",
+      "title": "Kulturkontakt: Wie sich das Weltbild der Europäer weitete",
+      "domain": "geschichte/lb3",
+      "reduction": "formal",
+      "typical_age_min": 12,
+      "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-kulturkontakt-weltbild",
+      "prerequisites": [
+        {
+          "atom_id": "01M8B8FZB3DSWGMDJTNX5GA69T",
+          "type": "soft",
+          "rationale": "Baut auf „Zwei Seiten eines Krieges: christliche und muslimische Quellen“ im selben Lernbereich auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "geschichte-gymnasium-7",
+          "topic_code": "lb3",
+          "topic_title": "Neue räumliche und geistige Horizonte"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 7,
+          "subject": "geschichte",
+          "topic_code": "lb3",
+          "topic_title": "Neue räumliche und geistige Horizonte",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8B8FZB3RKEJEBF9NBMCMNS4",
+          "slug": "gg7-kulturkontakt-weltbild-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Wo wurden im 12. Jahrhundert viele arabische Schriften ins Lateinische übersetzt?",
+          "concept": "In Toledo.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-kulturkontakt-weltbild",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "In Toledo.",
+              "In Wittenberg."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8B8FZB3S9S439795QDMMERC",
+          "slug": "gg7-kulturkontakt-weltbild-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Nenne drei Beispiele für Wissen und Waren, die aus der islamischen Welt oder Asien nach Europa kamen.",
+          "concept": "Indisch-arabische Ziffern mit der Null, Papier, Medizin Ibn Sinas, Gewürze, Zucker, Seide.",
+          "sample_solution": "Indisch-arabische Ziffern mit der Null, Papier, Medizin Ibn Sinas, Gewürze, Zucker, Seide.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-kulturkontakt-weltbild"
+        }
+      ]
+    },
+    {
+      "id": "01M8B8FZB38XCTMWV7MRG93S53",
+      "atom_uri": "urn:zam:atom:01M8B8FZB38XCTMWV7MRG93S53",
+      "namespace": "zam-academy-geschichte-gymnasium-7",
+      "slug": "gg7-konstantinopel-1453",
+      "title": "1453: Fall oder Eroberung Konstantinopels?",
+      "domain": "geschichte/lb3",
+      "reduction": "formal",
+      "typical_age_min": 12,
+      "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-konstantinopel-1453",
+      "prerequisites": [
+        {
+          "atom_id": "01M8B8FZB3E2CG0QZEMFRM4ZMM",
+          "type": "soft",
+          "rationale": "Baut auf „Kulturkontakt: Wie sich das Weltbild der Europäer weitete“ im selben Lernbereich auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "geschichte-gymnasium-7",
+          "topic_code": "lb3",
+          "topic_title": "Neue räumliche und geistige Horizonte"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 7,
+          "subject": "geschichte",
+          "topic_code": "lb3",
+          "topic_title": "Neue räumliche und geistige Horizonte",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8B8FZB3JQ76AJ274KGKFGP9",
+          "slug": "gg7-konstantinopel-1453-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Was geschah 1453?",
+          "concept": "Die Osmanen unter Mehmed II. eroberten Konstantinopel.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-konstantinopel-1453",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Die Osmanen unter Mehmed II. eroberten Konstantinopel.",
+              "Kolumbus erreichte Amerika."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8B8FZB3T7NAG0MSD379F9KJ",
+          "slug": "gg7-konstantinopel-1453-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Warum wird 1453 als „Fall“ oder als „Eroberung“ Konstantinopels bezeichnet?",
+          "concept": "Die Wortwahl zeigt die Perspektive: für Byzanz und den Westen ein Verlust, für Osmanen und heutige Türkei ein Sieg.",
+          "sample_solution": "Die Wortwahl zeigt die Perspektive: für Byzanz und den Westen ein Verlust, für Osmanen und heutige Türkei ein Sieg.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-konstantinopel-1453"
+        }
+      ]
+    },
+    {
+      "id": "01M8B8FZB3M59RG1103GS0VZN8",
+      "atom_uri": "urn:zam:atom:01M8B8FZB3M59RG1103GS0VZN8",
+      "namespace": "zam-academy-geschichte-gymnasium-7",
+      "slug": "gg7-renaissance-humanismus",
+      "title": "Renaissance und Humanismus: Der Mensch im Mittelpunkt",
+      "domain": "geschichte/lb3",
+      "reduction": "formal",
+      "typical_age_min": 12,
+      "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-renaissance-humanismus",
+      "prerequisites": [
+        {
+          "atom_id": "01M8B8FZB38XCTMWV7MRG93S53",
+          "type": "soft",
+          "rationale": "Baut auf „1453: Fall oder Eroberung Konstantinopels?“ im selben Lernbereich auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "geschichte-gymnasium-7",
+          "topic_code": "lb3",
+          "topic_title": "Neue räumliche und geistige Horizonte"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 7,
+          "subject": "geschichte",
+          "topic_code": "lb3",
+          "topic_title": "Neue räumliche und geistige Horizonte",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8B8FZB3TWGSMADVCDC8CX2D",
+          "slug": "gg7-renaissance-humanismus-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Was bedeutet das Wort Renaissance?",
+          "concept": "Wiedergeburt – gemeint ist die Wiederentdeckung der Antike.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-renaissance-humanismus",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Wiedergeburt – gemeint ist die Wiederentdeckung der Antike.",
+              "Erneuerung der Kirche durch Luther."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8B8FZB3W0MERW6RT8SJFVG2",
+          "slug": "gg7-renaissance-humanismus-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Was kennzeichnet das neue Menschenbild von Renaissance und Humanismus?",
+          "concept": "Der einzelne Mensch mit Würde, Bildung und Beobachtungsgabe steht im Mittelpunkt; antike Texte werden im Original gelesen.",
+          "sample_solution": "Der einzelne Mensch mit Würde, Bildung und Beobachtungsgabe steht im Mittelpunkt; antike Texte werden im Original gelesen.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-renaissance-humanismus"
+        }
+      ]
+    },
+    {
+      "id": "01M8B8FZB3302PC7J30911FS8X",
+      "atom_uri": "urn:zam:atom:01M8B8FZB3302PC7J30911FS8X",
+      "namespace": "zam-academy-geschichte-gymnasium-7",
+      "slug": "gg7-buchdruck",
+      "title": "Gutenbergs Buchdruck: Eine Medienrevolution",
+      "domain": "geschichte/lb3",
+      "reduction": "formal",
+      "typical_age_min": 12,
+      "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-buchdruck",
+      "prerequisites": [
+        {
+          "atom_id": "01M8B8FZB3M59RG1103GS0VZN8",
+          "type": "soft",
+          "rationale": "Baut auf „Renaissance und Humanismus: Der Mensch im Mittelpunkt“ im selben Lernbereich auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "geschichte-gymnasium-7",
+          "topic_code": "lb3",
+          "topic_title": "Neue räumliche und geistige Horizonte"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 7,
+          "subject": "geschichte",
+          "topic_code": "lb3",
+          "topic_title": "Neue räumliche und geistige Horizonte",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8B8FZB3Z67YHPYPXNWVX184",
+          "slug": "gg7-buchdruck-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Welche Erfindung Johannes Gutenbergs um 1450 ermöglichte die schnelle Verbreitung von Schriften?",
+          "concept": "Der Buchdruck mit beweglichen Metalllettern.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-buchdruck",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Der Buchdruck mit beweglichen Metalllettern.",
+              "Das Papier aus Pflanzenfasern."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8B8FZB3J17ARBQ0M84DXSJ0",
+          "slug": "gg7-buchdruck-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Wie funktionierte Gutenbergs Buchdruck und welche Folgen hatte er?",
+          "concept": "Gegossene Metalllettern werden gesetzt, eingefärbt und mit der Presse gedruckt; Bücher wurden billiger und Wissen verbreitete sich rasch.",
+          "sample_solution": "Gegossene Metalllettern werden gesetzt, eingefärbt und mit der Presse gedruckt; Bücher wurden billiger und Wissen verbreitete sich rasch.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-buchdruck"
+        }
+      ]
+    },
+    {
+      "id": "01M8B8FZB3489A21XV506CNCSH",
+      "atom_uri": "urn:zam:atom:01M8B8FZB3489A21XV506CNCSH",
+      "namespace": "zam-academy-geschichte-gymnasium-7",
+      "slug": "gg7-entdeckungsfahrten",
+      "title": "1492 und die Entdeckungsfahrten",
+      "domain": "geschichte/lb3",
+      "reduction": "formal",
+      "typical_age_min": 12,
+      "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-entdeckungsfahrten",
+      "prerequisites": [
+        {
+          "atom_id": "01M8B8FZB3302PC7J30911FS8X",
+          "type": "soft",
+          "rationale": "Baut auf „Gutenbergs Buchdruck: Eine Medienrevolution“ im selben Lernbereich auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "geschichte-gymnasium-7",
+          "topic_code": "lb3",
+          "topic_title": "Neue räumliche und geistige Horizonte"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 7,
+          "subject": "geschichte",
+          "topic_code": "lb3",
+          "topic_title": "Neue räumliche und geistige Horizonte",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8B8FZB32ZHSWG3N07Q20DK0",
+          "slug": "gg7-entdeckungsfahrten-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Was geschah 1492?",
+          "concept": "Kolumbus erreichte Amerika (Entdeckung Amerikas).",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-entdeckungsfahrten",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Kolumbus erreichte Amerika (Entdeckung Amerikas).",
+              "Vasco da Gama erreichte Indien."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8B8FZB3A0VY623GYDPCZ03K",
+          "slug": "gg7-entdeckungsfahrten-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Welche Motive und Voraussetzungen hatten die Entdeckungsfahrten?",
+          "concept": "Motive: Gewürze, Gold, Mission, Ruhm; Voraussetzungen: Karavelle, Kompass, Astrolabium, Seekarten, Wissen um die Kugelgestalt der Erde.",
+          "sample_solution": "Motive: Gewürze, Gold, Mission, Ruhm; Voraussetzungen: Karavelle, Kompass, Astrolabium, Seekarten, Wissen um die Kugelgestalt der Erde.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-entdeckungsfahrten"
+        }
+      ]
+    },
+    {
+      "id": "01M8B8FZB3XV1273B3E3MT6DKV",
+      "atom_uri": "urn:zam:atom:01M8B8FZB3XV1273B3E3MT6DKV",
+      "namespace": "zam-academy-geschichte-gymnasium-7",
+      "slug": "gg7-kolonialisierung",
+      "title": "Kolonialisierung und die Europäisierung der Welt",
+      "domain": "geschichte/lb3",
+      "reduction": "formal",
+      "typical_age_min": 12,
+      "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-kolonialisierung",
+      "prerequisites": [
+        {
+          "atom_id": "01M8B8FZB3489A21XV506CNCSH",
+          "type": "soft",
+          "rationale": "Baut auf „1492 und die Entdeckungsfahrten“ im selben Lernbereich auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "geschichte-gymnasium-7",
+          "topic_code": "lb3",
+          "topic_title": "Neue räumliche und geistige Horizonte"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 7,
+          "subject": "geschichte",
+          "topic_code": "lb3",
+          "topic_title": "Neue räumliche und geistige Horizonte",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8B8FZB396E25XJH6CX6552S",
+          "slug": "gg7-kolonialisierung-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Was war die Hauptursache für das Massensterben in Amerika nach 1492?",
+          "concept": "Eingeschleppte Krankheiten wie die Pocken, verstärkt durch Gewalt und Zwangsarbeit.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-kolonialisierung",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Eingeschleppte Krankheiten wie die Pocken, verstärkt durch Gewalt und Zwangsarbeit.",
+              "Eine Hungersnot durch fehlende Kartoffeln."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8B8FZB378T4F7TJKQGE1Z6E",
+          "slug": "gg7-kolonialisierung-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Was versteht man unter dem Kolumbianischen Austausch?",
+          "concept": "Den Austausch von Pflanzen, Tieren, Krankheiten und Menschen zwischen Amerika und der Alten Welt nach 1492.",
+          "sample_solution": "Den Austausch von Pflanzen, Tieren, Krankheiten und Menschen zwischen Amerika und der Alten Welt nach 1492.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-kolonialisierung"
+        }
+      ]
+    },
+    {
+      "id": "01M8B8FZB3YFGEPY9N0JFCBH4N",
+      "atom_uri": "urn:zam:atom:01M8B8FZB3YFGEPY9N0JFCBH4N",
+      "namespace": "zam-academy-geschichte-gymnasium-7",
+      "slug": "gg7-limes-handel",
+      "title": "Handel und Kulturkontakt am Limes",
+      "domain": "geschichte/lb4",
+      "reduction": "formal",
+      "typical_age_min": 12,
+      "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-limes-handel",
+      "prerequisites": [],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "geschichte-gymnasium-7",
+          "topic_code": "lb4",
+          "topic_title": "Wirtschaft und Handel gestern und heute (Längsschnitt)"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 7,
+          "subject": "geschichte",
+          "topic_code": "lb4",
+          "topic_title": "Wirtschaft und Handel gestern und heute (Längsschnitt)",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8B8FZB319W234JWJ50DWJT3",
+          "slug": "gg7-limes-handel-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Wie steuerte Rom den Handel am Limes?",
+          "concept": "Durch kontrollierte Durchgänge, Aufsicht und Abgaben.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-limes-handel",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Durch kontrollierte Durchgänge, Aufsicht und Abgaben.",
+              "Durch eine völlig geschlossene Grenze ohne Handel."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8B8FZB34V3WX9Z6C9NPAK9B",
+          "slug": "gg7-limes-handel-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Welche langfristigen Spuren hinterließ der Kulturkontakt am Limes in unserer Sprache?",
+          "concept": "Lateinische Lehnwörter wie Mauer (murus), Fenster (fenestra), Keller (cellarium), Wein (vinum) und Straße (strata).",
+          "sample_solution": "Lateinische Lehnwörter wie Mauer (murus), Fenster (fenestra), Keller (cellarium), Wein (vinum) und Straße (strata).",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-limes-handel"
+        }
+      ]
+    },
+    {
+      "id": "01M8B8FZB39YRTSDJ69ER5RP0B",
+      "atom_uri": "urn:zam:atom:01M8B8FZB39YRTSDJ69ER5RP0B",
+      "namespace": "zam-academy-geschichte-gymnasium-7",
+      "slug": "gg7-china-europa",
+      "title": "Weltmacht China zur Zeit des europäischen Mittelalters",
+      "domain": "geschichte/lb4",
+      "reduction": "formal",
+      "typical_age_min": 12,
+      "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-china-europa",
+      "prerequisites": [
+        {
+          "atom_id": "01M8B8FZB3YFGEPY9N0JFCBH4N",
+          "type": "soft",
+          "rationale": "Baut auf „Handel und Kulturkontakt am Limes“ im selben Lernbereich auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "geschichte-gymnasium-7",
+          "topic_code": "lb4",
+          "topic_title": "Wirtschaft und Handel gestern und heute (Längsschnitt)"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 7,
+          "subject": "geschichte",
+          "topic_code": "lb4",
+          "topic_title": "Wirtschaft und Handel gestern und heute (Längsschnitt)",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8B8FZB3GFW5HM2YC8XYK82T",
+          "slug": "gg7-china-europa-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Was gab es in China schon im 11. Jahrhundert, in Europa aber erst viel später?",
+          "concept": "Staatlich ausgegebenes Papiergeld.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-china-europa",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Staatlich ausgegebenes Papiergeld.",
+              "Gutenbergs Druck mit Metalllettern."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8B8FZB3S1RZ3EK1DNJYWF3F",
+          "slug": "gg7-china-europa-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Vergleiche China und Europa zur Zeit des europäischen Mittelalters.",
+          "concept": "China hatte Millionenstädte, Papiergeld, Buchdruck, Kompass und riesige Flotten (Zheng He); Europa holte erst später auf.",
+          "sample_solution": "China hatte Millionenstädte, Papiergeld, Buchdruck, Kompass und riesige Flotten (Zheng He); Europa holte erst später auf.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-china-europa"
+        }
+      ]
+    },
+    {
+      "id": "01M8B8FZB3ARVNVSE2E3EJDKCT",
+      "atom_uri": "urn:zam:atom:01M8B8FZB3ARVNVSE2E3EJDKCT",
+      "namespace": "zam-academy-geschichte-gymnasium-7",
+      "slug": "gg7-hanse",
+      "title": "Die Hanse: Ein Handelsnetz im Norden",
+      "domain": "geschichte/lb4",
+      "reduction": "formal",
+      "typical_age_min": 12,
+      "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-hanse",
+      "prerequisites": [
+        {
+          "atom_id": "01M8B8FZB39YRTSDJ69ER5RP0B",
+          "type": "soft",
+          "rationale": "Baut auf „Weltmacht China zur Zeit des europäischen Mittelalters“ im selben Lernbereich auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "geschichte-gymnasium-7",
+          "topic_code": "lb4",
+          "topic_title": "Wirtschaft und Handel gestern und heute (Längsschnitt)"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 7,
+          "subject": "geschichte",
+          "topic_code": "lb4",
+          "topic_title": "Wirtschaft und Handel gestern und heute (Längsschnitt)",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8B8FZB33343DFJ3TB2YHPXR",
+          "slug": "gg7-hanse-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Welche Stadt war das Zentrum der Hanse?",
+          "concept": "Lübeck.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-hanse",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Lübeck.",
+              "München."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8B8FZB3HSVRFFXRYXJHMW99",
+          "slug": "gg7-hanse-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Was war die Hanse, und wie prägte sie die Städte?",
+          "concept": "Ein Bund von Kaufleuten und Städten im Nord- und Ostseeraum mit Kontoren; er verbreitete Stadtrecht, Backsteingotik und Niederdeutsch.",
+          "sample_solution": "Ein Bund von Kaufleuten und Städten im Nord- und Ostseeraum mit Kontoren; er verbreitete Stadtrecht, Backsteingotik und Niederdeutsch.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-hanse"
+        }
+      ]
+    },
+    {
+      "id": "01M8B8FZB3E27JNASAM247GJNY",
+      "atom_uri": "urn:zam:atom:01M8B8FZB3E27JNASAM247GJNY",
+      "namespace": "zam-academy-geschichte-gymnasium-7",
+      "slug": "gg7-fugger",
+      "title": "Die Fugger: Frühkapitalismus aus Augsburg",
+      "domain": "geschichte/lb4",
+      "reduction": "formal",
+      "typical_age_min": 12,
+      "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-fugger",
+      "prerequisites": [
+        {
+          "atom_id": "01M8B8FZB3ARVNVSE2E3EJDKCT",
+          "type": "soft",
+          "rationale": "Baut auf „Die Hanse: Ein Handelsnetz im Norden“ im selben Lernbereich auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "geschichte-gymnasium-7",
+          "topic_code": "lb4",
+          "topic_title": "Wirtschaft und Handel gestern und heute (Längsschnitt)"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 7,
+          "subject": "geschichte",
+          "topic_code": "lb4",
+          "topic_title": "Wirtschaft und Handel gestern und heute (Längsschnitt)",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8B8FZB38E62PBDE7CZXW4ZJ",
+          "slug": "gg7-fugger-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "In welcher Stadt hatten die Fugger ihren Sitz?",
+          "concept": "In Augsburg.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-fugger",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "In Augsburg.",
+              "In Lübeck."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8B8FZB3DDKY9QVBGWZ4JWYE",
+          "slug": "gg7-fugger-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Warum gelten die Fugger als Beispiel für Frühkapitalismus?",
+          "concept": "Sie investierten Kapital gewinnorientiert in Handel, Bergbau und Kredite und reinvestierten Gewinne; ihre Kredite beeinflussten die Kaiserwahl 1519.",
+          "sample_solution": "Sie investierten Kapital gewinnorientiert in Handel, Bergbau und Kredite und reinvestierten Gewinne; ihre Kredite beeinflussten die Kaiserwahl 1519.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-fugger"
+        }
+      ]
+    },
+    {
+      "id": "01M8B8FZB368J6KEDDS4ZGX7RJ",
+      "atom_uri": "urn:zam:atom:01M8B8FZB368J6KEDDS4ZGX7RJ",
+      "namespace": "zam-academy-geschichte-gymnasium-7",
+      "slug": "gg7-welthandel-heute",
+      "title": "Welthandel und Kulturkontakt heute",
+      "domain": "geschichte/lb4",
+      "reduction": "formal",
+      "typical_age_min": 12,
+      "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-welthandel-heute",
+      "prerequisites": [
+        {
+          "atom_id": "01M8B8FZB3E27JNASAM247GJNY",
+          "type": "soft",
+          "rationale": "Baut auf „Die Fugger: Frühkapitalismus aus Augsburg“ im selben Lernbereich auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "geschichte-gymnasium-7",
+          "topic_code": "lb4",
+          "topic_title": "Wirtschaft und Handel gestern und heute (Längsschnitt)"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 7,
+          "subject": "geschichte",
+          "topic_code": "lb4",
+          "topic_title": "Wirtschaft und Handel gestern und heute (Längsschnitt)",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8B8FZB31THN7W09Y7B7D08F",
+          "slug": "gg7-welthandel-heute-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Was ist am heutigen Welthandel im Vergleich zur Hanse vor allem neu?",
+          "concept": "Tempo und weltweiter Umfang des Austauschs.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-welthandel-heute",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Tempo und weltweiter Umfang des Austauschs.",
+              "Dass überhaupt Fernhandel betrieben wird."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8B8FZB3D43F281AFY5KX1PZ",
+          "slug": "gg7-welthandel-heute-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Was verbindet den Welthandel heute mit Limes, Hanse und Fuggern?",
+          "concept": "Staatliche Regeln und Zölle, Handelsnetze zwischen Städten, mächtige Unternehmen und Kulturkontakt durch Handel.",
+          "sample_solution": "Staatliche Regeln und Zölle, Handelsnetze zwischen Städten, mächtige Unternehmen und Kulturkontakt durch Handel.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-welthandel-heute"
+        }
+      ]
+    },
+    {
+      "id": "01M8B8FZB324XAHSGR0HZRKMRY",
+      "atom_uri": "urn:zam:atom:01M8B8FZB324XAHSGR0HZRKMRY",
+      "namespace": "zam-academy-geschichte-gymnasium-7",
+      "slug": "gg7-umbruch-hexenverfolgung",
+      "title": "Umbruch und Krisen im 16. Jahrhundert – auch die Hexenverfolgung",
+      "domain": "geschichte/lb5",
+      "reduction": "formal",
+      "typical_age_min": 12,
+      "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-umbruch-hexenverfolgung",
+      "prerequisites": [],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "geschichte-gymnasium-7",
+          "topic_code": "lb5",
+          "topic_title": "Das konfessionelle Zeitalter"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 7,
+          "subject": "geschichte",
+          "topic_code": "lb5",
+          "topic_title": "Das konfessionelle Zeitalter",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8B8FZB37G9VQV48EXCMG8FN",
+          "slug": "gg7-umbruch-hexenverfolgung-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Wann erreichte die Hexenverfolgung im Reich ihren Höhepunkt?",
+          "concept": "Zwischen etwa 1560 und 1630, in der Frühen Neuzeit.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-umbruch-hexenverfolgung",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Zwischen etwa 1560 und 1630, in der Frühen Neuzeit.",
+              "Um 800 unter Karl dem Großen."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8B8FZB3RQD3YJ3T01VH1FFS",
+          "slug": "gg7-umbruch-hexenverfolgung-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Warum kam es zu Hexenverfolgungen?",
+          "concept": "Krisen wie Missernten, Teufelsglaube und Suche nach Schuldigen; unter Folter erzwungene Geständnisse und Besagungen lösten Verfolgungswellen aus.",
+          "sample_solution": "Krisen wie Missernten, Teufelsglaube und Suche nach Schuldigen; unter Folter erzwungene Geständnisse und Besagungen lösten Verfolgungswellen aus.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-umbruch-hexenverfolgung"
+        }
+      ]
+    },
+    {
+      "id": "01M8B8FZB3M8SBF4BWCCPVM9F5",
+      "atom_uri": "urn:zam:atom:01M8B8FZB3M8SBF4BWCCPVM9F5",
+      "namespace": "zam-academy-geschichte-gymnasium-7",
+      "slug": "gg7-luther-reformation",
+      "title": "1517: Martin Luther und der Beginn der Reformation",
+      "domain": "geschichte/lb5",
+      "reduction": "formal",
+      "typical_age_min": 12,
+      "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-luther-reformation",
+      "prerequisites": [
+        {
+          "atom_id": "01M8B8FZB324XAHSGR0HZRKMRY",
+          "type": "soft",
+          "rationale": "Baut auf „Umbruch und Krisen im 16. Jahrhundert – auch die Hexenverfolgung“ im selben Lernbereich auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "geschichte-gymnasium-7",
+          "topic_code": "lb5",
+          "topic_title": "Das konfessionelle Zeitalter"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 7,
+          "subject": "geschichte",
+          "topic_code": "lb5",
+          "topic_title": "Das konfessionelle Zeitalter",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8B8FZB3B9VKB7FR25Y68ASW",
+          "slug": "gg7-luther-reformation-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Was geschah 1517?",
+          "concept": "Luther veröffentlichte 95 Thesen gegen den Ablass – Beginn der Reformation.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-luther-reformation",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Luther veröffentlichte 95 Thesen gegen den Ablass – Beginn der Reformation.",
+              "Der Dreißigjährige Krieg begann."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8B8FZB3EC1ET0JCE3ZT4FRW",
+          "slug": "gg7-luther-reformation-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Was lehrte Luther über die Rettung des Menschen?",
+          "concept": "Der Mensch wird allein durch Gottes Gnade und den Glauben gerecht, nicht durch gekaufte Ablassbriefe; Maßstab ist allein die Bibel.",
+          "sample_solution": "Der Mensch wird allein durch Gottes Gnade und den Glauben gerecht, nicht durch gekaufte Ablassbriefe; Maßstab ist allein die Bibel.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-luther-reformation"
+        }
+      ]
+    },
+    {
+      "id": "01M8B8FZB30NH43VEJQ3H4VEBJ",
+      "atom_uri": "urn:zam:atom:01M8B8FZB30NH43VEJQ3H4VEBJ",
+      "namespace": "zam-academy-geschichte-gymnasium-7",
+      "slug": "gg7-flugblaetter-medienwandel",
+      "title": "Flugblätter: Bilderkampf und Medienwandel",
+      "domain": "geschichte/lb5",
+      "reduction": "formal",
+      "typical_age_min": 12,
+      "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-flugblaetter-medienwandel",
+      "prerequisites": [
+        {
+          "atom_id": "01M8B8FZB3M8SBF4BWCCPVM9F5",
+          "type": "soft",
+          "rationale": "Baut auf „1517: Martin Luther und der Beginn der Reformation“ im selben Lernbereich auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "geschichte-gymnasium-7",
+          "topic_code": "lb5",
+          "topic_title": "Das konfessionelle Zeitalter"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 7,
+          "subject": "geschichte",
+          "topic_code": "lb5",
+          "topic_title": "Das konfessionelle Zeitalter",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8B8FZB3YYAKRD02R0HZS43X",
+          "slug": "gg7-flugblaetter-medienwandel-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Warum erreichten Flugblätter auch Menschen, die nicht lesen konnten?",
+          "concept": "Durch einprägsame Bilder und weil sie vorgelesen wurden.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-flugblaetter-medienwandel",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Durch einprägsame Bilder und weil sie vorgelesen wurden.",
+              "Weil sie im Radio vorgelesen wurden."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8B8FZB3HQKHY3EAD1P831RG",
+          "slug": "gg7-flugblaetter-medienwandel-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Wie veränderte der Buchdruck die Informationsvermittlung – und was ist heute ähnlich?",
+          "concept": "Viele konnten sich informieren und mitreden, aber Hetze verbreitete sich schneller; die Digitalisierung verstärkt beides.",
+          "sample_solution": "Viele konnten sich informieren und mitreden, aber Hetze verbreitete sich schneller; die Digitalisierung verstärkt beides.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-flugblaetter-medienwandel"
+        }
+      ]
+    },
+    {
+      "id": "01M8B8FZB3VWN4XEEP8888PJMZ",
+      "atom_uri": "urn:zam:atom:01M8B8FZB3VWN4XEEP8888PJMZ",
+      "namespace": "zam-academy-geschichte-gymnasium-7",
+      "slug": "gg7-bauernkrieg",
+      "title": "Der Bauernkrieg 1525: Freiheit mit der Bibel begründet",
+      "domain": "geschichte/lb5",
+      "reduction": "formal",
+      "typical_age_min": 12,
+      "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-bauernkrieg",
+      "prerequisites": [
+        {
+          "atom_id": "01M8B8FZB30NH43VEJQ3H4VEBJ",
+          "type": "soft",
+          "rationale": "Baut auf „Flugblätter: Bilderkampf und Medienwandel“ im selben Lernbereich auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "geschichte-gymnasium-7",
+          "topic_code": "lb5",
+          "topic_title": "Das konfessionelle Zeitalter"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 7,
+          "subject": "geschichte",
+          "topic_code": "lb5",
+          "topic_title": "Das konfessionelle Zeitalter",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8B8FZB3ZM47QTVCRF280WB0",
+          "slug": "gg7-bauernkrieg-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Womit begründeten die Bauern 1525 in den Zwölf Artikeln ihre Forderungen?",
+          "concept": "Mit der Bibel.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-bauernkrieg",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Mit der Bibel.",
+              "Mit einem Gesetz des Kaisers."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8B8FZB31Y9T2PZS6MEZQP35",
+          "slug": "gg7-bauernkrieg-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Wie verhielten sich Bauern und Luther im Bauernkrieg zum Verhältnis von Religion und Politik?",
+          "concept": "Die Bauern leiteten aus dem Evangelium Freiheit und gerechte Abgaben ab; Luther trennte geistliche Freiheit und weltliche Ordnung und stellte sich auf die Seite der Fürsten.",
+          "sample_solution": "Die Bauern leiteten aus dem Evangelium Freiheit und gerechte Abgaben ab; Luther trennte geistliche Freiheit und weltliche Ordnung und stellte sich auf die Seite der Fürsten.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-bauernkrieg"
+        }
+      ]
+    },
+    {
+      "id": "01M8B8FZB38NFDW5PTVXY3DM2G",
+      "atom_uri": "urn:zam:atom:01M8B8FZB38NFDW5PTVXY3DM2G",
+      "namespace": "zam-academy-geschichte-gymnasium-7",
+      "slug": "gg7-karl-v-spaltung",
+      "title": "Karl V. und die konfessionelle Spaltung des Reiches",
+      "domain": "geschichte/lb5",
+      "reduction": "formal",
+      "typical_age_min": 12,
+      "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-karl-v-spaltung",
+      "prerequisites": [
+        {
+          "atom_id": "01M8B8FZB3VWN4XEEP8888PJMZ",
+          "type": "soft",
+          "rationale": "Baut auf „Der Bauernkrieg 1525: Freiheit mit der Bibel begründet“ im selben Lernbereich auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "geschichte-gymnasium-7",
+          "topic_code": "lb5",
+          "topic_title": "Das konfessionelle Zeitalter"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 7,
+          "subject": "geschichte",
+          "topic_code": "lb5",
+          "topic_title": "Das konfessionelle Zeitalter",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8B8FZB3FPZJ56JJ6GKQ6YBW",
+          "slug": "gg7-karl-v-spaltung-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Was legte der Augsburger Religionsfriede 1555 fest?",
+          "concept": "Der Landesherr bestimmt die Konfession seines Landes (katholisch oder lutherisch).",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-karl-v-spaltung",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Der Landesherr bestimmt die Konfession seines Landes (katholisch oder lutherisch).",
+              "Jeder Einzelne darf seine Religion frei wählen."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8B8FZB356C4HFY7J0B3VBS6",
+          "slug": "gg7-karl-v-spaltung-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Warum konnte Karl V. die Reformation nicht aufhalten?",
+          "concept": "Kriege gegen Frankreich und die Osmanen banden seine Kräfte, und er brauchte die Hilfe evangelischer Fürsten, die die Reformation einführten.",
+          "sample_solution": "Kriege gegen Frankreich und die Osmanen banden seine Kräfte, und er brauchte die Hilfe evangelischer Fürsten, die die Reformation einführten.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-karl-v-spaltung"
+        }
+      ]
+    },
+    {
+      "id": "01M8B8FZB34VNDHSN3S7WDP0H8",
+      "atom_uri": "urn:zam:atom:01M8B8FZB34VNDHSN3S7WDP0H8",
+      "namespace": "zam-academy-geschichte-gymnasium-7",
+      "slug": "gg7-dreissigjaehriger-krieg",
+      "title": "1618–1648: Der Dreißigjährige Krieg",
+      "domain": "geschichte/lb5",
+      "reduction": "formal",
+      "typical_age_min": 12,
+      "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-dreissigjaehriger-krieg",
+      "prerequisites": [
+        {
+          "atom_id": "01M8B8FZB38NFDW5PTVXY3DM2G",
+          "type": "soft",
+          "rationale": "Baut auf „Karl V. und die konfessionelle Spaltung des Reiches“ im selben Lernbereich auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "geschichte-gymnasium-7",
+          "topic_code": "lb5",
+          "topic_title": "Das konfessionelle Zeitalter"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 7,
+          "subject": "geschichte",
+          "topic_code": "lb5",
+          "topic_title": "Das konfessionelle Zeitalter",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8B8FZB31SRJSGQP636BWGFV",
+          "slug": "gg7-dreissigjaehriger-krieg-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Von wann bis wann dauerte der Dreißigjährige Krieg?",
+          "concept": "Von 1618 bis 1648.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-dreissigjaehriger-krieg",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Von 1618 bis 1648.",
+              "Von 1517 bis 1547."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8B8FZB3VYD178SQ100648Y5",
+          "slug": "gg7-dreissigjaehriger-krieg-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Warum war der Dreißigjährige Krieg mehr als ein Religionskrieg?",
+          "concept": "Er begann als Konfessionskonflikt, wurde aber zum Machtkampf; das katholische Frankreich kämpfte an der Seite des evangelischen Schweden gegen den Kaiser.",
+          "sample_solution": "Er begann als Konfessionskonflikt, wurde aber zum Machtkampf; das katholische Frankreich kämpfte an der Seite des evangelischen Schweden gegen den Kaiser.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-dreissigjaehriger-krieg"
+        }
+      ]
+    },
+    {
+      "id": "01M8B8FZB33Q257BJBQ1TC30AR",
+      "atom_uri": "urn:zam:atom:01M8B8FZB33Q257BJBQ1TC30AR",
+      "namespace": "zam-academy-geschichte-gymnasium-7",
+      "slug": "gg7-westfaelischer-friede",
+      "title": "Verwüstetes Land und der Westfälische Friede 1648",
+      "domain": "geschichte/lb5",
+      "reduction": "formal",
+      "typical_age_min": 12,
+      "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-westfaelischer-friede",
+      "prerequisites": [
+        {
+          "atom_id": "01M8B8FZB34VNDHSN3S7WDP0H8",
+          "type": "soft",
+          "rationale": "Baut auf „1618–1648: Der Dreißigjährige Krieg“ im selben Lernbereich auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "geschichte-gymnasium-7",
+          "topic_code": "lb5",
+          "topic_title": "Das konfessionelle Zeitalter"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 7,
+          "subject": "geschichte",
+          "topic_code": "lb5",
+          "topic_title": "Das konfessionelle Zeitalter",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8B8FZB30DSZ2J4R88DJ421A",
+          "slug": "gg7-westfaelischer-friede-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Wo wurde 1648 der Westfälische Friede geschlossen?",
+          "concept": "In Münster und Osnabrück.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-westfaelischer-friede",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "In Münster und Osnabrück.",
+              "In Augsburg und Worms."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8B8FZB34C8YEKBVX6ZCS0R3",
+          "slug": "gg7-westfaelischer-friede-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Welche Bedeutung hatte der Westfälische Friede?",
+          "concept": "Er beendete den Dreißigjährigen Krieg, erkannte drei Konfessionen an, stärkte die Reichsstände und zeigte den Wert von Verhandlungen.",
+          "sample_solution": "Er beendete den Dreißigjährigen Krieg, erkannte drei Konfessionen an, stärkte die Reichsstände und zeigte den Wert von Verhandlungen.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-westfaelischer-friede"
+        }
+      ]
+    },
+    {
+      "id": "01M8B8FZB3BWQ16480PN0K85B1",
+      "atom_uri": "urn:zam:atom:01M8B8FZB3BWQ16480PN0K85B1",
+      "namespace": "zam-academy-geschichte-gymnasium-7",
+      "slug": "gg7-ludwig-xiv-staat",
+      "title": "Ludwig XIV.: Ein König ordnet Staat, Wirtschaft und Heer neu",
+      "domain": "geschichte/lb6",
+      "reduction": "formal",
+      "typical_age_min": 12,
+      "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-ludwig-xiv-staat",
+      "prerequisites": [],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "geschichte-gymnasium-7",
+          "topic_code": "lb6",
+          "topic_title": "Absolutismus und Barock"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 7,
+          "subject": "geschichte",
+          "topic_code": "lb6",
+          "topic_title": "Absolutismus und Barock",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8B8FZB3QZH6D2W3NM9FA1EA",
+          "slug": "gg7-ludwig-xiv-staat-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Was ist ein stehendes Heer?",
+          "concept": "Ein Heer, das auch im Frieden besteht und vom König bezahlt wird.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-ludwig-xiv-staat",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Ein Heer, das auch im Frieden besteht und vom König bezahlt wird.",
+              "Ein Heer, das nur aus Lehnsleuten im Kriegsfall besteht."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8B8FZB3S6J38EFNN3AR4JSS",
+          "slug": "gg7-ludwig-xiv-staat-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Was ist das Ziel des Merkantilismus?",
+          "concept": "Mehr Geld soll durch Ausfuhren ins Land fließen als für Einfuhren hinaus – durch Manufakturen, Schutzzölle und Kolonien.",
+          "sample_solution": "Mehr Geld soll durch Ausfuhren ins Land fließen als für Einfuhren hinaus – durch Manufakturen, Schutzzölle und Kolonien.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-ludwig-xiv-staat"
+        }
+      ]
+    },
+    {
+      "id": "01M8B8FZB3T9TQRK2BSZJTKB3Y",
+      "atom_uri": "urn:zam:atom:01M8B8FZB3T9TQRK2BSZJTKB3Y",
+      "namespace": "zam-academy-geschichte-gymnasium-7",
+      "slug": "gg7-versailles",
+      "title": "Versailles: Ein Schloss als Abbild der Macht",
+      "domain": "geschichte/lb6",
+      "reduction": "formal",
+      "typical_age_min": 12,
+      "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-versailles",
+      "prerequisites": [
+        {
+          "atom_id": "01M8B8FZB3BWQ16480PN0K85B1",
+          "type": "soft",
+          "rationale": "Baut auf „Ludwig XIV.: Ein König ordnet Staat, Wirtschaft und Heer neu“ im selben Lernbereich auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "geschichte-gymnasium-7",
+          "topic_code": "lb6",
+          "topic_title": "Absolutismus und Barock"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 7,
+          "subject": "geschichte",
+          "topic_code": "lb6",
+          "topic_title": "Absolutismus und Barock",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8B8FZB35C8J1F4JGQTTX42G",
+          "slug": "gg7-versailles-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Was lag in der Mitte der Hauptachse von Versailles?",
+          "concept": "Das Schlafzimmer des Königs.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-versailles",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Das Schlafzimmer des Königs.",
+              "Der Marktplatz der Stadt."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8B8FZB357J1DX6R9D1T3AN1",
+          "slug": "gg7-versailles-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Wie bildet Versailles die absolutistische Herrschaftsidee ab?",
+          "concept": "Achsen, Garten und Spiegelsaal sind auf den König ausgerichtet; das Hofzeremoniell band den Adel an den Hof.",
+          "sample_solution": "Achsen, Garten und Spiegelsaal sind auf den König ausgerichtet; das Hofzeremoniell band den Adel an den Hof.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-versailles"
+        }
+      ]
+    },
+    {
+      "id": "01M8B8FZB33CNHHVFSZ4GC7Z94",
+      "atom_uri": "urn:zam:atom:01M8B8FZB33CNHHVFSZ4GC7Z94",
+      "namespace": "zam-academy-geschichte-gymnasium-7",
+      "slug": "gg7-absolutismus-leitbild",
+      "title": "Absolutismus als Leitbild – und seine Problematik",
+      "domain": "geschichte/lb6",
+      "reduction": "formal",
+      "typical_age_min": 12,
+      "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-absolutismus-leitbild",
+      "prerequisites": [
+        {
+          "atom_id": "01M8B8FZB3T9TQRK2BSZJTKB3Y",
+          "type": "soft",
+          "rationale": "Baut auf „Versailles: Ein Schloss als Abbild der Macht“ im selben Lernbereich auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "geschichte-gymnasium-7",
+          "topic_code": "lb6",
+          "topic_title": "Absolutismus und Barock"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 7,
+          "subject": "geschichte",
+          "topic_code": "lb6",
+          "topic_title": "Absolutismus und Barock",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8B8FZB3DGC56V9HNVC9NPNJ",
+          "slug": "gg7-absolutismus-leitbild-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Worauf berief sich ein absolutistischer Herrscher wie Ludwig XIV. zur Rechtfertigung seiner Macht?",
+          "concept": "Auf das Gottesgnadentum: Er sei nur Gott verantwortlich.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-absolutismus-leitbild",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Auf das Gottesgnadentum: Er sei nur Gott verantwortlich.",
+              "Auf Wahlen durch das Volk."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8B8FZB3YPQNXQR820TAKJPS",
+          "slug": "gg7-absolutismus-leitbild-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Was war die Problematik des absolutistischen Herrschaftsverständnisses?",
+          "concept": "Niemand konnte den Herrscher kontrollieren; das führte etwa zur Verfolgung der Hugenotten 1685 und zu teuren Kriegen.",
+          "sample_solution": "Niemand konnte den Herrscher kontrollieren; das führte etwa zur Verfolgung der Hugenotten 1685 und zu teuren Kriegen.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-absolutismus-leitbild"
+        }
+      ]
+    },
+    {
+      "id": "01M8B8FZB3RHE4EB3JDKP0WKSB",
+      "atom_uri": "urn:zam:atom:01M8B8FZB3RHE4EB3JDKP0WKSB",
+      "namespace": "zam-academy-geschichte-gymnasium-7",
+      "slug": "gg7-barock-bayern",
+      "title": "Versailles in Bayern: Schleißheim, Kempten und das französische Vorbild",
+      "domain": "geschichte/lb6",
+      "reduction": "formal",
+      "typical_age_min": 12,
+      "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-barock-bayern",
+      "prerequisites": [
+        {
+          "atom_id": "01M8B8FZB33CNHHVFSZ4GC7Z94",
+          "type": "soft",
+          "rationale": "Baut auf „Absolutismus als Leitbild – und seine Problematik“ im selben Lernbereich auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "geschichte-gymnasium-7",
+          "topic_code": "lb6",
+          "topic_title": "Absolutismus und Barock"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 7,
+          "subject": "geschichte",
+          "topic_code": "lb6",
+          "topic_title": "Absolutismus und Barock",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8B8FZB3TBYYFD7RQYAPV369",
+          "slug": "gg7-barock-bayern-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Welcher bayerische Kurfürst ließ das Neue Schloss Schleißheim nach dem Vorbild von Versailles bauen?",
+          "concept": "Max Emanuel.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-barock-bayern",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Max Emanuel.",
+              "Maximilian I."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8B8FZB3HDKBBGC6ZMJ0SGZS",
+          "slug": "gg7-barock-bayern-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Was bedeutet Rezeption des französischen Leitbilds in Bayern?",
+          "concept": "Fürsten übernahmen Residenzen, Gärten und Hofzeremoniell nach dem Vorbild Versailles und passten sie an kleinere Länder und das Reich an.",
+          "sample_solution": "Fürsten übernahmen Residenzen, Gärten und Hofzeremoniell nach dem Vorbild Versailles und passten sie an kleinere Länder und das Reich an.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-barock-bayern"
+        }
+      ]
+    },
+    {
+      "id": "01M8B8FZB3HMH12YGCVQRGGEDW",
+      "atom_uri": "urn:zam:atom:01M8B8FZB3HMH12YGCVQRGGEDW",
+      "namespace": "zam-academy-geschichte-gymnasium-7",
+      "slug": "gg7-hegemonie-balance",
+      "title": "Hegemonie und „balance of power“",
+      "domain": "geschichte/lb6",
+      "reduction": "formal",
+      "typical_age_min": 12,
+      "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-hegemonie-balance",
+      "prerequisites": [
+        {
+          "atom_id": "01M8B8FZB3RHE4EB3JDKP0WKSB",
+          "type": "soft",
+          "rationale": "Baut auf „Versailles in Bayern: Schleißheim, Kempten und das französische Vorbild“ im selben Lernbereich auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "geschichte-gymnasium-7",
+          "topic_code": "lb6",
+          "topic_title": "Absolutismus und Barock"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 7,
+          "subject": "geschichte",
+          "topic_code": "lb6",
+          "topic_title": "Absolutismus und Barock",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8B8FZB377Y4HYV3GB35E28A",
+          "slug": "gg7-hegemonie-balance-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Was bedeutet Hegemonie?",
+          "concept": "Die Vorherrschaft eines Staates über andere.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-hegemonie-balance",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Die Vorherrschaft eines Staates über andere.",
+              "Das Gleichgewicht aller Staaten."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8B8FZB39H0VCDYN9H0F0ZXC",
+          "slug": "gg7-hegemonie-balance-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Was besagt das Prinzip der „balance of power“?",
+          "concept": "Kein Staat soll Europa beherrschen; gegen eine Übermacht verbünden sich die anderen – festgehalten im Frieden von Utrecht 1713.",
+          "sample_solution": "Kein Staat soll Europa beherrschen; gegen eine Übermacht verbünden sich die anderen – festgehalten im Frieden von Utrecht 1713.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-hegemonie-balance"
+        }
+      ]
+    },
+    {
+      "id": "01M8B8FZB3YABXGEE5ZNE87J2R",
+      "atom_uri": "urn:zam:atom:01M8B8FZB3YABXGEE5ZNE87J2R",
+      "namespace": "zam-academy-geschichte-gymnasium-7",
+      "slug": "gg7-dionysostheater",
+      "title": "Das Dionysostheater: Bauen für die Bürger der Polis",
+      "domain": "geschichte/lb7",
+      "reduction": "formal",
+      "typical_age_min": 12,
+      "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-dionysostheater",
+      "prerequisites": [],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "geschichte-gymnasium-7",
+          "topic_code": "lb7",
+          "topic_title": "Bauwerke als Ausdruck politischen Denkens (Längsschnitt)"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 7,
+          "subject": "geschichte",
+          "topic_code": "lb7",
+          "topic_title": "Bauwerke als Ausdruck politischen Denkens (Längsschnitt)",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8B8FZB3WAH954CAPJ2YNZYC",
+          "slug": "gg7-dionysostheater-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "In welchem Jahrhundert erlebte Athen seine Blütezeit?",
+          "concept": "Im 5. Jahrhundert v. Chr.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-dionysostheater",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Im 5. Jahrhundert v. Chr.",
+              "Im 5. Jahrhundert n. Chr."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8B8FZB3VBZDHZFHXEDBHP0K",
+          "slug": "gg7-dionysostheater-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Was zeigt das Dionysostheater über die Demokratie der Polis?",
+          "concept": "Ein offener Zuschauerraum für Tausende Bürger ohne Herrschersitz spiegelt die Teilhabe der Bürger – Frauen, Sklaven und Fremde hatten keine politischen Rechte.",
+          "sample_solution": "Ein offener Zuschauerraum für Tausende Bürger ohne Herrschersitz spiegelt die Teilhabe der Bürger – Frauen, Sklaven und Fremde hatten keine politischen Rechte.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-dionysostheater"
+        }
+      ]
+    },
+    {
+      "id": "01M8B8FZB3XXM22QVJXP1DK7EN",
+      "atom_uri": "urn:zam:atom:01M8B8FZB3XXM22QVJXP1DK7EN",
+      "namespace": "zam-academy-geschichte-gymnasium-7",
+      "slug": "gg7-kaiserpfalz-aachen",
+      "title": "Die Kaiserpfalz Aachen: Thron zwischen Himmel und Volk",
+      "domain": "geschichte/lb7",
+      "reduction": "formal",
+      "typical_age_min": 12,
+      "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-kaiserpfalz-aachen",
+      "prerequisites": [
+        {
+          "atom_id": "01M8B8FZB3YABXGEE5ZNE87J2R",
+          "type": "soft",
+          "rationale": "Baut auf „Das Dionysostheater: Bauen für die Bürger der Polis“ im selben Lernbereich auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "geschichte-gymnasium-7",
+          "topic_code": "lb7",
+          "topic_title": "Bauwerke als Ausdruck politischen Denkens (Längsschnitt)"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 7,
+          "subject": "geschichte",
+          "topic_code": "lb7",
+          "topic_title": "Bauwerke als Ausdruck politischen Denkens (Längsschnitt)",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8B8FZB35J42P0NE2E3T0H19",
+          "slug": "gg7-kaiserpfalz-aachen-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Wann wurde Karl der Große in Rom zum Kaiser gekrönt?",
+          "concept": "Am 25. Dezember 800.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-kaiserpfalz-aachen",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Am 25. Dezember 800.",
+              "Am 25. Dezember 962."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8B8FZB32H054PSDMNPTC69E",
+          "slug": "gg7-kaiserpfalz-aachen-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Was drückt die Lage des Throns in der Aachener Pfalzkapelle aus?",
+          "concept": "Der Herrscher sitzt auf der Empore zwischen dem Volk unten und der Kuppel als Himmel – eine christliche Monarchie ohne Teilhabe des Volkes.",
+          "sample_solution": "Der Herrscher sitzt auf der Empore zwischen dem Volk unten und der Kuppel als Himmel – eine christliche Monarchie ohne Teilhabe des Volkes.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-kaiserpfalz-aachen"
+        }
+      ]
+    },
+    {
+      "id": "01M8B8FZB338AXMT4WN1KX5188",
+      "atom_uri": "urn:zam:atom:01M8B8FZB338AXMT4WN1KX5188",
+      "namespace": "zam-academy-geschichte-gymnasium-7",
+      "slug": "gg7-wuerzburger-residenz",
+      "title": "Die Würzburger Residenz: Barocke Pracht eines Fürstbischofs",
+      "domain": "geschichte/lb7",
+      "reduction": "formal",
+      "typical_age_min": 12,
+      "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-wuerzburger-residenz",
+      "prerequisites": [
+        {
+          "atom_id": "01M8B8FZB3XXM22QVJXP1DK7EN",
+          "type": "soft",
+          "rationale": "Baut auf „Die Kaiserpfalz Aachen: Thron zwischen Himmel und Volk“ im selben Lernbereich auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "geschichte-gymnasium-7",
+          "topic_code": "lb7",
+          "topic_title": "Bauwerke als Ausdruck politischen Denkens (Längsschnitt)"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 7,
+          "subject": "geschichte",
+          "topic_code": "lb7",
+          "topic_title": "Bauwerke als Ausdruck politischen Denkens (Längsschnitt)",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8B8FZB3V8VMX4X3MJNEQ5N2",
+          "slug": "gg7-wuerzburger-residenz-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Wer bemalte 1752/53 das Treppenhaus der Würzburger Residenz?",
+          "concept": "Giovanni Battista Tiepolo.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-wuerzburger-residenz",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Giovanni Battista Tiepolo.",
+              "Albrecht Dürer."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8B8FZB3A0TKCR0QHXVZ458E",
+          "slug": "gg7-wuerzburger-residenz-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Warum kann man die Herrschaft der Würzburger Fürstbischöfe absolutistisch und aristokratisch nennen?",
+          "concept": "Sie stellten sich wie absolutistische Fürsten dar, wurden aber von einem adligen Domkapitel gewählt.",
+          "sample_solution": "Sie stellten sich wie absolutistische Fürsten dar, wurden aber von einem adligen Domkapitel gewählt.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-wuerzburger-residenz"
+        }
+      ]
+    },
+    {
+      "id": "01M8B8FZB3T9NVCX8MV7PVDJX9",
+      "atom_uri": "urn:zam:atom:01M8B8FZB3T9NVCX8MV7PVDJX9",
+      "namespace": "zam-academy-geschichte-gymnasium-7",
+      "slug": "gg7-reichstag-vergleich",
+      "title": "Die Reichstagskuppel: Das Volk steht über den Abgeordneten",
+      "domain": "geschichte/lb7",
+      "reduction": "formal",
+      "typical_age_min": 12,
+      "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-reichstag-vergleich",
+      "prerequisites": [
+        {
+          "atom_id": "01M8B8FZB338AXMT4WN1KX5188",
+          "type": "soft",
+          "rationale": "Baut auf „Die Würzburger Residenz: Barocke Pracht eines Fürstbischofs“ im selben Lernbereich auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "geschichte-gymnasium-7",
+          "topic_code": "lb7",
+          "topic_title": "Bauwerke als Ausdruck politischen Denkens (Längsschnitt)"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 7,
+          "subject": "geschichte",
+          "topic_code": "lb7",
+          "topic_title": "Bauwerke als Ausdruck politischen Denkens (Längsschnitt)",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8B8FZB329EJRGDTT73GA33Q",
+          "slug": "gg7-reichstag-vergleich-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Was soll die begehbare Kuppel des Reichstagsgebäudes ausdrücken?",
+          "concept": "Das Volk steht über seinen Vertretern und kann ihre Arbeit offen verfolgen.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-reichstag-vergleich",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Das Volk steht über seinen Vertretern und kann ihre Arbeit offen verfolgen.",
+              "Der Bundeskanzler regiert von oben über das Parlament."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8B8FZB3SX89D2WMWNHVR29Q",
+          "slug": "gg7-reichstag-vergleich-recall",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Ordne Dionysostheater, Aachener Pfalzkapelle, Würzburger Residenz und Reichstagskuppel Epochen und Herrschaftsformen zu.",
+          "concept": "Antike: Polis/Demokratie; Mittelalter: Monarchie (König, Kaiser); Neuzeit: Absolutismus/Aristokratie; Gegenwart: Demokratie.",
+          "sample_solution": "Antike: Polis/Demokratie; Mittelalter: Monarchie (König, Kaiser); Neuzeit: Absolutismus/Aristokratie; Gegenwart: Demokratie.",
+          "source_link": "https://academy.zam-os.org/geschichte-gymnasium-7/#lesson=gg7-reichstag-vergleich"
+        }
+      ]
+    }
+  ]
+}

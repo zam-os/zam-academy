@@ -1,0 +1,329 @@
+[
+	{
+		"id": "verkehrswege",
+		"lb": 4,
+		"title": "Verkehrsnetze und Transit",
+		"period": "Geo6 LB 4 · Verkehr und Industrie",
+		"intro": "Häfen, Bahnhöfe, Flughäfen und Autobahnkreuze verbinden Wege. Dort können Waren und Reisende das Verkehrsmittel wechseln.",
+		"paragraphs": [
+			"Straßen erreichen viele einzelne Ziele; Lkw können Waren direkt liefern. Die Schiene transportiert auf geeigneten Strecken viele Menschen oder schwere Waren gemeinsam. Wasserwege eignen sich für große Mengen und benötigen schiffbare Flüsse oder Kanäle und Häfen. Flugzeuge sind über lange Strecken oft schnell, brauchen Flughäfen und verursachen pro Reisendem auf vielen Strecken hohe Emissionen.",
+			"Transit bedeutet Durchgang durch ein Gebiet, während Start und Ziel außerhalb liegen. Die zentrale Lage und dichte Verkehrsnetze machen Deutschland zu einem Transitland. Eine Fahrt Rotterdam–Mailand über Deutschland ist ein Beispiel. Versorgung und Handel gewinnen durch gute Verbindungen; Durchgangsverkehr verursacht auch Lärm, Abgase und Platzbedarf. Rotterdam verbindet Seeverkehr mit Binnenschiff, Schiene und Straße. Der Flughafen München verbindet die Region etwa mit weiter entfernten Zielen."
+		],
+		"takeaway": "Lies auf Verkehrskarten getrennt Wege, Knoten und Bewegungen.",
+		"sourceIds": [
+			"lehrplan"
+		],
+		"quiz": {
+			"question": "Welche Fahrt ist Transit durch Deutschland?",
+			"answer": "Von Rotterdam über Deutschland nach Mailand.",
+			"wrong": [
+				"Von München nach Hamburg.",
+				"Von Berlin nach Warschau."
+			],
+			"explanation": "Für deutschen Transit müssen Start und Ziel außerhalb Deutschlands liegen."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Verkehr und Wirtschaft erklären",
+			"instruction": "Ordne jede Aussage zu. Prüfe deine Entscheidung und lies die Rückmeldung.",
+			"categories": [
+				"Verkehrsweg",
+				"Knoten",
+				"Verkehrsstrom"
+			],
+			"entries": [
+				{
+					"text": "Der Rhein zwischen Basel und Rotterdam.",
+					"target": 0,
+					"feedback": "Der Rhein ist hier als Wasserweg nutzbar."
+				},
+				{
+					"text": "Ein Hafen mit Schienenanschluss.",
+					"target": 1,
+					"feedback": "Hier treffen Wasser- und Landverkehr zusammen."
+				},
+				{
+					"text": "Lkw fahren von den Niederlanden durch Deutschland nach Italien.",
+					"target": 2,
+					"feedback": "Die Fahrt zeigt eine Bewegung zwischen Regionen."
+				}
+			],
+			"conclusion": "Lies auf Verkehrskarten getrennt Wege, Knoten und Bewegungen."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Beschreibe einen Weg für einen Container von Rotterdam nach Bayern mit einem Wechsel des Verkehrsmittels.",
+				"hints": [
+					"Welcher Hafen ist der Startpunkt?",
+					"Wo wird umgeladen?"
+				],
+				"model": "Der Container erreicht Rotterdam mit dem Seeschiff. Dort wird er auf die Bahn umgeladen und fährt zu einem Güterbahnhof in Bayern. Ein Lkw übernimmt die letzte Strecke zum Betrieb.",
+				"criteria": [
+					"Welcher Hafen ist der Startpunkt?",
+					"Wo wird umgeladen?",
+					"Ich begründe ein Verkehrsmittel für die letzte Strecke."
+				]
+			},
+			"2": {
+				"prompt": "Die Bahnstrecke nach Italien ist zeitweise gesperrt. Erkläre zwei Folgen, wenn Güter auf die Straße wechseln.",
+				"hints": [
+					"Wer braucht die Lieferung?",
+					"Welche Belastungen ändern sich?"
+				],
+				"model": "Straßentransport kann Lieferungen trotz Sperrung ermöglichen. Mehr Lkw können aber Engpässe, Lärm und zusätzliche Emissionen verursachen. Die Wirkung hängt von Auslastung und Umwegen ab.",
+				"criteria": [
+					"Wer braucht die Lieferung?",
+					"Welche Belastungen ändern sich?",
+					"Ich nenne eine Bedingung."
+				]
+			}
+		},
+		"model": "verkehr"
+	},
+	{
+		"id": "brenner",
+		"lb": 4,
+		"title": "Der Brenner und der Alpentransit",
+		"period": "Geo6 LB 4 · Verkehr und Industrie",
+		"intro": "Die Alpen bündeln viele Wege in Tälern, an Pässen und in Tunneln.",
+		"paragraphs": [
+			"Der Brenner-Basistunnel ist ein Eisenbahnprojekt zwischen Innsbruck in Österreich und Franzensfeste in Italien. Der Tunnel soll Zügen eine flachere Strecke durch die Alpen geben. Eine geringere Steigung kann den Einsatz längerer und schwererer Güterzüge erleichtern. Die Zufahrten und das tatsächliche Bahnangebot beeinflussen, wie viel Verkehr von der Straße auf die Schiene wechselt.",
+			"Der Bau kostet Geld, braucht Material und verändert Flächen. Im Betrieb könnten weniger Lkw auf der Passstrecke weniger Straßenlärm und Abgase bedeuten. Arbeitsplätze und schnellere Lieferungen sind wirtschaftliche Gesichtspunkte; Lebensqualität und Baustellenlärm betreffen die Menschen vor Ort. Eine Prognose zur Verlagerung solltest du mit Angaben zu Zugangebot, Auslastung und Anschlussstrecken prüfen."
+		],
+		"takeaway": "Bewerte beim Tunnel Bau und Betrieb sowie Folgen für unterschiedliche Gruppen.",
+		"sourceIds": [
+			"lehrplan",
+			"brenner"
+		],
+		"quiz": {
+			"question": "Warum ist die geringere Steigung für Güterzüge wichtig?",
+			"answer": "Schwere Züge lassen sich auf flacherer Strecke leichter befördern.",
+			"wrong": [
+				"Die Entfernung zwischen den Ländern verschwindet.",
+				"Der Güterzug fährt dadurch automatisch ohne Energie."
+			],
+			"explanation": "Schwere Züge benötigen an starken Steigungen mehr Zugkraft."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Verkehr und Wirtschaft erklären",
+			"instruction": "Ordne jede Aussage zu. Prüfe deine Entscheidung und lies die Rückmeldung.",
+			"categories": [
+				"Möglicher Nutzen im Betrieb",
+				"Belastung beim Bau",
+				"Bedingung für Verlagerung"
+			],
+			"entries": [
+				{
+					"text": "Weniger Lkw-Lärm entlang einer Straße.",
+					"target": 0,
+					"feedback": "Das setzt voraus, dass Fahrten tatsächlich auf die Bahn wechseln."
+				},
+				{
+					"text": "Aushub muss abgefahren oder sinnvoll genutzt werden.",
+					"target": 1,
+					"feedback": "Das fällt während des Tunnelbaus an."
+				},
+				{
+					"text": "Zufahrtsstrecken bieten Platz für mehr Güterzüge.",
+					"target": 2,
+					"feedback": "Die Verbindung braucht passende Anschlüsse."
+				}
+			],
+			"conclusion": "Bewerte beim Tunnel Bau und Betrieb sowie Folgen für unterschiedliche Gruppen."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Erkläre am Brennerprojekt einen möglichen ökonomischen Vorteil und eine ökologische Belastung.",
+				"hints": [
+					"Wodurch kann Transport leichter werden?",
+					"Was verursacht die Baustelle?"
+				],
+				"model": "Eine neue Bahnverbindung kann Gütertransporte durch die Alpen erleichtern. Der Bau braucht Material und Flächen; beim Aushub entstehen Transporte. Wie groß der spätere Nutzen ist, hängt von der Nutzung ab.",
+				"criteria": [
+					"Wodurch kann Transport leichter werden?",
+					"Was verursacht die Baustelle?",
+					"Ich trenne Bau und Betrieb."
+				]
+			},
+			"2": {
+				"prompt": "Ein Spediteur und eine Familie an der Passstraße beurteilen den Tunnel. Vergleiche Interessen und nenne eine messbare Bedingung für ein gemeinsames positives Urteil.",
+				"hints": [
+					"Welche Interessen hat die Spedition?",
+					"Welche Interessen hat die Familie?"
+				],
+				"model": "Die Spedition braucht verlässliche Zeiten und bezahlbare Züge. Die Familie möchte weniger Lärm. Beide hätten einen Vorteil, wenn regelmäßig Güter auf planbaren Zügen fahren und die Zahl der Lkw an der Passstraße messbar sinkt.",
+				"criteria": [
+					"Welche Interessen hat die Spedition?",
+					"Welche Interessen hat die Familie?",
+					"Ich schlage eine überprüfbare Bedingung vor."
+				]
+			}
+		},
+		"model": "verkehr"
+	},
+	{
+		"id": "verkehr-zaehlen",
+		"lb": 4,
+		"title": "Verkehr zählen und vergleichen",
+		"period": "Geo6 LB 4 · Verkehr und Industrie",
+		"intro": "Mit einer Zählung kannst du Verkehrsarten vergleichen. Der Ort und die Uhrzeit bestimmen, was deine Zahlen bedeuten.",
+		"paragraphs": [
+			"Lege vorab einen öffentlichen sicheren Beobachtungsort, ein Zeitfenster und Kategorien fest. Zähle zum Beispiel in zwei gleich langen Abschnitten Autos, Fahrräder und Busse. Zeichne ein Balkendiagramm mit einer gemeinsamen Skala, die bei null beginnt. Die Anzahl Fahrzeuge pro Zeit heißt Verkehrsaufkommen. Für die Anzahl beförderter Menschen müsstest du zusätzlich die Auslastung erheben.",
+			"Vergleiche einen eigenen Weg nach Fahrzeit, Kosten und Umweltwirkung. Ein E-Bus hat am Fahrzeug keine Abgase. Die Stromerzeugung und Fahrzeugherstellung zählen trotzdem zur Gesamtwirkung, ebenso die Auslastung. Ein Rad braucht wenig Platz, ein Bus bündelt viele Wege. Anrufbusse können Orte mit wenig Nachfrage verbinden; ihre Wirkung hängt von den tatsächlich vermiedenen Autofahrten ab."
+		],
+		"takeaway": "Trenne beim Vergleichen Fahrzeugzahl, Personenzahl und Umweltwirkung.",
+		"sourceIds": [
+			"lehrplan"
+		],
+		"quiz": {
+			"question": "Warum beginnen die Balken bei null?",
+			"answer": "Damit ihre Längen die Anzahlen fair vergleichen.",
+			"wrong": [
+				"Damit der kleinste Balken unsichtbar wird.",
+				"Damit unterschiedliche Zählzeiten automatisch gleich sind."
+			],
+			"explanation": "Eine abgeschnittene Skala kann Unterschiede zwischen den Mengen übertreiben."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Verkehr und Wirtschaft erklären",
+			"instruction": "Ordne jede Aussage zu. Prüfe deine Entscheidung und lies die Rückmeldung.",
+			"categories": [
+				"Vergleichbar",
+				"Zusatzangaben nötig",
+				"Sicherheitsregel"
+			],
+			"entries": [
+				{
+					"text": "Zwei Zählungen dauern am selben Ort jeweils 15 Minuten.",
+					"target": 0,
+					"feedback": "Gleiche Dauer erlaubt einen direkten Vergleich der Anzahlen."
+				},
+				{
+					"text": "Aus der Zahl der Busse auf die Zahl der Mitfahrenden schließen.",
+					"target": 1,
+					"feedback": "Dafür fehlt die Auslastung."
+				},
+				{
+					"text": "Vom Gehweg aus zählen.",
+					"target": 2,
+					"feedback": "Bleib mit Abstand zum Verkehr an einem sicheren Ort."
+				}
+			],
+			"conclusion": "Trenne beim Vergleichen Fahrzeugzahl, Personenzahl und Umweltwirkung."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Beschreibe das Modell-Diagramm für 15 Minuten vor Schulbeginn und plane eine zweite Zählung.",
+				"hints": [
+					"Welche drei Werte siehst du?",
+					"Was muss gleich bleiben?"
+				],
+				"model": "Vor Schulbeginn wurden im Modell 18 Autos, 12 Fahrräder und 2 Busse gezählt. Ich zähle nach Schulschluss am selben Ort und ebenfalls 15 Minuten. Danach zeichne ich beide Reihen auf derselben Skala.",
+				"criteria": [
+					"Welche drei Werte siehst du?",
+					"Was muss gleich bleiben?",
+					"Ich begründe eine Darstellung."
+				]
+			},
+			"2": {
+				"prompt": "Schlage für einen Schulweg von 4 km eine Alternative zum Elterntaxi vor. Vergleiche Kosten und Umweltwirkung anhand zweier Bedingungen.",
+				"hints": [
+					"Ist der Weg sicher und zumutbar?",
+					"Welche Kosten oder Vorteile gibt es?"
+				],
+				"model": "Ein Bus bündelt mehrere Schulwege, wenn er passend verkehrt und gut genutzt wird. Für einen sicheren Radweg braucht das Rad kaum Betriebsenergie und verursacht wenig laufende Fahrtkosten. Busfahrpreis, Steigung, Wetter und Sicherheit können die Entscheidung beeinflussen.",
+				"criteria": [
+					"Ist der Weg sicher und zumutbar?",
+					"Welche Kosten oder Vorteile gibt es?",
+					"Ich nenne Bedingungen für mein Urteil."
+				]
+			}
+		},
+		"model": "zaehlung"
+	},
+	{
+		"id": "industrie",
+		"lb": 4,
+		"title": "Industriestandorte und das Auto",
+		"period": "Geo6 LB 4 · Verkehr und Industrie",
+		"intro": "Ein Auto entsteht aus Teilen von vielen Orten. Karten helfen dir, dieses Produktionsnetz zu verstehen.",
+		"paragraphs": [
+			"Harte Standortfaktoren lassen sich oft messen oder beziffern: Verkehrsanschluss, Kosten für Fläche, erreichbare Arbeitskräfte oder Nähe zu Zulieferern. Weiche Faktoren betreffen zum Beispiel Freizeit, Wohnumfeld und Image. Ein Werk braucht Zulieferung und Auslieferung. Untersuche mit einer Karte einen Betrieb aus deinem Schulort oder der Umgebung und prüfe, welche Faktoren für seine Produktion und seinen Absatz wichtig sind.",
+			"Eine vereinfachte Autokette reicht vom Rohstoff über bearbeitetes Material und Bauteile zur Montage und Auslieferung. Dingolfing produziert Fahrzeuge und Komponenten; zu anderen Produktionsräumen gehören etwa Wolfsburg (Autos), Turin (Autoindustrie) und Toulouse (Flugzeuge). Werk und Zulieferer können in verschiedenen Ländern liegen. Verkehrsverbindungen machen diese Arbeitsteilung möglich und erzeugen Güterverkehr und Flächenbedarf."
+		],
+		"takeaway": "Untersuche bei Industrie Standortwahl, Lieferkette und Folgen für den Raum.",
+		"sourceIds": [
+			"lehrplan",
+			"bmw",
+			"atlas"
+		],
+		"quiz": {
+			"question": "Welcher Standortfaktor ist in der Regel hart und messbar?",
+			"answer": "Entfernung zur nächsten Autobahnauffahrt.",
+			"wrong": [
+				"Das Ansehen der Stadt als Wohnort.",
+				"Die empfundene Schönheit der Landschaft."
+			],
+			"explanation": "Die Entfernung ist messbar und beeinflusst Lieferzeiten."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Verkehr und Wirtschaft erklären",
+			"instruction": "Ordne jede Aussage zu. Prüfe deine Entscheidung und lies die Rückmeldung.",
+			"categories": [
+				"Rohstoff und Grundmaterial",
+				"Bauteil und Montage",
+				"Absatz"
+			],
+			"entries": [
+				{
+					"text": "Eisenerz wird gewonnen und zu Stahl verarbeitet.",
+					"target": 0,
+					"feedback": "Aus dem Rohstoff entsteht ein geeignetes Material."
+				},
+				{
+					"text": "Karosserieteile werden geformt und zum Fahrzeug zusammengesetzt.",
+					"target": 1,
+					"feedback": "Bauteile werden gefertigt und montiert."
+				},
+				{
+					"text": "Fertige Autos werden an Händler ausgeliefert.",
+					"target": 2,
+					"feedback": "Hier gelangen die Produkte zum Verkauf."
+				}
+			],
+			"conclusion": "Untersuche bei Industrie Standortwahl, Lieferkette und Folgen für den Raum."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Erkläre die Bedeutung von zwei Standortfaktoren für einen Betrieb in deiner Region. Nutze Dingolfing als Muster.",
+				"hints": [
+					"Welche Transporte braucht der Betrieb?",
+					"Welche Arbeitskräfte braucht er?"
+				],
+				"model": "Dingolfings Verbindung zum Straßennetz ist für Zulieferung und Auslieferung wichtig. Ausgebildete Arbeitskräfte sind nötig, um Fahrzeuge und Teile zu produzieren. Für einen Betrieb vor Ort suche ich vergleichbare Hinweise im BayernAtlas und auf seiner Website.",
+				"criteria": [
+					"Welche Transporte braucht der Betrieb?",
+					"Welche Arbeitskräfte braucht er?",
+					"Ich begründe die Wirkung beider Faktoren."
+				]
+			},
+			"2": {
+				"prompt": "Ein Zulieferer liefert ein Bauteil verspätet. Erkläre einen möglichen Effekt auf die Montage und eine Lösung mit einem Nachteil.",
+				"hints": [
+					"An welcher Stufe fehlt das Teil?",
+					"Wie könnte das Werk reagieren?"
+				],
+				"model": "Fehlt ein notwendiges Teil, kann die Montagelinie langsamer werden oder anhalten. Ein Vorrat kann kurze Störungen abfedern; er braucht aber Lagerfläche und kostet Geld. Ein zweiter Lieferant wäre eine andere Möglichkeit.",
+				"criteria": [
+					"An welcher Stufe fehlt das Teil?",
+					"Wie könnte das Werk reagieren?",
+					"Ich nenne einen Nachteil der Lösung."
+				]
+			}
+		},
+		"model": "industrie"
+	}
+]

@@ -41,6 +41,16 @@ builds and the tests pass" is not the bar.
 7. **No third-party requests, no new dependencies.** Progress stays in
    `localStorage`; teacher videos are plain links, never embeds. New npm
    dependencies need Thomas's approval.
+   **Free learner text** (a writing desk, a wiki editor) may stay in
+   `localStorage` as well (Thomas's decision of 2026-11-21). The browser keeps
+   it apart per device account, browser, profile and origin, and does not
+   sync it; one account shared by several pupils is the school's mistake,
+   not a risk to show prominently in a lesson. Next to the field a small
+   clickable marker explains this, in the sense of "Hast du dein eigenes
+   Benutzerkonto oder teilst du es mit anderen? Falls du es teilst, lösche
+   am Ende den Lernstand und die Texte." The notes for parents and teachers
+   say the same, and "Fortschritt zurücksetzen" deletes the texts too. The
+   app never reads, rates or sends these texts.
    **Discovery Island exception** (`mathematik-grundschule-4`, explicitly
    approved by Thomas on 2026-10-31;
    [agent-recorded decision reference](https://github.com/zam-os/zam-academy/pull/72#issuecomment-6564246975)):
@@ -327,11 +337,15 @@ Learners have review histories on them.
   Zweige, lesson and card counts), add it to the Pages list (CI finds a package by its
   `package.json` and tests only the packages a change touches), add the README row and a dev port, keep the `zam-home-link` back to
   `https://academy.zam-os.org/`, and make `npm run package:zip` work.
-- A local draft with `publication.json` status `local-only` stays out of the
-  public catalog, atlas registry and Pages list. CI still validates its cell.
-  Changing the marker to `ready` does not replace release authority or the
-  normal registration checks. Shared publication tooling belongs in its own
-  PR rather than a new-package PR.
+- Every new package goes public with its first merge: `publication.json`
+  status `ready`, version `0.0`, registered in `academy.json`, the Pages list
+  and the README (Thomas's decision of 2026-11-21: with so many packages a
+  hidden one gets lost; version 0 already says that teacher review is open).
+  The status `local-only` keeps a package out of the public catalog, atlas
+  registry and Pages list. Use it only when Thomas asks for it for that
+  package, and say so in the PR. CI still validates the cell of a
+  `local-only` package. Shared publication tooling belongs in its own PR
+  rather than a new-package PR.
 - Every package has a **package version** in `publication.json`
   (`"version": "0.0"`), shown in the app inside the `zam-home-link` and in the
   atlas (`academy.json`). `0.n`: not yet accepted by a teacher of the grade;

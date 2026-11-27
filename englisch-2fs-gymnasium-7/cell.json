@@ -1,0 +1,3135 @@
+{
+	"$schema": "https://zam.app/schemas/v1/kvt-tile.json",
+	"tile_id": "zam-academy:englisch-2fs-gymnasium-7",
+	"version": "2026.11.2",
+	"title": "Englisch 7 Gymnasium (2. Fremdsprache) · ZAM Academy",
+	"description": "English as second foreign language in Bavarian Gymnasium grade 7. Communication, grammar, culture, text and media, learning methods and language history.",
+	"publisher": "ZAM Academy",
+	"sources": [
+		{
+			"uri": "https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/7/englisch/2-fremdsprache",
+			"label": "ISB · LehrplanPLUS Englisch 7 (2. Fremdsprache)",
+			"checked": "2026-11-25"
+		},
+		{
+			"uri": "https://www.visitcornwall.com/regions",
+			"label": "Visit Cornwall · Our regions",
+			"checked": "2026-11-25"
+		},
+		{
+			"uri": "https://www.nps.gov/ever/index.htm",
+			"label": "National Park Service · Everglades",
+			"checked": "2026-11-25"
+		},
+		{
+			"uri": "https://www.census.gov/programs-surveys/popest/about/glossary/geo-terms.html",
+			"label": "U.S. Census Bureau · Regions and divisions",
+			"checked": "2026-11-25"
+		},
+		{
+			"uri": "https://www.parliament.uk/about/mps-and-lords/principal/government-opposition/",
+			"label": "UK Parliament · Government and opposition",
+			"checked": "2026-11-25"
+		},
+		{
+			"uri": "https://www.parliament.uk/about/how/role/relations-with-other-institutions/parliament-crown/",
+			"label": "UK Parliament · Parliament and Crown",
+			"checked": "2026-11-25"
+		},
+		{
+			"uri": "https://www.usa.gov/branches-of-government",
+			"label": "USAGov · Branches of government",
+			"checked": "2026-11-25"
+		},
+		{
+			"uri": "https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/",
+			"label": "U.S. Office of Personnel Management · Federal holidays",
+			"checked": "2026-11-25"
+		},
+		{
+			"uri": "https://www.parliament.uk/about/faqs/house-of-commons-faqs/gunpowder-plot/",
+			"label": "UK Parliament · The Gunpowder Plot",
+			"checked": "2026-11-25"
+		},
+		{
+			"uri": "https://www.english-heritage.org.uk/visit/places/hadrians-wall/hadrians-wall-history-and-stories/history/",
+			"label": "English Heritage · Hadrian’s Wall",
+			"checked": "2026-11-25"
+		},
+		{
+			"uri": "https://www.romanbaths.co.uk/roman-baths-timeline",
+			"label": "Roman Baths · Timeline",
+			"checked": "2026-11-25"
+		},
+		{
+			"uri": "https://www.english-heritage.org.uk/visit/places/1066-battle-of-hastings-abbey-and-battlefield/history-and-stories/history/",
+			"label": "English Heritage · Battle of Hastings",
+			"checked": "2026-11-25"
+		},
+		{
+			"uri": "https://www.english-heritage.org.uk/visit/inspire-me/blog/blog-posts/what-was-the-legacy-of-william-the-conqueror/",
+			"label": "English Heritage · William’s legacy",
+			"checked": "2026-11-25"
+		}
+	],
+	"atoms": [
+		{
+			"id": "01M8997DG0R3TCFK08GCMBR0ZV",
+			"atom_uri": "urn:zam:atom:01M8997DG0R3TCFK08GCMBR0ZV",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-7",
+			"slug": "e7s-station",
+			"title": "Platform four",
+			"domain": "englisch/talk",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-station",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-7",
+					"topic_code": "talk",
+					"topic_title": "Englisch unterwegs"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.2",
+					"topic_title": "Verfügen über sprachliche Mittel",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb4",
+					"topic_title": "Methodische Kompetenzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb5",
+					"topic_title": "Themengebiete",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8997DG02BZH5FP9T0A792RG",
+					"slug": "e7s-station-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was bedeutet „platform“ am Bahnhof?",
+					"concept": "Ein Bahnsteig.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Ein Bahnsteig.",
+							"Ein Fahrkartenschalter."
+						],
+						"correct_index": 0
+					},
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-station"
+				},
+				{
+					"id": "01M8997DG0RHT0CW5NAZGHP6VV",
+					"slug": "e7s-station-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Rufe am Schalter an. Frage nach der Verbindung nach Truro, dem Gleis und dem Ticket.",
+					"concept": "Hello. When is the next train to Truro? Which platform does it leave from? Can I use my ticket?",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "Hello. When is the next train to Truro? Which platform does it leave from? Can I use my ticket?"
+						}
+					],
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-station"
+				}
+			]
+		},
+		{
+			"id": "01M8997DG0J05PN294FK0899D8",
+			"atom_uri": "urn:zam:atom:01M8997DG0J05PN294FK0899D8",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-7",
+			"slug": "e7s-directions",
+			"title": "Across the square",
+			"domain": "englisch/talk",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-directions",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-7",
+					"topic_code": "talk",
+					"topic_title": "Englisch unterwegs"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.2",
+					"topic_title": "Verfügen über sprachliche Mittel",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb2",
+					"topic_title": "Interkulturelle Kompetenzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb5",
+					"topic_title": "Themengebiete",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8997DG0EVDND5JZCMVBQHGB",
+					"slug": "e7s-directions-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wie fragst du auf Englisch nach Wiederholung?",
+					"concept": "Could you say that again, please?",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Could you say that again, please?",
+							"Where did you go yesterday?"
+						],
+						"correct_index": 0
+					},
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-directions"
+				},
+				{
+					"id": "01M8997DG0VPWGVZJTA4C2ZEGW",
+					"slug": "e7s-directions-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Erkläre den Weg vom Bahnhof zum Kino. Nenne den Platz und eine Richtung.",
+					"concept": "Go straight on to the square. Turn left at the square. You’ll see the cinema.",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "Go straight on to the square. Turn left at the square. You’ll see the cinema."
+						}
+					],
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-directions"
+				}
+			]
+		},
+		{
+			"id": "01M8997DG08NRV425JK9H9FS84",
+			"atom_uri": "urn:zam:atom:01M8997DG08NRV425JK9H9FS84",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-7",
+			"slug": "e7s-airport",
+			"title": "At the airport",
+			"domain": "englisch/talk",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-airport",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-7",
+					"topic_code": "talk",
+					"topic_title": "Englisch unterwegs"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.2",
+					"topic_title": "Verfügen über sprachliche Mittel",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb5",
+					"topic_title": "Themengebiete",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8997DG0N7P9Z5YHSM54CDSW",
+					"slug": "e7s-airport-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was bezeichnet boarding time?",
+					"concept": "Die Zeit, ab der man ins Flugzeug einsteigt.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Die Zeit, ab der man ins Flugzeug einsteigt.",
+							"Die Zeit der Landung."
+						],
+						"correct_index": 0
+					},
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-airport"
+				},
+				{
+					"id": "01M8997DG048D1266GW854RJ30",
+					"slug": "e7s-airport-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Frage am Schalter höflich nach Gate und Boardingzeit. Wiederhole die Antwort B16 zur Sicherheit.",
+					"concept": "Excuse me, which gate do I need? When does boarding start? Did you say B sixteen?",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "Excuse me, which gate do I need? When does boarding start? Did you say B sixteen?"
+						}
+					],
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-airport"
+				}
+			]
+		},
+		{
+			"id": "01M8997DG0XJMW4F0FJS6TGQ5A",
+			"atom_uri": "urn:zam:atom:01M8997DG0XJMW4F0FJS6TGQ5A",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-7",
+			"slug": "e7s-pharmacy",
+			"title": "I’ve got a sore throat",
+			"domain": "englisch/talk",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-pharmacy",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-7",
+					"topic_code": "talk",
+					"topic_title": "Englisch unterwegs"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.2",
+					"topic_title": "Verfügen über sprachliche Mittel",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb2",
+					"topic_title": "Interkulturelle Kompetenzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb5",
+					"topic_title": "Themengebiete",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8997DG0TQ2DSDXWXCDSTZDS",
+					"slug": "e7s-pharmacy-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wie kannst du den Begriff ankle einfach umschreiben?",
+					"concept": "The part just above your foot.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"The part just above your foot.",
+							"The top of your head."
+						],
+						"correct_index": 0
+					},
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-pharmacy"
+				},
+				{
+					"id": "01M8997DG0JARZDAY8K0X5KN4D",
+					"slug": "e7s-pharmacy-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Bitte eine Austauschpartnerin um Hilfe. Sag, dass dein Hals wehtut, und frage nach der Apotheke. Bitte sie, dich zu begleiten.",
+					"concept": "I’ve got a sore throat. Could you tell me where the pharmacy is? Could you come with me?",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "I’ve got a sore throat. Could you tell me where the pharmacy is? Could you come with me?"
+						}
+					],
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-pharmacy"
+				}
+			]
+		},
+		{
+			"id": "01M8997DG0F5D9X45Q5799S1KG",
+			"atom_uri": "urn:zam:atom:01M8997DG0F5D9X45Q5799S1KG",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-7",
+			"slug": "e7s-cinema",
+			"title": "Which film should we see?",
+			"domain": "englisch/talk",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-cinema",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-7",
+					"topic_code": "talk",
+					"topic_title": "Englisch unterwegs"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.2",
+					"topic_title": "Verfügen über sprachliche Mittel",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb3",
+					"topic_title": "Text- und Medienkompetenzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb5",
+					"topic_title": "Themengebiete",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8997DG03K0MA39EMSPKBAJV",
+					"slug": "e7s-cinema-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche Frage holt eine Meinung ein?",
+					"concept": "What do you think?",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"What do you think?",
+							"What time does it start?"
+						],
+						"correct_index": 0
+					},
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-cinema"
+				},
+				{
+					"id": "01M8997DG0ZQZHKC4JWM498K80",
+					"slug": "e7s-cinema-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Schlage den passenden Film vor, sage warum und frage nach einer Meinung.",
+					"concept": "How about Ocean Rescue? It ends at seven forty, so we can catch the bus. What do you think?",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "How about Ocean Rescue? It ends at seven forty, so we can catch the bus. What do you think?"
+						}
+					],
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-cinema"
+				}
+			]
+		},
+		{
+			"id": "01M8997DG02C43538HWQDT4Y5N",
+			"atom_uri": "urn:zam:atom:01M8997DG02C43538HWQDT4Y5N",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-7",
+			"slug": "e7s-sport",
+			"title": "A game after school",
+			"domain": "englisch/talk",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-sport",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-7",
+					"topic_code": "talk",
+					"topic_title": "Englisch unterwegs"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.2",
+					"topic_title": "Verfügen über sprachliche Mittel",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb2",
+					"topic_title": "Interkulturelle Kompetenzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb4",
+					"topic_title": "Methodische Kompetenzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb5",
+					"topic_title": "Themengebiete",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8997DG0H38JMHEWND9H4XCG",
+					"slug": "e7s-sport-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was gehört auf einen Stichwortzettel für einen short talk?",
+					"concept": "Wenige Wörter, die Aufbau und Beispiele in Erinnerung rufen.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Wenige Wörter, die Aufbau und Beispiele in Erinnerung rufen.",
+							"Ein lückenloses Manuskript zum Ablesen."
+						],
+						"correct_index": 0
+					},
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-sport"
+				},
+				{
+					"id": "01M8997DG01NGAEVT3KWBGCZRR",
+					"slug": "e7s-sport-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Bereite vier Stichpunkte für einen kurzen Vortrag über dein Hobby vor und sprich sie laut aus. Nenne eine Erfahrung.",
+					"concept": "I’m going to talk about skateboarding. I practise on Sundays. Last week I learned a new trick. Next time I want to teach it to my cousin.",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "I’m going to talk about skateboarding. I practise on Sundays. Last week I learned a new trick. Next time I want to teach it to my cousin."
+						}
+					],
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-sport"
+				}
+			]
+		},
+		{
+			"id": "01M8997DG06791J3GVYT3T8D08",
+			"atom_uri": "urn:zam:atom:01M8997DG06791J3GVYT3T8D08",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-7",
+			"slug": "e7s-mediation",
+			"title": "A museum visit",
+			"domain": "englisch/talk",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-mediation",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-7",
+					"topic_code": "talk",
+					"topic_title": "Englisch unterwegs"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb5",
+					"topic_title": "Themengebiete",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8997DG0MT99TT8V2M0GZT4P",
+					"slug": "e7s-mediation-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wie vermittelst du „Letzter Einlass ist um vier“ auf Englisch?",
+					"concept": "You can get in until four.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"You can get in until four.",
+							"The exhibition starts at four."
+						],
+						"correct_index": 0
+					},
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-mediation"
+				},
+				{
+					"id": "01M8997DG0XEDJWFKCFH6FWBTD",
+					"slug": "e7s-mediation-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Schreibe einer 13-jährigen Besucherin auf Englisch, ob 15 Uhr geht, wie viel es kostet und wohin die große Tasche kommt.",
+					"concept": "Yes, three is fine. You can get in until four. It’s free for you, and you can leave your big bag in a locker.",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "Yes, three is fine. You can get in until four. It’s free for you, and you can leave your big bag in a locker."
+						}
+					],
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-mediation"
+				}
+			]
+		},
+		{
+			"id": "01M8997DG01NW10K3HD2PQQQ7Q",
+			"atom_uri": "urn:zam:atom:01M8997DG01NW10K3HD2PQQQ7Q",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-7",
+			"slug": "e7s-mediation-de",
+			"title": "A weather message",
+			"domain": "englisch/talk",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-mediation-de",
+			"prerequisites": [
+				{
+					"atom_id": "01M8997DG06791J3GVYT3T8D08",
+					"type": "soft"
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-7",
+					"topic_code": "talk",
+					"topic_title": "Englisch unterwegs"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.2",
+					"topic_title": "Verfügen über sprachliche Mittel",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb5",
+					"topic_title": "Themengebiete",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8997DG0HAHR06M96T75JC3H",
+					"slug": "e7s-mediation-de-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was bedeutet indoors?",
+					"concept": "Drinnen, in einem Gebäude.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Drinnen, in einem Gebäude.",
+							"Draußen, unter freiem Himmel."
+						],
+						"correct_index": 0
+					},
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-mediation-de"
+				},
+				{
+					"id": "01M8997DG0Q3DJ13K2KW4X6EKV",
+					"slug": "e7s-mediation-de-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Erkläre deiner deutschsprachigen Begleitung in zwei Sätzen, wann und wo das Konzert stattfindet und welchen Eingang ihr nehmt.",
+					"concept": "Das Konzert um sechs findet jetzt in der Sporthalle statt. Wir nehmen den Südeingang.",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "Das Konzert um sechs findet jetzt in der Sporthalle statt. Wir nehmen den Südeingang."
+						}
+					],
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-mediation-de"
+				}
+			]
+		},
+		{
+			"id": "01M8997DG0389F74HB667NAEQT",
+			"atom_uri": "urn:zam:atom:01M8997DG0389F74HB667NAEQT",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-7",
+			"slug": "e7s-perfect",
+			"title": "The result now",
+			"domain": "englisch/grammar",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-perfect",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-7",
+					"topic_code": "grammar",
+					"topic_title": "Sprachwerkstatt"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.2",
+					"topic_title": "Verfügen über sprachliche Mittel",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb5",
+					"topic_title": "Themengebiete",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8997DG04MNBFP3ZMSRD76TB",
+					"slug": "e7s-perfect-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wie bildest du das present perfect simple?",
+					"concept": "Have oder has und die dritte Verbform.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Have oder has und die dritte Verbform.",
+							"Was oder were und die ing-Form."
+						],
+						"correct_index": 0
+					},
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-perfect"
+				},
+				{
+					"id": "01M8997DG03ZY98YNPJ342DZKG",
+					"slug": "e7s-perfect-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Das Fenster wurde geöffnet und jetzt ist es kalt. Schreibe den Grund mit present perfect und eine Folge.",
+					"concept": "Someone has opened the window. It’s cold in here now.",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "Someone has opened the window. It’s cold in here now."
+						}
+					],
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-perfect"
+				}
+			]
+		},
+		{
+			"id": "01M8997DG0Z7KKQHR6YYDJPHY7",
+			"atom_uri": "urn:zam:atom:01M8997DG0Z7KKQHR6YYDJPHY7",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-7",
+			"slug": "e7s-past-progressive",
+			"title": "While we were playing",
+			"domain": "englisch/grammar",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-past-progressive",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-7",
+					"topic_code": "grammar",
+					"topic_title": "Sprachwerkstatt"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.2",
+					"topic_title": "Verfügen über sprachliche Mittel",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb5",
+					"topic_title": "Themengebiete",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8997DG0S6GGNMGAFH8697RC",
+					"slug": "e7s-past-progressive-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wofür steht past progressive in einer Geschichte häufig?",
+					"concept": "Für eine Handlung, die im betrachteten Moment im Gange war.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Für eine Handlung, die im betrachteten Moment im Gange war.",
+							"Für den Zeitpunkt eines überraschenden Ereignisses."
+						],
+						"correct_index": 0
+					},
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-past-progressive"
+				},
+				{
+					"id": "01M8997DG0DC22PFN4C4NCFS3M",
+					"slug": "e7s-past-progressive-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Schreibe, was du gerade getan hast, als ein Freund anrief.",
+					"concept": "I was reading when my friend called.",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "I was reading when my friend called."
+						}
+					],
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-past-progressive"
+				}
+			]
+		},
+		{
+			"id": "01M8997DG0920F08ZSF28ASMMB",
+			"atom_uri": "urn:zam:atom:01M8997DG0920F08ZSF28ASMMB",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-7",
+			"slug": "e7s-future",
+			"title": "The bus leaves at eight",
+			"domain": "englisch/grammar",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-future",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-7",
+					"topic_code": "grammar",
+					"topic_title": "Sprachwerkstatt"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.2",
+					"topic_title": "Verfügen über sprachliche Mittel",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb5",
+					"topic_title": "Themengebiete",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8997DG0FJM9XW7KHM2Y1HHT",
+					"slug": "e7s-future-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche Zeitform steht gewöhnlich für einen Fahrplan?",
+					"concept": "Simple present, etwa The bus leaves at eight.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Simple present, etwa The bus leaves at eight.",
+							"Past progressive, etwa The bus was leaving."
+						],
+						"correct_index": 0
+					},
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-future"
+				},
+				{
+					"id": "01M8997DG0XB2YX9J57XN0C631",
+					"slug": "e7s-future-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Erkläre, dass laut Programm eine Führung um 11 Uhr startet. Gib eine Wettervorhersage ab.",
+					"concept": "The tour starts at eleven. I think it will be sunny later.",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "The tour starts at eleven. I think it will be sunny later."
+						}
+					],
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-future"
+				}
+			]
+		},
+		{
+			"id": "01M8997DG04T8B8T94R5TSXRPM",
+			"atom_uri": "urn:zam:atom:01M8997DG04T8B8T94R5TSXRPM",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-7",
+			"slug": "e7s-modals",
+			"title": "Permission, possibility and advice",
+			"domain": "englisch/grammar",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-modals",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-7",
+					"topic_code": "grammar",
+					"topic_title": "Sprachwerkstatt"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.2",
+					"topic_title": "Verfügen über sprachliche Mittel",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8997DG01Y7Q9HETYYXD52DA",
+					"slug": "e7s-modals-check",
+					"replaces": ["01K4E7G0000000000000000J03"],
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche Ersatzform verwendest du im simple past für „must“ im Sinn einer Pflicht?",
+					"concept": "Had to und die Grundform.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Had to und die Grundform.",
+							"Musted und die Grundform."
+						],
+						"correct_index": 0
+					},
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-modals"
+				},
+				{
+					"id": "01M8997DG0B3BH9G4D0K2GQWGB",
+					"slug": "e7s-modals-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Bitte höflich um eine Jacke und sage, dass es vielleicht regnet.",
+					"concept": "Could you lend me a jacket? It might rain later.",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "Could you lend me a jacket? It might rain later."
+						}
+					],
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-modals"
+				}
+			]
+		},
+		{
+			"id": "01M8997DG039X1K17ZSHDCTDYF",
+			"atom_uri": "urn:zam:atom:01M8997DG039X1K17ZSHDCTDYF",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-7",
+			"slug": "e7s-conditions",
+			"title": "If the weather changes",
+			"domain": "englisch/grammar",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-conditions",
+			"prerequisites": [
+				{
+					"atom_id": "01M8997DG0920F08ZSF28ASMMB",
+					"type": "soft"
+				},
+				{
+					"atom_id": "01M8997DG04T8B8T94R5TSXRPM",
+					"type": "soft"
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-7",
+					"topic_code": "grammar",
+					"topic_title": "Sprachwerkstatt"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.2",
+					"topic_title": "Verfügen über sprachliche Mittel",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8997DG0CP0CPPBRTPQ48E3X",
+					"slug": "e7s-conditions-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche Zeitform steht im if-Teil bei Bedingungen wie If it rains tomorrow?",
+					"concept": "Simple present.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Simple present.",
+							"Will-future."
+						],
+						"correct_index": 0
+					},
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-conditions"
+				},
+				{
+					"id": "01M8997DG0X4881H4GD9QYHFC7",
+					"slug": "e7s-conditions-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Formuliere für morgen eine Bedingung mit if und eine Vorhersage mit will.",
+					"concept": "If it rains tomorrow, we’ll practise in the hall.",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "If it rains tomorrow, we’ll practise in the hall."
+						}
+					],
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-conditions"
+				}
+			]
+		},
+		{
+			"id": "01M8997DG0THFK77P8VACKJY33",
+			"atom_uri": "urn:zam:atom:01M8997DG0THFK77P8VACKJY33",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-7",
+			"slug": "e7s-adverbs",
+			"title": "A careful runner",
+			"domain": "englisch/grammar",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-adverbs",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-7",
+					"topic_code": "grammar",
+					"topic_title": "Sprachwerkstatt"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.2",
+					"topic_title": "Verfügen über sprachliche Mittel",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8997DG0HYKT4ZN3Z7V5VDQ2",
+					"slug": "e7s-adverbs-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was ist das Adverb zu „good“ in „She plays …“?",
+					"concept": "Well.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Well.",
+							"Goodly."
+						],
+						"correct_index": 0
+					},
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-adverbs"
+				},
+				{
+					"id": "01M8997DG0X6V532K68THG3SMQ",
+					"slug": "e7s-adverbs-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Bilde aus careful zwei Sätze: eine Beschreibung einer Person und eine Beschreibung ihres Verhaltens.",
+					"concept": "Mina is a careful skater. She skates carefully.",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "Mina is a careful skater. She skates carefully."
+						}
+					],
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-adverbs"
+				}
+			]
+		},
+		{
+			"id": "01M8997DG0Y8DQMMRQNRFQ7PST",
+			"atom_uri": "urn:zam:atom:01M8997DG0Y8DQMMRQNRFQ7PST",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-7",
+			"slug": "e7s-compare",
+			"title": "Faster and more carefully",
+			"domain": "englisch/grammar",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-compare",
+			"prerequisites": [
+				{
+					"atom_id": "01M8997DG0THFK77P8VACKJY33",
+					"type": "soft"
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-7",
+					"topic_code": "grammar",
+					"topic_title": "Sprachwerkstatt"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.2",
+					"topic_title": "Verfügen über sprachliche Mittel",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8997DG0HFDZS2XTGX27FMZ3",
+					"slug": "e7s-compare-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wie lautet die Steigerung von well?",
+					"concept": "Well, better, best.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Well, better, best.",
+							"Well, weller, wellest."
+						],
+						"correct_index": 0
+					},
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-compare"
+				},
+				{
+					"id": "01M8997DG0FR8QWAG3ANR4A07B",
+					"slug": "e7s-compare-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Lee und Jo laufen dieselbe Strecke. Lee braucht 12 Sekunden, Jo 13. Vergleiche ihre Geschwindigkeit und sage, wer auf der Strecke genauer nach dem Weg schaut.",
+					"concept": "Lee runs faster than Jo. Jo checks the route more carefully than Lee.",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "Lee runs faster than Jo. Jo checks the route more carefully than Lee."
+						}
+					],
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-compare"
+				}
+			]
+		},
+		{
+			"id": "01M8997DG0G27FCZ4010RR3HNB",
+			"atom_uri": "urn:zam:atom:01M8997DG0G27FCZ4010RR3HNB",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-7",
+			"slug": "e7s-indefinites",
+			"title": "Someone left a bag",
+			"domain": "englisch/grammar",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-indefinites",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-7",
+					"topic_code": "grammar",
+					"topic_title": "Sprachwerkstatt"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.2",
+					"topic_title": "Verfügen über sprachliche Mittel",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8997DG0JBRWVB38AEAPB007",
+					"slug": "e7s-indefinites-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche Einzahl passt in Everyone … ready?",
+					"concept": "is.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"is.",
+							"are."
+						],
+						"correct_index": 0
+					},
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-indefinites"
+				},
+				{
+					"id": "01M8997DG0RR8JY87AX7PY0ZYD",
+					"slug": "e7s-indefinites-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Formuliere eine Nachricht zu einem Fund. Verwende someone, anyone und nothing.",
+					"concept": "Someone left a box. Does anyone know whose it is? There’s nothing inside.",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "Someone left a box. Does anyone know whose it is? There’s nothing inside."
+						}
+					],
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-indefinites"
+				}
+			]
+		},
+		{
+			"id": "01M8997DG0Z37V1M1AW64AS7JS",
+			"atom_uri": "urn:zam:atom:01M8997DG0Z37V1M1AW64AS7JS",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-7",
+			"slug": "e7s-reflexives",
+			"title": "Myself or each other?",
+			"domain": "englisch/grammar",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-reflexives",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-7",
+					"topic_code": "grammar",
+					"topic_title": "Sprachwerkstatt"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.2",
+					"topic_title": "Verfügen über sprachliche Mittel",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb5",
+					"topic_title": "Themengebiete",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8997DG0KYNC993D9MEVM4PG",
+					"slug": "e7s-reflexives-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was bedeutet each other?",
+					"concept": "Einander oder sich gegenseitig.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Einander oder sich gegenseitig.",
+							"Sich selbst."
+						],
+						"correct_index": 0
+					},
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-reflexives"
+				},
+				{
+					"id": "01M8997DG053HKGGSAMP79WKFR",
+					"slug": "e7s-reflexives-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Beschreibe eine Gruppenarbeit. Sage, was die Leute selbst gemacht und wie sie einander geholfen haben.",
+					"concept": "We made the posters ourselves. We helped each other with the pictures.",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "We made the posters ourselves. We helped each other with the pictures."
+						}
+					],
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-reflexives"
+				}
+			]
+		},
+		{
+			"id": "01M8997DG0RJ6SN9Y0YWHFGSF6",
+			"atom_uri": "urn:zam:atom:01M8997DG0RJ6SN9Y0YWHFGSF6",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-7",
+			"slug": "e7s-linking",
+			"title": "Although, while, so that",
+			"domain": "englisch/grammar",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-linking",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-7",
+					"topic_code": "grammar",
+					"topic_title": "Sprachwerkstatt"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.2",
+					"topic_title": "Verfügen über sprachliche Mittel",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8997DG0KZ22ZG68V525VC7N",
+					"slug": "e7s-linking-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Mit welcher Konjunktion kannst du einen Zweck ausdrücken?",
+					"concept": "so that.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"so that.",
+							"although."
+						],
+						"correct_index": 0
+					},
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-linking"
+				},
+				{
+					"id": "01M8997DG05V64MWMQPMQNTVY2",
+					"slug": "e7s-linking-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Schreibe einen Gegensatz mit although und erkläre mit so that, wozu jemand näher zur Bühne geht.",
+					"concept": "Although it was late, we stayed. We moved closer so that we could see the singers.",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "Although it was late, we stayed. We moved closer so that we could see the singers."
+						}
+					],
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-linking"
+				}
+			]
+		},
+		{
+			"id": "01M8997DG01FWZ539AHFMQK6EY",
+			"atom_uri": "urn:zam:atom:01M8997DG01FWZ539AHFMQK6EY",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-7",
+			"slug": "e7s-relatives",
+			"title": "The friend I met",
+			"domain": "englisch/grammar",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-relatives",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-7",
+					"topic_code": "grammar",
+					"topic_title": "Sprachwerkstatt"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.2",
+					"topic_title": "Verfügen über sprachliche Mittel",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8997DG0Y29NKDGPBMKM3066",
+					"slug": "e7s-relatives-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wann ist Weglassen beim defining relative clause hier möglich?",
+					"concept": "Wenn das Relativpronomen Objekt ist, etwa the song I heard.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Wenn das Relativpronomen Objekt ist, etwa the song I heard.",
+							"Wenn das Relativpronomen Subjekt ist, etwa the singer who lives here."
+						],
+						"correct_index": 0
+					},
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-relatives"
+				},
+				{
+					"id": "01M8997DG0QASFHC7ETSMY46V9",
+					"slug": "e7s-relatives-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Verbinde the poster und I saw the poster zu einer contact clause. Schreibe danach einen Satz über die Person, die es gestaltet hat.",
+					"concept": "The poster I saw was blue. The girl who designed it is my friend.",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "The poster I saw was blue. The girl who designed it is my friend."
+						}
+					],
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-relatives"
+				}
+			]
+		},
+		{
+			"id": "01M8997DG062EGYTWNJMZ92K69",
+			"atom_uri": "urn:zam:atom:01M8997DG062EGYTWNJMZ92K69",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-7",
+			"slug": "e7s-ones",
+			"title": "The blue ones are mine",
+			"domain": "englisch/grammar",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-ones",
+			"prerequisites": [
+				{
+					"atom_id": "01M8997DG0G27FCZ4010RR3HNB",
+					"type": "soft"
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-7",
+					"topic_code": "grammar",
+					"topic_title": "Sprachwerkstatt"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.2",
+					"topic_title": "Verfügen über sprachliche Mittel",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8997DG041X8PE7CJD8P4514",
+					"slug": "e7s-ones-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was ist der Unterschied zwischen „my“ und „mine“?",
+					"concept": "My steht vor einem Nomen. Mine steht allein.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"My steht vor einem Nomen. Mine steht allein.",
+							"Mine steht vor einem Nomen. My steht allein."
+						],
+						"correct_index": 0
+					},
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-ones"
+				},
+				{
+					"id": "01M8997DG0M7GW0SMJP489NPP9",
+					"slug": "e7s-ones-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Unterscheide beim Packen zwei Taschen, eine blaue und eine grüne. Nenne, welche dir gehört.",
+					"concept": "The blue one is mine. The green one is yours.",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "The blue one is mine. The green one is yours."
+						}
+					],
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-ones"
+				}
+			]
+		},
+		{
+			"id": "01M8997DG0N3HCWEDV8Q2FS3PS",
+			"atom_uri": "urn:zam:atom:01M8997DG0N3HCWEDV8Q2FS3PS",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-7",
+			"slug": "e7s-vocab",
+			"title": "Words for sport and music",
+			"domain": "englisch/grammar",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-vocab",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-7",
+					"topic_code": "grammar",
+					"topic_title": "Sprachwerkstatt"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.2",
+					"topic_title": "Verfügen über sprachliche Mittel",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb5",
+					"topic_title": "Themengebiete",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8997DG0QX4M6Z12FV5E6KHX",
+					"slug": "e7s-vocab-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was bedeutet actually meist?",
+					"concept": "Tatsächlich oder eigentlich.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Tatsächlich oder eigentlich.",
+							"Derzeit oder aktuell."
+						],
+						"correct_index": 0
+					},
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-vocab"
+				},
+				{
+					"id": "01M8997DG0VG7XGZZTDRBFAHP1",
+					"slug": "e7s-vocab-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Beschreibe eine gedachte Sportfotografie mit zwei Positionsangaben und einem phrasal verb.",
+					"concept": "In the foreground the players are warming up. On the left a coach is taking a photo.",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "In the foreground the players are warming up. On the left a coach is taking a photo."
+						}
+					],
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-vocab"
+				}
+			]
+		},
+		{
+			"id": "01M8997DG0NEHYZJF0ZCKT6GD3",
+			"atom_uri": "urn:zam:atom:01M8997DG0NEHYZJF0ZCKT6GD3",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-7",
+			"slug": "e7s-pronunciation",
+			"title": "Word stress and clear speech",
+			"domain": "englisch/grammar",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-pronunciation",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-7",
+					"topic_code": "grammar",
+					"topic_title": "Sprachwerkstatt"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.2",
+					"topic_title": "Verfügen über sprachliche Mittel",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb4",
+					"topic_title": "Methodische Kompetenzen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8997DG0ZSA1H3F17Q8WGEDK",
+					"slug": "e7s-pronunciation-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was markiert ˈ in einem IPA-Eintrag?",
+					"concept": "Die Hauptbetonung der folgenden Silbe.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Die Hauptbetonung der folgenden Silbe.",
+							"Eine Sprechpause am Satzende."
+						],
+						"correct_index": 0
+					},
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-pronunciation"
+				},
+				{
+					"id": "01M8997DG0B4K535M9AWQVDQ2X",
+					"slug": "e7s-pronunciation-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Lies die Sätze aus dem Skript laut vor. Notiere beide Korrekturen. Markiere jeweils das Wort, das du betonst.",
+					"concept": "TEN, not nine. B SIXTEEN, not B SIXTY.",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "TEN, not nine. B SIXTEEN, not B SIXTY."
+						}
+					],
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-pronunciation"
+				}
+			]
+		},
+		{
+			"id": "01M8997DG0H7N8SQHKGX2BPF35",
+			"atom_uri": "urn:zam:atom:01M8997DG0H7N8SQHKGX2BPF35",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-7",
+			"slug": "e7s-cornwall",
+			"title": "A day in Cornwall",
+			"domain": "englisch/culture",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-cornwall",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-7",
+					"topic_code": "culture",
+					"topic_title": "Cornwall und Florida"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.2",
+					"topic_title": "Verfügen über sprachliche Mittel",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb2",
+					"topic_title": "Interkulturelle Kompetenzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb5",
+					"topic_title": "Themengebiete",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8997DG0DW8WGKAH6AW27TRG",
+					"slug": "e7s-cornwall-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "In welchem Teil Englands liegt Cornwall?",
+					"concept": "Im Südwesten Englands.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Im Südwesten Englands.",
+							"Im Nordosten Englands."
+						],
+						"correct_index": 0
+					},
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-cornwall"
+				},
+				{
+					"id": "01M8997DG0WFTKRAAH546D6YJK",
+					"slug": "e7s-cornwall-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Empfiehl einen Halt an der Küste. Nenne Region, Ort und eine Aktivität.",
+					"concept": "St Ives is in Cornwall, in the south-west of England. You can walk along the coast near St Ives.",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "St Ives is in Cornwall, in the south-west of England. You can walk along the coast near St Ives."
+						}
+					],
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-cornwall"
+				}
+			]
+		},
+		{
+			"id": "01M8997DG0PCY7Y4Y946HCEB3G",
+			"atom_uri": "urn:zam:atom:01M8997DG0PCY7Y4Y946HCEB3G",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-7",
+			"slug": "e7s-florida",
+			"title": "Water and wildlife in Florida",
+			"domain": "englisch/culture",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-florida",
+			"prerequisites": [
+				{
+					"atom_id": "01M8997DG0H7N8SQHKGX2BPF35",
+					"type": "soft"
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-7",
+					"topic_code": "culture",
+					"topic_title": "Cornwall und Florida"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.2",
+					"topic_title": "Verfügen über sprachliche Mittel",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb2",
+					"topic_title": "Interkulturelle Kompetenzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb5",
+					"topic_title": "Themengebiete",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8997DG09GZB6CJW4H6SJWGA",
+					"slug": "e7s-florida-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was sind die Everglades?",
+					"concept": "Ein Feuchtgebiet im Süden Floridas.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Ein Feuchtgebiet im Süden Floridas.",
+							"Ein Gebirge im Nordosten der USA."
+						],
+						"correct_index": 0
+					},
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-florida"
+				},
+				{
+					"id": "01M8997DG0RF7PGA20FWZ3B0RE",
+					"slug": "e7s-florida-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Beschreibe einer Freundin die Lage Floridas und ein Merkmal der Everglades.",
+					"concept": "Florida is in the south-east of the USA. The Everglades are wetlands in southern Florida. Many birds live there.",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "Florida is in the south-east of the USA. The Everglades are wetlands in southern Florida. Many birds live there."
+						}
+					],
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-florida"
+				}
+			]
+		},
+		{
+			"id": "01M8997DG0RNN9Z6YJ6G2WEPJX",
+			"atom_uri": "urn:zam:atom:01M8997DG0RNN9Z6YJ6G2WEPJX",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-7",
+			"slug": "e7s-government",
+			"title": "King, Prime Minister, President",
+			"domain": "englisch/culture",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-government",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-7",
+					"topic_code": "culture",
+					"topic_title": "Cornwall und Florida"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.2",
+					"topic_title": "Verfügen über sprachliche Mittel",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb2",
+					"topic_title": "Interkulturelle Kompetenzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb5",
+					"topic_title": "Themengebiete",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8997DG03FGM7QZBK0FFX5WG",
+					"slug": "e7s-government-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche beiden Rollen verbindet der US President?",
+					"concept": "Staatsoberhaupt und Leitung der Exekutive.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Staatsoberhaupt und Leitung der Exekutive.",
+							"Oberhaupt des Parlaments und Monarch."
+						],
+						"correct_index": 0
+					},
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-government"
+				},
+				{
+					"id": "01M8997DG05MWP9JMQWP06KZCA",
+					"slug": "e7s-government-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Schreib zwei kurze Sätze zum Staatsoberhaupt und zur Regierungsleitung im UK.",
+					"concept": "The monarch is the head of state in the UK. The prime minister heads the government.",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "The monarch is the head of state in the UK. The prime minister heads the government."
+						}
+					],
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-government"
+				}
+			]
+		},
+		{
+			"id": "01M8997DG06KPQKXMJCV8TTE8Z",
+			"atom_uri": "urn:zam:atom:01M8997DG06KPQKXMJCV8TTE8Z",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-7",
+			"slug": "e7s-customs",
+			"title": "Two invitations, different plans",
+			"domain": "englisch/culture",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-customs",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-7",
+					"topic_code": "culture",
+					"topic_title": "Cornwall und Florida"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb2",
+					"topic_title": "Interkulturelle Kompetenzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb5",
+					"topic_title": "Themengebiete",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8997DG05XRKR2MT34YA17PQ",
+					"slug": "e7s-customs-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wann findet Thanksgiving in den USA statt?",
+					"concept": "Am vierten Donnerstag im November.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Am vierten Donnerstag im November.",
+							"Am ersten Donnerstag im Dezember."
+						],
+						"correct_index": 0
+					},
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-customs"
+				},
+				{
+					"id": "01M8997DG01J19Q5EXDJXSWMD4",
+					"slug": "e7s-customs-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Antworte auf eine Einladung zum Thanksgiving-Essen und frage höflich nach dem Ablauf.",
+					"concept": "Thank you for inviting me. I’d love to come. What usually happens at your Thanksgiving dinner? Can I bring anything?",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "Thank you for inviting me. I’d love to come. What usually happens at your Thanksgiving dinner? Can I bring anything?"
+						}
+					],
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-customs"
+				}
+			]
+		},
+		{
+			"id": "01M8997DG06B0JTQ5FA2A7RNR9",
+			"atom_uri": "urn:zam:atom:01M8997DG06B0JTQ5FA2A7RNR9",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-7",
+			"slug": "e7s-exchange",
+			"title": "Making everyone welcome",
+			"domain": "englisch/culture",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-exchange",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-7",
+					"topic_code": "culture",
+					"topic_title": "Cornwall und Florida"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb2",
+					"topic_title": "Interkulturelle Kompetenzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb3",
+					"topic_title": "Text- und Medienkompetenzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb5",
+					"topic_title": "Themengebiete",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8997DG00731YK39WYTHYEQ1",
+					"slug": "e7s-exchange-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wie kannst du club umschreiben?",
+					"concept": "A group of people who meet because they share an interest.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"A group of people who meet because they share an interest.",
+							"A room where nobody meets anyone."
+						],
+						"correct_index": 0
+					},
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-exchange"
+				},
+				{
+					"id": "01M8997DG0H88QE1P5G8CF6Z1F",
+					"slug": "e7s-exchange-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Schreibe eine kurze Nachricht für die Austauschgruppe mit Treffpunkt und Einladung.",
+					"concept": "Hi everyone. We’re meeting outside the gym at three. Would you like to join us? Tell me if you need directions.",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "Hi everyone. We’re meeting outside the gym at three. Would you like to join us? Tell me if you need directions."
+						}
+					],
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-exchange"
+				}
+			]
+		},
+		{
+			"id": "01M8997DG0HA9MB12J9W4NVJ0S",
+			"atom_uri": "urn:zam:atom:01M8997DG0HA9MB12J9W4NVJ0S",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-7",
+			"slug": "e7s-reading",
+			"title": "Read the headline, find the facts",
+			"domain": "englisch/media",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-reading",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-7",
+					"topic_code": "media",
+					"topic_title": "Texte und Medien"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb3",
+					"topic_title": "Text- und Medienkompetenzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb4",
+					"topic_title": "Methodische Kompetenzen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8997DG01ZQD21ME85C71NAE",
+					"slug": "e7s-reading-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche Lesestrategie hilft, eine Anmeldefrist zu finden?",
+					"concept": "Scanning: gezielt nach Datum oder Signalwörtern suchen.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Scanning: gezielt nach Datum oder Signalwörtern suchen.",
+							"Skimming: den gesamten Text auf das Thema überfliegen."
+						],
+						"correct_index": 0
+					},
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-reading"
+				},
+				{
+					"id": "01M8997DG0ECZ9Q21SQBY6VHE5",
+					"slug": "e7s-reading-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Fasse die Hauptaussage in einem Satz zusammen. Nenne außerdem die Frist und einen Gegenstand, den man mitbringen darf.",
+					"concept": "The school is holding a repair day on Friday. Register by Thursday. You can bring a broken toy.",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "The school is holding a repair day on Friday. Register by Thursday. You can bring a broken toy."
+						}
+					],
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-reading"
+				}
+			]
+		},
+		{
+			"id": "01M8997DG0FFM33KNQNW2G49VG",
+			"atom_uri": "urn:zam:atom:01M8997DG0FFM33KNQNW2G49VG",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-7",
+			"slug": "e7s-story",
+			"title": "The lights went out",
+			"domain": "englisch/media",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-story",
+			"prerequisites": [
+				{
+					"atom_id": "01M8997DG0Z7KKQHR6YYDJPHY7",
+					"type": "soft"
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-7",
+					"topic_code": "media",
+					"topic_title": "Texte und Medien"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb3",
+					"topic_title": "Text- und Medienkompetenzen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8997DG01QKD2BMEG9N7T7ZD",
+					"slug": "e7s-story-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wie erkennst du einen Wendepunkt in einer Geschichte?",
+					"concept": "Ein Ereignis verändert die Lage oder die Richtung der Handlung.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Ein Ereignis verändert die Lage oder die Richtung der Handlung.",
+							"Er steht immer im ersten Satz."
+						],
+						"correct_index": 0
+					},
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-story"
+				},
+				{
+					"id": "01M8997DG0PAH9XJN11FDHY8EG",
+					"slug": "e7s-story-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Lies den Text laut. Beschreibe anschließend den Schauplatz und nenne die Stelle, an der du eine Pause machst.",
+					"concept": "They are on a footbridge at night. I pause after All at once, then I stress went out.",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "They are on a footbridge at night. I pause after All at once, then I stress went out."
+						}
+					],
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-story"
+				}
+			]
+		},
+		{
+			"id": "01M8997DG007W4P7B82GQ0D76Z",
+			"atom_uri": "urn:zam:atom:01M8997DG007W4P7B82GQ0D76Z",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-7",
+			"slug": "e7s-report",
+			"title": "A report for the school magazine",
+			"domain": "englisch/media",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-report",
+			"prerequisites": [
+				{
+					"atom_id": "01M8997DG0Z7KKQHR6YYDJPHY7",
+					"type": "soft"
+				},
+				{
+					"atom_id": "01M8997DG0RJ6SN9Y0YWHFGSF6",
+					"type": "soft"
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-7",
+					"topic_code": "media",
+					"topic_title": "Texte und Medien"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.2",
+					"topic_title": "Verfügen über sprachliche Mittel",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb3",
+					"topic_title": "Text- und Medienkompetenzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb4",
+					"topic_title": "Methodische Kompetenzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb5",
+					"topic_title": "Themengebiete",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8997DG0Z1W2Y0BA0GKV3V0D",
+					"slug": "e7s-report-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche vier Fragen helfen beim Einstieg in einen Bericht?",
+					"concept": "Wer, was, wo und wann?",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Wer, was, wo und wann?",
+							"Wie teuer, wie groß, wie hoch und wie lang?"
+						],
+						"correct_index": 0
+					},
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-report"
+				},
+				{
+					"id": "01M8997DG0MFW314BB7T50CA96",
+					"slug": "e7s-report-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Schreibe drei Sätze für einen Bericht über einen Schulbesuch im Museum.",
+					"concept": "On Monday, our class went to the city museum. First we saw old instruments. Then we tried to play a drum.",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "On Monday, our class went to the city museum. First we saw old instruments. Then we tried to play a drum."
+						}
+					],
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-report"
+				}
+			]
+		},
+		{
+			"id": "01M8997DG078SMRDS6YZM1174H",
+			"atom_uri": "urn:zam:atom:01M8997DG078SMRDS6YZM1174H",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-7",
+			"slug": "e7s-picture",
+			"title": "In the foreground",
+			"domain": "englisch/media",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-picture",
+			"prerequisites": [
+				{
+					"atom_id": "01M8997DG0N3HCWEDV8Q2FS3PS",
+					"type": "soft"
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-7",
+					"topic_code": "media",
+					"topic_title": "Texte und Medien"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.2",
+					"topic_title": "Verfügen über sprachliche Mittel",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb3",
+					"topic_title": "Text- und Medienkompetenzen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8997DG0B86CYG85CSYCYTDR",
+					"slug": "e7s-picture-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Mit welcher englischen Wendung leitest du links im Bild ein?",
+					"concept": "On the left.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"On the left.",
+							"In the background."
+						],
+						"correct_index": 0
+					},
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-picture"
+				},
+				{
+					"id": "01M8997DG008FCSD5GTX56CM7X",
+					"slug": "e7s-picture-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Beschreibe drei Stellen im Szenenplan mit den passenden Ortsangaben.",
+					"concept": "In the foreground a student is holding a camera. On the left two people are carrying a box. Behind them there is a curtain.",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "In the foreground a student is holding a camera. On the left two people are carrying a box. Behind them there is a curtain."
+						}
+					],
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-picture"
+				}
+			]
+		},
+		{
+			"id": "01M8997DG0S6C8MGENQA7SC92K",
+			"atom_uri": "urn:zam:atom:01M8997DG0S6C8MGENQA7SC92K",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-7",
+			"slug": "e7s-clip",
+			"title": "Three frames, one story",
+			"domain": "englisch/media",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-clip",
+			"prerequisites": [
+				{
+					"atom_id": "01M8997DG078SMRDS6YZM1174H",
+					"type": "soft"
+				},
+				{
+					"atom_id": "01M8997DG0389F74HB667NAEQT",
+					"type": "soft"
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-7",
+					"topic_code": "media",
+					"topic_title": "Texte und Medien"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb3",
+					"topic_title": "Text- und Medienkompetenzen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8997DG07CT159616VRJDKE1",
+					"slug": "e7s-clip-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wie hilft ein Transkript bei einem Hörsehtext?",
+					"concept": "Du kannst nach dem Hören eine unklare Stelle mit dem Text vergleichen.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Du kannst nach dem Hören eine unklare Stelle mit dem Text vergleichen.",
+							"Es ersetzt die Bildinformation über den Schauplatz."
+						],
+						"correct_index": 0
+					},
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-clip"
+				},
+				{
+					"id": "01M8997DG0YCVSN4Z635AWSZ5Z",
+					"slug": "e7s-clip-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Schau dir die drei Bildfelder an und höre das Skript. Beschreibe auf Englisch die Figuren, das Problem und seine Lösung.",
+					"concept": "Rae and Leo are at a music event. Rae has lost a ticket. Leo sees it next to the guitar.",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "Rae and Leo are at a music event. Rae has lost a ticket. Leo sees it next to the guitar."
+						}
+					],
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-clip"
+				}
+			]
+		},
+		{
+			"id": "01M8997DG06B6H8QRV3VGYZ7P4",
+			"atom_uri": "urn:zam:atom:01M8997DG06B6H8QRV3VGYZ7P4",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-7",
+			"slug": "e7s-word-building",
+			"title": "From read to readable",
+			"domain": "englisch/methods",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-word-building",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-7",
+					"topic_code": "methods",
+					"topic_title": "Besser lernen"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb4",
+					"topic_title": "Methodische Kompetenzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb5",
+					"topic_title": "Themengebiete",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8997DG05KVTRPKV16NNWM2V",
+					"slug": "e7s-word-building-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche Bedeutung liefert -able häufig?",
+					"concept": "Etwas kann getan werden, etwa waschbar bei washable.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Etwas kann getan werden, etwa waschbar bei washable.",
+							"Jemand führt den Beruf aus, etwa teacher."
+						],
+						"correct_index": 0
+					},
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-word-building"
+				},
+				{
+					"id": "01M8997DG0T9MMFY8A19J75YCE",
+					"slug": "e7s-word-building-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Erkläre readable und reusable anhand ihrer Wortteile. Schreibe für jedes einen Beispielsatz.",
+					"concept": "Readable means easy to read. The sign is readable. Reusable means you can use it again. This bottle is reusable.",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "Readable means easy to read. The sign is readable. Reusable means you can use it again. This bottle is reusable."
+						}
+					],
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-word-building"
+				}
+			]
+		},
+		{
+			"id": "01M8997DG0P4KDS5A273ECNWG6",
+			"atom_uri": "urn:zam:atom:01M8997DG0P4KDS5A273ECNWG6",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-7",
+			"slug": "e7s-dictionary",
+			"title": "The right word for this sentence",
+			"domain": "englisch/methods",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-dictionary",
+			"prerequisites": [
+				{
+					"atom_id": "01M8997DG0HA9MB12J9W4NVJ0S",
+					"type": "soft"
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-7",
+					"topic_code": "methods",
+					"topic_title": "Besser lernen"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.2",
+					"topic_title": "Verfügen über sprachliche Mittel",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb4",
+					"topic_title": "Methodische Kompetenzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb5",
+					"topic_title": "Themengebiete",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8997DG01TXD09WKYD56BMW0",
+					"slug": "e7s-dictionary-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was prüfst du, wenn ein Wörterbuch mehrere Bedeutungen anbietet?",
+					"concept": "Welche Wortart und Bedeutung zum Satz und Thema passen.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Welche Wortart und Bedeutung zum Satz und Thema passen.",
+							"Welche Übersetzung zuerst alphabetisch kommt."
+						],
+						"correct_index": 0
+					},
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-dictionary"
+				},
+				{
+					"id": "01M8997DG0R9A4N847HYCH7A2K",
+					"slug": "e7s-dictionary-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Erkläre auf Englisch die Bedeutung von coach in Our coach trains us on Mondays und nenne den Hinweis im Satz.",
+					"concept": "Coach means a person who trains a team. The phrase trains us tells me which meaning fits.",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "Coach means a person who trains a team. The phrase trains us tells me which meaning fits."
+						}
+					],
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-dictionary"
+				}
+			]
+		},
+		{
+			"id": "01M8997DG002G28X7EGKTR7E81",
+			"atom_uri": "urn:zam:atom:01M8997DG002G28X7EGKTR7E81",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-7",
+			"slug": "e7s-error-log",
+			"title": "Make a useful error log",
+			"domain": "englisch/methods",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-error-log",
+			"prerequisites": [
+				{
+					"atom_id": "01M8997DG0THFK77P8VACKJY33",
+					"type": "soft"
+				},
+				{
+					"atom_id": "01M8997DG039X1K17ZSHDCTDYF",
+					"type": "soft"
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-7",
+					"topic_code": "methods",
+					"topic_title": "Besser lernen"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.2",
+					"topic_title": "Verfügen über sprachliche Mittel",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb4",
+					"topic_title": "Methodische Kompetenzen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8997DG01G92SZ201A8Z1DRV",
+					"slug": "e7s-error-log-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche drei Teile gehören in ein hilfreiches Fehlerprotokoll?",
+					"concept": "Ursprünglicher Satz, Korrektur und Grund.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Ursprünglicher Satz, Korrektur und Grund.",
+							"Datum, Überschrift und Punktzahl."
+						],
+						"correct_index": 0
+					},
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-error-log"
+				},
+				{
+					"id": "01M8997DG0W49ESY29FSFE19SF",
+					"slug": "e7s-error-log-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Schreibe einen Eintrag für If it will rain, we’ll play indoors. Nenne die Korrektur, ihre Regel und einen neuen Satz.",
+					"concept": "If it rains, we’ll play indoors. Use simple present in this if-clause. New sentence: If it’s cold, we’ll close the window.",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "If it rains, we’ll play indoors. Use simple present in this if-clause. New sentence: If it’s cold, we’ll close the window."
+						}
+					],
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-error-log"
+				}
+			]
+		},
+		{
+			"id": "01M8997DG0ESXBBBRTGMPC979T",
+			"atom_uri": "urn:zam:atom:01M8997DG0ESXBBBRTGMPC979T",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-7",
+			"slug": "e7s-romans",
+			"title": "A wall, a road and a bath",
+			"domain": "englisch/places",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-romans",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-7",
+					"topic_code": "places",
+					"topic_title": "Britannien im Wandel"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.2",
+					"topic_title": "Verfügen über sprachliche Mittel",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb2",
+					"topic_title": "Interkulturelle Kompetenzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb5",
+					"topic_title": "Themengebiete",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8997DG0HVXMJ4YMHCX82B42",
+					"slug": "e7s-romans-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "In welchem Teil Englands liegt Hadrian’s Wall?",
+					"concept": "Im Norden Englands.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Im Norden Englands.",
+							"Im äußersten Südwesten Englands."
+						],
+						"correct_index": 0
+					},
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-romans"
+				},
+				{
+					"id": "01M8997DG0E1A05MEHT2JC0KQ0",
+					"slug": "e7s-romans-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Beschreibe auf Englisch zwei römische Spuren in Britannien und wozu sie dienten.",
+					"concept": "Roman roads linked towns and forts. Hadrian’s Wall marked a frontier in the north.",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "Roman roads linked towns and forts. Hadrian’s Wall marked a frontier in the north."
+						}
+					],
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-romans"
+				}
+			]
+		},
+		{
+			"id": "01M8997DG0Z4HMKK6V2VZF99ZN",
+			"atom_uri": "urn:zam:atom:01M8997DG0Z4HMKK6V2VZF99ZN",
+			"namespace": "zam-academy-englisch-2fs-gymnasium-7",
+			"slug": "e7s-normans",
+			"title": "A new ruler, new words",
+			"domain": "englisch/places",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-normans",
+			"prerequisites": [
+				{
+					"atom_id": "01M8997DG0ESXBBBRTGMPC979T",
+					"type": "soft"
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "englisch-2fs-gymnasium-7",
+					"topic_code": "places",
+					"topic_title": "Britannien im Wandel"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.1",
+					"topic_title": "Kommunikative Fertigkeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb1.2",
+					"topic_title": "Verfügen über sprachliche Mittel",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb2",
+					"topic_title": "Interkulturelle Kompetenzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "englisch-2fs",
+					"topic_code": "lb5",
+					"topic_title": "Themengebiete",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8997DG01RABRCAPFTY52SC7",
+					"slug": "e7s-normans-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Warum kamen nach 1066 französische Lehnwörter ins Englische?",
+					"concept": "Weil Französisch und Englisch über längere Zeit in Kontakt standen.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Weil Französisch und Englisch über längere Zeit in Kontakt standen.",
+							"Weil alle Menschen in England ab 1066 nur noch Französisch sprachen."
+						],
+						"correct_index": 0
+					},
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-normans"
+				},
+				{
+					"id": "01M8997DG0PMGRAJS1EFFT1XG8",
+					"slug": "e7s-normans-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Erkläre in drei Sätzen, wer 1066 siegte und wieso danach französische Wörter ins Englische kamen.",
+					"concept": "William of Normandy won at Hastings in 1066. French was used by the new rulers. Over time, English borrowed French words such as beef.",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "William of Normandy won at Hastings in 1066. French was used by the new rulers. Over time, English borrowed French words such as beef."
+						}
+					],
+					"source_link": "https://academy.zam-os.org/englisch-2fs-gymnasium-7/#lesson=e7s-normans"
+				}
+			]
+		}
+	]
+}

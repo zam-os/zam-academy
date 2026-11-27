@@ -51,14 +51,7 @@ and self-assessment record practice, not demonstrated mastery. See the
 the neighbouring-grade check and publication limits.
 
 50 lessons and 100 ZAM practice items live only in [cell.json](cell.json), two per lesson.
-Their source links use the eventual published lesson anchors. No item declares
-`replaces`, and no old item is retired. The [legacy proposal](replaces-de-by.json)
-inventories all sixteen old items: one possible A mapping awaits Thomas's
-explicit approval; fifteen C items remain active. Even approving publication
-does not approve a review-history transfer.
-The C rows use `related_slug` for related practice; only the proposed A
-successor uses `academy_slug`. Before activating that proposal, add the
-migration conflict check for learners who already hold both cards.
+The [approved mapping](replaces-de-by.json) transfers one review history for the traditional fairy-tale numbers. The other 15 legacy cards retain their histories on their existing IDs.
 
 Validate installation and enrolment using the published zam-core version
 pinned in the repository CI:
@@ -68,8 +61,7 @@ ZAM_CORE=file:///path/to/zam-core/dist/index.js node scripts/validate-cell.mjs
 ```
 
 This uses disposable libraries, tests 100 fresh cards and repeated installation,
-and verifies that all sixteen legacy cards and their review evidence remain
-unchanged. It never opens a configured learner library.
+and verifies the approved transfer and the histories of the other legacy cards. It never opens a configured learner library.
 
 The app shell and announcement derive from `deutsch-realschule-5`; the original
 computer-voiced story *Die Maus und das Blatt* derives from

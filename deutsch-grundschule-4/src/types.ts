@@ -91,6 +91,11 @@ export interface SlotWorkshop {
 	variant: "mark" | "letters" | "punct" | "gap";
 	title: string;
 	intro: string;
+	/**
+	 * Capital-letter workshops: a marked word shows its capital letter, struck
+	 * like a typewriter key ("type") or crowned ("crown").
+	 */
+	capitals?: "type" | "crown";
 	pens: Pen[];
 	puzzles: SlotPuzzle[];
 	goals: [Goal<SlotState>, Goal<SlotState>, Goal<SlotState>];

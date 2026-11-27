@@ -1,0 +1,648 @@
+{
+	"curriculum": "https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/5/latein/1-fremdsprache",
+	"checked": "2026-11-24",
+	"curriculum_sha256": "2dc5b8757ca639b5d85348f367c8e9eed3d7bdf1371eb7661155e20afcf5995b",
+	"neighbours": {
+		"grade6": {
+			"url": "https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/6/latein/1-fremdsprache",
+			"sha256": "f02af4a0a9bcf2f4ba356bf4359e7ac4420296c64718222b6203d77c0a8692b5",
+			"boundary": "Jahrgangsstufe 6 (L1) führt u. a. Passiv, Konjunktiv Imperfekt und Plusquamperfekt, Partizipien (PPP/PPA) und Participium Coniunctum, ire, Demonstrativa (hic, ille, iste, idem, ipse), Numeralia bis 1000, AcI passiv sowie Pompeji/Vesuv, Republik/Hannibal, Ovid und Plinius d. J. ein; diese Inhalte bleiben aus Latein 5 ausgeschlossen."
+		},
+		"fachprofil": {
+			"url": "https://www.lehrplanplus.bayern.de/fachprofil/gymnasium/latein",
+			"sha256": "d54bc95b0a0f83cd82cd7455847dbe83b598899a0096e273a12f9f61a49bff06",
+			"note": "Das Fachprofil legt die vier Dimensionen, das Kompetenzstrukturmodell (Texte, sprachliche Basis, kultureller Kontext) und die Spracherwerbsphase Jgst. 5–8 (L1) fest."
+		}
+	},
+	"scope": "Bayern, Gymnasium, Latein als 1. Fremdsprache (L1), Jahrgangsstufe 5; ein gemeinsamer Fachlehrplan ohne Zweigteilung.",
+	"indexing": "L5-01…L5-53 sind paketinterne Zeilenkennungen in der Reihenfolge des offiziellen Fachlehrplans; Unterpunkte bleiben Teil ihrer übergeordneten Kompetenzerwartung.",
+	"hours": null,
+	"hours_note": "Die offizielle Lehrplanseite weist keine Stundenzahlen pro Lernbereich aus.",
+	"optional_lessons": [],
+	"rows": [
+		{
+			"id": "L5-01",
+			"lb": "1",
+			"competence": "übersetzen altersgemäße Lehrbuchtexte u. a. aus folgenden Themenbereichen in angemessenes Deutsch: Topografie Roms: Forum Romanum, Kapitol, Amphitheater, Circus Maximus, Thermen; Politik und Gesellschaft: Senat und Senatoren, römische Werte (u. a. pietas); Alltags- und Privatleben: Familie, Sklaven, Gladiatoren, Schule und Ausbildung; Religion und Mythos: u. a. Tempel, Orakel und Auspizien; griechische und römische Gottheiten; Vorstellungen von Tod und Unterwelt; Herkules/Herakles; Aeneas, Roms Gründungsmythos und sagenhafte Frühzeit: Romulus und Remus, Königszeit.",
+			"lessons": [
+				"l5-rom-topografie",
+				"l5-spiele-bauten",
+				"l5-thermen-aquaedukt-ostia",
+				"l5-senat-werte",
+				"l5-familie-namen",
+				"l5-sklaven-gladiatoren",
+				"l5-schule-schreiben-kleidung",
+				"l5-religion-auspizien",
+				"l5-olympier",
+				"l5-tod-unterwelt",
+				"l5-herkules-aeneas",
+				"l5-romulus-koenige-quellen",
+				"l5-text-erschliessen",
+				"l5-uebersetzen-pruefen"
+			],
+			"status": "implemented",
+			"evidence": "Erklärung mit Beispiel und Merksatz, dreiteiliges Entdeckerbild, interaktive Werkstatt mit 3 Zielen, Kurzcheck, gebundene Übungen sowie Eigenübersetzung/Schreibaufgabe auf zwei Niveaus."
+		},
+		{
+			"id": "L5-02",
+			"lb": "1",
+			"competence": "erfassen wesentliche Inhalte altersgemäßer Lehrbuchtexte und stellen sinnvolle inhaltliche Bezüge her.",
+			"lessons": [
+				"l5-text-erschliessen",
+				"l5-uebersetzen-pruefen"
+			],
+			"status": "implemented",
+			"evidence": "Erklärung mit Beispiel und Merksatz, dreiteiliges Entdeckerbild, interaktive Werkstatt mit 3 Zielen, Kurzcheck, gebundene Übungen sowie Eigenübersetzung/Schreibaufgabe auf zwei Niveaus."
+		},
+		{
+			"id": "L5-03",
+			"lb": "1",
+			"competence": "nehmen zu ausgewählten in lateinischer Sprache formulierten Sachverhalten und Textinhalten Stellung.",
+			"lessons": [
+				"l5-vortrag-stellungnahme",
+				"l5-senat-werte",
+				"l5-sklaven-gladiatoren"
+			],
+			"status": "supported",
+			"evidence": "Die App stellt Textaussagen, Deutungsfragen und Schreibanlässe mit Kriterien bereit; das freie Urteil und Unterrichtsgespräch bleiben im Klassenverband."
+		},
+		{
+			"id": "L5-04",
+			"lb": "1",
+			"competence": "tragen lateinische Texte zu den Themen der Jahrgangsstufe verständnisgeleitet vor.",
+			"lessons": [
+				"l5-vortrag-stellungnahme",
+				"l5-aussprache-betonung",
+				"l5-romulus-koenige-quellen"
+			],
+			"status": "supported",
+			"evidence": "Lokale Vorlese-Hilfe und Betonungsmodell bereiten den Lesevortrag vor; der eigene mündliche Vortrag mit Partner- oder Lehrkraftrückmeldung bleibt Unterrichtspraxis."
+		},
+		{
+			"id": "L5-05",
+			"lb": "2.1",
+			"competence": "geben zu insgesamt ca. 500 lateinischen Wörtern des Grundwortschatzes und zu Wörtern des Kulturwortschatzes die deutschen Bedeutungen an.",
+			"lessons": [
+				"l5-grundwortschatz-lernen",
+				"l5-wortarten-wortfelder"
+			],
+			"status": "supported",
+			"evidence": "Die App übt exemplarische Kern- und Kulturwörter mit Wortfeldern und Lernkarteikarten; das laufende Einprägen aller ca. 500 Grundwortschatzvokabeln geschieht begleitend zum Lehrbuch."
+		},
+		{
+			"id": "L5-06",
+			"lb": "2.1",
+			"competence": "erschließen unter Anleitung die kontextspezifische Bedeutung von (mehrdeutigen) Wörtern.",
+			"lessons": [
+				"l5-grundwortschatz-lernen",
+				"l5-text-erschliessen"
+			],
+			"status": "implemented",
+			"evidence": "Erklärung mit Beispiel und Merksatz, dreiteiliges Entdeckerbild, interaktive Werkstatt mit 3 Zielen, Kurzcheck, gebundene Übungen sowie Eigenübersetzung/Schreibaufgabe auf zwei Niveaus."
+		},
+		{
+			"id": "L5-07",
+			"lb": "2.1",
+			"competence": "sprechen lateinische Wörter des bisher erworbenen Vokabulars quantitätsgerecht und in korrekter Betonung aus.",
+			"lessons": [
+				"l5-aussprache-betonung",
+				"l5-vortrag-stellungnahme"
+			],
+			"status": "supported",
+			"evidence": "Silben- und Längenmodell sowie Vorlese-Hilfe machen Betonungsregeln erfahrbar; das eigenständige Lautsprechen mit Rückmeldung bleibt mündliche Praxis."
+		},
+		{
+			"id": "L5-08",
+			"lb": "2.1",
+			"competence": "ordnen das Vokabular nach Wortarten, Wort- und Sachfeldern oder Wortfamilien und begründen jeweils ihre Zuordnung.",
+			"lessons": [
+				"l5-wortarten-wortfelder",
+				"l5-grundwortschatz-lernen"
+			],
+			"status": "implemented",
+			"evidence": "Erklärung mit Beispiel und Merksatz, dreiteiliges Entdeckerbild, interaktive Werkstatt mit 3 Zielen, Kurzcheck, gebundene Übungen sowie Eigenübersetzung/Schreibaufgabe auf zwei Niveaus."
+		},
+		{
+			"id": "L5-09",
+			"lb": "2.1",
+			"competence": "erläutern lateinische Wendungen in ihrer wörtlichen und übertragenen Bedeutung und übersetzen sie in angemessenes Deutsch.",
+			"lessons": [
+				"l5-wendungen-sentenzen"
+			],
+			"status": "implemented",
+			"evidence": "Erklärung mit Beispiel und Merksatz, dreiteiliges Entdeckerbild, interaktive Werkstatt mit 3 Zielen, Kurzcheck, gebundene Übungen sowie Eigenübersetzung/Schreibaufgabe auf zwei Niveaus."
+		},
+		{
+			"id": "L5-10",
+			"lb": "2.1",
+			"competence": "analysieren Wörter gemäß einfachen Regeln der Wortbildungslehre im Hinblick auf ihre Bestandteile.",
+			"lessons": [
+				"l5-wortbildung-kontext"
+			],
+			"status": "implemented",
+			"evidence": "Erklärung mit Beispiel und Merksatz, dreiteiliges Entdeckerbild, interaktive Werkstatt mit 3 Zielen, Kurzcheck, gebundene Übungen sowie Eigenübersetzung/Schreibaufgabe auf zwei Niveaus."
+		},
+		{
+			"id": "L5-11",
+			"lb": "2.1",
+			"competence": "erschließen die Bedeutung unbekannter Wörter durch Ableitung aus Bekanntem, aus einem einfachen Kontext und ggf. unter Anwendung von Wortbildungsregeln.",
+			"lessons": [
+				"l5-wortbildung-kontext",
+				"l5-text-erschliessen"
+			],
+			"status": "implemented",
+			"evidence": "Erklärung mit Beispiel und Merksatz, dreiteiliges Entdeckerbild, interaktive Werkstatt mit 3 Zielen, Kurzcheck, gebundene Übungen sowie Eigenübersetzung/Schreibaufgabe auf zwei Niveaus."
+		},
+		{
+			"id": "L5-12",
+			"lb": "2.1",
+			"competence": "erschließen aufgrund ihrer Kenntnis der lateinischen Ursprungswörter die Bedeutung einiger deutscher Lehn- und Fremdwörter sowie von einzelnen Wörtern moderner Fremdsprachen.",
+			"lessons": [
+				"l5-europa-sprachen",
+				"l5-wortbildung-kontext"
+			],
+			"status": "implemented",
+			"evidence": "Erklärung mit Beispiel und Merksatz, dreiteiliges Entdeckerbild, interaktive Werkstatt mit 3 Zielen, Kurzcheck, gebundene Übungen sowie Eigenübersetzung/Schreibaufgabe auf zwei Niveaus."
+		},
+		{
+			"id": "L5-13",
+			"lb": "2.1",
+			"competence": "erkennen bei einfachen Wörtern deren Verwandtschaft im Lateinischen, Deutschen, Englischen und in den romanischen Sprachen und erfassen so die Bedeutung des Lateinischen für die Entwicklung der europäischen Sprachen.",
+			"lessons": [
+				"l5-europa-sprachen"
+			],
+			"status": "implemented",
+			"evidence": "Erklärung mit Beispiel und Merksatz, dreiteiliges Entdeckerbild, interaktive Werkstatt mit 3 Zielen, Kurzcheck, gebundene Übungen sowie Eigenübersetzung/Schreibaufgabe auf zwei Niveaus."
+		},
+		{
+			"id": "L5-14",
+			"lb": "2.1",
+			"competence": "erkennen in ihrer näheren Umgebung die Verwendung lateinischer Inschriften sowie Abkürzungen und geben in einfachen Fällen deren Bedeutung an.",
+			"lessons": [
+				"l5-wendungen-sentenzen"
+			],
+			"status": "supported",
+			"evidence": "Die App erläutert häufige Abkürzungen und Inschrift-Beispiele (SPQR, INRI, A. D., M); das eigene Entdecken in der Schulumgebung bleibt Exkursions- oder Alltagsaufgabe."
+		},
+		{
+			"id": "L5-15",
+			"lb": "2.2",
+			"competence": "benennen einfache sprachliche Erscheinungen mit grammatikalischen Grundbegriffen (u. a. Substantiv; Adjektiv; Pronomina; Numeralia; Deklination; Kasus, Numerus, Genus; Verb: Voll- und Hilfsverb; Konjugation; Person, Numerus, Tempus, Modus; Adverb), ordnen sie in ein Basissystem der Grammatik ein und begründen ihre Einordnung.",
+			"lessons": [
+				"l5-a-o-deklination",
+				"l5-dritte-deklination",
+				"l5-u-e-deklination",
+				"l5-adjektive-kng",
+				"l5-pronomina",
+				"l5-numeralia",
+				"l5-praesens-konjugationen",
+				"l5-esse-posse-velle"
+			],
+			"status": "implemented",
+			"evidence": "Erklärung mit Beispiel und Merksatz, dreiteiliges Entdeckerbild, interaktive Werkstatt mit 3 Zielen, Kurzcheck, gebundene Übungen sowie Eigenübersetzung/Schreibaufgabe auf zwei Niveaus."
+		},
+		{
+			"id": "L5-16",
+			"lb": "2.2",
+			"competence": "weisen lateinische Wörter und Wortformen ihren fundamentalen grammatikalischen Kategorien zu.",
+			"lessons": [
+				"l5-wortarten-wortfelder",
+				"l5-a-o-deklination",
+				"l5-praesens-konjugationen"
+			],
+			"status": "implemented",
+			"evidence": "Erklärung mit Beispiel und Merksatz, dreiteiliges Entdeckerbild, interaktive Werkstatt mit 3 Zielen, Kurzcheck, gebundene Übungen sowie Eigenübersetzung/Schreibaufgabe auf zwei Niveaus."
+		},
+		{
+			"id": "L5-17",
+			"lb": "2.2",
+			"competence": "analysieren und bestimmen elementare lateinische Wortformen aus folgenden Bereichen: Nomina: Substantive und Adjektive aller Deklinationsklassen in allen Kasus; Pronomina: Personalpronomen, Possessivpronomen, Reflexivpronomen, Pronomen is, Relativpronomen qui; Numeralia: Kardinalia und Ordinalia im Zahlenraum von 1 bis 12; Verben: aus allen Konjugationsklassen sowie esse, posse, velle, nolle, malle in allen Personen und in allen Tempora des Indikativs Aktiv, dazu die Infinitive und Imperative I; alle Arten der Perfektbildung; Stammformen einiger Verben.",
+			"lessons": [
+				"l5-a-o-deklination",
+				"l5-dritte-deklination",
+				"l5-u-e-deklination",
+				"l5-adjektive-kng",
+				"l5-pronomina",
+				"l5-numeralia",
+				"l5-praesens-konjugationen",
+				"l5-esse-posse-velle",
+				"l5-imperfekt-futur1",
+				"l5-perfektbildung",
+				"l5-plusquamperfekt-futur2"
+			],
+			"status": "implemented",
+			"evidence": "Erklärung mit Beispiel und Merksatz, dreiteiliges Entdeckerbild, interaktive Werkstatt mit 3 Zielen, Kurzcheck, gebundene Übungen sowie Eigenübersetzung/Schreibaufgabe auf zwei Niveaus."
+		},
+		{
+			"id": "L5-18",
+			"lb": "2.2",
+			"competence": "erfassen die Bedeutung der Wortbestandteile (u. a. Tempuszeichen, Endungen).",
+			"lessons": [
+				"l5-a-o-deklination",
+				"l5-praesens-konjugationen",
+				"l5-imperfekt-futur1",
+				"l5-perfektbildung",
+				"l5-plusquamperfekt-futur2"
+			],
+			"status": "implemented",
+			"evidence": "Erklärung mit Beispiel und Merksatz, dreiteiliges Entdeckerbild, interaktive Werkstatt mit 3 Zielen, Kurzcheck, gebundene Übungen sowie Eigenübersetzung/Schreibaufgabe auf zwei Niveaus."
+		},
+		{
+			"id": "L5-19",
+			"lb": "2.2",
+			"competence": "bilden unter Beachtung von Grundregeln der Formenlehre v. a. entsprechend dem aktuellen Grammatikstoff lateinische Wortformen und Wendungen.",
+			"lessons": [
+				"l5-a-o-deklination",
+				"l5-dritte-deklination",
+				"l5-u-e-deklination",
+				"l5-adjektive-kng",
+				"l5-pronomina",
+				"l5-numeralia",
+				"l5-praesens-konjugationen",
+				"l5-esse-posse-velle",
+				"l5-imperfekt-futur1",
+				"l5-perfektbildung",
+				"l5-plusquamperfekt-futur2"
+			],
+			"status": "implemented",
+			"evidence": "Erklärung mit Beispiel und Merksatz, dreiteiliges Entdeckerbild, interaktive Werkstatt mit 3 Zielen, Kurzcheck, gebundene Übungen sowie Eigenübersetzung/Schreibaufgabe auf zwei Niveaus."
+		},
+		{
+			"id": "L5-20",
+			"lb": "2.3",
+			"competence": "erkennen und unterscheiden einige einfache Erscheinungen der Satzlehre, benennen sie mit Fachbegriffen und ordnen sie in ein Basissystem der Grammatik ein: Satzglieder und Satzgliedteile: Prädikat, Subjekt, Objekt, Adverbiale; Prädikatsnomen und Attribut; Füllungsarten (u. a. Vollverben, Nomina); Kongruenzregeln: u. a. KNG-Kongruenz; Kasusfunktionen: Kasus als Satzglieder und Satzgliedteile; Genitiv der Zugehörigkeit, Dativ des Besitzers, Akkusativ der zeitlichen Ausdehnung, Ablativ des Mittels, des Grundes, der Trennung und der Zeit; Verwendung der Tempora (v. a. Imperfekt und Perfekt); Satzarten und ihre Modi: Aussagesatz, Fragesatz, Aufforderungssatz; Satzebenen mit Konjunktionen und Subjunktionen: Hauptsatz, Nebensatz; Nebensätze: Relativsatz (mit relativem Satzanschluss); Adverbialsätze verschiedener Sinnrichtungen (temporal, kausal, konditional, konzessiv); satzwertige Konstruktion: AcI (gleichzeitig, vorzeitig; aktiv).",
+			"lessons": [
+				"l5-satzglieder-abfrage",
+				"l5-rektion-wortstellung",
+				"l5-kasus-gen-dat-akk",
+				"l5-ablativ-funktionen",
+				"l5-imperfekt-perfekt-gebrauch",
+				"l5-satzarten-nebensaetze",
+				"l5-aci"
+			],
+			"status": "implemented",
+			"evidence": "Erklärung mit Beispiel und Merksatz, dreiteiliges Entdeckerbild, interaktive Werkstatt mit 3 Zielen, Kurzcheck, gebundene Übungen sowie Eigenübersetzung/Schreibaufgabe auf zwei Niveaus."
+		},
+		{
+			"id": "L5-21",
+			"lb": "2.3",
+			"competence": "erkennen, benennen und erfassen aufgrund ihrer Kenntnis der Rektion von Verben und Präpositionen sowie von Kongruenzregeln Zusammenhänge in leicht zugänglichen Sätzen.",
+			"lessons": [
+				"l5-rektion-wortstellung",
+				"l5-adjektive-kng",
+				"l5-ablativ-funktionen"
+			],
+			"status": "implemented",
+			"evidence": "Erklärung mit Beispiel und Merksatz, dreiteiliges Entdeckerbild, interaktive Werkstatt mit 3 Zielen, Kurzcheck, gebundene Übungen sowie Eigenübersetzung/Schreibaufgabe auf zwei Niveaus."
+		},
+		{
+			"id": "L5-22",
+			"lb": "2.3",
+			"competence": "erkennen und analysieren Grundstrukturen einfacher Sätze.",
+			"lessons": [
+				"l5-satzglieder-abfrage",
+				"l5-rektion-wortstellung"
+			],
+			"status": "implemented",
+			"evidence": "Erklärung mit Beispiel und Merksatz, dreiteiliges Entdeckerbild, interaktive Werkstatt mit 3 Zielen, Kurzcheck, gebundene Übungen sowie Eigenübersetzung/Schreibaufgabe auf zwei Niveaus."
+		},
+		{
+			"id": "L5-23",
+			"lb": "2.3",
+			"competence": "stellen unter Beachtung einfacher syntaktischer Regeln korrekt gebildete Wortformen zu Wortverbindungen oder kleinen Sätzen zusammen.",
+			"lessons": [
+				"l5-adjektive-kng",
+				"l5-rektion-wortstellung",
+				"l5-satzarten-nebensaetze"
+			],
+			"status": "implemented",
+			"evidence": "Erklärung mit Beispiel und Merksatz, dreiteiliges Entdeckerbild, interaktive Werkstatt mit 3 Zielen, Kurzcheck, gebundene Übungen sowie Eigenübersetzung/Schreibaufgabe auf zwei Niveaus."
+		},
+		{
+			"id": "L5-24",
+			"lb": "2.3",
+			"competence": "erkennen am Beispiel einiger grundlegender Phänomene (u. a. Wortstellung, AcI) Unterschiede zwischen lateinischem und deutschem Satzbau.",
+			"lessons": [
+				"l5-rektion-wortstellung",
+				"l5-aci"
+			],
+			"status": "implemented",
+			"evidence": "Erklärung mit Beispiel und Merksatz, dreiteiliges Entdeckerbild, interaktive Werkstatt mit 3 Zielen, Kurzcheck, gebundene Übungen sowie Eigenübersetzung/Schreibaufgabe auf zwei Niveaus."
+		},
+		{
+			"id": "L5-25",
+			"lb": "2.3",
+			"competence": "nutzen die Ergebnisse ihrer elementaren Sprachbetrachtung zum bewussten Umgang mit der deutschen Sprache und zur angemessenen Erweiterung ihrer Ausdrucksmöglichkeiten.",
+			"lessons": [
+				"l5-aci",
+				"l5-uebersetzen-pruefen",
+				"l5-kasus-gen-dat-akk"
+			],
+			"status": "implemented",
+			"evidence": "Erklärung mit Beispiel und Merksatz, dreiteiliges Entdeckerbild, interaktive Werkstatt mit 3 Zielen, Kurzcheck, gebundene Übungen sowie Eigenübersetzung/Schreibaufgabe auf zwei Niveaus."
+		},
+		{
+			"id": "L5-26",
+			"lb": "3",
+			"competence": "erkennen, benennen und beschreiben herausragende Merkmale der Topografie Roms und seiner Umgebung (Forum Romanum, Kapitol, Hügel Roms, Kolosseum – Amphitheater, Konstantinsbogen – Triumphbogen, Circus Maximus; Ostia; Thermen; Aquädukt) und erklären sie in ihrer Funktion.",
+			"lessons": [
+				"l5-rom-topografie",
+				"l5-spiele-bauten",
+				"l5-thermen-aquaedukt-ostia"
+			],
+			"status": "implemented",
+			"evidence": "Erklärung mit Beispiel und Merksatz, dreiteiliges Entdeckerbild, interaktive Werkstatt mit 3 Zielen, Kurzcheck, gebundene Übungen sowie Eigenübersetzung/Schreibaufgabe auf zwei Niveaus."
+		},
+		{
+			"id": "L5-27",
+			"lb": "3",
+			"competence": "erkennen in Exponaten von Antikenmuseen Beispiele für die Ausdrucksformen römischer Kunst.",
+			"lessons": [
+				"l5-caput-mundi-kunst"
+			],
+			"status": "supported",
+			"evidence": "Die App stellt ausgewählte Relief-, Vasen- und Statuenmerkmale schematisch vor; der direkte Besuch und das Betrachten realer Exponate im Antikenmuseum bleiben außerhalb der App."
+		},
+		{
+			"id": "L5-28",
+			"lb": "3",
+			"competence": "erkennen in Bauten ihres Erfahrungsbereichs die Typik römischer Architektur.",
+			"lessons": [
+				"l5-caput-mundi-kunst",
+				"l5-spiele-bauten"
+			],
+			"status": "supported",
+			"evidence": "Die App zeigt typische römische Bauelemente (Rundbogen, Säulenordnung, Gewölbe); das eigene Erkennen an Gebäuden im persönlichen Umfeld bleibt Alltagsbeobachtung."
+		},
+		{
+			"id": "L5-29",
+			"lb": "3",
+			"competence": "erfassen die zentrale historische und politische Bedeutung der Stadt Rom als caput mundi.",
+			"lessons": [
+				"l5-caput-mundi-kunst",
+				"l5-rom-topografie"
+			],
+			"status": "implemented",
+			"evidence": "Erklärung mit Beispiel und Merksatz, dreiteiliges Entdeckerbild, interaktive Werkstatt mit 3 Zielen, Kurzcheck, gebundene Übungen sowie Eigenübersetzung/Schreibaufgabe auf zwei Niveaus."
+		},
+		{
+			"id": "L5-30",
+			"lb": "3",
+			"competence": "beschreiben den Einfluss der griechischen Kultur in Rom, u. a. anhand von Tempeln, Gottheiten und Mythen.",
+			"lessons": [
+				"l5-griechenland-rom",
+				"l5-olympier",
+				"l5-herkules-aeneas"
+			],
+			"status": "implemented",
+			"evidence": "Erklärung mit Beispiel und Merksatz, dreiteiliges Entdeckerbild, interaktive Werkstatt mit 3 Zielen, Kurzcheck, gebundene Übungen sowie Eigenübersetzung/Schreibaufgabe auf zwei Niveaus."
+		},
+		{
+			"id": "L5-31",
+			"lb": "3",
+			"competence": "erfassen und erklären einige Grundbegriffe der römischen Gesellschaft (v. a. römische Werte, Senat und Senatoren).",
+			"lessons": [
+				"l5-senat-werte"
+			],
+			"status": "implemented",
+			"evidence": "Erklärung mit Beispiel und Merksatz, dreiteiliges Entdeckerbild, interaktive Werkstatt mit 3 Zielen, Kurzcheck, gebundene Übungen sowie Eigenübersetzung/Schreibaufgabe auf zwei Niveaus."
+		},
+		{
+			"id": "L5-32",
+			"lb": "3",
+			"competence": "beschreiben und erklären wichtige Aspekte aus dem römischen Alltags- und Privatleben, insbesondere zu den Themen Familie, Namensgebung, Sklaven, Gladiatoren, Kleidung, Zeitrechnung und Kalender, Schule und Ausbildung, Schreibmaterial und Bücher.",
+			"lessons": [
+				"l5-familie-namen",
+				"l5-sklaven-gladiatoren",
+				"l5-schule-schreiben-kleidung",
+				"l5-kalender-zeit"
+			],
+			"status": "implemented",
+			"evidence": "Erklärung mit Beispiel und Merksatz, dreiteiliges Entdeckerbild, interaktive Werkstatt mit 3 Zielen, Kurzcheck, gebundene Übungen sowie Eigenübersetzung/Schreibaufgabe auf zwei Niveaus."
+		},
+		{
+			"id": "L5-33",
+			"lb": "3",
+			"competence": "erfassen Grundzüge römischer Religion (u. a. Tempel, Orakel und Auspizien).",
+			"lessons": [
+				"l5-religion-auspizien"
+			],
+			"status": "implemented",
+			"evidence": "Erklärung mit Beispiel und Merksatz, dreiteiliges Entdeckerbild, interaktive Werkstatt mit 3 Zielen, Kurzcheck, gebundene Übungen sowie Eigenübersetzung/Schreibaufgabe auf zwei Niveaus."
+		},
+		{
+			"id": "L5-34",
+			"lb": "3",
+			"competence": "erkennen und benennen in geeigneten Darstellungen griechische und römische Gottheiten (v. a. die Olympier).",
+			"lessons": [
+				"l5-olympier"
+			],
+			"status": "supported",
+			"evidence": "Die App zeigt schematische Attribute und Zuständigkeiten der zwölf Olympier; das Deuten freier Kunstwerke und Bildprogramme bleibt Unterrichtspraxis."
+		},
+		{
+			"id": "L5-35",
+			"lb": "3",
+			"competence": "geben die Zuständigkeitsbereiche wichtiger griechischer und römischer Gottheiten an.",
+			"lessons": [
+				"l5-olympier"
+			],
+			"status": "implemented",
+			"evidence": "Erklärung mit Beispiel und Merksatz, dreiteiliges Entdeckerbild, interaktive Werkstatt mit 3 Zielen, Kurzcheck, gebundene Übungen sowie Eigenübersetzung/Schreibaufgabe auf zwei Niveaus."
+		},
+		{
+			"id": "L5-36",
+			"lb": "3",
+			"competence": "beschreiben römische Vorstellungen von Tod und Unterwelt.",
+			"lessons": [
+				"l5-tod-unterwelt"
+			],
+			"status": "implemented",
+			"evidence": "Erklärung mit Beispiel und Merksatz, dreiteiliges Entdeckerbild, interaktive Werkstatt mit 3 Zielen, Kurzcheck, gebundene Übungen sowie Eigenübersetzung/Schreibaufgabe auf zwei Niveaus."
+		},
+		{
+			"id": "L5-37",
+			"lb": "3",
+			"competence": "geben Inhalte von Mythen über die Helden Herakles/Herkules und Aeneas wieder und erfassen einige Aspekte der Bedeutung des Mythos für Rom.",
+			"lessons": [
+				"l5-herkules-aeneas"
+			],
+			"status": "implemented",
+			"evidence": "Erklärung mit Beispiel und Merksatz, dreiteiliges Entdeckerbild, interaktive Werkstatt mit 3 Zielen, Kurzcheck, gebundene Übungen sowie Eigenübersetzung/Schreibaufgabe auf zwei Niveaus."
+		},
+		{
+			"id": "L5-38",
+			"lb": "3",
+			"competence": "stellen Informationen aus dem römischen Gründungsmythos (v. a. im Zusammenhang mit Aeneas, Romulus und Remus) und aus den sagenhaften Erzählungen der Frühzeit (u. a. Raub der Sabinerinnen, Königszeit, Vertreibung des Tarquinius Superbus) zu einem klar gegliederten Überblickswissen zusammen.",
+			"lessons": [
+				"l5-romulus-koenige-quellen",
+				"l5-herkules-aeneas"
+			],
+			"status": "implemented",
+			"evidence": "Erklärung mit Beispiel und Merksatz, dreiteiliges Entdeckerbild, interaktive Werkstatt mit 3 Zielen, Kurzcheck, gebundene Übungen sowie Eigenübersetzung/Schreibaufgabe auf zwei Niveaus."
+		},
+		{
+			"id": "L5-39",
+			"lb": "3",
+			"competence": "erkennen in Vergil und Livius bedeutende literarische Quellen zum Ursprungsmythos und zur Frühgeschichte Roms.",
+			"lessons": [
+				"l5-romulus-koenige-quellen"
+			],
+			"status": "implemented",
+			"evidence": "Erklärung mit Beispiel und Merksatz, dreiteiliges Entdeckerbild, interaktive Werkstatt mit 3 Zielen, Kurzcheck, gebundene Übungen sowie Eigenübersetzung/Schreibaufgabe auf zwei Niveaus."
+		},
+		{
+			"id": "L5-40",
+			"lb": "3",
+			"competence": "erkennen in ihrem Alltag (z. B. in Produktnamen, Abbildungen mythologischer Gestalten, lateinischen Ausdrücken, Architekturdenkmälern) Rezeptionsdokumente antiken Kulturguts und weisen an ihnen das Fortleben antiker Kultur und Zivilisation nach.",
+			"lessons": [
+				"l5-caput-mundi-kunst",
+				"l5-europa-sprachen",
+				"l5-wendungen-sentenzen"
+			],
+			"status": "supported",
+			"evidence": "Die App führt typische Rezeptionsbeispiele aus Alltag, Architektur und Marken ein; das eigene Suchen und Dokumentieren in der Lebenswelt bleibt Schüleraufgabe."
+		},
+		{
+			"id": "L5-41",
+			"lb": "3",
+			"competence": "erfassen die Bedeutung einiger lateinischer Ausdrücke, Sentenzen und geflügelter Worte im Deutschen.",
+			"lessons": [
+				"l5-wendungen-sentenzen"
+			],
+			"status": "implemented",
+			"evidence": "Erklärung mit Beispiel und Merksatz, dreiteiliges Entdeckerbild, interaktive Werkstatt mit 3 Zielen, Kurzcheck, gebundene Übungen sowie Eigenübersetzung/Schreibaufgabe auf zwei Niveaus."
+		},
+		{
+			"id": "L5-42",
+			"lb": "3",
+			"competence": "vergleichen Einrichtungen und Vorstellungen römischer Kultur (u. a. im Bereich von Familie, Gesellschaft und Religion) mit denen ihrer eigenen Lebenswirklichkeit.",
+			"lessons": [
+				"l5-familie-namen",
+				"l5-sklaven-gladiatoren",
+				"l5-schule-schreiben-kleidung",
+				"l5-senat-werte",
+				"l5-religion-auspizien"
+			],
+			"status": "implemented",
+			"evidence": "Erklärung mit Beispiel und Merksatz, dreiteiliges Entdeckerbild, interaktive Werkstatt mit 3 Zielen, Kurzcheck, gebundene Übungen sowie Eigenübersetzung/Schreibaufgabe auf zwei Niveaus."
+		},
+		{
+			"id": "L5-43",
+			"lb": "4",
+			"competence": "analysieren sprachliche Einheiten (u. a. Wortformen, AcI) v. a. aus dem aktuellen Grammatikstoff und stellen durch folgerichtiges Kombinieren korrekte Bezüge her.",
+			"lessons": [
+				"l5-aci",
+				"l5-a-o-deklination",
+				"l5-adjektive-kng",
+				"l5-pronomina"
+			],
+			"status": "implemented",
+			"evidence": "Erklärung mit Beispiel und Merksatz, dreiteiliges Entdeckerbild, interaktive Werkstatt mit 3 Zielen, Kurzcheck, gebundene Übungen sowie Eigenübersetzung/Schreibaufgabe auf zwei Niveaus."
+		},
+		{
+			"id": "L5-44",
+			"lb": "4",
+			"competence": "wenden einfache Übersetzungstechniken an, indem sie Sätze u. a. mit dem Abfrageschema erschließen.",
+			"lessons": [
+				"l5-satzglieder-abfrage",
+				"l5-uebersetzen-pruefen"
+			],
+			"status": "implemented",
+			"evidence": "Erklärung mit Beispiel und Merksatz, dreiteiliges Entdeckerbild, interaktive Werkstatt mit 3 Zielen, Kurzcheck, gebundene Übungen sowie Eigenübersetzung/Schreibaufgabe auf zwei Niveaus."
+		},
+		{
+			"id": "L5-45",
+			"lb": "4",
+			"competence": "überprüfen ihre Übersetzungsergebnisse und benennen und analysieren ggf. sprachliche Fehler unter Anleitung.",
+			"lessons": [
+				"l5-uebersetzen-pruefen"
+			],
+			"status": "implemented",
+			"evidence": "Erklärung mit Beispiel und Merksatz, dreiteiliges Entdeckerbild, interaktive Werkstatt mit 3 Zielen, Kurzcheck, gebundene Übungen sowie Eigenübersetzung/Schreibaufgabe auf zwei Niveaus."
+		},
+		{
+			"id": "L5-46",
+			"lb": "4",
+			"competence": "arbeiten u. a. mithilfe von Erschließungsfragen Inhalte und Themen von Texten heraus.",
+			"lessons": [
+				"l5-text-erschliessen"
+			],
+			"status": "implemented",
+			"evidence": "Erklärung mit Beispiel und Merksatz, dreiteiliges Entdeckerbild, interaktive Werkstatt mit 3 Zielen, Kurzcheck, gebundene Übungen sowie Eigenübersetzung/Schreibaufgabe auf zwei Niveaus."
+		},
+		{
+			"id": "L5-47",
+			"lb": "4",
+			"competence": "wenden bei einer Auseinandersetzung mit Texten altersgemäße Methoden der produktiven oder kreativen Rezeption (z. B. Entwürfe von Plakaten, Standbilder, spielerisch-szenische Darbietungen, auch unter Nutzung geeigneter digitaler Medien)an.",
+			"lessons": [
+				"l5-kreativ-gemeinsam"
+			],
+			"status": "supported",
+			"evidence": "Die App vermittelt Kriterien und Planungsentwürfe für Plakate, Standbilder und Spielszenen; die praktische Umsetzung findet im Unterricht oder in Partnerarbeit statt."
+		},
+		{
+			"id": "L5-48",
+			"lb": "4",
+			"competence": "nutzen unter Anleitung Hilfsmittel (z. B. Lehrbuch, digitale Medien) zum Lernen, Nachschlagen, Üben, Wiederholen, zum Recherchieren und zum Bewältigen von fachlichen Aufgabenstellungen.",
+			"lessons": [
+				"l5-lernplan-hilfsmittel"
+			],
+			"status": "supported",
+			"evidence": "Die App dient selbst als digitales Nachschlage- und Übungswerkzeug; der reale Umgang mit Lehrbuch, Grammatik und Rechercheauftrag bleibt Unterrichtspraxis."
+		},
+		{
+			"id": "L5-49",
+			"lb": "4",
+			"competence": "wenden Techniken des Lernens (z. B. Arbeiten mit einer Vokabelkartei oder einem digitalen Lernprogramm, Analogieschlüsse und Transfer anhand von Prinzipien der Wortbildung, Bilden von „Eselsbrücken“) nach den Erfordernissen des aktuellen Lernstoffs sowie gemäß den individuellen Lernbedürfnissen und Lernstilen (z. B. Berücksichtigung verschiedener Sinneskanäle) an.",
+			"lessons": [
+				"l5-grundwortschatz-lernen",
+				"l5-lernplan-hilfsmittel"
+			],
+			"status": "implemented",
+			"evidence": "Erklärung mit Beispiel und Merksatz, dreiteiliges Entdeckerbild, interaktive Werkstatt mit 3 Zielen, Kurzcheck, gebundene Übungen sowie Eigenübersetzung/Schreibaufgabe auf zwei Niveaus."
+		},
+		{
+			"id": "L5-50",
+			"lb": "4",
+			"competence": "ordnen unter Anleitung ihre Lernprozesse mithilfe von Strategien der Arbeitsorganisation (z. B. Erstellen von Plänen mit realistischer Einteilung von Zeit, Arbeitsschritten und Arbeitspensen; Strukturierung von Prüfungsvorbereitungen).",
+			"lessons": [
+				"l5-lernplan-hilfsmittel"
+			],
+			"status": "supported",
+			"evidence": "Die App bietet ein interaktives Wochen- und Lernplanmodell mit Beispielaufgaben; die eigene Zeitplanung über Wochen hinweg führen die Lernenden selbst."
+		},
+		{
+			"id": "L5-51",
+			"lb": "4",
+			"competence": "wählen zur Sicherung und Präsentation von Arbeitsergebnissen einfache Verfahren (z. B. Visualisierungstechniken wie Anfertigung von Merkkästen und Grafiken, auch unter Nutzung geeigneter digitaler Medien) aus.",
+			"lessons": [
+				"l5-lernplan-hilfsmittel",
+				"l5-kreativ-gemeinsam"
+			],
+			"status": "supported",
+			"evidence": "Die App zeigt Merkkästen, Deklinations- und Satzbaugrafiken und übt deren Auswahl; eigene Plakate und Präsentationen erstellen Lernende selbst."
+		},
+		{
+			"id": "L5-52",
+			"lb": "4",
+			"competence": "wenden Strategien der Lern- und Selbstorganisation an, um offene Formen des Unterrichts (z. B. Freiarbeit, Lernzirkel, Wochenplanarbeit) unter altersangemessener Begleitung und Betreuung für den eigenen Lernfortschritt zu nutzen.",
+			"lessons": [
+				"l5-lernplan-hilfsmittel",
+				"l5-kreativ-gemeinsam"
+			],
+			"status": "supported",
+			"evidence": "Einzelne Lektionen eignen sich für Stationen- und Wochenplanarbeit; offene Unterrichtsformen organisiert die Lehrkraft im Klassenraum."
+		},
+		{
+			"id": "L5-53",
+			"lb": "4",
+			"competence": "leisten ihren persönlichen Beitrag (z. B. durch konstruktive Kritik, wertschätzende Diskussionshaltung, auch beim Austausch auf digitalen Lernplattformen) zum Gelingen sozial-integrativer Arbeitsformen (z. B. Partnerarbeit, Gruppenarbeit, Projekte).",
+			"lessons": [
+				"l5-kreativ-gemeinsam"
+			],
+			"status": "supported",
+			"evidence": "Die App modelliert Gesprächsregeln und Rückmeldekriterien; echte Partner-, Gruppenarbeit und gemeinsames Feedback finden zwischen Menschen statt."
+		}
+	]
+}

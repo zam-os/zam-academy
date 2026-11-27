@@ -1,0 +1,3517 @@
+{
+	"$schema": "https://zam.app/schemas/v1/kvt-tile.json",
+	"tile_id": "zam-academy:franzoesisch-2fs-gymnasium-7",
+	"version": "2026.11.1",
+	"title": "Französisch 7 Gymnasium (2. Fremdsprache)",
+	"description": "French as the second foreign language in Bavarian Gymnasium Grade 7, with visual workshops and linked recall cards.",
+	"publisher": "ZAM Academy",
+	"sources": [
+		{
+			"uri": "https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/7/franzoesisch/2-fremdsprache",
+			"label": "ISB · Französisch 7 (2. Fremdsprache), Gymnasium",
+			"checked": "2026-11-23"
+		},
+		{
+			"uri": "https://european-union.europa.eu/principles-countries-history/eu-countries/france_en",
+			"label": "Europäische Union · Frankreich",
+			"checked": "2026-11-23"
+		},
+		{
+			"uri": "https://www.france.fr/fr/destination/bretagne/",
+			"label": "Atout France · Bretagne",
+			"checked": "2026-11-23"
+		},
+		{
+			"uri": "https://alesia.com/histoire-du-site/",
+			"label": "MuséoParc Alésia · L’histoire du site",
+			"checked": "2026-11-23"
+		}
+	],
+	"atoms": [
+		{
+			"id": "01M83HYKH6ZYTE8FBQYY5HAAG6",
+			"atom_uri": "urn:zam:atom:01M83HYKH6ZYTE8FBQYY5HAAG6",
+			"namespace": "zam-academy-franzoesisch-2fs-gymnasium-7",
+			"slug": "f7-2-echange",
+			"title": "Chez ma famille d’accueil",
+			"domain": "franzoesisch/klasse-7/f2/dialog",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-echange",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-dialog",
+					"topic_title": "Parler et comprendre"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb1.1-sprechen",
+					"topic_title": "Fragen, Wünsche und Vorlieben im Austausch ausdrücken",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb1.2-wortschatz",
+					"topic_title": "Fragen, Wünsche und Vorlieben im Austausch ausdrücken",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb2",
+					"topic_title": "Fragen, Wünsche und Vorlieben im Austausch ausdrücken",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb3",
+					"topic_title": "Fragen, Wünsche und Vorlieben im Austausch ausdrücken",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb5",
+					"topic_title": "Fragen, Wünsche und Vorlieben im Austausch ausdrücken",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welcher Satz macht einen höflichen Vorschlag für Samstag?",
+					"concept": "Nous pourrions aller au musée samedi.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Nous pourrions aller au musée samedi.",
+							"Nous sommes allés au musée samedi."
+						],
+						"correct_index": 0
+					},
+					"id": "01M83HYKH74AQQXPVFGPHQR1RJ",
+					"slug": "f7-2-echange-check",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-echange"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "« Wir würden gern mit euch mitkommen. » Beginne mit On.",
+					"concept": "On voudrait venir avec vous.",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "On voudrait venir avec vous."
+						}
+					],
+					"id": "01M83HYKH7JW3E4FH4AWDEPX41",
+					"slug": "f7-2-echange-recall",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-echange"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Schreib einen kurzen Austauschdialog: Schlage Kino vor und frage höflich, wann es Abendessen gibt.",
+					"concept": "Nous pourrions aller au cinéma. Et à quelle heure est-ce qu’on mange ce soir ?",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "Nous pourrions aller au cinéma. Et à quelle heure est-ce qu’on mange ce soir ?"
+						}
+					],
+					"id": "01M83HYKH78XA92M25HCGPT8NA",
+					"slug": "f7-2-echange-transfer",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-echange"
+				}
+			]
+		},
+		{
+			"id": "01M83HYKH6KPYY2M7513GHM13K",
+			"atom_uri": "urn:zam:atom:01M83HYKH6KPYY2M7513GHM13K",
+			"namespace": "zam-academy-franzoesisch-2fs-gymnasium-7",
+			"slug": "f7-2-meteo",
+			"title": "Écouter la météo",
+			"domain": "franzoesisch/klasse-7/f2/dialog",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-meteo",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-dialog",
+					"topic_title": "Parler et comprendre"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb1.1-horen",
+					"topic_title": "Wetter in einer Hörmeldung und einer Rückfrage verstehen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb1.1-sprachmittlung",
+					"topic_title": "Wetter in einer Hörmeldung und einer Rückfrage verstehen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb4",
+					"topic_title": "Wetter in einer Hörmeldung und einer Rückfrage verstehen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb5",
+					"topic_title": "Wetter in einer Hörmeldung und einer Rückfrage verstehen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was bedeutet „il pleut“ im Wetterbericht?",
+					"concept": "Es regnet.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Es regnet.",
+							"Es ist kalt."
+						],
+						"correct_index": 0
+					},
+					"id": "01M83HYKH70FKHY4HZKW6SE3PZ",
+					"slug": "f7-2-meteo-check",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-meteo"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie sagst du „Es ist windig“?",
+					"concept": "Il y a du vent.",
+					"sample_solution": "Il y a du vent.",
+					"id": "01M83HYKH796SDWRXCY4NYKB4V",
+					"slug": "f7-2-meteo-recall",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-meteo"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Was tust du beim ersten und beim zweiten Durchgang einer Wetter-Hörübung?",
+					"concept": "Zuerst das Thema erfassen, dann gezielt auf Ort, Zeit und Wetter hören.",
+					"sample_solution": "Zuerst das Thema erfassen, dann gezielt auf Ort, Zeit und Wetter hören.",
+					"id": "01M83HYKH7MF24GDBQ00TJFQBD",
+					"slug": "f7-2-meteo-transfer",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-meteo"
+				}
+			]
+		},
+		{
+			"id": "01M83HYKH645X4W7EKB7N5HNJ9",
+			"atom_uri": "urn:zam:atom:01M83HYKH645X4W7EKB7N5HNJ9",
+			"namespace": "zam-academy-franzoesisch-2fs-gymnasium-7",
+			"slug": "f7-2-hotel",
+			"title": "Un message de l’hôtel",
+			"domain": "franzoesisch/klasse-7/f2/dialog",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-hotel",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-dialog",
+					"topic_title": "Parler et comprendre"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb1.1-horen",
+					"topic_title": "Eine kurze Auskunft hören und gezielt weitergeben",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb1.1-sprechen",
+					"topic_title": "Eine kurze Auskunft hören und gezielt weitergeben",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb1.1-sprachmittlung",
+					"topic_title": "Eine kurze Auskunft hören und gezielt weitergeben",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb1.2-wortschatz",
+					"topic_title": "Eine kurze Auskunft hören und gezielt weitergeben",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb4",
+					"topic_title": "Eine kurze Auskunft hören und gezielt weitergeben",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb5",
+					"topic_title": "Eine kurze Auskunft hören und gezielt weitergeben",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was bedeutet à partir de quinze heures in einer Nachricht vom Hotel?",
+					"concept": "ab 15 Uhr",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"ab 15 Uhr",
+							"bis 15 Uhr"
+						],
+						"correct_index": 0
+					},
+					"id": "01M83HYKH7DFDXYFCJ83S9BRTW",
+					"slug": "f7-2-hotel-check",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-hotel"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Was ist der Unterschied zwischen à partir de huit heures und jusqu’à huit heures?",
+					"concept": "Ab acht Uhr gegenüber bis acht Uhr.",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "Ab acht Uhr gegenüber bis acht Uhr."
+						}
+					],
+					"id": "01M83HYKH764PQW75G9K5WDA3B",
+					"slug": "f7-2-hotel-recall",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-hotel"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Sag auf Französisch, ab wann du ins Zimmer kannst und wo der Eingang ist.",
+					"concept": "La chambre est prête à partir de 15 h. L’entrée est rue des Pins.",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "La chambre est prête à partir de 15 h. L’entrée est rue des Pins."
+						}
+					],
+					"id": "01M83HYKH7B0ZWN0D6A439K6TV",
+					"slug": "f7-2-hotel-transfer",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-hotel"
+				}
+			]
+		},
+		{
+			"id": "01M83HYKH6592K6KABTXF91QS9",
+			"atom_uri": "urn:zam:atom:01M83HYKH6592K6KABTXF91QS9",
+			"namespace": "zam-academy-franzoesisch-2fs-gymnasium-7",
+			"slug": "f7-2-trajet",
+			"title": "Un message avant le départ",
+			"domain": "franzoesisch/klasse-7/f2/dialog",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-trajet",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-dialog",
+					"topic_title": "Parler et comprendre"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb1.1-horen",
+					"topic_title": "Verkehrshinweise lesen, hören und gezielt weitergeben",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb1.1-sprachmittlung",
+					"topic_title": "Verkehrshinweise lesen, hören und gezielt weitergeben",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb3",
+					"topic_title": "Verkehrshinweise lesen, hören und gezielt weitergeben",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb5",
+					"topic_title": "Verkehrshinweise lesen, hören und gezielt weitergeben",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was bezeichnet „départ“ am Bahnhof?",
+					"concept": "Abfahrt",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Abfahrt",
+							"Ankunft"
+						],
+						"correct_index": 0
+					},
+					"id": "01M83HYKH7MY5YCDY3N8ASRM9H",
+					"slug": "f7-2-trajet-check",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-trajet"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie übersetzt du „Le train part à onze heures, voie six“?",
+					"concept": "Der Zug fährt um elf Uhr von Gleis sechs ab.",
+					"sample_solution": "Der Zug fährt um elf Uhr von Gleis sechs ab.",
+					"id": "01M83HYKH78ZH9Z5K9GQ2NFW7R",
+					"slug": "f7-2-trajet-recall",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-trajet"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welche Angabe gilt in „Le train part à onze heures au lieu de dix heures“?",
+					"concept": "Elf Uhr. Au lieu de kündigt den ersetzten Zeitpunkt an.",
+					"sample_solution": "Elf Uhr. Au lieu de kündigt den ersetzten Zeitpunkt an.",
+					"id": "01M83HYKH7KYSW1DCJ29ZGFWAJ",
+					"slug": "f7-2-trajet-transfer",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-trajet"
+				}
+			]
+		},
+		{
+			"id": "01M83HYKH6RK5QZZXN9B3BN0GR",
+			"atom_uri": "urn:zam:atom:01M83HYKH6RK5QZZXN9B3BN0GR",
+			"namespace": "zam-academy-franzoesisch-2fs-gymnasium-7",
+			"slug": "f7-2-chemin",
+			"title": "Excusez-moi, pour aller… ?",
+			"domain": "franzoesisch/klasse-7/f2/dialog",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-chemin",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-dialog",
+					"topic_title": "Parler et comprendre"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb1.1-sprechen",
+					"topic_title": "Einen Weg höflich erfragen und erklären",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb1.1-sprachmittlung",
+					"topic_title": "Einen Weg höflich erfragen und erklären",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb1.2-wortschatz",
+					"topic_title": "Einen Weg höflich erfragen und erklären",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb5",
+					"topic_title": "Einen Weg höflich erfragen und erklären",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was heißt „geradeaus“ in einer Wegbeschreibung?",
+					"concept": "tout droit",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"tout droit",
+							"à droite"
+						],
+						"correct_index": 0
+					},
+					"id": "01M83HYKH7T87TCB5BPQBZJJ16",
+					"slug": "f7-2-chemin-check",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-chemin"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie fragst du höflich nach dem Weg zur Bibliothek?",
+					"concept": "Excusez-moi, pour aller à la bibliothèque, s’il vous plaît ?",
+					"sample_solution": "Excusez-moi, pour aller à la bibliothèque, s’il vous plaît ?",
+					"id": "01M83HYKH79C64W727YV1ZM04S",
+					"slug": "f7-2-chemin-recall",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-chemin"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie sagst du in der höflichen vous-Form „Biegen Sie links ab“?",
+					"concept": "Tournez à gauche.",
+					"sample_solution": "Tournez à gauche.",
+					"id": "01M83HYKH7W6A70P9X4WPPV0HK",
+					"slug": "f7-2-chemin-transfer",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-chemin"
+				}
+			]
+		},
+		{
+			"id": "01M83HYKH6VPSST1WDX8KHBBB6",
+			"atom_uri": "urn:zam:atom:01M83HYKH6VPSST1WDX8KHBBB6",
+			"namespace": "zam-academy-franzoesisch-2fs-gymnasium-7",
+			"slug": "f7-2-registre",
+			"title": "Je ne sais pas. Je sais pas.",
+			"domain": "franzoesisch/klasse-7/f2/dialog",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-registre",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-dialog",
+					"topic_title": "Parler et comprendre"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb1.1-schreiben",
+					"topic_title": "Standardsprache und lockere Alltagssprache erkennen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb5",
+					"topic_title": "Standardsprache und lockere Alltagssprache erkennen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche Schreibweise passt für « Ich weiß es nicht » in einer höflichen Nachricht?",
+					"concept": "Je ne sais pas.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Je ne sais pas.",
+							"Je sais pas."
+						],
+						"correct_index": 0
+					},
+					"id": "01M83HYKH71V0R18RRSMTZ4Z2Z",
+					"slug": "f7-2-registre-check",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-registre"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie schreibst du « T’as le billet ? » in Standardsprache mit tu?",
+					"concept": "Tu as le billet ?",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "Tu as le billet ?"
+						}
+					],
+					"id": "01M83HYKH762HWRRXC4H4GKAYR",
+					"slug": "f7-2-registre-recall",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-registre"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Schreib eine lockere Textnachricht an einen Freund und eine höfliche Nachricht an eine Museumsmitarbeiterin. Frage in beiden nach derselben Tasche.",
+					"concept": "Salut, t’as mon sac ? Bonjour Madame, avez-vous mon sac ?",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "Salut, t’as mon sac ? Bonjour Madame, avez-vous mon sac ?"
+						}
+					],
+					"id": "01M83HYKH7T16VX0QZWRR5NHJ4",
+					"slug": "f7-2-registre-transfer",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-registre"
+				}
+			]
+		},
+		{
+			"id": "01M83HYKH6E9BFB7BM5SZ1H9C2",
+			"atom_uri": "urn:zam:atom:01M83HYKH6E9BFB7BM5SZ1H9C2",
+			"namespace": "zam-academy-franzoesisch-2fs-gymnasium-7",
+			"slug": "f7-2-imperatif",
+			"title": "Sois prêt ! Ayez vos billets !",
+			"domain": "franzoesisch/klasse-7/f2/dialog",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-imperatif",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-dialog",
+					"topic_title": "Parler et comprendre"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb1.1-sprechen",
+					"topic_title": "Être und avoir im Imperativ und Pronomen in Aufforderungen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb1.2-wortschatz",
+					"topic_title": "Être und avoir im Imperativ und Pronomen in Aufforderungen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb1.2-grammatik",
+					"topic_title": "Être und avoir im Imperativ und Pronomen in Aufforderungen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wie lautet die vous-Form von être im bejahten Imperativ?",
+					"concept": "soyez",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"soyez",
+							"êtes"
+						],
+						"correct_index": 0
+					},
+					"id": "01M83HYKH74AZ5T5P61VXAVJ72",
+					"slug": "f7-2-imperatif-check",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-imperatif"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "« Donne les clés à Mia ! » Ersetze à Mia.",
+					"concept": "Donne-lui les clés !",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "Donne-lui les clés !"
+						}
+					],
+					"id": "01M83HYKH754BFV9S486SK2KT7",
+					"slug": "f7-2-imperatif-recall",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-imperatif"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Schreib zwei Ansagen für eine Gruppe. Sie soll pünktlich sein und die Karten zeigen. Ersetze cartes im zweiten Satz.",
+					"concept": "Soyez à l’heure ! Montrez-les, s’il vous plaît !",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "Soyez à l’heure ! Montrez-les, s’il vous plaît !"
+						}
+					],
+					"id": "01M83HYKH73F4CSZ9ET83E4ADX",
+					"slug": "f7-2-imperatif-transfer",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-imperatif"
+				}
+			]
+		},
+		{
+			"id": "01M83HYKH6WQC0ZWDWPWNAF8AR",
+			"atom_uri": "urn:zam:atom:01M83HYKH6WQC0ZWDWPWNAF8AR",
+			"namespace": "zam-academy-franzoesisch-2fs-gymnasium-7",
+			"slug": "f7-2-paroles",
+			"title": "Elle dit qu’elle vient",
+			"domain": "franzoesisch/klasse-7/f2/dialog",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-paroles",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-dialog",
+					"topic_title": "Parler et comprendre"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb1.2-grammatik",
+					"topic_title": "Aussagen in der Gegenwart weitergeben",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Mit welchem Baustein gibst du eine Aussage weiter: « Lina dit … le train est en retard »?",
+					"concept": "que",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"que",
+							"si"
+						],
+						"correct_index": 0
+					},
+					"id": "01M83HYKH7XK82BSC1Y25DT56M",
+					"slug": "f7-2-paroles-check",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-paroles"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Für Nina (« Je reste ici »): « Nina explique qu’… reste ici. »",
+					"concept": "elle",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "elle"
+						}
+					],
+					"id": "01M83HYKH7HRNDQJWTAFC980KR",
+					"slug": "f7-2-paroles-recall",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-paroles"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Sami sagt « Je prends mon sac et j’attends Léa ». Gib beide Informationen in einem Bericht wieder.",
+					"concept": "Sami dit qu’il prend son sac et qu’il attend Léa.",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "Sami dit qu’il prend son sac et qu’il attend Léa."
+						}
+					],
+					"id": "01M83HYKH7F0CMYH7BK0NNX2SX",
+					"slug": "f7-2-paroles-transfer",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-paroles"
+				}
+			]
+		},
+		{
+			"id": "01M83HYKH6TF8WHT29JZZDZ3DH",
+			"atom_uri": "urn:zam:atom:01M83HYKH6TF8WHT29JZZDZ3DH",
+			"namespace": "zam-academy-franzoesisch-2fs-gymnasium-7",
+			"slug": "f7-2-questions-indirectes",
+			"title": "On demande si…",
+			"domain": "franzoesisch/klasse-7/f2/dialog",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-questions-indirectes",
+			"prerequisites": [
+				{
+					"atom_id": "01M83HYKH6WQC0ZWDWPWNAF8AR",
+					"type": "hard",
+					"rationale": "Builds on Elle dit qu’elle vient in the same curriculum path."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-dialog",
+					"topic_title": "Parler et comprendre"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb1.2-grammatik",
+					"topic_title": "Fragen in der Gegenwart weitergeben",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Mit welchem Wort leitest du eine indirekte Ja-Nein-Frage in « Elle demande … Nina vient » ein?",
+					"concept": "si",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"si",
+							"que"
+						],
+						"correct_index": 0
+					},
+					"id": "01M83HYKH74JAQW7DC6PF73HET",
+					"slug": "f7-2-questions-indirectes-check",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-questions-indirectes"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "« Quand est-ce que le film commence ? » Ergänze « Il demande … ».",
+					"concept": "quand le film commence",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "quand le film commence"
+						}
+					],
+					"id": "01M83HYKH79BYW5Q11QPYD9CSS",
+					"slug": "f7-2-questions-indirectes-recall",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-questions-indirectes"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Schreibe indirekt für zwei Fragen: « Est-ce que Nora vient ? » und « Quand est-ce que Nora arrive ? »",
+					"concept": "Il demande si Nora vient. Il demande quand Nora arrive.",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "Il demande si Nora vient. Il demande quand Nora arrive."
+						}
+					],
+					"id": "01M83HYKH79JEXQMK94VVNENJJ",
+					"slug": "f7-2-questions-indirectes-transfer",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-questions-indirectes"
+				}
+			]
+		},
+		{
+			"id": "01M83HYKH6593FTC6W55Z7GJMS",
+			"atom_uri": "urn:zam:atom:01M83HYKH6593FTC6W55Z7GJMS",
+			"namespace": "zam-academy-franzoesisch-2fs-gymnasium-7",
+			"slug": "f7-2-pluriels",
+			"title": "Des bateaux et des feux",
+			"domain": "franzoesisch/klasse-7/f2/formes",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-pluriels",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-formes",
+					"topic_title": "Décrire et comparer"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb1.2-wortschatz",
+					"topic_title": "Häufige Pluralformen auf -x bilden",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb5",
+					"topic_title": "Häufige Pluralformen auf -x bilden",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wie lautet die Pluralform von un bureau?",
+					"concept": "des bureaux",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"des bureaux",
+							"des bureaus"
+						],
+						"correct_index": 0
+					},
+					"id": "01M83HYKH7EMVRX4J4SNND7N8R",
+					"slug": "f7-2-pluriels-check",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-pluriels"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Bilde den Plural von un feu mit des.",
+					"concept": "des feux",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "des feux"
+						}
+					],
+					"id": "01M83HYKH75N7RNCYK0MY1A999",
+					"slug": "f7-2-pluriels-recall",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-pluriels"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Schreib zwei Hafenbeobachtungen. Nenne mehrere Boote und die bunten Hüte der Kinder.",
+					"concept": "Je vois des bateaux. Les enfants ont des chapeaux colorés.",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "Je vois des bateaux. Les enfants ont des chapeaux colorés."
+						}
+					],
+					"id": "01M83HYKH778VAN64WHGTGE1K4",
+					"slug": "f7-2-pluriels-transfer",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-pluriels"
+				}
+			]
+		},
+		{
+			"id": "01M83HYKH6HV594GT2MD19PHNJ",
+			"atom_uri": "urn:zam:atom:01M83HYKH6HV594GT2MD19PHNJ",
+			"namespace": "zam-academy-franzoesisch-2fs-gymnasium-7",
+			"slug": "f7-2-nombres",
+			"title": "De cent à un million",
+			"domain": "franzoesisch/klasse-7/f2/formes",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-nombres",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-formes",
+					"topic_title": "Décrire et comparer"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb1.2-wortschatz",
+					"topic_title": "Große Zahlen und Ordnungszahlen verstehen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wie schreibt man 200 am Satzende?",
+					"concept": "deux cents",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"deux cents",
+							"deux cent"
+						],
+						"correct_index": 0
+					},
+					"id": "01M83HYKH7ZGYET1D7W3RNNG3Z",
+					"slug": "f7-2-nombres-check",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-nombres"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie heißt 201 auf Französisch?",
+					"concept": "deux cent un",
+					"sample_solution": "deux cent un",
+					"id": "01M83HYKH7SGEGP5K7XHKAAJM9",
+					"slug": "f7-2-nombres-recall",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-nombres"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie heißt „die erste Straße“?",
+					"concept": "La première rue.",
+					"sample_solution": "La première rue.",
+					"id": "01M83HYKH7E13HKEV0TEWMR0DF",
+					"slug": "f7-2-nombres-transfer",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-nombres"
+				}
+			]
+		},
+		{
+			"id": "01M83HYKH696MANYTBPAMH15EJ",
+			"atom_uri": "urn:zam:atom:01M83HYKH696MANYTBPAMH15EJ",
+			"namespace": "zam-academy-franzoesisch-2fs-gymnasium-7",
+			"slug": "f7-2-relatifs",
+			"title": "Le parc où je joue",
+			"domain": "franzoesisch/klasse-7/f2/formes",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-relatifs",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-formes",
+					"topic_title": "Décrire et comparer"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb1.2-grammatik",
+					"topic_title": "Zwei Aussagen mit qui, que oder où verbinden",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Ergänze: Le bus … arrive est plein.",
+					"concept": "qui",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"qui",
+							"que"
+						],
+						"correct_index": 0
+					},
+					"id": "01M83HYKH74NA8Q55DWVR26GPW",
+					"slug": "f7-2-relatifs-check",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-relatifs"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Verbinde „Voilà le parc“ und „Je joue dans le parc“.",
+					"concept": "Voilà le parc où je joue.",
+					"sample_solution": "Voilà le parc où je joue.",
+					"id": "01M83HYKH7G2FR267JYH6HBCNN",
+					"slug": "f7-2-relatifs-recall",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-relatifs"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Ergänze: C’est le livre … Zoé lit.",
+					"concept": "C’est le livre que Zoé lit.",
+					"sample_solution": "C’est le livre que Zoé lit.",
+					"id": "01M83HYKH7HY77KV0AV4YJ9Q07",
+					"slug": "f7-2-relatifs-transfer",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-relatifs"
+				}
+			]
+		},
+		{
+			"id": "01M83HYKH6JRJZ8Y2ZGBB7DW8C",
+			"atom_uri": "urn:zam:atom:01M83HYKH6JRJZ8Y2ZGBB7DW8C",
+			"namespace": "zam-academy-franzoesisch-2fs-gymnasium-7",
+			"slug": "f7-2-objets-indirects",
+			"title": "Je lui parle",
+			"domain": "franzoesisch/klasse-7/f2/formes",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-objets-indirects",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-formes",
+					"topic_title": "Décrire et comparer"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb1.2-grammatik",
+					"topic_title": "Direkte und indirekte Objektpronomen unterscheiden",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Ersetze à Léa: Je téléphone à Léa.",
+					"concept": "Je lui téléphone.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Je lui téléphone.",
+							"Je la téléphone."
+						],
+						"correct_index": 0
+					},
+					"id": "01M83HYKH727R0056Q9YBDPGHM",
+					"slug": "f7-2-objets-indirects-check",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-objets-indirects"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Ersetze à mes amis: Je vais parler à mes amis.",
+					"concept": "Je vais leur parler.",
+					"sample_solution": "Je vais leur parler.",
+					"id": "01M83HYKH7YZXSWQCD5MT3D8BZ",
+					"slug": "f7-2-objets-indirects-recall",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-objets-indirects"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Ergänze mit les und leur: Je vois les filles. Je donne les billets aux filles.",
+					"concept": "Je les vois. Je leur donne les billets.",
+					"sample_solution": "Je les vois. Je leur donne les billets.",
+					"id": "01M83HYKH7T3RJTQMH0Q105Y6G",
+					"slug": "f7-2-objets-indirects-transfer",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-objets-indirects"
+				}
+			]
+		},
+		{
+			"id": "01M83HYKH6ZT9G937K4TEJFW4C",
+			"atom_uri": "urn:zam:atom:01M83HYKH6ZT9G937K4TEJFW4C",
+			"namespace": "zam-academy-franzoesisch-2fs-gymnasium-7",
+			"slug": "f7-2-disjoints",
+			"title": "Et toi ? Avec elle !",
+			"domain": "franzoesisch/klasse-7/f2/formes",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-disjoints",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-formes",
+					"topic_title": "Décrire et comparer"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb1.2-grammatik",
+					"topic_title": "Betonte Personalpronomen verwenden",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Ergänze nach avec: Je joue avec … (mit dir).",
+					"concept": "toi",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"toi",
+							"tu"
+						],
+						"correct_index": 0
+					},
+					"id": "01M83HYKH70KZE72DNH7BEVFYF",
+					"slug": "f7-2-disjoints-check",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-disjoints"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Was antwortest du betont als „ich“ auf Qui veut venir ?",
+					"concept": "Moi !",
+					"sample_solution": "Moi !",
+					"id": "01M83HYKH7GENDZ6R715CF0T7Y",
+					"slug": "f7-2-disjoints-recall",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-disjoints"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Ersetze Sarah et Lina: Je viens avec Sarah et Lina.",
+					"concept": "Je viens avec elles.",
+					"sample_solution": "Je viens avec elles.",
+					"id": "01M83HYKH78T4AT4W1V4S7PSK2",
+					"slug": "f7-2-disjoints-transfer",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-disjoints"
+				}
+			]
+		},
+		{
+			"id": "01M83HYKH6W3XKN44SXNWJ56K7",
+			"atom_uri": "urn:zam:atom:01M83HYKH6W3XKN44SXNWJ56K7",
+			"namespace": "zam-academy-franzoesisch-2fs-gymnasium-7",
+			"slug": "f7-2-partitif",
+			"title": "Du pain, de la soupe",
+			"domain": "franzoesisch/klasse-7/f2/formes",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-partitif",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-formes",
+					"topic_title": "Décrire et comparer"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb1.2-grammatik",
+					"topic_title": "Unbestimmte Mengen und Mengenangaben",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welcher Artikel passt zu riz in « On achète … riz », wenn keine Menge genannt ist?",
+					"concept": "du",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"du",
+							"de la"
+						],
+						"correct_index": 0
+					},
+					"id": "01M83HYKH7FKX6ZKWEH216PSZ6",
+					"slug": "f7-2-partitif-check",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-partitif"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "« Il achète deux kilos … oranges. »",
+					"concept": "d’",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "d’"
+						}
+					],
+					"id": "01M83HYKH7E4QFFZ91WS3M05DR",
+					"slug": "f7-2-partitif-recall",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-partitif"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Schreib eine Einkaufsliste als zwei Sätze. Kauf Brot ohne Mengenangabe und eine Flasche Wasser.",
+					"concept": "J’achète du pain. Je prends une bouteille d’eau.",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "J’achète du pain. Je prends une bouteille d’eau."
+						}
+					],
+					"id": "01M83HYKH7NJSW0MNZK1BHDJ7W",
+					"slug": "f7-2-partitif-transfer",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-partitif"
+				}
+			]
+		},
+		{
+			"id": "01M83HYKH60968ERX3Z1ANH0QN",
+			"atom_uri": "urn:zam:atom:01M83HYKH60968ERX3Z1ANH0QN",
+			"namespace": "zam-academy-franzoesisch-2fs-gymnasium-7",
+			"slug": "f7-2-en",
+			"title": "J’en prends deux",
+			"domain": "franzoesisch/klasse-7/f2/formes",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-en",
+			"prerequisites": [
+				{
+					"atom_id": "01M83HYKH6W3XKN44SXNWJ56K7",
+					"type": "hard",
+					"rationale": "Builds on Du pain, de la soupe in the same curriculum path."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-formes",
+					"topic_title": "Décrire et comparer"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb1.2-grammatik",
+					"topic_title": "Mengen mit en ersetzen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welches Pronomen ersetzt in « Je prends deux pommes » das Nomen pommes, wenn deux im Satz bleibt?",
+					"concept": "en",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"en",
+							"les"
+						],
+						"correct_index": 0
+					},
+					"id": "01M83HYKH756GB38RFT580A9QZ",
+					"slug": "f7-2-en-check",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-en"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "« J’achète cinq pommes. » Ersetze pommes, behalte die Zahl.",
+					"concept": "J’en achète cinq.",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "J’en achète cinq."
+						}
+					],
+					"id": "01M83HYKH71EDP071FHA2FC0TP",
+					"slug": "f7-2-en-recall",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-en"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Antworte auf « Tu veux du fromage ? Des poires ? » Sag ja zum Käse und nimm zwei Birnen.",
+					"concept": "Oui, j’en veux. Des poires ? J’en prends deux.",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "Oui, j’en veux. Des poires ? J’en prends deux."
+						}
+					],
+					"id": "01M83HYKH7M0D4VZNHYK4RM5N6",
+					"slug": "f7-2-en-transfer",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-en"
+				}
+			]
+		},
+		{
+			"id": "01M83HYKH6FECBGE7MZBMW25P8",
+			"atom_uri": "urn:zam:atom:01M83HYKH6FECBGE7MZBMW25P8",
+			"namespace": "zam-academy-franzoesisch-2fs-gymnasium-7",
+			"slug": "f7-2-comparaison",
+			"title": "Plus vite ? Plus grand !",
+			"domain": "franzoesisch/klasse-7/f2/formes",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-comparaison",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-formes",
+					"topic_title": "Décrire et comparer"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb1.2-grammatik",
+					"topic_title": "Adjektive vergleichen und steigern",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb4",
+					"topic_title": "Adjektive vergleichen und steigern",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wie lautet die feminine Vergleichsform von bon?",
+					"concept": "meilleure",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"meilleure",
+							"plus bonne"
+						],
+						"correct_index": 0
+					},
+					"id": "01M83HYKH7FZDHX37B81QPQVPM",
+					"slug": "f7-2-comparaison-check",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-comparaison"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "« C’est la place … calme du quartier. » Gesucht ist die ruhigste.",
+					"concept": "la plus",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "la plus"
+						}
+					],
+					"id": "01M83HYKH71G2FTM7DHHFMH446",
+					"slug": "f7-2-comparaison-recall",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-comparaison"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Vergleiche zwei fiktive Kinos. Beide sind gleich groß, das erste ist ruhiger.",
+					"concept": "Le cinéma A est aussi grand que le cinéma B. Le cinéma A est plus calme.",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "Le cinéma A est aussi grand que le cinéma B. Le cinéma A est plus calme."
+						}
+					],
+					"id": "01M83HYKH78G654QP4H0R86R3F",
+					"slug": "f7-2-comparaison-transfer",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-comparaison"
+				}
+			]
+		},
+		{
+			"id": "01M83HYKH6YAFQBMFEGENCV03B",
+			"atom_uri": "urn:zam:atom:01M83HYKH6YAFQBMFEGENCV03B",
+			"namespace": "zam-academy-franzoesisch-2fs-gymnasium-7",
+			"slug": "f7-2-tout",
+			"title": "Tout le monde",
+			"domain": "franzoesisch/klasse-7/f2/formes",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-tout",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-formes",
+					"topic_title": "Décrire et comparer"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb1.2-grammatik",
+					"topic_title": "Tout als Begleiter angleichen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche Form von tout passt zu « … les places sont libres »?",
+					"concept": "toutes",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"toutes",
+							"tous"
+						],
+						"correct_index": 0
+					},
+					"id": "01M83HYKH7HNT435FH89ZHEW9M",
+					"slug": "f7-2-tout-check",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-tout"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "« … les billets sont vendus. »",
+					"concept": "Tous",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "Tous"
+						}
+					],
+					"id": "01M83HYKH7N10XT0FHGWA4WQPZ",
+					"slug": "f7-2-tout-recall",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-tout"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Schreib zwei Sätze über einen Schulchor. Die ganze Klasse singt, alle Lieder sind kurz.",
+					"concept": "Toute la classe chante. Toutes les chansons sont courtes.",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "Toute la classe chante. Toutes les chansons sont courtes."
+						}
+					],
+					"id": "01M83HYKH7XQFKP6AVRXWYHD38",
+					"slug": "f7-2-tout-transfer",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-tout"
+				}
+			]
+		},
+		{
+			"id": "01M83HYKH6Z8Q670M056WJ943B",
+			"atom_uri": "urn:zam:atom:01M83HYKH6Z8Q670M056WJ943B",
+			"namespace": "zam-academy-franzoesisch-2fs-gymnasium-7",
+			"slug": "f7-2-dormir-finir",
+			"title": "Ils dorment, ils finissent",
+			"domain": "franzoesisch/klasse-7/f2/passe",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-dormir-finir",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-passe",
+					"topic_title": "Raconter et se souvenir"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb1.2-grammatik",
+					"topic_title": "Zwei Muster bei Verben auf -ir",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welches der beiden Verben erhält im Präsensplural eine Erweiterung mit -iss-?",
+					"concept": "finir",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"finir",
+							"dormir"
+						],
+						"correct_index": 0
+					},
+					"id": "01M83HYKH71YQGWRWV8ZXK0WHK",
+					"slug": "f7-2-dormir-finir-check",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-dormir-finir"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "« Vous … le dessin. » Ergänze finir.",
+					"concept": "finissez",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "finissez"
+						}
+					],
+					"id": "01M83HYKH7DFR7AEJF3YD4G8WK",
+					"slug": "f7-2-dormir-finir-recall",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-dormir-finir"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Beschreibe einen Abend im Zug. Ein Kind schläft. Ihr beendet euer Spiel.",
+					"concept": "Un enfant dort. Nous finissons notre jeu.",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "Un enfant dort. Nous finissons notre jeu."
+						}
+					],
+					"id": "01M83HYKH73GTWC35FVYMSS962",
+					"slug": "f7-2-dormir-finir-transfer",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-dormir-finir"
+				}
+			]
+		},
+		{
+			"id": "01M83HYKH6HTZYBBF2TEKGABB2",
+			"atom_uri": "urn:zam:atom:01M83HYKH6HTZYBBF2TEKGABB2",
+			"namespace": "zam-academy-franzoesisch-2fs-gymnasium-7",
+			"slug": "f7-2-verbes-utiles",
+			"title": "Savoir, mettre et ouvrir",
+			"domain": "franzoesisch/klasse-7/f2/passe",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-verbes-utiles",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-passe",
+					"topic_title": "Raconter et se souvenir"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb1.2-grammatik",
+					"topic_title": "Drei häufige Verbmuster im Präsens nutzen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wie heißt die nous-Form von mettre?",
+					"concept": "nous mettons",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"nous mettons",
+							"nous mettez"
+						],
+						"correct_index": 0
+					},
+					"id": "01M83HYKH7MAFM2YW6AAJ8MDZQ",
+					"slug": "f7-2-verbes-utiles-check",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-verbes-utiles"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Ergänze: Tu … la porte. Verwende ouvrir.",
+					"concept": "Tu ouvres la porte.",
+					"sample_solution": "Tu ouvres la porte.",
+					"id": "01M83HYKH7XTD9D1RX7YBK5J7R",
+					"slug": "f7-2-verbes-utiles-recall",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-verbes-utiles"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie sagst du „Ich kann schwimmen“ mit savoir?",
+					"concept": "Je sais nager.",
+					"sample_solution": "Je sais nager.",
+					"id": "01M83HYKH79532Y6ZAVSR6SMYC",
+					"slug": "f7-2-verbes-utiles-transfer",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-verbes-utiles"
+				}
+			]
+		},
+		{
+			"id": "01M83HYKH602713R9NRZZ2GXEA",
+			"atom_uri": "urn:zam:atom:01M83HYKH602713R9NRZZ2GXEA",
+			"namespace": "zam-academy-franzoesisch-2fs-gymnasium-7",
+			"slug": "f7-2-devoir-boire",
+			"title": "Je dois partir, tu bois quoi ?",
+			"domain": "franzoesisch/klasse-7/f2/passe",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-devoir-boire",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-passe",
+					"topic_title": "Raconter et se souvenir"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb1.2-grammatik",
+					"topic_title": "Devoir und boire durch Formenpaare lernen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche Präsensform von devoir passt zu nous?",
+					"concept": "devons",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"devons",
+							"doivent"
+						],
+						"correct_index": 0
+					},
+					"id": "01M83HYKH70EX5TENPTVCEJYYH",
+					"slug": "f7-2-devoir-boire-check",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-devoir-boire"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "« Ils … rentrer tôt. » Ergänze devoir.",
+					"concept": "doivent",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "doivent"
+						}
+					],
+					"id": "01M83HYKH7ECCC81QQ9NN671TS",
+					"slug": "f7-2-devoir-boire-recall",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-devoir-boire"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Sag, dass du warten musst und ihr Wasser trinkt.",
+					"concept": "Je dois attendre. Nous buvons de l’eau.",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "Je dois attendre. Nous buvons de l’eau."
+						}
+					],
+					"id": "01M83HYKH7ZAG0ZMCNGAERBF6B",
+					"slug": "f7-2-devoir-boire-transfer",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-devoir-boire"
+				}
+			]
+		},
+		{
+			"id": "01M83HYKH6RYWGFJMJJ5462JR1",
+			"atom_uri": "urn:zam:atom:01M83HYKH6RYWGFJMJJ5462JR1",
+			"namespace": "zam-academy-franzoesisch-2fs-gymnasium-7",
+			"slug": "f7-2-venir-vivre-voir",
+			"title": "Viens chez moi !",
+			"domain": "franzoesisch/klasse-7/f2/passe",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-venir-vivre-voir",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-passe",
+					"topic_title": "Raconter et se souvenir"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb1.2-grammatik",
+					"topic_title": "Venir, vivre, voir und connaître im Präsens unterscheiden",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche Präsensform von venir passt zu ils?",
+					"concept": "viennent",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"viennent",
+							"venent"
+						],
+						"correct_index": 0
+					},
+					"id": "01M83HYKH79TBWXD5078K42T9W",
+					"slug": "f7-2-venir-vivre-voir-check",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-venir-vivre-voir"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "« Ils … de Lyon. » Ergänze venir.",
+					"concept": "viennent",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "viennent"
+						}
+					],
+					"id": "01M83HYKH7W29E90W8A1KCJEMF",
+					"slug": "f7-2-venir-vivre-voir-recall",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-venir-vivre-voir"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Berichte, wo du lebst und woher zwei Freundinnen kommen. Verwende vivre und venir.",
+					"concept": "Je vis à Bayreuth. Mes amies viennent de Lyon.",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "Je vis à Bayreuth. Mes amies viennent de Lyon."
+						}
+					],
+					"id": "01M83HYKH7PXN5DGK6TH0GTV97",
+					"slug": "f7-2-venir-vivre-voir-transfer",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-venir-vivre-voir"
+				}
+			]
+		},
+		{
+			"id": "01M83HYKH6WJQ44TC0ZK4PE47S",
+			"atom_uri": "urn:zam:atom:01M83HYKH6WJQ44TC0ZK4PE47S",
+			"namespace": "zam-academy-franzoesisch-2fs-gymnasium-7",
+			"slug": "f7-2-avoir-passe",
+			"title": "Hier, j’ai joué",
+			"domain": "franzoesisch/klasse-7/f2/passe",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-avoir-passe",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-passe",
+					"topic_title": "Raconter et se souvenir"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb1.2-grammatik",
+					"topic_title": "Das passé composé mit avoir bilden",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche Form steht im passé composé von finir?",
+					"concept": "Nous avons fini.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Nous avons fini.",
+							"Nous allons finir."
+						],
+						"correct_index": 0
+					},
+					"id": "01M83HYKH7S97P3W6EFXR60VVZ",
+					"slug": "f7-2-avoir-passe-check",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-avoir-passe"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Setze „Elle ouvre la porte“ ins passé composé.",
+					"concept": "Elle a ouvert la porte.",
+					"sample_solution": "Elle a ouvert la porte.",
+					"id": "01M83HYKH7F469Y1MHR6FA1Y7V",
+					"slug": "f7-2-avoir-passe-recall",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-avoir-passe"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Setze „Je joue au tennis“ ins passé composé.",
+					"concept": "J’ai joué au tennis.",
+					"sample_solution": "J’ai joué au tennis.",
+					"id": "01M83HYKH7DZSVX01F96R9R6CS",
+					"slug": "f7-2-avoir-passe-transfer",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-avoir-passe"
+				}
+			]
+		},
+		{
+			"id": "01M83HYKH6XRYBQSAKVXGN8HY8",
+			"atom_uri": "urn:zam:atom:01M83HYKH6XRYBQSAKVXGN8HY8",
+			"namespace": "zam-academy-franzoesisch-2fs-gymnasium-7",
+			"slug": "f7-2-etre-passe",
+			"title": "Elles sont arrivées",
+			"domain": "franzoesisch/klasse-7/f2/passe",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-etre-passe",
+			"prerequisites": [
+				{
+					"atom_id": "01M83HYKH6WJQ44TC0ZK4PE47S",
+					"type": "hard",
+					"rationale": "Builds on Hier, j’ai joué in the same curriculum path."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-passe",
+					"topic_title": "Raconter et se souvenir"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb1.2-grammatik",
+					"topic_title": "Das passé composé mit être bilden und angleichen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche Endung erhält arrivé bei elles?",
+					"concept": "arrivées",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"arrivées",
+							"arrivé"
+						],
+						"correct_index": 0
+					},
+					"id": "01M83HYKH765WP36A7FHJKYJTN",
+					"slug": "f7-2-etre-passe-check",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-etre-passe"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Setze „Malik part“ ins passé composé.",
+					"concept": "Malik est parti.",
+					"sample_solution": "Malik est parti.",
+					"id": "01M83HYKH7Z5WWK87FBKME8CM1",
+					"slug": "f7-2-etre-passe-recall",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-etre-passe"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Setze „Lina et Zoé sortent du musée“ ins passé composé.",
+					"concept": "Lina et Zoé sont sorties du musée.",
+					"sample_solution": "Lina et Zoé sont sorties du musée.",
+					"id": "01M83HYKH7DF8A2VK6RJ90MT6V",
+					"slug": "f7-2-etre-passe-transfer",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-etre-passe"
+				}
+			]
+		},
+		{
+			"id": "01M83HYKH6Q1KMS658FA7NB20C",
+			"atom_uri": "urn:zam:atom:01M83HYKH6Q1KMS658FA7NB20C",
+			"namespace": "zam-academy-franzoesisch-2fs-gymnasium-7",
+			"slug": "f7-2-weekend",
+			"title": "Un week-end en trois images",
+			"domain": "franzoesisch/klasse-7/f2/passe",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-weekend",
+			"prerequisites": [
+				{
+					"atom_id": "01M83HYKH6XRYBQSAKVXGN8HY8",
+					"type": "hard",
+					"rationale": "Builds on Elles sont arrivées in the same curriculum path."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-passe",
+					"topic_title": "Raconter et se souvenir"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb1.1-sprechen",
+					"topic_title": "Ein Wochenende in der richtigen Reihenfolge erzählen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb1.1-schreiben",
+					"topic_title": "Ein Wochenende in der richtigen Reihenfolge erzählen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb3",
+					"topic_title": "Ein Wochenende in der richtigen Reihenfolge erzählen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb4",
+					"topic_title": "Ein Wochenende in der richtigen Reihenfolge erzählen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb5",
+					"topic_title": "Ein Wochenende in der richtigen Reihenfolge erzählen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welches Wort kennzeichnet den ersten Schritt einer Geschichte?",
+					"concept": "d’abord",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"d’abord",
+							"enfin"
+						],
+						"correct_index": 0
+					},
+					"id": "01M83HYKH79N8G8ZX9Q3VK0VT1",
+					"slug": "f7-2-weekend-check",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-weekend"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie schließt du eine freundliche Mail mit „bis bald“ ab?",
+					"concept": "À bientôt !",
+					"sample_solution": "À bientôt !",
+					"id": "01M83HYKH7EWE6ZRDJCS4TJK69",
+					"slug": "f7-2-weekend-recall",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-weekend"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Verbinde „nous sommes partis“ und „nous avons pris le train“ mit dem Wort für „danach“.",
+					"concept": "Nous sommes partis. Puis, nous avons pris le train.",
+					"sample_solution": "Nous sommes partis. Puis, nous avons pris le train.",
+					"id": "01M83HYKH7N9GQRC2HB38VSPK6",
+					"slug": "f7-2-weekend-transfer",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-weekend"
+				}
+			]
+		},
+		{
+			"id": "01M83HYKH6GGNS5A6KTHWARXF8",
+			"atom_uri": "urn:zam:atom:01M83HYKH6GGNS5A6KTHWARXF8",
+			"namespace": "zam-academy-franzoesisch-2fs-gymnasium-7",
+			"slug": "f7-2-pronominaux",
+			"title": "Je me prépare",
+			"domain": "franzoesisch/klasse-7/f2/passe",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-pronominaux",
+			"prerequisites": [
+				{
+					"atom_id": "01M83HYKH6E9BFB7BM5SZ1H9C2",
+					"type": "hard",
+					"rationale": "Builds on Sois prêt ! Ayez vos billets ! in the same curriculum path."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-passe",
+					"topic_title": "Raconter et se souvenir"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb1.2-grammatik",
+					"topic_title": "Reflexive Verben in Präsens, futur proche und Imperativ",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wo steht nous als Reflexivpronomen in « Wir werden aufstehen » mit futur proche?",
+					"concept": "Nous allons nous lever.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Nous allons nous lever.",
+							"Nous nous allons lever."
+						],
+						"correct_index": 0
+					},
+					"id": "01M83HYKH7VPTWW71K70TZ6Q9S",
+					"slug": "f7-2-pronominaux-check",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-pronominaux"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Fordere eine Person auf, sich vorzubereiten. Verwende préparer und toi.",
+					"concept": "Prépare-toi !",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "Prépare-toi !"
+						}
+					],
+					"id": "01M83HYKH7G86XZYDMJQAXPR09",
+					"slug": "f7-2-pronominaux-recall",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-pronominaux"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Schreib über heute und morgen. Du ziehst dich heute schnell an und bereitest dich morgen früh vor.",
+					"concept": "Aujourd’hui, je m’habille vite. Demain, je vais me préparer tôt.",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "Aujourd’hui, je m’habille vite. Demain, je vais me préparer tôt."
+						}
+					],
+					"id": "01M83HYKH7371HKTRMREJVY0SD",
+					"slug": "f7-2-pronominaux-transfer",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-pronominaux"
+				}
+			]
+		},
+		{
+			"id": "01M83HYKH69A5BDB70VD29P0JW",
+			"atom_uri": "urn:zam:atom:01M83HYKH69A5BDB70VD29P0JW",
+			"namespace": "zam-academy-franzoesisch-2fs-gymnasium-7",
+			"slug": "f7-2-imparfait",
+			"title": "Quand j’étais petit…",
+			"domain": "franzoesisch/klasse-7/f2/passe",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-imparfait",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-passe",
+					"topic_title": "Raconter et se souvenir"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb1.1-sprechen",
+					"topic_title": "Das imparfait bilden",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb1.2-grammatik",
+					"topic_title": "Das imparfait bilden",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Von welcher Form leitest du normalerweise den Stamm des imparfait ab?",
+					"concept": "Von der nous-Form im Präsens ohne -ons.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Von der nous-Form im Präsens ohne -ons.",
+							"Von der ils-Form im Präsens ohne -ent."
+						],
+						"correct_index": 0
+					},
+					"id": "01M83HYKH76Z93KTA2K45PKD5D",
+					"slug": "f7-2-imparfait-check",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-imparfait"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "« Nous … au parc. » Ergänze être im imparfait.",
+					"concept": "étions",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "étions"
+						}
+					],
+					"id": "01M83HYKH7CKWY1C220BSNR4GH",
+					"slug": "f7-2-imparfait-recall",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-imparfait"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Beschreibe eine frühere Gewohnheit für je und ils. Verwende jouer und finir.",
+					"concept": "Je jouais souvent dehors. Mes cousins finissaient leur goûter dans le jardin.",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "Je jouais souvent dehors. Mes cousins finissaient leur goûter dans le jardin."
+						}
+					],
+					"id": "01M83HYKH7NQZ5JA25YDXJ81YP",
+					"slug": "f7-2-imparfait-transfer",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-imparfait"
+				}
+			]
+		},
+		{
+			"id": "01M83HYKH66JPE84RZAD5JJ8HS",
+			"atom_uri": "urn:zam:atom:01M83HYKH66JPE84RZAD5JJ8HS",
+			"namespace": "zam-academy-franzoesisch-2fs-gymnasium-7",
+			"slug": "f7-2-deux-temps",
+			"title": "Le décor et l’événement",
+			"domain": "franzoesisch/klasse-7/f2/passe",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-deux-temps",
+			"prerequisites": [
+				{
+					"atom_id": "01M83HYKH69A5BDB70VD29P0JW",
+					"type": "hard",
+					"rationale": "Builds on Quand j’étais petit… in the same curriculum path."
+				},
+				{
+					"atom_id": "01M83HYKH6WJQ44TC0ZK4PE47S",
+					"type": "hard",
+					"rationale": "Builds on Hier, j’ai joué in the same curriculum path."
+				},
+				{
+					"atom_id": "01M83HYKH6XRYBQSAKVXGN8HY8",
+					"type": "hard",
+					"rationale": "Builds on Elles sont arrivées in the same curriculum path."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-passe",
+					"topic_title": "Raconter et se souvenir"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb1.1-sprechen",
+					"topic_title": "Imparfait und passé composé beim Erzählen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb1.2-grammatik",
+					"topic_title": "Imparfait und passé composé beim Erzählen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche Vergangenheitsform schildert in einer Erzählung typischerweise die Ausgangslage oder eine frühere Gewohnheit?",
+					"concept": "imparfait",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"imparfait",
+							"passé composé"
+						],
+						"correct_index": 0
+					},
+					"id": "01M83HYKH7KNG25DYE6K7PZ09R",
+					"slug": "f7-2-deux-temps-check",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-deux-temps"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Émile beginnt « Je lisais quand Zoé … » Ergänze appeler mit m’ als einmaliges Ereignis.",
+					"concept": "m’a appelé",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "m’a appelé"
+						}
+					],
+					"id": "01M83HYKH7PH43CTZQYFC4HSTW",
+					"slug": "f7-2-deux-temps-recall",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-deux-temps"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Schreib zwei Sätze zu dieser Szene: Es regnete. Plötzlich kam der Bus.",
+					"concept": "Il pleuvait. Tout à coup, le bus est arrivé.",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "Il pleuvait. Tout à coup, le bus est arrivé."
+						}
+					],
+					"id": "01M83HYKH7BF910V9CVGYVZR1D",
+					"slug": "f7-2-deux-temps-transfer",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-deux-temps"
+				}
+			]
+		},
+		{
+			"id": "01M83HYKH62J3ASEZW0TH8CGBZ",
+			"atom_uri": "urn:zam:atom:01M83HYKH62J3ASEZW0TH8CGBZ",
+			"namespace": "zam-academy-franzoesisch-2fs-gymnasium-7",
+			"slug": "f7-2-ville",
+			"title": "Paris, Lyon, Nantes et la Bretagne",
+			"domain": "franzoesisch/klasse-7/f2/culture",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-ville",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-culture",
+					"topic_title": "Explorer et rencontrer"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb1.1-lesen",
+					"topic_title": "Stadt und Land in Frankreich vergleichen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb2",
+					"topic_title": "Stadt und Land in Frankreich vergleichen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb5",
+					"topic_title": "Stadt und Land in Frankreich vergleichen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "An welchem Fluss liegt Nantes?",
+					"concept": "Loire",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Loire",
+							"Seine"
+						],
+						"correct_index": 0
+					},
+					"id": "01M83HYKH7K6HW88R801KJXZ45",
+					"slug": "f7-2-ville-check",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-ville"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wo liegt die Bretagne in Frankreich?",
+					"concept": "Im Nordwesten, am Atlantik und am Ärmelkanal.",
+					"sample_solution": "Im Nordwesten, am Atlantik und am Ärmelkanal.",
+					"id": "01M83HYKH7BXGAFPA0B92CY9B3",
+					"slug": "f7-2-ville-recall",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-ville"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welche zwei Flüsse treffen in Lyon aufeinander?",
+					"concept": "Rhône und Saône.",
+					"sample_solution": "Rhône und Saône.",
+					"id": "01M83HYKH7D2CBJWWBXCYVP0C0",
+					"slug": "f7-2-ville-transfer",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-ville"
+				}
+			]
+		},
+		{
+			"id": "01M83HYKH67HVJJ3D2F3BQGSB0",
+			"atom_uri": "urn:zam:atom:01M83HYKH67HVJJ3D2F3BQGSB0",
+			"namespace": "zam-academy-franzoesisch-2fs-gymnasium-7",
+			"slug": "f7-2-bretagne",
+			"title": "Bienvenue en Bretagne",
+			"domain": "franzoesisch/klasse-7/f2/culture",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-bretagne",
+			"prerequisites": [
+				{
+					"atom_id": "01M83HYKH62J3ASEZW0TH8CGBZ",
+					"type": "hard",
+					"rationale": "Builds on Paris, Lyon, Nantes et la Bretagne in the same curriculum path."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-culture",
+					"topic_title": "Explorer et rencontrer"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb2",
+					"topic_title": "Eine Region entdecken und Vorurteile vermeiden",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb5",
+					"topic_title": "Eine Region entdecken und Vorurteile vermeiden",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wo liegt die Bretagne innerhalb Frankreichs?",
+					"concept": "Im Nordwesten.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Im Nordwesten.",
+							"Im Südosten."
+						],
+						"correct_index": 0
+					},
+					"id": "01M83HYKH7DYCDNY0R7MJNWXBH",
+					"slug": "f7-2-bretagne-check",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-bretagne"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welche Stadt ist die regionale Hauptstadt der Bretagne?",
+					"concept": "Rennes.",
+					"sample_solution": "Rennes.",
+					"id": "01M83HYKH7NJPQGJS8H2RDF03G",
+					"slug": "f7-2-bretagne-recall",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-bretagne"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Warum beschreibt ein typisches Gericht nicht alle Familien einer Region?",
+					"concept": "Menschen haben unterschiedliche Gewohnheiten und Vorlieben.",
+					"sample_solution": "Menschen haben unterschiedliche Gewohnheiten und Vorlieben.",
+					"id": "01M83HYKH7X4F1XMB43P8375VP",
+					"slug": "f7-2-bretagne-transfer",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-bretagne"
+				}
+			]
+		},
+		{
+			"id": "01M83HYKH65TPCRN16WXHNKFHK",
+			"atom_uri": "urn:zam:atom:01M83HYKH65TPCRN16WXHNKFHK",
+			"namespace": "zam-academy-franzoesisch-2fs-gymnasium-7",
+			"slug": "f7-2-calendrier",
+			"title": "La rentrée, Pâques et la galette",
+			"domain": "franzoesisch/klasse-7/f2/culture",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-calendrier",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-culture",
+					"topic_title": "Explorer et rencontrer"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb2",
+					"topic_title": "Feste und Schultage vergleichen, ohne zu verallgemeinern",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb5",
+					"topic_title": "Feste und Schultage vergleichen, ohne zu verallgemeinern",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wie heißt der Schulbeginn nach den Sommerferien?",
+					"concept": "la rentrée",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"la rentrée",
+							"Pâques"
+						],
+						"correct_index": 0
+					},
+					"id": "01M83HYKH762Y5C5WKB8GM9T7D",
+					"slug": "f7-2-calendrier-check",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-calendrier"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Was ist die fève in einer galette des rois?",
+					"concept": "Die kleine Figur im Kuchen.",
+					"sample_solution": "Die kleine Figur im Kuchen.",
+					"id": "01M83HYKH7E0S6KEQ7ZXPV6XKH",
+					"slug": "f7-2-calendrier-recall",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-calendrier"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie vergleichst du zwei Mittwochspläne ohne eine Aussage über alle Schulen zu machen?",
+					"concept": "Nenne die konkreten Personen oder Schulen, ihre Zeiten und eine Gemeinsamkeit oder einen Unterschied.",
+					"sample_solution": "Nenne die konkreten Personen oder Schulen, ihre Zeiten und eine Gemeinsamkeit oder einen Unterschied.",
+					"id": "01M83HYKH7CPJEX69TCG1M22TM",
+					"slug": "f7-2-calendrier-transfer",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-calendrier"
+				}
+			]
+		},
+		{
+			"id": "01M83HYKH6C73ACN1K88RJQ426",
+			"atom_uri": "urn:zam:atom:01M83HYKH6C73ACN1K88RJQ426",
+			"namespace": "zam-academy-franzoesisch-2fs-gymnasium-7",
+			"slug": "f7-2-restaurant",
+			"title": "À table !",
+			"domain": "franzoesisch/klasse-7/f2/culture",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-restaurant",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-culture",
+					"topic_title": "Explorer et rencontrer"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb1.1-sprechen",
+					"topic_title": "Eine Karte erklären und ein Rezept ordnen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb1.1-sprachmittlung",
+					"topic_title": "Eine Karte erklären und ein Rezept ordnen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb1.2-wortschatz",
+					"topic_title": "Eine Karte erklären und ein Rezept ordnen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb5",
+					"topic_title": "Eine Karte erklären und ein Rezept ordnen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was bedeutet „un bol“ im Rezept?",
+					"concept": "eine Schüssel",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"eine Schüssel",
+							"ein Backblech"
+						],
+						"correct_index": 0
+					},
+					"id": "01M83HYKH725QVKC4YZF77Q200",
+					"slug": "f7-2-restaurant-check",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-restaurant"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welche drei Gänge bezeichnen entrée, plat und dessert?",
+					"concept": "Vorspeise, Hauptgericht und Nachtisch.",
+					"sample_solution": "Vorspeise, Hauptgericht und Nachtisch.",
+					"id": "01M83HYKH7F5F21A342N6R7D34",
+					"slug": "f7-2-restaurant-recall",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-restaurant"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie forderst du höflich dazu auf, die Eier hinzuzufügen?",
+					"concept": "Ajoutez les œufs.",
+					"sample_solution": "Ajoutez les œufs.",
+					"id": "01M83HYKH7TZF5Z301HA4P0J5G",
+					"slug": "f7-2-restaurant-transfer",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-restaurant"
+				}
+			]
+		},
+		{
+			"id": "01M83HYKH67XWNJK19239M7GSE",
+			"atom_uri": "urn:zam:atom:01M83HYKH67XWNJK19239M7GSE",
+			"namespace": "zam-academy-franzoesisch-2fs-gymnasium-7",
+			"slug": "f7-2-alesia",
+			"title": "À Alésia, récit et BD",
+			"domain": "franzoesisch/klasse-7/f2/culture",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-alesia",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-culture",
+					"topic_title": "Explorer et rencontrer"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb5",
+					"topic_title": "Gallier und Römer: Geschichte von einer Comicfiktion unterscheiden",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wer führte die gallischen Truppen bei der Belagerung von Alésia im Jahr 52 vor unserer Zeitrechnung?",
+					"concept": "Vercingétorix",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Vercingétorix",
+							"Jules César"
+						],
+						"correct_index": 0
+					},
+					"id": "01M83HYKH7B7VKBD7Z4GCWQE94",
+					"slug": "f7-2-alesia-check",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-alesia"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie heißt eine einzelne Comicvignette auf Französisch mit Artikel?",
+					"concept": "une vignette",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "une vignette"
+						}
+					],
+					"id": "01M83HYKH7EAWQE6PND6Q2WX45",
+					"slug": "f7-2-alesia-recall",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-alesia"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Formuliere eine belegbare Aussage zur Belagerung von Alésia und ergänze eine klar als erfunden gekennzeichnete Comic-Sprechblase.",
+					"concept": "Le siège d’Alésia a eu lieu en 52 avant Jésus-Christ. Bulle inventée : « Regarde le camp ! »",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "Le siège d’Alésia a eu lieu en 52 avant Jésus-Christ. Bulle inventée : « Regarde le camp ! »"
+						}
+					],
+					"id": "01M83HYKH7CWJPWXT58A3BMWTQ",
+					"slug": "f7-2-alesia-transfer",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-alesia"
+				}
+			]
+		},
+		{
+			"id": "01M83HYKH6AAJWYP7J0CJKN93P",
+			"atom_uri": "urn:zam:atom:01M83HYKH6AAJWYP7J0CJKN93P",
+			"namespace": "zam-academy-franzoesisch-2fs-gymnasium-7",
+			"slug": "f7-2-photo",
+			"title": "Au premier plan",
+			"domain": "franzoesisch/klasse-7/f2/media",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-photo",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-media",
+					"topic_title": "Lire, écrire et réviser"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb1.1-sprechen",
+					"topic_title": "Ein Bild räumlich geordnet beschreiben",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb1.2-wortschatz",
+					"topic_title": "Ein Bild räumlich geordnet beschreiben",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb3",
+					"topic_title": "Ein Bild räumlich geordnet beschreiben",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb5",
+					"topic_title": "Ein Bild räumlich geordnet beschreiben",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wie heißt „im Vordergrund“?",
+					"concept": "au premier plan",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"au premier plan",
+							"à l’arrière-plan"
+						],
+						"correct_index": 0
+					},
+					"id": "01M83HYKH78NQ1H0PG2BMEP97V",
+					"slug": "f7-2-photo-check",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-photo"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie sagst du „Im Hintergrund sieht man einen Bus“?",
+					"concept": "À l’arrière-plan, on voit un bus.",
+					"sample_solution": "À l’arrière-plan, on voit un bus.",
+					"id": "01M83HYKH71FKJ37D4HRY6F9QG",
+					"slug": "f7-2-photo-recall",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-photo"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie sagst du „Links gibt es zwei Fahrräder“?",
+					"concept": "À gauche, il y a deux vélos.",
+					"sample_solution": "À gauche, il y a deux vélos.",
+					"id": "01M83HYKH79WZQEF51T2KTNMJ7",
+					"slug": "f7-2-photo-transfer",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-photo"
+				}
+			]
+		},
+		{
+			"id": "01M83HYKH684PACEES0FXYMHPT",
+			"atom_uri": "urn:zam:atom:01M83HYKH684PACEES0FXYMHPT",
+			"namespace": "zam-academy-franzoesisch-2fs-gymnasium-7",
+			"slug": "f7-2-affiche",
+			"title": "Une affiche pour le club",
+			"domain": "franzoesisch/klasse-7/f2/media",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-affiche",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-media",
+					"topic_title": "Lire, écrire et réviser"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb1.1-lesen",
+					"topic_title": "Ein bildgestütztes Plakat lesen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb1.1-sprachmittlung",
+					"topic_title": "Ein bildgestütztes Plakat lesen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb1.2-wortschatz",
+					"topic_title": "Ein bildgestütztes Plakat lesen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb3",
+					"topic_title": "Ein bildgestütztes Plakat lesen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb4",
+					"topic_title": "Ein bildgestütztes Plakat lesen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb5",
+					"topic_title": "Ein bildgestütztes Plakat lesen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche Angaben suchst du auf einem Veranstaltungsplakat?",
+					"concept": "Thema, Datum, Uhrzeit, Ort und Preis.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Thema, Datum, Uhrzeit, Ort und Preis.",
+							"Nur die Farbe der Überschrift."
+						],
+						"correct_index": 0
+					},
+					"id": "01M83HYKH79EP79M5ER1F16DVA",
+					"slug": "f7-2-affiche-check",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-affiche"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie nutzt du ein Bild beim Lesen?",
+					"concept": "Als Hinweis, den du mit Text und Kontext überprüfst.",
+					"sample_solution": "Als Hinweis, den du mit Text und Kontext überprüfst.",
+					"id": "01M83HYKH75YF6KPA7SXE50JE3",
+					"slug": "f7-2-affiche-recall",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-affiche"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Was heißt de quinze heures à seize heures?",
+					"concept": "Von 15 bis 16 Uhr.",
+					"sample_solution": "Von 15 bis 16 Uhr.",
+					"id": "01M83HYKH72VDJ040R8NNFQ8MQ",
+					"slug": "f7-2-affiche-transfer",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-affiche"
+				}
+			]
+		},
+		{
+			"id": "01M83HYKH6W5S786RFE97XVM81",
+			"atom_uri": "urn:zam:atom:01M83HYKH6W5S786RFE97XVM81",
+			"namespace": "zam-academy-franzoesisch-2fs-gymnasium-7",
+			"slug": "f7-2-histoire",
+			"title": "Une histoire en trois cases",
+			"domain": "franzoesisch/klasse-7/f2/media",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-histoire",
+			"prerequisites": [
+				{
+					"atom_id": "01M83HYKH66JPE84RZAD5JJ8HS",
+					"type": "hard",
+					"rationale": "Builds on Le décor et l’événement in the same curriculum path."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-media",
+					"topic_title": "Lire, écrire et réviser"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb1.1-lesen",
+					"topic_title": "Eine Figur und einen Handlungsablauf im Comic erschließen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb1.1-schreiben",
+					"topic_title": "Eine Figur und einen Handlungsablauf im Comic erschließen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb3",
+					"topic_title": "Eine Figur und einen Handlungsablauf im Comic erschließen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb5",
+					"topic_title": "Eine Figur und einen Handlungsablauf im Comic erschließen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wie heißt ein einzelnes Bildfeld in einer französischsprachigen BD?",
+					"concept": "une vignette",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"une vignette",
+							"une planche"
+						],
+						"correct_index": 0
+					},
+					"id": "01M83HYKH760C4NVMNBR1DSAPF",
+					"slug": "f7-2-histoire-check",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-histoire"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Mit welchen drei Bindewörtern erzählst du Anfang, nächsten Schritt und Schluss in einem Comic?",
+					"concept": "D’abord, puis und enfin.",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "D’abord, puis und enfin."
+						}
+					],
+					"id": "01M83HYKH7DM0KJ7WFZXDY7XCQ",
+					"slug": "f7-2-histoire-recall",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-histoire"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Erzähle in drei kurzen Sätzen: Zoé will Fußball spielen, sucht den Ball, Mila findet ihn. Nutze d’abord, puis und enfin.",
+					"concept": "D’abord, Zoé veut jouer au foot. Puis, elle cherche son ballon. Enfin, Mila le trouve.",
+					"sample_solution": [
+						{
+							"type": "text",
+							"text": "D’abord, Zoé veut jouer au foot. Puis, elle cherche son ballon. Enfin, Mila le trouve."
+						}
+					],
+					"id": "01M83HYKH7K3FRV3Z687JA2N4F",
+					"slug": "f7-2-histoire-transfer",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-histoire"
+				}
+			]
+		},
+		{
+			"id": "01M83HYKH6MZDKWPBRY98XDWET",
+			"atom_uri": "urn:zam:atom:01M83HYKH6MZDKWPBRY98XDWET",
+			"namespace": "zam-academy-franzoesisch-2fs-gymnasium-7",
+			"slug": "f7-2-sons",
+			"title": "Des sons aux accents",
+			"domain": "franzoesisch/klasse-7/f2/media",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-sons",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-media",
+					"topic_title": "Lire, écrire et réviser"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb1.1-schreiben",
+					"topic_title": "Lautschrift, Hörbeispiel und Schreibung abgleichen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb1.2-aussprache",
+					"topic_title": "Lautschrift, Hörbeispiel und Schreibung abgleichen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb4",
+					"topic_title": "Lautschrift, Hörbeispiel und Schreibung abgleichen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "In welchem Wort steht der Laut /y/?",
+					"concept": "rue",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"rue",
+							"roue"
+						],
+						"correct_index": 0
+					},
+					"id": "01M83HYKH7WRK4YK1VGY3CX516",
+					"slug": "f7-2-sons-check",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-sons"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welchen Akzent hat das Fragewort où?",
+					"concept": "Einen Accent grave auf dem u.",
+					"sample_solution": "Einen Accent grave auf dem u.",
+					"id": "01M83HYKH7KWNGX02SDJWQKK7Z",
+					"slug": "f7-2-sons-recall",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-sons"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie unterscheiden sich où und ou?",
+					"concept": "Où fragt nach dem Ort; ou verbindet zwei Möglichkeiten.",
+					"sample_solution": "Où fragt nach dem Ort; ou verbindet zwei Möglichkeiten.",
+					"id": "01M83HYKH759VXZJFVFK6WNM3R",
+					"slug": "f7-2-sons-transfer",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-sons"
+				}
+			]
+		},
+		{
+			"id": "01M83HYKH6Y3EA66ZJVG0W98YY",
+			"atom_uri": "urn:zam:atom:01M83HYKH6Y3EA66ZJVG0W98YY",
+			"namespace": "zam-academy-franzoesisch-2fs-gymnasium-7",
+			"slug": "f7-2-accents",
+			"title": "Écrire avec les accents",
+			"domain": "franzoesisch/klasse-7/f2/media",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-accents",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-media",
+					"topic_title": "Lire, écrire et réviser"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb1.1-schreiben",
+					"topic_title": "Akzente tippen und Satzstellung vergleichen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb4",
+					"topic_title": "Akzente tippen und Satzstellung vergleichen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was unterscheidet a und à?",
+					"concept": "A ist eine Form von avoir; à ist eine Präposition, etwa vor einem Ort.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"A ist eine Form von avoir; à ist eine Präposition, etwa vor einem Ort.",
+							"Beide sind austauschbar."
+						],
+						"correct_index": 0
+					},
+					"id": "01M83HYKH78DM60MVABN1MFHSF",
+					"slug": "f7-2-accents-check",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-accents"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie heißt „Morgen lese ich ein Buch“?",
+					"concept": "Demain, je lis un livre.",
+					"sample_solution": "Demain, je lis un livre.",
+					"id": "01M83HYKH78QDV9YVWBD5P7VZZ",
+					"slug": "f7-2-accents-recall",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-accents"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Was unterscheidet ou und où?",
+					"concept": "Ou heißt oder; où heißt wo.",
+					"sample_solution": "Ou heißt oder; où heißt wo.",
+					"id": "01M83HYKH7SFK5GXMX3B6DV1WS",
+					"slug": "f7-2-accents-transfer",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-accents"
+				}
+			]
+		},
+		{
+			"id": "01M83HYKH6EQG4Z8MJS598SG60",
+			"atom_uri": "urn:zam:atom:01M83HYKH6EQG4Z8MJS598SG60",
+			"namespace": "zam-academy-franzoesisch-2fs-gymnasium-7",
+			"slug": "f7-2-revision",
+			"title": "Mon carnet et ma relecture",
+			"domain": "franzoesisch/klasse-7/f2/media",
+			"reduction": "formal",
+			"typical_age_min": 12,
+			"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-revision",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-media",
+					"topic_title": "Lire, écrire et réviser"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb1.1-sprachmittlung",
+					"topic_title": "Wörter abrufen, Fehler finden und Quellen nutzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb1.2-wortschatz",
+					"topic_title": "Wörter abrufen, Fehler finden und Quellen nutzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 7,
+					"subject": "franzoesisch-2fs",
+					"topic_code": "f2-lb4",
+					"topic_title": "Wörter abrufen, Fehler finden und Quellen nutzen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was tust du zuerst bei einer aktiven Abrufübung?",
+					"concept": "Die Lösung abdecken.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Die Lösung abdecken.",
+							"Die Lösung abschreiben."
+						],
+						"correct_index": 0
+					},
+					"id": "01M83HYKH793RPFZXZTQRJF6GZ",
+					"slug": "f7-2-revision-check",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-revision"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wo schlägst du eine unsichere Verbform nach?",
+					"concept": "Zum Beispiel in der Verbübersicht des Lehrwerks.",
+					"sample_solution": "Zum Beispiel in der Verbübersicht des Lehrwerks.",
+					"id": "01M83HYKH70RVKB1HR43Y7BE88",
+					"slug": "f7-2-revision-recall",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-revision"
+				},
+				{
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Warum prüfst du einen Entwurf in zwei Durchgängen?",
+					"concept": "Du kannst zuerst Sinn und Reihenfolge prüfen und danach gezielt eine Sprachregel.",
+					"sample_solution": "Du kannst zuerst Sinn und Reihenfolge prüfen und danach gezielt eine Sprachregel.",
+					"id": "01M83HYKH75P8EZ64SPXJ8S9DY",
+					"slug": "f7-2-revision-transfer",
+					"source_link": "https://academy.zam-os.org/franzoesisch-2fs-gymnasium-7/#lesson=f7-2-revision"
+				}
+			]
+		}
+	]
+}

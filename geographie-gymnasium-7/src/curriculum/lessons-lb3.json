@@ -1,0 +1,472 @@
+[
+  {
+    "id": "europa-naturraume",
+    "lb": 3,
+    "title": "Europas Lage und Großlandschaften",
+    "period": "Geo7 3 · Gradnetz · Grenzen · Relief",
+    "intro": "Zwischen Atlantikküste, Alpen und Osteuropäischer Ebene ändern sich Höhe, Geländeform und Nähe zum Meer.",
+    "paragraphs": [
+      "Europa liegt nördlich des Äquators. Atlantik und Mittelmeer begrenzen es im Westen und Süden. Im Osten wird der Ural oft als Teil der konventionellen Grenze zu Asien verwendet. Dort bilden Europa und Asien eine zusammenhängende Landmasse.",
+      "Für eine naturräumliche Gliederung kannst du Relief, Küstenform und Gewässer heranziehen. Die Alpen sind ein Hochgebirge, die Pyrenäen liegen zwischen Frankreich und Spanien. Die Osteuropäische Ebene bildet einen großräumigen Gegensatz zu diesen Gebirgen."
+    ],
+    "takeaway": "Großlandschaften ordnest du anhand von Lage und Relief ein. Kontinentgrenzen können Konventionen sein.",
+    "sourceIds": [
+      "lehrplan",
+      "natural-earth"
+    ],
+    "quiz": {
+      "question": "Welches Gebirge markiert einen verbreiteten Abschnitt der östlichen Grenze Europas?",
+      "answer": "Das Uralgebirge.",
+      "wrong": [
+        "Die Pyrenäen.",
+        "Die Alpen."
+      ],
+      "explanation": "Der Ural liegt in Russland und markiert dort einen Teil der konventionellen Grenze zu Asien."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Relief und Lage",
+      "instruction": "Ordne das Merkmal dem passenden Raum zu.",
+      "categories": [
+        "Alpen",
+        "Pyrenäen",
+        "Osteuropäische Ebene"
+      ],
+      "entries": [
+        {
+          "text": "Hochgebirge südlich von Deutschland",
+          "target": 0,
+          "feedback": "Die Alpen erstrecken sich über mehrere mitteleuropäische Länder."
+        },
+        {
+          "text": "Gebirge zwischen Frankreich und Spanien",
+          "target": 1,
+          "feedback": "Die Pyrenäen begrenzen die Iberische Halbinsel im Nordosten."
+        },
+        {
+          "text": "Großes Tiefland im Osten",
+          "target": 2,
+          "feedback": "Die Osteuropäische Ebene erstreckt sich weit nach Osten."
+        }
+      ],
+      "conclusion": "Großlandschaften ordnest du anhand von Lage und Relief ein. Kontinentgrenzen können Konventionen sein."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Ordne Alpen und Osteuropäische Ebene zwei Teilräumen zu. Erkläre mit Relief und Lage.",
+        "hints": [
+          "Nutze die Beschriftungen auf der Karte.",
+          "Vergleiche Hochgebirge und Tiefland."
+        ],
+        "model": "Die Alpen liegen vor allem in Mittel- und im nördlichen Südeuropa. Sie sind ein Hochgebirge. Die Osteuropäische Ebene ist ein weit ausgedehntes Tiefland im Osten.",
+        "criteria": [
+          "Ich verorte beide Räume.",
+          "Ich nenne das Hochgebirge.",
+          "Ich beschreibe das Tiefland."
+        ]
+      },
+      "2": {
+        "prompt": "Ein Reiseführer teilt Europa nach Staaten ein, eine Naturkarte nach Gebirgen und Ebenen. Warum verlaufen viele Grenzen verschieden?",
+        "hints": [
+          "Frage nach dem Kriterium jeder Karte.",
+          "Betrachte die Alpen über mehrere Länder hinweg."
+        ],
+        "model": "Die Reisekarte richtet sich nach politischen Grenzen. Die Naturkarte richtet sich nach Relief und Landschaft. Die Alpen ziehen sich über mehrere Staatsgrenzen hinweg und bleiben dabei ein zusammenhängendes Gebirge.",
+        "criteria": [
+          "Ich unterscheide die Kriterien.",
+          "Ich nenne einen grenzüberschreitenden Naturraum.",
+          "Ich erkläre die verschiedenen Grenzverläufe."
+        ]
+      }
+    },
+    "figures": [
+      "naturraume"
+    ],
+    "workedExample": "Vergleiche die Alpen und die Osteuropäische Ebene auf der Karte. Die Alpenlinie zieht sich über Staatsgrenzen. Die Ebene liegt weiter östlich und ist ein Tiefland. Eine naturräumliche Gliederung kann deshalb mehrere Staaten umfassen.",
+    "transferCheck": {
+      "question": "Eine Karte soll die Alpen als zusammenhängenden Raum zeigen. Woran soll sich ihre Grenze orientieren?",
+      "answer": "An Verlauf und Relief des Gebirges.",
+      "wrong": [
+        "An den Staatsgrenzen der größten Alpenländer.",
+        "Ausschließlich am Verlauf der Autobahnen."
+      ],
+      "explanation": "Eine Naturraumkarte gliedert nach Merkmalen der Landschaft. Die Alpen reichen über mehrere Staatsgrenzen."
+    }
+  },
+  {
+    "id": "klima-vergleichen",
+    "lb": 3,
+    "title": "Europas Klima im Vergleich",
+    "period": "Geo7 3 · Klimadiagramm · Maritimität · Kontinentalität",
+    "intro": "An der Atlantikküste fallen die Winter oft milder aus als im Landesinneren auf vergleichbarer Breite.",
+    "paragraphs": [
+      "Im Klimadiagramm zeigt eine Linie die Monatsmittel der Temperatur. Säulen zeigen den jeweiligen Monatsniederschlag. Die Temperaturspanne ist das wärmste Monatsmittel minus das kälteste. Im Küstenmodell mit 16 °C im Juli und 5 °C im Januar sind das 11 °C.",
+      "Wasser erwärmt sich und kühlt langsamer ab als Land. Der Nordatlantikstrom setzt das Golfstromsystem Richtung Nordwesteuropa fort. Er und feuchte Westwinde wirken auf das Klima im Westen. Im Inneren ist die Temperaturspanne häufig größer. Im Süden ist es in vergleichbarer Höhe meist wärmer. Gebirge und lokale Winde verändern das Muster."
+    ],
+    "takeaway": "Vergleiche Temperaturspanne, Niederschlagsverteilung und Lage. Das Meer dämpft häufig die jahreszeitlichen Temperaturschwankungen.",
+    "sourceIds": [
+      "lehrplan",
+      "strom"
+    ],
+    "quiz": {
+      "question": "Welches Muster spricht bei ähnlicher Breite für stärkeren Meereseinfluss?",
+      "answer": "Eine kleinere Jahresspanne der Monatsmitteltemperaturen.",
+      "wrong": [
+        "Immer trockene Winter und heiße Sommer.",
+        "Stärkere Winterkälte und heißere Sommer als im Binnenland."
+      ],
+      "explanation": "Die Temperatur an der Küste schwankt durch den Wärmespeicher Meer oft weniger."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Was liest du wo ab?",
+      "instruction": "Ordne die Beobachtung dem passenden Teil des Diagramms zu.",
+      "categories": [
+        "Temperaturlinie",
+        "Niederschlagssäule",
+        "Vergleich zweier Temperaturwerte"
+      ],
+      "entries": [
+        {
+          "text": "Temperaturmittel im Februar",
+          "target": 0,
+          "feedback": "Die Linie verbindet die Temperaturmittel."
+        },
+        {
+          "text": "Niederschlagssumme im Juli",
+          "target": 1,
+          "feedback": "Die Säule zeigt Niederschlag in Millimetern."
+        },
+        {
+          "text": "Spanne zwischen wärmstem und kältestem Monat",
+          "target": 2,
+          "feedback": "Die Spanne ist die Differenz der beiden Werte."
+        }
+      ],
+      "conclusion": "Vergleiche Temperaturspanne, Niederschlagsverteilung und Lage. Das Meer dämpft häufig die jahreszeitlichen Temperaturschwankungen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Übertrage Januar-, April-, Juli- und Oktoberwerte des Küstenmodells aus der Tabelle in eine Skizze. Beschreibe die Temperaturspanne.",
+        "hints": [
+          "Trage Monate auf der waagrechten Achse ein.",
+          "Lies 5 °C und 16 °C an den Enden der Spanne ab."
+        ],
+        "model": "Ich nutze eine Linie für Temperaturen und Säulen für Regen. Im Küstenmodell sind Juli und August gleich warm und erreichen beide das höchste Monatsmittel. Der Januar ist am kältesten. Die Temperaturspanne beträgt 11 °C.",
+        "criteria": [
+          "Ich trage Monate und Einheiten ein.",
+          "Ich unterscheide Linie und Säulen.",
+          "Ich berechne 11 °C."
+        ]
+      },
+      "2": {
+        "prompt": "Station A hat 4 °C im Januar und 17 °C im Juli. Station B hat −5 °C im Januar und 21 °C im Juli. Begründe, welche Station bei gleicher Breite eher am Meer liegt.",
+        "hints": [
+          "Berechne beide Spannen.",
+          "Das Meer speichert Wärme."
+        ],
+        "model": "Die Spanne beträgt bei A 13 °C, bei B 26 °C. Station A hat einen milderen Winter und einen weniger warmen Sommer. Bei ansonsten vergleichbarer Lage passt A eher zur Küste.",
+        "criteria": [
+          "Ich berechne beide Spannen.",
+          "Ich erkenne das mildere Muster von A.",
+          "Ich erkläre die Rolle des Meeres."
+        ]
+      }
+    },
+    "figures": [
+      "klima"
+    ],
+    "lab": "klimavergleich",
+    "workedExample": "Die Atlantikküste hat 5 °C im Januar und 16 °C im Juli und August. Die Spanne beträgt 16 − 5 = 11 °C. Im Landesinneren ergibt die Rechnung 21 − (−4) = 25 °C.",
+    "transferCheck": {
+      "question": "A hat 4 °C im Januar und 17 °C im Juli. B hat −5 °C und 21 °C. Welche Station liegt bei ähnlicher Breite eher am Meer?",
+      "answer": "A, weil 13 °C eine kleinere Spanne sind als 26 °C.",
+      "wrong": [
+        "B, weil dort der Juli wärmer ist.",
+        "B, weil die Spanne dort nur 16 °C beträgt."
+      ],
+      "explanation": "17 − 4 = 13 und 21 − (−5) = 26. Der Meereseinfluss dämpft die Schwankungen häufig."
+    }
+  },
+  {
+    "id": "vegetation-und-wasser",
+    "lb": 3,
+    "title": "Klima, Boden und Vegetation",
+    "period": "Geo7 3 · Vegetationsperiode · Steigungsregen · Dürre",
+    "intro": "In den Alpen ändern sich Pflanzen auf kurzer Strecke, im Mittelmeerraum setzen trockene Sommer vielen Pflanzen Grenzen.",
+    "paragraphs": [
+      "Eine Vegetationsperiode ist die Zeit im Jahr, in der Pflanzen unter den örtlichen Bedingungen wachsen können. Im Norden begrenzen Kälte und kurze Sommer das Wachstum. Im gemäßigten Europa kommen je nach Standort Laub-, Misch- oder Nadelwälder vor. Im Mittelmeerraum hilft Pflanzen wie der Steineiche eine wasserverlustarme Blattoberfläche.",
+      "Steigt feuchte Luft an einem Gebirge auf, kühlt sie ab und kann Regen bringen. Auf der Leeseite kann die Luft beim Absinken wärmer und relativ trockener werden. Bei Dürre liefern Niederschlag und Bodenfeuchte verschiedene Hinweise: Ein flachgründiger Boden speichert oft weniger Wasser als ein tiefgründiger.",
+      "Mit steigenden Temperaturen verdunstet häufig mehr Wasser. Das kann in Trockenphasen die Böden zusätzlich austrocknen. Um Klimafolgen zu beurteilen, vergleiche Messungen von Temperatur, Regen und Bodenfeuchte über längere Zeit."
+    ],
+    "takeaway": "Vegetation hängt gemeinsam von Temperatur, verfügbarem Wasser und Boden ab. Eine einzelne Wetterbeobachtung reicht für einen Klimatrend nicht aus.",
+    "sourceIds": [
+      "lehrplan"
+    ],
+    "quiz": {
+      "question": "Warum können auf zwei Hängen mit ähnlicher Temperatur unterschiedliche Pflanzen wachsen?",
+      "answer": "Boden und verfügbare Wassermenge können verschieden sein.",
+      "wrong": [
+        "Temperatur legt jede Pflanze eindeutig fest.",
+        "Sonnige Hänge bekommen immer mehr Regen."
+      ],
+      "explanation": "Pflanzen reagieren auch auf die Wasserversorgung und die Eigenschaften des Bodens."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Welcher Faktor wirkt?",
+      "instruction": "Ordne jedem Beispiel die stärkste unmittelbare Begrenzung zu.",
+      "categories": [
+        "Kälte",
+        "Wasser",
+        "Bodentiefe"
+      ],
+      "entries": [
+        {
+          "text": "In sehr hohen Lagen bleibt im Frühling lange Schnee liegen",
+          "target": 0,
+          "feedback": "Niedrige Temperaturen verkürzen die Wachstumszeit."
+        },
+        {
+          "text": "Nach langem Ausbleiben von Regen welkt ein flach wurzelnder Bestand",
+          "target": 1,
+          "feedback": "Den Pflanzen fehlt verfügbares Wasser."
+        },
+        {
+          "text": "An einer dünnen Erdschicht endet der Wurzelraum am Gestein",
+          "target": 2,
+          "feedback": "Die geringe Bodentiefe begrenzt den Wurzelraum."
+        }
+      ],
+      "conclusion": "Vegetation hängt gemeinsam von Temperatur, verfügbarem Wasser und Boden ab. Eine einzelne Wetterbeobachtung reicht für einen Klimatrend nicht aus."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Beschreibe an einem Gebirge, wie Windseite und Leeseite unterschiedliche Feuchte erhalten können.",
+        "hints": [
+          "Wohin muss Luft auf der Windseite ausweichen?",
+          "Vergleiche Aufsteigen und Absinken."
+        ],
+        "model": "Auf der Windseite steigt feuchte Luft auf und kühlt ab. Es kann Steigungsregen fallen. Im Lee sinkt Luft ab und erwärmt sich, wodurch sie relativ trockener wird.",
+        "criteria": [
+          "Ich unterscheide Windseite und Lee.",
+          "Ich erkläre das Abkühlen beim Aufsteigen.",
+          "Ich beschreibe Erwärmung oder Trockenheit im Lee."
+        ]
+      },
+      "2": {
+        "prompt": "Auf zwei gleich warmen Flächen hat es lange kaum geregnet. Eine hat tiefgründigen Boden, die andere eine dünne Erdschicht. Formuliere eine prüfbare Vermutung zum Pflanzenwachstum.",
+        "hints": [
+          "Vergleiche Wasserspeicher und Wurzelraum.",
+          "Welche Messung könnte deine Vermutung prüfen?"
+        ],
+        "model": "Ich vermute auf vergleichbarem Bodenmaterial eine langsamere Austrocknung im tieferen Boden. Dort steht Wurzeln eher länger Wasser zur Verfügung. Ich vergleiche über mehrere Wochen Bodenfeuchte und Pflanzenwachstum.",
+        "criteria": [
+          "Ich formuliere eine bedingte Vermutung.",
+          "Ich erkläre die Rolle des Bodens.",
+          "Ich schlage eine Messung vor."
+        ]
+      }
+    },
+    "figures": [
+      "gebirgsregen"
+    ],
+    "workedExample": "Zwei Wiesen liegen auf ähnlich warmen Hängen. Auf der windzugewandten Seite regnet es häufiger, weil feuchte Luft aufsteigt. Ist der Boden dort ebenfalls tief, kann er mehr Wasser speichern und das Wachstum länger unterstützen.",
+    "transferCheck": {
+      "question": "Auf der Windseite und im Lee ist es ähnlich warm. Weshalb kann der Bewuchs im Lee trotzdem spärlicher sein?",
+      "answer": "Beim Absinken erwärmt sich die Luft und ist relativ trockener.",
+      "wrong": [
+        "Im Lee steigen dieselben feuchten Luftmassen weiter auf.",
+        "Ähnliche Temperatur bedeutet dieselbe Wasserversorgung."
+      ],
+      "explanation": "Temperatur und verfügbares Wasser beeinflussen die Vegetation gemeinsam."
+    }
+  },
+  {
+    "id": "plattengrenzen",
+    "lb": 3,
+    "title": "Plattengrenzen, Vulkanismus und Erdbeben",
+    "period": "Geo7 3 · Island · Mittelmeerraum",
+    "intro": "Auf Island driften Platten auseinander. Im Mittelmeerraum bewegen sich mehrere Platten aufeinander zu. Beide Gebiete können Erdbeben und Vulkane haben.",
+    "paragraphs": [
+      "An auseinanderdriftenden Grenzen entsteht neue ozeanische Kruste, wenn aufsteigendes Magma abkühlt. Auf Island verläuft eine solche Grenze über Land. Ein zusätzlicher tiefer Wärmeeinfluss trägt dort zum Vulkanismus bei.",
+      "An einer Subduktionszone taucht eine Platte unter eine andere. Freigesetztes Wasser fördert das Schmelzen im darüberliegenden Mantel. Magma kann aufsteigen. An verhakten oder gegeneinander verschobenen Platten können sich Spannungen lösen und Erdbeben auslösen. Die Plattengrenzen im Mittelmeer sind regional komplex."
+    ],
+    "takeaway": "Vergleiche die Bewegungsrichtung der Platten. Erdbeben entstehen durch plötzliche Bewegung an Störungen, Vulkanismus braucht aufsteigendes Magma.",
+    "sourceIds": [
+      "lehrplan"
+    ],
+    "quiz": {
+      "question": "Was kennzeichnet eine Subduktionszone?",
+      "answer": "Eine Platte taucht unter eine andere.",
+      "wrong": [
+        "Zwei Platten driften auseinander.",
+        "Zwei Platten verschieben sich nur seitlich."
+      ],
+      "explanation": "Subduktion ist das Abtauchen einer Platte an einer zusammenlaufenden Grenze."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Richtung und Vorgang",
+      "instruction": "Ordne die Merkmale dem passenden Prozess zu.",
+      "categories": [
+        "Auseinanderdriften",
+        "Subduktion",
+        "Erdbeben"
+      ],
+      "entries": [
+        {
+          "text": "Neue Kruste bildet sich an einem Rücken",
+          "target": 0,
+          "feedback": "Dort können sich auseinanderbewegende Platten durch neue Kruste ergänzen."
+        },
+        {
+          "text": "Eine ozeanische Platte sinkt unter eine andere",
+          "target": 1,
+          "feedback": "Das ist Subduktion."
+        },
+        {
+          "text": "Eine verhakte Störung bewegt sich plötzlich",
+          "target": 2,
+          "feedback": "Dabei werden Erschütterungswellen ausgelöst."
+        }
+      ],
+      "conclusion": "Vergleiche die Bewegungsrichtung der Platten. Erdbeben entstehen durch plötzliche Bewegung an Störungen, Vulkanismus braucht aufsteigendes Magma."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Vergleiche Island mit einer Subduktionszone. Beschreibe die Pfeilrichtungen und je einen Vorgang.",
+        "hints": [
+          "Beobachte die Plattenbewegung im Modell.",
+          "Erkläre, wo neue Kruste entsteht und wo eine Platte absinkt."
+        ],
+        "model": "In Island bewegen sich die Platten auseinander, und aufsteigendes Magma bildet neue Kruste. In einer Subduktionszone bewegen sie sich aufeinander zu und eine Platte taucht ab.",
+        "criteria": [
+          "Ich beschreibe das Auseinanderdriften.",
+          "Ich nenne die Neubildung von Kruste.",
+          "Ich erkläre das Abtauchen."
+        ]
+      },
+      "2": {
+        "prompt": "Entlang einer Störung werden viele Erdbeben beobachtet, aber keine Lava. Warum passt das trotzdem zu einer Plattengrenze?",
+        "hints": [
+          "Überlege, was sich an einer Störung lösen kann.",
+          "Was wäre zusätzlich für einen Vulkan nötig?"
+        ],
+        "model": "Eine Grenzstörung kann verhaken und sich bewegen. So entstehen Erdbeben. Für Lava muss zusätzlich Magma an die Oberfläche gelangen. Die Erdbeben allein beweisen keinen Vulkanismus.",
+        "criteria": [
+          "Ich erkläre die ruckartige Bewegung.",
+          "Ich nenne Magma als zusätzliche Voraussetzung.",
+          "Ich unterscheide beide Folgen."
+        ]
+      }
+    },
+    "figures": [
+      "plattenkarte"
+    ],
+    "lab": "plattengrenzen",
+    "workedExample": "Die Pfeile auf der Island-Skizze zeigen auseinander. Magma steigt in der Mitte auf und kann dort neue Kruste bilden. Zwei Pfeile aufeinander zu und eine abtauchende Platte kennzeichnen im Vergleich eine Subduktionszone.",
+    "transferCheck": {
+      "question": "An einer seitlich versetzten Störung gibt es Erdbeben, aber keinen sichtbaren Vulkan. Welcher Vorgang erklärt das?",
+      "answer": "Verhakte Gesteinsblöcke lösen sich ruckartig.",
+      "wrong": [
+        "Die Bewegung kann nur beim Aufstieg von Magma einsetzen.",
+        "Die Störung muss neue Kruste zwischen auseinanderdriftenden Platten bilden."
+      ],
+      "explanation": "Ein Erdbeben kann entstehen, wenn sich Spannung löst. Dafür braucht es kein aufsteigendes Magma."
+    }
+  },
+  {
+    "id": "naturgefahren",
+    "lb": 3,
+    "title": "Leben mit Naturgefahren",
+    "period": "Geo7 3 · Risiko · Monitoring · Vorsorge",
+    "intro": "Am Rand eines Vulkans können fruchtbare Böden gute Ernten ermöglichen. Ein Ausbruch kann zugleich Siedlungen gefährden.",
+    "paragraphs": [
+      "Risiko hängt davon ab, welche Ereignisse auftreten können, wer ihnen ausgesetzt ist und wie verwundbar Gebäude und Personen sind. Zwei gleich starke Erdbeben können deshalb unterschiedlich schwere Folgen haben.",
+      "Forschende beobachten Vulkane etwa mit Messungen von Bodenbewegung, Gasen und Erschütterungen. Sie bewerten mehrere Anzeichen zusammen. Gefahrenkarten, Bauvorschriften, Warnungen und eingeübte Fluchtwege helfen, mögliche Schäden zu begrenzen."
+    ],
+    "takeaway": "Wäge Chancen gegen Gefahr, Exposition und Verwundbarkeit ab. Beobachtungsdaten helfen bei Entscheidungen, genaue Vorhersagen bleiben begrenzt.",
+    "sourceIds": [
+      "lehrplan"
+    ],
+    "quiz": {
+      "question": "Welche Maßnahme senkt vor allem die Verwundbarkeit bei Erdbeben?",
+      "answer": "Erdbebengerechte Bauweise.",
+      "wrong": [
+        "Mehr Messstationen, ohne Gebäude baulich zu verändern.",
+        "Eine zusätzliche Fluchtroute außerhalb des Ortes."
+      ],
+      "explanation": "Besser ausgelegte Gebäude können bei Erschütterungen stabiler bleiben."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Gefahr, Exposition oder Vorsorge?",
+      "instruction": "Ordne die Angaben für einen Ort am Vulkan zu.",
+      "categories": [
+        "Gefahr",
+        "Exposition",
+        "Vorsorge"
+      ],
+      "entries": [
+        {
+          "text": "Asche kann in Richtung des Ortes geweht werden",
+          "target": 0,
+          "feedback": "Das ist ein mögliches schädigendes Ereignis."
+        },
+        {
+          "text": "300 Häuser liegen in der möglichen Aschezone",
+          "target": 1,
+          "feedback": "Die Angabe beschreibt Häuser im betroffenen Gebiet."
+        },
+        {
+          "text": "Die Gemeinde übt eine Evakuierung",
+          "target": 2,
+          "feedback": "Übungen können die Reaktion auf einen Alarm verbessern."
+        }
+      ],
+      "conclusion": "Wäge Chancen gegen Gefahr, Exposition und Verwundbarkeit ab. Beobachtungsdaten helfen bei Entscheidungen, genaue Vorhersagen bleiben begrenzt."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Nenne für einen Ort am Vulkan einen Vorteil, ein Risiko und eine Vorsorgemaßnahme.",
+        "hints": [
+          "Denke an Landwirtschaft und Asche.",
+          "Verbinde die Maßnahme mit dem Risiko."
+        ],
+        "model": "Böden auf verwittertem Vulkanmaterial können fruchtbar sein. Ein Ausbruch kann den Ort durch Asche treffen. Warnungen und geübte Evakuierungswege helfen, Menschen rechtzeitig in Sicherheit zu bringen.",
+        "criteria": [
+          "Ich benenne eine Chance.",
+          "Ich erkläre ein Risiko am Ort.",
+          "Ich begründe eine passende Maßnahme."
+        ]
+      },
+      "2": {
+        "prompt": "Zwei Orte liegen gleich weit von einem Vulkan. In Ort A führen zwei Straßen weg, in Ort B nur eine. Welche Folgen hat das für die Planung?",
+        "hints": [
+          "Entfernung ist nur ein Teil des Risikos.",
+          "Denke an Sperren und Stau."
+        ],
+        "model": "Ort B kann bei einer blockierten Straße schlechter evakuieren. Beide Orte brauchen Warnpläne. In B sind eine alternative Fluchtroute oder gestaffelte Evakuierung besonders wichtig.",
+        "criteria": [
+          "Ich unterscheide gleiche Entfernung und verschiedene Verwundbarkeit.",
+          "Ich erkläre das Problem einer Sperre.",
+          "Ich schlage eine passende Maßnahme vor."
+        ]
+      }
+    },
+    "figures": [
+      "risiko"
+    ],
+    "workedExample": "Zwei Ortschaften erleben ähnlich starke Erschütterungen. In einer sind viele Gebäude erdbebengerecht gebaut, in der anderen weniger. Die Gefahr ist ähnlich. Die zweite Ortschaft kann wegen ihrer verwundbareren Gebäude größere Schäden erleiden.",
+    "transferCheck": {
+      "question": "Zwei Orte liegen gleich weit vom Vulkan. Ort B hat nur eine Ausfallstraße. Was verbessert seine Evakuierung am ehesten?",
+      "answer": "Einen Ausweichweg für den Fall einer Straßensperre vorbereiten.",
+      "wrong": [
+        "Nur die Entfernung zum Vulkan genauer ausmessen.",
+        "Den vorhandenen Weg kürzer ausschildern, ohne eine Alternative zu kennen."
+      ],
+      "explanation": "Eine blockierte Straße kann die Flucht erschweren. Ein Ausweichweg verringert diese Verwundbarkeit."
+    }
+  }
+]

@@ -1,0 +1,55 @@
+{
+  "schema": 1,
+  "status": "proposal-only",
+  "approved": null,
+  "note": "Proposal for Thomas: 2 A rows (single tier-1 replacements), 0 B, 2 C rows kept active. Until approval the cell declares no replaces and no retired_items. The neighbouring Grade 8 cell de-by:gymnasium-8-geschichte-absolutismus-franzoesische-revolution-1848 holds absolutism content that LehrplanPLUS now teaches in Grade 7 LB 6; no row is proposed for it here (see docs/geschichte-gymnasium-7-coverage.md).",
+  "source_repository": "https://github.com/zam-os/zam",
+  "source_commit": "4aeaa8e3455937f8a53cd57e686ff98d602a0561",
+  "sources": [
+    {
+      "file": "tests/fixtures/de-by-gymnasium-7-geschichte-mittelalter-frankenreich-staedte-kreuzzuege-reformation-kvt.json",
+      "source_path": "tests/fixtures/curriculum/de-by-gymnasium-7-geschichte-mittelalter-frankenreich-staedte-kreuzzuege-reformation-kvt.json",
+      "sha256": "c7671e30d5731c2bce71d3420758c9c550425fb3f927fdc12c832a9ce609351a",
+      "tile_id": "de-by:gymnasium-7-geschichte-mittelalter-frankenreich-staedte-kreuzzuege-reformation",
+      "version": "2026.08.1"
+    }
+  ],
+  "rows": [
+    {
+      "de_by_cell": "de-by:gymnasium-7-geschichte-mittelalter-frankenreich-staedte-kreuzzuege-reformation",
+      "de_by_id": "01K4H7M0000000000000000J01",
+      "de_by_question": "An welchem historischen Weihnachtstag wurde der Frankenkönig Karl der Große in Rom von Papst Leo III. zum ersten weströmischen Kaiser des Mittelalters gekrönt?",
+      "category": "A",
+      "academy_slug": "gg7-kaiserpfalz-aachen-check",
+      "action": "propose-replace-after-approval",
+      "reason": "Same atomic retrieval: the date of Charlemagne's imperial coronation in Rome (25 December 800). LehrplanPLUS lists „800 Kaiserkrönung Karls des Großen“ among the Grundlegende Daten of Grade 7 LB 7 (Bauwerke als Ausdruck politischen Denkens); the successor check asks exactly this date in gg7-kaiserpfalz-aachen. The Grade 6 package treats the topic as Grade 6 LB 6 and left this item untouched by Thomas's decision of 2026-11-19, so no package maps it twice."
+    },
+    {
+      "de_by_cell": "de-by:gymnasium-7-geschichte-mittelalter-frankenreich-staedte-kreuzzuege-reformation",
+      "de_by_id": "01K4H7M0000000000000000J02",
+      "de_by_question": "Analysiere die Herrschaftsstrukturen des europäischen Mittelalters: 1. Das Frankenreich & Karl der Große: Kaiserkrönung 800 in Rom, Karolingische Renaissance (Bildungsreform, Minuskel-Schrift), Reichsgrafschaftenverfassung mit Königsboten (missi dominici), 2. Das Lehnswesen (Feudalismus): Persönliches Treueverhältnis auf Gegenseitigkeit (Lehnsherr gewährt Schutz und Lehen [Land/Ämter]; Vasall leistet Rat und Tat [Kriegsdienst/consilium et auxilium]; Entstehung der Lehns-Pyramide: König → Kronvasallen/Herzöge → Untervasallen/Ritter), 3. Grundherrschaft: Herrschaft über Grund und Boden; unfreie Bauern (Hörige) leisten Frondienste und Abgaben im Gegenzug für Schutz, 4. Der Investiturstreit (1075–1122): Konflikt um die Einsetzung von Bischöfen (Kaiser Heinrich IV. vs. Papst Gregor VII. [Dictatus Papae]; Gang nach Canossa 1077; Kompromiss im Wormser Konkordat 1122: Trennung in geistliche Weihe Spiritualia durch die Kirche und weltliche Belehnung Temporalia durch den König).",
+      "category": "C",
+      "academy_slug": null,
+      "action": "keep-active",
+      "reason": "Multi-part synthesis covering Charlemagne (Grade 6), Lehnswesen, Grundherrschaft and the Investiturstreit with Canossa and the Wormser Konkordat. The parts are split across gg7-reisekoenigtum-lehnswesen, gg7-staende-grundherrschaft and gg7-reichskirche-investiturstreit; one history must not be spread over several cards, so no successor declares replaces."
+    },
+    {
+      "de_by_cell": "de-by:gymnasium-7-geschichte-mittelalter-frankenreich-staedte-kreuzzuege-reformation",
+      "de_by_id": "01K4H7M0000000000000000J03",
+      "de_by_question": "Welche bahnbrechende Erfindung von Johannes Gutenberg um das Jahr 1450 ermöglichte die explosionsartige Verbreitung der reformatorischen Ideen Martin Luthers?",
+      "category": "A",
+      "academy_slug": "gg7-buchdruck-check",
+      "action": "propose-replace-after-approval",
+      "reason": "Same atomic retrieval: Gutenberg's invention around 1450, printing with movable metal type. The successor check asks for this invention by name and answer; the legacy question frames it with Luther's ideas, which is context, not a different answer."
+    },
+    {
+      "de_by_cell": "de-by:gymnasium-7-geschichte-mittelalter-frankenreich-staedte-kreuzzuege-reformation",
+      "de_by_id": "01K4H7M0000000000000000J04",
+      "de_by_question": "Analysiere den Übergang vom Hochmittelalter zur Frühen Neuzeit in 4 Dimensionen: 1. Die mittelalterliche Stadt: Rechtsgrundsatz 'Stadtluft macht frei (nach Jahr und Tag)'; Herrschaft der Patrizier; Organisation der Handwerker in strengen Zünften (Produktionskontrolle, Preisdiktat, sozialer Schutz), 2. Kreuzzüge & Kulturtransfer: Beginn 1095 durch Papst Urban II. zur Rückeroberung Jerusalems → trotz militärischer Grausamkeit massiver wissenschaftlicher Transfer aus der hochentwickelten islamischen Welt (Medizin, Mathematik, arabische Ziffern, Optik, antike Philosophie), 3. Renaissance & Humanismus: Wiedergeburt der Antike (Ad fontes); der Mensch und die Diesseitigkeit rücken ins Zentrum des Denkens (Universalgenie Leonardo da Vinci), 4. Die Reformation (Martin Luther 1517):   * Kritik am Ablasshandel ('Sobald das Geld im Kasten klingt...').   * 31. Oktober 1517: 95 Thesen zu Wittenberg.   * Die 4 reformatorischen 'Soli': Sola Fide (allein durch den Glauben), Sola Gratia (allein aus Gnade), Sola Scriptura (allein die Bibel), Solus Christus (allein Christus als Mittler) → Kirchenspaltung, Bibelübersetzung ins Deutsche und Bauernkriege 1525.",
+      "category": "C",
+      "academy_slug": null,
+      "action": "keep-active",
+      "reason": "Four-dimension synthesis (medieval town with guilds and Hanse, crusades and transfer from the Orient, Renaissance and humanism, Reformation 1517 with Luther and printing). Its parts are spread over LB 2, LB 3, LB 4 and LB 5 of the new package; no single successor keeps the whole multi-part prompt with its sample solution."
+    }
+  ]
+}

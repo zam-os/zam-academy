@@ -1,0 +1,246 @@
+[
+	{
+		"id": "tourismusraeume",
+		"lb": 6,
+		"title": "Urlaubsräume auf Europas Karte",
+		"period": "Geo6 LB 6 · Tourismus",
+		"intro": "Küste, Gebirge und Stadt bieten verschiedene Möglichkeiten für Ferien.",
+		"paragraphs": [
+			"In den Alpen sind Wintersport und sommerliches Wandern verbreitet. An der spanischen Mittelmeerküste gibt es Badeurlaub, in Barcelona und Paris auch Städtetourismus. Skandinavische Nationalparks eignen sich zum Beispiel für Wandern und Naturbeobachtung. Als Erholungsräume dienen auch Seen, Wälder und Berge in der eigenen Region. Mehrere Reiseformen können an einem Ort zusammenkommen.",
+			"Bei einer Pauschalreise werden Leistungen gemeinsam gebucht; bei einer Individualreise stellst du sie selbst zusammen. Nachhaltig ausgerichteter Tourismus versucht, Umwelt und Alltag der örtlichen Bevölkerung zu schonen und Nutzen vor Ort zu lassen. Das kann bei beiden Buchungsformen gelingen. Prüfe auf Karten und Bildern, welche natürlichen Voraussetzungen und Angebote die Reiseformen begünstigen."
+		],
+		"takeaway": "Ordne Reiseformen anhand sichtbarer Merkmale zu und begründe deine Wahl.",
+		"sourceIds": [
+			"lehrplan"
+		],
+		"quiz": {
+			"question": "Welche Karte hilft besonders bei der Suche nach einem Wintersportgebiet?",
+			"answer": "Eine Reliefkarte mit Höhenangaben und Skigebieten.",
+			"wrong": [
+				"Eine Karte nur mit Währungen.",
+				"Eine Karte nur mit Landesflaggen."
+			],
+			"explanation": "Höhe, Gelände und vorhandene Anlagen sind wichtige Hinweise."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Reiseräume beurteilen",
+			"instruction": "Ordne jede Aussage zu. Prüfe deine Entscheidung und lies die Rückmeldung.",
+			"categories": [
+				"Sommer am Meer",
+				"Winter im Gebirge",
+				"Stadt"
+			],
+			"entries": [
+				{
+					"text": "Strände und warme Mittelmeerküste.",
+					"target": 0,
+					"feedback": "Das begünstigt Badeurlaub."
+				},
+				{
+					"text": "Höhenlage, Pisten und Bergbahnen.",
+					"target": 1,
+					"feedback": "Das sind Merkmale eines Wintersportorts."
+				},
+				{
+					"text": "Museen, historische Bauten und Stadtverkehr.",
+					"target": 2,
+					"feedback": "Das passt zu Städtetourismus."
+				}
+			],
+			"conclusion": "Ordne Reiseformen anhand sichtbarer Merkmale zu und begründe deine Wahl."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Ordne Tirol, Barcelona und einen Erholungsort aus deiner Region passenden Reiseformen zu und begründe jede Wahl.",
+				"hints": [
+					"Welche Merkmale zeigt eine Karte?",
+					"Welche Reiseformen passen dazu?"
+				],
+				"model": "Tirol bietet Gebirge für Wintersport und Wandern. Barcelona verbindet Kulturangebote und Mittelmeerküste. Der Starnberger See ist zum Beispiel ein regionaler Erholungsraum zum Spazieren und Baden.",
+				"criteria": [
+					"Welche Merkmale zeigt eine Karte?",
+					"Welche Reiseformen passen dazu?",
+					"Ich begründe alle drei Beispiele."
+				]
+			},
+			"2": {
+				"prompt": "Ein Bergort möchte auch im Sommer mehr Gäste gewinnen. Welche Karte und welche Ortsmerkmale würdest du dafür untersuchen?",
+				"hints": [
+					"Welche Karte zeigt das Gelände?",
+					"Was hilft Gästen vor Ort?"
+				],
+				"model": "Eine Relief- und Wanderkarte zeigt Höhenunterschiede, Wege und Haltestellen. Ich suche erreichbare Wege, empfindliche Schutzflächen und Angebote im Ort. Danach kann ich beurteilen, wo zusätzliche Gäste verträglich sein könnten.",
+				"criteria": [
+					"Welche Karte zeigt das Gelände?",
+					"Was hilft Gästen vor Ort?",
+					"Ich berücksichtige ein Schutzgebiet oder einen anderen empfindlichen Raum."
+				]
+			}
+		},
+		"model": "tourismus"
+	},
+	{
+		"id": "tourismus-folgen",
+		"lb": 6,
+		"title": "Sommer am Meer, Winter in den Alpen",
+		"period": "Geo6 LB 6 · Tourismus",
+		"intro": "Tourismus schafft Arbeit und verändert den Raum. Wer von den Veränderungen profitiert und wer sie trägt, hängt vom Ort und der Jahreszeit ab.",
+		"paragraphs": [
+			"Im Alpenraum können Skilifte und Gastbetriebe Einkommen bringen. Pisten und Parkplätze beanspruchen Flächen. Beschneiung benötigt Wasser, Energie und Bedingungen, unter denen Wasser gefrieren kann. Eine Wintersaison mit unzuverlässigem Schnee macht Investitionen riskanter. Wandern oder Kulturangebote können andere Jahreszeiten stärken, brauchen aber Rücksicht auf Natur und Anwohnende.",
+			"An der spanischen Mittelmeerküste schaffen Gäste Nachfrage nach Unterkünften, Essen und Transport. Viele Gäste in trockenen Sommermonaten erhöhen den Bedarf an Wasser, Verkehr und Entsorgung. Ferienwohnungen können mit dauerhaftem Wohnen um Fläche konkurrieren. Besucherlenkung, öffentlicher Verkehr und Sparmaßnahmen können Belastungen senken. Prüfe, ob die Maßnahme im jeweiligen Raum tatsächlich wirkt."
+		],
+		"takeaway": "Betrachte Einkommen, Natur und Alltag getrennt, bevor du ein Gesamturteil formulierst.",
+		"sourceIds": [
+			"lehrplan"
+		],
+		"quiz": {
+			"question": "Welche Folge betrifft besonders die ökologische Sicht?",
+			"answer": "Zusätzlicher Wasserverbrauch durch Beschneiung.",
+			"wrong": [
+				"Einnahmen für einen Hotelbetrieb.",
+				"Ein Arbeitsplatz für eine Saison."
+			],
+			"explanation": "Wasserverbrauch verändert die Beanspruchung natürlicher Ressourcen."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Reiseräume beurteilen",
+			"instruction": "Ordne jede Aussage zu. Prüfe deine Entscheidung und lies die Rückmeldung.",
+			"categories": [
+				"Ökonomisch",
+				"Ökologisch",
+				"Sozial"
+			],
+			"entries": [
+				{
+					"text": "Einnahmen einer Bergbahn.",
+					"target": 0,
+					"feedback": "Das betrifft die wirtschaftliche Seite."
+				},
+				{
+					"text": "Wasserbedarf einer Hotelanlage im trockenen Sommer.",
+					"target": 1,
+					"feedback": "Wasser ist vor Ort eine begrenzte Ressource."
+				},
+				{
+					"text": "Anwohnende finden schwerer ganzjährig Wohnraum.",
+					"target": 2,
+					"feedback": "Das betrifft Alltag und Teilhabe."
+				}
+			],
+			"conclusion": "Betrachte Einkommen, Natur und Alltag getrennt, bevor du ein Gesamturteil formulierst."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Vergleiche je eine Chance und eine Belastung im alpinen Wintersport und im mediterranen Sommertourismus.",
+				"hints": [
+					"Was gewinnen Betriebe oder Beschäftigte?",
+					"Welche Ressource wird beansprucht?"
+				],
+				"model": "In beiden Regionen finden Menschen Arbeit durch Gäste. In einem Skigebiet braucht Beschneiung Wasser und Energie. An der Mittelmeerküste kann hohe Nachfrage in trockenen Monaten den Wassermangel verschärfen. Im Wintergebiet spielt verlässlicher Schnee eine besondere Rolle.",
+				"criteria": [
+					"Was gewinnen Betriebe oder Beschäftigte?",
+					"Welche Ressource wird beansprucht?",
+					"Ich vergleiche zwei unterschiedliche Jahreszeiten."
+				]
+			},
+			"2": {
+				"prompt": "Ein Bergdorf plant mehr Schneekanonen; ein Küstenort plant mehr Hotelbetten. Empfiehl jeweils eine Alternative und nenne einen Maßstab für ihren Erfolg.",
+				"hints": [
+					"Welche Belastung willst du senken?",
+					"Welche Alternative passt zum Raum?"
+				],
+				"model": "Das Bergdorf könnte naturschonende Sommerangebote und Anreise per Bus fördern und den Wasserbedarf sowie ganzjährige Arbeit beobachten. Der Küstenort könnte bestehende Hotels wassersparend betreiben und Verkehrsangebote verbessern. Er prüft Wasser pro Übernachtung und den Gesamtverbrauch während der Hauptsaison.",
+				"criteria": [
+					"Welche Belastung willst du senken?",
+					"Welche Alternative passt zum Raum?",
+					"Ich nenne je einen messbaren Maßstab."
+				]
+			}
+		},
+		"model": "tourismus"
+	},
+	{
+		"id": "reiseplanung",
+		"lb": 6,
+		"title": "Eine Reise planen und abwägen",
+		"period": "Geo6 LB 6 · Tourismus",
+		"intro": "Vergleiche zwei Wege zum selben Ziel und erkläre, welcher zu deiner Gruppe passt.",
+		"paragraphs": [
+			"Lege Ziel, Termin, Kostenrahmen und Bedürfnisse fest, etwa Barrierefreiheit oder kurze Umstiege. Nutze Karte und Luftbild, um Start, Ziel und Wege zu prüfen. In einem virtuellen Globus kannst du Strecken messen, die Lage aus mehreren Blickwinkeln ansehen und gegebenenfalls Realansichten prüfen. Die Luftlinie eignet sich zur Orientierung; die zurückgelegte Strecke folgt den Verkehrswegen.",
+			"Für eine Fahrt von München nach Innsbruck kannst du Bahn und Auto vergleichen. Betrachte Tür-zu-Tür-Zeit, Kosten, Umstiege, Auslastung und Umweltwirkung. In vielen Fällen ist eine gut ausgelastete Bahn pro Person emissionsärmer als ein wenig besetztes Auto; bei konkreten Angaben kommt es auf Fahrzeug, Strom und Route an. Halte fest, aus welcher Karte, welchem Luftbild oder Fahrplan deine Angaben stammen."
+		],
+		"takeaway": "Entscheide für konkrete Bedürfnisse und belege die dafür wichtigen Kriterien.",
+		"sourceIds": [
+			"lehrplan",
+			"atlas"
+		],
+		"quiz": {
+			"question": "Welche Messung entspricht eher der Fahrstrecke?",
+			"answer": "Die Länge entlang des tatsächlichen Verkehrswegs.",
+			"wrong": [
+				"Die direkte Luftlinie zwischen Start und Ziel.",
+				"Nur die Länge des Kartenrahmens."
+			],
+			"explanation": "Kurven, Täler und die Lage von Straßen oder Schienen verlängern den Weg."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Reiseräume beurteilen",
+			"instruction": "Ordne jede Aussage zu. Prüfe deine Entscheidung und lies die Rückmeldung.",
+			"categories": [
+				"Karte und Luftbild",
+				"Fahrplan und Tarife",
+				"Abwägung"
+			],
+			"entries": [
+				{
+					"text": "Den Weg vom Bahnhof zur Unterkunft und die Lage von Straßen prüfen.",
+					"target": 0,
+					"feedback": "Karte und Bild liefern unterschiedliche räumliche Hinweise."
+				},
+				{
+					"text": "Umsteigezeit und Gruppenpreis nachschlagen.",
+					"target": 1,
+					"feedback": "Diese Angaben helfen bei der Wahl einer Verbindung."
+				},
+				{
+					"text": "Einen etwas längeren Weg mit weniger Emissionen begründet wählen.",
+					"target": 2,
+					"feedback": "Du entscheidest nach mehreren Kriterien."
+				}
+			],
+			"conclusion": "Entscheide für konkrete Bedürfnisse und belege die dafür wichtigen Kriterien."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Plane eine Reise von München nach Innsbruck. Welche drei Angaben würdest du in unterschiedlichen Quellen prüfen?",
+				"hints": [
+					"Wo sind Start, Ziel und Anschluss?",
+					"Welche Quellen ergänzen sich?"
+				],
+				"model": "Ich prüfe die Bahnverbindung im Fahrplan, die Strecke vom Bahnhof zum Ziel in einer Karte und den Eingang zum Ziel mit einem Luftbild oder einer Realansicht. Ich notiere den Termin und vergleiche die Tür-zu-Tür-Zeit mit einer Autooption.",
+				"criteria": [
+					"Wo sind Start, Ziel und Anschluss?",
+					"Welche Quellen ergänzen sich?",
+					"Ich nenne drei konkrete Angaben."
+				]
+			},
+			"2": {
+				"prompt": "Deine Klasse braucht eine stufenarme Anreise. Bahn und Reisebus stehen zur Wahl. Begründe, welche Informationen für die Entscheidung fehlen.",
+				"hints": [
+					"Welche Angaben zur Barrierefreiheit brauchst du?",
+					"Welche Wege rechnest du zusammen?"
+				],
+				"model": "Ich prüfe Aufzüge, Bahnsteigwechsel, Fußweg, Einstiegshilfe und barrierefreien Buszugang. Danach vergleiche ich Gesamtzeit, Gruppenpreis und voraussichtliche Umweltwirkung pro Person. Ich entscheide erst, wenn alle die gewählte Verbindung nutzen können.",
+				"criteria": [
+					"Welche Angaben zur Barrierefreiheit brauchst du?",
+					"Welche Wege rechnest du zusammen?",
+					"Ich nenne ein ökologisches Kriterium."
+				]
+			}
+		},
+		"model": "tourismus"
+	}
+]

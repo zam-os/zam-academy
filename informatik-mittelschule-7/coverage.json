@@ -1,0 +1,568 @@
+{
+  "curriculum": {
+    "R": "https://www.lehrplanplus.bayern.de/fachlehrplan/mittelschule/7/informatik/regelklasse",
+    "M": "https://www.lehrplanplus.bayern.de/fachlehrplan/mittelschule/7/informatik/mittlere-reife-klasse"
+  },
+  "checked": "2026-11-26",
+  "curriculum_sha256": {
+    "R": "f6e3c7d0eced2e55b13bb76bac5a111f2409e024387b34dbc23f409b8b24c5c1",
+    "M": "dde4e6a32aba504e4a778551fd31a98bae5bfafcfd6388d8df2fa9967086e775"
+  },
+  "school_type": "mittelschule",
+  "grade": 7,
+  "subject": "informatik",
+  "hours": {
+    "R": {
+      "1": null,
+      "2": null,
+      "3": null
+    },
+    "M": {
+      "1": null,
+      "2": null,
+      "3": null
+    }
+  },
+  "note": "Neither published Fachlehrplan specifies hours for these Lernbereiche.",
+  "optional_lessons": [],
+  "rows": [
+    {
+      "track": "R",
+      "lb": "1",
+      "position": 1,
+      "competence": "beschreiben technische Grundlagen, Funktion und Bedeutung moderner Kommunikationsplattformen und ‑dienste, um sie auch im Alltag sicher und rechtskonform einzusetzen.",
+      "lessons": [
+        "ms7-nachrichtenwege",
+        "ms7-phishing-quellen",
+        "ms7-bildrechte"
+      ],
+      "status": "supported",
+      "evidence": "The route model traces delivery and the case labs rehearse protecting credentials and sharing with permission. Real platform use takes place with the teacher."
+    },
+    {
+      "track": "R",
+      "lb": "1",
+      "position": 2,
+      "competence": "schätzen die Chancen, Probleme und Risiken ein, die für sie persönlich mit der Nutzung von Kommunikationsplattformen und ‑diensten verbunden sind.",
+      "lessons": [
+        "ms7-phishing-quellen",
+        "ms7-medienwirkung"
+      ],
+      "status": "implemented",
+      "evidence": "The message inspector and platform cases compare time and place flexibility, suspicious requests, source trust, manipulated screenshots, data collection, and permissions."
+    },
+    {
+      "track": "R",
+      "lb": "1",
+      "position": 3,
+      "competence": "bewerten angeleitet Entwicklungen in der digitalisierten Welt unter ethischen Aspekten, um sich der jeweiligen Wirkung bewusst zu werden.",
+      "lessons": [
+        "ms7-medienwirkung"
+      ],
+      "status": "implemented",
+      "evidence": "Students choose and justify policies for availability, inclusion, location access, and selective self-presentation. Transfer cases ask them to consider multiple perspectives."
+    },
+    {
+      "track": "R",
+      "lb": "2",
+      "position": 1,
+      "competence": "erstellen (z. B. Fotografie, Scan) und speichern digitale Bilder unter Berücksichtigung von Qualität und Einsatzmöglichkeiten.",
+      "lessons": [
+        "ms7-pixel-formate",
+        "ms7-raster-bearbeiten"
+      ],
+      "status": "supported",
+      "evidence": "The pixel mosaic compares model captures and formats. The offline editor opens, crops, retouches, masks and stores a real local photo or scan. Students capture their own source with school hardware."
+    },
+    {
+      "track": "R",
+      "lb": "2",
+      "position": 2,
+      "competence": "nutzen angeleitet typische Methoden der Bildbearbeitung, um Rastergrafiken zu erzeugen und zu verändern.",
+      "lessons": [
+        "ms7-raster-bearbeiten"
+      ],
+      "status": "implemented",
+      "evidence": "Before-and-after diagrams distinguish crop, background removal and retouching. In the local canvas editor students crop, retouch or remove a background colour from a sample or their own image and save a copy."
+    },
+    {
+      "track": "R",
+      "lb": "2",
+      "position": 3,
+      "competence": "unterscheiden Raster- und Vektorgrafiken aufgrund ihrer Eigenschaften und Anwendungsmöglichkeiten, um sie anwendungsspezifisch sinnvoll einzusetzen.",
+      "lessons": [
+        "ms7-pixel-formate",
+        "ms7-raster-vektor"
+      ],
+      "status": "implemented",
+      "evidence": "A synchronous zoom comparison distinguishes a pixel grid from geometric shapes. Students choose suitable representations for real design cases."
+    },
+    {
+      "track": "R",
+      "lb": "2",
+      "position": 4,
+      "competence": "untersuchen Eigenschaften einfacher Vektorgrafiken mithilfe der objektorientierten Sichtweise (z. B. Linien, Rechtecke), um den Aufbau von Objekten zu beschreiben.",
+      "lessons": [
+        "ms7-raster-vektor",
+        "ms7-vektor-objekte"
+      ],
+      "status": "implemented",
+      "evidence": "The shape studio exposes rectangle, circle and line attributes, including an editable line endpoint. Cases distinguish the object, attribute and its current value."
+    },
+    {
+      "track": "R",
+      "lb": "2",
+      "position": 5,
+      "competence": "bearbeiten und verändern Vektorgrafiken in einem einfachen Vektorgrafikprogramm unter Anleitung. Dabei beschreiben sie die Veränderungen der Objekte anhand von Attributen und Attributwerten.",
+      "lessons": [
+        "ms7-vektor-objekte"
+      ],
+      "status": "implemented",
+      "evidence": "Students change width, colour and endpoint values, observe the changes and can save the resulting SVG. The transfer tasks ask which attributes and objects change."
+    },
+    {
+      "track": "R",
+      "lb": "2",
+      "position": 6,
+      "competence": "achten beim Einsatz von Grafikerzeugnissen auf rechtliche Aspekte.",
+      "lessons": [
+        "ms7-bildrechte",
+        "ms7-raster-bearbeiten"
+      ],
+      "status": "implemented",
+      "evidence": "The mock school blog uses fictional images to train permission checks. Transfer cases ask separately about editing and publishing a work and depicting recognisable people."
+    },
+    {
+      "track": "R",
+      "lb": "3",
+      "position": 1,
+      "competence": "erstellen angeleitet in einer geeigneten Entwicklungsumgebung Objekte und verändern diese mit einfachen algorithmischen Grundbausteinen, um die objektorientierte Arbeitsweise anzuwenden.",
+      "lessons": [
+        "ms7-objekte-methoden",
+        "ms7-bedingung-alternative",
+        "ms7-wiederholung-schachtelung"
+      ],
+      "status": "implemented",
+      "evidence": "The local block workspace creates a rover, chooses method sequences and configures branches and repeated collection. The trace shows the resulting attributes."
+    },
+    {
+      "track": "R",
+      "lb": "3",
+      "position": 2,
+      "competence": "verwenden weitgehend selbständig in einfachen Entwicklungsumgebungen algorithmische Strukturen und Variablen, um Abläufe zu modellieren und implementieren. Dabei testen sie weitgehend selbständig ihre implementierten einfachen Programme, um sie zu optimieren.",
+      "lessons": [
+        "ms7-bedingung-alternative",
+        "ms7-wiederholung-schachtelung",
+        "ms7-variablen-grenztest"
+      ],
+      "status": "supported",
+      "evidence": "Students configure branch, loop and variable blocks, follow a structogram, compare test outputs and repair a boundary bug. A fully independent program from a blank editor is a classroom extension."
+    },
+    {
+      "track": "M",
+      "lb": "1",
+      "position": 1,
+      "competence": "erklären technische Grundlagen, Funktion und Bedeutung moderner Kommunikationsplattformen und ‑dienste, um sie auch im Alltag sicher und rechtskonform einzusetzen.",
+      "lessons": [
+        "ms7-nachrichtenwege",
+        "ms7-phishing-quellen",
+        "ms7-bildrechte"
+      ],
+      "status": "supported",
+      "evidence": "The route model traces delivery and the case labs rehearse protecting credentials and sharing with permission. Real platform use takes place with the teacher."
+    },
+    {
+      "track": "M",
+      "lb": "1",
+      "position": 2,
+      "competence": "schätzen die Chancen, Probleme und Risiken ein, die allgemein mit der Nutzung von Kommunikationsplattformen und ‑diensten verbunden sind.",
+      "lessons": [
+        "ms7-phishing-quellen",
+        "ms7-medienwirkung"
+      ],
+      "status": "implemented",
+      "evidence": "The message inspector and platform cases compare time and place flexibility, suspicious requests, source trust, manipulated screenshots, data collection, and permissions."
+    },
+    {
+      "track": "M",
+      "lb": "1",
+      "position": 3,
+      "competence": "bewerten Entwicklungen in der digitalisierten Welt unter ethischen Aspekten, um sich der jeweiligen Wirkung bewusst zu werden.",
+      "lessons": [
+        "ms7-medienwirkung"
+      ],
+      "status": "implemented",
+      "evidence": "Students choose and justify policies for availability, inclusion, location access, and selective self-presentation. Transfer cases ask them to consider multiple perspectives."
+    },
+    {
+      "track": "M",
+      "lb": "2",
+      "position": 1,
+      "competence": "erstellen (z. B. Fotografie, Scan) und speichern digitale Bilder unter Berücksichtigung von Qualität und Einsatzmöglichkeiten.",
+      "lessons": [
+        "ms7-pixel-formate",
+        "ms7-raster-bearbeiten"
+      ],
+      "status": "supported",
+      "evidence": "The pixel mosaic compares model captures and formats. The offline editor opens, crops, retouches, masks and stores a real local photo or scan. Students capture their own source with school hardware."
+    },
+    {
+      "track": "M",
+      "lb": "2",
+      "position": 2,
+      "competence": "nutzen weitgehend selbständig Methoden der Bildbearbeitung, um Rastergrafiken zu erzeugen und zu verändern.",
+      "lessons": [
+        "ms7-raster-bearbeiten"
+      ],
+      "status": "implemented",
+      "evidence": "Before-and-after diagrams distinguish crop, background removal and retouching. In the local canvas editor students crop, retouch or remove a background colour from a sample or their own image and save a copy."
+    },
+    {
+      "track": "M",
+      "lb": "2",
+      "position": 3,
+      "competence": "unterscheiden Raster- und Vektorgrafiken aufgrund ihrer Eigenschaften und Anwendungsmöglichkeiten, um sie anwendungsspezifisch sinnvoll einzusetzen.",
+      "lessons": [
+        "ms7-pixel-formate",
+        "ms7-raster-vektor"
+      ],
+      "status": "implemented",
+      "evidence": "A synchronous zoom comparison distinguishes a pixel grid from geometric shapes. Students choose suitable representations for real design cases."
+    },
+    {
+      "track": "M",
+      "lb": "2",
+      "position": 4,
+      "competence": "untersuchen Eigenschaften einfacher Vektorgrafiken mithilfe der objektorientierten Sichtweise (z. B. Linien, Rechtecke), um den Aufbau von Objekten zu beschreiben.",
+      "lessons": [
+        "ms7-raster-vektor",
+        "ms7-vektor-objekte"
+      ],
+      "status": "implemented",
+      "evidence": "The shape studio exposes rectangle, circle and line attributes, including an editable line endpoint. Cases distinguish the object, attribute and its current value."
+    },
+    {
+      "track": "M",
+      "lb": "2",
+      "position": 5,
+      "competence": "bearbeiten und verändern Vektorgrafiken in einem einfachen Vektorgrafikprogramm weitgehend selbständig. Dabei beschreiben sie die Veränderungen der Objekte anhand von Attributen und Attributwerten.",
+      "lessons": [
+        "ms7-vektor-objekte"
+      ],
+      "status": "implemented",
+      "evidence": "Students change width, colour and endpoint values, observe the changes and can save the resulting SVG. The transfer tasks ask which attributes and objects change."
+    },
+    {
+      "track": "M",
+      "lb": "2",
+      "position": 6,
+      "competence": "achten beim Einsatz von Grafikerzeugnissen auf rechtliche Aspekte.",
+      "lessons": [
+        "ms7-bildrechte",
+        "ms7-raster-bearbeiten"
+      ],
+      "status": "implemented",
+      "evidence": "The mock school blog uses fictional images to train permission checks. Transfer cases ask separately about editing and publishing a work and depicting recognisable people."
+    },
+    {
+      "track": "M",
+      "lb": "3",
+      "position": 1,
+      "competence": "erstellen weitgehend selbständig in einer geeigneten Entwicklungsumgebung Objekte und verändern diese mit einfachen algorithmischen Grundbausteinen, um die objektorientierte Arbeitsweise anzuwenden.",
+      "lessons": [
+        "ms7-objekte-methoden",
+        "ms7-bedingung-alternative",
+        "ms7-wiederholung-schachtelung"
+      ],
+      "status": "supported",
+      "evidence": "The prepared rover workshop lets students run the creation block, choose method sequences and configure branches and loops. Largely independent object creation in a project they set up themselves remains a classroom extension."
+    },
+    {
+      "track": "M",
+      "lb": "3",
+      "position": 2,
+      "competence": "verwenden selbständig in einfachen Entwicklungsumgebungen algorithmische Strukturen und Variablen, um Abläufe zu modellieren und implementieren. Dabei testen sie weitgehend selbständig ihre implementierten einfachen Programme, um sie zu optimieren.",
+      "lessons": [
+        "ms7-bedingung-alternative",
+        "ms7-wiederholung-schachtelung",
+        "ms7-variablen-grenztest"
+      ],
+      "status": "supported",
+      "evidence": "Students configure branch, loop and variable blocks, follow a structogram, compare test outputs and repair a boundary bug. A fully independent program from a blank editor is a classroom extension."
+    }
+  ],
+  "contents": [
+    {
+      "track": "R",
+      "lb": "1",
+      "position": 1,
+      "content": "elektronische Kommunikationsplattformen und ‑dienste (z. B. E‑Mail, Foren, Blogs, soziale Netzwerke, Instant Messengersysteme, kollaborative Webanwendungen)",
+      "lessons": [
+        "ms7-nachrichtenwege"
+      ]
+    },
+    {
+      "track": "R",
+      "lb": "1",
+      "position": 2,
+      "content": "Persönlichkeitsrechte und Urheberrechtsbestimmungen",
+      "lessons": [
+        "ms7-bildrechte"
+      ]
+    },
+    {
+      "track": "R",
+      "lb": "1",
+      "position": 3,
+      "content": "Chancen (z. B. Unabhängigkeit von Ort und Zeit, Peergroups)",
+      "lessons": [
+        "ms7-nachrichtenwege",
+        "ms7-medienwirkung"
+      ]
+    },
+    {
+      "track": "R",
+      "lb": "1",
+      "position": 4,
+      "content": "Probleme und Risiken (z. B. Missbrauch – Spam, Ausspähen und Datensammlung, Vorsicht bei unbekannten Nachrichten – Phishing, Vertrauenswürdigkeit der Information sowie ihrer Quelle)",
+      "lessons": [
+        "ms7-phishing-quellen",
+        "ms7-medienwirkung"
+      ]
+    },
+    {
+      "track": "R",
+      "lb": "1",
+      "position": 5,
+      "content": "Medienwirkung (z. B. Einfluss auf die Strukturierung des Alltags, Darstellung und Entwicklung der Identität)",
+      "lessons": [
+        "ms7-medienwirkung"
+      ]
+    },
+    {
+      "track": "R",
+      "lb": "2",
+      "position": 1,
+      "content": "Modell für den Aufbau einer Rastergrafik (z. B. Steckmosaik)",
+      "lessons": [
+        "ms7-pixel-formate"
+      ]
+    },
+    {
+      "track": "R",
+      "lb": "2",
+      "position": 2,
+      "content": "Aspekte für Qualität und Einsatzmöglichkeiten: Dateigröße, Auflösung, Dateiformate zur Speicherung von Bilddaten (z. B. JPG, GIF, PNG)",
+      "lessons": [
+        "ms7-pixel-formate",
+        "ms7-raster-bearbeiten"
+      ]
+    },
+    {
+      "track": "R",
+      "lb": "2",
+      "position": 3,
+      "content": "grundlegende Methoden bei der Bearbeitung von Bildern (z. B. freistellen, retuschieren)",
+      "lessons": [
+        "ms7-raster-bearbeiten"
+      ]
+    },
+    {
+      "track": "R",
+      "lb": "2",
+      "position": 4,
+      "content": "Merkmale und Anwendungsgebiete von Raster- und Vektorgrafiken",
+      "lessons": [
+        "ms7-raster-vektor"
+      ]
+    },
+    {
+      "track": "R",
+      "lb": "2",
+      "position": 5,
+      "content": "Bestandteile, Eigenschaften sowie Einsatzgebiete von Vektorgrafikobjekten (z. B. Computerschriften, Logodesign, Vektorkarten)",
+      "lessons": [
+        "ms7-raster-vektor",
+        "ms7-vektor-objekte"
+      ]
+    },
+    {
+      "track": "R",
+      "lb": "2",
+      "position": 6,
+      "content": "Persönlichkeitsrechte und Urheberrechtsbestimmungen",
+      "lessons": [
+        "ms7-bildrechte",
+        "ms7-raster-bearbeiten"
+      ]
+    },
+    {
+      "track": "R",
+      "lb": "3",
+      "position": 1,
+      "content": "algorithmische Strukturen (z. B. Methoden, Anweisung, Sequenz, Bedingung, Alternative, Wiederholung sowie deren Schachtelung)",
+      "lessons": [
+        "ms7-objekte-methoden",
+        "ms7-bedingung-alternative",
+        "ms7-wiederholung-schachtelung"
+      ]
+    },
+    {
+      "track": "R",
+      "lb": "3",
+      "position": 2,
+      "content": "Notationsformen (z. B. Struktogramm)",
+      "lessons": [
+        "ms7-objekte-methoden",
+        "ms7-bedingung-alternative",
+        "ms7-wiederholung-schachtelung",
+        "ms7-variablen-grenztest"
+      ]
+    },
+    {
+      "track": "R",
+      "lb": "3",
+      "position": 3,
+      "content": "Variablenkonzept (z. B. Bezeichner, Datentypen)",
+      "lessons": [
+        "ms7-variablen-grenztest"
+      ]
+    },
+    {
+      "track": "M",
+      "lb": "1",
+      "position": 1,
+      "content": "elektronische Kommunikationsplattformen und ‑dienste (z. B. E‑Mail, Foren, Blogs, soziale Netzwerke, Instant Messengersysteme, kollaborative Webanwendungen)",
+      "lessons": [
+        "ms7-nachrichtenwege"
+      ]
+    },
+    {
+      "track": "M",
+      "lb": "1",
+      "position": 2,
+      "content": "Persönlichkeitsrechte und Urheberrechtsbestimmungen",
+      "lessons": [
+        "ms7-bildrechte"
+      ]
+    },
+    {
+      "track": "M",
+      "lb": "1",
+      "position": 3,
+      "content": "Chancen (z. B. Unabhängigkeit von Ort und Zeit, Peergroups)",
+      "lessons": [
+        "ms7-nachrichtenwege",
+        "ms7-medienwirkung"
+      ]
+    },
+    {
+      "track": "M",
+      "lb": "1",
+      "position": 4,
+      "content": "Probleme und Risiken (z. B. Missbrauch – Spam, Ausspähen und Datensammlung, Vorsicht bei unbekannten Nachrichten – Phishing, Vertrauenswürdigkeit der Information sowie ihrer Quelle, Datenmanipulation)",
+      "lessons": [
+        "ms7-phishing-quellen",
+        "ms7-medienwirkung"
+      ]
+    },
+    {
+      "track": "M",
+      "lb": "1",
+      "position": 5,
+      "content": "Medienwirkung (z. B. Einfluss auf die Strukturierung des Alltags, Darstellung und Entwicklung der Identität)",
+      "lessons": [
+        "ms7-medienwirkung"
+      ]
+    },
+    {
+      "track": "M",
+      "lb": "2",
+      "position": 1,
+      "content": "Modell für den Aufbau einer Rastergrafik (z. B. Steckmosaik)",
+      "lessons": [
+        "ms7-pixel-formate"
+      ]
+    },
+    {
+      "track": "M",
+      "lb": "2",
+      "position": 2,
+      "content": "Aspekte für Qualität und Einsatzmöglichkeiten: Dateigröße, Auflösung, Dateiformate zur Speicherung von Bilddaten (z. B. JPG, GIF, PNG)",
+      "lessons": [
+        "ms7-pixel-formate",
+        "ms7-raster-bearbeiten"
+      ]
+    },
+    {
+      "track": "M",
+      "lb": "2",
+      "position": 3,
+      "content": "grundlegende Methoden bei der Bearbeitung von Bildern (z. B. freistellen, retuschieren)",
+      "lessons": [
+        "ms7-raster-bearbeiten"
+      ]
+    },
+    {
+      "track": "M",
+      "lb": "2",
+      "position": 4,
+      "content": "Merkmale und Anwendungsgebiete von Raster- und Vektorgrafiken",
+      "lessons": [
+        "ms7-raster-vektor"
+      ]
+    },
+    {
+      "track": "M",
+      "lb": "2",
+      "position": 5,
+      "content": "Bestandteile, Eigenschaften sowie Einsatzgebiete von Vektorgrafikobjekten (z. B. Computerschriften, Logodesign, Vektorkarten)",
+      "lessons": [
+        "ms7-raster-vektor",
+        "ms7-vektor-objekte"
+      ]
+    },
+    {
+      "track": "M",
+      "lb": "2",
+      "position": 6,
+      "content": "Persönlichkeitsrechte und Urheberrechtsbestimmungen",
+      "lessons": [
+        "ms7-bildrechte",
+        "ms7-raster-bearbeiten"
+      ]
+    },
+    {
+      "track": "M",
+      "lb": "3",
+      "position": 1,
+      "content": "algorithmische Strukturen (z. B. Methoden, Anweisung, Sequenz, Bedingung, Alternative, Wiederholung sowie deren Schachtelung)",
+      "lessons": [
+        "ms7-objekte-methoden",
+        "ms7-bedingung-alternative",
+        "ms7-wiederholung-schachtelung"
+      ]
+    },
+    {
+      "track": "M",
+      "lb": "3",
+      "position": 2,
+      "content": "Notationsformen (z. B. Struktogramm)",
+      "lessons": [
+        "ms7-objekte-methoden",
+        "ms7-bedingung-alternative",
+        "ms7-wiederholung-schachtelung",
+        "ms7-variablen-grenztest"
+      ]
+    },
+    {
+      "track": "M",
+      "lb": "3",
+      "position": 3,
+      "content": "Variablenkonzept (z. B. Bezeichner, Datentypen)",
+      "lessons": [
+        "ms7-variablen-grenztest"
+      ]
+    }
+  ]
+}

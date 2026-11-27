@@ -1,0 +1,631 @@
+{
+	"curriculum": [
+		"https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/7/franzoesisch/1-fremdsprache"
+	],
+	"checked": "2026-11-23",
+	"curricula": [
+		{
+			"track": "F1",
+			"url": "https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/7/franzoesisch/1-fremdsprache",
+			"file": "tests/fixtures/lehrplanplus-f7-1.html",
+			"curriculum_sha256": "9689507d6375a3a02ac657a57733006bfeae0f6f56f7170b1e60b4b7e9871b13"
+		}
+	],
+	"neighbours": [
+		{
+			"track": "F1",
+			"url": "https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/6/franzoesisch/1-fremdsprache",
+			"file": "tests/fixtures/lehrplanplus-f6-1.html",
+			"grade": 6,
+			"sha256": "98e04b1ca73816311a5a118662a0b6d74bda9c9bdd90e5315f9950edfa634bf9"
+		},
+		{
+			"track": "F1",
+			"url": "https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/8/franzoesisch/1fs",
+			"file": "tests/fixtures/lehrplanplus-f8-1.html",
+			"grade": 8,
+			"sha256": "916bbab75874765cdac6f09a276ff58e2d2c8bcf1d95b04c2f856f0daf70b143"
+		}
+	],
+	"rows": [
+		{
+			"id": "F1-01",
+			"track": "F1",
+			"lb": "F7 1.1 · Hör- und Hörsehverstehen",
+			"competence": "verstehen etwas längere, einfache, teilweise in natürlichem Tempo, aber deutlich gesprochene und realistische Bedingungen (z. B. leichte Hintergrundgeräusche) widerspiegelnde Hör- und Hörsehtexte zu vertrauten bzw. im Unterricht behandelten Themen mit weitgehend bekanntem bzw. erschließbarem Wortschatz global und entnehmen gezielt Detailinformationen, z. B. Gespräche, Telefonate, kurze Film(ausschnitt)e, ggf. mit frz. Untertiteln.",
+			"lessons": [
+				"f7-1-appel",
+				"f7-1-chanson"
+			],
+			"status": "supported",
+			"evidence": "Longer supplied messages and separate gist/detail prompts support listening; native speakers, ambient sound and film remain classroom work."
+		},
+		{
+			"id": "F1-02",
+			"track": "F1",
+			"lb": "F7 1.1 · Leseverstehen",
+			"competence": "verstehen einfache, ggf. didaktisierte Texte (z. B. Startseiten von Webauftritten, planches de BD) und auch etwas längere Texte mit weitgehend bekanntem bzw. erschließbarem Sprachmaterial zu vertrauten Themen (z. B. Alltag Jugendlicher, Freizeitverhalten) global und in einigen Details.",
+			"lessons": [
+				"f7-1-concert",
+				"f7-1-affiche",
+				"f7-1-histoire"
+			],
+			"status": "implemented",
+			"evidence": "A sample event notice and comic require the main idea and specific details."
+		},
+		{
+			"id": "F1-03",
+			"track": "F1",
+			"lb": "F7 1.1 · Sprechen",
+			"competence": "beschreiben in kurzen Sätzen Gegenstände, Orte, Personen und Vorgänge des Alltags und äußern sich zu Vergangenem sowie zu Vorlieben und Abneigungen.",
+			"lessons": [
+				"f7-1-medecin",
+				"f7-1-photo",
+				"f7-1-journal",
+				"f7-1-echange"
+			],
+			"status": "supported",
+			"evidence": "Prompts model descriptions, preferences and a personal account; speaking fluency needs a partner or teacher."
+		},
+		{
+			"id": "F1-04",
+			"track": "F1",
+			"lb": "F7 1.1 · Sprechen",
+			"competence": "äußern sich in sehr kurzen, einfachen Vorträgen zu alltäglichen Ereignissen und vertrauten Themen mithilfe von Notizen und ggf. unter Verwendung von digitalen Präsentationsformen.",
+			"lessons": [
+				"f7-1-photo",
+				"f7-1-journal"
+			],
+			"status": "supported",
+			"evidence": "Structured notes and a speaking prompt support a short talk; presentation and oral feedback take place outside the app."
+		},
+		{
+			"id": "F1-05",
+			"track": "F1",
+			"lb": "F7 1.1 · Sprechen",
+			"competence": "stellen einfache Fragen und geben in mehreren zusammenhängenden Sätzen Antworten zur eigenen Person und zu ihrem unmittelbaren Lebensumfeld.",
+			"lessons": [
+				"f7-1-echange",
+				"f7-1-deux-questions"
+			],
+			"status": "supported",
+			"evidence": "Learners build linked questions and answers; spontaneous interaction requires a partner."
+		},
+		{
+			"id": "F1-06",
+			"track": "F1",
+			"lb": "F7 1.1 · Schreiben",
+			"competence": "nutzen ihre Kenntnisse der Phonem-Graphem-Beziehungen, um Wörter, die im Unterricht besprochen und eingeübt wurden, korrekt zu schreiben.",
+			"lessons": [
+				"f7-1-sons",
+				"f7-1-revision"
+			],
+			"status": "implemented",
+			"evidence": "Compare French spellings with sounds and type accents in the short-answer checks."
+		},
+		{
+			"id": "F1-07",
+			"track": "F1",
+			"lb": "F7 1.1 · Schreiben",
+			"competence": "verfassen etwas längere Texte zu altersgemäßen und vertrauten Themen (z. B. Tagebucheinträge, einfache persönliche Briefe, Chatbeiträge) und erzählen mithilfe von Vorgaben einfache, logisch strukturierte Geschichten.",
+			"lessons": [
+				"f7-1-journal",
+				"f7-1-histoire"
+			],
+			"status": "implemented",
+			"evidence": "Write a dated diary entry and develop a comic story using a sequence of events."
+		},
+		{
+			"id": "F1-08",
+			"track": "F1",
+			"lb": "F7 1.1 · Schreiben",
+			"competence": "achten bei der Erstellung von Texten auf grundlegende, der jeweiligen Textart und Kommunikationssituation angemessene Gestaltungskriterien.",
+			"lessons": [
+				"f7-1-journal",
+				"f7-1-echange",
+				"f7-1-registre"
+			],
+			"status": "implemented",
+			"evidence": "Compare the conventions of a diary, a message to a friend and a request to an adult."
+		},
+		{
+			"id": "F1-09",
+			"track": "F1",
+			"lb": "F7 1.1 · Sprachmittlung",
+			"competence": "dolmetschen in einfachen Routinesituationen ihrer persönlichen Erfahrungswelt (z. B. Erfahrungen im Freundeskreis, Pläne und Vorhaben) zu Themen, die im Unterricht genau behandelt wurden.",
+			"lessons": [
+				"f7-1-echange",
+				"f7-1-appel"
+			],
+			"status": "supported",
+			"evidence": "Prepare interpreted plans and experiences from models; a partner must act out the real-time exchange."
+		},
+		{
+			"id": "F1-10",
+			"track": "F1",
+			"lb": "F7 1.1 · Sprachmittlung",
+			"competence": "geben gezielt konkrete Einzelinformationen bzw. kurze Passagen (z. B. Informationen über Stars, Veranstaltungsangebote) aus einfachen, auch bildgestützten Texten (z. B. Prospekte, Infoflyer, Kurznachrichten) mündlich bzw. schriftlich in einfacher Ausdrucksweise in der jeweils anderen Sprache sinngemäß bzw. zusammenfassend sowie situations- und adressatengerecht wieder.",
+			"lessons": [
+				"f7-1-appel",
+				"f7-1-concert"
+			],
+			"status": "implemented",
+			"evidence": "Pass on selected details from a recorded script or event notice to the intended recipient."
+		},
+		{
+			"id": "F1-11",
+			"track": "F1",
+			"lb": "F7 1.1 · Sprachmittlung",
+			"competence": "verwenden einfache Kompensationsstrategien, z. B. einfache Paraphrasen.",
+			"lessons": [
+				"f7-1-medecin",
+				"f7-1-echange"
+			],
+			"status": "implemented",
+			"evidence": "Use concrete restatements for a symptom or wish and practise clarification questions."
+		},
+		{
+			"id": "F1-12",
+			"track": "F1",
+			"lb": "F7 1.2 · Wortschatz",
+			"competence": "wenden im Rahmen der erarbeiteten Kommunikationssituationen und Themen einen etwas umfangreicheren Wortschatz im Zusammenhang mit konkreten Alltagsbedürfnissen, routinemäßigen Angelegenheiten und vertrauten Situationen weitgehend situations- und adressatengerecht an.",
+			"lessons": [
+				"f7-1-echange",
+				"f7-1-medecin",
+				"f7-1-devoir-boire",
+				"f7-1-concert"
+			],
+			"status": "implemented",
+			"evidence": "Use everyday words in an exchange, a fictional consultation, sports and an event plan."
+		},
+		{
+			"id": "F1-13",
+			"track": "F1",
+			"lb": "F7 1.2 · Wortschatz",
+			"competence": "verfügen in begrenztem Umfang über einen an ihren Interessen orientierten individuellen Wortschatz, z. B. Musik, Freunde.",
+			"lessons": [
+				"f7-1-concert",
+				"f7-1-chanson",
+				"f7-1-revision"
+			],
+			"status": "supported",
+			"evidence": "Sample music vocabulary and retrieval strategies support a learner-owned word list outside the app."
+		},
+		{
+			"id": "F1-14",
+			"track": "F1",
+			"lb": "F7 1.2 · Wortschatz",
+			"competence": "verwenden einfache Umschreibungen, gängige Synonyme und Antonyme.",
+			"lessons": [
+				"f7-1-revision",
+				"f7-1-medecin"
+			],
+			"status": "implemented",
+			"evidence": "Apply a paraphrase or a word contrast when collecting or clarifying vocabulary."
+		},
+		{
+			"id": "F1-15",
+			"track": "F1",
+			"lb": "F7 1.2 · Wortschatz",
+			"competence": "verstehen gängige Arbeitsanweisungen und beherrschen die Begriffe des Lernbereiches Grammatik, um sich im Unterricht zu verständigen.",
+			"lessons": [
+				"f7-1-revision",
+				"f7-1-sons"
+			],
+			"status": "implemented",
+			"evidence": "Interpret French editing instructions and use the terms for sounds, words and accents."
+		},
+		{
+			"id": "F1-16",
+			"track": "F1",
+			"lb": "F7 1.2 · Wortschatz",
+			"competence": "äußern einfache Vorschläge bzw. Wünsche und Vorlieben (on voudrait, nous pourrions).",
+			"lessons": [
+				"f7-1-echange"
+			],
+			"status": "implemented",
+			"evidence": "Practise on voudrait and nous pourrions in short plans and replies."
+		},
+		{
+			"id": "F1-17",
+			"track": "F1",
+			"lb": "F7 1.2 · Wortschatz",
+			"competence": "formulieren auf einfache Weise die eigene Meinung, u. a. à mon avis, c’est parfait, je pense que, je trouve que.",
+			"lessons": [
+				"f7-1-concert"
+			],
+			"status": "implemented",
+			"evidence": "Mark an opinion and justify a recommendation with a reason."
+		},
+		{
+			"id": "F1-18",
+			"track": "F1",
+			"lb": "F7 1.2 · Wortschatz",
+			"competence": "verwenden den erforderlichen Funktionswortschatz, um Abbildungen etwas genauer zu beschreiben.",
+			"lessons": [
+				"f7-1-photo"
+			],
+			"status": "implemented",
+			"evidence": "Describe foreground and background with a visual scene."
+		},
+		{
+			"id": "F1-19",
+			"track": "F1",
+			"lb": "F7 1.2 · Wortschatz",
+			"competence": "erschließen Sprachmaterial aus dem situativen Kontext sowie aufgrund ihres Weltwissens und ihrer Vorkenntnisse aus anderen Sprachen, sofern die Inhalte altersgemäß sind und der Umfang des neuen Wortmaterials sehr begrenzt ist.",
+			"lessons": [
+				"f7-1-affiche",
+				"f7-1-chanson"
+			],
+			"status": "implemented",
+			"evidence": "Use headings, image cues and familiar words to infer the topic and meanings."
+		},
+		{
+			"id": "F1-20",
+			"track": "F1",
+			"lb": "F7 1.2 · Grammatik",
+			"competence": "beschreiben Personen, Gegenstände, Orte und Sachverhalte auf einfache Weise, geben Mengen an, setzen sie zueinander in Beziehung und vergleichen sie: article partitif « en » partitif comparatif et superlatif de l’adjectif adjectif indéfini « tout »",
+			"lessons": [
+				"f7-1-partitif",
+				"f7-1-en",
+				"f7-1-comparaison",
+				"f7-1-tout"
+			],
+			"status": "implemented",
+			"evidence": "Model and use partitive articles, en, comparisons, superlatives and tout."
+		},
+		{
+			"id": "F1-21",
+			"track": "F1",
+			"lb": "F7 1.2 · Grammatik",
+			"competence": "treten mit anderen Menschen in Beziehung, formulieren Fragen und Aufforderungen, geben Äußerungen anderer in der Gegenwart wieder: impératif irrégulier (« avoir » et « être ») impératif avec un pronom discours indirect et interrogation indirecte (au présent, sans « ce qui », « ce que ») interrogation avec « Qu’est-ce qui ? » et « Qui est-ce que ? »",
+			"lessons": [
+				"f7-1-imperatif",
+				"f7-1-paroles",
+				"f7-1-questions-indirectes",
+				"f7-1-deux-questions"
+			],
+			"status": "implemented",
+			"evidence": "Use irregular imperatives and pronouns, report statements and questions, and distinguish subject and object questions."
+		},
+		{
+			"id": "F1-22",
+			"track": "F1",
+			"lb": "F7 1.2 · Grammatik",
+			"competence": "beschreiben Handlungen/Abläufe (auch in der Vergangenheit) und drücken zeitliche Bezüge zwischen Handlungen und Zuständen/Gewohnheiten aus: imparfait et passé composé (opposition : description/habitude – action) verbes irréguliers : « devoir » ; « boire », « connaître », « venir », « vivre », « voir » verbes pronominaux (présent, futur proche, impératif)",
+			"lessons": [
+				"f7-1-devoir-boire",
+				"f7-1-venir-vivre-voir",
+				"f7-1-pronominaux",
+				"f7-1-imparfait",
+				"f7-1-deux-temps"
+			],
+			"status": "implemented",
+			"evidence": "Practise the specified irregular and pronominal forms and contrast background with completed events."
+		},
+		{
+			"id": "F1-23",
+			"track": "F1",
+			"lb": "F7 1.2 · Aussprache und Intonation",
+			"competence": "nutzen die Regelmäßigkeit der Graphem-Phonem-Beziehungen, um fremde Wörter, die bekannten Aussprachemustern folgen, korrekt auszusprechen.",
+			"lessons": [
+				"f7-1-sons"
+			],
+			"status": "supported",
+			"evidence": "Sound-to-spelling models and local audio prepare pronunciation; a partner gives feedback."
+		},
+		{
+			"id": "F1-24",
+			"track": "F1",
+			"lb": "F7 1.2 · Aussprache und Intonation",
+			"competence": "sprechen Sinneinheiten flüssig, artikulieren und betonen auch in Äußerungen, die mehrere Sätze umfassen, verständlich.",
+			"lessons": [
+				"f7-1-sons",
+				"f7-1-chanson"
+			],
+			"status": "supported",
+			"evidence": "Read by sense group and repeat the sound sample; judgement of natural stress requires a listener."
+		},
+		{
+			"id": "F1-25",
+			"track": "F1",
+			"lb": "F7 1.2 · Aussprache und Intonation",
+			"competence": "nutzen zunehmend selbständig ihre Kenntnisse der internationalen Lautschrift sowie Hörbeispiele, um auch unbekannte Wörter korrekt auszusprechen.",
+			"lessons": [
+				"f7-1-sons"
+			],
+			"status": "supported",
+			"evidence": "Use IPA clues and a French voice or a reader; verify unfamiliar natural pronunciation with a fuller source in class."
+		},
+		{
+			"id": "F1-26",
+			"track": "F1",
+			"lb": "F7 2 Interkulturelle Kompetenzen",
+			"competence": "sind mit der Gliederung Frankreichs so vertraut, dass sie einige Regionen einordnen können.",
+			"lessons": [
+				"f7-1-regions"
+			],
+			"status": "implemented",
+			"evidence": "Place Normandie, Occitanie and Provence-Alpes-Côte d’Azur on a map with cities and coasts."
+		},
+		{
+			"id": "F1-27",
+			"track": "F1",
+			"lb": "F7 2 Interkulturelle Kompetenzen",
+			"competence": "vergleichen den Alltag und die Lebenswelt deutscher und französischer Jugendlicher und zeigen Verständnis für eine andere Lebensart.",
+			"lessons": [
+				"f7-1-college",
+				"f7-1-echange",
+				"f7-1-chandeleur"
+			],
+			"status": "implemented",
+			"evidence": "Compare concrete school days, visits and traditions without treating a family or school as typical of a whole country."
+		},
+		{
+			"id": "F1-28",
+			"track": "F1",
+			"lb": "F7 2 Interkulturelle Kompetenzen",
+			"competence": "kommunizieren mit französischen Familien und gleichaltrigen Jugendlichen situationsangemessen (ggf. im Rollenspiel) und sprechen in einfacher Weise über altersspezifische Erfahrungen, z. B. Ankunftszeit und „Kleiderordnung“ in der Schule, französisches Schulsystem.",
+			"lessons": [
+				"f7-1-college",
+				"f7-1-echange"
+			],
+			"status": "supported",
+			"evidence": "Role prompts prepare conversations with hosts and classmates; a real exchange is done outside the app."
+		},
+		{
+			"id": "F1-29",
+			"track": "F1",
+			"lb": "F7 3 Text- und Medienkompetenzen",
+			"competence": "nutzen zur Erschließung von Texten sprachliche und außersprachliche Entschlüsselungshilfen, z. B. Wortfamilien, Bilder und ggf. das zweisprachige Wörterbuch.",
+			"lessons": [
+				"f7-1-affiche",
+				"f7-1-histoire"
+			],
+			"status": "implemented",
+			"evidence": "Use a title, visual hints, word families and short clues to understand an informational notice or an original comic."
+		},
+		{
+			"id": "F1-30",
+			"track": "F1",
+			"lb": "F7 3 Text- und Medienkompetenzen",
+			"competence": "entnehmen Texten gezielt Informationen, erfassen Sinneinheiten von Texten auch mittels Kapitelüberschriften und Schlüsselwörtern und beantworten Fragen zum Inhalt etwas ausführlicher.",
+			"lessons": [
+				"f7-1-affiche",
+				"f7-1-concert",
+				"f7-1-histoire"
+			],
+			"status": "implemented",
+			"evidence": "Find times, phrases and evidence across the notice and comic, then write an answer."
+		},
+		{
+			"id": "F1-31",
+			"track": "F1",
+			"lb": "F7 3 Text- und Medienkompetenzen",
+			"competence": "beschreiben wesentliche Merkmale von Personen in fiktionalen Texten, z. B. Aussehen, Vorlieben, Abneigungen.",
+			"lessons": [
+				"f7-1-histoire"
+			],
+			"status": "implemented",
+			"evidence": "Identify Zoé’s preference and cite her speech bubble."
+		},
+		{
+			"id": "F1-32",
+			"track": "F1",
+			"lb": "F7 3 Text- und Medienkompetenzen",
+			"competence": "verfassen einfache Texte, in denen sie gängige Konnektoren verwenden, erzählen einfache Handlungsabläufe nach und überwinden Formulierungsschwierigkeiten, z. B. mithilfe von fiches d'écriture.",
+			"lessons": [
+				"f7-1-journal",
+				"f7-1-histoire"
+			],
+			"status": "implemented",
+			"evidence": "Organise a short retelling with d’abord, puis and enfin, using a model and criteria."
+		},
+		{
+			"id": "F1-33",
+			"track": "F1",
+			"lb": "F7 3 Text- und Medienkompetenzen",
+			"competence": "gestalten unter Verwendung eigener Ideen kurze, einfache, ggf. illustrierte Texte nach relativ konkreten Impulsen (z. B. Reimvorgabe, vignette oder planche de BD) und entwickeln dabei Freude und Aufgeschlossenheit im Umgang mit fremdsprachlichen Texten.",
+			"lessons": [
+				"f7-1-histoire",
+				"f7-1-chanson"
+			],
+			"status": "supported",
+			"evidence": "Write a new speech bubble or refrain; drawing or performance can be done separately."
+		},
+		{
+			"id": "F1-34",
+			"track": "F1",
+			"lb": "F7 3 Text- und Medienkompetenzen",
+			"competence": "übernehmen imaginäre Rollen (z. B. in Sketchen) auch unter Einsatz von mimischen und gestischen Mitteln.",
+			"lessons": [
+				"f7-1-histoire",
+				"f7-1-medecin",
+				"f7-1-echange"
+			],
+			"status": "supported",
+			"evidence": "Short scripts prepare roles; gestures and acting require classroom or partner work."
+		},
+		{
+			"id": "F1-35",
+			"track": "F1",
+			"lb": "F7 4 Methodische Kompetenzen",
+			"competence": "wenden Sprachlerntechniken (z. B. eigene digitale Sprachaufnahmen zum Verbessern der Aussprache, Verfahren der Wortschatzarbeit) entsprechend ihren individuellen Bedürfnissen und Erfordernissen an.",
+			"lessons": [
+				"f7-1-revision",
+				"f7-1-sons"
+			],
+			"status": "supported",
+			"evidence": "Test retrieval and rehearse pronunciation; learners can make and compare a recording outside the app."
+		},
+		{
+			"id": "F1-36",
+			"track": "F1",
+			"lb": "F7 4 Methodische Kompetenzen",
+			"competence": "setzen individuelle Strategien im eigenen Lernprozess gezielt zum Erkennen und Evaluieren von Stärken sowie Schwächen ein, z. B. Fehlervermeidungs- und Selbstkorrekturstrategien.",
+			"lessons": [
+				"f7-1-revision"
+			],
+			"status": "implemented",
+			"evidence": "Review a text and compare self-check results against the model."
+		},
+		{
+			"id": "F1-37",
+			"track": "F1",
+			"lb": "F7 4 Methodische Kompetenzen",
+			"competence": "nutzen, ggf. unter Anleitung, einfache Hilfsmittel zum Lernen, Nachschlagen und Wiederholen von Wortschatz und Grammatik, z. B. Lernsoftware, Apps, zweisprachige Wörterbücher für die Unterstufe.",
+			"lessons": [
+				"f7-1-revision"
+			],
+			"status": "supported",
+			"evidence": "Practise choosing a suitable lookup tool; an external dictionary is needed for live lookups."
+		},
+		{
+			"id": "F1-38",
+			"track": "F1",
+			"lb": "F7 4 Methodische Kompetenzen",
+			"competence": "nutzen bei der Erstellung von französischen Texten in digitaler Form Möglichkeiten der Rechtschreibprüfung mithilfe von Textverarbeitungsprogrammen.",
+			"lessons": [
+				"f7-1-revision",
+				"f7-1-journal"
+			],
+			"status": "supported",
+			"evidence": "Use a two-pass editing checklist; a French-language spellchecker can be used in a separate editor."
+		},
+		{
+			"id": "F1-39",
+			"track": "F1",
+			"lb": "F7 4 Methodische Kompetenzen",
+			"competence": "erschließen sprachliche Zusammenhänge und Gesetzmäßigkeiten, auch im Vergleich mit ihrer jeweiligen Erstsprache oder dem Englischen (z. B. Steigerung der Adjektive) und machen systematische Gemeinsamkeiten und Unterschiede in diesen Bereichen für ihr Lernen nutzbar.",
+			"lessons": [
+				"f7-1-comparaison",
+				"f7-1-sons"
+			],
+			"status": "implemented",
+			"evidence": "Compare French adjective placement in comparisons with German or English and examine letter-to-sound patterns."
+		},
+		{
+			"id": "F1-40",
+			"track": "F1",
+			"lb": "F7 4 Methodische Kompetenzen",
+			"competence": "setzen zum Teil noch unter Anleitung Strategien zum Hör-/Hörseh- und Leseverstehen (z. B. orientierend, selektiv) sowie zur mündlichen und schriftlichen Sprachproduktion ein.",
+			"lessons": [
+				"f7-1-appel",
+				"f7-1-concert",
+				"f7-1-journal"
+			],
+			"status": "implemented",
+			"evidence": "Apply gist, selective listening and reading, and a structured writing plan."
+		},
+		{
+			"id": "F1-41",
+			"track": "F1",
+			"lb": "F7 5 Themengebiete",
+			"competence": "bewältigen Kommunikationssituationen innerhalb der angegebenen Themengebiete mithilfe der in den Lernbereichen 1 – 4 ausgewiesenen Kompetenzen.",
+			"lessons": [
+				"f7-1-echange",
+				"f7-1-concert",
+				"f7-1-medecin"
+			],
+			"status": "implemented",
+			"evidence": "Apply topic vocabulary and sentence patterns to an exchange, a concert and a fictional consultation."
+		},
+		{
+			"id": "F1-42",
+			"track": "F1",
+			"lb": "F7 5 Themengebiete",
+			"competence": "setzen sich auf der Grundlage ihrer Kenntnisse bewusst mit der französischen Sprache und Kultur auseinander.",
+			"lessons": [
+				"f7-1-regions",
+				"f7-1-alesia",
+				"f7-1-chandeleur"
+			],
+			"status": "supported",
+			"evidence": "Examples prompt cross-cultural comparison; wider reflection is developed in discussion."
+		},
+		{
+			"id": "F1-43",
+			"track": "F1",
+			"lb": "F7 5 Themengebiete",
+			"competence": "weitere Feste und Traditionen, z. B. la Chandeleur, la Saint-Valentin, la fête des mères",
+			"lessons": [
+				"f7-1-chandeleur"
+			],
+			"status": "implemented",
+			"evidence": "Identify Chandeleur, Saint-Valentin and the French fête des mères. Compare a family tradition and follow simple recipe instructions."
+		},
+		{
+			"id": "F1-44",
+			"track": "F1",
+			"lb": "F7 5 Themengebiete",
+			"competence": "Alltag und persönliches Umfeld: Alltag Jugendlicher, z. B. Stars aus den Bereichen Film/Musik/Sport, Spiel, Freundeskreis körperliches und seelisches Befinden, u. a. Arztbesuch das französische Schulsystem, auch im Vergleich zu Deutschland",
+			"lessons": [
+				"f7-1-concert",
+				"f7-1-chanson",
+				"f7-1-medecin",
+				"f7-1-college",
+				"f7-1-echange"
+			],
+			"status": "implemented",
+			"evidence": "Youth interests, wellbeing, a fictional consultation and a school-day comparison supply the contexts."
+		},
+		{
+			"id": "F1-45",
+			"track": "F1",
+			"lb": "F7 5 Themengebiete",
+			"competence": "Geographie: erste Einblicke in die administrative und politische Gliederung Frankreichs in régions, u. a. anhand der Regionen Normandie, Occitanie und Provence-Alpes-Côte d’Azur, sowie Vergleich mit der föderalen Struktur Deutschlands",
+			"lessons": [
+				"f7-1-regions"
+			],
+			"status": "implemented",
+			"evidence": "Locate three named regions and contrast a regional council’s role with a German Land."
+		},
+		{
+			"id": "F1-46",
+			"track": "F1",
+			"lb": "F7 5 Themengebiete",
+			"competence": "Geschichte: Gallier und Römer, z. B. anhand kurzer Szenen aus Astérix",
+			"lessons": [
+				"f7-1-alesia"
+			],
+			"status": "implemented",
+			"evidence": "Place Caesar and Vercingetorix at Alésia and distinguish archaeological evidence from fictional speech."
+		},
+		{
+			"id": "F1-47",
+			"track": "F1",
+			"lb": "F7 5 Themengebiete",
+			"competence": "altersgemäßes Aufgreifen von aktuellen Anlässen, z. B. kulturelle Veranstaltungen, Sportereignisse, Wahlen",
+			"lessons": [
+				"f7-1-concert"
+			],
+			"status": "supported",
+			"evidence": "Use a model poster and the ministry event source to prepare current research; no live event data are assumed."
+		},
+		{
+			"id": "F1-48",
+			"track": "F1",
+			"lb": "F7 5 Themengebiete",
+			"competence": "Kunst, Kultur und Literatur: Begegnung mit aktueller Unterhaltungsmusik sowie BD",
+			"lessons": [
+				"f7-1-histoire",
+				"f7-1-chanson"
+			],
+			"status": "supported",
+			"evidence": "Read and create original comic and refrain samples; contemporary recorded music is an additional listening activity."
+		},
+		{
+			"id": "F1-49",
+			"track": "F1",
+			"lb": "F7 5 Themengebiete",
+			"competence": "Sprachreflexion: Unterschiede zwischen français standard und français familier Begegnung mit dem Südfranzösischen als einer Abweichung vom Standardfranzösischen",
+			"lessons": [
+				"f7-1-registre",
+				"f7-1-sons"
+			],
+			"status": "supported",
+			"evidence": "Compare standard and familiar formulations and identify a possible southern sound variation; regional listening needs authentic recordings."
+		}
+	],
+	"optional_lessons": []
+}

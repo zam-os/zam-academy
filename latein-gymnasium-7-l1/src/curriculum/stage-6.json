@@ -1,0 +1,491 @@
+[
+	{
+		"id": "l7-imperium-provinzen",
+		"stage": "imperium",
+		"title": "Das Imperium Romanum & seine Provinzen",
+		"skill": "Die Ausdehnung des Römischen Reiches rund um das Mittelmeer und Grundzüge der Provinzialverwaltung (provincia) erklären",
+		"bindings": ["L7-01", "L7-24", "L7-25", "L7-26", "L7-43"],
+		"paragraphs": [
+			"Im Lauf der Republik und unter Augustus wuchs die Herrschaft Roms weit über Italien hinaus und umfasste schließlich den gesamten Mittelmeerraum — die Römer nannten das Mittelmeer selbstbewusst Mare Nostrum („Unser Meer“). Das Reich reichte vom Atlantik im Westen (Hispania, Gallia) über Rhein und Donau (z. B. Provinz Raetia mit Cambodunum/Kempten) bis nach Griechenland, Kleinasien, Syrien und Ägypten.",
+			"Eroberte Gebiete außerhalb Italiens organisierte Rom als provinciae (Einzahl provincia). Ein Statthalter (meist ein ehemaliger Konsul als proconsul oder ehemaliger Prätor als propraetor) sicherte dort Frieden und Recht, trieb Steuern (tributum) ein und schützte die Grenzen mit stationierten Legionen. Städte mit Bürgerrecht oder Selbstverwaltung (municipia, coloniae), ein dichtes Straßennetz und gemeinsame Märkte verknüpften die Provinzen mit Rom."
+		],
+		"materialLabel": "Lateinischer Sachtext über die Größe und Verwaltung des Reiches",
+		"materialLanguage": "la",
+		"material": "Imperium Romanum a mari Atlantico usque ad orientem patebat.\nPrima provincia Romana Sicilia fuit; postea Gallia, Hispania, Graecia, Raetia et Aegyptus accesserunt.\nIn provinciis legati et proconsules leges servabant, tributa exigebant et vias muniebant.",
+		"sourceIds": ["lp", "cambodunum"],
+		"diagram": {
+			"kind": "imperium-map",
+			"title": "Schematische Karte: Imperium Romanum, Zentren & Weltwunder",
+			"caption": "Schalte die Ebenen um und klicke Orte auf der Übersichtskarte an (schematische Lerngrafik).",
+			"preset": "provinzen"
+		},
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Welche Region wurde 241 v. Chr. nach dem Ersten Punischen Krieg die allererste römische Provinz?",
+			"answer": "Sicilia (Sizilien)",
+			"wrong": ["Raetia", "Aegyptus"],
+			"explanation": "Nach dem Sieg über Karthago 241 v. Chr. richtete Rom auf Sizilien (Sicilia) seine erste Provinz außerhalb des italienischen Festlands ein."
+		},
+		"takeaway": "Das Imperium Romanum verband weite Teile Europas, Nordafrikas und Vorderasiens über das Mare Nostrum, Straßen und Statthalter in den provinciae.",
+		"practice": [
+			{
+				"prompt": "Wie nannten die Römer das Mittelmeer wegen ihrer umfassenden Herrschaft („Unser Meer“)?",
+				"answers": ["Mare Nostrum", "mare nostrum"],
+				"feedback": "Mare Nostrum drückt den römischen Herrschaftsanspruch über das gesamte Mittelmeerbecken aus."
+			},
+			{
+				"prompt": "Welcher antike Name bezeichnet die römische Stadt im heutigen Kempten in der Provinz Raetia?",
+				"answers": ["Cambodunum"],
+				"feedback": "Cambodunum war eines der bedeutendsten römischen Zentren in Raetia (heute im Archäologischen Park Cambodunum zu besichtigen)."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "de",
+				"prompt": "Übersetze den lateinischen Text des Materials und erkläre in drei Sätzen, welche Aufgaben ein Statthalter (proconsul / legatus) in einer Provinz hatte.",
+				"model": "Das Römische Reich erstreckte sich vom Atlantischen Meer bis zum Osten. Die erste römische Provinz war Sizilien; später kamen Gallien, Spanien, Griechenland, Rätien und Ägypten hinzu. In den Provinzen wahrten Legaten und Prokonsuln die Gesetze, trieben Steuern ein und bauten Straßen.\nAufgaben: Ein Statthalter kommandierte die Truppen vor Ort, sprach Recht und sorgte für Ruhe sowie für pünktliche Steuerabgaben (tributa) an Rom.",
+				"criteria": [
+					"Alle drei Sätze des lateinischen Textes sind richtig übersetzt.",
+					"Die Aufgaben Rechtsprechung, Militär/Grenzsicherung und Steuern sind genannt.",
+					"Sicilia ist als erste Provinz erwähnt."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Erkläre, warum gut ausgebaute Straßen und das Mittelmeer als Mare Nostrum sowohl für die römische Herrschaft als auch für den Alltag der Provinzen entscheidend waren.",
+				"model": "Auf gepflasterten Straßen und sicheren Seewegen über das Mittelmeer erreichten Nachrichten, Statthalter und Legionen rasch jede Provinzgrenze. Zugleich förderten diese Verkehrswege Handel, Getreidelieferungen nach Rom sowie den Austausch von Sprache, Bauweise und Kultur.",
+				"criteria": [
+					"Sowohl die militärisch-administrative Seite (Truppen, Nachrichten) als auch die wirtschaftlich-kulturelle Seite (Handel, Austausch) ist dargestellt.",
+					"Die Rolle von Straßen und Seewegen ist verknüpft.",
+					"Fachbegriffe wie provincia oder Mare Nostrum sind passend eingebaut."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "imperium",
+			"goals": [
+				{
+					"label": "Erste römische Provinz benennen",
+					"before": "241 v. Chr. → erste provincia:",
+					"after": "",
+					"options": ["Sicilia", "Gallia", "Britannia"],
+					"answer": "Sicilia",
+					"explanation": "Sizilien war Roms erste außeritalische Provinz."
+				},
+				{
+					"label": "Römisches Straßen- und Heimatzeugnis in Bayern zuordnen",
+					"before": "Provinz Raetia → Archäologischer Park:",
+					"after": "",
+					"options": ["Cambodunum (Kempten)", "Olympia", "Cumae"],
+					"answer": "Cambodunum (Kempten)",
+					"explanation": "Cambodunum (Kempten) ist ein zentraler römischer Fundort in Raetia."
+				},
+				{
+					"label": "Typische Aufgabe eines Prokonsuls bestimmen",
+					"before": "proconsul in provincia →",
+					"after": "",
+					"options": [
+						"Statthalterschaft, Recht und Steuern",
+						"Orakelspruch in Delphi",
+						"Leitung der Spiele in Olympia"
+					],
+					"answer": "Statthalterschaft, Recht und Steuern",
+					"explanation": "Prokonsuln vertraten Rom als Statthalter in einer Provinz."
+				}
+			]
+		}
+	},
+	{
+		"id": "l7-weltwunder-staetten",
+		"stage": "imperium",
+		"title": "Weltwunder der Antike & Archäologische Stätten",
+		"skill": "Die sieben Weltwunder der Antike verorten und antike Architekturzeugnisse bis zu heimischen Fundorten und Museen einordnen",
+		"bindings": ["L7-01", "L7-13", "L7-24", "L7-27", "L7-36"],
+		"paragraphs": [
+			"Schon antike Reisende und Schriftsteller stellten Listen besonders bewunderter Bau- und Kunstwerke zusammen — die sieben Weltwunder der Antike (septem miracula mundi): die Pyramiden von Gizeh, die Hängenden Gärten von Babylon, die Zeusstatue des Phidias in Olympia, der Artemistempel von Ephesos, das Mausoleum von Halikarnassos, der Koloss von Rhodos und der Leuchtturm von Pharos vor Alexandria. Neben den altägyptischen Pyramiden (dem einzigen bis heute erhaltenen Weltwunder) verweisen die Hängenden Gärten auf die mesopotamische Tradition: Antike Berichte schreiben sie dem neubabylonischen König Nebukadnezar II. zu, doch sind ihre genaue Lage und ihr historischer Nachweis archäologisch bis heute nicht gesichert. Die übrigen fünf Bau- und Kunstwerke entstammen der griechischen und hellenistischen Welt.",
+			"Antike Baukunst und Skulptur begegnen dir aber nicht nur in Büchern oder rund um das östliche Mittelmeer: Auch in Bayern zeigen Stätten wie der Archäologische Park Cambodunum in Kempten römische Tempel-, Thermen- und Forumsgrundrisse, und Antikenmuseen wie die Glyptothek und die Staatlichen Antikensammlungen am Königsplatz in München bewahren griechische und römische Skulpturen, Vasen und Inschriften im Original."
+		],
+		"materialLabel": "Lateinischer Text über die sieben Weltwunder",
+		"materialLanguage": "la",
+		"material": "Antiqui scriptores septem miracula mundi maxime admirabantur.\nIn Aegypto pyramides et turris Phari ad Alexandriam stabant; in Graecia Phidias magnum signum Iovis fecit.\nHodie quoque in museis Monacensibus et in Camboduno vestigia antiqua videre possumus.",
+		"sourceIds": ["lp", "antike-muenchen", "cambodunum"],
+		"diagram": {
+			"kind": "imperium-map",
+			"title": "Weltwunder und antike Stätten im Überblick",
+			"caption": "Wähle „Weltwunder“ auf der Übersichtskarte und erkunde alle sieben Standorte: Olympia, Ephesos, Halikarnassos, Rhodos, Alexandria, Gizeh und Babylon.",
+			"preset": "weltwunder"
+		},
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Welches der sieben antiken Weltwunder steht bis heute als Bauwerk?",
+			"answer": "die Pyramiden von Gizeh",
+			"wrong": [
+				"der Koloss von Rhodos",
+				"der Leuchtturm von Pharos vor Alexandria"
+			],
+			"explanation": "Die Pyramiden von Gizeh sind das älteste der sieben Weltwunder und als einziges erhalten geblieben."
+		},
+		"takeaway": "Die sieben Weltwunder lagen rund um das östliche Mittelmeer und in Babylon; antike Baukunst und Skulptur lassen sich auch in Cambodunum und München entdecken.",
+		"practice": [
+			{
+				"prompt": "In welcher ägyptischen Hafenstadt stand der berühmte antike Leuchtturm (Pharos)?",
+				"answers": ["Alexandria"],
+				"feedback": "Der Leuchtturm auf der Insel Pharos wies Schiffen den Weg in den Hafen von Alexandria."
+			},
+			{
+				"prompt": "Welcher griechische Bildhauer schuf die gold-elfenbeinerne Zeusstatue von Olympia?",
+				"answers": ["Phidias"],
+				"feedback": "Phidias schuf das monumentale Sitzbild des Zeus im Tempel von Olympia."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "de",
+				"prompt": "Übersetze den lateinischen Text des Materials und zähle alle sieben Weltwunder der Antike mit ihrem Standort auf.",
+				"model": "Die antiken Schriftsteller bewunderten die sieben Weltwunder am meisten. In Ägypten standen die Pyramiden und der Turm von Pharos bei Alexandria; in Griechenland fertigte Phidias ein großes Standbild des Jupiter (Zeus). Auch heute noch können wir in den Münchner Museen und in Cambodunum antike Spuren sehen.\nDie 7 Weltwunder: Pyramiden von Gizeh, Hängende Gärten von Babylon, Zeusstatue in Olympia, Artemistempel in Ephesos, Mausoleum in Halikarnassos, Koloss von Rhodos, Leuchtturm von Alexandria.",
+				"criteria": [
+					"Der lateinische Text ist vollständig und korrekt übersetzt.",
+					"Alle sieben Weltwunder und ihre Orte sind vollständig aufgezählt.",
+					"Die Überlieferung bis zu heutigen Museen/Ausgrabungen ist benannt."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Warum ist der Besuch eines echten Antikenmuseums (wie am Königsplatz in München) oder einer Ausgrabungsstätte (wie Cambodunum) durch eine App nicht ersetzbar? Nenne zwei konkrete Beobachtungen, die man nur am Original machen kann.",
+				"model": "Vor Ort im Museum oder in der Ausgrabungsstätte erlebt man die wirkliche Größe, Materialwirkung (Marmor, Bronze, Mauerwerk) und räumliche Lage der Bauten und Inschriften. Außerdem lassen sich Details wie Meißelspuren, Bemalungsreste oder die Ausrichtung eines Forums im Gelände im direkten Vergleich zu Textquellen prüfen.",
+				"criteria": [
+					"Zwei nachvollziehbare Gründe für den Originalbesuch sind genannt.",
+					"Der Bezug zu konkreten heimischen Beispielen (München/Cambodunum) ist hergestellt.",
+					"Der Vergleich zwischen Textquelle und Sachquelle wird angesprochen."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "wonders",
+			"goals": [
+				{
+					"label": "Ägyptische Weltwunder richtig verorten",
+					"before": "Gizeh & Pharos →",
+					"after": "",
+					"options": ["Ägypten (bei Kairo / Alexandria)", "Peloponnes", "Kleinasien"],
+					"answer": "Ägypten (bei Kairo / Alexandria)",
+					"explanation": "Pyramiden und Pharos liegen in Ägypten."
+				},
+				{
+					"label": "Kleinasiatische Weltwunder zuordnen",
+					"before": "Artemistempel & Mausoleum →",
+					"after": "",
+					"options": ["Ephesos & Halikarnassos", "Rom & Cumae", "Delphi & Olympia"],
+					"answer": "Ephesos & Halikarnassos",
+					"explanation": "Beide berühmten Bauwerke standen an der Westküste Kleinasiens."
+				},
+				{
+					"label": "Zeusstatue des Phidias verorten",
+					"before": "Standort der Zeusstatue →",
+					"after": "",
+					"options": ["Olympia", "Babylon", "Rhodos"],
+					"answer": "Olympia",
+					"explanation": "Das Sitzbild stand im Zeustempel von Olympia."
+				}
+			]
+		}
+	},
+	{
+		"id": "l7-cursus-honorum",
+		"stage": "imperium",
+		"title": "Politische Karriere: cursus honorum & Mischverfassung",
+		"skill": "Die Ämterlaufbahn (cursus honorum) und das Zusammenspiel von Konsuln, Senat und Volksversammlung erklären",
+		"bindings": ["L7-01", "L7-26", "L7-32"],
+		"paragraphs": [
+			"Wer in der römischen Republik Politik gestalten wollte, durchlief eine festgelegte Ämterlaufbahn, den cursus honorum („Laufbahn der Ehrenämter“). Die wichtigsten regulären Stufen führten vom Quästor (Finanzen) über den Ädil (Spiele, Märkte, Tempel) und Prätor (Rechtsprechung) bis zum höchsten Amt, dem Konsul (Staats- und Heeresführung). Zwei Grundregeln schützten vor Alleinherrschaft: Jedes Amt galt nur für ein Jahr (Annuität) und war mindestens doppelt besetzt (Kollegialität), wobei ein Kollege gegen den anderen Einspruch (veto) einlegen konnte.",
+			"Griechische Beobachter wie Polybios beschrieben Roms Staat als „Mischverfassung“, weil sie drei Regierungsformen verband: Die beiden Konsuln verkörperten ein monarchisches Element (Ausführung und Kommando), der Senat aus ehemaligen Amtsträgern das aristokratische Element (Beratung, Finanzen, Außenpolitik) und die Volksversammlungen (comitia) das demokratische Element (Wahlen und Gesetzgebung)."
+		],
+		"materialLabel": "Lateinischer Lesetext zum cursus honorum",
+		"materialLanguage": "la",
+		"material": "Romae multi iuvenes nobiles cursum honorum petebant.\nPrimum quaestores aerarium curabant, deinde aediles ludos et fora regebant, tum praetores iura dicebant.\nDenique duo consules per unum annum summum imperium habebant atque senatum consulebant.",
+		"sourceIds": ["lp"],
+		"diagram": {
+			"kind": "timeline-cursus",
+			"title": "Stufenpyramide: Der cursus honorum",
+			"caption": "Klicke die vier Ämterstufen von unten nach oben an und vergleiche ihre Aufgaben.",
+			"preset": "cursus"
+		},
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Welche beiden Prinzipien begrenzten die Macht eines römischen Konsuls?",
+			"answer": "Annuität (einjähriges Amt) und Kollegialität (zwei gleichberechtigte Konsuln mit Vetorecht)",
+			"wrong": [
+				"Lebenslange Amtszeit und Erbfolge",
+				"Ausschluss des Senats und geheime Auslosung"
+			],
+			"explanation": "Nach den Erfahrungen der Königszeit verhinderten einjährige Amtszeit und doppelte Besetzung mit Vetorecht eine dauerhafte Alleinherrschaft."
+		},
+		"takeaway": "Der cursus honorum führte über Quästor, Ädil und Prätor zum Konsul; Konsuln, Senat und Volksversammlung bildeten zusammen die römische „Mischverfassung“.",
+		"practice": [
+			{
+				"prompt": "Welches Amt des cursus honorum war vor allem für Rechtsprechung zuständig?",
+				"answers": ["Prätor", "Praetor", "praetor"],
+				"feedback": "Der Prätor (praetor) leitete die Gerichte („iura dicebant“)."
+			},
+			{
+				"prompt": "Welches Staatsorgan vertrat in der römischen Mischverfassung das aristokratische Element?",
+				"answers": ["Senat", "senatus", "der Senat"],
+				"feedback": "Der Senat bestand aus den führenden ehemaligen Magistraten und lenkte langfristig Politik und Finanzen."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "de",
+				"prompt": "Übersetze den lateinischen Text des Materials und erkläre in eigenen Worten, was „Annuität“ und „Kollegialität“ bedeuten.",
+				"model": "In Rom strebten viele vornehme junge Männer nach der Ämterlaufbahn. Zuerst sorgten sie als Quästoren für die Staatskasse, danach leiteten sie als Ädilen die Spiele und Märkte, dann sprachen sie als Prätoren Recht. Schließlich hatten zwei Konsuln ein Jahr lang die höchste Befehlsgewalt inne und befragten den Senat.\nAnnuität bedeutet Einjährigkeit der Ämter; Kollegialität bedeutet, dass mehrere Amtsträger (z. B. zwei Konsuln) gleichzeitig dieselben Befugnisse besitzen und sich gegenseitig kontrollieren.",
+				"criteria": [
+					"Alle drei Sätze sind korrekt übersetzt.",
+					"Alle vier Ämter sind richtig eingeordnet.",
+					"Annuität und Kollegialität sind zutreffend erklärt."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Warum bezeichnet man Roms Verfassung als „Mischverfassung“ und worin unterscheidet sich dennoch der Einfluss von Senat und einfachen Bürgern?",
+				"model": "Sie mischte monarchische (Konsuln), aristokratische (Senat) und demokratische Elemente (Volksversammlung). In der Praxis hatten Senatoren und reiche Bürger durch das abgestufte Wahlrecht in den Zenturiatskomitien und ihr Ansehen (auctoritas) deutlich größeren Einfluss als arme Bürger — Rom war also keine moderne Demokratie.",
+				"criteria": [
+					"Alle drei Elemente der Mischverfassung sind zugeordnet.",
+					"Das Ungleichgewicht zugunsten des Senats/Adels ist benannt.",
+					"Ein Vergleichspunkt zur heutigen Demokratie wird deutlich."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "cursus",
+			"goals": [
+				{
+					"label": "Reihenfolge des cursus honorum vervollständigen",
+					"before": "Quaestor → Aedilis → Praetor →",
+					"after": "",
+					"options": ["Consul", "Tribunus", "Imperator"],
+					"answer": "Consul",
+					"explanation": "Das Konsulat krönte den regulären cursus honorum."
+				},
+				{
+					"label": "Elemente der Mischverfassung zuordnen",
+					"before": "Volksversammlung (comitia) →",
+					"after": "",
+					"options": ["demokratisches Element", "monarchisches Element", "aristokratisches Element"],
+					"answer": "demokratisches Element",
+					"explanation": "In den Volksversammlungen stimmten die römischen Bürger über Gesetze und Wahlen ab."
+				},
+				{
+					"label": "Aufgabe der Ädilen bestimmen",
+					"before": "ludos et fora regere →",
+					"after": "",
+					"options": ["Aedilis", "Quaestor", "Praetor"],
+					"answer": "Aedilis",
+					"explanation": "Ädilen kümmerten sich um Spiele, Märkte, Tempel und Versorgung."
+				}
+			]
+		}
+	},
+	{
+		"id": "l7-militaer-triumphzug",
+		"stage": "imperium",
+		"title": "Römisches Militär, Werte & Triumphzug",
+		"skill": "Grundzüge des römischen Heerwesens, Wertbegriffe wie virtus und die politische Bedeutung des Triumphzugs erläutern",
+		"bindings": ["L7-01", "L7-32", "L7-33"],
+		"paragraphs": [
+			"Die Schlagkraft des römischen Heeres beruhte auf Disziplin (disciplina), fester Lagerordnung (castra) und enger Kameradschaft innerhalb der Legion. Im Zentrum der römischen Wertwelt stand dabei virtus: Das Wort stammt von vir („Mann“) und bezeichnet zunächst kriegerische Tapferkeit und Tatkraft, erweitert sich aber immer mehr zu charakterlicher Tüchtigkeit und Standhaftigkeit für das Gemeinwesen.",
+			"Hatte ein Feldherr mit hohem imperium einen großen Sieg gegen auswärtige Feinde errungen, konnte ihm der Senat einen Triumphzug (triumphus) gewähren. In einem feierlichen Zug durch Rom zog das Heer mit Beute, Schautafeln der Schlachten und besiegten Gegnern über das Forum hinauf zum Tempel des Jupiter auf dem Kapitol. Für den Triumphator war das der Gipfel an Ruhm (gloria) und politischem Ansehen — ein Sklave auf dem Wagen soll ihn jedoch daran erinnert haben, dass er sterblich sei."
+		],
+		"materialLabel": "Lateinischer Text über Legionen, virtus und den Triumph",
+		"materialLanguage": "la",
+		"material": "Milites Romani propter disciplinam et virtutem saepe victores erant.\nSenatus imperatori victori triumphum decrevit.\nMulti cives per vias urbis triumphum spectabant, cum dux ad Capitolium veheretur.",
+		"sourceIds": ["lp"],
+		"diagram": {
+			"kind": "timeline-cursus",
+			"title": "Vom Amt zum Triumph: Politik und Militär in Rom",
+			"caption": "Klicke besonders auf Stufe 3 und 4 (Praetor und Consul), die das militärische imperium besaßen.",
+			"preset": "cursus"
+		},
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Wer genehmigte in der römischen Republik einem siegreichen Feldherrn den Triumphzug?",
+			"answer": "der Senat",
+			"wrong": ["allein die Soldaten auf dem Schlachtfeld", "der König von Rom"],
+			"explanation": "Der Senat prüfte die Voraussetzungen (z. B. eigenen Oberbefehl und entscheidenden Sieg gegen äußere Feinde) und beschloss den Triumph."
+		},
+		"takeaway": "Das römische Militär verband Strenge und virtus mit öffentlichem Prestige; ein vom Senat bewilligter Triumphzug steigerte Ansehen und politische Macht enorm.",
+		"practice": [
+			{
+				"prompt": "Welchem römischen Gott zog der Triumphator hinauf auf das Kapitol entgegen, um zu danken?",
+				"answers": ["Jupiter", "Iuppiter", "Iovi Optimo Maximo"],
+				"feedback": "Der Zug endete am Tempel des Jupiter Optimus Maximus auf dem Kapitol."
+			},
+			{
+				"prompt": "Welcher lateinische Wertbegriff stammt von vir und meint Tapferkeit sowie Tüchtigkeit?",
+				"answers": ["virtus"],
+				"feedback": "virtus bezeichnet Tapferkeit, Leistungskraft und charakterliche Tüchtigkeit."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "de",
+				"prompt": "Übersetze den lateinischen Text des Materials und benenne zwei Gründe, weshalb ein Triumphzug für den Triumphator auch politisch so bedeutsam war.",
+				"model": "Die römischen Soldaten waren wegen ihrer Disziplin und Tapferkeit oft Sieger. Der Senat beschloss für den siegreichen Feldherrn einen Triumphzug. Viele Bürger schauten entlang der Straßen der Stadt beim Triumphzug zu, während der Feldherr zum Kapitol fuhr.\nPolitische Bedeutung: Der Triumphzug verschaffte dem Feldherrn gewaltiges öffentliches Ansehen (auctoritas / gloria) bei Wählern und Senat und demonstrierte zugleich Roms Stärke.",
+				"criteria": [
+					"Alle drei Sätze sind sprachlich korrekt übersetzt.",
+					"Zwei nachvollziehbare politische Wirkungen des Triumphzugs sind genannt.",
+					"Begriffe wie virtus, disciplina oder gloria sind treffend genutzt."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Diskutiere kurz, was der Brauch bedeuten könnte, dass beim Triumphzug hinter dem Sieger ein Sklave auf dem Wagen stand und an die Sterblichkeit erinnerte.",
+				"model": "Der Triumphator trat fast in der Tracht des Gottes Jupiter auf; die Erinnerung an die eigene Sterblichkeit („Bedenke, dass du ein Mensch bist“) sollte ihn vor Überheblichkeit (Hybris) schützen und daran mahnen, dass er Bürger der Republik blieb und nicht über den Gesetzen stand.",
+				"criteria": [
+					"Der Kontrast zwischen göttergleicher Ehrung und menschlicher Grenze ist beschrieben.",
+					"Der Bezug zur republikanischen Angst vor Alleinherrschaft oder Hybris ist hergestellt.",
+					"Die Erklärung ist klar formuliert."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "military-triumph",
+			"goals": [
+				{
+					"label": "Grundbedeutung und Erweiterung von virtus erfassen",
+					"before": "virtus (von vir) →",
+					"after": "",
+					"options": [
+						"Tapferkeit und charakterliche Tüchtigkeit",
+						"Vorsicht und Angst vor dem Kampf",
+						"Reichtum durch Handel"
+					],
+					"answer": "Tapferkeit und charakterliche Tüchtigkeit",
+					"explanation": "virtus meint kriegerische Tapferkeit wie auch moralische Tüchtigkeit."
+				},
+				{
+					"label": "Zielpunkt des Triumphzugs bestimmen",
+					"before": "Zug über das Forum zum …",
+					"after": "",
+					"options": ["Kapitol (Jupitertempel)", "Marsfeld außerhalb der Stadt", "Hafen von Ostia"],
+					"answer": "Kapitol (Jupitertempel)",
+					"explanation": "Auf dem Kapitol brachte der Triumphator Jupiter das Dankopfer dar."
+				},
+				{
+					"label": "Bedingung für einen regulären Triumphzug erkennen",
+					"before": "Voraussetzung in der Republik →",
+					"after": "",
+					"options": [
+						"Sieg im eigenen Oberbefehl gegen äußere Feinde + Beschluss des Senats",
+						"Sieg in einem Bürgerkrieg ohne Senatsbeschluss",
+						"Wahl zum Quästor"
+					],
+					"answer": "Sieg im eigenen Oberbefehl gegen äußere Feinde + Beschluss des Senats",
+					"explanation": "Über Bürgerkriege gegen Mitbürger durfte regulär kein Triumph gefeiert werden."
+				}
+			]
+		}
+	},
+	{
+		"id": "l7-spaete-republik",
+		"stage": "imperium",
+		"title": "Späte Republik: Bürgerkriege, Cicero, Caesar & Kleopatra",
+		"skill": "Die Krise der späten Republik, Bürgerkriege und Schlüsselrollen von Cicero, Caesar und Kleopatra in den Epochenüberblick einordnen",
+		"bindings": ["L7-01", "L7-09", "L7-28", "L7-29", "L7-30"],
+		"paragraphs": [
+			"Im 1. Jahrhundert v. Chr. zerbrach die alte Ordnung der Republik in heftigen Bürgerkriegen (bella civilia). Einzelne Feldherren stützten sich nicht mehr auf Senat und Gesetze, sondern auf eigene Veteranenheere. Marcus Tullius Cicero — Konsul des Jahres 63 v. Chr., berühmter Redner und Philosoph — verteidigte unermüdlich die alte Senatsrepublik mit Reden und Schriften, scheiterte aber letztlich an der militärischen Gewalt.",
+			"Gaius Iulius Caesar eroberte als Feldherr Gallien, schrieb darüber seine berühmten Commentarii de bello Gallico und überschritt 49 v. Chr. mit den überlieferten Worten „Alea iacta est!“ („Der Würfel ist gefallen!“) den Grenzfluss Rubikon gegen den Senat. Nach Siegen über seinen Rivalen Pompeius und einem Bündnis mit der ägyptischen Königin Kleopatra wurde Caesar Diktator auf Lebenszeit — und an den Iden des März 44 v. Chr. von Senatoren um Brutus und Cassius ermordet."
+		],
+		"materialLabel": "Lateinischer Text über Caesar, Cicero und die Bürgerkriege",
+		"materialLanguage": "la",
+		"material": "Bello civili orto res publica Romana in magnum periculum venit.\nCaesar Rubicone transito „Alea iacta est!“ dixisse traditur; postea cum Cleopatra regina foedus fecit.\nCicero orationibus libertatem defendebat, sed Caesar ab inimicis Idibus Martiis necatus est.",
+		"sourceIds": ["lp"],
+		"diagram": {
+			"kind": "timeline-cursus",
+			"title": "Epochenstrahl: Von der späten Republik zu Augustus",
+			"caption": "Klicke die Stationen der späten Republik und der Bürgerkriege an.",
+			"preset": "epochen"
+		},
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Was markiert Caesars Überschreiten des Flusses Rubikon im Jahr 49 v. Chr.?",
+			"answer": "den Beginn des offenen Bürgerkriegs gegen Senat und Pompeius",
+			"wrong": [
+				"den Frieden zwischen Rom und Karthago",
+				"die Krönung Octavians zum Augustus"
+			],
+			"explanation": "Kein Feldherr durfte mit seinem Heer den Rubikon Richtung Rom überschreiten; der Schritt löste den Bürgerkrieg aus."
+		},
+		"takeaway": "In der späten Republik verdrängten Bürgerkriege und mächtige Einzelpersonen wie Caesar die Senatsherrschaft; Cicero kämpfte als Redner und Konsul für die Republik.",
+		"practice": [
+			{
+				"prompt": "Wie lautet der bekannte lateinische Ausspruch Caesars beim Überschreiten des Rubikon („Der Würfel ist gefallen“)?",
+				"answers": ["Alea iacta est"],
+				"feedback": "Alea iacta est bedeutet wörtlich „Der Würfel ist geworfen“."
+			},
+			{
+				"prompt": "An welchem Datum im Jahr 44 v. Chr. wurde Caesar ermordet (lateinische Bezeichnung „an den … des März“)?",
+				"answers": ["Iden", "Iden des März", "Idibus Martiis"],
+				"feedback": "An den Iden des März (15. März 44 v. Chr.) wurde Caesar im Senat ermordet."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "de",
+				"prompt": "Übersetze den lateinischen Text des Materials und ordne Cicero, Caesar und Kleopatra jeweils kurz ihrer historischen Rolle zu.",
+				"model": "Nachdem ein Bürgerkrieg ausgebrochen war, geriet der römische Staat in große Gefahr. Caesar soll nach dem Überschreiten des Rubikon gesagt haben: „Der Würfel ist gefallen!“; später schloss er mit der Königin Kleopatra ein Bündnis. Cicero verteidigte mit seinen Reden die Freiheit, aber Caesar wurde von seinen Feinden an den Iden des März getötet.\nRollen: Cicero (Konsul 63 v. Chr., Redner und Verteidiger der Republik), Caesar (Feldherr in Gallien, Autor und Diktator im Bürgerkrieg), Kleopatra (Königin von Ägypten, Verbündete Caesars und später des Antonius).",
+				"criteria": [
+					"Alle Sätze inklusive der Ablativi absoluti sind korrekt übersetzt.",
+					"Alle drei Persönlichkeiten sind historisch treffend eingeordnet.",
+					"Die Bedeutung der Iden des März 44 v. Chr. ist genannt."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Warum sind sowohl Cicero als auch Caesar nicht nur politische Akteure, sondern zugleich prägende lateinische Autoren? Nenne für beide eine typische Textart.",
+				"model": "Cicero verfasste politische und gerichtliche Reden (z. B. gegen Catilina oder Antonius) sowie Briefe und philosophische Schriften; seine Prosa gilt als Muster des klassischen Lateins. Caesar schrieb seine Kriegsberichte (Commentarii de bello Gallico / de bello civili) in klarer, scheinbar sachlicher Sprache, um sein eigenes politisches Handeln zu rechtfertigen.",
+				"criteria": [
+					"Die literarische Bedeutung beider Personen ist dargestellt.",
+					"Passende Textarten (Reden/Briefe bei Cicero, Commentarii bei Caesar) sind genannt.",
+					"Der Zusammenhang zwischen Literatur und politischer Wirkung wird deutlich."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "late-republic",
+			"goals": [
+				{
+					"label": "Wendepunkt 49 v. Chr. benennen",
+					"before": "Caesar überschreitet den …",
+					"after": "(Beginn des Bürgerkriegs)",
+					"options": ["Rubikon (Rubico)", "Rhein (Rhenus)", "Tiber (Tiberis)"],
+					"answer": "Rubikon (Rubico)",
+					"explanation": "Der kleine Fluss Rubikon bildete die Grenze zwischen Caesars Provinz und Italien."
+				},
+				{
+					"label": "Politische Rolle Ciceros im Jahr 63 v. Chr. zuordnen",
+					"before": "Marcus Tullius Cicero →",
+					"after": "",
+					"options": [
+						"Konsul, Redner und Verteidiger der Senatsrepublik",
+						"ägyptischer König und Verbündeter Caesars",
+						"erster Kaiser der Augusteischen Zeit"
+					],
+					"answer": "Konsul, Redner und Verteidiger der Senatsrepublik",
+					"explanation": "Cicero hielt am Ideal der republikanischen Verfassung fest."
+				},
+				{
+					"label": "Folge von Caesars Ermordung einordnen",
+					"before": "Iden des März 44 v. Chr. →",
+					"after": "",
+					"options": [
+						"neue Bürgerkriege bis zu Octavians Sieg",
+						"sofortige Rückkehr zu friedlichen Konsulwahlen für immer",
+						"Gründung Roms durch Romulus"
+					],
+					"answer": "neue Bürgerkriege bis zu Octavians Sieg",
+					"explanation": "Caesars Tod rettete die Republik nicht, sondern entfesselte die nächsten Bürgerkriege."
+				}
+			]
+		}
+	}
+]

@@ -240,7 +240,7 @@ const SPEECH: [string, string, string][] = [
 	["Oma fragt: „Hast du Hunger?“", "„Hast du Hunger?“, fragt Oma.", "„Hast du Hunger“, fragt Oma?"],
 	["Tinto flüstert: „Ich habe einen Plan.“", "„Ich habe einen Plan“, flüstert Tinto.", "„Ich habe einen Plan.“ flüstert Tinto."],
 	["Lea antwortet: „Das weiß ich nicht.“", "„Das weiß ich nicht“, antwortet Lea.", "„Das weiß ich nicht.“, antwortet Lea."],
-	["Der Lehrer sagt: „Packt eure Hefte ein.“", "„Packt eure Hefte ein“, sagt der Lehrer.", "„Packt eure Hefte ein.“ sagt der Lehrer."],
+	["Der Lehrer sagt: „Packt eure Hefte ein!“", "„Packt eure Hefte ein!“, sagt der Lehrer.", "„Packt eure Hefte ein“! sagt der Lehrer."],
 	["Ben fragt: „Wo ist mein Schuh?“", "„Wo ist mein Schuh?“, fragt Ben.", "„Wo ist mein Schuh“? fragt Ben."],
 	["Papa ruft: „Das Essen ist fertig!“", "„Das Essen ist fertig!“, ruft Papa.", "„Das Essen ist fertig“! ruft Papa."],
 ];

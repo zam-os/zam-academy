@@ -1,0 +1,275 @@
+[
+	{
+		"id": "e7-lit-treasure-island",
+		"stage": "literature",
+		"title": "Treasure Island: Reading an adventure classic",
+		"skill": "Einen vereinfachten Auszug aus Stevensons Treasure Island extensiv lesen und unbekannte Wörter gezielt erschließen oder übergehen",
+		"bindings": ["1.1", "3", "4", "5"],
+		"paragraphs": [
+			"Robert Louis Stevenson wurde 1850 in Edinburgh geboren. 1883 erschien sein Abenteuerroman Treasure Island (Die Schatzinsel). Der Junge Jim Hawkins lebt mit seiner Mutter im Gasthaus Admiral Benbow. Dort findet er die Schatzkarte eines alten Piraten. Mit dem Schiff Hispaniola segelt Jim zur Schatzinsel, doch der einbeinige Schiffskoch Long John Silver mit seinem Papagei ist in Wahrheit der Anführer der Piraten. Der Roman hat das Bild von Piraten mit Holzbein, Papagei und Schatzkarte stark geprägt.",
+			"Beim extensiven Lesen liest du längere Texte, um die Handlung zu verstehen, nicht jedes Wort. Unbekannte Wörter, die für das Verständnis nicht wichtig sind, überspringst du einfach. Wichtige Wörter erschließt du aus dem Zusammenhang, über Wortbildung oder über das Deutsche. Beispiel: „The old sailor hid the map in his sea-chest.“ Auch wenn du sea-chest nicht kennst, verstehst du: Er versteckte die Karte in einer Art Seemannskiste (sea = Meer, chest = Kiste, Truhe). Nur wenn du ein Wort mehrmals brauchst, schlägst du es nach."
+		],
+		"material": "Adapted extract · Treasure Island, chapter 1 (retold for learners)\nI remember the day the old sailor came to our inn, the Admiral Benbow. He was a tall, strong man with a scar across one cheek, and he carried a heavy sea-chest. “This is a quiet place,” he said. “I'll stay here.” Every day he walked along the cliffs with a brass telescope and looked out to sea. He told me to watch out for a seafaring man with one leg and promised me a silver coin every month. At night he sang an old song in a loud, rough voice: “Fifteen men on the dead man's chest – yo-ho-ho, and a bottle of rum!”",
+		"materialLabel": "Eigene vereinfachte Nacherzählung nach Robert Louis Stevenson, Treasure Island (1883, gemeinfrei); das Lied ist ein Zitat aus dem Roman",
+		"materialLanguage": "en",
+		"sourceIds": ["lp", "wiki-treasure-island"],
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "Wovor soll Jim laut Auszug aufpassen?",
+			"answer": "A seafaring man with one leg.",
+			"wrong": [
+				"A tall man with a brass telescope.",
+				"A ship with fifteen men on it."
+			],
+			"explanation": "Der alte Seemann bittet Jim, nach einem Seemann mit einem Bein Ausschau zu halten, und verspricht ihm dafür jeden Monat eine Silbermünze."
+		},
+		"takeaway": "Treasure Island (1883) von Robert Louis Stevenson: Jim Hawkins, Admiral Benbow, Schatzkarte, Long John Silver. Extensiv lesen: Handlung verstehen, unwichtige Wörter überspringen, wichtige aus Zusammenhang und Wortbildung erschließen.",
+		"practice": [
+			{
+				"prompt": "The author of Treasure Island is Robert Louis ___. (Nachname)",
+				"answers": ["Stevenson"],
+				"feedback": "Robert Louis Stevenson (1850–1894) stammte aus Edinburgh."
+			},
+			{
+				"prompt": "The name of the inn is the Admiral ___. (Name aus dem Text)",
+				"answers": ["Benbow"],
+				"feedback": "Im Gasthaus Admiral Benbow beginnt die Geschichte."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Describe the old sailor in four sentences: what he looks like, what he carries, what he does every day and what he asks Jim to do.",
+				"model": "The old sailor is a tall, strong man with a scar across one cheek. He carries a heavy sea-chest. Every day he walks along the cliffs with a brass telescope and looks out to sea. He asks Jim to watch out for a man with one leg and promises him a silver coin every month.",
+				"criteria": [
+					"Ich beschreibe Aussehen und Gepäck mit Details aus dem Text.",
+					"Ich nenne seine tägliche Gewohnheit.",
+					"Ich gebe seinen Auftrag an Jim richtig wieder."
+				]
+			},
+			"2": {
+				"language": "en",
+				"prompt": "Write a reading log entry (70 to 90 words) for this extract: list two words you skipped, one word you worked out from the context and how, and what you think will happen next.",
+				"model": "Reading log · Treasure Island, chapter 1\nWords I skipped: brass, rough – the story was clear without them.\nWord I worked out: seafaring – sea means Meer and faring sounds like fahren, so a seafaring man travels on the sea.\nWhat will happen next? I think the man with one leg will come to the inn and look for the old sailor. Maybe he wants the sea-chest because there is a treasure map in it. Jim will probably find the map and go on an adventure.",
+				"criteria": [
+					"Ich nenne übersprungene Wörter und begründe kurz.",
+					"Ich erkläre, wie ich ein Wort erschlossen habe.",
+					"Ich stelle eine begründete Vermutung zur Handlung auf."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "word-builder",
+			"goals": [
+				{
+					"label": "Wort aus dem Kontext",
+					"before": "sea + chest = sea-chest means a",
+					"after": "for a sailor's things.",
+					"options": ["box", "shirt", "song"],
+					"answer": "box",
+					"explanation": "chest bedeutet hier Truhe oder Kiste; das Kompositum erschließt du aus seinen Teilen."
+				},
+				{
+					"label": "Hauptfigur",
+					"before": "The boy who tells the story is",
+					"after": ".",
+					"options": ["Jim Hawkins", "Long John Silver", "Captain Flint"],
+					"answer": "Jim Hawkins",
+					"explanation": "Jim Hawkins erzählt die Geschichte in der Ich-Form."
+				},
+				{
+					"label": "Lesestrategie",
+					"before": "If a word is not important for the story, you can",
+					"after": "it.",
+					"options": ["skip", "learn", "translate"],
+					"answer": "skip",
+					"explanation": "Beim extensiven Lesen überspringst (skip) du unwichtige Wörter."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": false
+	},
+	{
+		"id": "e7-lit-sherlock",
+		"stage": "literature",
+		"title": "Sherlock Holmes: A detective story",
+		"skill": "Eine Detektivgeschichte hören, Hinweise sammeln und die Lösung mit Begründung nacherzählen",
+		"bindings": ["1.1", "1.2", "3", "5"],
+		"paragraphs": [
+			"Der schottische Arzt Arthur Conan Doyle erfand den Detektiv Sherlock Holmes; die Figur erschien zuerst 1887 in A Study in Scarlet. Holmes wohnt mit seinem Freund Dr Watson in der 221B Baker Street in London. Watson erzählt die Fälle, Holmes löst sie durch genaues Beobachten und logisches Schließen (deduction): Aus kleinen Hinweisen (clues) wie Schmutz an Schuhen oder einer Narbe an der Hand zieht er Schlüsse über einen Menschen.",
+			"In Detektivgeschichten erzählt man oft, was vor einer anderen vergangenen Handlung schon geschehen war. Dafür steht das Past Perfect: „When Holmes arrived, the thief had already escaped.“ Merke für das Nacherzählen eines Falls: Ereignisse der Haupthandlung stehen im Simple Past, frühere Hintergründe im Past Perfect. Beim Hören sammelst du die Hinweise in einer Liste und vergleichst am Ende mit der Lösung."
+		],
+		"material": "Radio play script · The Case of the Muddy Boots (in the style of Conan Doyle)\nWatson: “Holmes, a young man is waiting downstairs. His bicycle was stolen last night.”\nHolmes: “Show him in, Watson. … Good morning. You have come from the country by the early train, I see.”\nVisitor: “How do you know that, Mr Holmes?”\nHolmes: “There is red mud on your boots, and that mud only exists on the farm roads near Croydon. And you are holding a return ticket that the ticket inspector had stamped at seven o'clock.”\nVisitor: “Amazing! But who took my bicycle?”\nHolmes: “Your neighbour's son. You said that he had borrowed it twice before, and his boots, which you saw this morning, were wet – it had rained only on the road to the next village.”",
+		"materialLabel": "Eigenes englisches Hörskript im Stil von Arthur Conan Doyle (Figuren gemeinfrei)",
+		"materialLanguage": "en",
+		"sourceIds": ["lp", "wiki-holmes"],
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "Woran erkennt Holmes, dass der Besucher vom Land kommt?",
+			"answer": "There is red mud from the farm roads on his boots.",
+			"wrong": [
+				"The visitor tells him at the beginning.",
+				"Watson saw him on his bicycle."
+			],
+			"explanation": "Holmes schließt aus dem roten Schlamm an den Stiefeln und dem gestempelten Rückfahrschein auf die Herkunft. Das ist typisch für seine deduction."
+		},
+		"takeaway": "Arthur Conan Doyle: Sherlock Holmes (zuerst 1887), Dr Watson, 221B Baker Street; deduction aus clues. Nacherzählen: Haupthandlung im Simple Past, frühere Vorgeschichte im Past Perfect (had + past participle).",
+		"practice": [
+			{
+				"prompt": "Holmes lives at 221B ___ Street in London. (Straßenname)",
+				"answers": ["Baker"],
+				"feedback": "221B Baker Street ist die berühmteste Adresse der Detektivliteratur."
+			},
+			{
+				"prompt": "When Holmes arrived, the thief had already ___. (escape: 3. Verbform)",
+				"answers": ["escaped"],
+				"feedback": "had escaped: Past Perfect für das, was vorher schon geschehen war."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Listen to the radio play. Write down all the clues Holmes uses and what he concludes from each clue.",
+				"model": "Clue 1: red mud on the visitor's boots – he comes from the country near Croydon. Clue 2: a return ticket stamped at seven o'clock – he came by the early train. Clue 3: the neighbour's son had borrowed the bicycle twice before – he is a likely suspect. Clue 4: the son's boots were wet and it had only rained on the road to the next village – he had ridden there on the bicycle.",
+				"criteria": [
+					"Ich nenne mindestens drei Hinweise aus dem Hörtext.",
+					"Ich ordne jedem Hinweis eine Schlussfolgerung zu.",
+					"Ich schreibe knapp in Stichwörtern oder kurzen Sätzen."
+				]
+			},
+			"2": {
+				"language": "en",
+				"prompt": "Retell the case as Dr Watson in a short diary entry (80 to 100 words). Use the simple past for the main story and the past perfect at least three times for things that had happened before.",
+				"model": "Tuesday evening\nThis morning a young man visited us. Someone had stolen his bicycle during the night. Holmes looked at his boots and said that he had come from the country by the early train. The young man was amazed. Then Holmes explained that the neighbour's son had borrowed the bicycle twice before. His boots had been wet, but it had rained only on the road to the next village. So the son had taken the bicycle! By lunchtime the young man had his bicycle back. Holmes only smiled and lit his pipe.",
+				"criteria": [
+					"Die Haupthandlung steht im Simple Past.",
+					"Ich verwende das Past Perfect mindestens dreimal richtig.",
+					"Der Text hat die Form eines Tagebucheintrags aus Watsons Sicht."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "past-perfect",
+			"goals": [
+				{
+					"label": "Ermittler",
+					"before": "The famous detective of Arthur Conan Doyle is",
+					"after": ".",
+					"options": ["Sherlock Holmes", "Jim Hawkins", "Harry Potter"],
+					"answer": "Sherlock Holmes",
+					"explanation": "Sherlock Holmes ist die bekannteste Figur von Arthur Conan Doyle."
+				},
+				{
+					"label": "Hinweis",
+					"before": "A small detail that helps a detective is a",
+					"after": ".",
+					"options": ["clue", "crime", "case"],
+					"answer": "clue",
+					"explanation": "clue: Hinweis; crime: Verbrechen; case: Fall."
+				},
+				{
+					"label": "Vorvergangenheit",
+					"before": "When the police came, the thief",
+					"after": "away.",
+					"options": ["had run", "has run", "runs"],
+					"answer": "had run",
+					"explanation": "Die Flucht geschah vor dem Eintreffen der Polizei: Past Perfect had run."
+				}
+			]
+		},
+		"listening": true,
+		"speaking": false
+	},
+	{
+		"id": "e7-lit-dahl-rowling",
+		"stage": "literature",
+		"title": "Roald Dahl and J. K. Rowling: Books, films and audiobooks",
+		"skill": "Zwei bekannte Jugendbuchautoren vorstellen, verschiedene Zugänge zu Literatur vergleichen und aus Figurensicht schreiben",
+		"bindings": ["1.1", "3", "5"],
+		"paragraphs": [
+			"Roald Dahl wurde 1916 in Llandaff bei Cardiff in Wales geboren; seine Eltern stammten aus Norwegen. Er schrieb freche, oft schwarzhumorige Kinderbücher wie Charlie and the Chocolate Factory, Matilda und The BFG, in denen Kinder gegen gemeine Erwachsene gewinnen. J. K. Rowling veröffentlichte 1997 den ersten Band der Harry-Potter-Reihe, Harry Potter and the Philosopher's Stone; bis 2007 folgten sechs weitere Bände. Beide Autoren gehören zu den meistgelesenen englischsprachigen Jugendbuchautoren.",
+			"Zu Literatur gibt es viele Zugänge: das Buch selbst, ein Hörbuch (audiobook), eine Graphic Novel, eine Verfilmung (film adaptation) oder ein Theaterstück. Jede Form erzählt anders: Im Buch stellst du dir Figuren und Orte selbst vor, der Film zeigt sie fertig. Eine gute Schreibaufgabe zu einem Buch ist ein Tagebucheintrag (diary entry) aus Sicht einer Figur. Beispiel: „Dear Diary, today I discovered that I can move things with my eyes! Nobody at home would believe me …“ Er steht in der Ich-Form, hat ein Datum und zeigt Gedanken und Gefühle."
+		],
+		"material": "Book club chat · Book or film?\nSam: “I read Matilda last month and then watched the film. The book was better because I could imagine Miss Trunchbull myself – she was even scarier in my head!”\nPriya: “I prefer audiobooks. I listen to Harry Potter on the bus every morning. The reader uses different voices for every character, so it's like a film for my ears.”\nFinn: “I'm not a big reader, but I loved the graphic novel of a Roald Dahl story. The pictures helped me understand the difficult words.”\nSam: “Maybe we should all try the same story in different ways and compare next week?”",
+		"materialLabel": "Eigenes englisches Übungsmaterial · Chat eines Buchclubs",
+		"materialLanguage": "en",
+		"sourceIds": ["lp", "wiki-dahl", "wiki-rowling"],
+		"quiz": {
+			"optionLanguage": "en",
+			"question": "Warum mag Priya Hörbücher?",
+			"answer": "The reader uses different voices, so it's like a film for her ears.",
+			"wrong": [
+				"The pictures help her understand difficult words.",
+				"She can imagine Miss Trunchbull herself."
+			],
+			"explanation": "Priya hört Harry Potter im Bus; die verschiedenen Stimmen des Sprechers machen das Hörbuch für sie wie einen Film. Die anderen Gründe nennen Finn und Sam."
+		},
+		"takeaway": "Roald Dahl (geb. 1916 in Wales): Charlie and the Chocolate Factory, Matilda, The BFG. J. K. Rowling: Harry Potter (1997–2007). Zugänge: Buch, audiobook, graphic novel, film adaptation, Theater. Diary entry: Datum, Ich-Form, Gedanken und Gefühle.",
+		"practice": [
+			{
+				"prompt": "A book that you listen to is an ___. (Nomen)",
+				"answers": ["audiobook", "audio book"],
+				"feedback": "audiobook: Hörbuch."
+			},
+			{
+				"prompt": "The first Harry Potter book came out in ___. (Jahreszahl)",
+				"answers": ["1997"],
+				"feedback": "Harry Potter and the Philosopher's Stone erschien 1997."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "en",
+				"prompt": "Do you prefer books, audiobooks, graphic novels or films? Write five sentences with reasons and an example of a story you know.",
+				"model": "I prefer audiobooks to books because I can listen while I'm walking the dog. My favourite audiobook is Charlie and the Chocolate Factory. The reader does funny voices for Willy Wonka and the Oompa-Loompas. I also like films, but sometimes they leave out parts of the story. Graphic novels are good for difficult stories because the pictures help you.",
+				"criteria": [
+					"Ich nenne meine Vorliebe mit I prefer … to ….",
+					"Ich begründe mit mindestens zwei Gründen.",
+					"Ich nenne ein konkretes Beispiel."
+				]
+			},
+			"2": {
+				"language": "en",
+				"prompt": "Choose a character from a book or film you know. Write a diary entry (80 to 100 words) from that character's point of view about an important day in the story.",
+				"model": "Friday, 13th\nDear Diary,\nWhat a day! This morning I got a strange letter with my name on it, but my uncle tore it up before I could read it. In the afternoon dozens of letters flew down the chimney. I've never seen anything like it! My aunt screamed, and my uncle was furious. Now we're in a cold hut on a rock in the sea because he wants to hide from the letters. I'm hungry and lonely, but somehow I feel that my life is going to change. Tomorrow is my birthday.",
+				"criteria": [
+					"Mein Eintrag hat Datum, Anrede und Ich-Form.",
+					"Ich beschreibe Ereignisse und Gefühle der Figur.",
+					"Der Inhalt passt zur gewählten Geschichte."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "sequence",
+			"goals": [
+				{
+					"label": "Herkunft",
+					"before": "Roald Dahl spent his early childhood in",
+					"after": "; his parents came from Norway.",
+					"options": ["Wales", "Norway", "Scotland"],
+					"answer": "Wales",
+					"explanation": "Dahl wurde in Llandaff bei Cardiff (Wales) geboren; seine Eltern kamen aus Norwegen."
+				},
+				{
+					"label": "Zugang",
+					"before": "A book told in pictures and speech bubbles is a",
+					"after": ".",
+					"options": ["graphic novel", "audiobook", "diary"],
+					"answer": "graphic novel",
+					"explanation": "graphic novel: Roman in Comicform."
+				},
+				{
+					"label": "Tagebuch",
+					"before": "A diary entry usually starts with",
+					"after": ".",
+					"options": ["Dear Diary", "Yours faithfully", "Once upon a time"],
+					"answer": "Dear Diary",
+					"explanation": "Dear Diary ist die typische Anrede im Tagebuch."
+				}
+			]
+		},
+		"listening": false,
+		"speaking": false
+	}
+]

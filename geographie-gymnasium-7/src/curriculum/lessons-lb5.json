@@ -1,0 +1,282 @@
+[
+  {
+    "id": "metropole",
+    "lb": 5,
+    "title": "Eine Metropole lesen",
+    "period": "Geo7 5 · Verdichtungsraum · Wohnen · Verkehr",
+    "intro": "In und um Paris liegen Regierung, Kultur, Unternehmen und Verkehrsknoten nah beieinander. Viele Arbeits- und Wohnorte erstrecken sich über Gemeindegrenzen.",
+    "paragraphs": [
+      "Eine Metropole bündelt Funktionen mit Bedeutung über die eigene Region hinaus. In einem Verdichtungsraum liegen Siedlungen, Arbeitsplätze und Verkehrsachsen dicht. Pendelwege verbinden das Zentrum mit angrenzenden Orten.",
+      "Viele Stellen und gute Verbindungen ziehen Menschen an. Steigende Nachfrage kann Wohnen verteuern. Ein dichter öffentlicher Verkehr kann Fahrten mit dem Auto ersetzen, wenn Haltestellen und Takt zu den Wegen passen. Mehr Versiegelung kann Hitze und Wasserabfluss verstärken."
+    ],
+    "takeaway": "Beschreibe Metropolen über ihre Funktionen und Verflechtungen. Wäge die Folgen von Dichte für Menschen und Umwelt ab.",
+    "sourceIds": [
+      "lehrplan"
+    ],
+    "quiz": {
+      "question": "Was zeigt eine Verflechtung im Verdichtungsraum?",
+      "answer": "Viele Wege zwischen Wohnorten im Umland und Arbeitsorten im Zentrum.",
+      "wrong": [
+        "Eine Stadtgrenze ohne Wege darüber hinweg.",
+        "Ein hoher Berg in der Region."
+      ],
+      "explanation": "Regelmäßige Pendelwege verbinden unterschiedliche Orte zu einem funktionalen Raum."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Welche Sicht passt?",
+      "instruction": "Ordne zum passenden Teil des Stadtmodells zu.",
+      "categories": [
+        "Zentrum",
+        "Umland",
+        "Verbindung"
+      ],
+      "entries": [
+        {
+          "text": "Viele Arbeitsplätze und zentrale Einrichtungen liegen nah beisammen",
+          "target": 0,
+          "feedback": "Das Modell bündelt zentrale Funktionen im Kern."
+        },
+        {
+          "text": "Wohngebiete liegen jenseits der Gemeindegrenze",
+          "target": 1,
+          "feedback": "Das Umland gehört oft zum funktionalen Stadtgebiet."
+        },
+        {
+          "text": "Ein Regionalzug bringt Pendelnde aus den Vororten",
+          "target": 2,
+          "feedback": "Die Bahn verknüpft Wohn- und Arbeitsorte."
+        }
+      ],
+      "conclusion": "Beschreibe Metropolen über ihre Funktionen und Verflechtungen. Wäge die Folgen von Dichte für Menschen und Umwelt ab."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre mit der Skizze einen Nutzen und eine Schwierigkeit dichter Bebauung.",
+        "hints": [
+          "Denke an kurze Wege.",
+          "Denke an Bodenversiegelung oder Wohnkosten."
+        ],
+        "model": "In dichten Quartieren können viele Ziele zu Fuß erreichbar sein. Sind große Flächen versiegelt, versickert Regen langsamer und Hitze kann länger anhalten. Grünflächen können beides abmildern.",
+        "criteria": [
+          "Ich erkläre einen Vorteil.",
+          "Ich erkläre eine Umwelt- oder Sozialfolge.",
+          "Ich stelle einen Bezug zur Dichte her."
+        ]
+      },
+      "2": {
+        "prompt": "Eine Stadt will Wohnungen in einem Randgebiet bauen. Beurteile, welche zwei Bedingungen verhindern könnten, dass der Autoverkehr stark wächst.",
+        "hints": [
+          "Denke an erreichbare Haltestellen.",
+          "Frage nach Zielen in der Nähe."
+        ],
+        "model": "Eine Bahn mit häufigen Verbindungen macht einen Teil der Arbeitswege ohne Auto möglich. Schulen, Geschäfte und sichere Fuß- oder Radwege in der Nähe verringern zusätzlich die Zahl langer Autofahrten.",
+        "criteria": [
+          "Ich verknüpfe Wohnort und Arbeitswege.",
+          "Ich nenne eine Bedingung am Verkehrsangebot.",
+          "Ich begründe eine zweite Bedingung im Quartier."
+        ]
+      }
+    },
+    "figures": [
+      "verdichtung"
+    ],
+    "workedExample": "Eine Familie wohnt außerhalb der Pariser Stadtgrenze, ein Elternteil fährt zur Arbeit ins Zentrum. Der Arbeitsweg verbindet beide Orte. Für die Untersuchung des Verdichtungsraums zählt deshalb auch der Wohnort außerhalb der Stadt.",
+    "transferCheck": {
+      "question": "Eine Großstadt plant neue Wohnungen am Rand. Was kann zusätzliche Autofahrten am ehesten begrenzen?",
+      "answer": "Ein häufiger Bahnanschluss und sichere Wege zu nahe liegenden Geschäften und Schulen.",
+      "wrong": [
+        "Mehr Wohnungen ohne zusätzliche Verbindungen.",
+        "Ein größerer Parkplatz im Zentrum bei unverändertem Busangebot."
+      ],
+      "explanation": "Verlässliche Alternativen und kurze Wege machen mehr Alltagsziele ohne Auto erreichbar."
+    }
+  },
+  {
+    "id": "standortfaktoren",
+    "lb": 5,
+    "title": "Standortwahl für Unternehmen",
+    "period": "Geo7 5 · Branchen · harte und weiche Faktoren",
+    "intro": "Ein Logistiklager und ein Forschungsbetrieb können am selben Ort sehr unterschiedliche Vorteile sehen.",
+    "paragraphs": [
+      "Standortfaktoren sind örtliche Eigenschaften, die eine Entscheidung beeinflussen. Gut messbar sind etwa Miete, Fläche und Fahrzeit. Faktoren wie Wohnqualität oder Zugang zu attraktiven Freizeitangeboten lassen sich oft weniger direkt in Zahlen ausdrücken.",
+      "Ein Lager braucht gute Verbindungen für schwere Güter und Platz. Forschung kann Nähe zu Hochschulen, Fachkräften und schnellem Datennetz besonders hoch gewichten. Verändern sich Technik, Kosten oder Nachfrage, kann sich die Bewertung desselben Ortes ändern."
+    ],
+    "takeaway": "Gewichte Standortfaktoren nach der Aufgabe der Branche. Erkläre Nachteile und Unsicherheiten deiner Wahl.",
+    "sourceIds": [
+      "lehrplan"
+    ],
+    "quiz": {
+      "question": "Welcher Standortfaktor ist für ein Umschlaglager typischerweise besonders wichtig?",
+      "answer": "Schneller Anschluss an geeignete Güterverkehrswege.",
+      "wrong": [
+        "Die unmittelbare Nähe zu einer Universität.",
+        "Ein lebendiges Geschäftsviertel mit vielerlei Laufkundschaft."
+      ],
+      "explanation": "Gute Anschlüsse können Zeit und Kosten für Warentransport sparen."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Welche Nutzung passt besser?",
+      "instruction": "Ordne den jeweils besonders wichtigen Vorteil zu.",
+      "categories": [
+        "Güterlogistik",
+        "Forschung",
+        "Beide"
+      ],
+      "entries": [
+        {
+          "text": "Große Fläche an einem Güterbahnhof",
+          "target": 0,
+          "feedback": "Die Nähe zum Gütertransport vereinfacht den Umschlag."
+        },
+        {
+          "text": "Direkte Kooperation mit einer Hochschule",
+          "target": 1,
+          "feedback": "Forschung profitiert vom Austausch mit anderen Einrichtungen."
+        },
+        {
+          "text": "Gut erreichbarer Arbeitsplatz",
+          "target": 2,
+          "feedback": "Beide Branchen brauchen Mitarbeitende, die ihren Arbeitsplatz erreichen."
+        }
+      ],
+      "conclusion": "Gewichte Standortfaktoren nach der Aufgabe der Branche. Erkläre Nachteile und Unsicherheiten deiner Wahl."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Vergleiche einen verkehrsgünstigen Standort am Rand und einen Standort nahe der Hochschule. Ordne Lager und Forschungsbüro begründet zu.",
+        "hints": [
+          "Gewichte Fahrwege für Güter.",
+          "Gewichte Austausch und Fachkräfte."
+        ],
+        "model": "Das Lager passt eher zur großen Fläche mit Anschluss für Güter. Das Forschungsbüro profitiert von kurzen Wegen zur Hochschule. Für beide würde ich Miete und Anschluss für Mitarbeitende vergleichen.",
+        "criteria": [
+          "Ich nenne je einen Standort.",
+          "Ich begründe beide Zuordnungen.",
+          "Ich nenne einen zusätzlichen Vergleich."
+        ]
+      },
+      "2": {
+        "prompt": "Ein Forschungsteam arbeitet häufiger online. Erkläre, warum dadurch ein anderer Standort attraktiv werden kann und welcher Faktor wichtig bleibt.",
+        "hints": [
+          "Welche Treffen können digital stattfinden?",
+          "Welche Infrastruktur braucht digitale Zusammenarbeit?"
+        ],
+        "model": "Der tägliche Weg zur Hochschule kann weniger wichtig werden, und ein günstigerer Standort gewinnt. Ein zuverlässiges Datennetz bleibt nötig. Für gemeinsame Laborarbeit kann die räumliche Nähe trotzdem einen Vorteil behalten.",
+        "criteria": [
+          "Ich erkläre den Bedeutungsverlust eines Faktors.",
+          "Ich nenne einen weiter wichtigen Faktor.",
+          "Ich erkenne einen Grund für bleibende Nähe."
+        ]
+      }
+    },
+    "figures": [
+      "standorte"
+    ],
+    "lab": "standort",
+    "workedExample": "Ein Güterlager vergleicht einen großen Platz am Güterbahnhof mit einem kleineren Platz an einer Hochschule. Wegen der vielen Lieferungen gewichtet es Platz und Anschluss stärker. Ein Forschungsteam mit häufigen Laborterminen kann die Hochschulnähe höher bewerten.",
+    "transferCheck": {
+      "question": "Forschende folgen Online-Treffen häufiger von einem kleineren Büro aus. Welcher Standortfaktor kann dadurch an Bedeutung gewinnen?",
+      "answer": "Ein stabiles, schnelles Datennetz.",
+      "wrong": [
+        "Eine größere Fläche zum Umschlagen von Containern.",
+        "Ausreichend Parkplätze für tägliche Treffen mit allen Beteiligten."
+      ],
+      "explanation": "Digitale Zusammenarbeit braucht eine zuverlässige Verbindung. Ein Güteranschluss löst dieses Problem nicht."
+    }
+  },
+  {
+    "id": "europa-vernetzen",
+    "lb": 5,
+    "title": "Verbindungen über Grenzen planen",
+    "period": "Geo7 5 · Fallbeispiel Öresund · Zielkonflikte",
+    "intro": "Eine Querung zwischen zwei Ländern kann Arbeitsmärkte verbinden und neue Verkehrsströme auslösen.",
+    "paragraphs": [
+      "Die Verbindung über den Öresund verknüpft Kopenhagen und Malmö durch Straße und Schiene. Eine kürzere oder verlässlichere Fahrt kann längeres Pendeln oder mehr Handel ermöglichen. Zugang und Nutzen hängen auch von Fahrpreisen, Takt und Anschlüssen ab.",
+      "Bau und Betrieb benötigen Fläche und Ressourcen und können Lebensräume oder Wasserströmungen beeinflussen. Bei einer Entscheidung vergleichst du Alternativen und Perspektiven. Ähnliche Fragen stellen sich bei grenzübergreifenden Stromleitungen und Datennetzen."
+    ],
+    "takeaway": "Bewerte eine Verbindung nach Nutzen, Kosten, Verteilung und Umweltfolgen. Vergleiche Alternativen auf derselben Grundlage.",
+    "sourceIds": [
+      "lehrplan"
+    ],
+    "quiz": {
+      "question": "Was ergänzt die reine Fahrzeit am besten bei einer sozialen Bewertung?",
+      "answer": "Wer sich Fahrten leisten kann und Haltestellen erreicht.",
+      "wrong": [
+        "Die Kapazität des neuen Frachterminals.",
+        "Die erwarteten Baukosten pro Kilometer."
+      ],
+      "explanation": "Erreichbarkeit und Preise bestimmen, wer vom schnelleren Weg profitieren kann."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Drei Blickwinkel auf eine Querung",
+      "instruction": "Ordne den genannten Aspekt einer Perspektive zu.",
+      "categories": [
+        "Wirtschaft",
+        "Soziales",
+        "Umwelt"
+      ],
+      "entries": [
+        {
+          "text": "Ein Betrieb erreicht mehr Kundschaft",
+          "target": 0,
+          "feedback": "Größere Märkte können den Absatz verändern."
+        },
+        {
+          "text": "Pendlerinnen brauchen bezahlbare Tickets",
+          "target": 1,
+          "feedback": "Es geht um Zugang für unterschiedliche Einkommen."
+        },
+        {
+          "text": "Bauarbeiten stören flache Lebensräume",
+          "target": 2,
+          "feedback": "Die Maßnahme verändert die natürliche Umgebung."
+        }
+      ],
+      "conclusion": "Bewerte eine Verbindung nach Nutzen, Kosten, Verteilung und Umweltfolgen. Vergleiche Alternativen auf derselben Grundlage."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Vergleiche für zwei Küstenstädte einen schnelleren Bahnanschluss und den Ausbau einer Autofähre anhand zweier Kriterien.",
+        "hints": [
+          "Wähle etwa Takt und Umweltwirkung.",
+          "Erkläre, von welchen Annahmen dein Urteil abhängt."
+        ],
+        "model": "Ein häufiger Bahnanschluss kann viele Personen ohne Auto befördern. Eine Fähre kann flexibler angepasst werden und benötigt unter Umständen weniger feste Bauwerke. Die Umweltbewertung hängt auch von Auslastung, Energie und Eingriffen beim Bau ab.",
+        "criteria": [
+          "Ich vergleiche beide Varianten.",
+          "Ich nutze zwei gemeinsame Kriterien.",
+          "Ich nenne eine Unsicherheit."
+        ]
+      },
+      "2": {
+        "prompt": "Eine neue Brücke verkürzt die Fahrt, ist aber für viele Familien zu teuer. Entwirf eine Verbesserung, die Umwelt und Zugang berücksichtigt.",
+        "hints": [
+          "Wer kann die Brücke aktuell nutzen?",
+          "Gibt es eine Alternative zu mehr Autofahrten?"
+        ],
+        "model": "Ein bezahlbarer Regionalbus oder Zug mit regelmäßigen Verbindungen würde Menschen ohne Auto oder mit kleinem Budget helfen. Wenn viele mitfahren, kann weniger zusätzlicher Autoverkehr entstehen. Dafür braucht es gute Anschlüsse auf beiden Seiten.",
+        "criteria": [
+          "Ich erkenne eine Zugangshürde.",
+          "Ich nenne eine konkrete Änderung.",
+          "Ich erkläre eine mögliche Umweltwirkung."
+        ]
+      }
+    },
+    "figures": [
+      "verbindungen"
+    ],
+    "workedExample": "Verkürzt eine Querung die Fahrt, können Betriebe einen größeren Markt erreichen. Ist das Zugticket zu teuer, profitieren manche Beschäftigte kaum. Bei der Bewertung gehören deshalb Fahrzeit und Preis zusammen.",
+    "transferCheck": {
+      "question": "Eine neue Querung ist schneller, aber zu teuer für viele Familien. Welche Maßnahme verbindet Zugang und weniger zusätzliche Autofahrten am ehesten?",
+      "answer": "Eine bezahlbare, regelmäßig verkehrende Bus- oder Bahnverbindung über die Querung.",
+      "wrong": [
+        "Eine zusätzliche Fahrspur mit unverändertem Fahrpreis.",
+        "Eine Senkung der Preise allein für Fernlastwagen."
+      ],
+      "explanation": "Ein bezahlbares öffentliches Angebot verbessert den Zugang und kann einzelne Autofahrten ersetzen."
+    }
+  }
+]

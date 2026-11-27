@@ -125,6 +125,17 @@ if (process.argv.includes("--complete")) {
 	}
 }
 
+const styles = readFileSync(join(root, "src/styles.css"), "utf8");
+const pieceBlocks = [...styles.matchAll(/\.pieces\s*\{([^}]*)\}/g)].map(
+	(m) => m[1],
+);
+assert.ok(pieceBlocks.length > 0, "place-value .pieces rules exist");
+for (const block of pieceBlocks) {
+	assert.doesNotMatch(block, /\boverflow:\s*hidden\b/);
+	assert.doesNotMatch(block, /(?:^|[;\s])height:\s*\d+px\b/);
+}
+assert.match(styles, /\.place-column\s*\{[^}]*container-type:\s*inline-size/);
+
 console.log(
 	"Offline package verified: exact HTML, launchers, relative assets and truthful media status.",
 );

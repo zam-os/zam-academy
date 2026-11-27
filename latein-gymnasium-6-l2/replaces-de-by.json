@@ -1,0 +1,48 @@
+{
+	"schema": 1,
+	"status": "proposal-only",
+	"approved": null,
+	"source_repository": "https://github.com/zam-os/zam",
+	"source_commit": "67e190c2b7e5282851dfdd60ce21b69ed373dfa9",
+	"source": "Inventory checked on 2026-11-25 in tests/fixtures/curriculum/ and src/kernel/library/bundled-cells.ts: no Latein Gymnasium grade 6 legacy cell exists. The nearest legacy fixture is de-by:gymnasium-7-latein-aci-partizipialkonstruktionen-deklinationen (4 items), whose AcI item J01 overlaps l6-aci-grundbau-check while J02 is a multi-part synthesis card and J03–J04 cover Participium Coniunctum (grade 7). No history transfer is proposed or declared until Thomas decides.",
+	"sources": [],
+	"rows": [],
+	"neighbouring_grade_review": {
+		"cell_id": "de-by:gymnasium-7-latein-aci-partizipialkonstruktionen-deklinationen",
+		"source_path": "tests/fixtures/curriculum/de-by-gymnasium-7-latein-aci-partizipialkonstruktionen-deklinationen-kvt.json",
+		"inspected_items": [
+			{
+				"id": "01K4T7A0000000000000000J01",
+				"tier": "tier1_fast",
+				"topic": "Subjektsakkusativ im AcI als Subjekt im Nominativ im dass-Satz",
+				"grade6_overlap_slug": "l6-aci-grundbau-check",
+				"assessment": "Equivalent single-facet retrieval (candidate for category A if Thomas decides to move this grade-7 AcI item to grade 6)."
+			},
+			{
+				"id": "01K4T7A0000000000000000J02",
+				"tier": "tier2_synthesis",
+				"topic": "AcI-Auslöser, 3 Übersetzungsschritte, Gleich-/Vorzeitigkeit",
+				"grade6_overlap_slug": null,
+				"assessment": "Multi-part synthesis split across l6-aci-grundbau and l6-aci-zeitverhaeltnisse; never split history over several cards (category C keep-active)."
+			},
+			{
+				"id": "01K4T7A0000000000000000J03",
+				"tier": "tier1_fast",
+				"topic": "PPP (Participium Coniunctum) — vorzeitig und passiv",
+				"grade6_overlap_slug": null,
+				"assessment": "Belongs strictly to grade 7 (L7 2.2/2.3); outside grade 6."
+			},
+			{
+				"id": "01K4T7A0000000000000000J04",
+				"tier": "tier2_synthesis",
+				"topic": "Participium Coniunctum (PPP/PPA, KNG, 4 Übersetzungsmethoden)",
+				"grade6_overlap_slug": null,
+				"assessment": "Belongs strictly to grade 7 (L7 2.2/2.3); outside grade 6."
+			}
+		],
+		"decision_question": "Should the entire cell de-by:gymnasium-7-latein-aci-partizipialkonstruktionen-deklinationen stay with grade 7 (status quo), or should J01 be mapped as category A to l6-aci-grundbau-check (with J02 as category C keep-active) after explicit approval?",
+		"decision": "pending-thomas-scope-decision",
+		"decided_by": null,
+		"decided": null
+	}
+}

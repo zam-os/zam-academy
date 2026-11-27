@@ -1,0 +1,463 @@
+{
+  "schema": 1,
+  "checked": "2026-11-18",
+  "curriculum": "https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/6/geschichte",
+  "curriculum_sha256": "6aae8c305838f0274cc77ebec5588f66a67a383feffb4383ead5daf02c9f2605",
+  "school_type": "realschule",
+  "grade": 6,
+  "subject": "geschichte",
+  "core_lessons": 42,
+  "optional_lessons": [],
+  "scope_note": "Ein gemeinsamer Fachlehrplan für alle Wahlpflichtfächergruppen, deshalb ohne track. Die Kompetenzerwartungen stehen wortgleich wie auf der am 18.11.2026 direkt abgerufenen Seite (Kopie in tests/fixtures/lehrplanplus-g6.html, nur Leerraum normalisiert). Lernbereich 1 wird in eigenen Methodenlektionen geübt und in allen Lernbereichen angewendet. Rollenspiele, Comics, Exkursionen, die Arbeit mit dem eigenen Schulbuch und mit Originalbildern und echten Geschichtskarten finden im Unterricht statt; solche Zeilen tragen den Status „supported“ und nennen in evidence das nötige Material. Das gilt auch für die vier Zeilen zur Arbeit mit Geschichtskarten: Die App beschreibt Karten, zeigt sie aber nicht. Lehrervideos folgen als separater Schritt.",
+  "outside_app": [
+    "Bilder, Bauwerke und Geschichtskarten sind in den Übungen beschrieben, nicht abgebildet; Originale zeigen Schulbuch, Museum und die verlinkten Seiten.",
+    "Exkursionen (Limes, Römermuseum, Kelten- oder Ägyptenmuseum), Rollenspiele, Comics und Rekonstruktionsbilder gestalten die Schülerinnen und Schüler im Unterricht.",
+    "Lektion g6-technik-heute hat den Stand November 2026 und nennt keine aktuellen Zahlen; aktuelle Entwicklungen recherchieren die Lernenden selbst.",
+    "Eigene Texte werden nicht automatisch bewertet; die Selbsteinschätzung ersetzt keine Rückmeldung der Lehrkraft."
+  ],
+  "rows": [
+    {
+      "lb": 1,
+      "competence": "beantworten einfache, u. a. selbst entwickelte historische Fragestellungen mithilfe ausgewählter Text-, Bild- oder Sachquellen. Sie unterscheiden diese Quellen von Darstellungen. Insbesondere bewerten sie historische Persönlichkeiten, indem sie sich z. B. mit perspektivischen Urteilen in Quellen und Darstellungen beschäftigen.",
+      "lessons": [
+        "g6-quellen",
+        "g6-caesar-augustus",
+        "g6-staatsmaenner"
+      ],
+      "status": "implemented",
+      "evidence": "g6-quellen: Quelle und Darstellung unterscheiden, Leitfrage formulieren, Werkstatt ordnet fünf Materialien zu; Caesars Selbstdarstellung als perspektivisches Urteil. g6-caesar-augustus prüft den Tatenbericht des Augustus, g6-staatsmaenner Selbstdarstellung und Erinnerung."
+    },
+    {
+      "lb": 1,
+      "competence": "bilden mithilfe von Quellen und Darstellungen einfache historische Narrationen, ggf. auch mit gestalterisch-kreativem Anspruch, wie z. B. Comic, Rekonstruktionsbild, Dialog, Rollenspiel, Erzählung.",
+      "lessons": [
+        "g6-erzaehlen"
+      ],
+      "status": "supported",
+      "evidence": "g6-erzaehlen klärt Kriterien einer historischen Erzählung (belegt, passend erfunden, Anachronismus) an einem beschriebenen Rekonstruktionsbild; Level 2 lässt einen kurzen Dialog schreiben und kennzeichnen. Comics, Rekonstruktionsbilder und Rollenspiele selbst gestalten Schülerinnen und Schüler im Unterricht."
+    },
+    {
+      "lb": 1,
+      "competence": "verwenden einfache Schaubilder oder Geschichtskarten (z. B. zum Feldzug Alexanders des Großen) zur Veranschaulichung und Information. Außerdem nutzen und erstellen sie Darstellungen der geschichtlichen Chronologie zur Orientierung in der Zeit, wie z. B. Zeitleiste, Geschichtsfries.",
+      "lessons": [
+        "g6-karten",
+        "g6-zeitleiste",
+        "g6-polis",
+        "g6-rom-anfaenge"
+      ],
+      "status": "supported",
+      "evidence": "Die App liefert Schaubilder und Zeitleisten: g6-zeitleiste übt Zeitrechnung, Jahrhunderte, Zeitleiste und Geschichtsfries, jede Lektion zeigt einen maßstabsgerechten Zeitstreifen, Lernpfad und Nachschlagen einen Geschichtsfries, 21 Lektionen ein Schaubild. g6-karten übt den Fragenkatalog an eine Geschichtskarte (Thema, Zeit, Raum, Legende, Maßstab) an einer beschriebenen Karte zum Alexanderzug. Geschichtskarten selbst zeigt die App nicht; dafür brauchen die Lernenden die Karte zum Alexanderzug aus Schulbuch oder Geschichtsatlas."
+    },
+    {
+      "lb": 1,
+      "competence": "lernen archäologische Arbeitstechniken kennen, um beispielhaft den Weg vom archäologischen Befund zur Aussage über die Lebensumstände der damaligen Menschen nachvollziehen zu können, wie z. B. bei der Deutung steinzeitlicher Funde (Ötzi).",
+      "lessons": [
+        "g6-archaeologie",
+        "g6-altsteinzeit"
+      ],
+      "status": "implemented",
+      "evidence": "g6-archaeologie: Arbeitsschritte vom Fund zur Aussage am Beispiel Ötzi, Werkstatt trennt Befund, Deutung und offene Frage. g6-altsteinzeit deutet Funde nach Ernährung, Technik und Kunst."
+    },
+    {
+      "lb": 1,
+      "competence": "nutzen ihr Wissen um den Aufbau ihres Schulbuchs, aber auch von altersgemäßen historischen Sachbüchern oder über entsprechende Medienbeiträge (z. B. historische Spielfilme, Dokumentationen), um gezielt Antworten auf ausgesuchte historische Fragen zu finden.",
+      "lessons": [
+        "g6-informieren"
+      ],
+      "status": "supported",
+      "evidence": "g6-informieren erklärt Aufbau des Schulbuchs (Register, Autorentext, Materialien), Sachbücher und Dokumentationen und trennt an einer beschriebenen Filmszene Belegtes von Erfundenem. Die Arbeit mit dem eigenen Schulbuch und echten Filmen findet außerhalb der App statt."
+    },
+    {
+      "lb": 2,
+      "competence": "erfassen die Dimensionen Vergangenheit, Gegenwart und Zukunft als grundlegendes Muster der menschlichen Orientierung und begreifen sich damit selbst als Mensch mit eigener Geschichte.",
+      "lessons": [
+        "g6-zeit-und-quellen"
+      ],
+      "status": "implemented",
+      "evidence": "Erklärung von Vergangenheit, Gegenwart und Zukunft und der eigenen Geschichte, Quellenarten und Überreste/Überlieferung mit Schaubild; Level 1 sammelt Quellen zur eigenen Geschichte."
+    },
+    {
+      "lb": 2,
+      "competence": "vergleichen an anschaulichen Beispielen (z. B. anhand archäologischer Bodenfunde, Sachquellen, Ausstellungsgegenständen) die Lebensumstände in Altsteinzeit und Jungsteinzeit, um die Bedeutung der neolithischen Revolution zu erklären.",
+      "lessons": [
+        "g6-altsteinzeit",
+        "g6-jungsteinzeit"
+      ],
+      "status": "implemented",
+      "evidence": "Lebensweise in Alt- und Jungsteinzeit an Funden; g6-jungsteinzeit vergleicht beide in einem Schaubild und erklärt die neolithische Revolution mit Vor- und Nachteilen."
+    },
+    {
+      "lb": 2,
+      "competence": "erfassen die historische Bedeutung der Kelten, indem sie sich der zahlreichen Spuren dieses Volkes in Europa anhand archäologischer Relikte bewusst werden.",
+      "lessons": [
+        "g6-kelten"
+      ],
+      "status": "implemented",
+      "evidence": "Kelten in Süddeutschland: Oppidum Manching, Funde, Namen, keltische Sprachen in Europa, fremde Berichte; Werkstatt ordnet Spuren nach Fund, Sprache und Außensicht."
+    },
+    {
+      "lb": 2,
+      "competence": "verwenden bei der Darstellung einfacher historischer Zusammenhänge folgende Grundlegende Begriffe: Quelle, Altsteinzeit, Jungsteinzeit.",
+      "lessons": [
+        "g6-zeit-und-quellen",
+        "g6-altsteinzeit",
+        "g6-jungsteinzeit"
+      ],
+      "status": "implemented",
+      "evidence": "Die Begriffe Quelle, Altsteinzeit und Jungsteinzeit werden erklärt, geübt und im Nachschlagen aufgeführt."
+    },
+    {
+      "lb": 3,
+      "competence": "erfassen am Beispiel des alten Ägypten zentrale Merkmale einer frühen Hochkultur, ordnen die Leistungen vor dem Hintergrund der damaligen Zeit ein und sind in der Lage, diese Kriterien auf andere Kulturen zu übertragen.",
+      "lessons": [
+        "g6-hochkultur"
+      ],
+      "status": "implemented",
+      "evidence": "Merkmale einer Hochkultur am Beispiel Ägypten, Einordnung im Vergleich mit Mitteleuropa um 3000 v. Chr.; Werkstatt überträgt die Merkmale auf Mesopotamien."
+    },
+    {
+      "lb": 3,
+      "competence": "nutzen ihre Kenntnisse zu den geographischen und klimatischen Gegebenheiten des alten Ägypten, um den Nil als Lebensader des Landes und seiner Gesellschaft zu begreifen.",
+      "lessons": [
+        "g6-nil"
+      ],
+      "status": "implemented",
+      "evidence": "Nil, Wüste, Nilschwemme und Jahreszeiten (Schaubild Achet, Peret, Schemu), Bedeutung für Staat und Gesellschaft."
+    },
+    {
+      "lb": 3,
+      "competence": "untersuchen mithilfe eines vorgegebenen knappen Kriterienkatalogs Bau- und Kunstwerke (u. a. Pyramiden) und ziehen daraus Rückschlüsse auf Gesellschaftsordnung, Kultur und Religion.",
+      "lessons": [
+        "g6-pyramiden"
+      ],
+      "status": "implemented",
+      "evidence": "Kriterienkatalog (Was, wann, Größe, Aufwand, Zweck, Gestaltung) an der Cheops-Pyramide; Werkstatt zieht Schlüsse auf Gesellschaft, Religion und Wissen."
+    },
+    {
+      "lb": 3,
+      "competence": "nutzen ihre Kenntnisse über die Herrschaft der Pharaonen, um wesentliche Merkmale von Monarchie herauszuarbeiten und die göttliche Herrschaftsvorstellung auf der Basis eigener Wertvorstellungen zu beurteilen.",
+      "lessons": [
+        "g6-pharao"
+      ],
+      "status": "implemented",
+      "evidence": "Merkmale der Monarchie am Pharao, Gesellschaftspyramide, Beurteilung der göttlichen Herrschaft mit heutigen Werten und der Sicht der Zeitgenossen."
+    },
+    {
+      "lb": 3,
+      "competence": "wenden folgende Grundlegende Daten und Begriffe bei der Beschäftigung mit Quellen und Darstellungen sowie bei kurzen eigenen Beschreibungen von historischen Zusammenhängen an: um 3000 v. Chr. Hochkultur in Ägypten; Pharao, Pyramide.",
+      "lessons": [
+        "g6-hochkultur",
+        "g6-pharao",
+        "g6-pyramiden"
+      ],
+      "status": "implemented",
+      "evidence": "um 3000 v. Chr. Hochkultur in Ägypten, Pharao und Pyramide werden erklärt, geübt und im Nachschlagen aufgeführt."
+    },
+    {
+      "lb": 4,
+      "competence": "nutzen die Erkenntnis, dass im antiken Griechenland wichtige Grundlagen der europäischen Kultur geschaffen worden sind, um z. B. Spuren antiker Bezüge in ihrer unmittelbaren Lebenswelt zu erfassen und in den historischen Kontext einzuordnen.",
+      "lessons": [
+        "g6-kultur-griechen"
+      ],
+      "status": "implemented",
+      "evidence": "Olympische Spiele, Theater und griechische Spuren in Sprache, Bauten (Königsplatz München) und Bräuchen; Werkstatt ordnet Spuren aus der Lebenswelt ein."
+    },
+    {
+      "lb": 4,
+      "competence": "untersuchen an anschaulichen Beispielen und anhand eines knappen vorgegebenen Kriterienkatalogs antike Kunstwerke (z. B. Tempel, Statuen), um die kulturellen Leistungen der griechischen Antike zu erfassen.",
+      "lessons": [
+        "g6-kunst-griechen"
+      ],
+      "status": "implemented",
+      "evidence": "Tempel und Statuen mit Kriterienkatalog, Säulenordnungen, Kontrapost, Bemalung; Werkstatt bestimmt Säulenordnungen. Originale sehen Schülerinnen und Schüler im Museum oder Schulbuch."
+    },
+    {
+      "lb": 4,
+      "competence": "erarbeiten zentrale Aussagen einer einfachen Geschichtskarte, um u. a. aufzuzeigen, wie die landschaftliche Beschaffenheit Griechenlands das Entstehen der Poleis begünstigte.",
+      "lessons": [
+        "g6-polis"
+      ],
+      "status": "supported",
+      "evidence": "Die Werkstatt wertet eine beschriebene Karte Griechenlands aus und trennt Beobachtung und Folgerung für die Entstehung der Poleis. Die Karte selbst zeigt die App nicht; dafür brauchen die Lernenden eine physische Karte Griechenlands aus Schulbuch oder Geschichtsatlas."
+    },
+    {
+      "lb": 4,
+      "competence": "vergleichen in Grundzügen die griechische Kolonisation mit Migrationsbewegungen der Gegenwart, um an anschaulichen und kindgerechten Beispielen (ggf. familiären Erfahrungen) Gemeinsamkeiten und Unterschiede herauszuarbeiten.",
+      "lessons": [
+        "g6-kolonisation"
+      ],
+      "status": "implemented",
+      "evidence": "Gründe und Verlauf der Kolonisation, Vergleich mit Migration heute in Schaubild, Werkstatt und Level-2-Aufgabe, mit Bezug auf mögliche Familienerfahrungen."
+    },
+    {
+      "lb": 4,
+      "competence": "erklären den Zusammenhang zwischen der Entwicklung der attischen Demokratie und den Perserkriegen.",
+      "lessons": [
+        "g6-perserkriege",
+        "g6-verfassungen"
+      ],
+      "status": "implemented",
+      "evidence": "g6-perserkriege verknüpft Marathon, Flottenbau, Salamis und die Rolle der Ruderer mit dem Ausbau der Demokratie; Zeitleiste der Ereignisse. g6-verfassungen zeigt den Weg von Solon bis Kleisthenes."
+    },
+    {
+      "lb": 4,
+      "competence": "beurteilen in altersgerechter Weise die Demokratie in der attischen Polis vor dem Hintergrund moderner demokratischer Vorstellungen.",
+      "lessons": [
+        "g6-perikles"
+      ],
+      "status": "implemented",
+      "evidence": "Demokratie unter Perikles, Vergleich mit Deutschland heute im Schaubild, Level 2 beurteilt Athen mit heutigen Maßstäben und aus seiner Zeit."
+    },
+    {
+      "lb": 4,
+      "competence": "wenden folgende Grundlegende Daten und Begriffe bei der Beschäftigung mit Quellen und Darstellungen sowie bei kurzen eigenen Beschreibungen von historischen Zusammenhängen an: 5. Jh. v. Chr. Blütezeit Athens; Antike, Migration, Polis, Verfassung, Monarchie, Aristokratie, Demokratie.",
+      "lessons": [
+        "g6-perikles",
+        "g6-polis",
+        "g6-kolonisation",
+        "g6-verfassungen"
+      ],
+      "status": "implemented",
+      "evidence": "5. Jh. v. Chr. Blütezeit Athens; Antike, Migration, Polis, Verfassung, Monarchie, Aristokratie und Demokratie werden erklärt, geübt und im Nachschlagen aufgeführt."
+    },
+    {
+      "lb": 5,
+      "competence": "erkennen, dass durch das Imperium Romanum wichtige Grundlagen der europäischen Kultur geschaffen wurden, und erörtern europaweite kulturelle Gemeinsamkeiten (z. B. Sprache, Rechtssystem).",
+      "lessons": [
+        "g6-erbe-roms"
+      ],
+      "status": "implemented",
+      "evidence": "Sprache, Recht, Begriffe, Kalender, Bauweise und Christentum als gemeinsame Wurzeln; Level 2 erörtert die These „Rom ist die Wurzel Europas“ mit Einschränkung."
+    },
+    {
+      "lb": 5,
+      "competence": "erfassen die Ausdehnung des Imperium Romanum in verschiedenen Etappen seiner Geschichte, indem sie Geschichtskarten anhand eines vorgegebenen knappen Fragenkatalogs auswerten.",
+      "lessons": [
+        "g6-rom-anfaenge"
+      ],
+      "status": "supported",
+      "evidence": "Aufstieg Roms in Etappen (Zeitleiste von 753 v. Chr. bis 117 n. Chr.) und ein fester Fragenkatalog an Karten verschiedener Zeitpunkte; Level 2 vergleicht die Ausdehnung um 270 v. Chr. und 117 n. Chr. Die Karten selbst zeigt die App nicht; dafür brauchen die Lernenden Karten zur Ausdehnung des Römischen Reiches aus Schulbuch oder Geschichtsatlas."
+    },
+    {
+      "lb": 5,
+      "competence": "nutzen ihre Kenntnisse über das Leben in der Stadt Rom, um die Herausforderungen einer antiken Großstadt (z. B. Wohnungen, Verkehr, Hygienebedingungen, Wasserversorgung, Umweltverschmutzung) im Vergleich mit heutigen Metropolen einschätzen zu können.",
+      "lessons": [
+        "g6-stadt-rom"
+      ],
+      "status": "implemented",
+      "evidence": "Wohnen, Verkehr, Wasser, Abwasser, Versorgung und Luft in Rom; Schaubild und Level-2-Aufgabe vergleichen mit heutigen Großstädten."
+    },
+    {
+      "lb": 5,
+      "competence": "untersuchen den Aufbau der römischen Familie und vergleichen die sie prägenden Werte mit heutigen Familienformen, Rollenbildern und Wertvorstellungen.",
+      "lessons": [
+        "g6-familie"
+      ],
+      "status": "implemented",
+      "evidence": "pater familias, Rolle der Frau, Werte pietas, fides und virtus; Schaubild vergleicht mit Familienformen und Rechten heute."
+    },
+    {
+      "lb": 5,
+      "competence": "zeigen Prozesse der Romanisierung auf (u. a. am Beispiel Bayerns), um Spuren antiker Bezüge in Europa und in ihrem Heimatraum zu erfassen und einzuordnen. Sie begreifen z. B. im Rahmen einer Exkursion, wie das Imperium Romanum das Leben in den Provinzen geprägt hat.",
+      "lessons": [
+        "g6-provinzen"
+      ],
+      "status": "implemented",
+      "evidence": "Provinz Raetien, Limes, Castra Regina, Via Claudia Augusta und Romanisierung in Bayern mit Schaubild; Werkstatt ordnet Spuren. Die Exkursion selbst findet außerhalb der App statt."
+    },
+    {
+      "lb": 5,
+      "competence": "untersuchen den Umgang mit Juden im Römischen Reich, um einen ersten Einblick in die Bedeutung der Diaspora für das Judentum zu gewinnen und ein Gespür für die besondere Bedeutung des Glaubens und der Kultur für die jüdische Identität zu entwickeln.",
+      "lessons": [
+        "g6-juden"
+      ],
+      "status": "implemented",
+      "evidence": "Juden unter römischer Herrschaft, Tempelzerstörung 70 n. Chr., Diaspora, Synagoge und Tora, Köln 321; Zeitleiste und Beurteilung von Duldung und Gewalt."
+    },
+    {
+      "lb": 5,
+      "competence": "beschreiben die Entwicklungen von der Republik zum Prinzipat und des Christentums zur Staatsreligion als entscheidende Umbrüche in der Geschichte des Imperium Romanum.",
+      "lessons": [
+        "g6-republik",
+        "g6-caesar-augustus",
+        "g6-christentum"
+      ],
+      "status": "implemented",
+      "evidence": "Republik, Krise und Prinzipat (mit Tatenbericht des Augustus) sowie der Weg des Christentums von der Verfolgung zur Staatsreligion (mit Brief des Plinius)."
+    },
+    {
+      "lb": 5,
+      "competence": "gliedern die römische Geschichte u. a. mithilfe der Grundlegenden Daten 1. Jh. v. Chr. Übergang von der Republik zur Kaiserzeit; um Christi Geburt Zeitalter des Augustus.",
+      "lessons": [
+        "g6-caesar-augustus",
+        "g6-rom-anfaenge"
+      ],
+      "status": "implemented",
+      "evidence": "1. Jh. v. Chr. Übergang von der Republik zur Kaiserzeit und um Christi Geburt Zeitalter des Augustus gliedern die Zeitleiste und den Geschichtsfries."
+    },
+    {
+      "lb": 5,
+      "competence": "erfassen anhand der Geschichte Roms die Grundlegenden Begriffe Senat, Republik, Diktator, Caesar, Limes, Judentum, Christentum, Romanisierung, Provinz, um sie zu verstehen und in eigenen Darstellungen fachsprachlich richtig zu verwenden.",
+      "lessons": [
+        "g6-republik",
+        "g6-caesar-augustus",
+        "g6-provinzen",
+        "g6-juden",
+        "g6-christentum"
+      ],
+      "status": "implemented",
+      "evidence": "Senat, Republik, Diktator, Caesar, Limes, Judentum, Christentum, Romanisierung und Provinz werden erklärt, in Aufgaben verwendet und im Nachschlagen aufgeführt."
+    },
+    {
+      "lb": 6,
+      "competence": "erkennen in der Zeit des Übergangs von der Antike zum Mittelalter das Nebeneinander von Veränderungen und Kontinuitäten (z. B. Gesellschaftsaufbau, Kaiserprinzip, Verwaltung und Recht). Sie nutzen ihr Wissen über Tradition und Wandel für ihre lebensweltliche Orientierung, indem sie z. B. erkennen, dass auch Neuanfänge immer von Elementen der Kontinuität geprägt sind.",
+      "lessons": [
+        "g6-untergang-roms",
+        "g6-franken"
+      ],
+      "status": "implemented",
+      "evidence": "g6-untergang-roms trennt Ursachen und das, was nach 476 blieb; g6-franken zeigt die Verbindung germanischer, römischer und christlicher Traditionen."
+    },
+    {
+      "lb": 6,
+      "competence": "analysieren am Beispiel Roms die inneren und äußeren Ursachen des Zusammenbruchs des antiken Reichs und des Beginns einer neuen Epoche.",
+      "lessons": [
+        "g6-untergang-roms"
+      ],
+      "status": "implemented",
+      "evidence": "Innere und äußere Ursachen im Schaubild und in der Werkstatt, Level 2 prüft die These vom völligen Ende."
+    },
+    {
+      "lb": 6,
+      "competence": "beschreiben anhand von einfachen Geschichtskarten die „Völkerwanderung“ und die Dreiteilung der Mittelmeerwelt, um das Ausmaß der Veränderungen von der Antike zum Mittelalter zu erfassen. Sie stellen dabei anschauliche und kindgerechte Vergleiche mit gegenwärtigen Migrationsbewegungen an.",
+      "lessons": [
+        "g6-dreiteilung"
+      ],
+      "status": "supported",
+      "evidence": "„Völkerwanderung“ und Dreiteilung um 750 nach beschriebenen Karten, Schaubild der Etappen, Vergleich mit Migration heute in Level 2. Die Karten selbst zeigt die App nicht; dafür brauchen die Lernenden Karten zur „Völkerwanderung“ und zur Mittelmeerwelt um 750 aus Schulbuch oder Geschichtsatlas."
+    },
+    {
+      "lb": 6,
+      "competence": "untersuchen die Voraussetzungen für die Ausbreitung des Islam.",
+      "lessons": [
+        "g6-islam"
+      ],
+      "status": "implemented",
+      "evidence": "Mohammed, Hidschra und Grundpflichten; Werkstatt ordnet Voraussetzungen der Ausbreitung nach Schwäche der Nachbarn, Stärke der Eroberer und Umgang mit den Eroberten."
+    },
+    {
+      "lb": 6,
+      "competence": "erfassen Kontinuität und Wandel als zentrale historische Kategorien, indem sie z. B. das antike Kaisertum und das Kaisertum Karls des Großen miteinander vergleichen und die Rolle von Missionierung und Christianisierung im Frankenreich untersuchen.",
+      "lessons": [
+        "g6-karl",
+        "g6-franken"
+      ],
+      "status": "implemented",
+      "evidence": "g6-karl vergleicht im Schaubild Augustus und Karl und ordnet Kontinuität und Wandel; g6-franken behandelt Mission und Christianisierung bis zu den bayerischen Bistümern 739."
+    },
+    {
+      "lb": 6,
+      "competence": "verstehen zentrale Grundlegende Daten und Begriffe, wie um 500 Reichsbildung der Franken; 800 Kaiserkrönung Karls des Großen; Islam, Mittelalter, König, Kaiser sowie Karl der Große, um sie fachsprachlich in eigenen Darstellungen richtig zu verwenden.",
+      "lessons": [
+        "g6-franken",
+        "g6-karl",
+        "g6-islam",
+        "g6-untergang-roms"
+      ],
+      "status": "implemented",
+      "evidence": "um 500 Reichsbildung der Franken, 800 Kaiserkrönung, Islam, Mittelalter, König, Kaiser und Karl der Große werden erklärt, geübt und im Nachschlagen aufgeführt."
+    },
+    {
+      "lb": 7,
+      "competence": "nutzen ihre Kenntnisse über den technischen Fortschritt von der Vor- und Frühgeschichte bis zum Frühmittelalter, um die Bedeutung von technischen Erfindungen und Entwicklungen für den Alltag der Menschen und für die Ausübung von Herrschaft zu begreifen und zu beurteilen.",
+      "lessons": [
+        "g6-technik-aegypten",
+        "g6-technik-antike",
+        "g6-technik-heute"
+      ],
+      "status": "implemented",
+      "evidence": "Technik im Dienst von Alltag und Herrschaft in Ägypten und Rom, dieselben Fragen an heutige Technik (Stand November 2026, ohne Statistiken)."
+    },
+    {
+      "lb": 7,
+      "competence": "erkennen die Bedeutung von Überlebenstechniken (z. B. Beherrschung des Feuers, Herstellung von Kleidung, Hausbau, Werkzeug-/Waffentechnik) für die menschliche Kultur an Beispielen aus vorgeschichtlicher Zeit.",
+      "lessons": [
+        "g6-ueberleben"
+      ],
+      "status": "implemented",
+      "evidence": "Feuer, Kleidung, Behausung, Jagd und Werkzeug in Alt- und Jungsteinzeit; Werkstatt ordnet Techniken, Level 2 begründet die wichtigste."
+    },
+    {
+      "lb": 7,
+      "competence": "zeigen an Beispielen auf, dass technische Entwicklungen Weichenstellungen für den Verlauf der Geschichte darstellen (z. B. Bewässerungstechnik bei den Ägyptern, Gewölbe-/Straßenbau bei den Römern, Folgen technischer Entwicklungen für die Umwelt).",
+      "lessons": [
+        "g6-technik-aegypten",
+        "g6-technik-antike"
+      ],
+      "status": "implemented",
+      "evidence": "Bewässerung mit Schaduf-Schaubild, Bogen, Beton, Aquädukte und Straßen mit Querschnitt; Umweltfolgen wie Abholzung und Bleiverschmutzung."
+    },
+    {
+      "lb": 7,
+      "competence": "nutzen für die Herstellung von historischen Zusammenhängen z. B. folgende Grundlegende Daten und Begriffe: ab 3000 v. Chr. Hochkultur in Ägypten; 5. Jh. v. Chr. Blütezeit Athens; 753 v. Chr. mythische Gründung Roms; um Christi Geburt Zeitalter des Augustus; Altsteinzeit, Jungsteinzeit, Pharao, Pyramide, Antike, Polis, Limes.",
+      "lessons": [
+        "g6-ueberleben",
+        "g6-technik-aegypten",
+        "g6-technik-antike",
+        "g6-rom-anfaenge",
+        "g6-caesar-augustus",
+        "g6-perikles",
+        "g6-zeitleiste"
+      ],
+      "status": "implemented",
+      "evidence": "Die Längsschnittlektionen wenden die Daten und Begriffe in neuem Zusammenhang an; 753 v. Chr. mythische Gründung Roms lehrt g6-rom-anfaenge, der Geschichtsfries zeigt alle Daten."
+    },
+    {
+      "lb": 8,
+      "competence": "bewerten die Einflussmöglichkeiten einer einzelnen historischen Persönlichkeit auf die Geschichte, indem sie sich an einfachen Beispielen und anhand von konkreten Situationen mit Möglichkeiten und Grenzen menschlichen Handelns (z. B. auch aus genderspezifischer Perspektive) auseinandersetzen.",
+      "lessons": [
+        "g6-hatschepsut",
+        "g6-alexander"
+      ],
+      "status": "implemented",
+      "evidence": "Hatschepsut: Möglichkeiten und Grenzen einer Herrscherin (auch Rollenbild); Alexander: Grenzen eines Einzelnen, als das Heer den Weitermarsch verweigert."
+    },
+    {
+      "lb": 8,
+      "competence": "vergleichen und beurteilen berühmte Personen der Geschichte vor dem Hintergrund ihrer Zeit (z. B. Selbstdarstellung: Münzen, Bauten, Denkmäler) und aus heutiger Perspektive (z. B. Erinnerung: Städte-/Straßennamen). Sie erkennen dabei, dass eine Person je nach Standpunkt des Betrachters durchaus kontrovers gesehen werden kann.",
+      "lessons": [
+        "g6-staatsmaenner"
+      ],
+      "status": "implemented",
+      "evidence": "Selbstdarstellung von Augustus und Karl (Münzen, Statuen, Bauten, Texte), Erinnerung heute (Augsburg, Karlspreis) und kritische Sicht; Level 2 beurteilt „Vater Europas“."
+    },
+    {
+      "lb": 8,
+      "competence": "reflektieren die Leistungen Alexanders des Großen (u. a. Eroberungen, Städtegründungen, Kulturtransfer) aus historischer und aktueller Perspektive, um seine Persönlichkeit bewerten und das spätere Zerbrechen seines antiken Weltreichs erklären zu können.",
+      "lessons": [
+        "g6-alexander"
+      ],
+      "status": "implemented",
+      "evidence": "Eroberungen, Städtegründungen und Kulturtransfer, Schaubild mit zwei Sichtweisen, Zerfall des Reiches; Level 2 beurteilt den Beinamen."
+    },
+    {
+      "lb": 8,
+      "competence": "nutzen für diesen Längsschnitt z. B. die folgenden Grundlegenden Daten und Begriffe: ab 3000 v. Chr. Hochkultur in Ägypten; 1. Jh. v. Chr. Übergang von der Republik zur Kaiserzeit; 800 Kaiserkrönung Karls des Großen; Pharao, Antike, Monarchie, Demokratie, Senat, Republik, Diktator, Caesar, Mittelalter, Karl der Große, Kaiser.",
+      "lessons": [
+        "g6-hatschepsut",
+        "g6-staatsmaenner",
+        "g6-alexander",
+        "g6-pharao",
+        "g6-republik",
+        "g6-caesar-augustus",
+        "g6-perikles",
+        "g6-karl",
+        "g6-hochkultur",
+        "g6-untergang-roms",
+        "g6-verfassungen"
+      ],
+      "status": "implemented",
+      "evidence": "Die Porträts verwenden die genannten Daten und Begriffe in neuem Zusammenhang; sie sind in den Lektionen erklärt, auf die diese Zeile verweist, und im Nachschlagen aufgeführt."
+    }
+  ]
+}

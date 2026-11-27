@@ -1,0 +1,291 @@
+{
+  "schema": 1,
+  "checked": "2026-11-20",
+  "curriculum": "https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/7/nt_gym",
+  "curriculum_sha256": "cea4bb14c000123381f6343db4856e30e82f16a7a84b887a70dd8b04b189361e",
+  "school_type": "gymnasium",
+  "grade": 7,
+  "subject": "nt_gym",
+  "focus": "NT7 1 Physik in Natur und Technik entdecken (Schwerpunkt Physik)",
+  "track": "Ein Fachlehrplan für alle; die Ausbildungsrichtungen beginnen in Jahrgangsstufe 8.",
+  "hours": {
+    "1.1": 10,
+    "1.2": 10,
+    "1.3": 8
+  },
+  "core_lessons": 21,
+  "optional_lessons": [],
+  "experiments": {
+    "count": 6,
+    "status": "supported",
+    "evidence": "Sechs lokale Plätze im Versuchsnotizbuch, je zwei Schülerexperimente pro Abschnitt. Die App prüft nur ausgefüllte Felder und die eigene Angabe „selbst durchgeführt“, nicht die Durchführung."
+  },
+  "scope_note": "Natur und Technik 7 am Gymnasium hat zwei Schwerpunkte. Dieses Paket deckt Lernbereich 1 (Schwerpunkt Physik, ca. 28 Std.) ab; Lernbereich 2 (Schwerpunkt Informatik) gehört nicht dazu. Die 14 Kompetenzerwartungen und 15 Inhalte stehen wortgleich wie auf der am 20.11.2026 direkt abgerufenen Seite (Leerzeichen normalisiert). Schülerexperimente, eigene Fotos, Skizzen auf Papier, Internetrecherche und der Aufbau mit Schaltungssoftware finden im Unterricht statt; solche Zeilen tragen den Status „supported“. Lehrervideos folgen als eigener Schritt.",
+  "rows": [
+    {
+      "lb": 1,
+      "section": "1.1",
+      "competence": "halten an einem Modellversuch zu einem physikalischen Phänomen aus der Natur oder der Technik ihre Beobachtungen in schriftlicher und zeichnerischer Form fest.",
+      "lessons": [
+        "beobachten"
+      ],
+      "status": "supported",
+      "evidence": "Die Lektion übt am Modellversuch Taschenlampe und Lichtfleck das Trennen von Beobachtung, Deutung und Vermutung, mit Werkstatt, Modelllabor und zwei Protokollaufgaben. Den echten Modellversuch und die Zeichnung auf Papier fertigst du im Unterricht an; die App bewertet beides nicht."
+    },
+    {
+      "lb": 1,
+      "section": "1.1",
+      "competence": "nutzen ein einfaches Modell zum Magnetismus, um Eigenschaften eines Permanentmagneten und die Magnetisierbarkeit von Materialien unter altersangemessener Verwendung der Fachsprache zu erläutern, und erklären eine Möglichkeit zur Orientierung auf der Erde mithilfe des Erdmagnetfeldes.",
+      "lessons": [
+        "magnete",
+        "elementarmagnete",
+        "erdmagnetfeld"
+      ],
+      "status": "implemented",
+      "evidence": "Eigenschaften von Dauermagneten mit Polen, Anziehung, Abstoßung und Abschirmung, das Modell der Elementarmagnete mit Magnetisieren, Entmagnetisieren und Teilen, Orientierung mit Kompass und eingenordeter Karte. Drei Modelllabore, Werkstätten und Begründungsaufgaben; das Schülerexperiment zum Permanentmagneten hat einen Platz im Versuchsnotizbuch."
+    },
+    {
+      "lb": 1,
+      "section": "1.1",
+      "competence": "planen unter Anleitung ein Experiment zur Bestimmung der Dichte eines unregelmäßig geformten Körpers, das sie unter Anleitung durchführen und protokollieren. Sie identifizieren unter Berücksichtigung der begrenzten Genauigkeit von Messwerten das Material des Körpers anhand von Tabellen im Internet.",
+      "lessons": [
+        "dichte-messen"
+      ],
+      "status": "supported",
+      "evidence": "Differenzmethode, Ablesegenauigkeit, Dichtebereich und Vergleich mit einer Tabelle im Modelllabor Messzylinder; die Werkstatt ordnet ein Protokoll. Durchführung mit Waage und Messzylinder sowie die Tabellenrecherche im Internet finden im Unterricht statt; das Versuchsnotizbuch hält das Protokoll fest."
+    },
+    {
+      "lb": 1,
+      "section": "1.1",
+      "competence": "führen unter Berücksichtigung von Einheiten und der Genauigkeit von Messwerten einfache Berechnungen zu Dichte und Masse durch.",
+      "lessons": [
+        "dichte",
+        "dichte-messen"
+      ],
+      "status": "implemented",
+      "evidence": "ρ = m / V, m = ρ · V und Einheitenumrechnung g/cm³ in kg/m³ sowie dm³ in cm³; Rechenaufgaben auf zwei Stufen (Generatoren dichte und differenz), Dichtebereich aus der Ablesegenauigkeit im Modelllabor."
+    },
+    {
+      "lb": 1,
+      "section": "1.1",
+      "competence": "identifizieren in einem vorgegebenen Sachtext zu moderner Technik die Dichte von Werkstoffen als ein physikalisches Bewertungskriterium und unterscheiden dieses von außerfachlichen Kriterien.",
+      "lessons": [
+        "dichte-bewerten"
+      ],
+      "status": "implemented",
+      "evidence": "Eigens verfasster Pressetext zu einem Fahrradrahmen: Die Werkstatt trennt physikalische Kriterien (Dichte, Festigkeit) von außerfachlichen (Preis, Farbe, Wiederverwertung); Modelllabor und Rechenaufgaben (Generator bauteil) vergleichen Werkstoffe."
+    },
+    {
+      "lb": 1,
+      "section": "1.2",
+      "competence": "erkunden experimentell unter Anleitung bei Planung und Durchführung Phänomene zu Farben und Schatten, dokumentieren ihre Beobachtungen auch unter Verwendung eigener digitaler Fotos und formulieren Vermutungen sowie Erklärungsansätze.",
+      "lessons": [
+        "farben",
+        "farbige-schatten"
+      ],
+      "status": "supported",
+      "evidence": "Modelle zu Körperfarben und farbigen Schatten, Werkstatt zum Weg vom Phänomen zur Erklärung und Hinweise zur Dokumentation mit eigenen Fotos ohne Blitz. Die Experimente und Fotos selbst entstehen im Unterricht; das Versuchsnotizbuch hat Plätze für beide Schülerexperimente."
+    },
+    {
+      "lb": 1,
+      "section": "1.2",
+      "competence": "erklären auf der Grundlage eines einfachen Modells der Lichtausbreitung den Sehvorgang und die Entstehung verschiedener Schattenbereiche. Sie veranschaulichen ihre Erklärungen mithilfe selbst angefertigter Skizzen.",
+      "lessons": [
+        "sehen",
+        "farben",
+        "schatten",
+        "kernschatten"
+      ],
+      "status": "supported",
+      "evidence": "Sehvorgang mit Lichtquelle, beleuchtetem Körper und Auge, Farbe durch Reflexion und Absorption, geradlinige Ausbreitung, Kern-, Halb- und Übergangsschatten, jeweils mit Modelllabor und Zeichnung; die Erklärungen üben Schnellcheck, Werkstatt und Schreibaufgaben. Die selbst angefertigten Skizzen entstehen auf Papier im Unterricht; die Aufgaben beschreiben sie nur in Worten, die App prüft sie nicht."
+    },
+    {
+      "lb": 1,
+      "section": "1.2",
+      "competence": "identifizieren auf der Grundlage ihrer Kenntnisse zum Sehvorgang physikalische Aspekte in Sicherheitsempfehlungen für den Straßenverkehr und beim Umgang mit intensiven Lichtquellen.",
+      "lessons": [
+        "licht-sicherheit",
+        "finsternisse"
+      ],
+      "status": "implemented",
+      "evidence": "Sichtbarkeit im Straßenverkehr mit Richtwerten von ADAC und Stadt Zürich, Reflektoren, Laserpointer nach dem Bundesamt für Strahlenschutz, Schutzbrille bei Sonnenfinsternis; Werkstatt ordnet Sicherheitsregeln ihrem physikalischen Kern zu."
+    },
+    {
+      "lb": 1,
+      "section": "1.2",
+      "competence": "erstellen anschauliche Zusammenfassungen von geeigneten Sachtexten (z. B. zu Mondphasen, Mond- und Sonnenfinsternis). Hierbei verwenden sie fachsprachlich angemessene Formulierungen und fertigen sorgfältige, aussagekräftige Zeichnungen an.",
+      "lessons": [
+        "mondphasen",
+        "finsternisse"
+      ],
+      "status": "supported",
+      "evidence": "Eigens verfasster Sachtext zu den Mondphasen, den die Werkstatt ordnen lässt; Schreibaufgaben verlangen Zusammenfassungen mit Fachbegriffen zu Mondphasen und Mondfinsternis und beschreiben die zugehörige Zeichnung in Worten. Die sorgfältigen Zeichnungen fertigen die Lernenden auf Papier im Unterricht an; die Texte schätzen sie selbst ein."
+    },
+    {
+      "lb": 1,
+      "section": "1.3",
+      "competence": "erklären einfache elektrostatische Phänomene aus dem Alltag (z. B. Reibungselektrizität) mithilfe ihrer Kenntnisse über Ladungseigenschaften und über das Kern-Hülle-Modell des Atoms.",
+      "lessons": [
+        "ladungen",
+        "reibungselektrizitaet"
+      ],
+      "status": "implemented",
+      "evidence": "Ladungsarten und ihre Kräfte, Kern-Hülle-Modell mit Protonen und Elektronen, Elektronenübergang beim Reiben, Anziehung ungeladener Körper und Funken; zwei Modelllabore."
+    },
+    {
+      "lb": 1,
+      "section": "1.3",
+      "competence": "veranschaulichen elektrischen Strom als bewegte Ladungen.",
+      "lessons": [
+        "strom"
+      ],
+      "status": "implemented",
+      "evidence": "Stromkreis mit bewegten Elektronen (Animation auf Wunsch), Leiter und Isolatoren, Modell der Fahrradkette."
+    },
+    {
+      "lb": 1,
+      "section": "1.3",
+      "competence": "formulieren kurze Texte zur Wärme- und Leuchtwirkung des elektrischen Stroms unter korrekter Verwendung der Fachsprache.",
+      "lessons": [
+        "waerme-licht"
+      ],
+      "status": "implemented",
+      "evidence": "Wärme- und Leuchtwirkung an Toaster, Wasserkocher, Glühlampe und LED mit Beispieltext und Hinweisen zu Alltagsformulierungen; beide Schreibaufgaben verlangen kurze Fachtexte."
+    },
+    {
+      "lb": 1,
+      "section": "1.3",
+      "competence": "führen unter Anleitung vorgegebene Experimente zur magnetischen Wirkung des elektrischen Stroms durch und fertigen unter Anleitung ein strukturiertes Versuchsprotokoll an.",
+      "lessons": [
+        "elektromagnet"
+      ],
+      "status": "supported",
+      "evidence": "Ørsteds Beobachtung, Spule, Windungen, Eisenkern und Umpolen im Modelllabor; die Werkstatt baut ein strukturiertes Versuchsprotokoll auf. Das Experiment selbst findet im Unterricht statt; das Versuchsnotizbuch hält das Protokoll fest."
+    },
+    {
+      "lb": 1,
+      "section": "1.3",
+      "competence": "entwickeln selbständig mithilfe geeigneter Software eine elektrische Schaltung zu einer einfachen technischen Problemstellung (z. B. Bedienung einer Lampe mit zwei Wechselschaltern) und bauen diese unter Anleitung funktionsfähig auf. Sie dokumentieren ihr Ergebnis und berücksichtigen beim Experimentieren die vorgegebenen Sicherheitshinweise.",
+      "lessons": [
+        "schaltungen"
+      ],
+      "status": "supported",
+      "evidence": "UND-, ODER- und Wechselschaltung im Modelllabor mit Schaltertabelle, Werkstatt zum Weg von der Simulation zum Aufbau mit Sicherheitshinweisen. Eine Schaltungssoftware und der funktionsfähige Aufbau gehören in den Unterricht."
+    }
+  ],
+  "contents": [
+    {
+      "section": "1.1",
+      "content": "Eigenschaften von Permanentmagneten, Modellierung durch Elementarmagneten, Erdmagnetfeld",
+      "lessons": [
+        "magnete",
+        "elementarmagnete",
+        "erdmagnetfeld"
+      ]
+    },
+    {
+      "section": "1.1",
+      "content": "Schülerexperiment: Eigenschaften eines Permanentmagneten",
+      "lessons": [
+        "magnete"
+      ]
+    },
+    {
+      "section": "1.1",
+      "content": "Schülerexperiment: Dichtebestimmung verschiedener Körper",
+      "lessons": [
+        "dichte-messen"
+      ]
+    },
+    {
+      "section": "1.1",
+      "content": "Dichte als materialspezifische Größe",
+      "lessons": [
+        "dichte",
+        "dichte-bewerten"
+      ]
+    },
+    {
+      "section": "1.2",
+      "content": "Schülerexperiment: Farben beleuchteter Gegenstände",
+      "lessons": [
+        "farben",
+        "farbige-schatten"
+      ]
+    },
+    {
+      "section": "1.2",
+      "content": "Lichtquellen und beleuchtete Körper, Sehvorgang, Absorption und Reflexion von Licht als Ursache für die Farbe eines Gegenstandes",
+      "lessons": [
+        "sehen",
+        "farben"
+      ]
+    },
+    {
+      "section": "1.2",
+      "content": "Schülerexperiment: Schattenbilder",
+      "lessons": [
+        "schatten",
+        "farbige-schatten"
+      ]
+    },
+    {
+      "section": "1.2",
+      "content": "geradlinige Ausbreitung des Lichts, Kern-, Halb- und Übergangsschatten",
+      "lessons": [
+        "schatten",
+        "kernschatten"
+      ]
+    },
+    {
+      "section": "1.2",
+      "content": "Mondphasen, Mond- und Sonnenfinsternis",
+      "lessons": [
+        "mondphasen",
+        "finsternisse"
+      ]
+    },
+    {
+      "section": "1.3",
+      "content": "Reibungselektrizität, elektrostatische Phänomene",
+      "lessons": [
+        "reibungselektrizitaet"
+      ]
+    },
+    {
+      "section": "1.3",
+      "content": "Ladungsarten und ihre grundlegenden Eigenschaften, Kern-Hülle-Modell des Atoms",
+      "lessons": [
+        "ladungen"
+      ]
+    },
+    {
+      "section": "1.3",
+      "content": "elektrischer Strom als Bewegung von Ladungen",
+      "lessons": [
+        "strom"
+      ]
+    },
+    {
+      "section": "1.3",
+      "content": "Leucht- und Wärmewirkung des elektrischen Stroms",
+      "lessons": [
+        "waerme-licht"
+      ]
+    },
+    {
+      "section": "1.3",
+      "content": "Schülerexperiment: Magnetische Wirkung des elektrischen Stroms",
+      "lessons": [
+        "elektromagnet"
+      ]
+    },
+    {
+      "section": "1.3",
+      "content": "Schülerexperiment: Elektrische Schaltungen als technische Anwendungen im Alltag",
+      "lessons": [
+        "schaltungen"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,327 @@
+[
+	{
+		"id": "europa-natur",
+		"lb": 1,
+		"title": "Europa auf der Karte",
+		"period": "Geo6 LB 1 · Europa – Einheit und Vielfalt eines Kontinents",
+		"intro": "Von Bayern aus kennst du die Alpen und die Donau. Folge beiden über die Grenzen Deutschlands hinaus.",
+		"paragraphs": [
+			"Europa liegt auf der Nordhalbkugel und bildet den westlichen Teil der zusammenhängenden Landmasse Eurasien. Im Westen liegt der Atlantik, im Norden das Nordpolarmeer und im Süden das Mittelmeer. Im Osten wird die Grenze zu Asien vereinbart, häufig entlang des Urals und des Uralflusses. Weiter südlich gibt es mehrere Grenzziehungen, etwa am Kaukasus. Auf einer eurozentrierten Weltkarte liegt Europa nahe der Mitte. Diese Mitte ist eine Entscheidung bei der Kartengestaltung.",
+			"Vom Norddeutschen Tiefland nach Süden steigen die Alpen auf. Die Donau beginnt in Süddeutschland, fließt überwiegend nach Osten durch mehrere Länder und erreicht das Schwarze Meer. Der Rhein fließt aus den Alpen über den Oberrhein und die Niederlande zur Nordsee. Im Südwesten trennen die Pyrenäen große Teile Spaniens von Frankreich. Die Skanden prägen die Skandinavische Halbinsel im Norden."
+		],
+		"takeaway": "Beschreibe Lagebeziehungen mit Himmelsrichtungen und sichtbaren Bezugspunkten.",
+		"sourceIds": [
+			"lehrplan"
+		],
+		"quiz": {
+			"question": "In welches Meer mündet die Donau?",
+			"answer": "Ins Schwarze Meer",
+			"wrong": [
+				"In die Nordsee",
+				"Ins Mittelmeer"
+			],
+			"explanation": "Verfolge die Donau auf der Karte ostwärts bis zu ihrer Mündung in Rumänien und der Ukraine."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Europa einordnen",
+			"instruction": "Ordne jede Aussage zu. Prüfe deine Entscheidung und lies die Rückmeldung.",
+			"categories": [
+				"Ostgrenze",
+				"Südgrenze",
+				"Westrand"
+			],
+			"entries": [
+				{
+					"text": "Der Ural wird häufig hier als Grenze genutzt.",
+					"target": 0,
+					"feedback": "Er liegt östlich des europäischen Kernraums."
+				},
+				{
+					"text": "Hier liegen Pyrenäen und Mittelmeer.",
+					"target": 1,
+					"feedback": "Die Pyrenäen liegen im Südwesten, das Mittelmeer südlich großer Teile Europas."
+				},
+				{
+					"text": "Hier liegt der Atlantik vor Irland und Portugal.",
+					"target": 2,
+					"feedback": "Irland und Portugal haben Atlantikküsten."
+				}
+			],
+			"conclusion": "Beschreibe Lagebeziehungen mit Himmelsrichtungen und sichtbaren Bezugspunkten."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Verorte die Alpen im Verhältnis zu Bayern und die Donaumündung im Verhältnis zu Deutschland.",
+				"hints": [
+					"Wo liegen die Alpen?",
+					"Wo mündet die Donau?"
+				],
+				"model": "Die Alpen liegen im Süden Bayerns und reichen über mehrere Länder. Die Donaumündung am Schwarzen Meer liegt weit südöstlich von Deutschland.",
+				"criteria": [
+					"Wo liegen die Alpen?",
+					"Wo mündet die Donau?",
+					"Ich nenne zwei Lagebeziehungen mit Himmelsrichtungen."
+				]
+			},
+			"2": {
+				"prompt": "Ein Atlas zeigt Europa am Rand einer Weltkarte. Erkläre, wie das möglich ist, und verorte Europa trotzdem sicher.",
+				"hints": [
+					"Was bestimmt die Kartenmitte?",
+					"Welche Lage bleibt gleich?"
+				],
+				"model": "Die Mitte hängt vom Kartenausschnitt ab, zum Beispiel kann eine Karte auf den Pazifik zentriert sein. Europa finde ich auf der Nordhalbkugel westlich von Asien und östlich des Atlantiks.",
+				"criteria": [
+					"Was bestimmt die Kartenmitte?",
+					"Welche Lage bleibt gleich?",
+					"Ich nutze zwei Bezugspunkte."
+				]
+			}
+		},
+		"model": "europa"
+	},
+	{
+		"id": "europa-staaten",
+		"lb": 1,
+		"title": "Staaten, Hauptstädte und Teilräume",
+		"period": "Geo6 LB 1 · Europa – Einheit und Vielfalt eines Kontinents",
+		"intro": "Eine Karte kann zeigen, wo ein Staat liegt. Eine Einteilung in Teilräume hilft dir, Staaten zu vergleichen.",
+		"paragraphs": [
+			"Teile Europas lassen sich nach Lage, Klima oder Geschichte gruppieren. Beispiele für eine Einteilung nach Lage sind Nordeuropa (Norwegen und Schweden), Westeuropa (Frankreich und Irland), Mitteleuropa (Deutschland und Polen), Südeuropa (Spanien, Italien und Griechenland) und Osteuropa (Ukraine und der europäische Teil Russlands). Je nach Kriterium kann ein Staat anders eingeordnet sein.",
+			"Oslo liegt in Norwegen, Stockholm in Schweden, Paris in Frankreich, Warschau in Polen und Rom in Italien. Moskau liegt im europäischen Teil Russlands. Russland und die Türkei liegen in Europa und Asien. Ankara, die Hauptstadt der Türkei, liegt in Asien. Istanbul ist keine Hauptstadt und liegt zu beiden Seiten des Bosporus."
+		],
+		"takeaway": "Lies Staatsgrenzen, Hauptstadtsymbole und die Legende getrennt.",
+		"sourceIds": [
+			"lehrplan"
+		],
+		"quiz": {
+			"question": "Welche Hauptstadt gehört zur Türkei?",
+			"answer": "Ankara",
+			"wrong": [
+				"Istanbul",
+				"Athen"
+			],
+			"explanation": "Istanbul ist eine bedeutende Stadt an der Meerenge, Ankara ist der Regierungssitz."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Europa einordnen",
+			"instruction": "Ordne jede Aussage zu. Prüfe deine Entscheidung und lies die Rückmeldung.",
+			"categories": [
+				"Nordeuropa",
+				"Südeuropa",
+				"Staat auf zwei Kontinenten"
+			],
+			"entries": [
+				{
+					"text": "Norwegen mit Oslo.",
+					"target": 0,
+					"feedback": "Norwegen liegt im Norden auf der Skandinavischen Halbinsel."
+				},
+				{
+					"text": "Italien mit Rom.",
+					"target": 1,
+					"feedback": "Italien ragt auf einer Halbinsel ins Mittelmeer."
+				},
+				{
+					"text": "Türkei mit Ankara.",
+					"target": 2,
+					"feedback": "Ein kleiner Teil liegt westlich des Bosporus in Europa."
+				}
+			],
+			"conclusion": "Lies Staatsgrenzen, Hauptstadtsymbole und die Legende getrennt."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Verorte Oslo und Stockholm und vergleiche ihre Lage.",
+				"hints": [
+					"Welche Staaten gehören dazu?",
+					"Welche Stadt liegt weiter östlich?"
+				],
+				"model": "Oslo liegt in Norwegen. Stockholm liegt in Schweden und östlich von Oslo an der Ostseeküste.",
+				"criteria": [
+					"Welche Staaten gehören dazu?",
+					"Welche Stadt liegt weiter östlich?",
+					"Ich nutze einen Küstenbezug."
+				]
+			},
+			"2": {
+				"prompt": "Warum fällt Russland bei einer Einteilung nur nach der Lage seines Regierungssitzes anders auf als bei einer Einteilung nach der gesamten Fläche?",
+				"hints": [
+					"Wo liegt Moskau?",
+					"Wohin reicht das Staatsgebiet?"
+				],
+				"model": "Moskau liegt in Europa. Das Staatsgebiet reicht aber weit über den Ural nach Asien. Der Standort einer Hauptstadt beschreibt nur einen Punkt.",
+				"criteria": [
+					"Wo liegt Moskau?",
+					"Wohin reicht das Staatsgebiet?",
+					"Ich erkläre den Unterschied der Kriterien."
+				]
+			}
+		},
+		"model": "europa"
+	},
+	{
+		"id": "europa-alltag",
+		"lb": 1,
+		"title": "Europa im Alltag",
+		"period": "Geo6 LB 1 · Europa – Einheit und Vielfalt eines Kontinents",
+		"intro": "Auf dem Markt, am Bahnhof und in der Schule findest du Verbindungen zu anderen europäischen Regionen.",
+		"paragraphs": [
+			"Europa ist ein Erdteil. Die Europäische Union (EU) ist ein Zusammenschluss von Staaten. Viele EU-Staaten verwenden den Euro. Bei einer Reise von Deutschland nach Österreich musst du deshalb kein Geld tauschen. Im Schengen-Raum entfallen an den gemeinsamen Grenzen normalerweise Personenkontrollen. Zeitweise Kontrollen sind möglich. Zum Schengen-Raum gehören auch Staaten außerhalb der EU, etwa die Schweiz.",
+			"Europäische kulturelle Vielfalt zeigt sich etwa in Sprachen, Festen, Religionen und Städtepartnerschaften. Eine Partnerschaft mit einer französischen Stadt kann einen Schulaustausch ermöglichen. Sammle an öffentlichen Orten Hinweise, indem du etwa Geschäfte oder Partnerschaftsschilder nach Kategorien zählst. Stelle die Anzahlen als Balken dar. Ein italienischer Name an einer Eisdiele sagt etwas über das Angebot und nichts Sicheres über die Herkunft einzelner Menschen."
+		],
+		"takeaway": "Unterscheide kulturellen Austausch, EU-Mitgliedschaft, Euro und Schengen.",
+		"sourceIds": [
+			"lehrplan",
+			"eu"
+		],
+		"quiz": {
+			"question": "Welche Folge hat der Euro auf der Reise von Bayern nach Österreich?",
+			"answer": "Du kannst mit derselben Währung bezahlen.",
+			"wrong": [
+				"Jede Grenzkontrolle ist dauerhaft ausgeschlossen.",
+				"Beide Länder haben dieselben Schulferien."
+			],
+			"explanation": "Der Euro regelt hier die Währung. Grenzkontrollen und Ferien hängen von anderen Regeln ab."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Europa einordnen",
+			"instruction": "Ordne jede Aussage zu. Prüfe deine Entscheidung und lies die Rückmeldung.",
+			"categories": [
+				"Währung",
+				"Reiseregel",
+				"Kultureller Austausch"
+			],
+			"entries": [
+				{
+					"text": "Dasselbe Bargeld in Salzburg und München.",
+					"target": 0,
+					"feedback": "Beide liegen im Euroraum."
+				},
+				{
+					"text": "Normalerweise keine Personenprüfung an einer Schengen-Binnengrenze.",
+					"target": 1,
+					"feedback": "Schengen betrifft unter anderem die Kontrolle an Binnengrenzen."
+				},
+				{
+					"text": "Schulaustausch mit einer Partnerstadt.",
+					"target": 2,
+					"feedback": "Menschen lernen Sprache und Gewohnheiten voneinander kennen."
+				}
+			],
+			"conclusion": "Unterscheide kulturellen Austausch, EU-Mitgliedschaft, Euro und Schengen."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Plane eine kleine Zählung zu europäischen Spuren am Schulort und erkläre, wie du daraus ein Schaubild machst.",
+				"hints": [
+					"Welchen Ausschnitt untersuchst du?",
+					"Welche Kategorien nutzt du?"
+				],
+				"model": "Ich laufe eine feste öffentliche Strecke und erfasse Hinweise auf Städtepartnerschaften, ausländische Lebensmittel und mehrsprachige Schilder in getrennten Kategorien. Ich zeichne pro Kategorie einen Balken. Personen erfasse ich nicht.",
+				"criteria": [
+					"Welchen Ausschnitt untersuchst du?",
+					"Welche Kategorien nutzt du?",
+					"Ich beschrifte die Balken mit Kategorien und Anzahl."
+				]
+			},
+			"2": {
+				"prompt": "Ein Balkendiagramm zeigt auf drei Straßen mehr italienische als polnische Geschäftsbezeichnungen. Was lässt sich daraus schließen?",
+				"hints": [
+					"Wo wurde gezählt?",
+					"Was wurde gezählt?"
+				],
+				"model": "Auf diesen Straßen und zum Zählzeitpunkt habe ich mehr italienische als polnische Bezeichnungen gefunden. Das Ergebnis erlaubt keine Aussage über die Herkunft der Menschen im Ort oder über alle Straßen.",
+				"criteria": [
+					"Wo wurde gezählt?",
+					"Was wurde gezählt?",
+					"Ich nenne eine Grenze der Aussage."
+				]
+			}
+		}
+	},
+	{
+		"id": "europa-laenderprojekt",
+		"lb": 1,
+		"title": "Dein Europaporträt",
+		"period": "Geo6 LB 1 · Europa – Einheit und Vielfalt eines Kontinents",
+		"intro": "Halte ein europäisches Land über das Schuljahr im Blick. Ergänze dein Porträt nach jedem neuen Lernbereich.",
+		"paragraphs": [
+			"Beginne mit einer Karte, Hauptstadt, Nachbarn, Gewässern und Gebirgen. Formuliere dann zu Klima, Landwirtschaft, Verkehr und Industrie, Energie und Tourismus je eine Frage. Lies zu jeder Frage eine passende Karte, ein Diagramm oder einen Text. Notiere Titel, Urheber, Datum und deinen Befund. Füge Befunde nach und nach zum Porträt hinzu.",
+			"Für Spanien kannst du fragen, warum an der Mittelmeerküste Bewässerung nötig sein kann und wo Sommertourismus den Wasserbedarf erhöht. Vergleiche eine Niederschlagskarte mit einer Karte der Landwirtschaft oder des Tourismus. Zeichne eine Übersicht und zeige bei der Präsentation an der Karte, woher deine Erklärung kommt. Eine Übereinstimmung auf zwei Karten ist ein Hinweis; für die Ursache brauchst du weitere Belege."
+		],
+		"takeaway": "Ein Länderporträt verbindet Karten, Fachfragen und belegte Antworten.",
+		"sourceIds": [
+			"lehrplan",
+			"atlas"
+		],
+		"quiz": {
+			"question": "Was gehört zu einem prüfbaren Befund für ein Länderplakat?",
+			"answer": "Die Beobachtung mit Ort und Quelle.",
+			"wrong": [
+				"Ein fremdes Bild ohne Herkunft.",
+				"Eine Vermutung als sicheres Ergebnis."
+			],
+			"explanation": "Ort und Quelle erlauben anderen, deinen Befund nachzuvollziehen."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Europa einordnen",
+			"instruction": "Ordne jede Aussage zu. Prüfe deine Entscheidung und lies die Rückmeldung.",
+			"categories": [
+				"Lage erfassen",
+				"Zusammenhang erklären",
+				"Ergebnis präsentieren"
+			],
+			"entries": [
+				{
+					"text": "Madrid in die Übersichtskarte eintragen.",
+					"target": 0,
+					"feedback": "Die Karte zeigt die Lage der Hauptstadt."
+				},
+				{
+					"text": "Niederschlagsverteilung und Bewässerungsbedarf vergleichen.",
+					"target": 1,
+					"feedback": "Hier verknüpfst du Klima und Anbau."
+				},
+				{
+					"text": "Auf dem Plakat ein Diagramm am Kartenpunkt erläutern.",
+					"target": 2,
+					"feedback": "Du machst den Befund für andere verständlich."
+				}
+			],
+			"conclusion": "Ein Länderporträt verbindet Karten, Fachfragen und belegte Antworten."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Wähle ein Land und plane drei erste Schritte für dein Jahresporträt.",
+				"hints": [
+					"Welches Land wählst du?",
+					"Wo findest du Karte und Fakten?"
+				],
+				"model": "Für Italien sammle ich eine Grundkarte, verorte Rom und die Alpen und schreibe als erste Frage auf, warum der Tourismus in den Alpen anders aussieht als an der Küste.",
+				"criteria": [
+					"Welches Land wählst du?",
+					"Wo findest du Karte und Fakten?",
+					"Ich formuliere eine Frage aus einem Lernbereich."
+				]
+			},
+			"2": {
+				"prompt": "Auf deinem Plakat liegen Tourismusorte und bewässerte Felder in derselben Küstenregion. Plane, wie du prüfst, wann beide Nutzungen gleichzeitig viel Wasser brauchen.",
+				"hints": [
+					"Welche Angaben brauchst du für beide Nutzungen?",
+					"Vergleichst du dieselben Monate?"
+				],
+				"model": "Ich vergleiche für dieselbe Region die Monate mit besonders vielen Gästen und den Bewässerungsbedarf der Kulturen. Niederschlagsdaten helfen mir, trockene Monate zu erkennen. Ich prüfe, ob die Quellen denselben Zeitraum und Raum abdecken.",
+				"criteria": [
+					"Welche Angaben brauchst du für beide Nutzungen?",
+					"Vergleichst du dieselben Monate?",
+					"Ich nenne eine Grenze meiner Schlussfolgerung."
+				]
+			}
+		},
+		"projectStep": "country"
+	}
+]

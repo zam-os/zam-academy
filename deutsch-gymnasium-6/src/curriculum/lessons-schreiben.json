@@ -1,0 +1,724 @@
+[
+	{
+		"id": "d6-schreibplan",
+		"stage": "schreiben",
+		"title": "Ideen sammeln, auswählen und ordnen",
+		"skill": "Du entwickelst aus einem Cluster einen passenden Schreibplan.",
+		"bindings": [
+			"3.2"
+		],
+		"paragraphs": [
+			"Beim Sammeln dürfen viele Ideen entstehen. Beim Auswählen prüfst du Anlass, Publikum und Ziel. Ein Cluster verbindet Gedanken um einen Mittelpunkt; ein Schreibplan bringt die ausgewählten Gedanken in eine Reihenfolge. Diese beiden Schritte erfüllen unterschiedliche Aufgaben.",
+			"Beispiel: Zum „Büchertausch“ fallen dir Öffnung, Abenteuerroman, Ablauf und Lieblingsfarbe ein. Für eine Anleitung wählst du Voraussetzungen und Handlungsschritte. Die Lieblingsfarbe des Plakats ist dafür meist unwichtig. Ordne erst danach: vorbereiten → durchführen → Ergebnis prüfen."
+		],
+		"material": "Ideensammlung zum Tauschtisch: gut erhaltenes Buch; Freitag; Marke abholen; Lieblingsfarbe Blau; neues Buch wählen; Büchereiteam; beschädigte Bücher; ein lustiger Traum.",
+		"materialLabel": "Eigens geschriebener Übungstext · Beispieldaten sind erfunden",
+		"sourceIds": [
+			"lehrplan"
+		],
+		"takeaway": "Sammeln öffnet Möglichkeiten, Auswählen prüft das Ziel, Ordnen schafft Struktur.",
+		"lehrplan": "D6 · 3.2",
+		"check": {
+			"wrong": "Der Schreibplan besteht nur aus einem hübschen Titel.",
+			"explanation": "Ein Plan ist auf Ziel und Reihenfolge ausgerichtet, nicht auf möglichst viele Einfälle."
+		},
+		"visual": {
+			"kind": "flow",
+			"title": "Ideen sammeln, auswählen und ordnen · im Modell",
+			"steps": [
+				{
+					"label": "Sammeln",
+					"text": "Büchertausch als Mittelpunkt",
+					"detail": "Notiere zunächst Einfälle und mögliche Beziehungen ohne vorschnelles Streichen."
+				},
+				{
+					"label": "Auswählen",
+					"text": "Bedingung, Zeitpunkt, Schritte",
+					"detail": "Prüfe, was dein Publikum für den geplanten Text wirklich wissen muss."
+				},
+				{
+					"label": "Ordnen",
+					"text": "Buch → Marke → Auswahl",
+					"detail": "Die Reihenfolge soll der späteren Textfunktion entsprechen."
+				}
+			]
+		},
+		"cases": [
+			{
+				"prompt": "Welche Idee ist für eine Tausch-Anleitung zentral?",
+				"options": [
+					"Die Tauschmarke erhalten.",
+					"Ein unverbundener Traum."
+				],
+				"answer": "Die Tauschmarke erhalten.",
+				"feedback": "Die Marke ist ein notwendiger Handlungsschritt."
+			},
+			{
+				"prompt": "Du schreibst eine Erzählung statt einer Anleitung. Was ändert sich?",
+				"options": [
+					"Der Text muss trotzdem nur Regeln aufzählen.",
+					"Ich plane einen Handlungsbogen mit einem Ereignis."
+				],
+				"answer": "Ich plane einen Handlungsbogen mit einem Ereignis.",
+				"feedback": "Ein anderes Schreibziel verlangt eine andere Auswahl und Struktur."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Wähle aus der Ideensammlung fünf passende Angaben für eine Anleitung und ordne sie.",
+				"model": "Freitag; gut erhaltenes Buch mitbringen; beschädigte Bücher werden nicht angenommen; Marke abholen; neues Buch wählen. Daraus plane ich Voraussetzungen, Ablauf und Ergebnis.",
+				"criteria": [
+					"Ich wähle zielbezogen aus.",
+					"Ich lasse unverbundene Ideen weg.",
+					"Ich ordne die Handlungsschritte."
+				]
+			},
+			"2": {
+				"prompt": "Entwickle zum selben Thema einen Plan für eine Erzählung und einen für eine sachliche Information. Begründe zwei Unterschiede.",
+				"model": "Erzählplan: Ich komme mit meinem Lieblingsbuch, verliere die Marke und finde sie am Schluss im Buch. Sachplan: Zweck des Tauschs, Teilnahmebedingung, Ablauf. Die Erzählung entwickelt ein spannendes Ereignis; die Information ordnet verlässliche Angaben für Teilnehmende.",
+				"criteria": [
+					"Ich plane zwei unterschiedliche Funktionen.",
+					"Ich ordne je die passenden Inhalte.",
+					"Ich begründe die Unterschiede."
+				]
+			}
+		}
+	},
+	{
+		"id": "d6-schreibziele",
+		"stage": "schreiben",
+		"title": "Für einen Anlass den passenden Text wählen",
+		"skill": "Du erkennst, welche Sprache zu Erzählen, Informieren und Argumentieren passt.",
+		"bindings": [
+			"3.1"
+		],
+		"paragraphs": [
+			"Frage vor dem Schreiben: Was sollen andere erleben, erfahren oder entscheiden? Beim Erzählen setzt du etwa treffende Verben, Innenperspektive oder Personifikationen ein. Beim Informieren ordnest du die Fakten und wählst genaue Ober- und Unterbegriffe. Beim Argumentieren verbindest du deine Meinung mit einem passenden Grund.",
+			"Beispiel: „Der Wind rüttelte wütend am Tor“ personifiziert den Wind und gestaltet einen erzählten Moment. „Vor dem Unwetter wurde das Tor geschlossen“ rückt einen Vorgang in den Vordergrund. „Wir sollten das Tor schließen, weil sonst die Schilder wegfliegen“ will jemanden überzeugen."
+		],
+		"material": "Schulhof: Der Wind erfasste leichte Pappschilder. Der Pausendienst trug sie hinein. Die Gruppe überlegt, für das nächste Fest wiederverwendbare Schilder zu verwenden.",
+		"materialLabel": "Eigens geschriebener Übungstext",
+		"sourceIds": [
+			"lehrplan"
+		],
+		"takeaway": "Das Ziel bestimmt Wortwahl und Satzbau. Wähle gezielt eine Sprache, die zur Wirkung passt.",
+		"check": {
+			"wrong": "Ein sachlicher Oberbegriff.",
+			"explanation": "Eine Personifikation beschreibt einen Gegenstand oder eine Naturkraft als handelnde Person."
+		},
+		"visual": {
+			"kind": "sequence",
+			"title": "Drei Schreibziele am Schulhof",
+			"initial": {
+				"blocks": [
+					{
+						"label": "Anlass",
+						"text": "Wind am Schulfest",
+						"tone": "subject"
+					}
+				]
+			},
+			"steps": [
+				{
+					"label": "Erzählen",
+					"text": "Die Schilder huschten davon",
+					"detail": "Die Personifikation macht den Moment lebendig.",
+					"blocks": [
+						{
+							"label": "Sprachbild",
+							"text": "Die Schilder huschten über den Hof.",
+							"tone": "image"
+						}
+					]
+				},
+				{
+					"label": "Informieren",
+					"text": "Der Pausendienst räumte auf",
+					"detail": "Das Verb und genaue Nomen nennen den Vorgang verständlich.",
+					"blocks": [
+						{
+							"label": "Sachangabe",
+							"text": "Der Pausendienst trug die Pappschilder in die Aula.",
+							"tone": "predicate"
+						}
+					]
+				},
+				{
+					"label": "Argumentieren",
+					"text": "Feste Schilder nutzen",
+					"detail": "Die Begründung erklärt den Nutzen des Vorschlags.",
+					"blocks": [
+						{
+							"label": "Meinung",
+							"text": "Das nächste Mal nutzen wir feste Schilder.",
+							"tone": "subject"
+						},
+						{
+							"label": "Grund",
+							"text": "Dann wehen sie weniger leicht weg.",
+							"tone": "reason"
+						}
+					]
+				}
+			]
+		},
+		"cases": [
+			{
+				"prompt": "Welcher Satz passt zu einem sachlichen Bericht?",
+				"options": [
+					"Der Pausendienst räumte die Schilder in die Aula.",
+					"Die Schilder tanzten über den Hof."
+				],
+				"answer": "Der Pausendienst räumte die Schilder in die Aula.",
+				"feedback": "Der Bericht hält die Handlung sachlich fest."
+			},
+			{
+				"prompt": "Welche Formulierung gestaltet einen erzählten Moment als Personifikation?",
+				"options": [
+					"Ein Windstoß bewegte das Schild.",
+					"Der Wind zerrte ungeduldig am Schild."
+				],
+				"answer": "Der Wind zerrte ungeduldig am Schild.",
+				"feedback": "„Ungeduldig zerren“ gibt dem Wind menschliche Züge."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe einen Erzähl- und einen Informationssatz zur gleichen Begebenheit. Markiere das Bild und die Sachangabe.",
+				"model": "Erzählung: Der Wind jagte die Schilder über den Hof. Information: Um elf Uhr brachte der Pausendienst zwei Schilder in die Aula.",
+				"criteria": [
+					"Ich verwende ein passendes Sprachbild.",
+					"Ich formuliere eine sachliche Angabe.",
+					"Beide Sätze beziehen sich auf das Ereignis."
+				]
+			},
+			"2": {
+				"prompt": "Schreibe einen begründeten Vorschlag für die Schilder beim nächsten Fest. Verwende einen Oberbegriff und zwei passende Beispiele.",
+				"model": "Wir sollten wetterfeste Materialien verwenden, etwa beschichtete Pappe und Holz. So kann dieselbe Beschilderung bei mehreren Festen benutzt werden.",
+				"criteria": [
+					"Ich nenne einen konkreten Vorschlag.",
+					"Ich gebe zwei Beispiele für den Oberbegriff.",
+					"Der Grund erklärt einen Nutzen."
+				]
+			}
+		},
+		"lehrplan": "D6 · 3.1"
+	},
+	{
+		"id": "d6-erzaehlung",
+		"stage": "schreiben",
+		"title": "Eine eigene Geschichte anschaulich erzählen",
+		"skill": "Du entwickelst aus einem Erzählkern eine klare und lebendige Handlung.",
+		"bindings": [
+			"3.1",
+			"3.2"
+		],
+		"paragraphs": [
+			"Eine Erzählung führt in die Situation ein, entwickelt ein zentrales Ereignis und endet nachvollziehbar. Wähle eine erkennbare Perspektive und behalte sie bei. Entscheide, welche Stelle du ausführlich erzählst und was du knapp zusammenfasst.",
+			"Treffende Verben, wörtliche Rede und Vergleiche können eine Szene anschaulich machen. Beispiel: Aus „Ich ging schnell“ wird „Ich hastete zur Tür“. Ein Vergleich wie „Mein Herz klopfte wie eine Trommel“ zeigt die Wahrnehmung der Figur. Häufe solche Mittel nicht wahllos an; sie sollen zur Situation passen."
+		],
+		"material": "Erzählkern: Ein Kind bringt ein geliehenes Buch zurück. Darin entdeckt es einen Brief ohne Namen. Ein Satz lautet: „Komm dorthin, wo die Uhr stehen geblieben ist.“ Der Brief kann alt sein; das Kind weiß es noch nicht.",
+		"materialLabel": "Eigens geschriebener Übungstext · Beispieldaten sind erfunden",
+		"sourceIds": [
+			"lehrplan"
+		],
+		"takeaway": "Klare Perspektive und Handlung; anschauliche Mittel gehören an bedeutungsvolle Stellen.",
+		"lehrplan": "D6 · 3.1 / 3.2",
+		"check": {
+			"wrong": "Bücher bestehen aus Seiten und einem Einband.",
+			"explanation": "Das treffende Verb und die direkte Rede machen eine konkrete Handlung erlebbar."
+		},
+		"visual": {
+			"kind": "story",
+			"title": "Eine eigene Geschichte anschaulich erzählen · im Modell",
+			"steps": [
+				{
+					"label": "Situation",
+					"text": "geliehenes Buch zurückbringen",
+					"detail": "Ort, Figur und Anlass geben Orientierung, ohne den Hauptteil vorwegzunehmen."
+				},
+				{
+					"label": "Ereignis",
+					"text": "ein rätselhafter Brief",
+					"detail": "Die Entdeckung wird zum Kern; wichtige Wahrnehmungen kannst du ausführlicher gestalten."
+				},
+				{
+					"label": "Ausgang",
+					"text": "eine nachvollziehbare Auflösung",
+					"detail": "Der Schluss knüpft an Hinweise an. Eine überraschende Lösung darf nicht völlig unbegründet erscheinen."
+				}
+			]
+		},
+		"cases": [
+			{
+				"prompt": "Was passt zur Ich-Perspektive?",
+				"options": [
+					"Ich vermutete, dass der Brief alt war.",
+					"Ich kannte ohne Hinweis jeden Gedanken des Verfassers."
+				],
+				"answer": "Ich vermutete, dass der Brief alt war.",
+				"feedback": "Eine Ich-Figur kann Vermutungen äußern, aber kein unbelegtes Wissen über andere besitzen."
+			},
+			{
+				"prompt": "Was stärkt die Auflösung?",
+				"options": [
+					"Ohne Zusammenhang erscheint plötzlich eine Lösung.",
+					"Ein zuvor erwähnter Hinweis wird verständlich."
+				],
+				"answer": "Ein zuvor erwähnter Hinweis wird verständlich.",
+				"feedback": "Ein vorbereiteter Schluss macht die Handlung nachvollziehbar."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe einen kurzen Anfang zum Erzählkern. Verwende ein treffendes Verb und eine wörtliche Rede.",
+				"model": "Ich schlug das Buch ein letztes Mal auf. Ein vergilbter Brief glitt heraus. „Der gehört nicht mir“, murmelte ich. Dann las ich den Satz über die stehen gebliebene Uhr.",
+				"criteria": [
+					"Ich führe in eine konkrete Situation ein.",
+					"Ich verwende ein treffendes Verb.",
+					"Ich setze passende wörtliche Rede ein."
+				]
+			},
+			"2": {
+				"prompt": "Erzähle eine vollständige kurze Geschichte zum Brief. Plane einen Hinweis, der am Schluss eine Rolle spielt, und setze einen Vergleich gezielt ein.",
+				"model": "Im Buch lag ein Brief mit einer gezeichneten Uhr. Mein Herz schlug wie eine Trommel. Im alten Schulflur erkannte ich dieselbe Uhr, deren Zeiger seit dem Umbau stillstanden. Dahinter hing eine kleine Ausstellung: Der Brief gehörte zu einem alten Suchspiel. Ich gab ihn mit dem Buch im Sekretariat ab.",
+				"criteria": [
+					"Ich entwickle Situation, Ereignis und Ausgang.",
+					"Ein Hinweis bereitet die Auflösung vor.",
+					"Ich nutze einen Vergleich passend zur Perspektive."
+				]
+			}
+		},
+		"extension": "Erzähle deine Geschichte auch mündlich. Passe den Umfang an dein Publikum an und hole Rückmeldung zu Aufbau, Anschaulichkeit und Verständlichkeit ein."
+	},
+	{
+		"id": "d6-ereignisbericht",
+		"stage": "schreiben",
+		"title": "Sachlich und folgerichtig berichten",
+		"skill": "Du sicherst W-Angaben, ordnest den Ablauf und vermeidest erfundene Ursachen.",
+		"bindings": [
+			"3.2"
+		],
+		"paragraphs": [
+			"Ein Ereignisbericht informiert über ein vergangenes Geschehen. Der Einstieg nennt die wichtigsten W-Angaben: Wer, Was, Wann und Wo. Danach folgen der genaue Ablauf und gesicherte Folgen. Warum etwas geschah, nennst du nur, wenn die Ursache belegt ist.",
+			"Das Grundtempus ist in einem schriftlichen Bericht gewöhnlich das Präteritum. Für ein davor abgeschlossenes Ereignis kann das Plusquamperfekt nötig sein. Beispiel: „Nachdem die Klasse den Tisch aufgebaut hatte, begann der Tausch.“ Sachliche Sprache vermeidet erfundene Gedanken, persönliche Wertungen und künstliche Spannung. Eine belegte Aussage kann als solche kenntlich gemacht werden."
+		],
+		"material": "Notizen: Montag, große Pause, Aula; Klasse 6b eröffnete einen Büchertauschtisch; davor: Bücher sortiert; anschließend Tauschregeln erklärt; laut Klassenleitung am ersten Tag dreißig Bücher getauscht; kein bekannter Zwischenfall.",
+		"materialLabel": "Eigens geschriebener Übungstext · Beispieldaten sind erfunden",
+		"sourceIds": [
+			"lehrplan"
+		],
+		"takeaway": "Gesicherte W-Angaben und chronologischer Ablauf; Grundtempus meist Präteritum, Vorzeitigkeit passend markieren.",
+		"lehrplan": "D6 · 3.2",
+		"check": {
+			"wrong": "Beliebiger Wechsel zwischen allen Zeitformen.",
+			"explanation": "Das Präteritum stellt das vergangene Ereignis dar; ein früheres Ereignis kann im Plusquamperfekt stehen."
+		},
+		"visual": {
+			"kind": "timeline",
+			"title": "Sachlich und folgerichtig berichten · im Modell",
+			"steps": [
+				{
+					"label": "Einstieg",
+					"text": "Wer? Was? Wann? Wo?",
+					"detail": "Diese Angaben ordnen das Ereignis ein, ohne schon jedes Detail zu nennen."
+				},
+				{
+					"label": "Ablauf",
+					"text": "sortiert → erklärt → getauscht",
+					"detail": "Die Reihenfolge muss aus den Notizen hervorgehen; du ergänzt keine vermuteten Ursachen."
+				},
+				{
+					"label": "Ergebnis",
+					"text": "dreißig Bücher laut Klassenleitung",
+					"detail": "Eine Quellenangabe kennzeichnet, woher eine konkrete Information stammt."
+				}
+			]
+		},
+		"cases": [
+			{
+				"prompt": "Welcher Satz ist sachlich?",
+				"options": [
+					"Die Klasse erklärte anschließend die Tauschregeln.",
+					"Zum Glück war es der allertollste Tag der Welt!"
+				],
+				"answer": "Die Klasse erklärte anschließend die Tauschregeln.",
+				"feedback": "Der erste Satz informiert über einen belegten Handlungsschritt statt ihn zu bewerten."
+			},
+			{
+				"prompt": "Was ist eine passende Vorzeitigkeit?",
+				"options": [
+					"Nachdem die Klasse sortieren wird, begann der Tausch.",
+					"Nachdem die Klasse die Bücher sortiert hatte, begann der Tausch."
+				],
+				"answer": "Nachdem die Klasse die Bücher sortiert hatte, begann der Tausch.",
+				"feedback": "Plusquamperfekt und Präteritum machen hier die zeitliche Reihenfolge deutlich."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Formuliere einen Einleitungssatz mit vier W-Angaben und zwei Sätze zum Ablauf.",
+				"model": "Am Montag eröffnete die Klasse 6b in der großen Pause in der Aula einen Büchertauschtisch. Nachdem sie die Bücher sortiert hatte, erklärte sie die Tauschregeln. Anschließend begann der Tausch.",
+				"criteria": [
+					"Ich nenne vier W-Angaben.",
+					"Ich ordne den Ablauf.",
+					"Ich verwende passende Vergangenheitsformen."
+				]
+			},
+			"2": {
+				"prompt": "Schreibe einen kurzen vollständigen Bericht aus den Notizen. Prüfe die Aussage „Der Tausch war wegen eines Preises so erfolgreich“ und begründe deine Entscheidung dazu.",
+				"model": "Am Montag eröffnete die Klasse 6b in der großen Pause in der Aula einen Büchertauschtisch. Zuvor hatte sie die Bücher sortiert. Nach der Erklärung der Regeln begann der Tausch. Laut Klassenleitung wurden am ersten Tag dreißig Bücher getauscht. Einen Preis nennen die Notizen nicht; die behauptete Ursache übernehme ich deshalb nicht.",
+				"criteria": [
+					"Mein Bericht ist sachlich und geordnet.",
+					"Ich kennzeichne die Herkunft der Zahl.",
+					"Ich weise eine unbelegte Ursache begründet zurück."
+				]
+			}
+		},
+		"extension": "Berichte einer anderen Person mündlich über den Ablauf. Erkläre notwendige Begriffe und bitte um Rückmeldung zur Sachlichkeit und Reihenfolge."
+	},
+	{
+		"id": "d6-vorgang",
+		"stage": "schreiben",
+		"title": "Einen Vorgang nachvollziehbar erklären",
+		"skill": "Du formulierst Voraussetzungen und ausführbare Schritte im Präsens.",
+		"bindings": [
+			"3.2"
+		],
+		"paragraphs": [
+			"Eine allgemeingültige Vorgangsbeschreibung erklärt einen wiederholbaren Ablauf. Sie steht gewöhnlich im Präsens. Nenne Voraussetzungen oder Material, ordne die notwendigen Schritte und beschreibe das Ergebnis. Lass die Anleitung gedanklich von einer Person ohne Vorwissen ausführen.",
+			"Beispiel: „Zuerst legst du ein Blatt quer vor dich. Dann faltest du die untere Kante auf die obere.“ Die genaue Lageangabe verhindert ein Missverständnis. Du kannst die du-Form, man-Form oder das Passiv verwenden; wechsle die Anrede nicht grundlos. Zeitwörter wie „anschließend“ verbinden die Schritte."
+		],
+		"material": "Eine einfache Klappkarte: ein rechteckiges Blatt Papier; quer hinlegen; linke kurze Kante genau auf die rechte kurze Kante legen; Falz mit dem Finger nachziehen; wieder aufklappen; Gruß auf die Innenseite schreiben.",
+		"materialLabel": "Eigens geschriebener Übungstext · Beispieldaten sind erfunden",
+		"sourceIds": [
+			"lehrplan"
+		],
+		"takeaway": "Voraussetzungen → genaue Reihenfolge → Ergebnis; ein wiederholbarer Vorgang steht gewöhnlich im Präsens.",
+		"lehrplan": "D6 · 3.2",
+		"check": {
+			"wrong": "Nur im Futur II.",
+			"explanation": "Das Präsens stellt den wiederholbaren Ablauf als allgemeine Anleitung dar."
+		},
+		"visual": {
+			"kind": "flow",
+			"title": "Einen Vorgang nachvollziehbar erklären · im Modell",
+			"steps": [
+				{
+					"label": "Vorbereiten",
+					"text": "Blatt quer hinlegen",
+					"detail": "Material und Ausgangslage verhindern, dass wichtige Voraussetzungen fehlen."
+				},
+				{
+					"label": "Durchführen",
+					"text": "linke kurze Kante auf rechte",
+					"detail": "Die genaue Bezeichnung der Kanten macht den Faltschritt eindeutig."
+				},
+				{
+					"label": "Prüfen",
+					"text": "aufklappen; innen beschriften",
+					"detail": "Das Ergebnis und der letzte Schritt zeigen, ob die Anleitung vollständig ist."
+				}
+			]
+		},
+		"cases": [
+			{
+				"prompt": "Was macht „Falte das Papier“ genauer?",
+				"options": [
+					"Lege die linke kurze Kante auf die rechte kurze Kante.",
+					"Mach es einfach richtig."
+				],
+				"answer": "Lege die linke kurze Kante auf die rechte kurze Kante.",
+				"feedback": "Die präzise räumliche Angabe ersetzt eine unklare Aufforderung."
+			},
+			{
+				"prompt": "Welche Form bleibt einheitlich?",
+				"options": [
+					"Du legst es hin. Danach falten Sie es.",
+					"Du legst das Blatt hin. Dann faltest du es."
+				],
+				"answer": "Du legst das Blatt hin. Dann faltest du es.",
+				"feedback": "Eine einheitliche Anrede erleichtert die Verständlichkeit."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe aus den Notizen eine Anleitung in der du-Form mit passenden Verknüpfungen.",
+				"model": "Du legst ein rechteckiges Blatt quer vor dich. Zuerst faltest du die linke kurze Kante genau auf die rechte. Dann ziehst du den Falz mit dem Finger nach. Anschließend klappst du die Karte auf und schreibst innen deinen Gruß.",
+				"criteria": [
+					"Ich nenne Material und Ausgangslage.",
+					"Ich ordne genaue Schritte.",
+					"Ich bleibe im Präsens und in der du-Form."
+				]
+			},
+			"2": {
+				"prompt": "Formuliere denselben Ablauf für eine sachliche Ausstellungskarte im Passiv. Erkläre, wann diese Form geeignet ist.",
+				"model": "Ein rechteckiges Blatt wird quer hingelegt. Die linke kurze Kante wird auf die rechte gefaltet. Danach wird der Falz nachgezogen. Zum Schluss wird die Karte aufgeklappt und innen beschriftet. Das Passiv lenkt den Blick auf die Arbeitsschritte, wenn keine bestimmte handelnde Person wichtig ist.",
+				"criteria": [
+					"Ich erhalte alle notwendigen Schritte.",
+					"Ich bilde das Passiv korrekt.",
+					"Ich erkläre die Funktion der Form."
+				]
+			}
+		}
+	},
+	{
+		"id": "d6-anliegen",
+		"stage": "schreiben",
+		"title": "Einen Wunsch im passenden Format begründen",
+		"skill": "Du schreibst einen sachlichen Brief und passt ihn für andere Adressaten an.",
+		"bindings": [
+			"3.2"
+		],
+		"paragraphs": [
+			"Ein Anliegen nennt einen konkreten Wunsch, erklärt nachvollziehbare Gründe und macht möglichst einen umsetzbaren Vorschlag. Überlege, wer entscheiden kann und welche Informationen diese Person braucht. Ein persönlicher Brief, eine E-Mail und eine kurze Nachricht unterscheiden sich in Aufbau und Umfang.",
+			"Ein sachlicher Brief enthält etwa Ort und Datum, passende Anrede, geordnete Absätze, Schlussformel und Namen. Eine E-Mail braucht einen aussagekräftigen Betreff. Eine Nachricht an eine Freundin darf vertrauter und kürzer sein; wichtige Angaben dürfen trotzdem nicht fehlen. Die App verschickt keine Nachrichten."
+		],
+		"material": "Anlass: In den Pausen fehlt ein ruhiger Platz zum Lesen. Vorschlag: Eine Ecke des Hofs wird als Ruhezone markiert. Die Spielfläche soll weiterhin nutzbar bleiben. Die Schulleitung kann über den Vorschlag entscheiden.",
+		"materialLabel": "Eigens geschriebener Übungstext · Beispieldaten sind erfunden",
+		"sourceIds": [
+			"lehrplan"
+		],
+		"takeaway": "Anliegen + Grund + konkreter Vorschlag; Form und Ton passen zum Gegenüber.",
+		"lehrplan": "D6 · 3.2",
+		"check": {
+			"wrong": "Niemand darf andere Pausenwünsche haben.",
+			"explanation": "Die Begründung erklärt einen Nutzen und berücksichtigt andere Bedürfnisse."
+		},
+		"visual": {
+			"kind": "flow",
+			"title": "Einen Wunsch im passenden Format begründen · im Modell",
+			"steps": [
+				{
+					"label": "Adressat",
+					"text": "Schulleitung entscheidet",
+					"detail": "Die Entscheidungskompetenz hilft dir, den Text an die richtige Stelle zu richten."
+				},
+				{
+					"label": "Argument",
+					"text": "Ruhe zum Lesen",
+					"detail": "Ein nachvollziehbarer Grund erklärt, warum der Wunsch sinnvoll ist."
+				},
+				{
+					"label": "Format",
+					"text": "Brief oder E-Mail",
+					"detail": "Anrede, Betreff oder Schlussformel unterstützen die passende Kommunikationssituation."
+				}
+			]
+		},
+		"cases": [
+			{
+				"prompt": "Was passt als E-Mail-Betreff?",
+				"options": [
+					"Vorschlag für eine Ruhezone auf dem Schulhof",
+					"Hey!!!"
+				],
+				"answer": "Vorschlag für eine Ruhezone auf dem Schulhof",
+				"feedback": "Ein genauer Betreff erleichtert die Einordnung des Anliegens."
+			},
+			{
+				"prompt": "Was verändert sich bei einer Nachricht an eine Freundin?",
+				"options": [
+					"Gesicherte Informationen werden unwichtig.",
+					"Ton und Umfang können vertrauter und kürzer sein."
+				],
+				"answer": "Ton und Umfang können vertrauter und kürzer sein.",
+				"feedback": "Adressatenbezug verändert die Form, nicht die Pflicht zur Verständlichkeit."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe den Kern eines sachlichen Briefs an die Schulleitung mit Anrede, Wunsch, Grund und Vorschlag.",
+				"model": "Sehr geehrte Schulleitung,\n\nwir wünschen uns eine Ruhezone auf dem Hof. Dort könnten Kinder ungestört lesen. Wir schlagen vor, eine Ecke zu markieren, während der übrige Hof zum Spielen bleibt.\n\nVielen Dank für die Prüfung.\nMit freundlichen Grüßen\ndie Klasse 6b",
+				"criteria": [
+					"Ich formuliere einen konkreten Wunsch.",
+					"Ich begründe ihn sachlich.",
+					"Ich nutze passende Anrede und Schluss."
+				]
+			},
+			"2": {
+				"prompt": "Übertrage das Anliegen in eine E-Mail an die Schulleitung und eine kurze Nachricht an eine Freundin. Erkläre zwei Unterschiede.",
+				"model": "E-Mail-Betreff: Vorschlag für eine Ruhezone. Sehr geehrte Schulleitung, unsere Klasse schlägt eine markierte Leseecke vor, damit Lesen und Ballspielen nebeneinander möglich bleiben. Mit freundlichen Grüßen, Klasse 6b. Nachricht: Hallo Jo, wir möchten eine ruhige Leseecke vorschlagen. Welche Ecke wäre geeignet? Die E-Mail ist förmlicher und hat einen Betreff; die Nachricht bittet vertraut um Mithilfe.",
+				"criteria": [
+					"Ich wähle zwei passende Formate.",
+					"Das Anliegen bleibt inhaltlich klar.",
+					"Ich erkläre Ton und Aufbau."
+				]
+			}
+		}
+	},
+	{
+		"id": "d6-ueberarbeiten",
+		"stage": "schreiben",
+		"title": "Mit Textlupe und Fehlerprofil überarbeiten",
+		"skill": "Du prüfst nacheinander Inhalt, Aufbau, Ausdruck und Sprachrichtigkeit.",
+		"bindings": [
+			"3.3",
+			"4.3"
+		],
+		"paragraphs": [
+			"Überarbeiten bedeutet mehr als Fehler suchen. Lies zuerst auf Inhalt und Verständlichkeit, dann auf Aufbau und Ausdruck, schließlich auf Grammatik, Rechtschreibung und Zeichensetzung. Eine Textlupe betrachtet jeweils einen klaren Schwerpunkt. In einer Schreibkonferenz geben andere konkrete Rückmeldung.",
+			"Beispiel: „Dann macht man es dahin“ lässt eine Handlung offen. Ersetze es durch genaue Angaben. Notiere wiederkehrende Fehler in einem persönlichen Fehlerprofil: Fundstelle, Korrektur, Regel oder Strategie, eigenes neues Beispiel. Prüfe ein Wörterbuch oder eine andere passende Hilfe, statt nur eine Korrektur zu übernehmen."
+		],
+		"material": "Entwurf: „Am montag macht die klasse einen Tausch. Dann tut sie die Bücher da hin und alle finden es toll.“ Sichere Notizen: Klasse 6b; Montag, große Pause; Aula; Bücher auf den Tauschtisch legen; keine Befragung zur Zufriedenheit.",
+		"materialLabel": "Eigens geschriebener Übungstext · Beispieldaten sind erfunden",
+		"sourceIds": [
+			"lehrplan"
+		],
+		"takeaway": "Überarbeite mit Schwerpunkten und erkläre Korrekturen, damit du wiederkehrende Fehler vermeiden kannst.",
+		"lehrplan": "D6 · 3.3 / 4.3",
+		"check": {
+			"wrong": "Nur die Zahl aller Buchstaben im Text.",
+			"explanation": "Das Fehlerprofil verbindet Beobachtung und Strategie für künftige eigene Texte."
+		},
+		"visual": {
+			"kind": "flow",
+			"title": "Mit Textlupe und Fehlerprofil überarbeiten · im Modell",
+			"steps": [
+				{
+					"label": "Inhalt",
+					"text": "Was ist belegt; was fehlt?",
+					"detail": "Ergänze sichere Angaben und streiche unbelegte Aussagen wie „alle finden es toll“."
+				},
+				{
+					"label": "Ausdruck",
+					"text": "legen statt „tun“",
+					"detail": "Ein präzises Verb und genaue Ortsangaben machen den Ablauf verständlich."
+				},
+				{
+					"label": "Sprachrichtigkeit",
+					"text": "Montag; Klasse; Präteritum",
+					"detail": "Prüfe Nomen, Zeitform und Satzzeichen gezielt und begründe typische Korrekturen."
+				}
+			]
+		},
+		"cases": [
+			{
+				"prompt": "Welche Überarbeitung verbessert den Ausdruck?",
+				"options": [
+					"Die Klasse legte die Bücher auf den Tauschtisch.",
+					"Die Klasse tat die Sachen irgendwie dahin."
+				],
+				"answer": "Die Klasse legte die Bücher auf den Tauschtisch.",
+				"feedback": "Präzises Verb und genauer Ort ersetzen unklare Verweise."
+			},
+			{
+				"prompt": "Was hilft bei einem wiederkehrenden Fehler?",
+				"options": [
+					"Nur die rote Markierung löschen.",
+					"Regel klären und ein eigenes Beispiel prüfen."
+				],
+				"answer": "Regel klären und ein eigenes Beispiel prüfen.",
+				"feedback": "Ohne verstandene Strategie ist derselbe Fehler beim nächsten Text wahrscheinlich."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Überarbeite den Entwurf zu einem sachlichen Bericht und erkläre zwei Korrekturen.",
+				"model": "Am Montag eröffnete die Klasse 6b in der großen Pause in der Aula einen Büchertauschtisch. Sie legte die Bücher auf den Tisch. „Montag“ und „Klasse“ sind Nomen und werden großgeschrieben. „Legte“ ersetzt das ungenaue „tut“. Die Aussage über alle Gefühle streiche ich, weil sie nicht belegt ist.",
+				"criteria": [
+					"Ich nutze sichere Notizen.",
+					"Ich verbessere Ausdruck und Zeitform.",
+					"Ich begründe mindestens zwei Änderungen."
+				]
+			},
+			"2": {
+				"prompt": "Plane eine Schreibkonferenz und erstelle einen Fehlerprofil-Eintrag zu einem eigenen Fehlerschwerpunkt. Verwende einen echten Fehler oder kennzeichne dein Beispiel als erfunden.",
+				"model": "Plan: Eine Person prüft den Inhalt, eine den Aufbau und eine den Ausdruck; danach bespreche ich konkrete Stellen. Erfundenes Fehlerprofil: „beim lesen“ → „beim Lesen“. Nach „beim“ ist das Verb nominalisiert. Eigenes Prüfbeispiel: Beim Schreiben mache ich Pausen.",
+				"criteria": [
+					"Mein Plan enthält klare Prüfschwerpunkte.",
+					"Mein Eintrag erklärt eine Korrektur.",
+					"Ich ergänze ein neues Beispiel."
+				]
+			}
+		},
+		"extension": "Überarbeitet eigene Texte in einer echten Schreibkonferenz. Nutze die Rückmeldungen für ein persönliches Fehlerprofil und kläre offene Fragen mit einem geeigneten Nachschlagewerk."
+	},
+	{
+		"id": "d6-textverarbeitung",
+		"stage": "schreiben",
+		"title": "Einen Text am Bildschirm überarbeiten",
+		"skill": "Nutze Absätze und Textänderungen für einen verständlichen Entwurf.",
+		"bindings": [
+			"3.1",
+			"3.3"
+		],
+		"paragraphs": [
+			"Auch am Bildschirm beginnt ein Text mit Ziel und Inhalt. Setze Absätze dort, wo ein neuer Gedanke oder Schritt beginnt. Markieren, Ersetzen und Verschieben helfen beim Überarbeiten. Prüfe nach jeder Änderung, ob der Zusammenhang noch stimmt.",
+			"Beispiel: Aus „Büchertausch. kommt alle wir tauschen Bücher Donnerstag Aula“ wird eine Überschrift und eine geordnete Einladung. Eine Rechtschreibhilfe findet nicht jeden Fehler: „Seit bitte leise“ enthält ein richtig geschriebenes Wort am falschen Platz; hier muss es „Seid“ heißen."
+		],
+		"materialLabel": "Eigens verfasstes Übungsmaterial",
+		"material": "Büchertausch\nkommt alle wir tauschen Bücher Donnerstag Aula\nSeit bitte leise wir lesen auch vor",
+		"sourceIds": [
+			"lehrplan"
+		],
+		"check": {
+			"wrong": "Jeder rot markierte Begriff ist sicher falsch.",
+			"explanation": "Eine Hilfe kann etwa „seit“ als Wort erkennen, obwohl im Satz „seid“ gemeint ist."
+		},
+		"takeaway": "Nutze Textwerkzeuge, aber prüfe selbst Inhalt, Reihenfolge und passende Wörter.",
+		"lehrplan": "D6 · 3.1 / 3.3",
+		"cases": [
+			{
+				"prompt": "Was verbessert die Orientierung?",
+				"options": [
+					"Überschrift und ein eigener Absatz für Ort und Termin.",
+					"Ein einziges sehr langes Wort ohne Abstände."
+				],
+				"answer": "Überschrift und ein eigener Absatz für Ort und Termin.",
+				"feedback": "Absätze gliedern unterschiedliche Informationen."
+			},
+			{
+				"prompt": "Welche Korrektur passt zur Aufforderung?",
+				"options": [
+					"Seit bitte leise.",
+					"Seid bitte leise."
+				],
+				"answer": "Seid bitte leise.",
+				"feedback": "„Seid“ ist eine Form von „sein“; „seit“ bezeichnet einen zeitlichen Anfang."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Überarbeite die Einladung im Entwurfsfeld. Nutze eine Überschrift und mindestens zwei Absätze. Ergänze nur den vorhandenen Tag und Ort.",
+				"model": "Büchertausch\n\nKommt am Donnerstag in die Aula. Dort tauschen wir Bücher.\n\nSeid bitte leise, denn wir lesen auch vor.",
+				"criteria": [
+					"Ich nutze eine Überschrift.",
+					"Meine Absätze ordnen die Informationen.",
+					"Ich korrigiere „Seid“ und erfinde keine Uhrzeit."
+				]
+			},
+			"2": {
+				"prompt": "Schreibe eine Einladung am Bildschirm für ein eigenes Ereignis. Verschiebe anschließend eine Angabe an eine passendere Stelle und erkläre deine Entscheidung.",
+				"model": "Leserunde\n\nAm Freitag treffen wir uns um 14 Uhr in Raum 12. Bring ein Lieblingsbuch mit.\n\nIch habe die Uhrzeit zum Ort in den ersten Absatz verschoben, damit die wichtigen Angaben zusammenstehen.",
+				"criteria": [
+					"Meine Einladung nennt ein klares Ereignis.",
+					"Ich ordne Termin und Ort verständlich.",
+					"Ich begründe eine konkrete Überarbeitung."
+				]
+			}
+		},
+		"visual": {
+			"kind": "flow",
+			"title": "Eine Bildschirmseite verständlich gliedern",
+			"steps": [
+				{
+					"label": "Titel",
+					"text": "Büchertausch",
+					"detail": "Die Überschrift nennt das Thema."
+				},
+				{
+					"label": "Absatz",
+					"text": "Tag und Ort zusammen",
+					"detail": "Zusammengehörige Angaben stehen beieinander."
+				},
+				{
+					"label": "Prüfung",
+					"text": "Seid bitte leise.",
+					"detail": "Ein korrekt geschriebenes Wort kann am falschen Platz stehen."
+				}
+			]
+		},
+		"extension": "Übernimm deinen Level-2-Entwurf in ein Textverarbeitungsprogramm. Setze Überschrift und Absätze, ersetze die Passage mit einem ungenauen Ausdruck und speichere beide Fassungen zum Vergleichen."
+	}
+]

@@ -24,17 +24,17 @@ Package details also no longer render a literal `null` when there is no preview 
 
 The package's overview topics use the official area names: “Mechanik”, “Optik” and “Magnetismus und Elektrizitätslehre”.
 
-## Legacy-card proposal
+## Approved legacy-card mapping
 
 The source is `zam-os/zam` at commit `2057e1c35a5e768eb0c59cb74c3700c0101f67a2`. Both Grade 7 physics fixtures are frozen byte-for-byte under the package's `tests/fixtures/`; their SHA-256 values are recorded in `replaces-de-by.json`.
 
-Two of the eight mechanics items have same-retrieval candidates: converting m/s to km/h (J03) and interpreting the time-distance slope (J05). They are A proposals only. The other six mechanics prompts combine several questions or include material without an exact successor, such as rotating/rolling reference frames and velocity-time area calculations. They remain C keep-active.
+Two of the eight mechanics items have same-retrieval candidates: converting m/s to km/h (J03) and interpreting the time-distance slope (J05). These are the approved A transfers. The other six mechanics prompts combine several questions or include material without an exact successor, such as rotating/rolling reference frames and velocity-time area calculations. They remain C keep-active.
 
 All eight thermal-physics items remain C keep-active. Their old Grade 7 label does not establish current Grade 7 curriculum coverage. Particle-model overlap is not an identity mapping. The historical absolute-zero statement and the exact water-density wording also need an independent content correction; this package neither adopts those claims nor silently rewrites existing evidence.
 
 The neighbouring `de-by:realschule-optik` and `de-by:realschule-optik-erweiterung` cells contain relevant optics retrievals, but are bound to Grade 8 and reuse some item identifiers across cells. This package does not claim their mapping or retire them. Their possible relationship to both physics packages needs Thomas's separate decision before any transfer proposal is expanded.
 
-The result is **2 A, 0 B, 14 C keep-active**, with `approved: null`, `status: proposal-only`, no `replaces` and no `retired_items`. No personal library is opened or changed.
+Thomas approved 2 same-retrieval transfers on 2026-11-19. The published mapping uses `replaces` for those transfers. The 14 keep-active cards retain their review histories on their existing IDs. The attached migration check covers repeated installs and conflicting histories.
 
 ## Verification on 15 November 2026
 
@@ -57,4 +57,4 @@ Browser interaction checks completed a lesson through the quiz, workshop, model 
 
 After the generator changes, `node /tmp/zam-physik7-review-browser.mjs` repeated the 96 desktop and 48 phone-width states and the interaction checks, with no script exceptions or external requests. After the final force-arrow adjustment, `node /tmp/zam-physik7-force-review.mjs` checked the eight diagram variants described above, including contact geometry and collinearity; screenshots in both themes were inspected. These browser harnesses and outputs remain outside the repository.
 
-This records local implementation and verification. PR publication and deployment are separate actions; neither mapping approval nor teacher review is claimed.
+Thomas approved the two same-retrieval transfers. Teacher review remains open.

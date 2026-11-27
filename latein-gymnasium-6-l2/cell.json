@@ -1,0 +1,3401 @@
+{
+	"$schema": "https://zam.app/schemas/v1/kvt-tile.json",
+	"tile_id": "zam-academy:latein-gymnasium-6-l2",
+	"version": "2026.11.1",
+	"title": "Latein 6 Gymnasium · 2. Fremdsprache (ZAM Academy)",
+	"description": "Latein als zweite Fremdsprache, Gymnasium Bayern: 40 Lektionen, 120 Entdeckerziele, Sprachlabore, Topografie-Skizzen, 80 Übersetzungs- und Transferaufgaben sowie 120 verknüpfte ZAM-Karten.",
+	"publisher": "ZAM Academy",
+	"sources": [
+		{
+			"uri": "https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/6/latein/2-fremdsprache",
+			"label": "ISB · Latein 6 (2. Fremdsprache), Gymnasium Bayern",
+			"checked": "2026-11-25"
+		},
+		{
+			"uri": "https://pompeiisites.org/en/",
+			"label": "Parco Archeologico di Pompei · Official Site",
+			"checked": "2026-11-25"
+		},
+		{
+			"uri": "https://www.antike-am-koenigsplatz.mwn.de/de/",
+			"label": "Staatliche Antikensammlungen und Glyptothek München",
+			"checked": "2026-11-25"
+		}
+	],
+	"atoms": [
+		{
+			"id": "01M88JMTRK6Y5CF2P6PT0S3KJ5",
+			"atom_uri": "urn:zam:atom:01M88JMTRK6Y5CF2P6PT0S3KJ5",
+			"namespace": "zam-academy-latein-gymnasium-6-l2",
+			"slug": "l6-aussprache",
+			"title": "Quantitäten, Betonung & Vortrag",
+			"domain": "latein/wortschatz",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-aussprache",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6-l2",
+					"topic_code": "salve",
+					"topic_title": "Salve! Lautung, Wortschatz & Brücken"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb1",
+					"topic_title": "Lateinische Wörter quantitätsgerecht betonen und Texte sinnvoll vortragen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb2.1",
+					"topic_title": "Lateinische Wörter quantitätsgerecht betonen und Texte sinnvoll vortragen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BCN",
+					"slug": "l6-aussprache-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche Silbe wird im dreisilbigen Wort „do·mi·nus“ (kurzes i) betont?",
+					"concept": "die drittletzte Silbe: do-",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-aussprache",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"die drittletzte Silbe: do-",
+							"die vorletzte Silbe: -mi-"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BCP",
+					"slug": "l6-aussprache-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Bei a·mī·cus ist -mī- lang. Welche Silbe trägt den Ton?",
+					"concept": "-mī- (die vorletzte Silbe)",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-aussprache",
+					"sample_solution": "-mī- (die vorletzte Silbe)"
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BCQ",
+					"slug": "l6-aussprache-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welche Silbe ist in „rōsa“ (zweisilbig) immer betont?",
+					"concept": "Die erste Silbe (rō-).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-aussprache",
+					"sample_solution": "Die erste Silbe (rō-)."
+				}
+			]
+		},
+		{
+			"id": "01M88JMTRK6Y5CF2P6PT0S3KJ6",
+			"atom_uri": "urn:zam:atom:01M88JMTRK6Y5CF2P6PT0S3KJ6",
+			"namespace": "zam-academy-latein-gymnasium-6-l2",
+			"slug": "l6-wortschatz-system",
+			"title": "Grundwortschatz, Wortarten & Sachfelder",
+			"domain": "latein/wortschatz",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-wortschatz-system",
+			"prerequisites": [
+				{
+					"atom_id": "01M88JMTRK6Y5CF2P6PT0S3KJ5",
+					"type": "soft",
+					"rationale": "Builds on Quantitäten, Betonung & Vortrag within Salve! Lautung, Wortschatz & Brücken."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6-l2",
+					"topic_code": "salve",
+					"topic_title": "Salve! Lautung, Wortschatz & Brücken"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb2.1",
+					"topic_title": "Vokabeln nach Wortarten, Sachfeldern und Wortfamilien ordnen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb2.2",
+					"topic_title": "Vokabeln nach Wortarten, Sachfeldern und Wortfamilien ordnen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb4",
+					"topic_title": "Vokabeln nach Wortarten, Sachfeldern und Wortfamilien ordnen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BCR",
+					"slug": "l6-wortschatz-system-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche Angaben gehören beim Lernen eines lateinischen Substantivs immer zusammen?",
+					"concept": "Nominativ Singular, Genitiv Singular und Genus",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-wortschatz-system",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Nominativ Singular, Genitiv Singular und Genus",
+							"Nur der Nominativ Singular und die erste Bedeutung"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BCS",
+					"slug": "l6-wortschatz-system-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Zu welchem Sachfeld gehören templum, deus und ōrāre (Alltag, Religion oder Zahlen)?",
+					"concept": "Religion",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-wortschatz-system",
+					"sample_solution": "Religion"
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BCT",
+					"slug": "l6-wortschatz-system-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Was gehört zu einer Wortfamilie im Lateinischen?",
+					"concept": "Alle Wörter mit derselben Wortwurzel (z. B. amāre, amor, amīcus).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-wortschatz-system",
+					"sample_solution": "Alle Wörter mit derselben Wortwurzel (z. B. amāre, amor, amīcus)."
+				}
+			]
+		},
+		{
+			"id": "01M88JMTRK6Y5CF2P6PT0S3KJ7",
+			"atom_uri": "urn:zam:atom:01M88JMTRK6Y5CF2P6PT0S3KJ7",
+			"namespace": "zam-academy-latein-gymnasium-6-l2",
+			"slug": "l6-kontext-wendungen",
+			"title": "Mehrdeutige Wörter & Wendungen",
+			"domain": "latein/wortschatz",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-kontext-wendungen",
+			"prerequisites": [
+				{
+					"atom_id": "01M88JMTRK6Y5CF2P6PT0S3KJ6",
+					"type": "soft",
+					"rationale": "Builds on Grundwortschatz, Wortarten & Sachfelder within Salve! Lautung, Wortschatz & Brücken."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6-l2",
+					"topic_code": "salve",
+					"topic_title": "Salve! Lautung, Wortschatz & Brücken"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb2.1",
+					"topic_title": "Kontextspezifische Bedeutungen und feste Wendungen treffend übersetzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb2.3",
+					"topic_title": "Kontextspezifische Bedeutungen und feste Wendungen treffend übersetzen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BCV",
+					"slug": "l6-kontext-wendungen-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was bedeutet „Cīvēs templum petunt“ im Zusammenhang einer friedlichen Szene am ehesten?",
+					"concept": "Die Bürger suchen den Tempel auf.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-kontext-wendungen",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Die Bürger suchen den Tempel auf.",
+							"Die Bürger greifen den Tempel mit Waffen an."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BCW",
+					"slug": "l6-kontext-wendungen-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie übersetzt man die Wendung „grātiās agere“ in angemessenes Deutsch?",
+					"concept": "danken",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-kontext-wendungen",
+					"sample_solution": "danken"
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BCX",
+					"slug": "l6-kontext-wendungen-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Was bedeutet „Cīvēs urbem petunt“ im Unterschied zu „Hostēs urbem petunt“?",
+					"concept": "Bürger suchen die Stadt auf; Feinde greifen die Stadt an.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-kontext-wendungen",
+					"sample_solution": "Bürger suchen die Stadt auf; Feinde greifen die Stadt an."
+				}
+			]
+		},
+		{
+			"id": "01M88JMTRK6Y5CF2P6PT0S3KJ8",
+			"atom_uri": "urn:zam:atom:01M88JMTRK6Y5CF2P6PT0S3KJ8",
+			"namespace": "zam-academy-latein-gymnasium-6-l2",
+			"slug": "l6-wortbildung",
+			"title": "Wortbildung & Unbekanntes erschließen",
+			"domain": "latein/wortschatz",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-wortbildung",
+			"prerequisites": [
+				{
+					"atom_id": "01M88JMTRK6Y5CF2P6PT0S3KJ7",
+					"type": "soft",
+					"rationale": "Builds on Mehrdeutige Wörter & Wendungen within Salve! Lautung, Wortschatz & Brücken."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6-l2",
+					"topic_code": "salve",
+					"topic_title": "Salve! Lautung, Wortschatz & Brücken"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb2.1",
+					"topic_title": "Wörter in Präfix, Stamm und Suffix zerlegen und neue Wörter erschließen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BCY",
+					"slug": "l6-wortbildung-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was bedeutet das bisher unbekannte Verb „redūcere“, wenn „re-“ zurück und „dūcere“ führen heißt?",
+					"concept": "zurückführen",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-wortbildung",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"zurückführen",
+							"wegführen"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BCZ",
+					"slug": "l6-wortbildung-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welches deutsche Nomen erschließt du aus „līber“ (frei) + Suffix „-tās“?",
+					"concept": "Freiheit (lībertās, -tātis f.)",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-wortbildung",
+					"sample_solution": "Freiheit (lībertās, -tātis f.)"
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BD0",
+					"slug": "l6-wortbildung-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Was bewirkt das Präfix „re-“ vor einem lateinischen Verb (z. B. redūcere)?",
+					"concept": "Es bedeutet „zurück“ oder „wieder“ (zurückführen).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-wortbildung",
+					"sample_solution": "Es bedeutet „zurück“ oder „wieder“ (zurückführen)."
+				}
+			]
+		},
+		{
+			"id": "01M88JMTRK6Y5CF2P6PT0S3KJ9",
+			"atom_uri": "urn:zam:atom:01M88JMTRK6Y5CF2P6PT0S3KJ9",
+			"namespace": "zam-academy-latein-gymnasium-6-l2",
+			"slug": "l6-sprachbruecken",
+			"title": "Latein in Deutsch, Englisch & Europa",
+			"domain": "latein/wortschatz",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-sprachbruecken",
+			"prerequisites": [
+				{
+					"atom_id": "01M88JMTRK6Y5CF2P6PT0S3KJ8",
+					"type": "soft",
+					"rationale": "Builds on Wortbildung & Unbekanntes erschließen within Salve! Lautung, Wortschatz & Brücken."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6-l2",
+					"topic_code": "salve",
+					"topic_title": "Salve! Lautung, Wortschatz & Brücken"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb2.1",
+					"topic_title": "Lehn- und Fremdwörter, romanische Verwandte und lateinische Abkürzungen deuten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb3",
+					"topic_title": "Lehn- und Fremdwörter, romanische Verwandte und lateinische Abkürzungen deuten",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BD1",
+					"slug": "l6-sprachbruecken-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wofür steht die berühmte römische Inschrift „S.P.Q.R.“?",
+					"concept": "Senātus Populusque Rōmānus (Senat und Volk von Rom)",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-sprachbruecken",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Senātus Populusque Rōmānus (Senat und Volk von Rom)",
+							"Salvē, Pater Quīnte Rōmāne"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BD2",
+					"slug": "l6-sprachbruecken-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welches lateinische Ursprungswort steckt in engl. „liberty“ und frz. „liberté“?",
+					"concept": "lībertās",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-sprachbruecken",
+					"sample_solution": "lībertās"
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BD3",
+					"slug": "l6-sprachbruecken-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welche fünf romanischen/europäischen Wortbrücken führen von lat. „aqua“ aus?",
+					"concept": "Deutsch (Aquädukt/Aquarium), Englisch (aquatic) und Romanisch (frz. eau, it. acqua, sp. agua).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-sprachbruecken",
+					"sample_solution": "Deutsch (Aquädukt/Aquarium), Englisch (aquatic) und Romanisch (frz. eau, it. acqua, sp. agua)."
+				}
+			]
+		},
+		{
+			"id": "01M88JMTRK6Y5CF2P6PT0S3KJA",
+			"atom_uri": "urn:zam:atom:01M88JMTRK6Y5CF2P6PT0S3KJA",
+			"namespace": "zam-academy-latein-gymnasium-6-l2",
+			"slug": "l6-a-o-deklination",
+			"title": "1. und 2. Deklination: a- und o-Deklination",
+			"domain": "latein/formenlehre",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-a-o-deklination",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6-l2",
+					"topic_code": "nomina",
+					"topic_title": "Nomina, Kasus & Zahlen"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb2.2",
+					"topic_title": "Substantive der a- und o-Deklination (m. und n.) in allen fünf Kasus bestimmen und bilden",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb2.3",
+					"topic_title": "Substantive der a- und o-Deklination (m. und n.) in allen fünf Kasus bestimmen und bilden",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BD4",
+					"slug": "l6-a-o-deklination-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welcher Kasus ist „amīcōrum“?",
+					"concept": "Genitiv Plural",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-a-o-deklination",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Genitiv Plural",
+							"Akkusativ Singular"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BD5",
+					"slug": "l6-a-o-deklination-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Bilde den Akkusativ Plural von „serva, servae f.“: …",
+					"concept": "servās",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-a-o-deklination",
+					"sample_solution": "servās"
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BD6",
+					"slug": "l6-a-o-deklination-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welche Besonderheit gilt bei jedem lateinischen Neutrum?",
+					"concept": "Nominativ und Akkusativ sind gleich und enden im Plural auf -a.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-a-o-deklination",
+					"sample_solution": "Nominativ und Akkusativ sind gleich und enden im Plural auf -a."
+				}
+			]
+		},
+		{
+			"id": "01M88JMTRK6Y5CF2P6PT0S3KJB",
+			"atom_uri": "urn:zam:atom:01M88JMTRK6Y5CF2P6PT0S3KJB",
+			"namespace": "zam-academy-latein-gymnasium-6-l2",
+			"slug": "l6-dritte-deklination",
+			"title": "3. Deklination: konsonantisch & i-Stämme",
+			"domain": "latein/formenlehre",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-dritte-deklination",
+			"prerequisites": [
+				{
+					"atom_id": "01M88JMTRK6Y5CF2P6PT0S3KJA",
+					"type": "soft",
+					"rationale": "Builds on 1. und 2. Deklination: a- und o-Deklination within Nomina, Kasus & Zahlen."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6-l2",
+					"topic_code": "nomina",
+					"topic_title": "Nomina, Kasus & Zahlen"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb2.2",
+					"topic_title": "Substantive der 3. Deklination anhand des Genitivs deklinieren und i-Stämme erkennen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BD7",
+					"slug": "l6-dritte-deklination-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wie lautet der richtige Genitiv Plural von „urbs, urbis f.“?",
+					"concept": "urbium",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-dritte-deklination",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"urbium",
+							"urbum"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BD8",
+					"slug": "l6-dritte-deklination-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Bilde den Ablativ Singular von „rēx, rēgis m.“: …",
+					"concept": "rēge",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-dritte-deklination",
+					"sample_solution": "rēge"
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BD9",
+					"slug": "l6-dritte-deklination-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wann hat ein Substantiv der 3. Deklination im Genitiv Plural die Endung -ium?",
+					"concept": "Bei Gleichsilbigen auf -is/-ēs und bei zwei Konsonanten vor -is (z. B. urbs, urbium).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-dritte-deklination",
+					"sample_solution": "Bei Gleichsilbigen auf -is/-ēs und bei zwei Konsonanten vor -is (z. B. urbs, urbium)."
+				}
+			]
+		},
+		{
+			"id": "01M88JMTRK6Y5CF2P6PT0S3KJC",
+			"atom_uri": "urn:zam:atom:01M88JMTRK6Y5CF2P6PT0S3KJC",
+			"namespace": "zam-academy-latein-gymnasium-6-l2",
+			"slug": "l6-adjektive-kng",
+			"title": "Adjektive (1.–3. Dekl.) & KNG-Kongruenz",
+			"domain": "latein/formenlehre",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-adjektive-kng",
+			"prerequisites": [
+				{
+					"atom_id": "01M88JMTRK6Y5CF2P6PT0S3KJB",
+					"type": "soft",
+					"rationale": "Builds on 3. Deklination: konsonantisch & i-Stämme within Nomina, Kasus & Zahlen."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6-l2",
+					"topic_code": "nomina",
+					"topic_title": "Nomina, Kasus & Zahlen"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb2.2",
+					"topic_title": "Adjektive der a-/o- und 3. Deklination mit ihrem Bezugswort in KNG angleichen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb2.3",
+					"topic_title": "Adjektive der a-/o- und 3. Deklination mit ihrem Bezugswort in KNG angleichen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BDA",
+					"slug": "l6-adjektive-kng-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche Verbindung zu „poēta, poētae m.“ (der Dichter) erfüllt die KNG-Regel?",
+					"concept": "poēta clārus",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-adjektive-kng",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"poēta clārus",
+							"poēta clāra"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BDB",
+					"slug": "l6-adjektive-kng-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Ergänze das Adjektiv „fortis, forte“ im Akkusativ Plural zu „mīlitēs“ (m.): mīlitēs …",
+					"concept": "fortēs",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-adjektive-kng",
+					"sample_solution": "fortēs"
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BDC",
+					"slug": "l6-adjektive-kng-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Warum heißt es „poēta bonus“ statt „poēta bona“?",
+					"concept": "poēta gehört zwar zur a-Deklination, hat aber maskulines Genus.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-adjektive-kng",
+					"sample_solution": "poēta gehört zwar zur a-Deklination, hat aber maskulines Genus."
+				}
+			]
+		},
+		{
+			"id": "01M88JMTRK6Y5CF2P6PT0S3KJD",
+			"atom_uri": "urn:zam:atom:01M88JMTRK6Y5CF2P6PT0S3KJD",
+			"namespace": "zam-academy-latein-gymnasium-6-l2",
+			"slug": "l6-pronomina",
+			"title": "Personal-, Possessiv-, Reflexivpronomen & is, ea, id",
+			"domain": "latein/formenlehre",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-pronomina",
+			"prerequisites": [
+				{
+					"atom_id": "01M88JMTRK6Y5CF2P6PT0S3KJC",
+					"type": "soft",
+					"rationale": "Builds on Adjektive (1.–3. Dekl.) & KNG-Kongruenz within Nomina, Kasus & Zahlen."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6-l2",
+					"topic_code": "nomina",
+					"topic_title": "Nomina, Kasus & Zahlen"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb2.2",
+					"topic_title": "Pronomina unterscheiden und den Rückbezug von suus/se vs. eius treffsicher übersetzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb2.3",
+					"topic_title": "Pronomina unterscheiden und den Rückbezug von suus/se vs. eius treffsicher übersetzen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BDD",
+					"slug": "l6-pronomina-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Worauf bezieht sich „suō“ in „Mārcus cum amīcō suō ambulat“?",
+					"concept": "Auf das Subjekt Mārcus (Marcus geht mit seinem eigenen Freund).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-pronomina",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Auf das Subjekt Mārcus (Marcus geht mit seinem eigenen Freund).",
+							"Auf eine andere, nicht genannte Person."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BDE",
+					"slug": "l6-pronomina-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welches Pronomen ersetzt „sein/ihr (einer anderen Person)“ im Singular: suus oder eius?",
+					"concept": "eius",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-pronomina",
+					"sample_solution": "eius"
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BDF",
+					"slug": "l6-pronomina-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wann verwendet man „eōs“ statt „suōs“?",
+					"concept": "eōs (Akk. Pl. m. von is) verweist auf Personen außerhalb des Rückbezugs.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-pronomina",
+					"sample_solution": "eōs (Akk. Pl. m. von is) verweist auf Personen außerhalb des Rückbezugs."
+				}
+			]
+		},
+		{
+			"id": "01M88JMTRK6Y5CF2P6PT0S3KJE",
+			"atom_uri": "urn:zam:atom:01M88JMTRK6Y5CF2P6PT0S3KJE",
+			"namespace": "zam-academy-latein-gymnasium-6-l2",
+			"slug": "l6-numeralia",
+			"title": "Zahlen 1–12 & Römische Zahlzeichen",
+			"domain": "latein/formenlehre",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-numeralia",
+			"prerequisites": [
+				{
+					"atom_id": "01M88JMTRK6Y5CF2P6PT0S3KJD",
+					"type": "soft",
+					"rationale": "Builds on Personal-, Possessiv-, Reflexivpronomen & is, ea, id within Nomina, Kasus & Zahlen."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6-l2",
+					"topic_code": "nomina",
+					"topic_title": "Nomina, Kasus & Zahlen"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb2.1",
+					"topic_title": "Kardinalia und Ordinalia bis 12 beherrschen und römische Zahlzeichen im Alltag lesen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb2.2",
+					"topic_title": "Kardinalia und Ordinalia bis 12 beherrschen und römische Zahlzeichen im Alltag lesen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BDG",
+					"slug": "l6-numeralia-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche römische Ziffernfolge steht korrekt für die Zahl 9 (novem)?",
+					"concept": "IX (10 − 1)",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-numeralia",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"IX (10 − 1)",
+							"XI (10 + 1)"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BDH",
+					"slug": "l6-numeralia-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Schreibe die lateinische Grundzahl (Kardinalzahl) für 7 („septem“ oder „septimus“): …",
+					"concept": "septem",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-numeralia",
+					"sample_solution": "septem"
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BDJ",
+					"slug": "l6-numeralia-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welche Kardinalzahlen zwischen 1 und 12 werden im Lateinischen dekliniert?",
+					"concept": "Nur ūnus (1), duo (2) und trēs (3).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-numeralia",
+					"sample_solution": "Nur ūnus (1), duo (2) und trēs (3)."
+				}
+			]
+		},
+		{
+			"id": "01M88JMTRK6Y5CF2P6PT0S3KJF",
+			"atom_uri": "urn:zam:atom:01M88JMTRK6Y5CF2P6PT0S3KJF",
+			"namespace": "zam-academy-latein-gymnasium-6-l2",
+			"slug": "l6-praesens-imperativ",
+			"title": "Präsens Aktiv, Konjugationen & Imperativ I",
+			"domain": "latein/formenlehre",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-praesens-imperativ",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6-l2",
+					"topic_code": "verba",
+					"topic_title": "Verben & alle 6 Aktiv-Tempora"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb2.2",
+					"topic_title": "Verben aller Konjugationsklassen im Präsens Aktiv und im Imperativ I erkennen und bilden",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb2.3",
+					"topic_title": "Verben aller Konjugationsklassen im Präsens Aktiv und im Imperativ I erkennen und bilden",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BDK",
+					"slug": "l6-praesens-imperativ-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wie lautet die 3. Person Plural Präsens Aktiv von „capere, capiō“ (gemischte Konjugation)?",
+					"concept": "capiunt",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-praesens-imperativ",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"capiunt",
+							"capunt"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BDM",
+					"slug": "l6-praesens-imperativ-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Bilde den Imperativ Plural von „audīre“ („Hört!“): …",
+					"concept": "audīte!",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-praesens-imperativ",
+					"sample_solution": "audīte!"
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BDN",
+					"slug": "l6-praesens-imperativ-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie lautet der Imperativ I Plural der konsonantischen Konjugation (z. B. dūcere)?",
+					"concept": "dūcite (mit Bindevokal -i- vor -te).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-praesens-imperativ",
+					"sample_solution": "dūcite (mit Bindevokal -i- vor -te)."
+				}
+			]
+		},
+		{
+			"id": "01M88JMTRK6Y5CF2P6PT0S3KJG",
+			"atom_uri": "urn:zam:atom:01M88JMTRK6Y5CF2P6PT0S3KJG",
+			"namespace": "zam-academy-latein-gymnasium-6-l2",
+			"slug": "l6-imperfekt",
+			"title": "Imperfekt Aktiv & Erzählhintergrund",
+			"domain": "latein/formenlehre",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-imperfekt",
+			"prerequisites": [
+				{
+					"atom_id": "01M88JMTRK6Y5CF2P6PT0S3KJF",
+					"type": "soft",
+					"rationale": "Builds on Präsens Aktiv, Konjugationen & Imperativ I within Verben & alle 6 Aktiv-Tempora."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6-l2",
+					"topic_code": "verba",
+					"topic_title": "Verben & alle 6 Aktiv-Tempora"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb2.2",
+					"topic_title": "Das Tempuszeichen -ba- erkennen, Imperfektformen bilden und vom Perfekt abgrenzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb2.3",
+					"topic_title": "Das Tempuszeichen -ba- erkennen, Imperfektformen bilden und vom Perfekt abgrenzen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BDP",
+					"slug": "l6-imperfekt-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Woran erkennst du „colēbant“ eindeutig als Imperfekt Aktiv?",
+					"concept": "Am Tempuszeichen -ba- nach dem gedehnten Bindevokal -ē- und der Endung -nt.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-imperfekt",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Am Tempuszeichen -ba- nach dem gedehnten Bindevokal -ē- und der Endung -nt.",
+							"An der Endung -ērunt nach dem Perfektstamm."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BDQ",
+					"slug": "l6-imperfekt-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Bilde die 3. Person Singular Imperfekt Aktiv von „monēre“: …",
+					"concept": "monēbat",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-imperfekt",
+					"sample_solution": "monēbat"
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BDR",
+					"slug": "l6-imperfekt-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welche Aufgabe hat das Imperfekt in lateinischen Erzähltexten?",
+					"concept": "Es schildert Zustände, Gewohnheiten oder den Hintergrund der Handlung.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-imperfekt",
+					"sample_solution": "Es schildert Zustände, Gewohnheiten oder den Hintergrund der Handlung."
+				}
+			]
+		},
+		{
+			"id": "01M88JMTRK6Y5CF2P6PT0S3KJH",
+			"atom_uri": "urn:zam:atom:01M88JMTRK6Y5CF2P6PT0S3KJH",
+			"namespace": "zam-academy-latein-gymnasium-6-l2",
+			"slug": "l6-perfekt",
+			"title": "Perfekt Aktiv, Stammformen & Perfektarten",
+			"domain": "latein/formenlehre",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-perfekt",
+			"prerequisites": [
+				{
+					"atom_id": "01M88JMTRK6Y5CF2P6PT0S3KJG",
+					"type": "soft",
+					"rationale": "Builds on Imperfekt Aktiv & Erzählhintergrund within Verben & alle 6 Aktiv-Tempora."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6-l2",
+					"topic_code": "verba",
+					"topic_title": "Verben & alle 6 Aktiv-Tempora"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb2.1",
+					"topic_title": "Alle sechs Perfektbildungen erkennen, den Perfektstamm nutzen und Stammformen lernen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb2.2",
+					"topic_title": "Alle sechs Perfektbildungen erkennen, den Perfektstamm nutzen und Stammformen lernen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb2.3",
+					"topic_title": "Alle sechs Perfektbildungen erkennen, den Perfektstamm nutzen und Stammformen lernen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BDS",
+					"slug": "l6-perfekt-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Zu welcher Perfektart gehört „cēpī“ (von „capere“ — ergreifen)?",
+					"concept": "Dehnungsperfekt (mit Ablaut)",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-perfekt",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Dehnungsperfekt (mit Ablaut)",
+							"v-Perfekt"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BDT",
+					"slug": "l6-perfekt-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Bilde die 3. Person Plural Perfekt Aktiv von „vidēre“ (Stamm vīd-): …",
+					"concept": "vīdērunt",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-perfekt",
+					"sample_solution": "vīdērunt"
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BDV",
+					"slug": "l6-perfekt-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welcher Stamm und welche Endungen bilden das Perfekt Aktiv?",
+					"concept": "Der Perfektstamm (3. Stammform) plus -ī, -istī, -it, -imus, -istis, -ērunt.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-perfekt",
+					"sample_solution": "Der Perfektstamm (3. Stammform) plus -ī, -istī, -it, -imus, -istis, -ērunt."
+				}
+			]
+		},
+		{
+			"id": "01M88JMTRK6Y5CF2P6PT0S3KJJ",
+			"atom_uri": "urn:zam:atom:01M88JMTRK6Y5CF2P6PT0S3KJJ",
+			"namespace": "zam-academy-latein-gymnasium-6-l2",
+			"slug": "l6-plusquamperfekt-futur",
+			"title": "Plusquamperfekt, Futur I & Futur II",
+			"domain": "latein/formenlehre",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-plusquamperfekt-futur",
+			"prerequisites": [
+				{
+					"atom_id": "01M88JMTRK6Y5CF2P6PT0S3KJH",
+					"type": "soft",
+					"rationale": "Builds on Perfekt Aktiv, Stammformen & Perfektarten within Verben & alle 6 Aktiv-Tempora."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6-l2",
+					"topic_code": "verba",
+					"topic_title": "Verben & alle 6 Aktiv-Tempora"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb2.2",
+					"topic_title": "Alle sechs Aktiv-Tempora unterscheiden, bilden und auf dem Zeitstrahl einordnen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BDW",
+					"slug": "l6-plusquamperfekt-futur-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wie lautet die 3. Person Singular Futur I Aktiv von „dūcere“ (konsonantische Konjugation)?",
+					"concept": "dūcet",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-plusquamperfekt-futur",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"dūcet",
+							"dūcebit"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BDX",
+					"slug": "l6-plusquamperfekt-futur-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Bilde die 3. Person Singular Plusquamperfekt Aktiv von „vocāre“ (Stamm vocāv-): …",
+					"concept": "vocāverat",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-plusquamperfekt-futur",
+					"sample_solution": "vocāverat"
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BDY",
+					"slug": "l6-plusquamperfekt-futur-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welches Zeichen zwischen Perfektstamm und Endung bildet das Futur II Aktiv?",
+					"concept": "-erō / -eri- (z. B. vocāverō, vocāverit).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-plusquamperfekt-futur",
+					"sample_solution": "-erō / -eri- (z. B. vocāverō, vocāverit)."
+				}
+			]
+		},
+		{
+			"id": "01M88JMTRK6Y5CF2P6PT0S3KJK",
+			"atom_uri": "urn:zam:atom:01M88JMTRK6Y5CF2P6PT0S3KJK",
+			"namespace": "zam-academy-latein-gymnasium-6-l2",
+			"slug": "l6-unregelmaessige-verben",
+			"title": "esse, posse, velle, nolle, malle & ire",
+			"domain": "latein/formenlehre",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-unregelmaessige-verben",
+			"prerequisites": [
+				{
+					"atom_id": "01M88JMTRK6Y5CF2P6PT0S3KJJ",
+					"type": "soft",
+					"rationale": "Builds on Plusquamperfekt, Futur I & Futur II within Verben & alle 6 Aktiv-Tempora."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6-l2",
+					"topic_code": "verba",
+					"topic_title": "Verben & alle 6 Aktiv-Tempora"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb2.2",
+					"topic_title": "Die sechs wichtigen unregelmäßigen Verben in allen Tempora des Indikativs Aktiv sicher erkennen und bilden",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb2.3",
+					"topic_title": "Die sechs wichtigen unregelmäßigen Verben in allen Tempora des Indikativs Aktiv sicher erkennen und bilden",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BDZ",
+					"slug": "l6-unregelmaessige-verben-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was bedeutet die Form „māvult“ (3. Sg. Präs. Akt.)?",
+					"concept": "er/sie will lieber",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-unregelmaessige-verben",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"er/sie will lieber",
+							"er/sie will nicht"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BE0",
+					"slug": "l6-unregelmaessige-verben-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Bilde die 1. Person Plural Präsens Aktiv von „posse“ („wir können“): …",
+					"concept": "possumus",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-unregelmaessige-verben",
+					"sample_solution": "possumus"
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BE1",
+					"slug": "l6-unregelmaessige-verben-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie lautet das Futur I Aktiv von „īre“ (gehen) in der 1. Person Singular und 3. Person Plural?",
+					"concept": "ībō (ich werde gehen) und ībunt (sie werden gehen).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-unregelmaessige-verben",
+					"sample_solution": "ībō (ich werde gehen) und ībunt (sie werden gehen)."
+				}
+			]
+		},
+		{
+			"id": "01M88JMTRK6Y5CF2P6PT0S3KJM",
+			"atom_uri": "urn:zam:atom:01M88JMTRK6Y5CF2P6PT0S3KJM",
+			"namespace": "zam-academy-latein-gymnasium-6-l2",
+			"slug": "l6-satzglieder",
+			"title": "Satzglieder, Prädikatsnomen & Attribut",
+			"domain": "latein/syntax",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-satzglieder",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6-l2",
+					"topic_code": "syntax",
+					"topic_title": "Satzbau, Kasusfunktionen & Nebensätze"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb2.3",
+					"topic_title": "Subjekt, Prädikat, Objekt, Adverbiale, Prädikatsnomen und Attribut im lateinischen Satzbau analysieren",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BE2",
+					"slug": "l6-satzglieder-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche Funktion hat „clāra“ in „Rōma antīqua urbs clāra est“?",
+					"concept": "Attribut zum Prädikatsnomen urbs",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-satzglieder",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Attribut zum Prädikatsnomen urbs",
+							"Akkusativobjekt zum Verb est"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BE3",
+					"slug": "l6-satzglieder-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welches Satzglied ist „hodiē“ (heute) im Satz „Mārcus hodiē amīcō epistulam scrībit“?",
+					"concept": "Adverbiale Bestimmung der Zeit",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-satzglieder",
+					"sample_solution": "Adverbiale Bestimmung der Zeit"
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BE4",
+					"slug": "l6-satzglieder-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wo steht das finite Prädikat in einem typischen lateinischen Aussagesatz?",
+					"concept": "Meist am Satzende (im Unterschied zur deutschen Verbzweitstellung).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-satzglieder",
+					"sample_solution": "Meist am Satzende (im Unterschied zur deutschen Verbzweitstellung)."
+				}
+			]
+		},
+		{
+			"id": "01M88JMTRK6Y5CF2P6PT0S3KJN",
+			"atom_uri": "urn:zam:atom:01M88JMTRK6Y5CF2P6PT0S3KJN",
+			"namespace": "zam-academy-latein-gymnasium-6-l2",
+			"slug": "l6-genitiv-dativ-akkusativ",
+			"title": "Genitiv, Dativ & Akkusativ im Satz",
+			"domain": "latein/syntax",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-genitiv-dativ-akkusativ",
+			"prerequisites": [
+				{
+					"atom_id": "01M88JMTRK6Y5CF2P6PT0S3KJM",
+					"type": "soft",
+					"rationale": "Builds on Satzglieder, Prädikatsnomen & Attribut within Satzbau, Kasusfunktionen & Nebensätze."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6-l2",
+					"topic_code": "syntax",
+					"topic_title": "Satzbau, Kasusfunktionen & Nebensätze"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb2.3",
+					"topic_title": "Zentrale Kasusfunktionen (Gen. der Zugehörigkeit, Dat. des Besitzers, Akk. der zeitlichen Ausdehnung) sicher deuten",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BE5",
+					"slug": "l6-genitiv-dativ-akkusativ-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wie übersetzt du „Mārcō duo equī sunt“ in gutes Deutsch?",
+					"concept": "Marcus hat zwei Pferde (wörtlich: Dem Marcus sind zwei Pferde).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-genitiv-dativ-akkusativ",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Marcus hat zwei Pferde (wörtlich: Dem Marcus sind zwei Pferde).",
+							"Marcus sieht zwei Pferde."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BE6",
+					"slug": "l6-genitiv-dativ-akkusativ-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welchen Kasus verlangt das Verb „adiuvāre“ (helfen/unterstützen) im Lateinischen?",
+					"concept": "Akkusativ (z. B. amīcum adiuvāre)",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-genitiv-dativ-akkusativ",
+					"sample_solution": "Akkusativ (z. B. amīcum adiuvāre)"
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BE7",
+					"slug": "l6-genitiv-dativ-akkusativ-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie drückt Latein Besitz mit einem Dativ aus (Dativus possessivus)?",
+					"concept": "Person im Dativ + Form von esse (z. B. Mihi liber est = Ich habe ein Buch).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-genitiv-dativ-akkusativ",
+					"sample_solution": "Person im Dativ + Form von esse (z. B. Mihi liber est = Ich habe ein Buch)."
+				}
+			]
+		},
+		{
+			"id": "01M88JMTRK6Y5CF2P6PT0S3KJP",
+			"atom_uri": "urn:zam:atom:01M88JMTRK6Y5CF2P6PT0S3KJP",
+			"namespace": "zam-academy-latein-gymnasium-6-l2",
+			"slug": "l6-ablativ-praepositionen",
+			"title": "Ablativfunktionen & Präpositionen",
+			"domain": "latein/syntax",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-ablativ-praepositionen",
+			"prerequisites": [
+				{
+					"atom_id": "01M88JMTRK6Y5CF2P6PT0S3KJN",
+					"type": "soft",
+					"rationale": "Builds on Genitiv, Dativ & Akkusativ im Satz within Satzbau, Kasusfunktionen & Nebensätze."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6-l2",
+					"topic_code": "syntax",
+					"topic_title": "Satzbau, Kasusfunktionen & Nebensätze"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb2.3",
+					"topic_title": "Ablativ des Mittels, Grundes, der Trennung und Zeit unterscheiden und Präpositionen nach Kasus trennen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BE8",
+					"slug": "l6-ablativ-praepositionen-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche Ablativfunktion liegt in „terram arātrō vertunt“ („sie wenden die Erde mit dem Pflug“) vor?",
+					"concept": "Ablativ des Mittels (Ablātīvus īnstrūmentī)",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-ablativ-praepositionen",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Ablativ des Mittels (Ablātīvus īnstrūmentī)",
+							"Ablativ der Zeit"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BE9",
+					"slug": "l6-ablativ-praepositionen-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welchen Kasus verlangt „per“ (durch)?",
+					"concept": "Akkusativ (z. B. per viam)",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-ablativ-praepositionen",
+					"sample_solution": "Akkusativ (z. B. per viam)"
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BEA",
+					"slug": "l6-ablativ-praepositionen-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie unterscheiden sich „in urbe“ und „in urbem“?",
+					"concept": "in urbe (Abl.) fragt „Wo?“ (in der Stadt); in urbem (Akk.) fragt „Wohin?“ (in die Stadt).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-ablativ-praepositionen",
+					"sample_solution": "in urbe (Abl.) fragt „Wo?“ (in der Stadt); in urbem (Akk.) fragt „Wohin?“ (in die Stadt)."
+				}
+			]
+		},
+		{
+			"id": "01M88JMTRMD44F8W3HE73P9BBZ",
+			"atom_uri": "urn:zam:atom:01M88JMTRMD44F8W3HE73P9BBZ",
+			"namespace": "zam-academy-latein-gymnasium-6-l2",
+			"slug": "l6-satzarten-nebensaetze",
+			"title": "Satzarten, Konjunktionen & Adverbialsätze",
+			"domain": "latein/syntax",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-satzarten-nebensaetze",
+			"prerequisites": [
+				{
+					"atom_id": "01M88JMTRK6Y5CF2P6PT0S3KJP",
+					"type": "soft",
+					"rationale": "Builds on Ablativfunktionen & Präpositionen within Satzbau, Kasusfunktionen & Nebensätze."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6-l2",
+					"topic_code": "syntax",
+					"topic_title": "Satzbau, Kasusfunktionen & Nebensätze"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb2.2",
+					"topic_title": "Aussage-, Frage- und Aufforderungssätze sowie temporale, kausale, konditionale und konzessive Adverbialsätze unterscheiden",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb2.3",
+					"topic_title": "Aussage-, Frage- und Aufforderungssätze sowie temporale, kausale, konditionale und konzessive Adverbialsätze unterscheiden",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BEB",
+					"slug": "l6-satzarten-nebensaetze-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche Sinnrichtung leitet die Subjunktion „quamquam“ ein?",
+					"concept": "konzessiv (obwohl)",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-satzarten-nebensaetze",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"konzessiv (obwohl)",
+							"kausal (weil)"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BEC",
+					"slug": "l6-satzarten-nebensaetze-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie übersetzt man die temporale Subjunktion „postquam“ (meist mit Perfekt)?",
+					"concept": "nachdem",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-satzarten-nebensaetze",
+					"sample_solution": "nachdem"
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BED",
+					"slug": "l6-satzarten-nebensaetze-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Was drückt „nōnne“ bzw. „num“ am Anfang eines Fragesatzes aus?",
+					"concept": "nōnne erwartet „ja“ (etwa nicht?), num erwartet „nein“ (etwa?).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-satzarten-nebensaetze",
+					"sample_solution": "nōnne erwartet „ja“ (etwa nicht?), num erwartet „nein“ (etwa?)."
+				}
+			]
+		},
+		{
+			"id": "01M88JMTRMD44F8W3HE73P9BC0",
+			"atom_uri": "urn:zam:atom:01M88JMTRMD44F8W3HE73P9BC0",
+			"namespace": "zam-academy-latein-gymnasium-6-l2",
+			"slug": "l6-relativsatz",
+			"title": "Relativpronomen qui, quae, quod & Relativsatz",
+			"domain": "latein/syntax",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-relativsatz",
+			"prerequisites": [
+				{
+					"atom_id": "01M88JMTRMD44F8W3HE73P9BBZ",
+					"type": "soft",
+					"rationale": "Builds on Satzarten, Konjunktionen & Adverbialsätze within Satzbau, Kasusfunktionen & Nebensätze."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6-l2",
+					"topic_code": "syntax",
+					"topic_title": "Satzbau, Kasusfunktionen & Nebensätze"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb2.2",
+					"topic_title": "Relativpronomina bestimmen, Bezugswort-Kongruenz von Satzrolle trennen und den relativen Satzanschluss erkennen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb2.3",
+					"topic_title": "Relativpronomina bestimmen, Bezugswort-Kongruenz von Satzrolle trennen und den relativen Satzanschluss erkennen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BEE",
+					"slug": "l6-relativsatz-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Warum steht in „Servus, quem dominus vocat“ das Pronomen „quem“ im Akkusativ statt im Nominativ?",
+					"concept": "Weil es im Relativsatz das Akkusativobjekt zu vocat ist (den der Herr ruft).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-relativsatz",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Weil es im Relativsatz das Akkusativobjekt zu vocat ist (den der Herr ruft).",
+							"Weil servus im Hauptsatz auch im Akkusativ steht."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BEF",
+					"slug": "l6-relativsatz-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Ergänze das Relativpronomen: „Templum, … vidēmus, magnum est.“ (templum n. Sg., Akk. zu vidēmus)",
+					"concept": "quod",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-relativsatz",
+					"sample_solution": "quod"
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BEG",
+					"slug": "l6-relativsatz-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Woher stammen Genus, Numerus und Kasus eines Relativpronomens?",
+					"concept": "Genus und Numerus vom Bezugswort im Hauptsatz; Kasus aus dem eigenen Relativsatz.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-relativsatz",
+					"sample_solution": "Genus und Numerus vom Bezugswort im Hauptsatz; Kasus aus dem eigenen Relativsatz."
+				}
+			]
+		},
+		{
+			"id": "01M88JMTRMD44F8W3HE73P9BC1",
+			"atom_uri": "urn:zam:atom:01M88JMTRMD44F8W3HE73P9BC1",
+			"namespace": "zam-academy-latein-gymnasium-6-l2",
+			"slug": "l6-aci-grundbau",
+			"title": "Der AcI: Kopfverben, Subjektsakkusativ & Infinitiv",
+			"domain": "latein/methodik",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-aci-grundbau",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6-l2",
+					"topic_code": "aci-methodik",
+					"topic_title": "AcI & Übersetzungsmethodik"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb2.3",
+					"topic_title": "Den Aufbau des aktiven AcI erkennen und als deutschen dass-Satz auflösen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb4",
+					"topic_title": "Den Aufbau des aktiven AcI erkennen und als deutschen dass-Satz auflösen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BEH",
+					"slug": "l6-aci-grundbau-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche Rolle übernimmt der Subjektsakkusativ „amīcum“ im deutschen „dass“-Satz von „Mārcus videt amīcum venīre“?",
+					"concept": "Er wird zum Subjekt im Nominativ („dass der Freund kommt“).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-aci-grundbau",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Er wird zum Subjekt im Nominativ („dass der Freund kommt“).",
+							"Er bleibt Akkusativobjekt („dass er den Freund sieht“)."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BEJ",
+					"slug": "l6-aci-grundbau-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welcher Akkusativ in „Cīvēs audiunt rēgem urbem dēfendere“ ist das Subjekt des AcI (rēgem oder urbem)?",
+					"concept": "rēgem (Subjektsakkusativ im AcI)",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-aci-grundbau",
+					"sample_solution": "rēgem (Subjektsakkusativ im AcI)"
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BEK",
+					"slug": "l6-aci-grundbau-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welche Verbgruppen lösen einen AcI aus (Kopfverben)?",
+					"concept": "Verben des Sagens, Wahrnehmens, Denkens/Wissens und Fühlens.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-aci-grundbau",
+					"sample_solution": "Verben des Sagens, Wahrnehmens, Denkens/Wissens und Fühlens."
+				}
+			]
+		},
+		{
+			"id": "01M88JMTRMD44F8W3HE73P9BC2",
+			"atom_uri": "urn:zam:atom:01M88JMTRMD44F8W3HE73P9BC2",
+			"namespace": "zam-academy-latein-gymnasium-6-l2",
+			"slug": "l6-aci-zeitverhaeltnisse",
+			"title": "AcI: Gleichzeitigkeit & Vorzeitigkeit (Aktiv)",
+			"domain": "latein/methodik",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-aci-zeitverhaeltnisse",
+			"prerequisites": [
+				{
+					"atom_id": "01M88JMTRMD44F8W3HE73P9BC1",
+					"type": "soft",
+					"rationale": "Builds on Der AcI: Kopfverben, Subjektsakkusativ & Infinitiv within AcI & Übersetzungsmethodik."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6-l2",
+					"topic_code": "aci-methodik",
+					"topic_title": "AcI & Übersetzungsmethodik"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb2.3",
+					"topic_title": "Infinitiv Präsens und Infinitiv Perfekt Aktiv im AcI je nach Tempus des Kopfverbs zeitlich exakt übersetzen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb4",
+					"topic_title": "Infinitiv Präsens und Infinitiv Perfekt Aktiv im AcI je nach Tempus des Kopfverbs zeitlich exakt übersetzen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BEM",
+					"slug": "l6-aci-zeitverhaeltnisse-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wie übersetzt du „Mārcus vīdit amīcum vēnisse“ (Kopfverb im Perfekt + Infinitiv Perfekt)?",
+					"concept": "Marcus sah, dass der Freund gekommen war.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-aci-zeitverhaeltnisse",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Marcus sah, dass der Freund gekommen war.",
+							"Marcus sah, dass der Freund kommt."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BEN",
+					"slug": "l6-aci-zeitverhaeltnisse-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Bilde den Infinitiv Perfekt Aktiv von „dūcere“ (Perfektstamm dūx-): …",
+					"concept": "dūxisse",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-aci-zeitverhaeltnisse",
+					"sample_solution": "dūxisse"
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BEP",
+					"slug": "l6-aci-zeitverhaeltnisse-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie übersetzt man den Infinitiv Präsens im AcI nach einem vergangenen Kopfverb?",
+					"concept": "Gleichzeitig zur Vergangenheit, also mit dem deutschen Präteritum.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-aci-zeitverhaeltnisse",
+					"sample_solution": "Gleichzeitig zur Vergangenheit, also mit dem deutschen Präteritum."
+				}
+			]
+		},
+		{
+			"id": "01M88JMTRMD44F8W3HE73P9BC3",
+			"atom_uri": "urn:zam:atom:01M88JMTRMD44F8W3HE73P9BC3",
+			"namespace": "zam-academy-latein-gymnasium-6-l2",
+			"slug": "l6-uebersetzungstechniken",
+			"title": "Übersetzungstechniken: Abfrage- & Konstruktionsmethode",
+			"domain": "latein/methodik",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-uebersetzungstechniken",
+			"prerequisites": [
+				{
+					"atom_id": "01M88JMTRMD44F8W3HE73P9BC2",
+					"type": "soft",
+					"rationale": "Builds on AcI: Gleichzeitigkeit & Vorzeitigkeit (Aktiv) within AcI & Übersetzungsmethodik."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6-l2",
+					"topic_code": "aci-methodik",
+					"topic_title": "AcI & Übersetzungsmethodik"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb1",
+					"topic_title": "Längere lateinische Sätze systematisch erschließen und konstruieren",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb4",
+					"topic_title": "Längere lateinische Sätze systematisch erschließen und konstruieren",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BEQ",
+					"slug": "l6-uebersetzungstechniken-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Womit beginnt die Konstruktionsmethode bei einem neuen lateinischen Satz immer?",
+					"concept": "Mit dem Suchen und Bestimmen des Prädikats.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-uebersetzungstechniken",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Mit dem Suchen und Bestimmen des Prädikats.",
+							"Mit dem ersten Wort ganz links im Satz."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BER",
+					"slug": "l6-uebersetzungstechniken-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welches Verb ist das Prädikat des eingeschobenen Relativsatzes in „Cīvēs, quī in forō sunt, cōnsulī pārent“?",
+					"concept": "sunt",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-uebersetzungstechniken",
+					"sample_solution": "sunt"
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BES",
+					"slug": "l6-uebersetzungstechniken-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie gehst du bei einem langen Satzgefüge vor der Detailübersetzung vor?",
+					"concept": "Teilsätze durch Klammern/Striche trennen und in jedem Teilsatz zuerst das Prädikat bestimmen.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-uebersetzungstechniken",
+					"sample_solution": "Teilsätze durch Klammern/Striche trennen und in jedem Teilsatz zuerst das Prädikat bestimmen."
+				}
+			]
+		},
+		{
+			"id": "01M88JMTRMD44F8W3HE73P9BC4",
+			"atom_uri": "urn:zam:atom:01M88JMTRMD44F8W3HE73P9BC4",
+			"namespace": "zam-academy-latein-gymnasium-6-l2",
+			"slug": "l6-fehleranalyse",
+			"title": "Übersetzungen prüfen & Fehler analysieren",
+			"domain": "latein/methodik",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-fehleranalyse",
+			"prerequisites": [
+				{
+					"atom_id": "01M88JMTRMD44F8W3HE73P9BC3",
+					"type": "soft",
+					"rationale": "Builds on Übersetzungstechniken: Abfrage- & Konstruktionsmethode within AcI & Übersetzungsmethodik."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6-l2",
+					"topic_code": "aci-methodik",
+					"topic_title": "AcI & Übersetzungsmethodik"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb1",
+					"topic_title": "Sprachliche Fehler in eigenen Entwürfen systematisch finden, benennen und korrigieren",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb2.3",
+					"topic_title": "Sprachliche Fehler in eigenen Entwürfen systematisch finden, benennen und korrigieren",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb4",
+					"topic_title": "Sprachliche Fehler in eigenen Entwürfen systematisch finden, benennen und korrigieren",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BET",
+					"slug": "l6-fehleranalyse-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche beiden Fehler stecken in „mīlitēs fortēs → der tapfere Soldat“ und „dūxerant → führt“?",
+					"concept": "Numerusfehler (Plural statt Singular) und Tempusfehler (Plusquamperfekt statt Präsens)",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-fehleranalyse",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Numerusfehler (Plural statt Singular) und Tempusfehler (Plusquamperfekt statt Präsens)",
+							"Genusfehler und falscher AcI"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BEV",
+					"slug": "l6-fehleranalyse-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welcher Kasus ist „hostēs“ im Satz „hostēs urbem nōn cēpērunt“?",
+					"concept": "Nominativ Plural (Subjekt)",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-fehleranalyse",
+					"sample_solution": "Nominativ Plural (Subjekt)"
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BEW",
+					"slug": "l6-fehleranalyse-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welche drei Prüfpunkte gehören zur Kontrolle jeder Übersetzung?",
+					"concept": "1. Formen/Numerus/KNG, 2. Tempus/Satzbau, 3. Sinn und gutes Deutsch.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-fehleranalyse",
+					"sample_solution": "1. Formen/Numerus/KNG, 2. Tempus/Satzbau, 3. Sinn und gutes Deutsch."
+				}
+			]
+		},
+		{
+			"id": "01M88JMTRMD44F8W3HE73P9BC5",
+			"atom_uri": "urn:zam:atom:01M88JMTRMD44F8W3HE73P9BC5",
+			"namespace": "zam-academy-latein-gymnasium-6-l2",
+			"slug": "l6-textarbeit-lernen",
+			"title": "Textaufbau, Hilfsmittel & Lernorganisation",
+			"domain": "latein/methodik",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-textarbeit-lernen",
+			"prerequisites": [
+				{
+					"atom_id": "01M88JMTRMD44F8W3HE73P9BC4",
+					"type": "soft",
+					"rationale": "Builds on Übersetzungen prüfen & Fehler analysieren within AcI & Übersetzungsmethodik."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6-l2",
+					"topic_code": "aci-methodik",
+					"topic_title": "AcI & Übersetzungsmethodik"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb1",
+					"topic_title": "Texte gliedern, Hilfsmittel reflektiert nutzen, Lernpläne strukturieren und im Team arbeiten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb4",
+					"topic_title": "Texte gliedern, Hilfsmittel reflektiert nutzen, Lernpläne strukturieren und im Team arbeiten",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BEX",
+					"slug": "l6-textarbeit-lernen-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche Wörter markieren im Materialtext die drei Sinnabschnitte (Aufbau)?",
+					"concept": "Prīmō (zuerst), Deinde (daraufhin), Dēnique (schließlich)",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-textarbeit-lernen",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Prīmō (zuerst), Deinde (daraufhin), Dēnique (schließlich)",
+							"cīvēs, cōnsul, omnēs"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BEY",
+					"slug": "l6-textarbeit-lernen-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Was bedeutet das Gliederungswort „deinde“?",
+					"concept": "dann",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-textarbeit-lernen",
+					"sample_solution": "dann"
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BEZ",
+					"slug": "l6-textarbeit-lernen-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welche Funktion haben Signale wie „Prīmō … Deinde … Dēnique“ im Text?",
+					"concept": "Sie gliedern den Textaufbau in Einleitung, Fortgang und Abschluss.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-textarbeit-lernen",
+					"sample_solution": "Sie gliedern den Textaufbau in Einleitung, Fortgang und Abschluss."
+				}
+			]
+		},
+		{
+			"id": "01M88JMTRMD44F8W3HE73P9BC6",
+			"atom_uri": "urn:zam:atom:01M88JMTRMD44F8W3HE73P9BC6",
+			"namespace": "zam-academy-latein-gymnasium-6-l2",
+			"slug": "l6-rom-topografie",
+			"title": "Rom als caput mundi: Hügel, Forum & Kapitol",
+			"domain": "latein/kultur",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-rom-topografie",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6-l2",
+					"topic_code": "roma",
+					"topic_title": "Rom, Italien & Pompeji"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb1",
+					"topic_title": "Die Topografie Roms (Tiber, sieben Hügel, Forum Romanum, Kapitol) und seine Rolle als caput mundi erklären",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb3",
+					"topic_title": "Die Topografie Roms (Tiber, sieben Hügel, Forum Romanum, Kapitol) und seine Rolle als caput mundi erklären",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BF0",
+					"slug": "l6-rom-topografie-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was bedeutet der Ehrentitel „caput mundi“ für Rom?",
+					"concept": "Haupt (Mittelpunkt) der Welt",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-rom-topografie",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Haupt (Mittelpunkt) der Welt",
+							"Hafen des Nordens"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BF1",
+					"slug": "l6-rom-topografie-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie hieß der antike Hafen Roms an der Tibermündung?",
+					"concept": "Ostia",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-rom-topografie",
+					"sample_solution": "Ostia"
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BF2",
+					"slug": "l6-rom-topografie-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welche geographischen Vorteile bot Roms Lage an den sieben Hügeln und dem Tiber?",
+					"concept": "Schutz vor Hochwasser und Angriffen sowie Schiffsanbindung zum Hafen Ostia.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-rom-topografie",
+					"sample_solution": "Schutz vor Hochwasser und Angriffen sowie Schiffsanbindung zum Hafen Ostia."
+				}
+			]
+		},
+		{
+			"id": "01M88JMTRMD44F8W3HE73P9BC7",
+			"atom_uri": "urn:zam:atom:01M88JMTRMD44F8W3HE73P9BC7",
+			"namespace": "zam-academy-latein-gymnasium-6-l2",
+			"slug": "l6-rom-bauten",
+			"title": "Bauten & Technik: Kolosseum, Circus, Thermen, Aquädukt",
+			"domain": "latein/kultur",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-rom-bauten",
+			"prerequisites": [
+				{
+					"atom_id": "01M88JMTRMD44F8W3HE73P9BC6",
+					"type": "soft",
+					"rationale": "Builds on Rom als caput mundi: Hügel, Forum & Kapitol within Rom, Italien & Pompeji."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6-l2",
+					"topic_code": "roma",
+					"topic_title": "Rom, Italien & Pompeji"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb1",
+					"topic_title": "Römische Großbauten (Amphitheater, Triumphbogen, Circus Maximus, Thermen, Aquädukte) in ihrer Funktion und Architektur erkennen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb3",
+					"topic_title": "Römische Großbauten (Amphitheater, Triumphbogen, Circus Maximus, Thermen, Aquädukte) in ihrer Funktion und Architektur erkennen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BF3",
+					"slug": "l6-rom-bauten-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche Funktion hatte ein römischer Aquädukt?",
+					"concept": "Er leitete frisches Wasser über weite Strecken mit leichtem Gefälle in die Stadt.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-rom-bauten",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Er leitete frisches Wasser über weite Strecken mit leichtem Gefälle in die Stadt.",
+							"Er diente als Rennbahn für vierspännige Streitwagen."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BF4",
+					"slug": "l6-rom-bauten-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welcher Bau bot Platz für Wagenrennen zwischen Palatin und Aventin?",
+					"concept": "Circus Maximus",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-rom-bauten",
+					"sample_solution": "Circus Maximus"
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BF5",
+					"slug": "l6-rom-bauten-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wozu diente ein römischer Triumphbogen (z. B. der Konstantinsbogen)?",
+					"concept": "Als Siegesdenkmal zur öffentlichen Erinnerung an militärische Erfolge.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-rom-bauten",
+					"sample_solution": "Als Siegesdenkmal zur öffentlichen Erinnerung an militärische Erfolge."
+				}
+			]
+		},
+		{
+			"id": "01M88JMTRMD44F8W3HE73P9BC8",
+			"atom_uri": "urn:zam:atom:01M88JMTRMD44F8W3HE73P9BC8",
+			"namespace": "zam-academy-latein-gymnasium-6-l2",
+			"slug": "l6-italien-magna-graecia",
+			"title": "Das antike Italien & Magna Graecia",
+			"domain": "latein/kultur",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-italien-magna-graecia",
+			"prerequisites": [
+				{
+					"atom_id": "01M88JMTRMD44F8W3HE73P9BC7",
+					"type": "soft",
+					"rationale": "Builds on Bauten & Technik: Kolosseum, Circus, Thermen, Aquädukt within Rom, Italien & Pompeji."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6-l2",
+					"topic_code": "roma",
+					"topic_title": "Rom, Italien & Pompeji"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb1",
+					"topic_title": "Stätten und Regionen des antiken Italien (Pompeji, Herkuláneum, Vesuv, Magna Graecia) benennen und den griechischen Einfluss einordnen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb3",
+					"topic_title": "Stätten und Regionen des antiken Italien (Pompeji, Herkuláneum, Vesuv, Magna Graecia) benennen und den griechischen Einfluss einordnen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BF6",
+					"slug": "l6-italien-magna-graecia-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was bezeichnet der Name „Magna Graecia“ in der Antike?",
+					"concept": "Die von Griechen besiedelten Küstenstädte in Unteritalien und auf Sizilien.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-italien-magna-graecia",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Die von Griechen besiedelten Küstenstädte in Unteritalien und auf Sizilien.",
+							"Die griechische Hauptstadt Athen."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BF7",
+					"slug": "l6-italien-magna-graecia-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welches Meer liegt westlich von Italien und Kampanien?",
+					"concept": "Tyrrhenisches Meer (Mare Tyrrhēnum)",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-italien-magna-graecia",
+					"sample_solution": "Tyrrhenisches Meer (Mare Tyrrhēnum)"
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BF8",
+					"slug": "l6-italien-magna-graecia-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welche beiden Meere begrenzen die italienische Halbinsel im Westen und Osten?",
+					"concept": "Im Westen das Tyrrhenische Meer, im Osten das Adriatische Meer.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-italien-magna-graecia",
+					"sample_solution": "Im Westen das Tyrrhenische Meer, im Osten das Adriatische Meer."
+				}
+			]
+		},
+		{
+			"id": "01M88JMTRMD44F8W3HE73P9BC9",
+			"atom_uri": "urn:zam:atom:01M88JMTRMD44F8W3HE73P9BC9",
+			"namespace": "zam-academy-latein-gymnasium-6-l2",
+			"slug": "l6-vesuv-pompeji",
+			"title": "79 n. Chr.: Vesuv, Pompeji, Herkuláneum & Plinius d. J.",
+			"domain": "latein/kultur",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-vesuv-pompeji",
+			"prerequisites": [
+				{
+					"atom_id": "01M88JMTRMD44F8W3HE73P9BC8",
+					"type": "soft",
+					"rationale": "Builds on Das antike Italien & Magna Graecia within Rom, Italien & Pompeji."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6-l2",
+					"topic_code": "roma",
+					"topic_title": "Rom, Italien & Pompeji"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb1",
+					"topic_title": "Den Vesuvausbruch 79 n. Chr., den Augenzeugenbericht des Plinius d. J. und die Bedeutung für die Archäologie erläutern",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb3",
+					"topic_title": "Den Vesuvausbruch 79 n. Chr., den Augenzeugenbericht des Plinius d. J. und die Bedeutung für die Archäologie erläutern",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BF9",
+					"slug": "l6-vesuv-pompeji-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Wer liefert die wichtigste literarische Augenzeugen-Quelle zum Vesuvausbruch 79 n. Chr.?",
+					"concept": "Plinius der Jüngere (in seinen Briefen an Tacitus)",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-vesuv-pompeji",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Plinius der Jüngere (in seinen Briefen an Tacitus)",
+							"Vergil in der Aeneis"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BFA",
+					"slug": "l6-vesuv-pompeji-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "In welchem Jahr n. Chr. brach der Vesuv aus und verschüttete Pompeji?",
+					"concept": "79 n. Chr.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-vesuv-pompeji",
+					"sample_solution": "79 n. Chr."
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BFB",
+					"slug": "l6-vesuv-pompeji-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Warum liefern Pompeji und Herkuláneum ein so genaues Bild des römischen Alltags?",
+					"concept": "Bimsstein, Asche und die Ablagerungen pyroklastischer Ströme konservierten Häuser, Läden und Funde von 79 n. Chr.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-vesuv-pompeji",
+					"sample_solution": "Bimsstein, Asche und die Ablagerungen pyroklastischer Ströme konservierten Häuser, Läden und Funde von 79 n. Chr."
+				}
+			]
+		},
+		{
+			"id": "01M88JMTRMD44F8W3HE73P9BCA",
+			"atom_uri": "urn:zam:atom:01M88JMTRMD44F8W3HE73P9BCA",
+			"namespace": "zam-academy-latein-gymnasium-6-l2",
+			"slug": "l6-kunst-rezeption",
+			"title": "Antike Kunst, Museen & Spuren im Alltag",
+			"domain": "latein/kultur",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-kunst-rezeption",
+			"prerequisites": [
+				{
+					"atom_id": "01M88JMTRMD44F8W3HE73P9BC9",
+					"type": "soft",
+					"rationale": "Builds on 79 n. Chr.: Vesuv, Pompeji, Herkuláneum & Plinius d. J. within Rom, Italien & Pompeji."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6-l2",
+					"topic_code": "roma",
+					"topic_title": "Rom, Italien & Pompeji"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb2.1",
+					"topic_title": "Griechische und römische Kunst sowie das Fortleben antiker Kultur in Bauten, Produkten und Sentenzen erkennen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb3",
+					"topic_title": "Griechische und römische Kunst sowie das Fortleben antiker Kultur in Bauten, Produkten und Sentenzen erkennen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BFC",
+					"slug": "l6-kunst-rezeption-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Von welchem lateinischen Wort leitet sich der Produktname „Audi“ ab?",
+					"concept": "Vom Imperativ „audī!“ (Höre! — Übersetzung des deutschen Namens Horch)",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-kunst-rezeption",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Vom Imperativ „audī!“ (Höre! — Übersetzung des deutschen Namens Horch)",
+							"Von „aurum“ (Gold)"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BFD",
+					"slug": "l6-kunst-rezeption-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Was bedeutet die bekannte Sentenz „Errāre hūmānum est“?",
+					"concept": "Irren ist menschlich.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-kunst-rezeption",
+					"sample_solution": "Irren ist menschlich."
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BFE",
+					"slug": "l6-kunst-rezeption-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welche typischen Kunstformen zeigen Funde aus Pompeji und Athen in Antikenmuseen?",
+					"concept": "Mosaike, Wandfresken, Vasenmalerei sowie griechisch-römische Statuen und Büsten.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-kunst-rezeption",
+					"sample_solution": "Mosaike, Wandfresken, Vasenmalerei sowie griechisch-römische Statuen und Büsten."
+				}
+			]
+		},
+		{
+			"id": "01M88JMTRMD44F8W3HE73P9BCB",
+			"atom_uri": "urn:zam:atom:01M88JMTRMD44F8W3HE73P9BCB",
+			"namespace": "zam-academy-latein-gymnasium-6-l2",
+			"slug": "l6-gruendung-koenigszeit",
+			"title": "Aeneas, Romulus & Remus und die Königszeit",
+			"domain": "latein/geschichte",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-gruendung-koenigszeit",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6-l2",
+					"topic_code": "historia",
+					"topic_title": "Geschichte, Politik & Alltag in Rom"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb1",
+					"topic_title": "Den römischen Gründungsmythos, die Königszeit (753–509 v. Chr.) sowie Vergil und Livius als Quellen einordnen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb3",
+					"topic_title": "Den römischen Gründungsmythos, die Königszeit (753–509 v. Chr.) sowie Vergil und Livius als Quellen einordnen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BFF",
+					"slug": "l6-gruendung-koenigszeit-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche beiden römischen Autoren sind die wichtigsten literarischen Quellen für Aeneas (Epos) bzw. die Frühgeschichte (Geschichtswerk)?",
+					"concept": "Vergil (Aeneis) und Livius (Ab urbe condita)",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-gruendung-koenigszeit",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Vergil (Aeneis) und Livius (Ab urbe condita)",
+							"Plinius d. J. und Cicero"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BFG",
+					"slug": "l6-gruendung-koenigszeit-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welches traditionelle Gründungsjahr Roms merkt man sich für Romulus (v. Chr.)?",
+					"concept": "753 v. Chr.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-gruendung-koenigszeit",
+					"sample_solution": "753 v. Chr."
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BFH",
+					"slug": "l6-gruendung-koenigszeit-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wann begann nach römischer Überlieferung die Königszeit und wann endete sie?",
+					"concept": "Gründung 753 v. Chr. (Romulus), Ende 509 v. Chr. (Vertreibung des Tarquinius Superbus).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-gruendung-koenigszeit",
+					"sample_solution": "Gründung 753 v. Chr. (Romulus), Ende 509 v. Chr. (Vertreibung des Tarquinius Superbus)."
+				}
+			]
+		},
+		{
+			"id": "01M88JMTRMD44F8W3HE73P9BCC",
+			"atom_uri": "urn:zam:atom:01M88JMTRMD44F8W3HE73P9BCC",
+			"namespace": "zam-academy-latein-gymnasium-6-l2",
+			"slug": "l6-fruehe-republik",
+			"title": "Frühe Republik, Ständekämpfe & Organe",
+			"domain": "latein/geschichte",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-fruehe-republik",
+			"prerequisites": [
+				{
+					"atom_id": "01M88JMTRMD44F8W3HE73P9BCB",
+					"type": "soft",
+					"rationale": "Builds on Aeneas, Romulus & Remus und die Königszeit within Geschichte, Politik & Alltag in Rom."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6-l2",
+					"topic_code": "historia",
+					"topic_title": "Geschichte, Politik & Alltag in Rom"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb1",
+					"topic_title": "Den Übergang zur frühen Republik (Ständekämpfe, Ausdehnung in Italien) und zentrale politische Organe (Senat, Volksversammlung, Volkstribunat) beschreiben",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb3",
+					"topic_title": "Den Übergang zur frühen Republik (Ständekämpfe, Ausdehnung in Italien) und zentrale politische Organe (Senat, Volksversammlung, Volkstribunat) beschreiben",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BFJ",
+					"slug": "l6-fruehe-republik-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche besondere Schutzmacht besaßen die Volkstribunen (tribūnī plēbis) in der frühen Republik?",
+					"concept": "Sie waren unantastbar und konnten Beschlüsse mit ihrem Veto aufhalten.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-fruehe-republik",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Sie waren unantastbar und konnten Beschlüsse mit ihrem Veto aufhalten.",
+							"Sie herrschten lebenslang wie Könige."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BFK",
+					"slug": "l6-fruehe-republik-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie nannte man die beiden Stände, die in den Ständekämpfen um politische Mitsprache rangen (Patrizier und …)?",
+					"concept": "Plebejer",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-fruehe-republik",
+					"sample_solution": "Plebejer"
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BFM",
+					"slug": "l6-fruehe-republik-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welche außenpolitische Entwicklung prägte Rom in der frühen Republik?",
+					"concept": "Die Ausdehnung der römischen Herrschaft über Mittel- und Unteritalien.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-fruehe-republik",
+					"sample_solution": "Die Ausdehnung der römischen Herrschaft über Mittel- und Unteritalien."
+				}
+			]
+		},
+		{
+			"id": "01M88JMTRMD44F8W3HE73P9BCD",
+			"atom_uri": "urn:zam:atom:01M88JMTRMD44F8W3HE73P9BCD",
+			"namespace": "zam-academy-latein-gymnasium-6-l2",
+			"slug": "l6-werte-familie",
+			"title": "Römische Werte, Familie & Namensgebung",
+			"domain": "latein/geschichte",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-werte-familie",
+			"prerequisites": [
+				{
+					"atom_id": "01M88JMTRMD44F8W3HE73P9BCC",
+					"type": "soft",
+					"rationale": "Builds on Frühe Republik, Ständekämpfe & Organe within Geschichte, Politik & Alltag in Rom."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6-l2",
+					"topic_code": "historia",
+					"topic_title": "Geschichte, Politik & Alltag in Rom"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb1",
+					"topic_title": "Grundbegriffe römischer Werte (pietas), die Rolle der familia und das dreiteilige römische Namenssystem verstehen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb3",
+					"topic_title": "Grundbegriffe römischer Werte (pietas), die Rolle der familia und das dreiteilige römische Namenssystem verstehen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BFN",
+					"slug": "l6-werte-familie-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was bedeutet der zentrale römische Wertbegriff „pietās“?",
+					"concept": "Pflichtbewusstsein und Ehrfurcht gegenüber Göttern, Eltern und Staat",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-werte-familie",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Pflichtbewusstsein und Ehrfurcht gegenüber Göttern, Eltern und Staat",
+							"Bloßes Mitleid mit fremden Gegnern"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BFP",
+					"slug": "l6-werte-familie-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welcher Bestandteil von „Mārcus Tullius Cicerō“ ist der Sippenname (nōmen gentīle)?",
+					"concept": "Tullius (nōmen gentīle)",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-werte-familie",
+					"sample_solution": "Tullius (nōmen gentīle)"
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BFQ",
+					"slug": "l6-werte-familie-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Aus welchen drei Teilen bestand ein vollständiger römischer Bürgername (tria nōmina)?",
+					"concept": "Praenomen (Vorname), Nomen gentile (Sippenname) und Cognomen (Beiname).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-werte-familie",
+					"sample_solution": "Praenomen (Vorname), Nomen gentile (Sippenname) und Cognomen (Beiname)."
+				}
+			]
+		},
+		{
+			"id": "01M88JMTRMD44F8W3HE73P9BCE",
+			"atom_uri": "urn:zam:atom:01M88JMTRMD44F8W3HE73P9BCE",
+			"namespace": "zam-academy-latein-gymnasium-6-l2",
+			"slug": "l6-sklaven-gladiatoren",
+			"title": "Sklaven, Gladiatoren & Kleidung",
+			"domain": "latein/geschichte",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-sklaven-gladiatoren",
+			"prerequisites": [
+				{
+					"atom_id": "01M88JMTRMD44F8W3HE73P9BCD",
+					"type": "soft",
+					"rationale": "Builds on Römische Werte, Familie & Namensgebung within Geschichte, Politik & Alltag in Rom."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6-l2",
+					"topic_code": "historia",
+					"topic_title": "Geschichte, Politik & Alltag in Rom"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb1",
+					"topic_title": "Lebensbedingungen von Sklaven und Gladiatoren sowie römische Kleidung beschreiben und aus heutiger Sicht bewerten",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb3",
+					"topic_title": "Lebensbedingungen von Sklaven und Gladiatoren sowie römische Kleidung beschreiben und aus heutiger Sicht bewerten",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BFR",
+					"slug": "l6-sklaven-gladiatoren-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welches Kleidungsstück durfte in Rom ausschließlich ein freier männlicher Bürger bei offiziellen Anlässen tragen?",
+					"concept": "die Toga",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-sklaven-gladiatoren",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"die Toga",
+							"die Tunika"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BFS",
+					"slug": "l6-sklaven-gladiatoren-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie nennt man das lange Gewand einer verheirateten römischen Bürgerin?",
+					"concept": "Stola",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-sklaven-gladiatoren",
+					"sample_solution": "Stola"
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BFT",
+					"slug": "l6-sklaven-gladiatoren-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welche rechtliche Stellung hatten Sklaven im antiken Rom?",
+					"concept": "Sie waren unfrei und rechtlich Besitz ihres Herrn; manche wurden später als lībertī freigelassen.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-sklaven-gladiatoren",
+					"sample_solution": "Sie waren unfrei und rechtlich Besitz ihres Herrn; manche wurden später als lībertī freigelassen."
+				}
+			]
+		},
+		{
+			"id": "01M88JMTRMD44F8W3HE73P9BCF",
+			"atom_uri": "urn:zam:atom:01M88JMTRMD44F8W3HE73P9BCF",
+			"namespace": "zam-academy-latein-gymnasium-6-l2",
+			"slug": "l6-schule-kalender",
+			"title": "Schule, Schreibmaterial, Bücher & Kalender",
+			"domain": "latein/geschichte",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-schule-kalender",
+			"prerequisites": [
+				{
+					"atom_id": "01M88JMTRMD44F8W3HE73P9BCE",
+					"type": "soft",
+					"rationale": "Builds on Sklaven, Gladiatoren & Kleidung within Geschichte, Politik & Alltag in Rom."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6-l2",
+					"topic_code": "historia",
+					"topic_title": "Geschichte, Politik & Alltag in Rom"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb1",
+					"topic_title": "Römische Schule und Ausbildung, Schreibstoffe/Bücher sowie Grundzüge von Zeitrechnung und Kalender erklären",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb3",
+					"topic_title": "Römische Schule und Ausbildung, Schreibstoffe/Bücher sowie Grundzüge von Zeitrechnung und Kalender erklären",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BFV",
+					"slug": "l6-schule-kalender-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Warum heißen unsere Monate September, Oktober, November und Dezember nach den lateinischen Zahlen 7, 8, 9 und 10?",
+					"concept": "Weil das alte römische Jahr im März begann (September war also der 7. Monat).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-schule-kalender",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Weil das alte römische Jahr im März begann (September war also der 7. Monat).",
+							"Weil die Römer nur zehn Monate im Jahr zählten."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BFW",
+					"slug": "l6-schule-kalender-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Mit welchem Schreibgerät schrieb man auf eine römische Wachstafel (tabula cērata)?",
+					"concept": "stilus",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-schule-kalender",
+					"sample_solution": "stilus"
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BFX",
+					"slug": "l6-schule-kalender-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie hießen die drei Stichtage jedes römischen Monats?",
+					"concept": "Kalenden (1.), Nonen (5./7.) und Iden (13./15.).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-schule-kalender",
+					"sample_solution": "Kalenden (1.), Nonen (5./7.) und Iden (13./15.)."
+				}
+			]
+		},
+		{
+			"id": "01M88JMTRMD44F8W3HE73P9BCG",
+			"atom_uri": "urn:zam:atom:01M88JMTRMD44F8W3HE73P9BCG",
+			"namespace": "zam-academy-latein-gymnasium-6-l2",
+			"slug": "l6-religion-kult",
+			"title": "Römische Religion: Tempel, Opfer, Orakel & Auspizien",
+			"domain": "latein/mythos",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-religion-kult",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6-l2",
+					"topic_code": "mythos",
+					"topic_title": "Religion, Götter & Antike Mythen"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb1",
+					"topic_title": "Grundzüge römischer Religion (do ut des, Tempel, Auspizien, Orakel, Opfer) verstehen und mit heute vergleichen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb3",
+					"topic_title": "Grundzüge römischer Religion (do ut des, Tempel, Auspizien, Orakel, Opfer) verstehen und mit heute vergleichen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BFY",
+					"slug": "l6-religion-kult-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Was drückt die römische Kultformel „dō ut dēs“ aus?",
+					"concept": "Ein gegenseitiges Tauschverhältnis: Der Mensch opfert korrekt, damit der Gott hilft.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-religion-kult",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Ein gegenseitiges Tauschverhältnis: Der Mensch opfert korrekt, damit der Gott hilft.",
+							"Dass man Götter nur heimlich anbeten darf."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BFZ",
+					"slug": "l6-religion-kult-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Was beobachtete ein Augur bei den „auspicia“?",
+					"concept": "Vögel / Vogelflug",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-religion-kult",
+					"sample_solution": "Vögel / Vogelflug"
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BG0",
+					"slug": "l6-religion-kult-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wo standen die Opferaltäre der römischen Tempel?",
+					"concept": "Draußen vor der Tempelstreppe unter freiem Himmel.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-religion-kult",
+					"sample_solution": "Draußen vor der Tempelstreppe unter freiem Himmel."
+				}
+			]
+		},
+		{
+			"id": "01M88JMTRMD44F8W3HE73P9BCH",
+			"atom_uri": "urn:zam:atom:01M88JMTRMD44F8W3HE73P9BCH",
+			"namespace": "zam-academy-latein-gymnasium-6-l2",
+			"slug": "l6-olympier",
+			"title": "Die Olympier: Griechische & römische Gottheiten",
+			"domain": "latein/mythos",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-olympier",
+			"prerequisites": [
+				{
+					"atom_id": "01M88JMTRMD44F8W3HE73P9BCG",
+					"type": "soft",
+					"rationale": "Builds on Römische Religion: Tempel, Opfer, Orakel & Auspizien within Religion, Götter & Antike Mythen."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6-l2",
+					"topic_code": "mythos",
+					"topic_title": "Religion, Götter & Antike Mythen"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb1",
+					"topic_title": "Die wichtigsten olympischen Gottheiten mit griechischen und römischen Namen, Attributen und Zuständigkeiten benennen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb3",
+					"topic_title": "Die wichtigsten olympischen Gottheiten mit griechischen und römischen Namen, Attributen und Zuständigkeiten benennen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BG1",
+					"slug": "l6-olympier-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche römische Göttin entspricht der griechischen Athene (Göttin der Weisheit und Kunstfertigkeit)?",
+					"concept": "Minerva",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-olympier",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Minerva",
+							"Diāna"
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BG2",
+					"slug": "l6-olympier-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie heißt der griechische Götterbote Hermes auf Lateinisch?",
+					"concept": "Mercurius",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-olympier",
+					"sample_solution": "Mercurius"
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BG3",
+					"slug": "l6-olympier-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Für welche Bereiche war Cerēs (griechisch Demeter) zuständig?",
+					"concept": "Für Ackerbau, Getreide und Fruchtbarkeit (daher „Cerealien“).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-olympier",
+					"sample_solution": "Für Ackerbau, Getreide und Fruchtbarkeit (daher „Cerealien“)."
+				}
+			]
+		},
+		{
+			"id": "01M88JMTRMD44F8W3HE73P9BCJ",
+			"atom_uri": "urn:zam:atom:01M88JMTRMD44F8W3HE73P9BCJ",
+			"namespace": "zam-academy-latein-gymnasium-6-l2",
+			"slug": "l6-tod-unterwelt",
+			"title": "Vorstellungen von Tod und Unterwelt",
+			"domain": "latein/mythos",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-tod-unterwelt",
+			"prerequisites": [
+				{
+					"atom_id": "01M88JMTRMD44F8W3HE73P9BCH",
+					"type": "soft",
+					"rationale": "Builds on Die Olympier: Griechische & römische Gottheiten within Religion, Götter & Antike Mythen."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6-l2",
+					"topic_code": "mythos",
+					"topic_title": "Religion, Götter & Antike Mythen"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb1",
+					"topic_title": "Römische und griechische Vorstellungen von Tod, Bestattung und Unterwelt (Styx, Charon, Cerberus, Totengericht, Elysium) beschreiben",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb3",
+					"topic_title": "Römische und griechische Vorstellungen von Tod, Bestattung und Unterwelt (Styx, Charon, Cerberus, Totengericht, Elysium) beschreiben",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BG4",
+					"slug": "l6-tod-unterwelt-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Welche Aufgabe hatte der Fährmann Charōn in der antiken Unterwelt?",
+					"concept": "Er setzte die Seelen der Bestatteten über den Fluss Styx (gegen eine Münze).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-tod-unterwelt",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Er setzte die Seelen der Bestatteten über den Fluss Styx (gegen eine Münze).",
+							"Er fällte das Endurteil über die Götter im Olymp."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BG5",
+					"slug": "l6-tod-unterwelt-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie heißt der dreiköpfige Wachhund am Eingang der Unterwelt?",
+					"concept": "Cerberus",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-tod-unterwelt",
+					"sample_solution": "Cerberus"
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BG6",
+					"slug": "l6-tod-unterwelt-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welche Funktion hatte die Münze (Obolus), die Verstorbenen mitgegeben wurde?",
+					"concept": "Als Fährlohn für Charōn für die Überfahrt über den Styx.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-tod-unterwelt",
+					"sample_solution": "Als Fährlohn für Charōn für die Überfahrt über den Styx."
+				}
+			]
+		},
+		{
+			"id": "01M88JMTRMD44F8W3HE73P9BCK",
+			"atom_uri": "urn:zam:atom:01M88JMTRMD44F8W3HE73P9BCK",
+			"namespace": "zam-academy-latein-gymnasium-6-l2",
+			"slug": "l6-troja-odysseus",
+			"title": "Trojanischer Krieg & Irrfahrten des Odysseus",
+			"domain": "latein/mythos",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-troja-odysseus",
+			"prerequisites": [
+				{
+					"atom_id": "01M88JMTRMD44F8W3HE73P9BCJ",
+					"type": "soft",
+					"rationale": "Builds on Vorstellungen von Tod und Unterwelt within Religion, Götter & Antike Mythen."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6-l2",
+					"topic_code": "mythos",
+					"topic_title": "Religion, Götter & Antike Mythen"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb1",
+					"topic_title": "Den Mythos vom Trojanischen Krieg (Paris-Urteil bis Holzpferd) und die Irrfahrten des Odysseus wiedergeben",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb3",
+					"topic_title": "Den Mythos vom Trojanischen Krieg (Paris-Urteil bis Holzpferd) und die Irrfahrten des Odysseus wiedergeben",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BG7",
+					"slug": "l6-troja-odysseus-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Durch welche List gelang es den Griechen nach zehn Jahren Belagerung, Troja zu erobern?",
+					"concept": "Durch das hölzerne Pferd (Trojanisches Pferd) nach dem Plan des Odysseus.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-troja-odysseus",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Durch das hölzerne Pferd (Trojanisches Pferd) nach dem Plan des Odysseus.",
+							"Durch eine unterirdische Wasserleitung."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BG8",
+					"slug": "l6-troja-odysseus-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welchen Decknamen nannte Odysseus dem Zyklopen Polyphem?",
+					"concept": "Niemand (gr. Outis)",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-troja-odysseus",
+					"sample_solution": "Niemand (gr. Outis)"
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BG9",
+					"slug": "l6-troja-odysseus-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie hieß die Ehefrau des Odysseus, zu der er nach zehn Jahren Irrfahrt nach Ithaka zurückkehrte?",
+					"concept": "Penelope.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-troja-odysseus",
+					"sample_solution": "Penelope."
+				}
+			]
+		},
+		{
+			"id": "01M88JMTRMD44F8W3HE73P9BCM",
+			"atom_uri": "urn:zam:atom:01M88JMTRMD44F8W3HE73P9BCM",
+			"namespace": "zam-academy-latein-gymnasium-6-l2",
+			"slug": "l6-herakles-aeneas",
+			"title": "Herakles/Herkules, Aeneas & das Erbe der Antike",
+			"domain": "latein/mythos",
+			"reduction": "formal",
+			"typical_age_min": 11,
+			"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-herakles-aeneas",
+			"prerequisites": [
+				{
+					"atom_id": "01M88JMTRMD44F8W3HE73P9BCK",
+					"type": "soft",
+					"rationale": "Builds on Trojanischer Krieg & Irrfahrten des Odysseus within Religion, Götter & Antike Mythen."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "latein-gymnasium-6-l2",
+					"topic_code": "mythos",
+					"topic_title": "Religion, Götter & Antike Mythen"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb1",
+					"topic_title": "Mythen um Herakles/Herkules und Aeneas erklären, die Bedeutung des Mythos für Rom erfassen und einen Text vortragen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb2.1",
+					"topic_title": "Mythen um Herakles/Herkules und Aeneas erklären, die Bedeutung des Mythos für Rom erfassen und einen Text vortragen",
+					"exam_relevant": true
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 6,
+					"subject": "latein",
+					"topic_code": "lb3",
+					"topic_title": "Mythen um Herakles/Herkules und Aeneas erklären, die Bedeutung des Mythos für Rom erfassen und einen Text vortragen",
+					"exam_relevant": true
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BGA",
+					"slug": "l6-herakles-aeneas-check",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 1,
+					"question": "Warum war der Aeneas-Mythos (besonders bei Vergil) für das Selbstverständnis der Römer so bedeutend?",
+					"concept": "Er verband Rom mit der ehrwürdigen Welt Trojas, der Göttin Venus und dem Leitwert der pietās.",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-herakles-aeneas",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Er verband Rom mit der ehrwürdigen Welt Trojas, der Göttin Venus und dem Leitwert der pietās.",
+							"Er bewies, dass Herkules der erste römische Konsul war."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BGB",
+					"slug": "l6-herakles-aeneas-recall",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wie viele Aufgaben (labōrēs) musste Herakles/Herkules erfüllen (als Zahl)?",
+					"concept": "zwölf (duodecim)",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-herakles-aeneas",
+					"sample_solution": "zwölf (duodecim)"
+				},
+				{
+					"id": "01M88JMTRMD44F8W3HE73P9BGC",
+					"slug": "l6-herakles-aeneas-apply",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Wen und was rettete Aeneas mit seinem Vater bei Vergil aus dem brennenden Troja?",
+					"concept": "Aeneas trug seinen Vater Anchises und führte Ascanius (Iūlus); Anchises trug die Hausgötter (Penāten).",
+					"source_link": "https://academy.zam-os.org/latein-gymnasium-6-l2/#lesson=l6-herakles-aeneas",
+					"sample_solution": "Aeneas trug seinen Vater Anchises und führte Ascanius (Iūlus); Anchises trug die Hausgötter (Penāten)."
+				}
+			]
+		}
+	]
+}

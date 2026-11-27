@@ -1,0 +1,336 @@
+[
+  {
+    "id": "inselwelt-orientierung",
+    "lb": 4,
+    "title": "Die Inselstaaten Asiens auf der Karte",
+    "period": "Geo7 LB 4 · Physische und politische Grundstruktur",
+    "intro": "Zwischen Indischem und Pazifischem Ozean liegen Tausende Inseln. Welche Staaten teilen sie sich?",
+    "paragraphs": [
+      "Südöstlich des asiatischen Festlands erstreckt sich die größte Inselwelt der Erde. Indonesien ist der größte Inselstaat; zu ihm gehören Sumatra, Java, große Teile Borneos und Sulawesi. Die Philippinen bestehen aus Tausenden Inseln, die größten sind Luzon im Norden und Mindanao im Süden. Malaysia liegt zum Teil auf der Malaiischen Halbinsel und zum Teil im Norden Borneos. Auf Borneo liegt auch der kleine Staat Brunei.",
+      "Weitere Inselstaaten Asiens sind der Stadtstaat Singapur an der Südspitze der Malaiischen Halbinsel, Osttimor, Taiwan vor der chinesischen Küste, Sri Lanka südlich von Indien und die Malediven im Indischen Ozean. Wichtige Städte sind Jakarta, Manila, Kuala Lumpur, Singapur und Taipeh.",
+      "Die Inseln trennen Meere und Meeresstraßen: das Südchinesische Meer, die Javasee, die Philippinensee und die Straße von Malakka zwischen Sumatra und der Malaiischen Halbinsel, einer der meistbefahrenen Schifffahrtswege der Welt. Viele Inseln sind gebirgig und vulkanisch, denn hier stoßen Erdplatten zusammen. Fast der ganze Raum liegt in den Tropen."
+    ],
+    "workedExample": "Lagebeschreibung von Manila: Manila ist die Hauptstadt der Philippinen. Die Stadt liegt auf der Insel Luzon an einer Bucht des Südchinesischen Meeres, etwa 14° nördlich des Äquators. Östlich der Philippinen öffnet sich die Philippinensee zum Pazifik, nördlich liegt Taiwan.",
+    "takeaway": "Die Inselstaaten Asiens liegen zwischen Indischem und Pazifischem Ozean, getrennt durch Nebenmeere und Meeresstraßen. Indonesien und die Philippinen bestehen aus Tausenden Inseln.",
+    "sourceIds": ["lehrplan", "natural-earth", "aa-laender"],
+    "quiz": {
+      "question": "Durch welche Meeresstraße fährt ein Schiff vom Indischen Ozean nach Singapur?",
+      "answer": "Die Straße von Malakka.",
+      "wrong": ["Der Suezkanal.", "Die Straße von Gibraltar."],
+      "explanation": "Die Straße von Malakka verbindet Indischen Ozean und Südchinesisches Meer."
+    },
+    "transferCheck": {
+      "question": "Welche drei Staaten teilen sich die Insel Borneo?",
+      "answer": "Indonesien, Malaysia und Brunei.",
+      "wrong": ["Die Philippinen, Taiwan und Singapur.", "Sri Lanka, die Malediven und Osttimor."],
+      "explanation": "Der Süden gehört zu Indonesien, der Norden zu Malaysia; dazwischen liegt Brunei."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Insel und Staat",
+      "instruction": "Ordne jede Insel oder Stadt dem Staat zu.",
+      "categories": ["Indonesien", "Philippinen", "Malaysia"],
+      "entries": [
+        { "text": "Java mit der Hauptstadt Jakarta", "target": 0, "feedback": "Java ist die bevölkerungsreichste Insel Indonesiens." },
+        { "text": "Luzon mit Manila", "target": 1, "feedback": "Luzon ist die größte Insel der Philippinen." },
+        { "text": "Kuala Lumpur auf der Malaiischen Halbinsel", "target": 2, "feedback": "Die Hauptstadt Malaysias liegt auf dem Festland." },
+        { "text": "Mindanao", "target": 1, "feedback": "Mindanao ist die große Insel im Süden der Philippinen." },
+        { "text": "Sumatra", "target": 0, "feedback": "Sumatra liegt westlich von Java." }
+      ],
+      "conclusion": "Inseln, Staaten und Städte bilden zusammen das Grundgerüst der Region."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Beschreibe die Lage Singapurs mit drei Bezugspunkten.",
+        "hints": ["Welche Halbinsel, welche Meeresstraße?", "Wie weit ist es zum Äquator?"],
+        "model": "Singapur ist ein Stadtstaat an der Südspitze der Malaiischen Halbinsel, knapp nördlich des Äquators. Er liegt am Südende der Straße von Malakka. Nördlich grenzt Malaysia, südlich liegen die indonesischen Inseln.",
+        "criteria": ["Ich nenne die Halbinsel.", "Ich nenne die Meeresstraße oder den Äquator.", "Ich nenne Nachbarstaaten."]
+      },
+      "2": {
+        "prompt": "Erkläre mit der Karte, warum die Straße von Malakka für den Welthandel so wichtig ist und warum Singapur davon profitiert.",
+        "hints": ["Welche Ozeane verbindet sie?", "Wer fährt dort von wo nach wo?"],
+        "model": "Die Straße von Malakka verbindet den Indischen Ozean mit dem Südchinesischen Meer und damit Europa, Afrika und den Nahen Osten mit Ostasien. Viele Schiffe nehmen diesen kürzesten Weg. Singapur liegt an ihrem Ausgang und ist deshalb ein Hafen, in dem Waren umgeschlagen und Schiffe versorgt werden.",
+        "criteria": ["Ich nenne die verbundenen Meere.", "Ich nenne Handelsrouten.", "Ich erkläre den Vorteil für Singapur."]
+      }
+    },
+    "figures": ["inselwelt"],
+    "lab": "inselwelt"
+  },
+  {
+    "id": "malaysia-entwicklung",
+    "lb": 4,
+    "title": "Malaysia: Vom Zinn zum Mikrochip",
+    "period": "Geo7 LB 4 · Historische und lagebedingte Entwicklung",
+    "intro": "Ein Staat an einer Meeresstraße, mit Kautschuk, Zinn und Palmöl, wird zu einem Standort der Elektronikindustrie.",
+    "paragraphs": [
+      "Malaysias Lage an der Straße von Malakka prägte seine Geschichte. Schon im 15. Jahrhundert war die Hafenstadt Malakka ein wichtiger Handelsplatz zwischen Indien, China und den Gewürzinseln. Später kamen Portugiesen, Niederländer und schließlich Briten. In der britischen Kolonialzeit entstanden Zinnminen und Kautschukplantagen, für die viele Arbeitskräfte aus China und Indien geholt wurden. Daher leben in Malaysia heute Menschen malaiischer, chinesischer und indischer Herkunft zusammen.",
+      "Nach der Unabhängigkeit 1957 und der Gründung Malaysias 1963 exportierte das Land zunächst vor allem Rohstoffe wie Zinn, Kautschuk und später Palmöl und Erdöl. Ab den 1970er-Jahren lockte der Staat ausländische Firmen mit Freihandelszonen, zum Beispiel auf der Insel Penang. Dort entstanden Werke der Elektronik- und Halbleiterindustrie, in denen Bauteile für Computer und Handys gefertigt werden.",
+      "Der Aufschwung verteilt sich ungleich. Die Westküste der Malaiischen Halbinsel mit Kuala Lumpur und Penang ist dicht besiedelt und wirtschaftlich stark. Die Bundesstaaten Sabah und Sarawak auf Borneo sind ländlicher, haben weniger Industrie und mehr Armut. Auch zwischen Stadt und Land bestehen große Unterschiede."
+    ],
+    "workedExample": "Zeitleiste in vier Stationen: Handelshafen Malakka im 15. Jahrhundert, Kolonialzeit mit Zinn und Kautschuk, Rohstoffexport nach der Unabhängigkeit, Elektronikindustrie in Freihandelszonen. Jede Station baut auf der Lage an der Meeresstraße und auf vorhandenen Häfen auf.",
+    "takeaway": "Malaysias Entwicklung folgt seiner Lage an einer Welthandelsstraße: vom Handelshafen über koloniale Rohstoffwirtschaft zur Industrie. Der Aufschwung hat regionale Unterschiede verstärkt.",
+    "sourceIds": ["lehrplan", "aa-laender"],
+    "quiz": {
+      "question": "Warum leben in Malaysia viele Menschen chinesischer und indischer Herkunft?",
+      "answer": "In der Kolonialzeit wurden Arbeitskräfte für Minen und Plantagen geholt.",
+      "wrong": ["Weil Malaysia früher zu China gehörte.", "Weil sie erst nach dem Jahr 2000 eingewandert sind."],
+      "explanation": "Zinnminen und Kautschukplantagen brauchten viele Arbeitskräfte."
+    },
+    "transferCheck": {
+      "question": "Was ist eine Disparität?",
+      "answer": "Ein deutlicher Unterschied der Lebensbedingungen zwischen Räumen oder Gruppen.",
+      "wrong": ["Ein Vertrag zwischen zwei Staaten.", "Eine besonders fruchtbare Ebene."],
+      "explanation": "In Malaysia bestehen Disparitäten etwa zwischen Westküste und Borneo sowie zwischen Stadt und Land."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Stationen der Entwicklung",
+      "instruction": "Bringe die Entwicklungsschritte in die richtige zeitliche Reihenfolge.",
+      "categories": [],
+      "entries": [
+        { "text": "Malakka wird zu einem Handelshafen zwischen Indien und China.", "target": 0, "feedback": "Der Handel an der Meeresstraße steht am Anfang." },
+        { "text": "Briten legen Zinnminen und Kautschukplantagen an.", "target": 1, "feedback": "Die Kolonialzeit brachte Rohstoffwirtschaft." },
+        { "text": "Das Land wird unabhängig und exportiert Rohstoffe.", "target": 2, "feedback": "Unabhängigkeit 1957, Rohstoffe als wichtigste Exporte." },
+        { "text": "In Freihandelszonen entstehen Elektronikwerke.", "target": 3, "feedback": "Ab den 1970er-Jahren wächst die Industrie." }
+      ],
+      "conclusion": "Lage und Geschichte erklären die heutige Wirtschaft."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre, wie die Lage an der Straße von Malakka die Entwicklung Malaysias geprägt hat. Nenne zwei Beispiele aus verschiedenen Zeiten.",
+        "hints": ["Denke an den Hafen Malakka.", "Denke an Häfen und Exporte heute."],
+        "model": "Im 15. Jahrhundert machte die Lage an der Meeresstraße Malakka zu einem reichen Handelshafen. Heute nutzt Malaysia die Lage, um Rohstoffe und Industriegüter über seine Häfen in alle Welt zu exportieren. Die gute Erreichbarkeit lockte auch ausländische Firmen an.",
+        "criteria": ["Ich beschreibe die Lage.", "Ich nenne ein historisches Beispiel.", "Ich nenne ein heutiges Beispiel."]
+      },
+      "2": {
+        "prompt": "Beurteile, ob alle Menschen in Malaysia gleichermaßen vom Aufschwung profitiert haben. Nutze das Beispiel Westküste und Borneo.",
+        "hints": ["Wo sind Industrie und Städte?", "Was fehlt in ländlichen Gebieten?"],
+        "model": "Der Aufschwung konzentriert sich auf die Westküste mit Kuala Lumpur und Penang. Dort gibt es Industriearbeitsplätze, Hochschulen und gute Verkehrswege. In Sabah und Sarawak auf Borneo leben mehr Menschen auf dem Land, es gibt weniger Industrie und mehr Armut. Der Aufschwung hat also die Disparitäten innerhalb des Landes verstärkt.",
+        "criteria": ["Ich beschreibe die starke Westküste.", "Ich beschreibe die Lage auf Borneo.", "Ich beurteile die Verteilung des Aufschwungs."]
+      }
+    },
+    "figures": ["malaysia"]
+  },
+  {
+    "id": "georisiken",
+    "lb": 4,
+    "title": "Leben am Feuerring",
+    "period": "Geo7 LB 4 · Plattentektonik und Georisiken",
+    "intro": "Erdbeben, Tsunamis, Vulkanausbrüche und Taifune: Kaum ein Raum ist so vielen Naturgefahren ausgesetzt.",
+    "paragraphs": [
+      "Die feste Erdkruste besteht aus großen Platten, die sich um wenige Zentimeter im Jahr bewegen. Vor den Inseln Indonesiens und der Philippinen taucht eine Meeresplatte unter eine andere ab. Dort liegen tiefe Tiefseegräben. Beim Abtauchen verhaken sich die Platten; lösen sich die Spannungen ruckartig, bebt die Erde. In der Tiefe schmilzt Gestein, Magma steigt auf, und es entstehen Vulkane. Weil sich solche Zonen rund um den Pazifik ziehen, spricht man vom Pazifischen Feuerring.",
+      "Hebt ein Seebeben den Meeresboden schlagartig an, entsteht ein Tsunami. Im tiefen Ozean ist die Welle flach, aber so schnell wie ein Flugzeug. An der Küste wird sie langsamer und türmt sich hoch auf. Am 26. Dezember 2004 löste ein Seebeben vor Sumatra einen Tsunami aus, der an vielen Küsten des Indischen Ozeans verheerende Schäden anrichtete.",
+      "Hinzu kommen Taifune, tropische Wirbelstürme über warmem Meerwasser. Sie bringen Orkanböen, Starkregen und Sturmfluten. Schutz bieten Frühwarnsysteme mit Messbojen und Sirenen, erdbebensichere Bauweise, ausgeschilderte Fluchtwege, regelmäßige Übungen, Schutzbauten und intakte Mangrovenwälder an den Küsten."
+    ],
+    "workedExample": "Ein Seebeben ereignet sich 700 km vor einer Küste. Mit etwa 700 km pro Stunde erreicht der Tsunami die Küste nach rund einer Stunde. Eine Warnung nach 10 Minuten lässt etwa 50 Minuten für die Flucht auf höheres Gelände. Liegt das Beben nur 100 km entfernt, bleiben insgesamt nur etwa 9 Minuten.",
+    "takeaway": "An Plattengrenzen, an denen eine Platte abtaucht, entstehen Erdbeben, Vulkane und Tsunamis. Frühwarnung, sichere Bauweise und eingeübtes Verhalten verringern die Folgen.",
+    "sourceIds": ["lehrplan", "geofon", "jma-tsunami"],
+    "quiz": {
+      "question": "Wodurch entsteht ein Tsunami meistens?",
+      "answer": "Durch ein Seebeben, das den Meeresboden schlagartig hebt.",
+      "wrong": ["Durch einen starken Taifun über dem Festland.", "Durch die Gezeiten bei Vollmond."],
+      "explanation": "Die plötzliche Bewegung des Meeresbodens hebt die ganze Wassersäule an."
+    },
+    "transferCheck": {
+      "question": "Warum ist bei einem Tsunami jede Minute Vorwarnzeit wichtig?",
+      "answer": "Weil die Menschen die Zeit brauchen, um höheres Gelände zu erreichen.",
+      "wrong": ["Weil der Tsunami in der Zeit von selbst schwächer wird.", "Weil Häuser in dieser Zeit verstärkt werden können."],
+      "explanation": "Rettung bedeutet meist Flucht nach oben oder ins Landesinnere; das braucht Zeit."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Gefahr und Schutzmaßnahme",
+      "instruction": "Ordne jede Schutzmaßnahme der Gefahr zu, gegen die sie vor allem hilft.",
+      "categories": ["Erdbeben", "Tsunami", "Vulkanausbruch", "Taifun"],
+      "entries": [
+        { "text": "Gebäude mit flexiblem Stahlbetonskelett", "target": 0, "feedback": "Erdbebensichere Bauweise verhindert Einstürze." },
+        { "text": "Messbojen im Ozean und Sirenen an der Küste", "target": 1, "feedback": "Ein Frühwarnsystem gewinnt Zeit für die Flucht." },
+        { "text": "Sperrzone und Messung von Gasen am Krater", "target": 2, "feedback": "Überwachung kündigt Ausbrüche oft an." },
+        { "text": "Sturmwarnung und feste Schutzräume", "target": 3, "feedback": "Taifune werden Tage vorher vorhergesagt." }
+      ],
+      "conclusion": "Jede Gefahr braucht eigene Schutzmaßnahmen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre mithilfe der Karte und des Profils, warum es in Indonesien viele Vulkane und Erdbeben gibt.",
+        "hints": ["Wo liegt der Tiefseegraben?", "Was passiert mit der abtauchenden Platte?"],
+        "model": "Südlich von Sumatra und Java taucht eine Meeresplatte unter die Platte ab, auf der die Inseln liegen. Dabei verhaken sich die Platten und lösen sich ruckartig: Es entstehen Erdbeben. In der Tiefe schmilzt Gestein, das Magma steigt auf und bildet die Vulkankette auf den Inseln.",
+        "criteria": ["Ich nenne das Abtauchen einer Platte.", "Ich erkläre die Erdbeben.", "Ich erkläre die Vulkane."]
+      },
+      "2": {
+        "prompt": "Probiere das Tsunami-Labor aus. Beurteile dann, warum ein Frühwarnsystem bei weit entfernten Beben besser hilft als bei Beben nahe der Küste. Was hilft bei nahen Beben?",
+        "hints": ["Vergleiche die Ankunftszeiten.", "Woran merken Menschen ein nahes Beben selbst?"],
+        "model": "Bei 1400 km Entfernung braucht die Welle etwa zwei Stunden, die Warnung kommt rechtzeitig. Bei 100 km bleiben nur wenige Minuten. Dann hilft vor allem eingeübtes Verhalten: Wer ein starkes Beben an der Küste spürt, flieht sofort auf höheres Gelände, ohne auf die Sirene zu warten.",
+        "criteria": ["Ich vergleiche zwei Entfernungen mit Zeiten.", "Ich erkläre die Grenze der Warnung.", "Ich nenne eine Maßnahme für nahe Beben."]
+      }
+    },
+    "figures": ["feuerring"],
+    "lab": "tsunami"
+  },
+  {
+    "id": "palmoel-regenwald",
+    "lb": 4,
+    "title": "Palmöl und Regenwald",
+    "period": "Geo7 LB 4 · Landnutzung und Zerstörung des Regenwalds",
+    "intro": "Palmöl steckt in Schokocreme, Seife und Kerzen. Für die Plantagen verschwindet Regenwald auf Borneo und Sumatra.",
+    "paragraphs": [
+      "Ölpalmen wachsen gut im feuchtheißen Klima der Tropen. Indonesien und Malaysia sind die größten Erzeuger von Palmöl. Das Öl ist billig, vielseitig und bringt pro Hektar einen viel höheren Ertrag als Raps, Soja oder Sonnenblumen. Es steckt in Lebensmitteln, Kosmetik, Reinigungsmitteln und Treibstoffen.",
+      "Für neue Plantagen wurden große Flächen Regenwald gerodet, oft durch Brandrodung. Auf Borneo und Sumatra brannten dabei auch trockengelegte Torfböden, die riesige Mengen Kohlenstoffdioxid freisetzten; der Rauch verschmutzte die Luft bis in Nachbarländer. Lebensräume seltener Tiere wie des Orang-Utans gingen verloren, und Menschen, die vom Wald lebten, verloren ihr Land.",
+      "Gleichzeitig verdienen viele Familien als Kleinbauern oder Arbeitskräfte auf Plantagen ihr Geld. Lösungen sind deshalb nicht einfach: Zertifikate sollen Palmöl ohne neue Rodung kennzeichnen, sind aber umstritten. Schutzgebiete, Anbau auf bereits genutzten Flächen und ein geringerer Verbrauch können helfen. Ein Ersatz durch andere Öle würde wegen des geringeren Ertrags sogar mehr Fläche benötigen."
+    ],
+    "workedExample": "Folgenkette: Nachfrage nach billigem Pflanzenöl steigt, Unternehmen roden Regenwald und legen Torfböden trocken, Brände setzen Kohlenstoffdioxid frei, der Lebensraum des Orang-Utans schrumpft, das Klima wird belastet. Jede Station bietet einen Ansatzpunkt zum Handeln, vom Einkauf bis zum Schutzgebiet.",
+    "takeaway": "Palmöl bringt hohe Erträge und Einkommen, seine Ausweitung zerstört aber Regenwald, Torfböden und Lebensräume. Nachhaltige Lösungen setzen bei Anbaufläche, Schutz und Verbrauch an.",
+    "sourceIds": ["lehrplan", "wwf-palmoel"],
+    "quiz": {
+      "question": "Warum ist Palmöl für Hersteller so attraktiv?",
+      "answer": "Es bringt pro Hektar einen hohen Ertrag und ist vielseitig nutzbar.",
+      "wrong": ["Es wächst am besten in kühlen Regionen.", "Es kann nur für Treibstoff genutzt werden."],
+      "explanation": "Der hohe Flächenertrag macht Palmöl billig."
+    },
+    "transferCheck": {
+      "question": "Warum wäre ein vollständiger Ersatz von Palmöl durch Rapsöl nicht automatisch besser?",
+      "answer": "Raps bringt weniger Ertrag pro Hektar und bräuchte mehr Fläche.",
+      "wrong": ["Raps wächst nur im Regenwald.", "Raps lässt sich nicht zu Öl pressen."],
+      "explanation": "Für dieselbe Menge Öl wäre mehr Ackerland nötig, das an anderer Stelle Natur verdrängen kann."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Wer ist betroffen?",
+      "instruction": "Ordne jede Folge dem Bereich zu, den sie vor allem betrifft.",
+      "categories": ["Natur", "Klima", "Menschen"],
+      "entries": [
+        { "text": "Lebensraum des Orang-Utans schrumpft.", "target": 0, "feedback": "Artenvielfalt geht mit dem Wald verloren." },
+        { "text": "Brennende Torfböden setzen viel Kohlenstoffdioxid frei.", "target": 1, "feedback": "Torf speichert große Mengen Kohlenstoff." },
+        { "text": "Familien finden Arbeit auf Plantagen.", "target": 2, "feedback": "Palmöl ist für viele eine Einkommensquelle." },
+        { "text": "Waldbewohner verlieren ihr traditionelles Land.", "target": 2, "feedback": "Landrechte sind oft ungeklärt." }
+      ],
+      "conclusion": "Palmöl betrifft Natur, Klima und Menschen zugleich."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Beschreibe die Folgenkette von der Nachfrage nach Palmöl bis zur Gefährdung des Orang-Utans.",
+        "hints": ["Nutze das Schaubild.", "Verbinde die Schritte mit „dadurch“ oder „deshalb“."],
+        "model": "Weil die Nachfrage nach billigem Pflanzenöl steigt, legen Unternehmen neue Plantagen an. Dafür roden sie Regenwald, oft durch Brandrodung. Dadurch verliert der Orang-Utan seinen Lebensraum, und Brände auf Torfböden belasten zusätzlich das Klima.",
+        "criteria": ["Ich beginne bei der Nachfrage.", "Ich beschreibe die Rodung.", "Ich verbinde die Schritte ursächlich."]
+      },
+      "2": {
+        "prompt": "Eine Mitschülerin fordert: „Wir sollten Palmöl einfach verbieten.“ Beurteile die Forderung und schlage eine bessere Lösung vor.",
+        "hints": ["Was würde ein Ersatz an Fläche bedeuten?", "Wer verdient am Palmöl?"],
+        "model": "Ein Verbot würde viele Kleinbauern ihr Einkommen kosten. Ersatzöle brauchen mehr Fläche, die anderswo Natur verdrängen kann. Besser ist es, Palmöl nur von bereits genutzten Flächen zu beziehen, Regenwald und Torfböden zu schützen und insgesamt weniger Produkte mit Palmöl zu verbrauchen.",
+        "criteria": ["Ich nenne Nachteile eines Verbots.", "Ich nenne das Flächenargument.", "Ich schlage eine differenzierte Lösung vor."]
+      }
+    },
+    "figures": ["palmoel"]
+  },
+  {
+    "id": "alltag-inselstaat",
+    "lb": 4,
+    "title": "Alltag auf den Philippinen: Stadt und Land",
+    "period": "Geo7 LB 4 · Ländliche und städtische Lebensweise",
+    "intro": "Ein Fischerdorf auf einer kleinen Insel und das Gewimmel in Manila: zwei Welten in einem Land.",
+    "paragraphs": [
+      "Auf dem Land leben viele Familien von Reisanbau, Kokospalmen oder Fischfang. Oft wohnen mehrere Generationen zusammen und helfen einander. Schulen und Krankenhäuser sind manchmal weit entfernt, und Taifune können in einer Nacht Ernte und Boote zerstören. Viele junge Menschen finden auf dem Land keine Arbeit mit ausreichendem Lohn.",
+      "Die Hauptstadtregion Manila ist eine Metropole mit vielen Millionen Einwohnern. Es gibt Hochhäuser, Einkaufszentren, Hochschulen und Arbeit in Büros, Handel und Dienstleistungen, etwa in Callcentern für Kunden aus aller Welt. Bunte Jeepneys und Busse stecken im Stau. Viele Zuwanderer vom Land finden aber keine feste Arbeit und leben in einfachen Siedlungen ohne gesicherte Wasser- und Stromversorgung.",
+      "Die Abwanderung vom Land in die Städte heißt Landflucht. Push-Faktoren drängen weg: Armut, fehlende Arbeit, Naturgefahren. Pull-Faktoren ziehen an: Arbeitsplätze, Schulen, Krankenhäuser. Viele Filipinos arbeiten auch im Ausland, etwa als Pflegekräfte oder Seeleute, und schicken Geld an ihre Familien. Englisch ist neben Filipino Amtssprache, der Alltag ist stark von Familie und Religion geprägt."
+    ],
+    "workedExample": "Vergleich eines Schultags: Ein Mädchen auf einer kleinen Insel fährt mit dem Boot zur Schule und hilft nachmittags beim Trocknen des Fangs. Ein Junge in Manila sitzt morgens lange im Jeepney im Stau und lernt abends in einem Internetcafé. Beide sprechen zu Hause Filipino und lernen in der Schule Englisch.",
+    "takeaway": "Das Leben auf den Philippinen unterscheidet sich stark zwischen Land und Metropole. Push- und Pull-Faktoren erklären die Landflucht.",
+    "sourceIds": ["lehrplan", "aa-laender"],
+    "quiz": {
+      "question": "Was ist ein Pull-Faktor der Landflucht?",
+      "answer": "Arbeitsplätze und Schulen in der Stadt.",
+      "wrong": ["Ein Taifun, der das Dorf zerstört.", "Fehlende Arbeit auf dem Land."],
+      "explanation": "Pull-Faktoren ziehen Menschen an einen Ort, Push-Faktoren drängen sie weg."
+    },
+    "transferCheck": {
+      "question": "Welche Folge kann die Landflucht für die Großstadt haben?",
+      "answer": "Einfache Siedlungen ohne gesicherte Wasser- und Stromversorgung wachsen.",
+      "wrong": ["Die Stadt verliert Einwohner.", "Auf dem Land entstehen mehr Arbeitsplätze."],
+      "explanation": "Die Stadt kann so schnell keine Wohnungen und Leitungen für alle Zuwanderer bauen."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Push oder Pull?",
+      "instruction": "Ordne jeden Faktor zu.",
+      "categories": ["Push-Faktor (drängt weg vom Land)", "Pull-Faktor (zieht in die Stadt)"],
+      "entries": [
+        { "text": "Kein Krankenhaus in der Nähe des Dorfes", "target": 0, "feedback": "Fehlende Versorgung drängt vom Land weg." },
+        { "text": "Jobs in Callcentern und Geschäften", "target": 1, "feedback": "Arbeitsplätze ziehen in die Stadt." },
+        { "text": "Ein Taifun hat Boote und Ernte zerstört.", "target": 0, "feedback": "Naturgefahren vertreiben Menschen." },
+        { "text": "Hochschulen und weiterführende Schulen", "target": 1, "feedback": "Bildung lockt junge Menschen an." }
+      ],
+      "conclusion": "Meist wirken Push- und Pull-Faktoren zusammen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Vergleiche das Leben einer Familie in einem Fischerdorf mit dem einer Familie in Manila. Nutze die Kriterien Arbeit, Wohnen und Schule.",
+        "hints": ["Was ist auf dem Land schwierig?", "Was bietet die Stadt, und was nicht?"],
+        "model": "Auf dem Land lebt die Familie vom Fischfang, wohnt mit mehreren Generationen zusammen, und die weiterführende Schule ist weit weg. In Manila gibt es mehr Arbeit und Schulen, aber auch Staus, hohe Mieten und für viele Zuwanderer nur einfache Unterkünfte ohne sichere Versorgung.",
+        "criteria": ["Ich vergleiche Arbeit.", "Ich vergleiche Wohnen.", "Ich vergleiche Schule."]
+      },
+      "2": {
+        "prompt": "Vergleiche einen Schultag auf den Philippinen mit deinem eigenen. Nenne zwei Gemeinsamkeiten und zwei Unterschiede und erkläre einen Unterschied geographisch.",
+        "hints": ["Denke an Schulweg, Klima, Sprachen.", "Welche Rolle spielen Wetter und Lage?"],
+        "model": "Gemeinsam ist, dass alle Kinder Englisch lernen und nach der Schule Pflichten haben. Unterschiede: Viele Kinder auf den Inseln fahren mit dem Boot zur Schule, und bei Taifunwarnung fällt die Schule aus. Das liegt an der Lage im Westpazifik, wo tropische Wirbelstürme häufig sind.",
+        "criteria": ["Ich nenne zwei Gemeinsamkeiten.", "Ich nenne zwei Unterschiede.", "Ich erkläre einen Unterschied geographisch."]
+      }
+    },
+    "figures": ["landflucht"]
+  },
+  {
+    "id": "reis-und-meer",
+    "lb": 4,
+    "title": "Reis, Mangroven und steigendes Meer",
+    "period": "Geo7 LB 4 · Landwirtschaft und Leben am Meer",
+    "intro": "Grüne Reisterrassen, Wälder im Salzwasser und Inseln, die kaum über das Meer ragen.",
+    "paragraphs": [
+      "Reis ist das wichtigste Grundnahrungsmittel der Region. Nassreis wächst auf Feldern, die während des Wachstums unter Wasser stehen. Das warme, feuchte Klima der Tropen erlaubt mit Bewässerung zwei oder sogar drei Ernten im Jahr. An steilen Hängen legten Bauern seit Jahrhunderten Terrassen an, etwa auf Luzon oder Bali. Kanäle leiten das Wasser von Terrasse zu Terrasse; die Mauern verhindern, dass der Regen den Boden abträgt.",
+      "An flachen tropischen Küsten wachsen Mangroven. Diese Bäume vertragen Salzwasser und stehen auf Stelzwurzeln im Gezeitenbereich. Sie bremsen Wellen und Sturmfluten, halten den Boden fest und sind Kinderstube für viele Fische. Für Garnelenzuchtbecken, Häfen und Hotels wurden viele Mangroven gerodet.",
+      "Der Tourismus bringt Einnahmen, etwa auf Bali oder den Malediven, belastet aber Wasser, Strände und Korallenriffe. Der Meeresspiegel steigt durch den Klimawandel. Viele Inseln der Malediven liegen nur etwa einen Meter über dem Meer. Steigt das Wasser, drohen Überflutungen bei Sturm, Abtragung der Strände und Salz im Grundwasser."
+    ],
+    "workedExample": "Modellinsel: Der Hafen liegt 80 cm, die Wohnhäuser 120 cm über dem heutigen Meeresspiegel. Bei einer Sturmflut steigt das Wasser um 60 cm, der Strand mit 40 cm wird überflutet. Ist der Meeresspiegel aber um 30 cm gestiegen, erreicht dieselbe Sturmflut 90 cm und überflutet auch den Hafen.",
+    "takeaway": "Das tropische Klima ermöglicht Nassreisanbau mit mehreren Ernten. Mangroven schützen Küsten, und der steigende Meeresspiegel gefährdet besonders flache Inseln.",
+    "sourceIds": ["lehrplan"],
+    "quiz": {
+      "question": "Warum sind Mangroven für die Küste wichtig?",
+      "answer": "Sie bremsen Wellen und Sturmfluten und halten den Boden fest.",
+      "wrong": ["Sie entsalzen das Meerwasser für die Dörfer.", "Sie lassen den Meeresspiegel sinken."],
+      "explanation": "Das dichte Wurzelwerk wirkt wie ein natürlicher Wellenbrecher."
+    },
+    "transferCheck": {
+      "question": "Warum wird eine Sturmflut gefährlicher, wenn der Meeresspiegel steigt?",
+      "answer": "Sie setzt auf einem höheren Wasserstand auf und erreicht höhere Flächen.",
+      "wrong": ["Weil Sturmfluten dann seltener werden.", "Weil höhere Inseln dann sinken."],
+      "explanation": "Jeder Zentimeter Anstieg verschiebt die Grenze der Überflutung landeinwärts."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Nutzen oder Gefahr?",
+      "instruction": "Ordne jede Aussage zu.",
+      "categories": ["Nutzen für die Menschen", "Gefahr oder Belastung"],
+      "entries": [
+        { "text": "Zwei bis drei Reisernten im Jahr", "target": 0, "feedback": "Wärme und Bewässerung ermöglichen mehrere Ernten." },
+        { "text": "Rodung von Mangroven für Garnelenbecken", "target": 1, "feedback": "Ohne Mangroven ist die Küste schutzlos." },
+        { "text": "Einnahmen aus dem Tourismus", "target": 0, "feedback": "Hotels und Tauchschulen schaffen Arbeit." },
+        { "text": "Salz dringt ins Grundwasser flacher Inseln.", "target": 1, "feedback": "Trinkwasser wird knapp." }
+      ],
+      "conclusion": "Leben am und mit dem Meer bedeutet Chancen und Risiken."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre, warum Nassreisanbau in den Tropen besonders erfolgreich ist und welche Aufgabe Terrassen haben.",
+        "hints": ["Welche Klimabedingungen braucht Reis?", "Was passiert ohne Terrassen am Hang?"],
+        "model": "Reis braucht Wärme und viel Wasser. Das ganzjährig warme Klima der Tropen erlaubt mit Bewässerung mehrere Ernten im Jahr. Terrassen machen steile Hänge nutzbar: Sie halten das Wasser auf den Feldern und verhindern, dass der Regen den Boden abträgt.",
+        "criteria": ["Ich nenne Wärme und Wasser.", "Ich nenne mehrere Ernten.", "Ich erkläre die Aufgabe der Terrassen."]
+      },
+      "2": {
+        "prompt": "Nutze das Labor zur Modellinsel. Beschreibe, ab welchem Wasserstand die Wohnhäuser überflutet werden, und schlage zwei Schutzmaßnahmen vor.",
+        "hints": ["Wohnhäuser liegen bei 120 cm.", "Denke an natürliche und technische Maßnahmen."],
+        "model": "Die Wohnhäuser werden überflutet, wenn Meeresspiegelanstieg und Sturmflut zusammen 120 cm erreichen, zum Beispiel 40 cm Anstieg und 80 cm Sturmflut. Schutz bieten wiederaufgeforstete Mangroven und Korallenriffe, die Wellen bremsen, sowie Deiche oder auf Stelzen gebaute Häuser.",
+        "criteria": ["Ich nenne den kritischen Wasserstand.", "Ich nenne eine natürliche Maßnahme.", "Ich nenne eine technische Maßnahme."]
+      }
+    },
+    "figures": ["meeresspiegel"],
+    "lab": "meeresspiegel"
+  }
+]

@@ -1,0 +1,475 @@
+[
+	{
+		"id": "l7-konjunktiv-praesens",
+		"stage": "konjunktiv",
+		"title": "Konjunktiv Präsens Aktiv & Passiv",
+		"skill": "Den Konjunktiv Präsens durch den Kennvokal-Wechsel (-e- in a-Konj., -a- in den übrigen) sicher erkennen und bilden",
+		"bindings": ["L7-15", "L7-16", "L7-17", "L7-18"],
+		"paragraphs": [
+			"In Klasse 6 hast du bereits Konjunktiv Imperfekt und Plusquamperfekt gelernt. In Klasse 7 lernst du nun den Konjunktiv Präsens. Seine Merkregel ist besonders einprägsam: Die a-Konjugation tauscht ihren Kennvokal -a- gegen ein -e- (laudet statt laudat; laudem, laudes, laudet, laudemus, laudetis, laudent). Alle anderen Konjugationen — e-, i-, konsonantische Konjugation sowie die gemischte i-Erweiterung — zeigen dagegen als Moduszeichen ein -a- (moneat, audiat, regat, capiat).",
+			"Im Passiv verändert sich das Moduszeichen nicht, es treten nur die Passivendungen (-r, -ris, -tur, -mur, -mini, -ntur) an: laudetur, moneatur, audiatur, regatur. Auch bei Deponentien wie hortari oder vereri funktioniert das genau gleich (hortetur, vereatur). Besonderheiten bilden die unregelmäßigen Verben esse (sim, sis, sit, simus, sitis, sint), posse (possim …), velle (velim …) und ire (eam, eas, eat …)."
+		],
+		"materialLabel": "Konjunktiv Präsens Aktiv, Passiv und Sonderformen",
+		"materialLanguage": "la",
+		"material": "Cives pacem servent et ab hostibus non terreantur!\nUtinam omnes legibus pareant et iusti sint!\nNemo dubitet, quin dux veritatem dicat.",
+		"sourceIds": ["lp"],
+		"diagram": {
+			"kind": "konjunktiv-builder",
+			"title": "Konjunktiv-Baukasten: Präsens & Perfekt",
+			"caption": "Schalte Konjugation, Tempus und Genus Verbi um und beobachte das Moduszeichen.",
+			"preset": "bildung"
+		},
+		"quiz": {
+			"optionLanguage": "la",
+			"question": "Welche Form ist die 3. Person Singular Konjunktiv Präsens Aktiv von capere (capi-)?",
+			"answer": "capiat",
+			"wrong": ["capiet", "capit"],
+			"explanation": "Alle Konjugationen außer der a-Konjugation bilden den Konjunktiv Präsens mit -a-: capiat."
+		},
+		"takeaway": "Im Konjunktiv Präsens wechselt die a-Konjugation auf -e- (laudet), alle übrigen Konjugationen zeigen -a- (moneat, regat, audiat); bei esse heißt es sim, sis, sit.",
+		"practice": [
+			{
+				"prompt": "Bilde die 3. Person Plural Konjunktiv Präsens Aktiv von „laudare“:",
+				"answers": ["laudent"],
+				"feedback": "a-Konjugation erhält das Moduszeichen -e- und die Endung -nt: laudent."
+			},
+			{
+				"prompt": "Bilde die 3. Person Singular Konjunktiv Präsens Passiv von „terrere“:",
+				"answers": ["terreatur"],
+				"feedback": "Die e-Konjugation nimmt im Konjunktiv Präsens -a- plus Passivendung -tur: terreatur."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "de",
+				"prompt": "Bestimme die vier unterstrichenen Gedanken-Formen im Material (servent, terreantur, pareant, sint, dubitet, dicat) nach Konjugation/Verb, Person, Numerus, Tempus, Modus und Genus Verbi.",
+				"model": "servent: servare (a-Konj.), 3. Pl. Konj. Präs. Akt.\nterreantur: terrere (e-Konj.), 3. Pl. Konj. Präs. Pass.\npareant: parere (e-Konj.), 3. Pl. Konj. Präs. Akt.\nsint: esse, 3. Pl. Konj. Präs. Akt.\ndubitet: dubitare (a-Konj.), 3. Sg. Konj. Präs. Akt.\ndicat: dicere (kons. Konj.), 3. Sg. Konj. Präs. Akt.",
+				"criteria": [
+					"Alle sechs Verbformen sind vollständig nach Person, Numerus, Tempus, Modus und Genus Verbi bestimmt.",
+					"Die zugehörigen Grundformen (Infinitive) stimmen.",
+					"Der Wechsel -e- (a-Konj.) vs. -a- (übrige) ist beachtet."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Warum ist die Form „audiet“ leicht mit einem Konjunktiv zu verwechseln, obwohl sie keiner ist? Vergleiche „audiet“, „audiat“ und „laudet“.",
+				"model": "In der a-Konjugation bildet -e- den Konjunktiv Präsens (laudet = „er möge loben“). In der i- und konsonantischen Konjugation dagegen ist -e- das Zeichen für das Futur I Indikativ (audiet = „er wird hören“), während der Konjunktiv Präsens hier ein -a- trägt (audiat = „er möge hören“).",
+				"criteria": [
+					"audiet ist korrekt als Indikativ Futur I erkannt.",
+					"audiat und laudet sind korrekt als Konjunktiv Präsens eingeordnet.",
+					"Die unterschiedliche Rolle von -e- je nach Konjugation ist klar erklärt."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "konjunktiv-praes",
+			"goals": [
+				{
+					"label": "Moduszeichen der a-Konjugation wählen",
+					"before": "amare → 3. Sg. Konj. Präs. Akt.:",
+					"after": "",
+					"options": ["amet", "amat", "amabit"],
+					"answer": "amet",
+					"explanation": "Die a-Konjugation ersetzt -a- durch -e-: amet."
+				},
+				{
+					"label": "Konjunktiv Präsens Passiv der konsonantischen Konjugation bilden",
+					"before": "ducere → 3. Sg. Konj. Präs. Pass.:",
+					"after": "",
+					"options": ["ducatur", "ducetur", "ducitur"],
+					"answer": "ducatur",
+					"explanation": "Konsonantische Konjugation bildet den Konjunktiv Präsens mit -a- + Passivendung -tur."
+				},
+				{
+					"label": "Sonderform von esse im Plural wählen",
+					"before": "esse → 1. Pl. Konj. Präs.:",
+					"after": "",
+					"options": ["simus", "essemus", "sumus"],
+					"answer": "simus",
+					"explanation": "sim, sis, sit, simus, sitis, sint lautet der Konjunktiv Präsens von esse."
+				}
+			]
+		}
+	},
+	{
+		"id": "l7-konjunktiv-perfekt",
+		"stage": "konjunktiv",
+		"title": "Konjunktiv Perfekt Aktiv & Passiv",
+		"skill": "Den Konjunktiv Perfekt im Aktiv (Perfektstamm + -eri-) und Passiv (PPP + sim/sis/sit) bilden und bestimmen",
+		"bindings": ["L7-15", "L7-16", "L7-18"],
+		"paragraphs": [
+			"Der Konjunktiv Perfekt Aktiv ist in allen Konjugationen völlig einheitlich gebaut: Du hängst an den Perfektstamm das Zeichen -eri- und die aktiven Personalendungen: laudaverim, laudaveris, laudaverit, laudaverimus, laudaveritis, laudaverint. Achte darauf, ihn im Nebensatz nicht mit dem Futur II Indikativ zu verwechseln, das ab der 2. Person Singular fast identisch aussieht (-ero, -eris, -erit …) — die 1. Person Singular (-erim vs. -ero) und die Satzart (indirekter Fragesatz, konjunktivisches cum) helfen sicher.",
+			"Im Passiv funktioniert der Konjunktiv Perfekt genauso leicht wie der Indikativ Perfekt Passiv, nur dass statt sum, es, est der Konjunktiv Präsens von esse steht: laudatus, -a, -um sim, sis, sit; laudati, -ae, -a simus, sitis, sint. Auch das Perfekt der Deponentien folgt diesem Bauplan: hortatus sit („er habe ermahnt“)."
+		],
+		"materialLabel": "Konjunktiv Perfekt Aktiv und Passiv in Nebensätzen",
+		"materialLanguage": "la",
+		"material": "Magister rogat, quis librum bene legerit.\nScire cupimus, quo modo urbs antiqua servata sit.\nNe dubitaveris, amice, quid consul fecerit!",
+		"sourceIds": ["lp"],
+		"diagram": {
+			"kind": "konjunktiv-builder",
+			"title": "Konjunktiv Perfekt Aktiv & Passiv bauen",
+			"caption": "Wechsle zwischen Konjunktiv Perfekt Aktiv (-eri-) und Passiv (PPP + sim/sis/sit).",
+			"preset": "perfekt"
+		},
+		"quiz": {
+			"optionLanguage": "la",
+			"question": "Wie lautet die 3. Person Plural Konjunktiv Perfekt Passiv (Maskulinum) von servare?",
+			"answer": "servati sint",
+			"wrong": ["servaverint", "servati essent"],
+			"explanation": "PPP im Nominativ Plural Maskulinum (servati) + Konjunktiv Präsens von esse (sint) bildet den Konjunktiv Perfekt Passiv."
+		},
+		"takeaway": "Konjunktiv Perfekt Aktiv = Perfektstamm + -eri- + Personalendung; Konjunktiv Perfekt Passiv = KNG-kongruentes PPP + sim, sis, sit …",
+		"practice": [
+			{
+				"prompt": "Bilde die 1. Person Singular Konjunktiv Perfekt Aktiv von „facere“ (Perfektstamm fec-):",
+				"answers": ["fecerim"],
+				"feedback": "Perfektstamm fec- + -eri- + -m ergibt fecerim."
+			},
+			{
+				"prompt": "Bestimme Form und Genus Verbi von „servata sit“ in Satz 2 (Konjunktiv …):",
+				"answers": ["Konjunktiv Perfekt Passiv", "3. Person Singular Konjunktiv Perfekt Passiv", "3. Sg. Konj. Perf. Pass."],
+				"feedback": "PPP servata + sit bildet die 3. Person Singular Konjunktiv Perfekt Passiv."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "de",
+				"prompt": "Übersetze alle drei Sätze des Materials und bestimme die Verbformen legerit, servata sit, dubitaveris und fecerit genau.",
+				"model": "1. Der Lehrer fragt, wer das Buch gut gelesen hat. (legerit: 3. Sg. Konj. Perf. Akt. zu legere).\n2. Wir möchten wissen, auf welche Weise die alte Stadt gerettet worden ist. (servata sit: 3. Sg. Konj. Perf. Pass. f. zu servare).\n3. Zweifle nicht, Freund, was der Konsul getan hat! (dubitaveris: 2. Sg. Konj. Perf. Akt. zu dubitare; fecerit: 3. Sg. Konj. Perf. Akt. zu facere).",
+				"criteria": [
+					"Alle drei Sätze sind idiomatisch übersetzt.",
+					"Alle vier Konjunktive sind exakt nach Person, Numerus, Tempus, Modus und Genus Verbi bestimmt.",
+					"Die indirekten Fragen sind im Deutschen als solche wiedergegeben."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Stelle für „videre“ (vidi, visus) die 1. Sg. und 3. Pl. des Konjunktiv Perfekt Aktiv und Passiv (m.) zusammen und erkläre, worin sich Aktiv und Passiv unterscheiden.",
+				"model": "Aktiv: viderim (1. Sg.), viderint (3. Pl.) — gebildet aus dem Perfektstamm vid- + -eri-.\nPassiv: visus sim (1. Sg.), visi sint (3. Pl.) — gebildet aus dem KNG-kongruenten PPP (visus/visi) + Konjunktiv Präsens von esse.",
+				"criteria": [
+					"Alle vier Formen sind korrekt gebildet.",
+					"Perfektstamm + -eri- vs. PPP + sim/sint ist sauber unterschieden.",
+					"Die KNG-Anpassung von visus zu visi im Plural ist berücksichtigt."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "konjunktiv-perf",
+			"goals": [
+				{
+					"label": "Konjunktiv Perfekt Aktiv bilden",
+					"before": "venire (veni) → 3. Sg. Konj. Perf. Akt.:",
+					"after": "",
+					"options": ["venerit", "veniat", "veniret"],
+					"answer": "venerit",
+					"explanation": "Perfektstamm ven- + -eri- + -t = venerit."
+				},
+				{
+					"label": "Konjunktiv Perfekt Passiv im Femininum wählen",
+					"before": "urbs (f.) capta … →",
+					"after": "",
+					"options": ["sit", "est", "esset"],
+					"answer": "sit",
+					"explanation": "Für den Konjunktiv Perfekt Passiv verbindet sich das PPP mit sit."
+				},
+				{
+					"label": "1. Person Singular sicher von Futur II trennen",
+					"before": "Konj. Perf. Akt. 1. Sg. von ducere →",
+					"after": "",
+					"options": ["duxerim", "duxero", "ducam"],
+					"answer": "duxerim",
+					"explanation": "In der 1. Sg. endet der Konjunktiv Perfekt auf -erim (Futur II auf -ero)."
+				}
+			]
+		}
+	},
+	{
+		"id": "l7-konjunktiv-hauptsatz",
+		"stage": "konjunktiv",
+		"title": "Konjunktiv im Hauptsatz: Hortativ, Jussiv, Prohibitiv, Optativ",
+		"skill": "Aufforderungs- und Wunschsätze im Hauptsatz (Hortativ, Jussiv, Prohibitiv, Optativ) unterscheiden und mit ne verneinen",
+		"bindings": ["L7-19"],
+		"paragraphs": [
+			"Steht ein Konjunktiv in einem eigenständigen Hauptsatz, drückt er keinen Zweifel, sondern meist einen Willen oder Wunsch aus. Aufforderungssätze heißen je nach Person verschieden: Der Hortativ (1. Person Plural Konjunktiv Präsens) schließt den Sprecher mit ein: „Gaudeamus!“ = „Lasst uns uns freuen!“. Der Jussiv (3. Person Singular oder Plural Konjunktiv Präsens) richtet eine Anordnung an eine dritte Person: „Civis legibus pareat!“ = „Der Bürger soll den Gesetzen gehorchen!“.",
+			"Ein verneintes Verbot an die 2. Person heißt Prohibitiv und steht im Lateinischen regelmäßig mit ne + Konjunktiv Perfekt: „Ne timueris!“ = „Fürchte dich nicht!“. Ein Wunsch schließlich heißt Optativ (oft mit utinam, „hoffentlich / wenn doch“): Erfüllbare Wünsche stehen im Konjunktiv Präsens („Utinam veniat!“ = „Hoffentlich kommt er!“), unerfüllbare im Konjunktiv Imperfekt oder Plusquamperfekt. Alle vier Hauptsatz-Konjunktive werden mit ne (nicht mit non) verneint."
+		],
+		"materialLabel": "Vier Hauptsatz-Konjunktive im Überblick",
+		"materialLanguage": "la",
+		"material": "1. Veritatem semper quaeramus neque umquam mentiamur!\n2. Iudex iustus sit et cives protegat!\n3. Ne timueris, amice, sed fortiter age!\n4. Utinam pax diu maneat nec bellum redeat!",
+		"sourceIds": ["lp"],
+		"diagram": {
+			"kind": "konjunktiv-builder",
+			"title": "Die vier Hauptsatz-Konjunktive im Test",
+			"caption": "Wähle eine der vier Hauptsatzfunktionen und prüfe Person, Tempus und Verneinung mit ne.",
+			"preset": "hauptsatz"
+		},
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Welche Hauptsatzfunktion liegt in „Ne timueris!“ (2. Person Singular Konjunktiv Perfekt mit ne) vor?",
+			"answer": "Prohibitiv (Verbot: Fürchte dich nicht!)",
+			"wrong": [
+				"Hortativ (Selbstaufforderung: Lasst uns …!)",
+				"Irrealis der Vergangenheit (Hätte ich doch …)"
+			],
+			"explanation": "ne + 2. Person Konjunktiv Perfekt ist die Standardform des Prohibitivs, also eines Verbots."
+		},
+		"takeaway": "Hortativ (1. Pl. „Lasst uns …“), Jussiv (3. Pers. „Er/sie soll …“), Prohibitiv (ne + 2. Pers. Konj. Perf. „Tu nicht …“) und Optativ (Wunsch) stehen im Hauptsatz und verneinen mit ne.",
+		"practice": [
+			{
+				"prompt": "Benenne die Funktion von „quaeramus“ (1. Person Plural Konjunktiv Präsens) in Satz 1:",
+				"answers": ["Hortativ"],
+				"feedback": "Die 1. Person Plural Konjunktiv Präsens im Hauptsatz ist der Hortativ („Lasst uns suchen!“)."
+			},
+			{
+				"prompt": "Mit welchem Wort werden alle vier dieser Hauptsatz-Konjunktive verneint?",
+				"answers": ["ne"],
+				"feedback": "Begehrs- und Wunschsätze im Hauptsatz werden mit ne (fortgesetzt oft mit neve / nec) verneint."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "de",
+				"prompt": "Übersetze alle vier Sätze des Materials und ordne jedem Satz seinen genauen grammatischen Fachbegriff (Hortativ, Jussiv, Prohibitiv, Optativ) zu.",
+				"model": "1. Lasst uns immer die Wahrheit suchen und niemals lügen! (Hortativ).\n2. Ein Richter soll gerecht sein und die Bürger beschützen! (Jussiv).\n3. Fürchte dich nicht, Freund, sondern handle tapfer! (Prohibitiv).\n4. Hoffentlich bleibt der Frieden lange bestehen und kehrt der Krieg nicht zurück! (Optativ, erfüllbarer Wunsch).",
+				"criteria": [
+					"Alle vier Sätze sind treffend übersetzt.",
+					"Hortativ, Jussiv, Prohibitiv und Optativ sind den richtigen Sätzen zugeordnet.",
+					"Die Verneinung durch ne / neve / nec ist beachtet."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Forme „Civis bonus es!“ in einen Prohibitiv („Sei kein schlechter Bürger!“) und in einen Hortativ („Lasst uns gute Bürger sein!“) um.",
+				"model": "Prohibitiv: Ne civis malus fueris! (ne + 2. Sg. Konj. Perfekt von esse).\nHortativ: Cives boni simus! (1. Pl. Konj. Präsens von esse).",
+				"criteria": [
+					"Für den Prohibitiv steht ne + 2. Sg. Konjunktiv Perfekt (fueris).",
+					"Für den Hortativ steht 1. Pl. Konjunktiv Präsens (simus).",
+					"Die Prädikatsnomina stehen im passenden Numerus (civis malus / cives boni)."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "hauptsatz-konjunktiv",
+			"goals": [
+				{
+					"label": "Hortativ im Deutschen erkennen",
+					"before": "Amemus patriam! →",
+					"after": "",
+					"options": ["Lasst uns das Vaterland lieben!", "Ich liebte das Vaterland!", "Er soll das Vaterland lieben!"],
+					"answer": "Lasst uns das Vaterland lieben!",
+					"explanation": "1. Person Plural Konjunktiv Präsens = Hortativ."
+				},
+				{
+					"label": "Jussiv für die 3. Person bestimmen",
+					"before": "Taceant pueri! →",
+					"after": "",
+					"options": ["Die Jungen sollen schweigen!", "Schweigt nicht, Jungen!", "Wenn die Jungen doch schwiegen!"],
+					"answer": "Die Jungen sollen schweigen!",
+					"explanation": "3. Person Konjunktiv Präsens = Jussiv („soll/sollen“)."
+				},
+				{
+					"label": "Prohibitiv richtig bilden",
+					"before": "Verbot an 2. Plural (dubitare) →",
+					"after": "",
+					"options": ["Ne dubitaveritis!", "Non dubitatis!", "Ne dubitetis!"],
+					"answer": "Ne dubitaveritis!",
+					"explanation": "Der Prohibitiv steht mit ne + Konjunktiv Perfekt (2. Pers.)."
+				}
+			]
+		}
+	},
+	{
+		"id": "l7-indirekte-fragen-begehr",
+		"stage": "konjunktiv",
+		"title": "Indirekte Fragesätze, Begehrsätze & adversatives cum",
+		"skill": "Konjunktivische Nebensätze nach Fragewörtern, Verben des Bittens/Befehlens und adversatives cum („während hingegen“) erkennen",
+		"bindings": ["L7-19", "L7-21"],
+		"paragraphs": [
+			"In Klasse 6 hast du bereits Finalsätze (mit ut „damit“, verneint ne „damit nicht“) und Konsekutivsätze (mit ut „sodass“, verneint ut non oder ut + Verneinungswort wie nemo/nihil) gelernt. Jetzt treten zwei weitere zentrale Nebensatztypen mit Konjunktiv hinzu: Erstens die abhängigen (indirekten) Fragesätze nach Verben des Fragens, Wissens oder Sagens (z. B. rogare, scire, dicere). Sie werden durch Fragewörter wie quis, quid, cur, ubi, quo modo oder durch die Partikel -ne / num („ob“) eingeleitet und stehen im Lateinischen immer im Konjunktiv, werden im Deutschen aber meist mit Indikativ wiedergegeben.",
+			"Zweitens stehen abhängige Begehrsätze nach Verben des Bittens, Ermahnens und Befehlens (rogare, petere, hortari, imperare, monere) mit ut („dass / zu …“) oder ne („dass nicht / nicht zu …“). Außerdem lernst du bei cum eine neue Sinnrichtung kennen: Das adversative cum stellt einen Gegensatz heraus und wird mit „während (doch / hingegen)“ übersetzt."
+		],
+		"materialLabel": "Indirekte Fragen, Begehrsatz und adversatives cum",
+		"materialLanguage": "la",
+		"material": "Magister discipulos rogat, cur hoc consilium ceperint.\nDux milites hortatur, ut fortiter pugnent neve fugiant.\nMulti cives pacem cupiebant, cum pauci bellum gerere vellent.",
+		"sourceIds": ["lp"],
+		"diagram": {
+			"kind": "ct-timeline",
+			"title": "Modus und Zeit im konjunktivischen Nebensatz",
+			"caption": "Beobachte, wie übergeordnetes Verb und Zeitverhältnis den Konjunktiv im indirekten Fragesatz steuern.",
+			"preset": "overview"
+		},
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Welche Bedeutung hat die Subjunktion cum im dritten Satz („Multi cives pacem cupiebant, cum pauci bellum gerere vellent“)?",
+			"answer": "adversativ („während hingegen wenige Krieg führen wollten“)",
+			"wrong": [
+				"rein zeitlich („als wenige Krieg führen wollten“)",
+				"final („damit wenige Krieg führen wollten“)"
+			],
+			"explanation": "multi („viele“) vs. pauci („wenige“) und pax vs. bellum bilden einen klaren Gegensatz — hier steht cum adversativum."
+		},
+		"takeaway": "Indirekte Fragesätze und abhängige Begehrsätze (ut/ne) stehen im Konjunktiv; cum mit Gegensätzen wie multi/pauci heißt adversativ „während hingegen“.",
+		"practice": [
+			{
+				"prompt": "Welches lateinische Wort leitet im Satz „nescio, num amicus veniat“ die indirekte Entscheidungsfrage („ob“) ein?",
+				"answers": ["num"],
+				"feedback": "In indirekten Fragen bedeutet num (wie -ne) neutral „ob“."
+			},
+			{
+				"prompt": "Wie übersetzt man „ut fortiter pugnent“ nach „hortatur“ am flüssigsten mit einer deutschen Infinitivgruppe?",
+				"answers": ["tapfer zu kämpfen"],
+				"feedback": "Abhängige Begehrsätze nach hortari, rogare oder imperare lassen sich im Deutschen elegant als „zu“-Infinitiv oder „dass“-Satz wiedergeben."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "de",
+				"prompt": "Übersetze alle drei Sätze des Materials und benenne in jedem Satz die genaue Nebensatzart.",
+				"model": "1. Der Lehrer fragt die Schüler, warum sie diesen Entschluss gefasst haben. (indirekter Fragesatz).\n2. Der Anführer ermahnt die Soldaten, tapfer zu kämpfen und nicht zu fliehen. (abhängiger Begehrsatz mit ut / neve).\n3. Viele Bürger wünschten den Frieden, während hingegen wenige Krieg führen wollten. (adversativer cum-Satz).",
+				"criteria": [
+					"Alle drei Sätze sind idiomatisch übersetzt.",
+					"Indirekter Fragesatz, abhängiger Begehrsatz und adversativer Nebensatz sind richtig benannt.",
+					"Im Deutschen steht der indirekte Fragesatz im natürlichen Indikativ."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Vergleiche die zwei Sätze „Nescio, quis veniat“ und „Hortor te, ut venias“: Welche Rolle hat der Konjunktiv in jedem Satz und wie übersetzt du beide ins Deutsche?",
+				"model": "In „Nescio, quis veniat“ steht der Konjunktiv als Kennzeichen der indirekten Frage; man übersetzt im deutschen Indikativ: „Ich weiß nicht, wer kommt.“\nIn „Hortor te, ut venias“ leitet ut einen abhängigen Begehrsatz ein; man übersetzt als Infinitiv oder mit „sollen“: „Ich fordere dich auf zu kommen / dass du kommst.“",
+				"criteria": [
+					"Beide Satzarten sind korrekt bestimmt.",
+					"Die unterschiedlichen deutschen Übersetzungsweisen sind sauber begründet.",
+					"Beide Sätze sind fehlerfrei übersetzt."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "subclauses",
+			"goals": [
+				{
+					"label": "Verneinung eines abhängigen Begehrsatzes wählen",
+					"before": "Rogo te, … venias. (Ich bitte dich, nicht zu kommen.)",
+					"after": "",
+					"options": ["ne", "non", "ut non"],
+					"answer": "ne",
+					"explanation": "Begehrsätze werden mit ne verneint (Konsekutivsätze mit ut non)."
+				},
+				{
+					"label": "Indirekte Entscheidungsfrage erkennen",
+					"before": "Dic mihi, … verum sit.",
+					"after": "(Sag mir, ob es wahr ist.)",
+					"options": ["num", "ut", "cum"],
+					"answer": "num",
+					"explanation": "num (oder angehängtes -ne) bedeutet in indirekten Fragen „ob“."
+				},
+				{
+					"label": "Adversatives cum an Signalwörtern deuten",
+					"before": "Tu gaudes, cum ego doleam →",
+					"after": "",
+					"options": [
+						"während ich hingegen traurig bin",
+						"so dass ich traurig bin",
+						"damit ich traurig bin"
+					],
+					"answer": "während ich hingegen traurig bin",
+					"explanation": "Das Gegensatzpaar gaudere vs. dolere verlangt die adversative Übersetzung „während hingegen“."
+				}
+			]
+		}
+	},
+	{
+		"id": "l7-consecutio-temporum",
+		"stage": "konjunktiv",
+		"title": "Consecutio temporum: Die Zeitenfolge im Nebensatz",
+		"skill": "Das Zusammenspiel von Haupttempus/Nebentempus im Hauptsatz und Gleichzeitigkeit/Vorzeitigkeit im konjunktivischen Nebensatz sicher anwenden",
+		"bindings": ["L7-19", "L7-21"],
+		"paragraphs": [
+			"Welcher der vier Konjunktive (Präsens, Perfekt, Imperfekt, Plusquamperfekt) in einem konjunktivischen Nebensatz steht, regelt im Lateinischen ein klares System: die consecutio temporum (Zeitenfolge). Zuerst prüfst du das Tempus des übergeordneten Verbs: Präsens und Futur (sowie Imperativ) bilden die Gruppe der Haupttempora; Imperfekt, Perfekt und Plusquamperfekt bilden die Nebentempora.",
+			"Danach entscheidest du das Zeitverhältnis des Nebensatzes zum Hauptsatz: Geschieht beides gleichzeitig, steht nach Haupttempus der Konjunktiv Präsens (rogo, quid facias), nach Nebentempus der Konjunktiv Imperfekt (rogavi, quid faceres). Geschah die Nebensatzhandlung vorher (vorzeitig), steht nach Haupttempus der Konjunktiv Perfekt (rogo, quid feceris) und nach Nebentempus der Konjunktiv Plusquamperfekt (rogavi, quid fecisses). Achte beim Übersetzen: Das deutsche Perfekt/Präteritum darfst du nicht starr an das lateinische Tempus kleben!"
+		],
+		"materialLabel": "Die vier Kombinationen der consecutio temporum",
+		"materialLanguage": "la",
+		"material": "1. Scio, quid amicus faciat.\n2. Scio, quid amicus fecerit.\n3. Sciebam, quid amicus faceret.\n4. Sciebam, quid amicus fecisset.",
+		"sourceIds": ["lp"],
+		"diagram": {
+			"kind": "ct-timeline",
+			"title": "Zeitstrahl-Labor: Consecutio temporum",
+			"caption": "Kombiniere Haupt- oder Nebentempus mit Gleichzeitigkeit oder Vorzeitigkeit und verfolge den Zeitstrahl.",
+			"preset": "timeline"
+		},
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Welcher Konjunktiv steht nach einem Nebentempus (z. B. rogavi), wenn der Nebensatz gleichzeitig zum Hauptsatz abläuft?",
+			"answer": "Konjunktiv Imperfekt (z. B. quid faceres)",
+			"wrong": [
+				"Konjunktiv Präsens (z. B. quid facias)",
+				"Konjunktiv Plusquamperfekt (z. B. quid fecisses)"
+			],
+			"explanation": "Nebentempus + Gleichzeitigkeit verlangt nach der consecutio temporum stets den Konjunktiv Imperfekt."
+		},
+		"takeaway": "Haupttempus → Präsens (gleichzeitig) / Perfekt (vorzeitig); Nebentempus → Imperfekt (gleichzeitig) / Plusquamperfekt (vorzeitig).",
+		"practice": [
+			{
+				"prompt": "Welches Zeitverhältnis drückt „fecerit“ in „Scio, quid amicus fecerit“ aus?",
+				"answers": ["Vorzeitigkeit", "vorzeitig"],
+				"feedback": "Konjunktiv Perfekt nach Haupttempus zeigt Vorzeitigkeit an („was der Freund getan hat“)."
+			},
+			{
+				"prompt": "Welchen Konjunktiv verlangt „Rogavit, cur amici non …“ bei Vorzeitigkeit (venire)?",
+				"answers": ["venissent"],
+				"feedback": "rogavit ist Nebentempus (Perfekt); für Vorzeitigkeit steht Konjunktiv Plusquamperfekt: venissent."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "de",
+				"prompt": "Übersetze alle vier Sätze des Materials ins Deutsche und gib bei jedem an: Haupt- oder Nebentempus und gleichzeitig oder vorzeitig.",
+				"model": "1. Ich weiß, was der Freund tut. (Haupttempus + gleichzeitig).\n2. Ich weiß, was der Freund getan hat. (Haupttempus + vorzeitig).\n3. Ich wusste, was der Freund tat. (Nebentempus + gleichzeitig).\n4. Ich wusste, was der Freund getan hatte. (Nebentempus + vorzeitig).",
+				"criteria": [
+					"Alle vier Sätze sind im Deutschen im richtigen Tempus wiedergegeben.",
+					"Haupttempus (scio) und Nebentempus (sciebam) sind sauber getrennt.",
+					"Gleichzeitigkeit und Vorzeitigkeit sind jeweils korrekt benannt."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Übersetze „Cum Romani appropinquarent, hostes fugerunt“ und „Cum hostes fugissent, Romani urbem ceperunt“ und erkläre die Rolle der consecutio temporum in beiden cum-Sätzen.",
+				"model": "1. Als die Römer sich näherten, flohen die Feinde. (Nebentempus fugerunt + Gleichzeitigkeit → Konjunktiv Imperfekt appropinquarent).\n2. Nachdem die Feinde geflohen waren, nahmen die Römer die Stadt ein. (Nebentempus ceperunt + Vorzeitigkeit → Konjunktiv Plusquamperfekt fugissent).",
+				"criteria": [
+					"Beide Sätze sind korrekt mit „als“ bzw. „nachdem“ übersetzt.",
+					"Die Funktion der Nebentempora fugerunt und ceperunt ist erklärt.",
+					"Der Unterschied zwischen Gleichzeitigkeit (Impf.) und Vorzeitigkeit (Plusq.) ist herausgearbeitet."
+				]
+			}
+		},
+		"workshop": {
+			"kind": "consecutio",
+			"goals": [
+				{
+					"label": "Haupttempus + Gleichzeitigkeit bestimmen",
+					"before": "Rogo, ubi nunc … (esse)",
+					"after": "",
+					"options": ["sis", "esses", "fueris"],
+					"answer": "sis",
+					"explanation": "Haupttempus rogo + Gleichzeitigkeit verlangt Konjunktiv Präsens (sis)."
+				},
+				{
+					"label": "Nebentempus + Gleichzeitigkeit wählen",
+					"before": "Nescivi, cur puer … (flere)",
+					"after": "",
+					"options": ["fleret", "fleat", "flevisset"],
+					"answer": "fleret",
+					"explanation": "Nebentempus nescivi + Gleichzeitigkeit verlangt Konjunktiv Imperfekt (fleret)."
+				},
+				{
+					"label": "Nebentempus + Vorzeitigkeit einsetzen",
+					"before": "Audiveram, quid cives … (dicere)",
+					"after": "",
+					"options": ["dixissent", "dicerent", "dixerint"],
+					"answer": "dixissent",
+					"explanation": "Nebentempus audiveram + Vorzeitigkeit verlangt Konjunktiv Plusquamperfekt (dixissent)."
+				}
+			]
+		}
+	}
+]
