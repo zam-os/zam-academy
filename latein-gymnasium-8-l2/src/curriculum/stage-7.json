@@ -1,0 +1,916 @@
+[
+	{
+		"id": "l8-delphi-orakel",
+		"stage": "philosophie-fabel",
+		"title": "Delphi: Wie ein Orakel befragt wurde",
+		"skill": "Heiligtum, Priesterin und Entscheidung unterscheiden",
+		"bindings": [
+			"L8-01",
+			"L8-02",
+			"L8-03",
+			"L8-33",
+			"L8-39",
+			"L8-44"
+		],
+		"paragraphs": [
+			"Delphi liegt in Mittelgriechenland am Hang des Parnass. Griechische Gemeinschaften und Einzelpersonen suchten im Apollonheiligtum Rat. Die Priesterin Pythia übermittelte nach antiker Vorstellung die Antwort Apollons. Ein Orakelspruch konnte mehrfach gedeutet werden, die Entscheidung blieb bei den Fragenden.",
+			"Das Heiligtum war ein Ort für viele griechische Gemeinwesen. Sie stifteten Weihgeschenke, und Besucher nahmen auch an Festen teil. Heiligtümer verbanden Religion, Politik und Kultur. In Rom verband die kaiserliche Selbstdarstellung ebenfalls Politik mit Religion: Augustus ließ einen Tempel für Apollo auf dem Palatin errichten.",
+			"Im folgenden Übungstext fragen Gesandte nach ihrem nächsten Schritt. Er ist frei verfasst und beschreibt keine überlieferte Befragung. Beachte den indirekten Fragesatz quid facere debeant und achte darauf, wer die Worte deutet."
+		],
+		"material": "Legati Delphos veniunt et Pythiam rogant, quid facere debeant. Pythia respondet. Legati verba eius audiunt, sed de sententia verborum diu disputant.",
+		"materialLabel": "Lateinischer Übungstext",
+		"materialLanguage": "la",
+		"sourceIds": [
+			"lp",
+			"delphi"
+		],
+		"diagram": {
+			"kind": "myth-values",
+			"title": "Vom Anliegen zur Entscheidung",
+			"caption": "Verfolge den Weg der Gesandten im Übersetzungstext und prüfe, wer an welcher Stelle handelt.",
+			"parts": [
+				{
+					"id": "part-1",
+					"label": "Anfrage",
+					"badge": "Gesandte",
+					"latin": "quid facere debeant",
+					"detail": "Die Gesandten wollen wissen, was sie tun sollen."
+				},
+				{
+					"id": "part-2",
+					"label": "Antwort",
+					"badge": "Pythia",
+					"latin": "Pythia respondet",
+					"detail": "Die Priesterin spricht im Heiligtum des Apollon."
+				},
+				{
+					"id": "part-3",
+					"label": "Deutung",
+					"badge": "Gesandte",
+					"latin": "diu disputant",
+					"detail": "Die Gesandten wägen den Sinn der Worte ab und müssen selbst entscheiden."
+				}
+			]
+		},
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Wer vermittelt in Delphi nach antiker Vorstellung den Rat Apollons?",
+			"answer": "Die Priesterin Pythia",
+			"wrong": [
+				"Die Gesandten",
+				"Der römische Kaiser"
+			],
+			"explanation": "Pythia ist die Priesterin am Apollonheiligtum. Die Gesandten fragen und deuten die Antwort."
+		},
+		"takeaway": "Halte Fragende, vermittelnde Person und Gottheit auseinander.",
+		"practice": [
+			{
+				"prompt": "Welche Stadt ist mit Pythia und dem Apollonorakel verbunden?",
+				"answers": [
+					"delphi",
+					"delphoi"
+				],
+				"feedback": "Delphi ist das Apollonheiligtum am Parnass."
+			},
+			{
+				"prompt": "Welche Form im Material ist das finite Verb der indirekten Frage?",
+				"answers": [
+					"debeant"
+				],
+				"feedback": "Quid leitet die Frage ein; debeant ist das finite Verb im Konjunktiv."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Übersetze das Material und gliedere es in drei Schritte.",
+				"model": "Die Gesandten kommen nach Delphi und fragen Pythia, was sie tun sollen. Pythia antwortet. Die Gesandten hören ihre Worte, beraten aber lange über die Bedeutung der Worte. Schritte: fragen, hören, deuten.",
+				"criteria": [
+					"Die indirekte Frage ist verständlich.",
+					"Pythia und Gesandte sind richtig zugeordnet.",
+					"Das lange Beraten gehört zur Deutung."
+				]
+			},
+			"2": {
+				"prompt": "Erkläre, warum ein Orakelspruch eine Entscheidung beeinflussen konnte. Vergleiche das mit einem mehrdeutigen Rat in einer heutigen Situation.",
+				"model": "Die Gesandten hielten die Antwort für göttlichen Rat und nahmen sie deshalb ernst. Erst ihre Deutung gab ihr eine konkrete Bedeutung. Ein Rat wie „Wähle den sicheren Weg“ kann heute ähnlich zwei Dinge meinen, etwa eine vertraute Aufgabe oder eine gut vorbereitete neue. Die Autorität der Auskunft ist unterschiedlich.",
+				"criteria": [
+					"Die antike Bedeutung des Orakels wird erklärt.",
+					"Das eigene Beispiel ist nachvollziehbar.",
+					"Die Entscheidung bleibt den Fragenden überlassen."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Wähle den richtigen Ort",
+					"before": "Die Gesandten suchen Rat bei Pythia.",
+					"after": "Du hast das Heiligtum gefunden.",
+					"options": [
+						"Delphi",
+						"Olympia",
+						"Rom"
+					],
+					"answer": "Delphi",
+					"explanation": "Das Orakel der Pythia war in Delphi."
+				},
+				{
+					"label": "Erkenne die indirekte Frage",
+					"before": "Pythiam rogant, quid facere debeant.",
+					"after": "Du erkennst das Anliegen.",
+					"options": [
+						"Was sollen sie tun?",
+						"Wann kommen sie an?",
+						"Wen sollen sie fragen?"
+					],
+					"answer": "Was sollen sie tun?",
+					"explanation": "Quid fragt nach der Handlung, debeant drückt das Sollen aus."
+				},
+				{
+					"label": "Ordne die Deutung zu",
+					"before": "Pythia hat geantwortet.",
+					"after": "Du weißt, wer den Sinn abwägt.",
+					"options": [
+						"die Gesandten",
+						"Apollo im Tempel",
+						"die Zuschauer in Olympia"
+					],
+					"answer": "die Gesandten",
+					"explanation": "Legati ist das Subjekt von disputant."
+				}
+			]
+		}
+	},
+	{
+		"id": "l8-olympia-spiele",
+		"stage": "philosophie-fabel",
+		"title": "Olympia: Sport zu Ehren des Zeus",
+		"skill": "Das antike Fest mit den modernen Olympischen Spielen vergleichen",
+		"bindings": [
+			"L8-01",
+			"L8-02",
+			"L8-33",
+			"L8-39",
+			"L8-40",
+			"L8-44"
+		],
+		"paragraphs": [
+			"Olympia liegt im Westen der Peloponnes. Dort befand sich ein großes Heiligtum des Zeus. Alle vier Jahre fanden zu seinen Ehren Wettkämpfe statt. Heiligtum und Stadion standen nah beieinander. Der olympische Gottesfriede sollte die Reise zum Fest schützen. Er war keine dauerhafte Friedensordnung für Griechenland.",
+			"In den antiken olympischen Wettkämpfen traten vor allem freie griechische Männer und Jungen an. Das berühmte Wagenrennen bot eine Besonderheit: Der Sieg wurde der Person zugerechnet, der das Gespann gehörte. So konnte Kyniska aus Sparta als Besitzerin eines siegreichen Gespanns einen olympischen Sieg erringen. In der römischen Kaiserzeit fanden die Spiele weiterhin statt.",
+			"Die modernen Spiele wurden 1896 in Athen eröffnet. Sie greifen die antike Idee eines wiederkehrenden großen Sportfestes auf. Heute treten Sportlerinnen und Sportler aus vielen Ländern in zahlreichen Disziplinen an. Vergleiche Teilnehmende, religiösen Rahmen und Zeitabstand, bevor du Gemeinsamkeiten benennst."
+		],
+		"material": "In Olympia Graeci Iovem colunt. Multi ad ludos veniunt. Athletae in stadio currunt. Qui vincit, coronam ex ramis oleae accipit.",
+		"materialLabel": "Lateinischer Übungstext",
+		"materialLanguage": "la",
+		"sourceIds": [
+			"lp",
+			"olympia"
+		],
+		"diagram": {
+			"kind": "myth-values",
+			"title": "Heiligtum, Stadion und Siegeskranz",
+			"caption": "Wähle einen Teil des Festes und verknüpfe den lateinischen Ausdruck mit seiner Bedeutung.",
+			"parts": [
+				{
+					"id": "part-1",
+					"label": "Heiligtum",
+					"badge": "Religion",
+					"latin": "Iovem colunt",
+					"detail": "Die Griechen verehren Zeus. Iovem ist der lateinische Akkusativ zu Iuppiter."
+				},
+				{
+					"id": "part-2",
+					"label": "Stadion",
+					"badge": "Wettkampf",
+					"latin": "in stadio currunt",
+					"detail": "Die Athleten laufen im Stadion. Es liegt beim Heiligtum."
+				},
+				{
+					"id": "part-3",
+					"label": "Siegerkranz",
+					"badge": "Ehrung",
+					"latin": "coronam accipit",
+					"detail": "Der Sieger erhält in Olympia einen Kranz aus Zweigen des Ölbaums."
+				}
+			]
+		},
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Welcher Zusammenhang prägte das antike Olympia?",
+			"answer": "Die Wettkämpfe gehörten zum Fest für Zeus.",
+			"wrong": [
+				"Das Orakel Apollons leitete die Wettkämpfe.",
+				"Die Wettkämpfe wechselten jedes Mal den Austragungsort."
+			],
+			"explanation": "Olympia vereinte das Zeusheiligtum und die Wettkämpfe an einem Ort."
+		},
+		"takeaway": "Unterscheide Olympia mit dem Zeusfest und Delphi mit dem Apollonorakel.",
+		"practice": [
+			{
+				"prompt": "Welche Gottheit wird mit Iovem in der Olympia-Lektion bezeichnet?",
+				"answers": [
+					"zeus",
+					"jupiter",
+					"iuppiter"
+				],
+				"feedback": "Die Römer verwendeten Iuppiter als Entsprechung für den griechischen Zeus."
+			},
+			{
+				"prompt": "Woraus besteht der Siegerkranz im Text?",
+				"answers": [
+					"ölbaumzweige",
+					"zweige des ölbaums",
+					"olivenzweige",
+					"aus olivenzweigen",
+					"aus ölbaumzweigen"
+				],
+				"feedback": "Ex ramis oleae heißt „aus Zweigen des Ölbaums“."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Übersetze das Material und markiere die Abschnitte zu Religion, Sport und Ehrung.",
+				"model": "In Olympia verehren die Griechen Zeus. Viele kommen zu den Spielen. Die Athleten laufen im Stadion. Wer siegt, erhält einen Kranz aus Ölbaumzweigen. Iovem colunt = Religion; in stadio currunt = Sport; coronam accipit = Ehrung.",
+				"criteria": [
+					"Iovem wird richtig gedeutet.",
+					"Die Ereignisse bleiben in der Reihenfolge.",
+					"Wer siegt, erhält den Kranz."
+				]
+			},
+			"2": {
+				"prompt": "Vergleiche das Fest in Olympia mit den modernen Sommerspielen. Nenne eine Gemeinsamkeit und zwei Unterschiede und erläutere die religiöse Funktion des antiken Festes.",
+				"model": "Beide verbinden wiederkehrende sportliche Wettkämpfe mit öffentlicher Ehrung. Die Antike hatte Olympia als festen Ort und einen engeren Teilnehmerkreis. Die modernen Spiele wechseln den Austragungsort und haben ein internationales Teilnehmerfeld mit Wettkämpfen für Frauen und Männer. In Olympia waren die Wettkämpfe Teil der Verehrung des Zeus.",
+				"criteria": [
+					"Eine konkrete Gemeinsamkeit ist genannt.",
+					"Zwei Unterschiede sind erklärt.",
+					"Die Rolle des Zeusheiligtums ist klar."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Ordne den Kult zu",
+					"before": "Du stehst im Heiligtum von Olympia.",
+					"after": "Du kennst den Gott des Festes.",
+					"options": [
+						"Zeus",
+						"Apollon",
+						"Mars"
+					],
+					"answer": "Zeus",
+					"explanation": "Das Heiligtum von Olympia war Zeus geweiht."
+				},
+				{
+					"label": "Übersetze die Siegerhandlung",
+					"before": "Qui vincit, coronam ex ramis oleae accipit.",
+					"after": "Du kennst die Auszeichnung.",
+					"options": [
+						"ein Kranz aus Ölbaumzweigen",
+						"eine Goldmedaille",
+						"ein Lorbeerblatt"
+					],
+					"answer": "ein Kranz aus Ölbaumzweigen",
+					"explanation": "Oleae bedeutet hier „des Ölbaums“."
+				},
+				{
+					"label": "Erkläre die geschützte Reise",
+					"before": "Für die Spiele wurde der Gottesfriede ausgerufen.",
+					"after": "Du kannst seinen Zweck erklären.",
+					"options": [
+						"sichere Reise zum Fest",
+						"dauerhafter Frieden in ganz Griechenland",
+						"Regel für den Start im Stadion"
+					],
+					"answer": "sichere Reise zum Fest",
+					"explanation": "Der Gottesfriede sollte unter anderem die Reise nach Olympia schützen."
+				}
+			]
+		}
+	},
+	{
+		"id": "l8-vorsokratiker-weltbilder",
+		"stage": "philosophie-fabel",
+		"title": "Vorsokratiker & antike Weltbilder",
+		"skill": "Den Übergang vom Mythos zum Logos bei den Vorsokratikern erkennen und antike Weltbilder vergleichen",
+		"bindings": [
+			"L8-01",
+			"L8-33",
+			"L8-34",
+			"L8-39"
+		],
+		"paragraphs": [
+			"Lange vor den Römern stellten griechische Denker an den Küsten Kleinasiens im 6. Jahrhundert v. Chr. eine revolutionäre Frage: Wenn es blitzt, donnert oder das Meer stürmt – schleudert dann wirklich Zeus zornige Blitze, oder lässt sich die Welt durch ein vernünftiges Grundprinzip (archē / logos) aus der Natur selbst erklären? Diesen Schritt „vom Mythos zum Logos“ vollzogen die Vorsokratiker.",
+			"Berühmte Vertreter entwickelten ganz unterschiedliche Modelle: Thales von Milet sah das Wasser als Urstoff allen Lebens; Heraklit lehrte den beständigen Wandel („alles fließt“ – panta rhei); und Demokrit folgerte allein durch scharfes Nachdenken, dass alle Materie aus winzigen, unteilbaren Teilchen – den Atomen (a-tomos = unzerschneidbar) – besteht. Römische Dichter wie Lukrez übertrugen später diese Naturphilosophie in lateinische Verse."
+		],
+		"materialLabel": "Lateinischer Lehrbuchtext über Thales, Heraklit und Demokrit",
+		"materialLanguage": "la",
+		"material": "Antiquis temporibus homines fulmina et tempestates deorum irae tribuebant. Philosophi autem Graeci, qui ante Socratem vixerunt, rationem naturae quaesiverunt. Thales aquam principium omnium rerum esse putavit; Democritus dixit omnia corpora ex atomis minimis constare, quae dividi non possent.",
+		"sourceIds": [
+			"lp",
+			"lp-profil"
+		],
+		"diagram": {
+			"kind": "philo-lab",
+			"title": "Antiker Philosophie-Kompass: Von den Vorsokratikern nach Rom",
+			"caption": "Klicke auf eine Station auf der Achse, um Leitbegriff, Hauptvertreter und Grundfrage zu untersuchen."
+		},
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Was beschreibt das Schlagwort „Vom Mythos zum Logos“ bei den Vorsokratikern?",
+			"answer": "den Übergang von Göttererzählungen zu vernünftigen Naturerklärungen durch Nachdenken und Beobachten",
+			"wrong": [
+				"die Erfindung immer neuer Göttersagen über Olymp und Unterwelt",
+				"das Verbot, über Naturerscheinungen zu sprechen"
+			],
+			"explanation": "logos steht für Vernunft und Gesetzmäßigkeit: Vorsokratiker suchten nach natürlichen Ursachen statt bloßem Wunderglauben."
+		},
+		"takeaway": "Die Vorsokratiker (Thales, Heraklit, Demokrit) wagten den Schritt vom Mythos zum Logos und suchten natürliche Grundprinzipien (Wasser, Wandel, Atome).",
+		"practice": [
+			{
+				"prompt": "Welcher griechische Denker erklärte im 5. Jh. v. Chr. alle Körper aus unteilbaren Teilchen („atomis minimis“)?",
+				"answers": [
+					"demokrit",
+					"democritus"
+				],
+				"feedback": "Demokrit begründete gemeinsam mit Leukipp die antike Atomlehre."
+			},
+			{
+				"prompt": "Was bedeutet das griechische Wort „a-tomos“ (lat. atomus) wörtlich?",
+				"answers": [
+					"unteilbar",
+					"unzerschneidbar"
+				],
+				"feedback": "a- (un-) + temnein (schneiden) = unzerschneidbar / unteilbar."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "de",
+				"prompt": "Übersetze den lateinischen Text des Materials (achte auf den Konjunktiv-Relativsatz quae dividi non possent am Schluss) und erkläre den Gegensatz zwischen den ersten beiden Sätzen.",
+				"model": "Übersetzung: In alten Zeiten schrieben die Menschen Blitze und Stürme dem Zorn der Götter zu. Die griechischen Philosophen aber, die vor Sokrates lebten, suchten nach dem vernünftigen Gesetz (der Ursache) der Natur. Thales meinte, das Wasser sei der Urgrund aller Dinge; Demokrit sagte, dass alle Körper aus kleinsten Atomen bestünden, die nicht geteilt werden könnten.\nGegensatz: Früher erklärte man Naturereignisse religiös-mythisch durch göttliche Emotionen (deorum irae); die Vorsokratiker fragten dagegen mit der Vernunft nach der Ordnung der Natur (ratio naturae).",
+				"criteria": [
+					"Beide AcI-Sätze (putavit und dixit) sind korrekt übertragen.",
+					"Der Konjunktiv possent im Relativsatz ist sauber wiedergegeben.",
+					"Der Umbruch von Mythos zu Naturerklärung ist präzise benannt."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Vergleiche Demokrits antike Atom-Vorstellung mit unserem heutigen naturwissenschaftlichen Wissen (z. B. aus Physik/Chemie) und dem religiös-mythischen Weltbild der Antike.",
+				"model": "Demokrit hatte noch kein Mikroskop und erschloss Atome allein logisch (wenn man etwas endlos teilt, darf am Ende nichts ins Nichts verschwinden). Im Unterschied zu mythischen Erzählungen (Götterlaunen) suchte er bereits nach unsichtbaren Bausteinen und Naturgesetzen – heute wissen wir allerdings experimentell, dass selbst Atome aus Kern und Hülle bestehen und sich chemisch zu Molekülen verbinden.",
+				"criteria": [
+					"Der Unterschied zwischen spekulativer antiker Logik und moderner Experimentierwissenschaft ist erklärt.",
+					"Die Abgrenzung zum rein mythischen Weltbild stimmt.",
+					"Beide Perspektiven sind sachlich aufeinander bezogen."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Urprinzip (arche) von Thales von Milet bestimmen",
+					"before": "Thales von Milet →",
+					"after": "",
+					"options": [
+						"Wasser (aqua)",
+						"Zorn der Götter",
+						"Schrift der Gesetze"
+					],
+					"answer": "Wasser (aqua)",
+					"explanation": "Thales beobachtete, dass alles Lebendige Feuchtigkeit braucht."
+				},
+				{
+					"label": "Grundgedanke Demokrits einordnen",
+					"before": "omnia ex atomis constare →",
+					"after": "",
+					"options": [
+						"alles besteht aus unteilbaren kleinsten Teilchen",
+						"die Erde ruht auf den Schultern des Atlas",
+						"nur Zahlen im Senat sind wirklich"
+					],
+					"answer": "alles besteht aus unteilbaren kleinsten Teilchen",
+					"explanation": "Demokrit entwarf ein frühes rein materielles Naturmodell."
+				},
+				{
+					"label": "Bedeutung von a-tomos sprachlich herleiten",
+					"before": "griech. a-tomos →",
+					"after": "",
+					"options": [
+						"unteilbar",
+						"ewig brennend",
+						"unbekannt"
+					],
+					"answer": "unteilbar",
+					"explanation": "Das verneinende Präfix a- bedeutet „un- / nicht“."
+				}
+			]
+		}
+	},
+	{
+		"id": "l8-sokrates-fragen",
+		"stage": "philosophie-fabel",
+		"title": "Sokrates: Fragen, Wissen & Gewissen",
+		"skill": "Die philosophische Wende zu Ethik und Selbstprüfung bei Sokrates verstehen und auf eigene Fragen anwenden",
+		"bindings": [
+			"L8-01",
+			"L8-34",
+			"L8-36",
+			"L8-37"
+		],
+		"paragraphs": [
+			"Während die Vorsokratiker vor allem nach dem Ursprung des Kosmos fragten, rückte im 5. Jahrhundert v. Chr. in Athen ein ganz anderer Mann den Menschen ins Zentrum: Sokrates. Er hinterließ kein einziges geschriebenes Buch, sondern suchte auf dem Marktplatz das Gespräch mit Politikern, Handwerkern und Jugendlichen. Cicero urteilte später begeistert, Sokrates habe „die Philosophie vom Himmel herunter in die Städte und Häuser gerufen“.",
+			"Seine berühmte Methode heißt Mäeutik („Hebammenkunst“): Statt fertige Vorträge zu halten, stellte Sokrates scheinbar naive Fragen („Was ist eigentlich Gerechtigkeit?“), bis Gesprächspartner selbst merkten, dass ihr vermeintliches Wissen voller Widersprüche steckte. „Ich weiß, dass ich nichts weiß“ bedeutete für ihn keine Resignation, sondern Ehrlichkeit als Ausgangspunkt für echtes Lernen und verantwortliches Handeln."
+		],
+		"materialLabel": "Lateinische Texte über die Methode und Haltung des Sokrates",
+		"materialLanguage": "la",
+		"material": "Socrates primus philosophiam e caelo devocavit et in urbibus collocavit, ut homines de vita et moribus quaererent. Saepe cives interrogabat, quid esset iustitia aut virtus. Dicebat enim se hoc unum scire, quod nihil sciret; et iniuriam pati malebat quam facere.",
+		"sourceIds": [
+			"lp"
+		],
+		"diagram": {
+			"kind": "philo-lab",
+			"preset": "sokrates",
+			"title": "Sokrates im Philosophie-Kompass: Vom Kosmos zum Menschen",
+			"caption": "Entdecke Mäeutik, Selbstprüfung und moralische Konsequenz bei Sokrates."
+		},
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Was bezweckte Sokrates auf dem Athener Marktplatz mit seiner Fragetechnik (Mäeutik)?",
+			"answer": "Gesprächspartner sollten Scheinwissen selbst erkennen und durch eigenes Denken zur Einsicht finden",
+			"wrong": [
+				"Er wollte teure Lehrbücher über Astronomie verkaufen",
+				"Er verbot Jugendlichen jede eigene Meinung"
+			],
+			"explanation": "Wie eine Hebamme half Sokrates seinen Mitbürgern durch gezielte Nachfragen, eigene Gedanken klar zur Welt zu bringen."
+		},
+		"takeaway": "Sokrates lenkte die Philosophie auf Ethik und Lebensführung: Durch kritisches Fragen (Mäeutik) entlarvte er Scheinwissen und setzte Gewissen vor Opportunismus.",
+		"practice": [
+			{
+				"prompt": "Welcher deutsche Fachbegriff bezeichnet Sokrates’ Gesprächsmethode, beim Gegenüber eigene Erkenntnisse „zur Welt zu bringen“?",
+				"answers": [
+					"hebammenkunst",
+					"mäeutik"
+				],
+				"feedback": "Mäeutik (von griech. maieutike techne = Hebammenkunst) steht für den erkenntnisfördernden Dialog."
+			},
+			{
+				"prompt": "Welcher römische Autor und Politiker prägte den berühmten Satz, Sokrates habe die Philosophie „vom Himmel gerufen“?",
+				"answers": [
+					"cicero"
+				],
+				"feedback": "Cicero schreibt dies in den Tusculanae disputationes (5, 10) – ein Schlüsselbeispiel seiner Rolle als Vermittler."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "de",
+				"prompt": "Übersetze den lateinischen Text des Materials (achte auf den letzten Vergleich malebat … quam … mit Infinitiv) und erkläre den paradoxen Satz „se hoc unum scire, quod nihil sciret“.",
+				"model": "Übersetzung: Sokrates rief als Erster die Philosophie vom Himmel herab und siedelte sie in den Städten an, damit die Menschen über das Leben und die Sitten fragten. Oft befragte er die Bürger, was Gerechtigkeit oder Tugend sei. Er sagte nämlich, er wisse nur dies eine, dass er nichts wisse; und er wollte lieber Unrecht erleiden als Unrecht tun.\nErklärung: Wer sich einbildet, schon alles zu wissen, lernt nichts Neues dazu. Erst wer seine eigenen Grenzen ehrlich erkennt, prüft gründlich weiter.",
+				"criteria": [
+					"ut … quaererent, indirekte Frage quid esset und der AcI se scire sind exakt übersetzt.",
+					"Der Satz über Unrecht tun vs. erleiden (pati!) ist sprachlich getroffen.",
+					"Der positive Sinn von Sokrates’ Nichtwissen ist einleuchtend erklärt."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Überprüfe zwei typische Vorurteile oder schnelle Behauptungen aus dem Alltag (z. B. in sozialen Netzwerken: „Alle machen das so“ oder „Viel Besitz macht automatisch glücklich“) mithilfe von zwei sokratischen Rückfragen.",
+				"model": "Behauptung: „Viel Geld macht automatisch glücklich.“\nSokratische Rückfrage 1: „Wenn jemand sehr reich ist, aber ständig Angst hat, bestohlen zu werden oder niemandem vertrauen kann – würdest du ihn dann glücklich nennen?“\nSokratische Rückfrage 2: „Was gehört also neben Geld offensichtlich noch zum Glück, etwa Gesundheit, Freundschaft oder innere Ruhe?“\nErgebnis: Durch Nachfragen bricht die pauschale Behauptung auf, und man unterscheidet Mittel von echten Lebenszielen.",
+				"criteria": [
+					"Zwei klare, nachfassende Fragen im Stil der Mäeutik sind formuliert.",
+					"Die Fragen zielen auf Begriffe, Gegenbeispiele oder Widersprüche ab.",
+					"Ein eigener Maßstab für kritisches Denken im Alltag ist erkennbar."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Themenwechsel durch Sokrates benennen",
+					"before": "Vorsokratiker (Natur) → Sokrates →",
+					"after": "",
+					"options": [
+						"Ethik, Gerechtigkeit und richtiges Handeln des Menschen",
+						"Berechnung von Mondfinsternissen in Ägypten",
+						"Aufbau eines Limeskastells"
+					],
+					"answer": "Ethik, Gerechtigkeit und richtiges Handeln des Menschen",
+					"explanation": "Sokrates stellte die Frage „Wie sollen wir leben?“ ins Zentrum."
+				},
+				{
+					"label": "Sinn von „Ich weiß, dass ich nichts weiß“ erfassen",
+					"before": "Einsicht in eigenes Nichtwissen →",
+					"after": "",
+					"options": [
+						"Schutz vor Scheinwissen & Antrieb zum Lernen",
+						"Ablehnung jeder Schule und Wissenschaft",
+						"Behauptung, dass keine Wahrheit existiert"
+					],
+					"answer": "Schutz vor Scheinwissen & Antrieb zum Lernen",
+					"explanation": "Sokrates prüfte vermeintliches Expertenwissen auf echte Argumente."
+				},
+				{
+					"label": "Sokratische Lebensmaxime bei Konflikten zuordnen",
+					"before": "iniuriam pati vs. facere →",
+					"after": "",
+					"options": [
+						"lieber Unrecht erleiden als selbst Unrecht tun",
+						"immer härter zurückschlagen",
+						"nur auf Vorteile vor Gericht achten"
+					],
+					"answer": "lieber Unrecht erleiden als selbst Unrecht tun",
+					"explanation": "Unrecht zu tun schadet nach Sokrates der eigenen Seele schwerer als erlittenes Unrecht."
+				}
+			]
+		}
+	},
+	{
+		"id": "l8-epikur-stoa",
+		"stage": "philosophie-fabel",
+		"title": "Epikur & Stoa: Wege zum guten Leben",
+		"skill": "Die beiden großen hellenistischen Lebensphilosophien (Epikureer und Stoiker) vergleichen und an heutigen Lebensfragen erproben",
+		"bindings": [
+			"L8-01",
+			"L8-34",
+			"L8-36",
+			"L8-37"
+		],
+		"paragraphs": [
+			"Wie finde ich in unsicheren Zeiten inneren Frieden? Im Hellenismus gaben zwei berühmte Philosophenschulen ganz unterschiedliche Antworten, die in Rom begeistert aufgenommen wurden. Epikur versammelte Freunde im „Garten“ (Kepos) außerhalb der großen Politik („Lebe im Verborgenen!“). Für ihn war das höchste Ziel nicht wildes Prassen – ein häufiges Missverständnis –, sondern die Freiheit von Schmerz und Angst (Ataraxia = unerschütterliche Seelenruhe) durch bescheidene Wünsche und treue Freundschaft.",
+			"Die Stoiker (benannt nach der „bunten Säulenhalle“ Stoa in Athen, in Rom etwa Seneca und Kaiser Mark Aurel) suchten genau umgekehrt die tätige Pflichterfüllung in der Gemeinschaft. Ihr Leitgedanke: Nicht die äußeren Dinge machen uns unglücklich, sondern unsere eigenen Urteile darüber. Wer durch Vernunft (logos) und Gelassenheit (Apatheia = Freiheit von zerstörerischen Affekten) zwischen Beeinflussbarem und Unverfügbarem unterscheidet, bleibt auch in Krisen innerlich frei."
+		],
+		"materialLabel": "Epikur und die Stoa im direkten Vergleich",
+		"materialLanguage": "la",
+		"material": "Epicurus amicitiam et vitam quietam maxime laudabat: qui paucis contentus est, sine metu vivit. Stoici autem cives ad officia rei publicae vocabant et docebant virtutem solam ad beatam vitam satis esse; fortuna enim mutari potest, animus autem sapiens semper liber manet.",
+		"sourceIds": [
+			"lp"
+		],
+		"diagram": {
+			"kind": "philo-lab",
+			"preset": "schulen",
+			"title": "Epikureer vs. Stoiker im Philosophie-Kompass",
+			"caption": "Vergleiche Ataraxia (Rückzug, Freundschaft, Maß) und Apatheia/Virtus (Gemeinschaftspflicht, Gelassenheit)."
+		},
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Welches verbreitete Missverständnis über den griechischen Philosophen Epikur trifft in Wahrheit NICHT zu?",
+			"answer": "dass er maßlosen Luxus und gedankenloses Genießen ohne Nachdenken über Folgen empfohlen habe",
+			"wrong": [
+				"dass er der Freundschaft großen Wert beimaß",
+				"dass er die Angst vor Göttern und Tod abbauen wollte"
+			],
+			"explanation": "Im Gegenteil: Epikur trank Wasser, aß oft nur Brot und Käse und warnte vor übermäßiger Gier, weil sie neue Unruhe und Schmerz bringt."
+		},
+		"takeaway": "Epikur sucht Seelenruhe (ataraxia) durch Maßhalten und Freundschaft abseits der Politik; die Stoa setzt auf Tugend, Vernunft und verantwortliches Handeln in der Gemeinschaft.",
+		"practice": [
+			{
+				"prompt": "Wie heißt das zentrale griechische Leitwort der Epikureer für „innere Seelenruhe / Unerschütterlichkeit“?",
+				"answers": [
+					"ataraxia",
+					"ataraxie"
+				],
+				"feedback": "Ataraxia bedeutet Unerschütterlichkeit bzw. Freiheit von Furcht und Seelenunruhe."
+			},
+			{
+				"prompt": "Auf welches einzig Entscheidende kommt es den Stoikern für ein glückliches Leben an (lateinisches Wort aus dem Material)?",
+				"answers": [
+					"virtus",
+					"virtutem",
+					"tugend"
+				],
+				"feedback": "virtutem solam ad beatam vitam satis esse: Für die Stoa genügt allein die tugendhafte Vernunft."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "de",
+				"prompt": "Übersetze den lateinischen Vergleichstext des Materials und erstelle eine kurze Gegenüberstellung von Epikureern und Stoikern in drei Stichpunkten (Haltung zur Politik, Glücksziel, Umgang mit Ängsten/Schicksal).",
+				"model": "Übersetzung: Epikur lobte Freundschaft und ein ruhiges Leben am meisten: Wer mit wenig zufrieden ist, lebt ohne Furcht. Die Stoiker aber riefen die Bürger zu den Pflichten des Staates und lehrten, dass die Tugend allein für ein glückliches Leben genüge; das Schicksal kann sich nämlich ändern, ein weiser Geist aber bleibt immer frei.\nVergleich: Politik (Epikur: Rückzug „im Verborgenen“ vs. Stoa: aktive Mitwirkung); Glück (Ataraxia/Freundschaft vs. Tugend/Vernunft); Schicksal (maßvoller Verzicht vs. gelassene Annahme dessen, was nicht in unserer Macht liegt).",
+				"criteria": [
+					"Der lateinische Text einschließlich AcI (virtutem … satis esse) ist korrekt übersetzt.",
+					"Alle drei Vergleichsaspekte sind klar und ohne Klischees herausgearbeitet.",
+					"paucis contentus („mit wenigem zufrieden“) ist richtig wiedergegeben."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Stelle dir vor, ein wichtiger Ausflug fällt wegen plötzlichem Dauerregen aus oder vor einer Klassenarbeit wächst deine Nervosität. Prüfe, welchen konkreten Rat dir ein Stoiker und welchen ein Epikureer für deine eigene Lebensgestaltung geben würde.",
+				"model": "Stoiker: „Das Wetter kannst du nicht steuern (unverfügbar), wohl aber deine Reaktion darauf! Akzeptiere die Lage gelassen und nutze die freie Zeit sinnvoll drinnen oder mit guter Vorbereitung.“\nEpikureer: „Lass dich von unnötigen Zukunftssorgen nicht quälen: Lade deine besten Freunde ein, teilt ein einfaches Essen und genießt ein ruhiges Gespräch – wahre Freude hängt nicht an teuren Events oder perfektem Wetter.“",
+				"criteria": [
+					"Die stoische Unterscheidung von Kontrollierbarem und Unverfügbarem ist praktisch angewendet.",
+					"Der epikureische Rat betont Freundschaft und Genügsamkeit statt Konsum.",
+					"Beide Ratschläge sind auf echte Lebensfragen Jugendlicher übertragbar."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Echtes Verständnis der epikureischen Lustabwägung wählen",
+					"before": "Epikurs „Lust“ (hedonē) meint vor allem →",
+					"after": "",
+					"options": [
+						"Abwesenheit von Schmerz, Furcht und überflüssigem Luxus",
+						"täglich teure Feste ohne Rücksicht auf morgen",
+						"strenge politische Ämterlaufbahn im Senat"
+					],
+					"answer": "Abwesenheit von Schmerz, Furcht und überflüssigem Luxus",
+					"explanation": "Epikur wägt klug ab, welche Freude dauerhafte Ruhe bringt."
+				},
+				{
+					"label": "Stoisches Grundprinzip gegenüber Schicksalsschlägen erkennen",
+					"before": "Was liegt laut Stoikern in unserer Macht?",
+					"after": "",
+					"options": [
+						"unsere eigene Einstellung, Vernunft und Handlungsweise",
+						"das Wetter und der Reichtum anderer Menschen",
+						"alle Entscheidungen fremder Herrscher"
+					],
+					"answer": "unsere eigene Einstellung, Vernunft und Handlungsweise",
+					"explanation": "Zwischen äußerem Ereignis und eigenem Urteil liegt der Raum innerer Freiheit."
+				},
+				{
+					"label": "Unterschied in der Haltung zur Politik benennen",
+					"before": "„Lebe im Verborgenen“ vs. Einsatz für das Gemeinwohl →",
+					"after": "",
+					"options": [
+						"Epikureer meiden Politik; Stoiker übernehmen Bürgerpflichten",
+						"Stoiker fliehen aufs Land; Epikureer werden alle Konsuln",
+						"beide verbieten Freundschaften"
+					],
+					"answer": "Epikureer meiden Politik; Stoiker übernehmen Bürgerpflichten",
+					"explanation": "Politische Machtkämpfe gefährdeten laut Epikur die Seelenruhe; Stoiker sahen sich als Weltbürger in Pflicht."
+				}
+			]
+		}
+	},
+	{
+		"id": "l8-cicero-seneca",
+		"stage": "philosophie-fabel",
+		"title": "Cicero & Seneca: Vermittler in Rom",
+		"skill": "Cicero und Seneca als Vermittler griechischer Philosophie nach Rom erkennen und ihre Gedanken auf den eigenen Alltag prüfen",
+		"bindings": [
+			"L8-01",
+			"L8-32",
+			"L8-33",
+			"L8-34",
+			"L8-36",
+			"L8-37",
+			"L8-39"
+		],
+		"paragraphs": [
+			"Lange Zeit meinten viele Römer, Philosophie sei bloß nutzlose griechische Spielerei. Erst Marcus Tullius Cicero (1. Jh. v. Chr.) und Lucius Annaeus Seneca (1. Jh. n. Chr.) zeigten eindrucksvoll, wie praktisch Philosophie für Politik, Recht und Alltagsleben ist. Cicero prägte moralis und qualitas als philosophische Ausdrücke im Lateinischen. Auch Wörter wie humanitas (Menschlichkeit) und conscientia (Gewissen) gebrauchte er in seinen Schriften und vermittelte damit griechische Denkweisen im römischen Sprachraum.",
+			"Seneca, Erzieher und Berater des jungen Kaisers Nero, prägte die römische Stoa vor allem durch seine „Briefe an Lucilius“ (Epistulae morales). Darin fragt er ganz persönlich: Wie nutze ich meine Zeit sinnvoll, statt sie zu verschwenden? Warum zählen Bildung und Menschlichkeit mehr als Herkunft? In Brief 106,12 klagt er zugespitzt: „Non vitae, sed scholae discimus“ („Nicht für das Leben, sondern für die Schule lernen wir“) – eine Kritik an bloßer Schulgelehrsamkeit. Erst die spätere Nachwelt drehte den Satz in das bekannte Motto „Non scholae, sed vitae discimus“ um."
+		],
+		"materialLabel": "Gedanken aus Senecas Briefen über Zeit und Menschlichkeit",
+		"materialLanguage": "la",
+		"material": "1. Ita fac, mi Lucili: vindica te tibi, et tempus, quod adhuc aut auferebatur aut subripiebatur, collige et serva! (nach Seneca, Epist. 1,1)\n2. Cogita istos, quos servos vocas, ex isdem seminibus ortos esse eodemque caelo frui. (nach Seneca, Epist. 47,10)\n3. Cicero linguam Latinam verbis philosophicis ditavit, ut humanitas et officium omnibus paterent.",
+		"sourceIds": [
+			"lp",
+			"lp-profil"
+		],
+		"diagram": {
+			"kind": "philo-lab",
+			"preset": "rom",
+			"title": "Cicero und Seneca als Brückenbauer zwischen Hellas und Rom",
+			"caption": "Wortschöpfungen, Briefdialoge und zeitlose Fragen zu Zeit, Würde und Bildung."
+		},
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Was rät Seneca gleich am Anfang seines ersten Briefes („vindica te tibi, et tempus … collige et serva“)?",
+			"answer": "Nimm dir dein eigenes Leben zurück und geh bewusst und sorgsam mit deiner Zeit um",
+			"wrong": [
+				"Verschenke deine ganze Freizeit an möglichst viele fremde Geschäfte",
+				"Warte erst bis ins hohe Alter, bevor du nachdenkst"
+			],
+			"explanation": "Für Seneca ist Zeit das einzige Gut, das wirklich uns gehört; wer sie unbedacht verliert, verliert sein Leben."
+		},
+		"takeaway": "Cicero schuf die lateinische Philosophiesprache (humanitas, qualitas); Seneca übertrug die stoische Ethik in lebensnahe Briefe über Zeit, Freundschaft und die Gleichwertigkeit aller Menschen.",
+		"practice": [
+			{
+				"prompt": "Welchen seltenen Kasus verlangt das Deponens „frui“ (genießen) in Senecas Satz „eodemque caelo frui“?",
+				"answers": [
+					"ablativ",
+					"den ablativ",
+					"im ablativ"
+				],
+				"feedback": "Wie uti regiert auch frui im Lateinischen den Ablativ (eodem caelo = denselben Himmel genießen)."
+			},
+			{
+				"prompt": "Wie lautet der vollständige Vorname und Gentilname Ciceros oder Senecas (z. B. M. Tullius Cicero oder L. Annaeus …)?",
+				"answers": [
+					"seneca",
+					"cicero",
+					"lucius annaeus seneca",
+					"marcus tullius cicero"
+				],
+				"feedback": "Marcus Tullius Cicero und Lucius Annaeus Seneca gaben dem philosophischen Latein seine klassische Gestalt."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "de",
+				"prompt": "Übersetze alle drei Abschnitte des Materials (achte auf Deponens ortos esse von oriri und frui + Ablativ in Satz 2) und erkläre, was Seneca an der Haltung vieler Römer gegenüber Sklaven kritisiert.",
+				"model": "1. Handle so, mein Lucilius: Nimm dich selbst für dich in Anspruch, und sammle und bewahre die Zeit, die dir bisher entweder geraubt oder heimlich gestohlen wurde!\n2. Bedenke, dass jene, die du Sklaven nennst, aus denselben Ursprüngen hervorgegangen sind und denselben Himmel genießen.\n3. Cicero bereicherte die lateinische Sprache mit philosophischen Wörtern, damit Menschlichkeit und Pflichtgefühl allen offenstünden.\nKritik: Seneca erinnert daran, dass Sklaven von Natur aus genau dieselben Menschen sind wie ihre Herren – Hochmut oder Grausamkeit gegen sie widersprechen der stoischen humanitas.",
+				"criteria": [
+					"Imperative, Deponentien (ortos esse, frui) und ut-Satz sind sauber übersetzt.",
+					"Senecas Gedanke der natürlichen Gleichwertigkeit ist klar benannt.",
+					"Ciceros sprachliche Vermittlerrolle ist richtig erfasst."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Prüfe Senecas Gedanken zum Umgang mit Zeit („vindica te tibi“) an deinem eigenen Alltag mit Smartphone, Hausaufgaben und Freizeit: Wo „wird dir Zeit gestohlen“, und welchen persönlichen Handlungsmaßstab kannst du daraus ziehen?",
+				"model": "Heute verliert man oft Stunden beim endlosen Scrollen durch kurze Videos, ohne dass am Ende echte Erholung oder ein Ziel übrig bleibt – genau das meint Seneca mit „subripiebatur“ (heimlich weggestohlen). Ein persönlicher Maßstab ist, Zeiten für Lernen, echte Treffen mit Freunden und Erholung bewusst abzugrenzen, statt die Tage einfach vorbeilaufen zu lassen.",
+				"criteria": [
+					"Senecas Begriffe auferebatur / subripiebatur sind treffend auf den heutigen Alltag bezogen.",
+					"Eine ehrliche Prüfung eigener Gewohnheiten ist formuliert.",
+					"Ein konkreter, umsetzbarer Handlungsmaßstab ist abgeleitet."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Sprachleistung Ciceros für die europäische Geistesgeschichte erkennen",
+					"before": "humanitas · qualitas · moralis →",
+					"after": "",
+					"options": [
+						"von Cicero geprägte lateinische Begriffe aus dem Griechischen",
+						"militärische Kommandos der Legionen am Rhein",
+						"Namen römischer Kaiser des 3. Jahrhunderts"
+					],
+					"answer": "von Cicero geprägte lateinische Begriffe aus dem Griechischen",
+					"explanation": "Ohne Cicero besäßen Deutsch und Englisch Dutzende philosophische Fachwörter nicht."
+				},
+				{
+					"label": "Hauptbotschaft von Senecas 47. Brief (über Sklaven) bestimmen",
+					"before": "„Aus demselben Ursprung hervorgegangen“ →",
+					"after": "",
+					"options": [
+						"Sklaven sind Mitmenschen und verlangen Achtung",
+						"Sklaven sollen härter bestraft werden",
+						"Sklaven dürfen keine Namen tragen"
+					],
+					"answer": "Sklaven sind Mitmenschen und verlangen Achtung",
+					"explanation": "Seneca wendet den stoischen Gedanken der Gleichheit aller vernunftbegabten Menschen praktisch an."
+				},
+				{
+					"label": "Literarische Form von Senecas Hauptwerk zuordnen",
+					"before": "Epistulae morales ad Lucilium →",
+					"after": "",
+					"options": [
+						"philosophische Lehrbriefe für die Lebenspraxis",
+						"Tierfabeln in Versen",
+						"Kriegsberichte aus Gallien"
+					],
+					"answer": "philosophische Lehrbriefe für die Lebenspraxis",
+					"explanation": "In 124 Briefen diskutiert Seneca mit seinem Freund Lucilius konkrete Lebensfragen."
+				}
+			]
+		}
+	},
+	{
+		"id": "l8-phaedrus-fabeln",
+		"stage": "philosophie-fabel",
+		"title": "Phaedrus’ Fabeln: Tiergeschichten als Spiegel",
+		"skill": "Fabeln des Phaedrus im Rückgriff auf griechische Vorbilder (Äsop) übersetzen, gliedern und auf Lebenssituationen beziehen",
+		"bindings": [
+			"L8-01",
+			"L8-02",
+			"L8-03",
+			"L8-33",
+			"L8-35",
+			"L8-40"
+		],
+		"paragraphs": [
+			"In der achten Klasse begegnet dir mit Phaedrus erstmals ein bekannter römischer Dichter im geschlossenen Themenzusammenhang! Phaedrus lebte in der frühen Kaiserzeit unter Augustus und Tiberius – als ehemaliger Freigelassener wusste er aus eigener Erfahrung, wie gefährlich es war, Mächtige offen zu kritisieren. Deshalb griff er auf die berühmten Prosa-Tierfabeln des Griechen Äsop zurück und brachte sie in knappe, witzige lateinische Verse.",
+			"Typisch für Phaedrus sind ein dreiteiliger Bau und klare Tierrollen: oft eine knappe Lehre zu Beginn (Promythion) oder am Ende (Epimythion), dazwischen eine kurze Szene, in der Wolf und Lamm, Fuchs und Rabe oder Frosch und Rind menschliche Schwächen wie Eitelkeit, Neid oder Willkür entlarven. So wird die kurze Fabel zur scharfsinnigen Gesellschafts- und Lebensweisheit bis hin zu Lessing und modernen Fabeln."
+		],
+		"materialLabel": "Nach Phaedrus: Wolf und Lamm (Lupus et agnus) sowie Fabelbau",
+		"materialLanguage": "la",
+		"material": "Ad rivum eundem lupus et agnus venerant siti compulsi. Superior stabat lupus longeque inferior agnus. Tunc fauce improba latro incitatus iurgii causam intulit: „Cur“, inquit, „turbulentam fecisti mihi aquam bibenti?“ Laniger contra timens: „Qui possum, quaeso, facere, quod quereris, lupe? A te decurrit ad meos haustus liquor.“\n(Haec propter illos scripta est homines fabula, qui fictis causis innocentes opprimunt.)",
+		"sourceIds": [
+			"lp",
+			"lp-profil"
+		],
+		"diagram": {
+			"kind": "myth-values",
+			"title": "Aufbau und Wirkung einer Phaedrus-Fabel",
+			"caption": "Vom griechischen Vorbild Äsop über Typenfiguren zur knappen Moral (fabula docet).",
+			"parts": [
+				{
+					"id": "ph-aesop",
+					"label": "1 · Griechisches Vorbild",
+					"badge": "Äsop → Phaedrus",
+					"latin": "Aesopus auctor quam materiam repperit",
+					"detail": "Phaedrus bekennt im Prolog offen, Äsops Stoffe übernommen und in zielsichere lateinische Senare gefasst zu haben."
+				},
+				{
+					"id": "ph-szene",
+					"label": "2 · Figuren & Dialog",
+					"badge": "Typencharaktere",
+					"latin": "lupus (Willkür) vs. agnus (Unschuld)",
+					"detail": "Tiere tragen feste Eigenschaften (Fuchs = List, Löwe = Macht) und führen im kurzen Rededuell das Unrecht selbst vor."
+				},
+				{
+					"id": "ph-moral",
+					"label": "3 · Moral & Spiegel",
+					"badge": "Promythion / Epimythion",
+					"latin": "fictis causis innocentes opprimunt",
+					"detail": "Der Schlussvers übersetzt die Tierwelt auf menschliche Gesellschaften und hält bis in die Gegenwart (La Fontaine, Lessing) den Spiegel vor."
+				}
+			]
+		},
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Auf welches griechische Vorbild greift der römische Fabeldichter Phaedrus ausdrücklich zurück?",
+			"answer": "auf die griechischen Fabeln Äsops",
+			"wrong": [
+				"auf die Kriegsberichte Caesars",
+				"auf die Gesetzessammlung Justinians"
+			],
+			"explanation": "Äsop (6. Jh. v. Chr.) gilt als Stammvater der europäischen Fabel; Phaedrus formte daraus lateinische Versdichtung."
+		},
+		"takeaway": "Phaedrus übertrug Äsops Tierfabeln in knappe lateinische Verse mit fester Rollenverteilung und deutlicher Moral (Pro-/Epimythion) zur Entlarvung menschlicher Schwächen.",
+		"practice": [
+			{
+				"prompt": "Wie heißt in der Literaturwissenschaft eine Moral, die am ENDE einer Fabel steht (wie der Klammerzusatz im Material)?",
+				"answers": [
+					"epimythion"
+				],
+				"feedback": "Am Anfang heißt der Lehrsatz Promythion, am Schluss der Fabel Epimythion."
+			},
+			{
+				"prompt": "Welcher seltene Frage-Ausdruck im Material von Phaedrus bedeutet hier „Wie …?“ („… possum facere?“)?",
+				"answers": [
+					"qui"
+				],
+				"feedback": "qui ist hier eine ältere adverbiale Ablativ-Form für quomodo („wie / auf welche Weise?“)."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "de",
+				"prompt": "Gliedere die Fabel „Wolf und Lamm“ im Material in Ausgangssituation, Rede/Gegenrede und Moral (Epimythion), und übersetze den lateinischen Text vollständig ins Deutsche.",
+				"model": "Gliederung: 1. Ausgangslage am Bach (oben der Wolf, weiter unten das Lamm); 2. Vorwurf des Wolfes und sachliche Widerlegung durch das Lamm; 3. Epimythion (Übertragung auf Menschen mit erfundenen Vorwänden).\nÜbersetzung: An denselben Bach waren ein Wolf und ein Lamm gekommen, vom Durst getrieben. Weiter oben stand der Wolf und weit unterhalb das Lamm. Da brachte der Räuber, von schamlosem Schlund angestachelt, einen Anlass zum Streit vor: „Warum“, sagte er, „hast du mir beim Trinken das Wasser trüb gemacht?“ Der Wollträger entgegnete furchtsam: „Wie kann ich bitte tun, worüber du klagst, Wolf? Von dir fließt das Wasser zu meinen Zügen herab.“ (Diese Fabel ist wegen jener Menschen geschrieben, die mit erfundenen Gründen Unschuldige unterdrücken.)",
+				"criteria": [
+					"Die dreiteilige Gliederung (Ausgangslage, Dialog, Moral) ist klar benannt.",
+					"Alle Partizipien (compulsi, incitatus, bibenti, timens) sind richtig aufgelöst.",
+					"Der Gesamtsinn des Textes und der Moral ist treffend formuliert."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Erörtere aus Sicht deiner eigenen Lebenswelt, warum Autoren unter mächtigen Herrschern – wie Phaedrus im Rom des Tiberius – lieber über sprechende Tiere schrieben als direkt über Politiker, und nenne ein modernes Beispiel für Fabel- oder Satirekritik.",
+				"model": "Offene Kritik an Machthabern konnte unter Kaisern wie Tiberius oder Seian Verbannung oder Hinrichtung bedeuten. Die Tierfabel tarnt Kritik als harmlose Erzählung: Niemand wird mit Namen genannt, und doch versteht jeder Leser die Parallele zwischen Wolf und rücksichtslosem Machthaber (fictis causis opprimere = Vorwände für Willkür suchen). Bis heute wirken deshalb Fabeln (Orwells „Farm der Tiere“), politische Cartoons oder satirische Kurzgeschichten.",
+				"criteria": [
+					"Der historische Schutzgedanke verschlüsselter Kritik unter der Kaiserherrschaft ist erklärt.",
+					"Die Übertragbarkeit des Fabeltyps („erfundene Vorwände“) ist begründet.",
+					"Ein schlüssiges modernes Beispiel für gesellschaftskritische Bildsprache ist genannt."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Fachbegriff für die Schlussmoral einer Fabel bestimmen",
+					"before": "Lehrsatz am Ende der Fabel →",
+					"after": "",
+					"options": [
+						"Epimythion",
+						"Prologus",
+						"AcI"
+					],
+					"answer": "Epimythion",
+					"explanation": "epi- („danach“) + mythos = Schlussmoral."
+				},
+				{
+					"label": "Kern der Fabel „Wolf und Lamm“ formulieren",
+					"before": "fictis causis innocentes opprimunt →",
+					"after": "",
+					"options": [
+						"Mächtige suchen Scheingründe, um Schwächere zu unterdrücken",
+						"Lämmer trinken immer schmutziges Wasser",
+						"Freundschaft überwindet jedes Naturgesetz"
+					],
+					"answer": "Mächtige suchen Scheingründe, um Schwächere zu unterdrücken",
+					"explanation": "Die Naturgesetze (Wasser fließt abwärts) widerlegen den Wolf – doch Gewalt ignoriert Argumente."
+				},
+				{
+					"label": "Künstlerische Besonderheit von Phaedrus im Vergleich zu Äsop nennen",
+					"before": "Äsop (griech. Prosa) → Phaedrus →",
+					"after": "",
+					"options": [
+						"lateinische Versdichtung mit knapper Schärfe",
+						"juristische Prozessformeln ohne Handlung",
+						"griechische Naturphilosophie über Atome"
+					],
+					"answer": "lateinische Versdichtung mit knapper Schärfe",
+					"explanation": "Phaedrus schuf die erste eigenständige lateinische Fabelsammlung in Versen."
+				}
+			]
+		}
+	}
+]

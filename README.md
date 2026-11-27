@@ -14,6 +14,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | Latein 7 Gymnasium (LehrplanPLUS Bayern, 1. Fremdsprache) | [`latein-gymnasium-7-l1/`](latein-gymnasium-7-l1/) | Built by Pages on merge | `zam-academy:latein-gymnasium-7-l1` |
 | Latein 7 Gymnasium (LehrplanPLUS Bayern, 2. Fremdsprache) | [`latein-gymnasium-7-l2/`](latein-gymnasium-7-l2/) | Built by Pages on merge | `zam-academy:latein-gymnasium-7-l2` |
 | Latein 8 Gymnasium (LehrplanPLUS Bayern, 1. Fremdsprache) | [`latein-gymnasium-8-l1/`](latein-gymnasium-8-l1/) | Built by Pages on merge | `zam-academy:latein-gymnasium-8-l1` |
+| Latein 8 Gymnasium (LehrplanPLUS Bayern, 2. Fremdsprache) | [`latein-gymnasium-8-l2/`](latein-gymnasium-8-l2/) | Built by Pages on merge | `zam-academy:latein-gymnasium-8-l2` |
 | English 6 Gymnasium (Bavaria, 2. FS) | [`englisch-2fs-gymnasium-6/`](englisch-2fs-gymnasium-6/) | Built by Pages on merge | `zam-academy:englisch-2fs-gymnasium-6` |
 | English 7 Gymnasium (Bavaria, second foreign language) | [`englisch-2fs-gymnasium-7/`](englisch-2fs-gymnasium-7/) | Built by Pages on merge | `zam-academy:englisch-2fs-gymnasium-7` |
 | French 6 Gymnasium (Bavaria, 2. FS) | [`franzoesisch-2fs-gymnasium-6/`](franzoesisch-2fs-gymnasium-6/) | Built by Pages on merge | `zam-academy:franzoesisch-2fs-gymnasium-6` |
@@ -27,6 +28,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | Grade 4 Heimat- und Sachunterricht: twenty discovery stations with Lotta (Bavaria) | [`hsu-grundschule-4/`](hsu-grundschule-4/) | https://academy.zam-os.org/hsu-grundschule-4/ | `zam-academy:hsu-grundschule-4` |
 | French 7 Gymnasium (Bavaria, first foreign language) | [`franzoesisch-gymnasium-7/`](franzoesisch-gymnasium-7/) | Built by Pages on merge | `zam-academy:franzoesisch-gymnasium-7` |
 | French 7 Gymnasium (Bavaria, second foreign language) | [`franzoesisch-2fs-gymnasium-7/`](franzoesisch-2fs-gymnasium-7/) | Built by Pages on merge | `zam-academy:franzoesisch-2fs-gymnasium-7` |
+| French 8 Gymnasium (Bavaria, second foreign language) | [`franzoesisch-2fs-gymnasium-8/`](franzoesisch-2fs-gymnasium-8/) | Built by Pages on merge | `zam-academy:franzoesisch-2fs-gymnasium-8` |
 | French 6 Gymnasium (Bavaria, 1. FS) | [`franzoesisch-gymnasium-6/`](franzoesisch-gymnasium-6/) | https://academy.zam-os.org/franzoesisch-gymnasium-6/ | `zam-academy:franzoesisch-gymnasium-6` |
 | French 5 Gymnasium (Bavaria, first foreign language) | [`franzoesisch-gymnasium-5/`](franzoesisch-gymnasium-5/) | https://academy.zam-os.org/franzoesisch-gymnasium-5/ | `zam-academy:franzoesisch-gymnasium-5` |
 | Englisch 5 Mittelschule (LehrplanPLUS Bayern) | [`englisch-mittelschule-5/`](englisch-mittelschule-5/) | https://academy.zam-os.org/englisch-mittelschule-5/ | `zam-academy:englisch-mittelschule-5` |
@@ -214,7 +216,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Mathematics 10 Mittelschule: cd mathematik-mittelschule-10 (dev server on :5237)
 # Biologie 5 Realschule: cd biologie-realschule-5 (dev server on :5238)
 # Geschichte/Politik/Geographie 5 Mittelschule: cd gpg-mittelschule-5 (dev server on :5241)
-# Geschichte/Politik/Geographie 8 Mittelschule: cd gpg-mittelschule-8 (dev server on :5295)
+# Geschichte/Politik/Geographie 8 Mittelschule: cd gpg-mittelschule-8 (dev server on :5298)
 # Politics and Society 6 Mittelschule: cd politik-mittelschule-6 (dev server on :5261)
 # Politics and Society 7 Mittelschule: cd politik-mittelschule-7 (dev server on :5270)
 # Natur und Technik 5 Mittelschule: cd nt-mittelschule-5 (dev server on :5243)
@@ -232,6 +234,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Latein 7 Gymnasium (1. FS): cd latein-gymnasium-7-l1 (dev server on :5287)
 # Latein 7 Gymnasium (2. FS): cd latein-gymnasium-7-l2 (dev server on :5289)
 # Latein 8 Gymnasium (1. FS): cd latein-gymnasium-8-l1 (dev server on :5295)
+# Latein 8 Gymnasium (2. Fremdsprache): cd latein-gymnasium-8-l2 (dev server on :5297)
 # English 6 Gymnasium (2. FS): cd englisch-2fs-gymnasium-6 (dev server on :5281)
 # English 7 Gymnasium (second foreign language): cd englisch-2fs-gymnasium-7 (dev server on :5286)
 # French 6 Gymnasium (2. FS): cd franzoesisch-2fs-gymnasium-6 (dev server on :5282)
@@ -249,6 +252,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Biologie 5 Gymnasium: cd biologie-gymnasium-5 (dev server on :5246)
 # French 7 Gymnasium: cd franzoesisch-gymnasium-7 (dev server on :5277)
 # French 7 Gymnasium (second foreign language): cd franzoesisch-2fs-gymnasium-7 (dev server on :5288)
+# French 8 Gymnasium (second foreign language): cd franzoesisch-2fs-gymnasium-8 (dev server on :5296)
 # French 6 Gymnasium: cd franzoesisch-gymnasium-6 (dev server on :5263)
 # French 5 Gymnasium: cd franzoesisch-gymnasium-5 (dev server on :5245)
 # Englisch 5 Mittelschule: cd englisch-mittelschule-5 (dev server on :5248)

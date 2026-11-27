@@ -43,10 +43,10 @@ Geprüft gegen den ZAM-Bestand (`zam-os/zam`, Commit `b7fdfcc4e30d21bbbd97fb2025
 
 ## Verifikation
 
-- `cd gpg-mittelschule-8 && npm ci && npx tsc --noEmit && npm test && npm run build && npm run package:zip && node scripts/check-curriculum.mjs`: **224 Vitest-Tests bestanden** (3 Dateien: 148 Paket-Tests, 64 Feedback-Tests, 12 Progress-Merge-Tests), Single-File-Build `dist/index.html` (`563.31 kB`), Offline-ZIP `release/ZAM-Academy-GPG-8-offline.zip` verifiziert, **41 wörtliche Kompetenzerwartungen (`20 R` + `21 M`), 0 not found** und verifizierte SHA-256-Prüfsummen.
+- `cd gpg-mittelschule-8 && npm ci && npx tsc --noEmit && npm test && npm run build && npm run package:zip && node scripts/check-curriculum.mjs`: **225 Vitest-Tests bestanden** (3 Dateien: 149 Paket-Tests inkl. Stadtkoordinaten- und Distraktor-Prüfung, 64 Feedback-Tests, 12 Progress-Merge-Tests), Single-File-Build `dist/index.html` (`564.13 kB`), Offline-ZIP `release/ZAM-Academy-GPG-8-offline.zip` verifiziert, **41 wörtliche Kompetenzerwartungen (`20 R` + `21 M`), 0 not found** und verifizierte SHA-256-Prüfsummen.
 - Chrome Headless DOM-Sweep (`--dump-dom`, `#lesson=<id>&level=1|2`): alle **64 Lektionsansichten** geprüft (`0 failures`, kein `NaN`/`undefined`).
 - Chrome Headless Screenshots (`--window-size`, Hell- und Dunkelmodus via `--force-dark-mode`): Lernpfad, Nachschlagen, Nordamerika-/Europa-/Besatzungszonen-Karten, interaktive Entdecker-SVGs sowie alle sechs Live-SVG-Labore visuell in Hell und Dunkel geprüft.
-- Root- und `zam-core`-Prüfung (`zam-core@0.54.0`): `gpg-mittelschule-8/scripts/validate-cell.mjs` (32 Atome / 64 Karten idempotent installiert und verifiziert), `scripts/validate-cells.mjs` (alle 78 Zellen ohne Distraktor-Warnungen), `scripts/build-catalog.mjs` (78 Zellen), Root-Tests (`build-catalog`, `academy-registry`, `package-version`, `changed-apps`) sowie `node scripts/package-version.mjs check main`.
+- Root- und `zam-core`-Prüfung (`zam-core@0.54.0`, Stand nach Merge mit `origin/main` `23b0d6c`): `gpg-mittelschule-8/scripts/validate-cell.mjs` (32 Atome / 64 Karten idempotent installiert und verifiziert), `scripts/validate-cells.mjs` (alle 121 Zellen ohne Distraktor-Warnungen), `scripts/build-catalog.mjs` (121 Zellen), Root-Tests (`build-catalog`, `academy-registry`, `package-version`, `changed-apps`: 77 bestanden) sowie `node scripts/package-version.mjs check origin/main`.
 
 ## Offene Punkte vor Freigabe
 

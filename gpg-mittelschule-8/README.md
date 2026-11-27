@@ -27,4 +27,4 @@ npm run package:zip
 node scripts/check-curriculum.mjs
 ```
 
-Für den lokalen Entwicklungsserver: `npm run dev` (Standardport `5295`).
+Für den lokalen Entwicklungsserver: `npm run dev` (Standardport `5298`).

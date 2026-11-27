@@ -11,7 +11,12 @@ import {
   STAGES,
 } from "../src/curriculum";
 import { FIGURES, renderFigure } from "../src/figures";
-import { GERMANY_ZONE_MARKERS, NORTH_AMERICA_MARKERS } from "../src/figures/maps";
+import {
+  at,
+  GERMANY_ZONE_MARKERS,
+  MAPS,
+  NORTH_AMERICA_MARKERS,
+} from "../src/figures/maps";
 import {
   bindLab,
   ENERGY_MIX_DEFAULT,
@@ -211,6 +216,87 @@ describe("figures and maps", () => {
     expect(deu.entries.map((e) => e.text.split(" (")[0])).toEqual(
       GERMANY_ZONE_MARKERS.map(([, , n]) => `Nummer ${n}`),
     );
+  });
+
+  it("excludes neutral Sweden, Switzerland and Leningrad in 1942 and places key German cities in their 1945 occupation zones", () => {
+    const parseSubpaths = (d: string) =>
+      d
+        .trim()
+        .split(/Z/i)
+        .filter(Boolean)
+        .map((seg) =>
+          seg
+            .replace(/^M/i, "")
+            .split(/L/i)
+            .map((pair) => pair.trim().split(/\s+/).map(Number) as [number, number]),
+        );
+    const pip = (pt: [number, number], poly: Array<[number, number]>) => {
+      const [x, y] = pt;
+      let inside = false;
+      for (let i = 0, j = poly.length - 1; i < poly.length; j = i++) {
+        const [xi, yi] = poly[i];
+        const [xj, yj] = poly[j];
+        if (yi > y !== yj > y && x < ((xj - xi) * (y - yi)) / (yj - yi) + xi)
+          inside = !inside;
+      }
+      return inside;
+    };
+    const evenOdd = (pt: [number, number], polys: Array<Array<[number, number]>>) =>
+      polys.reduce((acc, p) => acc !== pip(pt, p), false);
+
+    const axPolys = parseSubpaths(MAPS.europe1942.layers.axis[0].d);
+    for (const [lon, lat, expected] of [
+      [13.4, 52.5, true], // Berlin
+      [21.0, 52.2, true], // Warschau
+      [2.35, 48.85, true], // Paris
+      [12.49, 41.9, true], // Rom
+      [10.75, 59.91, true], // Oslo
+      [12.57, 55.68, true], // Kopenhagen
+      [24.94, 60.17, true], // Helsinki
+      [23.73, 37.98, true], // Athen
+      [7.45, 46.95, false], // Bern (neutral)
+      [8.54, 47.37, false], // Zürich (neutral)
+      [18.07, 59.33, false], // Stockholm (neutral)
+      [11.97, 57.71, false], // Göteborg (neutral)
+      [30.33, 59.93, false], // Leningrad (belagert, nicht besetzt)
+      [37.62, 55.76, false], // Moskau
+      [-0.13, 51.51, false], // London
+    ] as Array<[number, number, boolean]>) {
+      expect(evenOdd(at(MAPS.europe1942, lon, lat), axPolys)).toBe(expected);
+    }
+
+    const zMap = Object.fromEntries(
+      MAPS.germany1945.layers.zones.map((z) => [z.id, parseSubpaths(z.d)]),
+    );
+    const zoneAt = (lon: number, lat: number) => {
+      const pt = at(MAPS.germany1945, lon, lat);
+      if (evenOdd(pt, zMap.sbz)) return "sbz";
+      if (evenOdd(pt, zMap.french)) return "french";
+      if (evenOdd(pt, zMap.brit)) return "brit";
+      return "us";
+    };
+    for (const [lon, lat, expected] of [
+      [9.44, 54.79, "brit"], // Flensburg
+      [9.99, 53.55, "brit"], // Hamburg
+      [8.21, 53.14, "brit"], // Oldenburg
+      [6.96, 50.94, "brit"], // Köln
+      [8.8, 53.08, "us"], // Bremen (US-Enklave)
+      [8.58, 53.54, "us"], // Bremerhaven (US-Enklave)
+      [8.68, 50.11, "us"], // Frankfurt
+      [8.4, 49.01, "us"], // Karlsruhe
+      [9.18, 48.78, "us"], // Stuttgart
+      [11.91, 50.32, "us"], // Hof
+      [11.58, 48.14, "us"], // München
+      [8.27, 50.0, "french"], // Mainz
+      [7.77, 49.44, "french"], // Kaiserslautern
+      [7.0, 49.24, "french"], // Saarbrücken
+      [7.85, 47.99, "french"], // Freiburg
+      [9.05, 48.52, "french"], // Tübingen
+      [12.24, 51.84, "sbz"], // Dessau
+      [13.74, 51.05, "sbz"], // Dresden
+    ] as Array<[number, number, string]>) {
+      expect(zoneAt(lon, lat)).toBe(expected);
+    }
   });
 });
 
@@ -457,6 +543,9 @@ describe("independent cell and pinned contract", () => {
         expect(i.source_link).toBe(lessonLink(l.id));
         expect(i.language).toBe("de");
         expect(i.concept).not.toMatch(/\d\.\d/);
+        const reasons = (i.choice_distractors ?? []).map((d) => d.reason);
+        expect(reasons.every((r) => r.length > 20)).toBe(true);
+        expect(new Set(reasons).size).toBe(reasons.length);
       }
     }
   });

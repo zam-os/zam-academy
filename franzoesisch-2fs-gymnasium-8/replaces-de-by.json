@@ -1,0 +1,41 @@
+{
+	"schema": 1,
+	"status": "proposal-only",
+	"approved": null,
+	"source_repository": "https://github.com/zam-os/zam",
+	"source_commit": "c92f4e383385ee487cd8b30f73b3bf3cb27b0860",
+	"source": "Proposal by the package author (Claude Code, 2026-11-27). Not approved; only Thomas approves a mapping.",
+	"sources": [
+		{
+			"file": "tests/fixtures/de-by-gymnasium-8-franzoesisch-imparfait-passe-compose-objektpronomen-kvt.json",
+			"tile_id": "de-by:gymnasium-8-franzoesisch-imparfait-passe-compose-objektpronomen",
+			"sha256": "3869a6487c2714f7839d46536eea39115c58779ff8607e063fd4f5eb3972c84c"
+		}
+	],
+	"rows": [
+		{
+			"de_by_id": "01K8G8M0000000000000000J01",
+			"category": "C",
+			"action": "keep-active",
+			"reason": "The approved mapping of franzoesisch-gymnasium-7 (2026-11-23) already moves this history to f7-1-imparfait-check. One history never moves twice, and second-language learners meet the imparfait in Grade 7, not in this package."
+		},
+		{
+			"de_by_id": "01K8G8M0000000000000000J02",
+			"category": "C",
+			"action": "keep-active",
+			"reason": "The composite asks for imparfait formation, the imparfait and passé composé contrast and one fixed translation. Grade 8 revises the past tenses around the plus-que-parfait; no card here keeps the whole prompt. Whether a dedicated B successor belongs in this package is an open question for Thomas."
+		},
+		{
+			"de_by_id": "01K8G8M0000000000000000J03",
+			"category": "C",
+			"action": "keep-active",
+			"reason": "Adverbial y is Grade 9 content for French as the second foreign language (LehrplanPLUS F9: pronoms adverbiaux « y » / « en »). This package teaches no y."
+		},
+		{
+			"de_by_id": "01K8G8M0000000000000000J04",
+			"category": "C",
+			"action": "keep-active",
+			"reason": "The composite combines object pronouns with y, en and the futur simple; the futur simple and the adverbial pronouns are Grade 9 content for the second foreign language, so no Grade 8 card is equivalent."
+		}
+	]
+}

@@ -132,13 +132,17 @@ export function northAmericaEuropeMap(): string {
 export function europe1942Map(): string {
   const m = MAPS.europe1942;
   const land = paths(m.layers.countries, () => "");
+  const neutralCheSwe = paths(
+    m.layers.countries.filter((s) => s.id === "CHE" || s.id === "SWE"),
+    () => "",
+  );
   const axis = m.layers.axis[0].d;
   const [bx, by] = at(m, 13.4, 52.5);
   const [wx, wy] = at(m, 21.0, 52.2);
   const [px, py] = at(m, 2.35, 48.85);
   const [sx, sy] = at(m, 44.5, 48.7);
-  const body = `<defs><clipPath id="axis-clip"><path d="${axis}"/></clipPath></defs>
-  ${sea(m)}<g class="land outside">${land}</g><g class="empire" clip-path="url(#axis-clip)">${land}</g>
+  const body = `<defs><clipPath id="axis-clip"><path clip-rule="evenodd" d="${axis}"/></clipPath></defs>
+  ${sea(m)}<g class="land outside">${land}</g><g class="empire" clip-path="url(#axis-clip)">${land}</g><g class="land outside">${neutralCheSwe}</g>
   ${place(m, [
     [-7, 47, "Atlantik", "lbl sea-label"],
     [22, 34.8, "Mittelmeer", "lbl sea-label"],
@@ -176,7 +180,7 @@ export function germany1945Map(): string {
   ${sea(m)}${paths(m.layers.countries, () => "land neighbour")}${states}
   <g clip-path="url(#deu-clip)">
     <rect width="${m.proj.width}" height="${m.proj.height}" fill="#e6c88a" opacity="0.55"/>
-    <path d="${zPath("brit")}" fill="#90bee8" opacity="0.72"/>
+    <path d="${zPath("brit")}" fill-rule="evenodd" fill="#90bee8" opacity="0.72"/>
     <path d="${zPath("french")}" fill="#a4d6a4" opacity="0.72"/>
     <path d="${zPath("sbz")}" fill="#e2998d" opacity="0.72"/>
   </g>
