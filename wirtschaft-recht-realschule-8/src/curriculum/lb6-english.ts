@@ -153,12 +153,12 @@ export const LB6: Lesson[] = [
     intro: "Compare two shops and use English to explain the difference between a return policy and a legal right.",
     paragraphs: [
       "A **consumer** is someone buying for personal use. Before you buy online, compare the full price, the seller's identity, the delivery costs and the **return policy**. An independent test explains what testers actually checked. A review can describe one buyer's experience, while a sponsored post has a reason to favour the product.",
-      "Under the usual UK distance-selling rules, a consumer buying many types of goods from a business can tell the seller they want to cancel within 14 days after receiving the goods. There are exceptions, for example for personalised goods. In the United States, do not assume a general 14-day cooling-off period for ordinary online purchases. Check the retailer's policy and applicable consumer law.",
+      "Under the usual UK distance-selling rules, a consumer buying many types of goods from a business can tell the seller they want to cancel within 14 days after receiving the goods. There are exceptions, for example for personalised goods. In the United States, the federal Cooling-Off Rule covers certain sales made in person away from the seller’s place of business. For an ordinary online purchase, check the retailer’s return policy and the consumer law that applies.",
       "Imagine a club ordering identical water bottles from two shops. A cheap price may turn out higher after shipping. A store's return policy matters if the club changes its mind. If the goods are faulty, the group should describe the problem and check the separate rules on faulty goods. Find the conditions in the original source instead of translating the word return into one legal rule.",
     ],
     terms: [term("Return policy", "The seller's stated conditions for accepting something back."), term("Cooling-off period", "A period in which a consumer can cancel certain agreements under the applicable rules.")],
     takeaway: "Check the seller and the applicable rules before you order. A store policy and a right provided by law answer different questions.",
-    sourceIds: ["lp", "uk", "ftc"],
+    sourceIds: ["lp", "uk", "us-cooling-off"],
     quiz: check("Which source is best for checking a shop's voluntary return policy?", "The terms published by that shop", ["A general product review by a buyer", "A price comparison for similar products"], "The shop's own terms state what it offers in addition to any applicable legal rules."),
     workshop: sort("Which source answers the question?", "Match each question with the first source you would use.", ["Retailer information", "Independent information"], [
       ["Does this dealer charge me to send a purchase back?", 0, "The retailer's published terms are relevant to its policy."],
@@ -187,7 +187,7 @@ export const LB6: Lesson[] = [
     terms: [term("Jurisdiction", "The territory or legal system whose rules apply to the question."), term("Learner permit", "Permission to practise driving under the conditions set by the relevant authority.")],
     visual: { title: "Learning to drive a car", layout: "comparison", steps: ["Great Britain · usually from 17 with a provisional licence", "New York State · learner permit application from 16"] },
     takeaway: "Compare the same activity in clearly named jurisdictions. A minimum age and the permission it unlocks are different pieces of information.",
-    sourceIds: ["lp", "uk-drive", "ny-drive", "fda", "uk-smoke", "ny-smoke"],
+    sourceIds: ["lp", "uk-drive", "ny-drive", "us-tobacco-sale", "uk-smoke", "ny-smoke"],
     quiz: check("What does a New York learner permit allow?", "Driving practice under legal conditions", ["Driving independently in all US states", "Independent driving in Great Britain"], "The permit has conditions and is different from a full licence."),
     workshop: sort("Where or how old?", "Match each question with the focus of the rule.", ["Age or permit", "Place"], [
       ["How old must a person be to apply for a New York learner permit?", 0, "This asks for a condition of learner eligibility."],
@@ -202,7 +202,7 @@ export const LB6: Lesson[] = [
     ], verdict: "The two driving systems have different starting conditions. Smoke-free rules are about places, even when a person meets sale-age requirements." },
     tasks: {
       1: write("Explain in English one difference between learning to drive in Great Britain and New York State.", ["Name each place.", "Explain what learner permission means."], "A learner can normally start at 17 in Great Britain with a provisional licence. In New York State someone can generally apply for a learner permit at 16. In both settings the learner must follow the conditions for practice. The minimum age does not itself give permission to drive independently.", ["Names both places", "Compares ages", "Explains the learner stage"]),
-      2: write("Write two precise questions about youth rules for a class partner and use an official source to answer them.", ["Choose both a place and an activity.", "State what the rule covers."], "Can a person apply for a learner permit at 16 in New York State? The New York DMV says that it is generally possible at that age, subject to conditions. Can a US retailer sell a tobacco product to a person aged 19? Federal FDA guidance gives 21 as the sale age. That rule addresses retail sale.", ["Two precise questions", "Names official sources", "Explains the scope"]),
+      2: write("Write two precise questions about youth rules for a class partner and use an official source to answer them.", ["Choose both a place and an activity.", "State what the rule covers."], "Can a person apply for a learner permit at 16 in New York State? The New York DMV says that it is generally possible at that age, subject to conditions. Can a US retailer sell a tobacco product to a person aged 19? The United States Code sets the minimum age for retail tobacco sales at 21. That rule addresses retail sale.", ["Two precise questions", "Names official sources", "Explains the scope"]),
     },
   },
   {

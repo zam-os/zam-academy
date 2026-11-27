@@ -82,6 +82,16 @@ describe("practice", () => {
           expect(task.prompt.length).toBeGreaterThan(30);
           expect(task.hint.length).toBeGreaterThan(10);
           expect(`${task.prompt}${task.solution}`).not.toMatch(/NaN|Infinity|undefined/);
+          const visibleText = [
+            task.prompt,
+            task.hint,
+            task.solution,
+            ...task.fields.flatMap(({ label, unit }) => [label, unit]),
+            ...(task.table?.head ?? []),
+            ...(task.table?.rows.flat() ?? []),
+          ].join(" ");
+          expect(visibleText, `${kind} level ${level}, seed ${seed}`).not.toContain("-");
+
           for (const field of task.fields) {
             expect(Number.isFinite(field.answer)).toBe(true);
             expect(field.answer).toBeGreaterThan(0);

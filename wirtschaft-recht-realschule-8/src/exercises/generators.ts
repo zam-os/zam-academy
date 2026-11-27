@@ -57,7 +57,7 @@ export function makeExercise(kind: PracticeKind, rng: Rng, level: Level): Exerci
           head: ["Preis (Euro)", "Nachfrage (Stück)", "Angebot (Stück)"],
           rows: m.prices.map((p) => [fmt(p), m.demand(p), m.supply(p)]),
         };
-        task.prompt = `Der Händler verlangt ${fmt(market)} Euro und liegt damit über dem Gleichgewichtspreis. Wie groß ist der Überhang bei diesem Preis? Überlege auch, ob es ein Angebots- oder ein Nachfrageüberhang ist.`;
+        task.prompt = `Der Händler verlangt ${fmt(market)} Euro und liegt damit über dem Gleichgewichtspreis. Wie groß ist der Überhang bei diesem Preis? Gib auch an, auf welcher Marktseite der Überhang entsteht.`;
         task.hint = "Lies Angebot und Nachfrage in der Zeile des Marktpreises ab und bilde die Differenz.";
         field("Überhang", m.supply(market) - m.demand(market), "Stück");
         task.solution = `Bei ${fmt(market)} Euro werden ${m.supply(market)} Stück angeboten, aber nur ${m.demand(market)} nachgefragt. Es gibt einen Angebotsüberhang von ${m.supply(market) - m.demand(market)} Stück; der Preis gerät unter Druck nach unten.`;

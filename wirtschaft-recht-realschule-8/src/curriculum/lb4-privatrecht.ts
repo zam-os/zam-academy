@@ -532,7 +532,7 @@ export const LB4: Lesson[] = [
       "Der **Leistungsort** ist der Ort, an dem der Schuldner seine Pflicht erfüllen muss. Beim Kauf ist das wichtig, weil dort die Ware zu übergeben ist. Haben Verkäufer und Käufer nichts vereinbart und ergibt sich auch aus den Umständen nichts, gilt: Leistungsort ist der Wohnsitz oder die Niederlassung des Schuldners (§ 269 BGB). Der Verkäufer muss die Ware also bei sich bereithalten, der Käufer muss sie abholen. Das nennt man **Holschuld**. Bei Geld ist es anders: Wer zahlt, muss es im Zweifel auf eigene Gefahr und Kosten dem Empfänger übermitteln (§ 270 BGB). Man spricht von einer Schickschuld, denn der Leistungsort bleibt beim Zahler.",
       "Oft wird etwas anderes vereinbart. Bei einer **Bringschuld** muss der Verkäufer die Ware zum Käufer bringen; der Leistungsort liegt dann beim Käufer, etwa wenn ein Möbelhaus laut Vertrag ins Wohnzimmer liefert. Bei einer **Schickschuld** bleibt der Leistungsort beim Verkäufer, er schickt die Ware aber auf Wunsch des Käufers an einen anderen Ort, etwa per Paket. Allein weil der Verkäufer die Versandkosten trägt, wird aus einer Hol- keine Bringschuld (§ 269 Abs. 3 BGB). Die Gefahr, dass das Paket verloren geht, trägt sonst der Käufer (§ 447 BGB). Kauft aber ein Verbraucher bei einem Unternehmer, trägt in der Regel der Unternehmer dieses Risiko (§ 475 Abs. 2 BGB).",
       "Wer an einen Käufer liefert, der erst später zahlt, geht ein Risiko ein. Beim **Ratenkauf** hat der Käufer die Ware sofort, bezahlt sie aber über Monate. Wäre er schon Eigentümer, bliebe dem Verkäufer bei Zahlungsproblemen nur ein Geldanspruch. Zum Schutz kann er deshalb einen **Eigentumsvorbehalt** vereinbaren: Er bleibt Eigentümer, bis der Kaufpreis vollständig bezahlt ist (§ 449 BGB). Der Käufer hat die Ware und darf sie nutzen, wird aber erst mit der letzten Rate Eigentümer.",
-      "Zahlt der Käufer nicht, darf sich der Verkäufer die Ware nicht einfach holen. Er kann sie nur herausverlangen, wenn er vorher vom Vertrag zurückgetreten ist (§ 449 Abs. 2 BGB). Bei einem Ratenkauf mit Finanzierungskosten gelten für Verbraucher zusätzliche Voraussetzungen (§ 508 BGB): etwa mindestens zwei Raten Rückstand und eine erfolglose zweiwöchige Frist. Wer auf Raten kauft, besitzt die Ware, aber sie gehört ihm noch nicht. Verkaufen oder verschenken sollte er sie vorher nicht. Im Modell siehst du das, wenn der Käufer die Ware hat, der Verkäufer aber Eigentümer bleibt.",
+      "Der Verkäufer kann die Ware wegen des Eigentumsvorbehalts grundsätzlich erst nach einem wirksamen Rücktritt herausverlangen (§ 449 Abs. 2 BGB). Bei einem entgeltlichen Ratenkauf mit einem Verbraucher müssen dafür drei Bedingungen zusammenkommen (§ 508 in Verbindung mit § 498 Abs. 1 Satz 1 BGB). Der Käufer ist bei mindestens zwei aufeinanderfolgenden Raten ganz oder teilweise in Zahlungsverzug. Der Rückstand beträgt mindestens 10 % des Gesamtbetrags bei bis zu drei Jahren Laufzeit, bei längerer Laufzeit mindestens 5 %. Außerdem muss der Verkäufer erfolglos zwei Wochen Zeit zur Zahlung des Rückstands gegeben haben. Mit der Frist muss er erklären, dass er bei ausbleibender Zahlung die ganze Restschuld verlangt.",
     ],
     terms: [
       { term: "Leistungsort", text: "Der Ort, an dem der Schuldner seine Pflicht erfüllen muss; ohne andere Abrede ist es sein Wohnsitz oder Betrieb." },
@@ -551,6 +551,11 @@ export const LB4: Lesson[] = [
         ref: "§ 449 BGB",
         text: "Behält sich der Verkäufer das Eigentum bis zur Zahlung vor, geht es im Zweifel erst mit der vollständigen Zahlung über. Ohne Rücktritt vom Vertrag kann er die Sache nicht herausverlangen.",
         url: "https://www.gesetze-im-internet.de/bgb/__449.html",
+      },
+      {
+        ref: "§ 508 BGB und § 498 Abs. 1 Satz 1 BGB",
+        text: "Bei einem entgeltlichen Ratenkauf entscheidet der Gesamtbetrag über die Mindesthöhe des Rückstands. Das Gesetz verlangt außerdem Verzug bei aufeinanderfolgenden Raten und eine erfolglose Frist mit Hinweis auf die Restschuld.",
+        url: "https://www.gesetze-im-internet.de/bgb/__508.html",
       },
     ],
     takeaway:
@@ -605,7 +610,7 @@ export const LB4: Lesson[] = [
     casework: {
       title: "Der Fernseher auf Raten",
       story:
-        "**Emil** (19) kauft im Elektrogeschäft einen Fernseher, der bar 600 Euro kostet, auf Raten: **zwölf Raten** zu je 55 Euro, also 660 Euro insgesamt. Er nimmt den Fernseher sofort mit. Im Vertrag steht, dass die Ware bis zur vollständigen Bezahlung **Eigentum des Geschäfts** bleibt. Nach fünf Raten stellt Emil die Zahlungen ein.",
+        "**Emil** (19) kauft im Elektrogeschäft einen Fernseher, der bar 600 Euro kostet, auf Raten: **zwölf Raten** zu je 55 Euro, also 660 Euro insgesamt. Er nimmt den Fernseher sofort mit. Im Vertrag steht, dass die Ware bis zur vollständigen Bezahlung **Eigentum des Geschäfts** bleibt. Die monatlichen Zahlungstage sind im Vertrag festgelegt. Emil zahlt fünf Raten rechtzeitig und lässt den nächsten Zahlungstermin verstreichen.",
       steps: [
         {
           question: "Wer ist nach der Mitnahme Besitzer und wer Eigentümer?",
@@ -629,7 +634,7 @@ export const LB4: Lesson[] = [
             "Der Verkäufer liefert zuerst und wartet auf das Geld. Der Eigentumsvorbehalt sichert dieses Risiko: Zahlt Emil nicht, hat das Geschäft mehr als nur eine Geldforderung.",
         },
         {
-          question: "Darf das Geschäft den Fernseher sofort bei Emil abholen, weil er nicht mehr zahlt?",
+          question: "Kann das Geschäft den Fernseher nach der ersten ausgebliebenen Rate schon zurückverlangen?",
           options: [
             "Ja, denn der Fernseher gehört ihm noch, und der Eigentümer darf sich seine Sache zurückholen.",
             "Nein, es muss zuvor vom Vertrag zurücktreten; bei diesem Ratenkauf gelten dafür besondere Voraussetzungen.",
@@ -637,7 +642,7 @@ export const LB4: Lesson[] = [
           ],
           answer: 1,
           explanation:
-            "Aufgrund des Eigentumsvorbehalts kann der Verkäufer die Sache nur herausverlangen, wenn er vom Vertrag zurückgetreten ist (§ 449 Abs. 2 BGB). Bei Emils Ratenkauf mit Finanzierungskosten darf er erst zurücktreten, wenn Emil mit mindestens zwei Raten im Rückstand ist und eine zweiwöchige Frist erfolglos blieb (§ 508 BGB). Eigenmächtig nehmen darf er den Fernseher nicht.",
+            "55 Euro Rückstand reichen hier nicht. Bei zwölf Monaten Laufzeit braucht es mindestens 10 % von 660 Euro, also 66 Euro, und Verzug bei mindestens zwei aufeinanderfolgenden Raten. Zwei volle Raten ergeben 110 Euro. Hinzukommen muss eine erfolglose Zweiwochenfrist, bei deren Setzung der Händler die Forderung der ganzen Restschuld angekündigt hat (§§ 508, 498 BGB). Erst nach wirksamem Rücktritt kann er den Fernseher aufgrund des Vorbehalts herausverlangen.",
         },
         {
           question: "Wem gehört der Fernseher, wenn Emil alle zwölf Raten bezahlt hat?",
@@ -652,7 +657,7 @@ export const LB4: Lesson[] = [
         },
       ],
       verdict:
-        "Emil besitzt den Fernseher, das Geschäft bleibt Eigentümer, bis die letzte Rate bezahlt ist. Nach dem Zahlungsstopp kann das Geschäft den Fernseher erst nach einem Rücktritt zurückverlangen, bei diesem Ratenkauf nur unter den strengeren Voraussetzungen des § 508 BGB. Zahlt Emil alle Raten, gehört er ihm.",
+        "Emil besitzt den Fernseher, das Geschäft bleibt vorerst Eigentümer. Eine ausgebliebene Rate erfüllt hier weder das Kriterium der zwei aufeinanderfolgenden Raten noch die Grenze von 66 Euro. Selbst bei ausreichend Rückstand muss die Zweiwochenfrist mit Hinweis auf die Restschuld erfolglos ablaufen, bevor der Händler zurücktreten und den Fernseher herausverlangen kann. Zahlt Emil vollständig, geht das Eigentum auf ihn über.",
     },
     tasks: {
       1: {
@@ -668,14 +673,14 @@ export const LB4: Lesson[] = [
       },
       2: {
         prompt:
-          "Ein Käufer, der ein Notebook auf Raten mit Eigentumsvorbehalt gekauft hat, sagt: „Ich habe es doch, also gehört es mir, und ich kann es verkaufen.“ Beurteile die Aussage und erkläre, was der Eigentumsvorbehalt dem Verkäufer und was er dem Käufer bringt.",
-        hints: ["Wer ist Besitzer und wer Eigentümer, solange nicht alle Raten gezahlt sind?", "Welches Risiko deckt der Eigentumsvorbehalt für den Verkäufer ab?"],
+          "Ein Käufer, der ein Notebook auf Raten mit Eigentumsvorbehalt gekauft hat, sagt: „Ich habe es doch, also gehört es mir, und ich kann es verkaufen.“ Beurteile die Aussage und erkläre die Vorteile für beide Seiten. Prüfe dann, ob bei einem Ratenkauf mit Finanzierungskosten eine einzige ausgebliebene Rate für den Rücktritt reicht.",
+        hints: ["Wer ist Besitzer und wer Eigentümer, solange nicht alle Raten gezahlt sind?", "Prüfe für den Rücktritt die Anzahl der Raten, die Höhe des Rückstands und die Frist."],
         model:
-          "Die Aussage stimmt nicht. Der Käufer hat das Notebook und ist damit Besitzer, aber wegen des Eigentumsvorbehalts bleibt der Verkäufer Eigentümer, bis die letzte Rate bezahlt ist. Der Käufer darf es nutzen, sollte es aber nicht verkaufen oder verschenken, denn er ist noch nicht Eigentümer. Der Verkäufer ist durch den Vorbehalt geschützt, falls der Käufer nicht zahlt: Er kann nach einem Rücktritt die Ware zurückverlangen. Der Käufer gewinnt dafür den Vorteil, das Gerät sofort zu nutzen und über Monate zu zahlen.",
+          "Die Aussage stimmt nicht. Der Käufer hat das Notebook und ist damit Besitzer, aber wegen des Eigentumsvorbehalts bleibt der Verkäufer Eigentümer, bis die letzte Rate bezahlt ist. Der Käufer darf es nutzen, sollte es aber nicht verkaufen oder verschenken, denn er ist noch nicht Eigentümer. Der Verkäufer kann die Ware nach wirksamem Rücktritt herausverlangen. Der Käufer kann sie schon vorher nutzen. Eine ausgebliebene Rate genügt beim entgeltlichen Ratenkauf eines Verbrauchers nicht. Der Käufer muss bei zwei aufeinanderfolgenden Raten oder mehr ganz oder teilweise in Verzug sein. Der Rückstand muss 10 % des Gesamtbetrags erreichen, bei mehr als drei Jahren Laufzeit 5 %. Auch die Zweiwochenfrist mit Hinweis auf die Forderung der ganzen Restschuld muss erfolglos abgelaufen sein.",
         criteria: [
           "Beurteilt die Aussage und trennt dabei Besitz und Eigentum",
           "Erklärt den Schutz des Verkäufers durch den Vorbehalt",
-          "Nennt einen Vorteil oder eine Folge für den Käufer",
+          "Nennt einen Vorteil für den Käufer und prüft Verzug, Mindestbetrag und Frist für den Rücktritt",
         ],
       },
     },

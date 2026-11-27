@@ -48,6 +48,17 @@ describe("lesson contract", () => {
       else expect(l.lehrplan, l.id).toContain("Bilingualer Sachfachunterricht");
     }
   });
+  it("uses decimal commas in German lesson text", () => {
+    for (const lesson of LESSONS.filter((entry) => !entry.optional)) {
+      for (const text of texts(lesson)) {
+        // A period is allowed in German clock times with a dot and in grouped integers.
+        const withoutClockTimes = text.replace(/\b(?:[01]?\d|2[0-3])\.[0-5]\d Uhr\b/g, "");
+        const withoutGroupedIntegers = withoutClockTimes.replace(/\b[1-9]\d{0,2}(?:\.\d{3})+(?:,\d+)?\b(?![.,]\d)/g, "");
+        expect(withoutGroupedIntegers, `${lesson.id}: ${text}`).not.toMatch(/\d\.\d/);
+      }
+    }
+  });
+
   it("lists the lessons in Lernbereich order", () => {
     const order = LESSONS.map((l) => l.lb);
     expect(order).toEqual([...order].sort((a, b) => a - b));

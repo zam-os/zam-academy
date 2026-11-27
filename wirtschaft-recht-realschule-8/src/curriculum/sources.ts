@@ -46,10 +46,10 @@ export const SOURCES = [
   { id: "sperrnotruf", label: "Sperr-Notruf 116 116", url: "https://www.sperr-notruf.de/" },
   { id: "eu", label: "European Union · EU countries", url: "https://european-union.europa.eu/principles-countries-history/eu-countries_en" },
   { id: "uk", label: "GOV.UK · Online and distance selling", url: "https://www.gov.uk/online-and-distance-selling-for-businesses" },
-  { id: "ftc", label: "Federal Trade Commission · Online shopping", url: "https://consumer.ftc.gov/articles/online-shopping?sf2589138=1" },
+  { id: "us-cooling-off", label: "U.S. Cooling-Off Rule · 16 CFR Part 429", url: "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-D/part-429" },
   { id: "uk-drive", label: "GOV.UK · Driving lessons and learning to drive", url: "https://www.gov.uk/driving-lessons-learning-to-drive" },
   { id: "ny-drive", label: "New York DMV · Learner permit", url: "https://dmv.ny.gov/new-york-state-drivers-manual-and-practice-tests/chapter-1-driver-licenses" },
-  { id: "fda", label: "U.S. Food and Drug Administration · Tobacco 21", url: "https://www.fda.gov/tobacco-products/retail-sales-tobacco-products/tobacco-21" },
+  { id: "us-tobacco-sale", label: "United States Code · Minimum age for retail tobacco sales", url: "https://uscode.house.gov/us/usc/t21/s387f/" },
   { id: "uk-smoke", label: "UK legislation · Smoking in enclosed public places in England", url: "https://www.legislation.gov.uk/ukpga/2006/28/part/1/chapter/1" },
   { id: "ny-smoke", label: "New York State Department of Health · Clean Indoor Air Act", url: "https://www.health.ny.gov/prevention/tobacco_control/clean_indoor_air_act/" },
 ];

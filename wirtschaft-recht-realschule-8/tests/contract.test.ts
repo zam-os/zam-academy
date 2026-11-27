@@ -113,8 +113,9 @@ describe("public learning contract", () => {
 });
 
 describe("curriculum coverage", () => {
-  it("accounts for all 33 competence expectations of the Fachlehrplan", () => {
+  it("accounts for all 35 competence expectations, including two optional ones", () => {
     expect(coverage.rows).toHaveLength(33);
+    expect(coverage.optional_rows).toHaveLength(2);
     const perUnit: Record<string, number> = {};
     for (const row of coverage.rows) perUnit[row.unit] = (perUnit[row.unit] ?? 0) + 1;
     expect(perUnit).toEqual({ "1": 7, "2": 5, "3": 5, "4.1": 3, "4.2": 6, "5": 7 });
