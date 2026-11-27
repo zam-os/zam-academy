@@ -1,7 +1,7 @@
 {
   "$schema": "https://zam.app/schemas/v1/kvt-tile.json",
   "tile_id": "zam-academy:wirtschaft-recht-realschule-8",
-  "version": "2026.11.1",
+  "version": "2026.11.2",
   "title": "Wirtschaft und Recht 8 Realschule (ZAM Academy)",
   "description": "Wirtschaft und Recht 8 in Bayern für Zweig II. 39 Kernlektionen und 5 optionale englische Lektionen zu Gütermarkt, Verbraucherschutz, Rechtsordnung, Privatrecht und Berufsorientierung.",
   "publisher": "ZAM Academy",
@@ -76,6 +76,9 @@
               "text": "Man kauft möglichst wenig und verzichtet auf alles, was nicht lebensnotwendig ist.",
               "reason": "Das ökonomische Prinzip verlangt keinen Verzicht um jeden Preis, sondern ein günstiges Verhältnis von Aufwand und Ertrag."
             }
+          ],
+          "replaces": [
+            "01K4W8K0000000000000000J01"
           ]
         },
         {
@@ -1812,7 +1815,10 @@
           "id": "01M8E09D00CGBC0NZF6C07Z94W",
           "language": "de",
           "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=re-lebensalter",
-          "materiality": "material"
+          "materiality": "material",
+          "replaces": [
+            "01K4W8K0000000000000000J05"
+          ]
         },
         {
           "id": "01M8E09D00TM23X5DCJ9X1PNR5",
@@ -1843,7 +1849,10 @@
           "id": "01M8E09D00YC8FB053GGWVJ0AM",
           "language": "de",
           "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=re-lebensalter",
-          "materiality": "material"
+          "materiality": "material",
+          "replaces": [
+            "01K4W8K0000000000000000J07"
+          ]
         }
       ]
     },
@@ -4007,6 +4016,20 @@
           ]
         }
       ]
+    }
+  ],
+  "retired_items": [
+    {
+      "id": "01K4W8K0000000000000000J02",
+      "reason": "Multiple retrievals are split across lessons. The old answer also equates demand with a completed purchase."
+    },
+    {
+      "id": "01K4W8K0000000000000000J06",
+      "reason": "Several concepts and a case are split into separate exercises. The old response also generalizes the consent rule."
+    },
+    {
+      "id": "01K4W8K0000000000000000J08",
+      "reason": "Splits a mixed prompt and corrects the claim that § 110 BGB requires payment in cash."
     }
   ]
 }

@@ -12,7 +12,7 @@ An offline-first ZAM Academy course for Bavaria's Realschule, Wahlpflichtfächer
 
 Each lesson includes a worked example, a quick check, an interactive classification or sequencing workshop, a case and two levels of written practice. Seven interactive models include a two-sector circular flow, a unit-price comparison, legal decision flows and a career decision matrix. Learners compare their written responses with examples and criteria. Progress, written answers and practice notes stay in the browser profile on the device. Learners using a shared account can choose “Fortschritt zurücksetzen” under “Quellen & Praxis” to delete the package’s progress and texts. Source links open on request.
 
-See [curriculum coverage](coverage.json) for the 33 required and two optional competency expectations, and the [legacy card review](../docs/wirtschaft-recht-8-bestandsabgleich.md) for the proposed matching. The practical activity takes place outside the app.
+See [curriculum coverage](coverage.json) for the 33 required and two optional competency expectations, and the [legacy card review](../docs/wirtschaft-recht-8-bestandsabgleich.md) for the approved legacy card mapping. The practical activity takes place outside the app.
 
 ## Build and test
 

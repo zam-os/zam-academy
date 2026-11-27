@@ -178,12 +178,23 @@ describe("takeover of the old partial cell", () => {
     }
     expect(mapping.rows.filter((r) => r.category === "A")).toHaveLength(3);
   });
-  it("records the mapping as a proposal without activating replacements or retirements", () => {
-    expect(mapping.status).toBe("proposal-only");
-    expect(mapping.approved).toBeNull();
-    expect(cell).not.toHaveProperty("retired_items");
-    expect(mapping.rows.filter((r) => r.action === "keep-active")).toHaveLength(2);
-    expect(mapping.rows.filter((r) => r.action === "propose-retire-after-approval")).toHaveLength(3);
-    for (const item of ITEMS) expect(item).not.toHaveProperty("replaces");
+  it("activates exactly the replacements and retirements approved by Thomas", () => {
+    expect(mapping.status).toBe("approved");
+    expect(mapping.approved).toBe("2026-11-27");
+    expect(mapping.source).toContain("Vorschlag angenommen - bitte als Admin mergen");
+    const replaced = mapping.rows.filter((row) => row.action === "replace");
+    const retired = mapping.rows.filter((row) => row.action === "retire");
+    const kept = mapping.rows.filter((row) => row.action === "keep-active");
+    expect(replaced).toHaveLength(3);
+    expect(retired).toHaveLength(3);
+    expect(kept).toHaveLength(2);
+
+    const declarations = Object.fromEntries(
+      ITEMS.flatMap((item) => "replaces" in item ? [[item.slug, item.replaces]] : []),
+    );
+    expect(declarations).toEqual(Object.fromEntries(
+      replaced.map((row) => [row.academy_slug, [row.de_by_id]]),
+    ));
+    expect(cell.retired_items).toEqual(retired.map((row) => ({ id: row.de_by_id, reason: row.reason })));
   });
 });
