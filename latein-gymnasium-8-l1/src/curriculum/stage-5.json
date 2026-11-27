@@ -3,19 +3,19 @@
 		"id": "l8-kaiserzeit-epochen",
 		"stage": "kaiserzeit",
 		"title": "Frühe, mittlere & späte Kaiserzeit",
-		"skill": "Zentrale Epochen der römischen Kaiserzeit (14–476 n. Chr.), den „Caesarenwahn“ und historische Schlüsselgestalten einordnen",
+		"skill": "Zentrale Epochen der römischen Kaiserzeit (ab 27 v. Chr.; Schwerpunkt Kl. 8: 14–476 n. Chr.), das Phänomen des sogenannten „Caesarenwahns“ und Schlüsselgestalten einordnen",
 		"bindings": ["L8-01", "L8-25", "L8-26"],
 		"paragraphs": [
-			"Nach der späten Republik und der Zeit des Augustus (Klasse 7) beginnt mit Tiberius 14 n. Chr. die römische Kaiserzeit, die fast ein halbes Jahrtausend dauert. In der frühen Kaiserzeit wechseln sich große Bauleistungen und wirtschaftliche Blüte mit schroffer Willkürherrschaft ab: Kaiser wie Caligula oder Nero nutzen ihre fast unbegrenzte Macht rücksichtslos, sodass antike Geschichtsschreiber später vom sogenannten „Caesarenwahn“ sprechen.",
+			"Bereits mit dem Prinzipat des Augustus (27 v. Chr. – 14 n. Chr., Klasse 7) beginnt die römische Kaiserzeit; Klasse 8 knüpft nach seinem Tod bei Tiberius (14 n. Chr.) an. In der frühen Kaiserzeit wechseln sich große Bauleistungen und wirtschaftliche Blüte mit schroffer Willkürherrschaft ab: Kaiser wie Caligula oder Nero nutzen ihre Macht rücksichtslos – eine Erscheinung, für die antike Autoren wie Sueton und Tacitus drastische Beispiele schildern und die man heute oft mit dem modernen Begriff „Caesarenwahn“ zusammenfasst.",
 			"Unter den Adoptivkaisern (Nerva, Trajan, Hadrian, Antoninus Pius, Mark Aurel) erreicht das Imperium Romanum im zweiten Jahrhundert seine größte Ausdehnung und innere Stabilität. In der mittleren Kaiserzeit ab 235 n. Chr. erschüttern Bürgerkriege, rasch wechselnde Soldatenkaiser und Angriffe an den Grenzen das Reich, bevor Diokletian und Konstantin in der Spätantike (4./5. Jh.) tiefgreifende Reformen einleiten – bis zur Absetzung des letzten weströmischen Kaisers 476 n. Chr."
 		],
 		"materialLabel": "Lateinischer Lehrbuchtext zur frühen und mittleren Kaiserzeit",
 		"materialLanguage": "la",
-		"material": "Post mortem Augusti multi imperatores Romam rexerunt. Quidam eorum, ut Nero, nimia potestate corrupti crudeliter regnaverunt. Sed sub Traiano et Marco Aurelio imperium Romanum pacem et leges servandas curavit. Tertio autem saeculo bella civilia et hostes externi rem publicam graviter perturbaverunt.",
+		"material": "Post mortem Augusti multi imperatores Romam rexerunt. Quidam eorum, ut Nero, nimia potestate corrupti crudeliter regnaverunt. Sed sub Traiano et Marco Aurelio imperium Romanum pacem servandam et leges servandas curavit. Tertio autem saeculo bella civilia et hostes externi rem publicam graviter perturbaverunt.",
 		"sourceIds": ["lp", "lp-profil"],
 		"diagram": {
 			"kind": "kaiserzeit-timeline",
-			"title": "Epochenstrahl: Die römische Kaiserzeit (14–476 n. Chr.)",
+			"title": "Epochenstrahl: Die Kaiserzeit ab Tiberius (14–476 n. Chr.)",
 			"caption": "Klicke auf eine Epoche, um Dynastien, Schlüsselkaiser und politische Entwicklungen zu öffnen."
 		},
 		"quiz": {
@@ -44,11 +44,11 @@
 		"tasks": {
 			"1": {
 				"language": "de",
-				"prompt": "Übersetze den lateinischen Text des Materials (achte auf corruptī und das prädikative Gerundiv leges servandas) und ordne Nero, Trajan und die Soldatenkaiser zeitlich ein.",
-				"model": "Übersetzung: Nach dem Tod des Augustus regierten viele Kaiser Rom. Einige von ihnen, wie Nero, wurden durch übermäßige Macht verdorben und herrschten grausam. Aber unter Trajan und Mark Aurel sorgte das Römische Reich dafür, dass Frieden und Gesetze bewahrt werden mussten. Im dritten Jahrhundert jedoch erschütterten Bürgerkriege und äußere Feinde den Staat schwer.\nEinordnung: Nero (frühe Kaiserzeit, 54–68 n. Chr.), Trajan (Adoptivkaiser, 98–117 n. Chr.), Bürgerkriege der Soldatenkaiser (mittlere Kaiserzeit, 3. Jh.).",
+				"prompt": "Übersetze den lateinischen Text des Materials (achte auf corruptī und das prädikative Gerundiv nach curavit = ‚dafür sorgen, dass …‘) und ordne Nero, Trajan und die Soldatenkaiser zeitlich ein.",
+				"model": "Übersetzung: Nach dem Tod des Augustus regierten viele Kaiser Rom. Einige von ihnen, wie Nero, wurden durch übermäßige Macht verdorben und herrschten grausam. Aber unter Trajan und Mark Aurel sorgte das Römische Reich dafür, dass Frieden und Gesetze bewahrt wurden. Im dritten Jahrhundert jedoch erschütterten Bürgerkriege und äußere Feinde den Staat schwer.\nEinordnung: Nero (frühe Kaiserzeit, 54–68 n. Chr.), Trajan (Adoptivkaiser, 98–117 n. Chr.), Bürgerkriege der Soldatenkaiser (mittlere Kaiserzeit, 3. Jh.).",
 				"criteria": [
 					"Der lateinische Text ist vollständig und grammatisch sauber übersetzt.",
-					"quidam eorum (Partitivus) und leges servandas sind korrekt wiedergegeben.",
+					"quidam eorum (Partitivus) und pacem servandam et leges servandas curavit („sorgte dafür, dass …“) sind korrekt wiedergegeben.",
 					"Nero, Trajan und das 3. Jahrhundert sind den Epochen der Kaiserzeit zugeordnet."
 				]
 			},
@@ -64,7 +64,6 @@
 			}
 		},
 		"workshop": {
-			"kind": "imperial-eras",
 			"goals": [
 				{
 					"label": "Richtige Epoche für das Adoptivkaisertum wählen",
@@ -80,11 +79,11 @@
 				},
 				{
 					"label": "Wichtige Strukturreform der Spätantike einordnen",
-					"before": "Reichsteilung / Tetrarchie um 293 n. Chr. →",
+					"before": "Tetrarchie (Vierherrschaft) ab 293 n. Chr. →",
 					"after": "",
 					"options": ["Diokletian", "Nero", "Tiberius"],
 					"answer": "Diokletian",
-					"explanation": "Diokletian teilte die Verantwortung auf mehrere Herrscher (Tetrarchie), um das Riesenreich zu stabilisieren."
+					"explanation": "Diokletian richtete 293 n. Chr. eine Vierherrschaft (zwei Augusti, zwei Caesares) im Gesamtreich ein; die endgültige Teilung in West- und Ostrom erfolgte erst 395 n. Chr."
 				},
 				{
 					"label": "Historischen Wendepunkt 476 n. Chr. benennen",
@@ -166,7 +165,6 @@
 			}
 		},
 		"workshop": {
-			"kind": "limes-exchange",
 			"goals": [
 				{
 					"label": "Deutsche Lehnwort-Brücke aus römischer Baukunst ableiten",
@@ -273,7 +271,6 @@
 			}
 		},
 		"workshop": {
-			"kind": "christianity-rome",
 			"goals": [
 				{
 					"label": "Konstantins Schritt 313 n. Chr. präzise benennen",
@@ -321,12 +318,12 @@
 		"skill": "Roms pragmatischen Umgang mit fremden Religionen (interpretatio Romana) und antike Weltbilder vorurteilsfrei vergleichen",
 		"bindings": ["L8-01", "L8-38", "L8-39", "L8-41"],
 		"paragraphs": [
-			"Im Römischen Reich trafen Dutzende Kulturen aufeinander – von Gallien und Germanien bis Ägypten und Syrien. Statt alle fremden Götter abzuschaffen, gingen die Römer meist pragmatisch vor: Mit der sogenannten interpretatio Romana („römische Deutung“) setzten sie einheimische Gottheiten mit eigenen Göttern gleich. Verehrten Kelten oder Germanen einen Gewitter- und Himmelsgott, nannten Römer ihn Jupiter; Kriegsgötter wurden Mars, Handels- und Reisegötter Merkur.",
+			"Im Römischen Reich trafen Dutzende Kulturen aufeinander – von Gallien und Germanien bis Ägypten und Syrien. Statt alle fremden Götter abzuschaffen, gingen die Römer meist pragmatisch vor: Mit der sogenannten interpretatio Romana („römische Deutung“) setzten sie einheimische Gottheiten mit eigenen Göttern gleich. Tacitus (Germania 9) nennt Merkur, Herkules und Mars; spätere Inschriften und die deutschen Wochentagsnamen (Donnerstag ← dies Iovis) setzten Donar mit dem Gewittergott Jupiter gleich.",
 			"Solange Anhänger fremder Kulte den Frieden und den Staatskult nicht störten, durften in Garnisonen am Limes und im Hafen von Ostia oder Rom Weihinschriften nebeneinander für Jupiter, Epona, Mithras oder Isis stehen. Beim Vergleich dieses polytheistischen Pragmatismus mit dem Judentum, dem frühen Christentum und modernen Religionen zeigt sich eine bis heute wichtige Frage: Wie lassen sich Vielfalt und gemeinsame Grundregeln miteinander verbinden?"
 		],
 		"materialLabel": "Tacitus über germanische Kulte und Weiheinschriften aus den Provinzen",
 		"materialLanguage": "la",
-		"material": "Romani deos gentium externarum saepe cum suis diis comparabant: ita apud Germanos Mercurius praecipue colebatur, et Martem ac Iovem venerabantur. Haec consuetudo interpretatio Romana appellatur, quia Romani nomen Latinum deo alieno dabant, dummodo pax publica servaretur.",
+		"material": "Romani deos gentium externarum saepe cum suis diis comparabant: ita apud Germanos Mercurius praecipue colebatur, atque Herculem ac Martem venerabantur. Haec consuetudo interpretatio Romana appellatur, quia Romani nomen Latinum deo alieno dabant, dummodo pax publica servaretur.",
 		"sourceIds": ["lp", "limesmuseum"],
 		"diagram": {
 			"kind": "myth-values",
@@ -337,8 +334,8 @@
 					"id": "ri-interp",
 					"label": "1 · interpretatio Romana",
 					"badge": "Gleichsetzung",
-					"latin": "Wodan → Mercurius · Donar → Iuppiter",
-					"detail": "Fremde Götter erhielten auf Inschriften einen römischen Namen oder Doppelnamen (z. B. Apollo Grannus in Bayern)."
+					"latin": "Wodan → Mercurius · Mars & Hercules",
+					"detail": "Tacitus (Germania 9) nennt Merkur, Herkules und Mars; später erhielt u. a. Donar den Namen Jupiter (dies Iovis), und in Bayern entstand etwa Apollo Grannus."
 				},
 				{
 					"id": "ri-grenze",
@@ -358,7 +355,7 @@
 		},
 		"quiz": {
 			"optionLanguage": "de",
-			"question": "Was versteht man in der römischen Religionsgeschichte unter „interpretatio Romana“?",
+			"question": "Was verstehst du in der römischen Religionsgeschichte unter „interpretatio Romana“?",
 			"answer": "die Gleichsetzung fremder Gottheiten mit passenden römischen Göttern",
 			"wrong": [
 				"die Übersetzung des Zwölftafelgesetzes ins Griechische",
@@ -383,7 +380,7 @@
 			"1": {
 				"language": "de",
 				"prompt": "Übersetze den lateinischen Text des Materials und erkläre, welche Bedingung der letzte Nebensatz „dummodo pax publica servaretur“ („sofern nur …“) nennt.",
-				"model": "Übersetzung: Die Römer verglichen die Götter fremder Völker oft mit ihren eigenen Göttern: So wurde bei den Germanen besonders Merkur verehrt, und sie verehrten Mars und Jupiter. Diese Gewohnheit wird interpretatio Romana genannt, weil die Römer einem fremden Gott einen lateinischen Namen gaben, sofern nur der öffentliche Frieden bewahrt wurde.\nBedingung: Religiöse Vielfalt wurde geduldet, solange keine Aufstände drohten und die Reichsordnung anerkannt blieb.",
+				"model": "Übersetzung: Die Römer verglichen die Götter fremder Völker oft mit ihren eigenen Göttern: So wurde bei den Germanen besonders Merkur verehrt, und sie verehrten Herkules und Mars. Diese Gewohnheit wird interpretatio Romana genannt, weil die Römer einem fremden Gott einen lateinischen Namen gaben, sofern nur der öffentliche Frieden bewahrt wurde.\nBedingung: Religiöse Vielfalt wurde geduldet, solange keine Aufstände drohten und die Reichsordnung anerkannt blieb.",
 				"criteria": [
 					"Der lateinische Text ist sprachlich genau übersetzt.",
 					"dummodo + Konj. Impf. servaretur ist als Bedingung getroffen.",
@@ -402,7 +399,6 @@
 			}
 		},
 		"workshop": {
-			"kind": "interpretatio-romana",
 			"goals": [
 				{
 					"label": "Prinzip der interpretatio Romana exakt definieren",
@@ -509,7 +505,6 @@
 			}
 		},
 		"workshop": {
-			"kind": "latin-europe",
 			"goals": [
 				{
 					"label": "Leistung der Karolingischen Renaissance bestimmen",

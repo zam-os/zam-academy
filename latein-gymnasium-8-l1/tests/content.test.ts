@@ -55,6 +55,21 @@ describe("Grade 8 first-language Latin teaching contract", () => {
 			expect(l.paragraphs.join(" ").length).toBeGreaterThan(400);
 			expect(l.material.length).toBeGreaterThan(75);
 			expect(["la", "de"]).toContain(l.materialLanguage);
+			expect([
+				"paenultima-lab",
+				"verb-lab",
+				"gerundiv-lab",
+				"nci-lab",
+				"modus-lab",
+				"kaiserzeit-timeline",
+				"limes-map",
+				"recht-lab",
+				"philo-lab",
+				"morph-lab",
+				"myth-values",
+				"syntax-tree",
+			]).toContain(l.diagram.kind);
+			expect(l.workshop).not.toHaveProperty("kind");
 			expect(l.diagram.title.length).toBeGreaterThan(5);
 			expect(l.diagram.caption.length).toBeGreaterThan(10);
 			if (l.diagram.parts) {
@@ -305,5 +320,40 @@ describe("ZAM content and identifier contracts", () => {
 		expect(limes.paragraphs.join(" ")).toContain("Obergermanisch-Raetische Limes");
 		const philo = findLesson("l8-epikur-stoa")!;
 		expect(philo.paragraphs.join(" ")).toContain("Ataraxia");
+		const kaiser = findLesson("l8-kaiserzeit-epochen")!;
+		expect(kaiser.paragraphs.join(" ")).toContain("27 v. Chr.");
+		expect(kaiser.material).toContain("pacem servandam et leges servandas curavit");
+		expect(kaiser.tasks[1].model).not.toContain("bewahrt werden mussten");
+		const religion = findLesson("l8-religion-interpretatio")!;
+		expect(religion.material).toContain("Herculem ac Martem");
+		expect(religion.material).not.toContain("Martem ac Iovem");
+		const recht = findLesson("l8-werte-iustitia-humanitas")!;
+		expect(recht.paragraphs.join(" ")).toContain("De officiis");
+		expect(recht.paragraphs.join(" ")).not.toContain("Cicero prägte den berühmten Hinweis");
+		const trad = findLesson("l8-antike-tradition-europa")!;
+		expect(trad.practice[0].prompt).not.toContain("griechisch-lateinische");
+		expect(trad.practice[0].feedback).toContain("19. Jh.");
+		const sokrates = findLesson("l8-sokrates-fragen")!;
+		expect(sokrates.material).toContain("iniuriam pati malebat quam facere");
+		expect(sokrates.material).not.toContain("nec iniuriam facere");
+		const seneca = findLesson("l8-cicero-seneca")!;
+		expect(seneca.paragraphs.join(" ")).toContain("Non vitae, sed scholae discimus");
+		expect(seneca.paragraphs.join(" ")).toContain("spätere Nachwelt");
+	});
+
+	it("addresses the learner directly with du instead of generic man in prompts", () => {
+		const stripQuoted = (text: string) => text.replace(/„[^“]*“/g, "");
+		for (const l of LESSONS) {
+			expect(stripQuoted(l.quiz.question)).not.toMatch(/\bman\b/i);
+			for (const p of l.practice) {
+				expect(stripQuoted(p.prompt)).not.toMatch(/\bman\b/i);
+			}
+			for (const t of Object.values(l.tasks)) {
+				expect(stripQuoted(t.prompt)).not.toMatch(/\bman\b/i);
+			}
+			for (const g of l.workshop.goals) {
+				expect(stripQuoted(g.label)).not.toMatch(/\bman\b/i);
+			}
+		}
 	});
 });

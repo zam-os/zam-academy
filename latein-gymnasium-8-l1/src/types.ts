@@ -68,7 +68,6 @@ export interface WorkshopGoal {
 }
 
 export interface Workshop {
-	kind: string;
 	goals: [WorkshopGoal, WorkshopGoal, WorkshopGoal];
 }
 

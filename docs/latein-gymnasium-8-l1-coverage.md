@@ -15,7 +15,7 @@ Geprüft am 27. November 2026 gegen den [offiziellen Fachlehrplan Latein 8 (1. F
 | --- | ---: | --- |
 | 1 · Wortschatz, Wortbildung & Inschriften | 5 | Aufbauwortschatz & Pänultima-Betonung, Wortfelder & Wendungen, Wortbildung (Prä-/Suffixe), Sprachbrücken in Europa, Inschriften & Kürzel |
 | 2 · Pronomina & besondere Verben | 5 | *quīdam*/*quisque*/verneinte Indefinita, verallgemeinernde Relativa & Korrelativa, *i*- & kons. Deponentien, Semideponentien & Perfektopräsentien, *fierī* |
-| 3 · Gerundiv & Dativ des Urhebers | 5 | Gerundium vs. Gerundiv, attributives Gerundiv, prädikatives Gerundiv mit *esse*, *datīvus auctōris* & objektiver Genitiv, komplexe Gerundivübersetzung |
+| 3 · Gerundiv & Dativ des Urhebers | 5 | Gerundium vs. Gerundiv, attributives Gerundiv, prädikatives Gerundiv mit *esse*, *datīvus auctōris* & Genitiv des geteilten Ganzen (*genetīvus partītīvus*), komplexe Gerundivübersetzung |
 | 4 · NcI, Konjunktiv & Relativsätze | 5 | NcI (Aufbau & Triggerverben), NcI-Übersetzungsstrategien, Deliberativ & Potentialis (Abgrenzung zu Kl. 7), konjunktivische Relativsätze (final/kausal/konsekutiv/konzessiv), verschränkte Relativsätze & *quod*-Sätze |
 | 5 · Kaiserzeit, Limes, Christentum & Europa | 5 | Prinzipat, Hochkaiserzeit & Spätantike, Limes & Germanen (Obergermanisch-Raetischer & Donaulimes), Rom & die Christen, *interpretātiō Rōmāna*, Europas Latein |
 | 6 · Römisches Recht & Werte | 5 | Grundzüge des römischen Rechtswesens, lateinische Rechtssprüche heute, *iūstitia* & *hūmānitās*, Rechtsfallstudie, antike Rechtstradition in Europa |

@@ -155,7 +155,7 @@ export function verbModel(kind: VerbKind): VerbModelResult {
 			latin: "Vir iustus consul fit; pax tandem facta est.",
 			german:
 				"Ein gerechter Mann wird Konsul; schließlich ist Frieden geschlossen worden.",
-			hint: "Im Präsensstamm stehen aktive Endungen mit passivischer bzw. Vorgangs-Bedeutung (fio, fis, fit, fimus, fitis, fiunt); Konj. Impf. lautet fierem.",
+			hint: "Im Präsensstamm stehen aktive Endungen mit passivischer bzw. Vorgangs-Bedeutung (fīō, fīs, fĭt, fīmus, fītis, fīunt – langes ī außer in fit und vor -er- wie fĭerī, fĭerem).",
 		},
 	};
 	return table[kind];
@@ -482,7 +482,7 @@ export const KAISERZEIT_PHASES: TimelinePhase[] = [
 		title: "Frühe Kaiserzeit",
 		badge: "14–96 n. Chr.",
 		detail:
-			"Nach Augustus regieren Julisch-Claudier (Tiberius, Caligula, Claudius, Nero) und Flavier (Vespasian, Titus, Domitian). Übermacht Einzelner führt bei Caligula oder Nero oft zum sogenannten „Caesarenwahn“.",
+			"Nach Augustus (Prinzipat ab 27 v. Chr.) regieren Julisch-Claudier (Tiberius, Caligula, Claudius, Nero) und Flavier (Vespasian, Titus, Domitian). Die von Sueton und Tacitus geschilderte Willkür einzelner Kaiser bezeichnet man heute oft als „Caesarenwahn“.",
 	},
 	{
 		id: "adoptiv",
@@ -496,7 +496,7 @@ export const KAISERZEIT_PHASES: TimelinePhase[] = [
 		title: "Reichskrise & Reform",
 		badge: "235–305 n. Chr.",
 		detail:
-			"Soldatenkaiser, Bürgerkriege und Einfälle an Rhein und Donau erschüttern das Imperium; Diokletian stabilisiert es durch Teilung in West- und Ostreich (Tetrarchie).",
+			"Soldatenkaiser, Bürgerkriege und Einfälle an Rhein und Donau erschüttern das Imperium; Diokletian stabilisiert das Gesamtreich ab 293 n. Chr. durch eine Vierherrschaft (Tetrarchie: zwei Augusti und zwei Caesares).",
 	},
 	{
 		id: "spaet",
@@ -701,7 +701,7 @@ export const RECHT_CASES: RechtCase[] = [
 		maxim: "Audiatur et altera pars",
 		german: "Man höre auch die andere Seite",
 		romanOrigin:
-			"Römisches Prozessprinzip vor dem Prätor und bekannt aus Senecas Medea.",
+			"Römisches Prozessprinzip vor dem Prätor; dem Gedanken nach schon bei Seneca (Medea 199 f.: „parte inaudita altera“), in dieser knappen Formel später fest geprägt.",
 		modernCase:
 			"In jedem Gerichts- oder Schulordnungsverfahren erhält nicht nur der Kläger, sondern auch der Betroffene das Wort.",
 		principle: "Anspruch auf rechtliches Gehör (Art. 103 Abs. 1 GG)",
@@ -1121,7 +1121,7 @@ function renderLimesMap(lesson: Lesson): string {
 		<rect x="16" y="16" width="608" height="288" rx="12" class="land"/>
 		<path d="M104 34 L104 72 L162 84 L208 112 L248 170 L320 156 L378 174 L596 174 V302 H18 V34 Z" class="province-zone"/>
 		<path class="river" d="M98 28 Q106 86 122 124 T112 220 L92 292"/>
-		<path class="river" d="M122 124 Q188 116 266 102"/>
+		<path class="river" d="M122 124 Q162 117 192 112"/>
 		<path class="river" d="M148 228 Q232 210 318 184 T390 176 Q456 188 518 204 L604 224"/>
 		<path class="limes-wall" d="M106 72 L162 84 L214 114 L248 170 L320 156 L378 174"/>
 		<path class="trade-arrow" d="M294 238 L248 170 M294 238 L390 176 M162 84 L210 46"/>
@@ -1130,7 +1130,7 @@ function renderLimesMap(lesson: Lesson): string {
 		<text x="366" y="284" font-size="12" font-weight="700" class="svg-muted">Raetia</text>
 		<text x="42" y="216" font-size="11" font-style="italic" class="svg-muted">Rhenus</text>
 		<text x="536" y="246" font-size="11" font-style="italic" class="svg-muted">Danubius (Donau)</text>
-		<text x="246" y="108" font-size="11" font-weight="700" class="svg-accent">Obergerm.-Raet. Limes</text>
+		<text x="232" y="135" text-anchor="middle" font-size="10.5" font-weight="700" class="svg-accent" style="paint-order:stroke;stroke:var(--surface);stroke-width:4px"><tspan x="232" dy="0">Obergerm.-Raet.</tspan><tspan x="232" dy="12">Limes</tspan></text>
 		${LIMES_PLACES.map((p, i) => {
 			const labelX = p.x + p.labelDx;
 			const labelY = p.y + p.labelDy;

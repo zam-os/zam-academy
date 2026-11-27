@@ -227,7 +227,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Latein 6 Gymnasium (2. FS): cd latein-gymnasium-6-l2 (dev server on :5284)
 # Latein 7 Gymnasium (1. FS): cd latein-gymnasium-7-l1 (dev server on :5287)
 # Latein 7 Gymnasium (2. FS): cd latein-gymnasium-7-l2 (dev server on :5289)
-# Latein 8 Gymnasium (1. FS): cd latein-gymnasium-8-l1 (dev server on :5294)
+# Latein 8 Gymnasium (1. FS): cd latein-gymnasium-8-l1 (dev server on :5295)
 # English 6 Gymnasium (2. FS): cd englisch-2fs-gymnasium-6 (dev server on :5281)
 # English 7 Gymnasium (second foreign language): cd englisch-2fs-gymnasium-7 (dev server on :5286)
 # French 6 Gymnasium (2. FS): cd franzoesisch-2fs-gymnasium-6 (dev server on :5282)

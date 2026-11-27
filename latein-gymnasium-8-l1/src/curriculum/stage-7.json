@@ -64,7 +64,6 @@
 			}
 		},
 		"workshop": {
-			"kind": "presocratics",
 			"goals": [
 				{
 					"label": "Urprinzip (arche) von Thales von Milet bestimmen",
@@ -109,7 +108,7 @@
 		],
 		"materialLabel": "Lateinische Texte über die Methode und Haltung des Sokrates",
 		"materialLanguage": "la",
-		"material": "Socrates primus philosophiam e caelo devocavit et in urbibus collocavit, ut homines de vita et moribus quaererent. Saepe cives interrogabat, quid esset iustitia aut virtus. Dicebat enim se hoc unum scire, quod nihil sciret; nec iniuriam facere malebat quam pati.",
+		"material": "Socrates primus philosophiam e caelo devocavit et in urbibus collocavit, ut homines de vita et moribus quaererent. Saepe cives interrogabat, quid esset iustitia aut virtus. Dicebat enim se hoc unum scire, quod nihil sciret; et iniuriam pati malebat quam facere.",
 		"sourceIds": ["lp"],
 		"diagram": {
 			"kind": "philo-lab",
@@ -143,7 +142,7 @@
 		"tasks": {
 			"1": {
 				"language": "de",
-				"prompt": "Übersetze den lateinischen Text des Materials (achte auf den letzten Vergleich nec … malebat … quam … mit Infinitiv) und erkläre den paradoxen Satz „se hoc unum scire, quod nihil sciret“.",
+				"prompt": "Übersetze den lateinischen Text des Materials (achte auf den letzten Vergleich malebat … quam … mit Infinitiv) und erkläre den paradoxen Satz „se hoc unum scire, quod nihil sciret“.",
 				"model": "Übersetzung: Sokrates rief als Erster die Philosophie vom Himmel herab und siedelte sie in den Städten an, damit die Menschen über das Leben und die Sitten fragten. Oft befragte er die Bürger, was Gerechtigkeit oder Tugend sei. Er sagte nämlich, er wisse nur dies eine, dass er nichts wisse; und er wollte lieber Unrecht erleiden als Unrecht tun.\nErklärung: Wer sich einbildet, schon alles zu wissen, lernt nichts Neues dazu. Erst wer seine eigenen Grenzen ehrlich erkennt, prüft gründlich weiter.",
 				"criteria": [
 					"ut … quaererent, indirekte Frage quid esset und der AcI se scire sind exakt übersetzt.",
@@ -163,7 +162,6 @@
 			}
 		},
 		"workshop": {
-			"kind": "socrates-ethics",
 			"goals": [
 				{
 					"label": "Themenwechsel durch Sokrates benennen",
@@ -270,7 +268,6 @@
 			}
 		},
 		"workshop": {
-			"kind": "epicurus-stoa",
 			"goals": [
 				{
 					"label": "Echtes Verständnis der epikureischen Lustabwägung wählen",
@@ -319,7 +316,7 @@
 		"bindings": ["L8-01", "L8-32", "L8-33", "L8-34", "L8-36", "L8-37", "L8-39"],
 		"paragraphs": [
 			"Lange Zeit meinten viele Römer, Philosophie sei bloß nutzlose griechische Spielerei. Erst Marcus Tullius Cicero (1. Jh. v. Chr.) und Lucius Annaeus Seneca (1. Jh. n. Chr.) zeigten eindrucksvoll, wie praktisch Philosophie für Politik, Recht und Alltagsleben ist. Cicero übersetzte zentrale griechische Begriffe ins Lateinische – Wörter wie humanitas, moralis, qualitas und conscientia (Gewissen) existieren in europäischen Sprachen überhaupt erst durch seine Schriften!",
-			"Seneca, Erzieher und Berater des jungen Kaisers Nero, prägte die römische Stoa vor allem durch seine „Briefe an Lucilius“ (Epistulae morales). Darin fragt er ganz persönlich: Wie nutze ich meine Zeit sinnvoll, statt sie zu verschwenden? Warum zählen Bildung und Menschlichkeit mehr als Herkunft? Seine Mahnung „Non scholae, sed vitae discimus“ entstand als Zuspitzung seines Briefes über schulische Wissenshuberei gegenüber echter Lebensweisheit."
+			"Seneca, Erzieher und Berater des jungen Kaisers Nero, prägte die römische Stoa vor allem durch seine „Briefe an Lucilius“ (Epistulae morales). Darin fragt er ganz persönlich: Wie nutze ich meine Zeit sinnvoll, statt sie zu verschwenden? Warum zählen Bildung und Menschlichkeit mehr als Herkunft? In Brief 106,12 klagt er zugespitzt: „Non vitae, sed scholae discimus“ („Nicht für das Leben, sondern für die Schule lernen wir“) – eine Kritik an bloßer Schulgelehrsamkeit. Erst die spätere Nachwelt drehte den Satz in das bekannte Motto „Non scholae, sed vitae discimus“ um."
 		],
 		"materialLabel": "Gedanken aus Senecas Briefen über Zeit und Menschlichkeit",
 		"materialLanguage": "la",
@@ -377,7 +374,6 @@
 			}
 		},
 		"workshop": {
-			"kind": "cicero-seneca-bridge",
 			"goals": [
 				{
 					"label": "Sprachleistung Ciceros für die europäische Geistesgeschichte erkennen",
@@ -473,7 +469,7 @@
 		"takeaway": "Phaedrus übertrug Äsops Tierfabeln in knappe lateinische Verse mit fester Rollenverteilung und deutlicher Moral (Pro-/Epimythion) zur Entlarvung menschlicher Schwächen.",
 		"practice": [
 			{
-				"prompt": "Wie nennt man in der Literaturwissenschaft eine Moral, die am ENDE einer Fabel steht (wie der Klammerzusatz im Material)?",
+				"prompt": "Wie heißt in der Literaturwissenschaft eine Moral, die am ENDE einer Fabel steht (wie der Klammerzusatz im Material)?",
 				"answers": ["epimythion"],
 				"feedback": "Am Anfang heißt der Lehrsatz Promythion, am Schluss der Fabel Epimythion."
 			},
@@ -506,7 +502,6 @@
 			}
 		},
 		"workshop": {
-			"kind": "phaedrus-fables",
 			"goals": [
 				{
 					"label": "Fachbegriff für die Schlussmoral einer Fabel bestimmen",

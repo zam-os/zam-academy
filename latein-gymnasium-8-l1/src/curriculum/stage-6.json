@@ -54,7 +54,7 @@
 			},
 			"2": {
 				"language": "de",
-				"prompt": "Erkläre in vier bis fünf Sätzen, warum gerade das geschriebene Recht (statt bloßer Gewohnheit) Bürger vor Willkür schützt und wie man daran den Leitspruch der Gerechtigkeit „suum cuique“ erkennt.",
+				"prompt": "Erkläre in vier bis fünf Sätzen, warum gerade das geschriebene Recht (statt bloßer Gewohnheit) Bürger vor Willkür schützt und wie du daran den Leitspruch der Gerechtigkeit „suum cuique“ erkennst.",
 				"model": "Wenn Gesetze mündlich nur einer Oberschicht bekannt sind, können Mächtige Urteile nach Belieben verändern. Erst ein öffentlich niedergeschriebenes Gesetz ermöglicht es allen Bürgern, ihre Rechte und Pflichten vor einer Tat zu kennen und Richter an feste Maßstäbe zu binden. Im Idealfall teilt das Recht dann nicht nach Herkunft oder Laune, sondern „jedem das Seine“ (suum cuique) nach denselben Gesetzen zu.",
 				"criteria": [
 					"Der Vorteil von Öffentlichkeit und Schriftlichkeit gegenüber Willkür ist klar benannt.",
@@ -64,7 +64,6 @@
 			}
 		},
 		"workshop": {
-			"kind": "roman-law-basics",
 			"goals": [
 				{
 					"label": "Bedeutung des Zwölftafelgesetzes einordnen",
@@ -171,7 +170,6 @@
 			}
 		},
 		"workshop": {
-			"kind": "legal-maxims",
 			"goals": [
 				{
 					"label": "Passenden Rechtsgrundsatz für zweiseitige Anhörung wählen",
@@ -220,11 +218,11 @@
 		"bindings": ["L8-01", "L8-32", "L8-36", "L8-37"],
 		"paragraphs": [
 			"Gute Gesetze allein reichen noch nicht – es kommt darauf an, mit welcher Haltung Richter und Bürger handeln. Im römischen Rechtswesen und in der Philosophie gehören daher fünf Wertbegriffe eng zusammen: iustitia (Gerechtigkeit, die jedem das Seine zuteilwerden lässt), aequitas (Billigkeit / angemessener Ausgleich, damit ein starrer Buchstabe kein neues Unrecht schafft) und fides (Verlässlichkeit, Treu und Glauben).",
-			"Hinzu treten aus dem philosophischen Einfluss – vor allem durch Cicero und Seneca – clementia (Milde des Mächtigen gegenüber Besiegten oder Schwachen) und humanitas (Menschlichkeit, Herzensbildung und Achtung vor der Würde des anderen). Schon Cicero prägte den berühmten Hinweis: Summum ius, summa iniuria („Höchstes/starrstes Recht kann höchstes Unrecht sein“), wenn man ohne aequitas und Maß urteilt."
+			"Hinzu treten aus dem philosophischen Einfluss – vor allem durch Cicero und Seneca – clementia (Milde des Mächtigen gegenüber Besiegten oder Schwachen) und humanitas (Menschlichkeit, Herzensbildung und Achtung vor der Würde des anderen). Schon Cicero führt in „De officiis“ (1,33) das damals bereits geläufige Sprichwort an: Summum ius, summa iniuria („Höchstes/starrstes Recht kann höchstes Unrecht sein“), wenn ohne aequitas und Maß geurteilt wird."
 		],
 		"materialLabel": "Lateinische Leitsätze zu iustitia, aequitas und humanitas",
 		"materialLanguage": "la",
-		"material": "1. Iustitia est constans et perpetua voluntas ius suum cuique tribuendi. (Ulpian)\n2. Summum ius, summa iniuria. (Cicero)\n3. Seneca docet: Homo homini res sacra est; humanitas et clementia animum ornant.",
+		"material": "1. Iustitia est constans et perpetua voluntas ius suum cuique tribuendi. (Ulpian)\n2. Summum ius, summa iniuria. (Sprichwort bei Cicero, De officiis 1,33)\n3. Seneca docet: Homo homini res sacra est; humanitas et clementia animum ornant.",
 		"sourceIds": ["lp", "bpb-recht"],
 		"diagram": {
 			"kind": "myth-values",
@@ -256,7 +254,7 @@
 		},
 		"quiz": {
 			"optionLanguage": "de",
-			"question": "Was warnt Ciceros Ausspruch „Summum ius, summa iniuria“?",
+			"question": "Wovor warnt das von Cicero überlieferte Sprichwort „Summum ius, summa iniuria“?",
 			"answer": "Starr und ohne Sinn für Billigkeit (aequitas) angewandtes Recht kann zu größtem Unrecht werden",
 			"wrong": [
 				"Jedes Recht sollte abgeschafft werden, weil es immer ungerecht ist",
@@ -300,7 +298,6 @@
 			}
 		},
 		"workshop": {
-			"kind": "roman-values-8",
 			"goals": [
 				{
 					"label": "Bedeutung von Ciceros Rechtsparadoxon deuten",
@@ -399,7 +396,6 @@
 			}
 		},
 		"workshop": {
-			"kind": "legal-case-study",
 			"goals": [
 				{
 					"label": "Schlussfrage mit Gerundiv + Dativus auctoris bestimmen",
@@ -495,9 +491,9 @@
 		"takeaway": "Europäische Identität verbindet griechisches Denken, römisches Recht und offene Weitergabe über Kulturen hinweg bis in unsere Rechts-, Wissenschafts- und Alltagswelt.",
 		"practice": [
 			{
-				"prompt": "Welcher griechisch-lateinische Ausdruck bezeichnet nach dem Zwölftafelgesetz den Schutz des Einzelnen vor geheimen oder rückwirkenden Strafen („Nulla poena …“)?",
+				"prompt": "Welcher neuzeitlich geprägte lateinische Rechtssatz (heute Art. 103 Abs. 2 GG; im Geist geschriebener Gesetze seit dem Zwölftafelgesetz) schützt dich vor rückwirkenden Strafen („Nulla poena …“)?",
 				"answers": ["nulla poena sine lege", "sine lege"],
-				"feedback": "„Nulla poena sine lege“ („Keine Strafe ohne Gesetz“) sichert Rechtsstaatlichkeit in ganz Europa."
+				"feedback": "„Nulla poena sine lege“ („Keine Strafe ohne Gesetz“, im 19. Jh. von Feuerbach lateinisch geprägt) sichert Gesetzlichkeit und Rückwirkungsverbot (Art. 103 Abs. 2 GG)."
 			},
 			{
 				"prompt": "Welche Kulturtradition außerhalb Westeuropas rettete und kommentierte im Mittelalter viele griechische Philosophie- und Medizintexte für Europa mit?",
@@ -528,7 +524,6 @@
 			}
 		},
 		"workshop": {
-			"kind": "european-heritage",
 			"goals": [
 				{
 					"label": "Antike Ursprünge moderner Fachbereiche trennen",

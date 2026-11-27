@@ -13,7 +13,7 @@ Lernpaket für das bayerische Gymnasium, Jahrgangsstufe 8, Latein als **erste Fr
 
 ```bash
 npm ci
-npm run dev      # http://localhost:5294/latein-gymnasium-8-l1/
+npm run dev      # http://localhost:5295/latein-gymnasium-8-l1/
 npx tsc --noEmit
 npm test
 npm run build        # Einzeldatei in dist/index.html
