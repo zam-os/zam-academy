@@ -1256,7 +1256,8 @@ dialog::backdrop {
 	}
 	.construction-row {
 		padding: 0.75rem;
-		grid-template-columns: 1.8rem minmax(0, 1fr);
+		/* One child per row: a narrow first column would squeeze the whole goal. */
+		grid-template-columns: minmax(0, 1fr);
 		gap: 0.5rem;
 	}
 	.neighbourhood {

@@ -33,7 +33,7 @@ import {
 	ZAM_CELL_ID,
 } from "../src/zam/zam-link";
 import { renderExplorer } from "../src/explorers";
-import { workshopGoals } from "../src/workshop";
+import { workshopGoals, workshopOptions } from "../src/workshop";
 const items = cell.atoms.map((a) => a.practice_items).flat();
 
 describe("Grade 7 second-language French teaching contract", () => {
@@ -121,6 +121,20 @@ describe("Grade 7 second-language French teaching contract", () => {
 			});
 		},
 	);
+	it("places the correct workshop option at varying positions", () => {
+		const positions = LESSONS.map((l) =>
+			l.workshop.goals.map((g, i) => {
+				const shown = workshopOptions(l, i);
+				expect([...shown].sort()).toEqual([...g.options].sort());
+				return shown.indexOf(g.answer);
+			}),
+		);
+		for (const goal of [0, 1, 2]) {
+			const counts = [0, 1, 2].map((p) => positions.filter((row) => row[goal] === p).length);
+			for (const count of counts) expect(count).toBeGreaterThanOrEqual(5);
+		}
+		expect(new Set(positions.map((row) => row.join(""))).size).toBeGreaterThanOrEqual(10);
+	});
 	it("maps each expectation and lesson to the correct path, with honest limits", () => {
 		expect(coverage.rows).toHaveLength(54);
 		expect(new Set(coverage.rows.map((row) => row.id)).size).toBe(54);
