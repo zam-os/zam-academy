@@ -1,0 +1,924 @@
+[
+	{
+		"id": "l8-adjektive-steigern",
+		"stage": "pronomina-verben",
+		"title": "Adjektive steigern und vergleichen",
+		"skill": "Komparativ, Superlativ und Ablativ des Vergleichs unterscheiden",
+		"bindings": [
+			"L8-14",
+			"L8-15",
+			"L8-16",
+			"L8-17",
+			"L8-19",
+			"L8-20"
+		],
+		"paragraphs": [
+			"Die Grundstufe heißt Positiv. Den regelmäßigen Komparativ bildest du mit -ior (Maskulinum und Femininum) oder -ius (Neutrum). Fortis wird zu fortior, fortius. Den Komparativ deklinierst du nach der dritten Deklination. In „haec via brevior est“ passt brevior zu via. Steht kein Vergleich daneben, kann der Komparativ auch „ziemlich“ oder „zu“ ausdrücken.",
+			"Der Superlativ endet meist auf -issimus, -a, -um. Bei pulcher ergibt sich pulcherrimus, bei facilis facillimus. Merke dir bonus – melior – optimus und magnus – maior – maximus. Der Superlativ kann auch einen besonders hohen Grad ohne Vergleich ausdrücken.",
+			"„Marcus Lucio fortior est“ und „Marcus fortior quam Lucius est“ bedeuten beide „Marcus ist tapferer als Lucius“. Lucio ist im ersten Satz Ablativ des Vergleichs. Im zweiten steht Lucius nach quam im Nominativ wie Marcus."
+		],
+		"material": "Ex tribus viis prima brevis est, secunda brevior est quam prima, tertia brevissima est. Sed via brevissima difficillima est.",
+		"materialLabel": "Lateinischer Übungstext",
+		"materialLanguage": "la",
+		"sourceIds": [
+			"lp"
+		],
+		"diagram": {
+			"kind": "morph-lab",
+			"title": "Von brevis zu brevissimus",
+			"caption": "Wähle eine Stufe und prüfe, welche Aussage über einen Weg entsteht.",
+			"parts": [
+				{
+					"id": "part-1",
+					"label": "Positiv",
+					"badge": "Grundstufe",
+					"latin": "brevis",
+					"detail": "Der Weg ist kurz. Ein Vergleich bleibt offen."
+				},
+				{
+					"id": "part-2",
+					"label": "Komparativ",
+					"badge": "Vergleichsstufe",
+					"latin": "brevior",
+					"detail": "Der Weg ist kürzer. Der Maßstab kann mit quam oder im Ablativ folgen."
+				},
+				{
+					"id": "part-3",
+					"label": "Superlativ",
+					"badge": "Höchststufe",
+					"latin": "brevissima",
+					"detail": "Mit ex tribus viis ist der kürzeste Weg der drei gemeint."
+				}
+			]
+		},
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Welche Rolle hat Lucio in „Marcus Lucio fortior est“?",
+			"answer": "Ablativ des Vergleichs",
+			"wrong": [
+				"Dativ des Urhebers",
+				"Ablativ der Beschaffenheit"
+			],
+			"explanation": "Lucio gibt an, mit wem Marcus verglichen wird."
+		},
+		"takeaway": "Suche beim Komparativ nach dem Maßstab. Er kann im Ablativ oder nach quam stehen.",
+		"practice": [
+			{
+				"prompt": "Bilde den Komparativ von fortis im Nominativ Singular Neutrum.",
+				"answers": [
+					"fortius"
+				],
+				"feedback": "Im Neutrum Singular lautet die Nominativform fortius."
+			},
+			{
+				"prompt": "Bilde den Superlativ von pulcher im Nominativ Singular Maskulinum.",
+				"answers": [
+					"pulcherrimus"
+				],
+				"feedback": "Bei pulcher entsteht der Superlativ pulcherrimus."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Übersetze das Material. Markiere die drei Stufen von brevis.",
+				"model": "Von drei Wegen ist der erste kurz, der zweite kürzer als der erste, der dritte am kürzesten. Doch der kürzeste Weg ist am schwierigsten. Stufen: brevis, brevior, brevissima.",
+				"criteria": [
+					"Alle drei Wege bleiben erkennbar.",
+					"Der Vergleich mit dem ersten Weg steht im Deutschen.",
+					"Difficillima erscheint als Superlativ."
+				]
+			},
+			"2": {
+				"prompt": "Formuliere „Haec via illa via brevior est“ mit quam um. Erkläre, warum die Übersetzung gleich bleibt.",
+				"model": "Haec via brevior est quam illa via. Im ersten Satz ist illa via Ablativ des Vergleichs. Nach quam steht illa via im Nominativ wie haec via. Beides bedeutet: Dieser Weg ist kürzer als jener.",
+				"criteria": [
+					"Quam leitet den Vergleich ein.",
+					"Die beiden Kasus sind korrekt benannt.",
+					"Die deutsche Bedeutung bleibt gleich."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Bestimme die Grundstufe",
+					"before": "Drei Wege liegen vor dir.",
+					"after": "Du hast die einfache Beschreibung erkannt.",
+					"options": [
+						"brevis",
+						"brevior",
+						"brevissima"
+					],
+					"answer": "brevis",
+					"explanation": "Brevis nennt die Eigenschaft ohne Steigerung."
+				},
+				{
+					"label": "Finde die Vergleichsstufe",
+					"before": "Zwei Wege werden verglichen.",
+					"after": "Der Unterschied ist sichtbar.",
+					"options": [
+						"brevior",
+						"brevis",
+						"brevissima"
+					],
+					"answer": "brevior",
+					"explanation": "Brevior ist der Komparativ zu brevis."
+				},
+				{
+					"label": "Entschlüssle den Maßstab",
+					"before": "Marcus Lucio fortior est.",
+					"after": "Du weißt, wer mit Marcus verglichen wird.",
+					"options": [
+						"Lucius",
+						"Marcus",
+						"ein dritter Junge"
+					],
+					"answer": "Lucius",
+					"explanation": "Lucio nennt die Vergleichsperson im Ablativ."
+				}
+			]
+		}
+	},
+	{
+		"id": "l8-adverbien-steigern",
+		"stage": "pronomina-verben",
+		"title": "Adverbien bilden und steigern",
+		"skill": "Erkennen, wie ein Adverb eine Handlung beschreibt",
+		"bindings": [
+			"L8-14",
+			"L8-15",
+			"L8-16",
+			"L8-17",
+			"L8-19",
+			"L8-24"
+		],
+		"paragraphs": [
+			"In „clara vox“ steht das Adjektiv clara bei vox. In „clare loquitur“ beschreibt das Adverb clare das Sprechen. Viele Adjektive der a- und o-Deklination bilden das Adverb auf -e, etwa clarus → clare. Bei der dritten Deklination steht oft -iter, etwa fortis → fortiter. Bei prudens lautet die Form prudenter.",
+			"Der Komparativ eines Adverbs sieht aus wie der Nominativ Singular Neutrum des gesteigerten Adjektivs. So wird aus celeriter die Form celerius. Prüfe den Bezug: In „equi celerius currunt“ gehört celerius zu currunt und bleibt unverändert, auch wenn mehrere Pferde laufen.",
+			"Für den regelmäßigen Superlativ des Adverbs nimmst du den Superlativstamm und setzt -e an, etwa fortissime. Eine unregelmäßige Reihe ist bene – melius – optime. Übersetze je nach Sinn mit „am besten“ oder „sehr gut“."
+		],
+		"material": "Primo discipuli lente legunt. Deinde celerius legunt. Lucia hunc locum celerrime legit, sed verba etiam clare pronuntiat.",
+		"materialLabel": "Lateinischer Übungstext",
+		"materialLanguage": "la",
+		"sourceIds": [
+			"lp"
+		],
+		"diagram": {
+			"kind": "morph-lab",
+			"title": "Wie liest Lucia?",
+			"caption": "Klicke die Stufen an und verfolge, wie die Endung und der Vergleich wechseln.",
+			"parts": [
+				{
+					"id": "part-1",
+					"label": "Grundstufe",
+					"badge": "Positiv",
+					"latin": "celeriter",
+					"detail": "Die Handlung läuft schnell ab. Ein Maßstab wird nicht genannt."
+				},
+				{
+					"id": "part-2",
+					"label": "Vergleich",
+					"badge": "Komparativ",
+					"latin": "celerius",
+					"detail": "Die Handlung läuft schneller ab als vorher oder als bei einer anderen Person."
+				},
+				{
+					"id": "part-3",
+					"label": "Höchststufe",
+					"badge": "Superlativ",
+					"latin": "celerrime",
+					"detail": "In einer Gruppe liest die Person am schnellsten. Ohne Vergleich kann es sehr schnell heißen."
+				}
+			]
+		},
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Was leistet celerius in „equi celerius currunt“?",
+			"answer": "Es beschreibt das Laufen.",
+			"wrong": [
+				"Es steht als Adjektiv bei equi.",
+				"Es nennt das Ziel des Laufens."
+			],
+			"explanation": "Die Pferde laufen schneller. Die Frage „Wie laufen sie?“ führt zum Adverb."
+		},
+		"takeaway": "Bestimme den Bezug. Das Adverb bleibt bei einem anderen Subjekt unverändert.",
+		"practice": [
+			{
+				"prompt": "Bilde das Adverb zu fortis in der Grundstufe.",
+				"answers": [
+					"fortiter"
+				],
+				"feedback": "Fortiter ist das Adverb zu fortis."
+			},
+			{
+				"prompt": "Gib den Komparativ des Adverbs bene an.",
+				"answers": [
+					"melius"
+				],
+				"feedback": "Bene wird unregelmäßig gesteigert: bene, melius, optime."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Übersetze das Material. Gib an, welche Verben celerius und celerrime näher bestimmen.",
+				"model": "Zuerst lesen die Schüler langsam. Dann lesen sie schneller. Lucia liest diese Stelle am schnellsten, spricht die Wörter aber auch deutlich aus. Celerius beschreibt legunt; celerrime beschreibt legit.",
+				"criteria": [
+					"Die zeitliche Abfolge ist klar.",
+					"Komparativ und Superlativ sind erkennbar.",
+					"Die Bezugsverben sind benannt."
+				]
+			},
+			"2": {
+				"prompt": "Entscheide, welche Funktion fortius in „miles fortius pugnat“ und „hoc consilium fortius est“ hat. Übersetze und begründe.",
+				"model": "Miles fortius pugnat: Der Soldat kämpft tapferer. Fortius beschreibt pugnat. Hoc consilium fortius est: Dieser Plan ist mutiger. Fortius ist ein prädikativ gebrauchtes Adjektiv im Neutrum und stimmt mit consilium überein.",
+				"criteria": [
+					"Im ersten Satz ist der Verbbezug klar.",
+					"Im zweiten Satz ist das Neutrum erkannt.",
+					"Beide Sätze sind verständlich übersetzt."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Finde das Adverb zu clarus",
+					"before": "Du willst sagen: deutlich sprechen.",
+					"after": "Dein Wort beschreibt das Sprechen.",
+					"options": [
+						"clare",
+						"clara",
+						"clarum"
+					],
+					"answer": "clare",
+					"explanation": "Clare ist die Adverbform zu clarus."
+				},
+				{
+					"label": "Wechsle in die Vergleichsstufe",
+					"before": "Die Pferde laufen schneller.",
+					"after": "Die Steigerung steht am Verb.",
+					"options": [
+						"celerius",
+						"celeres",
+						"celerrime"
+					],
+					"answer": "celerius",
+					"explanation": "Celerrime wäre der Superlativ."
+				},
+				{
+					"label": "Ergänze die unregelmäßige Reihe",
+					"before": "bene → melius → ?",
+					"after": "Die Reihe reicht jetzt bis zur Höchststufe.",
+					"options": [
+						"optime",
+						"bonissime",
+						"optimus"
+					],
+					"answer": "optime",
+					"explanation": "Optime ist der Superlativ des Adverbs, optimus der des Adjektivs."
+				}
+			]
+		}
+	},
+	{
+		"id": "l8-indefinit-quidam-quisque",
+		"stage": "pronomina-verben",
+		"title": "Indefinitpronomina: aliquis, quidam und quisque",
+		"skill": "Substantivische und adjektivische Indefinitpronomina bestimmen und bilden",
+		"bindings": [
+			"L8-14",
+			"L8-15",
+			"L8-16",
+			"L8-19"
+		],
+		"paragraphs": [
+			"Aliquis (Neutrum aliquid) steht selbständig und bedeutet „jemand“ oder „etwas“. Aliqui, aliqua, aliquod begleitet ein Nomen: „aliqui senator“ heißt „irgendein Senator“. Vergleiche „aliquis venit“ (jemand kommt) und „aliqui senator venit“ (irgendein Senator kommt).",
+			"Vier häufige Indefinitpronomina geben an, ob von jemandem Unbestimmten, einer bestimmten Person ohne Namensnennung oder jedem Einzelnen die Rede ist. quidam, quaedam, quoddam (substantivisch im Neutrum quiddam) bezeichnet eine bestimmte, aber nicht näher benannte Person oder Sache („ein gewisser“, im Plural „einige“). Beachte beim Deklinieren die Lautangleichung vor dem festen -dam: aus -m wird -n- (quendam, quandam, quorundam, quarundam).",
+			"Das Pronomen quisque, quaeque, quidque (adjektivisch im Neutrum quodque) bedeutet „jeder (einzelne)“. Es lehnt sich häufig an Reflexivpronomina (suum cuique = jedem das Seine), Fragewörter, Ordinalzahlen (primo quoque tempore = bei der erstbesten Gelegenheit) oder Superlative (optimus quisque = gerade die Besten) an."
+		],
+		"materialLabel": "Rechts- und Weisheitssätze mit quidam und quisque",
+		"materialLanguage": "la",
+		"material": "1. Philosophus quidam Athenis docere solebat.\n2. Iudex quendam testem interrogavit et cuique civi ius suum tribuit.\n3. Optimus quisque iustitiam colit; suum cuique!",
+		"sourceIds": [
+			"lp",
+			"bpb-recht"
+		],
+		"diagram": {
+			"kind": "morph-lab",
+			"title": "Formen- und Stellungsregel: quidam vs. quisque",
+			"caption": "Assimilationsformen auf -ndam und typische Signalpartner von quisque auf einen Blick.",
+			"parts": [
+				{
+					"id": "pr-quidam",
+					"label": "1 · quidam (ein gewisser)",
+					"badge": "m → n vor -dam",
+					"latin": "quendam · quandam · quorundam",
+					"detail": "Dekliniert wird der vordere Teil (wie qui, quae, quod); -dam bleibt unverändert, verwandelt aber -m im Akk. Sg. und Gen. Pl. zu -n-."
+				},
+				{
+					"id": "pr-quisque",
+					"label": "2 · quisque (jeder einzelne)",
+					"badge": "Enge Begleiter",
+					"latin": "suum cuique · pro se quisque",
+					"detail": "Steht fast immer nach suus/se, quis/ut oder Superlativ (optimus quisque = jeder Beste → gerade die Besten)."
+				},
+				{
+					"id": "pr-neutrum",
+					"label": "3 · Substantiv vs. Adjektiv",
+					"badge": "-d vs. -od",
+					"latin": "quiddam / quidque vs. quoddam / quodque",
+					"detail": "Im Neutrum Nominativ/Akkusativ Singular steht quiddam/quidque ohne Nomen, quoddam/quodque neben einem Nomen."
+				}
+			]
+		},
+		"quiz": {
+			"optionLanguage": "la",
+			"question": "Wie lautet der korrekte Akkusativ Singular maskulin von quidam?",
+			"answer": "quendam",
+			"wrong": [
+				"quemdam",
+				"quisdam"
+			],
+			"explanation": "Vor dem festen Anhang -dam wird das -m von quem zu -n- angeglichen: quendam."
+		},
+		"takeaway": "Bei quidam assimiliert sich -m vor -dam zu -n- (quendam, quorundam); quisque folgt meist auf suus/se oder einen Superlativ („gerade die …“).",
+		"practice": [
+			{
+				"prompt": "Gib den Dativ Singular (für alle drei Geschlechter) von quisque an (z. B. aus „suum …“):",
+				"answers": [
+					"cuique"
+				],
+				"feedback": "Der Dativ Singular von quisque lautet cuique („jedem“): Suum cuique = Jedem das Seine."
+			},
+			{
+				"prompt": "Wie übersetzt du „optimus quisque“ im treffenden Deutsch?",
+				"answers": [
+					"gerade die besten",
+					"alle guten",
+					"jeder beste"
+				],
+				"feedback": "Superlativ + quisque hebt die ganze Spitzengruppe hervor: optimus quisque = „gerade die Besten“."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "de",
+				"prompt": "Bestimme quendam, cuique und quisque aus dem Material nach Kasus, Numerus und Genus (bzw. Begleitwort) und übersetze alle drei Sätze ins Deutsche.",
+				"model": "quidam = Nom. Sg. m. (bei philosophus); quendam = Akk. Sg. m. (bei testem); cuique = Dat. Sg. m. (bei civi); quisque = Nom. Sg. m. (nach Superlativ optimus).\n1. Ein gewisser Philosoph pflegte in Athen zu lehren. 2. Der Richter befragte einen gewissen Zeugen und teilte jedem Bürger sein Recht zu. 3. Gerade die Besten pflegen die Gerechtigkeit; jedem das Seine!",
+				"criteria": [
+					"Alle vier Pronominalformen sind korrekt bestimmt.",
+					"Die Übersetzung unterscheidet „ein gewisser“ und „jeder / gerade die Besten“.",
+					"Alle Sätze sind grammatisch sauber übertragen."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Erkläre, worin sich „aliquis / aliqui“ und „quidam“ in ihrer Aussage unterscheiden, und bilde zwei eigene kurze lateinische Wortgruppen mit quendam und quodque.",
+				"model": "aliquis/aliqui bezeichnet etwas völlig Unbestimmtes („irgendeiner“, auch wenn der Sprecher ihn nicht kennt); quidam meint eine bestimmte Person oder Sache, die der Sprecher kennt, aber nicht mit Namen nennt („ein gewisser / bekannt“).\nBeispiele: quendam amicum video (ich sehe einen gewissen Freund); quodque iudicium (jedes Urteil).",
+				"criteria": [
+					"Der Bedeutungsunterschied zwischen aliquis und quidam ist treffend erklärt.",
+					"Die Form quendam hat ein maskulines Bezugswort im Akk. Sg.",
+					"Die Form quodque steht adjektivisch bei einem neutralen Substantiv."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Assimilationsform von quidam im Genitiv Plural bilden",
+					"before": "quorum + -dam →",
+					"after": "",
+					"options": [
+						"quorundam",
+						"quorumdam",
+						"quisdam"
+					],
+					"answer": "quorundam",
+					"explanation": "Auch im Genitiv Plural verwandelt sich -m vor -dam in -n-."
+				},
+				{
+					"label": "Superlativ + quisque idiomatisch übersetzen",
+					"before": "sapientissimus quisque →",
+					"after": "",
+					"options": [
+						"gerade die Weisesten",
+						"ein gewisser Weiser",
+						"irgendjemand Weises"
+					],
+					"answer": "gerade die Weisesten",
+					"explanation": "Superlativ + quisque steht im Lateinischen im Singular für die ganze Gruppe."
+				},
+				{
+					"label": "Substantivisches Neutrum von quisque wählen",
+					"before": "ohne Bezugsnomen: „jedes (Ding)“ →",
+					"after": "",
+					"options": [
+						"quidque",
+						"quodque",
+						"quaeque"
+					],
+					"answer": "quidque",
+					"explanation": "Wie bei quid/quod unterscheidet -d (substantivisch) und -od (adjektivisch)."
+				}
+			]
+		}
+	},
+	{
+		"id": "l8-verallgemeinernd-korrelativa",
+		"stage": "pronomina-verben",
+		"title": "Verallgemeinernde Relativa & Korrelativa",
+		"skill": "quisquis, quīcumque und Bezugswörter (Korrelativa) wie tantus – quantus oder tot – quot im Satzbau erkennen",
+		"bindings": [
+			"L8-14",
+			"L8-15",
+			"L8-16",
+			"L8-17",
+			"L8-19"
+		],
+		"paragraphs": [
+			"Verallgemeinernde Relativpronomina drücken aus, dass eine Aussage für jede beliebige Person oder Sache gilt: quisquis (substantivisch; im Neutrum quidquid = „was auch immer“) und quicumque, quaecumque, quodcumque („wer/welcher auch immer“). Wichtig für die Übersetzung: Während im Deutschen manchmal „mag“ steht, verwendet das Lateinische nach quisquis und quicumque in aller Regel den Indikativ!",
+			"Noch übersichtlicher werden komplexe Perioden durch Korrelativa – also aufeinander verweisende Pronomina oder Adverbien zwischen Haupt- und Nebensatz: is – qui (derjenige, welcher), talis – qualis (so beschaffen, wie), tantus – quantus (so groß, wie groß), tot – quot (so viele, wie viele) und ita/sic – ut (so, wie)."
+		],
+		"materialLabel": "Verallgemeinerung und Korrelation in Lehrsätzen",
+		"materialLanguage": "la",
+		"material": "1. Quidquid agis, prudenter age et respice finem!\n2. Quicumque leges servat, libertatem civitatis defendit.\n3. Tanta erat auctoritas senatus, quantam nemo antea viderat.\n4. Tot sententiae sunt, quot homines.",
+		"sourceIds": [
+			"lp"
+		],
+		"diagram": {
+			"kind": "morph-lab",
+			"title": "Brücken zwischen Nebensatz und Hauptsatz",
+			"caption": "Verallgemeinernde Relativa und Korrelativpaare klammern Sätze logisch zusammen.",
+			"parts": [
+				{
+					"id": "ko-quisquis",
+					"label": "1 · quisquis / quicumque",
+					"badge": "Immer Indikativ!",
+					"latin": "Quidquid agis · Quicumque dicit",
+					"detail": "quisquis (vor allem Nom. quisquis, Neutr. quidquid) und voll durchdeklinierbares quicumque bedeuten „wer/was auch immer“."
+				},
+				{
+					"id": "ko-menge",
+					"label": "2 · Größe & Zahl",
+					"badge": "tantus–quantus · tot–quot",
+					"latin": "tantus … quantus · tot … quot",
+					"detail": "Die t-Wörter weisen im Hauptsatz voraus (tantus, tot, talis), die qu-Wörter nehmen sie im Nebensatz auf (quantus, quot, qualis)."
+				},
+				{
+					"id": "ko-art",
+					"label": "3 · Art & Weise",
+					"badge": "talis–qualis · ita–ut",
+					"latin": "talis est, qualis … · ita, ut …",
+					"detail": "Korrelativa zeigen früh an, worauf der Blick im folgenden Nebensatz achten muss: Beschaffenheit, Ausmaß oder Vergleich."
+				}
+			]
+		},
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Welcher Modus steht im Lateinischen normalerweise nach „quisquis“ und „quicumque“?",
+			"answer": "der Indikativ",
+			"wrong": [
+				"zwingend der Konjunktiv Imperfekt",
+				"der Imperativ"
+			],
+			"explanation": "Im Unterschied zu deutschen Wendungen („wer auch immer es sei“) steht nach quisquis/quicumque im Lateinischen regelmäßig der Indikativ."
+		},
+		"takeaway": "Verallgemeinernde Relativa (quisquis, quicumque) stehen im Indikativ; Korrelativa verknüpfen t-Wörter im Hauptsatz mit qu-Wörtern im Nebensatz.",
+		"practice": [
+			{
+				"prompt": "Welches Korrelativpaar ergänzt im Deutschen „so viele Meinungen …, … Menschen“ (aus Satz 4)? Nenne beide lateinischen Wörter:",
+				"answers": [
+					"tot - quot",
+					"tot quot",
+					"tot, quot",
+					"tot … quot"
+				],
+				"feedback": "tot („so viele“) und quot („wie viele“) sind indeklinable Zahl-Korrelativa."
+			},
+			{
+				"prompt": "Wie lautet der Nominativ/Akkusativ Singular Neutrum zu quisquis („was auch immer“)?",
+				"answers": [
+					"quidquid",
+					"quicquid"
+				],
+				"feedback": "Das berühmte Sprichwort lautet: Quidquid agis, prudenter age! („Was auch immer du tust, handle klug!“)."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "de",
+				"prompt": "Übersetze alle vier Sätze des Materials und markiere die verallgemeinernden Relativpronomina sowie die beiden Korrelativpaare.",
+				"model": "1. Was auch immer du tust, handle klug und bedenke das Ende! (verallg. Relativpronomen: quidquid).\n2. Wer auch immer die Gesetze achtet, verteidigt die Freiheit des Staates (verallg. Relativpronomen: quicumque).\n3. So groß war das Ansehen des Senats, wie es zuvor niemand gesehen hatte (Korrelativpaar: tanta – quantam).\n4. So viele Meinungen gibt es, wie es Menschen gibt (Korrelativpaar: tot – quot).",
+				"criteria": [
+					"Alle vier Sätze sind treffend übersetzt.",
+					"quidquid und quicumque sind korrekt als verallgemeinernd eingeordnet.",
+					"tanta–quantam und tot–quot sind als Korrelativpaare identifiziert."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Erkläre die Merkregel „t-Wort im Hauptsatz, qu-Wort im Nebensatz“ an drei verschiedenen Korrelativpaaren und übersetze selbst: „Qualis rex, talis grex.“",
+				"model": "Regel: Das demonstrativ zeigende t-Wort (tantus, talis, tot) kündigt das Maß oder die Art an; das relative qu-Wort (quantus, qualis, quot) greift es im Nebensatz wieder auf.\nWeitere Paare: tantus – quantus (Größe), talis – qualis (Beschaffenheit), totiens – quotiens (Häufigkeit).\n„Qualis rex, talis grex“ = Wie der König (Herrscher), so die Herde (das Volk).",
+				"criteria": [
+					"Das t-/qu-Prinzip ist verständlich erklärt.",
+					"Drei Korrelativpaare sind mit deutscher Bedeutung genannt.",
+					"Das Sprichwort „Qualis rex, talis grex“ ist passend übertragen."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Passendes Partnerwort zu tantus bestimmen",
+					"before": "tanta sapientia, …",
+					"after": "numquam vidimus",
+					"options": [
+						"quantam",
+						"qualem",
+						"quot"
+					],
+					"answer": "quantam",
+					"explanation": "Auf tantus („so groß“) antwortet quantus („wie groß“)."
+				},
+				{
+					"label": "Verallgemeinerndes Pronomen korrekt verknüpfen",
+					"before": "…",
+					"after": "legem violat, poenas dat.",
+					"options": [
+						"Quicumque",
+						"Quoddam",
+						"Quisque"
+					],
+					"answer": "Quicumque",
+					"explanation": "quicumque leitet einen verallgemeinernden Relativsatz („wer auch immer“) ein."
+				},
+				{
+					"label": "Indeklinables Zahl-Korrelativ zu tot wählen",
+					"before": "tot testes, …",
+					"after": "iudices",
+					"options": [
+						"quot",
+						"quales",
+						"quanti"
+					],
+					"answer": "quot",
+					"explanation": "tot und quot bleiben unverändert und bezeichnen die Anzahl."
+				}
+			]
+		}
+	},
+	{
+		"id": "l8-deponentien-i-kons",
+		"stage": "pronomina-verben",
+		"title": "Deponentien in fünf Konjugationsgruppen",
+		"skill": "Passive Formen erkennen und die Deponentien ihrer aktiven Bedeutung nach übersetzen",
+		"bindings": [
+			"L8-14",
+			"L8-15",
+			"L8-16",
+			"L8-17",
+			"L8-18",
+			"L8-19"
+		],
+		"paragraphs": [
+			"Deponentien haben in vielen Formen passive Endungen, werden aber gewöhnlich aktiv übersetzt. „Dux milites hortatur“ heißt „Der Anführer ermutigt die Soldaten“. Hortari (a-Konjugation) bildet hortatus sum; vereri (e-Konjugation, sich fürchten) bildet veritus sum. i-Konjugation: mentiri. Konsonantische Konjugation: loqui, sequi, uti. Mit i-Erweiterung: pati, progredi, mori.",
+			"Achte besonders auf drei Stolperfallen: Erstens lautet der Infinitiv Präsens in der konsonantischen Konjugation nicht -ari oder -eri, sondern -i (loqui, pati – genau wie beim passiven Infinitiv capi!). Zweitens bildet auch ein Deponens ein Partizip Perfekt – es trägt jedoch eine aktive Bedeutung (locutus = einer, der gesprochen hat / nachdem er gesprochen hatte). Drittens verlangen die Deponentien uti und frui im Lateinischen ein Objekt im Ablativ!"
+		],
+		"materialLabel": "Deponentien im Satzzusammenhang",
+		"materialLanguage": "la",
+		"material": "1. Socrates cum amicis diu locutus veritatem quaerebat, neque umquam mentitus est.\n2. Multi Romani philosophia Graeca usi sunt.\n3. Vir fortis iniurias patienter patitur nec mortem timet; quidam ex hostibus fugere conati sunt, alii progressi sunt.",
+		"sourceIds": [
+			"lp"
+		],
+		"diagram": {
+			"kind": "verb-lab",
+			"title": "Baukasten für Deponentien & Sonderverben",
+			"caption": "Vergleiche Formbildung in Präsens- und Perfektstamm und beachte den Unterschied zwischen Form und Bedeutung."
+		},
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "In welchem Kasus steht das Objekt bei „uti“ (gebrauchen / nutzen), wie in „philosophia Graeca usi sunt“?",
+			"answer": "im Ablativ (philosophia Graeca)",
+			"wrong": [
+				"im Akkusativ wie im Deutschen",
+				"immer im Dativ"
+			],
+			"explanation": "Uti (gebrauchen) und frui (genießen) stehen mit dem Ablativ. Philosophiā Graecā ist das Objekt zu usi sunt."
+		},
+		"takeaway": "Deponentien der i- und konsonantischen Konjugation haben passive Endungen (Infinitiv -iri bzw. -i), bedeuten aber samt ihrem Partizip Perfekt aktivisch; uti steht mit Ablativ.",
+		"practice": [
+			{
+				"prompt": "Übersetze das PPP-Deponens „locutus“ in „Socrates locutus …“ in einem kurzen deutschen Nebensatz („nachdem …“):",
+				"answers": [
+					"nachdem er gesprochen hatte",
+					"nachdem sokrates gesprochen hatte"
+				],
+				"feedback": "Weil loqui ein Deponens ist, heißt locutus aktivisch-vorzeitig: „nachdem er gesprochen hatte“."
+			},
+			{
+				"prompt": "Wie lautet der Infinitiv Präsens von „patitur“ (erleiden, kons. Konj. m. i-Erweiterung)?",
+				"answers": [
+					"pati"
+				],
+				"feedback": "In der konsonantischen Konjugation (mit und ohne i-Erweiterung) endet der Infinitiv des Deponens auf -i: pati (wie loqui)."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "de",
+				"prompt": "Bestimme „locutus“, „mentitus est“, „usi sunt“, „patitur“ und „progressi sunt“ nach Konjugation und Stammform (Infinitiv Präsens) und übersetze die drei Sätze des Materials.",
+				"model": "locutus (loqui, kons. Konj.), mentitus est (mentiri, i-Konj.), usi sunt (uti, kons. Konj.), patitur (pati, kons. m. i-Erw.), progressi sunt (progredi, kons. m. i-Erw.).\n1. Sokrates suchte, nachdem er lange mit Freunden gesprochen hatte, nach der Wahrheit und hat niemals gelogen. 2. Viele Römer haben die griechische Philosophie genutzt. 3. Ein tapferer Mann erträgt Unrecht geduldig und fürchtet den Tod nicht; einige von den Feinden versuchten zu fliehen, andere rückten vor.",
+				"criteria": [
+					"Alle fünf Verben sind ihren genauen Deponens-Konjugationen zugeordnet.",
+					"Das PPP locutus ist aktivisch-vorzeitig übersetzt.",
+					"philosophia Graeca bei usi sunt ist korrekt als Ablativobjekt erkannt."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Erkläre einem Mitschüler, warum du bei „loqui“ nicht sofort an der Endung erkennst, dass es zur konsonantischen Konjugation gehört, und vergleiche die drei Formen „sequi“, „pati“ und „mentiri“ im Präsens (3. Sg. / 3. Pl.) und Perfekt (3. Sg.).",
+				"model": "Bei loqui endet der Infinitiv genau wie beim Passiv regere → regi nur auf -i; erst am Stamm und an der 1./3. Person sieht man die i-Erweiterung bei pati (patior, patiuntur) gegenüber loqui/sequi (sequitur, sequuntur).\nFormen: sequitur / sequuntur / secutus est; patitur / patiuntur / passus est; mentitur / mentiuntur / mentitus est.",
+				"criteria": [
+					"Der Unterschied zwischen konsonantischer Konjugation mit und ohne i-Erweiterung ist an -untur vs. -iuntur gezeigt.",
+					"Alle neun Vergleichsformen sind korrekt gebildet.",
+					"Die aktive Bedeutung aller Formen trotz passiver Endung ist betont."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Infinitiv eines i-Deponens richtig bilden",
+					"before": "mentitur (lügen, i-Konj.) → Infinitiv:",
+					"after": "",
+					"options": [
+						"mentiri",
+						"menti",
+						"mentire"
+					],
+					"answer": "mentiri",
+					"explanation": "Deponentien der i-Konjugation bilden den Infinitiv auf -iri."
+				},
+				{
+					"label": "Objektskasus von uti bestimmen",
+					"before": "legibus bonis uti →",
+					"after": "",
+					"options": [
+						"gute Gesetze anwenden / gebrauchen (Ablativ)",
+						"guten Gesetzen folgen (Dativ)",
+						"gute Gesetze überliefern (Akkusativ)"
+					],
+					"answer": "gute Gesetze anwenden / gebrauchen (Ablativ)",
+					"explanation": "uti regiert den Ablativ."
+				},
+				{
+					"label": "Aktive Bedeutung des Deponens-PPP anwenden",
+					"before": "miles progressus →",
+					"after": "",
+					"options": [
+						"der vorgerückte Soldat (aktiv vorzeitig)",
+						"der vorangeschickte Soldat (passiv)",
+						"der gerade vorrückende Soldat (gleichzeitig)"
+					],
+					"answer": "der vorgerückte Soldat (aktiv vorzeitig)",
+					"explanation": "Das PPP eines Deponens hat aktive Bedeutung."
+				}
+			]
+		}
+	},
+	{
+		"id": "l8-semideponentien-perfektopraesentien",
+		"stage": "pronomina-verben",
+		"title": "Semideponentien & Perfektopräsentien",
+		"skill": "Semideponentien (audēre, gaudēre, solēre, fīdere) und Perfektopräsentien (ōdisse, meminisse) sicher erkennen",
+		"bindings": [
+			"L8-15",
+			"L8-16",
+			"L8-17",
+			"L8-18",
+			"L8-19"
+		],
+		"paragraphs": [
+			"Semideponentien sind „Halbdeponentien“: Im Präsensstamm (Präsens, Imperfekt, Futur I) sehen sie völlig normal aktiv aus, doch im Perfektstamm (Perfekt, Plusquamperfekt, Futur II) wechseln sie auf passive Formen – behalten aber die aktive Bedeutung! Die wichtigsten vier sind audere, ausus sum (wagen), gaudere, gavisus sum (sich freuen), solere, solitus sum (gewohnt sein / pflegen) und fidere, fisus sum (vertrauen, auch confidere = fest vertrauen).",
+			"Umgekehrt fehlen den Perfektopräsentien alle Formen des Präsensstamms: Sie stehen der Form nach im Perfekt, bedeuten aber Gegenwart! So heißt odi „ich habe mir Hass zugezogen → ich hasse“, memini „ich habe im Gedächtnis behalten → ich erinnere mich“ (mit Genitiv oder Akkusativ) und novi (von noscere) „ich habe kennengelernt → ich kenne / weiß“. Entsprechend bedeutet das Plusquamperfekt oderat „er hasste“."
+		],
+		"materialLabel": "Semideponentien und Perfektopräsentien in Beispielsätzen",
+		"materialLanguage": "la",
+		"material": "1. Cives semper libertati fidunt, sed olim tyranno non confisi sunt.\n2. Quamquam multa pericula timebamus, tamen verum dicere ausi sumus et nunc gavisi sumus.\n3. Qui iustitiam amat, mendacia odit et legum bonarum semper meminit.",
+		"sourceIds": [
+			"lp"
+		],
+		"diagram": {
+			"kind": "verb-lab",
+			"preset": "semi",
+			"title": "Semideponentien und Perfektopräsentien im Vergleich",
+			"caption": "Wechsel zwischen aktivem Präsensstamm und passivem Perfektstamm bzw. Tempusverschiebung bei Perfektopräsentien."
+		},
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Wie übersetzt du „Socrates verum dicere ausus est“ korrekt ins Deutsche?",
+			"answer": "Sokrates wagte es (hat es gewagt), die Wahrheit zu sagen",
+			"wrong": [
+				"Sokrates wurde gezwungen, die Wahrheit zu sagen",
+				"Sokrates wagt gerade, die Wahrheit zu sagen"
+			],
+			"explanation": "audere (ausus sum) ist ein Semideponens: passive Form im Perfekt, aktive Vergangenheitsbedeutung."
+		},
+		"takeaway": "Semideponentien (audere/ausus sum, gaudere/gavisus sum) wechseln im Perfekt zur passiven Form bei aktiver Bedeutung; Perfektopräsentien (odisse, meminisse) meinen mit der Perfektform die Gegenwart.",
+		"practice": [
+			{
+				"prompt": "Übersetze das Perfektopräsens „oderat“ (Plusquamperfekt-Form von odisse) ins Deutsche („er …“):",
+				"answers": [
+					"er hasste",
+					"hasste"
+				],
+				"feedback": "Da die Perfektform odit „er hasst“ (Präsens) bedeutet, rückt oderat genau eine Stufe zurück ins Präteritum: „er hasste“."
+			},
+			{
+				"prompt": "Nenne das Perfekt (1. Sg.) des Semideponens „gaudere“ (sich freuen):",
+				"answers": [
+					"gavisus sum"
+				],
+				"feedback": "gaudere bildet sein aktives Perfekt mit passiver Form: gavisus, -a, -um sum."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "de",
+				"prompt": "Ordne „fidunt“, „confisi sunt“, „ausi sumus“, „gavisi sumus“, „odit“ und „meminit“ als Semideponens oder Perfektopräsens ein und übersetze alle drei Sätze.",
+				"model": "Semideponentien: fidunt / confisi sunt (fidere/confidere), ausi sumus (audere), gavisi sumus (gaudere); Perfektopräsentien: odit (odisse), meminit (meminisse).\n1. Die Bürger vertrauen immer auf die Freiheit, aber einst vertrauten sie dem Tyrannen nicht. 2. Obwohl wir viele Gefahren fürchteten, wagten wir dennoch die Wahrheit zu sagen und haben uns nun gefreut. 3. Wer die Gerechtigkeit liebt, hasst Lügen und erinnert sich stets an gute Gesetze.",
+				"criteria": [
+					"Alle sechs Verben sind treffend als Semideponens oder Perfektopräsens bestimmt.",
+					"Die Perfektformen ausi sumus und gavisi sumus sind aktivisch-vergangen übersetzt.",
+					"odit und meminit sind als Gegenwart übersetzt."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Erkläre logisch, warum „memini“ (Perfekt) Gegenwart bedeutet und wie das Verb „coepisse“ (begonnen haben) mit „incipere“ zusammenarbeitet.",
+				"model": "Wer sich etwas eingeprägt hat (Perfekt), trägt es in diesem Moment im Kopf: Daher bedeutet memini „ich erinnere mich“ (und novi „ich habe erkannt → ich kenne“).\ncoepisse besitzt nur Perfektstamm-Formen („ich habe begonnen / begann“); wenn man im Präsensstamm („ich beginne“) sprechen will, springt incipere ein.",
+				"criteria": [
+					"Die Gegenwartsbedeutung des Perfektstamms ist sinnvoll aus dem Ergebnis hergeleitet.",
+					"Die Ergänzung von incipere (Präsens) und coepisse (Perfekt) ist korrekt erklärt.",
+					"Mindestens zwei weitere Perfektopräsentien sind richtig genannt."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Stammformen von audere sicher ergänzen",
+					"before": "audere (wagen) → Perfekt:",
+					"after": "",
+					"options": [
+						"ausus sum",
+						"audivi",
+						"auditus sum"
+					],
+					"answer": "ausus sum",
+					"explanation": "audere bildet als Semideponens das Perfekt ausus sum."
+				},
+				{
+					"label": "Tempusstufe von memineram bei Perfektopräsens bestimmen",
+					"before": "memineram (Plusq.-Form von meminisse) →",
+					"after": "",
+					"options": [
+						"ich erinnerte mich (Vergangenheit)",
+						"ich erinnere mich (Gegenwart)",
+						"ich werde mich erinnern (Zukunft)"
+					],
+					"answer": "ich erinnerte mich (Vergangenheit)",
+					"explanation": "Perfektform = Gegenwart; Plusquamperfektform = Vergangenheit."
+				},
+				{
+					"label": "Semideponens solere im Perfekt erkennen",
+					"before": "soliti erant dicere →",
+					"after": "",
+					"options": [
+						"sie hatten es gewohnt / sie pflegten zu sagen",
+						"sie wurden gezwungen zu sagen",
+						"sie werden sagen"
+					],
+					"answer": "sie hatten es gewohnt / sie pflegten zu sagen",
+					"explanation": "solere, solitus sum hat auch in der passiven Perfektform aktive Bedeutung."
+				}
+			]
+		}
+	},
+	{
+		"id": "l8-fieri-stammformen",
+		"stage": "pronomina-verben",
+		"title": "fieri & wichtige unregelmäßige Verben",
+		"skill": "Formen und Doppelbedeutung von fieri („werden / geschehen / gemacht werden“) sowie neue Stammformen beherrschen",
+		"bindings": [
+			"L8-15",
+			"L8-16",
+			"L8-18",
+			"L8-19"
+		],
+		"paragraphs": [
+			"Das Verb fieri spielt eine Doppelrolle: Einerseits bedeutet es als Vorgangsverb „werden“ oder „entstehen / geschehen“ (Quid fit? = Was geschieht? Fiat lux! = Es werde Licht!), andererseits ersetzt sein Präsensstamm das fehlende Passiv von facere („gemacht werden“). Achte auf die Konjugation: Im Präsensstamm trägt fieri aktive Endungen auf dem Stamm fi- (fio, fis, fit, fimus, fitis, fiunt), während der Konjunktiv Imperfekt fierem lautet.",
+			"Im Perfektstamm wird fieri völlig regelmäßig genau so gebildet wie das Passiv von facere: factus, -a, -um sum (ich bin geworden / ich bin gemacht worden), factus eram usw. Wie bei esse steht bei fieri ein Prädikatsnomen im Nominativ: Vir iustus consul fit („Ein gerechter Mann wird Konsul“)."
+		],
+		"materialLabel": "Formen und Sätze mit fieri und neuen Stammformen der 8. Klasse",
+		"materialLanguage": "la",
+		"material": "1. Nemo casu sapiens fit, sed multo studio vir bonus fieri potest.\n2. Ex parvo initio magna res publica facta est.\n3. Iudex providet, ne iniuria fiat (ne + Konj. Präs.).\n4. Stammformen: fio, fis, fit, fimus, fitis, fiunt · fierem · factus sum.",
+		"sourceIds": [
+			"lp"
+		],
+		"diagram": {
+			"kind": "verb-lab",
+			"preset": "fieri",
+			"title": "fieri zwischen Aktivform und Passivfunktion",
+			"caption": "Präsensstamm unregelmäßig aktivisch geformt, Perfektstamm regulär mit factus sum."
+		},
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Welcher Kasus steht bei „Vir bonus consul fit“ beim Prädikatsnomen „consul“?",
+			"answer": "der Nominativ (Gleichsetzungsnominativ wie bei esse)",
+			"wrong": [
+				"der Akkusativ als direktes Objekt",
+				"der Ablativ der Zugehörigkeit"
+			],
+			"explanation": "Wie bei esse („sein“) steht auch bei fieri („werden / zu etwas gemacht werden“) das Prädikatsnomen im Nominativ."
+		},
+		"takeaway": "fieri bedeutet „werden, geschehen“ und dient als Passiv zu facere; im Präsensstamm hat es aktive Endungen (fit, fiunt, fierem), im Perfekt factus sum.",
+		"practice": [
+			{
+				"prompt": "Wie lautet die 3. Person Plural Indikativ Präsens von fieri („sie werden / geschehen“)?",
+				"answers": [
+					"fiunt"
+				],
+				"feedback": "Der Präsens Indikativ von fieri lautet fio, fis, fit, fimus, fitis, fiunt."
+			},
+			{
+				"prompt": "Wie lautet die 3. Person Singular Konjunktiv Imperfekt von fieri („er würde / geschähe“)?",
+				"answers": [
+					"fieret"
+				],
+				"feedback": "An den Infinitivstamm fi-e- treten die normalen Endungen: fierem, fieres, fieret."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "de",
+				"prompt": "Bestimme „fit“, „fieri“, „facta est“ und „fiat“ im Material nach Person, Numerus, Tempus und Modus und übersetze die Sätze 1 bis 3.",
+				"model": "fit = 3. Sg. Ind. Präs.; fieri = Inf. Präs.; facta est = 3. Sg. Ind. Perf. (f. pass. Form); fiat = 3. Sg. Konj. Präs.\n1. Niemand wird durch Zufall weise, sondern durch großen Eifer kann man ein guter Mann werden. 2. Aus einem kleinen Anfang ist ein großer Staat geworden. 3. Der Richter sorgt dafür, dass kein Unrecht geschieht.",
+				"criteria": [
+					"Alle vier Formen von fieri sind grammmatisch genau bestimmt.",
+					"Der Gleichsetzungsnominativ sapiens und res publica ist richtig behandelt.",
+					"Satz 3 mit ne + fiat ist korrekt als Begehrsatz übersetzt."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Erkläre den Zusammenhang zwischen „facere“ und „fieri“ und stelle zu drei neuen Verbstammformen der 8. Klasse (z. B. mentiri, pati, audere oder quiescere) den vollständigen Stammformen-Dreiklang auf.",
+				"model": "facere besitzt im Aktiv normale Formen (facit = er macht), im Präsensstamm aber kein reguläres *facitur, sondern nutzt fieri (fit = es wird gemacht / geschieht); im Perfekt übernimmt factus est beide Rollen.\nStammformen: mentior, mentiri, mentitus sum (lügen); patior, pati, passus sum (erleiden); audeo, audere, ausus sum (wagen); quiesco, quiescere, quievi, quietum (ruhen).",
+				"criteria": [
+					"Die Arbeitsteilung von facere und fieri in Präsens- und Perfektstamm ist klar erklärt.",
+					"Drei Verben sind mit ihren korrekten Stammformen angegeben.",
+					"Bei Deponentien/Semideponentien stimmt das Perfektpartizip."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Präsensform von fieri in 3. Person Plural wählen",
+					"before": "Multa mirabilia … (geschehen)",
+					"after": "",
+					"options": [
+						"fiunt",
+						"faciuntur",
+						"fientur"
+					],
+					"answer": "fiunt",
+					"explanation": "Die 3. Pl. Ind. Präs. von fieri lautet fiunt."
+				},
+				{
+					"label": "Passives Perfekt zu facere bestimmen",
+					"before": "pax … (ist geschlossen worden)",
+					"after": "",
+					"options": [
+						"facta est",
+						"fit est",
+						"fierit"
+					],
+					"answer": "facta est",
+					"explanation": "Im Perfekt nutzt fieri das Partizip factus + esse."
+				},
+				{
+					"label": "Prädikatsnomen bei fieri im richtigen Kasus setzen",
+					"before": "Cicero … fit (Konsul).",
+					"after": "",
+					"options": [
+						"consul (Nom.)",
+						"consulem (Akk.)",
+						"consuli (Dat.)"
+					],
+					"answer": "consul (Nom.)",
+					"explanation": "Bei fieri steht ein Prädikatsnomen stets im Nominativ."
+				}
+			]
+		}
+	}
+]

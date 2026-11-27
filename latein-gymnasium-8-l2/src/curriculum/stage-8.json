@@ -1,0 +1,716 @@
+[
+	{
+		"id": "l8-satzanalyse-methoden",
+		"stage": "digital-methodik",
+		"title": "Satzanalyse: Einrücken, Klammern & Struktur",
+		"skill": "Komplexe Satzgefüge mit Gerundiv, NcI und Konjunktiv-Relativsätzen planvoll analysieren und gliedern",
+		"bindings": [
+			"L8-02",
+			"L8-22",
+			"L8-42",
+			"L8-43"
+		],
+		"paragraphs": [
+			"Je länger die lateinischen Satzperioden in der achten Klasse werden, desto weniger hilft bloßes Wörter-Raten von links nach rechts. Stattdessen zerlegst du jedes Satzgefüge mit einer klaren Analyse-Technik: Markiere zuerst alle Konnektoren und Subjunktionen (wie qui, cum, ut, quod), trenne Haupt- und Nebensätze grafisch durch das Einrückmodell (jeder abhängige Satz eine Ebene weiter rechts) und prüfe dann die satzwertigen Bausteine im Inneren.",
+			"Besonders wichtig in diesem Schuljahr sind zwei Klammer-Prüfungen: Bei einer -nd-Form prüfst du sofort KNG-Bindung und esse; bei einem passiven Kopfverb in der dritten Person (dicitur, videtur, traduntur) markierst du Subjektsnominativ plus Infinitiv als NcI-Einheit. So wird selbst ein dreizeiliger Satz in wenigen Sekunden übersichtlich."
+		],
+		"materialLabel": "Dreistufiges Satzgefüge zur Satzanalyse",
+		"materialLanguage": "la",
+		"material": "Seneca, qui sapientiam ad vitam regendam utilem esse putabat, discipulis scripsit:\n„Omnia, quae fiunt, ratione ferenda sunt, neque quisquam miser fieri dicitur, nisi qui sibi ipse nocet.“",
+		"sourceIds": [
+			"lp",
+			"lp-profil"
+		],
+		"diagram": {
+			"kind": "syntax-tree",
+			"title": "Drei-Ebenen-Analyse für komplexe Satzgefüge",
+			"caption": "Konnektoren, Einrückebenen und satzwertige Klammern Schritt für Schritt trennen.",
+			"parts": [
+				{
+					"id": "sa-ebene1",
+					"label": "1 · Hauptsatz-Gerüst",
+					"badge": "Subjekt + Prädikat",
+					"latin": "Seneca … discipulis scripsit",
+					"detail": "Der Hauptsatz steht ganz links ohne Einrückung und gibt den Rahmen der Mitteilung vor."
+				},
+				{
+					"id": "sa-ebene2",
+					"label": "2 · Nebensätze einrücken",
+					"badge": "Relativ & Bedingung",
+					"latin": "qui … putabat / quae fiunt / nisi qui … nocet",
+					"detail": "Jeder eingeleitete Nebensatz rückt eine Stufe ein – so verliert kein Relativsatz seinen Bezug."
+				},
+				{
+					"id": "sa-ebene3",
+					"label": "3 · Satzwertige Klammern",
+					"badge": "AcI · Gerundiv · NcI",
+					"latin": "[ferenda sunt] · [miser fieri dicitur]",
+					"detail": "Im Inneren treten drei Klasse-8-Phänomene zusammen auf: attributives Gerundiv, prädikatives Gerundiv und NcI mit fieri."
+				}
+			]
+		},
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Was rückst du bei der Einrückmethode eines Satzgefüges am weitesten nach rechts ein?",
+			"answer": "untergeordnete Nebensätze (und darin eingebettete Infinitiv-/Partizipialkonstruktionen) je nach Abhängigkeitsgrad",
+			"wrong": [
+				"immer nur das erste Wort des Hauptsatzes",
+				"ausschließlich die Eigennamen im Nominativ"
+			],
+			"explanation": "Die Einrücktiefe bildet die grammatische Hierarchie ab: Hauptsatz Ebene 0, Nebensatz 1. Grades Ebene 1, weiterer Unterbau Ebene 2."
+		},
+		"takeaway": "Analysiere komplexe Sätze schrittweise: zuerst Konnektoren und Einrückebenen für Haupt- und Nebensätze markieren, dann Gerundiv-, AcI- und NcI-Klammern ausgrenzen.",
+		"practice": [
+			{
+				"prompt": "Welches übergeordnete Hauptprädikat leitet das wörtliche Zitat im ersten Teil des Materials ein?",
+				"answers": [
+					"scripsit"
+				],
+				"feedback": "Seneca … discipulis scripsit ist der übergeordnete Hauptsatz; der Relativsatz qui … putabat ist eingeschoben."
+			},
+			{
+				"prompt": "Welche Konstruktion verbindet im Zitat „miser fieri dicitur“?",
+				"answers": [
+					"nci",
+					"nominativus cum infinitivo",
+					"ein nci"
+				],
+				"feedback": "dicitur (3. Sg. Passiv) + Prädikatsnomen miser (Nom.) + Infinitiv fieri bilden einen NcI."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "de",
+				"prompt": "Stelle die Einrückstruktur für das gesamte Material auf (Ebene 0 = Hauptsatz, Ebene 1 = Relativsätze/Zitathauptsätze, Ebene 2 = AcI/Bedingungssatz) und übersetze den ganzen Abschnitt.",
+				"model": "Ebene 0: Seneca discipulis scripsit\n  Ebene 1: qui putabat\n    Ebene 2: sapientiam [ad vitam regendam] utilem esse\nEbene 0 (Zitat): Omnia ratione ferenda sunt, neque quisquam miser fieri dicitur\n  Ebene 1: quae fiunt / nisi qui sibi ipse nocet.\nÜbersetzung: Seneca, der meinte, dass die Weisheit zur Lenkung des Lebens nützlich sei, schrieb seinen Schülern: „Alles, was geschieht, muss mit Vernunft ertragen werden, und man sagt nicht, dass irgendjemand unglücklich werde, außer wer sich selbst schadet.“",
+				"criteria": [
+					"Haupt- und Nebensätze sowie der eingebettete AcI sind hierarchisch sauber getrennt.",
+					"Gerundiv (ad vitam regendam und ferenda sunt), fieri und NcI (miser fieri dicitur) sind richtig aufgelöst.",
+					"Die Übersetzung ist vollständig und sprachlich stimmig."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Erkläre einer Person aus Klasse 7, wie du im bekannten AcI und Ablativus absolutus Verbform und Bezugswort findest. Zeige danach am NcI, warum du für dieselbe Methode den Nominativ statt des Akkusativs prüfen musst.",
+				"model": "Im AcI verbinde ich den Infinitiv mit dem Subjektsakkusativ: Dicit Marcum venire. Beim Ablativus absolutus klammere ich das Partizip mit seiner Bezugsform ein: Porta clausa, cives manserunt. Im NcI ist Marcus das Subjekt des finiten Verbs: Marcus venire dicitur. Der Infinitiv gehört zu dieser Aussage über Marcus.",
+				"criteria": [
+					"Der Subjektsakkusativ im AcI ist benannt.",
+					"Im Ablativus absolutus werden zwei Formen verbunden.",
+					"Marcus im NcI steht im Nominativ."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Hauptsatzgerüst aus eingeschobener Periode herausschälen",
+					"before": "Seneca, qui … putabat, discipulis scripsit → Hauptsatz:",
+					"after": "",
+					"options": [
+						"Seneca discipulis scripsit",
+						"qui sapientiam putabat",
+						"ad vitam regendam"
+					],
+					"answer": "Seneca discipulis scripsit",
+					"explanation": "Zwischen die beiden Kommas fällt der eingeschobene Relativsatz."
+				},
+				{
+					"label": "Funktion von ad vitam regendam in der Analyse bestimmen",
+					"before": "utilem ad vitam regendam →",
+					"after": "",
+					"options": [
+						"attributives Gerundiv („zur Lenkung des Lebens“)",
+						"prädikatives Gerundiv („das Leben muss gelenkt werden“)",
+						"Ablativus absolutus"
+					],
+					"answer": "attributives Gerundiv („zur Lenkung des Lebens“)",
+					"explanation": "Nach ad im Akkusativ liefert es als Attribut eine Zweckangabe."
+				},
+				{
+					"label": "NcI-Kombination im Zitat sicher deuten",
+					"before": "neque quisquam miser fieri dicitur →",
+					"after": "",
+					"options": [
+						"und niemand soll unglücklich werden (man sagt nicht, dass …)",
+						"und irgendjemand wurde unglücklich gemacht von Seneca",
+						"und niemand darf das Glück erwähnen"
+					],
+					"answer": "und niemand soll unglücklich werden (man sagt nicht, dass …)",
+					"explanation": "neque quisquam + dicitur + fieri bildet einen verneinten NcI."
+				}
+			]
+		}
+	},
+	{
+		"id": "l8-uebersetzen-pruefen",
+		"stage": "digital-methodik",
+		"title": "Übersetzungstechniken & Übersetzungen prüfen",
+		"skill": "Verschiedene Übersetzungstechniken selbständig anwenden und eigene wie fremde Übersetzungen kritisch auf Genauigkeit und Stil prüfen",
+		"bindings": [
+			"L8-02",
+			"L8-04",
+			"L8-24",
+			"L8-44",
+			"L8-45"
+		],
+		"paragraphs": [
+			"Nicht jede Methode passt zu jedem Text: Bei verschachtelten Sätzen hilft die Konstruktionsmethode (Prädikat → Subjekt → Objekte/Adverbiale), bei linearen Erzählungen die Drei-Schritt-Methode (Vorerschließen durch verstehendes Lesen → Dekodieren der Wortgruppen → Rekodieren in natürliches Deutsch). Entscheidend ist aber der vierte Schritt danach: die eigene Übersetzung kritisch gegen das lateinische Original zu prüfen!",
+			"Eine professionelle Korrektur schaut auf drei Ebenen zugleich: Stimmen Tempus, Modus und Numerus (auch bei indirekten oder verschränkten Formen)? Passt die Wortbedeutung wirklich zum Sachfeld und Kontext? Und klingt der Satz am Ende wie echtes, treffendes Deutsch statt wie gestelztes „Übersetzungsdeutsch“ (etwa beim NcI oder Gerundiv)? Im Vergleich zweier Entwürfe erkennst du solche Schwächen sofort."
+		],
+		"materialLabel": "Lateinischer Ausgangssatz und zwei fehlerhafte bzw. holprige Schülerentwürfe zum Prüfen",
+		"materialLanguage": "la",
+		"material": "Lateinischer Satz: Legibus a magistratibus servatis pax civibus defendenda est, ne discordia in urbe oriatur.\n\nEntwurf A (zu prüfen): „Weil die Gesetze bewahren, wird den Bürgern der Frieden verteidigen, dass nicht die Zwietracht in der Stadt entstehe.“\nEntwurf B (zu prüfen): „Nachdem die Gesetze von den Beamten bewahrt worden sind, muss der Frieden für die Bürger verteidigt werden, damit in der Stadt keine Zwietracht entsteht.“",
+		"sourceIds": [
+			"lp",
+			"lp-profil"
+		],
+		"diagram": {
+			"kind": "syntax-tree",
+			"title": "Qualitätscheck für Übersetzungen in drei Prüfschritten",
+			"caption": "Formen, Satzbau und deutschen Stil systematisch kontrollieren.",
+			"parts": [
+				{
+					"id": "up-form",
+					"label": "1 · Formen- & Genuscheck",
+					"badge": "Aktiv vs. Passiv",
+					"latin": "servatis (PPP) · oriatur (Deponens!)",
+					"detail": "Prüfe jedes Verb und Partizip auf Tempus und Genus Verbi: servatis ist passiv-vorzeitig, oriatur als Deponens aktiv!"
+				},
+				{
+					"id": "up-satz",
+					"label": "2 · Konstruktionscheck",
+					"badge": "Dativus auctoris?",
+					"latin": "pax civibus defendenda est",
+					"detail": "Steht civibus als Dativus auctoris („Die Bürger müssen den Frieden verteidigen“) oder als Dativus commodi („für die Bürger“)?"
+				},
+				{
+					"id": "up-stil",
+					"label": "3 · Deutscher Feinschliff",
+					"badge": "Kontext & Idiomatik",
+					"latin": "ne discordia oriatur → damit keine …",
+					"detail": "Vermeide „dass nicht … entstehe“ und formuliere natürliches Deutsch („damit in der Stadt keine Zwietracht aufkommt“)."
+				}
+			]
+		},
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Welcher zentrale Grammatikfehler steckt im ersten Teil von Entwurf A („Weil die Gesetze bewahren“ für „Legibus a magistratibus servatis“)?",
+			"answer": "Der passive Ablativus absolutus (a magistratibus servatis) wurde fälschlich aktiv und ohne Urheber übersetzt",
+			"wrong": [
+				"Weil a magistratibus ein AcI ist",
+				"Weil legibus im Nominativ Plural steht"
+			],
+			"explanation": "Legibus a magistratibus servatis ist ein passiver Ablativus absolutus mit PPP: „Nachdem die Gesetze von den Beamten bewahrt worden sind“ (oder „Wenn …“)."
+		},
+		"takeaway": "Wähle je nach Satzbau die passende Übersetzungstechnik und prüfe Entwürfe immer dreifach: Formen/Tempora, Konstruktionen (Gerundiv/NcI/Abl. abs.) und natürliches Deutsch.",
+		"practice": [
+			{
+				"prompt": "Wie kannst du „civibus“ in „pax civibus defendenda est“ als Dativus auctoris aktivisch übersetzen („… verteidigen“)?",
+				"answers": [
+					"die bürger müssen den frieden verteidigen",
+					"müssen die bürger den frieden verteidigen"
+				],
+				"feedback": "Als Dativus auctoris werden die Bürger zum Subjekt: „müssen die Bürger den Frieden verteidigen“."
+			},
+			{
+				"prompt": "Welchen Stil-Mangel hat Entwurf A beim Nebensatz „dass nicht die Zwietracht entstehe“ statt einer klaren finalen Konjunktion?",
+				"answers": [
+					"damit keine",
+					"damit keine zwietracht entsteht",
+					"finalsatz mit damit"
+				],
+				"feedback": "Im modernen Deutsch leitet man negative Finalsätze nach ne mit „damit … nicht / kein“ (nicht „dass nicht … entstehe“) ein."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "de",
+				"prompt": "Benenne alle drei Fehler in Entwurf A und erkläre, warum Entwurf B sprachlich schon gut gelungen ist, aber bei „civibus“ noch um eine aktivische Gerundiv-Variante verbessert werden kann.",
+				"model": "Fehler in Entwurf A: 1. Abl. abs. Legibus a magistratibus servatis falsch aktiv ohne a magistratibus („Weil die Gesetze bewahren“); 2. Gerundiv defendenda est fälschlich aktiv („wird verteidigen“) statt passivischer Pflicht („muss verteidigt werden“); 3. ne … oriatur holprig („dass nicht … entstehe“ statt „damit keine Zwietracht entsteht“).\nZu Entwurf B: Grammatisch korrekt; liest man civibus jedoch als Dativus auctoris (was neben defendenda est sehr nahe liegt!), klingt „… müssen die Bürger den Frieden verteidigen“ noch präziser und aktiver.",
+				"criteria": [
+					"Alle drei Fehler in Entwurf A (Abl. abs., Gerundiv, ne-Satz) sind exakt diagnostiziert.",
+					"Die Stärke von Entwurf B ist gewürdigt.",
+					"Die Alternative mit civibus als Dativus auctoris ist klar formuliert."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Übersetze denselben Ausgangssatz so, dass der Ablativus absolutus „Legibus a magistratibus servatis“ als Substantivierung (Präpositionalausdruck) und „pax civibus defendenda est“ aktivisch erscheint, und lies die fertige Fassung Probe.",
+				"model": "„Nach (oder: Bei) der Bewahrung der Gesetze durch die Beamten müssen die Bürger den Frieden verteidigen, damit in der Stadt keine Zwietracht entsteht.“ (Oder konditional gewendet: „Wenn die Beamten die Gesetze wahren, müssen die Bürger den Frieden verteidigen …“).",
+				"criteria": [
+					"Der Ablativus absolutus ist stilistisch sauber nominal oder konditional variiert.",
+					"Das Gerundiv mit Dativus auctoris ist aktivisch aufgelöst.",
+					"Das Ergebnis klingt flüssig, eindeutig und sinngetreu."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Ablativus absolutus mit Handelndem treffend korrigieren",
+					"before": "Legibus a magistratibus servatis →",
+					"after": "",
+					"options": [
+						"Wenn / Nachdem die Beamten die Gesetze bewahrt haben",
+						"Weil die Gesetze den Beamten dienen",
+						"Während die Gesetze bewahren"
+					],
+					"answer": "Wenn / Nachdem die Beamten die Gesetze bewahrt haben",
+					"explanation": "Das PPP servatis bezieht sich passiv-vorzeitig auf legibus; a magistratibus nennt den Urheber."
+				},
+				{
+					"label": "Deponens oriatur im ne-Satz richtig auflösen",
+					"before": "ne discordia oriatur →",
+					"after": "",
+					"options": [
+						"damit keine Zwietracht entsteht (aufkommt)",
+						"damit Zwietracht nicht zerstört wird",
+						"obwohl Zwietracht entstand"
+					],
+					"answer": "damit keine Zwietracht entsteht (aufkommt)",
+					"explanation": "oriri ist ein Deponens der i-Konjugation mit aktiver Bedeutung („entstehen“)."
+				},
+				{
+					"label": "Stilistische Verbesserung beim Gerundiv mit Dativus auctoris wählen",
+					"before": "pax civibus defendenda est →",
+					"after": "",
+					"options": [
+						"die Bürger müssen den Frieden verteidigen",
+						"der Frieden wurde den Bürgern gezeigt",
+						"die Bürger scheinen den Frieden zu loben"
+					],
+					"answer": "die Bürger müssen den Frieden verteidigen",
+					"explanation": "Den Dativus auctoris ins Subjekt zu setzen erzeugt idiomatisches Deutsch."
+				}
+			]
+		}
+	},
+	{
+		"id": "l8-digital-recherche",
+		"stage": "digital-methodik",
+		"title": "Digital recherchieren & Quellen prüfen",
+		"skill": "Digitale Hilfsmittel (Online-Wörterbücher, Museumssammlungen, Enzyklopädien) gezielt nutzen und digital gefundene Angaben kritisch prüfen",
+		"bindings": [
+			"L8-47"
+		],
+		"paragraphs": [
+			"Im Lernbereich „Latein aktuell, digital, kreativ“ gehören digitale Nachschlagewerke und Recherchewerkzeuge genauso zum Handwerkszeug wie dein gedrucktes Lehrbuch. Ob du die genauen Stammformen von fieri nachschlägst, die Inschrift auf einem Weihestein aus Künzing suchst oder Hintergründe zu Mark Aurels Regensburger Legionslager recherchierst: Schnelligkeit im Netz ersetzt niemals das prüfende Mitdenken.",
+			"Deshalb prüfst du jede digitale Fundstelle nach drei Kriterien: Wer steht hinter der Website (etwa ein Fachmuseum wie das Limesmuseum Aalen, das Museum Quintana oder das ISB statt anonymer Foren)? Wann wurde der Beitrag verfasst und auf welche antiken oder archäologischen Quellen stützt er sich? Und bei digitalen Übersetzungshelfern gilt besonders: Programme raten oft bloß wahrscheinliche Wörter, übersehen aber KNG-Kongruenz, verschränkte Relativsätze oder ob ein Verb ein Deponens ist."
+		],
+		"materialLabel": "Drei Suchtreffer aus dem Internet zum Thema „Limes und Inschriften“ zur Quellenprüfung",
+		"materialLanguage": "de",
+		"material": "Treffer 1 (Limesmuseum Aalen / archäologischer Fachbeitrag): Datierung der Raetischen Mauer auf das 2./3. Jh. n. Chr. mit Verweis auf Dendrochronologie (Eichenholzpfähle) und Inschriften der Ala II Flavia.\nTreffer 2 (anonymer Blog „Römer-Fakten24“ ohne Impressum): „Der Limes wurde von Caesar 50 v. Chr. aus Marmor gebaut, um ganz Deutschland vor Wölfen zu schützen.“\nTreffer 3 (automatischer Übersetzer zu „Viri fortes consuluntur“): „Starke Männer trösten“ (verwechselt consulo und consolor!).",
+		"sourceIds": [
+			"lp",
+			"limesmuseum",
+			"museum-quintana",
+			"saalburg"
+		],
+		"diagram": {
+			"kind": "morph-lab",
+			"title": "Drei-Punkte-Quellenprüfung für digitale Recherche",
+			"caption": "Trägerschaft, Belege und sprachliche Eigenkontrolle sichern Qualität im Netz.",
+			"parts": [
+				{
+					"id": "dr-wer",
+					"label": "1 · Wer schreibt?",
+					"badge": "Herkunft & Fachbezug",
+					"latin": "Museum · Universität · Landesamt",
+					"detail": "Seriöse Institutionen (z. B. Saalburg, Limesmuseum, bpb, Bibliotheken) nennen Autoren, Impressum und Forschungsstand."
+				},
+				{
+					"id": "dr-was",
+					"label": "2 · Welche Belege?",
+					"badge": "Quellen & Datierung",
+					"latin": "Inschriften · Funde · Jahreszahlen",
+					"detail": "Verlässliche Angaben trennen historische Tatsachen (z. B. Raetische Mauer unter Kaiserzeit) von Mythen und zeigen Belege."
+				},
+				{
+					"id": "dr-check",
+					"label": "3 · Selbst prüfen!",
+					"badge": "Formen & Kontext",
+					"latin": "consuluntur ≠ consolor · Passiv ≠ Aktiv",
+					"detail": "Digitale Übersetzungshilfen scheitern oft an Genus Verbi (Passiv), Verwechslung ähnlicher Verben oder mehrdeutigen Wörtern."
+				}
+			]
+		},
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Woran erkennst du sofort, dass Treffer 2 im Material eine unzuverlässige Internetquelle ist?",
+			"answer": "fehlendes Impressum, fehlende Belege und sachlich unmögliche Behauptungen (Caesar 50 v. Chr. / Marmor)",
+			"wrong": [
+				"weil jede Internetseite über die Antike grundsätzlich falsch ist",
+				"weil ein echter Blog immer auf Latein geschrieben sein muss"
+			],
+			"explanation": "Der Obergermanisch-Raetische Limes entstand ab dem späten 1. und 2. Jahrhundert n. Chr. aus Holzpalisade, Wall/Graben bzw. in Raetien als Steinmauer (Kalkstein, nicht Marmor) und hatte nichts mit Caesar 50 v. Chr. zu tun."
+		},
+		"takeaway": "Prüfe digitale Quellen immer auf Urheber/Impressum, historische Belege und eigene Sprachkenntnis – und übernimm nie ungeprüft maschinelle Übersetzungen.",
+		"practice": [
+			{
+				"prompt": "Wie lautet die korrekte passive Übersetzung von „Viri fortes consuluntur“ (Treffer 3 korrigieren)?",
+				"answers": [
+					"tapfere männer werden um rat gefragt",
+					"starke männer werden um rat gefragt",
+					"tapfere männer werden befragt"
+				],
+				"feedback": "consuluntur kommt von consulere („um Rat fragen“) und steht im Passiv: „werden um Rat gefragt“!"
+			},
+			{
+				"prompt": "Welche wissenschaftliche Methode im Treffer 1 datiert antike Holzpfähle am Limes anhand von Jahresringen aufs Jahr genau?",
+				"answers": [
+					"dendrochronologie"
+				],
+				"feedback": "Die Dendrochronologie bestimmt über Wachstumsringe von Eichenstämmen exakt die Fälljahre römischer Palisaden."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "de",
+				"prompt": "Beurteile alle drei Treffer aus dem Material nach Zuverlässigkeit, benenne jeden sachlichen oder sprachlichen Fehler und erkläre, wie du im Zweifel nachprüfst.",
+				"model": "Treffer 1 ist seriös (Fachmuseum, überprüfbare Befunde wie Dendrochronologie und Truppeninschriften). Treffer 2 ist unbrauchbar (kein Impressum, historisch falscher Zeitraum – Caesar baute keinen Raetischen Limes, und er bestand nicht aus Marmor). Treffer 3 enthält zwei Fehler eines Übersetzungstools: Verwechslung von consulere (um Rat fragen) mit consolari (trösten) sowie Ignorieren der Passivendung -untur („werden um Rat gefragt“).\nPrüfung: Stammformen im Schulwörterbuch/Lehrbuch prüfen und Sachdaten auf Museumsseiten gegenlesen.",
+				"criteria": [
+					"Alle drei Treffer sind treffend bewertet.",
+					"Sachfehler (Treffer 2) und Sprachfehler (Treffer 3) sind konkret benannt.",
+					"Ein sinnvoller Gegenprüf-Weg über Wörterbuch oder Fachquelle ist beschrieben."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Entwirf eine kurze Checkliste (4 Punkte) für deine Klasse zur Frage: „Wann darf ich einem Online-Ergebnis zu Latein oder Antike vertrauen – und wann nicht?“",
+				"model": "1. Impressum & Fachstelle prüfen (Museum, Universität, bpb, Schulverlag statt anonymer Webseiten).\n2. Epoche & Zahlen abgleichen (passen Jahrhundert, Kaiser und Ort zu unserem Epochenstrahl?).\n3. Bei lateinischen Zitaten immer die eigene Formenanalyse machen (Prädikat, Modus, Aktiv/Passiv, KNG).\n4. Keine automatische Übersetzung blind übernehmen, sondern mindestens zwei Quellen oder das Lehrbuch vergleichen.",
+				"criteria": [
+					"Vier klare, umsetzbare Prüfkriterien sind formuliert.",
+					"Sowohl historische Sachrecherche als auch lateinische Sprachprüfung sind berücksichtigt.",
+					"Die Checkliste ist schülergerecht und konkret."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Vertrauenswürdige Quelle für antike Funde auswählen",
+					"before": "Suche zu raetischen Limes-Kastellen →",
+					"after": "",
+					"options": [
+						"Museumsportal (z. B. Limesmuseum Aalen / Quintana)",
+						"anonyme Seite ohne Impressum und Belege",
+						"ein beliebiger Social-Media-Kommentar"
+					],
+					"answer": "Museumsportal (z. B. Limesmuseum Aalen / Quintana)",
+					"explanation": "Fachmuseen und Landesämter stützen sich auf geprüfte Ausgrabungen."
+				},
+				{
+					"label": "Typischen Fehler eines Übersetzungsprogramms entlarven",
+					"before": "„Viri consuluntur“ → Tool schreibt „Männer trösten“ →",
+					"after": "",
+					"options": [
+						"Verwechslung mit consolari & Passiv (-untur) ignoriert",
+						"Perfektstamm wurde fälschlich als Futur II gelesen",
+						"Dativus auctoris wurde als Vokativ gedeutet"
+					],
+					"answer": "Verwechslung mit consolari & Passiv (-untur) ignoriert",
+					"explanation": "Solche Verwechslungen fallen bei eigener Formenanalyse sofort auf."
+				},
+				{
+					"label": "Wichtige Prüfgröße bei Online-Artikeln bestimmen",
+					"before": "Verlässlichkeit eines Sachtextes testen →",
+					"after": "",
+					"options": [
+						"Quellenangaben, Autoren und historische Daten gegenprüfen",
+						"nur auf bunte Grafiken und große Überschriften achten",
+						"stets den obersten Suchtreffer ohne Lesen kopieren"
+					],
+					"answer": "Quellenangaben, Autoren und historische Daten gegenprüfen",
+					"explanation": "Kritische Medienkompetenz prüft Herkunft und Nachweise."
+				}
+			]
+		}
+	},
+	{
+		"id": "l8-digital-kreativ",
+		"stage": "digital-methodik",
+		"title": "Kreative & digitale Rezeption lateinischer Texte",
+		"skill": "Methoden der produktiven und kreativen Rezeption (Szene, Plakat, Collage, digitales Projekt) auf Grundlage eines Textes planen",
+		"bindings": [
+			"L8-03",
+			"L8-46",
+			"L8-50"
+		],
+		"paragraphs": [
+			"Lateinische Texte bleiben lebendig, wenn man sie nicht nur übersetzt, sondern auch weitergestaltet: Ein Streitgespräch bei Phaedrus wird zur kurzen Spielszene mit zwei Rollen, ein römischer Rechtsfall zum Gerichtsprotokoll oder Erklärplakat, ein Limeskastell zur digitalen Museumsführung mit klaren Skizzen und Zeitstrahl.",
+			"Damit eine kreative oder digitale Arbeit nicht vom Text abschweift, folgt sie einer sauberen Struktur: Zuerst sicherst du durch die genaue Übersetzung den Kern des Originals (Wer spricht? Welches Problem wird verhandelt? Welcher Wert steht auf dem Spiel?). Danach wählst du ein passendes Format – etwa ein Storyboard für ein kurzes Erklärvideo, eine szenische Dialogfortsetzung oder ein strukturiertes Ausstellungsplakat – und belegst deine Deutung direkt mit passenden lateinischen Schlüsselbegriffen."
+		],
+		"materialLabel": "Ausgangsimpuls: Phaedrus-Fabel „Fuchs und Rabe“ (Vulpes et corvus) für kreative Umsetzung",
+		"materialLanguage": "la",
+		"material": "Corvus caseum de fenestra raptum in alta arbore tenebat. Vulpes, quae caseum cupiebat, corvum verbis blandis laudavit: „O corve, quam pulcher es! Si vocem quoque haberes, nulla avis te prior esset!“ Stultus corvus, dum vocem ostendere vult, os aperuit; caseus cecidit, quem vulpes statim rapuit. (Epimythion: Qui se laudari verbis subdolis gaudet, poenas dat.)",
+		"sourceIds": [
+			"lp",
+			"lp-profil"
+		],
+		"diagram": {
+			"kind": "myth-values",
+			"title": "Von der Textgrundlage zum kreativen Medienprodukt",
+			"caption": "Drei Schritte verbinden texttreues Latein mit lebendiger Rezeption und Präsentation.",
+			"parts": [
+				{
+					"id": "dk-kern",
+					"label": "1 · Textkern sichern",
+					"badge": "Übersetzen & Deuten",
+					"latin": "verbis blandis · stultus corvus",
+					"detail": "Jede kreative Umsetzung stützt sich zuerst auf genaue Figuren, Motive und zentrale lateinische Zitate."
+				},
+				{
+					"id": "dk-format",
+					"label": "2 · Format passend wählen",
+					"badge": "Szene · Plakat · Video",
+					"latin": "Dialog · Storyboard · Schaubild",
+					"detail": "Fabeln eignen sich für kurze Dialogszenen oder Comics; historische Themen für Zeitleisten, Karten und digitale Präsentationen."
+				},
+				{
+					"id": "dk-bezug",
+					"label": "3 · Gegenwart verknüpfen",
+					"badge": "Reflexion & Präsentation",
+					"latin": "Eitelkeit & Schmeichelei heute",
+					"detail": "Zeige beim Präsentieren klar, was die Geschichte heute bedeutet (z. B. Schmeichelei in Werbung oder Netz)."
+				}
+			]
+		},
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Was ist die Voraussetzung dafür, dass eine kreative Szene oder digitale Präsentation im Lateinunterricht überzeugt?",
+			"answer": "Sie gründet auf einer genauen Textarbeit und greift Kernmotive sowie Begriffe des Originals treffend auf",
+			"wrong": [
+				"Sie erfindet eine völlig neue Geschichte ohne jeden Bezug zum lateinischen Text",
+				"Sie besteht ausschließlich aus Animationen ohne klare Aussage"
+			],
+			"explanation": "Kreative Rezeption bleibt Textauswertung: Form und Gestaltung dienen dazu, die Aussage des Originals anschaulich zu machen."
+		},
+		"takeaway": "Produktive und digitale Rezeption (Szene, Plakat, Storyboard, Collage) gelingt dann, wenn Gestaltungsmittel bewusst zum Textkern und zu passenden Originalbegriffen passen.",
+		"practice": [
+			{
+				"prompt": "Welcher Konjunktiv-Typ drückt in „Si vocem quoque haberes, nulla avis te prior esset!“ die unwirkliche Annahme aus (Wiederholung)?",
+				"answers": [
+					"irrealis",
+					"irrealis der gegenwart"
+				],
+				"feedback": "si + Konjunktiv Imperfekt bildet den Irrealis der Gegenwart („Wenn du auch eine Stimme hättest, wäre kein Vogel vornehmer als du“)."
+			},
+			{
+				"prompt": "Welches Semideponens im Epimythion („Qui se laudari … gaudet“) bedeutet „sich freuen“?",
+				"answers": [
+					"gaudet",
+					"gaudere"
+				],
+				"feedback": "gaudere, gavisus sum ist eines der vier wichtigen Semideponentien der 8. Klasse."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "de",
+				"prompt": "Übersetze die Fabel „Fuchs und Rabe“ aus dem Material und entwirf eine dreischrittige Szenen- oder Comic-Skizze (Bild 1–3) mit je einer passenden lateinischen Schlüsselvokabel.",
+				"model": "Übersetzung: Ein Rabe hielt einen Käse, den er aus einem Fenster geraubt hatte, auf einem hohen Baum fest. Ein Fuchs, der den Käse begehrte, lobte den Raben mit schmeichelnden Worten: „O Rabe, wie schön bist du! Wenn du auch noch eine Stimme hättest, wäre kein Vogel vorzüglicher als du!“ Als der törichte Rabe seine Stimme zeigen wollte, öffnete er den Schnabel; der Käse fiel herab, und der Fuchs schnappte ihn sofort. (Wer sich freut, durch hinterlistige Worte gelobt zu werden, büßt dafür.)\nSkizze: Bild 1: Rabe hoch im Baum mit caseus, Fuchs unten aufblickend; Bild 2: Schmeichelei (verba blanda) und stolzes Schnabelöffnen; Bild 3: Fallender Käse und Flucht des Fuchses mit der Moral (poenas dat).",
+				"criteria": [
+					"Die gesamte Fabel einschließlich Irrealis und relativem Satzanschluss (quem) ist korrekt übersetzt.",
+					"Drei klar getrennte Bilder/Szenen sind sinnvoll entworfen.",
+					"Passende lateinische Begriffe aus dem Text sind integriert."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Plane ein kurzes digitales Projekt (z. B. ein 3-Folien-Präsentationskonzept oder ein Erklärvideo-Storyboard), das die Moral von „Fuchs und Rabe“ auf eine moderne Situation (etwa Werbung, Influencer-Lob oder Phishing im Netz) überträgt.",
+				"model": "Folie/Szene 1 (Antike Quelle): Kurze Lesung des lateinischen Originals mit Hervorhebung von verba blanda und stultus corvus.\nFolie/Szene 2 (Mechanismus): Schmeichelei schaltet die Vernunft (ratio) aus – der Fuchs nutzt Eitelkeit, um den „Käse“ (Daten, Geld oder Vertrauen) zu bekommen.\nFolie/Szene 3 (Gegenwarts-Transfer): Beispiel Fake-Gewinnspiel oder Schmeichel-Nachricht („Du bist ausgewählt!“) → prüfende Schlussfrage: „Wer will hier meinen Käse?“",
+				"criteria": [
+					"Das digitale Format ist klar in Schritte/Folien strukturiert.",
+					"Der Vergleich zwischen Fabelmotiv (Schmeichelei) und heutiger Situation ist schlüssig.",
+					"Visualisierung und Textbezug ergänzen sich sinnvoll."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Passende Visualisierungsform für historische Abläufe wählen",
+					"before": "Entwicklung Kaiserzeit bis Spätantike →",
+					"after": "",
+					"options": [
+						"interaktiver Zeitstrahl mit Eckdaten",
+						"unbeschriftete Wortliste ohne Daten",
+						"einzelnes Partizip ohne Zusammenhang"
+					],
+					"answer": "interaktiver Zeitstrahl mit Eckdaten",
+					"explanation": "Zeitliche Abfolgen werden auf einem Zeitstrahl sofort übersichtlich."
+				},
+				{
+					"label": "Bezug zwischen Kreativaufgabe und Text absichern",
+					"before": "Szenischer Dialog zur Phaedrus-Fabel →",
+					"after": "",
+					"options": [
+						"Greift Charakterzüge und Kernzitate des Originals auf",
+						"verzichtet vollständig auf die Fabelmoral",
+						"ersetzt die Figuren durch zufällige Zahlen"
+					],
+					"answer": "Greift Charakterzüge und Kernzitate des Originals auf",
+					"explanation": "Produktive Rezeption macht Aussage und Spannung des Textes spürbar."
+				},
+				{
+					"label": "Rolle der digitalen ZAM-Karten & App einordnen",
+					"before": "Digitale Lernwerkzeuge im Lateinunterricht →",
+					"after": "",
+					"options": [
+						"vertiefen Formen, Analyse und Textverstehen ergänzend zum Unterricht",
+						"ersetzen jedes Gespräch und eigenes Nachdenken",
+						"machen Wortschatzarbeit dauerhaft unnötig"
+					],
+					"answer": "vertiefen Formen, Analyse und Textverstehen ergänzend zum Unterricht",
+					"explanation": "Digitale Werkzeuge stützen das Verstehen und Behalten, ersetzen aber kein Unterrichtsgespräch."
+				}
+			]
+		}
+	},
+	{
+		"id": "l8-selbstorganisation-team",
+		"stage": "digital-methodik",
+		"title": "Lernstrategien, Zeitplan & Teamarbeit",
+		"skill": "Eigenen Kenntnisstand kritisch prüfen, Lern- und Zeitpläne realistisch gestalten und kooperativ in Gruppen sowie auf Lernplattformen mitwirken",
+		"bindings": [
+			"L8-47",
+			"L8-48",
+			"L8-49",
+			"L8-51",
+			"L8-52"
+		],
+		"paragraphs": [
+			"In der achten Klasse wachsen Textlänge und Grammatikvielfalt spürbar – vom Gerundiv über Deponentien bis zum NcI. Wer erst am Abend vor einer Schulaufgabe alles auf einmal lernen will, gerät leicht unter Druck. Wirksamer ist ein fester, realistischer Arbeitsplan: kurze, regelmäßige Vokabel- und Formentrainings über die Woche verteilt (wie durch Spaced Repetition mit ZAM-Karten), kombiniert mit wöchentlichen Textanalysen an echten Sätzen.",
+			"Ebenso wichtig sind zwei Fähigkeiten für offene Lernformen (Wochenplan, Lernzirkel) und digitale Lernplattformen: erstens die ehrliche Selbstdiagnose (Was sitzt schon sicher? Wo verwechsle ich noch Gerund und Gerundiv oder Deponens und Passiv?), zweitens ein wertschätzender, konstruktiver Umgang miteinander in Partner- und Gruppenarbeit – präzise Verbesserungstipps geben statt bloß abzuurteilen."
+		],
+		"materialLabel": "Fallbeispiel zur Schulaufgaben-Vorbereitung und Rückmeldekultur",
+		"materialLanguage": "de",
+		"material": "Situation: In zwei Wochen steht eine Schulaufgabe über „Gerundiv, NcI, Deponentien und Römische Kaiserzeit / Recht“ an. Im Lernzirkel tauschen zwei Partner ihre Übersetzungsentwürfe aus.\nRückmeldung X (unbrauchbar): „Total falsch, du kannst gar kein Latein!“\nRückmeldung Y (konstruktiv): „Dein Hauptsatz und die Übersetzung von dixit stimmen genau! Bei ‚urbis servandae‘ hast du den Genitiv als Gerund statt als Gerundiv gelesen – schau auf die weibliche Endung -ae neben urbis!“",
+		"sourceIds": [
+			"lp",
+			"lp-profil"
+		],
+		"diagram": {
+			"kind": "syntax-tree",
+			"title": "Kreislauf aus Selbstdiagnose, Zeitplan und Teamfeedback",
+			"caption": "Planvoll lernen und konstruktiv zusammenarbeiten – allein und in Gruppen.",
+			"parts": [
+				{
+					"id": "st-diagnose",
+					"label": "1 · Kenntnisstand prüfen",
+					"badge": "Selbstreflexion",
+					"latin": "Sicher vs. Unsicher markieren",
+					"detail": "Trenne vor jeder Übungsphase klar, was du beherrschst (z. B. Gerundiv + esse) und was noch wackelt (z. B. verschränkte Relativsätze)."
+				},
+				{
+					"id": "st-plan",
+					"label": "2 · Zeitplan takten",
+					"badge": "Realistische Pensen",
+					"latin": "15 Min. täglich > 3 Std. am Vorabend",
+					"detail": "Verteile Vokabeln, Formen, Kulturwissen und Probeklausur-Sätze auf feste Portionen mit Puffertag vor der Prüfung."
+				},
+				{
+					"id": "st-team",
+					"label": "3 · Konstruktiv helfen",
+					"badge": "Team & Plattform",
+					"latin": "Stärke nennen + konkreter Tipp",
+					"detail": "Wertschätzendes Feedback benennt zuerst Gelungenes und gibt dann einen überprüfbaren grammatischen Hinweis."
+				}
+			]
+		},
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Was macht Rückmeldung Y im Material zu einem gelungenen Beitrag in der Partner- oder Gruppenarbeit?",
+			"answer": "Sie würdigt zuerst einen richtigen Teil und erklärt den einen konkreten Fehler direkt mit Regelbezug",
+			"wrong": [
+				"Sie verzichtet auf jeden Fehlerhinweis, um Zeit zu sparen",
+				"Sie bewertet die Person insgesamt statt der konkreten Übersetzungsstelle"
+			],
+			"explanation": "Konstruktive Kritik trennt Person und Satzstelle, stärkt das Selbstvertrauen und zeigt den exakten Weg zur Korrektur."
+		},
+		"takeaway": "Gute Lernorganisation verbindet realistische Wochenpläne mit kritischer Selbstprüfung; gute Teamarbeit stärkt mit sachlicher, wertschätzender Rückmeldung alle Beteiligten.",
+		"practice": [
+			{
+				"prompt": "Wie heißt das Lernprinzip, Vokabeln und Kernregeln in wachsenden zeitlichen Abständen (wie in ZAM) zu wiederholen?",
+				"answers": [
+					"spaced repetition",
+					"wiederholung in abständen",
+					"verteiltes lernen"
+				],
+				"feedback": "Spaced Repetition („verteiltes Wiederholen“) verankert Stoff langfristig besser als spätes Pauken."
+			},
+			{
+				"prompt": "Welchen ersten Schritt solltest du nach der Rückmeldung Y im Material vornehmen, um ‚urbis servandae‘ zu korrigieren (KNG / …)?",
+				"answers": [
+					"kng prüfen",
+					"kng-kongruenz prüfen",
+					"bezugswort prüfen",
+					"kng"
+				],
+				"feedback": "Der Blick auf die KNG-Kongruenz von urbis und servandae löst die Verwechslung sofort."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "de",
+				"prompt": "Erstelle für die 14-Tage-Situation aus dem Material einen realistischen 5-Etappen-Zeitplan (mit konkreten Übungsblöcken und einem Wiederholungs-/Puffertag) und begründe deine Reihenfolge.",
+				"model": "Tag 1–3: Bestandsaufnahme (Selbstcheck) + Wortschatz und Deponentien/fieri auffrischen.\nTag 4–6: Gerundiv (attributiv, prädikativ, Dativus auctoris) + NcI an Beispielsätzen üben.\nTag 7–9: Kulturstoff (Kaiserzeit, Limes, Römisches Recht, Philosophie/Phaedrus) mit Schaubildern und ZAM-Karten wiederholen.\nTag 10–12: Zwei zusammenhängende Übungstexte mit Einrückmethode übersetzen und mit Musterlösung prüfen.\nTag 13: Gezieltes Nachbessern der restlichen Fehlerpunkte (Puffertag); Tag 14: kurze lockere Wiederholung ohne Hektik.",
+				"criteria": [
+					"Alle Teilbereiche (Wortschatz, Formen, Syntax, Kultur, Textpraxis) sind abgedeckt.",
+					"Die Arbeitspensen sind realistisch verteilt und enthalten Pufferzeit.",
+					"Die Abfolge (von Einzelformen über Sätze zur ganzen Textübung) ist begründet."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Ein Mitschüler schreibt in einem Gruppenforum auf einer digitalen Lernplattform über einen NcI-Satz: „Socrates fuisse dicitur = Sokrates wurde gesagt gewesen sein.“ Formuliere eine wertschätzende, fachlich genaue Rückmeldung nach dem Muster von Rückmeldung Y.",
+				"model": "„Hallo! Gut erkannt hast du schon die beiden Teile: Socrates steht im Nominativ und fuisse zeigt Vergangenheit/Vorzeitigkeit an. Im Deutschen klingt ‚wurde gesagt‘ beim NcI allerdings unnatürlich – weil dicitur einen persönlichen NcI auslöst, formen wir im Deutschen unpersönlich um: ‚Man sagt, dass Sokrates … gewesen sei‘ oder ‚Sokrates soll … gewesen sein‘. Probier es damit noch mal, dann passt der ganze Satz!“",
+				"criteria": [
+					"Ein gelungener Ansatz des Mitschülers ist zuerst anerkennend benannt.",
+					"Die NcI-Regel (persönlich lateinisch → unpersönlich/modal deutsch) ist freundlich und genau erklärt.",
+					"Der Ton ist motivierend, sachlich und für eine Lernplattform geeignet."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Realistische Prüfungsvorbereitung planen",
+					"before": "Schulaufgabe in 14 Tagen →",
+					"after": "",
+					"options": [
+						"früh mit Fehlerdiagnose starten, Etappen + Puffertag einplanen",
+						"alles auf die letzte Nacht vor der Arbeit verschieben",
+						"nur leichte Lieblingsthemen dreimal wiederholen"
+					],
+					"answer": "früh mit Fehlerdiagnose starten, Etappen + Puffertag einplanen",
+					"explanation": "Etappenplanung verhindert Stress und stärkt schwache Stellen rechtzeitig."
+				},
+				{
+					"label": "Merkmal konstruktiver Kritik in der Gruppe wählen",
+					"before": "Partnerkorrektur eines Textentwurfs →",
+					"after": "",
+					"options": [
+						"Gelungenes benennen + konkreten Regelhinweis zur Fehlerstelle geben",
+						"ohne Begründung alles als falsch durchstreichen",
+						"sofort abschreiben lassen ohne Erklärung"
+					],
+					"answer": "Gelungenes benennen + konkreten Regelhinweis zur Fehlerstelle geben",
+					"explanation": "So lernt der Partner selbst, wie er beim nächsten Satz den Fehler vermeidet."
+				},
+				{
+					"label": "Wirkung kritischer Selbstreflexion beim Üben einordnen",
+					"before": "Selbsteinschätzung nach dem Mustervergleich →",
+					"after": "",
+					"options": [
+						"zeigt gezielt auf, welche Grammatikregel noch Übung braucht",
+						"dient nur zum Abhaken ohne Lesen",
+						"macht das Schulwörterbuch im Unterricht überflüssig"
+					],
+					"answer": "zeigt gezielt auf, welche Grammatikregel noch Übung braucht",
+					"explanation": "Ehrliche Selbstkontrolle steuert die nächsten Übungsschritte."
+				}
+			]
+		}
+	}
+]
