@@ -1,0 +1,549 @@
+[
+	{
+		"id": "l8-gerund-vs-gerundiv",
+		"stage": "gerundiv",
+		"title": "Gerund vs. Gerundiv sicher unterscheiden",
+		"skill": "Das Infix -nd- unterscheiden: Gerund (Verbalsubstantiv, aktivisch) vs. Gerundiv (Verbaladjektiv, passivisch, KNG-kongruent)",
+		"bindings": ["L8-14", "L8-15", "L8-17", "L8-18", "L8-20"],
+		"paragraphs": [
+			"Beide Formen teilen das auffällige Kennzeichen -nd- im Stamm (etwa legendi oder legendae), erfüllen im Satz aber ganz unterschiedliche Aufgaben. Das Gerund aus Klasse sieben ist ein Substantiv im Neutrum Singular (ohne KNG-Bezugswort) und hat aktive Bedeutung: ars discendi heißt „die Kunst zu lernen“, ad pugnandum „um zu kämpfen“.",
+			"Das Gerundiv der achten Klasse ist dagegen ein Verbaladjektiv auf -ndus, -nda, -ndum mit passiver Grundbedeutung („einer, der getan werden muss / zu tun ist“). Darum steht es immer in KNG-Kongruenz mit einem Bezugswort (oder im prädikativen Neutrum mit esse)! Vergleiche: cupiditas libros legendi (Gerund mit Akkusativobjekt libros) neben cupiditas librorum legendorum (Gerundiv in KNG-Kongruenz zu librorum)."
+		],
+		"materialLabel": "Gegenüberstellung von Gerund und Gerundiv mit demselben Verbstamm",
+		"materialLanguage": "la",
+		"material": "1. Cupiditas veritatem quaerendi animum movet. (Gerund)\n2. Cupiditas veritatis quaerendae animum movet. (Gerundiv)\n3. Legati ad pacem faciendam venerunt. (Gerundiv nach Präposition)",
+		"sourceIds": ["lp"],
+		"diagram": {
+			"kind": "gerundiv-lab",
+			"title": "Labor: Gerund und Gerundiv am -nd-Infix trennen",
+			"caption": "Prüfe stets zuerst: Gibt es ein Bezugswort in Kasus, Numerus und Genus? Dann liegt ein Gerundiv vor."
+		},
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Woran erkennst du sofort, dass „ad pacem faciendam“ ein Gerundiv und kein Gerund enthält?",
+			"answer": "faciendam steht feminin im Akk. Sg. in KNG-Kongruenz zu pacem",
+			"wrong": [
+				"weil nach ad grundsätzlich kein Gerund stehen darf",
+				"weil faciendam eine aktivische Vergangenheitsform ist"
+			],
+			"explanation": "Ein Gerund existiert nur als Neutrum Singular (-ndi, -ndo, -ndum). Eine feminine Endung -am in KNG-Kongruenz zu pacem beweist das Gerundiv."
+		},
+		"takeaway": "Das Gerund steht allein (Neutr. Sg.) und aktivisch; das Gerundiv stimmt als passivisches Adjektiv auf -ndus, -nda, -ndum in KNG mit einem Nomen überein.",
+		"practice": [
+			{
+				"prompt": "Handelt es sich bei „in libris legendis“ (beim Lesen der Bücher) um ein Gerund oder ein Gerundiv?",
+				"answers": ["gerundiv", "ein gerundiv"],
+				"feedback": "legendis (Abl. Pl.) stimmt in KNG mit libris überein und ist daher ein Gerundiv."
+			},
+			{
+				"prompt": "Handelt es sich bei „ad bene vivendum“ (um gut zu leben) um ein Gerund oder ein Gerundiv?",
+				"answers": ["gerund", "ein gerund", "gerundium"],
+				"feedback": "vivendum hat kein Nomen als KNG-Partner und steht im Neutrum Singular → Gerund."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "de",
+				"prompt": "Begründe an den drei Sätzen des Materials den grammatischen Unterschied zwischen quaerendi, quaerendae und faciendam und übersetze alle drei Sätze flüssig ins Deutsche.",
+				"model": "quaerendi = Gerund (Gen. Sg. n., ohne KNG-Partner, regiert das Akkusativobjekt veritatem); quaerendae = Gerundiv (Gen. Sg. f., KNG-kongruent zu veritatis); faciendam = Gerundiv (Akk. Sg. f., KNG-kongruent zu pacem).\n1. Das Verlangen, die Wahrheit zu suchen, bewegt den Geist.\n2. Das Verlangen nach der Suche nach Wahrheit (die Wahrheit zu suchen) bewegt den Geist.\n3. Die Gesandten kamen, um Frieden zu schließen.",
+				"criteria": [
+					"quaerendi ist als Gerund mit Akkusativobjekt erklärt.",
+					"quaerendae und faciendam sind über KNG-Kongruenz als Gerundive bestimmt.",
+					"Alle drei Sätze sind idiomatisch übersetzt."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Wandle die Gerund-Wendung „studium leges servandi“ (der Eifer, die Gesetze zu achten) in eine gleichbedeutende Gerundiv-Konstruktion um und erkläre, warum sich das Deutsche in beiden Fällen kaum unterscheidet.",
+				"model": "Gerundiv-Umbau: studium legum servandarum (leges im Akk. Pl. f. → legum im Gen. Pl. f., daran KNG-angeglichen servandarum).\nIm Deutschen gibt man beide lateinischen Möglichkeiten meist gleich wieder: „der Eifer, die Gesetze zu achten“ oder „das Bemühen um die Einhaltung der Gesetze“.",
+				"criteria": [
+					"Der Umbau „studium legum servandarum“ ist in Kasus, Numerus und Genus exakt.",
+					"Der Verlust des Akkusativobjekts beim Umbau ins Gerundiv ist erkannt.",
+					"Beide deutschen Übersetzungen klingen natürlich."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "KNG-Probe am -nd-Wort durchführen",
+					"before": "urbs liberanda →",
+					"after": "",
+					"options": [
+						"Gerundiv (Nom. Sg. f. zu urbs)",
+						"Gerund (Neutrum Singular)",
+						"Partizip Futur Aktiv"
+					],
+					"answer": "Gerundiv (Nom. Sg. f. zu urbs)",
+					"explanation": "Die Endung -a richtet sich nach dem Femininum urbs."
+				},
+				{
+					"label": "Allein stehendes Neutrum nach Präposition deuten",
+					"before": "de bene vivendo →",
+					"after": "",
+					"options": [
+						"Gerund („über das gute Leben“)",
+						"Gerundiv mit Dativus auctoris",
+						"Ablativus absolutus"
+					],
+					"answer": "Gerund („über das gute Leben“)",
+					"explanation": "vivendo steht allein im Ablativ Singular Neutrum ohne Bezugswort."
+				},
+				{
+					"label": "Ausdruck mit Genitiv-Gerundiv in gutes Deutsch fassen",
+					"before": "spes pacis servandae →",
+					"after": "",
+					"options": [
+						"die Hoffnung auf Bewahrung des Friedens",
+						"die Hoffnung auf den Frieden, der selbst handelt",
+						"die Hoffnung des Friedens auf Rettung"
+					],
+					"answer": "die Hoffnung auf Bewahrung des Friedens",
+					"explanation": "Im Deutschen nominalisiert man Gerundiv-Ausdrücke oder löst sie durch einen zu-Infinitiv auf."
+				}
+			]
+		}
+	},
+	{
+		"id": "l8-gerundiv-attributiv",
+		"stage": "gerundiv",
+		"title": "Attributives Gerundiv im Satz",
+		"skill": "Attributive Gerundivgruppen nach Präpositionen (ad, in, de) sowie im Genitiv und Ablativ als Sinneinheit ausklammern",
+		"bindings": ["L8-15", "L8-19", "L8-20", "L8-21", "L8-23", "L8-47"],
+		"paragraphs": [
+			"Tritt ein Gerundiv als Attribut zu einem Substantiv in einem schrägen Kasus (Genitiv, Dativ, Akkusativ nach Präpositionen wie ad, Ablativ), verschmelzen Nomen und Gerundiv gedanklich zu einer neuen Einheit. Aus „die zu rettende Stadt“ wird im natürlichen Deutsch kein umständliches Partizip, sondern entweder ein Verbalsubstantiv („die Rettung der Stadt“) oder ein Infinitiv- bzw. Finalsatz.",
+			"Besonders häufig steht das attributive Gerundiv nach ad (ad pacem faciendam = um Frieden zu schließen / zum Friedensschluss) sowie in feierlichen Amts- oder Ehrenformeln wie vir consiliis capiendīs idoneus oder decemviri legibus scribundis (Zehnerkommission zum Aufzeichnen der Gesetze)."
+		],
+		"materialLabel": "Attributive Gerundive in verschiedenen Kasus und Präpositionalgruppen",
+		"materialLanguage": "la",
+		"material": "1. Romani decemviros legibus scribendis creaverunt.\n2. Caesar pontem in Rheno ad legiones traducendas fecit.\n3. In re publica administranda iustitia necessaria est.",
+		"sourceIds": ["lp"],
+		"diagram": {
+			"kind": "gerundiv-lab",
+			"preset": "attributiv",
+			"title": "Binnenaufbau des attributiven Gerundivs",
+			"caption": "Bezugsnomen und Gerundiv bilden eine feste KNG-Klammer als Satzgliedteil."
+		},
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Wie gibst du „ad legiones traducendas“ (Satz 2) im Deutschen am treffendsten wieder?",
+			"answer": "um die Legionen hinüberzuführen (oder: zum Übersetzen der Legionen)",
+			"wrong": [
+				"zu den schon hinübergeführten Legionen",
+				"weil die Legionen selbst hinüberführten"
+			],
+			"explanation": "ad + Nomen + attributives Gerundiv drückt einen Zweck (final) aus: „um … zu“ oder als Substantivierung."
+		},
+		"takeaway": "Beim attributiven Gerundiv bilden Nomen und -nd-Adjektiv eine gemeinsame Klammer; ad + Akkusativ-Gerundiv übersetzt du final mit „um … zu“, sonstige Kasus mit Substantivierung („bei der …“).",
+		"practice": [
+			{
+				"prompt": "Wie übersetzt du „in re publica administranda“ (Satz 3) mit einer Präposition („bei …“)?",
+				"answers": ["bei der verwaltung des staates", "bei der staatsverwaltung", "beim verwalten des staates"],
+				"feedback": "in + Ablativ mit Gerundiv entspricht einem „beim … / bei der Verwaltung des Staates“."
+			},
+			{
+				"prompt": "In welchem Kasus steht „legibus scribendis“ in Satz 1 (Endzweck/Bestimmung)?",
+				"answers": ["dativ", "dativ plural", "im dativ"],
+				"feedback": "Der Dativus finalis (legibus scribendis) nennt den Zweck der Kommission: „für das Aufzeichnen der Gesetze“."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "de",
+				"prompt": "Klammere in den drei Sätzen des Materials jede Gerundivgruppe ein, bestimme ihren Kasus und übersetze alle drei Sätze in natürliches Deutsch.",
+				"model": "1. [legibus scribendis] (Dat. Pl. f.) → Die Römer wählten eine Zehnerkommission zur Aufzeichnung (um … aufzuschreiben) der Gesetze.\n2. [ad legiones traducendas] (Akk. Pl. f. nach ad) → Caesar ließ eine Brücke über den Rhein bauen, um die Legionen hinüberzuführen.\n3. [In re publica administranda] (Abl. Sg. f. nach in) → Bei der Verwaltung des Staates ist Gerechtigkeit notwendig.",
+				"criteria": [
+					"Alle drei Gerundivgruppen sind sauber ausgeklammert und im Kasus bestimmt.",
+					"Alle drei Übersetzungen vermeiden ein holpriges wörtliches Partizip.",
+					"Sinnrichtungen (Zweck bei ad/Dativ, Zeitraum/Bereich bei in) sind getroffen."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Formuliere zwei verschiedene elegante Übersetzungen für „Occasio libertatis recuperandae adest“ (eine substantivische und eine mit Nebensatz/zu-Infinitiv) und erkläre den Unterschied zum deutschen Satzbau.",
+				"model": "Variante 1 (Substantivierung): „Die Gelegenheit zur Wiedergewinnung der Freiheit ist da.“\nVariante 2 (zu-Infinitiv): „Die Gelegenheit, die Freiheit wiederzugewinnen, ist da.“\nUnterschied: Latein packt die Handlung direkt in ein passivisches Attribut (recuperandae), während das Deutsche meist ein Verbalsubstantiv oder einen aktiven Infinitivsatz wählt.",
+				"criteria": [
+					"Beide deutschen Varianten geben den Sinn präzise wieder.",
+					"Der Kontrast zwischen lateinischem passivischem Attribut und deutschem Nominal-/Infinitivstil ist erklärt.",
+					"Kein Fehler bei KNG oder Genitivbezug."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Zweckausdruck mit ad + Gerundiv auflösen",
+					"before": "ad veritatem cognoscendam →",
+					"after": "",
+					"options": [
+						"um die Wahrheit zu erkennen",
+						"nachdem die Wahrheit erkannt war",
+						"weil die Wahrheit erkannt wurde"
+					],
+					"answer": "um die Wahrheit zu erkennen",
+					"explanation": "ad + Gerundiv gibt stets das Ziel bzw. den Zweck an."
+				},
+				{
+					"label": "Gerundivgruppe nach in + Ablativ übertragen",
+					"before": "in legibus servandis →",
+					"after": "",
+					"options": [
+						"bei der Beachtung der Gesetze",
+						"gegen die zu achtenden Gesetze",
+						"ohne Beachtung der Gesetze"
+					],
+					"answer": "bei der Beachtung der Gesetze",
+					"explanation": "in + Ablativ beschreibt den Handlungsbereich („bei …“)."
+				},
+				{
+					"label": "KNG-Partner zum femininen Gerundiv finden",
+					"before": "spes urb… defendendae",
+					"after": "",
+					"options": ["urbis (Gen. Sg. f.)", "urbi (Dat. Sg. f.)", "urbem (Akk. Sg. f.)"],
+					"answer": "urbis (Gen. Sg. f.)",
+					"explanation": "defendendae ist hier Genitiv Singular femininum zu urbis."
+				}
+			]
+		}
+	},
+	{
+		"id": "l8-gerundiv-praedikativ",
+		"stage": "gerundiv",
+		"title": "Prädikatives Gerundiv mit esse",
+		"skill": "Das prädikative Gerundiv mit esse („müssen / nicht dürfen“) persönlich und unpersönlich bilden und übersetzen",
+		"bindings": ["L8-14", "L8-15", "L8-18", "L8-19", "L8-20", "L8-21", "L8-23", "L8-47"],
+		"paragraphs": [
+			"Verbindet sich ein Gerundiv als Prädikatsnomen mit einer Form von esse, entsteht einer der bekanntesten Ausdruckstypen des Lateinischen: Er drückt Pflicht, Notwendigkeit oder – wenn er verneint wird – ein klares Verbot („nicht dürfen“) aus. Berühmt wurde Catos Satz: Ceterum censeo Carthaginem esse delendam (als AcI) bzw. im Hauptsatz: Carthago delenda est („Karthago muss zerstört werden“).",
+			"Bei transitiven Verben steht das betroffene Ding oder die Person im Nominativ als Subjekt (persönliche Konstruktion), und das Gerundiv richtet sich in KNG danach (Leges servandae sunt). Bei intransitiven Verben – oder wenn kein direktes Subjekt vorhanden ist – wählt das Lateinische die unpersönliche Konstruktion im Neutrum Singular mit est/erat: Nunc pugnandum est! („Jetzt muss gekämpft werden!“), Legibus parendum est! („Den Gesetzen muss gehorcht werden!“)."
+		],
+		"materialLabel": "Persönliche und unpersönliche Gerundive der Notwendigkeit",
+		"materialLanguage": "la",
+		"material": "1. Carthago delenda est!\n2. Hae leges semper servandae sunt, nec umquam violandae sunt.\n3. In periculo omnibus civibus patriae consulendum est.\n4. Senatores putabant urbem defendendam esse.",
+		"sourceIds": ["lp"],
+		"diagram": {
+			"kind": "gerundiv-lab",
+			"preset": "praedikativ",
+			"title": "Prädikatives Gerundiv mit esse: Pflicht & Verbot",
+			"caption": "Transitive Verben kongruieren mit dem Subjekt (Carthago delenda est); intransitive Verben stehen unpersönlich auf -ndum est."
+		},
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Was bedeutet ein verneintes prädikatives Gerundiv wie „Leges non violandae sunt“?",
+			"answer": "Die Gesetze dürfen nicht verletzt werden",
+			"wrong": [
+				"Die Gesetze brauchen nicht verletzt zu werden",
+				"Die Gesetze wurden nicht verletzt"
+			],
+			"explanation": "Während „müssen“ verneint oft „nicht müssen“ hieße, bedeutet non + Gerundiv + esse im Lateinischen streng „nicht dürfen“!"
+		},
+		"takeaway": "Gerundiv + esse bedeutet „müssen“ (verneint mit non: „nicht dürfen!“); intransitive Verben bilden es unpersönlich auf -ndum est.",
+		"practice": [
+			{
+				"prompt": "Übersetze den bekannten Ausspruch „Carthago delenda est“ ins Deutsche:",
+				"answers": ["karthago muss zerstört werden", "man muss karthago zerstören"],
+				"feedback": "Carthago (Nom. Sg. f.) + delenda est = „Karthago muss zerstört werden“."
+			},
+			{
+				"prompt": "Wie lautet die unpersönliche Aufforderung mit credere („Man darf dem Lügner nicht glauben“ → Mendaci non … est)?",
+				"answers": ["credendum"],
+				"feedback": "Da credere intransitiv mit Dativ steht, wählt das Lateinische das Neutrum Singular: Mendaci non credendum est."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "de",
+				"prompt": "Unterscheide in den Sätzen 1 bis 4 zwischen persönlicher und unpersönlicher Konstruktion sowie dem AcI in Satz 4, und übersetze alle vier Sätze.",
+				"model": "1. persönlich (Carthago – delenda est): Karthago muss zerstört werden!\n2. persönlich (hae leges – servandae/violandae sunt): Diese Gesetze müssen immer geachtet werden und dürfen niemals verletzt werden.\n3. unpersönlich (consulendum est, weil consulere mit Dativ patriae steht): In Gefahr müssen alle Bürger für die Heimat sorgen.\n4. AcI mit Gerundiv + esse (urbem defendendam esse): Die Senatoren meinten, dass die Stadt verteidigt werden müsse.",
+				"criteria": [
+					"Persönliche und unpersönliche Konstruktion sind richtig unterschieden.",
+					"Die Verneinung nec umquam violandae sunt ist als „dürfen niemals“ wiedergegeben.",
+					"Der AcI in Satz 4 ist korrekt aufgelöst."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Erkläre an je einem lateinischen Beispiel den Unterschied zwischen „non est …-ndum“ und deutschem „man muss nicht“, und forme „Milites pugnant“ in eine unpersönliche Notwendigkeitsaussage um.",
+				"model": "Im Deutschen bedeutet die Verneinung von „müssen“ „es ist nicht nötig“ („du musst nicht warten“). Im Lateinischen verneint non/numquam bei Gerundiv + esse jedoch das Dürfen: Hoc non faciendum est = „Das darf nicht getan werden“ (nicht „muss nicht“).\nUmbau: Pugnandum est! („Es muss gekämpft werden / man muss kämpfen“).",
+				"criteria": [
+					"Der Bedeutungsunterschied zwischen „nicht dürfen“ und „nicht brauchen“ ist präzise erklärt.",
+					"Ein eigenes verneintes Gerundiv-Beispiel ist korrekt übersetzt.",
+					"Die unpersönliche Form pugnandum est ist richtig gebildet."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Berühmtes Beispielsatz-Gerundiv übersetzen",
+					"before": "Carthago delenda est →",
+					"after": "",
+					"options": [
+						"Karthago muss zerstört werden",
+						"Karthago wurde zerstört",
+						"Karthago wird zerstören"
+					],
+					"answer": "Karthago muss zerstört werden",
+					"explanation": "Prädikatives Gerundiv mit esse drückt passive Notwendigkeit aus."
+				},
+				{
+					"label": "Verneinung beim prädikativen Gerundiv richtig deuten",
+					"before": "Mendacio non credendum est →",
+					"after": "",
+					"options": [
+						"Man darf einer Lüge nicht glauben",
+						"Man braucht einer Lüge nicht zu glauben",
+						"Man hat der Lüge nicht geglaubt"
+					],
+					"answer": "Man darf einer Lüge nicht glauben",
+					"explanation": "non + Gerundiv + esse bedeutet stets „nicht dürfen“."
+				},
+				{
+					"label": "Tempus des Gerundivs über die Form von esse anpassen",
+					"before": "Urbs defendenda erat →",
+					"after": "",
+					"options": [
+						"Die Stadt musste verteidigt werden",
+						"Die Stadt muss verteidigt werden",
+						"Die Stadt wird verteidigt worden sein"
+					],
+					"answer": "Die Stadt musste verteidigt werden",
+					"explanation": "erat (Imperfekt) versetzt die Pflicht in die Vergangenheit."
+				}
+			]
+		}
+	},
+	{
+		"id": "l8-dativus-auctoris-genitiv",
+		"stage": "gerundiv",
+		"title": "Dativus auctoris & Genitivus partitivus",
+		"skill": "Den Dativ des Urhebers beim Gerundiv mit esse sowie den Genitiv des geteilten Ganzen im Satz erkennen und übersetzen",
+		"bindings": ["L8-20", "L8-21", "L8-23"],
+		"paragraphs": [
+			"Bei normalen Passivformen nennt das Lateinische den Handelnden mit a/ab + Ablativ. Beim prädikativen Gerundiv mit esse steht die Person, die die Pflicht erfüllen muss, jedoch regelmäßig im Dativ – das ist der Dativus auctoris (Dativ des Urhebers): Hoc opus mihi faciendum est bedeutet wörtlich „Diese Aufgabe ist für mich eine zu machende“, im guten Deutsch aktivisch: „Ich muss diese Aufgabe erledigen“.",
+			"Eine zweite wichtige Kasusfunktion der achten Klasse ist der Genitivus partitivus (Genitiv des geteilten Ganzen): Nach Mengen-, Maß- oder Teilwörtern (multi, pars, nemo, quis, satis, nimis, nihil, plus) benennt er das Ganze, aus dem ein Teil herausgegriffen wird: multi civium („viele der Bürger / von den Bürgern“), nihil novi („nichts Neues“) oder satis temporis („genug Zeit“)."
+		],
+		"materialLabel": "Dativus auctoris und Genitivus partitivus in Redewendungen und Sätzen",
+		"materialLanguage": "la",
+		"material": "1. Omnibus civibus leges patriae observandae sunt.\n2. Nobis sine mora auxilium ferendum erat.\n3. Quid novi in urbe auditum est? Multi senatorum nihil timoris ostenderunt, sed pars civium pacem petivit.",
+		"sourceIds": ["lp"],
+		"diagram": {
+			"kind": "gerundiv-lab",
+			"preset": "auctoris",
+			"title": "Der Dativus auctoris wird im Deutschen zum Subjekt",
+			"caption": "Dativ-Person beim Gerundiv + esse → Subjekt der aktiven Übersetzung mit „müssen“."
+		},
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Welche Rolle übernimmt der lateinische „Dativus auctoris“ (z. B. tibi in „Hic liber tibi legendus est“), wenn du den Satz flüssig ins aktive Deutsch übersetzt?",
+			"answer": "Er wird zum handelnden Subjekt („Du musst dieses Buch lesen“)",
+			"wrong": [
+				"Er bleibt im Deutschen zwingend Dativobjekt („Dir muss …“)",
+				"Er wird mit „gegen dich“ übersetzt"
+			],
+			"explanation": "Im Deutschen klingen wörtliche Passivsätze mit „von dir“ oft steif; indem der Dativus auctoris zum Subjekt wird („Du musst …“), entsteht natürliches Deutsch."
+		},
+		"takeaway": "Bei Gerundiv + esse steht der Handelnde im Dativus auctoris (und wird im aktiven Deutsch zum Subjekt); der Genitivus partitivus benennt nach Mengenwörtern (pars, multi, nihil, satis) das Ganze.",
+		"practice": [
+			{
+				"prompt": "Übersetze die feste Wendung mit Genitivus partitivus: „quid novi?“",
+				"answers": ["was gibt es neues", "was neues", "welch neues"],
+				"feedback": "Nach quid/nihil steht ein substantiviertes Adjektiv der a-/o-Deklination im Genitiv Singular Neutrum: quid novi = „was gibt es Neues?“."
+			},
+			{
+				"prompt": "Welches lateinische Wort ist in Satz 1 („Omnibus civibus leges patriae observandae sunt“) der Dativus auctoris?",
+				"answers": ["omnibus civibus", "civibus"],
+				"feedback": "omnibus civibus nennt diejenigen, die die Gesetze beachten müssen (Dativus auctoris)."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "de",
+				"prompt": "Bestimme in den drei Materialsätzen den Dativus auctoris sowie alle Genitivi partitivi und übersetze die Sätze aktivisch bzw. idiomatisch.",
+				"model": "Dativus auctoris: omnibus civibus (1), nobis (2). Genitivi partitivi: novi nach quid (3), senatorum nach multi (3), timoris nach nihil (3), civium nach pars (3); patriae in (1) ist dagegen Genitivus possessivus.\n1. Alle Bürger müssen die Gesetze der Heimat beachten. 2. Wir mussten ohne Zögern Hilfe bringen. 3. Was gibt es Neues in der Stadt zu hören? Viele von den Senatoren zeigten keinerlei Furcht, doch ein Teil der Bürger bat um Frieden.",
+				"criteria": [
+					"Dativus auctoris in Satz 1 und 2 sind korrekt erkannt und aktivisch übersetzt.",
+					"Alle vier Genitivi partitivi in Satz 3 sind von patriae in Satz 1 sauber getrennt.",
+					"Alle Sätze sind treffend und vollständig übersetzt."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Erkläre, warum es bei „Mihi huic homini credendum est“ zu zwei Dativen kommt (woran erkennst du, welcher der Dativus auctoris ist?), und übersetze den Satz eindeutig.",
+				"model": "credere verlangt bereits selbst ein Dativobjekt (huic homini = diesem Menschen). Da im Gerundiv-Satz noch der Dativus auctoris (mihi) dazutritt, stehen zwei Dative im Satz. Weil meist nur Personen Urheber einer Pflicht sind und der Kontext eindeutig macht, wer handelt, übernimmt mihi den Subjektsplatz (oder man könnte im Notfall zur Klarheit beim Urheber a/ab + Ablativ setzen). Übersetzung: „Ich muss diesem Menschen glauben.“",
+				"criteria": [
+					"Beide Dative (Verb-Rektion von credere vs. Dativus auctoris) sind sauber unterschieden.",
+					"Der Hinweis auf die Eindeutigkeit bzw. mögliche Vermeidung über a/ab ist erklärt.",
+					"Die deutsche Übersetzung gibt „mihi“ als handelndes Subjekt wieder."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Dativus auctoris ins aktive Deutsch übersetzen",
+					"before": "Caesari omnia agenda erant →",
+					"after": "",
+					"options": [
+						"Caesar musste alles erledigen",
+						"Für Caesar wurde alles ausgeführt",
+						"Caesar ließ sich alles bringen"
+					],
+					"answer": "Caesar musste alles erledigen",
+					"explanation": "Der Dativus auctoris Caesari wird Subjekt im deutschen Aktivsatz."
+				},
+				{
+					"label": "Genitivus partitivus nach nihil richtig übertragen",
+					"before": "nihil temporis habemus →",
+					"after": "",
+					"options": [
+						"wir haben überhaupt keine Zeit",
+						"wir erinnern uns an keine Zeit",
+						"zu keiner Zeit haben wir"
+					],
+					"answer": "wir haben überhaupt keine Zeit",
+					"explanation": "nihil + Genitiv drückt ein vollständiges Fehlen („nichts an / keine“) aus."
+				},
+				{
+					"label": "Genitivus partitivus im Plural erkennen",
+					"before": "quis vestrum (wer …)?",
+					"after": "",
+					"options": [
+						"wer von euch / wer unter euch",
+						"wem von euch",
+						"euer aller"
+					],
+					"answer": "wer von euch / wer unter euch",
+					"explanation": "vestrum (Gen. Pl. von vos) dient nach Frage- und Teilwörtern als Genitivus partitivus."
+				}
+			]
+		}
+	},
+	{
+		"id": "l8-gerundiv-uebersetzen",
+		"stage": "gerundiv",
+		"title": "Gerundivkonstruktionen im Textganzen",
+		"skill": "Komplexe Sätze mit attributivem und prädikativem Gerundiv flüssig analysieren und ins Deutsche übertragen",
+		"bindings": ["L8-21", "L8-22", "L8-23", "L8-24", "L8-47"],
+		"paragraphs": [
+			"In anspruchsvolleren Lehrbuchtexten begegnen dir beide Gerundivtypen manchmal innerhalb eines einzigen Satzes oder eingebettet in Nebensätze und AcI-Konstruktionen. Entscheidend ist eine klare Reihenfolge bei der Satzanalyse: Suche zuerst die finiten Prädikate, trenne Haupt- und Nebensätze und markiere dann jede -nd-Form zusammen mit ihrem Bezugswort.",
+			"Prüfe danach zwei Dinge: Steht eine Form von esse neben dem Gerundiv (prädikativ → „müssen / nicht dürfen“, eventuell mit Dativus auctoris)? Oder hängt die KNG-Klammer an einer Präposition wie ad/in bzw. an einem Nomen im Genitiv/Dativ/Ablativ (attributiv → Nominalisierung oder Finalsatz mit „um … zu“)? So vermeidest du Verwechslungen mit Partizipien oder dem bloßen Gerund."
+		],
+		"materialLabel": "Zusammenhängender Kurztext über das römische Straßen- und Rechtswesen",
+		"materialLanguage": "la",
+		"material": "Magistratibus non solum viae ad provincias iungendas muniendae erant, sed etiam leges ad pacem servandam custodiendae erant. Quibus rebus populus intellexit iustitiam omni tempore colendam esse.",
+		"sourceIds": ["lp", "bpb-recht"],
+		"diagram": {
+			"kind": "syntax-tree",
+			"title": "Drei-Schritte-Prüfung bei komplexen Gerundiv-Perioden",
+			"caption": "Vom Prädikat über die -nd-Klammern zur treffenden deutschen Stilvariante.",
+			"parts": [
+				{
+					"id": "gu-step1",
+					"label": "1 · Prädikate & AcI trennen",
+					"badge": "Satzbau klären",
+					"latin": "muniendae erant … custodiendae erant",
+					"detail": "Finde zuerst die finiten Verben mit esse; prüfe außerdem, ob ein AcI wie colendam esse folgt."
+				},
+				{
+					"id": "gu-step2",
+					"label": "2 · -nd-Klammern prüfen",
+					"badge": "Attribut vs. Prädikat",
+					"latin": "ad provincias iungendas vs. viae muniendae erant",
+					"detail": "ad + Akk. ist attributiv („um zu verbinden“); Nominativ + esse ist prädikativ („mussten befestigt werden“)."
+				},
+				{
+					"id": "gu-step3",
+					"label": "3 · Dativus auctoris umformen",
+					"badge": "Deutscher Stil",
+					"latin": "Magistratibus → Die Beamten mussten …",
+					"detail": "Mache den Dativus auctoris (Magistratibus) im Deutschen zum Subjekt, damit der Satz klar und lebendig klingt."
+				}
+			]
+		},
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Welche beiden verschiedenen Gerundivfunktionen kommen im ersten Satz des Materials („Magistratibus … viae ad provincias iungendas muniendae erant“) zusammen vor?",
+			"answer": "attributives Gerundiv nach ad (iungendas) und prädikatives Gerundiv mit erant (muniendae erant)",
+			"wrong": [
+				"zwei bloße Gerundia im Akkusativ",
+				"ein Ablativus absolutus und ein Gerundiv"
+			],
+			"explanation": "ad provincias iungendas drückt als attributives Gerundiv den Zweck aus; viae … muniendae erant ist prädikativ mit Dativus auctoris Magistratibus."
+		},
+		"takeaway": "Trenne in längeren Sätzen zunächst jedes Gerundiv + esse (prädikativ, „müssen“) von KNG-Klammern nach Präpositionen/Nomen (attributiv, „um zu / Substantivierung“).",
+		"practice": [
+			{
+				"prompt": "Wer trägt im ersten Materialsatz die Pflicht („Magistratibus … muniendae erant“)? Übersetze den Dativus auctoris mit dem passenden deutschen Plural-Subjekt:",
+				"answers": ["die beamten", "die magistrate", "beamten"],
+				"feedback": "Magistratibus (Dat. Pl. m.) ist Dativus auctoris: „Die Beamten mussten …“."
+			},
+			{
+				"prompt": "Welche Konstruktion leitet „intellexit“ im zweiten Satz ein?",
+				"answers": ["aci", "einen aci", "accusativus cum infinitivo"],
+				"feedback": "intellexit (Kopfverb des Erkennens) löst einen AcI mit Gerundiv + esse aus: iustitiam … colendam esse."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "de",
+				"prompt": "Analysiere die Rollen von „Magistratibus“, „ad provincias iungendas“, „muniendae erant“ und „colendam esse“ und übersetze den ganzen Abschnitt ins Deutsche.",
+				"model": "Magistratibus = Dativus auctoris zu beiden prädikativen Gerundiven; ad provincias iungendas = attributives Gerundiv (final); muniendae erant / custodiendae erant = prädikative Gerundive (Imperfekt); colendam esse = prädikatives Gerundiv im AcI nach intellexit.\nÜbersetzung: Die Beamten mussten nicht nur Straßen bauen (befestigen), um die Provinzen zu verbinden, sondern auch Gesetze hüten, um den Frieden zu bewahren. Dadurch erkannte das Volk, dass die Gerechtigkeit zu jeder Zeit gepflegt werden müsse.",
+				"criteria": [
+					"Alle vier grammatischen Bausteine sind korrekt bestimmt.",
+					"Die Unterscheidung von finalem attributivem Gerundiv und prädikativem Gerundiv stimmt.",
+					"Der gesamte Zweizeiler ist flüssig und vollständig übersetzt."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Vergleiche zwei mögliche Übersetzungen für „Quibus rebus populus intellexit iustitiam omni tempore colendam esse“ (einmal sehr passivisch, einmal frei/aktivisch mit „man“) und begründe, welche stilistisch besser wirkt.",
+				"model": "Passivisch: „Durch diese Dinge erkannte das Volk, dass die Gerechtigkeit zu jeder Zeit gepflegt werden müsse.“\nAktivisch/frei: „Dadurch erkannte das Volk, dass man die Gerechtigkeit jederzeit pflegen müsse.“\nBegründung: Die erste Variante bewahrt den relativischen Satzanschluss Quibus rebus geschickt als „Dadurch“ und hält „Gerechtigkeit“ als betontes Thema am Satzanfang des dass-Satzes; „man“ wirkt etwas unpersönlicher, ist aber gleichfalls richtig.",
+				"criteria": [
+					"Beide Varianten sind grammatisch einwandfrei.",
+					"Der relativische Satzanschluss Quibus rebus ist treffend übertragen.",
+					"Eine sinnvolle stilistische Bewertung ist formuliert."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Finales Gerundiv im Gesamtsatz treffend auflösen",
+					"before": "ad pacem servandam →",
+					"after": "",
+					"options": [
+						"um den Frieden zu bewahren",
+						"nachdem der Frieden bewahrt war",
+						"den Frieden müssend bewahren"
+					],
+					"answer": "um den Frieden zu bewahren",
+					"explanation": "ad + Gerundiv gibt den Zweck der Handlung an."
+				},
+				{
+					"label": "Tempus beim prädikativen Gerundiv beachten",
+					"before": "leges custodiendae erant →",
+					"after": "",
+					"options": [
+						"die Gesetze mussten gehütet werden",
+						"die Gesetze müssen gehütet werden",
+						"die Gesetze waren gehütet worden"
+					],
+					"answer": "die Gesetze mussten gehütet werden",
+					"explanation": "erant verlangt die deutsche Vergangenheit „mussten“."
+				},
+				{
+					"label": "Gerundiv im AcI erkennen",
+					"before": "intellexit iustitiam colendam esse →",
+					"after": "",
+					"options": [
+						"erkannte, dass die Gerechtigkeit gepflegt werden müsse",
+						"erkannte, dass er die Gerechtigkeit pflege",
+						"erkannte die gepflegte Gerechtigkeit"
+					],
+					"answer": "erkannte, dass die Gerechtigkeit gepflegt werden müsse",
+					"explanation": "Im AcI ersetzt esse den finiten Infinitiv der Notwendigkeit."
+				}
+			]
+		}
+	}
+]

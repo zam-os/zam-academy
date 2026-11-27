@@ -1,0 +1,61 @@
+{
+	"schema": 1,
+	"status": "proposal-only",
+	"approved": null,
+	"source_repository": "https://github.com/zam-os/zam",
+	"source_commit": "c92f4e383385ee487cd8b30f73b3bf3cb27b0860",
+	"source": "Inventory checked on 2026-11-27 in tests/fixtures/curriculum/ and src/kernel/library/bundled-cells.ts of zam-os/zam. Proposal-only mapping for de-by:gymnasium-9-latein-gerundium-gerundivum-caesar-originallektuere (4 items: 1 A proposed, 0 B, 3 C keep-active). Until Thomas explicitly approves, cell.json ships without replaces or retired_items. Neighbouring grade-8 cell de-by:gymnasium-8-latein-ablativus-absolutus-konjunktive-consecutio is already owned and mapped by latein-gymnasium-7-l1 (PR #206, approved 2026-11-26) and is therefore excluded here.",
+	"sources": [
+		{
+			"id": "de-by:gymnasium-9-latein-gerundium-gerundivum-caesar-originallektuere",
+			"fixture": "tests/fixtures/de-by-gymnasium-9-latein-gerundium-gerundivum-caesar-originallektuere-kvt.json",
+			"sha256": "ea946517f7f863f4d63f630192352582882366530a937a1989a78fee48438f4e"
+		}
+	],
+	"rows": [
+		{
+			"de_by_id": "01K8G9K0000000000000000J01",
+			"de_by_cell": "de-by:gymnasium-9-latein-gerundium-gerundivum-caesar-originallektuere",
+			"category": "A",
+			"action": "propose-replace-after-approval",
+			"academy_slug": "l8-gerundiv-praedikativ-check",
+			"reason": "Identische atomare Abfrage (Tier 1): Bedeutung des berühmten prädikativen Gerundivs mit esse ('Carthago delenda est' = 'Karthago muss zerstört werden'). Im LehrplanPLUS Bayern gehört das Gerundiv (attributiv, prädikativ mit esse und Dativ des Urhebers) bereits in Jahrgangsstufe 8 L1 (L8 2.2/2.3) sowie L8 L2."
+		},
+		{
+			"de_by_id": "01K8G9K0000000000000000J02",
+			"de_by_cell": "de-by:gymnasium-9-latein-gerundium-gerundivum-caesar-originallektuere",
+			"category": "C",
+			"action": "keep-active",
+			"academy_slug": null,
+			"reason": "Mehrteilige Kompositkarte (Tier 2), die Gerundium (in L1 Klasse 7), attributives Gerundiv, prädikatives Gerundiv mit esse (persönlich/unpersönlich) und den Dativus auctoris zusammen abprüft. Da kein einzelner Nachfolger die ganze Kompositkarte deckt, bleibt die Karte ohne Verlaufsübertragung aktiv."
+		},
+		{
+			"de_by_id": "01K8G9K0000000000000000J03",
+			"de_by_cell": "de-by:gymnasium-9-latein-gerundium-gerundivum-caesar-originallektuere",
+			"category": "C",
+			"action": "keep-active",
+			"academy_slug": null,
+			"reason": "Erzähltechnik der 3. Person in Caesars Originallektüre De bello Gallico gehört nach LehrplanPLUS Bayern zu Jahrgangsstufe 9 (L9 1.2) und ist nicht Gegenstand von Latein 8."
+		},
+		{
+			"de_by_id": "01K8G9K0000000000000000J04",
+			"de_by_cell": "de-by:gymnasium-9-latein-gerundium-gerundivum-caesar-originallektuere",
+			"category": "C",
+			"action": "keep-active",
+			"academy_slug": null,
+			"reason": "Kompositkarte zur Originallektüre Caesar De bello Gallico (Gattung Commentarii, Er-Form, Propaganda, Stilmittel) aus Jahrgangsstufe 9 (L9 1.2); bleibt dort unverändert aktiv."
+		}
+	],
+	"neighbouring_grade_review": {
+		"cell_id": "de-by:gymnasium-8-latein-ablativus-absolutus-konjunktive-consecutio",
+		"source_path": "tests/fixtures/curriculum/de-by-gymnasium-8-latein-ablativus-absolutus-konjunktive-consecutio-kvt.json",
+		"sha256": "6874a4d44dfe2bc0f5ad80b53ea2d851c2baad4a44fcba698f70542799eb3684",
+		"items": [
+			"01K8G8K0000000000000000J01",
+			"01K8G8K0000000000000000J02",
+			"01K8G8K0000000000000000J03",
+			"01K8G8K0000000000000000J04"
+		],
+		"assessment": "Im LehrplanPLUS Bayern für Latein als 1. Fremdsprache (L1) werden Ablativus absolutus, Hortativ/Jussiv/Optativ/Prohibitiv und die Consecutio temporum bereits in Klasse 7 unterrichtet. Diese Zelle wurde am 2026-11-26 durch Thomas vollständig über latein-gymnasium-7-l1 (PR #206) geprüft und zugeordnet (J01 und J03 ersetzt, J02 und J04 aktiv belassen). Daher beansprucht latein-gymnasium-8-l1 keine Karte aus dieser Zelle, sodass keine Doppelzuordnung entsteht."
+	}
+}
