@@ -1,0 +1,683 @@
+[
+  {
+    "id": "gpg8-weimar-verfassung",
+    "lb": 2,
+    "tracks": ["R", "M"],
+    "lehrplan": "GPG8 LB 2 (R & M): Zeit und Wandel",
+    "review": "Wiederholung aus GPG 7: Erster Weltkrieg, Novemberrevolution 1918 und Versailler Vertrag",
+    "title": "Die Weimarer Republik und ihre Verfassung",
+    "period": "1918–1929 · Erste deutsche Demokratie",
+    "intro": "Nach dem verlorenen Ersten Weltkrieg dankte der Kaiser 1918 ab. 1919 erhielt Deutschland erstmals eine demokratische Verfassung – doch sie hatte auch gefährliche Schwachstellen.",
+    "paragraphs": [
+      "Im November 1918 endete der Erste Weltkrieg mit der Niederlage Deutschlands; Arbeiter und Soldaten erhoben sich gegen das Kaiserreich, und die Republik wurde ausgerufen. Weil in Berlin Unruhen herrschten, trat die gewählte Nationalversammlung 1919 im ruhigeren Weimar zusammen und verabschiedete am 11. August 1919 die Weimarer Reichsverfassung. Zum ersten Mal in der deutschen Geschichte durften Frauen und Männer ab 20 Jahren gleichberechtigt wählen, und Grundrechte wurden schriftlich garantiert.",
+      "Dennoch stand die junge Demokratie unter schwerem Druck: Aus GPG 7 kennst du den Versailler Vertrag, den viele als ungerecht ablehnten, sowie Putschversuche von links und rechts in den Krisenjahren bis 1923. Hinzu kamen zwei Konstruktionsfehler der Verfassung: Im Reichstag gab es keine Fünf-Prozent-Hürde, sodass sich oft Dutzende Splitterparteien stritten. Und Artikel 48 gab dem direkt gewählten Reichspräsidenten die Macht, per Notverordnung ohne Parlament zu regieren und den Reichstag jederzeit aufzulösen."
+    ],
+    "takeaway": "Die Weimarer Reichsverfassung von 1919 schuf erstmals eine deutsche Demokratie mit Frauenwahlrecht, enthielt aber durch Art. 48 und fehlende Sperrklausel große Risiken.",
+    "sourceIds": ["lehrplan", "bpb-weimar", "kx-weimar"],
+    "quiz": {
+      "question": "Welche Gefahr steckte in Artikel 48 der Weimarer Reichsverfassung?",
+      "answer": "Der Reichspräsident konnte in Krisenzeiten per Notverordnung am Parlament vorbei regieren.",
+      "wrong": [
+        "Frauen durften nur bei Gemeindewahlen, aber nicht zum Reichstag abstimmen.",
+        "Der Reichstag konnte ohne Volksentscheid den Kaiser sofort wieder einsetzen."
+      ],
+      "explanation": "Artikel 48 erlaubte dem Reichspräsidenten Notverordnungen ohne vorherigen Reichstagsbeschluss – ab 1930 wurde diese Ausnahmeregel zum Dauerzustand."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Stärken und Schwächen der Weimarer Verfassung prüfen",
+      "instruction": "Ordne jede Regelung der Weimarer Reichsverfassung zu: War sie ein demokratischer Fortschritt oder eine Gefahr für die Stabilität?",
+      "categories": [
+        "Demokratischer Fortschritt",
+        "Gefahr für die Stabilität"
+      ],
+      "entries": [
+        { "text": "Frauen und Männer ab 20 Jahren haben das gleiche Wahlrecht.", "target": 0, "feedback": "Das allgemeine, gleiche Wahlrecht auch für Frauen war ein historischer Fortschritt." },
+        { "text": "Keine Fünf-Prozent-Hürde: schon sehr kleine Parteien ziehen in den Reichstag ein.", "target": 1, "feedback": "Die Zersplitterung des Parlaments erschwerte stabile Regierungsmehrheiten." },
+        { "text": "Artikel 48 erlaubt dem Reichspräsidenten Notverordnungen ohne Reichstagsmehrheit.", "target": 1, "feedback": "Mit Notverordnungen konnte das Parlament in Krisen dauerhaft umgangen werden." },
+        { "text": "Die Verfassung verankert Grundrechte wie Meinungs- und Versammlungsfreiheit.", "target": 0, "feedback": "Schriftlich gesicherte Grundrechte schützten Bürgerrechte erstmals auf Verfassungsebene." }
+      ],
+      "conclusion": "Aus den Konstruktionsfehlern von Weimar lernte später das Grundgesetz (z. B. 5-%-Hürde und begrenzte Präsidentenrechte)."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre anhand des Verfassungsschemas, warum die Weimarer Republik einerseits ein demokratischer Aufbruch war und andererseits leicht ins Wanken geraten konnte.",
+        "hints": [
+          "Nenne zwei demokratische Neuerungen von 1919.",
+          "Erkläre die Rolle von Zersplitterung im Reichstag und Artikel 48."
+        ],
+        "model": "Die Weimarer Republik war ein großer Aufbruch, weil erstmals alle Frauen und Männer ab 20 Jahren den Reichstag wählten und Grundrechte galten. Gleichzeitig konnte sie leicht ins Wanken geraten, weil viele kleine Parteien im Reichstag kaum stabile Regierungen bildeten und der Reichspräsident mit Artikel 48 per Notverordnung an den Abgeordneten vorbei regieren konnte.",
+        "criteria": [
+          "Du benennst mindestens zwei demokratische Fortschritte der Verfassung.",
+          "Du erklärst mindestens eine verfassungsrechtliche Schwachstelle.",
+          "Du ordnest die Entstehung in das Jahr 1919 ein."
+        ]
+      },
+      "2": {
+        "prompt": "Vergleiche die Stellung des Weimarer Reichspräsidenten mit einem demokratischen Staatsoberhaupt heute und erkläre, warum in Weimar oft vom „Ersatzkaiser“ gesprochen wurde.",
+        "hints": [
+          "Denke an das Recht, Notverordnungen zu erlassen, den Kanzler zu ernennen und das Parlament aufzulösen.",
+          "Vergleiche dies kurz mit der begrenzten Rolle des Bundespräsidenten."
+        ],
+        "model": "Viele Zeitgenossen nannten den Weimarer Reichspräsidenten „Ersatzkaiser“, weil er direkt auf sieben Jahre gewählt war, den Oberbefehl über das Militär führte, den Kanzler nach eigenem Willen ernennen, den Reichstag auflösen und über Art. 48 Gesetze ersetzen konnte. Ein modernes Staatsoberhaupt wie der deutsche Bundespräsident besitzt heute bewusst keine solche Machtfülle mehr, sondern prüft und repräsentiert.",
+        "criteria": [
+          "Du erklärst den Begriff „Ersatzkaiser“ über konkrete Machtbefugnisse.",
+          "Du beziehst Art. 48 und die Parlamentsauflösung ein.",
+          "Du ziehst einen sinnvollen Vergleich zur Gegenwart."
+        ]
+      }
+    },
+    "figures": ["weimar-verfassung"]
+  },
+  {
+    "id": "gpg8-weimar-krise-nsdap",
+    "lb": 2,
+    "tracks": ["R", "M"],
+    "lehrplan": "GPG8 LB 2 (R & M): Zeit und Wandel",
+    "title": "Weltwirtschaftskrise und Aufstieg der NSDAP",
+    "period": "1929–1932 · Krise und Radikalisierung",
+    "intro": "Mitte der 1920er Jahre schien die Republik gefestigt – doch ab 1929 stürzten Millionen Menschen in Arbeitslosigkeit, und extreme Parteien gewannen rasant an Stimmen.",
+    "paragraphs": [
+      "Mit dem New Yorker Börsencrash im Oktober 1929 begann die Weltwirtschaftskrise. US-Banken zogen kurzfristige Kredite aus Deutschland ab; Betriebe gingen pleite, Löhne wurden gekürzt und über sechs Millionen Menschen verloren ihre Arbeit. Große Teile der Bevölkerung waren tief enttäuscht von der Weimarer Republik, weil wechselnde Regierungen per Notverordnung sparten, statt die Not sichtbar zu lindern.",
+      "In dieser Unsicherheit wuchs (M-Zug-Schwerpunkt) eine massive links- und rechtsextreme Radikalisierung: Die KPD wollte eine Räterepublik nach sowjetischem Vorbild, während die rechtsextreme NSDAP unter Adolf Hitler Demokratie und Versailler Vertrag verhöhnte, Arbeit und Ordnung versprach und Jüdinnen, Juden sowie politische Gegner zu Sündenböcken erklärte. Auf den Straßen prügelten Kampfverbände, und bis Juli 1932 stieg die NSDAP zur stärksten Partei im Reichstag auf."
+    ],
+    "takeaway": "Weltwirtschaftskrise, Massenarbeitslosigkeit, Verfassungsfrust und extreme Radikalisierung führten bis 1932 zum rasanten Aufstieg der NSDAP.",
+    "sourceIds": ["lehrplan", "lehrplan-m", "bpb-weimar", "kx-ns"],
+    "quiz": {
+      "question": "Was war ein Hauptauslöser dafür, dass die NSDAP zwischen 1929 und 1932 von einer Splitterpartei zur stärksten Kraft wurde?",
+      "answer": "Die Weltwirtschaftskrise löste Massenarbeitslosigkeit und tiefe Unzufriedenheit mit den demokratischen Parteien aus.",
+      "wrong": [
+        "In ganz Deutschland herrschten um das Jahr 1930 bereits Vollbeschäftigung und stark steigende Löhne.",
+        "Die NSDAP versprach den Wählerinnen und Wählern, die Rechte des Reichstags noch weiter auszubauen."
+      ],
+      "explanation": "Während die NSDAP 1928 noch unter drei Prozent lag, nutzte sie nach 1929 Verzweiflung, Arbeitslosigkeit und Demokratieverdrossenheit für Parolen und Gewalt."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Vom Wirtschaftseinbruch zur politischen Krise",
+      "instruction": "Bringe die Ereignisse zwischen 1928 und 1932 in die richtige zeitliche Reihenfolge.",
+      "categories": [],
+      "entries": [
+        { "text": "1928: Die NSDAP ist mit weniger als drei Prozent der Stimmen eine kleine Randpartei.", "target": 0, "feedback": "Vor der Wirtschaftskrise hatte die NSDAP im Reichstag kaum Bedeutung." },
+        { "text": "Oktober 1929: Börsensturz in New York löst die Weltwirtschaftskrise aus.", "target": 1, "feedback": "Ab Herbst 1929 brachen Handel und Kredite weltweit ein." },
+        { "text": "1930–1932: Über sechs Millionen Arbeitslose; Kanzler regieren per Notverordnung am Reichstag vorbei.", "target": 2, "feedback": "Die soziale Not traf Millionen Familien, das Vertrauen in das Parlament schwand." },
+        { "text": "Juli 1932: Links- und rechtsextreme Parteien gewinnen stark; die NSDAP wird stärkste Fraktion.", "target": 3, "feedback": "KPD und vor allem NSDAP bildeten zusammen eine demokratiefeindliche Mehrheit im Reichstag." }
+      ],
+      "conclusion": "Wirtschaftliche Not allein zerstört keine Demokratie – entscheidend war, dass immer mehr Bürger und Eliten demokratische Lösungen aufgaben."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre drei Ursachen dafür, dass viele Wählerinnen und Wähler ab 1930 ihr Vertrauen in die Weimarer Republik verloren und extremistische Parteien wählten.",
+        "hints": [
+          "Nenne Folgen der Weltwirtschaftskrise für Familien.",
+          "Beachte die Politik der Notverordnungen und die Versprechen der NSDAP."
+        ],
+        "model": "Erstens stürzte die Weltwirtschaftskrise ab 1929 über sechs Millionen Menschen in Arbeitslosigkeit und bittere Armut. Zweitens regierten die Regierungen ab 1930 immer öfter per Notverordnung mit Sparmaßnahmen, sodass viele Bürger sich vom Parlament im Stich gelassen fühlten. Drittens nutzten radikale Parteien – besonders die NSDAP – diese Wut mit einfachen Schuldzuweisungen, Großveranstaltungen und falschen Heilsversprechen.",
+        "criteria": [
+          "Du benennst drei nachvollziehbare Ursachen (Wirtschaft, Politik/Unzufriedenheit, Propaganda).",
+          "Du stellst den Zusammenhang zwischen Not und Stimmenverlust der Demokraten her.",
+          "Du ordnest die Entwicklung zeitlich richtig ein."
+        ]
+      },
+      "2": {
+        "prompt": "Warum schadete die gleichzeitige Radikalisierung von links (KPD) und rechts (NSDAP) der Weimarer Demokratie doppelt?",
+        "hints": [
+          "Überlege, was im Reichstag passiert, wenn verfassungsfeindliche Parteien gemeinsam mehr als 50 % der Sitze haben.",
+          "Denke auch an die Gewalt auf den Straßen."
+        ],
+        "model": "Obwohl sich KPD und NSDAP als erbitterte Feinde auf den Straßen bekämpften, lehnten beide die demokratische Republik ab. Als beide zusammen 1932 mehr als die Hälfte der Reichstagssitze hielten („negative Mehrheit“), konnten demokratische Parteien keine arbeitsfähige Regierung mehr bilden – das erleichterte schließlich den Sturz der Republik.",
+        "criteria": [
+          "Du beschreibst sowohl Straßen- als auch Parlamentsfolgen.",
+          "Du erklärst, warum keine demokratische Mehrheit mehr zustande kam.",
+          "Du hältst die unterschiedlichen Ziele beider Extreme sachlich auseinander."
+        ]
+      }
+    },
+    "figures": ["weimar-krise"]
+  },
+  {
+    "id": "gpg8-machtuebertragung-1933",
+    "lb": 2,
+    "tracks": ["R", "M"],
+    "lehrplan": "GPG8 LB 2 (R & M): Zeit und Wandel",
+    "title": "Machtübertragung und Weg in die Diktatur",
+    "period": "1933 · Zerstörung des Rechtsstaats",
+    "intro": "Hitler „ergriff“ die Macht nicht im Alleingang: Konservative Politiker überzeugten Reichspräsident Hindenburg am 30. Januar 1933 – und in wenigen Monaten war die Diktatur perfekt.",
+    "paragraphs": [
+      "Obwohl die NSDAP bei den letzten freien Wahlen im November 1932 sogar Stimmen verloren hatte und keine absolute Mehrheit besaß, ernannte Reichspräsident Paul von Hindenburg Adolf Hitler am 30. Januar 1933 zum Reichskanzler. Konservative Berater um Franz von Papen glaubten irrtümlich, sie könnten Hitler „einrahmen“ und für eigene Ziele nutzen. Deshalb sprechen Historiker treffend von einer Machtübertragung statt einer reinen „Machtergreifung“.",
+      "Die Nationalsozialisten nutzten die Staatsmacht sofort rücksichtslos aus: Nach dem Reichstagsbrand am 27. Februar 1933 setzte eine Notverordnung alle wichtigen Grundrechte außer Kraft; Tausende KPD- und SPD-Mitglieder wurden verhaftet. Am 24. März 1933 stimmte der Reichstag unter Druck und Drohungen der SA dem „Ermächtigungsgesetz“ zu – allein die SPD stimmte mutig mit Nein. Damit durfte Hitlers Regierung Gesetze ohne Parlament beschließen, verbot alle anderen Parteien und Gewerkschaften und schaltete Länder, Gerichte und Medien gleich."
+    ],
+    "takeaway": "Am 30. Januar 1933 wurde Hitler die Kanzlerschaft übertragen; Reichstagsbrandverordnung, Ermächtigungsgesetz und Gleichschaltung schufen binnen Monaten eine Diktatur.",
+    "sourceIds": ["lehrplan", "bpb-ns", "kx-ns"],
+    "quiz": {
+      "question": "Welche Bedeutung hatte das „Ermächtigungsgesetz“ vom 24. März 1933?",
+      "answer": "Die Reichsregierung durfte ab sofort Gesetze auch gegen die Verfassung und ohne Zustimmung des Reichstags erlassen.",
+      "wrong": [
+        "Das Gesetz garantierte allen Gewerkschaften ein dauerhaftes Streikrecht gegenüber der Reichsregierung.",
+        "Das Gesetz führte erstmals eine Fünf-Prozent-Hürde zum sicheren Schutz der Weimarer Demokratie ein."
+      ],
+      "explanation": "Mit dem Ermächtigungsgesetz gab das Parlament seine Gesetzgebungsmacht selbst auf; einzige Gegenstimmen kamen von der SPD."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Schritte von der Ernennung zur Diktatur (1933)",
+      "instruction": "Ordne die vier Stationen des Jahres 1933 in der richtigen zeitlichen Folge.",
+      "categories": [],
+      "entries": [
+        { "text": "30. Januar 1933: Reichspräsident Hindenburg ernennt Hitler zum Reichskanzler.", "target": 0, "feedback": "Mit der Ernennung beginnt die Machtübertragung an die NSDAP." },
+        { "text": "28. Februar 1933: Nach dem Reichstagsbrand werden Grundrechte per Notverordnung ausgesetzt.", "target": 1, "feedback": "Politische Gegner konnten nun ohne Gerichtsbeschluss verhaftet werden." },
+        { "text": "24. März 1933: Das Ermächtigungsgesetz entmachtet den Reichstag.", "target": 2, "feedback": "Nur die SPD-Abgeordneten stimmten gegen die Selbstentmachtung des Parlaments." },
+        { "text": "Mai bis Juli 1933: Zerschlagung der Gewerkschaften und Verbot aller Parteien außer der NSDAP.", "target": 3, "feedback": "Im Sommer 1933 war Deutschland eine Einparteiendiktatur." }
+      ],
+      "conclusion": "Eine Demokratie kann durch scheinbar legale Schritte von innen zerstört werden, wenn Grundrechte und Gewaltenteilung fallen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre, warum Historiker für den 30. Januar 1933 eher den Begriff „Machtübertragung“ statt „Machtergreifung“ verwenden.",
+        "hints": [
+          "Schau darauf, ob die NSDAP eine eigene Mehrheit hatte.",
+          "Nenne die Rolle von Reichspräsident Hindenburg und seinen konservativen Beratern."
+        ],
+        "model": "Die NSDAP hatte bei freien Wahlen nie die absolute Mehrheit gewonnen und konnte die Regierung nicht allein übernehmen. Stattdessen wurde Hitler am 30. Januar 1933 von Reichspräsident Hindenburg und konservativen Politikern ganz legal zum Kanzler ernannt, weil diese hofften, ihn kontrollieren zu können. Deshalb spricht man genauer von einer Machtübertragung.",
+        "criteria": [
+          "Du erklärst den Unterschied zwischen beiden Begriffen.",
+          "Du nennst die fehlende Alleinmehrheit der NSDAP.",
+          "Du beschreibst die Verantwortung von Hindenburg und konservativen Eliten."
+        ]
+      },
+      "2": {
+        "prompt": "Zeige am Beispiel des Frühjahrs 1933, wie wichtig der Schutz von Grundrechten und Opposition für den Erhalt einer Demokratie ist.",
+        "hints": [
+          "Beziehe die Reichstagsbrandverordnung und die Abstimmung über das Ermächtigungsgesetz ein.",
+          "Überlege, was ohne freie Presse und unabhängige Gerichte passiert."
+        ],
+        "model": "Als nach dem 28. Februar 1933 Meinungs-, Presse- und Versammlungsfreiheit ausgesetzt waren, fehlte der öffentliche Schutz gegen Verhaftungen und SA-Gewalt. Abgeordnete der KPD waren bereits ausgeschaltet, die SPD wurde eingeschüchtert. Dadurch konnte Hitler am 24. März 1933 das Ermächtigungsgesetz durchsetzen – sobald Grundrechte und Opposition wegfallen, hat eine Demokratie keine Abwehrkräfte mehr.",
+        "criteria": [
+          "Du verbindest historische Fakten (Februar/März 1933) mit demokratischen Prinzipien.",
+          "Du nennst konkrete geschützte Rechte (Presse, Versammlung, Opposition).",
+          "Du ziehst eine klare Schlussfolgerung."
+        ]
+      }
+    },
+    "figures": ["machtuebertragung-1933"]
+  },
+  {
+    "id": "gpg8-kriegsbeginn-verlauf",
+    "lb": 2,
+    "tracks": ["R", "M"],
+    "lehrplan": "GPG8 LB 2 (R & M): Zeit und Wandel",
+    "title": "Beginn und Verlauf des Zweiten Weltkrieges",
+    "period": "1939–1942 · NS-Expansionspolitik und Vernichtungskrieg",
+    "intro": "Mit der Aufrüstung, dem Bruch des Münchner Abkommens und schließlich dem Überfall auf Polen am 1. September 1939 entfesselte das NS-Regime den Zweiten Weltkrieg.",
+    "paragraphs": [
+      "Das außenpolitische Ziel Hitlers war von Anfang an Eroberung von „Lebensraum im Osten“ und rassistische Vorherrschaft. Nachdem Deutschland 1938 Österreich angeschlossen und die Tschechoslowakei zerschlagen hatte, überfiel die Wehrmacht am 1. September 1939 Polen – damit begann der Zweite Weltkrieg; Großbritannien und Frankreich erklärten Deutschland den Krieg. Im Frühjahr 1940 folgten die Feldzüge im Westen (Dänemark, Norwegen, Niederlande, Belgien, Luxemburg und Frankreich).",
+      "Am 22. Juni 1941 brach Deutschland den Nichtangriffspakt mit der Sowjetunion und begann dort einen grausamen Vernichtungskrieg im Osten: Anders als im Westen ging es der NS-Führung nicht nur um militärische Eroberung, sondern um die Versklavung der Bevölkerung, das bewusste Verhungernlassen ganzer Städte und den systematischen Massenmord an der jüdischen Bevölkerung durch Einsatzgruppen und SS."
+    ],
+    "takeaway": "Am 1. September 1939 begann mit dem deutschen Überfall auf Polen der Zweite Weltkrieg; nach den Westfeldzügen folgte 1941 der rassistische Vernichtungskrieg im Osten.",
+    "sourceIds": ["lehrplan", "bpb-ns", "kx-wk2", "natural-earth"],
+    "quiz": {
+      "question": "Welches Ereignis markiert den Beginn des Zweiten Weltkrieges in Europa?",
+      "answer": "der deutsche Überfall auf Polen am 1. September 1939",
+      "wrong": [
+        "der Ausbruch der Weltwirtschaftskrise 1929",
+        "die Unterzeichnung der Weimarer Reichsverfassung 1919"
+      ],
+      "explanation": "Am 1. September 1939 griff die Wehrmacht Polen an; zwei Tage später erklärten Großbritannien und Frankreich dem Deutschen Reich den Krieg."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Eroberungskrieg 1939 bis 1942 ordnen",
+      "instruction": "Ordne die Stationen der nationalsozialistischen Expansionspolitik zeitlich richtig.",
+      "categories": [],
+      "entries": [
+        { "text": "1. September 1939: Deutscher Überfall auf Polen – Beginn des Zweiten Weltkrieges.", "target": 0, "feedback": "Mit dem Angriff auf Polen löste das NS-Regime den Zweiten Weltkrieg aus." },
+        { "text": "Frühjahr/Sommer 1940: Feldzüge im Westen, Besetzung Frankreichs und der Benelux-Staaten.", "target": 1, "feedback": "Bis Juni 1940 geriet fast ganz Westeuropa unter deutsche Herrschaft." },
+        { "text": "22. Juni 1941: Deutscher Überfall auf die Sowjetunion – Beginn des Vernichtungskriegs im Osten.", "target": 2, "feedback": "Im Osten sollten Millionen Menschen vertrieben, ausgehungert oder ermordet werden." },
+        { "text": "Ende 1942: Größte Ausdehnung des deutschen Machtbereichs bis kurz vor Stalingrad.", "target": 3, "feedback": "Die vereinfachte Karte zeigt diesen Höchststand vor der Kriegswende." }
+      ],
+      "conclusion": "Der Zweite Weltkrieg ging gezielt von der Eroberungs- und Rassenpolitik des NS-Staates aus."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Beschreibe mithilfe der Europakarte die drei Hauptphasen der deutschen Expansion von 1939 bis Ende 1942.",
+        "hints": [
+          "Nenne Startdatum und angegriffenes Land 1939.",
+          "Unterscheide Westfeldzüge 1940 und Überfall auf die Sowjetunion 1941."
+        ],
+        "model": "Zuerst überfiel Deutschland am 1. September 1939 Polen und löste damit den Zweiten Weltkrieg aus. Im Jahr 1940 folgten die Feldzüge im Westen, bei denen unter anderem Dänemark, Norwegen, die Benelux-Staaten und große Teile Frankreichs besetzt wurden. Ab Juni 1941 griff Deutschland die Sowjetunion an und erreichte Ende 1942 vor Stalingrad seine größte Ausdehnung.",
+        "criteria": [
+          "Du benennst Polen (1. September 1939), Westeuropa (1940) und Sowjetunion (1941).",
+          "Du ordnest die geographischen Richtungen auf der Karte zu.",
+          "Du stellst den Zusammenhang zur NS-Expansionspolitik her."
+        ]
+      },
+      "2": {
+        "prompt": "Warum sprechen Historiker beim deutschen Angriff auf die Sowjetunion ab 1941 ausdrücklich von einem „Vernichtungskrieg im Osten“?",
+        "hints": [
+          "Vergleiche die Kriegsführung mit völkerrechtlichen Regeln für Kriege.",
+          "Beachte das Vorgehen gegen Kriegsgefangene und Zivilbevölkerung."
+        ],
+        "model": "Anders als bei herkömmlichen militärischen Konflikten missachtete die NS-Führung im Osten bewusst jedes Kriegs- und Völkerrecht. Sowjetische Kriegsgefangene ließ man zu Millionen verhungern, ganze Dörfer wurden niedergebrannt und Einsatzgruppen ermordeten gezielt jüdische Kinder, Frauen und Männer. Ziel war nicht nur ein Sieg, sondern die Auslöschung ganzer Bevölkerungsgruppen.",
+        "criteria": [
+          "Du benennst das bewusste Verletzen von Völkerrecht und Menschlichkeit.",
+          "Du gibst konkrete Verbrechen gegen Zivilisten oder Kriegsgefangene an.",
+          "Du erklärst den Unterschied zu einem rein militärischen Eroberungsziel."
+        ]
+      }
+    },
+    "figures": ["krieg-europa-1942"]
+  },
+  {
+    "id": "gpg8-wendepunkte-kapitulation",
+    "lb": 2,
+    "tracks": ["R", "M"],
+    "lehrplan": "GPG8 LB 2 (R & M): Zeit und Wandel",
+    "title": "Wendepunkte, „totaler Krieg“ und Kapitulation",
+    "period": "1942–1945 · Kriegswende und Ende in Trümmern",
+    "intro": "Ab Ende 1942 kippte der Kriegsverlauf endgültig gegen Deutschland – doch die NS-Führung kämpfte bis zum 8. Mai 1945 weiter und hinterließ Europa in Trümmern.",
+    "paragraphs": [
+      "Bereits Ende 1941 hatten sich die USA und die Sowjetunion mit Großbritannien zur Anti-Hitler-Koalition verbunden. Der entscheidende militärische Wendepunkt folgte im Winter 1942/43 in der Schlacht von Stalingrad: Hunderttausende Soldaten fielen oder gerieten in Gefangenschaft. Statt aufzugeben, rief Propagandaminister Goebbels im Februar 1943 im Berliner Sportpalast den „totalen Krieg“ aus – alle Kräfte in Wirtschaft und Alltag wurden dem Krieg untergeordnet.",
+      "Mit der Landung der Westalliierten in der Normandie am 6. Juni 1944 (D-Day) und der gleichzeitigen Offensive der Roten Armee im Osten rückte die Front von zwei Seiten auf Deutschland vor, während Bombenangriffe deutsche Städte zerstörten. Nach Hitlers Selbstmord folgte am 8. Mai 1945 die bedingungslose Kapitulation: Weltweit forderte der Krieg etwa 60 bis 70 Millionen Tote; Deutschland und viele Nachbarländer lagen zerstört am Boden."
+    ],
+    "takeaway": "Nach dem Wendepunkt Stalingrad (1942/43), dem „totalen Krieg“ und der Normandie-Landung endete der Zweite Weltkrieg in Europa am 8. Mai 1945 mit der bedingungslosen Kapitulation.",
+    "sourceIds": ["lehrplan", "bpb-ns", "kx-wk2"],
+    "quiz": {
+      "question": "Was geschah am 8. Mai 1945?",
+      "answer": "Die deutsche Wehrmacht kapitulierte bedingungslos – der Zweite Weltkrieg in Europa war zu Ende.",
+      "wrong": [
+        "Die Wehrmacht begann den Westfeldzug gegen Frankreich.",
+        "Die Weimarer Nationalversammlung beschloss die erste deutsche Verfassung."
+      ],
+      "explanation": "Mit der bedingungslosen Kapitulation am 8. Mai 1945 endeten die Kämpfe des Zweiten Weltkriegs in Europa."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Folgen für Deutschland und Nachbarländer unterscheiden",
+      "instruction": "Ordne die Folgen der NS-Expansionspolitik und des Kriegsendes den betroffenen Bereichen zu.",
+      "categories": [
+        "Folgen für besetzte Nachbarländer",
+        "Folgen für Deutschland selbst"
+      ],
+      "entries": [
+        { "text": "Millionenfacher Mord, Ausplünderung und Zerstörung ganzer Städte in Polen und der Sowjetunion.", "target": 0, "feedback": "Vor allem Osteuropa erlitt durch Besatzung und Vernichtungskrieg ungeheure Opferzahlen." },
+        { "text": "Zerbombte Großstädte (z. B. München, Nürnberg, Würzburg), Millionen Gefallene und Gebietsverluste.", "target": 1, "feedback": "Der von Deutschland begonnene Krieg kehrte mit voller Zerstörungskraft zurück." },
+        { "text": "Verlust von Souveränität: Übernahme der Regierungsgewalt durch die vier Siegermächte.", "target": 1, "feedback": "Nach der bedingungslosen Kapitulation verloren deutsche Behörden die staatliche Eigenständigkeit." },
+        { "text": "Jahrelange Zwangsarbeit verschleppter Menschen und zerstörte Infrastruktur in West- und Osteuropa.", "target": 0, "feedback": "Über ganz Europa wurden Millionen Zwangsarbeiter verschleppt und Wirtschaften geplündert." }
+      ],
+      "conclusion": "Der Krieg hinterließ bei den überfallenen Nachbarländern wie auch in Deutschland tiefes Leid und riesige Trümmer."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Nenne zwei wichtige Wendepunkte des Zweiten Weltkrieges ab 1942/43 und erkläre, was die NS-Führung mit dem „totalen Krieg“ bezweckte.",
+        "hints": [
+          "Denke an Stalingrad und die Landung in der Normandie.",
+          "Erkläre, wie die Bevölkerung durch Goebbels mobilisiert werden sollte."
+        ],
+        "model": "Zwei zentrale Wendepunkte waren die Niederlage bei Stalingrad im Winter 1942/43 und die Landung der Westalliierten in der Normandie im Juni 1944. Nach Stalingrad rief Goebbels den „totalen Krieg“ aus, um wirklich jede Arbeitskraft, jede Fabrik und sogar Jugendliche und ältere Männer noch für Rüstung und Front einzuspannen und die Niederlage hinauszuzögern.",
+        "criteria": [
+          "Du benennst zwei belegte Wendepunkte mit zeitlicher Einordnung.",
+          "Du erklärst den Begriff „totaler Krieg“ sachlich.",
+          "Du stellst den Weg bis zum 8. Mai 1945 schlüssig dar."
+        ]
+      },
+      "2": {
+        "prompt": "Beurteile, warum die bedingungslose Kapitulation am 8. Mai 1945 für verschiedene Menschen in Europa gleichzeitig als Niederlage oder als Befreiung erlebt wurde.",
+        "hints": [
+          "Denke an KZ-Häftlinge, Zwangsarbeiter und besetzte Länder auf der einen Seite.",
+          "Denke an deutsche Familien auf der anderen Seite."
+        ],
+        "model": "Für überlebende Jüdinnen und Juden, politische Häftlinge in Konzentrationslagern, Zwangsarbeiter und Menschen in besetzten Ländern wie Polen oder Frankreich bedeutete der 8. Mai 1945 die lang ersehnte Befreiung von Terror und Tod. Viele Deutsche erlebten ihn damals wegen Bombenschäden, Hunger und der Furcht vor Besatzung zunächst als Niederlage und Zusammenbruch – erst später setzte sich die Einsicht durch, dass dieses Ende auch Deutschland von der NS-Diktatur befreite.",
+        "criteria": [
+          "Du nimmst verschiedene Perspektiven (Opfer/Nachbarn vs. deutsche Bevölkerung) ein.",
+          "Du begründest beide Sichtweisen historisch fair.",
+          "Du vermeidest pauschale Vereinfachungen."
+        ]
+      }
+    },
+    "figures": ["wendepunkte-kapitulation"]
+  },
+  {
+    "id": "gpg8-verfolgung-holocaust",
+    "lb": 2,
+    "tracks": ["R", "M"],
+    "lehrplan": "GPG8 LB 2 (R & M): Zeit und Wandel",
+    "title": "Verfolgung und Vernichtung im Nationalsozialismus",
+    "period": "1933–1945 · Rassische und politische Verfolgung",
+    "intro": "Hinter Millionen Opferzahlen stehen konkrete Menschenleben. Die Nationalsozialisten verfolgten gezielt aus rassistischen wie aus politischen Gründen – bis hin zum Völkermord.",
+    "paragraphs": [
+      "Das NS-Regime verfolgte Menschen aus klar unterscheidbaren Motiven. Aus rassistischen Motiven erklärte es europäische Jüdinnen und Juden sowie Sinti und Roma pauschal zu „minderwertigen Rassen“. Ab 1933 folgten Berufsverbote, Nürnberger Gesetze (1935) und offener Terror (Novemberpogrome 1938), bevor im Zweiten Weltkrieg der systematische Massenmord (Holocaust / Shoah) in Vernichtungslagern wie Auschwitz-Birkenau begann – über sechs Millionen Jüdinnen und Juden sowie Hunderttausende Sinti und Roma wurden ermordet. Aus angeblich „erbgesundheitlichen“ Gründen ermordeten NS-Ärzte zudem Zehntausende kranke und behinderte Menschen.",
+      "Daneben stand politische Verfolgung: Wer sich aus Überzeugung gegen die Diktatur stellte – etwa Sozialdemokraten, Kommunisten, Gewerkschafter, Journalisten, Zeugen Jehovas oder mutige Christen –, wurde in Konzentrationslager wie Dachau bei München verschleppt, gefoltert oder hingerichtet. Anders als rassisch Verfolgte wurden politische Gegner für ihre Ansichten und Handlungen verfolgt – doch für beide Gruppen bedeutete das Regime Willkür, Entrechtung und oft den Tod."
+    ],
+    "takeaway": "Im Nationalsozialismus wurden Menschen einerseits aus rassistischen und ausgrenzenden Motiven (Shoah, Sinti und Roma, Behinderte) und andererseits wegen ihrer politischen oder religiösen Überzeugung verfolgt und ermordet.",
+    "sourceIds": ["lehrplan", "lehrplan-m", "kx-holocaust", "bpb-ns"],
+    "quiz": {
+      "question": "Worin liegt der Unterschied zwischen rassistischer und politischer Verfolgung im Nationalsozialismus?",
+      "answer": "Rassistische Verfolgung traf Menschen wegen ihrer Abstammung wie Jüdinnen, Juden sowie Sinti und Roma; politische wegen ihrer Haltung.",
+      "wrong": [
+        "Politische Gefangene kamen erst nach dem Jahr 1945 ins Lager, während Jüdinnen und Juden weiterhin im Reichstag frei mitstimmen durften.",
+        "Rassistische Verfolgung betraf ausschließlich gegnerische Soldaten an der Ostfront und niemals Zivilisten in den deutschen Städten."
+      ],
+      "explanation": "Während politische Gegner wegen ihrer Haltung oder Parteizugehörigkeit verfolgt wurden, sprach die NS-Rassenideologie Millionen Menschen wegen ihrer Herkunft das Lebensrecht ab."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Verfolgungsmotive an Lebensgeschichten unterscheiden",
+      "instruction": "Ordne jedes fiktiv verdichtete Fallbeispiel (angelehnt an typische bayerische Biografien) dem passenden Verfolgungsmotiv zu.",
+      "categories": [
+        "Rassistisches Motiv",
+        "Ausgrenzung wegen Behinderung/Krankheit",
+        "Politisches Motiv"
+      ],
+      "entries": [
+        { "text": "Eine jüdische Kaufmannsfamilie aus Fürth verliert 1935 Bürgerrechte, 1938 ihr Geschäft und wird 1942 deportiert.", "target": 0, "feedback": "Jüdische Familien wurden wegen der NS-Rassenideologie systematisch entrechtet und ermordet." },
+        { "text": "Ein Nürnberger Gewerkschafter verteilt 1934 Flugblätter gegen Lohnabbau und kommt ins KZ Dachau.", "target": 2, "feedback": "Gewerkschafter und Arbeiterparteien wurden wegen ihres politischen Widerstands verfolgt." },
+        { "text": "Eine junge Frau mit Lernschwierigkeiten wird aus einer bayerischen Pflegeanstalt in eine Tötungsanstalt („Aktion T4“) gebracht.", "target": 1, "feedback": "Menschen mit Behinderungen galten der NS-Ideologie als „unwertes Leben“." },
+        { "text": "Eine Sinti-Familie aus Schwaben wird 1943 nach Auschwitz-Birkenau verschleppt.", "target": 0, "feedback": "Auch Sinti und Roma fielen der systematischen rassistischen Vernichtung zum Opfer." }
+      ],
+      "conclusion": "Jedes einzelne Schicksal macht sichtbar, wie die NS-Diktatur Menschenrechte vollständig auslöschte."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre den Unterschied zwischen rassistischen und politischen Verfolgungsmotiven in der NS-Zeit und nenne jeweils ein konkretes Beispiel.",
+        "hints": [
+          "Benenne, welche Gruppen jeweils verfolgt wurden.",
+          "Erwähne Orte wie Dachau oder Auschwitz."
+        ],
+        "model": "Aus politischen Motiven verfolgte das NS-Regime Menschen, die eine andere Weltanschauung vertraten oder Widerstand leisteten, zum Beispiel Gewerkschafter, Sozialdemokraten oder Kommunisten im KZ Dachau. Aus rassistischen Motiven verfolgte es Menschen wegen ihrer Herkunft, unabhängig von ihrem Verhalten: Vor allem Jüdinnen und Juden (im Holocaust/Shoah) sowie Sinti und Roma wurden planmäßig entrechtet und in Vernichtungslagern ermordet.",
+        "criteria": [
+          "Du unterscheidest rassistische und politische Motive klar.",
+          "Du nennst für beide Gruppen historische Beispiele.",
+          "Du formulierst respektvoll und präzise."
+        ]
+      },
+      "2": {
+        "prompt": "Recherchiere (z. B. über Stolpersteine oder das Gedenkbuch eures Ortes / eurer Region) eine echte Biografie eines verfolgten Menschen und fasse Herkunft, Verfolgungsmotiv und Schicksal zusammen.",
+        "hints": [
+          "Nutze lokale Gedenkprojekte (z. B. Stolpersteine, KZ-Gedenkstätte Dachau oder Flossenbürg).",
+          "Prüfe bewusst, aus welchem Motiv die Person verfolgt wurde."
+        ],
+        "model": "Für eine Biografie-Recherche prüfe ich etwa die Daten auf einem Stolperstein oder in der Online-Datenbank der Gedenkstätte Dachau: Name, Geburtsjahr, Wohnort in Bayern, ob die Verfolgung rassistisch (z. B. jüdische Familie oder Sinti) oder politisch/religiös (z. B. Mitglied einer verbotenen Partei) begründet war, und welches Schicksal (Flucht, Deportation, Tod oder Überleben) dokumentiert ist.",
+        "criteria": [
+          "Du benennst zentrale Such- und Dokumentationskriterien (Name, Ort, Motiv, Verlauf).",
+          "Du ordnest das Verfolgungsmotiv sauber ein.",
+          "Du zeigst Respekt vor realen Lebensgeschichten (echte Recherche im Unterricht)."
+        ]
+      }
+    },
+    "figures": ["verfolgung-ns"]
+  },
+  {
+    "id": "gpg8-flucht-vertreibung",
+    "lb": 2,
+    "tracks": ["R", "M"],
+    "lehrplan": "GPG8 LB 2 (R & M): Zeit und Wandel",
+    "title": "Flucht, Vertreibung und Migration ab 1944/45",
+    "period": "1944–1950 · Folgen des Krieges für Millionen Menschen",
+    "intro": "Der Zweite Weltkrieg zwang nicht nur Millionen Verschleppte, sondern am Kriegsende auch rund zwölf bis vierzehn Millionen Deutsche zum Verlassen ihrer Heimat.",
+    "paragraphs": [
+      "Mit dem Vorrücken der sowjetischen Armee Ende 1944 begann eine dramatische Flucht: Millionen Zivilistinnen und Zivilisten – vor allem Frauen, Kinder und alte Menschen aus Ostpreußen, Pommern und Schlesien – flohen bei eisiger Kälte zu Fuß, auf Pferdewagen oder über die Ostsee nach Westen. Viele starben durch Kälte, Erschöpfung oder Angriffe, etwa beim Untergang überfüllter Flüchtlingsschiffe.",
+      "Nach dem Kriegsende legten die Siegermächte auf der Potsdamer Konferenz 1945 die Oder-Neiße-Linie als neue Ostgrenze fest und beschlossen die „ordnungsgemäße Überführung“ der deutschen Bevölkerung aus Polen, der Tschechoslowakei (Sudetenland) und Ungarn. In der Realität lief diese Vertreibung oft mit kurzer Vorwarnzeit, Gewalt und dem Verlust des gesamten Besitzes ab. Gleichzeitig suchten Hunderttausende sogenannte Displaced Persons (ehemalige KZ-Häftlinge und Zwangsarbeiter) aus ganz Europa in Deutschland nach Überlebenden oder einer neuen Heimat."
+    ],
+    "takeaway": "Als unmittelbare Folge des von Deutschland begonnenen Krieges verloren ab 1944/45 rund zwölf bis vierzehn Millionen Deutsche durch Flucht und Vertreibung ihre Heimat.",
+    "sourceIds": ["lehrplan", "bpb-nachkrieg", "kx-flucht"],
+    "quiz": {
+      "question": "Was geschah infolge der Potsdamer Beschlüsse 1945 mit Millionen Deutschen in den ehemaligen Ostgebieten und im Sudetenland?",
+      "answer": "Sie mussten ihre Heimat verlassen und wurden in die vier Besatzungszonen vertrieben.",
+      "wrong": [
+        "Sie blieben alle als eigenständiger Bundesstaat im Osten wohnen.",
+        "Sie zogen geschlossen bereits 1945 nach Nordamerika um."
+      ],
+      "explanation": "Rund zwölf bis vierzehn Millionen Flüchtlinge und Vertriebene wurden ab 1944/45 in den verbliebenen Besatzungszonen aufgenommen."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Flucht und Vertreibung chronologisch ordnen",
+      "instruction": "Ordne die Stationen von Flucht, Vertreibung und Ankunft in der richtigen Folge.",
+      "categories": [],
+      "entries": [
+        { "text": "Ende 1944 / Winter 1945: Zivilisten fliehen aus Angst vor den Kämpfen aus Ostpreußen und Schlesien nach Westen.", "target": 0, "feedback": "Die erste Welle war die Flucht vor der näherrückenden Front." },
+        { "text": "Mai 1945: Kriegsende – Millionen Zwangsarbeiter („Displaced Persons“) und Flüchtlinge sind unterwegs.", "target": 1, "feedback": "Unmittelbar nach der Kapitulation bewegten sich Millionen Entwurzelte durch Europa." },
+        { "text": "Sommer 1945 bis 1946: Nach der Potsdamer Konferenz folgen gezielte Ausweisungen aus den Ostgebieten und dem Sudetenland.", "target": 2, "feedback": "Nun wurden auch jene ausgewiesen, die während des Krieges geblieben oder zurückgekehrt waren." },
+        { "text": "Ab 1946: Aufnahme in Notquartieren in Bayern und den anderen Zonen – allmähliche Integration in Dörfer und Städte.", "target": 3, "feedback": "Gerade Bayern nahm über zwei Millionen Vertriebene auf, oft zunächst unter großen Spannungen." }
+      ],
+      "conclusion": "Flucht und Vertreibung veränderten auch Bayern nachhaltig – viele Städte wie Neutraubling oder Waldkraiburg entstanden durch Vertriebene."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre den Unterschied zwischen Flucht (ab Ende 1944) und Vertreibung (ab 1945) und beschreibe, welche Folgen das für Bayern hatte.",
+        "hints": [
+          "Wann handelten Menschen aus Angst vor der Front, wann aufgrund staatlicher Ausweisung?",
+          "Denke an die Zahl der Aufgenommenen und die Unterbringung in Dörfern."
+        ],
+        "model": "Flucht bedeutet, dass Menschen Ende 1944 und Anfang 1945 aus Angst vor der Front selbst aufbrachen, um ihr Leben zu retten. Vertreibung beschreibt dagegen die behördlich angeordnete Ausweisung nach dem Kriegsende 1945, etwa aus Schlesien oder dem Sudetenland. Bayern nahm rund zwei Millionen dieser Heimatvertriebenen auf: Anfangs gab es große Enge und Misstrauen auf den Bauernhöfen, langfristig bauten Vertriebene jedoch neue Betriebe und sogar ganze Siedlungen mit auf.",
+        "criteria": [
+          "Du unterscheidest Flucht und Vertreibung sachlich.",
+          "Du nennst historische Zusammenhänge ab 1944/45.",
+          "Du beschreibst konkrete Folgen für die Aufnahmeregion Bayern."
+        ]
+      },
+      "2": {
+        "prompt": "Warum ist es wichtig, bei Lebensgeschichten von Flucht und Vertreibung sowohl das individuelle Leid der Betroffenen als auch die Ursachen durch den NS-Krieg im Blick zu behalten?",
+        "hints": [
+          "Denke an das Leid unschuldiger Kinder und Familien auf der Flucht.",
+          "Denke zugleich an die Frage, wer den Krieg und vorherige Vertreibungen 1939–1944 begonnen hatte."
+        ],
+        "model": "Wer persönliche Schicksale betrachtet, erkennt sofort, dass Kinder, Frauen und ältere Menschen durch Flucht und Vertreibung großes Unrecht, Kälte und den Verlust ihrer Heimat erlitten. Zugleich darf die Vorgeschichte nicht vergessen werden: Erst der deutsche Überfall auf die Nachbarländer und die nationalsozialistische Vernichtungs- und Vertreibungspolitik ab 1939 lösten diese Katastrophe aus. Beide Wahrheiten gehören zusammen, um Schuld nicht aufzurechnen, sondern Frieden zu sichern.",
+        "criteria": [
+          "Du erkennst das Leid der Betroffenen an.",
+          "Du ordnest die historische Ursache (NS-Angriffskrieg) klar ein.",
+          "Du vermeidest einseitige Aufrechnungen."
+        ]
+      }
+    },
+    "figures": ["flucht-vertreibung"]
+  },
+  {
+    "id": "gpg8-nachkriegsalltag",
+    "lb": 2,
+    "tracks": ["R", "M"],
+    "lehrplan": "GPG8 LB 2 (R & M): Zeit und Wandel",
+    "title": "Alltag in den Nachkriegsjahren und Wiederaufbau",
+    "period": "1945–1949 · Trümmer, Hunger und Neuanfang",
+    "intro": "Wie überlebten Familien in zerstörten Städten und überfüllten Dörfern zwischen 1945 und 1948 ohne Heizkohle, mit knappen Lebensmittelkarten und Wohnungsnot?",
+    "paragraphs": [
+      "Der Alltag in den ersten Nachkriegsjahren war geprägt von Mangel: Millionen Wohnungen waren durch Bomben zerstört, während gleichzeitig Millionen Vertriebene und Kriegsheimkehrer untergebracht werden mussten. Wohnungsämter wiesen Familien zwangsweise Zimmer in fremden Wohnungen zu. Lebensmittel, Kleidung und Kohle gab es nur auf Bezugsscheine und Lebensmittelkarten; im extrem harten „Hungerwinter“ 1946/47 sanken die Rationen teilweise auf unter 1 000 Kalorien am Tag.",
+      "Viele Städter fuhren zu „Hamsterfahrten“ aufs Land, um Familienschmuck, Teppiche oder Werkzeuge gegen Speck und Kartoffeln einzutauschen; daneben blühte der Schwarzmarkt, in dem Zigaretten oft mehr wert waren als die alte Reichsmark. Besonders Frauen leisteten enorme Arbeit als Versorgerinnen und „Trümmerfrauen“, während viele Kriegsheimkehrer erst Jahre später aus Gefangenschaft heimkehrten und die Integration der Vertriebenen mühsam Schritt für Schritt gelang."
+    ],
+    "takeaway": "Wohnungsnot, Lebensmittelkarten, Schwarzmarkt und die schrittweise Integration von Kriegsheimkehrern und Vertriebenen prägten die schweren Nachkriegsjahre.",
+    "sourceIds": ["lehrplan", "lehrplan-m", "lemo-nachkrieg", "bpb-nachkrieg"],
+    "quiz": {
+      "question": "Was waren sogenannte „Hamsterfahrten“ in den Jahren 1945 bis 1948?",
+      "answer": "Fahrten von Stadtbewohnern aufs Land, um Wertgegenstände bei Bauern gegen Lebensmittel einzutauschen.",
+      "wrong": [
+        "Wahlkampfreisen der neu gegründeten politischen Parteien durch den Bayerischen Landtag",
+        "Gemeinsame Schulausflüge für Jugendliche in das wirtschaftlich starke Nachkriegsland USA"
+      ],
+      "explanation": "Da Geld kaum Kaufkraft hatte und Rationen in den Städten oft nicht reichten, tauschten Städter auf dem Land Gegenstände gegen Essen."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Herausforderungen im Nachkriegsalltag zuordnen",
+      "instruction": "Ordne jede Alltagserfahrung 1945–1948 dem passenden Problembereich zu.",
+      "categories": [
+        "Wohnungsnot & Enge",
+        "Ernährung & Versorgung",
+        "Heimkehrer & Integration"
+      ],
+      "entries": [
+        { "text": "Zwangseinweisung einer fünfköpfigen Familie in zwei Zimmer eines Bauernhauses", "target": 0, "feedback": "Zerstörte Städte und Millionen Neuzugänge machten Einquartierungen unvermeidbar." },
+        { "text": "Marken für Brot und Fett reichen im Winter 1946/47 kaum aus", "target": 1, "feedback": "Die Lebensmittelrationen sanken oft weit unter den täglichen Bedarf." },
+        { "text": "Tausch von Besteck gegen Kartoffeln am Bahnhof oder beim Bauern", "target": 1, "feedback": "Tauschhandel und Schwarzmarkt ersetzten oft das wertlose Geld." },
+        { "text": "Soldaten kehren nach Jahren der Gefangenschaft in veränderte Familien zurück", "target": 2, "feedback": "Viele Heimkehrer litten unter Traumata und mussten sich im Alltag neu einfinden." }
+      ],
+      "conclusion": "Erst nach der Währungsreform 1948 und mit internationaler Hilfe (z. B. Marshallplan im Westen) füllten sich die Läden wieder."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Schildere aus Sicht einer Familie in einer bayerischen Stadt oder einem Dorf im Jahr 1946 drei konkrete Probleme des Alltags.",
+        "hints": [
+          "Wähle Aspekte wie Wohnung, Essen/Kohle oder Ankunft von Vertriebenen/Heimkehrern.",
+          "Bleibe historisch nah an den Fakten der Jahre 1945–1947."
+        ],
+        "model": "Im Jahr 1946 teilt sich unsere Familie die kleine Wohnung mit einer einquartierten Familie aus dem Sudetenland. Auf die Lebensmittelkarten gibt es nur wenig Brot und kaum Fett, sodass wir am Wochenende auf Hamsterfahrt aufs Land fahren müssen, um ein paar Kartoffeln gegen alte Kleidung zu tauschen. Im Winter fehlt außerdem Brennholz, und wir hoffen jeden Tag auf Nachricht vom Vater aus der Kriegsgefangenschaft.",
+        "criteria": [
+          "Du beschreibst drei reale Alltagsschwierigkeiten (z. B. Wohnraum, Hunger/Mangel, Heimkehr/Integration).",
+          "Du nutzt korrekte Begriffe (z. B. Lebensmittelkarten, Einquartierung, Hamsterfahrt).",
+          "Die Schilderung passt historisch in die Nachkriegszeit."
+        ]
+      },
+      "2": {
+        "prompt": "Diskutiere für den M-Zug, welche Bedeutung diese unmittelbaren Nachkriegserfahrungen (Mangel, Flucht, Zusammenhalt) für die Gründergeneration der Bundesrepublik hatten.",
+        "hints": [
+          "Überlege, warum Sicherheit, Arbeit und Wohnen danach einen so hohen Stellenwert bekamen.",
+          "Denke an die Erfahrung von Nachbarn und Vertriebenen."
+        ],
+        "model": "Die unmittelbaren Nachkriegsjahre zeigten vielen Menschen zwei Dinge zugleich: Erstens, wie wertvoll Frieden, verlässlicher Wohnraum und soziale Absicherung (z. B. der Lastenausgleich für Vertriebene) sind. Zweitens wuchs durch das gemeinsame Anpacken von Einheimischen, Frauen und Vertriebenen in Betrieben und Kommunen ein starkes Sicherheitsbedürfnis, das den Wiederaufbau und den Wunsch nach einem stabilen Sozialstaat prägte.",
+        "criteria": [
+          "Du stellst Folgen der Noterfahrungen auf Denken und Politik dar.",
+          "Du benennst das Thema Integration und soziale Sicherung.",
+          "Du argumentierst abgewogen."
+        ]
+      }
+    },
+    "figures": ["nachkriegsalltag"]
+  },
+  {
+    "id": "gpg8-nuernberger-prozesse",
+    "lb": 2,
+    "tracks": ["R", "M"],
+    "lehrplan": "GPG8 LB 2 (R & M): Zeit und Wandel",
+    "title": "Die Nürnberger Prozesse und Kriegsverbrechen",
+    "period": "1945–1946 · Recht statt Willkür",
+    "intro": "Wie geht eine Welt nach Millionen Morden mit den Hauptverantwortlichen um? In Nürnberg wurden NS-Größen erstmals nach rechtsstaatlichen Regeln vor Gericht gestellt.",
+    "paragraphs": [
+      "Von November 1945 bis Oktober 1946 tagte im Justizpalast in Nürnberg der Internationale Militärgerichtshof der vier Siegermächte (USA, Sowjetunion, Großbritannien und Frankreich). Angeklagt waren 24 führende Politiker, Militärs und Funktionäre des NS-Staates wie Hermann Göring oder Joachim von Ribbentrop. Statt kurzer Rachejustiz erhielten die Angeklagten Verteidiger, und Hunderttausende eigene NS-Akten sowie Zeugenaussagen bewiesen die Verbrechen öffentlich vor der Welt.",
+      "Die Urteile setzten bis heute Maßstäbe: Erstmals galten das Führen eines Angriffskriegs und „Verbrechen gegen die Menschlichkeit“ als international strafbare Taten. Entscheidend war außerdem ein neuer Rechtsgrundsatz: Niemand kann sich hinter dem Satz „Ich habe nur Befehle befolgt“ verstecken – jede einzelne Person bleibt für Kriegsverbrechen und Massenmord persönlich verantwortlich. Darauf baut heute der Internationale Strafgerichtshof in Den Haag auf."
+    ],
+    "takeaway": "In den Nürnberger Prozessen (1945/46) wurde erstmals persönliche Verantwortung vor einem internationalen Gericht durchgesetzt – „Befehl ist Befehl“ schützte nicht mehr.",
+    "sourceIds": ["lehrplan", "memorium-nuernberg", "bpb-ns"],
+    "quiz": {
+      "question": "Welcher Rechtsgrundsatz wurde in den Nürnberger Prozessen 1945/46 weltweit neu durchgesetzt?",
+      "answer": "Einzelpersonen tragen auch als Staatsdiener oder Soldaten volle persönliche Verantwortung für begangene Kriegsverbrechen.",
+      "wrong": [
+        "Kriegsverbrechen dürfen vor Gericht nur verfolgt werden, wenn der Täter gleichzeitig auch das Staatsoberhaupt des Landes war.",
+        "Ein schriftlich erteilter militärischer Befehl entschuldigt grundsätzlich jede Beteiligung an einem Verbrechen gegen Zivilisten."
+      ],
+      "explanation": "Nürnberg machte Schluss mit der Ausrede des „Befehlsnotstands“ bei offensichtlichen Menschlichkeitsverbrechen."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Bedeutung der Nürnberger Prozesse prüfen",
+      "instruction": "Ordne jede Aussage zu: Trifft sie auf die Nürnberger Prozesse zu oder ist sie falsch?",
+      "categories": [
+        "Richtig über Nürnberg (1945/46)",
+        "Falsch / Missverständnis"
+      ],
+      "entries": [
+        { "text": "Die Angeklagten hatten Verteidiger und wurden anhand eigener deutscher Dokumente überführt.", "target": 0, "feedback": "Genau das machte Nürnberg zu einem rechtsstaatlichen Verfahren statt bloßer Rache." },
+        { "text": "Erstmals stand der Tatbestand „Verbrechen gegen die Menschlichkeit“ vor einem internationalen Gericht.", "target": 0, "feedback": "Dieser Begriff prägt bis heute das Völkerstrafrecht." },
+        { "text": "Alle Angeklagten wurden freigesprochen, weil nur Hitler schuld war.", "target": 1, "feedback": "Zwölf Hauptkriegsverbrecher erhielten Todesurteile, sieben Haftstrafen, drei wurden freigesprochen." },
+        { "text": "Der Grundsatz persönlicher Verantwortung gilt bis heute als Vorbild für internationale Strafgerichte.", "target": 0, "feedback": "Ohne die Nürnberger Prinzipien gäbe es heute keinen Internationalen Strafgerichtshof." }
+      ],
+      "conclusion": "Rechtsstaatliche Aufarbeitung beweist Fakten für kommende Generationen und schafft klare Grenzen gegen staatliche Willkür."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre, warum die Siegermächte die Hauptkriegsverbrecher in Nürnberg 1945/46 vor ein ordentliches Gericht stellten, statt sie ohne Prozess zu erschießen.",
+        "hints": [
+          "Überlege, welchen Wert Beweise und Dokumente vor den Augen der Welt haben.",
+          "Nenne einen wichtigen neuen Rechtsgrundsatz aus Nürnberg."
+        ],
+        "model": "Ein faires Gerichtsverfahren mit Verteidigern, Zeugen und gesicherten Dokumenten bewies die Verbrechen des NS-Staates für alle sichtbar – niemand konnte später behaupten, die Lager seien erfunden worden. Gleichzeitig zeigten die Prozesse durch den Tatbestand „Verbrechen gegen die Menschlichkeit“, dass Recht stärker ist als bloße Rache und künftig jeder Täter persönlich haftet.",
+        "criteria": [
+          "Du nennst die Sicherung historischer Beweise gegen Leugnung.",
+          "Du begründest den Unterschied zwischen Rechtsstaatlichkeit und Rache.",
+          "Du benennst das Prinzip persönlicher Verantwortung."
+        ]
+      },
+      "2": {
+        "prompt": "Diskutiere, warum der Nürnberger Grundsatz („Ein verbrecherischer Befehl entbindet nicht von persönlicher Schuld“) auch bei heutigen Kriegen und Konflikten so wichtig – aber schwer durchzusetzen – ist.",
+        "hints": [
+          "Denke an heutige Berichte über Angriffe auf Zivilisten oder Kriegsgefangene.",
+          "Überlege, warum internationale Gerichte manchmal keine Angeklagten festnehmen können."
+        ],
+        "model": "Wenn Soldaten oder Machthaber wissen, dass Kriegsverbrechen niemals verjähren und auch Jahre später bestraft werden können, wirkt das abschreckend und stärkt die Rechte der Opfer. In der Praxis bleibt die Durchsetzung jedoch schwierig, solange Staaten Kriegsverbrecher nicht an den Internationalen Strafgerichtshof ausliefern oder große Mächte ihn nicht anerkennen – dennoch bleibt der Maßstab unverzichtbar.",
+        "criteria": [
+          "Du überträgst das Prinzip auf heutige Konflikte.",
+          "Du nennst sowohl Chancen (Opferschutz, Abschreckung) als auch Hürden (fehlende Auslieferung).",
+          "Du beziehst klar Stellung."
+        ]
+      }
+    },
+    "figures": ["nuernberger-prozesse"]
+  },
+  {
+    "id": "gpg8-kriegsfolgen-heute",
+    "lb": 2,
+    "tracks": ["R", "M"],
+    "lehrplan": "GPG8 LB 2 (R & M): Zeit und Wandel",
+    "title": "Langfristige Folgen von Krieg bis heute",
+    "period": "1945 bis heute · Erinnern und Verantwortung",
+    "intro": "Ein Krieg endet nicht mit dem Tag der Kapitulation: Familienwunden, Blindgänger unter unseren Straßen und Lehren für heutige Opfer von Kriegen wirken bis heute nach.",
+    "paragraphs": [
+      "Viele Menschen glauben, Geschichte liege weit zurück – doch die Folgen des Zweiten Weltkrieges begegnen uns bis in die Gegenwart. In vielen Familien wirkt das Schweigen oder die Angst von Großeltern nach, die Bombenangriffe, Fronteinsätze, Verlust von Angehörigen oder Flucht überlebten („transgenerationale Traumata“). In bayerischen Städten müssen zudem bei Bauarbeiten noch heute jedes Jahr Fliegerbomben (Blindgänger) entschärft werden.",
+      "Auch international wirkt der Zweite Weltkrieg nach: Als direkte Antwort auf Zerstörung und Menschheitsverbrechen gründeten Staaten 1945 die Vereinten Nationen (UN) und verabschiedeten 1948 die Allgemeine Erklärung der Menschenrechte. Wer heute auf Berichte über Opfer aktueller Kriege blickt – zerstörte Wohnungen, getrennte Familien, Traumata bei Kindern, Geflohene –, erkennt, warum Völkerrecht, Hilfswerke und Friedensarbeit dauerhaft nötig bleiben."
+    ],
+    "takeaway": "Kriege wirken über Jahrzehnte in Familien, Landschaften und Rechtssystemen fort – Erinnern schärft den Blick für heutige Kriegsopfer und den Wert des Friedens.",
+    "sourceIds": ["lehrplan", "memorium-nuernberg", "bpb-nachkrieg", "hanisau-menschenrechte"],
+    "quiz": {
+      "question": "Welche Aussage beschreibt eine bis heute spürbare Langzeitfolge von Kriegen für betroffene Menschen?",
+      "answer": "Psychische Traumata, der Verlust von Angehörigen oder der Heimat belasten oft auch Kinder und Enkelkinder über Generationen hinweg.",
+      "wrong": [
+        "Mit der Unterzeichnung eines Friedensvertrags verschwinden alle seelischen Folgen innerhalb einer Woche.",
+        "In deutschen Städten finden Bauarbeiter heute grundsätzlich keine Überreste des Zweiten Weltkriegs mehr."
+      ],
+      "explanation": "Seelische Verwundungen, Familientrennungen und zerstörte Lebenswege wirken über Jahrzehnte – sowohl nach 1945 als auch bei heutigen Kriegen."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Unmittelbare und langfristige Kriegsfolgen unterscheiden",
+      "instruction": "Ordne jedes Beispiel zu: War es eine unmittelbare Folge 1945/46 oder wirkt es als langfristige Konsequenz bis heute?",
+      "categories": [
+        "Unmittelbare Folge (1945/46)",
+        "Langfristige Folge bis heute"
+      ],
+      "entries": [
+        { "text": "Zuteilung von Brot auf Lebensmittelkarten und Notunterkünfte in Schulen", "target": 0, "feedback": "Die akute Versorgungskrise betraf direkt die unmittelbaren Nachkriegsjahre." },
+        { "text": "Entschärfung von Fliegerbomben-Blindgängern bei heutigen Baustellen", "target": 1, "feedback": "Noch über 80 Jahre später gefährden Blindgänger Bauarbeiten in vielen Städten." },
+        { "text": "Verfolgung von Kriegsverbrechen durch internationale Strafgerichte nach dem Vorbild Nürnbergs", "target": 1, "feedback": "Das Völkerstrafrecht als Schutz vor Straflosigkeit wirkt bis in die Gegenwart." },
+        { "text": "Familientraumata und Gedenkorte für ermordete und vertriebene Angehörige", "target": 1, "feedback": "Persönliche Trauer, Erinnerungskultur und Folgen für Kinder halten über Generationen an." }
+      ],
+      "conclusion": "Wer Langzeitfolgen versteht, erkennt den hohen Preis von Krieg und den Wert friedlicher Konfliktlösung."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Nenne zwei langfristige Folgen des Zweiten Weltkrieges, die bis heute in Familien oder Städten sichtbar sind, und erkläre ihre Bedeutung.",
+        "hints": [
+          "Denke an Stolpersteine, Blindgänger oder Familienerzählungen.",
+          "Nenne auch rechtliche Folgen (z. B. Menschenrechte / UN)."
+        ],
+        "model": "Erstens finden sich in unseren Städten sowohl Stolpersteine vor Wohnhäusern verfolgter Menschen als auch bei Bauarbeiten noch immer gefährliche Blindgänger aus dem Bombenkrieg. Zweitens wirken Flucht, Verlust und seelische Traumata in vielen Familien bis in die Enkelgeneration fort – das macht Gedenken und internationalen Opferschutz bis heute wichtig.",
+        "criteria": [
+          "Du benennst zwei konkrete bis heute sichtbare Folgen.",
+          "Du erklärst den Zusammenhang zu den Ereignissen bis 1945.",
+          "Du formulierst eine begründete Einordnung für die Gegenwart."
+        ]
+      },
+      "2": {
+        "prompt": "Diskutiere, welche langfristigen Konsequenzen heutige Kriege (z. B. für Kinder und Geflohene) haben werden und welche Aufgaben daraus für die Staatengemeinschaft entstehen.",
+        "hints": [
+          "Übertrage das Wissen über Wohnraum, Schulen, Traumata und Rechtsverfolgung auf die Gegenwart.",
+          "Nenne konkrete Hilfs- und Rechtsaufgaben."
+        ],
+        "model": "Auch heutige Kriege zerstören nicht nur Häuser und Schulen, sondern prägen Kinder durch Flucht, Angst und unterbrochene Bildung über Jahrzehnte. Für die Staatengemeinschaft entstehen daraus drei Aufgaben: schnelle humanitäre Hilfe für Geflohene, verlässliche Dokumentation und Verfolgung von Kriegsverbrechen nach dem Nürnberger Prinzip sowie langfristiger Wiederaufbau, sobald Waffen schweigen.",
+        "criteria": [
+          "Du überträgst historische Erkenntnisse auf heutige Kriegsopfer.",
+          "Du unterscheidest unmittelbare Hilfe von langfristigen Folgen.",
+          "Du benennst konkrete Aufgaben (Hilfe, Recht, Wiederaufbau)."
+        ]
+      }
+    },
+    "figures": ["kriegsfolgen-heute"]
+  }
+]

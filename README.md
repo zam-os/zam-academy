@@ -77,6 +77,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | Deutsch 7 Mittelschule (LehrplanPLUS Bayern, Regelklasse und M-Zug) | [`deutsch-mittelschule-7/`](deutsch-mittelschule-7/) | https://academy.zam-os.org/deutsch-mittelschule-7/ | `zam-academy:deutsch-mittelschule-7` |
 | Deutsch 8 Mittelschule (LehrplanPLUS Bayern, Regelklasse und M-Zug) | [`deutsch-mittelschule-8/`](deutsch-mittelschule-8/) | https://academy.zam-os.org/deutsch-mittelschule-8/ | `zam-academy:deutsch-mittelschule-8` |
 | Geschichte/Politik/Geographie 5 Mittelschule (LehrplanPLUS Bayern) | [`gpg-mittelschule-5/`](gpg-mittelschule-5/) | Built by Pages on merge | `zam-academy:gpg-mittelschule-5` |
+| Geschichte/Politik/Geographie 8 Mittelschule (LehrplanPLUS Bayern, Regelklasse und M-Zug) | [`gpg-mittelschule-8/`](gpg-mittelschule-8/) | Built by Pages on merge | `zam-academy:gpg-mittelschule-8` |
 | Natur und Technik 5 Mittelschule (LehrplanPLUS Bayern) | [`nt-mittelschule-5/`](nt-mittelschule-5/) | Built by Pages on merge | `zam-academy:nt-mittelschule-5` |
 | Natur und Technik 6 Mittelschule (LehrplanPLUS Bayern) | [`nt-mittelschule-6/`](nt-mittelschule-6/) | https://academy.zam-os.org/nt-mittelschule-6/ | `zam-academy:nt-mittelschule-6` |
 | Informatik 6 Gymnasium (LehrplanPLUS Bayern, Natur und Technik 6 Schwerpunkt Informatik) | [`informatik-gymnasium-6/`](informatik-gymnasium-6/) | Built by Pages on merge | `zam-academy:informatik-gymnasium-6` |
@@ -166,6 +167,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Mathematics 10 Mittelschule: cd mathematik-mittelschule-10 (dev server on :5237)
 # Biologie 5 Realschule: cd biologie-realschule-5 (dev server on :5238)
 # Geschichte/Politik/Geographie 5 Mittelschule: cd gpg-mittelschule-5 (dev server on :5241)
+# Geschichte/Politik/Geographie 8 Mittelschule: cd gpg-mittelschule-8 (dev server on :5255)
 # Natur und Technik 5 Mittelschule: cd nt-mittelschule-5 (dev server on :5243)
 # Natur und Technik 6 Mittelschule: cd nt-mittelschule-6 (dev server on :5250)
 # Mathematik 7 Gymnasium: cd mathematik-gymnasium-7 (dev server on :5242)

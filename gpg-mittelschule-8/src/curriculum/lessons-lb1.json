@@ -1,0 +1,491 @@
+[
+  {
+    "id": "gpg8-nordamerika-orientierung",
+    "lb": 1,
+    "tracks": ["R", "M"],
+    "lehrplan": "GPG8 LB 1 (R & M): Lebensraum Erde",
+    "title": "Nordamerika: Topographie und Großlandschaften",
+    "period": "Geographischer Raum · Kontinent Nordamerika",
+    "intro": "Kanada, die USA und Mexiko bilden die großen Staaten Nordamerikas. Wie liegen Gebirge, Ebenen und Gewässer – und wie unterscheidet sich die Lage von Europa?",
+    "paragraphs": [
+      "Nordamerika erstreckt sich vom Nordpolarmeer bis in die Tropen Mittelamerikas. Im Westen ziehen sich die hohen, jungen Faltengebirge der Rocky Mountains von Alaska bis Mexiko; im Osten liegen die älteren, niedrigeren Appalachen. Dazwischen breiten sich weite Ebenen aus, die Great Plains und das Tiefland rund um den Mississippi-Missouri, der in den Golf von Mexiko mündet.",
+      "An der Grenze zwischen Kanada und den USA liegen die fünf Großen Seen – zusammen das größte Süßwasser-Seensystem der Erde, das über den Sankt-Lorenz-Strom mit dem Atlantik verbunden ist. Im Vergleich zu Europa (M-Zug-Vertiefung) liegt der Großteil der USA deutlich weiter südlich: Deutschland erstreckt sich zwischen dem 47. und 55. Breitengrad Nord und liegt damit auf derselben Höhe wie das südliche Kanada, während Städte wie New York etwa auf der Breite Madrids liegen."
+    ],
+    "takeaway": "Nordamerikas Großlandschaften sind von Nord nach Süd ausgerichtet: Rocky Mountains im Westen, Great Plains und Mississippi in der Mitte, Appalachen im Osten.",
+    "sourceIds": ["lehrplan", "lehrplan-m", "kx-nordamerika", "natural-earth"],
+    "quiz": {
+      "question": "Welches Gebirge erstreckt sich entlang des Westens von Nordamerika von Nord nach Süd?",
+      "answer": "die Rocky Mountains",
+      "wrong": ["die Appalachen", "das Alpengebirge"],
+      "explanation": "Die hohen Rocky Mountains ziehen sich im Westen von Kanada bis in den Süden der USA; die Appalachen liegen dagegen im Osten."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Topographie auf der Karte zuordnen",
+      "instruction": "Ordne die sieben nummerierten Zeichen auf der Nordamerika-Karte dem passenden Namen zu.",
+      "categories": [
+        "Rocky Mountains",
+        "Appalachen",
+        "Große Seen",
+        "Mississippi",
+        "Great Plains",
+        "Golf von Mexiko",
+        "Alaska"
+      ],
+      "entries": [
+        { "text": "Nummer 1", "target": 0, "feedback": "Nummer 1 markiert das hohe Faltengebirge der Rocky Mountains im Westen." },
+        { "text": "Nummer 2", "target": 1, "feedback": "Nummer 2 liegt im Osten der USA – das sind die Appalachen." },
+        { "text": "Nummer 3", "target": 2, "feedback": "Nummer 3 zeigt auf die fünf Großen Seen an der Grenze zwischen Kanada und den USA." },
+        { "text": "Nummer 4", "target": 3, "feedback": "Nummer 4 markiert den Mississippi als großen Nord-Süd-Strom durch die Mitte der USA." },
+        { "text": "Nummer 5", "target": 4, "feedback": "Nummer 5 liegt östlich der Rocky Mountains auf den weiten Steppen und Prärien der Great Plains." },
+        { "text": "Nummer 6", "target": 5, "feedback": "Nummer 6 bezeichnet den Golf von Mexiko als warmes Randmeer im Süden." },
+        { "text": "Nummer 7", "target": 6, "feedback": "Nummer 7 markiert Alaska im Nordwesten, den größten Bundesstaat der USA." }
+      ],
+      "conclusion": "Mit Gebirgen, Flüssen, Seen und Meeren behältst du auf jeder Karte Nordamerikas den Überblick."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Beschreibe einem Mitschüler die Lage der vier großen Landschaftsstreifen Nordamerikas von West nach Ost mithilfe der Karte.",
+        "hints": [
+          "Beginne am Pazifik mit dem westlichen Hochgebirge.",
+          "Nenne danach die weiten Ebenen in der Mitte, das östliche Gebirge und den Atlantik."
+        ],
+        "model": "Wenn man Nordamerika von West nach Ost durchquert, trifft man hinter der Pazifikküste zuerst auf die hohen Rocky Mountains. Östlich davon schließen sich die flachen Great Plains und das Tiefland am Mississippi an. Weiter im Osten folgen die älteren Appalachen und schließlich die Küstenebene am Atlantik.",
+        "criteria": [
+          "Du nennst die richtige Reihenfolge von West nach Ost.",
+          "Du ordnest Rocky Mountains, Great Plains/Mississippi und Appalachen korrekt zu.",
+          "Du benennst die angrenzenden Ozeane (Pazifik und Atlantik)."
+        ]
+      },
+      "2": {
+        "prompt": "Vergleiche auf der zweiten Karte die geographische Breite der USA mit der Europas und erkläre, warum in New York im Winter trotzdem oft strenger Frost herrscht.",
+        "hints": [
+          "Vergleiche die eingezeichneten Breitengrade (35° N und 50° N).",
+          "Überlege, welchen Einfluss Meeresströmungen und offene Nord-Süd-Ebenen haben."
+        ],
+        "model": "Die USA liegen weiter südlich als Mitteleuropa: Deutschland liegt etwa auf der Breite des südlichen Kanadas, während New York auf dem 41. Breitengrad ungefähr so südlich wie Madrid liegt. Trotzdem gibt es an der US-Ostküste strenge Winter, weil kein West-Ost-Gebirge kalte Polarluft aus Kanada bremst und in Nordamerika kein warmer Golfstrom wie an Europas Westküste die Winterluft so stark mildert.",
+        "criteria": [
+          "Du nutzt den Vergleich über die Breitengrade korrekt.",
+          "Du vergleichst die Lagen von Deutschland/Europa und den USA präzise.",
+          "Du gibst eine nachvollziehbare Begründung über Luftmassen oder Meeresströmungen."
+        ]
+      }
+    },
+    "figures": ["nordamerika-karte", "nordamerika-europa"]
+  },
+  {
+    "id": "gpg8-nordamerika-klima-gefahren",
+    "lb": 1,
+    "tracks": ["R", "M"],
+    "lehrplan": "GPG8 LB 1 (R & M): Lebensraum Erde",
+    "title": "Klimazonen und Naturgefahren in Nordamerika",
+    "period": "Geographie · Klima, Relief und Wetterextreme",
+    "intro": "Von der arktischen Tundra bis in die Subtropen Floridas bietet Nordamerika fast alle Klimazonen – und genau deshalb besonders heftige Naturgefahren.",
+    "paragraphs": [
+      "Weil Nordamerika sich über fast alle Breitengrade der Nordhalbkugel erstreckt, gibt es polare Kälte im Norden Kanadas und Alaskas, gemäßigte Zonen, große Steppen und Wüsten im Inneren sowie subtropisches bis tropisches Klima am Golf von Mexiko. Ein entscheidender Unterschied zu Europa ist das Relief: Während in Europa die Alpen von West nach Ost verlaufen und wie eine Mauer zwischen Nord und Süd stehen, öffnen sich in Nordamerika die weiten Ebenen zwischen Rocky Mountains und Appalachen wie ein Trichter nach Norden und Süden.",
+      "Deshalb prallen über der Mitte der USA regelmäßig eiskalte Luftmassen aus der Arktis direkt auf feuchtwarme Luft vom Golf von Mexiko. Die Folge sind gefährliche Naturereignisse: heftige Schneestürme (Blizzards) im Winter, verheerende Tornados in den Great Plains im Frühjahr, tropische Wirbelstürme (Hurrikans) an der Golf- und Atlantikküste im Spätsommer sowie Erdbeben an der Plattengrenze in Kalifornien (San-Andreas-Verwerfung)."
+    ],
+    "takeaway": "Durch die Nord-Süd-Ausrichtung der Gebirge treffen in Nordamerika arktische und tropische Luftmassen ungebremst aufeinander – das begünstigt Blizzards und Tornados.",
+    "sourceIds": ["lehrplan", "kx-nordamerika", "kx-usa"],
+    "quiz": {
+      "question": "Warum entstehen in den Great Plains der USA besonders häufig Tornados?",
+      "answer": "Weil trockene kalte Luft aus dem Norden ohne Gebirgshindernis auf feuchtwarme Luft vom Golf von Mexiko trifft.",
+      "wrong": [
+        "Weil der Atlantik dort deutlich wärmer ist als die tropischen Meere rund um Afrika und Südostasien.",
+        "Weil die hohen Rocky Mountains und Appalachen von West nach Ost genau quer durch den Kontinent verlaufen."
+      ],
+      "explanation": "Die Nord-Süd-Richtung von Rocky Mountains und Appalachen lässt polare Kaltluft und tropisch-warme Golf-Luft direkt über dem Landesinneren zusammenprallen."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Naturgefahren in Nordamerika richtig einordnen",
+      "instruction": "Ordne jede Naturgefahr dem passenden Entstehungsort oder Auslöser zu.",
+      "categories": [
+        "Plattentektonik (Westküste)",
+        "Aufeinanderprallen von Luftmassen (Mitte)",
+        "Warmes Meerwasser (Südosten)"
+      ],
+      "entries": [
+        { "text": "Tornados im Frühling über Oklahoma und Kansas", "target": 1, "feedback": "Tornados entstehen in der Mitte der USA, wenn kalte und feuchtwarme Luftmassen zusammenstoßen." },
+        { "text": "Erdbeben entlang der San-Andreas-Verwerfung", "target": 0, "feedback": "In Kalifornien reiben die Pazifische und die Nordamerikanische Erdplatte aneinander." },
+        { "text": "Hurrikans an der Küste von Florida und Texas", "target": 2, "feedback": "Hurrikans laden sich über dem sehr warmen Wasser des Golfs von Mexiko und des Atlantiks mit Energie auf." },
+        { "text": "Plötzliche Kälteeinbrüche (Blizzards) bis weit nach Süden", "target": 1, "feedback": "Ohne West-Ost-Gebirgsriegel stößt Polarluft aus Kanada bis tief in die USA vor." }
+      ],
+      "conclusion": "Relief, Meere und Lage auf den Erdplatten erklären, warum unterschiedliche Regionen verschiedene Naturgefahren erleben."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre anhand des Schaubilds, warum ein Kaltlufteinbruch aus Norden in den USA andere Folgen hat als bei uns in Bayern nördlich der Alpen.",
+        "hints": [
+          "Vergleiche die Richtung der Gebirge in beiden Erdteilen.",
+          "Beschreibe, wie weit die kalte Luft jeweils nach Süden vordringen kann."
+        ],
+        "model": "In Europa verlaufen die Alpen von West nach Ost und bremsen kalte Luftmassen auf dem Weg ans Mittelmeer ab. In Nordamerika verlaufen Rocky Mountains und Appalachen dagegen von Nord nach Süd. Dadurch entsteht dazwischen ein Korridor, durch den eisige Polarluft ungehindert bis an den Golf von Mexiko strömen kann.",
+        "criteria": [
+          "Du benennst die unterschiedliche Ausrichtung der Gebirge (Nord-Süd vs. West-Ost).",
+          "Du beschreibst den Effekt auf den Weg kalter Luftmassen.",
+          "Du ziehst den Vergleich zwischen Nordamerika und Europa."
+        ]
+      },
+      "2": {
+        "prompt": "Begründe an einem Beispiel (Tornado, Hurrikan oder Erdbeben), welche Schutzmaßnahmen Städte in gefährdeten Regionen Nordamerikas ergreifen müssen.",
+        "hints": [
+          "Unterscheide zwischen baulicher Vorsorge (Gebäude, Deiche) und Warnsystemen.",
+          "Beziehe dich auf eine konkrete Region."
+        ],
+        "model": "An der Golfküste, die regelmäßig von Hurrikans getroffen wird, brauchen Städte wie New Orleans hohe, gewartete Deiche und sichere Pumpwerke gegen Sturmfluten. Zusätzlich sind verlässliche Wetterwarnungen und rechtzeitige Evakuierungspläne über Autobahnen nötig, weil ein Hurrikan mehrere Tage im Voraus erkannt werden kann.",
+        "criteria": [
+          "Du wählst eine passende Region und Naturgefahr aus.",
+          "Du nennst mindestens zwei konkrete bauliche oder organisatorische Schutzmaßnahmen.",
+          "Du begründest den Nutzen deiner Maßnahmen nachvollziehbar."
+        ]
+      }
+    },
+    "figures": ["nordamerika-klima"]
+  },
+  {
+    "id": "gpg8-usa-entwicklungsstand",
+    "lb": 1,
+    "tracks": ["R", "M"],
+    "lehrplan": "GPG8 LB 1 (R & M): Lebensraum Erde",
+    "review": "Wiederholung aus GPG 7: Merkmale von Industrie-, Schwellen- und Entwicklungsländern",
+    "title": "Die USA als Industriestaat im Vergleich",
+    "period": "Wirtschafts- und Sozialgeographie · Industrieländer",
+    "intro": "Die USA zählen zu den wirtschaftlich stärksten Industriestaaten der Welt. Doch was zeigen ökonomische und gesellschaftliche Kriterien im Vergleich zu Deutschland?",
+    "paragraphs": [
+      "Aus GPG 7 kennst du den Unterschied zwischen Entwicklungs-, Schwellen- und Industrieländern: Ein hoch entwickeltes Industrieland wie die USA oder Deutschland besitzt eine leistungsfähige Infrastruktur, moderne Forschung und einen starken Dienstleistungssektor. In den USA fallen besonders große Technologiezentren wie das Silicon Valley in Kalifornien, Finanzzentren wie New York sowie hochmechanisierte Landwirtschaft in den Great Plains ins Gewicht. Deutschland punktet im Vergleich stärker über spezialisierte Industriebetriebe im Mittelstand und den Export von Maschinen und Fahrzeugen.",
+      "Schaut man jedoch auf gesellschaftliche Kriterien, zeigen sich wichtige Unterschiede: Während Deutschland über gesetzliche Pflichtversicherungen für Krankheit, Pflege, Arbeitslosigkeit und Rente einen breiten Sozialstaat organisiert, setzt das US-System stärker auf private Eigenverantwortung und betriebliche Absicherung. Dadurch ist die Schere zwischen sehr hohen Einkommen und Armut sowie Obdachlosigkeit in US-Großstädten oft deutlich sichtbarer, und auch der durchschnittliche Pro-Kopf-Verbrauch an Energie und Ressourcen liegt in den USA höher als in Deutschland."
+    ],
+    "takeaway": "Beide Länder sind führende Industriestaaten, unterscheiden sich aber beim Sozialstaat, der Einkommensverteilung und beim Pro-Kopf-Ressourcenverbrauch.",
+    "sourceIds": ["lehrplan", "kx-usa", "bpb-usa"],
+    "quiz": {
+      "question": "Welcher Unterschied zeigt sich beim Vergleich gesellschaftlicher Kriterien zwischen den USA und Deutschland besonders deutlich?",
+      "answer": "Deutschland sichert Risiken wie Krankheit stärker über gesetzliche Pflichtversicherungen ab als die USA.",
+      "wrong": [
+        "In den USA gibt es überhaupt keine privaten Versicherungen oder eigenen Wirtschaftsunternehmen.",
+        "In Deutschland sind alle Einkommen und Löhne gesetzlich exakt auf dieselbe Höhe festgelegt."
+      ],
+      "explanation": "Während Deutschland auf einen gesetzlich organisierten Sozialstaat setzt, spielt in den USA private und betriebliche Absicherung eine größere Rolle."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Kriterien für den Ländervergleich sortieren",
+      "instruction": "Ordne jedes Kriterium zu: Betrifft es eher die Wirtschaft (ökonomisch) oder die Lebensverhältnisse (gesellschaftlich) – und wofür steht es im Vergleich?",
+      "categories": [
+        "Ökonomisches Kriterium",
+        "Gesellschaftliches Kriterium"
+      ],
+      "entries": [
+        { "text": "Anteil von Hochtechnologie und Dienstleistungen an der Wirtschaftsleistung", "target": 0, "feedback": "Technologiestandorte und Branchenstruktur gehören zu den ökonomischen Kriterien." },
+        { "text": "Zugang zu Krankenversicherung und bezahlbarer Gesundheitsversorgung", "target": 1, "feedback": "Gesundheitsversorgung misst die soziale Sicherheit der Bevölkerung." },
+        { "text": "Höhe der Jugendarbeitslosigkeit und Bildungsabschlüsse", "target": 1, "feedback": "Bildungschancen und Arbeitslosigkeit beschreiben die gesellschaftliche Lage." },
+        { "text": "Bedeutung von Exportgütern (z. B. Maschinenbau vs. Digitalkonzerne)", "target": 0, "feedback": "Exportstärke und Unternehmensschwerpunkte sind wirtschaftliche Merkmale." }
+      ],
+      "conclusion": "Erst wirtschaftliche UND gesellschaftliche Kriterien zusammen ergeben ein realistisches Bild eines Industriestaats."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Stelle die USA und Deutschland anhand von je zwei wirtschaftlichen und zwei gesellschaftlichen Kriterien kurz gegenüber.",
+        "hints": [
+          "Wähle für Wirtschaft z. B. Innovation/Tech und Export/Mittelstand.",
+          "Wähle für Gesellschaft z. B. Krankenversicherung und Einkommensunterschiede."
+        ],
+        "model": "Wirtschaftlich liegen beide Länder weit vorn: Die USA prägen besonders globale Digitalkonzerne und Finanzzentren, Deutschland dagegen ein starker industrieller Mittelstand im Export. Gesellschaftlich ist in Deutschland fast jede Bürgerin und jeder Bürger gesetzlich krankenversichert, während in den USA der Schutz stärker vom Arbeitsplatz und privaten Verträgen abhängt und Einkommensunterschiede größer sind.",
+        "criteria": [
+          "Du nennst zwei wirtschaftliche Vergleichspunkte.",
+          "Du nennst zwei gesellschaftliche Vergleichspunkte.",
+          "Du stellst beide Industriestaaten sachlich und ohne Pauschalurteile gegenüber."
+        ]
+      },
+      "2": {
+        "prompt": "Recherchiere über das bpb-Dossier oder aktuelle amtliche Daten (z. B. Lebenserwartung oder Pro-Kopf-CO₂-Ausstoß) ein konkretes Vergleichsmerkmal zwischen den USA und Deutschland und bewerte es.",
+        "hints": [
+          "Schreibe auf, welches Merkmal und welches Bezugsjahr du genutzt hast.",
+          "Erkläre, welche Ursachen hinter dem Unterschied stehen könnten."
+        ],
+        "model": "Wenn man etwa die Lebenserwartung bei Geburt heranzieht (in vielen Jahren zuletzt in Deutschland leicht über dem US-Wert), spielen laut Studien neben medizinischer Versorgung auch soziale Faktoren wie bezahlbarer Zugang zu Ärztinnen und Ärzten, Ernährung und Sicherheitsfragen eine Rolle. Einzelne Kennzahlen zeigen also mehr als das reine Bruttoinlandsprodukt.",
+        "criteria": [
+          "Du gibst an, nach welchem konkreten Kriterium du suchst.",
+          "Du nennst das jeweilige Bezugsjahr bzw. die Quellenanforderung.",
+          "Du erklärst den gesellschaftlichen Zusammenhang hinter der Zahl."
+        ]
+      }
+    },
+    "figures": ["usa-vergleich"]
+  },
+  {
+    "id": "gpg8-alltag-stadt-land",
+    "lb": 1,
+    "tracks": ["R", "M"],
+    "lehrplan": "GPG8 LB 1 (R & M): Lebensraum Erde",
+    "title": "Alltag Gleichaltriger: Großstadt und Land",
+    "period": "Lebensbedingungen · Städtischer und ländlicher Raum",
+    "intro": "Ob in Bayern oder in den USA: Wie sieht der Schul- und Freizeitalltag von Achtklässlerinnen und Achtklässlern in einer Großstadt im Vergleich zu einem Dorf auf dem Land aus?",
+    "paragraphs": [
+      "Dein eigener Alltag hängt stark davon ab, wo du wohnst. In einer Großstadt – etwa in München, Berlin oder Chicago – erreichst du weiterführende Schulen, Sportvereine, Musikschulen, Jugendzentren oder Kinos oft in wenigen Minuten mit U-Bahn, Tram oder Bus. Gleichzeitig wohnen viele Familien auf engerem Raum in Mehrfamilienhäusern, weil Mieten hoch sind, und Lärm sowie Straßenverkehr prägen die Wege.",
+      "Im ländlichen Raum – zum Beispiel in einem Dorf im Bayerischen Wald oder in einer Kleinstadt in den Great Plains – genießen Jugendliche mehr Platz, Gärten, Natur vor der Haustür und oft eine enge Nachbarschaft im Sportverein oder bei der Jugendfeuerwehr. Dafür fahren Schulbusse manchmal nur zu festen Zeiten, und ohne Eltern-Fahrdienst oder später ein eigenes Fahrzeug sind weiter entfernte Ausbildungsbetriebe oder Freizeitangebote schwerer erreichbar."
+    ],
+    "takeaway": "Großstädte bieten kurze Wege zu vielfältigen Angeboten, haben aber höhere Mieten und mehr Lärm; das Land bietet Platz und Natur, verlangt aber mehr Mobilität.",
+    "sourceIds": ["lehrplan", "lehrplan-m", "bpb-usa"],
+    "quiz": {
+      "question": "Welcher typische Nachteil tritt für Jugendliche im ländlichen Raum verschiedener Industriestaaten häufiger auf als in der Großstadt?",
+      "answer": "Seltener fahrende öffentliche Verkehrsmittel machen längere Wege zur Schule oder zum Verein oft vom Auto abhängig.",
+      "wrong": [
+        "Auf dem Land gibt es überhaupt keine Vereine oder Sportmöglichkeiten.",
+        "In Großstädten müssen alle Jugendlichen mehr als zwei Stunden mit dem Schulbus fahren."
+      ],
+      "explanation": "Im ländlichen Raum liegen Schulen, Ausbildungsplätze und Freizeitangebote weiter auseinander, während der ÖPNV seltener fährt."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Alltagsbedingungen Stadt und Land unterscheiden",
+      "instruction": "Ordne jede Alltagssituation dem passenden Lebensraum zu.",
+      "categories": [
+        "Eher Großstadt",
+        "Eher ländlicher Raum"
+      ],
+      "entries": [
+        { "text": "Alle zehn Minuten fährt eine U-Bahn zum Praktikumsbetrieb oder Kino.", "target": 0, "feedback": "Dicht getakteter Nahverkehr ist typisch für Großstädte." },
+        { "text": "Der letzte Bus ins Nachbardorf fährt schon um 18 Uhr.", "target": 1, "feedback": "Eingeschränkte Busverbindungen am Abend betreffen viele ländliche Regionen." },
+        { "text": "Hohe Mieten führen oft zu kleineren Wohnungen ohne eigenen Garten.", "target": 0, "feedback": "Knapper Wohnraum und hohe Mietpreise belasten besonders Großstädte." },
+        { "text": "Wald, Sportplatz und Jugendtreff liegen direkt am Ortsrand mit viel Platz.", "target": 1, "feedback": "Viel Freiraum und direkte Naturnähe prägen den ländlichen Alltag." }
+      ],
+      "conclusion": "Beide Lebensräume haben typische Stärken und Herausforderungen – ein Vergleich lohnt sich ohne Vorurteile."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Beschreibe zunächst deinen eigenen Schul- und Freizeitalltag und vergleiche ihn mit dem Alltag einer oder eines Gleichaltrigen in einer US-Vorstadt oder Großstadt.",
+        "hints": [
+          "Gehe auf deinen Schulweg, deine Freizeitwege und das Wohnen ein.",
+          "Nenne eine Gemeinsamkeit und einen klaren Unterschied zum Beispiel in den USA."
+        ],
+        "model": "Ich fahre morgens zwanzig Minuten mit dem Schulbus in die Mittelschule und treffe mich nachmittags auf dem Sportplatz im Dorf. In einer US-Großstadt fährt ein Jugendlicher oft schneller mit der Metro zu Vereinen oder Bibliotheken und hat viel mehr kulturelle Auswahl. Gemeinsam ist uns aber der ähnliche Schulalltag, die Nutzung digitaler Medien und das Treffen mit Freunden nach dem Unterricht.",
+        "criteria": [
+          "Du beschreibst konkret deinen eigenen Alltag (Schule und Freizeit).",
+          "Du stellst mindestens eine Gemeinsamkeit und einen Unterschied dar.",
+          "Du bleibst sachlich ohne Klischees."
+        ]
+      },
+      "2": {
+        "prompt": "Diskutiere für den M-Zug Vor- und Nachteile eines Lebens in der Großstadt gegenüber dem Leben auf dem Land und begründe, was für Jugendliche ab der Berufswahl besonders zählt.",
+        "hints": [
+          "Nenne je zwei Vor- und Nachteile für Großstadt und Land.",
+          "Begründe deinen Schluss mit Blick auf Ausbildungsplätze und Lebensqualität."
+        ],
+        "model": "In der Großstadt sprechen vielfältige Ausbildungsbetriebe, Schulen und der schnelle Nahverkehr für die Unabhängigkeit Jugendlicher; dagegen drücken hohe Wohnkosten und Verkehrslärm auf die Lebensqualität. Auf dem Land punkten bezahlbarerer Wohnraum, Ruhe und persönlicher Zusammenhalt im Ort, während man ohne gutes Busnetz oft erst mit dem Führerschein wirklich flexibel wird. Entscheidend ist deshalb für den Start in die Ausbildung, ob der Arbeitsweg bezahlbar und zuverlässig machbar bleibt.",
+        "criteria": [
+          "Du wägst für beide Räume Vor- und Nachteile ab.",
+          "Du beziehst Alltag von Jugendlichen (z. B. Freizeit, Ausbildung, Wege) ein.",
+          "Du formulierst eine eigene begründete Einschätzung."
+        ]
+      }
+    },
+    "figures": ["alltag-stadt-land"]
+  },
+  {
+    "id": "gpg8-energietraeger",
+    "lb": 1,
+    "tracks": ["R", "M"],
+    "lehrplan": "GPG8 LB 1 (R & M): Lebensraum Erde",
+    "title": "Fossile und erneuerbare Energieträger",
+    "period": "Energiepolitik · Effizienz und Klimaschutz",
+    "intro": "Woher kommt unser Strom – und warum zählen Wirkungsgrad, CO₂-Ausstoß und Speicherbarkeit gleichzeitig? Teste es direkt im Strommix-Labor.",
+    "paragraphs": [
+      "Primärenergieträger kommen direkt in der Natur vor. Dazu gehören einerseits fossile Energieträger wie Braunkohle, Steinkohle, Erdöl und Erdgas, die über Jahrmillionen entstanden sind. Verbrennt ein Kohlekraftwerk Kohle, geht jedoch ein großer Teil der Wärme verloren: Nur rund 35 bis 45 Prozent der eingesetzten Energie werden wirklich zu elektrischem Strom; zudem entsteht viel klimaschädliches CO₂, und die Vorräte sind endlich.",
+      "Erneuerbare Energieträger wie Windkraft, Sonnenenergie (Photovoltaik), Wasserkraft und Geothermie erneuern sich dagegen immer wieder und setzen im Betrieb nahezu kein CO₂ frei. Moderne Windräder oder Solarmodule wandeln Wind und Licht direkt in Strom um. Allerdings weht der Wind nicht jeden Tag gleich stark, und nachts scheint keine Sonne: Deshalb braucht eine klimafreundliche Stromversorgung zusätzlich flexible Kraftwerke, Stromnetze und Speicher."
+    ],
+    "takeaway": "Fossile Energieträger sind leicht speicherbar, aber begrenzt und klimaschädlich; erneuerbare Energien schonen das Klima, benötigen aber Netze und Speicher.",
+    "sourceIds": ["lehrplan", "kx-energie", "uba-erneuerbare"],
+    "quiz": {
+      "question": "Was bedeutet ein niedriger Wirkungsgrad von rund 40 Prozent bei einem klassischen Kohlekraftwerk?",
+      "answer": "Nur rund 40 Prozent der eingesetzten Energie werden zu nutzbarem Strom; der Rest entweicht meist als ungenutzte Wärme.",
+      "wrong": [
+        "Das Kraftwerk schaltet sich an rund sechzig Prozent aller Tage des Jahres vollständig vom Stromnetz.",
+        "Nur vierzig Prozent des erzeugten elektrischen Stroms dürfen überhaupt an Privathaushalte verkauft werden."
+      ],
+      "explanation": "Der Wirkungsgrad beschreibt das Verhältnis von genutzter Energie (z. B. Strom) zu eingesetzter Primärenergie."
+    },
+    "labId": "energiemix",
+    "workshop": {
+      "kind": "classify",
+      "title": "Energieträger nach Eigenschaften vergleichen",
+      "instruction": "Ordne jede Aussage dem passenden Energieträger-Typ zu.",
+      "categories": [
+        "Fossile Energieträger",
+        "Erneuerbare Energieträger"
+      ],
+      "entries": [
+        { "text": "Braunkohle und Erdgas sind in Jahrmillionen entstanden und irgendwann aufgebraucht.", "target": 0, "feedback": "Fossile Vorräte sind begrenzt und erneuern sich in menschlichen Zeiträumen nicht." },
+        { "text": "Windkraft und Photovoltaik erzeugen Strom ohne Verbrennung und nahezu ohne CO₂-Ausstoß.", "target": 1, "feedback": "Sonne und Wind vermeiden Verbrennungs-Emissionen im Betrieb." },
+        { "text": "Stark abhängig von Tageszeit, Jahreszeit und Wetterlage.", "target": 1, "feedback": "Gerade Wind und Sonne schwanken und verlangen Ausgleich durch Speicher und Netze." },
+        { "text": "Lagerfähig auf Halden oder in Gastanks, aber Hauptursache menschlicher CO₂-Emissionen.", "target": 0, "feedback": "Fossile Energien lassen sich leicht bevorraten, belasten beim Verbrennen aber stark das Klima." }
+      ],
+      "conclusion": "Eine nachhaltige Energiepolitik wägt Klimaschutz, Versorgungssicherheit und Effizienz gemeinsam ab."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Vergleiche Windkraft und Kohle im Strommix-Labor und nenne zwei Vorteile sowie eine Herausforderung der Windkraft.",
+        "hints": [
+          "Schau im Labor, wie der CO₂-Wert bei viel Windkraft sinkt.",
+          "Beachte die Anzeige zum wetterabhängigen Anteil."
+        ],
+        "model": "Im Vergleich zur Kohle hat Windkraft zwei große Vorteile: Sie verbraucht keinen endlichen Rohstoff und senkt die CO₂-Emissionen pro Kilowattstunde drastisch (im Modell von 950 g bei reiner Kohle auf etwa 15 g bei Wind). Die zentrale Herausforderung liegt darin, dass Wind nicht gleichmäßig weht – bei hohem Wind- und Solaranteil braucht es deshalb Speicher oder flexible Reserven.",
+        "criteria": [
+          "Du benennst zwei klare Vorteile der Windkraft.",
+          "Du benennst die wetterabhängige Schwankung als Herausforderung.",
+          "Du nutzt die Beobachtungen aus dem Strommix-Labor."
+        ]
+      },
+      "2": {
+        "prompt": "Warum reicht es in einem Industrieland meist nicht aus, alte Kohlekraftwerke einfach abzuschalten, ohne gleichzeitig Speicher und Netze auszubauen?",
+        "hints": [
+          "Denke an kalte, windstille Winterabende („Dunkelflaute“).",
+          "Überlege, wie Erdgas als Übergang oder Pumpspeicher helfen können."
+        ],
+        "model": "Krankenhäuser, Bahnen und Betriebe brauchen zu jeder Sekunde exakt so viel Strom, wie gerade verbraucht wird. Wenn an einem windstillen Winterabend weder Sonne noch Wind genügend liefern, würden ohne Speicher, internationale Stromleitungen oder flexibel zuschaltbare Reservekraftwerke Netzengpässe drohen. Deshalb gehören Erzeugung, Speicherung und Netzausbau zusammen.",
+        "criteria": [
+          "Du erklärst die Notwendigkeit dauerhafter Versorgungssicherheit.",
+          "Du beziehst die Schwankungen erneuerbarer Energien ein.",
+          "Du nennst konkrete technische Ergänzungen (Speicher, Netze, Reserven)."
+        ]
+      }
+    },
+    "figures": ["energietraeger"]
+  },
+  {
+    "id": "gpg8-energie-grenzueberschreitend",
+    "lb": 1,
+    "tracks": ["R", "M"],
+    "lehrplan": "GPG8 LB 1 (R & M): Lebensraum Erde",
+    "title": "Staatenübergreifende Energieversorgung",
+    "period": "Nachhaltige Energiepolitik · Verbundnetz",
+    "intro": "Kein Land Europas versorgt sich bei Strom ganz allein: Wenn an der Nordsee starker Wind weht und in den Alpen Stauseen warten, arbeiten Nachbarstaaten zusammen.",
+    "paragraphs": [
+      "Deutschland liegt mitten im europäischen Stromverbundnetz. Weht an der Nordsee bei Deutschland, Dänemark und den Niederlanden viel Wind, entsteht manchmal mehr Strom, als in der Küstenregion verbraucht wird. Über grenzüberschreitende Hochspannungsleitungen fließt dieser Überschussstrom in andere Regionen Europas – zum Beispiel in den Alpenraum nach Österreich oder in die Schweiz.",
+      "Dort nutzen Pumpspeicherkraftwerke den günstigen Überschussstrom, um Wasser aus einem unteren Talbecken in einen hochgelegenen Bergsee hinaufzupumpen. Herrscht Tage später in Norddeutschland Flaute, lässt man das Wasser bergab durch Turbinen schießen und schickt sauberen Strom zurück. Staatenübergreifende Kooperation erhöht so Effizienz und Versorgungssicherheit für alle Beteiligten."
+    ],
+    "takeaway": "Im europäischen Verbundnetz gleichen Staaten Windüberschüsse im Norden und Pumpspeicher in den Alpen gegenseitig aus – das erhöht Effizienz und Sicherheit.",
+    "sourceIds": ["lehrplan", "lehrplan-m", "uba-erneuerbare", "hanisau-nachhaltigkeit"],
+    "quiz": {
+      "question": "Wie hilft ein Pumpspeicherkraftwerk in Österreich oder der Schweiz beim Ausgleich von Nordsee-Windstrom?",
+      "answer": "Es nutzt überschüssigen Windstrom zum Hochpumpen von Wasser und erzeugt bei Flaute daraus wieder Strom.",
+      "wrong": [
+        "Es verwandelt überschüssige Windkraft unter dem Gebirge unmittelbar in fossiles Erdgas für den Winter.",
+        "Es schaltet sämtliche Stromleitungen über die deutschen Staatsgrenzen hinweg dauerhaft komplett ab."
+      ],
+      "explanation": "Ein Pumpspeicher wirkt wie eine riesige Batterie mit Wasser: Überschussstrom hebt Wasser an, später treibt abfließendes Wasser Turbinen an."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Wie der grenzüberschreitende Stromausgleich abläuft",
+      "instruction": "Bringe den Kreislauf zwischen Nordseeküste und Alpenraum in die richtige logische Abfolge.",
+      "categories": [],
+      "entries": [
+        { "text": "An der Nordsee erzeugen Offshore-Windparks mehr Strom, als dort gerade gebraucht wird.", "target": 0, "feedback": "Am Anfang steht ein wetterbedingter Windstrom-Überschuss im Norden." },
+        { "text": "Das europäische Verbundnetz leitet den überschüssigen Strom über Staatsgrenzen hinweg Richtung Alpen.", "target": 1, "feedback": "Starke Leitungen transportieren den Strom aus der Erzeugungsregion weg." },
+        { "text": "Ein Pumpspeicherkraftwerk pumpt mit diesem Strom Wasser aus dem Tal hinauf in einen Bergstausee.", "target": 2, "feedback": "Die elektrische Energie wird als Lageenergie des Wassers gespeichert." },
+        { "text": "Bei Windflaute fließt das Wasser bergab durch Turbinen und speist Strom ins Netz zurück.", "target": 3, "feedback": "So hilft der Speicher später, Versorgungslücken schnell zu schließen." }
+      ],
+      "conclusion": "Grenzüberschreitende Zusammenarbeit spart Energieverluste und macht teure Doppelstrukturen überflüssig."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre anhand des Schaubilds einem Mitschüler, warum Zusammenarbeit zwischen Staaten beim Stromnetz nachhaltiger ist als nationale Alleingänge.",
+        "hints": [
+          "Nutze das Beispiel von Windstrom an der Küste und Pumpspeichern in den Alpen.",
+          "Erkläre, was sonst mit Überschussstrom passieren würde."
+        ],
+        "model": "Wenn jedes Land für sich allein bliebe, müssten Windräder bei viel Wind einfach abgeschaltet werden, während andere Länder fossile Kraftwerke hochfahren. Im Verbundnetz fließen Überschüsse über Grenzen hinweg zu Speichern wie den Alpen-Pumpspeichern. So geht weniger saubere Energie verloren, und jedes Land muss weniger teure Reservekraftwerke vorhalten.",
+        "criteria": [
+          "Du erklärst den Nutzen am Beispiel Nordsee und Alpen.",
+          "Du nennst die Vermeidung von Energieverlusten.",
+          "Du stellst den Vorteil für Versorgungssicherheit oder Effizienz heraus."
+        ]
+      },
+      "2": {
+        "prompt": "Plane für den M-Zug eine kurze dreiminütige Präsentation zum europäischen Verbundnetz: Welche drei Kernpunkte und welche eigene Grafik würdest du der Klasse zeigen?",
+        "hints": [
+          "Gliedere in Einstieg (Problem), Kern (Lösung über Grenzen) und Fazit (Chancen & Konflikte wie Netzausbau).",
+          "Nenne eine klare Visualisierungsidee."
+        ],
+        "model": "1. Einstieg: Warum schwankt Strom aus Wind und Sonne? 2. Hauptteil mit vereinfachter Europa-Karte: Windüberschuss aus Dänemark und Norddeutschland wandert über Leitungen in Alpen-Pumpspeicher und bei Flaute zurück. 3. Fazit/Diskussion: Zusammenarbeit spart Geld und CO₂, erfordert aber faire Verträge und Akzeptanz für neue Stromtrassen.",
+        "criteria": [
+          "Du strukturierst eine klare Präsentationsgliederung.",
+          "Du benennst das konkrete grenzüberschreitende Beispiel.",
+          "Du erwähnst auch eine Herausforderung (z. B. Leitungsbau oder Abstimmung)."
+        ]
+      }
+    },
+    "figures": ["energie-verbund"]
+  },
+  {
+    "id": "gpg8-energie-alltag",
+    "lb": 1,
+    "tracks": ["R", "M"],
+    "lehrplan": "GPG8 LB 1 (R & M): Lebensraum Erde",
+    "title": "Privater Energieverbrauch und Ressourcenschutz",
+    "period": "Alltag & Nachhaltigkeit · Energieeffizienz",
+    "intro": "Wo verbraucht ein Haushalt eigentlich die meiste Energie – und welche Alltagsentscheidungen sparen am meisten ein? Probiere es im Haushalts-Labor aus.",
+    "paragraphs": [
+      "Schaut man auf den Energieverbrauch eines privaten Haushalts in Deutschland, fällt eines sofort auf: Den mit Abstand größten Anteil (rund zwei Drittel bis knapp drei Viertel) schluckt nicht die Lampe oder das Handy-Ladegerät, sondern die Raumheizung. Warmwasser und elektrische Geräte teilen sich den kleineren Rest. Wer Ressourcen schützen will, setzt daher zuerst dort an, wo die großen Mengen stecken.",
+      "Schon ein Grad niedrigere Raumtemperatur senkt den Heizbedarf spürbar um etwa sechs Prozent. Kurzes Stoßlüften statt dauerhaft gekippter Fenster verhindert, dass Wände auskühlen. Beim Strom sparen LED-Lampen statt alter Glühbirnen, schaltbare Steckerleisten gegen versteckten Standby-Verbrauch, sparsame Haushaltsgeräte sowie das Kochen mit Deckel – jeder kleine Schritt entlastet Umwelt und Geldbeutel."
+    ],
+    "takeaway": "Im Haushalt verbraucht Heizen die meiste Energie – schon leicht niedrigere Raumtemperatur, Stoßlüften und LED plus echte Ausschalter sparen spürbar Ressourcen.",
+    "sourceIds": ["lehrplan", "lehrplan-m", "uba-tipps", "hanisau-nachhaltigkeit"],
+    "quiz": {
+      "question": "Welcher Bereich verursacht in einem typischen Privathaushalt den größten Teil des Energieverbrauchs?",
+      "answer": "die Raumwärme zum Heizen der Zimmer",
+      "wrong": [
+        "das abendliche Laden von Smartphones",
+        "die Zimmerbeleuchtung mit modernen LED"
+      ],
+      "explanation": "Rund zwei Drittel bis 70 Prozent der Energie im Haushalt werden für das Heizen der Räume benötigt; dort wirkt Energiesparen besonders stark."
+    },
+    "labId": "haushalt-energie",
+    "workshop": {
+      "kind": "classify",
+      "title": "Alltagsverhalten ökologisch bewerten",
+      "instruction": "Entscheide, welche Handlung Energie spart und Ressourcen schont – und welche Energie verschwendet.",
+      "categories": [
+        "Spart Energie & schont Ressourcen",
+        "Verschwendet unnötig Energie"
+      ],
+      "entries": [
+        { "text": "Im Winter dreimal täglich fünf Minuten quer stoßlüften und Heizung dabei herunterdrehen.", "target": 0, "feedback": "Kurzes Stoßlüften tauscht feuchte Luft aus, ohne dass die Zimmerwände auskühlen." },
+        { "text": "Das Schlafzimmerfenster bei voll aufgedrehter Heizung den ganzen Nachmittag gekippt lassen.", "target": 1, "feedback": "Dauerhaft gekippte Fenster lassen teure Heizwärme direkt nach draußen entweichen." },
+        { "text": "Nudelwasser mit passendem Topfdeckel zum Kochen bringen.", "target": 0, "feedback": "Mit Deckel geht deutlich weniger Wärme über Dampf verloren." },
+        { "text": "Fernseher, Konsole und Drucker rund um die Uhr im Standby lassen.", "target": 1, "feedback": "Standby verbraucht das ganze Jahr über Strom, obwohl niemand die Geräte nutzt." }
+      ],
+      "conclusion": "Effizienz im Alltag bedeutet nicht Verzicht auf Komfort, sondern kluges Nutzen ohne Verschwendung."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Prüfe im Haushalts-Labor, welche zwei Maßnahmen gemeinsam deinen Gesamtverbrauch am stärksten senken, und überlege, was du diese Woche zu Hause umsetzen kannst.",
+        "hints": [
+          "Vergleiche im Labor den Einfluss von Temperatur absenken + Stoßlüften mit der LED-Option.",
+          "Nenne eine konkrete Maßnahme für dein eigenes Zimmer oder die Küche."
+        ],
+        "model": "Im Labor sinkt der Verbrauch am stärksten, wenn man die Raumtemperatur um ein bis zwei Grad senkt und konsequent stoßlüftet statt Fenster zu kippen, weil die Heizung den größten Balken bildet. Zu Hause kann ich ab heute meine Steckerleiste am Schreibtisch abends komplett ausschalten und beim Verlassen meines Zimmers die Heizung eine Stufe zurückdrehen.",
+        "criteria": [
+          "Du benennst die wirksamsten Stellschrauben aus dem Labor.",
+          "Du erklärst den Zusammenhang mit dem hohen Heizanteil.",
+          "Du formulierst einen konkreten Vorsatz für deinen Alltag."
+        ]
+      },
+      "2": {
+        "prompt": "Recherchiere (z. B. bei den UBA-Umwelttipps), wie viel Strom oder CO₂ man beim Thema Ernährung oder Mobilität im Alltag zusätzlich einsparen kann, und bewerte dein eigenes Verhalten ehrlich.",
+        "hints": [
+          "Vergleiche etwa kurze Strecken zu Fuß/mit dem Rad mit dem Elterntaxi oder regionale Saisonware mit Flugware.",
+          "Bewerte realistisch, was leicht fällt und wo Hürden liegen."
+        ],
+        "model": "Laut Umweltbundesamt spart man viel Energie und Emissionen, wenn Kurzstrecken unter zwei bis drei Kilometern statt mit dem Auto zu Fuß oder mit dem Fahrrad zurückgelegt werden und häufiger regionale, saisonale Lebensmittel ohne lange Kühltransporte gewählt werden. Bei mir klappt der Schulweg per Rad bei gutem Wetter leicht; schwieriger wird es am Abend bei weiten Vereinsfahrten auf dem Land.",
+        "criteria": [
+          "Du benennst konkrete Spartipps außerhalb des Stromzählers (Mobilität oder Konsum).",
+          "Du stützt dich auf eine seriöse Quelle (z. B. Umweltbundesamt).",
+          "Du reflektierst Chancen und Grenzen deines eigenen Verhaltens."
+        ]
+      }
+    },
+    "figures": ["energie-alltag"]
+  }
+]
