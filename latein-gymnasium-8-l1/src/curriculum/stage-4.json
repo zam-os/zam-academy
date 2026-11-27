@@ -1,0 +1,540 @@
+[
+	{
+		"id": "l8-nci-aufbau",
+		"stage": "syntax",
+		"title": "Der NcI (3. Person): Bau & Auslöser",
+		"skill": "Den Nominativus cum Infinitivo (NcI) an Passivverben des Sagens, Meinens, Überlieferns und Anordnens erkennen",
+		"bindings": ["L8-14", "L8-20", "L8-21", "L8-23", "L8-47"],
+		"paragraphs": [
+			"Aus der sechsten und siebten Klasse kennst du den AcI als aktiven Ausdruck: Homines dicunt Socratem sapientem fuisse („Die Menschen sagen, dass Sokrates weise gewesen sei“). Wenn das Lateinische diesen Gedanken jedoch ins Passiv setzt, wählt es in der dritten Person meistens keine unpersönliche Wendung („Es wird gesagt, dass …“), sondern einen persönlichen Satz mit einem Nominativ als Subjekt: der Nominativus cum Infinitivo (NcI).",
+			"Aus dem Subjektsakkusativ Socratem wird im NcI der Nominativ Socrates, und auch das Prädikatsnomen oder Adjektiv folgt in den Nominativ (sapiens)! Das Auslöser-Verb steht in der 3. Person Singular oder Plural Passiv – besonders häufig bei dicitur/dicuntur (man sagt), traditur/traduntur (man überliefert), putatur/existimatur (man glaubt/meint), videtur/videntur (es scheint, dass …) und iubetur/vetatur (es wird befohlen/verboten)."
+		],
+		"materialLabel": "Vom aktiven AcI zum persönlichen NcI in der 3. Person",
+		"materialLanguage": "la",
+		"material": "1. AcI (aktiv): Graeci dicunt Socratem sapientissimum fuisse.\n2. NcI (3. Sg.): Socrates sapientissimus fuisse dicitur.\n3. NcI (3. Pl.): Germani magna cum fortitudine pugnare traduntur.\n4. NcI mit videri: Hae leges omnibus civibus utiles esse videntur.",
+		"sourceIds": ["lp"],
+		"diagram": {
+			"kind": "nci-lab",
+			"title": "NcI-Umformer: Nominativ + 3. Person Passiv + Infinitiv",
+			"caption": "Beachte die Kongruenz von Subjektsnominativ, finitem Passivverb (Sg./Pl.) und Prädikatsnomen im Nominativ."
+		},
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "In welchem Kasus steht das Prädikatsnomen „sapientissimus“ im NcI-Satz „Socrates sapientissimus fuisse dicitur“?",
+			"answer": "im Nominativ (passend zum Subjekt Socrates)",
+			"wrong": [
+				"im Akkusativ wie beim aktiven AcI",
+				"im Ablativ der Eigenschaft"
+			],
+			"explanation": "Im NcI beziehen sich sowohl das Subjekt (Socrates) als auch ein Prädikatsnomen oder Partizip auf denselben Satzkern im Nominativ."
+		},
+		"takeaway": "Der NcI entsteht als persönliche Passiv-Konstruktion in der 3. Person: Subjekt und Prädikatsnomen stehen im Nominativ, das Passivverb (dicitur, videtur, traduntur, iubetur) richtet sich im Numerus danach.",
+		"practice": [
+			{
+				"prompt": "Was bedeutet das Verb „videtur / videntur“ im NcI in der Regel auf Deutsch?",
+				"answers": ["es scheint", "scheint", "scheinen"],
+				"feedback": "Im NcI bedeutet videri nicht „gesehen werden“, sondern „scheinen / den Anschein haben“."
+			},
+			{
+				"prompt": "Setze das Prädikatsnomen „bonus“ passend zum Plural „Hi viri“ in den Satz „Hi viri … esse dicuntur“:",
+				"answers": ["boni"],
+				"feedback": "Das Prädikatsnomen stimmt in KNG mit Hi viri (Nom. Pl. m.) überein → boni."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "de",
+				"prompt": "Bestimme in den Sätzen 2, 3 und 4 jeweils den Subjektsnominativ, das auslösende Passivverb und die Infinitivgruppe (Gleichzeitigkeit oder Vorzeitigkeit) und übersetze alle vier Sätze.",
+				"model": "Satz 2: Socrates (Nom. Sg.) + dicitur + sapientissimus fuisse (Vorzeitigkeit) → Man sagt, Sokrates sei der weiseste gewesen.\nSatz 3: Germani (Nom. Pl.) + traduntur + pugnare (Gleichzeitigkeit) → Man überliefert, dass die Germanen mit großer Tapferkeit kämpfen.\nSatz 4: Hae leges (Nom. Pl.) + videntur + utiles esse (Gleichzeitigkeit) → Es scheint, dass diese Gesetze für alle Bürger nützlich sind (Diese Gesetze scheinen … zu sein).\nSatz 1: Die Griechen sagen, dass Sokrates der weiseste gewesen sei.",
+				"criteria": [
+					"Subjektsnominativ, Passivverb und Infinitiv-Zeitstufe sind in den Sätzen 2–4 genau bestimmt.",
+					"videntur in Satz 4 ist als „scheinen“ (nicht „gesehen werden“) übersetzt.",
+					"Alle vier Sätze sind korrekt ins Deutsche übertragen."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Verwandle den aktiven AcI „Historici narrant Romanos multas vias munivisse“ in einen persönlichen lateinischen NcI (mit traduntur oder dicuntur) und übersetze das Ergebnis.",
+				"model": "NcI: Romani multas vias munivisse traduntur (oder dicuntur).\nErklärung: Romanos → Nom. Pl. Romani; Verb in 3. Pl. Passiv (traduntur) passend zu Romani; Vorzeitigkeitsinfinitiv munivisse bleibt.\nÜbersetzung: Man überliefert, dass die Römer viele Straßen befestigt haben (Die Römer sollen viele Straßen befestigt haben).",
+				"criteria": [
+					"Romanos ist korrekt in den Nominativ Romani gesetzt.",
+					"Das Auslöser-Verb steht im Plural (traduntur / dicuntur).",
+					"Der Infinitiv Perfekt munivisse und das Akkusativobjekt vias bleiben unverändert."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Numerus des Auslöserverbs an den Nominativ anpassen",
+					"before": "Cives pacem petere …",
+					"after": "",
+					"options": ["dicuntur (3. Pl.)", "dicitur (3. Sg.)", "dicere (Inf.)"],
+					"answer": "dicuntur (3. Pl.)",
+					"explanation": "Weil Cives Plural ist, steht auch das persönliche Verb dicuntur im Plural."
+				},
+				{
+					"label": "Kasus des Prädikatsnomens im NcI bestimmen",
+					"before": "Seneca … fuisse traditur (gerecht).",
+					"after": "",
+					"options": ["iustus (Nom.)", "iustum (Akk.)", "iusto (Abl.)"],
+					"answer": "iustus (Nom.)",
+					"explanation": "Ein Prädikatsnomen steht beim NcI genau wie das Subjekt im Nominativ."
+				},
+				{
+					"label": "Zeitverhältnis des Infinitivs im NcI deuten",
+					"before": "legem tulisse dicitur →",
+					"after": "",
+					"options": [
+						"Vorzeitigkeit (habe ein Gesetz eingebracht)",
+						"Gleichzeitigkeit (bringe gerade ein)",
+						"Nachzeitigkeit (werde einbringen)"
+					],
+					"answer": "Vorzeitigkeit (habe ein Gesetz eingebracht)",
+					"explanation": "Der Infinitiv Perfekt tulisse bezeichnet ein früheres Geschehen."
+				}
+			]
+		}
+	},
+	{
+		"id": "l8-nci-uebersetzen",
+		"stage": "syntax",
+		"title": "NcI elegant ins Deutsche übersetzen",
+		"skill": "Den Unterschied zwischen persönlichem lateinischem NcI und unpersönlicher bzw. modaler deutscher Wiedergabe nutzen",
+		"bindings": ["L8-20", "L8-21", "L8-23", "L8-24", "L8-47"],
+		"paragraphs": [
+			"Im Deutschen klingt eine wörtliche Übersetzung des NcI („Sokrates wird gesagt, weise gewesen zu sein“) völlig unnatürlich! Deshalb übersetzen wir den lateinischen Satzbau im Deutschen konsequent um. Bei dicitur/dicuntur, traditur/traduntur und putatur stehen dir zwei elegante Wege offen: erstens ein unpersönlicher Hauptsatz mit „man“ und einem dass-Satz („Man sagt, dass Sokrates …“), zweitens eine persönliche Wiedergabe mit einem Modalverb („Sokrates soll weise gewesen sein“).",
+			"Bei videtur/videntur wählst du meist „Es scheint, dass …“ oder besser „X scheint … zu …“. Bei iubetur/vetatur („anordnen/verbieten“) drückt man die handelnde Verpflichtung ebenfalls mit „sollen / dürfen nicht“ oder einem unpersönlichen „Es wird angeordnet, dass …“ aus. So zeigt sich gerade beim NcI der Unterschied zwischen lateinischem und deutschem Satzbau besonders deutlich."
+		],
+		"materialLabel": "Verschiedene NcI-Auslöser und Übersetzungsvarianten",
+		"materialLanguage": "la",
+		"material": "1. Imperator novum vallum ad fines tuendos aedificavisse traditur.\n2. Philosophi stultitiam hominum ridere videntur.\n3. Milites castra movere iubentur; cives arma capere vetantur.\n4. Seneca in epistulis multis hominibus auxilium tulisse putatur.",
+		"sourceIds": ["lp"],
+		"diagram": {
+			"kind": "nci-lab",
+			"preset": "modal",
+			"title": "Übersetzungskontrast: Lateinischer NcI → Deutsches Satzmodell",
+			"caption": "Vergleiche unpersönlichen dass-Satz und persönliche Modalverb-Lösung (sollen / scheinen / dürfen nicht)."
+		},
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Welche modale Übersetzung passt am besten zu „Milites castra movere iubentur; cives arma capere vetantur“?",
+			"answer": "Die Soldaten sollen das Lager abbrechen; die Bürger dürfen keine Waffen ergreifen",
+			"wrong": [
+				"Die Soldaten scheinen das Lager abzubrechen; die Bürger scheinen Waffen zu ergreifen",
+				"Die Soldaten befehlen das Lager; die Bürger verbieten die Waffen"
+			],
+			"explanation": "iuberi („beauftragt/aufgefordert werden“) entspricht „sollen“, vetari („verboten bekommen“) entspricht „nicht dürfen“."
+		},
+		"takeaway": "Übersetze den NcI niemals wörtlich mit „wird gesagt zu“, sondern wähle unpersönlich „man sagt/es scheint, dass …“ oder persönlich mit Modalverb („soll“, „scheint zu“, „darf nicht“).",
+		"practice": [
+			{
+				"prompt": "Gib eine knappe persönliche Übersetzung mit Modalverb für „Seneca auxilium tulisse putatur“ an („Seneca …“):",
+				"answers": ["seneca soll hilfe gebracht haben", "seneca dürfte hilfe gebracht haben", "seneca soll geholfen haben"],
+				"feedback": "Bei putatur / dicitur / traditur drückt im Deutschen das Modalverb „sollen“ (oder „dürfte“) die vermutete/überlieferte Aussage elegant aus."
+			},
+			{
+				"prompt": "Übersetze „Philosophi ridere videntur“ mit dem deutschen Verb „scheinen“:",
+				"answers": ["die philosophen scheinen zu lachen", "es scheint, dass die philosophen lachen"],
+				"feedback": "Bei videri bleibt der Subjektsnominativ auch im Deutschen Subjekt: „Die Philosophen scheinen zu lachen“."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "de",
+				"prompt": "Übersetze die Sätze 1 bis 4 aus dem Material und wähle bei den Sätzen 1 und 4 jeweils bewusst die Variante mit dass-Satz sowie bei 2 und 3 eine flüssige Variante mit Infinitiv bzw. Modalverb.",
+				"model": "1. Man überliefert, dass der Kaiser einen neuen Wall zur Sicherung der Grenzen erbaut habe.\n2. Die Philosophen scheinen über die Torheit der Menschen zu lachen.\n3. Die Soldaten sollen das Lager abbrechen; den Bürgern wird verboten (sie dürfen nicht), zu den Waffen zu greifen.\n4. Man glaubt, dass Seneca in seinen Briefen vielen Menschen Hilfe gebracht hat.",
+				"criteria": [
+					"Unpersönliche dass-Konstruktionen in 1 und 4 sind grammatisch und zeitlich exakt.",
+					"Infinitiv- und Modalverb-Lösungen in 2 und 3 vermeiden wörtliche Fehlkonstruktionen.",
+					"Die Gerundivgruppe ad fines tuendos in Satz 1 ist richtig eingefügt."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Warum verwendet das Deutsche für „Romani victi esse dicuntur“ lieber „Die Römer sollen besiegt worden sein“, während ein Mitschüler fälschlich „Die Römer werden gesagt, besiegt worden zu sein“ schreibt? Erkläre den Satzbau-Unterschied kurz.",
+				"model": "Im Lateinischen lässt sich das Subjekt der Aussage (Romani) direkt an das passive Verb dicuntur binden. Das Deutsche erlaubt bei „sagen/glauben/überliefern“ jedoch kein persönliches Passiv mit angehängtem zu-Infinitiv. Deshalb weichen wir im Deutschen auf einen unpersönlichen dass-Satz („Man sagt, dass …“) oder ein Modalverb („sollen“) aus. Beachte außerdem das vorzeitige Passiv im Infinitiv Perfekt (victi esse → „besiegt worden sein“).",
+				"criteria": [
+					"Der strukturelle Unterschied zwischen deutschem und lateinischem Passiv-Infinitiv ist klar benannt.",
+					"Die Rolle des Vorzeitigkeitsinfinitivs victi esse ist berücksichtigt.",
+					"Beide korrekten deutschen Übersetzungswege sind genannt."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Passendes Modalverb zu traduntur finden",
+					"before": "Germani fortes fuisse traduntur →",
+					"after": "",
+					"options": [
+						"Die Germanen sollen tapfer gewesen sein",
+						"Die Germanen wurden tapfer überliefert zu sein",
+						"Die Germanen müssen tapfer werden"
+					],
+					"answer": "Die Germanen sollen tapfer gewesen sein",
+					"explanation": "traduntur + Inf. Perf. wird idiomatisch mit „sollen … gewesen sein“ wiedergegeben."
+				},
+				{
+					"label": "Verneintes Verb vetantur richtig übertragen",
+					"before": "Pueri exire vetantur →",
+					"after": "",
+					"options": [
+						"Die Jungen dürfen nicht hinausgehen",
+						"Die Jungen scheinen hinauszugehen",
+						"Die Jungen sollen hinausgehen"
+					],
+					"answer": "Die Jungen dürfen nicht hinausgehen",
+					"explanation": "vetari („verboten werden“) gibt im Deutschen „nicht dürfen“ wieder."
+				},
+				{
+					"label": "Tempusverhältnis bei videri prüfen",
+					"before": "Nero peccavisse videtur →",
+					"after": "",
+					"options": [
+						"Nero scheint einen Fehler begangen zu haben",
+						"Nero scheint gerade einen Fehler zu begehen",
+						"Man sah, wie Nero einen Fehler beging"
+					],
+					"answer": "Nero scheint einen Fehler begangen zu haben",
+					"explanation": "peccavisse (Inf. Perf.) steht vorzeitig zu videtur."
+				}
+			]
+		}
+	},
+	{
+		"id": "l8-deliberativ-potentialis",
+		"stage": "syntax",
+		"title": "Konjunktiv im Hauptsatz: Deliberativ & Potentialis",
+		"skill": "Deliberativ („Was soll ich tun?“) und Potentialis der Gegenwart („Das dürfte wohl …“) erkennen und von Klasse-7-Konjunktiven abgrenzen",
+		"bindings": ["L8-20", "L8-23", "L8-24"],
+		"paragraphs": [
+			"Zu den vier Hauptsatz-Konjunktiven der siebten Klasse (Hortativ, Jussiv, Prohibitiv, Optativ) kommen in Klasse acht zwei weitere hinzu, die keine Aufforderung und keinen Wunsch, sondern eine zweifelnde Überlegung oder eine vorsichtige Möglichkeit ausdrücken: Der Deliberativ steht in Fragen – im Präsens „Was soll ich tun?“ (Quid faciam?), im Imperfekt für die Vergangenheit „Was hätte ich tun sollen?“ (Quid facerem?).",
+			"Der Potentialis der Gegenwart drückt aus, was gut möglich oder denkbar ist: Im Konjunktiv Präsens (Aliquis dicat = „Jemand könnte einwenden“) oder im höflich-vorsichtigen Konjunktiv Perfekt (Hoc non dixerim = „Das möchte ich wohl nicht behaupten“). Entscheidendes Erkennungszeichen gegenüber Hortativ/Jussiv/Optativ: Deliberativ und Potentialis werden immer mit non verneint, niemals mit ne!"
+		],
+		"materialLabel": "Fragen des Zweifels (Deliberativ) und vorsichtige Urteile (Potentialis)",
+		"materialLanguage": "la",
+		"material": "1. Quid agam, iudices? Quo me vertam?\n2. Cur tunc non responderem, cum testis mentiretur?\n3. Dicat aliquis haec vera non esse; ego tamen rem ita se habere existimo.\n4. Hoc sine ulla dubitatione non negaverim.",
+		"sourceIds": ["lp"],
+		"diagram": {
+			"kind": "modus-lab",
+			"title": "Deliberativ & Potentialis vs. Begehrssätze aus Klasse 7",
+			"caption": "Beachte vor allem das Tempus des Konjunktivs und das Verneinungswort (non vs. ne)."
+		},
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Wodurch unterscheidet sich die Verneinung von Deliberativ und Potentialis gegenüber Hortativ, Jussiv und Optativ?",
+			"answer": "Deliberativ und Potentialis werden mit non verneint (nicht mit ne)",
+			"wrong": [
+				"Deliberativ und Potentialis werden mit ne verneint",
+				"Sie lassen sich im Lateinischen gar nicht verneinen"
+			],
+			"explanation": "Aufforderung und Wunsch verneinen mit ne (Ne timeamus!), Überlegung und Möglichkeit mit non (Cur non respondeam?)."
+		},
+		"takeaway": "Der Deliberativ fragt zweifelnd („Was soll/hätte ich tun sollen?“), der Potentialis äußert eine Möglichkeit („könnte / möchte wohl“); beide verneint das Lateinische mit non!",
+		"practice": [
+			{
+				"prompt": "Übersetze den kurzen Potentialis „Aliquis dicat“ ins Deutsche:",
+				"answers": ["jemand könnte sagen", "es könnte jemand sagen", "man könnte sagen"],
+				"feedback": "Im Potentialis der Gegenwart drückt der Konjunktiv Präsens dicat „könnte sagen“ aus."
+			},
+			{
+				"prompt": "Welcher Konjunktiv liegt in der Frage „Quid facerem?“ (Was hätte ich tun sollen?) vor?",
+				"answers": ["deliberativ der vergangenheit", "deliberativ", "ein deliberativ"],
+				"feedback": "Der Konjunktiv Imperfekt in einer Entscheidungsfrage bildet den Deliberativ der Vergangenheit."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "de",
+				"prompt": "Ordne die Hauptsatzkonjunktive in den Sätzen 1 bis 4 dem Deliberativ (Gegenwart oder Vergangenheit) bzw. Potentialis zu und übersetze alle vier Sätze.",
+				"model": "1. Quid agam / Quo me vertam = Deliberativ der Gegenwart → Was soll ich tun, ihr Richter? Wohin soll ich mich wenden?\n2. Cur … non responderem = Deliberativ der Vergangenheit (mit non!) → Warum hätte ich damals nicht antworten sollen, als der Zeuge log?\n3. Dicat aliquis = Potentialis der Gegenwart → Jemand könnte sagen, dass dies nicht wahr sei; ich meine dennoch, dass sich die Sache so verhält.\n4. non negaverim = Potentialis der Gegenwart (Konj. Perf. als bescheidene Behauptung) → Dies möchte ich ohne jeden Zweifel nicht bestreiten.",
+				"criteria": [
+					"Deliberativ der Gegenwart, Deliberativ der Vergangenheit und Potentialis sind sauber getrennt.",
+					"Die Verneinung mit non ist korrekt übersetzt.",
+					"Alle vier Sätze (einschließlich AcI und Konjunktiv-cum in 2/3) stimmen."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Vergleiche das Satzpaar „Ne timeas!“ (Klasse 7) und „Quid timeam?“ (Klasse 8) nach Modusfunktion, Verneinungswort und deutscher Übersetzung.",
+				"model": "„Ne timeas!“ (bzw. klassisch Prohibitiv „Ne timueris!“ / Optativ „Utinam ne …“) gehört zu den Begehrs-/Wunschsätzen und verneint mit ne („Fürchte dich nicht!“).\n„Quid timeam?“ ist eine zweifelnde Überlegungsfrage (Deliberativ der Gegenwart: „Was soll ich fürchten?“) und würde verneint „Cur non timeam?“ („Warum soll ich mich nicht fürchten?“) mit non lauten.",
+				"criteria": [
+					"Beide Satzarten sind ihren Fachbegriffen zugeordnet.",
+					"Der Kontrast ne vs. non ist erklärt.",
+					"Beide Übersetzungen treffen den Modus genau."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Deliberativ der Vergangenheit anhand des Tempus erkennen",
+					"before": "Quid dicerem? (Konj. Imperfekt) →",
+					"after": "",
+					"options": [
+						"Was hätte ich sagen sollen?",
+						"Was soll ich sagen?",
+						"Hoffentlich sagte ich etwas!"
+					],
+					"answer": "Was hätte ich sagen sollen?",
+					"explanation": "Der Konjunktiv Imperfekt in einer Frage drückt den Deliberativ der Vergangenheit aus."
+				},
+				{
+					"label": "Richtige Verneinung zum Potentialis wählen",
+					"before": "Hoc … affirmaverim (Das möchte ich nicht behaupten).",
+					"after": "",
+					"options": ["non", "ne", "utinam ne"],
+					"answer": "non",
+					"explanation": "Potentialis und Deliberativ stehen stets mit non."
+				},
+				{
+					"label": "Potentialis der Gegenwart als Einwand übersetzen",
+					"before": "Rogas fortasse / Dicat quispiam →",
+					"after": "",
+					"options": [
+						"Jemand könnte vielleicht fragen / sagen",
+						"Möge jemand sofort sprechen!",
+						"Sprich ja nicht!"
+					],
+					"answer": "Jemand könnte vielleicht fragen / sagen",
+					"explanation": "Im Potentialis formuliert man gedachte Einwände und vorsichtige Möglichkeiten."
+				}
+			]
+		}
+	},
+	{
+		"id": "l8-konjunktiv-relativsatz",
+		"stage": "syntax",
+		"title": "Konjunktiv im Relativsatz (Sinnrichtungen)",
+		"skill": "Konjunktivische Relativsätze als final, kausal, konsekutiv oder konzessiv erkennen und treffend auflösen",
+		"bindings": ["L8-20", "L8-21", "L8-22", "L8-24"],
+		"paragraphs": [
+			"Normalerweise steht in einem Relativsatz der Indikativ – er beschreibt dann eine schlichte Tatsache („der Freund, den ich gestern sah“). Steht das Verb des Relativsatzes jedoch im Konjunktiv, gibt der Relativsatz nicht bloß ein Merkmal an, sondern eine eigene adverbiale Sinnrichtung, genau wie die Konjunktiv-Nebensätze mit ut oder cum!",
+			"Am häufigsten begegnen vier Sinnrichtungen: final (nach Verben des Sendens, Wählens oder Gebens: Legatos misit, qui pacem peterent = „um Frieden zu erbitten“), kausal (oft verstärkt durch quippe qui = „da er ja“), konsekutiv (nach allgemeinen Wendungen wie sunt, qui … „es gibt Leute, die von der Art sind, dass …“ oder dignus est, qui laudetur = „er ist wert, gelobt zu werden“) und konzessiv („obwohl“ bei Gegensatz zum Hauptsatz)."
+		],
+		"materialLabel": "Konjunktiv im Relativsatz in allen vier Sinnrichtungen",
+		"materialLanguage": "la",
+		"material": "1. Imperator exploratores misit, qui regiones explorarent.\n2. Felix es, qui amicum fidelem inveneris.\n3. Sunt, qui divitias sapientiae anteponant.\n4. Tu, qui tot libros legeris, tamen hanc rem ignoras.",
+		"sourceIds": ["lp"],
+		"diagram": {
+			"kind": "modus-lab",
+			"preset": "relativ",
+			"title": "Die vier Sinnrichtungen des Konjunktivs im Relativsatz",
+			"caption": "Signalwörter im Hauptsatz (mittere, sunt qui, Gegensatz) verraten Zweck, Grund, Folge oder Einräumung."
+		},
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Welche Sinnrichtung zeigt der Konjunktiv im Relativsatz nach Verben des Sendens (wie „exploratores misit, qui … explorarent“)?",
+			"answer": "final (um die Gegend auszukundschaften)",
+			"wrong": [
+				"temporal (während sie die Gegend erkundeten)",
+				"konditional (falls sie Zeit haben)"
+			],
+			"explanation": "Nach mittere, venire, dare oder eligere vertritt qui + Konjunktiv einen finalen ut-Satz (Absicht/Zweck)."
+		},
+		"takeaway": "Steht im Relativsatz der Konjunktiv, löst du ihn je nach Kontext final („um zu / damit“), kausal („weil“), konsekutiv (nach sunt qui / dignus est) oder konzessiv („obwohl“) auf.",
+		"practice": [
+			{
+				"prompt": "Wie übersetzt du den Standardeingang „Sunt, qui putent …“ (Satz 3-Muster) idiomatisch?",
+				"answers": ["es gibt leute, die glauben", "es gibt menschen, die glauben", "manche glauben"],
+				"feedback": "Nach sunt, qui steht im Lateinischen der konsekutiv-charakterisierende Konjunktiv: „Es gibt Leute, die …“."
+			},
+			{
+				"prompt": "Welche Sinnrichtung signalisiert „tamen“ im Hauptsatz bei Satz 4 („Tu, qui tot libros legeris, tamen … ignoras“)?",
+				"answers": ["konzessiv", "eine konzessive", "einräumend"],
+				"feedback": "tamen („dennoch“) weist auf einen Gegensatz hin → konzessiver Relativsatz („obwohl du so viele Bücher gelesen hast“)."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "de",
+				"prompt": "Bestimme für alle vier Materialsätze die Sinnrichtung des Konjunktivs im Relativsatz, nenne jeweils das Signalwort und übersetze alle vier Sätze.",
+				"model": "1. final (Signal: misit) → Der Feldherr schickte Kundschafter aus, damit sie die Gegend erkundeten (um … zu erkunden).\n2. kausal (Signal: felix es als Bewertung) → Du bist glücklich, weil du einen treuen Freund gefunden hast.\n3. konsekutiv (Signal: sunt, qui) → Es gibt Menschen, die Reichtum der Weisheit vorziehen.\n4. konzessiv (Signal: tamen im Hauptsatz) → Obwohl du so viele Bücher gelesen hast, weißt du diese Sache dennoch nicht.",
+				"criteria": [
+					"Alle vier Sinnrichtungen sind korrekt identifiziert und begründet.",
+					"Signalwörter (misit, felix, sunt qui, tamen) sind benannt.",
+					"Alle vier Übersetzungen geben die logische Beziehung klar wieder."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Vergleiche „Legatos misit, qui pacem petunt“ (Indikativ) mit „Legatos misit, qui pacem peterent“ (Konjunktiv) und zeige, wie der Moduswechsel den Satzsinn verändert.",
+				"model": "Mit Indikativ (petunt) bezeichnet der Relativsatz einfach diejenigen Gesandten als Merkmal, die (faktisch) gerade um Frieden bitten: „Er schickte die Gesandten, die um Frieden bitten.“\nMit Konjunktiv (peterent) nennt der Relativsatz die Absicht der Entsendung (final): „Er schickte Gesandte mit dem Auftrag, um Frieden zu bitten / damit sie um Frieden bäten.“",
+				"criteria": [
+					"Beide Modi sind im Deutschen treffend gegeneinander abgegrenzt.",
+					"Die modale Veränderung (Tatsachenmerkmal vs. Zweck) ist präzise erklärt.",
+					"Die Tempusanpassung (peterent nach misit durch consecutio temporum) ist beachtet."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Finalen Relativsatz nach senden/schicken erkennen",
+					"before": "nuntios misit, qui haec dicerent →",
+					"after": "",
+					"options": [
+						"um dies zu berichten (final)",
+						"obwohl sie dies sagten (konzessiv)",
+						"als sie dies sagten (temporal)"
+					],
+					"answer": "um dies zu berichten (final)",
+					"explanation": "mittere + qui + Konjunktiv gibt den Zweck an."
+				},
+				{
+					"label": "Charakterisierenden/konsekutiven Relativsatz deuten",
+					"before": "Dignus est, qui laudetur →",
+					"after": "",
+					"options": [
+						"Er ist würdig, gelobt zu werden (dass man ihn lobt)",
+						"Er hat es sich selbst verdient",
+						"Obwohl er gelobt wurde"
+					],
+					"answer": "Er ist würdig, gelobt zu werden (dass man ihn lobt)",
+					"explanation": "Nach dignus / idoneus steht der Relativsatz stets im Konjunktiv."
+				},
+				{
+					"label": "Kausalen Relativsatz anhand des Kontextes auflösen",
+					"before": "Te laudo, qui veritatem dixeris →",
+					"after": "",
+					"options": [
+						"weil du die Wahrheit gesagt hast",
+						"damit du die Wahrheit sagst",
+						"falls du die Wahrheit sagst"
+					],
+					"answer": "weil du die Wahrheit gesagt hast",
+					"explanation": "Der Relativsatz begründet das Lob (laudo)."
+				}
+			]
+		}
+	},
+	{
+		"id": "l8-verschraenkte-relativsaetze",
+		"stage": "syntax",
+		"title": "Verschränkte Relativsätze & Satzgefüge",
+		"skill": "Verschränkte Relativsätze (Relativpronomen im untergeordneten AcI oder Konjunktivsatz) entwirren und im Deutschen sauber wiedergeben",
+		"bindings": ["L8-20", "L8-21", "L8-22", "L8-23", "L8-48"],
+		"paragraphs": [
+			"Im Deutschen stehen Relativpronomen am liebsten direkt nach dem Bezugswort; im Lateinischen klettert das Relativpronomen jedoch gern nach vorn an die Spitze der gesamten Periode – selbst dann, wenn es grammatisch eigentlich erst in einem eingebetteten AcI oder Nebensatz gebraucht wird! Ein typisches Beispiel: Haec est lex, quam scio a civibus semper servandam esse. Das quam hängt gar nicht von scio („ich weiß“), sondern vom Infinitiv servandam esse ab!",
+			"Solch einen Satz nennen wir verschränkten Relativsatz. Um ihn fehlerfrei aufzulösen, greifst du zu einem einfachen Trick: Übersetze zuerst das übergeordnete Verb im Relativsatz (wie scio oder puto) mit „von der/dem ich weiß/glaube“ – und hänge den Rest als dass-Satz (oder bei AcI: wie eine ganz normale Ergänzung) an: „Das ist das Gesetz, von dem ich weiß, dass es von den Bürgern immer beachtet werden muss.“ Noch häufiger beginnt so sogar ein neuer Hauptsatz (relativischer Satzanschluss mit Verschränkung): Quam rem cum vidisset, dux constituit … → „Als der Feldherr dies gesehen hatte, beschloss er …“."
+		],
+		"materialLabel": "Typische Verschränkungen mit AcI, Konjunktiv-cum und Ablativus absolutus",
+		"materialLanguage": "la",
+		"material": "1. Socrates vir fuit, quem omnes sciunt sapientiam amavisse.\n2. Lex, quam spero cives servaturos esse, iusta est.\n3. Quae cum ita sint, consilium optimum capiamus!",
+		"sourceIds": ["lp"],
+		"diagram": {
+			"kind": "syntax-tree",
+			"title": "Entwirr-Plan für verschränkte Relativsätze",
+			"caption": "Drei Schritte lösen den Knoten zwischen Relativpronomen und eingebetteter Konstruktion.",
+			"parts": [
+				{
+					"id": "vr-1",
+					"label": "1 · Brücke finden",
+					"badge": "Relativum + Kopfverb",
+					"latin": "quem … omnes sciunt",
+					"detail": "Das Relativpronomen steht am Satzanfang, gehört aber inhaltlich gar nicht zu sciunt, sondern in den AcI dahinter."
+				},
+				{
+					"id": "vr-2",
+					"label": "2 · „von dem“ einschalten",
+					"badge": "Deutsche Schaltbrücke",
+					"latin": "von dem alle wissen, dass …",
+					"detail": "Füge im Deutschen „von dem / über die“ vor „wissen/glauben“ ein und wiederhole das Subjekt im dass-Satz als „er/sie/es“."
+				},
+				{
+					"id": "vr-3",
+					"label": "3 · Nebensatz-Verschränkung",
+					"badge": "Quae cum ita sint",
+					"latin": "Quae cum ita sint → Da sich dies so verhält",
+					"detail": "Steht das Relativpronomen vor einem cum-/si-Satz, verwandle es in ein Demonstrativpronomen („dies“) im Nebensatz!"
+				}
+			]
+		},
+		"quiz": {
+			"optionLanguage": "de",
+			"question": "Zu welchem Wort gehört das Relativpronomen „quem“ in „Socrates vir fuit, quem omnes sciunt sapientiam amavisse“ grammatisch?",
+			"answer": "als Subjektsakkusativ zum AcI (quem … sapientiam amavisse)",
+			"wrong": [
+				"als direktes Objekt zu fuit",
+				"als Akkusativ zu sciunt („jemanden wissen“)"
+			],
+			"explanation": "scire heißt „wissen, dass“, nicht „jemanden kennen“; quem gehört inhaltlich als Subjekt in den AcI."
+		},
+		"takeaway": "Bei verschränkten Relativsätzen löst du mit „von dem ich weiß/hoffe, dass er …“ auf; bei vorangestelltem Relativ vor cum/si (Quae cum ita sint) ziehst du es als Demonstrativ („dies“) in den Nebensatz.",
+		"practice": [
+			{
+				"prompt": "Übersetze die berühmte Übergangsformel „Quae cum ita sint“ (Satz 3) treffend ins Deutsche:",
+				"answers": ["da sich dies so verhält", "da dies so ist", "weil dies so ist", "weil sich dies so verhält"],
+				"feedback": "Quae wird im Deutschen als Demonstrativpronomen („dies“) in den kausalen cum-Satz gezogen."
+			},
+			{
+				"prompt": "Welcher AcI-Infinitiv der Nachzeitigkeit steckt in Satz 2 („Lex, quam spero cives servaturos esse“)?",
+				"answers": ["servaturos esse"],
+				"feedback": "servaturos esse ist Infinitiv Futur Aktiv (von servare): „dass die Bürger beachten werden“."
+			}
+		],
+		"tasks": {
+			"1": {
+				"language": "de",
+				"prompt": "Zerlege die Sätze 1 bis 3 in ihre Ebenen (Hauptsatz, Relativklammer, AcI bzw. Konjunktivsatz) und übersetze alle drei Sätze ins Deutsche.",
+				"model": "1. Hauptsatz: Socrates vir fuit; Verschränkung: quem (Subjektsakk. im AcI) + omnes sciunt + sapientiam amavisse.\n→ Sokrates war ein Mann, von dem alle wissen, dass er die Weisheit geliebt hat.\n2. Hauptsatz: Lex iusta est; Verschränkung: quam (Akk.-Objekt zu servaturos esse) + spero + AcI (cives servaturos esse).\n→ Das Gesetz, von dem ich hoffe, dass die Bürger es beachten werden, ist gerecht.\n3. Verschränkter relativischer Anschluss vor cum causale + Hortativ.\n→ Da sich dies so verhält, lasst uns den besten Entschluss fassen!",
+				"criteria": [
+					"In 1 und 2 ist die Zugehörigkeit des Relativpronomens zum AcI korrekt benannt.",
+					"Die deutsche Einschubtechnik („von dem / das … es“) gelingt ohne Grammatikbruch.",
+					"Quae cum ita sint ist kausal und capiamus als Hortativ übersetzt."
+				]
+			},
+			"2": {
+				"language": "de",
+				"prompt": "Erkläre an „Quo nuntio accepto cives gavisi sunt“ (relativisch verschränkter Ablativus absolutus!), warum du wörtlich kein Relativpronomen im Deutschen halten kannst, und formuliere zwei elegante deutsche Übersetzungen.",
+				"model": "„Quo nuntio accepto“ steht am Satzanfang wie ein relativer Satzanschluss und ist zugleich ein Ablativus absolutus („welcher Nachricht empfangenen“ – im Deutschen unmöglich).\nVariante 1 (Adverbialsatz): „Nachdem die Bürger diese Nachricht erhalten hatten, freuten sie sich.“\nVariante 2 (Präpositional): „Nach Erhalt dieser Nachricht freuten sich die Bürger.“",
+				"criteria": [
+					"Die Doppelfunktion (relativischer Anschluss + Abl. abs.) ist erklärt.",
+					"Quo ist als Demonstrativ („diese“) aufgelöst.",
+					"Beide deutschen Varianten sind flüssig und korrekt."
+				]
+			}
+		},
+		"workshop": {
+			"goals": [
+				{
+					"label": "Verschränkten Relativsatz mit AcI entwirren",
+					"before": "Amicus, quem puto venturum esse →",
+					"after": "",
+					"options": [
+						"Der Freund, von dem ich glaube, dass er kommen wird",
+						"Der Freund, den ich selbst schicke",
+						"Der Freund, weil er gekommen ist"
+					],
+					"answer": "Der Freund, von dem ich glaube, dass er kommen wird",
+					"explanation": "quem gehört als Subjekt zum AcI venturum esse."
+				},
+				{
+					"label": "Relativischen Anschluss vor cum-Satz übersetzen",
+					"before": "Quod cum audivisset, … →",
+					"after": "",
+					"options": [
+						"Als er dies gehört hatte, …",
+						"Welcher es gehört hatte, …",
+						"Damit er dies höre, …"
+					],
+					"answer": "Als er dies gehört hatte, …",
+					"explanation": "Quod rückt in den temporalen cum-Satz als „dies“."
+				},
+				{
+					"label": "Rolle des Akkusativs im eingebetteten AcI erkennen",
+					"before": "Liber, quem scio te legere →",
+					"after": "",
+					"options": [
+						"Objekt zu legere („von dem ich weiß, dass du es liest“)",
+						"Subjekt zu scio",
+						"Prädikatsnomen zu liber"
+					],
+					"answer": "Objekt zu legere („von dem ich weiß, dass du es liest“)",
+					"explanation": "te ist Subjektsakkusativ, quem ist das Akkusativobjekt von legere."
+				}
+			]
+		}
+	}
+]
