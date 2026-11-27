@@ -1,0 +1,4012 @@
+{
+  "$schema": "https://zam.app/schemas/v1/kvt-tile.json",
+  "tile_id": "zam-academy:wirtschaft-recht-realschule-8",
+  "version": "2026.11.1",
+  "title": "Wirtschaft und Recht 8 Realschule (ZAM Academy)",
+  "description": "Wirtschaft und Recht 8 in Bayern für Zweig II. 39 Kernlektionen und 5 optionale englische Lektionen zu Gütermarkt, Verbraucherschutz, Rechtsordnung, Privatrecht und Berufsorientierung.",
+  "publisher": "ZAM Academy",
+  "published_at": "2026-11-27T08:00:00Z",
+  "sources": [
+    {
+      "uri": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/",
+      "checked": "2026-11-27",
+      "label": "ZAM Academy · Wirtschaft und Recht 8"
+    },
+    {
+      "uri": "https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/8/wirtschaft-und-recht/wpfg2",
+      "checked": "2026-11-27",
+      "label": "LehrplanPLUS · Wirtschaft und Recht 8 (II)"
+    }
+  ],
+  "atoms": [
+    {
+      "id": "01M8E09D00G1FQEQNK2PEEZY4W",
+      "atom_uri": "urn:zam:atom:01M8E09D00G1FQEQNK2PEEZY4W",
+      "namespace": "zam-academy-wirtschaft-recht-realschule-8",
+      "slug": "wr8-wh-prinzip",
+      "title": "Bedürfnisse, Knappheit und ökonomisches Prinzip",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=wh-prinzip",
+      "prerequisites": [],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-realschule-8",
+          "topic_code": "lb1",
+          "topic_title": "Grundzüge des Wirtschaftens auf dem Gütermarkt"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "II",
+          "topic_code": "lb1",
+          "topic_title": "Grundzüge des Wirtschaftens auf dem Gütermarkt",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8E09D00DFDCDGAVCBTT34XK",
+          "slug": "wr8-wh-prinzip-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=wh-prinzip",
+          "question": "Was besagt das Minimalprinzip des Wirtschaftens?",
+          "concept": "Ein festgelegtes Ziel wird mit möglichst geringem Einsatz an Mitteln erreicht.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Ein festgelegtes Ziel wird mit möglichst geringem Einsatz an Mitteln erreicht.",
+              "Mit den vorhandenen Mitteln wird ein möglichst großer Erfolg erzielt."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Mit den vorhandenen Mitteln wird ein möglichst großer Erfolg erzielt.",
+              "reason": "Das ist das Maximalprinzip: Dort stehen die Mittel fest und der Erfolg soll möglichst groß sein."
+            },
+            {
+              "text": "Man kauft möglichst wenig und verzichtet auf alles, was nicht lebensnotwendig ist.",
+              "reason": "Das ökonomische Prinzip verlangt keinen Verzicht um jeden Preis, sondern ein günstiges Verhältnis von Aufwand und Ertrag."
+            }
+          ]
+        },
+        {
+          "id": "01M8E09D007NRSJ4QMVQRX8VJP",
+          "slug": "wr8-wh-prinzip-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=wh-prinzip",
+          "question": "Warum müssen Menschen wirtschaften, und wie hilft ihnen dabei das ökonomische Prinzip?",
+          "concept": "Weil die Wünsche der Menschen unbegrenzt sind, Geld und Zeit aber nicht ausreichen, muss man auswählen. Das Prinzip verlangt, den Einsatz so zu wählen, dass Aufwand und Ertrag günstig zueinander stehen.",
+          "materiality": "material",
+          "sample_solution": "Mira hat 30 Euro Taschengeld. Das Kino am Abend kostet 16 Euro, ein Eis 6 Euro und der Flohmarkt mit Bus und Snacks 14 Euro, zusammen 36 Euro. Das Geld reicht nicht für alles. Sie streicht das Eis, dann sind es genau 30 Euro, und sie holt mit ihrem festen Budget das Meiste heraus."
+        },
+        {
+          "id": "01M8E09D003QHWN17J3SAE9T93",
+          "slug": "wr8-wh-prinzip-extra",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=wh-prinzip",
+          "question": "Welcher Bedürfnisart ist der Wunsch zuzuordnen, regelmäßig ins Kino zu gehen?",
+          "concept": "Dem Kulturbedürfnis: Es gehört zum Leben in der Gesellschaft, ist aber zum Überleben nicht nötig.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Dem Kulturbedürfnis: Es gehört zum Leben in der Gesellschaft, ist aber zum Überleben nicht nötig.",
+              "Dem Existenzbedürfnis, weil Freizeit genauso lebensnotwendig ist wie Essen und Wohnen."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Dem Existenzbedürfnis, weil Freizeit genauso lebensnotwendig ist wie Essen und Wohnen.",
+              "reason": "Existenzbedürfnisse sichern das Überleben; ein Kinobesuch gehört nicht dazu."
+            },
+            {
+              "text": "Dem Luxusbedürfnis, weil ein Kinobesuch Geld kostet und kein Grundbedarf ist.",
+              "reason": "Luxus geht weit über das Übliche hinaus; ein Kinobesuch ist ein gewöhnliches Kulturangebot."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8E09D00QC3R8ZWHFRNFNPYZ",
+      "atom_uri": "urn:zam:atom:01M8E09D00QC3R8ZWHFRNFNPYZ",
+      "namespace": "zam-academy-wirtschaft-recht-realschule-8",
+      "slug": "wr8-wh-globalisierung",
+      "title": "Von der Selbstversorgung zur Globalisierung",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=wh-globalisierung",
+      "prerequisites": [
+        {
+          "atom_id": "01M8E09D00G1FQEQNK2PEEZY4W",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-realschule-8",
+          "topic_code": "lb1",
+          "topic_title": "Grundzüge des Wirtschaftens auf dem Gütermarkt"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "II",
+          "topic_code": "lb1",
+          "topic_title": "Grundzüge des Wirtschaftens auf dem Gütermarkt",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Was unterscheidet Fremdversorgung von Selbstversorgung?",
+          "concept": "Bei Fremdversorgung erzeugen andere die benötigten Güter.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Bei Fremdversorgung erzeugen andere die benötigten Güter.",
+              "Der eigene Haushalt stellt die benötigten Güter her."
+            ],
+            "correct_index": 0
+          },
+          "slug": "wr8-wh-globalisierung-check",
+          "id": "01M8E09D00PDNHP7TSAWYHJ3FP",
+          "language": "de",
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=wh-globalisierung",
+          "materiality": "material"
+        },
+        {
+          "slug": "wr8-wh-globalisierung-kern",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Warum kann internationale Arbeitsteilung zugleich nützen und Lieferungen anfälliger machen?",
+          "concept": "Spezialisierung kann Aufwand sparen. Wer von einem einzigen Zulieferer abhängt, hat bei dessen Ausfall keinen Ersatz.",
+          "sample_solution": "Eine Näherei kann viele T-Shirts effizient herstellen. Fällt ihr einziger Stofflieferant aus, kann sie trotz ihrer Spezialisierung nicht weiterarbeiten.",
+          "id": "01M8E09D00PMTDYMV9AE0DVDZC",
+          "language": "de",
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=wh-globalisierung",
+          "materiality": "material"
+        }
+      ]
+    },
+    {
+      "id": "01M8E09D003038X7114XQC5YDF",
+      "atom_uri": "urn:zam:atom:01M8E09D003038X7114XQC5YDF",
+      "namespace": "zam-academy-wirtschaft-recht-realschule-8",
+      "slug": "wr8-wh-angebot-nachfrage",
+      "title": "Einflussfaktoren auf Angebot und Nachfrage",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=wh-angebot-nachfrage",
+      "prerequisites": [
+        {
+          "atom_id": "01M8E09D00G1FQEQNK2PEEZY4W",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-realschule-8",
+          "topic_code": "lb1",
+          "topic_title": "Grundzüge des Wirtschaftens auf dem Gütermarkt"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "II",
+          "topic_code": "lb1",
+          "topic_title": "Grundzüge des Wirtschaftens auf dem Gütermarkt",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8E09D00QGE66G55TXJN2JEN",
+          "slug": "wr8-wh-angebot-nachfrage-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=wh-angebot-nachfrage",
+          "question": "Wie verhalten sich Anbieter in der Regel, wenn ihre Herstellungskosten deutlich steigen?",
+          "concept": "Sie bieten bei gleichem Preis weniger an, weil sich die Herstellung weniger lohnt.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Sie bieten bei gleichem Preis weniger an, weil sich die Herstellung weniger lohnt.",
+              "Sie bieten bei gleichem Preis mehr an, um die höheren Kosten durch größere Mengen auszugleichen."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Sie bieten bei gleichem Preis mehr an, um die höheren Kosten durch größere Mengen auszugleichen.",
+              "reason": "Höhere Kosten verringern den Gewinn je Stück; das Verkaufen lohnt sich weniger, nicht mehr."
+            },
+            {
+              "text": "Sie ändern ihr Angebot nicht, weil allein der Preis des Gutes über die Menge entscheidet.",
+              "reason": "Auch die Kosten beeinflussen das Angebot, nicht nur der Preis des Gutes selbst."
+            }
+          ]
+        },
+        {
+          "id": "01M8E09D00R9WAE42AKRBQTJMW",
+          "slug": "wr8-wh-angebot-nachfrage-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=wh-angebot-nachfrage",
+          "question": "Wie verhalten sich Käufer und Anbieter typischerweise, wenn der Preis eines Gutes steigt?",
+          "concept": "Käufer fragen weniger nach, weil sie verzichten oder ausweichen. Anbieter wollen mehr anbieten, weil jedes verkaufte Stück mehr Gewinn bringt.",
+          "materiality": "material",
+          "sample_solution": "Auf dem Wochenmarkt steigt der Preis für Erdbeeren von 3 auf 4 Euro je Kilo. Viele Kunden kaufen weniger oder greifen zu Äpfeln, die nachgefragte Menge sinkt. Die Landwirte liefern dagegen mehr, weil sich jede zusätzliche Kiste jetzt mehr lohnt."
+        },
+        {
+          "id": "01M8E09D00DNFT6HCB03MN2Q45",
+          "slug": "wr8-wh-angebot-nachfrage-extra",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=wh-angebot-nachfrage",
+          "question": "Was geschieht mit der Nachfrage nach Margarine, wenn Butter deutlich teurer wird?",
+          "concept": "Sie steigt, weil Margarine ein Ersatzgut ist und viele Käufer auf das günstigere Produkt ausweichen.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Sie steigt, weil Margarine ein Ersatzgut ist und viele Käufer auf das günstigere Produkt ausweichen.",
+              "Sie sinkt, weil Butter und Margarine zusammen gebraucht werden und beide teurer erscheinen."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Sie sinkt, weil Butter und Margarine zusammen gebraucht werden und beide teurer erscheinen.",
+              "reason": "Das gilt für Ergänzungsgüter wie Drucker und Tinte, nicht für Ersatzgüter."
+            },
+            {
+              "text": "Sie bleibt gleich, weil der Preis eines anderen Gutes keinen Einfluss auf die Nachfrage hat.",
+              "reason": "Die Preise anderer Güter gehören zu den Einflüssen auf die Nachfrage."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8E09D00ZHF34GZZT6NV4T8T",
+      "atom_uri": "urn:zam:atom:01M8E09D00ZHF34GZZT6NV4T8T",
+      "namespace": "zam-academy-wirtschaft-recht-realschule-8",
+      "slug": "wr8-wh-gleichgewicht",
+      "title": "Der Gleichgewichtspreis",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=wh-gleichgewicht",
+      "prerequisites": [
+        {
+          "atom_id": "01M8E09D003038X7114XQC5YDF",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-realschule-8",
+          "topic_code": "lb1",
+          "topic_title": "Grundzüge des Wirtschaftens auf dem Gütermarkt"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "II",
+          "topic_code": "lb1",
+          "topic_title": "Grundzüge des Wirtschaftens auf dem Gütermarkt",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8E09D00D8QTA0YRW8Q85HVW",
+          "slug": "wr8-wh-gleichgewicht-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=wh-gleichgewicht",
+          "question": "Was geschieht auf einem Markt, wenn der Preis über dem Gleichgewichtspreis liegt?",
+          "concept": "Das Angebot übersteigt die Nachfrage, und der Preis gerät unter Druck nach unten.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Das Angebot übersteigt die Nachfrage, und der Preis gerät unter Druck nach unten.",
+              "Die Nachfrage übersteigt das Angebot, und der Preis gerät unter Druck nach oben."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Die Nachfrage übersteigt das Angebot, und der Preis gerät unter Druck nach oben.",
+              "reason": "Das ist die Lage unter dem Gleichgewichtspreis, nicht darüber."
+            },
+            {
+              "text": "Angebot und Nachfrage sind gleich groß, und der Preis bleibt stehen.",
+              "reason": "Nur im Gleichgewicht selbst sind beide Mengen gleich groß."
+            }
+          ]
+        },
+        {
+          "id": "01M8E09D00117A5ASBR4ZW792Q",
+          "slug": "wr8-wh-gleichgewicht-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=wh-gleichgewicht",
+          "question": "Wie findet ein Markt bei einem Nachfrageüberhang zu seinem Gleichgewichtspreis?",
+          "concept": "Käufer überbieten sich, der Preis steigt, dadurch fragen weniger nach und mehr bieten an, bis beide Mengen gleich groß sind.",
+          "materiality": "material",
+          "sample_solution": "Auf dem Wochenmarkt kosten Erdbeeren am Morgen 3 Euro je Kilo, doch die Kunden wollen mehr, als die Händler dabeihaben. Die Kunden überbieten sich, und der Preis steigt auf 4 Euro. Manche verzichten, und die Händler holen weitere Kisten vom Feld. Das geht so lange, bis angebotene und nachgefragte Menge übereinstimmen."
+        },
+        {
+          "id": "01M8E09D00SQN2942R94FWD5QC",
+          "slug": "wr8-wh-gleichgewicht-extra",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=wh-gleichgewicht",
+          "question": "Was bedeutet es, wenn ein Markt im Gleichgewicht „geräumt“ ist?",
+          "concept": "Jeder, der zum Gleichgewichtspreis kaufen will, bekommt Ware, und kein Anbieter bleibt auf seiner Ware sitzen.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Jeder, der zum Gleichgewichtspreis kaufen will, bekommt Ware, und kein Anbieter bleibt auf seiner Ware sitzen.",
+              "Alle Anbieter haben ihre Ware zum höchsten Preis verkauft, den Käufer überhaupt zahlen würden."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Alle Anbieter haben ihre Ware zum höchsten Preis verkauft, den Käufer überhaupt zahlen würden.",
+              "reason": "Im Gleichgewicht gilt ein einheitlicher Preis; die Anbieter erzielen nicht den höchsten denkbaren Preis."
+            },
+            {
+              "text": "Der Staat hat den Preis festgelegt, sodass alle Käufer gleich viel zahlen und gleich viel bekommen.",
+              "reason": "Der Gleichgewichtspreis entsteht am Markt aus Angebot und Nachfrage, ohne staatliche Festlegung."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8E09D00D1STRKE9EQ0ZWSM0",
+      "atom_uri": "urn:zam:atom:01M8E09D00D1STRKE9EQ0ZWSM0",
+      "namespace": "zam-academy-wirtschaft-recht-realschule-8",
+      "slug": "wr8-wh-verschiebung",
+      "title": "Verschiebungen und die Rolle des Gleichgewichtspreises",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=wh-verschiebung",
+      "prerequisites": [
+        {
+          "atom_id": "01M8E09D00ZHF34GZZT6NV4T8T",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-realschule-8",
+          "topic_code": "lb1",
+          "topic_title": "Grundzüge des Wirtschaftens auf dem Gütermarkt"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "II",
+          "topic_code": "lb1",
+          "topic_title": "Grundzüge des Wirtschaftens auf dem Gütermarkt",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8E09D0001BNGP2QSNQ2105Y",
+          "slug": "wr8-wh-verschiebung-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=wh-verschiebung",
+          "question": "Was geschieht mit dem Gleichgewichtspreis, wenn das Angebot bei unveränderter Nachfrage deutlich zunimmt?",
+          "concept": "Der Gleichgewichtspreis sinkt, weil mehr Ware auf dieselbe Nachfrage trifft.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Der Gleichgewichtspreis sinkt, weil mehr Ware auf dieselbe Nachfrage trifft.",
+              "Der Gleichgewichtspreis steigt, weil mehr Ware das Gut wertvoller macht."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Der Gleichgewichtspreis steigt, weil mehr Ware das Gut wertvoller macht.",
+              "reason": "Mehr Ware bei gleicher Nachfrage macht das Gut nicht knapper, sondern weniger knapp."
+            },
+            {
+              "text": "Der Gleichgewichtspreis bleibt gleich, weil die Nachfrage unverändert ist.",
+              "reason": "Auch wenn nur das Angebot wächst, verschiebt sich der Schnittpunkt der Kurven."
+            }
+          ]
+        },
+        {
+          "id": "01M8E09D00WQN80M55JT8WW5P4",
+          "slug": "wr8-wh-verschiebung-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=wh-verschiebung",
+          "question": "Wie lenkt ein hoher Gleichgewichtspreis die Produktion in einer Marktwirtschaft?",
+          "concept": "Ein hoher Preis zeigt Knappheit und verspricht Gewinn, wenn er über den Kosten liegt. Unternehmen stellen deshalb mehr davon her, und Arbeit und Rohstoffe fließen dorthin, wo sie gebraucht werden.",
+          "materiality": "material",
+          "sample_solution": "Nach einem Trend steigt der Preis für Fahrradhelme von 40 auf 55 Euro, die Herstellungskosten bleiben gleich. Die Hersteller verdienen mehr, stellen mehr Helme her und stellen dafür Beschäftigte ein. Der Preis hat so Arbeit und Material zu den gefragten Helmen gelenkt."
+        },
+        {
+          "id": "01M8E09D00Q9GP7E20G67A0J04",
+          "slug": "wr8-wh-verschiebung-extra",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=wh-verschiebung",
+          "question": "Was geschieht, wenn der Staat einen Höchstpreis unter dem Gleichgewichtspreis festlegt?",
+          "concept": "Es entsteht ein Nachfrageüberhang: Mehr Menschen wollen kaufen, als angeboten wird, und die Ware muss anders verteilt werden.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Es entsteht ein Nachfrageüberhang: Mehr Menschen wollen kaufen, als angeboten wird, und die Ware muss anders verteilt werden.",
+              "Es entsteht ein Angebotsüberhang: Die Anbieter bleiben auf ihrer Ware sitzen, weil sie zu wenig verdienen."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Es entsteht ein Angebotsüberhang: Die Anbieter bleiben auf ihrer Ware sitzen, weil sie zu wenig verdienen.",
+              "reason": "Ein Angebotsüberhang entsteht bei einem Mindestpreis über dem Gleichgewicht, nicht bei einem Höchstpreis."
+            },
+            {
+              "text": "Der Markt bleibt im Gleichgewicht, weil der Staat den Preis an Angebot und Nachfrage anpasst.",
+              "reason": "Ein Höchstpreis ersetzt den Marktpreis; dadurch geht das Gleichgewicht verloren."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8E09D00G73R59QN3WE4GJ97",
+      "atom_uri": "urn:zam:atom:01M8E09D00G73R59QN3WE4GJ97",
+      "namespace": "zam-academy-wirtschaft-recht-realschule-8",
+      "slug": "wr8-wh-kreislauf",
+      "title": "Der einfache Wirtschaftskreislauf",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=wh-kreislauf",
+      "prerequisites": [
+        {
+          "atom_id": "01M8E09D003038X7114XQC5YDF",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-realschule-8",
+          "topic_code": "lb1",
+          "topic_title": "Grundzüge des Wirtschaftens auf dem Gütermarkt"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "II",
+          "topic_code": "lb1",
+          "topic_title": "Grundzüge des Wirtschaftens auf dem Gütermarkt",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8E09D00S65PV0VGVWPM6XZK",
+          "slug": "wr8-wh-kreislauf-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=wh-kreislauf",
+          "question": "Was zahlen die Unternehmen im einfachen Wirtschaftskreislauf an die privaten Haushalte?",
+          "concept": "Einkommen in Form von Löhnen und Gehältern als Bezahlung für die Arbeitsleistung der Haushalte.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Einkommen in Form von Löhnen und Gehältern als Bezahlung für die Arbeitsleistung der Haushalte.",
+              "Konsumausgaben als Bezahlung für die Güter und Dienstleistungen, die die Unternehmen liefern."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Konsumausgaben als Bezahlung für die Güter und Dienstleistungen, die die Unternehmen liefern.",
+              "reason": "Konsumausgaben zahlen die Haushalte an die Unternehmen, nicht umgekehrt."
+            },
+            {
+              "text": "Steuern als Beitrag zu den Leistungen, die der Staat für die Haushalte erbringt.",
+              "reason": "Der einfache Kreislauf kennt keinen Staat, also auch keine Steuern."
+            }
+          ]
+        },
+        {
+          "id": "01M8E09D00BTWNK3RGWQB2QMBA",
+          "slug": "wr8-wh-kreislauf-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=wh-kreislauf",
+          "question": "Was geschieht im einfachen Wirtschaftskreislauf, wenn die Haushalte weniger ausgeben, als sie einnehmen?",
+          "concept": "Der Umsatz der Unternehmen sinkt, sie zahlen weniger Einkommen aus, und die Haushalte können noch weniger ausgeben: Der Kreislauf schrumpft.",
+          "materiality": "material",
+          "sample_solution": "Alle Haushalte in einer Stadt geben nur noch 80 Prozent ihres Lohns aus. Die Läden nehmen weniger ein und zahlen im nächsten Monat weniger Löhne. Dadurch haben die Haushalte noch weniger Geld, und die Einnahmen der Läden sinken weiter."
+        },
+        {
+          "id": "01M8E09D00F5ABN4G5JKPZXMFQ",
+          "slug": "wr8-wh-kreislauf-extra",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=wh-kreislauf",
+          "question": "Warum ist die Aussagekraft des einfachen Wirtschaftskreislaufs begrenzt?",
+          "concept": "Das Modell lässt Sparen, Banken, Staat und Ausland weg und bildet die Wirklichkeit deshalb nur stark vereinfacht ab.",
+          "materiality": "material",
+          "sample_solution": "Im Modell verschwindet gespartes Geld aus dem Kreislauf. In Wirklichkeit legt eine Familie 100 Euro auf ein Sparkonto, die Bank verleiht das Geld an eine Firma, und diese kauft damit eine Maschine. Solche Wege kann das Modell nicht abbilden."
+        }
+      ]
+    },
+    {
+      "id": "01M8E09D00ZVQN4FSJN7GS6PQ3",
+      "atom_uri": "urn:zam:atom:01M8E09D00ZVQN4FSJN7GS6PQ3",
+      "namespace": "zam-academy-wirtschaft-recht-realschule-8",
+      "slug": "wr8-wh-vollkommener-markt",
+      "title": "Das Modell des vollkommenen Marktes",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=wh-vollkommener-markt",
+      "prerequisites": [
+        {
+          "atom_id": "01M8E09D00ZHF34GZZT6NV4T8T",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-realschule-8",
+          "topic_code": "lb1",
+          "topic_title": "Grundzüge des Wirtschaftens auf dem Gütermarkt"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "II",
+          "topic_code": "lb1",
+          "topic_title": "Grundzüge des Wirtschaftens auf dem Gütermarkt",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Was bedeutet Markttransparenz am vollkommenen Markt?",
+          "concept": "Käufer und Verkäufer kennen die relevanten Angebote und Preise.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Käufer und Verkäufer kennen die relevanten Angebote und Preise.",
+              "Die Angebote sind von derselben Sorte und Qualität."
+            ],
+            "correct_index": 0
+          },
+          "slug": "wr8-wh-vollkommener-markt-check",
+          "id": "01M8E09D00H665ZQ5TZ4GTZX9P",
+          "language": "de",
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=wh-vollkommener-markt",
+          "materiality": "material"
+        },
+        {
+          "slug": "wr8-wh-vollkommener-markt-kern",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Wie begrenzt eine persönliche Vorliebe die Preisprognose des vollkommenen Markts?",
+          "concept": "Ein Käufer kann trotz höherem Preis bei einem bevorzugten Anbieter bleiben.",
+          "sample_solution": "Zwei Stände verlangen unterschiedliche Preise für gleichartige Äpfel. Wer seiner Stammverkäuferin mehr vertraut, wechselt möglicherweise nicht zum billigeren Stand.",
+          "id": "01M8E09D00HNHREZCEP1XW92ST",
+          "language": "de",
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=wh-vollkommener-markt",
+          "materiality": "material"
+        }
+      ]
+    },
+    {
+      "id": "01M8E09D002ZY0MZGXQV2MHAWS",
+      "atom_uri": "urn:zam:atom:01M8E09D002ZY0MZGXQV2MHAWS",
+      "namespace": "zam-academy-wirtschaft-recht-realschule-8",
+      "slug": "wr8-wh-marktformen",
+      "title": "Monopol, Oligopol und Polypol",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=wh-marktformen",
+      "prerequisites": [
+        {
+          "atom_id": "01M8E09D00ZVQN4FSJN7GS6PQ3",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-realschule-8",
+          "topic_code": "lb1",
+          "topic_title": "Grundzüge des Wirtschaftens auf dem Gütermarkt"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "II",
+          "topic_code": "lb1",
+          "topic_title": "Grundzüge des Wirtschaftens auf dem Gütermarkt",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Wie heißt eine Marktform mit wenigen Anbietern und vielen Nachfragern?",
+          "concept": "Angebotsoligopol",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Angebotsoligopol",
+              "Angebotspolypol"
+            ],
+            "correct_index": 0
+          },
+          "slug": "wr8-wh-marktformen-check",
+          "id": "01M8E09D00R49BA05M6FJPRHCM",
+          "language": "de",
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=wh-marktformen",
+          "materiality": "material"
+        },
+        {
+          "slug": "wr8-wh-marktformen-kern",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Warum ist eine Marktgrenze für die Diagnose eines Monopols wichtig?",
+          "concept": "Wer erreichbare Alternativen in den Markt einbezieht, kann zu einer anderen Zahl von Anbietern kommen.",
+          "sample_solution": "Im Dorf gibt es einen Kiosk. Wenn Käufer zwei nahe Supermärkte im Nachbarort erreichen können, hat derselbe Kiosk auf dem größeren Markt direkte Konkurrenz.",
+          "id": "01M8E09D00XWSFSCWGGP58HTN4",
+          "language": "de",
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=wh-marktformen",
+          "materiality": "material"
+        }
+      ]
+    },
+    {
+      "id": "01M8E09D00128VHJJV8NA9WJ7A",
+      "atom_uri": "urn:zam:atom:01M8E09D00128VHJJV8NA9WJ7A",
+      "namespace": "zam-academy-wirtschaft-recht-realschule-8",
+      "slug": "wr8-vs-information",
+      "title": "Verbraucherinformationen kritisch bewerten",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=vs-information",
+      "prerequisites": [],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-realschule-8",
+          "topic_code": "lb2",
+          "topic_title": "Verbraucherschutz und verantwortungsbewusstes Verbraucherverhalten"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "II",
+          "topic_code": "lb2",
+          "topic_title": "Verbraucherschutz und verantwortungsbewusstes Verbraucherverhalten",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8E09D00VCHXYVA01FNCNT45",
+          "slug": "wr8-vs-information-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=vs-information",
+          "question": "Woran erkennt man bei einem Kaufvergleich am ehesten eine glaubwürdige Informationsquelle?",
+          "concept": "Sie prüft unabhängig nach offengelegten Kriterien und verdient nicht am Verkauf des Produkts.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Sie prüft unabhängig nach offengelegten Kriterien und verdient nicht am Verkauf des Produkts.",
+              "Sie zeigt sehr viele Bewertungen mit fünf Sternen und beschreibt das Produkt besonders ausführlich."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Sie zeigt sehr viele Bewertungen mit fünf Sternen und beschreibt das Produkt besonders ausführlich.",
+              "reason": "Viele Bestnoten können gekauft oder gefälscht sein und sagen nichts über die Unabhängigkeit der Quelle."
+            },
+            {
+              "text": "Sie stammt vom Hersteller und nennt viele genaue technische Daten über das Produkt.",
+              "reason": "Der Hersteller will verkaufen, deshalb hat die Quelle ein Eigeninteresse, auch wenn die Daten stimmen."
+            }
+          ]
+        },
+        {
+          "id": "01M8E09D0039QRVHX99H8FHXRQ",
+          "slug": "wr8-vs-information-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=vs-information",
+          "question": "Woran erkennt man gekaufte oder gefälschte Kundenbewertungen?",
+          "concept": "An vielen gleich klingenden Bestnoten am selben Tag und an allgemeinem Lob ohne konkrete Angaben zum Produkt.",
+          "materiality": "material",
+          "sample_solution": "Bei einem Fahrradhelm erscheinen an einem Tag 30 Bewertungen mit fünf Sternen und dem Text „Top Produkt“. Janis wird misstrauisch, liest stattdessen zwei ausführliche Rezensionen mit Kritik am Verschluss und sucht zusätzlich einen unabhängigen Test."
+        },
+        {
+          "id": "01M8E09D00C1RGY5S20FGPTR4K",
+          "slug": "wr8-vs-information-extra",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=vs-information",
+          "question": "Warum reicht eine einzige Quelle nicht für eine begründete Kaufentscheidung?",
+          "concept": "Jede Quelle hat eigene Interessen und blinde Flecken; erst der Vergleich mehrerer unabhängiger Quellen zeigt, was verlässlich ist.",
+          "materiality": "material",
+          "sample_solution": "Zu einem Rucksack lobt der Hersteller alles, ein Test nennt die Nähte als Schwachstelle, und Rezensionen berichten von gerissenen Trägern. Erst zusammen ergeben die Quellen für Lena ein glaubwürdiges Bild."
+        }
+      ]
+    },
+    {
+      "id": "01M8E09D00PB8R5BZ48QYV5FBN",
+      "atom_uri": "urn:zam:atom:01M8E09D00PB8R5BZ48QYV5FBN",
+      "namespace": "zam-academy-wirtschaft-recht-realschule-8",
+      "slug": "wr8-vs-nachhaltig",
+      "title": "Nachhaltig konsumieren und Siegel prüfen",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=vs-nachhaltig",
+      "prerequisites": [
+        {
+          "atom_id": "01M8E09D00128VHJJV8NA9WJ7A",
+          "type": "soft"
+        },
+        {
+          "atom_id": "01M8E09D00QC3R8ZWHFRNFNPYZ",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-realschule-8",
+          "topic_code": "lb2",
+          "topic_title": "Verbraucherschutz und verantwortungsbewusstes Verbraucherverhalten"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "II",
+          "topic_code": "lb2",
+          "topic_title": "Verbraucherschutz und verantwortungsbewusstes Verbraucherverhalten",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8E09D00VQFNJF3BFGX601BX",
+          "slug": "wr8-vs-nachhaltig-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=vs-nachhaltig",
+          "question": "Was zeigt das EU-Energielabel mit den Klassen A bis G?",
+          "concept": "Wie energieeffizient ein Gerät im Vergleich zu ähnlichen Geräten ist.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Wie energieeffizient ein Gerät im Vergleich zu ähnlichen Geräten ist.",
+              "Wie gut das Gerät in unabhängigen Qualitätstests abgeschnitten hat."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Wie gut das Gerät in unabhängigen Qualitätstests abgeschnitten hat.",
+              "reason": "Das Label ist kein Testergebnis; die Klassen A bis G bewerten die Energieeffizienz, nicht die Qualität."
+            },
+            {
+              "text": "Wie umweltfreundlich das Gerät von der Herstellung bis zur Entsorgung ist.",
+              "reason": "Die Klasse bewertet die Energieeffizienz im Betrieb, nicht die Umweltbilanz des gesamten Lebenswegs."
+            }
+          ]
+        },
+        {
+          "id": "01M8E09D00D3SG3GZE5J01ZEB5",
+          "slug": "wr8-vs-nachhaltig-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=vs-nachhaltig",
+          "question": "Was ist Greenwashing, und woran erkennt man es?",
+          "concept": "Ein Unternehmen stellt sich umweltfreundlicher dar, als es ist, etwa mit selbst erfundenen Logos oder vagen Begriffen, ohne unabhängige Prüfung.",
+          "materiality": "material",
+          "sample_solution": "Ein Hersteller druckt ein grünes Blatt und das Wort „klimafreundlich“ auf seine Flasche. Es gibt keinen Hinweis, wer das Zeichen vergibt oder nach welchen Kriterien. Merle erkennt: Das ist ein selbst gemachtes Zeichen, vermutlich Greenwashing."
+        },
+        {
+          "id": "01M8E09D004XXSJ9F9VCXHYGP0",
+          "slug": "wr8-vs-nachhaltig-extra",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=vs-nachhaltig",
+          "question": "Was bestätigt das Fairtrade-Siegel zum Beispiel bei dem Rohstoff Kaffee?",
+          "concept": "Der Rohstoff wurde nach Standards des Fairen Handels gehandelt, etwa mit Mindestpreis und Prämie für die Erzeuger.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Der Rohstoff wurde nach Standards des Fairen Handels gehandelt, etwa mit Mindestpreis und Prämie für die Erzeuger.",
+              "Der Rohstoff stammt aus ökologischem Anbau und wurde ohne chemisch-synthetische Pflanzenschutzmittel erzeugt."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Der Rohstoff stammt aus ökologischem Anbau und wurde ohne chemisch-synthetische Pflanzenschutzmittel erzeugt.",
+              "reason": "Das beschreibt das Bio-Siegel; Fairtrade bestätigt nicht automatisch ökologischen Anbau."
+            },
+            {
+              "text": "Das Unternehmen zahlt allen seinen Beschäftigten auf der ganzen Welt einen existenzsichernden Lohn.",
+              "reason": "Das Siegel gilt für den gekennzeichneten Rohstoff, nicht für das ganze Unternehmen."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8E09D000C8A6YP0876CFS8Q",
+      "atom_uri": "urn:zam:atom:01M8E09D000C8A6YP0876CFS8Q",
+      "namespace": "zam-academy-wirtschaft-recht-realschule-8",
+      "slug": "wr8-vs-schutz",
+      "title": "Verbraucherschutz: Regeln und Beratungsstellen",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=vs-schutz",
+      "prerequisites": [
+        {
+          "atom_id": "01M8E09D00128VHJJV8NA9WJ7A",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-realschule-8",
+          "topic_code": "lb2",
+          "topic_title": "Verbraucherschutz und verantwortungsbewusstes Verbraucherverhalten"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "II",
+          "topic_code": "lb2",
+          "topic_title": "Verbraucherschutz und verantwortungsbewusstes Verbraucherverhalten",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8E09D00MMSFMYWS1XBRXQYA",
+          "slug": "wr8-vs-schutz-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=vs-schutz",
+          "question": "Was gilt beim Widerruf einer Online-Bestellung von Waren bei einem Unternehmen?",
+          "concept": "Man darf ohne Angabe von Gründen innerhalb von 14 Tagen nach dem Erhalt der Ware widerrufen.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Man darf ohne Angabe von Gründen innerhalb von 14 Tagen nach dem Erhalt der Ware widerrufen.",
+              "Man darf innerhalb von 14 Tagen widerrufen, muss aber einen triftigen Grund wie einen Mangel nennen."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Man darf innerhalb von 14 Tagen widerrufen, muss aber einen triftigen Grund wie einen Mangel nennen.",
+              "reason": "Der Widerruf braucht keine Begründung, auch ohne Mangel ist er möglich."
+            },
+            {
+              "text": "Man darf nur widerrufen, wenn der Händler im Vertrag zugestimmt hat; sonst bleibt der Kauf bindend.",
+              "reason": "Das Widerrufsrecht steht Verbrauchern von Gesetzes wegen zu, der Händler muss nicht zustimmen."
+            }
+          ]
+        },
+        {
+          "id": "01M8E09D00QTR6H2YF1RK1J0N1",
+          "slug": "wr8-vs-schutz-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=vs-schutz",
+          "question": "Wozu dient der Grundpreis beim Einkaufen?",
+          "concept": "Er nennt den Preis je Mengeneinheit, etwa je Kilogramm oder Liter, und macht dadurch Packungen unterschiedlicher Größe vergleichbar.",
+          "materiality": "material",
+          "sample_solution": "Eine Packung Müsli mit 500 Gramm kostet 3,00 Euro, eine mit 750 Gramm kostet 4,20 Euro. Der Grundpreis zeigt: 6,00 Euro je Kilogramm gegenüber 5,60 Euro je Kilogramm. Die größere Packung ist günstiger."
+        },
+        {
+          "id": "01M8E09D00BK2J5828912BJM6C",
+          "slug": "wr8-vs-schutz-extra",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=vs-schutz",
+          "question": "Wann ist das Europäische Verbraucherzentrum die richtige Anlaufstelle?",
+          "concept": "Wenn der Streit einen Händler mit Sitz in einem anderen EU-Land betrifft, zum Beispiel bei einer nicht gelieferten Bestellung.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Wenn der Streit einen Händler mit Sitz in einem anderen EU-Land betrifft, zum Beispiel bei einer nicht gelieferten Bestellung.",
+              "Wenn man verschiedene Produkte derselben Art unabhängig und nach festen Kriterien vergleichen möchte."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Wenn man verschiedene Produkte derselben Art unabhängig und nach festen Kriterien vergleichen möchte.",
+              "reason": "Produktvergleiche macht die Stiftung Warentest, nicht das Europäische Verbraucherzentrum."
+            },
+            {
+              "text": "Wenn man Streit mit einem Händler im eigenen Ort hat und Rat zu Vertrag und Klauseln sucht.",
+              "reason": "Dafür berät die Verbraucherzentrale im eigenen Land, es fehlt der grenzüberschreitende Bezug."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8E09D00C3N2X5A4FXVXQN0N",
+      "atom_uri": "urn:zam:atom:01M8E09D00C3N2X5A4FXVXQN0N",
+      "namespace": "zam-academy-wirtschaft-recht-realschule-8",
+      "slug": "wr8-vs-marketing",
+      "title": "Werbung und Kundenbindung durchschauen",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=vs-marketing",
+      "prerequisites": [
+        {
+          "atom_id": "01M8E09D00128VHJJV8NA9WJ7A",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-realschule-8",
+          "topic_code": "lb2",
+          "topic_title": "Verbraucherschutz und verantwortungsbewusstes Verbraucherverhalten"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "II",
+          "topic_code": "lb2",
+          "topic_title": "Verbraucherschutz und verantwortungsbewusstes Verbraucherverhalten",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Was soll ein Bonusguthaben für den nächsten Einkauf erreichen?",
+          "concept": "Kunden zu einem weiteren Einkauf beim selben Anbieter bewegen.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Kunden zu einem weiteren Einkauf beim selben Anbieter bewegen.",
+              "Allen Käufern einmalig den Grundpreis des Produkts anzeigen."
+            ],
+            "correct_index": 0
+          },
+          "slug": "wr8-vs-marketing-check",
+          "id": "01M8E09D00G0Y6JD7W955D0AVD",
+          "language": "de",
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=vs-marketing",
+          "materiality": "material"
+        },
+        {
+          "slug": "wr8-vs-marketing-kern",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Warum kann ein Rabatt mit Mindestumsatz deine tatsächlichen Ausgaben erhöhen?",
+          "concept": "Zusatzkäufe, die nötig sind, können mehr kosten als der Rabatt spart.",
+          "sample_solution": "Wer für 14 € einkaufen möchte und erst ab 20 € einen Rabatt von 4 € erhält, zahlt mit Zusatzkäufen mindestens 16 €. Das sind 2 € mehr.",
+          "id": "01M8E09D00387VYNN8AVK8N3TR",
+          "language": "de",
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=vs-marketing",
+          "materiality": "material"
+        }
+      ]
+    },
+    {
+      "id": "01M8E09D00K8D9XE31BZ20PB71",
+      "atom_uri": "urn:zam:atom:01M8E09D00K8D9XE31BZ20PB71",
+      "namespace": "zam-academy-wirtschaft-recht-realschule-8",
+      "slug": "wr8-vs-ecommerce",
+      "title": "E-Commerce: Chancen und Gefahren",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=vs-ecommerce",
+      "prerequisites": [
+        {
+          "atom_id": "01M8E09D000C8A6YP0876CFS8Q",
+          "type": "soft"
+        },
+        {
+          "atom_id": "01M8E09D00C3N2X5A4FXVXQN0N",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-realschule-8",
+          "topic_code": "lb2",
+          "topic_title": "Verbraucherschutz und verantwortungsbewusstes Verbraucherverhalten"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "II",
+          "topic_code": "lb2",
+          "topic_title": "Verbraucherschutz und verantwortungsbewusstes Verbraucherverhalten",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8E09D00FJY9EJZGEMSY4FV2",
+          "slug": "wr8-vs-ecommerce-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=vs-ecommerce",
+          "question": "Worauf muss man beim Preisvergleich in einer Preissuchmaschine besonders achten?",
+          "concept": "Auf den Gesamtpreis mit Versandkosten, denn ein niedriger Warenpreis kann durch hohe Versandkosten teurer werden.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Auf den Gesamtpreis mit Versandkosten, denn ein niedriger Warenpreis kann durch hohe Versandkosten teurer werden.",
+              "Auf den niedrigsten Warenpreis, denn Versandkosten sind bei allen Angeboten gleich hoch."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Auf den niedrigsten Warenpreis, denn Versandkosten sind bei allen Angeboten gleich hoch.",
+              "reason": "Versandkosten unterscheiden sich je nach Händler und können den Preis stark verändern."
+            },
+            {
+              "text": "Auf die Platzierung in der Liste, denn die obersten Angebote sind immer die günstigsten.",
+              "reason": "Die Reihenfolge kann durch Werbung beeinflusst sein und zeigt nicht den günstigsten Gesamtpreis."
+            }
+          ]
+        },
+        {
+          "id": "01M8E09D000KR3ZQ7C135T728M",
+          "slug": "wr8-vs-ecommerce-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=vs-ecommerce",
+          "question": "Woran erkennt man einen Fake-Shop?",
+          "concept": "An sehr niedrigen Preisen, unvollständigem Impressum, ausschließlicher Vorkasse und Bewertungen, die nur im Shop selbst stehen.",
+          "materiality": "material",
+          "sample_solution": "Ein Shop verkauft Markensneaker für ein Viertel des üblichen Preises, nennt keine Anschrift und akzeptiert nur Vorkasse. Emre findet außerhalb des Shops keine Bewertungen und bestellt dort nicht."
+        },
+        {
+          "slug": "wr8-vs-ecommerce-extra",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Wann gilt das 14-tägige Widerrufsrecht bei einem gewöhnlichen Onlinekauf von Waren in Deutschland?",
+          "concept": "In der Regel bei einem Fernabsatzvertrag zwischen Verbraucher und Unternehmer. Ausnahmen sind zu prüfen.",
+          "sample_solution": "Kaufst du normale Serienware im Onlinehandel als Verbraucher, besteht grundsätzlich ein 14-tägiges Widerrufsrecht. Bei einem privaten Verkäufer gibt es dieses gesetzliche Recht regelmäßig nicht.",
+          "id": "01M8E09D00R9TCX45VVE5CVZ1P",
+          "language": "de",
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=vs-ecommerce",
+          "materiality": "material"
+        }
+      ]
+    },
+    {
+      "id": "01M8E09D00CP315Y5QM1TYWKNK",
+      "atom_uri": "urn:zam:atom:01M8E09D00CP315Y5QM1TYWKNK",
+      "namespace": "zam-academy-wirtschaft-recht-realschule-8",
+      "slug": "wr8-vs-zahlung",
+      "title": "Zahlungsmöglichkeiten situationsgerecht wählen",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=vs-zahlung",
+      "prerequisites": [
+        {
+          "atom_id": "01M8E09D00K8D9XE31BZ20PB71",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-realschule-8",
+          "topic_code": "lb2",
+          "topic_title": "Verbraucherschutz und verantwortungsbewusstes Verbraucherverhalten"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "II",
+          "topic_code": "lb2",
+          "topic_title": "Verbraucherschutz und verantwortungsbewusstes Verbraucherverhalten",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8E09D0054SCK54MNZWFGSZS",
+          "slug": "wr8-vs-zahlung-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=vs-zahlung",
+          "question": "Wie verhält man sich richtig, wenn die Girocard verloren geht?",
+          "concept": "Die Karte sofort sperren lassen und danach die Kontoumsätze auf unbekannte Abbuchungen prüfen.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Die Karte sofort sperren lassen und danach die Kontoumsätze auf unbekannte Abbuchungen prüfen.",
+              "Ein paar Tage warten, ob sie wieder auftaucht, und erst dann die Bank informieren."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Ein paar Tage warten, ob sie wieder auftaucht, und erst dann die Bank informieren.",
+              "reason": "Bis zur Sperre kann jemand mit der Karte zahlen, deshalb zählt jede Stunde."
+            },
+            {
+              "text": "Zuerst Anzeige bei der Polizei erstatten, denn die Bank sperrt erst nach einer Anzeige.",
+              "reason": "Die Sperre geht sofort per Anruf; die Anzeige folgt bei Diebstahl danach und ist keine Voraussetzung."
+            }
+          ]
+        },
+        {
+          "id": "01M8E09D001HSS6QY0RCZRZTF5",
+          "slug": "wr8-vs-zahlung-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=vs-zahlung",
+          "question": "Woran erkennt man eine Phishing-Nachricht?",
+          "concept": "Sie kommt unaufgefordert, setzt unter Zeitdruck und verlangt über einen Link Zugangsdaten, PIN oder TAN, die Banken so nie abfragen.",
+          "materiality": "material",
+          "sample_solution": "Mia bekommt eine SMS, ihr Konto werde in 24 Stunden gesperrt, und soll über einen Link PIN und TAN eingeben. Sie erkennt die typischen Merkmale, öffnet den Link nicht und fragt über die Bank-App nach."
+        },
+        {
+          "id": "01M8E09D00Q7A73CQXTMEQHRE9",
+          "slug": "wr8-vs-zahlung-extra",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=vs-zahlung",
+          "question": "Wie lange kann man eine abgebuchte SEPA-Basislastschrift ohne Angabe von Gründen zurückholen?",
+          "concept": "Acht Wochen ab der Belastung des Kontos.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Acht Wochen ab der Belastung des Kontos.",
+              "Vier Wochen ab der Bestellung der Ware."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Vier Wochen ab der Bestellung der Ware.",
+              "reason": "Die Frist beträgt acht Wochen und beginnt mit der Belastung des Kontos, nicht mit der Bestellung."
+            },
+            {
+              "text": "Vierzehn Tage ab dem Erhalt der Ware.",
+              "reason": "Vierzehn Tage gelten für das Widerrufsrecht beim Kauf, nicht für die Rückgabe einer Lastschrift."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8E09D00T2D9FWR5K9HTF7N3",
+      "atom_uri": "urn:zam:atom:01M8E09D00T2D9FWR5K9HTF7N3",
+      "namespace": "zam-academy-wirtschaft-recht-realschule-8",
+      "slug": "wr8-vs-socialmedia",
+      "title": "Social Media bewerten: Recht, Geld und Daten",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=vs-socialmedia",
+      "prerequisites": [
+        {
+          "atom_id": "01M8E09D00C3N2X5A4FXVXQN0N",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-realschule-8",
+          "topic_code": "lb2",
+          "topic_title": "Verbraucherschutz und verantwortungsbewusstes Verbraucherverhalten"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "II",
+          "topic_code": "lb2",
+          "topic_title": "Verbraucherschutz und verantwortungsbewusstes Verbraucherverhalten",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8E09D00298RP2FXQKQBXTRV",
+          "slug": "wr8-vs-socialmedia-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=vs-socialmedia",
+          "question": "Was braucht man grundsätzlich, bevor man ein Foto mit einer erkennbaren Person öffentlich ins Netz stellt?",
+          "concept": "Die Einwilligung der abgebildeten Person, bei Minderjährigen auch der Eltern.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Die Einwilligung der abgebildeten Person, bei Minderjährigen auch der Eltern.",
+              "Nur die Erlaubnis des Netzwerks, bei dem man das Foto hochlädt und veröffentlicht."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Nur die Erlaubnis des Netzwerks, bei dem man das Foto hochlädt und veröffentlicht.",
+              "reason": "Das Netzwerk kann die Einwilligung der abgebildeten Person nicht ersetzen."
+            },
+            {
+              "text": "Gar nichts, wenn man selbst fotografiert hat und keinen Namen dazuschreibt.",
+              "reason": "Auch ohne Namen ist die Person erkennbar, und das Recht am eigenen Bild schützt sie."
+            }
+          ]
+        },
+        {
+          "id": "01M8E09D005YH7WXQJ16CASETZ",
+          "slug": "wr8-vs-socialmedia-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=vs-socialmedia",
+          "question": "Womit bezahlt man bei einem kostenlosen sozialen Netzwerk?",
+          "concept": "Mit persönlichen Daten und Aufmerksamkeit: Das Netzwerk verdient an Werbung, die anhand dieser Daten gezielt ausgespielt wird.",
+          "materiality": "material",
+          "sample_solution": "Ein Netzwerk kostet Kim nichts. Es merkt sich aber, welche Videos sie ansieht, und zeigt ihr dazu passende Werbung. Die Firmen bezahlen das Netzwerk dafür, Kim gezielt zu erreichen."
+        },
+        {
+          "id": "01M8E09D00FSPBS85RRSWVYZ6Q",
+          "slug": "wr8-vs-socialmedia-extra",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=vs-socialmedia",
+          "question": "Welches Recht hilft, wenn man wissen will, welche Daten ein Anbieter über einen gespeichert hat?",
+          "concept": "Das Auskunftsrecht nach der Datenschutz-Grundverordnung.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Das Auskunftsrecht nach der Datenschutz-Grundverordnung.",
+              "Das Recht am eigenen Bild nach dem Kunsturhebergesetz."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Das Recht am eigenen Bild nach dem Kunsturhebergesetz.",
+              "reason": "Dieses Recht schützt Bilder von Personen, gibt aber keinen Anspruch auf Auskunft."
+            },
+            {
+              "text": "Das Widerrufsrecht bei Fernabsatzverträgen aus dem Bürgerlichen Gesetzbuch.",
+              "reason": "Das Widerrufsrecht betrifft Kaufverträge im Fernabsatz, nicht gespeicherte Daten."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8E09D00EBSEP6A4Q626TXBF",
+      "atom_uri": "urn:zam:atom:01M8E09D00EBSEP6A4Q626TXBF",
+      "namespace": "zam-academy-wirtschaft-recht-realschule-8",
+      "slug": "wr8-re-ordnung",
+      "title": "Warum es Recht und Gesetze gibt",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=re-ordnung",
+      "prerequisites": [],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-realschule-8",
+          "topic_code": "lb3",
+          "topic_title": "Der Jugendliche in unserer Rechtsordnung"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "II",
+          "topic_code": "lb3",
+          "topic_title": "Der Jugendliche in unserer Rechtsordnung",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8E09D00QWNVNYWMDKKVCA73",
+          "slug": "wr8-re-ordnung-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=re-ordnung",
+          "question": "Welche Rechtsquelle steht in der Rangordnung des deutschen Rechts ganz oben?",
+          "concept": "Das Grundgesetz: Es enthält die Grundrechte, und alle anderen Rechtsregeln sind an es gebunden.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Das Grundgesetz: Es enthält die Grundrechte, und alle anderen Rechtsregeln sind an es gebunden.",
+              "Das Bürgerliche Gesetzbuch: Es regelt den Alltag der Menschen und geht deshalb allen anderen Regeln vor."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Das Bürgerliche Gesetzbuch: Es regelt den Alltag der Menschen und geht deshalb allen anderen Regeln vor.",
+              "reason": "Das Bürgerliche Gesetzbuch ist ein einfaches Gesetz und steht unter dem Grundgesetz."
+            },
+            {
+              "text": "Die Satzung einer Gemeinde: Sie gilt vor Ort und geht deshalb jeder Bundesregel vor.",
+              "reason": "Satzungen stehen auf einer unteren Stufe und dürfen höherem Recht nicht widersprechen."
+            }
+          ]
+        },
+        {
+          "id": "01M8E09D00175X3B99AWWGDCHX",
+          "slug": "wr8-re-ordnung-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=re-ordnung",
+          "question": "Wie unterscheiden sich Privatrecht und öffentliches Recht?",
+          "concept": "Im Privatrecht stehen sich Gleichberechtigte gegenüber, etwa bei einem Vertrag. Im öffentlichen Recht tritt der Staat den Bürgern mit Hoheitsgewalt gegenüber.",
+          "materiality": "material",
+          "sample_solution": "Mia kauft von Jonas ein gebrauchtes Handy: Beide sind gleichberechtigt und schließen einen Vertrag, das ist Privatrecht. Fährt Mia später bei Rot über die Ampel, hat der Staat die Verkehrsregel vorgegeben und setzt sie durch, das ist öffentliches Recht."
+        },
+        {
+          "id": "01M8E09D00EVVE0ADDX4MTBH1J",
+          "slug": "wr8-re-ordnung-extra",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=re-ordnung",
+          "question": "Was bedeutet die Ordnungsfunktion des Rechts?",
+          "concept": "Das Recht regelt das Zusammenleben, schafft Klarheit, was man voneinander erwarten darf, und entscheidet Streit nach festen Regeln.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Das Recht regelt das Zusammenleben, schafft Klarheit, was man voneinander erwarten darf, und entscheidet Streit nach festen Regeln.",
+              "Das Recht bewahrt vor allem Leben, Gesundheit und Eigentum der Schwächeren vor Übergriffen anderer."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Das Recht bewahrt vor allem Leben, Gesundheit und Eigentum der Schwächeren vor Übergriffen anderer.",
+              "reason": "Das beschreibt die Schutzfunktion des Rechts, nicht die Ordnungsfunktion."
+            },
+            {
+              "text": "Das Recht bestraft jeden, der gegen eine Anstandsregel oder eine Hausordnung verstößt.",
+              "reason": "Anstandsregeln setzt der Staat nicht mit Strafen durch; es geht um Rechtsregeln."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8E09D00886378TFXD26TW99",
+      "atom_uri": "urn:zam:atom:01M8E09D00886378TFXD26TW99",
+      "namespace": "zam-academy-wirtschaft-recht-realschule-8",
+      "slug": "wr8-re-rechtsquellen",
+      "title": "Rechtsquellen und Rechtsgebiete",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=re-rechtsquellen",
+      "prerequisites": [
+        {
+          "atom_id": "01M8E09D00EBSEP6A4Q626TXBF",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-realschule-8",
+          "topic_code": "lb3",
+          "topic_title": "Der Jugendliche in unserer Rechtsordnung"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "II",
+          "topic_code": "lb3",
+          "topic_title": "Der Jugendliche in unserer Rechtsordnung",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Welche Regel hat bei einem Widerspruch zwischen Realschulordnung und Hausregel Vorrang?",
+          "concept": "Die Realschulordnung als höherrangige Verordnung.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Die Realschulordnung als höherrangige Verordnung.",
+              "Die Hausregel, weil sie die einzelne Schule genauer beschreibt."
+            ],
+            "correct_index": 0
+          },
+          "slug": "wr8-re-rechtsquellen-check",
+          "id": "01M8E09D008AWHACS9SSTNNPND",
+          "language": "de",
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=re-rechtsquellen",
+          "materiality": "material"
+        },
+        {
+          "slug": "wr8-re-rechtsquellen-kern",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Woran erkennst du, ob eine Stadt öffentlich-rechtlich oder privatrechtlich handelt?",
+          "concept": "Maßgeblich sind ihre Rolle und die Rechtsgrundlage der Handlung.",
+          "sample_solution": "Beim Kauf von Stühlen schließt die Stadt einen privatrechtlichen Vertrag. Setzt sie hoheitlich eine Gebühr per Bescheid fest, handelt sie öffentlich-rechtlich.",
+          "id": "01M8E09D00632JRBF0BWJ31D2M",
+          "language": "de",
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=re-rechtsquellen",
+          "materiality": "material"
+        }
+      ]
+    },
+    {
+      "id": "01M8E09D00PPNHZ0CP8EHHR96Y",
+      "atom_uri": "urn:zam:atom:01M8E09D00PPNHZ0CP8EHHR96Y",
+      "namespace": "zam-academy-wirtschaft-recht-realschule-8",
+      "slug": "wr8-re-verantwortung",
+      "title": "Deliktfähigkeit und Strafmündigkeit",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=re-verantwortung",
+      "prerequisites": [
+        {
+          "atom_id": "01M8E09D00886378TFXD26TW99",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-realschule-8",
+          "topic_code": "lb3",
+          "topic_title": "Der Jugendliche in unserer Rechtsordnung"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "II",
+          "topic_code": "lb3",
+          "topic_title": "Der Jugendliche in unserer Rechtsordnung",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Ab wie vielen vollendeten Lebensjahren kommt in Deutschland strafrechtliche Verantwortlichkeit erstmals in Betracht?",
+          "concept": "Ab 14 Jahren, bei Jugendlichen unter Berücksichtigung ihrer Reife.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Ab 14 Jahren, bei Jugendlichen unter Berücksichtigung ihrer Reife.",
+              "Ab 7 Jahren, sofern sie über die Folgen ihrer Handlung nachdenken können."
+            ],
+            "correct_index": 0
+          },
+          "slug": "wr8-re-verantwortung-check",
+          "id": "01M8E09D00WSTT28YDDXVEH40D",
+          "language": "de",
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=re-verantwortung",
+          "materiality": "material"
+        },
+        {
+          "slug": "wr8-re-verantwortung-kern",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Warum kann ein 13-Jähriger trotz fehlender Strafmündigkeit für einen Schaden verantwortlich sein?",
+          "concept": "Die zivilrechtliche Haftung folgt eigenen Regeln und kann von seiner Einsicht abhängen.",
+          "sample_solution": "§ 19 StGB schließt strafrechtliche Schuld aus. Bei einem absichtlichen Steinwurf kann die nötige Einsicht im Sinne von § 828 BGB trotzdem vorliegen.",
+          "id": "01M8E09D008TH3ZGXSDM0XMZRZ",
+          "language": "de",
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=re-verantwortung",
+          "materiality": "material"
+        }
+      ]
+    },
+    {
+      "id": "01M8E09D00WWDC4BVVM6A99KBY",
+      "atom_uri": "urn:zam:atom:01M8E09D00WWDC4BVVM6A99KBY",
+      "namespace": "zam-academy-wirtschaft-recht-realschule-8",
+      "slug": "wr8-re-gesetz",
+      "title": "Gesetze lesen und einen Rechtsfall lösen",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=re-gesetz",
+      "prerequisites": [
+        {
+          "atom_id": "01M8E09D00886378TFXD26TW99",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-realschule-8",
+          "topic_code": "lb3",
+          "topic_title": "Der Jugendliche in unserer Rechtsordnung"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "II",
+          "topic_code": "lb3",
+          "topic_title": "Der Jugendliche in unserer Rechtsordnung",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8E09D008Y1D011XYPG1BJX3",
+          "slug": "wr8-re-gesetz-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=re-gesetz",
+          "question": "Was bezeichnet der Tatbestand einer Rechtsvorschrift?",
+          "concept": "Die Voraussetzungen, die erfüllt sein müssen, damit die Vorschrift auf einen Fall anzuwenden ist.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Die Voraussetzungen, die erfüllt sein müssen, damit die Vorschrift auf einen Fall anzuwenden ist.",
+              "Die Folge, die eintritt, sobald ein Fall unter die Vorschrift passt, zum Beispiel eine Pflicht."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Die Folge, die eintritt, sobald ein Fall unter die Vorschrift passt, zum Beispiel eine Pflicht.",
+              "reason": "Das ist die Rechtsfolge, das Dann der Vorschrift, nicht der Tatbestand."
+            },
+            {
+              "text": "Die Überschrift des Paragrafen, die das Thema der Vorschrift kurz benennt.",
+              "reason": "Die Überschrift hilft beim Finden, nennt aber nicht die Voraussetzungen."
+            }
+          ]
+        },
+        {
+          "id": "01M8E09D001H9JWJKBKQVX3ZT1",
+          "slug": "wr8-re-gesetz-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=re-gesetz",
+          "question": "In welchen Schritten löst man einen einfachen Rechtsfall?",
+          "concept": "Erst die Frage klären, dann die passende Vorschrift suchen, den Fall unter den Tatbestand fassen und schließlich das Ergebnis mit der Rechtsfolge nennen.",
+          "materiality": "material",
+          "sample_solution": "Frage: Muss Luis das geliehene Zelt zurückgeben? Vorschrift: § 604 Abs. 1 BGB. Das Zelt wurde bis Montag geliehen, die Zeit ist abgelaufen, also passt der Fall zum Tatbestand. Ergebnis: Luis muss es zurückgeben."
+        },
+        {
+          "id": "01M8E09D00X2CH90543X91GDNT",
+          "slug": "wr8-re-gesetz-extra",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=re-gesetz",
+          "question": "Wie liest man die Angabe § 433 Abs. 1 Satz 1 BGB?",
+          "concept": "Paragraf 433 des Bürgerlichen Gesetzbuchs, Absatz 1, erster Satz.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Paragraf 433 des Bürgerlichen Gesetzbuchs, Absatz 1, erster Satz.",
+              "Paragraf 433 des Bürgerlichen Gesetzbuchs, Satz 1, erster Absatz."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Paragraf 433 des Bürgerlichen Gesetzbuchs, Satz 1, erster Absatz.",
+              "reason": "Absatz und Satz sind vertauscht: Erst kommt der Absatz, dann der Satz."
+            },
+            {
+              "text": "Paragraf 1 des Bürgerlichen Gesetzbuchs, Absatz 433, erster Satz.",
+              "reason": "Die Nummer 433 gehört zum Paragrafen, nicht zum Absatz."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8E09D00DRNDEVBAMXQJM7X2",
+      "atom_uri": "urn:zam:atom:01M8E09D00DRNDEVBAMXQJM7X2",
+      "namespace": "zam-academy-wirtschaft-recht-realschule-8",
+      "slug": "wr8-re-lebensalter",
+      "title": "Rechtsfähigkeit und Geschäftsfähigkeit",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=re-lebensalter",
+      "prerequisites": [
+        {
+          "atom_id": "01M8E09D00WWDC4BVVM6A99KBY",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-realschule-8",
+          "topic_code": "lb3",
+          "topic_title": "Der Jugendliche in unserer Rechtsordnung"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "II",
+          "topic_code": "lb3",
+          "topic_title": "Der Jugendliche in unserer Rechtsordnung",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "In welcher Stufe der Geschäftsfähigkeit ist ein 14-Jähriger nach dem BGB?",
+          "concept": "Er ist beschränkt geschäftsfähig. Das gilt regelmäßig von 7 bis 17 Jahren.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Er ist beschränkt geschäftsfähig. Das gilt regelmäßig von 7 bis 17 Jahren.",
+              "Er ist voll geschäftsfähig, weil er das 14. Lebensjahr vollendet hat."
+            ],
+            "correct_index": 0
+          },
+          "slug": "wr8-re-lebensalter-check",
+          "id": "01M8E09D00CGBC0NZF6C07Z94W",
+          "language": "de",
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=re-lebensalter",
+          "materiality": "material"
+        },
+        {
+          "id": "01M8E09D00TM23X5DCJ9X1PNR5",
+          "slug": "wr8-re-lebensalter-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=re-lebensalter",
+          "question": "Warum ist der Ratenvertrag einer 15-Jährigen ohne Zustimmung der Eltern zunächst schwebend unwirksam?",
+          "concept": "Sie ist beschränkt geschäftsfähig, und der Vertrag bringt nicht nur Vorteile. Er gilt erst, wenn die Eltern ihn genehmigen.",
+          "materiality": "material",
+          "sample_solution": "Lena, 15, unterschreibt allein einen Ratenvertrag über ein Tablet. Ihre Eltern wissen nichts davon, der Vertrag hängt in der Schwebe. Genehmigen die Eltern, gilt er von Anfang an; verweigern sie, ist er unwirksam."
+        },
+        {
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Wann kann ein Kauf eines 15-Jährigen nach § 110 BGB ohne ausdrückliche Zustimmung wirksam werden?",
+          "concept": "Wenn er vollständig mit Mitteln bezahlt, die ihm zur freien Verfügung oder für diesen Zweck überlassen wurden.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Wenn er vollständig mit Mitteln bezahlt, die ihm zur freien Verfügung oder für diesen Zweck überlassen wurden.",
+              "Wenn er die erste von mehreren Raten mit Taschengeld bezahlt."
+            ],
+            "correct_index": 0
+          },
+          "slug": "wr8-re-lebensalter-extra",
+          "id": "01M8E09D00YC8FB053GGWVJ0AM",
+          "language": "de",
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=re-lebensalter",
+          "materiality": "material"
+        }
+      ]
+    },
+    {
+      "id": "01M8E09D00ARRVH11ST18N2PT6",
+      "atom_uri": "urn:zam:atom:01M8E09D00ARRVH11ST18N2PT6",
+      "namespace": "zam-academy-wirtschaft-recht-realschule-8",
+      "slug": "wr8-re-jugendschutz",
+      "title": "Das Jugendschutzgesetz",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=re-jugendschutz",
+      "prerequisites": [
+        {
+          "atom_id": "01M8E09D00WWDC4BVVM6A99KBY",
+          "type": "soft"
+        },
+        {
+          "atom_id": "01M8E09D00PPNHZ0CP8EHHR96Y",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-realschule-8",
+          "topic_code": "lb3",
+          "topic_title": "Der Jugendliche in unserer Rechtsordnung"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "II",
+          "topic_code": "lb3",
+          "topic_title": "Der Jugendliche in unserer Rechtsordnung",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8E09D00F9BTRMTWAE21PRMW",
+          "slug": "wr8-re-jugendschutz-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=re-jugendschutz",
+          "question": "Darf eine 15-Jährige im Kino einen Film mit der Freigabe „ab 16“ sehen, wenn ihre Eltern dabei sind?",
+          "concept": "Nein, die Altersfreigabe ist verbindlich und gilt auch dann, wenn die Eltern dabei sind.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Nein, die Altersfreigabe ist verbindlich und gilt auch dann, wenn die Eltern dabei sind.",
+              "Ja, ab 14 Jahren darf man mit den Eltern jeden Film sehen."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Ja, ab 14 Jahren darf man mit den Eltern jeden Film sehen.",
+              "reason": "Eine Begleitung hebt die Freigabe nicht auf; die Ausnahme gilt nur für Kinder ab 6 bei Filmen „ab 12“."
+            },
+            {
+              "text": "Ja, die Angabe „ab 16“ ist nur eine Empfehlung der Filmwirtschaft.",
+              "reason": "Die Kennzeichen sind keine Empfehlung, sondern nach dem Jugendschutzgesetz verbindlich."
+            }
+          ]
+        },
+        {
+          "id": "01M8E09D00S607P5EMQESJY5KA",
+          "slug": "wr8-re-jugendschutz-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=re-jugendschutz",
+          "question": "Wie ist der Aufenthalt von Jugendlichen unter 16 Jahren in einer Gaststätte ohne Begleitung geregelt?",
+          "concept": "Ohne Begleitung durch Eltern oder eine erziehungsbeauftragte Person dürfen sie dort nur zwischen 5 und 23 Uhr eine Mahlzeit oder ein Getränk einnehmen.",
+          "materiality": "material",
+          "sample_solution": "Die 15-jährige Emma isst um 19 Uhr allein in einer Pizzeria zu Abend, das ist erlaubt. Um 23.30 Uhr möchte sie dort noch bleiben. Jetzt braucht sie die Begleitung ihrer Eltern oder einer erziehungsbeauftragten Person."
+        },
+        {
+          "id": "01M8E09D006XTW35N3GJJ4A6X3",
+          "slug": "wr8-re-jugendschutz-extra",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=re-jugendschutz",
+          "question": "Ab welchem Alter dürfen Tabakwaren und E-Zigaretten nach dem Jugendschutzgesetz abgegeben werden?",
+          "concept": "Erst ab 18 Jahren, auch E-Zigaretten und E-Shishas ohne Nikotin.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Erst ab 18 Jahren, auch E-Zigaretten und E-Shishas ohne Nikotin.",
+              "Ab 16 Jahren, nur E-Zigaretten ohne Nikotin schon ab 14 Jahren."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Ab 16 Jahren, nur E-Zigaretten ohne Nikotin schon ab 14 Jahren.",
+              "reason": "Das Gesetz stellt nikotinfreie E-Zigaretten den Tabakwaren gleich; alles gibt es erst ab 18."
+            },
+            {
+              "text": "Ab 16 Jahren, genau wie Bier, Wein und Sekt.",
+              "reason": "Bier, Wein und Sekt gibt es ab 16, Tabakwaren aber erst ab 18."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8E09D00KMR9BPAMZVNZWWWF",
+      "atom_uri": "urn:zam:atom:01M8E09D00KMR9BPAMZVNZWWWF",
+      "namespace": "zam-academy-wirtschaft-recht-realschule-8",
+      "slug": "wr8-ve-eigentum",
+      "title": "Besitz und Eigentum",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=ve-eigentum",
+      "prerequisites": [
+        {
+          "atom_id": "01M8E09D00WWDC4BVVM6A99KBY",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-realschule-8",
+          "topic_code": "lb4",
+          "topic_title": "Privatrechtliche Regelungen"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "II",
+          "topic_code": "lb4",
+          "topic_title": "Privatrechtliche Regelungen",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8E09D00Y1CNT21S59ZJSH86",
+          "slug": "wr8-ve-eigentum-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=ve-eigentum",
+          "question": "Was kennzeichnet den Besitz einer Sache im Sinne des Bürgerlichen Gesetzbuchs?",
+          "concept": "Die tatsächliche Gewalt über die Sache: Man hat sie in der Hand oder in seinem Gewahrsam.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Die tatsächliche Gewalt über die Sache: Man hat sie in der Hand oder in seinem Gewahrsam.",
+              "Die rechtliche Zuordnung der Sache: Man ist derjenige, dem sie nach dem Gesetz gehört."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Die rechtliche Zuordnung der Sache: Man ist derjenige, dem sie nach dem Gesetz gehört.",
+              "reason": "Das beschreibt das Eigentum, nicht den Besitz."
+            },
+            {
+              "text": "Das Recht, mit der Sache nach Belieben zu verfahren und andere von ihr auszuschließen.",
+              "reason": "Dieses Recht hat der Eigentümer nach § 903 BGB, nicht jeder Besitzer."
+            }
+          ]
+        },
+        {
+          "id": "01M8E09D007EQV8CMAHEJW0WPS",
+          "slug": "wr8-ve-eigentum-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=ve-eigentum",
+          "question": "Warum wird ein Käufer, der ein gestohlenes Fahrrad kauft, nicht Eigentümer?",
+          "concept": "Eine gestohlene Sache kann man auch gutgläubig grundsätzlich nicht erwerben, weil sie dem Eigentümer abhandengekommen ist. Er kann das Rad vom Besitzer herausverlangen.",
+          "materiality": "material",
+          "sample_solution": "Mira kauft auf dem Flohmarkt ein Rad von einem Unbekannten und ahnt nichts vom Diebstahl. Das Rad gehört weiter Ben, dem es gestohlen wurde. Mira ist nur Besitzerin und muss es auf Verlangen herausgeben."
+        },
+        {
+          "id": "01M8E09D00DPT03NJWWHK4JQRW",
+          "slug": "wr8-ve-eigentum-extra",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=ve-eigentum",
+          "question": "Wer ist Eigentümer einer verlorenen Sache, solange sie beim Finder liegt?",
+          "concept": "Weiterhin der bisherige Eigentümer; der Finder wird zunächst nur Besitzer.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Weiterhin der bisherige Eigentümer; der Finder wird zunächst nur Besitzer.",
+              "Der Finder, weil er die Sache gefunden und an sich genommen hat."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Der Finder, weil er die Sache gefunden und an sich genommen hat.",
+              "reason": "Finden macht nicht zum Eigentümer; erst nach einer Frist nach der Fundanzeige kann das eintreten."
+            },
+            {
+              "text": "Niemand, denn verlorene Sachen gelten sofort als herrenlos.",
+              "reason": "Eine Sache wird nur herrenlos, wenn der Eigentümer auf das Eigentum verzichtet, nicht schon durch Verlieren."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8E09D00VTXB78NTN06DFAYF",
+      "atom_uri": "urn:zam:atom:01M8E09D00VTXB78NTN06DFAYF",
+      "namespace": "zam-academy-wirtschaft-recht-realschule-8",
+      "slug": "wr8-ve-uebereignung",
+      "title": "Wie Eigentum übergeht",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=ve-uebereignung",
+      "prerequisites": [
+        {
+          "atom_id": "01M8E09D00KMR9BPAMZVNZWWWF",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-realschule-8",
+          "topic_code": "lb4",
+          "topic_title": "Privatrechtliche Regelungen"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "II",
+          "topic_code": "lb4",
+          "topic_title": "Privatrechtliche Regelungen",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Was ist zusätzlich zur Auflassung im Regelfall zum Eigentumsübergang eines Grundstücks erforderlich?",
+          "concept": "Die Eintragung des Erwerbers im Grundbuch.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Die Eintragung des Erwerbers im Grundbuch.",
+              "Die Übergabe eines Schlüssels an den Erwerber."
+            ],
+            "correct_index": 0
+          },
+          "slug": "wr8-ve-uebereignung-check",
+          "id": "01M8E09D004MJ9CMK9P3C4N55D",
+          "language": "de",
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=ve-uebereignung",
+          "materiality": "material"
+        },
+        {
+          "slug": "wr8-ve-uebereignung-kern",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Warum kann jemand die Schlüssel zum Haus haben, ohne Eigentümer des Grundstücks zu sein?",
+          "concept": "Schlüssel können Besitz vermitteln. Für Eigentum sind Auflassung und Grundbucheintragung erforderlich.",
+          "sample_solution": "Die Käuferin kann das Haus bereits tatsächlich nutzen. Fehlt ihr Grundbucheintrag, ist das Grundstück im gewöhnlichen Kaufgeschäft noch nicht übereignet.",
+          "id": "01M8E09D00K3J1E2RATZA71XK8",
+          "language": "de",
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=ve-uebereignung",
+          "materiality": "material"
+        }
+      ]
+    },
+    {
+      "id": "01M8E09D005PGHTFPQW7G7VHWE",
+      "atom_uri": "urn:zam:atom:01M8E09D005PGHTFPQW7G7VHWE",
+      "namespace": "zam-academy-wirtschaft-recht-realschule-8",
+      "slug": "wr8-ve-eigentum-grenzen",
+      "title": "Eigentum verpflichtet und Werke sind geschützt",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=ve-eigentum-grenzen",
+      "prerequisites": [
+        {
+          "atom_id": "01M8E09D00KMR9BPAMZVNZWWWF",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-realschule-8",
+          "topic_code": "lb4",
+          "topic_title": "Privatrechtliche Regelungen"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "II",
+          "topic_code": "lb4",
+          "topic_title": "Privatrechtliche Regelungen",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Was meint die Sozialpflichtigkeit des Eigentums?",
+          "concept": "Der Gebrauch des Eigentums soll auch dem Wohl der Allgemeinheit dienen.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Der Gebrauch des Eigentums soll auch dem Wohl der Allgemeinheit dienen.",
+              "Eigentum schützt jede Nutzung vor gesetzlichen Einschränkungen."
+            ],
+            "correct_index": 0
+          },
+          "slug": "wr8-ve-eigentum-grenzen-check",
+          "id": "01M8E09D00D1DMSBRTACTS7TA6",
+          "language": "de",
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=ve-eigentum-grenzen",
+          "materiality": "material"
+        },
+        {
+          "slug": "wr8-ve-eigentum-grenzen-kern",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Warum darfst du ein gekauftes Foto nicht allein aufgrund des Kaufs öffentlich hochladen?",
+          "concept": "Das Eigentum an einer Kopie umfasst nicht automatisch das Recht, das Werk zu veröffentlichen.",
+          "sample_solution": "Wer einen Fotoabzug besitzt, darf ihn zum Beispiel aufhängen. Für den Upload braucht es eine passende Erlaubnis oder eine andere Rechtsgrundlage.",
+          "id": "01M8E09D00GHR4EWVWFCS4WHXY",
+          "language": "de",
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=ve-eigentum-grenzen",
+          "materiality": "material"
+        }
+      ]
+    },
+    {
+      "id": "01M8E09D005P305W3Z7D9C70TV",
+      "atom_uri": "urn:zam:atom:01M8E09D005P305W3Z7D9C70TV",
+      "namespace": "zam-academy-wirtschaft-recht-realschule-8",
+      "slug": "wr8-ve-kaufvertrag",
+      "title": "Wie ein Kaufvertrag entsteht",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=ve-kaufvertrag",
+      "prerequisites": [
+        {
+          "atom_id": "01M8E09D00DRNDEVBAMXQJM7X2",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-realschule-8",
+          "topic_code": "lb4",
+          "topic_title": "Privatrechtliche Regelungen"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "II",
+          "topic_code": "lb4",
+          "topic_title": "Privatrechtliche Regelungen",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8E09D00KPVH4B4DAB7FX60R",
+          "slug": "wr8-ve-kaufvertrag-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=ve-kaufvertrag",
+          "question": "Wann kommt ein Kaufvertrag zustande?",
+          "concept": "Sobald ein Antrag und eine dazu passende Annahme vorliegen, also zwei übereinstimmende Willenserklärungen.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Sobald ein Antrag und eine dazu passende Annahme vorliegen, also zwei übereinstimmende Willenserklärungen.",
+              "Erst wenn die Ware übergeben und der Kaufpreis vollständig bezahlt worden ist."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Erst wenn die Ware übergeben und der Kaufpreis vollständig bezahlt worden ist.",
+              "reason": "Übergabe und Zahlung sind erst die Erfüllung des schon bestehenden Vertrags."
+            },
+            {
+              "text": "Erst wenn beide Seiten den Vertrag schriftlich unterschrieben und bestätigt haben.",
+              "reason": "Für die meisten Kaufverträge gilt Formfreiheit; eine mündliche Einigung genügt."
+            }
+          ]
+        },
+        {
+          "id": "01M8E09D00XWP7R7K2MNWGW712",
+          "slug": "wr8-ve-kaufvertrag-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=ve-kaufvertrag",
+          "question": "Warum ist eine Annahme mit Änderungen keine Annahme im Rechtssinn?",
+          "concept": "Sie gilt als Ablehnung des Antrags verbunden mit einem neuen Antrag. Ein Vertrag entsteht erst, wenn der andere diesem neuen Antrag zustimmt.",
+          "materiality": "material",
+          "sample_solution": "Anna bietet ihr Fahrrad für 120 Euro an, Ben antwortet: „Ich nehme es für 100 Euro.“ Das ist keine Annahme, sondern ein neuer Antrag. Erst wenn Anna sagt: „Einverstanden“, ist der Vertrag da."
+        },
+        {
+          "id": "01M8E09D00PR9BYZ9SZPAXYCH6",
+          "slug": "wr8-ve-kaufvertrag-extra",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=ve-kaufvertrag",
+          "question": "Wie ist ein Fahrrad mit Preisschild im Schaufenster rechtlich einzuordnen?",
+          "concept": "Als unverbindliche Auslage, nicht als Antrag: Die Kunden sollen selbst ein Angebot abgeben.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Als unverbindliche Auslage, nicht als Antrag: Die Kunden sollen selbst ein Angebot abgeben.",
+              "Als verbindlicher Antrag, den jeder Kunde durch „Ich nehme es“ annehmen kann."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Als verbindlicher Antrag, den jeder Kunde durch „Ich nehme es“ annehmen kann.",
+              "reason": "Dann müsste der Händler sein einziges Rad an mehrere Kunden verkaufen; die Auslage ist kein Antrag."
+            },
+            {
+              "text": "Als Annahme, die den Vertrag mit dem ersten Kunden sofort abschließt.",
+              "reason": "Eine Annahme setzt einen Antrag voraus; die Auslage ist selbst weder Antrag noch Annahme."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8E09D0047YAQYPVBJQQCA68",
+      "atom_uri": "urn:zam:atom:01M8E09D0047YAQYPVBJQQCA68",
+      "namespace": "zam-academy-wirtschaft-recht-realschule-8",
+      "slug": "wr8-ve-erfuellung",
+      "title": "Verpflichtung und Erfüllung beim Kauf",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=ve-erfuellung",
+      "prerequisites": [
+        {
+          "atom_id": "01M8E09D005P305W3Z7D9C70TV",
+          "type": "soft"
+        },
+        {
+          "atom_id": "01M8E09D00VTXB78NTN06DFAYF",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-realschule-8",
+          "topic_code": "lb4",
+          "topic_title": "Privatrechtliche Regelungen"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "II",
+          "topic_code": "lb4",
+          "topic_title": "Privatrechtliche Regelungen",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8E09D00MV8R15RREWQY0ASF",
+          "slug": "wr8-ve-erfuellung-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=ve-erfuellung",
+          "question": "Was bewirkt der Abschluss eines Kaufvertrags für das Eigentum an der Ware?",
+          "concept": "Noch nichts: Der Vertrag verpflichtet nur, das Eigentum geht erst durch Einigung und Übergabe über.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Noch nichts: Der Vertrag verpflichtet nur, das Eigentum geht erst durch Einigung und Übergabe über.",
+              "Das Eigentum geht sofort mit dem Vertragsschluss auf den Käufer über."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Das Eigentum geht sofort mit dem Vertragsschluss auf den Käufer über.",
+              "reason": "Der Vertrag schafft nur Ansprüche; das Eigentum wechselt erst mit Einigung und Übergabe."
+            },
+            {
+              "text": "Das Eigentum geht erst über, wenn der Käufer den Kaufpreis vollständig gezahlt hat.",
+              "reason": "Ohne Eigentumsvorbehalt hängt der Eigentumsübergang nicht von der Zahlung ab."
+            }
+          ]
+        },
+        {
+          "id": "01M8E09D005JJWM9DDSSXDSNVX",
+          "slug": "wr8-ve-erfuellung-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=ve-erfuellung",
+          "question": "Was unterscheidet das Verpflichtungsgeschäft vom Erfüllungsgeschäft?",
+          "concept": "Das Verpflichtungsgeschäft, der Kaufvertrag, begründet nur Pflichten. Die Erfüllungsgeschäfte, Übereignung der Ware und Zahlung, erfüllen diese Pflichten.",
+          "materiality": "material",
+          "sample_solution": "Nina vereinbart mit einem Händler den Kauf eines Tablets für 250 Euro: Das ist der Vertrag, noch gehört das Tablet dem Händler. Am Abholtag übergibt er es, beide sind sich über den Eigentumsübergang einig, und Nina zahlt. Damit sind die Pflichten erfüllt."
+        },
+        {
+          "id": "01M8E09D00YFM12KHA6E5VXTXN",
+          "slug": "wr8-ve-erfuellung-extra",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=ve-erfuellung",
+          "question": "Wer ist Eigentümer, wenn der Käufer schon gezahlt hat, der Verkäufer die Ware aber noch nicht übergeben hat?",
+          "concept": "Weiterhin der Verkäufer: Der Käufer hat nur einen Anspruch auf Übergabe und Eigentumsverschaffung.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Weiterhin der Verkäufer: Der Käufer hat nur einen Anspruch auf Übergabe und Eigentumsverschaffung.",
+              "Der Käufer, denn mit der Zahlung geht das Eigentum auf ihn über."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Der Käufer, denn mit der Zahlung geht das Eigentum auf ihn über.",
+              "reason": "Das Eigentum geht erst durch Einigung und Übergabe über, nicht durch die Zahlung."
+            },
+            {
+              "text": "Niemand, bis beide Seiten den Eigentumsübergang schriftlich bestätigt haben.",
+              "reason": "Der Verkäufer bleibt Eigentümer; für die Übereignung wird keine Schriftform verlangt."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8E09D005JNMD86SVC8F95S3",
+      "atom_uri": "urn:zam:atom:01M8E09D005JNMD86SVC8F95S3",
+      "namespace": "zam-academy-wirtschaft-recht-realschule-8",
+      "slug": "wr8-ve-leistungsort",
+      "title": "Leistungsort und Eigentumsvorbehalt",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=ve-leistungsort",
+      "prerequisites": [
+        {
+          "atom_id": "01M8E09D0047YAQYPVBJQQCA68",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-realschule-8",
+          "topic_code": "lb4",
+          "topic_title": "Privatrechtliche Regelungen"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "II",
+          "topic_code": "lb4",
+          "topic_title": "Privatrechtliche Regelungen",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8E09D002KT2BJZ06G03AMCK",
+          "slug": "wr8-ve-leistungsort-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=ve-leistungsort",
+          "question": "Wo ist der Leistungsort beim Kauf, wenn nichts zum Lieferort vereinbart wurde?",
+          "concept": "Am Wohnsitz oder im Betrieb des Verkäufers; der Käufer muss die Ware dort abholen.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Am Wohnsitz oder im Betrieb des Verkäufers; der Käufer muss die Ware dort abholen.",
+              "Am Wohnsitz des Käufers; der Verkäufer muss die Ware zu ihm bringen."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Am Wohnsitz des Käufers; der Verkäufer muss die Ware zu ihm bringen.",
+              "reason": "Das wäre eine Bringschuld, die man vereinbaren muss oder die sich aus den Umständen ergibt; im Zweifel gilt der Sitz des Verkäufers."
+            },
+            {
+              "text": "Am Wohnsitz des Käufers, aber nur, wenn der Verkäufer die Versandkosten übernimmt.",
+              "reason": "Allein die Übernahme der Versandkosten macht den Zielort nicht zum Leistungsort."
+            }
+          ]
+        },
+        {
+          "id": "01M8E09D00KGX3RZC9S1CXT7HF",
+          "slug": "wr8-ve-leistungsort-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=ve-leistungsort",
+          "question": "Welchen Zweck hat der Eigentumsvorbehalt beim Kauf auf Raten?",
+          "concept": "Er schützt den Verkäufer, der die Ware vor der Zahlung liefert: Er bleibt Eigentümer, bis der Kaufpreis vollständig bezahlt ist.",
+          "materiality": "material",
+          "sample_solution": "Ein Händler überlässt Kim ein Notebook gegen zwölf Monatsraten. Weil er sich das Eigentum vorbehalten hat, gehört das Notebook ihm bis zur letzten Rate. Zahlt Kim nicht mehr, steht der Händler besser da als mit einer bloßen Geldforderung."
+        },
+        {
+          "id": "01M8E09D00W3B5H173JN5QWAMW",
+          "slug": "wr8-ve-leistungsort-extra",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=ve-leistungsort",
+          "question": "Wann kann ein Verkäufer die unter Eigentumsvorbehalt gelieferte Ware herausverlangen?",
+          "concept": "Erst wenn er vom Vertrag zurückgetreten ist; vorher kann er sie nicht herausverlangen.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Erst wenn er vom Vertrag zurückgetreten ist; vorher kann er sie nicht herausverlangen.",
+              "Sobald der Käufer mit einer einzigen Rate auch nur einen Tag in Zahlungsverzug ist."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Sobald der Käufer mit einer einzigen Rate auch nur einen Tag in Zahlungsverzug ist.",
+              "reason": "Eine kurze Verspätung genügt nicht; der Verkäufer muss erst wirksam vom Vertrag zurücktreten."
+            },
+            {
+              "text": "Jederzeit, denn die Ware gehört ihm noch, und er darf sie sich selbst holen.",
+              "reason": "Eigenmächtiges Wegnehmen ist nicht erlaubt; der Vorbehalt allein gibt noch kein Herausgaberecht."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8E09D00BNVMRR3297T0042Z",
+      "atom_uri": "urn:zam:atom:01M8E09D00BNVMRR3297T0042Z",
+      "namespace": "zam-academy-wirtschaft-recht-realschule-8",
+      "slug": "wr8-ve-verzug",
+      "title": "Zahlungs- und Lieferungsverzug",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=ve-verzug",
+      "prerequisites": [
+        {
+          "atom_id": "01M8E09D005JNMD86SVC8F95S3",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-realschule-8",
+          "topic_code": "lb4",
+          "topic_title": "Privatrechtliche Regelungen"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "II",
+          "topic_code": "lb4",
+          "topic_title": "Privatrechtliche Regelungen",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8E09D00DNFKMXAFRF9NTNDY",
+          "slug": "wr8-ve-verzug-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=ve-verzug",
+          "question": "Wie kann ein Käufer vom Kaufvertrag zurücktreten, wenn der Verkäufer die fällige Lieferung nicht erbringt?",
+          "concept": "Er setzt dem Verkäufer eine angemessene Frist; liefert dieser bis dahin nicht, kann er zurücktreten.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Er setzt dem Verkäufer eine angemessene Frist; liefert dieser bis dahin nicht, kann er zurücktreten.",
+              "Er kann sofort zurücktreten, denn schon ein Tag Verspätung beendet jeden Kaufvertrag."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Er kann sofort zurücktreten, denn schon ein Tag Verspätung beendet jeden Kaufvertrag.",
+              "reason": "In der Regel braucht es zuerst eine angemessene Fristsetzung."
+            },
+            {
+              "text": "Er muss warten, bis ein Gericht den Verzug des Verkäufers festgestellt hat.",
+              "reason": "Ein Gerichtsurteil ist für den Rücktritt nicht nötig."
+            }
+          ]
+        },
+        {
+          "id": "01M8E09D00JBAQNPFBYPA7Y348",
+          "slug": "wr8-ve-verzug-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=ve-verzug",
+          "question": "Unter welchen Voraussetzungen kommt ein Schuldner in Verzug?",
+          "concept": "Die Leistung ist fällig, er wurde gemahnt (außer bei festem Kalendertermin oder endgültiger Weigerung), und er hat die Verspätung zu vertreten.",
+          "materiality": "material",
+          "sample_solution": "Mara soll eine Rechnung bis zum 15. März bezahlen. Weil der Termin im Kalender steht, braucht es keine Mahnung. Zahlt sie am 20. März noch immer nicht, ohne dass etwas sie am Zahlen hindert, ist sie in Verzug."
+        },
+        {
+          "id": "01M8E09D00H3A3NW5GE27WG4PQ",
+          "slug": "wr8-ve-verzug-extra",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=ve-verzug",
+          "question": "Wie hoch ist der Verzugszinssatz für Geldschulden von Verbrauchern im Vergleich zum Basiszinssatz?",
+          "concept": "Fünf Prozentpunkte über dem Basiszinssatz, so legt es das Bürgerliche Gesetzbuch fest.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Fünf Prozentpunkte über dem Basiszinssatz, so legt es das Bürgerliche Gesetzbuch fest.",
+              "Zwei Prozentpunkte über dem Basiszinssatz, damit Verbraucher nicht überfordert werden."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Zwei Prozentpunkte über dem Basiszinssatz, damit Verbraucher nicht überfordert werden.",
+              "reason": "Das Gesetz nennt für Geldschulden fünf Prozentpunkte über dem Basiszinssatz."
+            },
+            {
+              "text": "Neun Prozentpunkte über dem Basiszinssatz, damit Verzug für Verbraucher teuer wird.",
+              "reason": "Neun Prozentpunkte gelten nur für Entgeltforderungen, wenn kein Verbraucher an dem Geschäft beteiligt ist."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8E09D00RDXPBS2JEFAFMAGC",
+      "atom_uri": "urn:zam:atom:01M8E09D00RDXPBS2JEFAFMAGC",
+      "namespace": "zam-academy-wirtschaft-recht-realschule-8",
+      "slug": "wr8-ve-sachmangel",
+      "title": "Sachmängel beim Kauf",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=ve-sachmangel",
+      "prerequisites": [
+        {
+          "atom_id": "01M8E09D005P305W3Z7D9C70TV",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-realschule-8",
+          "topic_code": "lb4",
+          "topic_title": "Privatrechtliche Regelungen"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "II",
+          "topic_code": "lb4",
+          "topic_title": "Privatrechtliche Regelungen",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8E09D00TZDBPSDEVEPNY579",
+          "slug": "wr8-ve-sachmangel-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=ve-sachmangel",
+          "question": "Wie lange verjähren die Mängelansprüche des Käufers bei einer neuen Sache?",
+          "concept": "Zwei Jahre, gerechnet ab der Ablieferung der Sache.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Zwei Jahre, gerechnet ab der Ablieferung der Sache.",
+              "Ein Jahr, gerechnet ab dem Tag des Vertragsschlusses."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Ein Jahr, gerechnet ab dem Tag des Vertragsschlusses.",
+              "reason": "Die Frist beträgt zwei Jahre und beginnt mit der Ablieferung, nicht mit dem Vertragsschluss."
+            },
+            {
+              "text": "Sechs Monate, gerechnet ab der Ablieferung der Sache.",
+              "reason": "Sechs Monate sind keine gesetzliche Verjährungsfrist für neue Sachen; es sind zwei Jahre."
+            }
+          ]
+        },
+        {
+          "id": "01M8E09D0080QAJBKNDJS8QDNK",
+          "slug": "wr8-ve-sachmangel-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=ve-sachmangel",
+          "question": "Worin unterscheiden sich gesetzliche Gewährleistung und Garantie?",
+          "concept": "Die Gewährleistung ist die gesetzliche Pflicht des Verkäufers für Mängel. Die Garantie ist ein freiwilliges Zusatzversprechen, meist des Herstellers, mit eigenen Bedingungen.",
+          "materiality": "material",
+          "sample_solution": "Ein Händler verkauft einen Fernseher mit Herstellergarantie auf fünf Jahre. Nach 30 Monaten fällt das Gerät aus. Die gesetzliche Gewährleistung gegen den Händler ist dann verjährt, die Garantie läuft noch: Der Käufer wendet sich nach deren Bedingungen an den Hersteller."
+        },
+        {
+          "id": "01M8E09D00VNFSBVW2CQ6N4TWM",
+          "slug": "wr8-ve-sachmangel-extra",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=ve-sachmangel",
+          "question": "Was bedeutet die Beweislastumkehr beim Verbrauchsgüterkauf?",
+          "concept": "Zeigt sich innerhalb eines Jahres nach der Übergabe ein Mangel, wird vermutet, dass er schon bei der Übergabe bestand. Der Händler muss das Gegenteil beweisen.",
+          "materiality": "material",
+          "sample_solution": "Tom kauft im Elektromarkt eine Kamera. Nach acht Monaten fällt der Sensor aus. Der Markt behauptet, Tom habe sie falsch bedient. Weil der Mangel im ersten Jahr auftrat, muss der Markt beweisen, dass die Kamera bei der Übergabe in Ordnung war."
+        }
+      ]
+    },
+    {
+      "id": "01M8E09D00C22DDJ320WDR6AAA",
+      "atom_uri": "urn:zam:atom:01M8E09D00C22DDJ320WDR6AAA",
+      "namespace": "zam-academy-wirtschaft-recht-realschule-8",
+      "slug": "wr8-ve-nichtigkeit",
+      "title": "Nichtigkeit, Anfechtung und AGB",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=ve-nichtigkeit",
+      "prerequisites": [
+        {
+          "atom_id": "01M8E09D005P305W3Z7D9C70TV",
+          "type": "soft"
+        },
+        {
+          "atom_id": "01M8E09D00DRNDEVBAMXQJM7X2",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-realschule-8",
+          "topic_code": "lb4",
+          "topic_title": "Privatrechtliche Regelungen"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "II",
+          "topic_code": "lb4",
+          "topic_title": "Privatrechtliche Regelungen",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Welche Rechtsfolge hat eine wirksame Anfechtung eines Kaufvertrags?",
+          "concept": "Der Vertrag gilt von Anfang an als nichtig.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Der Vertrag gilt von Anfang an als nichtig.",
+              "Der Vertrag endet nur für die Zukunft."
+            ],
+            "correct_index": 0
+          },
+          "slug": "wr8-ve-nichtigkeit-check",
+          "id": "01M8E09D0044X1AD902G5DASZV",
+          "language": "de",
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=ve-nichtigkeit",
+          "materiality": "material"
+        },
+        {
+          "slug": "wr8-ve-nichtigkeit-kern",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Was geschieht in der Regel mit einem Kaufvertrag, wenn eine AGB-Klausel unwirksam ist?",
+          "concept": "Der übrige Vertrag bleibt bestehen. Für die unwirksame Klausel gilt die gesetzliche Regel.",
+          "sample_solution": "Die Unwirksamkeit einer einzelnen Klausel macht nicht automatisch den Kauf rückgängig. § 306 BGB lässt grundsätzlich den restlichen Vertrag bestehen.",
+          "id": "01M8E09D00W5HH19RJ2SBS0264",
+          "language": "de",
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=ve-nichtigkeit",
+          "materiality": "material"
+        }
+      ]
+    },
+    {
+      "id": "01M8E09D00ZFWPSQACF7SJRY3H",
+      "atom_uri": "urn:zam:atom:01M8E09D00ZFWPSQACF7SJRY3H",
+      "namespace": "zam-academy-wirtschaft-recht-realschule-8",
+      "slug": "wr8-ve-alltagsvertraege",
+      "title": "Leihe, Miete, Schenkung und Darlehen",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=ve-alltagsvertraege",
+      "prerequisites": [
+        {
+          "atom_id": "01M8E09D005P305W3Z7D9C70TV",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-realschule-8",
+          "topic_code": "lb4",
+          "topic_title": "Privatrechtliche Regelungen"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "II",
+          "topic_code": "lb4",
+          "topic_title": "Privatrechtliche Regelungen",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Welcher Vertrag erlaubt den vorübergehenden Gebrauch einer Sache ohne Entgelt?",
+          "concept": "Leihe",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Leihe",
+              "Miete"
+            ],
+            "correct_index": 0
+          },
+          "slug": "wr8-ve-alltagsvertraege-check",
+          "id": "01M8E09D0006364GY72THREEDA",
+          "language": "de",
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=ve-alltagsvertraege",
+          "materiality": "material"
+        },
+        {
+          "slug": "wr8-ve-alltagsvertraege-kern",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Wie unterscheidet sich die Rückgabepflicht bei Leihe und Gelddarlehen?",
+          "concept": "Bei der Leihe gibst du dieselbe Sache zurück, beim Gelddarlehen den geschuldeten Geldbetrag.",
+          "sample_solution": "Bei einem ausgeliehenen Fahrrad ist genau dieses Rad zurückzugeben. Bei einem Gelddarlehen über 30 € schuldet man 30 € und nicht dieselben Geldscheine.",
+          "id": "01M8E09D00VXXQV7G71Q5ZPHQS",
+          "language": "de",
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=ve-alltagsvertraege",
+          "materiality": "material"
+        }
+      ]
+    },
+    {
+      "id": "01M8E09D00TTE2XAEHZ8TVJJZM",
+      "atom_uri": "urn:zam:atom:01M8E09D00TTE2XAEHZ8TVJJZM",
+      "namespace": "zam-academy-wirtschaft-recht-realschule-8",
+      "slug": "wr8-ve-schlichtung",
+      "title": "Schlichten oder vor das Zivilgericht?",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=ve-schlichtung",
+      "prerequisites": [
+        {
+          "atom_id": "01M8E09D00RDXPBS2JEFAFMAGC",
+          "type": "soft"
+        },
+        {
+          "atom_id": "01M8E09D00886378TFXD26TW99",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-realschule-8",
+          "topic_code": "lb4",
+          "topic_title": "Privatrechtliche Regelungen"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "II",
+          "topic_code": "lb4",
+          "topic_title": "Privatrechtliche Regelungen",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Was kann ein Gericht im Unterschied zu einer Stelle mit bloßem Schlichtungsvorschlag tun?",
+          "concept": "Den Streit auch ohne Einigung verbindlich entscheiden.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Den Streit auch ohne Einigung verbindlich entscheiden.",
+              "Den Streit nur bei Zustimmung beider Parteien beenden."
+            ],
+            "correct_index": 0
+          },
+          "slug": "wr8-ve-schlichtung-check",
+          "id": "01M8E09D008W4RZ6QKXKAZH90E",
+          "language": "de",
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=ve-schlichtung",
+          "materiality": "material"
+        },
+        {
+          "slug": "wr8-ve-schlichtung-kern",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Warum kann ein Einigungsversuch bei einem Nachbarstreit in Bayern schon vor einer Klage wichtig sein?",
+          "concept": "Für bestimmte Nachbarstreitigkeiten schreibt das Bayerische Schlichtungsgesetz ihn vor.",
+          "sample_solution": "Ob der Fall darunterfällt, richtet sich nach Art. 1 BaySchlG. Eine neutrale Stelle kann außerdem eine Lösung unterstützen, der beide Nachbarn zustimmen.",
+          "id": "01M8E09D00CEDPB5992BD767P2",
+          "language": "de",
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=ve-schlichtung",
+          "materiality": "material"
+        }
+      ]
+    },
+    {
+      "id": "01M8E09D00ZTJ9JHM5DG6A8FS7",
+      "atom_uri": "urn:zam:atom:01M8E09D00ZTJ9JHM5DG6A8FS7",
+      "namespace": "zam-academy-wirtschaft-recht-realschule-8",
+      "slug": "wr8-ab-arbeit",
+      "title": "Arbeit als Lebensgrundlage",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=ab-arbeit",
+      "prerequisites": [
+        {
+          "atom_id": "01M8E09D00EBSEP6A4Q626TXBF",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-realschule-8",
+          "topic_code": "lb5",
+          "topic_title": "Berufliche Orientierung"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "II",
+          "topic_code": "lb5",
+          "topic_title": "Berufliche Orientierung",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8E09D00Y8Q0EGG77P2CK1ZT",
+          "slug": "wr8-ab-arbeit-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=ab-arbeit",
+          "question": "Was kennzeichnet abhängige Erwerbsarbeit im Unterschied zur selbstständigen Erwerbsarbeit?",
+          "concept": "Beschäftigte arbeiten nach den Weisungen ihres Arbeitgebers und erhalten dafür die vereinbarte Vergütung.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Beschäftigte arbeiten nach den Weisungen ihres Arbeitgebers und erhalten dafür die vereinbarte Vergütung.",
+              "Beschäftigte entscheiden allein über Ziele und Arbeitszeit und tragen das unternehmerische Risiko."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Beschäftigte entscheiden allein über Ziele und Arbeitszeit und tragen das unternehmerische Risiko.",
+              "reason": "Das beschreibt die selbstständige Erwerbsarbeit, nicht die abhängige."
+            },
+            {
+              "text": "Beschäftigte arbeiten freiwillig und unbezahlt für einen gemeinnützigen Zweck in der Gemeinschaft.",
+              "reason": "Das ist ein Ehrenamt und keine Erwerbsarbeit gegen Bezahlung."
+            }
+          ]
+        },
+        {
+          "id": "01M8E09D009HR91F33JFZEAHK9",
+          "slug": "wr8-ab-arbeit-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=ab-arbeit",
+          "question": "Warum zählt Haus- und Familienarbeit zur Arbeit, obwohl sie keine Erwerbsarbeit ist?",
+          "concept": "Sie ist eine nützliche und oft anstrengende Tätigkeit, von der Familien und Gesellschaft abhängen, wird aber nicht bezahlt.",
+          "materiality": "material",
+          "sample_solution": "Wenn Herr Weiss die Kinder betreut, kocht und den Haushalt führt, schafft er die Grundlage dafür, dass seine Partnerin arbeiten gehen kann. Müsste man diese Arbeit bei anderen einkaufen, würde sie viel Geld kosten. Sie ist also echte Arbeit, nur ohne Lohn."
+        },
+        {
+          "id": "01M8E09D00PR1JS06GATRHWZBG",
+          "slug": "wr8-ab-arbeit-extra",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=ab-arbeit",
+          "question": "Zu welcher Gruppe von Einflussgrößen auf das Berufsleben gehört das Jugendarbeitsschutzgesetz?",
+          "concept": "Zu den rechtlichen Einflussgrößen, weil es Arbeitszeit und Schutz von Jugendlichen gesetzlich regelt.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Zu den rechtlichen Einflussgrößen, weil es Arbeitszeit und Schutz von Jugendlichen gesetzlich regelt.",
+              "Zu den wirtschaftlichen Einflussgrößen, weil es von der Lage am Arbeitsmarkt abhängt."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Zu den wirtschaftlichen Einflussgrößen, weil es von der Lage am Arbeitsmarkt abhängt.",
+              "reason": "Gesetze sind rechtliche Einflussgrößen; die Marktlage ist ein anderer Einfluss."
+            },
+            {
+              "text": "Zu den persönlichen Einflussgrößen, weil es von den Wünschen der Jugendlichen abhängt.",
+              "reason": "Das Gesetz gilt unabhängig von persönlichen Wünschen und ist deshalb rechtlich."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8E09D001CYG7W27Y25MWNB3",
+      "atom_uri": "urn:zam:atom:01M8E09D001CYG7W27Y25MWNB3",
+      "namespace": "zam-academy-wirtschaft-recht-realschule-8",
+      "slug": "wr8-ab-arbeitsmarkt",
+      "title": "Der Arbeitsmarkt",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=ab-arbeitsmarkt",
+      "prerequisites": [
+        {
+          "atom_id": "01M8E09D00ZTJ9JHM5DG6A8FS7",
+          "type": "soft"
+        },
+        {
+          "atom_id": "01M8E09D00ZHF34GZZT6NV4T8T",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-realschule-8",
+          "topic_code": "lb5",
+          "topic_title": "Berufliche Orientierung"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "II",
+          "topic_code": "lb5",
+          "topic_title": "Berufliche Orientierung",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8E09D00CA5TRZWRMHE68YG2",
+          "slug": "wr8-ab-arbeitsmarkt-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=ab-arbeitsmarkt",
+          "question": "Was bedeutet ein Angebotsüberhang an Arbeit am Arbeitsmarkt?",
+          "concept": "Bei dem geltenden Lohn suchen mehr Menschen Arbeit, als Stellen angeboten werden.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Bei dem geltenden Lohn suchen mehr Menschen Arbeit, als Stellen angeboten werden.",
+              "Bei dem geltenden Lohn sind mehr Stellen offen, als Menschen sie besetzen wollen."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Bei dem geltenden Lohn sind mehr Stellen offen, als Menschen sie besetzen wollen.",
+              "reason": "Das ist ein Nachfrageüberhang nach Arbeit, also das Gegenteil."
+            },
+            {
+              "text": "Bei dem geltenden Lohn findet jeder, der arbeiten will, eine passende Stelle.",
+              "reason": "Das beschreibt das Gleichgewicht, nicht einen Überhang."
+            }
+          ]
+        },
+        {
+          "id": "01M8E09D00TKHS5AN85KFT6GEJ",
+          "slug": "wr8-ab-arbeitsmarkt-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=ab-arbeitsmarkt",
+          "question": "Warum gleicht sich der Arbeitsmarkt langsamer aus als ein Markt für Waren?",
+          "concept": "Arbeitskräfte sind Menschen mit eigener Qualifikation und festem Wohnort und können nicht beliebig wechseln, deshalb passen Stellen und Arbeitsuchende oft nicht zusammen.",
+          "materiality": "material",
+          "sample_solution": "In einer Kleinstadt sucht eine Softwarefirma Entwickler, während dort viele Menschen mit einer Ausbildung im Einzelhandel Arbeit suchen. Sie können nicht über Nacht umlernen und wollen ihr Zuhause nicht verlassen. Darum bleiben Stellen frei, obwohl Menschen Arbeit suchen."
+        },
+        {
+          "id": "01M8E09D00C58QJ2RXW9SMMCRT",
+          "slug": "wr8-ab-arbeitsmarkt-extra",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=ab-arbeitsmarkt",
+          "question": "Was bedeutet der demografische Wandel für den Arbeitsmarkt?",
+          "concept": "Die Bevölkerung altert, mehr Menschen gehen in den Ruhestand, als junge nachrücken, und das Angebot an Arbeitskräften sinkt.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Die Bevölkerung altert, mehr Menschen gehen in den Ruhestand, als junge nachrücken, und das Angebot an Arbeitskräften sinkt.",
+              "Die Bevölkerung wächst stark, weil immer mehr junge Menschen nachrücken, und das Angebot an Arbeitskräften steigt."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Die Bevölkerung wächst stark, weil immer mehr junge Menschen nachrücken, und das Angebot an Arbeitskräften steigt.",
+              "reason": "Das ist das Gegenteil: Es rücken weniger junge Menschen nach."
+            },
+            {
+              "text": "Neue Technik ersetzt immer mehr Tätigkeiten, und deshalb sinkt die Nachfrage nach Arbeitskräften.",
+              "reason": "Das beschreibt die Digitalisierung, nicht den demografischen Wandel."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8E09D00XYKZJ0DMPYGQTZRR",
+      "atom_uri": "urn:zam:atom:01M8E09D00XYKZJ0DMPYGQTZRR",
+      "namespace": "zam-academy-wirtschaft-recht-realschule-8",
+      "slug": "wr8-ab-arbeitslosigkeit",
+      "title": "Formen und Folgen der Arbeitslosigkeit",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=ab-arbeitslosigkeit",
+      "prerequisites": [
+        {
+          "atom_id": "01M8E09D001CYG7W27Y25MWNB3",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-realschule-8",
+          "topic_code": "lb5",
+          "topic_title": "Berufliche Orientierung"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "II",
+          "topic_code": "lb5",
+          "topic_title": "Berufliche Orientierung",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8E09D007NQNGHPS55KKSX9M",
+          "slug": "wr8-ab-arbeitslosigkeit-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=ab-arbeitslosigkeit",
+          "question": "Welche Form der Arbeitslosigkeit entsteht, wenn sich die Wirtschaft dauerhaft verändert und Qualifikationen nicht mehr zu den neuen Stellen passen?",
+          "concept": "Strukturelle Arbeitslosigkeit: Qualifikation oder Wohnort passen nicht mehr zu den neuen Stellen.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Strukturelle Arbeitslosigkeit: Qualifikation oder Wohnort passen nicht mehr zu den neuen Stellen.",
+              "Konjunkturelle Arbeitslosigkeit: Die Wirtschaft schwächelt vorübergehend, und Betriebe brauchen weniger Personal."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Konjunkturelle Arbeitslosigkeit: Die Wirtschaft schwächelt vorübergehend, und Betriebe brauchen weniger Personal.",
+              "reason": "Konjunkturelle Arbeitslosigkeit hängt am Auf und Ab der Wirtschaft und ist meist vorübergehend."
+            },
+            {
+              "text": "Friktionelle Arbeitslosigkeit: Menschen suchen kurz nach einem Stellenwechsel eine neue Stelle.",
+              "reason": "Friktionelle Arbeitslosigkeit ist eine kurze Suchzeit beim Wechsel, kein dauerhafter Wandel."
+            }
+          ]
+        },
+        {
+          "id": "01M8E09D00TTZHHCBXFY7YRVZT",
+          "slug": "wr8-ab-arbeitslosigkeit-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=ab-arbeitslosigkeit",
+          "question": "Warum helfen staatliche Konjunkturprogramme kaum gegen strukturelle Arbeitslosigkeit?",
+          "concept": "Sie schaffen mehr Nachfrage nach Gütern, doch bei struktureller Arbeitslosigkeit fehlt nicht Nachfrage, sondern die passende Qualifikation oder Region.",
+          "materiality": "material",
+          "sample_solution": "Ein Werk verlagert seine Produktion ins Ausland. Ein Investitionsprogramm schafft Aufträge für Bauunternehmen, doch die entlassene Fräserin kann dort ohne Umschulung nicht arbeiten. Erst Weiterbildung und neue Stellen in der Region lösen ihr Problem."
+        },
+        {
+          "id": "01M8E09D00TGG922Y3NN1GP3ZJ",
+          "slug": "wr8-ab-arbeitslosigkeit-extra",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=ab-arbeitslosigkeit",
+          "question": "Wie kann Arbeitslosigkeit den Selbstwert der Betroffenen beeinflussen?",
+          "concept": "Viele fühlen sich nicht mehr gebraucht und zweifeln an ihren Fähigkeiten, obwohl die Ursache oft in der Wirtschaft liegt und nicht allein bei ihnen.",
+          "materiality": "material",
+          "sample_solution": "Nach der Entlassung bewirbt sich Stefan monatelang ohne Erfolg und glaubt irgendwann, er sei nichts mehr wert. Dabei hat sein Betrieb wegen einer Wirtschaftskrise viele Stellen gestrichen. Verständnis und Unterstützung helfen ihm, wieder an sich zu glauben."
+        }
+      ]
+    },
+    {
+      "id": "01M8E09D00D2FDW361SMTD2FPS",
+      "atom_uri": "urn:zam:atom:01M8E09D00D2FDW361SMTD2FPS",
+      "namespace": "zam-academy-wirtschaft-recht-realschule-8",
+      "slug": "wr8-ab-ba",
+      "title": "Die Bundesagentur für Arbeit",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=ab-ba",
+      "prerequisites": [
+        {
+          "atom_id": "01M8E09D00XYKZJ0DMPYGQTZRR",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-realschule-8",
+          "topic_code": "lb5",
+          "topic_title": "Berufliche Orientierung"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "II",
+          "topic_code": "lb5",
+          "topic_title": "Berufliche Orientierung",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8E09D00YVK4X0G86TFCVEVR",
+          "slug": "wr8-ab-ba-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=ab-ba",
+          "question": "Wofür ist BERUFENET der Bundesagentur für Arbeit da?",
+          "concept": "Es ist ein Online-Nachschlagewerk, das Berufe mit Tätigkeiten, Anforderungen und Ausbildungswegen beschreibt.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Es ist ein Online-Nachschlagewerk, das Berufe mit Tätigkeiten, Anforderungen und Ausbildungswegen beschreibt.",
+              "Es ist ein europäisches Netzwerk, das Stellen im Ausland an Arbeitsuchende vermittelt."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Es ist ein europäisches Netzwerk, das Stellen im Ausland an Arbeitsuchende vermittelt.",
+              "reason": "Das beschreibt EURES, nicht BERUFENET."
+            },
+            {
+              "text": "Es ist eine Statistikseite, die monatlich die Zahl der Arbeitslosen veröffentlicht.",
+              "reason": "Zahlen zur Arbeitslosigkeit stammen aus der Arbeitsmarktbeobachtung, nicht aus BERUFENET."
+            }
+          ]
+        },
+        {
+          "id": "01M8E09D00532MCH51K8NZ7V8Z",
+          "slug": "wr8-ab-ba-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=ab-ba",
+          "question": "Warum ist die Bundesagentur für Arbeit für die Gesellschaft wichtig?",
+          "concept": "Sie bringt Angebot und Nachfrage am Arbeitsmarkt zusammen, soll Arbeitslosigkeit verkürzen und sichert Arbeitslose finanziell ab.",
+          "materiality": "material",
+          "sample_solution": "Ein Betrieb sucht Auszubildende, und Schüler suchen einen Platz. Die Agentur bringt beide zusammen, so bleibt die Stelle nicht lange leer. Verliert später jemand seine Arbeit, bekommt er Unterstützung und Beratung, bis er wieder etwas findet."
+        },
+        {
+          "id": "01M8E09D001JTKK6T77QSTEGWY",
+          "slug": "wr8-ab-ba-extra",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=ab-ba",
+          "question": "Wofür ist EURES nützlich?",
+          "concept": "EURES informiert über Stellen sowie Lebens- und Arbeitsbedingungen in europäischen Ländern.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "EURES informiert über Stellen sowie Lebens- und Arbeitsbedingungen in europäischen Ländern.",
+              "EURES beschreibt Berufe in Deutschland ausführlich mit Tätigkeiten und Anforderungen."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "EURES beschreibt Berufe in Deutschland ausführlich mit Tätigkeiten und Anforderungen.",
+              "reason": "Berufe in Deutschland beschreibt BERUFENET, EURES richtet sich auf Europa."
+            },
+            {
+              "text": "EURES zahlt Arbeitslosengeld an Menschen aus, die in einem anderen Land arbeiten.",
+              "reason": "EURES berät und informiert, es zahlt keine Leistungen aus."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8E09D005QVRX706Z4W8CDJ5",
+      "atom_uri": "urn:zam:atom:01M8E09D005QVRX706Z4W8CDJ5",
+      "namespace": "zam-academy-wirtschaft-recht-realschule-8",
+      "slug": "wr8-bw-wege",
+      "title": "Aus- und Weiterbildungswege",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=bw-wege",
+      "prerequisites": [
+        {
+          "atom_id": "01M8E09D00D2FDW361SMTD2FPS",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-realschule-8",
+          "topic_code": "lb5",
+          "topic_title": "Berufliche Orientierung"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "II",
+          "topic_code": "lb5",
+          "topic_title": "Berufliche Orientierung",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8E09D0024EQWHVJ35Y5MFZ4",
+          "slug": "wr8-bw-wege-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=bw-wege",
+          "question": "Welchen Abschluss erreicht man nach dem Mittleren Schulabschluss an der Fachoberschule bis zur 12. Jahrgangsstufe?",
+          "concept": "Die Fachhochschulreife, mit der man an Hochschulen für angewandte Wissenschaften studieren kann.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Die Fachhochschulreife, mit der man an Hochschulen für angewandte Wissenschaften studieren kann.",
+              "Einen anerkannten Ausbildungsberuf wie nach einer dualen Ausbildung in einem Betrieb."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Einen anerkannten Ausbildungsberuf wie nach einer dualen Ausbildung in einem Betrieb.",
+              "reason": "Einen Ausbildungsberuf erreicht man durch Ausbildung, nicht durch den Schulbesuch der Fachoberschule."
+            },
+            {
+              "text": "Den Meisterbrief, der zum Führen und Ausbilden in einem Handwerksbetrieb berechtigt.",
+              "reason": "Der Meisterbrief gehört zur Aufstiegsfortbildung nach der Ausbildung."
+            }
+          ]
+        },
+        {
+          "id": "01M8E09D0063RWTHAA7R7960GY",
+          "slug": "wr8-bw-wege-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=bw-wege",
+          "question": "Warum ist die Entscheidung für eine Ausbildung nicht endgültig?",
+          "concept": "Durch Fortbildung oder, mit Hochschulzugang, ein Studium kann man nach der Ausbildung weiterlernen und aufsteigen.",
+          "materiality": "material",
+          "sample_solution": "Sven lernt Kfz-Mechatroniker, arbeitet einige Jahre in einer Werkstatt und besucht dann die Meisterschule. Später leitet er die Werkstatt und bildet selbst aus. Seine Ausbildung war also der Anfang und kein Endpunkt."
+        },
+        {
+          "id": "01M8E09D00R3CR67W4J1CDHRRY",
+          "slug": "wr8-bw-wege-extra",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=bw-wege",
+          "question": "Was fragt das Kriterium Anforderungsprofil bei der Wahl eines Ausbildungswegs?",
+          "concept": "Es fragt, welchen Abschluss und welche Fähigkeiten ein Weg verlangt und ob sie zu einem passen.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Es fragt, welchen Abschluss und welche Fähigkeiten ein Weg verlangt und ob sie zu einem passen.",
+              "Es fragt, wie viel man später verdienen kann und wie lange es bis dahin dauert."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Es fragt, wie viel man später verdienen kann und wie lange es bis dahin dauert.",
+              "reason": "Das ist das Kriterium Einkommen."
+            },
+            {
+              "text": "Es fragt, wie krisenfest der Beruf ist und ob der Betrieb nach der Ausbildung übernimmt.",
+              "reason": "Das ist das Kriterium Sicherheit."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8E09D006VTKRR6WJEG27V4K",
+      "atom_uri": "urn:zam:atom:01M8E09D006VTKRR6WJEG27V4K",
+      "namespace": "zam-academy-wirtschaft-recht-realschule-8",
+      "slug": "wr8-bw-entscheidung",
+      "title": "Berufswahl als Entscheidungsprozess",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=bw-entscheidung",
+      "prerequisites": [
+        {
+          "atom_id": "01M8E09D005QVRX706Z4W8CDJ5",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-realschule-8",
+          "topic_code": "lb5",
+          "topic_title": "Berufliche Orientierung"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "II",
+          "topic_code": "lb5",
+          "topic_title": "Berufliche Orientierung",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8E09D00579ZGRZKXCCD4SV8",
+          "slug": "wr8-bw-entscheidung-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=bw-entscheidung",
+          "question": "Was beschreibt das Anforderungsprofil in einer Stellenanzeige?",
+          "concept": "Die Abschlüsse, Fähigkeiten und Eigenschaften, die der Betrieb von Bewerbern für die Stelle erwartet.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Die Abschlüsse, Fähigkeiten und Eigenschaften, die der Betrieb von Bewerbern für die Stelle erwartet.",
+              "Die Aufgaben und Pflichten, die der Betrieb gegenüber den Beschäftigten übernimmt."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Die Aufgaben und Pflichten, die der Betrieb gegenüber den Beschäftigten übernimmt.",
+              "reason": "Das beschreibt die Pflichten des Betriebs, nicht die Erwartungen an Bewerber."
+            },
+            {
+              "text": "Die Höhe der Vergütung und die Dauer des Urlaubs, die der Betrieb anbietet.",
+              "reason": "Vergütung und Urlaub sind Leistungen des Betriebs, kein Anforderungsprofil."
+            }
+          ]
+        },
+        {
+          "id": "01M8E09D003FXMG8J63T7QD01Y",
+          "slug": "wr8-bw-entscheidung-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=bw-entscheidung",
+          "question": "Warum kann bei einer Nutzwertanalyse mit denselben Bewertungen je nach Person ein anderer Beruf gewinnen?",
+          "concept": "Weil jede Person die Kriterien anders gewichtet und das, was ihr wichtiger ist, im Gesamtwert stärker zählt.",
+          "materiality": "material",
+          "sample_solution": "Zwei Freunde bewerten dieselben zwei Berufe mit gleichen Punkten. Für Ida zählt das Interesse dreifach, für Karim das Einkommen. Bei Ida liegt Beruf A vorn, bei Karim Beruf B, obwohl die Punkte je Kriterium gleich sind."
+        },
+        {
+          "id": "01M8E09D00SKFH5V5F47G5GR6V",
+          "slug": "wr8-bw-entscheidung-extra",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=bw-entscheidung",
+          "question": "Was ist eine Grenze der Nutzwertanalyse für die Berufswahl?",
+          "concept": "Gewichte und Punkte sind persönliche Schätzungen, sodass das Ergebnis genauer wirkt, als es ist.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Gewichte und Punkte sind persönliche Schätzungen, sodass das Ergebnis genauer wirkt, als es ist.",
+              "Sie liefert immer das objektiv beste Ergebnis, weil Zahlen nicht von Meinungen abhängen."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Sie liefert immer das objektiv beste Ergebnis, weil Zahlen nicht von Meinungen abhängen.",
+              "reason": "Gewichte und Punkte sind Schätzungen, deshalb ist das Ergebnis nicht objektiv."
+            },
+            {
+              "text": "Sie funktioniert nur, wenn alle Kriterien dasselbe Gewicht haben, sonst bricht sie zusammen.",
+              "reason": "Unterschiedliche Gewichte sind gerade der Sinn der Nutzwertanalyse."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8E09D00K55GWXRN6HA06Q5W",
+      "atom_uri": "urn:zam:atom:01M8E09D00K55GWXRN6HA06Q5W",
+      "namespace": "zam-academy-wirtschaft-recht-realschule-8",
+      "slug": "wr8-bw-praktikum",
+      "title": "Ein Betriebspraktikum vorbereiten",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=bw-praktikum",
+      "prerequisites": [
+        {
+          "atom_id": "01M8E09D006VTKRR6WJEG27V4K",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-realschule-8",
+          "topic_code": "lb5",
+          "topic_title": "Berufliche Orientierung"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "wirtschaft-und-recht",
+          "track": "II",
+          "topic_code": "lb5",
+          "topic_title": "Berufliche Orientierung",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Was gehört in die erste Kurzanfrage für ein Schülerpraktikum?",
+          "concept": "Zeitraum, Anlass und ein konkreter Grund für die Wahl des Betriebs.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Zeitraum, Anlass und ein konkreter Grund für die Wahl des Betriebs.",
+              "Nur eine Bitte um einen Platz ohne gewünschte Zeit und Aufgabenbezug."
+            ],
+            "correct_index": 0
+          },
+          "slug": "wr8-bw-praktikum-check",
+          "id": "01M8E09D00RMFQXFDSFJYF9DB5",
+          "language": "de",
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=bw-praktikum",
+          "materiality": "material"
+        },
+        {
+          "slug": "wr8-bw-praktikum-kern",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Wie führt ein persönliches Erkundungsziel zu einer passenden Praktikumsstelle?",
+          "concept": "Es hilft, Tätigkeiten und Betriebe danach auszuwählen, was man beobachten oder erfragen möchte.",
+          "sample_solution": "Wer wissen möchte, wie Fehler an Fahrrädern gefunden werden, fragt eine Reparaturwerkstatt an und erklärt dort, dass er eine Wartung beobachten möchte.",
+          "id": "01M8E09D00FNHZKG8MYJ1JAB9E",
+          "language": "de",
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=bw-praktikum",
+          "materiality": "material"
+        }
+      ]
+    },
+    {
+      "id": "01M8E09D00M8K0S9C0ZWHNTR74",
+      "atom_uri": "urn:zam:atom:01M8E09D00M8K0S9C0ZWHNTR74",
+      "namespace": "zam-academy-wirtschaft-recht-realschule-8",
+      "slug": "wr8-en-supply-demand",
+      "title": "Supply, demand and the economic cycle",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=en-supply-demand",
+      "prerequisites": [
+        {
+          "atom_id": "01M8E09D00QC3R8ZWHFRNFNPYZ",
+          "type": "soft"
+        },
+        {
+          "atom_id": "01M8E09D00ZHF34GZZT6NV4T8T",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-realschule-8",
+          "topic_code": "lb6",
+          "topic_title": "Bilingualer Sachfachunterricht"
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8E09D006YEJX79XX3SE6NPS",
+          "slug": "wr8-en-supply-demand-check",
+          "language": "en",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=en-supply-demand",
+          "question": "What happens on a market when the price is above the equilibrium price?",
+          "concept": "There is a surplus: sellers offer more than buyers want, so the price tends to fall.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "There is a surplus: sellers offer more than buyers want, so the price tends to fall.",
+              "There is a shortage: buyers want more than is offered, so the price tends to rise."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "There is a shortage: buyers want more than is offered, so the price tends to rise.",
+              "reason": "That describes a price below the equilibrium price, not above it."
+            },
+            {
+              "text": "Supply and demand are equal, so the price tends to stay where it is.",
+              "reason": "Only at the equilibrium price are supply and demand equal."
+            }
+          ]
+        },
+        {
+          "id": "01M8E09D00W00RBCEGH7NCXAGP",
+          "slug": "wr8-en-supply-demand-kern",
+          "language": "en",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=en-supply-demand",
+          "question": "Why does less spending by households lower the incomes of households in the circular flow?",
+          "concept": "Companies earn their money from the spending of households. If households spend less, sales fall, companies pay fewer wages or hire fewer people, and household income falls.",
+          "materiality": "material",
+          "sample_solution": "After the holidays, families in a small town spend much less in the shops. The shop owner sells less, cuts the hours of her two assistants, and they have less money to spend in other shops themselves."
+        },
+        {
+          "id": "01M8E09D00A6FZGRPC39324HSP",
+          "slug": "wr8-en-supply-demand-extra",
+          "language": "en",
+          "tier": "tier1_fast",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=en-supply-demand",
+          "question": "How does a seller usually find a good price on a market?",
+          "concept": "The seller looks at costs and other prices, tries a price, and then raises or lowers it step by step.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "The seller looks at costs and other prices, tries a price, and then raises or lowers it step by step.",
+              "The seller calculates the exact equilibrium price in advance and never changes it."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "The seller calculates the exact equilibrium price in advance and never changes it.",
+              "reason": "Nobody knows the equilibrium price exactly, so sellers have to test the market."
+            },
+            {
+              "text": "The seller copies the lowest price of all competitors and ignores the costs of the business.",
+              "reason": "A price that ignores costs can lead to a loss; costs are one of the factors to consider."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M8E09D00GQES81PANVQEZ6DB",
+      "atom_uri": "urn:zam:atom:01M8E09D00GQES81PANVQEZ6DB",
+      "namespace": "zam-academy-wirtschaft-recht-realschule-8",
+      "slug": "wr8-en-shopping",
+      "title": "Shopping online across borders",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=en-shopping",
+      "prerequisites": [
+        {
+          "atom_id": "01M8E09D00K8D9XE31BZ20PB71",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-realschule-8",
+          "topic_code": "lb6",
+          "topic_title": "Bilingualer Sachfachunterricht"
+        }
+      ],
+      "practice_items": [
+        {
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Which price should you compare before buying the same product from two online shops?",
+          "concept": "The full price including delivery.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "The full price including delivery.",
+              "The item price before shipping and fees."
+            ],
+            "correct_index": 0
+          },
+          "slug": "wr8-en-shopping-check",
+          "id": "01M8E09D0027D9DPNYEBWVRGD1",
+          "language": "en",
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=en-shopping",
+          "materiality": "material"
+        },
+        {
+          "slug": "wr8-en-shopping-kern",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Why is a store return policy different from a statutory cancellation right?",
+          "concept": "A store policy is set by the seller. A statutory right comes from the law that applies.",
+          "sample_solution": "A UK distance purchase from a business may carry a cancellation right under the applicable law. A shop can also offer extra returns under its own terms.",
+          "id": "01M8E09D00ZX9QJ6HSYR91FF5D",
+          "language": "en",
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=en-shopping",
+          "materiality": "material"
+        }
+      ]
+    },
+    {
+      "id": "01M8E09D00PD8HSCEVMSXJQHPF",
+      "atom_uri": "urn:zam:atom:01M8E09D00PD8HSCEVMSXJQHPF",
+      "namespace": "zam-academy-wirtschaft-recht-realschule-8",
+      "slug": "wr8-en-legal-ages",
+      "title": "Young people and legal rules in England and New York",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=en-legal-ages",
+      "prerequisites": [
+        {
+          "atom_id": "01M8E09D00ARRVH11ST18N2PT6",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-realschule-8",
+          "topic_code": "lb6",
+          "topic_title": "Bilingualer Sachfachunterricht"
+        }
+      ],
+      "practice_items": [
+        {
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "What does a learner permit normally allow?",
+          "concept": "Driving practice under specified conditions.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Driving practice under specified conditions.",
+              "Independent driving under the rules for a full licence."
+            ],
+            "correct_index": 0
+          },
+          "slug": "wr8-en-legal-ages-check",
+          "id": "01M8E09D00Z8K2CRBKHTJCQWZC",
+          "language": "en",
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=en-legal-ages",
+          "materiality": "material"
+        },
+        {
+          "slug": "wr8-en-legal-ages-kern",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Why should a legal age comparison name both the activity and the place?",
+          "concept": "Different jurisdictions set different rules, and the same age may apply to different permissions.",
+          "sample_solution": "New York allows a learner permit application at 16. That does not tell a visitor the usual minimum age to start learning in Great Britain or the rules for driving alone.",
+          "id": "01M8E09D00RBMYBFXQP23KHBHC",
+          "language": "en",
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=en-legal-ages",
+          "materiality": "material"
+        }
+      ]
+    },
+    {
+      "id": "01M8E09D00GP91Y8F6BKY2R9EN",
+      "atom_uri": "urn:zam:atom:01M8E09D00GP91Y8F6BKY2R9EN",
+      "namespace": "zam-academy-wirtschaft-recht-realschule-8",
+      "slug": "wr8-en-complaints",
+      "title": "Sales contracts and complaints",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=en-complaints",
+      "prerequisites": [
+        {
+          "atom_id": "01M8E09D00RDXPBS2JEFAFMAGC",
+          "type": "soft"
+        },
+        {
+          "atom_id": "01M8E09D00GQES81PANVQEZ6DB",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-realschule-8",
+          "topic_code": "lb6",
+          "topic_title": "Bilingualer Sachfachunterricht"
+        }
+      ],
+      "practice_items": [
+        {
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "What is a defect in a product complaint?",
+          "concept": "A shortcoming that makes the item fall short of its requirements.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "A shortcoming that makes the item fall short of its requirements.",
+              "A decision to buy a different colour next time."
+            ],
+            "correct_index": 0
+          },
+          "slug": "wr8-en-complaints-check",
+          "id": "01M8E09D00BA668SECSKPZTW7G",
+          "language": "en",
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=en-complaints",
+          "materiality": "material"
+        },
+        {
+          "slug": "wr8-en-complaints-kern",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "How can a buyer write a useful complaint to a seller?",
+          "concept": "Identify the order, describe the defect in observable terms and request a specific remedy.",
+          "sample_solution": "Give the order reference, explain that the zip opens again immediately after closing it and ask the retailer to arrange a replacement.",
+          "id": "01M8E09D0012RNH9Y046VKRTJJ",
+          "language": "en",
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=en-complaints",
+          "materiality": "material"
+        }
+      ]
+    },
+    {
+      "id": "01M8E09D00580Y2QGTXS9PVMXY",
+      "atom_uri": "urn:zam:atom:01M8E09D00580Y2QGTXS9PVMXY",
+      "namespace": "zam-academy-wirtschaft-recht-realschule-8",
+      "slug": "wr8-en-work-unemployment",
+      "title": "Work and unemployment in the EU and the USA",
+      "domain": "wirtschaft-recht",
+      "reduction": "narrative",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=en-work-unemployment",
+      "prerequisites": [
+        {
+          "atom_id": "01M8E09D00XYKZJ0DMPYGQTZRR",
+          "type": "soft"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-recht-realschule-8",
+          "topic_code": "lb6",
+          "topic_title": "Bilingualer Sachfachunterricht"
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8E09D00RQAFZV5GNYA4ABR1",
+          "slug": "wr8-en-work-unemployment-check",
+          "language": "en",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=en-work-unemployment",
+          "question": "Which person counts as unemployed?",
+          "concept": "A person who wants to work, is looking for a job and could start soon, but has not found one.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "A person who wants to work, is looking for a job and could start soon, but has not found one.",
+              "A person who stays at home on purpose and is not looking for a job at the moment."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "A person who stays at home on purpose and is not looking for a job at the moment.",
+              "reason": "Without a search for work, a person is not counted as unemployed."
+            },
+            {
+              "text": "A person who works two days a week in a shop because that suits the person well.",
+              "reason": "Working part-time by choice is not unemployment; the person has work."
+            }
+          ]
+        },
+        {
+          "id": "01M8E09D0072RX4NDWK0JENV30",
+          "slug": "wr8-en-work-unemployment-kern",
+          "language": "en",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=en-work-unemployment",
+          "question": "Why can structural change cause unemployment even when the economy is doing well?",
+          "concept": "New technology or changing demand makes whole industries shrink, and the skills of their workers no longer match the open jobs, so these workers often stay unemployed unless they retrain or move.",
+          "materiality": "material",
+          "sample_solution": "A printing works closes because people now read the news online. Its machine operators know only the old machines, while nearby companies look for IT staff. Without retraining, the operators find no match, although other companies are hiring."
+        },
+        {
+          "id": "01M8E09D00CBE8ZJ1TS0B4W0T3",
+          "slug": "wr8-en-work-unemployment-extra",
+          "language": "en",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/wirtschaft-recht-realschule-8/#lesson=en-work-unemployment",
+          "question": "What does the term social contrast mean when we talk about rich and poor?",
+          "concept": "A big difference in income and wealth between people in one society.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "A big difference in income and wealth between people in one society.",
+              "A difference in unemployment rates between two regions of a country."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "A difference in unemployment rates between two regions of a country.",
+              "reason": "That is a regional difference in unemployment, not a contrast between rich and poor."
+            },
+            {
+              "text": "A conflict between two political groups about the level of taxes.",
+              "reason": "That describes a political dispute; a social contrast is a difference in living conditions."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
