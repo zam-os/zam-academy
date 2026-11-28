@@ -1,0 +1,382 @@
+[
+  {
+    "id": "globale-klima-vegetationszonen",
+    "lb": 3,
+    "title": "Klima- und Vegetationszonen der Erde im Überblick",
+    "period": "Geo10 LB 3 · Erdüberblick",
+    "intro": "Warum liegen Regenwälder um den Äquator, Wüstengürtel um die Wendekreise und Nadelwälder weit im Norden? Den Grundtakt gibt die globale Strahlungsbilanz vor.",
+    "paragraphs": [
+      "Aufgrund der Kugelgestalt der Erde treffen die Sonnenstrahlen zwischen Äquator und Wendekreisen (23,5° N bis 23,5° S) ganzjährig sehr steil auf die Erdoberfläche. Dieselbe Energiemenge verteilt sich auf eine kleine Fläche und muss einen kürzeren Weg durch die Atmosphäre zurücklegen – es herrscht ein Energieüberschuss.",
+      "Polwärts wird der Einfallswinkel immer flacher: Die gleiche Strahlung verteilt sich auf eine weit größere Fläche, und die Atmosphäre schwächt sie stärker ab. Zusammen mit der Rückstrahlung heller Schnee- und Eisflächen (hohe Albedo) entsteht ein Energiedefizit. Winde und Meeresströmungen gleichen diesen Unterschied zwischen Tropen und Polen ständig aus.",
+      "Dadurch ordnen sich die großen Klima- und Vegetationszonen auf der Erde weitgehend gürtelförmig (zonal) an: Vom immerfeuchten tropischen Regenwald am Äquator über die wechselfeuchten Savannen und die ariden Subtropen bis in die gemäßigte Zone (Laub-, Mischwälder und Steppen), die boreale Nadelwaldzone (Taiga) und die polare Tundra."
+    ],
+    "workedExample": "Am Äquator fällt ein Sonnenbündel nahezu senkrecht (90°) ein; bei 60° N (etwa auf Höhe Skandinaviens) fällt derselbe Strahl unter einem flachen Winkel ein und bestrahlt rund die doppelte Bodenfläche – pro Quadratmeter kommt entsprechend weniger Wärmeenergie an.",
+    "takeaway": "Der Einstrahlungswinkel der Sonne nimmt vom Äquator zu den Polen ab und erzeugt die zonale Grundanordnung der Klima- und Vegetationszonen.",
+    "sourceIds": ["lehrplan", "natural-earth", "dwd-klima"],
+    "figures": ["klimazonen-erde"],
+    "quiz": {
+      "question": "Was ist die Hauptursache für die zonale Erwärmungsabnahme vom Äquator zu den Polen?",
+      "answer": "Der flacher werdende Einstrahlungswinkel der Sonne verteilt dieselbe Energie auf eine größere Fläche",
+      "wrong": [
+        "Die Erde steht am Äquator der Sonne um ein Drittel näher als an den Polen",
+        "Die Ozeane befinden sich ausschließlich auf der Südhalbkugel"
+      ],
+      "explanation": "Wegen der Kugelform der Erde verteilt sich ein gleich breites Strahlenbündel in hohen Breiten schräg auf eine viel größere Fläche und durchquert eine dickere Atmosphärenschicht."
+    },
+    "transferCheck": {
+      "question": "Warum fallen reale Vegetationsgrenzen auf der Weltkarte nicht genau entlang gerader Breitenkreise?",
+      "answer": "Weil Gebirge, Meeresströmungen und Kontinentalität das zonale Grundmuster abwandeln",
+      "wrong": [
+        "Weil die Sonnenstrahlung an jedem Wochentag willkürlich wechselt",
+        "Weil Pflanzen unabhängig von Wärme und Wasser wachsen"
+      ],
+      "explanation": "Relief (Höhenstufen, Luv/Lee), kalte und warme Meeresströmungen sowie Meeresferne brechen die ideale Gürtelordnung auf."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Vom Äquator zum Pol anordnen",
+      "instruction": "Ordne die vier großen Vegetationszonen vom Äquator (oben) bis in hohe Breiten (unten).",
+      "categories": [],
+      "entries": [
+        { "text": "Tropischer Regenwald (ganzjährig steile Einstrahlung, immerfeucht)", "target": 0, "feedback": "Direkt entlang des Äquators wachsen immerfeuchte tropische Regenwälder." },
+        { "text": "Savannen und Wendekreiswüsten (wechselfeucht bis arid)", "target": 1, "feedback": "Zwischen Tropen und Subtropen schließen Savannen und Trockenräume an." },
+        { "text": "Laub- und Mischwälder der gemäßigten Breiten (ausgeprägte Jahreszeiten)", "target": 2, "feedback": "In den mittleren Breiten prägen warme Sommer und kühle Winter die Vegetation." },
+        { "text": "Borealer Nadelwald (Taiga) und polare Tundra", "target": 3, "feedback": "In hohen Breiten bestimmen lange Frostperioden und kurze Sommer das Pflanzenwachstum." }
+      ],
+      "conclusion": "Vom Äquator zu den Polen spiegelt die Abfolge der Vegetation direkt das abnehmende Energie- und Wärmeangebot wider."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre mithilfe der Einstrahlungsgeometrie, warum in den Tropen ein Energieüberschuss und in den Polargebieten ein Energiedefizit entsteht.",
+        "hints": [
+          "Vergleiche die beleuchtete Bodenfläche bei senkrechtem und flachem Sonnenstand.",
+          "Beziehe auch den Weg durch die Atmosphäre und die Albedo von Schnee und Eis ein."
+        ],
+        "model": "In den Tropen treffen Sonnenstrahlen fast senkrecht auf die Erde; ihre Energie konzentriert sich auf eine kleine Fläche, und der Weg durch die Atmosphäre ist kurz. In hohen Breiten verteilt sich dieselbe Strahlung schräg auf eine deutlich größere Fläche und wird in der Atmosphäre sowie durch die helle Eis- und Schneedecke (hohe Albedo) stark reflektiert – daher überwiegt dort die Abstrahlung.",
+        "criteria": [
+          "Ich erkläre den Unterschied zwischen steilem und flachem Einfallswinkel über die Fläche.",
+          "Ich erwähne den unterschiedlichen Weg durch die Atmosphäre oder die Albedo.",
+          "Ich benenne den daraus folgenden Ausgleich durch Winde und Meeresströmungen."
+        ]
+      },
+      "2": {
+        "prompt": "Vergleiche Westeuropa (z. B. Südengland) mit Labrador in Kanada auf derselben geographischen Breite (~51° N) und erkläre, warum sich die reale Vegetation unterscheidet.",
+        "hints": [
+          "Welche Meeresströmung erreicht Westeuropa, welche strömt vor Labrador?",
+          "Zeige an diesem Beispiel die Grenze rein zonaler Karten."
+        ],
+        "model": "Obwohl beide Regionen auf derselben geographischen Breite liegen und denselben Sonnenstand erhalten, wärmt der Nordatlantikstrom als Verlängerung des Golfstroms Westeuropa ganzjährig mit milden Westwinden. Vor Labrador fließt dagegen der kalte Labradorstrom, sodass dort polare bis boreale Verhältnisse herrschen – Meeresströmungen verschieben reale Zonen massiv gegenüber der rein zonalen Breite.",
+        "criteria": [
+          "Ich stelle fest, dass beide Räume denselben Breitengrad teilen.",
+          "Ich nenne warme vs. kalte Meeresströmung als Abwandlung.",
+          "Ich leite den Einfluss auf die Vegetation ab."
+        ]
+      }
+    }
+  },
+  {
+    "id": "sonneneinstrahlung-und-passatzirkulation",
+    "lb": 3,
+    "title": "Passatzirkulation, ITC und hygrische Jahreszeiten",
+    "period": "Geo10 LB 3 · Zirkulation",
+    "intro": "Wie entsteht aus starker Sonneneinstrahlung am Äquator das planetare Windsystem der Tropen – und warum regnet es in der Savanne genau dann, wenn die Sonne am höchsten steht?",
+    "paragraphs": [
+      "Über dem Gebiet höchster Sonneneinstrahlung (dem Sonnenzenit) erwärmt sich die Luft stark, dehnt sich aus und steigt auf: Es entsteht ein thermisches Bodentief, die Innertropische Konvergenzzone (ITC). Beim Aufstieg kühlt die feuchtwarme Luft ab, Wasserdampf kondensiert zu mächtigen Wolken, und es fallen heftige Zenitalregen.",
+      "In der Höhe strömt die Luft polwärts ab, kühlt weiter aus und sinkt durch Erdrotation und Druckverhältnisse um etwa 30° N und 30° S wieder zu Boden. Beim Absinken erwärmt sich die Luft adiabatisch und nimmt Feuchtigkeit auf – Wolken lösen sich auf, und es entsteht der trockene subtropische Hochdruckgürtel.",
+      "Von diesem Hochdruckgürtel strömt bodennahe Luft zurück zur ITC: Durch die Erdrotation (Corioliskraft) wird sie auf der Nordhalbkugel nach rechts abgelenkt zum Nordostpassat, auf der Südhalbkugel nach links zum Südostpassat. Weil der Sonnenzenit im Jahresverlauf zwischen 23,5° N (21. Juni) und 23,5° S (21. Dezember) pendelt, wandert die ITC verzögert mit – dadurch wechseln in den Randtropen Regenzeit (bei ITC-Durchzug) und Trockenzeit (bei Passat- und Hochdruckeinfluss) als hygrische Jahreszeiten ab."
+    ],
+    "workedExample": "Am 21. Juni steht die Sonne im Zenit über dem nördlichen Wendekreis (23,5° N); die ITC verlagert sich weit auf die Nordhalbkugel (etwa nach West- und Zentralafrika bei 12–16° N). Dort setzt jetzt die Sommerregenzeit ein, während Länder südlich des Äquators unter dem trockenen Südostpassat ihre Trockenzeit erleben.",
+    "takeaway": "Steigende Luft an der ITC (Zenitalregen) und absinkende Luft im Subtropenhoch (Passate) bilden die Hadley-Zelle; ihre Wanderung erzeugt die hygrischen Jahreszeiten.",
+    "sourceIds": ["lehrplan", "dwd-klima"],
+    "figures": ["hadley-schema"],
+    "lab": "passatzirkulation",
+    "quiz": {
+      "question": "Warum entstehen an den Wendekreisen um etwa 30° N und 30° S die großen Trockengürtel der Erde?",
+      "answer": "Die in großer Höhe polwärts transportierte Luft sinkt dort ab, erwärmt sich und löst Wolken auf",
+      "wrong": [
+        "Weil dort die Sonne überhaupt nie scheint",
+        "Weil der Boden in diesen Breiten jedes Wasser sofort an den Weltraum abgibt"
+      ],
+      "explanation": "Im subtropischen Hochdruckgürtel sinkt Luft großräumig ab; absinkende Luft erwärmt sich, sodass ihre relative Luftfeuchtigkeit sinkt und kaum Niederschlag entsteht."
+    },
+    "transferCheck": {
+      "question": "Ein Ort liegt bei 10° S. In welchen Monaten erwartet er bei ungestörter Passatzirkulation seine Hauptregenzeit?",
+      "answer": "Im Südsommer (etwa Dezember bis März), wenn die ITC auf die Südhalbkugel wandert",
+      "wrong": [
+        "Im Juni und Juli, wenn die ITC weit im Norden steht",
+        "Gar nicht, da 10° S ständig im Nordpolartief liegt"
+      ],
+      "explanation": "Im Dezember und Januar liegt der Sonnenzenit über der Südhalbkugel; damit zieht die ITC nach Süden und bringt dort Zenitalregen."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Kreislauf der Hadley-Zelle ordnen",
+      "instruction": "Bringe die vier Stationen der Passatzirkulation ausgehend von der ITC in die richtige Abfolge.",
+      "categories": [],
+      "entries": [
+        { "text": "Starke Einstrahlung am Sonnenzenit erwärmt Luft → Bodentief (ITC) und Aufstieg", "target": 0, "feedback": "Am Ausgangspunkt steht die thermische Tiefdruckrinne über dem wärmsten Breitenband." },
+        { "text": "Aufsteigende Luft kühlt ab, kondensiert und führt zu ergiebigen Zenitalregen", "target": 1, "feedback": "Aufsteigende feuchte Luft speist den täglichen Tropenregen." },
+        { "text": "Abfluss in der Höhe polwärts und Absinken um ca. 30° N/S (Subtropenhoch)", "target": 2, "feedback": "Die abgetrocknete Luft sinkt im subtropischen Hochdruckgürtel wieder ab." },
+        { "text": "Rückströmung am Boden als Nordost- bzw. Südostpassat zurück zur ITC", "target": 3, "feedback": "Die Corioliskraft lenkt die Bodenwinde zu den Passaten ab und schließt die Zelle." }
+      ],
+      "conclusion": "Aufstieg an der ITC, Höhenabfluss, Absinken am Subtropenhoch und Rückstrom als Passat bilden ein geschlossenes Windsystem."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre den Unterschied zwischen dem Tageszeitenklima am Äquator und den hygrischen Jahreszeiten in den Savannen bei 12° N.",
+        "hints": [
+          "Wie ändern sich Tag-Nacht-Unterschiede im Vergleich zu den Monatsmitteln am Äquator?",
+          "Was verändert sich bei 12° N durch die Wanderung der ITC im Jahreslauf?"
+        ],
+        "model": "Am Äquator steht die Sonne ganzjährig hoch, sodass die täglichen Temperaturunterschiede zwischen Tag und Nacht größer sind als die Schwankungen der Monatsmittel (Tageszeitenklima); die ITC liegt fast dauerhaft nahebei und bringt ganzjährig Regen. Bei 12° N bleiben die Temperaturen ebenfalls hoch, doch der Jahresgang wird durch Niederschlag (hygrische Jahreszeiten) gegliedert: Im Nordsommer bringt die gewanderte ITC Regenzeit, im Winter herrscht unter dem Passat Trockenzeit.",
+        "criteria": [
+          "Ich definiere Tageszeitenklima korrekt über Tag-Nacht- vs. Jahresschwankung.",
+          "Ich erkläre hygrische Jahreszeiten über den Wechsel von Regen- und Trockenzeit.",
+          "Ich verbinde den Wechsel bei 12° N mit der jahreszeitlichen Wanderung der ITC."
+        ]
+      },
+      "2": {
+        "prompt": "Überprüfe im Passatzirkulations-Labor den Standort Äquator (0°). Begründe, warum in Äquatornähe häufig zwei abgeschwächte Regenspitzen im Jahr (um März/April und Oktober/November) auftreten.",
+        "hints": [
+          "Wie oft überquert der Sonnenzenit den Äquator im Laufe eines Jahres?",
+          "Wann steht die Sonne über 0° am höchsten?"
+        ],
+        "model": "Zwischen dem 21. Juni (23,5° N) und dem 21. Dezember (23,5° S) wandert der Sonnenzenit zweimal pro Jahr genau über den Äquator hinweg – jeweils um die Tagundnachtgleichen im März und September. Mit leichter Verzögerung zieht die ITC zweimal über 0° und löst im Frühjahr und Herbst besonders starke Regenspitzen aus.",
+        "criteria": [
+          "Ich benenne den zweimaligen Zenitdurchgang über dem Äquator im Jahr.",
+          "Ich ordne ihn zeitlich in die Nähe der Tagundnachtgleichen ein.",
+          "Ich verknüpfe ihn mit dem zweimaligen Durchzug der ITC und ihrer Verzögerung."
+        ]
+      }
+    }
+  },
+  {
+    "id": "meeresstroemungen-und-relief",
+    "lb": 3,
+    "title": "Besonderheiten: Meeresströmungen, Meerestemperatur und Relief",
+    "period": "Geo10 LB 3 · Sonderfälle",
+    "intro": "Warum entsteht die trockenste Wüste der Erde – die Atacama – direkt am Pazifik, während an anderen tropischen Küsten dichter Regenwald bis ans Wasser reicht?",
+    "paragraphs": [
+      "Das Grundmodell der Passatzirkulation reicht allein nicht aus, um alle tropischen und subtropischen Trocken- und Feuchträume zu erklären. Drei Faktoren verändern das Muster grundlegend: kalte und warme Meeresströmungen, das Relief hoher Gebirge sowie die Entfernung vom offenen Meer (Kontinentalität).",
+      "Entlang subtropischer Westküsten – etwa vor Chile und Peru (Humboldtstrom) sowie vor Namibia (Benguelastrom) – fließt kaltes Auftriebswasser äquatorwärts. Darüber kühlt die untere Luftschicht ab, sodass häufig dichter Küstennebel entsteht, doch eine kalte Luftschicht unter wärmerer Höhenluft (Inversion) verhindert konvektiven Aufstieg: Es fällt kaum ein Tropfen Regen, obwohl das Meer nur Meter entfernt liegt.",
+      "Umgekehrt erzwingen Gebirgsketten – etwa die Anden oder das ostafrikanische Hochland – an der windzugewandten Luvseite Steigungsregen, während auf der Lee-Seite trockene Regenschattenräume entstehen. Und im Inneren riesiger Kontinente fehlt nach tausenden Kilometern Landweg oft jegliche Meeresfeuchte (Binnenwüsten)."
+    ],
+    "workedExample": "Vor der Küste Namibias kühlt der kalte Benguelastrom die Seeluft stark ab. Feuchtigkeit kondensiert zu Nebel direkt am Boden, der Käfer und Flechten in der Namib ernährt – zum Aufsteigen von Gewitterwolken kommt es aber nicht, weil über der kalten Seeluft wärmere Absinkluft des Subtropenhochs liegt.",
+    "takeaway": "Kalte Meeresströmungen erzeugen nebelreiche Küstenwüsten; Gebirge steuern Luv-Regen und Lee-Regenschatten; Kontinentalität verstärkt Binnentrockenheit.",
+    "sourceIds": ["lehrplan", "natural-earth", "dwd-klima"],
+    "figures": ["sonderfaelle-trockenheit"],
+    "quiz": {
+      "question": "Warum regnet es in der Atacama direkt an der Pazifikküste fast nie?",
+      "answer": "Der kalte Humboldtstrom kühlt die bodennahe Luft ab und stabilisiert mit der Absinkluft darüber die Schichtung",
+      "wrong": [
+        "Weil der Pazifik dort dauerhaft vollständig zugefroren ist",
+        "Weil der Passatwind dort ausschließlich vom Südpol kommt"
+      ],
+      "explanation": "Über dem kalten Humboldtstrom bildet sich eine kühle Bodenschicht unter wärmerer Höhenluft; ohne Aufstieg gibt es keinen Regen, nur Küstennebel."
+    },
+    "transferCheck": {
+      "question": "Auf derselben Breite von 22° S liegt an der Westküste Afrikas die Namib-Wüste, an der Ostküste (Madagaskar / Mosambik) jedoch feuchtes Küstenklima. Warum?",
+      "answer": "Im Westen fließt der kalte Benguelastrom (ablandiger Passat verstärkt Auftrieb), im Osten bringt der warme Agulhasstrom mit auflandigem Passat Feuchte",
+      "wrong": [
+        "Weil die Ostküste tausend Kilometer höher liegt als die Westküste",
+        "Weil die Sonne auf der Ostseite doppelt so lang scheint"
+      ],
+      "explanation": "Warme Meeresströmungen und auflandige Passate speisen Niederschlag an Ostküsten, während kalte Auftriebsströmungen Westküsten austrocknen."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Drei Sonderfaktoren der Klimaverteilung erkennen",
+      "instruction": "Ordne die Raumbeispiele ihrer vorrangigen Entstehungsursache zu.",
+      "categories": ["Kalte Meeresströmung", "Relief (Luv/Lee)", "Kontinentalität (Binnenlage)"],
+      "entries": [
+        { "text": "Atacama an der chilenisch-peruanischen Küste (Humboldtstrom)", "target": 0, "feedback": "Kaltes Tiefen- und Auftriebswasser unterdrückt Gewitter und Wolkenaufstieg." },
+        { "text": "Patagonien östlich der Anden im Windschatten der Westwinde", "target": 1, "feedback": "Feuchte Luft regnet westlich der Anden ab und sinkt im Lee trocken ab." },
+        { "text": "Trockene Becken Zentralasiens weit entfernt von allen Ozeanen", "target": 2, "feedback": "Große Entfernung vom Meer lässt Luftmassen unterwegs ausregnen." },
+        { "text": "Namib mit häufigem Küstennebel entlang Südwestafrikas", "target": 0, "feedback": "Der Benguelastrom kühlt die Küstenluft unter das Inversionsniveau." }
+      ],
+      "conclusion": "Küstenwüsten, Regenschattenwüsten und Binnenwüsten zeigen, wie Meere und Gebirge das Zonalmodell abwandeln."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre an einem konkreten Beispiel, wie eine kalte Meeresströmung eine Küstenwüste entstehen lässt.",
+        "hints": [
+          "Was passiert mit der Lufttemperatur direkt über dem kalten Wasser?",
+          "Warum verhindert die Temperaturschichtung (Inversion) aufsteigende Regenwolken?"
+        ],
+        "model": "Vor der Südwestküste Afrikas strömt der kalte Benguelastrom äquatorwärts. Die feuchte Meeresluft kühlt über dem kalten Wasser ab und bildet Küstennebel. Da darüber jedoch wärmere Luft des Subtropenhochs liegt, entsteht eine stabile Schichtung (Inversion): Die kühle, schwerere Luft kann nicht aufsteigen, sodass sich keine Regenwolken bilden und die Namib extrem trocken bleibt.",
+        "criteria": [
+          "Ich nenne ein reales Beispiel (Atacama/Humboldtstrom oder Namib/Benguelastrom).",
+          "Ich erkläre die Abkühlung der untersten Luftschicht über kaltem Wasser.",
+          "Ich begründe das Ausbleiben von Regen durch fehlenden Aufstieg bzw. Inversion."
+        ]
+      },
+      "2": {
+        "prompt": "Übertrage das Zusammenspiel von Wind, Meerestemperatur und Relief auf eine Gebirgsküste: Was verändert sich für eine Küstensiedlung am Meer, wenn zwischen ihr und dem Hinterland ein 3000 m hohes Gebirge aufsteigt?",
+        "hints": [
+          "Was geschieht mit auflandiger, warmer Meeresluft am Gebirgshang?",
+          "Wie unterscheidet sich das Klima der Küstenseite von dem der abgewandten Seite?"
+        ],
+        "model": "Trifft warme, feuchte Meeresluft auf die 3000 m hohe Gebirgsmauer, wird sie zum raschen Aufstieg gezwungen. Die Siedlung auf der Luvseite erhält deutlich mehr Steigungsregen (und bei Starkregen Hochwassergefahr), während auf der windabgewandten Rückseite trockene Fallwinde und Regenschattenbedingungen den Ackerbau erschweren.",
+        "criteria": [
+          "Ich unterscheide Luvseite (Steigungsregen) und Leeseite (Regenschatten).",
+          "Ich beschreibe die konkrete Folge für Niederschlag und Nutzung an der Küste.",
+          "Ich beziehe die Rolle der Meeresfeuchte am Anfang mit ein."
+        ]
+      }
+    }
+  },
+  {
+    "id": "oekosysteme-regenwald-savanne-wueste",
+    "lb": 3,
+    "title": "Regenwald, Savannen und Wüsten: Ökosysteme und Nutzung",
+    "period": "Geo10 LB 3 · Ökosysteme",
+    "intro": "Wie passen sich Pflanzen, Böden und menschliche Landwirtschaft an die feuchten Tropen, wechselfeuchten Savannen und ariden Wüsten an?",
+    "paragraphs": [
+      "Der tropische Regenwald beeindruckt durch seinen Stockwerkbau (von Kraut- und Strauchschicht über das dichte Kronendach in 20–40 m Höhe bis zu einzelnen Urwaldriesen über 50 m) und enorme Artenvielfalt. Doch sein tiefer Verwitterungsboden (Ferralsol) ist stark ausgewaschen und nährstoffarm: Fast alle Nährstoffe sitzen in der lebenden Biomasse und werden im kurzgeschlossenen Nährstoffkreislauf von Pilzen (Mykorrhiza) und flachen Wurzeln blitzschnell wieder aufgenommen.",
+      "Wo die Trockenzeit länger wird, geht der Wald in die Savannen über: Feuchtsavanne (ca. 7–9 humide Monate, hochwüchsiges Gras und Galeriewälder), Trockensavanne (ca. 4–6 humide Monate, Schirmakazien, Affenbrotbäume) und Dornsavanne (ca. 2–3 humide Monate, dornige Sträucher). Traditionelle Nutzungen reichen von Wanderfeldbau mit langen Brachezeiten bis zu mobiler Weidewirtschaft.",
+      "In den ariden Subtropen unterscheiden wir nach der Gesteinsoberfläche Fels- und Steinwüsten (Hammada), Kies- und Geröllwüsten (Serir) und Sand- und Dünenwüsten (Erg) – letztere machen beispielsweise in der Sahara nur rund ein Fünftel der Fläche aus. Landwirtschaft ist hier dauerhaft fast nur in Oasen an Flüssen, Quellen oder Grundwasserspeichern möglich."
+    ],
+    "workedExample": "Im Nährstoff-Labor siehst du, warum reine Brandrodung ohne Brache scheitert: Im Jahr 1 düngt die Asche noch kurzfristig. Schon ab Jahr 3 bis 5 wäscht der tropische Regen ohne schützendes Kronendach die letzten Nährstoffe aus – die Erträge stürzen ab, während ein mehrstöckiges Agroforstsystem den Kreislauf stabil hält.",
+    "takeaway": "Tropischer Regenwald lebt aus dem kurzgeschlossenen Kreislauf seiner Biomasse; Savannen folgen der Dauer der Regenzeit; Wüsten beschränken Anbau auf Oasen.",
+    "sourceIds": ["lehrplan", "bmz-ez", "unccd"],
+    "figures": ["oekosystem-profil"],
+    "lab": "naehrstoffkreislauf",
+    "quiz": {
+      "question": "Warum sind Böden im tropischen Regenwald nach großflächiger Brandrodung oft schon nach wenigen Ernten unfruchtbar?",
+      "answer": "Weil die meisten Nährstoffe zuvor in der oberirdischen Biomasse gebunden waren und der verarmte Mineralboden schnell ausgewaschen wird",
+      "wrong": [
+        "Weil der Boden unter dem Regenwald aus meterdickem fruchtbarem Dauerhumus besteht",
+        "Weil es in den Tropen nach einer Rodung plötzlich jahrelang friert"
+      ],
+      "explanation": "Im kurzgeschlossenen Nährstoffkreislauf speichern nicht der tief verwitterte Ferralsol, sondern Pflanzen und dünne Streu die Nährstoffe; ohne Kronendach spült Regen sie fort."
+    },
+    "transferCheck": {
+      "question": "Ein Gebiet in den Tropen verzeichnet drei humide Monate im Jahr und trägt verstreute Dornsträucher sowie kurzes Gras. Welche Savannenform liegt vor?",
+      "answer": "Dornsavanne",
+      "wrong": [
+        "Immerfeuchter Tieflandregenwald",
+        "Feuchtsavanne mit dichtem Galeriewald"
+      ],
+      "explanation": "Mit sinkender Zahl humider Monate (ca. 2–3 Monate) geht die Vegetation in die trockene Dornsavanne über."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Merkmale und Nutzung den drei Ökosystemen zuordnen",
+      "instruction": "Ordne die Begriffe und Nutzungsformen dem passenden Ökosystem zu.",
+      "categories": ["Tropischer Regenwald", "Savannen", "Aride Wüste"],
+      "entries": [
+        { "text": "Stockwerkbau mit Kronendach, Flachwurzeln und Mykorrhiza-Pilzen", "target": 0, "feedback": "Flachwurzeln und Pilzsymbiose nehmen Zersetzungsstoffe direkt an der Oberfläche auf." },
+        { "text": "Abfolge Feucht-, Trocken- und Dornsavanne je nach Zahl der humiden Monate", "target": 1, "feedback": "Die Länge der Regenzeit gliedert den Savannengürtel." },
+        { "text": "Hammada, Serir, Erg und kleinflächiger Stockwerkbau in Oasen", "target": 2, "feedback": "Verschiedene Wüstenoberflächen und punktuelle Wasserverfügbarkeit prägen aride Räume." },
+        { "text": "Wanderfeldbau mit langer Sekundärwald-Brache oder mehrstöckiger Agroforst", "target": 0, "feedback": "Angepasste Nutzung schützt den nährstoffarmen Boden vor Auswaschung und Erosion." },
+        { "text": "Saisonaler Regenfeldbau (z. B. Hirse) und mobile Weidewirtschaft (Nomadismus)", "target": 1, "feedback": "Herdenwanderung folgt den jahreszeitlich wandernden Regengebieten." }
+      ],
+      "conclusion": "Jedes Ökosystem verlangt eine eigene, den Wasser- und Bodenbedingungen angepasste Nutzungsform."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre anhand des Nährstoffkreislaufs, weshalb traditioneller Wanderfeldbau mit langen Brachezeiten oder Agroforst nachhaltiger ist als dauerhafte Monokulturen auf gerodeten Regenwaldflächen.",
+        "hints": [
+          "Wo liegen die Nährstoffe im ungestörten Regenwald?",
+          "Was leisten lange Brache oder Bäume im Agroforst für Schutz und Kreislauf?"
+        ],
+        "model": "Im Regenwald befinden sich rund vier Fünftel der Nährstoffe in der lebenden Biomasse statt im tief ausgewaschenen Ferralsol. Beim kleinflächigen Wanderfeldbau mit mehrjähriger Brache wächst rasch Sekundärwald nach und baut den Nährstoffspeicher wieder auf; Agroforst hält dauerhaft schattenspendende Bäume auf der Fläche und bremst Auswaschung.",
+        "criteria": [
+          "Ich erkläre den kurzgeschlossenen Nährstoffkreislauf korrekt.",
+          "Ich begründe, warum Dauerrodung zur Auswaschung führt.",
+          "Ich zeige den Nutzen von Brache oder Agroforst."
+        ]
+      },
+      "2": {
+        "prompt": "Widerlege das verbreitete Vorurteil: „Alle Wüsten wie die Sahara bestehen ausschließlich aus endlosen Sanddünen, auf denen nichts wächst.“",
+        "hints": [
+          "Nenne die drei morphologischen Wüstentypen und ihre ungefähre Verteilung.",
+          "Wo und wie existiert dennoch Leben oder Anbau in Wüsten?"
+        ],
+        "model": "Sand- und Dünenwüsten (Erg) machen beispielsweise in der Sahara nur etwa ein Fünftel der Gesamtfläche aus. Den viel größeren Anteil bilden Fels- und Steinwüsten (Hammada) sowie Kies- und Geröllwüsten (Serir). Zudem ermöglichen Nebelfeuchte an Küsten, episodische Wadis, trockenangepasste Pflanzen und Grundwasser- oder Flussoasen lokal erstaunlich vielfältiges Leben.",
+        "criteria": [
+          "Ich nenne Hammada, Serir und Erg mit ihrem ungefähren Größenverhältnis.",
+          "Ich nenne konkrete Lebens- oder Anbaunischen (z. B. Oasen, Wadis, Nebelanpassung).",
+          "Ich formuliere eine sachliche Korrektur des Klischees."
+        ]
+      }
+    }
+  },
+  {
+    "id": "verwundbarkeit-und-vergleich-heimatraum",
+    "lb": 3,
+    "title": "Verwundbarkeit tropischer Ökosysteme im Vergleich zum Heimatraum",
+    "period": "Geo10 LB 3 · Vergleich & BNE",
+    "intro": "Warum zerstören Eingriffe tropische und subtropische Ökosysteme oft rascher und dauerhafter als einen Mischwald bei uns in Bayern?",
+    "paragraphs": [
+      "Tropische Regenwälder beherbergen eine außergewöhnlich hohe Biodiversität – auf wenigen Hektar wachsen oft hunderte verschiedene Baumarten mit fein abgestimmten ökologischen Nischen. Gerade diese hohe Vernetzung macht sie aber gegenüber flächenhaften Eingriffen verwundbar: Verschwinden Schlüsselarten für Bestäubung oder Samenverbreitung, bricht das gesamte Stockwerkgefüge auseinander.",
+      "Ein direkter Vergleich mit einem heimischen bayerischen Mischwald macht den Unterschied greifbar: In Mitteleuropa zersetzt sich Laub im gemäßigten Klima langsamer; über Jahrzehnte entsteht eine kräftige, nährstoffreiche Humus- und Braunerdeschicht. Nach einem Windwurf oder Einschlag sind noch große Nährstoffvorräte im Boden vorhanden, sodass Bäume wieder aus eigener Kraft nachwachsen können.",
+      "In tropischen Regenwäldern fehlt genau dieser Bodenpuffer – nach Brandrodung, Bodenverdichtung durch Großmaschinen oder Austrocknung an Waldrändern verkrusten eisenhaltige Böden oder erodieren im Starkregen. In den Übergangszonen der Savannen wiederum droht bei Übernutzung der schleichende Übergang zur Wüste (Desertifikation)."
+    ],
+    "workedExample": "Im Vergleichsdiagramm liegen beim heimischen Mischwald rund 62 % der Nährstoffe in Humusauflage und Mineralboden, beim tropischen Regenwald hingegen rund 80 % in der lebenden Biomasse. Wird Letztere verbrannt oder abgefahren, verliert das Ökosystem den Großteil seiner Grundlage auf einmal.",
+    "takeaway": "Fehlender Bodennährstoffpuffer und empfindliche Wechselbeziehungen machen tropische und subtropische Ökosysteme besonders verwundbar gegenüber Kahlschlag und Übernutzung.",
+    "sourceIds": ["lehrplan", "bmz-klima", "uba-anpassung"],
+    "figures": ["tropen-heimat-vergleich"],
+    "quiz": {
+      "question": "Warum erholt sich ein gerodeter bayerischer Mischwald im Bodenhaushalt meist leichter als eine kahlschlagene Regenwaldfläche?",
+      "answer": "Im gemäßigten Mischwald speichert eine ausgeprägte Humus- und Bodenschicht viele Nährstoffe als Reserve",
+      "wrong": [
+        "Weil bayerische Wälder überhaupt keine Nährstoffe und kein Wasser benötigen",
+        "Weil es in Bayern zehnmal wärmer ist als am Äquator"
+      ],
+      "explanation": "Während heimische Wälder Nährstoffe über längere Zeit in Humus und Tonmineralen puffern, stecken im Regenwald fast alle Nährstoffe in der oberirdischen Biomasse."
+    },
+    "transferCheck": {
+      "question": "Ein internationales Papier fordert, zum Schutz des globalen Klimas riesige Grassteppen der Tropen einfach pauschal mit einer einzigen fremden Eukalyptusart aufzuforsten. Was spricht ökologisch dagegen?",
+      "answer": "Monokulturen ersetzen artenreiche natürliche Savannen, verbrauchen viel Grundwasser und stören das Boden- und Feuerökosystem",
+      "wrong": [
+        "Bäume speichern grundsätzlich niemals Kohlenstoff",
+        "Eukalyptus wächst nur oberhalb von 6000 m Höhe"
+      ],
+      "explanation": "Natürliche Savannen sind eigene artenreiche Ökosysteme; nicht angepasste Baum-Monokulturen schaden Biodiversität und Wasserhaushalt."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Tropischen Regenwald und heimischen Wald vergleichen",
+      "instruction": "Ordne die sechs Merkmale jeweils dem tropischen Regenwald oder dem heimischen Mischwald in Bayern zu.",
+      "categories": ["Tropischer Regenwald", "Heimischer Mischwald (Bayern)"],
+      "entries": [
+        { "text": "Speichert den Großteil seiner Nährstoffe in oberirdischer Biomasse", "target": 0, "feedback": "Im feucht-warmen Dauerbetrieb zerfällt Laub sofort und wird direkt von Wurzeln aufgenommen." },
+        { "text": "Besitzt meist eine ausgeprägte Humusauflage über Braunerde als Speicher", "target": 1, "feedback": "Kühle Winter bremsen den Abbau, sodass sich fruchtbarer Humus im Boden anreichert." },
+        { "text": "Extrem hohe Baumartenvielfalt je Hektar mit sehr eng spezialisierten Nischen", "target": 0, "feedback": "Viele tausend Wechselbeziehungen zwischen Bestäubern, Pilzen und Bäumen prägen die Tropen." },
+        { "text": "Laubabwurf im Herbst als Anpassung an Frost- und Winterruhe", "target": 1, "feedback": "Winterruhe schützt heimische Laubbäume vor Frostschäden." },
+        { "text": "Sehr anfällig für Verkrustung und Auswaschung unmittelbar nach Kahlschlag", "target": 0, "feedback": "Ohne schützendes Kronendach spült tropischer Starkregen Nährstoffe aus dem Ferralsol." },
+        { "text": "Deutlich weniger Baumarten pro Hektar (z. B. Buche, Eiche, Tanne)", "target": 1, "feedback": "Die eiszeitliche Geschichte und Jahreszeiten führen in Mitteleuropa zu geringerer Baumartenzahl." }
+      ],
+      "conclusion": "Der direkte Vergleich schützt davor, heimische Waldbewirtschaftung unbesehen auf tropische Räume zu übertragen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Diskutiere am Beispiel des Vergleichs zwischen tropischem Regenwald und heimischem Mischwald zwei Gründe für die hohe Verwundbarkeit tropischer Ökosysteme.",
+        "hints": [
+          "Vergleiche die Speicherung der Nährstoffe in Biomasse vs. Humus/Boden.",
+          "Welche Bedeutung hat die extreme Spezialisierung und Fragmentierung für die Artenvielfalt?"
+        ],
+        "model": "Erstens besitzt der tropische Regenwald keinen großen Nährstoffvorrat im Boden, sondern fast alle Nährstoffe stecken in der Biomasse; bei Abholzung und Abbrennen gehen sie durch Auswaschung rasch verloren. Zweitens leben viele Arten in kleinteiligen Nischen und brauchen zusammenhängende Waldflächen; werden diese zerschnitten oder ausgetrocknet, brechen Lebensgemeinschaften viel leichter zusammen als im robuster gepufferten heimischen Wald.",
+        "criteria": [
+          "Ich erkläre die Verwundbarkeit über den fehlenden Bodenpuffer.",
+          "Ich beziehe Artenvielfalt und Zerschneidung (Fragmentierung) ein.",
+          "Ich stelle den Vergleich zum heimischen Ökosystem ausdrücklich her."
+        ]
+      },
+      "2": {
+        "prompt": "Ein Einkaufsmarkt wirbt mit „Tropenholz-Möbeln aus garantiert schnellem Kahlschlag zum Tiefpreis“. Verfasse eine fachlich begründete Stellungnahme aus Sicht der Bildung für Nachhaltige Entwicklung (BNE).",
+        "hints": [
+          "Was passiert ökologisch und langfristig wirtschaftlich bei Kahlschlag?",
+          "Welche Rolle spielen Zertifikate (z. B. echte nachhaltige Forstwirtschaft) und eigene Konsumentscheidungen?"
+        ],
+        "model": "Extrem billige Möbel aus unkontrolliertem Kahlschlag verlagern die ökologischen und sozialen Kosten auf den tropischen Raum: Langsam wachsende Urwaldbäume gehen verloren, der Boden verarmt, Arten sterben aus und CO₂ wird freigesetzt. Nachhaltige Alternativen sind langlebige Produkte aus zertifiziertem, schonendem Einschlag oder heimischen Hölzern aus nachwachsender Bewirtschaftung.",
+        "criteria": [
+          "Ich benenne die ökologischen Langfristfolgen von Kahlschlag.",
+          "Ich decke das Preisargument als Verlagerung externer Kosten auf.",
+          "Ich nenne verantwortliche Alternativen für Konsumentscheidungen."
+        ]
+      }
+    }
+  }
+]

@@ -430,6 +430,21 @@ test("Realschule physics starts with Group I in grade 7, not a promised grade-6 
   assert.ok(grade6.attrs["aria-label"].includes("kein Fach"));
 });
 
+test("Gymnasium geography omits grades 6, 8 and 9 and links grade 10 to its live package", () => {
+  const trees = atlasTrees();
+  const { nodes } = matrix(registry, "gymnasium");
+  const row = matrixRow(nodes, "geographie");
+  for (const grade of [6, 8, 9]) {
+    assert.ok(!schoolSubject(trees, grade, "geographie")?.children.some((n) => n.school?.id === "gymnasium"));
+    const cell = row.children[grade - 3].children[0];
+    assert.equal(cell.attrs.class, "na none");
+    assert.equal(cell.attrs.href, "https://www.gesetze-bayern.de/Content/Document/BayGSO-ANL_1");
+    assert.ok(cell.attrs["aria-label"].includes("kein Fach"));
+  }
+  const grade10 = schoolSubject(trees, 10, "geographie").children.find((n) => n.school?.id === "gymnasium");
+  assert.equal(grade10.pkg.app, "geographie-gymnasium-10");
+});
+
 test("GPG is reachable through all three paths in both lenses, including grades before the standalone subject starts", () => {
   const trees = atlasTrees();
   for (const grade of [5, 6, 7, 8, 9, 10]) {
