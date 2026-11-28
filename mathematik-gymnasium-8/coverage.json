@@ -1,0 +1,271 @@
+{
+  "schema": 1,
+  "checked": "2026-11-28",
+  "curriculum": "https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/8/mathematik",
+  "curriculum_sha256": "609b4a0efdd58aa72d818d2905ecc9dbeeebb070cc4654f774dc18731cd9e190",
+  "school_type": "gymnasium",
+  "grade": 8,
+  "subject": "mathematik",
+  "scope": "full",
+  "optional_lessons": [],
+  "rows": [
+    {
+      "lb": 1,
+      "competence": "erfassen und beschreiben funktionale Zusammenhänge (z.\u00a0B. Stromtarife, Temperaturverläufe, Bevölkerungsentwicklung) mit Tabellen, Diagrammen und, wo möglich, mit Termen, auch unter Verwendung eines Tabellenkalkulationsprogramms.",
+      "status": "supported",
+      "lessons": [
+        "ft-1-zusammenhaenge"
+      ],
+      "evidence": "ft-1-zusammenhaenge (func-representations, ft-tabelle-term, ft-tabelle-kalk) verknüpft Wertetabelle, Term und Graph und simuliert Tabellenformeln; das eigenständige Arbeiten in einer externen Tabellenkalkulation bleibt Teil des Unterrichts."
+    },
+    {
+      "lb": 1,
+      "competence": "verstehen eine Funktion als eindeutige Zuordnung und grenzen die zugehörigen Fachbegriffe (z.\u00a0B. Funktionsterm, Graph, Definitionsmenge, Wertemenge) voneinander ab. Sie erkennen Funktionen als solche und unterscheiden diese begründet von nicht eindeutigen Zuordnungen. Graphen von Funktionen, denen Terme zugrunde liegen, stellen sie mithilfe einer geeigneten Software (z.\u00a0B. Funktionenplotter) dar.",
+      "status": "supported",
+      "lessons": [
+        "ft-2-eindeutigkeit",
+        "ft-3-fachbegriffe"
+      ],
+      "evidence": "ft-2-eindeutigkeit (vertical-line-test, ft-zuordnung-pruefen, ft-funktion-gegenbeispiel) und ft-3-fachbegriffe (domain-range-mapper, ft-begriffe-zuordnen, ft-wertemenge-bestimmen) prüfen die Eindeutigkeit am Senkrechten-Test und grenzen D, W, Term und Graph ab; die Nutzung eines externen Funktionenplotters ergänzt die App im Unterricht."
+    },
+    {
+      "lb": 1,
+      "competence": "bestimmen die Koordinaten der Schnittpunkte eines Funktionsgraphen mit den Koordinatenachsen und die Lage von Punkten bezüglich des Funktionsgraphen graphisch und, falls möglich, rechnerisch. In einfachen Fällen beschreiben sie, in welcher Weise sich der Funktionswert verändert, wenn sich der Wert des Funktionsarguments verändert.",
+      "status": "implemented",
+      "lessons": [
+        "ft-4-achsen-punkte",
+        "ft-5-aenderung"
+      ],
+      "evidence": "ft-4-achsen-punkte (point-probe-axes, ft-punktprobe, ft-achsenschnitt) und ft-5-aenderung (value-change-explorer, ft-aenderung-linear, ft-wachstum-deuten) bestimmen Achsenschnittpunkte, Punktproben sowie Wertänderungen bei steigendem x rechnerisch und am Graphen."
+    },
+    {
+      "lb": 2,
+      "competence": "interpretieren Funktionsgleichungen der Form y\u00a0=\u00a0m\u00a0⋅\u00a0x\u00a0+\u00a0t als Gleichungen von Geraden und erläutern die Bedeutung der Parameter m und t, auch unter Verwendung einer dynamischen Mathematiksoftware. Sie zeichnen die Graphen linearer Funktionen und ermitteln umgekehrt anhand der Graphen solcher Funktionen die zugehörigen Werte der Parameter.",
+      "status": "supported",
+      "lessons": [
+        "lf-1-parameter",
+        "lf-2-zeichnen-ablesen"
+      ],
+      "evidence": "lf-1-parameter (line-m-t, lf-parameter-deuten, lf-wert-aus-gleichung) und lf-2-zeichnen-ablesen (line-read-graph, lf-graph-ablesen, lf-steigungsdreieck) deuten m und t am Steigungsdreieck und lesen Parameter ab; der Einsatz einer externen DGS und Papierzeichnen erfolgen im Unterricht."
+    },
+    {
+      "lb": 2,
+      "competence": "stellen rechnerisch Geradengleichungen auf, bestimmen die Nullstellen linearer Funktionen und ermitteln die Koordinaten des Schnittpunkts zweier Geraden.",
+      "status": "implemented",
+      "lessons": [
+        "lf-3-aufstellen",
+        "lf-4-nullstellen",
+        "lf-5-schnittpunkt"
+      ],
+      "evidence": "lf-3-aufstellen (line-two-points, lf-punkt-steigung, lf-zwei-punkte), lf-4-nullstellen (line-zero-point, lf-nullstelle-rechnen, lf-nullstelle-parameter) und lf-5-schnittpunkt (line-intersection, lf-schnittpunkt-rechnen, lf-lage-pruefen) bestimmen Geradengleichungen, Nullstellen und Schnittpunkte rechnerisch."
+    },
+    {
+      "lb": 2,
+      "competence": "nutzen lineare Funktionen und deren Graphen in Sachzusammenhängen; insbesondere stellen sie passende Funktionen auf und interpretieren Graphen sachgerecht.",
+      "status": "implemented",
+      "lessons": [
+        "lf-6-sachkontext"
+      ],
+      "evidence": "lf-6-sachkontext (linear-tariffs, lf-tarif-modell, lf-bewegung-fuellen) modelliert Tarife sowie Füll- und Bewegungsvorgänge durch lineare Funktionen und interpretiert Schnitt- und Startwerte im Kontext."
+    },
+    {
+      "lb": 2,
+      "competence": "lösen lineare Ungleichungen graphisch und rechnerisch und stellen das Ergebnis in Intervallschreibweise dar.",
+      "status": "implemented",
+      "lessons": [
+        "lf-7-ungleichungen"
+      ],
+      "evidence": "lf-7-ungleichungen (linear-inequality, lf-ungleichung-rechnen, lf-intervall-grafik) veranschaulicht lineare Ungleichungen am Zahlenstrahl und Graphen und übt das Inversionszeichen sowie Intervallklammern."
+    },
+    {
+      "lb": 2,
+      "competence": "verstehen, dass der Spezialfall einer linearen Funktion mit einer Funktionsgleichung der Form y\u00a0=\u00a0a\u00a0⋅\u00a0x als Zuordnung zweier Größen aufgefasst werden kann, die direkt proportional zueinander sind. Diesen Zusammenhang zwischen den beiden Größen erläutern sie an der zugehörigen Ursprungsgeraden und erkennen zueinander direkt proportionale Größen als solche, u.\u00a0a. im Kontext naturwissenschaftlicher Fragestellungen.",
+      "status": "implemented",
+      "lessons": [
+        "lf-8-proportional"
+      ],
+      "evidence": "lf-8-proportional (direct-proportion, lf-prop-faktor, lf-prop-pruefen) charakterisiert Ursprungsgeraden y = a · x als direkte Proportionalität anhand Quotientengleichheit und physikalischer Messreihen."
+    },
+    {
+      "lb": 3,
+      "competence": "geben für gebrochen-rationale Funktionen der Form x ↦ a/(x + b) + c die maximale Definitionsmenge an, bestimmen die Schnittpunkte des Graphen mit den Koordinatenachsen und beschreiben den Einfluss einer Änderung der Werte der Parameter b und c auf den Verlauf des Graphen. Zur Untersuchung und Veranschaulichung nutzen sie auch eine dynamische Mathematiksoftware.",
+      "status": "supported",
+      "lessons": [
+        "gr-1-defmenge",
+        "gr-2-verschieben",
+        "gr-3-achsen"
+      ],
+      "evidence": "gr-1-defmenge (hyperbola-domain, gr-defmenge-bestimmen, gr-funktionswert-luecke), gr-2-verschieben (hyperbola-shift, gr-asymptoten-ablesen, gr-verschiebung-term) und gr-3-achsen (hyperbola-axes, gr-sy-berechnen, gr-nullstelle-rechnen) bestimmen Definitionsmenge, Asymptotenverschiebungen und Achsenschnittpunkte interaktiv; die ergänzende Arbeit in einer externen DGS findet im Unterricht statt."
+    },
+    {
+      "lb": 3,
+      "competence": "zeichnen den Graphen einer gebrochen-rationalen Funktion der Form x ↦ a/(x + b) + c einschließlich seiner Asymptoten und ermitteln umgekehrt anhand des Graphen einer solchen Funktion die zugehörigen Werte der Parameter.",
+      "status": "supported",
+      "lessons": [
+        "gr-4-graph-parameter"
+      ],
+      "evidence": "gr-4-graph-parameter (hyperbola-fit, gr-parameter-aus-graph, gr-punkt-auf-hyperbel) liest Asymptoten sowie Punkte am Graphen ab und prüft Funktionspunkte; das händische Zeichnen von Hyperbeln auf Papier bleibt Unterrichtsaufgabe."
+    },
+    {
+      "lb": 3,
+      "competence": "verstehen, dass der Spezialfall einer gebrochen-rationalen Funktion mit einer Funktionsgleichung der Form y = a/x als Zuordnung zweier Größen aufgefasst werden kann, die indirekt proportional zueinander sind. Diesen Zusammenhang zwischen den beiden Größen erläutern sie am zugehörigen Graphen und erkennen zueinander indirekt proportionale Größen als solche, u.\u00a0a. im Kontext naturwissenschaftlicher Fragestellungen.",
+      "status": "implemented",
+      "lessons": [
+        "gr-5-indirekt"
+      ],
+      "evidence": "gr-5-indirekt (inverse-proportion, gr-indirekt-rechnen, gr-direkt-vs-indirekt) untersucht Hyperbeln y = a / x über Produktgleichheit und grenzt direkte und indirekte Proportionalität auch in naturwissenschaftlichen Beispielen ab."
+    },
+    {
+      "lb": 4,
+      "competence": "erfassen die Struktur von Bruchtermen angemessener Komplexität und erweitern und kürzen diese, auch unter Anwendung des Distributivgesetzes. Sie erläutern die Verfahren unter Einbeziehung von Analogiebetrachtungen hinsichtlich ihrer in den Jahrgangsstufen\u00a06 und 7 erworbenen Kenntnisse.",
+      "status": "implemented",
+      "lessons": [
+        "bt-1-erweitern-kuerzen"
+      ],
+      "evidence": "bt-1-erweitern-kuerzen (rational-simplify, bt-kuerzen-ausklammern, bt-erweitern-pruefen) faktorisiert Zähler und Nenner vor dem Kürzen mit Distributivgesetz und binomischen Formeln unter Beachtung der Definitionsmenge."
+    },
+    {
+      "lb": 4,
+      "competence": "bringen Bruchterme angemessener Komplexität auf einen gemeinsamen Nenner, um diese zu addieren und zu subtrahieren. Sie multiplizieren und dividieren Bruchterme angemessener Komplexität. Falls möglich, vereinfachen sie die dabei entstehenden Terme.",
+      "status": "implemented",
+      "lessons": [
+        "bt-2-add-sub",
+        "bt-3-mul-div"
+      ],
+      "evidence": "bt-2-add-sub (rational-add-sub, bt-hauptnenner-add, bt-subtraktion-vorzeichen) und bt-3-mul-div (rational-mul-div, bt-multiplizieren, bt-dividieren-kehrbruch) trainieren Hauptnennerbildung, Minusklammern, Über-Kreuz-Kürzen und Kehrwertdivision."
+    },
+    {
+      "lb": 4,
+      "competence": "machen die Rechengesetze für Potenzen mit ganzzahligen Exponenten plausibel und wenden diese in einfachen Fällen an.",
+      "status": "implemented",
+      "lessons": [
+        "bt-4-potenzen-z"
+      ],
+      "evidence": "bt-4-potenzen-z (int-powers-lab, bt-neg-exponent, bt-potenzgesetz-z) begründet Potenzen mit negativen Exponenten und Null über das Permanenzprinzip und wendet die Potenzgesetze an."
+    },
+    {
+      "lb": 4,
+      "competence": "lösen auf der Grundlage eines zunehmend abstrahierenden Verständnisses von Termstrukturen Bruchgleichungen angemessener Komplexität rechnerisch und interpretieren in einfachen Fällen Bruchgleichungen als Schnittprobleme von Funktionsgraphen.",
+      "status": "implemented",
+      "lessons": [
+        "bt-5-bruchgleichungen",
+        "bt-6-schnittproblem"
+      ],
+      "evidence": "bt-5-bruchgleichungen (frac-eq-solver, bt-bruchgl-loesen, bt-scheinloesung) und bt-6-schnittproblem (frac-eq-graph, bt-graph-schnitt, bt-gleichung-zu-graph) lösen Bruchgleichungen mit Hauptnenner und Definitionsprüfung und deuten Lösungen als Graphenschnittpunkte."
+    },
+    {
+      "lb": 4,
+      "competence": "lösen Formeln – insbesondere aus den Naturwissenschaften – nach einer Variablen auf.",
+      "status": "implemented",
+      "lessons": [
+        "bt-7-formeln"
+      ],
+      "evidence": "bt-7-formeln (formula-rearranger, bt-formel-physik, bt-formel-bruch) formt physikalische und geometrische Formeln mittels Äquivalenzumformungen nach gesuchten Variablen um."
+    },
+    {
+      "lb": 5,
+      "competence": "grenzen Zufallsexperimente von deterministischen Vorgängen ab und beschreiben Zufallsexperimente unter Verwendung von Fachbegriffen wie Ergebnis, Ergebnismenge, Ereignis und Gegenereignis.",
+      "status": "implemented",
+      "lessons": [
+        "la-1-zufall"
+      ],
+      "evidence": "la-1-zufall (sample-space-set, la-ereignis-menge, la-deterministisch-zufall) unterscheidet Zufallsexperimente von deterministischen Vorgängen und notiert Ergebnismenge, Ereignis und Gegenereignis in Mengenschreibweise."
+    },
+    {
+      "lb": 5,
+      "competence": "bestimmen relative Häufigkeiten von Ereignissen auch selbst durchgeführter Zufallsexperimente. Zur Auswertung und Simulation von Zufallsexperimenten verwenden sie ein Tabellenkalkulationsprogramm, wobei sie absoluten von relativem Zellbezug unterscheiden. Sie erläutern die Aussage des empirischen Gesetzes der großen Zahlen anhand konkreter Beispiele und nutzen entsprechend relative Häufigkeiten als sinnvolle Schätzwerte für Wahrscheinlichkeiten.",
+      "status": "supported",
+      "lessons": [
+        "la-2-haeufigkeit",
+        "la-3-tabelle-sim"
+      ],
+      "evidence": "la-2-haeufigkeit (law-large-numbers, la-rel-haeufigkeit, la-grosse-zahlen) und la-3-tabelle-sim (spreadsheet-refs, la-zellbezug-formel, la-haeufigkeit-tabelle) demonstrieren das empirische Gesetz der großen Zahlen sowie relative und absolute Zellbezüge; das eigene Würfeln und Auswerten in einer externen Tabellenkalkulation bleiben Unterrichtsarbeit."
+    },
+    {
+      "lb": 5,
+      "competence": "grenzen anhand von Beispielen Laplace-Experimente von Zufallsexperimenten ab, die sich nicht mithilfe der Annahme der Gleichwahrscheinlichkeit aller Elementarereignisse tragfähig modellieren lassen.",
+      "status": "implemented",
+      "lessons": [
+        "la-4-laplace-abgrenzen"
+      ],
+      "evidence": "la-4-laplace-abgrenzen (laplace-symmetry-check, la-laplace-pruefen, la-sektor-anteil) prüft Symmetrieannahmen an Glücksrädern, Urnen und Reißzwecken."
+    },
+    {
+      "lb": 5,
+      "competence": "berechnen Laplace-Wahrscheinlichkeiten und nutzen dabei auch das Zählprinzip und Baumdiagramme.",
+      "status": "implemented",
+      "lessons": [
+        "la-5-laplace-rechnen",
+        "la-6-zaehlprinzip-baum"
+      ],
+      "evidence": "la-5-laplace-rechnen (laplace-urn-grid, la-laplace-basis, la-gegenereignis) und la-6-zaehlprinzip-baum (counting-tree, la-zaehlprinzip, la-baum-laplace) berechnen P(E), Gegenwahrscheinlichkeiten sowie Pfadanzahlen über das Zählprinzip."
+    },
+    {
+      "lb": 6,
+      "competence": "beschreiben Sachzusammenhänge mithilfe eines Systems linearer Gleichungen und erläutern ihre Vorgehensweise.",
+      "status": "implemented",
+      "lessons": [
+        "lg-1-aufstellen"
+      ],
+      "evidence": "lg-1-aufstellen (lgs-modeling, lg-system-aufstellen, lg-text-loesen) übersetzt Textbedingungen schrittweise in Variablen und zwei lineare Gleichungen."
+    },
+    {
+      "lb": 6,
+      "competence": "lösen lineare Gleichungssysteme mit zwei Unbekannten graphisch und z.\u00a0B. mithilfe des Einsetzungsverfahrens rechnerisch; sie sind sich des algorithmischen Charakters des rechnerischen Verfahrens bewusst und begründen, dass bei den einzelnen Umformungen die Lösungsmenge des Gleichungssystems erhalten bleibt. Sie vergleichen die Lösungsverfahren, v.\u00a0a. hinsichtlich ihrer Effektivität, und interpretieren ggf. ihre Ergebnisse im Sachzusammenhang.",
+      "status": "implemented",
+      "lessons": [
+        "lg-2-graphisch",
+        "lg-3-einsetzung",
+        "lg-4-addition-vergleich"
+      ],
+      "evidence": "lg-2-graphisch (lgs-graphical, lg-graph-schnitt, lg-probe-system), lg-3-einsetzung (lgs-substitution, lg-einsetzen, lg-gleichsetzen) und lg-4-addition-vergleich (lgs-elimination, lg-additionsverfahren, lg-verfahren-waehlen) üben graphisches Lösen sowie Einsetzungs-, Gleichsetzungs- und Additionsverfahren samt Verfahrensvergleich."
+    },
+    {
+      "lb": 6,
+      "competence": "formulieren und veranschaulichen Aussagen zur Lösbarkeit und zur Lösungsvielfalt linearer Gleichungssysteme mit zwei Unbekannten.",
+      "status": "implemented",
+      "lessons": [
+        "lg-5-loesbarkeit"
+      ],
+      "evidence": "lg-5-loesbarkeit (lgs-cases, lg-fall-erkennen, lg-parameter-fall) deutet eindeutige, leere und unendlich viele Lösungen geometrisch als Schnitt, echte Parallelität und Deckung."
+    },
+    {
+      "lb": 7,
+      "competence": "machen die Struktur der Formeln für Umfang bzw. Flächeninhalt eines Kreises plausibel und bestimmen, z.\u00a0B. durch Messen, einen Näherungswert für die Kreiszahl\u00a0π. Sie interpretieren die Flächeninhaltsformel als nicht lineare Zuordnung und wenden die Formeln bei innermathematischen Fragestellungen (auch zu einfachen Kreisteilen) sowie in Sachsituationen an.",
+      "status": "supported",
+      "lessons": [
+        "kz-1-pi-umfang",
+        "kz-2-kreisflaeche",
+        "kz-3-kreisteile"
+      ],
+      "evidence": "kz-1-pi-umfang (circle-pi-unroll, kz-umfang-rechnen, kz-umfang-sach), kz-2-kreisflaeche (circle-area-sectors, kz-flaeche-rechnen, kz-skalierung-nichtlinear) und kz-3-kreisteile (circle-parts, kz-sektor-bogen, kz-kreisring) veranschaulichen Abrollen, Sektorzerlegung und quadratisches Wachstum; das physische Messen realer Kreiskörper im Unterricht ergänzt das Labor."
+    },
+    {
+      "lb": 7,
+      "competence": "skizzieren Schrägbilder von geraden Prismen und geraden Kreiszylindern. Sie beschreiben diese Körper sowie ihre Grund- und Mantelflächen mit Fachbegriffen und zeichnen zugehörige Netze. Letztere verwenden sie, um die Formel zur Bestimmung des Oberflächeninhalts eines geraden Kreiszylinders zu begründen.",
+      "status": "supported",
+      "lessons": [
+        "kz-4-schraegbild-netz"
+      ],
+      "evidence": "kz-4-schraegbild-netz (cylinder-prism-net, kz-mantel-oberflaeche, kz-prisma-netz) leitet die Oberflächenformel am abgerollten Mantelrechteck her; das händische Skizzieren von Schrägbildern und Netzen auf Papier erfolgt im Unterricht."
+    },
+    {
+      "lb": 7,
+      "competence": "begründen, dass die Volumina gerader Prismen unabhängig von der Form ihrer Grundfläche gleich dem Produkt aus Grundflächeninhalt und Höhe sind, und machen die Formel zur Bestimmung des Volumens eines geraden Kreiszylinders plausibel, indem sie diesen Körper als Grenzfall von geraden Prismen betrachten.",
+      "status": "implemented",
+      "lessons": [
+        "kz-5-volumen"
+      ],
+      "evidence": "kz-5-volumen (prism-to-cylinder, kz-zylinder-volumen, kz-prisma-volumen) begründet V = G · h für gerade Prismen und führt die Zylinderformel V = π · r² · h über wachsende regelmäßige Vielecke anschaulich herbei."
+    },
+    {
+      "lb": 7,
+      "competence": "nutzen auch in Sachzusammenhängen flexibel die bisher bekannten Volumen- und Oberflächeninhaltsformeln von Körpern. Bei der Übertragung der Sachsituation in ein mathematisches Modell treffen sie situationsgerecht sinnvolle Annahmen und recherchieren ggf. zusätzlich benötigte Informationen sorgfältig (z.\u00a0B. im Internet). Sie dokumentieren und präsentieren ihre Lösungswege in jeweils angemessener Form, fachsprachlich korrekt sowie unter Verwendung geeigneter Skizzen.",
+      "status": "supported",
+      "lessons": [
+        "kz-6-modellieren"
+      ],
+      "evidence": "kz-6-modellieren (body-modeling, kz-sach-volumen, kz-zusammengesetzt) modelliert reale und zusammengesetzte Körper samt verdeckten Klebeflächen; eigenständige Internetrecherche sowie Präsentation schriftlicher Skizzen und Lösungswege geschehen im Unterricht."
+    }
+  ]
+}
