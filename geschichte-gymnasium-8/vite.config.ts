@@ -7,7 +7,7 @@ export default defineConfig({
   base: "/geschichte-gymnasium-8/",
   plugins: [viteSingleFile()],
   server: {
-    port: 5299,
+    port: 5301,
     open: false,
   },
   build: {

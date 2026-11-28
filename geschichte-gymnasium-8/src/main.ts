@@ -1,5 +1,4 @@
 import cell from "../cell.json";
-import publication from "../publication.json";
 import { CURRICULUM_URL, findLesson, LESSONS, SOURCES, STAGES } from "./curriculum";
 import type { Lesson, Level } from "./model/types";
 import {
@@ -137,7 +136,7 @@ function renderWriting(lesson: Lesson): string {
   const checks = rubricChecks.get(key) ?? [false, false, false];
   return `<section class="panel writing" aria-labelledby="writing-heading"><div class="panel-heading"><span class="eyebrow">Selbst begründen</span><span class="done-mark" id="writing-done">${progress.writingDone.includes(key) ? "✓ Selbst eingeschätzt" : ""}</span></div><h2 id="writing-heading">${progress.level === 1 ? "Mit Leitfragen arbeiten" : "Auf einen neuen Fall übertragen"}</h2><p class="task-prompt">${esc(task.prompt)}</p>
   ${progress.level === 1 ? `<details><summary>Leitfragen anzeigen</summary><ul>${task.hints.map((hint) => `<li>${esc(hint)}</li>`).join("")}</ul></details>` : `<p class="small">Formuliere erst deinen eigenen Gedankengang. Die Vergleichsantwort folgt danach.</p>`}
-  <label class="answer-label" for="draft">Deine Antwort</label><textarea id="draft" rows="5" maxlength="8000" placeholder="Schreibe zwei bis vier begründete Sätze …">${esc(draft)}</textarea><p class="small">Dein Text bleibt in diesem Browser. Er wird nicht automatisch bewertet.</p><button type="button" id="compare" class="button secondary" ${canReviewDraft(draft) ? "" : "disabled"}>Mit einer möglichen Antwort vergleichen</button><span class="small" id="draft-note">${canReviewDraft(draft) ? "" : "Schreibe zunächst mindestens 20 Zeichen."}</span>
+  <label class="answer-label" for="draft">Deine Antwort</label><textarea id="draft" rows="5" maxlength="8000" placeholder="Schreibe zwei bis vier begründete Sätze …">${esc(draft)}</textarea><details class="draft-privacy small"><summary>Wo bleibt mein Text?</summary><p>Dein Text bleibt in diesem Browserprofil. Teilst du dein Benutzerkonto mit anderen? Dann wähle am Ende im Lernpfad „Lokalen Fortschritt zurücksetzen“. Das löscht auch deine Texte.</p></details><button type="button" id="compare" class="button secondary" ${canReviewDraft(draft) ? "" : "disabled"}>Mit einer möglichen Antwort vergleichen</button><span class="small" id="draft-note">${canReviewDraft(draft) ? "" : "Schreibe zunächst mindestens 20 Zeichen."}</span>
   ${comparing ? `<div class="model-answer"><h3>Eine mögliche Antwort</h3><p>${esc(task.model)}</p><p>Andere Formulierungen und begründete Urteile sind möglich. Vergleiche deinen Text anhand dieser Kriterien:</p><div class="rubric">${task.criteria.map((criterion, i) => `<label><input type="checkbox" data-rubric="${i}" ${checks[i] ? "checked" : ""}>${esc(criterion)}</label>`).join("")}</div><div class="self-actions"><button type="button" class="button accent" id="accept-writing" ${canAcceptSelfAssessment(draft, checks) ? "" : "disabled"}>Meine Antwort erfüllt die Kriterien</button><button type="button" class="text-button" id="revise-writing">Ich überarbeite noch</button></div><p class="small">Diese Einschätzung gibst du selbst ab. Sie ist keine automatische Prüfung und verändert keine ZAM-Karten.</p></div>` : ""}</section>`;
 }
 
@@ -178,7 +177,7 @@ function renderReference(): string {
         .join("")}</dl></section>`,
   ).join(
     "",
-  )}<section class="panel"><h2>Quellenbasis</h2><p>Lehrplanabgleich und Quellenprüfung: 28. November 2026. Verlinkte Angebote öffnen erst, wenn du darauf klickst. Die App selbst benötigt keine externe Verbindung.</p><ul class="source-list">${SOURCES.map((source) => `<li><a href="${esc(source.url)}" target="_blank" rel="noopener">${esc(source.label)}</a></li>`).join("")}</ul></section></section>`;
+  )}<section class="panel"><h2>Quellenbasis</h2><p>Lehrplanabgleich und Quellenprüfung: 28. November 2026. Verlinkte Angebote öffnen erst, wenn du darauf klickst. Die App selbst benötigt keine externe Verbindung.</p><ul class="source-list">${SOURCES.map((source) => `<li><a href="${esc(source.url)}" target="_blank" rel="noopener">${esc(source.label)}</a></li>`).join("")}</ul></section><section class="panel"><h2>Für Eltern und Lehrkräfte</h2><p>Texte und Lernstand bleiben im aktuellen Browserprofil. Bei einem geteilten Benutzerkonto löscht „Lokalen Fortschritt zurücksetzen“ am Ende der Sitzung auch die Texte. Die Lernenden vergleichen ihre Antworten selbst mit dem Beispiel.</p></section></section>`;
 }
 
 function render(): void {
@@ -343,27 +342,19 @@ function dialog(title: string, body: string): HTMLDialogElement {
 function showZam(): void {
   const cardCount = cell.atoms.reduce((count, atom) => count + atom.practice_items.length, 0);
   const introduction = `<p>Die Zelle enthält ${cardCount} Lernkarten. Jede Karte verweist auf die passende Lektion.</p>`;
-  if (publication.status === "local-only") {
-    const modal = dialog(
-      "Lernkarten zu diesem Paket",
-      `${introduction}<p>Dieses Paket ist ein lokaler Entwurf. Du kannst die ZAM-Zelle als Datei herunterladen.</p><button type="button" class="button accent" id="download-cell">ZAM-Zelle herunterladen</button>`,
-    );
-    modal.querySelector("#download-cell")!.addEventListener("click", () => {
-      const url = URL.createObjectURL(new Blob([JSON.stringify(cell, null, 2) + "\n"], { type: "application/json" }));
-      const link = document.createElement("a");
-      link.href = url;
-      link.download = "geschichte-gymnasium-8-cell.json";
-      link.click();
-      window.setTimeout(() => URL.revokeObjectURL(url), 1000);
-    });
-    return;
-  }
-
   const request = zamEnrolRequest();
   const element = dialog(
     "Geschichte mit ZAM behalten",
-    `${introduction}<ol><li>Öffne ZAM Studio → Lern-Karten → Importieren → „Aus der ZAM Academy“.</li><li>Wähle „${esc(ZAM_CELL_TITLE)}“ und „Aufnehmen“.</li></ol><p>Oder sage deinem Agenten in ZAM:</p><div class="request"><code>${esc(request)}</code><button type="button" class="button secondary" id="copy">Kopieren</button></div><p class="small" id="copy-status" role="status">Dein App-Fortschritt und deine Texte werden dabei nicht übertragen.</p><button type="button" class="button accent" data-close>Weiterlernen</button>`,
+    `${introduction}<ol><li>Öffne ZAM Studio → Lern-Karten → Importieren → „Aus der ZAM Academy“.</li><li>Wähle „${esc(ZAM_CELL_TITLE)}“ und „Aufnehmen“.</li></ol><p>Oder sage deinem Agenten in ZAM:</p><div class="request"><code>${esc(request)}</code><button type="button" class="button secondary" id="copy">Kopieren</button></div><p class="small" id="copy-status" role="status">Dein App-Fortschritt und deine Texte werden dabei nicht übertragen.</p><div class="self-actions"><button type="button" class="button accent" data-close>Weiterlernen</button><button type="button" class="text-button" id="download-cell">ZAM-Zelle als Datei speichern</button></div>`,
   );
+  element.querySelector("#download-cell")!.addEventListener("click", () => {
+    const url = URL.createObjectURL(new Blob([JSON.stringify(cell, null, 2) + "\n"], { type: "application/json" }));
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = "geschichte-gymnasium-8-cell.json";
+    link.click();
+    window.setTimeout(() => URL.revokeObjectURL(url), 1000);
+  });
   element.querySelector("#copy")!.addEventListener("click", async () => {
     try {
       await navigator.clipboard.writeText(request);

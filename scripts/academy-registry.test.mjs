@@ -854,8 +854,9 @@ test("a live package is selected first and opens on its next mouse or keyboard a
 });
 
 test("planned packages still show their details and never open an app", () => {
-  const node = schoolSubject(atlasTrees(), 8, "geschichte").children.find(
-    (n) => n.planned,
+  const data = { ...registry, pakete: [] };
+  const node = schoolSubject(atlasTrees(data), 8, "geschichte").children.find(
+    (n) => n.planned && n.school?.id === "gymnasium",
   );
   assert.ok(node);
   const opened = [];

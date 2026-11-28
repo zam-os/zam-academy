@@ -109,7 +109,7 @@ describe("local progress and Academy links", () => {
 
 describe("cell and proposal-only migration", () => {
   it("has one correctly bound atom per lesson and 75 stable linked practice items", () => {
-    expect(publication).toEqual({ schema: 1, status: "local-only", version: "0.0" });
+    expect(publication).toEqual({ schema: 1, status: "ready", version: "0.0" });
     expect(cell.tile_id).toBe(ZAM_CELL_ID);
     expect(items).toHaveLength(75);
     const ids = [...cell.atoms.map(({ id }) => id), ...items.map(({ id }) => id)];

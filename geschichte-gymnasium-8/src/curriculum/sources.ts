@@ -18,6 +18,7 @@ function source(id: string, label: string, url: string): Source {
 export const SOURCES = [
   source("curriculum", "ISB · LehrplanPLUS Geschichte 8 Gymnasium", CURRICULUM_URL),
   source("rights", "Élysée · Erklärung der Menschen- und Bürgerrechte (Englisch)", "https://www.elysee.fr/en/french-presidency/the-declaration-of-the-rights-of-man-and-of-the-citizen"),
+  source("montesquieu", "Assemblée nationale · Montesquieu und die Gewaltenteilung (Französisch)", "https://www.assemblee-nationale.fr/14/cr-gtinstit/14-15/c1415014.asp"),
   source("constitution", "Élysée · Französische Verfassung von 1791", "https://www.elysee.fr/la-presidence/la-constitution-du-3-septembre-1791"),
   source("napoleon", "Louvre · Napoleon krönt sich selbst (Zeichnung)", "https://collections.louvre.fr/ark:/53355/cl020016898"),
   source("territory", "Haus der Bayerischen Geschichte · Karten zur territorialen Entwicklung Bayerns (PDF)", "https://archiv.hdbg.de/napoleon/pdf/Die_territoriale_Entwicklung_Bayerns.pdf"),
@@ -27,6 +28,7 @@ export const SOURCES = [
   source("landbote", "Georg Büchner und Friedrich Ludwig Weidig · Der Hessische Landbote", "https://de.wikisource.org/wiki/Der_Hessische_Landbote"),
   source("hambach", "Stiftung Hambacher Schloss · Hambacher Fest", "https://hambacher-schloss.de/entdecken/hambacher-fest/"),
   source("paulskirche", "Deutscher Bundestag · Revolution und Frankfurter Nationalversammlung", "https://www.bundestag.de/parlament/geschichte/parlamentarismus/1848/1848-199600"),
+  source("paulskirche-verfassung", "Deutscher Bundestag · Beschluss und Verkündung der Paulskirchenverfassung", "https://www.bundestag.de/dokumente/textarchiv/1849-03-27-nationalversammlung-630668"),
   source("postwar", "Historisches Lexikon Bayerns · Pfalz im 19. und 20. Jahrhundert", "https://www.historisches-lexikon-bayerns.de/Lexikon/Artikel_44564"),
   source("coat", "Bayerisches Innenministerium · Staatssymbole", "https://www.stmi.bayern.de/staat-und-verfassung/staatssymbole/"),
   source("monuments", "Bayerisches Landesamt für Denkmalpflege · Bayerischer Denkmal-Atlas", "https://www.blfd.bayern.de/denkmal-atlas/index.html"),

@@ -4,8 +4,9 @@ The package follows the [Bavarian Grade 8 history curriculum](https://www.lehrpl
 The live page retrieved on 2026-11-28 supplies a single course for all
 Gymnasium tracks. It identifies six learning areas and 36 expectations. Each
 entry in the [coverage matrix](../geschichte-gymnasium-8/coverage.json) matches
-one expectation in the live HTML after whitespace normalisation. The matrix
-stores the SHA-256 of the fetched HTML. The 25 lessons give every expectation
+one expectation in the live HTML. The check removes inline markup, collapses
+runs of whitespace and removes spaces introduced before punctuation. The
+matrix stores the SHA-256 of the fetched HTML. The 25 lessons give every expectation
 an entry and distinguish between app practice and supported external work.
 
 The course revisits absolutism from [Grade 7](https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/7/geschichte)

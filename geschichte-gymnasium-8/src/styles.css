@@ -654,6 +654,21 @@ summary {
   cursor: pointer;
   color: var(--accent);
 }
+.draft-privacy {
+  width: fit-content;
+  margin: 0.35rem 0 0.85rem;
+  padding: 0;
+  border: 0;
+  background: none;
+}
+.draft-privacy summary {
+  color: var(--muted);
+  font-weight: 550;
+}
+.draft-privacy p {
+  max-width: 42ch;
+  margin: 0.35rem 0 0;
+}
 .answer-label {
   display: block;
   margin: 1rem 0 0.4rem;

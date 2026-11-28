@@ -62,11 +62,11 @@ export const restoration = [
     transfer: ["Eine Ausstellung zeigt nur die Fahne von Hambach. Ergänze einen Satz, der der Gefahr einer zu engen Deutung begegnet.", ["Wofür stehen die Farben?", "Welche Forderung drückt das Objekt allein nicht aus?"], "Schwarz-Rot-Gold erinnert an die nationale Bewegung. Das Hambacher Fest stand zugleich für Forderungen nach Pressefreiheit und politischer Mitbestimmung. Die Fahne trägt daher nur einen Teil der Geschichte.", ["Symbol erklärt", "Freiheitsforderung ergänzt", "Grenze des Belegs formuliert"]],
   }),
   lesson(2, {
-    id: "paulskirche", title: "1848/49: Was blieb von der Revolution?", period: "1848–1849", sourceIds: ["paulskirche", "curriculum"],
+    id: "paulskirche", title: "1848/49: Was blieb von der Revolution?", period: "1848–1849", sourceIds: ["paulskirche", "paulskirche-verfassung", "curriculum"],
     intro: "Verfolge den Weg vom Protest zur Verfassung und beurteile Erfolg und Scheitern nach getrennten Kriterien.",
     paragraphs: [
       "Missernten, Preissteigerungen und Arbeitslosigkeit verschärften soziale Spannungen. Nach der Revolution in Frankreich erhoben Menschen auch in deutschen Staaten Forderungen nach Pressefreiheit, Verfassungen und nationaler Einheit. Im Mai 1848 trat eine gewählte Nationalversammlung in Frankfurt zusammen.",
-      "Die Abgeordneten berieten in der Paulskirche über den künftigen deutschen Staat. Sie verabschiedeten Grundrechte und 1849 eine Reichsverfassung. Diese sah eine kleindeutsche Lösung ohne Österreich vor. Frauen konnten an der Wahl zur Nationalversammlung nicht teilnehmen.",
+      "Die Abgeordneten berieten in der Paulskirche über den künftigen deutschen Staat. Sie verabschiedeten Grundrechte und beschlossen am 27. März 1849 die Reichsverfassung. Am nächsten Tag verkündete die Nationalversammlung sie. Diese sah eine kleindeutsche Lösung ohne Österreich vor. Frauen konnten an der Wahl zur Nationalversammlung nicht teilnehmen.",
       "Der preußische König Friedrich Wilhelm IV. lehnte die ihm angebotene Kaiserkrone ab. Die Nationalversammlung konnte ihre Verfassung gegen mächtige Fürsten und deren Truppen nicht durchsetzen. Ihre Grundrechtsdebatten und die Praxis eines gewählten Parlaments wurden für spätere demokratische Entwicklungen bedeutsam.",
     ],
     takeaway: "Die Revolution scheiterte an der Durchsetzung. Ihr Parlament und seine Grundrechte sind dennoch bedeutende demokratische Erfahrungen.",
@@ -74,7 +74,7 @@ export const restoration = [
     workshop: timeline([
       ["Märzforderungen und Proteste erschüttern die Fürstenherrschaft.", "Im Frühjahr 1848 fordern viele Menschen Rechte und Einheit."],
       ["Die Nationalversammlung tritt in Frankfurt zusammen.", "Im Mai 1848 beginnt die parlamentarische Arbeit."],
-      ["Die Nationalversammlung beschließt die Reichsverfassung.", "Im März 1849 liegt ein Verfassungsentwurf für den Nationalstaat vor."],
+      ["Die Nationalversammlung beschließt die Reichsverfassung.", "Die Nationalversammlung beschließt die Reichsverfassung am 27. März 1849 und verkündet sie am 28. März."],
       ["Der preußische König lehnt die Kaiserkrone ab.", "Die Ablehnung im April 1849 nimmt der Verfassung eine wichtige Stütze."],
     ], "Zwischen einem Beschluss und seiner Durchsetzung liegen unterschiedliche politische Schritte."),
     guided: ["Begründe mit einem Beispiel, warum man 1848/49 als Scheitern und als Errungenschaft bewerten kann.", ["Welche Ordnung trat nicht in Kraft?", "Welche neue Erfahrung machten Abgeordnete?"], "Die Reichsverfassung wurde nicht durchgesetzt, unter anderem weil der preußische König die Krone ablehnte. Die gewählte Nationalversammlung beriet aber öffentlich über Grundrechte. Das war in der Geschichte des deutschen Parlamentarismus eine wichtige Errungenschaft.", ["Scheitern belegt", "Errungenschaft belegt", "Bewertungsmaßstäbe unterschieden"]],

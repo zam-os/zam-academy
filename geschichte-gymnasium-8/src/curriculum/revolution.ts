@@ -2,12 +2,12 @@ import { classify, lesson, timeline } from "./helpers";
 
 export const revolution = [
   lesson(1, {
-    id: "aufklaerung", title: "Wer gibt dem Staat seine Macht?", period: "18. Jahrhundert · 1789", sourceIds: ["curriculum", "rights"],
+    id: "aufklaerung", title: "Wer gibt dem Staat seine Macht?", period: "18. Jahrhundert · 1789", sourceIds: ["curriculum", "rights", "montesquieu"],
     intro: "Prüfe, welche Ideen der Aufklärung eine Herrschaft mit festen Grenzen möglich machten.",
     paragraphs: [
       "Wiederholung aus Klasse 7: Im Absolutismus beanspruchte der König eine besonders weitreichende Macht und begründete sie unter anderem mit Gottes Willen. Aufklärer forderten, Regeln mit der eigenen Vernunft zu prüfen. Herrschaft sollte sich vor den Menschen begründen lassen.",
       "Menschenrechte stehen jedem Menschen zu. Volkssouveränität bedeutet, dass die politische Macht vom Volk ausgeht. Nach Artikel 3 der französischen Erklärung von 1789 lag der Ursprung der Souveränität bei der Nation. Viele Bürgerliche, etwa Kaufleute und Juristen, forderten Mitsprache.",
-      "Wenn eine Obrigkeit etwa einen Kritiker willkürlich festnehmen lässt, schützen ihn verbindliche Gesetze und unabhängige Gerichte. So zeigen sich Rechtsstaatlichkeit und Gewaltenteilung im Alltag. Der Anspruch auf Rechte war 1789 weiter als die politische Wirklichkeit: Frauen hatten keine gleichberechtigte politische Mitsprache.",
+      "Der Aufklärer Montesquieu wollte Gesetzgebung, vollziehende Gewalt und Rechtsprechung aufteilen, um Machtmissbrauch zu begrenzen. Wenn eine Obrigkeit etwa einen Kritiker willkürlich festnehmen lässt, schützen ihn verbindliche Gesetze und unabhängige Gerichte. So zeigen sich Rechtsstaatlichkeit und Gewaltenteilung im Alltag. Der Anspruch auf Rechte war 1789 weiter als die politische Wirklichkeit: Frauen hatten keine gleichberechtigte politische Mitsprache.",
     ],
     takeaway: "Die Aufklärung prüft Herrschaft mit Vernunft. Menschenrechte, vom Volk abgeleitete Macht und Gewaltenteilung begrenzen Willkür.",
     check: ["Welche Frage beantwortet der Begriff Volkssouveränität?", "Von wem geht die politische Macht aus?", ["Welche Rechte gelten für alle Menschen?", "Wie werden staatliche Aufgaben verteilt?"], "Volkssouveränität bestimmt den Ursprung der Macht. Die anderen Fragen betreffen Menschenrechte und Gewaltenteilung."],

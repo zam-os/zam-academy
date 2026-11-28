@@ -1,6 +1,6 @@
 # History, Gymnasium Grade 8
 
-This local ZAM Academy package follows the common Bavarian LehrplanPLUS history
+This ZAM Academy package follows the common Bavarian LehrplanPLUS history
 curriculum for Grade 8. The German learning path covers the long nineteenth
 century in 25 lessons and includes 75 ZAM practice items.
 
@@ -19,6 +19,12 @@ with an example and assess them against three criteria. Drafts and progress
 stay in the browser. Maps are labelled schematic views. Atlas work, local
 research, discussion and presentations extend the individual exercises.
 
+## For parents and teachers
+
+Writing drafts and progress stay in the current browser profile. On a shared
+user account, use **Lokalen Fortschritt zurücksetzen** at the end of the
+session to delete both. The writing exercise uses learner self-assessment.
+
 ## Run locally
 
 ```sh
@@ -26,7 +32,7 @@ npm ci
 npm run dev
 ```
 
-Vite serves the app on port 5299. Run `npm run package:zip` for the offline
+Vite serves the app on port 5301. Run `npm run package:zip` for the offline
 package. After extracting the ZIP, open the included HTML file. The painting
 is embedded in that file. The ZIP also contains the ZAM cell. Reference
 links need a connection only when opened.
@@ -38,9 +44,9 @@ links need a connection only when opened.
   independent work.
 - [ZAM cell](cell.json) contains all 75 items, with a lesson anchor for each.
 - [Migration proposal](replaces-de-by.json) records two possible transfers
-  and six keep-active entries. No history transfer is active.
-- [Publication marker](publication.json) keeps version 0.0 local pending
-  release review.
+  and six keep-active entries. The proposal awaits approval.
+- [Publication marker](publication.json) registers version 0.0 for publication
+  on merge. Teacher review is open.
 
 The painting reproduction comes from [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:A_v_Werner_-_Kaiserproklamation_am_18_Januar_1871_(3._Fassung_1885).jpg)
 and is marked public domain. The app credits Anton von Werner, the 1885
