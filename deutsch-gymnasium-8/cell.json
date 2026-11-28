@@ -1,0 +1,2638 @@
+{
+	"$schema": "https://zam.app/schemas/v1/kvt-tile.json",
+	"tile_id": "zam-academy:deutsch-gymnasium-8",
+	"version": "2026.11.1",
+	"title": "Deutsch 8 Gymnasium (ZAM Academy)",
+	"description": "42 Lektionen und 84 Wiederholungsfragen für Deutsch in Jahrgangsstufe 8 am Gymnasium in Bayern, einschließlich des Profilbereichs am Musischen Gymnasium.",
+	"publisher": "ZAM Academy",
+	"sources": [
+		{
+			"uri": "https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/8/deutsch",
+			"label": "LehrplanPLUS · Deutsch 8, Gymnasium",
+			"checked": "2026-11-28"
+		},
+		{
+			"uri": "https://www.rechtschreibrat.com/regeln-und-woerterverzeichnis/",
+			"label": "Amtliches Regelwerk · Rat für deutsche Rechtschreibung",
+			"checked": "2026-11-28"
+		},
+		{
+			"uri": "https://www.tha.de/~harsch/germanica/Chronologie/19Jh/Spyri/spy_he01.html",
+			"label": "Johanna Spyri · Heidi’s Lehr- und Wanderjahre, Kapitel I",
+			"checked": "2026-11-28"
+		}
+	],
+	"atoms": [
+		{
+			"id": "01M8H1K148FDVSG085XD30D39S",
+			"atom_uri": "urn:zam:atom:01M8H1K148FDVSG085XD30D39S",
+			"namespace": "zam-academy-deutsch-gymnasium-8",
+			"slug": "d8-zuhoeren-feedback",
+			"title": "Zuhören und Rückmeldung geben",
+			"domain": "deutsch/sprechen",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-zuhoeren-feedback",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "deutsch-gymnasium-8",
+					"topic_code": "sprechen",
+					"topic_title": "Sprechen und Zuhören"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "deutsch",
+					"topic_code": "lb1",
+					"topic_title": "Sprechen und Zuhören"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8H1K1489P064MPP39JDNM8B",
+					"slug": "d8-zuhoeren-feedback-check",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Welche Rückmeldung hilft Ela, ihren Beitrag zu verbessern?",
+					"concept": "Die Zahl der Wartenden macht den Anlass greifbar. Nenne noch, wann sie gezählt wurden.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-zuhoeren-feedback",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Die Zahl der Wartenden macht den Anlass greifbar. Nenne noch, wann sie gezählt wurden.",
+							"Dein Vorschlag ist gut, weil alle das finden."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8H1K148ZCGFYJHA55QZNBSD",
+					"slug": "d8-zuhoeren-feedback-recall",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Wie baust du kriteriengeleitetes Feedback zu einem längeren Gesprächsbeitrag auf?",
+					"concept": "Beobachtung, Wirkung und konkreter nächster Schritt.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-zuhoeren-feedback",
+					"sample_solution": "Nenne eine bestimmte Stelle, erkläre, was sie verständlich oder unklar macht, und schlage eine Änderung vor. So kann die Person das Feedback anwenden."
+				}
+			]
+		},
+		{
+			"id": "01M8H1K148XGYJ5AEAF2KDRG3K",
+			"atom_uri": "urn:zam:atom:01M8H1K148XGYJ5AEAF2KDRG3K",
+			"namespace": "zam-academy-deutsch-gymnasium-8",
+			"slug": "d8-hoertext-deutung",
+			"title": "Einen Hörbeitrag erschließen",
+			"domain": "deutsch/sprechen",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-hoertext-deutung",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "deutsch-gymnasium-8",
+					"topic_code": "sprechen",
+					"topic_title": "Sprechen und Zuhören"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "deutsch",
+					"topic_code": "lb1",
+					"topic_title": "Sprechen und Zuhören"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8H1K148K106PMBFBMZJ4DNQ",
+					"slug": "d8-hoertext-deutung-check",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Was ist die zentrale Aussage des Hörbeitrags?",
+					"concept": "Die Klasse will mögliche Standorte prüfen, bevor sie eine Empfehlung ausspricht.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-hoertext-deutung",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Die Klasse will mögliche Standorte prüfen, bevor sie eine Empfehlung ausspricht.",
+							"Die Bank soll auf jeden Fall unter den Bäumen stehen."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8H1K14837KB1EQEE261BMP2",
+					"slug": "d8-hoertext-deutung-recall",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Wie erschließt du beim zweiten Hören den Zusammenhang zwischen Aussagen?",
+					"concept": "Ich notiere Schlüsselstellen und markiere Beziehungen wie Grund, Gegensatz und Folge.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-hoertext-deutung",
+					"sample_solution": "Aus „lange nass, aber kühl“ mache ich zwei verbundene Stichpunkte. Aus „erst danach“ erkenne ich die Reihenfolge zwischen Messung und Empfehlung."
+				}
+			]
+		},
+		{
+			"id": "01M8H1K148VH80SDY096QJ7E5M",
+			"atom_uri": "urn:zam:atom:01M8H1K148VH80SDY096QJ7E5M",
+			"namespace": "zam-academy-deutsch-gymnasium-8",
+			"slug": "d8-vorlesen-gedicht",
+			"title": "Einen Text interpretierend vortragen",
+			"domain": "deutsch/sprechen",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-vorlesen-gedicht",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "deutsch-gymnasium-8",
+					"topic_code": "sprechen",
+					"topic_title": "Sprechen und Zuhören"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "deutsch",
+					"topic_code": "lb1",
+					"topic_title": "Sprechen und Zuhören"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8H1K148PSS69Z8NRQWB4CAN",
+					"slug": "d8-vorlesen-gedicht-check",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Welche Leseregie macht den Umschlag im Gedicht hörbar?",
+					"concept": "Kurze Pause vor „Doch“, dann „schon“ betonen.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-vorlesen-gedicht",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Kurze Pause vor „Doch“, dann „schon“ betonen.",
+							"Jeden Vers gleich lange unterbrechen und das Tempo halten."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8H1K148GD1SMZSJZJ5NDVZN",
+					"slug": "d8-vorlesen-gedicht-recall",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Woran orientierst du Sprechpausen beim interpretierenden Vorlesen?",
+					"concept": "Am Zusammenhang der Sinneinheiten und an der beabsichtigten Wirkung.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-vorlesen-gedicht",
+					"sample_solution": "Ein Satz kann über zwei Verse gehen. Eine Pause an einer überraschenden Wendung kann stärker wirken als eine mechanische Pause nach jedem Vers."
+				}
+			]
+		},
+		{
+			"id": "01M8H1K148EHM5DAP7PHF95NAM",
+			"atom_uri": "urn:zam:atom:01M8H1K148EHM5DAP7PHF95NAM",
+			"namespace": "zam-academy-deutsch-gymnasium-8",
+			"slug": "d8-adressaten-vortrag",
+			"title": "Frei sprechen und gezielt veranschaulichen",
+			"domain": "deutsch/sprechen",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-adressaten-vortrag",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "deutsch-gymnasium-8",
+					"topic_code": "sprechen",
+					"topic_title": "Sprechen und Zuhören"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "deutsch",
+					"topic_code": "lb1",
+					"topic_title": "Sprechen und Zuhören"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8H1K1489X1RKF0XJJE8FRXW",
+					"slug": "d8-adressaten-vortrag-check",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Welches Medium erklärt den Tauschablauf am besten?",
+					"concept": "Ein Schaubild mit den drei aufeinanderfolgenden Stationen.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-adressaten-vortrag",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Ein Schaubild mit den drei aufeinanderfolgenden Stationen.",
+							"Eine Titelfolie mit einem großen Foto der Aula."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8H1K148GH2VPZCJ92QSEZRP",
+					"slug": "d8-adressaten-vortrag-recall",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Wann stützt eine Darstellung einen mündlichen Beitrag?",
+					"concept": "Wenn sie einen ausgewählten Zusammenhang für das Publikum anschaulich macht.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-adressaten-vortrag",
+					"sample_solution": "Eine Ablaufskizze zeigt die Reihenfolge der Stationen. Ich spreche dazu frei und erkläre die Übergänge, statt die Folie vorzulesen."
+				}
+			]
+		},
+		{
+			"id": "01M8H1K148ZEEPTDDT8J2R593T",
+			"atom_uri": "urn:zam:atom:01M8H1K148ZEEPTDDT8J2R593T",
+			"namespace": "zam-academy-deutsch-gymnasium-8",
+			"slug": "d8-fair-diskutieren",
+			"title": "Fair diskutieren und Konflikte klären",
+			"domain": "deutsch/sprechen",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-fair-diskutieren",
+			"prerequisites": [
+				{
+					"atom_id": "01M8H1K148FDVSG085XD30D39S",
+					"type": "soft"
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "deutsch-gymnasium-8",
+					"topic_code": "sprechen",
+					"topic_title": "Sprechen und Zuhören"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "deutsch",
+					"topic_code": "lb1",
+					"topic_title": "Sprechen und Zuhören"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8H1K148ZJH8E6RAX386J7BK",
+					"slug": "d8-fair-diskutieren-check",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Welche Antwort greift Mikas Gegenargument fair auf?",
+					"concept": "Dir ist Ruhe wichtig. Könnte eine eigene Zone für Gruppen helfen?",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-fair-diskutieren",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Dir ist Ruhe wichtig. Könnte eine eigene Zone für Gruppen helfen?",
+							"Du willst immer nur deine Ruhe."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8H1K148S3V35GQR3RP770KE",
+					"slug": "d8-fair-diskutieren-recall",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Wie reagierst du im Streit, bevor du einen Gegenstandpunkt formulierst?",
+					"concept": "Ich spiegele das Anliegen, kläre Missverständnisse und begründe dann meine Sicht.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-fair-diskutieren",
+					"sample_solution": "„Dir geht es um Ruhe. Stimmt das? Ich brauche Platz für Gruppenarbeit. Wollen wir zwei Bereiche ausprobieren?“"
+				}
+			]
+		},
+		{
+			"id": "01M8H1K148MHEBAFSB7M36HK7R",
+			"atom_uri": "urn:zam:atom:01M8H1K148MHEBAFSB7M36HK7R",
+			"namespace": "zam-academy-deutsch-gymnasium-8",
+			"slug": "d8-theater-standbild",
+			"title": "Eine Szene inszenieren",
+			"domain": "deutsch/sprechen",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-theater-standbild",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "deutsch-gymnasium-8",
+					"topic_code": "sprechen",
+					"topic_title": "Sprechen und Zuhören"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "deutsch",
+					"topic_code": "lb1",
+					"topic_title": "Sprechen und Zuhören"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8H1K148GC4Z5Q3Z9AAZXD3B",
+					"slug": "d8-theater-standbild-check",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Womit lässt sich Iljas Eile besonders klar zeigen?",
+					"concept": "Mit einem Blick zur Uhr und einem Schritt Richtung Tür.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-theater-standbild",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Mit einem Blick zur Uhr und einem Schritt Richtung Tür.",
+							"Mit einem Requisit, das im Gepäck versteckt bleibt."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8H1K1487AXV60B4AMKPBXJW",
+					"slug": "d8-theater-standbild-recall",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Wie kann ein Standbild die Figurenkonstellation sichtbar machen?",
+					"concept": "Über Abstände, Blickachsen, Haltung und Stellung zu Gegenständen.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-theater-standbild",
+					"sample_solution": "Eine Tür zwischen zwei frontal stehenden Figuren kann einen Gegensatz betonen. Stehen beide auf derselben Seite, kann das ein Bündnis zeigen."
+				}
+			]
+		},
+		{
+			"id": "01M8H1K148CJ8JJERNKRQ1JEMD",
+			"atom_uri": "urn:zam:atom:01M8H1K148CJ8JJERNKRQ1JEMD",
+			"namespace": "zam-academy-deutsch-gymnasium-8",
+			"slug": "d8-lesestrategien",
+			"title": "Lesestrategien wechseln",
+			"domain": "deutsch/lesen",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-lesestrategien",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "deutsch-gymnasium-8",
+					"topic_code": "lesen",
+					"topic_title": "Lesen und Medien"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "deutsch",
+					"topic_code": "lb2",
+					"topic_title": "Lesen – mit Texten und weiteren Medien umgehen"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8H1K1483700VSWXXGXPC697",
+					"slug": "d8-lesestrategien-check",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Welche Strategie findet eine gesuchte Uhrzeit am schnellsten?",
+					"concept": "Punktuell nach dem passenden Stichwort suchen und den Satz lesen.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-lesestrategien",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Punktuell nach dem passenden Stichwort suchen und den Satz lesen.",
+							"Die ganze FAQ Wort für Wort abschreiben."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8H1K148N541YEAD7V4BQHNT",
+					"slug": "d8-lesestrategien-recall",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Was unterscheidet punktuelles von analytischem Lesen?",
+					"concept": "Punktuelles Lesen findet eine Angabe. Analytisches Lesen untersucht Aussagen und ihre Begründung.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-lesestrategien",
+					"sample_solution": "Die Uhrzeit finde ich gezielt. Für die Frage nach der Ausnahmeregel prüfe ich zusätzlich den Absatz über ihren Zweck."
+				}
+			]
+		},
+		{
+			"id": "01M8H1K148JV5S7K708P1V10Q4",
+			"atom_uri": "urn:zam:atom:01M8H1K148JV5S7K708P1V10Q4",
+			"namespace": "zam-academy-deutsch-gymnasium-8",
+			"slug": "d8-jugendbuch-kontext",
+			"title": "Jugendtexte aus verschiedenen Zeiten vergleichen",
+			"domain": "deutsch/lesen",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-jugendbuch-kontext",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "deutsch-gymnasium-8",
+					"topic_code": "lesen",
+					"topic_title": "Lesen und Medien"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "deutsch",
+					"topic_code": "lb2",
+					"topic_title": "Lesen – mit Texten und weiteren Medien umgehen"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8H1K148QF5JGXKZTFPA1YR5",
+					"slug": "d8-jugendbuch-kontext-check",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Welche Aussage ist mit beiden Auszügen belegbar?",
+					"concept": "Beide führen einen Weg ein, aber mit unterschiedlichen Mitteln der Orientierung.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-jugendbuch-kontext",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Beide führen einen Weg ein, aber mit unterschiedlichen Mitteln der Orientierung.",
+							"Beide Figuren hoffen, in die Berge zu ziehen."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8H1K148V0GMFVAGC4DXWN0Q",
+					"slug": "d8-jugendbuch-kontext-recall",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Wie nutzt du Kontext beim literarischen Vergleich?",
+					"concept": "Ich prüfe am Text einen Befund und benutze Kontext, um ihn einzuordnen.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-jugendbuch-kontext",
+					"sample_solution": "Die Datierung der Spyri-Ausgabe erklärt eine ungewöhnliche Schreibung. Welche Wirkung der Erzähleinstieg entfaltet, begründe ich zusätzlich an seiner Wortwahl."
+				}
+			]
+		},
+		{
+			"id": "01M8H1K148WZ8TKCYDC5JGEC1W",
+			"atom_uri": "urn:zam:atom:01M8H1K148WZ8TKCYDC5JGEC1W",
+			"namespace": "zam-academy-deutsch-gymnasium-8",
+			"slug": "d8-kurzprosa-erzaehlen",
+			"title": "Kurzprosa untersuchen",
+			"domain": "deutsch/lesen",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-kurzprosa-erzaehlen",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "deutsch-gymnasium-8",
+					"topic_code": "lesen",
+					"topic_title": "Lesen und Medien"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "deutsch",
+					"topic_code": "lb2",
+					"topic_title": "Lesen – mit Texten und weiteren Medien umgehen"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8H1K148CBV17M5QVWQH3Y8Q",
+					"slug": "d8-kurzprosa-erzaehlen-check",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Welche Reihenfolge entspricht der Handlungszeit?",
+					"concept": "Nachricht, Fund, Entscheidung an der Bank.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-kurzprosa-erzaehlen",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Nachricht, Fund, Entscheidung an der Bank.",
+							"Fund, Nachricht, Entscheidung an der Bank."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8H1K148BKT4NGD9BG80SJRE",
+					"slug": "d8-kurzprosa-erzaehlen-recall",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Was ist der Unterschied zwischen einem chronologischen und einem kausalen Zusammenhang?",
+					"concept": "Chronologie ordnet Ereignisse in der Zeit. Kausalität erklärt Ursache und Folge.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-kurzprosa-erzaehlen",
+					"sample_solution": "Die Nachricht kommt vor dem Fund. Das zeigt die zeitliche Reihenfolge. Dass Leo wegen der Nachricht am Steg war, müsste der Text eigens nahelegen."
+				}
+			]
+		},
+		{
+			"id": "01M8H1K148N8ZJ5FNRE5R7DCVM",
+			"atom_uri": "urn:zam:atom:01M8H1K148N8ZJ5FNRE5R7DCVM",
+			"namespace": "zam-academy-deutsch-gymnasium-8",
+			"slug": "d8-drama-figuren",
+			"title": "Dramaszenen lesen",
+			"domain": "deutsch/lesen",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-drama-figuren",
+			"prerequisites": [
+				{
+					"atom_id": "01M8H1K148MHEBAFSB7M36HK7R",
+					"type": "soft"
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "deutsch-gymnasium-8",
+					"topic_code": "lesen",
+					"topic_title": "Lesen und Medien"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "deutsch",
+					"topic_code": "lb2",
+					"topic_title": "Lesen – mit Texten und weiteren Medien umgehen"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8H1K148EMM8TCGZH56TGFAN",
+					"slug": "d8-drama-figuren-check",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Welche Beobachtung stützt eine Deutung der Figurenbeziehung?",
+					"concept": "Auf Kayas Vorwurf reagiert Finn mit einer Gegenfrage und schließt die Tür.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-drama-figuren",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Auf Kayas Vorwurf reagiert Finn mit einer Gegenfrage und schließt die Tür.",
+							"Beide Figuren haben Namen mit vier Buchstaben."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8H1K148S15C1GTHMAYCF9JA",
+					"slug": "d8-drama-figuren-recall",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Welche Beobachtungen brauchst du zur Figurenkonstellation einer Szene?",
+					"concept": "Ziele der Figuren, ihre Beziehungen und ihre Reaktionen aufeinander.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-drama-figuren",
+					"sample_solution": "Kaya fragt nach dem Geld, Finn weicht erst aus und bietet dann einen Hinweis an. Daraus lässt sich eine Veränderung ihrer Interaktion ableiten."
+				}
+			]
+		},
+		{
+			"id": "01M8H1K148A2F72Z0SCD3D4G7P",
+			"atom_uri": "urn:zam:atom:01M8H1K148A2F72Z0SCD3D4G7P",
+			"namespace": "zam-academy-deutsch-gymnasium-8",
+			"slug": "d8-lyrik-bildlichkeit",
+			"title": "Die Sprechsituation eines Gedichts deuten",
+			"domain": "deutsch/lesen",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-lyrik-bildlichkeit",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "deutsch-gymnasium-8",
+					"topic_code": "lesen",
+					"topic_title": "Lesen und Medien"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "deutsch",
+					"topic_code": "lb2",
+					"topic_title": "Lesen – mit Texten und weiteren Medien umgehen"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8H1K148AFR035ENVSH00F9V",
+					"slug": "d8-lyrik-bildlichkeit-check",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Wer ist in „Du alte Halle“ das Gegenüber?",
+					"concept": "Die Halle wird wie ein Gegenüber angesprochen.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-lyrik-bildlichkeit",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Die Halle wird wie ein Gegenüber angesprochen.",
+							"Die Person mit dem Ball wird mit Namen angesprochen."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8H1K148S4SHZY6AFGRC06WN",
+					"slug": "d8-lyrik-bildlichkeit-recall",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Wie deutest du eine Personifikation im Gedicht?",
+					"concept": "Ich nenne die übertragene menschliche Eigenschaft und erkläre ihre Wirkung an dieser Stelle.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-lyrik-bildlichkeit",
+					"sample_solution": "Licht kann nicht wörtlich warten. Die Eigenschaft lässt die leere Halle wie ein Gegenüber der weggehenden Stimme wirken."
+				}
+			]
+		},
+		{
+			"id": "01M8H1K148Q554MGHVK47NCD0K",
+			"atom_uri": "urn:zam:atom:01M8H1K148Q554MGHVK47NCD0K",
+			"namespace": "zam-academy-deutsch-gymnasium-8",
+			"slug": "d8-lesetagebuch-buchjury",
+			"title": "Ganzschriften lesen und Lesewertungen prüfen",
+			"domain": "deutsch/lesen",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-lesetagebuch-buchjury",
+			"prerequisites": [
+				{
+					"atom_id": "01M8H1K148CJ8JJERNKRQ1JEMD",
+					"type": "soft"
+				},
+				{
+					"atom_id": "01M8H1K148WZ8TKCYDC5JGEC1W",
+					"type": "soft"
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "deutsch-gymnasium-8",
+					"topic_code": "lesen",
+					"topic_title": "Lesen und Medien"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "deutsch",
+					"topic_code": "lb2",
+					"topic_title": "Lesen – mit Texten und weiteren Medien umgehen"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8H1K14825S32K2YBBYA3H4M",
+					"slug": "d8-lesetagebuch-buchjury-check",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Welche Buchwertung lässt sich am besten prüfen?",
+					"concept": "Die leere Bank macht den gebrochenen Auftrag sichtbar und lässt sein Motiv offen.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-lesetagebuch-buchjury",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Die leere Bank macht den gebrochenen Auftrag sichtbar und lässt sein Motiv offen.",
+							"Dieses Ende langweilt bestimmt alle."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8H1K1483VVAK8W495QJTZJC",
+					"slug": "d8-lesetagebuch-buchjury-recall",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Wie begründest du eine literarische Wertung?",
+					"concept": "Ich verbinde ein Qualitätskriterium mit einer Textstelle und ihrer Wirkung.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-lesetagebuch-buchjury",
+					"sample_solution": "Für eine überzeugende offene Handlung nenne ich die leere Bank, den Auftrag und die Frage nach Leos Motiv. So bleibt die Wertung am Text prüfbar."
+				}
+			]
+		},
+		{
+			"id": "01M8H1K148WWVXNEGXY7VWF0P1",
+			"atom_uri": "urn:zam:atom:01M8H1K148WWVXNEGXY7VWF0P1",
+			"namespace": "zam-academy-deutsch-gymnasium-8",
+			"slug": "d8-wechsel-des-mediums",
+			"title": "Einen Text in ein anderes Medium übertragen",
+			"domain": "deutsch/lesen",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-wechsel-des-mediums",
+			"prerequisites": [
+				{
+					"atom_id": "01M8H1K148WZ8TKCYDC5JGEC1W",
+					"type": "soft"
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "deutsch-gymnasium-8",
+					"topic_code": "lesen",
+					"topic_title": "Lesen und Medien"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "deutsch",
+					"topic_code": "lb2",
+					"topic_title": "Lesen – mit Texten und weiteren Medien umgehen"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8H1K148MMT3C1HAEK1HWXC1",
+					"slug": "d8-wechsel-des-mediums-check",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Welche Einstellung betont Leos Zögern besonders?",
+					"concept": "Die Nahaufnahme seiner kurz stillstehenden Hand.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-wechsel-des-mediums",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Die Nahaufnahme seiner kurz stillstehenden Hand.",
+							"Eine Luftaufnahme der ganzen Stadt."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8H1K1486YB780T5VAKFG3SC",
+					"slug": "d8-wechsel-des-mediums-recall",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Warum kann eine Filmfassung einen Text unterschiedlich auslegen?",
+					"concept": "Bildausschnitt, Ton und Schnitt heben unterschiedliche Textaspekte hervor.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-wechsel-des-mediums",
+					"sample_solution": "Die Nahaufnahme betont Leos Entscheidung. Eine Totale betont die leere Umgebung. Beide können dieselbe Handlung aus verschiedenen Blickwinkeln zeigen."
+				}
+			]
+		},
+		{
+			"id": "01M8H1K148EVKZ0Y0M6X676ZNB",
+			"atom_uri": "urn:zam:atom:01M8H1K148EVKZ0Y0M6X676ZNB",
+			"namespace": "zam-academy-deutsch-gymnasium-8",
+			"slug": "d8-sachtexte-auswerten",
+			"title": "Einen Sachtext für eigene Texte auswerten",
+			"domain": "deutsch/lesen",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-sachtexte-auswerten",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "deutsch-gymnasium-8",
+					"topic_code": "lesen",
+					"topic_title": "Lesen und Medien"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "deutsch",
+					"topic_code": "lb2",
+					"topic_title": "Lesen – mit Texten und weiteren Medien umgehen"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8H1K148E081MDADT3VHDMH0",
+					"slug": "d8-sachtexte-auswerten-check",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Welche Quelle trägt die Uhrzeit der Ausleihe?",
+					"concept": "M2, denn die Hausordnung nennt 14 Uhr.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-sachtexte-auswerten",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"M2, denn die Hausordnung nennt 14 Uhr.",
+							"M1, denn „nach dem Unterricht“ ist eindeutig."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8H1K148CAFX47ZVTY8YV6N9",
+					"slug": "d8-sachtexte-auswerten-recall",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Wie entscheidest du, welcher Sachtext sich als Beleg eignet?",
+					"concept": "Ich prüfe, ob er meine Frage direkt beantwortet und welche Grenzen die Aussage hat.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-sachtexte-auswerten",
+					"sample_solution": "Für eine genaue Öffnungszeit nutze ich eine datierte Angabe aus einer zuständigen Quelle. Eine Einladung ohne Uhrzeit reicht dafür nicht."
+				}
+			]
+		},
+		{
+			"id": "01M8H1K148GJ29FVXT8KFYVRPW",
+			"atom_uri": "urn:zam:atom:01M8H1K148GJ29FVXT8KFYVRPW",
+			"namespace": "zam-academy-deutsch-gymnasium-8",
+			"slug": "d8-journalistische-textsorten",
+			"title": "Nachricht, Kommentar, Glosse und Blog vergleichen",
+			"domain": "deutsch/lesen",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-journalistische-textsorten",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "deutsch-gymnasium-8",
+					"topic_code": "lesen",
+					"topic_title": "Lesen und Medien"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "deutsch",
+					"topic_code": "lb2",
+					"topic_title": "Lesen – mit Texten und weiteren Medien umgehen"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8H1K1480EFJP4P17QGQBKRB",
+					"slug": "d8-journalistische-textsorten-check",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Welche Eigenschaft unterscheidet den Kommentar B am klarsten von A?",
+					"concept": "B bewertet die Entscheidung und begründet die Bewertung.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-journalistische-textsorten",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"B bewertet die Entscheidung und begründet die Bewertung.",
+							"B nennt die Bücherei, A nicht."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8H1K148SN3RQ3ZFKH5F69H1",
+					"slug": "d8-journalistische-textsorten-recall",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Woran unterscheidest du eine Nachricht von einem Kommentar in digitalen Medien?",
+					"concept": "Die Nachricht informiert über überprüfbare Tatsachen. Der Kommentar vertritt und begründet eine Position.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-journalistische-textsorten",
+					"sample_solution": "Auch im gleichen Blog kann eine Rubrik „Meldung“ nüchtern berichten, während der Kommentar eine Bewertung ausdrücklich als solche darstellt."
+				}
+			]
+		},
+		{
+			"id": "01M8H1K14897WKGHAB5RT9CJ98",
+			"atom_uri": "urn:zam:atom:01M8H1K14897WKGHAB5RT9CJ98",
+			"namespace": "zam-academy-deutsch-gymnasium-8",
+			"slug": "d8-quellencheck",
+			"title": "Medien vergleichen und Quellen prüfen",
+			"domain": "deutsch/lesen",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-quellencheck",
+			"prerequisites": [
+				{
+					"atom_id": "01M8H1K148GJ29FVXT8KFYVRPW",
+					"type": "soft"
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "deutsch-gymnasium-8",
+					"topic_code": "lesen",
+					"topic_title": "Lesen und Medien"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "deutsch",
+					"topic_code": "lb2",
+					"topic_title": "Lesen – mit Texten und weiteren Medien umgehen"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8H1K148X1YMWX5SGG462ND1",
+					"slug": "d8-quellencheck-check",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Was wird durch die Materialien gestützt?",
+					"concept": "18 von 24 Antwortenden der 8b sind dafür.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-quellencheck",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"18 von 24 Antwortenden der 8b sind dafür.",
+							"Die Hälfte aller Jahrgangsstufen stimmt zu."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8H1K148C9FAA58NVFEGCEC4",
+					"slug": "d8-quellencheck-recall",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Wann sind zwei Meldungen voneinander unabhängige Belege?",
+					"concept": "Wenn sie ihre Aussagen auf getrennte überprüfbare Beobachtungen oder Quellen stützen.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-quellencheck",
+					"sample_solution": "Zwei Posts, die dieselbe Klassentabelle teilen, zählen nicht als zwei Datenerhebungen. Eine eigene Befragung mit offener Methode kann neue Evidenz liefern."
+				}
+			]
+		},
+		{
+			"id": "01M8H1K148H6BXY2EKF2KQHZNE",
+			"atom_uri": "urn:zam:atom:01M8H1K148H6BXY2EKF2KQHZNE",
+			"namespace": "zam-academy-deutsch-gymnasium-8",
+			"slug": "d8-ton-und-film",
+			"title": "Filmische und akustische Gestaltung unterscheiden",
+			"domain": "deutsch/lesen",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-ton-und-film",
+			"prerequisites": [
+				{
+					"atom_id": "01M8H1K148WWVXNEGXY7VWF0P1",
+					"type": "soft"
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "deutsch-gymnasium-8",
+					"topic_code": "lesen",
+					"topic_title": "Lesen und Medien"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "deutsch",
+					"topic_code": "lb2",
+					"topic_title": "Lesen – mit Texten und weiteren Medien umgehen"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8H1K148Y5KM23YZ7V9AZY9K",
+					"slug": "d8-ton-und-film-check",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Welches Mittel lässt den Bus näher wirken, bevor man ihn sieht?",
+					"concept": "Ein lauter werdender Motor im Hintergrund.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-ton-und-film",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Ein lauter werdender Motor im Hintergrund.",
+							"Ein unveränderlicher Titel vor der Szene."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8H1K148T78BN29V9DH2D6G1",
+					"slug": "d8-ton-und-film-recall",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Wie belegst du die Wirkung eines Gestaltungsmittels im Film oder Hörtext?",
+					"concept": "Ich nenne das Mittel, seine konkrete Stelle und die Wirkung im Zusammenhang.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-ton-und-film",
+					"sample_solution": "Das Motorgeräusch nimmt zu, obwohl die Straße noch leer wirkt. So hören wir die Annäherung, bevor die Scheinwerfer im Bild erkennbar werden."
+				}
+			]
+		},
+		{
+			"id": "01M8H1K1480FB9XKBKTDHERDJX",
+			"atom_uri": "urn:zam:atom:01M8H1K1480FB9XKBKTDHERDJX",
+			"namespace": "zam-academy-deutsch-gymnasium-8",
+			"slug": "d8-schreibplan",
+			"title": "Einen Text adressatengerecht planen",
+			"domain": "deutsch/schreiben",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-schreibplan",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "deutsch-gymnasium-8",
+					"topic_code": "schreiben",
+					"topic_title": "Schreiben"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "deutsch",
+					"topic_code": "lb3",
+					"topic_title": "Schreiben"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8H1K148DRRHVQK9CT2ES0XY",
+					"slug": "d8-schreibplan-check",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Was steht in einer Auskunft für neue Schülerinnen und Schüler zuerst?",
+					"concept": "Wo und wann das Regal zugänglich ist.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-schreibplan",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Wo und wann das Regal zugänglich ist.",
+							"Die Abstimmung über einen künftigen Umbau."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8H1K1483R408TVGZHYDCJKN",
+					"slug": "d8-schreibplan-recall",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Wann kombinierst du Erzählen und Argumentieren?",
+					"concept": "Wenn eine kurze erlebte Szene den Anlass für einen begründeten Vorschlag verdeutlicht.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-schreibplan",
+					"sample_solution": "Eine Szene über eine lange Schlange macht das Problem anschaulich. Danach erklärt das Argument, wie ein zweites Regal helfen könnte."
+				}
+			]
+		},
+		{
+			"id": "01M8H1K148PA5WM437Q5S3YAAF",
+			"atom_uri": "urn:zam:atom:01M8H1K148PA5WM437Q5S3YAAF",
+			"namespace": "zam-academy-deutsch-gymnasium-8",
+			"slug": "d8-sprachmittel-schreiben",
+			"title": "Sprachliche Mittel beim Schreiben wählen",
+			"domain": "deutsch/schreiben",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-sprachmittel-schreiben",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "deutsch-gymnasium-8",
+					"topic_code": "schreiben",
+					"topic_title": "Schreiben"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "deutsch",
+					"topic_code": "lb3",
+					"topic_title": "Schreiben"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8H1K148HZTM4CMKRC0Z1QR6",
+					"slug": "d8-sprachmittel-schreiben-check",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Welche Änderung schafft den klarsten Personenbezug?",
+					"concept": "Noor stellt die Kiste zum Prüfstand.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-sprachmittel-schreiben",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Noor stellt die Kiste zum Prüfstand.",
+							"Sie stellt diese zu ihr."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8H1K148R71E5E3D5QJ52A79",
+					"slug": "d8-sprachmittel-schreiben-recall",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Wozu setzt du Pro-Formen in einem eigenen Text ein?",
+					"concept": "Sie verbinden Aussagen, indem sie eindeutig auf schon Genanntes verweisen.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-sprachmittel-schreiben",
+					"sample_solution": "Nach „Die Kiste steht am Prüfstand“ kann „Dort bleibt sie bis Freitag“ Ort und Sache aufgreifen."
+				}
+			]
+		},
+		{
+			"id": "01M8H1K148TS0K4N7PZWYBGGBJ",
+			"atom_uri": "urn:zam:atom:01M8H1K148TS0K4N7PZWYBGGBJ",
+			"namespace": "zam-academy-deutsch-gymnasium-8",
+			"slug": "d8-mitschrift",
+			"title": "Eine strukturierte Mitschrift erstellen",
+			"domain": "deutsch/schreiben",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-mitschrift",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "deutsch-gymnasium-8",
+					"topic_code": "schreiben",
+					"topic_title": "Schreiben"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "deutsch",
+					"topic_code": "lb3",
+					"topic_title": "Schreiben"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8H1K148HCS9PK0SVNVNZQNG",
+					"slug": "d8-mitschrift-check",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Was gehört in die strukturierte Mitschrift zum Test?",
+					"concept": "Jedes Rad 30 Sekunden von Hand drehen.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-mitschrift",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Jedes Rad 30 Sekunden von Hand drehen.",
+							"Das Wort „danach“ ohne Bezug."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8H1K1488V5W0JT23G9K02JC",
+					"slug": "d8-mitschrift-recall",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Welche Rolle spielen Pfeile und Zwischenüberschriften in einer Mitschrift?",
+					"concept": "Überschriften ordnen Themen, Pfeile können Beziehungen oder Abläufe sichtbar machen.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-mitschrift",
+					"sample_solution": "Unter „Maßnahmen“ hält „prüfen → ölen → testen“ eine Reihenfolge fest. Unter „Befund“ kann ein Pfeil eine Folge kennzeichnen."
+				}
+			]
+		},
+		{
+			"id": "01M8H1K148KG7B16B9BZ0WD6P0",
+			"atom_uri": "urn:zam:atom:01M8H1K148KG7B16B9BZ0WD6P0",
+			"namespace": "zam-academy-deutsch-gymnasium-8",
+			"slug": "d8-reden-wiedergeben",
+			"title": "Fremde Aussagen gekennzeichnet wiedergeben",
+			"domain": "deutsch/schreiben",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-reden-wiedergeben",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "deutsch-gymnasium-8",
+					"topic_code": "schreiben",
+					"topic_title": "Schreiben"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "deutsch",
+					"topic_code": "lb3",
+					"topic_title": "Schreiben"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8H1K148WV0HYN0NKY5ZKM2Q",
+					"slug": "d8-reden-wiedergeben-check",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Welche Fassung gibt die Aufforderung korrekt wieder?",
+					"concept": "Die Aufsicht bittet die Gruppe, sich vorher anzumelden.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-reden-wiedergeben",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Die Aufsicht bittet die Gruppe, sich vorher anzumelden.",
+							"Die Gruppe hat sich vorher angemeldet."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8H1K1485K13H8D4DH2XZ59A",
+					"slug": "d8-reden-wiedergeben-recall",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Woran erkennt man in einem eigenen Text eine fremde Aussage?",
+					"concept": "An klarer Herkunftsangabe und einer dazu passenden Form der Wiedergabe.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-reden-wiedergeben",
+					"sample_solution": "„Nach Auskunft der Aufsicht …“ nennt die Quelle einer Paraphrase. „Die Aufsicht erklärt, sie öffne …“ markiert die fremde Stimme auch grammatisch."
+				}
+			]
+		},
+		{
+			"id": "01M8H1K148D1RTR55G88N1Z1G7",
+			"atom_uri": "urn:zam:atom:01M8H1K148D1RTR55G88N1Z1G7",
+			"namespace": "zam-academy-deutsch-gymnasium-8",
+			"slug": "d8-layout-ueberarbeiten",
+			"title": "Texte überarbeiten und übersichtlich gestalten",
+			"domain": "deutsch/schreiben",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-layout-ueberarbeiten",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "deutsch-gymnasium-8",
+					"topic_code": "schreiben",
+					"topic_title": "Schreiben"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "deutsch",
+					"topic_code": "lb3",
+					"topic_title": "Schreiben"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8H1K148Y8HQRJR7RZ1BBYZ9",
+					"slug": "d8-layout-ueberarbeiten-check",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Welcher Kommentar hilft der Autorin am besten?",
+					"concept": "Schreibe „für die längere Projektzeit“ statt „damit“, damit die Meldepflicht eindeutig ist.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-layout-ueberarbeiten",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Schreibe „für die längere Projektzeit“ statt „damit“, damit die Meldepflicht eindeutig ist.",
+							"Bitte mach alles schöner."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8H1K1481WMT4WNN7FMPCKN4",
+					"slug": "d8-layout-ueberarbeiten-recall",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Warum lohnt ein kriteriengeleiteter Überarbeitungsplan?",
+					"concept": "Er hilft, Inhalt, Zusammenhang, Sprache und Form gezielt zu prüfen.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-layout-ueberarbeiten",
+					"sample_solution": "Zuerst ordne ich Regel und Ausnahme. Dann löse ich das unklare „damit“ auf und benutze zuletzt passende Zwischenüberschriften."
+				}
+			]
+		},
+		{
+			"id": "01M8H1K148G0NAH1SM2ATA6456",
+			"atom_uri": "urn:zam:atom:01M8H1K148G0NAH1SM2ATA6456",
+			"namespace": "zam-academy-deutsch-gymnasium-8",
+			"slug": "d8-schildern-gestalten",
+			"title": "Literarisch schildern und erzählen",
+			"domain": "deutsch/schreiben",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-schildern-gestalten",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "deutsch-gymnasium-8",
+					"topic_code": "schreiben",
+					"topic_title": "Schreiben"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "deutsch",
+					"topic_code": "lb3",
+					"topic_title": "Schreiben"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8H1K148YVC225GDBF6GJWQS",
+					"slug": "d8-schildern-gestalten-check",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Welcher Satz schildert die Wahrnehmung der Figur besonders genau?",
+					"concept": "Ihr Blick blieb an einem einzelnen Schuh mitten im Spielfeld hängen.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-schildern-gestalten",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Ihr Blick blieb an einem einzelnen Schuh mitten im Spielfeld hängen.",
+							"Im Bericht wurden mehrere Dinge erwähnt."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8H1K148CHVER5REQGGM0CW9",
+					"slug": "d8-schildern-gestalten-recall",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Was unterscheidet einen schildernden vom rein sachlich feststellenden Satz?",
+					"concept": "Der schildernde Satz macht die Wahrnehmung konkret und lässt eine Stimmung entstehen.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-schildern-gestalten",
+					"sample_solution": "„Ein Schuh lag im Feld“ stellt fest. Eine Lichtreflexion und der Blick der Figur lassen die Halle verlassen wirken."
+				}
+			]
+		},
+		{
+			"id": "01M8H1K1489DME19QWZSVKT51V",
+			"atom_uri": "urn:zam:atom:01M8H1K1489DME19QWZSVKT51V",
+			"namespace": "zam-academy-deutsch-gymnasium-8",
+			"slug": "d8-informierend-material",
+			"title": "Mit Grafik und Text informieren",
+			"domain": "deutsch/schreiben",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-informierend-material",
+			"prerequisites": [
+				{
+					"atom_id": "01M8H1K148EVKZ0Y0M6X676ZNB",
+					"type": "soft"
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "deutsch-gymnasium-8",
+					"topic_code": "schreiben",
+					"topic_title": "Schreiben"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "deutsch",
+					"topic_code": "lb3",
+					"topic_title": "Schreiben"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8H1K148B0NDWYDP2M53NJ09",
+					"slug": "d8-informierend-material-check",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Welche Aussage folgt unmittelbar aus M1 und M2?",
+					"concept": "Am Donnerstag wurden in der Testwoche sechs Bücher mehr ausgeliehen als am Dienstag.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-informierend-material",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Am Donnerstag wurden in der Testwoche sechs Bücher mehr ausgeliehen als am Dienstag.",
+							"Am Donnerstag kamen sechs zusätzliche Personen."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8H1K148EGW8XSXSAZ4ZSV7A",
+					"slug": "d8-informierend-material-recall",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Was brauchst du, um eine Grafik in einem Infotext korrekt zu nutzen?",
+					"concept": "Titel oder Thema, Maßeinheit und Bezugsgröße sowie die einschlägigen Werte.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-informierend-material",
+					"sample_solution": "„24“ bedeutet laut Material 24 ausgeliehene Bücher an einem Donnerstag der Testwoche. Erst mit dieser Einordnung ist der Wert aussagekräftig."
+				}
+			]
+		},
+		{
+			"id": "01M8H1K148G75GPHBRBPR36B69",
+			"atom_uri": "urn:zam:atom:01M8H1K148G75GPHBRBPR36B69",
+			"namespace": "zam-academy-deutsch-gymnasium-8",
+			"slug": "d8-literarische-inhaltsangabe",
+			"title": "Über einen literarischen Text informieren",
+			"domain": "deutsch/schreiben",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-literarische-inhaltsangabe",
+			"prerequisites": [
+				{
+					"atom_id": "01M8H1K148WZ8TKCYDC5JGEC1W",
+					"type": "soft"
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "deutsch-gymnasium-8",
+					"topic_code": "schreiben",
+					"topic_title": "Schreiben"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "deutsch",
+					"topic_code": "lb3",
+					"topic_title": "Schreiben"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8H1K148CXCPKR4S4QGMQHQZ",
+					"slug": "d8-literarische-inhaltsangabe-check",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Welche Formulierung benennt ein Thema der Geschichte?",
+					"concept": "Ein unerledigter Auftrag und die offene Frage nach dem Grund.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-literarische-inhaltsangabe",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Ein unerledigter Auftrag und die offene Frage nach dem Grund.",
+							"Es gibt am Steg eine Fähre."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8H1K148ZBKEJC10FN8QYNAY",
+					"slug": "d8-literarische-inhaltsangabe-recall",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Wie unterscheidest du Thema und Inhaltsangabe?",
+					"concept": "Das Thema benennt die übergreifende Frage. Die Inhaltsangabe fasst die wesentlichen Ereignisse und Zusammenhänge zusammen.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-literarische-inhaltsangabe",
+					"sample_solution": "„Ein unerledigter Auftrag“ ist das Thema. „Leo lässt die Bank leer, obwohl Aylin ihn um die Schlüsselablage bittet“ beschreibt die Handlung."
+				}
+			]
+		},
+		{
+			"id": "01M8H1K148CVCR1Q893KZH6MRA",
+			"atom_uri": "urn:zam:atom:01M8H1K148CVCR1Q893KZH6MRA",
+			"namespace": "zam-academy-deutsch-gymnasium-8",
+			"slug": "d8-argument-material",
+			"title": "Materialgestützt argumentieren",
+			"domain": "deutsch/schreiben",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-argument-material",
+			"prerequisites": [
+				{
+					"atom_id": "01M8H1K14897WKGHAB5RT9CJ98",
+					"type": "soft"
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "deutsch-gymnasium-8",
+					"topic_code": "schreiben",
+					"topic_title": "Schreiben"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "deutsch",
+					"topic_code": "lb3",
+					"topic_title": "Schreiben"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8H1K148ZYW7GZDE0WHM4J0H",
+					"slug": "d8-argument-material-check",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Aus welchen Teilen besteht ein Argument nach dem 3B-Schema?",
+					"concept": "Behauptung, Begründung und Beispiel oder Beleg.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-argument-material",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Behauptung, Begründung und Beispiel oder Beleg.",
+							"Behauptung, Inhaltsangabe und Schlussformel."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8H1K148DMWK5HGWQGFY3XXZ",
+					"slug": "d8-argument-material-recall",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Warum ist eine Zahl allein noch keine Begründung?",
+					"concept": "Erst der erklärte Zusammenhang macht deutlich, warum der Beleg den Standpunkt stützt.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-argument-material",
+					"sample_solution": "Vierzehn Zustimmungen zeigen einen Bedarf in der Klasse. Das spricht für eine begrenzte Probe, wenn die verfügbaren Plätze sinnvoll genutzt werden."
+				}
+			]
+		},
+		{
+			"id": "01M8H1K148HWYQB0HHBHM2TVQW",
+			"atom_uri": "urn:zam:atom:01M8H1K148HWYQB0HHBHM2TVQW",
+			"namespace": "zam-academy-deutsch-gymnasium-8",
+			"slug": "d8-linearer-leserbrief",
+			"title": "Einen argumentierenden Leserbrief linear aufbauen",
+			"domain": "deutsch/schreiben",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-linearer-leserbrief",
+			"prerequisites": [
+				{
+					"atom_id": "01M8H1K148CVCR1Q893KZH6MRA",
+					"type": "soft"
+				},
+				{
+					"atom_id": "01M8H1K1480FB9XKBKTDHERDJX",
+					"type": "soft"
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "deutsch-gymnasium-8",
+					"topic_code": "schreiben",
+					"topic_title": "Schreiben"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "deutsch",
+					"topic_code": "lb3",
+					"topic_title": "Schreiben"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8H1K148XS7ZFQ5C8GFAS1JE",
+					"slug": "d8-linearer-leserbrief-check",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Welche Reihenfolge passt zum linearen Leserbrief?",
+					"concept": "Anlass und Position, geordnete Gründe, konkrete Folgerung.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-linearer-leserbrief",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Anlass und Position, geordnete Gründe, konkrete Folgerung.",
+							"Folgerung, zufällige Stichwörter, neue These."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8H1K148G4GSAC4KBEKMB0F9",
+					"slug": "d8-linearer-leserbrief-recall",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Wie ordnest du die Gründe in einem linearen argumentierenden Text?",
+					"concept": "Jeder Absatz trägt einen eigenen Grund. Die Reihenfolge stützt dieselbe Hauptposition.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-linearer-leserbrief",
+					"sample_solution": "Erst zeige ich den Bedarf, dann eine umsetzbare Lösung. Daraus kann ich eine Testwoche als begründeten nächsten Schritt fordern."
+				}
+			]
+		},
+		{
+			"id": "01M8H1K148ASN0CBJPY0HKA87A",
+			"atom_uri": "urn:zam:atom:01M8H1K148ASN0CBJPY0HKA87A",
+			"namespace": "zam-academy-deutsch-gymnasium-8",
+			"slug": "d8-varietaten",
+			"title": "Dialekt, Jugendsprache und Standardsprache unterscheiden",
+			"domain": "deutsch/sprache",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-varietaten",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "deutsch-gymnasium-8",
+					"topic_code": "sprache",
+					"topic_title": "Sprache und Rechtschreibung"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "deutsch",
+					"topic_code": "lb4",
+					"topic_title": "Sprachgebrauch und Sprache untersuchen und reflektieren"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8H1K148KSK76NXERBYV0NWB",
+					"slug": "d8-varietaten-check",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Welche Beobachtung zum Dialekt ist richtig?",
+					"concept": "Dialekt kann regionale Zugehörigkeit ausdrücken und hat regelmäßige Formen.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-varietaten",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Dialekt kann regionale Zugehörigkeit ausdrücken und hat regelmäßige Formen.",
+							"Dialekt besteht nur aus zufälligen Fehlern."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8H1K148KFXQ4CR180KVK6K8",
+					"slug": "d8-varietaten-recall",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Welche Leistungen können Dialekt und Standardsprache in verschiedenen Situationen haben?",
+					"concept": "Dialekt kann regionale Nähe zeigen. Standardsprache erleichtert überregionale Verständigung.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-varietaten",
+					"sample_solution": "Eine vertraute Begrüßung kann im Dialekt Zugehörigkeit ausdrücken. Eine Mitteilung an eine unbekannte Gruppe erreicht mit Standardsprache oft mehr Menschen."
+				}
+			]
+		},
+		{
+			"id": "01M8H1K1488QJPVNSG8GH07442",
+			"atom_uri": "urn:zam:atom:01M8H1K1488QJPVNSG8GH07442",
+			"namespace": "zam-academy-deutsch-gymnasium-8",
+			"slug": "d8-kommunikationsmodell",
+			"title": "Gesprächssituation und Kommunikationsform analysieren",
+			"domain": "deutsch/sprache",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-kommunikationsmodell",
+			"prerequisites": [
+				{
+					"atom_id": "01M8H1K148ASN0CBJPY0HKA87A",
+					"type": "soft"
+				},
+				{
+					"atom_id": "01M8H1K148ZEEPTDDT8J2R593T",
+					"type": "soft"
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "deutsch-gymnasium-8",
+					"topic_code": "sprache",
+					"topic_title": "Sprache und Rechtschreibung"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "deutsch",
+					"topic_code": "lb4",
+					"topic_title": "Sprachgebrauch und Sprache untersuchen und reflektieren"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8H1K148VBJHNVC58NJPR8DA",
+					"slug": "d8-kommunikationsmodell-check",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Wie lässt sich der Chat A am besten beschreiben?",
+					"concept": "Medial schriftlich und konzeptionell eher mündlich.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-kommunikationsmodell",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Medial schriftlich und konzeptionell eher mündlich.",
+							"Medial mündlich und konzeptionell immer schriftlich."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8H1K148A5V3D8TF8N91SZ56",
+					"slug": "d8-kommunikationsmodell-recall",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Was unterscheidet mediale von konzeptioneller Mündlichkeit?",
+					"concept": "Medial geht es um den gesprochenen Kanal. Konzeptionell geht es um den gesprächsnahen Stil.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-kommunikationsmodell",
+					"sample_solution": "Eine Nachricht kann geschrieben und mit Ellipsen und vertrauten Wendungen trotzdem gesprächsnah sein."
+				}
+			]
+		},
+		{
+			"id": "01M8H1K148FQK1HSXEM4546B1B",
+			"atom_uri": "urn:zam:atom:01M8H1K148FQK1HSXEM4546B1B",
+			"namespace": "zam-academy-deutsch-gymnasium-8",
+			"slug": "d8-textkohaerenz",
+			"title": "Den Zusammenhang eines Textes sichtbar machen",
+			"domain": "deutsch/sprache",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-textkohaerenz",
+			"prerequisites": [
+				{
+					"atom_id": "01M8H1K148PA5WM437Q5S3YAAF",
+					"type": "soft"
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "deutsch-gymnasium-8",
+					"topic_code": "sprache",
+					"topic_title": "Sprache und Rechtschreibung"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "deutsch",
+					"topic_code": "lb4",
+					"topic_title": "Sprachgebrauch und Sprache untersuchen und reflektieren"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8H1K148XTHE6CY9DYCFYP81",
+					"slug": "d8-textkohaerenz-check",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Welche Änderung macht den Bezug von „Er“ eindeutig?",
+					"concept": "Der Akku ist leer.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-textkohaerenz",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Der Akku ist leer.",
+							"Dieser ist dort leer."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8H1K148X9N1C1F7E75KYYZE",
+					"slug": "d8-textkohaerenz-recall",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Woran erkennst du einen unklaren Pronomenbezug?",
+					"concept": "Mehrere passende Bezugswörter kommen infrage oder das Bezugswort fehlt.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-textkohaerenz",
+					"sample_solution": "Nach „Akku und Adapter liegen bereit“ kann „er“ beides aufnehmen. Das passende Nomen erneut zu nennen klärt den Satz."
+				}
+			]
+		},
+		{
+			"id": "01M8H1K1483YAPYFP9ZR4Q9504",
+			"atom_uri": "urn:zam:atom:01M8H1K1483YAPYFP9ZR4Q9504",
+			"namespace": "zam-academy-deutsch-gymnasium-8",
+			"slug": "d8-sprachsystem-satzbau",
+			"title": "Satzbau als System untersuchen",
+			"domain": "deutsch/sprache",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-sprachsystem-satzbau",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "deutsch-gymnasium-8",
+					"topic_code": "sprache",
+					"topic_title": "Sprache und Rechtschreibung"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "deutsch",
+					"topic_code": "lb4",
+					"topic_title": "Sprachgebrauch und Sprache untersuchen und reflektieren"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8H1K148B1EGF8CYB83Y59M7",
+					"slug": "d8-sprachsystem-satzbau-check",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Welcher Satz zeigt „den neuen Plan“ als zusammenhängendes Satzglied?",
+					"concept": "Den neuen Plan erklärt Ada heute.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-sprachsystem-satzbau",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Den neuen Plan erklärt Ada heute.",
+							"Plan erklärt Ada heute den neuen."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8H1K148XXRXA5PJN5GT54B4",
+					"slug": "d8-sprachsystem-satzbau-recall",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Was zeigt die Verschiebeprobe?",
+					"concept": "Welche Wörter bei einer Umstellung zusammen ein Satzglied bilden.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-sprachsystem-satzbau",
+					"sample_solution": "„Den neuen Plan“ bleibt geschlossen, egal ob der Ausdruck vor oder nach dem finiten Verb „erklärt“ steht."
+				}
+			]
+		},
+		{
+			"id": "01M8H1K148JHFJYH5B6WKSRMAV",
+			"atom_uri": "urn:zam:atom:01M8H1K148JHFJYH5B6WKSRMAV",
+			"namespace": "zam-academy-deutsch-gymnasium-8",
+			"slug": "d8-gliedsaetze",
+			"title": "Gliedsätze und Satzverknüpfungen gezielt verwenden",
+			"domain": "deutsch/sprache",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-gliedsaetze",
+			"prerequisites": [
+				{
+					"atom_id": "01M8H1K1483YAPYFP9ZR4Q9504",
+					"type": "soft"
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "deutsch-gymnasium-8",
+					"topic_code": "sprache",
+					"topic_title": "Sprache und Rechtschreibung"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "deutsch",
+					"topic_code": "lb4",
+					"topic_title": "Sprachgebrauch und Sprache untersuchen und reflektieren"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8H1K148HB30QF875B32WSV5",
+					"slug": "d8-gliedsaetze-check",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Was drückt „Obwohl es regnet“ hier aus?",
+					"concept": "Die Probe im Hof findet trotz eines erwartbaren Hindernisses statt.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-gliedsaetze",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Die Probe im Hof findet trotz eines erwartbaren Hindernisses statt.",
+							"Der Regen ist der Grund für die Probe im Hof."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8H1K14888CHSCMD5N3CFETH",
+					"slug": "d8-gliedsaetze-recall",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Woran erkennst du einen Objektsatz?",
+					"concept": "Er beantwortet im Satzgefüge die Objektfrage, etwa „Was weiß ich?“",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-gliedsaetze",
+					"sample_solution": "In „Ich weiß, dass die Halle offen ist“ gibt der dass-Satz den Inhalt des Wissens an."
+				}
+			]
+		},
+		{
+			"id": "01M8H1K148YPA8F68XYY20QJSH",
+			"atom_uri": "urn:zam:atom:01M8H1K148YPA8F68XYY20QJSH",
+			"namespace": "zam-academy-deutsch-gymnasium-8",
+			"slug": "d8-tempus-zeitbezug",
+			"title": "Tempus und zeitliche Verhältnisse unterscheiden",
+			"domain": "deutsch/sprache",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-tempus-zeitbezug",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "deutsch-gymnasium-8",
+					"topic_code": "sprache",
+					"topic_title": "Sprache und Rechtschreibung"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "deutsch",
+					"topic_code": "lb4",
+					"topic_title": "Sprachgebrauch und Sprache untersuchen und reflektieren"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8H1K148B2KQXAKG60Z7JM9B",
+					"slug": "d8-tempus-zeitbezug-check",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Was zeigt „Ada hatte bereits gewartet, als der Raum öffnete“?",
+					"concept": "Das Warten begann vor der vergangenen Öffnung.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-tempus-zeitbezug",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Das Warten begann vor der vergangenen Öffnung.",
+							"Das Warten beginnt erst morgen."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8H1K148DN513QC8YG7E7JZ0",
+					"slug": "d8-tempus-zeitbezug-recall",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Woran erkennst du Vorzeitigkeit in einer Erzählung im Präteritum?",
+					"concept": "Oft am Plusquamperfekt und an Zeitwörtern wie „bereits“ oder „zuvor“.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-tempus-zeitbezug",
+					"sample_solution": "„Als der Raum öffnete, hatte Ada bereits gewartet“ ordnet den Beginn des Wartens vor die Öffnung ein."
+				}
+			]
+		},
+		{
+			"id": "01M8H1K148HTBMWQ663Y4J44Q6",
+			"atom_uri": "urn:zam:atom:01M8H1K148HTBMWQ663Y4J44Q6",
+			"namespace": "zam-academy-deutsch-gymnasium-8",
+			"slug": "d8-modus-genus-verbi",
+			"title": "Modus und Aktiv oder Passiv gezielt einsetzen",
+			"domain": "deutsch/sprache",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-modus-genus-verbi",
+			"prerequisites": [
+				{
+					"atom_id": "01M8H1K148YPA8F68XYY20QJSH",
+					"type": "soft"
+				},
+				{
+					"atom_id": "01M8H1K148KG7B16B9BZ0WD6P0",
+					"type": "soft"
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "deutsch-gymnasium-8",
+					"topic_code": "sprache",
+					"topic_title": "Sprache und Rechtschreibung"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "deutsch",
+					"topic_code": "lb4",
+					"topic_title": "Sprachgebrauch und Sprache untersuchen und reflektieren"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8H1K1482SNDN8WZ0BCH3ZZP",
+					"slug": "d8-modus-genus-verbi-check",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Welche Fassung verwendet Konjunktiv I und Vorgangspassiv?",
+					"concept": "Ada sagt, der Plan werde geprüft.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-modus-genus-verbi",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Ada sagt, der Plan werde geprüft.",
+							"Das Team prüft den Plan."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8H1K148SW77GKHQVNKCMAX7",
+					"slug": "d8-modus-genus-verbi-recall",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Wie verändert der Wechsel vom Aktiv zum Vorgangspassiv den Fokus?",
+					"concept": "Das betroffene Objekt kann zum Subjekt werden, während der Handelnde optional bleibt.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-modus-genus-verbi",
+					"sample_solution": "Aus „Das Team prüft den Plan“ wird „Der Plan wird geprüft“. Die Prüfung und ihr Gegenstand stehen im Mittelpunkt."
+				}
+			]
+		},
+		{
+			"id": "01M8H1K149JDN3QP77H4GKV8HC",
+			"atom_uri": "urn:zam:atom:01M8H1K149JDN3QP77H4GKV8HC",
+			"namespace": "zam-academy-deutsch-gymnasium-8",
+			"slug": "d8-fremd-und-fachwoerter",
+			"title": "Fremdwörter und Fachwörter erschließen",
+			"domain": "deutsch/sprache",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-fremd-und-fachwoerter",
+			"prerequisites": [],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "deutsch-gymnasium-8",
+					"topic_code": "sprache",
+					"topic_title": "Sprache und Rechtschreibung"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "deutsch",
+					"topic_code": "lb4",
+					"topic_title": "Sprachgebrauch und Sprache untersuchen und reflektieren"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8H1K1491TRPF15YZQAPPGGB",
+					"slug": "d8-fremd-und-fachwoerter-check",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Was bedeutet „Layout“ in der Redaktionsnotiz?",
+					"concept": "Gestaltung und Anordnung der Textelemente auf der Seite.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-fremd-und-fachwoerter",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Gestaltung und Anordnung der Textelemente auf der Seite.",
+							"Wahl einer zukünftigen Autorin."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8H1K149TQ81SS7W5J7BP5NK",
+					"slug": "d8-fremd-und-fachwoerter-recall",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Wie klärst du ein Fremd- oder Fachwort, das mehrere Bedeutungen hat?",
+					"concept": "Ich prüfe den Kontext und wähle den passenden Wörterbucheintrag oder die richtige Teilbedeutung.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-fremd-und-fachwoerter",
+					"sample_solution": "„Protokoll“ bedeutet bei einer Redaktionssitzung schriftliche Ergebnissicherung. Im Netzwerk kann es vereinbarte Kommunikationsregeln bezeichnen."
+				}
+			]
+		},
+		{
+			"id": "01M8H1K149Z9D4V8F4QXV24VC5",
+			"atom_uri": "urn:zam:atom:01M8H1K149Z9D4V8F4QXV24VC5",
+			"namespace": "zam-academy-deutsch-gymnasium-8",
+			"slug": "d8-infinitiv-partizip-komma",
+			"title": "Infinitiv- und Partizipialkonstruktionen untersuchen",
+			"domain": "deutsch/sprache",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-infinitiv-partizip-komma",
+			"prerequisites": [
+				{
+					"atom_id": "01M8H1K148JHFJYH5B6WKSRMAV",
+					"type": "soft"
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "deutsch-gymnasium-8",
+					"topic_code": "sprache",
+					"topic_title": "Sprache und Rechtschreibung"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "deutsch",
+					"topic_code": "lb4",
+					"topic_title": "Sprachgebrauch und Sprache untersuchen und reflektieren"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8H1K149ZFYQ80SW17H0D2G8",
+					"slug": "d8-infinitiv-partizip-komma-check",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Wo steht das notwendige Komma bei „Um pünktlich anzukommen geht Ada früher“?",
+					"concept": "Nach „anzukommen“.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-infinitiv-partizip-komma",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Nach „anzukommen“.",
+							"Vor „pünktlich“."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8H1K149Q2ERQ8EQHGG2VC6G",
+					"slug": "d8-infinitiv-partizip-komma-recall",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Woran unterscheidest du eine Infinitivgruppe von einem zu-Infinitiv im mehrteiligen Prädikat?",
+					"concept": "Ich prüfe, ob eine eigene satzwertige Ergänzung vorliegt oder die Verbteile eine Einheit bilden.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-infinitiv-partizip-komma",
+					"sample_solution": "„Sie hofft, den Termin zu halten“ enthält eine satzwertige Ergänzung. In „Sie braucht nicht zu warten“ gehört der Infinitiv zum Prädikat."
+				}
+			]
+		},
+		{
+			"id": "01M8H1K14902E886RN7KRBHD3V",
+			"atom_uri": "urn:zam:atom:01M8H1K14902E886RN7KRBHD3V",
+			"namespace": "zam-academy-deutsch-gymnasium-8",
+			"slug": "d8-zitat-zeichensetzung",
+			"title": "Richtig zitieren und Satzzeichen setzen",
+			"domain": "deutsch/sprache",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-zitat-zeichensetzung",
+			"prerequisites": [
+				{
+					"atom_id": "01M8H1K148KG7B16B9BZ0WD6P0",
+					"type": "soft"
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "deutsch-gymnasium-8",
+					"topic_code": "sprache",
+					"topic_title": "Sprache und Rechtschreibung"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "deutsch",
+					"topic_code": "lb4",
+					"topic_title": "Sprachgebrauch und Sprache untersuchen und reflektieren"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8H1K149BRHHCW09GP77D9NZ",
+					"slug": "d8-zitat-zeichensetzung-check",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Welche Fassung zitiert die vollständige Meldung korrekt?",
+					"concept": "Die Aufsicht meldet: „Der Raum bleibt heute geschlossen.“",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-zitat-zeichensetzung",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Die Aufsicht meldet: „Der Raum bleibt heute geschlossen.“",
+							"Die Aufsicht meldet „Der Raum bleibt heute geschlossen“."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8H1K149VSVNWPGHW3803FYQ",
+					"slug": "d8-zitat-zeichensetzung-recall",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Wie unterscheidest du die Zeichensetzung bei Vollzitat und eingebautem Fragment?",
+					"concept": "Beim angekündigten Vollzitat steht das eigene Schlusszeichen darin. Beim Fragment setzt der umgebende Satz sein Ende.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-zitat-zeichensetzung",
+					"sample_solution": "„Sie meldet: ‚Der Raum ist geschlossen.‘“ zeigt einen vollständigen zitierten Satz. In „Sie nennt den Raum ‚geschlossen‘.“ schließt der Punkt den Begleitsatz."
+				}
+			]
+		},
+		{
+			"id": "01M8H1K1495G10DFZVKSKJX7M8",
+			"atom_uri": "urn:zam:atom:01M8H1K1495G10DFZVKSKJX7M8",
+			"namespace": "zam-academy-deutsch-gymnasium-8",
+			"slug": "d8-rechtschreib-werkstatt",
+			"title": "Fehler untersuchen und Regeln ableiten",
+			"domain": "deutsch/sprache",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-rechtschreib-werkstatt",
+			"prerequisites": [
+				{
+					"atom_id": "01M8H1K149JDN3QP77H4GKV8HC",
+					"type": "soft"
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "deutsch-gymnasium-8",
+					"topic_code": "sprache",
+					"topic_title": "Sprache und Rechtschreibung"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "deutsch",
+					"topic_code": "lb4",
+					"topic_title": "Sprachgebrauch und Sprache untersuchen und reflektieren"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8H1K1497TKFA731QNY9AVNM",
+					"slug": "d8-rechtschreib-werkstatt-check",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Warum schreibt man „zum Diskutieren“ groß?",
+					"concept": "„Zum“ enthält einen Artikel und das Verb wird als Nomen verwendet.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-rechtschreib-werkstatt",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"„Zum“ enthält einen Artikel und das Verb wird als Nomen verwendet.",
+							"Jedes Verb mit einem langen Wort davor wird großgeschrieben."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8H1K149RB0ZKH4Q9FSYCJF1",
+					"slug": "d8-rechtschreib-werkstatt-recall",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Wann wählst du eine grammatische Probe und wann ein Wörterbuch?",
+					"concept": "Eine passende Probe erklärt regelhafte Fälle. Das Wörterbuch klärt unbekannte Schreibungen oder Ausnahmen.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-rechtschreib-werkstatt",
+					"sample_solution": "Bei „zum Diskutieren“ hilft „zu dem“. Bei „Interview“ überprüfe ich die fremdsprachige Schreibung im Wörterbuch."
+				}
+			]
+		},
+		{
+			"id": "01M8H1K1493YJ67D29GN2A92K3",
+			"atom_uri": "urn:zam:atom:01M8H1K1493YJ67D29GN2A92K3",
+			"namespace": "zam-academy-deutsch-gymnasium-8",
+			"slug": "d8-mug-inszenierung",
+			"title": "MuG: Eine Bild-Text-Szene inszenieren",
+			"domain": "deutsch/mug",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-mug-inszenierung",
+			"prerequisites": [
+				{
+					"atom_id": "01M8H1K148MHEBAFSB7M36HK7R",
+					"type": "soft"
+				},
+				{
+					"atom_id": "01M8H1K148H6BXY2EKF2KQHZNE",
+					"type": "soft"
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "deutsch-gymnasium-8",
+					"topic_code": "mug",
+					"topic_title": "Profilbereich am MuG"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "deutsch",
+					"topic_code": "lb5",
+					"topic_title": "Profilbereich am MuG",
+					"track": "MuG"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8H1K149XN2AAXY2WD23J8PJ",
+					"slug": "d8-mug-inszenierung-check",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Welche Entscheidung unterstreicht den Schluss?",
+					"concept": "Die Geräusche stoppen und ein enger Lichtkreis hebt den Schuh hervor.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-mug-inszenierung",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Die Geräusche stoppen und ein enger Lichtkreis hebt den Schuh hervor.",
+							"Der ganze Raum bleibt gleich hell und laut."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8H1K149JT6R9W9690H35N0Z",
+					"slug": "d8-mug-inszenierung-recall",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Wozu brauchst du eine Regieskizze beim fächerverbindenden Gestalten?",
+					"concept": "Sie legt Einsatz, Reihenfolge und beabsichtigte Wirkung von Text, Bild und Ton fest.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-mug-inszenierung",
+					"sample_solution": "In der Skizze kann der letzte Aufprall den Tonwechsel auslösen. Die Gruppe prüft dann in der Probe, ob der Lichtwechsel rechtzeitig folgt."
+				}
+			]
+		},
+		{
+			"id": "01M8H1K14937WMGGCVYEP5R9B6",
+			"atom_uri": "urn:zam:atom:01M8H1K14937WMGGCVYEP5R9B6",
+			"namespace": "zam-academy-deutsch-gymnasium-8",
+			"slug": "d8-mug-redaktion",
+			"title": "MuG: Eine digitale Zeitung planen",
+			"domain": "deutsch/mug",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-mug-redaktion",
+			"prerequisites": [
+				{
+					"atom_id": "01M8H1K148D1RTR55G88N1Z1G7",
+					"type": "soft"
+				},
+				{
+					"atom_id": "01M8H1K14897WKGHAB5RT9CJ98",
+					"type": "soft"
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "deutsch-gymnasium-8",
+					"topic_code": "mug",
+					"topic_title": "Profilbereich am MuG"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "deutsch",
+					"topic_code": "lb5",
+					"topic_title": "Profilbereich am MuG",
+					"track": "MuG"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8H1K149GD5GSBS2XESRXXXM",
+					"slug": "d8-mug-redaktion-check",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Wie löst ihr den Widerspruch zwischen 17 und 18 Uhr?",
+					"concept": "Fragt die zuständige Organisation nach der aktuellen Zeit und dokumentiert die Antwort.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-mug-redaktion",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Fragt die zuständige Organisation nach der aktuellen Zeit und dokumentiert die Antwort.",
+							"Nehmt den Mittelwert beider Angaben."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8H1K149YKRB7F5VBWRDHERD",
+					"slug": "d8-mug-redaktion-recall",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Was prüft ein Redaktionsteam vor einer digitalen Veröffentlichung?",
+					"concept": "Tatsachen und Quellen, Textaufbau, Lesbarkeit sowie Einwilligungen und Nutzungsrechte.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-mug-redaktion",
+					"sample_solution": "Die Meldung benennt die bestätigte Probenzeit. Das Bild ist freigegeben, seine Beschriftung erläutert den Aufbau, und eine zweite Person kontrolliert die Vorschau."
+				}
+			]
+		},
+		{
+			"id": "01M8H1K14936SH4FHDEZS0PTTV",
+			"atom_uri": "urn:zam:atom:01M8H1K14936SH4FHDEZS0PTTV",
+			"namespace": "zam-academy-deutsch-gymnasium-8",
+			"slug": "d8-mug-werkvergleich",
+			"title": "MuG: Eine weitere Ganzschrift oder einen Film erschließen",
+			"domain": "deutsch/mug",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-mug-werkvergleich",
+			"prerequisites": [
+				{
+					"atom_id": "01M8H1K148Q554MGHVK47NCD0K",
+					"type": "soft"
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "deutsch-gymnasium-8",
+					"topic_code": "mug",
+					"topic_title": "Profilbereich am MuG"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "deutsch",
+					"topic_code": "lb5",
+					"topic_title": "Profilbereich am MuG",
+					"track": "MuG"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8H1K149331DFK0J9X0T1T6C",
+					"slug": "d8-mug-werkvergleich-check",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Wie belegst du den Bedeutungswandel des Motivs?",
+					"concept": "Vergleiche mehrere Stellen und erkläre die jeweilige Funktion der Tür.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-mug-werkvergleich",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Vergleiche mehrere Stellen und erkläre die jeweilige Funktion der Tür.",
+							"Zähle nur die Auftritte der Tür."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8H1K1499XTY9DHN6W5QPJ5T",
+					"slug": "d8-mug-werkvergleich-recall",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Wann ist ein wiederkehrender Gegenstand für eine Deutung als Motiv hilfreich?",
+					"concept": "Wenn sein Auftreten und seine mögliche Bedeutungsveränderung an mehreren Stellen belegt werden.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-mug-werkvergleich",
+					"sample_solution": "Die Tür trennt am Anfang, vermittelt in der Mitte gedämpften Kontakt und wird am Ende gemeinsam geöffnet. So begleitet sie den Wandel der Beziehung."
+				}
+			]
+		},
+		{
+			"id": "01M8H1K149684FAN6NEZWWT33H",
+			"atom_uri": "urn:zam:atom:01M8H1K149684FAN6NEZWWT33H",
+			"namespace": "zam-academy-deutsch-gymnasium-8",
+			"slug": "d8-mug-literarisches-schreiben",
+			"title": "MuG: Nach einem literarischen Vorbild schreiben",
+			"domain": "deutsch/mug",
+			"reduction": "formal",
+			"typical_age_min": 13,
+			"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-mug-literarisches-schreiben",
+			"prerequisites": [
+				{
+					"atom_id": "01M8H1K148G0NAH1SM2ATA6456",
+					"type": "soft"
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "deutsch-gymnasium-8",
+					"topic_code": "mug",
+					"topic_title": "Profilbereich am MuG"
+				},
+				{
+					"provider": "lehrplanplus-bayern",
+					"school_type": "gymnasium",
+					"grade": 8,
+					"subject": "deutsch",
+					"topic_code": "lb5",
+					"topic_title": "Profilbereich am MuG",
+					"track": "MuG"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M8H1K1494FQWW599X2XD6Y02",
+					"slug": "d8-mug-literarisches-schreiben-check",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Warum wirkt die dreifache Wiederholung im Vorbild?",
+					"concept": "Sie verbindet verschiedene Details als Nachklang desselben Fests.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-mug-literarisches-schreiben",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Sie verbindet verschiedene Details als Nachklang desselben Fests.",
+							"Sie ersetzt jede Veränderung innerhalb der Sätze."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M8H1K1494EZ01MAHSA54Y8G6",
+					"slug": "d8-mug-literarisches-schreiben-recall",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Wie verwendest du ein literarisches Vorbild produktiv?",
+					"concept": "Ich erkenne ein Mittel und nutze es für eine neue Situation mit bewusst gewählter Wirkung.",
+					"language": "de",
+					"source_link": "https://academy.zam-os.org/deutsch-gymnasium-8/#lesson=d8-mug-literarisches-schreiben",
+					"sample_solution": "Aus den „Noch“-Sätzen über ein Fest wird eine eigene Folge über das Warten vor der Öffnung. Das Muster stützt nun die Erwartung."
+				}
+			]
+		}
+	]
+}
