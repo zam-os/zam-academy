@@ -107,9 +107,9 @@ describe("local progress and Academy links", () => {
   });
 });
 
-describe("cell and proposal-only migration", () => {
+describe("cell and approved history migration", () => {
   it("has one correctly bound atom per lesson and 75 stable linked practice items", () => {
-    expect(publication).toEqual({ schema: 1, status: "ready", version: "0.0" });
+    expect(publication).toEqual({ schema: 1, status: "ready", version: "0.1" });
     expect(cell.tile_id).toBe(ZAM_CELL_ID);
     expect(items).toHaveLength(75);
     const ids = [...cell.atoms.map(({ id }) => id), ...items.map(({ id }) => id)];
@@ -142,8 +142,9 @@ describe("cell and proposal-only migration", () => {
     }
   });
 
-  it("keeps the snapshots byte-exact and needs approval before either proposed transfer", async () => {
-    expect(migration).toMatchObject({ status: "proposal-only", approved: null });
+  it("keeps the snapshots byte-exact and declares exactly the two approved transfers", async () => {
+    expect(migration).toMatchObject({ status: "approved", approved: "2026-11-28" });
+    expect(migration.source).toContain("Übernahmen der Lernhistorien ist genehmigt");
     const records = [legacy8, legacy11].flatMap((old) =>
       old.atoms.flatMap((atom) => atom.practice_items.map((item) => [old.tile_id, item.id])),
     );
@@ -157,7 +158,7 @@ describe("cell and proposal-only migration", () => {
     expect(migration.rows.filter((row) => row.category === "A")).toHaveLength(2);
     for (const row of migration.rows) {
       if (row.category === "A") {
-        expect(row.action).toBe("propose-replace-after-approval");
+        expect(row.action).toBe("replace");
         expect(items.filter((item) => item.slug === row.academy_slug)).toHaveLength(1);
       } else {
         expect(row.action).toBe("keep-active");
@@ -165,6 +166,11 @@ describe("cell and proposal-only migration", () => {
       }
     }
     expect(cell).not.toHaveProperty("retired_items");
-    expect(items.some((item) => "replaces" in item)).toBe(false);
+    const declared = items.flatMap((item) =>
+      ("replaces" in item ? item.replaces ?? [] : []).map((id) => [id, item.slug]),
+    );
+    const approved = migration.rows.filter((row) => row.action === "replace")
+      .map((row) => [row.de_by_id, row.academy_slug]);
+    expect(declared).toEqual(approved);
   });
 });
