@@ -48,7 +48,7 @@ Das Lärmlabor zieht Dämmwerte vereinfacht ab und sagt das; das Kreislauflabor 
 
 - **WiB 7** ([`wirtschaft-mittelschule-7`](../wirtschaft-mittelschule-7/)) führt Leittextmethode, Berufswahlportfolio, Berufsberatung und Kammern, Ferienjob und Kinderarbeitsverbot ein. WiB 8 setzt darauf auf (Leittextmethode weitgehend selbständig bzw. selbständig, Praktikum statt Ferienjob).
 - **WiB 9** ([R9](https://www.lehrplanplus.bayern.de/fachlehrplan/mittelschule/9/wib/regelklasse), [M9](https://www.lehrplanplus.bayern.de/fachlehrplan/mittelschule/9/wib/mittlere-reife-klasse), am 28. November 2026 abgerufen) bringt die Grundfunktion Verwaltung, Geldinstitute, Zahlungsverkehr, Geldanlagen und Kredite, soziale Marktwirtschaft, Berufsausbildungsvertrag und im M-Zug Bewerbungsmappe und Vorstellungsgespräch. Diese Inhalte nimmt WiB 8 nicht vorweg; Bewerbungsmappe und Vorstellungsgespräch stehen deshalb nur im R8-Pfad.
-- In `docs/wirtschaft-mittelschule-7-coverage.md` steht, WiB 8 vertiefe „Berufsausbildungsvertrag, Konsumkredite/Verschuldung, Kaufvertrag/Gewährleistung sowie Globalisierung“. Das deckt sich nicht mit dem abgerufenen Fachlehrplan WiB 8; die Korrektur gehört in einen eigenen PR zu WiB 7.
+- [`docs/wirtschaft-mittelschule-7-coverage.md`](wirtschaft-mittelschule-7-coverage.md) nannte für WiB 8 zuerst „Berufsausbildungsvertrag, Konsumkredite/Verschuldung, Kaufvertrag/Gewährleistung sowie Globalisierung“. Das ist berichtigt: Die Abgrenzung dort nennt jetzt die Inhalte des Fachlehrplans WiB 8, ordnet Ausbildungsvertrag, Geldinstitute, Kredite und Globalisierung WiB 9 zu und hält fest, dass Kaufvertrag und Gewährleistung weder in WiB 8 noch in WiB 9 vorkommen.
 
 ## 6. Bestandsabgleich vorhandener ZAM-Karten
 
