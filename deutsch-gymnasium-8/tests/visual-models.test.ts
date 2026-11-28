@@ -73,4 +73,23 @@ describe("Interactive visual examples", () => {
 			"wegen der fehlenden Zeilen",
 		);
 	});
+
+	it("distinguishes a required comma, a bare infinitive with two spellings and an unseparated predicate", () => {
+		const id = "d8-infinitiv-partizip-komma";
+		const lesson = findLesson(id);
+		expect(lesson?.visual.steps[0].detail).toContain("braucht ein Komma");
+		expect(lesson?.cases[0].answer).toBe(
+			"Der zu-Infinitiv gehört zum mehrteiligen Prädikat.",
+		);
+		expect(lesson?.tasks[1].model).toContain(
+			"Er braucht es nicht zu schneiden.",
+		);
+		expect(lesson?.tasks[2].model).toContain(
+			"„Ada versucht, das Schild zu sichern“ braucht ein Komma",
+		);
+		expect(lesson?.tasks[2].model).toContain(
+			"„Ada versucht zu helfen“ und „Ada versucht, zu helfen“ sind beide zulässig",
+		);
+		expect(lesson?.sourceIds).toContain("komma-nebensaetze");
+	});
 });

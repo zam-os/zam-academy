@@ -4690,16 +4690,17 @@
 			"4.3"
 		],
 		"paragraphs": [
-			"Eine satzwertige Infinitivgruppe mit „zu“ wird durch Komma abgetrennt. „Um … zu“ leitet häufig eine Absicht ein. Gehört der zu-Infinitiv zum mehrteiligen Prädikat, steht dort kein Komma. Bei einem nicht erweiterten zu-Infinitiv wie „versucht zu helfen“ kann es je nach Analyse Varianten geben.",
-			"In „Um pünktlich anzukommen, geht Ada früher los“ markiert das Komma die Satzgrenze. „Ada braucht nicht zu warten“ enthält ein mehrteiliges Prädikat. „Vom Regen überrascht, flüchtete Ada hinein“ nutzt eine Partizipialgruppe. Das Komma kann hier die Gliederung der vorangestellten Gruppe verdeutlichen."
+			"Nach dem Amtlichen Regelwerk von 2024 trennst du einen Infinitivsatz mit Komma ab. Das gilt für „Um pünktlich anzukommen, geht Ada früher los“ ebenso wie für „Die Redaktion hofft, den Termin halten zu können“. Im zweiten Beispiel hat der Infinitivsatz kein Einleitewort. In „Ada braucht nicht zu warten“ gehört „zu warten“ zum mehrteiligen Prädikat. Dort steht kein Komma.",
+			"In „Ada versucht zu helfen“ steht nur der einfache zu-Infinitiv „zu helfen“. Hier sind „Ada versucht zu helfen“ und „Ada versucht, zu helfen“ beide richtig. Auch die vorangestellte Partizipialgruppe in „Vom Regen überrascht, flüchtete Ada hinein“ kann in diesem Beispiel mit oder ohne Komma stehen."
 		],
 		"material": "A · „Die Redaktion hofft, den Termin halten zu können.“ B · „Die Redaktion braucht nicht zu warten.“ C · „Vom Regen überrascht, flüchtete Ada hinein.“",
 		"materialLabel": "Übungsmaterial",
 		"sourceIds": [
 			"lehrplan",
-			"sprache-regelwerk"
+			"sprache-regelwerk",
+			"komma-nebensaetze"
 		],
-		"takeaway": "Untersuche erst die Struktur. Trenne satzwertige Infinitivgruppen ab und prüfe Partizipialgruppen gesondert.",
+		"takeaway": "Trenne einen Infinitivsatz mit Komma ab. Prüfe bei einem einfachen zu-Infinitiv, ob beide Schreibweisen zulässig sind. Ein mehrteiliges Prädikat bleibt zusammen.",
 		"lehrplan": "D8 · 4.2 / 4.3",
 		"check": {
 			"wrong": "Nach „geht“.",
@@ -4729,8 +4730,8 @@
 		],
 		"tasks": {
 			"1": {
-				"prompt": "Setze Kommas und begründe: „Um die Ausgabe zu drucken bringt Ben Papier. Er braucht es nicht zu schneiden.“",
-				"model": "Um die Ausgabe zu drucken, bringt Ben Papier. Die Gruppe nennt ein Ziel und ist satzwertig. „Braucht … zu schneiden“ bildet ein Prädikat und wird nicht getrennt.",
+				"prompt": "Schreibe die beiden Sätze ab. Setze nötige Kommas und begründe deine Entscheidung. „Um die Ausgabe zu drucken bringt Ben Papier. Er braucht es nicht zu schneiden.“",
+				"model": "Um die Ausgabe zu drucken, bringt Ben Papier. Er braucht es nicht zu schneiden. Der Infinitivsatz mit „um“ nennt Bens Absicht. Nach ihm steht ein Komma. Im zweiten Satz bilden „braucht“ und „zu schneiden“ zusammen das Prädikat.",
 				"criteria": [
 					"Komma korrekt",
 					"Absicht erkannt",
@@ -4738,12 +4739,12 @@
 				]
 			},
 			"2": {
-				"prompt": "Umformung: „Weil der Wind sie überrascht, rückt Ada das Schild herein.“ Verdichte den Nebensatz zu einer Partizipialgruppe und ergänze anschließend eine Absicht mit „um … zu“.",
-				"model": "Vom Wind überrascht, rückt Ada das Schild herein, um es vor dem Umfallen zu schützen. Die erste Gruppe beschreibt Ada. Die zweite nennt die Absicht des Hereinrückens.",
+				"prompt": "Forme „Weil der Wind sie überrascht, rückt Ada das Schild herein“ mit einer Partizipialgruppe um. Bilde dann aus „Ada versucht“ mit „das Schild zu sichern“ und mit „zu helfen“ jeweils einen Satz. Schreibe für die beiden letzten Sätze alle zulässigen Fassungen auf und begründe die Kommas.",
+				"model": "Vom Wind überrascht, rückt Ada das Schild herein. Die Partizipialgruppe beschreibt Ada. Hier ist ihr Komma freiwillig. „Ada versucht, das Schild zu sichern“ braucht ein Komma. „Ada versucht zu helfen“ und „Ada versucht, zu helfen“ sind beide zulässig, weil „zu helfen“ hier für sich steht.",
 				"criteria": [
 					"Partizip richtig bezogen",
-					"Absicht verständlich",
-					"Kommagrenzen"
+					"Komma beim erweiterten Infinitivsatz erklärt",
+					"Beide Schreibweisen für „zu helfen“ erklärt"
 				]
 			}
 		},
@@ -4753,8 +4754,8 @@
 			"steps": [
 				{
 					"label": "Infinitivsatz",
-					"text": "Einen satzwertigen Zusatz abtrennen",
-					"detail": "Die längere Gruppe ergänzt selbstständig, worauf die Redaktion hofft.",
+					"text": "Eine erweiterte Ergänzung abtrennen",
+					"detail": "„Den Termin halten zu können“ beantwortet, worauf die Redaktion hofft. Dieser Infinitivsatz braucht ein Komma, auch ohne Einleitewort.",
 					"blocks": [
 						{
 							"text": "Die Redaktion hofft,",
@@ -4788,7 +4789,7 @@
 				{
 					"label": "Partizip",
 					"text": "Bezug auf Ada prüfen",
-					"detail": "Die Gruppe beschreibt Adas Lage. Das Komma hebt sie hier als Einheit hervor.",
+					"detail": "Die Gruppe beschreibt Adas Lage. Mit Komma hebst du sie hervor. In diesem Satz darfst du das Komma auch weglassen.",
 					"blocks": [
 						{
 							"text": "Vom Regen überrascht,",

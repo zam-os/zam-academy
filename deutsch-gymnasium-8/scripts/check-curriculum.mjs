@@ -9,6 +9,16 @@ const json = (path) => JSON.parse(read(path).toString("utf8"));
 const hash = (value) => createHash("sha256").update(value).digest("hex");
 
 const coverage = json("coverage.json");
+const shownDate = new Intl.DateTimeFormat("de-DE", {
+	dateStyle: "long",
+	timeZone: "UTC",
+}).format(new Date(coverage.checked));
+assert.ok(
+	read("index.html")
+		.toString("utf8")
+		.includes(`<time datetime="${coverage.checked}">${shownDate}</time>`),
+	"The displayed curriculum date must match coverage.json.",
+);
 const html = gunzipSync(read("tests/fixtures/zam-deutsch8-lehrplan.html.gz"));
 assert.equal(hash(html), coverage.curriculum_sha256);
 for (const neighbour of coverage.neighbours)

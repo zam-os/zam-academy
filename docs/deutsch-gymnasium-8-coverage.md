@@ -14,6 +14,8 @@ The common path develops the linear letter and the language work from Grade 7 in
 
 Eighteen expectations are marked `supported`. Their lessons include rehearsal or worked models and explicitly assign the external practice, including live discussion, performance, research, whole-work study, and using a word processor and reviewing with a partner. The two shared whole-work readings can include a film analysis in place of one complete book. The MuG profile includes a further complete book or film and group production work for the school community.
 
+The punctuation workshop uses the 2024 official rules. It distinguishes an infinitive clause requiring a comma, a bare zu-infinitive that allows both spellings in the example, and a multi-part predicate with no comma. [Amtliches Regelwerk, § 73 E1, E2 and E4](https://grammis.ids-mannheim.de/rechtschreibung/6203).
+
 ## Legacy review history
 
 The [proposal](../deutsch-gymnasium-8/replaces-de-by.json) inventories all four Grade 8 Gymnasium items against a byte-exact snapshot in [the test fixtures](../deutsch-gymnasium-8/tests/fixtures/de-by-gymnasium-8-deutsch-eroerterung-drama-novelle-textanalyse-kvt.json).
