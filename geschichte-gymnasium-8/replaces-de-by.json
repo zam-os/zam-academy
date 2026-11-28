@@ -1,0 +1,234 @@
+{
+  "schema": 1,
+  "status": "proposal-only",
+  "approved": null,
+  "source": null,
+  "note": "This proposal covers the Grade 8 legacy cell and inventories the topical overlap in the Grade 11 legacy cell. Grade 7 and Grade 9 cells stay outside its scope.",
+  "source_repository": "zam-os/zam",
+  "source_commit": "c92f4e383385ee487cd8b30f73b3bf3cb27b0860",
+  "sources": [
+    {
+      "file": "tests/fixtures/de-by-gymnasium-8-geschichte-absolutismus-franzoesische-revolution-1848-kvt.json",
+      "tile_id": "de-by:gymnasium-8-geschichte-absolutismus-franzoesische-revolution-1848",
+      "version": "2026.08.1",
+      "sha256": "ac19164183e536a799657232cbac2345ebaf4030fb71a2ed5ddd766cf5adbce2"
+    },
+    {
+      "file": "tests/fixtures/de-by-gymnasium-11-geschichte-reichsgruendung-bismarck-imperialismus-erster-weltkrieg-kvt.json",
+      "tile_id": "de-by:gymnasium-11-geschichte-reichsgruendung-bismarck-imperialismus-erster-weltkrieg",
+      "version": "2026.08.1",
+      "sha256": "e655973bff94c0c6f148b7ac2bed675a3789a1a534001409ebdad95aef7c1501"
+    }
+  ],
+  "rows": [
+    {
+      "de_by_cell": "de-by:gymnasium-8-geschichte-absolutismus-franzoesische-revolution-1848",
+      "de_by_id": "01K8G8R0000000000000000J01",
+      "de_by_question": "Welches grundlegende staatsphilosophische Prinzip forderte der französische Aufklärer Montesquieu zur Verhinderung von Tyrannei und Machtmissbrauch?",
+      "category": "A",
+      "academy_slug": "g8-aufklaerung-gewaltenteilung",
+      "action": "propose-replace-after-approval",
+      "reason": "The same single retrieval asks for Montesquieu's division of powers as a limit on abuse."
+    },
+    {
+      "de_by_cell": "de-by:gymnasium-8-geschichte-absolutismus-franzoesische-revolution-1848",
+      "de_by_id": "01K8G8R0000000000000000J02",
+      "de_by_question": [
+        {
+          "type": "text",
+          "text": "Analysiere den Absolutismus in Frankreich und die Ideen der Aufklärung im Vergleich: 1. Der französische Absolutismus unter Ludwig XIV. ('L'État, c'est moi'):   * 5 Säulen der absolutistischen Macht: Stehendes Heer, zentralisierter Beamtenapparat, Hofleben in Schloss Versailles (Entmachtung des Adels), Staatskirche (Katholizismus, Aufhebung des Edikts von Nantes) und Merkantilismus (Wirtschaftssystem nach Jean-Baptiste Colbert: Förderung von Manufakturen, billiger Rohstoffimport, teurer Export von Fertigwaren, Schutzzölle).   * Die Ständegesellschaft: 1. Stand (Geistlichkeit/Klerus, "
+        },
+        {
+          "type": "math",
+          "tex": "0{,}5\\%",
+          "speech": "0,5 Prozent"
+        },
+        {
+          "type": "text",
+          "text": ", steuerfrei), 2. Stand (Adel, "
+        },
+        {
+          "type": "math",
+          "tex": "1{,}5\\%",
+          "speech": "1,5 Prozent"
+        },
+        {
+          "type": "text",
+          "text": ", steuerfrei), 3. Stand (Bürger und Bauern, "
+        },
+        {
+          "type": "math",
+          "tex": "98\\%",
+          "speech": "98 Prozent"
+        },
+        {
+          "type": "text",
+          "text": ", trug gesamte Steuerlast ohne politische Mitsprache), 2. Das Zeitalter der Aufklärung:   * Immanuel Kant (1784): 'Aufklärung ist der Ausgang des Menschen aus seiner selbstverschuldeten Unmündigkeit. Sapere aude!'   * John Locke: Unveräußerliche Menschenrechte (Freiheit, Leben, Eigentum).   * Montesquieu: Gewaltenteilung (Gesetzgebung / Legislative, Gesetzesausführung / Exekutive, Rechtssprechung / Judikative).   * Jean-Jacques Rousseau: Volkssouveränität (Herrschaft durch den Gemeinwillen Volonté générale)."
+        }
+      ],
+      "category": "C",
+      "academy_slug": null,
+      "action": "keep-active",
+      "reason": "The original prompt spans the Grade 7 absolutism unit and several Grade 8 concepts. The new items split these targets."
+    },
+    {
+      "de_by_cell": "de-by:gymnasium-8-geschichte-absolutismus-franzoesische-revolution-1848",
+      "de_by_id": "01K8G8R0000000000000000J03",
+      "de_by_question": "Welches historische Ereignis am 14. Juli 1789 gilt als symbolischer Beginn der Französischen Revolution und wird bis heute als französischer Nationalfeiertag begangen?",
+      "category": "A",
+      "academy_slug": "g8-franzoesische-revolution-bastille",
+      "action": "propose-replace-after-approval",
+      "reason": "Both items retrieve the storming of the Bastille as the symbolic event of 14 July 1789."
+    },
+    {
+      "de_by_cell": "de-by:gymnasium-8-geschichte-absolutismus-franzoesische-revolution-1848",
+      "de_by_id": "01K8G8R0000000000000000J04",
+      "de_by_question": [
+        {
+          "type": "text",
+          "text": "Analysiere den Ablauf der Französischen Revolution und der Deutschen Revolution von 1848/49: 1. Die drei Phasen der Französischen Revolution (1789–1799):   * 1. Phase (1789–1791): Einberufung der Generalstände, Ballhausschwur, Sturm auf die Bastille (14. Juli 1789), Erklärung der Menschen- und Bürgerrechte (Liberté, Égalité, Fraternité), Verfassung von 1791 (Konstitutionelle Monarchie).   * 2. Phase (1792–1794): Hinrichtung Ludwigs XVI. (1793), Ausrufung der Republik, Schreckensherrschaft der Jakobiner unter Robespierre (Terror als Regierungsmittel, Guillotine) bis zum Sturz der Jakobiner.   * 3. Phase (1795–1799): Direktorium, Staatsstreich von Napoleon Bonaparte 1799 (später Code Civil / bürgerliches Gesetzbuch 1804), 2. Restauration und Vormärz in Deutschland: Wiener Kongress 1815 (Metternich: Restauration, Legitimität, Solidarität, Gründung des Deutschen Bundes), Wartburgfest 1817, Karlsbader Beschlüsse 1819 (Zensur, Verfolgung von 'Demagogen'), Hambacher Fest 1832, 3. Die Revolution von 1848/49:   * Märzrevolution 1848: Barrikadenkämpfe in Berlin und Wien "
+        },
+        {
+          "type": "math",
+          "tex": "\\rightarrow",
+          "speech": "führt zu"
+        },
+        {
+          "type": "text",
+          "text": " Fürsten geben nach.   * Frankfurter Nationalversammlung (Paulskirche Mai 1848): Erstes frei gewähltes deutsches Parlament; Erarbeitung eines richtungsweisenden Grundrechtekatalogs und der Reichsverfassung 1849 (Konstitutionelle Monarchie mit Kaiser).   * Scheitern der Revolution: Preußenkönig Friedrich Wilhelm IV. verweigert die 'Kaiserkrone aus der Gosse' "
+        },
+        {
+          "type": "math",
+          "tex": "\\rightarrow",
+          "speech": "führt zu"
+        },
+        {
+          "type": "text",
+          "text": " Fürsten schlagen Revolution militärisch nieder; langfristige Wirkung: Fundament für deutsche Demokratie und Grundrechte."
+        }
+      ],
+      "category": "C",
+      "academy_slug": null,
+      "action": "keep-active",
+      "reason": "One long answer spans the French Revolution, Restoration and 1848. The new items split these targets."
+    },
+    {
+      "de_by_cell": "de-by:gymnasium-11-geschichte-reichsgruendung-bismarck-imperialismus-erster-weltkrieg",
+      "de_by_id": "01K8GBK0000000000000000J01",
+      "de_by_question": "Welches außenpolitische Grundprinzip verfolgte Reichskanzler Otto von Bismarck nach der Reichsgründung 1871, um die europäischen Großmächte über die neue deutsche Macht im Zentrum Europas zu beruhigen?",
+      "category": "C",
+      "academy_slug": null,
+      "action": "keep-active",
+      "reason": "Bismarck's post-1871 alliance strategy is beyond the retrieval targets in this course."
+    },
+    {
+      "de_by_cell": "de-by:gymnasium-11-geschichte-reichsgruendung-bismarck-imperialismus-erster-weltkrieg",
+      "de_by_id": "01K8GBK0000000000000000J02",
+      "de_by_question": [
+        {
+          "type": "text",
+          "text": "Analysiere die Reichsgründung 1871, die Verfassungsordnung und Bismarcks Bündnisdiplomatie: 1. Die Reichsgründung 1871 ('Revolution von oben'):   * Vorgeschichte: Die drei Einigungskriege (1864 Deutsch-Dänischer Krieg, 1866 Deutscher Krieg gegen Österreich "
+        },
+        {
+          "type": "math",
+          "tex": "\\implies",
+          "speech": "daraus folgt"
+        },
+        {
+          "type": "text",
+          "text": " kleindeutsche Lösung, 1870/71 Deutsch-Französischer Krieg).   * 18. Januar 1871: Kaiserproklamation Wilhelms I. im Spiegelsaal von Schloss Versailles "
+        },
+        {
+          "type": "math",
+          "tex": "\\implies",
+          "speech": "daraus folgt"
+        },
+        {
+          "type": "text",
+          "text": " Demütigung Frankreichs, Annexion von Elsass-Lothringen, 2. Die Reichsverfassung von 1871 (Konstitutionelle Monarchie):   * Machtzentrum: Der Deutsche Kaiser (zugleich König von Preußen) und der von ihm allein abhängige Reichskanzler (Bismarck). Der Kanzler ist dem Parlament nicht verantwortlich.   * Bundesrat: Vertretung der Fürstenstaaten (Preußen besitzt ein Veto-Sperrminoritätsrecht).   * Reichstag: Allgemeines, gleiches Männerwahlrecht; beschließt Gesetze und Haushalt, hat aber kein Recht zur Regierungsbildung (Scheinkonstitutionalismus), 3. Bismarcks ausgeklügeltes Bündnissystem (1871–1890):   * Ziel: Verhinderung einer feindlichen Koalition gegen Deutschland, insbesondere Verhinderung eines Zweifrontenkriegs (Frankreich im Westen + Russland im Osten).   * Vertragsnetz:     - Zweibund (1879) mit Österreich-Ungarn "
+        },
+        {
+          "type": "math",
+          "tex": "\\rightarrow",
+          "speech": "führt zu"
+        },
+        {
+          "type": "text",
+          "text": " Dreibund (1882) mit Italien.     - Dreikaiserbündnis (1881) zwischen Deutschland, Österreich-Ungarn und Russland.     - Rückversicherungsvertrag (1887): Geheimer Neutralitätsvertrag mit Russland bei einem französischen Angriff auf Deutschland bzw. einem österreichischen Angriff auf Russland."
+        }
+      ],
+      "category": "C",
+      "academy_slug": null,
+      "action": "keep-active",
+      "reason": "The answer joins unification, the constitution and detailed alliance diplomacy. It has no equivalent single new item."
+    },
+    {
+      "de_by_cell": "de-by:gymnasium-11-geschichte-reichsgruendung-bismarck-imperialismus-erster-weltkrieg",
+      "de_by_id": "01K8GBK0000000000000000J03",
+      "de_by_question": "Durch welche zwei weltgeschichtlichen Schlüsselereignisse gilt das Jahr 1917 mitten im Ersten Weltkrieg als das fundamentale 'Epochenjahr des 20. Jahrhunderts'?",
+      "category": "C",
+      "academy_slug": null,
+      "action": "keep-active",
+      "reason": "The new synthesis card asks learners to explain longer-term consequences and treats the later founding of the Soviet Union separately. The retrieval evidence is uncertain."
+    },
+    {
+      "de_by_cell": "de-by:gymnasium-11-geschichte-reichsgruendung-bismarck-imperialismus-erster-weltkrieg",
+      "de_by_id": "01K8GBK0000000000000000J04",
+      "de_by_question": [
+        {
+          "type": "text",
+          "text": "Analysiere den Imperialismus, die Entfesselung des Ersten Weltkriegs und das Epochenjahr 1917: 1. Das Zeitalter des Imperialismus (1880–1914):   * Motive: Rohstoffsicherung, Absatzmärkte, strategische Flottenstützpunkte, nationales Prestigedenken, rassistischer Sozialdarwinismus ('Recht des Stärkeren') und christliches Sendungsbewusstsein.   * Wettlauf um Afrika (Kongo-Konferenz 1884/85 in Berlin).   * Der 'Neue Kurs' Wilhelms II. (nach Bismarcks Entlassung 1890): Forderung nach einem 'Platz an der Sonne', Nicht-Verlängerung des Rückversicherungsvertrags mit Russland, gigantische Flottenaufrüstung (Tirpitz-Plan) "
+        },
+        {
+          "type": "math",
+          "tex": "\\implies",
+          "speech": "daraus folgt"
+        },
+        {
+          "type": "text",
+          "text": " Entfremdung von Großbritannien "
+        },
+        {
+          "type": "math",
+          "tex": "\\implies",
+          "speech": "daraus folgt"
+        },
+        {
+          "type": "text",
+          "text": " Einkreisung Deutschlands: Bildung der Triple Entente (Großbritannien, Frankreich, Russland 1907), 2. Der Kriegsausbruch und die Julikrise 1914:   * Attentat von Sarajevo (28. Juni 1914): Ermordung des österreichischen Thronfolgers Franz Ferdinand durch serbische Nationalisten.   * Deutscher 'Blankoscheck' (5./6. Juli): Kaiser Wilhelm II. und Reichskanzler Bethmann Hollweg sichern Wien bedingungslose Bündnistreue zu.   * Automatismus der Bündnisse und Mobilmachungspläne: Schlieffen-Plan scheitert an der Marne "
+        },
+        {
+          "type": "math",
+          "tex": "\\implies",
+          "speech": "daraus folgt"
+        },
+        {
+          "type": "text",
+          "text": " Erstarren im Stellungskrieg und Materialschlachten (Giftgas, Maschinengewehre, Panzer, Trommelfeuer vor Verdun 1916), 3. Das Epochenjahr 1917:   * 1. Kriegseintritt der USA (April 1917): Reaktion auf den uneingeschränkten deutschen U-Boot-Krieg. Präsident Woodrow Wilson begründet die Intervention mit dem Kreuzzug für Demokratie ('To make the world safe for democracy' / 14-Punkte-Programm).   * 2. Russische Revolution (Februar/Oktober 1917): Sturz des Zaren, Machtergreifung der Bolschewiki unter Lenin "
+        },
+        {
+          "type": "math",
+          "tex": "\\implies",
+          "speech": "daraus folgt"
+        },
+        {
+          "type": "text",
+          "text": " Sonderfrieden von Brest-Litowsk (März 1918) "
+        },
+        {
+          "type": "math",
+          "tex": "\\implies",
+          "speech": "daraus folgt"
+        },
+        {
+          "type": "text",
+          "text": " Beginn des Systemkonflikts zwischen liberalem Kapitalismus und Kommunismus."
+        }
+      ],
+      "category": "C",
+      "academy_slug": null,
+      "action": "keep-active",
+      "reason": "The legacy prompt joins colonial policy, alliance diplomacy, military plans and 1917. These targets differ in scope and are split here."
+    }
+  ]
+}

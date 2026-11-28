@@ -123,6 +123,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | Informatik 7 Mittelschule (LehrplanPLUS Bayern, R7 and M7) | [`informatik-mittelschule-7/`](informatik-mittelschule-7/) | Built by Pages on merge | `zam-academy:informatik-mittelschule-7` |
 | Geschichte 6 Gymnasium (LehrplanPLUS Bayern, alle Ausbildungsrichtungen) | [`geschichte-gymnasium-6/`](geschichte-gymnasium-6/) | Built by Pages on merge | `zam-academy:geschichte-gymnasium-6` |
 | Geschichte 7 Gymnasium (LehrplanPLUS Bayern, alle Ausbildungsrichtungen) | [`geschichte-gymnasium-7/`](geschichte-gymnasium-7/) | Built by Pages on merge | `zam-academy:geschichte-gymnasium-7` |
+| History 8 Gymnasium (Bavaria, all tracks) | [`geschichte-gymnasium-8/`](geschichte-gymnasium-8/) | Built by Pages on merge | `zam-academy:geschichte-gymnasium-8` |
 | Wirtschaft und Beruf 7 Mittelschule (LehrplanPLUS Bayern, Regelklasse R7 und M-Zug M7) | [`wirtschaft-mittelschule-7/`](wirtschaft-mittelschule-7/) | Built by Pages on merge | `zam-academy:wirtschaft-mittelschule-7` |
 | Politik und Gesellschaft 8 Gymnasium (SWG, LehrplanPLUS Bayern) | [`politik-gymnasium-8/`](politik-gymnasium-8/) | Built by Pages on merge | `zam-academy:politik-gymnasium-8` |
 
@@ -266,6 +267,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Geography 7 Gymnasium: cd geographie-gymnasium-7 (dev server on :5274)
 # Geschichte 6 Gymnasium: cd geschichte-gymnasium-6 (dev server on :5259)
 # Geschichte 7 Gymnasium: cd geschichte-gymnasium-7 (dev server on :5290)
+# History 8 Gymnasium: cd geschichte-gymnasium-8 (dev server on :5301)
 # Politik und Gesellschaft 8 Gymnasium: cd politik-gymnasium-8 (dev server on :5293)
 # Grade 11 introductory biology: cd biologie-gymnasium-11 (dev server on :5227)
 npm ci
