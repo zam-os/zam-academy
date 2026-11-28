@@ -1,0 +1,264 @@
+{
+  "schema": 1,
+  "status": "proposal-only",
+  "approved": null,
+  "source": "Draft comparison for teacher and maintainer review.",
+  "source_repository": "zam-os/zam",
+  "source_commit": "c92f4e383385ee487cd8b30f73b3bf3cb27b0860",
+  "sources": [
+    {
+      "file": "tests/fixtures/de-by-gymnasium-7-physik-mechanik-kraefte-masse-dichte-druck-kvt.json",
+      "tile_id": "de-by:gymnasium-7-physik-mechanik-kraefte-masse-dichte-druck",
+      "version": "2026.08.1",
+      "sha256": "dec15fa655aecf610ca1264a4ec245591583cf1f8da20961a131a6d741d0b424"
+    },
+    {
+      "file": "tests/fixtures/de-by-gymnasium-7-physik-optik-lichtbrechung-totalreflexion-linsen-kvt.json",
+      "tile_id": "de-by:gymnasium-7-physik-optik-lichtbrechung-totalreflexion-linsen",
+      "version": "2026.08.1",
+      "sha256": "c40161ffbd9f4873e8fe8b5f9f6b9d5eb0c06e4b7332b593e8c01c0da34ca47b"
+    },
+    {
+      "file": "tests/fixtures/de-by-gymnasium-8-physik-mechanik-energie-arbeit-leistung-maschinen-kvt.json",
+      "tile_id": "de-by:gymnasium-8-physik-mechanik-energie-arbeit-leistung-maschinen",
+      "version": "2026.08.1",
+      "sha256": "8296dbe447e0016305ca12109d900a6100ebbfa8a47dd6e85e7e70677ec27673"
+    },
+    {
+      "file": "tests/fixtures/de-by-gymnasium-8-physik-waermelehre-thermodynamik-energieumwandlung-kvt.json",
+      "tile_id": "de-by:gymnasium-8-physik-waermelehre-thermodynamik-energieumwandlung",
+      "version": "2026.08.1",
+      "sha256": "1cb37f3a2891e2358cec0b23bca133391c5bb5b0cee93ddf1b70639ac46f338a"
+    },
+    {
+      "file": "tests/fixtures/de-by-gymnasium-9-physik-elektrizitaetslehre-schaltungen-energie-leistung-kvt.json",
+      "tile_id": "de-by:gymnasium-9-physik-elektrizitaetslehre-schaltungen-energie-leistung",
+      "version": "2026.08.1",
+      "sha256": "a6ca7b98961c030d5efc58bde16fc30d207023da5fda2cc54ce6e8572406c514"
+    },
+    {
+      "file": "tests/fixtures/de-by-gymnasium-9-physik-mechanik-kinematik-dynamik-newton-axiome-kvt.json",
+      "tile_id": "de-by:gymnasium-9-physik-mechanik-kinematik-dynamik-newton-axiome",
+      "version": "2026.08.1",
+      "sha256": "efdeddb7dc57ba35ad8c2d047e4ad2bf8c0342a7f689d296a69bb3ed66f1183e"
+    }
+  ],
+  "rows": [
+    {
+      "de_by_cell": "de-by:gymnasium-7-physik-mechanik-kraefte-masse-dichte-druck",
+      "de_by_id": "01K4P7M0000000000000000J01",
+      "de_by_question": "Welche Maßeinheit besitzt die physikalische Kraft F im internationalen Einheitensystem (SI)?",
+      "category": "A",
+      "academy_slug": "ph8-kraft-einheit",
+      "action": "propose-replace-after-approval",
+      "reason": "Both prompts retrieve Newton as the SI unit of force."
+    },
+    {
+      "de_by_cell": "de-by:gymnasium-7-physik-mechanik-kraefte-masse-dichte-druck",
+      "de_by_id": "01K4P7M0000000000000000J02",
+      "de_by_question": "Erkläre den physikalischen Kraftbegriff und das Hookesche Gesetz: 1. Kraftwirkungen: Eine Kraft erkennt man an ihren Wirkungen: Verformung eines Körpers (elastisch vs. plastisch) oder Änderung des Bew…",
+      "category": "C",
+      "academy_slug": null,
+      "action": "keep-active",
+      "reason": "The synthesis includes elastic and plastic deformation, force vectors and the spring law. Those prompts are separate in the new cell."
+    },
+    {
+      "de_by_cell": "de-by:gymnasium-7-physik-mechanik-kraefte-masse-dichte-druck",
+      "de_by_id": "01K4P7M0000000000000000J03",
+      "de_by_question": "Ein Astronaut hat auf der Erde eine Masse von 80 Kilogramm. Wie groß ist seine Masse auf dem Mond (wo die Schwerkraft nur ein Sechstel beträgt)?",
+      "category": "A",
+      "academy_slug": "ph8-masse-mond",
+      "action": "propose-replace-after-approval",
+      "reason": "Both prompts ask for the same mass of the same 80 kg astronaut on the Moon."
+    },
+    {
+      "de_by_cell": "de-by:gymnasium-7-physik-mechanik-kraefte-masse-dichte-druck",
+      "de_by_id": "01K4P7M0000000000000000J04",
+      "de_by_question": "Differenziere die fundamentalen Größen der Mechanik: 1. Masse m vs. Gewichtskraft F G: Masse ist eine universelle Körpereigenschaft (Trägheit und Materiemenge, Einheit Kilogramm); Gewichtskraft F G gl…",
+      "category": "C",
+      "academy_slug": null,
+      "action": "keep-active",
+      "reason": "This synthesis also includes density and pressure, so its entire retrieval does not belong to this package."
+    },
+    {
+      "de_by_cell": "de-by:gymnasium-7-physik-optik-lichtbrechung-totalreflexion-linsen",
+      "de_by_id": "01K4P7X0000000000000000J01",
+      "de_by_question": "Wie wird ein Lichtstrahl gebrochen, wenn er schräg von einem optisch dünneren Medium (z. B. Luft) in ein optisch dichteres Medium (z. B. Glas oder Wasser) übertritt?",
+      "category": "A",
+      "academy_slug": "ph8-brechung-zum-lot",
+      "action": "propose-replace-after-approval",
+      "reason": "Both prompts retrieve bending toward the normal when light enters a denser medium obliquely; the new prompt gives the air–glass case."
+    },
+    {
+      "de_by_cell": "de-by:gymnasium-7-physik-optik-lichtbrechung-totalreflexion-linsen",
+      "de_by_id": "01K4P7X0000000000000000J02",
+      "de_by_question": "Erkläre das Phänomen der Lichtbrechung physikalisch: 1. Physikalische Ursache: Die unterschiedliche Lichtausbreitungsgeschwindigkeit c in verschiedenen transparenten Medien (im Vakuum/Luft c null unge…",
+      "category": "C",
+      "academy_slug": null,
+      "action": "keep-active",
+      "reason": "The legacy explanation requires refractive index and Fermat’s principle beyond the Grade 8 treatment."
+    },
+    {
+      "de_by_cell": "de-by:gymnasium-7-physik-optik-lichtbrechung-totalreflexion-linsen",
+      "de_by_id": "01K4P7X0000000000000000J03",
+      "de_by_question": "Welche ZWEI zwingenden Bedingungen müssen erfüllt sein, damit an einer Grenzfläche physikalisch Totalreflexion auftritt?",
+      "category": "A",
+      "academy_slug": "ph8-totalreflexion-bedingungen",
+      "action": "propose-replace-after-approval",
+      "reason": "Both prompts require both conditions together: passage toward a lower index and incidence above the critical angle."
+    },
+    {
+      "de_by_cell": "de-by:gymnasium-7-physik-optik-lichtbrechung-totalreflexion-linsen",
+      "de_by_id": "01K4P7X0000000000000000J04",
+      "de_by_question": "Analysiere das Prinzip der Totalreflexion und die Bildkonstruktion an Sammellinsen: 1. Entstehung der Totalreflexion: Beim Übergang optisch dicht führt zu optisch dünn wächst der Brechungswinkel Beta …",
+      "category": "C",
+      "academy_slug": null,
+      "action": "keep-active",
+      "reason": "The synthesis combines refraction, optical fibres and lens constructions. The new lessons teach them separately."
+    },
+    {
+      "de_by_cell": "de-by:gymnasium-8-physik-mechanik-energie-arbeit-leistung-maschinen",
+      "de_by_id": "01K8G8C0000000000000000J01",
+      "de_by_question": "Wie lautet die fundamentale physikalische SI-Einheit für mechanische Arbeit und Energie?",
+      "category": "C",
+      "academy_slug": null,
+      "action": "keep-active",
+      "reason": "Work and its SI unit belong to the Grade 9 energy unit."
+    },
+    {
+      "de_by_cell": "de-by:gymnasium-8-physik-mechanik-energie-arbeit-leistung-maschinen",
+      "de_by_id": "01K8G8C0000000000000000J02",
+      "de_by_question": "Analysiere Energie, Arbeit, Leistung und den Energieerhaltungssatz: 1. Energieformen:   * Lageenergie (potentielle Energie): E pot gleich m mal g mal h (g ungefähr 9,81 Meter pro Sekunde Quadrat).   *…",
+      "category": "C",
+      "academy_slug": null,
+      "action": "keep-active",
+      "reason": "The synthesis addresses energy, work, power and conservation in Grade 9."
+    },
+    {
+      "de_by_cell": "de-by:gymnasium-8-physik-mechanik-energie-arbeit-leistung-maschinen",
+      "de_by_id": "01K8G8C0000000000000000J03",
+      "de_by_question": "Wie lautet der berühmte Leitsatz der 'Goldenen Regel der Mechanik' (nach Galileo Galilei)?",
+      "category": "C",
+      "academy_slug": null,
+      "action": "keep-active",
+      "reason": "The golden rule of mechanics is outside the checked Grade 8 scope."
+    },
+    {
+      "de_by_cell": "de-by:gymnasium-8-physik-mechanik-energie-arbeit-leistung-maschinen",
+      "de_by_id": "01K8G8C0000000000000000J04",
+      "de_by_question": "Analysiere die Funktionsweise der klassischen Kraftwandler: 1. Das Hebelgesetz (Drehmoment-Gleichgewicht):   * Ein zweiseitiger Hebel ist im Gleichgewicht, wenn die Summe aller linksdrehenden Drehmome…",
+      "category": "C",
+      "academy_slug": null,
+      "action": "keep-active",
+      "reason": "Levers and compound work machines are outside the checked Grade 8 scope."
+    },
+    {
+      "de_by_cell": "de-by:gymnasium-8-physik-waermelehre-thermodynamik-energieumwandlung",
+      "de_by_id": "01K8G8D0000000000000000J01",
+      "de_by_question": "Welcher absolute Nullpunkt in der Kelvin-Skala (0 Kelvin) entspricht dem Zustand völliger thermischer Teilchenruhe in Grad Celsius?",
+      "category": "C",
+      "academy_slug": null,
+      "action": "keep-active",
+      "reason": "The absolute zero is outside the checked Grade 8 scope."
+    },
+    {
+      "de_by_cell": "de-by:gymnasium-8-physik-waermelehre-thermodynamik-energieumwandlung",
+      "de_by_id": "01K8G8D0000000000000000J02",
+      "de_by_question": "Analysiere Temperatur, innere Energie und Wärmeübertragung: 1. Teilchenmodell & Temperatur: Die Temperatur T ist ein statistisches Maß für die mittlere kinetische Energie der ungerichteten Teilchenbew…",
+      "category": "C",
+      "academy_slug": null,
+      "action": "keep-active",
+      "reason": "The particle model and heat transfer do not belong to the checked Grade 8 scope."
+    },
+    {
+      "de_by_cell": "de-by:gymnasium-8-physik-waermelehre-thermodynamik-energieumwandlung",
+      "de_by_id": "01K8G8D0000000000000000J03",
+      "de_by_question": "Warum bleibt die Temperatur von reinem Wasser während des gesamten Siede- und Verdampfungsvorgangs bei konstant 100 Grad Celsius (Plateau im Temperatur-Zeit-Diagramm)?",
+      "category": "C",
+      "academy_slug": null,
+      "action": "keep-active",
+      "reason": "Boiling and latent heat are outside the checked Grade 8 scope."
+    },
+    {
+      "de_by_cell": "de-by:gymnasium-8-physik-waermelehre-thermodynamik-energieumwandlung",
+      "de_by_id": "01K8G8D0000000000000000J04",
+      "de_by_question": "Erkläre die Thermodynamik der Phasenübergänge und den 1. Hauptsatz: 1. Die 3 klassischen Aggregatzustände: fest (Gitterstruktur, formstabil), flüssig (nahgeordnet, verschiebbar), gasförmig (völlige Un…",
+      "category": "C",
+      "academy_slug": null,
+      "action": "keep-active",
+      "reason": "Phase changes and the first law do not belong to the checked Grade 8 scope."
+    },
+    {
+      "de_by_cell": "de-by:gymnasium-9-physik-elektrizitaetslehre-schaltungen-energie-leistung",
+      "de_by_id": "01K8G9C0000000000000000J01",
+      "de_by_question": "Wie lautet die fundamentale physikalische Definition des elektrischen Widerstands R nach dem Ohmschen Gesetz?",
+      "category": "A",
+      "academy_slug": "ph8-widerstand-definition",
+      "action": "propose-replace-after-approval",
+      "reason": "Both prompts retrieve the ratio U / I as the definition of resistance."
+    },
+    {
+      "de_by_cell": "de-by:gymnasium-9-physik-elektrizitaetslehre-schaltungen-energie-leistung",
+      "de_by_id": "01K8G9C0000000000000000J02",
+      "de_by_question": "Analysiere das elektrische Feld und die Grundgrößen des Stromkreises: 1. Das elektrische Feld:   * Zustand des Raumes um elektrische Ladungen; übt Kräfte auf andere Ladungen aus.   * Feldlinien: Zeige…",
+      "category": "C",
+      "academy_slug": null,
+      "action": "keep-active",
+      "reason": "The synthesis includes the electric field and combines several independent prompts."
+    },
+    {
+      "de_by_cell": "de-by:gymnasium-9-physik-elektrizitaetslehre-schaltungen-energie-leistung",
+      "de_by_id": "01K8G9C0000000000000000J03",
+      "de_by_question": "Wie verhalten sich die Teilströme I eins und I zwei in einer Parallelschaltung zweier Widerstände zum Gesamtstrom I ges (1. Kirchhoffsche Knotenregel)?",
+      "category": "A",
+      "academy_slug": "ph8-knotenregel",
+      "action": "propose-replace-after-approval",
+      "reason": "Both prompts retrieve that the two branch currents add to the total current."
+    },
+    {
+      "de_by_cell": "de-by:gymnasium-9-physik-elektrizitaetslehre-schaltungen-energie-leistung",
+      "de_by_id": "01K8G9C0000000000000000J04",
+      "de_by_question": "Systematisiere Reihen- und Parallelschaltungen sowie elektrische Energie und Leistung: 1. Reihenschaltung (Serienschaltung):   * Stromstärke überall identisch: I ges gleich I eins gleich I zwei.   * S…",
+      "category": "C",
+      "academy_slug": null,
+      "action": "keep-active",
+      "reason": "The synthesis spans circuit rules and Grade 9 energy and power; no single successor retrieves the full answer."
+    },
+    {
+      "de_by_cell": "de-by:gymnasium-9-physik-mechanik-kinematik-dynamik-newton-axiome",
+      "de_by_id": "01K8G9D0000000000000000J01",
+      "de_by_question": "Welche physikalische Bedeutung hat die Fläche unter dem Graphen in einem Geschwindigkeits-Zeit-Diagramm (v-t-Diagramm)?",
+      "category": "C",
+      "academy_slug": null,
+      "action": "keep-active",
+      "reason": "Area under a velocity–time graph is outside the checked Grade 8 scope."
+    },
+    {
+      "de_by_cell": "de-by:gymnasium-9-physik-mechanik-kinematik-dynamik-newton-axiome",
+      "de_by_id": "01K8G9D0000000000000000J02",
+      "de_by_question": "Analysiere die Bewegungsgesetze der Kinematik und ihre Diagramme: 1. Gleichförmige geradlinige Bewegung (v gleich konstant, a gleich 0):   * Weg-Zeit-Gesetz: s von t gleich v mal t plus s null (linear…",
+      "category": "C",
+      "academy_slug": null,
+      "action": "keep-active",
+      "reason": "The synthesis requires complete motion equations, including free fall; the Grade 8 card set treats only selected relations."
+    },
+    {
+      "de_by_cell": "de-by:gymnasium-9-physik-mechanik-kinematik-dynamik-newton-axiome",
+      "de_by_id": "01K8G9D0000000000000000J03",
+      "de_by_question": "Wie lautet das 2. Newtonsche Axiom (Grundgesetz der Dynamik / Aktionsprinzip)?",
+      "category": "A",
+      "academy_slug": "ph8-zweites-newton",
+      "action": "propose-replace-after-approval",
+      "reason": "Both prompts retrieve the force–mass–acceleration relation in its elementary form; the successor uses straight-line motion as in Ph8."
+    },
+    {
+      "de_by_cell": "de-by:gymnasium-9-physik-mechanik-kinematik-dynamik-newton-axiome",
+      "de_by_id": "01K8G9D0000000000000000J04",
+      "de_by_question": "Erkläre die drei fundamentalen Newtonschen Axiome der klassischen Mechanik: 1. 1. Newtonsches Axiom (Trägheitsprinzip / Lex Prima):   * Ein Körper verharrt im Zustand der Ruhe oder der gleichförmigen …",
+      "category": "C",
+      "academy_slug": null,
+      "action": "keep-active",
+      "reason": "The synthesis extends to all three Newtonian laws and has no whole successor."
+    }
+  ]
+}

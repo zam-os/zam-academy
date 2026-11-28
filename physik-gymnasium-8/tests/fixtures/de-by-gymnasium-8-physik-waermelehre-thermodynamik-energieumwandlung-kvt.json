@@ -1,0 +1,729 @@
+{
+  "$schema": "https://zam.app/schemas/v1/kvt-tile.json",
+  "tile_id": "de-by:gymnasium-8-physik-waermelehre-thermodynamik-energieumwandlung",
+  "version": "2026.08.1",
+  "title": "Physik 8: Wärmelehre – Temperatur, Thermische Energie, Spezifische Wärmekapazität und Aggregatzustände (Gymnasium 8 Bayern)",
+  "description": "Geerdetes KVT-Paket für Gymnasium Bayern Physik 8: Brownsche Teilchenbewegung, absolute Temperatur (Kelvin/Celsius), Wärmeenergie (Q = c * m * Delta T), Aggregatzustandsänderungen (Schmelz- und Verdampfungswärme, Siedediagramm) sowie Wärmetransportarten und der 1. Hauptsatz der Thermodynamik.",
+  "publisher": "ZAM Curriculum Working Group",
+  "published_at": "2026-08-15T23:35:00Z",
+  "sources": [
+    {
+      "uri": "https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/8/physik",
+      "checked": "2026-08-15",
+      "label": "Gymnasium Physik 8, Lernbereich Aufbau der Materie und Wärmelehre"
+    }
+  ],
+  "atoms": [
+    {
+      "id": "01K8G8D0000000000000000A01",
+      "atom_uri": "urn:zam:atom:01K8G8D0000000000000000A01",
+      "namespace": "gymnasium-physik-thermodynamik",
+      "slug": "temperatur-kelvin-waermeenergie-spezifische-waermekapazitaet",
+      "title": "Thermodynamik: Temperatur T (Kelvin), Wärmeenergie Q = c * m * Delta T und Wärmetransport",
+      "domain": "physik/thermodynamik",
+      "reduction": "formal",
+      "typical_age_min": 13.5,
+      "prerequisites": [],
+      "alignments": [
+        {
+          "target_uri": "http://www.wikidata.org/entity/Q11379",
+          "target_label": "Thermodynamics",
+          "alignment_type": "skos:broadMatch",
+          "provenance": "manual_curation_v1"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "physik",
+          "topic_code": "lb2",
+          "topic_title": "Wärmelehre – Temperatur und Wärme",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01K8G8D0000000000000000J01",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Welcher absolute Nullpunkt in der Kelvin-Skala ("
+            },
+            {
+              "type": "math",
+              "tex": "0\\text{ K}",
+              "speech": "0 Kelvin"
+            },
+            {
+              "type": "text",
+              "text": ") entspricht dem Zustand völliger thermischer Teilchenruhe in Grad Celsius?"
+            }
+          ],
+          "concept": "-273,15 °C (Umrechnung: T(K) = vartheta(°C) + 273,15)",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "-273,15 °C",
+              "-100 °C"
+            ],
+            "correct_index": 0
+          },
+          "materiality": "cosmetic"
+        },
+        {
+          "id": "01K8G8D0000000000000000J02",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Analysiere Temperatur, innere Energie und Wärmeübertragung: 1. Teilchenmodell & Temperatur: Die Temperatur "
+            },
+            {
+              "type": "math",
+              "tex": "T",
+              "speech": "T"
+            },
+            {
+              "type": "text",
+              "text": " ist ein statistisches Maß für die mittlere kinetische Energie der ungerichteten Teilchenbewegung (Brownsche Molekularbewegung); Absoluter Nullpunkt "
+            },
+            {
+              "type": "math",
+              "tex": "0\\,\\text{K} = -273{,}15^\\circ\\text{C}",
+              "speech": "0 Kelvin gleich minus 273,15 Grad Celsius"
+            },
+            {
+              "type": "text",
+              "text": ", 2. Grundgleichung der Wärmelehre:   "
+            },
+            {
+              "type": "math",
+              "tex": "Q = c \\cdot m \\cdot \\Delta T",
+              "block": true,
+              "speech": "Q gleich c mal m mal Delta T"
+            },
+            {
+              "type": "text",
+              "text": "   ("
+            },
+            {
+              "type": "math",
+              "tex": "Q = \\text{Wärmemenge in J}",
+              "speech": "Q gleich Wärmemenge in Joule"
+            },
+            {
+              "type": "text",
+              "text": ", "
+            },
+            {
+              "type": "math",
+              "tex": "c = \\text{spezifische Wärmekapazität in } \\frac{\\text{kJ}}{\\text{kg}\\cdot\\text{K}}",
+              "speech": "c gleich spezifische Wärmekapazität in Kilojoule pro Kilogramm mal Kelvin"
+            },
+            {
+              "type": "text",
+              "text": ", "
+            },
+            {
+              "type": "math",
+              "tex": "m = \\text{Masse in kg}",
+              "speech": "m gleich Masse in Kilogramm"
+            },
+            {
+              "type": "text",
+              "text": ", "
+            },
+            {
+              "type": "math",
+              "tex": "\\Delta T = \\text{Temperaturänderung}",
+              "speech": "Delta T gleich Temperaturänderung"
+            },
+            {
+              "type": "text",
+              "text": "), 3. Die 3 Arten des Wärmetransports:   * Wärmeleitung (direkter Impulsübertrag von Teilchen zu Teilchen in Festkörpern, z. B. Metalle).   * Wärmeströmung (Konvektion) (Mitführung thermischer Energie durch strömende Flüssigkeiten/Gase, z. B. Heizkörper).   * Wärmestrahlung (Elektromagnetische Infrarotwellen, breitet sich auch im Vakuum mit Lichtgeschwindigkeit aus, z. B. Sonne), 4. Berechne die benötigte Energie "
+            },
+            {
+              "type": "math",
+              "tex": "Q",
+              "speech": "Q"
+            },
+            {
+              "type": "text",
+              "text": ", um "
+            },
+            {
+              "type": "math",
+              "tex": "2\\,\\text{kg}",
+              "speech": "2 Kilogramm"
+            },
+            {
+              "type": "text",
+              "text": " Wasser ("
+            },
+            {
+              "type": "math",
+              "tex": "c_W = 4{,}19\\,\\frac{\\text{kJ}}{\\text{kg}\\cdot\\text{K}}",
+              "speech": "c W gleich 4,19 Kilojoule pro Kilogramm mal Kelvin"
+            },
+            {
+              "type": "text",
+              "text": ") von "
+            },
+            {
+              "type": "math",
+              "tex": "20^\\circ\\text{C}",
+              "speech": "20 Grad Celsius"
+            },
+            {
+              "type": "text",
+              "text": " auf "
+            },
+            {
+              "type": "math",
+              "tex": "100^\\circ\\text{C}",
+              "speech": "100 Grad Celsius"
+            },
+            {
+              "type": "text",
+              "text": " zu erhitzen."
+            }
+          ],
+          "concept": "Wärmelehre: T in Kelvin; Grundgleichung Q = c * m * Delta T; 3 Wärmetransportarten (Wärmeleitung, Konvektion, Wärmestrahlung); Rechnung: Q = 4,19 kJ/(kg*K) * 2 kg * 80 K = 670,4 kJ.",
+          "sample_solution": [
+            {
+              "type": "text",
+              "text": "1. Teilchenmodell, innere Energie und Temperaturbegriff: - Mikroskopische Deutung: Alle Stoffe bestehen aus kleinsten Teilchen (Atomen/Molekülen), die sich in ständiger ungerichteter Zitter- und Translationsbewegung befinden (Brownsche Bewegung). - Temperatur "
+            },
+            {
+              "type": "math",
+              "tex": "T"
+            },
+            {
+              "type": "text",
+              "text": ":   * Ist ein Maß für die mittlere kinetische Energie dieser Teilchenbewegung.   * Kelvin-Skala ("
+            },
+            {
+              "type": "math",
+              "tex": "T"
+            },
+            {
+              "type": "text",
+              "text": "): Die physikalische thermodynamische Temperaturskala mit dem absoluten Nullpunkt "
+            },
+            {
+              "type": "math",
+              "tex": "0\\text{ K} = -273{,}15^\\circ\\text{C}"
+            },
+            {
+              "type": "text",
+              "text": ":     "
+            },
+            {
+              "type": "math",
+              "tex": "\\mathbf{T\\,(\\text{in K}) = \\vartheta\\,(\\text{in }^\\circ\\text{C}) + 273{,}15}",
+              "block": true
+            },
+            {
+              "type": "text",
+              "text": "   * Bei Temperaturdifferenzen gilt: "
+            },
+            {
+              "type": "math",
+              "tex": "\\mathbf{\\Delta T = \\Delta \\vartheta}"
+            },
+            {
+              "type": "text",
+              "text": " ("
+            },
+            {
+              "type": "math",
+              "tex": "1\\text{ K}"
+            },
+            {
+              "type": "text",
+              "text": " Differenz "
+            },
+            {
+              "type": "math",
+              "tex": "= 1^\\circ\\text{C}"
+            },
+            {
+              "type": "text",
+              "text": " Differenz). 2. Die Grundgleichung der Wärmelehre: - Zur Erwärmung eines Körpers der Masse "
+            },
+            {
+              "type": "math",
+              "tex": "m"
+            },
+            {
+              "type": "text",
+              "text": " um "
+            },
+            {
+              "type": "math",
+              "tex": "\\Delta T"
+            },
+            {
+              "type": "text",
+              "text": " ist die thermische Energie "
+            },
+            {
+              "type": "math",
+              "tex": "Q"
+            },
+            {
+              "type": "text",
+              "text": " erforderlich:   "
+            },
+            {
+              "type": "math",
+              "tex": "\\mathbf{Q = c \\cdot m \\cdot \\Delta T}",
+              "block": true
+            },
+            {
+              "type": "text",
+              "text": "   * "
+            },
+            {
+              "type": "math",
+              "tex": "c"
+            },
+            {
+              "type": "text",
+              "text": ": Spezifische Wärmekapazität (stoffspezifische Konstante, die angibt, wie viel Joule nötig sind, um "
+            },
+            {
+              "type": "math",
+              "tex": "1\\text{ kg}"
+            },
+            {
+              "type": "text",
+              "text": " des Stoffes um "
+            },
+            {
+              "type": "math",
+              "tex": "1\\text{ K}"
+            },
+            {
+              "type": "text",
+              "text": " zu erwärmen). Wasser besitzt mit "
+            },
+            {
+              "type": "math",
+              "tex": "c_{\\text{Wasser}} \\approx 4{,}19\\,\\frac{\\text{kJ}}{\\text{kg}\\cdot\\text{K}}"
+            },
+            {
+              "type": "text",
+              "text": " eine der höchsten Wärmekapazitäten in der Natur (hervorragender Wärmespeicher / Klimapuffer). 3. Die drei Mechanismen der Wärmeübertragung: - 1. Wärmeleitung (Konduktion):   * Energieübertragung durch Stöße benachbarter Teilchen und freie Elektronen ohne Materietransport (besonders stark in Metallen, gering in Holz/Gasen). - 2. Wärmeströmung (Konvektion):   * Erwärmtes Fluid dehnt sich aus, wird spezifisch leichter ("
+            },
+            {
+              "type": "math",
+              "tex": "\\,\\rho"
+            },
+            {
+              "type": "text",
+              "text": " sinkt) und steigt nach oben "
+            },
+            {
+              "type": "math",
+              "tex": "\\implies"
+            },
+            {
+              "type": "text",
+              "text": " Wärmetransport durch strömende Materie (z. B. Golfstrom, Aufwind, Heizung). - 3. Wärmestrahlung (Radiation):   * Energieabstrahlung in Form elektromagnetischer Infrarotwellen; benötigt kein Trägermedium und durchdringt das Vakuum (z. B. Sonnenstrahlung zur Erde). 4. Berechnung der Beispielfrage: - Gegeben: "
+            },
+            {
+              "type": "math",
+              "tex": "m = 2\\,\\text{kg}"
+            },
+            {
+              "type": "text",
+              "text": ", "
+            },
+            {
+              "type": "math",
+              "tex": "c = 4{,}19\\,\\frac{\\text{kJ}}{\\text{kg}\\cdot\\text{K}}"
+            },
+            {
+              "type": "text",
+              "text": ", "
+            },
+            {
+              "type": "math",
+              "tex": "\\Delta T = 100^\\circ\\text{C} - 20^\\circ\\text{C} = 80\\,\\text{K}"
+            },
+            {
+              "type": "text",
+              "text": ". - Rechnung:   "
+            },
+            {
+              "type": "math",
+              "tex": "Q = c \\cdot m \\cdot \\Delta T = 4{,}19\\,\\frac{\\text{kJ}}{\\text{kg}\\cdot\\text{K}} \\cdot 2\\,\\text{kg} \\cdot 80\\,\\text{K} = \\mathbf{670{,}4\\,\\text{kJ}}",
+              "block": true
+            },
+            {
+              "type": "text",
+              "text": "."
+            }
+          ],
+          "materiality": "cosmetic"
+        }
+      ]
+    },
+    {
+      "id": "01K8G8D0000000000000000A02",
+      "atom_uri": "urn:zam:atom:01K8G8D0000000000000000A02",
+      "namespace": "gymnasium-physik-thermodynamik",
+      "slug": "aggregatzustaende-schmelzwaerme-verdampfungswaerme-1-hauptsatz",
+      "title": "Phasenübergänge (Schmelz- & Verdampfungswärme), Siedeplateau und der 1. Hauptsatz der Thermodynamik",
+      "domain": "physik/thermodynamik",
+      "reduction": "formal",
+      "typical_age_min": 13.5,
+      "prerequisites": [
+        {
+          "atom_id": "01K8G8D0000000000000000A01",
+          "type": "hard",
+          "rationale": "Phasenübergänge bauen auf der Wärmemengen- und Temperaturberechnung auf."
+        }
+      ],
+      "alignments": [
+        {
+          "target_uri": "http://www.wikidata.org/entity/Q11379",
+          "target_label": "Phase transition",
+          "alignment_type": "skos:broadMatch",
+          "provenance": "manual_curation_v1"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 8,
+          "subject": "physik",
+          "topic_code": "lb2",
+          "topic_title": "Aggregatzustände und Energieerhaltung",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01K8G8D0000000000000000J03",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Warum bleibt die Temperatur von reinem Wasser während des gesamten Siede- und Verdampfungsvorgangs bei konstant "
+            },
+            {
+              "type": "math",
+              "tex": "100^\\circ\\text{C}",
+              "speech": "100 Grad Celsius"
+            },
+            {
+              "type": "text",
+              "text": " (Plateau im Temperatur-Zeit-Diagramm)?"
+            }
+          ],
+          "concept": "Weil die gesamte zugeführte Wärmeenergie als latente Verdampfungswärme zum Aufbrechen der بینmolekularen Bindungen (Wasserstoffbrücken) genutzt wird",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Zugeführte Wärme bricht Bindungen auf (latente Wärme)",
+              "Das Wasser kann keine Wärme mehr aufnehmen"
+            ],
+            "correct_index": 0
+          },
+          "materiality": "cosmetic"
+        },
+        {
+          "id": "01K8G8D0000000000000000J04",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Erkläre die Thermodynamik der Phasenübergänge und den 1. Hauptsatz: 1. Die 3 klassischen Aggregatzustände: fest (Gitterstruktur, formstabil), flüssig (nahgeordnet, verschiebbar), gasförmig (völlige Unordnung, füllt Raum aus), 2. Phasenübergänge & latente Wärme:   * Schmelzen / Erstarren: "
+            },
+            {
+              "type": "math",
+              "tex": "Q_S = q_s \\cdot m",
+              "speech": "Q S gleich q s mal m"
+            },
+            {
+              "type": "text",
+              "text": " ("
+            },
+            {
+              "type": "math",
+              "tex": "q_s = \\text{spezifische Schmelzwärme}",
+              "speech": "q s gleich spezifische Schmelzwärme"
+            },
+            {
+              "type": "text",
+              "text": ").   * Sieden / Kondensieren: "
+            },
+            {
+              "type": "math",
+              "tex": "Q_V = q_v \\cdot m",
+              "speech": "Q V gleich q v mal m"
+            },
+            {
+              "type": "text",
+              "text": " ("
+            },
+            {
+              "type": "math",
+              "tex": "q_v = \\text{spezifische Verdampfungswärme}",
+              "speech": "q v gleich spezifische Verdampfungswärme"
+            },
+            {
+              "type": "text",
+              "text": ").   * Sublimieren vs. Resublimieren (direkter Übergang fest "
+            },
+            {
+              "type": "math",
+              "tex": "\\leftrightarrow",
+              "speech": "Mesomeriepfeil"
+            },
+            {
+              "type": "text",
+              "text": " gasförmig), 3. Das Temperatur-Zeit-Diagramm (Erwärmungskurve): Schmelz- und Siedeplateaus mit konstanter Temperatur während des Phasenwechsels, 4. Der 1. Hauptsatz der Thermodynamik: Die Änderung der inneren Energie "
+            },
+            {
+              "type": "math",
+              "tex": "\\Delta U",
+              "speech": "Delta U"
+            },
+            {
+              "type": "text",
+              "text": " eines Systems ist die Summe aus zugeführter Wärme "
+            },
+            {
+              "type": "math",
+              "tex": "Q",
+              "speech": "Q"
+            },
+            {
+              "type": "text",
+              "text": " und verrichteter mechanischer Arbeit "
+            },
+            {
+              "type": "math",
+              "tex": "W",
+              "speech": "W"
+            },
+            {
+              "type": "text",
+              "text": ":   "
+            },
+            {
+              "type": "math",
+              "tex": "\\mathbf{\\Delta U = Q + W}",
+              "block": true,
+              "speech": "Delta U gleich Q plus W"
+            },
+            {
+              "type": "text",
+              "text": " (Energieerhaltungssatz der gesamten Physik)."
+            }
+          ],
+          "concept": "Phasenübergänge: fest <-> flüssig <-> gasförmig; latente Wärme: Q_s = q_s * m, Q_v = q_v * m; Siedeplateau; 1. Hauptsatz der Thermodynamik: Delta U = Q + W (Innere Energie = Wärme + Arbeit).",
+          "sample_solution": [
+            {
+              "type": "text",
+              "text": "1. Die drei Aggregatzustände im mikroskopischen Teilchenmodell: - Fest: Teilchen sind an festen Gitterplätzen gebunden, schwingen um Ruhelagen; feste Form und festes Volumen. - Flüssig: Teilchen berühren sich, sind aber gegeneinander frei verschiebbar; unbestimmte Form, festes Volumen. - Gasförmig: Teilchen bewegen sich völlig frei mit hoher Geschwindigkeit und großen Abständen im Raum; keine feste Form, kein festes Volumen. 2. Phasenübergänge und latente Wärme: - Die Übergänge zwischen den Zuständen:   * Fest "
+            },
+            {
+              "type": "math",
+              "tex": "\\rightarrow"
+            },
+            {
+              "type": "text",
+              "text": " Flüssig: Schmelzen (Rückweg: Erstarren / Gefrieren).   * Flüssig "
+            },
+            {
+              "type": "math",
+              "tex": "\\rightarrow"
+            },
+            {
+              "type": "text",
+              "text": " Gasförmig: Verdampfen / Sieden (Rückweg: Kondensieren).   * Fest "
+            },
+            {
+              "type": "math",
+              "tex": "\\rightarrow"
+            },
+            {
+              "type": "text",
+              "text": " Gasförmig: Sublimieren (Rückweg: Resublimieren, z. B. Entstehung von Raureif). - Latente Wärme (Verborgene Wärme):   * Während des Phasenübergangs steigt die Temperatur des Stoffes trotz ständiger Wärmezufuhr nicht an (Temperaturplateau).   * Die zugeführte Energie wird vollständig benötigt, um die zwischenmolekularen Bindungskräfte aufzubrechen:     * Schmelzwärme: "
+            },
+            {
+              "type": "math",
+              "tex": "\\mathbf{Q_S = q_s \\cdot m}"
+            },
+            {
+              "type": "text",
+              "text": "     * Verdampfungswärme: "
+            },
+            {
+              "type": "math",
+              "tex": "\\mathbf{Q_V = q_v \\cdot m}"
+            },
+            {
+              "type": "text",
+              "text": "   * Beim Erstarren oder Kondensieren wird exakt dieselbe Wärmemenge wieder an die Umgebung abgegeben (Kristallisations-/Kondensationswärme). 3. Das Temperatur-Zeit-Diagramm (Erwärmungskurve von Eis): - Phase 1: Erwärmung des Eises von "
+            },
+            {
+              "type": "math",
+              "tex": "-20^\\circ\\text{C}"
+            },
+            {
+              "type": "text",
+              "text": " auf "
+            },
+            {
+              "type": "math",
+              "tex": "0^\\circ\\text{C}"
+            },
+            {
+              "type": "text",
+              "text": " ("
+            },
+            {
+              "type": "math",
+              "tex": "Q = c_{\\text{Eis}} \\cdot m \\cdot \\Delta T"
+            },
+            {
+              "type": "text",
+              "text": "). - Phase 2 (Schmelzplateau bei "
+            },
+            {
+              "type": "math",
+              "tex": "0^\\circ\\text{C}"
+            },
+            {
+              "type": "text",
+              "text": "): Eis schmilzt zu Wasser ("
+            },
+            {
+              "type": "math",
+              "tex": "Q_S = q_s \\cdot m"
+            },
+            {
+              "type": "text",
+              "text": ", "
+            },
+            {
+              "type": "math",
+              "tex": "T = 0^\\circ\\text{C}"
+            },
+            {
+              "type": "text",
+              "text": " konstant). - Phase 3: Erwärmung des flüssigen Wassers von "
+            },
+            {
+              "type": "math",
+              "tex": "0^\\circ\\text{C}"
+            },
+            {
+              "type": "text",
+              "text": " auf "
+            },
+            {
+              "type": "math",
+              "tex": "100^\\circ\\text{C}"
+            },
+            {
+              "type": "text",
+              "text": " ("
+            },
+            {
+              "type": "math",
+              "tex": "Q = c_{\\text{Wasser}} \\cdot m \\cdot \\Delta T"
+            },
+            {
+              "type": "text",
+              "text": "). - Phase 4 (Siedeplateau bei "
+            },
+            {
+              "type": "math",
+              "tex": "100^\\circ\\text{C}"
+            },
+            {
+              "type": "text",
+              "text": "): Wasser verdampft zu Wasserdampf ("
+            },
+            {
+              "type": "math",
+              "tex": "Q_V = q_v \\cdot m"
+            },
+            {
+              "type": "text",
+              "text": ", "
+            },
+            {
+              "type": "math",
+              "tex": "T = 100^\\circ\\text{C}"
+            },
+            {
+              "type": "text",
+              "text": " konstant). - Phase 5: Weitererwärmung des überhitzten Wasserdampfes ("
+            },
+            {
+              "type": "math",
+              "tex": "> 100^\\circ\\text{C}"
+            },
+            {
+              "type": "text",
+              "text": "). 4. Der 1. Hauptsatz der Thermodynamik: - Die innere Energie "
+            },
+            {
+              "type": "math",
+              "tex": "U"
+            },
+            {
+              "type": "text",
+              "text": " eines thermodynamischen Systems kann durch Zufuhr von Wärme "
+            },
+            {
+              "type": "math",
+              "tex": "Q"
+            },
+            {
+              "type": "text",
+              "text": " oder durch mechanische Arbeit "
+            },
+            {
+              "type": "math",
+              "tex": "W"
+            },
+            {
+              "type": "text",
+              "text": " am System erhöht werden:   "
+            },
+            {
+              "type": "math",
+              "tex": "\\mathbf{\\Delta U = Q + W}",
+              "block": true
+            },
+            {
+              "type": "text",
+              "text": " - Folgerung: Ein 'Perpetuum mobile 1. Art' (eine Maschine, die aus dem Nichts Arbeit verrichtet) ist physikalisch unmöglich."
+            }
+          ],
+          "materiality": "cosmetic"
+        }
+      ]
+    }
+  ]
+}

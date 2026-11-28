@@ -1,0 +1,374 @@
+[
+  {
+    "id": "stromkreis",
+    "lb": 1,
+    "title": "Strom, Spannung und Widerstand",
+    "period": "Ph8 1 · Elektrischer Strom",
+    "intro": "Was treibt die Ladungen durch den geschlossenen Kreis?",
+    "tracks": [
+      "ANDERE",
+      "NTG"
+    ],
+    "paragraphs": [
+      "Im Metall gibt es bewegliche Elektronen. Bei geschlossenem Stromkreis sorgt die Spannung der Quelle dafür, dass sich die Elektronen gerichtet bewegen. Von außen betrachtet bewegen sie sich vom Minuspol zum Pluspol. Die technische Stromrichtung ist umgekehrt. Die Stromstärke I gibt an, wie viel Ladung pro Zeit durch einen Leiterquerschnitt fließt.",
+      "Die Spannung U beschreibt den elektrischen Antrieb zwischen zwei Punkten. Ein Widerstand R hemmt den Strom. Im Wassermodell entsprechen Druckunterschied, Wassermenge pro Sekunde und Engstelle den drei Größen. Das Wassermodell hilft dir, die drei Größen zu vergleichen. Elektronen kommen darin nicht vor. Auch dass bei offenem Schalter Spannung an der Quelle anliegt, während kein Strom fließt, lässt sich damit nur schwer erklären.",
+      "Metalle leiten gut. Bei Isolatoren wie trockenem Kunststoff können sich Ladungen kaum frei bewegen. Ein Kurzschluss überbrückt ein Bauteil oder die Quelle mit einem sehr kleinen Widerstand. Zwischen den Polen kann dann ein sehr großer Strom fließen.",
+      "Beispiel: Bei einem festen Widerstand von 20 Ω ergeben 4 V eine Stromstärke von 0,20 A. Öffnest du den Schalter, sinkt I auf 0 A; zwischen den Polen der Quelle liegen weiterhin 4 V."
+    ],
+    "formulas": [
+      "U in Volt (V)",
+      "I in Ampere (A)",
+      "R in Ohm (Ω)",
+      "R = U / I"
+    ],
+    "sourceIds": [
+      "lp",
+      "nt7"
+    ],
+    "model": "stromkreis",
+    "calculation": "stromkreis",
+    "takeaway": "Spannung kann auch bei offenem Stromkreis anliegen. Eine dauerhafte Stromstärke im einfachen Gleichstromkreis braucht einen geschlossenen Weg.",
+    "quiz": {
+      "question": "Was bleibt beim Öffnen des Schalters an einer idealen Batterie erhalten?",
+      "answer": "Die Spannung zwischen ihren Polen",
+      "wrong": [
+        "Die Stromstärke durch den Widerstand",
+        "Der Strom fließt nur vor dem Schalter weiter"
+      ],
+      "explanation": "Die Quelle hält ihren Spannungsunterschied aufrecht; der unterbrochene Weg verhindert einen dauerhaften Strom."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Beobachtungen zuordnen",
+      "instruction": "Ordne den Aussagen die passende elektrische Größe zu.",
+      "categories": [
+        "Spannung",
+        "Stromstärke",
+        "Widerstand"
+      ],
+      "entries": [
+        {
+          "text": "Elektrischer Antrieb zwischen zwei Anschlüssen",
+          "target": 0,
+          "feedback": "Ein Voltmeter vergleicht zwei Punkte."
+        },
+        {
+          "text": "Ladungsmenge pro Sekunde durch einen Querschnitt",
+          "target": 1,
+          "feedback": "Diese Rate ist die Stromstärke."
+        },
+        {
+          "text": "Engstelle im Wassermodell",
+          "target": 2,
+          "feedback": "Sie steht für die Hemmung des Stroms."
+        }
+      ],
+      "conclusion": "Spannung kann auch bei offenem Stromkreis anliegen. Eine dauerhafte Stromstärke im einfachen Gleichstromkreis braucht einen geschlossenen Weg."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Öffne den Schalter im Modell. Beschreibe, was sich an U und I ändert.",
+        "hints": [
+          "Vergleiche die Werte vor und nach dem Öffnen.",
+          "Achte darauf, zwischen welchen Punkten U angezeigt wird."
+        ],
+        "model": "Der Schalter unterbricht den Kreis. Dadurch ist die Stromstärke null. Die Spannung zwischen den Batteriepolen bleibt gleich.",
+        "criteria": [
+          "Unterbrechung genannt",
+          "I = 0 beschrieben",
+          "Quellenspannung bleibt"
+        ]
+      },
+      "2": {
+        "prompt": "Zwei Teams erklären eine schwache Lampe mit „Der Strom geht unterwegs verloren“ oder „Der Widerstand des Kreises ist größer“. Beurteile beide Deutungen für eine Reihenschaltung.",
+        "hints": [
+          "Zeichne einen einzigen Weg für die Ladungen.",
+          "Vergleiche beide Kreise bei gleicher Quellenspannung."
+        ],
+        "model": "In einem geschlossenen Reihenkreis fließt vor und hinter der Lampe dieselbe Stromstärke. Ein größerer Widerstand verringert bei gleicher Spannung die Stromstärke im ganzen Kreis.",
+        "criteria": [
+          "Ladungserhaltung erklärt",
+          "Widerstand richtig gedeutet",
+          "Spannung konstant gehalten"
+        ]
+      }
+    }
+  },
+  {
+    "id": "kennlinie",
+    "lb": 1,
+    "title": "Widerstände und Kennlinien",
+    "period": "Ph8 1 · Elektrischer Strom",
+    "intro": "Lies aus dem Diagramm ab, was sich beim Erwärmen einer Glühlampe ändert.",
+    "tracks": [
+      "ANDERE",
+      "NTG"
+    ],
+    "paragraphs": [
+      "Schalte ein Amperemeter in Reihe zum Bauteil, damit derselbe Strom hindurchfließt. Schalte das Voltmeter parallel an die Anschlüsse des Bauteils. Verändere unter Anleitung die Spannung an der Niederspannungsquelle und trage zu jedem Wert U den gemessenen Wert I ein.",
+      "Bei einem ohmschen Widerstand unter gleichbleibenden Bedingungen ist I proportional zu U. Mit U auf der waagerechten und I auf der senkrechten Achse erhältst du eine Gerade durch den Ursprung. Bei einer Glühlampe wird der Draht bei größerem Strom wärmer; sein Widerstand wächst. Dann steigt I bei höherer Spannung weniger stark.",
+      "Beispiel: 3,0 V und 150 mA liefern R = 3,0 V / 0,150 A = 20 Ω. Zwei gemessene Werte mit begrenzter Genauigkeit rechtfertigen keine beliebig vielen Dezimalstellen im Ergebnis."
+    ],
+    "formulas": [
+      "R = U / I",
+      "1 mA = 0,001 A",
+      "Ohm’sches Verhalten bei konstanter Temperatur"
+    ],
+    "sourceIds": [
+      "lp",
+      "measurement"
+    ],
+    "model": "kennlinie",
+    "calculation": "kennlinie",
+    "takeaway": "Der Quotient U / I gibt den Widerstand am jeweiligen Messpunkt an. Eine Gerade durch den Ursprung bedeutet einen konstanten Quotienten.",
+    "quiz": {
+      "question": "Wie misst du die Spannung am Bauteil?",
+      "answer": "Parallel, direkt an seinen beiden Anschlüssen",
+      "wrong": [
+        "In Reihe, damit der ganze Strom durch das Voltmeter fließt",
+        "An einem beliebigen anderen Bauteil"
+      ],
+      "explanation": "Das Voltmeter misst den Unterschied zwischen den zwei Anschlüssen."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Den Versuch vorbereiten und auswerten",
+      "instruction": "Bringe die Schritte mit den Pfeiltasten der Liste in die passende Reihenfolge.",
+      "categories": [],
+      "entries": [
+        {
+          "text": "Widerstand oder Lampe in den Stromkreis einsetzen.",
+          "target": 0,
+          "feedback": "Für jeden Durchgang bleibt dasselbe Bauteil am Messplatz."
+        },
+        {
+          "text": "Strommesser in Reihe und Spannungsmesser parallel anschließen.",
+          "target": 1,
+          "feedback": "Prüfe den Aufbau vor dem Einschalten der Schulquelle."
+        },
+        {
+          "text": "Spannung stufenweise ändern und U sowie I gemeinsam protokollieren.",
+          "target": 2,
+          "feedback": "Jede Stufe liefert ein Wertepaar."
+        },
+        {
+          "text": "I über U auftragen und den Kurvenverlauf beschreiben.",
+          "target": 3,
+          "feedback": "Vergleiche die Kurve mit einer Ursprungsgeraden."
+        }
+      ],
+      "conclusion": "Der Quotient U / I gibt den Widerstand am jeweiligen Messpunkt an. Eine Gerade durch den Ursprung bedeutet einen konstanten Quotienten."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Plane eine Messreihe mit mindestens vier Wertepaaren. Nenne den Aufbau und die Achsen deiner Kennlinie.",
+        "hints": [
+          "U und I brauchen unterschiedliche Messgeräte.",
+          "Lass das Bauteil im Messaufbau gleich."
+        ],
+        "model": "Ich ändere die Spannung der Schulquelle schrittweise, messe I in Reihe und U parallel am gleichen Bauteil. Ich trage I über U auf und notiere Einheiten sowie die Geräteauflösung.",
+        "criteria": [
+          "Messgeräte richtig",
+          "Achsen benannt",
+          "Genauigkeit dokumentiert"
+        ]
+      },
+      "2": {
+        "prompt": "Zwei Werte an einer Lampe lauten 2,0 V bei 100 mA und 4,0 V bei 160 mA. Ist der Draht in dieser Messreihe ohmsch?",
+        "hints": [
+          "Rechne mA in A um.",
+          "Vergleiche die beiden Quotienten."
+        ],
+        "model": "Der Quotient beträgt zuerst 20 Ω und dann 25 Ω. Er nimmt zu; bei Verdopplung von U verdoppelt sich I hier nicht. Die Erwärmung kann das erklären.",
+        "criteria": [
+          "Beide Widerstände richtig",
+          "Proportionalität geprüft",
+          "Erwärmung als Erklärung"
+        ]
+      }
+    }
+  },
+  {
+    "id": "reihenschaltung",
+    "lb": 1,
+    "title": "Strom und Spannung in Reihe",
+    "period": "Ph8 1 · Elektrischer Strom",
+    "intro": "Verfolge denselben Strom durch bis zu drei Widerstände.",
+    "tracks": [
+      "ANDERE",
+      "NTG"
+    ],
+    "paragraphs": [
+      "In einer Reihenschaltung liegen alle Widerstände nacheinander auf einem einzigen Weg. Durch jeden fließt dieselbe Stromstärke. Die Spannungen an den Widerständen addieren sich zur Spannung der Quelle. Bei gleicher Stromstärke fällt am größeren Widerstand mehr Spannung ab.",
+      "Im Wassermodell fließt durch alle Engstellen pro Sekunde dieselbe Wassermenge. An der breiteren Engstelle ist der Druckabfall geringer. Der geschlossene Kreis enthält Ladungen bereits überall; die Batterie muss die Ladungen nicht erst zur ersten Lampe schicken.",
+      "Beispiel: Bei 6,0 V und zwei Widerständen mit 10 Ω und 20 Ω ist I = 0,20 A. Die Teilspannungen sind 2,0 V und 4,0 V. Mit einem dritten Widerstand von 10 Ω bei weiterhin 6,0 V sinkt I auf 0,15 A. Die Teilspannungen sind dann 1,5 V, 3,0 V und 1,5 V."
+    ],
+    "formulas": [
+      "I überall gleich",
+      "U = U₁ + U₂ (+ U₃)"
+    ],
+    "sourceIds": [
+      "lp"
+    ],
+    "model": "reihenschaltung",
+    "calculation": "reihenschaltung",
+    "takeaway": "In Reihe ist I gleich und die Teilspannungen addieren sich.",
+    "quiz": {
+      "question": "Durch 10 Ω und 20 Ω in Reihe fließt dieselbe Stromstärke. Wo ist die Spannung größer?",
+      "answer": "Am Widerstand mit 20 Ω",
+      "wrong": [
+        "Am Widerstand, der näher am Pluspol liegt",
+        "An beiden Widerständen gleich"
+      ],
+      "explanation": "Bei gleichem I gehört zu größerem R eine größere Teilspannung U."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Beobachtungen zuordnen",
+      "instruction": "Prüfe, welche Behauptung für die Reihenschaltung gilt.",
+      "categories": [
+        "Stimmt",
+        "Stimmt nicht",
+        "Gilt bei gleichen Widerständen"
+      ],
+      "entries": [
+        {
+          "text": "Beide Widerstände führen denselben Strom.",
+          "target": 0,
+          "feedback": "Die Ladung hat nur einen Weg."
+        },
+        {
+          "text": "Die Spannung ist an beiden Widerständen jeweils gleich der Quellenspannung.",
+          "target": 1,
+          "feedback": "Die Teilspannungen teilen sich die Quellenspannung."
+        },
+        {
+          "text": "Beide Teilspannungen sind gleich groß.",
+          "target": 2,
+          "feedback": "Bei zwei gleichen Widerständen teilen sie sich die Quellenspannung gleichmäßig."
+        }
+      ],
+      "conclusion": "In Reihe ist I gleich und die Teilspannungen addieren sich."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "An zwei Widerständen in Reihe misst du 2 V und 4 V. Erkläre den Unterschied bei gleicher Stromstärke.",
+        "hints": [
+          "Beide Werte sind Teilspannungen.",
+          "Vergleiche sie im Verhältnis."
+        ],
+        "model": "Am zweiten Widerstand fällt doppelt so viel Spannung ab. Da I gleich ist und R = U / I gilt, ist auch sein Widerstand doppelt so groß. Die Quellenspannung beträgt 6 V.",
+        "criteria": [
+          "I gleich",
+          "Widerstandsverhältnis korrekt",
+          "Summe angegeben"
+        ]
+      },
+      "2": {
+        "prompt": "Vor und hinter dem mittleren von drei Widerständen zeigen die Amperemeter unterschiedliche Werte. Erkläre, wie du den Befund überprüfst.",
+        "hints": [
+          "Zeichne den einzigen Ladungsweg.",
+          "Prüfe Nachkommastellen und Anschlüsse."
+        ],
+        "model": "In einem stabilen Reihenkreis muss I an beiden Stellen gleich sein. Ich vergleiche Gerätebereich und Auflösung, prüfe Anschlüsse und messe mit demselben Gerät nacheinander.",
+        "criteria": [
+          "Erwartung erklärt",
+          "Messunsicherheit genannt",
+          "Kontrollmessung beschrieben"
+        ]
+      }
+    }
+  },
+  {
+    "id": "parallel-haushalt",
+    "lb": 1,
+    "title": "Parallelschaltung und Schutz im Haushalt",
+    "period": "Ph8 1 · Elektrischer Strom",
+    "intro": "Untersuche unabhängige Zweige und die Aufgaben der Schutzgeräte.",
+    "tracks": [
+      "ANDERE",
+      "NTG"
+    ],
+    "paragraphs": [
+      "Eine Parallelschaltung hat mehrere Wege zwischen denselben beiden Knoten. Die Spannung ist an jedem dieser Zweige gleich. An einer Verzweigung verteilt sich die Stromstärke; die Summe der Zweigströme ergibt den Gesamtstrom. Ein offener Zweig unterbricht nur seinen eigenen Strom.",
+      "Beispiel: An 6 V liegen parallel 20 Ω und 30 Ω. Die Zweigströme sind 0,30 A und 0,20 A; zusammen 0,50 A. Ein dritter Zweig mit 60 Ω erhöht die Summe um 0,10 A.",
+      "Haushaltsgeräte werden parallel versorgt. Leitungsschutzschalter schützen Leitungen vor Überlast oder Kurzschluss. Ein Fehlerstromschutzschalter (FI) vergleicht hin- und zurückfließenden Strom und schaltet bei ausreichender Differenz ab. Bei Geräten mit Schutzleiter kann dieser im Fehlerfall Strom vom Gehäuse ableiten. Haushaltsnetze dienen hier nur als Sachbeispiel. Experimentiert wird mit Schul-Niederspannung unter Anleitung."
+    ],
+    "formulas": [
+      "U in parallelen Zweigen gleich",
+      "I = I₁ + I₂ (+ I₃)"
+    ],
+    "sourceIds": [
+      "lp",
+      "safety"
+    ],
+    "model": "parallel-haushalt",
+    "calculation": "parallel-haushalt",
+    "takeaway": "In parallelen Zweigen ist U gleich. Die Zweigströme addieren sich am Knoten.",
+    "quiz": {
+      "question": "Was geschieht im Modell, wenn du nur Zweig 2 öffnest?",
+      "answer": "Zweig 1 bleibt bei gleicher Quellenspannung aktiv",
+      "wrong": [
+        "Beide Zweige werden stromlos",
+        "Zweig 1 übernimmt genau den früheren Gesamtstrom"
+      ],
+      "explanation": "Zweig 1 bleibt an denselben zwei Knoten angeschlossen; nur Zweig 2 fällt aus der Summe weg."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Beobachtungen zuordnen",
+      "instruction": "Welches Schutzmittel erfüllt die beschriebene Aufgabe?",
+      "categories": [
+        "Leitungsschutzschalter",
+        "Fehlerstromschutzschalter (FI)",
+        "Schutzleiter"
+      ],
+      "entries": [
+        {
+          "text": "Schaltet bei zu großem Strom in der Leitung ab.",
+          "target": 0,
+          "feedback": "Überlast und Kurzschluss können Leitungen stark erwärmen."
+        },
+        {
+          "text": "Erkennt einen hinreichend großen Unterschied zwischen Hin- und Rückstrom.",
+          "target": 1,
+          "feedback": "Ein Teil des Stroms nimmt einen anderen Weg."
+        },
+        {
+          "text": "Verbindet das leitfähige Gehäuse eines Schutzklasse-I-Geräts mit Erde.",
+          "target": 2,
+          "feedback": "Er bietet dem Fehlerstrom einen vorgesehenen Weg."
+        }
+      ],
+      "conclusion": "In parallelen Zweigen ist U gleich. Die Zweigströme addieren sich am Knoten."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre, warum die Deckenlampe weiterleuchtet, wenn du eine Stehlampe ausschaltest.",
+        "hints": [
+          "Zeichne zwei Wege zwischen denselben Anschlusspunkten.",
+          "Was macht der Schalter nur in seinem Zweig?"
+        ],
+        "model": "Beide Lampen hängen parallel an der Versorgung. Der Schalter der Stehlampe öffnet nur ihren Zweig. Die Deckenlampe hat weiter einen geschlossenen Zweig an derselben Spannung.",
+        "criteria": [
+          "Parallele Wege",
+          "Unterbrechung nur im Zweig",
+          "U an Deckenlampe bleibt gleich"
+        ]
+      },
+      "2": {
+        "prompt": "Lies den verlinkten Fachtext zur Sicherheit. Skizziere zwei Geräte parallel und erkläre, warum FI und Leitungsschutz unterschiedliche Fehler erkennen.",
+        "hints": [
+          "Markiere die Verzweigung und den Rückweg.",
+          "Vergleiche zu viel Strom mit fehlendem Rückstrom."
+        ],
+        "model": "Der Leitungsschutz reagiert auf Überstrom im Leiter, zum Beispiel bei Überlast. Der FI erkennt die Differenz zwischen Hin- und Rückstrom, zum Beispiel bei einem Fehlerstrom zur Erde. In der Skizze liegen beide Geräte an denselben Anschlussknoten.",
+        "criteria": [
+          "Parallelskizze",
+          "Leitungsschutz korrekt",
+          "FI korrekt"
+        ]
+      }
+    }
+  }
+]

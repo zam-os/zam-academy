@@ -1,0 +1,463 @@
+[
+  {
+    "id": "spiegel",
+    "lb": 2,
+    "title": "Spiegelbilder und Reflexion",
+    "period": "Ph8 2 · Optik",
+    "intro": "Verfolge, woher ein vom Spiegel zurückgeworfener Strahl zu kommen scheint.",
+    "tracks": [
+      "ANDERE",
+      "NTG"
+    ],
+    "paragraphs": [
+      "Licht breitet sich in einem gleichartigen Medium geradlinig aus. Am ebenen Spiegel wird ein Strahl so zurückgeworfen, dass Einfallswinkel und Reflexionswinkel gleich sind. Beide Winkel misst du zum Lot, der Senkrechten auf der Spiegeloberfläche.",
+      "Das Auge verfolgt die reflektierten Strahlen gedanklich geradlinig zurück. Ihre gestrichelten Verlängerungen treffen sich hinter dem Spiegel im virtuellen Bild. Ein Schirm hinter dem Spiegel fängt dort kein Bild auf.",
+      "Im Unterricht kannst du Einfalls- und Ausfallsrichtung auf Papier markieren und beide Winkel zur eingezeichneten Senkrechten vermessen. Für die Bildlage vergleichst du Gegenstand und gedachtes Bild auf derselben Senkrechten zur Spiegelfläche.",
+      "Beispiel: Ein Gegenstand 30 cm vor dem ebenen Spiegel hat sein virtuelles Bild 30 cm dahinter. Trifft ein Strahl mit 35° zum Lot auf, verlässt er die Fläche mit 35° zum Lot auf der anderen Seite."
+    ],
+    "formulas": [
+      "Einfallswinkel α = Reflexionswinkel α′",
+      "Winkel zum Lot"
+    ],
+    "sourceIds": [
+      "lp",
+      "nt7"
+    ],
+    "model": "spiegel",
+    "calculation": "spiegel",
+    "takeaway": "Ein Spiegelbild entsteht im Schnittpunkt gedachter Verlängerungen reflektierter Strahlen.",
+    "quiz": {
+      "question": "Wo befindet sich das Bild bei 20 cm Abstand des Gegenstands vom ebenen Spiegel?",
+      "answer": "20 cm hinter dem Spiegel",
+      "wrong": [
+        "10 cm vor dem Spiegel",
+        "Auf der Spiegeloberfläche"
+      ],
+      "explanation": "Das virtuelle Bild liegt spiegelbildlich auf der anderen Seite der Fläche."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Beobachtungen zuordnen",
+      "instruction": "Ordne jedem Teil der Zeichnung seine Bedeutung zu.",
+      "categories": [
+        "Reeller Lichtweg",
+        "Virtuelle Verlängerung",
+        "Lot"
+      ],
+      "entries": [
+        {
+          "text": "Strahl zwischen Spiegel und Auge",
+          "target": 0,
+          "feedback": "Dort läuft das reflektierte Licht tatsächlich."
+        },
+        {
+          "text": "Gerade hinter dem Spiegel in Blickrichtung",
+          "target": 1,
+          "feedback": "Das Auge verortet das Bild auf dieser gedachten Linie."
+        },
+        {
+          "text": "Senkrechte auf der Spiegelfläche am Auftreffpunkt",
+          "target": 2,
+          "feedback": "Von dieser Geraden misst du beide Winkel."
+        }
+      ],
+      "conclusion": "Ein Spiegelbild entsteht im Schnittpunkt gedachter Verlängerungen reflektierter Strahlen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Skizziere einen Strahl, der mit 30° zum Lot auftrifft. Erkläre den Winkel zum Spiegel nach der Reflexion.",
+        "hints": [
+          "Lot und Fläche stehen senkrecht.",
+          "Erst Winkel zum Lot, dann zur Fläche."
+        ],
+        "model": "Der reflektierte Strahl bildet 30° mit dem Lot. Die Winkel zu Lot und Fläche ergänzen sich zu 90°, deshalb sind es 60° zur Fläche.",
+        "criteria": [
+          "Lot eingezeichnet",
+          "30° zum Lot",
+          "60° zur Fläche"
+        ]
+      },
+      "2": {
+        "prompt": "Vermute, ob sich das Bild bewegt, wenn du seitlich am Spiegel vorbeigehst und der Gegenstand fest bleibt. Begründe mit zwei Strahlen.",
+        "hints": [
+          "Zeichne zwei mögliche reflektierte Wege.",
+          "Vergleiche die Schnittpunkte ihrer Verlängerungen."
+        ],
+        "model": "Der Ort des Bildes bleibt gegenüber dem Spiegel fest. Verschiedene Strahlen erreichen das Auge, doch ihre gedachten Verlängerungen treffen immer dasselbe symmetrische Bild.",
+        "criteria": [
+          "Bildort fest",
+          "Andere Strahlen möglich",
+          "Verlängerungen als Begründung"
+        ]
+      }
+    }
+  },
+  {
+    "id": "brechung",
+    "lb": 2,
+    "title": "Licht an einer Grenzfläche",
+    "period": "Ph8 2 · Optik",
+    "intro": "Erkläre den scheinbaren Knick eines Strohhalms im Wasser.",
+    "tracks": [
+      "ANDERE",
+      "NTG"
+    ],
+    "paragraphs": [
+      "Beim Übergang zwischen Luft, Wasser oder Glas ändert sich die Ausbreitungsgeschwindigkeit des Lichts. Geht Licht schräg von Luft in Wasser oder Glas, wird es zum Lot hin gebrochen. In der umgekehrten Richtung führt die Brechung vom Lot weg, sofern ein gebrochener Strahl austritt.",
+      "Bei senkrechtem Einfall ändert sich die Richtung nicht. In einem gegebenen Medienpaar nimmt der Brechungswinkel mit dem Einfallswinkel zu; die beiden Winkel sind im Allgemeinen verschieden. Der Strahlengang ist umkehrbar.",
+      "Beispiel: Licht vom untergetauchten Teil eines Strohhalms tritt vom Wasser in die Luft und wird vom Lot weg gebrochen. Verlängert dein Auge diesen Strahl gedanklich gerade zurück, erscheint der untergetauchte Teil an einer versetzten Stelle."
+    ],
+    "formulas": [
+      "Einfallswinkel und Brechungswinkel zum Lot",
+      "optisch dicht oder dünn"
+    ],
+    "sourceIds": [
+      "lp"
+    ],
+    "model": "brechung",
+    "takeaway": "Bestimme zuerst, aus welchem Medium das Licht kommt, und zeichne das Lot am Übergang ein.",
+    "quiz": {
+      "question": "Wohin wird Licht beim schrägen Eintritt aus Luft in Glas gebrochen?",
+      "answer": "Zum Lot hin",
+      "wrong": [
+        "Vom Lot weg",
+        "Parallel zur Grenzfläche"
+      ],
+      "explanation": "Im Glas breitet es sich langsamer aus; bei schrägem Eintritt aus Luft wird der Winkel zum Lot kleiner."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Beobachtungen zuordnen",
+      "instruction": "Sortiere die drei Übergänge im Strahlenmodell.",
+      "categories": [
+        "Zum Lot",
+        "Vom Lot",
+        "Richtung bleibt"
+      ],
+      "entries": [
+        {
+          "text": "Schräg von Luft nach Glas",
+          "target": 0,
+          "feedback": "Der Winkel zum Lot wird kleiner."
+        },
+        {
+          "text": "Schräg von Glas nach Luft bei kleinem Einfallswinkel",
+          "target": 1,
+          "feedback": "Der Winkel zum Lot wird größer."
+        },
+        {
+          "text": "Senkrecht von Wasser nach Luft",
+          "target": 2,
+          "feedback": "Beide Winkel sind null."
+        }
+      ],
+      "conclusion": "Bestimme zuerst, aus welchem Medium das Licht kommt, und zeichne das Lot am Übergang ein."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Stelle für Luft nach Wasser erst 0° und dann 40° ein. Vergleiche beide Bilder.",
+        "hints": [
+          "Schau auf den Winkel zwischen Strahl und Lot.",
+          "Ein Richtungswechsel braucht schrägen Einfall."
+        ],
+        "model": "Bei 0° läuft der Strahl gerade durchs Lot. Bei 40° ist der gebrochene Winkel kleiner als 40°; der Strahl knickt zum Lot.",
+        "criteria": [
+          "0° korrekt",
+          "40° qualitativ korrekt",
+          "Lot als Bezug"
+        ]
+      },
+      "2": {
+        "prompt": "Eine Münze verschwindet hinter einem Becherrand. Nach Einfüllen von Wasser ist sie vom gleichen Blickpunkt sichtbar. Begründe mit einem Strahl.",
+        "hints": [
+          "Verfolge das Licht von der Münze zum Auge.",
+          "Es wechselt von Wasser nach Luft."
+        ],
+        "model": "An der Wasseroberfläche knickt ein flach verlaufender Strahl beim Austritt vom Lot weg. Ein gebrochener Strahl kann über den Becherrand ins Auge gelangen. Das Auge sieht die Münze näher an der Oberfläche, als sie liegt.",
+        "criteria": [
+          "Weg Münze → Auge",
+          "Brechung vom Lot",
+          "Geänderte scheinbare Position"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sammellinse",
+    "lb": 2,
+    "title": "Bilder an der Sammellinse",
+    "period": "Ph8 2 · Optik",
+    "intro": "Bewege den Gegenstand über die Brennweite hinweg und beobachte den Bildwechsel.",
+    "tracks": [
+      "ANDERE",
+      "NTG"
+    ],
+    "paragraphs": [
+      "Eine Sammellinse bündelt achsenparallele Strahlen im Brennpunkt. Ihr Abstand zur Linse heißt Brennweite f. Für die Konstruktion zeichnest du einen Parallelstrahl, der hinter der Linse durch den Brennpunkt geht, und einen Mittelpunktstrahl, der im Modell der dünnen Linse gerade weiterläuft.",
+      "Außerhalb der Brennweite treffen die Strahlen hinter der Linse zusammen. Das reelle, umgekehrte Bild lässt sich auf einem Schirm auffangen. Bei doppelter Brennweite ist es gleich groß; weiter draußen wird es kleiner. Innerhalb der Brennweite schneiden sich nur die rückwärts verlängerten Strahlen. Die Linse wirkt als Lupe und zeigt ein aufrechtes, vergrößertes virtuelles Bild. Bei g = f verlassen die Strahlen eines Gegenstandspunkts die Linse parallel.",
+      "Beispiel: Bei f = 10 cm und g = 20 cm findest du das gleich große Bild 20 cm hinter der Linse. Messen kannst du mit einer gewöhnlichen Schul-Lichtquelle und einem Schirm. Blicke nie durch eine Linse in die Sonne oder einen Laserstrahl. Gebündeltes Licht kann das Auge schädigen und Material stark erhitzen."
+    ],
+    "formulas": [
+      "Brennweite f",
+      "Gegenstandsweite g",
+      "Bildweite b",
+      "reell und virtuell"
+    ],
+    "sourceIds": [
+      "lp"
+    ],
+    "model": "sammellinse",
+    "takeaway": "Der Vergleich von g und f entscheidet, ob sich Strahlen treffen oder nur ihre Verlängerungen.",
+    "quiz": {
+      "question": "Wann zeigt die Sammellinse ein aufrechtes virtuelles Bild?",
+      "answer": "Wenn der Gegenstand zwischen Linse und Brennpunkt steht",
+      "wrong": [
+        "Wenn der Gegenstand bei doppelter Brennweite steht",
+        "Immer wenn ein Schirm hinter der Linse steht"
+      ],
+      "explanation": "Innerhalb der Brennweite laufen die Strahlen hinter der Linse auseinander; ihre Verlängerungen bilden das virtuelle Lupenbild."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Den Versuch vorbereiten und auswerten",
+      "instruction": "Bringe die Schritte mit den Pfeiltasten der Liste in die passende Reihenfolge.",
+      "categories": [],
+      "entries": [
+        {
+          "text": "Gegenstand außerhalb der Brennweite aufstellen.",
+          "target": 0,
+          "feedback": "Dort ist ein Bild auf einem Schirm grundsätzlich möglich."
+        },
+        {
+          "text": "Schirm bis zum scharfen Bild verschieben.",
+          "target": 1,
+          "feedback": "Die passende Schirmposition gibt die Bildweite an."
+        },
+        {
+          "text": "Gegenstandsweite, Bildweite, Größe und Orientierung notieren.",
+          "target": 2,
+          "feedback": "Halte die Einzelmessung fest."
+        },
+        {
+          "text": "Bei einer neuen Gegenstandsweite wiederholen und vergleichen.",
+          "target": 3,
+          "feedback": "Vergleiche, wie sich Bildposition und Größe ändern."
+        }
+      ],
+      "conclusion": "Der Vergleich von g und f entscheidet, ob sich Strahlen treffen oder nur ihre Verlängerungen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Plane mit einer Schullampe und einem Schirm drei Messungen an einer Sammellinse.",
+        "hints": [
+          "Variiere nur den Abstand des Gegenstands.",
+          "Suche ein scharfes Bild und beschreibe seine Größe."
+        ],
+        "model": "Ich halte die Brennweite fest, ändere g oberhalb der Brennweite und verschiebe den Schirm bis zum scharfen Bild. Ich protokolliere g, b, Bildgröße und Orientierung.",
+        "criteria": [
+          "Gleiche Linse",
+          "Scharfstellung erklärt",
+          "Messgrößen und Orientierung"
+        ]
+      },
+      "2": {
+        "prompt": "Warum vergrößert eine Lupe eine Briefmarke, während ein Projektor ein vergrößertes Bild auf der Wand erzeugt?",
+        "hints": [
+          "Zeichne je zwei ausgezeichnete Strahlen.",
+          "Liegt der Gegenstand bei der Lupe vor oder hinter dem Brennpunkt?"
+        ],
+        "model": "Bei der Lupe ist g kleiner als f. Rückverlängerungen bilden das aufrechte virtuelle Bild. Beim Projektor liegt der Gegenstand zwischen einfacher und doppelter Brennweite. Wirkliche Strahlen treffen sich auf der Wand und bilden ein umgekehrtes, vergrößertes Bild.",
+        "criteria": [
+          "g relativ zu f",
+          "Zwei Bildarten",
+          "Schirm richtig erklärt"
+        ]
+      }
+    }
+  },
+  {
+    "id": "auge",
+    "lb": 2,
+    "title": "Auge, Netzhaut und Brille",
+    "period": "Ph8 2 · Optik",
+    "intro": "Verschiebe den Schärfepunkt auf die Netzhaut.",
+    "tracks": [
+      "ANDERE",
+      "NTG"
+    ],
+    "paragraphs": [
+      "Hornhaut und Augenlinse bündeln Licht. Bei passender Einstellung entsteht ein reelles, umgekehrtes Bild auf der Netzhaut. Beim Blick von fern auf nah kann das Auge die Brechkraft seiner Linse erhöhen. Diese Anpassung heißt Akkommodation.",
+      "Bei Kurzsichtigkeit liegt der Brennpunkt für einen fernen Gegenstand vor der Netzhaut, etwa weil der Augapfel zu lang ist. Ein zerstreuendes Brillenglas spreizt die Strahlen vor dem Auge und verlagert den Fokus nach hinten. Bei Weitsichtigkeit würde der Fokus des entspannten Auges hinter der Netzhaut liegen. Ein sammelndes Glas verlagert ihn nach vorn.",
+      "Beispiel: Im Modell eines kurzsichtigen Auges laufen die Strahlen vor der Netzhaut zusammen und treffen diese anschließend verteilt. Mit der passenden Zerstreuungslinse treffen sie erst auf der Netzhaut zusammen."
+    ],
+    "formulas": [
+      "Hornhaut",
+      "Akkommodation",
+      "Netzhaut",
+      "Sammellinse und Zerstreuungslinse"
+    ],
+    "sourceIds": [
+      "lp",
+      "myopia",
+      "hyperopia"
+    ],
+    "model": "auge",
+    "takeaway": "Die Brille verändert den Strahlengang, damit das Bild auf der Netzhaut scharf wird.",
+    "quiz": {
+      "question": "Welches Glas korrigiert Kurzsichtigkeit?",
+      "answer": "Ein zerstreuendes Glas",
+      "wrong": [
+        "Ein sammelndes Glas",
+        "Ein planparalleles Glas ohne Brechwirkung"
+      ],
+      "explanation": "Zerstreuung vor dem Auge verschiebt den sonst zu frühen Fokus nach hinten."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Beobachtungen zuordnen",
+      "instruction": "Ordne den Befund zur passenden Augenform.",
+      "categories": [
+        "Normales Sehen in die Ferne",
+        "Kurzsichtigkeit",
+        "Weitsichtigkeit"
+      ],
+      "entries": [
+        {
+          "text": "Fokus des entspannten Auges auf der Netzhaut",
+          "target": 0,
+          "feedback": "Das Netzhautbild ist scharf."
+        },
+        {
+          "text": "Fokus vor der Netzhaut",
+          "target": 1,
+          "feedback": "Eine Zerstreuungslinse verlagert ihn nach hinten."
+        },
+        {
+          "text": "Fokus läge hinter der Netzhaut",
+          "target": 2,
+          "feedback": "Eine Sammellinse verlagert ihn nach vorn."
+        }
+      ],
+      "conclusion": "Die Brille verändert den Strahlengang, damit das Bild auf der Netzhaut scharf wird."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Zeichne ein kurzsichtiges Auge und ergänze die Korrektur.",
+        "hints": [
+          "Markiere zuerst die Netzhaut.",
+          "Zeichne je zwei Strahlen mit und ohne Brille."
+        ],
+        "model": "Ohne Brille treffen sich die Strahlen vor der Netzhaut. Die Zerstreuungslinse öffnet das Bündel vor dem Auge, sodass sich die Strahlen erst auf der Netzhaut treffen.",
+        "criteria": [
+          "Netzhaut markiert",
+          "Falscher Fokus richtig",
+          "Glastyp und Wirkung"
+        ]
+      },
+      "2": {
+        "prompt": "Vergleiche die verlinkten BVA-Texte mit der Modellbeschreibung. Erkläre in drei Sätzen Ursache und Korrektur beider Sehfehler und eine Grenze der Zeichnung.",
+        "hints": [
+          "Vergleiche jeweils den Fokus mit der Netzhaut.",
+          "Im Modell fehlt die aktive Anpassung der Linse."
+        ],
+        "model": "Kurzsichtigkeit: Fokus vor der Netzhaut, zerstreuendes Glas. Weitsichtigkeit: Fokus des entspannten Auges dahinter, sammelndes Glas. Die BVA-Texte beschreiben Ursachen im Auge; das Modell abstrahiert von der Akkommodation und vereinfacht Hornhaut und Linse.",
+        "criteria": [
+          "Beide Sehfehler",
+          "Beide Korrekturen",
+          "Quellenvergleich und Modellgrenze"
+        ]
+      }
+    }
+  },
+  {
+    "id": "totalreflexion",
+    "lb": 2,
+    "title": "Totalreflexion und Lichtleiter",
+    "period": "Ph8 2 · Optik",
+    "intro": "Finde den Winkelbereich, in dem Licht im Glas bleibt.",
+    "tracks": [
+      "ANDERE",
+      "NTG"
+    ],
+    "paragraphs": [
+      "Beim Übergang vom optisch dichteren zum optisch dünneren Medium wird der austretende Strahl vom Lot weg gebrochen. Beim Grenzwinkel läge der gebrochene Strahl entlang der Grenzfläche. Bei größerem Einfallswinkel gibt es keinen austretenden Strahl mehr; das Licht wird vollständig zurückgeworfen.",
+      "Eine Glasfaser hat einen Kern mit höherem Brechungsindex als der Mantel. Geeignet eingekoppeltes Licht trifft die Grenze in flachem Winkel zur Oberfläche, also mit großem Winkel zum Lot. So kann die Faser Licht über lange Strecken führen. Starke Biegung kann die Einfallswinkel ändern und Licht entweichen lassen.",
+      "Beispiel: An einer Glas-Luft-Grenze mit dem hier verwendeten Glas liegt der Grenzwinkel bei etwa 42°. Bei 50° zum Lot siehst du im Modell nur den reflektierten Strahl. Glasfaserleitungen übertragen Daten als Lichtsignale. Lichtleiter können bei einer Endoskopie auch Licht zur untersuchten Stelle bringen."
+    ],
+    "formulas": [
+      "Grenzwinkel",
+      "Totalreflexion",
+      "Faserkern und Mantel"
+    ],
+    "sourceIds": [
+      "lp"
+    ],
+    "model": "totalreflexion",
+    "takeaway": "Totalreflexion braucht den Übergang vom optisch dichteren zum optisch dünneren Medium und einen Einfallswinkel über dem Grenzwinkel.",
+    "quiz": {
+      "question": "Bei welcher Situation kann der Strahl vollständig reflektiert werden?",
+      "answer": "Glas → Luft, 50° zum Lot bei einem Grenzwinkel von etwa 42°",
+      "wrong": [
+        "Luft → Glas, 50° zum Lot",
+        "Glas → Luft, 20° zum Lot"
+      ],
+      "explanation": "Nur im ersten Fall stimmen Richtung des Medienübergangs und Einfallswinkel."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Beobachtungen zuordnen",
+      "instruction": "Ordne jeden Versuch seiner Beobachtung zu.",
+      "categories": [
+        "Brechung vom Lot",
+        "Totalreflexion",
+        "Brechung zum Lot"
+      ],
+      "entries": [
+        {
+          "text": "Glas nach Luft bei 30° zum Lot",
+          "target": 0,
+          "feedback": "Der Winkel wächst; Licht kann austreten."
+        },
+        {
+          "text": "Glas nach Luft bei 55° zum Lot",
+          "target": 1,
+          "feedback": "Der Winkel liegt über dem Grenzwinkel."
+        },
+        {
+          "text": "Luft nach Glas bei 55° zum Lot",
+          "target": 2,
+          "feedback": "Beim Eintritt in Glas wird der Winkel kleiner."
+        }
+      ],
+      "conclusion": "Totalreflexion braucht den Übergang vom optisch dichteren zum optisch dünneren Medium und einen Einfallswinkel über dem Grenzwinkel."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Ermittle im Modell durch schrittweises Vergrößern des Einfallswinkels den Grenzbereich für Glas und Luft.",
+        "hints": [
+          "Vergleiche etwa 40° und 45°.",
+          "Nenne den Übergang und den Winkelbezug."
+        ],
+        "model": "Der Strahl tritt bei 40° noch aus und bleibt bei 45° im Glas. Das Modell nennt etwa 42° zum Lot als Grenzwinkel.",
+        "criteria": [
+          "Beide Beobachtungen",
+          "Medienrichtung",
+          "Winkelbezug"
+        ]
+      },
+      "2": {
+        "prompt": "Erkläre, warum eine stark geknickte Glasfaser Daten schlechter übertragen kann.",
+        "hints": [
+          "Skizziere das Lot an der gebogenen Grenzfläche.",
+          "Was passiert bei einem Winkel unterhalb des Grenzwinkels?"
+        ],
+        "model": "Durch die Biegung kann sich der Winkel zum Lot am Übergang zum Mantel verkleinern. Unterschreitet er den Grenzwinkel, kann Licht aus dem Faserinneren austreten. Das ankommende Signal wird schwächer.",
+        "criteria": [
+          "Einfallswinkel verändert",
+          "Austritt erklärt",
+          "Bedeutung für Signal"
+        ]
+      }
+    }
+  }
+]
