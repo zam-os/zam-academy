@@ -25,11 +25,11 @@ through local research and classroom discussion.
 
 ## Legacy practice items
 
-The [proposal](../geschichte-gymnasium-8/replaces-de-by.json) records the four
+The [mapping](../geschichte-gymnasium-8/replaces-de-by.json) records the four
 items from Grade 8 and checks the four items from the Grade 11 legacy cell
 whose titles overlap with the new course. The snapshots come from
 `zam-os/zam@c92f4e383385ee487cd8b30f73b3bf3cb27b0860`. Grade 7's dedicated
-medieval and early modern items remain outside the proposal. Grade 9's
+medieval and early modern items remain outside the mapping. Grade 9's
 Weimar and National Socialism items remain outside it as well.
 
 | Source cell | Same retrieval (A) | Keep active (C) |
@@ -37,7 +37,11 @@ Weimar and National Socialism items remain outside it as well.
 | Grade 8, absolutism, French Revolution and 1848 | 2 | 2 |
 | Grade 11, Reich foundation, Bismarck, imperialism and World War I | 0 | 4 |
 
-The pending A proposals concern Montesquieu's separation of powers and the
-storming of the Bastille. The C items ask broader or materially different
-questions. The package declares no replacements or retirements and requires
-explicit approval before either proposed history transfer.
+Thomas approved the two Grade 8 transfers in the Codex chat for PR #220 on
+2026-11-28. The cell version `2026.11.2` transfers the histories for
+Montesquieu's separation of powers and the storming of the Bastille. All six C
+items remain active, including the Grade 11 items in the inventory. When a
+learner already has both the legacy card and its Academy successor, zam-core
+refuses to combine the histories and leaves both intact. The
+[migration check](../geschichte-gymnasium-8/scripts/validate-migration.mjs)
+verifies the update in disposable libraries.
