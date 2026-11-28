@@ -1,0 +1,2432 @@
+{
+  "$schema": "https://zam.app/schemas/v1/kvt-tile.json",
+  "tile_id": "zam-academy:wirtschaft-mittelschule-8",
+  "version": "2026.11.1",
+  "title": "Wirtschaft und Beruf 8 Mittelschule (ZAM Academy)",
+  "description": "Alle fünf Lernbereiche von Wirtschaft und Beruf in Jahrgangsstufe 8 an der bayerischen Mittelschule (Regelklasse R8: 28 Lektionen; M-Zug M8: 29 Lektionen): Projekt mit Leittextmethode, Berufsorientierung mit Betriebspraktikum und Bewerbung, Betriebserkundung, Gewinn- und Verlustrechnung, Wirtschaftskreislauf, Entlohnung und Lohnabrechnung, Recht im Betriebspraktikum sowie Technik, Ergonomie und Arbeitssicherheit.",
+  "publisher": "ZAM Academy",
+  "published_at": "2026-11-28T08:00:00Z",
+  "sources": [
+    {
+      "uri": "https://academy.zam-os.org/wirtschaft-mittelschule-8/",
+      "checked": "2026-11-28",
+      "label": "ZAM Academy · Wirtschaft und Beruf 8 Mittelschule"
+    },
+    {
+      "uri": "https://www.lehrplanplus.bayern.de/fachlehrplan/mittelschule/8/wib/regelklasse",
+      "checked": "2026-11-28",
+      "label": "LehrplanPLUS · Wirtschaft und Beruf R8"
+    },
+    {
+      "uri": "https://www.lehrplanplus.bayern.de/fachlehrplan/mittelschule/8/wib/mittlere-reife-klasse",
+      "checked": "2026-11-28",
+      "label": "LehrplanPLUS · Wirtschaft und Beruf M8"
+    },
+    {
+      "uri": "https://www.gesetze-im-internet.de/jarbschg/BJNR009650976.html",
+      "checked": "2026-11-28",
+      "label": "Jugendarbeitsschutzgesetz (JArbSchG)"
+    },
+    {
+      "uri": "https://www.bmas.de/DE/Arbeit/Arbeitsrecht/Mindestlohn/mindestlohn.html",
+      "checked": "2026-11-28",
+      "label": "BMAS · Mindestlohn"
+    }
+  ],
+  "atoms": [
+    {
+      "id": "01M8H2RT2FYQMTTMEWM53K370K",
+      "atom_uri": "urn:zam:atom:01M8H2RT2FYQMTTMEWM53K370K",
+      "namespace": "zam-academy-wirtschaft-mittelschule-8",
+      "slug": "wib8-pr-komplexe-aufgabe",
+      "title": "Komplexe Projektaufgaben als vollständige Handlung",
+      "domain": "wib/projekt",
+      "reduction": "formal",
+      "typical_age_min": 13.5,
+      "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=pr-komplexe-aufgabe",
+      "prerequisites": [],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-mittelschule-8",
+          "topic_code": "lb1",
+          "topic_title": "Projekt"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "track": "R",
+          "subject": "wib",
+          "topic_code": "lb1",
+          "topic_title": "Projekt",
+          "exam_relevant": false
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "track": "M",
+          "subject": "wib",
+          "topic_code": "lb1",
+          "topic_title": "Projekt",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8H2RT2FYQMTTMEWM53K371J",
+          "slug": "wib8-pr-komplexe-aufgabe-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Welche fünf Phasen hat ein Projekt nach dem Prinzip der vollständigen Handlung?",
+          "concept": "Projektinitiative, Projektplanung, Projektdurchführung, Projektpräsentation und Projektreflexion.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=pr-komplexe-aufgabe",
+          "materiality": "material",
+          "sample_solution": "Erst Auftrag und Ziel klären, dann Arbeitspakete, Material, Kosten und Zeit planen, umsetzen, Ergebnisse vorstellen und am Ende Soll und Ist vergleichen.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Projektinitiative, Projektplanung, Projektdurchführung, Projektpräsentation und Projektreflexion.",
+              "Einkaufen, Basteln, Verkaufen, Aufräumen und Feiern."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8H2RT2FYQMTTMEWM53K371K",
+          "slug": "wib8-pr-komplexe-aufgabe-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Wie berechnest du die Kosten je Stück eines Projektprodukts?",
+          "concept": "Kosten je Stück = (Stückzahl · Material je Stück + feste Kosten) : Stückzahl.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=pr-komplexe-aufgabe",
+          "materiality": "material",
+          "sample_solution": "Beispiel: 40 Halter mit 1,20 € Material und 30,00 € festen Kosten kosten 78,00 €, also 1,95 € je Stück."
+        }
+      ]
+    },
+    {
+      "id": "01M8H2RT2FYQMTTMEWM53K370M",
+      "atom_uri": "urn:zam:atom:01M8H2RT2FYQMTTMEWM53K370M",
+      "namespace": "zam-academy-wirtschaft-mittelschule-8",
+      "slug": "wib8-pr-leittext-weitgehend",
+      "title": "Die Leittextmethode weitgehend selbständig anwenden",
+      "domain": "wib/projekt",
+      "reduction": "formal",
+      "typical_age_min": 13.5,
+      "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=pr-leittext-weitgehend",
+      "prerequisites": [
+        {
+          "atom_id": "01M8H2RT2FYQMTTMEWM53K370K",
+          "type": "hard",
+          "rationale": "Die Leittextmethode steuert die Arbeit innerhalb der Projektphasen."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-mittelschule-8",
+          "topic_code": "lb1",
+          "topic_title": "Projekt"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "track": "R",
+          "subject": "wib",
+          "topic_code": "lb1",
+          "topic_title": "Projekt",
+          "exam_relevant": false
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "track": "M",
+          "subject": "wib",
+          "topic_code": "lb1",
+          "topic_title": "Projekt",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8H2RT2FYQMTTMEWM53K371M",
+          "slug": "wib8-pr-leittext-weitgehend-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "In welcher Reihenfolge stehen die sechs Schritte der Leittextmethode?",
+          "concept": "Informieren, Planen, Entscheiden, Ausführen, Kontrollieren, Bewerten.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=pr-leittext-weitgehend",
+          "materiality": "material",
+          "sample_solution": "Das Team beschafft mit Leitfragen Informationen, plant, entscheidet im Fachgespräch, führt aus, prüft gegen Vorgaben und bewertet zuletzt Ergebnis und Zusammenarbeit.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Informieren, Planen, Entscheiden, Ausführen, Kontrollieren, Bewerten.",
+              "Ausführen, Planen, Bewerten, Informieren, Entscheiden, Kontrollieren."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8H2RT2FYQMTTMEWM53K371N",
+          "slug": "wib8-pr-leittext-weitgehend-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Was bedeutet es, die Leittextmethode weitgehend selbständig anzuwenden?",
+          "concept": "Das Team arbeitet die vorgegebenen Leitfragen selbst ab; die Lehrkraft berät vor allem im Fachgespräch beim Entscheiden.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=pr-leittext-weitgehend",
+          "materiality": "material",
+          "sample_solution": "Leitfragen und Rahmen kommen meist noch von der Lehrkraft, aber Informieren, Planen und Ausführen erledigt das Team; im Fachgespräch wird der Plan vor dem Ausführen geprüft."
+        }
+      ]
+    },
+    {
+      "id": "01M8H2RT2FYQMTTMEWM53K370N",
+      "atom_uri": "urn:zam:atom:01M8H2RT2FYQMTTMEWM53K370N",
+      "namespace": "zam-academy-wirtschaft-mittelschule-8",
+      "slug": "wib8-pr-projektsteuerung",
+      "title": "Projekte steuern: Zeitplan, Meilensteine und Puffer",
+      "domain": "wib/projekt",
+      "reduction": "formal",
+      "typical_age_min": 13.5,
+      "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=pr-projektsteuerung",
+      "prerequisites": [
+        {
+          "atom_id": "01M8H2RT2FYQMTTMEWM53K370K",
+          "type": "hard",
+          "rationale": "Die Zeitplanung gehört zur Projektplanung der vollständigen Handlung."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-mittelschule-8",
+          "topic_code": "lb1",
+          "topic_title": "Projekt"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "track": "R",
+          "subject": "wib",
+          "topic_code": "lb1",
+          "topic_title": "Projekt",
+          "exam_relevant": false
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "track": "M",
+          "subject": "wib",
+          "topic_code": "lb1",
+          "topic_title": "Projekt",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8H2RT2FYQMTTMEWM53K371P",
+          "slug": "wib8-pr-projektsteuerung-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Was ist ein Meilenstein im Projektplan?",
+          "concept": "Ein überprüfbares Zwischenziel mit Termin, an dem Soll und Ist verglichen werden.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=pr-projektsteuerung",
+          "materiality": "material",
+          "sample_solution": "Beispiele sind Material bestellt oder Prototyp fertig; liegt das Team zurück, steuert es nach, etwa durch Umverteilen von Aufgaben.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Ein überprüfbares Zwischenziel mit Termin, an dem Soll und Ist verglichen werden.",
+              "Der letzte Tag des Projekts, an dem alles fertig sein muss."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8H2RT2FYQMTTMEWM53K371Q",
+          "slug": "wib8-pr-projektsteuerung-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Wie berechnest du, wie viele Wochen ein Projekt mit Zeitpuffer dauert?",
+          "concept": "Arbeitszeit mal (1 + Puffer in % : 100) ergibt die Gesamtzeit; geteilt durch die Projektstunden pro Woche und aufgerundet ergibt die Wochen.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=pr-projektsteuerung",
+          "materiality": "material",
+          "sample_solution": "Beispiel: 24 Std. mit 20 % Puffer sind 28,8 Std.; bei 4 Projektstunden pro Woche sind das 7,2, also 8 Wochen."
+        }
+      ]
+    },
+    {
+      "id": "01M8H2RT2FYQMTTMEWM53K370P",
+      "atom_uri": "urn:zam:atom:01M8H2RT2FYQMTTMEWM53K370P",
+      "namespace": "zam-academy-wirtschaft-mittelschule-8",
+      "slug": "wib8-pr-leittext-selbstaendig",
+      "title": "Leittextmethode selbständig: eigene Leitfragen und Kontrollbögen",
+      "domain": "wib/projekt",
+      "reduction": "formal",
+      "typical_age_min": 13.5,
+      "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=pr-leittext-selbstaendig",
+      "prerequisites": [
+        {
+          "atom_id": "01M8H2RT2FYQMTTMEWM53K370M",
+          "type": "hard",
+          "rationale": "Die M8-Vertiefung baut auf den sechs Schritten der Leittextmethode auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-mittelschule-8",
+          "topic_code": "lb1",
+          "topic_title": "Projekt"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "track": "M",
+          "subject": "wib",
+          "topic_code": "lb1",
+          "topic_title": "Projekt",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8H2RT2FYQMTTMEWM53K371R",
+          "slug": "wib8-pr-leittext-selbstaendig-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Woran erkennst du ein messbares Kontrollkriterium?",
+          "concept": "Es nennt einen Sollwert und eine erlaubte Abweichung, zum Beispiel 0,3 l mit höchstens 10 ml Abweichung.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=pr-leittext-selbstaendig",
+          "materiality": "material",
+          "sample_solution": "Mit Wert und Toleranz prüfen alle Teammitglieder gleich, und die Kontrolle hängt nicht vom Geschmack einzelner ab.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Es nennt einen Sollwert und eine erlaubte Abweichung, zum Beispiel 0,3 l mit höchstens 10 ml Abweichung.",
+              "Es beschreibt, dass alles ordentlich und schön aussehen soll."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8H2RT2FYQMTTMEWM53K371S",
+          "slug": "wib8-pr-leittext-selbstaendig-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Was gehört zur selbständigen Anwendung der Leittextmethode im M-Zug?",
+          "concept": "Eigene Leitfragen schreiben, messbare Kontrollkriterien festlegen und Ergebnis und Vorgehen selbst bewerten.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=pr-leittext-selbstaendig",
+          "materiality": "material",
+          "sample_solution": "Das Team erhält nur den Auftrag, formuliert den Leittext selbst und holt sich nur bei Bedarf ein Fachgespräch; Abweichungen zwischen Selbst- und Fremdbewertung werden besprochen."
+        }
+      ]
+    },
+    {
+      "id": "01M8H2RT2FYQMTTMEWM53K370Q",
+      "atom_uri": "urn:zam:atom:01M8H2RT2FYQMTTMEWM53K370Q",
+      "namespace": "zam-academy-wirtschaft-mittelschule-8",
+      "slug": "wib8-bo-berufsberatung-angebote",
+      "title": "Angebote der Berufsberatung und weitere Informationsquellen",
+      "domain": "wib/berufsorientierung",
+      "reduction": "formal",
+      "typical_age_min": 13.5,
+      "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=bo-berufsberatung-angebote",
+      "prerequisites": [],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-mittelschule-8",
+          "topic_code": "lb2",
+          "topic_title": "Berufsorientierung"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "track": "R",
+          "subject": "wib",
+          "topic_code": "lb2",
+          "topic_title": "Berufsorientierung",
+          "exam_relevant": false
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "track": "M",
+          "subject": "wib",
+          "topic_code": "lb2",
+          "topic_title": "Berufsorientierung",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8H2RT2FYQMTTMEWM53K371T",
+          "slug": "wib8-bo-berufsberatung-angebote-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Welche Stelle bietet nach § 29 SGB III Berufsberatung an?",
+          "concept": "Die Agentur für Arbeit.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=bo-berufsberatung-angebote",
+          "materiality": "material",
+          "sample_solution": "Die Berufsberatung der Agentur für Arbeit informiert und berät zu Berufswahl, Ausbildung und Ausbildungssuche; im BIZ gibt es zusätzlich Infomaterial.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Die Agentur für Arbeit.",
+              "Jeder Ausbildungsbetrieb ist zur Berufsberatung verpflichtet."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8H2RT2FYQMTTMEWM53K371V",
+          "slug": "wib8-bo-berufsberatung-angebote-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Welche Informationsquellen zur Berufswahl gibt es außer der Berufsberatung?",
+          "concept": "BERUFENET und meinBERUF, Check-U, Kammern wie IHK und HWK sowie Ausbildungsmessen.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=bo-berufsberatung-angebote",
+          "materiality": "material",
+          "sample_solution": "BERUFENET beschreibt Tätigkeiten und Anforderungen, Check-U testet Interessen, Kammern kennen Ausbildungsbetriebe, auf Messen fragst du Auszubildende direkt."
+        }
+      ]
+    },
+    {
+      "id": "01M8H2RT2FYQMTTMEWM53K370R",
+      "atom_uri": "urn:zam:atom:01M8H2RT2FYQMTTMEWM53K370R",
+      "namespace": "zam-academy-wirtschaft-mittelschule-8",
+      "slug": "wib8-bo-berufswahlprozess-verwalten",
+      "title": "Den eigenen Berufswahlprozess dokumentieren und verwalten",
+      "domain": "wib/berufsorientierung",
+      "reduction": "formal",
+      "typical_age_min": 13.5,
+      "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=bo-berufswahlprozess-verwalten",
+      "prerequisites": [
+        {
+          "atom_id": "01M8H2RT2FYQMTTMEWM53K370Q",
+          "type": "hard",
+          "rationale": "Ergebnisse aus Beratung und Recherche fließen ins Portfolio ein."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-mittelschule-8",
+          "topic_code": "lb2",
+          "topic_title": "Berufsorientierung"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "track": "R",
+          "subject": "wib",
+          "topic_code": "lb2",
+          "topic_title": "Berufsorientierung",
+          "exam_relevant": false
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "track": "M",
+          "subject": "wib",
+          "topic_code": "lb2",
+          "topic_title": "Berufsorientierung",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8H2RT2FYQMTTMEWM53K371W",
+          "slug": "wib8-bo-berufswahlprozess-verwalten-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Was sammelst du im Berufswahlportfolio?",
+          "concept": "Ergebnisse aus Tests, Erkundungen, Praktika und Beratung, dazu Zeugnisse, Bescheinigungen und Einschätzungen.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=bo-berufswahlprozess-verwalten",
+          "materiality": "material",
+          "sample_solution": "Auch Erfahrungen, die gegen einen Wunsch sprechen, gehören hinein; eine feste Gliederung und ein Fahrplan mit Fristen machen das Portfolio nutzbar.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Ergebnisse aus Tests, Erkundungen, Praktika und Beratung, dazu Zeugnisse, Bescheinigungen und Einschätzungen.",
+              "Nur die Unterlagen, die zum ersten Berufswunsch passen."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8H2RT2FYQMTTMEWM53K371X",
+          "slug": "wib8-bo-berufswahlprozess-verwalten-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Wie bestimmst du den spätesten Start für eine Bewerbung?",
+          "concept": "Spätester Start = Zeit bis zur Frist minus benötigte Bearbeitungszeit.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=bo-berufswahlprozess-verwalten",
+          "materiality": "material",
+          "sample_solution": "Beispiel: Bewerbungsschluss in 10 Wochen und 3 Wochen Arbeit an den Unterlagen ergeben einen Start in spätestens 7 Wochen."
+        }
+      ]
+    },
+    {
+      "id": "01M8H2RT2FYQMTTMEWM53K370S",
+      "atom_uri": "urn:zam:atom:01M8H2RT2FYQMTTMEWM53K370S",
+      "namespace": "zam-academy-wirtschaft-mittelschule-8",
+      "slug": "wib8-bo-beratungsgespraech",
+      "title": "Beratungsgespräche mit der Berufsberatung vorbereiten und führen",
+      "domain": "wib/berufsorientierung",
+      "reduction": "formal",
+      "typical_age_min": 13.5,
+      "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=bo-beratungsgespraech",
+      "prerequisites": [
+        {
+          "atom_id": "01M8H2RT2FYQMTTMEWM53K370Q",
+          "type": "hard",
+          "rationale": "Das Gespräch nutzt das Angebot der Berufsberatung."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-mittelschule-8",
+          "topic_code": "lb2",
+          "topic_title": "Berufsorientierung"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "track": "R",
+          "subject": "wib",
+          "topic_code": "lb2",
+          "topic_title": "Berufsorientierung",
+          "exam_relevant": false
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "track": "M",
+          "subject": "wib",
+          "topic_code": "lb2",
+          "topic_title": "Berufsorientierung",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8H2RT2FYQMTTMEWM53K371Y",
+          "slug": "wib8-bo-beratungsgespraech-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Was bereitest du vor einem Beratungsgespräch vor?",
+          "concept": "Interessen, Stärken und Noten notieren, zwei bis drei Fragen aufschreiben und das Portfolio mitnehmen.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=bo-beratungsgespraech",
+          "materiality": "material",
+          "sample_solution": "Mit Fragen und Unterlagen kann die Berufsberatung gezielt beraten; im Gespräch fragst du nach, notierst und vereinbarst nächste Schritte.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Interessen, Stärken und Noten notieren, zwei bis drei Fragen aufschreiben und das Portfolio mitnehmen.",
+              "Nichts, weil die Beraterin ohnehin einen Beruf zuteilt."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8H2RT2FYQMTTMEWM53K371Z",
+          "slug": "wib8-bo-beratungsgespraech-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Aus welchen drei Teilen besteht ein gutes Beratungsgespräch?",
+          "concept": "Vorbereiten, das Gespräch aktiv führen und nachbereiten.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=bo-beratungsgespraech",
+          "materiality": "material",
+          "sample_solution": "Vorbereiten mit Fragen und Portfolio, im Gespräch nachfragen und mitschreiben, danach Ergebnisse eintragen und die vereinbarten Aufgaben erledigen."
+        }
+      ]
+    },
+    {
+      "id": "01M8H2RT2FYQMTTMEWM53K370T",
+      "atom_uri": "urn:zam:atom:01M8H2RT2FYQMTTMEWM53K370T",
+      "namespace": "zam-academy-wirtschaft-mittelschule-8",
+      "slug": "wib8-bo-stellenmarkt-recherche",
+      "title": "Den lokalen Stellen- und Ausbildungsmarkt erkunden",
+      "domain": "wib/berufsorientierung",
+      "reduction": "formal",
+      "typical_age_min": 13.5,
+      "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=bo-stellenmarkt-recherche",
+      "prerequisites": [
+        {
+          "atom_id": "01M8H2RT2FYQMTTMEWM53K370Q",
+          "type": "hard",
+          "rationale": "Die Recherche nutzt die Informationsquellen zur Berufswahl."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-mittelschule-8",
+          "topic_code": "lb2",
+          "topic_title": "Berufsorientierung"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "track": "R",
+          "subject": "wib",
+          "topic_code": "lb2",
+          "topic_title": "Berufsorientierung",
+          "exam_relevant": false
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "track": "M",
+          "subject": "wib",
+          "topic_code": "lb2",
+          "topic_title": "Berufsorientierung",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8H2RT2FYQMTTMEWM53K3720",
+          "slug": "wib8-bo-stellenmarkt-recherche-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Wie hoch ist die Mindestvergütung im 2. Ausbildungsjahr nach § 17 BBiG?",
+          "concept": "18 % mehr als im 1. Jahr, gerundet auf volle Euro.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=bo-stellenmarkt-recherche",
+          "materiality": "material",
+          "sample_solution": "Im 3. Jahr liegt sie 35 % und im 4. Jahr 40 % über dem Betrag des 1. Jahres; Beispiel: 700 € werden zu 826 € im 2. Jahr.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "18 % mehr als im 1. Jahr, gerundet auf volle Euro.",
+              "Genauso viel wie im 1. Jahr."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8H2RT2FYQMTTMEWM53K3721",
+          "slug": "wib8-bo-stellenmarkt-recherche-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Wo findest du Ausbildungsangebote in deiner Region, und worauf achtest du?",
+          "concept": "Jobsuche der BA, Lehrstellenbörsen der Kammern, Betriebsseiten und Messen; Beruf, Ort, Schulabschluss, Vergütung und Bewerbungsfrist vergleichen.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=bo-stellenmarkt-recherche",
+          "materiality": "material",
+          "sample_solution": "In einer Tabelle vergleichst du die Angebote; manche verlangen den mittleren Schulabschluss, andere den Abschluss der Mittelschule."
+        }
+      ]
+    },
+    {
+      "id": "01M8H2RT2FYQMTTMEWM53K370V",
+      "atom_uri": "urn:zam:atom:01M8H2RT2FYQMTTMEWM53K370V",
+      "namespace": "zam-academy-wirtschaft-mittelschule-8",
+      "slug": "wib8-bo-kompetenzprofil",
+      "title": "Kompetenzprofil und Anforderungen der Arbeitswelt vergleichen",
+      "domain": "wib/berufsorientierung",
+      "reduction": "formal",
+      "typical_age_min": 13.5,
+      "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=bo-kompetenzprofil",
+      "prerequisites": [
+        {
+          "atom_id": "01M8H2RT2FYQMTTMEWM53K370Q",
+          "type": "hard",
+          "rationale": "Anforderungsprofile stehen in BERUFENET."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-mittelschule-8",
+          "topic_code": "lb2",
+          "topic_title": "Berufsorientierung"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "track": "R",
+          "subject": "wib",
+          "topic_code": "lb2",
+          "topic_title": "Berufsorientierung",
+          "exam_relevant": false
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "track": "M",
+          "subject": "wib",
+          "topic_code": "lb2",
+          "topic_title": "Berufsorientierung",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8H2RT2FYQMTTMEWM53K3722",
+          "slug": "wib8-bo-kompetenzprofil-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Welche vier Arten von Stärken gehören zu einem Kompetenzprofil?",
+          "concept": "Fachliche, methodische, soziale und persönliche Stärken.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=bo-kompetenzprofil",
+          "materiality": "material",
+          "sample_solution": "Dazu kommen Interessen und Neigungen; ermittelt werden sie aus Selbst- und Fremdeinschätzung, Tests und Praktika.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Fachliche, methodische, soziale und persönliche Stärken.",
+              "Nur die Noten in Mathematik und Deutsch."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8H2RT2FYQMTTMEWM53K3723",
+          "slug": "wib8-bo-kompetenzprofil-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Wie ordnest du deine Voraussetzungen einem Berufsbild zu?",
+          "concept": "Du vergleichst dein Kompetenzprofil Punkt für Punkt mit dem Anforderungsprofil des Berufs.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=bo-kompetenzprofil",
+          "materiality": "material",
+          "sample_solution": "Ein kleiner Abstand zeigt eine gute Passung, große Abweichungen zeigen Lücken; ein Modell ersetzt aber keine Entscheidung."
+        }
+      ]
+    },
+    {
+      "id": "01M8H2RT2FYQMTTMEWM53K370W",
+      "atom_uri": "urn:zam:atom:01M8H2RT2FYQMTTMEWM53K370W",
+      "namespace": "zam-academy-wirtschaft-mittelschule-8",
+      "slug": "wib8-bo-praktikum-erproben",
+      "title": "Im Betriebspraktikum Tätigkeiten erproben und den Berufswunsch prüfen",
+      "domain": "wib/berufsorientierung",
+      "reduction": "formal",
+      "typical_age_min": 13.5,
+      "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=bo-praktikum-erproben",
+      "prerequisites": [
+        {
+          "atom_id": "01M8H2RT2FYQMTTMEWM53K370V",
+          "type": "hard",
+          "rationale": "Im Praktikum prüfst du dein Profil an der Wirklichkeit."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-mittelschule-8",
+          "topic_code": "lb2",
+          "topic_title": "Berufsorientierung"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "track": "R",
+          "subject": "wib",
+          "topic_code": "lb2",
+          "topic_title": "Berufsorientierung",
+          "exam_relevant": false
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "track": "M",
+          "subject": "wib",
+          "topic_code": "lb2",
+          "topic_title": "Berufsorientierung",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8H2RT2FYQMTTMEWM53K3724",
+          "slug": "wib8-bo-praktikum-erproben-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Wie viele Betriebspraktika sieht der Lehrplan in der 8. Klasse vor?",
+          "concept": "Regelklasse: zwei jeweils mindestens einwöchige; M-Zug: ein mindestens einwöchiges Praktikum.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=bo-praktikum-erproben",
+          "materiality": "material",
+          "sample_solution": "Im Praktikum erprobst du unter Anleitung berufliche Tätigkeiten und prüfst deinen Berufswunsch.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Regelklasse: zwei jeweils mindestens einwöchige; M-Zug: ein mindestens einwöchiges Praktikum.",
+              "Keines, Praktika gibt es erst in der 10. Klasse."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8H2RT2FYQMTTMEWM53K3725",
+          "slug": "wib8-bo-praktikum-erproben-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Was hältst du in einem Praktikumstagebuch fest?",
+          "concept": "Tätigkeiten, Beobachtungen und deine persönliche Einschätzung.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=bo-praktikum-erproben",
+          "materiality": "material",
+          "sample_solution": "Jeden Tag notierst du, was du selbst getan hast, was du bei anderen beobachtet hast und wie du es erlebt hast; Fotos nur mit Erlaubnis."
+        }
+      ]
+    },
+    {
+      "id": "01M8H2RT2FYQMTTMEWM53K370X",
+      "atom_uri": "urn:zam:atom:01M8H2RT2FYQMTTMEWM53K370X",
+      "namespace": "zam-academy-wirtschaft-mittelschule-8",
+      "slug": "wib8-bo-praktikum-dokumentieren",
+      "title": "Das Betriebspraktikum vorbereiten, dokumentieren und präsentieren",
+      "domain": "wib/berufsorientierung",
+      "reduction": "formal",
+      "typical_age_min": 13.5,
+      "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=bo-praktikum-dokumentieren",
+      "prerequisites": [
+        {
+          "atom_id": "01M8H2RT2FYQMTTMEWM53K370W",
+          "type": "hard",
+          "rationale": "Dokumentation und Präsentation bauen auf den Erfahrungen im Praktikum auf."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-mittelschule-8",
+          "topic_code": "lb2",
+          "topic_title": "Berufsorientierung"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "track": "R",
+          "subject": "wib",
+          "topic_code": "lb2",
+          "topic_title": "Berufsorientierung",
+          "exam_relevant": false
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "track": "M",
+          "subject": "wib",
+          "topic_code": "lb2",
+          "topic_title": "Berufsorientierung",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8H2RT2FYQMTTMEWM53K3726",
+          "slug": "wib8-bo-praktikum-dokumentieren-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Was gehört zur organisatorischen Vorbereitung eines Praktikums?",
+          "concept": "Weg, Arbeitszeit, Kleidung, Ansprechpartner und das Vorgehen bei Krankheit klären.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=bo-praktikum-dokumentieren",
+          "materiality": "material",
+          "sample_solution": "Bei Krankheit meldest du dich vor Arbeitsbeginn im Betrieb und informierst die Schule.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Weg, Arbeitszeit, Kleidung, Ansprechpartner und das Vorgehen bei Krankheit klären.",
+              "Den Praktikumsbericht schreiben und präsentieren."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8H2RT2FYQMTTMEWM53K3727",
+          "slug": "wib8-bo-praktikum-dokumentieren-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Was gehört zur Nachbereitung des Betriebspraktikums?",
+          "concept": "Bericht oder Mappe erstellen, präsentieren und eine Folgerung für den Berufswahlprozess ziehen.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=bo-praktikum-dokumentieren",
+          "materiality": "material",
+          "sample_solution": "Die Präsentation endet mit einem Fazit, ob du den Beruf weiterverfolgst; Bescheinigung und Folgerung kommen ins Portfolio."
+        }
+      ]
+    },
+    {
+      "id": "01M8H2RT2FYQMTTMEWM53K370Y",
+      "atom_uri": "urn:zam:atom:01M8H2RT2FYQMTTMEWM53K370Y",
+      "namespace": "zam-academy-wirtschaft-mittelschule-8",
+      "slug": "wib8-bo-bewerbung-praktikum",
+      "title": "Sich um einen Praktikumsplatz bewerben",
+      "domain": "wib/berufsorientierung",
+      "reduction": "formal",
+      "typical_age_min": 13.5,
+      "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=bo-bewerbung-praktikum",
+      "prerequisites": [
+        {
+          "atom_id": "01M8H2RT2FYQMTTMEWM53K370W",
+          "type": "hard",
+          "rationale": "Für das Praktikum brauchst du zuerst einen Praktikumsplatz."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-mittelschule-8",
+          "topic_code": "lb2",
+          "topic_title": "Berufsorientierung"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "track": "R",
+          "subject": "wib",
+          "topic_code": "lb2",
+          "topic_title": "Berufsorientierung",
+          "exam_relevant": false
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "track": "M",
+          "subject": "wib",
+          "topic_code": "lb2",
+          "topic_title": "Berufsorientierung",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8H2RT2FYQMTTMEWM53K3728",
+          "slug": "wib8-bo-bewerbung-praktikum-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Aus welchen Teilen besteht eine Bewerbung um einen Praktikumsplatz meist?",
+          "concept": "Anschreiben und tabellarischer Lebenslauf, oft mit einer Kopie des letzten Zeugnisses.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=bo-bewerbung-praktikum",
+          "materiality": "material",
+          "sample_solution": "Das Anschreiben passt auf eine Seite und nennt Interesse und Stärken; der Lebenslauf zeigt Daten, Schule, Kenntnisse und Interessen.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Anschreiben und tabellarischer Lebenslauf, oft mit einer Kopie des letzten Zeugnisses.",
+              "Nur aus einem Foto und der Telefonnummer."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8H2RT2FYQMTTMEWM53K3729",
+          "slug": "wib8-bo-bewerbung-praktikum-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Wie ist ein Anschreiben aufgebaut?",
+          "concept": "Absender, Empfänger, Ort und Datum, Betreff, Anrede, Einleitung, Hauptteil, Schluss, Gruß, Unterschrift und Anlagen.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=bo-bewerbung-praktikum",
+          "materiality": "material",
+          "sample_solution": "Im Hauptteil begründest du dein Interesse an Beruf und Betrieb und belegst Stärken mit Beispielen; vor dem Absenden prüfst du alles mit einer Checkliste."
+        }
+      ]
+    },
+    {
+      "id": "01M8H2RT2FYQMTTMEWM53K370Z",
+      "atom_uri": "urn:zam:atom:01M8H2RT2FYQMTTMEWM53K370Z",
+      "namespace": "zam-academy-wirtschaft-mittelschule-8",
+      "slug": "wib8-bo-bewerbungsmappe-ausbildung",
+      "title": "Eine vollständige Bewerbungsmappe für einen Ausbildungsplatz",
+      "domain": "wib/berufsorientierung",
+      "reduction": "formal",
+      "typical_age_min": 13.5,
+      "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=bo-bewerbungsmappe-ausbildung",
+      "prerequisites": [
+        {
+          "atom_id": "01M8H2RT2FYQMTTMEWM53K370Y",
+          "type": "hard",
+          "rationale": "Die Bewerbungsmappe erweitert Anschreiben und Lebenslauf der Praktikumsbewerbung."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-mittelschule-8",
+          "topic_code": "lb2",
+          "topic_title": "Berufsorientierung"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "track": "R",
+          "subject": "wib",
+          "topic_code": "lb2",
+          "topic_title": "Berufsorientierung",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8H2RT2FYQMTTMEWM53K372A",
+          "slug": "wib8-bo-bewerbungsmappe-ausbildung-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Was gehört in eine vollständige Bewerbungsmappe für einen Ausbildungsplatz?",
+          "concept": "Anschreiben, Lebenslauf und Anlagen wie die letzten beiden Zeugnisse und Praktikumsnachweise.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=bo-bewerbungsmappe-ausbildung",
+          "materiality": "material",
+          "sample_solution": "Ein Deckblatt ist optional, ein Foto freiwillig; jede Bewerbung wird auf den Betrieb zugeschnitten.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Anschreiben, Lebenslauf und Anlagen wie die letzten beiden Zeugnisse und Praktikumsnachweise.",
+              "Alle Zeugnisse seit der Grundschule und private Urlaubsfotos."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8H2RT2FYQMTTMEWM53K372B",
+          "slug": "wib8-bo-bewerbungsmappe-ausbildung-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Worauf achtest du bei einer Online-Bewerbung per E-Mail?",
+          "concept": "Alle Unterlagen in einer PDF-Datei mit eindeutigem Namen, seriöse E-Mail-Adresse, klarer Betreff und kurzer Begleittext.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=bo-bewerbungsmappe-ausbildung",
+          "materiality": "material",
+          "sample_solution": "Zum Beispiel heißt die Datei Bewerbung_Beruf_Name.pdf; vor dem Senden lässt du die Unterlagen prüfen und schickst dir eine Probe-Mail."
+        }
+      ]
+    },
+    {
+      "id": "01M8H2RT2FYQMTTMEWM53K3710",
+      "atom_uri": "urn:zam:atom:01M8H2RT2FYQMTTMEWM53K3710",
+      "namespace": "zam-academy-wirtschaft-mittelschule-8",
+      "slug": "wib8-bo-vorstellungsgespraech",
+      "title": "Vorstellungsgespräche erproben: Vorbereitung und persönliche Wirkung",
+      "domain": "wib/berufsorientierung",
+      "reduction": "formal",
+      "typical_age_min": 13.5,
+      "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=bo-vorstellungsgespraech",
+      "prerequisites": [
+        {
+          "atom_id": "01M8H2RT2FYQMTTMEWM53K370Z",
+          "type": "hard",
+          "rationale": "Auf eine erfolgreiche Bewerbung folgt die Einladung zum Gespräch."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-mittelschule-8",
+          "topic_code": "lb2",
+          "topic_title": "Berufsorientierung"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "track": "R",
+          "subject": "wib",
+          "topic_code": "lb2",
+          "topic_title": "Berufsorientierung",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8H2RT2FYQMTTMEWM53K372C",
+          "slug": "wib8-bo-vorstellungsgespraech-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Welche vier Merkmale bestimmen deine persönliche Wirkung im Vorstellungsgespräch?",
+          "concept": "Kleidung, Gestik, Mimik und Sprache.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=bo-vorstellungsgespraech",
+          "materiality": "material",
+          "sample_solution": "Passende Kleidung, offene Haltung, freundlicher Blickkontakt und eine klare, höfliche Sprache wirken positiv.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Kleidung, Gestik, Mimik und Sprache.",
+              "Handymarke, Frisur, Schuhgröße und Lieblingsfach."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8H2RT2FYQMTTMEWM53K372D",
+          "slug": "wib8-bo-vorstellungsgespraech-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Wie bereitest du dich auf ein Vorstellungsgespräch vor?",
+          "concept": "Betrieb recherchieren, Antworten auf typische Fragen und eigene Fragen notieren, Weg mit Puffer planen und üben.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=bo-vorstellungsgespraech",
+          "materiality": "material",
+          "sample_solution": "Im Rollenspiel mit Beobachtungsbogen bekommst du Rückmeldung zu Inhalt und Wirkung und kannst gezielt verbessern."
+        }
+      ]
+    },
+    {
+      "id": "01M8H2RT2FYQMTTMEWM53K3711",
+      "atom_uri": "urn:zam:atom:01M8H2RT2FYQMTTMEWM53K3711",
+      "namespace": "zam-academy-wirtschaft-mittelschule-8",
+      "slug": "wib8-bo-lebensplan-schullaufbahn",
+      "title": "Lebensplanentwurf, Schullaufbahn und Alternativen zur Berufswahl",
+      "domain": "wib/berufsorientierung",
+      "reduction": "formal",
+      "typical_age_min": 13.5,
+      "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=bo-lebensplan-schullaufbahn",
+      "prerequisites": [
+        {
+          "atom_id": "01M8H2RT2FYQMTTMEWM53K370V",
+          "type": "hard",
+          "rationale": "Der Lebensplan verbindet dein Profil mit Schullaufbahn und Berufswunsch."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-mittelschule-8",
+          "topic_code": "lb2",
+          "topic_title": "Berufsorientierung"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "track": "M",
+          "subject": "wib",
+          "topic_code": "lb2",
+          "topic_title": "Berufsorientierung",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8H2RT2FYQMTTMEWM53K372E",
+          "slug": "wib8-bo-lebensplan-schullaufbahn-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Was beschreibt ein Lebensplanentwurf?",
+          "concept": "Wie du dir Beruf, Wohnen, Familie, Freizeit und Geld in einigen Jahren vorstellst.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=bo-lebensplan-schullaufbahn",
+          "materiality": "material",
+          "sample_solution": "Der Vergleich mit Entwürfen anderer zeigt, was dir besonders wichtig ist.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Wie du dir Beruf, Wohnen, Familie, Freizeit und Geld in einigen Jahren vorstellst.",
+              "Nur den Stundenplan der nächsten Woche."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8H2RT2FYQMTTMEWM53K372F",
+          "slug": "wib8-bo-lebensplan-schullaufbahn-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Warum prüfst du im Lebensplan dein Leistungsvermögen und formulierst Alternativen?",
+          "concept": "Damit Berufswunsch und Schullaufbahn realistisch zusammenpassen und du einen Plan B hast.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=bo-lebensplan-schullaufbahn",
+          "materiality": "material",
+          "sample_solution": "Passen die Noten nicht zum mittleren Schulabschluss oder zum Wunschberuf, passt du Lernplan oder Weg an; ein verwandter Beruf dient als Alternative."
+        }
+      ]
+    },
+    {
+      "id": "01M8H2RT2FYQMTTMEWM53K3712",
+      "atom_uri": "urn:zam:atom:01M8H2RT2FYQMTTMEWM53K3712",
+      "namespace": "zam-academy-wirtschaft-mittelschule-8",
+      "slug": "wib8-wi-betriebserkundung-grundfunktionen",
+      "title": "Betriebserkundung: Beschaffung, Produktion und Absatz",
+      "domain": "wib/wirtschaft",
+      "reduction": "formal",
+      "typical_age_min": 13.5,
+      "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=wi-betriebserkundung-grundfunktionen",
+      "prerequisites": [],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-mittelschule-8",
+          "topic_code": "lb3",
+          "topic_title": "Wirtschaft"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "track": "R",
+          "subject": "wib",
+          "topic_code": "lb3",
+          "topic_title": "Wirtschaft",
+          "exam_relevant": false
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "track": "M",
+          "subject": "wib",
+          "topic_code": "lb3",
+          "topic_title": "Wirtschaft",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8H2RT2FYQMTTMEWM53K372G",
+          "slug": "wib8-wi-betriebserkundung-grundfunktionen-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Welche drei Grundfunktionen hat jeder Betrieb?",
+          "concept": "Beschaffung, Produktion und Absatz.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=wi-betriebserkundung-grundfunktionen",
+          "materiality": "material",
+          "sample_solution": "Beschaffung kauft ein und lagert, Produktion stellt her, Absatz verkauft; bei einer Erkundung wählst du einen Schwerpunkt.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Beschaffung, Produktion und Absatz.",
+              "Werbung, Urlaub und Pause."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8H2RT2FYQMTTMEWM53K372H",
+          "slug": "wib8-wi-betriebserkundung-grundfunktionen-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Wie berechnest du den Bezugspreis eines Angebots?",
+          "concept": "Bezugspreis = Listenpreis − Rabatt + Bezugskosten.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=wi-betriebserkundung-grundfunktionen",
+          "materiality": "material",
+          "sample_solution": "Beispiel: 21,00 € minus 10 % Rabatt plus 2,50 € Lieferkosten ergibt 21,40 €; ein Angebot für 20,00 € frei Haus ist günstiger."
+        }
+      ]
+    },
+    {
+      "id": "01M8H2RT2FYQMTTMEWM53K3713",
+      "atom_uri": "urn:zam:atom:01M8H2RT2FYQMTTMEWM53K3713",
+      "namespace": "zam-academy-wirtschaft-mittelschule-8",
+      "slug": "wib8-wi-betriebliche-kriterien",
+      "title": "Betriebe beurteilen: ökologisches Handeln und Mensch am Arbeitsplatz",
+      "domain": "wib/wirtschaft",
+      "reduction": "formal",
+      "typical_age_min": 13.5,
+      "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=wi-betriebliche-kriterien",
+      "prerequisites": [
+        {
+          "atom_id": "01M8H2RT2FYQMTTMEWM53K3712",
+          "type": "hard",
+          "rationale": "Die Kriterien ergänzen die Erkundung der Grundfunktionen."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-mittelschule-8",
+          "topic_code": "lb3",
+          "topic_title": "Wirtschaft"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "track": "R",
+          "subject": "wib",
+          "topic_code": "lb3",
+          "topic_title": "Wirtschaft",
+          "exam_relevant": false
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "track": "M",
+          "subject": "wib",
+          "topic_code": "lb3",
+          "topic_title": "Wirtschaft",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8H2RT2FYQMTTMEWM53K372J",
+          "slug": "wib8-wi-betriebliche-kriterien-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Welche zwei weiteren Kriterien nennt der Lehrplan für die Beurteilung von Betrieben?",
+          "concept": "Ökologisches Handeln und den Menschen am Arbeitsplatz.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=wi-betriebliche-kriterien",
+          "materiality": "material",
+          "sample_solution": "Ökologisch: Energie, Abfall, Verpackung; Mensch: Gesundheitsschutz, Arbeitszeit, Betriebsklima, Weiterbildung.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Ökologisches Handeln und den Menschen am Arbeitsplatz.",
+              "Die Farbe des Firmenlogos und die Zahl der Parkplätze."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8H2RT2FYQMTTMEWM53K372K",
+          "slug": "wib8-wi-betriebliche-kriterien-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Wie berechnest du die Energieersparnis einer LED-Umstellung?",
+          "concept": "(alte Leistung − neue Leistung) · Anzahl · Betriebsstunden : 1.000 ergibt die eingesparten kWh.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=wi-betriebliche-kriterien",
+          "materiality": "material",
+          "sample_solution": "Beispiel: (58 W − 24 W) · 40 · 2.500 h = 3.400 kWh; bei 0,25 € je kWh sind das 850,00 € im Jahr."
+        }
+      ]
+    },
+    {
+      "id": "01M8H2RT2FYQMTTMEWM53K3714",
+      "atom_uri": "urn:zam:atom:01M8H2RT2FYQMTTMEWM53K3714",
+      "namespace": "zam-academy-wirtschaft-mittelschule-8",
+      "slug": "wib8-wi-geschaeft-planen",
+      "title": "Ein Geschäft auf einem Markt planen und organisieren",
+      "domain": "wib/wirtschaft",
+      "reduction": "formal",
+      "typical_age_min": 13.5,
+      "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=wi-geschaeft-planen",
+      "prerequisites": [
+        {
+          "atom_id": "01M8H2RT2FYQMTTMEWM53K3712",
+          "type": "hard",
+          "rationale": "Ein eigenes Geschäft durchläuft Beschaffung und Absatz."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-mittelschule-8",
+          "topic_code": "lb3",
+          "topic_title": "Wirtschaft"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "track": "R",
+          "subject": "wib",
+          "topic_code": "lb3",
+          "topic_title": "Wirtschaft",
+          "exam_relevant": false
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "track": "M",
+          "subject": "wib",
+          "topic_code": "lb3",
+          "topic_title": "Wirtschaft",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8H2RT2FYQMTTMEWM53K372M",
+          "slug": "wib8-wi-geschaeft-planen-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Was klärst du zuerst, wenn du ein Geschäft auf einem Markt planst?",
+          "concept": "Nachfrage, Zielgruppe und Konkurrenz.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=wi-geschaeft-planen",
+          "materiality": "material",
+          "sample_solution": "Erst danach legst du Angebot und Beschaffung fest, kalkulierst den Preis und organisierst Ablauf, Kasse und Werbung.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Nachfrage, Zielgruppe und Konkurrenz.",
+              "Welche Farbe die Tischdecke am Stand hat."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8H2RT2FYQMTTMEWM53K372N",
+          "slug": "wib8-wi-geschaeft-planen-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Wie kalkulierst du einen Verkaufspreis mit Zuschlag?",
+          "concept": "Verkaufspreis = Kosten je Stück · (1 + Zuschlag in % : 100), abgeglichen mit dem Marktpreis.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=wi-geschaeft-planen",
+          "materiality": "material",
+          "sample_solution": "Beispiel: 0,40 € Kosten plus 150 % Zuschlag ergeben 1,00 €; der Preis muss auch zur Konkurrenz passen."
+        }
+      ]
+    },
+    {
+      "id": "01M8H2RT2FYQMTTMEWM53K3715",
+      "atom_uri": "urn:zam:atom:01M8H2RT2FYQMTTMEWM53K3715",
+      "namespace": "zam-academy-wirtschaft-mittelschule-8",
+      "slug": "wib8-wi-gewinn-verlust",
+      "title": "Mit einer einfachen Gewinn- und Verlustrechnung den Erfolg bewerten",
+      "domain": "wib/wirtschaft",
+      "reduction": "formal",
+      "typical_age_min": 13.5,
+      "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=wi-gewinn-verlust",
+      "prerequisites": [
+        {
+          "atom_id": "01M8H2RT2FYQMTTMEWM53K3714",
+          "type": "hard",
+          "rationale": "Die GuV bewertet das geplante Geschäft."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-mittelschule-8",
+          "topic_code": "lb3",
+          "topic_title": "Wirtschaft"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "track": "R",
+          "subject": "wib",
+          "topic_code": "lb3",
+          "topic_title": "Wirtschaft",
+          "exam_relevant": false
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "track": "M",
+          "subject": "wib",
+          "topic_code": "lb3",
+          "topic_title": "Wirtschaft",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8H2RT2FYQMTTMEWM53K372P",
+          "slug": "wib8-wi-gewinn-verlust-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Was steht in der einfachen Gewinn- und Verlustrechnung auf der Ertragsseite?",
+          "concept": "Die Erträge, vor allem die Umsatzerlöse aus dem Verkauf.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=wi-gewinn-verlust",
+          "materiality": "material",
+          "sample_solution": "Auf der Aufwandsseite stehen Wareneinsatz, Miete und Werbung; ein Gewinn steht als Ausgleich auf der Aufwandsseite.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Die Erträge, vor allem die Umsatzerlöse aus dem Verkauf.",
+              "Die Standmiete und der Wareneinsatz."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8H2RT2FYQMTTMEWM53K372Q",
+          "slug": "wib8-wi-gewinn-verlust-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Wie ermittelst du mit der GuV den Erfolg eines Marktstands?",
+          "concept": "Erträge minus Aufwendungen ergibt den Gewinn oder, wenn negativ, den Verlust.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=wi-gewinn-verlust",
+          "materiality": "material",
+          "sample_solution": "Beispiel: 240,00 € Umsatzerlöse minus 204,00 € Aufwendungen ergeben 36,00 € Gewinn."
+        }
+      ]
+    },
+    {
+      "id": "01M8H2RT2FYQMTTMEWM53K3716",
+      "atom_uri": "urn:zam:atom:01M8H2RT2FYQMTTMEWM53K3716",
+      "namespace": "zam-academy-wirtschaft-mittelschule-8",
+      "slug": "wib8-wi-wirtschaftskreislauf",
+      "title": "Der einfache Wirtschaftskreislauf und dein eigenes wirtschaftliches Handeln",
+      "domain": "wib/wirtschaft",
+      "reduction": "formal",
+      "typical_age_min": 13.5,
+      "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=wi-wirtschaftskreislauf",
+      "prerequisites": [
+        {
+          "atom_id": "01M8H2RT2FYQMTTMEWM53K3715",
+          "type": "hard",
+          "rationale": "Umsatzerlöse der Unternehmen sind die Konsumausgaben der Haushalte."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-mittelschule-8",
+          "topic_code": "lb3",
+          "topic_title": "Wirtschaft"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "track": "R",
+          "subject": "wib",
+          "topic_code": "lb3",
+          "topic_title": "Wirtschaft",
+          "exam_relevant": false
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "track": "M",
+          "subject": "wib",
+          "topic_code": "lb3",
+          "topic_title": "Wirtschaft",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8H2RT2FYQMTTMEWM53K372R",
+          "slug": "wib8-wi-wirtschaftskreislauf-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Was fließt im einfachen Wirtschaftskreislauf von den Haushalten zu den Unternehmen?",
+          "concept": "Arbeitsleistung und Konsumausgaben.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=wi-wirtschaftskreislauf",
+          "materiality": "material",
+          "sample_solution": "In Gegenrichtung zahlen Unternehmen Einkommen und liefern Güter und Dienstleistungen.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Arbeitsleistung und Konsumausgaben.",
+              "Einkommen sowie Güter und Dienstleistungen."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8H2RT2FYQMTTMEWM53K372S",
+          "slug": "wib8-wi-wirtschaftskreislauf-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Wie wirkt Sparen der Haushalte im einfachen Wirtschaftskreislauf?",
+          "concept": "Einkommen = Konsumausgaben + Ersparnis; mehr Sparen senkt zunächst die Konsumausgaben und damit die Einnahmen der Unternehmen.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=wi-wirtschaftskreislauf",
+          "materiality": "material",
+          "sample_solution": "Beispiel: 90.000 € Einkommen bei 10 % Sparen ergeben 81.000 € Konsum; über Banken kann das Gesparte als Kredit an Unternehmen gehen."
+        }
+      ]
+    },
+    {
+      "id": "01M8H2RT2FYQMTTMEWM53K3717",
+      "atom_uri": "urn:zam:atom:01M8H2RT2FYQMTTMEWM53K3717",
+      "namespace": "zam-academy-wirtschaft-mittelschule-8",
+      "slug": "wib8-wi-entlohnungsformen",
+      "title": "Formen der Entlohnung: Zeitlohn und Leistungslohn",
+      "domain": "wib/wirtschaft",
+      "reduction": "formal",
+      "typical_age_min": 13.5,
+      "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=wi-entlohnungsformen",
+      "prerequisites": [],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-mittelschule-8",
+          "topic_code": "lb3",
+          "topic_title": "Wirtschaft"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "track": "R",
+          "subject": "wib",
+          "topic_code": "lb3",
+          "topic_title": "Wirtschaft",
+          "exam_relevant": false
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "track": "M",
+          "subject": "wib",
+          "topic_code": "lb3",
+          "topic_title": "Wirtschaft",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8H2RT2FYQMTTMEWM53K372T",
+          "slug": "wib8-wi-entlohnungsformen-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Was unterscheidet Zeitlohn und Leistungslohn?",
+          "concept": "Zeitlohn bezahlt die Arbeitszeit, Leistungslohn die erbrachte Leistung.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=wi-entlohnungsformen",
+          "materiality": "material",
+          "sample_solution": "Formen des Leistungslohns sind Akkordlohn, Prämienlohn und Provision; Akkordarbeit ist für Jugendliche verboten (§ 23 JArbSchG).",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Zeitlohn bezahlt die Arbeitszeit, Leistungslohn die erbrachte Leistung.",
+              "Zeitlohn gibt es nur für Auszubildende, Leistungslohn nur für Chefs."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8H2RT2FYQMTTMEWM53K372V",
+          "slug": "wib8-wi-entlohnungsformen-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Wie berechnest du den Akkordlohn im Minutenakkord?",
+          "concept": "Stückzahl · Vorgabezeit je Stück · Minutenfaktor (Akkordrichtsatz : 60).",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=wi-entlohnungsformen",
+          "materiality": "material",
+          "sample_solution": "Beispiel: 18,00 € Richtsatz und 12 Stück Normalleistung ergeben 5 Min. und 0,30 €; 112 Stück bringen 168,00 €."
+        }
+      ]
+    },
+    {
+      "id": "01M8H2RT2FYQMTTMEWM53K3718",
+      "atom_uri": "urn:zam:atom:01M8H2RT2FYQMTTMEWM53K3718",
+      "namespace": "zam-academy-wirtschaft-mittelschule-8",
+      "slug": "wib8-wi-mindestlohn-tariflohn",
+      "title": "Mindestlohn und Tariflohn",
+      "domain": "wib/wirtschaft",
+      "reduction": "formal",
+      "typical_age_min": 13.5,
+      "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=wi-mindestlohn-tariflohn",
+      "prerequisites": [
+        {
+          "atom_id": "01M8H2RT2FYQMTTMEWM53K3717",
+          "type": "hard",
+          "rationale": "Mindest- und Tariflohn setzen die Untergrenzen für jede Lohnform."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-mittelschule-8",
+          "topic_code": "lb3",
+          "topic_title": "Wirtschaft"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "track": "R",
+          "subject": "wib",
+          "topic_code": "lb3",
+          "topic_title": "Wirtschaft",
+          "exam_relevant": false
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "track": "M",
+          "subject": "wib",
+          "topic_code": "lb3",
+          "topic_title": "Wirtschaft",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8H2RT2FYQMTTMEWM53K372W",
+          "slug": "wib8-wi-mindestlohn-tariflohn-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Wie hoch ist der allgemeine gesetzliche Mindestlohn seit dem 1. Januar 2026?",
+          "concept": "13,90 € brutto je Zeitstunde.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=wi-mindestlohn-tariflohn",
+          "materiality": "material",
+          "sample_solution": "Nicht erfasst sind unter anderem Jugendliche unter 18 ohne Berufsabschluss, Pflichtpraktika und Auszubildende (§ 22 MiLoG).",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "13,90 € brutto je Zeitstunde.",
+              "10,00 € brutto je Zeitstunde."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8H2RT2FYQMTTMEWM53K372X",
+          "slug": "wib8-wi-mindestlohn-tariflohn-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Wer vereinbart Tariflöhne, und wie stehen sie zum Mindestlohn?",
+          "concept": "Gewerkschaften und Arbeitgeberverbände in Tarifverträgen; Tariflöhne liegen meist über dem Mindestlohn.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=wi-mindestlohn-tariflohn",
+          "materiality": "material",
+          "sample_solution": "Die Tarifautonomie ist durch Art. 9 Abs. 3 GG geschützt; aktuelle Tariflöhne recherchierst du bei Gewerkschaft oder Arbeitgeberverband."
+        }
+      ]
+    },
+    {
+      "id": "01M8H2RT2FYQMTTMEWM53K3719",
+      "atom_uri": "urn:zam:atom:01M8H2RT2FYQMTTMEWM53K3719",
+      "namespace": "zam-academy-wirtschaft-mittelschule-8",
+      "slug": "wib8-wi-lohnabrechnung",
+      "title": "Gesetzliche Abgaben und die Lohn- und Gehaltsabrechnung prüfen",
+      "domain": "wib/wirtschaft",
+      "reduction": "formal",
+      "typical_age_min": 13.5,
+      "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=wi-lohnabrechnung",
+      "prerequisites": [
+        {
+          "atom_id": "01M8H2RT2FYQMTTMEWM53K3718",
+          "type": "hard",
+          "rationale": "Auf der Abrechnung prüfst du auch, ob Mindest- oder Tariflohn eingehalten sind."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-mittelschule-8",
+          "topic_code": "lb3",
+          "topic_title": "Wirtschaft"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "track": "R",
+          "subject": "wib",
+          "topic_code": "lb3",
+          "topic_title": "Wirtschaft",
+          "exam_relevant": false
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "track": "M",
+          "subject": "wib",
+          "topic_code": "lb3",
+          "topic_title": "Wirtschaft",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8H2RT2FYQMTTMEWM53K372Y",
+          "slug": "wib8-wi-lohnabrechnung-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Welche Versicherung zahlt der Arbeitgeber allein, ohne Abzug vom Lohn?",
+          "concept": "Die gesetzliche Unfallversicherung.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=wi-lohnabrechnung",
+          "materiality": "material",
+          "sample_solution": "Renten-, Kranken-, Pflege- und Arbeitslosenversicherung tragen Arbeitnehmer und Arbeitgeber grundsätzlich je zur Hälfte.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Die gesetzliche Unfallversicherung.",
+              "Die Rentenversicherung."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8H2RT2FYQMTTMEWM53K372Z",
+          "slug": "wib8-wi-lohnabrechnung-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Wie kommst du vom Bruttolohn zum Nettolohn?",
+          "concept": "Brutto minus Lohnsteuer, gegebenenfalls Kirchensteuer und Solidaritätszuschlag, minus Arbeitnehmeranteil zur Sozialversicherung.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=wi-lohnabrechnung",
+          "materiality": "material",
+          "sample_solution": "Beispiel im Modell: 2.400,00 € minus 190,00 € Lohnsteuer, 15,20 € Kirchensteuer und 504,00 € Sozialversicherung ergeben 1.690,80 €."
+        }
+      ]
+    },
+    {
+      "id": "01M8H2RT2FYQMTTMEWM53K371A",
+      "atom_uri": "urn:zam:atom:01M8H2RT2FYQMTTMEWM53K371A",
+      "namespace": "zam-academy-wirtschaft-mittelschule-8",
+      "slug": "wib8-re-praktikum-bestimmungen",
+      "title": "Gesetzliche Bestimmungen für das Betriebspraktikum",
+      "domain": "wib/recht",
+      "reduction": "formal",
+      "typical_age_min": 13.5,
+      "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=re-praktikum-bestimmungen",
+      "prerequisites": [],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-mittelschule-8",
+          "topic_code": "lb4",
+          "topic_title": "Recht"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "track": "R",
+          "subject": "wib",
+          "topic_code": "lb4",
+          "topic_title": "Recht",
+          "exam_relevant": false
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "track": "M",
+          "subject": "wib",
+          "topic_code": "lb4",
+          "topic_title": "Recht",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8H2RT2FYQMTTMEWM53K3730",
+          "slug": "wib8-re-praktikum-bestimmungen-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Wie lange darfst du im Betriebspraktikum während der Vollzeitschulpflicht höchstens arbeiten?",
+          "concept": "Höchstens 7 Stunden täglich und 35 Stunden wöchentlich.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=re-praktikum-bestimmungen",
+          "materiality": "material",
+          "sample_solution": "§ 5 Abs. 2 JArbSchG erlaubt das Praktikum und verweist auf § 7 Satz 1 Nr. 2; dazu gelten Pausen, 6 bis 20 Uhr und fünf Tage pro Woche.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Höchstens 7 Stunden täglich und 35 Stunden wöchentlich.",
+              "Höchstens 8 Stunden täglich und 40 Stunden wöchentlich."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8H2RT2FYQMTTMEWM53K3731",
+          "slug": "wib8-re-praktikum-bestimmungen-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Welche Ruhepausen schreibt § 11 JArbSchG vor?",
+          "concept": "30 Minuten bei mehr als 4,5 bis 6 Stunden Arbeit, 60 Minuten bei mehr als 6 Stunden; eine Pause dauert mindestens 15 Minuten.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=re-praktikum-bestimmungen",
+          "materiality": "material",
+          "sample_solution": "Beispiel: 8 bis 16 Uhr mit 60 Minuten Pause ergibt 7 Stunden Arbeit; mit nur 30 Minuten Pause wäre der Plan unzulässig."
+        }
+      ]
+    },
+    {
+      "id": "01M8H2RT2FYQMTTMEWM53K371B",
+      "atom_uri": "urn:zam:atom:01M8H2RT2FYQMTTMEWM53K371B",
+      "namespace": "zam-academy-wirtschaft-mittelschule-8",
+      "slug": "wib8-re-schutzbestimmungen-notwendigkeit",
+      "title": "Warum Schutzbestimmungen notwendig sind",
+      "domain": "wib/recht",
+      "reduction": "formal",
+      "typical_age_min": 13.5,
+      "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=re-schutzbestimmungen-notwendigkeit",
+      "prerequisites": [
+        {
+          "atom_id": "01M8H2RT2FYQMTTMEWM53K371A",
+          "type": "hard",
+          "rationale": "Die Begründung bezieht sich auf die einzelnen Bestimmungen."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-mittelschule-8",
+          "topic_code": "lb4",
+          "topic_title": "Recht"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "track": "R",
+          "subject": "wib",
+          "topic_code": "lb4",
+          "topic_title": "Recht",
+          "exam_relevant": false
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "track": "M",
+          "subject": "wib",
+          "topic_code": "lb4",
+          "topic_title": "Recht",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8H2RT2FYQMTTMEWM53K3732",
+          "slug": "wib8-re-schutzbestimmungen-notwendigkeit-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Warum dürfen Jugendliche keine Arbeiten mit besonderen Unfallgefahren übernehmen?",
+          "concept": "Weil ihnen oft die Erfahrung fehlt, solche Gefahren rechtzeitig zu erkennen (§ 22 JArbSchG).",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=re-schutzbestimmungen-notwendigkeit",
+          "materiality": "material",
+          "sample_solution": "Schutzbestimmungen sichern Gesundheit, Erholung und Schulerfolg, ohne das Lernen im Praktikum zu verhindern.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Weil ihnen oft die Erfahrung fehlt, solche Gefahren rechtzeitig zu erkennen (§ 22 JArbSchG).",
+              "Weil Betriebe Jugendlichen grundsätzlich nichts zutrauen."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8H2RT2FYQMTTMEWM53K3733",
+          "slug": "wib8-re-schutzbestimmungen-notwendigkeit-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Wozu dienen Arbeitszeitgrenzen und Nachtruhe für Jugendliche?",
+          "concept": "Sie sichern Erholung und Schlaf und schützen den Schulerfolg.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=re-schutzbestimmungen-notwendigkeit",
+          "materiality": "material",
+          "sample_solution": "Jugendliche sind noch in der Entwicklung; begrenzte Arbeitszeit, Pausen und Arbeit nur zwischen 6 und 20 Uhr verhindern Überlastung."
+        }
+      ]
+    },
+    {
+      "id": "01M8H2RT2FYQMTTMEWM53K371C",
+      "atom_uri": "urn:zam:atom:01M8H2RT2FYQMTTMEWM53K371C",
+      "namespace": "zam-academy-wirtschaft-mittelschule-8",
+      "slug": "wib8-re-praktikum-pflichten-versicherung",
+      "title": "Rechte, Pflichten und Versicherungsschutz im Praktikum",
+      "domain": "wib/recht",
+      "reduction": "formal",
+      "typical_age_min": 13.5,
+      "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=re-praktikum-pflichten-versicherung",
+      "prerequisites": [
+        {
+          "atom_id": "01M8H2RT2FYQMTTMEWM53K371A",
+          "type": "hard",
+          "rationale": "Rechte und Pflichten ergänzen die Arbeitszeitregeln."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-mittelschule-8",
+          "topic_code": "lb4",
+          "topic_title": "Recht"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "track": "R",
+          "subject": "wib",
+          "topic_code": "lb4",
+          "topic_title": "Recht",
+          "exam_relevant": false
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "track": "M",
+          "subject": "wib",
+          "topic_code": "lb4",
+          "topic_title": "Recht",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8H2RT2FYQMTTMEWM53K3734",
+          "slug": "wib8-re-praktikum-pflichten-versicherung-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Wer kommt für die Folgen eines Unfalls im Schulpraktikum auf?",
+          "concept": "Die gesetzliche Unfallversicherung, weil das Praktikum eine Schulveranstaltung ist.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=re-praktikum-pflichten-versicherung",
+          "materiality": "material",
+          "sample_solution": "Schüler sind nach § 2 Abs. 1 Nr. 8 SGB VII versichert; Unfälle meldest du im Betrieb und in der Schule.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Die gesetzliche Unfallversicherung, weil das Praktikum eine Schulveranstaltung ist.",
+              "Allein die Eltern über eine private Versicherung."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8H2RT2FYQMTTMEWM53K3735",
+          "slug": "wib8-re-praktikum-pflichten-versicherung-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Welche Pflichten hast du im Betriebspraktikum?",
+          "concept": "Pünktlichkeit, Anweisungen befolgen, Schutzausrüstung tragen, Verschwiegenheit und rechtzeitige Krankmeldung bei Betrieb und Schule.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=re-praktikum-pflichten-versicherung",
+          "materiality": "material",
+          "sample_solution": "Dafür hast du Anspruch auf Unterweisung über Gefahren und Pausen; einen Lohnanspruch gibt es im Pflichtpraktikum nicht (§ 22 MiLoG)."
+        }
+      ]
+    },
+    {
+      "id": "01M8H2RT2FYQMTTMEWM53K371D",
+      "atom_uri": "urn:zam:atom:01M8H2RT2FYQMTTMEWM53K371D",
+      "namespace": "zam-academy-wirtschaft-mittelschule-8",
+      "slug": "wib8-te-produktionsverfahren",
+      "title": "Technische Verfahren und Mittel der Produktion erkunden",
+      "domain": "wib/technik",
+      "reduction": "formal",
+      "typical_age_min": 13.5,
+      "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=te-produktionsverfahren",
+      "prerequisites": [],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-mittelschule-8",
+          "topic_code": "lb5",
+          "topic_title": "Technik"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "track": "R",
+          "subject": "wib",
+          "topic_code": "lb5",
+          "topic_title": "Technik",
+          "exam_relevant": false
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "track": "M",
+          "subject": "wib",
+          "topic_code": "lb5",
+          "topic_title": "Technik",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8H2RT2FYQMTTMEWM53K3736",
+          "slug": "wib8-te-produktionsverfahren-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Welche Fertigungsarten unterscheidet man nach der Stückzahl?",
+          "concept": "Einzelfertigung, Serienfertigung und Massenfertigung.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=te-produktionsverfahren",
+          "materiality": "material",
+          "sample_solution": "Einzelfertigung stellt ein Stück nach Kundenwunsch her, Serienfertigung eine begrenzte Menge, Massenfertigung sehr große Mengen.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Einzelfertigung, Serienfertigung und Massenfertigung.",
+              "Morgenfertigung, Mittagsfertigung und Abendfertigung."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8H2RT2FYQMTTMEWM53K3737",
+          "slug": "wib8-te-produktionsverfahren-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Wie berechnest du die Arbeitsproduktivität und ihre Steigerung?",
+          "concept": "Produktivität = Menge : Arbeitsstunden; Steigerung = (neu − alt) : alt · 100 %.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=te-produktionsverfahren",
+          "materiality": "material",
+          "sample_solution": "Beispiel: von Hand 2 Teile je Arbeitsstunde, mit CNC-Fräse 8; die Produktivität steigt um 300 %."
+        }
+      ]
+    },
+    {
+      "id": "01M8H2RT2FYQMTTMEWM53K371E",
+      "atom_uri": "urn:zam:atom:01M8H2RT2FYQMTTMEWM53K371E",
+      "namespace": "zam-academy-wirtschaft-mittelschule-8",
+      "slug": "wib8-te-erkundungsmethoden",
+      "title": "Erkundungsmethoden: Befragen, Beobachten und Protokollieren",
+      "domain": "wib/technik",
+      "reduction": "formal",
+      "typical_age_min": 13.5,
+      "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=te-erkundungsmethoden",
+      "prerequisites": [
+        {
+          "atom_id": "01M8H2RT2FYQMTTMEWM53K371D",
+          "type": "hard",
+          "rationale": "Die Methoden dienen der Erkundung technischer Verfahren."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-mittelschule-8",
+          "topic_code": "lb5",
+          "topic_title": "Technik"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "track": "R",
+          "subject": "wib",
+          "topic_code": "lb5",
+          "topic_title": "Technik",
+          "exam_relevant": false
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "track": "M",
+          "subject": "wib",
+          "topic_code": "lb5",
+          "topic_title": "Technik",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8H2RT2FYQMTTMEWM53K3738",
+          "slug": "wib8-te-erkundungsmethoden-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Welche drei Erkundungsmethoden nennt der Lehrplan?",
+          "concept": "Befragen, Beobachten und Protokollieren.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=te-erkundungsmethoden",
+          "materiality": "material",
+          "sample_solution": "Befragen mit Leitfaden, Beobachten mit Beobachtungsbogen, Protokollieren mit Datum, Stichpunkten und Skizze; Fotos nur mit Erlaubnis.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Befragen, Beobachten und Protokollieren.",
+              "Raten, Abschreiben und Vergessen."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8H2RT2FYQMTTMEWM53K3739",
+          "slug": "wib8-te-erkundungsmethoden-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Was unterscheidet offene und geschlossene Fragen im Interviewleitfaden?",
+          "concept": "Offene Fragen bringen ausführliche Antworten, geschlossene Fragen bringen Ja, Nein oder eine genaue Zahl.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=te-erkundungsmethoden",
+          "materiality": "material",
+          "sample_solution": "Wie funktioniert die Maschine? ist offen; Wie viele Teile schafft sie pro Stunde? ist geschlossen; ein guter Leitfaden nutzt beide."
+        }
+      ]
+    },
+    {
+      "id": "01M8H2RT2FYQMTTMEWM53K371F",
+      "atom_uri": "urn:zam:atom:01M8H2RT2FYQMTTMEWM53K371F",
+      "namespace": "zam-academy-wirtschaft-mittelschule-8",
+      "slug": "wib8-te-ergonomie-arbeitssicherheit",
+      "title": "Technik am Arbeitsplatz: Ergonomie, Arbeitssicherheit und Arbeitsschutz",
+      "domain": "wib/technik",
+      "reduction": "formal",
+      "typical_age_min": 13.5,
+      "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=te-ergonomie-arbeitssicherheit",
+      "prerequisites": [
+        {
+          "atom_id": "01M8H2RT2FYQMTTMEWM53K371D",
+          "type": "hard",
+          "rationale": "Technik in der Produktion bringt neue Gefahren für die Beschäftigten."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-mittelschule-8",
+          "topic_code": "lb5",
+          "topic_title": "Technik"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "track": "R",
+          "subject": "wib",
+          "topic_code": "lb5",
+          "topic_title": "Technik",
+          "exam_relevant": false
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "track": "M",
+          "subject": "wib",
+          "topic_code": "lb5",
+          "topic_title": "Technik",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8H2RT2FYQMTTMEWM53K373A",
+          "slug": "wib8-te-ergonomie-arbeitssicherheit-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Ab welchem Lärmpegel muss der Arbeitgeber Gehörschutz bereitstellen, ab welchem muss er getragen werden?",
+          "concept": "Ab 80 dB(A) bereitstellen, ab 85 dB(A) tragen.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=te-ergonomie-arbeitssicherheit",
+          "materiality": "material",
+          "sample_solution": "Das sind der untere und der obere Auslösewert nach §§ 6 und 8 LärmVibrationsArbSchV.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Ab 80 dB(A) bereitstellen, ab 85 dB(A) tragen.",
+              "Erst ab 120 dB(A) bereitstellen und nie tragen."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8H2RT2FYQMTTMEWM53K373B",
+          "slug": "wib8-te-ergonomie-arbeitssicherheit-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "In welcher Rangfolge setzt ein Betrieb Schutzmaßnahmen ein?",
+          "concept": "Erst technische, dann organisatorische, zuletzt persönliche Maßnahmen.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=te-ergonomie-arbeitssicherheit",
+          "materiality": "material",
+          "sample_solution": "Gefahren sind an ihrer Quelle zu bekämpfen, individuelle Schutzmaßnahmen sind nachrangig (§ 4 ArbSchG); Beispiel: erst Schallschutzhaube, dann Gehörschutz."
+        }
+      ]
+    },
+    {
+      "id": "01M8H2RT2FYQMTTMEWM53K371G",
+      "atom_uri": "urn:zam:atom:01M8H2RT2FYQMTTMEWM53K371G",
+      "namespace": "zam-academy-wirtschaft-mittelschule-8",
+      "slug": "wib8-te-qualifikation-arbeitsprozess",
+      "title": "Technik verändert Arbeitsprozesse und Qualifikationsanforderungen",
+      "domain": "wib/technik",
+      "reduction": "formal",
+      "typical_age_min": 13.5,
+      "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=te-qualifikation-arbeitsprozess",
+      "prerequisites": [
+        {
+          "atom_id": "01M8H2RT2FYQMTTMEWM53K371D",
+          "type": "hard",
+          "rationale": "Neue Produktionsmittel verändern Abläufe und Anforderungen."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-mittelschule-8",
+          "topic_code": "lb5",
+          "topic_title": "Technik"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "track": "R",
+          "subject": "wib",
+          "topic_code": "lb5",
+          "topic_title": "Technik",
+          "exam_relevant": false
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "track": "M",
+          "subject": "wib",
+          "topic_code": "lb5",
+          "topic_title": "Technik",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8H2RT2FYQMTTMEWM53K373C",
+          "slug": "wib8-te-qualifikation-arbeitsprozess-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Wie verändert Technik typischerweise die Arbeitsprozesse?",
+          "concept": "Arbeit verlagert sich vom Herstellen zum Einrichten, Überwachen, Programmieren und Warten.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=te-qualifikation-arbeitsprozess",
+          "materiality": "material",
+          "sample_solution": "Beispiel: Ein Handscanner ersetzt Papierlisten und bucht Entnahmen sofort.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Arbeit verlagert sich vom Herstellen zum Einrichten, Überwachen, Programmieren und Warten.",
+              "Technik verändert an der Arbeit gar nichts."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8H2RT2FYQMTTMEWM53K373D",
+          "slug": "wib8-te-qualifikation-arbeitsprozess-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Welche Folgen hat Technikeinsatz für die Qualifikationsanforderungen?",
+          "concept": "Gefragt sind Software- und Programmierkenntnisse, Fehlersuche und ständige Weiterbildung.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=te-qualifikation-arbeitsprozess",
+          "materiality": "material",
+          "sample_solution": "Einfache, sich wiederholende Tätigkeiten fallen eher weg, neue Aufgaben entstehen; Fachkräfte mit dualer Ausbildung bleiben gefragt."
+        }
+      ]
+    },
+    {
+      "id": "01M8H2RT2FYQMTTMEWM53K371H",
+      "atom_uri": "urn:zam:atom:01M8H2RT2FYQMTTMEWM53K371H",
+      "namespace": "zam-academy-wirtschaft-mittelschule-8",
+      "slug": "wib8-te-vor-nachteile-abwaegen",
+      "title": "Vor- und Nachteile des Technikeinsatzes an Arbeitsplätzen abwägen",
+      "domain": "wib/technik",
+      "reduction": "formal",
+      "typical_age_min": 13.5,
+      "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=te-vor-nachteile-abwaegen",
+      "prerequisites": [
+        {
+          "atom_id": "01M8H2RT2FYQMTTMEWM53K371G",
+          "type": "hard",
+          "rationale": "Die Abwägung nutzt die Wirkungen auf Arbeitsprozesse und Qualifikation."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "wirtschaft-mittelschule-8",
+          "topic_code": "lb5",
+          "topic_title": "Technik"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "track": "M",
+          "subject": "wib",
+          "topic_code": "lb5",
+          "topic_title": "Technik",
+          "exam_relevant": false
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M8H2RT2FYQMTTMEWM53K373E",
+          "slug": "wib8-te-vor-nachteile-abwaegen-check",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Wozu dienen Gewichte in einer Nutzwertanalyse?",
+          "concept": "Sie legen fest, wie wichtig jedes Kriterium für die Entscheidung ist.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=te-vor-nachteile-abwaegen",
+          "materiality": "material",
+          "sample_solution": "Andere Gewichte können zu einem anderen Ergebnis führen, deshalb müssen sie begründet werden.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Sie legen fest, wie wichtig jedes Kriterium für die Entscheidung ist.",
+              "Sie geben das Gewicht der Maschine in Kilogramm an."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M8H2RT2FYQMTTMEWM53K373F",
+          "slug": "wib8-te-vor-nachteile-abwaegen-kern",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question": "Ab welcher Jahresmenge lohnt sich eine Maschine im einfachen Kostenvergleich?",
+          "concept": "Ab Anschaffung pro Jahr geteilt durch die Ersparnis je Stück.",
+          "source_link": "https://academy.zam-os.org/wirtschaft-mittelschule-8/#lesson=te-vor-nachteile-abwaegen",
+          "materiality": "material",
+          "sample_solution": "Beispiel: 120.000 € über 8 Jahre sind 15.000 € pro Jahr; bei 2,40 € Ersparnis je Teil lohnt sie sich ab 6.250 Teilen."
+        }
+      ]
+    }
+  ]
+}

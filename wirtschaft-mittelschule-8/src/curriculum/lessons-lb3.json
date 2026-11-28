@@ -1,0 +1,534 @@
+[
+  {
+    "id": "wi-betriebserkundung-grundfunktionen",
+    "lb": 3,
+    "tracks": ["R", "M"],
+    "lehrplan": "WiB 8 · LB 3 · R8 & M8",
+    "title": "Betriebserkundung: Beschaffung, Produktion und Absatz",
+    "intro": "Jeder Betrieb beschafft, produziert und verkauft. Bei einer Betriebserkundung wählst du einen dieser Bereiche als Schwerpunkt und untersuchst ihn genau.",
+    "paragraphs": [
+      "Die drei Grundfunktionen eines Betriebs hängen als Geschäftsprozess zusammen. Beschaffung heißt: Material, Waren, Maschinen und Dienstleistungen einkaufen, Angebote vergleichen und lagern. Produktion heißt: aus diesen Einsatzgütern Produkte herstellen oder Dienstleistungen erbringen. Absatz heißt: die Leistungen verkaufen, mit Werbung, Preisgestaltung und Vertrieb. Bei einer Betriebserkundung im Umfeld der Schule entscheidet sich deine Gruppe für einen Erkundungsschwerpunkt, bereitet Fragen vor, erkundet vor Ort und präsentiert die Ergebnisse der Klasse.",
+      "Beispiel Bäckerei Huber: Für die Beschaffung vergleicht die Chefin zwei Mühlen. Mühle A verlangt 21,00 € je 25-kg-Sack Mehl, gewährt 10 % Rabatt und berechnet 2,50 € Lieferkosten je Sack: 21,00 € − 2,10 € + 2,50 € = 21,40 €. Mühle B verlangt 20,00 € ohne Rabatt und liefert frei Haus: 20,00 €. Mühle B ist günstiger. In der Produktion wird ab 3 Uhr Teig geknetet und gebacken. Im Absatz verkauft die Bäckerei im eigenen Laden, in zwei Filialen und liefert an eine Betriebskantine. Eine Erkundungsgruppe mit Schwerpunkt Absatz fragt zum Beispiel, wie die Preise festgelegt werden."
+    ],
+    "takeaway": "Beschaffung, Produktion und Absatz sind die Grundfunktionen jedes Betriebs; bei einer Betriebserkundung wählst du einen davon als Schwerpunkt und präsentierst deine Ergebnisse.",
+    "sourceIds": ["lpr", "lpm", "profil"],
+    "quiz": {
+      "question": "Zu welcher Grundfunktion gehört es, wenn ein Betrieb Angebote von zwei Lieferanten vergleicht?",
+      "answer": "Zur Beschaffung.",
+      "wrong": ["Zur Produktion.", "Zum Absatz."],
+      "explanation": "Angebote vergleichen, einkaufen und lagern gehört zur Beschaffung. Produktion stellt her, der Absatz verkauft die fertigen Leistungen."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Rund um die Bäckerei",
+      "instruction": "Ordne jede Tätigkeit der Bäckerei Huber der passenden Grundfunktion zu.",
+      "categories": ["Beschaffung", "Produktion", "Absatz"],
+      "entries": [
+        { "text": "Die Chefin bestellt 40 Sack Mehl bei Mühle B.", "target": 0, "feedback": "Einkaufen von Rohstoffen ist Beschaffung." },
+        { "text": "Der Bäcker knetet um 3 Uhr den Teig für die Semmeln.", "target": 1, "feedback": "Herstellen ist Produktion." },
+        { "text": "Eine Verkäuferin berät Kunden im Laden.", "target": 2, "feedback": "Verkaufen gehört zum Absatz." },
+        { "text": "Butter und Eier werden im Kühlraum eingelagert.", "target": 0, "feedback": "Lagern der eingekauften Güter gehört zur Beschaffung." },
+        { "text": "Die Brote werden im Ofen gebacken.", "target": 1, "feedback": "Backen ist Teil der Produktion." },
+        { "text": "Die Bäckerei liefert jeden Morgen Brötchen an eine Kantine.", "target": 2, "feedback": "Lieferung an Kunden ist Vertrieb und damit Absatz." },
+        { "text": "Für die Aktionswoche werden Flyer verteilt.", "target": 2, "feedback": "Werbung gehört zum Absatz." }
+      ],
+      "conclusion": "Die drei Funktionen bilden eine Kette: Ohne Beschaffung keine Produktion, ohne Absatz kein Erlös."
+    },
+    "practice": "procurementCompare",
+    "tasks": {
+      "1": {
+        "prompt": "Bereite eine Betriebserkundung mit dem Schwerpunkt Beschaffung vor: Formuliere vier Fragen an einen Betrieb deiner Wahl.",
+        "hints": [
+          "Was wird eingekauft, bei wem, wie oft, wie wird verglichen?",
+          "Denke auch an Lagerung und Umweltaspekte."
+        ],
+        "model": "Betrieb: Schreinerei. Fragen: Welche Holzarten und Materialien kaufen Sie regelmäßig ein? Nach welchen Kriterien wählen Sie Ihre Lieferanten aus? Wie oft bestellen Sie, und wie viel lagern Sie? Achten Sie beim Einkauf auf Herkunft und Umweltsiegel des Holzes?",
+        "criteria": [
+          "Du formulierst vier Fragen zum Schwerpunkt Beschaffung.",
+          "Die Fragen sind offen und passen zum Betrieb.",
+          "Mindestens eine Frage betrifft Lieferantenauswahl oder Lagerung."
+        ]
+      },
+      "2": {
+        "prompt": "Erkläre am Beispiel eines Betriebs deiner Wahl, wie Beschaffung, Produktion und Absatz voneinander abhängen. Beschreibe, was passiert, wenn eine Funktion gestört ist.",
+        "hints": [
+          "Was passiert in der Produktion, wenn Material fehlt?",
+          "Was passiert, wenn Produkte nicht verkauft werden?"
+        ],
+        "model": "In einer Fahrradwerkstatt werden Teile beschafft, Fahrräder montiert und verkauft. Fehlen wegen eines Lieferengpasses Bremsen, steht die Montage still, und Kunden warten auf ihre Räder; der Absatz bricht ein. Werden umgekehrt Räder nicht verkauft, fehlt Geld für neue Einkäufe, und das Lager ist voll. Die Funktionen bilden also eine Kette, in der eine Störung die anderen trifft.",
+        "criteria": [
+          "Du beschreibst alle drei Funktionen am Beispiel.",
+          "Du erklärst die Abhängigkeit an einer Störung.",
+          "Deine Erklärung ist folgerichtig."
+        ]
+      }
+    }
+  },
+  {
+    "id": "wi-betriebliche-kriterien",
+    "lb": 3,
+    "tracks": ["R", "M"],
+    "lehrplan": "WiB 8 · LB 3 · R8 & M8",
+    "title": "Betriebe beurteilen: ökologisches Handeln und Mensch am Arbeitsplatz",
+    "intro": "Ein Betrieb ist nicht nur gut, wenn er Gewinn macht. Bei einer Erkundung beurteilst du auch, wie er mit der Umwelt und mit seinen Beschäftigten umgeht.",
+    "paragraphs": [
+      "Neben Beschaffung, Produktion und Absatz untersuchst du bei einer Betriebserkundung weitere betriebliche Kriterien. Ökologisches Handeln zeigt sich zum Beispiel an Energiesparen, Abfallvermeidung und Mülltrennung, wiederverwendbaren Verpackungen und regionalen Lieferanten. Beim Kriterium Mensch am Arbeitsplatz achtest du auf Arbeitszeiten, Gesundheitsschutz, Ergonomie, Betriebsklima, Weiterbildung und Mitsprache der Beschäftigten. Beurteilen heißt: Du legst vorher Kriterien fest, sammelst Belege und kommst zu einem begründeten Urteil, das Stärken und Schwächen nennt.",
+      "Beispiel Schreinerei Lang: Der Betrieb heizt die Werkstatt mit eigenen Holzresten und hat 40 Leuchtröhren mit je 58 W durch LED-Leuchten mit je 24 W ersetzt. Bei 2.500 Betriebsstunden im Jahr spart das (58 W − 24 W) · 40 · 2.500 h = 3.400 kWh; bei 0,25 € je kWh sind das 850,00 € im Jahr. Für die Beschäftigten gibt es eine Absauganlage, höhenverstellbare Werkbänke und Gehörschutz. Eine Schwäche: Weiterbildungen finden nur selten statt. Das Urteil der Erkundungsgruppe: ökologisch vorbildlich, beim Arbeitsschutz gut, bei der Weiterbildung verbesserungsfähig."
+    ],
+    "takeaway": "Beurteile Betriebe auch nach ökologischem Handeln und nach den Bedingungen für den Menschen am Arbeitsplatz, mit vorher festgelegten Kriterien, Belegen und einem begründeten Urteil.",
+    "sourceIds": ["lpr", "lpm", "arbschg3"],
+    "quiz": {
+      "question": "Welche Beobachtung gehört zum Kriterium Mensch am Arbeitsplatz?",
+      "answer": "Der Betrieb hat höhenverstellbare Werkbänke und stellt Gehörschutz zur Verfügung.",
+      "wrong": [
+        "Der Betrieb verwendet Holzreste zum Heizen der Werkstatt.",
+        "Der Betrieb kauft sein Holz bei einem Sägewerk aus der Region."
+      ],
+      "explanation": "Werkbänke und Gehörschutz betreffen Gesundheit und Ergonomie der Beschäftigten. Heizen mit Resten und regionaler Einkauf sind ökologische Kriterien."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Erkundungsnotizen auswerten",
+      "instruction": "Ordne jede Notiz der Erkundungsgruppe dem passenden Kriterium zu.",
+      "categories": ["Ökologisches Handeln", "Mensch am Arbeitsplatz"],
+      "entries": [
+        { "text": "Alle Leuchten in der Werkstatt sind auf LED umgestellt.", "target": 0, "feedback": "Energiesparen ist ökologisches Handeln." },
+        { "text": "Eine Absauganlage hält den Holzstaub von den Beschäftigten fern.", "target": 1, "feedback": "Gesundheitsschutz betrifft den Menschen am Arbeitsplatz." },
+        { "text": "Möbel werden in Decken statt in Folie ausgeliefert, die Decken kommen zurück.", "target": 0, "feedback": "Wiederverwendbare Verpackung vermeidet Abfall." },
+        { "text": "Die Auszubildenden haben feste Ansprechpartner und regelmäßige Gespräche.", "target": 1, "feedback": "Betreuung und Betriebsklima betreffen den Menschen am Arbeitsplatz." },
+        { "text": "Lackreste werden getrennt gesammelt und fachgerecht entsorgt.", "target": 0, "feedback": "Richtige Entsorgung ist ökologisches Handeln." },
+        { "text": "Wer früh anfängt, darf früher gehen; die Arbeitszeiten sind gleitend.", "target": 1, "feedback": "Arbeitszeitregelungen betreffen die Beschäftigten." }
+      ],
+      "conclusion": "Ein vollständiges Urteil betrachtet beide Kriterien und nennt Stärken wie Schwächen."
+    },
+    "practice": "ecoSaving",
+    "tasks": {
+      "1": {
+        "prompt": "Lege für eine Betriebserkundung je zwei Beobachtungskriterien für ökologisches Handeln und für den Menschen am Arbeitsplatz fest und formuliere zu jedem eine Frage.",
+        "hints": [
+          "Ökologisch: Energie, Abfall, Verpackung, Transport.",
+          "Mensch: Gesundheit, Arbeitszeit, Betriebsklima, Weiterbildung."
+        ],
+        "model": "Ökologisch, Energie: Wie spart der Betrieb Strom oder Wärme? Ökologisch, Abfall: Wie werden Reststoffe getrennt oder wiederverwertet? Mensch, Gesundheit: Welche Schutzausrüstung und Hilfsmittel gibt es an den Arbeitsplätzen? Mensch, Weiterbildung: Wie oft können Beschäftigte an Schulungen teilnehmen?",
+        "criteria": [
+          "Du nennst zwei ökologische Kriterien mit Frage.",
+          "Du nennst zwei Kriterien zum Menschen am Arbeitsplatz mit Frage.",
+          "Die Fragen lassen sich bei einer Erkundung beantworten."
+        ]
+      },
+      "2": {
+        "prompt": "Ein Betrieb spart durch neue Maschinen viel Energie, die Beschäftigten klagen aber über Lärm und Zeitdruck. Beurteile den Betrieb anhand beider Kriterien und begründe dein Gesamturteil.",
+        "hints": [
+          "Nenne Stärken und Schwächen getrennt.",
+          "Welche Verbesserung würdest du vorschlagen?"
+        ],
+        "model": "Ökologisch handelt der Betrieb vorbildlich, weil er Energie und damit Kosten und Emissionen spart. Beim Menschen am Arbeitsplatz gibt es deutliche Schwächen: Lärm kann die Gesundheit schädigen, und Zeitdruck erhöht das Unfallrisiko. Mein Gesamturteil: nur teilweise gut, weil ein Betrieb auch für seine Beschäftigten Verantwortung trägt. Ich würde Lärmschutz an den Maschinen und eine bessere Arbeitsplanung vorschlagen.",
+        "criteria": [
+          "Du beurteilst beide Kriterien getrennt.",
+          "Du begründest ein Gesamturteil.",
+          "Du schlägst eine sinnvolle Verbesserung vor."
+        ]
+      }
+    }
+  },
+  {
+    "id": "wi-geschaeft-planen",
+    "lb": 3,
+    "tracks": ["R", "M"],
+    "lehrplan": "WiB 8 · LB 3 · R8 & M8",
+    "title": "Ein Geschäft auf einem Markt planen und organisieren",
+    "intro": "Beim Schulfest oder auf dem Weihnachtsmarkt verkauft eure Klasse Waren oder Dienstleistungen. Mit betriebswirtschaftlichem Grundwissen plant ihr das wie ein echtes Geschäft.",
+    "paragraphs": [
+      "Wer ein Geschäft auf einem Markt plant, klärt zuerst Zielgruppe, Nachfrage und Konkurrenz: Wer kauft, was wollen die Kunden, was bieten andere zu welchem Preis an? Dann legt ihr das Angebot fest, organisiert die Beschaffung und kalkuliert den Verkaufspreis. Eine einfache Kalkulation rechnet zu den Kosten je Stück einen Zuschlag für weitere Kosten und Gewinn; der Preis muss aber auch zum Marktpreis der Konkurrenz passen. Zur Organisation gehören Rollen, Schichtplan, Wechselgeld, Kassenliste, Hygiene, Werbung und die Erlaubnis der Schulleitung oder des Veranstalters.",
+      "Beispiel Waffelstand der 8a beim Schulfest: Eine Umfrage in drei Klassen ergibt, dass Waffeln gefragt sind. Die Zutaten kosten 0,40 € je Waffel. Mit einem Zuschlag von 150 % ergibt sich 0,40 € + 0,60 € = 1,00 € Verkaufspreis. Der Elternbeirat verkauft Kuchen für 1,50 € je Stück, die Waffel ist also günstiger. Die Klasse teilt drei Schichten ein, nimmt 30,00 € Wechselgeld in Münzen mit und führt eine Kassenliste. Ein Plakat am Eingang wirbt für den Stand. Die Schulleitung hat den Stand vorher genehmigt."
+    ],
+    "takeaway": "Ein Geschäft auf einem Markt planst du in Schritten: Nachfrage und Konkurrenz klären, Angebot und Beschaffung festlegen, Preis kalkulieren und mit dem Marktpreis abgleichen, Ablauf und Kasse organisieren.",
+    "sourceIds": ["lpr", "lpm", "profil"],
+    "quiz": {
+      "question": "Warum reicht es nicht, den Verkaufspreis nur aus den eigenen Kosten zu berechnen?",
+      "answer": "Weil der Preis auch zur Nachfrage und zu den Preisen der Konkurrenz auf dem Markt passen muss.",
+      "wrong": [
+        "Weil die eigenen Kosten bei einem Schulprojekt keine Rolle spielen.",
+        "Weil der Preis immer genau den Kosten entsprechen muss, ohne Zuschlag."
+      ],
+      "explanation": "Die Kosten zeigen die Preisuntergrenze. Ob Kunden kaufen, entscheidet aber auch der Vergleich mit anderen Anbietern auf demselben Markt."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Waffelstand Schritt für Schritt",
+      "instruction": "Bringe die Planungsschritte der 8a in eine sinnvolle Reihenfolge.",
+      "categories": ["1", "2", "3", "4", "5"],
+      "entries": [
+        { "text": "Umfrage in drei Klassen: Was würdet ihr am Schulfest kaufen?", "target": 0, "feedback": "Zuerst klärt die Klasse die Nachfrage." },
+        { "text": "Entscheidung für Waffeln und Antrag bei der Schulleitung", "target": 1, "feedback": "Dann wird das Angebot festgelegt und genehmigt." },
+        { "text": "Zutaten auflisten und Kosten je Waffel berechnen", "target": 2, "feedback": "Erst mit dem Angebot lassen sich die Kosten ermitteln." },
+        { "text": "Verkaufspreis mit Zuschlag kalkulieren und mit dem Kuchenpreis vergleichen", "target": 3, "feedback": "Die Preisbildung baut auf den Kosten auf." },
+        { "text": "Schichtplan, Wechselgeld und Kassenliste vorbereiten", "target": 4, "feedback": "Die Organisation des Verkaufs steht am Ende der Planung." }
+      ],
+      "conclusion": "Jeder Schritt baut auf dem vorigen auf; wer die Nachfrage überspringt, plant am Markt vorbei."
+    },
+    "practice": "priceCalc",
+    "tasks": {
+      "1": {
+        "prompt": "Plane für das nächste Schulfest ein Klassengeschäft: Nenne Angebot, Zielgruppe, die Kosten je Stück und begründe einen Verkaufspreis.",
+        "hints": [
+          "Schätze die Kosten je Stück aus den Zutaten oder dem Einkaufspreis.",
+          "Vergleiche deinen Preis mit ähnlichen Angeboten."
+        ],
+        "model": "Angebot: selbst gemachte Fruchtspieße für Schülerinnen, Schüler und Eltern. Kosten je Spieß: etwa 0,50 € für Obst und Holzspieß. Mit 100 % Zuschlag ergibt sich 1,00 €. Am Schulfest kostet ein Getränk 1,50 €, ein Kuchenstück 1,50 €; mit 1,00 € ist der Spieß günstiger und gesund. So decken wir Kosten und erzielen einen kleinen Überschuss.",
+        "criteria": [
+          "Du nennst Angebot und Zielgruppe.",
+          "Du gibst Kosten je Stück und einen kalkulierten Preis an.",
+          "Du vergleichst den Preis mit dem Markt."
+        ]
+      },
+      "2": {
+        "prompt": "Am Schulfest verkauft eine zweite Klasse ebenfalls Waffeln, und zwar für 0,80 €. Beurteile, wie die 8a reagieren kann, und begründe deine Empfehlung.",
+        "hints": [
+          "Ist eine Preissenkung bei 0,40 € Kosten noch sinnvoll?",
+          "Gibt es andere Möglichkeiten als den Preis?"
+        ],
+        "model": "Die 8a könnte den Preis auf 0,80 € senken; bei 0,40 € Kosten bleibt pro Waffel noch ein Überschuss von 0,40 €. Sie könnte sich aber auch abheben, etwa mit Puderzucker und Kirschen für 1,20 € oder mit einem Angebot aus Waffel und Getränk. Ich empfehle die Abhebung über das Angebot, weil ein Preiskampf den Überschuss beider Klassen schmälert und Kunden für bessere Qualität oft mehr bezahlen.",
+        "criteria": [
+          "Du nennst mindestens zwei Reaktionsmöglichkeiten.",
+          "Du rechnest oder argumentierst mit den Kosten.",
+          "Du gibst eine begründete Empfehlung."
+        ]
+      }
+    }
+  },
+  {
+    "id": "wi-gewinn-verlust",
+    "lb": 3,
+    "tracks": ["R", "M"],
+    "lehrplan": "WiB 8 · LB 3 · R8 & M8",
+    "title": "Mit einer einfachen Gewinn- und Verlustrechnung den Erfolg bewerten",
+    "intro": "Hat sich euer Marktstand gelohnt? Die Gewinn- und Verlustrechnung stellt alle Aufwendungen den Erträgen gegenüber und gibt eine klare Antwort.",
+    "paragraphs": [
+      "In der einfachen Gewinn- und Verlustrechnung, kurz GuV, stehen links die Aufwendungen und rechts die Erträge. Aufwendungen sind der Wert der verbrauchten Waren und Leistungen, zum Beispiel Wareneinsatz, Standmiete und Werbung. Erträge sind vor allem die Umsatzerlöse aus dem Verkauf. Sind die Erträge größer als die Aufwendungen, ergibt sich ein Gewinn, sonst ein Verlust. Damit beide Seiten gleich groß sind, steht der Gewinn als Ausgleich auf der Aufwandsseite, ein Verlust auf der Ertragsseite. Am Ergebnis bewertet ihr den Erfolg eurer Geschäftstätigkeit.",
+      "Beispiel Marktstand mit Kinderpunsch: Die Klasse verkauft 120 Becher zu je 2,00 €. Umsatzerlöse: 120 · 2,00 € = 240,00 €. Aufwendungen: Wareneinsatz 120 · 1,20 € = 144,00 €, Standmiete 40,00 €, Werbeplakate 20,00 €, zusammen 204,00 €. Gewinn: 240,00 € − 204,00 € = 36,00 €. In der Auswertung fragt die Klasse: Hätte ein höherer Preis mehr gebracht, obwohl dann vermutlich weniger Becher verkauft worden wären? Hätte mehr Werbung genug zusätzliche Kunden gebracht, um ihre Kosten zu decken?"
+    ],
+    "takeaway": "Die einfache Gewinn- und Verlustrechnung stellt Aufwendungen und Erträge gegenüber: Erträge minus Aufwendungen ergibt den Gewinn oder, wenn das Ergebnis negativ ist, den Verlust.",
+    "sourceIds": ["lpr", "lpm", "profil"],
+    "quiz": {
+      "question": "Welcher Posten steht in der GuV eines Marktstands auf der Ertragsseite?",
+      "answer": "Die Umsatzerlöse aus dem Verkauf.",
+      "wrong": ["Die Standmiete.", "Der Wareneinsatz."],
+      "explanation": "Erträge sind die Einnahmen aus der Geschäftstätigkeit, also die Umsatzerlöse. Standmiete und Wareneinsatz sind Aufwendungen."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Aufwand oder Ertrag?",
+      "instruction": "Ordne jeden Posten des Punschstands der richtigen Seite der GuV zu.",
+      "categories": ["Aufwendung", "Ertrag"],
+      "entries": [
+        { "text": "Einkauf von Saft und Gewürzen für die verkauften Becher", "target": 0, "feedback": "Der Wareneinsatz ist eine Aufwendung." },
+        { "text": "Einnahmen aus dem Verkauf von 120 Bechern", "target": 1, "feedback": "Umsatzerlöse sind Erträge." },
+        { "text": "Standmiete an den Veranstalter", "target": 0, "feedback": "Miete ist eine Aufwendung." },
+        { "text": "Druck der Werbeplakate", "target": 0, "feedback": "Werbekosten sind Aufwendungen." },
+        { "text": "Erlöse aus dem Verkauf von Lebkuchen am selben Stand", "target": 1, "feedback": "Auch diese Verkaufserlöse sind Erträge." },
+        { "text": "Gebühr für das Ausleihen eines Kochtopfs", "target": 0, "feedback": "Leihgebühren sind Aufwendungen." }
+      ],
+      "conclusion": "Nur wenn alle Aufwendungen erfasst sind, zeigt die GuV den echten Erfolg."
+    },
+    "lab": "shopGuV",
+    "practice": "guvCalc",
+    "tasks": {
+      "1": {
+        "prompt": "Erstelle für einen Marktstand eine einfache GuV mit mindestens drei Aufwendungen und einem Ertrag. Berechne das Ergebnis und gib an, ob ein Gewinn oder ein Verlust vorliegt.",
+        "hints": [
+          "Links Aufwendungen, rechts Erträge.",
+          "Ergebnis = Erträge − Aufwendungen."
+        ],
+        "model": "Waffelstand. Aufwendungen: Wareneinsatz 48,00 €, Standmiete 20,00 €, Plakat 6,00 €, zusammen 74,00 €. Ertrag: Umsatzerlöse 120 Waffeln · 1,00 € = 120,00 €. Ergebnis: 120,00 € − 74,00 € = 46,00 € Gewinn. Der Gewinn steht als Ausgleich auf der Aufwandsseite, damit beide Seiten 120,00 € betragen.",
+        "criteria": [
+          "Deine GuV hat mindestens drei Aufwendungen und einen Ertrag.",
+          "Das Ergebnis ist richtig berechnet.",
+          "Du ordnest den Gewinn oder Verlust richtig zu."
+        ]
+      },
+      "2": {
+        "prompt": "Ein Stand hat 300,00 € Umsatzerlöse, aber 320,00 € Aufwendungen. Beurteile das Ergebnis und schlage zwei Maßnahmen vor, die beim nächsten Mal zu einem Gewinn führen können.",
+        "hints": [
+          "Welche Aufwendungen lassen sich senken?",
+          "Wie lassen sich die Erträge erhöhen, ohne die Kunden zu verlieren?"
+        ],
+        "model": "Das Ergebnis ist ein Verlust von 20,00 €, weil die Aufwendungen die Erträge übersteigen. Maßnahme 1: Waren günstiger beschaffen oder genauer planen, damit weniger übrig bleibt. Maßnahme 2: Den Preis leicht erhöhen oder ein Zusatzangebot machen, sofern die Nachfrage nicht stark sinkt. Beide Maßnahmen zusammen könnten den Verlust in einen kleinen Gewinn verwandeln.",
+        "criteria": [
+          "Du berechnest und benennst den Verlust.",
+          "Du schlägst je eine Maßnahme zu Aufwendungen und Erträgen vor.",
+          "Du berücksichtigst die Reaktion der Kunden."
+        ]
+      }
+    }
+  },
+  {
+    "id": "wi-wirtschaftskreislauf",
+    "lb": 3,
+    "tracks": ["R", "M"],
+    "lehrplan": "WiB 8 · LB 3 · R8 & M8",
+    "title": "Der einfache Wirtschaftskreislauf und dein eigenes wirtschaftliches Handeln",
+    "intro": "Wenn du ein Paar Schuhe kaufst, wird daraus der Lohn einer Verkäuferin. Der einfache Wirtschaftskreislauf zeigt, wie Haushalte und Unternehmen zusammenhängen.",
+    "paragraphs": [
+      "Im einfachen Wirtschaftskreislauf gibt es zwei Gruppen: private Haushalte und Unternehmen. Die Haushalte stellen ihre Arbeitskraft zur Verfügung und erhalten dafür Einkommen. Mit diesem Einkommen kaufen sie Güter und Dienstleistungen der Unternehmen; diese Konsumausgaben sind die Einnahmen der Unternehmen, aus denen wieder Löhne bezahlt werden. So fließen zwei Ströme in entgegengesetzter Richtung: der Güterstrom aus Arbeitsleistung sowie Gütern und Dienstleistungen und der Geldstrom aus Einkommen und Konsumausgaben. Sparen die Haushalte einen Teil ihres Einkommens, fehlt dieser Teil zunächst bei den Konsumausgaben.",
+      "Beispiel kleine Stadt: 40 Beschäftigte eines Betriebs verdienen je 2.250 € im Monat, zusammen 90.000 €. Sparen die Haushalte 10 %, also 9.000 €, fließen 81.000 € als Konsumausgaben zurück an die Unternehmen. Für dich heißt das: Mit deinem Ferienjob bist du auf der Seite der Haushalte und bietest Arbeitskraft an. Kaufst du für 80,00 € Sportschuhe im Geschäft vor Ort, wird dein Geld zur Einnahme des Geschäfts und hilft, Löhne zu bezahlen. Legst du Geld auf ein Sparkonto, kann die Bank es als Kredit an Unternehmen weitergeben, das zeigt der erweiterte Kreislauf mit Banken."
+    ],
+    "takeaway": "Im einfachen Wirtschaftskreislauf fließen Arbeitsleistung und Güter in die eine, Einkommen und Konsumausgaben in die andere Richtung; deine eigenen Käufe und dein Sparen sind Teil dieser Ströme.",
+    "sourceIds": ["lpr", "lpm", "profil"],
+    "quiz": {
+      "question": "Was fließt im einfachen Wirtschaftskreislauf von den Unternehmen zu den Haushalten?",
+      "answer": "Einkommen als Geldstrom sowie Güter und Dienstleistungen als Güterstrom.",
+      "wrong": [
+        "Arbeitsleistung als Güterstrom und Konsumausgaben als Geldstrom.",
+        "Nur Steuern, weil Unternehmen den Haushalten kein Geld zahlen."
+      ],
+      "explanation": "Unternehmen zahlen Einkommen für die Arbeitsleistung und liefern Güter und Dienstleistungen. In der Gegenrichtung fließen Arbeitsleistung und Konsumausgaben."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Ströme im Kreislauf",
+      "instruction": "Ordne jeden Vorgang dem passenden Strom im einfachen Wirtschaftskreislauf zu.",
+      "categories": ["Güterstrom: Haushalte → Unternehmen", "Güterstrom: Unternehmen → Haushalte", "Geldstrom: Unternehmen → Haushalte", "Geldstrom: Haushalte → Unternehmen"],
+      "entries": [
+        { "text": "Eine Verkäuferin arbeitet 38 Stunden pro Woche im Sportgeschäft.", "target": 0, "feedback": "Arbeitsleistung fließt von den Haushalten zu den Unternehmen." },
+        { "text": "Das Sportgeschäft verkauft dir ein Paar Schuhe.", "target": 1, "feedback": "Güter fließen von den Unternehmen zu den Haushalten." },
+        { "text": "Die Verkäuferin erhält am Monatsende ihren Lohn.", "target": 2, "feedback": "Einkommen fließt von den Unternehmen zu den Haushalten." },
+        { "text": "Du bezahlst 80,00 € an der Kasse.", "target": 3, "feedback": "Konsumausgaben fließen von den Haushalten zu den Unternehmen." },
+        { "text": "Du arbeitest in den Ferien in einer Gärtnerei.", "target": 0, "feedback": "Auch deine Arbeitsleistung im Ferienjob fließt zu einem Unternehmen." },
+        { "text": "Der Friseur schneidet dir die Haare.", "target": 1, "feedback": "Dienstleistungen gehören zum Güterstrom von den Unternehmen zu den Haushalten." }
+      ],
+      "conclusion": "Zu jedem Güterstrom gehört ein Geldstrom in Gegenrichtung."
+    },
+    "lab": "circularFlow",
+    "practice": "circularFlowCalc",
+    "tasks": {
+      "1": {
+        "prompt": "Zeichne oder beschreibe den einfachen Wirtschaftskreislauf mit allen vier Strömen und ordne einen eigenen Einkauf darin ein.",
+        "hints": [
+          "Zwei Güterströme und zwei Geldströme laufen gegeneinander.",
+          "Bei welchem Strom bist du beim Einkaufen beteiligt?"
+        ],
+        "model": "Haushalte geben Arbeitsleistung an Unternehmen und bekommen Einkommen. Unternehmen geben Güter und Dienstleistungen an Haushalte und bekommen Konsumausgaben. Wenn ich im Supermarkt für 5,00 € Obst kaufe, gehört das Obst zum Güterstrom von den Unternehmen zu den Haushalten und meine 5,00 € zum Geldstrom Konsumausgaben von den Haushalten zu den Unternehmen.",
+        "criteria": [
+          "Du nennst alle vier Ströme mit Richtung.",
+          "Du unterscheidest Güter- und Geldstrom.",
+          "Du ordnest den eigenen Einkauf richtig ein."
+        ]
+      },
+      "2": {
+        "prompt": "Viele Haushalte sparen in unsicheren Zeiten mehr und kaufen weniger. Erkläre mithilfe des Wirtschaftskreislaufs, welche Folgen das für Unternehmen und Beschäftigte haben kann, und beurteile, ob Sparen deshalb schlecht ist.",
+        "hints": [
+          "Was passiert mit den Einnahmen der Unternehmen?",
+          "Welche Rolle spielen Banken mit dem gesparten Geld?"
+        ],
+        "model": "Sparen die Haushalte mehr, sinken die Konsumausgaben und damit die Einnahmen der Unternehmen. Diese verkaufen weniger, stellen vielleicht weniger her und brauchen weniger Arbeitskräfte, sodass Einkommen sinken können. Sparen ist trotzdem nicht schlecht: Es sichert Haushalte gegen Notfälle ab, und Banken können das Geld als Kredit an Unternehmen für Investitionen verleihen. Entscheidend ist das Gleichgewicht zwischen Konsum und Sparen.",
+        "criteria": [
+          "Du erklärst die Folgen mit den Strömen des Kreislaufs.",
+          "Du nennst Folgen für Unternehmen und Beschäftigte.",
+          "Du beurteilst Sparen ausgewogen."
+        ]
+      }
+    }
+  },
+  {
+    "id": "wi-entlohnungsformen",
+    "lb": 3,
+    "tracks": ["R", "M"],
+    "lehrplan": "WiB 8 · LB 3 · R8 & M8",
+    "title": "Formen der Entlohnung: Zeitlohn und Leistungslohn",
+    "intro": "Nicht jede Arbeit wird gleich bezahlt. Manche bekommen Geld für ihre Zeit, andere für ihre Leistung. Beides hat Vor- und Nachteile für die Erwerbstätigen.",
+    "paragraphs": [
+      "Beim Zeitlohn wird die Arbeitszeit bezahlt: als Stundenlohn oder als festes Monatsgehalt. Er ist gut planbar und vermeidet Hetze, belohnt besondere Leistung aber nicht direkt. Beim Leistungslohn hängt der Verdienst von der Leistung ab. Beim Akkordlohn wird nach Stückzahl bezahlt, beim Prämienlohn kommt zu einem Grundlohn eine Prämie, zum Beispiel für Qualität oder Materialersparnis, und bei der Provision erhält etwa eine Verkäuferin einen Prozentsatz vom Umsatz. Leistungslohn kann mehr Geld bringen, erzeugt aber Druck und schwankt. Jugendliche dürfen nach § 23 JArbSchG nicht mit Akkordarbeit beschäftigt werden.",
+      "Beispiel Akkord in einer Montageabteilung: Der Akkordrichtsatz beträgt 18,00 € je Stunde, die Normalleistung 12 Stück je Stunde. Für ein Stück sind also 5 Minuten vorgegeben, je Minute gibt es 0,30 €. Schafft ein Beschäftigter 14 Stück je Stunde, sind das in 8 Stunden 112 Stück und 112 · 5 Min. · 0,30 € = 168,00 €. Im Zeitlohn hätte er 8 · 18,00 € = 144,00 € verdient; sein Leistungsgrad liegt bei 14 : 12 · 100 % ≈ 116,67 %. Beispiel Provision: Eine Verkäuferin erhält 2.200 € Fixum und 2 % Provision auf 30.000 € Umsatz, also 2.200 € + 600 € = 2.800 €."
+    ],
+    "takeaway": "Zeitlohn bezahlt die Arbeitszeit und ist planbar; Leistungslohn wie Akkord, Prämie oder Provision bezahlt die erbrachte Leistung und kann mehr einbringen, erzeugt aber Druck und schwankt.",
+    "sourceIds": ["lpr", "lpm", "jarbschg23"],
+    "quiz": {
+      "question": "Welcher Nachteil des Akkordlohns ist aus Sicht der Erwerbstätigen am wichtigsten?",
+      "answer": "Der Druck, schnell zu arbeiten, kann Gesundheit und Sicherheit gefährden, und der Verdienst schwankt.",
+      "wrong": [
+        "Man verdient im Akkord immer weniger als im Zeitlohn.",
+        "Im Akkord gibt es grundsätzlich keine Arbeitszeitregeln."
+      ],
+      "explanation": "Akkord kann mehr einbringen, wer überdurchschnittlich leistet. Der Tempodruck ist aber ein Gesundheitsrisiko, deshalb ist Akkordarbeit für Jugendliche verboten."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Welche Lohnform liegt vor?",
+      "instruction": "Ordne jede Beschreibung der passenden Entlohnungsform zu.",
+      "categories": ["Zeitlohn", "Akkordlohn", "Prämienlohn", "Provision"],
+      "entries": [
+        { "text": "Eine Bürokauffrau erhält jeden Monat 2.650 € Gehalt.", "target": 0, "feedback": "Ein festes Monatsgehalt ist Zeitlohn." },
+        { "text": "Ein Monteur wird nach der Zahl der montierten Bauteile bezahlt.", "target": 1, "feedback": "Bezahlung nach Stückzahl ist Akkordlohn." },
+        { "text": "Eine Maschinenführerin erhält zum Stundenlohn einen Zuschlag, wenn ihr Ausschuss unter 1 % liegt.", "target": 2, "feedback": "Grundlohn plus Qualitätsprämie ist Prämienlohn." },
+        { "text": "Ein Autoverkäufer bekommt 1 % des Verkaufspreises jedes verkauften Wagens zusätzlich.", "target": 3, "feedback": "Ein Prozentsatz vom Umsatz ist Provision." },
+        { "text": "Eine Aushilfe erhält 14,50 € für jede gearbeitete Stunde.", "target": 0, "feedback": "Ein Stundenlohn ist Zeitlohn." },
+        { "text": "Ein Lagerteam bekommt einen Bonus, weil es weniger Verpackungsmaterial verbraucht hat.", "target": 2, "feedback": "Eine Prämie für Materialersparnis ist Prämienlohn." }
+      ],
+      "conclusion": "Die Lohnform bestimmt, ob Zeit oder Leistung den Verdienst ausmacht."
+    },
+    "lab": "wageForms",
+    "practice": "pieceRate",
+    "tasks": {
+      "1": {
+        "prompt": "Erstelle eine Übersicht über Zeitlohn, Akkordlohn, Prämienlohn und Provision mit je einem Beispielberuf und je einem Vor- und Nachteil aus Sicht der Beschäftigten.",
+        "hints": [
+          "Eine Tabelle mit vier Zeilen ist übersichtlich.",
+          "Denke an Planbarkeit, Verdienstchance und Druck."
+        ],
+        "model": "Zeitlohn, Bürokauffrau: planbar, aber gleicher Lohn trotz besonderer Leistung. Akkordlohn, Monteur in der Serienfertigung: mehr Geld bei hoher Leistung, aber Tempodruck und Unfallrisiko. Prämienlohn, Maschinenführerin: sicherer Grundlohn plus Anreiz, aber die Prämie kann wegfallen. Provision, Autoverkäufer: hohe Verdienstchance, aber schwankendes Einkommen in schwachen Monaten.",
+        "criteria": [
+          "Du stellst alle vier Lohnformen dar.",
+          "Zu jeder nennst du ein passendes Berufsbeispiel.",
+          "Du nennst je einen Vor- und Nachteil aus Sicht der Beschäftigten."
+        ]
+      },
+      "2": {
+        "prompt": "Ein 17-jähriger Auszubildender möchte im Akkord arbeiten, weil er mehr verdienen will. Beurteile seinen Wunsch rechtlich und aus Sicht des Gesundheitsschutzes.",
+        "hints": [
+          "Was regelt § 23 JArbSchG?",
+          "Warum sind gerade Jugendliche geschützt?"
+        ],
+        "model": "Rechtlich ist der Wunsch nicht erfüllbar: Nach § 23 JArbSchG dürfen Jugendliche nicht mit Akkordarbeit beschäftigt werden. Aus Sicht des Gesundheitsschutzes ist das sinnvoll, weil Tempodruck bei Jugendlichen mit weniger Erfahrung das Unfallrisiko erhöht und die körperliche Entwicklung belasten kann. Bessere Wege zu mehr Geld sind gute Leistungen in der Ausbildung und später ein höherer Tariflohn nach der Prüfung.",
+        "criteria": [
+          "Du nennst die rechtliche Regel richtig.",
+          "Du begründest den Schutz mit Gesundheit und Erfahrung.",
+          "Du zeigst eine Alternative auf."
+        ]
+      }
+    }
+  },
+  {
+    "id": "wi-mindestlohn-tariflohn",
+    "lb": 3,
+    "tracks": ["R", "M"],
+    "lehrplan": "WiB 8 · LB 3 · R8 & M8",
+    "title": "Mindestlohn und Tariflohn",
+    "intro": "Wie viel muss ein Arbeitgeber mindestens zahlen, und wer handelt höhere Löhne aus? Mindestlohn und Tariflohn geben die Antworten.",
+    "paragraphs": [
+      "Der allgemeine gesetzliche Mindestlohn ist die Lohnuntergrenze je Zeitstunde, die Arbeitgeber nicht unterschreiten dürfen (§ 1 MiLoG). Seit dem 1. Januar 2026 beträgt er 13,90 € brutto je Stunde; eine Kommission aus Gewerkschaften und Arbeitgebern schlägt Anpassungen vor. Nicht unter das Mindestlohngesetz fallen unter anderem Jugendliche unter 18 Jahren ohne abgeschlossene Berufsausbildung, Pflichtpraktika wie dein Schulpraktikum und Auszubildende, für die die Mindestvergütung nach dem Berufsbildungsgesetz gilt (§ 22 MiLoG). Tariflöhne handeln Gewerkschaften und Arbeitgeberverbände in Tarifverträgen aus (§ 1 TVG); das Grundgesetz schützt dieses Recht (Art. 9 Abs. 3 GG). Tariflöhne liegen meist über dem Mindestlohn und gelten für die Beschäftigten, für die der Tarifvertrag gilt.",
+      "Beispiel Prüfung: Herr Yilmaz, 34 Jahre, arbeitet als Aushilfe 160 Stunden im Monat und erhält 2.150,00 € brutto. Das sind 2.150,00 € : 160 = 13,44 € je Stunde, also weniger als der Mindestlohn. Ihm stehen mindestens 160 · 13,90 € = 2.224,00 € zu. Seine Kollegin arbeitet in einem tarifgebundenen Betrieb; ihr Tarifvertrag sieht im Modell 16,20 € je Stunde vor, also 2.592,00 € bei 160 Stunden. Die gültigen Tariflöhne einer Branche recherchierst du bei der zuständigen Gewerkschaft oder beim Arbeitgeberverband."
+    ],
+    "takeaway": "Der gesetzliche Mindestlohn ist die feste Untergrenze je Stunde; Tariflöhne handeln Gewerkschaften und Arbeitgeberverbände aus, und sie liegen meist darüber.",
+    "sourceIds": ["lpr", "lpm", "milog1", "milog22", "bmasmindestlohn", "tvg1", "gg9", "dgbjugend", "arbeitgeber"],
+    "quiz": {
+      "question": "Wer vereinbart einen Tariflohn?",
+      "answer": "Eine Gewerkschaft und ein Arbeitgeberverband oder ein einzelner Arbeitgeber in einem Tarifvertrag.",
+      "wrong": [
+        "Die Bundesregierung allein per Gesetz für jeden Betrieb.",
+        "Jede Beschäftigte persönlich mit ihrer Abteilungsleitung."
+      ],
+      "explanation": "Tarifverträge schließen Gewerkschaften mit Arbeitgeberverbänden oder einzelnen Arbeitgebern. Die Regierung legt per Verordnung nur die Höhe des allgemeinen Mindestlohns fest."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Mindestlohn, Tariflohn oder keins von beiden?",
+      "instruction": "Entscheide, welche Regel für den beschriebenen Fall entscheidend ist.",
+      "categories": ["Gesetzlicher Mindestlohn", "Tarifvertrag", "Mindestlohngesetz gilt nicht"],
+      "entries": [
+        { "text": "Eine 25-jährige Kellnerin in einem Betrieb ohne Tarifvertrag fragt, wie viel sie mindestens bekommen muss.", "target": 0, "feedback": "Ohne Tarifvertrag gilt mindestens der gesetzliche Mindestlohn." },
+        { "text": "In der Metallindustrie haben Gewerkschaft und Arbeitgeberverband 5 % mehr Lohn vereinbart.", "target": 1, "feedback": "Eine Vereinbarung der Tarifparteien ist ein Tarifvertrag." },
+        { "text": "Du machst dein einwöchiges Betriebspraktikum in der 8. Klasse.", "target": 2, "feedback": "Ein Pflichtpraktikum aufgrund einer schulrechtlichen Bestimmung fällt nicht unter das Mindestlohngesetz." },
+        { "text": "Eine 16-Jährige ohne Berufsausbildung jobbt in den Ferien.", "target": 2, "feedback": "Jugendliche unter 18 ohne abgeschlossene Berufsausbildung gelten nach § 22 Abs. 2 MiLoG nicht als Arbeitnehmer im Sinne des Gesetzes." },
+        { "text": "Ein Auszubildender im 1. Lehrjahr fragt nach seiner Vergütung.", "target": 2, "feedback": "Für Auszubildende gilt die Mindestvergütung nach § 17 BBiG statt des Mindestlohns." },
+        { "text": "Ein Verkäufer in einem tarifgebundenen Kaufhaus erhält mehr als 13,90 € je Stunde, weil seine Entgeltgruppe das vorsieht.", "target": 1, "feedback": "Entgeltgruppen stehen im Tarifvertrag." }
+      ],
+      "conclusion": "Mindestlohn, Tariflohn und Ausnahmen gehören zusammen: Erst der Blick auf die Person und den Betrieb zeigt, welche Regel gilt."
+    },
+    "practice": "minimumWageCheck",
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre in eigenen Worten den Unterschied zwischen Mindestlohn und Tariflohn und nenne für beide, wer die Höhe festlegt.",
+        "hints": [
+          "Einer gilt für fast alle, der andere für bestimmte Branchen und Betriebe.",
+          "Denke an Gesetz, Kommission und Tarifparteien."
+        ],
+        "model": "Der Mindestlohn ist eine gesetzliche Untergrenze für fast alle Arbeitnehmerinnen und Arbeitnehmer; seine Höhe legt die Bundesregierung per Verordnung auf Vorschlag der Mindestlohnkommission fest. Der Tariflohn wird von einer Gewerkschaft und einem Arbeitgeberverband in einem Tarifvertrag ausgehandelt und gilt für die Beschäftigten, für die der Vertrag gilt. Tariflöhne liegen meist über dem Mindestlohn.",
+        "criteria": [
+          "Du unterscheidest die beiden Lohnarten richtig.",
+          "Du nennst für beide, wer die Höhe festlegt.",
+          "Du erwähnst den Geltungsbereich."
+        ]
+      },
+      "2": {
+        "prompt": "Recherchiere bei einer Gewerkschaft oder einem Arbeitgeberverband, wie viel Auszubildende oder Fachkräfte in einem Beruf deiner Wahl laut Tarifvertrag verdienen. Vergleiche mit dem Mindestlohn und erkläre, warum diese Information für deine eigene Abrechnung wichtig ist.",
+        "hints": [
+          "Notiere Quelle, Datum und Tarifgebiet.",
+          "Wie prüfst du später, ob dein Lohn stimmt?"
+        ],
+        "model": "Beispielhafte Recherche: Auf der Seite einer Gewerkschaft finde ich für Fachkräfte im Einzelhandel in Bayern eine Entgelttabelle; die Stundenlöhne der Einstiegsstufen liegen dort über dem gesetzlichen Mindestlohn von 13,90 €. Ich notiere Quelle, Datum und Tarifgebiet. Die Information ist wichtig, weil ich später auf meiner Lohnabrechnung prüfen kann, ob Entgeltgruppe und Stundenlohn dem Tarifvertrag entsprechen, falls mein Betrieb tarifgebunden ist.",
+        "criteria": [
+          "Du nennst Quelle, Datum und Tarifgebiet deiner Recherche.",
+          "Du vergleichst den Tariflohn mit dem Mindestlohn.",
+          "Du erklärst den Nutzen für die Prüfung der eigenen Abrechnung."
+        ]
+      }
+    }
+  },
+  {
+    "id": "wi-lohnabrechnung",
+    "lb": 3,
+    "tracks": ["R", "M"],
+    "lehrplan": "WiB 8 · LB 3 · R8 & M8",
+    "title": "Gesetzliche Abgaben und die Lohn- und Gehaltsabrechnung prüfen",
+    "intro": "Vom Bruttolohn bleibt weniger übrig, als man denkt. Wer seine Abrechnung lesen kann, erkennt Fehler und weiß, wofür die Abzüge da sind.",
+    "paragraphs": [
+      "Vom Bruttolohn werden gesetzliche Abgaben abgezogen. Steuern: Lohnsteuer, Solidaritätszuschlag, der erst oberhalb einer Freigrenze anfällt, und Kirchensteuer für Kirchenmitglieder als Prozentsatz der Lohnsteuer. Sozialabgaben: Beiträge zur Renten-, Kranken-, Pflege- und Arbeitslosenversicherung, die Arbeitnehmer und Arbeitgeber grundsätzlich je zur Hälfte tragen; der allgemeine Beitragssatz der Krankenversicherung beträgt 14,6 % plus Zusatzbeitrag der Kasse, der Beitrag zur Arbeitslosenversicherung 2,6 %. Die Unfallversicherung zahlt der Arbeitgeber allein. Auf der Abrechnung stehen außerdem Name, Steuerklasse, Krankenkasse, Abrechnungszeitraum, Stunden und Stundenlohn, Brutto, alle Abzüge und das Netto.",
+      "Beispiel Lena: 160 Stunden zu 15,00 € ergeben 2.400,00 € brutto. Laut Lohnsteuertabelle werden im Modell 190,00 € Lohnsteuer fällig, Solidaritätszuschlag fällt nicht an, Kirchensteuer mit 8 % der Lohnsteuer: 15,20 €. Für die Sozialversicherung wird im Modell ein Arbeitnehmeranteil von 21 % angenommen: 504,00 €. Netto: 2.400,00 € − 190,00 € − 15,20 € − 504,00 € = 1.690,80 €. Lena prüft: Stimmen die Stunden mit ihrem Arbeitszeitnachweis, der Stundenlohn mit Vertrag oder Tarif, Steuerklasse und Kirchenzugehörigkeit mit ihren Daten? Die aktuellen Beitragssätze ändern sich; recherchiere sie für deine eigene Abrechnung."
+    ],
+    "takeaway": "Netto ist Brutto minus Lohnsteuer, gegebenenfalls Kirchensteuer und Solidaritätszuschlag und minus den Arbeitnehmeranteil zur Sozialversicherung; prüfe Stunden, Lohnsatz und persönliche Daten auf jeder Abrechnung.",
+    "sourceIds": ["lpr", "lpm", "estg38", "solzg3", "sgb5_241", "sgb5_249", "sgb3_341", "sgb6_168", "sgb7_150"],
+    "quiz": {
+      "question": "Welche Versicherung zahlt der Arbeitgeber allein, ohne Abzug vom Lohn?",
+      "answer": "Die gesetzliche Unfallversicherung.",
+      "wrong": ["Die Rentenversicherung.", "Die Krankenversicherung."],
+      "explanation": "Renten-, Kranken-, Pflege- und Arbeitslosenversicherung tragen Arbeitnehmer und Arbeitgeber grundsätzlich je zur Hälfte. Die Beiträge zur Unfallversicherung zahlt der Arbeitgeber allein (§ 150 SGB VII)."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Zeilen einer Abrechnung",
+      "instruction": "Ordne jede Zeile von Lenas Abrechnung der richtigen Gruppe zu.",
+      "categories": ["Persönliche Daten und Zeitraum", "Bruttobestandteil", "Steuerabzug", "Sozialversicherungsabzug"],
+      "entries": [
+        { "text": "Steuerklasse I, Krankenkasse, Abrechnungsmonat März", "target": 0, "feedback": "Diese Angaben ordnen die Abrechnung der Person und dem Zeitraum zu." },
+        { "text": "160 Stunden · 15,00 € = 2.400,00 €", "target": 1, "feedback": "Stunden mal Stundenlohn ergeben das Brutto." },
+        { "text": "Lohnsteuer 190,00 €", "target": 2, "feedback": "Die Lohnsteuer ist ein Steuerabzug." },
+        { "text": "Kirchensteuer 15,20 €", "target": 2, "feedback": "Kirchensteuer ist ein Steuerabzug für Kirchenmitglieder." },
+        { "text": "Rentenversicherung, Arbeitnehmeranteil", "target": 3, "feedback": "Rentenbeiträge sind Sozialversicherungsabzüge." },
+        { "text": "Arbeitslosenversicherung, Arbeitnehmeranteil", "target": 3, "feedback": "Auch dieser Beitrag gehört zur Sozialversicherung." },
+        { "text": "Zuschlag für zwei Samstagsschichten", "target": 1, "feedback": "Zuschläge erhöhen das Brutto." }
+      ],
+      "conclusion": "Wer die Gruppen kennt, findet auf jeder Abrechnung schnell die Stellen, die zu prüfen sind."
+    },
+    "lab": "netPay",
+    "practice": "netPayCalc",
+    "tasks": {
+      "1": {
+        "prompt": "Erstelle einen Überblick über die gesetzlichen Abgaben auf den Lohn: Nenne alle Steuern und Sozialversicherungsbeiträge und gib jeweils an, wer sie trägt.",
+        "hints": [
+          "Drei Steuern, vier Sozialversicherungsbeiträge vom Lohn, eine Versicherung zahlt der Arbeitgeber allein.",
+          "Achte auf die Bedingung bei der Kirchensteuer und beim Solidaritätszuschlag."
+        ],
+        "model": "Steuern, vom Arbeitnehmer getragen und vom Arbeitgeber abgeführt: Lohnsteuer, Solidaritätszuschlag nur oberhalb einer Freigrenze, Kirchensteuer nur für Kirchenmitglieder. Sozialversicherung, je etwa zur Hälfte von Arbeitnehmer und Arbeitgeber: Rentenversicherung, Krankenversicherung, Pflegeversicherung, Arbeitslosenversicherung. Die Unfallversicherung zahlt der Arbeitgeber allein.",
+        "criteria": [
+          "Du nennst alle drei Steuern und vier Sozialversicherungsbeiträge vom Lohn.",
+          "Du gibst richtig an, wer trägt.",
+          "Du nennst die Bedingungen für Kirchensteuer und Solidaritätszuschlag."
+        ]
+      },
+      "2": {
+        "prompt": "Auf deiner ersten Abrechnung stehen 152 Stunden, laut deinem Arbeitszeitnachweis hast du 160 Stunden gearbeitet, und es wird Kirchensteuer abgezogen, obwohl du kein Kirchenmitglied bist. Erkläre, wie sich beide Fehler auswirken und wie du vorgehst.",
+        "hints": [
+          "Wie verändern fehlende Stunden das Brutto und die Abzüge?",
+          "Wer ist dein Ansprechpartner, und welche Belege brauchst du?"
+        ],
+        "model": "Durch die fehlenden 8 Stunden ist mein Brutto zu niedrig, und auch das Netto fällt geringer aus. Die Kirchensteuer wird mir zu Unrecht abgezogen und verringert mein Netto zusätzlich. Ich lege meinen Arbeitszeitnachweis vor und spreche mit der Personalabteilung. Die Kirchenzugehörigkeit stammt aus meinen Steuerdaten, also prüfe ich sie und lasse sie über das Finanzamt berichtigen. Danach kontrolliere ich die Korrekturabrechnung.",
+        "criteria": [
+          "Du erklärst die Auswirkung beider Fehler.",
+          "Du nennst Belege und Ansprechpartner.",
+          "Du beschreibst, wie du die Korrektur kontrollierst."
+        ]
+      }
+    }
+  }
+]

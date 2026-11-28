@@ -1,0 +1,202 @@
+[
+  {
+    "id": "re-praktikum-bestimmungen",
+    "lb": 4,
+    "tracks": ["R", "M"],
+    "lehrplan": "WiB 8 · LB 4 · R8 & M8",
+    "title": "Gesetzliche Bestimmungen für das Betriebspraktikum",
+    "intro": "Im Betriebspraktikum arbeitest du in einem echten Betrieb, aber nicht wie eine erwachsene Arbeitskraft. Das Jugendarbeitsschutzgesetz legt genau fest, was erlaubt ist.",
+    "paragraphs": [
+      "Wer noch nicht 15 Jahre alt ist, gilt im Jugendarbeitsschutzgesetz als Kind; für Jugendliche, die noch der Vollzeitschulpflicht unterliegen, gelten dieselben Vorschriften (§ 2 JArbSchG). Kinder dürfen grundsätzlich nicht beschäftigt werden (§ 5 Abs. 1). Das Betriebspraktikum während der Vollzeitschulpflicht ist ausdrücklich erlaubt (§ 5 Abs. 2 Nr. 2). Dabei gilt: nur leichte und geeignete Tätigkeiten, höchstens 7 Stunden täglich und 35 Stunden wöchentlich (§ 7 Satz 1 Nr. 2), Ruhepausen von 30 Minuten bei mehr als 4,5 bis 6 Stunden und 60 Minuten bei mehr als 6 Stunden Arbeit (§ 11), eine Schichtzeit von höchstens 10 Stunden (§ 12), Arbeit nur zwischen 6 und 20 Uhr (§ 14), höchstens fünf Tage pro Woche (§ 15) und grundsätzlich keine Arbeit am Samstag und Sonntag (§§ 16, 17).",
+      "Beispiel Praktikumsplan von Tim in einer Kfz-Werkstatt: Arbeitsbeginn 8 Uhr, Ende 16 Uhr, Mittagspause 60 Minuten. Das sind 8 Stunden Schichtzeit minus 1 Stunde Pause gleich 7 Stunden Arbeit; von Montag bis Freitag ergibt das 35 Stunden. Der Plan ist zulässig. Der erste Entwurf des Betriebs sah 7:30 Uhr bis 16:30 Uhr mit nur 30 Minuten Pause vor: 8,5 Stunden Arbeit sind zu viel, und bei mehr als 6 Stunden wären 60 Minuten Pause nötig. Außerdem darf Tim keine gefährlichen Arbeiten übernehmen (§ 22) und muss vor Beginn über Unfallgefahren unterwiesen werden (§ 29)."
+    ],
+    "takeaway": "Im Betriebspraktikum während der Vollzeitschulpflicht gelten höchstens 7 Stunden am Tag und 35 Stunden in der Woche, feste Pausen, Arbeit nur zwischen 6 und 20 Uhr an höchstens fünf Tagen und ein Verbot gefährlicher Arbeiten.",
+    "sourceIds": ["lpr", "lpm", "jarbschg2", "jarbschg5", "jarbschg7", "jarbschg11", "jarbschg12", "jarbschg14", "jarbschg15", "jarbschg16", "jarbschg17"],
+    "quiz": {
+      "question": "Wie lange darfst du im Betriebspraktikum während der Vollzeitschulpflicht höchstens arbeiten?",
+      "answer": "Höchstens 7 Stunden täglich und 35 Stunden wöchentlich.",
+      "wrong": [
+        "Höchstens 8 Stunden täglich und 40 Stunden wöchentlich wie Jugendliche in der Ausbildung.",
+        "So lange der Betrieb es braucht, weil das Praktikum freiwillig ist."
+      ],
+      "explanation": "Für das Praktikum verweist § 5 Abs. 2 JArbSchG auf § 7 Satz 1 Nr. 2: 7 Stunden am Tag und 35 Stunden in der Woche. Die Grenze von 8 und 40 Stunden gilt für Jugendliche, die nicht mehr vollzeitschulpflichtig sind."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Zulässig oder nicht?",
+      "instruction": "Entscheide für jeden Plan eines Praktikumsbetriebs, ob er zulässig ist.",
+      "categories": ["Zulässig", "Nicht zulässig"],
+      "entries": [
+        { "text": "Montag bis Freitag 8 bis 15:30 Uhr mit 30 Minuten Pause (7 Stunden Arbeit).", "target": 1, "feedback": "Bei mehr als 6 Stunden Arbeit sind 60 Minuten Pause vorgeschrieben (§ 11)." },
+        { "text": "Montag bis Freitag 8 bis 16 Uhr mit 60 Minuten Pause.", "target": 0, "feedback": "7 Stunden täglich, 35 in der Woche, ausreichende Pause: zulässig." },
+        { "text": "In der Bäckerei ab 4 Uhr morgens mithelfen, dafür früher gehen.", "target": 1, "feedback": "Erlaubt ist nur die Zeit von 6 bis 20 Uhr (§ 14)." },
+        { "text": "Sechs Tage hintereinander je 5 Stunden, einschließlich Samstag.", "target": 1, "feedback": "Höchstens fünf Tage pro Woche (§ 15), und samstags gilt grundsätzlich Ruhe (§ 16)." },
+        { "text": "Im Lager allein mit dem Gabelstapler Paletten umsetzen.", "target": 1, "feedback": "Arbeiten mit Unfallgefahren, die du mangels Erfahrung nicht erkennst, sind verboten (§ 22)." },
+        { "text": "9 bis 14 Uhr Regale einräumen mit 30 Minuten Pause.", "target": 0, "feedback": "4,5 Stunden Arbeit mit Pause sind zulässig; ab mehr als 4,5 Stunden wäre die Pause Pflicht." }
+      ],
+      "conclusion": "Die Grenzen gelten zusammen: Erst wenn Zeit, Pausen, Tage und Tätigkeit stimmen, ist ein Plan zulässig."
+    },
+    "lab": "internshipCheck",
+    "practice": "internshipHours",
+    "tasks": {
+      "1": {
+        "prompt": "Erstelle einen zulässigen Wochenplan für dein Betriebspraktikum mit Arbeitsbeginn, Ende und Pausen und weise mit den Regeln des JArbSchG nach, dass er zulässig ist.",
+        "hints": [
+          "Rechne Schichtzeit minus Pause.",
+          "Prüfe Tages- und Wochenstunden, Pausen, Uhrzeit und Arbeitstage."
+        ],
+        "model": "Montag bis Freitag von 7:30 Uhr bis 15 Uhr mit 30 Minuten Frühstückspause und 30 Minuten Mittagspause. Schichtzeit 7,5 Stunden minus 1 Stunde Pause ergibt 6,5 Stunden Arbeit, in der Woche 32,5 Stunden. Das liegt unter 7 und 35 Stunden. Bei mehr als 6 Stunden Arbeit sind 60 Minuten Pause nötig, die habe ich. Die Arbeit liegt zwischen 6 und 20 Uhr an fünf Tagen, die Schichtzeit unter 10 Stunden.",
+        "criteria": [
+          "Dein Plan nennt Beginn, Ende und Pausen.",
+          "Du rechnest Tages- und Wochenarbeitszeit richtig.",
+          "Du prüfst alle wichtigen Grenzen des JArbSchG."
+        ]
+      },
+      "2": {
+        "prompt": "Der Praktikumsbetrieb bittet dich, am Samstag beim Tag der offenen Tür mitzuhelfen, weil viel los ist. Beurteile die Bitte rechtlich und schlage eine Lösung vor, die für dich und den Betrieb passt.",
+        "hints": [
+          "Was regeln § 15 und § 16 JArbSchG?",
+          "Wer muss bei Fragen zum Praktikum außerdem informiert werden?"
+        ],
+        "model": "Am Samstag dürfen Jugendliche grundsätzlich nicht beschäftigt werden (§ 16), Ausnahmen gelten nur für bestimmte Branchen, und auch dann bleibt es bei höchstens fünf Arbeitstagen pro Woche (§ 15). Ich würde freundlich ablehnen oder vorschlagen, nach Rücksprache mit meiner Lehrkraft einen anderen Wochentag freizunehmen, falls der Betrieb zu den Ausnahmen gehört. Für das Praktikum ist die Schule mitverantwortlich, deshalb kläre ich so etwas immer mit ihr ab.",
+        "criteria": [
+          "Du nennst die passenden Regeln des JArbSchG.",
+          "Du schlägst eine zulässige Lösung vor.",
+          "Du beziehst die Schule in die Klärung ein."
+        ]
+      }
+    }
+  },
+  {
+    "id": "re-schutzbestimmungen-notwendigkeit",
+    "lb": 4,
+    "tracks": ["R", "M"],
+    "lehrplan": "WiB 8 · LB 4 · R8 & M8",
+    "title": "Warum Schutzbestimmungen notwendig sind",
+    "intro": "Manche Regeln im Praktikum wirken auf den ersten Blick lästig. Wer ihren Sinn versteht, kann begründen, warum sie für Jugendliche wichtig sind.",
+    "paragraphs": [
+      "Jugendliche sind noch in der körperlichen und seelischen Entwicklung und haben wenig Berufserfahrung. Deshalb verbietet das Jugendarbeitsschutzgesetz Arbeiten, die ihre Leistungsfähigkeit übersteigen, mit Unfallgefahren, die sie wegen mangelnder Erfahrung nicht erkennen können, oder mit schädlichem Lärm und Gefahrstoffen (§ 22). Akkordarbeit und Arbeit mit erzwungenem Tempo sind verboten (§ 23). Arbeitszeitgrenzen, Pausen und Nachtruhe sichern Erholung und schützen den Schulerfolg. Der Arbeitgeber muss vor Beginn über Gefahren unterweisen (§ 29). Schutzbestimmungen sollen also nicht verhindern, dass du etwas lernst, sondern dafür sorgen, dass du dabei gesund bleibst.",
+      "Beispiel Werkstatt: Selin, 14 Jahre, möchte im Praktikum unbedingt an der Kreissäge arbeiten, weil sie das spannend findet. Der Meister lehnt ab und lässt sie stattdessen an der Werkbank Holz schleifen und beim Zuschnitt zuschauen. Selin ist zuerst enttäuscht. Im Nachgespräch erklärt er: An der Kreissäge passieren schwere Unfälle, und ohne Ausbildung fehlt die Erfahrung, Gefahren rechtzeitig zu erkennen. Selin bewertet die Regel danach so: Sie schränkt mich ein, aber sie schützt meine Hände, und lernen kann ich trotzdem viel."
+    ],
+    "takeaway": "Schutzbestimmungen sind notwendig, weil Jugendliche sich noch entwickeln und Gefahren mangels Erfahrung schlechter erkennen; sie sichern Gesundheit, Erholung und Schulerfolg, ohne das Lernen zu verhindern.",
+    "sourceIds": ["lpr", "lpm", "jarbschg22", "jarbschg23", "jarbschg29"],
+    "quiz": {
+      "question": "Warum dürfen Jugendliche keine Arbeiten mit besonderen Unfallgefahren übernehmen?",
+      "answer": "Weil ihnen oft die Erfahrung fehlt, solche Gefahren rechtzeitig zu erkennen und abzuwenden.",
+      "wrong": [
+        "Weil Betriebe Jugendlichen grundsätzlich nichts zutrauen.",
+        "Weil solche Arbeiten für Erwachsene ebenfalls verboten sind."
+      ],
+      "explanation": "§ 22 JArbSchG begründet das Verbot mit mangelndem Sicherheitsbewusstsein oder mangelnder Erfahrung. Erwachsene Fachkräfte dürfen solche Arbeiten mit Schutzmaßnahmen ausführen."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Welchen Zweck hat die Regel?",
+      "instruction": "Ordne jede Schutzbestimmung dem Zweck zu, dem sie vor allem dient.",
+      "categories": ["Gesundheit und körperliche Entwicklung", "Schutz vor Unfällen", "Erholung und Schulerfolg"],
+      "entries": [
+        { "text": "Keine Arbeit mit schädlichem Lärm oder Gefahrstoffen", "target": 0, "feedback": "Das Verbot schützt die Gesundheit vor dauerhaften Schäden." },
+        { "text": "Kein Bedienen gefährlicher Maschinen ohne Ausbildung", "target": 1, "feedback": "Das verhindert Unfälle, die aus fehlender Erfahrung entstehen." },
+        { "text": "Arbeit nur zwischen 6 und 20 Uhr", "target": 2, "feedback": "Nachtruhe sichert Schlaf und Erholung." },
+        { "text": "Unterweisung über Unfallgefahren vor dem ersten Arbeitstag", "target": 1, "feedback": "Wer die Gefahren kennt, kann Unfälle vermeiden." },
+        { "text": "Kein Heben schwerer Lasten über die eigene Leistungsfähigkeit hinaus", "target": 0, "feedback": "Das schützt die körperliche Entwicklung." },
+        { "text": "Höchstens 35 Stunden pro Woche", "target": 2, "feedback": "Begrenzte Arbeitszeit lässt Zeit für Erholung." }
+      ],
+      "conclusion": "Jede Schutzbestimmung hat einen nachvollziehbaren Zweck; wer ihn kennt, kann die Regel begründen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Wähle zwei Schutzbestimmungen für das Betriebspraktikum aus und begründe für jede, warum sie für Jugendliche notwendig ist.",
+        "hints": [
+          "Denke an Gesundheit, Unfälle, Erholung und Schule.",
+          "Nenne möglichst auch die Paragrafen."
+        ],
+        "model": "Erstens: Keine gefährlichen Arbeiten (§ 22 JArbSchG). Jugendliche haben wenig Erfahrung und erkennen Gefahren an Maschinen oft zu spät; das Verbot schützt vor schweren Unfällen. Zweitens: Ruhepausen (§ 11). Wer lange ohne Pause arbeitet, wird unkonzentriert, und Fehler oder Unfälle werden wahrscheinlicher. Pausen schützen also Gesundheit und Sicherheit.",
+        "criteria": [
+          "Du nennst zwei passende Schutzbestimmungen.",
+          "Du begründest beide mit ihrem Zweck.",
+          "Deine Begründungen beziehen sich auf Jugendliche."
+        ]
+      },
+      "2": {
+        "prompt": "Ein Mitschüler meint: Die vielen Regeln im Praktikum verhindern, dass wir echte Arbeit kennenlernen. Bewerte diese Aussage, indem du Nutzen und Grenzen der Schutzbestimmungen gegeneinander abwägst.",
+        "hints": [
+          "Was kannst du trotz der Regeln alles lernen?",
+          "Wo schränken die Regeln tatsächlich ein?"
+        ],
+        "model": "Teilweise hat er recht: Gefährliche Maschinen, Nachtarbeit oder Akkord lernt man im Praktikum nicht kennen. Trotzdem kann man Tätigkeiten erproben, Abläufe beobachten, Fachleute befragen und unter Anleitung viel selbst tun. Die Regeln schützen vor Unfällen und Überlastung, die bleibende Schäden hinterlassen könnten. Mein Urteil: Die Einschränkung ist klein im Vergleich zum Nutzen, deshalb sind die Schutzbestimmungen notwendig.",
+        "criteria": [
+          "Du nennst Grenzen der Regeln ehrlich.",
+          "Du zeigst den Nutzen der Regeln.",
+          "Du kommst zu einem begründeten Urteil."
+        ]
+      }
+    }
+  },
+  {
+    "id": "re-praktikum-pflichten-versicherung",
+    "lb": 4,
+    "tracks": ["R", "M"],
+    "lehrplan": "WiB 8 · LB 4 · R8 & M8",
+    "title": "Rechte, Pflichten und Versicherungsschutz im Praktikum",
+    "intro": "Im Betriebspraktikum hast du Rechte und Pflichten. Wer sie kennt, verhält sich richtig, auch wenn einmal etwas schiefgeht.",
+    "paragraphs": [
+      "Zu deinen Pflichten gehören Pünktlichkeit, das Befolgen von Anweisungen, Sorgfalt mit Werkzeugen und Schutzausrüstung (§ 15 ArbSchG) und Verschwiegenheit über Betriebsgeheimnisse und persönliche Daten, etwa von Kunden oder Patienten. Bist du krank, meldest du dich vor Arbeitsbeginn im Betrieb und informierst die Schule. Deine Rechte: Du wirst vor Beginn über Gefahren unterwiesen (§ 29 JArbSchG), du hast Anspruch auf Pausen und eine Ansprechperson. Einen Lohnanspruch hast du nicht, denn das Schulpraktikum ist ein Pflichtpraktikum aufgrund schulrechtlicher Bestimmungen (§ 22 MiLoG). Weil das Praktikum eine Schulveranstaltung ist, bist du über die gesetzliche Unfallversicherung versichert (§ 2 Abs. 1 Nr. 8 SGB VII).",
+      "Beispiel Unfall im Praktikum: Jana schneidet sich in der Gärtnerei beim Topfen leicht in den Finger. Die Betreuerin versorgt die Wunde und trägt den Vorfall ins Verbandbuch ein. Jana informiert am selben Tag ihre Lehrkraft, weil die Schule von Unfällen im Praktikum wissen muss, um sie bei Bedarf der Unfallkasse zu melden. Ihr Freund Ali macht sein Praktikum in einer Großküche: Dort verlangt der Betrieb vor dem ersten Tag eine Belehrung nach dem Infektionsschutzgesetz, weil er mit Lebensmitteln arbeitet (§ 43 IfSG). Ali kümmert sich darum schon zwei Wochen vorher."
+    ],
+    "takeaway": "Im Praktikum bist du zu Pünktlichkeit, Sorgfalt, Sicherheit und Verschwiegenheit verpflichtet; du hast Anspruch auf Unterweisung und Pausen, bekommst keinen Lohn und bist als Schüler gesetzlich unfallversichert.",
+    "sourceIds": ["lpr", "lpm", "arbschg15", "jarbschg29", "milog22", "sgb7_2", "ifsg43"],
+    "quiz": {
+      "question": "Wer kommt für die Folgen eines Arbeitsunfalls im Schulpraktikum auf?",
+      "answer": "Die gesetzliche Unfallversicherung, weil das Praktikum eine Schulveranstaltung ist.",
+      "wrong": [
+        "Allein die Eltern über ihre private Haftpflichtversicherung.",
+        "Niemand, weil Praktikanten nicht versichert sind."
+      ],
+      "explanation": "Schülerinnen und Schüler sind während Schulveranstaltungen gesetzlich unfallversichert (§ 2 Abs. 1 Nr. 8 SGB VII). Deshalb muss die Schule bei einem Unfall informiert werden."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Recht oder Pflicht?",
+      "instruction": "Ordne jede Aussage richtig zu.",
+      "categories": ["Deine Pflicht", "Dein Recht", "Gilt im Schulpraktikum nicht"],
+      "entries": [
+        { "text": "Über Patientendaten in der Arztpraxis mit niemandem sprechen", "target": 0, "feedback": "Verschwiegenheit ist eine Pflicht im Praktikum." },
+        { "text": "Vor dem ersten Einsatz über Unfallgefahren unterwiesen werden", "target": 1, "feedback": "Die Unterweisung steht dir zu (§ 29 JArbSchG)." },
+        { "text": "Den gesetzlichen Mindestlohn für jede Praktikumsstunde erhalten", "target": 2, "feedback": "Pflichtpraktika aufgrund schulrechtlicher Bestimmungen fallen nicht unter das MiLoG." },
+        { "text": "Bei Krankheit vor Arbeitsbeginn Betrieb und Schule informieren", "target": 0, "feedback": "Rechtzeitige Krankmeldung ist deine Pflicht." },
+        { "text": "Die vorgeschriebene Pause von 60 Minuten bei 7 Stunden Arbeit", "target": 1, "feedback": "Pausen stehen dir zu (§ 11 JArbSchG)." },
+        { "text": "Bereitgestellte Schutzbrille an der Schleifmaschine tragen", "target": 0, "feedback": "Schutzausrüstung bestimmungsgemäß zu verwenden ist Pflicht (§ 15 ArbSchG)." }
+      ],
+      "conclusion": "Rechte und Pflichten gehören zusammen: Der Betrieb schützt dich, und du verhältst dich verantwortungsvoll."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erstelle ein Merkblatt für Praktikantinnen und Praktikanten mit je drei Rechten und drei Pflichten.",
+        "hints": [
+          "Rechte: Unterweisung, Pausen, Arbeitszeit, Versicherung.",
+          "Pflichten: Pünktlichkeit, Verschwiegenheit, Sicherheit, Krankmeldung."
+        ],
+        "model": "Deine Rechte: Du wirst vor Beginn über Gefahren unterwiesen. Du hast Anspruch auf Pausen und arbeitest höchstens 7 Stunden am Tag. Du bist über die Schule gesetzlich unfallversichert. Deine Pflichten: Du kommst pünktlich und meldest dich bei Krankheit vor Arbeitsbeginn im Betrieb und in der Schule. Du schweigst über Betriebsgeheimnisse und Kundendaten. Du hältst Sicherheitsregeln ein und trägst die Schutzausrüstung.",
+        "criteria": [
+          "Du nennst drei zutreffende Rechte.",
+          "Du nennst drei zutreffende Pflichten.",
+          "Dein Merkblatt ist verständlich formuliert."
+        ]
+      },
+      "2": {
+        "prompt": "Ein Praktikant postet ein Foto aus der Arztpraxis, auf dem ein Bildschirm mit Patientendaten zu sehen ist. Beurteile das Verhalten und erkläre, welche Pflicht verletzt wurde und welche Folgen das haben kann.",
+        "hints": [
+          "Wem gehören die Daten auf dem Bildschirm?",
+          "Folgen für den Betrieb, die Patienten und den Praktikanten."
+        ],
+        "model": "Das Verhalten ist nicht in Ordnung: Der Praktikant verletzt die Pflicht zur Verschwiegenheit und den Schutz persönlicher Daten der Patienten. Die Patienten können bloßgestellt werden, und die Praxis verliert Vertrauen und muss den Vorfall aufarbeiten. Für den Praktikanten kann das Praktikum abgebrochen werden, und die Schule wird informiert. Er hätte ohne Erlaubnis gar nicht fotografieren dürfen.",
+        "criteria": [
+          "Du benennst die verletzte Pflicht.",
+          "Du beschreibst Folgen für verschiedene Beteiligte.",
+          "Du ziehst eine klare Folgerung für richtiges Verhalten."
+        ]
+      }
+    }
+  }
+]
