@@ -1,0 +1,130 @@
+{
+  "schema": 1,
+  "status": "proposal-only",
+  "approved": null,
+  "source_repository": "https://github.com/zam-os/zam",
+  "source_commit": "c92f4e383385ee487cd8b30f73b3bf3cb27b0860",
+  "note": "Proposal only: cell.json declares neither replaces nor retired_items until Thomas explicitly approves the mapping.",
+  "neighbouring_grade_review": "Under the Bavarian G9 LehrplanPLUS and BayGSO Anlage 1, Geography is not taught in Grades 8 or 9 (only Grades 5, 7, 10, 11). The older de-by Grade 8 (tropics, trade winds, deserts, Sahel desertification) and Grade 9 (HDI, disparities, demography, megacities) cells map to G8 curricula whose core themes now sit in Grade 10 (LB 2, 3, 5, 6, 7). Thomas is asked whether both legacy cells should be formally included in this Grade 10 mapping.",
+  "sources": [
+    {
+      "file": "tests/fixtures/de-by-gymnasium-8-geographie-tropen-passatzirkulation-wuesten-kvt.json",
+      "tile_id": "de-by:gymnasium-8-geographie-tropen-passatzirkulation-wuesten",
+      "version": "2026.08.1",
+      "sha256": "65187d135e5575abff5b948e6054e86b85b6833023fdd5fe0fc69969fe0279d6",
+      "source_path": "tests/fixtures/curriculum/de-by-gymnasium-8-geographie-tropen-passatzirkulation-wuesten-kvt.json"
+    },
+    {
+      "file": "tests/fixtures/de-by-gymnasium-9-geographie-disparitaeten-hdi-demographie-megastaedte-kvt.json",
+      "tile_id": "de-by:gymnasium-9-geographie-disparitaeten-hdi-demographie-megastaedte",
+      "version": "2026.08.1",
+      "sha256": "b71d50cd5e734373da70640e0686a326e5f7ed8f829cd24c02db220be6156c49",
+      "source_path": "tests/fixtures/curriculum/de-by-gymnasium-9-geographie-disparitaeten-hdi-demographie-megastaedte-kvt.json"
+    },
+    {
+      "file": "tests/fixtures/de-by-gymnasium-10-geographie-geooekozonen-klimawandel-kippelemente-kvt.json",
+      "tile_id": "de-by:gymnasium-10-geographie-geooekozonen-klimawandel-kippelemente",
+      "version": "2026.08.1",
+      "sha256": "032fbf04386adbbb184cf6fc268fffc61195b7e17602bfe05f995698065d08d2",
+      "source_path": "tests/fixtures/curriculum/de-by-gymnasium-10-geographie-geooekozonen-klimawandel-kippelemente-kvt.json"
+    }
+  ],
+  "rows": [
+    {
+      "de_by_cell": "de-by:gymnasium-8-geographie-tropen-passatzirkulation-wuesten",
+      "de_by_id": "01K8G8P0000000000000000J01",
+      "category": "A",
+      "action": "propose-replace-after-approval",
+      "academy_slug": "geo10-oekosysteme-check",
+      "reason": "Same atomic retrieval on why tropical rainforest soils (Ferralsol) are nutrient-poor due to the short-circuited nutrient cycle in surface biomass."
+    },
+    {
+      "de_by_cell": "de-by:gymnasium-8-geographie-tropen-passatzirkulation-wuesten",
+      "de_by_id": "01K8G8P0000000000000000J02",
+      "category": "C",
+      "action": "keep-active",
+      "academy_slug": null,
+      "reason": "Multi-part synthesis combining diurnal climate, Hadley circulation/ITC and rainforest canopy layers; the Academy package trains circulation and ecosystems across separate lessons without forcing fixed canopy meter bounds."
+    },
+    {
+      "de_by_cell": "de-by:gymnasium-8-geographie-tropen-passatzirkulation-wuesten",
+      "de_by_id": "01K8G8P0000000000000000J03",
+      "category": "A",
+      "action": "propose-replace-after-approval",
+      "academy_slug": "geo10-desertifikation-check",
+      "reason": "Same atomic retrieval defining desertification in the Sahel through human overexploitation and climate variability."
+    },
+    {
+      "de_by_cell": "de-by:gymnasium-8-geographie-tropen-passatzirkulation-wuesten",
+      "de_by_id": "01K8G8P0000000000000000J04",
+      "category": "C",
+      "action": "keep-active",
+      "academy_slug": null,
+      "reason": "Combines genetic desert types, desert landforms, oases and Sahel desertification across LB 3, LB 5 and LB 6; no single card covers all four strands without splitting history."
+    },
+    {
+      "de_by_cell": "de-by:gymnasium-9-geographie-disparitaeten-hdi-demographie-megastaedte",
+      "de_by_id": "01K8G9P0000000000000000J01",
+      "category": "A",
+      "action": "propose-replace-after-approval",
+      "academy_slug": "geo10-indikatoren-check",
+      "reason": "Same single retrieval asking for the three equal UNDP HDI dimensions (life expectancy, education, per-capita GNI)."
+    },
+    {
+      "de_by_cell": "de-by:gymnasium-9-geographie-disparitaeten-hdi-demographie-megastaedte",
+      "de_by_id": "01K8G9P0000000000000000J02",
+      "category": "C",
+      "action": "keep-active",
+      "academy_slug": null,
+      "reason": "Multi-part prompt covering GDP/HDI/Gini, NICs/BRICS and endogenous vs. exogenous development theories; Grade 10 treats indicators (LB 2) and endogenous obstacles (LB 6) in separate lessons."
+    },
+    {
+      "de_by_cell": "de-by:gymnasium-9-geographie-disparitaeten-hdi-demographie-megastaedte",
+      "de_by_id": "01K8G9P0000000000000000J03",
+      "category": "C",
+      "action": "keep-active",
+      "academy_slug": null,
+      "reason": "The 5-phase demographic transition model is not an explicit standalone competence in Geo10 LehrplanPLUS (megacities and global population processes appear in Geo10 LB 7 and Geo11/13)."
+    },
+    {
+      "de_by_cell": "de-by:gymnasium-9-geographie-disparitaeten-hdi-demographie-megastaedte",
+      "de_by_id": "01K8G9P0000000000000000J04",
+      "category": "C",
+      "action": "keep-active",
+      "academy_slug": null,
+      "reason": "Combines the 5-phase demographic transition model, age pyramids, push/pull migration and megacities across different curriculum areas."
+    },
+    {
+      "de_by_cell": "de-by:gymnasium-10-geographie-geooekozonen-klimawandel-kippelemente",
+      "de_by_id": "01K8GAF0000000000000000J01",
+      "category": "A",
+      "action": "propose-replace-after-approval",
+      "academy_slug": "geo10-verwundbarkeit-check",
+      "reason": "Same atomic retrieval asking where the vast majority of nutrients in tropical rainforests are stored (living above-ground biomass and thin litter)."
+    },
+    {
+      "de_by_cell": "de-by:gymnasium-10-geographie-geooekozonen-klimawandel-kippelemente",
+      "de_by_id": "01K8GAF0000000000000000J02",
+      "category": "C",
+      "action": "keep-active",
+      "academy_slug": null,
+      "reason": "Combines detailed soil profiles across tropics, temperate chernozem, boreal podzol and polar permafrost; Geo10 LB 3 focuses on tropics and arid subtropics while boreal/polar zones belong primarily to Geo12."
+    },
+    {
+      "de_by_cell": "de-by:gymnasium-10-geographie-geooekozonen-klimawandel-kippelemente",
+      "de_by_id": "01K8GAF0000000000000000J03",
+      "category": "A",
+      "action": "propose-replace-after-approval",
+      "academy_slug": "geo10-szenarien-check",
+      "reason": "Same atomic retrieval defining a climate tipping element (large-scale Earth-system component crossing an irreversible threshold)."
+    },
+    {
+      "de_by_cell": "de-by:gymnasium-10-geographie-geooekozonen-klimawandel-kippelemente",
+      "de_by_id": "01K8GAF0000000000000000J04",
+      "category": "C",
+      "action": "keep-active",
+      "academy_slug": null,
+      "reason": "Multi-part synthesis covering radiative physics, four tipping elements, Paris Agreement and mitigation/adaptation; the Academy course teaches greenhouse physics (LB 4.1) and scenarios/adaptation (LB 4.3/4.4) separately."
+    }
+  ]
+}

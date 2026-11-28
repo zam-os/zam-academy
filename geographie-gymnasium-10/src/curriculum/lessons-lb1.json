@@ -1,0 +1,307 @@
+[
+  {
+    "id": "karten-und-satellitenbilder",
+    "lb": 1,
+    "title": "Karten, Themenebenen und Satellitenbilder auswerten",
+    "period": "Geo10 LB 1 · Methoden",
+    "intro": "Atlaskarten, digitale Geomedien und Satellitenaufnahmen zeigen denselben Erdraum auf unterschiedliche Weise – erst ihr Vergleich macht globale Prozesse lesbar.",
+    "paragraphs": [
+      "Eine topografische oder physische Atlaskarte liefert dir das räumliche Grundgerüst: Küstenlinien, Gebirge, Flussnetze und die Lage im Gradnetz zwischen Äquator (0°) und Wendekreisen (23,5° N und 23,5° S). Thematische Karten legen darüber gezielte Datenebenen – etwa jährliche Niederschläge, Klimazonen oder die Verteilung tropischer Regenwälder und Wüsten.",
+      "Digitale interaktive Karten und Web-GIS-Dienste erlauben es, Maßstäbe stufenlos zu wechseln und Ebenen einzeln zu- oder abzuschalten. Luft- und Satellitenbilder ergänzen diese Darstellung um zeitlich aufgelöste Realaufnahmen: Wo eine physische Karte noch geschlossene Waldflächen verzeichnet, zeigen aktuelle Satellitenbilder oft neu angelegte Rodungsschneisen, Stauseen oder wachsende Siedlungsränder.",
+      "Für eine saubere Auswertung gehst du in drei Schritten vor: Zuerst verortest du den Ausschnitt im Gradnetz und anhand markanter Nachbarräume. Zweitens liest du Titel, Maßstab, Aufnahmezeitpunkt und Legende ab. Drittens erklärst du die sichtbaren Muster mithilfe globaler Zusammenhänge – etwa dem Verlauf von Meeresströmungen oder den Windgürteln der Passatzirkulation."
+    ],
+    "workedExample": "Auf einer Weltkarte siehst du bei etwa 20° N in Afrika helle Wüstenfarben (Sahara), auf einer Satellitenzeitreihe in Zentralbrasilien dagegen dunkle Regenwaldflächen, die von hellbraunen Fischgrätenmustern durchzogen sind. Während die Themenkarte die großräumige Klimazone abbildet, zeigt das Satellitenbild den aktuellen menschlichen Eingriff entlang neuer Straßen.",
+    "takeaway": "Atlaskarten und Themenebenen erklären globale Raumstrukturen; Luft- und Satellitenbilder ergänzen sie um aktuelle, sichtbare Veränderungen.",
+    "sourceIds": ["lehrplan", "natural-earth", "bayernatlas", "copernicus"],
+    "figures": ["kartenschichten"],
+    "lab": "kartenebenen",
+    "quiz": {
+      "question": "Was unterscheidet ein aktuelles Satellitenbild besonders von einer statischen physischen Atlaskarte?",
+      "answer": "Es zeigt kurzfristige reale Oberflächenveränderungen wie Rodungsfronten oder Überflutungen",
+      "wrong": [
+        "Es enthält automatisch politische Grenzen ohne Legende",
+        "Es stellt ausschließlich die Temperaturen der letzten hundert Jahre dar"
+      ],
+      "explanation": "Satellitenaufnahmen dokumentieren den tatsächlichen Zustand der Erdoberfläche zu einem bestimmten Zeitpunkt und machen Veränderungen über Zeitreihen sichtbar."
+    },
+    "transferCheck": {
+      "question": "Du untersuchst eine Küstenwüste bei 23° S auf einer Vegetations- und einer Klimakarte. Welcher Zusatzlayer hilft dir beim Erklären der Trockenheit am meisten?",
+      "answer": "Eine Karte der Meeresströmungen und vorherrschenden Windrichtungen",
+      "wrong": [
+        "Eine Übersicht der Stadtbezirksgrenzen vor Ort",
+        "Eine reine Eisenbahnkarte des Nachbarkontinents"
+      ],
+      "explanation": "Kalte Meeresströmungen vor der Küste und ablandige bzw. absinkende Luftmassen erklären die extreme Niederschlagsarmut von Küstenwüsten wie Atacama oder Namib."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Auswertungsschritte ordnen",
+      "instruction": "Bringe die vier Arbeitsschritte beim Auswerten einer digitalen Satelliten- und Themenkarte in eine sinnvolle Reihenfolge.",
+      "categories": [],
+      "entries": [
+        { "text": "Raum im Gradnetz verorten und Maßstab sowie Aufnahmedatum ablesen", "target": 0, "feedback": "Die Verortung und zeitliche Einordnung bildet immer den Ausgangspunkt." },
+        { "text": "Legende prüfen: Farben, Signaturen und sichtbare Landbedeckung unterscheiden", "target": 1, "feedback": "Ohne Legende und Merkmalsabgleich lassen sich Farben im Bild leicht fehlinterpretieren." },
+        { "text": "Karten- oder Zeitebenen vergleichen und räumliche Muster herausarbeiten", "target": 2, "feedback": "Der Vergleich deckt Zusammenhänge zwischen Naturraum und menschlicher Nutzung auf." },
+        { "text": "Sichtbare Strukturen mithilfe allgemeingeographischer Regeln begründen", "target": 3, "feedback": "Am Ende steht die fachliche Erklärung – etwa über Passatzirkulation oder Erschließungsstraßen." }
+      ],
+      "conclusion": "Verorten, genau beschreiben, vergleichen und erst danach begründen verhindert voreilige Deutungen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre an einem Beispiel, warum sich physische Atlaskarte und Satellitenbild beim Thema Tropischer Regenwald gegenseitig ergänzen.",
+        "hints": [
+          "Was zeigt dir die physische Atlaskarte über Höhenlage, Flüsse und Breitengrad?",
+          "Was erkennst du dagegen erst im aktuellen Satellitenbild?"
+        ],
+        "model": "Die physische Karte ordnet das Amazonasbecken zwischen Äquator und Anden ein und zeigt die großen Flusssysteme und Höhenverhältnisse. Erst das aktuelle Satellitenbild macht jedoch sichtbar, wo der geschlossene Wald aktuell entlang neuer Straßen gerodet oder in Weideflächen umgewandelt wurde.",
+        "criteria": [
+          "Ich nenne eine konkrete Information der Atlaskarte (z. B. Lage, Relief, Flüsse).",
+          "Ich beschreibe, welche aktuelle Veränderung erst im Satellitenbild sichtbar wird.",
+          "Ich begründe kurz, warum die Kombination beider Medien für ein Urteil nötig ist."
+        ]
+      },
+      "2": {
+        "prompt": "Ein Bericht zeigt ein Satellitenbild eines fast ausgetrockneten Sees, ohne Jahreszeit und Vorgeschichte zu nennen. Beurteile, welche zusätzlichen Karten oder Daten du vor einer Aussage über eine dauerhafte Austrocknung prüfen musst.",
+        "hints": [
+          "Denke an Regen- und Trockenzeiten in wechselfeuchten Räumen.",
+          "Welche Rolle spielen Vergleichsaufnahmen mehrerer Jahre und menschliche Entnahmen?"
+        ],
+        "model": "Ein einzelnes Satellitenbild kann bloß das Ende einer regulären Trockenzeit zeigen. Um eine dauerhafte Austrocknung zu prüfen, brauche ich eine mehrjährige Bildreihe derselben Jahreszeit sowie Klimadaten (Niederschlag) und Angaben zu Staudämmen oder Bewässerungsentnahmen im Einzugsgebiet.",
+        "criteria": [
+          "Ich nenne den Einfluss jahreszeitlicher Wasserstandsschwankungen.",
+          "Ich fordere eine mehrjährige Zeitreihe zur selben Jahreszeit.",
+          "Ich beziehe Niederschlagsdaten oder Wasserentnahmen als Ursache mit ein."
+        ]
+      }
+    }
+  },
+  {
+    "id": "klimadiagramme-und-zonen",
+    "lb": 1,
+    "title": "Klimadiagramme begründet Klimazonen zuordnen",
+    "period": "Geo10 LB 1 · Klimadaten",
+    "review": "Wiederholung aus Geographie 7: Grundaufbau von Temperaturkurve und Niederschlagssäulen",
+    "intro": "Im Walter-Lieth-Diagramm zeigen die Verhältnisse zwischen Temperatur und Niederschlag sofort, ob ein Monat humid oder arid ist – und zu welcher Klimazone die Station gehört.",
+    "paragraphs": [
+      "Ein klassisches Klimadiagramm nach Walter und Lieth stellt die monatlichen Durchschnittstemperaturen (°C) und die Monatsniederschläge (mm) im festen Maßstab 10 °C = 20 mm gegenüber. Ab 100 mm Niederschlag wird die Skala meist auf 10 °C = 100 mm gestaucht, damit extreme tropische Monatswerte das Blatt nicht sprengen.",
+      "Aus diesem Verhältnis liest du auf einen Blick humide und aride Monate ab: Liegt die Niederschlagskurve bzw. -säule über der Temperaturkurve (also gilt N > 2 · T), fällt mehr Wasser, als potenziell verdunstet – der Monat ist humid. Bleibt der Niederschlag darunter (N < 2 · T), übersteigt die mögliche Verdunstung den Niederschlag – der Monat ist arid.",
+      "Zur begründeten Zuordnung einer Klimazone prüfst du drei Merkmale gemeinsam: die Jahresmitteltemperatur und eventuelle Frostmonate, die Jahrestemperaturspanne (Tageszeitenklima mit unter 5 °C Jahresschwankung vs. ausgeprägtes Jahreszeitenklima) sowie Zahl und Jahreszeit der humiden und ariden Monate."
+    ],
+    "workedExample": "Bei unserer Modellstation in den wechselfeuchten Tropen liegt die Temperatur ganzjährig zwischen 25 °C und 31 °C (Spanne 6 °C, kein Frost). Von Mai bis Oktober liegen die Niederschläge bei 65 bis 240 mm und damit über 2 · T (ca. 50 bis 60 mm) → sechs humide Monate. Von November bis April sinken sie auf 4 bis 45 mm → sechs aride Monate. Ergebnis: Wechselfeuchte Tropen der Nordhalbkugel.",
+    "takeaway": "Temperaturniveau, Jahresspanne und das 2·T-Verhältnis für humide/aride Monate führen zur begründeten Einordnung in eine Klimazone.",
+    "sourceIds": ["lehrplan", "dwd-daten", "lfu-klima"],
+    "figures": ["walter-lieth-schema"],
+    "lab": "klimadiagramm",
+    "quiz": {
+      "question": "Wann gilt ein Monat im Walter-Lieth-Klimadiagramm als arid?",
+      "answer": "Wenn der Monatsniederschlag in mm kleiner ist als die doppelte Monatsmitteltemperatur in °C",
+      "wrong": [
+        "Sobald die Temperatur im Monatsmittel über 10 °C steigt",
+        "Immer dann, wenn der Monat zwischen Mai und August liegt"
+      ],
+      "explanation": "Im Maßstab 10 °C = 20 mm ist der Monat arid, sobald die Niederschlagssäule unter der Temperaturkurve bleibt (N < 2 · T)."
+    },
+    "transferCheck": {
+      "question": "Eine Station weist ganzjährig etwa 26 °C, eine Jahresschwankung von 1 °C und alle zwölf Monate über 70 mm Niederschlag auf. Zu welcher Zone gehört sie?",
+      "answer": "Immerfeuchte Tropen",
+      "wrong": [
+        "Aride Subtropen",
+        "Gemäßigte Zone mit thermischen Jahreszeiten"
+      ],
+      "explanation": "Sehr geringe Jahresschwankung bei hohem Wärmeniveau (Tageszeitenklima) und zwölf humide Monate kennzeichnen die immerfeuchten Tropen."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Vier Stationen den Merkmalen zuordnen",
+      "instruction": "Ordne jede Beschreibung der passenden Klimazone im Modell zu.",
+      "categories": ["Immerfeuchte Tropen", "Wechselfeuchte Tropen", "Aride Subtropen", "Gemäßigte Zone"],
+      "entries": [
+        { "text": "26–27 °C das ganze Jahr, alle 12 Monate humid", "target": 0, "feedback": "Tageszeitenklima ohne Trockenzeit ist typisch für den äquatorialen Regenwald." },
+        { "text": "Hohe Temperaturen ganzjährig, Regenzeit nur im Sommerhalbjahr", "target": 1, "feedback": "Sechs bis acht humide Monate im Sommer und Trockenzeit im Winter bilden die wechselfeuchten Tropen." },
+        { "text": "Alle 12 Monate N < 2 · T bei warmem Sommer bis 34 °C", "target": 2, "feedback": "Durchgehend aride Bedingungen kennzeichnen subtropische Wüsten." },
+        { "text": "Wintermonate um 0 °C bis −1 °C, Sommer um 19 °C, ganzjährig humid", "target": 3, "feedback": "Deutliche thermische Jahreszeiten ohne Trockenzeit passen in die kühlgemäßigte Zone." }
+      ],
+      "conclusion": "Nicht ein einzelner Spitzenwert, sondern das Zusammenspiel von Temperaturgang und hygrischem Verhältnis bestimmt die Zone."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Berechne für einen Monat mit 28 °C und 40 mm Niederschlag, ob er humid oder arid ist, und erkläre deine Entscheidung mit der Walter-Lieth-Regel.",
+        "hints": [
+          "Multipliziere die Temperatur 28 °C mit dem Faktor 2.",
+          "Vergleiche das Ergebnis mit dem Niederschlag von 40 mm."
+        ],
+        "model": "Nach dem Maßstab 10 °C = 20 mm entspricht die Grenze bei 28 °C einem Niederschlag von 2 · 28 = 56 mm. Da nur 40 mm fallen (40 mm < 56 mm), übersteigt die potenzielle Verdunstung den Niederschlag. Der Monat ist also arid.",
+        "criteria": [
+          "Ich berechne den Schwellenwert 2 · 28 = 56 mm korrekt.",
+          "Ich vergleiche 40 mm mit 56 mm.",
+          "Ich benenne den Monat begründet als arid."
+        ]
+      },
+      "2": {
+        "prompt": "Zwei Stationen haben beide 24 °C Jahresmitteltemperatur und 900 mm Jahresniederschlag. Begründe, warum die eine Station ganzjährigen Regenfeldbau erlaubt und die andere Bewässerung braucht, wenn sich die Niederschläge verschieden über das Jahr verteilen.",
+        "hints": [
+          "Unterscheide zwischen gleichmäßiger Verteilung auf 12 Monate und starker Konzentration auf 4 Monate.",
+          "Welche Folgen hat eine achtmonatige aride Phase für den Anbau?"
+        ],
+        "model": "Durchschnittswerte verdecken die jahreszeitliche Verteilung. Verteilen sich 900 mm gleichmäßig auf 12 Monate (ca. 75 mm pro Monat), bleiben alle Monate humid. Fallen die 900 mm hingegen geballt in vier Sommermonaten, herrscht acht Monate Trockenzeit, sodass Regenfeldbau auf eine kurze Saison beschränkt bleibt oder Bewässerung erfordert.",
+        "criteria": [
+          "Ich erkläre, dass Jahresmittel die monatliche Verteilung verdecken.",
+          "Ich stelle gleichmäßig humide Monate einer geballten Regenzeit gegenüber.",
+          "Ich leite die Konsequenz für Anbauphasen oder Bewässerungsbedarf ab."
+        ]
+      }
+    }
+  },
+  {
+    "id": "blockbilder-und-kausalprofile",
+    "lb": 1,
+    "title": "Blockbilder auswerten und Kausalprofile anfertigen",
+    "period": "Geo10 LB 1 · Darstellung",
+    "intro": "Blockbilder zeigen ein Gelände dreidimensional; ein Kausalprofil verknüpft vom selben Raum Naturfaktoren und menschliche Nutzung in einer klaren Ursache-Wirkungs-Kette.",
+    "paragraphs": [
+      "Ein Blockbild verbindet eine Aufsichtskarte mit seitlichen geologischen oder landschaftlichen Schnittflächen. Dadurch erkennst du sofort, wie Höhenstufen, Flusstäler, Küstenebenen und Siedlungsräume im Raum zusammenspielen. Auch andere komplexere Diagrammtypen – etwa gestapelte Flächendiagramme, Klimaszenario-Korridore oder Alterspyramiden – bündeln mehrere Variablen auf einen Blick.",
+      "Ein Kausalprofil reduziert diesen Querschnitt gezielt auf die Frage: Warum sieht die Landschaft an genau dieser Stelle so aus? Dazu werden übereinander oder hintereinander liegende Ebenen beschriftet: Relief und Lage zum Meer, Luftströmungen und Niederschläge, Bodeneigenschaften sowie typische Landwirtschaft oder Gefährdung.",
+      "Entscheidend beim eigenen Zeichnen auf Papier sind Sauberkeit und echte Verknüpfung: Pfeile verbinden nur zusammenhängende Ursachen und Wirkungen (zum Beispiel „Luvseite des Gebirges → Staufeuchte steigt auf → Abregnen → dichter Bergregenwald“). Reine Stichwortsammlungen ohne Richtung und ohne klare Ebenen sind noch kein Kausalprofil."
+    ],
+    "workedExample": "In einem Kausalprofil durch Südamerika bei 20° S zeigen sich je nach Seite verschiedene Steuerfaktoren: Feuchte Luft aus dem Amazonasbecken regnet an der Ostabdachung der Anden (Yungas) als Steigungsregen ab, sodass das Hochland (Altiplano/Puna) trocken im Regenschatten (Lee) liegt; an der Pazifikküste wiederum erzeugen kaltes Auftriebswasser des Humboldtstroms und subtropische Absinkluft die Küstennebelwüste Atacama.",
+    "takeaway": "Blockbilder zeigen räumliche Tiefe; Kausalprofile ordnen einen Querschnitt konsequent nach Ursache, Prozess und Raumwirkung.",
+    "sourceIds": ["lehrplan", "natural-earth"],
+    "figures": ["kausalprofil"],
+    "quiz": {
+      "question": "Was unterscheidet ein Kausalprofil von einem reinen Höhen- oder Geländeprofil?",
+      "answer": "Es verknüpft Geländestufen ausdrücklich über Ursache-Wirkungs-Pfeile mit Klima, Boden und menschlicher Nutzung",
+      "wrong": [
+        "Es verzichtet vollständig auf Höhenangaben und Himmelsrichtungen",
+        "Es darf ausschließlich Städte ohne Naturfaktoren abbilden"
+      ],
+      "explanation": "Das Kausalprofil erklärt, welche Naturfaktoren (Relief, Strömung, Klima) bestimmte Böden, Vegetation und Nutzungsformen hervorrufen."
+    },
+    "transferCheck": {
+      "question": "Beim Vergleich zweier Klimaszenarien soll in einem Diagramm zusätzlich die Unsicherheitsspanne bis 2100 sichtbar werden. Welcher Diagrammtyp passt am besten?",
+      "answer": "Ein Liniendiagramm mit schattiertem Korridor zwischen oberer und unterer Grenze",
+      "wrong": [
+        "Ein einfaches Tortendiagramm für ein einzelnes Jahr",
+        "Ein leerer Grundriss ohne Zeitachse"
+      ],
+      "explanation": "Liniendiagramme mit schattiertem Band (Korridor) zeigen Entwicklungstrends und modellierte Bandbreiten über die Zeit gleichzeitig."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Kausalprofil-Schritte logisch verknüpfen",
+      "instruction": "Ordne die vier Bausteine eines Kausalprofils für eine Luv-Lee-Gebirgsküste von der Naturgrundlage bis zur menschlichen Nutzung.",
+      "categories": [],
+      "entries": [
+        { "text": "Feuchte Meeresluft strömt gegen die küstennahe Gebirgsflanke (Luv)", "target": 0, "feedback": "Ausgangspunkt sind Lage am Meer, Relief und Windrichtung." },
+        { "text": "Die Luft steigt auf, kühlt ab und bildet ergiebigen Steigungsregen", "target": 1, "feedback": "Der physikalische Abkühlungsprozess erklärt die hohe Niederschlagsmenge im Luv." },
+        { "text": "Im Lee sinkt die Luft ab, erwärmt sich und löst Wolken auf (Regenschatten)", "target": 2, "feedback": "Auf der windabgewandten Seite entsteht ein trockener Raum." },
+        { "text": "Luv trägt dichten Wald; im Lee sind Weidewirtschaft oder Bewässerung nötig", "target": 3, "feedback": "Die Landnutzung folgt direkt den klimatischen und edaphischen Bedingungen." }
+      ],
+      "conclusion": "Ein gutes Kausalprofil liest sich von Ursache zu Wirkung wie ein präziser roter Faden."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Beschreibe den Aufbau eines Blockbilds und erkläre, welche drei Informationsschichten du für ein Kausalprofil auf Papier ergänzt.",
+        "hints": [
+          "Was siehst du an einem Blockbild (Oberfläche und Schnittkanten)?",
+          "Welche Faktoren fügst du über und unter dem Relief hinzu?"
+        ],
+        "model": "Ein Blockbild verbindet die Geländeoberfläche als räumliche Ansicht mit geologischen Schnittflächen an der Seite. Für ein Kausalprofil ergänze ich erstens die atmosphärische Schicht (Windrichtung, Einstrahlung, Niederschlag), zweitens die Boden- und Vegetationsschicht und drittens menschliche Nutzungen sowie Pfeile, die Ursachen und Folgen verknüpfen.",
+        "criteria": [
+          "Ich beschreibe Oberfläche und Schnittansicht eines Blockbilds korrekt.",
+          "Ich nenne Relief/Klima, Boden/Vegetation und menschliche Nutzung.",
+          "Ich erkläre die Rolle von Ursache-Wirkungs-Pfeilen."
+        ]
+      },
+      "2": {
+        "prompt": "Bewerte ein Schüler-Diagramm, das für zehn afrikanische Länder nur den Pro-Kopf-Durchschnitt des Einkommens als Säule zeichnet, ohne Einheiten und Quellenjahr zu nennen.",
+        "hints": [
+          "Welche Fehler betreffen die formale Diagramm-Gestaltung?",
+          "Welche räumlichen oder sozialen Aussagen bleiben bei diesem Diagrammtyp unsichtbar?"
+        ],
+        "model": "Formal fehlen Achsenbeschriftung, Währungseinheit (z. B. KKP-$) und Erhebungsjahr, sodass die Werte nicht prüfbar sind. Inhaltlich verdeckt der Landesdurchschnitt Einkommensunterschiede zwischen Arm und Reich sowie nicht-monetäre Lebensbedingungen wie Bildung oder Gesundheit.",
+        "criteria": [
+          "Ich kritisiere fehlende Einheit, Achsenbeschriftung und Quellenangabe.",
+          "Ich weise auf die begrenzte Aussagekraft eines reinen Durchschnittswerts hin.",
+          "Ich nenne eine sinnvolle Ergänzung (z. B. HDI oder Ungleichheitsmaß)."
+        ]
+      }
+    }
+  },
+  {
+    "id": "experimente-stadtmodell-recherche",
+    "lb": 1,
+    "title": "Experimente, Stadtmodelle und digitale Recherche prüfen",
+    "period": "Geo10 LB 1 · Forschung",
+    "intro": "Hypothesen testen, Stadtmodelle am Luftbild überprüfen und eigene Recherchen kritisch bewerten – so arbeitest du im Schuljahr wissenschaftsnah.",
+    "paragraphs": [
+      "Bei naturgeographischen Experimenten zu Klima oder Boden – etwa zur Frage, warum dunkler Boden sich schneller erwärmt als Eis (Albedo) oder warum humusarmer Sand weniger Wasser hält als Lehm – beginnt alles mit einer präzisen Hypothese. Ein Kontrollversuch ändert immer nur genau eine Größe, während alle anderen Bedingungen gleich bleiben.",
+      "In den Raummodellen dieses Schuljahres begegnen dir Stadtstrukturmodelle – etwa für die orientalische Stadt oder lateinamerikanische Metropolen. Ein Modell bündelt typische Merkmale (wie Altstadt, Geschäftsbezirk, Marginalsiedlung und Gated Community). Erst der Vergleich mit einem realen Luftbild oder einer Stadtkarte zeigt dir, welche Teile das Modell treffend erklärt und wo lokale Besonderheiten abweichen.",
+      "Bei eigenen Recherchen im Netz oder in digitalen Berichten gilt ein strenger Quellencheck: Wer hat die Information veröffentlicht (Forschungsinstitut, Behörde oder Lobbygruppe)? Aus welchem Jahr stammen die Daten? Wird zwischen Messwert, Szenario und bloßer Meinung sauber getrennt?"
+    ],
+    "workedExample": "Hypothese: „Unbedeckter Sandboden erwärmt sich unter gleicher Bestrahlung stärker und trocknet schneller aus als pflanzenbedeckter Humusboden.“ Im Schulversuch stehen beide Gefäße im selben Abstand unter der Lampe (Kontrolle: identische Strahlung). Nach 15 Minuten misst du Temperatur und Gewichtsverlust durch Verdunstung.",
+    "takeaway": "Kontrollierte Experimente prüfen einzelne Faktoren; Luftbilder testen Stadtmodelle an der Wirklichkeit; Quellenkritik trennt Beleg von Behauptung.",
+    "sourceIds": ["lehrplan", "bayernatlas", "dwd-daten"],
+    "figures": ["methoden-trias"],
+    "quiz": {
+      "question": "Was ist beim Prüfen einer Hypothese in einem bodenkundlichen Experiment unverzichtbar?",
+      "answer": "Nur den zu untersuchenden Faktor zu verändern und eine Kontrollprobe unter sonst gleichen Bedingungen zu messen",
+      "wrong": [
+        "Gleichzeitig Bodenart, Wassermenge und Beleuchtungsdauer zu wechseln",
+        "Das Ergebnis vorher festzulegen und abweichende Messwerte wegzulassen"
+      ],
+      "explanation": "Nur wenn genau eine Variable verändert wird (Variablenkontrolle), lässt sich ein gemessener Unterschied eindeutig auf diese Ursache zurückführen."
+    },
+    "transferCheck": {
+      "question": "Beim Vergleich eines Stadtmodells mit einem aktuellen Luftbild bemerkst du am Stadtrand eine ganz neue Logistikzone, die im Lehrbuchmodell fehlt. Was bedeutet das?",
+      "answer": "Das Modell bildet eine typische Grundstruktur ab, während reale Städte sich durch neue Prozesse weiterentwickeln",
+      "wrong": [
+        "Das Stadtmodell ist damit komplett widerlegt und darf im ganzen Land nicht mehr genutzt werden",
+        "Die Logistikzone gilt nur als kurzfristige Baustelle, da sich Stadtstrukturen außerhalb des Zentrums kaum verändern"
+      ],
+      "explanation": "Modelle abstrahieren räumliche Muster. Abweichungen im Luftbild zeigen reale, aktuelle Entwicklungen vor Ort auf."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Arbeitsweisen richtig zuordnen",
+      "instruction": "Ordne die sechs Tätigkeiten der passenden geographischen Methode zu.",
+      "categories": ["Klima-/Bodenexperiment", "Stadtmodell vs. Luftbild", "Digitale Quellenprüfung"],
+      "entries": [
+        { "text": "Albedowirkung einer weißen Eisfläche gegen dunklen Asphalt mit zwei Thermometern messen", "target": 0, "feedback": "Ein kontrollierter Vergleich zweier Oberflächen mit klarer Messgröße ist ein Klimaexperiment." },
+        { "text": "Prüfen, ob im realen Stadtgrundriss um den Hauptbasar noch Sackgassen erkennbar sind", "target": 1, "feedback": "Hier wird das theoretische Stadtmodell direkt am Luftbild überprüft." },
+        { "text": "Herausgeber, Publikationsdatum und Datengrundlage einer Online-Statistik kontrollieren", "target": 2, "feedback": "Herkunft und Aktualität gehören zur selbständigen Quellenbewertung." },
+        { "text": "Versickerungsgeschwindigkeit von Wasser in verdichtetem und lockerem Boden vergleichen", "target": 0, "feedback": "Unterschiedliche Bodenstrukturen bei gleicher Wassergabe testen eine bodenkundliche Hypothese." },
+        { "text": "Abgegrenzte Wohnanlagen mit Mauer und Sicherheitsdienst auf der Satellitenkarte markieren", "target": 1, "feedback": "Gated Communities lassen sich anhand ihres Grundrisses im Luftbild gegen das Modell prüfen." },
+        { "text": "Zwei gegensätzliche Klimakommentare mit IPCC- und DWD-Messreihen gegenlesen", "target": 2, "feedback": "Behauptungen gegen Primärdaten zu prüfen verhindert falsche Schlüsse." }
+      ],
+      "conclusion": "Versuch, Raumvergleich und Quellenkritik ergänzen sich zu verlässlichen geographischen Urteilen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Plane ein kurzes Experiment zur Frage, wie Vegetationsbedeckung die Bodenerosion durch Starkregen im Sahel beeinflusst (Hypothese, Aufbau, Kontrolle).",
+        "hints": [
+          "Was brauchst du in zwei Schalen mit gleicher Neigung?",
+          "Welche Größe hältst du bei beiden Schalen exakt gleich?"
+        ],
+        "model": "Hypothese: Ein mit Gräsern bewachsener Boden verliert bei Starkregen deutlich weniger Bodenmaterial als ein unbedeckter Boden. Aufbau: Zwei schräg gestellte Kästen mit demselben Sand-Lehm-Gemisch – Schale A kahl, Schale B dicht bewachsen. Kontrolle: Gleiche Neigung und gleiche Wassermenge aus derselben Gießkanne. Gemessen wird die Menge ausgeschwemmten Bodens im Auffangbecher.",
+        "criteria": [
+          "Ich formuliere eine überprüfbare Hypothese.",
+          "Ich beschreibe Versuchsschale und Kontrollschale sauber.",
+          "Ich benenne konstante Bedingungen und die konkrete Messgröße."
+        ]
+      },
+      "2": {
+        "prompt": "Du stößt in einer Online-Recherche auf eine Grafik ohne Jahreszahl und ohne Autorenangabe, die eine steile Kurve zeigt. Erläutere anhand von drei Kriterien, wie du sie für ein Referat bewertest.",
+        "hints": [
+          "Prüfe Nachvollziehbarkeit, Einheiten/Achsen und Vergleichsdaten.",
+          "Welche Folgen hat fehlende Herkunft für die Verwendbarkeit?"
+        ],
+        "model": "Erstens fehlt die Quelle, sodass weder Methodik noch Interessenlage prüfbar sind. Zweitens lassen sich ohne Jahreszahl Trends nicht in den historischen Verlauf einordnen. Drittens müssen Achsenskalierung und Einheiten geprüft werden, weil abgeschnittene Achsen geringe Veränderungen dramatisch verzerren können – ohne verlässlichen Primärbeleg darf die Grafik nicht als Fakt zitiert werden.",
+        "criteria": [
+          "Ich prüfe Urheber/Quelle und Erhebungsjahr.",
+          "Ich beachte die Gefahr verzerrter Achsenskalierungen.",
+          "Ich treffe ein begründetes Urteil zur Verwendbarkeit der Grafik."
+        ]
+      }
+    }
+  }
+]
