@@ -28,6 +28,7 @@ export const SOURCES = [
   { id: "kug", label: "Kunsturhebergesetz · Recht am eigenen Bild", url: "https://www.gesetze-im-internet.de/kunsturhg/" },
   { id: "juschg", label: "Jugendschutzgesetz", url: "https://www.gesetze-im-internet.de/juschg/" },
   { id: "jarbschg", label: "Jugendarbeitsschutzgesetz", url: "https://www.gesetze-im-internet.de/jarbschg/" },
+  { id: "kindarbschv", label: "Kinderarbeitsschutzverordnung", url: "https://www.gesetze-im-internet.de/kindarbschv/" },
   { id: "bmas-jarbschg", label: "BMAS · Jugendarbeitsschutzgesetz", url: "https://www.bmas.de/DE/Service/Gesetze-und-Gesetzesvorhaben/jugendarbeitsschutzgesetz.html" },
   { id: "pangv", label: "Preisangabenverordnung", url: "https://www.gesetze-im-internet.de/pangv_2022/" },
   { id: "uwg", label: "Gesetz gegen den unlauteren Wettbewerb", url: "https://www.gesetze-im-internet.de/uwg_2004/" },

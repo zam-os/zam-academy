@@ -123,6 +123,17 @@ describe("practice", () => {
       // Shares lie between 0 and 100 per cent.
       const share = makeExercise("marktanteil", createRng(seed), 1);
       expect(share.fields[0].answer + share.fields[1].answer).toBe(100);
+      // Equal interest and inflation keep purchasing power; the model solution must say so.
+      const real = makeExercise("kaufkraft", createRng(seed), 2);
+      const zins = Number(/zu ([\d,]+) % Zinsen/.exec(real.prompt)?.[1].replace(",", "."));
+      const infl = Number(/bei (\d+) %/.exec(real.prompt)?.[1]);
+      expect(real.solution).toContain(zins < infl ? "verloren" : zins === infl ? "bleibt gleich" : "gewonnen");
+      // A savings goal is plausible: at least 150 € and reachable within five years.
+      expect(plan.prompt).toMatch(/für (\d{3,}) €/);
+      expect(Number(/für (\d+) €/.exec(plan.prompt)?.[1])).toBeGreaterThanOrEqual(150);
+      expect(plan.fields[0].answer).toBeLessThanOrEqual(60);
+      // A leader in the decision matrix leads by more than nothing.
+      expect(makeExercise("nutzwert", createRng(seed), 2).fields[1].answer).toBeGreaterThan(0);
       // An instalment purchase always costs more than paying cash.
       expect(makeExercise("ratenkauf", createRng(seed), 1).fields[1].answer).toBeGreaterThan(0);
     }

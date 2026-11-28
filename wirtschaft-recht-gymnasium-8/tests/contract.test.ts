@@ -59,7 +59,7 @@ describe("public learning contract", () => {
       });
     }
   });
-  it("gives each lesson two or three single-point cards that ask without the lesson", () => {
+  it("gives each lesson two to four single-point cards that ask without the lesson", () => {
     const ids = new Set<string>();
     for (const atom of cell.atoms) {
       expect(atom.practice_items.length).toBeGreaterThanOrEqual(2);
@@ -190,6 +190,9 @@ describe("proposal for the old Grade 8 cell", () => {
     expect(hex).toBe(source.sha256);
     expect(source.tile_id).toBe(legacy.tile_id);
     expect(source.version).toBe(legacy.version);
+    // § 6: where the snapshot was taken.
+    expect(mapping.source_repository).toBe("zam-os/zam");
+    expect(mapping.source_commit).toMatch(/^[0-9a-f]{40}$/);
   });
   it("stays a proposal: no approval, no replaces and no retired items in the cell", () => {
     expect(mapping.status).toBe("proposal-only");

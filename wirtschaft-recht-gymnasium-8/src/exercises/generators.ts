@@ -40,6 +40,12 @@ export function makeExercise(kind: PracticeKind, rng: Rng, level: Level): Exerci
           const sorted = [...scores].sort((x, y) => y - x);
           if (sorted[0] - sorted[1] > 0.04) break;
         }
+        const ranked = [...scores].sort((x, y) => y - x);
+        if (ranked[0] - ranked[1] <= 0.04) {
+          // Fallback after 50 tries: a fixed set with a clear leader.
+          ratings = [[5, 4, 3], [3, 3, 3], [2, 3, 4]];
+          scores = ratings.map((r) => r.reduce((s, v, i) => s + (v * weights[i]) / 100, 0));
+        }
         const order = scores.map((s, i) => [s, i] as const).sort((x, y) => y[0] - x[0]);
         const names = ["A", "B", "C"];
         task.table = {
@@ -71,10 +77,10 @@ export function makeExercise(kind: PracticeKind, rng: Rng, level: Level): Exerci
         const balance = (capital * (100 + zins)) / 100;
         const real = balance / (1 + infl / 100);
         task.prompt = `Mia legt ${e(capital)} € für ein Jahr zu ${fmt(zins)} % Zinsen an. Die Inflationsrate liegt im selben Jahr bei ${infl} %. Wie hoch ist ihr Kontostand nach einem Jahr, und was ist er in Preisen von heute wert?`;
-        task.hint = `Kontostand = Betrag · (1 + Zinssatz). Kaufkraft in Preisen von heute = Kontostand : (1 + ${infl} : 100).`;
+        task.hint = `Kontostand = Betrag · (1 + Zinssatz). Kaufkraft in Preisen von heute = Kontostand : (1 + ${infl} : 100). Runde auf Cent.`;
         field("Kontostand nach einem Jahr", balance, "€");
         field("Kaufkraft in Preisen von heute", real, "€");
-        task.solution = `Kontostand: ${e(capital)} € · ${fmt(1 + zins / 100)} = ${e(balance)} €. Kaufkraft: ${e(balance)} € : ${fmt(1 + infl / 100)} ≈ ${e(real)} €. ${real < capital ? "Trotz Zinsen hat Mia real an Kaufkraft verloren." : "Mia hat real an Kaufkraft gewonnen."}`;
+        task.solution = `Kontostand: ${e(capital)} € · ${fmt(1 + zins / 100)} = ${e(balance)} €. Kaufkraft: ${e(balance)} € : ${fmt(1 + infl / 100)} ≈ ${e(real)} €. ${zins < infl ? "Trotz Zinsen hat Mia real an Kaufkraft verloren." : zins === infl ? "Zins und Inflationsrate sind gleich hoch: Die Kaufkraft bleibt gleich." : "Mia hat real an Kaufkraft gewonnen."}`;
       }
       break;
     }
@@ -102,10 +108,13 @@ export function makeExercise(kind: PracticeKind, rng: Rng, level: Level): Exerci
         task.solution = `Einnahmen: ${tg} + ${job} = ${income} €. Ausgaben: ${handy} + ${free} + ${clothes} + ${snacks} = ${spend} €. Sparrate: ${income} − ${spend} = ${rest} €.`;
       } else {
         const months = pick(rng, [6, 8, 10, 12] as const);
-        const extra = rng.int(1, 4) * 5;
+        // At least 150 € and a sensible number of months: raise the cut until the goal is plausible.
+        let extra = rng.int(1, 4) * 5;
+        while (months * (rest + extra) < 150) extra += 5;
         const goal = months * (rest + extra);
+        const target = goal >= 300 ? "eine Konsole" : "Kopfhörer";
         const needed = Math.ceil(goal / rest);
-        task.prompt = `Jonas nimmt im Monat ${income} € ein und gibt ${spend} € aus. Er spart auf eine Konsole für ${goal} €. Wie viele Monate braucht er bei gleicher Sparrate? Um wie viel Euro muss er seine Ausgaben jeden Monat senken, damit er die Konsole schon in ${months} Monaten kaufen kann?`;
+        task.prompt = `Jonas nimmt im Monat ${income} € ein und gibt ${spend} € aus. Er spart auf ${target} für ${goal} €. Wie viele Monate braucht er bei gleicher Sparrate? Um wie viel Euro muss er seine Ausgaben jeden Monat senken, damit er das Ziel schon in ${months} Monaten erreicht?`;
         task.hint = "Sparrate = Einnahmen minus Ausgaben. Für die Monate teilst du den Preis durch die Sparrate und rundest auf. Für das Ziel teilst du den Preis durch die gewünschte Zahl der Monate.";
         field("Monate bei gleicher Sparrate", needed, "Monate");
         field("Nötige Kürzung je Monat", extra, "€");
@@ -130,7 +139,7 @@ export function makeExercise(kind: PracticeKind, rng: Rng, level: Level): Exerci
         task.solution = `${down ? `${e(down)} + ` : ""}${months} · ${e(rate)} = ${e(total)} €. Mehrkosten: ${e(total)} − ${e(price)} = ${e(extra)} €.`;
       } else {
         task.prompt = `Ein Händler wirbt: „${item} für nur ${e(rate)} € im Monat!“ Im Kleingedruckten steht: ${down ? `Anzahlung ${e(down)} €, ` : ""}${months} Raten. Bar kostet das Gerät ${e(price)} €. Berechne die Mehrkosten in Euro und in Prozent des Barpreises.`;
-        task.hint = "Rechne zuerst den Gesamtpreis aus. Mehrkosten in Prozent = Mehrkosten : Barpreis · 100.";
+        task.hint = "Rechne zuerst den Gesamtpreis aus. Mehrkosten in Prozent = Mehrkosten : Barpreis · 100, auf zwei Nachkommastellen gerundet.";
         field("Mehrkosten", extra, "€");
         field("Mehrkosten in Prozent des Barpreises", (extra / price) * 100, "%");
         task.solution = `Gesamtpreis: ${down ? `${e(down)} + ` : ""}${months} · ${e(rate)} = ${e(total)} €. Mehrkosten: ${e(extra)} €. ${e(extra)} : ${e(price)} · 100 ≈ ${pct((extra / price) * 100)} %. Die kleine Monatsrate verdeckt die Gesamtkosten.`;
@@ -154,7 +163,7 @@ export function makeExercise(kind: PracticeKind, rng: Rng, level: Level): Exerci
         const revenue = count * price;
         const cost = Math.round((revenue * pick(rng, [0.6, 0.7, 0.75, 0.8, 0.9] as const)) / 10) * 10;
         task.prompt = `Die Schülerfirma verkauft beim Schulfest ${count} Vogelhäuser zu je ${e(price)} €. Für Holz, Farbe und Standmiete fallen ${e(cost)} € an. Nach der Arbeitsteilung steigt die Produktivität von ${before} auf ${after} Stück je Arbeitsstunde. Berechne die Wirtschaftlichkeit und die Steigerung der Produktivität in Prozent.`;
-        task.hint = "Wirtschaftlichkeit = Ertrag : Aufwand (in Euro). Steigerung in Prozent = (neu minus alt) : alt · 100.";
+        task.hint = "Wirtschaftlichkeit = Ertrag : Aufwand (in Euro). Steigerung in Prozent = (neu minus alt) : alt · 100. Runde beide Ergebnisse auf zwei Nachkommastellen.";
         field("Wirtschaftlichkeit", revenue / cost, "Ertrag je Euro Aufwand");
         field("Steigerung der Produktivität", ((after - before) / before) * 100, "%");
         task.solution = `Ertrag: ${count} · ${e(price)} = ${e(revenue)} €. Wirtschaftlichkeit: ${e(revenue)} : ${e(cost)} ≈ ${pct(revenue / cost)}; ein Wert über 1 heißt, der Ertrag übersteigt den Aufwand. Produktivität: (${after} − ${before}) : ${before} · 100 ≈ ${pct(((after - before) / before) * 100)} %.`;
@@ -179,7 +188,7 @@ export function makeExercise(kind: PracticeKind, rng: Rng, level: Level): Exerci
         let rival = rng.int(8, 30);
         if (rival === own) rival += 3;
         task.prompt = `Für Fahrradhelme schätzt ein Hersteller das Marktpotenzial auf ${fmt(potential)} Tausend Stück im Jahr; tatsächlich verkauft werden ${fmt(volume)} Tausend Stück. Sein eigener Marktanteil beträgt ${own} %, der des größten Konkurrenten ${rival} %. Berechne den Sättigungsgrad des Marktes und den relativen Marktanteil.`;
-        task.hint = "Sättigungsgrad = Marktvolumen : Marktpotenzial · 100. Relativer Marktanteil = eigener Marktanteil : Marktanteil des größten Konkurrenten.";
+        task.hint = "Sättigungsgrad = Marktvolumen : Marktpotenzial · 100. Relativer Marktanteil = eigener Marktanteil : Marktanteil des größten Konkurrenten, auf zwei Nachkommastellen gerundet.";
         field("Sättigungsgrad", level2, "%");
         field("Relativer Marktanteil", own / rival, "Verhältnis");
         task.solution = `Sättigungsgrad: ${fmt(volume)} : ${fmt(potential)} · 100 = ${level2} %. Relativer Marktanteil: ${own} : ${rival} ≈ ${pct(own / rival)}. ${own > rival ? "Der Hersteller ist Marktführer." : "Ein Wert unter 1 heißt: Der größte Konkurrent ist stärker."}`;
@@ -194,7 +203,7 @@ export function makeExercise(kind: PracticeKind, rng: Rng, level: Level): Exerci
       const item = pick(rng, PRODUCTS);
       if (level === 1) {
         task.prompt = `Ein Händler kalkuliert den Preis für einen ${item}. Die Selbstkosten betragen ${e(cost)} €, er rechnet mit einem Gewinnzuschlag von ${markup} %. Dazu kommen 19 % Umsatzsteuer. Berechne Nettoverkaufspreis und Bruttoverkaufspreis.`;
-        task.hint = `Nettoverkaufspreis = Selbstkosten · (1 + ${markup} : 100). Bruttoverkaufspreis = Nettoverkaufspreis · 1,19.`;
+        task.hint = `Nettoverkaufspreis = Selbstkosten · (1 + ${markup} : 100). Bruttoverkaufspreis = Nettoverkaufspreis · 1,19, auf Cent gerundet.`;
         field("Nettoverkaufspreis", net, "€");
         field("Bruttoverkaufspreis", gross, "€");
         task.solution = `Gewinn: ${e(cost)} € · ${markup} % = ${e(net - cost)} €. Netto: ${e(cost)} + ${e(net - cost)} = ${e(net)} €. Brutto: ${e(net)} € · 1,19 ≈ ${e(gross)} €.`;

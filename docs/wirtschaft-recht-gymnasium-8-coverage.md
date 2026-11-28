@@ -28,7 +28,7 @@ Der Profilbereich nennt keine Stunden; die Klasse wählt daraus aus. Seine zehn 
 
 ## 3. Rechtsquellen
 
-Alle Paragrafen, die Lektionen, Labore und Karten nennen, wurden am 2026-11-28 auf gesetze-im-internet.de gelesen, darunter § 823, § 828, § 832 BGB; § 19, § 185, § 186, § 242, § 303 StGB; § 1, § 3, § 5, § 9, § 13, § 16, § 18, § 48, § 105 JGG; § 5, § 9, § 10, § 11 JuSchG; § 2, § 5, § 8, § 11, § 14, § 15, § 19 JArbSchG; § 2, § 15, § 51, § 53, § 60a, § 64, § 97 UrhG; § 22, § 23, § 33 KunstUrhG; § 278 ZPO; § 23 GVG (Amtsgericht bis 10.000 €). Jeder gezeigte Quellenlink wurde einmal abgerufen und sein Seitentitel gelesen.
+Alle Paragrafen, die Lektionen, Labore und Karten nennen, wurden am 2026-11-28 auf gesetze-im-internet.de gelesen, darunter § 823, § 828, § 832 BGB; § 19, § 185, § 186, § 242, § 303 StGB; § 1, § 3, § 5, § 9, § 13, § 16, § 18, § 48, § 105 JGG; § 5, § 9, § 10, § 11 JuSchG; § 2, § 5, § 8, § 11, § 14, § 15, § 19 JArbSchG; § 2, § 15, § 51, § 53, § 60a, § 64, § 97 UrhG; § 22, § 23, § 33 KunstUrhG; § 278 ZPO; § 23 GVG (Amtsgericht bis 10.000 €). Jeder gezeigte Quellenlink wurde einmal abgerufen und sein Seitentitel gelesen (die Bundesbank-Seiten lieferten beim Abruf mit Browser-User-Agent ihre Titel, etwa „Geldpolitik | Deutsche Bundesbank“). Nach dem Review ergänzt: § 2 KindArbSchV (Liste der leichten Tätigkeiten für Kinder ab 13 und vollzeitschulpflichtige Jugendliche).
 
 ## 4. Bestandsabgleich: `replaces-de-by.json`
 

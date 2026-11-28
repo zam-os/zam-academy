@@ -226,7 +226,7 @@ export const LB3: Lesson[] = [
     intro: "Wer einem anderen Schaden zufügt, muss ihn ersetzen. Aber ab welchem Alter, und was ist mit den Eltern?",
     paragraphs: [
       "Eine **unerlaubte Handlung**, auch Delikt genannt, liegt im Zivilrecht vor, wenn jemand die Rechtsgüter eines anderen widerrechtlich und schuldhaft verletzt. Wichtigste Norm ist **§ 823 Abs. 1 BGB**. Sie verlangt eine **Verletzung** eines geschützten Rechtsguts wie Körper, Gesundheit oder Eigentum, eine **Handlung**, die diese Verletzung verursacht hat, **Widerrechtlichkeit** und **Verschulden**: Der Schädiger hat **vorsätzlich** gehandelt, also mit Wissen und Wollen, oder **fahrlässig**, also ohne die nötige Sorgfalt. Rechtsfolge ist der **Schadensersatz**, bei Verletzungen auch ein Schmerzensgeld.",
-      "Verschulden setzt voraus, dass jemand überhaupt verantwortlich sein kann. Das ist die **Deliktsfähigkeit**, die § 828 BGB nach dem Alter regelt. Kinder unter **sieben Jahren** sind für Schäden nicht verantwortlich. Bei Unfällen mit einem Auto, einer Straßen- oder Schwebebahn sind auch Kinder unter **zehn Jahren** nicht verantwortlich, außer sie handeln vorsätzlich. Zwischen 7 und 17 Jahren kommt es darauf an, ob der Minderjährige die **Einsicht** hatte, dass er für sein Handeln verantwortlich ist. Ab **18 Jahren** ist man voll deliktsfähig.",
+      "Verschulden setzt voraus, dass jemand überhaupt verantwortlich sein kann. Das ist die **Deliktsfähigkeit**, die § 828 BGB nach dem Alter regelt. Kinder unter **sieben Jahren** sind für Schäden nicht verantwortlich. Bei Unfällen mit einem Kraftfahrzeug, einer Schienenbahn oder einer Schwebebahn sind auch Kinder unter **zehn Jahren** nicht verantwortlich, außer sie handeln vorsätzlich. Zwischen 7 und 17 Jahren kommt es darauf an, ob der Minderjährige die **Einsicht** hatte, dass er für sein Handeln verantwortlich ist. Ab **18 Jahren** ist man voll deliktsfähig.",
       "Haftet das Kind nicht, bleibt der Geschädigte nicht immer ohne Ersatz. Eltern haften nach **§ 832 BGB**, wenn sie ihre **Aufsichtspflicht** verletzt haben. Wie viel Aufsicht nötig ist, hängt vom Alter und der Situation ab: Ein Dreijähriger braucht mehr Aufsicht als eine 14-Jährige. Haben die Eltern ihre Pflicht erfüllt, haften sie nicht. Eltern haften also nicht automatisch für ihre Kinder, auch wenn Schilder wie „Eltern haften für ihre Kinder“ das nahelegen.",
       "Weil Schäden teuer werden können, schließen viele Familien eine **private Haftpflichtversicherung** ab. Sie zahlt, wenn ein Familienmitglied einem anderen fahrlässig einen Schaden zufügt, etwa beim Fußballspielen eine Scheibe zerbricht. Vorsätzlich verursachte Schäden zahlt sie in der Regel nicht.",
     ],
@@ -249,7 +249,7 @@ export const LB3: Lesson[] = [
       },
     ],
     takeaway:
-      "Wer widerrechtlich und schuldhaft fremde Rechtsgüter verletzt, muss nach § 823 BGB Schadensersatz leisten. Unter 7 Jahren haftet niemand, zwischen 7 und 17 entscheidet die Einsicht, ab 18 haftet man voll. Eltern haften nur bei verletzter Aufsichtspflicht.",
+      "Wer widerrechtlich und schuldhaft fremde Rechtsgüter verletzt, muss nach § 823 BGB Schadensersatz leisten. Unter 7 Jahren haftet niemand, zwischen 7 und 17 entscheidet die Einsicht, ab 18 haftet man voll. Bei Unfällen mit Kraftfahrzeugen oder Bahnen haften 7- bis 9-Jährige nur bei Vorsatz. Eltern haften nur bei verletzter Aufsichtspflicht.",
     sourceIds: ["lp", "bgb"],
     lab: "verantwortung",
     labGoals: ["kind", "nur-zivil", "jugendstrafrecht"],

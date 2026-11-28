@@ -67,13 +67,14 @@ export const VERANTWORTUNG: LabDef = {
     const ruler = svg(
       "Altersgrenzen im Zivil- und im Strafrecht",
       `<text class="lab-text lab-text-strong" x="20" y="14">Zivilrecht · Schadensersatz</text>
-       ${zone(5, 7, 20, "lab-zone-no", "unter 7")}${zone(7, 18, 20, "lab-zone-maybe", "7 bis 17: Einsicht entscheidet")}${zone(18, 23, 20, "lab-zone-yes", "ab 18")}
+       ${zone(5, 7, 20, "lab-zone-no", "unter 7")}${zone(7, 10, 20, "lab-zone-maybe2", "7 bis 9 *")}${zone(10, 18, 20, "lab-zone-maybe", "10 bis 17: Einsicht entscheidet")}${zone(18, 23, 20, "lab-zone-yes", "ab 18")}
        <text class="lab-text lab-text-strong" x="20" y="70">Strafrecht</text>
        ${zone(5, 14, 76, "lab-zone-no", "unter 14: schuldunfähig")}${zone(14, 18, 76, "lab-zone-maybe", "14 bis 17")}${zone(18, 21, 76, "lab-zone-maybe2", "18 bis 20")}${zone(21, 23, 76, "lab-zone-yes", "ab 21")}
        <line class="lab-marker" x1="${x(s.alter + 0.5)}" y1="12" x2="${x(s.alter + 0.5)}" y2="112"/>
-       <text class="lab-text lab-text-strong" x="${Math.min(410, x(s.alter + 0.5) + 4)}" y="126">${s.alter} J.</text>`,
+       <text class="lab-text lab-text-strong" x="${Math.min(410, x(s.alter + 0.5) + 4)}" y="126">${s.alter} J.</text>
+       <text class="lab-text lab-text-muted" x="20" y="148">* 7 bis 9: bei Unfällen mit Kraftfahrzeugen oder Bahnen nur bei Vorsatz</text>`,
       470,
-      132,
+      156,
     );
     return {
       figure:
@@ -88,7 +89,7 @@ export const VERANTWORTUNG: LabDef = {
         ["Schadensersatz", c.liable ? "ja" : "nein"],
         ["Strafrecht", k.title],
       ],
-      note: "Das Modell zeigt Regelfälle zu einer einzigen Tat. Ob die Eltern wegen verletzter Aufsichtspflicht haften und ob eine Haftpflichtversicherung zahlt, wird gesondert geprüft. Schuldunfähigkeit wegen einer schweren seelischen Störung bleibt ausgeklammert.",
+      note: "Das Modell zeigt Regelfälle zu einer einzigen Tat. Der Steinwurf ist kein Unfall mit einem Kraftfahrzeug oder einer Bahn, deshalb gilt die besondere Grenze von zehn Jahren hier nicht. Ob die Eltern wegen verletzter Aufsichtspflicht haften und ob eine Haftpflichtversicherung zahlt, wird gesondert geprüft. Schuldunfähigkeit wegen einer schweren seelischen Störung bleibt ausgeklammert.",
     };
   },
 };

@@ -56,7 +56,7 @@ writeFileSync(linuxShPath, linuxSh, "utf8");
 chmodSync(linuxShPath, 0o755);
 
 const readmeTxt = `========================================================================
-ZAM ACADEMY · WIRTSCHAFT UND RECHT 8 REALSCHULE (LehrplanPLUS Bayern)
+ZAM ACADEMY · WIRTSCHAFT UND RECHT 8 GYMNASIUM (LehrplanPLUS Bayern, WWG)
 ========================================================================
 
 SOFORT-START OHNE INSTALLATION

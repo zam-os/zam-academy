@@ -560,7 +560,7 @@ export const LB4: Lesson[] = [
     intro: "Zeitungen austragen, babysitten, im Ferienjob jobben: Was darfst du mit 13, 15 oder 17?",
     paragraphs: [
       "Das **Jugendarbeitsschutzgesetz** (JArbSchG) schützt junge Menschen vor Arbeit, die ihrer Gesundheit, Entwicklung oder Schule schadet. Es unterscheidet **Kinder**, die noch nicht 15 Jahre alt sind, und **Jugendliche** von 15 bis 17 Jahren. Wichtig: Wer noch **vollzeitschulpflichtig** ist, wird wie ein Kind behandelt, auch wenn er schon 15 oder 16 ist.",
-      "Die **Beschäftigung von Kindern ist grundsätzlich verboten**. Ab **13 Jahren** sind aber mit **Einwilligung der Eltern** leichte und für Kinder geeignete Tätigkeiten erlaubt, etwa Zeitungen austragen, Nachhilfe geben, Babysitten oder Gartenarbeit. Dabei gilt: höchstens **zwei Stunden täglich**, nicht zwischen **18 und 8 Uhr** und nicht vor oder während des Unterrichts. Vollzeitschulpflichtige Jugendliche dürfen außerdem in den **Schulferien** höchstens **vier Wochen im Jahr** arbeiten, dann nach den Regeln für Jugendliche.",
+      "Die **Beschäftigung von Kindern ist grundsätzlich verboten**. Ab **13 Jahren** sind mit **Einwilligung der Eltern** nur leichte Tätigkeiten erlaubt, die die **Kinderarbeitsschutzverordnung** abschließend aufzählt: etwa Zeitungen austragen, Nachhilfe geben, Babysitten, Hilfe in Haushalt und Garten von Privatleuten, in der Landwirtschaft oder bei nichtgewerblichen Vereinsfesten. Arbeit in einem Geschäft, Café oder Supermarkt gehört nicht dazu. Dabei gilt: höchstens **zwei Stunden täglich** (in landwirtschaftlichen Familienbetrieben drei), nicht zwischen **18 und 8 Uhr** und nicht vor oder während des Unterrichts. Diese Regeln gelten auch in den Ferien. Erst **vollzeitschulpflichtige Jugendliche ab 15** dürfen in den **Schulferien** bis zu **vier Wochen im Jahr** arbeiten, dann nach den Regeln für Jugendliche.",
       "Für **Jugendliche**, etwa Auszubildende, gelten feste Grenzen. Sie dürfen höchstens **acht Stunden am Tag** und **40 Stunden in der Woche** arbeiten, nur an **fünf Tagen** in der Woche und grundsätzlich nur zwischen **6 und 20 Uhr**; für Ältere gibt es Ausnahmen, etwa in der Gastronomie bis 22 Uhr. Bei mehr als viereinhalb Stunden Arbeit steht ihnen eine **Pause** von mindestens 30 Minuten zu, bei mehr als sechs Stunden von 60 Minuten. Der **Urlaub** beträgt je nach Alter 25 bis 30 Werktage.",
       "Gefährliche Arbeiten, etwa mit giftigen Stoffen oder an gefährlichen Maschinen, und Akkordarbeit sind für Jugendliche grundsätzlich verboten. Der **Arbeitgeber** ist für die Einhaltung verantwortlich. Bevor du einen Nebenjob annimmst, solltest du mit deinen Eltern sprechen, Arbeitszeiten und Lohn schriftlich festhalten und prüfen, ob der Job neben der Schule noch genug Zeit zum Lernen lässt.",
     ],
@@ -572,8 +572,13 @@ export const LB4: Lesson[] = [
     law: [
       {
         ref: "§ 5 Abs. 3 JArbSchG",
-        text: "Kinder ab 13 dürfen mit Einwilligung der Eltern leichte, geeignete Arbeiten übernehmen, höchstens zwei Stunden täglich, nicht zwischen 18 und 8 Uhr und nicht vor oder während des Unterrichts.",
+        text: "Kinder ab 13 dürfen mit Einwilligung der Eltern leichte, geeignete Arbeiten übernehmen, höchstens zwei Stunden täglich (in landwirtschaftlichen Familienbetrieben drei), nicht zwischen 18 und 8 Uhr und nicht vor oder während des Unterrichts. Schulpflichtige Jugendliche ab 15 dürfen in den Ferien bis zu vier Wochen im Jahr arbeiten (Abs. 4).",
         url: "https://www.gesetze-im-internet.de/jarbschg/__5.html",
+      },
+      {
+        ref: "§ 2 KindArbSchV",
+        text: "Die Verordnung zählt die erlaubten leichten Tätigkeiten auf, etwa Zeitungen austragen, Hilfe in privaten Haushalten und Gärten, Nachhilfe, Betreuung von Kindern und Haustieren, Hilfe in der Landwirtschaft und bei nichtgewerblichen Aktionen von Vereinen.",
+        url: "https://www.gesetze-im-internet.de/kindarbschv/__2.html",
       },
       {
         ref: "§ 8 JArbSchG",
@@ -582,8 +587,8 @@ export const LB4: Lesson[] = [
       },
     ],
     takeaway:
-      "Kinderarbeit ist verboten; ab 13 sind mit Einwilligung der Eltern leichte Arbeiten bis zwei Stunden täglich erlaubt, nicht zwischen 18 und 8 Uhr. Vollzeitschulpflichtige gelten als Kinder und dürfen in den Ferien bis vier Wochen jobben. Jugendliche arbeiten höchstens 8 Stunden täglich und 40 Stunden wöchentlich.",
-    sourceIds: ["lp", "jarbschg", "bmas-jarbschg"],
+      "Kinderarbeit ist verboten; ab 13 sind mit Einwilligung der Eltern nur die leichten Tätigkeiten der Kinderarbeitsschutzverordnung erlaubt, höchstens zwei Stunden täglich und nicht zwischen 18 und 8 Uhr, auch in den Ferien. Schulpflichtige Jugendliche ab 15 dürfen in den Ferien bis vier Wochen jobben. Jugendliche arbeiten höchstens 8 Stunden täglich und 40 Stunden wöchentlich.",
+    sourceIds: ["lp", "jarbschg", "kindarbschv", "bmas-jarbschg"],
     quiz: check(
       "Die 13-jährige Lea möchte nach der Schule von 18 bis 20 Uhr Zeitungen austragen. Ist das erlaubt?",
       "Nein, Kinder dürfen nicht zwischen 18 und 8 Uhr beschäftigt werden.",
@@ -597,8 +602,8 @@ export const LB4: Lesson[] = [
       [
         ["Ein 14-Jähriger gibt mit Einwilligung der Eltern zweimal pro Woche eine Stunde Nachhilfe am Nachmittag.", 0, "Leichte Arbeit ab 13, unter zwei Stunden, zur erlaubten Zeit."],
         ["Eine 12-Jährige trägt jeden Morgen um 6 Uhr Prospekte aus.", 1, "Unter 13 ist die Beschäftigung verboten, und die Uhrzeit wäre es auch."],
-        ["Ein schulpflichtiger 15-Jähriger jobbt in den Sommerferien drei Wochen in einer Gärtnerei.", 0, "In den Ferien sind bis vier Wochen im Jahr erlaubt."],
-        ["Ein 13-Jähriger hilft mit Einwilligung der Eltern täglich drei Stunden im Supermarkt.", 1, "Erlaubt sind höchstens zwei Stunden täglich."],
+        ["Ein schulpflichtiger 15-Jähriger jobbt in den Sommerferien drei Wochen in einer Gärtnerei.", 0, "Schulpflichtige Jugendliche ab 15 dürfen in den Ferien bis vier Wochen im Jahr arbeiten."],
+        ["Ein 13-Jähriger hilft mit Einwilligung der Eltern täglich drei Stunden im Supermarkt.", 1, "Arbeit im Supermarkt gehört nicht zu den erlaubten leichten Tätigkeiten, und drei Stunden wären ohnehin zu lang."],
         ["Eine 16-jährige Auszubildende arbeitet acht Stunden am Tag, fünf Tage die Woche.", 0, "Das entspricht den Grenzen für Jugendliche."],
       ],
       "Alter, Dauer, Uhrzeit und Art der Arbeit entscheiden.",
@@ -609,16 +614,16 @@ export const LB4: Lesson[] = [
         "**Emil (14)** geht in die 8. Klasse. Ein **Eiscafé** bietet ihm einen Job an: an **Wochentagen von 17 bis 20 Uhr** Eis verkaufen und in den **Sommerferien sechs Wochen** jeden Tag aushelfen. Seine Eltern sind einverstanden.",
       steps: [
         decide("Gilt Emil nach dem Gesetz als Kind oder Jugendlicher?", "Als Kind, weil er noch nicht 15 und vollzeitschulpflichtig ist.", "Als Jugendlicher, weil er schon 14 ist.", "Im Arbeitsschutz ist Kind, wer unter 15 oder vollzeitschulpflichtig ist."),
-        decide("Was ist an den Arbeitszeiten unter der Woche falsch?", "Drei Stunden sind zu lang, und nach 18 Uhr darf er nicht arbeiten.", "Nichts, weil seine Eltern zugestimmt haben.", "Erlaubt sind höchstens zwei Stunden und nicht zwischen 18 und 8 Uhr."),
-        decide("Was gilt für den Ferienjob?", "Höchstens vier Wochen im Jahr sind erlaubt, nicht sechs.", "In den Ferien gibt es keine Grenzen.", "Vollzeitschulpflichtige dürfen in den Ferien bis zu vier Wochen im Kalenderjahr arbeiten."),
+        decide("Darf Emil unter der Woche im Eiscafé Eis verkaufen?", "Nein: Verkaufen in einem Café gehört nicht zu den erlaubten leichten Tätigkeiten, und 17 bis 20 Uhr wäre zu lang und zu spät.", "Ja, weil seine Eltern zugestimmt haben.", "Die Einwilligung der Eltern ist nötig, reicht aber nicht. Die Kinderarbeitsschutzverordnung zählt die erlaubten Tätigkeiten abschließend auf, und Kinder dürfen höchstens zwei Stunden und nicht nach 18 Uhr arbeiten."),
+        decide("Darf Emil in den Sommerferien im Eiscafé aushelfen?", "Nein, auch in den Ferien gelten für ihn die Regeln für Kinder.", "Ja, aber höchstens vier Wochen statt sechs.", "Die Vier-Wochen-Regel gilt erst für schulpflichtige Jugendliche ab 15. Mit 14 darf Emil auch in den Ferien nur leichte Tätigkeiten wie Nachhilfe oder Babysitten übernehmen, höchstens zwei Stunden täglich."),
       ],
-      verdict: "Das Angebot verstößt gegen das Jugendarbeitsschutzgesetz. Emil dürfte zum Beispiel nachmittags bis 18 Uhr höchstens zwei Stunden und in den Ferien bis zu vier Wochen arbeiten.",
+      verdict: "Das Angebot verstößt gegen das Jugendarbeitsschutzgesetz. Mit 14 darf Emil zum Beispiel Zeitungen austragen oder Nachhilfe geben, höchstens zwei Stunden täglich vor 18 Uhr, auch in den Ferien. Einen Ferienjob im Eiscafé kann er frühestens mit 15 annehmen.",
     },
     tasks: {
       1: write(
         "Erkläre, welche Nebenjobs du mit 13 oder 14 Jahren annehmen darfst und welche Grenzen dabei gelten.",
         ["Was ist eine leichte Arbeit?", "Welche Zeiten und welche Dauer sind erlaubt?"],
-        "Mit 13 oder 14 bin ich nach dem Jugendarbeitsschutzgesetz noch ein Kind, für das Arbeit grundsätzlich verboten ist. Ab 13 darf ich mit Einwilligung meiner Eltern aber leichte und geeignete Tätigkeiten übernehmen, etwa Zeitungen austragen, babysitten, Nachhilfe geben oder Rasen mähen. Ich darf höchstens zwei Stunden täglich arbeiten, nicht zwischen 18 und 8 Uhr und nicht vor oder während der Schule. In den Ferien darf ich als Schulpflichtiger bis zu vier Wochen im Jahr jobben.",
+        "Mit 13 oder 14 bin ich nach dem Jugendarbeitsschutzgesetz noch ein Kind, für das Arbeit grundsätzlich verboten ist. Ab 13 darf ich mit Einwilligung meiner Eltern aber leichte und geeignete Tätigkeiten übernehmen, etwa Zeitungen austragen, babysitten, Nachhilfe geben oder Rasen mähen. Ich darf höchstens zwei Stunden täglich arbeiten, nicht zwischen 18 und 8 Uhr und nicht vor oder während der Schule. Diese Grenzen gelten auch in den Ferien. In einem Geschäft oder Café darf ich erst ab 15 arbeiten, und als Schüler dann in den Ferien höchstens vier Wochen im Jahr.",
         ["Nennt passende leichte Tätigkeiten", "Nennt die Grenzen zu Dauer und Uhrzeit", "Bezieht Einwilligung und Ferien ein"],
       ),
       2: write(

@@ -50,7 +50,8 @@ describe("lesson contract", () => {
     }
   });
   it("uses decimal commas in German lesson text", () => {
-    for (const lesson of LESSONS.filter((entry) => !entry.optional)) {
+    // All lessons, the Profilbereich included: every lesson text is German learner text.
+    for (const lesson of LESSONS) {
       for (const text of texts(lesson)) {
         // A period is allowed in German clock times with a dot and in grouped integers.
         const withoutClockTimes = text.replace(/\b(?:[01]?\d|2[0-3])\.[0-5]\d Uhr\b/g, "");
