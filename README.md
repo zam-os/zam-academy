@@ -22,6 +22,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | Deutsch 5 Gymnasium (LehrplanPLUS Bayern) | [`deutsch-gymnasium-5/`](deutsch-gymnasium-5/) | https://academy.zam-os.org/deutsch-gymnasium-5/ | `zam-academy:deutsch-gymnasium-5` |
 | German 6 Gymnasium (Bavarian LehrplanPLUS) | [`deutsch-gymnasium-6/`](deutsch-gymnasium-6/) | Built by Pages on merge | `zam-academy:deutsch-gymnasium-6` |
 | German 7 Gymnasium (Bavarian LehrplanPLUS) | [`deutsch-gymnasium-7/`](deutsch-gymnasium-7/) | Built by Pages on merge | `zam-academy:deutsch-gymnasium-7` |
+| German 8 Gymnasium (Bavarian LehrplanPLUS, including MuG) | [`deutsch-gymnasium-8/`](deutsch-gymnasium-8/) | Built by Pages on merge | `zam-academy:deutsch-gymnasium-8` |
 | German 6 Realschule (Bavaria) | [`deutsch-realschule-6/`](deutsch-realschule-6/) | Built by Pages on merge | `zam-academy:deutsch-realschule-6` |
 | German 7 Realschule (Bavaria) | [`deutsch-realschule-7/`](deutsch-realschule-7/) | Built by Pages on merge | `zam-academy:deutsch-realschule-7` |
 | Grade 4 mathematics: 40 Discovery Island lessons with Milo (Bavaria) | [`mathematik-grundschule-4/`](mathematik-grundschule-4/) | https://academy.zam-os.org/mathematik-grundschule-4/ | `zam-academy:mathematik-grundschule-4` |

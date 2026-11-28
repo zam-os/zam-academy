@@ -1,0 +1,638 @@
+{
+	"curriculum": "https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/8/deutsch",
+	"checked": "2026-11-28",
+	"curriculum_sha256": "a19261fa2cae35265dbd7f9111360d6ca40664720f1b2eda63d07e292a589a92",
+	"areas": [
+		{
+			"lb": 1,
+			"title": "Sprechen und Zuhören",
+			"hours": null
+		},
+		{
+			"lb": 2,
+			"title": "Lesen – mit Texten und weiteren Medien umgehen",
+			"hours": null
+		},
+		{
+			"lb": 3,
+			"title": "Schreiben",
+			"hours": null
+		},
+		{
+			"lb": 4,
+			"title": "Sprachgebrauch und Sprache untersuchen und reflektieren",
+			"hours": null
+		},
+		{
+			"lb": 5,
+			"title": "Profilbereich am MuG",
+			"hours": null,
+			"track": "MuG"
+		}
+	],
+	"neighbours": [
+		{
+			"grade": 7,
+			"url": "https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/7/deutsch",
+			"file": "tests/fixtures/zam-deutsch7-lehrplan.html.gz",
+			"sha256": "1a22edafca61a5db9a0d591e795e07a806a6fe38da45f592b6be5e2462b2230b"
+		},
+		{
+			"grade": 9,
+			"url": "https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/9/deutsch",
+			"file": "tests/fixtures/zam-deutsch9-lehrplan.html.gz",
+			"sha256": "ffb20be52500bb616a15c44703ec2bab51b86063d235dc7b871ec41da0d360ff"
+		}
+	],
+	"rows": [
+		{
+			"id": "1.1.1",
+			"lb": 1,
+			"section": "1.1",
+			"position": 1,
+			"competence": "hören in Gesprächen aufmerksam zu, um Aussage, Intention und ggf. Argumentation zu erfassen und Wertschätzung auszudrücken. Sie geben eine Rückmeldung zu längeren Gesprächsbeiträgen bzw. Referaten und bewerten eigenes Gesprächsverhalten unter Berücksichtigung der Anforderungen eines demokratischen Diskurses.",
+			"lessons": [
+				"d8-zuhoeren-feedback"
+			],
+			"status": "supported",
+			"evidence": "The model separates position, intent and supporting reason. The extension calls for an actual discussion, peer feedback and self-assessment."
+		},
+		{
+			"id": "1.1.2",
+			"lb": 1,
+			"section": "1.1",
+			"position": 2,
+			"competence": "erfassen Informationen und Aussageabsicht gesprochener literarischer oder pragmatischer Texte, indem sie das Thema benennen, Zusammenhänge erkennen, Fragen beantworten bzw. zu Strittigem Stellung nehmen.",
+			"lessons": [
+				"d8-hoertext-deutung"
+			],
+			"status": "implemented",
+			"evidence": "The embedded schoolyard audio offers replay and a transcript. Tasks reconstruct its purpose, contrast and planned procedure and invite a response."
+		},
+		{
+			"id": "1.2.1",
+			"lb": 1,
+			"section": "1.2",
+			"position": 1,
+			"competence": "lesen literarische und pragmatische Texte flüssig und interpretierend vor, auch nonverbal unterstützt. Sie tragen Gedichte frei und interpretierend vor.",
+			"lessons": [
+				"d8-vorlesen-gedicht"
+			],
+			"status": "supported",
+			"evidence": "The learner annotates verse and prose for stress, pace and pauses. Fluency, free performance and non-verbal delivery are practised aloud with an audience."
+		},
+		{
+			"id": "1.2.2",
+			"lb": 1,
+			"section": "1.2",
+			"position": 2,
+			"competence": "sprechen frei, strukturiert und adressatenorientiert über Themen und Texte des weiteren Erfahrungsbereichs und verwenden gezielt die Grundformen Informieren, Erzählen und Argumentieren.",
+			"lessons": [
+				"d8-adressaten-vortrag"
+			],
+			"status": "supported",
+			"evidence": "The speaking workshop compares three forms and prepares a brief, audience-specific contribution. Actual free speaking needs rehearsal and listeners."
+		},
+		{
+			"id": "1.2.3",
+			"lb": 1,
+			"section": "1.2",
+			"position": 3,
+			"competence": "informieren die Mitschülerinnen und Mitschüler auch in Referaten über Arbeitsergebnisse, über anspruchsvollere Sachthemen sowie über Texte und setzen dabei Anschauungsmaterial und Medien gezielt ein.",
+			"lessons": [
+				"d8-adressaten-vortrag"
+			],
+			"status": "supported",
+			"evidence": "The model pairs a process diagram with speaking notes. The extension assigns an actual oral presentation with peer feedback."
+		},
+		{
+			"id": "1.2.4",
+			"lb": 1,
+			"section": "1.2",
+			"position": 4,
+			"competence": "setzen einfache rhetorische Mittel ein und unterstützen ihre Beiträge bewusst durch stimmliche und nonverbale Mittel.",
+			"lessons": [
+				"d8-adressaten-vortrag"
+			],
+			"status": "supported",
+			"evidence": "The learner chooses a rhetorical question, a pause and a physical cue. Vocal and non-verbal delivery is assessed in practice."
+		},
+		{
+			"id": "1.3.1",
+			"lb": 1,
+			"section": "1.3",
+			"position": 1,
+			"competence": "bewältigen, auch auf der Basis eines einfachen Kommunikationsmodells, verschiedene Gesprächssituationen (z. B. Klassen-, Gruppen- oder Partnergespräche), indem sie fair und zielführend das jeweils geeignete sprachliche Handlungsmuster verwenden und Wechselwirkungen von eigenem und fremdem Gesprächsverhalten beachten. Sie setzen angemessene Mittel der Konfliktlösung ein.",
+			"lessons": [
+				"d8-fair-diskutieren"
+			],
+			"status": "supported",
+			"evidence": "A conflict model rehearses a clarifying question, an I-statement and a compromise. Real interaction and its effects are practised with a group."
+		},
+		{
+			"id": "1.3.2",
+			"lb": 1,
+			"section": "1.3",
+			"position": 2,
+			"competence": "handeln in unterschiedlichen Gesprächssituationen (z. B. Gruppendiskussion) angemessen, indem sie die Beiträge anderer aufgreifen, dabei auf die vertretenen Meinungen und (Gegen-)Argumente eingehen und eine eigene Position begründen. Sie bereiten kürzere Diskussionen vor, führen sie unter Anleitung im Sinne einer demokratischen Gesprächskultur durch, werten sie aus und fassen Gesprächsergebnisse zusammen.",
+			"lessons": [
+				"d8-fair-diskutieren"
+			],
+			"status": "supported",
+			"evidence": "The learner records a proposal, objection and decision. The extension assigns planning, moderation and reflection in a live class discussion."
+		},
+		{
+			"id": "1.4.1",
+			"lb": 1,
+			"section": "1.4",
+			"position": 1,
+			"competence": "greifen elementare Spielformen des Theaters auf und vertiefen so ihr Verständnis von Sachverhalten oder literarischen Texten, auch im Dialekt. Sie setzen dabei ggf. Medien ein.",
+			"lessons": [
+				"d8-theater-standbild"
+			],
+			"status": "supported",
+			"evidence": "The standstill scene allows a comparison of position, gaze and gesture, with a dialect option. Acting the scene with others is part of the extension."
+		},
+		{
+			"id": "2.1.1",
+			"lb": 2,
+			"section": "2.1",
+			"position": 1,
+			"competence": "vertiefen ihre Leseerfahrungen durch schulische und außerschulische Lektüre, auch in unterschiedlichen medialen Erscheinungsformen (Medienverbund), insbesondere im Bereich der modernen und klassischen Jugendliteratur und des Sachbuchs.",
+			"lessons": [
+				"d8-lesestrategien"
+			],
+			"status": "supported",
+			"evidence": "A digital FAQ, a historic excerpt and a contemporary model lead to extended reading. The extension asks learners to keep a log for literature and nonfiction and compare media."
+		},
+		{
+			"id": "2.1.2",
+			"lb": 2,
+			"section": "2.1",
+			"position": 2,
+			"competence": "nutzen Zusatzinformationen, eigene Erfahrungen und ggf. weitere Kontextualisierungen, um literarische und pragmatische Texte, auch zu unbekannten Themen, zu verstehen.",
+			"lessons": [
+				"d8-jugendbuch-kontext"
+			],
+			"status": "implemented",
+			"evidence": "An 1880 edition and a contemporary example are interpreted with contextual clues. The exercise distinguishes textual evidence from historical inference."
+		},
+		{
+			"id": "2.1.3",
+			"lb": 2,
+			"section": "2.1",
+			"position": 3,
+			"competence": "entscheiden zunehmend selbständig über die dem jeweiligen Text und der Leseabsicht angemessene Lesestrategie (v. a. punktuelles, diagonales, kursorisches oder sequenzielles Lesen). Sie lesen punktuell, um einem Text wichtige Informationen zu entnehmen; sie lesen zunehmend untersuchend-kritisch (analytisches Lesen), um zentrale Aussagen zu erfassen und zu diskutieren. Sie wenden bei digitalen Texten geeignete Lesetechniken an. Sie dokumentieren ihr Verständnis längerer Texte oder themenspezifischer Materialien, z. B. in kurzen Portfolios und Lesetagebüchern.",
+			"lessons": [
+				"d8-lesestrategien"
+			],
+			"status": "supported",
+			"evidence": "The digital FAQ supports search, sequential and analytical reading with a context check. Extended reading and a continuing portfolio use texts outside the package."
+		},
+		{
+			"id": "2.2.1",
+			"lb": 2,
+			"section": "2.2",
+			"position": 1,
+			"competence": "rezipieren literarische Texte, insbesondere aus dem Bereich der modernen und klassischen Jugendliteratur, ggf. auch aus dem Bereich der Weltliteratur, begegnen dabei anderen Zeiten, Gesellschaften, Kulturen oder Milieus und reflektieren Handlungen und Denkweisen von Figuren. Sie setzen sich mit aktuellen und ggf. auch historischen literarischen Texten ausgewählter Themenkreise auseinander. Sie vergleichen ihre Lektüre mit Texten anderer Kultur- und Zeiträume.",
+			"lessons": [
+				"d8-jugendbuch-kontext"
+			],
+			"status": "implemented",
+			"evidence": "The historical and contemporary excerpts offer a shared comparison question. Tasks connect setting, pace and a character's perspective to textual evidence."
+		},
+		{
+			"id": "2.2.2",
+			"lb": 2,
+			"section": "2.2",
+			"position": 2,
+			"competence": "erschließen Inhalt, Aufbau und Gestaltung literarischer Texte in ihrem Zusammenwirken und entwickeln so ein Textverständnis. Sie wenden dabei gattungsspezifische Kategorien an: Sie untersuchen in epischen Texten (z. B. moderner Kurzprosa) die Handlung (chronologisch-kausale Zusammenhänge, Figuren) und die Darstellungsweise (z. B. Erzählerbericht, Figurenrede); sie untersuchen in dramatischen Texten v. a. Aufbau (Akt/Szene), Konstellation und Interaktion der Figuren; sie untersuchen in lyrischen Texten v. a. die Ausgestaltung der Sprechsituation und die Bildlichkeit. Sie erkennen bei der Auseinandersetzung mit literarischen Texten Fiktionalitätssignale.",
+			"lessons": [
+				"d8-kurzprosa-erzaehlen",
+				"d8-drama-figuren",
+				"d8-lyrik-bildlichkeit"
+			],
+			"status": "implemented",
+			"evidence": "Short fiction, a dramatic scene and a poem model temporal and causal links, stage interaction, the speaking situation, imagery and fiction signals."
+		},
+		{
+			"id": "2.2.3",
+			"lb": 2,
+			"section": "2.2",
+			"position": 3,
+			"competence": "begründen und überdenken Lesevorlieben, indem sie sich mit literarischen Qualitätsurteilen auseinandersetzen (z. B. Buchpreisentscheidungen).",
+			"lessons": [
+				"d8-lesetagebuch-buchjury"
+			],
+			"status": "implemented",
+			"evidence": "The model compares two criteria-based jury assessments. Learners form and revise their own judgment with reference to a modeled ending."
+		},
+		{
+			"id": "2.2.4",
+			"lb": 2,
+			"section": "2.2",
+			"position": 4,
+			"competence": "nutzen handlungs- und produktionsorientierte Methoden, z. B. Wechsel des Mediums, um ihr Textverständnis zu vertiefen.",
+			"lessons": [
+				"d8-wechsel-des-mediums"
+			],
+			"status": "implemented",
+			"evidence": "A short-prose passage becomes two contrasting storyboards. The transfer task redesigns a different passage as an audio scene."
+		},
+		{
+			"id": "2.2.5",
+			"lb": 2,
+			"section": "2.2",
+			"position": 5,
+			"competence": "lesen mindestens zwei Ganzschriften, z. B. ein anspruchsvolles Jugendbuch, und setzen sich im Unterricht damit auseinander. Die Lektüre einer Ganzschrift kann durch die Analyse eines (Kurz-)Films ersetzt werden.",
+			"lessons": [
+				"d8-lesetagebuch-buchjury"
+			],
+			"status": "supported",
+			"evidence": "The reading journal and jury workshop supply methods. At least two complete works and the class discussion remain external, with a film option for one work."
+		},
+		{
+			"id": "2.3.1",
+			"lb": 2,
+			"section": "2.3",
+			"position": 1,
+			"competence": "verstehen und nutzen pragmatische Texte unterschiedlicher medialer Form, um ihr Interesse für Sachfragen zu vertiefen, ihr Wissen zu Themen aus dem eigenen Erfahrungsbereich zu erweitern und zur Recherche für die Produktion eigener Texte.",
+			"lessons": [
+				"d8-sachtexte-auswerten"
+			],
+			"status": "implemented",
+			"evidence": "A flyer and a workshop regulation answer different parts of a research question. Learners write a sourced explanation and flag a time limit."
+		},
+		{
+			"id": "2.3.2",
+			"lb": 2,
+			"section": "2.3",
+			"position": 2,
+			"competence": "untersuchen pragmatische Texte mit geeigneten Kategorien (z. B. Inhalt, Aufbau, Argumentation, Adressatenbezug, Intention, Veröffentlichungsmedium). Sie analysieren und unterscheiden journalistische Textsorten (z. B. Nachricht, Kommentar, Glosse, Blog), auch unter Berücksichtigung der Entwicklungen des digitalen Journalismus.",
+			"lessons": [
+				"d8-journalistische-textsorten"
+			],
+			"status": "implemented",
+			"evidence": "Four forms are presented through one publication context. The tasks distinguish factual reporting, commentary, irony and a blog as a medium."
+		},
+		{
+			"id": "2.3.3",
+			"lb": 2,
+			"section": "2.3",
+			"position": 3,
+			"competence": "beurteilen, ggf. auch im Vergleich mehrerer Texte, die Qualität und die Seriosität von Information und Argumentation und entwickeln dazu einen eigenen Standpunkt.",
+			"lessons": [
+				"d8-quellencheck"
+			],
+			"status": "implemented",
+			"evidence": "The case compares an original table, two dependent posts and their claims. The learner limits the conclusion to the sampled group."
+		},
+		{
+			"id": "2.4.1",
+			"lb": 2,
+			"section": "2.4",
+			"position": 1,
+			"competence": "recherchieren, z. B. im Rahmen eines Zeitungsprojekts, zielgerichtet in verschiedenen Medien, vergleichen verschiedene Darstellungen zu einem Thema anhand geeigneter Kriterien (z. B. Art des Veröffentlichungsmediums, Intentionen unterschiedlicher journalistischer Textsorten, Art der Informationsvermittlung sozialer Medien) und bewerten ihre Rechercheergebnisse kritisch; sie reflektieren auf dieser Basis ihre eigene Mediennutzung und -rezeption.",
+			"lessons": [
+				"d8-quellencheck"
+			],
+			"status": "supported",
+			"evidence": "The example checks reposts and the scope of a survey. Learners carry out research across real media and reflect on their own feed outside the app."
+		},
+		{
+			"id": "2.4.2",
+			"lb": 2,
+			"section": "2.4",
+			"position": 2,
+			"competence": "untersuchen die Wirkung von medialen Gestaltungsmitteln in Hörtexten, Filmen und ggf. grafischer Literatur und erkennen, dass diese Textvorlagen deuten.",
+			"lessons": [
+				"d8-ton-und-film"
+			],
+			"status": "supported",
+			"evidence": "An embedded pair of audio treatments and a selectable storyboard isolate effects of scale, sound and cuts. The extension compares an existing film or audio adaptation with its source."
+		},
+		{
+			"id": "3.1.1",
+			"lb": 3,
+			"section": "3.1",
+			"position": 1,
+			"competence": "wenden die Grundformen schriftlicher Darstellung (Erzählen, Informieren und Argumentieren) der Schreibsituation angemessen an, ggf. auch in Kombination.",
+			"lessons": [
+				"d8-schreibplan"
+			],
+			"status": "implemented",
+			"evidence": "One cluster becomes three plans with different audiences and intentions. The learner combines a brief scene with an argumentative request."
+		},
+		{
+			"id": "3.1.2",
+			"lb": 3,
+			"section": "3.1",
+			"position": 2,
+			"competence": "setzen eine Auswahl unterschiedlicher sprachlicher Mittel gezielt zur Gestaltung ihrer Texte ein (z. B. bildhafte Sprache, Infinitiv- und Partizipialkonstruktionen, Fachbegriffe, Pro-Formen).",
+			"lessons": [
+				"d8-sprachmittel-schreiben"
+			],
+			"status": "implemented",
+			"evidence": "The model changes reference, definition and sentence density. The learner revises an ambiguous paragraph and compares figurative and factual language."
+		},
+		{
+			"id": "3.1.3",
+			"lb": 3,
+			"section": "3.1",
+			"position": 3,
+			"competence": "verfassen unter Anleitung strukturierte Mitschriften, z. B. von Referaten.",
+			"lessons": [
+				"d8-mitschrift"
+			],
+			"status": "implemented",
+			"evidence": "An embedded mock talk yields a structured record of observation, intervention and test. A transfer example updates the notes with a new finding."
+		},
+		{
+			"id": "3.1.4",
+			"lb": 3,
+			"section": "3.1",
+			"position": 4,
+			"competence": "übernehmen Informationen aus Texten und Materialien in eigene Texte, indem sie vielfältige Formen der Redewiedergabe (v. a. Paraphrase, indirekte Rede, Infinitivkonstruktion, Modalverben) nutzen und Übernahmen kennzeichnen.",
+			"lessons": [
+				"d8-reden-wiedergeben"
+			],
+			"status": "implemented",
+			"evidence": "The lesson models paraphrase, reported speech, infinitives and modals. An exercise preserves the source and the difference between a permission and a requirement."
+		},
+		{
+			"id": "3.1.5",
+			"lb": 3,
+			"section": "3.1",
+			"position": 5,
+			"competence": "nutzen verschiedene Funktionen von Textverarbeitungsprogrammen zum Schreiben und Überarbeiten von Texten, z. B. Seitenlayout.",
+			"lessons": [
+				"d8-layout-ueberarbeiten"
+			],
+			"status": "supported",
+			"evidence": "A layout comparison models headings and paragraphs. Learners apply page layout and heading styles in a separate word processor."
+		},
+		{
+			"id": "3.2.1",
+			"lb": 3,
+			"section": "3.2",
+			"position": 1,
+			"competence": "nutzen geeignete Verfahren zur Ideensammlung, konzipieren ihre Texte adressatengerecht und planen ihre Texte mithilfe verschiedener Ordnungssysteme. Sie strukturieren ihre Texte und überprüfen deren Logik. Sie wählen dabei innerhalb ihrer Texte, ggf. noch unter Anleitung, geeignete thematische Entfaltungen.",
+			"lessons": [
+				"d8-schreibplan"
+			],
+			"status": "implemented",
+			"evidence": "The planning model turns one cluster into different outlines. Learners check audience needs, paragraph order and the logic of a proposal."
+		},
+		{
+			"id": "3.2.2",
+			"lb": 3,
+			"section": "3.2",
+			"position": 2,
+			"competence": "verfassen erzählende oder schildernde Texte oder Textpassagen im Rahmen der produktionsorientierten Auseinandersetzung mit literarischen Texten oder bei journalistischen Formen (z. B. als Einleitung von argumentierenden Texten).",
+			"lessons": [
+				"d8-schildern-gestalten"
+			],
+			"status": "implemented",
+			"evidence": "Close description and a subsequent action form a scene. A transfer task uses the same scene as the opening of a comment on a school issue."
+		},
+		{
+			"id": "3.2.3",
+			"lb": 3,
+			"section": "3.2",
+			"position": 3,
+			"competence": "verfassen informierende Texte zu altersgemäßen Themen, indem sie geeignete Materialien (Bilder, Grafiken, kürzere Texte) auswerten. Sie erklären dabei Begriffe und Sachverhalte.",
+			"lessons": [
+				"d8-informierend-material"
+			],
+			"status": "implemented",
+			"evidence": "A two-day chart and a counting note supply data for an informational text. Tasks explain the unit and the limits of the comparison."
+		},
+		{
+			"id": "3.2.4",
+			"lb": 3,
+			"section": "3.2",
+			"position": 4,
+			"competence": "informieren über literarische Texte, indem sie das Thema formulieren und den Inhalt sowie wesentliche Zusammenhänge darstellen.",
+			"lessons": [
+				"d8-literarische-inhaltsangabe"
+			],
+			"status": "implemented",
+			"evidence": "An original short story supplies a theme, key actions and an unresolved motive. The new example asks learners to retain an open outcome."
+		},
+		{
+			"id": "3.2.5",
+			"lb": 3,
+			"section": "3.2",
+			"position": 5,
+			"competence": "formulieren einen eigenen Standpunkt zu einem Sachverhalt aus dem weiteren Erfahrungsbereich (z. B. aus dem Bereich der Medien und der digitalen Kommunikationsformen) und argumentieren, auch mithilfe von Materialien, planvoll und schlüssig, indem sie Zusammenhänge erläutern und über Hintergründe informieren.",
+			"lessons": [
+				"d8-argument-material"
+			],
+			"status": "implemented",
+			"evidence": "A survey and a room plan support a qualified recommendation. Learners practise linking a position, a reason and an applicable piece of evidence."
+		},
+		{
+			"id": "3.2.6",
+			"lb": 3,
+			"section": "3.2",
+			"position": 6,
+			"competence": "bauen einen argumentierenden Text linear auf (ggf. in Form eines Leserbriefs).",
+			"lessons": [
+				"d8-linearer-leserbrief"
+			],
+			"status": "implemented",
+			"evidence": "The model organizes a letter around one position with distinct reasons. The learner transfers that structure to a new decision for the school paper."
+		},
+		{
+			"id": "3.3.1",
+			"lb": 3,
+			"section": "3.3",
+			"position": 1,
+			"competence": "beurteilen und überarbeiten eigene und fremde Texte anhand angemessener Kriterien eigenständig (z. B. in Bezug auf Sprache und Form sowie Textzusammenhang).",
+			"lessons": [
+				"d8-layout-ueberarbeiten"
+			],
+			"status": "implemented",
+			"evidence": "A flawed room notice can be reordered, clarified and formatted. The learner checks the revision against distinct criteria with a worked version."
+		},
+		{
+			"id": "3.3.2",
+			"lb": 3,
+			"section": "3.3",
+			"position": 2,
+			"competence": "nutzen beim Überarbeiten von analogen und digitalen Texten eine Auswahl von Methoden (z. B. Kommentarfunktion) und überarbeiten Texte, auch im Team, zunehmend eigenverantwortlich (z. B. mithilfe eines kriteriengeleiteten Überarbeitungsplans).",
+			"lessons": [
+				"d8-layout-ueberarbeiten"
+			],
+			"status": "supported",
+			"evidence": "The app models precise comments and a revision sequence. Peer revision and use of a word processor's comment function are assigned as extensions."
+		},
+		{
+			"id": "4.1.1",
+			"lb": 4,
+			"section": "4.1",
+			"position": 1,
+			"competence": "unterscheiden Merkmale und Leistungen von Dialekt und Jugendsprache als Sprachvarietäten im Vergleich zur Standardsprache und vertiefen so ihr Sprachwissen und ihr Sprachbewusstsein.",
+			"lessons": [
+				"d8-varietaten"
+			],
+			"status": "implemented",
+			"evidence": "A regional, group-specific and standard message express the same intent. The model shows forms and social functions while avoiding judgments of speakers."
+		},
+		{
+			"id": "4.1.2",
+			"lb": 4,
+			"section": "4.1",
+			"position": 2,
+			"competence": "untersuchen konkrete Gesprächssituationen auf der Basis eines einfachen Kommunikationsmodells, unterscheiden konzeptionell bzw. medial mündliche und schriftliche Kommunikation, reflektieren dabei den Gebrauch von Dialekt und Jugendsprache.",
+			"lessons": [
+				"d8-kommunikationsmodell"
+			],
+			"status": "implemented",
+			"evidence": "The communication model links sender, message and recipient. Cases compare a written chat with an oral presentation and rehearse clarification."
+		},
+		{
+			"id": "4.1.3",
+			"lb": 4,
+			"section": "4.1",
+			"position": 3,
+			"competence": "untersuchen die Beschaffenheit von Texten, insbesondere Zusammenhänge zwischen sprachlicher Gestaltung und Wirkung bzw. Funktion für die Textkohärenz (u. a. bildhafte Sprache, Infinitiv- und Partizipialkonstruktionen, Fachbegriffe, Pro-Formen).",
+			"lessons": [
+				"d8-textkohaerenz"
+			],
+			"status": "implemented",
+			"evidence": "Pronoun reference, causal connections, figurative language and sentence compression are judged by their contribution to the surrounding text."
+		},
+		{
+			"id": "4.2.1",
+			"lb": 4,
+			"section": "4.2",
+			"position": 1,
+			"competence": "beschreiben und reflektieren Sprache als System und als Verständigungsmittel.",
+			"lessons": [
+				"d8-sprachsystem-satzbau"
+			],
+			"status": "implemented",
+			"evidence": "The displacement model shows how a clause keeps verb placement while moving its focus. The learner compares structural rules with communicative effects."
+		},
+		{
+			"id": "4.2.2",
+			"lb": 4,
+			"section": "4.2",
+			"position": 2,
+			"competence": "beschreiben syntaktische und textgrammatikalische Strukturen (auch Infinitiv- und Partizipialkonstruktionen, Gliedsätze, Satzverknüpfungen) und verwenden sie funktional, um Texte und Äußerungen zu gestalten.",
+			"lessons": [
+				"d8-sprachsystem-satzbau",
+				"d8-gliedsaetze",
+				"d8-infinitiv-partizip-komma"
+			],
+			"status": "implemented",
+			"evidence": "Sentence units, subordinate clauses, connectors, participial constructions and infinitive groups change in contrastive examples with punctuation feedback."
+		},
+		{
+			"id": "4.2.3",
+			"lb": 4,
+			"section": "4.2",
+			"position": 3,
+			"competence": "beschreiben die Funktion von Tempus, Modus und Genus Verbi und verwenden sie in unterschiedlichen Formen der Redewiedergabe und zur sprachlichen Differenzierung.",
+			"lessons": [
+				"d8-reden-wiedergeben",
+				"d8-tempus-zeitbezug",
+				"d8-modus-genus-verbi"
+			],
+			"status": "implemented",
+			"evidence": "The time and voice models contrast anteriority, future reference, reported speech, hypothetical mood and active and passive focus."
+		},
+		{
+			"id": "4.2.4",
+			"lb": 4,
+			"section": "4.2",
+			"position": 4,
+			"competence": "erweitern ihren aktiven und passiven Wortschatz und ihr Ausdrucksvermögen, u. a. indem sie Fremdwörter und Fachwortschatz erklären und zielgerichtet verwenden.",
+			"lessons": [
+				"d8-fremd-und-fachwoerter"
+			],
+			"status": "implemented",
+			"evidence": "The editorial vocabulary model distinguishes contextual meanings. Learners explain a term for a new audience and verify unfamiliar spellings."
+		},
+		{
+			"id": "4.3.1",
+			"lb": 4,
+			"section": "4.3",
+			"position": 1,
+			"competence": "schreiben orthografisch und grammatikalisch weitgehend richtig. Sie beachten Probleme und Ausnahmefälle sowie die Schreibung von Fremdwörtern. Sie wenden die Regeln der Zeichensetzung an, u. a. beim Zitieren.",
+			"lessons": [
+				"d8-infinitiv-partizip-komma",
+				"d8-zitat-zeichensetzung",
+				"d8-rechtschreib-werkstatt"
+			],
+			"status": "implemented",
+			"evidence": "The exercises check quotations, infinitive clauses, standard case and spellings of loanwords, with a link to the official rules."
+		},
+		{
+			"id": "4.3.2",
+			"lb": 4,
+			"section": "4.3",
+			"position": 2,
+			"competence": "wenden ihr erweitertes grammatikalisches und orthografisches Regelwissen sicher für die korrekte Gestaltung von Texten an und setzen Rechtschreibstrategien und Methoden der Fehleranalyse ein (z. B. grammatikalisch-regelbildende Verfahren).",
+			"lessons": [
+				"d8-rechtschreib-werkstatt"
+			],
+			"status": "implemented",
+			"evidence": "A three-column error analysis separates recognition, test and correction. Transfer tasks contrast a grammatical test with a dictionary lookup."
+		},
+		{
+			"id": "5.1",
+			"lb": 5,
+			"section": "5",
+			"position": 1,
+			"competence": "vertiefen ihre Kenntnisse und Fähigkeiten im Bereich des Gestaltens und der ästhetischen Bildung, vor allem im Hinblick auf das fächerverbindende Arbeiten und die Ausgestaltung des schulischen Lebens (z. B. Inszenierungsversuche, mediale Gestaltung, produktive Auseinandersetzung mit Bildern und Texten).",
+			"track": "MuG",
+			"lessons": [
+				"d8-mug-inszenierung"
+			],
+			"status": "supported",
+			"evidence": "The stage model illustrates light, sound and action. A staged rehearsal with a group provides the cross-curricular practice and school contribution."
+		},
+		{
+			"id": "5.2",
+			"lb": 5,
+			"section": "5",
+			"position": 2,
+			"competence": "gestalten im Rahmen eines Zeitungsprojekts und unter Nutzung digitaler Medien im Team eine eigene Veröffentlichung.",
+			"track": "MuG",
+			"lessons": [
+				"d8-mug-redaktion"
+			],
+			"status": "supported",
+			"evidence": "A newsroom simulation checks source conflicts, role hand-offs and permissions. The team uses actual publishing tools and school approval in practice."
+		},
+		{
+			"id": "5.3",
+			"lb": 5,
+			"section": "5",
+			"position": 3,
+			"competence": "erschließen sich themenorientiert eine weitere Ganzschrift bzw. einen Film und vertiefen so ihre literarische Kompetenz.",
+			"track": "MuG",
+			"lessons": [
+				"d8-mug-werkvergleich"
+			],
+			"status": "supported",
+			"evidence": "A three-scene model tracks a motif. The extension requires an additional complete book or film and a record of its pages or time codes."
+		},
+		{
+			"id": "5.4",
+			"lb": 5,
+			"section": "5",
+			"position": 4,
+			"competence": "verfassen in der Auseinandersetzung mit literarischen Vorbildern eigene literarische Texte und setzen dabei gezielt sprachliche Mittel ein.",
+			"track": "MuG",
+			"lessons": [
+				"d8-mug-literarisches-schreiben"
+			],
+			"status": "implemented",
+			"evidence": "The workshop identifies an anaphora, builds a new scene and revises the effect of breaking the pattern in its final line."
+		}
+	],
+	"optional_lessons": []
+}

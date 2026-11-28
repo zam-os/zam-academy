@@ -1,0 +1,41 @@
+{
+	"status": "approved",
+	"approved": "2026-11-28",
+	"source": "Thomas approved the proposed Category A transfer for the 3B item in the Codex chat for PR #224 on 2026-11-28: “Freigabe erteilt - Du darfst als Admin mergen”.",
+	"source_repository": "https://github.com/zam-os/zam",
+	"source_commit": "c92f4e383385ee487cd8b30f73b3bf3cb27b0860",
+	"sources": [
+		{
+			"tile_id": "de-by:gymnasium-8-deutsch-eroerterung-drama-novelle-textanalyse",
+			"file": "tests/fixtures/de-by-gymnasium-8-deutsch-eroerterung-drama-novelle-textanalyse-kvt.json",
+			"sha256": "4976d0ee4322130a6202cf605bfad16c86a53a2b8137c2d7274abe3b16f0689c"
+		}
+	],
+	"rows": [
+		{
+			"de_by_id": "01K8G8H0000000000000000J01",
+			"category": "A",
+			"action": "replace",
+			"academy_slug": "d8-argument-material-check",
+			"reason": "Both prompts retrieve the three elements of the 3B argument schema. The new wording keeps example and verifiable evidence as alternatives for the third element."
+		},
+		{
+			"de_by_id": "01K8G8H0000000000000000J02",
+			"category": "C",
+			"action": "keep-active",
+			"reason": "The legacy synthesis combines linear and dialectical argumentation, two ordering models, the 3B schema and the conclusion. D8 teaches linear construction; no successor retrieves all parts together."
+		},
+		{
+			"de_by_id": "01K8G8H0000000000000000J03",
+			"category": "C",
+			"action": "keep-active",
+			"reason": "The old item asks for Goethe’s particular definition of the novella. The D8 literary lessons practise genre-appropriate analysis without using that definition as a recall target."
+		},
+		{
+			"de_by_id": "01K8G8H0000000000000000J04",
+			"category": "C",
+			"action": "keep-active",
+			"reason": "The old synthesis bundles a five-act model, forms of stage speech, novella conventions and short-story features. The new drama and narrative lessons practise distinct analytic moves."
+		}
+	]
+}
