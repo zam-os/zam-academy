@@ -38,20 +38,20 @@ export const MAP_DATA: Record<
 > = {
 	canada: {
 		ariaLabel:
-			"Skizze von Kanada, Norden oben. Markierung 1 liegt an der Westküste bei Vancouver, Markierung 2 im Südosten bei Ottawa und Toronto, Markierung 3 weit im arktischen Norden bei Nunavut.",
+			"Skizze von Kanada, Norden oben. Markierung 1 liegt an der Westküste bei Vancouver vor den Coast Mountains (östlicher liegen die Rockies und die Prairies), Markierung 2 im Südosten bei Ottawa am Ottawa River und Toronto am Ontariosee, Markierung 3 weit im arktischen Norden bei Nunavut.",
 		caption: "Schematische Lernskizze · Norden oben · nicht maßstäblich.",
 		places: [
 			{
 				id: "vancouver",
-				label: "Vancouver & Rockies",
+				label: "Vancouver (Westküste)",
 				point: [84, 214],
-				note: "An der Pazifikküste liegt Vancouver zwischen Meer und Rocky Mountains.",
+				note: "Vancouver liegt direkt an der Pazifikküste vor den Coast Mountains; die Rocky Mountains beginnen erst weiter östlich zwischen British Columbia und Alberta.",
 			},
 			{
 				id: "ottawa",
 				label: "Ottawa & Toronto",
 				point: [336, 244],
-				note: "Im Südosten liegen die Hauptstadt Ottawa und Toronto am Ontariosee; östlich schließt Québec an.",
+				note: "Im Südosten liegt die Hauptstadt Ottawa am Ottawa River (Grenze Ontario/Québec), und südwestlich davon liegt Toronto direkt am Ontariosee.",
 			},
 			{
 				id: "nunavut",
@@ -100,8 +100,8 @@ export const MAP_DATA: Record<
 			{
 				id: "monument-valley",
 				label: "Monument Valley",
-				point: [248, 122],
-				note: "Monument Valley liegt an der Grenze zwischen Arizona und Utah auf dem Gebiet der Navajo Nation.",
+				point: [246, 144],
+				note: "Monument Valley liegt im Nordosten Arizonas an der Grenze zu Utah auf dem Gebiet der Navajo Nation.",
 			},
 			{
 				id: "santa-fe",
@@ -192,7 +192,7 @@ export const SCENE_DATA: Record<
 	},
 	"condition-scale": {
 		ariaLabel:
-			"Vergleichsskala für Bedingungssätze und Wünsche: Typ II (unwahrscheinliche Gegenwart), Typ III (unveränderliche Vergangenheit) und Mischform oder Wunsch.",
+			"Vergleichsskala für Bedingungssätze und Wünsche von Gegenwart zur Vergangenheit: Typ II (unwahrscheinliche Gegenwart), Mischform oder Wunsch (Brücke ins Jetzt) und Typ III (unveränderliche Vergangenheit).",
 		caption: "Skala nach Zeit und Wahrscheinlichkeit · Tippe auf einen Baustein.",
 		pieces: [
 			{
@@ -201,14 +201,14 @@ export const SCENE_DATA: Record<
 				note: "if + simple past, would + Grundform: unwahrscheinlich oder nur vorgestellt (jetzt/Zukunft).",
 			},
 			{
-				id: "type3",
-				label: "Type III · Abgeschlossene Vergangenheit",
-				note: "if + past perfect, would have + 3. Verbform: blickt auf eine verpasste Chance zurück.",
-			},
-			{
 				id: "mixed-wish",
 				label: "Mixed & Wish · Brücke ins Jetzt",
 				note: "Mischform verbindet frühere Bedingung (past perfect) mit Folge heute (would + Grundform); Wünsche nutzen I wish + past/past perfect.",
+			},
+			{
+				id: "type3",
+				label: "Type III · Abgeschlossene Vergangenheit",
+				note: "if + past perfect, would have + 3. Verbform: blickt auf eine verpasste Chance zurück.",
 			},
 		],
 	},
@@ -311,7 +311,8 @@ export function renderMapSvg(id: MapId): string {
 			<text class="svg-region-label" x="14" y="182">Pacific</text>
 			<text class="svg-region-label" x="414" y="138">Atlantic</text>
 			<text class="svg-region-label" x="280" y="152">Hudson Bay</text>
-			<text class="svg-region-label" x="148" y="182">Prairies</text>
+			<text class="svg-region-label" x="98" y="152">Rockies</text>
+			<text class="svg-region-label" x="150" y="186">Prairies</text>
 			<text class="svg-region-label" x="366" y="206">Québec</text>
 			${markerPins(data.places)}
 		</svg>`;
@@ -407,8 +408,8 @@ export function renderSceneSvg(id: SceneId): string {
 	if (id === "condition-scale") {
 		const cards = [
 			{ id: "type2", x: 24, title: "Type II", line1: "if + simple past", line2: "→ would + inf." },
-			{ id: "type3", x: 184, title: "Type III", line1: "if + past perfect", line2: "→ would have + 3. F." },
-			{ id: "mixed-wish", x: 344, title: "Mixed & Wish", line1: "past cond. → now", line2: "I wish + past / p.p." },
+			{ id: "mixed-wish", x: 184, title: "Mixed & Wish", line1: "past cond. → now", line2: "I wish + past / p.p." },
+			{ id: "type3", x: 344, title: "Type III", line1: "if + past perfect", line2: "→ would have + 3. F." },
 		];
 		return `<svg class="workshop-svg scene-svg" viewBox="0 0 520 155" role="img" aria-label="${data.ariaLabel}">
 			<line x1="28" y1="26" x2="492" y2="26" class="svg-axis"/>

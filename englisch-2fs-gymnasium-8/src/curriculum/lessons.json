@@ -918,7 +918,7 @@
 					{
 						"id": "after-past",
 						"label": "Vergangenheit: after + past perfect",
-						"note": "„After we had packed, we left“ — nach after steht die frühere Handlung im past perfect."
+						"note": "„After we had packed, we left“ — nach after steht häufig das past perfect, um die frühere Handlung zu betonen."
 					},
 					{
 						"id": "until-rule",
@@ -967,17 +967,17 @@
 				"model": "(a) As soon as the summer holidays start, I will visit my cousin in Hamburg.\n(b) After I had finished my maths homework, I went cycling with Leo.",
 				"criteria": [
 					"Im Zukunfts-Nebensatz nach as soon as steht kein will.",
-					"Nach after in der Vergangenheit steht had + 3. Verbform.",
+					"Nach after in der Vergangenheit nutze ich had + 3. Verbform, um die Vorzeitigkeit klar zu betonen.",
 					"Hauptsatz und Nebensatz passen zeitlich zusammen."
 				]
 			},
 			"2": {
-				"prompt": "Korrigiere den folgenden Text und erkläre kurz auf Englisch, warum zwei Zeiten nicht stimmen: „Tomorrow I will text you when I will arrive at school. Yesterday I watched a movie after I finished my essay.“",
-				"model": "Correction: 'Tomorrow I will text you when I arrive at school. Yesterday I watched a movie after I had finished my essay.' In a future time clause with 'when', English uses the simple present ('arrive') instead of 'will'. In the past, 'after' introduces the earlier action, so 'had finished' (past perfect) makes the order completely clear.",
+				"prompt": "Prüfe den folgenden Text: Korrigiere den klaren Zeitfehler im ersten Satz und erkläre auf Englisch, warum der zweite Satz auch ohne Korrektur richtig ist — und wann past perfect ihn zusätzlich verdeutlicht: „Tomorrow I will text you when I will arrive at school. Yesterday I watched a movie after I finished my essay.“",
+				"model": "Correction for sentence 1: 'Tomorrow I will text you when I arrive at school.' In a future time clause with 'when', English uses the simple present ('arrive') instead of 'will'. Sentence 2 ('after I finished my essay') is already grammatically correct because 'after' makes the sequence clear; using past perfect ('after I had finished my essay') is an optional way to emphasise that the essay was completed first.",
 				"criteria": [
-					"Ich korrigiere beide Sätze grammatisch korrekt.",
-					"Ich erkläre die Zukunftsregel nach when/as soon as.",
-					"Ich begründe das past perfect nach after."
+					"Ich korrigiere den Zukunfts-Temporalsatz (when I arrive ohne will).",
+					"Ich erkenne, dass ‚after I finished‘ bereits korrektes Englisch ist.",
+					"Ich erkläre, wann ‚after I had finished‘ die Vorzeitigkeit zusätzlich betont."
 				]
 			}
 		}
@@ -1985,7 +1985,7 @@
 			"Im kanadischen Englisch mischen sich britische Schreibweisen (colour, centre, travelling) mit nordamerikanischem Alltagswortschatz (autumn und fall, washroom statt toilet/restroom, toque für Strickmütze). Die Hauptstadt ist Ottawa, während Toronto und Vancouver zu den größten Metropolen zählen."
 		],
 		"takeaway": "Kanada verbindet Pazifik, Prärie, Großstädte im Südosten und arktischen Norden mit englisch-französischer Zweisprachigkeit.",
-		"material": "Canada fact sheet:\n- Capital: Ottawa (Ontario), on the border to Québec.\n- Largest city: Toronto; West Coast port: Vancouver (near the Rocky Mountains).\n- Three territories in the North: Yukon, Northwest Territories, Nunavut.\n- Bilingual signs across federal offices: 'Welcome / Bienvenue'.",
+		"material": "Canada fact sheet:\n- Capital: Ottawa (Ontario), on the Ottawa River across from Québec.\n- Largest city: Toronto (on Lake Ontario); West Coast port: Vancouver (Pacific coast, backed by the Coast Mountains; the Rocky Mountains rise farther inland between British Columbia and Alberta).\n- Three territories in the North: Yukon, Northwest Territories, Nunavut.\n- Bilingual signs across federal offices: 'Welcome / Bienvenue'.",
 		"materialLabel": "Landeskundlicher Kurzüberblick (English)",
 		"materialLanguage": "en",
 		"sourceIds": [
@@ -2014,14 +2014,14 @@
 					"explanation": "Nunavut erstreckt sich weit über die Hudson Bay hinaus in die Arktis."
 				},
 				{
-					"label": "Wo liegt die Pazifikmetropole zwischen Ozean und Rocky Mountains?",
+					"label": "Wo liegt die Pazifikmetropole an der Westküste vor den Coast Mountains?",
 					"answer": "vancouver",
-					"explanation": "Vancouver liegt im Westen in British Columbia."
+					"explanation": "Vancouver liegt am Pazifik in British Columbia; die Rocky Mountains erheben sich erst weiter östlich im Landesinneren vor den Prairies."
 				},
 				{
-					"label": "Welche Region auf der Karte zeigt die Hauptstadt Ottawa und den Großraum Toronto am Ontariosee?",
+					"label": "Welche Region im Südosten umfasst die Hauptstadt Ottawa (am Ottawa River) und Toronto (am Ontariosee)?",
 					"answer": "ottawa",
-					"explanation": "Beide Städte liegen im dichter besiedelten Südosten Kanadas nahe dem Sankt-Lorenz-Strom."
+					"explanation": "Ottawa liegt am Ottawa River an der Grenze Ontario/Québec, Toronto südwestlich davon direkt am Ontariosee."
 				}
 			]
 		},
@@ -2044,7 +2044,7 @@
 		"tasks": {
 			"1": {
 				"prompt": "Erkläre einem Freund in 4 englischen Sätzen drei geographische Gegensätze Kanadas anhand der Karte (Westküste, Südosten, Norden).",
-				"model": "Canada stretches from the Pacific coast around Vancouver and the Rocky Mountains all the way to the Atlantic. Most people live in the south-east in cities like Toronto and the capital, Ottawa, near bilingual Québec. Farther north lies the vast Arctic landscape of Nunavut.",
+				"model": "Canada stretches from the Pacific coast at Vancouver past the Coast Mountains and the inland Rocky Mountains all the way to the Atlantic. Most people live in the south-east in cities like Toronto on Lake Ontario and the capital, Ottawa, on the Ottawa River next to bilingual Québec. Farther north lies the vast Arctic landscape of Nunavut.",
 				"criteria": [
 					"Ich nenne Westen, Südosten und Norden korrekt.",
 					"Ich verwechsle Ottawa und Toronto nicht.",
@@ -3673,7 +3673,7 @@
 		],
 		"paragraphs": [
 			"Viele Verben, die im Deutschen reflexiv mit „sich“ stehen, sind im Englischen nicht reflexiv! Merke vor allem die vier Kernverben aus dem Lehrplan: to change (sich ändern / sich umziehen), to complain (sich beschweren), to imagine (sich vorstellen) und to meet (sich treffen). Ein Fehler wie *we met us oder *he complained himself entsteht durch direktes Übersetzen aus dem Deutschen.",
-			"Ein weiterer Sprachunterschied: Um Aussagen weiterzugeben (erste Einblicke in indirekte Aussagesätze), nutzt das Deutsche den Konjunktiv I („Er sagt, er komme gleich“). Im Englischen folgt einfach ein Nebensatz mit oder ohne that ohne Konjunktiv — steht das Einleitungswort im Präsens („She says (that) she loves Ottawa“), bleibt die Zeitform gleich; bei Vergangenheitseinleitung passt man Pronomen und Zeit logisch an („He told us (that) the ferry was late“)."
+			"Ein weiterer Sprachunterschied: Um Aussagen weiterzugeben (erste Einblicke in indirekte Aussagesätze), nutzt das Deutsche den Konjunktiv I („Er sagt, er komme gleich“). Im Englischen gibt es keinen Konjunktiv I — auf ein Einleitungswort im Präsens folgt einfach ein normaler Aussagesatz mit oder ohne that, und die Zeitform bleibt unverändert („She says (that) she loves Ottawa“ / „Tim says (that) he has read the book“)."
 		],
 		"takeaway": "Kein Reflexivpronomen nach to change, to complain, to imagine, to meet! Und kein deutscher Konjunktiv I in indirekten Aussagen.",
 		"material": "German -> English contrasts:\n1. 'Das Wetter hat sich geändert.' -> 'The weather has changed.' (not *changed itself)\n2. 'Sie beschwerten sich über den Lärm.' -> 'They complained about the noise.' (not *complained themselves)\n3. 'Stell dir das vor!' -> 'Imagine that!' (not *imagine yourself)\n4. 'Wir treffen uns um vier.' -> 'We are meeting at four.' (or 'meeting each other')\n5. Indirect statement: 'Maya says (that) she loves hiking in Wales.'",
@@ -3890,7 +3890,7 @@
 		],
 		"paragraphs": [
 			"Wenn Muttersprachlerinnen und Muttersprachler flüssig sprechen, stehen Wörter nicht starr einzeln nebeneinander: Konsonanten verbinden sich mit dem folgenden Vokal (linking: „turn_off“, „an_apple“), unbetonte Wörter werden kurz verschliffen (weak forms: „and“ klingt oft wie /ən/, „to“ wie /tə/), und Hauptinformationen tragen die Satzbetonung.",
-			"Für unbekannte Wörter liefert die Lautschrift (IPA) im Wörterbuch exakte Hilfe: „island“ /ˈaɪlənd/ (stummes s!), „colonel“ oder „thorough“ /ˈθʌrə/. Das kleine Zeichen ˈ markiert jeweils die direkt danach betonte Silbe."
+			"Für unbekannte Wörter liefert die Lautschrift (IPA) im Wörterbuch exakte Hilfe: „island“ /ˈaɪlənd/ (stummes s!), „colonel“ /ˈkɜːnəl/ oder „thorough“ /ˈθʌrə/. Das kleine Zeichen ˈ markiert jeweils die direkt danach betonte Silbe."
 		],
 		"takeaway": "IPA zeigt exakte Laute und die Hauptbetonung (ˈ); beim Sprechen verbinden sich Wörter (linking) über unbetonte Silben hinweg.",
 		"material": "Pronunciation & IPA practice script:\nRead smoothly with clear stress on capitalised words and smooth links (marked _):\n'IF we_had_ASKED the_RANGER, we WOULD_have_SAVED an_HOUR.'\nIPA check:\n- 'island' -> /ˈaɪlənd/ (silent s)\n- 'cough' vs. 'though' -> /kɒf/ vs. /ðəʊ/\n- 'Edinburgh' -> /ˈedɪnbərə/",

@@ -25,11 +25,14 @@ describe("curriculum and lesson contracts", () => {
 			"5",
 		]);
 		for (const row of coverage.rows) {
+			expect(["implemented", "supported"]).toContain(row.status);
 			expect(row.evidence.length, row.id).toBeGreaterThan(20);
 			expect(row.lessons.length, row.id).toBeGreaterThan(0);
 			for (const id of row.lessons)
 				expect(LESSONS.find((lesson) => lesson.id === id)?.bindings, row.id).toContain(row.lb);
 		}
+		expect(coverage.rows.filter((row) => row.status === "implemented")).toHaveLength(23);
+		expect(coverage.rows.filter((row) => row.status === "supported")).toHaveLength(23);
 		for (const lesson of LESSONS) {
 			expect(lesson.bindings, lesson.id).toEqual([
 				...new Set(
@@ -165,6 +168,7 @@ describe("curriculum and lesson contracts", () => {
 		const [van, ott, nun] = MAP_DATA.canada.places;
 		expect(van.point[0]).toBeLessThan(ott.point[0]);
 		expect(nun.point[1]).toBeLessThan(ott.point[1]);
+		expect(MAP_DATA.southwest.places[1].point[1]).toBeGreaterThanOrEqual(140);
 		expect(SCENE_DATA["holiday-calendar"].pieces).toHaveLength(3);
 	});
 
@@ -178,6 +182,13 @@ describe("curriculum and lesson contracts", () => {
 		expect(proposal.rows.every((row) => row.category === "C" && row.action === "keep-active")).toBe(
 			true,
 		);
+		expect(cell).not.toHaveProperty("replaces");
+		for (const atom of cell.atoms) expect(atom).not.toHaveProperty("replaces");
+		const itemSlugs = cell.atoms.flatMap((a) => a.practice_items.map((i) => i.slug));
+		for (const row of proposal.rows) {
+			if (row.academy_slug)
+				expect(itemSlugs.filter((slug) => slug === row.academy_slug)).toHaveLength(1);
+		}
 		expect(cell.atoms.flatMap((a) => a.practice_items).filter((i) => "replaces" in i)).toEqual([]);
 	});
 });
